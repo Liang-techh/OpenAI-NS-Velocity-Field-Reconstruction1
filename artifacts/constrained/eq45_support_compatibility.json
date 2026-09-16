@@ -1,0 +1,45 @@
+{
+  "schema": "constrained_eq45_support_compatibility_v1",
+  "scope": "prospective_open_pr_48_defaults_against_current_cr001_physical_support",
+  "source_relation": "q - z^2*q^(2h) = 1 - t",
+  "derived_identity": "q*(1-eta^2)=1-t for eta=z/q^(1/2-h) on q>0 branch",
+  "profile_support": {
+    "X_cutoff": 4.0,
+    "eta_cutoff": 1.0,
+    "classification": "autonomous_design",
+    "source": "open PR #48; not integrated into packaged candidate"
+  },
+  "cr001_registered_contract": {
+    "physical_support": "r < 2 and abs(z) < 2",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "time_interval": [0.25, 0.75],
+    "h": 0.005
+  },
+  "audit": {
+    "X_cutoff": 4.0,
+    "eta_cutoff": 1.0,
+    "h": 0.005,
+    "time_interval": [0.25, 0.75],
+    "physical_radial_support": 2.0,
+    "physical_axial_support": 2.0,
+    "finite_physical_extent": false,
+    "q_max": null,
+    "radial_max": null,
+    "axial_max": null,
+    "eta_zero_radial_witness": 2.449489742783178,
+    "max_X_cutoff_at_eta_zero": 2.6666666666666665,
+    "similarity_support_alone_satisfies_physical_support": false,
+    "reasons": [
+      "eta_zero_radial_extent_exceeds_registered_support",
+      "eta_cutoff_reaches_or_crosses_unbounded_physical_branch_edge"
+    ],
+    "claim_scope": "eq45_similarity_to_physical_support_compatibility_only",
+    "velocity_export_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false
+  },
+  "physical_compact_support_inferred_from_similarity_cutoff": false,
+  "required_integration_action": "Before claiming CR001 physical support for the Eq. 4.5 candidate, add a governed physical-space taper/exterior connection or choose similarity cutoffs whose mapped support lies inside r<2, |z|<2 over the full time window.",
+  "truth_boundary": "Coordinate/support compatibility audit only. This does not modify velocity, validate PDE residuals, verify visual correspondence, or identify a paper-exact/OpenAI hidden field."
+}
