@@ -1,0 +1,43 @@
+{
+  "task_id": "CR003-DERIVATIVE-REFERENCE-001",
+  "owner": "Constrained Agent 1",
+  "status": "DONE",
+  "base_commit": "c6700851c0330c0c92938d25204d07fbabf588f4",
+  "implementation_commit": "d3ddbf2460ded553bac5293fe49c65126e5a82d9",
+  "pr_url": "https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/pull/3",
+  "scope": "Independent velocity derivative interface and finite-difference reference oracle; no production-candidate modification.",
+  "open_pr_collision_check": {
+    "pr_1": "production constrained candidate/optimizer/validation lane; intentionally not modified",
+    "pr_2": "basis-growth capacity experiment; intentionally not duplicated"
+  },
+  "commands_and_actual_results": [
+    {
+      "command": "python -m pytest -q -W error tests/test_constrained_derivatives.py",
+      "result": "3 passed in 0.06s",
+      "scope": "isolated local copy of the new module/test on the main baseline API surface"
+    },
+    {
+      "command": "python -W error -m py_compile src/openai_ns_reconstruction/constrained_derivatives.py tests/test_constrained_derivatives.py",
+      "result": "exit 0"
+    }
+  ],
+  "checks": {
+    "manufactured_field": "divergence-free polynomial with exact spatial first/second and time derivatives",
+    "spatial_gradient": "matched analytic values",
+    "time_derivative": "matched analytic values",
+    "hessian": "selected mixed/diagonal entries matched; numerical Hessian exactly symmetrized",
+    "laplacian": "matched analytic value",
+    "divergence": "matched zero within stated test tolerance",
+    "shape_contract": "scalar and batched surfaces checked",
+    "invalid_inputs": "malformed shapes, NaN, bool/nonpositive steps, bad velocity shape and missing velocity method fail closed"
+  },
+  "remaining_limitations": [
+    "CR003 is not complete; PR #1 owns the production candidate implementation.",
+    "The new derivative oracle uses central finite differences and is a validation reference, not the final analytic/AD production derivative path.",
+    "The production candidate must later implement velocity_derivatives(points,time) and be compared against this oracle on interior held-out points.",
+    "Symmetric stencils require callers to stay away from spatial/chart/time boundaries.",
+    "No PDE residual acceptance, paper-exact reconstruction, or blow-up claim follows from these tests."
+  ],
+  "acceptance": "pending",
+  "merge_status": "open"
+}
