@@ -48,7 +48,7 @@ def _minimal_governance() -> dict:
 
 def test_repository_contract_has_no_silent_threshold_or_problem_drift():
     audit = audit_constraint_directory(REPO_ROOT / "configs")
-    assert audit.config_count == 9
+    assert audit.config_count == 10
     assert audit.acceptance_contract_pass
     assert audit.seed_separation_pass
     assert audit.protected_drift == ()
@@ -59,6 +59,7 @@ def test_repository_contract_has_no_silent_threshold_or_problem_drift():
     assert audit.duplicate_experiment_ids == {
         "tensor_correction_stage1": (
             "constraints_axial_swirl.json",
+            "constraints_inner_swirl.json",
             "constraints_localized_swirl.json",
             "constraints_quintic_swirl.json",
             "constraints_temporal_swirl.json",
