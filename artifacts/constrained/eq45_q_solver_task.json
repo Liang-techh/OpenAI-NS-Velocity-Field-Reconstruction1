@@ -1,0 +1,41 @@
+{
+  "task_id": "CR003-EQ45-Q-SOLVER-005",
+  "owner": "Constrained Agent 1",
+  "status": "DONE",
+  "base_commit": "c6700851c0330c0c92938d25204d07fbabf588f4",
+  "implementation_commit": "7a8770b7532a23472797af84fc6e244cd9cae061",
+  "scope": "Vectorized positive-root solver for q - z^2 q^(-2h) = 1-t in the monotone h>=0, t<1 regime; this is only the Eq. (4.5) coordinate backbone.",
+  "actual_local_checks": [
+    {
+      "command": "PYTHONPATH=/mnt/data/agent1_eq45_q/src python -m pytest -q -W error /mnt/data/agent1_eq45_q/tests/test_constrained_eq45_q.py",
+      "result": "3 passed in 0.05s"
+    },
+    {
+      "command": "python -W error -m py_compile constrained_eq45_q.py test_constrained_eq45_q.py",
+      "result": "exit 0"
+    }
+  ],
+  "numeric_calibration": {
+    "small_h": 0.005,
+    "grid_z": "121 points on [-3,3]",
+    "grid_t": [0.25, 0.5, 0.75],
+    "max_implicit_residual": 3.849365270980343e-12,
+    "max_loose_vs_default_q_difference": 4.334800962624286e-09,
+    "q_range": [0.25, 9.549192983601642],
+    "h_half_closed_form_max_q_error": 6.352696146905146e-13,
+    "h_half_max_implicit_residual": 1.1896039708858552e-12
+  },
+  "direct_contribution_to_velocity_delivery": "Provides the first production primitive needed to evaluate the Eq. (4.5) q/X/eta backbone before implementing v0(X,eta), F(X,eta), U(X,eta) and velocity(points,time).",
+  "remaining_limitations": [
+    "Does not implement X, eta or [u,v,w].",
+    "Does not choose or fit v0, F or U profiles.",
+    "Does not compare against the OpenAI visualization.",
+    "Does not validate Navier-Stokes residuals.",
+    "The implemented monotonicity contract is h>=0 and t<1; no claim is made outside that regime."
+  ],
+  "paper_exact": false,
+  "pde_validated": false,
+  "visualization_ready": false,
+  "acceptance": "pending",
+  "merge_status": "open"
+}
