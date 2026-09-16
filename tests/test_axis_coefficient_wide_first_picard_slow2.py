@@ -1,7 +1,7 @@
 from decimal import Decimal, localcontext
 from fractions import Fraction
 import math
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 import json
 from pathlib import Path
 from types import SimpleNamespace
@@ -540,9 +540,15 @@ def _injected_branch(
     def jet(_n: int, _m: int, eta: float):
         with localcontext() as ctx:
             ctx.prec = PRECISION
-            amplitude_log = +x1.remainder.axial.wide_pressure.amplitude.log_amplitude(eta)
+            amplitude_log_source = (
+                x1.remainder.axial.wide_pressure.amplitude.log_amplitude_source(eta)
+            )
             if amplitude_delta:
-                amplitude_log = +(amplitude_log + amplitude_delta)
+                amplitude_log_source = replace(
+                    amplitude_log_source,
+                    midpoint=+(amplitude_log_source.midpoint + amplitude_delta),
+                )
+            amplitude_log = +amplitude_log_source.midpoint
         values = {
             name: _fraction_decimal(value)
             for name, value in zip(FIELDS, row)
@@ -551,6 +557,7 @@ def _injected_branch(
             **values,
             Lambda=x1.Lambda,
             amplitude_log=amplitude_log,
+            amplitude_log_source=amplitude_log_source,
         )
 
     return SimpleNamespace(
