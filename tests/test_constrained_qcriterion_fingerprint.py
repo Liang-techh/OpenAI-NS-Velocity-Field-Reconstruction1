@@ -69,7 +69,7 @@ def test_localized_swirl_resolution_audit_and_fail_closed_inputs():
         out = np.empty_like(points, dtype=float)
         out[..., 0] = -y * a
         out[..., 1] = x * a
-        out[..., 2] = 0.2 * z * a
+        out[..., 2] = 0.0
         return out
 
     audit = audit_qcriterion_resolution(
