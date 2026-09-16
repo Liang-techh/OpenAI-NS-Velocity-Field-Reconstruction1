@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "task_id": "NS001",
+  "artifact_id": "outgoing-decay-hold-enclosure",
+  "status": "formal-structure",
+  "base_branch": "codex/stage1-complete-slow2",
+  "source": {
+    "repository": "openai/NavierStokesAndEuler",
+    "commit": "f9e8bc5b38b6e212696e8a30e3e91517af887bbd",
+    "module": "NavierStokes/OutgoingTail.lean",
+    "symbols": [
+      "NavierStokes.OutgoingTail.releaseLag_gt_tailDebt",
+      "NavierStokes.OutgoingTail.decayHold",
+      "NavierStokes.OutgoingTail.decayHold_pos",
+      "NavierStokes.OutgoingTail.decayHold_hits_target"
+    ]
+  },
+  "runtime_artifacts": [
+    "src/openai_ns_reconstruction/outgoing_decay_hold_enclosure.py",
+    "tests/test_outgoing_decay_hold_enclosure.py",
+    "references/OUTGOING_DECAY_HOLD_ENCLOSURE_PROVENANCE.md"
+  ],
+  "inputs": [
+    "validated actual-source releaseLag(rampEnd) enclosure",
+    "validated actual-source tailDebt enclosure",
+    "exact binary-rational h and lambda identity from one TailData"
+  ],
+  "verified_behavior": [
+    "strict certified lag.lower > debt.upper > 0 gate",
+    "monotone ratio and exact-rational logarithm propagation",
+    "final-width-driven unequal source tolerance allocation",
+    "adaptive refinement with explicit finite caps",
+    "cross-wired source-parameter rejection"
+  ],
+  "not_verified": [
+    "transition geometry or tailStart/tailEnd",
+    "clockWeight or SchedulePressure integration",
+    "global AxisCoefficientSpace norm",
+    "paper-exact leading velocity",
+    "full reconstruction"
+  ],
+  "truth_flags": {
+    "paper_exact": false,
+    "paper_exact_velocity_available": false,
+    "global_axis_norm_certified": false,
+    "full_reconstruction": false
+  }
+}

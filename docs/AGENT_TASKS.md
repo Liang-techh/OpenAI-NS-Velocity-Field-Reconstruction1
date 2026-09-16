@@ -25,7 +25,7 @@
 
 | ID | 任务 | 依赖 | 状态 | Owner | 验收 | PR / 合并状态 |
 | --- | --- | --- | --- | --- | --- | --- |
-| NS001 | decayHold 严格区间 | 已有 lag/debt | TODO | — | pending | — / unsubmitted |
+| NS001 | decayHold 严格区间 | 已有 lag/debt | DONE | Agent 1 | pending | #369 / open |
 | NS002 | 实际过渡几何与尾部位置 | NS001 | TODO | — | pending | — / unsubmitted |
 | NS003 | 公共有理区间运算与精度预算 | 无 | TODO | — | pending | — / unsubmitted |
 | NS004 | 释放前 clockWeight 区间 | NS002,NS003 | TODO | — | pending | — / unsubmitted |
@@ -303,6 +303,38 @@ mathematical_source_and_assumptions:
 commands_and_actual_results:
 remaining_limitations:
 next_unblocked_tasks:
+```
+
+### NS001 completion — Agent 1
+
+```text
+task_id: NS001
+status: DONE
+owner: Agent 1
+base_commit: 77ed17c1e81b7abce99fa4c7ffc5b3d96ba389d0
+implementation_commit: 42469c045f7c95710d85f17f5b5a49cdc7840295
+pr_url: https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction/pull/369
+merge_status: open
+acceptance: pending
+changed_files:
+- src/openai_ns_reconstruction/outgoing_decay_hold_enclosure.py
+- tests/test_outgoing_decay_hold_enclosure.py
+- references/OUTGOING_DECAY_HOLD_ENCLOSURE_PROVENANCE.md
+- references/provenance_manifest_addendum_outgoing_decay_hold_enclosure.json
+- docs/AGENT_TASKS.md
+implemented_behavior: Strict exact-rational decayHold enclosure from one actual TailData; certifies lag.lower > debt.upper > 0, propagates log(releaseLag/tailDebt)/(1-h), allocates unequal lag/debt/log tolerances from the requested final hold width, refines fail-closed under explicit caps, and rejects cross-wired source metadata.
+mathematical_source_and_assumptions: openai/NavierStokesAndEuler@f9e8bc5b38b6e212696e8a30e3e91517af887bbd, NavierStokes/OutgoingTail.lean symbols releaseLag_gt_tailDebt, decayHold, decayHold_pos, decayHold_hits_target. The runtime S=32 outgoing-step witness is theorem-admissible but is not claimed definitionally equal to Lean's opaque Classical.choose value, so paper_exact remains false.
+commands_and_actual_results:
+- GitHub Actions run 35050254167, Python 3.13 / NumPy 2.5.3, `python -m pytest -q -W error`: 2 failed, 1995 passed in 2708.56s. Both failures are the known stale `AmplitudeLogSource` injected-fixture tests in tests/test_axis_coefficient_wide_first_picard_slow2.py owned by NS021 / PR #373; no NS001 test failed.
+- GitHub Actions run 35050254167, Python 3.10 / NumPy 1.26.4, `python -m pytest -q -W error`: 2 failed, 1995 passed in 3388.48s. Same two unrelated stale-fixture failures; no NS001 test failed.
+- GitHub Actions run 35050254167: slice-velocity, slice-forcing, slice-provenance, slice-coordinates all succeeded.
+- `python -m pytest -q tests/test_outgoing_decay_hold_enclosure.py tests/test_outgoing_release_lag_enclosure.py tests/test_outgoing_tail_debt_enclosure.py -W error`: not run as a separate final-head command; these tests were included in both full suites and no failure from them appeared.
+- wheel/outside-checkout/diagnostic steps: skipped because each full pytest job exited nonzero on the unrelated NS021 fixture failures.
+- `ns-reconstruct demo --output artifacts`: not run as a standalone NS001 command.
+- `ns-reconstruct audit --require-paper-exact`: not run as a standalone NS001 command.
+- Lean build: not run.
+remaining_limitations: NS001 certifies only the scalar decayHold enclosure. It does not certify NS002 transition geometry, clockWeight, full-real-line pressure integration/jets, zStar, the global fixed point, paper-exact velocity, or full reconstruction. Repository-wide full CI remains red only on the separately owned NS021 stale fixture repair at this exact implementation head.
+next_unblocked_tasks: NS002 is the next mathematical dependency after NS001 delivery, but it must be rechecked against current claims/open PRs before a new owner claims it. NS001 coordinator acceptance remains pending.
 ```
 
 协调者验收时追加 `accepted/rejected + reviewed_commit + evidence + remaining_conditions`。
