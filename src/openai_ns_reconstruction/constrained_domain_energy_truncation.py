@@ -22,13 +22,19 @@ VelocityFn = Callable[[np.ndarray, float], np.ndarray]
 
 
 def _validate_levels(name: str, values: Iterable[float], *, integer: bool) -> tuple:
-    result = tuple(int(v) if integer else float(v) for v in values)
-    if len(result) < 3:
+    raw = tuple(values)
+    if len(raw) < 3:
         raise ValueError(f"{name} must contain at least three levels")
     if integer:
-        if any(v < 2 for v in result):
-            raise ValueError(f"{name} entries must be integers >= 2")
+        numeric = tuple(float(v) for v in raw)
+        if any(
+            (not np.isfinite(v)) or v < 2.0 or v != float(int(v))
+            for v in numeric
+        ):
+            raise ValueError(f"{name} entries must be finite integers >= 2")
+        result = tuple(int(v) for v in numeric)
     else:
+        result = tuple(float(v) for v in raw)
         if any((not np.isfinite(v)) or v <= 0.0 for v in result):
             raise ValueError(f"{name} entries must be positive and finite")
     if any(a >= b for a, b in zip(result, result[1:])):
