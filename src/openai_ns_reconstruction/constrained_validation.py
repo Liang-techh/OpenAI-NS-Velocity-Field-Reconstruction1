@@ -84,7 +84,10 @@ if __name__ == '__main__':
     args=parser.parse_args()
     cfg=json.loads(Path(args.config).read_text())
     family=json.loads(Path(args.candidate).read_text())['family']
-    if family == 'quintic_swirl_v1':
+    if family == 'inner_swirl_v1':
+        from .constrained_inner_swirl import InnerSwirlCandidate
+        c=InnerSwirlCandidate.load(args.candidate)
+    elif family == 'quintic_swirl_v1':
         from .constrained_quintic_swirl import QuinticSwirlCandidate
         c=QuinticSwirlCandidate.load(args.candidate)
     elif family == 'axial_swirl_v1':

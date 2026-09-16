@@ -13,6 +13,8 @@ These are saved development comparisons, not final acceptance. The validation se
 | continued_pressure | 1.942965 | pass | [validation.json](../artifacts/constrained/continued_pressure/validation.json) |
 | decoupled_v3 | 4.036601 | not recorded in this artifact | [validation.json](../artifacts/constrained/decoupled_v3/validation.json) |
 | initial_tangent | 7.588542 | fail | [validation.json](../artifacts/constrained/initial_tangent/validation.json) |
+| inner_swirl | 1.264630 | pass | [validation.json](../artifacts/constrained/inner_swirl/validation.json) |
+| inner_swirl_pressure | 1.244173 | pass | [validation.json](../artifacts/constrained/inner_swirl_pressure/validation.json) |
 | localized_swirl | 1.356226 | pass | [validation.json](../artifacts/constrained/localized_swirl/validation.json) |
 | localized_swirl_fourth | 1.391276 | pass | [validation.json](../artifacts/constrained/localized_swirl_fourth/validation.json) |
 | optimized | 5.355252 | not recorded in this artifact | [validation.json](../artifacts/constrained/optimized/validation.json) |

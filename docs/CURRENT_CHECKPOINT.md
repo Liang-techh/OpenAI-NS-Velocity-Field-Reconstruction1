@@ -55,3 +55,5 @@
 - Working reference axial_swirl_grid48 controls known missed grid peak better(1.29827 vs1.62313); random maximum1.29013 is slightly worse than axial_swirl_analytic1.28544. Structural probes pass. Analytic coefficient Jacobian avoids finite-difference parameter calls. Next representation change needed; no acceptance.
 
 - Selected quintic_swirl maximum1.26452, structure sampled pass. Found immutable residual around1.15 inside r<.354 because all current corrections vanish there. Next representation must reach that annulus while preserving core probes r<=.0866. See docs/QUINTIC_AND_FROZEN_COLLAR.md.
+
+- Current reference inner_swirl_pressure maximum1.24417, structure sampled pass. Inner annulus unlocked; remaining strong axial/radial residual needs pressure/poloidal changes. Added moment has a measured quadrature defect2.82e-5, recorded honestly. See docs/INNER_SWIRL_AND_PRESSURE.md.

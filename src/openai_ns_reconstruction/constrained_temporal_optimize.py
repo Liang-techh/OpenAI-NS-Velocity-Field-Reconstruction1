@@ -10,7 +10,7 @@ from .constrained_optimize import training_residual
 from .constrained_temporal_cache import cached_residual, cached_energy
 
 
-def run(initial='artifacts/constrained/continued_pressure/candidate.json', output='artifacts/constrained/temporal_swirl', call_budget=500, tail_adaptive=False, localized=False, fourth_power=False, axial=False, dense_cylindrical=False, analytic_jacobian=False, coefficient_initial=None, grid_resolution=24, quintic=False, azimuthal_only=False):
+def run(initial='artifacts/constrained/continued_pressure/candidate.json', output='artifacts/constrained/temporal_swirl', call_budget=500, tail_adaptive=False, localized=False, fourth_power=False, axial=False, dense_cylindrical=False, analytic_jacobian=False, coefficient_initial=None, grid_resolution=24, quintic=False, azimuthal_only=False, inner=False):
     parent=AngularMomentumCandidate.load(initial)
     cls=TemporalSwirlCandidate
     if localized:
@@ -24,6 +24,10 @@ def run(initial='artifacts/constrained/continued_pressure/candidate.json', outpu
         from .constrained_quintic_swirl import QuinticSwirlCandidate, elevate_cubic
         from .constrained_axial_swirl import AxialSwirlCandidate
         cls=QuinticSwirlCandidate
+    if inner:
+        from .constrained_inner_swirl import InnerSwirlCandidate
+        from .constrained_quintic_swirl import QuinticSwirlCandidate
+        cls=InnerSwirlCandidate
     count=cls.COEFFICIENT_COUNT
     rng=np.random.default_rng(20260916)
     x=rng.uniform(-2,2,(2048,3));t=rng.uniform(.252,.748,len(x))
@@ -49,10 +53,12 @@ def run(initial='artifacts/constrained/continued_pressure/candidate.json', outpu
     start=np.full(count,2.)
     if coefficient_initial:
         family=json.loads(Path(coefficient_initial).read_text())["family"]
-        previous=AxialSwirlCandidate.load(coefficient_initial) if quintic and family=="axial_swirl_v1" else cls.load(coefficient_initial)
+        if inner and family=="quintic_swirl_v1":previous=QuinticSwirlCandidate.load(coefficient_initial)
+        else:previous=AxialSwirlCandidate.load(coefficient_initial) if quintic and family=="axial_swirl_v1" else cls.load(coefficient_initial)
         from .constrained_temporal_swirl import _parent_payload
         if _parent_payload(previous.parent)!=_parent_payload(parent):raise ValueError("warm start parent mismatch")
-        start+=np.asarray(elevate_cubic(previous.coefficients) if quintic and len(previous.coefficients)==36 else previous.coefficients)
+        if inner and len(previous.coefficients)==60:start[:60]+=np.asarray(previous.coefficients)
+        else:start+=np.asarray(elevate_cubic(previous.coefficients) if quintic and len(previous.coefficients)==36 else previous.coefficients)
     elif axial:
         previous=LocalizedSwirlCandidate.load('artifacts/constrained/localized_swirl/candidate.json')
         from .constrained_temporal_swirl import _parent_payload
@@ -96,9 +102,9 @@ def run(initial='artifacts/constrained/continued_pressure/candidate.json', outpu
     result=cls(parent,best['coefficients'])
     out=Path(output);out.mkdir(parents=True,exist_ok=True);result.save(out/'candidate.json')
     report={'status':'training_only_not_validated','initial_artifact':initial,'force':asdict(parent.force),
-        'azimuthal_only':azimuthal_only,'quintic':quintic,'grid_resolution':grid_resolution if dense_cylindrical else None,'analytic_parameter_jacobian':analytic_jacobian,'dense_cylindrical':dense_cylindrical,'coefficient_initial_artifact':coefficient_initial or ('artifacts/constrained/localized_swirl/candidate.json' if axial else None),'axial':axial,'localized':localized,'fourth_power':fourth_power,'tail_adaptive':tail_adaptive,'adaptive_seed':20261017 if tail_adaptive else None,'calls':calls,'call_budget':call_budget,'termination':str(reason),'seed':20260916,
+        'inner':inner,'azimuthal_only':azimuthal_only,'quintic':quintic,'grid_resolution':grid_resolution if dense_cylindrical else None,'analytic_parameter_jacobian':analytic_jacobian,'dense_cylindrical':dense_cylindrical,'coefficient_initial_artifact':coefficient_initial or ('artifacts/constrained/localized_swirl/candidate.json' if axial else None),'axial':axial,'localized':localized,'fourth_power':fourth_power,'tail_adaptive':tail_adaptive,'adaptive_seed':20261017 if tail_adaptive else None,'calls':calls,'call_budget':call_budget,'termination':str(reason),'seed':20260916,
         'cache_direct_max_discrepancy':cache_error,'training_points':len(x),'training_loss':best['loss'],'history':history,
-        'coefficient_bounds':[-1,1],'basis':('twelve axial zero-moment rings' if (axial or quintic) else 'six localized zero-moment rings' if localized else 'five zero-moment polynomial modes')+(' times five quintic Bernstein modes' if quintic else ' times three cubic Bernstein temporal modes'),
+        'coefficient_bounds':[-1,1],'basis':('eighteen outer/inner zero-moment rings' if inner else 'twelve axial zero-moment rings' if (axial or quintic) else 'six localized zero-moment rings' if localized else 'five zero-moment polynomial modes')+(' times five quintic Bernstein modes' if (quintic or inner) else ' times three cubic Bernstein temporal modes'),
         'initial_velocity_max_change':float(np.max(np.abs(result.velocity(x,.25)-parent.velocity(x,.25))))}
     (out/'training.json').write_text(json.dumps(report,indent=2)+'\n');print(report)
 
