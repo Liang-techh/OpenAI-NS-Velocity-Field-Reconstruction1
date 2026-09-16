@@ -8,7 +8,8 @@
   "full_blowup_proof_required": false,
   "active_task_file": "docs/AGENT_TASKS.md",
   "legacy_artifacts_are_candidate_evidence": false,
-  "candidate_artifact": "artifacts/constrained/axial_swirl_dense/candidate.json",
+  "candidate_artifact": "artifacts/constrained/axial_swirl_grid48/candidate.json",
   "active_delivery": "https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/pull/1",
-  "optimization": "nested_axial_rings_dense_collocation_fourth_power_not_accepted"
+  "optimization": "analytic_parameter_jacobian_grid48_collocation_not_accepted",
+  "lower_random_max_comparison": "artifacts/constrained/axial_swirl_analytic/candidate.json"
 }

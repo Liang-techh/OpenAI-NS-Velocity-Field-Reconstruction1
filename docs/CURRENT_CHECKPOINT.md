@@ -51,3 +51,5 @@
 - New selected development reference localized_swirl: maximum1.35623, refined1.35345, structure sampled pass. About30% improvement over1.94296, still far above.001. Grid diagnostic reveals an axial collar peak near(r,z)=(.395,.889). Results and next direction in docs/LOCALIZED_SWIRL_EXPERIMENT.md.
 
 - Latest reference axial_swirl_dense: sampled maximum1.28545, structure sampled pass. Added axial rings and denser collocation coverage; sparse fourth-power overfit preserved as failed comparison. 500-call cap is not convergence.
+
+- Working reference axial_swirl_grid48 controls known missed grid peak better(1.29827 vs1.62313); random maximum1.29013 is slightly worse than axial_swirl_analytic1.28544. Structural probes pass. Analytic coefficient Jacobian avoids finite-difference parameter calls. Next representation change needed; no acceptance.

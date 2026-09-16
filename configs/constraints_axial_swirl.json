@@ -376,5 +376,14 @@
       "loss": "fourth power",
       "reason": "sparse uniform fit worsened independent maximum; cover narrow ring collars"
     }
+  },
+  "analytic_continuation": {
+    "parameter_jacobian": "exact derivative of cached training finite-difference residual and energy quadrature",
+    "initial": "artifacts/constrained/axial_swirl_dense/candidate.json",
+    "grid_comparison": [
+      24,
+      48
+    ],
+    "held_fixed": "36 coefficient bounds, temporal grid, pressure, force, initial/core constraints, acceptance metrics"
   }
 }
