@@ -8,6 +8,8 @@ These are saved development comparisons, not final acceptance. The validation se
 | continued_pressure | 1.942965 | pass | [validation.json](../artifacts/constrained/continued_pressure/validation.json) |
 | decoupled_v3 | 4.036601 | not recorded in this artifact | [validation.json](../artifacts/constrained/decoupled_v3/validation.json) |
 | initial_tangent | 7.588542 | fail | [validation.json](../artifacts/constrained/initial_tangent/validation.json) |
+| localized_swirl | 1.356226 | pass | [validation.json](../artifacts/constrained/localized_swirl/validation.json) |
+| localized_swirl_fourth | 1.391276 | pass | [validation.json](../artifacts/constrained/localized_swirl_fourth/validation.json) |
 | optimized | 5.355252 | not recorded in this artifact | [validation.json](../artifacts/constrained/optimized/validation.json) |
 | optimized_v2 | 5.842563 | not recorded in this artifact | [validation.json](../artifacts/constrained/optimized_v2/validation.json) |
 | optimized_v3 | 4.115165 | not recorded in this artifact | [validation.json](../artifacts/constrained/optimized_v3/validation.json) |
@@ -16,6 +18,7 @@ These are saved development comparisons, not final acceptance. The validation se
 | outer_pressure | 2.508246 | pass | [validation.json](../artifacts/constrained/outer_pressure/validation.json) |
 | outer_shape | 2.491094 | pass | [validation.json](../artifacts/constrained/outer_shape/validation.json) |
 | temporal_swirl | 1.956548 | pass | [validation.json](../artifacts/constrained/temporal_swirl/validation.json) |
+| temporal_swirl_fourth | 2.034117 | pass | [validation.json](../artifacts/constrained/temporal_swirl_fourth/validation.json) |
 | temporal_swirl_tail | 2.447841 | pass | [validation.json](../artifacts/constrained/temporal_swirl_tail/validation.json) |
 | tensor_feasible | 2.664848 | pass | [validation.json](../artifacts/constrained/tensor_feasible/validation.json) |
 | tensor_stage1 | 2.464107 | not recorded in this artifact | [validation.json](../artifacts/constrained/tensor_stage1/validation.json) |

@@ -187,3 +187,5 @@ CR005/CR006: generalized pressure fitting to accept a warm-start artifact and ou
 CR003/CR005 next: localized temporal swirl corrections; dominant azimuthal residual diagnosis and torque-wrapper prerequisite recorded in reports/LATEST_RESIDUAL_DIAGNOSIS.md. Not yet implemented.
 
 CR003/CR005 temporal swirl implementation delivered (15 bounded coefficients, zero-moment numerical construction, initial/core preserved). CR006 comparisons recorded in docs/TEMPORAL_SWIRL_EXPERIMENT.md: uniform max1.95655, tail-adaptive2.44784, both structure-sampled pass and PDE fail. Do not promote these candidates over continued_pressure. Next localized spatial/azimuthal-evolution work remains OPEN.
+
+CR003/CR005 localized swirl delivered:18 bounded coefficients, reuse outer basis/quadrature/temporal helpers and residual cache. Three controlled fits completed. Selected localized_swirl independent sampled max1.35623 (refined1.35345), structural probes pass; PDE still fails. CR006 refinement evidence saved. Next axial-shifted localization/evolution remains OPEN; see docs/LOCALIZED_SWIRL_EXPERIMENT.md.

@@ -84,7 +84,10 @@ if __name__ == '__main__':
     args=parser.parse_args()
     cfg=json.loads(Path(args.config).read_text())
     family=json.loads(Path(args.candidate).read_text())['family']
-    if family == 'temporal_swirl_v1':
+    if family == 'localized_swirl_v1':
+        from .constrained_localized_swirl import LocalizedSwirlCandidate
+        c=LocalizedSwirlCandidate.load(args.candidate)
+    elif family == 'temporal_swirl_v1':
         from .constrained_temporal_swirl import TemporalSwirlCandidate
         c=TemporalSwirlCandidate.load(args.candidate)
     elif family == 'angular_momentum_outer_v1':
