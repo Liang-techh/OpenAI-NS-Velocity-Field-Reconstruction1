@@ -88,4 +88,4 @@ merge_status: open
 - Artifacts: `configs/constraints.json`, `docs/CONSTRAINT_SOURCES.md`.
 - Actual checks: Python JSON parsing and assertions for positive viscosity/thresholds, finite time window, separate seeds and restricted force mode passed; `git diff --check` passed.
 - Optimization and candidate validation: not run. Feasibility remains unresolved.
-- acceptance: pending; merge_status: unmerged. Commit/PR recorded by branch delivery.
+- acceptance: pending; merge_status: unmerged. Implementation commit: `eecbfd0`; PR: https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/pull/1 (follow-up commits on the same branch).
