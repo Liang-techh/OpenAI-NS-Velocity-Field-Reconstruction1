@@ -29,15 +29,27 @@ DEFAULT_CUTOFF_POWER = 5
 
 @dataclass(frozen=True)
 class Eq45ProfileJets:
-    """Vectorized profile values required by the downstream Phi/F adapter."""
+    """Vectorized Phi/F values and jets required by the downstream adapter."""
 
     phi: np.ndarray
     phi_x: np.ndarray
     phi_eta: np.ndarray
+    phi_xx: np.ndarray
+    phi_xeta: np.ndarray
     swirl: np.ndarray
 
     def stacked(self) -> np.ndarray:
-        return np.stack((self.phi, self.phi_x, self.phi_eta, self.swirl), axis=-1)
+        return np.stack(
+            (
+                self.phi,
+                self.phi_x,
+                self.phi_eta,
+                self.phi_xx,
+                self.phi_xeta,
+                self.swirl,
+            ),
+            axis=-1,
+        )
 
 
 @dataclass(frozen=True)
@@ -54,7 +66,8 @@ class Eq45CompactProfileBasis:
         (1 - X/x_cut)^p_+  and  (1 - (eta/eta_cut)^2)^p_+,
 
     with ``p >= 5`` by default. There is no division by ``X``; therefore finite
-    coefficients give finite profile values and first derivatives on the axis.
+    coefficients give finite profile values and the Phi jets needed by the
+    divergence-preserving streamfunction adapter on the symmetry axis.
     """
 
     radial_degree: int
@@ -132,7 +145,7 @@ class Eq45CompactProfileBasis:
 
     def _envelopes(
         self, x: np.ndarray, eta: np.ndarray
-    ) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+    ) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
         sx = x / self.x_cut
         se = eta / self.eta_cut
 
@@ -151,16 +164,22 @@ class Eq45CompactProfileBasis:
             * one_minus_x ** (self.cutoff_power - 1),
             0.0,
         )
+        d2bx = np.where(
+            inside_x,
+            (self.cutoff_power * (self.cutoff_power - 1) / self.x_cut**2)
+            * one_minus_x ** (self.cutoff_power - 2),
+            0.0,
+        )
         dbe = np.where(
             inside_eta,
             -(2.0 * self.cutoff_power * eta / (self.eta_cut**2))
             * one_minus_eta2 ** (self.cutoff_power - 1),
             0.0,
         )
-        return bx, dbx, be, dbe
+        return bx, dbx, d2bx, be, dbe
 
     def evaluate(self, x, eta) -> Eq45ProfileJets:
-        """Evaluate ``Phi, Phi_X, Phi_eta, F`` on broadcast-compatible arrays."""
+        """Evaluate ``Phi`` jets and ``F`` on broadcast-compatible arrays."""
         x_arr = np.asarray(x, dtype=float)
         eta_arr = np.asarray(eta, dtype=float)
         try:
@@ -173,49 +192,65 @@ class Eq45CompactProfileBasis:
         if np.any(x_arr < 0.0):
             raise ValueError("X must be nonnegative")
 
-        bx, dbx, be, dbe = self._envelopes(x_arr, eta_arr)
+        bx, dbx, d2bx, be, dbe = self._envelopes(x_arr, eta_arr)
         sx = x_arr / self.x_cut
         se = eta_arr / self.eta_cut
 
         phi = np.zeros_like(x_arr, dtype=float)
         phi_x = np.zeros_like(x_arr, dtype=float)
         phi_eta = np.zeros_like(x_arr, dtype=float)
+        phi_xx = np.zeros_like(x_arr, dtype=float)
+        phi_xeta = np.zeros_like(x_arr, dtype=float)
         swirl = np.zeros_like(x_arr, dtype=float)
 
         for index, (i, j) in enumerate(self.mode_indices):
             sx_i = sx**i
             se_j = se**j
-            core = sx_i * se_j
 
             if i == 0:
-                dcore_x = np.zeros_like(x_arr, dtype=float)
+                mono_x = np.zeros_like(x_arr, dtype=float)
             else:
-                dcore_x = (i / self.x_cut) * sx ** (i - 1) * se_j
+                mono_x = (i / self.x_cut) * sx ** (i - 1)
+            if i <= 1:
+                mono_xx = np.zeros_like(x_arr, dtype=float)
+            else:
+                mono_xx = (i * (i - 1) / self.x_cut**2) * sx ** (i - 2)
 
             if j == 0:
-                dcore_eta = np.zeros_like(x_arr, dtype=float)
+                mono_eta = np.zeros_like(x_arr, dtype=float)
             else:
-                dcore_eta = (j / self.eta_cut) * sx_i * se ** (j - 1)
+                mono_eta = (j / self.eta_cut) * se ** (j - 1)
 
-            basis = bx * be * core
-            basis_x = be * (dbx * core + bx * dcore_x)
-            basis_eta = bx * (dbe * core + be * dcore_eta)
+            x_part = bx * sx_i
+            x_part_x = dbx * sx_i + bx * mono_x
+            x_part_xx = d2bx * sx_i + 2.0 * dbx * mono_x + bx * mono_xx
+
+            eta_part = be * se_j
+            eta_part_eta = dbe * se_j + be * mono_eta
+
+            basis = x_part * eta_part
+            basis_x = x_part_x * eta_part
+            basis_eta = x_part * eta_part_eta
+            basis_xx = x_part_xx * eta_part
+            basis_xeta = x_part_x * eta_part_eta
 
             phi += self.phi_coefficients[index] * basis
             phi_x += self.phi_coefficients[index] * basis_x
             phi_eta += self.phi_coefficients[index] * basis_eta
+            phi_xx += self.phi_coefficients[index] * basis_xx
+            phi_xeta += self.phi_coefficients[index] * basis_xeta
             swirl += self.swirl_coefficients[index] * basis
 
-        if not all(
-            np.all(np.isfinite(value))
-            for value in (phi, phi_x, phi_eta, swirl)
-        ):
+        values = (phi, phi_x, phi_eta, phi_xx, phi_xeta, swirl)
+        if not all(np.all(np.isfinite(value)) for value in values):
             raise ValueError("profile evaluation produced non-finite values")
 
         return Eq45ProfileJets(
             phi=phi,
             phi_x=phi_x,
             phi_eta=phi_eta,
+            phi_xx=phi_xx,
+            phi_xeta=phi_xeta,
             swirl=swirl,
         )
 
