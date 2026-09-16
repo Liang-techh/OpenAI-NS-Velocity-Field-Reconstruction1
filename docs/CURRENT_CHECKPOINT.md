@@ -59,3 +59,5 @@
 - Current reference inner_swirl_pressure maximum1.24417, structure sampled pass. Inner annulus unlocked; remaining strong axial/radial residual needs pressure/poloidal changes. Added moment has a measured quadrature defect2.82e-5, recorded honestly. See docs/INNER_SWIRL_AND_PRESSURE.md.
 
 - Current local_pressure max1.24361, structural probes pass. Closed-loop residual circulation estimates a pressure-independent floor.357 for fixed velocity/force; further pressure-only fitting cannot plausibly attain.001. Next: bounded divergence-free poloidal corrections with joint pressure fitting.
+
+- Working reference poloidal_anchor: standard momentum max1.00634, refined.95665. Core/energy pass; divergence max standard.00364, finest.000004316. All momentum acceptance remains failed. Joint poloidal/pressure updates reduce the pressure-independent circulation defect; next couple swirl as well.

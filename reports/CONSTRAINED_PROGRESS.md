@@ -2,7 +2,7 @@
 
 These are saved development comparisons, not final acceptance. The validation seed has informed model selection; a fresh frozen-candidate audit remains required.
 
-| Experiment | Sampled max momentum residual | Sampled structure | Evidence |
+| Experiment | Sampled max momentum residual | Core/energy probes | Evidence |
 | --- | ---: | --- | --- |
 | adaptive_v4 | 2.738863 | not recorded in this artifact | [validation.json](../artifacts/constrained/adaptive_v4/validation.json) |
 | axial_swirl | 1.349962 | pass | [validation.json](../artifacts/constrained/axial_swirl/validation.json) |
@@ -25,6 +25,8 @@ These are saved development comparisons, not final acceptance. The validation se
 | outer_momentum | 2.596683 | pass | [validation.json](../artifacts/constrained/outer_momentum/validation.json) |
 | outer_pressure | 2.508246 | pass | [validation.json](../artifacts/constrained/outer_pressure/validation.json) |
 | outer_shape | 2.491094 | pass | [validation.json](../artifacts/constrained/outer_shape/validation.json) |
+| poloidal_anchor | 1.006337 | pass | [validation.json](../artifacts/constrained/poloidal_anchor/validation.json) |
+| poloidal_joint | 1.312936 | pass | [validation.json](../artifacts/constrained/poloidal_joint/validation.json) |
 | quintic_swirl | 1.264522 | pass | [validation.json](../artifacts/constrained/quintic_swirl/validation.json) |
 | quintic_swirl_scalar | 1.269478 | pass | [validation.json](../artifacts/constrained/quintic_swirl_scalar/validation.json) |
 | quintic_swirl_scalar_fourth | 1.272871 | pass | [validation.json](../artifacts/constrained/quintic_swirl_scalar_fourth/validation.json) |
@@ -41,7 +43,7 @@ These are saved development comparisons, not final acceptance. The validation se
 ## Acceptance still missing
 
 - Momentum residual thresholds remain 0.001. None of these development runs meets them.
-- Sampled structure checks do not prove uniform-in-space/time constraints.
+- Core/energy probes checks do not prove uniform-in-space/time constraints.
 - Global torque closure is not local momentum closure.
 - Five symbolic ansatz checks have documented assumptions; time-dependent extensions must not inherit fixed-profile scaling claims.
 - Final fresh-sample audit, current-candidate convergence/sensitivity and clean-environment reproduction remain pending.

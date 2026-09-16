@@ -2,14 +2,14 @@
   "objective": "constrained_independent_reconstruction",
   "migration": "complete",
   "candidate_status": "candidate",
-  "independent_validation": "sampled_structure_pass_pde_fail",
+  "independent_validation": "core_energy_pass_momentum_fail_standard_divergence_fail_refined_divergence_max_pass",
   "selected_structure_proofs": "v1-v3 identities verified; v4 full-profile scaling not claimed",
   "exact_paper_reproduction_required": false,
   "full_blowup_proof_required": false,
   "active_task_file": "docs/AGENT_TASKS.md",
   "legacy_artifacts_are_candidate_evidence": false,
-  "candidate_artifact": "artifacts/constrained/local_pressure/candidate.json",
+  "candidate_artifact": "artifacts/constrained/poloidal_anchor/candidate.json",
   "active_delivery": "https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/pull/1",
-  "optimization": "local_pressure_fit_pressure_independent_circulation_obstruction_identified",
-  "next_task": "joint bounded poloidal streamfunction and pressure optimization"
+  "optimization": "anchored_poloidal_and_pressure_joint_fit_not_accepted",
+  "next_task": "joint swirl/poloidal/pressure optimization with smooth core anchor"
 }

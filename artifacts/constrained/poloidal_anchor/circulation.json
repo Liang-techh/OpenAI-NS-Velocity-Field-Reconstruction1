@@ -1,0 +1,7 @@
+{
+  "scope": "same development loop, numerical not certified",
+  "step": 0.00125,
+  "quadrature_order": 96,
+  "circulation": 0.2552708002240337,
+  "estimated_lower_bound": 0.15954425014002105
+}

@@ -9,7 +9,7 @@ def run():
     files += [root/'initial_pde_validation.json']
     lines=['# Constrained reconstruction: development results','',
         'These are saved development comparisons, not final acceptance. The validation seed has informed model selection; a fresh frozen-candidate audit remains required.',
-        '', '| Experiment | Sampled max momentum residual | Sampled structure | Evidence |',
+        '', '| Experiment | Sampled max momentum residual | Core/energy probes | Evidence |',
         '| --- | ---: | --- | --- |']
     count=0
     for path in files:
@@ -26,7 +26,7 @@ def run():
         count+=1
     lines += ['', '## Acceptance still missing','',
         '- Momentum residual thresholds remain 0.001. None of these development runs meets them.',
-        '- Sampled structure checks do not prove uniform-in-space/time constraints.',
+        '- Core/energy probes checks do not prove uniform-in-space/time constraints.',
         '- Global torque closure is not local momentum closure.',
         '- Five symbolic ansatz checks have documented assumptions; time-dependent extensions must not inherit fixed-profile scaling claims.',
         '- Final fresh-sample audit, current-candidate convergence/sensitivity and clean-environment reproduction remain pending.',

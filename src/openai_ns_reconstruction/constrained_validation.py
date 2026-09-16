@@ -84,7 +84,10 @@ if __name__ == '__main__':
     args=parser.parse_args()
     cfg=json.loads(Path(args.config).read_text())
     family=json.loads(Path(args.candidate).read_text())['family']
-    if family == 'local_pressure_v1':
+    if family == 'poloidal_joint_v1':
+        from .constrained_poloidal import PoloidalCandidate
+        c=PoloidalCandidate.load(args.candidate)
+    elif family == 'local_pressure_v1':
         from .constrained_local_pressure import LocalPressureCandidate
         c=LocalPressureCandidate.load(args.candidate)
     elif family == 'inner_swirl_v1':

@@ -1,0 +1,20 @@
+{
+  "scope": "same development loop as prior candidate; numerical estimate not interval-certified",
+  "rows": [
+    {
+      "step": 0.005,
+      "circulation": 0.282225430587946,
+      "estimated_lower_bound": 0.17639089411746625
+    },
+    {
+      "step": 0.0025,
+      "circulation": 0.2803917357747986,
+      "estimated_lower_bound": 0.1752448348592491
+    },
+    {
+      "step": 0.00125,
+      "circulation": 0.27950276514952377,
+      "estimated_lower_bound": 0.17468922821845234
+    }
+  ]
+}
