@@ -10,15 +10,23 @@ from .constrained_optimize import training_residual
 from .constrained_temporal_cache import cached_residual
 
 
-def run(initial='artifacts/constrained/continued_pressure/candidate.json', output='artifacts/constrained/temporal_swirl', call_budget=500, tail_adaptive=False, localized=False, fourth_power=False):
+def run(initial='artifacts/constrained/continued_pressure/candidate.json', output='artifacts/constrained/temporal_swirl', call_budget=500, tail_adaptive=False, localized=False, fourth_power=False, axial=False, dense_cylindrical=False):
     parent=AngularMomentumCandidate.load(initial)
     cls=TemporalSwirlCandidate
     if localized:
         from .constrained_localized_swirl import LocalizedSwirlCandidate
         cls=LocalizedSwirlCandidate
-    count=18 if localized else 15
+    if axial:
+        from .constrained_axial_swirl import AxialSwirlCandidate
+        from .constrained_localized_swirl import LocalizedSwirlCandidate
+        cls=AxialSwirlCandidate
+    count=cls.COEFFICIENT_COUNT
     rng=np.random.default_rng(20260916)
     x=rng.uniform(-2,2,(2048,3));t=rng.uniform(.252,.748,len(x))
+    if dense_cylindrical:
+        rr,zz,tt=np.meshgrid(np.linspace(.03,1.97,24),np.linspace(0,1.97,24),np.linspace(.252,.748,9),indexing="ij")
+        extra=np.column_stack((rr.ravel(),np.zeros(rr.size),zz.ravel()))
+        x=np.vstack((x,extra));t=np.r_[t,tt.ravel()]
     if tail_adaptive:
         pool_rng=np.random.default_rng(20261017)
         pool=pool_rng.uniform(-2,2,(8192,3));pool_t=np.full(len(pool),.748)
@@ -31,6 +39,13 @@ def run(initial='artifacts/constrained/continued_pressure/candidate.json', outpu
     direct=training_residual(cls(parent,tuple(probe)),parent.force,x,t,.01)
     cache_error=float(np.max(np.abs(evaluate(probe)-direct)))
     if cache_error>1e-7:raise RuntimeError(f"residual cache discrepancy {cache_error}")
+    start=np.full(count,2.)
+    if axial:
+        previous=LocalizedSwirlCandidate.load('artifacts/constrained/localized_swirl/candidate.json')
+        from .constrained_temporal_swirl import _parent_payload
+        if _parent_payload(previous.parent)!=_parent_payload(parent):
+            raise ValueError('axial warm start parent differs from requested parent')
+        start[:18]+=np.asarray(previous.coefficients)
     calls=0;best={'loss':float('inf')};history=[]
     class Budget(Exception):pass
     def fun(v):
@@ -48,16 +63,16 @@ def run(initial='artifacts/constrained/continued_pressure/candidate.json', outpu
             best.update(loss=loss,coefficients=tuple(v-2));history.append({'call':calls,'loss':loss})
         return np.r_[r,100*violation]
     try:
-        fit=least_squares(fun,np.full(count,2.),bounds=(np.ones(count),np.full(count,3.)),diff_step=1e-4,max_nfev=50,ftol=1e-8)
+        fit=least_squares(fun,start,bounds=(np.ones(count),np.full(count,3.)),diff_step=1e-4,max_nfev=50,ftol=1e-8)
         reason=fit.message
     except Budget:reason=f'actual {call_budget}-call budget reached'
     if 'coefficients' not in best:raise RuntimeError('no energy-feasible candidate')
     result=cls(parent,best['coefficients'])
     out=Path(output);out.mkdir(parents=True,exist_ok=True);result.save(out/'candidate.json')
     report={'status':'training_only_not_validated','initial_artifact':initial,'force':asdict(parent.force),
-        'localized':localized,'fourth_power':fourth_power,'tail_adaptive':tail_adaptive,'adaptive_seed':20261017 if tail_adaptive else None,'calls':calls,'call_budget':call_budget,'termination':str(reason),'seed':20260916,
+        'dense_cylindrical':dense_cylindrical,'coefficient_initial_artifact':'artifacts/constrained/localized_swirl/candidate.json' if axial else None,'axial':axial,'localized':localized,'fourth_power':fourth_power,'tail_adaptive':tail_adaptive,'adaptive_seed':20261017 if tail_adaptive else None,'calls':calls,'call_budget':call_budget,'termination':str(reason),'seed':20260916,
         'cache_direct_max_discrepancy':cache_error,'training_points':len(x),'training_loss':best['loss'],'history':history,
-        'coefficient_bounds':[-1,1],'basis':('six localized zero-moment rings' if localized else 'five zero-moment polynomial modes')+' times three cubic Bernstein temporal modes',
+        'coefficient_bounds':[-1,1],'basis':('twelve axial zero-moment rings' if axial else 'six localized zero-moment rings' if localized else 'five zero-moment polynomial modes')+' times three cubic Bernstein temporal modes',
         'initial_velocity_max_change':float(np.max(np.abs(result.velocity(x,.25)-parent.velocity(x,.25))))}
     (out/'training.json').write_text(json.dumps(report,indent=2)+'\n');print(report)
 

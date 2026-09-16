@@ -1,0 +1,130 @@
+{
+  "status": "training_only_not_validated",
+  "initial_artifact": "artifacts/constrained/continued_pressure/candidate.json",
+  "force": {
+    "a": 9.546541832896667e-11,
+    "c": 0.12148700174414483
+  },
+  "axial": true,
+  "localized": false,
+  "fourth_power": false,
+  "tail_adaptive": false,
+  "adaptive_seed": null,
+  "calls": 222,
+  "call_budget": 500,
+  "termination": "`ftol` termination condition is satisfied.",
+  "seed": 20260916,
+  "cache_direct_max_discrepancy": 7.028655435448172e-12,
+  "training_points": 2048,
+  "training_loss": 0.05901402328256948,
+  "history": [
+    {
+      "call": 1,
+      "loss": 0.06195655181108535
+    },
+    {
+      "call": 25,
+      "loss": 0.061956524994034416
+    },
+    {
+      "call": 28,
+      "loss": 0.061955691921686776
+    },
+    {
+      "call": 31,
+      "loss": 0.06195555076077815
+    },
+    {
+      "call": 34,
+      "loss": 0.061953282192042325
+    },
+    {
+      "call": 37,
+      "loss": 0.06195266327289006
+    },
+    {
+      "call": 38,
+      "loss": 0.05926652714627811
+    },
+    {
+      "call": 39,
+      "loss": 0.05926652683044498
+    },
+    {
+      "call": 40,
+      "loss": 0.059266526695013005
+    },
+    {
+      "call": 42,
+      "loss": 0.05926652657905278
+    },
+    {
+      "call": 43,
+      "loss": 0.05926652497870194
+    },
+    {
+      "call": 57,
+      "loss": 0.059266518063687205
+    },
+    {
+      "call": 63,
+      "loss": 0.05926648567641788
+    },
+    {
+      "call": 70,
+      "loss": 0.05926643714065538
+    },
+    {
+      "call": 74,
+      "loss": 0.059266181379390825
+    },
+    {
+      "call": 75,
+      "loss": 0.05902140048849422
+    },
+    {
+      "call": 95,
+      "loss": 0.05902140026831443
+    },
+    {
+      "call": 96,
+      "loss": 0.05902139993947014
+    },
+    {
+      "call": 100,
+      "loss": 0.05902139260834233
+    },
+    {
+      "call": 107,
+      "loss": 0.05902139254585455
+    },
+    {
+      "call": 111,
+      "loss": 0.05902139129564032
+    },
+    {
+      "call": 112,
+      "loss": 0.05901404754876505
+    },
+    {
+      "call": 133,
+      "loss": 0.05901404754125375
+    },
+    {
+      "call": 149,
+      "loss": 0.05901402329779393
+    },
+    {
+      "call": 186,
+      "loss": 0.05901402328256948
+    }
+  ],
+  "coefficient_bounds": [
+    -1,
+    1
+  ],
+  "basis": "twelve axial zero-moment rings times three cubic Bernstein temporal modes",
+  "initial_velocity_max_change": 0.0,
+  "coefficient_initial_artifact": "artifacts/constrained/localized_swirl/candidate.json",
+  "dense_cylindrical": false
+}

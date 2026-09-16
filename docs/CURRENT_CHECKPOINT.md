@@ -49,3 +49,5 @@
 - Temporal swirl now implemented and tested. Mean residual improves, but independent maxima 1.95655/2.44784 fail to beat continued_pressure (1.94296). Both comparisons preserved; selected candidate unchanged. See docs/TEMPORAL_SWIRL_EXPERIMENT.md.
 
 - New selected development reference localized_swirl: maximum1.35623, refined1.35345, structure sampled pass. About30% improvement over1.94296, still far above.001. Grid diagnostic reveals an axial collar peak near(r,z)=(.395,.889). Results and next direction in docs/LOCALIZED_SWIRL_EXPERIMENT.md.
+
+- Latest reference axial_swirl_dense: sampled maximum1.28545, structure sampled pass. Added axial rings and denser collocation coverage; sparse fourth-power overfit preserved as failed comparison. 500-call cap is not convergence.
