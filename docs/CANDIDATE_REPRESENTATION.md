@@ -66,3 +66,7 @@ optimization requirements. CR003 derivative interfaces remain to be added.
 ## Version 3 time-dependent swirl collar
 
 Adds (t-0.25)[s_rt(R²-0.01)+s_zt(Z²-0.01)]/4 to the swirl shape multiplier, with each coefficient in [-4,4]. Divergence, axis regularity and compact support are unchanged. Global swirl similarity is no longer an identity; the original 5% core-drift constraint is explicitly penalized and must be independently checked. The radial scaling identity remains unchanged. Old v1/v2 artifacts load with new coefficients zero.
+
+## Version 4 poloidal time dependence
+
+Adds (t-0.25)[p_rt(R²-0.01)+p_zt(Z²-0.01)]/4 to q in the streamfunction. Bounds are [-4,4]. Velocity includes the spatial derivatives of this correction; the legacy numerical curl independently checks the implementation. Divergence, compact support and axis regularity remain structural. The fixed-profile radial scaling identity in CR010 no longer describes the full v4 velocity; use measured core drift instead. No symbolic proof of exact v4 self-similarity is claimed.

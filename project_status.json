@@ -3,12 +3,12 @@
   "migration": "complete",
   "candidate_status": "candidate",
   "independent_validation": "optimized_candidate_failed_pde_thresholds",
-  "selected_structure_proofs": "five_symbolic_ansatz_identities_verified",
+  "selected_structure_proofs": "v1-v3 identities verified; v4 full-profile scaling not claimed",
   "exact_paper_reproduction_required": false,
   "full_blowup_proof_required": false,
   "active_task_file": "docs/AGENT_TASKS.md",
   "legacy_artifacts_are_candidate_evidence": false,
-  "candidate_artifact": "artifacts/constrained/decoupled_v3/candidate.json",
+  "candidate_artifact": "artifacts/constrained/optimized_v4/candidate.json",
   "active_delivery": "https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/pull/1",
   "optimization": "bounded_decoupled_run_complete_not_accepted"
 }

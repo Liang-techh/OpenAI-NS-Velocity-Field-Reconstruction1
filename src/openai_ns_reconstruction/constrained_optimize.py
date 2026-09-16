@@ -35,6 +35,8 @@ def run(config='configs/constraints.json', output='artifacts/constrained/optimiz
         names += ['swirl_radial_shape','swirl_axial_shape']
     if 'swirl_radial_time' in opt['candidate_parameter_bounds']:
         names += ['swirl_radial_time','swirl_axial_time']
+    if 'poloidal_radial_time' in opt['candidate_parameter_bounds']:
+        names += ['poloidal_radial_time','poloidal_axial_time']
     if decoupled:
         names=[name for name in names if not name.startswith('pressure_')]
     bounds=opt['candidate_parameter_bounds']

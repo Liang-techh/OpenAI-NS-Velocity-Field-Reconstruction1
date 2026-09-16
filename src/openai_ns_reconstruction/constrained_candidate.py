@@ -25,6 +25,8 @@ class CompactCandidate:
     swirl_axial_shape: float = 0.0
     swirl_radial_time: float = 0.0
     swirl_axial_time: float = 0.0
+    poloidal_radial_time: float = 0.0
+    poloidal_axial_time: float = 0.0
     amplitude: float = 1.0
     pressure_constant: float = 0.0
     pressure_radial: float = 0.0
@@ -36,7 +38,8 @@ class CompactCandidate:
             'axial_width': (0.7, 1.1), 'radial_shape': (-0.2, 0.2),
             'axial_shape': (-0.2, 0.2), 'swirl_radial_shape': (-0.8,0.8),
             'swirl_axial_shape': (-0.8,0.8),
-            'swirl_radial_time': (-4,4), 'swirl_axial_time': (-4,4), 'amplitude': (1e-4, 100),
+            'swirl_radial_time': (-4,4), 'swirl_axial_time': (-4,4),
+            'poloidal_radial_time': (-4,4), 'poloidal_axial_time': (-4,4), 'amplitude': (1e-4, 100),
             'pressure_constant': (-100, 100), 'pressure_radial': (-100, 100),
             'pressure_axial': (-100, 100),
         }
@@ -65,17 +68,19 @@ class CompactCandidate:
         bR_over_R = dbr*bz/2
         bZ = br*dbz*Z/2
         q = 1+self.radial_shape*R2/4+self.axial_shape*Z*Z/4
+        q += (t-0.25)*(self.poloidal_radial_time*(R2-0.01)/4
+                         +self.poloidal_axial_time*(Z*Z-0.01)/4)
         return x, y, tau, lr, lz, R2, Z, b, bR_over_R, bZ, q
 
     def velocity(self, points, time):
         x,y,tau,lr,lz,R2,Z,b,bR,bZ,q = self._chart(points,time)
         v = self.amplitude*tau**(-0.505)
         # Cartesian u_r/r, u_theta/r and u_z; no removable singularity.
-        radial = -v/lz*(b*q+Z*(bZ*q+b*self.axial_shape*Z/2))
+        radial = -v/lz*(b*q+Z*(bZ*q+b*(self.axial_shape+(0.75-tau)*self.poloidal_axial_time)*Z/2))
         swirl = v*self.swirl_ratio*b/lr*(1+self.swirl_radial_shape*R2/4+self.swirl_axial_shape*Z*Z/4
             +(0.75-tau)*(self.swirl_radial_time*(R2-0.01)/4
                          +self.swirl_axial_time*(Z*Z-0.01)/4))
-        axial = v*Z*(2*b*q+R2*(bR*q+b*self.radial_shape/2))
+        axial = v*Z*(2*b*q+R2*(bR*q+b*(self.radial_shape+(0.75-tau)*self.poloidal_radial_time)/2))
         return np.stack((x*radial-y*swirl, y*radial+x*swirl, axial),axis=-1)
 
     def vector_potential(self, points, time):
@@ -132,12 +137,12 @@ class CompactCandidate:
     def save(self, path):
         Path(path).write_text(json.dumps({
             'schema_version': 1, 'status': 'candidate', 'paper_exact': False,
-            'family': 'compact_axisymmetric_window_v3', 'parameters': asdict(self)
+            'family': 'compact_axisymmetric_window_v4', 'parameters': asdict(self)
         },indent=2)+'\n',encoding='utf-8')
 
     @classmethod
     def load(cls, path):
         data=json.loads(Path(path).read_text(encoding='utf-8'))
-        if data.get('schema_version') != 1 or data.get('family') not in ('compact_axisymmetric_window_v1','compact_axisymmetric_window_v2','compact_axisymmetric_window_v3'):
+        if data.get('schema_version') != 1 or data.get('family') not in ('compact_axisymmetric_window_v1','compact_axisymmetric_window_v2','compact_axisymmetric_window_v3','compact_axisymmetric_window_v4'):
             raise ValueError('unsupported candidate artifact')
         return cls(**data['parameters'])

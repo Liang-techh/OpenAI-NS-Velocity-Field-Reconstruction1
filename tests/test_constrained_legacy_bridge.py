@@ -5,7 +5,8 @@ from openai_ns_reconstruction.local_field import LocalField, sum_vector_fields
 
 def test_legacy_curl_path_and_composition_reproduce_candidate():
     c=CompactCandidate(swirl_radial_time=1.2,swirl_axial_time=-.7,
-                       radial_shape=.1,axial_shape=-.1).normalized()
+                       radial_shape=.1,axial_shape=-.1,
+                       poloidal_radial_time=1.1,poloidal_axial_time=-.9).normalized()
     legacy=c.as_legacy_local_field()
     points=np.random.default_rng(45).uniform(-1.2,1.2,(20,3))
     points=np.vstack((points,[0,0,.3],[2,0,0]))

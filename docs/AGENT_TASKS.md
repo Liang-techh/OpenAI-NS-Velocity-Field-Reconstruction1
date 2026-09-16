@@ -125,3 +125,7 @@ Added `CompactCandidate.vector_potential` and `as_legacy_local_field`; directly 
 ## CR005 decoupled coefficient experiment
 
 Implemented bounded inner pressure/force fit and nonlinear outer velocity fit. Results: 660 outer calls, loss 0.255627; independent sampled maximum 4.036601 (still fails). Tests for fixed-velocity improvement and training operator: 2 passed in 0.57 s. Artifacts: `artifacts/constrained/decoupled_v3/`; reproducibility and research distinctions: `docs/DECOUPLED_EXPERIMENT.md`. No arbitrary residual force or threshold changes.
+
+## CR005 v4 poloidal time experiment
+
+Added time-dependent streamfunction collar shapes. Legacy curl/direct candidate checks: 4 passed in 0.25 s. Joint fit: 554 function calls, training loss 0.222669. Independent finest-step sampled maximum 2.788433 (previous best 4.036601), still above 0.001. On 21 times, core drift 0.0011704 < 0.05, energy range [0.195104,1], core signs pass. Artifacts: `artifacts/constrained/optimized_v4/`, configuration constraints_v4.json. Preserve all previous experiments. Fixed-profile scaling symbolic claim does not extend to the new time-dependent poloidal factor.
