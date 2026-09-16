@@ -17,7 +17,6 @@ import numpy as np
 REQUIRED_GRID_KEYS = frozenset({"x", "y", "z", "times", "u", "v", "w"})
 PUBLIC_METADATA_KEYS = (
     "family",
-    "candidate_sha256",
     "components",
     "coordinates",
     "units",
@@ -61,7 +60,11 @@ def audit_velocity_bundle(field, artifact_dir, *, atol: float = 5e-13) -> dict:
         _require(key in public_metadata, f"public evaluator metadata missing {key}")
         _require(metadata[key] == public_metadata[key], f"metadata mismatch for {key}")
 
-    _require(metadata["candidate_sha256"] == field.sha256, "candidate SHA256 mismatch")
+    _require("candidate_sha256" in metadata, "metadata missing candidate_sha256")
+    _require(
+        metadata["candidate_sha256"] == field.sha256,
+        f"candidate SHA256 mismatch: metadata={metadata['candidate_sha256']} field={field.sha256}",
+    )
     actual_grid_sha256 = _sha256(grid_path)
     _require(
         metadata.get("grid_npz_sha256") == actual_grid_sha256,
