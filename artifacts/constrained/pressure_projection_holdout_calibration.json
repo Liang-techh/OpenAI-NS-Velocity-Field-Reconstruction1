@@ -1,0 +1,31 @@
+{
+  "task_id": "CR005-PRESSURE-HOLDOUT-003",
+  "scope": "manufactured calibration of frozen bounded pressure projection followed by disjoint independent validation",
+  "training_seed": 41,
+  "holdout_seed": 42,
+  "training_points": 64,
+  "holdout_points": 64,
+  "training_step": 0.001,
+  "validation_step": 0.005,
+  "target_pressure_coefficients": [0.3, -0.2],
+  "recovered_pressure_coefficients": [0.2999999999999996, -0.1999999999999997],
+  "training_rms_before": 0.36055512754639896,
+  "training_rms_after": 1.7772239894833365e-16,
+  "heldout_rms_before": 0.36055512754639896,
+  "heldout_rms_after": 2.1166517489297992e-15,
+  "heldout_max_before": 0.36055512754639896,
+  "heldout_max_after": 8.050839504075695e-15,
+  "velocity_max_change": 0.0,
+  "mutation": {
+    "description": "z-directed constant forcing is outside the two-coordinate pressure basis and must remain visible",
+    "heldout_rms_after": 0.4,
+    "heldout_max_after": 0.4
+  },
+  "truth_boundary": {
+    "pde_validated": false,
+    "paper_exact": false,
+    "changes_velocity": false,
+    "changes_force": false,
+    "note": "Calibration proves the audit can distinguish a pressure-representable residual from an orthogonal residual channel. It is not current-candidate PDE evidence."
+  }
+}
