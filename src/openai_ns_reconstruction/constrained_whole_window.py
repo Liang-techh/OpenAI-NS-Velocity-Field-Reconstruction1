@@ -9,8 +9,8 @@ from .constrained_optimize import training_residual
 from .constrained_validation import structure_metrics
 
 
-def run(core_equalities=False):
-    old=AngularMomentumCandidate.load('artifacts/constrained/outer_shape/candidate.json')
+def run(core_equalities=False, *, initial='artifacts/constrained/outer_shape/candidate.json', output=None, call_budget=600, max_iterations=20):
+    old=AngularMomentumCandidate.load(initial)
     config=json.loads(Path('configs/constraints_tensor.json').read_text())
     indices=[n for n,(i,j,k) in enumerate(old.base.BASIS) if i+j<=2 and k>=1]
     size=len(indices)
@@ -26,7 +26,7 @@ def run(core_equalities=False):
     class Budget(Exception):pass
     def fun(v):
         nonlocal calls
-        if calls>=600:raise Budget()
+        if calls>=call_budget:raise Budget()
         calls+=1;c=candidate(v)
         r=training_residual(c,c.force,x,t,.01).ravel()/np.sqrt(len(x))
         ts=np.linspace(.25,.75,9)
@@ -43,26 +43,26 @@ def run(core_equalities=False):
     try:
         if core_equalities:
             ts=np.array([.4,.65]);p=np.column_stack((.1*np.sqrt(1-ts),np.zeros(2),.1*(1-ts)**.495))
-            initial=candidate(v0).velocity(p,ts).ravel();columns=[]
+            initial_core=candidate(v0).velocity(p,ts).ravel();columns=[]
             for j in range(len(v0)):
                 h=.001 if v0[j]<2.999 else -.001
                 trial=v0.copy();trial[j]+=h
-                columns.append((candidate(trial).velocity(p,ts).ravel()-initial)/h)
+                columns.append((candidate(trial).velocity(p,ts).ravel()-initial_core)/h)
             C=np.column_stack(columns)
             C=C/np.linalg.norm(C,axis=1)[:,None]
             def objective(v):
                 r=fun(v);return float(r@r)
             result=minimize(objective,v0,method='SLSQP',bounds=[(1.,3.)]*len(v0),
                 constraints=[LinearConstraint(C,C@v0,C@v0)],
-                options={'maxiter':20,'eps':1e-4,'ftol':1e-9})
+                options={'maxiter':max_iterations,'eps':1e-4,'ftol':1e-9})
         else:
             result=least_squares(fun,v0,bounds=(np.ones(2*size),np.full(2*size,3.)),max_nfev=80,diff_step=1e-4)
         reason=result.message
-    except Budget:reason='actual 600-call budget reached'
+    except Budget:reason=f'actual {call_budget}-call budget reached'
     if 'v' not in best:raise RuntimeError('no feasible iterate')
-    c=candidate(best['v']);out=Path('artifacts/constrained/whole_window_equalities' if core_equalities else 'artifacts/constrained/whole_window');out.mkdir(exist_ok=True);c.save(out/'candidate.json')
+    c=candidate(best['v']);out=Path(output or ('artifacts/constrained/whole_window_equalities' if core_equalities else 'artifacts/constrained/whole_window'));out.mkdir(exist_ok=True);c.save(out/'candidate.json')
     report={'status':'training_only_not_validated','force':{'a':c.force.a,'c':c.force.c},
-        'core_equalities':core_equalities,'calls':calls,'termination':reason,'training_loss':best['loss'],'history':history,
+        'initial_artifact':initial,'call_budget':call_budget,'max_iterations':max_iterations,'core_equalities':core_equalities,'calls':calls,'termination':reason,'training_loss':best['loss'],'history':history,
         'active_time_indices':indices,'seed':20260916,'initial_velocity_max_change':float(np.max(np.abs(c.velocity(x,.25)-old.velocity(x,.25))))}
     (out/'training.json').write_text(json.dumps(report,indent=2)+'\n');print(report['calls'],report['training_loss'])
 
