@@ -10,11 +10,42 @@ from dataclasses import asdict, dataclass, replace
 import numpy as np
 from scipy.optimize import lsq_linear
 
-from .constrained_pressure_holdout import _independent_momentum
+from .constrained_validation import residual
 from .constrained_pressure_projection import (
     apply_projected_pressure,
     project_pressure_coefficients,
 )
+
+
+def _independent_momentum_ordered(candidate, force, points, times, *, nu, step,
+                                  time_bounds):
+    """Evaluate independent momentum while preserving the input row order."""
+    x = np.asarray(points, dtype=float)
+    t = np.asarray(times, dtype=float)
+    if (x.ndim != 2 or x.shape[1] != 3 or len(x) == 0
+            or not np.isfinite(x).all()):
+        raise ValueError("points must be a nonempty finite (N,3) array")
+    if t.shape != (len(x),) or not np.isfinite(t).all():
+        raise ValueError("times must be a finite length-N array")
+    out = np.empty_like(x)
+    for value in np.unique(t):
+        mask = t == value
+        result = residual(
+            candidate.velocity,
+            candidate.pressure,
+            force,
+            x[mask],
+            float(value),
+            nu=nu,
+            step=step,
+            time_bounds=time_bounds,
+        )
+        momentum = np.asarray(result["momentum"], dtype=float)
+        if (momentum.shape != (int(np.count_nonzero(mask)), 3)
+                or not np.isfinite(momentum).all()):
+            raise ValueError("independent residual returned invalid momentum")
+        out[mask] = momentum
+    return out
 
 
 @dataclass(frozen=True)
@@ -142,7 +173,7 @@ def diagnose_pressure_capacity(
     )
     frozen = apply_projected_pressure(candidate, training)
 
-    frozen_momentum = _independent_momentum(
+    frozen_momentum = _independent_momentum_ordered(
         frozen,
         force,
         holdout_points,
@@ -152,7 +183,7 @@ def diagnose_pressure_capacity(
         time_bounds=time_bounds,
     )
     zero = replace(candidate, pressure_coefficients=tuple(np.zeros_like(current)))
-    base = _independent_momentum(
+    base = _independent_momentum_ordered(
         zero,
         force,
         holdout_points,
