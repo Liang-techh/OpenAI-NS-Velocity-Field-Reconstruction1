@@ -9,3 +9,5 @@
 - 新仓库内认领和提交任务；旧 #368 的认领记录仅作历史参考，不直接视为新仓库活动任务。
 
 检查点内容、来源和未迁移分支见 [MIGRATION.md](MIGRATION.md)。
+
+- 已保存初始候选的独立 PDE 失败基线：`artifacts/constrained/initial_pde_validation.json`。残差明显超标；下一步实现训练导数/优化器并拟合参数，不放宽现有阈值。

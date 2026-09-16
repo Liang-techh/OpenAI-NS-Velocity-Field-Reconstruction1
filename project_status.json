@@ -2,7 +2,7 @@
   "objective": "constrained_independent_reconstruction",
   "migration": "complete",
   "candidate_status": "candidate",
-  "independent_validation": "pending",
+  "independent_validation": "initial_candidate_failed_pde_thresholds",
   "selected_structure_proofs": "pending",
   "exact_paper_reproduction_required": false,
   "full_blowup_proof_required": false,

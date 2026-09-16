@@ -11,7 +11,7 @@
 | CR003 | 参数化候选场生成器 | CR001,CR002 | IN_PROGRESS | root | pending |
 | CR004 | 相容压力与 forcing 约定实现 | CR001,CR003 | IN_PROGRESS | root | pending |
 | CR005 | 有限预算约束优化器 | CR003,CR004 | TODO | — | pending |
-| CR006 | 独立散度/NS residual 验证器 | CR001,CR003 | TODO | — | pending |
+| CR006 | 独立散度/NS residual 验证器 | CR001,CR003 | IN_PROGRESS | root | pending |
 | CR007 | 边界、支撑、能量验证 | CR003,CR004 | TODO | — | pending |
 | CR008 | 频谱、缩放、集中机制诊断 | CR001,CR003 | TODO | — | pending |
 | CR009 | 精度收敛与泛化验证 | CR005–CR008 | TODO | — | pending |
@@ -97,3 +97,7 @@ merge_status: open
 ## CR002 / CR003 delivery — 2026-09-16
 
 CR002 design and nonzero initialization delivered in `docs/CANDIDATE_REPRESENTATION.md`. CR003 velocity/pressure evaluation, normalization and JSON round-trip implemented; derivative interfaces remain pending. Artifacts are under `artifacts/constrained/`. Focused candidate/force tests: 5 passed in 0.36 s. Energy quadrature orders 24/48/96 give 1.0000089576/1.0000000018/1.0 at the reference time. These are initialization checks, not PDE validation. Branch: `codex/cr001-constraints`; PR #1. acceptance: pending; merge_status: unmerged.
+
+## CR006 initial PDE baseline — 2026-09-16
+
+Independent Cartesian fourth-order spatial/second-order time finite differences implemented in `constrained_validation.py`. Endpoint stencils stay within the declared window. Manufactured polynomial momentum solution passes at both endpoints and interior; reversed force is detected. Combined focused suite: 8 passed in 0.41 s. Reproduce with `PYTHONPATH=src python -m openai_ns_reconstruction.constrained_validation` (set PYTHONPATH using the shell appropriate to your environment). Saved report: `artifacts/constrained/initial_pde_validation.json`. On 4096 held-out points and six times, finest-step residual sampled maxima range 3.39–13.23 versus threshold 0.001. This initial candidate fails; thresholds are unchanged. Boundary/axis stratified validation, more general analytic calibration and optimization remain pending. PR #1, unmerged.
