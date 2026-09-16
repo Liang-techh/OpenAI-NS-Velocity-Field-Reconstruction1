@@ -21,7 +21,7 @@ def training_residual(c, f, x, t, nu, h=0.001):
     return ut+conv+gp-nu*lap-f(x,t)
 
 
-def run(config='configs/constraints.json', output='artifacts/constrained/optimized'):
+def run(config='configs/constraints.json', output='artifacts/constrained/optimized', *, decoupled=False):
     cfg=json.loads(Path(config).read_text()); opt=cfg['optimization']
     rng=np.random.default_rng(opt['seed']);n=opt['interior_points']
     box=np.asarray(cfg['domain']['evaluation_box']);lo,hi=cfg['domain']['time_interval']
@@ -35,13 +35,19 @@ def run(config='configs/constraints.json', output='artifacts/constrained/optimiz
         names += ['swirl_radial_shape','swirl_axial_shape']
     if 'swirl_radial_time' in opt['candidate_parameter_bounds']:
         names += ['swirl_radial_time','swirl_axial_time']
+    if decoupled:
+        names=[name for name in names if not name.startswith('pressure_')]
     bounds=opt['candidate_parameter_bounds']
-    lows=[bounds[k][0] for k in names]+[0,0];highs=[bounds[k][1] for k in names]+[10,10]
-    initial=CompactCandidate();v0=np.array([getattr(initial,k) for k in names]+[1,1])
+    lows=[bounds[k][0] for k in names]+([] if decoupled else [0,0]);highs=[bounds[k][1] for k in names]+([] if decoupled else [10,10])
+    initial=CompactCandidate();v0=np.array([getattr(initial,k) for k in names]+([] if decoupled else [1,1]))
     best={'loss':float('inf')};history=[];calls=0
     class BudgetReached(Exception): pass
     def decode(v):
-        return CompactCandidate(**dict(zip(names,v[:len(names)]))).normalized(),RestrictedForce(*v[len(names):])
+        c=CompactCandidate(**dict(zip(names,v[:len(names)]))).normalized()
+        if decoupled:
+            from .constrained_variable_projection import fit_linear_coefficients
+            return fit_linear_coefficients(c,x,t,cfg['nu'])
+        return c,RestrictedForce(*v[len(names):])
     def fun(v):
         nonlocal calls
         if calls>=opt['maximum_function_evaluations']: raise BudgetReached()
@@ -76,7 +82,7 @@ def run(config='configs/constraints.json', output='artifacts/constrained/optimiz
         'additional_core_axis_samples':256,'calls':calls,'termination':termination,
         'best_training_loss':best['loss'],'force':asdict(f),'parameters':asdict(c),
         'history':history,'training_spatial_time_step':0.001,'normalization_order':96,
-        'solver':'scipy.optimize.least_squares','max_nfev':150,'actual_call_budget':opt['maximum_function_evaluations']}
+        'decoupled_linear_coefficients':decoupled,'solver':'scipy.optimize.least_squares','max_nfev':150,'actual_call_budget':opt['maximum_function_evaluations']}
     (out/'training.json').write_text(json.dumps(report,indent=2)+'\n')
     print(json.dumps({k:report[k] for k in ('calls','termination','best_training_loss','force')}))
 

@@ -121,3 +121,7 @@ Added two bounded time-dependent swirl collar coefficients and the preregistered
 ## Executable legacy reuse bridge
 
 Added `CompactCandidate.vector_potential` and `as_legacy_local_field`; directly executes old LocalField/curl_numeric/jacobian_numeric and supports sum_vector_fields correction assembly. Four targeted tests passed in 0.26 s. Details and limits: `docs/LEGACY_REUSE.md`. This is a reusable composition interface, not a ready NS correction or a reduction in PDE residual.
+
+## CR005 decoupled coefficient experiment
+
+Implemented bounded inner pressure/force fit and nonlinear outer velocity fit. Results: 660 outer calls, loss 0.255627; independent sampled maximum 4.036601 (still fails). Tests for fixed-velocity improvement and training operator: 2 passed in 0.57 s. Artifacts: `artifacts/constrained/decoupled_v3/`; reproducibility and research distinctions: `docs/DECOUPLED_EXPERIMENT.md`. No arbitrary residual force or threshold changes.
