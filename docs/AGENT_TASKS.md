@@ -15,7 +15,7 @@
 | CR007 | 边界、支撑、能量验证 | CR003,CR004 | TODO | — | pending |
 | CR008 | 频谱、缩放、集中机制诊断 | CR001,CR003 | TODO | — | pending |
 | CR009 | 精度收敛与泛化验证 | CR005–CR008 | TODO | — | pending |
-| CR010 | 3–5 个关键结构命题验证 | CR002,CR003 | TODO | — | pending |
+| CR010 | 3–5 个关键结构命题验证 | CR002,CR003 | DONE | root | pending |
 | CR011 | 可复现候选 artifact 与运行入口 | CR005,CR009 | TODO | — | pending |
 | CR012 | 独立结果报告和逐约束验收 | CR009–CR011 | TODO | — | pending |
 
@@ -109,3 +109,7 @@ Implemented `constrained_optimize.py` with separate second-order training deriva
 ## CR005 v2 swirl experiment — 2026-09-16
 
 Pressure-independent diagnostic: `constrained_obstruction.py`, report under optimized/. At t=0.75 azimuthal residual sampled maximum is 5.1664; axisymmetric pressure cannot remove it for fixed velocity/force. Added two swirl shape coefficients in a separately versioned configuration, retaining all thresholds. v2: 243 calls, training loss 0.325862, held-out PDE validation still fails. Results under `artifacts/constrained/optimized_v2/`. This does not prove impossibility of the candidate family or satisfy final acceptance.
+
+## CR010 symbolic delivery — 2026-09-16
+
+Five exact symbolic ansatz identities executed with SymPy 1.14.0: poloidal divergence, swirl divergence, absence of azimuthal pressure gradient, rotation equivariance, radial similarity exponent. Script: `constrained_structure.py`; assumptions and binding to v1/v2: `docs/STRUCTURE_IDENTITIES.md`; output: `artifacts/constrained/structure_identities.json`. Actual command: `python -m openai_ns_reconstruction.constrained_structure`, result `five_symbolic_identities_verified`. No Lean, full momentum, or bump-extension smoothness proof claimed. acceptance: pending; merge_status: unmerged; PR #1.

@@ -10,6 +10,7 @@ requires-python = ">=3.10"
 dependencies = ["numpy>=1.24,<3", "scipy>=1.10,<2"]
 
 [project.optional-dependencies]
+symbolic = ["sympy==1.14.0"]
 dev = ["pytest>=8.0", "matplotlib>=3.8"]
 
 [project.scripts]

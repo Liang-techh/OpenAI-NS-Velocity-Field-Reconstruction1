@@ -3,7 +3,7 @@
   "migration": "complete",
   "candidate_status": "candidate",
   "independent_validation": "optimized_candidate_failed_pde_thresholds",
-  "selected_structure_proofs": "pending",
+  "selected_structure_proofs": "five_symbolic_ansatz_identities_verified",
   "exact_paper_reproduction_required": false,
   "full_blowup_proof_required": false,
   "active_task_file": "docs/AGENT_TASKS.md",

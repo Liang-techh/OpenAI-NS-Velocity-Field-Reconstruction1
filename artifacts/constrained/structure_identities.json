@@ -1,0 +1,32 @@
+{
+  "status": "five_symbolic_identities_verified",
+  "engine": "SymPy 1.14.0",
+  "identities": [
+    {
+      "id": "curl_divergence",
+      "result": "0",
+      "assumptions": "H(rho,z) C2; commuting mixed partials"
+    },
+    {
+      "id": "axisymmetric_swirl_divergence",
+      "result": "0",
+      "assumptions": "S(rho,z) C1"
+    },
+    {
+      "id": "axisymmetric_pressure_no_torque",
+      "result": "0",
+      "assumptions": "p(rho,z) C1; azimuthal interpretation r>0"
+    },
+    {
+      "id": "rotation_equivariance",
+      "result": "Matrix([[0], [0], [0]])",
+      "assumptions": "radial, spin and axial coefficients depend only on rho,z,t"
+    },
+    {
+      "id": "radial_similarity_exponent",
+      "result": "0",
+      "assumptions": "tau>0; A=101/200, D=99/200; fixed scaled position and time-independent parameters"
+    }
+  ],
+  "limitations": "Ansatz identities only. Smoothness of bump extension is assumed, not proved by SymPy here. No momentum equation, interval error bound, singularity theorem or floating-point implementation proof."
+}
