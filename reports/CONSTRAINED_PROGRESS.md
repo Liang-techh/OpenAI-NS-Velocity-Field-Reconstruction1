@@ -15,6 +15,8 @@ These are saved development comparisons, not final acceptance. The validation se
 | outer_momentum | 2.596683 | pass | [validation.json](../artifacts/constrained/outer_momentum/validation.json) |
 | outer_pressure | 2.508246 | pass | [validation.json](../artifacts/constrained/outer_pressure/validation.json) |
 | outer_shape | 2.491094 | pass | [validation.json](../artifacts/constrained/outer_shape/validation.json) |
+| temporal_swirl | 1.956548 | pass | [validation.json](../artifacts/constrained/temporal_swirl/validation.json) |
+| temporal_swirl_tail | 2.447841 | pass | [validation.json](../artifacts/constrained/temporal_swirl_tail/validation.json) |
 | tensor_feasible | 2.664848 | pass | [validation.json](../artifacts/constrained/tensor_feasible/validation.json) |
 | tensor_stage1 | 2.464107 | not recorded in this artifact | [validation.json](../artifacts/constrained/tensor_stage1/validation.json) |
 | whole_window | 2.491071 | pass | [validation.json](../artifacts/constrained/whole_window/validation.json) |

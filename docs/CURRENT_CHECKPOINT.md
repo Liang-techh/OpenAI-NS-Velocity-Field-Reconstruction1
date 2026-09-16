@@ -45,3 +45,5 @@
 - 续算候选 whole_window_continued 独立最大残差1.94797、结构抽样通过。候选保存后的摘要序列化错误已修复；无法恢复的运行计数未编造。各实验汇总见 reports/CONSTRAINED_PROGRESS.md。
 
 - Latest pressure refit: continued_pressure, sampled maximum 1.942964833, structure samples pass; PDE still fails. Pressure-only gain is small; next representation work must address velocity dynamics.
+
+- Temporal swirl now implemented and tested. Mean residual improves, but independent maxima 1.95655/2.44784 fail to beat continued_pressure (1.94296). Both comparisons preserved; selected candidate unchanged. See docs/TEMPORAL_SWIRL_EXPERIMENT.md.

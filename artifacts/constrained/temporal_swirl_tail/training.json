@@ -1,0 +1,117 @@
+{
+  "status": "training_only_not_validated",
+  "initial_artifact": "artifacts/constrained/continued_pressure/candidate.json",
+  "force": {
+    "a": 9.546541832896667e-11,
+    "c": 0.12148700174414483
+  },
+  "tail_adaptive": true,
+  "adaptive_seed": 20261017,
+  "calls": 176,
+  "call_budget": 500,
+  "termination": "`gtol` termination condition is satisfied.",
+  "seed": 20260916,
+  "cache_direct_max_discrepancy": 3.823164007599189e-12,
+  "training_points": 2304,
+  "training_loss": 0.09721558921212277,
+  "history": [
+    {
+      "call": 1,
+      "loss": 0.3356505255448021
+    },
+    {
+      "call": 2,
+      "loss": 0.3356364903878384
+    },
+    {
+      "call": 3,
+      "loss": 0.3355190469155573
+    },
+    {
+      "call": 17,
+      "loss": 0.11790837806669689
+    },
+    {
+      "call": 18,
+      "loss": 0.11790651258486862
+    },
+    {
+      "call": 19,
+      "loss": 0.11789183869035434
+    },
+    {
+      "call": 33,
+      "loss": 0.11208645686073726
+    },
+    {
+      "call": 34,
+      "loss": 0.11208614568162739
+    },
+    {
+      "call": 35,
+      "loss": 0.1120848798612113
+    },
+    {
+      "call": 49,
+      "loss": 0.09981825033842047
+    },
+    {
+      "call": 50,
+      "loss": 0.09981811153066297
+    },
+    {
+      "call": 51,
+      "loss": 0.09981669905471521
+    },
+    {
+      "call": 65,
+      "loss": 0.09748161578286127
+    },
+    {
+      "call": 66,
+      "loss": 0.09748155739062278
+    },
+    {
+      "call": 67,
+      "loss": 0.09747984528577341
+    },
+    {
+      "call": 81,
+      "loss": 0.09724883161680797
+    },
+    {
+      "call": 82,
+      "loss": 0.09724883036600591
+    },
+    {
+      "call": 83,
+      "loss": 0.0972471671603424
+    },
+    {
+      "call": 97,
+      "loss": 0.09722058877813292
+    },
+    {
+      "call": 113,
+      "loss": 0.09721670467803509
+    },
+    {
+      "call": 129,
+      "loss": 0.09721572611453583
+    },
+    {
+      "call": 145,
+      "loss": 0.09721559226435869
+    },
+    {
+      "call": 161,
+      "loss": 0.09721558921212277
+    }
+  ],
+  "coefficient_bounds": [
+    -1,
+    1
+  ],
+  "basis": "five zero-moment spatial modes times three cubic Bernstein temporal modes",
+  "initial_velocity_max_change": 0.0
+}
