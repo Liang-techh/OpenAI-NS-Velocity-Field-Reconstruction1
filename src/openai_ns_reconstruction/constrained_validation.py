@@ -84,7 +84,10 @@ if __name__ == '__main__':
     args=parser.parse_args()
     cfg=json.loads(Path(args.config).read_text())
     family=json.loads(Path(args.candidate).read_text())['family']
-    if family == 'compact_axisymmetric_tensor_v1':
+    if family == 'angular_momentum_outer_v1':
+        from .constrained_outer_momentum import AngularMomentumCandidate
+        c=AngularMomentumCandidate.load(args.candidate)
+    elif family == 'compact_axisymmetric_tensor_v1':
         from .constrained_tensor_candidate import TensorCandidate
         c=TensorCandidate.load(args.candidate)
     else:

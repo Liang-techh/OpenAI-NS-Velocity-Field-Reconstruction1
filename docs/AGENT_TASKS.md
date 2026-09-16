@@ -155,3 +155,7 @@ Optimizer now tracks best structurally feasible training candidate separately an
 ## Global angular-momentum diagnosis
 
 Implemented `constrained_momentum_budget.py` using legacy quadrature. tensor_feasible violates integrated torque balance: at t=0.25 J'= -21.2593 versus force torque -1.1140. Numerical Cauchy-Schwarz residual-L2 lower-bound estimate 1.5421, far above .001. Data angular_momentum.json and derivation ANGULAR_MOMENTUM_DIAGNOSIS.md. Next concrete representation change: smooth outer swirl reservoir constrained by prescribed force torque; not arbitrary forcing.
+
+## Outer angular-momentum correction
+
+Implemented `AngularMomentumCandidate` with a fixed-support swirl basis vanishing around the core; directly reuses legacy standard_cutoff and unit_rule. Amplitude follows integrated prescribed force torque, not residual-defined force. At t=.5 torque mismatch falls from ~10.73 to ~1e-4 (quadrature-dependent, not certified). Independent sampled max residual 2.596683, 21-time structure checks pass; energy range [0.497829,1.000655], core drift unchanged 0.0494913. Results outer_momentum/. Local PDE still fails .001.

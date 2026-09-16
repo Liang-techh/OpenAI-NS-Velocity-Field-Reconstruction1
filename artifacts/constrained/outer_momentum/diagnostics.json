@@ -1,0 +1,31 @@
+{
+  "moment_checks": [
+    {
+      "order": 48,
+      "time": 0.5,
+      "moment_mismatch": -0.000668144708850793
+    },
+    {
+      "order": 96,
+      "time": 0.5,
+      "moment_mismatch": -6.085062839300548e-05
+    },
+    {
+      "order": 128,
+      "time": 0.5,
+      "moment_mismatch": 5.343903819077234e-05
+    }
+  ],
+  "maximum_residual": 2.596682718183168,
+  "structure": {
+    "sampled_constraints_pass": true,
+    "core_drift": 0.04949132067545572,
+    "energy_range": [
+      0.49782888271442444,
+      1.0006545820503574
+    ],
+    "core_signs_pass": true,
+    "time_points": 21,
+    "energy_quadrature_order": 96
+  }
+}
