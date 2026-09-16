@@ -90,6 +90,13 @@ def test_single_box_integrator_and_fail_closed_inputs():
             half_widths=(1.0, 3.0, 2.0),
             quadrature_orders=(8, 16, 32),
         )
+    with pytest.raises(ValueError, match="finite integers"):
+        diagnose_finite_domain_energy_truncation(
+            constant_velocity,
+            0.5,
+            half_widths=(1.0, 2.0, 3.0),
+            quadrature_orders=(8, 16.5, 32),
+        )
 
     def bad_shape(points, time):
         return np.zeros((len(points), 2))
