@@ -43,3 +43,5 @@
 - 全时段时间系数+显式核心等式约束使独立最大残差降至2.05808，结构抽样通过。SLSQP达20次迭代上限，未宣称收敛。当前较优结果whole_window_equalities/。
 
 - 续算候选 whole_window_continued 独立最大残差1.94797、结构抽样通过。候选保存后的摘要序列化错误已修复；无法恢复的运行计数未编造。各实验汇总见 reports/CONSTRAINED_PROGRESS.md。
+
+- Latest pressure refit: continued_pressure, sampled maximum 1.942964833, structure samples pass; PDE still fails. Pressure-only gain is small; next representation work must address velocity dynamics.

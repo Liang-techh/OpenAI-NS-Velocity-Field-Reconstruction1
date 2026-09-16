@@ -5,6 +5,7 @@ These are saved development comparisons, not final acceptance. The validation se
 | Experiment | Sampled max momentum residual | Sampled structure | Evidence |
 | --- | ---: | --- | --- |
 | adaptive_v4 | 2.738863 | not recorded in this artifact | [validation.json](../artifacts/constrained/adaptive_v4/validation.json) |
+| continued_pressure | 1.942965 | pass | [validation.json](../artifacts/constrained/continued_pressure/validation.json) |
 | decoupled_v3 | 4.036601 | not recorded in this artifact | [validation.json](../artifacts/constrained/decoupled_v3/validation.json) |
 | initial_tangent | 7.588542 | fail | [validation.json](../artifacts/constrained/initial_tangent/validation.json) |
 | optimized | 5.355252 | not recorded in this artifact | [validation.json](../artifacts/constrained/optimized/validation.json) |

@@ -8,7 +8,7 @@
   "full_blowup_proof_required": false,
   "active_task_file": "docs/AGENT_TASKS.md",
   "legacy_artifacts_are_candidate_evidence": false,
-  "candidate_artifact": "artifacts/constrained/whole_window_equalities/candidate.json",
+  "candidate_artifact": "artifacts/constrained/continued_pressure/candidate.json",
   "active_delivery": "https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/pull/1",
-  "optimization": "bounded_decoupled_run_complete_not_accepted"
+  "optimization": "whole_window_core_equalities_then_pressure_refit_not_accepted"
 }

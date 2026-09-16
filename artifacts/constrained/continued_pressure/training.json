@@ -1,0 +1,17 @@
+{
+  "status": "pressure_fit_only_not_validated",
+  "force": {
+    "a": 9.546541832896667e-11,
+    "c": 0.12148700174414483
+  },
+  "initial_artifact": "artifacts/constrained/whole_window_continued/candidate.json",
+  "seed": 20260916,
+  "basis": "B(r\u00b2/4)B(z\u00b2/4)(r\u00b2/4)^i(z\u00b2/4)^j[2(t-.25)]^k; i,j=0..2,k=0..1",
+  "coefficient_bounds": [
+    -100,
+    100
+  ],
+  "initial_L2_sample_mean": 0.10654197112915058,
+  "final_L2_sample_mean": 0.10515165174727376,
+  "velocity_changed": false
+}
