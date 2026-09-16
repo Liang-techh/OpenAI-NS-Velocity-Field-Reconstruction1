@@ -76,7 +76,8 @@
         "constraints_temporal_swirl.json",
         "constraints_localized_swirl.json",
         "constraints_axial_swirl.json",
-        "constraints_quintic_swirl.json"
+        "constraints_quintic_swirl.json",
+        "constraints_inner_swirl.json"
       ],
       "status": "pending_metadata_repair",
       "acceptance_impact": "Numerical thresholds are unchanged, but embedded experiment_id is not a unique artifact identity for these files."
