@@ -26,6 +26,37 @@ class LinearPressureToy:
         )
 
 
+@dataclass(frozen=True)
+class TimeScaledPressureToy:
+    pressure_coefficients: tuple[float, float] = (0.0, 0.0)
+
+    def velocity(self, points, time):
+        return np.zeros_like(np.asarray(points, dtype=float))
+
+    def pressure_basis(self, points, time):
+        x = np.asarray(points, dtype=float)
+        t = np.asarray(time, dtype=float)
+        scale = 1.0 + t
+        if scale.ndim == 0:
+            scale = np.full(len(x), float(scale))
+        return np.column_stack((x[:, 0] * scale, x[:, 1]))
+
+    def pressure(self, points, time):
+        return (
+            self.pressure_basis(points, time)
+            @ np.asarray(self.pressure_coefficients)
+        )
+
+
+def time_scaled_force(points, time):
+    x = np.asarray(points, dtype=float)
+    t = np.asarray(time, dtype=float)
+    scale = 1.0 + t
+    if scale.ndim == 0:
+        scale = np.full(len(x), float(scale))
+    return np.column_stack((0.7 * scale, np.zeros(len(x)), np.zeros(len(x))))
+
+
 def constant_force(vector):
     value = np.asarray(vector, dtype=float)
 
@@ -118,6 +149,29 @@ def test_capacity_probe_exposes_coefficient_generalization_gap():
     assert result.capacity_holdout_rms < 1e-9
     assert result.recoverable_fraction_of_frozen > 0.999999
     assert result.velocity_max_change == 0.0
+
+
+def test_mixed_holdout_times_preserve_row_alignment():
+    rng = np.random.default_rng(141)
+    train_x = rng.uniform(-0.8, 0.8, (48, 3))
+    holdout_x = rng.uniform(-0.8, 0.8, (48, 3))
+    train_t = rng.choice([0.35, 0.65], size=48)
+    holdout_t = np.tile([0.65, 0.35, 0.55], 16)
+    result = diagnose_pressure_capacity(
+        TimeScaledPressureToy(),
+        time_scaled_force,
+        train_x,
+        train_t,
+        holdout_x,
+        holdout_t,
+        0.01,
+        training_seed=141,
+        holdout_seed=142,
+    )
+    assert result.training_coefficients[0] == pytest.approx(0.7, abs=2e-10)
+    assert result.capacity_coefficients[0] == pytest.approx(0.7, abs=2e-10)
+    assert result.frozen_holdout_rms < 1e-9
+    assert result.capacity_holdout_rms < 1e-9
 
 
 def test_fail_closed_seed_reuse_and_bad_bounds():
