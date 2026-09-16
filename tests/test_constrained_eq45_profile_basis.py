@@ -12,7 +12,7 @@ def test_seed_is_bounded_nonzero_vectorized_and_axis_regular():
     eta = np.array([0.0, 0.25, -0.4, 0.6])
     jets = basis.evaluate(x, eta)
 
-    assert jets.stacked().shape == (4, 4)
+    assert jets.stacked().shape == (4, 6)
     assert np.all(np.isfinite(jets.stacked()))
     assert np.max(np.abs(jets.stacked())) > 0.0
 
@@ -23,22 +23,27 @@ def test_seed_is_bounded_nonzero_vectorized_and_axis_regular():
     assert all(abs(v) <= basis.coefficient_limit for v in basis.swirl_coefficients)
 
 
-def test_analytic_phi_derivatives_match_independent_centered_difference():
+def test_analytic_phi_jets_match_independent_centered_differences():
     basis = Eq45CompactProfileBasis.seed()
     x = np.array([0.2, 0.7, 1.4, 2.2])
     eta = np.array([-0.55, -0.2, 0.25, 0.6])
-    h = 1e-6
+    h = 2e-5
 
     analytic = basis.evaluate(x, eta)
-    phi_x_fd = (
-        basis.evaluate(x + h, eta).phi - basis.evaluate(x - h, eta).phi
-    ) / (2.0 * h)
-    phi_eta_fd = (
-        basis.evaluate(x, eta + h).phi - basis.evaluate(x, eta - h).phi
-    ) / (2.0 * h)
+    plus_x = basis.evaluate(x + h, eta)
+    minus_x = basis.evaluate(x - h, eta)
+    plus_eta = basis.evaluate(x, eta + h)
+    minus_eta = basis.evaluate(x, eta - h)
 
-    assert np.max(np.abs(analytic.phi_x - phi_x_fd)) < 3e-9
-    assert np.max(np.abs(analytic.phi_eta - phi_eta_fd)) < 3e-9
+    phi_x_fd = (plus_x.phi - minus_x.phi) / (2.0 * h)
+    phi_eta_fd = (plus_eta.phi - minus_eta.phi) / (2.0 * h)
+    phi_xx_fd = (plus_x.phi_x - minus_x.phi_x) / (2.0 * h)
+    phi_xeta_fd = (plus_eta.phi_x - minus_eta.phi_x) / (2.0 * h)
+
+    assert np.max(np.abs(analytic.phi_x - phi_x_fd)) < 2e-8
+    assert np.max(np.abs(analytic.phi_eta - phi_eta_fd)) < 2e-8
+    assert np.max(np.abs(analytic.phi_xx - phi_xx_fd)) < 2e-8
+    assert np.max(np.abs(analytic.phi_xeta - phi_xeta_fd)) < 2e-8
 
 
 def test_compact_support_and_boundary_jets_are_exactly_zero():
