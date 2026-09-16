@@ -10,7 +10,7 @@
 | CR002 | 复用表示选择和非平凡初始化方案 | 无 | DONE | Luna/max design + root integration | pending |
 | CR003 | 参数化候选场生成器 | CR001,CR002 | IN_PROGRESS | root | pending |
 | CR004 | 相容压力与 forcing 约定实现 | CR001,CR003 | IN_PROGRESS | root | pending |
-| CR005 | 有限预算约束优化器 | CR003,CR004 | TODO | — | pending |
+| CR005 | 有限预算约束优化器 | CR003,CR004 | IN_PROGRESS | root | pending |
 | CR006 | 独立散度/NS residual 验证器 | CR001,CR003 | IN_PROGRESS | root | pending |
 | CR007 | 边界、支撑、能量验证 | CR003,CR004 | TODO | — | pending |
 | CR008 | 频谱、缩放、集中机制诊断 | CR001,CR003 | TODO | — | pending |
@@ -101,3 +101,7 @@ CR002 design and nonzero initialization delivered in `docs/CANDIDATE_REPRESENTAT
 ## CR006 initial PDE baseline — 2026-09-16
 
 Independent Cartesian fourth-order spatial/second-order time finite differences implemented in `constrained_validation.py`. Endpoint stencils stay within the declared window. Manufactured polynomial momentum solution passes at both endpoints and interior; reversed force is detected. Combined focused suite: 8 passed in 0.41 s. Reproduce with `PYTHONPATH=src python -m openai_ns_reconstruction.constrained_validation` (set PYTHONPATH using the shell appropriate to your environment). Saved report: `artifacts/constrained/initial_pde_validation.json`. On 4096 held-out points and six times, finest-step residual sampled maxima range 3.39–13.23 versus threshold 0.001. This initial candidate fails; thresholds are unchanged. Boundary/axis stratified validation, more general analytic calibration and optimization remain pending. PR #1, unmerged.
+
+## CR005 first bounded optimization — 2026-09-16
+
+Implemented `constrained_optimize.py` with separate second-order training derivatives, fixed training seed, bounded velocity/pressure/force parameters, per-trial energy normalization and an actual-call budget. First run: 153 calls, xtol termination; training loss 1.47648 -> 0.35057. Independent fourth-order validation with the fitted force still fails: maximum sampled residual 5.35525 at t=0.75, versus initial 13.2271 and required 0.001. Several parameters hit bounds; no threshold relaxation. Results, force coefficients and best-so-far logs: `artifacts/constrained/optimized/`. Reproduce: `python -m openai_ns_reconstruction.constrained_optimize`, then validation with `--candidate artifacts/constrained/optimized/candidate.json --training artifacts/constrained/optimized/training.json --output artifacts/constrained/optimized/validation.json`. Set PYTHONPATH=src or install package first. Remaining: structural loss completeness, sensitivity/restarts, derivative convergence and candidate-family adequacy.

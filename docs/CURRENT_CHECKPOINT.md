@@ -11,3 +11,5 @@
 检查点内容、来源和未迁移分支见 [MIGRATION.md](MIGRATION.md)。
 
 - 已保存初始候选的独立 PDE 失败基线：`artifacts/constrained/initial_pde_validation.json`。残差明显超标；下一步实现训练导数/优化器并拟合参数，不放宽现有阈值。
+
+- 首轮优化已完成（153 次函数评估）；独立最大残差 13.23 -> 5.36，仍未通过 0.001。见 `artifacts/constrained/optimized/`。下一步调查参数边界与候选族表达限制；不把 solver 收敛视为物理解达标。

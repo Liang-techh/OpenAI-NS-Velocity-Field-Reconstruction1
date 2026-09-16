@@ -58,11 +58,14 @@ if __name__ == '__main__':
     parser=argparse.ArgumentParser(description='Independent held-out candidate PDE diagnostics')
     parser.add_argument('--candidate',default='artifacts/constrained/initial_candidate.json')
     parser.add_argument('--config',default='configs/constraints.json')
+    parser.add_argument('--training',help='training artifact containing the fitted force coefficients')
     parser.add_argument('--output',default='artifacts/constrained/initial_pde_validation.json')
     args=parser.parse_args()
     cfg=json.loads(Path(args.config).read_text())
     c=CompactCandidate.load(args.candidate)
-    f=RestrictedForce(**cfg['forcing']['initial_parameters'])
+    force_parameters=(json.loads(Path(args.training).read_text())['force']
+                      if args.training else cfg['forcing']['initial_parameters'])
+    f=RestrictedForce(**force_parameters)
     v=cfg['validation']
     box=np.asarray(cfg['domain']['evaluation_box'],dtype=float)
     volume=float(np.prod(box[:,1]-box[:,0]))
@@ -80,7 +83,7 @@ if __name__ == '__main__':
         and r['divergence_sampled_max']<=limits['divergence_max']
         and r['divergence_L2_estimate']<=limits['divergence_L2'] for r in fine)
     result={'status':'sampled_pde_thresholds_passed' if passed else 'failed_validation',
-        'candidate':args.candidate,'force':cfg['forcing']['initial_parameters'],
+        'candidate':args.candidate,'force':force_parameters,
         'seed':v['seed'],'points':len(x),'scope':'uniform held-out spatial samples; sampled maxima and Monte Carlo L2; no full acceptance claim','rows':rows}
     Path(args.output).write_text(json.dumps(result,indent=2)+'\n')
     print(result['status'])
