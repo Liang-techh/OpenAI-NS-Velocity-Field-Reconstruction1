@@ -1,0 +1,29 @@
+{
+  "schema": "constrained_public_velocity_alt_operator_calibration_v1",
+  "scope": "synthetic_manufactured_operator_calibration_only",
+  "field": "u=(sin(y),0,0), p=0, f=(nu*sin(y),0,0), nu=0.01",
+  "seed": 914041,
+  "point_count": 257,
+  "steps": [0.08, 0.04, 0.02],
+  "second_order_max_residual": [
+    4.175680158868822e-06,
+    1.04408707835707e-06,
+    2.6103221088119577e-07
+  ],
+  "observed_orders": [
+    1.9997691714594292,
+    1.9999422910248714
+  ],
+  "operator_delta_residual_rms": [
+    2.595797048837884e-06,
+    6.494686640479977e-07,
+    1.6239964350266914e-07
+  ],
+  "fourth_order_max_residual": [
+    3.561971441759515e-09,
+    2.227183940745059e-10,
+    1.3923875941124209e-11
+  ],
+  "pde_validated": false,
+  "paper_exact": false
+}
