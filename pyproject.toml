@@ -15,6 +15,7 @@ dev = ["pytest>=8.0", "matplotlib>=3.8"]
 
 [project.scripts]
 ns-reconstruct = "openai_ns_reconstruction.__main__:main"
+ns-velocity = "openai_ns_reconstruction.velocity_components:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
@@ -22,3 +23,6 @@ where = ["src"]
 [tool.pytest.ini_options]
 pythonpath = ["src"]
 testpaths = ["tests"]
+
+[tool.setuptools.package-data]
+openai_ns_reconstruction = ["data/*.json"]

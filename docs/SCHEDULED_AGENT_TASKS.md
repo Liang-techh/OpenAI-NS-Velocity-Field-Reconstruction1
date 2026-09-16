@@ -11,7 +11,7 @@ Complete VIS tasks in order. The SCH research queue below is DEFERRED and must n
 | ID | Work and completion evidence | Dependency | Status |
 | --- | --- | --- | --- |
 | VIS001 | Locate the exact OpenAI visualization/source already referenced in project documents and the shared goal. Record URL, frames/time range, coordinate orientation, visible geometry and unknowns in docs/VISUAL_TARGET.md. If the exact asset cannot be identified, explicitly record the missing reference and proceed with VIS002; do not guess that a similar animation is the target. | none | TODO |
-| VIS002 | Export the existing nonzero candidate through a simple documented velocity(x,y,z,t) -> (u,v,w) API, vectorized grid evaluator and saved sample arrays. Reuse coupled_joint; state units, domain, time range, parameters and candidate hash. Add axis/shape/finite-value checks and a runnable example. | none; parallel with VIS001 | TODO |
+| VIS002 | Export the existing nonzero candidate through a simple documented velocity(x,y,z,t) -> (u,v,w) API, vectorized grid evaluator and saved sample arrays. Reuse coupled_joint; state units, domain, time range, parameters and candidate hash. Add axis/shape/finite-value checks and a runnable example. | none; parallel with VIS001 | DONE (delivery; visual acceptance pending) |
 | VIS003 | Build a reproducible 3D vector/streamline or particle visualization and time animation using that API. Include axes, time, color legend and camera metadata. Save an actual viewable artifact, not just renderer source. | VIS002 | TODO |
 | VIS004 | Compare the rendered field with identified OpenAI frames: rotation direction, inward/outward motion, axial structure, concentration, symmetry, time evolution and camera/projection. Separate camera effects from physical field changes. Save side-by-side evidence and a discrepancy list. | VIS001,VIS003 | TODO |
 | VIS005 | Adjust bounded field parameters or representation to reduce documented visual discrepancies while retaining nonzero smooth fields and truthful force/PDE labels. Export actual updated u/v/w and reproduce the comparison; never claim visual matching alone proves NS validity. | VIS004 | TODO |
@@ -243,3 +243,7 @@ next_action:
 ```
 
 本轮已有的 coupled_joint 实现、三项相关测试和标准验证已完成；SCH001 起的事项是后续新工作，不要求重新实现这些内容。
+
+## VIS002 delivery
+
+Implemented velocity_components.py with velocity/u/v/w, vectorized point/grid evaluation, CLI, packaged default coefficients, metadata and NPZ samples. See docs/VELOCITY_API.md. Two focused tests passed; an isolated extracted-wheel smoke reproduced the same point values. Build initially failed without isolated build dependencies, then normal isolated wheel build succeeded. Visual correspondence remains pending VIS001/VIS004. Commit and PR are linked in central issue15 delivery comments.

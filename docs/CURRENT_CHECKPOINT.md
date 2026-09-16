@@ -1,3 +1,5 @@
+VIS002 delivered: callable velocity/u/v/w API, packaged coupled candidate, grid.npz and metadata. See docs/VELOCITY_API.md. Source/visual correspondence work remains pending.
+
 Current priority: VIS001-VIS006 in SCHEDULED_AGENT_TASKS.md. User requests computable 3D velocity components corresponding to the OpenAI visualization; exact visual target mapping and rendering are not yet completed. Prior PDE results remain candidate evidence.
 
 # 当前检查点

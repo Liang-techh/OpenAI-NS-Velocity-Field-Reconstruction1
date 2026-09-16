@@ -9,3 +9,6 @@ dist/
 .DS_Store
 .vscode/
 .idea/
+
+# Local wheel build used for isolated API smoke verification
+/artifacts/visual/package_check/
