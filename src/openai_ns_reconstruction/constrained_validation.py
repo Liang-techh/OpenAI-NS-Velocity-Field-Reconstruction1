@@ -49,6 +49,27 @@ def sampled_norms(result, volume):
             'divergence_sampled_max':float(d.max()),
             'divergence_L2_estimate':float(np.sqrt(volume*np.mean(d*d)))}
 
+def structure_metrics(candidate, config):
+    """Twenty-one time probes, higher-order energy quadrature; sampled evidence."""
+    times=np.linspace(*config['domain']['time_interval'],21)
+    tau=1-times
+    points=np.column_stack((.1*np.sqrt(tau),np.zeros(len(times)),.1*tau**.495))
+    u=candidate.velocity(points,times)
+    scaled=u*np.column_stack((np.sqrt(tau),tau**.505,tau**.505))
+    reference=np.linalg.norm(scaled[0])
+    drift=float(np.max(np.linalg.norm(scaled-scaled[0],axis=1)/reference)) if reference>0 else float('inf')
+    energy=[candidate.energy(float(t),96) for t in times]
+    n=config['nontriviality']
+    signs=bool(np.all(u[:,0]<0) and np.all(u[:,1:]>0))
+    passed=(drift<=config['validation']['thresholds']['scaled_core_profile_relative_drift']
+            and min(energy)>=n['minimum_energy_each_validation_time']
+            and max(energy)<=n['maximum_energy_each_validation_time']
+            and abs(energy[0]-n['reference_energy'])<=n['reference_energy_abs_tolerance'] and signs)
+    return {'sampled_constraints_pass':bool(passed),'core_drift':drift,
+            'energy_range':[min(energy),max(energy)],'core_signs_pass':signs,
+            'time_points':21,'energy_quadrature_order':96}
+
+
 if __name__ == '__main__':
     import argparse
     import json
@@ -87,7 +108,9 @@ if __name__ == '__main__':
         and r['residual_L2_estimate']<=limits['pde_residual_L2']
         and r['divergence_sampled_max']<=limits['divergence_max']
         and r['divergence_L2_estimate']<=limits['divergence_L2'] for r in fine)
-    result={'status':'sampled_pde_thresholds_passed' if passed else 'failed_validation',
+    structure=structure_metrics(c,cfg)
+    passed=passed and structure['sampled_constraints_pass']
+    result={'structure':structure,'status':'sampled_pde_thresholds_passed' if passed else 'failed_validation',
         'candidate':args.candidate,'force':force_parameters,
         'seed':v['seed'],'points':len(x),'scope':'uniform held-out spatial samples; sampled maxima and Monte Carlo L2; no full acceptance claim','rows':rows}
     Path(args.output).write_text(json.dumps(result,indent=2)+'\n')

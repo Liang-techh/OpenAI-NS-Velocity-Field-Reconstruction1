@@ -9,10 +9,10 @@ from .constrained_force import RestrictedForce
 from .constrained_optimize import training_residual
 
 
-def run():
+def run(output='artifacts/constrained/tensor_stage1', *, feasible_selection=False):
     from .constrained_tensor_candidate import TensorCandidate
     cfg=json.loads(Path('configs/constraints_tensor.json').read_text())
-    out=Path('artifacts/constrained/tensor_stage1')
+    out=Path(output)
     base=CompactCandidate.load(cfg['tensor_experiment']['initial_candidate'])
     old=json.loads(Path(cfg['tensor_experiment']['initial_candidate']).with_name('training.json').read_text())
     rng=np.random.default_rng(cfg['optimization']['seed'])
@@ -26,7 +26,7 @@ def run():
     v0=np.r_[np.full(2*size,2.),[getattr(base,n) for n in pn],old['force']['a'],old['force']['c']]
     lower=np.r_[np.ones(2*size),[-100]*3,[0,0]]
     upper=np.r_[np.full(2*size,3.),[100]*3,[10,10]]
-    calls=0;best={'loss':float('inf')};history=[]
+    calls=0;best={'loss':float('inf')};feasible_best={'loss':float('inf')};history=[]
     class Budget(Exception):pass
     def decode(v):
         pol=np.zeros(27);sw=np.zeros(27)
@@ -47,7 +47,12 @@ def run():
         scaled=u*np.column_stack((np.sqrt(1-ts),(1-ts)**.505,(1-ts)**.505))
         drift=np.linalg.norm(scaled-scaled[0],axis=1)/np.linalg.norm(scaled[0])
         constraints=np.r_[ep,np.maximum(u[:,0],0),np.maximum(-u[:,1:],0).ravel(),np.maximum(drift-.05,0)]
-        result=np.r_[rr,constraints];loss=float(result@result)
+        result=np.r_[rr,(100 if feasible_selection else 1)*constraints];loss=float(result@result)
+        pde_loss=float(rr@rr)
+        admissible=bool(np.min(energy)>=.1005 and np.max(energy)<=9.999
+                        and np.max(drift)<=.0495 and np.all(u[:,0]<0) and np.all(u[:,1:]>0))
+        if admissible and pde_loss<feasible_best['loss']:
+            feasible_best.update(loss=pde_loss,parameters=v.copy(),call=calls)
         if loss<best['loss']:
             best.update(loss=loss,parameters=v.copy());history.append({'call':calls,'loss':loss})
         return result
@@ -55,8 +60,13 @@ def run():
         fit=least_squares(fun,v0,bounds=(lower,upper),diff_step=1e-4,max_nfev=100,ftol=1e-8,xtol=1e-8,gtol=1e-8)
         reason=fit.message
     except Budget:reason='actual call budget reached'
-    c,f=decode(best['parameters']);out.mkdir(parents=True,exist_ok=True);c.save(out/'candidate.json')
-    result={'status':'training_only_not_validated','calls':calls,'termination':reason,'loss':best['loss'],
+    selected=feasible_best if feasible_selection else best
+    if 'parameters' not in selected:
+        raise RuntimeError('No structurally feasible sampled candidate found; no artifact accepted')
+    c,f=decode(selected['parameters']);out.mkdir(parents=True,exist_ok=True);c.save(out/'candidate.json')
+    result={'status':'training_only_not_validated','calls':calls,'termination':reason,'loss':selected['loss'],'weighted_best_loss':best['loss'],
+            'feasible_selection':feasible_selection,'structure_multiplier':100 if feasible_selection else 1,
+            'selection_limits':{'energy_min':.1005,'energy_max':9.999,'drift_max':.0495},
             'active_tensor_indices':indices,'force':asdict(f),'history':history,'config':'configs/constraints_tensor.json'}
     (out/'training.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps({k:result[k] for k in ('calls','termination','loss')}))
 

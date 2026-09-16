@@ -147,3 +147,7 @@ Implemented `constrained_spectrum.py`: 32³/48³/64³ FFT diagnostics at three t
 ## Tensor stage 1 implementation and rejected fit
 
 Luna/max delivered TensorCandidate; root integrated 24-coefficient fitting and validator dispatch. Integration suite 10 passed in 0.37 s. 2000-call fit: residual sampled maximum 2.4641, core drift 7.18%, min energy 0.09955. Fails PDE and two structural thresholds, so not selected as accepted candidate. Preserve tensor_stage1/ results; next action is stronger constraint enforcement rather than relaxing thresholds.
+
+## Tensor feasible-selection run
+
+Optimizer now tracks best structurally feasible training candidate separately and uses stronger structural penalties (100x residual multiplier). Internal selection uses safety margins; acceptance thresholds are unchanged. 377 calls; selected training PDE loss 0.213667. Independent validator now includes 21-time structural gate: drift 0.0494913, energy [0.170786,1], signs pass. Maximum sampled PDE residual 2.664848 still fails. Saved tensor_feasible/; no final acceptance claim.

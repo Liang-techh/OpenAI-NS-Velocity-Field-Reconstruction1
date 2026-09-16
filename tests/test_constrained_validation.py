@@ -14,3 +14,16 @@ def test_polynomial_manufactured_solution_and_force_sign_detection(t):
     assert np.max(np.abs(r['divergence']))<1e-10
     wrong=residual(u,p,lambda x,t:-f(x,t),x,t)
     assert np.max(np.abs(wrong['momentum']))>1
+
+def test_structural_gate_rejects_energy_collapse():
+    import json
+    from pathlib import Path
+    from openai_ns_reconstruction.constrained_candidate import CompactCandidate
+    from openai_ns_reconstruction.constrained_validation import structure_metrics
+    cfg=json.loads(Path('configs/constraints.json').read_text())
+    c=CompactCandidate().normalized()
+    assert structure_metrics(c,cfg)['sampled_constraints_pass']
+    class CollapsedEnergy:
+        velocity=c.velocity
+        def energy(self,time,order):return 0.09
+    assert not structure_metrics(CollapsedEnergy(),cfg)['sampled_constraints_pass']
