@@ -167,3 +167,7 @@ Added two bounded outer-basis shape coefficients [-2,2], multiplying the old cut
 ## Fixed-velocity pressure-space experiment
 
 Added 18 compact pressure basis terms (degree 2 in r²,z² and degree 1 in time), coefficients bounded [-100,100], at fixed velocity and force. Bounded linear fit reduced training mean-square residual 0.148236 -> 0.146392 but independent maximum worsened 2.491094 -> 2.508246. Keep outer_shape as better development result; outer_pressure is a preserved failed comparison. Five related tests passed in 0.31 s. This weak gain supports changing velocity time evolution, not further pressure-only enrichment.
+
+## Equation-driven initial tangent experiment
+
+Implemented a bounded linear fit of 18 first-time tensor coefficients at t=.25, retaining initial velocity and prescribed force. Actual residual agrees with its affine fit model to 2.81e-10. Initial training sampled maximum .93022 -> .60926; initial velocity change exactly 0 at sampled points. Independent validation at t=.25 gives .61694, but t=.75 deteriorates to 7.58854 and core drift .88796 violates .05. Therefore reject full-time extrapolation. This motivates time-slab or all-time dynamical constraints, not an initial-only fit. Saved initial_tangent/ and reproducible module constrained_initial_tangent.py.
