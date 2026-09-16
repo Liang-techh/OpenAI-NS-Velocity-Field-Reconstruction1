@@ -11,7 +11,7 @@
   "candidate_artifact": "artifacts/constrained/coupled_joint/candidate.json",
   "active_delivery": "https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/pull/1",
   "optimization": "simultaneous_swirl_poloidal_pressure_not_accepted",
-  "next_task": "FUN002 stabilize nonlinear radial continuation and construct outer connection",
+  "next_task": "FUN002 smooth potential exterior connection and full-space function evaluation",
   "visual_correspondence": "not_yet_verified",
   "velocity_api": "src/openai_ns_reconstruction/velocity_components.py",
   "velocity_samples": "artifacts/visual/velocity_api/grid.npz",
@@ -19,6 +19,6 @@
   "paper_core_reference_status": "partial near-axis approximation; independent parameters; leading equations not satisfied",
   "reference_profile_residual": "artifacts/function_first/core_reference/residual.json",
   "paper_core_series": "src/openai_ns_reconstruction/paper_core_series.py",
-  "paper_core_series_status": "nonlinear finite prefix; inner profile equations improved; outer range not converged",
-  "paper_core_series_artifacts": "artifacts/function_first/core_series/selected"
+  "paper_core_series_status": "selected sigma0.5 degree14 nodes257; sampled leading equations improved throughX0.409; full NS pending",
+  "paper_core_series_artifacts": "artifacts/function_first/core_series/smooth_parameters/selected"
 }

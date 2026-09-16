@@ -1,3 +1,7 @@
+## Latest selected inner seed
+
+Use PaperCoreSeries(PaperCoreReference(sigma=.5),maxdegree=14,eta_nodes=257). Artifacts: function_first/core_series/smooth_parameters/selected. On312 development points throughX=.409, leading-profile angular/axial maxima2.30e-4/2.91e-5; no full NS or exterior acceptance. Direct radial integration and Pade alternatives failed and remain documented. NEXT: smooth streamfunction/potential exterior connection and full-space velocity API, then independent full-field checks. Do not repeat the parameter sweep or call surviving Pade samples a completed field.
+
 ## Nonlinear-series update
 
 FUN002 PARTIAL: paper_core_series.py now computes nonlinear radial coefficients and actual velocity. Selected development settings sigma=.3, degree12, eta_nodes513; artifacts/function_first/core_series/selected. Leading-equation errors at X=.1 are about1e-7 over39 eta points, but errors grow atX=.3/.4; no exterior or full NS acceptance. Failed high-order runs retained. Next stabilize continuation and outer connection; do not repeat module construction or add animation. Details and command: docs/VELOCITY_FORMULAS.md.

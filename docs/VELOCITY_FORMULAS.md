@@ -168,3 +168,48 @@ Set PYTHONPATH=src as in the API instructions. All model parameters remain
 independent choices; no theorem threshold or force restriction was relaxed.
 Next work: stabilize radial continuation beyond the reliable inner region,
 then construct the outer connection while preserving incompressibility.
+
+## Extended inner range: selected independent parameters
+
+A bounded study of sigma=.5,.7,1 and radial degrees8,12,14 improves the
+usable inner profile without changing the equations. The selected new seed is
+
+```python
+field = PaperCoreSeries(PaperCoreReference(sigma=.5), maxdegree=14, eta_nodes=257)
+u,v,w = field.velocity(.1,0,.1,.25)
+```
+
+At 39 eta points in [-.95,.95], two derivative steps give consistent leading
+residuals. With step5e-5, X=.3 gives2.51e-6/4.05e-7, X=.4 gives
+1.66e-4/2.14e-5, and X=.409 gives2.30e-4/2.91e-5 (angular/axial).
+All312 sampled points across8 radial levels are finite and have positive F.
+These are selected development samples, not uniform or full NS acceptance.
+The spatial graph correspondence of the changed parameter is not yet verified.
+The new coefficient/sample files are under
+artifacts/function_first/core_series/smooth_parameters/selected.
+
+Reproduce:
+
+```sh
+python -m openai_ns_reconstruction.paper_core_experiment --sigma .5 --degrees 14 --nodes 257 --radii .001 .01 .05 .1 .2 .3 .4 .409 --eta-count 39 --output artifacts/function_first/core_series/smooth_parameters/reproduced
+```
+
+Two other continuation approaches were implemented and rejected as the default:
+
+- paper_core_continuation.py integrates a first-order radial system using
+  DOP853 from X=.03. With sigma=.3, increasing eta resolution129->257 worsens
+  outer residuals and causes negative swirl at some points.513 nodes stops with
+  a step-size-underflow error. The seed-to-integrator switch can also have an
+  off-grid pressure interpolation mismatch, so this exploratory class is not
+  a validated piecewise field. No damping or external force was introduced.
+  Reproduce with python -m openai_ns_reconstruction.paper_continuation_study;
+  failures are saved incrementally in core_continuation/resolution.json.
+- paper_core_pade.py evaluates rational approximants and rejects denominator
+  poles on the entire radial integration path. Degrees6/8/10/12 all reject
+  some tested points; smaller residuals among surviving points are not success.
+  core_pade/comparison.json records both residuals and rejected points.
+
+Next: use the selected series as an inner seed and construct a smooth exterior
+through a streamfunction/potential, preserving incompressibility. Exterior
+pressure, restricted-force compatibility, full NS residual and visual-source
+correspondence still need separate evidence.
