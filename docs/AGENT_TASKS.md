@@ -6,8 +6,8 @@
 
 | ID | 交付 | 依赖 | 状态 | Owner | 验收 |
 | --- | --- | --- | --- | --- | --- |
-| CR001 | 可机读的公开约束与问题配置 | 无 | TODO | — | pending |
-| CR002 | 复用表示选择和非平凡初始化方案 | 无 | TODO | — | pending |
+| CR001 | 可机读的公开约束与问题配置 | 无 | DONE | root | pending |
+| CR002 | 复用表示选择和非平凡初始化方案 | 无 | IN_PROGRESS | cr002_representation (Luna/max) | pending |
 | CR003 | 参数化候选场生成器 | CR001,CR002 | TODO | — | pending |
 | CR004 | 相容压力与 forcing 约定实现 | CR001,CR003 | TODO | — | pending |
 | CR005 | 有限预算约束优化器 | CR003,CR004 | TODO | — | pending |
@@ -81,3 +81,11 @@ remaining_limitations:
 acceptance: pending
 merge_status: open
 ```
+
+## CR001 delivery — 2026-09-16
+
+- Branch: `codex/cr001-constraints`; base: `c670085`.
+- Artifacts: `configs/constraints.json`, `docs/CONSTRAINT_SOURCES.md`.
+- Actual checks: Python JSON parsing and assertions for positive viscosity/thresholds, finite time window, separate seeds and restricted force mode passed; `git diff --check` passed.
+- Optimization and candidate validation: not run. Feasibility remains unresolved.
+- acceptance: pending; merge_status: unmerged. Commit/PR recorded by branch delivery.
