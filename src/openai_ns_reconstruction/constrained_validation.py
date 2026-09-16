@@ -84,7 +84,10 @@ if __name__ == '__main__':
     args=parser.parse_args()
     cfg=json.loads(Path(args.config).read_text())
     family=json.loads(Path(args.candidate).read_text())['family']
-    if family == 'inner_swirl_v1':
+    if family == 'local_pressure_v1':
+        from .constrained_local_pressure import LocalPressureCandidate
+        c=LocalPressureCandidate.load(args.candidate)
+    elif family == 'inner_swirl_v1':
         from .constrained_inner_swirl import InnerSwirlCandidate
         c=InnerSwirlCandidate.load(args.candidate)
     elif family == 'quintic_swirl_v1':

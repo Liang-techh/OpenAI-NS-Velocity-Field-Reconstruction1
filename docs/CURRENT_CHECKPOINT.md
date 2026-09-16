@@ -57,3 +57,5 @@
 - Selected quintic_swirl maximum1.26452, structure sampled pass. Found immutable residual around1.15 inside r<.354 because all current corrections vanish there. Next representation must reach that annulus while preserving core probes r<=.0866. See docs/QUINTIC_AND_FROZEN_COLLAR.md.
 
 - Current reference inner_swirl_pressure maximum1.24417, structure sampled pass. Inner annulus unlocked; remaining strong axial/radial residual needs pressure/poloidal changes. Added moment has a measured quadrature defect2.82e-5, recorded honestly. See docs/INNER_SWIRL_AND_PRESSURE.md.
+
+- Current local_pressure max1.24361, structural probes pass. Closed-loop residual circulation estimates a pressure-independent floor.357 for fixed velocity/force; further pressure-only fitting cannot plausibly attain.001. Next: bounded divergence-free poloidal corrections with joint pressure fitting.
