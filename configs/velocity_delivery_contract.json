@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "task_id": "CR011-VELOCITY-DELIVERY-CONTRACT-INTEGRATION-001",
+  "source_pr": 22,
+  "scope": "Govern the function-first velocity deliverable separately from visual correspondence, PDE, paper-exact, and blow-up claims.",
+  "primary_deliverable": {
+    "api": "openai_ns_reconstruction.velocity_components:velocity",
+    "component_apis": ["u", "v", "w"],
+    "component_order": ["u", "v", "w"],
+    "coordinates": "right-handed Cartesian; z is axial",
+    "time_interval": [0.25, 0.75],
+    "support": "r < 2 and abs(z) < 2",
+    "bundled_candidate": "src/openai_ns_reconstruction/data/velocity_candidate.json",
+    "bundled_candidate_family": "coupled_velocity_v1",
+    "documentation": "docs/VELOCITY_API.md"
+  },
+  "source_classification": [
+    {
+      "item": "callable velocity components [u(x,y,z,t), v(x,y,z,t), w(x,y,z,t)] as the immediate deliverable",
+      "classification": "user_required",
+      "source": "docs/PROJECT_GOAL.md"
+    },
+    {
+      "item": "cylindrical orientation and qualitative inward-spiral/axial-stretching target",
+      "classification": "public_source",
+      "source": "docs/VISUAL_TARGET.md"
+    },
+    {
+      "item": "finite time window, compact support cylinder, nu=0.01, energy normalization, forcing family, and PDE thresholds",
+      "classification": "autonomous",
+      "source": "configs/constraints_coupled.json"
+    },
+    {
+      "item": "exact OpenAI frame time, camera, trajectory seeds, color normalization, units, and numerical velocity samples",
+      "classification": "pending",
+      "source": "docs/VISUAL_TARGET.md"
+    }
+  ],
+  "claim_status": {
+    "velocity_export_ready": true,
+    "public_target_asset_identified": true,
+    "openai_numerical_field_identified": false,
+    "openai_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "blowup_proof": false
+  },
+  "claim_gates": {
+    "visual_correspondence": {
+      "blocking_for_velocity_delivery": false,
+      "required_for_correspondence_claim": true,
+      "comparison_evidence": [],
+      "time_mapping_status": "pending"
+    },
+    "pde_validation": {
+      "blocking_for_velocity_delivery": false,
+      "blocking_for_pde_claim": true,
+      "config": "configs/constraints_coupled.json",
+      "evidence": []
+    }
+  },
+  "truth_boundary": [
+    "A callable nonzero velocity field may be delivered while PDE validation remains failed.",
+    "Visual or qualitative correspondence does not imply PDE validity.",
+    "The bundled candidate must not be labeled the exact OpenAI numerical field without independent source evidence.",
+    "PDE thresholds remain governed by the preregistered constrained configuration and are not relaxed by this delivery contract.",
+    "No velocity-field deliverable is a finite-time singularity proof."
+  ],
+  "pending": [
+    "numerical identification of the OpenAI field",
+    "verified time/camera mapping to the public target",
+    "quantitative visual correspondence evidence",
+    "independent PDE acceptance"
+  ]
+}
