@@ -5,7 +5,7 @@ from openai_ns_reconstruction.constrained_outer_momentum import AngularMomentumC
 
 
 def test_outer_swirl_preserves_core_and_support_and_roundtrip(tmp_path):
-    base=TensorCandidate().normalized();c=AngularMomentumCandidate(base,RestrictedForce())
+    base=TensorCandidate().normalized();c=AngularMomentumCandidate(base,RestrictedForce(),outer_shape=(-1.2,.4))
     p=np.array([[.01,0,.01],[0,0,.2],[.1,.1,-.1]])
     np.testing.assert_array_equal(c.velocity(p,.5),base.velocity(p,.5))
     np.testing.assert_array_equal(c.velocity([[2,0,0],[0,0,2]],.5),0)

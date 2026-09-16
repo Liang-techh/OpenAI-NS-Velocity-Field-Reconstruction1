@@ -159,3 +159,7 @@ Implemented `constrained_momentum_budget.py` using legacy quadrature. tensor_fea
 ## Outer angular-momentum correction
 
 Implemented `AngularMomentumCandidate` with a fixed-support swirl basis vanishing around the core; directly reuses legacy standard_cutoff and unit_rule. Amplitude follows integrated prescribed force torque, not residual-defined force. At t=.5 torque mismatch falls from ~10.73 to ~1e-4 (quadrature-dependent, not certified). Independent sampled max residual 2.596683, 21-time structure checks pass; energy range [0.497829,1.000655], core drift unchanged 0.0494913. Results outer_momentum/. Local PDE still fails .001.
+
+## Outer spatial distribution fit
+
+Added two bounded outer-basis shape coefficients [-2,2], multiplying the old cutoff basis by exp(alpha*(r²/4-.5)+beta*z²/4). Recomputed moment normalization preserves the prescribed global torque construction. Force, core and thresholds unchanged. 27 calls, fitted shape [-1.616864,-1.748855], independent sampled max residual 2.491094, structural probes pass (energy [0.683244,1.08919], drift 0.0494913). Results outer_shape/. PDE still fails .001.

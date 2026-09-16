@@ -11,8 +11,11 @@ from .constrained_momentum_budget import angular_moment
 
 
 class AngularMomentumCandidate:
-    def __init__(self,base,force,order=96):
+    def __init__(self,base,force,order=96,outer_shape=(0.,0.)):
         self.base,self.force,self.order=base,force,order
+        self.outer_shape=tuple(float(v) for v in outer_shape)
+        if len(self.outer_shape)!=2 or not all(np.isfinite(v) and -2<=v<=2 for v in self.outer_shape):
+            raise ValueError("outer shape requires two finite coefficients in [-2,2]")
         ts=np.array([.25,.5,.75])
         values=np.array([angular_moment(base.velocity,float(t),order) for t in ts])
         # Fixed geometry and degree-two time tensor imply J=tau^1.49 P2(t).
@@ -22,13 +25,13 @@ class AngularMomentumCandidate:
         self.force_moment=angular_moment(force,.5,order)
         if self.basis_moment<=0:raise ValueError('nonpositive outer moment')
 
-    @staticmethod
-    def outer_basis(points,time):
+    def outer_basis(self,points,time):
         p=np.asarray(points,dtype=float);x,y,z=np.moveaxis(p,-1,0)
         r2=x*x+y*y
         def cutoff(a):
             return np.fromiter((standard_cutoff(float(v)) for v in a.ravel()),float,count=a.size).reshape(a.shape)
         b=cutoff(r2/4)*cutoff(z*z/4)*(1-cutoff(r2/.25))
+        b *= np.exp(self.outer_shape[0]*(r2/4-.5)+self.outer_shape[1]*z*z/4)
         return np.stack((-y*b,x*b,np.zeros_like(b)),axis=-1)
 
     def amplitude(self,time):
@@ -54,14 +57,14 @@ class AngularMomentumCandidate:
 
     def save(self,path):
         data={'family':'angular_momentum_outer_v1','schema_version':1,'status':'candidate',
-              'base_parameters':asdict(self.base),'force':asdict(self.force),'quadrature_order':self.order}
+              'base_parameters':asdict(self.base),'force':asdict(self.force),'quadrature_order':self.order,'outer_shape':self.outer_shape}
         Path(path).write_text(json.dumps(data,indent=2)+'\n')
 
     @classmethod
     def load(cls,path):
         d=json.loads(Path(path).read_text())
         if d['family']!='angular_momentum_outer_v1':raise ValueError('wrong family')
-        return cls(TensorCandidate(**d['base_parameters']),RestrictedForce(**d['force']),d['quadrature_order'])
+        return cls(TensorCandidate(**d['base_parameters']),RestrictedForce(**d['force']),d['quadrature_order'],d.get('outer_shape',(0.,0.)))
 
 
 if __name__=='__main__':
