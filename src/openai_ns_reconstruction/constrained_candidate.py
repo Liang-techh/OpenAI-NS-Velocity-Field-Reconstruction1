@@ -78,6 +78,29 @@ class CompactCandidate:
         axial = v*Z*(2*b*q+R2*(bR*q+b*self.radial_shape/2))
         return np.stack((x*radial-y*swirl, y*radial+x*swirl, axial),axis=-1)
 
+    def vector_potential(self, points, time):
+        """Axis-regular potential for the legacy curl/correction composition API."""
+        x,y,tau,_,_,_,Z,b,_,_,q = self._chart(points,time)
+        H=self.amplitude*tau**(-0.505)*Z*b*q
+        return np.stack((-y*H,x*H,np.zeros_like(H)),axis=-1)
+
+    def as_legacy_local_field(self):
+        """Reuse LocalField's numerical curl, without returning the direct velocity.
+
+        This scalar adapter enables legacy potential corrections and independently
+        checks the direct poloidal formula. It is slower than batched evaluation.
+        """
+        from .local_field import LocalField
+        def potential(x,y,z,t):
+            return self.vector_potential([x,y,z],t)
+        def swirl(x,y,z,t):
+            r=np.hypot(x,y)
+            if r==0:
+                return 0.0
+            u=self.velocity([x,y,z],t)
+            return float((-y*u[0]+x*u[1])/r)
+        return LocalField(potential,swirl)
+
     def pressure(self, points, time):
         _,_,tau,_,_,R2,Z,b,_,_,_ = self._chart(points,time)
         return tau**(-1.01)*b*(self.pressure_constant

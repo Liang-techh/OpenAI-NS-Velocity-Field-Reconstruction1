@@ -117,3 +117,7 @@ Five exact symbolic ansatz identities executed with SymPy 1.14.0: poloidal diver
 ## CR005 v3 time-dependent swirl experiment
 
 Added two bounded time-dependent swirl collar coefficients and the preregistered core-drift penalty. 237 calls, training loss 0.276786; independent PDE validation still fails. Configuration and all results retained under constraints_v3.json and optimized_v3/. No full scaling claim for time-dependent swirl. Next decision: assess reusable legacy correction-field implementations before expanding this small ansatz again.
+
+## Executable legacy reuse bridge
+
+Added `CompactCandidate.vector_potential` and `as_legacy_local_field`; directly executes old LocalField/curl_numeric/jacobian_numeric and supports sum_vector_fields correction assembly. Four targeted tests passed in 0.26 s. Details and limits: `docs/LEGACY_REUSE.md`. This is a reusable composition interface, not a ready NS correction or a reduction in PDE residual.
