@@ -151,3 +151,7 @@ Luna/max delivered TensorCandidate; root integrated 24-coefficient fitting and v
 ## Tensor feasible-selection run
 
 Optimizer now tracks best structurally feasible training candidate separately and uses stronger structural penalties (100x residual multiplier). Internal selection uses safety margins; acceptance thresholds are unchanged. 377 calls; selected training PDE loss 0.213667. Independent validator now includes 21-time structural gate: drift 0.0494913, energy [0.170786,1], signs pass. Maximum sampled PDE residual 2.664848 still fails. Saved tensor_feasible/; no final acceptance claim.
+
+## Global angular-momentum diagnosis
+
+Implemented `constrained_momentum_budget.py` using legacy quadrature. tensor_feasible violates integrated torque balance: at t=0.25 J'= -21.2593 versus force torque -1.1140. Numerical Cauchy-Schwarz residual-L2 lower-bound estimate 1.5421, far above .001. Data angular_momentum.json and derivation ANGULAR_MOMENTUM_DIAGNOSIS.md. Next concrete representation change: smooth outer swirl reservoir constrained by prescribed force torque; not arbitrary forcing.
