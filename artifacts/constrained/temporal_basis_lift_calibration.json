@@ -1,0 +1,45 @@
+{
+  "schema": "constrained_temporal_basis_lift_calibration_v1",
+  "task_id": "CR003-TEMPORAL-BASIS-LIFT-009",
+  "fixture": "synthetic two-channel local response with static poloidal demand and affine-in-time swirl demand",
+  "times": [0.25, 0.5, 0.75],
+  "tau": [-1.0, 0.0, 1.0],
+  "base_parameter_labels": ["poloidal", "swirl"],
+  "lifted_parameter_label": "swirl:time_slope",
+  "slope_bound": 1.0,
+  "material_gain": 0.2,
+  "material_gain_classification": "autonomous_diagnostic_choice_not_acceptance_threshold",
+  "static": {
+    "parameter_count": 2,
+    "coefficients": [1.0000000000000004, -9.06493303673679e-17],
+    "residual_remaining_ratio": 0.5468687416197306,
+    "visual_remaining_ratio": 0.4399413450640599,
+    "joint_remaining_ratio": 0.5,
+    "numerical_rank": 2,
+    "condition_number": 1.0
+  },
+  "affine_lift": {
+    "parameter_count": 3,
+    "coefficients": [1.0000000000000004, -9.06493303673679e-17, 0.7000000000000001],
+    "residual_remaining_ratio": 0.06835859270246632,
+    "visual_remaining_ratio": 0.07332355751067672,
+    "joint_remaining_ratio": 0.07071067811865477,
+    "numerical_rank": 3,
+    "condition_number": 1.224744871391589
+  },
+  "gain_from_single_temporal_lift": {
+    "residual": 0.47851014891726434,
+    "visual": 0.3666177875533832,
+    "joint": 0.4292893218813452,
+    "materially_improves_both": true
+  },
+  "truth_boundary": {
+    "production_candidate_evaluated": false,
+    "velocity_changed": false,
+    "pde_validated": false,
+    "visual_correspondence_verified": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "note": "Synthetic calibration demonstrates the diagnostic only. It is not evidence that the Eq. 4.5 production candidate needs this temporal lift."
+  }
+}
