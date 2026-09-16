@@ -92,3 +92,26 @@ reference must not be relabeled as those completed constructions.
 Correction: the prior documentation mistakenly wrote q^(-2h) in the coordinate
 equation. Equation (4.1) requires q^(2h); the inherited numerical solver already
 used that correct positive exponent.
+
+## Nonlinear profile equations and baseline error
+
+Let avgU be the radial average of U, d=1-eta^2, L=1-2h*eta^2.
+Equations (4.8), (4.9), (4.13) reduce to
+
+    W = 1-2D*eta*avgU-d*partial_eta(avgU)
+    Hc = D*eta+d*U
+    Sq = -W*(1+X*F_X/F)-h*(1-2*eta*U)-Hc*F_eta/F
+    Sn = -W*X*U_X-A*(1-2*eta*U)*U-Hc*U_eta
+         -d*Pi_eta+4*A*eta*Pi+2*eta*X*Pi_X
+    -2L*(X*F_XX+2*F_X)/F = Sq
+    -2L*(X*U_XX+U_X) = Sn
+    Pi_X = F^2.
+
+The new independent finite-difference evaluator paper_profile_residual.py
+checks these equations, not the full NS system. The B.13 reference with the
+recorded defaults gives maximum absolute angular/axial equation errors
+9.08389245 / 4.40968923 on 20 interior points. Halving difference step from
+1e-4 to 5e-5 changes them by less than 3e-7. Its radial pressure relation
+has error below 1.4e-12. Thus the reference is not already a nonlinear solution;
+the remaining defect is substantive, not a derivative-resolution artifact.
+Raw points and both steps are saved in core_reference/residual.json.

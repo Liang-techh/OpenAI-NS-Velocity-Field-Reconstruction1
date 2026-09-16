@@ -70,11 +70,17 @@ class PaperCoreReference:
         self._check(X, eta)
         return 4+X*self.axial_coefficient(eta)[1]
 
+    def Pi(self, X, eta):
+        self._check(X, eta)
+        return (-self.pressure_scale**2/(1+eta*eta)**2
+                + quad(lambda s: self.F(s,eta)**2,0,X,
+                       epsabs=1e-12,epsrel=1e-12)[0])
+
     @cached_property
     def profile(self):
         return LeadingProfile(
             E=lambda X,e: math.sqrt(2*X)*self.F(X,e), U=self.U,
-            dU_deta=self.dU, F=self.F,
+            dU_deta=self.dU, F=self.F, Pi=self.Pi,
             average_U=lambda X,e: self.U(X/2,e),
             average_dU_deta=lambda X,e: self.dU(X/2,e),
             name='paper-B13-core-reference-independent-parameters',

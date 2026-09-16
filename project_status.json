@@ -11,8 +11,11 @@
   "candidate_artifact": "artifacts/constrained/coupled_joint/candidate.json",
   "active_delivery": "https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/pull/1",
   "optimization": "simultaneous_swirl_poloidal_pressure_not_accepted",
-  "next_task": "VIS001 exact target provenance and VIS003 actual visualization",
+  "next_task": "FUN002 nonlinear leading-profile correction and computable functions; animation deferred",
   "visual_correspondence": "not_yet_verified",
   "velocity_api": "src/openai_ns_reconstruction/velocity_components.py",
-  "velocity_samples": "artifacts/visual/velocity_api/grid.npz"
+  "velocity_samples": "artifacts/visual/velocity_api/grid.npz",
+  "paper_core_reference": "src/openai_ns_reconstruction/paper_core_reference.py",
+  "paper_core_reference_status": "partial near-axis approximation; independent parameters; leading equations not satisfied",
+  "reference_profile_residual": "artifacts/function_first/core_reference/residual.json"
 }
