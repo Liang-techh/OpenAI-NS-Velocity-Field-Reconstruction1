@@ -13,7 +13,7 @@
 | CR005 | 有限预算约束优化器 | CR003,CR004 | IN_PROGRESS | root | pending |
 | CR006 | 独立散度/NS residual 验证器 | CR001,CR003 | IN_PROGRESS | root | pending |
 | CR007 | 边界、支撑、能量验证 | CR003,CR004 | IN_PROGRESS | root | pending |
-| CR008 | 频谱、缩放、集中机制诊断 | CR001,CR003 | TODO | — | pending |
+| CR008 | 频谱、缩放、集中机制诊断 | CR001,CR003 | IN_PROGRESS | root | pending |
 | CR009 | 精度收敛与泛化验证 | CR005–CR008 | IN_PROGRESS | root | pending |
 | CR010 | 3–5 个关键结构命题验证 | CR002,CR003 | DONE | root | pending |
 | CR011 | 可复现候选 artifact 与运行入口 | CR005,CR009 | TODO | — | pending |
@@ -137,3 +137,9 @@ Added time-dependent streamfunction collar shapes. Legacy curl/direct candidate 
 ## CR005 adaptive warm-start experiment
 
 Added warm-start from a saved candidate/force and residual-adaptive training points. From a separately seeded 8192-point training pool, selected 256 highest-residual points; validation samples were not used. v4 warm-start hit the actual 2000-call budget, independent sampled maximum 2.738863 versus 2.788433. Training loss 0.473533 is not directly comparable with the old training loss because the sampling measure changed. Two related operator/linear-fit tests passed in 0.53 s. Artifacts: adaptive_v4/. Conclusion: more of the same low-dimensional optimization gives only marginal benefit; further work should change representation, not merely raise iteration count.
+
+## Tensor representation and spectral progress
+
+Tensor representation implementation is assigned to Luna/max worker `tensor_candidate`; root prepared bounded stage-1 configuration (24 active coefficients), optimizer and scope document. Delivery pending worker integration; no tensor fit result claimed.
+
+Implemented `constrained_spectrum.py`: 32³/48³/64³ FFT diagnostics at three times, Parseval energy identity checked numerically. At t=0.75 high-mode tail fractions are 2.592e-4 / 4.663e-5 / 1.129e-5. Data: `artifacts/constrained/adaptive_v4/spectrum.json`. No spectral pass threshold or singularity claim. Run `python -m openai_ns_reconstruction.constrained_spectrum`.
