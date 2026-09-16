@@ -1,6 +1,6 @@
 # 新目标任务队列
 
-基线：新仓库 `main` 最新提交。认领前读取目标、检查点及本仓库开放 PR。
+执行入口：`docs/SCHEDULED_AGENT_TASKS.md`。当前集成基线是 `codex/cr001-constraints`（PR #1），不是尚未合并这些成果的旧 `main`。认领前读取目标、检查点、任务入口及开放 PR。
 状态为 TODO/IN_PROGRESS/DONE/BLOCKED；DONE 只表示交付完成，acceptance 和 merge_status 单独记录。
 每项完成后附 commit、PR、实际命令/结果、参数和剩余限制。没有执行的检查写 not run。
 
@@ -201,3 +201,5 @@ CR003/CR005 nested axial-ring expansion delivered with 36 bounded coefficients. 
 - CR004 local shrinking pressure basis delivered(27 bounded coefficients); full max1.24361, structure sampled pass. Pressure-independent closed-loop estimate gives fixed-velocity residual floor about.357, so next CR003/CR005 must add poloidal streamfunction corrections and joint pressure optimization. Numerical estimate is not interval-certified. Reproducible circulation operator and manufactured test delivered; see docs/LOCAL_PRESSURE_AND_CIRCULATION.md.
 
 - CR003/CR005 poloidal-plus-pressure implementation delivered; smooth core-anchor version standard sampled max1.00634, refined.95665. Core/energy probes pass; standard numerical divergence fails but finest supplementary step gives4.32e-6. Circulation bound estimate falls.357->.160. Cutoff comparison failure retained. Next fully coupled swirl/poloidal/pressure fitting; see docs/POLOIDAL_JOINT_EXPERIMENT.md.
+
+- Simultaneous144-parameter fit delivered: standard maximum1.00221830; core/energy pass, momentum and standard divergence fail. Exact-candidate refinement pending. Scheduled agents must use docs/SCHEDULED_AGENT_TASKS.md as the actionable queue.

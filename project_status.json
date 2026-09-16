@@ -1,15 +1,16 @@
 {
-  "objective": "constrained_independent_reconstruction",
+  "objective": "computable_3d_velocity_components_corresponding_to_openai_visualization",
   "migration": "complete",
   "candidate_status": "candidate",
-  "independent_validation": "core_energy_pass_momentum_fail_standard_divergence_fail_refined_divergence_max_pass",
+  "independent_validation": "core_energy_pass_momentum_and_standard_divergence_fail_refinement_pending",
   "selected_structure_proofs": "v1-v3 identities verified; v4 full-profile scaling not claimed",
   "exact_paper_reproduction_required": false,
   "full_blowup_proof_required": false,
-  "active_task_file": "docs/AGENT_TASKS.md",
+  "active_task_file": "docs/SCHEDULED_AGENT_TASKS.md",
   "legacy_artifacts_are_candidate_evidence": false,
-  "candidate_artifact": "artifacts/constrained/poloidal_anchor/candidate.json",
+  "candidate_artifact": "artifacts/constrained/coupled_joint/candidate.json",
   "active_delivery": "https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/pull/1",
-  "optimization": "anchored_poloidal_and_pressure_joint_fit_not_accepted",
-  "next_task": "joint swirl/poloidal/pressure optimization with smooth core anchor"
+  "optimization": "simultaneous_swirl_poloidal_pressure_not_accepted",
+  "next_task": "VIS001 target provenance and VIS002 velocity API, then visualization",
+  "visual_correspondence": "not_yet_verified"
 }

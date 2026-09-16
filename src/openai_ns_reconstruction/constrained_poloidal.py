@@ -1,5 +1,6 @@
 """Joint compact poloidal streamfunction and pressure candidate."""
 from dataclasses import dataclass
+from typing import ClassVar
 import json
 from pathlib import Path
 import numpy as np
@@ -14,11 +15,13 @@ from .quadrature import unit_rule
 class PoloidalCandidate(LocalPressureCandidate):
     coefficients: tuple[float,...]=(0.,)*27
     anchor_core: bool=False
+    COEFFICIENT_COUNT: ClassVar[int]=27
+    FAMILY_ID: ClassVar[str]="poloidal_joint_v1"
 
     def __post_init__(self):
         super().__post_init__()
         a=np.asarray(self.coefficients,dtype=float)
-        if a.shape!=(27,) or not np.all(np.isfinite(a)) or np.any(np.abs(a)>1):raise ValueError('27 bounded poloidal coefficients required')
+        if a.shape!=(self.COEFFICIENT_COUNT,) or not np.all(np.isfinite(a)) or np.any(np.abs(a)>1):raise ValueError(f'{self.COEFFICIENT_COUNT} bounded velocity coefficients required')
         object.__setattr__(self,'coefficients',tuple(float(v) for v in a))
 
     def correction_basis(self,points,time):
@@ -52,12 +55,12 @@ class PoloidalCandidate(LocalPressureCandidate):
         return float(8*np.pi*np.sum(r*np.sum(u*u,axis=-1)*w[:,None]*w[None,:]))
 
     def save(self,path):
-        data={'family':'poloidal_joint_v1','status':'candidate','anchor_core':self.anchor_core,'coefficients':self.coefficients,'pressure_coefficients':self.pressure_coefficients,
+        data={'family':self.FAMILY_ID,'status':'candidate','anchor_core':self.anchor_core,'coefficients':self.coefficients,'pressure_coefficients':self.pressure_coefficients,
               'base':{'coefficients':self.base.coefficients,'order':self.base.order,'parent':_parent_payload(self.base.parent)}}
         Path(path).write_text(json.dumps(data,indent=2)+'\n')
 
     @classmethod
     def load(cls,path):
         d=json.loads(Path(path).read_text());b=d['base']
-        if d['family']!='poloidal_joint_v1':raise ValueError('wrong family')
+        if d['family']!=cls.FAMILY_ID:raise ValueError('wrong family')
         return cls(InnerSwirlCandidate(_parent_from_payload(b['parent']),tuple(b['coefficients']),b['order']),tuple(d['pressure_coefficients']),tuple(d['coefficients']),d.get('anchor_core',False))

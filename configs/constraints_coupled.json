@@ -1,0 +1,563 @@
+{
+  "schema_version": 1,
+  "status": "preregistered_not_validated",
+  "experiment_id": "tensor_correction_stage1",
+  "source_map": "docs/CONSTRAINT_SOURCES.md",
+  "units": "dimensionless; L_ref=U_ref=1, residual scale=U_ref^2/L_ref=1",
+  "equation": "u_t + (u dot grad)u + grad(p) - nu*laplacian(u) = f; div(u)=0",
+  "nu": 0.01,
+  "domain": {
+    "physical": "R^3",
+    "evaluation_box": [
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ]
+    ],
+    "support": "r < 2 and abs(z) < 2",
+    "boundary": "smooth zero extension of velocity and pressure outside support",
+    "time_interval": [
+      0.25,
+      0.75
+    ],
+    "initial_condition": "optimized nonzero field at t=0.25; not the paper zero-rest initial condition",
+    "pressure_gauge": "p=0 outside compact support"
+  },
+  "structure": {
+    "h": 0.005,
+    "tau": "1-t",
+    "radial_scale": "sqrt(tau)",
+    "axial_scale": "tau^(0.5-h)",
+    "leading_swirl_axial_scale": "tau^(-0.5-h)",
+    "symmetry": "axisymmetric with swirl",
+    "core_probe": "r=0.1*sqrt(tau), z=0.1*tau^(0.5-h)",
+    "core_sign_requirements": [
+      "u_r < 0",
+      "u_theta > 0",
+      "u_z > 0"
+    ],
+    "mechanism_status": "finite-window target, feasibility not established"
+  },
+  "forcing": {
+    "mode": "restricted_two_parameter_family",
+    "bump": "B(s)=exp(1-1/(1-s)) for s<1, zero otherwise",
+    "spatial_factor": "b=B((x*x+y*y)/4)*B(z*z/4)",
+    "temporal_factor": "g(t)=B((2*t-1)^2)",
+    "potential": "A_f=b*(-a*z*y, a*z*x, -c*(x*x+y*y)/2)",
+    "definition": "f=g(t)*curl(A_f)",
+    "parameters": {
+      "a": [
+        0.0,
+        10.0
+      ],
+      "c": [
+        0.0,
+        10.0
+      ]
+    },
+    "initial_parameters": {
+      "a": 1.0,
+      "c": 1.0
+    },
+    "restriction": "Only a,c may be fitted. No residual-dependent basis or pointwise free force. Freeze family before optimization.",
+    "regularity": "C-infinity compact support in space and t in [0,1]; structural proof pending",
+    "report": [
+      "a",
+      "c",
+      "max_abs_force",
+      "L2_force",
+      "integral_u_dot_f"
+    ]
+  },
+  "nontriviality": {
+    "reference_time": 0.25,
+    "kinetic_energy_definition": "E(t)=0.5*integral_R3 |u|^2 dx",
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "minimum_energy_each_validation_time": 0.1,
+    "maximum_energy_each_validation_time": 10.0,
+    "enforcement": "normalize initial velocity parameters, reject collapsed candidates"
+  },
+  "optimization": {
+    "seed": 20260916,
+    "sampling": "uniform Cartesian box and time, plus separate core/axis/boundary strata",
+    "interior_points": 2048,
+    "maximum_function_evaluations": 2000,
+    "loss_weights": {
+      "pde": 1.0,
+      "structure": 1.0,
+      "energy": 1.0
+    },
+    "hard_constraints": [
+      "divergence via curl",
+      "compact smooth support",
+      "parameter bounds"
+    ],
+    "candidate_parameter_bounds": {
+      "swirl_ratio": [
+        0.25,
+        4
+      ],
+      "radial_width": [
+        0.7,
+        1.1
+      ],
+      "axial_width": [
+        0.7,
+        1.1
+      ],
+      "radial_shape": [
+        -0.2,
+        0.2
+      ],
+      "axial_shape": [
+        -0.2,
+        0.2
+      ],
+      "pressure_constant": [
+        -100,
+        100
+      ],
+      "pressure_radial": [
+        -100,
+        100
+      ],
+      "pressure_axial": [
+        -100,
+        100
+      ],
+      "amplitude": "derived from E(0.25)=1, not optimized; reject outside [1e-4,100]",
+      "swirl_radial_shape": [
+        -0.8,
+        0.8
+      ],
+      "swirl_axial_shape": [
+        -0.8,
+        0.8
+      ],
+      "swirl_radial_time": [
+        -4,
+        4
+      ],
+      "swirl_axial_time": [
+        -4,
+        4
+      ],
+      "poloidal_radial_time": [
+        -4,
+        4
+      ],
+      "poloidal_axial_time": [
+        -4,
+        4
+      ]
+    }
+  },
+  "validation": {
+    "seed": 914027,
+    "held_out_points": 4096,
+    "times": [
+      0.25,
+      0.3125,
+      0.4375,
+      0.5625,
+      0.6875,
+      0.75
+    ],
+    "operator": "independent Cartesian finite differences, calibrated on analytic fields",
+    "derivative_steps": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "quadrature_orders_per_axis": [
+      24,
+      48,
+      96
+    ],
+    "vary_one_at_a_time": true,
+    "norms": [
+      "max Euclidean vector norm",
+      "volume-weighted L2 spatial norm at each time"
+    ],
+    "thresholds": {
+      "divergence_max": 1e-05,
+      "divergence_L2": 1e-05,
+      "pde_residual_max": 0.001,
+      "pde_residual_L2": 0.001,
+      "boundary_velocity_max": 1e-10,
+      "boundary_pressure_max": 1e-10,
+      "energy_quadrature_relative_change": 0.001,
+      "scaled_core_profile_relative_drift": 0.05
+    },
+    "spectral_report": "energy versus spatial frequency at fixed times; report resolution sensitivity; no paper Fourier coefficients assumed",
+    "acceptance": "All hard constraints and thresholds at finest level plus explained convergence; numerical samples are not uniform proofs",
+    "failure_policy": "retain failed results; changing thresholds requires a new experiment version",
+    "time_derivatives": "one-sided calibrated stencils at time endpoints; centered stencils only strictly within the declared window",
+    "scaled_core_profile_metric": "At core_probe, form v=(sqrt(tau)*u_r,tau^(0.5+h)*u_theta,tau^(0.5+h)*u_z); report max_t norm(v(t)-v(0.25))/norm(v(0.25)); reject zero reference norm."
+  },
+  "excluded_claims": [
+    "exact paper coefficients",
+    "t=0 start from rest",
+    "t approaching 1 regular force theorem",
+    "finite-time singularity proof"
+  ],
+  "pending": [
+    "candidate derivative interfaces",
+    "feasibility of restricted force and compact pressure",
+    "optimization",
+    "independent validation",
+    "structure proofs"
+  ],
+  "parent_experiment": "compact_axisymmetric_window_v3",
+  "change_reason": "Add time-dependent poloidal streamfunction collar shapes; preserve all acceptance thresholds.",
+  "tensor_experiment": {
+    "initial_candidate": "artifacts/constrained/adaptive_v4/candidate.json",
+    "basis": "s^i v^j w^k; s=R\u00b2/4,v=Z\u00b2/4,w=2(t-.25)",
+    "ordering": "i outer, j middle, k inner; each range(3)",
+    "active": "i+j<=2 and k<=1",
+    "coefficient_bounds": [
+      -1,
+      1
+    ],
+    "base_geometry": "frozen; pressure and two restricted force coefficients fitted",
+    "acceptance": "unchanged from v4"
+  },
+  "temporal_swirl_experiment": {
+    "parent": "artifacts/constrained/continued_pressure/candidate.json",
+    "spatial_modes": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "temporal_basis": "cubic Bernstein k=1,2,3 on w=2(t-.25)",
+    "coefficient_bounds": [
+      -1,
+      1
+    ],
+    "constraints": "zero added angular moment; zero correction at initial time and core; fixed pressure and force",
+    "actual_call_budget": 500,
+    "training_points": 2048,
+    "training_seed": 20260916,
+    "acceptance": "unchanged; development validation only",
+    "tail_adaptive_comparison": {
+      "pool_seed": 20261017,
+      "pool_points": 8192,
+      "selected_largest_parent_residual_points": 256,
+      "time": 0.748,
+      "validation_points_used_for_training": false
+    }
+  },
+  "localized_swirl_experiment": {
+    "parent": "artifacts/constrained/continued_pressure/candidate.json",
+    "rings": [
+      [
+        0.22,
+        0.14,
+        0.25
+      ],
+      [
+        0.22,
+        0.14,
+        0.8
+      ],
+      [
+        0.5,
+        0.3,
+        0.25
+      ],
+      [
+        0.5,
+        0.3,
+        0.8
+      ],
+      [
+        1.0,
+        0.5,
+        0.25
+      ],
+      [
+        1.0,
+        0.5,
+        0.8
+      ]
+    ],
+    "formula": "outer_basis * (exp(-((r\u00b2-center)/width)^2-(z\u00b2/axial_width)^2) - moment_ratio)",
+    "temporal_basis": "three nonzero cubic Bernstein modes",
+    "coefficient_bounds": [
+      -1,
+      1
+    ],
+    "training_points": 2048,
+    "training_seed": 20260916,
+    "actual_call_budget": 500,
+    "loss_comparisons": [
+      "mean squared Euclidean residual",
+      "mean fourth power Euclidean residual"
+    ],
+    "acceptance": "unchanged"
+  },
+  "axial_swirl_experiment": {
+    "nested_basis": "original six rings plus six rings centered at z\u00b2=.8",
+    "additional_radial_center_width": [
+      [
+        0.16,
+        0.12
+      ],
+      [
+        0.35,
+        0.2
+      ],
+      [
+        0.7,
+        0.35
+      ]
+    ],
+    "additional_axial_widths": [
+      0.25,
+      0.5
+    ],
+    "coefficient_bounds": [
+      -1,
+      1
+    ],
+    "coefficient_count": 36,
+    "initial_coefficients": "localized_swirl coefficients followed by18 zeros",
+    "parent": "continued_pressure",
+    "actual_call_budget": 500,
+    "loss": "mean squared residual",
+    "acceptance": "unchanged",
+    "loss_comparisons": [
+      "mean squared residual",
+      "fourth-power residual"
+    ],
+    "dense_comparison": {
+      "radial": [
+        0.03,
+        1.97,
+        24
+      ],
+      "axial": [
+        0,
+        1.97,
+        24
+      ],
+      "times": [
+        0.252,
+        0.748,
+        9
+      ],
+      "appended_to_uniform": true,
+      "loss": "fourth power",
+      "reason": "sparse uniform fit worsened independent maximum; cover narrow ring collars"
+    }
+  },
+  "analytic_continuation": {
+    "parameter_jacobian": "exact derivative of cached training finite-difference residual and energy quadrature",
+    "initial": "artifacts/constrained/axial_swirl_dense/candidate.json",
+    "grid_comparison": [
+      24,
+      48
+    ],
+    "held_fixed": "36 coefficient bounds, temporal grid, pressure, force, initial/core constraints, acceptance metrics"
+  },
+  "quintic_experiment": {
+    "parent_candidate": "artifacts/constrained/axial_swirl_grid48/candidate.json",
+    "degree_elevation": "exact cubic-to-quintic Bernstein elevation",
+    "coefficient_count": 60,
+    "coefficient_bounds": [
+      -1,
+      1
+    ],
+    "grid_resolution": 48,
+    "time_collocation_count": 9,
+    "loss": "fourth-power residual",
+    "jacobian": "analytic coefficient derivative",
+    "acceptance": "unchanged",
+    "scalar_diagnostic_comparisons": [
+      "azimuthal mean square",
+      "azimuthal fourth power"
+    ]
+  },
+  "inner_swirl_experiment": {
+    "parent_candidate": "quintic_swirl",
+    "new_rings": [
+      [
+        0.04,
+        0.035,
+        0.0,
+        0.5
+      ],
+      [
+        0.04,
+        0.035,
+        0.8,
+        0.5
+      ],
+      [
+        0.1,
+        0.06,
+        0.0,
+        0.5
+      ],
+      [
+        0.1,
+        0.06,
+        0.8,
+        0.5
+      ],
+      [
+        0.2,
+        0.1,
+        0.0,
+        0.5
+      ],
+      [
+        0.2,
+        0.1,
+        0.8,
+        0.5
+      ]
+    ],
+    "guard": "1-standard_cutoff(r\u00b2/.02); zero for r<=.1",
+    "moment": "each new mode compensated against old outer basis",
+    "coefficient_count": 90,
+    "coefficient_bounds": [
+      -1,
+      1
+    ],
+    "core_probe_max_radius": 0.08660254037844387,
+    "grid_resolution": 48,
+    "time_degree": 5,
+    "acceptance": "unchanged"
+  },
+  "pressure_continuation": {
+    "basis": "existing18 bounded outer pressure terms",
+    "bounds": [
+      -100,
+      100
+    ],
+    "objective": "fourth power full residual",
+    "training_grid": [
+      48,
+      48,
+      9
+    ],
+    "velocity_and_force": "fixed"
+  },
+  "local_pressure_experiment": {
+    "basis": "Gaussian centers (R\u00b2,Z\u00b2) in {0,1.5,3}\u00b2, width1.2; shrinking compact bump and tau^-1.01 scaling",
+    "time": "quadratic Bernstein degree2",
+    "coefficients": 27,
+    "bounds": [
+      -1,
+      1
+    ],
+    "velocity_and_force": "fixed at inner_swirl_pressure",
+    "training_grid": [
+      48,
+      48,
+      9
+    ],
+    "acceptance": "unchanged"
+  },
+  "poloidal_experiment": {
+    "streamfunction": "r\u00b2 z F(r\u00b2,z\u00b2) times cubic Bernstein k=1..3",
+    "F": "compact bumps times inner guard B(.01/r\u00b2) times Gaussians",
+    "spatial_centers": [
+      [
+        0.2,
+        0
+      ],
+      [
+        0.2,
+        0.6
+      ],
+      [
+        0.2,
+        1.5
+      ],
+      [
+        0.7,
+        0
+      ],
+      [
+        0.7,
+        0.6
+      ],
+      [
+        0.7,
+        1.5
+      ],
+      [
+        1.2,
+        0
+      ],
+      [
+        1.2,
+        0.6
+      ],
+      [
+        1.2,
+        1.5
+      ]
+    ],
+    "widths": [
+      0.4,
+      0.6
+    ],
+    "coefficients": 27,
+    "pressure_coefficients": 27,
+    "all_bounds": [
+      -1,
+      1
+    ],
+    "force": "unchanged",
+    "acceptance": "unchanged",
+    "max_objective_evaluations": 80,
+    "anchor_comparison": {
+      "factor": "(r\u00b2-.01*tau)\u00b2/(r\u00b2+.01*tau+.03)\u00b2",
+      "preserves": "streamfunction and first spatial derivatives vanish on moving core cylinder; velocity probes unchanged",
+      "thresholds": "unchanged"
+    }
+  },
+  "coupled_experiment": {
+    "initial": "poloidal_anchor",
+    "velocity_parameters": 117,
+    "pressure_parameters": 27,
+    "velocity_ordering": "90 swirl then27 poloidal",
+    "all_bounds": [
+      -1,
+      1
+    ],
+    "force": "fixed",
+    "basis_change": "none; simultaneous optimization of previously frozen swirl coefficients",
+    "max_nfev": 80,
+    "acceptance": "unchanged"
+  }
+}

@@ -1,3 +1,11 @@
+# Updated priority: three-dimensional velocity matching the OpenAI visualization
+
+The user updated the goal: obtain u(x,y,z,t), v(x,y,z,t), w(x,y,z,t) corresponding to the visualization OpenAI provided. Deliver computable components, a documented coordinate/time mapping, and a reproducible visual comparison. Exact coefficient reconstruction is not required. Existing PDE failures must remain visible; visual resemblance is not an exact NS solution or a blow-up proof.
+
+The active execution queue is docs/SCHEDULED_AGENT_TASKS.md. The prior research stages below remain historical/secondary requirements and evidence, not a substitute for the new visual-field deliverable.
+
+---
+
 # 新目标：公开约束下的独立重建与验证
 
 用户于 2026-09-16 明确取消“一比一精确复刻”的要求，并指定迁移到本仓库。

@@ -1,3 +1,5 @@
+Current priority: VIS001-VIS006 in SCHEDULED_AGENT_TASKS.md. User requests computable 3D velocity components corresponding to the OpenAI visualization; exact visual target mapping and rendering are not yet completed. Prior PDE results remain candidate evidence.
+
 # 当前检查点
 
 当前项目已改为 constrained independent reconstruction。请读 [PROJECT_GOAL.md](PROJECT_GOAL.md)。
@@ -61,3 +63,5 @@
 - Current local_pressure max1.24361, structural probes pass. Closed-loop residual circulation estimates a pressure-independent floor.357 for fixed velocity/force; further pressure-only fitting cannot plausibly attain.001. Next: bounded divergence-free poloidal corrections with joint pressure fitting.
 
 - Working reference poloidal_anchor: standard momentum max1.00634, refined.95665. Core/energy pass; divergence max standard.00364, finest.000004316. All momentum acceptance remains failed. Joint poloidal/pressure updates reduce the pressure-independent circulation defect; next couple swirl as well.
+
+- Latest coupled_joint artifact exposes117 velocity plus27 pressure coefficients. Standard momentum max1.00221830, core/energy probes pass, standard divergence.0036918883 fails. Exact-candidate refinement pending. Scheduling entry: docs/SCHEDULED_AGENT_TASKS.md; integration branch codex/cr001-constraints / PR #1.

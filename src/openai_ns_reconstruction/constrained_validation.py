@@ -84,7 +84,10 @@ if __name__ == '__main__':
     args=parser.parse_args()
     cfg=json.loads(Path(args.config).read_text())
     family=json.loads(Path(args.candidate).read_text())['family']
-    if family == 'poloidal_joint_v1':
+    if family == 'coupled_velocity_v1':
+        from .constrained_coupled import CoupledCandidate
+        c=CoupledCandidate.load(args.candidate)
+    elif family == 'poloidal_joint_v1':
         from .constrained_poloidal import PoloidalCandidate
         c=PoloidalCandidate.load(args.candidate)
     elif family == 'local_pressure_v1':
