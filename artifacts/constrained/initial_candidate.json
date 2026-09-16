@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "status": "candidate",
+  "paper_exact": false,
+  "family": "compact_axisymmetric_window_v1",
+  "parameters": {
+    "swirl_ratio": 1.0,
+    "radial_width": 1.0,
+    "axial_width": 1.0,
+    "radial_shape": 0.0,
+    "axial_shape": 0.0,
+    "amplitude": 0.30705246057261865,
+    "pressure_constant": 0.0,
+    "pressure_radial": 0.0,
+    "pressure_axial": 0.0
+  }
+}

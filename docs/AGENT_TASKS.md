@@ -7,8 +7,8 @@
 | ID | 交付 | 依赖 | 状态 | Owner | 验收 |
 | --- | --- | --- | --- | --- | --- |
 | CR001 | 可机读的公开约束与问题配置 | 无 | DONE | root | pending |
-| CR002 | 复用表示选择和非平凡初始化方案 | 无 | IN_PROGRESS | cr002_representation (Luna/max) | pending |
-| CR003 | 参数化候选场生成器 | CR001,CR002 | TODO | — | pending |
+| CR002 | 复用表示选择和非平凡初始化方案 | 无 | DONE | Luna/max design + root integration | pending |
+| CR003 | 参数化候选场生成器 | CR001,CR002 | IN_PROGRESS | root | pending |
 | CR004 | 相容压力与 forcing 约定实现 | CR001,CR003 | IN_PROGRESS | root | pending |
 | CR005 | 有限预算约束优化器 | CR003,CR004 | TODO | — | pending |
 | CR006 | 独立散度/NS residual 验证器 | CR001,CR003 | TODO | — | pending |
@@ -93,3 +93,7 @@ merge_status: open
 ## CR004 partial delivery — 2026-09-16
 
 `constrained_force.py` implements the preregistered curl force with bounded coefficients and vectorized Cartesian evaluation. Independent finite-difference curl, axis, support and parameter checks: `python -m pytest -q -W error tests/test_constrained_force.py` — 2 passed in 0.37 s. Candidate pressure and coupled PDE validation remain pending; this does not complete CR004. Delivery branch/PR: `codex/cr001-constraints`, PR #1.
+
+## CR002 / CR003 delivery — 2026-09-16
+
+CR002 design and nonzero initialization delivered in `docs/CANDIDATE_REPRESENTATION.md`. CR003 velocity/pressure evaluation, normalization and JSON round-trip implemented; derivative interfaces remain pending. Artifacts are under `artifacts/constrained/`. Focused candidate/force tests: 5 passed in 0.36 s. Energy quadrature orders 24/48/96 give 1.0000089576/1.0000000018/1.0 at the reference time. These are initialization checks, not PDE validation. Branch: `codex/cr001-constraints`; PR #1. acceptance: pending; merge_status: unmerged.

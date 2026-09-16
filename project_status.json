@@ -1,11 +1,13 @@
 {
   "objective": "constrained_independent_reconstruction",
   "migration": "complete",
-  "candidate_status": "not_constructed",
+  "candidate_status": "candidate",
   "independent_validation": "pending",
   "selected_structure_proofs": "pending",
   "exact_paper_reproduction_required": false,
   "full_blowup_proof_required": false,
   "active_task_file": "docs/AGENT_TASKS.md",
-  "legacy_artifacts_are_candidate_evidence": false
+  "legacy_artifacts_are_candidate_evidence": false,
+  "candidate_artifact": "artifacts/constrained/initial_candidate.json",
+  "active_delivery": "https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/pull/1"
 }

@@ -101,7 +101,41 @@
       "compact smooth support",
       "parameter bounds"
     ],
-    "candidate_parameter_bounds": "CR002 design; freeze before running optimizer"
+    "candidate_parameter_bounds": {
+      "swirl_ratio": [
+        0.25,
+        4
+      ],
+      "radial_width": [
+        0.7,
+        1.1
+      ],
+      "axial_width": [
+        0.7,
+        1.1
+      ],
+      "radial_shape": [
+        -0.2,
+        0.2
+      ],
+      "axial_shape": [
+        -0.2,
+        0.2
+      ],
+      "pressure_constant": [
+        -100,
+        100
+      ],
+      "pressure_radial": [
+        -100,
+        100
+      ],
+      "pressure_axial": [
+        -100,
+        100
+      ],
+      "amplitude": "derived from E(0.25)=1, not optimized; reject outside [1e-4,100]"
+    }
   },
   "validation": {
     "seed": 914027,
@@ -153,7 +187,7 @@
     "finite-time singularity proof"
   ],
   "pending": [
-    "candidate implementation",
+    "candidate derivative interfaces",
     "feasibility of restricted force and compact pressure",
     "optimization",
     "independent validation",
