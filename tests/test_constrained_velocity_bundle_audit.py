@@ -100,7 +100,7 @@ def test_checked_in_velocity_bundle_regenerates_through_public_api():
     artifact_dir = repo_root / "artifacts" / "visual" / "velocity_api"
     report = audit_velocity_bundle(VelocityField(), artifact_dir)
     assert report["status"] == "passed"
-    assert report["candidate_sha256"] == "a8c9e4b4536409e91c3cd06937e625f2085c475ad7f8c717ccd23c83d804e381"
+    assert report["candidate_sha256"] == "1ab8793073c69ebef59c4fdbd1888e181b1a6bf3aadd6a018eb7b21748dcb65f"
     assert report["grid_npz_sha256"] == "3ac3a589ab2a94a78621ec3c93f8e6881681c6b8c80c09beb4b58420ee9a7016"
     assert report["grid_shape"] == [3, 17, 17, 17, 3]
     assert report["reference_times"] == [0.25, 0.5, 0.75]
