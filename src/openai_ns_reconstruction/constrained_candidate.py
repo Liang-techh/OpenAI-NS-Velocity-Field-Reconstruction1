@@ -23,6 +23,8 @@ class CompactCandidate:
     axial_shape: float = 0.0
     swirl_radial_shape: float = 0.0
     swirl_axial_shape: float = 0.0
+    swirl_radial_time: float = 0.0
+    swirl_axial_time: float = 0.0
     amplitude: float = 1.0
     pressure_constant: float = 0.0
     pressure_radial: float = 0.0
@@ -33,7 +35,8 @@ class CompactCandidate:
             'swirl_ratio': (0.25, 4), 'radial_width': (0.7, 1.1),
             'axial_width': (0.7, 1.1), 'radial_shape': (-0.2, 0.2),
             'axial_shape': (-0.2, 0.2), 'swirl_radial_shape': (-0.8,0.8),
-            'swirl_axial_shape': (-0.8,0.8), 'amplitude': (1e-4, 100),
+            'swirl_axial_shape': (-0.8,0.8),
+            'swirl_radial_time': (-4,4), 'swirl_axial_time': (-4,4), 'amplitude': (1e-4, 100),
             'pressure_constant': (-100, 100), 'pressure_radial': (-100, 100),
             'pressure_axial': (-100, 100),
         }
@@ -69,7 +72,9 @@ class CompactCandidate:
         v = self.amplitude*tau**(-0.505)
         # Cartesian u_r/r, u_theta/r and u_z; no removable singularity.
         radial = -v/lz*(b*q+Z*(bZ*q+b*self.axial_shape*Z/2))
-        swirl = v*self.swirl_ratio*b/lr*(1+self.swirl_radial_shape*R2/4+self.swirl_axial_shape*Z*Z/4)
+        swirl = v*self.swirl_ratio*b/lr*(1+self.swirl_radial_shape*R2/4+self.swirl_axial_shape*Z*Z/4
+            +(0.75-tau)*(self.swirl_radial_time*(R2-0.01)/4
+                         +self.swirl_axial_time*(Z*Z-0.01)/4))
         axial = v*Z*(2*b*q+R2*(bR*q+b*self.radial_shape/2))
         return np.stack((x*radial-y*swirl, y*radial+x*swirl, axial),axis=-1)
 
@@ -104,12 +109,12 @@ class CompactCandidate:
     def save(self, path):
         Path(path).write_text(json.dumps({
             'schema_version': 1, 'status': 'candidate', 'paper_exact': False,
-            'family': 'compact_axisymmetric_window_v2', 'parameters': asdict(self)
+            'family': 'compact_axisymmetric_window_v3', 'parameters': asdict(self)
         },indent=2)+'\n',encoding='utf-8')
 
     @classmethod
     def load(cls, path):
         data=json.loads(Path(path).read_text(encoding='utf-8'))
-        if data.get('schema_version') != 1 or data.get('family') not in ('compact_axisymmetric_window_v1','compact_axisymmetric_window_v2'):
+        if data.get('schema_version') != 1 or data.get('family') not in ('compact_axisymmetric_window_v1','compact_axisymmetric_window_v2','compact_axisymmetric_window_v3'):
             raise ValueError('unsupported candidate artifact')
         return cls(**data['parameters'])

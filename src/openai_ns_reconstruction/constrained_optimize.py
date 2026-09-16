@@ -33,6 +33,8 @@ def run(config='configs/constraints.json', output='artifacts/constrained/optimiz
            'pressure_constant','pressure_radial','pressure_axial']
     if 'swirl_radial_shape' in opt['candidate_parameter_bounds']:
         names += ['swirl_radial_shape','swirl_axial_shape']
+    if 'swirl_radial_time' in opt['candidate_parameter_bounds']:
+        names += ['swirl_radial_time','swirl_axial_time']
     bounds=opt['candidate_parameter_bounds']
     lows=[bounds[k][0] for k in names]+[0,0];highs=[bounds[k][1] for k in names]+[10,10]
     initial=CompactCandidate();v0=np.array([getattr(initial,k) for k in names]+[1,1])
@@ -53,6 +55,10 @@ def run(config='configs/constraints.json', output='artifacts/constrained/optimiz
         probes=np.column_stack((0.1*np.sqrt(1-times),np.zeros(9),0.1*(1-times)**0.495))
         u=c.velocity(probes,times)
         signs=np.column_stack((np.maximum(u[:,0],0),np.maximum(-u[:,1],0),np.maximum(-u[:,2],0))).ravel()
+        scaled=u*np.column_stack((np.sqrt(1-times),(1-times)**0.505,(1-times)**0.505))
+        drift=np.linalg.norm(scaled-scaled[0],axis=1)/np.linalg.norm(scaled[0])
+        drift_penalty=np.maximum(drift-cfg['validation']['thresholds']['scaled_core_profile_relative_drift'],0)
+        signs=np.r_[signs,drift_penalty]
         w=opt['loss_weights'];r=np.r_[np.sqrt(w['pde'])*pde,np.sqrt(w['energy'])*ep,np.sqrt(w['structure'])*signs]
         loss=float(r@r)
         if loss<best['loss']:

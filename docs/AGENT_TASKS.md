@@ -113,3 +113,7 @@ Pressure-independent diagnostic: `constrained_obstruction.py`, report under opti
 ## CR010 symbolic delivery — 2026-09-16
 
 Five exact symbolic ansatz identities executed with SymPy 1.14.0: poloidal divergence, swirl divergence, absence of azimuthal pressure gradient, rotation equivariance, radial similarity exponent. Script: `constrained_structure.py`; assumptions and binding to v1/v2: `docs/STRUCTURE_IDENTITIES.md`; output: `artifacts/constrained/structure_identities.json`. Actual command: `python -m openai_ns_reconstruction.constrained_structure`, result `five_symbolic_identities_verified`. No Lean, full momentum, or bump-extension smoothness proof claimed. acceptance: pending; merge_status: unmerged; PR #1.
+
+## CR005 v3 time-dependent swirl experiment
+
+Added two bounded time-dependent swirl collar coefficients and the preregistered core-drift penalty. 237 calls, training loss 0.276786; independent PDE validation still fails. Configuration and all results retained under constraints_v3.json and optimized_v3/. No full scaling claim for time-dependent swirl. Next decision: assess reusable legacy correction-field implementations before expanding this small ansatz again.

@@ -62,3 +62,7 @@ optimization requirements. CR003 derivative interfaces remain to be added.
 ## Version 2 swirl extension
 
 `configs/constraints_v2.json` preserves v1 thresholds and adds swirl coefficients s_r,s_z in [-0.8,0.8], multiplying swirl by (1+s_r R²/4+s_z Z²/4). The axisymmetric divergence identity and compact support remain unchanged. Old v1 artifacts load with both coefficients zero. The v2 artifact family identifies the enlarged parameter space; old experiments and results remain preserved. This modification targets the pressure-independent azimuthal residual, not a relaxed acceptance criterion.
+
+## Version 3 time-dependent swirl collar
+
+Adds (t-0.25)[s_rt(R²-0.01)+s_zt(Z²-0.01)]/4 to the swirl shape multiplier, with each coefficient in [-4,4]. Divergence, axis regularity and compact support are unchanged. Global swirl similarity is no longer an identity; the original 5% core-drift constraint is explicitly penalized and must be independently checked. The radial scaling identity remains unchanged. Old v1/v2 artifacts load with new coefficients zero.
