@@ -12,9 +12,9 @@
 | CR004 | 相容压力与 forcing 约定实现 | CR001,CR003 | IN_PROGRESS | root | pending |
 | CR005 | 有限预算约束优化器 | CR003,CR004 | IN_PROGRESS | root | pending |
 | CR006 | 独立散度/NS residual 验证器 | CR001,CR003 | IN_PROGRESS | root | pending |
-| CR007 | 边界、支撑、能量验证 | CR003,CR004 | TODO | — | pending |
+| CR007 | 边界、支撑、能量验证 | CR003,CR004 | IN_PROGRESS | root | pending |
 | CR008 | 频谱、缩放、集中机制诊断 | CR001,CR003 | TODO | — | pending |
-| CR009 | 精度收敛与泛化验证 | CR005–CR008 | TODO | — | pending |
+| CR009 | 精度收敛与泛化验证 | CR005–CR008 | IN_PROGRESS | root | pending |
 | CR010 | 3–5 个关键结构命题验证 | CR002,CR003 | DONE | root | pending |
 | CR011 | 可复现候选 artifact 与运行入口 | CR005,CR009 | TODO | — | pending |
 | CR012 | 独立结果报告和逐约束验收 | CR009–CR011 | TODO | — | pending |
@@ -129,3 +129,7 @@ Implemented bounded inner pressure/force fit and nonlinear outer velocity fit. R
 ## CR005 v4 poloidal time experiment
 
 Added time-dependent streamfunction collar shapes. Legacy curl/direct candidate checks: 4 passed in 0.25 s. Joint fit: 554 function calls, training loss 0.222669. Independent finest-step sampled maximum 2.788433 (previous best 4.036601), still above 0.001. On 21 times, core drift 0.0011704 < 0.05, energy range [0.195104,1], core signs pass. Artifacts: `artifacts/constrained/optimized_v4/`, configuration constraints_v4.json. Preserve all previous experiments. Fixed-profile scaling symbolic claim does not extend to the new time-dependent poloidal factor.
+
+## CR007/CR009 independent convergence delivery
+
+`constrained_convergence.py` directly reuses old `quadrature.unit_rule` for independent Cartesian full-box energy (candidate normalization uses cylindrical quadrature). Orders 24/48/96 at t=0.75: 0.1943106/0.1951303/0.1951027. Constant-field analytical energy calibration passed (448). Fixed v4 and fixed held-out points: derivative steps 0.02 through 0.00125 give residual maxima 2.83315 -> 2.78362 while divergence falls to 2.85e-8. This is evidence of a nonzero momentum-residual plateau, not just differentiation error. Saved `optimized_v4/convergence.json`; run `python -m openai_ns_reconstruction.constrained_convergence`. Remaining: spectral checks, more times/strata and perturbation stability; tasks remain IN_PROGRESS.

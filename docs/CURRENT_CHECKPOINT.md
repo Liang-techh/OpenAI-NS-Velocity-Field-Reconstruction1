@@ -21,3 +21,5 @@
 - 分开拟合实验：独立采样最大残差 4.0366，略优于联合 v3 的 4.1152，仍不达标。当前较优候选在 `artifacts/constrained/decoupled_v3/`，详见 DECOUPLED_EXPERIMENT.md。
 
 - 当前较优候选改为 optimized_v4：独立最大残差 2.7884，核心漂移约 0.12%，能量/流向抽样检查通过；PDE 仍未达标。已复用旧旋度路径验证新增流函数修正。
+
+- 独立 Cartesian 能量求积与导数收敛已记录 optimized_v4/convergence.json。t=0.75 加密后动量残差约 2.7836，散度约 2.85e-8，确认需要改进候选动力学而非仅加密差分。
