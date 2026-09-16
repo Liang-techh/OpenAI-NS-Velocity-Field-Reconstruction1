@@ -1,3 +1,7 @@
+## Nonlinear velocity-function progress
+
+Implemented paper_core_series.py: nonlinear near-axis radial coefficients, full retained pressure integral, actual Cartesian velocity. Seven focused tests pass. Explicit independent sigma=.3, degree12, eta_nodes513 gives sampled leading angular/axial errors near1e-7 atX=.1 and1.5e-5/1.92e-4 atX=.2. AtX=.3/.4 errors remain too large; degree16 can become unstable. Full NS/force acceptance and exterior matching remain incomplete. All runs and selected coefficient/sample files are under artifacts/function_first/core_series. Next stabilize radial continuation, then connect exterior; no animation work.
+
 ## Current instruction: velocity functions first (2026-09-16)
 
 The user explicitly deprioritized animation. The immediate deliverable is computable

@@ -115,3 +115,56 @@ recorded defaults gives maximum absolute angular/axial equation errors
 has error below 1.4e-12. Thus the reference is not already a nonlinear solution;
 the remaining defect is substantive, not a derivative-resolution artifact.
 Raw points and both steps are saved in core_reference/residual.json.
+
+## Nonlinear radial-series delivery
+
+```python
+from openai_ns_reconstruction.paper_core_reference import PaperCoreReference
+from openai_ns_reconstruction.paper_core_series import PaperCoreSeries
+field = PaperCoreSeries(PaperCoreReference(sigma=.3), maxdegree=12, eta_nodes=513)
+u, v, w = field.velocity(.1, 0, .1, .25)
+```
+
+The new module solves the triangular X-series recurrence from (4.9)/(4.13),
+retaining normalized F/g and U through radial degree N. Eta differentiation
+uses Chebyshev nodes; g and its log derivative are evaluated from the reference
+formula at actual requested coordinates. Pressure integrates the entire square
+of the retained F polynomial, including off-grid points, so it has degree 2N+1.
+Four focused tests pass for eta differentiation, first-row identities,
+vectorized evaluation and pressure/axis consistency. The parent reviewed and
+corrected an extra source factor and off-grid pressure integration before
+running the recorded experiments.
+
+The default sigma=.1 has poor eta resolution and unstable high radial orders.
+The explicit alternative sigma=.3, degree12, 513 eta nodes gives the following
+maximum leading-equation errors over 39 off-grid eta points in [-.95,.95]:
+
+| X | Angular | Axial |
+|---|---:|---:|
+| .01 | 4.13e-9 | 5.67e-9 |
+| .1 | 6.43e-8 | 1.10e-7 |
+| .2 | 1.50e-5 | 1.92e-4 |
+| .3 | .00261 | .0168 |
+| .4 | .122 | .403 |
+
+At X=.1 the same-parameter uncorrected reference has errors 5.54 and 3.81.
+Two derivative steps confirm the improved order of magnitude, with roundoff
+visible near 1e-7. These are development profile-equation samples, NOT full
+physical NS acceptance, a uniform convergence proof, exterior matching, or a
+verified numerical match to the announcement image. Higher order16 can be much
+worse and even lose positive swirl in some parameter runs; failed runs remain
+in sigma_study.json and roundoff_study.json. Do not simply increase degree.
+
+Artifacts under artifacts/function_first/core_series include all degree/node
+runs, independent parameter exploration, and selected/coefficients.npz,
+selected/samples.json, selected/probe.json, selected/comparison.json.
+Reproduce the selected spatial probe from the repository root:
+
+```sh
+python -m openai_ns_reconstruction.paper_core_experiment --sigma .3 --degrees 12 --nodes 513 --radii .001 .01 .05 .1 .2 .3 .4 --eta-count 39 --output artifacts/function_first/core_series/reproduced
+```
+
+Set PYTHONPATH=src as in the API instructions. All model parameters remain
+independent choices; no theorem threshold or force restriction was relaxed.
+Next work: stabilize radial continuation beyond the reliable inner region,
+then construct the outer connection while preserving incompressibility.

@@ -1,3 +1,7 @@
+## Nonlinear-series update
+
+FUN002 PARTIAL: paper_core_series.py now computes nonlinear radial coefficients and actual velocity. Selected development settings sigma=.3, degree12, eta_nodes513; artifacts/function_first/core_series/selected. Leading-equation errors at X=.1 are about1e-7 over39 eta points, but errors grow atX=.3/.4; no exterior or full NS acceptance. Failed high-order runs retained. Next stabilize continuation and outer connection; do not repeat module construction or add animation. Details and command: docs/VELOCITY_FORMULAS.md.
+
 ## Latest function delivery
 
 FUN001 source extraction delivered in docs/VELOCITY_FORMULAS.md: only E/U are independent; V0 follows from U. No numerical final profile table is published.
