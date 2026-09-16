@@ -1,3 +1,11 @@
+## Current instruction: velocity functions first (2026-09-16)
+
+The user explicitly deprioritized animation. The immediate deliverable is computable
+[u(x,y,z,t), v(x,y,z,t), w(x,y,z,t)] with explicit equations, coefficients,
+coordinate/domain definitions and source provenance. Do not spend scheduled runs
+on animation, camera matching or rendering before the velocity functions are settled.
+The existing packaged candidate is executable but is not identified as OpenAI's field.
+
 VIS002 delivered: callable velocity/u/v/w API, packaged coupled candidate, grid.npz and metadata. See docs/VELOCITY_API.md. Source/visual correspondence work remains pending.
 
 Current priority: VIS001-VIS006 in SCHEDULED_AGENT_TASKS.md. User requests computable 3D velocity components corresponding to the OpenAI visualization; exact visual target mapping and rendering are not yet completed. Prior PDE results remain candidate evidence.

@@ -1,3 +1,20 @@
+## Current instruction: velocity functions first (2026-09-16)
+
+The user explicitly deprioritized animation. The immediate deliverable is computable
+[u(x,y,z,t), v(x,y,z,t), w(x,y,z,t)] with explicit equations, coefficients,
+coordinate/domain definitions and source provenance. Do not spend scheduled runs
+on animation, camera matching or rendering before the velocity functions are settled.
+The existing packaged candidate is executable but is not identified as OpenAI's field.
+
+### Function-first execution order
+
+1. FUN001: Extract paper equations defining the leading cylindrical profiles E, U, V0; list numerical parameters, boundary data and all unresolved choices. Deliver docs/VELOCITY_FORMULAS.md with equation/page references. Do not present symbolic unknown profiles as an evaluated solution.
+2. FUN002: Implement a reproducible numerical evaluation of a sourced leading profile, or document the exact missing data and provide a clearly labeled independent approximation. Export Cartesian u/v/w with axis limits and a fixed parameter file. Reuse the existing API.
+3. FUN003: Compare the resulting functions against sourced inward-flow, rotation, axial stretching and scale constraints using numerical values; state precisely which paper equations are implemented and which corrections are omitted.
+4. FUN004: Deliver a compact function specification, parameter file, executable call and sample values. Full NS acceptance and exact OpenAI coefficient recovery remain separate claims.
+
+VIS003/VIS004/VIS005 rendering and visual fitting are DEFERRED by the latest instruction. VIS006 should deliver functions first; animation is optional afterward. VIS001 source identification is delivered in docs/VISUAL_TARGET.md; numerical field identification remains unresolved. VIS002 API delivery is complete at b4f9d1d.
+
 Central coordination issue: https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/issues/15
 
 # Updated priority: three-dimensional velocity matching the OpenAI visualization
@@ -6,7 +23,7 @@ The user updated the goal: obtain u(x,y,z,t), v(x,y,z,t), w(x,y,z,t) correspondi
 
 ## ACTIVE queue for scheduled agents
 
-Complete VIS tasks in order. The SCH research queue below is DEFERRED and must not delay this deliverable unless its work is directly needed for a VIS task.
+Follow the function-first execution order above. The original VIS order below is historical. The SCH research queue below is DEFERRED and must not delay this deliverable unless its work is directly needed for a VIS task.
 
 | ID | Work and completion evidence | Dependency | Status |
 | --- | --- | --- | --- |

@@ -1,3 +1,11 @@
+## Current instruction: velocity functions first (2026-09-16)
+
+The user explicitly deprioritized animation. The immediate deliverable is computable
+[u(x,y,z,t), v(x,y,z,t), w(x,y,z,t)] with explicit equations, coefficients,
+coordinate/domain definitions and source provenance. Do not spend scheduled runs
+on animation, camera matching or rendering before the velocity functions are settled.
+The existing packaged candidate is executable but is not identified as OpenAI's field.
+
 # Updated priority: three-dimensional velocity matching the OpenAI visualization
 
 The user updated the goal: obtain u(x,y,z,t), v(x,y,z,t), w(x,y,z,t) corresponding to the visualization OpenAI provided. Deliver computable components, a documented coordinate/time mapping, and a reproducible visual comparison. Exact coefficient reconstruction is not required. Existing PDE failures must remain visible; visual resemblance is not an exact NS solution or a blow-up proof.
