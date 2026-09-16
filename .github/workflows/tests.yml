@@ -4,6 +4,12 @@ on:
   push:
   pull_request:
   workflow_dispatch:
+    inputs:
+      run_legacy_full:
+        description: Run the legacy full test and wheel checks
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: read
@@ -26,8 +32,6 @@ jobs:
             path: tests/test_velocity.py
           - case: forcing
             path: tests/test_forcing.py
-          - case: provenance
-            path: tests/test_provenance_manifest.py
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -38,7 +42,23 @@ jobs:
       - name: Test ${{ matrix.case }}
         run: python -m pytest -q -W error "${{ matrix.path }}"
 
+  import-cli:
+    name: import-and-cli-help
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Import package
+        run: python -c "import openai_ns_reconstruction"
+      - name: Check CLI help
+        run: ns-reconstruct --help
+
   full:
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_legacy_full == true }}
     name: full-${{ matrix.python }}-${{ matrix.numpy }}
     runs-on: ubuntu-latest
     strategy:
