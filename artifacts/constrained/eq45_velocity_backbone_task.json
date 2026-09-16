@@ -1,0 +1,40 @@
+{
+  "task_id": "CR003-EQ45-VELOCITY-BACKBONE-006",
+  "owner": "Constrained Agent 1",
+  "status": "DONE",
+  "base_commit": "9c4b7533a395e6d7b81398f4d3be8663ae838c61",
+  "base_note": "Stacked on the source-correct Eq. (4.5) q-solver PR to avoid duplicating that open work; its underlying main base is c6700851c0330c0c92938d25204d07fbabf588f4.",
+  "implementation_commit": "5b6d7437bb394a4b040dbc80ebe1cee0b55e5976",
+  "test_commit": "0f37d4579602c92df5d700f3fbe7e53ce958f5a5",
+  "scope": "Vectorized Eq. (4.5) leading-field evaluator using q, X and eta plus a supplied 2D profile provider returning v0, F and U.",
+  "source_contract": {
+    "implicit_q_relation": "q-z^2*q^(2*h)=1-t",
+    "q_exponent_sign": "positive",
+    "velocity_formula": "u=x*v0/(2q)-y*q^(-1-h)*F; v=y*v0/(2q)+x*q^(-1-h)*F; w=q^(-1/2-h)*U",
+    "leading_field_only": true
+  },
+  "actual_local_checks": [
+    {
+      "command": "PYTHONPATH=/tmp/agent1_eq45_eval python -m pytest -q -W error /tmp/agent1_eq45_eval/tests/test_eq45_velocity.py",
+      "result": "3 passed in 0.05s"
+    },
+    {
+      "command": "python -m py_compile /tmp/agent1_eq45_eval/openai_ns_reconstruction/constrained_eq45_velocity.py",
+      "result": "exit 0"
+    }
+  ],
+  "direct_contribution_to_velocity_delivery": "Provides the first batch-callable Eq. (4.5) Cartesian [u,v,w] evaluator on top of the source-correct q primitive. The profile provider is deliberately separate so the pending Phi/F streamfunction coupling can be attached without changing the evaluator interface.",
+  "remaining_limitations": [
+    "No bounded serializable production profile family is selected yet.",
+    "The profile provider used in tests is manufactured calibration only.",
+    "No visualization fingerprint comparison has been run on this backbone.",
+    "No independent PDE validation has been run on an Eq. (4.5) profile candidate.",
+    "This does not identify the final OpenAI numerical profiles or the complete corrected paper field."
+  ],
+  "velocity_export_ready": false,
+  "visualization_ready": false,
+  "pde_validated": false,
+  "paper_exact": false,
+  "acceptance": "pending",
+  "merge_status": "open"
+}
