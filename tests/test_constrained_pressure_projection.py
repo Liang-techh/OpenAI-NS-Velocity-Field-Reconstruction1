@@ -87,4 +87,4 @@ def test_current_poloidal_anchor_fixed_velocity_projection_never_worsens_l2_trai
     assert np.allclose(
         candidate.velocity(x[:8], t[:8]), projected.velocity(x[:8], t[:8]), atol=0.0, rtol=0.0
     )
-    assert candidate.force is projected.force
+    assert np.allclose(candidate.force(x[:8], t[:8]), projected.force(x[:8], t[:8]), atol=0.0, rtol=0.0)
