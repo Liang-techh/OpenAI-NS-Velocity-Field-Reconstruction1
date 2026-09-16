@@ -1,3 +1,5 @@
+Central coordination issue: https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/issues/15
+
 # Updated priority: three-dimensional velocity matching the OpenAI visualization
 
 The user updated the goal: obtain u(x,y,z,t), v(x,y,z,t), w(x,y,z,t) corresponding to the visualization OpenAI provided. Deliver computable components, a documented coordinate/time mapping, and a reproducible visual comparison. Exact coefficient reconstruction is not required. Existing PDE failures must remain visible; visual resemblance is not an exact NS solution or a blow-up proof.
