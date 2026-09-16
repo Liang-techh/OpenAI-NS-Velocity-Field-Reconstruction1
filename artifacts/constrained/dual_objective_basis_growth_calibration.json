@@ -1,0 +1,112 @@
+{
+  "schema": "constrained_dual_objective_basis_growth_calibration_v1",
+  "scope": "synthetic_local_capacity_calibration_only",
+  "interpretation": "The first mode only moves the residual target; the second adds an independent visualization direction; the third is shared and completes both synthetic targets. This is not evidence about a production velocity field.",
+  "report": {
+    "parameter_labels": [
+      "residual_only",
+      "visual_only",
+      "shared"
+    ],
+    "nested_dimensions": [
+      1,
+      2,
+      3
+    ],
+    "residual_target_norm": 1.4142135623730951,
+    "visual_target_norm": 1.4142135623730951,
+    "residual_weight": 1.0,
+    "visual_weight": 1.0,
+    "levels": [
+      {
+        "dimension": 1,
+        "parameter_labels": [
+          "residual_only"
+        ],
+        "coefficients": [
+          1.0
+        ],
+        "residual_rank": 1,
+        "visual_rank": 0,
+        "joint_rank": 1,
+        "residual_condition": 1.0,
+        "visual_condition": null,
+        "joint_condition": 1.0,
+        "residual_remaining_ratio": 0.7071067811865475,
+        "visual_remaining_ratio": 1.0,
+        "joint_remaining_ratio": 0.8660254037844386,
+        "residual_recovered_fraction": 0.29289321881345254,
+        "visual_recovered_fraction": 0.0,
+        "active_lower_bounds": [],
+        "active_upper_bounds": [
+          "residual_only"
+        ],
+        "jointly_improves_both": false
+      },
+      {
+        "dimension": 2,
+        "parameter_labels": [
+          "residual_only",
+          "visual_only"
+        ],
+        "coefficients": [
+          1.0,
+          1.0
+        ],
+        "residual_rank": 1,
+        "visual_rank": 1,
+        "joint_rank": 2,
+        "residual_condition": 1.0,
+        "visual_condition": 1.0,
+        "joint_condition": 1.0,
+        "residual_remaining_ratio": 0.7071067811865475,
+        "visual_remaining_ratio": 0.7071067811865475,
+        "joint_remaining_ratio": 0.7071067811865476,
+        "residual_recovered_fraction": 0.29289321881345254,
+        "visual_recovered_fraction": 0.29289321881345254,
+        "active_lower_bounds": [],
+        "active_upper_bounds": [
+          "residual_only",
+          "visual_only"
+        ],
+        "jointly_improves_both": true
+      },
+      {
+        "dimension": 3,
+        "parameter_labels": [
+          "residual_only",
+          "visual_only",
+          "shared"
+        ],
+        "coefficients": [
+          1.0,
+          1.0,
+          0.9999999999999998
+        ],
+        "residual_rank": 2,
+        "visual_rank": 2,
+        "joint_rank": 3,
+        "residual_condition": 1.0,
+        "visual_condition": 1.0,
+        "joint_condition": 1.4142135623730951,
+        "residual_remaining_ratio": 1.570092458683775e-16,
+        "visual_remaining_ratio": 1.570092458683775e-16,
+        "joint_remaining_ratio": 1.5700924586837752e-16,
+        "residual_recovered_fraction": 0.9999999999999999,
+        "visual_recovered_fraction": 0.9999999999999999,
+        "active_lower_bounds": [],
+        "active_upper_bounds": [
+          "residual_only",
+          "visual_only",
+          "shared"
+        ],
+        "jointly_improves_both": true
+      }
+    ],
+    "smallest_jointly_improving_dimension": 2,
+    "truth_boundary": "bounded local basis-capacity diagnostic only; not optimizer convergence, not independent PDE validation, not proof of visual correspondence, and not identification of an OpenAI field"
+  },
+  "visualization_ready": false,
+  "pde_validated": false,
+  "paper_exact": false
+}
