@@ -143,3 +143,7 @@ Added warm-start from a saved candidate/force and residual-adaptive training poi
 Tensor representation implementation is assigned to Luna/max worker `tensor_candidate`; root prepared bounded stage-1 configuration (24 active coefficients), optimizer and scope document. Delivery pending worker integration; no tensor fit result claimed.
 
 Implemented `constrained_spectrum.py`: 32³/48³/64³ FFT diagnostics at three times, Parseval energy identity checked numerically. At t=0.75 high-mode tail fractions are 2.592e-4 / 4.663e-5 / 1.129e-5. Data: `artifacts/constrained/adaptive_v4/spectrum.json`. No spectral pass threshold or singularity claim. Run `python -m openai_ns_reconstruction.constrained_spectrum`.
+
+## Tensor stage 1 implementation and rejected fit
+
+Luna/max delivered TensorCandidate; root integrated 24-coefficient fitting and validator dispatch. Integration suite 10 passed in 0.37 s. 2000-call fit: residual sampled maximum 2.4641, core drift 7.18%, min energy 0.09955. Fails PDE and two structural thresholds, so not selected as accepted candidate. Preserve tensor_stage1/ results; next action is stronger constraint enforcement rather than relaxing thresholds.

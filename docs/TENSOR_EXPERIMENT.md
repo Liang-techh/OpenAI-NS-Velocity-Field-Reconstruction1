@@ -23,3 +23,9 @@ been fed to the training loss, but its outcomes have informed representation
 choices. It must not be the sole final acceptance set. Once a candidate and
 configuration are frozen, generate a fresh, independently seeded final audit
 and retain the old results. Until then all results remain development evidence.
+
+## Stage 1 actual result
+
+TensorCandidate implemented by Luna/max and integrated with the existing validator. Zero correction, nonzero legacy-curl agreement, divergence, serialization and bounds checks are included. Parent integration run: 10 passed in 0.37 s. First fit used the full 2000-call budget and obtained training loss 0.142697. Independent sampled maximum residual is 2.464107, still above 0.001. The 21-time structure check also fails: core drift 0.071794 > 0.05 and minimum energy 0.099549 < 0.1. Therefore this result is not an accepted improvement and must not replace the previous candidate on acceptance grounds.
+
+The soft structural penalties permit trading constraints against PDE loss; the next optimizer step must improve constraint enforcement while retaining the unchanged acceptance thresholds. All raw results are in `artifacts/constrained/tensor_stage1/`. This is evidence for further constrained fitting, not mathematical success.

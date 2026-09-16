@@ -62,7 +62,12 @@ if __name__ == '__main__':
     parser.add_argument('--output',default='artifacts/constrained/initial_pde_validation.json')
     args=parser.parse_args()
     cfg=json.loads(Path(args.config).read_text())
-    c=CompactCandidate.load(args.candidate)
+    family=json.loads(Path(args.candidate).read_text())['family']
+    if family == 'compact_axisymmetric_tensor_v1':
+        from .constrained_tensor_candidate import TensorCandidate
+        c=TensorCandidate.load(args.candidate)
+    else:
+        c=CompactCandidate.load(args.candidate)
     force_parameters=(json.loads(Path(args.training).read_text())['force']
                       if args.training else cfg['forcing']['initial_parameters'])
     f=RestrictedForce(**force_parameters)
