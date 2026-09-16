@@ -1,0 +1,66 @@
+{
+  "task_id": "CR008-CYLINDRICAL-VELOCITY-FINGERPRINT-004",
+  "field": "synthetic mixed linear radial+swirl calibration; not a production candidate",
+  "parameters": {
+    "swirl_amplitude": 2.0,
+    "radial_amplitude": 1.0
+  },
+  "report": {
+    "time": 0.5,
+    "box": [[-1.0, 1.0], [-1.0, 1.0], [-1.0, 1.0]],
+    "levels": [
+      {
+        "grid_size": 17,
+        "time": 0.5,
+        "speed2_integral": 26.875,
+        "swirl_energy_fraction": 0.8,
+        "poloidal_energy_fraction": 0.2,
+        "radial_fraction_of_poloidal": 1.0,
+        "swirl_to_poloidal_ratio": 4.0,
+        "pitch_deg_q10": 26.56505117707799,
+        "pitch_deg_q50": 26.56505117707799,
+        "pitch_deg_q90": 26.56505117707799,
+        "swirl_sign_coherence": 1.0,
+        "axis_transverse_energy_fraction": 0.0
+      },
+      {
+        "grid_size": 25,
+        "time": 0.5,
+        "speed2_integral": 26.759259259259295,
+        "swirl_energy_fraction": 0.8,
+        "poloidal_energy_fraction": 0.2,
+        "radial_fraction_of_poloidal": 1.0,
+        "swirl_to_poloidal_ratio": 4.0,
+        "pitch_deg_q10": 26.565051177077986,
+        "pitch_deg_q50": 26.56505117707799,
+        "pitch_deg_q90": 26.565051177077994,
+        "swirl_sign_coherence": 1.0,
+        "axis_transverse_energy_fraction": 0.0
+      },
+      {
+        "grid_size": 33,
+        "time": 0.5,
+        "speed2_integral": 26.71875,
+        "swirl_energy_fraction": 0.8,
+        "poloidal_energy_fraction": 0.2,
+        "radial_fraction_of_poloidal": 1.0,
+        "swirl_to_poloidal_ratio": 4.0,
+        "pitch_deg_q10": 26.56505117707799,
+        "pitch_deg_q50": 26.56505117707799,
+        "pitch_deg_q90": 26.56505117707799,
+        "swirl_sign_coherence": 1.0,
+        "axis_transverse_energy_fraction": 0.0
+      }
+    ],
+    "absolute_change_to_finest": {
+      "swirl_energy_fraction": [0.0, 0.0],
+      "poloidal_energy_fraction": [0.0, 0.0],
+      "pitch_deg_q10": [0.0, 3.552713678800501e-15],
+      "pitch_deg_q50": [0.0, 0.0],
+      "pitch_deg_q90": [0.0, 3.552713678800501e-15],
+      "swirl_sign_coherence": [0.0, 0.0],
+      "axis_transverse_energy_fraction": [0.0, 0.0]
+    },
+    "truth_boundary": "finite-grid cylindrical velocity morphology only; not PDE validation, OpenAI-field identification, or blow-up evidence"
+  }
+}
