@@ -21,7 +21,7 @@ def training_residual(c, f, x, t, nu, h=0.001):
     return ut+conv+gp-nu*lap-f(x,t)
 
 
-def run(config='configs/constraints.json', output='artifacts/constrained/optimized', *, decoupled=False):
+def run(config='configs/constraints.json', output='artifacts/constrained/optimized', *, decoupled=False, initial_artifact=None, adaptive=False):
     cfg=json.loads(Path(config).read_text()); opt=cfg['optimization']
     rng=np.random.default_rng(opt['seed']);n=opt['interior_points']
     box=np.asarray(cfg['domain']['evaluation_box']);lo,hi=cfg['domain']['time_interval']
@@ -29,6 +29,20 @@ def run(config='configs/constraints.json', output='artifacts/constrained/optimiz
     # Independent core/axis strata supplement the uniform training samples.
     extra=rng.uniform(-0.3,0.3,(256,3));extra[:64,:2]=0
     x=np.vstack((x,extra));t=np.r_[t,rng.uniform(lo+0.002,hi-0.002,len(extra))]
+    initial=CompactCandidate.load(initial_artifact) if initial_artifact else CompactCandidate()
+    initial_force=RestrictedForce()
+    if initial_artifact:
+        saved=json.loads(Path(initial_artifact).with_name('training.json').read_text())
+        initial_force=RestrictedForce(**saved['force'])
+    adaptive_count=0
+    if adaptive:
+        pool_rng=np.random.default_rng(opt['seed']+101)
+        pool=pool_rng.uniform(box[:,0],box[:,1],(8192,3))
+        pool_t=pool_rng.uniform(lo+0.002,hi-0.002,len(pool))
+        error=np.linalg.norm(training_residual(initial,initial_force,pool,pool_t,cfg['nu']),axis=1)
+        selected=np.argsort(error)[-256:]
+        x=np.vstack((x,pool[selected]));t=np.r_[t,pool_t[selected]]
+        adaptive_count=len(selected)
     names=['swirl_ratio','radial_width','axial_width','radial_shape','axial_shape',
            'pressure_constant','pressure_radial','pressure_axial']
     if 'swirl_radial_shape' in opt['candidate_parameter_bounds']:
@@ -41,7 +55,7 @@ def run(config='configs/constraints.json', output='artifacts/constrained/optimiz
         names=[name for name in names if not name.startswith('pressure_')]
     bounds=opt['candidate_parameter_bounds']
     lows=[bounds[k][0] for k in names]+([] if decoupled else [0,0]);highs=[bounds[k][1] for k in names]+([] if decoupled else [10,10])
-    initial=CompactCandidate();v0=np.array([getattr(initial,k) for k in names]+([] if decoupled else [1,1]))
+    v0=np.array([getattr(initial,k) for k in names]+([] if decoupled else [initial_force.a,initial_force.c]))
     best={'loss':float('inf')};history=[];calls=0
     class BudgetReached(Exception): pass
     def decode(v):
@@ -81,7 +95,8 @@ def run(config='configs/constraints.json', output='artifacts/constrained/optimiz
     c,f=decode(best['parameters']);out=Path(output);out.mkdir(parents=True,exist_ok=True)
     c.save(out/'candidate.json')
     report={'status':'training_only_not_validated','seed':opt['seed'],'uniform_samples':n,
-        'additional_core_axis_samples':256,'calls':calls,'termination':termination,
+        'additional_core_axis_samples':256,'adaptive_samples':adaptive_count,
+        'initial_artifact':initial_artifact,'adaptive_pool_seed':opt['seed']+101 if adaptive else None,'calls':calls,'termination':termination,
         'best_training_loss':best['loss'],'force':asdict(f),'parameters':asdict(c),
         'history':history,'training_spatial_time_step':0.001,'normalization_order':96,
         'decoupled_linear_coefficients':decoupled,'solver':'scipy.optimize.least_squares','max_nfev':150,'actual_call_budget':opt['maximum_function_evaluations']}

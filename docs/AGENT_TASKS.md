@@ -133,3 +133,7 @@ Added time-dependent streamfunction collar shapes. Legacy curl/direct candidate 
 ## CR007/CR009 independent convergence delivery
 
 `constrained_convergence.py` directly reuses old `quadrature.unit_rule` for independent Cartesian full-box energy (candidate normalization uses cylindrical quadrature). Orders 24/48/96 at t=0.75: 0.1943106/0.1951303/0.1951027. Constant-field analytical energy calibration passed (448). Fixed v4 and fixed held-out points: derivative steps 0.02 through 0.00125 give residual maxima 2.83315 -> 2.78362 while divergence falls to 2.85e-8. This is evidence of a nonzero momentum-residual plateau, not just differentiation error. Saved `optimized_v4/convergence.json`; run `python -m openai_ns_reconstruction.constrained_convergence`. Remaining: spectral checks, more times/strata and perturbation stability; tasks remain IN_PROGRESS.
+
+## CR005 adaptive warm-start experiment
+
+Added warm-start from a saved candidate/force and residual-adaptive training points. From a separately seeded 8192-point training pool, selected 256 highest-residual points; validation samples were not used. v4 warm-start hit the actual 2000-call budget, independent sampled maximum 2.738863 versus 2.788433. Training loss 0.473533 is not directly comparable with the old training loss because the sampling measure changed. Two related operator/linear-fit tests passed in 0.53 s. Artifacts: adaptive_v4/. Conclusion: more of the same low-dimensional optimization gives only marginal benefit; further work should change representation, not merely raise iteration count.
