@@ -1,0 +1,82 @@
+{
+  "status": "training_only_not_validated",
+  "initial_artifact": "artifacts/constrained/continued_pressure/candidate.json",
+  "force": {
+    "a": 9.546541832896667e-11,
+    "c": 0.12148700174414483
+  },
+  "azimuthal_only": true,
+  "quintic": true,
+  "grid_resolution": 48,
+  "analytic_parameter_jacobian": true,
+  "dense_cylindrical": true,
+  "coefficient_initial_artifact": "artifacts/constrained/quintic_swirl/candidate.json",
+  "axial": false,
+  "localized": false,
+  "fourth_power": true,
+  "tail_adaptive": false,
+  "adaptive_seed": null,
+  "calls": 12,
+  "call_budget": 500,
+  "termination": "`ftol` termination condition is satisfied.",
+  "seed": 20260916,
+  "cache_direct_max_discrepancy": 1.0548173445812381e-11,
+  "training_points": 22784,
+  "training_loss": 0.008669971518009885,
+  "history": [
+    {
+      "call": 1,
+      "loss": 0.00891669344141819
+    },
+    {
+      "call": 2,
+      "loss": 0.008851598364181753
+    },
+    {
+      "call": 3,
+      "loss": 0.008681639229320857
+    },
+    {
+      "call": 4,
+      "loss": 0.008672713706002932
+    },
+    {
+      "call": 5,
+      "loss": 0.008670524171284588
+    },
+    {
+      "call": 6,
+      "loss": 0.008670077499423163
+    },
+    {
+      "call": 7,
+      "loss": 0.008669995837585287
+    },
+    {
+      "call": 8,
+      "loss": 0.008669977582422142
+    },
+    {
+      "call": 9,
+      "loss": 0.008669973002365307
+    },
+    {
+      "call": 10,
+      "loss": 0.008669971871876835
+    },
+    {
+      "call": 11,
+      "loss": 0.00866997158860401
+    },
+    {
+      "call": 12,
+      "loss": 0.008669971518009885
+    }
+  ],
+  "coefficient_bounds": [
+    -1,
+    1
+  ],
+  "basis": "twelve axial zero-moment rings times five quintic Bernstein modes",
+  "initial_velocity_max_change": 0.0
+}

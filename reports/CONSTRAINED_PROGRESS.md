@@ -22,6 +22,9 @@ These are saved development comparisons, not final acceptance. The validation se
 | outer_momentum | 2.596683 | pass | [validation.json](../artifacts/constrained/outer_momentum/validation.json) |
 | outer_pressure | 2.508246 | pass | [validation.json](../artifacts/constrained/outer_pressure/validation.json) |
 | outer_shape | 2.491094 | pass | [validation.json](../artifacts/constrained/outer_shape/validation.json) |
+| quintic_swirl | 1.264522 | pass | [validation.json](../artifacts/constrained/quintic_swirl/validation.json) |
+| quintic_swirl_scalar | 1.269478 | pass | [validation.json](../artifacts/constrained/quintic_swirl_scalar/validation.json) |
+| quintic_swirl_scalar_fourth | 1.272871 | pass | [validation.json](../artifacts/constrained/quintic_swirl_scalar_fourth/validation.json) |
 | temporal_swirl | 1.956548 | pass | [validation.json](../artifacts/constrained/temporal_swirl/validation.json) |
 | temporal_swirl_fourth | 2.034117 | pass | [validation.json](../artifacts/constrained/temporal_swirl_fourth/validation.json) |
 | temporal_swirl_tail | 2.447841 | pass | [validation.json](../artifacts/constrained/temporal_swirl_tail/validation.json) |

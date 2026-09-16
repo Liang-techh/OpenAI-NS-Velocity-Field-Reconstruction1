@@ -53,3 +53,5 @@
 - Latest reference axial_swirl_dense: sampled maximum1.28545, structure sampled pass. Added axial rings and denser collocation coverage; sparse fourth-power overfit preserved as failed comparison. 500-call cap is not convergence.
 
 - Working reference axial_swirl_grid48 controls known missed grid peak better(1.29827 vs1.62313); random maximum1.29013 is slightly worse than axial_swirl_analytic1.28544. Structural probes pass. Analytic coefficient Jacobian avoids finite-difference parameter calls. Next representation change needed; no acceptance.
+
+- Selected quintic_swirl maximum1.26452, structure sampled pass. Found immutable residual around1.15 inside r<.354 because all current corrections vanish there. Next representation must reach that annulus while preserving core probes r<=.0866. See docs/QUINTIC_AND_FROZEN_COLLAR.md.

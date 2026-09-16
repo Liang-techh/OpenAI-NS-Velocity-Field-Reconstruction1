@@ -1,0 +1,109 @@
+{
+  "status": "training_only_not_validated",
+  "initial_artifact": "artifacts/constrained/continued_pressure/candidate.json",
+  "force": {
+    "a": 9.546541832896667e-11,
+    "c": 0.12148700174414483
+  },
+  "quintic": true,
+  "grid_resolution": 48,
+  "analytic_parameter_jacobian": true,
+  "dense_cylindrical": true,
+  "coefficient_initial_artifact": "artifacts/constrained/axial_swirl_grid48/candidate.json",
+  "axial": false,
+  "localized": false,
+  "fourth_power": true,
+  "tail_adaptive": false,
+  "adaptive_seed": null,
+  "calls": 19,
+  "call_budget": 500,
+  "termination": "`ftol` termination condition is satisfied.",
+  "seed": 20260916,
+  "cache_direct_max_discrepancy": 1.0548173445812381e-11,
+  "training_points": 22784,
+  "training_loss": 0.021983378858553757,
+  "history": [
+    {
+      "call": 1,
+      "loss": 0.02308349681614208
+    },
+    {
+      "call": 2,
+      "loss": 0.02228574228002417
+    },
+    {
+      "call": 3,
+      "loss": 0.02200755312998599
+    },
+    {
+      "call": 4,
+      "loss": 0.021992325785031495
+    },
+    {
+      "call": 5,
+      "loss": 0.021986773468739267
+    },
+    {
+      "call": 6,
+      "loss": 0.021984991910245798
+    },
+    {
+      "call": 7,
+      "loss": 0.021984164244120613
+    },
+    {
+      "call": 8,
+      "loss": 0.021983790273038484
+    },
+    {
+      "call": 9,
+      "loss": 0.021983614203392256
+    },
+    {
+      "call": 10,
+      "loss": 0.021983446420259768
+    },
+    {
+      "call": 11,
+      "loss": 0.021983407165958768
+    },
+    {
+      "call": 12,
+      "loss": 0.021983395203776485
+    },
+    {
+      "call": 13,
+      "loss": 0.021983388010014836
+    },
+    {
+      "call": 14,
+      "loss": 0.021983380822438642
+    },
+    {
+      "call": 15,
+      "loss": 0.02198337955653023
+    },
+    {
+      "call": 16,
+      "loss": 0.021983379255064602
+    },
+    {
+      "call": 17,
+      "loss": 0.02198337903282638
+    },
+    {
+      "call": 18,
+      "loss": 0.021983378960740273
+    },
+    {
+      "call": 19,
+      "loss": 0.021983378858553757
+    }
+  ],
+  "coefficient_bounds": [
+    -1,
+    1
+  ],
+  "basis": "twelve axial zero-moment rings times five quintic Bernstein modes",
+  "initial_velocity_max_change": 0.0
+}

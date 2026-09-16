@@ -34,8 +34,8 @@ class AxialSwirlCandidate(LocalizedSwirlCandidate):
         if not isinstance(self.parent,AngularMomentumCandidate):raise TypeError('expected angular momentum parent')
         order=_quadrature_order(self.parent.order if self.order is None else self.order)
         a=np.asarray(self.coefficients,dtype=float)
-        if a.shape!=(36,) or not np.all(np.isfinite(a)) or np.any(np.abs(a)>1):
-            raise ValueError('36 finite coefficients in [-1,1] required')
+        if a.shape!=(self.COEFFICIENT_COUNT,) or not np.all(np.isfinite(a)) or np.any(np.abs(a)>1):
+            raise ValueError(f'{self.COEFFICIENT_COUNT} finite coefficients in [-1,1] required')
         object.__setattr__(self,'coefficients',tuple(float(v) for v in a))
         object.__setattr__(self,'order',order)
         object.__setattr__(self,'_moment_ratios',ratios(self.parent,order))
