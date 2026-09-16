@@ -9,7 +9,7 @@
 | CR001 | 可机读的公开约束与问题配置 | 无 | DONE | root | pending |
 | CR002 | 复用表示选择和非平凡初始化方案 | 无 | IN_PROGRESS | cr002_representation (Luna/max) | pending |
 | CR003 | 参数化候选场生成器 | CR001,CR002 | TODO | — | pending |
-| CR004 | 相容压力与 forcing 约定实现 | CR001,CR003 | TODO | — | pending |
+| CR004 | 相容压力与 forcing 约定实现 | CR001,CR003 | IN_PROGRESS | root | pending |
 | CR005 | 有限预算约束优化器 | CR003,CR004 | TODO | — | pending |
 | CR006 | 独立散度/NS residual 验证器 | CR001,CR003 | TODO | — | pending |
 | CR007 | 边界、支撑、能量验证 | CR003,CR004 | TODO | — | pending |
@@ -89,3 +89,7 @@ merge_status: open
 - Actual checks: Python JSON parsing and assertions for positive viscosity/thresholds, finite time window, separate seeds and restricted force mode passed; `git diff --check` passed.
 - Optimization and candidate validation: not run. Feasibility remains unresolved.
 - acceptance: pending; merge_status: unmerged. Implementation commit: `eecbfd0`; PR: https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/pull/1 (follow-up commits on the same branch).
+
+## CR004 partial delivery — 2026-09-16
+
+`constrained_force.py` implements the preregistered curl force with bounded coefficients and vectorized Cartesian evaluation. Independent finite-difference curl, axis, support and parameter checks: `python -m pytest -q -W error tests/test_constrained_force.py` — 2 passed in 0.37 s. Candidate pressure and coupled PDE validation remain pending; this does not complete CR004. Delivery branch/PR: `codex/cr001-constraints`, PR #1.
