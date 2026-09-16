@@ -1,0 +1,37 @@
+{
+  "task_id": "CR003-POLOIDAL-BLOCK-002",
+  "owner": "Constrained Agent 1",
+  "status": "DONE",
+  "base_commit": "c6700851c0330c0c92938d25204d07fbabf588f4",
+  "implementation_commit": "d912193a9b76547f55a471ed545b72e851380c1b",
+  "pr_url": "https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/pull/13",
+  "scope": "A bounded four-parameter compact axis-regular poloidal correction primitive with analytic velocity, first spatial Jacobian, time derivative, support handling, and serialization.",
+  "commands_and_actual_results": [
+    {
+      "command": "PYTHONPATH=/mnt/data/agent1_poloidal/src python -m pytest -q -W error /mnt/data/agent1_poloidal/tests/test_constrained_poloidal_block.py",
+      "result": "3 passed in 0.06s"
+    },
+    {
+      "command": "python -W error -m py_compile /mnt/data/agent1_poloidal/src/openai_ns_reconstruction/constrained_poloidal_block.py /mnt/data/agent1_poloidal/tests/test_constrained_poloidal_block.py",
+      "result": "exit 0"
+    }
+  ],
+  "observed_checks": {
+    "sampled_analytic_divergence_max": "<2e-15",
+    "axis_regular": true,
+    "declared_support_zero_at_or_outside_boundary": true,
+    "analytic_first_spatial_derivatives_checked_against_centered_difference": true,
+    "analytic_time_derivative_checked_against_centered_difference": true,
+    "parameter_bounds_checked": true,
+    "serialization_round_trip_checked": true
+  },
+  "remaining_limitations": [
+    "This is a correction primitive, not a standalone accepted candidate; zero correction coefficients are allowed and candidate-level nontrivial energy normalization must remain enforced when integrated.",
+    "Second spatial velocity derivatives are not yet exposed analytically.",
+    "The four coefficients have not been jointly optimized with pressure on the active constrained candidate.",
+    "No held-out PDE residual improvement is claimed by this task.",
+    "No paper-exact reconstruction or blow-up conclusion is claimed."
+  ],
+  "acceptance": "pending",
+  "merge_status": "open"
+}
