@@ -171,3 +171,7 @@ Added 18 compact pressure basis terms (degree 2 in r²,z² and degree 1 in time)
 ## Equation-driven initial tangent experiment
 
 Implemented a bounded linear fit of 18 first-time tensor coefficients at t=.25, retaining initial velocity and prescribed force. Actual residual agrees with its affine fit model to 2.81e-10. Initial training sampled maximum .93022 -> .60926; initial velocity change exactly 0 at sampled points. Independent validation at t=.25 gives .61694, but t=.75 deteriorates to 7.58854 and core drift .88796 violates .05. Therefore reject full-time extrapolation. This motivates time-slab or all-time dynamical constraints, not an initial-only fit. Saved initial_tangent/ and reproducible module constrained_initial_tangent.py.
+
+## Whole-window time coefficients with explicit core equalities
+
+Added `constrained_whole_window.py` fitting k=1,2 time coefficients while preserving t=.25 velocity and the outer torque construction. Soft-penalty comparison barely moved (88 calls, loss .148234). SLSQP with linear equality constraints on core velocity at two interior times completed 525 calls/20 iterations (iteration limit), training loss .109416, independent maximum residual 2.058084. Structure probes pass: drift .0494913, energy [.660617,1.049543], core signs pass. With fixed geometry and quadratic time correction, the two times constrain the polynomial core change; numerical validation is still required. Artifacts whole_window/ and whole_window_equalities/. PDE still fails .001; do not claim optimizer convergence.
