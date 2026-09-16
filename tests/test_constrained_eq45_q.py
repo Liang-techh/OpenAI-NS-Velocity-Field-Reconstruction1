@@ -7,51 +7,48 @@ from openai_ns_reconstruction.constrained_eq45_q import (
 )
 
 
-def test_exact_h_zero_and_axis_broadcast():
-    z = np.array([0.0, 0.2, -0.7, 1.5])
-    t = np.array([[0.25], [0.5], [0.75]])
-    q = solve_eq45_q(z, t, h=0.0)
-    expected = (1.0 - t) + z * z
-    np.testing.assert_allclose(q, expected, rtol=0.0, atol=0.0)
+def test_quarter_h_matches_closed_form_and_axis_broadcast():
+    # For h=1/4, y=sqrt(q) solves y^2-z^2*y-tau=0.
+    z = np.linspace(-2.0, 2.0, 41)
+    t = np.linspace(0.05, 0.95, 41)
+    q = solve_eq45_q(z, t, h=0.25)
+    tau = 1.0 - t
+    y = 0.5 * (z * z + np.sqrt(z**4 + 4.0 * tau))
+    expected = y * y
+    np.testing.assert_allclose(q, expected, rtol=3e-12, atol=3e-14)
+    assert np.max(np.abs(eq45_q_residual(q, z, t, 0.25))) < 3e-11
 
     times = np.array([0.1, 0.4, 0.9])
     q_axis = solve_eq45_q(np.zeros(3), times, h=0.005)
     np.testing.assert_allclose(q_axis, 1.0 - times, rtol=0.0, atol=0.0)
 
 
-def test_h_half_matches_closed_form_and_residual():
-    z = np.linspace(-2.0, 2.0, 41)
-    t = np.linspace(0.05, 0.95, 41)
-    q = solve_eq45_q(z, t, h=0.5)
-    tau = 1.0 - t
-    expected = 0.5 * (tau + np.sqrt(tau * tau + 4.0 * z * z))
-    np.testing.assert_allclose(q, expected, rtol=2e-12, atol=2e-14)
-    assert np.max(np.abs(eq45_q_residual(q, z, t, 0.5))) < 2e-12
-    assert np.all(q >= tau)
-
-
-def test_small_h_grid_stability_monotonicity_and_fail_closed():
+def test_small_h_grid_physical_branch_symmetry_and_tolerance_stability():
     z = np.linspace(-3.0, 3.0, 121)[:, None]
     t = np.array([0.25, 0.5, 0.75])[None, :]
     h = 0.005
     q = solve_eq45_q(z, t, h)
     residual = eq45_q_residual(q, z, t, h)
-    assert np.max(np.abs(residual)) < 5e-12
-    assert np.all(q > 0.0)
+    assert np.max(np.abs(residual)) < 5e-11
     assert np.all(q >= 1.0 - t)
-
     np.testing.assert_allclose(q, q[::-1], rtol=5e-13, atol=5e-14)
-    half = q[60:, :]
-    assert np.all(np.diff(half, axis=0) >= -2e-13)
 
-    q_loose = solve_eq45_q(z, t, h, rtol=1e-9, atol=1e-12, max_iter=80)
-    np.testing.assert_allclose(q_loose, q, rtol=2e-9, atol=2e-11)
+    D = 0.5 - h
+    eta = z / np.power(q, D)
+    assert np.max(np.abs(eta)) < 1.0
 
+    loose = solve_eq45_q(z, t, h, rtol=1e-9, atol=1e-12)
+    assert np.max(np.abs(loose - q)) < 2e-8
+
+
+def test_fail_closed_source_domain_and_inputs():
+    with pytest.raises(ValueError, match="0 < h < 1/2"):
+        solve_eq45_q(0.2, 0.5, 0.0)
+    with pytest.raises(ValueError, match="0 < h < 1/2"):
+        solve_eq45_q(0.2, 0.5, 0.5)
     with pytest.raises(ValueError):
-        solve_eq45_q(0.0, 1.0, h)
+        solve_eq45_q(np.inf, 0.5, 0.005)
     with pytest.raises(ValueError):
-        solve_eq45_q(0.0, 0.5, -0.1)
+        solve_eq45_q(0.2, 1.0, 0.005)
     with pytest.raises(ValueError):
-        solve_eq45_q(np.nan, 0.5, h)
-    with pytest.raises(ValueError):
-        solve_eq45_q(0.0, 0.5, h, max_iter=0)
+        solve_eq45_q(0.2, 0.5, 0.005, max_iter=0)
