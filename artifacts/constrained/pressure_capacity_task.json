@@ -1,0 +1,27 @@
+{
+  "task_id": "CR005-PRESSURE-CAPACITY-002",
+  "status": "DONE_IMPLEMENTATION_PENDING_REVIEW",
+  "scope": "pressure-only same-sample capacity diagnostic for the registered local pressure correction family",
+  "base_ref": "codex/cr001-constraints",
+  "base_commit": "f9d700b40f1335d7287ad5a8f7c7c2b2b452dc55",
+  "pressure_family": {
+    "source": "LocalPressureCandidate.pressure_coefficients and pressure_basis",
+    "coefficient_bounds": [-1.0, 1.0],
+    "velocity": "frozen",
+    "forcing": "frozen",
+    "base_pressure": "frozen",
+    "sampling": "frozen"
+  },
+  "local_verification": {
+    "pytest": "5 passed in 1.04s",
+    "command": "python -m pytest -q -W error tests/test_constrained_pressure_capacity.py",
+    "py_compile_exit": 0
+  },
+  "direct_velocity_effect": "none; diagnostic distinguishes pressure-family capacity from velocity-representation limitation before spending optimizer budget",
+  "truth_boundary": {
+    "same_sample_fit_not_validation": true,
+    "pde_validated": false,
+    "paper_exact": false,
+    "visualization_ready_changed": false
+  }
+}
