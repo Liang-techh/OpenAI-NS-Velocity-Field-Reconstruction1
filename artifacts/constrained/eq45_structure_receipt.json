@@ -1,0 +1,51 @@
+{
+  "schema": "eq45_structure_receipt_v1",
+  "status": "four_strict_local_identities_verified",
+  "engine": "SymPy 1.14.0",
+  "claim_scope": "eq45_leading_backbone_structure_only",
+  "identities": [
+    {
+      "id": "cylindrical_radial_projection",
+      "result": "0",
+      "statement": "x*u+y*v=(x^2+y^2)*v0/(2*q)",
+      "assumptions": "q>0; finite profile values; Cartesian Eq. (4.5) mixing"
+    },
+    {
+      "id": "cylindrical_swirl_projection",
+      "result": "0",
+      "statement": "-y*u+x*v=(x^2+y^2)*q^(-1-h)*F",
+      "assumptions": "q>0; finite profile values; Cartesian Eq. (4.5) mixing"
+    },
+    {
+      "id": "axis_regularity_of_cartesian_mixing",
+      "result": [
+        "0",
+        "0",
+        "U*q**(-h - 1/2)"
+      ],
+      "statement": "at x=y=0, (u,v,w)=(0,0,q^(-1/2-h)*U)",
+      "assumptions": "q>0 and finite U; profile provider itself is finite on X=0"
+    },
+    {
+      "id": "rotation_equivariance_and_coordinate_identity",
+      "result": {
+        "rotation_defect": [
+          "0",
+          "0",
+          "0"
+        ],
+        "coordinate_defect": "0"
+      },
+      "statement": "the transverse velocity rotates with (x,y), and z=eta*q^(1/2-h) turns q-z^2*q^(2h)=tau into tau=q*(1-eta^2)",
+      "assumptions": "profiles depend only on rotation-invariant X and eta; q>0"
+    }
+  ],
+  "states": {
+    "visualization_ready": false,
+    "velocity_export_ready": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  },
+  "limitations": "Local algebra for the leading Eq. (4.5) backbone only. No claim about the unknown numerical profiles, physical-space taper, momentum equation, visual correspondence, singularity, or blow-up."
+}
