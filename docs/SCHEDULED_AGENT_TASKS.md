@@ -1,3 +1,8 @@
+## Latest function delivery
+
+FUN001 source extraction delivered in docs/VELOCITY_FORMULAS.md: only E/U are independent; V0 follows from U. No numerical final profile table is published.
+FUN002 PARTIAL: paper_core_reference.py evaluates the B.13 near-axis reference with explicit independent parameters. Two focused tests pass; samples at artifacts/function_first/core_reference/samples.json. It has no nonlinear correction or exterior and must not mark FUN002 complete. Next implement/solve the nonlinear profile equations against this reference with reported residual and radial convergence; do not add animation.
+
 ## Current instruction: velocity functions first (2026-09-16)
 
 The user explicitly deprioritized animation. The immediate deliverable is computable

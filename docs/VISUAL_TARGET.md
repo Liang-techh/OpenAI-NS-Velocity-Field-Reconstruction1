@@ -66,7 +66,7 @@ q > 0,                   -1 < eta < 1,   0 < h < 1/100,
 ```
 
 and `q` is the unique positive solution of
-`q - z^2 q^(-2h) = tau`.  The leading profiles are described by
+`q - z^2 q^(2h) = tau`.  The leading profiles are described by
 
 ```text
 u_theta^(0) = q^(-A) E(X, eta),
