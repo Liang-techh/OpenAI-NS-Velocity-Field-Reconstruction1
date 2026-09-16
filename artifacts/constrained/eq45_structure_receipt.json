@@ -1,7 +1,7 @@
 {
   "schema": "eq45_structure_receipt_v1",
   "status": "four_strict_local_identities_verified",
-  "engine": "SymPy 1.14.0",
+  "engine": "exact stdlib Fraction polynomial certificate",
   "claim_scope": "eq45_leading_backbone_structure_only",
   "identities": [
     {
@@ -21,7 +21,7 @@
       "result": [
         "0",
         "0",
-        "U*q**(-h - 1/2)"
+        "q^(-1/2-h)*U"
       ],
       "statement": "at x=y=0, (u,v,w)=(0,0,q^(-1/2-h)*U)",
       "assumptions": "q>0 and finite U; profile provider itself is finite on X=0"
@@ -29,14 +29,14 @@
     {
       "id": "rotation_equivariance_and_coordinate_identity",
       "result": {
-        "rotation_defect": [
-          "0",
-          "0",
-          "0"
+        "rotation_commutator": [
+          ["0", "0"],
+          ["0", "0"]
         ],
+        "coordinate_q_exponent": "1",
         "coordinate_defect": "0"
       },
-      "statement": "the transverse velocity rotates with (x,y), and z=eta*q^(1/2-h) turns q-z^2*q^(2h)=tau into tau=q*(1-eta^2)",
+      "statement": "the transverse mixing commutes with every planar rotation, and z=eta*q^(1/2-h) turns q-z^2*q^(2h)=tau into tau=q*(1-eta^2)",
       "assumptions": "profiles depend only on rotation-invariant X and eta; q>0"
     }
   ],
@@ -47,5 +47,5 @@
     "paper_exact": false,
     "openai_field_identified": false
   },
-  "limitations": "Local algebra for the leading Eq. (4.5) backbone only. No claim about the unknown numerical profiles, physical-space taper, momentum equation, visual correspondence, singularity, or blow-up."
+  "limitations": "Local exact algebra for the leading Eq. (4.5) backbone only. No claim about the unknown numerical profiles, physical-space taper, momentum equation, visual correspondence, singularity, or blow-up."
 }
