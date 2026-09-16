@@ -31,13 +31,15 @@ def run(config='configs/constraints.json', output='artifacts/constrained/optimiz
     x=np.vstack((x,extra));t=np.r_[t,rng.uniform(lo+0.002,hi-0.002,len(extra))]
     names=['swirl_ratio','radial_width','axial_width','radial_shape','axial_shape',
            'pressure_constant','pressure_radial','pressure_axial']
+    if 'swirl_radial_shape' in opt['candidate_parameter_bounds']:
+        names += ['swirl_radial_shape','swirl_axial_shape']
     bounds=opt['candidate_parameter_bounds']
     lows=[bounds[k][0] for k in names]+[0,0];highs=[bounds[k][1] for k in names]+[10,10]
     initial=CompactCandidate();v0=np.array([getattr(initial,k) for k in names]+[1,1])
     best={'loss':float('inf')};history=[];calls=0
     class BudgetReached(Exception): pass
     def decode(v):
-        return CompactCandidate(**dict(zip(names,v[:8]))).normalized(),RestrictedForce(*v[8:])
+        return CompactCandidate(**dict(zip(names,v[:len(names)]))).normalized(),RestrictedForce(*v[len(names):])
     def fun(v):
         nonlocal calls
         if calls>=opt['maximum_function_evaluations']: raise BudgetReached()

@@ -5,7 +5,8 @@ from openai_ns_reconstruction.constrained_candidate import CompactCandidate
 
 
 def test_divergence_axis_support_and_core_signs():
-    c = CompactCandidate(radial_shape=0.13, axial_shape=-0.17).normalized()
+    c = CompactCandidate(radial_shape=0.13, axial_shape=-0.17,
+                         swirl_radial_shape=0.4, swirl_axial_shape=-0.6).normalized()
     points=np.random.default_rng(25).uniform(-1.5,1.5,(80,3))
     h=1e-5
     div=sum((c.velocity(points+np.eye(3)[j]*h,0.4)[:,j]
