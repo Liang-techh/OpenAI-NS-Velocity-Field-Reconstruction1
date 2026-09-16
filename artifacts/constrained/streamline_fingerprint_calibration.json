@@ -1,0 +1,49 @@
+{
+  "schema": "constrained_streamline_fingerprint_calibration_v1",
+  "scope": "synthetic_helical_visualization_calibration_only",
+  "field": "u=(-2y,2x,1)",
+  "time": 0.5,
+  "seed_count": 8,
+  "seed_radius": 1.0,
+  "half_arclength": 5.0,
+  "steps": [0.1, 0.05, 0.025],
+  "analytic_pitch_per_turn": 3.141592653589793,
+  "analytic_z_span": 4.47213595499958,
+  "analytic_abs_turns": 1.423525086834354,
+  "reports": [
+    {
+      "step": 0.1,
+      "complete_fraction": 1.0,
+      "pitch_q50": 3.1415943243247315,
+      "z_span_q50": 4.472137618863059,
+      "abs_turns_q50": 1.423524859411732,
+      "radial_drift_q90": 1.349591288724028e-07,
+      "signed_turn_coherence": 1.0
+    },
+    {
+      "step": 0.05,
+      "complete_fraction": 1.0,
+      "pitch_q50": 3.141592758234771,
+      "z_span_q50": 4.4721360518579925,
+      "abs_turns_q50": 1.4235250702483924,
+      "radial_drift_q90": 4.221034077822594e-09,
+      "signed_turn_coherence": 1.0
+    },
+    {
+      "step": 0.025,
+      "complete_fraction": 1.0,
+      "pitch_q50": 3.1415926601336084,
+      "z_span_q50": 4.472135960823646,
+      "abs_turns_q50": 1.4235250857230648,
+      "radial_drift_q90": 1.3193590664428712e-10,
+      "signed_turn_coherence": 1.0
+    }
+  ],
+  "coarse_to_finest_relative": {
+    "pitch_q50": 5.297284858880714e-07,
+    "abs_turns_q50": 1.5897951855902336e-07
+  },
+  "coarse_to_finest_radial_drift_abs": 1.3482719296575851e-07,
+  "pde_validated": false,
+  "paper_exact": false
+}
