@@ -1,0 +1,40 @@
+{
+  "task_id": "CR003-VISUAL-FEATURE-SENSITIVITY-006",
+  "calibration_only": true,
+  "parameter_labels": [
+    "phi_base",
+    "phi_duplicate",
+    "unused_local"
+  ],
+  "feature_labels": [
+    "core_radius",
+    "axial_extent",
+    "pitch"
+  ],
+  "numerical_rank": 1,
+  "condition_number": 1.0,
+  "dead_parameter_labels": [
+    "unused_local"
+  ],
+  "singular_values": [
+    0.0007071067811865246,
+    3.889896688999507e-18,
+    0.0
+  ],
+  "parameter_response_norms": [
+    0.0003162277660168031,
+    0.0006324555320336676,
+    0.0
+  ],
+  "feature_reachability_norms": [
+    0.00022360679774997917,
+    0.0006708203932499127,
+    0.0
+  ],
+  "stencil_by_parameter": [
+    "central",
+    "central",
+    "central"
+  ],
+  "truth_boundary": "Synthetic calibration of a local visualization-feature Jacobian only. It does not measure the current production velocity, reduce held-out PDE residual, establish visual correspondence, identify an OpenAI field, or prove blow-up."
+}
