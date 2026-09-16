@@ -89,7 +89,7 @@ def test_candidate_identity_and_public_metadata_fail_closed(tmp_path):
     meta = json.loads(meta_path.read_text(encoding="utf-8"))
     meta["candidate_sha256"] = "0" * 64
     meta_path.write_text(json.dumps(meta), encoding="utf-8")
-    with pytest.raises(ValueError, match="metadata mismatch for candidate_sha256"):
+    with pytest.raises(ValueError, match="candidate SHA256 mismatch"):
         audit_velocity_bundle(field, out)
 
 
