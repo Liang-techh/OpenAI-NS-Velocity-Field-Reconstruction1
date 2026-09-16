@@ -1,0 +1,39 @@
+{
+  "task_id": "CR008-ENERGY-CONCENTRATION-002",
+  "owner": "Constrained Agent 4",
+  "status": "DONE",
+  "base_commit": "c6700851c0330c0c92938d25204d07fbabf588f4",
+  "implementation_commit": "7d28b02e393b1d8b547b7dbf57e97b8228b4514d",
+  "pr_url": "https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/pull/18",
+  "commands_and_actual_results": [
+    {
+      "command": "PYTHONPATH=/mnt/data/agent4_energy/src python -m pytest -q -W error /mnt/data/agent4_energy/tests/test_constrained_energy_concentration.py",
+      "result": "3 passed in 0.07s"
+    },
+    {
+      "command": "python -W error -m py_compile /mnt/data/agent4_energy/src/openai_ns_reconstruction/constrained_energy_concentration.py /mnt/data/agent4_energy/tests/test_constrained_energy_concentration.py",
+      "result": "exit 0"
+    }
+  ],
+  "manufactured_calibration": {
+    "field": "compact polynomial axisymmetric swirl u=(-y*a,x*a,0)",
+    "time": 0.5,
+    "support_radius": 1.0,
+    "support_half_height": 1.0,
+    "quadrature_orders": [16, 32, 64],
+    "levels": [0.25, 0.5, 0.75, 1.0],
+    "finest_total_energy": 0.021090412219903574,
+    "finest_fraction_profile": [0.055236303556218586, 0.6021719085274515, 0.9840447160125887, 1.0],
+    "q50_spread": 8.326672684688674e-16,
+    "q90_spread": 5.551115123125783e-16,
+    "max_adjacent_order_fraction_delta": 1.9984014443252818e-15
+  },
+  "remaining_limitations": [
+    "The active optimized constrained candidate is still in open PR #1 rather than main, so this increment calibrates the independent operator but does not report a candidate concentration trend.",
+    "The cylindrical reduction assumes axisymmetry; that representation property must be established independently.",
+    "q50/q90 use interpolation between requested aperture levels, so aperture-grid sensitivity must be reported when applying the diagnostic to the candidate.",
+    "Finite-window concentration or growth is not evidence of blow-up or singularity formation."
+  ],
+  "acceptance": "pending",
+  "merge_status": "open"
+}
