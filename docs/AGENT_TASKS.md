@@ -163,3 +163,7 @@ Implemented `AngularMomentumCandidate` with a fixed-support swirl basis vanishin
 ## Outer spatial distribution fit
 
 Added two bounded outer-basis shape coefficients [-2,2], multiplying the old cutoff basis by exp(alpha*(r²/4-.5)+beta*z²/4). Recomputed moment normalization preserves the prescribed global torque construction. Force, core and thresholds unchanged. 27 calls, fitted shape [-1.616864,-1.748855], independent sampled max residual 2.491094, structural probes pass (energy [0.683244,1.08919], drift 0.0494913). Results outer_shape/. PDE still fails .001.
+
+## Fixed-velocity pressure-space experiment
+
+Added 18 compact pressure basis terms (degree 2 in r²,z² and degree 1 in time), coefficients bounded [-100,100], at fixed velocity and force. Bounded linear fit reduced training mean-square residual 0.148236 -> 0.146392 but independent maximum worsened 2.491094 -> 2.508246. Keep outer_shape as better development result; outer_pressure is a preserved failed comparison. Five related tests passed in 0.31 s. This weak gain supports changing velocity time evolution, not further pressure-only enrichment.

@@ -11,11 +11,14 @@ from .constrained_momentum_budget import angular_moment
 
 
 class AngularMomentumCandidate:
-    def __init__(self,base,force,order=96,outer_shape=(0.,0.)):
+    def __init__(self,base,force,order=96,outer_shape=(0.,0.),pressure_coefficients=(0.,)*18):
         self.base,self.force,self.order=base,force,order
         self.outer_shape=tuple(float(v) for v in outer_shape)
         if len(self.outer_shape)!=2 or not all(np.isfinite(v) and -2<=v<=2 for v in self.outer_shape):
             raise ValueError("outer shape requires two finite coefficients in [-2,2]")
+        self.pressure_coefficients=tuple(float(v) for v in pressure_coefficients)
+        if len(self.pressure_coefficients)!=18 or not all(np.isfinite(v) and abs(v)<=100 for v in self.pressure_coefficients):
+            raise ValueError("pressure requires 18 finite coefficients in [-100,100]")
         ts=np.array([.25,.5,.75])
         values=np.array([angular_moment(base.velocity,float(t),order) for t in ts])
         # Fixed geometry and degree-two time tensor imply J=tau^1.49 P2(t).
@@ -47,7 +50,17 @@ class AngularMomentumCandidate:
         u=self.base.velocity(points,time)
         return u+self.amplitude(time)[...,None]*self.outer_basis(points,time)
 
-    def pressure(self,points,time):return self.base.pressure(points,time)
+    @staticmethod
+    def pressure_basis(points,time):
+        p=np.asarray(points,dtype=float);x,y,z=np.moveaxis(p,-1,0)
+        r2=(x*x+y*y)/4;z2=z*z/4
+        r2,z2,t=np.broadcast_arrays(r2,z2,np.asarray(time,dtype=float))
+        b=compact_bump(r2)[0]*compact_bump(z2)[0]
+        return np.stack([b*r2**i*z2**j*(2*(t-.25))**k
+                         for i in range(3) for j in range(3) for k in range(2)],axis=-1)
+
+    def pressure(self,points,time):
+        return self.base.pressure(points,time)+self.pressure_basis(points,time)@np.asarray(self.pressure_coefficients)
 
     def energy(self,time=.25,order=96):
         n,w=unit_rule(order);r=2*n;z=4*n-2
@@ -57,14 +70,14 @@ class AngularMomentumCandidate:
 
     def save(self,path):
         data={'family':'angular_momentum_outer_v1','schema_version':1,'status':'candidate',
-              'base_parameters':asdict(self.base),'force':asdict(self.force),'quadrature_order':self.order,'outer_shape':self.outer_shape}
+              'base_parameters':asdict(self.base),'force':asdict(self.force),'quadrature_order':self.order,'outer_shape':self.outer_shape,'pressure_coefficients':self.pressure_coefficients}
         Path(path).write_text(json.dumps(data,indent=2)+'\n')
 
     @classmethod
     def load(cls,path):
         d=json.loads(Path(path).read_text())
         if d['family']!='angular_momentum_outer_v1':raise ValueError('wrong family')
-        return cls(TensorCandidate(**d['base_parameters']),RestrictedForce(**d['force']),d['quadrature_order'],d.get('outer_shape',(0.,0.)))
+        return cls(TensorCandidate(**d['base_parameters']),RestrictedForce(**d['force']),d['quadrature_order'],d.get('outer_shape',(0.,0.)),d.get('pressure_coefficients',(0.,)*18))
 
 
 if __name__=='__main__':
