@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "status": "capacity_obstruction_probe_not_candidate_validation",
+  "task_id": "CR003-INNER-ANNULUS-CAPACITY-002",
+  "base_commit": "67f8383dcfbe2383006cdd610a5709c15c7099f0",
+  "base_candidate": "artifacts/constrained/quintic_swirl/candidate.json",
+  "base_candidate_blob_sha": "9fd0fdc5bc5c7f3d450803b405c0d8bc3d90b85e",
+  "frozen_collar_source": "artifacts/constrained/quintic_swirl/frozen_collar.json",
+  "frozen_collar_blob_sha": "79a4245457248eea6061217bc67d1e23e6db20f1",
+  "question": "Can a minimal divergence-free pure-swirl spatial extension reach the current exact zero-correction annulus without touching the preregistered core probes or changing forcing?",
+  "current_obstruction": {
+    "old_correction_zero_radius": 0.3535533905932738,
+    "frozen_point": [0.32, 0.0, 0.8857142857142857],
+    "finest_recorded_step": 0.00125,
+    "finest_recorded_residual": [-0.4328247732986331, -1.0216083952082402, 0.30683391209747224],
+    "finest_recorded_norm": 1.1511594360270034,
+    "parent_difference": 0.0,
+    "interpretation": "all current quintic correction modes and their local coefficient Jacobian vanish on this open region"
+  },
+  "prototype": {
+    "mode_count": 2,
+    "representation": "axisymmetric Cartesian pure swirl (-y,x,0) times smooth functions of r^2 and z^2",
+    "inner_guard": "1-standard_cutoff(r^2/0.02)",
+    "inner_zero_radius": 0.1,
+    "inner_full_radius": 0.1414213562373095,
+    "outer_support": "standard_cutoff(r^2/4)*standard_cutoff(z^2/4)",
+    "second_mode": "broad guard multiplied by exp(-((r^2-.105)/.055)^2-((z^2-.80)/.32)^2)",
+    "global_moment_handling": "subtract a fixed multiple of the existing parent.outer_basis using the same angular-moment quadrature; this subtraction is exactly zero in the frozen annulus"
+  },
+  "deterministic_reach_probe": {
+    "points": [
+      [0.16, 0.0, 0.55],
+      [0.19, 0.0, 0.75],
+      [0.22, 0.0, 0.9],
+      [0.26, 0.0, 1.05],
+      [0.3, 0.0, 0.7],
+      [0.32, 0.0, 0.8857142857142857],
+      [0.34, 0.0, 1.1]
+    ],
+    "basis_dimension_1": {
+      "rank": 1,
+      "normalized_condition_number": 1.0
+    },
+    "basis_dimension_2": {
+      "rank": 2,
+      "normalized_condition_number": 3.6708511644404336
+    },
+    "frozen_point_y_components": [0.32, 0.3185364783833479],
+    "max_current_core_probe_radius": 0.08660254037844387,
+    "new_basis_on_all_21_core_probe_points": 0.0
+  },
+  "handoff": "The current O(1) frozen-collar defect is a representation-support obstruction for all existing quintic corrections. A two-direction guarded inner-annulus pure-swirl block removes that support obstruction while retaining an open core neighborhood and compact support. Agent 1 should test this or an equivalent tiny block before further polynomial time-degree growth.",
+  "limitations": [
+    "This probe shows spatial reach/rank, not a reduction of the Navier-Stokes residual.",
+    "Moment cancellation is numerical at the selected quadrature order, not interval-certified.",
+    "No pressure, force, parent candidate, thresholds, or acceptance criteria are changed.",
+    "A nonlinear optimization and independent held-out PDE validation of a production candidate remain required."
+  ],
+  "claims": {
+    "free_forcing_used": false,
+    "zero_field_collapse_used": false,
+    "candidate_validated": false,
+    "pde_threshold_passed": false,
+    "paper_exact": false,
+    "blowup_proved": false
+  }
+}
