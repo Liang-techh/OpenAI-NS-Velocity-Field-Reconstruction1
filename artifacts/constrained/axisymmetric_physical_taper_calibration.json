@@ -1,0 +1,35 @@
+{
+  "schema": "axisymmetric_physical_taper_calibration_v1",
+  "task_id": "CR003-EQ45-PHYSICAL-TAPER-008",
+  "scope": "synthetic_representation_calibration_only",
+  "taper": {
+    "schema": "axisymmetric_physical_taper_v1",
+    "radial_support": 2.0,
+    "axial_half_height": 2.0,
+    "radial_plateau_q": 0.64,
+    "axial_plateau_q": 0.64,
+    "axis_tolerance": 1e-12,
+    "classification": "autonomous_design"
+  },
+  "finite_difference_divergence": {
+    "seed": 20260916,
+    "point_count": 96,
+    "sample_box": [-1.85, 1.85],
+    "step": 1e-5,
+    "max_abs": 3.9546144137148076e-08,
+    "rms": 7.990959229922372e-09
+  },
+  "properties_checked": {
+    "inner_plateau_preserves_base_velocity_exactly": true,
+    "axis_transverse_velocity_finite": true,
+    "velocity_zero_at_and_outside_r2_z2_support": true,
+    "serialization_round_trip": true
+  },
+  "truth_boundary": {
+    "visualization_ready": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "note": "Synthetic calibration of an autonomous exterior-connection primitive only; no production Eq. (4.5) profile was fitted or validated."
+  }
+}
