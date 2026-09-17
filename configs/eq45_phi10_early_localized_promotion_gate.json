@@ -1,0 +1,151 @@
+{
+  "schema": "eq45_phi10_early_localized_promotion_gate_v1",
+  "task_id": "CR002-EQ45-PHI10-EARLY-LOCALIZED-PROMOTION-GATE-023",
+  "classification": {
+    "velocity_visual_delivery": "user_requirement",
+    "eq45_backbone": "public_source_fact",
+    "phi10_early_localized_temporal_shape": "autonomous_design",
+    "target_free_internal_morphology": "autonomous_design",
+    "public_visual_correspondence": "pending_unknown",
+    "pde_validity": "pending_unknown",
+    "candidate_specific_energy_acceptance": "pending_unknown"
+  },
+  "candidate": {
+    "source_capsule_task": "CR011-EQ45-PHI10-EARLY-LOCALIZED-DELIVERY-CAPSULE-014",
+    "base_supported_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+    "candidate_sha256": "5b08abbfdce0e96d39a5fc394ceedea0d0ff549cb921ff50e84004355c0e2bfe",
+    "temporal_mode": ["phi", 1, 0],
+    "early_delta": -1.4,
+    "schedule": "0.5*early_delta*tau*(tau-1)",
+    "coefficient_start_mid_intermediate_end": [-1.7, -0.3, -0.125, -0.3],
+    "coefficient_bound": [-4.0, 4.0],
+    "time_interval": [0.25, 0.75],
+    "spatial_box": [[-2.0, 2.0], [-2.0, 2.0], [-2.0, 2.0]]
+  },
+  "current_state": {
+    "callable_serializable": true,
+    "velocity_export_ready": true,
+    "visualization_candidate_only": true,
+    "canonical_velocity_changed": false,
+    "screened_temporal_shape_materialized": true,
+    "production_temporal_shape_promoted": false,
+    "physical_support_connection_implemented": true,
+    "physical_support_validated": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "evidence_scope": {
+    "target_free_selection": {
+      "source_pr": 150,
+      "status": "integrated_in_capsule_ancestry",
+      "meaning": "autonomous target-free temporal-shape selection; no public OpenAI image was used as a fit target",
+      "may_support_visualization_trial_selection": true,
+      "may_support_public_visual_correspondence": false,
+      "may_support_pde_validation": false
+    },
+    "early_endpoint_whole_domain_morphology": {
+      "source_pr": 146,
+      "status": "bound_as_numeric_provenance_via_capsule",
+      "early_radial_q99_baseline": 1.8580904,
+      "early_radial_q99_trial": 1.1597414,
+      "early_radial_outer_vorticity2_fraction_baseline": 0.076186,
+      "early_radial_outer_vorticity2_fraction_trial": 0.022677,
+      "may_support_internal_morphology_review": true,
+      "may_support_public_visual_correspondence": false
+    },
+    "intermediate_time_morphology": {
+      "source_pr": 154,
+      "source_head": "385c4ae7c4cda43874cb451aa5a5d2b8966e6dfb",
+      "source_ci_run": 35212652157,
+      "source_ci_success": true,
+      "status": "open_unconsumed_sibling_evidence",
+      "time": 0.625,
+      "finest_resolution": 81,
+      "quadratic_radial_q99": 0.943398,
+      "static_radial_q99": 0.921954,
+      "affine_radial_q99": 0.970824,
+      "quadratic_weighted_radial_rms": 0.616803,
+      "static_weighted_radial_rms": 0.609383,
+      "affine_weighted_radial_rms": 0.638927,
+      "may_trigger_followup_review": true,
+      "may_promote_current_ancestry_state": false,
+      "reported_visualization_ready": false,
+      "reported_visual_correspondence_verified": false
+    },
+    "fixed_holdout_pde_tradeoff": {
+      "source_pr": 152,
+      "status": "integrated_in_capsule_ancestry",
+      "finest_step": 0.005,
+      "static_zero_force_rms": 3.5872881930415295,
+      "early_localized_zero_force_rms": 3.706399725216429,
+      "early_localized_vs_static_fractional_change": 0.0332038,
+      "formal_pde_gate_assessed": false,
+      "may_support_pde_validation": false
+    },
+    "fresh_seed_pde_generalization": {
+      "source_pr": 153,
+      "source_head": "73429a605c750707cbcc5e6e26ddcc5511894ac4",
+      "source_ci_run": 35211476178,
+      "source_ci_success": true,
+      "validation_seeds": [914457, 914471, 914483],
+      "status": "integrated_provenance_without_bound_numeric_summary",
+      "numeric_summary_bound_in_capsule": false,
+      "formal_pde_gate_assessed": false,
+      "may_support_pde_validation": false
+    },
+    "candidate_energy": {
+      "status": "pending_candidate_specific_revalidation",
+      "may_inherit_parent_energy_acceptance": false,
+      "failure_blocks_velocity_export": false
+    }
+  },
+  "promotion_requirements": {
+    "visualization_ready": [
+      "callable_velocity",
+      "supported_visualization_entry_point",
+      "candidate_specific_resolution_sanity",
+      "whole_domain_temporal_morphology_review_resolved",
+      "three_dimensional_render_review"
+    ],
+    "visual_correspondence_verified": [
+      "public_reference_only",
+      "candidate_specific_independent_visual_diagnostics",
+      "candidate_specific_resolution_stability",
+      "explicit_public_observable_geometry_and_time_comparison"
+    ],
+    "pde_validated": [
+      "independent_validator",
+      "preregistered_thresholds",
+      "held_out_validation"
+    ]
+  },
+  "policy": {
+    "target_free_selection_implies_public_visual_correspondence": false,
+    "early_endpoint_morphology_improvement_implies_visualization_ready": false,
+    "static_midpoint_or_endpoint_identity_implies_intermediate_visual_acceptance": false,
+    "intermediate_resolution_stability_implies_public_visual_correspondence": false,
+    "fixed_probe_pressure_free_diagnostic_implies_pde_validation": false,
+    "fresh_seed_pressure_free_diagnostic_implies_pde_validation": false,
+    "green_ci_implies_visual_or_pde_acceptance": false,
+    "velocity_export_implies_visualization_ready": false,
+    "visual_similarity_implies_pde_validation": false,
+    "visual_correspondence_implies_paper_exact": false,
+    "pde_failure_blocks_velocity_export": false,
+    "candidate_energy_failure_blocks_velocity_export": false,
+    "open_sibling_evidence_is_integrated_acceptance": false,
+    "production_temporal_shape_is_promoted": false,
+    "canonical_velocity_is_changed": false
+  },
+  "truth_boundary": {
+    "velocity_changed_by_this_gate": false,
+    "temporal_schedule_changed_by_this_gate": false,
+    "support_transform_changed": false,
+    "forcing_family_changed": false,
+    "thresholds_changed": false,
+    "candidate_promoted": false
+  }
+}
