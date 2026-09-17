@@ -157,6 +157,22 @@ class Eq45VelocityCandidate:
         points = np.stack((x_arr, y_arr, z_arr), axis=-1)
         return self.velocity(points, time_arr)
 
+    def grid(self, x, y, z, times) -> np.ndarray:
+        """Return direct velocity samples in ``(time,x,y,z,component)`` order.
+
+        This mirrors the repository's existing public visualization-grid layout
+        while evaluating this candidate directly, so saved/reloaded Eq45
+        candidates can feed MATLAB/Python grid consumers without accessing
+        optimizer internals or a different velocity implementation.
+        """
+        axes = [np.asarray(value, dtype=float) for value in (times, x, y, z)]
+        if any(axis.ndim != 1 or axis.size == 0 for axis in axes):
+            raise ValueError("grid axes and times must be nonempty 1D arrays")
+        if not all(np.all(np.isfinite(axis)) for axis in axes):
+            raise ValueError("grid axes and times must be finite")
+        tt, xx, yy, zz = np.meshgrid(*axes, indexing="ij")
+        return self.velocity_xyz(xx, yy, zz, tt)
+
     __call__ = velocity
 
     @property
