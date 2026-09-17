@@ -1,0 +1,41 @@
+name: kokuno-agent4-independent-heat-repair
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_independent_heat_repair.py'
+      - 'src/openai_ns_reconstruction/kokuno_heat_discrepancy_repair.py'
+      - 'tests/test_constrained_kokuno_independent_heat_repair.py'
+      - 'tests/test_constrained_kokuno_heat_discrepancy_repair.py'
+      - '.github/workflows/kokuno-agent4-independent-heat-repair.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  independent-heat-repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Focused independent tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_independent_heat_repair.py
+          tests/test_constrained_kokuno_heat_discrepancy_repair.py
+      - name: Run independent heat-repair audit
+        run: >-
+          python -m openai_ns_reconstruction.kokuno_independent_heat_repair
+          --output artifacts/kokuno_agent4/independent_heat_repair_audit.json
+      - name: Show report
+        run: cat artifacts/kokuno_agent4/independent_heat_repair_audit.json
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent4-independent-heat-repair
+          path: artifacts/kokuno_agent4/independent_heat_repair_audit.json
