@@ -1,0 +1,99 @@
+{
+  "schema": "eq45_phi10_quartic_visualization_smoke_scope_v1",
+  "task_id": "CR002-EQ45-PHI10-QUARTIC-VISUALIZATION-SMOKE-SCOPE-026",
+  "scope": "Govern representation and claim semantics for the quartic supported Eq45 meridional visualization smoke without changing the candidate velocity or scientific thresholds.",
+  "source_vocabulary": [
+    "user_requirement",
+    "public_source_fact",
+    "autonomous_design",
+    "pending_unknown"
+  ],
+  "source_classification": {
+    "callable_3d_time_varying_velocity_delivery": "user_requirement",
+    "separate_velocity_visual_pde_and_exactness_states": "user_requirement",
+    "fixed_y0_meridional_smoke_plane": "autonomous_design",
+    "default_smoke_grid_extent_and_times": "autonomous_design",
+    "speed_background": "autonomous_design",
+    "two_component_u_w_line_overlay": "autonomous_design",
+    "public_visual_geometry_time_camera_registration": "pending_unknown",
+    "paper_exact_or_hidden_openai_identity": "pending_unknown"
+  },
+  "cr001_binding": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_parameters": ["a", "c"],
+    "reference_energy_time": 0.25,
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "divergence_max_threshold": 1e-05,
+    "divergence_L2_threshold": 1e-05,
+    "pde_residual_max_threshold": 0.001,
+    "pde_residual_L2_threshold": 0.001
+  },
+  "smoke_binding": {
+    "implementation_pr": 177,
+    "implementation_head": "e7ab61b4485be1779e048608605f92c53dcd334a",
+    "manifest_schema": "eq45_supported_phi10_quartic_visualization_smoke_v1",
+    "candidate_family": "Eq45SupportedPhi10QuarticDerivativeBalancedTemporalCandidate",
+    "candidate_sha256": "03fdae73170469ae1160297b489b1b83a27adddfc941119e116a21b98bd15049",
+    "supported_parent_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+    "observable": "fixed_physical_y0_meridional_velocity_slice",
+    "saved_component_order": ["u", "v", "w"],
+    "plane": {"axis": "y", "value": 0.0},
+    "default_times": [0.25, 0.5, 0.75],
+    "default_extent": 2.0,
+    "default_grid_size": 81,
+    "render": "speed_background_plus_projected_u_w_streamlines",
+    "line_overlay_components": ["u", "w"],
+    "omitted_line_direction_component": "v",
+    "public_image_used": false,
+    "camera_or_registration_fitted": false,
+    "visual_pass_threshold_defined": false
+  },
+  "representation_semantics": {
+    "saved_slice_contains_full_cartesian_velocity_at_each_sample": true,
+    "line_overlay_is_2d_integral_curve_of_y0_u_w_component_field": true,
+    "line_overlay_is_true_3d_streamline": false,
+    "line_overlay_is_full_3d_trajectory_projection": false,
+    "omitted_v_may_be_nonzero_for_swirl_candidate": true,
+    "line_overlay_may_be_called_meridional_or_poloidal_streamline_smoke": true,
+    "line_overlay_may_be_called_true_3d_streamline": false
+  },
+  "governed_conclusions": {
+    "smoke_may_establish_candidate_renderability": true,
+    "smoke_may_establish_visualization_ready": false,
+    "smoke_may_establish_visual_correspondence_verified": false,
+    "smoke_may_establish_pde_validated": false,
+    "smoke_may_establish_paper_exact": false,
+    "smoke_may_establish_openai_field_identified": false,
+    "pde_failure_or_pending_may_block_velocity_export": false,
+    "candidate_local_rendering_may_proceed_while_pde_unvalidated": true
+  },
+  "truth_states": {
+    "velocity_export_ready": true,
+    "visualization_candidate_only": true,
+    "visualization_smoke_generated": true,
+    "physical_support_validated": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "forbidden_inferences": [
+    "u_w_y0_line_overlay=>true_3d_streamline",
+    "u_w_y0_line_overlay=>full_3d_trajectory_projection",
+    "render_smoke_generated=>visualization_ready",
+    "render_smoke_generated=>visual_correspondence_verified",
+    "render_smoke_generated=>pde_validated",
+    "visual_slice_similarity=>paper_exact_or_openai_field_identified",
+    "pde_failed_or_pending=>velocity_export_not_allowed"
+  ]
+}
