@@ -1,0 +1,39 @@
+{
+  "schema": "eq45_export_scope_contract_v1",
+  "task_id": "CR002-EQ45-UNIFIED-EXPORT-SCOPE-014",
+  "scope": "Distinguish Eq45 candidate-local callable/export readiness from the repository package-level unified/default velocity binding without changing either velocity field.",
+  "package_unified_velocity": {
+    "delivery_contract": "configs/velocity_delivery_contract.json",
+    "api": "openai_ns_reconstruction.velocity_components:velocity",
+    "bundled_candidate_family": "coupled_velocity_v1"
+  },
+  "eq45_candidate": {
+    "artifact": "artifacts/constrained/eq45_velocity_candidate_seed.json",
+    "evaluator": "openai_ns_reconstruction.constrained_eq45_candidate:Eq45VelocityCandidate.at_points",
+    "scope": "candidate_local",
+    "callable_serializable": true,
+    "velocity_export_ready": true,
+    "is_package_unified_default": false
+  },
+  "state_semantics": {
+    "delivery_state_contract": "configs/delivery_state_contract.json",
+    "canonical_velocity_export_ready_requires": "unified_velocity_api",
+    "eq45_local_readiness_is_evidence_for_package_unified_binding": false,
+    "pde_failure_blocks_candidate_local_export": false
+  },
+  "required_false_eq45_claims": [
+    "physical_support_validated",
+    "visualization_ready",
+    "visual_correspondence_verified",
+    "pde_validated",
+    "paper_exact",
+    "openai_field_identified",
+    "blowup_proved"
+  ],
+  "truth_boundary": [
+    "Eq45VelocityCandidate.at_points is a callable, serializable candidate-local [u,v,w] evaluator.",
+    "Candidate-local export readiness does not mean Eq45 is the repository package-level unified/default velocity implementation.",
+    "PDE failure does not forbid saving, loading, evaluating, or exporting a callable candidate.",
+    "Neither callable export nor package binding implies visualization correspondence, PDE validity, paper-exact identity, OpenAI hidden-field recovery, or blow-up."
+  ]
+}
