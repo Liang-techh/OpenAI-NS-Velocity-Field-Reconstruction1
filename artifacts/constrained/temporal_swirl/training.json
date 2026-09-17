@@ -1,0 +1,107 @@
+{
+  "status": "training_only_not_validated",
+  "initial_artifact": "artifacts/constrained/continued_pressure/candidate.json",
+  "force": {
+    "a": 9.546541832896667e-11,
+    "c": 0.12148700174414483
+  },
+  "calls": 160,
+  "call_budget": 500,
+  "termination": "`gtol` termination condition is satisfied.",
+  "seed": 20260916,
+  "cache_direct_max_discrepancy": 3.823164007599189e-12,
+  "training_points": 2048,
+  "training_loss": 0.06328958146785196,
+  "history": [
+    {
+      "call": 1,
+      "loss": 0.10515165174727374
+    },
+    {
+      "call": 2,
+      "loss": 0.10513698628863737
+    },
+    {
+      "call": 17,
+      "loss": 0.07763674307130598
+    },
+    {
+      "call": 18,
+      "loss": 0.07763441272988249
+    },
+    {
+      "call": 33,
+      "loss": 0.06833012149139034
+    },
+    {
+      "call": 34,
+      "loss": 0.06832973993685171
+    },
+    {
+      "call": 35,
+      "loss": 0.06832904009060065
+    },
+    {
+      "call": 49,
+      "loss": 0.06442253583617988
+    },
+    {
+      "call": 50,
+      "loss": 0.06442241915028517
+    },
+    {
+      "call": 51,
+      "loss": 0.06442204799168158
+    },
+    {
+      "call": 65,
+      "loss": 0.06338677689753888
+    },
+    {
+      "call": 66,
+      "loss": 0.06338675763552963
+    },
+    {
+      "call": 67,
+      "loss": 0.06338671322767116
+    },
+    {
+      "call": 68,
+      "loss": 0.06338656341995438
+    },
+    {
+      "call": 81,
+      "loss": 0.06330909387224937
+    },
+    {
+      "call": 82,
+      "loss": 0.06330906489280262
+    },
+    {
+      "call": 83,
+      "loss": 0.06330903736076145
+    },
+    {
+      "call": 97,
+      "loss": 0.06329141375758379
+    },
+    {
+      "call": 113,
+      "loss": 0.06328982011396783
+    },
+    {
+      "call": 129,
+      "loss": 0.06328960616198748
+    },
+    {
+      "call": 145,
+      "loss": 0.06328958146785196
+    }
+  ],
+  "coefficient_bounds": [
+    -1,
+    1
+  ],
+  "basis": "five zero-moment spatial modes times three cubic Bernstein temporal modes",
+  "initial_velocity_max_change": 0.0
+}

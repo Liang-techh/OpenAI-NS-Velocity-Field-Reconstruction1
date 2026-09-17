@@ -1,0 +1,13 @@
+{
+  "status": "candidate_recovered_after_metadata_serialization_failure",
+  "force": {
+    "a": 9.546541832896667e-11,
+    "c": 0.12148700174414483
+  },
+  "initial_artifact": "artifacts/constrained/whole_window_equalities/candidate.json",
+  "configured_call_budget": 1200,
+  "configured_max_iterations": 40,
+  "actual_calls": null,
+  "termination": "not recovered; report serialization failed after candidate was saved",
+  "error": "initial path variable shadowed by numpy core values; fixed without rerunning optimization"
+}

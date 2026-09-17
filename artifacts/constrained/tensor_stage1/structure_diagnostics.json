@@ -1,0 +1,9 @@
+{
+  "maximum_residual": 2.464107463263811,
+  "core_drift": 0.07179367388142059,
+  "energy_range": [
+    0.09954856430832061,
+    0.9999999999999997
+  ],
+  "core_signs_pass": true
+}

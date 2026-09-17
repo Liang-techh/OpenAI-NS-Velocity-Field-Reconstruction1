@@ -1,0 +1,20 @@
+{
+  "scope": "fixed candidate quadrature refinement at final time, not uniform proof",
+  "rows": [
+    {
+      "order": 96,
+      "added_moment": -1.743934249004316e-16,
+      "energy": 0.7089767903839568
+    },
+    {
+      "order": 144,
+      "added_moment": -2.7782518318903835e-05,
+      "energy": 0.7089811617988886
+    },
+    {
+      "order": 192,
+      "added_moment": -2.8160760163977624e-05,
+      "energy": 0.7089813746186047
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "scope": "smooth compact fields on R3; pressure, convection and viscosity have zero integrated torque; assumes exact divergence-free representation",
+  "identity": "d/dt integral(x*u_y-y*u_x) = integral(x*f_y-y*f_x) for an exact solution",
+  "bound": "Cauchy-Schwarz over [-2,2]^3: L2(residual)>=abs(moment imbalance)/sqrt(512/3)",
+  "qualification": "Numerical estimates, not interval-certified lower bounds; dt=1e-4; vary quadrature only",
+  "rows": [
+    {
+      "order": 24,
+      "time": 0.25,
+      "angular_momentum": 6.89612957244777,
+      "time_derivative": -21.275533986568895,
+      "force_torque": -1.114017529778846,
+      "budget_mismatch": -20.16151645679005,
+      "inferred_residual_L2_lower_bound": 1.543294617495671
+    },
+    {
+      "order": 24,
+      "time": 0.5,
+      "angular_momentum": 2.7349755697094813,
+      "time_derivative": -12.315516707965823,
+      "force_torque": -1.5547367063230702,
+      "budget_mismatch": -10.760780001642754,
+      "inferred_residual_L2_lower_bound": 0.8237006324490711
+    },
+    {
+      "order": 24,
+      "time": 0.75,
+      "angular_momentum": 0.6075458174721999,
+      "time_derivative": -5.256567592589745,
+      "force_torque": -1.114017529778846,
+      "budget_mismatch": -4.142550062810899,
+      "inferred_residual_L2_lower_bound": 0.31709793399440955
+    },
+    {
+      "order": 48,
+      "time": 0.25,
+      "angular_momentum": 6.896400590419744,
+      "time_derivative": -21.259614613162725,
+      "force_torque": -1.11404328982975,
+      "budget_mismatch": -20.145571323332973,
+      "inferred_residual_L2_lower_bound": 1.5420740724690953
+    },
+    {
+      "order": 48,
+      "time": 0.5,
+      "angular_momentum": 2.736386770423805,
+      "time_derivative": -12.287006722324634,
+      "force_torque": -1.5547726573701826,
+      "budget_mismatch": -10.73223406495445,
+      "inferred_residual_L2_lower_bound": 0.8215155393516919
+    },
+    {
+      "order": 48,
+      "time": 0.75,
+      "angular_momentum": 0.6064669573109671,
+      "time_derivative": -5.093001959440846,
+      "force_torque": -1.11404328982975,
+      "budget_mismatch": -3.978958669611096,
+      "inferred_residual_L2_lower_bound": 0.3045755765053306
+    },
+    {
+      "order": 96,
+      "time": 0.25,
+      "angular_momentum": 6.896402503283615,
+      "time_derivative": -21.259306716809867,
+      "force_torque": -1.1140432862999872,
+      "budget_mismatch": -20.14526343050988,
+      "inferred_residual_L2_lower_bound": 1.542050504334344
+    },
+    {
+      "order": 96,
+      "time": 0.5,
+      "angular_momentum": 2.7364234521835096,
+      "time_derivative": -12.285628973527363,
+      "force_torque": -1.5547726524440018,
+      "budget_mismatch": -10.730856321083362,
+      "inferred_residual_L2_lower_bound": 0.8214100778054289
+    },
+    {
+      "order": 96,
+      "time": 0.75,
+      "angular_momentum": 0.6065260190091033,
+      "time_derivative": -5.086227562709489,
+      "force_torque": -1.1140432862999872,
+      "budget_mismatch": -3.972184276409502,
+      "inferred_residual_L2_lower_bound": 0.304057020047178
+    }
+  ]
+}

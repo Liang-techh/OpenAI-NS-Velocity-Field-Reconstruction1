@@ -1,0 +1,88 @@
+{
+  "schema": "eq45_supported_phi10_cubic_delivery_recipe_v1",
+  "task_id": "CR011-EQ45-PHI10-CUBIC-DELIVERY-CAPSULE-015",
+  "base_dependency_head": "b5c9d0cb3145e014911bffd71420148c2e16c4f4",
+  "base_supported_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+  "candidate_sha256": "310fc2ad1bf3d721860369b9a58c7599202182964158708867691f4445f21576",
+  "temporal_mode": {
+    "family": "phi",
+    "index": [1, 0],
+    "early_delta": -1.4,
+    "schedule": "early_delta*tau*(tau-0.5)*(tau-1)/(-3)",
+    "tau_definition": "delivery_interval_endpoints_map_to_minus1_plus1",
+    "coefficient_bound": [-4.0, 4.0],
+    "reference_times": [0.25, 0.375, 0.5, 0.625, 0.6875, 0.75],
+    "reference_coefficients": [-1.7, -0.65, -0.3, -0.3, -0.321875, -0.3]
+  },
+  "delivery": {
+    "spatial_box": [[-2.0, 2.0], [-2.0, 2.0], [-2.0, 2.0]],
+    "time_interval": [0.25, 0.75],
+    "reference_times": [0.25, 0.375, 0.5, 0.625, 0.6875, 0.75],
+    "velocity_interfaces": ["velocity", "at_points", "velocity_xyz", "grid"],
+    "serialization_interfaces": ["save_json", "load_json"],
+    "grid_layout": "time,x,y,z,component",
+    "component_order": ["u", "v", "w"]
+  },
+  "representation_evidence": {
+    "capacity_pr": 158,
+    "materialization_pr": 159,
+    "early_endpoint_identity": "exactly_equals_quadratic_early_localized_field_at_t0p25",
+    "static_return_times": [0.5, 0.625, 0.75],
+    "off_keyframe_nontrivial_times": [0.375, 0.6875],
+    "quadratic_late_half_max_coefficient_excursion": 0.175,
+    "cubic_late_half_max_coefficient_excursion": 0.02245251,
+    "late_half_excursion_fraction_of_quadratic": 0.12830005714285714,
+    "start_derivative_sharpening_factor_vs_quadratic": 1.4444444444444444,
+    "public_openai_reference_used_for_selection": false,
+    "visual_correspondence_established": false
+  },
+  "temporal_derivative_evidence": {
+    "audit_pr": 161,
+    "audit_exact_head": "b5c9d0cb3145e014911bffd71420148c2e16c4f4",
+    "probe_seed": 914509,
+    "probe_count": 24,
+    "audit_times": [0.25, 0.375, 0.5, 0.625, 0.6875, 0.75],
+    "second_order_steps": [0.01, 0.005, 0.0025],
+    "fourth_order_reference_step": 0.00125,
+    "sampled_rms_errors": [0.0005031152, 0.0001289667, 0.000032714],
+    "normalized_rms_errors": [0.001598971, 0.0004098742, 0.0001039697],
+    "sampled_max_vector_errors": [0.007383757, 0.001973958, 0.0005106139],
+    "observed_rms_orders": [1.96389, 1.97902],
+    "sign_mutation_good_rms_error": 1.87e-15,
+    "sign_mutation_bad_rms_error": 3.4641,
+    "snapshot_identity_not_derivative_identity": true,
+    "formal_pde_gate_assessed": false,
+    "pde_validated": false
+  },
+  "sibling_evidence": {
+    "restricted_force_crosscheck_pr": 160,
+    "ancestry_status": "open_unconsumed_sibling_evidence",
+    "numeric_summary_bound_here": false,
+    "may_promote_pde_validated": false
+  },
+  "status": {
+    "callable_serializable": true,
+    "velocity_export_ready": true,
+    "visualization_candidate_only": true,
+    "canonical_velocity_changed": false,
+    "screened_temporal_shape_materialized": true,
+    "production_temporal_shape_promoted": false,
+    "physical_support_connection_implemented": true,
+    "physical_support_validated": false,
+    "spatial_basis_grown": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "pending": {
+    "public_observable_comparison": true,
+    "three_dimensional_render_review": true,
+    "formal_pde_gate": true,
+    "candidate_specific_energy_acceptance": true,
+    "restricted_force_sibling_integration": true,
+    "canonical_promotion": false
+  }
+}

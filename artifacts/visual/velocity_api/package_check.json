@@ -1,0 +1,11 @@
+{
+  "wheel_sha256": "b98ea39569c946b77219e9d44381be4b267cbd3ae5e99b3103ce8106a08bcfee",
+  "isolated_extracted_wheel_point": [
+    -0.017550887073245407,
+    0.07337970151893687,
+    0.034940231516750846
+  ],
+  "status": "passed",
+  "build": "pip wheel . --no-deps (isolated build dependencies)",
+  "initial_no_build_isolation_attempt": "failed: local bdist_wheel unavailable; normal isolated build succeeded"
+}

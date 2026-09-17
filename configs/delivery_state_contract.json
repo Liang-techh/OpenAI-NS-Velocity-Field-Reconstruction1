@@ -1,0 +1,117 @@
+{
+  "schema": "constrained_delivery_state_contract_v1",
+  "scope": "claim semantics for constrained velocity-field delivery; does not replace configs/constraints*.json or configs/eq45_source_contract.json",
+  "classification_vocabulary": {
+    "user_requirement": "A requirement explicitly imposed by the project/user contract.",
+    "public_source_fact": "A fact directly supported by a public source; provenance must be retained.",
+    "autonomous_design": "A project design, parameterization, diagnostic, or engineering choice not claimed as a public-source fact.",
+    "pending_unknown": "A claim or datum not yet established by the available evidence."
+  },
+  "states": {
+    "velocity_export_ready": {
+      "definition_origin": "user_requirement",
+      "meaning": "A versioned candidate can be loaded and evaluated through the unified public velocity API and exported reproducibly.",
+      "positive_evidence": [
+        "versioned_candidate_artifact",
+        "unified_velocity_api",
+        "finite_velocity_output",
+        "reproducible_export"
+      ],
+      "allowed_evidence_origins": ["autonomous_design", "public_source_fact"],
+      "does_not_imply": [
+        "visualization_ready",
+        "visual_correspondence_verified",
+        "pde_validated",
+        "paper_exact"
+      ]
+    },
+    "visualization_ready": {
+      "definition_origin": "user_requirement",
+      "meaning": "The candidate can be rendered reproducibly through a supported visualization entry point.",
+      "positive_evidence": [
+        "callable_velocity",
+        "supported_visualization_entry_point",
+        "resolution_sanity_check"
+      ],
+      "allowed_evidence_origins": ["autonomous_design", "public_source_fact"],
+      "does_not_imply": [
+        "visual_correspondence_verified",
+        "pde_validated",
+        "paper_exact"
+      ]
+    },
+    "visual_correspondence_verified": {
+      "definition_origin": "user_requirement",
+      "meaning": "Public-observable geometry and time evolution have been compared against public references with independent stability checks.",
+      "positive_evidence": [
+        "public_reference_only",
+        "independent_visual_diagnostics",
+        "resolution_stability"
+      ],
+      "allowed_evidence_origins": ["public_source_fact", "autonomous_design"],
+      "does_not_imply": [
+        "pde_validated",
+        "paper_exact"
+      ]
+    },
+    "pde_validated": {
+      "definition_origin": "user_requirement",
+      "meaning": "Independent PDE validation passes the preregistered norms and thresholds under the active constraint contract.",
+      "positive_evidence": [
+        "independent_validator",
+        "preregistered_thresholds",
+        "held_out_validation"
+      ],
+      "allowed_evidence_origins": ["autonomous_design", "public_source_fact"],
+      "does_not_imply": [
+        "visual_correspondence_verified",
+        "paper_exact"
+      ]
+    },
+    "paper_exact": {
+      "definition_origin": "user_requirement",
+      "meaning": "Identity with the exact paper/OpenAI field is established by independent public evidence.",
+      "positive_evidence": [
+        "independent_public_identity_evidence"
+      ],
+      "allowed_evidence_origins": ["public_source_fact"],
+      "unverified_evidence_class": "pending_unknown",
+      "does_not_imply": []
+    }
+  },
+  "forbidden_inferences": [
+    {
+      "origin": "user_requirement",
+      "from": ["ci_green", "optimizer_converged", "training_loss_low", "visual_similarity"],
+      "to": "pde_validated"
+    },
+    {
+      "origin": "user_requirement",
+      "from": ["eq45_backbone_used", "visual_similarity", "residual_small", "provenance_language"],
+      "to": "paper_exact"
+    },
+    {
+      "origin": "user_requirement",
+      "from": ["pde_validation_failed"],
+      "to": "velocity_export_not_allowed"
+    }
+  ],
+  "orthogonality_examples": [
+    {
+      "velocity_export_ready": true,
+      "visualization_ready": true,
+      "visual_correspondence_verified": false,
+      "pde_validated": false,
+      "paper_exact": false,
+      "allowed": true
+    },
+    {
+      "velocity_export_ready": true,
+      "visualization_ready": true,
+      "visual_correspondence_verified": true,
+      "pde_validated": false,
+      "paper_exact": false,
+      "allowed": true
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "task_id": "CR001-EQ45-SOURCE-GOV-002",
+  "scope": "Lock the public-source similarity coordinate and leading Cartesian velocity formulas before further Eq. (4.5) implementation.",
+  "source": {
+    "url": "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+    "coordinate_equation": "4.1",
+    "coordinate_printed_page": 24,
+    "velocity_equation": "4.5",
+    "velocity_printed_page": 25
+  },
+  "coordinate_contract": {
+    "tau": "1-t",
+    "A": "1/2+h",
+    "D": "1/2-h",
+    "h_open_interval": [0.0, 0.5],
+    "theorem_h_upper_bound_strict": 0.01,
+    "z_relation": "z=q^D*eta",
+    "tau_relation": "tau=q*(1-eta^2)",
+    "implicit_q_relation": "q-z^2*q^(2*h)=1-t",
+    "q_exponent_sign": "positive",
+    "physical_root_condition": "q>|z|^(1/D)",
+    "eta": "z/q^D",
+    "X": "(x^2+y^2)/(2*q)"
+  },
+  "velocity_contract": {
+    "u": "x*v0(X,eta)/(2*q)-y*q^(-1-h)*F(X,eta)",
+    "v": "y*v0(X,eta)/(2*q)+x*q^(-1-h)*F(X,eta)",
+    "w": "q^(-1/2-h)*U(X,eta)",
+    "profile_relation": "V0=X*v0",
+    "leading_field_only": true
+  },
+  "source_classification": [
+    {
+      "item": "Eq. (4.1) similarity coordinates and Eq. (4.5) leading Cartesian velocity formula",
+      "classification": "public_source",
+      "source": "docs/VELOCITY_FORMULAS.md"
+    },
+    {
+      "item": "callable velocity(x,y,z,t)->[u,v,w] as the immediate engineering deliverable",
+      "classification": "user_required",
+      "source": "docs/PROJECT_GOAL.md"
+    },
+    {
+      "item": "finite numerical choices such as h, sigma, radial degree, eta nodes, fit weights and visualization tolerances",
+      "classification": "autonomous",
+      "source": "docs/VELOCITY_FORMULAS.md"
+    },
+    {
+      "item": "final numerical profile data identifying the OpenAI field and full exterior/correction coefficients",
+      "classification": "pending",
+      "source": "docs/VELOCITY_FORMULAS.md"
+    }
+  ],
+  "claim_status": {
+    "coordinate_formula_publicly_sourced": true,
+    "leading_velocity_formula_publicly_sourced": true,
+    "final_profiles_numerically_identified": false,
+    "full_constructed_field_recovered": false,
+    "openai_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false
+  },
+  "truth_boundary": [
+    "The sourced q relation uses q^(+2h), not q^(-2h).",
+    "The coordinate identities are stated for 0<h<1/2; the theorem later chooses h<1/100.",
+    "Eq. (4.5) gives the leading field from profiles; it does not provide a final numerical profile table.",
+    "A numerical implementation of the leading field is not the complete corrected theorem field.",
+    "Visual correspondence, PDE validation and paper-exact recovery remain separate claims."
+  ]
+}

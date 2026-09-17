@@ -1,0 +1,99 @@
+{
+  "status": "training_only_not_validated",
+  "initial_artifact": "artifacts/constrained/continued_pressure/candidate.json",
+  "force": {
+    "a": 9.546541832896667e-11,
+    "c": 0.12148700174414483
+  },
+  "localized": true,
+  "fourth_power": false,
+  "tail_adaptive": false,
+  "adaptive_seed": null,
+  "calls": 114,
+  "call_budget": 500,
+  "termination": "`ftol` termination condition is satisfied.",
+  "seed": 20260916,
+  "cache_direct_max_discrepancy": 5.784428491750759e-12,
+  "training_points": 2048,
+  "training_loss": 0.06195655181108535,
+  "history": [
+    {
+      "call": 1,
+      "loss": 0.10515165174727374
+    },
+    {
+      "call": 10,
+      "loss": 0.10514498708761752
+    },
+    {
+      "call": 13,
+      "loss": 0.1051402534950035
+    },
+    {
+      "call": 16,
+      "loss": 0.10512403376408369
+    },
+    {
+      "call": 19,
+      "loss": 0.10511017678570295
+    },
+    {
+      "call": 20,
+      "loss": 0.06464601373695528
+    },
+    {
+      "call": 21,
+      "loss": 0.06464599974107506
+    },
+    {
+      "call": 27,
+      "loss": 0.06464596662624131
+    },
+    {
+      "call": 34,
+      "loss": 0.06464581114594127
+    },
+    {
+      "call": 35,
+      "loss": 0.06464529930217089
+    },
+    {
+      "call": 38,
+      "loss": 0.06464036447703983
+    },
+    {
+      "call": 39,
+      "loss": 0.06208855106275468
+    },
+    {
+      "call": 47,
+      "loss": 0.06208854860953793
+    },
+    {
+      "call": 52,
+      "loss": 0.062088529510388714
+    },
+    {
+      "call": 57,
+      "loss": 0.062087836478288985
+    },
+    {
+      "call": 58,
+      "loss": 0.06195705870494249
+    },
+    {
+      "call": 77,
+      "loss": 0.06195655236623761
+    },
+    {
+      "call": 96,
+      "loss": 0.06195655181108535
+    }
+  ],
+  "coefficient_bounds": [
+    -1,
+    1
+  ],
+  "basis": "six localized zero-moment rings times three cubic Bernstein temporal modes",
+  "initial_velocity_max_change": 0.0
+}
