@@ -1,3 +1,21 @@
+## Energy-normalized bipolar child (2026-09-17)
+
+The new energy quadrature compares orders 24, 48, 96 and 192 on the full
+axisymmetric support with the cylindrical volume Jacobian. Both original
+candidates fail the preregistered E(0.25)=1 condition; the bipolar seed has
+E(0.25)=0.3053128140696095. A separately serialized child scales all existing
+Phi and swirl coefficients by 1.8097870818686452 within the original bounds.
+Its evaluated energies are 1.0000000000000004 at t=0.25 and 0.5842436855426052
+at t=0.75, with all six validation times in the prescribed energy range.
+Positive common scaling preserves flow signs and parity; it changes nonlinear
+momentum balance, so parent residual results must not be transferred to it.
+
+Reproduce: `PYTHONPATH=src python -m openai_ns_reconstruction.constrained_bipolar_energy`.
+Report and explicit child: `artifacts/bipolar_energy/`. This remains experimental;
+the public default and all PDE/source-correspondence truth flags are unchanged.
+Two newly fetched branches add MATLAB export and visual-evidence governance;
+they were not wholesale merged, as this continuation prioritizes field feasibility.
+
 ### Quartic dependency review
 
 Read-only review found PR168 source headbcf49a2 diverges from live at1a98cff:
