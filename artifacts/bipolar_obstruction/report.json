@@ -1,0 +1,1261 @@
+{
+  "candidates": {
+    "bipolar": {
+      "candidate_sha256": "8027075948fc4cbbf0c79cf080729b543c7a7d00b011a4b35b582b95deab5970",
+      "comparison_role": "required_qualitative_variant",
+      "file_sha256": "a0a7969663e86c637f4fccab7d3970498513b2943a55a32806b782c487f4f6f3",
+      "fitted_force": {
+        "bounded_coefficients": [
+          0.0,
+          0.0
+        ],
+        "bounds": [
+          0.0,
+          10.0
+        ],
+        "candidate_count": 8,
+        "coefficients": {
+          "a": 0.0,
+          "c": 0.0
+        },
+        "condition_number": 1.0758194445895726,
+        "family": "RestrictedForce",
+        "objective_sum_squares": 16298.851523778778,
+        "rank": 2,
+        "singular_values": [
+          51.98668579903731,
+          48.322872448982686
+        ],
+        "training_fit_max": 35.544571816253494,
+        "training_fit_rms": 4.6067844448798505,
+        "training_sample_count": 768,
+        "training_step": 0.01,
+        "training_target_rms": 4.6067844448798505,
+        "training_times": [
+          0.3125,
+          0.5625,
+          0.6875
+        ],
+        "unconstrained_coefficients": [
+          -0.00890229863701976,
+          -0.04230819071979563
+        ]
+      },
+      "holdout": {
+        "resolution_summaries": [
+          {
+            "coarse_step": 0.01,
+            "fine_step": 0.005,
+            "time": 0.3125,
+            "uniform_obstruction_max_relative_change": 0.0012205048658268935,
+            "uniform_whole_volume_l2_relative_change": 0.0010688899595474215
+          },
+          {
+            "coarse_step": 0.01,
+            "fine_step": 0.005,
+            "time": 0.5625,
+            "uniform_obstruction_max_relative_change": 0.0013365572122061107,
+            "uniform_whole_volume_l2_relative_change": 0.0012394546301536483
+          },
+          {
+            "coarse_step": 0.01,
+            "fine_step": 0.005,
+            "time": 0.6875,
+            "uniform_obstruction_max_relative_change": 0.001273560108190403,
+            "uniform_whole_volume_l2_relative_change": 0.0013439041442960564
+          }
+        ],
+        "rows": [
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 7.100237558574003,
+            "curl_momentum_rms": 1.0553902553616952,
+            "curl_obstruction_max": 7.100237558574003,
+            "curl_obstruction_rms": 1.0553902553616952,
+            "region": "uniform",
+            "sample_count": 256,
+            "step": 0.01,
+            "time": 0.3125,
+            "whole_volume_l2_estimate": 8.443122042893561
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 14.780627600051716,
+            "curl_momentum_rms": 1.5245711673768165,
+            "curl_obstruction_max": 14.780627600051716,
+            "curl_obstruction_rms": 1.5245711673768165,
+            "region": "uniform",
+            "sample_count": 256,
+            "step": 0.01,
+            "time": 0.5625,
+            "whole_volume_l2_estimate": 12.196569339014532
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 20.047986721273958,
+            "curl_momentum_rms": 1.7112540110280696,
+            "curl_obstruction_max": 20.047986721273958,
+            "curl_obstruction_rms": 1.7112540110280696,
+            "region": "uniform",
+            "sample_count": 256,
+            "step": 0.01,
+            "time": 0.6875,
+            "whole_volume_l2_estimate": 13.690032088224557
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 7.3028885267198005,
+            "curl_momentum_rms": 3.151077229046972,
+            "curl_obstruction_max": 7.3028885267198005,
+            "curl_obstruction_rms": 3.151077229046972,
+            "region": "core",
+            "sample_count": 64,
+            "step": 0.01,
+            "time": 0.3125
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 17.132798723544603,
+            "curl_momentum_rms": 7.380282333957186,
+            "curl_obstruction_max": 17.132798723544603,
+            "curl_obstruction_rms": 7.380282333957186,
+            "region": "core",
+            "sample_count": 64,
+            "step": 0.01,
+            "time": 0.5625
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 32.39923185287207,
+            "curl_momentum_rms": 13.093034273729346,
+            "curl_obstruction_max": 32.39923185287207,
+            "curl_obstruction_rms": 13.093034273729346,
+            "region": "core",
+            "sample_count": 64,
+            "step": 0.01,
+            "time": 0.6875
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 2.2488197791040756,
+            "curl_momentum_rms": 0.6165820857923239,
+            "curl_obstruction_max": 2.2488197791040756,
+            "curl_obstruction_rms": 0.6165820857923239,
+            "region": "collar",
+            "sample_count": 64,
+            "step": 0.01,
+            "time": 0.3125
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 1.4117294315983788,
+            "curl_momentum_rms": 0.38610854101842107,
+            "curl_obstruction_max": 1.4117294315983788,
+            "curl_obstruction_rms": 0.38610854101842107,
+            "region": "collar",
+            "sample_count": 64,
+            "step": 0.01,
+            "time": 0.5625
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 1.2612419194428195,
+            "curl_momentum_rms": 0.2394089366697006,
+            "curl_obstruction_max": 1.2612419194428195,
+            "curl_obstruction_rms": 0.2394089366697006,
+            "region": "collar",
+            "sample_count": 64,
+            "step": 0.01,
+            "time": 0.6875
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 7.108903433062769,
+            "curl_momentum_rms": 1.0565183514090555,
+            "curl_obstruction_max": 7.108903433062769,
+            "curl_obstruction_rms": 1.0565183514090555,
+            "region": "uniform",
+            "sample_count": 256,
+            "step": 0.005,
+            "time": 0.3125,
+            "whole_volume_l2_estimate": 8.452146811272444
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 14.800382754471498,
+            "curl_momentum_rms": 1.5264608041692205,
+            "curl_obstruction_max": 14.800382754471498,
+            "curl_obstruction_rms": 1.5264608041692205,
+            "region": "uniform",
+            "sample_count": 256,
+            "step": 0.005,
+            "time": 0.5625,
+            "whole_volume_l2_estimate": 12.211686433353764
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 20.073519037411703,
+            "curl_momentum_rms": 1.7135537723854333,
+            "curl_obstruction_max": 20.073519037411703,
+            "curl_obstruction_rms": 1.7135537723854333,
+            "region": "uniform",
+            "sample_count": 256,
+            "step": 0.005,
+            "time": 0.6875,
+            "whole_volume_l2_estimate": 13.708430179083468
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 7.312466392393205,
+            "curl_momentum_rms": 3.1547721321231403,
+            "curl_obstruction_max": 7.312466392393205,
+            "curl_obstruction_rms": 3.1547721321231403,
+            "region": "core",
+            "sample_count": 64,
+            "step": 0.005,
+            "time": 0.3125
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 17.162806362614326,
+            "curl_momentum_rms": 7.392987729285459,
+            "curl_obstruction_max": 17.162806362614326,
+            "curl_obstruction_rms": 7.392987729285459,
+            "region": "core",
+            "sample_count": 64,
+            "step": 0.005,
+            "time": 0.5625
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 32.50513288334167,
+            "curl_momentum_rms": 13.12527852823639,
+            "curl_obstruction_max": 32.50513288334167,
+            "curl_obstruction_rms": 13.12527852823639,
+            "region": "core",
+            "sample_count": 64,
+            "step": 0.005,
+            "time": 0.6875
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 2.2587280579865388,
+            "curl_momentum_rms": 0.616701670726572,
+            "curl_obstruction_max": 2.2587280579865388,
+            "curl_obstruction_rms": 0.616701670726572,
+            "region": "collar",
+            "sample_count": 64,
+            "step": 0.005,
+            "time": 0.3125
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 1.413810871064268,
+            "curl_momentum_rms": 0.38680479707637416,
+            "curl_obstruction_max": 1.413810871064268,
+            "curl_obstruction_rms": 0.38680479707637416,
+            "region": "collar",
+            "sample_count": 64,
+            "step": 0.005,
+            "time": 0.5625
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 1.2701702360204135,
+            "curl_momentum_rms": 0.24070806880675788,
+            "curl_obstruction_max": 1.2701702360204135,
+            "curl_obstruction_rms": 0.24070806880675788,
+            "region": "collar",
+            "sample_count": 64,
+            "step": 0.005,
+            "time": 0.6875
+          }
+        ],
+        "sample_manifest": {
+          "regions": {
+            "collar": {
+              "count": 64,
+              "sha256": "a4640e2f904f2468824a705fd71eb24a0902819202e9d41245a6b0a5f0421e78"
+            },
+            "core": {
+              "count": 64,
+              "sha256": "daf3aee1fed2b6ccc48d93bf8fd6cc7ed39803626dc2280246063df315dbc7c3"
+            },
+            "uniform": {
+              "count": 256,
+              "sha256": "f47d6f0f886a5bb618445eea52c8f22d25862aa52d85bdf74316723d114adf9d"
+            }
+          },
+          "seed": 914027
+        }
+      },
+      "metadata_truth_boundary": {
+        "blowup_proved": false,
+        "callable_serializable": true,
+        "openai_field_identified": false,
+        "paper_exact": false,
+        "pde_validated": false,
+        "physical_support_connection_implemented": true,
+        "physical_support_validated": false,
+        "requires_physical_support_connection": false,
+        "velocity_export_ready": true,
+        "visual_correspondence_verified": false,
+        "visualization_ready": false
+      },
+      "parent_sha256": "7227b3f8fa41619e38feedd7519bb7cac6b597a0ffad309ffa5cb8e19cfab763",
+      "path": "artifacts/delivery/eq45_bipolar/candidate.json",
+      "training": {
+        "rows": {
+          "all_regions": {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 35.544571816253494,
+            "curl_momentum_rms": 4.6067844448798505,
+            "curl_obstruction_max": 35.544571816253494,
+            "curl_obstruction_rms": 4.6067844448798505,
+            "region": "all_regions",
+            "sample_count": 768
+          }
+        },
+        "sample_manifest": {
+          "regions": {
+            "collar": {
+              "count": 64,
+              "sha256": "dcc97a1daf46a9a46c940645c4173c8de3c96a71e80950c53a591ee849949ef1"
+            },
+            "core": {
+              "count": 64,
+              "sha256": "84c62d1b88a35b6e82097f20f5365a76889aa80dc2f7dec7fc3ba1d04b40ce82"
+            },
+            "uniform": {
+              "count": 128,
+              "sha256": "522164bb33ee19a5105238f8137ada35a99ce7f8c44cd28301031eb1fb932389"
+            }
+          },
+          "seed": 20260916
+        }
+      }
+    },
+    "bipolar_energy_normalized": {
+      "candidate_sha256": "c0e27269adfb6f305c2c0b5a2483f9eddd54f79691f69cacd7bb735ba592a702",
+      "comparison_role": "optional_auxiliary_rescaled_variant",
+      "file_sha256": "3b8a3cfa218b4441b304f423d45311f0437ebf8052bc431811d98a50f641f9c8",
+      "fitted_force": {
+        "bounded_coefficients": [
+          0.0,
+          0.0
+        ],
+        "bounds": [
+          0.0,
+          10.0
+        ],
+        "candidate_count": 8,
+        "coefficients": {
+          "a": 0.0,
+          "c": 0.0
+        },
+        "condition_number": 1.0758194445895726,
+        "family": "RestrictedForce",
+        "objective_sum_squares": 78999.51967658839,
+        "rank": 2,
+        "singular_values": [
+          51.98668579903731,
+          48.322872448982686
+        ],
+        "training_fit_max": 79.76373717260323,
+        "training_fit_rms": 10.14218703792355,
+        "training_sample_count": 768,
+        "training_step": 0.01,
+        "training_target_rms": 10.14218703792355,
+        "training_times": [
+          0.3125,
+          0.5625,
+          0.6875
+        ],
+        "unconstrained_coefficients": [
+          -0.005494559458991417,
+          -0.22488482261655238
+        ]
+      },
+      "holdout": {
+        "resolution_summaries": [
+          {
+            "coarse_step": 0.01,
+            "fine_step": 0.005,
+            "time": 0.3125,
+            "uniform_obstruction_max_relative_change": 0.0012754301395930055,
+            "uniform_whole_volume_l2_relative_change": 0.0010984875939969057
+          },
+          {
+            "coarse_step": 0.01,
+            "fine_step": 0.005,
+            "time": 0.5625,
+            "uniform_obstruction_max_relative_change": 0.0012693266957458072,
+            "uniform_whole_volume_l2_relative_change": 0.001171464963095434
+          },
+          {
+            "coarse_step": 0.01,
+            "fine_step": 0.005,
+            "time": 0.6875,
+            "uniform_obstruction_max_relative_change": 0.0009272540605356125,
+            "uniform_whole_volume_l2_relative_change": 0.001094817062791585
+          }
+        ],
+        "rows": [
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 15.69949020534682,
+            "curl_momentum_rms": 2.19668393320708,
+            "curl_obstruction_max": 15.69949020534682,
+            "curl_obstruction_rms": 2.19668393320708,
+            "region": "uniform",
+            "sample_count": 256,
+            "step": 0.01,
+            "time": 0.3125,
+            "whole_volume_l2_estimate": 17.57347146565664
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 31.601982808022353,
+            "curl_momentum_rms": 3.1443064940101997,
+            "curl_obstruction_max": 31.601982808022353,
+            "curl_obstruction_rms": 3.1443064940101997,
+            "region": "uniform",
+            "sample_count": 256,
+            "step": 0.01,
+            "time": 0.5625,
+            "whole_volume_l2_estimate": 25.154451952081597
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 41.705758295847204,
+            "curl_momentum_rms": 3.3987288168089824,
+            "curl_obstruction_max": 41.705758295847204,
+            "curl_obstruction_rms": 3.3987288168089824,
+            "region": "uniform",
+            "sample_count": 256,
+            "step": 0.01,
+            "time": 0.6875,
+            "whole_volume_l2_estimate": 27.18983053447186
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 16.25777871788947,
+            "curl_momentum_rms": 6.95007292301541,
+            "curl_obstruction_max": 16.25777871788947,
+            "curl_obstruction_rms": 6.95007292301541,
+            "region": "core",
+            "sample_count": 64,
+            "step": 0.01,
+            "time": 0.3125
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 37.838776504736465,
+            "curl_momentum_rms": 16.138103714690562,
+            "curl_obstruction_max": 37.838776504736465,
+            "curl_obstruction_rms": 16.138103714690562,
+            "region": "core",
+            "sample_count": 64,
+            "step": 0.01,
+            "time": 0.5625
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 73.31835021920989,
+            "curl_momentum_rms": 28.663713137176604,
+            "curl_obstruction_max": 73.31835021920989,
+            "curl_obstruction_rms": 28.663713137176604,
+            "region": "core",
+            "sample_count": 64,
+            "step": 0.01,
+            "time": 0.6875
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 4.13056444004826,
+            "curl_momentum_rms": 1.1020506007866984,
+            "curl_obstruction_max": 4.13056444004826,
+            "curl_obstruction_rms": 1.1020506007866984,
+            "region": "collar",
+            "sample_count": 64,
+            "step": 0.01,
+            "time": 0.3125
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 2.527412978564999,
+            "curl_momentum_rms": 0.696580743007517,
+            "curl_obstruction_max": 2.527412978564999,
+            "curl_obstruction_rms": 0.696580743007517,
+            "region": "collar",
+            "sample_count": 64,
+            "step": 0.01,
+            "time": 0.5625
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 2.2823124645185064,
+            "curl_momentum_rms": 0.4332274359161098,
+            "curl_obstruction_max": 2.2823124645185064,
+            "curl_obstruction_rms": 0.4332274359161098,
+            "region": "collar",
+            "sample_count": 64,
+            "step": 0.01,
+            "time": 0.6875
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 15.719513808330964,
+            "curl_momentum_rms": 2.1990969632556405,
+            "curl_obstruction_max": 15.719513808330964,
+            "curl_obstruction_rms": 2.1990969632556405,
+            "region": "uniform",
+            "sample_count": 256,
+            "step": 0.005,
+            "time": 0.3125,
+            "whole_volume_l2_estimate": 17.592775706045124
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 31.642096048439075,
+            "curl_momentum_rms": 3.147989938901166,
+            "curl_obstruction_max": 31.642096048439075,
+            "curl_obstruction_rms": 3.147989938901166,
+            "region": "uniform",
+            "sample_count": 256,
+            "step": 0.005,
+            "time": 0.5625,
+            "whole_volume_l2_estimate": 25.18391951120933
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 41.744430129574745,
+            "curl_momentum_rms": 3.4024498031094264,
+            "curl_obstruction_max": 41.744430129574745,
+            "curl_obstruction_rms": 3.4024498031094264,
+            "region": "uniform",
+            "sample_count": 256,
+            "step": 0.005,
+            "time": 0.6875,
+            "whole_volume_l2_estimate": 27.21959842487541
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 16.28023625965154,
+            "curl_momentum_rms": 6.958967483982086,
+            "curl_obstruction_max": 16.28023625965154,
+            "curl_obstruction_rms": 6.958967483982086,
+            "region": "core",
+            "sample_count": 64,
+            "step": 0.005,
+            "time": 0.3125
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 37.94110797792562,
+            "curl_momentum_rms": 16.16874308430017,
+            "curl_obstruction_max": 37.94110797792562,
+            "curl_obstruction_rms": 16.16874308430017,
+            "region": "core",
+            "sample_count": 64,
+            "step": 0.005,
+            "time": 0.5625
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 73.57267115898958,
+            "curl_momentum_rms": 28.742292741983725,
+            "curl_obstruction_max": 73.57267115898958,
+            "curl_obstruction_rms": 28.742292741983725,
+            "region": "core",
+            "sample_count": 64,
+            "step": 0.005,
+            "time": 0.6875
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 4.149885756257853,
+            "curl_momentum_rms": 1.1023674923890372,
+            "curl_obstruction_max": 4.149885756257853,
+            "curl_obstruction_rms": 1.1023674923890372,
+            "region": "collar",
+            "sample_count": 64,
+            "step": 0.005,
+            "time": 0.3125
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 2.5312176653419747,
+            "curl_momentum_rms": 0.6978432379382413,
+            "curl_obstruction_max": 2.5312176653419747,
+            "curl_obstruction_rms": 0.6978432379382413,
+            "region": "collar",
+            "sample_count": 64,
+            "step": 0.005,
+            "time": 0.5625
+          },
+          {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 2.298475655881923,
+            "curl_momentum_rms": 0.43557923101368584,
+            "curl_obstruction_max": 2.298475655881923,
+            "curl_obstruction_rms": 0.43557923101368584,
+            "region": "collar",
+            "sample_count": 64,
+            "step": 0.005,
+            "time": 0.6875
+          }
+        ],
+        "sample_manifest": {
+          "regions": {
+            "collar": {
+              "count": 64,
+              "sha256": "a4640e2f904f2468824a705fd71eb24a0902819202e9d41245a6b0a5f0421e78"
+            },
+            "core": {
+              "count": 64,
+              "sha256": "daf3aee1fed2b6ccc48d93bf8fd6cc7ed39803626dc2280246063df315dbc7c3"
+            },
+            "uniform": {
+              "count": 256,
+              "sha256": "f47d6f0f886a5bb618445eea52c8f22d25862aa52d85bdf74316723d114adf9d"
+            }
+          },
+          "seed": 914027
+        }
+      },
+      "metadata_truth_boundary": {
+        "blowup_proved": false,
+        "callable_serializable": true,
+        "openai_field_identified": false,
+        "paper_exact": false,
+        "pde_validated": false,
+        "physical_support_connection_implemented": true,
+        "physical_support_validated": false,
+        "requires_physical_support_connection": false,
+        "velocity_export_ready": true,
+        "visual_correspondence_verified": false,
+        "visualization_ready": false
+      },
+      "parent_sha256": "a92c639285d98a3b8a444c8caf0a000821f764853f90d8e4e8520ae80dcc67a3",
+      "path": "artifacts/bipolar_energy/normalized_candidate.json",
+      "training": {
+        "rows": {
+          "all_regions": {
+            "curl_force_max": 0.0,
+            "curl_force_rms": 0.0,
+            "curl_momentum_max": 79.76373717260323,
+            "curl_momentum_rms": 10.14218703792355,
+            "curl_obstruction_max": 79.76373717260323,
+            "curl_obstruction_rms": 10.14218703792355,
+            "region": "all_regions",
+            "sample_count": 768
+          }
+        },
+        "sample_manifest": {
+          "regions": {
+            "collar": {
+              "count": 64,
+              "sha256": "dcc97a1daf46a9a46c940645c4173c8de3c96a71e80950c53a591ee849949ef1"
+            },
+            "core": {
+              "count": 64,
+              "sha256": "84c62d1b88a35b6e82097f20f5365a76889aa80dc2f7dec7fc3ba1d04b40ce82"
+            },
+            "uniform": {
+              "count": 128,
+              "sha256": "522164bb33ee19a5105238f8137ada35a99ce7f8c44cd28301031eb1fb932389"
+            }
+          },
+          "seed": 20260916
+        }
+      }
+    },
+    "default": {
+      "candidate_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+      "comparison_role": "required_baseline",
+      "file_sha256": "bc39e8c427e4eab077764471f2cd5f98c1988329fcde387b303e38d0c9f376b9",
+      "fitted_force": {
+        "bounded_coefficients": [
+          0.0,
+          0.06246252230572003
+        ],
+        "bounds": [
+          0.0,
+          10.0
+        ],
+        "candidate_count": 8,
+        "coefficients": {
+          "a": 0.0,
+          "c": 0.06246252230572003
+        },
+        "condition_number": 1.0758194445895726,
+        "family": "RestrictedForce",
+        "objective_sum_squares": 103679.06864963938,
+        "rank": 2,
+        "singular_values": [
+          51.98668579903731,
+          48.322872448982686
+        ],
+        "training_fit_max": 108.27401937773317,
+        "training_fit_rms": 11.618897852387633,
+        "training_sample_count": 768,
+        "training_step": 0.01,
+        "training_target_rms": 11.61940833250286,
+        "training_times": [
+          0.3125,
+          0.5625,
+          0.6875
+        ],
+        "unconstrained_coefficients": [
+          -0.04062953603438438,
+          0.06246234454502767
+        ]
+      },
+      "holdout": {
+        "resolution_summaries": [
+          {
+            "coarse_step": 0.01,
+            "fine_step": 0.005,
+            "time": 0.3125,
+            "uniform_obstruction_max_relative_change": 0.0008022819230953251,
+            "uniform_whole_volume_l2_relative_change": 0.0007426370489436635
+          },
+          {
+            "coarse_step": 0.01,
+            "fine_step": 0.005,
+            "time": 0.5625,
+            "uniform_obstruction_max_relative_change": 0.0005221437421131498,
+            "uniform_whole_volume_l2_relative_change": 0.0007440052224253915
+          },
+          {
+            "coarse_step": 0.01,
+            "fine_step": 0.005,
+            "time": 0.6875,
+            "uniform_obstruction_max_relative_change": 0.001119870044793322,
+            "uniform_whole_volume_l2_relative_change": 0.0011027141587278968
+          }
+        ],
+        "rows": [
+          {
+            "curl_force_max": 0.3307662285714589,
+            "curl_force_rms": 0.09846936721680696,
+            "curl_momentum_max": 19.33599642168549,
+            "curl_momentum_rms": 2.1335520060822675,
+            "curl_obstruction_max": 19.33318353028258,
+            "curl_obstruction_rms": 2.1297181638818947,
+            "region": "uniform",
+            "sample_count": 256,
+            "step": 0.01,
+            "time": 0.3125,
+            "whole_volume_l2_estimate": 17.037745311055158
+          },
+          {
+            "curl_force_max": 0.38343695575885145,
+            "curl_force_rms": 0.11414948425714488,
+            "curl_momentum_max": 27.944155600378643,
+            "curl_momentum_rms": 2.4904830048118884,
+            "curl_obstruction_max": 27.94568976611508,
+            "curl_obstruction_rms": 2.49795386160235,
+            "region": "uniform",
+            "sample_count": 256,
+            "step": 0.01,
+            "time": 0.5625,
+            "whole_volume_l2_estimate": 19.9836308928188
+          },
+          {
+            "curl_force_max": 0.3307662285714589,
+            "curl_force_rms": 0.09846936721680696,
+            "curl_momentum_max": 20.430987492042437,
+            "curl_momentum_rms": 2.3965894164221266,
+            "curl_obstruction_max": 20.44311153428756,
+            "curl_obstruction_rms": 2.406643004205974,
+            "region": "uniform",
+            "sample_count": 256,
+            "step": 0.01,
+            "time": 0.6875,
+            "whole_volume_l2_estimate": 19.25314403364779
+          },
+          {
+            "curl_force_max": 0.10305432935208786,
+            "curl_force_rms": 0.08686622995632401,
+            "curl_momentum_max": 22.519864164679166,
+            "curl_momentum_rms": 9.256824053694245,
+            "curl_obstruction_max": 22.51485493901521,
+            "curl_obstruction_rms": 9.252233337872456,
+            "region": "core",
+            "sample_count": 64,
+            "step": 0.01,
+            "time": 0.3125
+          },
+          {
+            "curl_force_max": 0.11946454901153193,
+            "curl_force_rms": 0.10069868050481892,
+            "curl_momentum_max": 50.99662268227617,
+            "curl_momentum_rms": 20.750945886489827,
+            "curl_obstruction_max": 50.995034268076004,
+            "curl_obstruction_rms": 20.749200884800484,
+            "region": "core",
+            "sample_count": 64,
+            "step": 0.01,
+            "time": 0.5625
+          },
+          {
+            "curl_force_max": 0.10305432935208786,
+            "curl_force_rms": 0.08686622995632401,
+            "curl_momentum_max": 104.90816014882753,
+            "curl_momentum_rms": 35.28067506719923,
+            "curl_obstruction_max": 104.90034007972552,
+            "curl_obstruction_rms": 35.281162423767526,
+            "region": "core",
+            "sample_count": 64,
+            "step": 0.01,
+            "time": 0.6875
+          },
+          {
+            "curl_force_max": 0.37199747467158034,
+            "curl_force_rms": 0.1270083400494635,
+            "curl_momentum_max": 5.607300445506647,
+            "curl_momentum_rms": 1.555517788710398,
+            "curl_obstruction_max": 5.604636370701364,
+            "curl_obstruction_rms": 1.5473386562818099,
+            "region": "collar",
+            "sample_count": 64,
+            "step": 0.01,
+            "time": 0.3125
+          },
+          {
+            "curl_force_max": 0.4312338047753139,
+            "curl_force_rms": 0.14723296110029027,
+            "curl_momentum_max": 2.0990998643647027,
+            "curl_momentum_rms": 0.5849005875940427,
+            "curl_obstruction_max": 2.2121927638712293,
+            "curl_obstruction_rms": 0.6114985823931682,
+            "region": "collar",
+            "sample_count": 64,
+            "step": 0.01,
+            "time": 0.5625
+          },
+          {
+            "curl_force_max": 0.37199747467158034,
+            "curl_force_rms": 0.1270083400494635,
+            "curl_momentum_max": 2.5290349487755504,
+            "curl_momentum_rms": 0.466791902751299,
+            "curl_obstruction_max": 2.552341037210124,
+            "curl_obstruction_rms": 0.48724447902401313,
+            "region": "collar",
+            "sample_count": 64,
+            "step": 0.01,
+            "time": 0.6875
+          },
+          {
+            "curl_force_max": 0.33145435095518677,
+            "curl_force_rms": 0.09853918923533983,
+            "curl_momentum_max": 19.351505928800304,
+            "curl_momentum_rms": 2.1351350158281206,
+            "curl_obstruction_max": 19.34869419394481,
+            "curl_obstruction_rms": 2.1312997714942017,
+            "region": "uniform",
+            "sample_count": 256,
+            "step": 0.005,
+            "time": 0.3125,
+            "whole_volume_l2_estimate": 17.050398171953614
+          },
+          {
+            "curl_force_max": 0.3842346537377106,
+            "curl_force_rms": 0.11423042463109666,
+            "curl_momentum_max": 27.95875093810287,
+            "curl_momentum_rms": 2.4923368748775743,
+            "curl_obstruction_max": 27.960281433145493,
+            "curl_obstruction_rms": 2.499812352320759,
+            "region": "uniform",
+            "sample_count": 256,
+            "step": 0.005,
+            "time": 0.5625,
+            "whole_volume_l2_estimate": 19.998498818566077
+          },
+          {
+            "curl_force_max": 0.33145435095518677,
+            "curl_force_rms": 0.09853918923533983,
+            "curl_momentum_max": 20.408087713336773,
+            "curl_momentum_rms": 2.39924207544976,
+            "curl_obstruction_max": 20.420217906057943,
+            "curl_obstruction_rms": 2.4092968435217155,
+            "region": "uniform",
+            "sample_count": 256,
+            "step": 0.005,
+            "time": 0.6875,
+            "whole_volume_l2_estimate": 19.27437474817372
+          },
+          {
+            "curl_force_max": 0.10305842341317524,
+            "curl_force_rms": 0.08687072584063794,
+            "curl_momentum_max": 22.5469992018516,
+            "curl_momentum_rms": 9.265604147529489,
+            "curl_obstruction_max": 22.541995015738593,
+            "curl_obstruction_rms": 9.261016432951923,
+            "region": "core",
+            "sample_count": 64,
+            "step": 0.005,
+            "time": 0.3125
+          },
+          {
+            "curl_force_max": 0.11946929500487852,
+            "curl_force_rms": 0.1007038923071309,
+            "curl_momentum_max": 51.08880008513242,
+            "curl_momentum_rms": 20.780126098629516,
+            "curl_obstruction_max": 51.087212634818655,
+            "curl_obstruction_rms": 20.77838125585044,
+            "region": "core",
+            "sample_count": 64,
+            "step": 0.005,
+            "time": 0.5625
+          },
+          {
+            "curl_force_max": 0.10305842341317524,
+            "curl_force_rms": 0.08687072584063794,
+            "curl_momentum_max": 105.17222299020818,
+            "curl_momentum_rms": 35.350165143057055,
+            "curl_obstruction_max": 105.16441995957932,
+            "curl_obstruction_rms": 35.35064811313106,
+            "region": "core",
+            "sample_count": 64,
+            "step": 0.005,
+            "time": 0.6875
+          },
+          {
+            "curl_force_max": 0.3726204319138247,
+            "curl_force_rms": 0.12716785722767773,
+            "curl_momentum_max": 5.6187044524973295,
+            "curl_momentum_rms": 1.5581136662852706,
+            "curl_obstruction_max": 5.61612285885399,
+            "curl_obstruction_rms": 1.5499465211590515,
+            "region": "collar",
+            "sample_count": 64,
+            "step": 0.005,
+            "time": 0.3125
+          },
+          {
+            "curl_force_max": 0.4319559608115142,
+            "curl_force_rms": 0.14741787955907582,
+            "curl_momentum_max": 2.101380929083273,
+            "curl_momentum_rms": 0.5859212349475533,
+            "curl_obstruction_max": 2.2143555067438525,
+            "curl_obstruction_rms": 0.6125669873362266,
+            "region": "collar",
+            "sample_count": 64,
+            "step": 0.005,
+            "time": 0.5625
+          },
+          {
+            "curl_force_max": 0.3726204319138247,
+            "curl_force_rms": 0.12716785722767773,
+            "curl_momentum_max": 2.5447943023369195,
+            "curl_momentum_rms": 0.46929525996087973,
+            "curl_obstruction_max": 2.567693333012825,
+            "curl_obstruction_rms": 0.4896477945242148,
+            "region": "collar",
+            "sample_count": 64,
+            "step": 0.005,
+            "time": 0.6875
+          }
+        ],
+        "sample_manifest": {
+          "regions": {
+            "collar": {
+              "count": 64,
+              "sha256": "a4640e2f904f2468824a705fd71eb24a0902819202e9d41245a6b0a5f0421e78"
+            },
+            "core": {
+              "count": 64,
+              "sha256": "daf3aee1fed2b6ccc48d93bf8fd6cc7ed39803626dc2280246063df315dbc7c3"
+            },
+            "uniform": {
+              "count": 256,
+              "sha256": "f47d6f0f886a5bb618445eea52c8f22d25862aa52d85bdf74316723d114adf9d"
+            }
+          },
+          "seed": 914027
+        }
+      },
+      "metadata_truth_boundary": {
+        "blowup_proved": false,
+        "callable_serializable": true,
+        "openai_field_identified": false,
+        "paper_exact": false,
+        "pde_validated": false,
+        "physical_support_connection_implemented": true,
+        "physical_support_validated": false,
+        "requires_physical_support_connection": false,
+        "velocity_export_ready": true,
+        "visual_correspondence_verified": false,
+        "visualization_ready": false
+      },
+      "parent_sha256": "48f1845fcfd71ec95495c98bb7aac3fca4653e748a8856a5421234e9601525a7",
+      "path": "artifacts/delivery/eq45_supported/candidate.json",
+      "training": {
+        "rows": {
+          "all_regions": {
+            "curl_force_max": 0.39930207446353233,
+            "curl_force_rms": 0.1089159915667113,
+            "curl_momentum_max": 108.27789723678558,
+            "curl_momentum_rms": 11.61940833250286,
+            "curl_obstruction_max": 108.27401937773317,
+            "curl_obstruction_rms": 11.618897852387633,
+            "region": "all_regions",
+            "sample_count": 768
+          }
+        },
+        "sample_manifest": {
+          "regions": {
+            "collar": {
+              "count": 64,
+              "sha256": "dcc97a1daf46a9a46c940645c4173c8de3c96a71e80950c53a591ee849949ef1"
+            },
+            "core": {
+              "count": 64,
+              "sha256": "84c62d1b88a35b6e82097f20f5365a76889aa80dc2f7dec7fc3ba1d04b40ce82"
+            },
+            "uniform": {
+              "count": 128,
+              "sha256": "522164bb33ee19a5105238f8137ada35a99ce7f8c44cd28301031eb1fb932389"
+            }
+          },
+          "seed": 20260916
+        }
+      }
+    }
+  },
+  "claim_scope": "pressure_free_necessary_condition_diagnostic_only",
+  "comparison": {
+    "default_vs_bipolar_fine_uniform_l2_relative_change": 0.31452704008178234,
+    "fine_step": 0.005,
+    "fine_step_uniform_l2_ordering": [
+      "bipolar",
+      "default",
+      "bipolar_energy_normalized"
+    ],
+    "lower_fine_uniform_l2_candidate": "bipolar",
+    "uniform_whole_volume_l2_max_by_candidate": {
+      "bipolar": 13.708430179083468,
+      "bipolar_energy_normalized": 27.21959842487541,
+      "default": 19.998498818566077
+    }
+  },
+  "conclusion": {
+    "next_action": "Use the regional and resolution-stability pattern to choose the next bounded velocity-shape experiment; preserve the force family and independently validate the resulting full momentum residual.",
+    "statement": "The fitted force comparison is evidence about pressure-free curl compatibility for the frozen sampled candidates only. It is not a full NS validation or an impossibility result for other velocity families.",
+    "status": "diagnostic_complete"
+  },
+  "equation": "curl(u_t + (u dot grad)u - nu*laplacian(u)) = curl(f)",
+  "errors": [],
+  "fixed_constraints": {
+    "arbitrary_force": "excluded; only bounded a,c in the preregistered curl-bump family",
+    "domain": {
+      "boundary": "smooth zero extension of velocity and pressure outside support",
+      "evaluation_box": [
+        [
+          -2,
+          2
+        ],
+        [
+          -2,
+          2
+        ],
+        [
+          -2,
+          2
+        ]
+      ],
+      "initial_condition": "optimized nonzero field at t=0.25; not the paper zero-rest initial condition",
+      "physical": "R^3",
+      "pressure_gauge": "p=0 outside compact support",
+      "support": "r < 2 and abs(z) < 2",
+      "time_interval": [
+        0.25,
+        0.75
+      ]
+    },
+    "force_coefficient_bounds": [
+      0.0,
+      10.0
+    ],
+    "force_definition": {
+      "bump": "B(s)=exp(1-1/(1-s)) for s<1, zero otherwise",
+      "definition": "f=g(t)*curl(A_f)",
+      "initial_parameters": {
+        "a": 1.0,
+        "c": 1.0
+      },
+      "mode": "restricted_two_parameter_family",
+      "parameters": {
+        "a": [
+          0.0,
+          10.0
+        ],
+        "c": [
+          0.0,
+          10.0
+        ]
+      },
+      "potential": "A_f=b*(-a*z*y, a*z*x, -c*(x*x+y*y)/2)",
+      "regularity": "C-infinity compact support in space and t in [0,1]; structural proof pending",
+      "report": [
+        "a",
+        "c",
+        "max_abs_force",
+        "L2_force",
+        "integral_u_dot_f"
+      ],
+      "restriction": "Only a,c may be fitted. No residual-dependent basis or pointwise free force. Freeze family before optimization.",
+      "spatial_factor": "b=B((x*x+y*y)/4)*B(z*z/4)",
+      "temporal_factor": "g(t)=B((2*t-1)^2)"
+    },
+    "force_family": "RestrictedForce",
+    "pressure": "excluded by taking curl; no pressure coefficients fitted",
+    "viscosity_nu": 0.01
+  },
+  "inputs": {
+    "candidates": {
+      "bipolar": {
+        "candidate_sha256": "8027075948fc4cbbf0c79cf080729b543c7a7d00b011a4b35b582b95deab5970",
+        "file_sha256": "a0a7969663e86c637f4fccab7d3970498513b2943a55a32806b782c487f4f6f3",
+        "parent_sha256": "7227b3f8fa41619e38feedd7519bb7cac6b597a0ffad309ffa5cb8e19cfab763",
+        "path": "artifacts/delivery/eq45_bipolar/candidate.json"
+      },
+      "bipolar_energy_normalized": {
+        "candidate_sha256": "c0e27269adfb6f305c2c0b5a2483f9eddd54f79691f69cacd7bb735ba592a702",
+        "file_sha256": "3b8a3cfa218b4441b304f423d45311f0437ebf8052bc431811d98a50f641f9c8",
+        "parent_sha256": "a92c639285d98a3b8a444c8caf0a000821f764853f90d8e4e8520ae80dcc67a3",
+        "path": "artifacts/bipolar_energy/normalized_candidate.json"
+      },
+      "default": {
+        "candidate_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+        "file_sha256": "bc39e8c427e4eab077764471f2cd5f98c1988329fcde387b303e38d0c9f376b9",
+        "parent_sha256": "48f1845fcfd71ec95495c98bb7aac3fca4653e748a8856a5421234e9601525a7",
+        "path": "artifacts/delivery/eq45_supported/candidate.json"
+      }
+    },
+    "config_path": "configs/constraints.json",
+    "config_sha256": "6fd057eaf202f233710d140b4af863db4af302115323afeb27a67e941de00803"
+  },
+  "interpretation": "A nonzero curl obstruction is incompatible with any pressure gradient at the sampled points and finite-difference resolutions. A small curl obstruction would remain necessary but would not establish the full NS equation, divergence, boundary regularity, or a continuum bound.",
+  "operator": {
+    "holdout_steps": [
+      0.01,
+      0.005
+    ],
+    "momentum": "constrained_validation.residual with pressure=0 and force=0",
+    "note": "Nested finite differences make this a numerical obstruction estimate; no interval certification is claimed.",
+    "outer_curl_stencil": "second_order_centered_cartesian",
+    "spatial_momentum_stencil": "fourth_order_cartesian",
+    "time_momentum_stencil": "second_order_centered_cartesian",
+    "time_values": [
+      0.3125,
+      0.5625,
+      0.6875
+    ],
+    "train_step": 0.01
+  },
+  "runtime": {
+    "module_sha256": "0b4e2d74d7368ff9357341593a03bf06bf824830773b90c22413d93553b3752c",
+    "numpy": "2.4.6",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]"
+  },
+  "sampling": {
+    "box": [
+      [
+        -2.0,
+        2.0
+      ],
+      [
+        -2.0,
+        2.0
+      ],
+      [
+        -2.0,
+        2.0
+      ]
+    ],
+    "box_volume": 64.0,
+    "holdout": {
+      "regions": {
+        "collar": {
+          "count": 64,
+          "sha256": "a4640e2f904f2468824a705fd71eb24a0902819202e9d41245a6b0a5f0421e78"
+        },
+        "core": {
+          "count": 64,
+          "sha256": "daf3aee1fed2b6ccc48d93bf8fd6cc7ed39803626dc2280246063df315dbc7c3"
+        },
+        "uniform": {
+          "count": 256,
+          "sha256": "f47d6f0f886a5bb618445eea52c8f22d25862aa52d85bdf74316723d114adf9d"
+        }
+      },
+      "seed": 914027
+    },
+    "region_definitions": {
+      "collar": "equal radial collar 1.50 <= r <= 1.95, |z| <= 1 and axial collar 1.50 <= |z| <= 1.95, r <= 0.95",
+      "core": "r <= 0.55 and |z| <= 0.55, sampled in an axis-safe central cylinder",
+      "uniform": "uniform Cartesian samples in [-2,2]^3; only this region receives the whole-volume Monte Carlo L2 estimate"
+    },
+    "train": {
+      "regions": {
+        "collar": {
+          "count": 64,
+          "sha256": "dcc97a1daf46a9a46c940645c4173c8de3c96a71e80950c53a591ee849949ef1"
+        },
+        "core": {
+          "count": 64,
+          "sha256": "84c62d1b88a35b6e82097f20f5365a76889aa80dc2f7dec7fc3ba1d04b40ce82"
+        },
+        "uniform": {
+          "count": 128,
+          "sha256": "522164bb33ee19a5105238f8137ada35a99ce7f8c44cd28301031eb1fb932389"
+        }
+      },
+      "seed": 20260916
+    },
+    "train_holdout_separation": "independent seeds and independently generated point pools"
+  },
+  "schema": "eq45_bipolar_obstruction_v1"
+}

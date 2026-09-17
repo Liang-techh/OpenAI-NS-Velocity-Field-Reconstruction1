@@ -1,0 +1,85 @@
+{
+  "parent_sha256": "c0e27269adfb6f305c2c0b5a2483f9eddd54f79691f69cacd7bb735ba592a702",
+  "candidate_sha256": "fd137fd29ce9895930845e87c2ba94b95c50c1a61fc08ccd7b5123c0952741fd",
+  "modes": [
+    [
+      "phi",
+      1
+    ],
+    [
+      "phi",
+      4
+    ],
+    [
+      "swirl",
+      0
+    ],
+    [
+      "swirl",
+      2
+    ],
+    [
+      "swirl",
+      3
+    ],
+    [
+      "swirl",
+      5
+    ]
+  ],
+  "parameters": [
+    1.8903445922525324,
+    3.999999999995848,
+    1.5328055871502984,
+    -3.999999999996204,
+    -0.94721432473906,
+    -3.999999999995241,
+    6.690329015913863e-21,
+    0.18763736742818277
+  ],
+  "optimizer_success": false,
+  "message": "Positive directional derivative for linesearch",
+  "training_equality_defects": [
+    0.096254175073885,
+    -0.32279047889740103,
+    -0.3769808556533568,
+    -0.5447011293941171
+  ],
+  "core_ratios": [
+    1.0471860723238162,
+    1.0340104123832023,
+    1.0500000000045118
+  ],
+  "holdout": [
+    {
+      "time": 0.34375,
+      "energy": 1.0201399110984941,
+      "required_work": -0.24877988930929532,
+      "force_work": 0.08611147848248081,
+      "balance_defect": -0.33489136779177614
+    },
+    {
+      "time": 0.46875,
+      "energy": 0.914814831142618,
+      "required_work": -0.24891618871551016,
+      "force_work": 0.10868272931498088,
+      "balance_defect": -0.35759891803049104
+    },
+    {
+      "time": 0.59375,
+      "energy": 0.8011141702618517,
+      "required_work": -0.2665517384691367,
+      "force_work": 0.09765537148631283,
+      "balance_defect": -0.3642071099554495
+    },
+    {
+      "time": 0.71875,
+      "energy": 0.6691700238178483,
+      "required_work": -0.32176965404105234,
+      "force_work": 0.05689649494732375,
+      "balance_defect": -0.3786661489883761
+    }
+  ],
+  "pde_validated": false,
+  "scope": "Existing six velocity modes and original bounded two-parameter force. Initial energy1; central component ratios constrained [.95,1.05]. Energy identity only, full momentum unoptimized. Failed optimizer results retained without promotion."
+}

@@ -1,0 +1,96 @@
+{
+  "status": "training_only_not_validated",
+  "initial_artifact": "artifacts/constrained/continued_pressure/candidate.json",
+  "force": {
+    "a": 9.546541832896667e-11,
+    "c": 0.12148700174414483
+  },
+  "grid_resolution": 48,
+  "analytic_parameter_jacobian": true,
+  "dense_cylindrical": true,
+  "coefficient_initial_artifact": "artifacts/constrained/axial_swirl_analytic/candidate.json",
+  "axial": true,
+  "localized": false,
+  "fourth_power": true,
+  "tail_adaptive": false,
+  "adaptive_seed": null,
+  "calls": 16,
+  "call_budget": 500,
+  "termination": "`ftol` termination condition is satisfied.",
+  "seed": 20260916,
+  "cache_direct_max_discrepancy": 9.30533428089575e-12,
+  "training_points": 22784,
+  "training_loss": 0.02308349681614198,
+  "history": [
+    {
+      "call": 1,
+      "loss": 0.023778959504357555
+    },
+    {
+      "call": 2,
+      "loss": 0.023326688523130377
+    },
+    {
+      "call": 3,
+      "loss": 0.023105103201725718
+    },
+    {
+      "call": 4,
+      "loss": 0.023091683441950783
+    },
+    {
+      "call": 5,
+      "loss": 0.023086524814593196
+    },
+    {
+      "call": 6,
+      "loss": 0.023085048541624777
+    },
+    {
+      "call": 7,
+      "loss": 0.02308428465562876
+    },
+    {
+      "call": 8,
+      "loss": 0.023083967017529846
+    },
+    {
+      "call": 9,
+      "loss": 0.02308364239602719
+    },
+    {
+      "call": 10,
+      "loss": 0.023083567467077994
+    },
+    {
+      "call": 11,
+      "loss": 0.023083538080541234
+    },
+    {
+      "call": 12,
+      "loss": 0.023083512866412973
+    },
+    {
+      "call": 13,
+      "loss": 0.023083506273447574
+    },
+    {
+      "call": 14,
+      "loss": 0.02308349730364562
+    },
+    {
+      "call": 15,
+      "loss": 0.023083496937173743
+    },
+    {
+      "call": 16,
+      "loss": 0.02308349681614198
+    }
+  ],
+  "coefficient_bounds": [
+    -1,
+    1
+  ],
+  "basis": "twelve axial zero-moment rings times three cubic Bernstein temporal modes",
+  "initial_velocity_max_change": 0.0
+}

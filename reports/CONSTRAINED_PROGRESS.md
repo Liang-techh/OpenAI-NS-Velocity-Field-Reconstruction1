@@ -1,0 +1,52 @@
+# Constrained reconstruction: development results
+
+These are saved development comparisons, not final acceptance. The validation seed has informed model selection; a fresh frozen-candidate audit remains required.
+
+| Experiment | Sampled max momentum residual | Core/energy probes | Evidence |
+| --- | ---: | --- | --- |
+| adaptive_v4 | 2.738863 | not recorded in this artifact | [validation.json](../artifacts/constrained/adaptive_v4/validation.json) |
+| axial_swirl | 1.349962 | pass | [validation.json](../artifacts/constrained/axial_swirl/validation.json) |
+| axial_swirl_analytic | 1.285436 | pass | [validation.json](../artifacts/constrained/axial_swirl_analytic/validation.json) |
+| axial_swirl_dense | 1.285451 | pass | [validation.json](../artifacts/constrained/axial_swirl_dense/validation.json) |
+| axial_swirl_fourth | 3.631587 | pass | [validation.json](../artifacts/constrained/axial_swirl_fourth/validation.json) |
+| axial_swirl_grid48 | 1.290134 | pass | [validation.json](../artifacts/constrained/axial_swirl_grid48/validation.json) |
+| continued_pressure | 1.942965 | pass | [validation.json](../artifacts/constrained/continued_pressure/validation.json) |
+| coupled_joint | 1.002218 | pass | [validation.json](../artifacts/constrained/coupled_joint/validation.json) |
+| decoupled_v3 | 4.036601 | not recorded in this artifact | [validation.json](../artifacts/constrained/decoupled_v3/validation.json) |
+| initial_tangent | 7.588542 | fail | [validation.json](../artifacts/constrained/initial_tangent/validation.json) |
+| inner_swirl | 1.264630 | pass | [validation.json](../artifacts/constrained/inner_swirl/validation.json) |
+| inner_swirl_pressure | 1.244173 | pass | [validation.json](../artifacts/constrained/inner_swirl_pressure/validation.json) |
+| local_pressure | 1.243614 | pass | [validation.json](../artifacts/constrained/local_pressure/validation.json) |
+| localized_swirl | 1.356226 | pass | [validation.json](../artifacts/constrained/localized_swirl/validation.json) |
+| localized_swirl_fourth | 1.391276 | pass | [validation.json](../artifacts/constrained/localized_swirl_fourth/validation.json) |
+| optimized | 5.355252 | not recorded in this artifact | [validation.json](../artifacts/constrained/optimized/validation.json) |
+| optimized_v2 | 5.842563 | not recorded in this artifact | [validation.json](../artifacts/constrained/optimized_v2/validation.json) |
+| optimized_v3 | 4.115165 | not recorded in this artifact | [validation.json](../artifacts/constrained/optimized_v3/validation.json) |
+| optimized_v4 | 2.788433 | not recorded in this artifact | [validation.json](../artifacts/constrained/optimized_v4/validation.json) |
+| outer_momentum | 2.596683 | pass | [validation.json](../artifacts/constrained/outer_momentum/validation.json) |
+| outer_pressure | 2.508246 | pass | [validation.json](../artifacts/constrained/outer_pressure/validation.json) |
+| outer_shape | 2.491094 | pass | [validation.json](../artifacts/constrained/outer_shape/validation.json) |
+| poloidal_anchor | 1.006337 | pass | [validation.json](../artifacts/constrained/poloidal_anchor/validation.json) |
+| poloidal_joint | 1.312936 | pass | [validation.json](../artifacts/constrained/poloidal_joint/validation.json) |
+| quintic_swirl | 1.264522 | pass | [validation.json](../artifacts/constrained/quintic_swirl/validation.json) |
+| quintic_swirl_scalar | 1.269478 | pass | [validation.json](../artifacts/constrained/quintic_swirl_scalar/validation.json) |
+| quintic_swirl_scalar_fourth | 1.272871 | pass | [validation.json](../artifacts/constrained/quintic_swirl_scalar_fourth/validation.json) |
+| temporal_swirl | 1.956548 | pass | [validation.json](../artifacts/constrained/temporal_swirl/validation.json) |
+| temporal_swirl_fourth | 2.034117 | pass | [validation.json](../artifacts/constrained/temporal_swirl_fourth/validation.json) |
+| temporal_swirl_tail | 2.447841 | pass | [validation.json](../artifacts/constrained/temporal_swirl_tail/validation.json) |
+| tensor_feasible | 2.664848 | pass | [validation.json](../artifacts/constrained/tensor_feasible/validation.json) |
+| tensor_stage1 | 2.464107 | not recorded in this artifact | [validation.json](../artifacts/constrained/tensor_stage1/validation.json) |
+| whole_window | 2.491071 | pass | [validation.json](../artifacts/constrained/whole_window/validation.json) |
+| whole_window_continued | 1.947969 | pass | [validation.json](../artifacts/constrained/whole_window_continued/validation.json) |
+| whole_window_equalities | 2.058084 | pass | [validation.json](../artifacts/constrained/whole_window_equalities/validation.json) |
+| initial | 13.227116 | not recorded in this artifact | [initial_pde_validation.json](../artifacts/constrained/initial_pde_validation.json) |
+
+## Acceptance still missing
+
+- Momentum residual thresholds remain 0.001. None of these development runs meets them.
+- Core/energy probes checks do not prove uniform-in-space/time constraints.
+- Global torque closure is not local momentum closure.
+- Five symbolic ansatz checks have documented assumptions; time-dependent extensions must not inherit fixed-profile scaling claims.
+- Final fresh-sample audit, current-candidate convergence/sensitivity and clean-environment reproduction remain pending.
+
+Regenerate with `python -m openai_ns_reconstruction.constrained_progress_report`.

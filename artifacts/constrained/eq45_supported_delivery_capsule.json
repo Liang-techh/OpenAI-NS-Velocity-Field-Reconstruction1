@@ -1,0 +1,108 @@
+{
+  "candidate": {
+    "child_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+    "family": "eq45_supported_velocity_candidate_v1",
+    "parent_sha256": "48f1845fcfd71ec95495c98bb7aac3fca4653e748a8856a5421234e9601525a7",
+    "support_connected": true
+  },
+  "integrated_assets": {
+    "candidate_save_load_api": true,
+    "direct_grid_evaluator": true,
+    "matlab_mat_exporter": false,
+    "named_python_velocity_api": true,
+    "python_slice_renderer": false,
+    "standalone_supported_candidate_json": false,
+    "vtk_exporter": false
+  },
+  "preregistered_validation_contract": {
+    "derivative_steps": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "experiment_id": "compact_axisymmetric_window_v1",
+    "held_out_points": 4096,
+    "thresholds": {
+      "boundary_pressure_max": 1e-10,
+      "boundary_velocity_max": 1e-10,
+      "divergence_L2": 1e-05,
+      "divergence_max": 1e-05,
+      "energy_quadrature_relative_change": 0.001,
+      "pde_residual_L2": 0.001,
+      "pde_residual_max": 0.001,
+      "scaled_core_profile_relative_drift": 0.05
+    },
+    "validation_seed": 914027
+  },
+  "public_interface": {
+    "components": [
+      "u",
+      "v",
+      "w"
+    ],
+    "grid": "openai_ns_reconstruction.eq45_supported_delivery:default_field().grid",
+    "grid_layout": [
+      "time",
+      "x",
+      "y",
+      "z",
+      "component"
+    ],
+    "load_candidate": "openai_ns_reconstruction.eq45_supported_delivery:Eq45SupportedDeliveryField.load_candidate",
+    "point_batch": "openai_ns_reconstruction.eq45_supported_delivery:default_field().at_points",
+    "save_candidate": "openai_ns_reconstruction.eq45_supported_delivery:default_field().save_candidate",
+    "velocity": "openai_ns_reconstruction.eq45_supported_delivery:velocity"
+  },
+  "recommended_window": {
+    "evaluation_box": [
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ]
+    ],
+    "physical_support": "r < 2 and abs(z) < 2",
+    "reference_times": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "reference_times_classification": "autonomous_delivery_choice",
+    "time_interval": [
+      0.25,
+      0.75
+    ]
+  },
+  "schema": "eq45_supported_delivery_capsule_v1",
+  "scientific_evidence_in_this_ancestry": {
+    "divergence": "pending_unconsumed_sibling_evidence",
+    "energy": "pending_unconsumed_sibling_evidence",
+    "pde": "pending_unconsumed_sibling_evidence",
+    "physical_support_connection": "implemented_not_independently_validated",
+    "public_visual_correspondence": "pending"
+  },
+  "scope": {
+    "candidate_promoted": false,
+    "claim": "reproducible_delivery_inventory_only",
+    "velocity_changed": false
+  },
+  "states": {
+    "blowup_proved": false,
+    "callable_serializable": true,
+    "openai_field_identified": false,
+    "paper_exact": false,
+    "pde_validated": false,
+    "physical_support_connection_implemented": true,
+    "physical_support_validated": false,
+    "velocity_export_ready": true,
+    "visual_correspondence_verified": false,
+    "visualization_ready": false
+  }
+}

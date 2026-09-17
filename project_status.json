@@ -1,11 +1,195 @@
 {
-  "objective": "constrained_independent_reconstruction",
+  "objective": "computable_3d_velocity_components_corresponding_to_openai_visualization",
   "migration": "complete",
-  "candidate_status": "not_constructed",
-  "independent_validation": "pending",
-  "selected_structure_proofs": "pending",
-  "exact_paper_reproduction_required": false,
-  "full_blowup_proof_required": false,
-  "active_task_file": "docs/AGENT_TASKS.md",
-  "legacy_artifacts_are_candidate_evidence": false
+  "integration_branch": "codex/cr001-constraints",
+  "status_snapshot_base_head": "412e6c35ce7c59e360ed8e40237f85d1856b75d4",
+  "active_routing_document": "docs/AGENT_ROUTING_SWIRL_SPATIAL.md",
+  "active_scientific_route": "bounded_spatial_swirl_redistribution_plus_minimal_poloidal_coordination",
+  "candidate_status": "visualization_candidate_only",
+  "candidate_family": "eq45_supported_velocity_candidate_v1",
+  "candidate_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+  "parent_sha256": "48f1845fcfd71ec95495c98bb7aac3fca4653e748a8856a5421234e9601525a7",
+  "delivery_capsule": "artifacts/constrained/eq45_supported_delivery_capsule.json",
+  "velocity_api": "openai_ns_reconstruction.eq45_supported_delivery:velocity",
+  "grid_api": "openai_ns_reconstruction.eq45_supported_delivery:default_field().grid",
+  "candidate_save_load_api": "openai_ns_reconstruction.eq45_supported_delivery:Eq45SupportedDeliveryField.load_candidate",
+  "evaluation_box": [
+    [
+      -2,
+      2
+    ],
+    [
+      -2,
+      2
+    ],
+    [
+      -2,
+      2
+    ]
+  ],
+  "time_interval": [
+    0.25,
+    0.75
+  ],
+  "physical_support": "r < 2 and abs(z) < 2",
+  "states": {
+    "velocity_export_ready": true,
+    "visualization_ready": false,
+    "pde_validated": false,
+    "physical_support_connection_implemented": true,
+    "physical_support_validated": false,
+    "visual_correspondence_verified": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "independent_validation": {
+    "status": "support_connected_public_velocity_diagnostics_integrated_pde_acceptance_failed_or_pending",
+    "latest_integrated_visual_diagnostic": "artifacts/constrained/eq45_supported_vorticity_envelope.json",
+    "early_t025_radial_q99_parent": 1.3086,
+    "early_t025_radial_q99_supported_child": 1.8581,
+    "early_t025_radial_q99_relative_change": 0.42,
+    "interpretation": "resolved support-induced early widen_flatten branch; not a one-grid artifact; does not establish OpenAI correspondence or PDE validity"
+  },
+  "preregistered_validation_contract": {
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "divergence_max": 1e-05,
+    "divergence_L2": 1e-05,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001
+  },
+  "active_task_file": "docs/SCHEDULED_AGENT_TASKS.md",
+  "central_coordination_issue": 15,
+  "next_integration_task": "materialize one bounded interior compact swirl child from the integrated INTERIOR_C4_SWIRL capacity direction; then run a force-respecting candidate screen and fresh full-momentum/divergence validation before any promotion",
+  "latest_integrated_swirl_capacity": {
+    "integration_head": "412e6c35ce7c59e360ed8e40237f85d1856b75d4",
+    "mode": "INTERIOR_C4_SWIRL",
+    "origin": "autonomous_design_from_existing_taper_plateau_geometry",
+    "status": "capacity_only_nonzero_child_not_materialized",
+    "collar_response": "zero_on_audited_taper_collars",
+    "candidate_selection_resolved": false,
+    "visualization_ready": false,
+    "pde_validated": false
+  },
+  "integration_policy": {
+    "preferred_loop": "capacity_to_materialize_to_fit_to_fresh_validate_to_spatial_diagnostics_to_capsule_to_governance_to_integrate",
+    "avoid": [
+      "wholesale_merge_of_old_stacked_temporal_or_visual_prs",
+      "coefficient_selection_from_capacity_or_morphology_alone",
+      "new_export_formats_without_a_current_delivery_blocker",
+      "scientific_state_promotion_from_green_ci_or_visual_similarity"
+    ]
+  },
+  "legacy_reference": {
+    "candidate_artifact": "artifacts/constrained/coupled_joint/candidate.json",
+    "role": "historical constrained candidate evidence; not the active Eq45 delivery candidate"
+  },
+  "truth_boundary": "CI green, exportability, target-free morphology improvement, or visual resemblance do not imply PDE validity or exact OpenAI-field identity",
+  "experimental_bipolar_candidate": {
+    "path": "artifacts/delivery/eq45_bipolar/candidate.json",
+    "sha256": "8027075948fc4cbbf0c79cf080729b543c7a7d00b011a4b35b582b95deab5970",
+    "status": "qualitative central-motion seed; not canonical; whole-domain validation pending",
+    "central_probe_count": 96,
+    "source_correspondence_verified": false
+  },
+  "portable_export": "openai_ns_reconstruction.eq45_export_bundle",
+  "bipolar_energy_diagnostic": {
+    "report": "artifacts/bipolar_energy/report.json",
+    "normalized_candidate": "artifacts/bipolar_energy/normalized_candidate.json",
+    "candidate_sha256": "c0e27269adfb6f305c2c0b5a2483f9eddd54f79691f69cacd7bb735ba592a702",
+    "reference_energy": 1.0000000000000004,
+    "validation_energy_range": [
+      0.5842436855426052,
+      1.0000000000000004
+    ],
+    "pde_validated": false,
+    "default_promoted": false
+  },
+  "bipolar_theta_obstruction": {
+    "report": "artifacts/bipolar_theta/report.json",
+    "force_c": 0.0,
+    "finest_max_range": [
+      0.5779909449264289,
+      3.026685694217416
+    ],
+    "status": "fails_necessary_axisymmetric_momentum_condition",
+    "next_action": "Modify swirl profile or time evolution under fixed force bounds; pressure-only repair cannot eliminate theta residual."
+  },
+  "bipolar_temporal_experiment": {
+    "report": "artifacts/bipolar_temporal/report.json",
+    "status": "insufficient_improvement",
+    "core_drift": 0.015749496834345792,
+    "pde_validated": false
+  },
+  "bipolar_curl_obstruction": {
+    "report": "artifacts/bipolar_obstruction/report.json",
+    "comparison": {
+      "default_vs_bipolar_fine_uniform_l2_relative_change": 0.31452704008178234,
+      "fine_step": 0.005,
+      "fine_step_uniform_l2_ordering": [
+        "bipolar",
+        "default",
+        "bipolar_energy_normalized"
+      ],
+      "lower_fine_uniform_l2_candidate": "bipolar",
+      "uniform_whole_volume_l2_max_by_candidate": {
+        "bipolar": 13.708430179083468,
+        "bipolar_energy_normalized": 27.21959842487541,
+        "default": 19.998498818566077
+      }
+    },
+    "pde_validated": false
+  },
+  "bipolar_energy_balance": {
+    "report": "artifacts/bipolar_energy_balance/report.json",
+    "status": "sampled_required_work_negative_both_allowed_work_columns_positive",
+    "pde_validated": false
+  },
+  "bipolar_spatial_experiment": {
+    "report": "artifacts/bipolar_spatial/report.json",
+    "energy_balance": "artifacts/bipolar_spatial/energy_balance.json",
+    "status": "theta_improved_energy_balance_worsened_rejected",
+    "pde_validated": false
+  },
+  "bipolar_joint_energy_experiment": {
+    "report": "artifacts/bipolar_joint_energy/report.json",
+    "status": "local_optimizer_failed_constraints_not_satisfied",
+    "pde_validated": false
+  },
+  "bipolar_joint_multistart": {
+    "report": "artifacts/bipolar_joint_energy_multistart/report.json",
+    "starts": 12,
+    "energy_core_feasible_starts": 9,
+    "status": "energy_balance_not_satisfied_no_promotion",
+    "pde_validated": false
+  },
+  "bipolar_odd3_experiment": {
+    "report": "artifacts/bipolar_joint_odd3/report.json",
+    "status": "energy_defect_reduced_but_not_satisfied",
+    "pde_validated": false
+  },
+  "bipolar_joint_comparison": {
+    "report": "artifacts/bipolar_joint_comparison/report.json",
+    "status": "energy_only_objective_insufficient_momentum_tradeoff",
+    "pde_validated": false
+  },
+  "bipolar_joint_momentum": {
+    "report": "artifacts/bipolar_joint_momentum/report.json",
+    "holdout": "artifacts/bipolar_joint_momentum/holdout_momentum.json",
+    "status": "momentum_improved_energy_balance_worsened_no_promotion",
+    "pde_validated": false
+  },
+  "bipolar_joint_capped": {
+    "report": "artifacts/bipolar_joint_capped/report.json",
+    "status": "modest_theta_gain_energy_gap_persists",
+    "optimization_cap": 0.14,
+    "acceptance_threshold_changed": false,
+    "pde_validated": false
+  }
 }

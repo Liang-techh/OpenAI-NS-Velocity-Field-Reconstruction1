@@ -1,0 +1,147 @@
+{
+  "coupled": true,
+  "anchor_core": true,
+  "status": "joint_fit_not_validated",
+  "force": {
+    "a": 9.546541832896667e-11,
+    "c": 0.12148700174414483
+  },
+  "calls": 29,
+  "max_nfev": 80,
+  "termination": "`ftol` termination condition is satisfied.",
+  "initial_artifact": "artifacts/constrained/poloidal_anchor/candidate.json",
+  "seed": 20260916,
+  "grid": [
+    48,
+    48,
+    9
+  ],
+  "training_points": 22784,
+  "loss": "mean fourth power full residual",
+  "training_loss": 0.013327093044018658,
+  "history": [
+    {
+      "call": 1,
+      "loss": 0.013795970185550706
+    },
+    {
+      "call": 2,
+      "loss": 0.013537309772664359
+    },
+    {
+      "call": 3,
+      "loss": 0.013349824550300036
+    },
+    {
+      "call": 4,
+      "loss": 0.01333924271031394
+    },
+    {
+      "call": 5,
+      "loss": 0.013333895331409941
+    },
+    {
+      "call": 6,
+      "loss": 0.013331919475358311
+    },
+    {
+      "call": 7,
+      "loss": 0.013329177732113692
+    },
+    {
+      "call": 8,
+      "loss": 0.013328437989896635
+    },
+    {
+      "call": 9,
+      "loss": 0.01332748088812373
+    },
+    {
+      "call": 10,
+      "loss": 0.013327326654785839
+    },
+    {
+      "call": 11,
+      "loss": 0.013327139437628113
+    },
+    {
+      "call": 12,
+      "loss": 0.013327122343349755
+    },
+    {
+      "call": 13,
+      "loss": 0.0133271136445753
+    },
+    {
+      "call": 14,
+      "loss": 0.013327108108498784
+    },
+    {
+      "call": 15,
+      "loss": 0.01332710431147275
+    },
+    {
+      "call": 16,
+      "loss": 0.013327101531054797
+    },
+    {
+      "call": 17,
+      "loss": 0.013327099465454035
+    },
+    {
+      "call": 18,
+      "loss": 0.013327097876641415
+    },
+    {
+      "call": 19,
+      "loss": 0.013327096662300393
+    },
+    {
+      "call": 20,
+      "loss": 0.01332709571258728
+    },
+    {
+      "call": 21,
+      "loss": 0.013327094977769207
+    },
+    {
+      "call": 22,
+      "loss": 0.013327094402328512
+    },
+    {
+      "call": 23,
+      "loss": 0.013327093961856419
+    },
+    {
+      "call": 24,
+      "loss": 0.013327093626865018
+    },
+    {
+      "call": 25,
+      "loss": 0.013327093385783686
+    },
+    {
+      "call": 26,
+      "loss": 0.013327093223650997
+    },
+    {
+      "call": 27,
+      "loss": 0.013327093135617996
+    },
+    {
+      "call": 28,
+      "loss": 0.013327093109427094
+    },
+    {
+      "call": 29,
+      "loss": 0.013327093044018658
+    }
+  ],
+  "coefficient_bounds": [
+    -1,
+    1
+  ],
+  "velocity_coefficients": 117,
+  "pressure_coefficients": 27,
+  "cache_direct_discrepancy": 5.3056448123811606e-12
+}

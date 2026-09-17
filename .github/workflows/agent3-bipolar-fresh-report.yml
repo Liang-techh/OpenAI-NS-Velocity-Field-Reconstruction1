@@ -1,0 +1,29 @@
+name: agent3-bipolar-fresh-report
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/constrained_bipolar_capped_fresh.py'
+      - 'tests/test_constrained_bipolar_capped_fresh.py'
+      - '.github/workflows/agent3-bipolar-fresh-report.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Generate fresh 2048-point three-level audit
+        run: python -m openai_ns_reconstruction.constrained_bipolar_capped_fresh
+      - name: Upload fresh refinement report
+        uses: actions/upload-artifact@v4
+        with:
+          name: agent3-bipolar-capped-fresh-refinement
+          path: artifacts/bipolar_joint_capped/fresh_refinement.json

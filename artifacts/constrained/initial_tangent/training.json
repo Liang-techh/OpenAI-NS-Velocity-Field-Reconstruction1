@@ -1,0 +1,28 @@
+{
+  "status": "initial_tangent_only_not_validated",
+  "seed": 20260916,
+  "time": 0.25,
+  "force": {
+    "a": 9.546541832896667e-11,
+    "c": 0.12148700174414483
+  },
+  "active_indices": [
+    1,
+    4,
+    7,
+    10,
+    13,
+    16,
+    19,
+    22,
+    25
+  ],
+  "bounds": [
+    -1,
+    1
+  ],
+  "old_initial_sample_max": 0.9302236298754395,
+  "new_initial_sample_max": 0.6092645769048078,
+  "affine_model_error": 2.804097509745418e-10,
+  "initial_velocity_max_change": 0.0
+}

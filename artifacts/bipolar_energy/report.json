@@ -1,0 +1,350 @@
+{
+  "normalized_bipolar": {
+    "candidate_sha256": "c0e27269adfb6f305c2c0b5a2483f9eddd54f79691f69cacd7bb735ba592a702",
+    "source_sha256": "8027075948fc4cbbf0c79cf080729b543c7a7d00b011a4b35b582b95deab5970",
+    "scale": 1.8097870818686452,
+    "rows": [
+      {
+        "time": 0.25,
+        "energy": 1.0000000000000004
+      },
+      {
+        "time": 0.3125,
+        "energy": 0.9581123910861882
+      },
+      {
+        "time": 0.4375,
+        "energy": 0.8678410961883694
+      },
+      {
+        "time": 0.5625,
+        "energy": 0.7674230863178807
+      },
+      {
+        "time": 0.6875,
+        "energy": 0.6513425297631911
+      },
+      {
+        "time": 0.75,
+        "energy": 0.5842436855426052
+      }
+    ],
+    "core_probe_count": 21,
+    "scaled_core_profile_relative_drift": 4.035824683987387e-13,
+    "core_drift_gate_satisfied": true,
+    "core_signs_satisfied": true,
+    "candidate_path": "artifacts/bipolar_energy/normalized_candidate.json",
+    "pde_validated": false,
+    "scope": "Explicit new experimental candidate; momentum diagnostics for its unnormalized parent do not transfer."
+  },
+  "method": "Gauss-Legendre on r in [0,2], z in [-2,2]; volume weight 2*pi*r; exact axisymmetry assumed from candidate construction",
+  "scope": "Finite-window energy diagnostic with separately serialized energy-normalized child. No threshold changes, PDE acceptance or source identification.",
+  "candidates": {
+    "eq45_supported": {
+      "candidate_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+      "rows": [
+        {
+          "order": 24,
+          "time": 0.25,
+          "energy": 0.9071005613246947,
+          "relative_change": null
+        },
+        {
+          "order": 24,
+          "time": 0.3125,
+          "energy": 0.865015725460138,
+          "relative_change": null
+        },
+        {
+          "order": 24,
+          "time": 0.4375,
+          "energy": 0.7841085429607813,
+          "relative_change": null
+        },
+        {
+          "order": 24,
+          "time": 0.5625,
+          "energy": 0.7027773880949393,
+          "relative_change": null
+        },
+        {
+          "order": 24,
+          "time": 0.6875,
+          "energy": 0.6186806151285614,
+          "relative_change": null
+        },
+        {
+          "order": 24,
+          "time": 0.75,
+          "energy": 0.5732433798603442,
+          "relative_change": null
+        },
+        {
+          "order": 48,
+          "time": 0.25,
+          "energy": 0.9054273637116799,
+          "relative_change": 0.0018479644862463883
+        },
+        {
+          "order": 48,
+          "time": 0.3125,
+          "energy": 0.8623924767892167,
+          "relative_change": 0.003041826942516925
+        },
+        {
+          "order": 48,
+          "time": 0.4375,
+          "energy": 0.7776888717913308,
+          "relative_change": 0.00825480652007187
+        },
+        {
+          "order": 48,
+          "time": 0.5625,
+          "energy": 0.6872084600214206,
+          "relative_change": 0.02265532073489526
+        },
+        {
+          "order": 48,
+          "time": 0.6875,
+          "energy": 0.5829089213247176,
+          "relative_change": 0.0613675524515033
+        },
+        {
+          "order": 48,
+          "time": 0.75,
+          "energy": 0.522745310660429,
+          "relative_change": 0.09660166848004192
+        },
+        {
+          "order": 96,
+          "time": 0.25,
+          "energy": 0.9054301745624977,
+          "relative_change": 3.104436870837167e-06
+        },
+        {
+          "order": 96,
+          "time": 0.3125,
+          "energy": 0.8623943785659578,
+          "relative_change": 2.205228591875917e-06
+        },
+        {
+          "order": 96,
+          "time": 0.4375,
+          "energy": 0.7776893214292117,
+          "relative_change": 5.781716019848005e-07
+        },
+        {
+          "order": 96,
+          "time": 0.5625,
+          "energy": 0.6872072106195598,
+          "relative_change": 1.818086075699689e-06
+        },
+        {
+          "order": 96,
+          "time": 0.6875,
+          "energy": 0.582880943618313,
+          "relative_change": 4.799900684853137e-05
+        },
+        {
+          "order": 96,
+          "time": 0.75,
+          "energy": 0.5225982098314658,
+          "relative_change": 0.0002814797796774428
+        },
+        {
+          "order": 192,
+          "time": 0.25,
+          "energy": 0.9054302814049451,
+          "relative_change": 1.1800184898614878e-07
+        },
+        {
+          "order": 192,
+          "time": 0.3125,
+          "energy": 0.8623944494136517,
+          "relative_change": 8.215230742950475e-08
+        },
+        {
+          "order": 192,
+          "time": 0.4375,
+          "energy": 0.7776893398627176,
+          "relative_change": 2.3702917089150612e-08
+        },
+        {
+          "order": 192,
+          "time": 0.5625,
+          "energy": 0.6872072119024208,
+          "relative_change": 1.866774704049511e-09
+        },
+        {
+          "order": 192,
+          "time": 0.6875,
+          "energy": 0.5828809436426359,
+          "relative_change": 4.172872232498776e-11
+        },
+        {
+          "order": 192,
+          "time": 0.75,
+          "energy": 0.5225982098289744,
+          "relative_change": 4.7672196735502934e-12
+        }
+      ],
+      "reference_energy_error": 0.09456971859505492,
+      "energy_range_satisfied": true,
+      "reference_normalization_satisfied": false,
+      "finest_quadrature_change_satisfied": true
+    },
+    "eq45_bipolar": {
+      "candidate_sha256": "8027075948fc4cbbf0c79cf080729b543c7a7d00b011a4b35b582b95deab5970",
+      "rows": [
+        {
+          "order": 24,
+          "time": 0.25,
+          "energy": 0.3042245457608303,
+          "relative_change": null
+        },
+        {
+          "order": 24,
+          "time": 0.3125,
+          "energy": 0.2908749849136973,
+          "relative_change": null
+        },
+        {
+          "order": 24,
+          "time": 0.4375,
+          "energy": 0.26114037072100105,
+          "relative_change": null
+        },
+        {
+          "order": 24,
+          "time": 0.5625,
+          "energy": 0.22546377918352883,
+          "relative_change": null
+        },
+        {
+          "order": 24,
+          "time": 0.6875,
+          "energy": 0.17916753391550985,
+          "relative_change": null
+        },
+        {
+          "order": 24,
+          "time": 0.75,
+          "energy": 0.15006069968795266,
+          "relative_change": null
+        },
+        {
+          "order": 48,
+          "time": 0.25,
+          "energy": 0.3053125659199106,
+          "relative_change": 0.0035636271825303144
+        },
+        {
+          "order": 48,
+          "time": 0.3125,
+          "energy": 0.29252379822983293,
+          "relative_change": 0.005636510007436007
+        },
+        {
+          "order": 48,
+          "time": 0.4375,
+          "energy": 0.26496286934612434,
+          "relative_change": 0.014426544498693196
+        },
+        {
+          "order": 48,
+          "time": 0.5625,
+          "energy": 0.23430311364172368,
+          "relative_change": 0.03772606484312967
+        },
+        {
+          "order": 48,
+          "time": 0.6875,
+          "energy": 0.19884328845218985,
+          "relative_change": 0.09895106186302517
+        },
+        {
+          "order": 48,
+          "time": 0.75,
+          "energy": 0.17827709075515036,
+          "relative_change": 0.15827266951506802
+        },
+        {
+          "order": 96,
+          "time": 0.25,
+          "energy": 0.3053128054439315,
+          "relative_change": 7.845200616543381e-07
+        },
+        {
+          "order": 96,
+          "time": 0.3125,
+          "energy": 0.29252398372441835,
+          "relative_change": 6.341175279111814e-07
+        },
+        {
+          "order": 96,
+          "time": 0.4375,
+          "energy": 0.26496300456508837,
+          "relative_change": 5.103314866456366e-07
+        },
+        {
+          "order": 96,
+          "time": 0.5625,
+          "energy": 0.23430410159827925,
+          "relative_change": 4.216556811535065e-06
+        },
+        {
+          "order": 96,
+          "time": 0.6875,
+          "energy": 0.19886322066268627,
+          "relative_change": 0.00010023075373115543
+        },
+        {
+          "order": 96,
+          "time": 0.75,
+          "energy": 0.17837708372889832,
+          "relative_change": 0.0005605707395684079
+        },
+        {
+          "order": 192,
+          "time": 0.25,
+          "energy": 0.3053128140696095,
+          "relative_change": 2.825193556309143e-08
+        },
+        {
+          "order": 192,
+          "time": 0.3125,
+          "energy": 0.2925239903174862,
+          "relative_change": 2.2538554401216115e-08
+        },
+        {
+          "order": 192,
+          "time": 0.4375,
+          "energy": 0.26496300724252564,
+          "relative_change": 1.0104947478351717e-08
+        },
+        {
+          "order": 192,
+          "time": 0.5625,
+          "energy": 0.2343041020656969,
+          "relative_change": 1.9949188085560543e-09
+        },
+        {
+          "order": 192,
+          "time": 0.6875,
+          "energy": 0.19886322068521814,
+          "relative_change": 1.1330333072564947e-10
+        },
+        {
+          "order": 192,
+          "time": 0.75,
+          "energy": 0.17837708373541278,
+          "relative_change": 3.6520698203901245e-11
+        }
+      ],
+      "reference_energy_error": 0.6946871859303905,
+      "energy_range_satisfied": true,
+      "reference_normalization_satisfied": false,
+      "finest_quadrature_change_satisfied": true
+    }
+  }
+}

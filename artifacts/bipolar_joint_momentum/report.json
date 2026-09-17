@@ -1,0 +1,315 @@
+{
+  "theta_objective_enabled": true,
+  "theta_cache_replay_error": 8.143485885625523e-14,
+  "theta_training_loss": 1.3138310137419882,
+  "odd_phi03_extension": true,
+  "training_quadrature_order": 96,
+  "multistart_trials": [
+    {
+      "start": 0,
+      "optimizer_success": true,
+      "physical_constraints_satisfied": true,
+      "objective": 1.703208058367915,
+      "initial_energy_error": -1.532107773982716e-14,
+      "parameters": [
+        1.7730041746381944,
+        3.8077963815075733,
+        4.0,
+        1.35135977488702,
+        2.453983090497172,
+        -3.9999999999998535,
+        3.9999999999999067,
+        2.2349596642126983e-15,
+        0.0
+      ]
+    },
+    {
+      "start": 1,
+      "optimizer_success": true,
+      "physical_constraints_satisfied": true,
+      "objective": 1.7032080583679647,
+      "initial_energy_error": -1.0658141036401503e-14,
+      "parameters": [
+        1.773004101399176,
+        3.80779865931896,
+        4.0,
+        1.351359792397693,
+        2.4539813220927913,
+        -3.9999999999999867,
+        3.999999999999994,
+        6.658001626011377e-17,
+        0.0
+      ]
+    },
+    {
+      "start": 2,
+      "optimizer_success": false,
+      "physical_constraints_satisfied": false,
+      "objective": 1.7284047109082945,
+      "initial_energy_error": -0.2363594525599534,
+      "parameters": [
+        1.7827681396747599,
+        4.0,
+        4.0,
+        0.5541552920350268,
+        -4.0,
+        -4.0,
+        -4.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "start": 3,
+      "optimizer_success": true,
+      "physical_constraints_satisfied": true,
+      "objective": 1.703208058370943,
+      "initial_energy_error": 6.581402089977928e-13,
+      "parameters": [
+        1.7730038275601,
+        3.8078071760105288,
+        4.0,
+        1.351359857869761,
+        2.453974710069696,
+        -3.9999999999999685,
+        3.9999999999999547,
+        1.8136897446540156e-15,
+        6.056954728896578e-16
+      ]
+    },
+    {
+      "start": 4,
+      "optimizer_success": true,
+      "physical_constraints_satisfied": true,
+      "objective": 1.7032080583680531,
+      "initial_energy_error": 2.5091040356528538e-14,
+      "parameters": [
+        1.7730041707605502,
+        3.807796502105072,
+        4.0,
+        1.3513597758140685,
+        2.453982996872262,
+        -4.0,
+        4.0,
+        0.0,
+        2.0899399772976988e-16
+      ]
+    },
+    {
+      "start": 5,
+      "optimizer_success": true,
+      "physical_constraints_satisfied": true,
+      "objective": 1.703208058368002,
+      "initial_energy_error": -2.220446049250313e-15,
+      "parameters": [
+        1.7730042313811658,
+        3.8077946167405248,
+        3.999999999999971,
+        1.3513597613203772,
+        2.453984460594254,
+        -4.0,
+        4.0,
+        0.0,
+        9.599958683734246e-16
+      ]
+    },
+    {
+      "start": 6,
+      "optimizer_success": true,
+      "physical_constraints_satisfied": true,
+      "objective": 1.7032080583683955,
+      "initial_energy_error": 4.929390229335695e-14,
+      "parameters": [
+        1.7730043005251113,
+        3.80779246629105,
+        3.9999999999993623,
+        1.351359744788831,
+        2.453986130120354,
+        -4.0,
+        4.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "start": 7,
+      "optimizer_success": true,
+      "physical_constraints_satisfied": true,
+      "objective": 1.7032080583681588,
+      "initial_energy_error": 1.0436096431476471e-14,
+      "parameters": [
+        1.773004120859451,
+        3.807798054081566,
+        3.999999999999751,
+        1.351359787744938,
+        2.4539817919772977,
+        -4.0,
+        4.0,
+        0.0,
+        6.32831127590504e-15
+      ]
+    },
+    {
+      "start": 8,
+      "optimizer_success": true,
+      "physical_constraints_satisfied": true,
+      "objective": 1.7032080583680533,
+      "initial_energy_error": -1.7985612998927536e-14,
+      "parameters": [
+        1.7730041295317998,
+        3.8077977843640505,
+        3.999999999999693,
+        1.3513597856715487,
+        2.453982001373444,
+        -4.0,
+        4.0,
+        0.0,
+        2.4995637329731016e-15
+      ]
+    },
+    {
+      "start": 9,
+      "optimizer_success": true,
+      "physical_constraints_satisfied": true,
+      "objective": 1.7032080583680596,
+      "initial_energy_error": -8.881784197001252e-16,
+      "parameters": [
+        1.7730041054743686,
+        3.8077985325751382,
+        3.999999999999928,
+        1.3513597914233697,
+        2.4539814204921955,
+        -4.0,
+        4.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "start": 10,
+      "optimizer_success": false,
+      "physical_constraints_satisfied": false,
+      "objective": 1.771223886765704,
+      "initial_energy_error": -0.11913325904246208,
+      "parameters": [
+        2.027596390558425,
+        4.0,
+        4.0,
+        0.5485238582411395,
+        -4.0,
+        -4.0,
+        -4.0,
+        1.5931700403370996e-13,
+        0.0
+      ]
+    },
+    {
+      "start": 11,
+      "optimizer_success": true,
+      "physical_constraints_satisfied": true,
+      "objective": 1.703208058367983,
+      "initial_energy_error": -4.440892098500626e-16,
+      "parameters": [
+        1.7730042016301313,
+        3.807795542029529,
+        3.9999999999999996,
+        1.3513597684335317,
+        2.4539837422359407,
+        -4.0,
+        4.0,
+        3.8841867626890204e-15,
+        5.711748836211589e-15
+      ]
+    }
+  ],
+  "energy_balance_enforced_as_equality": false,
+  "parent_sha256": "c0e27269adfb6f305c2c0b5a2483f9eddd54f79691f69cacd7bb735ba592a702",
+  "candidate_sha256": "5504217243056127e19e6e44fa2ca1e35cc4ba1cb5448d2621dd0e2cc1d2ff93",
+  "modes": [
+    [
+      "phi",
+      1
+    ],
+    [
+      "phi",
+      3
+    ],
+    [
+      "phi",
+      5
+    ],
+    [
+      "swirl",
+      0
+    ],
+    [
+      "swirl",
+      2
+    ],
+    [
+      "swirl",
+      4
+    ],
+    [
+      "swirl",
+      6
+    ]
+  ],
+  "parameters": [
+    1.7730041746381944,
+    3.8077963815075733,
+    4.0,
+    1.35135977488702,
+    2.453983090497172,
+    -3.9999999999998535,
+    3.9999999999999067,
+    2.2349596642126983e-15,
+    0.0
+  ],
+  "optimizer_success": true,
+  "message": "Optimization terminated successfully",
+  "training_equality_defects": [
+    -1.532107773982716e-14,
+    -0.3366880863859303,
+    -0.3372273447164722,
+    -0.40285964688360737
+  ],
+  "core_ratios": [
+    1.050000000000004,
+    0.949999999999997,
+    1.0059971726203283
+  ],
+  "holdout": [
+    {
+      "time": 0.34375,
+      "energy": 0.925981512999144,
+      "required_work": -0.3406058410419699,
+      "force_work": 2.2906574084893717e-15,
+      "balance_defect": -0.34060584104197217
+    },
+    {
+      "time": 0.46875,
+      "energy": 0.826933780809873,
+      "required_work": -0.33677180951874847,
+      "force_work": 1.9365124440644196e-15,
+      "balance_defect": -0.3367718095187504
+    },
+    {
+      "time": 0.59375,
+      "energy": 0.7229557315527808,
+      "required_work": -0.3553660602202557,
+      "force_work": 1.2162380342211898e-15,
+      "balance_defect": -0.3553660602202569
+    },
+    {
+      "time": 0.71875,
+      "energy": 0.6035573767168032,
+      "required_work": -0.42474480837866,
+      "force_work": 4.771288489849943e-16,
+      "balance_defect": -0.4247448083786605
+    }
+  ],
+  "pde_validated": false,
+  "scope": "Six baseline velocity modes, optionally one autonomous odd Phi(0,3) extension with unchanged coefficient bounds; original bounded two-parameter force. Initial energy1; central component ratios constrained [.95,1.05]. Energy identity plus theta momentum objective; radial/axial pressure-aware momentum unoptimized. Failed optimizer results retained without promotion.",
+  "objective_definition": "sum of three energy-defect squares + 64*mean(theta_residual\u00b2) over 512 uniform points and three times; autonomous optimization weights, acceptance gates unchanged"
+}

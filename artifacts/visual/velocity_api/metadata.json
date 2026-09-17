@@ -1,0 +1,33 @@
+{
+  "family": "coupled_velocity_v1",
+  "candidate_sha256": "a8c9e4b4536409e91c3cd06937e625f2085c475ad7f8c717ccd23c83d804e381",
+  "components": [
+    "u",
+    "v",
+    "w"
+  ],
+  "coordinates": "right-handed Cartesian x,y,z",
+  "units": "dimensionless; no physical unit or OpenAI scene calibration claimed",
+  "time_interval": [
+    0.25,
+    0.75
+  ],
+  "compact_support": "x\u00b2+y\u00b2<4 and |z|<2; exact zero exterior",
+  "visual_correspondence": "not verified",
+  "pde_acceptance": "failed; see coupled_joint validation",
+  "grid_layout": [
+    "time",
+    "x",
+    "y",
+    "z",
+    "component"
+  ],
+  "grid_shape": [
+    3,
+    17,
+    17,
+    17,
+    3
+  ],
+  "grid_npz_sha256": "3ac3a589ab2a94a78621ec3c93f8e6881681c6b8c80c09beb4b58420ee9a7016"
+}

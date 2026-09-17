@@ -1,0 +1,311 @@
+{
+  "odd_phi03_extension": true,
+  "training_quadrature_order": 96,
+  "multistart_trials": [
+    {
+      "start": 0,
+      "optimizer_success": true,
+      "physical_constraints_satisfied": true,
+      "objective": 0.03918972430924611,
+      "initial_energy_error": -3.3306690738754696e-16,
+      "parameters": [
+        1.9299524549250904,
+        -4.0,
+        4.0,
+        1.5563309901091826,
+        -4.0,
+        -1.3140336680545224,
+        -3.999999999999956,
+        1.120293302597533e-17,
+        8.203581757532006e-17
+      ]
+    },
+    {
+      "start": 1,
+      "optimizer_success": true,
+      "physical_constraints_satisfied": true,
+      "objective": 0.0391897243092458,
+      "initial_energy_error": -8.881784197001252e-16,
+      "parameters": [
+        1.9299524549250904,
+        -4.0,
+        3.999999999999999,
+        1.5563309901091826,
+        -3.9999999999999996,
+        -1.314033668054527,
+        -4.0,
+        9.65117711156278e-17,
+        7.721815721477239e-17
+      ]
+    },
+    {
+      "start": 2,
+      "optimizer_success": false,
+      "physical_constraints_satisfied": false,
+      "objective": 0.13750129160253602,
+      "initial_energy_error": -0.23641048325421066,
+      "parameters": [
+        1.7827639381585367,
+        3.9999999999999982,
+        3.999999999999999,
+        0.554382244813812,
+        -3.9999999999999996,
+        -4.0,
+        -3.9999999999999996,
+        4.550841984541346e-19,
+        1.0429565820469674e-14
+      ]
+    },
+    {
+      "start": 3,
+      "optimizer_success": true,
+      "physical_constraints_satisfied": true,
+      "objective": 0.039189724309245555,
+      "initial_energy_error": -1.7763568394002505e-15,
+      "parameters": [
+        1.9299524549250904,
+        -3.9999999999999982,
+        4.0,
+        1.5563309901091846,
+        -3.999999999999995,
+        -1.3140336680545486,
+        -3.999999999999986,
+        1.5122697954949218e-17,
+        0.0
+      ]
+    },
+    {
+      "start": 4,
+      "optimizer_success": true,
+      "physical_constraints_satisfied": true,
+      "objective": 0.03918972430957755,
+      "initial_energy_error": 8.903988657493755e-13,
+      "parameters": [
+        1.9299524549250904,
+        -3.9999999999999996,
+        4.0,
+        1.5563309901091085,
+        -3.9999999999999947,
+        -1.3140336680467017,
+        -3.9999999999999774,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "start": 5,
+      "optimizer_success": true,
+      "physical_constraints_satisfied": true,
+      "objective": 0.03918972431155245,
+      "initial_energy_error": 6.211475778172826e-12,
+      "parameters": [
+        1.9299524549250902,
+        -4.0,
+        3.999999999999999,
+        1.5563309901089417,
+        -3.999999999999999,
+        -1.3140336680019298,
+        -3.999999999999991,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "start": 6,
+      "optimizer_success": true,
+      "physical_constraints_satisfied": true,
+      "objective": 0.039189724309328336,
+      "initial_energy_error": 2.2026824808563106e-13,
+      "parameters": [
+        1.9299524549250904,
+        -3.999999999999998,
+        3.9999999999999973,
+        1.5563309901091515,
+        -4.0,
+        -1.3140336680524953,
+        -4.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "start": 7,
+      "optimizer_success": true,
+      "physical_constraints_satisfied": true,
+      "objective": 0.0391897243095721,
+      "initial_energy_error": 8.855138844410249e-13,
+      "parameters": [
+        1.9299524549250902,
+        -4.0,
+        4.0,
+        1.556330990109301,
+        -3.999999999999998,
+        -1.3140336680481046,
+        -3.9999999999999822,
+        7.798796357493894e-17,
+        0.0
+      ]
+    },
+    {
+      "start": 8,
+      "optimizer_success": true,
+      "physical_constraints_satisfied": true,
+      "objective": 0.039189724309246714,
+      "initial_energy_error": -4.440892098500626e-16,
+      "parameters": [
+        1.929952454925085,
+        -4.0,
+        4.0,
+        1.5563309901091853,
+        -4.0,
+        -1.3140336680545275,
+        -4.0,
+        2.9355948233577585e-16,
+        1.7470408280908903e-16
+      ]
+    },
+    {
+      "start": 9,
+      "optimizer_success": true,
+      "physical_constraints_satisfied": true,
+      "objective": 0.03918972430926115,
+      "initial_energy_error": 4.1300296516055823e-14,
+      "parameters": [
+        1.9299524549250906,
+        -3.9999999999999867,
+        4.0,
+        1.5563309901092046,
+        -4.0,
+        -1.3140336680543403,
+        -4.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "start": 10,
+      "optimizer_success": false,
+      "physical_constraints_satisfied": false,
+      "objective": 0.1644253811767516,
+      "initial_energy_error": -0.11913325904128724,
+      "parameters": [
+        2.0275963905622505,
+        4.0,
+        4.0,
+        0.5485238582443708,
+        -4.0,
+        -3.9999999999999996,
+        -3.9999999999993765,
+        2.6752607154210883e-15,
+        4.3722838534552265e-12
+      ]
+    },
+    {
+      "start": 11,
+      "optimizer_success": true,
+      "physical_constraints_satisfied": true,
+      "objective": 0.039189724309246284,
+      "initial_energy_error": 2.220446049250313e-16,
+      "parameters": [
+        1.9299524549250897,
+        -4.0,
+        4.0,
+        1.5563309901091829,
+        -4.0,
+        -1.314033668054518,
+        -3.9999999999999982,
+        3.648299862070553e-16,
+        0.0
+      ]
+    }
+  ],
+  "energy_balance_enforced_as_equality": false,
+  "parent_sha256": "c0e27269adfb6f305c2c0b5a2483f9eddd54f79691f69cacd7bb735ba592a702",
+  "candidate_sha256": "3ec5146c5f6110172173d07b9235023e4c54ea83eb7262da830e63021f613bd6",
+  "modes": [
+    [
+      "phi",
+      1
+    ],
+    [
+      "phi",
+      3
+    ],
+    [
+      "phi",
+      5
+    ],
+    [
+      "swirl",
+      0
+    ],
+    [
+      "swirl",
+      2
+    ],
+    [
+      "swirl",
+      4
+    ],
+    [
+      "swirl",
+      6
+    ]
+  ],
+  "parameters": [
+    1.9299524549250904,
+    -3.9999999999999982,
+    4.0,
+    1.5563309901091846,
+    -3.999999999999995,
+    -1.3140336680545486,
+    -3.999999999999986,
+    1.5122697954949218e-17,
+    0.0
+  ],
+  "optimizer_success": true,
+  "message": "Optimization terminated successfully",
+  "training_equality_defects": [
+    -1.7763568394002505e-15,
+    -0.10341462303221138,
+    -0.10568360064445366,
+    -0.13162870738245058
+  ],
+  "core_ratios": [
+    0.9980061788904013,
+    1.0500000000000012,
+    1.05
+  ],
+  "holdout": [
+    {
+      "time": 0.34375,
+      "energy": 0.9332877175487059,
+      "required_work": -0.10694314193849427,
+      "force_work": 6.469482823126655e-18,
+      "balance_defect": -0.10694314193849427
+    },
+    {
+      "time": 0.46875,
+      "energy": 0.8389761495418993,
+      "required_work": -0.10549308452041481,
+      "force_work": 5.433757786903707e-18,
+      "balance_defect": -0.10549308452041481
+    },
+    {
+      "time": 0.59375,
+      "energy": 0.735310956775543,
+      "required_work": -0.11274769482079565,
+      "force_work": 3.3215342460378454e-18,
+      "balance_defect": -0.11274769482079565
+    },
+    {
+      "time": 0.71875,
+      "energy": 0.6142691421363158,
+      "required_work": -0.13901497738148372,
+      "force_work": 1.229026741725211e-18,
+      "balance_defect": -0.13901497738148372
+    }
+  ],
+  "pde_validated": false,
+  "scope": "Seven velocity modes including an explicit autonomous odd Phi(0,3) extension with unchanged coefficient bounds and original bounded two-parameter force. Initial energy1; central component ratios constrained [.95,1.05]. Energy identity only, full momentum unoptimized. Failed optimizer results retained without promotion."
+}

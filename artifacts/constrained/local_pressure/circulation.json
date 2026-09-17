@@ -1,0 +1,45 @@
+{
+  "scope": "numerical pressure-independent estimate; not interval-certified",
+  "time": 0.75,
+  "rectangle_r0_r1_z0_z1": [
+    0.6,
+    1.0,
+    0.2,
+    0.6
+  ],
+  "selection": "largest estimate among25 predefined .4-wide development rectangles",
+  "identity": "integral grad(p) dot dl=0 on closed rectangle; sup residual >=abs(circulation)/perimeter",
+  "refinement": "first vary derivative step at order96, then quadrature at fixed step.00125",
+  "rows": [
+    {
+      "quadrature_order": 96,
+      "derivative_step": 0.005,
+      "circulation": 0.5741026540489186,
+      "estimated_sup_residual_lower_bound": 0.3588141587805741
+    },
+    {
+      "quadrature_order": 96,
+      "derivative_step": 0.0025,
+      "circulation": 0.572314391920794,
+      "estimated_sup_residual_lower_bound": 0.35769649495049627
+    },
+    {
+      "quadrature_order": 96,
+      "derivative_step": 0.00125,
+      "circulation": 0.5714367693899176,
+      "estimated_sup_residual_lower_bound": 0.3571479808686985
+    },
+    {
+      "quadrature_order": 32,
+      "derivative_step": 0.00125,
+      "circulation": 0.571436769389958,
+      "estimated_sup_residual_lower_bound": 0.35714798086872374
+    },
+    {
+      "quadrature_order": 64,
+      "derivative_step": 0.00125,
+      "circulation": 0.5714367693899751,
+      "estimated_sup_residual_lower_bound": 0.35714798086873445
+    }
+  ]
+}

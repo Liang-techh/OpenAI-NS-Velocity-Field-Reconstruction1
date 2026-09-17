@@ -1,0 +1,189 @@
+{
+  "parent_sha256": "c0e27269adfb6f305c2c0b5a2483f9eddd54f79691f69cacd7bb735ba592a702",
+  "candidate_sha256": "f5d27271f9ca5f9313baa898f3d51b2d233cce678732406487d7973b148c5565",
+  "optimizer_success": true,
+  "message": "Optimization terminated successfully",
+  "coefficients": [
+    1.481482125735839,
+    3.247450426846306,
+    -2.2150672054368883,
+    3.9999999999999973
+  ],
+  "force_c": 0.011187952357887247,
+  "initial_energy": 1.0000000000006035,
+  "core_swirl_ratio": 1.0471571476622794,
+  "train_seed": 9172607,
+  "holdout_seed": 9172608,
+  "rows": [
+    {
+      "candidate": "base",
+      "step": 0.01,
+      "time": 0.25,
+      "sampled_max": 0.5691746716477883,
+      "L2_estimate": 1.10849282791022
+    },
+    {
+      "candidate": "child",
+      "step": 0.01,
+      "time": 0.25,
+      "sampled_max": 0.49183564064797014,
+      "L2_estimate": 1.078191501403167
+    },
+    {
+      "candidate": "base",
+      "step": 0.01,
+      "time": 0.3125,
+      "sampled_max": 0.6523349914379043,
+      "L2_estimate": 1.2217664892055131
+    },
+    {
+      "candidate": "child",
+      "step": 0.01,
+      "time": 0.3125,
+      "sampled_max": 0.561218780191085,
+      "L2_estimate": 1.1705856319687384
+    },
+    {
+      "candidate": "base",
+      "step": 0.01,
+      "time": 0.4375,
+      "sampled_max": 0.8822737968406401,
+      "L2_estimate": 1.4563823666370357
+    },
+    {
+      "candidate": "child",
+      "step": 0.01,
+      "time": 0.4375,
+      "sampled_max": 0.7631456077839466,
+      "L2_estimate": 1.3788484721278451
+    },
+    {
+      "candidate": "base",
+      "step": 0.01,
+      "time": 0.5625,
+      "sampled_max": 1.2487782391269335,
+      "L2_estimate": 1.7478345156455821
+    },
+    {
+      "candidate": "child",
+      "step": 0.01,
+      "time": 0.5625,
+      "sampled_max": 1.1010595895951134,
+      "L2_estimate": 1.653370792621144
+    },
+    {
+      "candidate": "base",
+      "step": 0.01,
+      "time": 0.6875,
+      "sampled_max": 2.081743596324786,
+      "L2_estimate": 2.222622752628644
+    },
+    {
+      "candidate": "child",
+      "step": 0.01,
+      "time": 0.6875,
+      "sampled_max": 1.8064003298512297,
+      "L2_estimate": 2.120078400246478
+    },
+    {
+      "candidate": "base",
+      "step": 0.01,
+      "time": 0.75,
+      "sampled_max": 2.9997830457206183,
+      "L2_estimate": 2.6848253351752667
+    },
+    {
+      "candidate": "child",
+      "step": 0.01,
+      "time": 0.75,
+      "sampled_max": 2.5732472514535427,
+      "L2_estimate": 2.578783030700488
+    },
+    {
+      "candidate": "base",
+      "step": 0.005,
+      "time": 0.25,
+      "sampled_max": 0.569053174204807,
+      "L2_estimate": 1.1083779053183742
+    },
+    {
+      "candidate": "child",
+      "step": 0.005,
+      "time": 0.25,
+      "sampled_max": 0.4916986424459477,
+      "L2_estimate": 1.0780819548741205
+    },
+    {
+      "candidate": "base",
+      "step": 0.005,
+      "time": 0.3125,
+      "sampled_max": 0.6524212158803915,
+      "L2_estimate": 1.2218484008435593
+    },
+    {
+      "candidate": "child",
+      "step": 0.005,
+      "time": 0.3125,
+      "sampled_max": 0.5613003994777872,
+      "L2_estimate": 1.1706550923802295
+    },
+    {
+      "candidate": "base",
+      "step": 0.005,
+      "time": 0.4375,
+      "sampled_max": 0.8824142805758085,
+      "L2_estimate": 1.4565415687205345
+    },
+    {
+      "candidate": "child",
+      "step": 0.005,
+      "time": 0.4375,
+      "sampled_max": 0.7633327845410832,
+      "L2_estimate": 1.3789747168194588
+    },
+    {
+      "candidate": "base",
+      "step": 0.005,
+      "time": 0.5625,
+      "sampled_max": 1.2493843255913168,
+      "L2_estimate": 1.7481395167046379
+    },
+    {
+      "candidate": "child",
+      "step": 0.005,
+      "time": 0.5625,
+      "sampled_max": 1.101465679475601,
+      "L2_estimate": 1.653609741607276
+    },
+    {
+      "candidate": "base",
+      "step": 0.005,
+      "time": 0.6875,
+      "sampled_max": 2.083609776644764,
+      "L2_estimate": 2.223243768118677
+    },
+    {
+      "candidate": "child",
+      "step": 0.005,
+      "time": 0.6875,
+      "sampled_max": 1.8072043411038436,
+      "L2_estimate": 2.1205758810355957
+    },
+    {
+      "candidate": "base",
+      "step": 0.005,
+      "time": 0.75,
+      "sampled_max": 2.996650076541145,
+      "L2_estimate": 2.683338848943227
+    },
+    {
+      "candidate": "child",
+      "step": 0.005,
+      "time": 0.75,
+      "sampled_max": 2.567617786457137,
+      "L2_estimate": 2.5774713826438505
+    }
+  ],
+  "pde_validated": false,
+  "scope": "Four existing even-eta swirl modes; fixed poloidal field. Initial energy and 95% central swirl floor constrained. Theta-only loss; other momentum/energy balance must be checked. Same fitted force for comparator. No default promotion."
+}
