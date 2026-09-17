@@ -1,6 +1,6 @@
 """Fail-closed source governance for the paper Eq. (4.1)/(4.5) backbone.
 
-This module validates provenance and representation metadata only.  It does not
+This module validates provenance and representation metadata only. It does not
 validate a numerical q solver, profile fit, Navier--Stokes residual, visual
 correspondence, or paper-exact recovery.
 """
@@ -10,13 +10,24 @@ import json
 from pathlib import Path
 from typing import Any, Mapping
 
-_ALLOWED_CLASSES = {"user_required", "public_source", "autonomous", "pending"}
+_ALLOWED_CLASSES = {
+    "user_requirement",
+    "public_source_fact",
+    "autonomous_design",
+    "pending_unknown",
+}
 _REQUIRED_FALSE_CLAIMS = (
     "final_profiles_numerically_identified",
     "full_constructed_field_recovered",
     "openai_correspondence_verified",
     "pde_validated",
     "paper_exact",
+)
+_EXPECTED_CLASSIFICATIONS = (
+    ("Eq. (4.1) similarity coordinates", "public_source_fact"),
+    ("callable velocity(x,y,z,t)", "user_requirement"),
+    ("finite numerical choices", "autonomous_design"),
+    ("final numerical profile data", "pending_unknown"),
 )
 
 _EXPECTED_COORDINATE = {
@@ -53,6 +64,12 @@ def _read_json(path: Path) -> dict[str, Any]:
     return value
 
 
+def _classification_for(rows: list[Mapping[str, Any]], fragment: str) -> str:
+    matches = [row for row in rows if fragment in str(row.get("item", ""))]
+    _require(len(matches) == 1, f"expected one source classification row matching {fragment!r}")
+    return str(matches[0].get("classification"))
+
+
 def audit_eq45_source_contract(
     contract: Mapping[str, Any], *, repo_root: str | Path
 ) -> dict[str, Any]:
@@ -85,10 +102,11 @@ def audit_eq45_source_contract(
         _require(velocity.get(key) == expected, f"Eq. (4.5) velocity drift: {key}")
     _require(velocity.get("leading_field_only") is True, "Eq. (4.5) scope must remain leading-field only")
 
-    rows = contract.get("source_classification")
-    _require(isinstance(rows, list) and rows, "source_classification must be nonempty")
+    rows_raw = contract.get("source_classification")
+    _require(isinstance(rows_raw, list) and rows_raw, "source_classification must be nonempty")
+    rows: list[Mapping[str, Any]] = []
     observed: set[str] = set()
-    for row in rows:
+    for row in rows_raw:
         _require(isinstance(row, Mapping), "source classification row must be an object")
         classification = row.get("classification")
         _require(classification in _ALLOWED_CLASSES, f"invalid source classification: {classification!r}")
@@ -96,7 +114,14 @@ def audit_eq45_source_contract(
         path = row.get("source")
         _require(isinstance(path, str) and path, "source classification row lacks source")
         _require((root / path).is_file(), f"source path does not exist: {path}")
+        rows.append(row)
     _require(observed == _ALLOWED_CLASSES, "source classification coverage is incomplete")
+    for fragment, expected_class in _EXPECTED_CLASSIFICATIONS:
+        actual_class = _classification_for(rows, fragment)
+        _require(
+            actual_class == expected_class,
+            f"source classification drift for {fragment!r}: expected {expected_class!r}",
+        )
 
     status = contract.get("claim_status")
     _require(isinstance(status, Mapping), "missing claim_status")

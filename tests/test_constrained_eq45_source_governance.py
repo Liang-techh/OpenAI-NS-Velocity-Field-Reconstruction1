@@ -32,10 +32,10 @@ def test_repository_eq45_source_contract_is_truthful() -> None:
     assert result["pde_validated"] is False
     assert result["paper_exact"] is False
     assert set(result["source_classes"]) == {
-        "autonomous",
-        "pending",
-        "public_source",
-        "user_required",
+        "autonomous_design",
+        "pending_unknown",
+        "public_source_fact",
+        "user_requirement",
     }
 
 
@@ -66,4 +66,20 @@ def test_leading_formula_cannot_promote_stronger_claims(tmp_path: Path) -> None:
     mutated = copy.deepcopy(contract)
     mutated["velocity_contract"]["leading_field_only"] = False
     with pytest.raises(ValueError, match="leading-field only"):
+        audit_eq45_source_contract(mutated, repo_root=root)
+
+
+def test_legacy_source_class_alias_fails_closed(tmp_path: Path) -> None:
+    root, contract = _fixture_repo(tmp_path)
+    mutated = copy.deepcopy(contract)
+    mutated["source_classification"][0]["classification"] = "public_source"
+    with pytest.raises(ValueError, match="invalid source classification"):
+        audit_eq45_source_contract(mutated, repo_root=root)
+
+
+def test_pending_profile_data_cannot_be_reclassified_as_public_fact(tmp_path: Path) -> None:
+    root, contract = _fixture_repo(tmp_path)
+    mutated = copy.deepcopy(contract)
+    mutated["source_classification"][3]["classification"] = "public_source_fact"
+    with pytest.raises(ValueError, match="source classification coverage is incomplete|source classification drift"):
         audit_eq45_source_contract(mutated, repo_root=root)
