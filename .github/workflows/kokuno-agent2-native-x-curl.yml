@@ -28,7 +28,7 @@ jobs:
       - name: Focused structural tests
         run: >-
           python -m pytest -q -W error
-          tests/test_constrained_kokuno_similarity_coordinates.py
+          tests/test_constrained_kokuno_reference_continuation.py
           tests/test_constrained_kokuno_complete_curl.py
           tests/test_constrained_kokuno_native_x_curl.py
       - name: Generate frozen post-core diagnostic
