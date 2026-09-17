@@ -2,7 +2,9 @@
   "objective": "computable_3d_velocity_components_corresponding_to_openai_visualization",
   "migration": "complete",
   "integration_branch": "codex/cr001-constraints",
-  "status_snapshot_base_head": "3a1d61dfcd209d6101c2da8f5d953a4868780eb0",
+  "status_snapshot_base_head": "412e6c35ce7c59e360ed8e40237f85d1856b75d4",
+  "active_routing_document": "docs/AGENT_ROUTING_SWIRL_SPATIAL.md",
+  "active_scientific_route": "bounded_spatial_swirl_redistribution_plus_minimal_poloidal_coordination",
   "candidate_status": "visualization_candidate_only",
   "candidate_family": "eq45_supported_velocity_candidate_v1",
   "candidate_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
@@ -64,7 +66,26 @@
   },
   "active_task_file": "docs/SCHEDULED_AGENT_TASKS.md",
   "central_coordination_issue": 15,
-  "next_integration_task": "compare source-observable central motion and whole-domain properties of explicit bipolar seed; review temporal stack dependencies before reuse",
+  "next_integration_task": "materialize one bounded interior compact swirl child from the integrated INTERIOR_C4_SWIRL capacity direction; then run a force-respecting candidate screen and fresh full-momentum/divergence validation before any promotion",
+  "latest_integrated_swirl_capacity": {
+    "integration_head": "412e6c35ce7c59e360ed8e40237f85d1856b75d4",
+    "mode": "INTERIOR_C4_SWIRL",
+    "origin": "autonomous_design_from_existing_taper_plateau_geometry",
+    "status": "capacity_only_nonzero_child_not_materialized",
+    "collar_response": "zero_on_audited_taper_collars",
+    "candidate_selection_resolved": false,
+    "visualization_ready": false,
+    "pde_validated": false
+  },
+  "integration_policy": {
+    "preferred_loop": "capacity_to_materialize_to_fit_to_fresh_validate_to_spatial_diagnostics_to_capsule_to_governance_to_integrate",
+    "avoid": [
+      "wholesale_merge_of_old_stacked_temporal_or_visual_prs",
+      "coefficient_selection_from_capacity_or_morphology_alone",
+      "new_export_formats_without_a_current_delivery_blocker",
+      "scientific_state_promotion_from_green_ci_or_visual_similarity"
+    ]
+  },
   "legacy_reference": {
     "candidate_artifact": "artifacts/constrained/coupled_joint/candidate.json",
     "role": "historical constrained candidate evidence; not the active Eq45 delivery candidate"
