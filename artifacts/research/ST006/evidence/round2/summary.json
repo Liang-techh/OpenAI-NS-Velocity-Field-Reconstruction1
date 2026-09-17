@@ -1,0 +1,23 @@
+{
+  "seed": 9172801,
+  "old_max": 0.1414098936545775,
+  "new_max": 0.10822893050403214,
+  "old_L2": 0.15352002364295086,
+  "new_L2": 0.10758432876171865,
+  "max_reduction_fraction": 0.23464385901878013,
+  "L2_reduction_fraction": 0.2992163093204515,
+  "new_gates": {
+    "momentum_max": false,
+    "momentum_L2": false,
+    "divergence_max": false,
+    "divergence_L2": true,
+    "initial_energy": true,
+    "energy_range": true,
+    "energy_quadrature": true,
+    "boundary": true,
+    "core_signs": true,
+    "scaled_core_drift": true,
+    "derived_amplitude": true
+  },
+  "target_achieved": false
+}
