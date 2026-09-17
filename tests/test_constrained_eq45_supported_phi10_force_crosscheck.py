@@ -70,14 +70,34 @@ def test_crosscheck_rejects_slope_drift() -> None:
         compare_supported_phi10_temporal_force(slope=1.39)
 
 
-def test_crosscheck_report_has_nontrivial_temporal_difference() -> None:
+def test_crosscheck_locks_observed_tradeoff_without_relaxing_force_family() -> None:
     report = compare_supported_phi10_temporal_force()
     comparison = report["finest_holdout_comparison"]
-    assert abs(float(comparison["zero_force_fractional_change"])) > 1.0e-6
-    assert abs(float(comparison["projected_force_fractional_change"])) > 1.0e-6
-    assert not np.isclose(
-        report["temporal_projection"]["fit"]["c"],
-        report["static_projection"]["fit"]["c"],
-        rtol=0.0,
-        atol=1.0e-10,
-    )
+    static_fit = report["static_projection"]["fit"]
+    temporal_fit = report["temporal_projection"]["fit"]
+
+    # The morphology-selected slope is a real velocity change, but on the
+    # independent finest holdout it raises the pressure-free obstruction by
+    # about 3.76%.  This is a tradeoff measurement, not a rejection threshold.
+    assert 0.03 < float(comparison["zero_force_fractional_change"]) < 0.05
+    assert 0.03 < float(comparison["projected_force_fractional_change"]) < 0.05
+
+    # Re-projecting the same preregistered force family remains globally tiny
+    # for both candidates; the visual trial does not create a new justification
+    # for force growth.
+    assert 0.0 <= float(comparison["static_force_reduction_fraction"]) < 1.0e-3
+    assert 0.0 <= float(comparison["temporal_force_reduction_fraction"]) < 1.0e-3
+    assert static_fit["a"] < 1.0e-10
+    assert temporal_fit["a"] < 1.0e-10
+    assert 0.07 < static_fit["c"] < 0.09
+    assert 0.07 < temporal_fit["c"] < 0.09
+
+    # The temporal trial strongly changes the radial-collar allocation even
+    # though total held-out RMS barely responds to force projection.
+    finest_temporal = report["temporal_projection"]["holdout_rows"][-1]
+    radial_gain = finest_temporal["by_region"]["radial_collar"]["rms_reduction_fraction"]
+    plateau_gain = finest_temporal["by_region"]["plateau"]["rms_reduction_fraction"]
+    assert 0.10 < float(radial_gain) < 0.15
+    assert float(plateau_gain) < 0.0
+
+    assert not np.isclose(temporal_fit["c"], static_fit["c"], rtol=0.0, atol=1.0e-10)
