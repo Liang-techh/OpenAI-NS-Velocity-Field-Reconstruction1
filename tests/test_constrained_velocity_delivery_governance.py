@@ -38,7 +38,12 @@ def test_repository_velocity_delivery_contract_is_truthful() -> None:
     assert result["visual_correspondence_verified"] is False
     assert result["pde_validated"] is False
     assert result["candidate_family"] == "coupled_velocity_v1"
-    assert set(result["source_classes"]) == {"autonomous", "pending", "public_source", "user_required"}
+    assert set(result["source_classes"]) == {
+        "autonomous_design",
+        "pending_unknown",
+        "public_source_fact",
+        "user_requirement",
+    }
 
 
 def test_visual_correspondence_cannot_be_promoted_without_evidence(tmp_path: Path) -> None:
@@ -71,5 +76,5 @@ def test_domain_or_source_classification_drift_fails_closed(tmp_path: Path) -> N
 
     mutated = copy.deepcopy(contract)
     mutated["source_classification"][0]["classification"] = "public_source"
-    with pytest.raises(ValueError, match="coverage is incomplete"):
+    with pytest.raises(ValueError, match="invalid source classification"):
         audit_velocity_delivery_contract(mutated, repo_root=root)
