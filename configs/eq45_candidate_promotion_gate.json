@@ -1,0 +1,63 @@
+{
+  "schema": "eq45_candidate_promotion_gate_v1",
+  "task_id": "CR002-EQ45-CANONICAL-PROMOTION-GATE-017",
+  "scope": "Govern promotion of the bounded optimized Eq45 research artifact separately from callable/export readiness, visual correspondence, PDE validation, and paper/OpenAI identity.",
+  "classification_vocabulary_contract": "configs/delivery_state_contract.json",
+  "inputs": {
+    "canonical_seed_artifact": "artifacts/constrained/eq45_velocity_candidate_seed.json",
+    "canonical_seed_sha256": "48f1845fcfd71ec95495c98bb7aac3fca4653e748a8856a5421234e9601525a7",
+    "optimized_artifact": "artifacts/constrained/eq45_profile_force_optimized_candidate.json",
+    "optimized_sha256": "b34902ee28b3965f245eceb5867df7409498063cb0ea80f1758931723b303c98",
+    "optimization_receipt": "artifacts/constrained/eq45_profile_force_optimization.json"
+  },
+  "source_classification": {
+    "callable_exportable_velocity_is_primary_delivery": "user_requirement",
+    "eq45_backbone": "public_source_fact",
+    "profile_parameterization_and_optimized_values": "autonomous_design",
+    "optimized_candidate_matches_public_visualization": "pending_unknown",
+    "optimized_candidate_is_exact_openai_field": "pending_unknown"
+  },
+  "current_evidence": {
+    "optimizer_converged": true,
+    "heldout_pressure_curl_obstruction_improved": true,
+    "optimized_velocity_changed_relative_rms": 0.200973334054043,
+    "artifact_roundtrip_serializable": true,
+    "candidate_local_velocity_export_ready": true,
+    "independent_public_visual_comparison": "pending_unknown",
+    "independent_visual_resolution_stability": "pending_unknown",
+    "explicit_truth_boundary_review": true,
+    "physical_support_validated": false,
+    "pde_validated": false
+  },
+  "promotion_policy": {
+    "canonical_visual_candidate_promoted": false,
+    "diagnostic_candidate_may_be_saved_loaded_exported_and_rendered": true,
+    "pde_validation_is_required_for_callable_export": false,
+    "pde_validation_is_required_for_visualization_candidate_status": false,
+    "pde_validation_is_required_for_pde_validated_status": true,
+    "optimizer_convergence_is_promotion_evidence": false,
+    "residual_reduction_is_visual_correspondence_evidence": false,
+    "serialization_or_ci_green_is_visual_correspondence_evidence": false,
+    "required_before_canonical_visual_promotion": [
+      "independent_public_visual_comparison",
+      "independent_visual_resolution_stability",
+      "explicit_truth_boundary_review"
+    ]
+  },
+  "required_false_scientific_claims": [
+    "physical_support_validated",
+    "visualization_ready",
+    "visual_correspondence_verified",
+    "pde_validated",
+    "paper_exact",
+    "openai_field_identified",
+    "blowup_proved"
+  ],
+  "truth_boundary": [
+    "The optimized Eq45 artifact is a bounded autonomous research candidate whose public velocity differs materially from the frozen seed.",
+    "Optimizer convergence, held-out obstruction reduction, serialization identity, and green CI do not establish public visual correspondence.",
+    "The optimized artifact may still be saved, loaded, exported, and rendered while PDE validation remains false.",
+    "Canonical visualization promotion requires explicit public-observable comparison and independent visual-resolution stability, but does not itself require PDE acceptance.",
+    "PDE validity, paper-exact identity, OpenAI hidden-field identity, and blow-up remain separate claims."
+  ]
+}
