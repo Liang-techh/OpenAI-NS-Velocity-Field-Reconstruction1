@@ -1,0 +1,80 @@
+{
+  "task_id": "CR008-BIPOLAR-CAPPED-SPATIAL-CHANNEL-REDISTRIBUTION-025",
+  "scope": "Independent public-[u,v,w] spatial-channel diagnostic; no coefficient search, PDE acceptance, public-image fit, or candidate promotion.",
+  "resolutions": [24, 32, 40],
+  "times": [0.3125, 0.5, 0.75],
+  "odd3_sha256": "3ec5146c5f6110172173d07b9235023e4c54ea83eb7262da830e63021f613bd6",
+  "capped_sha256": "7875214ad65f5e1ba4f7c5e362217f05ef47bc3d893e8641e8e40a85fc4e7609",
+  "coefficient_delta": {
+    "phi_max_abs": 6.8833827526759706e-15,
+    "swirl_max_abs": 2.609296672782034
+  },
+  "finest_40_cubed": [
+    {
+      "time": 0.3125,
+      "total_energy_relative_change": -4.5521620600467703e-05,
+      "radial_energy_relative_change": 5.217085643127862e-15,
+      "swirl_energy_relative_change": -8.559617264990799e-05,
+      "axial_energy_relative_change": 6.240784238746604e-15,
+      "angular_momentum_rms_relative_change": -0.0004078677757658826,
+      "radial_collar_total_relative_change": -0.004033285462060417,
+      "axial_collar_total_relative_change": -0.011733967338568236,
+      "corner_total_relative_change": -0.022655279508767966,
+      "odd3_channel_fraction": {"radial": 0.40071883507090855, "swirl": 0.5318184118956841, "axial": 0.06746275303340732},
+      "capped_channel_fraction": {"radial": 0.4007370772721027, "swirl": 0.5317970985408373, "axial": 0.06746582418705988},
+      "odd3_region_fraction": {"core": 0.42476135099445056, "inner_plateau": 0.5499977728702697, "radial_collar": 0.025240584411561944, "axial_collar": 2.2234055621135007e-07, "corner": 6.938316144502282e-08},
+      "capped_region_fraction": {"core": 0.4247953411358845, "inner_plateau": 0.5500644449685498, "radial_collar": 0.025139926339589638, "axial_collar": 2.197416223814912e-07, "corner": 6.781435354855737e-08},
+      "swirl_concentration_both": {"radial_q50": 0.790569415042095, "radial_q90": 1.1853269591129698, "axial_q50": 0.050000000000000044, "axial_q90": 0.24999999999999978}
+    },
+    {
+      "time": 0.5,
+      "total_energy_relative_change": -0.00016814888876143792,
+      "radial_energy_relative_change": 5.3936472482230436e-15,
+      "swirl_energy_relative_change": -0.00031406857022264474,
+      "axial_energy_relative_change": 6.380303927543331e-15,
+      "angular_momentum_rms_relative_change": -0.0009517801100867158,
+      "radial_collar_total_relative_change": -0.01824125631879501,
+      "axial_collar_total_relative_change": -0.010063412770142045,
+      "corner_total_relative_change": -0.019612987613201908,
+      "odd3_channel_fraction": {"radial": 0.40450252958217037, "swirl": 0.5353890987717337, "axial": 0.060108371646095976},
+      "capped_channel_fraction": {"radial": 0.40457055767187067, "swirl": 0.5353109618263426, "axial": 0.06011848050178676},
+      "odd3_region_fraction": {"core": 0.5948691615664073, "inner_plateau": 0.40172109227421243, "radial_collar": 0.0034097081844709047, "axial_collar": 2.9191748060104363e-08, "corner": 8.783161303438995e-09},
+      "capped_region_fraction": {"core": 0.595006917833394, "inner_plateau": 0.40164497085302686, "radial_collar": 0.0033480737983943693, "axial_collar": 2.890283943022578e-08, "corner": 8.612345425902887e-09},
+      "swirl_concentration_both": {"radial_q50": 0.6964194138592057, "radial_q90": 1.0124228365658294, "axial_q50": 0.050000000000000044, "axial_q90": 0.15000000000000013}
+    },
+    {
+      "time": 0.75,
+      "total_energy_relative_change": -0.00020248241328281452,
+      "radial_energy_relative_change": 5.2241203001448476e-15,
+      "swirl_energy_relative_change": -0.0003769233122414952,
+      "axial_energy_relative_change": 6.420294314914752e-15,
+      "angular_momentum_rms_relative_change": -0.0011577894632286228,
+      "radial_collar_total_relative_change": -0.10978810471013851,
+      "axial_collar_total_relative_change": -0.008267066854011415,
+      "corner_total_relative_change": -0.016513267865296666,
+      "odd3_channel_fraction": {"radial": 0.4031575975759758, "swirl": 0.5371979039478385, "axial": 0.05964449847618572},
+      "capped_channel_fraction": {"radial": 0.4032392464317257, "swirl": 0.5371041756842301, "axial": 0.05965657788404426},
+      "odd3_region_fraction": {"core": 0.914722110304542, "inner_plateau": 0.08527260692216904, "radial_collar": 5.28256814154455e-06, "axial_collar": 1.6007502806638644e-10, "corner": 4.5072227785795486e-11},
+      "capped_region_fraction": {"core": 0.9150452741133748, "inner_plateau": 0.08495002212611963, "radial_collar": 4.7035573849325305e-06, "axial_collar": 1.5878382804039578e-10, "corner": 4.433691546072298e-11},
+      "swirl_concentration_both": {"radial_q50": 0.4743416490252571, "radial_q90": 0.710633520177595, "axial_q50": 0.050000000000000044, "axial_q90": 0.15000000000000013}
+    }
+  ],
+  "central_signed_components": [
+    {"time": 0.3125, "odd3": {"radial": -0.09157334242914045, "swirl": 0.17751526267352294, "axial": 0.22129559848332622}, "capped": {"radial": -0.09157334242914081, "swirl": 0.17751488245935274, "axial": 0.22129559848332706}},
+    {"time": 0.5, "odd3": {"radial": -0.11231768927726846, "swirl": 0.2354977536922337, "axial": 0.2937705119995169}, "capped": {"radial": -0.11231768927726889, "swirl": 0.23549594300491059, "axial": 0.293770511999518}},
+    {"time": 0.75, "odd3": {"radial": -0.13889922739070462, "swirl": 0.4125722229195844, "axial": 0.5174167470292823}, "capped": {"radial": -0.13889922739070523, "swirl": 0.41258455056781096, "axial": 0.5174167470292843}}
+  ],
+  "medium_32_to_fine_40_stability": [
+    {"time": 0.3125, "odd3_total_energy": 3.142044502138865e-05, "capped_total_energy": 3.1407481484933716e-05, "odd3_angular_momentum_rms": 1.8449103658144592e-06, "capped_angular_momentum_rms": 1.9904185901691494e-06},
+    {"time": 0.5, "odd3_total_energy": 4.696461647151256e-06, "capped_total_energy": 4.716107897042391e-06, "odd3_angular_momentum_rms": 1.2156924672718108e-07, "capped_angular_momentum_rms": 8.61240067931382e-09},
+    {"time": 0.75, "odd3_total_energy": 0.0025890882511568312, "capped_total_energy": 0.002573916329011134, "odd3_angular_momentum_rms": 8.512622849883401e-05, "capped_angular_momentum_rms": 7.063333036702951e-05}
+  ],
+  "routing_conclusion": "The capped theta-momentum gain is a swirl-only redistribution to numerical precision: radial and axial kinetic energies are unchanged, central signed flow is preserved, and support-collar energy falls rather than grows. The strongest spatial change is late radial-collar depletion (~10.98%) while bulk swirl concentration q50/q90 is unchanged on the 40^3 grid. Route the next representation-capacity experiment toward radial swirl shaping/localization before adding coupled poloidal freedom; independently cross-locate this with momentum-error regions before selection.",
+  "truth_boundary": {
+    "pde_validated": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  }
+}
