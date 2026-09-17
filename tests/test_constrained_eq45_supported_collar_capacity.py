@@ -87,8 +87,21 @@ def test_supported_collar_capacity_keeps_distinct_existing_controls(capsys):
     ):
         assert truth[key] is False
 
+    summary = {
+        "condition_number": report["condition_number"],
+        "singular_values": report["singular_values"],
+        "phi_1_2_novelty": report["phi_1_2_novelty_outside_phi_1_0_span"],
+        "response_norms": report["finest_collar_response_norms"],
+        "axial_response_share": report["axial_response_share"],
+        "step_refinement": report["step_refinement_relative_changes"],
+        "plateau_change": report["plateau_supported_vs_parent_response_relative_change"],
+        "collar_change": report["collar_supported_vs_parent_response_relative_change"],
+    }
     with capsys.disabled():
-        print("AGENT7_SUPPORTED_COLLAR_CAPACITY_REPORT=" + json.dumps(report, sort_keys=True))
+        print(
+            "::notice title=Agent7 supported collar capacity::"
+            + json.dumps(summary, sort_keys=True)
+        )
 
 
 def test_supported_collar_capacity_fails_closed_on_identity_bounds_and_bad_inputs():
