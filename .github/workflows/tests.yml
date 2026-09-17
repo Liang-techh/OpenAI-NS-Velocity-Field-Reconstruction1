@@ -71,6 +71,8 @@ jobs:
         run: python -m pytest -q -W error tests/test_constrained_*.py
       - name: Report cubic Phi10 temporal derivative convergence
         run: python -m openai_ns_reconstruction.constrained_eq45_supported_phi10_cubic_temporal_derivative
+      - name: Report axial taper divergence convergence
+        run: python -m openai_ns_reconstruction.constrained_eq45_supported_phi10_blend_axial_taper_divergence
 
   full:
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_legacy_full == true }}
