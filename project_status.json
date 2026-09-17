@@ -140,5 +140,12 @@
     "report": "artifacts/bipolar_joint_energy/report.json",
     "status": "local_optimizer_failed_constraints_not_satisfied",
     "pde_validated": false
+  },
+  "bipolar_joint_multistart": {
+    "report": "artifacts/bipolar_joint_energy_multistart/report.json",
+    "starts": 12,
+    "energy_core_feasible_starts": 9,
+    "status": "energy_balance_not_satisfied_no_promotion",
+    "pde_validated": false
   }
 }

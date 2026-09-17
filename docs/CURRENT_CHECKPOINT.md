@@ -1,3 +1,19 @@
+## Twelve-start joint feasibility screen
+
+The joint search now has `--multistart`: keep initial energy equality and
+central component bounds hard, minimize squared energy-balance defects.
+Twelve starts (seed9172609) produced nine energy/core-feasible local results;
+eight converge to objective about .25489625 and one to .35792283.
+The selected field retains E(.25)=1 at training quadrature and center ratios
+[1.04719,1.05,1.05], but fresh-time/order96 defects remain -.1993 to-.2536.
+Thus optimizer success is NOT energy-balance or PDE success. Three velocity
+coefficients meet bounds. The experiment remains rejected. Do not lower gates.
+This is stronger local-search evidence, not global infeasibility. Coarse order32
+training quadrature needs refinement before coefficient selection for delivery.
+Next inspect incoming spatial-capacity modes and/or add a governed coupled
+space-time mode; retain independent energy and momentum checks.
+Artifact: `artifacts/bipolar_joint_energy_multistart/report.json`.
+
 ## Joint existing-mode energy feasibility attempt
 
 A bounded SLSQP search now varies two odd-eta poloidal and four even-eta swirl
