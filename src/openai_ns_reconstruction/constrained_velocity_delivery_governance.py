@@ -10,7 +10,12 @@ import json
 from pathlib import Path
 from typing import Any, Mapping
 
-_ALLOWED_CLASSES = {"user_required", "public_source", "autonomous", "pending"}
+_ALLOWED_CLASSES = {
+    "user_requirement",
+    "public_source_fact",
+    "autonomous_design",
+    "pending_unknown",
+}
 _REQUIRED_CLASSES = _ALLOWED_CLASSES
 _REQUIRED_FALSE_CLAIMS = (
     "openai_numerical_field_identified",
