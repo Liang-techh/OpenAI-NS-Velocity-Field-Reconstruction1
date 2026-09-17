@@ -1,0 +1,80 @@
+name: research-publication
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'research_baseline/**'
+      - 'artifacts/research/**'
+      - 'experiments/root_st030/**'
+      - 'scripts/ns_candidate.py'
+      - 'scripts/check_research_layout.py'
+      - 'tests/test_published_baseline.py'
+      - 'docs/**'
+      - 'README.md'
+      - 'project_status.json'
+      - '.github/workflows/research-publication.yml'
+  pull_request:
+    paths:
+      - 'research_baseline/**'
+      - 'artifacts/research/**'
+      - 'experiments/root_st030/**'
+      - 'scripts/ns_candidate.py'
+      - 'scripts/check_research_layout.py'
+      - 'tests/test_published_baseline.py'
+      - 'docs/**'
+      - 'README.md'
+      - 'project_status.json'
+      - '.github/workflows/research-publication.yml'
+permissions:
+  contents: read
+jobs:
+  frozen-baseline-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install runtime and regression dependencies
+        run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'pytest>=8,<10'
+      - name: Check immutable publication and repository layout
+        run: |
+          python scripts/ns_candidate.py verify
+          python scripts/check_research_layout.py
+          python scripts/ns_candidate.py evaluate
+      - name: Run publication regressions
+        run: python -m pytest -q -W error tests/test_published_baseline.py
+      - name: Independently replay scientific gates (expected rejection)
+        shell: bash
+        run: |
+          set +e
+          python scripts/ns_candidate.py validate --seed 9172801 --out outputs/ST006_recheck.json
+          code=$?
+          set -e
+          test "$code" = 1
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/ST006_recheck.json').read_text())
+          old=json.loads(Path('artifacts/research/ST006/evidence/round2/ST006_validation.json').read_text())
+          assert r['candidate_sha256']==old['candidate_sha256']
+          assert r['gates']==old['gates']
+          assert r['pde_validated'] is False and r['all_numeric_gates_pass'] is False
+          fine=[x for x in r['spatial_refinement'] if x['space_step']==.005]
+          orig=[x for x in old['spatial_refinement'] if x['space_step']==.005]
+          for a,b in zip(fine,orig):
+              for key in ('momentum_max','momentum_L2'):
+                  assert abs(a[key]-b[key])<1e-5,(key,a[key],b[key])
+          print('Frozen evidence reproduced; scientific acceptance remains FAILED.')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ST006-independent-replay
+          path: outputs/ST006_recheck.json
+          if-no-files-found: error
