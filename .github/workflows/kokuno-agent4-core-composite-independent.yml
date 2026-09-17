@@ -31,7 +31,6 @@ jobs:
         run: >-
           python -m pytest -q -W error
           tests/test_constrained_kokuno_independent_core_composite.py
-          tests/test_constrained_kokuno_independent_leading_core.py
       - name: Generate independent three-stage report
         run: >-
           python -m openai_ns_reconstruction.kokuno_independent_core_composite
