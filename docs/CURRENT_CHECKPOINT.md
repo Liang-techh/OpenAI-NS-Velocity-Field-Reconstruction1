@@ -1,3 +1,15 @@
+## Energy-defect-capped joint search
+
+Added an optimization-only energy-defect cap .14 at three training times,
+without changing ANY acceptance threshold. Twelve-start odd3 joint search
+retains initial energy/core constraints. On fresh seed9172613/2048 points,
+t=.75 theta max3.20083 to3.03562 (~5.2%), L2 2.81288 to2.74366.
+Thus large theta gains from the previous weighted search depended on worsening
+energy balance; holding the gap near its prior scale leaves a modest gain.
+Neither .14 cap nor optimizer success is PDE acceptance. Further work should
+change coupled capacity/time evolution rather than tune weights repeatedly.
+Artifacts: `artifacts/bipolar_joint_capped/`.
+
 ## Combined theta momentum and energy objective
 
 Added a polynomial FD theta cache (linear+quadratic in velocity coefficients),

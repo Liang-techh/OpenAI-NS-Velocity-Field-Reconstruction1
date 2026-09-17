@@ -163,5 +163,12 @@
     "holdout": "artifacts/bipolar_joint_momentum/holdout_momentum.json",
     "status": "momentum_improved_energy_balance_worsened_no_promotion",
     "pde_validated": false
+  },
+  "bipolar_joint_capped": {
+    "report": "artifacts/bipolar_joint_capped/report.json",
+    "status": "modest_theta_gain_energy_gap_persists",
+    "optimization_cap": 0.14,
+    "acceptance_threshold_changed": false,
+    "pde_validated": false
   }
 }
