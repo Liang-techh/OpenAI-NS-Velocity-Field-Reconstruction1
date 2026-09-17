@@ -74,24 +74,24 @@ def test_analytic_velocity_is_complete_curl_with_fd_convergence():
     time = 0.5
     exact = correction.velocity(*point, time)
     errors = []
-    for step in (0.02, 0.01, 0.005):
+    for step in (0.01, 0.005, 0.0025):
         numerical = _fd_curl_of_potential(correction, point, time, step)
         errors.append(float(np.linalg.norm(numerical - exact)))
     assert errors[2] < errors[1] < errors[0]
     assert errors[0] / errors[1] > 2.5
     assert errors[1] / errors[2] > 2.5
-    assert errors[2] < 5.0e-4
+    assert errors[2] < 3.0e-4
 
 
 def test_divergence_of_complete_curl_converges_to_zero():
     correction = KokunoNativeXCompleteCurlCorrection()
     point = np.array([0.75, 0.1, 0.01])
     time = 0.5
-    errors = [abs(_fd_divergence(correction, point, time, h)) for h in (0.02, 0.01, 0.005)]
+    errors = [abs(_fd_divergence(correction, point, time, h)) for h in (0.01, 0.005, 0.0025)]
     assert errors[2] < errors[1] < errors[0]
     assert errors[0] / errors[1] > 2.0
     assert errors[1] / errors[2] > 2.0
-    assert errors[2] < 5.0e-4
+    assert errors[2] < 1.0e-3
 
 
 def test_batch_compose_and_truth_boundary():
