@@ -1,0 +1,139 @@
+{
+  "schema": "eq45_supported_acceptance_state_v1",
+  "task_id": "CR012-EQ45-SUPPORTED-ACCEPTANCE-STATE-011",
+  "candidate_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+  "parent_sha256": "48f1845fcfd71ec95495c98bb7aac3fca4653e748a8856a5421234e9601525a7",
+  "candidate_scope": "support_connected_eq45_visualization_candidate",
+  "cr001_experiment_id": "compact_axisymmetric_window_v1",
+  "reference_time": 0.25,
+  "evidence": [
+    {
+      "id": "candidate_identity",
+      "status": "pass",
+      "evidence_class": "strict_artifact_identity",
+      "source": "Eq45SupportedVelocityCandidate.sha256",
+      "detail": "exact supported-child and parent identities are pinned",
+      "observed": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+      "threshold": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d"
+    },
+    {
+      "id": "velocity_export_ready",
+      "status": "pass",
+      "evidence_class": "representation_delivery_evidence",
+      "source": "Eq45SupportedVelocityCandidate truth boundary",
+      "detail": "candidate is callable, serializable, griddable, and explicitly export-ready",
+      "observed": true,
+      "threshold": true
+    },
+    {
+      "id": "physical_support_connection_implemented",
+      "status": "pass",
+      "evidence_class": "strict_representation_property",
+      "source": "Eq45SupportedVelocityCandidate truth boundary",
+      "detail": "the governed physical-space support transform is part of this child identity",
+      "observed": true,
+      "threshold": true
+    },
+    {
+      "id": "cr001_reference_energy",
+      "status": "fail",
+      "evidence_class": "independent_numeric_evidence",
+      "source": "artifacts/constrained/eq45_supported_energy_audit.json",
+      "detail": "post-support kinetic energy at the preregistered reference time",
+      "observed": 0.9054304573980382,
+      "threshold": {
+        "target": 1.0,
+        "abs_tolerance": 0.001
+      }
+    },
+    {
+      "id": "energy_quadrature_convergence",
+      "status": "pass",
+      "evidence_class": "independent_numeric_evidence",
+      "source": "artifacts/constrained/eq45_supported_energy_audit.json",
+      "detail": "all registered energy quadrature convergence gates",
+      "observed": true,
+      "threshold": true
+    },
+    {
+      "id": "validation_time_energy_range",
+      "status": "pass",
+      "evidence_class": "independent_numeric_evidence",
+      "source": "artifacts/constrained/eq45_supported_energy_audit.json",
+      "detail": "all checked times remain within the preregistered nontriviality range",
+      "observed": true,
+      "threshold": true
+    },
+    {
+      "id": "standalone_committed_child_artifact",
+      "status": "pending",
+      "evidence_class": "unconsumed_sibling_evidence",
+      "source": "PR #123",
+      "detail": "persistent child JSON exists on a sibling PR but is not copied into this ancestry",
+      "observed": null,
+      "threshold": null
+    },
+    {
+      "id": "supported_child_divergence_validation",
+      "status": "pending",
+      "evidence_class": "unconsumed_sibling_evidence",
+      "source": "PR #121",
+      "detail": "three-level child divergence evidence remains outside this branch ancestry",
+      "observed": null,
+      "threshold": null
+    },
+    {
+      "id": "physical_support_validated",
+      "status": "pending",
+      "evidence_class": "unresolved",
+      "source": "independent child support/boundary acceptance",
+      "detail": "representation-level exact support does not by itself close the validation state",
+      "observed": null,
+      "threshold": null
+    },
+    {
+      "id": "supported_child_pde_validation",
+      "status": "pending",
+      "evidence_class": "unconsumed_sibling_evidence",
+      "source": "PR #129",
+      "detail": "independent supported-child PDE/vorticity evidence is not inherited across sibling PRs",
+      "observed": null,
+      "threshold": null
+    },
+    {
+      "id": "visualization_ready",
+      "status": "pending",
+      "evidence_class": "unresolved",
+      "source": "supported visualization entry point + resolution sanity evidence",
+      "detail": "callable velocity alone does not establish a supported reproducible visualization path",
+      "observed": null,
+      "threshold": null
+    },
+    {
+      "id": "visual_correspondence_verified",
+      "status": "pending",
+      "evidence_class": "unresolved",
+      "source": "public-reference visual comparison",
+      "detail": "no public-observable morphology/time-evolution acceptance is consumed here",
+      "observed": null,
+      "threshold": null
+    }
+  ],
+  "states": {
+    "velocity_export_ready": true,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "acceptance_ready": false,
+  "interpretation": {
+    "energy_failure_blocks_velocity_export": false,
+    "energy_failure_blocks_current_cr001_acceptance": true,
+    "sibling_pr_evidence_promoted_without_consumption": false,
+    "visual_similarity_would_not_imply_pde_validity": true,
+    "pde_validity_would_not_imply_visual_correspondence": true
+  }
+}
