@@ -213,3 +213,7 @@ def write_report(path: str | Path, **kwargs) -> dict[str, object]:
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     return report
+
+
+if __name__ == "__main__":
+    print(json.dumps(audit_blend_temporal_derivative(), indent=2, sort_keys=True))
