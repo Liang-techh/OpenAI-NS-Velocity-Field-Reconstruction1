@@ -1,0 +1,155 @@
+{
+  "schema": "eq45_phi10_blend_selection_evidence_scope_v1",
+  "scope": "Claim-boundary governance for selecting, or deliberately not selecting, a compact-quartic Phi(1,0) blend member. This contract changes no velocity, temporal coefficient, support transform, force, pressure, threshold, optimizer, or canonical binding.",
+  "source_vocabulary": [
+    "user_requirement",
+    "public_source_fact",
+    "autonomous_design",
+    "pending_unknown"
+  ],
+  "source_classification": {
+    "callable_saveable_loadable_3d_time_varying_velocity": "user_requirement",
+    "independent_velocity_visual_pde_and_exactness_states": "user_requirement",
+    "compact_quartic_phi10_temporal_interpolation": "autonomous_design",
+    "caller_declared_blend_weight": "autonomous_design",
+    "target_free_morphology_screen": "autonomous_design",
+    "restricted_force_pressure_free_pde_side_screen": "autonomous_design",
+    "public_velocity_temporal_derivative_audit": "autonomous_design",
+    "finite_box_spectral_fingerprint": "autonomous_design",
+    "public_openai_observable_correspondence_for_any_blend_member": "pending_unknown",
+    "paper_exact_or_hidden_openai_field_identity": "pending_unknown"
+  },
+  "cr001_binding": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_parameters": ["a", "c"],
+    "reference_energy_time": 0.25,
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "registered_norms": [
+      "max Euclidean vector norm",
+      "volume-weighted L2 spatial norm at each time"
+    ],
+    "divergence_max_threshold": 1e-05,
+    "divergence_L2_threshold": 1e-05,
+    "pde_residual_max_threshold": 0.001,
+    "pde_residual_L2_threshold": 0.001
+  },
+  "family_binding": {
+    "delivery_recipe_task_id": "CR011-EQ45-PHI10-COMPACT-QUARTIC-BLEND-DELIVERY-CAPSULE-018",
+    "delivery_recipe_base_head": "37be0d6ee963cd9b98b8853df00be731d8e28bf4",
+    "delivery_recipe_implementation_head": "42c2a43e3a60fecec3302d4dfa7d6f61c787dabb",
+    "base_supported_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+    "family": "phi",
+    "index": [1, 0],
+    "blend_formula": "(1-lambda)*delta_quartic(tau)+lambda*delta_compact(tau)",
+    "blend_weight_interval": [0.0, 1.0],
+    "representative_candidate_sha256": {
+      "0.000000": "6eb71af7ebafc84b246e1855248582c7f84dca37abc263bf3295fae788b1cd68",
+      "0.500000": "3fc3fa3a1770931709a4b76fc13942b776386aa7bf40edc992dc8b2514af19d4",
+      "1.000000": "99373abdf5c4cb453d36bf1a8086b620e7dda7eea5bfbfbed8947aacea9cedad"
+    },
+    "component_order": ["u", "v", "w"],
+    "grid_layout": "time,x,y,z,component",
+    "blend_weight_selected": false,
+    "candidate_selection_resolved": false,
+    "caller_declared_blend_weight": true
+  },
+  "evidence_ledger": {
+    "delivery_capsule": {
+      "pr": 190,
+      "head": "42c2a43e3a60fecec3302d4dfa7d6f61c787dabb",
+      "status": "ancestry_consumed",
+      "scope": "callable_serializable_family_delivery",
+      "may_select_blend_weight": false,
+      "may_promote_visual_correspondence_verified": false,
+      "may_promote_pde_validated": false
+    },
+    "temporal_derivative": {
+      "pr": 187,
+      "head": "37be0d6ee963cd9b98b8853df00be731d8e28bf4",
+      "actions_run": 35234995835,
+      "status": "ancestry_consumed",
+      "scope": "public_velocity_temporal_derivative_discretization",
+      "may_select_blend_weight": false,
+      "may_promote_pde_validated": false
+    },
+    "target_free_morphology": {
+      "pr": 184,
+      "head": "fec36f21f5ee8945385b7070f19ed0127885c2d4",
+      "actions_run": 35232095802,
+      "status": "open_unconsumed_sibling",
+      "scope": "target_free_early_vorticity_morphology_capacity",
+      "may_select_blend_weight": false,
+      "may_promote_visual_correspondence_verified": false
+    },
+    "restricted_force_pde_side": {
+      "pr": 188,
+      "head": "fc6ad7b2f0c0a892c1197718db7b225066a60d8e",
+      "actions_run": 35235654679,
+      "status": "open_unconsumed_sibling",
+      "scope": "pressure_free_fixed_probe_vorticity_equation_routing_diagnostic",
+      "may_select_blend_weight": false,
+      "may_promote_pde_validated": false,
+      "formal_cr001_pde_gate": false
+    },
+    "spectral_fingerprint": {
+      "pr": 189,
+      "head": "0286a04ecb541ba02b247c44545044b3c7298691",
+      "actions_run": 35236235818,
+      "status": "open_unconsumed_sibling",
+      "scope": "finite_box_public_velocity_spectral_fingerprint",
+      "may_select_blend_weight": false,
+      "may_promote_visual_correspondence_verified": false,
+      "may_promote_pde_validated": false
+    }
+  },
+  "selection_contract": {
+    "blend_weight_selected": false,
+    "candidate_selection_resolved": false,
+    "caller_declared_weights_remain_research_candidates": true,
+    "joint_tradeoff_review_may_occur_after_evidence_replay": true,
+    "public_observable_comparison_required_for_visual_correspondence_selection": true,
+    "independent_visual_resolution_stability_required_for_visual_correspondence_selection": true,
+    "selected_member_must_serialize_blend_weight_and_candidate_sha256": true,
+    "selected_member_requires_candidate_specific_revalidation": true,
+    "formal_pde_pass_required_for_candidate_local_save_load_export": false,
+    "formal_pde_pass_required_for_truth_bounded_visualization_candidate": false,
+    "formal_pde_gate_remains_independent": true,
+    "target_free_morphology_alone_may_select_blend_weight": false,
+    "restricted_force_pde_side_diagnostic_alone_may_select_blend_weight": false,
+    "temporal_derivative_audit_alone_may_select_blend_weight": false,
+    "spectral_fingerprint_alone_may_select_blend_weight": false,
+    "green_ci_or_serialization_alone_may_select_blend_weight": false
+  },
+  "truth_states": {
+    "velocity_export_ready": true,
+    "visualization_candidate_only": true,
+    "blend_weight_selected": false,
+    "candidate_selection_resolved": false,
+    "physical_support_validated": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "forbidden_inferences": [
+    "caller_declared_blend_weight=>repository_selected_blend_weight",
+    "target_free_morphology_improvement=>visual_correspondence_verified",
+    "restricted_force_pde_side_ordering=>pde_validated",
+    "temporal_derivative_convergence=>pde_validated",
+    "spectral_softness_or_resolution_stability=>visual_correspondence_verified",
+    "green_ci_or_serialization=>candidate_selection_resolved",
+    "single_evidence_lane=>blend_weight_selected",
+    "visual_similarity=>pde_validated_or_paper_exact_or_openai_field_identified",
+    "pde_failed_or_pending=>velocity_export_not_allowed"
+  ]
+}
