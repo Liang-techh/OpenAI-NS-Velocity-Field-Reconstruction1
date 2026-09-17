@@ -1,0 +1,75 @@
+{
+  "candidate_sha256": "8027075948fc4cbbf0c79cf080729b543c7a7d00b011a4b35b582b95deab5970",
+  "family": "eq45_supported_velocity_candidate_v1",
+  "shape": [
+    9,
+    17,
+    17,
+    17,
+    3
+  ],
+  "layout": [
+    "time",
+    "x",
+    "y",
+    "z",
+    "component"
+  ],
+  "components": [
+    "u",
+    "v",
+    "w"
+  ],
+  "time_interval": [
+    0.25,
+    0.75
+  ],
+  "box": [
+    [
+      -2,
+      2
+    ],
+    [
+      -2,
+      2
+    ],
+    [
+      -2,
+      2
+    ]
+  ],
+  "exact_python_sample": {
+    "point": [
+      0.1,
+      0,
+      0.1
+    ],
+    "time": 0.5,
+    "velocity": [
+      -0.06730245983355401,
+      0.13998343506571057,
+      0.17340970258309657
+    ]
+  },
+  "matlab": "linear interpolation of saved grid; differs from exact candidate off-grid",
+  "matlab_runtime_tested": false,
+  "truth_boundary": {
+    "callable_serializable": true,
+    "velocity_export_ready": true,
+    "physical_support_connection_implemented": true,
+    "physical_support_validated": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false,
+    "requires_physical_support_connection": false
+  },
+  "files": {
+    "candidate.json": "a0a7969663e86c637f4fccab7d3970498513b2943a55a32806b782c487f4f6f3",
+    "velocity.npz": "adb90509574b141c1ec224d4cf4f2201800120d44b5f9eaad79d631442f1b290",
+    "velocity.mat": "d24dd4943984e6cccb45b86f8630bf093c6b302beafe88d27927edb0895a49c2",
+    "evaluate_velocity.m": "4d0f129d6e9fa555bc6eacfc0ad866090760c240f6b67825cbe42decd756746f"
+  }
+}

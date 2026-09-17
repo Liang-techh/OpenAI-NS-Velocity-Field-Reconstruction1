@@ -1,3 +1,20 @@
+# Current routing after GitHub update — 2026-09-17
+
+Use the live Eq45 route in project_status.json and CURRENT_CHECKPOINT.md.
+Historical FUN/SCH lists below do not override this section.
+
+1. Consume artifacts/delivery/eq45_bipolar/candidate.json through the supported
+   public evaluator; compare against eq45_supported baseline. This candidate
+   fixes central axial direction/parity on fresh probes but is not selected.
+2. Audit its whole-domain energy/support/momentum and same-source observable
+   geometry without importing old-candidate results. Keep full PDE failures.
+3. Temporal Phi(1,0) quartic/compact schedules alone preserve the old eta-even
+   parity; do not claim they fix the central opposite axial-flow mismatch.
+4. Reuse the portable JSON/NPZ/MAT exporter. Do not redo save/load or animate
+   before the velocity/source correspondence is settled.
+
+No default, scientific threshold, force family or paper-identity flag changed.
+
 ## Latest selected inner seed
 
 Use PaperCoreSeries(PaperCoreReference(sigma=.5),maxdegree=14,eta_nodes=257). Artifacts: function_first/core_series/smooth_parameters/selected. On312 development points throughX=.409, leading-profile angular/axial maxima2.30e-4/2.91e-5; no full NS or exterior acceptance. Direct radial integration and Pade alternatives failed and remain documented. NEXT: smooth streamfunction/potential exterior connection and full-space velocity API, then independent full-field checks. Do not repeat the parameter sweep or call surviving Pade samples a completed field.

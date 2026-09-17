@@ -1,3 +1,32 @@
+### Quartic dependency review
+
+Read-only review found PR168 source headbcf49a2 diverges from live at1a98cff:
+38 source-branch commits versus7 live commits. Direct candidate/test commits
+1055a2f/bcf49a2 depend on absent capacity helpers. A minimal future replay can
+extract d3=early_delta/-3*tau*(tau-.5)*(tau-1), g=(tau+1)*tau*(tau-.5)*(tau-1),
+and a=-dot(gprime,d3prime)/dot(gprime,gprime) on tau={0,.5,1}; for early_delta=-1.4,
+a=-.2831460674157303. Audit-only imports are unnecessary. No stacked PR was
+merged in this root continuation. This eta-even temporal mode cannot alone
+correct the observed axial parity mismatch; keep it a separate optional layer.
+
+## Root continuation after GitHub synchronization (2026-09-17)
+
+Fetched and fast-forwarded7dd05bb, preserving all integrated agent work. Added
+portable baseline and explicit bipolar-seed bundles with Python/MATLAB grids.
+The new bipolar seed fixes a directly measured central-motion parity mismatch:
+existing default w has the same sign at both axial sides, whereas the source
+describes opposite axial outflow. Existing Phi(0,1)=1 with other poloidal
+coefficients zero gives inward swirl and opposite axial outflow at96 fresh
+central probes. All swirl/support settings and bounds are unchanged.
+
+This is an opt-in qualitative candidate, not canonical or final acceptance.
+Entry and exact hash: docs/EQ45_DELIVERY_API.md. Full momentum, energy,
+whole-domain geometry and source correspondence remain unverified for it.
+Prior temporal quartic/compact/taper evidence applies to its original candidates,
+not to this changed poloidal seed. Before further shape-only optimization,
+compare central flow direction/parity through the same public interface.
+Archived local compact-core failures are in docs/LOCAL_COMPACT_EXPERIMENT_ARCHIVE.md.
+
 # Current checkpoint — support-connected Eq45 delivery
 
 Snapshot date: **2026-09-17**. The machine-readable authority is [`project_status.json`](../project_status.json). This checkpoint describes the live constrained-integration path; older `coupled_joint`, paper-core-series, FUN/SCH, and exact-reconstruction notes are historical evidence rather than the active routing source.
