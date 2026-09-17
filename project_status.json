@@ -129,5 +129,11 @@
     "report": "artifacts/bipolar_energy_balance/report.json",
     "status": "sampled_required_work_negative_both_allowed_work_columns_positive",
     "pde_validated": false
+  },
+  "bipolar_spatial_experiment": {
+    "report": "artifacts/bipolar_spatial/report.json",
+    "energy_balance": "artifacts/bipolar_spatial/energy_balance.json",
+    "status": "theta_improved_energy_balance_worsened_rejected",
+    "pde_validated": false
   }
 }

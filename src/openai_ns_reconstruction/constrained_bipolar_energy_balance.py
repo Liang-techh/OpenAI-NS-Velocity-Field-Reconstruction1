@@ -7,8 +7,8 @@ from scipy.optimize import lsq_linear
 from .eq45_supported_delivery import Eq45SupportedDeliveryField
 from .constrained_force import RestrictedForce
 
-def run():
-    f=Eq45SupportedDeliveryField.load_candidate('artifacts/bipolar_energy/normalized_candidate.json')
+def run(candidate_path="artifacts/bipolar_energy/normalized_candidate.json", output="artifacts/bipolar_energy_balance/report.json"):
+    f=Eq45SupportedDeliveryField.load_candidate(candidate_path)
     rows=[]
     for n,h in [(48,.01),(96,.005)]:
         g,w=leggauss(n);r,z=np.meshgrid(g+1,2*g,indexing='ij')
@@ -31,6 +31,6 @@ def run():
         row['fitted_work']=float(np.dot(row['force_work_columns'],fit.x))
         row['balance_defect']=row['required_work']-row['fitted_work']
     report=dict(candidate_sha256=f.sha256,force_a=float(fit.x[0]),force_c=float(fit.x[1]),rows=rows,scope='Necessary global energy identity Eprime + nu integral |grad u|² = integral u dot f, assuming divergence-free compact field. Fit coarse quadrature only; finer quadrature reuses force. No full PDE acceptance. Spatial and derivative resolutions varied together; not separate convergence proof.',pde_validated=False)
-    p=Path('artifacts/bipolar_energy_balance/report.json');p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(report,indent=2)+'\n')
+    p=Path(output);p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(report,indent=2)+'\n')
     print(json.dumps(report,indent=2))
 if __name__=='__main__':run()

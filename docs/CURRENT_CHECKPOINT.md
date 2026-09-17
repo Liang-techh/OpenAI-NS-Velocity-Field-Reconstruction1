@@ -1,3 +1,19 @@
+## Spatial swirl fit: local improvement, global rejection
+
+Four existing even-eta swirl coefficients were optimized at fixed normalized
+poloidal field, coefficient bounds [-4,4], initial energy equality, and a 95%
+parent central-swirl floor. The fitted child has E(.25)=1.0000000000006035,
+central swirl ratio1.04716 and coefficients [1.481482,3.247450,-2.215067,4.0].
+On fresh seed9172608/2048 points, t=.75 theta max drops2.99665 to2.56762
+(14.3%); L2 drops2.68334 to2.57747. It remains far from .001.
+Energy balance is WORSE: required negative work reaches-.54609, with both
+allowed force work columns positive. This is a rejected theta-only optimizer
+result, not the new default. One coefficient reaches its bound; do not expand it.
+Next: joint poloidal/swirl construction with energy-balance feasibility included
+in the objective/constraints, preserving central signs and initial energy.
+Reproduce spatial fit: `PYTHONPATH=src python -m openai_ns_reconstruction.constrained_bipolar_spatial`.
+Artifacts: `artifacts/bipolar_spatial/` (candidate, holdout report, energy balance).
+
 ## Global energy-sign mismatch
 
 New necessary energy balance diagnostic for the normalized bipolar field:

@@ -1,0 +1,121 @@
+{
+  "candidate_sha256": "f5d27271f9ca5f9313baa898f3d51b2d233cce678732406487d7973b148c5565",
+  "force_a": 6.201627927336291e-19,
+  "force_c": 3.790387032564748e-18,
+  "rows": [
+    {
+      "order": 48,
+      "step": 0.01,
+      "time": 0.3125,
+      "energy_rate": -0.6882268166495917,
+      "dissipation": 0.32535913705836256,
+      "required_work": -0.3628676795912292,
+      "force_work_columns": [
+        0.5414809803014591,
+        0.444655952016813
+      ],
+      "fitted_work": 2.021224511433157e-18,
+      "balance_defect": -0.3628676795912292
+    },
+    {
+      "order": 48,
+      "step": 0.01,
+      "time": 0.4375,
+      "energy_rate": -0.7563160433778109,
+      "dissipation": 0.351360869582391,
+      "required_work": -0.4049551737954199,
+      "force_work_columns": [
+        0.46972955301706243,
+        0.6777911901111924
+      ],
+      "fitted_work": 2.8603997292126723e-18,
+      "balance_defect": -0.4049551737954199
+    },
+    {
+      "order": 48,
+      "step": 0.01,
+      "time": 0.5625,
+      "energy_rate": -0.8560427156217033,
+      "dissipation": 0.39666827121973186,
+      "required_work": -0.45937444440197145,
+      "force_work_columns": [
+        0.3043400904143198,
+        0.7366188014615506
+      ],
+      "fitted_work": 2.9808107534153977e-18,
+      "balance_defect": -0.45937444440197145
+    },
+    {
+      "order": 48,
+      "step": 0.01,
+      "time": 0.6875,
+      "energy_rate": -1.0188283434338707,
+      "dissipation": 0.4699713507641402,
+      "required_work": -0.5488569926697305,
+      "force_work_columns": [
+        0.131382243235064,
+        0.5572112424354589
+      ],
+      "fitted_work": 2.1935246466069218e-18,
+      "balance_defect": -0.5488569926697305
+    },
+    {
+      "order": 96,
+      "step": 0.005,
+      "time": 0.3125,
+      "energy_rate": -0.6880847548565474,
+      "dissipation": 0.3256552360195264,
+      "required_work": -0.362429518837021,
+      "force_work_columns": [
+        0.5414865065990846,
+        0.4446556224722378
+      ],
+      "fitted_work": 2.0212266895358413e-18,
+      "balance_defect": -0.362429518837021
+    },
+    {
+      "order": 96,
+      "step": 0.005,
+      "time": 0.4375,
+      "energy_rate": -0.7560728960318259,
+      "dissipation": 0.3516819903151476,
+      "required_work": -0.40439090571667835,
+      "force_work_columns": [
+        0.4697332550470923,
+        0.6777910081678155
+      ],
+      "fitted_work": 2.8604013354381377e-18,
+      "balance_defect": -0.40439090571667835
+    },
+    {
+      "order": 96,
+      "step": 0.005,
+      "time": 0.5625,
+      "energy_rate": -0.8555143566499364,
+      "dissipation": 0.39708680745639147,
+      "required_work": -0.4584275491935449,
+      "force_work_columns": [
+        0.30434160873107224,
+        0.7366187408646906
+      ],
+      "fitted_work": 2.980811465333403e-18,
+      "balance_defect": -0.4584275491935449
+    },
+    {
+      "order": 96,
+      "step": 0.005,
+      "time": 0.6875,
+      "energy_rate": -1.0161504648647885,
+      "dissipation": 0.47005785025291913,
+      "required_work": -0.5460926146118694,
+      "force_work_columns": [
+        0.13138270401800362,
+        0.5572112566443648
+      ],
+      "fitted_work": 2.193524986224609e-18,
+      "balance_defect": -0.5460926146118694
+    }
+  ],
+  "scope": "Necessary global energy identity Eprime + nu integral |grad u|\u00b2 = integral u dot f, assuming divergence-free compact field. Fit coarse quadrature only; finer quadrature reuses force. No full PDE acceptance. Spatial and derivative resolutions varied together; not separate convergence proof.",
+  "pde_validated": false
+}
