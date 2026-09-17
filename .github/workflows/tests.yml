@@ -71,6 +71,13 @@ jobs:
         run: python -m pytest -q -W error tests/test_constrained_*.py
       - name: Report supported Eq45 vorticity revalidation
         run: python -m openai_ns_reconstruction.constrained_eq45_supported_vorticity
+      - name: Report supported Eq45 restricted-force projection
+        run: python -m openai_ns_reconstruction.constrained_eq45_supported_force_projection | tee supported-force-projection.json
+      - name: Upload supported Eq45 restricted-force report
+        uses: actions/upload-artifact@v4
+        with:
+          name: eq45-supported-force-projection-${{ github.sha }}
+          path: supported-force-projection.json
 
   full:
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_legacy_full == true }}
