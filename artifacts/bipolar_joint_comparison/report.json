@@ -1,0 +1,228 @@
+{
+  "seed": 9172610,
+  "points": 2048,
+  "candidates": {
+    "bipolar_joint_baseline96": {
+      "sha256": "a6e81a99837f8323dd7ec9adce89ca03e78817bcdfb1390e9e4d3ab4c1e8137f",
+      "energy_balance_holdout": [
+        {
+          "time": 0.34375,
+          "energy": 0.9296173877774314,
+          "required_work": -0.2058760318850326,
+          "force_work": 2.726144782713393e-15,
+          "balance_defect": -0.2058760318850353
+        },
+        {
+          "time": 0.46875,
+          "energy": 0.8331387056272871,
+          "required_work": -0.19925824928343117,
+          "force_work": 2.2987859187330965e-15,
+          "balance_defect": -0.19925824928343347
+        },
+        {
+          "time": 0.59375,
+          "energy": 0.7294416185109763,
+          "required_work": -0.21009843074999365,
+          "force_work": 1.4318734559255051e-15,
+          "balance_defect": -0.2100984307499951
+        },
+        {
+          "time": 0.71875,
+          "energy": 0.6092095665866977,
+          "required_work": -0.25358241345481414,
+          "force_work": 5.525897432346702e-16,
+          "balance_defect": -0.2535824134548147
+        }
+      ],
+      "force": [
+        3.655204715224298e-15,
+        0.0
+      ]
+    },
+    "bipolar_joint_odd3": {
+      "sha256": "3ec5146c5f6110172173d07b9235023e4c54ea83eb7262da830e63021f613bd6",
+      "energy_balance_holdout": [
+        {
+          "time": 0.34375,
+          "energy": 0.9332877175487059,
+          "required_work": -0.10694314193849427,
+          "force_work": 6.469482823126655e-18,
+          "balance_defect": -0.10694314193849427
+        },
+        {
+          "time": 0.46875,
+          "energy": 0.8389761495418993,
+          "required_work": -0.10549308452041481,
+          "force_work": 5.433757786903707e-18,
+          "balance_defect": -0.10549308452041481
+        },
+        {
+          "time": 0.59375,
+          "energy": 0.735310956775543,
+          "required_work": -0.11274769482079565,
+          "force_work": 3.3215342460378454e-18,
+          "balance_defect": -0.11274769482079565
+        },
+        {
+          "time": 0.71875,
+          "energy": 0.6142691421363158,
+          "required_work": -0.13901497738148372,
+          "force_work": 1.229026741725211e-18,
+          "balance_defect": -0.13901497738148372
+        }
+      ],
+      "force": [
+        1.5122697954949218e-17,
+        0.0
+      ]
+    }
+  },
+  "rows": [
+    {
+      "candidate": "bipolar_joint_baseline96",
+      "time": 0.3125,
+      "step": 0.01,
+      "theta_max": 0.82317172777715,
+      "theta_L2": 1.2439779781070617,
+      "zero_pressure_momentum_max": 2.012751461557877,
+      "divergence_max": 2.2597365187060348e-05
+    },
+    {
+      "candidate": "bipolar_joint_baseline96",
+      "time": 0.5,
+      "step": 0.01,
+      "theta_max": 1.3143476456577314,
+      "theta_L2": 1.6345059922937735,
+      "zero_pressure_momentum_max": 3.3077987309757377,
+      "divergence_max": 7.34844603256235e-06
+    },
+    {
+      "candidate": "bipolar_joint_baseline96",
+      "time": 0.6875,
+      "step": 0.01,
+      "theta_max": 2.703118912473072,
+      "theta_L2": 2.3590380371352926,
+      "zero_pressure_momentum_max": 6.36624169276233,
+      "divergence_max": 3.0173527541033085e-05
+    },
+    {
+      "candidate": "bipolar_joint_baseline96",
+      "time": 0.75,
+      "step": 0.01,
+      "theta_max": 3.7778649010583667,
+      "theta_L2": 2.786642918715386,
+      "zero_pressure_momentum_max": 8.286753102783612,
+      "divergence_max": 5.679568376254496e-05
+    },
+    {
+      "candidate": "bipolar_joint_baseline96",
+      "time": 0.3125,
+      "step": 0.005,
+      "theta_max": 0.8231077270743093,
+      "theta_L2": 1.2440103547089165,
+      "zero_pressure_momentum_max": 2.0126813395130254,
+      "divergence_max": 1.427048353486171e-06
+    },
+    {
+      "candidate": "bipolar_joint_baseline96",
+      "time": 0.5,
+      "step": 0.005,
+      "theta_max": 1.3141214018285803,
+      "theta_L2": 1.6345968567823794,
+      "zero_pressure_momentum_max": 3.307610986885251,
+      "divergence_max": 4.6008744014613967e-07
+    },
+    {
+      "candidate": "bipolar_joint_baseline96",
+      "time": 0.6875,
+      "step": 0.005,
+      "theta_max": 2.7019484179025843,
+      "theta_L2": 2.3593908541095145,
+      "zero_pressure_momentum_max": 6.366249234444927,
+      "divergence_max": 1.891619036409331e-06
+    },
+    {
+      "candidate": "bipolar_joint_baseline96",
+      "time": 0.75,
+      "step": 0.005,
+      "theta_max": 3.7825052433209945,
+      "theta_L2": 2.7851376622946655,
+      "zero_pressure_momentum_max": 8.283921469756407,
+      "divergence_max": 3.560366739374654e-06
+    },
+    {
+      "candidate": "bipolar_joint_odd3",
+      "time": 0.3125,
+      "step": 0.01,
+      "theta_max": 0.7141793003100999,
+      "theta_L2": 1.207605519520418,
+      "zero_pressure_momentum_max": 2.169540339691507,
+      "divergence_max": 2.320202780181635e-05
+    },
+    {
+      "candidate": "bipolar_joint_odd3",
+      "time": 0.5,
+      "step": 0.01,
+      "theta_max": 1.1565488233857093,
+      "theta_L2": 1.602717693168927,
+      "zero_pressure_momentum_max": 3.6031174517831643,
+      "divergence_max": 1.3605078661119152e-05
+    },
+    {
+      "candidate": "bipolar_joint_odd3",
+      "time": 0.6875,
+      "step": 0.01,
+      "theta_max": 2.324976175381531,
+      "theta_L2": 2.3265479071127757,
+      "zero_pressure_momentum_max": 7.061969593601539,
+      "divergence_max": 5.310375170519688e-05
+    },
+    {
+      "candidate": "bipolar_joint_odd3",
+      "time": 0.75,
+      "step": 0.01,
+      "theta_max": 3.2587806865926248,
+      "theta_L2": 2.7618475885521705,
+      "zero_pressure_momentum_max": 9.280074528232731,
+      "divergence_max": 0.00010430186738813463
+    },
+    {
+      "candidate": "bipolar_joint_odd3",
+      "time": 0.3125,
+      "step": 0.005,
+      "theta_max": 0.7141232431100824,
+      "theta_L2": 1.2076490489875058,
+      "zero_pressure_momentum_max": 2.1694721559266923,
+      "divergence_max": 1.4650702296892248e-06
+    },
+    {
+      "candidate": "bipolar_joint_odd3",
+      "time": 0.5,
+      "step": 0.005,
+      "theta_max": 1.1563888666636746,
+      "theta_L2": 1.6028363328146444,
+      "zero_pressure_momentum_max": 3.602933669895125,
+      "divergence_max": 8.522616624095924e-07
+    },
+    {
+      "candidate": "bipolar_joint_odd3",
+      "time": 0.6875,
+      "step": 0.005,
+      "theta_max": 2.3244393293555072,
+      "theta_L2": 2.327002200617283,
+      "zero_pressure_momentum_max": 7.06195729604673,
+      "divergence_max": 3.3293029166880928e-06
+    },
+    {
+      "candidate": "bipolar_joint_odd3",
+      "time": 0.75,
+      "step": 0.005,
+      "theta_max": 3.2622923815609717,
+      "theta_L2": 2.760051140106116,
+      "zero_pressure_momentum_max": 9.277404107288996,
+      "divergence_max": 6.5475183638197265e-06
+    }
+  ],
+  "pde_validated": false,
+  "scope": "Fresh uniform box sample. Theta residual is pressure-independent for axisymmetric pressure. Full vector uses p=0 and is not minimized over pressure; do not call it a pressure-independent obstruction."
+}

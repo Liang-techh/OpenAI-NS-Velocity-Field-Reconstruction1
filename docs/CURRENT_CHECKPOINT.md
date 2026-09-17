@@ -1,3 +1,43 @@
+## Energy-defect-capped joint search
+
+Added an optimization-only energy-defect cap .14 at three training times,
+without changing ANY acceptance threshold. Twelve-start odd3 joint search
+retains initial energy/core constraints. On fresh seed9172613/2048 points,
+t=.75 theta max3.20083 to3.03562 (~5.2%), L2 2.81288 to2.74366.
+Thus large theta gains from the previous weighted search depended on worsening
+energy balance; holding the gap near its prior scale leaves a modest gain.
+Neither .14 cap nor optimizer success is PDE acceptance. Further work should
+change coupled capacity/time evolution rather than tune weights repeatedly.
+Artifacts: `artifacts/bipolar_joint_capped/`.
+
+## Combined theta momentum and energy objective
+
+Added a polynomial FD theta cache (linear+quadratic in velocity coefficients),
+replayed against direct evaluation to8.14e-14. Twelve-start odd3 joint search
+minimizes three energy-defect squares plus64*mean(theta residual squared),
+while retaining initial energy and central component bounds.
+Fresh seed9172612/2048 points shows t=.75 theta max3.27749 to1.71916 and
+L2 2.58903 to1.86843; zero-pressure full max7.78100 to5.80388.
+Initial energy error -1.53e-14, core ratios[1.05,.95,1.006]. But energy defects
+worsen to roughly-.34 through-.40. Candidate remains rejected, PDE false.
+This tradeoff calls for a Pareto/energy-defect cap or better coupled capacity,
+not further unqualified minimization of the same weighted scalar objective.
+Artifacts: `artifacts/bipolar_joint_momentum/` including fresh holdout.
+
+## Same-resolution baseline and fresh momentum comparison
+
+Replayed the six-mode multistart baseline with order96 training, matching the
+odd Phi03 extension. Fresh seed9172610,2048 uniform points and two FD steps
+show a tradeoff: at t=.75, theta max improves3.78251 to3.26229, whereas full
+zero-pressure momentum max worsens8.28392 to9.27740. The latter is NOT a
+pressure-independent bound: pressure has not been fitted. Theta remains far
+above .001. Neither candidate is accepted despite smaller energy defects.
+This rules out using energy balance alone as the optimization objective.
+Next include momentum/curl and energy together before further basis growth.
+Artifacts: `artifacts/bipolar_joint_baseline96/` and
+`artifacts/bipolar_joint_comparison/report.json`.
+Reproduce comparison: `PYTHONPATH=src python -m openai_ns_reconstruction.constrained_bipolar_joint_compare`.
+
 ## Odd axial spatial extension
 
 Incoming agent7 Phi(0,4) audit studies an even-eta poloidal mode. That mode

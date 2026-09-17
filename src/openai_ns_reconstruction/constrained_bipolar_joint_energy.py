@@ -8,7 +8,8 @@ from scipy.optimize import minimize
 from .eq45_supported_delivery import Eq45SupportedDeliveryField
 from .constrained_force import RestrictedForce
 
-def run(multistart=False, odd_extension=False):
+def run(multistart=False, odd_extension=False, training_order=None, output=None, momentum=False, energy_cap=None):
+    training_order = training_order or (96 if odd_extension else 32)
     base=Eq45SupportedDeliveryField.load_candidate('artifacts/bipolar_energy/normalized_candidate.json')
     b=base.candidate.parent.profile_basis
     if odd_extension:
@@ -39,7 +40,7 @@ def run(multistart=False, odd_extension=False):
         force=np.column_stack([np.einsum('n,nci,nc->i',weights,u,RestrictedForce(a=a,c=c)(x,t)) for a,c in [(1,0),(0,1)]])
         return energy,(work+work.T)/2,force
     times=(.3125,.5,.6875)
-    cache=[matrices(96 if odd_extension else 32,.005,t) for t in times]
+    cache=[matrices(training_order,.005,t) for t in times]
     # Initial energy uses t=.25 exactly; derivative evaluations stay inside window.
     g,w=leggauss(64);r,z=np.meshgrid(g+1,2*g,indexing='ij');x=np.column_stack((r.ravel(),0*r.ravel(),z.ravel()));weights=(2*np.pi*r*w[:,None]*2*w[None,:]).ravel()
     u=np.stack([f.at_points(x,.25) for f in fields],axis=-1);e0=.5*np.einsum('n,nci,ncj->ij',weights,u,u)
@@ -54,13 +55,21 @@ def run(multistart=False, odd_extension=False):
     start=np.r_[initial,0.,0.]
     fit=minimize(lambda a:np.sum((a[:-2]-initial)**2)+.01*np.sum(a[-2:]**2),start,method='SLSQP',bounds=[(-4,4)]*len(modes)+[(0,10)]*2,constraints=[{'type':'eq','fun':eq},{'type':'ineq','fun':coreineq}],options={'maxiter':500,'ftol':1e-10})
     trials=[]
+    theta_loss=lambda a:0.
+    replay_error=None
+    if momentum:
+        from .constrained_bipolar_theta_cache import build_theta_objective
+        theta_loss,replay_error=build_theta_objective(field,len(modes),times)
     if multistart:
         rng=np.random.default_rng(9172609)
         starts=[start,fit.x]+[np.r_[np.clip(initial+rng.normal(0,1.5,len(initial)),-4,4),0.,0.] for _ in range(10)]
         feasible=[]
+        constraints=[{'type':'eq','fun':lambda a:eq(a)[0]},{'type':'ineq','fun':coreineq}]
+        if energy_cap is not None:
+            constraints.append({'type':'ineq','fun':lambda a:energy_cap-np.abs(eq(a)[1:])})
         for j,seed in enumerate(starts):
-            result=minimize(lambda a:np.sum(eq(a)[1:]**2),seed,method='SLSQP',bounds=[(-4,4)]*len(modes)+[(0,10)]*2,constraints=[{'type':'eq','fun':lambda a:eq(a)[0]},{'type':'ineq','fun':coreineq}],options={'maxiter':500,'ftol':1e-11})
-            physical=abs(eq(result.x)[0])<1e-6 and np.min(coreineq(result.x))>=-1e-6
+            result=minimize(lambda a:np.sum(eq(a)[1:]**2)+theta_loss(a),seed,method='SLSQP',bounds=[(-4,4)]*len(modes)+[(0,10)]*2,constraints=constraints,options={'maxiter':500,'ftol':1e-11})
+            physical=abs(eq(result.x)[0])<1e-6 and np.min(coreineq(result.x))>=-1e-6 and (energy_cap is None or np.max(np.abs(eq(result.x)[1:]))<=energy_cap+1e-6)
             trials.append(dict(start=j,optimizer_success=bool(result.success),physical_constraints_satisfied=bool(physical),objective=float(result.fun),initial_energy_error=float(eq(result.x)[0]),parameters=result.x.tolist()))
             if physical:feasible.append(result)
         if not feasible:raise RuntimeError('No energy/core-feasible multistart result; inspect optimization')
@@ -69,8 +78,8 @@ def run(multistart=False, odd_extension=False):
     for t in (.34375,.46875,.59375,.71875):
         e,q,f=matrices(96,.0025,t);v=a[:-2]
         rows.append(dict(time=t,energy=float(v@e@v),required_work=float(v@q@v),force_work=float(v@f@a[-2:]),balance_defect=float(v@q@v-v@f@a[-2:])))
-    out=Path('artifacts/bipolar_joint_odd3' if odd_extension else ('artifacts/bipolar_joint_energy_multistart' if multistart else 'artifacts/bipolar_joint_energy'));out.mkdir(parents=True,exist_ok=True);child.save_candidate(out/'candidate.json')
-    report=dict(odd_phi03_extension=odd_extension,training_quadrature_order=96 if odd_extension else 32,multistart_trials=trials,energy_balance_enforced_as_equality=not multistart,parent_sha256=base.sha256,candidate_sha256=child.sha256,modes=modes,parameters=a.tolist(),optimizer_success=bool(fit.success),message=str(fit.message),training_equality_defects=eq(a).tolist(),core_ratios=((core@a[:-2])/original).tolist(),holdout=rows,pde_validated=False,scope='Six baseline velocity modes, optionally one autonomous odd Phi(0,3) extension with unchanged coefficient bounds; original bounded two-parameter force. Initial energy1; central component ratios constrained [.95,1.05]. Energy identity only, full momentum unoptimized. Failed optimizer results retained without promotion.')
+    out=Path(output or ('artifacts/bipolar_joint_odd3' if odd_extension else ('artifacts/bipolar_joint_energy_multistart' if multistart else 'artifacts/bipolar_joint_energy')));out.mkdir(parents=True,exist_ok=True);child.save_candidate(out/'candidate.json')
+    report=dict(optimization_energy_cap=energy_cap,cap_is_acceptance_threshold=False,theta_objective_enabled=momentum,theta_cache_replay_error=replay_error,theta_training_loss=theta_loss(a),odd_phi03_extension=odd_extension,training_quadrature_order=training_order,multistart_trials=trials,energy_balance_enforced_as_equality=not multistart,parent_sha256=base.sha256,candidate_sha256=child.sha256,modes=modes,parameters=a.tolist(),optimizer_success=bool(fit.success),message=str(fit.message),training_equality_defects=eq(a).tolist(),core_ratios=((core@a[:-2])/original).tolist(),holdout=rows,pde_validated=False,scope='Six baseline velocity modes, optionally one autonomous odd Phi(0,3) extension with unchanged coefficient bounds; original bounded two-parameter force. Initial energy1; central component ratios constrained [.95,1.05]. Energy identity plus optional theta momentum objective; radial/axial pressure-aware momentum unoptimized. Failed optimizer results retained without promotion.')
     (out/'report.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report,indent=2))
 if __name__=='__main__':
     import sys
