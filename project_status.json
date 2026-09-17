@@ -147,5 +147,10 @@
     "energy_core_feasible_starts": 9,
     "status": "energy_balance_not_satisfied_no_promotion",
     "pde_validated": false
+  },
+  "bipolar_odd3_experiment": {
+    "report": "artifacts/bipolar_joint_odd3/report.json",
+    "status": "energy_defect_reduced_but_not_satisfied",
+    "pde_validated": false
   }
 }

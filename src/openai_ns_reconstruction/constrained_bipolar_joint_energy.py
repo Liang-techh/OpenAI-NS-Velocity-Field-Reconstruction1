@@ -8,10 +8,16 @@ from scipy.optimize import minimize
 from .eq45_supported_delivery import Eq45SupportedDeliveryField
 from .constrained_force import RestrictedForce
 
-def run(multistart=False):
+def run(multistart=False, odd_extension=False):
     base=Eq45SupportedDeliveryField.load_candidate('artifacts/bipolar_energy/normalized_candidate.json')
     b=base.candidate.parent.profile_basis
-    modes=[('phi',i) for i,(_,j) in enumerate(b.mode_indices) if j%2==1]+[('swirl',i) for i,(_,j) in enumerate(b.mode_indices) if j%2==0]
+    if odd_extension:
+        old=b; modes_new=[(i,j) for i in range(old.radial_degree+1) for j in range(4)]
+        phi=np.zeros(len(modes_new));swirl=np.zeros(len(modes_new))
+        for i,mode in enumerate(old.mode_indices):
+            k=modes_new.index(mode);phi[k]=old.phi_coefficients[i];swirl[k]=old.swirl_coefficients[i]
+        b=replace(old,eta_degree=3,phi_coefficients=tuple(phi),swirl_coefficients=tuple(swirl))
+    modes=[('phi',i) for i,(radial,j) in enumerate(b.mode_indices) if j%2==1 and (not odd_extension or j==1 or (radial,j)==(0,3))]+[('swirl',i) for i,(_,j) in enumerate(b.mode_indices) if j%2==0]
     initial=np.array([getattr(b,k+'_coefficients')[i] for k,i in modes])
     def field(a):
         phi=np.zeros(b.mode_count);swirl=np.zeros(b.mode_count)
@@ -33,7 +39,7 @@ def run(multistart=False):
         force=np.column_stack([np.einsum('n,nci,nc->i',weights,u,RestrictedForce(a=a,c=c)(x,t)) for a,c in [(1,0),(0,1)]])
         return energy,(work+work.T)/2,force
     times=(.3125,.5,.6875)
-    cache=[matrices(32,.005,t) for t in times]
+    cache=[matrices(96 if odd_extension else 32,.005,t) for t in times]
     # Initial energy uses t=.25 exactly; derivative evaluations stay inside window.
     g,w=leggauss(64);r,z=np.meshgrid(g+1,2*g,indexing='ij');x=np.column_stack((r.ravel(),0*r.ravel(),z.ravel()));weights=(2*np.pi*r*w[:,None]*2*w[None,:]).ravel()
     u=np.stack([f.at_points(x,.25) for f in fields],axis=-1);e0=.5*np.einsum('n,nci,ncj->ij',weights,u,u)
@@ -63,9 +69,9 @@ def run(multistart=False):
     for t in (.34375,.46875,.59375,.71875):
         e,q,f=matrices(96,.0025,t);v=a[:-2]
         rows.append(dict(time=t,energy=float(v@e@v),required_work=float(v@q@v),force_work=float(v@f@a[-2:]),balance_defect=float(v@q@v-v@f@a[-2:])))
-    out=Path('artifacts/bipolar_joint_energy_multistart' if multistart else 'artifacts/bipolar_joint_energy');out.mkdir(parents=True,exist_ok=True);child.save_candidate(out/'candidate.json')
-    report=dict(multistart_trials=trials,energy_balance_enforced_as_equality=not multistart,parent_sha256=base.sha256,candidate_sha256=child.sha256,modes=modes,parameters=a.tolist(),optimizer_success=bool(fit.success),message=str(fit.message),training_equality_defects=eq(a).tolist(),core_ratios=((core@a[:-2])/original).tolist(),holdout=rows,pde_validated=False,scope='Existing six velocity modes and original bounded two-parameter force. Initial energy1; central component ratios constrained [.95,1.05]. Energy identity only, full momentum unoptimized. Failed optimizer results retained without promotion.')
+    out=Path('artifacts/bipolar_joint_odd3' if odd_extension else ('artifacts/bipolar_joint_energy_multistart' if multistart else 'artifacts/bipolar_joint_energy'));out.mkdir(parents=True,exist_ok=True);child.save_candidate(out/'candidate.json')
+    report=dict(odd_phi03_extension=odd_extension,training_quadrature_order=96 if odd_extension else 32,multistart_trials=trials,energy_balance_enforced_as_equality=not multistart,parent_sha256=base.sha256,candidate_sha256=child.sha256,modes=modes,parameters=a.tolist(),optimizer_success=bool(fit.success),message=str(fit.message),training_equality_defects=eq(a).tolist(),core_ratios=((core@a[:-2])/original).tolist(),holdout=rows,pde_validated=False,scope='Six baseline velocity modes, optionally one autonomous odd Phi(0,3) extension with unchanged coefficient bounds; original bounded two-parameter force. Initial energy1; central component ratios constrained [.95,1.05]. Energy identity only, full momentum unoptimized. Failed optimizer results retained without promotion.')
     (out/'report.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report,indent=2))
 if __name__=='__main__':
     import sys
-    run(multistart='--multistart' in sys.argv)
+    run(multistart='--multistart' in sys.argv,odd_extension='--odd-extension' in sys.argv)

@@ -1,3 +1,19 @@
+## Odd axial spatial extension
+
+Incoming agent7 Phi(0,4) audit studies an even-eta poloidal mode. That mode
+adds even-z axial velocity, so it is not directly adopted for the bipolar
+parity-preserving optimization. Instead an explicit autonomous Phi(0,3)
+mode is added with the SAME coefficient limit4 and zero-padding of all
+old coefficients. Seven velocity coefficients plus original bounded force
+are searched with twelve starts, order96 training quadrature.
+The resulting candidate satisfies initial energy equality and central ratios
+[.9980,1.05,1.05], but fresh-time energy defects remain -.1055 through-.1390.
+This is promising capacity evidence, not acceptance. Earlier six-mode search
+used order32 training, so improvement cannot be attributed solely to the new
+mode until a same-resolution baseline replay is made. Full momentum untested.
+Reproduce: `PYTHONPATH=src python -m openai_ns_reconstruction.constrained_bipolar_joint_energy --multistart --odd-extension`.
+Artifacts: `artifacts/bipolar_joint_odd3/`.
+
 ## Twelve-start joint feasibility screen
 
 The joint search now has `--multistart`: keep initial energy equality and
