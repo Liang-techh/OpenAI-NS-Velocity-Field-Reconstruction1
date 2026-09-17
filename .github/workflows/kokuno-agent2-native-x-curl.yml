@@ -1,6 +1,15 @@
 name: kokuno-agent2-native-x-curl
 
 on:
+  push:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_similarity_coordinates.py'
+      - 'src/openai_ns_reconstruction/kokuno_complete_curl.py'
+      - 'src/openai_ns_reconstruction/kokuno_native_x_curl.py'
+      - 'src/openai_ns_reconstruction/kokuno_native_x_curl_screen.py'
+      - 'src/openai_ns_reconstruction/kokuno_reference_continuation.py'
+      - 'tests/test_constrained_kokuno_native_x_curl.py'
+      - '.github/workflows/kokuno-agent2-native-x-curl.yml'
   pull_request:
     paths:
       - 'src/openai_ns_reconstruction/kokuno_similarity_coordinates.py'
