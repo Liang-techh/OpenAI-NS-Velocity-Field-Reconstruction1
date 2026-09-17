@@ -1,0 +1,65 @@
+{
+  "schema": "eq45_supported_residual_norm_scope_v1",
+  "task_id": "CR002-EQ45-SUPPORTED-RESIDUAL-NORM-SCOPE-020",
+  "source_vocabulary": [
+    "user_requirement",
+    "public_source_fact",
+    "autonomous_design",
+    "pending_unknown"
+  ],
+  "classification": {
+    "velocity_delivery": "user_requirement",
+    "cr001_validation_norms": "autonomous_design",
+    "cr001_thresholds": "autonomous_design",
+    "fixed_probe_vorticity_diagnostic": "autonomous_design",
+    "openai_visual_correspondence": "pending_unknown"
+  },
+  "candidate_identity": {
+    "parent_sha256": "48f1845fcfd71ec95495c98bb7aac3fca4653e748a8856a5421234e9601525a7",
+    "supported_child_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+    "classification": "autonomous_design"
+  },
+  "registered_cr001_contract": {
+    "experiment_id": "compact_axisymmetric_window_v1",
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "norms": [
+      "max Euclidean vector norm",
+      "volume-weighted L2 spatial norm at each time"
+    ],
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001
+  },
+  "supported_child_diagnostic": {
+    "schema": "eq45_supported_vorticity_revalidation_v1",
+    "claim_scope": "independent pressure_free_vorticity_equation_on_supported_child",
+    "probe_count": 16,
+    "metric_semantics": {
+      "finest_supported_zero_force_rms": "fixed_probe_unweighted_rms_diagnostic",
+      "finest_supported_zero_force_max": "fixed_probe_max_diagnostic",
+      "finest_supported_term_normalized_rms": "fixed_probe_term_normalized_rms_diagnostic"
+    },
+    "formal_pde_gate_assessed": false,
+    "supported_force_coefficients_status": "pending_refit_and_independent_revalidation",
+    "untapered_fitted_force_transferred": false
+  },
+  "policy": {
+    "fixed_probe_rms_may_satisfy_registered_L2": false,
+    "fixed_probe_max_may_satisfy_registered_max": false,
+    "term_normalized_rms_has_registered_acceptance_threshold": false,
+    "zero_force_pressure_free_check_may_set_pde_validated": false,
+    "green_ci_may_set_pde_validated": false,
+    "formal_pde_failure_or_unassessed_blocks_velocity_export": false,
+    "residual_defined_or_pointwise_free_force_allowed": false,
+    "posthoc_threshold_relaxation_allowed": false
+  },
+  "truth_boundary": {
+    "velocity_export_ready": true,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  }
+}
