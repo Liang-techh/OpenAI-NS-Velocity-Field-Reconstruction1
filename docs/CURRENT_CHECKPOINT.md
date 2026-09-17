@@ -1,3 +1,18 @@
+## Independent curl obstruction comparison
+
+The fixed-force curl diagnostic now compares default, bipolar and normalized
+bipolar fields on independent uniform/core/collar samples and two FD steps.
+Maximum-over-time uniform volume L2 estimates of curl obstruction are
+19.9985, 13.7084 and 27.2196 respectively. These are curl units, NOT momentum
+residuals, so the .001 momentum tolerance is not directly applicable.
+Energy normalization increases this obstruction; an attractive flow pattern
+and correct energy alone do not establish momentum balance.
+The curl operator was calibrated on an analytic rotation field and its bounded
+two-parameter least-squares solver checked against SciPy. Full PDE acceptance
+remains false. Spatial swirl coefficient optimization is the next active experiment.
+Reproduce: `PYTHONPATH=src python -m openai_ns_reconstruction.constrained_bipolar_obstruction`.
+Full sampling/force/region evidence: `artifacts/bipolar_obstruction/report.json`.
+
 ## Bounded swirl time-mode experiment
 
 A new affine multiplier `1+k*(t-.25)` was fitted with k in [-1,1] and the

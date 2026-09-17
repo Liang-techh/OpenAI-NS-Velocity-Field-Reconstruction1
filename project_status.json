@@ -105,5 +105,24 @@
     "status": "insufficient_improvement",
     "core_drift": 0.015749496834345792,
     "pde_validated": false
+  },
+  "bipolar_curl_obstruction": {
+    "report": "artifacts/bipolar_obstruction/report.json",
+    "comparison": {
+      "default_vs_bipolar_fine_uniform_l2_relative_change": 0.31452704008178234,
+      "fine_step": 0.005,
+      "fine_step_uniform_l2_ordering": [
+        "bipolar",
+        "default",
+        "bipolar_energy_normalized"
+      ],
+      "lower_fine_uniform_l2_candidate": "bipolar",
+      "uniform_whole_volume_l2_max_by_candidate": {
+        "bipolar": 13.708430179083468,
+        "bipolar_energy_normalized": 27.21959842487541,
+        "default": 19.998498818566077
+      }
+    },
+    "pde_validated": false
   }
 }
