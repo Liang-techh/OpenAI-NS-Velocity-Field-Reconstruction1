@@ -71,6 +71,8 @@ jobs:
         run: python -m pytest -q -W error tests/test_constrained_*.py
       - name: Report Phi10 temporal restricted-force cross-check
         run: python -m openai_ns_reconstruction.constrained_eq45_supported_phi10_force_crosscheck
+      - name: Report Phi10 temporal held-out seed generalization
+        run: python -m openai_ns_reconstruction.constrained_eq45_supported_phi10_seed_generalization
 
   full:
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_legacy_full == true }}
