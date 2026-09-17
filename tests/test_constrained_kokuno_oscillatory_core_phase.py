@@ -79,11 +79,19 @@ def test_report_separates_train_holdout_and_roundtrips_candidate(tmp_path):
     assert report["holdout"]["mean_selected_phase_momentum_rms"] > 0.0
     assert report["holdout"]["mean_phase0_momentum_rms"] > 0.0
     assert np.isfinite(report["holdout"]["selected_over_phase0"])
+    generalizes = report["holdout"]["selected_generalizes_vs_phase0"]
+    assert report["candidate"]["accepted_for_next_cycle"] is generalizes
+    assert report["truth_boundary"]["phase_accepted_for_next_cycle"] is generalizes
+    assert report["routing"]["recommended_phase_offset"] == (
+        report["training"]["selected_phase"] if generalizes else 0.0
+    )
     assert report["truth_boundary"]["formal_full_domain_pde_gate_assessed"] is False
     assert report["truth_boundary"]["pde_validated"] is False
     assert report["truth_boundary"]["paper_exact"] is False
 
-    replay = KokunoCoreCompositeCandidate.load_json(tmp_path / "selected_phase_core_candidate.json")
+    replay = KokunoCoreCompositeCandidate.load_json(
+        tmp_path / "training_selected_phase_core_candidate.json"
+    )
     assert replay.sha256 == report["candidate"]["sha256"]
     grid = replay.grid(
         np.array([-0.05, 0.0, 0.05]),
