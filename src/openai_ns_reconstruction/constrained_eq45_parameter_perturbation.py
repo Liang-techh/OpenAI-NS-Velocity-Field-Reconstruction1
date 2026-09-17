@@ -12,6 +12,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import json
+import random
 from pathlib import Path
 import tempfile
 from typing import Iterable
@@ -58,8 +59,10 @@ def _perturbed_candidate(
 
     basis = candidate.profile_basis
     base = _coefficient_vector(candidate)
-    rng = np.random.default_rng(int(seed))
-    direction = rng.normal(size=base.size)
+    rng = random.Random(int(seed))
+    direction = np.asarray(
+        [rng.uniform(-1.0, 1.0) for _ in range(base.size)], dtype=float
+    )
     direction /= np.linalg.norm(direction)
 
     target_l2 = float(scale) * float(basis.coefficient_limit)
@@ -97,12 +100,12 @@ def _held_out_points(seed: int, count: int) -> np.ndarray:
         raise ValueError("probe seed must be an integer")
     if not isinstance(count, (int, np.integer)) or count < 16:
         raise ValueError("probe_count must be an integer >= 16")
-    rng = np.random.default_rng(int(seed))
+    rng = random.Random(int(seed))
     return np.column_stack(
         (
-            rng.uniform(-0.9, 0.9, int(count)),
-            rng.uniform(-0.9, 0.9, int(count)),
-            rng.uniform(-0.45, 0.45, int(count)),
+            [rng.uniform(-0.9, 0.9) for _ in range(int(count))],
+            [rng.uniform(-0.9, 0.9) for _ in range(int(count))],
+            [rng.uniform(-0.45, 0.45) for _ in range(int(count))],
         )
     )
 
