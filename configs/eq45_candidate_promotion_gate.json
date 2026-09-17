@@ -25,6 +25,7 @@
     "candidate_local_velocity_export_ready": true,
     "independent_public_visual_comparison": "pending_unknown",
     "independent_visual_resolution_stability": "pending_unknown",
+    "explicit_truth_boundary_review": true,
     "physical_support_validated": false,
     "pde_validated": false
   },
