@@ -1,0 +1,113 @@
+{
+  "schema": "shared_frame_visual_evidence_scope_v1",
+  "task_id": "CR002-SHARED-FRAME-VISUAL-EVIDENCE-SCOPE-028",
+  "scope": "govern evidentiary meaning of the integrated truth-bounded shared-frame multi-candidate comparison without changing any velocity value or candidate selection",
+  "source_vocabulary": [
+    "user_requirement",
+    "public_source_fact",
+    "autonomous_design",
+    "pending_unknown"
+  ],
+  "source_classification": {
+    "callable_saveable_loadable_3d_time_varying_velocity": "user_requirement",
+    "independent_velocity_visual_pde_and_exactness_states": "user_requirement",
+    "same_frame_same_time_candidate_comparison": "autonomous_design",
+    "single_global_speed_normalization": "autonomous_design",
+    "projected_meridional_streamline_overlay": "autonomous_design",
+    "renderer_activity_floor": "autonomous_design",
+    "public_openai_reference_correspondence": "pending_unknown",
+    "paper_exact_or_hidden_openai_field_identity": "pending_unknown"
+  },
+  "integration_binding": {
+    "source_task": "CR-A9-023",
+    "source_pr": 192,
+    "source_head": "47c3fb66ebb19d46565d1f1dce159bc9597c1a7b",
+    "integration_head": "7dd05bb0f1f68e593e37e5f3a4eee926a89fbdf5",
+    "module": "openai_ns_reconstruction.constrained_candidate_visual_compare",
+    "sampler": "sample_shared_frame_candidates",
+    "component_order": ["u", "v", "w"]
+  },
+  "comparison_semantics": {
+    "same_physical_frame_for_all_candidates": true,
+    "same_time_values_for_all_candidates": true,
+    "full_cartesian_velocity_retained": true,
+    "single_global_speed_scale_across_all_candidates_and_times": true,
+    "per_panel_autoscaling": false,
+    "projected_streamline_components": ["u", "w"],
+    "projected_streamlines_are_true_3d_streamlines": false,
+    "swirl_component_retained_in_saved_velocity": true,
+    "camera_fit_performed": false,
+    "registration_fit_performed": false,
+    "hidden_time_alignment_performed": false,
+    "candidate_selection_performed": false,
+    "public_reference_comparison_performed": false
+  },
+  "activity_guard": {
+    "default_min_panel_activity": 1e-12,
+    "role": "fail_closed_rendering_guard_against_zero_or_numerically_inactive_panels",
+    "scientific_acceptance_threshold": false,
+    "may_replace_cr001_energy_nontriviality": false,
+    "may_select_candidate": false,
+    "may_promote_visual_correspondence_verified": false
+  },
+  "cr001_binding": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_parameters": ["a", "c"],
+    "reference_energy_time": 0.25,
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "registered_norms": [
+      "max Euclidean vector norm",
+      "volume-weighted L2 spatial norm at each time"
+    ],
+    "divergence_max_threshold": 1e-5,
+    "divergence_L2_threshold": 1e-5,
+    "pde_residual_max_threshold": 0.001,
+    "pde_residual_L2_threshold": 0.001
+  },
+  "promotion_contract": {
+    "shared_frame_comparability_is_visual_correspondence": false,
+    "global_normalization_is_visual_correspondence": false,
+    "projected_2d_streamlines_are_sufficient_for_3d_streamline_acceptance": false,
+    "green_ci_or_render_success_may_select_candidate": false,
+    "serialization_or_exportability_may_select_candidate": false,
+    "public_reference_comparison_required_for_visual_correspondence": true,
+    "independent_visual_resolution_stability_required_for_visual_correspondence": true,
+    "true_3d_streamline_or_equivalent_full_vector_diagnostic_required_when_streamline_structure_is_claimed": true,
+    "formal_pde_gate_remains_independent": true,
+    "formal_pde_pass_required_for_candidate_local_save_load_export": false,
+    "formal_pde_pass_required_for_truth_bounded_visualization_candidate": false,
+    "candidate_selection_resolved": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  },
+  "truth_states": {
+    "velocity_export_ready": true,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "forbidden_inferences": [
+    "same_frame_same_time_comparison=>candidate_selection_resolved",
+    "single_global_speed_scale=>visual_correspondence_verified",
+    "projected_meridional_streamlines=>true_3d_streamline_acceptance",
+    "renderer_activity_guard_pass=>cr001_nontriviality_pass",
+    "green_ci_or_render_success=>visual_correspondence_verified",
+    "serialization_or_exportability=>candidate_selection_resolved",
+    "visual_preference_without_public_reference=>openai_field_identified",
+    "visual_similarity=>pde_validated_or_paper_exact",
+    "pde_failed_or_pending=>velocity_export_not_allowed"
+  ]
+}
