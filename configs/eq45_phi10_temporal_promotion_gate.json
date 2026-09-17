@@ -1,0 +1,109 @@
+{
+  "schema": "eq45_phi10_temporal_promotion_gate_v1",
+  "task_id": "CR002-EQ45-PHI10-TEMPORAL-PROMOTION-GATE-022",
+  "classification": {
+    "velocity_visual_delivery": "user_requirement",
+    "eq45_backbone": "public_source_fact",
+    "phi10_temporal_mode_and_slope_selection": "autonomous_design",
+    "target_free_internal_morphology_metric": "autonomous_design",
+    "public_visual_correspondence": "pending_unknown",
+    "pde_validity": "pending_unknown"
+  },
+  "candidate": {
+    "source_capsule_task": "CR011-EQ45-PHI10-TEMPORAL-TRIAL-CAPSULE-013",
+    "base_supported_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+    "temporal_mode": ["phi", 1, 0],
+    "slope": 1.4,
+    "coefficient_start_mid_end": [-1.7, -0.3, 1.1],
+    "coefficient_bound": [-4.0, 4.0],
+    "time_interval": [0.25, 0.75],
+    "spatial_box": [[-2.0, 2.0], [-2.0, 2.0], [-2.0, 2.0]]
+  },
+  "current_state": {
+    "velocity_export_ready": true,
+    "visualization_candidate_only": true,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "physical_support_validated": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "canonical_velocity_changed": false,
+    "production_slope_promoted": false
+  },
+  "evidence_scope": {
+    "target_free_selection": {
+      "source_pr": 143,
+      "status": "integrated_in_capsule_ancestry",
+      "meaning": "autonomous trial-selection evidence only; no public image was used as the fit target",
+      "may_support_visualization_trial_selection": true,
+      "may_support_public_visual_correspondence": false,
+      "may_support_pde_validation": false
+    },
+    "fixed_holdout_pde_tradeoff": {
+      "source_pr": 144,
+      "status": "integrated_in_capsule_ancestry",
+      "finest_zero_force_fractional_change": 0.037589,
+      "formal_pde_gate_assessed": false,
+      "may_support_pde_validation": false
+    },
+    "fresh_seed_pde_generalization": {
+      "source_pr": 145,
+      "status": "integrated_in_capsule_ancestry",
+      "fresh_seed_fractional_changes": [-0.011716, -0.33038, 0.225463],
+      "uniform_generalization": false,
+      "formal_pde_gate_assessed": false,
+      "may_support_pde_validation": false
+    },
+    "whole_domain_morphology": {
+      "source_pr": 146,
+      "status": "open_unconsumed_sibling_evidence",
+      "may_trigger_followup_review": true,
+      "may_promote_current_ancestry_state": false,
+      "reported_visualization_ready": false,
+      "reported_visual_correspondence_verified": false
+    }
+  },
+  "promotion_requirements": {
+    "visualization_ready": [
+      "callable_velocity",
+      "supported_visualization_entry_point",
+      "candidate_specific_resolution_sanity",
+      "whole_domain_temporal_morphology_review_resolved"
+    ],
+    "visual_correspondence_verified": [
+      "public_reference_only",
+      "candidate_specific_independent_visual_diagnostics",
+      "candidate_specific_resolution_stability",
+      "explicit_public_observable_geometry_and_time_comparison"
+    ],
+    "pde_validated": [
+      "independent_validator",
+      "preregistered_thresholds",
+      "held_out_validation"
+    ]
+  },
+  "policy": {
+    "target_free_selection_implies_public_visual_correspondence": false,
+    "early_morphology_improvement_implies_visualization_ready": false,
+    "whole_domain_resolution_stability_implies_public_visual_correspondence": false,
+    "mixed_seed_pde_changes_imply_pde_validation": false,
+    "restricted_force_projection_implies_pde_validation": false,
+    "green_ci_implies_visual_or_pde_acceptance": false,
+    "velocity_export_implies_visualization_ready": false,
+    "visual_similarity_implies_pde_validation": false,
+    "visual_correspondence_implies_paper_exact": false,
+    "pde_failure_blocks_velocity_export": false,
+    "open_sibling_evidence_is_integrated_acceptance": false,
+    "production_slope_is_promoted": false,
+    "canonical_velocity_is_changed": false
+  },
+  "truth_boundary": {
+    "velocity_changed_by_this_gate": false,
+    "temporal_slope_changed_by_this_gate": false,
+    "support_transform_changed": false,
+    "forcing_family_changed": false,
+    "thresholds_changed": false,
+    "candidate_promoted": false
+  }
+}
