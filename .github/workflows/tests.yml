@@ -80,6 +80,13 @@ jobs:
         with:
           name: eq45-quartic-seed-generalization-${{ github.sha }}
           path: artifacts/constrained/eq45_supported_phi10_quartic_seed_generalization.json
+      - name: Report quartic Phi10 temporal derivative convergence
+        run: python -m openai_ns_reconstruction.constrained_eq45_supported_phi10_quartic_temporal_derivative --output artifacts/constrained/eq45_supported_phi10_quartic_temporal_derivative.json
+      - name: Upload quartic Phi10 temporal derivative report
+        uses: actions/upload-artifact@v4
+        with:
+          name: eq45-quartic-temporal-derivative-${{ github.sha }}
+          path: artifacts/constrained/eq45_supported_phi10_quartic_temporal_derivative.json
 
   full:
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_legacy_full == true }}
