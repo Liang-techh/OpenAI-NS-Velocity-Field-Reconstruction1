@@ -73,6 +73,26 @@ jobs:
         run: python -m openai_ns_reconstruction.constrained_eq45_supported_phi10_cubic_temporal_derivative
       - name: Report quartic Phi10 restricted-force cross-check
         run: python -m openai_ns_reconstruction.constrained_eq45_supported_phi10_quartic_force_crosscheck
+      - name: Report C2 compact Phi10 restricted-force cross-check
+        shell: bash
+        run: |
+          python -m openai_ns_reconstruction.constrained_eq45_supported_phi10_c2_compact_force_crosscheck --output /tmp/c2-compact-force.json
+          python - <<'PY'
+          import json
+          r = json.load(open('/tmp/c2-compact-force.json', encoding='utf-8'))
+          fit = r['compact_projection']['fit']
+          finest = r['finest_holdout_comparison']
+          message = (
+              f"a={fit['a']:.12g}; c={fit['c']:.12g}; "
+              f"train_rms={fit['before']['rms']:.12g}->{fit['after']['rms']:.12g}; "
+              f"finest_zero={finest['compact_zero_force_rms']:.12g}; "
+              f"finest_forced={finest['compact_projected_force_rms']:.12g}; "
+              f"vs_static_zero={finest['compact_vs_static_zero_force_fractional_change']:.12g}; "
+              f"vs_quartic_zero={finest['compact_vs_quartic_zero_force_fractional_change']:.12g}; "
+              f"force_reduction={finest['compact_force_reduction_fraction']:.12g}"
+          )
+          print(f"::notice title=C2 compact force cross-check::{message}")
+          PY
 
   full:
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_legacy_full == true }}
