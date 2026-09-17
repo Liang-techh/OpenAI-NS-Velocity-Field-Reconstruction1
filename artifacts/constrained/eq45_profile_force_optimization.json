@@ -1,0 +1,95 @@
+{
+  "schema": "eq45_profile_force_optimization_v1",
+  "task_id": "CR005-EQ45-PROFILE-FORCE-OPT-015",
+  "candidate": "Eq45VelocityCandidate.seed()",
+  "contract": {
+    "nu": 0.01,
+    "fit_seed": 20260917,
+    "holdout_seed": 914117,
+    "sample_count": 16,
+    "probe_box": [[-0.25, 0.25], [-0.25, 0.25], [-0.25, 0.25]],
+    "probe_time_range": [0.38, 0.62],
+    "fit_step": 0.005,
+    "holdout_derivative_steps": [0.02, 0.01, 0.005],
+    "profile_parameters": ["Phi(0,2)", "F(0,2)"],
+    "profile_bounds": [-4.0, 4.0],
+    "force_family": "preregistered_restricted_two_parameter_family",
+    "force_bounds": [0.0, 10.0],
+    "outer_optimizer": "scipy.optimize.minimize(method='L-BFGS-B')",
+    "inner_solver": "scipy.optimize.lsq_linear variable projection",
+    "max_function_evaluations": 80,
+    "ftol": 1e-9,
+    "gtol": 1e-5,
+    "training_holdout_separate": true
+  },
+  "seed": {
+    "Phi_02": -0.35,
+    "F_02": -0.25,
+    "force_a": 3.88237221e-20,
+    "force_c": 2.09476599,
+    "training_curl_rms_after_force": 25.65816693145903
+  },
+  "fit": {
+    "optimizer_success": true,
+    "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "optimizer_function_evaluations": 60,
+    "optimizer_iterations": 12,
+    "Phi_02": 3.8740984117202455,
+    "F_02": 3.9916795387937536,
+    "force_a": 1.13801958e-23,
+    "force_c": 2.7691195895151233,
+    "curl_rms_before_force": 11.09131875817998,
+    "curl_rms_after_force": 9.832527545345032,
+    "curl_max_after_force": 18.60659526610375,
+    "training_improvement_vs_seed_after_force": 0.6167852708
+  },
+  "holdout": [
+    {
+      "step": 0.02,
+      "seed_curl_rms_after_force": 20.092286059531077,
+      "optimized_curl_rms_before_force": 10.695183944040705,
+      "optimized_curl_rms_after_force": 9.222512218263423,
+      "optimized_curl_max_after_force": 23.208091222767695,
+      "improvement_vs_seed": 0.5409923892712752
+    },
+    {
+      "step": 0.01,
+      "seed_curl_rms_after_force": 20.285257944318207,
+      "optimized_curl_rms_before_force": 10.773569129763342,
+      "optimized_curl_rms_after_force": 9.312725604826248,
+      "optimized_curl_max_after_force": 23.51342351298084,
+      "improvement_vs_seed": 0.5409116497118691
+    },
+    {
+      "step": 0.005,
+      "seed_curl_rms_after_force": 20.333768042429906,
+      "optimized_curl_rms_before_force": 10.79367827673235,
+      "optimized_curl_rms_after_force": 9.335838456067934,
+      "optimized_curl_max_after_force": 23.591466917575698,
+      "improvement_vs_seed": 0.5408702195979072
+    }
+  ],
+  "velocity_change_on_holdout_probes": {
+    "seed_rms": 1.139879320255464,
+    "optimized_rms": 1.2549190591197334,
+    "delta_rms": 0.22908534741099684,
+    "relative_delta_rms": 0.200973334054043,
+    "delta_max": 0.34932981929043677
+  },
+  "optimized_candidate": {
+    "sha256": "b34902ee28b3965f245eceb5867df7409498063cb0ea80f1758931723b303c98",
+    "roundtrip_serializable": true,
+    "canonical_seed_promoted": false
+  },
+  "status": {
+    "velocity_changed_in_diagnostic_candidate": true,
+    "forcing_family_changed": false,
+    "pressure_fitted": false,
+    "pde_validated": false,
+    "visualization_ready_promoted": false,
+    "visual_correspondence_verified": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  },
+  "interpretation": "The two already-existing bounded profile coefficients materially reduce the frozen held-out pressure-curl obstruction when the preregistered force is variable-projected, so the previous obstruction is not purely optimizer-limited to force/pressure. The optimized coefficients lie close to the positive profile bounds and change held-out velocity RMS by about 20 percent, while an O(9) curl obstruction remains. This supports further representation/geometry review before any canonical promotion. Solver convergence and residual reduction are not PDE validation or visual correspondence evidence."
+}
