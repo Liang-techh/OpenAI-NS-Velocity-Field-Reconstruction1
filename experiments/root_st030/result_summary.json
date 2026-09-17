@@ -1,0 +1,34 @@
+{
+  "date":"2026-09-17",
+  "target_achieved":false,
+  "baseline_preserved":"ST006",
+  "canonical_candidate_promoted":false,
+  "norm":"full-vector max and sqrt(64*mean(|R|^2)) at each of six validation times; worst time reported",
+  "original_momentum_threshold":0.001,
+  "paired_results":[
+    {"experiment":"ST030","seed":9172910,"points":4096,"baseline_max":0.10844225838164925,"child_max":0.21584132926874774,"baseline_L2":0.10662163551830897,"child_L2":0.1216973189654851,"child_other_failure":"divergence_max=1.2679625855861743e-5 at h=.005","budget":"42completed steps +8recovery steps, same6144training sample"},
+    {"experiment":"ST032","seed":9172911,"points":4096,"baseline_max":0.11129466855191358,"child_max":0.14980172410097423,"baseline_L2":0.111332309992964,"child_L2":0.10736842050866138,"baseline_other_failure":"divergence_max=1.0359705287420196e-5 at h=.005","budget":"12completed steps,4096training samples,2594stored parameters","scope":"axisymmetry retained; extra axial reflection ansatz removed"},
+    {"experiment":"ST033","seed":9172912,"points":4096,"baseline_max":0.09656057387827603,"child_max":0.1161917905645758,"baseline_L2":0.10827049907827324,"child_L2":0.1219377748316478,"child_other_failure":"scaled_core_drift=0.05096468556221178 >.05","budget":"2rounds x20damped-GN steps, separate training search pool"}
+  ],
+  "ST031":{"acceptance_eligible":false,"mode_parameters":96,"quadrature_orders":[24,32,48],"smallest_scaled_curvatures":[0.25147760445474454,0.02171347676382247,0.02550164009730201],"all_tested_nonzero_least_curvature_direction_trials_worse":true,"scope":"finite-quadrature local diagnostic, eigenvalue magnitude not converged, no continuum/global certificate"},
+  "candidate_sha256":{
+    "ST006":"6b4d84b48ab9dbcd2ee1a1858d3e56ef81523f5864369d7e96c6431fccf107a3",
+    "ST030":"1dbfd002588f94ee532f746a2554897e92701a6983b7749562280fdd20363a49",
+    "ST032":"8ceb8baefe2c89d809b1323950e0161a17a691961236d228f3265197547d325b",
+    "ST033":"c62b1c057232d73777c2e720a96f439363e53c257f592e62f9f5bdc2709a1c55"
+  },
+  "local_exact_submitted_source_tests":"12passed in5.26s; warnings-as-errors; Gitblob identities checked",
+  "compileall_exit":0,
+  "inherited_symbolic_checks":5,
+  "all_six_acceptance_cli_exit_codes":1,
+  "memory_events":"2OOMkills preserved,42+8segmented recovery and standaloneorder32retry; no failed run relabeled complete",
+  "source_access":"Primary papers/indices read; externalPython/bulk downloads failed; no swirl-collapse or Kokuno solver replay executed",
+  "frozen_artifacts":"Full frozen JSONs, registrations, histories and independent reports are in accompanying user-delivery archive, not tracked in this source-only GitHub increment",
+  "full_inherited_suite":"not run",
+  "lean":"not run",
+  "github_ci_for_new_folder":"not run or verified",
+  "review_acceptance":"pending",
+  "pde_validated":false,
+  "paper_exact":false,
+  "blowup_proved":false
+}

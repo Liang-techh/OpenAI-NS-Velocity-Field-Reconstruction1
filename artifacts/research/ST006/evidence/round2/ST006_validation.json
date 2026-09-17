@@ -1,0 +1,556 @@
+{
+  "experiment": "additional_diagnostic",
+  "candidate_sha256": "6b4d84b48ab9dbcd2ee1a1858d3e56ef81523f5864369d7e96c6431fccf107a3",
+  "validation_seed": 9172801,
+  "uniform_box_points": 4096,
+  "force": {
+    "a": 0.1757708484168107,
+    "c": 0.23927629805555817
+  },
+  "spatial_refinement": [
+    {
+      "time": 0.25,
+      "space_step": 0.02,
+      "time_step": 0.0025,
+      "momentum_max": 0.06635823336058981,
+      "momentum_L2": 0.04874093520891118,
+      "divergence_max": 0.0024814446415759705,
+      "divergence_L2": 0.0005964814017394826,
+      "analytic_FD_max_difference": 0.009803875324710106
+    },
+    {
+      "time": 0.3125,
+      "space_step": 0.02,
+      "time_step": 0.0025,
+      "momentum_max": 0.07513235094060941,
+      "momentum_L2": 0.06353024108308573,
+      "divergence_max": 0.0011146744175113028,
+      "divergence_L2": 0.00027449861988352404,
+      "analytic_FD_max_difference": 0.005120672383726876
+    },
+    {
+      "time": 0.4375,
+      "space_step": 0.02,
+      "time_step": 0.0025,
+      "momentum_max": 0.031770422541890816,
+      "momentum_L2": 0.04730561842073979,
+      "divergence_max": 0.0006481075292670128,
+      "divergence_L2": 0.0002362495051713926,
+      "analytic_FD_max_difference": 0.0029075615439004953
+    },
+    {
+      "time": 0.5625,
+      "space_step": 0.02,
+      "time_step": 0.0025,
+      "momentum_max": 0.06421007055086857,
+      "momentum_L2": 0.04582102340614758,
+      "divergence_max": 0.0004346063899501331,
+      "divergence_L2": 0.00023065625330296238,
+      "analytic_FD_max_difference": 0.002462119791183003
+    },
+    {
+      "time": 0.6875,
+      "space_step": 0.02,
+      "time_step": 0.0025,
+      "momentum_max": 0.10822912145434876,
+      "momentum_L2": 0.10752161069773106,
+      "divergence_max": 0.00030439872778474273,
+      "divergence_L2": 0.0001766702229786454,
+      "analytic_FD_max_difference": 0.0012987139885820796
+    },
+    {
+      "time": 0.75,
+      "space_step": 0.02,
+      "time_step": 0.0025,
+      "momentum_max": 0.06820000613273358,
+      "momentum_L2": 0.05769938958764068,
+      "divergence_max": 0.001490530333056849,
+      "divergence_L2": 0.00042250549783584134,
+      "analytic_FD_max_difference": 0.006322618590604607
+    },
+    {
+      "time": 0.25,
+      "space_step": 0.01,
+      "time_step": 0.0025,
+      "momentum_max": 0.0673348456794126,
+      "momentum_L2": 0.04919042418430413,
+      "divergence_max": 0.00024605228129663016,
+      "divergence_L2": 5.070857813076728e-05,
+      "analytic_FD_max_difference": 0.0011139125126892844
+    },
+    {
+      "time": 0.3125,
+      "space_step": 0.01,
+      "time_step": 0.0025,
+      "momentum_max": 0.07575499166217178,
+      "momentum_L2": 0.06369354090119024,
+      "divergence_max": 0.00010975535876927211,
+      "divergence_L2": 2.369301716987742e-05,
+      "analytic_FD_max_difference": 0.0005566300378605769
+    },
+    {
+      "time": 0.4375,
+      "space_step": 0.01,
+      "time_step": 0.0025,
+      "momentum_max": 0.03177105381588507,
+      "momentum_L2": 0.04740642826262254,
+      "divergence_max": 6.514433077630917e-05,
+      "divergence_L2": 2.0049517624055866e-05,
+      "analytic_FD_max_difference": 0.0003275346880566408
+    },
+    {
+      "time": 0.5625,
+      "space_step": 0.01,
+      "time_step": 0.0025,
+      "momentum_max": 0.06421821155707451,
+      "momentum_L2": 0.04593023976818591,
+      "divergence_max": 4.5229214798507035e-05,
+      "divergence_L2": 1.9552725391368427e-05,
+      "analytic_FD_max_difference": 0.0002682854204362088
+    },
+    {
+      "time": 0.6875,
+      "space_step": 0.01,
+      "time_step": 0.0025,
+      "momentum_max": 0.10822894174620044,
+      "momentum_L2": 0.10757948479132672,
+      "divergence_max": 2.779274645696645e-05,
+      "divergence_L2": 1.4786277222901179e-05,
+      "analytic_FD_max_difference": 0.00014235609619669582
+    },
+    {
+      "time": 0.75,
+      "space_step": 0.01,
+      "time_step": 0.0025,
+      "momentum_max": 0.06819989501899919,
+      "momentum_L2": 0.05801270878039155,
+      "divergence_max": 0.00015090337943555326,
+      "divergence_L2": 3.7595628473815756e-05,
+      "analytic_FD_max_difference": 0.0007290601905053401
+    },
+    {
+      "time": 0.25,
+      "space_step": 0.005,
+      "time_step": 0.0025,
+      "momentum_max": 0.06835928807998227,
+      "momentum_L2": 0.049232440605126014,
+      "divergence_max": 1.775322740097795e-05,
+      "divergence_L2": 3.5003028109417156e-06,
+      "analytic_FD_max_difference": 8.366727337728935e-05
+    },
+    {
+      "time": 0.3125,
+      "space_step": 0.005,
+      "time_step": 0.0025,
+      "momentum_max": 0.07579259148812056,
+      "momentum_L2": 0.0637080263666706,
+      "divergence_max": 7.903492712468558e-06,
+      "divergence_L2": 1.6424994143501665e-06,
+      "analytic_FD_max_difference": 4.140596214672403e-05
+    },
+    {
+      "time": 0.4375,
+      "space_step": 0.005,
+      "time_step": 0.0025,
+      "momentum_max": 0.03177109339149318,
+      "momentum_L2": 0.04741503125467087,
+      "divergence_max": 4.720339621376102e-06,
+      "divergence_L2": 1.375867478532674e-06,
+      "analytic_FD_max_difference": 2.4527269783714107e-05
+    },
+    {
+      "time": 0.5625,
+      "space_step": 0.005,
+      "time_step": 0.0025,
+      "momentum_max": 0.06421870982609905,
+      "momentum_L2": 0.0459393923065151,
+      "divergence_max": 3.3034825510766443e-06,
+      "divergence_L2": 1.3418481718576701e-06,
+      "analytic_FD_max_difference": 1.9900509213638275e-05
+    },
+    {
+      "time": 0.6875,
+      "space_step": 0.005,
+      "time_step": 0.0025,
+      "momentum_max": 0.10822893050403214,
+      "momentum_L2": 0.10758432876171865,
+      "divergence_max": 1.917022939561101e-06,
+      "divergence_L2": 1.0108560046505094e-06,
+      "analytic_FD_max_difference": 1.0741944406490088e-05
+    },
+    {
+      "time": 0.75,
+      "space_step": 0.005,
+      "time_step": 0.0025,
+      "momentum_max": 0.06819988809188153,
+      "momentum_L2": 0.058041274526987256,
+      "divergence_max": 1.0959901451015018e-05,
+      "divergence_L2": 2.6189114541326617e-06,
+      "analytic_FD_max_difference": 5.496740957964013e-05
+    }
+  ],
+  "temporal_refinement_subset": [
+    {
+      "time": 0.25,
+      "space_step": 0.005,
+      "time_step": 0.02,
+      "momentum_max": 0.05040745023645973,
+      "momentum_L2": 0.05018154037556732,
+      "divergence_max": 3.5559634750763347e-06,
+      "divergence_L2": 2.646175201173506e-06
+    },
+    {
+      "time": 0.4375,
+      "space_step": 0.005,
+      "time_step": 0.02,
+      "momentum_max": 0.03177165156326231,
+      "momentum_L2": 0.048405782404895875,
+      "divergence_max": 1.1796058946588977e-06,
+      "divergence_L2": 1.38310117464462e-06
+    },
+    {
+      "time": 0.75,
+      "space_step": 0.005,
+      "time_step": 0.02,
+      "momentum_max": 0.05906552292562871,
+      "momentum_L2": 0.05374028219617654,
+      "divergence_max": 2.4442384623314163e-06,
+      "divergence_L2": 2.2188946070155317e-06
+    },
+    {
+      "time": 0.25,
+      "space_step": 0.005,
+      "time_step": 0.01,
+      "momentum_max": 0.0503866667940654,
+      "momentum_L2": 0.05021790435669838,
+      "divergence_max": 3.5559634750763347e-06,
+      "divergence_L2": 2.646175201173506e-06
+    },
+    {
+      "time": 0.4375,
+      "space_step": 0.005,
+      "time_step": 0.01,
+      "momentum_max": 0.031771122352054024,
+      "momentum_L2": 0.0484049824540249,
+      "divergence_max": 1.1796058946588977e-06,
+      "divergence_L2": 1.38310117464462e-06
+    },
+    {
+      "time": 0.75,
+      "space_step": 0.005,
+      "time_step": 0.01,
+      "momentum_max": 0.05897864615745184,
+      "momentum_L2": 0.053671335811789934,
+      "divergence_max": 2.4442384623314163e-06,
+      "divergence_L2": 2.2188946070155317e-06
+    },
+    {
+      "time": 0.25,
+      "space_step": 0.005,
+      "time_step": 0.005,
+      "momentum_max": 0.05038529263275776,
+      "momentum_L2": 0.05022083190460883,
+      "divergence_max": 3.5559634750763347e-06,
+      "divergence_L2": 2.646175201173506e-06
+    },
+    {
+      "time": 0.4375,
+      "space_step": 0.005,
+      "time_step": 0.005,
+      "momentum_max": 0.03177109501076792,
+      "momentum_L2": 0.04840493324610006,
+      "divergence_max": 1.1796058946588977e-06,
+      "divergence_L2": 1.38310117464462e-06
+    },
+    {
+      "time": 0.75,
+      "space_step": 0.005,
+      "time_step": 0.005,
+      "momentum_max": 0.05897265619500423,
+      "momentum_L2": 0.053666828952057405,
+      "divergence_max": 2.4442384623314163e-06,
+      "divergence_L2": 2.2188946070155317e-06
+    }
+  ],
+  "energy_quadrature": [
+    {
+      "order": 24,
+      "time": 0.25,
+      "energy": 0.9999961898715929
+    },
+    {
+      "order": 24,
+      "time": 0.3125,
+      "energy": 1.0015273790838641
+    },
+    {
+      "order": 24,
+      "time": 0.4375,
+      "energy": 1.0251027072452437
+    },
+    {
+      "order": 24,
+      "time": 0.5625,
+      "energy": 1.0704438086585637
+    },
+    {
+      "order": 24,
+      "time": 0.6875,
+      "energy": 1.1264018477410684
+    },
+    {
+      "order": 24,
+      "time": 0.75,
+      "energy": 1.1510692617665663
+    },
+    {
+      "order": 48,
+      "time": 0.25,
+      "energy": 1.0000000287608786
+    },
+    {
+      "order": 48,
+      "time": 0.3125,
+      "energy": 1.0015288076478424
+    },
+    {
+      "order": 48,
+      "time": 0.4375,
+      "energy": 1.0251015637335716
+    },
+    {
+      "order": 48,
+      "time": 0.5625,
+      "energy": 1.07044295830675
+    },
+    {
+      "order": 48,
+      "time": 0.6875,
+      "energy": 1.1264041350184373
+    },
+    {
+      "order": 48,
+      "time": 0.75,
+      "energy": 1.1510725584758945
+    },
+    {
+      "order": 96,
+      "time": 0.25,
+      "energy": 0.9999999999958524
+    },
+    {
+      "order": 96,
+      "time": 0.3125,
+      "energy": 1.001528799532763
+    },
+    {
+      "order": 96,
+      "time": 0.4375,
+      "energy": 1.0251015619196169
+    },
+    {
+      "order": 96,
+      "time": 0.5625,
+      "energy": 1.070442956769019
+    },
+    {
+      "order": 96,
+      "time": 0.6875,
+      "energy": 1.1264041316229707
+    },
+    {
+      "order": 96,
+      "time": 0.75,
+      "energy": 1.1510725386594678
+    }
+  ],
+  "pressure_independent_moments": [
+    {
+      "order": 24,
+      "time": 0.25,
+      "anisotropy": -0.010868711672022684,
+      "momentum_L2_lower_bound_estimate": 0.0011321981026898948,
+      "scope": "Quadrature estimate of a pressure-independent continuum lower bound; not a rigorous interval bound or sampled max"
+    },
+    {
+      "order": 24,
+      "time": 0.3125,
+      "anisotropy": -0.011693928277930686,
+      "momentum_L2_lower_bound_estimate": 0.0012181612511946301,
+      "scope": "Quadrature estimate of a pressure-independent continuum lower bound; not a rigorous interval bound or sampled max"
+    },
+    {
+      "order": 24,
+      "time": 0.4375,
+      "anisotropy": -0.009245798258311864,
+      "momentum_L2_lower_bound_estimate": 0.0009631385542097191,
+      "scope": "Quadrature estimate of a pressure-independent continuum lower bound; not a rigorous interval bound or sampled max"
+    },
+    {
+      "order": 24,
+      "time": 0.5625,
+      "anisotropy": -0.0039456192169461685,
+      "momentum_L2_lower_bound_estimate": 0.00041101675397852225,
+      "scope": "Quadrature estimate of a pressure-independent continuum lower bound; not a rigorous interval bound or sampled max"
+    },
+    {
+      "order": 24,
+      "time": 0.6875,
+      "anisotropy": 0.0008696219761294734,
+      "momentum_L2_lower_bound_estimate": 9.058887392934162e-05,
+      "scope": "Quadrature estimate of a pressure-independent continuum lower bound; not a rigorous interval bound or sampled max"
+    },
+    {
+      "order": 24,
+      "time": 0.75,
+      "anisotropy": 0.0011568275649078662,
+      "momentum_L2_lower_bound_estimate": 0.00012050719658885838,
+      "scope": "Quadrature estimate of a pressure-independent continuum lower bound; not a rigorous interval bound or sampled max"
+    },
+    {
+      "order": 48,
+      "time": 0.25,
+      "anisotropy": -0.010871929410118573,
+      "momentum_L2_lower_bound_estimate": 0.0011325332957723001,
+      "scope": "Quadrature estimate of a pressure-independent continuum lower bound; not a rigorous interval bound or sampled max"
+    },
+    {
+      "order": 48,
+      "time": 0.3125,
+      "anisotropy": -0.011695222326210149,
+      "momentum_L2_lower_bound_estimate": 0.001218296052728704,
+      "scope": "Quadrature estimate of a pressure-independent continuum lower bound; not a rigorous interval bound or sampled max"
+    },
+    {
+      "order": 48,
+      "time": 0.4375,
+      "anisotropy": -0.009244686459547432,
+      "momentum_L2_lower_bound_estimate": 0.0009630227376815372,
+      "scope": "Quadrature estimate of a pressure-independent continuum lower bound; not a rigorous interval bound or sampled max"
+    },
+    {
+      "order": 48,
+      "time": 0.5625,
+      "anisotropy": -0.003944738811719509,
+      "momentum_L2_lower_bound_estimate": 0.000410925041809012,
+      "scope": "Quadrature estimate of a pressure-independent continuum lower bound; not a rigorous interval bound or sampled max"
+    },
+    {
+      "order": 48,
+      "time": 0.6875,
+      "anisotropy": 0.0008670792747412868,
+      "momentum_L2_lower_bound_estimate": 9.032399969453951e-05,
+      "scope": "Quadrature estimate of a pressure-independent continuum lower bound; not a rigorous interval bound or sampled max"
+    },
+    {
+      "order": 48,
+      "time": 0.75,
+      "anisotropy": 0.0011534053560774797,
+      "momentum_L2_lower_bound_estimate": 0.00012015070370711731,
+      "scope": "Quadrature estimate of a pressure-independent continuum lower bound; not a rigorous interval bound or sampled max"
+    },
+    {
+      "order": 96,
+      "time": 0.25,
+      "anisotropy": -0.010871901112687595,
+      "momentum_L2_lower_bound_estimate": 0.001132530348017439,
+      "scope": "Quadrature estimate of a pressure-independent continuum lower bound; not a rigorous interval bound or sampled max"
+    },
+    {
+      "order": 96,
+      "time": 0.3125,
+      "anisotropy": -0.011695214338466856,
+      "momentum_L2_lower_bound_estimate": 0.0012182952206422457,
+      "scope": "Quadrature estimate of a pressure-independent continuum lower bound; not a rigorous interval bound or sampled max"
+    },
+    {
+      "order": 96,
+      "time": 0.4375,
+      "anisotropy": -0.009244684718208399,
+      "momentum_L2_lower_bound_estimate": 0.000963022556285544,
+      "scope": "Quadrature estimate of a pressure-independent continuum lower bound; not a rigorous interval bound or sampled max"
+    },
+    {
+      "order": 96,
+      "time": 0.5625,
+      "anisotropy": -0.003944737231892511,
+      "momentum_L2_lower_bound_estimate": 0.0004109248772377929,
+      "scope": "Quadrature estimate of a pressure-independent continuum lower bound; not a rigorous interval bound or sampled max"
+    },
+    {
+      "order": 96,
+      "time": 0.6875,
+      "anisotropy": 0.0008670827001139182,
+      "momentum_L2_lower_bound_estimate": 9.032435651699568e-05,
+      "scope": "Quadrature estimate of a pressure-independent continuum lower bound; not a rigorous interval bound or sampled max"
+    },
+    {
+      "order": 96,
+      "time": 0.75,
+      "anisotropy": 0.0011534250739855716,
+      "momentum_L2_lower_bound_estimate": 0.00012015275772959986,
+      "scope": "Quadrature estimate of a pressure-independent continuum lower bound; not a rigorous interval bound or sampled max"
+    }
+  ],
+  "core": {
+    "scaled_vectors": [
+      [
+        -0.009586729571461934,
+        0.009751008488571649,
+        0.01915181878095152
+      ],
+      [
+        -0.00988736048395972,
+        0.009964443553773685,
+        0.01980362546636843
+      ],
+      [
+        -0.010003239194424257,
+        0.010025974349883142,
+        0.02008025282688491
+      ],
+      [
+        -0.009974903521557705,
+        0.010027400229346072,
+        0.020096155633484266
+      ],
+      [
+        -0.009818414589496623,
+        0.00991458320493415,
+        0.019836223924925837
+      ],
+      [
+        -0.009067097276927307,
+        0.009335209095091496,
+        0.01830141097911142
+      ]
+    ],
+    "relative_drifts": [
+      0.0,
+      0.031822173476223854,
+      0.04479230532479013,
+      0.04494859807038542,
+      0.03148156759771709,
+      0.045888031743697745
+    ]
+  },
+  "boundary_max": 0.0,
+  "energy_relative_change_48_to_96": 2.8765026138918805e-08,
+  "derived_amplitude": 1.0151079120193585,
+  "gates": {
+    "momentum_max": false,
+    "momentum_L2": false,
+    "divergence_max": false,
+    "divergence_L2": true,
+    "initial_energy": true,
+    "energy_range": true,
+    "energy_quadrature": true,
+    "boundary": true,
+    "core_signs": true,
+    "scaled_core_drift": true,
+    "derived_amplitude": true
+  },
+  "pde_validated": false,
+  "all_numeric_gates_pass": false,
+  "scope": "Finite-window alternative-family research. Sampled numerical gates are not a continuum supremum proof, exact paper reconstruction or blow-up result. No default candidate promoted."
+}

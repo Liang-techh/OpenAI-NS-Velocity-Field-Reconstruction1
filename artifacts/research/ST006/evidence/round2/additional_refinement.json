@@ -1,0 +1,114 @@
+{
+  "rows": [
+    {
+      "time": 0.25,
+      "space_step": 0.0025,
+      "time_step": 0.0025,
+      "momentum_max": 0.06843702053552354,
+      "momentum_L2": 0.0492354462549937,
+      "divergence_max": 1.152746133235849e-06,
+      "divergence_L2": 2.2473724727328775e-07
+    },
+    {
+      "time": 0.3125,
+      "space_step": 0.0025,
+      "time_step": 0.0025,
+      "momentum_max": 0.07579491385745782,
+      "momentum_L2": 0.06370902904497822,
+      "divergence_max": 5.129297309738878e-07,
+      "divergence_L2": 1.0556828363719327e-07
+    },
+    {
+      "time": 0.4375,
+      "space_step": 0.0025,
+      "time_step": 0.0025,
+      "momentum_max": 0.03177109595758011,
+      "momentum_L2": 0.047415620492518275,
+      "divergence_max": 3.068389954439133e-07,
+      "divergence_L2": 8.815807715267241e-08
+    },
+    {
+      "time": 0.5625,
+      "space_step": 0.0025,
+      "time_step": 0.0025,
+      "momentum_max": 0.06421874077668424,
+      "momentum_L2": 0.04594000660393679,
+      "divergence_max": 2.1513681039962186e-07,
+      "divergence_L2": 8.59776945019696e-08
+    },
+    {
+      "time": 0.6875,
+      "space_step": 0.0025,
+      "time_step": 0.0025,
+      "momentum_max": 0.1082289298824189,
+      "momentum_L2": 0.10758465618620998,
+      "divergence_max": 1.2279868487742682e-07,
+      "divergence_L2": 6.470201247257719e-08
+    },
+    {
+      "time": 0.75,
+      "space_step": 0.0025,
+      "time_step": 0.0025,
+      "momentum_max": 0.0681998876159781,
+      "momentum_L2": 0.05804328189189428,
+      "divergence_max": 7.128645209486875e-07,
+      "divergence_L2": 1.6848471176924194e-07
+    },
+    {
+      "time": 0.25,
+      "space_step": 0.00125,
+      "time_step": 0.0025,
+      "momentum_max": 0.06844212823337621,
+      "momentum_L2": 0.04923564105992422,
+      "divergence_max": 7.274795574621629e-08,
+      "divergence_L2": 1.4143622867160832e-08
+    },
+    {
+      "time": 0.3125,
+      "space_step": 0.00125,
+      "time_step": 0.0025,
+      "momentum_max": 0.0757950585389693,
+      "momentum_L2": 0.06370909334457794,
+      "divergence_max": 3.23661104896511e-08,
+      "divergence_L2": 6.6455962417215085e-09
+    },
+    {
+      "time": 0.4375,
+      "space_step": 0.00125,
+      "time_step": 0.0025,
+      "momentum_max": 0.03177109589996897,
+      "momentum_L2": 0.0474156582349889,
+      "divergence_max": 1.9369519688042583e-08,
+      "divergence_L2": 5.545260220412906e-09
+    },
+    {
+      "time": 0.5625,
+      "space_step": 0.00125,
+      "time_step": 0.0025,
+      "momentum_max": 0.06421874268169118,
+      "momentum_L2": 0.045940045632625034,
+      "divergence_max": 1.3586882755597246e-08,
+      "divergence_L2": 5.40841167291112e-09
+    },
+    {
+      "time": 0.6875,
+      "space_step": 0.00125,
+      "time_step": 0.0025,
+      "momentum_max": 0.10822892999957577,
+      "momentum_L2": 0.10758467707050443,
+      "divergence_max": 7.722208340658898e-09,
+      "divergence_L2": 4.0687155523577785e-09
+    },
+    {
+      "time": 0.75,
+      "space_step": 0.00125,
+      "time_step": 0.0025,
+      "momentum_max": 0.06819988819055517,
+      "momentum_L2": 0.058043411416405,
+      "divergence_max": 4.50071506348515e-08,
+      "divergence_L2": 1.060914163199576e-08
+    }
+  ],
+  "scope": "Added derivative diagnostic; original validation gates not overwritten",
+  "pde_validated": false
+}

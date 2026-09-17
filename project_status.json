@@ -1,11 +1,19 @@
 {
   "objective": "constrained_independent_reconstruction",
   "migration": "complete",
-  "candidate_status": "not_constructed",
-  "independent_validation": "pending",
-  "selected_structure_proofs": "pending",
+  "candidate_status": "retained_research_baseline_not_validated",
+  "retained_candidate": "ST006",
+  "candidate_manifest": "artifacts/research/ST006/manifest.json",
+  "independent_validation": "failed_original_momentum_max_L2_and_divergence_max_gates",
+  "selected_structure_proofs": "local_structural_checks_only_not_full_PDE_proof",
   "exact_paper_reproduction_required": false,
   "full_blowup_proof_required": false,
   "active_task_file": "docs/AGENT_TASKS.md",
-  "legacy_artifacts_are_candidate_evidence": false
+  "parallel_scientific_integration_branch": "codex/cr001-constraints",
+  "legacy_artifacts_are_candidate_evidence": false,
+  "pde_validated": false,
+  "paper_exact": false,
+  "openai_field_identified": false,
+  "blowup_proved": false,
+  "publication_scope": "Current retained root baseline published; other agent branches preserved, no global best claim"
 }

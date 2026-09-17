@@ -1,0 +1,55 @@
+{
+  "schema": "research_publication_v1",
+  "retained_candidate": "ST006",
+  "selection_scope": "Retained root-research baseline, not a global best or an accepted NS solution",
+  "candidate_file": "artifacts/research/ST006/candidate.json",
+  "candidate_sha256": "6b4d84b48ab9dbcd2ee1a1858d3e56ef81523f5864369d7e96c6431fccf107a3",
+  "stored_parameters": 1946,
+  "basis_kind": "hybrid_legendre7_inverse_even_v1",
+  "nr": 9,
+  "nz": 9,
+  "nt": 8,
+  "source_commit": "7c63cdb9ca00090acfce42c05ddc512397117e08",
+  "source_directory": "experiments/root_st030",
+  "runtime_changes": "Sibling imports namespaced; asymmetric loading rejected. No arithmetic or candidate coefficient change.",
+  "runtime_sha256": {
+    "research_baseline/_hybrid.py": "6f234385e00bc8167bcac3fda14b8d2a582630540f4e9974ecbd20274070e6c3",
+    "research_baseline/_spacetime.py": "29d02d3d6dcbef4efccfdc32277a4c4dcf8a749ea9f8e5fd97977c69b2af22c4"
+  },
+  "physical_contract": {
+    "nu": 0.01,
+    "time_interval": [0.25, 0.75],
+    "physical_domain": "R3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r<2 and |z|<2; smooth zero extension of u and p",
+    "force": "original fixed two-parameter curl family; 0<=a,c<=10",
+    "E0": 1.0,
+    "E0_tolerance": 0.001,
+    "energy_range": [0.1, 10.0],
+    "momentum_max_threshold": 0.001,
+    "momentum_L2_threshold": 0.001,
+    "divergence_threshold": 1e-05,
+    "core_drift_threshold": 0.05
+  },
+  "headline": {
+    "seed": 9172801,
+    "points": 4096,
+    "sampled_full_momentum_max": 0.10822893050403214,
+    "volume_L2": 0.10758432876171865,
+    "original_step_divergence_max_pass": false,
+    "basis": "six fixed validation times, spatial step .005, temporal step .0025; not a continuum supremum"
+  },
+  "publication_status": "versioned_research_artifact",
+  "pde_validated": false,
+  "paper_exact": false,
+  "blowup_proved": false,
+  "openai_field_identified": false,
+  "parallel_research_branch": "codex/cr001-constraints",
+  "research_prs": [210, 240],
+  "not_published_in_this_bundle": "Full historical training histories and rejected frozen coefficients remain in the prior user archive. Published: exact ST006, its original full validation/refinement/summary, and round3 comparison index.",
+  "evidence_sha256": {
+    "artifacts/research/ST006/evidence/round2/ST006_validation.json": "314ae319fc6d4e6883664db044573bc31b8b1bbc6ae63d7967501833ab0e609a",
+    "artifacts/research/ST006/evidence/round2/additional_refinement.json": "ff3fdc9bb762e51c9d487c55b834c7ef35eaa7c4138a6c574b85ffb1ee2d1ed7",
+    "artifacts/research/ST006/evidence/round2/summary.json": "0635d2e5482bd814352e527dd0229970074b3d08f5efe9d4a85947d2d577d0bb"
+  }
+}

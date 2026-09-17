@@ -1,0 +1,20 @@
+{
+  "schema":"research_experiment_index_v1",
+  "snapshot":"2026-09-17",
+  "retained_candidate":"ST006",
+  "scientific_target_achieved":false,
+  "original_gate":{"max":0.001,"volume_L2":0.001},
+  "entries":[
+    {"id":"ST006","status":"retained_not_accepted","manifest":"ST006/manifest.json","candidate":"ST006/candidate.json","evidence":"ST006/evidence/round2/ST006_validation.json"},
+    {"id":"ST003","status":"superseded_root_baseline","source_pr":210,"original_comparison_evidence":"ST006/evidence/round2/summary.json"},
+    {"id":"ST030","status":"not_promoted","seed":9172910,"parent_max":0.10844225838164925,"child_max":0.21584132926874774,"parent_L2":0.10662163551830897,"child_L2":0.1216973189654851},
+    {"id":"ST032","status":"tradeoff_not_promoted","seed":9172911,"parent_max":0.11129466855191358,"child_max":0.14980172410097423,"parent_L2":0.111332309992964,"child_L2":0.10736842050866138},
+    {"id":"ST033","status":"not_promoted","seed":9172912,"parent_max":0.09656057387827603,"child_max":0.1161917905645758,"parent_L2":0.10827049907827324,"child_L2":0.1219377748316478},
+    {"id":"ST031","status":"capability_diagnostic_ineligible_for_original_axisymmetry_gate"}
+  ],
+  "comparison_source_commit":"7c63cdb9ca00090acfce42c05ddc512397117e08",
+  "comparison_source":"../../experiments/root_st030/result_summary.json",
+  "comparison_rule":"Within each row only; distinct holdout seeds must not be compared as controlled improvement",
+  "parallel_lanes":"Eq45/Kokuno in codex/cr001-constraints and open PRs; no transfer of validation",
+  "historical_full_runs":"Prior user archive; not all large run directories tracked in main"
+}
