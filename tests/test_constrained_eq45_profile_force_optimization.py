@@ -7,6 +7,7 @@ from openai_ns_reconstruction.constrained_eq45_candidate import Eq45VelocityCand
 from openai_ns_reconstruction.constrained_eq45_profile_force_optimization import (
     PROFILE_BOUNDS,
     candidate_with_profile_pair,
+    optimize_eq45_profile_force,
 )
 from openai_ns_reconstruction.constrained_restricted_force_curl_capacity import FORCE_BOUNDS
 
@@ -86,3 +87,26 @@ def test_optimized_pair_roundtrips_and_exports_public_velocity_grid_smoke():
     velocity_change = data["velocity_change_on_holdout_probes"]
     assert 0.15 < velocity_change["relative_delta_rms"] < 0.25
     assert data["optimized_candidate"]["canonical_seed_promoted"] is False
+
+
+def test_default_optimizer_replays_checked_capacity_result():
+    data = _payload()
+    fit = data["fit"]
+    optimized, report = optimize_eq45_profile_force()
+
+    assert report.optimizer_success is True
+    assert report.optimizer_function_evaluations <= data["contract"]["max_function_evaluations"]
+    assert abs(report.phi_02 - fit["Phi_02"]) < 5e-3
+    assert abs(report.F_02 - fit["F_02"]) < 5e-3
+    assert abs(report.force_c - fit["force_c"]) < 5e-3
+    assert report.force_a < 1e-6
+    assert abs(report.optimized_training_rms_after_force - fit["curl_rms_after_force"]) < 5e-3
+    assert min(level.improvement_vs_seed for level in report.holdout_levels) > 0.53
+    assert report.holdout_levels[-1].optimized_rms_after_force > 9.0
+    assert 0.15 < report.velocity_relative_delta_rms < 0.25
+    assert report.pde_validated is False
+    assert report.visualization_ready_promoted is False
+    assert report.paper_exact is False
+    assert report.openai_field_identified is False
+    assert optimized.sha256 == report.optimized_candidate_sha256
+    assert report.optimized_candidate_roundtrip_equal is True
