@@ -1,0 +1,136 @@
+{
+  "schema": "eq45_phi10_cubic_promotion_gate_v1",
+  "task_id": "CR002-EQ45-PHI10-CUBIC-PROMOTION-GATE-024",
+  "classification": {
+    "velocity_visual_delivery": "user_requirement",
+    "eq45_backbone": "public_source_fact",
+    "phi10_cubic_temporal_shape": "autonomous_design",
+    "snapshot_identity_observation": "autonomous_design",
+    "temporal_derivative_validation": "autonomous_design",
+    "public_visual_correspondence": "pending_unknown",
+    "pde_validity": "pending_unknown",
+    "candidate_specific_energy_acceptance": "pending_unknown"
+  },
+  "candidate": {
+    "source_capsule_task": "CR011-EQ45-PHI10-CUBIC-DELIVERY-CAPSULE-015",
+    "base_supported_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+    "candidate_sha256": "310fc2ad1bf3d721860369b9a58c7599202182964158708867691f4445f21576",
+    "temporal_mode": ["phi", 1, 0],
+    "early_delta": -1.4,
+    "schedule": "early_delta*tau*(tau-0.5)*(tau-1)/(-3)",
+    "coefficient_bound": [-4.0, 4.0],
+    "static_return_times": [0.5, 0.625, 0.75],
+    "off_keyframe_nontrivial_times": [0.375, 0.6875],
+    "time_interval": [0.25, 0.75],
+    "spatial_box": [[-2.0, 2.0], [-2.0, 2.0], [-2.0, 2.0]]
+  },
+  "current_state": {
+    "callable_serializable": true,
+    "velocity_export_ready": true,
+    "visualization_candidate_only": true,
+    "canonical_velocity_changed": false,
+    "screened_temporal_shape_materialized": true,
+    "production_temporal_shape_promoted": false,
+    "physical_support_connection_implemented": true,
+    "physical_support_validated": false,
+    "spatial_basis_grown": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "evidence_scope": {
+    "target_free_cubic_selection": {
+      "source_pr": 158,
+      "status": "integrated_in_capsule_ancestry",
+      "public_openai_reference_used_for_selection": false,
+      "may_support_visualization_trial_selection": true,
+      "may_support_public_visual_correspondence": false,
+      "may_support_pde_validation": false
+    },
+    "public_output_temporal_derivative": {
+      "source_pr": 161,
+      "source_head": "b5c9d0cb3145e014911bffd71420148c2e16c4f4",
+      "status": "integrated_in_capsule_ancestry",
+      "probe_seed": 914509,
+      "probe_count": 24,
+      "second_order_steps": [0.01, 0.005, 0.0025],
+      "fourth_order_reference_step": 0.00125,
+      "observed_rms_orders": [1.96389, 1.97902],
+      "snapshot_identity_not_derivative_identity": true,
+      "formal_pde_gate_assessed": false,
+      "may_support_public_velocity_derivative_confidence": true,
+      "may_support_pde_validation": false
+    },
+    "static_return_keyframes": {
+      "times": [0.5, 0.625, 0.75],
+      "pointwise_velocity_equals_static_parent": true,
+      "may_inherit_parent_time_derivative_evidence": false,
+      "may_inherit_parent_pde_acceptance": false,
+      "may_inherit_parent_energy_acceptance": false,
+      "may_inherit_parent_visual_acceptance": false,
+      "may_inherit_parent_canonical_status": false
+    },
+    "restricted_force_sibling": {
+      "source_pr": 160,
+      "status": "open_unconsumed_sibling_evidence",
+      "numeric_summary_bound_here": false,
+      "formal_pde_gate_assessed": false,
+      "may_promote_pde_validated": false
+    },
+    "candidate_energy": {
+      "status": "pending_candidate_specific_revalidation",
+      "may_inherit_parent_energy_acceptance": false,
+      "failure_blocks_velocity_export": false
+    }
+  },
+  "promotion_requirements": {
+    "visualization_ready": [
+      "callable_velocity",
+      "supported_visualization_entry_point",
+      "candidate_specific_resolution_sanity",
+      "whole_domain_temporal_morphology_review_resolved",
+      "three_dimensional_render_review"
+    ],
+    "visual_correspondence_verified": [
+      "public_reference_only",
+      "candidate_specific_independent_visual_diagnostics",
+      "candidate_specific_resolution_stability",
+      "explicit_public_observable_geometry_and_time_comparison"
+    ],
+    "pde_validated": [
+      "independent_validator",
+      "preregistered_thresholds",
+      "held_out_validation"
+    ]
+  },
+  "policy": {
+    "snapshot_identity_implies_time_derivative_identity": false,
+    "snapshot_identity_allows_parent_pde_inheritance": false,
+    "snapshot_identity_allows_parent_energy_inheritance": false,
+    "snapshot_identity_allows_parent_visual_inheritance": false,
+    "snapshot_identity_allows_parent_canonical_inheritance": false,
+    "target_free_selection_implies_public_visual_correspondence": false,
+    "temporal_derivative_convergence_implies_pde_validation": false,
+    "restricted_force_diagnostic_implies_pde_validation": false,
+    "green_ci_implies_visual_or_pde_acceptance": false,
+    "velocity_export_implies_visualization_ready": false,
+    "visual_similarity_implies_pde_validation": false,
+    "visual_correspondence_implies_paper_exact": false,
+    "pde_failure_blocks_velocity_export": false,
+    "candidate_energy_failure_blocks_velocity_export": false,
+    "open_sibling_evidence_is_integrated_acceptance": false,
+    "production_temporal_shape_is_promoted": false,
+    "canonical_velocity_is_changed": false
+  },
+  "truth_boundary": {
+    "velocity_changed_by_this_gate": false,
+    "temporal_schedule_changed_by_this_gate": false,
+    "support_transform_changed": false,
+    "forcing_family_changed": false,
+    "thresholds_changed": false,
+    "candidate_promoted": false
+  }
+}
