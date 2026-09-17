@@ -71,6 +71,31 @@ jobs:
         run: python -m pytest -q -W error tests/test_constrained_*.py
       - name: Report cubic Phi10 temporal derivative convergence
         run: python -m openai_ns_reconstruction.constrained_eq45_supported_phi10_cubic_temporal_derivative
+      - name: Report compact-quartic blend restricted-force screen
+        run: |
+          mkdir -p artifacts/constrained
+          python -m openai_ns_reconstruction.constrained_eq45_supported_phi10_compact_quartic_blend_force_screen --output artifacts/constrained/eq45_supported_phi10_compact_quartic_blend_force_screen.json > /tmp/blend-force-screen.txt
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path('artifacts/constrained/eq45_supported_phi10_compact_quartic_blend_force_screen.json')
+          report = json.loads(path.read_text())
+          for row in report['rows']:
+              fit = row['fit']
+              print(
+                  '::notice title=CR005 blend force screen::'
+                  f"lambda={row['blend_weight']:.2f} "
+                  f"zero={row['finest_zero_force_rms']:.9g} "
+                  f"forced={row['finest_projected_force_rms']:.9g} "
+                  f"a={fit['a']:.9g} c={fit['c']:.9g} "
+                  f"reduction={row['finest_force_reduction_fraction']:.9g}"
+              )
+          PY
+      - name: Upload compact-quartic blend force diagnostics
+        uses: actions/upload-artifact@v4
+        with:
+          name: cr005-compact-quartic-blend-force-screen
+          path: artifacts/constrained/eq45_supported_phi10_compact_quartic_blend_force_screen.json
 
   full:
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_legacy_full == true }}
