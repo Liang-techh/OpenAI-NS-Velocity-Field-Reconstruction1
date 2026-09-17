@@ -1,0 +1,22 @@
+{
+  "experiment_id":"CR-ROOT-ST003",
+  "issue":205,
+  "inherits_physical_gates":"registration_moments.json; nu/domain/support/force/energy/core/thresholds unchanged",
+  "stage":"written locally before optimization, uploaded afterward",
+  "sizes":[[7,7,8]],
+  "training_seed":9172625,
+  "validation_seed":9172626,
+  "training_points":6144,
+  "validation_points":4096,
+  "max_function_evaluations_per_run":100,
+  "method":"Bounded trust-region nonlinear least squares with analytic dense Jacobian and iterative LSMR subproblem; warm-start ST002; original full momentum plus weak-moment objective",
+  "raw_velocity_bounds":[-4,4],
+  "raw_pressure_bounds":[-100,100],
+  "force_bounds":[0,10],
+  "residual_max_tolerance":0.001,
+  "residual_L2_tolerance":0.001,
+  "divergence_tolerance":0.00001,
+  "scaled_core_drift_tolerance":0.05,
+  "source_of_change":"Test optimizer conditioning after ST002 residual plateau. Earlier validation is diagnostic only; new final sample is not used for fitting.",
+  "pde_validated":false
+}
