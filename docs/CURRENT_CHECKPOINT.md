@@ -1,3 +1,20 @@
+## Joint existing-mode energy feasibility attempt
+
+A bounded SLSQP search now varies two odd-eta poloidal and four even-eta swirl
+coefficients, plus a,c in [0,10]. It targets E(.25)=1 and energy balance at
+three interior times, with central components constrained to [.95,1.05] of
+parent. This LOCAL run failed (line-search directional derivative); three
+coefficients hit bounds. Initial energy equality defect remains .09625 and
+training balance defects -.3228,-.3770,-.5447. Fresh times and higher-order
+quadrature retain negative balance defects -.3349 through-.3787.
+The saved candidate is FAILED, not normalized or accepted. This does not
+establish infeasibility of the whole basis: one local start was attempted.
+Next use an explicit feasibility objective/multiple starts and inspect spatial
+capacity from incoming agent branches; do not widen bounds or silently weaken
+central constraints. Full momentum must follow any feasible energy result.
+Reproduce: `PYTHONPATH=src python -m openai_ns_reconstruction.constrained_bipolar_joint_energy`.
+Evidence: `artifacts/bipolar_joint_energy/`.
+
 ## Spatial swirl fit: local improvement, global rejection
 
 Four existing even-eta swirl coefficients were optimized at fixed normalized

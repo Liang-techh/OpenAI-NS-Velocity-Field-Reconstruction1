@@ -135,5 +135,10 @@
     "energy_balance": "artifacts/bipolar_spatial/energy_balance.json",
     "status": "theta_improved_energy_balance_worsened_rejected",
     "pde_validated": false
+  },
+  "bipolar_joint_energy_experiment": {
+    "report": "artifacts/bipolar_joint_energy/report.json",
+    "status": "local_optimizer_failed_constraints_not_satisfied",
+    "pde_validated": false
   }
 }
