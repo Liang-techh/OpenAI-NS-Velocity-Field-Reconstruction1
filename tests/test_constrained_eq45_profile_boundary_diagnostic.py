@@ -67,6 +67,30 @@ def test_eq45_profile_boundary_diagnostic_replays_registered_problem(capsys):
         assert row.probe_max_after_force >= row.probe_rms_after_force
         assert np.isfinite(row.relative_change_vs_receipt)
 
+    checked_path = default_receipt_path().with_name("eq45_profile_boundary_diagnostic.json")
+    checked = json.loads(checked_path.read_text(encoding="utf-8"))
+    assert checked["schema"] == "eq45_profile_boundary_diagnostic_v1"
+    assert checked["task_id"] == TASK_ID
+    assert checked["dependency"]["candidate_sha256"] == report.receipt_candidate_sha256
+    assert checked["diagnosis"]["one_start_local_basin_evidence"] is False
+    assert checked["diagnosis"]["exact_upper_bound_improves_registered_objective"] is False
+    assert checked["diagnosis"]["two_parameter_subspace_appears_locally_exhausted"] is True
+    assert checked["receipt_replay"]["training_rms_after_force"] == pytest.approx(
+        report.receipt_training_rms_after_force, rel=5e-10, abs=5e-10
+    )
+    assert checked["alternate_restart"]["training_rms_after_force"] == pytest.approx(
+        restart.training_rms_after_force, rel=5e-10, abs=5e-10
+    )
+    assert checked["best_boundary_holdout"]["probe"] == report.best_boundary_probe
+    for expected, measured in zip(
+        checked["best_boundary_holdout"]["levels"],
+        report.holdout_levels_for_best_boundary,
+    ):
+        assert expected["step"] == measured.spatial_step
+        assert expected["probe_rms_after_force"] == pytest.approx(
+            measured.probe_rms_after_force, rel=5e-10, abs=5e-10
+        )
+
     assert report.velocity_changed is False
     assert report.pressure_fitted is False
     assert report.forcing_family_changed is False
