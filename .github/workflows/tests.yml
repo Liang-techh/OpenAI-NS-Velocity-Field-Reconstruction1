@@ -73,6 +73,8 @@ jobs:
         run: python -m openai_ns_reconstruction.constrained_eq45_vorticity_residual
       - name: Report optimized Eq45 vorticity cross-check
         run: python -m openai_ns_reconstruction.constrained_eq45_optimized_vorticity_crosscheck
+      - name: Report optimized Eq45 parameter robustness
+        run: python -m openai_ns_reconstruction.constrained_eq45_optimized_parameter_robustness
 
   full:
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_legacy_full == true }}
