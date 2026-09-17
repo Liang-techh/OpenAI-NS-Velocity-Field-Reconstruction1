@@ -1,0 +1,181 @@
+{
+  "parent_sha256": "c0e27269adfb6f305c2c0b5a2483f9eddd54f79691f69cacd7bb735ba592a702",
+  "slope": -0.05326405511955437,
+  "force_c": 0.029734206736653654,
+  "train_seed": 9172605,
+  "holdout_seed": 9172606,
+  "rows": [
+    {
+      "candidate": "base",
+      "step": 0.01,
+      "time": 0.25,
+      "sampled_max": 0.5554021691974118,
+      "L2_estimate": 1.1138157914614517
+    },
+    {
+      "candidate": "child",
+      "step": 0.01,
+      "time": 0.25,
+      "sampled_max": 0.5674942842075572,
+      "L2_estimate": 1.1534252273504486
+    },
+    {
+      "candidate": "base",
+      "step": 0.01,
+      "time": 0.3125,
+      "sampled_max": 0.6396120453858758,
+      "L2_estimate": 1.236344549096897
+    },
+    {
+      "candidate": "child",
+      "step": 0.01,
+      "time": 0.3125,
+      "sampled_max": 0.64943610886479,
+      "L2_estimate": 1.270220028564146
+    },
+    {
+      "candidate": "base",
+      "step": 0.01,
+      "time": 0.4375,
+      "sampled_max": 0.8839655000398963,
+      "L2_estimate": 1.5032643167055166
+    },
+    {
+      "candidate": "child",
+      "step": 0.01,
+      "time": 0.4375,
+      "sampled_max": 0.8877861453511209,
+      "L2_estimate": 1.5229318471765394
+    },
+    {
+      "candidate": "base",
+      "step": 0.01,
+      "time": 0.5625,
+      "sampled_max": 1.303600568941739,
+      "L2_estimate": 1.8397865023703133
+    },
+    {
+      "candidate": "child",
+      "step": 0.01,
+      "time": 0.5625,
+      "sampled_max": 1.2961758674375992,
+      "L2_estimate": 1.8405726332209504
+    },
+    {
+      "candidate": "base",
+      "step": 0.01,
+      "time": 0.6875,
+      "sampled_max": 2.1308793596215168,
+      "L2_estimate": 2.401121616745041
+    },
+    {
+      "candidate": "child",
+      "step": 0.01,
+      "time": 0.6875,
+      "sampled_max": 2.096642853712984,
+      "L2_estimate": 2.372871720433074
+    },
+    {
+      "candidate": "base",
+      "step": 0.01,
+      "time": 0.75,
+      "sampled_max": 2.9648310305262116,
+      "L2_estimate": 2.8788021785477
+    },
+    {
+      "candidate": "child",
+      "step": 0.01,
+      "time": 0.75,
+      "sampled_max": 2.9094688046021475,
+      "L2_estimate": 2.8281620270670755
+    },
+    {
+      "candidate": "base",
+      "step": 0.005,
+      "time": 0.25,
+      "sampled_max": 0.5552862013387304,
+      "L2_estimate": 1.1137162949268788
+    },
+    {
+      "candidate": "child",
+      "step": 0.005,
+      "time": 0.25,
+      "sampled_max": 0.5673746804395468,
+      "L2_estimate": 1.1533313780602639
+    },
+    {
+      "candidate": "base",
+      "step": 0.005,
+      "time": 0.3125,
+      "sampled_max": 0.6396903085094497,
+      "L2_estimate": 1.2364172796547974
+    },
+    {
+      "candidate": "child",
+      "step": 0.005,
+      "time": 0.3125,
+      "sampled_max": 0.6495162582375119,
+      "L2_estimate": 1.270289006295875
+    },
+    {
+      "candidate": "base",
+      "step": 0.005,
+      "time": 0.4375,
+      "sampled_max": 0.8841504917642189,
+      "L2_estimate": 1.5034154845489829
+    },
+    {
+      "candidate": "child",
+      "step": 0.005,
+      "time": 0.4375,
+      "sampled_max": 0.8879467053296549,
+      "L2_estimate": 1.5230748535619283
+    },
+    {
+      "candidate": "base",
+      "step": 0.005,
+      "time": 0.5625,
+      "sampled_max": 1.3040237928913747,
+      "L2_estimate": 1.840084030926866
+    },
+    {
+      "candidate": "child",
+      "step": 0.005,
+      "time": 0.5625,
+      "sampled_max": 1.2965978160146256,
+      "L2_estimate": 1.8408528596178688
+    },
+    {
+      "candidate": "base",
+      "step": 0.005,
+      "time": 0.6875,
+      "sampled_max": 2.13240845171495,
+      "L2_estimate": 2.401843558104197
+    },
+    {
+      "candidate": "child",
+      "step": 0.005,
+      "time": 0.6875,
+      "sampled_max": 2.0981462667756245,
+      "L2_estimate": 2.373549412206881
+    },
+    {
+      "candidate": "base",
+      "step": 0.005,
+      "time": 0.75,
+      "sampled_max": 2.962601670697134,
+      "L2_estimate": 2.876411630830275
+    },
+    {
+      "candidate": "child",
+      "step": 0.005,
+      "time": 0.75,
+      "sampled_max": 2.9072214041987547,
+      "L2_estimate": 2.825913929665349
+    }
+  ],
+  "core_drift": 0.015749496834345792,
+  "core_drift_pass": true,
+  "pde_validated": false,
+  "scope": "Bounded affine swirl multiplier 1+k*(t-.25), k in [-1,1]. Initial energy unchanged; no zero-swirl collapse. Fixed force family. Comparator uses same fitted force. Diagnostic, no promotion."
+}

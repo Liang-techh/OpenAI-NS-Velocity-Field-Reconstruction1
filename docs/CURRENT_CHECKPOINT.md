@@ -1,3 +1,18 @@
+## Bounded swirl time-mode experiment
+
+A new affine multiplier `1+k*(t-.25)` was fitted with k in [-1,1] and the
+unchanged restricted c in [0,10]. Independent holdout uses seed 9172606,
+2048 uniform points and two derivative steps. Fit k=-0.05326405512,
+c=0.02973420674 preserves the initial energy and gives scaled core drift
+0.0157495 (below .05). At t=.75 the finest-step theta max changes only
+2.962602 to 2.907221, with L2 estimate 2.876412 to 2.825914.
+This small gain does not approach acceptance. No default promotion.
+Next optimization should change existing spatial swirl coefficients while
+constraining initial energy, bounds and core geometry; do not repeat a
+single common time multiplier as the main remedy.
+Reproduce: `PYTHONPATH=src python -m openai_ns_reconstruction.constrained_bipolar_temporal`.
+Artifact: `artifacts/bipolar_temporal/report.json`.
+
 ## Normalized bipolar momentum obstruction (2026-09-17)
 
 Independent Cartesian momentum evaluation on 2048 held-out uniform box points,

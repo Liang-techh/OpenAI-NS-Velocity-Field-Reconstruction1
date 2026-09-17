@@ -99,5 +99,11 @@
     ],
     "status": "fails_necessary_axisymmetric_momentum_condition",
     "next_action": "Modify swirl profile or time evolution under fixed force bounds; pressure-only repair cannot eliminate theta residual."
+  },
+  "bipolar_temporal_experiment": {
+    "report": "artifacts/bipolar_temporal/report.json",
+    "status": "insufficient_improvement",
+    "core_drift": 0.015749496834345792,
+    "pde_validated": false
   }
 }
