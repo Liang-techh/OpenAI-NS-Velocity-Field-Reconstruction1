@@ -1,0 +1,113 @@
+{
+  "schema": "eq45_optimized_repro_manifest_v1",
+  "task_id": "CR011-EQ45-OPTIMIZED-REPRO-MANIFEST-009",
+  "candidate": {
+    "artifact_path": "artifacts/constrained/eq45_profile_force_optimized_candidate.json",
+    "schema": "eq45_velocity_candidate_v1",
+    "sha256": "b34902ee28b3965f245eceb5867df7409498063cb0ea80f1758931723b303c98",
+    "source_seed_path": "artifacts/constrained/eq45_velocity_candidate_seed.json",
+    "source_seed_sha256": "48f1845fcfd71ec95495c98bb7aac3fca4653e748a8856a5421234e9601525a7",
+    "canonical_seed_promoted": false,
+    "classification": "bounded_research_visualization_candidate"
+  },
+  "replay": {
+    "artifact_materialization_commit": "13f8ddb2a28b6edc80c06f9e1608148ff80b5ed3",
+    "optimizer_receipt_commit": "40afef87a00490c79726a46b8a5bc3d1acf9db91",
+    "rebuild_entrypoint": "openai_ns_reconstruction.constrained_eq45_optimized_artifact:candidate_from_optimization_receipt",
+    "load_entrypoint": "openai_ns_reconstruction.constrained_eq45_optimized_artifact:load_checked_candidate",
+    "public_velocity_entrypoints": [
+      "Eq45VelocityCandidate.at_points",
+      "Eq45VelocityCandidate.velocity_xyz"
+    ],
+    "public_probe": {
+      "points": [
+        [0.13, -0.07, 0.11],
+        [-0.22, 0.18, -0.09],
+        [0.31, 0.04, 0.16],
+        [-0.08, -0.27, -0.14]
+      ],
+      "times": [0.29, 0.41, 0.58, 0.71],
+      "require_finite": true,
+      "require_nonzero_rms": true
+    }
+  },
+  "optimization_receipt": {
+    "path": "artifacts/constrained/eq45_profile_force_optimization.json",
+    "schema": "eq45_profile_force_optimization_v1",
+    "task_id": "CR005-EQ45-PROFILE-FORCE-OPT-015",
+    "fit_seed": 20260917,
+    "diagnostic_holdout_seed": 914117,
+    "sample_count": 16,
+    "probe_box": [
+      [-0.25, 0.25],
+      [-0.25, 0.25],
+      [-0.25, 0.25]
+    ],
+    "probe_time_range": [0.38, 0.62],
+    "fit_step": 0.005,
+    "holdout_derivative_steps": [0.02, 0.01, 0.005],
+    "profile_parameters": ["Phi(0,2)", "F(0,2)"],
+    "profile_bounds": [-4.0, 4.0],
+    "force_family": "preregistered_restricted_two_parameter_family",
+    "force_bounds": [0.0, 10.0],
+    "maximum_function_evaluations": 80,
+    "fit_values": {
+      "Phi(0,2)": 3.8740984117202455,
+      "F(0,2)": 3.9916795387937536,
+      "force_a": 1.13801958e-23,
+      "force_c": 2.7691195895151233
+    },
+    "recorded_results": {
+      "training_curl_rms_after_force": 9.832527545345032,
+      "finest_holdout_step": 0.005,
+      "finest_holdout_curl_rms_after_force": 9.335838456067934,
+      "finest_holdout_curl_max_after_force": 23.591466917575698,
+      "relative_public_velocity_delta_rms": 0.200973334054043
+    }
+  },
+  "project_contract": {
+    "path": "configs/constraints.json",
+    "schema_version": 1,
+    "experiment_id": "compact_axisymmetric_window_v1",
+    "status": "preregistered_not_validated",
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "physical_support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "project_validation_seed": 914027,
+    "validation_derivative_steps": [0.02, 0.01, 0.005],
+    "validation_thresholds": {
+      "divergence_max": 1e-05,
+      "divergence_L2": 1e-05,
+      "pde_residual_max": 0.001,
+      "pde_residual_L2": 0.001,
+      "boundary_velocity_max": 1e-10,
+      "boundary_pressure_max": 1e-10,
+      "energy_quadrature_relative_change": 0.001,
+      "scaled_core_profile_relative_drift": 0.05
+    },
+    "seed_roles_distinct": true
+  },
+  "reference_visualization": {
+    "times": [0.25, 0.5, 0.75],
+    "classification": "autonomous_design",
+    "public_openai_frame_time_mapping": "pending_unknown"
+  },
+  "delivery_state": {
+    "velocity_export_ready": true,
+    "callable_serializable": true,
+    "physical_support_validated": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "scope": {
+    "runtime_environment_receipt": "separate_cr011_lane_not_duplicated_here",
+    "canonical_promotion": "pending_independent_visual_evidence",
+    "claim": "reproducible_bounded_research_candidate_only"
+  }
+}
