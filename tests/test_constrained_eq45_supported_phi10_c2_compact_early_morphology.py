@@ -1,5 +1,3 @@
-import json
-
 import numpy as np
 import pytest
 
@@ -8,17 +6,61 @@ from openai_ns_reconstruction.constrained_eq45_supported_phi10_c2_compact_early_
 )
 
 
-def test_c2_compact_early_morphology_calibration_receipt():
+def test_c2_compact_early_morphology_is_resolved_and_more_radially_compact_than_quartic():
     report = audit_c2_compact_early_morphology()
-    payload = {
-        "time": report["time"],
-        "tau": report["tau"],
-        "compact_return_time": report["compact_return_time"],
-        "coefficients": report["coefficients"],
-        "rows": report["rows"],
-        "finest_summary": report["finest_summary"],
-    }
-    raise AssertionError("CALIBRATION_RECEIPT=" + json.dumps(payload, sort_keys=True))
+    assert report["time"] == pytest.approx(0.3125)
+    assert report["tau"] == pytest.approx(-0.75)
+    assert report["compact_return_time"] == pytest.approx(0.4190158676569885)
+    assert report["coefficients"] == pytest.approx(
+        {
+            "static": -0.3,
+            "quartic": -0.9494908707865168,
+            "compact": -1.3266671113047983,
+        }
+    )
+
+    fine = report["rows"][-1]
+    baseline = fine["baseline"]
+    quartic = fine["quartic"]
+    compact = fine["compact"]
+    summary = report["finest_summary"]
+
+    assert compact["radial_q99"] < quartic["radial_q99"] < baseline["radial_q99"]
+    assert (
+        compact["vorticity2_weighted_radial_rms"]
+        < quartic["vorticity2_weighted_radial_rms"]
+        < baseline["vorticity2_weighted_radial_rms"]
+    )
+    assert compact["vorticity2_weighted_aspect"] > quartic["vorticity2_weighted_aspect"] > baseline[
+        "vorticity2_weighted_aspect"
+    ]
+    assert (
+        compact["whole_grid_collar_vorticity2_fraction"]
+        < quartic["whole_grid_collar_vorticity2_fraction"]
+        < baseline["whole_grid_collar_vorticity2_fraction"]
+    )
+
+    # The apparent aspect gain is radial tightening, not extra axial reach.
+    assert compact["axial_q99"] == pytest.approx(quartic["axial_q99"])
+    assert quartic["axial_q99"] == pytest.approx(baseline["axial_q99"])
+    assert compact["vorticity2_weighted_axial_rms"] < quartic["vorticity2_weighted_axial_rms"]
+
+    # The compact window must buy a material morphology change beyond quartic.
+    assert summary["compact_quartic_radial_q99_ratio"] < 0.98
+    assert summary["compact_quartic_vorticity2_weighted_radial_rms_ratio"] < 0.98
+    assert summary["compact_quartic_vorticity2_weighted_aspect_ratio"] > 1.01
+    assert summary["compact_quartic_whole_grid_collar_vorticity2_fraction_ratio"] < 0.80
+    assert summary["compact_vs_quartic_radial_q99_excursion_fraction"] > 1.5
+
+    for name in ("baseline", "quartic", "compact"):
+        assert fine[name]["superlevel_collar_voxel_fraction"] == 0.0
+
+    # Smooth morphology measures are stable on the 65^3 -> 81^3 refinement.
+    assert summary["compact_radial_q99_mid_to_fine_relative_change"] < 0.005
+    assert summary["compact_vorticity2_weighted_radial_rms_mid_to_fine_relative_change"] < 0.005
+    assert summary["compact_vorticity2_weighted_axial_rms_mid_to_fine_relative_change"] < 0.01
+    assert summary["compact_vorticity2_weighted_aspect_mid_to_fine_relative_change"] < 0.01
+    assert summary["compact_whole_grid_collar_vorticity2_fraction_mid_to_fine_relative_change"] < 0.05
 
 
 def test_c2_compact_early_morphology_fails_closed_outside_active_window():
