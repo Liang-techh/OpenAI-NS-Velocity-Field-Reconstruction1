@@ -1,0 +1,51 @@
+{
+  "task_id": "CR003-EQ45-ETA4-VORTICITY-CAPACITY-012",
+  "claim_scope": "eq45_eta4_vorticity_expression_capacity_only",
+  "candidate_sha256": "48f1845fcfd71ec95495c98bb7aac3fca4653e748a8856a5421234e9601525a7",
+  "grid_size": 17,
+  "box_half_width": 2.0,
+  "times": [0.25, 0.5, 0.75],
+  "coefficient_steps": [0.04, 0.02],
+  "coefficient_limit": 4.0,
+  "baseline_aspect_ratio_z_over_r": [
+    0.2809974174026417,
+    0.29713028638770234,
+    0.32756890985544884
+  ],
+  "finest_relative_aspect_response": [
+    [-0.014199439596706921, 0.0037283952654384406],
+    [-0.011382230564367846, 0.003835000415592238],
+    [-0.010154807778153729, 0.0051124614798360385]
+  ],
+  "singular_values": [
+    0.023555445859471964,
+    0.002666658202217158
+  ],
+  "numerical_rank": 2,
+  "condition_number": 8.83332023574941,
+  "coarse_to_finest_response_frobenius_change": 3.803191301434486e-06,
+  "max_mean_aspect_corner": {
+    "phi_eta4": -4.0,
+    "swirl_eta4": 4.0,
+    "aspect_ratio_z_over_r": [
+      0.30394251198841216,
+      0.31809934057139433,
+      0.3509715081789479
+    ],
+    "relative_aspect_change": [
+      0.08165589135252582,
+      0.07057191792401496,
+      0.07144328298380409
+    ]
+  },
+  "interpretation": "On this deliberately modest CI grid, the two bounded eta^4 channels are locally independent. Phi(0,4) is the dominant core-aspect control; F(0,4) is a weaker compensating direction. Even the best existing-bound corner changes the bulk z/r aspect by only about 7-8 percent, so substantially larger required elongation would justify another targeted axial channel rather than blanket basis growth.",
+  "truth_boundary": {
+    "velocity_changed": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  }
+}
