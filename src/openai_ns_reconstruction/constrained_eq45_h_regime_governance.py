@@ -2,17 +2,17 @@
 
 The public coordinate formula is meaningful on a broader ``0 < h < 1/2``
 interval than the narrower theorem-specialized ``h < 0.01`` regime recorded in
-the source contract.  A numerical candidate chooses its own finite ``h``.  This
+the source contract. A numerical candidate chooses its own finite ``h``. This
 module keeps those facts separate so callable/export readiness cannot be
 mistaken for theorem identity, PDE validation, or visual correspondence.
 """
 from __future__ import annotations
 
 import json
+import math
+from numbers import Real
 from pathlib import Path
 from typing import Any, Mapping
-
-import numpy as np
 
 
 SCHEMA = "eq45_h_regime_contract_v1"
@@ -98,9 +98,9 @@ def audit_eq45_h_regime(
     )
 
     h = candidate.get("h")
-    _require(not isinstance(h, bool) and np.isscalar(h), "candidate h must be a scalar")
+    _require(isinstance(h, Real) and not isinstance(h, bool), "candidate h must be numeric")
     h_value = float(h)
-    _require(np.isfinite(h_value), "candidate h must be finite")
+    _require(math.isfinite(h_value), "candidate h must be finite")
     lower, upper = (float(value) for value in coordinate_interval)
     coordinate_regime_valid = lower < h_value < upper
     _require(coordinate_regime_valid, "candidate h lies outside the Eq. (4.1) coordinate regime")
