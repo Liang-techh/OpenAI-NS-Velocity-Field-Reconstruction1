@@ -1,81 +1,77 @@
-## Nonlinear velocity-function progress
+# Current checkpoint — support-connected Eq45 delivery
 
-Implemented paper_core_series.py: nonlinear near-axis radial coefficients, full retained pressure integral, actual Cartesian velocity. Seven focused tests pass. Explicit independent sigma=.3, degree12, eta_nodes513 gives sampled leading angular/axial errors near1e-7 atX=.1 and1.5e-5/1.92e-4 atX=.2. AtX=.3/.4 errors remain too large; degree16 can become unstable. Full NS/force acceptance and exterior matching remain incomplete. All runs and selected coefficient/sample files are under artifacts/function_first/core_series. Next stabilize radial continuation, then connect exterior; no animation work.
+Snapshot date: **2026-09-17**. The machine-readable authority is [`project_status.json`](../project_status.json). This checkpoint describes the live constrained-integration path; older `coupled_joint`, paper-core-series, FUN/SCH, and exact-reconstruction notes are historical evidence rather than the active routing source.
 
-## Current instruction: velocity functions first (2026-09-16)
+At the start of this snapshot, the active integration branch was `codex/cr001-constraints@cd556a20d4cdd7d63c7626300932119dd4c3fdb4`. GitHub Actions run `35226585877` completed successfully on that head.
 
-The user explicitly deprioritized animation. The immediate deliverable is computable
-[u(x,y,z,t), v(x,y,z,t), w(x,y,z,t)] with explicit equations, coefficients,
-coordinate/domain definitions and source provenance. Do not spend scheduled runs
-on animation, camera matching or rendering before the velocity functions are settled.
-The existing packaged candidate is executable but is not identified as OpenAI's field.
+## Immediate objective
 
-VIS002 delivered: callable velocity/u/v/w API, packaged coupled candidate, grid.npz and metadata. See docs/VELOCITY_API.md. Source/visual correspondence work remains pending.
+Deliver a directly callable, saveable/loadable, MATLAB/Python-usable time-varying 3D field
 
-Current priority: VIS001-VIS006 in SCHEDULED_AGENT_TASKS.md. User requests computable 3D velocity components corresponding to the OpenAI visualization; exact visual target mapping and rendering are not yet completed. Prior PDE results remain candidate evidence.
+`velocity(x, y, z, t) -> [u, v, w]`
 
-# 当前检查点
+whose public observable geometry, streamlines/vorticity structure, and time evolution are made progressively closer to the public OpenAI velocity-field visualization. This is **not** a paper-exact reconstruction target and is **not** a complete Navier–Stokes blow-up proof target. Full PDE acceptance remains an independent scientific gate rather than a blocker for exporting a clearly labeled visualization candidate.
 
-当前项目已改为 constrained independent reconstruction。请读 [PROJECT_GOAL.md](PROJECT_GOAL.md)。
+## Integrated delivery path
 
-- 复用资产已迁移；旧精确复刻工作与原始状态保存在历史中。
-- 新目标候选场：已有可执行非零初始化（artifacts/constrained/）；独立 PDE 验证尚未完成。
-- CR001 配置与 CR002 表示设计已交付 PR #1（未合并）。CR003 已实现求值、能量归一化和保存；下一步补充导数、优化与独立 PDE 验证。CR004 受限外力已实现，压力兼容性待验证。
-- 不再回到旧 NS001–NS036 清单逐项补齐作为默认工作流。
-- 新仓库内认领和提交任务；旧 #368 的认领记录仅作历史参考，不直接视为新仓库活动任务。
+The active delivered family is `eq45_supported_velocity_candidate_v1`.
 
-检查点内容、来源和未迁移分支见 [MIGRATION.md](MIGRATION.md)。
+- supported child SHA-256: `2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d`
+- parent SHA-256: `48f1845fcfd71ec95495c98bb7aac3fca4653e748a8856a5421234e9601525a7`
+- public evaluator: `openai_ns_reconstruction.eq45_supported_delivery:velocity`
+- grid evaluator: `openai_ns_reconstruction.eq45_supported_delivery:default_field().grid`
+- candidate load path: `openai_ns_reconstruction.eq45_supported_delivery:Eq45SupportedDeliveryField.load_candidate`
+- delivery capsule: `artifacts/constrained/eq45_supported_delivery_capsule.json`
+- registered working box: `[-2,2]^3`
+- registered time interval: `[0.25, 0.75]`
+- physical support connection: `r < 2`, `|z| < 2`
 
-- 已保存初始候选的独立 PDE 失败基线：`artifacts/constrained/initial_pde_validation.json`。残差明显超标；下一步实现训练导数/优化器并拟合参数，不放宽现有阈值。
+The support-connected child can therefore be evaluated directly as Cartesian `[u,v,w]`, serialized/reloaded, sampled at arbitrary points, and exported on a `(time,x,y,z,component)` grid without downstream code having to reconstruct the Eq45 parent plus taper manually.
 
-- 首轮优化已完成（153 次函数评估）；独立最大残差 13.23 -> 5.36，仍未通过 0.001。见 `artifacts/constrained/optimized/`。下一步调查参数边界与候选族表达限制；不把 solver 收敛视为物理解达标。
+## Independent state flags
 
-- 方位残差诊断显示仅调压力无法解决当前误差（t=0.75 方位残差约 5.17）。已试验两个新增旋转形状参数：v2 运行 243 次评估，训练损失 0.32586，独立验证仍失败。原实验与阈值保留。下一步需更丰富的时空候选表示，不能仅扩大压力拟合。
+These states must remain independent:
 
-- 新候选已接入旧 LocalField 数值旋度/势场求和路径，详见 LEGACY_REUSE.md。后续可通过旧组合接口添加修正势；所检查接口不自带已求解的修正系数。
+- `velocity_export_ready = true`
+- `visualization_ready = false`
+- `pde_validated = false`
+- `physical_support_connection_implemented = true`
+- `physical_support_validated = false`
+- `visual_correspondence_verified = false`
+- `paper_exact = false`
+- `openai_field_identified = false`
+- `blowup_proved = false`
 
-- 分开拟合实验：独立采样最大残差 4.0366，略优于联合 v3 的 4.1152，仍不达标。当前较优候选在 `artifacts/constrained/decoupled_v3/`，详见 DECOUPLED_EXPERIMENT.md。
+A green CI run, successful serialization, training convergence, a visually appealing render, or a target-free morphology improvement does not promote any of the scientific states above.
 
-- 当前较优候选改为 optimized_v4：独立最大残差 2.7884，核心漂移约 0.12%，能量/流向抽样检查通过；PDE 仍未达标。已复用旧旋度路径验证新增流函数修正。
+## Integrated visualization-facing blocker
 
-- 独立 Cartesian 能量求积与导数收敛已记录 optimized_v4/convergence.json。t=0.75 加密后动量残差约 2.7836，散度约 2.85e-8，确认需要改进候选动力学而非仅加密差分。
+The integrated whole-domain vorticity-envelope audit shows that the static support transform is **not** visually neutral at early time. At `t=0.25`, the parent radial q99 is about `1.3086`, while the supported child radial q99 is about `1.8581`, approximately a **+42%** increase. The refinement audit found this early widen/flatten branch to be resolution-stable rather than a one-grid artifact. Accordingly the current static supported child remains export-ready but not visualization-ready.
 
-- v4 高残差训练加点并热启动后，2000 次调用达到预算，独立最大残差仅降至 2.7389。失败实验已存 adaptive_v4/，不继续盲目增加同类迭代。
+This blocker is about morphology. It is not evidence that the field is or is not the hidden OpenAI numerical field, and it is not a PDE acceptance result.
 
-- Tensor stage 1 已实现并试跑，但核心漂移/最低能量也不达标（7.18%、0.09955）；最大残差 2.4641 不能单独作为成功依据。下一步改善约束执行，保留旧候选及所有失败结果。
+## Open candidate-development evidence — not yet integrated
 
-- Tensor 可行候选选择已修复，tensor_feasible 在21个时刻通过结构抽样（漂移4.949%、能量最低0.1708），PDE最大残差2.66485仍失败。不能沿用此前违规候选的更低残差作为进步指标。
+The current open stack explores existing `Phi(1,0)` temporal freedom rather than growing the spatial basis indiscriminately. The derivative-balanced quartic candidate is the lower-collateral baseline currently worth replaying first. Existing open evidence reports strong late-time morphology preservation, while fresh-seed PDE ordering versus the cubic candidate remains unresolved/seed-sensitive.
 
-- 已发现全局角动量收支不匹配，见 ANGULAR_MOMENTUM_DIAGNOSIS.md。下一步增加核心外的平滑旋转分量，并用既定外力力矩约束其幅度，而非继续仅拟合收缩核心。
+A slope-capped compact-C2 schedule improves the early off-keyframe morphology further but carries a measurable PDE-side diagnostic cost. At the audited `t=0.3125` / `81^3` comparison, open evidence reports radial q99 of about `1.151` for compact-C2, `1.193` for quartic, and `1.254` for static supported; support-collar vorticity-squared fractions are about `1.59%`, `2.20%`, and `3.85%` respectively, while axial q99 stays unchanged. A separate pressure-free vorticity diagnostic reports the compact candidate at roughly `8.9%` worse than quartic. PR #184 then screens a single compact–quartic interpolation degree; it is capacity evidence only and does not select a canonical blend.
 
-- 外层角动量修正已执行：全局收支显著改善，局部最大残差仍2.59668，结构抽样通过。见 outer_momentum/。下一步需要优化外层空间分布及压力以改善局部平衡，不能把全局守恒当作局部PDE通过。
+These open results are useful for routing, but none of #168–#184 is automatically part of the live integration branch merely because its CI is green. Many are stacked on one another.
 
-- outer_shape 两参数空间分布拟合使独立采样最大残差降至2.49109，结构抽样仍通过。局部动量仍不合格，不能据此关闭目标。
+## Agent-8 integration discipline
 
-- 压力18项扩展试验未改善独立最大残差（2.50825），保留 outer_shape 为较优比较结果。下一步转向由方程约束速度时间演化的表示，而非继续压力多项式微调。
+Do not merge a stacked PR wholesale merely because GitHub reports it mergeable. Before integration, inspect ancestry and changed files, identify the smallest owned delta, and replay/rebase that delta onto the current integration head when necessary. Verify the resulting exact head with CI and record the real run ID. Supersede or close the old stacked PR when a clean replay replaces it so another agent does not harvest the same work twice.
 
-- 初始时间导数线性拟合降低起点残差，却在末端失败（7.5885、核心漂移88.8%）。结果initial_tangent/保留；不能从起点拟合外推全时段，下一步需要逐段/全时间动力学约束。
+Optimizer convergence, candidate identity, public velocity evaluation, independent validator output, visualization diagnostics, and MATLAB/Python export must remain separable layers. In particular, `velocity_export_ready=true` is allowed while `visualization_ready=false` and `pde_validated=false`.
 
-- 全时段时间系数+显式核心等式约束使独立最大残差降至2.05808，结构抽样通过。SLSQP达20次迭代上限，未宣称收敛。当前较优结果whole_window_equalities/。
+## Shortest next delivery chain
 
-- 续算候选 whole_window_continued 独立最大残差1.94797、结构抽样通过。候选保存后的摘要序列化错误已修复；无法恢复的运行计数未编造。各实验汇总见 reports/CONSTRAINED_PROGRESS.md。
+1. Replay the smallest callable/serializable derivative-balanced quartic candidate delta onto the live integration branch after dependency review; do not import unrelated stacked history.
+2. Rebind downstream evidence to that replayed candidate identity: public evaluator/save-load/grid first, then whole-domain morphology and independent stability/PDE diagnostics.
+3. Harvest visualization smoke only with correct semantics. A meridional `(u,w)` line overlay is a projected 2D streamline diagnostic, not a true 3D streamline when swirl is omitted.
+4. Compare quartic, compact-C2, and any bounded blend through the same public `[u,v,w]` interface and the same whole-domain fingerprint before choosing a visualization candidate. PDE failure does not prevent a clearly labeled visualization-candidate artifact.
+5. Produce the final MATLAB/Python-facing report from the frozen candidate identity: one-command load/evaluate/export, sample grid, vorticity/true-3D-streamline diagnostics, hashes, time/domain mapping, and explicit truth-boundary states.
 
-- Latest pressure refit: continued_pressure, sampled maximum 1.942964833, structure samples pass; PDE still fails. Pressure-only gain is small; next representation work must address velocity dynamics.
+## Historical checkpoint material
 
-- Temporal swirl now implemented and tested. Mean residual improves, but independent maxima 1.95655/2.44784 fail to beat continued_pressure (1.94296). Both comparisons preserved; selected candidate unchanged. See docs/TEMPORAL_SWIRL_EXPERIMENT.md.
-
-- New selected development reference localized_swirl: maximum1.35623, refined1.35345, structure sampled pass. About30% improvement over1.94296, still far above.001. Grid diagnostic reveals an axial collar peak near(r,z)=(.395,.889). Results and next direction in docs/LOCALIZED_SWIRL_EXPERIMENT.md.
-
-- Latest reference axial_swirl_dense: sampled maximum1.28545, structure sampled pass. Added axial rings and denser collocation coverage; sparse fourth-power overfit preserved as failed comparison. 500-call cap is not convergence.
-
-- Working reference axial_swirl_grid48 controls known missed grid peak better(1.29827 vs1.62313); random maximum1.29013 is slightly worse than axial_swirl_analytic1.28544. Structural probes pass. Analytic coefficient Jacobian avoids finite-difference parameter calls. Next representation change needed; no acceptance.
-
-- Selected quintic_swirl maximum1.26452, structure sampled pass. Found immutable residual around1.15 inside r<.354 because all current corrections vanish there. Next representation must reach that annulus while preserving core probes r<=.0866. See docs/QUINTIC_AND_FROZEN_COLLAR.md.
-
-- Current reference inner_swirl_pressure maximum1.24417, structure sampled pass. Inner annulus unlocked; remaining strong axial/radial residual needs pressure/poloidal changes. Added moment has a measured quadrature defect2.82e-5, recorded honestly. See docs/INNER_SWIRL_AND_PRESSURE.md.
-
-- Current local_pressure max1.24361, structural probes pass. Closed-loop residual circulation estimates a pressure-independent floor.357 for fixed velocity/force; further pressure-only fitting cannot plausibly attain.001. Next: bounded divergence-free poloidal corrections with joint pressure fitting.
-
-- Working reference poloidal_anchor: standard momentum max1.00634, refined.95665. Core/energy pass; divergence max standard.00364, finest.000004316. All momentum acceptance remains failed. Joint poloidal/pressure updates reduce the pressure-independent circulation defect; next couple swirl as well.
-
-- Latest coupled_joint artifact exposes117 velocity plus27 pressure coefficients. Standard momentum max1.00221830, core/energy probes pass, standard divergence.0036918883 fails. Exact-candidate refinement pending. Scheduling entry: docs/SCHEDULED_AGENT_TASKS.md; integration branch codex/cr001-constraints / PR #1.
+The earlier function-first paper-core-series work, `coupled_joint` optimizer lineage, FUN/VIS/SCH queues, and exact-reconstruction-era experiments remain useful provenance and failure evidence, but they no longer define the active merge blockers. Consult `docs/MIGRATION.md`, `reports/CONSTRAINED_PROGRESS.md`, `docs/SCHEDULED_AGENT_TASKS.md`, and the relevant artifacts when a current task specifically needs that history. Do not route new integration work back to those queues by default.
