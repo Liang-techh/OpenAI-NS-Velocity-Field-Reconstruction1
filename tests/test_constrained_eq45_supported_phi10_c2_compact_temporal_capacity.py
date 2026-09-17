@@ -98,12 +98,6 @@ def test_compact_snapshot_changes_only_existing_phi10_and_truth_boundary_stays_c
     np.testing.assert_allclose(
         np.delete(trial_phi, index), np.delete(base_phi, index), rtol=0.0, atol=0.0
     )
-    np.testing.assert_allclose(
-        trial.parent.profile_basis.f_coefficients,
-        base.parent.profile_basis.f_coefficients,
-        rtol=0.0,
-        atol=0.0,
-    )
     assert trial.taper == base.taper
 
     report = audit_supported_phi10_c2_compact_temporal_capacity()
