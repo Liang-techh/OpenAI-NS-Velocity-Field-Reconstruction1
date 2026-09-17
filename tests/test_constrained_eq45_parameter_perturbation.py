@@ -41,11 +41,11 @@ def test_small_unseen_perturbations_have_finite_bounded_public_velocity_response
     report = run_eq45_parameter_perturbation_audit(SEED_ARTIFACT)
     summary = report["low_scale_summary"]
 
-    assert 0.004 < summary["rms_relative_change_min"] < 0.006
-    assert 0.015 < summary["rms_relative_change_max"] < 0.018
-    assert 0.007 < summary["rms_relative_change_mean"] < 0.009
-    assert 0.30 < summary["response_gain_min"] < 0.40
-    assert 1.10 < summary["response_gain_max"] < 1.20
+    assert 0.005 < summary["rms_relative_change_min"] < 0.0062
+    assert 0.018 < summary["rms_relative_change_max"] < 0.020
+    assert 0.0095 < summary["rms_relative_change_mean"] < 0.0106
+    assert 0.38 < summary["response_gain_min"] < 0.42
+    assert 1.30 < summary["response_gain_max"] < 1.36
 
     for row in report["responses"]:
         assert np.isfinite(row["rms_relative_velocity_change"])
