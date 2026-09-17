@@ -3,7 +3,6 @@ import numpy as np
 from openai_ns_reconstruction.kokuno_complete_curl import KokunoCompleteCurlCorrection
 from openai_ns_reconstruction.kokuno_signed_amplitude_curl_cycle import (
     CHEBYSHEV_DEGREE,
-    CompactChebyshevSignedAmplitude,
     KokunoSignedAmplitudeCurlCorrection,
     fit_compact_chebyshev_signed_amplitude,
 )
@@ -32,7 +31,11 @@ def test_compact_chebyshev_adapter_recovers_manufactured_c4_profile():
     sampled = _manufactured_sample()
     compact = fit_compact_chebyshev_signed_amplitude(sampled, degree=CHEBYSHEV_DEGREE)
     metrics = compact.metrics(sampled.radii, sampled.delta_amplitude)
-    assert metrics["sampled_fit_relative_rms"] < 1.0e-10
+    # The upstream signed-profile contract intentionally zeros target nodes below
+    # its predeclared active-stress floor, so the sampled target is not exactly
+    # the generating polynomial at the first few collar nodes.  The compact fit
+    # should nevertheless recover it far inside the 10% production guard.
+    assert metrics["sampled_fit_relative_rms"] < 5.0e-4
     assert metrics["inner_value"] == 0.0
     assert metrics["outer_value"] == 0.0
     assert metrics["inner_radial_derivative"] == 0.0
