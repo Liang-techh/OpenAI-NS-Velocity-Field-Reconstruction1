@@ -16,6 +16,16 @@ The oscillatory correction remains the autonomous Cartesian complete-curl
 surrogate from ``kokuno_complete_curl.py``.  Source-derived structure is limited
 to exact-curl/potential-level localization; its Cartesian phase, frame, compact
 box support and numerical wave parameters are not Kokuno/OpenAI exact data.
+
+For cost and numerical separation, the leading residual/Jacobian are measured by
+the independent FD4 black-box operator, while the already independently checked
+Agent-2 analytic ``w_t``, ``grad w`` and ``Delta w`` are used in the exact
+momentum increment
+
+    N(b+w)-N(b) = w_t + (b.grad)w + (w.grad)b + (w.grad)w - nu Delta w.
+
+This avoids numerically differentiating the high-frequency correction and avoids
+evaluating the expensive reference-continuation leading field twice per stencil.
 """
 from __future__ import annotations
 
@@ -95,15 +105,49 @@ def _old_core_rejects(
     points: np.ndarray,
     times: tuple[float, ...],
 ) -> bool:
-    rejected = False
     for time in times:
         try:
             leading.core.at_points(points, float(time))
         except (ValueError, RuntimeError):
-            rejected = True
-        else:
-            return False
-    return rejected
+            continue
+        return False
+    return True
+
+
+def _analytic_composite_from_base(
+    base: dict[str, np.ndarray],
+    *,
+    correction_velocity: np.ndarray,
+    correction_time_derivative: np.ndarray,
+    correction_jacobian: np.ndarray,
+    correction_laplacian: np.ndarray,
+    correction_divergence: np.ndarray,
+    nu: float,
+) -> tuple[dict[str, np.ndarray], np.ndarray]:
+    """Add the exact complete-curl momentum increment to one FD4 base result."""
+
+    b = np.asarray(base["velocity"], dtype=float)
+    jac_b = np.asarray(base["jacobian"], dtype=float)
+    w = np.asarray(correction_velocity, dtype=float)
+    jac_w = np.asarray(correction_jacobian, dtype=float)
+
+    b_grad_w = np.einsum("nij,nj->ni", jac_w, b)
+    w_grad_b = np.einsum("nij,nj->ni", jac_b, w)
+    w_grad_w = np.einsum("nij,nj->ni", jac_w, w)
+    increment = (
+        np.asarray(correction_time_derivative, dtype=float)
+        + b_grad_w
+        + w_grad_b
+        + w_grad_w
+        - float(nu) * np.asarray(correction_laplacian, dtype=float)
+    )
+    composite = {
+        "velocity": b + w,
+        "divergence": np.asarray(base["divergence"], dtype=float)
+        + np.asarray(correction_divergence, dtype=float),
+        "residual": np.asarray(base["residual"], dtype=float) + increment,
+    }
+    return composite, increment
 
 
 def run_screen(
@@ -133,9 +177,6 @@ def run_screen(
     correction = KokunoCompleteCurlCorrection(amplitude=AMPLITUDE, phase=PHASE)
     samples = _sample_points(count=count, seed=seed)
 
-    def composite_velocity(x: Any, y: Any, z: Any, t: Any) -> np.ndarray:
-        return leading.velocity(x, y, z, t) + correction.velocity(x, y, z, t)
-
     rows: list[dict[str, Any]] = []
     for stratum, points in samples.items():
         for time in times:
@@ -143,16 +184,32 @@ def run_screen(
                 points[:, 0], points[:, 1], points[:, 2], float(time)
             )
             point_X = np.asarray(coordinates["X"], dtype=float)
-            analytic_divergence = np.asarray(
+            w = np.asarray(correction.at_points(points, float(time)), dtype=float)
+            w_t = np.asarray(
+                correction.time_derivative(
+                    points[:, 0], points[:, 1], points[:, 2], float(time)
+                ),
+                dtype=float,
+            )
+            jac_w = np.asarray(
+                correction.spatial_jacobian(
+                    points[:, 0], points[:, 1], points[:, 2], float(time)
+                ),
+                dtype=float,
+            )
+            lap_w = np.asarray(
+                correction.laplacian(
+                    points[:, 0], points[:, 1], points[:, 2], float(time)
+                ),
+                dtype=float,
+            )
+            div_w = np.asarray(
                 correction.divergence(
                     points[:, 0], points[:, 1], points[:, 2], float(time)
                 ),
                 dtype=float,
             )
-            correction_values = np.asarray(
-                correction.at_points(points, float(time)), dtype=float
-            )
-            correction_speed = np.linalg.norm(correction_values, axis=1)
+            correction_speed = np.linalg.norm(w, axis=1)
 
             for step in steps:
                 base = evaluate_fd4(
@@ -163,16 +220,18 @@ def run_screen(
                     float(step),
                     nu=NU,
                 )
-                composite = evaluate_fd4(
-                    composite_velocity,
-                    leading.pressure,
-                    points,
-                    float(time),
-                    float(step),
+                composite, increment = _analytic_composite_from_base(
+                    base,
+                    correction_velocity=w,
+                    correction_time_derivative=w_t,
+                    correction_jacobian=jac_w,
+                    correction_laplacian=lap_w,
+                    correction_divergence=div_w,
                     nu=NU,
                 )
                 base_metrics = _metrics(base)
                 composite_metrics = _metrics(composite)
+                increment_norm = np.linalg.norm(increment, axis=1)
                 rows.append(
                     {
                         "stratum": stratum,
@@ -184,8 +243,9 @@ def run_screen(
                             np.sqrt(np.mean(correction_speed * correction_speed))
                         ),
                         "correction_velocity_max": float(np.max(correction_speed)),
-                        "analytic_correction_divergence_max": float(
-                            np.max(np.abs(analytic_divergence))
+                        "analytic_correction_divergence_max": float(np.max(np.abs(div_w))),
+                        "analytic_momentum_increment_rms": float(
+                            np.sqrt(np.mean(increment_norm * increment_norm))
                         ),
                         "leading": base_metrics,
                         "leading_plus_oscillation": composite_metrics,
@@ -278,7 +338,9 @@ def run_screen(
             "times": list(times),
             "steps": list(steps),
             "nu": NU,
-            "operator": "independent_fourth_order_centered_cartesian_fd4",
+            "leading_operator": "independent_fourth_order_centered_cartesian_fd4",
+            "oscillatory_derivatives": "Agent-2 analytic complete-curl derivatives checked independently in K2-OSC-002/003",
+            "composite_residual": "FD4 leading residual plus exact analytic complete-curl momentum increment",
             "pressure": "Agent-1 reference-continuation pressure unchanged",
             "forcing": "zero_raw_local_diagnostic_only_no_fit",
             "training_samples_used": False,
