@@ -1,0 +1,176 @@
+{
+  "base_dependency_head": "37be0d6ee963cd9b98b8853df00be731d8e28bf4",
+  "base_supported_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+  "delivery": {
+    "component_order": [
+      "u",
+      "v",
+      "w"
+    ],
+    "grid_layout": "time,x,y,z,component",
+    "reference_times": [
+      0.25,
+      0.3125,
+      0.375,
+      0.4375,
+      0.5,
+      0.75
+    ],
+    "serialization_interfaces": [
+      "save_json",
+      "load_json"
+    ],
+    "spatial_box": [
+      [
+        -2.0,
+        2.0
+      ],
+      [
+        -2.0,
+        2.0
+      ],
+      [
+        -2.0,
+        2.0
+      ]
+    ],
+    "time_interval": [
+      0.25,
+      0.75
+    ],
+    "velocity_interfaces": [
+      "velocity",
+      "at_points",
+      "velocity_xyz",
+      "grid"
+    ]
+  },
+  "pending": {
+    "blend_weight_selection": true,
+    "candidate_specific_energy_acceptance": true,
+    "canonical_promotion": false,
+    "formal_pde_gate": true,
+    "public_observable_comparison": true,
+    "restricted_force_tradeoff_integration": true,
+    "spectral_fingerprint_integration": true,
+    "three_dimensional_render_review": true
+  },
+  "representation": {
+    "blend_formula": "(1-lambda)*delta_quartic(tau)+lambda*delta_compact(tau)",
+    "blend_weight_interval": [
+      0.0,
+      1.0
+    ],
+    "blend_weight_selected": false,
+    "compact_window_rule": "earliest_c2_return_under_balanced_quartic_peak_slope_cap",
+    "early_delta": -1.4,
+    "endpoint_families": [
+      "derivative_balanced_quartic",
+      "slope_capped_c2_compact"
+    ],
+    "family": "phi",
+    "index": [
+      1,
+      0
+    ],
+    "representative_candidate_sha256": {
+      "0.000000": "6eb71af7ebafc84b246e1855248582c7f84dca37abc263bf3295fae788b1cd68",
+      "0.500000": "3fc3fa3a1770931709a4b76fc13942b776386aa7bf40edc992dc8b2514af19d4",
+      "1.000000": "99373abdf5c4cb453d36bf1a8086b620e7dda7eea5bfbfbed8947aacea9cedad"
+    },
+    "tau_definition": "delivery_interval_endpoints_map_to_minus1_plus1"
+  },
+  "schema": "eq45_supported_phi10_compact_quartic_blend_delivery_recipe_v1",
+  "sibling_evidence": {
+    "may_promote_pde_validated": false,
+    "may_promote_visualization_ready": false,
+    "may_select_blend_weight": false,
+    "numeric_summary_bound_here": false,
+    "restricted_force_pr": 188,
+    "restricted_force_status": "open_unconsumed",
+    "spectral_fingerprint_pr": 189,
+    "spectral_fingerprint_status": "open_unconsumed"
+  },
+  "status": {
+    "blend_weight_selected": false,
+    "blowup_proved": false,
+    "callable_serializable": true,
+    "caller_declared_blend_weight": true,
+    "candidate_selection_resolved": false,
+    "canonical_velocity_changed": false,
+    "force_or_pressure_fitted": false,
+    "openai_field_identified": false,
+    "paper_exact": false,
+    "pde_validated": false,
+    "physical_support_connection_implemented": true,
+    "physical_support_validated": false,
+    "public_image_fitted": false,
+    "velocity_export_ready": true,
+    "visual_correspondence_verified": false,
+    "visualization_candidate_only": true,
+    "visualization_ready": false
+  },
+  "task_id": "CR011-EQ45-PHI10-COMPACT-QUARTIC-BLEND-DELIVERY-CAPSULE-018",
+  "temporal_derivative_evidence": {
+    "actions_run": 35234995835,
+    "audit_exact_head": "37be0d6ee963cd9b98b8853df00be731d8e28bf4",
+    "audit_pr": 187,
+    "blend_weight_selected": false,
+    "blend_weights": [
+      0.0,
+      0.5,
+      1.0
+    ],
+    "endpoint_derivative_span_rms_at_static_anchors": {
+      "0.500000": 0.0064438239000152,
+      "0.750000": 0.0027456278999935003
+    },
+    "finest_normalized_rms": {
+      "0.000000": 0.00019000133460634884,
+      "0.500000": 0.0006986742153697458,
+      "1.000000": 0.0012568302260969515
+    },
+    "finest_sampled_max_vector": {
+      "0.000000": 0.0006105780615444523,
+      "0.500000": 0.0016384499832866476,
+      "1.000000": 0.0032176812930085137
+    },
+    "formal_pde_gate_assessed": false,
+    "midpoint_derivative_affinity_normalized_rms_max": 5.930008822639579e-13,
+    "midpoint_instantaneous_affinity_max_error": 1.1631705747361534e-16,
+    "mutation_good_sampled_rms_error": 1.8665839559811222e-15,
+    "mutation_sign_flipped_max_vector_error": 6.000000000000003,
+    "mutation_sign_flipped_sampled_rms_error": 3.464101615137756,
+    "observed_orders": {
+      "0.000000": [
+        1.9814367127354424,
+        1.993893149355883
+      ],
+      "0.500000": [
+        1.8015385320652726,
+        1.90443075105992
+      ],
+      "1.000000": [
+        1.787112457217247,
+        1.8980297142790958
+      ]
+    },
+    "pde_validated": false,
+    "probe_count": 24,
+    "probe_region_counts": {
+      "axial_collar": 6,
+      "corner_collar": 4,
+      "plateau": 8,
+      "radial_collar": 6
+    },
+    "probe_seed": 914617,
+    "public_velocity_only": true,
+    "reference_step": 0.00125,
+    "serialized_candidates_reloaded": true,
+    "time_levels": [
+      0.01,
+      0.005,
+      0.0025
+    ]
+  }
+}
