@@ -1,3 +1,17 @@
+## Global energy-sign mismatch
+
+New necessary energy balance diagnostic for the normalized bipolar field:
+Eprime + nu integral |grad u|² is negative at four interior times, from
+-0.33369 to -0.50415 on order96/step.005. Both fixed force-work columns
+are positive, so a,c >= 0 cannot supply the required negative work for this
+frozen velocity. Coarser order48/step.01 agrees on the sign and scale.
+This is numerical necessary-condition evidence, not a proof for all candidates;
+quadrature and derivative refinement were coupled, not varied independently.
+Next spatial optimization must also check energy balance, not only theta loss.
+Do not expand force bounds or normalize away this incompatibility.
+Reproduce: `PYTHONPATH=src python -m openai_ns_reconstruction.constrained_bipolar_energy_balance`.
+Artifact: `artifacts/bipolar_energy_balance/report.json`.
+
 ## Independent curl obstruction comparison
 
 The fixed-force curl diagnostic now compares default, bipolar and normalized

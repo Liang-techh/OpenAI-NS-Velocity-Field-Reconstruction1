@@ -124,5 +124,10 @@
       }
     },
     "pde_validated": false
+  },
+  "bipolar_energy_balance": {
+    "report": "artifacts/bipolar_energy_balance/report.json",
+    "status": "sampled_required_work_negative_both_allowed_work_columns_positive",
+    "pde_validated": false
   }
 }
