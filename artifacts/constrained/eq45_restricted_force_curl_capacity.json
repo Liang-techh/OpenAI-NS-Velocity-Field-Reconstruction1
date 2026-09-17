@@ -1,0 +1,72 @@
+{
+  "schema": "eq45_restricted_force_curl_capacity_v1",
+  "task_id": "CR004-EQ45-RESTRICTED-FORCE-CURL-CAPACITY-012",
+  "candidate": "Eq45VelocityCandidate.seed()",
+  "candidate_status": {
+    "velocity_changed": false,
+    "forcing_fitted_for_diagnostic": true,
+    "pressure_fitted": false,
+    "pde_validated": false,
+    "visualization_ready_promoted": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  },
+  "contract": {
+    "nu": 0.01,
+    "force_family": "preregistered_restricted_two_parameter_family",
+    "force_bounds": [0.0, 10.0],
+    "fit_step": 0.005,
+    "holdout_derivative_steps": [0.02, 0.01, 0.005],
+    "fit_seed": 20260916,
+    "holdout_seed": 914027,
+    "fit_points": 16,
+    "holdout_points": 16,
+    "probe_box": [[-0.25, 0.25], [-0.25, 0.25], [-0.25, 0.25]],
+    "probe_time_range": [0.38, 0.62],
+    "solver": "scipy.optimize.lsq_linear",
+    "nonlinear_function_evaluations": 0,
+    "training_holdout_separate": true
+  },
+  "fit": {
+    "a": 1.15387560e-20,
+    "c": 2.19114231,
+    "design_rank": 2,
+    "design_condition": 22.71686632844778,
+    "singular_values": [7.54993736, 0.33234942],
+    "active_mask": [-1, 0],
+    "solver_status": 1,
+    "solver_iterations": 5,
+    "curl_rms_before": 17.12767384070402,
+    "curl_max_before": 36.07153536118621,
+    "curl_rms_after": 16.620854658938615,
+    "curl_max_after": 35.81842610729427,
+    "recoverable_rms_fraction": 0.02959066049943959
+  },
+  "holdout": [
+    {
+      "step": 0.02,
+      "curl_rms_before": 23.770368910228516,
+      "curl_max_before": 56.52959261198763,
+      "curl_rms_after": 23.351539455966428,
+      "curl_max_after": 56.18032172341538,
+      "recoverable_rms_fraction": 0.01761981296309889
+    },
+    {
+      "step": 0.01,
+      "curl_rms_before": 24.06596305355144,
+      "curl_max_before": 57.30558678542502,
+      "curl_rms_after": 23.651437812785936,
+      "curl_max_after": 56.95886151315342,
+      "recoverable_rms_fraction": 0.017224544051825497
+    },
+    {
+      "step": 0.005,
+      "curl_rms_before": 24.140921284773206,
+      "curl_max_before": 57.50224229255798,
+      "curl_rms_after": 23.727473626789482,
+      "curl_max_after": 57.15615636684738,
+      "recoverable_rms_fraction": 0.017126424178538047
+    }
+  ],
+  "interpretation": "On this deterministic interior fit/holdout contract, the preregistered two-parameter force removes only about 1.7 percent of held-out curl-obstruction RMS at the finest level. The remaining obstruction is O(10) and stable across the derivative ladder. This is evidence that pressure growth plus this restricted forcing family is not the main missing capacity for the frozen Eq45 seed on these probes; it is not a global impossibility result and not PDE validation."
+}
