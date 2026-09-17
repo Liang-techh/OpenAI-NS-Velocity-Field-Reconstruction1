@@ -1,5 +1,3 @@
-import json
-
 import numpy as np
 import pytest
 
@@ -8,11 +6,39 @@ from openai_ns_reconstruction.constrained_eq45_supported_phi10_blend_phi12_axial
 )
 
 
-def test_blend_phi12_axial_capacity_calibration_receipt():
+def test_blend_phi12_capacity_is_independent_but_extreme_axial_collar_is_suppressed():
     report = audit_blend_phi12_axial_capacity()
-    # Calibration sentinel: expose deterministic hosted metrics before replacing
-    # this with fail-closed scientific regressions on the exact same audit.
-    pytest.fail(json.dumps(report, sort_keys=True))
+
+    assert report["numerical_rank"] == 2
+    assert np.isfinite(report["condition_number"])
+    assert report["condition_number"] < 5.0
+    assert report["phi12_novelty_outside_blend_span"] > 0.90
+    assert abs(report["response_column_cosine"]) < 0.5
+    assert max(report["step_refinement_relative_changes"]) < 1.0e-10
+
+    np.testing.assert_allclose(
+        report["singular_values"],
+        [0.12329296391791501, 0.03508142769485742],
+        rtol=1.0e-8,
+        atol=1.0e-12,
+    )
+    np.testing.assert_allclose(
+        report["combined_response_rms"],
+        [0.005449713852512864, 0.0017039714694015845],
+        rtol=1.0e-8,
+        atol=1.0e-12,
+    )
+
+    radial = np.asarray(report["radial_response_rms"], dtype=float)
+    axial = np.asarray(report["axial_response_rms"], dtype=float)
+    ratios = np.asarray(report["axial_to_radial_response_rms_ratio"], dtype=float)
+    assert np.all(radial > 1.0e-3)
+    assert np.all(axial < 1.0e-5)
+    assert np.all(ratios < 0.01)
+    # Phi(1,2) is more axially selective than the blend direction, but the
+    # fixed physical support transform still suppresses both directions very
+    # strongly at the extreme top/bottom collar probes.
+    assert ratios[1] > 5.0 * ratios[0]
 
 
 def test_blend_phi12_axial_capacity_truth_boundary_and_guards():
