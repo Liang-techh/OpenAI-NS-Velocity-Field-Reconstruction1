@@ -1,0 +1,64 @@
+{
+  "schema": "eq45_supported_phi10_temporal_trial_recipe_v1",
+  "task_id": "CR011-EQ45-PHI10-TEMPORAL-TRIAL-CAPSULE-013",
+  "base_dependency_head": "83eaa359e63023de7d43abb60988808c1c5d8378",
+  "source_prs": {
+    "temporal_representation": 136,
+    "nonlinear_morphology_selection": 143,
+    "restricted_force_crosscheck": 144,
+    "held_out_seed_generalization": 145,
+    "whole_domain_morphology_acceptance": 146
+  },
+  "base_supported_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+  "temporal_mode": {
+    "family": "phi",
+    "index": [1, 0],
+    "slope": 1.4,
+    "coefficient_start": -1.7,
+    "coefficient_midpoint": -0.3,
+    "coefficient_end": 1.1,
+    "coefficient_bound": [-4.0, 4.0]
+  },
+  "delivery": {
+    "spatial_box": [[-2.0, 2.0], [-2.0, 2.0], [-2.0, 2.0]],
+    "time_interval": [0.25, 0.75],
+    "reference_times": [0.25, 0.5, 0.75],
+    "public_interfaces": ["velocity", "at_points", "velocity_xyz", "grid", "save_json", "load_json"]
+  },
+  "selection_evidence": {
+    "scope": "target_free_internal_support_morphology_screen",
+    "grid_resolution": 41,
+    "baseline_early_radial_outer_vorticity2_fraction": 0.057728804031023005,
+    "selected_early_radial_outer_vorticity2_fraction": 0.021671584584770098,
+    "selected_early_relative_change": -0.624596681872641,
+    "selected_late_radial_outer_vorticity2_fraction": 0.000006677067957832705,
+    "late_guard": 0.0001,
+    "openai_image_used_as_fit_target": false
+  },
+  "pde_evidence": {
+    "scope": "pressure_free_vorticity_equation_diagnostic_not_formal_full_momentum_gate",
+    "fixed_holdout_finest_static_zero_rms": 3.5872881930415295,
+    "fixed_holdout_finest_temporal_zero_rms": 3.722131026637941,
+    "fixed_holdout_fractional_change": 0.037589,
+    "fresh_seeds": [914401, 914419, 914437],
+    "fresh_seed_finest_zero_force_fractional_changes": [-0.011716, -0.33038, 0.225463],
+    "uniform_generalization": false,
+    "formal_pde_gate_assessed": false
+  },
+  "status": {
+    "velocity_export_ready": true,
+    "visualization_candidate_only": true,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "physical_support_validated": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "canonical_velocity_changed": false,
+    "production_slope_promoted": false
+  },
+  "pending": {
+    "whole_domain_morphology_acceptance": "PR146_open_unconsumed",
+    "canonical_promotion": false
+  }
+}
