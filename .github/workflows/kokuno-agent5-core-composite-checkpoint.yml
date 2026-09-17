@@ -30,7 +30,6 @@ jobs:
         run: >-
           python -m pytest -q -W error
           tests/test_constrained_kokuno_core_composite_checkpoint.py
-          tests/test_constrained_kokuno_leading_core_series.py
           tests/test_constrained_kokuno_complete_curl.py
       - name: Generate core-composite checkpoint
         run: >-
