@@ -1,7 +1,7 @@
 """Executable axis data from Kokuno's public Navier--Stokes reconstruction.
 
 This module intentionally implements only the prescribed leading *axis* data that
-are explicit in the pinned public workbench source.  It does not reconstruct the
+are explicit in the pinned public workbench source. It does not reconstruct the
 full leading profile, does not identify OpenAI's hidden field, and does not imply
 Navier--Stokes validation.
 """
@@ -64,7 +64,7 @@ def _canonical_json(payload: dict[str, Any]) -> str:
 class KokunoLeadingAxisProfile:
     """Low-dimensional executable seed for Kokuno's prescribed axis profiles.
 
-    ``h`` and ``j0`` are bounded by the public source.  The defaults are autonomous
+    ``h`` and ``j0`` are bounded by the public source. The defaults are autonomous
     demo choices inside those intervals; they are not recovered OpenAI parameters.
     There is deliberately no amplitude parameter, so this layer cannot collapse to
     the zero profile by scaling.
@@ -76,8 +76,8 @@ class KokunoLeadingAxisProfile:
     def __post_init__(self) -> None:
         h = float(self.h)
         j0 = float(self.j0)
-        if not np.isfinite(h) or not (0.0 < h <= 1.0e-2):
-            raise ValueError("h must be finite and satisfy 0 < h <= 1e-2")
+        if not np.isfinite(h) or not (0.0 < h < 1.0e-2):
+            raise ValueError("h must be finite and satisfy 0 < h < 1e-2")
         if not np.isfinite(j0) or not (0.0 < j0 <= 5.0e-2):
             raise ValueError("j0 must be finite and satisfy 0 < j0 <= 0.05")
         object.__setattr__(self, "h", h)
@@ -165,7 +165,7 @@ class KokunoLeadingAxisProfile:
                 "h": self.h,
                 "j0": self.j0,
                 "origin": "autonomous_demo_within_public_source_bounds",
-                "source_bounds": {"h": "0<h<=1e-2", "j0": "0<j0<=0.05"},
+                "source_bounds": {"h": "0<h<1e-2", "j0": "0<j0<=0.05"},
             },
             "formulas": dict(_SOURCE_FORMULAS),
             "coordinates": dict(_COORDINATE_CONTRACT),
@@ -209,7 +209,7 @@ class KokunoLeadingAxisProfile:
         if set(parameters) != {"h", "j0", "origin", "source_bounds"}:
             raise ValueError("Kokuno parameter metadata changed")
         expected_origin = "autonomous_demo_within_public_source_bounds"
-        expected_bounds = {"h": "0<h<=1e-2", "j0": "0<j0<=0.05"}
+        expected_bounds = {"h": "0<h<1e-2", "j0": "0<j0<=0.05"}
         if parameters["origin"] != expected_origin or parameters["source_bounds"] != expected_bounds:
             raise ValueError("Kokuno parameter provenance metadata changed")
 
