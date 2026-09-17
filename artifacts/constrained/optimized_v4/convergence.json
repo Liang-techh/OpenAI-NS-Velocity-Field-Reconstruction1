@@ -1,0 +1,95 @@
+{
+  "candidate": "optimized_v4/candidate.json",
+  "scope": "fixed candidate; Cartesian full-box quadrature independent of cylindrical normalization; derivative study changes step only",
+  "energy": [
+    {
+      "time": 0.25,
+      "order": 24,
+      "cartesian_energy": 0.999867021265661
+    },
+    {
+      "time": 0.25,
+      "order": 48,
+      "cartesian_energy": 1.000000554960085
+    },
+    {
+      "time": 0.25,
+      "order": 96,
+      "cartesian_energy": 0.9999999996746483
+    },
+    {
+      "time": 0.5,
+      "order": 24,
+      "cartesian_energy": 0.49938255407047205
+    },
+    {
+      "time": 0.5,
+      "order": 48,
+      "cartesian_energy": 0.4995394644326859
+    },
+    {
+      "time": 0.5,
+      "order": 96,
+      "cartesian_energy": 0.4995414820344879
+    },
+    {
+      "time": 0.75,
+      "order": 24,
+      "cartesian_energy": 0.1943106184380877
+    },
+    {
+      "time": 0.75,
+      "order": 48,
+      "cartesian_energy": 0.19513030528793032
+    },
+    {
+      "time": 0.75,
+      "order": 96,
+      "cartesian_energy": 0.1951026693090917
+    }
+  ],
+  "derivatives": [
+    {
+      "time": 0.75,
+      "step": 0.02,
+      "residual_sampled_max": 2.8331501927401073,
+      "residual_L2_estimate": 4.256753716490213,
+      "divergence_sampled_max": 0.0011871448981594923,
+      "divergence_L2_estimate": 0.000425409964501902
+    },
+    {
+      "time": 0.75,
+      "step": 0.01,
+      "residual_sampled_max": 2.80082013293834,
+      "residual_L2_estimate": 4.167162103247247,
+      "divergence_sampled_max": 0.00010348549199419577,
+      "divergence_L2_estimate": 3.4028029755440835e-05
+    },
+    {
+      "time": 0.75,
+      "step": 0.005,
+      "residual_sampled_max": 2.7884329970134876,
+      "residual_L2_estimate": 4.137323864246745,
+      "divergence_sampled_max": 7.090696831014293e-06,
+      "divergence_L2_estimate": 2.3074955938111513e-06
+    },
+    {
+      "time": 0.75,
+      "step": 0.0025,
+      "residual_sampled_max": 2.7846566534753556,
+      "residual_L2_estimate": 4.129015242370121,
+      "divergence_sampled_max": 4.535254477123357e-07,
+      "divergence_L2_estimate": 1.4742823435127284e-07
+    },
+    {
+      "time": 0.75,
+      "step": 0.00125,
+      "residual_sampled_max": 2.783617631676442,
+      "residual_L2_estimate": 4.126856169817682,
+      "divergence_sampled_max": 2.8509443061527917e-08,
+      "divergence_L2_estimate": 9.26610404784984e-09
+    }
+  ],
+  "boundary_probe_max": 0.0,
+  "limits": "Boundary probes alone are not a support proof. Support follows the documented compact bump representation. No PDE acceptance or stability claim."
+}

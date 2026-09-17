@@ -1,3 +1,16 @@
+## Current deliverable: callable 3D velocity components
+
+```python
+from openai_ns_reconstruction.velocity_components import velocity
+u, v, w = velocity(x=0.1, y=0.0, z=0.1, t=0.5)
+```
+
+Install with `python -m pip install -e .`, or use `PYTHONPATH=src`. CLI: `ns-velocity --point .1 0 .1 .5`. Export grids with `ns-velocity --export artifacts/visual/velocity_api`.
+
+See [velocity API and coordinate contract](docs/VELOCITY_API.md), [saved grid metadata](artifacts/visual/velocity_api/metadata.json), and [active visual-delivery tasks](docs/SCHEDULED_AGENT_TASKS.md). This is the current nonzero candidate field: correspondence to the exact OpenAI visualization remains unverified, and the recorded PDE acceptance is still failed.
+
+---
+
 # Constrained Navier–Stokes Velocity-Field Reconstruction
 
 本仓库的目标是：**在公开数学约束下，独立构造一个非平凡 Navier–Stokes 候选速度场，并验证其核心结构和数值表现。**

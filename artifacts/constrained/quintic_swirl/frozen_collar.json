@@ -1,0 +1,43 @@
+{
+  "point": [
+    0.32,
+    0.0,
+    0.8857142857142857
+  ],
+  "time": 0.75,
+  "zero_correction_radius": 0.3535533905932738,
+  "reason": "all current correction modes multiply parent.outer_basis, which vanishes throughout r\u00b2<=.125; all derivative stencil points here remain in that open zero region",
+  "scope": "pointwise numerical residual with refinement plus exact support argument; no certified residual interval",
+  "rows": [
+    {
+      "step": 0.005,
+      "residual": [
+        -0.4330784525267559,
+        -1.0235649229773378,
+        0.3068614558117892
+      ],
+      "norm": 1.152998721012085,
+      "parent_difference": 0.0
+    },
+    {
+      "step": 0.0025,
+      "residual": [
+        -0.4328673750753747,
+        -1.0220653750042419,
+        0.30684799054840384
+      ],
+      "norm": 1.1515847708661313,
+      "parent_difference": 0.0
+    },
+    {
+      "step": 0.00125,
+      "residual": [
+        -0.4328247732986331,
+        -1.0216083952082402,
+        0.30683391209747224
+      ],
+      "norm": 1.1511594360270034,
+      "parent_difference": 0.0
+    }
+  ]
+}

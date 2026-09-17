@@ -1,0 +1,21 @@
+{
+  "status": "pressure_fit_only_not_validated",
+  "force": {
+    "a": 9.546541832896667e-11,
+    "c": 0.12148700174414483
+  },
+  "local_pressure": true,
+  "dense_cylindrical": true,
+  "fourth_power": true,
+  "training_points": 22784,
+  "initial_artifact": "artifacts/constrained/inner_swirl_pressure/candidate.json",
+  "seed": 20260916,
+  "basis": "nine shrinking Gaussian pressure modes times quadratic Bernstein time basis",
+  "coefficient_bounds": [
+    -1,
+    1
+  ],
+  "initial_L2_sample_mean": 0.07892784316107677,
+  "final_L2_sample_mean": 0.07812929123532984,
+  "velocity_changed": false
+}

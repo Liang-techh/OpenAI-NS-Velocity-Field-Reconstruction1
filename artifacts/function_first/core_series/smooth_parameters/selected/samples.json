@@ -1,0 +1,146 @@
+{
+  "metadata": {
+    "parameters": {
+      "h": 0.005,
+      "j": 0.02,
+      "sigma": 0.5,
+      "Lambda": 10.0,
+      "C": 2.0,
+      "pressure_scale": 1.0
+    },
+    "maxdegree": 14,
+    "eta_nodes": 257,
+    "series_variable": "X",
+    "coefficient_convention": "ordinary powers X**n",
+    "viscosity": 1.0,
+    "paper_exact": false,
+    "converged": false,
+    "status": "finite formal near-axis nonlinear radial prefix",
+    "domain": "0 <= Lambda*X <= 4.1, |eta| <= 1",
+    "pressure_datum": "-pressure_scale**2/(1+eta**2)**2, independent autonomous datum",
+    "limitations": [
+      "finite degree and Chebyshev interpolation truncation",
+      "no convergence or residual theorem",
+      "no exterior matching or oscillatory correction"
+    ]
+  },
+  "samples": [
+    {
+      "point": [
+        0.1,
+        0,
+        -0.1
+      ],
+      "time": 0.25,
+      "velocity": [
+        -0.25888595899103034,
+        0.030509671982298786,
+        -0.5140452865426605
+      ]
+    },
+    {
+      "point": [
+        0.1,
+        0,
+        0
+      ],
+      "time": 0.25,
+      "velocity": [
+        -0.26955629190248376,
+        0.06642709765309772,
+        0.023474091559402294
+      ]
+    },
+    {
+      "point": [
+        0.1,
+        0,
+        0.1
+      ],
+      "time": 0.25,
+      "velocity": [
+        -0.25856253070383955,
+        0.027887507849413067,
+        0.5606538310941158
+      ]
+    },
+    {
+      "point": [
+        0.1,
+        0,
+        -0.1
+      ],
+      "time": 0.5,
+      "velocity": [
+        -0.382330734531293,
+        0.03520710096850519,
+        -0.779927550373489
+      ]
+    },
+    {
+      "point": [
+        0.1,
+        0,
+        0
+      ],
+      "time": 0.5,
+      "velocity": [
+        -0.4065000592442919,
+        0.09959015089644642,
+        0.029020526327365827
+      ]
+    },
+    {
+      "point": [
+        0.1,
+        0,
+        0.1
+      ],
+      "time": 0.5,
+      "velocity": [
+        -0.38172685922383454,
+        0.032240134594882036,
+        0.8373182955086552
+      ]
+    },
+    {
+      "point": [
+        0.1,
+        0,
+        -0.1
+      ],
+      "time": 0.75,
+      "velocity": [
+        -0.7276838281086204,
+        0.040101314586490536,
+        -1.5884364609464905
+      ]
+    },
+    {
+      "point": [
+        0.1,
+        0,
+        0
+      ],
+      "time": 0.75,
+      "velocity": [
+        -0.8259814419372484,
+        0.19834620199255146,
+        0.04208568377403921
+      ]
+    },
+    {
+      "point": [
+        0.1,
+        0,
+        0.1
+      ],
+      "time": 0.75,
+      "velocity": [
+        -0.7259015666715514,
+        0.037071240010108635,
+        1.6705440932633755
+      ]
+    }
+  ]
+}

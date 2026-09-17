@@ -1,0 +1,114 @@
+{
+  "scope": "fixed optimized velocity and force; all axisymmetric pressure choices",
+  "interpretation": "Azimuthal momentum residual cannot be changed by axisymmetric pressure. This is a lower bound on full residual at these sampled points, not a bound for all velocity parameters.",
+  "rows": [
+    {
+      "time": 0.25,
+      "step": 0.02,
+      "azimuthal_sampled_max": 0.990690258060582,
+      "azimuthal_L2_estimate": 2.2699713661197745
+    },
+    {
+      "time": 0.25,
+      "step": 0.01,
+      "azimuthal_sampled_max": 0.9836924239719789,
+      "azimuthal_L2_estimate": 2.2622662518311865
+    },
+    {
+      "time": 0.25,
+      "step": 0.005,
+      "azimuthal_sampled_max": 0.9822029705681231,
+      "azimuthal_L2_estimate": 2.2604164084404066
+    },
+    {
+      "time": 0.3125,
+      "step": 0.02,
+      "azimuthal_sampled_max": 1.1208272872339977,
+      "azimuthal_L2_estimate": 2.426082650091336
+    },
+    {
+      "time": 0.3125,
+      "step": 0.01,
+      "azimuthal_sampled_max": 1.1241981273726838,
+      "azimuthal_L2_estimate": 2.430490600891343
+    },
+    {
+      "time": 0.3125,
+      "step": 0.005,
+      "azimuthal_sampled_max": 1.125036544486744,
+      "azimuthal_L2_estimate": 2.4316023892086887
+    },
+    {
+      "time": 0.4375,
+      "step": 0.02,
+      "azimuthal_sampled_max": 1.5216232696010792,
+      "azimuthal_L2_estimate": 2.851871907168612
+    },
+    {
+      "time": 0.4375,
+      "step": 0.01,
+      "azimuthal_sampled_max": 1.527359590817605,
+      "azimuthal_L2_estimate": 2.859836895387671
+    },
+    {
+      "time": 0.4375,
+      "step": 0.005,
+      "azimuthal_sampled_max": 1.528779173105502,
+      "azimuthal_L2_estimate": 2.861855792484763
+    },
+    {
+      "time": 0.5625,
+      "step": 0.02,
+      "azimuthal_sampled_max": 2.219263608157077,
+      "azimuthal_L2_estimate": 3.4366049285275726
+    },
+    {
+      "time": 0.5625,
+      "step": 0.01,
+      "azimuthal_sampled_max": 2.2373988681611836,
+      "azimuthal_L2_estimate": 3.4515038317161677
+    },
+    {
+      "time": 0.5625,
+      "step": 0.005,
+      "azimuthal_sampled_max": 2.241883774537593,
+      "azimuthal_L2_estimate": 3.455317398936214
+    },
+    {
+      "time": 0.6875,
+      "step": 0.02,
+      "azimuthal_sampled_max": 3.652689548415509,
+      "azimuthal_L2_estimate": 4.374950996232331
+    },
+    {
+      "time": 0.6875,
+      "step": 0.01,
+      "azimuthal_sampled_max": 3.709155334727802,
+      "azimuthal_L2_estimate": 4.415674852853107
+    },
+    {
+      "time": 0.6875,
+      "step": 0.005,
+      "azimuthal_sampled_max": 3.723898275542254,
+      "azimuthal_L2_estimate": 4.42635680067707
+    },
+    {
+      "time": 0.75,
+      "step": 0.02,
+      "azimuthal_sampled_max": 5.3112099870658485,
+      "azimuthal_L2_estimate": 5.3833217955777
+    },
+    {
+      "time": 0.75,
+      "step": 0.01,
+      "azimuthal_sampled_max": 5.199876226821023,
+      "azimuthal_L2_estimate": 5.298114822685975
+    },
+    {
+      "time": 0.75,
+      "step": 0.005,
+      "azimuthal_sampled_max": 5.16641665012199,
+      "azimuthal_L2_estimate": 5.269787495079138
+    }
+  ]
+}

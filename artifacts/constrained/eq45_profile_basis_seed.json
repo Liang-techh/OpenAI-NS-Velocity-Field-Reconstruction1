@@ -1,0 +1,29 @@
+{
+  "schema": "eq45_compact_profile_basis_v1",
+  "classification": {
+    "basis_shape": "autonomous_design",
+    "coefficient_values": "autonomous_design",
+    "paper_exact": false
+  },
+  "radial_degree": 1,
+  "eta_degree": 2,
+  "x_cut": 4.0,
+  "eta_cut": 1.0,
+  "cutoff_power": 5,
+  "coefficient_limit": 4.0,
+  "mode_indices": [[0, 0], [0, 1], [0, 2], [1, 0], [1, 1], [1, 2]],
+  "phi_coefficients": [1.0, 0.0, -0.35, -0.30, 0.0, 0.10],
+  "swirl_coefficients": [0.80, 0.0, -0.25, -0.20, 0.0, 0.05],
+  "truth_boundary": {
+    "role": "autonomous visualization-starting profile block",
+    "visualization_ready": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "requires_downstream": [
+      "Phi-to-v0/U structural adapter",
+      "Eq. 4.5 q/Cartesian velocity evaluator",
+      "independent morphology diagnostics",
+      "independent PDE validation"
+    ]
+  }
+}

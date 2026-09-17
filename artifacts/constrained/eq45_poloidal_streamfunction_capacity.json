@@ -1,0 +1,16 @@
+{
+  "task_id": "CR003-EQ45-POLOIDAL-STREAMFUNCTION-005",
+  "status": "representation_diagnostic_only",
+  "paper_exact": false,
+  "pde_validated": false,
+  "visualization_ready": false,
+  "source_relation": "q - z^2 q^(2h) = 1-t",
+  "finding": {
+    "obstruction": "Treating v0(X,eta) and U(X,eta) as independent free profile families does not generically preserve incompressibility.",
+    "minimal_structural_fix": "Parameterize the poloidal sector with one scalar similarity streamfunction Phi via psi=q^(1/2-h) X Phi; keep F as the independent swirl profile.",
+    "parameter_effect": "For an N-mode poloidal basis this replaces two independently fitted N-mode profile blocks (v0 and U) by one N-mode Phi block while enforcing the profile-space divergence identity exactly.",
+    "axis_regular": "The derived v0/U map contains no 1/X division when psi=q^(1/2-h) X Phi, so finite Phi jets stay regular at X=0.",
+    "visualization_handoff": "Use Phi basis growth for radial/axial morphology and a separate F basis for swirl. Do not add unconstrained independent v0/U modes unless the divergence identity is imposed explicitly."
+  },
+  "truth_boundary": "This increment changes no production candidate and therefore does not yet improve measured visual similarity. It narrows the next basis-growth search to a divergence-preserving poloidal scalar plus independent swirl, without validating Navier-Stokes or identifying the OpenAI field."
+}

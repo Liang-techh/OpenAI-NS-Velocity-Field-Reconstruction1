@@ -1,0 +1,139 @@
+{
+  "parameters": {
+    "h": 0.005,
+    "j": 0.02,
+    "sigma": 0.1,
+    "Lambda": 10.0,
+    "C": 2.0,
+    "pressure_scale": 1.0
+  },
+  "paper_exact": false,
+  "status": "near-axis reference approximation; nonlinear correction not solved",
+  "domain": "0<=t<1; Lambda*(x*x+y*y)/(2*q)<=4.1",
+  "pressure_datum": "-pressure_scale^2/(1+eta^2)^2, autonomous; not matched to exterior",
+  "missing": [
+    "nonlinear profile solve",
+    "outer matching",
+    "higher-order and oscillatory corrections"
+  ],
+  "samples": [
+    {
+      "point": [
+        0.1,
+        0,
+        0
+      ],
+      "time": 0.25,
+      "velocity": [
+        -0.26955773288888896,
+        0.06671984227746819,
+        0.023474547588713295
+      ]
+    },
+    {
+      "point": [
+        0.1,
+        0,
+        0.1
+      ],
+      "time": 0.25,
+      "velocity": [
+        -0.25855442999451683,
+        0.0015492527377398112,
+        0.560607549191811
+      ]
+    },
+    {
+      "point": [
+        0.1,
+        0,
+        -0.1
+      ],
+      "time": 0.25,
+      "velocity": [
+        -0.2588772216399204,
+        0.0018301425842902124,
+        -0.5140035188364867
+      ]
+    },
+    {
+      "point": [
+        0.1,
+        0,
+        0
+      ],
+      "time": 0.5,
+      "velocity": [
+        -0.40650489900000003,
+        0.10025071810340347,
+        0.029021782195975922
+      ]
+    },
+    {
+      "point": [
+        0.1,
+        0,
+        0.1
+      ],
+      "time": 0.5,
+      "velocity": [
+        -0.3817079600739782,
+        0.0015107536547599007,
+        0.837165012489958
+      ]
+    },
+    {
+      "point": [
+        0.1,
+        0,
+        -0.1
+      ],
+      "time": 0.5,
+      "velocity": [
+        -0.3823098716487114,
+        0.0017344765028930596,
+        -0.7797844578678994
+      ]
+    },
+    {
+      "point": [
+        0.1,
+        0,
+        0
+      ],
+      "time": 0.75,
+      "velocity": [
+        -0.8260195960000001,
+        0.2010040675988145,
+        0.04209275590347096
+      ]
+    },
+    {
+      "point": [
+        0.1,
+        0,
+        0.1
+      ],
+      "time": 0.75,
+      "velocity": [
+        -0.7258800802009533,
+        0.00140316557955812,
+        1.6695238779073496
+      ]
+    },
+    {
+      "point": [
+        0.1,
+        0,
+        -0.1
+      ],
+      "time": 0.75,
+      "velocity": [
+        -0.7276504113781658,
+        0.0015496626959640033,
+        -1.58745041073781
+      ]
+    }
+  ],
+  "checks": "2 focused tests passed: source series, coordinate identity, axis limits, analytic axial derivative, finite-difference incompressibility"
+}

@@ -1,0 +1,157 @@
+{
+  "status": "failed_validation",
+  "candidate": "artifacts/constrained/optimized_v2/candidate.json",
+  "force": {
+    "a": 4.112503788668453e-15,
+    "c": 0.08168728690069067
+  },
+  "seed": 914027,
+  "points": 4096,
+  "scope": "uniform held-out spatial samples; sampled maxima and Monte Carlo L2; no full acceptance claim",
+  "rows": [
+    {
+      "time": 0.25,
+      "step": 0.02,
+      "residual_sampled_max": 1.0838104097026224,
+      "residual_L2_estimate": 3.032321458788268,
+      "divergence_sampled_max": 0.00021156261420495186,
+      "divergence_L2_estimate": 0.0001777650099008601
+    },
+    {
+      "time": 0.25,
+      "step": 0.01,
+      "residual_sampled_max": 1.0738664159138218,
+      "residual_L2_estimate": 3.012972616802058,
+      "divergence_sampled_max": 1.4788931527431026e-05,
+      "divergence_L2_estimate": 1.2273300429981364e-05
+    },
+    {
+      "time": 0.25,
+      "step": 0.005,
+      "residual_sampled_max": 1.0717324252308988,
+      "residual_L2_estimate": 3.0081552268051364,
+      "divergence_sampled_max": 9.838042135521102e-07,
+      "divergence_L2_estimate": 7.886903305956406e-07
+    },
+    {
+      "time": 0.3125,
+      "step": 0.02,
+      "residual_sampled_max": 1.227451300207622,
+      "residual_L2_estimate": 3.232905084288557,
+      "divergence_sampled_max": 0.00030178373004778256,
+      "divergence_L2_estimate": 0.00020196757524309459
+    },
+    {
+      "time": 0.3125,
+      "step": 0.01,
+      "residual_sampled_max": 1.2325668243066434,
+      "residual_L2_estimate": 3.2448904461602943,
+      "divergence_sampled_max": 2.1271035508371207e-05,
+      "divergence_L2_estimate": 1.398867325275469e-05
+    },
+    {
+      "time": 0.3125,
+      "step": 0.005,
+      "residual_sampled_max": 1.2338408718218035,
+      "residual_L2_estimate": 3.2479478148969037,
+      "divergence_sampled_max": 1.370012371920866e-06,
+      "divergence_L2_estimate": 8.993764549628218e-07
+    },
+    {
+      "time": 0.4375,
+      "step": 0.02,
+      "residual_sampled_max": 1.6961403645120452,
+      "residual_L2_estimate": 3.8002179258694757,
+      "divergence_sampled_max": 0.00047573718112738604,
+      "divergence_L2_estimate": 0.00034897908768894727
+    },
+    {
+      "time": 0.4375,
+      "step": 0.01,
+      "residual_sampled_max": 1.7056894460217467,
+      "residual_L2_estimate": 3.819589382157231,
+      "divergence_sampled_max": 3.671636572208602e-05,
+      "divergence_L2_estimate": 2.4808417664598023e-05
+    },
+    {
+      "time": 0.4375,
+      "step": 0.005,
+      "residual_sampled_max": 1.7080604983751215,
+      "residual_L2_estimate": 3.824581313249667,
+      "divergence_sampled_max": 2.4870088798849646e-06,
+      "divergence_L2_estimate": 1.6089227895573563e-06
+    },
+    {
+      "time": 0.5625,
+      "step": 0.02,
+      "residual_sampled_max": 2.492128469037248,
+      "residual_L2_estimate": 4.61314672517194,
+      "divergence_sampled_max": 0.0009432496556776434,
+      "divergence_L2_estimate": 0.0005481475811727753
+    },
+    {
+      "time": 0.5625,
+      "step": 0.01,
+      "residual_sampled_max": 2.5128371206464695,
+      "residual_L2_estimate": 4.653020231434684,
+      "divergence_sampled_max": 6.970960416124994e-05,
+      "divergence_L2_estimate": 4.048607907008854e-05
+    },
+    {
+      "time": 0.5625,
+      "step": 0.005,
+      "residual_sampled_max": 2.517946751686976,
+      "residual_L2_estimate": 4.663535329092494,
+      "divergence_sampled_max": 4.54219299349766e-06,
+      "divergence_L2_estimate": 2.6606914709328234e-06
+    },
+    {
+      "time": 0.6875,
+      "step": 0.02,
+      "residual_sampled_max": 4.092626586667227,
+      "residual_L2_estimate": 5.906550401446724,
+      "divergence_sampled_max": 0.0022658066600544455,
+      "divergence_L2_estimate": 0.0010447562195240534
+    },
+    {
+      "time": 0.6875,
+      "step": 0.01,
+      "residual_sampled_max": 4.161711589435778,
+      "residual_L2_estimate": 6.005378789085384,
+      "divergence_sampled_max": 0.00018059884951589396,
+      "divergence_L2_estimate": 8.145666012666119e-05
+    },
+    {
+      "time": 0.6875,
+      "step": 0.005,
+      "residual_sampled_max": 4.17853280256129,
+      "residual_L2_estimate": 6.0323495010551,
+      "divergence_sampled_max": 1.2007329057293209e-05,
+      "divergence_L2_estimate": 5.456628320845919e-06
+    },
+    {
+      "time": 0.75,
+      "step": 0.02,
+      "residual_sampled_max": 6.035582956606057,
+      "residual_L2_estimate": 7.24766260006008,
+      "divergence_sampled_max": 0.0048948664210898,
+      "divergence_L2_estimate": 0.002019275953117054
+    },
+    {
+      "time": 0.75,
+      "step": 0.01,
+      "residual_sampled_max": 5.895010795305613,
+      "residual_L2_estimate": 7.024691763193556,
+      "divergence_sampled_max": 0.00038265228361000075,
+      "divergence_L2_estimate": 0.0001638150914758524
+    },
+    {
+      "time": 0.75,
+      "step": 0.005,
+      "residual_sampled_max": 5.842562745826563,
+      "residual_L2_estimate": 6.949132914123365,
+      "divergence_sampled_max": 2.679706220366684e-05,
+      "divergence_L2_estimate": 1.1090657695955788e-05
+    }
+  ]
+}

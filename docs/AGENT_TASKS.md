@@ -1,21 +1,21 @@
 # 新目标任务队列
 
-基线：新仓库 `main` 最新提交。认领前读取目标、检查点及本仓库开放 PR。
+执行入口：`docs/SCHEDULED_AGENT_TASKS.md`。当前集成基线是 `codex/cr001-constraints`（PR #1），不是尚未合并这些成果的旧 `main`。认领前读取目标、检查点、任务入口及开放 PR。
 状态为 TODO/IN_PROGRESS/DONE/BLOCKED；DONE 只表示交付完成，acceptance 和 merge_status 单独记录。
 每项完成后附 commit、PR、实际命令/结果、参数和剩余限制。没有执行的检查写 not run。
 
 | ID | 交付 | 依赖 | 状态 | Owner | 验收 |
 | --- | --- | --- | --- | --- | --- |
-| CR001 | 可机读的公开约束与问题配置 | 无 | TODO | — | pending |
-| CR002 | 复用表示选择和非平凡初始化方案 | 无 | TODO | — | pending |
-| CR003 | 参数化候选场生成器 | CR001,CR002 | TODO | — | pending |
-| CR004 | 相容压力与 forcing 约定实现 | CR001,CR003 | TODO | — | pending |
-| CR005 | 有限预算约束优化器 | CR003,CR004 | TODO | — | pending |
-| CR006 | 独立散度/NS residual 验证器 | CR001,CR003 | TODO | — | pending |
-| CR007 | 边界、支撑、能量验证 | CR003,CR004 | TODO | — | pending |
-| CR008 | 频谱、缩放、集中机制诊断 | CR001,CR003 | TODO | — | pending |
-| CR009 | 精度收敛与泛化验证 | CR005–CR008 | TODO | — | pending |
-| CR010 | 3–5 个关键结构命题验证 | CR002,CR003 | TODO | — | pending |
+| CR001 | 可机读的公开约束与问题配置 | 无 | DONE | root | pending |
+| CR002 | 复用表示选择和非平凡初始化方案 | 无 | DONE | Luna/max design + root integration | pending |
+| CR003 | 参数化候选场生成器 | CR001,CR002 | IN_PROGRESS | root | pending |
+| CR004 | 相容压力与 forcing 约定实现 | CR001,CR003 | IN_PROGRESS | root | pending |
+| CR005 | 有限预算约束优化器 | CR003,CR004 | IN_PROGRESS | root | pending |
+| CR006 | 独立散度/NS residual 验证器 | CR001,CR003 | IN_PROGRESS | root | pending |
+| CR007 | 边界、支撑、能量验证 | CR003,CR004 | IN_PROGRESS | root | pending |
+| CR008 | 频谱、缩放、集中机制诊断 | CR001,CR003 | IN_PROGRESS | root | pending |
+| CR009 | 精度收敛与泛化验证 | CR005–CR008 | IN_PROGRESS | root | pending |
+| CR010 | 3–5 个关键结构命题验证 | CR002,CR003 | DONE | root | pending |
 | CR011 | 可复现候选 artifact 与运行入口 | CR005,CR009 | TODO | — | pending |
 | CR012 | 独立结果报告和逐约束验收 | CR009–CR011 | TODO | — | pending |
 
@@ -81,3 +81,125 @@ remaining_limitations:
 acceptance: pending
 merge_status: open
 ```
+
+## CR001 delivery — 2026-09-16
+
+- Branch: `codex/cr001-constraints`; base: `c670085`.
+- Artifacts: `configs/constraints.json`, `docs/CONSTRAINT_SOURCES.md`.
+- Actual checks: Python JSON parsing and assertions for positive viscosity/thresholds, finite time window, separate seeds and restricted force mode passed; `git diff --check` passed.
+- Optimization and candidate validation: not run. Feasibility remains unresolved.
+- acceptance: pending; merge_status: unmerged. Implementation commit: `eecbfd0`; PR: https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/pull/1 (follow-up commits on the same branch).
+
+## CR004 partial delivery — 2026-09-16
+
+`constrained_force.py` implements the preregistered curl force with bounded coefficients and vectorized Cartesian evaluation. Independent finite-difference curl, axis, support and parameter checks: `python -m pytest -q -W error tests/test_constrained_force.py` — 2 passed in 0.37 s. Candidate pressure and coupled PDE validation remain pending; this does not complete CR004. Delivery branch/PR: `codex/cr001-constraints`, PR #1.
+
+## CR002 / CR003 delivery — 2026-09-16
+
+CR002 design and nonzero initialization delivered in `docs/CANDIDATE_REPRESENTATION.md`. CR003 velocity/pressure evaluation, normalization and JSON round-trip implemented; derivative interfaces remain pending. Artifacts are under `artifacts/constrained/`. Focused candidate/force tests: 5 passed in 0.36 s. Energy quadrature orders 24/48/96 give 1.0000089576/1.0000000018/1.0 at the reference time. These are initialization checks, not PDE validation. Branch: `codex/cr001-constraints`; PR #1. acceptance: pending; merge_status: unmerged.
+
+## CR006 initial PDE baseline — 2026-09-16
+
+Independent Cartesian fourth-order spatial/second-order time finite differences implemented in `constrained_validation.py`. Endpoint stencils stay within the declared window. Manufactured polynomial momentum solution passes at both endpoints and interior; reversed force is detected. Combined focused suite: 8 passed in 0.41 s. Reproduce with `PYTHONPATH=src python -m openai_ns_reconstruction.constrained_validation` (set PYTHONPATH using the shell appropriate to your environment). Saved report: `artifacts/constrained/initial_pde_validation.json`. On 4096 held-out points and six times, finest-step residual sampled maxima range 3.39–13.23 versus threshold 0.001. This initial candidate fails; thresholds are unchanged. Boundary/axis stratified validation, more general analytic calibration and optimization remain pending. PR #1, unmerged.
+
+## CR005 first bounded optimization — 2026-09-16
+
+Implemented `constrained_optimize.py` with separate second-order training derivatives, fixed training seed, bounded velocity/pressure/force parameters, per-trial energy normalization and an actual-call budget. First run: 153 calls, xtol termination; training loss 1.47648 -> 0.35057. Independent fourth-order validation with the fitted force still fails: maximum sampled residual 5.35525 at t=0.75, versus initial 13.2271 and required 0.001. Several parameters hit bounds; no threshold relaxation. Results, force coefficients and best-so-far logs: `artifacts/constrained/optimized/`. Reproduce: `python -m openai_ns_reconstruction.constrained_optimize`, then validation with `--candidate artifacts/constrained/optimized/candidate.json --training artifacts/constrained/optimized/training.json --output artifacts/constrained/optimized/validation.json`. Set PYTHONPATH=src or install package first. Remaining: structural loss completeness, sensitivity/restarts, derivative convergence and candidate-family adequacy.
+
+## CR005 v2 swirl experiment — 2026-09-16
+
+Pressure-independent diagnostic: `constrained_obstruction.py`, report under optimized/. At t=0.75 azimuthal residual sampled maximum is 5.1664; axisymmetric pressure cannot remove it for fixed velocity/force. Added two swirl shape coefficients in a separately versioned configuration, retaining all thresholds. v2: 243 calls, training loss 0.325862, held-out PDE validation still fails. Results under `artifacts/constrained/optimized_v2/`. This does not prove impossibility of the candidate family or satisfy final acceptance.
+
+## CR010 symbolic delivery — 2026-09-16
+
+Five exact symbolic ansatz identities executed with SymPy 1.14.0: poloidal divergence, swirl divergence, absence of azimuthal pressure gradient, rotation equivariance, radial similarity exponent. Script: `constrained_structure.py`; assumptions and binding to v1/v2: `docs/STRUCTURE_IDENTITIES.md`; output: `artifacts/constrained/structure_identities.json`. Actual command: `python -m openai_ns_reconstruction.constrained_structure`, result `five_symbolic_identities_verified`. No Lean, full momentum, or bump-extension smoothness proof claimed. acceptance: pending; merge_status: unmerged; PR #1.
+
+## CR005 v3 time-dependent swirl experiment
+
+Added two bounded time-dependent swirl collar coefficients and the preregistered core-drift penalty. 237 calls, training loss 0.276786; independent PDE validation still fails. Configuration and all results retained under constraints_v3.json and optimized_v3/. No full scaling claim for time-dependent swirl. Next decision: assess reusable legacy correction-field implementations before expanding this small ansatz again.
+
+## Executable legacy reuse bridge
+
+Added `CompactCandidate.vector_potential` and `as_legacy_local_field`; directly executes old LocalField/curl_numeric/jacobian_numeric and supports sum_vector_fields correction assembly. Four targeted tests passed in 0.26 s. Details and limits: `docs/LEGACY_REUSE.md`. This is a reusable composition interface, not a ready NS correction or a reduction in PDE residual.
+
+## CR005 decoupled coefficient experiment
+
+Implemented bounded inner pressure/force fit and nonlinear outer velocity fit. Results: 660 outer calls, loss 0.255627; independent sampled maximum 4.036601 (still fails). Tests for fixed-velocity improvement and training operator: 2 passed in 0.57 s. Artifacts: `artifacts/constrained/decoupled_v3/`; reproducibility and research distinctions: `docs/DECOUPLED_EXPERIMENT.md`. No arbitrary residual force or threshold changes.
+
+## CR005 v4 poloidal time experiment
+
+Added time-dependent streamfunction collar shapes. Legacy curl/direct candidate checks: 4 passed in 0.25 s. Joint fit: 554 function calls, training loss 0.222669. Independent finest-step sampled maximum 2.788433 (previous best 4.036601), still above 0.001. On 21 times, core drift 0.0011704 < 0.05, energy range [0.195104,1], core signs pass. Artifacts: `artifacts/constrained/optimized_v4/`, configuration constraints_v4.json. Preserve all previous experiments. Fixed-profile scaling symbolic claim does not extend to the new time-dependent poloidal factor.
+
+## CR007/CR009 independent convergence delivery
+
+`constrained_convergence.py` directly reuses old `quadrature.unit_rule` for independent Cartesian full-box energy (candidate normalization uses cylindrical quadrature). Orders 24/48/96 at t=0.75: 0.1943106/0.1951303/0.1951027. Constant-field analytical energy calibration passed (448). Fixed v4 and fixed held-out points: derivative steps 0.02 through 0.00125 give residual maxima 2.83315 -> 2.78362 while divergence falls to 2.85e-8. This is evidence of a nonzero momentum-residual plateau, not just differentiation error. Saved `optimized_v4/convergence.json`; run `python -m openai_ns_reconstruction.constrained_convergence`. Remaining: spectral checks, more times/strata and perturbation stability; tasks remain IN_PROGRESS.
+
+## CR005 adaptive warm-start experiment
+
+Added warm-start from a saved candidate/force and residual-adaptive training points. From a separately seeded 8192-point training pool, selected 256 highest-residual points; validation samples were not used. v4 warm-start hit the actual 2000-call budget, independent sampled maximum 2.738863 versus 2.788433. Training loss 0.473533 is not directly comparable with the old training loss because the sampling measure changed. Two related operator/linear-fit tests passed in 0.53 s. Artifacts: adaptive_v4/. Conclusion: more of the same low-dimensional optimization gives only marginal benefit; further work should change representation, not merely raise iteration count.
+
+## Tensor representation and spectral progress
+
+Tensor representation implementation is assigned to Luna/max worker `tensor_candidate`; root prepared bounded stage-1 configuration (24 active coefficients), optimizer and scope document. Delivery pending worker integration; no tensor fit result claimed.
+
+Implemented `constrained_spectrum.py`: 32³/48³/64³ FFT diagnostics at three times, Parseval energy identity checked numerically. At t=0.75 high-mode tail fractions are 2.592e-4 / 4.663e-5 / 1.129e-5. Data: `artifacts/constrained/adaptive_v4/spectrum.json`. No spectral pass threshold or singularity claim. Run `python -m openai_ns_reconstruction.constrained_spectrum`.
+
+## Tensor stage 1 implementation and rejected fit
+
+Luna/max delivered TensorCandidate; root integrated 24-coefficient fitting and validator dispatch. Integration suite 10 passed in 0.37 s. 2000-call fit: residual sampled maximum 2.4641, core drift 7.18%, min energy 0.09955. Fails PDE and two structural thresholds, so not selected as accepted candidate. Preserve tensor_stage1/ results; next action is stronger constraint enforcement rather than relaxing thresholds.
+
+## Tensor feasible-selection run
+
+Optimizer now tracks best structurally feasible training candidate separately and uses stronger structural penalties (100x residual multiplier). Internal selection uses safety margins; acceptance thresholds are unchanged. 377 calls; selected training PDE loss 0.213667. Independent validator now includes 21-time structural gate: drift 0.0494913, energy [0.170786,1], signs pass. Maximum sampled PDE residual 2.664848 still fails. Saved tensor_feasible/; no final acceptance claim.
+
+## Global angular-momentum diagnosis
+
+Implemented `constrained_momentum_budget.py` using legacy quadrature. tensor_feasible violates integrated torque balance: at t=0.25 J'= -21.2593 versus force torque -1.1140. Numerical Cauchy-Schwarz residual-L2 lower-bound estimate 1.5421, far above .001. Data angular_momentum.json and derivation ANGULAR_MOMENTUM_DIAGNOSIS.md. Next concrete representation change: smooth outer swirl reservoir constrained by prescribed force torque; not arbitrary forcing.
+
+## Outer angular-momentum correction
+
+Implemented `AngularMomentumCandidate` with a fixed-support swirl basis vanishing around the core; directly reuses legacy standard_cutoff and unit_rule. Amplitude follows integrated prescribed force torque, not residual-defined force. At t=.5 torque mismatch falls from ~10.73 to ~1e-4 (quadrature-dependent, not certified). Independent sampled max residual 2.596683, 21-time structure checks pass; energy range [0.497829,1.000655], core drift unchanged 0.0494913. Results outer_momentum/. Local PDE still fails .001.
+
+## Outer spatial distribution fit
+
+Added two bounded outer-basis shape coefficients [-2,2], multiplying the old cutoff basis by exp(alpha*(r²/4-.5)+beta*z²/4). Recomputed moment normalization preserves the prescribed global torque construction. Force, core and thresholds unchanged. 27 calls, fitted shape [-1.616864,-1.748855], independent sampled max residual 2.491094, structural probes pass (energy [0.683244,1.08919], drift 0.0494913). Results outer_shape/. PDE still fails .001.
+
+## Fixed-velocity pressure-space experiment
+
+Added 18 compact pressure basis terms (degree 2 in r²,z² and degree 1 in time), coefficients bounded [-100,100], at fixed velocity and force. Bounded linear fit reduced training mean-square residual 0.148236 -> 0.146392 but independent maximum worsened 2.491094 -> 2.508246. Keep outer_shape as better development result; outer_pressure is a preserved failed comparison. Five related tests passed in 0.31 s. This weak gain supports changing velocity time evolution, not further pressure-only enrichment.
+
+## Equation-driven initial tangent experiment
+
+Implemented a bounded linear fit of 18 first-time tensor coefficients at t=.25, retaining initial velocity and prescribed force. Actual residual agrees with its affine fit model to 2.81e-10. Initial training sampled maximum .93022 -> .60926; initial velocity change exactly 0 at sampled points. Independent validation at t=.25 gives .61694, but t=.75 deteriorates to 7.58854 and core drift .88796 violates .05. Therefore reject full-time extrapolation. This motivates time-slab or all-time dynamical constraints, not an initial-only fit. Saved initial_tangent/ and reproducible module constrained_initial_tangent.py.
+
+## Whole-window time coefficients with explicit core equalities
+
+Added `constrained_whole_window.py` fitting k=1,2 time coefficients while preserving t=.25 velocity and the outer torque construction. Soft-penalty comparison barely moved (88 calls, loss .148234). SLSQP with linear equality constraints on core velocity at two interior times completed 525 calls/20 iterations (iteration limit), training loss .109416, independent maximum residual 2.058084. Structure probes pass: drift .0494913, energy [.660617,1.049543], core signs pass. With fixed geometry and quadratic time correction, the two times constrain the polynomial core change; numerical validation is still required. Artifacts whole_window/ and whole_window_equalities/. PDE still fails .001; do not claim optimizer convergence.
+
+## Whole-window continuation and result recovery
+
+Added configurable warm start/budget/iterations. Continued from whole_window_equalities with a 1200-call cap and 40-iteration cap. Candidate saved successfully, then metadata serialization failed due to a variable shadowing the initial path. Fixed and recovered candidate-based force/validation without rerunning optimization; actual call count and termination are explicitly unknown. Independent max residual 1.947969, structural probes pass (drift .0494913, energy [.651279,1.047049]). Regression test verifies metadata serialization with explicit core equalities. Reproducible saved-result comparison now in reports/CONSTRAINED_PROGRESS.md; fresh final audit still pending.
+
+## Pressure refit after time evolution optimization
+
+CR005/CR006: generalized pressure fitting to accept a warm-start artifact and output path. Fits coefficient increments with shifted bounds, preserving any existing pressure correction correctly. On whole_window_continued, training mean-square residual decreased 0.1065419711 -> 0.1051516517; independent development maximum decreased 1.947969339 -> 1.942964833. Velocity, force, energy and core drift are unchanged; structure samples pass, PDE threshold 0.001 still fails. The small gain does not justify treating pressure-only fitting as the main route. Saved candidate, training and validation under artifacts/constrained/continued_pressure/. Two related tests passed. Reproduce with constrained_outer_pressure.run(initial='artifacts/constrained/whole_window_continued/candidate.json', output='artifacts/constrained/continued_pressure') and the standard validation CLI.
+
+CR003/CR005 next: localized temporal swirl corrections; dominant azimuthal residual diagnosis and torque-wrapper prerequisite recorded in reports/LATEST_RESIDUAL_DIAGNOSIS.md. Not yet implemented.
+
+CR003/CR005 temporal swirl implementation delivered (15 bounded coefficients, zero-moment numerical construction, initial/core preserved). CR006 comparisons recorded in docs/TEMPORAL_SWIRL_EXPERIMENT.md: uniform max1.95655, tail-adaptive2.44784, both structure-sampled pass and PDE fail. Do not promote these candidates over continued_pressure. Next localized spatial/azimuthal-evolution work remains OPEN.
+
+CR003/CR005 localized swirl delivered:18 bounded coefficients, reuse outer basis/quadrature/temporal helpers and residual cache. Three controlled fits completed. Selected localized_swirl independent sampled max1.35623 (refined1.35345), structural probes pass; PDE still fails. CR006 refinement evidence saved. Next axial-shifted localization/evolution remains OPEN; see docs/LOCALIZED_SWIRL_EXPERIMENT.md.
+
+CR003/CR005 nested axial-ring expansion delivered with 36 bounded coefficients. Three fits saved: mean-square max1.34996; sparse fourth-power failure3.63159; dense collocation fourth-power1.28545. All structural probes pass, PDE fails. New reference axial_swirl_dense. See docs/AXIAL_SWIRL_EXPERIMENT.md for reproduction, cap and remaining tasks.
+
+- CR005 analytic parameter Jacobian and energy cache delivered; two focused tests passed. Continuation took7 calls and found a local objective plateau. CR006 denser training reduces missed cylindrical peak1.62313 ->1.29827 although random maximum slightly worsens1.28544 ->1.29013. Next working reference axial_swirl_grid48; all PDE thresholds still fail. See docs/ANALYTIC_CONTINUATION.md.
+
+- CR003/CR005 quintic extension delivered, maximum1.26452 with sampled structure pass. Scalar-only comparisons preserved. Critical next task: reach frozen annulus .1<r<.354 with new guarded swirl modes; old corrections cannot affect the measured1.15 residual there. See docs/QUINTIC_AND_FROZEN_COLLAR.md and frozen_collar.json. CR006/CR012 remain incomplete.
+
+- CR003/CR005 inner-collar swirl modes delivered with90 coefficients, core/initial preserved. Formerly fixed point residual1.15116 ->.62614. CR004 bounded18-term pressure continuation yields full sampled maximum1.24417. New reference inner_swirl_pressure; structural probes pass, PDE fails. Quadrature reveals added-moment error about2.82e-5 at order192; no exact torque claim. Next localized pressure/poloidal optimization detailed in docs/INNER_SWIRL_AND_PRESSURE.md.
+
+- CR004 local shrinking pressure basis delivered(27 bounded coefficients); full max1.24361, structure sampled pass. Pressure-independent closed-loop estimate gives fixed-velocity residual floor about.357, so next CR003/CR005 must add poloidal streamfunction corrections and joint pressure optimization. Numerical estimate is not interval-certified. Reproducible circulation operator and manufactured test delivered; see docs/LOCAL_PRESSURE_AND_CIRCULATION.md.
+
+- CR003/CR005 poloidal-plus-pressure implementation delivered; smooth core-anchor version standard sampled max1.00634, refined.95665. Core/energy probes pass; standard numerical divergence fails but finest supplementary step gives4.32e-6. Circulation bound estimate falls.357->.160. Cutoff comparison failure retained. Next fully coupled swirl/poloidal/pressure fitting; see docs/POLOIDAL_JOINT_EXPERIMENT.md.
+
+- Simultaneous144-parameter fit delivered: standard maximum1.00221830; core/energy pass, momentum and standard divergence fail. Exact-candidate refinement pending. Scheduled agents must use docs/SCHEDULED_AGENT_TASKS.md as the actionable queue.

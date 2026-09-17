@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "status": "candidate",
+  "paper_exact": false,
+  "family": "compact_axisymmetric_window_v3",
+  "parameters": {
+    "swirl_ratio": 3.9999999999999996,
+    "radial_width": 1.0999999999999999,
+    "axial_width": 1.0009166075517844,
+    "radial_shape": -0.19999999999999998,
+    "axial_shape": -0.19999999999999998,
+    "swirl_radial_shape": 0.7999999999999999,
+    "swirl_axial_shape": 0.7999999999999999,
+    "swirl_radial_time": -3.244371562652155,
+    "swirl_axial_time": -1.001708204953303,
+    "amplitude": 0.10462210466953341,
+    "pressure_constant": -0.04845711849963517,
+    "pressure_radial": 0.04444152050869946,
+    "pressure_axial": -0.03331785804039854
+  }
+}

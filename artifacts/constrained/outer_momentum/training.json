@@ -1,0 +1,7 @@
+{
+  "status": "deterministic_moment_correction_not_optimized",
+  "force": {
+    "a": 9.546541832896667e-11,
+    "c": 0.12148700174414483
+  }
+}

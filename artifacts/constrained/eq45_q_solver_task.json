@@ -1,0 +1,45 @@
+{
+  "task_id": "CR003-EQ45-Q-SOLVER-005",
+  "owner": "Constrained Agent 1",
+  "status": "DONE",
+  "base_commit": "c6700851c0330c0c92938d25204d07fbabf588f4",
+  "implementation_commit": "2964ed28857301a541f3bfc5141cced659c580a0",
+  "test_commit": "3907b6503fad4403d825c139a3695440ee45e1da",
+  "source_repair": "Corrected the earlier negative-exponent transcription to the sourced relation q-z^2*q^(2h)=1-t after CR001 governance review.",
+  "scope": "Vectorized positive-root solver for q-z^2*q^(2h)=1-t on the sourced coordinate domain 0<h<1/2, t<1; this is only the Eq. (4.5) similarity-coordinate backbone.",
+  "actual_local_checks": [
+    {
+      "command": "PYTHONPATH=/mnt/data/agent1_eq45_positive python -m pytest -q -W error /mnt/data/agent1_eq45_positive/tests/test_constrained_eq45_q.py",
+      "result": "3 passed in 0.06s"
+    },
+    {
+      "command": "python -W error -m py_compile constrained_eq45_q.py test_constrained_eq45_q.py",
+      "result": "exit 0"
+    }
+  ],
+  "numeric_calibration": {
+    "small_h": 0.005,
+    "grid_z": "121 points on [-3,3]",
+    "grid_t": [0.25, 0.5, 0.75],
+    "max_implicit_residual": 4.405364961712621e-12,
+    "max_loose_vs_default_q_difference": 4.040067835830996e-09,
+    "q_range": [0.25, 9.959260980292129],
+    "max_abs_eta": 0.9866901676551995,
+    "quarter_h_closed_form_max_q_error": 4.334310688136611e-12,
+    "quarter_h_max_implicit_residual": 2.3276935934291032e-12
+  },
+  "direct_contribution_to_velocity_delivery": "Provides the source-correct q primitive needed to evaluate X=(x^2+y^2)/(2q), eta=z/q^(1/2-h), and then the Eq. (4.5) leading velocity backbone.",
+  "remaining_limitations": [
+    "Does not yet implement X, eta or [u,v,w].",
+    "Does not choose or fit v0, F or U/Phi profiles.",
+    "Does not compare against the OpenAI visualization.",
+    "Does not validate Navier-Stokes residuals.",
+    "Eq. (4.5) remains a leading-field backbone rather than a claim of the complete paper field."
+  ],
+  "velocity_export_ready": false,
+  "visualization_ready": false,
+  "pde_validated": false,
+  "paper_exact": false,
+  "acceptance": "pending",
+  "merge_status": "open"
+}
