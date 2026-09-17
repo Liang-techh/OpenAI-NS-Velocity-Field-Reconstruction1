@@ -1,0 +1,102 @@
+{
+  "schema": "eq45_supported_phi10_quartic_delivery_recipe_v1",
+  "task_id": "CR011-EQ45-PHI10-QUARTIC-DELIVERY-CAPSULE-016",
+  "base_dependency_head": "d3a4c1d6895c6ef08c73bc27d933c0dc1e74ea90",
+  "base_supported_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+  "candidate_sha256": "03fdae73170469ae1160297b489b1b83a27adddfc941119e116a21b98bd15049",
+  "temporal_mode": {
+    "family": "phi",
+    "index": [1, 0],
+    "early_delta": -1.4,
+    "nullspace_coefficient": -0.2831460674157303,
+    "nullspace_rule": "least_squares_minimize_return_node_coefficient_slope",
+    "schedule": "cubic_phi10_delta(tau,early_delta)+a*(tau+1)*tau*(tau-0.5)*(tau-1)",
+    "tau_definition": "delivery_interval_endpoints_map_to_minus1_plus1",
+    "coefficient_bound": [-4.0, 4.0],
+    "reference_times": [0.25, 0.375, 0.5, 0.5625, 0.625, 0.6875, 0.75],
+    "reference_coefficients": [-1.7, -0.5438202247191011, -0.3, -0.29471558988764046, -0.3, -0.2986481741573033, -0.3]
+  },
+  "delivery": {
+    "spatial_box": [[-2.0, 2.0], [-2.0, 2.0], [-2.0, 2.0]],
+    "time_interval": [0.25, 0.75],
+    "reference_times": [0.25, 0.375, 0.5, 0.5625, 0.625, 0.6875, 0.75],
+    "velocity_interfaces": ["velocity", "at_points", "velocity_xyz", "grid"],
+    "serialization_interfaces": ["save_json", "load_json"],
+    "grid_layout": "time,x,y,z,component",
+    "component_order": ["u", "v", "w"]
+  },
+  "representation_evidence": {
+    "capacity_pr": 166,
+    "materialization_pr": 168,
+    "early_identity": "quartic_equals_cubic_at_t0p25",
+    "static_return_times": [0.5, 0.625, 0.75],
+    "off_keyframe_nontrivial_times": [0.375, 0.5625, 0.6875],
+    "return_node_slope_l2_ratio_vs_cubic": 0.2998126756,
+    "late_half_excursion_ratio_vs_cubic": 0.2813,
+    "start_endpoint_slope_ratio_vs_cubic": 1.2800,
+    "public_openai_reference_used_for_selection": false,
+    "visual_correspondence_established": false
+  },
+  "restricted_force_evidence": {
+    "audit_pr": 169,
+    "audit_exact_head": "d3a4c1d6895c6ef08c73bc27d933c0dc1e74ea90",
+    "force_family": "RestrictedForce(a,c)",
+    "bounds": {"a": [0.0, 10.0], "c": [0.0, 10.0]},
+    "training_probe_count": 16,
+    "holdout_probe_count": 16,
+    "spatial_derivative_steps": [0.02, 0.01, 0.005],
+    "time_step": 0.0025,
+    "nu": 0.01,
+    "frozen_force_coefficients": {
+      "a": 2.1615475834844833e-15,
+      "c": 0.07770084654400304
+    },
+    "training_rms_before": 4.697889641411658,
+    "training_rms_after": 4.695029557310918,
+    "heldout_rms_before": [3.678322090166512, 3.6969949228504446, 3.7016892575139453],
+    "heldout_rms_after": [3.677015083694525, 3.6957137765888333, 3.700414843717181],
+    "finest_static_zero_force_rms": 3.5872881930415295,
+    "finest_cubic_zero_force_rms": 3.707314862128546,
+    "finest_quartic_zero_force_rms": 3.7016892575139453,
+    "pressure_fitted": false,
+    "formal_pde_gate_assessed": false,
+    "pde_validated": false
+  },
+  "sibling_evidence": {
+    "quartic_seed_generalization_task": "CR009-EQ45-SUPPORTED-PHI10-QUARTIC-SEED-GENERALIZATION-028",
+    "seed_generalization_status": "claimed_unconsumed",
+    "late_morphology_pr": 170,
+    "late_morphology_status": "open_unconsumed_calibration_pending",
+    "numeric_summary_bound_here": false,
+    "may_promote_visualization_ready": false,
+    "may_promote_pde_validated": false
+  },
+  "status": {
+    "callable_serializable": true,
+    "velocity_export_ready": true,
+    "visualization_candidate_only": true,
+    "canonical_velocity_changed": false,
+    "screened_temporal_shape_materialized": true,
+    "derivative_balanced_temporal_shape": true,
+    "production_temporal_shape_promoted": false,
+    "physical_support_connection_implemented": true,
+    "physical_support_validated": false,
+    "spatial_basis_grown": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "pending": {
+    "quartic_specific_temporal_derivative_audit": true,
+    "fresh_seed_generalization_integration": true,
+    "late_morphology_integration": true,
+    "public_observable_comparison": true,
+    "three_dimensional_render_review": true,
+    "formal_pde_gate": true,
+    "candidate_specific_energy_acceptance": true,
+    "canonical_promotion": false
+  }
+}
