@@ -111,7 +111,7 @@
     "blowup_proved": false
   },
   "forbidden_inferences": [
-    "rank-2 radial/axial public-velocity capacity means the current basis spans the momentum-residual directions",
+    "rank-2 radial/axial public-velocity capacity is not residual-Jacobian rank and does not mean the current basis spans the momentum-residual directions",
     "near-orthogonal radial/axial public-velocity responses make a finite joint child energy-neutral",
     "morphology rank 2 establishes visual correspondence to the public OpenAI visualization",
     "weak axial-centroid leverage proves the axial redistribution can never be useful for PDE reduction",
