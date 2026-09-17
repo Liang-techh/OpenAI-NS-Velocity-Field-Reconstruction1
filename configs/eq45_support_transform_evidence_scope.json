@@ -1,0 +1,80 @@
+{
+  "schema": "eq45_support_transform_evidence_scope_v1",
+  "task_id": "CR002-EQ45-SUPPORT-TRANSFORM-EVIDENCE-SCOPE-018",
+  "scope": "Govern evidence inheritance when a callable Eq45 velocity candidate is changed by a physical-space support/exterior connection. This contract does not implement the transform.",
+  "classification": {
+    "velocity_delivery_requirement": "user_requirement",
+    "eq45_backbone": "public_source_fact",
+    "registered_physical_support": "autonomous_design",
+    "support_transform_design": "autonomous_design",
+    "production_transform_status": "pending_unknown"
+  },
+  "parent_candidate": {
+    "artifact": "artifacts/constrained/eq45_velocity_candidate_seed.json",
+    "schema": "eq45_velocity_candidate_v1",
+    "requires_physical_support_connection": true,
+    "physical_support_validated": false,
+    "velocity_export_ready": true
+  },
+  "registered_support": {
+    "physical_domain": "R^3",
+    "support": "r < 2 and abs(z) < 2",
+    "boundary": "smooth zero extension of velocity and pressure outside support"
+  },
+  "current_transform_state": {
+    "production_support_transform_materialized": false,
+    "child_candidate_identity": "pending_unknown",
+    "production_support_validation": "pending_unknown"
+  },
+  "evidence_inheritance": {
+    "provenance_only": [
+      "eq45_backbone_source",
+      "parent_profile_provenance",
+      "parent_candidate_identity_as_parent_reference"
+    ],
+    "local_only_if_identity_plateau_is_independently_checked": [
+      "pointwise_velocity_equality_inside_declared_identity_plateau"
+    ],
+    "must_be_reestablished_for_transformed_candidate": [
+      "child_candidate_identity",
+      "velocity_export_ready",
+      "physical_support_validated",
+      "cr001_energy_normalization",
+      "boundary_support_metrics",
+      "pde_validated",
+      "visualization_ready",
+      "visual_resolution_stability",
+      "visual_correspondence_verified"
+    ],
+    "must_not_be_inherited_as_child_validation": [
+      "parent_candidate_identity_as_child_identity",
+      "parent_energy_metrics",
+      "parent_boundary_or_tail_metrics",
+      "parent_pde_residual_metrics",
+      "parent_visual_fingerprint_or_resolution_metrics",
+      "parent_canonical_promotion_status"
+    ]
+  },
+  "policy": {
+    "nonidentity_support_transform_creates_new_candidate_identity": true,
+    "synthetic_taper_calibration_establishes_production_support": false,
+    "parent_global_validation_applies_to_transformed_child": false,
+    "identity_plateau_evidence_is_local_only": true,
+    "support_validation_requires_production_child": true,
+    "support_validation_implies_pde_validation": false,
+    "support_validation_implies_visual_correspondence": false,
+    "pde_failure_blocks_child_velocity_export": false,
+    "child_velocity_export_requires_child_serialization_and_public_evaluator_check": true,
+    "residual_defined_or_pointwise_free_forcing_allowed": false,
+    "support_transform_is_public_source_fact": false
+  },
+  "truth_boundary": {
+    "physical_support_validated": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  }
+}
