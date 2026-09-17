@@ -1,5 +1,9 @@
 import numpy as np
-from openai_ns_reconstruction.constrained_eq45_bipolar_f20_capacity import TRUTH_BOUNDARY, audit_bipolar_f20_capacity
+
+from openai_ns_reconstruction.constrained_eq45_bipolar_f20_capacity import (
+    TRUTH_BOUNDARY,
+    audit_bipolar_f20_capacity,
+)
 
 
 def test_bipolar_f20_adds_stable_outer_radial_swirl_control_only():
@@ -14,7 +18,10 @@ def test_bipolar_f20_adds_stable_outer_radial_swirl_control_only():
     assert loc["F10"]["swirl_fraction"] > 1.0 - 1e-10
     assert loc["F20"]["swirl_fraction"] > 1.0 - 1e-10
     assert report["F20_vs_F10_outer_selectivity_ratio"] > 1.5
-    assert report["parameter_growth"] == {"spatial_modes_added": 1, "scalar_coefficients_added_if_selected": 1}
+    assert report["parameter_growth"] == {
+        "spatial_modes_added": 1,
+        "scalar_coefficients_added_if_selected": 1,
+    }
     assert report["truth_boundary"] == TRUTH_BOUNDARY
     assert report["truth_boundary"]["velocity_changed"] is False
     assert report["truth_boundary"]["held_out_pde_residual_evaluated"] is False
