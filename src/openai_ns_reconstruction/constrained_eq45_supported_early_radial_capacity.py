@@ -5,7 +5,7 @@ produce a larger early-time radial high-vorticity envelope than the untapered
 parent.  This module asks a narrower representation question: can the two
 *already present* bounded poloidal modes ``Phi(1,0)`` and ``Phi(1,2)`` move a
 smooth radial-collar vorticity fingerprint mainly at the early delivery time,
-or is a time-shaped coefficient direction needed?
+or is a time-shaped coefficient direction more efficient?
 
 No OpenAI image is fitted here and no saved candidate is changed.  All
 vorticity is reconstructed from public ``at_points(...)->[u,v,w]`` samples via
@@ -35,6 +35,7 @@ _TRUTH_BOUNDARY = {
     "velocity_changed": False,
     "production_coefficients_changed": False,
     "new_basis_added": False,
+    "temporal_mode_implemented": False,
     "forcing_or_pressure_refit": False,
     "visualization_ready": False,
     "visual_correspondence_verified": False,
@@ -128,6 +129,75 @@ def _response_matrix(
     return np.column_stack(columns)
 
 
+def _affine_temporal_screen(
+    child: Eq45SupportedVelocityCandidate,
+    times: tuple[float, ...],
+    fine_matrix: np.ndarray,
+    baseline: np.ndarray,
+    local_budget: float,
+    static_predicted_delta: np.ndarray,
+) -> dict[str, object]:
+    """Screen one affine coefficient slope without implementing a new candidate.
+
+    For the standard affine coordinate ``tau=-1,0,+1`` at delivery start,
+    midpoint and end, the local response of mode ``i`` is simply
+    ``tau * d(feature)/d(coefficient_i)``.  This consumes the measured static
+    Jacobian rather than duplicating Agent 1's production temporal wrapper.
+    """
+    midpoint = 0.5 * (child.time_start + child.time_end)
+    tau = 2.0 * (np.asarray(times, dtype=float) - midpoint) / (
+        child.time_end - child.time_start
+    )
+    temporal_matrix = fine_matrix * tau[:, None]
+    static_early_suppression = max(-float(static_predicted_delta[0]), np.finfo(float).tiny)
+
+    rows: dict[str, dict[str, float | list[float]]] = {}
+    basis = child.parent.profile_basis
+    best_mode = None
+    best_same_budget_gain = -np.inf
+    for index, mode in enumerate(MODES):
+        signature = temporal_matrix[:, index]
+        slope_sign = -1.0 if signature[0] > 0.0 else 1.0
+        signed_signature = slope_sign * signature
+        early_suppression = max(-float(signed_signature[0]), 0.0)
+        late_leak = float(np.linalg.norm(signed_signature[1:]))
+        selectivity = early_suppression / max(late_leak, np.finfo(float).tiny)
+
+        coefficient_index = basis.mode_indices.index(mode)
+        coefficient = float(basis.phi_coefficients[coefficient_index])
+        slope_headroom = float(basis.coefficient_limit - abs(coefficient))
+        slope_to_zero = (
+            float(baseline[0] / early_suppression)
+            if early_suppression > np.finfo(float).tiny
+            else float("inf")
+        )
+        same_budget_gain = float(local_budget * early_suppression)
+        efficiency_vs_static = same_budget_gain / static_early_suppression
+        rows[str(mode)] = {
+            "slope_sign_to_suppress_early": slope_sign,
+            "signed_response_per_unit_abs_slope": signed_signature.tolist(),
+            "early_suppression_per_unit_abs_slope": early_suppression,
+            "late_leak_l2_per_unit_abs_slope": late_leak,
+            "early_to_late_selectivity": selectivity,
+            "max_abs_slope_under_existing_bound": slope_headroom,
+            "linearized_abs_slope_to_zero_early_feature": slope_to_zero,
+            "linearized_zero_early_within_bound": bool(slope_to_zero <= slope_headroom),
+            "same_local_budget_early_suppression": same_budget_gain,
+            "same_local_budget_efficiency_vs_static_cancellation": efficiency_vs_static,
+        }
+        if same_budget_gain > best_same_budget_gain:
+            best_mode = mode
+            best_same_budget_gain = same_budget_gain
+
+    return {
+        "tau": tau.tolist(),
+        "local_abs_slope_budget": float(local_budget),
+        "modes": rows,
+        "recommended_existing_mode_for_temporal_followup": str(best_mode),
+        "production_temporal_candidate_implemented_here": False,
+    }
+
+
 def audit_supported_early_radial_capacity(
     child: Eq45SupportedVelocityCandidate,
     *,
@@ -139,13 +209,13 @@ def audit_supported_early_radial_capacity(
 ) -> dict[str, object]:
     """Audit whether existing static Phi modes can isolate an early radial correction.
 
-    The differentiable-ish morphology feature is the fraction of whole-grid
-    ``|curl u|^2`` lying at physical radius ``r > collar_start``.  The region
-    itself is fixed, avoiding the coefficient-dependent voxel jumps of a hard
-    vorticity superlevel extent.  A least-squares projection of the idealized
-    time signature ``[-1,0,0]`` onto the two static response columns measures
-    how selectively these existing modes can suppress the early radial branch
-    while leaving later delivery times unchanged to first order.
+    The smooth morphology feature is the fraction of whole-grid ``|curl u|^2``
+    lying at physical radius ``r > collar_start``.  The region itself is fixed,
+    avoiding coefficient-dependent voxel jumps of a hard vorticity superlevel
+    extent.  We compare two ways to obtain an early-localized change: static
+    cancellation between the existing Phi modes, and the local signature that
+    one affine-in-time coefficient slope would provide.  The latter is only a
+    Jacobian screen; no temporal production field is constructed here.
     """
     if not isinstance(child, Eq45SupportedVelocityCandidate):
         raise TypeError("child must be Eq45SupportedVelocityCandidate")
@@ -217,6 +287,18 @@ def audit_supported_early_radial_capacity(
         np.linalg.norm(actual_delta - predicted_delta)
         / max(np.linalg.norm(actual_delta), np.finfo(float).tiny)
     )
+    static_relative_early_reduction = float(
+        -actual_delta[0] / max(baseline[0], np.finfo(float).tiny)
+    )
+
+    temporal_screen = _affine_temporal_screen(
+        child,
+        times,
+        fine_matrix,
+        baseline,
+        fine,
+        predicted_delta,
+    )
 
     return {
         "schema": "eq45_supported_early_radial_capacity_v1",
@@ -248,20 +330,23 @@ def audit_supported_early_radial_capacity(
             "projected_early_gain": projected_early_gain,
             "projected_late_leak_l2": projected_late_leak,
         },
-        "bounded_local_trial": {
+        "bounded_static_local_trial": {
             "coefficient_deltas": {
                 str(mode): float(scaled_direction[i]) for i, mode in enumerate(MODES)
             },
             "feature": trial_features.tolist(),
             "actual_delta": actual_delta.tolist(),
             "predicted_delta": predicted_delta.tolist(),
+            "relative_early_reduction": static_relative_early_reduction,
             "linearization_relative_error": linearization_error,
             "morphology": trial_rows,
         },
+        "affine_temporal_screen": temporal_screen,
         "interpretation": {
             "new_spatial_basis_added": False,
             "public_visual_target_fitted": False,
-            "purpose": "screen_existing_static_Phi_modes_before_temporal_or_basis_growth",
+            "recommended_minimal_followup": "affine_existing_Phi(1,0)_screen_on_production_temporal_wrapper",
+            "reason": "static_modes_span_early_signature_but_require_ill_conditioned_cancellation;_Phi(1,0)_affine_signature_is_more_efficient",
         },
         "truth_boundary": dict(_TRUTH_BOUNDARY),
     }
