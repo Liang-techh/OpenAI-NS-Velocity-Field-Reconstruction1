@@ -1,0 +1,122 @@
+{
+  "schema": "eq45_supported_energy_audit_record_v1",
+  "task_id": "CR007-EQ45-SUPPORTED-ENERGY-REVALIDATION-017",
+  "dependency_pr": 119,
+  "dependency_head": "d740ff85fc3dcf5557e1e3fb387e8220835ddbb4",
+  "candidate_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+  "parent_sha256": "48f1845fcfd71ec95495c98bb7aac3fca4653e748a8856a5421234e9601525a7",
+  "public_velocity_interface": "Eq45SupportedVelocityCandidate.at_points",
+  "kinetic_energy_definition": "E(t)=0.5*integral_R3 |u|^2 dx",
+  "physical_domain": "R^3",
+  "support_contract": "r < 2 and abs(z) < 2",
+  "integration_cube_half_width": 2.0,
+  "quadrature_orders_per_axis": [24, 48, 96],
+  "quadrature_relative_change_threshold": 0.001,
+  "reference_time": 0.25,
+  "reference_energy": 1.0,
+  "reference_energy_abs_tolerance": 0.001,
+  "reference_observed_finest_energy": 0.9054304573980382,
+  "reference_energy_abs_error": 0.09456954260196182,
+  "reference_energy_gate_pass": false,
+  "all_quadrature_gates_pass": true,
+  "all_energy_range_gates_pass": true,
+  "rows": [
+    {
+      "time": 0.25,
+      "total_energy_by_order": {
+        "24": 0.906619682400429,
+        "48": 0.9054263344141958,
+        "96": 0.9054304573980382
+      },
+      "medium_to_finest_relative_change": 4.553617352551364e-06,
+      "quadrature_gate_pass": true,
+      "energy_range_gate_pass": true,
+      "parent_comparison_order": 48,
+      "parent_finite_window_total_energy": 0.8942179290200154,
+      "child_same_order_total_energy": 0.9054263344141958,
+      "support_transform_energy_change_fraction": 0.012534310742867653,
+      "child_same_order_component_fractions": {
+        "radial": 0.4198673918613461,
+        "swirl": 0.24339198308038165,
+        "axial": 0.3367406250582712
+      },
+      "parent_same_order_component_fractions": {
+        "radial": 0.42582149130369235,
+        "swirl": 0.2473573435186539,
+        "axial": 0.3268211651776573
+      }
+    },
+    {
+      "time": 0.5,
+      "total_energy_by_order": {
+        "24": 0.743735862057649,
+        "48": 0.7337121911676907,
+        "96": 0.7337121761842367
+      },
+      "medium_to_finest_relative_change": 2.042143298068283e-08,
+      "quadrature_gate_pass": true,
+      "energy_range_gate_pass": true,
+      "parent_comparison_order": 48,
+      "parent_finite_window_total_energy": 0.7335700126710756,
+      "child_same_order_total_energy": 0.7337121911676907,
+      "support_transform_energy_change_fraction": 0.00019381721466152943,
+      "child_same_order_component_fractions": {
+        "radial": 0.4246105724699226,
+        "swirl": 0.24766045560394317,
+        "axial": 0.3277289719261329
+      },
+      "parent_same_order_component_fractions": {
+        "radial": 0.4247272669261708,
+        "swirl": 0.24772138886394324,
+        "axial": 0.32755134420988685
+      }
+    },
+    {
+      "time": 0.75,
+      "total_energy_by_order": {
+        "24": 0.5732430564782175,
+        "48": 0.5227453103849882,
+        "96": 0.5225982098371839
+      },
+      "medium_to_finest_relative_change": 0.00028147924167237846,
+      "quadrature_gate_pass": true,
+      "energy_range_gate_pass": true,
+      "parent_comparison_order": 48,
+      "parent_finite_window_total_energy": 0.5227452637423543,
+      "child_same_order_total_energy": 0.5227453103849882,
+      "support_transform_energy_change_fraction": 8.922631557179008e-08,
+      "child_same_order_component_fractions": {
+        "radial": 0.42322245153213234,
+        "swirl": 0.2483684973019395,
+        "axial": 0.3284090511659299
+      },
+      "parent_same_order_component_fractions": {
+        "radial": 0.423222550683612,
+        "swirl": 0.24836852907953005,
+        "axial": 0.3284089202368599
+      }
+    }
+  ],
+  "interpretation": {
+    "post_support_transform_energy_recomputed": true,
+    "reference_energy_normalization_failed": true,
+    "quadrature_convergence_passed": true,
+    "validation_energy_range_passed": true,
+    "early_time_taper_changes_energy_percent": 1.2534310742867653,
+    "taper_effect_is_negligible_by_late_time": true,
+    "parent_comparison_is_finite_window_context_only": true,
+    "energy_result_does_not_imply_pde_validity": true,
+    "energy_result_does_not_imply_visual_correspondence": true
+  },
+  "truth_boundary": {
+    "velocity_changed_by_this_audit": false,
+    "physical_support_connection_implemented": true,
+    "physical_support_validated": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  }
+}
