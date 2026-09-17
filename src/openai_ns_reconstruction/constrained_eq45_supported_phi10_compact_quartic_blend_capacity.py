@@ -158,6 +158,13 @@ def _progress(value: float, quartic: float, compact: float) -> float:
     return float((float(value) - float(quartic)) / denominator)
 
 
+def _trapezoid_square_energy(values: np.ndarray, coordinates: np.ndarray) -> float:
+    array = np.asarray(values, dtype=float)
+    axis = np.asarray(coordinates, dtype=float)
+    squared = array * array
+    return float(np.sum(0.5 * (squared[:-1] + squared[1:]) * np.diff(axis)))
+
+
 def audit_supported_phi10_compact_quartic_blend_capacity(
     base: Eq45SupportedVelocityCandidate | None = None,
     *,
@@ -301,7 +308,9 @@ def audit_supported_phi10_compact_quartic_blend_capacity(
             {
                 "blend_weight": weight,
                 "peak_abs_d_delta_dtau": float(np.max(np.abs(derivative))),
-                "integral_d_delta_dtau_squared": float(np.trapz(derivative * derivative, dense_tau)),
+                "integral_d_delta_dtau_squared": _trapezoid_square_energy(
+                    derivative, dense_tau
+                ),
             }
         )
 
