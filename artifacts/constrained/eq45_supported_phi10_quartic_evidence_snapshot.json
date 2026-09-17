@@ -1,0 +1,96 @@
+{
+  "schema": "eq45_supported_phi10_quartic_evidence_snapshot_v1",
+  "task_id": "CR012-EQ45-PHI10-QUARTIC-EVIDENCE-SNAPSHOT-017",
+  "base_delivery_pr": 172,
+  "base_delivery_head": "379ea2a72a96b8b396fdfa21f4657e5a91f1f850",
+  "base_supported_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+  "candidate_sha256": "03fdae73170469ae1160297b489b1b83a27adddfc941119e116a21b98bd15049",
+  "morphology_evidence": {
+    "pr": 170,
+    "exact_head": "2dc27213359a2ae9687bf716f6fd484b30cc30d8",
+    "actions_run": 35223571477,
+    "evidence_class": "target_free_three_resolution_public_velocity_vorticity_morphology",
+    "time": 0.6875,
+    "grid_sizes": [49, 65, 81],
+    "finest_81": {
+      "field_order": ["static_supported", "cubic_localized", "quartic_derivative_balanced"],
+      "radial_q99": [0.8514693182963201, 0.8514693182963199, 0.8514693182963201],
+      "axial_q99": [0.15, 0.15, 0.15],
+      "vorticity2_weighted_radial_rms": [0.5563493225057393, 0.5555062336698936, 0.5564014545337104],
+      "vorticity2_weighted_axial_rms": [0.13754962418235045, 0.13749256401032742, 0.13755313769546357],
+      "weighted_aspect": [0.24723607743933484, 0.24750858888116742, 0.24721922736657712],
+      "whole_grid_support_collar_vorticity2_fraction": [2.1450261710738248e-05, 2.0843928754785833e-05, 2.148799898240067e-05],
+      "core_superlevel_support_collar_occupancy": [0.0, 0.0, 0.0]
+    },
+    "reported_quartic_vs_static_pct": {
+      "radial_rms": 0.00937,
+      "axial_rms": 0.00255,
+      "weighted_aspect": -0.00682
+    },
+    "reported_quartic_retained_cubic_excursion_pct": {
+      "radial_rms": 6.183,
+      "axial_rms": 6.158,
+      "weighted_aspect": 6.183,
+      "collar_vorticity2": 6.224
+    },
+    "resolution_65_to_81_pct": {
+      "radial_q99": 1.247,
+      "radial_rms": 0.0626,
+      "axial_rms": 0.8144,
+      "weighted_aspect": 0.7514,
+      "collar_vorticity2_fraction": 3.6154,
+      "axial_q99_auxiliary": 16.67
+    },
+    "public_openai_reference_used": false,
+    "visual_correspondence_verified": false
+  },
+  "fresh_seed_pde_evidence": {
+    "pr": 171,
+    "exact_head": "7b56055b5a6bd7be2e9dad23d060d5f63cb12880",
+    "actions_run": 35223536811,
+    "evidence_class": "pressure_free_vorticity_equation_fresh_seed_diagnostic",
+    "seeds": [914531, 914547, 914563],
+    "spatial_derivative_steps": [0.02, 0.01, 0.005],
+    "time_step": 0.0025,
+    "nu": 0.01,
+    "quartic_vs_static_finest_pct": [-1.4678, -0.5585, -0.7939],
+    "quartic_vs_static_wins": 3,
+    "quartic_vs_static_mean_pct": -0.9401,
+    "quartic_vs_cubic_finest_pct": [2.3828, 0.4938, -1.9274],
+    "quartic_vs_cubic_wins": 1,
+    "quartic_vs_cubic_mean_pct": 0.3164,
+    "quartic_vs_cubic_projected_mean_pct": 0.3535,
+    "ordering": "unresolved_seed_sensitive",
+    "formal_pde_gate_assessed": false,
+    "pde_validated": false
+  },
+  "routing": {
+    "visual_baseline_for_next_public_comparison": "quartic_derivative_balanced_phi10",
+    "candidate_selection_resolved": false,
+    "quartic_preferred_over_cubic_for_late_morphology_collateral": true,
+    "quartic_pde_superiority_over_cubic": false,
+    "quartic_vs_cubic_pde_ordering": "unresolved_seed_sensitive",
+    "public_visual_comparison_still_required": true,
+    "formal_pde_gate_still_required": true,
+    "acceptance_ready": false
+  },
+  "unconsumed_sibling_evidence": {
+    "quartic_visualization_smoke_pr": 177,
+    "quartic_temporal_derivative_pr": 179,
+    "c2_compact_family_prs": [175, 178, 180],
+    "c2_compact_candidate_selection_consumed": false
+  },
+  "status": {
+    "callable_serializable": true,
+    "velocity_export_ready": true,
+    "visualization_candidate_only": true,
+    "physical_support_connection_implemented": true,
+    "physical_support_validated": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  }
+}
