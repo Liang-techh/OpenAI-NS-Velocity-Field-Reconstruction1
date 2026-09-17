@@ -16,6 +16,7 @@ from openai_ns_reconstruction.kokuno_leading_axis_profiles import (
     [
         {"h": 0.0},
         {"h": -1e-3},
+        {"h": 0.01},
         {"h": 0.0100001},
         {"h": np.nan},
         {"h": np.inf},
