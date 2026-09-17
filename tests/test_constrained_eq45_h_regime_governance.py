@@ -69,7 +69,7 @@ def test_h_origin_and_scientific_claim_promotions_fail_closed():
         audit_eq45_h_regime(bad_semantics, source_contract=source, candidate=candidate)
 
 
-def test_coordinate_h_bounds_and_source_drift_fail_closed():
+def test_coordinate_h_bounds_types_and_source_drift_fail_closed():
     contract, source, candidate = _payloads()
 
     for invalid_h in (0.0, -0.01, 0.5, 0.7):
@@ -77,6 +77,11 @@ def test_coordinate_h_bounds_and_source_drift_fail_closed():
         mutated["h"] = invalid_h
         with pytest.raises(ValueError, match="coordinate regime"):
             audit_eq45_h_regime(contract, source_contract=source, candidate=mutated)
+
+    string_h = deepcopy(candidate)
+    string_h["h"] = "0.005"
+    with pytest.raises(ValueError, match="numeric"):
+        audit_eq45_h_regime(contract, source_contract=source, candidate=string_h)
 
     drifted_source = deepcopy(source)
     drifted_source["coordinate_contract"]["theorem_h_upper_bound_strict"] = 0.02
