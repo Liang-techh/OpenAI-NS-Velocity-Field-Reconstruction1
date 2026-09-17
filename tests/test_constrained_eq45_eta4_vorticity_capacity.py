@@ -1,3 +1,6 @@
+import json
+from pathlib import Path
+
 import numpy as np
 import pytest
 
@@ -5,6 +8,14 @@ from openai_ns_reconstruction.constrained_eq45_candidate import Eq45VelocityCand
 from openai_ns_reconstruction.constrained_eq45_eta4_vorticity_capacity import (
     audit_eq45_eta4_vorticity_capacity,
     vorticity_core_rms,
+)
+
+
+CALIBRATION = (
+    Path(__file__).resolve().parents[1]
+    / "artifacts"
+    / "constrained"
+    / "eq45_eta4_vorticity_capacity_seed.json"
 )
 
 
@@ -17,16 +28,29 @@ def test_eq45_eta4_has_stable_two_channel_vorticity_core_capacity():
         grid_size=17,
         coefficient_steps=(0.04, 0.02),
     )
+    checked = json.loads(CALIBRATION.read_text(encoding="utf-8"))
 
     assert candidate.sha256 == original_sha
-    assert report["candidate_sha256"] == original_sha
-    assert report["numerical_rank"] == 2
+    assert report["candidate_sha256"] == original_sha == checked["candidate_sha256"]
+    assert report["numerical_rank"] == checked["numerical_rank"] == 2
     assert np.isfinite(report["condition_number"])
     assert report["condition_number"] < 50.0
+    assert np.isclose(report["condition_number"], checked["condition_number"], rtol=5e-8)
     assert report["coarse_to_finest_response_frobenius_change"] < 1.0e-3
+    assert np.isclose(
+        report["coarse_to_finest_response_frobenius_change"],
+        checked["coarse_to_finest_response_frobenius_change"],
+        rtol=5e-6,
+    )
 
     aspect_response = np.asarray(report["finest_relative_aspect_response"])
     assert aspect_response.shape == (3, 2)
+    assert np.allclose(
+        aspect_response,
+        np.asarray(checked["finest_relative_aspect_response"]),
+        rtol=5e-8,
+        atol=1e-12,
+    )
     assert np.all(aspect_response[:, 0] < 0.0)
     assert np.all(aspect_response[:, 1] > 0.0)
     assert np.linalg.norm(aspect_response[:, 0]) > 2.0 * np.linalg.norm(
@@ -34,11 +58,19 @@ def test_eq45_eta4_has_stable_two_channel_vorticity_core_capacity():
     )
 
     best = report["max_mean_aspect_corner"]
-    assert best["phi_eta4"] == -candidate.profile_basis.coefficient_limit
-    assert best["swirl_eta4"] == candidate.profile_basis.coefficient_limit
+    checked_best = checked["max_mean_aspect_corner"]
+    assert best["phi_eta4"] == checked_best["phi_eta4"] == -candidate.profile_basis.coefficient_limit
+    assert best["swirl_eta4"] == checked_best["swirl_eta4"] == candidate.profile_basis.coefficient_limit
+    assert np.allclose(
+        best["relative_aspect_change"],
+        checked_best["relative_aspect_change"],
+        rtol=5e-8,
+        atol=1e-12,
+    )
     assert min(best["relative_aspect_change"]) > 0.04
 
     truth = report["truth_boundary"]
+    assert truth == checked["truth_boundary"]
     assert truth["velocity_changed"] is False
     assert truth["visualization_ready"] is False
     assert truth["visual_correspondence_verified"] is False
