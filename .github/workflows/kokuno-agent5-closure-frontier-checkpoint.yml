@@ -1,0 +1,35 @@
+name: kokuno-agent5-closure-frontier-checkpoint
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_closure_frontier_checkpoint.py'
+      - 'src/openai_ns_reconstruction/kokuno_five_moment_repair.py'
+      - 'src/openai_ns_reconstruction/kokuno_oscillatory_phase.py'
+      - 'src/openai_ns_reconstruction/kokuno_signed_amplitude_curl_cycle.py'
+      - 'tests/test_constrained_kokuno_closure_frontier_checkpoint.py'
+      - '.github/workflows/kokuno-agent5-closure-frontier-checkpoint.yml'
+  workflow_dispatch:
+
+jobs:
+  checkpoint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Focused integration tests
+        run: python -m pytest -q -W error tests/test_constrained_kokuno_closure_frontier_checkpoint.py
+      - name: Generate closure-frontier bundle
+        run: >-
+          python -m openai_ns_reconstruction.kokuno_closure_frontier_checkpoint
+          --output-dir artifacts/kokuno_agent5/closure_frontier_checkpoint_v6
+      - name: Show receipt
+        run: cat artifacts/kokuno_agent5/closure_frontier_checkpoint_v6/closure_frontier_checkpoint.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-closure-frontier-checkpoint-v6
+          path: artifacts/kokuno_agent5/closure_frontier_checkpoint_v6
