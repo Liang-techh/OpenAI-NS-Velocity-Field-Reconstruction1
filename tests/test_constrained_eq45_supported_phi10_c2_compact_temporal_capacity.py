@@ -123,6 +123,6 @@ def test_compact_snapshot_changes_only_existing_phi10_and_truth_boundary_stays_c
     with pytest.raises(ValueError):
         compact_phi10_delta_dtau(np.nan)
     with pytest.raises(ValueError):
-        compact_phi10_snapshot(base, 0.375, early_delta=-10.0)
+        compact_phi10_snapshot(base, base.time_start, early_delta=-10.0)
     with pytest.raises(ValueError):
         audit_supported_phi10_c2_compact_temporal_capacity(probes=np.zeros((2, 3)))
