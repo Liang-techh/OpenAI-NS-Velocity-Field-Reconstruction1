@@ -73,7 +73,7 @@ def test_compact_quartic_blend_preserves_anchor_and_peak_slope_cap():
 
 
 def test_compact_quartic_blend_fails_closed_and_keeps_truth_boundary():
-    with pytest.raises(ValueError, match="\[0,1\]"):
+    with pytest.raises(ValueError, match=r"\[0,1\]"):
         blended_phi10_delta(-0.5, blend_weight=1.1)
     with pytest.raises(ValueError, match="strictly increasing"):
         audit_supported_phi10_compact_quartic_blend_capacity(
