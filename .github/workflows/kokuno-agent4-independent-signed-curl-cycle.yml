@@ -1,0 +1,45 @@
+name: kokuno-agent4-independent-signed-curl-cycle
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_independent_signed_curl_cycle.py'
+      - 'src/openai_ns_reconstruction/kokuno_signed_amplitude_curl_cycle.py'
+      - 'src/openai_ns_reconstruction/kokuno_signed_covariance_inverse.py'
+      - 'src/openai_ns_reconstruction/kokuno_complete_curl.py'
+      - 'src/openai_ns_reconstruction/kokuno_leading_core_series.py'
+      - 'tests/test_constrained_kokuno_independent_signed_curl_cycle.py'
+      - '.github/workflows/kokuno-agent4-independent-signed-curl-cycle.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  independent-signed-curl-cycle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Focused independent tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_independent_signed_curl_cycle.py
+          tests/test_constrained_kokuno_signed_amplitude_curl_cycle.py
+      - name: Run independent signed-curl audit
+        run: >-
+          python -m openai_ns_reconstruction.kokuno_independent_signed_curl_cycle
+          --output artifacts/kokuno_agent4/independent_signed_curl_cycle_report.json
+          --annulus-count 32
+          --axis-count 16
+      - name: Show report
+        run: cat artifacts/kokuno_agent4/independent_signed_curl_cycle_report.json
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent4-independent-signed-curl-cycle
+          path: artifacts/kokuno_agent4/independent_signed_curl_cycle_report.json
