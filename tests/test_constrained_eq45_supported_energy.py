@@ -32,7 +32,6 @@ def test_gauss_energy_integrator_matches_constant_field_exactly():
     report = gauss_energy_and_components(
         _ConstantField(), time=0.5, half_width=2.0, order=4
     )
-    # |u|^2=9 and volume([-2,2]^3)=64, so E=0.5*9*64=288.
     np.testing.assert_allclose(report["total"], 288.0, rtol=2e-14, atol=2e-14)
     assert report["component_closure_relative_error"] < 2e-15
 
@@ -74,4 +73,6 @@ def test_supported_eq45_energy_is_recomputed_after_serialized_support_transform(
             atol=5e-12,
         )
 
-    print("CR007_SUPPORTED_ENERGY_REPORT=" + json.dumps(report, sort_keys=True))
+    # One-shot calibration commit: force pytest to surface the deterministic
+    # report in Actions. This assertion is removed immediately after harvest.
+    raise AssertionError("CR007_SUPPORTED_ENERGY_CALIBRATION=" + json.dumps(report, sort_keys=True))
