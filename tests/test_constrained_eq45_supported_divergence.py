@@ -117,12 +117,17 @@ def test_supported_child_three_level_divergence_revalidation(tmp_path, capsys):
             assert np.isfinite(metrics["rms"])
             assert np.isfinite(metrics["normalized_rms"])
 
-    # The support transform changes the child velocity, so the threshold result
-    # is reported rather than assumed.  No post-hoc threshold is introduced.
+    # Preserve the preregistered numeric thresholds without pretending that a
+    # 16-probe RMS is the registered volume-weighted spatial L2 or global max.
     finest = report["levels"][-1]
-    assert report["finest_threshold_pass"] is (
-        finest["max_abs"] <= 1e-5 and finest["rms"] <= 1e-5
-    )
+    assert report["sampled_threshold_indicators"] == {
+        "sampled_max_below_registered_max": finest["max_abs"] <= 1e-5,
+        "sampled_rms_below_registered_L2_number": finest["rms"] <= 1e-5,
+    }
+    assert report["sampled_rms_only"] is True
+    assert report["global_domain_max_assessed"] is False
+    assert report["volume_weighted_L2_assessed"] is False
+    assert report["cr001_divergence_gate_assessed"] is False
     assert report["full_momentum_residual_assessed"] is False
     assert report["physical_support_validated"] is False
     assert report["pde_validated"] is False
