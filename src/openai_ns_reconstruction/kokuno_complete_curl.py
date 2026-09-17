@@ -39,18 +39,29 @@ def _triple(values: tuple[float, float, float], name: str) -> np.ndarray:
     return array
 
 
-def _compact_c4_window(s: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
-    """Return w(s)=(1-s^2)^5_+ and dw/ds.
+def _compact_c4_window_derivatives(
+    s: np.ndarray,
+) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+    """Return ``w=(1-s^2)^5_+`` and its first three ``s`` derivatives.
 
     The zero extension is C4 because the polynomial has a fifth-order zero at
-    |s|=1.  C4 regularity gives margin beyond the derivatives needed by the
-    first velocity/vorticity diagnostics while keeping support exact.
+    ``|s|=1``.  The third derivative is needed only for the analytic Laplacian
+    of the complete curl; no derivative of an indicator is introduced because
+    all returned derivatives vanish continuously at the support faces.
     """
     inside = np.abs(s) < 1.0
     base = np.where(inside, 1.0 - s * s, 0.0)
     value = base**5
-    derivative = np.where(inside, -10.0 * s * base**4, 0.0)
-    return value, derivative
+    first = np.where(inside, -10.0 * s * base**4, 0.0)
+    second = np.where(inside, 10.0 * base**3 * (9.0 * s * s - 1.0), 0.0)
+    third = np.where(inside, 240.0 * s * base**2 * (1.0 - 3.0 * s * s), 0.0)
+    return value, first, second, third
+
+
+def _compact_c4_window(s: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
+    """Return the C4 compact window and its first derivative."""
+    value, first, _, _ = _compact_c4_window_derivatives(s)
+    return value, first
 
 
 @dataclass(frozen=True)
@@ -61,7 +72,7 @@ class KokunoCompleteCurlCorrection:
 
         A = -amplitude * B(x) * q * sin(psi),
         q = (n x t) / |n|^2,
-        psi = n . (x-center) + omega*t + phase,
+        psi = n . (x-center) + omega*time + phase,
 
     where ``t`` is the normalized projection of ``polarization`` onto the plane
     perpendicular to ``n=wave_vector``.  Its complete curl is evaluated
@@ -71,6 +82,11 @@ class KokunoCompleteCurlCorrection:
 
     The second term is deliberately retained: dropping it would destroy the
     complete-curl/localization contract emphasized by the source.
+
+    The analytic differential methods in this class differentiate this same
+    autonomous surrogate exactly; they do not add source-derived phase data.
+    They are exposed so later residual code can consume the correction without
+    numerically differentiating the oscillatory field itself.
     """
 
     amplitude: float = 0.25
@@ -124,28 +140,75 @@ class KokunoCompleteCurlCorrection:
             np.asarray(time, dtype=float),
         )
 
-    def _envelope(self, x, y, z, time) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    def _envelope_differential_data(
+        self, x, y, z, time
+    ) -> tuple[
+        np.ndarray,
+        np.ndarray,
+        np.ndarray,
+        np.ndarray,
+        np.ndarray,
+        np.ndarray,
+    ]:
+        """Return shifted coordinates and B, grad B, Hess B, Lap B, grad Lap B."""
         x, y, z, time = self._broadcast(x, y, z, time)
         coords = np.stack((x, y, z), axis=-1)
         center = _triple(self.center, "center")
         widths = _triple(self.half_widths, "half_widths")
         shifted = coords - center
 
-        values: list[np.ndarray] = []
-        derivatives: list[np.ndarray] = []
+        derivatives: list[tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]] = []
         for axis in range(3):
-            value, derivative_s = _compact_c4_window(shifted[..., axis] / widths[axis])
-            values.append(value)
-            derivatives.append(derivative_s / widths[axis])
+            value, first, second, third = _compact_c4_window_derivatives(
+                shifted[..., axis] / widths[axis]
+            )
+            derivatives.append(
+                (
+                    value,
+                    first / widths[axis],
+                    second / widths[axis] ** 2,
+                    third / widths[axis] ** 3,
+                )
+            )
 
-        envelope = values[0] * values[1] * values[2]
+        fx, fx1, fx2, fx3 = derivatives[0]
+        fy, fy1, fy2, fy3 = derivatives[1]
+        fz, fz1, fz2, fz3 = derivatives[2]
+
+        envelope = fx * fy * fz
         gradient = np.stack(
+            (fx1 * fy * fz, fx * fy1 * fz, fx * fy * fz1), axis=-1
+        )
+
+        hxx = fx2 * fy * fz
+        hyy = fx * fy2 * fz
+        hzz = fx * fy * fz2
+        hxy = fx1 * fy1 * fz
+        hxz = fx1 * fy * fz1
+        hyz = fx * fy1 * fz1
+        hessian = np.stack(
             (
-                derivatives[0] * values[1] * values[2],
-                values[0] * derivatives[1] * values[2],
-                values[0] * values[1] * derivatives[2],
+                np.stack((hxx, hxy, hxz), axis=-1),
+                np.stack((hxy, hyy, hyz), axis=-1),
+                np.stack((hxz, hyz, hzz), axis=-1),
+            ),
+            axis=-2,
+        )
+
+        laplacian = hxx + hyy + hzz
+        grad_laplacian = np.stack(
+            (
+                fx3 * fy * fz + fx1 * fy2 * fz + fx1 * fy * fz2,
+                fx2 * fy1 * fz + fx * fy3 * fz + fx * fy1 * fz2,
+                fx2 * fy * fz1 + fx * fy2 * fz1 + fx * fy * fz3,
             ),
             axis=-1,
+        )
+        return shifted, envelope, gradient, hessian, laplacian, grad_laplacian
+
+    def _envelope(self, x, y, z, time) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+        shifted, envelope, gradient, _, _, _ = self._envelope_differential_data(
+            x, y, z, time
         )
         return shifted, envelope, gradient
 
@@ -175,6 +238,97 @@ class KokunoCompleteCurlCorrection:
 
     __call__ = velocity
 
+    def time_derivative(self, x, y, z, time) -> np.ndarray:
+        """Return analytic ``partial_t u_osc`` in ``(...,3)`` layout."""
+        _, _, _, time = self._broadcast(x, y, z, time)
+        shifted, envelope, grad_envelope = self._envelope(x, y, z, time)
+        psi = self._phase(shifted, time)
+        t = self.transverse_polarization
+        q = self.potential_direction
+        grad_cross_q = np.cross(grad_envelope, q)
+        return self.amplitude * self.omega * (
+            -envelope[..., None] * np.sin(psi)[..., None] * t
+            - grad_cross_q * np.cos(psi)[..., None]
+        )
+
+    def spatial_jacobian(self, x, y, z, time) -> np.ndarray:
+        """Return analytic ``du_i/dx_j`` with shape ``(...,3,3)``."""
+        _, _, _, time = self._broadcast(x, y, z, time)
+        shifted, envelope, grad_envelope, hessian, _, _ = self._envelope_differential_data(
+            x, y, z, time
+        )
+        psi = self._phase(shifted, time)
+        sine = np.sin(psi)
+        cosine = np.cos(psi)
+        n = _triple(self.wave_vector, "wave_vector")
+        t = self.transverse_polarization
+        q = self.potential_direction
+        grad_cross_q = np.cross(grad_envelope, q)
+
+        columns = []
+        for axis in range(3):
+            d_grad_cross_q = np.cross(hessian[..., :, axis], q)
+            column = (
+                grad_envelope[..., axis, None] * cosine[..., None] * t
+                - envelope[..., None] * n[axis] * sine[..., None] * t
+                - d_grad_cross_q * sine[..., None]
+                - grad_cross_q * n[axis] * cosine[..., None]
+            )
+            columns.append(self.amplitude * column)
+        return np.stack(columns, axis=-1)
+
+    def divergence(self, x, y, z, time) -> np.ndarray:
+        """Return the analytic trace of the spatial Jacobian."""
+        jacobian = self.spatial_jacobian(x, y, z, time)
+        return np.trace(jacobian, axis1=-2, axis2=-1)
+
+    def vorticity(self, x, y, z, time) -> np.ndarray:
+        """Return analytic ``curl u_osc`` in Cartesian component order."""
+        jacobian = self.spatial_jacobian(x, y, z, time)
+        return np.stack(
+            (
+                jacobian[..., 2, 1] - jacobian[..., 1, 2],
+                jacobian[..., 0, 2] - jacobian[..., 2, 0],
+                jacobian[..., 1, 0] - jacobian[..., 0, 1],
+            ),
+            axis=-1,
+        )
+
+    def laplacian(self, x, y, z, time) -> np.ndarray:
+        """Return analytic componentwise ``Delta u_osc`` in ``(...,3)`` layout."""
+        _, _, _, time = self._broadcast(x, y, z, time)
+        (
+            shifted,
+            envelope,
+            grad_envelope,
+            hessian,
+            lap_envelope,
+            grad_lap_envelope,
+        ) = self._envelope_differential_data(x, y, z, time)
+        psi = self._phase(shifted, time)
+        sine = np.sin(psi)
+        cosine = np.cos(psi)
+        n = _triple(self.wave_vector, "wave_vector")
+        n2 = float(np.dot(n, n))
+        t = self.transverse_polarization
+        q = self.potential_direction
+
+        grad_dot_n = np.einsum("...i,i->...", grad_envelope, n)
+        hessian_n = np.einsum("...ij,j->...i", hessian, n)
+        grad_cross_q = np.cross(grad_envelope, q)
+        grad_lap_cross_q = np.cross(grad_lap_envelope, q)
+        hessian_n_cross_q = np.cross(hessian_n, q)
+
+        leading_scalar = (
+            (lap_envelope - n2 * envelope) * cosine
+            - 2.0 * grad_dot_n * sine
+        )
+        remainder = (
+            (grad_lap_cross_q - n2 * grad_cross_q) * sine[..., None]
+            + 2.0 * hessian_n_cross_q * cosine[..., None]
+        )
+        return self.amplitude * (leading_scalar[..., None] * t - remainder)
+
     def at_points(self, points: ArrayLike, time: ArrayLike) -> np.ndarray:
         points = np.asarray(points, dtype=float)
         if points.ndim < 1 or points.shape[-1] != 3:
@@ -197,6 +351,12 @@ class KokunoCompleteCurlCorrection:
                 "Cartesian affine phase",
                 "separable compact C4 box window",
                 "bounded amplitude/frequency/orientation/width parameterization",
+            ],
+            "analytic_surrogate_derivatives": [
+                "partial_t velocity",
+                "Cartesian spatial Jacobian",
+                "vorticity",
+                "componentwise Laplacian",
             ],
             "paper_exact": False,
             "openai_field_identified": False,
