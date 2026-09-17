@@ -1,0 +1,101 @@
+{
+  "schema": "eq45_phi10_profile_force_optimization_v1",
+  "task_id": "CR005-EQ45-PHI10-PROFILE-FORCE-OPT-017",
+  "parent_task": "CR005-EQ45-PROFILE-FORCE-OPT-015",
+  "contract": {
+    "nu": 0.01,
+    "fit_seed": 20260917,
+    "holdout_seed": 914117,
+    "sample_count": 16,
+    "probe_box": [[-0.25, 0.25], [-0.25, 0.25], [-0.25, 0.25]],
+    "probe_time_range": [0.38, 0.62],
+    "fit_step": 0.005,
+    "holdout_derivative_steps": [0.02, 0.01, 0.005],
+    "frozen_profile_parameters": {
+      "Phi(0,2)": 3.8740984117202455,
+      "F(0,2)": 3.9916795387937536
+    },
+    "varied_profile_parameter": "Phi(1,0)",
+    "profile_bounds": [-4.0, 4.0],
+    "force_family": "preregistered_restricted_two_parameter_family",
+    "force_bounds": [0.0, 10.0],
+    "outer_optimizer": "scipy.optimize.minimize(method='L-BFGS-B')",
+    "inner_solver": "scipy.optimize.lsq_linear variable projection",
+    "max_function_evaluations": 48,
+    "ftol": 1e-9,
+    "gtol": 1e-5,
+    "training_holdout_separate": true,
+    "holdout_force_refit": false
+  },
+  "parent": {
+    "candidate_sha256": "b34902ee28b3965f245eceb5867df7409498063cb0ea80f1758931723b303c98",
+    "Phi(1,0)": -0.3,
+    "force_a": 1.1380195771139701e-23,
+    "force_c": 2.7691195895151233,
+    "training_curl_rms_after_force": 9.832527545345032
+  },
+  "fit": {
+    "optimizer_success": true,
+    "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+    "optimizer_function_evaluations": 6,
+    "optimizer_iterations": 2,
+    "Phi(1,0)": 4.0,
+    "force_a": 3.2311742677852644e-26,
+    "force_c": 2.7613377133525847,
+    "curl_rms_before_force": 9.620599238098293,
+    "curl_rms_after_force": 8.146471873782705,
+    "curl_max_after_force": 15.56142056484055,
+    "training_improvement_vs_parent": 0.17147734026542838
+  },
+  "holdout": [
+    {
+      "step": 0.02,
+      "parent_curl_rms_after_force": 9.222512218263423,
+      "optimized_curl_rms_before_force": 9.351980596030852,
+      "optimized_curl_rms_after_force": 7.59232772964128,
+      "optimized_curl_max_after_force": 17.559095338946793,
+      "improvement_vs_parent": 0.1767614344163052
+    },
+    {
+      "step": 0.01,
+      "parent_curl_rms_after_force": 9.312725604826248,
+      "optimized_curl_rms_before_force": 9.434651601472419,
+      "optimized_curl_rms_after_force": 7.693194516020523,
+      "optimized_curl_max_after_force": 17.858446873930244,
+      "improvement_vs_parent": 0.1739051656334012
+    },
+    {
+      "step": 0.005,
+      "parent_curl_rms_after_force": 9.335838456067934,
+      "optimized_curl_rms_before_force": 9.455851257547069,
+      "optimized_curl_rms_after_force": 7.7189949439277585,
+      "optimized_curl_max_after_force": 17.93510896771376,
+      "improvement_vs_parent": 0.17318674907975617
+    }
+  ],
+  "velocity_change_vs_parent_on_holdout_probes": {
+    "parent_rms": 1.2549190591197334,
+    "optimized_rms": 1.3249984523457425,
+    "delta_rms": 0.09198390362551281,
+    "relative_delta_rms": 0.07329867448983936,
+    "delta_max": 0.17019928839086318
+  },
+  "optimized_candidate": {
+    "sha256": "e6e65e71efa4b38f15054a6a794b3436bf9364f50b568329ebbbb1d6cd75004f",
+    "roundtrip_serializable": true,
+    "canonical_candidate_promoted": false
+  },
+  "status": {
+    "velocity_changed_in_diagnostic_candidate": true,
+    "new_basis_added": false,
+    "forcing_family_changed": false,
+    "pressure_fitted": false,
+    "holdout_force_refit": false,
+    "pde_validated": false,
+    "visualization_ready_promoted": false,
+    "visual_correspondence_verified": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  },
+  "interpretation": "After the checked Phi(0,2)/F(0,2) pair is frozen, the already-existing bounded Phi(1,0) channel materially lowers the same registered training obstruction and the frozen held-out obstruction. The optimum reaches the existing +4 coefficient bound, so the result identifies remaining representation pressure without authorizing a wider bound. The public velocity changes by about 7.33 percent RMS relative to the parent optimized field and therefore requires visual-fingerprint review before any candidate promotion. Residual reduction and solver convergence are not PDE validation."
+}
