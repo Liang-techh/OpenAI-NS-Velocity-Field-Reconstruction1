@@ -1,0 +1,151 @@
+{
+  "schema": "eq45_profile_boundary_diagnostic_v1",
+  "task_id": "CR005-EQ45-PROFILE-BOUNDARY-DIAGNOSTIC-016",
+  "dependency": {
+    "pr": 104,
+    "head": "40afef87a00490c79726a46b8a5bc3d1acf9db91",
+    "candidate_sha256": "b34902ee28b3965f245eceb5867df7409498063cb0ea80f1758931723b303c98"
+  },
+  "contract": {
+    "nu": 0.01,
+    "fit_seed": 20260917,
+    "holdout_seed": 914117,
+    "sample_count": 16,
+    "fit_step": 0.005,
+    "holdout_derivative_steps": [0.02, 0.01, 0.005],
+    "profile_parameters": ["Phi(0,2)", "F(0,2)"],
+    "profile_bounds": [-4.0, 4.0],
+    "force_family": "preregistered_restricted_two_parameter_family",
+    "force_bounds": [0.0, 10.0],
+    "alternate_start": [0.0, 0.0],
+    "alternate_optimizer": "scipy.optimize.minimize(method='L-BFGS-B')",
+    "max_function_evaluations": 80,
+    "local_gradient_step": 0.002,
+    "inward_probe_step": 0.02,
+    "training_holdout_separate": true,
+    "holdout_force_refit": false
+  },
+  "receipt_replay": {
+    "Phi_02": 3.8740984117202455,
+    "F_02": 3.9916795387937536,
+    "force_a": 1.1370502248336345e-23,
+    "force_c": 2.7691195895150305,
+    "training_rms_after_force": 9.832527545343174,
+    "training_max_after_force": 18.60659526609698
+  },
+  "boundary_probes": [
+    {
+      "name": "phi_upper",
+      "Phi_02": 4.0,
+      "F_02": 3.9916795387937536,
+      "force_a": 2.0967911834392305e-19,
+      "force_c": 2.7752247326032426,
+      "training_rms_after_force": 9.866893050619744,
+      "relative_change_vs_receipt": 0.003495083549788387
+    },
+    {
+      "name": "F_upper",
+      "Phi_02": 3.8740984117202455,
+      "F_02": 4.0,
+      "force_a": 1.0834127319883991e-23,
+      "force_c": 2.7700426203408215,
+      "training_rms_after_force": 9.832538137314597,
+      "relative_change_vs_receipt": 1.077237909964439e-06
+    },
+    {
+      "name": "upper_corner",
+      "Phi_02": 4.0,
+      "F_02": 4.0,
+      "force_a": 2.0792011877132904e-19,
+      "force_c": 2.776147823633716,
+      "training_rms_after_force": 9.866485111403064,
+      "relative_change_vs_receipt": 0.0034535948059431
+    },
+    {
+      "name": "phi_inward",
+      "Phi_02": 3.8540984117202455,
+      "F_02": 3.9916795387937536,
+      "force_c": 2.7681497617009034,
+      "training_rms_after_force": 9.833392863925157,
+      "relative_change_vs_receipt": 8.800571145035434e-05
+    },
+    {
+      "name": "F_inward",
+      "Phi_02": 3.8740984117202455,
+      "F_02": 3.9716795387937536,
+      "force_c": 2.766900888403161,
+      "training_rms_after_force": 9.832591828333586,
+      "relative_change_vs_receipt": 6.537788998318954e-06
+    }
+  ],
+  "local_gradient": {
+    "d_rms_d_Phi_02": -8.308777088572583e-05,
+    "d_rms_d_F_02": -4.5351894240042157e-05,
+    "step": 0.002
+  },
+  "alternate_restart": {
+    "start": [0.0, 0.0],
+    "optimizer_success": true,
+    "optimizer_message": "CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH",
+    "function_evaluations": 36,
+    "iterations": 9,
+    "Phi_02": 3.8739507960829664,
+    "F_02": 3.991459557280771,
+    "force_a": 1.1160475920930303e-23,
+    "force_c": 2.7690880277637495,
+    "training_rms_after_force": 9.83252760939006,
+    "parameter_distance_from_receipt": 0.0002649193130432983,
+    "objective_relative_change_vs_receipt": 6.513776504539031e-09
+  },
+  "best_boundary_holdout": {
+    "probe": "F_upper",
+    "levels": [
+      {
+        "step": 0.02,
+        "receipt_rms_after_force": 9.222512218263585,
+        "probe_rms_after_force": 9.22321046686037,
+        "probe_max_after_force": 23.208234417813298,
+        "relative_change_vs_receipt": 7.571132249658923e-05
+      },
+      {
+        "step": 0.01,
+        "receipt_rms_after_force": 9.31272560482506,
+        "probe_rms_after_force": 9.313445084085982,
+        "probe_max_after_force": 23.513579201082983,
+        "relative_change_vs_receipt": 7.725764630602527e-05
+      },
+      {
+        "step": 0.005,
+        "receipt_rms_after_force": 9.335838456072848,
+        "probe_rms_after_force": 9.336563498178489,
+        "probe_max_after_force": 23.59162598805752,
+        "relative_change_vs_receipt": 7.766223773604475e-05
+      }
+    ]
+  },
+  "diagnosis": {
+    "one_start_local_basin_evidence": false,
+    "exact_upper_bound_improves_registered_objective": false,
+    "two_parameter_subspace_appears_locally_exhausted": true,
+    "residual_floor_order": "O(9)",
+    "interpretation": "A deterministic restart from (0,0) returns within 2.65e-4 in parameter space and 6.52e-9 relative objective of the receipt solution. Moving either coefficient to the exact upper bound does not lower the registered training objective, and the best exact-bound probe also slightly worsens all three frozen holdout levels. This argues against spending more budget on the same two-parameter optimizer and supports representation/basis review. It is not a global optimum proof, PDE validation, or visual-correspondence evidence."
+  },
+  "status": {
+    "velocity_changed": false,
+    "pressure_fitted": false,
+    "forcing_family_changed": false,
+    "holdout_force_refit": false,
+    "pde_validated": false,
+    "visualization_ready_promoted": false,
+    "visual_correspondence_verified": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  },
+  "verification": {
+    "actions_run": 35186019918,
+    "head": "74a55bdde57da59157554abd46a2722fe6df7552",
+    "constrained_command": "python -m pytest -q -W error tests/test_constrained_*.py",
+    "constrained_result": "93 passed in 17.09s",
+    "run_conclusion": "success"
+  }
+}
