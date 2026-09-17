@@ -1,0 +1,110 @@
+{
+  "base_dependency_head": "e50a536aab3f8c65215ee28290571ebc1ed45f77",
+  "base_supported_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+  "delivery": {
+    "component_order": [
+      "u",
+      "v",
+      "w"
+    ],
+    "grid_layout": "time,x,y,z,component",
+    "reference_times": [
+      0.25,
+      0.3125,
+      0.5,
+      0.6875,
+      0.75
+    ],
+    "serialization_interfaces": [
+      "save_json",
+      "load_json"
+    ],
+    "spatial_box": [
+      [
+        -2.0,
+        2.0
+      ],
+      [
+        -2.0,
+        2.0
+      ],
+      [
+        -2.0,
+        2.0
+      ]
+    ],
+    "time_interval": [
+      0.25,
+      0.75
+    ],
+    "velocity_interfaces": [
+      "velocity",
+      "at_points",
+      "velocity_xyz",
+      "grid"
+    ]
+  },
+  "pending": {
+    "axial_taper_selection": true,
+    "blend_weight_selection": true,
+    "candidate_specific_energy_acceptance": true,
+    "formal_pde_gate": true,
+    "public_observable_comparison": true,
+    "three_dimensional_render_review": true
+  },
+  "representation": {
+    "axial_identity_half_height_formula": "2*sqrt(axial_plateau_q)",
+    "axial_plateau_q_bounds": [
+      0.64,
+      0.81
+    ],
+    "axial_plateau_q_selected": false,
+    "axial_support_half_height": 2.0,
+    "axial_taper_parameter": "AxisymmetricPhysicalTaper.axial_plateau_q",
+    "blend_weight_bounds": [
+      0.0,
+      1.0
+    ],
+    "blend_weight_selected": false,
+    "family": "Phi(1,0) compact-quartic blend with autonomous axial support taper",
+    "radial_plateau_q": 0.64,
+    "radial_support": 2.0
+  },
+  "schema": "eq45_supported_phi10_blend_axial_taper_delivery_recipe_v1",
+  "sibling_evidence": {
+    "divergence_pr": 196,
+    "divergence_status": "open_unconsumed",
+    "may_promote_pde_validated": false,
+    "may_promote_visualization_ready": false,
+    "may_select_axial_taper": false,
+    "may_select_blend_weight": false,
+    "morphology_pr": 197,
+    "morphology_status": "open_unconsumed_calibration_pending",
+    "numeric_summary_bound_here": false,
+    "restricted_force_pr": 195,
+    "restricted_force_status": "open_unconsumed"
+  },
+  "status": {
+    "axial_taper_control_materialized": true,
+    "axial_taper_value_selected": false,
+    "blend_weight_selected": false,
+    "blowup_proved": false,
+    "callable_serializable": true,
+    "caller_declared_axial_taper": true,
+    "caller_declared_blend_weight": true,
+    "candidate_selection_resolved": false,
+    "canonical_velocity_changed": false,
+    "force_or_pressure_fitted": false,
+    "openai_field_identified": false,
+    "paper_exact": false,
+    "pde_validated": false,
+    "physical_support_connection_implemented": true,
+    "physical_support_validated": false,
+    "public_image_fitted": false,
+    "velocity_export_ready": true,
+    "visual_correspondence_verified": false,
+    "visualization_candidate_only": true,
+    "visualization_ready": false
+  },
+  "task_id": "CR011-EQ45-BLEND-AXIAL-TAPER-DELIVERY-CAPSULE-019"
+}
