@@ -1,0 +1,54 @@
+{
+  "schema": "eq45_nontriviality_scope_contract_v1",
+  "task_id": "CR002-EQ45-NONTRIVIALITY-SCOPE-015",
+  "scope": "Separate Eq45 candidate-local nonzero construction/export evidence from CR001 physical-PDE kinetic-energy normalization and anti-collapse acceptance.",
+  "eq45_candidate": {
+    "artifact": "artifacts/constrained/eq45_velocity_candidate_seed.json",
+    "evaluator": "openai_ns_reconstruction.constrained_eq45_candidate:Eq45VelocityCandidate.at_points",
+    "coefficient_guard_kind": "profile_coefficient_l2_norm",
+    "coefficient_guard_min_exclusive": 1e-12,
+    "coefficient_guard_classification": "autonomous_design",
+    "activity_probe_classification": "autonomous_design",
+    "activity_probe_time": 0.5,
+    "activity_probe_points": [
+      [0.10, 0.00, 0.10],
+      [0.18, 0.07, -0.12],
+      [-0.16, 0.09, 0.14],
+      [0.24, -0.11, -0.08]
+    ],
+    "candidate_local_export_requires_cr001_energy_normalization": false
+  },
+  "cr001_nontriviality": {
+    "constraints": "configs/constraints.json",
+    "classification": "autonomous_design",
+    "reference_time": 0.25,
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "minimum_energy_each_validation_time": 0.1,
+    "maximum_energy_each_validation_time": 10.0,
+    "scope": "physical_pde_experiment_acceptance"
+  },
+  "state_semantics": {
+    "eq45_coefficient_guard_is_cr001_energy_evidence": false,
+    "eq45_activity_probe_is_cr001_energy_evidence": false,
+    "eq45_cr001_energy_status": "pending_unknown",
+    "unassessed_cr001_energy_blocks_candidate_local_export": false,
+    "cr001_energy_pass_would_by_itself_promote_pde_validated": false
+  },
+  "required_false_eq45_claims": [
+    "physical_support_validated",
+    "visualization_ready",
+    "visual_correspondence_verified",
+    "pde_validated",
+    "paper_exact",
+    "openai_field_identified",
+    "blowup_proved"
+  ],
+  "truth_boundary": [
+    "The Eq45 constructor's coefficient-norm guard prevents the exact zero-coefficient candidate but is not the CR001 kinetic-energy normalization contract.",
+    "A finite nonzero public-velocity probe is candidate-local anti-degeneracy evidence only; it is not an R^3 energy integral or PDE acceptance evidence.",
+    "Whether the current untapered Eq45 seed satisfies CR001 E(0.25)=1 and the per-time energy bounds remains pending until the same physical support/domain contract is independently integrated and measured.",
+    "Pending CR001 energy normalization does not block saving, loading, evaluating, or exporting a nonzero visualization/research candidate.",
+    "Energy normalization, if later established, cannot by itself promote visualization correspondence, PDE validity, paper-exact identity, OpenAI hidden-field recovery, or blow-up."
+  ]
+}
