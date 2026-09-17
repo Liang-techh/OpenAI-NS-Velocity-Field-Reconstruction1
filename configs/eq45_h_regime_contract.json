@@ -1,0 +1,36 @@
+{
+  "schema": "eq45_h_regime_contract_v1",
+  "task_id": "CR002-EQ45-H-REGIME-SCOPE-013",
+  "scope": "Separate the public Eq. (4.1) coordinate-valid h interval, the narrower theorem-specialized h regime, and the autonomous numerical h chosen by a callable Eq. (4.5) candidate.",
+  "source_binding": {
+    "source_contract": "configs/eq45_source_contract.json",
+    "coordinate_h_open_interval": [0.0, 0.5],
+    "theorem_h_upper_bound_strict": 0.01,
+    "classification": "public_source_fact"
+  },
+  "candidate_binding": {
+    "seed_artifact": "artifacts/constrained/eq45_velocity_candidate_seed.json",
+    "candidate_schema": "eq45_velocity_candidate_v1",
+    "h_classification": "autonomous_design"
+  },
+  "delivery_semantics": {
+    "coordinate_regime_required_for_callable_candidate": true,
+    "theorem_regime_required_for_velocity_export": false,
+    "theorem_regime_match_is_identity_evidence": false,
+    "theorem_regime_match_is_pde_evidence": false,
+    "theorem_regime_match_is_visual_correspondence_evidence": false
+  },
+  "forbidden_promotions": [
+    "paper_exact",
+    "pde_validated",
+    "visual_correspondence_verified",
+    "openai_field_identified",
+    "blowup_proved"
+  ],
+  "truth_boundary": [
+    "The interval 0<h<1/2 governs the Eq. (4.1) coordinate branch used by the callable leading-field evaluator.",
+    "The narrower h<0.01 condition is a source-scoped theorem regime and is not required merely to serialize or call an autonomous visualization candidate.",
+    "A candidate's chosen numerical h remains autonomous_design even when it happens to lie inside the theorem regime.",
+    "Matching the theorem h range does not identify the hidden OpenAI profiles, validate Navier-Stokes, establish visual correspondence, or prove paper exactness or blow-up."
+  ]
+}
