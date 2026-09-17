@@ -1,0 +1,85 @@
+{
+  "schema": "eq45_targeted_mode_screen_v1",
+  "candidate": "Eq45VelocityCandidate.seed() from PR #73",
+  "classification": {
+    "mode_pool": "autonomous_design",
+    "probe_geometry": "autonomous_design",
+    "feature_vector": "autonomous_design",
+    "public_velocity_values": "numerical_observation",
+    "hidden_openai_profile_target": "pending_unknown"
+  },
+  "times": [0.25, 0.5, 0.75],
+  "feature_names": [
+    "radial_thickness_ratio",
+    "axial_reach_ratio",
+    "shoulder_swirl_energy_fraction",
+    "shoulder_axial_poloidal_fraction"
+  ],
+  "mode_labels": [
+    "phi_radial_i2_j0",
+    "phi_axial_i0_j4",
+    "swirl_radial_i2_j0",
+    "swirl_axial_i0_j4"
+  ],
+  "probe_geometry": {
+    "inner_radius": 0.45,
+    "mid_radius": 0.65,
+    "outer_radius": 1.05,
+    "shoulder_abs_z": 0.65,
+    "angles_per_ring": 24,
+    "symmetric_shoulders": true
+  },
+  "coefficient_delta": 0.001,
+  "refinement_delta": 0.0005,
+  "baseline_features": [
+    [0.44705738094656383, 0.22080099168646267, 0.04989559719584967, 0.12394211144265106],
+    [0.42706303851127836, 0.12124957764352688, 0.04411387033168607, 0.06924441092180278],
+    [0.18081208100778037, 0.023313451958283497, 0.03714908601600151, 0.026923801407080353]
+  ],
+  "response_matrix": [
+    [-0.006960045447007568, 0.0, 0.01897007617551738, 0.0],
+    [-0.0016374789885281738, 0.012678774850061192, -0.000668124062963571, 0.0020430038452506905],
+    [-0.00035934201119899867, -0.005730183011597861, 0.0002738433876083024, 0.01758204914835415],
+    [0.0012072396127632556, 0.02312744537046746, 0.0, 0.0],
+    [-0.018606771043594428, 0.0, 0.025496174963529628, 0.0],
+    [-0.0011441188554270343, 0.016435432381174675, -0.001352792325749752, 0.0016596939321142368],
+    [-0.0005075293652220814, -0.011959308586963896, 0.00040955086708094335, 0.026168807033717656],
+    [0.0013536000208272392, 0.016447114940143504, 6.938893903907228e-15, 0.0],
+    [0.03228963911872107, 0.0, 0.0057999553972204465, 0.0],
+    [0.0008542293139894575, 0.008733445217000771, -0.001185802025207433, 0.0005410849864273537],
+    [-0.0008414545836568643, -0.02783282340964449, 0.0007039404114825287, 0.04469386724091293],
+    [0.0014228579853798468, 0.008112337599069583, 0.0, 0.0]
+  ],
+  "response_norms": [
+    0.03805790263170043,
+    0.04825837018932236,
+    0.032372504197007684,
+    0.054760368008204476
+  ],
+  "singular_values": [
+    0.06559949072060249,
+    0.041324204811965755,
+    0.032091659859283084,
+    0.027983807099201154
+  ],
+  "numerical_rank": 4,
+  "condition_number": 2.3441946439973544,
+  "max_abs_column_cosine": 0.6053627825836717,
+  "derivative_refinement_relative_change": 6.465258927324662e-08,
+  "actionable_interpretation": {
+    "blanket_growth_recommended": false,
+    "axially_short_candidate_first_mode": "phi_axial_i0_j4",
+    "swirl_compensation_if_needed": "swirl_axial_i0_j4",
+    "reason": "The Phi eta^4 mode increases axial reach and axial-poloidal content at all three reference times without changing the midplane radial-thickness probe. The F eta^4 mode independently increases shoulder swirl fraction, so the pair offers targeted axial-shape control before generic radial-degree growth."
+  },
+  "truth_boundary": {
+    "claim_scope": "local_visualization_expression_capacity_only",
+    "velocity_changed": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  }
+}
