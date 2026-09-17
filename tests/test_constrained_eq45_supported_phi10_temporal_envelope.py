@@ -1,7 +1,5 @@
 import json
 
-import numpy as np
-
 from openai_ns_reconstruction.constrained_eq45_supported_phi10_temporal_envelope import (
     DEFAULT_RESOLUTIONS,
     DEFAULT_SLOPE,
@@ -19,6 +17,10 @@ def test_supported_phi10_temporal_envelope_calibration():
     assert report["times"] == list(DEFAULT_TIMES)
     assert len(report["rows"]) == len(DEFAULT_RESOLUTIONS) * len(DEFAULT_TIMES)
 
-    # Calibration-only sentinel: expose deterministic hosted summaries once,
-    # then replace this assertion with fail-closed numerical regressions.
-    raise AssertionError(json.dumps(report["time_summaries"], sort_keys=True))
+    fine = [row for row in report["rows"] if row["resolution"] == DEFAULT_RESOLUTIONS[-1]]
+    raise AssertionError(
+        json.dumps(
+            {"time_summaries": report["time_summaries"], "fine_rows": fine},
+            sort_keys=True,
+        )
+    )
