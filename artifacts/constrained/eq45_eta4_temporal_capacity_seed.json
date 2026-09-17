@@ -1,0 +1,50 @@
+{
+  "task_id": "CR003-EQ45-ETA4-TEMPORAL-CAPACITY-013",
+  "claim_scope": "eq45_eta4_affine_temporal_expression_capacity_only",
+  "candidate_sha256": "48f1845fcfd71ec95495c98bb7aac3fca4653e748a8856a5421234e9601525a7",
+  "grid_size": 17,
+  "box_half_width": 2.0,
+  "times": [0.25, 0.5, 0.75],
+  "normalized_time_tau": [-1.0, 0.0, 1.0],
+  "coefficient_steps": [0.04, 0.02],
+  "coefficient_limit": 4.0,
+  "parameter_labels": [
+    "Phi(0,4):static",
+    "F(0,4):static",
+    "Phi(0,4):time_slope"
+  ],
+  "baseline_aspect_ratio_z_over_r": [
+    0.2809974174026417,
+    0.29713028638770234,
+    0.32756890985544884
+  ],
+  "finest_relative_aspect_response": [
+    [-0.014199439596706921, 0.0037283952654384406, 0.014199439596706921],
+    [-0.011382230564367846, 0.003835000415592238, 0.0],
+    [-0.010154807778153729, 0.0051124614798360385, -0.010154807778153729]
+  ],
+  "singular_values": [
+    0.022921977615346128,
+    0.016377105091592955,
+    0.0004029605566603823
+  ],
+  "numerical_rank": 3,
+  "condition_number": 56.88392383938688,
+  "static_singular_values": [
+    0.022034052180868027,
+    0.0018829086033947612
+  ],
+  "static_condition_number": 11.702135802631137,
+  "temporal_slope_novelty_fraction": 0.20886247296402158,
+  "interpretation": "On this deliberately modest public-velocity vorticity-core audit, one affine Phi(0,4) slope adds a third independent temporal aspect-control direction. About 20.9% of that local slope response lies outside the two-static-channel response span, while the three-direction condition number rises to about 56.9. This supports one targeted temporal coefficient only if later public-image temporal morphology requires it; it does not justify blanket time-dependent basis growth.",
+  "truth_boundary": {
+    "velocity_changed": false,
+    "time_dependent_lift_implemented": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  }
+}
