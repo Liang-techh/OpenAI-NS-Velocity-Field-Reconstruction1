@@ -6,9 +6,11 @@ on:
       - 'research_baseline/**'
       - 'artifacts/research/**'
       - 'experiments/root_st030/**'
+      - 'configs/**'
       - 'scripts/ns_candidate.py'
       - 'scripts/check_research_layout.py'
       - 'tests/test_published_baseline.py'
+      - 'tests/test_research_layout.py'
       - 'docs/**'
       - 'README.md'
       - 'project_status.json'
@@ -18,9 +20,11 @@ on:
       - 'research_baseline/**'
       - 'artifacts/research/**'
       - 'experiments/root_st030/**'
+      - 'configs/**'
       - 'scripts/ns_candidate.py'
       - 'scripts/check_research_layout.py'
       - 'tests/test_published_baseline.py'
+      - 'tests/test_research_layout.py'
       - 'docs/**'
       - 'README.md'
       - 'project_status.json'
@@ -48,7 +52,7 @@ jobs:
           python scripts/check_research_layout.py
           python scripts/ns_candidate.py evaluate
       - name: Run publication regressions
-        run: python -m pytest -q -W error tests/test_published_baseline.py
+        run: python -m pytest -q -W error tests/test_published_baseline.py tests/test_research_layout.py
       - name: Independently replay scientific gates (expected rejection)
         shell: bash
         run: |
