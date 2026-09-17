@@ -236,14 +236,15 @@ def generate_core_phase_report(
     leading_mean = float(
         np.mean([row["leading_only_momentum_rms"] for row in finest_rows])
     )
+    selected_generalizes_vs_phase0 = bool(selected_mean < phase0_mean)
 
     candidate = KokunoCoreCompositeCandidate(leading=leading, oscillatory=selected)
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
-    candidate_path = candidate.save_json(output_dir / "selected_phase_core_candidate.json")
+    candidate_path = candidate.save_json(output_dir / "training_selected_phase_core_candidate.json")
     replay = KokunoCoreCompositeCandidate.load_json(candidate_path)
     if replay.sha256 != candidate.sha256:
-        raise RuntimeError("selected phase candidate did not round-trip")
+        raise RuntimeError("training-selected phase candidate did not round-trip")
 
     report = {
         "task": TASK,
@@ -279,6 +280,7 @@ def generate_core_phase_report(
             "pressure": "Agent-1 leading-core pressure unchanged",
             "forcing": "zero raw diagnostic; no force fitted",
             "selection_rule": "minimum training mean momentum RMS at h=0.005; tie by |phase| then phase",
+            "holdout_acceptance_rule": "training-selected phase must improve disjoint holdout mean momentum RMS relative to frozen phase=0",
         },
         "training": {
             "finest_step": finest,
@@ -293,6 +295,7 @@ def generate_core_phase_report(
             "mean_selected_phase_momentum_rms": selected_mean,
             "selected_over_phase0": selected_mean / max(phase0_mean, np.finfo(float).tiny),
             "selected_over_leading": selected_mean / max(leading_mean, np.finfo(float).tiny),
+            "selected_generalizes_vs_phase0": selected_generalizes_vs_phase0,
             "max_selected_divergence": float(
                 max(row["selected_divergence_max"] for row in finest_rows)
             ),
@@ -301,11 +304,23 @@ def generate_core_phase_report(
             "path": str(candidate_path),
             "sha256": candidate.sha256,
             "velocity_api": "velocity(x,y,z,t)->[...,3] Cartesian [u,v,w]",
+            "training_selected_diagnostic_only": True,
+            "accepted_for_next_cycle": selected_generalizes_vs_phase0,
             "global_candidate_promoted": False,
+        },
+        "routing": {
+            "retain_phase_zero_if_holdout_rejects_training_winner": True,
+            "recommended_phase_offset": selected_phase if selected_generalizes_vs_phase0 else 0.0,
+            "reason": (
+                "training-selected phase improved the disjoint holdout relative to phase=0"
+                if selected_generalizes_vs_phase0
+                else "training-selected phase did not improve the disjoint holdout relative to phase=0"
+            ),
         },
         "truth_boundary": {
             "training_holdout_separated": True,
-            "phase_selected_only_for_local_engineering_cycle": True,
+            "training_phase_selected": True,
+            "phase_accepted_for_next_cycle": selected_generalizes_vs_phase0,
             "global_outer_matching_complete": False,
             "mean_correction_applied": False,
             "compatible_final_forcing_attached": False,
@@ -341,6 +356,7 @@ def main() -> None:
                 "selected_phase": report["training"]["selected_phase"],
                 "holdout": report["holdout"],
                 "candidate": report["candidate"],
+                "routing": report["routing"],
                 "truth_boundary": report["truth_boundary"],
             },
             indent=2,
