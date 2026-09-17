@@ -1,27 +1,22 @@
 """Screen a compact C2 temporal window for supported Eq45 Phi(1,0).
 
 The derivative-balanced quartic Phi(1,0) candidate lowers late-time morphology
-collateral, but it still carries nonzero coefficient slope at several exact
-static-return snapshots and its largest temporal slope occurs at the selected
-early endpoint.  Repeated polynomial-degree growth is not automatically the
-smallest representation response to that tradeoff.
+collateral, but it still carries nonzero coefficient slope at exact static-return
+snapshots and its largest temporal slope occurs at the selected early endpoint.
+Repeated polynomial-degree growth is not automatically the smallest response.
 
-This module screens one different temporal family without adding any spatial
-basis mode.  The already-selected early displacement is multiplied by the
-quintic smootherstep remainder
-
-    q(s) = 1 - 10 s^3 + 15 s^4 - 6 s^5,
-
-then set identically to zero after a deterministic return time.  The return time
-is chosen target-free: it is the earliest return for which the compact window's
-peak ``|d(delta Phi10)/d tau|`` does not exceed the peak of the already-screened
-quartic schedule.  Thus the compact trial preserves the selected early snapshot,
+This module screens a different temporal family without adding a spatial mode.
+The selected early displacement is multiplied by the quintic smootherstep
+remainder ``q(s)=1-10s^3+15s^4-6s^5`` and then set identically to zero after a
+deterministic return time.  The return is chosen target-free: it is the earliest
+return whose peak ``|d(delta Phi10)/d tau|`` does not exceed the already-screened
+quartic peak.  The compact trial therefore preserves the selected early snapshot,
 returns exactly to the static supported field with zero first and second
-coefficient derivatives, and introduces no fitted temporal coefficient.
+coefficient derivatives, and adds no fitted temporal coefficient.
 
-The audit also compares public ``at_points(...)->[u,v,w]`` excursions against the
+The audit compares public ``at_points(...)->[u,v,w]`` excursions against the
 materialized quartic field at fixed off-keyframes.  No PDE residual, force,
-pressure, public image, or hidden OpenAI parameter is used to choose the window.
+pressure, public image, or hidden OpenAI parameter chooses the window.
 """
 from __future__ import annotations
 
@@ -45,7 +40,16 @@ _MODE = (1, 0)
 _SMOOTHERSTEP_PEAK_SLOPE = 15.0 / 8.0
 _SMOOTHERSTEP_SLOPE_ENERGY = 10.0 / 7.0
 _SMOOTHERSTEP_PEAK_CURVATURE = 10.0 / np.sqrt(3.0)
-DEFAULT_OFF_KEYFRAME_TIMES = (0.28125, 0.3125, 0.34375, 0.375, 0.4, 0.4375, 0.5625, 0.6875)
+DEFAULT_OFF_KEYFRAME_TIMES = (
+    0.28125,
+    0.3125,
+    0.34375,
+    0.375,
+    0.4,
+    0.4375,
+    0.5625,
+    0.6875,
+)
 
 _TRUTH_BOUNDARY = {
     "canonical_velocity_changed": False,
@@ -96,7 +100,7 @@ def _time_from_tau(base: Eq45SupportedVelocityCandidate, tau: float) -> float:
 
 
 def smootherstep_remainder(s: float | np.ndarray):
-    """Return the C2 quintic remainder on normalized progress ``s in [0,1]``."""
+    """Return the C2 quintic remainder for normalized progress ``s in [0,1]``."""
     values = np.asarray(s, dtype=float)
     if not np.all(np.isfinite(values)) or np.any((values < 0.0) | (values > 1.0)):
         raise ValueError("s must be finite and lie in [0,1]")
@@ -136,8 +140,7 @@ def _quartic_delta_derivative_polynomial(
 
 
 def _polynomial_peak_abs(poly: np.poly1d, lower: float, upper: float) -> tuple[float, float]:
-    derivative = np.polyder(poly)
-    roots = np.roots(derivative)
+    roots = np.roots(np.polyder(poly))
     locations = [float(lower), float(upper)]
     for root in roots:
         if abs(float(np.imag(root))) <= 1.0e-12:
@@ -155,7 +158,7 @@ def _polynomial_square_integral(poly: np.poly1d, lower: float, upper: float) -> 
 
 
 def compact_window_parameters(*, early_delta: float = DEFAULT_EARLY_DELTA) -> dict[str, float]:
-    """Return the deterministic earliest-return window under the quartic peak-slope cap."""
+    """Return the earliest C2 return allowed by the quartic peak-slope cap."""
     early = _validate_early_delta(early_delta)
     nullspace = float(balanced_nullspace_coefficient(early_delta=early))
     quartic_derivative = _quartic_delta_derivative_polynomial(early, nullspace)
@@ -171,9 +174,7 @@ def compact_window_parameters(*, early_delta: float = DEFAULT_EARLY_DELTA) -> di
     return_tau = -1.0 + window_tau_length
 
     quartic_slope_energy = _polynomial_square_integral(quartic_derivative, -1.0, 1.0)
-    compact_slope_energy = (
-        early * early * _SMOOTHERSTEP_SLOPE_ENERGY / window_tau_length
-    )
+    compact_slope_energy = early * early * _SMOOTHERSTEP_SLOPE_ENERGY / window_tau_length
 
     quartic_second = np.polyder(quartic_derivative)
     quartic_peak_curvature, quartic_peak_curvature_tau = _polynomial_peak_abs(
@@ -195,8 +196,7 @@ def compact_window_parameters(*, early_delta: float = DEFAULT_EARLY_DELTA) -> di
         / (window_tau_length * quartic_peak_slope),
         "quartic_integral_d_delta_dtau_squared": quartic_slope_energy,
         "compact_integral_d_delta_dtau_squared": compact_slope_energy,
-        "compact_to_quartic_slope_energy_ratio": compact_slope_energy
-        / quartic_slope_energy,
+        "compact_to_quartic_slope_energy_ratio": compact_slope_energy / quartic_slope_energy,
         "quartic_peak_abs_d2_delta_dtau2": quartic_peak_curvature,
         "quartic_peak_abs_d2_delta_dtau2_tau": quartic_peak_curvature_tau,
         "compact_peak_abs_d2_delta_dtau2": compact_peak_curvature,
@@ -207,7 +207,7 @@ def compact_window_parameters(*, early_delta: float = DEFAULT_EARLY_DELTA) -> di
 
 def compact_phi10_delta(
     tau: float | np.ndarray, *, early_delta: float = DEFAULT_EARLY_DELTA
-+):
+):
     """Return the slope-capped C2 compact Phi(1,0) displacement."""
     early = _validate_early_delta(early_delta)
     values = np.asarray(tau, dtype=float)
@@ -218,13 +218,12 @@ def compact_phi10_delta(
     return_tau = float(parameters["return_tau"])
     progress = np.clip((values + 1.0) / length, 0.0, 1.0)
     active = values <= return_tau
-    result = np.where(active, early * smootherstep_remainder(progress), 0.0)
-    return result
+    return np.where(active, early * smootherstep_remainder(progress), 0.0)
 
 
 def compact_phi10_delta_dtau(
     tau: float | np.ndarray, *, early_delta: float = DEFAULT_EARLY_DELTA
-+):
+):
     early = _validate_early_delta(early_delta)
     values = np.asarray(tau, dtype=float)
     if not np.all(np.isfinite(values)) or np.any((values < -1.0) | (values > 1.0)):
@@ -234,17 +233,16 @@ def compact_phi10_delta_dtau(
     return_tau = float(parameters["return_tau"])
     progress = np.clip((values + 1.0) / length, 0.0, 1.0)
     active = (values > -1.0) & (values < return_tau)
-    result = np.where(
+    return np.where(
         active,
         early * smootherstep_remainder_ds(progress) / length,
         0.0,
     )
-    return result
 
 
 def compact_phi10_delta_d2tau(
     tau: float | np.ndarray, *, early_delta: float = DEFAULT_EARLY_DELTA
-+):
+):
     early = _validate_early_delta(early_delta)
     values = np.asarray(tau, dtype=float)
     if not np.all(np.isfinite(values)) or np.any((values < -1.0) | (values > 1.0)):
@@ -254,12 +252,11 @@ def compact_phi10_delta_d2tau(
     return_tau = float(parameters["return_tau"])
     progress = np.clip((values + 1.0) / length, 0.0, 1.0)
     active = (values > -1.0) & (values < return_tau)
-    result = np.where(
+    return np.where(
         active,
         early * smootherstep_remainder_d2s(progress) / (length * length),
         0.0,
     )
-    return result
 
 
 def _phi10_midpoint(base: Eq45SupportedVelocityCandidate) -> tuple[int, float]:
@@ -347,7 +344,9 @@ def audit_supported_phi10_c2_compact_temporal_capacity(
                 "time": time,
                 "tau": tau,
                 "after_compact_return": bool(time >= return_time),
-                "quartic_coefficient_delta": float(quartic.coefficient_at(time) - quartic.midpoint_coefficient),
+                "quartic_coefficient_delta": float(
+                    quartic.coefficient_at(time) - quartic.midpoint_coefficient
+                ),
                 "compact_coefficient_delta": float(compact_phi10_delta(tau, early_delta=early)),
                 "quartic_public_velocity_delta_rms": quartic_rms,
                 "compact_public_velocity_delta_rms": compact_rms,
