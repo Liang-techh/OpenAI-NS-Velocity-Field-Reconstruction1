@@ -17,7 +17,6 @@ from __future__ import annotations
 
 import argparse
 import json
-from math import log2
 from pathlib import Path
 
 import numpy as np
@@ -280,7 +279,7 @@ def run_real_candidate_preflight(
         "task_id": "KOKUNO-VAL-RADIAL-STRESS-PREFLIGHT-002",
         "agent3_exact_head": "cac3f4de3de2ca47364423e9a1b70407dd819526",
         "candidate_path": str(candidate_path),
-        "candidate_sha256": candidate.sha256(),
+        "candidate_sha256": candidate.sha256,
         "time": float(time),
         "held_out_seed": HELD_OUT_SEED,
         "radial_counts": list(radial_counts),
