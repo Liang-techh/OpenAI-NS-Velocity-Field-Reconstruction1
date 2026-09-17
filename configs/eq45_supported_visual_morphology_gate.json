@@ -1,0 +1,77 @@
+{
+  "schema": "eq45_supported_visual_morphology_promotion_gate_v1",
+  "task_id": "CR002-EQ45-SUPPORTED-VISUAL-MORPHOLOGY-PROMOTION-GATE-021",
+  "scope": "Govern visualization-state promotion for the support-connected Eq45 child after a non-identity physical-space taper. This contract does not render, fit, or modify the velocity field.",
+  "classification": {
+    "velocity_visual_delivery": "user_requirement",
+    "eq45_backbone": "public_source_fact",
+    "physical_support_transform": "autonomous_design",
+    "support_transform_visual_neutrality": "pending_unknown",
+    "public_visual_correspondence": "pending_unknown"
+  },
+  "candidate": {
+    "family": "eq45_supported_velocity_candidate_v1",
+    "child_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+    "parent_sha256": "48f1845fcfd71ec95495c98bb7aac3fca4653e748a8856a5421234e9601525a7",
+    "public_velocity_api": "openai_ns_reconstruction.eq45_supported_delivery:velocity",
+    "physical_support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75]
+  },
+  "current_state": {
+    "callable_serializable": true,
+    "velocity_export_ready": true,
+    "physical_support_connection_implemented": true,
+    "physical_support_validated": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "current_visual_evidence": {
+    "support_transform_morphology_review": "pending_unresolved",
+    "candidate_specific_resolution_sanity": "pending_unresolved",
+    "public_reference_comparison": "pending_unresolved",
+    "external_sibling_signal": {
+      "source_pr": 139,
+      "status": "open_unconsumed_sibling_evidence",
+      "may_trigger_followup_review": true,
+      "may_promote_current_ancestry_state": false
+    }
+  },
+  "candidate_specific_promotion_requirements": {
+    "visualization_ready": [
+      "callable_velocity",
+      "supported_visualization_entry_point",
+      "candidate_specific_resolution_sanity",
+      "support_transform_morphology_review_resolved"
+    ],
+    "visual_correspondence_verified": [
+      "public_reference_only",
+      "candidate_specific_independent_visual_diagnostics",
+      "candidate_specific_resolution_stability",
+      "support_transform_morphology_review_resolved"
+    ]
+  },
+  "policy": {
+    "support_connection_implies_visualization_ready": false,
+    "exact_zero_outside_support_implies_visualization_ready": false,
+    "identity_plateau_implies_whole_domain_morphology_neutral": false,
+    "pointwise_collar_stability_implies_whole_domain_morphology_neutral": false,
+    "resolution_stability_implies_visual_correspondence": false,
+    "visual_similarity_implies_pde_validation": false,
+    "visual_correspondence_implies_paper_exact": false,
+    "pde_failure_blocks_velocity_export": false,
+    "open_sibling_visual_evidence_is_integrated_acceptance": false,
+    "unresolved_support_morphology_allows_visualization_ready_promotion": false,
+    "unresolved_public_comparison_allows_visual_correspondence_promotion": false
+  },
+  "truth_boundary": {
+    "velocity_changed": false,
+    "taper_changed": false,
+    "forcing_changed": false,
+    "thresholds_changed": false,
+    "candidate_promoted": false
+  }
+}
