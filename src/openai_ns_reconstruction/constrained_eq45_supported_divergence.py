@@ -1,15 +1,20 @@
 """Independent divergence revalidation for a support-transformed Eq. (4.5) child.
 
 The support transform changes ``[u,v,w]`` in the exterior collar, so divergence
-evidence from the untapered parent cannot be inherited.  This module treats a
+evidence from the untapered parent cannot be inherited. This module treats a
 serialized :class:`Eq45SupportedVelocityCandidate` as a black-box public field:
 every sample is obtained through ``at_points(points, time)`` and Cartesian
 centered differences are reconstructed outside the candidate implementation.
 
-The audit reports the preregistered three-level derivative ladder and the
-unchanged CR001 divergence thresholds.  Passing sampled divergence is only an
-incompressibility check; it does not establish momentum balance, visualization
-correspondence, paper exactness, or identification of an OpenAI hidden field.
+The audit reports the preregistered three-level derivative ladder and preserves
+the unchanged CR001 divergence thresholds as reference metadata. The production
+probe statistic here is a held-out sampled RMS, not the preregistered
+volume-weighted spatial L2 norm, and its sampled maximum is not a global-domain
+maximum. Therefore this module deliberately does *not* assess the formal CR001
+divergence acceptance gate. Passing sampled divergence is only an
+incompressibility diagnostic; it does not establish momentum balance,
+visualization correspondence, paper exactness, or identification of an OpenAI
+hidden field.
 """
 from __future__ import annotations
 
@@ -152,6 +157,9 @@ def audit_public_velocity_divergence(
         "velocity_rms": velocity_rms,
         "levels": levels,
         "observed_rms_orders": observed_orders,
+        "sampled_rms_only": True,
+        "global_domain_max_assessed": False,
+        "volume_weighted_L2_assessed": False,
         "pde_validated": False,
         "visualization_ready": False,
         "visual_correspondence_verified": False,
@@ -188,7 +196,7 @@ def audit_supported_candidate_artifact_divergence(
     times,
     labels,
 ) -> dict[str, Any]:
-    """Reload a supported child artifact and assess the unchanged CR001 gate."""
+    """Reload a supported child and compare samples to the unchanged contract."""
 
     field = Eq45SupportedVelocityCandidate.load_json(candidate_path)
     contract = _load_validation_contract(constraints_path)
@@ -209,10 +217,15 @@ def audit_supported_candidate_artifact_divergence(
                 "divergence_max": contract["divergence_max"],
                 "divergence_L2": contract["divergence_L2"],
             },
-            "finest_threshold_pass": bool(
-                finest["max_abs"] <= contract["divergence_max"]
-                and finest["rms"] <= contract["divergence_L2"]
-            ),
+            "sampled_threshold_indicators": {
+                "sampled_max_below_registered_max": bool(
+                    finest["max_abs"] <= contract["divergence_max"]
+                ),
+                "sampled_rms_below_registered_L2_number": bool(
+                    finest["rms"] <= contract["divergence_L2"]
+                ),
+            },
+            "cr001_divergence_gate_assessed": False,
             "full_momentum_residual_assessed": False,
             "physical_support_validated": False,
         }
@@ -231,7 +244,11 @@ class PublicDivergenceMutation:
 
     def at_points(self, points, time):
         pts = np.asarray(points, dtype=float)
-        values = _public_velocity(self.field, pts, np.broadcast_to(np.asarray(time, dtype=float), (pts.shape[0],)))
+        values = _public_velocity(
+            self.field,
+            pts,
+            np.broadcast_to(np.asarray(time, dtype=float), (pts.shape[0],)),
+        )
         out = values.copy()
         out[:, 0] += self.epsilon * pts[:, 0]
         return out
