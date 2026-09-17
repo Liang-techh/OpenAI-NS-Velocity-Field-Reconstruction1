@@ -73,6 +73,13 @@ jobs:
         run: python -m openai_ns_reconstruction.constrained_eq45_supported_phi10_cubic_temporal_derivative
       - name: Report quartic Phi10 restricted-force cross-check
         run: python -m openai_ns_reconstruction.constrained_eq45_supported_phi10_quartic_force_crosscheck
+      - name: Report quartic Phi10 fresh-seed generalization
+        run: python -m openai_ns_reconstruction.constrained_eq45_supported_phi10_quartic_seed_generalization --output artifacts/constrained/eq45_supported_phi10_quartic_seed_generalization.json
+      - name: Upload quartic Phi10 fresh-seed report
+        uses: actions/upload-artifact@v4
+        with:
+          name: eq45-quartic-seed-generalization-${{ github.sha }}
+          path: artifacts/constrained/eq45_supported_phi10_quartic_seed_generalization.json
 
   full:
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_legacy_full == true }}
