@@ -1,0 +1,41 @@
+{
+  "schema": "eq45_boundary_leakage_audit_v1",
+  "task_id": "CR007-EQ45-BOUNDARY-LEAKAGE-013",
+  "candidate_sha256": "48f1845fcfd71ec95495c98bb7aac3fca4653e748a8856a5421234e9601525a7",
+  "claim_scope": "finite_window_boundary_tail_sampling_only",
+  "sampling": {
+    "times": [0.25, 0.5, 0.75],
+    "cube_half_widths": [2.0, 2.5, 3.0],
+    "face_grid_sizes": [33, 49, 65],
+    "core_reference_half_width": 1.0,
+    "core_reference_grid_size": 31,
+    "core_reference_grid": "cell_centered"
+  },
+  "finest_grid_results": [
+    {"time": 0.25, "half_width": 2.0, "core_speed_rms": 0.4177031522350179, "boundary_speed_rms": 0.008196811944704552, "boundary_speed_max": 0.03778096575437407, "normal_speed_rms": 0.002415730968565752, "boundary_rms_over_core": 0.01962353384418002, "normal_rms_over_core": 0.005783367819083531},
+    {"time": 0.25, "half_width": 2.5, "core_speed_rms": 0.4177031522350179, "boundary_speed_rms": 0.0005398154315936533, "boundary_speed_max": 0.003163455122899756, "normal_speed_rms": 0.0002870769391234624, "boundary_rms_over_core": 0.0012923422500051656, "normal_rms_over_core": 0.0006872750123799413},
+    {"time": 0.25, "half_width": 3.0, "core_speed_rms": 0.4177031522350179, "boundary_speed_rms": 6.580059243872893e-05, "boundary_speed_max": 0.00042868356312188036, "normal_speed_rms": 3.939664291778074e-05, "boundary_rms_over_core": 0.0001575295567836813, "normal_rms_over_core": 9.431732249799848e-05},
+    {"time": 0.5, "half_width": 2.0, "core_speed_rms": 0.4075752833445638, "boundary_speed_rms": 0.0008426260905945372, "boundary_speed_max": 0.004944865469624636, "normal_speed_rms": 0.0004377175113493462, "boundary_rms_over_core": 0.002067412144524431, "normal_rms_over_core": 0.0010739549949090024},
+    {"time": 0.5, "half_width": 2.5, "core_speed_rms": 0.4075752833445638, "boundary_speed_rms": 6.399853465186928e-05, "boundary_speed_max": 0.0004102295623959105, "normal_speed_rms": 3.858757894300338e-05, "boundary_rms_over_core": 0.0001570226097291699, "normal_rms_over_core": 9.46759544061495e-05},
+    {"time": 0.5, "half_width": 3.0, "core_speed_rms": 0.4075752833445638, "boundary_speed_rms": 8.118255830374218e-06, "boundary_speed_max": 5.428686418186751e-05, "normal_speed_rms": 5.159555412414876e-06, "boundary_rms_over_core": 1.9918420380538757e-05, "normal_rms_over_core": 1.2659146968078024e-05},
+    {"time": 0.75, "half_width": 2.0, "core_speed_rms": 0.360664238327875, "boundary_speed_rms": 2.239755529747444e-05, "boundary_speed_max": 0.00015211672538156327, "normal_speed_rms": 1.4012624889666807e-05, "boundary_rms_over_core": 6.21008487043651e-05, "normal_rms_over_core": 3.885227144956945e-05},
+    {"time": 0.75, "half_width": 2.5, "core_speed_rms": 0.360664238327875, "boundary_speed_rms": 1.822910712352758e-06, "boundary_speed_max": 1.3006751032562284e-05, "normal_speed_rms": 1.1891533643349026e-06, "boundary_rms_over_core": 5.054315118139256e-06, "normal_rms_over_core": 3.29712025192212e-06},
+    {"time": 0.75, "half_width": 3.0, "core_speed_rms": 0.360664238327875, "boundary_speed_rms": 2.3810679841234018e-07, "boundary_speed_max": 1.6941393059835626e-06, "normal_speed_rms": 1.583919065536471e-07, "boundary_rms_over_core": 6.601896531695513e-07, "normal_rms_over_core": 4.3916720794939245e-07}
+  ],
+  "resolution_summary": {
+    "max_relative_change_49_to_65_boundary_speed_rms": 0.006162367967852916,
+    "max_relative_change_49_to_65_normal_speed_rms": 0.007296501727531106,
+    "max_relative_change_49_to_65_boundary_speed_max": 0.06968164139771889,
+    "interpretation": "RMS face metrics are stable at the sub-percent level on this ladder; pointwise maxima remain more grid-sensitive and are reported but not used as the primary finite-window indicator."
+  },
+  "truth_boundary": {
+    "physical_support_validated": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false,
+    "tail_beyond_largest_cube_resolved": false
+  }
+}
