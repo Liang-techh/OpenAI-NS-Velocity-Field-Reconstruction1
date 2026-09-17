@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "task_id": "CR009-COUPLED-REFINEMENT-AUDIT-002",
+  "base_commit": "b4f9d1d07753f97fa904656a2976b123c4944351",
+  "implementation_commit": "e18e3b0c343e7e63ed8242d56660931f442564d3",
+  "pr_url": "https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/pull/17",
+  "source_validation_blob": "e7f4584e23dbda41672e18fa7752f40dd15ce7a0",
+  "source_config_blob": "6c559e42895a606e2ef025ade4cb448966d75814",
+  "source_candidate": "artifacts/constrained/coupled_joint/candidate.json",
+  "validation_seed": 914027,
+  "validation_points": 4096,
+  "refinement_steps": [0.005, 0.01, 0.02],
+  "medium_step": 0.01,
+  "finest_step": 0.005,
+  "plateau_relative_tolerance": 0.1,
+  "threshold_margin": 100.0,
+  "divergence_contraction_limit": 0.5,
+  "momentum_plateau_all_times": true,
+  "divergence_contracting_all_times": true,
+  "classification": "momentum_mismatch_not_explained_by_current_fd_refinement",
+  "finest_residual_sampled_max_range": [0.6042252486915877, 1.0022183043210762],
+  "finest_residual_L2_range": [1.169647947564117, 2.2215324099175593],
+  "rows": [
+    {
+      "time": 0.25,
+      "medium_step": 0.01,
+      "finest_step": 0.005,
+      "finest": {
+        "residual_sampled_max": 0.7292762021376201,
+        "residual_L2_estimate": 2.0484266456101854,
+        "divergence_sampled_max": 6.11774770856166e-07,
+        "divergence_L2_estimate": 5.51366279299663e-07
+      },
+      "momentum_relative_change_medium_to_finest": {
+        "residual_sampled_max": 0.006756353337416661,
+        "residual_L2_estimate": 0.0028115349523567825
+      },
+      "momentum_threshold_multiples_at_finest": {
+        "residual_sampled_max": 729.2762021376201,
+        "residual_L2_estimate": 2048.4266456101855
+      },
+      "momentum_plateau_like": true,
+      "divergence_fine_over_medium": {
+        "divergence_sampled_max": 0.06324772848739153,
+        "divergence_L2_estimate": 0.06397760182030812
+      },
+      "divergence_still_contracting": true
+    },
+    {
+      "time": 0.3125,
+      "medium_step": 0.01,
+      "finest_step": 0.005,
+      "finest": {
+        "residual_sampled_max": 0.6903660554339984,
+        "residual_L2_estimate": 1.9960083450607577,
+        "divergence_sampled_max": 0.0008196177120183973,
+        "divergence_L2_estimate": 0.0001370470371692329
+      },
+      "momentum_relative_change_medium_to_finest": {
+        "residual_sampled_max": 0.004392810552171586,
+        "residual_L2_estimate": 0.0017569647172891193
+      },
+      "momentum_threshold_multiples_at_finest": {
+        "residual_sampled_max": 690.3660554339984,
+        "residual_L2_estimate": 1996.0083450607576
+      },
+      "momentum_plateau_like": true,
+      "divergence_fine_over_medium": {
+        "divergence_sampled_max": 0.2645174469164879,
+        "divergence_L2_estimate": 0.3059384328711051
+      },
+      "divergence_still_contracting": true
+    },
+    {
+      "time": 0.4375,
+      "medium_step": 0.01,
+      "finest_step": 0.005,
+      "finest": {
+        "residual_sampled_max": 0.7227488625781021,
+        "residual_L2_estimate": 2.2215324099175593,
+        "divergence_sampled_max": 0.002968208787355403,
+        "divergence_L2_estimate": 0.00048622083592151814
+      },
+      "momentum_relative_change_medium_to_finest": {
+        "residual_sampled_max": 0.0013093443583670485,
+        "residual_L2_estimate": 0.0015105459251773521
+      },
+      "momentum_threshold_multiples_at_finest": {
+        "residual_sampled_max": 722.7488625781021,
+        "residual_L2_estimate": 2221.532409917559
+      },
+      "momentum_plateau_like": true,
+      "divergence_fine_over_medium": {
+        "divergence_sampled_max": 0.26438928086423547,
+        "divergence_L2_estimate": 0.31578007330260377
+      },
+      "divergence_still_contracting": true
+    },
+    {
+      "time": 0.5625,
+      "medium_step": 0.01,
+      "finest_step": 0.005,
+      "finest": {
+        "residual_sampled_max": 0.7608737378474795,
+        "residual_L2_estimate": 1.6347400405030121,
+        "divergence_sampled_max": 0.0036918882656411522,
+        "divergence_L2_estimate": 0.0006086624401033801
+      },
+      "momentum_relative_change_medium_to_finest": {
+        "residual_sampled_max": 0.0032058963909801104,
+        "residual_L2_estimate": 0.0022326771166498133
+      },
+      "momentum_threshold_multiples_at_finest": {
+        "residual_sampled_max": 760.8737378474794,
+        "residual_L2_estimate": 1634.740040503012
+      },
+      "momentum_plateau_like": true,
+      "divergence_fine_over_medium": {
+        "divergence_sampled_max": 0.2637922734389294,
+        "divergence_L2_estimate": 0.31328428804401776
+      },
+      "divergence_still_contracting": true
+    },
+    {
+      "time": 0.6875,
+      "medium_step": 0.01,
+      "finest_step": 0.005,
+      "finest": {
+        "residual_sampled_max": 0.6042252486915877,
+        "residual_L2_estimate": 1.169647947564117,
+        "divergence_sampled_max": 0.0028206127803381276,
+        "divergence_L2_estimate": 0.0005115989138250252
+      },
+      "momentum_relative_change_medium_to_finest": {
+        "residual_sampled_max": 0.022379485716402144,
+        "residual_L2_estimate": 0.00803154263026887
+      },
+      "momentum_threshold_multiples_at_finest": {
+        "residual_sampled_max": 604.2252486915877,
+        "residual_L2_estimate": 1169.647947564117
+      },
+      "momentum_plateau_like": true,
+      "divergence_fine_over_medium": {
+        "divergence_sampled_max": 0.26105436597078285,
+        "divergence_L2_estimate": 0.300715320196529
+      },
+      "divergence_still_contracting": true
+    },
+    {
+      "time": 0.75,
+      "medium_step": 0.01,
+      "finest_step": 0.005,
+      "finest": {
+        "residual_sampled_max": 1.0022183043210762,
+        "residual_L2_estimate": 1.5633367493674881,
+        "divergence_sampled_max": 0.0017705869865066101,
+        "divergence_L2_estimate": 0.0002713301466686189
+      },
+      "momentum_relative_change_medium_to_finest": {
+        "residual_sampled_max": 0.07406595780008744,
+        "residual_L2_estimate": 0.023072616914973976
+      },
+      "momentum_threshold_multiples_at_finest": {
+        "residual_sampled_max": 1002.2183043210762,
+        "residual_L2_estimate": 1563.336749367488
+      },
+      "momentum_plateau_like": true,
+      "divergence_fine_over_medium": {
+        "divergence_sampled_max": 0.2699936716083393,
+        "divergence_L2_estimate": 0.22626015468783642
+      },
+      "divergence_still_contracting": true
+    }
+  ],
+  "local_isolated_checks": {
+    "command": "PYTHONPATH=. python -m pytest -q -W error test_refinement_audit.py",
+    "result": "3 passed in 0.05s",
+    "py_compile": "exit 0"
+  },
+  "acceptance": "failed",
+  "interpretation": "All six held-out times remain O(1) in momentum at the finest preregistered step while medium-to-finest momentum changes stay <= 7.41%; divergence contracts by factors 0.063..0.316. This supports a candidate momentum-mismatch plateau at the current refinement levels, while finite-step divergence remains discretization-sensitive.",
+  "scope": "post-processing of independent held-out validation rows only; does not reuse training loss, change thresholds, prove an h->0 bound, or establish PDE acceptance"
+}
