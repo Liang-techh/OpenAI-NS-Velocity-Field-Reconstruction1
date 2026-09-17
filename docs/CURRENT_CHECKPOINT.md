@@ -1,3 +1,17 @@
+## Combined theta momentum and energy objective
+
+Added a polynomial FD theta cache (linear+quadratic in velocity coefficients),
+replayed against direct evaluation to8.14e-14. Twelve-start odd3 joint search
+minimizes three energy-defect squares plus64*mean(theta residual squared),
+while retaining initial energy and central component bounds.
+Fresh seed9172612/2048 points shows t=.75 theta max3.27749 to1.71916 and
+L2 2.58903 to1.86843; zero-pressure full max7.78100 to5.80388.
+Initial energy error -1.53e-14, core ratios[1.05,.95,1.006]. But energy defects
+worsen to roughly-.34 through-.40. Candidate remains rejected, PDE false.
+This tradeoff calls for a Pareto/energy-defect cap or better coupled capacity,
+not further unqualified minimization of the same weighted scalar objective.
+Artifacts: `artifacts/bipolar_joint_momentum/` including fresh holdout.
+
 ## Same-resolution baseline and fresh momentum comparison
 
 Replayed the six-mode multistart baseline with order96 training, matching the

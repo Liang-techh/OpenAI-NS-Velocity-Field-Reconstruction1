@@ -8,7 +8,7 @@ from scipy.optimize import minimize
 from .eq45_supported_delivery import Eq45SupportedDeliveryField
 from .constrained_force import RestrictedForce
 
-def run(multistart=False, odd_extension=False, training_order=None, output=None):
+def run(multistart=False, odd_extension=False, training_order=None, output=None, momentum=False):
     training_order = training_order or (96 if odd_extension else 32)
     base=Eq45SupportedDeliveryField.load_candidate('artifacts/bipolar_energy/normalized_candidate.json')
     b=base.candidate.parent.profile_basis
@@ -55,12 +55,17 @@ def run(multistart=False, odd_extension=False, training_order=None, output=None)
     start=np.r_[initial,0.,0.]
     fit=minimize(lambda a:np.sum((a[:-2]-initial)**2)+.01*np.sum(a[-2:]**2),start,method='SLSQP',bounds=[(-4,4)]*len(modes)+[(0,10)]*2,constraints=[{'type':'eq','fun':eq},{'type':'ineq','fun':coreineq}],options={'maxiter':500,'ftol':1e-10})
     trials=[]
+    theta_loss=lambda a:0.
+    replay_error=None
+    if momentum:
+        from .constrained_bipolar_theta_cache import build_theta_objective
+        theta_loss,replay_error=build_theta_objective(field,len(modes),times)
     if multistart:
         rng=np.random.default_rng(9172609)
         starts=[start,fit.x]+[np.r_[np.clip(initial+rng.normal(0,1.5,len(initial)),-4,4),0.,0.] for _ in range(10)]
         feasible=[]
         for j,seed in enumerate(starts):
-            result=minimize(lambda a:np.sum(eq(a)[1:]**2),seed,method='SLSQP',bounds=[(-4,4)]*len(modes)+[(0,10)]*2,constraints=[{'type':'eq','fun':lambda a:eq(a)[0]},{'type':'ineq','fun':coreineq}],options={'maxiter':500,'ftol':1e-11})
+            result=minimize(lambda a:np.sum(eq(a)[1:]**2)+theta_loss(a),seed,method='SLSQP',bounds=[(-4,4)]*len(modes)+[(0,10)]*2,constraints=[{'type':'eq','fun':lambda a:eq(a)[0]},{'type':'ineq','fun':coreineq}],options={'maxiter':500,'ftol':1e-11})
             physical=abs(eq(result.x)[0])<1e-6 and np.min(coreineq(result.x))>=-1e-6
             trials.append(dict(start=j,optimizer_success=bool(result.success),physical_constraints_satisfied=bool(physical),objective=float(result.fun),initial_energy_error=float(eq(result.x)[0]),parameters=result.x.tolist()))
             if physical:feasible.append(result)
@@ -71,7 +76,7 @@ def run(multistart=False, odd_extension=False, training_order=None, output=None)
         e,q,f=matrices(96,.0025,t);v=a[:-2]
         rows.append(dict(time=t,energy=float(v@e@v),required_work=float(v@q@v),force_work=float(v@f@a[-2:]),balance_defect=float(v@q@v-v@f@a[-2:])))
     out=Path(output or ('artifacts/bipolar_joint_odd3' if odd_extension else ('artifacts/bipolar_joint_energy_multistart' if multistart else 'artifacts/bipolar_joint_energy')));out.mkdir(parents=True,exist_ok=True);child.save_candidate(out/'candidate.json')
-    report=dict(odd_phi03_extension=odd_extension,training_quadrature_order=training_order,multistart_trials=trials,energy_balance_enforced_as_equality=not multistart,parent_sha256=base.sha256,candidate_sha256=child.sha256,modes=modes,parameters=a.tolist(),optimizer_success=bool(fit.success),message=str(fit.message),training_equality_defects=eq(a).tolist(),core_ratios=((core@a[:-2])/original).tolist(),holdout=rows,pde_validated=False,scope='Six baseline velocity modes, optionally one autonomous odd Phi(0,3) extension with unchanged coefficient bounds; original bounded two-parameter force. Initial energy1; central component ratios constrained [.95,1.05]. Energy identity only, full momentum unoptimized. Failed optimizer results retained without promotion.')
+    report=dict(theta_objective_enabled=momentum,theta_cache_replay_error=replay_error,theta_training_loss=theta_loss(a),odd_phi03_extension=odd_extension,training_quadrature_order=training_order,multistart_trials=trials,energy_balance_enforced_as_equality=not multistart,parent_sha256=base.sha256,candidate_sha256=child.sha256,modes=modes,parameters=a.tolist(),optimizer_success=bool(fit.success),message=str(fit.message),training_equality_defects=eq(a).tolist(),core_ratios=((core@a[:-2])/original).tolist(),holdout=rows,pde_validated=False,scope='Six baseline velocity modes, optionally one autonomous odd Phi(0,3) extension with unchanged coefficient bounds; original bounded two-parameter force. Initial energy1; central component ratios constrained [.95,1.05]. Energy identity plus optional theta momentum objective; radial/axial pressure-aware momentum unoptimized. Failed optimizer results retained without promotion.')
     (out/'report.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps(report,indent=2))
 if __name__=='__main__':
     import sys

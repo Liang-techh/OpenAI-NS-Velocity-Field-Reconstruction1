@@ -157,5 +157,11 @@
     "report": "artifacts/bipolar_joint_comparison/report.json",
     "status": "energy_only_objective_insufficient_momentum_tradeoff",
     "pde_validated": false
+  },
+  "bipolar_joint_momentum": {
+    "report": "artifacts/bipolar_joint_momentum/report.json",
+    "holdout": "artifacts/bipolar_joint_momentum/holdout_momentum.json",
+    "status": "momentum_improved_energy_balance_worsened_no_promotion",
+    "pde_validated": false
   }
 }
