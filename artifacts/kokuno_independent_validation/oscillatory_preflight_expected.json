@@ -1,0 +1,45 @@
+{
+  "task_id": "KOKUNO-VAL-OSC-PREFLIGHT-001",
+  "agent2_exact_head": "7e3a21e8f3b1950e28490bc35124571f285abe8a",
+  "held_out_seed": 9172641,
+  "point_count": 384,
+  "times": [0.3125, 0.5, 0.6875],
+  "steps": [0.02, 0.01, 0.005],
+  "operator": "independent fourth-order Cartesian centered finite differences using only public velocity/vector_potential calls",
+  "metrics": {
+    "0.3125": {
+      "curl_rms": [1.8213941277154966e-06, 1.1435965529215095e-07, 7.155671181444204e-09],
+      "divergence_rms": [5.0376788237615944e-06, 3.1674957735590824e-07, 1.982657190819095e-08],
+      "curl_orders": [3.993393056330965, 3.998347272270903],
+      "divergence_orders": [3.9913445467923188, 3.9978355377276755],
+      "fine_mutation_divergence_rms": 0.020000000169355207,
+      "velocity_rms": 0.05518817825490912
+    },
+    "0.5": {
+      "curl_rms": [1.789285352726947e-06, 1.12353709117868e-07, 7.03031414012326e-09],
+      "divergence_rms": [4.965046263852503e-06, 3.121842009875104e-07, 1.954083092851777e-08],
+      "curl_orders": [3.993263826812871, 3.998314786951927],
+      "divergence_orders": [3.9913377283273985, 3.997833806294155],
+      "fine_mutation_divergence_rms": 0.020000000192349668,
+      "velocity_rms": 0.054657509546242794
+    },
+    "0.6875": {
+      "curl_rms": [1.7615427221498342e-06, 1.1062066004247491e-07, 6.922013103291105e-09],
+      "divergence_rms": [4.827330643225941e-06, 3.0352749685646285e-07, 1.8999011821445654e-08],
+      "curl_orders": [3.9931467040312283, 3.998285372612801],
+      "divergence_orders": [3.9913265234471424, 3.9978309295558128],
+      "fine_mutation_divergence_rms": 0.020000000188611703,
+      "velocity_rms": 0.055014055144448404
+    }
+  },
+  "outside_support_max": 0.0,
+  "structural_preflight_passed": true,
+  "registered_full_ns_gate": {
+    "threshold": 0.001,
+    "assessed": false,
+    "reason": "The current Kokuno ancestry does not yet contain a complete leading+oscillatory(+correction) 3-D velocity together with pressure and fixed/restricted forcing contracts."
+  },
+  "pde_validated": false,
+  "paper_exact": false,
+  "openai_field_identified": false
+}
