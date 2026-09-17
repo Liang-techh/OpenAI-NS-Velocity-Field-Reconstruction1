@@ -89,5 +89,15 @@
     ],
     "pde_validated": false,
     "default_promoted": false
+  },
+  "bipolar_theta_obstruction": {
+    "report": "artifacts/bipolar_theta/report.json",
+    "force_c": 0.0,
+    "finest_max_range": [
+      0.5779909449264289,
+      3.026685694217416
+    ],
+    "status": "fails_necessary_axisymmetric_momentum_condition",
+    "next_action": "Modify swirl profile or time evolution under fixed force bounds; pressure-only repair cannot eliminate theta residual."
   }
 }

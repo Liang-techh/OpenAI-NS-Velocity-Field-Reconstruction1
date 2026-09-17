@@ -1,0 +1,123 @@
+{
+  "candidate_sha256": "c0e27269adfb6f305c2c0b5a2483f9eddd54f79691f69cacd7bb735ba592a702",
+  "nu": 0.01,
+  "force_c": 0.0,
+  "force_a": "Unidentifiable from azimuthal component; radial/axial force has zero theta projection.",
+  "train_seed": 9172603,
+  "holdout_seed": 9172604,
+  "train_points": 512,
+  "holdout_points": 2048,
+  "sampling": "Uniform Cartesian box [-2,2]^3",
+  "rows": [
+    {
+      "step": 0.02,
+      "time": 0.25,
+      "sampled_max": 0.5787886583332918,
+      "volume_L2_estimate": 1.0997581031163923
+    },
+    {
+      "step": 0.02,
+      "time": 0.3125,
+      "sampled_max": 0.6569773997842623,
+      "volume_L2_estimate": 1.2301690227792752
+    },
+    {
+      "step": 0.02,
+      "time": 0.4375,
+      "sampled_max": 0.891068651985676,
+      "volume_L2_estimate": 1.5375627822923328
+    },
+    {
+      "step": 0.02,
+      "time": 0.5625,
+      "sampled_max": 1.2657954436243146,
+      "volume_L2_estimate": 1.9529102508674243
+    },
+    {
+      "step": 0.02,
+      "time": 0.6875,
+      "sampled_max": 2.1575635062539007,
+      "volume_L2_estimate": 2.465703305371512
+    },
+    {
+      "step": 0.02,
+      "time": 0.75,
+      "sampled_max": 3.0462644684337876,
+      "volume_L2_estimate": 2.736678453399169
+    },
+    {
+      "step": 0.01,
+      "time": 0.25,
+      "sampled_max": 0.5781394567481304,
+      "volume_L2_estimate": 1.0994693500261532
+    },
+    {
+      "step": 0.01,
+      "time": 0.3125,
+      "sampled_max": 0.6572753755277003,
+      "volume_L2_estimate": 1.2303560273490417
+    },
+    {
+      "step": 0.01,
+      "time": 0.4375,
+      "sampled_max": 0.8917451017350994,
+      "volume_L2_estimate": 1.5380045227078303
+    },
+    {
+      "step": 0.01,
+      "time": 0.5625,
+      "sampled_max": 1.2668471463283648,
+      "volume_L2_estimate": 1.9541609757168377
+    },
+    {
+      "step": 0.01,
+      "time": 0.6875,
+      "sampled_max": 2.1633823447394116,
+      "volume_L2_estimate": 2.4697382798607554
+    },
+    {
+      "step": 0.01,
+      "time": 0.75,
+      "sampled_max": 3.0316639111729287,
+      "volume_L2_estimate": 2.726231933061431
+    },
+    {
+      "step": 0.005,
+      "time": 0.25,
+      "sampled_max": 0.5779909449264289,
+      "volume_L2_estimate": 1.0994068331041438
+    },
+    {
+      "step": 0.005,
+      "time": 0.3125,
+      "sampled_max": 0.6573497087435826,
+      "volume_L2_estimate": 1.2304028468113315
+    },
+    {
+      "step": 0.005,
+      "time": 0.4375,
+      "sampled_max": 0.8919137655653464,
+      "volume_L2_estimate": 1.538114985613877
+    },
+    {
+      "step": 0.005,
+      "time": 0.5625,
+      "sampled_max": 1.267108115129781,
+      "volume_L2_estimate": 1.9544736739585693
+    },
+    {
+      "step": 0.005,
+      "time": 0.6875,
+      "sampled_max": 2.164826208974058,
+      "volume_L2_estimate": 2.470749241436825
+    },
+    {
+      "step": 0.005,
+      "time": 0.75,
+      "sampled_max": 3.026685694217416,
+      "volume_L2_estimate": 2.7233015606006528
+    }
+  ],
+  "conclusion": "Necessary axisymmetric momentum condition only. Pressure cannot change theta momentum; this does not construct pressure or validate the full PDE.",
+  "pde_validated": false
+}

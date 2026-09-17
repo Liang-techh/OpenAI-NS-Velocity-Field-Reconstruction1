@@ -1,3 +1,18 @@
+## Normalized bipolar momentum obstruction (2026-09-17)
+
+Independent Cartesian momentum evaluation on 2048 held-out uniform box points,
+six validation times and steps .02/.01/.005 finds theta residual sampled maxima
+.578 through 3.027 at the finest step (volume L2 estimates 1.099 through 2.723).
+The preregistered momentum tolerance remains .001. The nonnegative restricted
+swirl-force coefficient fitted on separate points/times reaches c=0; force a
+has no theta component. Axisymmetric pressure cannot repair this obstruction.
+The normalized child is therefore NOT an accepted NS field. Next construction
+must change swirl shape/time evolution while preserving energy and central flow;
+pressure-only optimization or more export work is not the priority.
+Reproduce: `PYTHONPATH=src python -m openai_ns_reconstruction.constrained_bipolar_theta`.
+Evidence: `artifacts/bipolar_theta/report.json`. These are sampled diagnostics,
+not a continuum proof or a claim that all allowed velocity parameters fail.
+
 ## Energy-normalized bipolar child (2026-09-17)
 
 The new energy quadrature compares orders 24, 48, 96 and 192 on the full
