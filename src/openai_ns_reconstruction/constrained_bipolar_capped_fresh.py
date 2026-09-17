@@ -2,7 +2,7 @@
 
 This is an independent validation consumer: it reloads the saved candidate,
 reads velocity only through the public ``at_points`` interface, and never uses
-optimizer/training tensors.  The full vector diagnostic fixes p=0 because no
+optimizer/training tensors. The full vector diagnostic fixes p=0 because no
 pressure artifact exists for this candidate; the azimuthal projection is a
 necessary pressure-independent condition for axisymmetric pressure.
 """
@@ -80,6 +80,8 @@ def _refinement(rows: list[dict], key: str) -> list[dict]:
             key=lambda row: row["step"],
             reverse=True,
         )
+        if len(selected) != 3:
+            raise ValueError("refinement audit requires exactly three derivative steps")
         values = [row[key] for row in selected]
         steps = [row["step"] for row in selected]
         coarse_to_mid = abs(values[1] - values[0]) / max(abs(values[1]), 1e-300)
@@ -141,6 +143,16 @@ def run(
         return values
 
     zero_pressure = lambda x, t: np.zeros(len(x), dtype=float)
+    baseline_mutation_time = residual(
+        field.at_points,
+        zero_pressure,
+        force,
+        sample,
+        0.5,
+        nu=float(cfg["nu"]),
+        step=fine_step,
+        time_bounds=(0.25, 0.75),
+    )
     mutation_result = residual(
         mutated_velocity,
         zero_pressure,
@@ -151,19 +163,18 @@ def run(
         step=fine_step,
         time_bounds=(0.25, 0.75),
     )
-    baseline_mid = next(
-        row for row in fine if row["time"] == 0.5625
-    ) if any(row["time"] == 0.5625 for row in fine) else fine[len(fine) // 2]
+    baseline_div_l2 = _volume_l2(baseline_mutation_time["divergence"])
     mutation_div = mutation_result["divergence"]
+    mutation_div_l2 = _volume_l2(mutation_div)
     mutation = {
         "definition": "u_x <- u_x + 0.03*x",
         "expected_added_divergence": mutation_strength,
         "time": 0.5,
         "step": fine_step,
         "divergence_sampled_max": float(np.max(np.abs(mutation_div))),
-        "divergence_volume_L2": _volume_l2(mutation_div),
-        "baseline_reference_divergence_volume_L2": baseline_mid["divergence_volume_L2"],
-        "caught": bool(_volume_l2(mutation_div) > 100.0 * baseline_mid["divergence_volume_L2"]),
+        "divergence_volume_L2": mutation_div_l2,
+        "baseline_divergence_volume_L2": baseline_div_l2,
+        "caught": bool(mutation_div_l2 > 100.0 * baseline_div_l2),
     }
 
     report = {
@@ -198,11 +209,12 @@ def run(
             "theta_L2_over_full_PDE_threshold": worst_theta_l2
             / limits["pde_residual_L2"],
         },
-        "registered_finite_divergence_gate_assessed": True,
-        "registered_finite_divergence_gate_passed": bool(
+        "preregistered_thresholds_applied_without_change": True,
+        "fresh_sample_divergence_thresholds_passed": bool(
             worst_div_max <= limits["divergence_max"]
             and worst_div_l2 <= limits["divergence_L2"]
         ),
+        "formal_registered_divergence_gate_assessed": False,
         "necessary_axisymmetric_pressure_PDE_condition_assessed": True,
         "necessary_axisymmetric_pressure_PDE_condition_passed": bool(
             worst_theta_max <= limits["pde_residual_max"]
@@ -219,11 +231,13 @@ def run(
         },
         "scope": (
             "Candidate is reloaded from its artifact and all velocity values are obtained "
-            "through public at_points. Zero-pressure full-vector momentum is diagnostic only "
-            "because no pressure artifact is supplied. For axisymmetric pressure, the theta "
-            "projection is pressure-independent and therefore a necessary PDE condition, not "
-            "a sufficient full Navier-Stokes validation. Monte Carlo L2 values are sampled "
-            "volume estimates, not certified global bounds."
+            "through public at_points. The preregistered thresholds are reused unchanged, "
+            "but this fresh seed/2048-point generalization audit is not the registered "
+            "4096-point gate. Zero-pressure full-vector momentum is diagnostic only because "
+            "no pressure artifact is supplied. For axisymmetric pressure, the theta projection "
+            "is pressure-independent and therefore a necessary PDE condition, not a sufficient "
+            "full Navier-Stokes validation. Monte Carlo L2 values are sampled volume estimates, "
+            "not certified global bounds."
         ),
     }
     path = Path(output)
