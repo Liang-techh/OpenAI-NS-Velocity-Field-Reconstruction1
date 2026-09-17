@@ -80,6 +80,15 @@ jobs:
         with:
           name: eq45-phi10-early-localized-force-${{ github.sha }}
           path: artifacts/constrained/eq45_supported_phi10_early_localized_force_crosscheck.json
+      - name: Report early-localized Phi10 fresh-seed generalization
+        run: >-
+          python -m openai_ns_reconstruction.constrained_eq45_supported_phi10_early_localized_seed_generalization
+          --output artifacts/constrained/eq45_supported_phi10_early_localized_seed_generalization.json
+      - name: Upload early-localized fresh-seed report
+        uses: actions/upload-artifact@v4
+        with:
+          name: eq45-phi10-early-localized-seeds-${{ github.sha }}
+          path: artifacts/constrained/eq45_supported_phi10_early_localized_seed_generalization.json
 
   full:
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.run_legacy_full == true }}
