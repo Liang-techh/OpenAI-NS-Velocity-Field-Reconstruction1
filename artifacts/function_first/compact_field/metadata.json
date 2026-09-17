@@ -1,0 +1,45 @@
+{
+  "field": {
+    "core": {
+      "parameters": {
+        "h": 0.005,
+        "j": 0.02,
+        "sigma": 0.5,
+        "Lambda": 10.0,
+        "C": 2.0,
+        "pressure_scale": 1.0
+      },
+      "maxdegree": 14,
+      "eta_nodes": 257,
+      "series_variable": "X",
+      "coefficient_convention": "ordinary powers X**n",
+      "viscosity": 1.0,
+      "paper_exact": false,
+      "converged": false,
+      "status": "finite formal near-axis nonlinear radial prefix",
+      "domain": "0 <= Lambda*X <= 4.1, |eta| <= 1",
+      "pressure_datum": "-pressure_scale**2/(1+eta**2)**2, independent autonomous datum",
+      "limitations": [
+        "finite degree and Chebyshev interpolation truncation",
+        "no convergence or residual theorem",
+        "no exterior matching or oscillatory correction"
+      ]
+    },
+    "support": "r<2, |z|<2, X<.4",
+    "inner_unchanged": "X<=.25, r<=1, |z|<=.5",
+    "time_domain": "0<=t<1; nonzero initial candidate",
+    "construction": "psi=q^D*X*avgU; localized as B*psi; swirl localized as B*u_theta",
+    "acceptance": "independent compact candidate; full momentum and forcing not accepted",
+    "correspondence": "qualitative structural candidate; source image numerical field unverified"
+  },
+  "grid_shape": [
+    3,
+    17,
+    17,
+    17,
+    3
+  ],
+  "sample_layout": "time,x,y,z,component",
+  "momentum_acceptance": "failed",
+  "force_source": "unchanged coupled_joint parameters"
+}
