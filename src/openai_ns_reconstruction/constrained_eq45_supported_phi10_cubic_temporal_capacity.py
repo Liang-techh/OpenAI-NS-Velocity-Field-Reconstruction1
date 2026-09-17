@@ -288,7 +288,7 @@ def audit_supported_phi10_cubic_temporal_capacity(
     return {
         "schema": "eq45_supported_phi10_cubic_temporal_capacity_v1",
         "task_id": "CR003-EQ45-SUPPORTED-PHI10-CUBIC-TEMPORAL-CAPACITY-022",
-        "base_candidate_sha": child.candidate_sha,
+        "base_candidate_sha": child.sha256,
         "mode": {"family": "Phi", "index": [1, 0]},
         "early_delta": early,
         "time_design": _time_design(),
