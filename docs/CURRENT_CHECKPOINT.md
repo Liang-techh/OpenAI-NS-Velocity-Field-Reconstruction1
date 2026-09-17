@@ -1,3 +1,17 @@
+## Same-resolution baseline and fresh momentum comparison
+
+Replayed the six-mode multistart baseline with order96 training, matching the
+odd Phi03 extension. Fresh seed9172610,2048 uniform points and two FD steps
+show a tradeoff: at t=.75, theta max improves3.78251 to3.26229, whereas full
+zero-pressure momentum max worsens8.28392 to9.27740. The latter is NOT a
+pressure-independent bound: pressure has not been fitted. Theta remains far
+above .001. Neither candidate is accepted despite smaller energy defects.
+This rules out using energy balance alone as the optimization objective.
+Next include momentum/curl and energy together before further basis growth.
+Artifacts: `artifacts/bipolar_joint_baseline96/` and
+`artifacts/bipolar_joint_comparison/report.json`.
+Reproduce comparison: `PYTHONPATH=src python -m openai_ns_reconstruction.constrained_bipolar_joint_compare`.
+
 ## Odd axial spatial extension
 
 Incoming agent7 Phi(0,4) audit studies an even-eta poloidal mode. That mode

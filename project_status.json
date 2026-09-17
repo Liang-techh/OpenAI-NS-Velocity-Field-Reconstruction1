@@ -152,5 +152,10 @@
     "report": "artifacts/bipolar_joint_odd3/report.json",
     "status": "energy_defect_reduced_but_not_satisfied",
     "pde_validated": false
+  },
+  "bipolar_joint_comparison": {
+    "report": "artifacts/bipolar_joint_comparison/report.json",
+    "status": "energy_only_objective_insufficient_momentum_tradeoff",
+    "pde_validated": false
   }
 }
