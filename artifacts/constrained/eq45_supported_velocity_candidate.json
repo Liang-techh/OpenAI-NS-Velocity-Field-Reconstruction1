@@ -1,0 +1,122 @@
+{
+  "classification": {
+    "eq45_parent": "parent_provenance",
+    "openai_hidden_profiles": "pending_unknown",
+    "physical_support_transform": "autonomous_design",
+    "taper_parameters": "autonomous_design",
+    "velocity_interface": "user_requirement"
+  },
+  "parent_candidate": {
+    "classification": {
+      "eq45_backbone": "public_source_fact",
+      "h": "autonomous_design",
+      "openai_hidden_profiles": "pending_unknown",
+      "profile_coefficients": "autonomous_design",
+      "profile_family": "autonomous_design",
+      "time_interval": "autonomous_design",
+      "velocity_interface": "user_requirement"
+    },
+    "h": 0.005,
+    "profile_basis": {
+      "classification": {
+        "basis_shape": "autonomous_design",
+        "coefficient_values": "autonomous_design",
+        "paper_exact": false
+      },
+      "coefficient_limit": 4.0,
+      "cutoff_power": 5,
+      "eta_cut": 1.0,
+      "eta_degree": 2,
+      "mode_indices": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "phi_coefficients": [
+        1.0,
+        0.0,
+        -0.35,
+        -0.3,
+        0.0,
+        0.1
+      ],
+      "radial_degree": 1,
+      "schema": "eq45_compact_profile_basis_v1",
+      "swirl_coefficients": [
+        0.8,
+        0.0,
+        -0.25,
+        -0.2,
+        0.0,
+        0.05
+      ],
+      "x_cut": 4.0
+    },
+    "schema": "eq45_velocity_candidate_v1",
+    "time_interval": [
+      0.25,
+      0.75
+    ],
+    "truth_boundary": {
+      "blowup_proved": false,
+      "callable_serializable": true,
+      "openai_field_identified": false,
+      "paper_exact": false,
+      "pde_validated": false,
+      "physical_support_validated": false,
+      "requires_physical_support_connection": true,
+      "velocity_export_ready": true,
+      "visual_correspondence_verified": false,
+      "visualization_ready": false
+    }
+  },
+  "parent_sha256": "48f1845fcfd71ec95495c98bb7aac3fca4653e748a8856a5421234e9601525a7",
+  "physical_taper": {
+    "axial_half_height": 2.0,
+    "axial_plateau_q": 0.64,
+    "axis_tolerance": 1e-12,
+    "claim_scope": "physical_support_representation_only",
+    "classification": "autonomous_design",
+    "openai_field_identified": false,
+    "paper_exact": false,
+    "pde_validated": false,
+    "radial_plateau_q": 0.64,
+    "radial_support": 2.0,
+    "schema": "axisymmetric_physical_taper_v1"
+  },
+  "schema": "eq45_supported_velocity_candidate_v1",
+  "truth_boundary": {
+    "blowup_proved": false,
+    "callable_serializable": true,
+    "openai_field_identified": false,
+    "paper_exact": false,
+    "pde_validated": false,
+    "physical_support_connection_implemented": true,
+    "physical_support_validated": false,
+    "requires_physical_support_connection": false,
+    "velocity_export_ready": true,
+    "visual_correspondence_verified": false,
+    "visualization_ready": false
+  }
+}
