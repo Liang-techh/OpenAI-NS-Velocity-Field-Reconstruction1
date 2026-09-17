@@ -1,0 +1,136 @@
+{
+  "schema": "eq45_phi10_quartic_comparative_evidence_gate_v1",
+  "task_id": "CR002-EQ45-PHI10-QUARTIC-COMPARATIVE-EVIDENCE-GATE-025",
+  "scope": "Govern comparative evidence for the derivative-balanced quartic supported Eq45 visualization candidate without changing velocity, forcing, thresholds, or scientific readiness.",
+  "source_vocabulary": [
+    "user_requirement",
+    "public_source_fact",
+    "autonomous_design",
+    "pending_unknown"
+  ],
+  "source_classification": {
+    "callable_3d_time_varying_velocity_delivery": "user_requirement",
+    "quartic_temporal_schedule_and_nullspace_balance": "autonomous_design",
+    "fixed_holdout_pressure_free_vorticity_diagnostic": "autonomous_design",
+    "fresh_seed_pressure_free_vorticity_generalization": "autonomous_design",
+    "target_free_late_morphology_diagnostic": "autonomous_design",
+    "public_visual_correspondence": "pending_unknown",
+    "paper_exact_or_hidden_openai_identity": "pending_unknown"
+  },
+  "cr001_binding": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [
+      [-2, 2],
+      [-2, 2],
+      [-2, 2]
+    ],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_parameters": ["a", "c"],
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "divergence_max_threshold": 1e-05,
+    "divergence_L2_threshold": 1e-05,
+    "pde_residual_max_threshold": 0.001,
+    "pde_residual_L2_threshold": 0.001
+  },
+  "candidate": {
+    "family": "Eq45SupportedPhi10QuarticDerivativeBalancedTemporalCandidate",
+    "candidate_sha256": "03fdae73170469ae1160297b489b1b83a27adddfc941119e116a21b98bd15049",
+    "supported_parent_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+    "early_delta": -1.4,
+    "nullspace_coefficient": -0.2831460674157303,
+    "nullspace_selection": "target_free_derivative_balance",
+    "pde_objective_used_to_choose_nullspace_coefficient": false,
+    "public_image_fitted": false
+  },
+  "evidence": {
+    "fixed_holdout": {
+      "pr": 169,
+      "head_sha": "d3a4c1d6895c6ef08c73bc27d933c0dc1e74ea90",
+      "ancestry_status": "current_ancestry_evidence",
+      "formal_pde_gate_assessed": false,
+      "diagnostic": "pressure_free_vorticity_equation_fixed_disjoint_holdout",
+      "finest_spatial_step": 0.005,
+      "static_zero_rms": 3.5872881930415295,
+      "cubic_zero_rms": 3.707314862128546,
+      "quartic_zero_rms": 3.7016892575139453
+    },
+    "fresh_seed_generalization": {
+      "pr": 171,
+      "head_sha": "7b56055b5a6bd7be2e9dad23d060d5f63cb12880",
+      "ancestry_status": "current_ancestry_evidence",
+      "formal_pde_gate_assessed": false,
+      "diagnostic": "pressure_free_vorticity_equation_fresh_stratified_offgrid",
+      "seeds": [914531, 914547, 914563],
+      "finest_spatial_step": 0.005,
+      "quartic_vs_cubic_sign_consistent_across_derivative_levels": true,
+      "rows": [
+        {
+          "seed": 914531,
+          "static_zero_rms": 0.4847845443,
+          "cubic_zero_rms": 0.4665518061,
+          "quartic_zero_rms": 0.4776690276
+        },
+        {
+          "seed": 914547,
+          "static_zero_rms": 3.5288518739,
+          "cubic_zero_rms": 3.4919016764,
+          "quartic_zero_rms": 3.5091433054
+        },
+        {
+          "seed": 914563,
+          "static_zero_rms": 0.8126832643,
+          "cubic_zero_rms": 0.8220763117,
+          "quartic_zero_rms": 0.8062313379
+        }
+      ]
+    },
+    "late_morphology": {
+      "pr": 170,
+      "head_sha": "2dc27213359a2ae9687bf716f6fd484b30cc30d8",
+      "ancestry_status": "open_unconsumed_sibling_evidence",
+      "evidence_class": "target_free_morphology_only",
+      "may_establish_public_visual_correspondence": false
+    },
+    "delivery_capsule": {
+      "pr": 172,
+      "head_sha": "379ea2a72a96b8b396fdfa21f4657e5a91f1f850",
+      "ancestry_status": "open_unconsumed_sibling_evidence",
+      "evidence_class": "replayable_delivery_packaging",
+      "may_establish_pde_validation": false,
+      "may_establish_public_visual_correspondence": false
+    }
+  },
+  "governed_conclusions": {
+    "quartic_vs_cubic_pde_ordering": "unresolved_seed_sensitive",
+    "quartic_vs_static_fresh_seed_observation": "modest_consistent_improvement_not_formal_pde_acceptance",
+    "single_fixed_holdout_may_establish_pde_superiority": false,
+    "fresh_seed_pressure_free_diagnostic_may_establish_pde_validated": false,
+    "target_free_morphology_may_establish_public_visual_correspondence": false,
+    "green_ci_or_delivery_packaging_may_establish_scientific_acceptance": false,
+    "pde_failure_or_pending_may_block_velocity_export": false,
+    "visual_candidate_selection_may_proceed_while_pde_unvalidated": true
+  },
+  "truth_states": {
+    "velocity_export_ready": true,
+    "visualization_candidate_only": true,
+    "physical_support_validated": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "forbidden_inferences": [
+    "fixed_holdout_quartic_better_than_cubic=>formal_pde_superiority",
+    "fresh_seed_quartic_better_than_static=>pde_validated",
+    "target_free_late_morphology=>public_visual_correspondence",
+    "green_ci_or_replayable_capsule=>scientific_acceptance",
+    "pde_failed_or_pending=>velocity_export_not_allowed",
+    "visual_similarity=>paper_exact_or_openai_field_identified"
+  ]
+}
