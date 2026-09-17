@@ -34,6 +34,18 @@ def test_native_coordinates_and_axis_seed_are_bound(candidate):
     np.testing.assert_allclose(axis["U"], expected_u, rtol=0.0, atol=2e-12)
     np.testing.assert_allclose(axis["Pi_X"], axis["F"] ** 2, rtol=2e-12, atol=2e-12)
 
+    center = c.profile_values(0.0, 0.0)
+    np.testing.assert_allclose(center["F"], 0.5, rtol=0.0, atol=2e-13)
+    np.testing.assert_allclose(center["U"], 0.02, rtol=0.0, atol=2e-13)
+    np.testing.assert_allclose(center["Pi_X"], 0.25, rtol=0.0, atol=2e-13)
+    origin_velocity = c.velocity(0.0, 0.0, 0.0, 0.5)
+    np.testing.assert_allclose(
+        origin_velocity,
+        [0.0, 0.0, 0.02838246712400765],
+        rtol=2e-13,
+        atol=2e-13,
+    )
+
 
 def test_profile_partials_match_independent_centered_differences(candidate):
     c = candidate
