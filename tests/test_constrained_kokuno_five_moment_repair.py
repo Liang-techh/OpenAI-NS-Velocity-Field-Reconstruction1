@@ -21,8 +21,13 @@ def _direct_moments(
     eta: float,
     P_star: float,
     f_eta: float,
-    order: int = 256,
+    order: int | None = None,
 ) -> np.ndarray:
+    # Independently recompute the *full* five moments rather than the PA.14
+    # increment formula.  Use the same declared high quadrature order so this
+    # is an algebraic identity check, not a quadrature-convergence experiment.
+    if order is None:
+        order = repair.quadrature_points
     nodes, weights = leggauss(order)
     half = 0.5 * (X_SCALED_MAX - X_SCALED_MIN)
     center = 0.5 * (X_SCALED_MAX + X_SCALED_MIN)
