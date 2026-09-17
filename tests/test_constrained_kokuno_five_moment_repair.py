@@ -116,7 +116,8 @@ def test_compact_profile_correction_and_radial_derivative() -> None:
     np.testing.assert_array_equal(ux, 0.0)
     np.testing.assert_array_equal(ex, 0.0)
 
-    x = math.exp(-5.50 + 0.025)
+    # This point lies where the first U bump and first E bump both have support.
+    x = math.exp(-5.775)
     step = 2.0e-8
     plus_u, plus_e = repair.perturbation(x + step, coefficients)
     minus_u, minus_e = repair.perturbation(x - step, coefficients)
@@ -129,9 +130,9 @@ def test_compact_profile_correction_and_radial_derivative() -> None:
     )
 
     physical = repair.physical_profile_correction(
-        np.array([0.2, 0.5]), 100.0, coefficients
+        np.array([0.1, 0.2]), 100.0, coefficients
     )
-    # x=X/X_R is below the source patch here, so all physical corrections vanish.
+    # x=X/X_R lies entirely below exp(-6), so the physical corrections vanish.
     np.testing.assert_array_equal(physical["delta_U"], 0.0)
     np.testing.assert_array_equal(physical["delta_E"], 0.0)
 
