@@ -1,0 +1,98 @@
+{
+  "schema": "bipolar_f20_capacity_scope_v1",
+  "task_id": "CR002-BIPOLAR-F20-CAPACITY-SCOPE-030",
+  "upstream": {
+    "task_id": "CR003-BIPOLAR-F20-RADIAL-SWIRL-CAPACITY-035",
+    "pr": 212,
+    "head": "33f710de04e7c0d36db666e3863efcaaa711aa3e",
+    "source_candidate_sha256": "7875214ad65f5e1ba4f7c5e362217f05ef47bc3d893e8641e8e40a85fc4e7609"
+  },
+  "inputs": {
+    "constraints": "configs/constraints.json",
+    "delivery_state_contract": "configs/delivery_state_contract.json",
+    "source_candidate": "artifacts/bipolar_joint_capped/candidate.json"
+  },
+  "information_source": {
+    "f20_basis_mode": "autonomous_design",
+    "capacity_probe_layout": "autonomous_design",
+    "capacity_thresholds": "autonomous_design",
+    "hidden_openai_f20_coefficient": "pending_unknown"
+  },
+  "representation": {
+    "source_radial_degree": 1,
+    "embedded_radial_degree": 2,
+    "eta_degree": 3,
+    "existing_reference_swirl_mode": [1, 0],
+    "new_swirl_mode": [2, 0],
+    "coefficient_limit": 4.0,
+    "f20_coefficient_during_capacity_screen": 0.0,
+    "zero_embedding_preserves_source_velocity": true,
+    "parameter_growth_if_materialized": {
+      "spatial_modes": 1,
+      "scalar_coefficients": 1
+    }
+  },
+  "capacity_evidence_contract": {
+    "kind": "target_free_representation_capacity_only",
+    "embedding_max_abs_velocity_error_max": 1e-12,
+    "response_rank": 2,
+    "response_condition_number_max": 100.0,
+    "finite_difference_refinement_relative_change_max": 1e-9,
+    "f20_novelty_outside_f10_span_min": 0.10,
+    "swirl_fraction_min": 0.9999999999,
+    "f20_vs_f10_outer_selectivity_ratio_min": 1.5,
+    "held_out_pde_residual_evaluated": false,
+    "public_reference_used": false,
+    "coefficient_selected": false
+  },
+  "forbidden_inferences": {
+    "swirl_pure_velocity_response_implies_theta_only_momentum_change": false,
+    "swirl_pure_velocity_response_implies_energy_unchanged": false,
+    "radial_selectivity_implies_pde_improvement": false,
+    "capacity_rank_implies_nonzero_f20_should_be_selected": false,
+    "zero_embedding_implies_nonzero_f20_candidate_validated": false,
+    "green_ci_implies_pde_validated": false,
+    "capacity_evidence_implies_visual_correspondence": false,
+    "eq45_parentage_implies_paper_exact": false
+  },
+  "materialization_state": {
+    "source_candidate_velocity_export_ready": true,
+    "f20_nonzero_candidate_materialized": false,
+    "f20_nonzero_candidate_sha256": null,
+    "f20_nonzero_velocity_export_ready": false,
+    "candidate_selection_resolved": false,
+    "pde_validated": false,
+    "visual_correspondence_verified": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  },
+  "requirements_before_nonzero_f20_promotion": {
+    "explicit_f20_coefficient_within_inherited_bound": true,
+    "serialized_candidate_and_exact_sha": true,
+    "reference_energy_revalidated": true,
+    "center_rotation_nonzero_and_sign_revalidated": true,
+    "central_radial_axial_sign_and_parity_revalidated": true,
+    "axis_and_support_regularity_revalidated": true,
+    "restricted_force_family_unchanged": true,
+    "independent_full_momentum_and_divergence_revalidated": true,
+    "registered_thresholds_unchanged": true,
+    "parent_energy_or_pde_results_not_inherited": true
+  },
+  "cr001_invariants": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_bounds": {"a": [0.0, 10.0], "c": [0.0, 10.0]},
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "divergence_max": 1e-5,
+    "divergence_L2": 1e-5,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001
+  }
+}
