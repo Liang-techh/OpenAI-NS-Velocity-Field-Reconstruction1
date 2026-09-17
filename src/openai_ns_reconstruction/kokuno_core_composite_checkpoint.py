@@ -75,8 +75,8 @@ def _canonical_json(payload: dict[str, Any]) -> str:
 
 def _result_metrics(result: dict[str, np.ndarray]) -> dict[str, float]:
     divergence = np.asarray(result["divergence"], dtype=float)
-    momentum = np.asarray(result["momentum"], dtype=float)
-    norms = np.linalg.norm(momentum, axis=-1)
+    momentum_residual = np.asarray(result["residual"], dtype=float)
+    norms = np.linalg.norm(momentum_residual, axis=-1)
     return {
         "divergence_max": float(np.max(np.abs(divergence))),
         "divergence_rms": float(np.sqrt(np.mean(divergence * divergence))),
