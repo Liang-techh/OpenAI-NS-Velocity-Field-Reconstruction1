@@ -1,0 +1,77 @@
+{
+  "schema": "eq45_supported_energy_failure_scope_v1",
+  "task_id": "CR002-EQ45-SUPPORTED-ENERGY-FAILURE-SCOPE-019",
+  "scope": "Govern delivery and identity semantics after the support-connected Eq45 child independently fails the preregistered CR001 reference-energy normalization. This contract does not change or renormalize the velocity field.",
+  "dependency": {
+    "support_composition_pr": 119,
+    "energy_revalidation_pr": 122,
+    "energy_revalidation_head": "a327c0a0ccee7bbe6127e0b6b66c6d25bfb3d30f",
+    "energy_audit_artifact": "artifacts/constrained/eq45_supported_energy_audit.json"
+  },
+  "classification": {
+    "velocity_delivery_requirement": "user_requirement",
+    "cr001_energy_normalization": "autonomous_design",
+    "support_connected_child_representation": "autonomous_design",
+    "exact_openai_field_identity": "pending_unknown",
+    "paper_exact_identity": "pending_unknown"
+  },
+  "candidate_identity": {
+    "supported_child_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+    "parent_sha256": "48f1845fcfd71ec95495c98bb7aac3fca4653e748a8856a5421234e9601525a7"
+  },
+  "registered_energy_contract": {
+    "definition": "E(t)=0.5*integral_R3 |u|^2 dx",
+    "reference_time": 0.25,
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "minimum_energy_each_validation_time": 0.1,
+    "maximum_energy_each_validation_time": 10.0,
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "quadrature_relative_change_threshold": 0.001
+  },
+  "measured_supported_child_state": {
+    "reference_observed_finest_energy": 0.9054304573980382,
+    "reference_energy_abs_error": 0.09456954260196182,
+    "reference_energy_gate_pass": false,
+    "all_quadrature_gates_pass": true,
+    "all_energy_range_gates_pass": true,
+    "cr001_energy_normalization_status": "fail"
+  },
+  "policy": {
+    "reference_energy_failure_is_real_failure": true,
+    "quadrature_pass_overrides_reference_failure": false,
+    "per_time_energy_range_pass_overrides_reference_failure": false,
+    "reference_energy_failure_blocks_velocity_export": false,
+    "reference_energy_failure_blocks_truth_bounded_visualization_or_research_use": false,
+    "reference_energy_failure_allows_pde_validated": false,
+    "relax_reference_tolerance_to_reclassify_current_child": false,
+    "implicit_export_time_amplitude_renormalization_allowed": false,
+    "amplitude_rescale_preserves_candidate_identity": false,
+    "amplitude_rescale_is_metadata_only": false,
+    "renormalized_child_may_inherit_parent_validation_without_recheck": false,
+    "renormalization_factor_must_be_serialized": true,
+    "renormalization_factor_origin": "autonomous_design"
+  },
+  "renormalized_child_requires_revalidation": [
+    "child_candidate_identity",
+    "velocity_export_ready",
+    "physical_support_validated",
+    "cr001_energy_normalization",
+    "divergence_validation",
+    "pde_validated",
+    "visualization_ready",
+    "visual_resolution_stability",
+    "visual_correspondence_verified"
+  ],
+  "truth_boundary": {
+    "velocity_changed_by_this_governance_increment": false,
+    "current_supported_child_energy_normalized": false,
+    "physical_support_validated": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  }
+}
