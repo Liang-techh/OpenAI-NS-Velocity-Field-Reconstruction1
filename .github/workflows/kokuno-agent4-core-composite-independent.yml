@@ -1,0 +1,61 @@
+name: kokuno-agent4-core-composite-independent
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_independent_core_composite.py'
+      - 'src/openai_ns_reconstruction/kokuno_independent_leading_core.py'
+      - 'src/openai_ns_reconstruction/kokuno_leading_core_series.py'
+      - 'src/openai_ns_reconstruction/kokuno_complete_curl.py'
+      - 'src/openai_ns_reconstruction/kokuno_mean_correction_cycle.py'
+      - 'src/openai_ns_reconstruction/kokuno_mean_defect.py'
+      - 'src/openai_ns_reconstruction/kokuno_radial_stress.py'
+      - 'tests/test_constrained_kokuno_independent_core_composite.py'
+      - '.github/workflows/kokuno-agent4-core-composite-independent.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  independent-core-composite:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Focused independent tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_independent_core_composite.py
+          tests/test_constrained_kokuno_independent_leading_core.py
+      - name: Generate independent three-stage report
+        run: >-
+          python -m openai_ns_reconstruction.kokuno_independent_core_composite
+          --output artifacts/kokuno_agent4/core_composite_independent_report.json
+          --annulus-count 48
+          --axis-near-count 24
+      - name: Show report summary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('artifacts/kokuno_agent4/core_composite_independent_report.json')
+          r = json.loads(p.read_text())
+          print(json.dumps({
+              'summary': r['finest_step_summary'],
+              'resolution': r['resolution_sensitivity'],
+              'support': r['support_and_nontriviality'],
+              'perturbation': r['parameter_perturbation'],
+              'mutation': r['mutation_calibration'],
+              'gate': r['gate'],
+          }, indent=2, sort_keys=True))
+          PY
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent4-core-composite-independent
+          path: artifacts/kokuno_agent4/core_composite_independent_report.json
