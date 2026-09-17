@@ -1,0 +1,158 @@
+{
+  "schema": "eq45_bipolar_joint_capped_delivery_recipe_v1",
+  "task_id": "CR011-BIPOLAR-JOINT-CAPPED-DELIVERY-CAPSULE-020",
+  "base_dependency": {
+    "pr": 206,
+    "head": "c358a66d3ba74067c16010be8399fc01eea26453",
+    "role": "fresh independent refinement consumer of the unchanged capped bipolar candidate"
+  },
+  "candidate": {
+    "path": "artifacts/bipolar_joint_capped/candidate.json",
+    "sha256": "7875214ad65f5e1ba4f7c5e362217f05ef47bc3d893e8641e8e40a85fc4e7609",
+    "optimizer_report": "artifacts/bipolar_joint_capped/report.json",
+    "supported_parent_field_sha256": "c0e27269adfb6f305c2c0b5a2483f9eddd54f79691f69cacd7bb735ba592a702",
+    "underlying_eq45_parent_sha256": "39ae3141214e5b91a2df39a1a277610b19afe424d681ccb9d84ff031e151a81d"
+  },
+  "optimizer": {
+    "entrypoint": "openai_ns_reconstruction.constrained_bipolar_joint_energy:run",
+    "multistart_seed": 9172609,
+    "start_count": 12,
+    "selected_start_index": 6,
+    "odd_phi03_extension": true,
+    "training_quadrature_order": 96,
+    "training_times": [
+      0.3125,
+      0.5,
+      0.6875
+    ],
+    "training_spatial_derivative_step": 0.005,
+    "theta_objective_enabled": true,
+    "energy_defect_cap": 0.14,
+    "energy_defect_cap_role": "optimization_only_not_acceptance_threshold",
+    "acceptance_threshold_changed": false,
+    "initial_energy_target": 1.0,
+    "central_component_ratio_bounds": [
+      0.95,
+      1.05
+    ]
+  },
+  "validation_contract": {
+    "config": "configs/constraints.json",
+    "registered_seed": 914027,
+    "registered_held_out_points": 4096,
+    "times": [
+      0.25,
+      0.3125,
+      0.4375,
+      0.5625,
+      0.6875,
+      0.75
+    ],
+    "derivative_steps": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "thresholds": {
+      "divergence_max": 1e-05,
+      "divergence_L2": 1e-05,
+      "pde_residual_max": 0.001,
+      "pde_residual_L2": 0.001
+    }
+  },
+  "fresh_validation_receipt": {
+    "pr": 206,
+    "head": "c358a66d3ba74067c16010be8399fc01eea26453",
+    "workflow_run": 35248171897,
+    "workflow_artifact": 10507839417,
+    "seed": 9172631,
+    "held_out_points": 2048,
+    "sampling": "fresh_uniform_cartesian_box",
+    "times": [
+      0.25,
+      0.3125,
+      0.4375,
+      0.5625,
+      0.6875,
+      0.75
+    ],
+    "derivative_steps": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "finest_step": 0.005,
+    "finest_worst_divergence_sampled_max": 8.660716956e-06,
+    "finest_worst_divergence_volume_L2": 3.02918443e-06,
+    "t075_theta_momentum_sampled_max": 3.093718472,
+    "t075_theta_momentum_volume_L2": 2.828639987,
+    "fresh_sample_divergence_thresholds_passed": true,
+    "formal_registered_divergence_gate_assessed": false,
+    "necessary_axisymmetric_pressure_PDE_condition_passed": false,
+    "formal_full_momentum_gate_assessed": false,
+    "pde_validated": false,
+    "receipt_role": "external_exact_head_ci_evidence_not_recomputed_by_this_capsule"
+  },
+  "delivery": {
+    "public_wrapper": "openai_ns_reconstruction.eq45_supported_delivery:Eq45SupportedDeliveryField",
+    "component_order": [
+      "u",
+      "v",
+      "w"
+    ],
+    "velocity_interfaces": [
+      "velocity",
+      "components",
+      "at_points",
+      "grid"
+    ],
+    "serialization_interfaces": [
+      "save_candidate",
+      "load_candidate"
+    ],
+    "grid_layout": "time,x,y,z,component",
+    "spatial_box": [
+      [
+        -2.0,
+        2.0
+      ],
+      [
+        -2.0,
+        2.0
+      ],
+      [
+        -2.0,
+        2.0
+      ]
+    ],
+    "time_interval": [
+      0.25,
+      0.75
+    ],
+    "reference_times": [
+      0.25,
+      0.5,
+      0.75
+    ]
+  },
+  "sibling_evidence": {
+    "spatial_redistribution_pr": 207,
+    "spatial_redistribution_status": "open_unconsumed",
+    "may_promote_visualization_ready": false,
+    "may_promote_pde_validated": false
+  },
+  "status": {
+    "callable_serializable": true,
+    "velocity_export_ready": true,
+    "visualization_candidate_only": true,
+    "candidate_selection_resolved": false,
+    "physical_support_connection_implemented": true,
+    "physical_support_validated": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  }
+}
