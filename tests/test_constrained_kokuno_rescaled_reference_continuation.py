@@ -12,10 +12,11 @@ from openai_ns_reconstruction.kokuno_rescaled_reference_continuation import (
 
 @pytest.fixture(scope="module")
 def candidate():
-    # Exercise the production-order source-y quadrature.  Lower orders are
-    # useful for coarse replay, but differentiating the moving quadrature
-    # endpoint is intentionally checked against the production evaluator.
-    return KokunoSourceRescaledReferenceContinuation(quadrature_points=20)
+    # Eight-point source-y quadrature is enough for the broad serialization,
+    # freezing and velocity guards.  The derivative test below separately uses
+    # the production-order evaluator because it differentiates a moving
+    # quadrature endpoint.
+    return KokunoSourceRescaledReferenceContinuation(quadrature_points=8)
 
 
 def test_large_pressure_reference_transition_fits_source_core_and_freezes(candidate):
@@ -39,7 +40,8 @@ def test_large_pressure_reference_transition_fits_source_core_and_freezes(candid
     assert after_exit["D_X_U"] == pytest.approx(0.0, abs=0.0)
 
 
-def test_transition_radial_slopes_follow_public_flat_step(candidate):
+def test_transition_radial_slopes_follow_public_flat_step():
+    candidate = KokunoSourceRescaledReferenceContinuation(quadrature_points=20)
     eta = 0.25
     y = 1.5 * candidate.log_transition_width
     X = candidate.X0 * math.exp(y)
