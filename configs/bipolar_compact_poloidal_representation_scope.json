@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "task_id": "CR002-BIPOLAR-COMPACT-POLOIDAL-REPRESENTATION-SCOPE-036",
+  "governed_upstream_task": "CR003-BIPOLAR-COMPACT-POLOIDAL-AXIAL-CAPACITY-041",
+  "mode_name": "COMPACT_C4_ODD_Z_POLOIDAL",
+  "representation_kind": "autonomous_physical_space_additive_curl_correction",
+  "definition": "A_theta = 0.5*r*(z/Zp)*(1-(r/Rp)^2)^6_+*(1-(z/Zp)^2)^6_+; delta_u = curl(A_theta e_theta)",
+  "source_classification": {
+    "callable_velocity_delivery": "user_requirement",
+    "eq45_backbone": "public_source_fact",
+    "compact_poloidal_shape": "autonomous_design",
+    "plateau_geometry_reuse": "autonomous_design",
+    "openai_hidden_numerical_profile": "pending_unknown"
+  },
+  "allowed_source_classes": [
+    "user_requirement",
+    "public_source_fact",
+    "autonomous_design",
+    "pending_unknown"
+  ],
+  "capacity_evidence_only": {
+    "public_velocity_rank": 3,
+    "normalized_condition_number": 3.44349,
+    "novelty_outside_phi01_phi03_span": 0.5531,
+    "fd_divergence_max_abs": 1.23e-11,
+    "diagnostic_coefficients": [-0.25, 0.25],
+    "diagnostic_coefficients_select_value": false,
+    "diagnostic_coefficients_define_materialization_bound": false,
+    "inherited_profile_coefficient_limit_is_materialization_bound": false,
+    "zero_audited_flank_response_is_support_validation": false,
+    "analytic_or_fd_divergence_response_is_registered_divergence_acceptance": false,
+    "morphology_leverage_is_visual_correspondence": false,
+    "capacity_rank_is_pde_leverage": false
+  },
+  "shape_semantics": {
+    "axis_regular_by_construction": true,
+    "radial_component_even_in_z": true,
+    "axial_component_odd_in_z": true,
+    "swirl_component_zero_for_basis_response": true,
+    "positive_coefficient_midplane_radial_direction": "inward",
+    "positive_coefficient_axial_parity": "opposite_sign_above_below_midplane",
+    "parity_compatible_with_current_bipolar_class": true,
+    "shape_semantics_are_not_public_source_facts": true
+  },
+  "morphology_scope": {
+    "bulk_axial_rms_leverage_observed": true,
+    "radial_rms_leverage_also_nonzero": true,
+    "diagnostic_q90_q99_axial_reach_moved": false,
+    "tip_geometry_solution_claimed": false,
+    "routing_statement": "may be screened later for bulk axial thickness/aspect; do not promote as a tip-reach fix from current evidence"
+  },
+  "future_nonzero_materialization": {
+    "explicit_autonomous_coefficient_bound_required": true,
+    "explicit_coefficient_value_required": true,
+    "new_representation_family_identity_required": true,
+    "new_candidate_sha_required": true,
+    "recheck_reference_energy": true,
+    "recheck_validation_time_energy": true,
+    "recheck_core_rotation_sign_nontriviality": true,
+    "recheck_bipolar_radial_axial_direction_parity": true,
+    "recheck_axis_support_regularity": true,
+    "fresh_full_per_component_momentum_divergence_required": true,
+    "model_selection_data_may_not_be_reused_as_acceptance_data": true
+  },
+  "canonical_cr001_snapshot": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "force_mode": "restricted_two_parameter_family",
+    "force_bounds": {"a": [0.0, 10.0], "c": [0.0, 10.0]},
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_energy_range": [0.1, 10.0],
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "divergence_max": 1e-5,
+    "divergence_L2": 1e-5,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001
+  },
+  "truth_boundary": {
+    "velocity_export_ready_may_remain_true_for_existing_candidate": true,
+    "compact_poloidal_nonzero_child_materialized": false,
+    "compact_poloidal_coefficient_selected": false,
+    "candidate_selection_resolved": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  }
+}
