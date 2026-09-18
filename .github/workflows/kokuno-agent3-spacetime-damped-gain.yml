@@ -1,0 +1,50 @@
+name: kokuno-agent3-spacetime-damped-gain
+
+on:
+  push:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_spacetime_damped_quadratic_gain.py'
+      - 'src/openai_ns_reconstruction/kokuno_damped_quadratic_covariance_gain.py'
+      - 'src/openai_ns_reconstruction/kokuno_quadratic_covariance_gain_guard.py'
+      - 'src/openai_ns_reconstruction/kokuno_spacetime_covariance_preflight.py'
+      - 'src/openai_ns_reconstruction/kokuno_multislice_covariance_preflight.py'
+      - 'tests/test_constrained_kokuno_spacetime_damped_quadratic_gain.py'
+      - '.github/workflows/kokuno-agent3-spacetime-damped-gain.yml'
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_spacetime_damped_quadratic_gain.py'
+      - 'src/openai_ns_reconstruction/kokuno_damped_quadratic_covariance_gain.py'
+      - 'src/openai_ns_reconstruction/kokuno_quadratic_covariance_gain_guard.py'
+      - 'src/openai_ns_reconstruction/kokuno_spacetime_covariance_preflight.py'
+      - 'src/openai_ns_reconstruction/kokuno_multislice_covariance_preflight.py'
+      - 'tests/test_constrained_kokuno_spacetime_damped_quadratic_gain.py'
+      - '.github/workflows/kokuno-agent3-spacetime-damped-gain.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  spacetime-damped-gain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Focused shared-damping tests
+        run: >-
+          python -m pytest -q -s -W error
+          tests/test_constrained_kokuno_spacetime_damped_quadratic_gain.py
+          tests/test_constrained_kokuno_damped_quadratic_covariance_gain.py
+      - name: Real-defect 3x3 shared-damping report
+        run: >-
+          python -m openai_ns_reconstruction.kokuno_spacetime_damped_quadratic_gain
+          --output artifacts/kokuno_agent3/spacetime_damped_quadratic_gain_report.json
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent3-spacetime-damped-quadratic-gain
+          path: artifacts/kokuno_agent3/spacetime_damped_quadratic_gain_report.json
