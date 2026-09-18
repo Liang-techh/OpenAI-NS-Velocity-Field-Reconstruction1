@@ -12,6 +12,12 @@ and the corresponding (non-unit-normalized) covector
              p/R,
              p_z - epsilon*v*d_Z H_Phi).
 
+The source discrete label is not generally integer ``p``: it is ``p=j/k`` with
+``j`` a nonzero integer and ``k=ceil(epsilon^(-1/2))``.  Periodicity is thus
+encoded by ``k*p=j in Z\{0}``.  This module enforces that source-compatible
+rational grid but does not itself choose ``j``; see ``kokuno_source_phase_label``
+for the source label-selection algebra.
+
 This module implements only that source algebra. The base-field values V, G and
 their R/Z derivatives are supplied by the caller. It deliberately does not map
 Agent-1 profile symbols onto source V/G, does not build an oscillatory velocity,
@@ -33,7 +39,7 @@ SOURCE_COMMIT = "143f6773feb424ad9ed3a8d116653200f20346b7"
 SOURCE_PATH = "navier-stokes/navier_stokes_workbench.tex"
 CORRECTED_RELEASE = "zenodo:22678406"
 CORRECTED_RELEASE_DATE = "2026-09-09"
-SCHEMA = "kokuno-oscillatory-phase-contract-v1"
+SCHEMA = "kokuno-oscillatory-phase-contract-v2"
 
 _SOURCE_FORMULAS = {
     "phase": "Phi=p*theta+p_z*Z/epsilon+x0*R-v*H_Phi",
@@ -41,12 +47,14 @@ _SOURCE_FORMULAS = {
     "F": "F=V/R",
     "n_Phi": "(x0-v*d_R(H_Phi), p/R, p_z-epsilon*v*d_Z(H_Phi))",
     "k": "ceil(epsilon^(-1/2))",
+    "angular_label_grid": "p=j/k with j integer nonzero (equivalently k*p in Z\\{0})",
     "harmonic": "k_m=k*m, m integer nonzero",
 }
 
 _TRUTH_BOUNDARY = {
     "source_phase_formula_executable": True,
     "source_covector_formula_executable": True,
+    "source_rational_angular_label_grid_enforced": True,
     "caller_supplies_source_base_field_symbols": True,
     "agent1_profile_to_source_V_G_mapping_completed": False,
     "complete_curl_velocity_changed": False,
@@ -77,24 +85,25 @@ class KokunoOscillatoryPhaseContract:
     requires ``R>0`` because the source covector contains ``p/R``; the source
     wave boxes themselves are supported away from the axis.
 
-    The numeric defaults are bounded autonomous diagnostic label values, not
-    recovered source parameters.
+    ``p`` must lie on the source grid ``p=j/k`` with nonzero integer ``j``.
+    Numeric defaults remain autonomous diagnostic label values, not recovered
+    source parameters.
     """
 
-    p: int = 1
+    p: float = 1.0
     p_z: float = 1.0
     x0: float = 1.0
     epsilon: float = 0.25
     m: int = 1
 
     def __post_init__(self) -> None:
-        p = int(self.p)
+        p = float(self.p)
         m = int(self.m)
         p_z = float(self.p_z)
         x0 = float(self.x0)
         epsilon = float(self.epsilon)
-        if p != self.p or p == 0 or abs(p) > 64:
-            raise ValueError("p must be a nonzero integer with |p|<=64")
+        if not np.isfinite(p):
+            raise ValueError("p must be finite")
         if m != self.m or m == 0 or abs(m) > 32:
             raise ValueError("m must be a nonzero integer with |m|<=32")
         if not np.isfinite(p_z) or abs(p_z) > 64.0:
@@ -103,6 +112,11 @@ class KokunoOscillatoryPhaseContract:
             raise ValueError("x0 must be finite with |x0|<=64")
         if not np.isfinite(epsilon) or not (1.0e-6 <= epsilon <= 1.0):
             raise ValueError("epsilon must lie in [1e-6,1]")
+        k = int(ceil(epsilon ** -0.5))
+        j_float = k * p
+        j = int(round(j_float))
+        if j == 0 or abs(j) > 256 or not np.isclose(j_float, j, rtol=0.0, atol=2.0e-12):
+            raise ValueError("p must satisfy p=j/k for a nonzero integer j with |j|<=256")
         object.__setattr__(self, "p", p)
         object.__setattr__(self, "m", m)
         object.__setattr__(self, "p_z", p_z)
@@ -112,6 +126,10 @@ class KokunoOscillatoryPhaseContract:
     @property
     def k(self) -> int:
         return int(ceil(self.epsilon ** -0.5))
+
+    @property
+    def j(self) -> int:
+        return int(round(self.k * self.p))
 
     @property
     def k_m(self) -> int:
@@ -195,6 +213,7 @@ class KokunoOscillatoryPhaseContract:
             "n_Phi": n,
             "n_Phi_norm_sq": n_norm_sq,
             "k": self.k,
+            "j": self.j,
             "k_m": self.k_m,
         }
 
@@ -237,17 +256,19 @@ class KokunoOscillatoryPhaseContract:
             },
             "parameters": {
                 "p": self.p,
+                "j": self.j,
                 "p_z": self.p_z,
                 "x0": self.x0,
                 "epsilon": self.epsilon,
                 "m": self.m,
                 "k": self.k,
                 "k_m": self.k_m,
-                "origin": "bounded autonomous label values; source formulas only, no hidden-parameter recovery",
+                "origin": "bounded source-grid-compatible label values; no hidden-parameter recovery",
             },
             "caller_contract": {
                 "required_base_data": ["V", "V_R", "V_Z", "G", "G_R", "G_Z"],
                 "derived": ["F=V/R", "F_R=V_R/R-V/R^2", "F_Z=V_Z/R"],
+                "angular_label_grid": "p=j/k, j integer nonzero",
                 "agent1_symbol_mapping": "not implemented in this increment",
             },
             "truth_boundary": dict(_TRUTH_BOUNDARY),
@@ -274,10 +295,10 @@ class KokunoOscillatoryPhaseContract:
         if payload["schema"] != SCHEMA:
             raise ValueError("unsupported oscillatory phase schema")
         parameters = payload["parameters"]
-        if set(parameters) != {"p", "p_z", "x0", "epsilon", "m", "k", "k_m", "origin"}:
+        if set(parameters) != {"p", "j", "p_z", "x0", "epsilon", "m", "k", "k_m", "origin"}:
             raise ValueError("phase parameter metadata changed")
         obj = cls(
-            p=int(parameters["p"]),
+            p=float(parameters["p"]),
             p_z=float(parameters["p_z"]),
             x0=float(parameters["x0"]),
             epsilon=float(parameters["epsilon"]),
@@ -290,8 +311,9 @@ class KokunoOscillatoryPhaseContract:
             raise ValueError("phase caller contract changed")
         if payload["truth_boundary"] != _TRUTH_BOUNDARY:
             raise ValueError("phase truth boundary changed")
-        if parameters["k"] != obj.k or parameters["k_m"] != obj.k_m or parameters["origin"] != expected["parameters"]["origin"]:
-            raise ValueError("phase derived parameter metadata changed")
+        for key in ("j", "k", "k_m", "origin"):
+            if parameters[key] != expected["parameters"][key]:
+                raise ValueError("phase derived parameter metadata changed")
         if "sha256" in payload and payload["sha256"] != obj.sha256:
             raise ValueError("phase payload SHA mismatch")
         return obj
