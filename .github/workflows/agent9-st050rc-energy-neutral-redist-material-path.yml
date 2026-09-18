@@ -11,6 +11,7 @@ on:
 
 permissions:
   contents: read
+  pull-requests: write
 
 jobs:
   replay:
@@ -63,14 +64,24 @@ jobs:
           set -e
           cat outputs/agent9-st050rc-energy-neutral-redist-material-path/run.log
           if [ "$code" -ne 0 ]; then
-            {
-              echo '### CR-A9-051 exact replay failure'
-              echo '```text'
-              tail -n 80 outputs/agent9-st050rc-energy-neutral-redist-material-path/run.log
-              echo '```'
-            } >> "$GITHUB_STEP_SUMMARY"
             exit "$code"
           fi
+
+      - name: Publish failure diagnostic to PR
+        if: failure() && github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = 'outputs/agent9-st050rc-energy-neutral-redist-material-path/run.log';
+            const text = fs.existsSync(path) ? fs.readFileSync(path, 'utf8') : 'run.log missing';
+            const tail = text.slice(-6000);
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `CR-A9-051 exact replay diagnostic for head \`${context.sha}\`:\n\n\`\`\`text\n${tail}\n\`\`\``
+            });
 
       - name: Verify fail-closed truth boundary and frozen population
         run: |
@@ -97,11 +108,6 @@ jobs:
           print('report_sha256=', r['report_sha256'])
           print('child_vs_parent=', r['child_vs_parent'])
           print('by_radius=', r['child_vs_parent_by_seed_radius'])
-          with open(__import__('os').environ['GITHUB_STEP_SUMMARY'], 'a') as s:
-              s.write('### CR-A9-051 exact replay\n\n')
-              s.write(f"- report SHA-256: `{r['report_sha256']}`\n")
-              s.write(f"- child vs parent: `{r['child_vs_parent']}`\n")
-              s.write(f"- by radius: `{r['child_vs_parent_by_seed_radius']}`\n")
           PY
 
       - uses: actions/upload-artifact@v4
