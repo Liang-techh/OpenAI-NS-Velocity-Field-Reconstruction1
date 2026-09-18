@@ -9,8 +9,12 @@ one deliberately narrow follow-up question without adding a basis:
     lambda(alpha) = sqrt(E_target / E_raw(alpha, t_ref))
     u_joint       = lambda(alpha) * u_alpha
 
-The positive common scale restores the reference kinetic energy exactly.  It
-preserves instantaneous streamline directions and normalized vorticity-location
+For nonzero alpha the positive common scale restores the reference kinetic
+energy exactly.  Alpha zero is the frozen parent control and is replayed without
+rescaling when it already satisfies the registered reference-energy tolerance;
+this prevents quadrature roundoff from spuriously pushing an already-bound
+parent coefficient past its inherited limit.  Positive common scaling preserves
+instantaneous streamline directions and normalized vorticity-location
 fingerprints, but it is not a Navier--Stokes invariance.  The screen therefore
 checks only representation/energy/core/support preflight plus target-free 3-D
 vorticity morphology.  It does not create a production candidate, fit pressure
@@ -26,7 +30,6 @@ from typing import Any, Iterable
 import numpy as np
 
 from .constrained_eq45_axial_envelope_flattening_capacity import (
-    _EnvelopeFieldProxy,
     _morphology,
     _source_field,
     _structure_checks,
@@ -91,7 +94,7 @@ def _profile_bound_screen(field, scale: float, alpha: float) -> dict[str, Any]:
     )
     scaled = float(scale) * stored
     max_before = float(np.max(np.abs(stored))) if stored.size else 0.0
-    max_after = float(np.max(np.abs(scaled))) if scaled.size else 0.0
+    max_after = float(np.max(np.abs(scaled))) if stored.size else 0.0
     tolerance = 64.0 * np.finfo(float).eps * max(1.0, limit)
     stored_ok = bool(max_after <= limit + tolerance)
     alpha_ok = bool(0.0 <= float(alpha) <= 1.0)
@@ -163,7 +166,8 @@ def audit_axial_envelope_joint_renorm_screen(
     robust_rows = []
     for alpha in alphas:
         raw_reference = float(fine[alpha][reference_time])
-        scale = _normalization_scale(raw_reference, target)
+        baseline_parent_replay = bool(alpha == 0.0 and abs(raw_reference - target) <= tolerance)
+        scale = 1.0 if baseline_parent_replay else _normalization_scale(raw_reference, target)
         normalized_reference = scale * scale * raw_reference
         validation_rows = []
         validation_ok = True
@@ -213,12 +217,13 @@ def audit_axial_envelope_joint_renorm_screen(
             )
 
         profile = _profile_bound_screen(field, scale, alpha)
-        reference_ok = bool(abs(normalized_reference - target) <= max(tolerance, 1.0e-12))
+        reference_ok = bool(abs(normalized_reference - target) <= tolerance)
         robust_q90 = bool(all(value > MORPHOLOGY_ZERO_TOLERANCE for value in q90_gains))
         robust_q99 = bool(all(value > MORPHOLOGY_ZERO_TOLERANCE for value in q99_gains))
         preflight = bool(reference_ok and validation_ok and profile["simple_common_scale_representation_preflight_passed"])
         row = {
             "alpha": alpha,
+            "baseline_parent_replay_without_common_scale": baseline_parent_replay,
             "raw_reference_energy": raw_reference,
             "common_velocity_scale": scale,
             "common_scale_fractional_change": float(scale - 1.0),
