@@ -1,14 +1,13 @@
-"""Energy-admissible morphology audit for the fixed axial-cap poloidal mode.
+"""Fixed-parent energy-envelope audit for the Agent-7 axial-cap poloidal mode.
 
-The support-adjacent axial-cap mode from the preceding Agent-7 capacity screen
-can move gross q90/q99 vorticity reach at a diagnostic coefficient of +/-0.25.
-That coefficient was deliberately *not* declared materializable.  This module
-asks the next narrower representation question: how much of that morphology is
-available while the parent field and the preregistered reference-energy gate
-are held fixed?
+The preceding capacity screen showed that the fixed support-adjacent cap mode can
+move gross q90/q99 vorticity reach at diagnostic coefficient +/-0.25.  That
+amplitude was never declared materializable.  This module measures how much of
+that morphology survives the unchanged preregistered E(0.25)=1+/-0.001 gate
+when the parent normalization is held fixed.
 
-No basis shape, pressure, forcing, residual, coefficient or acceptance threshold
-is fitted here.  In particular this is not a candidate-selection or PDE screen.
+No basis, coefficient, pressure, forcing, residual or public-image target is fit.
+This is pre-materialization representation evidence, not PDE validation.
 """
 from __future__ import annotations
 
@@ -52,315 +51,217 @@ def _repo_root() -> Path:
 
 
 def _constraints() -> dict[str, Any]:
-    data = json.loads((_repo_root() / "configs" / "constraints.json").read_text(encoding="utf-8"))
-    if not isinstance(data, dict):
+    value = json.loads((_repo_root() / "configs" / "constraints.json").read_text(encoding="utf-8"))
+    if not isinstance(value, dict):
         raise ValueError("constraints.json must contain an object")
-    return data
+    return value
 
 
-def _axisymmetric_grid(order: int) -> tuple[np.ndarray, np.ndarray]:
+def _grid(order: int) -> tuple[np.ndarray, np.ndarray]:
     order = int(order)
     if order < 16:
         raise ValueError("quadrature order must be >=16")
     nodes, weights = leggauss(order)
     r, z = np.meshgrid(nodes + 1.0, 2.0 * nodes, indexing="ij")
     wr, wz = np.meshgrid(weights, 2.0 * weights, indexing="ij")
-    volume = 2.0 * np.pi * r * wr * wz
     points = np.column_stack((r.ravel(), np.zeros(r.size), z.ravel()))
-    return points, volume.ravel()
+    volume = (2.0 * np.pi * r * wr * wz).ravel()
+    return points, volume
 
 
 def _energy_quadratic(field, time: float, order: int) -> dict[str, float]:
-    """Coefficients of E(a)=constant+linear*a+quadratic*a^2."""
-    points, volume = _axisymmetric_grid(order)
+    points, volume = _grid(order)
     base = np.asarray(field.at_points(points, float(time)), dtype=float)
     basis = np.asarray(_axial_cap_basis_velocity(field, points), dtype=float)
     if base.shape != basis.shape or base.shape != (len(points), 3):
-        raise RuntimeError("unexpected velocity shape in axial-cap energy audit")
+        raise RuntimeError("unexpected velocity shape")
     constant = 0.5 * float(np.sum(volume * np.sum(base * base, axis=1)))
     linear = float(np.sum(volume * np.sum(base * basis, axis=1)))
     quadratic = 0.5 * float(np.sum(volume * np.sum(basis * basis, axis=1)))
-    values = (constant, linear, quadratic)
-    if not np.all(np.isfinite(values)) or quadratic <= 0.0:
+    if not np.all(np.isfinite((constant, linear, quadratic))) or quadratic <= 0.0:
         raise RuntimeError("invalid kinetic-energy quadratic")
     return {"constant": constant, "linear": linear, "quadratic": quadratic}
 
 
-def _quadratic_value(coefficients: dict[str, float], coefficient: float) -> float:
+def _energy(coefficients: dict[str, float], coefficient: float) -> float:
     a = float(coefficient)
-    return float(
-        coefficients["constant"]
-        + coefficients["linear"] * a
-        + coefficients["quadratic"] * a * a
-    )
+    return float(coefficients["constant"] + coefficients["linear"] * a + coefficients["quadratic"] * a * a)
 
 
 def _direct_energy(field, time: float, coefficient: float, order: int) -> float:
-    points, volume = _axisymmetric_grid(order)
+    points, volume = _grid(order)
     velocity = np.asarray(_cap_velocity(field, points, float(time), float(coefficient)), dtype=float)
     return 0.5 * float(np.sum(volume * np.sum(velocity * velocity, axis=1)))
 
 
-def _interval_extrema(coefficients: dict[str, float], half_width: float) -> tuple[float, float]:
-    width = float(half_width)
+def _interval_extrema(coefficients: dict[str, float], width: float) -> tuple[float, float]:
+    width = float(width)
     if not np.isfinite(width) or width < 0.0:
-        raise ValueError("half_width must be finite and nonnegative")
-    q = float(coefficients["quadratic"])
-    b = float(coefficients["linear"])
-    left = _quadratic_value(coefficients, -width)
-    right = _quadratic_value(coefficients, width)
+        raise ValueError("width must be finite and nonnegative")
+    left, right = _energy(coefficients, -width), _energy(coefficients, width)
     minimum = min(left, right)
-    vertex = -b / (2.0 * q)
+    vertex = -coefficients["linear"] / (2.0 * coefficients["quadratic"])
     if -width <= vertex <= width:
-        minimum = min(minimum, _quadratic_value(coefficients, vertex))
+        minimum = min(minimum, _energy(coefficients, vertex))
     return float(minimum), float(max(left, right))
 
 
-def _largest_symmetric_half_width(
-    coefficients: dict[str, float], *, lower: float, upper: float, diagnostic_search_guard: float
-) -> dict[str, Any]:
-    lower, upper = float(lower), float(upper)
-    guard = float(diagnostic_search_guard)
+def _symmetric_envelope(coefficients: dict[str, float], lower: float, upper: float, guard: float) -> dict[str, Any]:
+    lower, upper, guard = float(lower), float(upper), float(guard)
     if not lower < upper or not np.isfinite(guard) or guard <= 0.0:
         raise ValueError("invalid envelope inputs")
-    zero = _quadratic_value(coefficients, 0.0)
-    if not lower <= zero <= upper:
-        return {
-            "exists": False,
-            "half_width": 0.0,
-            "guard_limited": False,
-            "minimum_energy": zero,
-            "maximum_energy": zero,
-        }
+    baseline = _energy(coefficients, 0.0)
+    if not lower <= baseline <= upper:
+        return {"exists": False, "half_width": 0.0, "guard_limited": False,
+                "minimum_energy": baseline, "maximum_energy": baseline}
 
-    def admissible(width: float) -> bool:
+    def ok(width: float) -> bool:
         minimum, maximum = _interval_extrema(coefficients, width)
         return minimum >= lower and maximum <= upper
 
-    if admissible(guard):
+    if ok(guard):
         minimum, maximum = _interval_extrema(coefficients, guard)
-        return {
-            "exists": True,
-            "half_width": guard,
-            "guard_limited": True,
-            "minimum_energy": minimum,
-            "maximum_energy": maximum,
-        }
-
+        return {"exists": True, "half_width": guard, "guard_limited": True,
+                "minimum_energy": minimum, "maximum_energy": maximum}
     lo, hi = 0.0, guard
     for _ in range(80):
         mid = 0.5 * (lo + hi)
-        if admissible(mid):
+        if ok(mid):
             lo = mid
         else:
             hi = mid
     minimum, maximum = _interval_extrema(coefficients, lo)
-    return {
-        "exists": True,
-        "half_width": float(lo),
-        "guard_limited": False,
-        "minimum_energy": minimum,
-        "maximum_energy": maximum,
-    }
+    return {"exists": True, "half_width": float(lo), "guard_limited": False,
+            "minimum_energy": minimum, "maximum_energy": maximum}
 
 
-def _normalization_roots(
-    coefficients: dict[str, float], *, target: float, diagnostic_search_guard: float
-) -> list[float]:
+def _normalization_roots(coefficients: dict[str, float], target: float, guard: float) -> list[float]:
     q = float(coefficients["quadratic"])
     b = float(coefficients["linear"])
-    c = float(coefficients["constant"] - float(target))
-    discriminant = b * b - 4.0 * q * c
-    if discriminant < 0.0:
+    c = float(coefficients["constant"] - target)
+    disc = b * b - 4.0 * q * c
+    if disc < 0.0:
         return []
-    root_disc = float(np.sqrt(max(discriminant, 0.0)))
-    guard = float(diagnostic_search_guard)
-    roots = [(-b - root_disc) / (2.0 * q), (-b + root_disc) / (2.0 * q)]
-    return sorted({float(root) for root in roots if np.isfinite(root) and abs(root) <= guard})
+    root = float(np.sqrt(max(disc, 0.0)))
+    values = [(-b - root) / (2.0 * q), (-b + root) / (2.0 * q)]
+    return sorted({float(value) for value in values if np.isfinite(value) and abs(value) <= guard})
 
 
-def _quadrature_refinement(rows: dict[int, dict[float, dict[str, float]]]) -> float:
+def _refinement(rows: dict[int, dict[float, dict[str, float]]]) -> float:
     orders = sorted(rows)
     coarse, fine = rows[orders[-2]], rows[orders[-1]]
-    maximum = 0.0
-    for time in fine:
-        for key in ("constant", "linear", "quadratic"):
-            denominator = max(abs(fine[time][key]), 1.0e-12)
-            maximum = max(maximum, abs(coarse[time][key] - fine[time][key]) / denominator)
-    return float(maximum)
+    return float(max(
+        abs(coarse[time][key] - fine[time][key]) / max(abs(fine[time][key]), 1.0e-12)
+        for time in fine for key in ("constant", "linear", "quadratic")
+    ))
 
 
-def _morphology_delta(base: dict[str, float], other: dict[str, float]) -> dict[str, float]:
+def _morph_delta(base: dict[str, float], other: dict[str, float]) -> dict[str, float]:
     keys = (
-        "axial_rms_over_Zp",
-        "radial_rms_over_Rp",
-        "axial_q90_over_Zp",
-        "axial_q99_over_Zp",
-        "outer_065_enstrophy_fraction",
-        "outer_075_enstrophy_fraction",
+        "axial_rms_over_Zp", "radial_rms_over_Rp", "axial_q90_over_Zp", "axial_q99_over_Zp",
+        "outer_065_enstrophy_fraction", "outer_075_enstrophy_fraction",
     )
     return {key: float(other[key] - base[key]) for key in keys}
 
 
 def audit_axial_cap_energy_envelope(
-    *,
-    quadrature_orders: Iterable[int] = (96, 192),
-    morphology_time: float = 0.5,
+    *, quadrature_orders: Iterable[int] = (96, 192), morphology_time: float = 0.5,
     morphology_grid_size: int = 33,
 ) -> dict[str, Any]:
     orders = tuple(int(value) for value in quadrature_orders)
-    if len(orders) < 2 or any(order < 16 for order in orders):
-        raise ValueError("quadrature_orders must contain at least two values >=16")
-    if any(orders[index] >= orders[index + 1] for index in range(len(orders) - 1)):
-        raise ValueError("quadrature_orders must be strictly increasing")
+    if len(orders) < 2 or any(value < 16 for value in orders) or any(a >= b for a, b in zip(orders, orders[1:])):
+        raise ValueError("quadrature_orders must be strictly increasing and >=16")
     if morphology_grid_size < 17 or morphology_grid_size % 2 == 0:
         raise ValueError("morphology_grid_size must be odd and >=17")
 
     constraints = _constraints()
     nontriviality = constraints["nontriviality"]
-    validation = constraints["validation"]
+    times = tuple(float(value) for value in constraints["validation"]["times"])
     reference_time = float(nontriviality["reference_time"])
     target = float(nontriviality["reference_energy"])
     tolerance = float(nontriviality["reference_energy_abs_tolerance"])
-    validation_energy_lower = float(nontriviality["minimum_energy_each_validation_time"])
-    validation_energy_upper = float(nontriviality["maximum_energy_each_validation_time"])
-    times = tuple(float(value) for value in validation["times"])
+    validation_lower = float(nontriviality["minimum_energy_each_validation_time"])
+    validation_upper = float(nontriviality["maximum_energy_each_validation_time"])
 
     field = _source_field()
-    search_guard = float(field.parent.profile_basis.coefficient_limit)
-    rows_by_order = {
-        order: {time: _energy_quadratic(field, time, order) for time in times}
-        for order in orders
-    }
-    finest = rows_by_order[orders[-1]]
+    guard = float(field.parent.profile_basis.coefficient_limit)
+    rows = {order: {time: _energy_quadratic(field, time, order) for time in times} for order in orders}
+    finest = rows[orders[-1]]
     reference = finest[reference_time]
-    envelope = _largest_symmetric_half_width(
-        reference,
-        lower=target - tolerance,
-        upper=target + tolerance,
-        diagnostic_search_guard=search_guard,
-    )
+    envelope = _symmetric_envelope(reference, target - tolerance, target + tolerance, guard)
     half_width = float(envelope["half_width"])
     if not envelope["exists"] or half_width <= 0.0:
-        raise RuntimeError("no nonzero zero-centered axial-cap energy envelope exists")
+        raise RuntimeError("no nonzero fixed-parent energy envelope exists")
 
     validation_rows = []
-    validation_range_satisfied = True
+    validation_ok = True
     for time in times:
         minimum, maximum = _interval_extrema(finest[time], half_width)
-        satisfied = bool(minimum >= validation_energy_lower and maximum <= validation_energy_upper)
-        validation_range_satisfied &= satisfied
-        validation_rows.append(
-            {
-                "time": time,
-                "baseline_energy": _quadratic_value(finest[time], 0.0),
-                "minimum_energy_over_zero_centered_envelope": minimum,
-                "maximum_energy_over_zero_centered_envelope": maximum,
-                "validation_energy_range_satisfied": satisfied,
-            }
-        )
+        passed = bool(minimum >= validation_lower and maximum <= validation_upper)
+        validation_ok &= passed
+        validation_rows.append({"time": time, "baseline_energy": _energy(finest[time], 0.0),
+                                "minimum_energy": minimum, "maximum_energy": maximum,
+                                "validation_energy_range_satisfied": passed})
 
-    direct_checks = []
+    replay = []
     for coefficient in (-half_width, 0.0, half_width, -PREVIOUS_CAPACITY_TRIAL, PREVIOUS_CAPACITY_TRIAL):
-        if abs(coefficient) > search_guard:
-            continue
-        quadratic_energy = _quadratic_value(reference, coefficient)
-        direct_energy = _direct_energy(field, reference_time, coefficient, orders[-1])
-        direct_checks.append(
-            {
-                "coefficient": float(coefficient),
-                "quadratic_energy": quadratic_energy,
-                "direct_energy": direct_energy,
-                "absolute_difference": abs(quadratic_energy - direct_energy),
-            }
-        )
+        if abs(coefficient) <= guard:
+            predicted = _energy(reference, coefficient)
+            direct = _direct_energy(field, reference_time, coefficient, orders[-1])
+            replay.append({"coefficient": float(coefficient), "quadratic_energy": predicted,
+                           "direct_energy": direct, "absolute_difference": abs(predicted - direct)})
 
-    baseline_morphology = _cap_vorticity_morphology(
-        field, time=float(morphology_time), coefficient=0.0, grid_size=int(morphology_grid_size)
-    )
-    minus_morphology = _cap_vorticity_morphology(
-        field, time=float(morphology_time), coefficient=-half_width, grid_size=int(morphology_grid_size)
-    )
-    plus_morphology = _cap_vorticity_morphology(
-        field, time=float(morphology_time), coefficient=half_width, grid_size=int(morphology_grid_size)
-    )
-    trial_minus = _cap_vorticity_morphology(
-        field,
-        time=float(morphology_time),
-        coefficient=-PREVIOUS_CAPACITY_TRIAL,
-        grid_size=int(morphology_grid_size),
-    )
-    trial_plus = _cap_vorticity_morphology(
-        field,
-        time=float(morphology_time),
-        coefficient=PREVIOUS_CAPACITY_TRIAL,
-        grid_size=int(morphology_grid_size),
-    )
+    morphology = {
+        "baseline": _cap_vorticity_morphology(field, time=morphology_time, coefficient=0.0, grid_size=morphology_grid_size),
+        "minus_envelope": _cap_vorticity_morphology(field, time=morphology_time, coefficient=-half_width, grid_size=morphology_grid_size),
+        "plus_envelope": _cap_vorticity_morphology(field, time=morphology_time, coefficient=half_width, grid_size=morphology_grid_size),
+        "minus_capacity_trial": _cap_vorticity_morphology(field, time=morphology_time, coefficient=-PREVIOUS_CAPACITY_TRIAL, grid_size=morphology_grid_size),
+        "plus_capacity_trial": _cap_vorticity_morphology(field, time=morphology_time, coefficient=PREVIOUS_CAPACITY_TRIAL, grid_size=morphology_grid_size),
+    }
+    baseline = morphology["baseline"]
+    morphology["minus_envelope_delta"] = _morph_delta(baseline, morphology["minus_envelope"])
+    morphology["plus_envelope_delta"] = _morph_delta(baseline, morphology["plus_envelope"])
+    for percentile in (90, 99):
+        key = f"axial_q{percentile}_over_Zp"
+        base = float(baseline[key])
+        envelope_max = max(float(morphology["minus_envelope"][key]), float(morphology["plus_envelope"][key]))
+        trial_max = max(float(morphology["minus_capacity_trial"][key]), float(morphology["plus_capacity_trial"][key]))
+        morphology[f"baseline_q{percentile}_over_Zp"] = base
+        morphology[f"energy_envelope_max_q{percentile}_over_Zp"] = envelope_max
+        morphology[f"capacity_trial_max_q{percentile}_over_Zp"] = trial_max
+        morphology[f"energy_envelope_q{percentile}_moved_on_this_grid"] = bool(envelope_max != base)
 
-    q99_base = float(baseline_morphology["axial_q99_over_Zp"])
-    envelope_q99 = max(float(minus_morphology["axial_q99_over_Zp"]), float(plus_morphology["axial_q99_over_Zp"]))
-    trial_q99 = max(float(trial_minus["axial_q99_over_Zp"]), float(trial_plus["axial_q99_over_Zp"]))
-    q90_base = float(baseline_morphology["axial_q90_over_Zp"])
-    envelope_q90 = max(float(minus_morphology["axial_q90_over_Zp"]), float(plus_morphology["axial_q90_over_Zp"]))
-    trial_q90 = max(float(trial_minus["axial_q90_over_Zp"]), float(trial_plus["axial_q90_over_Zp"]))
-
-    capacity_amplitude_ratio = PREVIOUS_CAPACITY_TRIAL / half_width
-    result = {
+    return {
         "task_id": TASK_ID,
-        "source_candidate_sha256": str(field.candidate_sha256),
+        "source_candidate_sha256": str(field.sha256),
         "basis": "AXIAL_CAP_BANDED_C4_ODD_Z_POLOIDAL",
-        "basis_parameters_added": {
-            "fixed_spatial_shapes": 1,
-            "scalar_coefficients_if_materialized": 1,
-            "fitted_shape_parameters": 0,
-            "temporal_degrees_added": 0,
-        },
+        "basis_parameter_count": {"fixed_spatial_shapes": 1, "potential_scalar_coefficients": 1,
+                                  "fitted_shape_parameters": 0, "temporal_degrees_added": 0},
         "quadrature_orders": list(orders),
-        "quadrature_max_relative_coefficient_change": _quadrature_refinement(rows_by_order),
-        "reference_time": reference_time,
+        "quadrature_max_relative_coefficient_change": _refinement(rows),
+        "reference_energy_quadratic": dict(reference),
         "reference_energy_target": target,
         "reference_energy_abs_tolerance": tolerance,
-        "reference_energy_quadratic": dict(reference),
-        "normalization_roots_within_diagnostic_guard": _normalization_roots(
-            reference, target=target, diagnostic_search_guard=search_guard
-        ),
-        "zero_centered_energy_envelope": dict(envelope),
+        "zero_centered_fixed_parent_energy_envelope": dict(envelope),
+        "normalization_roots_within_diagnostic_guard": _normalization_roots(reference, target, guard),
         "previous_capacity_trial_abs_coefficient": PREVIOUS_CAPACITY_TRIAL,
-        "previous_capacity_trial_to_energy_envelope_amplitude_ratio": float(capacity_amplitude_ratio),
-        "previous_capacity_trial_inside_fixed_parent_energy_envelope": bool(PREVIOUS_CAPACITY_TRIAL <= half_width),
+        "capacity_trial_to_energy_envelope_amplitude_ratio": float(PREVIOUS_CAPACITY_TRIAL / half_width),
+        "capacity_trial_inside_fixed_parent_energy_envelope": bool(PREVIOUS_CAPACITY_TRIAL <= half_width),
         "validation_time_energy_rows": validation_rows,
-        "validation_time_energy_range_satisfied_over_envelope": bool(validation_range_satisfied),
-        "direct_energy_replay_checks": direct_checks,
-        "morphology": {
-            "time": float(morphology_time),
-            "grid_size": int(morphology_grid_size),
-            "baseline": baseline_morphology,
-            "negative_energy_envelope_endpoint": minus_morphology,
-            "positive_energy_envelope_endpoint": plus_morphology,
-            "negative_endpoint_delta_from_baseline": _morphology_delta(baseline_morphology, minus_morphology),
-            "positive_endpoint_delta_from_baseline": _morphology_delta(baseline_morphology, plus_morphology),
-            "negative_previous_capacity_trial": trial_minus,
-            "positive_previous_capacity_trial": trial_plus,
-            "baseline_axial_q90_over_Zp": q90_base,
-            "maximum_energy_envelope_axial_q90_over_Zp": envelope_q90,
-            "maximum_previous_trial_axial_q90_over_Zp": trial_q90,
-            "baseline_axial_q99_over_Zp": q99_base,
-            "maximum_energy_envelope_axial_q99_over_Zp": envelope_q99,
-            "maximum_previous_trial_axial_q99_over_Zp": trial_q99,
-            "energy_envelope_q90_moved_on_this_grid": bool(abs(envelope_q90 - q90_base) > 0.0),
-            "energy_envelope_q99_moved_on_this_grid": bool(abs(envelope_q99 - q99_base) > 0.0),
-        },
+        "validation_time_energy_range_satisfied_over_envelope": bool(validation_ok),
+        "direct_energy_replay_checks": replay,
+        "morphology_time": float(morphology_time),
+        "morphology_grid_size": int(morphology_grid_size),
+        "morphology": morphology,
         "routing_contract": (
-            "This audit decides only whether the previously demonstrated cap-localized tip morphology survives the unchanged "
-            "fixed-parent reference-energy gate. If useful q90/q99 movement survives inside the zero-centered envelope, "
-            "Agent 1 may materialize only this one bounded coefficient and Agent 2/3 must run fresh candidate-specific "
-            "energy/sign/support/divergence and held-out full momentum checks. If gross tip movement disappears inside the "
-            "fixed-parent envelope, do not add another cap or odd-q basis: next test an explicitly governed joint energy "
-            "renormalization for this same mode, and if that fails route the remaining tip defect to base support/taper geometry."
+            "If gross q90/q99 movement survives inside this fixed-parent energy envelope, Agent 1 may materialize only this "
+            "one bounded cap coefficient and Agent 2/3 must rerun fresh candidate-specific energy/sign/support/divergence and "
+            "held-out full momentum checks. If gross tip movement disappears, do not add another cap, higher odd-q, or swirl "
+            "basis: next test joint energy renormalization for this same mode; if that also fails, route the tip defect to base "
+            "support/taper geometry."
         ),
         "truth_boundary": dict(TRUTH_BOUNDARY),
     }
-    return result
 
 
 def main(argv: Iterable[str] | None = None) -> int:
