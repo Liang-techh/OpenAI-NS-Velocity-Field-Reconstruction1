@@ -263,6 +263,10 @@ def _i2_public_contract_audit(
         base_norm, 1.0e-300
     )
     speeds = np.linalg.norm(public_velocity, axis=1)
+    repair_delta = np.linalg.norm(public_velocity - uncorrected_public, axis=1)
+    repair_relative = repair_delta / np.maximum(speeds, 1.0e-300)
+    exact_count = int(np.count_nonzero(exact_equal))
+    visible = bool(not np.all(exact_equal))
     return {
         "sample_count": int(points.shape[0]),
         "fresh_probe_seed": SEED,
@@ -271,17 +275,22 @@ def _i2_public_contract_audit(
         "router_vs_uncorrected_base_max_abs": float(
             np.max(np.abs(public_velocity - uncorrected_public))
         ),
+        "router_vs_uncorrected_base_max_relative_to_public_speed": float(
+            np.max(repair_relative)
+        ),
         "public_vs_independent_source_base_max_relative": float(
             np.max(independent_relative)
         ),
         "public_speed_min": float(np.min(speeds)),
         "public_speed_max": float(np.max(speeds)),
-        "public_float64_heat_repair_visible": bool(not np.all(exact_equal)),
-        "module_level_after_heat_repair_attribution_available": bool(not np.all(exact_equal)),
+        "public_float64_heat_repair_visible": visible,
+        "module_level_after_heat_repair_attribution_available": False,
         "interpretation": (
-            "The high-precision heat repair is independently certified in PR #339, "
-            "but the default candidate-facing float64 I2 velocity is observationally "
-            "identical to the uncorrected public I2 base at these held-out probes."
+            "The high-precision heat repair is independently certified in PR #339. "
+            f"At these probes {exact_count}/{points.shape[0]} float64 velocities round "
+            "exactly to the uncorrected I2 base and the remaining visibility is only at "
+            "float64 rounding scale, so the public float64 router is not a robust contract "
+            "for module-level heat-repair attribution."
         ),
     }
 
@@ -402,12 +411,12 @@ def run_audit() -> dict[str, Any]:
         },
         "routing": {
             "agent1": (
-                "The segmented router is now independently consumable on its reference "
-                "stage, but its default float64 I2 view does not expose a distinguishable "
-                "heat-repair increment at the held-out probes. Preserve a precision-aware "
-                "public contract or explicit module-attribution limitation before calling "
-                "I2 an observable after-repair stage. Continue reconstructing the missing "
-                "global radial stages and matched pressure."
+                "The segmented router is independently consumable on its reference stage. "
+                "On I2 the high-precision repair changes only a subset of held-out float64 "
+                "probes and only at rounding scale, so preserve a precision-aware/rescaled "
+                "public contract or explicitly mark module-level after-repair attribution "
+                "unavailable. Continue reconstructing the missing global radial stages and "
+                "matched pressure."
             ),
             "agent2": (
                 "No change: actual-source public oscillatory velocity and an independent "
@@ -424,11 +433,12 @@ def run_audit() -> dict[str, Any]:
             "i2_float64_public_repair_observable_at_probes": bool(
                 i2["public_float64_heat_repair_visible"]
             ),
+            "i2_float64_public_repair_robustly_attributable": False,
             "global_leading_profile_reconstructed": False,
             "global_pressure_available": False,
             "complete_leading_oscillatory_correction_composite_available": False,
             "formal_full_domain_pde_gate_assessed": False,
-            "normalized_ns_residual_le_1e3_claimed": False,
+            "normalized_ns_residual_le_1e-3_claimed": False,
             "pde_validated": False,
             "paper_exact": False,
             "openai_field_identified": False,
