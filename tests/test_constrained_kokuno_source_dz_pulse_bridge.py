@@ -47,7 +47,12 @@ def test_source_n_prime_and_K_are_bound_on_fixed_slow_chart():
     )
 
     # K is a background object and therefore constant along this fixed-slow-point v path.
-    np.testing.assert_allclose(geometry["K"], geometry["K"][0], rtol=0.0, atol=2.0e-14)
+    np.testing.assert_allclose(
+        geometry["K"],
+        np.broadcast_to(geometry["K"][0], geometry["K"].shape),
+        rtol=0.0,
+        atol=2.0e-14,
+    )
     F = geometry["F"]
     F_R = geometry["F_R"]
     G_R = geometry["G_R"]
