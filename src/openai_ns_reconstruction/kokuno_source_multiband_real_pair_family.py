@@ -1,23 +1,23 @@
 """Source-scheduled multi-band Kokuno localized real-pair velocity family.
 
-This module closes one specific gap left by the earlier supplied-data family:
-Kokuno's corrected 2026-09-09 reconstruction assigns every dyadic band its own
-
-    Q_ell = 2^(-ell),      epsilon_ell = Q_ell^h.
-
-A single shared ``epsilon`` is therefore not a source-compatible realization of
-an actually multi-band family.  Here the whole slow squared partition is first
-validated, then every beta=(ell,a) label is curled with its *own* source-derived
-``epsilon_ell`` while retaining the complete support-gradient curl terms.  The
-real m=+/-1 pair is reconstructed by conjugation, each label receives the
-source physical factor ``Q_ell^(-A)``, A=1/2+h, and the labels are summed only
-after those per-band operations.
+Kokuno's corrected 2026-09-09 reconstruction assigns every dyadic band its
+own Q_ell=2^(-ell) and epsilon_ell=Q_ell^h.  This module validates one whole
+slow squared partition, evaluates every beta=(ell,a) label with its own source
+fast scale, retains the complete support-gradient curl terms, reconstructs the
+real m=+/-1 pair, applies Q_ell^(-A), A=1/2+h, and exposes by-beta/by-band
+physical velocity columns.
 
 The caller still supplies Phi, n_Phi, t_plus, D_r C_plus, D_z C_plus and the
 partition values/derivatives.  Actual positive-order/background data and the
 actual auxiliary-torus mode labels are not recovered here.  Thus the output is
 a source-scheduled supplied-mode correction family, not a paper-exact field or
 a public velocity(x,y,z,t) map.
+
+Numerical aggregation is repository engineering, not a source formula.  To
+make the physical field invariant under a simultaneous permutation of beta
+data and beta labels, totals are accumulated in a canonical (ell, repr(a))
+order and, for Cartesian output, through the same sorted by-band grouping that
+is exposed to downstream rank screens.  No scientific tolerance is relaxed.
 """
 from __future__ import annotations
 
@@ -58,6 +58,7 @@ _TRUTH_BOUNDARY = {
     "per_band_Q_physical_scaling_executable": True,
     "distinct_dyadic_band_columns_materialized_from_supplied_modes": True,
     "bounded_two_coordinate_handoff_available": True,
+    "deterministic_permutation_invariant_aggregation": True,
     "actual_positive_order_background_bound": False,
     "actual_auxiliary_torus_mode_family_bound": False,
     "source_rectangle_centers_recovered": False,
@@ -114,6 +115,16 @@ def _rotate_cylindrical_by_beta(v: np.ndarray, theta: np.ndarray) -> np.ndarray:
     )
 
 
+def _canonical_beta_indices(beta_labels: Sequence[tuple[Any, Any]]) -> tuple[int, ...]:
+    """Stable numerical reduction order; this is repository engineering only."""
+    return tuple(
+        sorted(
+            range(len(beta_labels)),
+            key=lambda j: (int(beta_labels[j][0]), repr(beta_labels[j][1])),
+        )
+    )
+
+
 @dataclass(frozen=True)
 class KokunoSourceMultiBandRealPairFamily:
     """Evaluate >=2 interacting dyadic bands with source-derived fast scales."""
@@ -138,7 +149,6 @@ class KokunoSourceMultiBandRealPairFamily:
                 raise ValueError(f"{name} must lie in (0,{upper:g}]")
             object.__setattr__(self, name, val)
         object.__setattr__(self, "h", h)
-        # Reuse #400's bounded-unit guard at construction time.
         KokunoBoundedFamilyCoefficientCoordinates(
             max_l1_update=self.coefficient_max_l1_update
         )
@@ -237,7 +247,6 @@ class KokunoSourceMultiBandRealPairFamily:
         )
         family_shape = data["eta"].shape
         sample_shape = family_shape[:-1]
-        n_beta = family_shape[-1]
 
         R_array = _finite_real(R, "R")
         try:
@@ -313,22 +322,37 @@ class KokunoSourceMultiBandRealPairFamily:
         physical_by_beta = np.stack(by_beta, axis=-2)
         plus_velocity = np.stack(plus_by_beta, axis=-2)
         minus_velocity = np.stack(minus_by_beta, axis=-2)
-        cyl_total = np.sum(physical_by_beta, axis=-2)
         cart_by_beta = _rotate_cylindrical_by_beta(physical_by_beta, theta_sample)
-        cart_total = np.sum(cart_by_beta, axis=-2)
 
-        band_columns = []
-        band_column_norms = []
+        canonical_indices = _canonical_beta_indices(data["beta_labels"])
+        band_index_groups: list[tuple[int, ...]] = []
+        cyl_band_columns: list[np.ndarray] = []
+        cart_band_columns: list[np.ndarray] = []
+        band_column_norms: list[float] = []
         for ell in data["active_ell_bands"]:
-            indices = [j for j, value in enumerate(data["ell_by_beta"]) if value == ell]
-            column = np.sum(np.take(cart_by_beta, indices, axis=-2), axis=-2)
-            if not np.any(column != 0.0):
+            indices = tuple(j for j in canonical_indices if data["ell_by_beta"][j] == ell)
+            if not indices:
+                raise RuntimeError(f"active ell={ell} has no beta labels after canonical ordering")
+            band_index_groups.append(indices)
+            cyl_column = np.sum(np.take(physical_by_beta, indices, axis=-2), axis=-2)
+            cart_column = np.sum(np.take(cart_by_beta, indices, axis=-2), axis=-2)
+            if not np.any(cart_column != 0.0):
                 raise ValueError(f"active ell={ell} collapses to an exactly zero physical band column")
-            band_columns.append(column)
-            band_column_norms.append(float(np.linalg.norm(column.reshape(-1, 3))))
-        cart_by_band = np.stack(band_columns, axis=-2)
-        if not np.allclose(np.sum(cart_by_band, axis=-2), cart_total, rtol=0.0, atol=2.0e-12):
-            raise RuntimeError("band aggregation does not reproduce the total Cartesian correction")
+            cyl_band_columns.append(cyl_column)
+            cart_band_columns.append(cart_column)
+            band_column_norms.append(float(np.linalg.norm(cart_column.reshape(-1, 3))))
+
+        covered = tuple(j for group in band_index_groups for j in group)
+        if covered != canonical_indices:
+            raise RuntimeError("canonical band grouping does not cover each beta exactly once")
+
+        cyl_by_band = np.stack(cyl_band_columns, axis=-2)
+        cart_by_band = np.stack(cart_band_columns, axis=-2)
+        # The public totals use exactly the same deterministic sorted band order
+        # as the exposed by-band columns.  This removes caller-order roundoff
+        # sensitivity without changing any source formula or tolerance.
+        cyl_total = np.sum(cyl_by_band, axis=-2)
+        cart_total = np.sum(cart_by_band, axis=-2)
 
         q_source = np.asarray(q_label, dtype=float)
         eps_source = np.asarray(eps_label, dtype=float)
@@ -356,6 +380,10 @@ class KokunoSourceMultiBandRealPairFamily:
             "velocity_physical_cartesian_by_band": cart_by_band,
             "velocity_physical_cartesian_total": cart_total,
             "band_column_norms": np.asarray(band_column_norms, dtype=float),
+            "deterministic_aggregation_beta_order": tuple(
+                data["beta_labels"][j] for j in canonical_indices
+            ),
+            "deterministic_permutation_invariant_aggregation": True,
             "distinct_dyadic_band_columns_materialized": True,
             "genuinely_independent_second_covariance_column_ready": False,
             "agent3_rank_screen_still_required": True,
@@ -394,7 +422,9 @@ class KokunoSourceMultiBandRealPairFamily:
         )
         return {
             "active_ell_bands": tuple(physical_family_result["active_ell_bands"]),
-            "Q_source_by_label": np.asarray(physical_family_result["Q_source_by_label"], dtype=float),
+            "Q_source_by_label": np.asarray(
+                physical_family_result["Q_source_by_label"], dtype=float
+            ),
             "epsilon_source_by_label": np.asarray(
                 physical_family_result["epsilon_source_by_label"], dtype=float
             ),

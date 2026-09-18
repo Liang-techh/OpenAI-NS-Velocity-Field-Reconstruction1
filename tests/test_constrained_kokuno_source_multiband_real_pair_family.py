@@ -49,6 +49,61 @@ def _inputs(labels=((5, (0, 0, 0)), (6, (1, 0, 0)))):
     }
 
 
+def _high_band_inputs():
+    """Three high bands make summation-order roundoff macroscopically visible."""
+    R = np.array([0.73, 0.91, 1.08, 1.26], dtype=float)
+    theta = np.array([0.13, -0.29, 0.47, -0.18], dtype=float)
+    alpha = 0.37 + 0.11 * R
+    beta = -0.21 + 0.07 * R
+    ca, sa = np.cos(alpha), np.sin(alpha)
+    cb, sb = np.cos(beta), np.sin(beta)
+    eta = np.stack((ca, sa * cb, sa * sb), axis=-1)
+    D_r_eta = np.stack(
+        (
+            -0.11 * sa,
+            0.11 * ca * cb - 0.07 * sa * sb,
+            0.11 * ca * sb + 0.07 * sa * cb,
+        ),
+        axis=-1,
+    )
+    D_z_eta = np.zeros_like(eta)
+
+    phase = np.stack(
+        (0.83 * R + 0.19, -1.11 * R + 0.07, 1.37 * R - 0.31), axis=-1
+    )
+    n_phi = np.zeros((R.size, 3, 3), dtype=float)
+    n_phi[..., 0] = 1.0
+    t_plus = np.empty((R.size, 3, 3), dtype=np.complex128)
+    t_plus[:, 0, :] = np.array([0.0, 0.31 + 0.09j, -0.22 + 0.04j])
+    t_plus[:, 1, :] = np.array([0.0, -0.27 + 0.06j, 0.18 - 0.08j])
+    t_plus[:, 2, :] = np.array([0.0, 0.14 - 0.11j, 0.29 + 0.03j])
+    D_r_C_plus = np.zeros_like(t_plus)
+    D_z_C_plus = np.zeros_like(t_plus)
+    return {
+        "R": R,
+        "theta": theta,
+        "phase": phase,
+        "n_phi": n_phi,
+        "t_plus": t_plus,
+        "D_r_C_plus": D_r_C_plus,
+        "D_z_C_plus": D_z_C_plus,
+        "eta": eta,
+        "D_r_eta": D_r_eta,
+        "D_z_eta": D_z_eta,
+        "beta_labels": ((221, (2, 0, 0)), (223, (0, 1, 0)), (225, (0, 0, 2))),
+    }
+
+
+def _permute_beta(data, permutation):
+    out = dict(data)
+    for key in ("phase", "eta", "D_r_eta", "D_z_eta"):
+        out[key] = data[key][..., permutation]
+    for key in ("n_phi", "t_plus", "D_r_C_plus", "D_z_C_plus"):
+        out[key] = data[key][..., permutation, :]
+    out["beta_labels"] = tuple(data["beta_labels"][j] for j in permutation)
+    return out
+
+
 def _evaluate(labels=((5, (0, 0, 0)), (6, (1, 0, 0))), h=0.004):
     contract = KokunoSourceMultiBandRealPairFamily(h=h)
     data = _inputs(labels)
@@ -101,6 +156,31 @@ def test_multiband_result_matches_explicit_per_label_complete_curls():
     np.testing.assert_allclose(
         np.sum(out["velocity_physical_cartesian_by_band"], axis=-2),
         out["velocity_physical_cartesian_total"], rtol=0, atol=2e-12,
+    )
+
+
+def test_simultaneous_beta_permutation_is_bitwise_invariant_at_high_Q_scaling():
+    contract = KokunoSourceMultiBandRealPairFamily(h=0.009)
+    data = _high_band_inputs()
+    baseline = contract.physical_family(**data)
+    permuted = contract.physical_family(**_permute_beta(data, (2, 0, 1)))
+
+    assert tuple(baseline["active_ell_bands"]) == (221, 223, 225)
+    assert baseline["deterministic_permutation_invariant_aggregation"] is True
+    assert baseline["deterministic_aggregation_beta_order"] == permuted[
+        "deterministic_aggregation_beta_order"
+    ]
+    np.testing.assert_array_equal(
+        baseline["velocity_physical_cartesian_by_band"],
+        permuted["velocity_physical_cartesian_by_band"],
+    )
+    np.testing.assert_array_equal(
+        baseline["velocity_physical_cartesian_total"],
+        permuted["velocity_physical_cartesian_total"],
+    )
+    np.testing.assert_array_equal(
+        baseline["velocity_physical_cylindrical_total"],
+        permuted["velocity_physical_cylindrical_total"],
     )
 
 
@@ -162,6 +242,7 @@ def test_truth_boundary_and_serialization_fail_closed(tmp_path):
     truth = payload["truth_boundary"]
     assert truth["source_per_band_Q_and_epsilon_schedule_executable"] is True
     assert truth["distinct_dyadic_band_columns_materialized_from_supplied_modes"] is True
+    assert truth["deterministic_permutation_invariant_aggregation"] is True
     assert truth["actual_positive_order_background_bound"] is False
     assert truth["actual_auxiliary_torus_mode_family_bound"] is False
     assert truth["public_xyz_t_velocity_correction_materialized"] is False
