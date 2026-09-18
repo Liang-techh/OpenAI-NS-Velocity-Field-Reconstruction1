@@ -72,7 +72,10 @@ def test_checkpoint_fails_closed_on_rank_promotion_or_missing_epsilon_rule() -> 
     with pytest.raises(ValueError, match="fail-closed state promoted"):
         validate_checkpoint(payload)
 
-    payload = build_checkpoint()
+    # build_checkpoint intentionally exposes immutable receipt constants by value
+    # convention; deep-copy here so this negative-control mutation cannot leak
+    # into later tests through the module-level receipt object.
+    payload = json.loads(json.dumps(build_checkpoint()))
     payload["upstream"]["agent3"]["epsilon_division_required"] = False
     payload["checkpoint_sha256"] = checkpoint_sha256(payload)
     with pytest.raises(ValueError, match="unit/truth boundary changed"):
