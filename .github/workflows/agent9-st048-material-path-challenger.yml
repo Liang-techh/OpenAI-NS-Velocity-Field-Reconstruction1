@@ -1,0 +1,85 @@
+name: agent9-st048-material-path-challenger
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/constrained_st048_material_path_challenger.py'
+      - 'tests/test_constrained_st048_material_path_challenger.py'
+      - 'docs/external_methods/CR-A9-044-st048-material-path-challenger.md'
+      - '.github/workflows/agent9-st048-material-path-challenger.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  frozen-challenger-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - name: Checkout Agent 9 branch
+        uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numerical test dependencies
+        run: python -m pip install -e . 'pytest>=8,<10' 'sympy>=1.12,<2'
+      - name: Compile and run focused regressions
+        run: |
+          python -W error -m py_compile src/openai_ns_reconstruction/constrained_st048_material_path_challenger.py
+          python -m pytest -q -W error tests/test_constrained_st048_material_path_challenger.py
+      - name: Checkout pinned ST048 source tree
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: 97695a86f85ce68fb4ae70c41fc81c904d655183
+          path: external/st048
+          persist-credentials: false
+      - name: Verify pinned source and replay both frozen children
+        run: |
+          test "$(git -C external/st048 rev-parse HEAD)" = "97695a86f85ce68fb4ae70c41fc81c904d655183"
+          python -m openai_ns_reconstruction.constrained_st048_material_path_challenger \
+            --candidate-root external/st048 \
+            --output outputs/agent9/ST048-S-B-material-path-challenger.json
+      - name: Fail closed on truth-boundary and provenance drift
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('outputs/agent9/ST048-S-B-material-path-challenger.json')
+          d=json.loads(p.read_text())
+          assert d['task_id']=='CR-A9-044'
+          assert d['base_main_sha']=='f0193d66c9d92948b4820ebcb70263673995b324'
+          assert set(d['candidates'])=={'ST048-S','ST048-B'}
+          expected={
+              'ST048-S':'6d9ce8407e29aca20d32599332ae3ec654f45678e17783179267665428ec8e09',
+              'ST048-B':'b599856cf191be10d554bdfa260328c089c96875142b41466b2c601a44ba3262',
+          }
+          for ident,sha in expected.items():
+              c=d['candidates'][ident]
+              assert c['source_head_sha']=='97695a86f85ce68fb4ae70c41fc81c904d655183'
+              assert c['original_raw_candidate_sha256']==sha
+              assert c['pde_validated'] is False
+              assert c['source_correspondence_verified'] is False
+              m=d['measurements'][ident]
+              assert m['path_count']==48 and m['paired_material_line_count']==24
+          assert d['references']['st047e']['source_report_sha256']=='e515cc1e614e4c7443abea9a919c60168be52fe241a49d87d86bc341bb06efa1'
+          assert d['references']['st006']['source_report_sha256']=='2595c8dafd0716b3b07cb9dc761b112e2178bf44200b9c50eff3c000c6166772'
+          truth=d['truth_boundary']
+          for k in ('visualization_ready','visual_correspondence_verified','pde_validated',
+                    'source_correspondence_verified','paper_exact','openai_field_identified','blowup_proved'):
+              assert truth[k] is False
+          assert truth['visual_acceptance_threshold_defined'] is False
+          assert truth['comparison_is_descriptive_not_acceptance'] is True
+          print(d['report_sha256'])
+          print(json.dumps(d['within_st048'],sort_keys=True))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ST048-S-B-material-path-challenger
+          path: outputs/agent9/ST048-S-B-material-path-challenger.json
+          if-no-files-found: error
