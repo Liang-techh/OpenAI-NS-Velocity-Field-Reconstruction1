@@ -1,0 +1,75 @@
+name: agent9-st046-material-path-challenger
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/constrained_st046_material_path_challenger.py'
+      - 'tests/test_constrained_st046_material_path_challenger.py'
+      - 'docs/external_methods/CR-A9-042-st046-material-path-challenger.md'
+      - '.github/workflows/agent9-st046-material-path-challenger.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  frozen-challenger-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - name: Checkout Agent 9 branch
+        uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numerical test dependencies
+        run: python -m pip install -e . 'pytest>=8,<10'
+      - name: Compile and run focused regressions
+        run: |
+          python -W error -m py_compile src/openai_ns_reconstruction/constrained_st046_material_path_challenger.py
+          python -m pytest -q -W error tests/test_constrained_st046_material_path_challenger.py
+      - name: Checkout pinned ST046-A source tree
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: 04d2fa64798d9639bddadb289cc9c23f116eec56
+          path: external/st046
+          persist-credentials: false
+      - name: Verify pinned challenger source and replay material paths
+        run: |
+          test "$(git -C external/st046 rev-parse HEAD)" = "04d2fa64798d9639bddadb289cc9c23f116eec56"
+          python -m openai_ns_reconstruction.constrained_st046_material_path_challenger \
+            --candidate-root external/st046 \
+            --output outputs/agent9/ST046-A-material-path-challenger.json
+      - name: Fail closed on truth-boundary drift
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('outputs/agent9/ST046-A-material-path-challenger.json')
+          d=json.loads(p.read_text())
+          assert d['task_id']=='CR-A9-042'
+          assert d['base_main_sha']=='f0193d66c9d92948b4820ebcb70263673995b324'
+          assert d['challenger']['source_head_sha']=='04d2fa64798d9639bddadb289cc9c23f116eec56'
+          assert d['challenger']['original_raw_candidate_sha256']=='94f5eeb0d94568587c9f3d88e69876a8051632830ded796f7c8b0db8e6707619'
+          assert d['challenger']['pde_validated'] is False
+          assert d['challenger_measurement']['path_count']==48
+          assert d['challenger_measurement']['paired_material_line_count']==24
+          assert d['st006_reference']['source_report_sha256']=='2595c8dafd0716b3b07cb9dc761b112e2178bf44200b9c50eff3c000c6166772'
+          truth=d['truth_boundary']
+          for k in ('visualization_ready','visual_correspondence_verified','pde_validated','paper_exact','openai_field_identified','blowup_proved'):
+              assert truth[k] is False
+          assert truth['visual_acceptance_threshold_defined'] is False
+          assert truth['comparison_is_descriptive_not_acceptance'] is True
+          print(d['report_sha256'])
+          print(json.dumps(d['descriptive_comparison'],sort_keys=True))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ST046-A-material-path-challenger
+          path: outputs/agent9/ST046-A-material-path-challenger.json
+          if-no-files-found: error
