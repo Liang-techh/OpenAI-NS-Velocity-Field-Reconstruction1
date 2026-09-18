@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "contract_id": "cr002_axial_cap_joint_renormalization_v1",
+  "audit_target": {
+    "pull_request": 335,
+    "upstream_head": "5e3a0c3d39dda3f2e40e0ef872c5dd25c289b307",
+    "mode": "AXIAL_CAP_BANDED_C4_ODD_Z_POLOIDAL",
+    "scope": "joint/global energy renormalization capacity evidence for the autonomous support-adjacent axial-cap poloidal direction"
+  },
+  "allowed_source_classes": [
+    "user_requirement",
+    "public_source_fact",
+    "autonomous_design",
+    "pending_unknown"
+  ],
+  "source_classification": {
+    "callable_velocity_delivery": "user_requirement",
+    "eq45_backbone": "public_source_fact",
+    "axial_cap_band_and_envelope": "autonomous_design",
+    "trial_coefficients_plus_minus_0p25": "autonomous_design",
+    "joint_global_energy_renormalization_rule": "autonomous_design",
+    "openai_hidden_numerical_profile": "pending_unknown"
+  },
+  "evidence_snapshot": {
+    "capacity_only": true,
+    "trial_magnitude": 0.25,
+    "negative_trial": {
+      "raw_reference_energy": 1.0138011944488259,
+      "common_velocity_scale": 0.9931700184515126,
+      "effective_cap_coefficient_after_scale": -0.24829250461287816,
+      "maximum_abs_stored_eq45_coefficient_after_scale": 3.9726800738060506,
+      "q90_over_Zp": 0.22851562499999992,
+      "q99_over_Zp": 0.76171875
+    },
+    "positive_trial": {
+      "raw_reference_energy": 1.0136667325639046,
+      "common_velocity_scale": 0.9932358877752897,
+      "effective_cap_coefficient_after_scale": 0.24830897194382243,
+      "maximum_abs_stored_eq45_coefficient_after_scale": 3.972943551101159,
+      "q90_over_Zp": 0.22851562499999992,
+      "q99_over_Zp": 0.76171875
+    },
+    "baseline_q90_over_Zp": 0.15234375000000008,
+    "baseline_q99_over_Zp": 0.38085937499999983,
+    "held_out_pde_residual_evaluated": false,
+    "production_coefficient_selected": false,
+    "production_bound_selected": false,
+    "candidate_sha_created": false
+  },
+  "integration_scope": {
+    "observed_active_base_head": "f6f4e15dabf9d4aa63cbf9740b0398dc3c47daf0",
+    "axial_shoulder_dependency_integrated": true,
+    "axial_cap_mode_integrated_on_active_branch": false,
+    "joint_renormalization_evidence_integrated_on_active_branch": false,
+    "open_stacked_capacity_evidence_may_not_replace_live_route": true,
+    "current_live_route_remains_compact_poloidal_child_materialization": true,
+    "axial_cap_promotion_requires_explicit_integration_decision": true
+  },
+  "representation_semantics": {
+    "nontrivial_common_rescaling_changes_velocity_field": true,
+    "nontrivial_common_rescaling_is_candidate_transformation": true,
+    "renormalization_factor_is_part_of_candidate_definition": true,
+    "requires_new_representation_family_identity_when_materialized": true,
+    "requires_new_candidate_sha_when_materialized": true,
+    "cannot_reuse_parent_pde_acceptance_results": true,
+    "positive_common_scale_preserves_fixed_time_streamline_directions": true,
+    "positive_common_scale_preserves_normalized_vorticity_location_fingerprints": true,
+    "positive_common_scale_does_not_preserve_navier_stokes_balance": true,
+    "positive_common_scale_does_not_certify_same_physical_time_pathlines": true,
+    "positive_common_scale_does_not_transfer_pressure_or_forcing_consistency": true
+  },
+  "coefficient_and_guard_governance": {
+    "plus_minus_0p25_is_diagnostic_only": true,
+    "trial_values_do_not_select_production_sign": true,
+    "trial_values_do_not_select_production_coefficient": true,
+    "trial_values_do_not_define_production_bound": true,
+    "inherited_eq45_coefficient_limit_is_representation_preflight_only": true,
+    "inherited_eq45_coefficient_limit_is_not_axial_cap_production_bound": true,
+    "passing_inherited_coefficient_preflight_is_not_candidate_acceptance": true,
+    "production_child_requires_explicit_autonomous_bound": true,
+    "production_child_requires_explicit_nonzero_value": true
+  },
+  "morphology_semantics": {
+    "q90_q99_extension_is_target_free_capacity_evidence": true,
+    "equal_q90_q99_for_both_trial_signs_does_not_select_sign": true,
+    "enstrophy_based_tip_reach_can_be_even_in_coefficient_sign": true,
+    "q90_q99_extension_does_not_establish_visual_correspondence": true,
+    "q90_q99_extension_does_not_establish_openai_field_identity": true,
+    "morphology_capacity_is_not_momentum_residual_jacobian_evidence": true,
+    "morphology_capacity_is_not_pde_validation": true
+  },
+  "acceptance_replay": {
+    "restoring_reference_energy_is_not_acceptance": true,
+    "required_checks_after_materialization": [
+      "reference_energy",
+      "validation_time_energy",
+      "core_rotation_sign",
+      "bipolar_radial_axial_direction_and_parity",
+      "axis_regularity",
+      "physical_support",
+      "registered_numeric_divergence",
+      "pressure_and_restricted_force_consistency",
+      "full_per_component_momentum_residual",
+      "actual_3d_streamline_and_vorticity_fingerprint"
+    ],
+    "formal_validation_must_be_fresh_from_model_selection_data": true,
+    "coefficient_or_renormalization_selection_data_are_model_selection_evidence": true,
+    "repository_st006_superiority_requires_protocol_aligned_replay": true
+  },
+  "canonical_invariants": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_parameter_bounds": {
+      "a": [0.0, 10.0],
+      "c": [0.0, 10.0]
+    },
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "divergence_max": 0.00001,
+    "divergence_L2": 0.00001,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001
+  },
+  "anti_shortcut_rules": {
+    "free_or_residual_dependent_f_equals_R_forbidden": true,
+    "zero_or_collapsed_velocity_shortcut_forbidden": true,
+    "renormalization_may_not_change_forcing_family": true,
+    "renormalization_may_not_change_nu_domain_support_norms_derivative_ladder_or_thresholds": true,
+    "green_ci_may_not_promote_scientific_state": true,
+    "unintegrated_stacked_evidence_may_not_be_called_canonical_candidate": true
+  },
+  "forbidden_inferences": [
+    "reference-energy restoration implies PDE validation",
+    "inherited Eq45 coefficient-limit preflight implies selected axial-cap production bound",
+    "equal signed tip-reach response selects a production coefficient sign",
+    "target-free q90/q99 extension implies OpenAI visual correspondence",
+    "target-free q90/q99 extension implies identification of the OpenAI field",
+    "joint-renormalized morphology capacity implies paper-exact reconstruction",
+    "open stacked PR evidence changes the canonical delivered velocity",
+    "green CI implies PDE validation"
+  ],
+  "independent_statuses": {
+    "velocity_export_ready_may_be_true_while_pde_validated_is_false": true,
+    "visualization_ready_is_independent": true,
+    "visual_correspondence_verified_is_independent": true,
+    "pde_validated_is_independent": true,
+    "paper_exact_is_independent": true,
+    "openai_field_identified_is_independent": true
+  },
+  "current_truth_state": {
+    "canonical_velocity_changed_by_this_contract": false,
+    "axial_cap_joint_renormalized_child_materialized": false,
+    "axial_cap_production_coefficient_selected": false,
+    "axial_cap_production_bound_selected": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  }
+}
