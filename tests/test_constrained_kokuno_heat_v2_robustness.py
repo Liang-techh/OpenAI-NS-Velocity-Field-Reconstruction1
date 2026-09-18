@@ -38,7 +38,7 @@ def test_independent_audit_detects_the_removed_factor_mutation(report):
 
 
 def test_resolution_and_truth_boundaries_remain_fail_closed(report):
-    assert summary := report["summary"]
+    summary = report["summary"]
     assert summary["medium_to_fine_max_relative"] <= 5.0e-5
     assert report["st006_directly_comparable"] is False
     assert report["fixed_project_references"] == {
