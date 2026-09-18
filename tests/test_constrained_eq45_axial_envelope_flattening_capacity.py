@@ -21,7 +21,7 @@ def test_alpha_zero_replays_governed_profile_jets():
 
 def test_axial_envelope_flattening_audit_preserves_support_and_reports_capacity():
     report = audit_axial_envelope_flattening_capacity(
-        alpha_steps=(0.02, 0.01), trial_alpha=1.0, morphology_grid_size=25
+        alpha_steps=(0.02, 0.01), trial_alpha=1.0, morphology_grid_size=33
     )
 
     growth = report["representation_increment"]
@@ -58,7 +58,7 @@ def test_axial_envelope_flattening_audit_preserves_support_and_reports_capacity(
                 "velocity": report["velocity_space_diagnostics"],
                 "local_morph": report["local_morphology_response_at_alpha_zero"],
                 "structure": report["structure_checks"],
-                "time_rows": report["time_slice_morphology"],
+                "time_deltas": [row["delta"] for row in report["time_slice_morphology"]],
             }
         )
     )
