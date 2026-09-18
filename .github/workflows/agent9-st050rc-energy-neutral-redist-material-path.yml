@@ -53,10 +53,24 @@ jobs:
       - name: Execute exact-source frozen material-path replay
         run: |
           mkdir -p outputs/agent9-st050rc-energy-neutral-redist-material-path
+          set +e
           PYTHONPATH=src python src/openai_ns_reconstruction/constrained_st050rc_energy_neutral_redist_material_path.py \
             --candidate-root external/st050r_source \
             --agent9-root external/agent9_path_source \
-            --out outputs/agent9-st050rc-energy-neutral-redist-material-path/report.json
+            --out outputs/agent9-st050rc-energy-neutral-redist-material-path/report.json \
+            > outputs/agent9-st050rc-energy-neutral-redist-material-path/run.log 2>&1
+          code=$?
+          set -e
+          cat outputs/agent9-st050rc-energy-neutral-redist-material-path/run.log
+          if [ "$code" -ne 0 ]; then
+            {
+              echo '### CR-A9-051 exact replay failure'
+              echo '```text'
+              tail -n 80 outputs/agent9-st050rc-energy-neutral-redist-material-path/run.log
+              echo '```'
+            } >> "$GITHUB_STEP_SUMMARY"
+            exit "$code"
+          fi
 
       - name: Verify fail-closed truth boundary and frozen population
         run: |
@@ -83,6 +97,11 @@ jobs:
           print('report_sha256=', r['report_sha256'])
           print('child_vs_parent=', r['child_vs_parent'])
           print('by_radius=', r['child_vs_parent_by_seed_radius'])
+          with open(__import__('os').environ['GITHUB_STEP_SUMMARY'], 'a') as s:
+              s.write('### CR-A9-051 exact replay\n\n')
+              s.write(f"- report SHA-256: `{r['report_sha256']}`\n")
+              s.write(f"- child vs parent: `{r['child_vs_parent']}`\n")
+              s.write(f"- by radius: `{r['child_vs_parent_by_seed_radius']}`\n")
           PY
 
       - uses: actions/upload-artifact@v4
