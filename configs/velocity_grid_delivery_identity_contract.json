@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "task_id": "CR002-VELOCITY-GRID-DELIVERY-IDENTITY-062",
+  "purpose": "separate analytic candidate identity, sampled-grid identity, serialized-file identity, canonical callable velocity delivery, and scientific truth states without changing any velocity or threshold",
+  "snapshot": {
+    "active_integration_branch": "codex/cr001-constraints",
+    "active_integration_head": "df830f678a50af2c5054d5662782a34775b27ff1",
+    "observed_delivery_pr": 404,
+    "observed_delivery_pr_state": "open_unintegrated",
+    "observed_delivery_pr_base": "main",
+    "note": "This is a governance snapshot. A later PR state change does not retroactively promote the sampled grid or candidate."
+  },
+  "allowed_source_classes": [
+    "user_requirement",
+    "public_source_fact",
+    "autonomous_design",
+    "pending_unknown"
+  ],
+  "source_classification": {
+    "callable_velocity_x_y_z_t": "user_requirement",
+    "save_load_delivery": "user_requirement",
+    "public_openai_visualization_observables": "public_source_fact",
+    "st048_candidate_recipe_and_repository_measurements": "autonomous_design",
+    "grid_resolution_times_format_and_checksum_scheme": "autonomous_design",
+    "cr001_validation_protocol": "autonomous_design",
+    "openai_hidden_numerical_velocity": "pending_unknown",
+    "openai_hidden_frame_time_camera_mapping": "pending_unknown",
+    "openai_hidden_parameters": "pending_unknown"
+  },
+  "identity_layers": {
+    "analytic_candidate": {
+      "candidate_id": "ST048-S",
+      "source_pr": 390,
+      "source_head_sha": "97695a86f85ce68fb4ae70c41fc81c904d655183",
+      "archived_raw_candidate_sha256": "6d9ce8407e29aca20d32599332ae3ec654f45678e17783179267665428ec8e09",
+      "role": "protocol_scoped_open_challenger",
+      "canonical_velocity_replaced": false,
+      "pde_validated": false
+    },
+    "sampled_grid": {
+      "producer_pr": 404,
+      "resolution": 33,
+      "times": [0.25, 0.5, 0.75],
+      "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+      "component_order": ["u", "v", "w"],
+      "grid_sha_role": "derived_sample_content_identity",
+      "grid_sha_is_candidate_sha": false,
+      "changing_resolution_or_times_changes_grid_identity_not_analytic_candidate_identity": true,
+      "sampled_grid_is_continuum_velocity_api": false,
+      "off_grid_or_unsampled_time_interpolation_requires_explicit_new_numerical_contract": true
+    },
+    "serialized_file": {
+      "format": "NetCDF",
+      "file_bytes_identity_is_grid_content_identity": false,
+      "serialization_metadata_may_change_without_changing_sampled_values": true,
+      "serialized_file_hash_may_replace_candidate_sha": false
+    },
+    "canonical_callable_delivery": {
+      "candidate_family": "eq45_supported_velocity_candidate_v1",
+      "candidate_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+      "velocity_api": "openai_ns_reconstruction.eq45_supported_delivery:velocity",
+      "velocity_export_ready": true,
+      "open_unintegrated_grid_export_changes_canonical_velocity_api": false,
+      "open_unintegrated_grid_export_changes_canonical_candidate": false,
+      "pde_failure_blocks_callable_velocity_delivery": false
+    }
+  },
+  "grid_evidence_scope": {
+    "allowed_claims": [
+      "the frozen analytic candidate was sampled at the declared nodes and times",
+      "the resulting grid is a cross-language visualization artifact when its source identity is preserved"
+    ],
+    "grid_ci_success_implies_candidate_promotion": false,
+    "grid_ci_success_implies_visual_correspondence": false,
+    "grid_ci_success_implies_pde_validated": false,
+    "grid_derivatives_are_cr001_pde_acceptance_evidence": false,
+    "grid_nodes_may_replace_cr001_held_out_sample": false,
+    "three_grid_times_may_replace_six_cr001_validation_times": false,
+    "visual_interpolation_may_be_called_exact_candidate_without_contract": false,
+    "sampled_grid_may_be_called_exact_openai_field": false
+  },
+  "canonical_cr001": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "force_mode": "restricted_two_parameter_family",
+    "force_bounds": {"a": [0.0, 10.0], "c": [0.0, 10.0]},
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "divergence_max": 1e-5,
+    "divergence_L2": 1e-5,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001
+  },
+  "truth_boundary": {
+    "canonical_velocity_export_ready": true,
+    "st048_sampled_grid_integrated_as_canonical_delivery": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "mutation_scope": {
+    "velocity_changed": false,
+    "candidate_changed": false,
+    "pressure_changed": false,
+    "forcing_changed": false,
+    "optimizer_changed": false,
+    "validation_sample_changed": false,
+    "norm_definition_changed": false,
+    "threshold_changed": false,
+    "active_route_changed": false,
+    "canonical_velocity_api_changed": false
+  }
+}
