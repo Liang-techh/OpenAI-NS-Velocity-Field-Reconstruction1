@@ -1,0 +1,59 @@
+name: agent9-st006-radial-circulation
+on:
+  pull_request:
+    paths:
+      - 'research_baseline/radial_circulation.py'
+      - 'tests/test_research_baseline_radial_circulation.py'
+      - 'docs/external_methods/CR-A9-038-st006-radial-circulation.md'
+      - '.github/workflows/agent9-st006-radial-circulation.yml'
+permissions:
+  contents: read
+jobs:
+  focused-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install focused dependencies
+        run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'pytest>=8,<10'
+      - name: Warning-clean compile
+        run: python -W error -m py_compile research_baseline/radial_circulation.py tests/test_research_baseline_radial_circulation.py
+      - name: Run focused regressions
+        run: python -m pytest -q -W error tests/test_research_baseline_radial_circulation.py
+      - name: Measure retained ST006
+        run: |
+          mkdir -p outputs
+          python -m research_baseline.radial_circulation --output outputs/ST006_radial_circulation.json > outputs/ST006_radial_circulation.stdout.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/ST006_radial_circulation.json').read_text())
+          assert r['candidate']=='ST006'
+          assert r['interpretation_boundary']['pde_validated'] is False
+          assert r['interpretation_boundary']['visual_correspondence_verified'] is False
+          print(json.dumps({
+              'candidate_sha256': r['candidate_sha256'],
+              'report_sha256': r['report_sha256'],
+              'endpoint_deltas': r['endpoint_deltas'],
+              'per_time_summary': [{
+                  'time': x['time'],
+                  'peak_abs_circulating_speed': x['peak_abs_circulating_speed'],
+                  'peak_abs_circulating_speed_radius': x['peak_abs_circulating_speed_radius'],
+                  'swirl_weighted_radius': x['swirl_weighted_radius'],
+                  'circulating_speed_relative_radial_range': x['circulating_speed_relative_radial_range'],
+                  'inward_mean_radial_ring_count': x['inward_mean_radial_ring_count'],
+              } for x in r['per_time']],
+          }, indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ST006-radial-circulation
+          path: outputs/ST006_radial_circulation.json
+          if-no-files-found: error
