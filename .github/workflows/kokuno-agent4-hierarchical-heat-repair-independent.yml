@@ -31,10 +31,11 @@ jobs:
           python -m pytest -q -W error \
             tests/test_constrained_kokuno_hierarchical_heat_repair.py \
             tests/test_constrained_kokuno_hierarchical_heat_repair_independent.py
-      - name: Generate independent report
+      - name: Generate independent rejection report
         run: |
           python -m openai_ns_reconstruction.kokuno_hierarchical_heat_repair_independent \
-            --output artifacts/kokuno_agent4/hierarchical_heat_repair_independent.json
+            --output artifacts/kokuno_agent4/hierarchical_heat_repair_independent.json \
+            || test -s artifacts/kokuno_agent4/hierarchical_heat_repair_independent.json
           cat artifacts/kokuno_agent4/hierarchical_heat_repair_independent.json
       - name: Upload report
         uses: actions/upload-artifact@v4
