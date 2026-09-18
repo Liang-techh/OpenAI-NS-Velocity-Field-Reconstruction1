@@ -37,31 +37,22 @@ def test_axial_envelope_flattening_audit_preserves_support_and_reports_capacity(
     assert structure["representative_core_signs_all_pass"] is True
 
     velocity = report["velocity_space_diagnostics"]
-    assert velocity["rank_condition"]["normalized_rank"] >= 4
-    assert math.isfinite(velocity["finite_difference_refinement_relative_change"])
-    assert 0.0 <= velocity["envelope_novelty_outside_existing_four_span"] <= 1.0 + 1e-12
+    assert velocity["rank_condition"]["normalized_rank"] == 5
+    assert velocity["rank_condition"]["normalized_condition_number"] < 10.0
+    assert velocity["finite_difference_refinement_relative_change"] < 1e-3
+    assert velocity["envelope_novelty_outside_existing_four_span"] > 0.40
     assert velocity["envelope_response_rms_per_public_velocity_component"] > 0.0
 
-    for key in ("axial_q90_over_Zp_delta", "axial_q99_over_Zp_delta", "axial_rms_over_Zp_delta"):
-        assert math.isfinite(report["trial_delta"][key])
+    delta = report["trial_delta"]
+    assert delta["axial_q90_over_Zp_delta"] > 0.07
+    assert delta["axial_q99_over_Zp_delta"] > 0.07
+    assert delta["axial_rms_over_Zp_delta"] > delta["radial_rms_over_Rp_delta"] > 0.0
     assert len(report["time_slice_morphology"]) == 3
+    assert all(row["delta"]["axial_q90_over_Zp_delta"] > 0.05 for row in report["time_slice_morphology"])
+
     assert report["truth_boundary"]["held_out_pde_residual_evaluated"] is False
     assert report["truth_boundary"]["visual_correspondence_verified"] is False
     assert report["truth_boundary"]["pde_validated"] is False
-
-    pytest.fail(
-        repr(
-            {
-                "baseline": report["baseline_morphology"],
-                "trial": report["trial_morphology"],
-                "delta": report["trial_delta"],
-                "velocity": report["velocity_space_diagnostics"],
-                "local_morph": report["local_morphology_response_at_alpha_zero"],
-                "structure": report["structure_checks"],
-                "time_deltas": [row["delta"] for row in report["time_slice_morphology"]],
-            }
-        )
-    )
 
 
 def test_axial_envelope_flattening_rejects_invalid_inputs():
