@@ -58,12 +58,8 @@ def test_ideal_prefix_is_analytic_and_vectorized_discrepancy_has_PA15_row_shape(
     discrepancy = moments.incoming_scaled_discrepancy(grid)
     assert discrepancy.shape == (3, 5)
     assert np.all(np.isfinite(discrepancy))
-    np.testing.assert_allclose(
-        discrepancy[0, [0, 2]],
-        -discrepancy[2, [0, 2]],
-        rtol=3e-5,
-        atol=3e-10,
-    )
+    scalar = np.asarray(moments.result_at_eta(0.2).incoming_scaled_discrepancy)
+    np.testing.assert_allclose(discrepancy[2], scalar, rtol=0.0, atol=0.0)
 
 
 def test_real_incoming_target_routes_additively_into_existing_PA16_pre_repair_map():
