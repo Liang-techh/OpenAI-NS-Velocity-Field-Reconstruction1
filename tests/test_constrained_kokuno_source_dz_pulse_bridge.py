@@ -84,15 +84,10 @@ def _parent_C(parent, geometry, forcing):
     return C
 
 
-def _relative_error(actual, expected):
-    scale = max(1.0e-12, float(np.linalg.norm(expected)))
-    return float(np.linalg.norm(actual - expected) / scale)
-
-
 def _shifted_parent_C(bridge, candidate, phase, parent, R, Z0, T, v, f0, D_z_f, shift):
     geometry = bridge.source_geometry(candidate, phase, R, Z0 + shift, T, v)
     forcing = f0 + (shift / phase.epsilon) * D_z_f
-    return _parent_C(parent, geometry, forcing), geometry
+    return _parent_C(parent, geometry, forcing)
 
 
 def test_Dz_C_m_matches_independent_shifted_parent_solves_and_refines():
@@ -104,16 +99,15 @@ def test_Dz_C_m_matches_independent_shifted_parent_solves_and_refines():
     reference = solved["D_z_C_m"]
     parent = KokunoProjectedPulseInverseContract(epsilon=phase.epsilon, m=phase.m)
 
-    # This comparison intentionally differentiates the unchanged parent pulse solver,
-    # not the sensitivity implementation.  A five-point stencil removes the large
-    # O(delta^2) cancellation error seen with the two-point comparator on this very
-    # small D_z C_m signal.
+    # Differentiate the unchanged parent pulse solver itself.  The five-point
+    # comparator is intentionally independent of the sensitivity code and is run
+    # in the asymptotic refinement range established by the coarser diagnostic.
     errors = []
-    for delta in (2.0e-3, 1.0e-3, 5.0e-4):
-        C_m2, _ = _shifted_parent_C(bridge, c, phase, parent, R, Z0, T, v, f0, D_z_f, -2.0 * delta)
-        C_m1, _ = _shifted_parent_C(bridge, c, phase, parent, R, Z0, T, v, f0, D_z_f, -delta)
-        C_p1, _ = _shifted_parent_C(bridge, c, phase, parent, R, Z0, T, v, f0, D_z_f, delta)
-        C_p2, _ = _shifted_parent_C(bridge, c, phase, parent, R, Z0, T, v, f0, D_z_f, 2.0 * delta)
+    for delta in (5.0e-4, 2.5e-4, 1.25e-4):
+        C_m2 = _shifted_parent_C(bridge, c, phase, parent, R, Z0, T, v, f0, D_z_f, -2.0 * delta)
+        C_m1 = _shifted_parent_C(bridge, c, phase, parent, R, Z0, T, v, f0, D_z_f, -delta)
+        C_p1 = _shifted_parent_C(bridge, c, phase, parent, R, Z0, T, v, f0, D_z_f, delta)
+        C_p2 = _shifted_parent_C(bridge, c, phase, parent, R, Z0, T, v, f0, D_z_f, 2.0 * delta)
         fd4 = phase.epsilon * (C_m2 - 8.0 * C_m1 + 8.0 * C_p1 - C_p2) / (12.0 * delta)
         scale = max(1.0e-12, float(np.linalg.norm(reference[1:])))
         errors.append(float(np.linalg.norm(fd4[1:] - reference[1:]) / scale))
