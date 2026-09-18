@@ -42,9 +42,13 @@ def _transverse_t(contract, R, theta, Z):
     R, theta, Z = np.broadcast_arrays(
         np.asarray(R, dtype=float), np.asarray(theta, dtype=float), np.asarray(Z, dtype=float)
     )
+    # Source slow amplitudes are independent of the fast angular phase.  Keep
+    # this manufactured check in that same class so an independent theta
+    # derivative tests only exp(i*k_m*Phi), exactly as the complete-curl
+    # contract assumes.
     raw = np.stack(
         (
-            0.75 + 0.08 * R + 0.02 * np.cos(theta),
+            0.75 + 0.08 * R,
             -0.31 + 0.05 * Z,
             0.22 + 0.03 * R * Z,
         ),
