@@ -1,0 +1,62 @@
+name: agent7-st048s-energy-neutral-swirl-redistribution
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st048/agent7_st048s_energy_neutral_swirl_redistribution.py'
+      - 'experiments/root_st048/test_agent7_st048s_energy_neutral_swirl_redistribution.py'
+      - '.github/workflows/agent7-st048s-energy-neutral-swirl-redistribution.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Test energy-neutral redistribution screen
+        working-directory: experiments/root_st048
+        run: python -m pytest -q -W error test_agent7_st048s_energy_neutral_swirl_redistribution.py
+      - name: Generate energy-neutral redistribution report
+        working-directory: experiments/root_st048
+        run: |
+          python agent7_st048s_energy_neutral_swirl_redistribution.py --output ../../artifacts/st048_agent7_energy_neutral_swirl_redistribution/report.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('../../artifacts/st048_agent7_energy_neutral_swirl_redistribution/report.json').read_text())
+          print('smallest_crossing=',r['smallest_preregistered_clean_energy_neutral_redistribution_crossing'])
+          print('energy_balance=',json.dumps(r['energy_balance_fine'],sort_keys=True))
+          print('profile=',json.dumps(r['profile_design'],sort_keys=True))
+          print('sensitivity=',json.dumps(r['four_column_velocity_sensitivity'],sort_keys=True))
+          for row in r['rows']:
+              print(json.dumps({
+                  'gain':row['redistribution_gain'],
+                  'scale':row['common_energy_normalization_scale'],
+                  'scale_vs_gain0':row['scale_relative_to_gain0'],
+                  'preflight':row['preflight_pass'],
+                  'clean':row['clean_energy_neutral_redistribution_rule_pass'],
+                  'angular_by_radius':row['seed_radius_angular_rate_relative_changes'],
+                  'inward_by_radius':row['seed_radius_inward_speed_relative_changes'],
+                  'aggregate_angular':row['aggregate_angular_rate_relative_changes'],
+                  'aggregate_inward':row['aggregate_inward_speed_relative_changes'],
+                  'axial':row['axial_rms_relative_changes_vs_gain0'],
+                  'radial':row['radial_rms_relative_changes_vs_gain0'],
+                  'q90':row['q90_deltas_over_support_vs_gain0'],
+                  'q99':row['q99_deltas_over_support_vs_gain0'],
+                  'collar':row['collar_enstrophy_ratios_vs_gain0'],
+              },sort_keys=True))
+          print(r['routing'])
+          PY
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: agent7-st048s-energy-neutral-swirl-redistribution
+          path: artifacts/st048_agent7_energy_neutral_swirl_redistribution/report.json
