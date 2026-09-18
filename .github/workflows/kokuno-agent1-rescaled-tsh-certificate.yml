@@ -27,10 +27,13 @@ jobs:
           python-version: '3.11'
       - name: Install
         run: python -m pip install -e '.[dev]'
-      - name: Generate shared-C PA10 receipt
+      - name: Focused regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_rescaled_inner_join_tsh_certificate.py
+      - name: Generate shared-C PA10 obstruction receipt
         run: |
           python -m openai_ns_reconstruction.kokuno_rescaled_inner_join_tsh_certificate \
-            --eta-nodes 5 \
             --axis-quadrature-points 64 \
             --output artifacts/kokuno_agent1/rescaled_tsh_certificate/report.json
       - name: Validate fail-closed receipt
@@ -42,36 +45,41 @@ jobs:
           report = json.loads(
               Path("artifacts/kokuno_agent1/rescaled_tsh_certificate/report.json").read_text()
           )
-          selected = report["selected_B0"]
+          witness = report["pointwise_B0_lower_bound"]
           geometry = report["geometry"]
           truth = report["truth_boundary"]
 
-          assert selected["disjoint_holdout_within_envelope"] is True
-          assert geometry["separation_geometry_feasible"] is False
-          assert geometry["separation_geometry_margin"] < 0.0
+          assert witness["pointwise_B0_lower_bound"] > 0.0
+          assert witness["analytic_source_B0_bound_proved"] is False
+          assert geometry["selected_path_pointwise_obstructed"] is True
+          assert geometry["separation_margin_upper_bound"] < 0.0
+          assert geometry["minimum_log_x_sep_from_witness"] >= -8.0
           assert report["selected_pa16_handoff_allowed"] is False
           assert truth["source_T_sh_lower_bound_verified"] is False
           assert truth["inner_to_outer_join_completed"] is False
           assert truth["pde_validated"] is False
           assert truth["paper_exact"] is False
 
-          print("construction_max_abs_ell_i=", selected["construction_max_abs_ell_i"])
-          print("holdout_max_abs_ell_i=", selected["holdout_max_abs_ell_i"])
-          print("selected_numerical_B0_envelope=", selected["selected_numerical_B0_envelope"])
-          print(
-              "T_sh_lower_bound_from_selected_numerical_B0=",
-              geometry["T_sh_lower_bound_from_selected_numerical_B0"],
-          )
+          print("witness_eta=", witness["witness_eta"])
+          print("ell_i_at_witness=", witness["ell_i_at_witness"])
+          print("pointwise_B0_lower_bound=", witness["pointwise_B0_lower_bound"])
+          print("pointwise_T_sh_lower_bound=", geometry["pointwise_T_sh_lower_bound"])
           print("selected_log_C=", geometry["selected_log_C"])
           print("selected_log_X_R=", geometry["selected_log_X_R"])
           print(
               "max_T_sh_for_current_shared_C_scale=",
               geometry["max_T_sh_for_current_shared_C_scale"],
           )
-          print("selected_log_x_sep=", geometry["selected_log_x_sep"])
-          print("separation_geometry_margin=", geometry["separation_geometry_margin"])
+          print(
+              "minimum_log_x_sep_from_witness=",
+              geometry["minimum_log_x_sep_from_witness"],
+          )
+          print(
+              "separation_margin_upper_bound=",
+              geometry["separation_margin_upper_bound"],
+          )
           PY
       - uses: actions/upload-artifact@v4
         with:
-          name: kokuno-agent1-rescaled-tsh-certificate-v1
+          name: kokuno-agent1-rescaled-tsh-certificate-v2
           path: artifacts/kokuno_agent1/rescaled_tsh_certificate/report.json
