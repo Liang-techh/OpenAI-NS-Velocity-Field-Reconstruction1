@@ -1,0 +1,6 @@
+{
+  "utc": "2026-09-18T22:49:24.277021+00:00",
+  "reason": "Explicit minimax iterates can violate auxiliary epigraph q while the physical field is usable. Recompute q from the full training pool; if physical/structure constraints fail, allow a bounded closest-feasible correction after the two original fits. No validation data have been inspected.",
+  "method": "At most8 sequential linearized minimum-norm feasibility projections in existing solver coordinates; <=70innerSLSQPsteps and240seconds total. Original constraints/tolerances unchanged. Select only a feasible lower fullTRAININGpool peak; otherwise keep parent. Epigraph q is recomputed, not a physical coefficient.",
+  "supervisor_change": "Stopped waiting orchestrator only, not the running optimizer; restart to perform projection before freeze or independent validation."
+}
