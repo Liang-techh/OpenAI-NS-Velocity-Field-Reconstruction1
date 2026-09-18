@@ -11,6 +11,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
 
 jobs:
   render:
@@ -19,18 +20,6 @@ jobs:
     steps:
       - name: Checkout Agent 9 branch
         uses: actions/checkout@v4
-
-      - name: Checkout exact CR-A9-053 visualization source
-        uses: actions/checkout@v4
-        with:
-          ref: d068e0d4c2cdce23a08aec791af8d2d59e459e65
-          path: _source/grid_exporter
-
-      - name: Checkout exact ST051-B source
-        uses: actions/checkout@v4
-        with:
-          ref: 4b784f1b8457af2ead49295631d834d4e882000b
-          path: _source/st051
 
       - uses: actions/setup-python@v5
         with:
@@ -41,70 +30,79 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -e . pytest "matplotlib==3.10.6"
 
-      - name: Verify immutable source identities
-        run: |
-          test "$(git -C _source/grid_exporter rev-parse HEAD)" = "d068e0d4c2cdce23a08aec791af8d2d59e459e65"
-          test "$(git -C _source/st051 rev-parse HEAD)" = "4b784f1b8457af2ead49295631d834d4e882000b"
-
       - name: Run focused warning-clean regressions
         run: |
           python -W error -m py_compile src/openai_ns_reconstruction/constrained_st051b_streamline_vorticity_render.py
           python -W error -m pytest -q tests/test_constrained_st051b_streamline_vorticity_render.py
 
-      - name: Reconstruct frozen parent and child and render comparison
+      - name: Download immutable CR-A9-053 visualization artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ST051-B-frozen-redistribution-visualization-grid
+          path: _source/grid_artifact
+          github-token: ${{ github.token }}
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          run-id: 35389278384
+
+      - name: Verify immutable source receipt and render comparison
         env:
           MPLBACKEND: Agg
         run: |
           python - <<'PY'
-          import importlib.util
           import json
           from pathlib import Path
           import numpy as np
           import matplotlib
 
           from openai_ns_reconstruction.constrained_st051b_streamline_vorticity_render import (
-              GRID_RESOLUTION,
+              GRID_SOURCE_RECEIPT_SHA256,
+              GRID_SOURCE_SHA256,
+              apply_frozen_child_transform,
               analyze_pair,
+              load_child_grid_netcdf,
+              recover_parent_grid,
               render_pair,
-              sample_velocity_grid,
               save_report,
           )
 
           if matplotlib.__version__ != "3.10.6":
               raise SystemExit(f"unexpected matplotlib version {matplotlib.__version__}")
 
-          exporter_path = Path("_source/grid_exporter/src/openai_ns_reconstruction/constrained_st051b_redistribution_visualization_grid.py")
-          spec = importlib.util.spec_from_file_location("a9_grid_exporter_exact", exporter_path)
-          module = importlib.util.module_from_spec(spec)
-          assert spec.loader is not None
-          spec.loader.exec_module(module)
+          root = Path("_source/grid_artifact")
+          receipt_path = root / "ST051-B-frozen-redistribution-receipt.json"
+          grid_path = root / "ST051-B-frozen-redistribution.nc"
+          receipt = json.loads(receipt_path.read_text())
+          candidate = receipt["candidate"]
+          if receipt.get("receipt_sha256") != GRID_SOURCE_RECEIPT_SHA256:
+              raise SystemExit("CR-A9-053 receipt identity drift")
+          if receipt["grid"].get("grid_sha256") != GRID_SOURCE_SHA256:
+              raise SystemExit("CR-A9-053 grid identity drift")
+          if candidate.get("parent_head_sha") != "4b784f1b8457af2ead49295631d834d4e882000b":
+              raise SystemExit("ST051-B parent identity drift")
+          if candidate.get("transfer_head_sha") != "95f94188270f02511c8bdf660822f77530c9983a":
+              raise SystemExit("frozen transfer identity drift")
+          if abs(candidate.get("common_reference_energy_scale") - 1.0014791925672812) > 5e-12:
+              raise SystemExit("frozen normalization drift")
+          if any(value is True for value in receipt["truth_boundary"].values()):
+              raise SystemExit("source artifact contains unsupported truth promotion")
 
-          candidate_root = Path("_source/st051")
-          child_velocity, metadata = module.load_st051b_redistribution_velocity(candidate_root)
-          family, raw, _modifiers_sha = module._load_parent(candidate_root)
-
-          def parent_velocity(points, time):
-              return module._parent_velocity(family, raw, points, time)
-
-          parent_axis, parent_fields = sample_velocity_grid(
-              parent_velocity, resolution=GRID_RESOLUTION
-          )
-          child_axis, child_fields = sample_velocity_grid(
-              child_velocity, resolution=GRID_RESOLUTION
-          )
-          if not np.array_equal(parent_axis, child_axis):
-              raise SystemExit("parent/child axes differ")
+          axis, child_fields = load_child_grid_netcdf(grid_path)
+          parent_fields = recover_parent_grid(axis, child_fields)
+          roundtrip = apply_frozen_child_transform(axis, parent_fields)
+          roundtrip_max = float(np.max(np.abs(roundtrip - child_fields)))
+          if roundtrip_max > 5e-13:
+              raise SystemExit(f"frozen transform round-trip drift: {roundtrip_max}")
 
           output = Path("artifacts/agent9_st051b_render")
           output.mkdir(parents=True, exist_ok=True)
-          np.savez_compressed(output / "parent_grid.npz", axis=parent_axis, velocity=parent_fields)
-          np.savez_compressed(output / "child_grid.npz", axis=child_axis, velocity=child_fields)
+          np.savez_compressed(output / "parent_grid_recovered.npz", axis=axis, velocity=parent_fields)
+          np.savez_compressed(output / "child_grid_exact.npz", axis=axis, velocity=child_fields)
 
-          report = analyze_pair(parent_axis, parent_fields, child_axis, child_fields)
-          report["exact_child_metadata"] = metadata
+          report = analyze_pair(axis, parent_fields, axis, child_fields)
+          report["source_receipt"] = receipt
+          report["inverse_transform_roundtrip_max_abs"] = roundtrip_max
           report["render_files"] = [
-              Path(path).name
-              for path in render_pair(parent_axis, parent_fields, child_fields, output)
+              Path(path).name for path in render_pair(axis, parent_fields, child_fields, output)
           ]
           report_sha = save_report(report, output / "report.json")
 
@@ -121,6 +119,7 @@ jobs:
 
           summary = {
               "report_sha256": report_sha,
+              "inverse_transform_roundtrip_max_abs": roundtrip_max,
               "times": [],
           }
           for row in report["per_time"]:
@@ -128,8 +127,12 @@ jobs:
                   "time": row["time"],
                   "parent_mean_turns": row["parent"]["streamlines"]["mean_absolute_turns"],
                   "child_mean_turns": row["child"]["streamlines"]["mean_absolute_turns"],
+                  "parent_max_turns": row["parent"]["streamlines"]["max_absolute_turns"],
+                  "child_max_turns": row["child"]["streamlines"]["max_absolute_turns"],
                   "parent_axial_rms": row["parent"]["vorticity"]["selected_axial_rms"],
                   "child_axial_rms": row["child"]["vorticity"]["selected_axial_rms"],
+                  "parent_radial_rms": row["parent"]["vorticity"]["selected_radial_rms"],
+                  "child_radial_rms": row["child"]["vorticity"]["selected_radial_rms"],
               })
           print(json.dumps(summary, indent=2, sort_keys=True))
           PY
