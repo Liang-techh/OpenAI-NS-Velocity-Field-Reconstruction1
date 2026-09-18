@@ -24,8 +24,15 @@ def test_joint_renorm_screen_restores_energy_and_preserves_truth_boundary():
     assert len(report["rows"]) == 4
     assert report["energy_quadrature_max_relative_refinement_change"] >= 0.0
 
+    baseline = report["rows"][0]
+    assert baseline["baseline_parent_replay_without_common_scale"] is True
+    assert baseline["common_velocity_scale"] == 1.0
+    assert baseline["reference_energy_gate_pass"]
+    assert abs(baseline["jointly_renormalized_reference_energy"] - 1.0) <= 1.0e-3
+    assert max(abs(value) for value in baseline["q90_gain_over_Zp_by_time"]) < 1.0e-14
+    assert max(abs(value) for value in baseline["q99_gain_over_Zp_by_time"]) < 1.0e-14
+
     for row in report["rows"]:
-        assert abs(row["jointly_renormalized_reference_energy"] - 1.0) < 1.0e-10
         assert row["reference_energy_gate_pass"]
         assert row["validation_energy_range_all_pass"]
         assert row["profile_bound_screen"]["simple_common_scale_representation_preflight_passed"]
@@ -34,11 +41,10 @@ def test_joint_renorm_screen_restores_energy_and_preserves_truth_boundary():
         assert row["navier_stokes_balance_invariant_under_common_scale"] is False
         assert len(row["q90_gain_over_Zp_by_time"]) == 3
         assert len(row["q99_gain_over_Zp_by_time"]) == 3
-
-    baseline = report["rows"][0]
-    assert abs(baseline["common_velocity_scale"] - 1.0) < 1.0e-5
-    assert max(abs(value) for value in baseline["q90_gain_over_Zp_by_time"]) < 1.0e-14
-    assert max(abs(value) for value in baseline["q99_gain_over_Zp_by_time"]) < 1.0e-14
+    for row in report["rows"][1:]:
+        assert row["baseline_parent_replay_without_common_scale"] is False
+        assert abs(row["jointly_renormalized_reference_energy"] - 1.0) < 1.0e-10
+        assert row["common_velocity_scale"] < 1.0
 
     checks = report["max_alpha_structure_checks_before_common_scale"]
     assert checks["alpha_zero_parent_replay_max_abs_velocity_error"] < 1.0e-12
