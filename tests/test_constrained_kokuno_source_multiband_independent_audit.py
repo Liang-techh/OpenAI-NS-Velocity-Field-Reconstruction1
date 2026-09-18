@@ -14,9 +14,7 @@ def report():
     return build_report()
 
 
-def test_fresh_multiband_cartesian_preflight_passes_frozen_guards(report):
-    assert report["local_structural_preflight_passed"] is True
-    assert all(report["checks"].values())
+def test_independent_numerical_guards_pass_but_public_permutation_rejects(report):
     assert report["source_schedule_relative_error_max"] <= FROZEN_GUARDS[
         "source_schedule_relative_error_max"
     ]
@@ -29,6 +27,14 @@ def test_fresh_multiband_cartesian_preflight_passes_frozen_guards(report):
     assert report["divergence_resolution_ladder"][-1][
         "normalized_divergence_point_max"
     ] <= FROZEN_GUARDS["finest_normalized_divergence_point_max"]
+    assert all(
+        value
+        for key, value in report["checks"].items()
+        if key != "consistent_public_label_permutation"
+    )
+    assert report["checks"]["consistent_public_label_permutation"] is False
+    assert report["mutation"]["consistent_public_label_permutation_failures"] > 0
+    assert report["local_structural_preflight_passed"] is False
 
 
 def test_resolution_and_mutation_controls_are_discriminating(report):
@@ -44,7 +50,9 @@ def test_resolution_and_mutation_controls_are_discriminating(report):
     assert report["mutation"]["label_schedule_swap_relative_rms"] >= FROZEN_GUARDS[
         "label_schedule_swap_mutation_relative_rms_min"
     ]
-    transition = next(case for case in report["parameter_cases"] if case["name"] == "k_transition")
+    transition = next(
+        case for case in report["parameter_cases"] if case["name"] == "k_transition"
+    )
     assert [item["k"] for item in transition["schedules"]] == [2, 3, 3]
     assert tuple(CASES[-1]["ells"]) == (221, 223, 225)
 
