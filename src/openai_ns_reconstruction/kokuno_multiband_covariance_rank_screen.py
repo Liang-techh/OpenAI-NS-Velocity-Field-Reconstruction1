@@ -1,6 +1,6 @@
 """Agent-3 mean-covariance rank screen for Agent-2 supplied multi-band families.
 
-This module is downstream of ``KokunoSourceMultiBandRealPairFamily``.  It does
+This module is downstream of ``KokunoSourceMultiBandRealPairFamily``. It does
 not reconstruct pulses, cutoffs, complete curls, or source band schedules.
 Instead it consumes the already-Q-scaled physical by-beta velocity family and
 the bounded two-coordinate contract introduced for Agent 3.
@@ -12,11 +12,11 @@ phase-mean covariance response is repository product-rule algebra
     d_j C_z     = <S_{j,r} W_z     + W_r S_{j,z}>.
 
 The two response columns are then tested for local rank two after averaging
-only over caller-declared sample axes.  A local PASS is intentionally weaker
+only over caller-declared sample axes. A local PASS is intentionally weaker
 than source readiness: caller-supplied/source-compatible mode data can prove
 that the public interface has independent covariance capacity, but cannot be
-renamed recovered Kokuno data.  Therefore the source-readiness flag remains
-false unless the caller explicitly supplies an audited actual-source binding.
+renamed recovered Kokuno data. The current source family is not bound, so this
+module cannot promote genuine second-column readiness.
 
 This is a structural preflight, not a Navier--Stokes residual and not a finite
 correction cycle.
@@ -74,12 +74,11 @@ class KokunoMultiBandCovarianceRankScreen:
         *,
         averaging_axes: Sequence[int],
         coefficient_max_l1_update: float = 0.125,
-        actual_source_mode_family_bound: bool = False,
     ) -> dict[str, Any]:
         """Consume Agent-2 physical family output and measure covariance rank.
 
         ``averaging_axes`` index only the sample axes of the cylindrical total
-        (all axes before the final component axis).  Typical usage is a phase
+        (all axes before the final component axis). Typical usage is a phase
         or phase/angle quadrature axis, leaving radial/time cells explicit.
         """
         required = {
@@ -151,7 +150,7 @@ class KokunoMultiBandCovarianceRankScreen:
         total_cells = int(flat_rank.size)
         rank_two_cells = int(np.count_nonzero(flat_rank))
         local_pass = bool(total_cells > 0 and rank_two_cells == total_cells)
-        actual_source_bound = bool(actual_source_mode_family_bound)
+        ratio = np.divide(smin, smax, out=np.zeros_like(smin), where=smax > 0.0)
 
         return {
             "active_ell_bands": active_bands,
@@ -171,12 +170,12 @@ class KokunoMultiBandCovarianceRankScreen:
             "total_cells": total_cells,
             "rank_two_fraction": float(rank_two_cells / total_cells) if total_cells else 0.0,
             "minimum_smallest_singular_value": float(np.min(smin)) if total_cells else 0.0,
-            "minimum_singular_value_ratio": float(np.min(np.divide(smin, smax, out=np.zeros_like(smin), where=smax > 0.0))) if total_cells else 0.0,
+            "minimum_singular_value_ratio": float(np.min(ratio)) if total_cells else 0.0,
             "band_response_novelty": novelty,
             "minimum_band_response_novelty": float(np.min(novelty)) if total_cells else 0.0,
             "local_supplied_family_covariance_rank_two": local_pass,
-            "actual_source_mode_family_bound": actual_source_bound,
-            "genuinely_independent_second_covariance_column_ready": bool(local_pass and actual_source_bound),
+            "actual_source_mode_family_bound": False,
+            "genuinely_independent_second_covariance_column_ready": False,
             "finite_correction_cycle_rerun_allowed": False,
             "full_ns_residual_assessed": False,
             "residual_reduction_claimed": False,
