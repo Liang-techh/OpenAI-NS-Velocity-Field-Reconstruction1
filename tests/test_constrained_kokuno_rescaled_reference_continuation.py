@@ -44,7 +44,11 @@ def test_transition_radial_slopes_follow_public_flat_step(candidate):
     y = 1.5 * candidate.log_transition_width
     X = candidate.X0 * math.exp(y)
     values = candidate._continued_scalar(X, eta)
-    s = (y - candidate.log_transition_width) / candidate.log_transition_width
+    # At the selected source pressure scale X0 is ~1e-27.  Recover the source
+    # logarithmic coordinate from the represented X, exactly as the public
+    # formula requires, rather than comparing against the pre-roundtrip y.
+    source_y = math.log(X / candidate.X0)
+    s = (source_y - candidate.log_transition_width) / candidate.log_transition_width
     gate = 1.0 - float(source_smooth_step(np.asarray(s)))
     expected_log_slope = gate * float(candidate._natural_log_slope(np.asarray(X), eta))
     expected_DU = gate * float(candidate._natural_DU(np.asarray(X), eta))
