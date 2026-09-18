@@ -1,0 +1,143 @@
+name: agent9-st051b-streamline-vorticity-render
+
+on:
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/constrained_st051b_streamline_vorticity_render.py"
+      - "tests/test_constrained_st051b_streamline_vorticity_render.py"
+      - "docs/external_methods/CR-A9-054-st051b-streamline-vorticity-render.md"
+      - ".github/workflows/agent9-st051b-streamline-vorticity-render.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout Agent 9 branch
+        uses: actions/checkout@v4
+
+      - name: Checkout exact CR-A9-053 visualization source
+        uses: actions/checkout@v4
+        with:
+          ref: d068e0d4c2cdce23a08aec791af8d2d59e459e65
+          path: _source/grid_exporter
+
+      - name: Checkout exact ST051-B source
+        uses: actions/checkout@v4
+        with:
+          ref: 4b784f1b8457af2ead49295631d834d4e882000b
+          path: _source/st051
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install governed render dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e . pytest "matplotlib==3.10.6"
+
+      - name: Verify immutable source identities
+        run: |
+          test "$(git -C _source/grid_exporter rev-parse HEAD)" = "d068e0d4c2cdce23a08aec791af8d2d59e459e65"
+          test "$(git -C _source/st051 rev-parse HEAD)" = "4b784f1b8457af2ead49295631d834d4e882000b"
+
+      - name: Run focused warning-clean regressions
+        run: |
+          python -W error -m py_compile src/openai_ns_reconstruction/constrained_st051b_streamline_vorticity_render.py
+          python -W error -m pytest -q tests/test_constrained_st051b_streamline_vorticity_render.py
+
+      - name: Reconstruct frozen parent and child and render comparison
+        env:
+          MPLBACKEND: Agg
+        run: |
+          python - <<'PY'
+          import importlib.util
+          import json
+          from pathlib import Path
+          import numpy as np
+          import matplotlib
+
+          from openai_ns_reconstruction.constrained_st051b_streamline_vorticity_render import (
+              GRID_RESOLUTION,
+              analyze_pair,
+              render_pair,
+              sample_velocity_grid,
+              save_report,
+          )
+
+          if matplotlib.__version__ != "3.10.6":
+              raise SystemExit(f"unexpected matplotlib version {matplotlib.__version__}")
+
+          exporter_path = Path("_source/grid_exporter/src/openai_ns_reconstruction/constrained_st051b_redistribution_visualization_grid.py")
+          spec = importlib.util.spec_from_file_location("a9_grid_exporter_exact", exporter_path)
+          module = importlib.util.module_from_spec(spec)
+          assert spec.loader is not None
+          spec.loader.exec_module(module)
+
+          candidate_root = Path("_source/st051")
+          child_velocity, metadata = module.load_st051b_redistribution_velocity(candidate_root)
+          family, raw, _modifiers_sha = module._load_parent(candidate_root)
+
+          def parent_velocity(points, time):
+              return module._parent_velocity(family, raw, points, time)
+
+          parent_axis, parent_fields = sample_velocity_grid(
+              parent_velocity, resolution=GRID_RESOLUTION
+          )
+          child_axis, child_fields = sample_velocity_grid(
+              child_velocity, resolution=GRID_RESOLUTION
+          )
+          if not np.array_equal(parent_axis, child_axis):
+              raise SystemExit("parent/child axes differ")
+
+          output = Path("artifacts/agent9_st051b_render")
+          output.mkdir(parents=True, exist_ok=True)
+          np.savez_compressed(output / "parent_grid.npz", axis=parent_axis, velocity=parent_fields)
+          np.savez_compressed(output / "child_grid.npz", axis=child_axis, velocity=child_fields)
+
+          report = analyze_pair(parent_axis, parent_fields, child_axis, child_fields)
+          report["exact_child_metadata"] = metadata
+          report["render_files"] = [
+              Path(path).name
+              for path in render_pair(parent_axis, parent_fields, child_fields, output)
+          ]
+          report_sha = save_report(report, output / "report.json")
+
+          if any(report["truth"].values()):
+              raise SystemExit("truth boundary unexpectedly promoted")
+          if report["contract"]["image_or_openai_numeric_target_used"]:
+              raise SystemExit("render must remain target-free")
+          for row in report["per_time"]:
+              for label in ("parent", "child"):
+                  if row[label]["streamlines"]["line_count"] != 48:
+                      raise SystemExit("streamline population drift")
+                  if row[label]["vorticity"]["selected_points"] <= 0:
+                      raise SystemExit("empty vorticity selection")
+
+          summary = {
+              "report_sha256": report_sha,
+              "times": [],
+          }
+          for row in report["per_time"]:
+              summary["times"].append({
+                  "time": row["time"],
+                  "parent_mean_turns": row["parent"]["streamlines"]["mean_absolute_turns"],
+                  "child_mean_turns": row["child"]["streamlines"]["mean_absolute_turns"],
+                  "parent_axial_rms": row["parent"]["vorticity"]["selected_axial_rms"],
+                  "child_axial_rms": row["child"]["vorticity"]["selected_axial_rms"],
+              })
+          print(json.dumps(summary, indent=2, sort_keys=True))
+          PY
+
+      - name: Upload exact render artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ST051-B-frozen-redist-streamline-vorticity-render
+          path: artifacts/agent9_st051b_render/
+          if-no-files-found: error
+          retention-days: 30
