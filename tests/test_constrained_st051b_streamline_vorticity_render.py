@@ -4,6 +4,8 @@ import pytest
 from openai_ns_reconstruction.constrained_st051b_streamline_vorticity_render import (
     REFERENCE_TIMES,
     analyze_pair,
+    apply_frozen_child_transform,
+    recover_parent_grid,
     sample_velocity_grid,
     seed_points,
     vorticity,
@@ -31,6 +33,14 @@ def test_vorticity_recovers_solid_rotation():
     assert np.max(np.abs(omega[..., 1])) < 1e-12
     assert np.max(np.abs(omega[..., 2] - 2.0)) < 1e-12
     assert np.max(np.abs(magnitude - 2.0)) < 1e-12
+
+
+def test_frozen_transform_roundtrip_recovers_sampled_parent():
+    axis, parent = sample_velocity_grid(_solid_rotation, resolution=9)
+    child = apply_frozen_child_transform(axis, parent)
+    recovered = recover_parent_grid(axis, child)
+    assert np.max(np.abs(recovered - parent)) < 5e-14
+    assert np.max(np.abs(apply_frozen_child_transform(axis, recovered) - child)) < 5e-14
 
 
 def test_target_free_pair_analysis_preserves_truth_boundary():
