@@ -1,0 +1,44 @@
+name: kokuno-agent5-signed-log-heat-routing-checkpoint
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_signed_log_heat_routing_checkpoint.py'
+      - 'src/openai_ns_reconstruction/kokuno_log_rescaled_heat_repair_target.py'
+      - 'src/openai_ns_reconstruction/kokuno_independent_signed_log_heat_target_audit.py'
+      - 'tests/test_constrained_kokuno_signed_log_heat_routing_checkpoint.py'
+      - 'tests/test_constrained_kokuno_log_rescaled_heat_repair_target.py'
+      - 'tests/test_constrained_kokuno_independent_signed_log_heat_target_audit.py'
+      - '.github/workflows/kokuno-agent5-signed-log-heat-routing-checkpoint.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checkpoint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Focused Agent-1/4/5 signed-log routing tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_signed_log_heat_routing_checkpoint.py
+          tests/test_constrained_kokuno_log_rescaled_heat_repair_target.py
+          tests/test_constrained_kokuno_independent_signed_log_heat_target_audit.py
+      - name: Generate signed-log routing bundle
+        run: >-
+          python -m openai_ns_reconstruction.kokuno_signed_log_heat_routing_checkpoint
+          --output-dir artifacts/kokuno_agent5/signed_log_heat_routing_checkpoint_v13
+      - name: Show receipt
+        run: cat artifacts/kokuno_agent5/signed_log_heat_routing_checkpoint_v13/signed_log_heat_routing_checkpoint.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-signed-log-heat-routing-checkpoint-v13
+          path: artifacts/kokuno_agent5/signed_log_heat_routing_checkpoint_v13
