@@ -61,5 +61,5 @@ def test_shared_damping_rejects_cell_specific_step_budget():
 def test_shared_damping_rejects_broken_quadratic_identity():
     rows = [_cell(0.375, 0.06, 0.75), _cell(0.625, 0.10, 0.75)]
     rows[1]["measurement"]["exact_covariance_change_theta_axial"] = np.zeros((4, 2))
-    with pytest.raises(ValueError, match="inconsistent with linear\+self"):
+    with pytest.raises(ValueError, match=r"inconsistent with linear\+self"):
         solve_shared_spacetime_damping(rows)
