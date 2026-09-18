@@ -1,26 +1,15 @@
-"""Target-free temporal-capacity audit for the existing axial-cap poloidal mode.
+"""Target-free time-ramp capacity audit for the existing axial-cap poloidal mode.
 
-The support-adjacent axial-cap direction has already demonstrated finite-amplitude
-control of gross q90/q99 vorticity reach.  This module does not add another
-spatial basis.  It asks one narrower representation question: can one fixed
-linear-in-window coefficient schedule turn that already identified spatial
-channel on over the registered time interval, while leaving the reference-time
-field exactly unchanged?
+No new spatial basis is introduced.  The existing support-adjacent axial-cap
+mode is driven by one fixed autonomous diagnostic schedule
 
-For diagnostic terminal magnitude A and sign sigma in {-1,+1},
+    a_sigma(t) = sigma*A*(t-t0)/(t1-t0), sigma in {-1,+1}.
 
-    a_sigma(t) = sigma * A * (t - t0) / (t1 - t0),
-
-with t0=.25 and t1=.75 taken from the registered constraints.  Thus a(t0)=0
-exactly.  The schedule, terminal magnitude, and signs are autonomous capacity
-probes; no production coefficient, sign, bound, hidden frame time, or OpenAI
-numerical target is selected here.
-
-The audit measures registered-time energy/core-sign behavior and target-free 3D
-vorticity morphology at t0, midpoint, and t1.  It is not a Navier--Stokes
-validation.  A materialized time-dependent child would have a new u_t term and
-must receive a new identity plus fresh pressure/force/divergence/full-momentum
-validation.
+The schedule is exactly zero at the registered reference time t0, so it replays
+the parent field there.  A, its sign, and this linear schedule are capacity
+probes only: no production coefficient/bound or OpenAI hidden time is inferred.
+A materialized time-dependent child would change u_t and therefore needs a new
+identity and fresh pressure/force/divergence/full-momentum validation.
 """
 from __future__ import annotations
 
@@ -46,6 +35,14 @@ from .constrained_eq45_bipolar_axial_cap_poloidal_capacity import (
 
 TASK_ID = "CR003-BIPOLAR-AXIAL-CAP-TEMPORAL-RAMP-CAPACITY-048"
 DEFAULT_TERMINAL_MAGNITUDE = 0.25
+MORPH_KEYS = (
+    "axial_rms_over_Zp",
+    "radial_rms_over_Rp",
+    "axial_q90_over_Zp",
+    "axial_q99_over_Zp",
+    "outer_065_enstrophy_fraction",
+    "outer_075_enstrophy_fraction",
+)
 TRUTH_BOUNDARY = {
     "velocity_changed": False,
     "canonical_velocity_changed": False,
@@ -67,99 +64,79 @@ TRUTH_BOUNDARY = {
     "openai_field_identified": False,
 }
 
-_MORPH_KEYS = (
-    "axial_rms_over_Zp",
-    "radial_rms_over_Rp",
-    "axial_q90_over_Zp",
-    "axial_q99_over_Zp",
-    "outer_065_enstrophy_fraction",
-    "outer_075_enstrophy_fraction",
-)
-
 
 def _linear_ramp_coefficient(
-    time: float,
-    *,
-    start_time: float,
-    end_time: float,
-    terminal_coefficient: float,
+    time: float, *, start_time: float, end_time: float, terminal_coefficient: float
 ) -> float:
-    time = float(time)
-    start_time = float(start_time)
-    end_time = float(end_time)
-    terminal_coefficient = float(terminal_coefficient)
-    values = (time, start_time, end_time, terminal_coefficient)
-    if not all(np.isfinite(value) for value in values):
+    values = tuple(float(v) for v in (time, start_time, end_time, terminal_coefficient))
+    time, start_time, end_time, terminal_coefficient = values
+    if not all(np.isfinite(v) for v in values):
         raise ValueError("ramp inputs must be finite")
-    if not end_time > start_time:
+    if end_time <= start_time:
         raise ValueError("end_time must be greater than start_time")
-    tolerance = 64.0 * np.finfo(float).eps * max(1.0, abs(start_time), abs(end_time))
-    if time < start_time - tolerance or time > end_time + tolerance:
+    tol = 64.0 * np.finfo(float).eps * max(1.0, abs(start_time), abs(end_time))
+    if time < start_time - tol or time > end_time + tol:
         raise ValueError("time lies outside the registered ramp window")
     phase = (time - start_time) / (end_time - start_time)
-    if abs(phase) <= tolerance:
+    if abs(phase) <= tol:
         phase = 0.0
-    elif abs(phase - 1.0) <= tolerance:
+    elif abs(phase - 1.0) <= tol:
         phase = 1.0
     return float(terminal_coefficient * phase)
 
 
-def _morphology_delta(base: dict[str, float], trial: dict[str, float]) -> dict[str, float]:
-    return {f"{key}_delta": float(trial[key] - base[key]) for key in _MORPH_KEYS}
+def _delta(base: dict[str, float], trial: dict[str, float]) -> dict[str, float]:
+    return {f"{k}_delta": float(trial[k] - base[k]) for k in MORPH_KEYS}
 
 
-def _trend_summary(rows: list[dict[str, Any]]) -> dict[str, Any]:
-    if len(rows) < 2:
-        raise ValueError("at least two morphology rows are required")
-    metrics = {}
+def _trend(rows: list[dict[str, Any]]) -> dict[str, Any]:
+    result: dict[str, Any] = {}
     for key in ("axial_rms_over_Zp", "radial_rms_over_Rp", "axial_q90_over_Zp", "axial_q99_over_Zp"):
-        values = np.asarray([row["trial_morphology"][key] for row in rows], dtype=float)
-        baseline = np.asarray([row["baseline_morphology"][key] for row in rows], dtype=float)
-        tolerance = 256.0 * np.finfo(float).eps * max(1.0, float(np.max(np.abs(values))))
-        metrics[key] = {
-            "trial_start_to_end_change": float(values[-1] - values[0]),
-            "baseline_start_to_end_change": float(baseline[-1] - baseline[0]),
+        trial = np.asarray([r["trial_morphology"][key] for r in rows], dtype=float)
+        base = np.asarray([r["baseline_morphology"][key] for r in rows], dtype=float)
+        tol = 256.0 * np.finfo(float).eps * max(1.0, float(np.max(np.abs(trial))))
+        result[key] = {
+            "trial_start_to_end_change": float(trial[-1] - trial[0]),
+            "baseline_start_to_end_change": float(base[-1] - base[0]),
             "incremental_change_vs_baseline_trend": float(
-                (values[-1] - values[0]) - (baseline[-1] - baseline[0])
+                (trial[-1] - trial[0]) - (base[-1] - base[0])
             ),
-            "nondecreasing_step_count": int(np.sum(np.diff(values) >= -tolerance)),
-            "step_count": int(values.size - 1),
+            "nondecreasing_step_count": int(np.sum(np.diff(trial) >= -tol)),
+            "step_count": int(trial.size - 1),
         }
-    return metrics
+    return result
 
 
 def _core_row(field, time: float, coefficient: float) -> dict[str, Any]:
     tau = 1.0 - float(time)
-    point = np.array([[0.1 * np.sqrt(tau), 0.0, 0.1 * tau**0.495]], dtype=float)
-    velocity = np.asarray(_cap_velocity(field, point, float(time), float(coefficient))[0], dtype=float)
+    point = np.array([[0.1 * np.sqrt(tau), 0.0, 0.1 * tau**0.495]])
+    u = np.asarray(_cap_velocity(field, point, float(time), float(coefficient))[0], dtype=float)
     return {
         "time": float(time),
         "coefficient": float(coefficient),
-        "u_r": float(velocity[0]),
-        "u_theta": float(velocity[1]),
-        "u_z": float(velocity[2]),
-        "signs_satisfied": bool(velocity[0] < 0.0 and velocity[1] > 0.0 and velocity[2] > 0.0),
+        "u_r": float(u[0]),
+        "u_theta": float(u[1]),
+        "u_z": float(u[2]),
+        "signs_satisfied": bool(u[0] < 0.0 and u[1] > 0.0 and u[2] > 0.0),
     }
 
 
-def _signed_schedule_report(
+def _schedule_report(
     field,
     *,
-    sign: float,
+    sign: int,
     magnitude: float,
     start_time: float,
     end_time: float,
     registered_times: tuple[float, ...],
     energy_by_time: dict[float, dict[str, float]],
-    validation_energy_lower: float,
-    validation_energy_upper: float,
+    energy_lower: float,
+    energy_upper: float,
     morphology_times: tuple[float, ...],
     morphology_grid_size: int,
     baseline_morphology: dict[float, dict[str, float]],
 ) -> dict[str, Any]:
-    terminal = float(sign) * float(magnitude)
-    slope = terminal / (end_time - start_time)
-
+    terminal = float(sign) * magnitude
     energy_rows = []
     core_rows = []
     for time in registered_times:
@@ -170,16 +147,17 @@ def _signed_schedule_report(
             terminal_coefficient=terminal,
         )
         energy = float(_energy(energy_by_time[time], coefficient))
-        energy_ok = bool(validation_energy_lower <= energy <= validation_energy_upper)
-        energy_rows.append({
-            "time": float(time),
-            "coefficient": coefficient,
-            "energy": energy,
-            "validation_energy_range_satisfied": energy_ok,
-        })
+        energy_rows.append(
+            {
+                "time": time,
+                "coefficient": coefficient,
+                "energy": energy,
+                "validation_energy_range_satisfied": bool(energy_lower <= energy <= energy_upper),
+            }
+        )
         core_rows.append(_core_row(field, time, coefficient))
 
-    morphology_rows = []
+    morph_rows = []
     for time in morphology_times:
         coefficient = _linear_ramp_coefficient(
             time,
@@ -188,47 +166,46 @@ def _signed_schedule_report(
             terminal_coefficient=terminal,
         )
         trial = _cap_vorticity_morphology(
-            field,
-            time=float(time),
-            coefficient=coefficient,
-            grid_size=int(morphology_grid_size),
+            field, time=time, coefficient=coefficient, grid_size=morphology_grid_size
         )
-        base = baseline_morphology[float(time)]
-        morphology_rows.append({
-            "time": float(time),
-            "coefficient": coefficient,
-            "baseline_morphology": base,
-            "trial_morphology": trial,
-            "delta_from_coefficient_zero_baseline": _morphology_delta(base, trial),
-        })
+        base = baseline_morphology[time]
+        morph_rows.append(
+            {
+                "time": time,
+                "coefficient": coefficient,
+                "baseline_morphology": base,
+                "trial_morphology": trial,
+                "delta_from_coefficient_zero_baseline": _delta(base, trial),
+            }
+        )
 
-    first = morphology_rows[0]
-    final = morphology_rows[-1]
-    initial_replay_error = max(
-        abs(float(first["trial_morphology"][key]) - float(first["baseline_morphology"][key]))
-        for key in _MORPH_KEYS
-    )
+    first = morph_rows[0]
+    final = morph_rows[-1]
     final_delta = final["delta_from_coefficient_zero_baseline"]
+    replay_error = max(
+        abs(float(first["trial_morphology"][k]) - float(first["baseline_morphology"][k]))
+        for k in MORPH_KEYS
+    )
     return {
-        "sign": int(np.sign(sign)),
+        "sign": sign,
         "terminal_coefficient": terminal,
-        "coefficient_time_derivative": float(slope),
+        "coefficient_time_derivative": float(terminal / (end_time - start_time)),
         "reference_time_coefficient": float(energy_rows[0]["coefficient"]),
         "reference_time_parent_replayed_exactly_by_schedule": bool(energy_rows[0]["coefficient"] == 0.0),
         "registered_time_energy": {
+            "required_range": [energy_lower, energy_upper],
             "all_times_within_broad_registered_range": bool(
-                all(row["validation_energy_range_satisfied"] for row in energy_rows)
+                all(r["validation_energy_range_satisfied"] for r in energy_rows)
             ),
-            "required_range": [validation_energy_lower, validation_energy_upper],
             "rows": energy_rows,
         },
         "core_signs": {
-            "all_times_satisfied": bool(all(row["signs_satisfied"] for row in core_rows)),
+            "all_times_satisfied": bool(all(r["signs_satisfied"] for r in core_rows)),
             "rows": core_rows,
         },
-        "morphology_rows": morphology_rows,
-        "trend_summary": _trend_summary(morphology_rows),
-        "reference_time_morphology_replay_max_abs_error": float(initial_replay_error),
+        "morphology_rows": morph_rows,
+        "trend_summary": _trend(morph_rows),
+        "reference_time_morphology_replay_max_abs_error": float(replay_error),
         "final_time_incremental_tip_reach": {
             "axial_q90_over_Zp_delta": float(final_delta["axial_q90_over_Zp_delta"]),
             "axial_q99_over_Zp_delta": float(final_delta["axial_q99_over_Zp_delta"]),
@@ -254,40 +231,34 @@ def audit_axial_cap_temporal_ramp_capacity(
         raise ValueError("terminal_magnitude must be positive and finite")
     if morphology_grid_size < 17 or morphology_grid_size % 2 == 0:
         raise ValueError("morphology_grid_size must be odd and >=17")
-
-    orders = tuple(int(value) for value in quadrature_orders)
-    if len(orders) < 2 or any(value < 16 for value in orders) or any(
-        orders[index] >= orders[index + 1] for index in range(len(orders) - 1)
-    ):
+    orders = tuple(int(v) for v in quadrature_orders)
+    if len(orders) < 2 or any(v < 16 for v in orders) or any(a >= b for a, b in zip(orders, orders[1:])):
         raise ValueError("quadrature_orders must be strictly increasing and >=16")
 
     constraints = _constraints()
     nontriviality = constraints["nontriviality"]
-    validation = constraints["validation"]
-    start_time, end_time = (float(value) for value in constraints["time"]["interval"])
-    registered_times = tuple(float(value) for value in validation["times"])
+    registered_times = tuple(float(v) for v in constraints["validation"]["times"])
+    start_time, end_time = (float(v) for v in constraints["domain"]["time_interval"])
     reference_time = float(nontriviality["reference_time"])
     if not np.isclose(reference_time, start_time, rtol=0.0, atol=1e-15):
-        raise ValueError("temporal-ramp audit requires reference_time == registered interval start")
+        raise ValueError("temporal-ramp audit requires reference_time == interval start")
     if registered_times[0] != start_time or registered_times[-1] != end_time:
         raise ValueError("validation times must span the registered interval endpoints")
 
     if morphology_times is None:
         morphology_times_tuple = (start_time, 0.5 * (start_time + end_time), end_time)
     else:
-        morphology_times_tuple = tuple(float(value) for value in morphology_times)
+        morphology_times_tuple = tuple(float(v) for v in morphology_times)
     if len(morphology_times_tuple) < 2 or any(
-        morphology_times_tuple[index] >= morphology_times_tuple[index + 1]
-        for index in range(len(morphology_times_tuple) - 1)
+        a >= b for a, b in zip(morphology_times_tuple, morphology_times_tuple[1:])
     ):
         raise ValueError("morphology_times must be strictly increasing")
-    tolerance = 64.0 * np.finfo(float).eps
-    if morphology_times_tuple[0] < start_time - tolerance or morphology_times_tuple[-1] > end_time + tolerance:
+    tol = 64.0 * np.finfo(float).eps
+    if morphology_times_tuple[0] < start_time - tol or morphology_times_tuple[-1] > end_time + tol:
         raise ValueError("morphology_times must lie inside the registered interval")
 
     field = _source_field()
-    implementation_guard = float(field.parent.profile_basis.coefficient_limit)
-    if magnitude > implementation_guard:
+    if magnitude > float(field.parent.profile_basis.coefficient_limit):
         raise ValueError("terminal_magnitude exceeds inherited implementation guard")
 
     rows_by_order = {
@@ -295,46 +266,27 @@ def audit_axial_cap_temporal_ramp_capacity(
         for order in orders
     }
     finest = rows_by_order[orders[-1]]
-    baseline_morphology = {
-        float(time): _cap_vorticity_morphology(
-            field,
-            time=float(time),
-            coefficient=0.0,
-            grid_size=int(morphology_grid_size),
+    baseline = {
+        time: _cap_vorticity_morphology(
+            field, time=time, coefficient=0.0, grid_size=morphology_grid_size
         )
         for time in morphology_times_tuple
     }
-
-    energy_lower = float(nontriviality["minimum_energy_each_validation_time"])
-    energy_upper = float(nontriviality["maximum_energy_each_validation_time"])
-    negative = _signed_schedule_report(
-        field,
-        sign=-1.0,
+    common = dict(
+        field=field,
         magnitude=magnitude,
         start_time=start_time,
         end_time=end_time,
         registered_times=registered_times,
         energy_by_time=finest,
-        validation_energy_lower=energy_lower,
-        validation_energy_upper=energy_upper,
+        energy_lower=float(nontriviality["minimum_energy_each_validation_time"]),
+        energy_upper=float(nontriviality["maximum_energy_each_validation_time"]),
         morphology_times=morphology_times_tuple,
         morphology_grid_size=morphology_grid_size,
-        baseline_morphology=baseline_morphology,
+        baseline_morphology=baseline,
     )
-    positive = _signed_schedule_report(
-        field,
-        sign=1.0,
-        magnitude=magnitude,
-        start_time=start_time,
-        end_time=end_time,
-        registered_times=registered_times,
-        energy_by_time=finest,
-        validation_energy_lower=energy_lower,
-        validation_energy_upper=energy_upper,
-        morphology_times=morphology_times_tuple,
-        morphology_grid_size=morphology_grid_size,
-        baseline_morphology=baseline_morphology,
-    )
+    negative = _schedule_report(sign=-1, **common)
+    positive = _schedule_report(sign=1, **common)
 
     return {
         "task_id": TASK_ID,
@@ -361,12 +313,10 @@ def audit_axial_cap_temporal_ramp_capacity(
         },
         "energy_quadrature": {
             "orders": list(orders),
-            "finest_order": int(orders[-1]),
+            "finest_order": orders[-1],
             "maximum_relative_quadratic_coefficient_change": _refinement(rows_by_order),
         },
-        "baseline_vorticity_morphology": {
-            str(time): baseline_morphology[float(time)] for time in morphology_times_tuple
-        },
+        "baseline_vorticity_morphology": {str(t): baseline[t] for t in morphology_times_tuple},
         "negative_schedule": negative,
         "positive_schedule": positive,
         "both_signs_reference_time_parent_replay": bool(
@@ -382,12 +332,11 @@ def audit_axial_cap_temporal_ramp_capacity(
             and positive["core_signs"]["all_times_satisfied"]
         ),
         "routing_contract": (
-            "This audit adds no spatial basis. If one fixed temporal ramp makes the already identified axial-cap channel produce "
-            "a materially stronger finite-window elongation/tip-reach trend without breaking registered energy/core checks, the "
-            "next candidate-level step is to materialize one explicitly bounded time-dependent child and rerun fresh u_t-aware "
-            "pressure/force/divergence/full-momentum validation plus actual 3D streamline/vorticity comparison. Do not transfer "
-            "static-cap PDE evidence because a'(t) changes u_t. If the ramp adds little temporal morphology leverage, keep the cap "
-            "coefficient time independent and route remaining mismatch to support/taper geometry rather than adding more basis."
+            "Do not add another spatial cap/odd-q/swirl basis. If this one temporal ramp gives material finite-window "
+            "elongation/tip-reach leverage while preserving registered energy/core checks, materialize one explicitly bounded "
+            "time-dependent child and rerun fresh u_t-aware pressure/force/divergence/full-momentum validation plus actual 3D "
+            "streamline/vorticity comparison. Static-cap PDE evidence cannot transfer because a'(t) changes u_t. If temporal "
+            "leverage is weak, keep the cap coefficient time independent and route remaining mismatch to support/taper geometry."
         ),
         "truth_boundary": dict(TRUTH_BOUNDARY),
     }
@@ -400,10 +349,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--quadrature-order", type=int, action="append", dest="orders")
     parser.add_argument("--morphology-grid-size", type=int, default=33)
     args = parser.parse_args(argv)
-    orders = tuple(args.orders) if args.orders else (64, 96)
     report = audit_axial_cap_temporal_ramp_capacity(
         terminal_magnitude=args.terminal_magnitude,
-        quadrature_orders=orders,
+        quadrature_orders=tuple(args.orders) if args.orders else (64, 96),
         morphology_grid_size=args.morphology_grid_size,
     )
     text = json.dumps(report, indent=2, sort_keys=True) + "\n"
