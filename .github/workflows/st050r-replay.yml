@@ -1,0 +1,82 @@
+name: st050r-replay
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st050r/**'
+      - '.github/workflows/st050r-replay.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'experiments/root_st050r/**'
+      - '.github/workflows/st050r-replay.yml'
+permissions:
+  contents: read
+jobs:
+  calibration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - run: |
+          python scripts/ns_candidate.py verify
+          python -m pytest -q -W error experiments/root_st050r/test_recovery.py
+  frozen-field-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        candidate: [ST050R-C, ST050R-P]
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      FIELD_ID: ${{ matrix.candidate }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2'
+      - name: Reconstruct frozen mathematical field and run the original full validator
+        shell: bash
+        run: |
+          set +e
+          python experiments/root_st050r/replay_recovery.py --id "$FIELD_ID" --out "outputs/$FIELD_ID" --seed 9175091 --validate --structure
+          code=$?
+          set -e
+          test "$code" = 1
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          ident=os.environ['FIELD_ID']
+          reference={'ST050R-C':(.04381213191812278,.04912231334703886,0.),'ST050R-P':(.04473749552619881,.05973449210613817,1.)}[ident]
+          actual=json.loads(Path(f'outputs/{ident}/validation.json').read_text())
+          assert actual['pde_validated'] is False and actual['all_numeric_gates_pass'] is False
+          assert actual['gates']['momentum_max'] is False and actual['gates']['momentum_L2'] is False
+          assert all(v for k,v in actual['gates'].items() if k not in ('momentum_max','momentum_L2'))
+          fine=[r for r in actual['spatial_refinement'] if r['space_step']==.005]
+          assert len(fine)==6
+          maximum=max(r['momentum_max'] for r in fine);l2=max(r['momentum_L2'] for r in fine)
+          assert abs(maximum-reference[0])<1e-5
+          assert abs(l2-reference[1])<1e-5
+          structural=json.loads(Path(f'outputs/{ident}/structure.json').read_text())
+          core=next(c for c in structural['cases'] if c['name']=='comparable_core_grid')
+          assert all(row['axial_pressure_toward_fraction']==reference[2] for row in core['rows'])
+          assert structural['source_correspondence_verified'] is False
+          print(ident,maximum,l2,'Frozen replay matches. Original full momentum acceptance still FAILED.')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ${{ matrix.candidate }}-independent-replay
+          path: outputs/${{ matrix.candidate }}/
+          if-no-files-found: error
