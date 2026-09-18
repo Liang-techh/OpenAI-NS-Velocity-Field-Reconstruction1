@@ -153,7 +153,7 @@ def test_pulse_and_cutoff_inputs_fail_closed() -> None:
 
     bad_grid = list(v)
     bad_grid[0] = bad_grid[0].copy()
-    bad_grid[0][-1] *= 0.99
+    bad_grid[0][-1] *= 1.01
     with pytest.raises(ValueError, match="end at geometry L_s"):
         evaluator.materialize_from_autonomous_geometry(
             geometry,
