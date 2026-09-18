@@ -366,9 +366,11 @@ class KokunoLogRescaledHeatRepairTarget:
         masked = np.where(signs != 0, logs, -np.inf)
         reference = np.max(masked, axis=-1)
         finite_reference = np.isfinite(reference)
-        shifted = logs - np.expand_dims(reference, axis=-1)
-        mantissa = np.zeros_like(logs)
+        reference_expanded = np.expand_dims(reference, axis=-1)
         active = (signs != 0) & np.expand_dims(finite_reference, axis=-1)
+        shifted = np.full_like(logs, -np.inf)
+        np.subtract(logs, reference_expanded, out=shifted, where=active)
+        mantissa = np.zeros_like(logs)
         mantissa[active] = signs[active] * _safe_exp(shifted[active])
         return {
             "mantissa": mantissa,
