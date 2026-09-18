@@ -1,9 +1,9 @@
 """Selected Appendix-B prefix moments at ``X_i=110`` in PA.15 coordinates.
 
-This module is a narrow bridge between two already executable source stages:
-``KokunoAppendixBBoundary`` supplies one explicitly selected Appendix-B
-continuation through ``X_i=110`` and ``KokunoInnerJoinExit`` consumes the five
-incoming moment discrepancies used by the later PA.16 repair.
+This module is a narrow bridge between two already executable reconstruction
+stages: ``KokunoAppendixBBoundary`` supplies one explicitly selected
+Appendix-B continuation through ``X_i=110`` and ``KokunoInnerJoinExit``
+consumes five incoming moment discrepancies for the later PA.16 repair.
 
 The corrected KokunoYumeto 2026-09-09 reconstruction retains exactly
 
@@ -19,17 +19,23 @@ and, for ``x=X/X_R``, the PA.15 scaling
       = (X_R Mhat, X_R^(3/2) Ihat, X_R^(3/2) Jhat,
          X_R Shat, Cphat).
 
-The incoming target below is the selected Appendix-B prefix at ``X_i`` minus
-the source ideal pair ``U_0=4 eta``, ``E_0=P_* f(eta) x^(1/10)`` at the same
-endpoint.  The ideal prefix is integrated analytically; the selected actual
-prefix is propagated with the same Appendix-B ODE used by the boundary object.
-This avoids subtracting singular-looking ``C_p`` densities near ``x=0`` and
-avoids materializing the enormous ``X_R`` itself.
+The selected discrepancy below is the executable #429 Appendix-B prefix at
+``X_i`` minus the source ideal pair ``U_0=4 eta`` and
+``E_0=P_* f(eta) x^(1/10)`` at the same endpoint.  The ideal prefix is
+integrated analytically; the selected actual prefix is propagated with the
+same Appendix-B ODE used by the boundary object.  This avoids materializing
+the enormous ``X_R`` and avoids subtracting the singular-looking ideal
+``C_p`` density pointwise near ``x=0``.
 
-The selected ``kappa_0`` and final widths remain autonomous existence choices.
-No hidden Kokuno/OpenAI parameter is inferred.  The source lower-bound
-certificate for ``T_sh`` is still a separate dependency, so this module does
-not claim a completed inner-to-outer join or any PDE validation.
+A critical truth boundary is explicit here.  The public Appendix-B axis datum
+requires ``Pi_0 <= -(5/2) P_*^2 f^2``.  The current executable #429 boundary
+inherits an autonomous finite ``pressure_scale`` from the earlier core
+reference and is *not* yet bound to the outer ``P_*`` schedule.  Therefore the
+quantity computed here is a selected autonomous PA.15 discrepancy, useful for
+wiring/testing the source matching map, but it is not claimed to be the actual
+source incoming discrepancy.  ``T_sh`` certification is also still separate.
+No hidden Kokuno/OpenAI parameter is inferred and no completed global join or
+PDE validation is claimed.
 """
 from __future__ import annotations
 
@@ -66,6 +72,7 @@ _SOURCE_FORMULAS = {
         "X_R^(3/2)*Jhat,X_R*Shat,Cphat)"
     ),
     "ideal_pair": "U_0=4 eta; E_0=P_* f(eta) x^(1/10); f=(1+eta^2)^(-1)",
+    "axis_pressure_datum_bound": "Pi_0 <= -(5/2) P_*^2 f(eta)^2",
     "incoming_discrepancy": (
         "selected Appendix-B five-prefix moments at X_i minus the ideal-pair "
         "five-prefix moments at x_i=X_i/X_R"
@@ -75,10 +82,12 @@ _SOURCE_FORMULAS = {
 _TRUTH_BOUNDARY = {
     "public_reconstruction_source": True,
     "selected_appendix_B_prefix_moments_executable": True,
-    "source_PA15_scaled_incoming_discrepancy_executable": True,
+    "selected_PA15_scaled_incoming_discrepancy_executable": True,
     "selected_upstream_boundary_and_moment_data_bindable_to_PA16": True,
     "ideal_prefix_integrated_analytically": True,
     "source_hidden_numeric_choices_recovered": False,
+    "source_outer_pressure_datum_bound": False,
+    "actual_source_incoming_five_moment_discrepancy_bound": False,
     "source_T_sh_lower_bound_verified": False,
     "inner_to_outer_join_completed": False,
     "global_pressure_matched": False,
@@ -140,11 +149,17 @@ class KokunoAppendixBIncomingMoments:
         if not 32 <= order <= 256:
             raise ValueError("axis_quadrature_points must lie in [32,256]")
         if not math.isclose(
-            float(self.boundary.reference.C), float(self.outer_schedule.C), rel_tol=0.0, abs_tol=1e-14
+            float(self.boundary.reference.C),
+            float(self.outer_schedule.C),
+            rel_tol=0.0,
+            abs_tol=1e-14,
         ):
             raise ValueError("boundary C and outer-schedule C must agree")
         if not math.isclose(
-            float(self.boundary.reference.h), float(self.outer_schedule.h), rel_tol=0.0, abs_tol=1e-14
+            float(self.boundary.reference.h),
+            float(self.outer_schedule.h),
+            rel_tol=0.0,
+            abs_tol=1e-14,
         ):
             raise ValueError("boundary h and outer-schedule h must agree")
         nodes, weights = leggauss(order)
@@ -174,6 +189,36 @@ class KokunoAppendixBIncomingMoments:
             raise OverflowError("P_* is outside positive float range")
         return value
 
+    @property
+    def required_source_pressure_scale_lower_bound(self) -> float:
+        """Minimum scale implied by ``Pi_0<=-(5/2)P_*^2 f^2``.
+
+        The earlier finite reference uses ``Pi_0=-pressure_scale^2 f^2`` at
+        the axis, so the public source inequality would require
+        ``pressure_scale >= sqrt(5/2) P_*`` for that restricted ansatz.
+        """
+
+        return math.sqrt(2.5) * self.P_star
+
+    @property
+    def selected_pressure_scale(self) -> float:
+        return float(self.boundary.reference.pressure_scale)
+
+    @property
+    def source_outer_pressure_datum_bound(self) -> bool:
+        return self.selected_pressure_scale >= self.required_source_pressure_scale_lower_bound
+
+    def pressure_datum_report(self) -> dict[str, Any]:
+        required = self.required_source_pressure_scale_lower_bound
+        selected = self.selected_pressure_scale
+        return {
+            "selected_reference_pressure_scale": selected,
+            "required_source_lower_bound_for_reference_ansatz": required,
+            "selected_to_required_ratio": selected / required,
+            "source_outer_pressure_datum_bound": self.source_outer_pressure_datum_bound,
+            "actual_source_incoming_five_moment_discrepancy_bound": False,
+        }
+
     def geometry_report(self) -> dict[str, Any]:
         return {
             "X_i": X_I,
@@ -181,6 +226,7 @@ class KokunoAppendixBIncomingMoments:
             "log_x_i": self.log_x_i,
             "x_i": self.x_i,
             "axis_quadrature_points": self.axis_quadrature_points,
+            "pressure_datum": self.pressure_datum_report(),
             "source_T_sh_lower_bound_verified": False,
         }
 
@@ -257,7 +303,9 @@ class KokunoAppendixBIncomingMoments:
         if final.shape != (9,) or np.any(~np.isfinite(final)):
             raise RuntimeError("Appendix-B moment propagation produced invalid state")
         F_i = math.exp(float(final[2]))
-        ell_i = math.log(float(self.boundary.reference.C) * math.sqrt(2.0 * X_I) * F_i)
+        ell_i = math.log(
+            float(self.boundary.reference.C) * math.sqrt(2.0 * X_I) * F_i
+        )
         G_i = float(final[3])
         return np.asarray(final[4:], dtype=float), ell_i, G_i
 
@@ -294,7 +342,8 @@ class KokunoAppendixBIncomingMoments:
                 4.0 * eta * x,
                 I,
                 4.0 * eta * I,
-                16.0 * eta * eta * x - 0.5 * P * P * f * f * x**1.2 / 1.2,
+                16.0 * eta * eta * x
+                - 0.5 * P * P * f * f * x**1.2 / 1.2,
                 0.5 * P * P * f * f * x**0.2 / 0.2,
             ],
             dtype=float,
@@ -321,7 +370,7 @@ class KokunoAppendixBIncomingMoments:
         )
 
     def incoming_scaled_discrepancy(self, eta: Any) -> np.ndarray:
-        """Vectorized PA.15 discrepancy in row order ``(M,I,J,S,C_p)``."""
+        """Vectorized selected PA.15 discrepancy in ``(M,I,J,S,C_p)`` order."""
 
         eta_array = _finite_array(eta, "eta")
         if np.any(np.abs(eta_array) > 1.0):
@@ -341,9 +390,11 @@ class KokunoAppendixBIncomingMoments:
         eta: float,
         absolute_tolerance: float = 2.0e-11,
     ) -> InnerJoinSolveResult:
-        """Bind the selected real upstream data into the existing PA.16 inverse.
+        """Bind selected executable upstream data into the PA.16 inverse.
 
-        ``inner_join.T_sh`` remains caller supplied and is *not* certified here.
+        This is a selected-realization software path only. ``inner_join.T_sh``
+        remains caller supplied, the source pressure datum is not yet bound to
+        outer ``P_*``, and neither condition is promoted by this method.
         """
 
         if not isinstance(inner_join, KokunoInnerJoinExit):
@@ -383,7 +434,9 @@ class KokunoAppendixBIncomingMoments:
 
     @property
     def sha256(self) -> str:
-        return hashlib.sha256(_canonical_json(self._unsigned_payload()).encode("utf-8")).hexdigest()
+        return hashlib.sha256(
+            _canonical_json(self._unsigned_payload()).encode("utf-8")
+        ).hexdigest()
 
     def to_payload(self) -> dict[str, Any]:
         payload = self._unsigned_payload()
@@ -419,7 +472,10 @@ class KokunoAppendixBIncomingMoments:
     def save_json(self, path: str | Path) -> Path:
         target = Path(path)
         target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_text(json.dumps(self.to_payload(), indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        target.write_text(
+            json.dumps(self.to_payload(), indent=2, sort_keys=True) + "\n",
+            encoding="utf-8",
+        )
         return target
 
     @classmethod
