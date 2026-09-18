@@ -400,7 +400,9 @@ class KokunoShearMomentRepair:
         delta_v0 = delta_V0 / X
         root = np.sqrt(2.0 * X)
         delta_F = delta_E / root
-        delta_F_X = delta_E_X / root - delta_E / (2.0 * X * root)
+        # Algebraically identical to delta_E/(2*X*root), but avoids forming
+        # X*sqrt(2X), which overflows on the source existence-scale I1.
+        delta_F_X = delta_E_X / root - 0.5 * delta_F / X
         delta_F_eta = delta_E_eta / root
         return {"xi": xi, "delta_E": delta_E, "delta_E_X": delta_E_X, "delta_E_eta": delta_E_eta, "delta_F": delta_F, "delta_F_X": delta_F_X, "delta_F_eta": delta_F_eta, "delta_U": delta_U, "delta_U_X": delta_U_X, "delta_U_eta": delta_U_eta, "delta_M": delta_M, "delta_M_eta": delta_M_eta, "delta_v0": delta_v0}
 
