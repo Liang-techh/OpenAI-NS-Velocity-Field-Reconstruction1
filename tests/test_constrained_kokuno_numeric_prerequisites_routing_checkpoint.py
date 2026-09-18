@@ -179,12 +179,12 @@ def test_v35_fails_closed_on_truth_laundering_or_readiness_promotion() -> None:
 
     payload = json.loads(json.dumps(build_checkpoint()))
     payload["states"]["candidate_artifact_instantiated"] = True
-    with pytest.raises(ValueError, match="candidate_artifact_instantiated"):
+    with pytest.raises(ValueError, match="fail-closed state promoted"):
         validate_checkpoint(_rehash(payload))
 
     payload = json.loads(json.dumps(build_checkpoint()))
     payload["states"]["pde_validated"] = True
-    with pytest.raises(ValueError, match="pde_validated"):
+    with pytest.raises(ValueError, match="fail-closed state promoted"):
         validate_checkpoint(_rehash(payload))
 
 
