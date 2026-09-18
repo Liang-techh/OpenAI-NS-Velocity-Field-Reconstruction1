@@ -1,0 +1,35 @@
+name: kokuno-agent1-high-precision-heat-repair
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a1-highprec-moment-tensor-015
+  pull_request:
+    branches:
+      - kokuno-agent5/hierarchical-heat-audit-routing-014
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-a1-high-precision-heat-repair-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  high-precision-heat-repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Focused construction and inherited audit regressions
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_hierarchical_heat_repair.py \
+            tests/test_constrained_kokuno_hierarchical_heat_repair_independent.py \
+            tests/test_constrained_kokuno_high_precision_heat_repair.py
