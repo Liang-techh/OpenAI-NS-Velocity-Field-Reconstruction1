@@ -49,6 +49,20 @@ def test_axial_envelope_flattening_audit_preserves_support_and_reports_capacity(
     assert report["truth_boundary"]["visual_correspondence_verified"] is False
     assert report["truth_boundary"]["pde_validated"] is False
 
+    pytest.fail(
+        repr(
+            {
+                "baseline": report["baseline_morphology"],
+                "trial": report["trial_morphology"],
+                "delta": report["trial_delta"],
+                "velocity": report["velocity_space_diagnostics"],
+                "local_morph": report["local_morphology_response_at_alpha_zero"],
+                "structure": report["structure_checks"],
+                "time_rows": report["time_slice_morphology"],
+            }
+        )
+    )
+
 
 def test_axial_envelope_flattening_rejects_invalid_inputs():
     with pytest.raises(ValueError, match="alpha"):
