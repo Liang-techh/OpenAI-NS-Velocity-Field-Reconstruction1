@@ -1,0 +1,71 @@
+name: st043-coupled-replay
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st043/**'
+      - '.github/workflows/st043-coupled-replay.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'experiments/root_st043/**'
+      - '.github/workflows/st043-coupled-replay.yml'
+permissions:
+  contents: read
+jobs:
+  frozen-coupled-fields:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numerical and calibration dependencies
+        run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Verify unchanged published parent and new reduced derivatives
+        run: |
+          python scripts/ns_candidate.py verify
+          python -m pytest -q -W error experiments/root_st043/test_coupled.py
+      - name: Replay both frozen fields and their full independent validation
+        shell: bash
+        run: |
+          for candidate in ST045-G ST045-H; do
+            set +e
+            python experiments/root_st043/frozen_replay.py --id "$candidate" --out "outputs/$candidate" --seed 9174301 --validate --structure
+            code=$?
+            set -e
+            test "$code" = 1
+          done
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          recorded=json.loads(Path('experiments/root_st043/results.json').read_text())
+          for ident in ('ST045-G','ST045-H'):
+              actual=json.loads(Path(f'outputs/{ident}/validation.json').read_text())
+              reference=next(row for row in recorded['paired_results'] if row['id']==ident and row['seed']==9174301)
+              assert actual['pde_validated'] is False and actual['all_numeric_gates_pass'] is False
+              assert actual['gates']==reference['gates']
+              fine=[row for row in actual['spatial_refinement'] if row['space_step']==.005]
+              maximum=max(row['momentum_max'] for row in fine)
+              l2=max(row['momentum_L2'] for row in fine)
+              assert abs(maximum-reference['max'])<1e-5
+              assert abs(l2-reference['volume_L2'])<1e-5
+              structure=json.loads(Path(f'outputs/{ident}/structure.json').read_text())
+              core=next(case for case in structure['cases'] if case['grid']=='prior_comparable_grid')
+              for row in core['rows']:
+                  assert row['axial_pressure_toward_fraction']==0.0
+                  assert row['inward_fraction']==1.0 and row['positive_swirl_fraction']==1.0 and row['bipolar_fraction']==1.0
+              print(ident,maximum,l2,'Frozen field reproduced. Momentum and pressure-alignment goals still unmet.')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ST045-G-H-independent-replay
+          path: |
+            outputs/ST045-G/
+            outputs/ST045-H/
+          if-no-files-found: error

@@ -1,0 +1,624 @@
+{
+  "round": "ST043\u2013ST045 joint structure/residual progression",
+  "target_achieved": false,
+  "default_promoted": false,
+  "baseline": "ST042",
+  "publication_default_still": "ST006",
+  "candidates_sha256": {
+    "ST042": "5444d2f5c029fdfff86326408ae20e7307dacf59de470cca3a51d73b9c0b3220",
+    "ST045-G": "8eb99dc0bb97e01fa709f64961a8dfed857b565da04ddf92cbbc9f11ca9327be",
+    "ST045-H": "aac5ca26bcaaea4f0021e4b54d13b48c33e5c5d85ecc0c2e688975dd859580c6",
+    "ST044-F": "fc2bd5fa6bd20118335af94721ca9585f8d8a7854b6c18b4628ac5838429e607"
+  },
+  "paired_results": [
+    {
+      "id": "ST042",
+      "seed": 9174301,
+      "points": 4096,
+      "max": 0.09203355589997646,
+      "volume_L2": 0.10031425727721523,
+      "divergence_max": 1.1922360177218927e-05,
+      "gates": {
+        "momentum_max": false,
+        "momentum_L2": false,
+        "divergence_max": false,
+        "divergence_L2": true,
+        "initial_energy": true,
+        "energy_range": true,
+        "energy_quadrature": true,
+        "boundary": true,
+        "core_signs": true,
+        "scaled_core_drift": true,
+        "derived_amplitude": true
+      },
+      "full_precision_ladders": true
+    },
+    {
+      "id": "ST042",
+      "seed": 9174302,
+      "points": 4096,
+      "max": 0.09743140774165775,
+      "volume_L2": 0.09784310238485674,
+      "divergence_max": 5.073768840820839e-06,
+      "gates": {
+        "momentum_max": false,
+        "momentum_L2": false,
+        "divergence_max": true,
+        "divergence_L2": true,
+        "initial_energy": true,
+        "energy_range": true,
+        "energy_quadrature": true,
+        "boundary": true,
+        "core_signs": true,
+        "scaled_core_drift": true,
+        "derived_amplitude": true
+      },
+      "full_precision_ladders": true
+    },
+    {
+      "id": "ST045-G",
+      "seed": 9174301,
+      "points": 4096,
+      "max": 0.07581269521439166,
+      "volume_L2": 0.0820303722946554,
+      "divergence_max": 1.0925964295867285e-05,
+      "gates": {
+        "momentum_max": false,
+        "momentum_L2": false,
+        "divergence_max": false,
+        "divergence_L2": true,
+        "initial_energy": true,
+        "energy_range": true,
+        "energy_quadrature": true,
+        "boundary": true,
+        "core_signs": true,
+        "scaled_core_drift": true,
+        "derived_amplitude": true
+      },
+      "full_precision_ladders": true,
+      "max_reduction_fraction": 0.17624941823625606,
+      "L2_reduction_fraction": 0.18226606545102453
+    },
+    {
+      "id": "ST045-G",
+      "seed": 9174302,
+      "points": 4096,
+      "max": 0.08523753952227402,
+      "volume_L2": 0.08099594466733485,
+      "divergence_max": 5.068359725668523e-06,
+      "gates": {
+        "momentum_max": false,
+        "momentum_L2": false,
+        "divergence_max": true,
+        "divergence_L2": true,
+        "initial_energy": true,
+        "energy_range": true,
+        "energy_quadrature": true,
+        "boundary": true,
+        "core_signs": true,
+        "scaled_core_drift": true,
+        "derived_amplitude": true
+      },
+      "full_precision_ladders": true,
+      "max_reduction_fraction": 0.12515336175492953,
+      "L2_reduction_fraction": 0.17218544084237197
+    },
+    {
+      "id": "ST045-H",
+      "seed": 9174301,
+      "points": 4096,
+      "max": 0.07757081906386092,
+      "volume_L2": 0.08304843256462506,
+      "divergence_max": 1.1244110040851962e-05,
+      "gates": {
+        "momentum_max": false,
+        "momentum_L2": false,
+        "divergence_max": false,
+        "divergence_L2": true,
+        "initial_energy": true,
+        "energy_range": true,
+        "energy_quadrature": true,
+        "boundary": true,
+        "core_signs": true,
+        "scaled_core_drift": true,
+        "derived_amplitude": true
+      },
+      "full_precision_ladders": true,
+      "max_reduction_fraction": 0.15714634401211092,
+      "L2_reduction_fraction": 0.1721173558099186
+    },
+    {
+      "id": "ST045-H",
+      "seed": 9174302,
+      "points": 4096,
+      "max": 0.08751870357833155,
+      "volume_L2": 0.08198856063954456,
+      "divergence_max": 5.125498700759429e-06,
+      "gates": {
+        "momentum_max": false,
+        "momentum_L2": false,
+        "divergence_max": true,
+        "divergence_L2": true,
+        "initial_energy": true,
+        "energy_range": true,
+        "energy_quadrature": true,
+        "boundary": true,
+        "core_signs": true,
+        "scaled_core_drift": true,
+        "derived_amplitude": true
+      },
+      "full_precision_ladders": true,
+      "max_reduction_fraction": 0.10174033602809085,
+      "L2_reduction_fraction": 0.16204046436456832
+    },
+    {
+      "id": "ST044-F",
+      "seed": 9174301,
+      "points": 4096,
+      "max": 0.1918287616646707,
+      "volume_L2": 0.12649729263798876,
+      "divergence_max": 1.6200563222920628e-05,
+      "gates": {
+        "momentum_max": false,
+        "momentum_L2": false,
+        "divergence_max": false,
+        "divergence_L2": true,
+        "initial_energy": true,
+        "energy_range": true,
+        "energy_quadrature": true,
+        "boundary": true,
+        "core_signs": true,
+        "scaled_core_drift": true,
+        "derived_amplitude": true
+      },
+      "full_precision_ladders": true,
+      "max_reduction_fraction": -1.0843349992165168,
+      "L2_reduction_fraction": -0.26101011034171906
+    }
+  ],
+  "structure": [
+    {
+      "id": "ST042",
+      "cases": [
+        {
+          "grid": "prior_comparable_grid",
+          "points_per_time": 242,
+          "times": 6,
+          "last": {
+            "time": 0.75,
+            "scaled_profile_drift": 0.1915819695892126,
+            "inward_fraction": 1.0,
+            "positive_swirl_fraction": 1.0,
+            "bipolar_fraction": 1.0,
+            "radial_pressure_inward_fraction": 1.0,
+            "axial_pressure_toward_fraction": 0.0,
+            "adverse_axial_pressure_rms": 0.05861474889937936,
+            "aligned_axial_pressure_min": -0.0901380095314221,
+            "velocity_difference_relative_to_parent": 0.0,
+            "axial_pressure_adverse_ratio_to_parent": 1.0
+          },
+          "min_axial_pressure_toward_fraction": 0.0,
+          "flow_direction_min_fraction": 1.0
+        },
+        {
+          "grid": "new_offgrid_check",
+          "points_per_time": 338,
+          "times": 15,
+          "last": {
+            "time": 0.75,
+            "scaled_profile_drift": 0.1792656863221715,
+            "inward_fraction": 1.0,
+            "positive_swirl_fraction": 1.0,
+            "bipolar_fraction": 1.0,
+            "radial_pressure_inward_fraction": 1.0,
+            "axial_pressure_toward_fraction": 0.0,
+            "adverse_axial_pressure_rms": 0.05567172068398892,
+            "aligned_axial_pressure_min": -0.08716741300431054,
+            "velocity_difference_relative_to_parent": 0.0,
+            "axial_pressure_adverse_ratio_to_parent": 1.0
+          },
+          "min_axial_pressure_toward_fraction": 0.0,
+          "flow_direction_min_fraction": 1.0
+        }
+      ],
+      "midplane_t05": {
+        "time": 0.5,
+        "min_uz": 0.0006738548159886025,
+        "max_uz": 0.001717606046265072,
+        "max_abs_radial_axial_shear": 0.003146848001486005
+      }
+    },
+    {
+      "id": "ST045-G",
+      "cases": [
+        {
+          "grid": "prior_comparable_grid",
+          "points_per_time": 242,
+          "times": 6,
+          "last": {
+            "time": 0.75,
+            "scaled_profile_drift": 0.19092018796434432,
+            "inward_fraction": 1.0,
+            "positive_swirl_fraction": 1.0,
+            "bipolar_fraction": 1.0,
+            "radial_pressure_inward_fraction": 1.0,
+            "axial_pressure_toward_fraction": 0.0,
+            "adverse_axial_pressure_rms": 0.05605108606845662,
+            "aligned_axial_pressure_min": -0.08689109704189647,
+            "velocity_difference_relative_to_parent": 0.0971812841840259,
+            "axial_pressure_adverse_ratio_to_parent": 0.956262495718891
+          },
+          "min_axial_pressure_toward_fraction": 0.0,
+          "flow_direction_min_fraction": 1.0
+        },
+        {
+          "grid": "new_offgrid_check",
+          "points_per_time": 338,
+          "times": 15,
+          "last": {
+            "time": 0.75,
+            "scaled_profile_drift": 0.17831291499823182,
+            "inward_fraction": 1.0,
+            "positive_swirl_fraction": 1.0,
+            "bipolar_fraction": 1.0,
+            "radial_pressure_inward_fraction": 1.0,
+            "axial_pressure_toward_fraction": 0.0,
+            "adverse_axial_pressure_rms": 0.05324472986045222,
+            "aligned_axial_pressure_min": -0.08406695259469897,
+            "velocity_difference_relative_to_parent": 0.09741389442943417,
+            "axial_pressure_adverse_ratio_to_parent": 0.9564053204442322
+          },
+          "min_axial_pressure_toward_fraction": 0.0,
+          "flow_direction_min_fraction": 1.0
+        }
+      ],
+      "midplane_t05": {
+        "time": 0.5,
+        "min_uz": 0.0005446354843519347,
+        "max_uz": 0.001334520772232476,
+        "max_abs_radial_axial_shear": 0.0023868986191891636
+      }
+    },
+    {
+      "id": "ST045-H",
+      "cases": [
+        {
+          "grid": "prior_comparable_grid",
+          "points_per_time": 242,
+          "times": 6,
+          "last": {
+            "time": 0.75,
+            "scaled_profile_drift": 0.18697490106318393,
+            "inward_fraction": 1.0,
+            "positive_swirl_fraction": 1.0,
+            "bipolar_fraction": 1.0,
+            "radial_pressure_inward_fraction": 1.0,
+            "axial_pressure_toward_fraction": 0.0,
+            "adverse_axial_pressure_rms": 0.056075419875174566,
+            "aligned_axial_pressure_min": -0.0867520017803042,
+            "velocity_difference_relative_to_parent": 0.09293973198522405,
+            "axial_pressure_adverse_ratio_to_parent": 0.9566776439055652
+          },
+          "min_axial_pressure_toward_fraction": 0.0,
+          "flow_direction_min_fraction": 1.0
+        },
+        {
+          "grid": "new_offgrid_check",
+          "points_per_time": 338,
+          "times": 15,
+          "last": {
+            "time": 0.75,
+            "scaled_profile_drift": 0.17454965598373393,
+            "inward_fraction": 1.0,
+            "positive_swirl_fraction": 1.0,
+            "bipolar_fraction": 1.0,
+            "radial_pressure_inward_fraction": 1.0,
+            "axial_pressure_toward_fraction": 0.0,
+            "adverse_axial_pressure_rms": 0.053266962456521,
+            "aligned_axial_pressure_min": -0.08392506855212482,
+            "velocity_difference_relative_to_parent": 0.09314544777044977,
+            "axial_pressure_adverse_ratio_to_parent": 0.9568046721401315
+          },
+          "min_axial_pressure_toward_fraction": 0.0,
+          "flow_direction_min_fraction": 1.0
+        }
+      ],
+      "midplane_t05": {
+        "time": 0.5,
+        "min_uz": 0.0005318036623262504,
+        "max_uz": 0.0013444840008500578,
+        "max_abs_radial_axial_shear": 0.0024513017658683925
+      }
+    },
+    {
+      "id": "ST044-F",
+      "cases": [
+        {
+          "grid": "prior_comparable_grid",
+          "points_per_time": 242,
+          "times": 6,
+          "last": {
+            "time": 0.75,
+            "scaled_profile_drift": 0.11220776554463391,
+            "inward_fraction": 1.0,
+            "positive_swirl_fraction": 1.0,
+            "bipolar_fraction": 1.0,
+            "radial_pressure_inward_fraction": 1.0,
+            "axial_pressure_toward_fraction": 1.0,
+            "adverse_axial_pressure_rms": 0.0,
+            "aligned_axial_pressure_min": 0.0043630360169431915,
+            "velocity_difference_relative_to_parent": 0.1414482939867405,
+            "axial_pressure_adverse_ratio_to_parent": 0.0
+          },
+          "min_axial_pressure_toward_fraction": 1.0,
+          "flow_direction_min_fraction": 1.0
+        },
+        {
+          "grid": "new_offgrid_check",
+          "points_per_time": 338,
+          "times": 15,
+          "last": {
+            "time": 0.75,
+            "scaled_profile_drift": 0.1033950844242261,
+            "inward_fraction": 1.0,
+            "positive_swirl_fraction": 1.0,
+            "bipolar_fraction": 1.0,
+            "radial_pressure_inward_fraction": 1.0,
+            "axial_pressure_toward_fraction": 1.0,
+            "adverse_axial_pressure_rms": 0.0,
+            "aligned_axial_pressure_min": 0.0036381576079400845,
+            "velocity_difference_relative_to_parent": 0.1415899973161823,
+            "axial_pressure_adverse_ratio_to_parent": 0.0
+          },
+          "min_axial_pressure_toward_fraction": 1.0,
+          "flow_direction_min_fraction": 1.0
+        }
+      ],
+      "midplane_t05": {
+        "time": 0.5,
+        "min_uz": 0.000988362789725568,
+        "max_uz": 0.0021260870662423176,
+        "max_abs_radial_axial_shear": 0.003470000370741545
+      }
+    }
+  ],
+  "additional_precision": [
+    {
+      "id": "ST045-G",
+      "seed": 9174301,
+      "refinements": [
+        {
+          "space_step": 0.0025,
+          "max": 0.07584798478607019,
+          "volume_L2": 0.08203058108904608,
+          "divergence_max": 6.976711809589253e-07
+        },
+        {
+          "space_step": 0.00125,
+          "max": 0.07585022633033603,
+          "volume_L2": 0.08203059428611699,
+          "divergence_max": 4.3838351351799254e-08
+        }
+      ],
+      "pressure_direction_bound": {
+        "time": 0.6875,
+        "sampled_pressure_direction_lower_bound": 0.15642031979933854,
+        "point": [
+          0.022360679774997897,
+          0.0,
+          0.11245551437834078
+        ],
+        "frozen_axial_pressure_gradient": -0.09851215911572714,
+        "frozen_axial_residual": 0.05790816068361141,
+        "analytic_material_defect": 0.15642031979933854,
+        "independent_FD_material_defect": 0.1564203176347083,
+        "derivative_discrepancy": 2.164630252821098e-09
+      }
+    },
+    {
+      "id": "ST045-H",
+      "seed": 9174301,
+      "refinements": [
+        {
+          "space_step": 0.0025,
+          "max": 0.07760707705611765,
+          "volume_L2": 0.08304864185272741,
+          "divergence_max": 7.179778383561985e-07
+        },
+        {
+          "space_step": 0.00125,
+          "max": 0.07760937993467913,
+          "volume_L2": 0.08304865508574767,
+          "divergence_max": 4.5114194234530114e-08
+        }
+      ],
+      "pressure_direction_bound": {
+        "time": 0.6875,
+        "sampled_pressure_direction_lower_bound": 0.15728410081886784,
+        "point": [
+          0.022360679774997897,
+          0.0,
+          0.11245551437834078
+        ],
+        "frozen_axial_pressure_gradient": -0.09889361344487696,
+        "frozen_axial_residual": 0.058390487373990885,
+        "analytic_material_defect": 0.15728410081886784,
+        "independent_FD_material_defect": 0.15728409864082238,
+        "derivative_discrepancy": 2.1780454662057025e-09
+      }
+    }
+  ],
+  "actual_acceptance_cli": [
+    {
+      "candidate": "ST042",
+      "seed": 9174301,
+      "exit_code": 1,
+      "stdout": "FAIL: momentum_max, momentum_L2, divergence_max"
+    },
+    {
+      "candidate": "ST042",
+      "seed": 9174302,
+      "exit_code": 1,
+      "stdout": "FAIL: momentum_max, momentum_L2"
+    },
+    {
+      "candidate": "ST045-G",
+      "seed": 9174301,
+      "exit_code": 1,
+      "stdout": "FAIL: momentum_max, momentum_L2, divergence_max"
+    },
+    {
+      "candidate": "ST045-G",
+      "seed": 9174302,
+      "exit_code": 1,
+      "stdout": "FAIL: momentum_max, momentum_L2"
+    },
+    {
+      "candidate": "ST045-H",
+      "seed": 9174301,
+      "exit_code": 1,
+      "stdout": "FAIL: momentum_max, momentum_L2, divergence_max"
+    },
+    {
+      "candidate": "ST045-H",
+      "seed": 9174302,
+      "exit_code": 1,
+      "stdout": "FAIL: momentum_max, momentum_L2"
+    },
+    {
+      "candidate": "ST044-F",
+      "seed": 9174301,
+      "exit_code": 1,
+      "stdout": "FAIL: momentum_max, momentum_L2, divergence_max"
+    }
+  ],
+  "training_runs": [
+    {
+      "variables": 122,
+      "success": false,
+      "message": "Iteration limit reached",
+      "iterations": 160,
+      "nfev": 180,
+      "loss": 0.00015455385326238445,
+      "min_constraint": -3.245538469774018e-08,
+      "elapsed": 21.57952356338501,
+      "folder": "st043_runA"
+    },
+    {
+      "folder": "st043_runB",
+      "status": "interrupted without a completed final fit",
+      "details": "container timeout; no final candidate, before checkpointing was added"
+    },
+    {
+      "variables": 122,
+      "success": false,
+      "message": "Iteration limit reached",
+      "iterations": 400,
+      "nfev": 420,
+      "loss": 0.0001463905326626719,
+      "min_constraint": -8.307812507856131e-10,
+      "elapsed": 49.28933644294739,
+      "folder": "st043_A_full"
+    },
+    {
+      "variables": 122,
+      "success": false,
+      "message": "Iteration limit reached",
+      "iterations": 400,
+      "nfev": 430,
+      "loss": 0.0005947974864555261,
+      "min_constraint": -2.23180952243357e-08,
+      "elapsed": 53.640753984451294,
+      "folder": "st043_B_retry"
+    },
+    {
+      "variables": 146,
+      "success": true,
+      "message": "Optimization terminated successfully",
+      "iterations": 550,
+      "nfev": 586,
+      "loss": 0.00032105558872360247,
+      "min_constraint": -6.571881673838399e-15,
+      "elapsed": 86.04859590530396,
+      "folder": "st044_local"
+    },
+    {
+      "variables": 146,
+      "success": false,
+      "message": "Iteration limit reached",
+      "iterations": 500,
+      "nfev": 535,
+      "loss": 0.00018010684336046152,
+      "min_constraint": -6.612094552438386e-12,
+      "elapsed": 77.49605774879456,
+      "folder": "st044_localized_mild"
+    },
+    {
+      "variables": 146,
+      "success": false,
+      "message": "Iteration limit reached",
+      "iterations": 500,
+      "nfev": 536,
+      "loss": 0.00034421252788803135,
+      "min_constraint": -3.6876496117270505e-08,
+      "elapsed": 76.74061918258667,
+      "folder": "st044_localized_toward"
+    },
+    {
+      "variables": 146,
+      "success": true,
+      "message": "Optimization terminated successfully",
+      "iterations": 533,
+      "nfev": 568,
+      "loss": 0.00030099658789950847,
+      "min_constraint": -2.869440796082756e-13,
+      "elapsed": 73.70833921432495,
+      "folder": "st044_toward_wider"
+    },
+    {
+      "folder": "st045_pareto",
+      "status": "interrupted without a completed final fit",
+      "details": {
+        "status": "stopped_without_acceptance",
+        "reason": "training infeasibility/plateau and line-search evaluations; stop resource use after >1200 evaluations, not an optimality or infeasibility proof",
+        "recorded_evaluations": 1488,
+        "last_checkpoint": {
+          "iteration": 340,
+          "scope": "unfinished training checkpoint",
+          "pde_validated": false
+        },
+        "maxiter_not_completed": true
+      }
+    },
+    {
+      "variables": 146,
+      "success": true,
+      "message": "Optimization terminated successfully",
+      "iterations": 666,
+      "nfev": 710,
+      "loss": 6.521771863682507e-05,
+      "min_constraint": -6.070446724602725e-13,
+      "elapsed": 107.2546935081482,
+      "folder": "st045_guard"
+    },
+    {
+      "variables": 146,
+      "success": true,
+      "message": "Optimization terminated successfully",
+      "iterations": 697,
+      "nfev": 741,
+      "loss": 6.673502759294261e-05,
+      "min_constraint": -7.732552137648879e-13,
+      "elapsed": 112.36915969848633,
+      "folder": "st045_gentle"
+    }
+  ],
+  "source_scope": "Official manuscript Section2/Figure1 motivates near-axis axial pressure force and core scaling; all numerical probe ranges and strengths are autonomous, not recovered source parameters.",
+  "missing_structure": [
+    "wrong axial-pressure direction in ST045-G/H despite smaller adverse magnitude",
+    "expanded profile drift remains far above an exact self-similar profile",
+    "no source annular oscillatory pulses or independently matched heat exterior"
+  ],
+  "pde_validated": false,
+  "source_correspondence_verified": false
+}
