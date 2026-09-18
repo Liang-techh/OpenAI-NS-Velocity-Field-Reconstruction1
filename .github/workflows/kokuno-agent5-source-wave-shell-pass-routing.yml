@@ -1,0 +1,58 @@
+name: kokuno-agent5-source-wave-shell-pass-routing
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_source_wave_shell_roundoff_ladder_independent.py'
+      - 'src/openai_ns_reconstruction/kokuno_source_wave_shell_pass_routing_checkpoint.py'
+      - 'tests/test_constrained_kokuno_source_wave_shell_roundoff_ladder_independent.py'
+      - 'tests/test_constrained_kokuno_source_wave_shell_pass_routing_checkpoint.py'
+      - '.github/workflows/kokuno-agent5-source-wave-shell-pass-routing.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent5-source-wave-shell-pass-routing-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checkpoint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Focused Agent-4/5 source-shell pass tests
+        shell: bash
+        run: |
+          mkdir -p artifacts/kokuno_agent5/source_wave_shell_pass_diagnostics
+          set +e
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_source_wave_shell_roundoff_ladder_independent.py \
+            tests/test_constrained_kokuno_source_wave_shell_pass_routing_checkpoint.py \
+            2>&1 | tee artifacts/kokuno_agent5/source_wave_shell_pass_diagnostics/pytest.log
+          status=${PIPESTATUS[0]}
+          set -e
+          exit "$status"
+      - name: Upload diagnostics on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-source-wave-shell-pass-diagnostics-v20
+          path: artifacts/kokuno_agent5/source_wave_shell_pass_diagnostics
+      - name: Generate fail-closed routing bundle
+        run: >-
+          python -m openai_ns_reconstruction.kokuno_source_wave_shell_pass_routing_checkpoint
+          --output-dir artifacts/kokuno_agent5/source_wave_shell_pass_routing_checkpoint_v20
+      - name: Show receipt
+        run: cat artifacts/kokuno_agent5/source_wave_shell_pass_routing_checkpoint_v20/source_wave_shell_pass_routing_checkpoint.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-source-wave-shell-pass-routing-checkpoint-v20
+          path: artifacts/kokuno_agent5/source_wave_shell_pass_routing_checkpoint_v20
