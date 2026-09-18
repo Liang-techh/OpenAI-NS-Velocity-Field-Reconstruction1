@@ -1,0 +1,44 @@
+name: kokuno-agent1-rescaled-pa15-incoming-moments
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a1-rescaled-pa15-incoming-moments
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-a1-rescaled-pa15-incoming-moments-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHONHASHSEED: '0'
+
+jobs:
+  rescaled-pa15-incoming-moments:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Focused regressions
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_rescaled_outer_scale_binding.py \
+            tests/test_constrained_kokuno_rescaled_appendix_b_boundary.py \
+            tests/test_constrained_kokuno_rescaled_appendix_b_incoming_moments.py
+      - name: Generate PA15 incoming-moment receipt
+        run: |
+          python -m openai_ns_reconstruction.kokuno_rescaled_appendix_b_incoming_moments \
+            --axis-quadrature-points 64 \
+            --output artifacts/kokuno_agent1/rescaled_pa15_incoming_moments/report.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-rescaled-pa15-incoming-moments-v1
+          path: artifacts/kokuno_agent1/rescaled_pa15_incoming_moments/report.json
