@@ -4,6 +4,11 @@ from pathlib import Path
 import numpy as np
 import pytest
 from research_baseline import ROOT, load_best, verify_integrity
+from research_baseline.visualization import (
+    load_visualization_bundle,
+    sample_reference_grid,
+    write_visualization_bundle,
+)
 
 
 def test_integrity():
@@ -27,6 +32,27 @@ def test_shapes_support_and_rotation():
     np.testing.assert_allclose(f.at_points(x@Q.T,.5),f.at_points(x,.5)@Q.T,atol=1e-11)
     assert f.velocity(.1,0.,.1,np.array([.25,.5,.75])).shape==(3,3)
     assert not f._raw.flags.writeable
+
+
+def test_visualization_bundle_roundtrip_and_tamper(tmp_path):
+    f=load_best();grid=sample_reference_grid(5)
+    assert grid['velocity'].shape==(3,5,5,5,3) and grid['speed'].shape==(3,5,5,5)
+    assert grid['candidate_sha256']==f.sha256 and grid['pde_validated'] is False
+    direct=f.at_points([grid['x'][3],grid['y'][2],grid['z'][1]],.5)
+    # Grid evaluation is batched; the same point evaluated alone can differ at roundoff level.
+    np.testing.assert_allclose(grid['velocity'][1,3,2,1],direct,rtol=2e-13,atol=2e-14)
+    path=tmp_path/'st006-vis.npz';meta=write_visualization_bundle(path,5)
+    loaded=load_visualization_bundle(path)
+    assert meta['grid_sha256']==loaded['grid_sha256'] and loaded['visualization_ready'] is False
+    np.testing.assert_array_equal(loaded['velocity'],grid['velocity'])
+    assert not loaded['velocity'].flags.writeable and not loaded['times'].flags.writeable
+    with np.load(path,allow_pickle=False) as data:
+        payload={name:np.array(data[name],copy=True) for name in data.files}
+    payload['velocity'][0,2,2,2,0]+=1e-3
+    payload['speed']=np.linalg.norm(payload['velocity'],axis=-1)
+    np.savez_compressed(path,**payload)
+    with pytest.raises(ValueError,match='checksum'):
+        load_visualization_bundle(path)
 
 
 @pytest.mark.parametrize('time',[.249,.751,float('nan')])
