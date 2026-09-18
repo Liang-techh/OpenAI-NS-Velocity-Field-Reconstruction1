@@ -1,0 +1,46 @@
+name: kokuno-agent4-source-wave-shell-cartesian-audit
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a4-source-wave-shell-cartesian-audit-019
+  pull_request:
+    branches:
+      - codex/kokuno-a2-source-partition-family-020
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-a4-source-wave-shell-cartesian-audit-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  independent-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Focused source-domain and independent tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_source_support_localized_curl.py
+          tests/test_constrained_kokuno_source_wave_shell.py
+          tests/test_constrained_kokuno_source_partition_family.py
+          tests/test_constrained_kokuno_source_wave_shell_cartesian_independent.py
+      - name: Generate independent source-wave-shell Cartesian report
+        run: |
+          python -m openai_ns_reconstruction.kokuno_source_wave_shell_cartesian_independent \
+            --output artifacts/kokuno_agent4/source_wave_shell_cartesian_audit.json
+          cat artifacts/kokuno_agent4/source_wave_shell_cartesian_audit.json
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent4-source-wave-shell-cartesian-audit
+          path: artifacts/kokuno_agent4/source_wave_shell_cartesian_audit.json
