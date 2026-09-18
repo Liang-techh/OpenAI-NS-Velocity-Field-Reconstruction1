@@ -98,7 +98,10 @@ UPSTREAM = {
     "agent4": {
         "pr": BASE_AGENT4_PR,
         "head_sha": BASE_AGENT4_HEAD,
+        "dedicated_run": 35322435245,
         "standard_run": 35322435268,
+        "artifact_id": 10537458609,
+        "artifact_digest": "sha256:1ea1474f54aa54c99978ed319c5634d6190cf4733161e60712d297d02e076f26",
         "independent_segmented_public_contract_audit_executable": True,
         "conservative_i2_attribution_boundary_pinned": True,
         "consumed_in_executable_ancestry": True,
