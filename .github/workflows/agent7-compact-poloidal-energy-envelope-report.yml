@@ -1,0 +1,31 @@
+name: agent7-compact-poloidal-energy-envelope-report
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/constrained_eq45_bipolar_compact_poloidal_energy_envelope.py'
+      - 'tests/test_constrained_eq45_bipolar_compact_poloidal_energy_envelope.py'
+      - '.github/workflows/agent7-compact-poloidal-energy-envelope-report.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Test compact poloidal energy envelope
+        run: python -m pytest -q -W error tests/test_constrained_eq45_bipolar_compact_poloidal_energy_envelope.py
+      - name: Generate compact poloidal energy-envelope report
+        run: python -m openai_ns_reconstruction.constrained_eq45_bipolar_compact_poloidal_energy_envelope
+      - name: Upload energy-envelope report
+        uses: actions/upload-artifact@v4
+        with:
+          name: agent7-compact-poloidal-energy-envelope-report
+          path: artifacts/bipolar_compact_poloidal_energy_envelope/report.json
