@@ -1,0 +1,125 @@
+name: agent9-st051b-redist-visualization-grid
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/constrained_st051b_redistribution_visualization_grid.py'
+      - 'tests/test_constrained_st051b_redistribution_visualization_grid.py'
+      - 'docs/external_methods/CR-A9-053-st051b-redistribution-visualization-grid.md'
+      - '.github/workflows/agent9-st051b-redist-visualization-grid.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-source-export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout Agent-9 branch
+        uses: actions/checkout@v4
+
+      - name: Checkout exact ST051-B source
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: 4b784f1b8457af2ead49295631d834d4e882000b
+          path: _agent9_source_st051
+
+      - name: Checkout exact frozen redistribution source
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: 95f94188270f02511c8bdf660822f77530c9983a
+          path: _agent9_source_transfer
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install focused runtime
+        run: python -m pip install --upgrade pip && python -m pip install numpy scipy pytest
+
+      - name: Warning-clean compile and focused regressions
+        env:
+          PYTHONPATH: src
+        run: |
+          python -m py_compile src/openai_ns_reconstruction/constrained_st051b_redistribution_visualization_grid.py
+          python -m pytest -q -W error tests/test_constrained_st051b_redistribution_visualization_grid.py
+
+      - name: Verify immutable source heads and frozen transform constants
+        run: |
+          test "$(git -C _agent9_source_st051 rev-parse HEAD)" = "4b784f1b8457af2ead49295631d834d4e882000b"
+          test "$(git -C _agent9_source_transfer rev-parse HEAD)" = "95f94188270f02511c8bdf660822f77530c9983a"
+          python - <<'PY'
+          import ast
+          from pathlib import Path
+          path = Path('_agent9_source_transfer/experiments/root_st051/agent7_st051b_frozen_redistribution_transfer.py')
+          tree = ast.parse(path.read_text())
+          values = {}
+          wanted = {'PARENT_HEAD','SOURCE_ALPHA','GAIN','INNER_WINDOW','OUTER_WINDOW'}
+          for node in tree.body:
+              if isinstance(node, ast.Assign) and len(node.targets) == 1 and isinstance(node.targets[0], ast.Name):
+                  name = node.targets[0].id
+                  if name in wanted:
+                      values[name] = ast.literal_eval(node.value)
+          expected = {
+              'PARENT_HEAD': '4b784f1b8457af2ead49295631d834d4e882000b',
+              'SOURCE_ALPHA': 2.520520814687742,
+              'GAIN': 0.025,
+              'INNER_WINDOW': (0.30, 1.05),
+              'OUTER_WINDOW': (0.95, 1.85),
+          }
+          if values != expected:
+              raise SystemExit(f'frozen transfer identity drift: {values!r}')
+          PY
+
+      - name: Export real ST051-B redistribution grid and receipt
+        env:
+          PYTHONPATH: src
+        run: |
+          mkdir -p outputs
+          python -m openai_ns_reconstruction.constrained_st051b_redistribution_visualization_grid export \
+            --candidate-root _agent9_source_st051 \
+            --output outputs/ST051-B-frozen-redistribution.nc \
+            --receipt outputs/ST051-B-frozen-redistribution-receipt.json \
+            --resolution 33
+
+      - name: Verify exact receipt truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          receipt = json.loads(Path('outputs/ST051-B-frozen-redistribution-receipt.json').read_text())
+          candidate = receipt['candidate']
+          if candidate['parent_head_sha'] != '4b784f1b8457af2ead49295631d834d4e882000b':
+              raise SystemExit('parent head drift')
+          if candidate['transfer_head_sha'] != '95f94188270f02511c8bdf660822f77530c9983a':
+              raise SystemExit('transfer head drift')
+          if abs(candidate['common_reference_energy_scale'] - 1.0014791925672812) > 5e-12:
+              raise SystemExit('normalization drift')
+          if receipt['grid']['resolution'] != 33 or receipt['grid']['times'] != [0.25, 0.5, 0.75]:
+              raise SystemExit('grid contract drift')
+          if max(receipt['grid']['speed_max_by_time']) <= 0:
+              raise SystemExit('zero grid')
+          truth = receipt['truth_boundary']
+          forbidden = [k for k, v in truth.items() if v is True]
+          if forbidden:
+              raise SystemExit(f'unsupported truth promotion: {forbidden}')
+          print('grid_sha256', receipt['grid']['grid_sha256'])
+          print('receipt_sha256', receipt['receipt_sha256'])
+          print('speed_rms_by_time', receipt['grid']['speed_rms_by_time'])
+          print('speed_max_by_time', receipt['grid']['speed_max_by_time'])
+          print('common_reference_energy_scale', candidate['common_reference_energy_scale'])
+          PY
+
+      - name: Upload visualization artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ST051-B-frozen-redistribution-visualization-grid
+          path: |
+            outputs/ST051-B-frozen-redistribution.nc
+            outputs/ST051-B-frozen-redistribution-receipt.json
+          if-no-files-found: error
