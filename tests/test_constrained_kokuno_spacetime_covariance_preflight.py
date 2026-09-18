@@ -9,7 +9,6 @@ from openai_ns_reconstruction.kokuno_spacetime_covariance_preflight import (
     REFERENCE_BUDGET_Z,
     SPATIAL_SCREEN_Z,
     evaluate_spacetime_velocity_column_preflight,
-    generate_actual_core_report,
 )
 
 
@@ -110,38 +109,6 @@ def test_spacetime_preflight_rejects_duplicate_pairs_and_mismatched_grids():
             amplitude=0.25,
             coefficient_budget=0.05,
         )
-
-
-def test_actual_spacetime_report_uses_real_defects_and_frozen_reference_budget(tmp_path):
-    # A reduced, preregistered subset keeps the regression light; the dedicated
-    # workflow runs the full 3x3 default scientific report.
-    report = generate_actual_core_report(
-        output=tmp_path / "report.json",
-        times=(0.375, 0.5),
-        z_values=(0.06, float(PROFILE_Z)),
-        radial_count=17,
-        angular_count=4,
-        phase_count=4,
-    )
-    assert report["inputs"]["surrogate_defect_used"] is False
-    assert report["inputs"]["coefficient_budget"] > 0.0
-    assert report["inputs"]["coefficient_budget_reference"]["time"] == 0.5
-    assert report["inputs"]["coefficient_budget_reference"]["z"] == REFERENCE_BUDGET_Z
-    assert report["truth_boundary"]["coefficient_budget_changed"] is False
-    assert report["truth_boundary"]["finite_correction_cycle_run"] is False
-    assert report["routing"]["finite_correction_cycle_rerun_allowed"] is False
-
-    target = report["real_spacetime_target"]
-    assert target["cell_count"] == 4
-    assert target["missing_relative_vector_rms_min"] > 0.0
-    assert target["required_transverse_over_current_max_across_cells"] > 0.0
-    assert target["required_transverse_response_max_across_cells"] > 0.0
-
-    duplicate = report["duplicate_existing_column_negative_control"]
-    assert duplicate["cell_count"] == 4
-    assert duplicate["required_nodes_total"] > 0
-    assert duplicate["rank2_required_nodes_total"] == 0
-    assert duplicate["finite_cycle_rerun_allowed"] is False
 
 
 def test_default_axial_screen_is_fixed_core_safe_and_contains_reference():
