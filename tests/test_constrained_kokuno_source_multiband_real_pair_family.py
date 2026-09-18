@@ -77,26 +77,17 @@ def test_multiband_result_matches_explicit_per_label_complete_curls():
     for j, ell in enumerate((5, 6)):
         band = KokunoSourceBandCovering(ell, h)
         plus = KokunoSourceSupportLocalizedCurl(epsilon=band.epsilon, m=1).localized_mode(
-            data["R"],
-            data["phase"][:, j],
-            data["n_phi"][:, j, :],
-            data["t_plus"][:, j, :],
-            data["D_r_C_plus"][:, j, :],
-            data["D_z_C_plus"][:, j, :],
-            data["eta"][:, j],
-            data["D_r_eta"][:, j],
-            data["D_z_eta"][:, j],
+            data["R"], data["phase"][:, j], data["n_phi"][:, j, :],
+            data["t_plus"][:, j, :], data["D_r_C_plus"][:, j, :],
+            data["D_z_C_plus"][:, j, :], data["eta"][:, j],
+            data["D_r_eta"][:, j], data["D_z_eta"][:, j],
         )
         minus = KokunoSourceSupportLocalizedCurl(epsilon=band.epsilon, m=-1).localized_mode(
-            data["R"],
-            data["phase"][:, j],
-            data["n_phi"][:, j, :],
+            data["R"], data["phase"][:, j], data["n_phi"][:, j, :],
             np.conjugate(data["t_plus"][:, j, :]),
             np.conjugate(data["D_r_C_plus"][:, j, :]),
-            np.conjugate(data["D_z_C_plus"][:, j, :]),
-            data["eta"][:, j],
-            data["D_r_eta"][:, j],
-            data["D_z_eta"][:, j],
+            np.conjugate(data["D_z_C_plus"][:, j, :]), data["eta"][:, j],
+            data["D_r_eta"][:, j], data["D_z_eta"][:, j],
         )
         pair = (plus["velocity"] + minus["velocity"]).real
         manual.append((band.Q ** (-contract.A)) * pair)
@@ -109,9 +100,7 @@ def test_multiband_result_matches_explicit_per_label_complete_curls():
     )
     np.testing.assert_allclose(
         np.sum(out["velocity_physical_cartesian_by_band"], axis=-2),
-        out["velocity_physical_cartesian_total"],
-        rtol=0,
-        atol=2e-12,
+        out["velocity_physical_cartesian_total"], rtol=0, atol=2e-12,
     )
 
 
@@ -121,18 +110,9 @@ def test_shared_epsilon_legacy_path_is_detectably_not_multiband_schedule():
     eps5 = KokunoSourceBandCovering(5, h).epsilon
     q = np.broadcast_to(out["Q_source_by_label"], data["eta"].shape)
     legacy = KokunoSourceLocalizedRealPairFamily(epsilon=eps5, h=h).physical_family(
-        q,
-        data["R"],
-        data["theta"],
-        data["phase"],
-        data["n_phi"],
-        data["t_plus"],
-        data["D_r_C_plus"],
-        data["D_z_C_plus"],
-        data["eta"],
-        data["D_r_eta"],
-        data["D_z_eta"],
-        data["beta_labels"],
+        q, data["R"], data["theta"], data["phase"], data["n_phi"],
+        data["t_plus"], data["D_r_C_plus"], data["D_z_C_plus"],
+        data["eta"], data["D_r_eta"], data["D_z_eta"], data["beta_labels"],
     )
     first_diff = np.max(
         np.abs(
@@ -169,7 +149,7 @@ def test_single_band_phase_copy_and_too_wide_band_window_fail_closed():
         contract.physical_family(**same_band)
 
     wide = _inputs(labels=((5, (0, 0, 0)), (10, (1, 0, 0))))
-    with pytest.raises(ValueError, match="max\(ell\)-min\(ell\)<=4"):
+    with pytest.raises(ValueError, match="active interacting band window"):
         contract.physical_family(**wide)
 
 
