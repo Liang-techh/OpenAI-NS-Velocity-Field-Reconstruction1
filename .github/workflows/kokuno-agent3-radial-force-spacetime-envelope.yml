@@ -1,0 +1,48 @@
+name: kokuno-agent3-radial-force-spacetime-envelope
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_radial_force_spacetime_envelope.py'
+      - 'src/openai_ns_reconstruction/kokuno_radial_force_completeness_audit.py'
+      - 'src/openai_ns_reconstruction/kokuno_radial_stress.py'
+      - 'src/openai_ns_reconstruction/kokuno_mean_defect.py'
+      - 'src/openai_ns_reconstruction/kokuno_complete_curl.py'
+      - 'src/openai_ns_reconstruction/kokuno_leading_core_series.py'
+      - 'src/openai_ns_reconstruction/kokuno_spacetime_covariance_preflight.py'
+      - 'tests/test_constrained_kokuno_radial_force_spacetime_envelope.py'
+      - 'tests/test_constrained_kokuno_radial_force_completeness_audit.py'
+      - '.github/workflows/kokuno-agent3-radial-force-spacetime-envelope.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  radial-force-spacetime-envelope:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Focused tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_radial_force_spacetime_envelope.py
+          tests/test_constrained_kokuno_radial_force_completeness_audit.py
+          tests/test_constrained_kokuno_radial_stress.py
+          tests/test_constrained_kokuno_mean_defect.py
+      - name: Measure real radial-force spacetime envelope
+        run: >-
+          python -m openai_ns_reconstruction.kokuno_radial_force_spacetime_envelope
+          --output-dir artifacts/kokuno_agent3/radial_force_spacetime_envelope_v17
+      - name: Show summary
+        run: cat artifacts/kokuno_agent3/radial_force_spacetime_envelope_v17/summary.json
+      - name: Upload report bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent3-radial-force-spacetime-envelope-v17
+          path: artifacts/kokuno_agent3/radial_force_spacetime_envelope_v17
