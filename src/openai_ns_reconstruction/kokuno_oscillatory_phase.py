@@ -1,4 +1,4 @@
-"""Executable source phase/covector contract for Kokuno oscillatory labels.
+r"""Executable source phase/covector contract for Kokuno oscillatory labels.
 
 The corrected 2026-09-09 reconstruction retains the full normalized cylindrical
 phase
@@ -13,8 +13,8 @@ and the corresponding (non-unit-normalized) covector
              p_z - epsilon*v*d_Z H_Phi).
 
 The source discrete label is not generally integer ``p``: it is ``p=j/k`` with
-``j`` a nonzero integer and ``k=ceil(epsilon^(-1/2))``.  Periodicity is thus
-encoded by ``k*p=j in Z\{0}``.  This module enforces that source-compatible
+``j`` a nonzero integer and ``k=ceil(epsilon^(-1/2))``. Periodicity is thus
+encoded by ``k*p=j in Z\{0}``. This module enforces that source-compatible
 rational grid but does not itself choose ``j``; see ``kokuno_source_phase_label``
 for the source label-selection algebra.
 
