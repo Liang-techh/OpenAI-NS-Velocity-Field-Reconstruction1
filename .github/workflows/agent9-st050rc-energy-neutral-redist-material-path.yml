@@ -1,0 +1,94 @@
+name: agent9-st050rc-energy-neutral-redist-material-path
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/constrained_st050rc_energy_neutral_redist_material_path.py'
+      - 'tests/test_constrained_st050rc_energy_neutral_redist_material_path.py'
+      - 'docs/external_methods/CR-A9-051-st050rc-energy-neutral-redist-material-path.md'
+      - '.github/workflows/agent9-st050rc-energy-neutral-redist-material-path.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - name: Checkout Agent-9 branch
+        uses: actions/checkout@v4
+
+      - name: Checkout exact ST050R-C plus Agent-7 transfer source
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: 2ed651cb750f347fd009d3c511645627135192a4
+          path: external/st050r_source
+
+      - name: Checkout exact frozen Agent-9 path engine
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: 6699a698c9fb2f0a0986e7aefc5fe0ee431cd5ad
+          path: external/agent9_path_source
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install focused dependencies
+        run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+
+      - name: Warning-clean compile and focused regressions
+        run: |
+          python -m py_compile src/openai_ns_reconstruction/constrained_st050rc_energy_neutral_redist_material_path.py
+          python -m pytest -q -W error tests/test_constrained_st050rc_energy_neutral_redist_material_path.py
+
+      - name: Execute exact-source frozen material-path replay
+        run: |
+          mkdir -p outputs/agent9-st050rc-energy-neutral-redist-material-path
+          PYTHONPATH=src python src/openai_ns_reconstruction/constrained_st050rc_energy_neutral_redist_material_path.py \
+            --candidate-root external/st050r_source \
+            --agent9-root external/agent9_path_source \
+            --out outputs/agent9-st050rc-energy-neutral-redist-material-path/report.json \
+            | tee outputs/agent9-st050rc-energy-neutral-redist-material-path/run.log
+
+      - name: Verify fail-closed truth boundary and frozen population
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('outputs/agent9-st050rc-energy-neutral-redist-material-path/report.json')
+          r=json.loads(p.read_text())
+          assert r['task_id']=='CR-A9-051'
+          assert r['lineage']['parent_candidate']=='ST050R-C'
+          assert r['lineage']['agent7_transfer_head']=='2ed651cb750f347fd009d3c511645627135192a4'
+          assert r['lineage']['agent9_path_engine_head']=='6699a698c9fb2f0a0986e7aefc5fe0ee431cd5ad'
+          assert r['frozen_material_path_contract']['path_count']==48
+          assert r['frozen_material_path_contract']['paired_material_line_count']==24
+          assert r['redistribution']['gain']==0.025
+          assert r['parent_material_paths']['path_count']==48
+          assert r['child_material_paths']['path_count']==48
+          assert r['truth_boundary']['canonical_velocity_changed'] is False
+          assert r['truth_boundary']['held_out_pde_residual_evaluated'] is False
+          assert r['truth_boundary']['visualization_ready'] is False
+          assert r['truth_boundary']['visual_correspondence_verified'] is False
+          assert r['truth_boundary']['pde_validated'] is False
+          assert r['truth_boundary']['paper_exact'] is False
+          print('report_sha256=', r['report_sha256'])
+          print('child_vs_parent=', r['child_vs_parent'])
+          print('by_radius=', r['child_vs_parent_by_seed_radius'])
+          PY
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ST050R-C-energy-neutral-redist-material-path
+          path: outputs/agent9-st050rc-energy-neutral-redist-material-path/
+          if-no-files-found: error
