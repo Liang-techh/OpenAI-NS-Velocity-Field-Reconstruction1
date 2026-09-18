@@ -194,9 +194,34 @@ class KokunoInnerJoinTshCertificate:
         return max(0.0, needed + (1.0e-9 if needed >= 0.0 else 0.0))
 
     @property
-    def required_C_multiplier_if_only_X_R_is_enlarged(self) -> float:
+    def required_log_C_multiplier_if_only_X_R_is_enlarged(self) -> float:
         # X_R=110(CP_*)^10, with P_* fixed in this diagnostic.
-        return math.exp(self.required_delta_log_X_R / 10.0)
+        return self.required_delta_log_X_R / 10.0
+
+    @property
+    def required_log10_C_multiplier_if_only_X_R_is_enlarged(self) -> float:
+        return self.required_log_C_multiplier_if_only_X_R_is_enlarged / math.log(10.0)
+
+    @property
+    def required_C_multiplier_float64_saturated(self) -> bool:
+        return self.required_log_C_multiplier_if_only_X_R_is_enlarged > math.log(
+            np.finfo(float).max
+        )
+
+    @property
+    def required_C_multiplier_if_only_X_R_is_enlarged(self) -> float:
+        """Finite float64 compatibility view; exact size is reported in log space.
+
+        The selected numerical PA.10 scale can require a C multiplier far beyond
+        float64.  Saturating this compatibility property avoids an overflow while
+        ``required_log_C_multiplier_if_only_X_R_is_enlarged`` and its log10 form
+        retain the actual finite diagnostic scale without pretending a clipped
+        float is the exact multiplier.
+        """
+        log_multiplier = self.required_log_C_multiplier_if_only_X_R_is_enlarged
+        if self.required_C_multiplier_float64_saturated:
+            return float(np.finfo(float).max)
+        return math.exp(log_multiplier)
 
     def geometry_report(self) -> dict[str, Any]:
         log_x_i = math.log(X_I) - float(self.incoming.outer_schedule.log_X_R)
@@ -211,7 +236,10 @@ class KokunoInnerJoinTshCertificate:
             "max_T_sh_for_current_outer_schedule": self.max_T_sh_for_separation,
             "separation_geometry_feasible": self.separation_geometry_feasible,
             "required_delta_log_X_R": self.required_delta_log_X_R,
-            "required_C_multiplier_if_only_X_R_is_enlarged": self.required_C_multiplier_if_only_X_R_is_enlarged,
+            "required_log_C_multiplier_if_only_X_R_is_enlarged": self.required_log_C_multiplier_if_only_X_R_is_enlarged,
+            "required_log10_C_multiplier_if_only_X_R_is_enlarged": self.required_log10_C_multiplier_if_only_X_R_is_enlarged,
+            "required_C_multiplier_if_only_X_R_is_enlarged_float64": self.required_C_multiplier_if_only_X_R_is_enlarged,
+            "required_C_multiplier_float64_saturated": self.required_C_multiplier_float64_saturated,
         }
 
     def build_selected_inner_join(self, *, quadrature_points: int = 96) -> KokunoInnerJoinExit:
@@ -334,7 +362,7 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
     obj = KokunoInnerJoinTshCertificate(eta_nodes=args.eta_nodes)
     report = obj.report()
-    text = json.dumps(report, indent=2, sort_keys=True)
+    text = json.dumps(report, indent=2, sort_keys=True, allow_nan=False)
     print(text)
     if args.output is not None:
         args.output.parent.mkdir(parents=True, exist_ok=True)
