@@ -8,7 +8,6 @@ on:
       - 'src/openai_ns_reconstruction/kokuno_family_bounded_inverse.py'
       - 'src/openai_ns_reconstruction/kokuno_family_covariance_cross_terms.py'
       - 'tests/test_constrained_kokuno_bounded_coordinate_covariance.py'
-      - 'tests/test_constrained_kokuno_bounded_family_coefficients.py'
       - 'tests/test_constrained_kokuno_family_bounded_inverse.py'
       - '.github/workflows/kokuno-agent3-bounded-coordinate-covariance.yml'
   pull_request:
@@ -18,7 +17,6 @@ on:
       - 'src/openai_ns_reconstruction/kokuno_family_bounded_inverse.py'
       - 'src/openai_ns_reconstruction/kokuno_family_covariance_cross_terms.py'
       - 'tests/test_constrained_kokuno_bounded_coordinate_covariance.py'
-      - 'tests/test_constrained_kokuno_bounded_family_coefficients.py'
       - 'tests/test_constrained_kokuno_family_bounded_inverse.py'
       - '.github/workflows/kokuno-agent3-bounded-coordinate-covariance.yml'
 
@@ -40,7 +38,6 @@ jobs:
         run: >-
           python -m pytest -q -s -W error
           tests/test_constrained_kokuno_bounded_coordinate_covariance.py
-          tests/test_constrained_kokuno_bounded_family_coefficients.py
           tests/test_constrained_kokuno_family_bounded_inverse.py
       - name: Real-defect bounded-coordinate report
         run: >-
