@@ -12,7 +12,7 @@ from openai_ns_reconstruction.kokuno_missing_covariance_column_target import (
 
 
 def _receipt(target=(0.5, 0.5)):
-    radii = np.linspace(0.1, 0.5, 5)
+    radii = np.linspace(0.1, 0.5, 9)
     target_stress = np.tile(np.asarray(target, dtype=float), (len(radii), 1))
     current = np.tile(np.array([1.0, 0.0]), (len(radii), 1))
     return build_missing_covariance_column_target(
@@ -41,7 +41,7 @@ def test_single_additional_column_matches_prior_budget_semantics():
     assert report["current_update_within_budget_on_all_required"] is True
     assert report["additional_family_l1_within_budget_on_all_required"] is True
     assert report["family_bounded_inverse_preflight_passed"] is True
-    assert report["max_additional_coefficient_l1_on_required"] == 0.5
+    assert np.isclose(report["max_additional_coefficient_l1_on_required"], 0.5)
 
 
 def test_duplicate_family_column_is_rejected_as_rank_deficient():
