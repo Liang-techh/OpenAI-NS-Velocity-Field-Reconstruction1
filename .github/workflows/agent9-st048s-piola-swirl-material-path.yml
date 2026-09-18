@@ -1,0 +1,138 @@
+name: agent9-st048s-piola-swirl-material-path
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/constrained_st048s_piola_swirl_material_path.py'
+      - 'tests/test_constrained_st048s_piola_swirl_material_path.py'
+      - 'docs/external_methods/CR-A9-048-st048s-piola-swirl-material-path.md'
+      - '.github/workflows/agent9-st048s-piola-swirl-material-path.yml'
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  frozen-swirl-gain-path-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - name: Checkout Agent 9 branch
+        uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numerical test dependencies
+        run: python -m pip install -e . 'pytest>=8,<10' 'sympy>=1.12,<2'
+      - name: Compile and run focused regressions
+        run: |
+          python -W error -m py_compile src/openai_ns_reconstruction/constrained_st048s_piola_swirl_material_path.py
+          python -m pytest -q -W error tests/test_constrained_st048s_piola_swirl_material_path.py
+      - name: Checkout pinned ST048 source tree
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: 97695a86f85ce68fb4ae70c41fc81c904d655183
+          path: external/st048
+          persist-credentials: false
+      - name: Checkout pinned Agent 7 swirl-gain source tree
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: b2b4888ece83a9f862435ce1adb847c94ad3ad7d
+          path: external/agent7
+          persist-credentials: false
+      - name: Verify pinned source identities
+        run: |
+          test "$(git -C external/st048 rev-parse HEAD)" = "97695a86f85ce68fb4ae70c41fc81c904d655183"
+          test "$(git -C external/agent7 rev-parse HEAD)" = "b2b4888ece83a9f862435ce1adb847c94ad3ad7d"
+      - name: Replay kappa .05 on frozen Agent-9 material paths
+        run: |
+          python -m openai_ns_reconstruction.constrained_st048s_piola_swirl_material_path \
+            --candidate-root external/st048 \
+            --agent7-root external/agent7 \
+            --output outputs/agent9/ST048-S-piola-temporal-kappa005-material-path.json
+      - name: Fail closed on provenance and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('outputs/agent9/ST048-S-piola-temporal-kappa005-material-path.json')
+          d=json.loads(p.read_text())
+          assert d['task_id']=='CR-A9-048'
+          assert d['base_main_sha']=='f0193d66c9d92948b4820ebcb70263673995b324'
+          c=d['candidate']
+          assert c['source_head_sha']=='97695a86f85ce68fb4ae70c41fc81c904d655183'
+          assert c['original_raw_candidate_sha256']=='6d9ce8407e29aca20d32599332ae3ec654f45678e17783179267665428ec8e09'
+          x=d['agent7_formula_crosscheck']
+          assert x['source_head_sha']=='b2b4888ece83a9f862435ce1adb847c94ad3ad7d'
+          assert x['task_id']=='CR003-ST048S-TEMPORAL-PIOLA-SWIRL-GAIN-063'
+          assert x['crosscheck_passed'] is True
+          assert x['max_abs_formula_difference'] <= 2e-15
+          n=d['normalization']['temporal_piola_kappa_005']
+          assert n['kappa']==.05
+          assert abs(n['beta_at_025']-.10)<1e-15
+          assert abs(n['beta_at_050']-.075)<1e-15
+          assert abs(n['beta_at_075']-.10)<1e-15
+          assert abs(n['normalized_reference_energy']-1.0)<5e-12
+          assert abs(n['normalization_scale']-0.9726627718)<5e-9
+          for key in ('temporal_piola_kappa_0','temporal_piola_kappa_005'):
+              row=d['measurements'][key]
+              assert row['path_count']==48 and row['paired_material_line_count']==24
+          truth=d['truth_boundary']
+          for k in ('production_candidate_selected','production_kappa_selected','visualization_ready',
+                    'visual_correspondence_verified','pde_validated','source_correspondence_verified',
+                    'paper_exact','openai_field_identified','blowup_proved'):
+              assert truth[k] is False
+          assert truth['visual_acceptance_threshold_defined'] is False
+          assert truth['pressure_or_force_transferred_from_parent'] is False
+          assert truth['held_out_pde_residual_evaluated'] is False
+          print(d['report_sha256'])
+          print(json.dumps(d['comparisons']['kappa_005_vs_same_run_kappa_0'],sort_keys=True))
+          PY
+      - name: Publish exact-head numerical receipt
+        if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent9-receipt.md
+          import json
+          from pathlib import Path
+          d=json.loads(Path('outputs/agent9/ST048-S-piola-temporal-kappa005-material-path.json').read_text())
+          base=d['measurements']['temporal_piola_kappa_0']
+          child=d['measurements']['temporal_piola_kappa_005']
+          comp=d['comparisons']['kappa_005_vs_same_run_kappa_0']
+          n=d['normalization']['temporal_piola_kappa_005']
+          print('### CR-A9-048 exact-head numerical receipt')
+          print()
+          print(f"report SHA-256: `{d['report_sha256']}`")
+          print(f"normalization scale: `{n['normalization_scale']:.15g}`; kappa=`{n['kappa']:.6g}`; beta(.25/.50/.75)=`{n['beta_at_025']:.6g}/{n['beta_at_050']:.6g}/{n['beta_at_075']:.6g}`")
+          print()
+          print('| metric | kappa=0 temporal Piola | kappa=.05 | child/base |')
+          print('|---|---:|---:|---:|')
+          rows=(
+              ('mean radius change','mean_radius_change','absolute_radial_contraction_ratio'),
+              ('mean absolute turns','mean_absolute_turns','mean_absolute_turns_ratio'),
+              ('maximum absolute turns','maximum_absolute_turns','maximum_absolute_turns_ratio'),
+              ('mean pair separation change','mean_pair_axial_separation_change','mean_pair_separation_change_ratio'),
+          )
+          for label,key,rkey in rows:
+              print(f"| {label} | {base[key]:.10g} | {child[key]:.10g} | {comp[rkey]:.8g} |")
+          print(f"| inward paths | {base['inward_path_count']}/48 | {child['inward_path_count']}/48 | — |")
+          print(f"| axial grow/shrink pairs | {base['pair_axial_separation_growth_count']}/{base['pair_axial_separation_shrink_count']} | {child['pair_axial_separation_growth_count']}/{child['pair_axial_separation_shrink_count']} | — |")
+          print()
+          print('This is descriptive candidate-side kinematics only. No visual pass threshold, production kappa, pressure/forcing transfer, or PDE promotion is defined.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent9-receipt.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ST048-S-piola-temporal-kappa005-material-path
+          path: outputs/agent9/ST048-S-piola-temporal-kappa005-material-path.json
+          if-no-files-found: error
