@@ -2,7 +2,7 @@
 
 CR-A9-051 consumes Agent-7 PR #458's preregistered ST050R-C transfer crossing
 (kappa_redist=.025) and measures it with the unchanged Agent-9 48-material-path
-contract from PR #435.  This is visualization-side routing evidence only: no
+contract from PR #435. This is visualization-side routing evidence only: no
 pressure/forcing/PDE receipt is transferred and no hidden OpenAI numerical target
 or visual acceptance threshold is used.
 """
@@ -23,7 +23,6 @@ import numpy as np
 TASK_ID = "CR-A9-051"
 SCHEMA = "st050rc_energy_neutral_swirl_redistribution_material_path_v1"
 BASE_MAIN_SHA = "f0193d66c9d92948b4820ebcb70263673995b324"
-
 ST050_PARENT_PR = 448
 ST050_PARENT_HEAD = "dc1d5476ea9979566b774293add76196083288c5"
 AGENT7_SOURCE_PR = 458
@@ -35,7 +34,6 @@ INNER_WINDOW = (0.30, 1.05)
 OUTER_WINDOW = (0.95, 1.85)
 AGENT7_REPORTED_ALPHA = 2.520520814687742
 AGENT7_REPORTED_RELATIVE_SCALE = 0.99979493
-
 AGENT9_PATH_SOURCE_PR = 435
 AGENT9_PATH_SOURCE_HEAD = "6699a698c9fb2f0a0986e7aefc5fe0ee431cd5ad"
 SEED_RADII = (0.6, 0.9, 1.2)
@@ -55,7 +53,7 @@ INTERNAL_SOURCES = [
         "commit": AGENT7_SOURCE_HEAD,
         "task_id": AGENT7_TASK_ID,
         "classification": "direct internal method reuse",
-        "migrated_scope": "ST050R-C replay plus the preregistered .025 energy-neutral inner/mid swirl redistribution",
+        "migrated_scope": "ST050R-C replay plus preregistered .025 energy-neutral inner/mid swirl redistribution",
         "difference": "Agent-7 Eulerian proxy screen is replaced by actual cumulative material trajectories",
     },
     {
@@ -138,33 +136,59 @@ def load_path_engine(agent9_root: str | Path):
     return engine
 
 
-def load_agent7_source(candidate_root: str | Path):
+def _purge_experiment_modules(root: Path) -> None:
+    """Remove bare-name modules from prior experiment roots before pinned replay.
+
+    The historical experiment scripts deliberately compose sibling roots through
+    bare imports and sys.path insertion.  Keeping even one earlier `base`,
+    `axisreg`, or `spacetime` module in sys.modules can silently splice families.
+    """
+    experiment_root = (root / "experiments").resolve()
+    generic = {
+        "agent7_st050rc_energy_neutral_swirl_transfer", "replay_recovery",
+        "diagnostics", "pressure_morph", "spacetime", "validate",
+        "replay_st048", "replay_st047", "replay_st046", "continuation",
+        "boundary_shear", "localized_model", "base", "axisreg", "bump",
+        "support", "coupled_fit", "structure_and_particles",
+    }
+    for name, module in list(sys.modules.items()):
+        filename = getattr(module, "__file__", None)
+        under_experiments = False
+        if filename:
+            try:
+                Path(filename).resolve().relative_to(experiment_root)
+                under_experiments = True
+            except (OSError, ValueError):
+                pass
+        if name in generic or under_experiments:
+            sys.modules.pop(name, None)
+
+
+def load_agent7_source_and_parent(candidate_root: str | Path):
+    """Import and reconstruct while upstream's deliberate sys.path stack is live."""
     root = Path(candidate_root).resolve()
     if _git_head(root) != AGENT7_SOURCE_HEAD:
         raise ValueError("ST050R-C/Agent-7 checkout is not pinned PR #458 head")
     experiment = root / "experiments/root_st050r"
     old_path = list(sys.path)
-    stale = (
-        "agent7_st050rc_energy_neutral_swirl_transfer", "replay_recovery",
-        "diagnostics", "pressure_morph", "spacetime", "validate",
-        "replay_st048", "replay_st047", "continuation", "boundary_shear",
-    )
     try:
+        _purge_experiment_modules(root)
         sys.path.insert(0, str(experiment))
-        for name in stale:
-            sys.modules.pop(name, None)
         screen = importlib.import_module("agent7_st050rc_energy_neutral_swirl_transfer")
+        if screen.TASK_ID != AGENT7_TASK_ID:
+            raise ValueError("Agent-7 task drift")
+        if screen.PARENT_ID != PARENT_ID or screen.PARENT_HEAD != ST050_PARENT_HEAD:
+            raise ValueError("Agent-7 ST050R-C lineage drift")
+        if tuple(screen.INNER_WINDOW) != INNER_WINDOW or tuple(screen.OUTER_WINDOW) != OUTER_WINDOW:
+            raise ValueError("Agent-7 redistribution window drift")
+        if REDISTRIBUTION_GAIN not in tuple(screen.GAINS):
+            raise ValueError("Agent-7 preregistered gain grid drift")
+        # Critical: reconstruct before restoring sys.path.  Agent-7's source
+        # intentionally inserts root_st047/root_st048 dependencies during import.
+        family, raw = screen.replay_recovery.reconstruct(PARENT_ID)
+        return screen, family, raw
     finally:
         sys.path[:] = old_path
-    if screen.TASK_ID != AGENT7_TASK_ID:
-        raise ValueError("Agent-7 task drift")
-    if screen.PARENT_ID != PARENT_ID or screen.PARENT_HEAD != ST050_PARENT_HEAD:
-        raise ValueError("Agent-7 ST050R-C lineage drift")
-    if tuple(screen.INNER_WINDOW) != INNER_WINDOW or tuple(screen.OUTER_WINDOW) != OUTER_WINDOW:
-        raise ValueError("Agent-7 redistribution window drift")
-    if REDISTRIBUTION_GAIN not in tuple(screen.GAINS):
-        raise ValueError("Agent-7 preregistered gain grid drift")
-    return screen
 
 
 def _parent_callable(family, raw) -> VelocityCallable:
@@ -230,19 +254,14 @@ def _compare(child: dict, parent: dict) -> dict:
             child["mean_pair_axial_separation_change"], parent["mean_pair_axial_separation_change"]
         ),
         "inward_path_count_delta": int(child["inward_path_count"] - parent["inward_path_count"]),
-        "pair_growth_count_delta": int(
-            child["pair_axial_separation_growth_count"] - parent["pair_axial_separation_growth_count"]
-        ),
-        "pair_shrink_count_delta": int(
-            child["pair_axial_separation_shrink_count"] - parent["pair_axial_separation_shrink_count"]
-        ),
+        "pair_growth_count_delta": int(child["pair_axial_separation_growth_count"] - parent["pair_axial_separation_growth_count"]),
+        "pair_shrink_count_delta": int(child["pair_axial_separation_shrink_count"] - parent["pair_axial_separation_shrink_count"]),
     }
 
 
 def build_report(candidate_root: str | Path, agent9_root: str | Path) -> dict:
     engine = load_path_engine(agent9_root)
-    screen = load_agent7_source(candidate_root)
-    family, raw = screen.replay_recovery.reconstruct(PARENT_ID)
+    screen, family, raw = load_agent7_source_and_parent(candidate_root)
     parent = _parent_callable(family, raw)
 
     parent_energy, inner, outer, alpha, defect = screen.energy_and_moments(family, raw, order=72)
@@ -262,8 +281,7 @@ def build_report(candidate_root: str | Path, agent9_root: str | Path) -> dict:
             screen.child_velocity(
                 family, raw, np.asarray(points, dtype=float), float(time),
                 REDISTRIBUTION_GAIN, alpha, child_scale,
-            ),
-            dtype=float,
+            ), dtype=float,
         )
 
     parent_paths = engine.measure_material_paths(parent)
@@ -274,31 +292,17 @@ def build_report(candidate_root: str | Path, agent9_root: str | Path) -> dict:
     for key in parent_by_radius:
         p, c = parent_by_radius[key], child_by_radius[key]
         per_radius_change[key] = {
-            "mean_absolute_turns_relative_change": _relative_change(
-                c["mean_absolute_turns"], p["mean_absolute_turns"]
-            ),
-            "radial_contraction_magnitude_relative_change": _relative_change(
-                abs(c["mean_radius_change"]), abs(p["mean_radius_change"])
-            ),
-            "mean_pair_separation_change_relative_change": _relative_change(
-                c["mean_pair_axial_separation_change"], p["mean_pair_axial_separation_change"]
-            ),
+            "mean_absolute_turns_relative_change": _relative_change(c["mean_absolute_turns"], p["mean_absolute_turns"]),
+            "radial_contraction_magnitude_relative_change": _relative_change(abs(c["mean_radius_change"]), abs(p["mean_radius_change"])),
+            "mean_pair_separation_change_relative_change": _relative_change(c["mean_pair_axial_separation_change"], p["mean_pair_axial_separation_change"]),
         }
 
     st006 = engine.ST006_REFERENCE
     st006_comparison = {
-        "mean_absolute_turns_relative_change": _relative_change(
-            child_paths["mean_absolute_turns"], st006["mean_absolute_turns"]
-        ),
-        "maximum_absolute_turns_relative_change": _relative_change(
-            child_paths["maximum_absolute_turns"], st006["maximum_absolute_turns"]
-        ),
-        "radial_contraction_magnitude_relative_change": _relative_change(
-            abs(child_paths["mean_radius_change"]), abs(st006["mean_radius_change"])
-        ),
-        "mean_pair_separation_change_relative_change": _relative_change(
-            child_paths["mean_pair_axial_separation_change"], st006["mean_pair_separation_change"]
-        ),
+        "mean_absolute_turns_relative_change": _relative_change(child_paths["mean_absolute_turns"], st006["mean_absolute_turns"]),
+        "maximum_absolute_turns_relative_change": _relative_change(child_paths["maximum_absolute_turns"], st006["maximum_absolute_turns"]),
+        "radial_contraction_magnitude_relative_change": _relative_change(abs(child_paths["mean_radius_change"]), abs(st006["mean_radius_change"])),
+        "mean_pair_separation_change_relative_change": _relative_change(child_paths["mean_pair_axial_separation_change"], st006["mean_pair_separation_change"]),
         "comparison_role": "descriptive retained-repository baseline only; ST006 is not OpenAI truth",
     }
 
@@ -391,15 +395,14 @@ def main() -> int:
     _audit_truth(report)
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
-    summary = {
+    print(json.dumps({
         "task_id": TASK_ID,
         "parent_mean_turns": report["parent_material_paths"]["mean_absolute_turns"],
         "child_mean_turns": report["child_material_paths"]["mean_absolute_turns"],
         "child_vs_parent": report["child_vs_parent"],
         "child_vs_parent_by_seed_radius": report["child_vs_parent_by_seed_radius"],
         "report_sha256": report["report_sha256"],
-    }
-    print(json.dumps(summary, indent=2, sort_keys=True))
+    }, indent=2, sort_keys=True))
     return 0
 
 
