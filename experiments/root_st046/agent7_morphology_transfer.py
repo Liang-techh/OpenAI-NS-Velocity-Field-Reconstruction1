@@ -238,7 +238,7 @@ def audit_morphology_transfer(
     else:
         routing = (
             "ST046-A's residual improvement does not by itself satisfy the preregistered clean axial-morphology "
-            "transfer criterion. Keep ST046-A as the PDE/residual backbone and retain only the single Piola axial-" 
+            "transfer criterion. Keep ST046-A as the PDE/residual backbone and retain only the single Piola axial-"
             "warp degree from PR #367 as the next minimal visualization-geometry handoff; do not resume basis growth."
         )
 
@@ -247,7 +247,7 @@ def audit_morphology_transfer(
         "task_id": TASK_ID,
         "parent_id": "ST045-H",
         "child_id": "ST046-A",
-        "child_original_raw_sha256": recipes["ST046-A"].get("original_raw_sha256"),
+        "child_original_raw_sha256": recipes["ST046-A"].get("original_candidate_sha256"),
         "contract": {
             "times": list(times),
             "grid_sizes": list(grid_sizes),
