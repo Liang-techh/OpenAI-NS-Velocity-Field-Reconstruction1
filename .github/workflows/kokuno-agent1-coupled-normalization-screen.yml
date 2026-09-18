@@ -1,0 +1,77 @@
+name: kokuno-agent1-coupled-normalization-screen
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a1-coupled-normalization-screen
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent1-coupled-normalization-screen-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHONHASHSEED: '0'
+
+jobs:
+  coupled-normalization-screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Focused regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_rescaled_inner_join_tsh_certificate.py \
+            tests/test_constrained_kokuno_coupled_normalization_pa10_screen.py
+      - name: Generate coupled-normalization PA10 screen receipt
+        run: |
+          python -m openai_ns_reconstruction.kokuno_coupled_normalization_pa10_screen \
+            --output artifacts/kokuno_agent1/coupled_normalization_pa10_screen/report.json
+      - name: Validate necessary-screen truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          report = json.loads(
+              Path("artifacts/kokuno_agent1/coupled_normalization_pa10_screen/report.json").read_text()
+          )
+          geometry = report["geometry"]
+          selected = report["selected_realization"]
+          truth = report["truth_boundary"]
+
+          assert geometry["pointwise_feasible_band_nonempty"] is True
+          assert geometry["ell_abs_strict_cap"] > 0.0
+          assert selected["selected_realization_excluded"] is True
+          assert selected["selected_abs_ell_over_strict_cap"] > 1.0
+          assert selected["evaluation"]["strict_margin"] < 0.0
+          assert selected["source_T_sh_lower_bound_verified"] is False
+          assert truth["posthoc_C_multiplier_applied"] is False
+          assert truth["passing_pointwise_screen_is_source_T_sh_certificate"] is False
+          assert truth["source_T_sh_lower_bound_verified"] is False
+          assert truth["inner_to_outer_join_completed"] is False
+          assert truth["pde_validated"] is False
+          assert truth["paper_exact"] is False
+
+          print("log_C=", geometry["log_C"])
+          print("t_sh_strict_upper=", geometry["t_sh_strict_upper"])
+          print("ell_abs_strict_cap=", geometry["ell_abs_strict_cap"])
+          print("required_log_E_i_open_interval=", geometry["required_log_E_i_open_interval"])
+          print("selected_log_E_i=", selected["selected_log_E_i"])
+          print("selected_ell_i=", selected["selected_ell_i"])
+          print("selected_abs_ell_over_strict_cap=", selected["selected_abs_ell_over_strict_cap"])
+          print("selected_strict_margin=", selected["evaluation"]["strict_margin"])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-coupled-normalization-pa10-screen-v1
+          path: artifacts/kokuno_agent1/coupled_normalization_pa10_screen/report.json
