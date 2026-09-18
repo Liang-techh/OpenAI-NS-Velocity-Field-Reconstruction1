@@ -1,0 +1,157 @@
+name: agent9-st048s-piola-temporal-material-path
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/constrained_st048s_piola_temporal_material_path.py'
+      - 'tests/test_constrained_st048s_piola_temporal_material_path.py'
+      - 'docs/external_methods/CR-A9-047-st048s-piola-temporal-material-path.md'
+      - '.github/workflows/agent9-st048s-piola-temporal-material-path.yml'
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  frozen-temporal-piola-path-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - name: Checkout Agent 9 branch
+        uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numerical test dependencies
+        run: python -m pip install -e . 'pytest>=8,<10' 'sympy>=1.12,<2'
+      - name: Compile and run focused regressions
+        run: |
+          python -W error -m py_compile src/openai_ns_reconstruction/constrained_st048s_piola_temporal_material_path.py
+          python -m pytest -q -W error tests/test_constrained_st048s_piola_temporal_material_path.py
+      - name: Checkout pinned ST048 source tree
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: 97695a86f85ce68fb4ae70c41fc81c904d655183
+          path: external/st048
+          persist-credentials: false
+      - name: Checkout pinned Agent 7 temporal Piola source tree
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: ae10c3ccacd16e1f5e0054502f1dc5a6f68320b5
+          path: external/agent7
+          persist-credentials: false
+      - name: Verify pinned sources and migrated temporal Piola formula
+        run: |
+          test "$(git -C external/st048 rev-parse HEAD)" = "97695a86f85ce68fb4ae70c41fc81c904d655183"
+          test "$(git -C external/agent7 rev-parse HEAD)" = "ae10c3ccacd16e1f5e0054502f1dc5a6f68320b5"
+          python - <<'PY'
+          import importlib
+          import pathlib
+          import sys
+          import numpy as np
+          from openai_ns_reconstruction import constrained_st048s_piola_temporal_material_path as ours
+
+          root=pathlib.Path('external/agent7/experiments/root_st048').resolve()
+          sys.path.insert(0,str(root))
+          source=importlib.import_module('agent7_st048s_piola_temporal_screen')
+          for time in np.linspace(.25,.75,101):
+              a=ours.beta_at_time(float(time),ours.TEMPORAL_GAMMA)
+              b=source.beta_at_time(float(time),ours.TEMPORAL_GAMMA)
+              np.testing.assert_allclose(a,b,rtol=0,atol=0)
+          z=np.linspace(-2.2,2.2,1001)
+          for time in (.25,.5,.75):
+              beta=ours.beta_at_time(time,ours.TEMPORAL_GAMMA)
+              a,b=ours._warp_z_and_jacobian(z,beta)
+              c,d=source.fixed._warp_z_and_jacobian(z,beta)
+              np.testing.assert_allclose(a,c,rtol=0,atol=0)
+              np.testing.assert_allclose(b,d,rtol=0,atol=0)
+          print('Agent-7 temporal Piola exact-reimplementation check: PASS')
+          PY
+      - name: Replay gamma .025 on frozen Agent-9 material paths
+        run: |
+          python -m openai_ns_reconstruction.constrained_st048s_piola_temporal_material_path \
+            --candidate-root external/st048 \
+            --output outputs/agent9/ST048-S-piola-temporal-gamma0025-material-path.json
+      - name: Fail closed on provenance and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('outputs/agent9/ST048-S-piola-temporal-gamma0025-material-path.json')
+          d=json.loads(p.read_text())
+          assert d['task_id']=='CR-A9-047'
+          assert d['base_main_sha']=='f0193d66c9d92948b4820ebcb70263673995b324'
+          c=d['candidate_source']
+          assert c['source_head_sha']=='97695a86f85ce68fb4ae70c41fc81c904d655183'
+          assert c['original_raw_candidate_sha256']=='6d9ce8407e29aca20d32599332ae3ec654f45678e17783179267665428ec8e09'
+          a=d['agent7_temporal_piola_source']
+          assert a['source_head_sha']=='ae10c3ccacd16e1f5e0054502f1dc5a6f68320b5'
+          assert a['production_gamma_selected'] is False
+          n=d['normalization']['temporal_gamma_0025']
+          assert n['gamma']==0.025
+          assert abs(n['beta_at_025']-.10)<1e-15
+          assert abs(n['beta_at_050']-.075)<1e-15
+          assert abs(n['beta_at_075']-.10)<1e-15
+          assert abs(n['normalized_reference_energy']-1.0)<5e-12
+          assert d['agent7_scale_replay']['absolute_error']<5e-9
+          for key in ('fixed_beta_0075','temporal_gamma_0025'):
+              row=d['measurements'][key]
+              assert row['path_count']==48 and row['paired_material_line_count']==24
+          truth=d['truth_boundary']
+          for k in ('production_candidate_selected','production_gamma_selected','visualization_ready',
+                    'visual_correspondence_verified','pde_validated','source_correspondence_verified',
+                    'paper_exact','openai_field_identified','blowup_proved'):
+              assert truth[k] is False
+          assert truth['visual_acceptance_threshold_defined'] is False
+          assert truth['pressure_or_force_transferred_from_parent'] is False
+          print(d['report_sha256'])
+          print(json.dumps(d['comparisons']['temporal_vs_same_run_fixed_beta'],sort_keys=True))
+          PY
+      - name: Publish exact-head numerical receipt
+        if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent9-receipt.md
+          import json
+          from pathlib import Path
+          d=json.loads(Path('outputs/agent9/ST048-S-piola-temporal-gamma0025-material-path.json').read_text())
+          fixed=d['measurements']['fixed_beta_0075']
+          child=d['measurements']['temporal_gamma_0025']
+          comp=d['comparisons']['temporal_vs_same_run_fixed_beta']
+          n=d['normalization']['temporal_gamma_0025']
+          print('### CR-A9-047 exact-head numerical receipt')
+          print()
+          print(f"report SHA-256: `{d['report_sha256']}`")
+          print(f"normalization scale: `{n['normalization_scale']:.15g}`; beta(.25/.50/.75)=`{n['beta_at_025']:.6g}/{n['beta_at_050']:.6g}/{n['beta_at_075']:.6g}`")
+          print()
+          print('| metric | fixed beta=.075 | temporal gamma=.025 | temporal/fixed |')
+          print('|---|---:|---:|---:|')
+          rows=(
+              ('mean radius change','mean_radius_change','absolute_radial_contraction_ratio'),
+              ('mean absolute turns','mean_absolute_turns','mean_absolute_turns_ratio'),
+              ('maximum absolute turns','maximum_absolute_turns','maximum_absolute_turns_ratio'),
+              ('mean pair separation change','mean_pair_axial_separation_change','mean_pair_separation_change_ratio'),
+          )
+          for label,key,rkey in rows:
+              print(f"| {label} | {fixed[key]:.10g} | {child[key]:.10g} | {comp[rkey]:.8g} |")
+          print(f"| inward paths | {fixed['inward_path_count']}/48 | {child['inward_path_count']}/48 | — |")
+          print(f"| axial grow/shrink pairs | {fixed['pair_axial_separation_growth_count']}/{fixed['pair_axial_separation_shrink_count']} | {child['pair_axial_separation_growth_count']}/{child['pair_axial_separation_shrink_count']} | — |")
+          print()
+          print('This is descriptive candidate-side kinematics only; no visual pass threshold or PDE transfer is defined.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent9-receipt.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ST048-S-piola-temporal-gamma0025-material-path
+          path: outputs/agent9/ST048-S-piola-temporal-gamma0025-material-path.json
+          if-no-files-found: error
