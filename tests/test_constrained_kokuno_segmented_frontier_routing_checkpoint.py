@@ -21,8 +21,8 @@ def _audit_fixture() -> dict:
         "max_vector_residual": 0.12,
         "sample_l2_vector_residual": 0.08,
         "component_rms": [0.01, 0.02, 0.07],
-        "divergence_max_abs": 2.0e-6,
-        "divergence_sample_l2": 8.0e-7,
+        "divergence_max_abs": 2.0e-4,
+        "divergence_sample_l2": 8.0e-5,
     }
     middle = {**finest, "step": 0.002, "max_vector_residual": 0.121}
     coarse = {**finest, "step": 0.004, "max_vector_residual": 0.124}
@@ -33,7 +33,7 @@ def _audit_fixture() -> dict:
             "max_vector_residual": 0.008264462809917363,
         },
         "finest_local_residual_gate_met": False,
-        "finest_local_divergence_gate_met": True,
+        "finest_local_divergence_gate_met": False,
     }
     return {
         "task_id": "KOKUNO-A4-SEGMENTED-PUBLIC-CONTRACT-AUDIT-016",
@@ -101,6 +101,8 @@ def test_checkpoint_binds_segmented_router_without_global_promotion() -> None:
     assert checkpoint["states"]["velocity_export_ready"] is False
     assert checkpoint["states"]["formal_full_domain_pde_gate_assessed"] is False
     assert checkpoint["states"]["pde_validated"] is False
+    assert checkpoint["states"]["reference_local_zero_force_residual_gate_met"] is False
+    assert checkpoint["states"]["reference_local_zero_force_divergence_gate_met"] is False
     assert checkpoint["states"]["i2_float64_public_repair_observable_at_agent4_probes"] is False
     assert checkpoint["segmented_leading_contract"]["coverage"]["global_coverage_complete"] is False
     assert checkpoint["segmented_leading_contract"]["coverage"]["unreconstructed_log_X_gaps"]
@@ -168,5 +170,7 @@ def test_static_state_contract_remains_fail_closed() -> None:
     assert STATES["correction_ready"] is False
     assert STATES["complete_kokuno_composite_velocity_ready"] is False
     assert STATES["velocity_export_ready"] is False
+    assert STATES["reference_local_zero_force_residual_gate_met"] is False
+    assert STATES["reference_local_zero_force_divergence_gate_met"] is False
     assert STATES["formal_full_domain_pde_gate_assessed"] is False
     assert STATES["pde_validated"] is False
