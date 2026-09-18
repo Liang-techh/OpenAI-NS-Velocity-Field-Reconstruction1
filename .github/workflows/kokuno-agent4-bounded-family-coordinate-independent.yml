@@ -1,0 +1,44 @@
+name: kokuno-agent4-bounded-family-coordinate-independent
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a4-bounded-family-coordinate-independent-022
+  pull_request:
+    branches:
+      - codex/kokuno-a2-bounded-family-coefficients-023
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-a4-bounded-family-coordinate-independent-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  independent-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Focused parent and independent tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_bounded_family_coefficients.py
+          tests/test_constrained_kokuno_bounded_family_coordinate_independent.py
+      - name: Generate independent coordinate report
+        run: |
+          python -m openai_ns_reconstruction.kokuno_bounded_family_coordinate_independent \
+            --output artifacts/kokuno_agent4/bounded_family_coordinate_independent_audit.json
+          cat artifacts/kokuno_agent4/bounded_family_coordinate_independent_audit.json
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent4-bounded-family-coordinate-independent-audit
+          path: artifacts/kokuno_agent4/bounded_family_coordinate_independent_audit.json
