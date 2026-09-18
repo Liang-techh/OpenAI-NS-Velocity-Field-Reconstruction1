@@ -1,0 +1,39 @@
+name: kokuno-agent1-rescaled-outer-scale-binding
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a1-rescaled-appendix-b-moments-019
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-a1-rescaled-outer-scale-binding-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  rescaled-outer-scale-binding:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Focused regressions
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_rescaled_outer_scale_binding.py \
+            tests/test_constrained_kokuno_rescaled_appendix_b_boundary.py
+      - name: Generate scale-binding receipt
+        run: |
+          python -m openai_ns_reconstruction.kokuno_rescaled_outer_scale_binding \
+            --output artifacts/kokuno_agent1/rescaled_outer_scale_binding/report.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-rescaled-outer-scale-binding-v1
+          path: artifacts/kokuno_agent1/rescaled_outer_scale_binding/report.json
