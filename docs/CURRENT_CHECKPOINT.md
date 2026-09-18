@@ -1,3 +1,9 @@
+## Repository-wide retained PDE baseline: ST006
+
+Before interpreting any route-local residual as project progress, compare against the published ST006 baseline when the protocol is comparable. ST006 independent replay gives momentum sampled max **0.1082289305112118** and volume-L2 **0.10758432876230622** on seed `9172801` / 4096 held-out Cartesian points / six times / finest spatial step `0.005`. It still fails the unchanged `1e-3` momentum gates and divergence gate, so `pde_validated=false`.
+
+This baseline is stronger numerically than the O(1)–O(10) intermediate Eq45/Kokuno diagnostics currently recorded below. Therefore those intermediate fields are not repository-level PDE improvements unless a same-protocol comparison beats ST006. Structural/source reconstruction work may continue when its metric is not comparable, but every report must label that distinction. Prefer warm-start/transfer from ST006 when representation and truth boundaries allow; otherwise use ST006 as the benchmark to beat, not as source truth.
+
 ## Energy-defect-capped joint search
 
 Added an optimization-only energy-defect cap .14 at three training times,
@@ -106,7 +112,7 @@ Artifacts: `artifacts/bipolar_spatial/` (candidate, holdout report, energy balan
 ## Global energy-sign mismatch
 
 New necessary energy balance diagnostic for the normalized bipolar field:
-Eprime + nu integral |grad u|� is negative at four interior times, from
+Eprime + nu integral |grad u|² is negative at four interior times, from
 -0.33369 to -0.50415 on order96/step.005. Both fixed force-work columns
 are positive, so a,c >= 0 cannot supply the required negative work for this
 frozen velocity. Coarser order48/step.01 agrees on the sign and scale.
@@ -209,7 +215,7 @@ not to this changed poloidal seed. Before further shape-only optimization,
 compare central flow direction/parity through the same public interface.
 Archived local compact-core failures are in docs/LOCAL_COMPACT_EXPERIMENT_ARCHIVE.md.
 
-# Current checkpoint — support-connected Eq45 delivery
+# Current checkpoint â support-connected Eq45 delivery
 
 Snapshot date: **2026-09-17**. The machine-readable authority is [`project_status.json`](../project_status.json). This checkpoint describes the live constrained-integration path; older `coupled_joint`, paper-core-series, FUN/SCH, and exact-reconstruction notes are historical evidence rather than the active routing source.
 
@@ -221,7 +227,7 @@ Deliver a directly callable, saveable/loadable, MATLAB/Python-usable time-varyin
 
 `velocity(x, y, z, t) -> [u, v, w]`
 
-whose public observable geometry, streamlines/vorticity structure, and time evolution are made progressively closer to the public OpenAI velocity-field visualization. This is **not** a paper-exact reconstruction target and is **not** a complete Navier–Stokes blow-up proof target. Full PDE acceptance remains an independent scientific gate rather than a blocker for exporting a clearly labeled visualization candidate.
+whose public observable geometry, streamlines/vorticity structure, and time evolution are made progressively closer to the public OpenAI velocity-field visualization. This is **not** a paper-exact reconstruction target and is **not** a complete NavierâStokes blow-up proof target. Full PDE acceptance remains an independent scientific gate rather than a blocker for exporting a clearly labeled visualization candidate.
 
 ## Integrated delivery path
 
@@ -261,13 +267,13 @@ The integrated whole-domain vorticity-envelope audit shows that the static suppo
 
 This blocker is about morphology. It is not evidence that the field is or is not the hidden OpenAI numerical field, and it is not a PDE acceptance result.
 
-## Open candidate-development evidence — not yet integrated
+## Open candidate-development evidence â not yet integrated
 
 The current open stack explores existing `Phi(1,0)` temporal freedom rather than growing the spatial basis indiscriminately. The derivative-balanced quartic candidate is the lower-collateral baseline currently worth replaying first. Existing open evidence reports strong late-time morphology preservation, while fresh-seed PDE ordering versus the cubic candidate remains unresolved/seed-sensitive.
 
-A slope-capped compact-C2 schedule improves the early off-keyframe morphology further but carries a measurable PDE-side diagnostic cost. At the audited `t=0.3125` / `81^3` comparison, open evidence reports radial q99 of about `1.151` for compact-C2, `1.193` for quartic, and `1.254` for static supported; support-collar vorticity-squared fractions are about `1.59%`, `2.20%`, and `3.85%` respectively, while axial q99 stays unchanged. A separate pressure-free vorticity diagnostic reports the compact candidate at roughly `8.9%` worse than quartic. PR #184 then screens a single compact–quartic interpolation degree; it is capacity evidence only and does not select a canonical blend.
+A slope-capped compact-C2 schedule improves the early off-keyframe morphology further but carries a measurable PDE-side diagnostic cost. At the audited `t=0.3125` / `81^3` comparison, open evidence reports radial q99 of about `1.151` for compact-C2, `1.193` for quartic, and `1.254` for static supported; support-collar vorticity-squared fractions are about `1.59%`, `2.20%`, and `3.85%` respectively, while axial q99 stays unchanged. A separate pressure-free vorticity diagnostic reports the compact candidate at roughly `8.9%` worse than quartic. PR #184 then screens a single compactâquartic interpolation degree; it is capacity evidence only and does not select a canonical blend.
 
-These open results are useful for routing, but none of #168–#184 is automatically part of the live integration branch merely because its CI is green. Many are stacked on one another.
+These open results are useful for routing, but none of #168â#184 is automatically part of the live integration branch merely because its CI is green. Many are stacked on one another.
 
 ## Agent-8 integration discipline
 
