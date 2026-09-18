@@ -12,10 +12,10 @@ from openai_ns_reconstruction.kokuno_rescaled_reference_continuation import (
 
 @pytest.fixture(scope="module")
 def candidate():
-    # Eight-point source-y quadrature is enough for the regression guards and
-    # keeps this stacked constrained lane from re-solving the same smooth
-    # transition at production order in every test.
-    return KokunoSourceRescaledReferenceContinuation(quadrature_points=8)
+    # Exercise the production-order source-y quadrature.  Lower orders are
+    # useful for coarse replay, but differentiating the moving quadrature
+    # endpoint is intentionally checked against the production evaluator.
+    return KokunoSourceRescaledReferenceContinuation(quadrature_points=20)
 
 
 def test_large_pressure_reference_transition_fits_source_core_and_freezes(candidate):
