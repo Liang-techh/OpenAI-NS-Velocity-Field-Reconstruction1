@@ -1,0 +1,36 @@
+name: agent7-st046-morphology-transfer
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st046/agent7_morphology_transfer.py'
+      - 'experiments/root_st046/test_agent7_morphology_transfer.py'
+      - '.github/workflows/agent7-st046-morphology-transfer.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install numpy scipy sympy pytest
+      - name: Test ST046 morphology transfer audit
+        working-directory: experiments/root_st046
+        run: python -m pytest -q -W error test_agent7_morphology_transfer.py
+      - name: Generate ST046 morphology transfer report
+        working-directory: experiments/root_st046
+        run: |
+          python agent7_morphology_transfer.py --output ../../artifacts/st046_agent7_morphology_transfer/report.json
+          cat ../../artifacts/st046_agent7_morphology_transfer/report.json
+      - name: Upload ST046 morphology transfer report
+        uses: actions/upload-artifact@v4
+        with:
+          name: agent7-st046-morphology-transfer
+          path: artifacts/st046_agent7_morphology_transfer/report.json
