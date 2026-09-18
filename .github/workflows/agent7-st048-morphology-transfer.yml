@@ -1,0 +1,42 @@
+name: agent7-st048-morphology-transfer
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st048/agent7_morphology_transfer.py'
+      - 'experiments/root_st048/test_agent7_morphology_transfer.py'
+      - '.github/workflows/agent7-st048-morphology-transfer.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Test ST048 morphology transfer audit
+        working-directory: experiments/root_st048
+        run: python -m pytest -q -W error test_agent7_morphology_transfer.py
+      - name: Generate ST048 morphology transfer report
+        working-directory: experiments/root_st048
+        run: |
+          python agent7_morphology_transfer.py --output ../../artifacts/st048_agent7_morphology_transfer/report.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('../../artifacts/st048_agent7_morphology_transfer/report.json').read_text())
+          print(json.dumps(r['fine_grid_summary'],indent=2))
+          print(r['routing'])
+          PY
+      - name: Upload ST048 morphology transfer report
+        uses: actions/upload-artifact@v4
+        with:
+          name: agent7-st048-morphology-transfer
+          path: artifacts/st048_agent7_morphology_transfer/report.json
