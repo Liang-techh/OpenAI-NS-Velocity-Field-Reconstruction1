@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "task_id": "CR002-DELIVERY-READINESS-SCOPE-079",
+  "purpose": "separate repository-wide callable velocity readiness from candidate-local callable reconstruction and sampled-grid export readiness without changing any field, route, or scientific threshold",
+  "snapshot": {
+    "active_integration_branch": "codex/cr001-constraints",
+    "active_integration_head": "60626c05b9340ba8e966702bcaefb9c52d3e5d20",
+    "observed_pr": 476,
+    "observed_pr_state": "open_unintegrated",
+    "observed_pr_base": "main",
+    "observed_pr_head": "d068e0d4c2cdce23a08aec791af8d2d59e459e65",
+    "note": "This snapshot records the semantic seam observed in PR #476. A later PR or CI state change does not retroactively promote an artifact or candidate."
+  },
+  "allowed_source_classes": [
+    "user_requirement",
+    "public_source_fact",
+    "autonomous_design",
+    "pending_unknown"
+  ],
+  "source_classification": {
+    "callable_velocity_x_y_z_t": "user_requirement",
+    "save_load_delivery": "user_requirement",
+    "public_openai_visualization_observables": "public_source_fact",
+    "readiness_state_names_and_scope_rules": "autonomous_design",
+    "netcdf_format_grid_resolution_times_and_checksum": "autonomous_design",
+    "st051b_reconstruction_and_swirl_redistribution": "autonomous_design",
+    "cr001_validation_protocol": "autonomous_design",
+    "openai_hidden_numerical_velocity": "pending_unknown",
+    "openai_hidden_parameters": "pending_unknown",
+    "openai_hidden_frame_time_camera_mapping": "pending_unknown"
+  },
+  "readiness_semantics": {
+    "unqualified_velocity_export_ready": {
+      "scope": "versioned_candidate_callable_delivery",
+      "meaning": "a versioned candidate can be loaded and evaluated through the repository unified public velocity API and exported reproducibly",
+      "required_evidence": [
+        "versioned_candidate_artifact",
+        "unified_velocity_api",
+        "finite_velocity_output",
+        "reproducible_export"
+      ],
+      "required_api_shape": "velocity(x,y,z,t)->[u,v,w]",
+      "sampled_grid_alone_is_sufficient": false,
+      "auxiliary_points_time_callable_alone_is_sufficient": false,
+      "external_source_checkout_reconstruction_alone_is_sufficient": false
+    },
+    "sampled_grid_export_ready": {
+      "scope": "serialized_sampled_grid_artifact",
+      "meaning": "a declared sampled grid can be generated, reloaded, integrity-checked, and traced to its source candidate at the registered nodes and times",
+      "does_not_require_continuum_api": true,
+      "does_not_imply_candidate_velocity_export_ready": true,
+      "does_not_imply_visualization_ready": true,
+      "does_not_imply_visual_correspondence_verified": true,
+      "does_not_imply_pde_validated": true,
+      "does_not_imply_paper_exact": true
+    },
+    "candidate_local_callable_reconstruction_ready": {
+      "scope": "noncanonical_candidate_reconstruction",
+      "meaning": "a pinned source recipe can be reconstructed and evaluated through a candidate-specific callable",
+      "does_not_imply_unified_velocity_api": true,
+      "does_not_imply_save_load_candidate_artifact": true,
+      "does_not_imply_unqualified_velocity_export_ready": true
+    }
+  },
+  "observed_pr476": {
+    "artifact_role": "candidate_specific_sampled_visualization_grid",
+    "analytic_parent": "ST051-B plus frozen radial swirl redistribution",
+    "netcdf_default_resolution": 33,
+    "netcdf_times": [0.25, 0.5, 0.75],
+    "auxiliary_callable_shape": "velocity(points,time)->(n,3)",
+    "requires_external_candidate_root_checkout": true,
+    "creates_versioned_candidate_artifact": false,
+    "registers_repository_unified_velocity_api": false,
+    "creates_checksum_guarded_sampled_grid": true,
+    "sampled_grid_export_ready_status": "verified_exact_source_ci",
+    "exact_source_workflow_run": 35389278384,
+    "exact_source_workflow_conclusion": "success",
+    "pr_body_claims_unqualified_velocity_export_ready_true": true,
+    "netcdf_metadata_sets_unqualified_velocity_export_ready_one": true,
+    "unqualified_velocity_export_ready_claim_is_contract_compatible": false,
+    "required_semantic_remediation": "use sampled_grid_export_ready for the NetCDF artifact, or explicitly register a versioned candidate plus the unified repository velocity API before using unqualified velocity_export_ready",
+    "grid_success_may_promote_candidate_velocity_export_ready": false,
+    "grid_success_may_replace_canonical_velocity_delivery": false,
+    "grid_success_may_promote_visual_correspondence_verified": false,
+    "grid_success_may_promote_pde_validated": false
+  },
+  "canonical_callable_delivery": {
+    "candidate_family": "eq45_supported_velocity_candidate_v1",
+    "candidate_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+    "velocity_api": "openai_ns_reconstruction.eq45_supported_delivery:velocity",
+    "velocity_export_ready": true,
+    "open_pr476_changes_canonical_candidate": false,
+    "open_pr476_changes_canonical_velocity_api": false,
+    "pde_failure_blocks_callable_velocity_delivery": false
+  },
+  "canonical_cr001": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "force_mode": "restricted_two_parameter_family",
+    "force_bounds": {"a": [0.0, 10.0], "c": [0.0, 10.0]},
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "divergence_max": 1e-5,
+    "divergence_L2": 1e-5,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001
+  },
+  "truth_boundary": {
+    "canonical_velocity_export_ready": true,
+    "pr476_candidate_velocity_export_ready": false,
+    "pr476_sampled_grid_export_ready": true,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "mutation_scope": {
+    "velocity_changed": false,
+    "candidate_changed": false,
+    "pressure_changed": false,
+    "forcing_changed": false,
+    "optimizer_changed": false,
+    "validation_sample_changed": false,
+    "norm_definition_changed": false,
+    "threshold_changed": false,
+    "active_route_changed": false,
+    "canonical_velocity_api_changed": false
+  }
+}
