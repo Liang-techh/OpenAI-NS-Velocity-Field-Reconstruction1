@@ -1,0 +1,38 @@
+name: kokuno-agent2-source-wave-shell
+
+on:
+  push:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_source_wave_shell.py'
+      - 'src/openai_ns_reconstruction/kokuno_oscillatory_phase.py'
+      - 'src/openai_ns_reconstruction/kokuno_source_support_localized_curl.py'
+      - 'tests/test_constrained_kokuno_source_wave_shell.py'
+      - '.github/workflows/kokuno-agent2-source-wave-shell.yml'
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_source_wave_shell.py'
+      - 'src/openai_ns_reconstruction/kokuno_oscillatory_phase.py'
+      - 'src/openai_ns_reconstruction/kokuno_source_support_localized_curl.py'
+      - 'tests/test_constrained_kokuno_source_wave_shell.py'
+      - '.github/workflows/kokuno-agent2-source-wave-shell.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  source-wave-shell:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Focused source wave-shell tests
+        run: >-
+          python -m pytest -q -s -W error
+          tests/test_constrained_kokuno_source_wave_shell.py
+          tests/test_constrained_kokuno_source_support_localized_curl.py
+          tests/test_constrained_kokuno_source_phase_label.py
