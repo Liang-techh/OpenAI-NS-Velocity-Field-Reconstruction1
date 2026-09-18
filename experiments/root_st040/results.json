@@ -1,0 +1,110 @@
+{
+  "parent_sha256": "6b4d84b48ab9dbcd2ee1a1858d3e56ef81523f5864369d7e96c6431fccf107a3",
+  "original_momentum_threshold": 0.001,
+  "pde_validated": false,
+  "source_correspondence_verified": false,
+  "default_changed": false,
+  "paired_results": [
+    {
+      "candidate": "ST006",
+      "seed": 9174101,
+      "points": 4096,
+      "max": 0.09609298594307826,
+      "volume_L2": 0.11236593926122436,
+      "gates": {
+        "momentum_max": false,
+        "momentum_L2": false,
+        "divergence_max": true,
+        "divergence_L2": true,
+        "initial_energy": true,
+        "energy_range": true,
+        "energy_quadrature": true,
+        "boundary": true,
+        "core_signs": true,
+        "scaled_core_drift": true,
+        "derived_amplitude": true
+      },
+      "drift": 0.045888031743697745
+    },
+    {
+      "candidate": "ST041",
+      "seed": 9174101,
+      "points": 4096,
+      "max": 0.08750971898500524,
+      "volume_L2": 0.10110282810583633,
+      "gates": {
+        "momentum_max": false,
+        "momentum_L2": false,
+        "divergence_max": true,
+        "divergence_L2": true,
+        "initial_energy": true,
+        "energy_range": true,
+        "energy_quadrature": true,
+        "boundary": true,
+        "core_signs": true,
+        "scaled_core_drift": true,
+        "derived_amplitude": true
+      },
+      "drift": 0.04900000000088494
+    },
+    {
+      "candidate": "ST042",
+      "seed": 9174101,
+      "points": 4096,
+      "max": 0.09422568983549509,
+      "volume_L2": 0.09919528550206,
+      "gates": {
+        "momentum_max": false,
+        "momentum_L2": false,
+        "divergence_max": true,
+        "divergence_L2": true,
+        "initial_energy": true,
+        "energy_range": true,
+        "energy_quadrature": true,
+        "boundary": true,
+        "core_signs": true,
+        "scaled_core_drift": true,
+        "derived_amplitude": true
+      },
+      "drift": 0.048999999999822005
+    },
+    {
+      "candidate": "ST006",
+      "seed": 9174102,
+      "points": 4096,
+      "max": 0.11488224618061335,
+      "volume_L2": 0.10931359463138937,
+      "divergence_max": 1.7485095863424213e-05,
+      "scope": "Second seed finest spatial step only; no full second convergence ladder"
+    },
+    {
+      "candidate": "ST041",
+      "seed": 9174102,
+      "points": 4096,
+      "max": 0.1098620774107166,
+      "volume_L2": 0.0998268853977615,
+      "divergence_max": 1.7460835645842845e-05,
+      "scope": "Second seed finest spatial step only; no full second convergence ladder"
+    },
+    {
+      "candidate": "ST042",
+      "seed": 9174102,
+      "points": 4096,
+      "max": 0.11319650334230555,
+      "volume_L2": 0.09790698168172145,
+      "divergence_max": 1.6104121697576787e-05,
+      "scope": "Second seed finest spatial step only; no full second convergence ladder"
+    }
+  ],
+  "structural_result": {
+    "ST006_midplane_axial_velocity_and_shear": "identically zero by reflection",
+    "ST042_midplane_max_abs_radial_axial_shear_at_t05": 0.003146848001486005,
+    "core_probe_extent": "R and abs(Z) in [.04,.2], autonomous",
+    "ST006_expanded_profile_drift_t075": 0.1868456193941028,
+    "ST042_expanded_profile_drift_t075": 0.1915819695892126,
+    "core_axial_pressure_force_direction": "away from z=0 for both on the tested grid",
+    "pressure_direction_fixed": false,
+    "angular_pulses_implemented": false
+  },
+  "scope": "See archive for full immutable raw candidates, derivative ladders, training histories and all structure grids."
+}
