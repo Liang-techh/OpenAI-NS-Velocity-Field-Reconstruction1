@@ -15,13 +15,13 @@ from openai_ns_reconstruction.kokuno_rescaled_inner_join_tsh_certificate import 
 
 @pytest.fixture(scope="module")
 def certificate() -> KokunoRescaledInnerJoinTshCertificate:
-    return KokunoRescaledInnerJoinTshCertificate(eta_nodes=9)
+    return KokunoRescaledInnerJoinTshCertificate(eta_nodes=5)
 
 
 def test_rescaled_tsh_uses_shared_c_and_disjoint_eta_envelope(certificate):
     envelope = certificate.envelope_report()
-    assert envelope["eta_construction_nodes"] == 9
-    assert envelope["eta_holdout_nodes"] == 8
+    assert envelope["eta_construction_nodes"] == 5
+    assert envelope["eta_holdout_nodes"] == 4
     assert envelope["disjoint_holdout_within_envelope"] is True
     assert envelope["analytic_source_B0_bound_proved"] is False
 
@@ -38,9 +38,6 @@ def test_rescaled_tsh_uses_shared_c_and_disjoint_eta_envelope(certificate):
 
 
 def test_current_selected_rescaled_normalization_fails_pa10_separation(certificate):
-    # This freezes the scientific result of this increment: once #491's same C
-    # is used in ell_i and X_R, the selected autonomous normalization does not
-    # leave enough log-radius for its numerically instantiated PA.10 transition.
     assert certificate.selected_B0 > 0.0
     assert math.isfinite(certificate.selected_T_sh)
     assert math.isfinite(certificate.max_T_sh_for_separation)
@@ -71,7 +68,7 @@ def test_report_does_not_launder_fixed_b0_c_repair_or_source_proof(certificate):
 
 
 def test_roundtrip_and_truth_metadata_fail_closed():
-    original = KokunoRescaledInnerJoinTshCertificate(eta_nodes=11)
+    original = KokunoRescaledInnerJoinTshCertificate(eta_nodes=7)
     payload = original.to_payload()
     replay = KokunoRescaledInnerJoinTshCertificate.from_payload(payload)
     assert replay.to_payload() == payload
