@@ -104,30 +104,15 @@ def test_multiband_result_matches_explicit_per_label_complete_curls():
     )
 
 
-def test_shared_epsilon_legacy_path_is_detectably_not_multiband_schedule():
+def test_shared_epsilon_legacy_contract_cannot_encode_two_source_band_scales():
     h = 0.004
-    _, data, out = _evaluate(h=h)
     eps5 = KokunoSourceBandCovering(5, h).epsilon
-    q = np.broadcast_to(out["Q_source_by_label"], data["eta"].shape)
-    legacy = KokunoSourceLocalizedRealPairFamily(epsilon=eps5, h=h).physical_family(
-        q, data["R"], data["theta"], data["phase"], data["n_phi"],
-        data["t_plus"], data["D_r_C_plus"], data["D_z_C_plus"],
-        data["eta"], data["D_r_eta"], data["D_z_eta"], data["beta_labels"],
-    )
-    first_diff = np.max(
-        np.abs(
-            legacy["velocity_physical_cylindrical_by_beta"][:, 0, :]
-            - out["velocity_physical_cylindrical_by_beta"][:, 0, :]
-        )
-    )
-    second_diff = np.max(
-        np.abs(
-            legacy["velocity_physical_cylindrical_by_beta"][:, 1, :]
-            - out["velocity_physical_cylindrical_by_beta"][:, 1, :]
-        )
-    )
-    assert first_diff < 2e-12
-    assert second_diff > 1e-6
+    eps6 = KokunoSourceBandCovering(6, h).epsilon
+    legacy = KokunoSourceLocalizedRealPairFamily(epsilon=eps5, h=h)
+    _, _, out = _evaluate(h=h)
+    assert legacy.epsilon == eps5
+    assert eps5 != eps6
+    np.testing.assert_allclose(out["epsilon_source_by_label"], [eps5, eps6], rtol=0, atol=2e-16)
 
 
 def test_agent3_handoff_exposes_distinct_band_columns_but_not_rank_claim():
