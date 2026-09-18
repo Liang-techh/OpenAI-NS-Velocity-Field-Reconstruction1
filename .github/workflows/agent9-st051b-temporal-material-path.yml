@@ -1,0 +1,104 @@
+name: agent9-st051b-temporal-material-path
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/constrained_st051b_temporal_material_path.py'
+      - 'tests/test_constrained_st051b_temporal_material_path.py'
+      - 'docs/external_methods/CR-A9-056-st051b-temporal-material-path.md'
+      - '.github/workflows/agent9-st051b-temporal-material-path.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - name: Checkout Agent-9 branch
+        uses: actions/checkout@v4
+
+      - name: Checkout exact Agent-7 temporal source
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: f2828ae259eebc867162ef5842a99f0860053229
+          path: external/st051b_temporal_source
+
+      - name: Checkout exact frozen Agent-9 path engine
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: 6699a698c9fb2f0a0986e7aefc5fe0ee431cd5ad
+          path: external/agent9_path_source
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install focused dependencies
+        run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+
+      - name: Warning-clean compile and focused regressions
+        run: |
+          python -W error -m py_compile src/openai_ns_reconstruction/constrained_st051b_temporal_material_path.py
+          python -W error -m pytest -q tests/test_constrained_st051b_temporal_material_path.py
+
+      - name: Execute exact-source temporal material-path replay
+        run: |
+          mkdir -p outputs/agent9-st051b-temporal-material-path
+          PYTHONPATH=src python src/openai_ns_reconstruction/constrained_st051b_temporal_material_path.py \
+            --candidate-root external/st051b_temporal_source \
+            --agent9-root external/agent9_path_source \
+            --out outputs/agent9-st051b-temporal-material-path/report.json \
+            | tee outputs/agent9-st051b-temporal-material-path/run.log
+
+      - name: Verify fail-closed truth boundary and frozen population
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('outputs/agent9-st051b-temporal-material-path/report.json')
+          r=json.loads(p.read_text())
+          assert r['task_id']=='CR-A9-056'
+          assert r['lineage']['parent_candidate']=='ST051-B'
+          assert r['lineage']['parent_head']=='4b784f1b8457af2ead49295631d834d4e882000b'
+          assert r['lineage']['agent7_temporal_head']=='f2828ae259eebc867162ef5842a99f0860053229'
+          assert r['lineage']['agent9_path_engine_head']=='6699a698c9fb2f0a0986e7aefc5fe0ee431cd5ad'
+          assert r['frozen_material_path_contract']['path_count']==48
+          assert r['frozen_material_path_contract']['paired_material_line_count']==24
+          assert r['redistribution']['static_low_gain']==0.025
+          assert r['redistribution']['static_high_gain']==0.05
+          assert r['redistribution']['temporal_gamma']==0.025
+          assert r['redistribution']['temporal_gains_at_registered_times']==[0.025,0.0375,0.05]
+          assert r['redistribution']['frozen_source_alpha']==2.520520814687742
+          assert r['redistribution']['transform_rebalanced_on_st051b'] is False
+          assert r['redistribution']['gamma_values_outside_preregistered_grid_evaluated'] is False
+          for key in ('static_low_material_paths','static_high_material_paths','temporal_material_paths'):
+              assert r[key]['path_count']==48
+              assert r[key]['paired_material_line_count']==24
+          assert r['truth_boundary']['canonical_velocity_changed'] is False
+          assert r['truth_boundary']['held_out_pde_residual_evaluated'] is False
+          assert r['truth_boundary']['production_static_gain_selected'] is False
+          assert r['truth_boundary']['production_temporal_coefficient_selected'] is False
+          assert r['truth_boundary']['visualization_ready'] is False
+          assert r['truth_boundary']['visual_correspondence_verified'] is False
+          assert r['truth_boundary']['pde_validated'] is False
+          print('report_sha256=', r['report_sha256'])
+          print('temporal_vs_static_low=', r['temporal_vs_static_low'])
+          print('temporal_vs_static_high=', r['temporal_vs_static_high'])
+          print('temporal_vs_static_low_by_radius=', r['temporal_vs_static_low_by_seed_radius'])
+          PY
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ST051-B-temporal-redistribution-material-path
+          path: outputs/agent9-st051b-temporal-material-path/
+          if-no-files-found: error
