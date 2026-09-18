@@ -1,0 +1,27 @@
+name: kokuno-agent5-audited-geometry-leading-routing
+on:
+  push:
+    branches: [codex/kokuno-a5-audited-geometry-leading-routing-034]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  routing-checkpoint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install -e '.[dev]'
+      - name: Focused tests
+        run: python -m pytest -q -W error tests/test_constrained_kokuno_autonomous_provenance_routing_checkpoint.py tests/test_constrained_kokuno_audited_geometry_leading_routing_checkpoint.py
+      - name: Generate checkpoint
+        run: python -m openai_ns_reconstruction.kokuno_audited_geometry_leading_routing_checkpoint --output artifacts/kokuno_agent5/audited_geometry_leading_routing_checkpoint_v34/checkpoint.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-audited-geometry-leading-routing-checkpoint-v34
+          path: artifacts/kokuno_agent5/audited_geometry_leading_routing_checkpoint_v34
+          if-no-files-found: error
