@@ -46,7 +46,7 @@ def test_frozen_st048s_warp_screen_smoke_contract():
     )
     assert report["task_id"] == screen.TASK_ID
     assert report["parent_id"] == "ST048-S"
-    assert report["parent_raw_candidate_sha256"]
+    assert report["upstream_st048_residual_receipt"]["paired_results"]
     assert len(report["rows"]) == 2
     assert report["rows"][0]["beta"] == 0.0
     assert report["rows"][1]["parameter_count"] == 1
