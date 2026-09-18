@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "task_id": "CR002-BIPOLAR-COMPACT-POLOIDAL-ENERGY-ENVELOPE-SCOPE-039",
+  "governed_upstream": {
+    "pr": 309,
+    "task_id": "CR003-BIPOLAR-COMPACT-POLOIDAL-ENERGY-ENVELOPE-044",
+    "head_sha": "1f8be88f9b6f367298092f14ad077f26259cc4ef",
+    "mode_name": "COMPACT_C4_ODD_Z_POLOIDAL",
+    "source_candidate_sha256": "7875214ad65f5e1ba4f7c5e362217f05ef47bc3d893e8641e8e40a85fc4e7609"
+  },
+  "representation_kind": "integrated_autonomous_compact_poloidal_response_energy_envelope_audit_only",
+  "source_classification": {
+    "callable_velocity_delivery": "user_requirement",
+    "eq45_backbone": "public_source_fact",
+    "compact_poloidal_mode": "autonomous_design",
+    "zero_centered_energy_envelope_method": "autonomous_design",
+    "quadrature_orders_96_192": "autonomous_design",
+    "morphology_grid_size_25": "autonomous_design",
+    "openai_hidden_numerical_profile": "pending_unknown"
+  },
+  "allowed_source_classes": [
+    "user_requirement",
+    "public_source_fact",
+    "autonomous_design",
+    "pending_unknown"
+  ],
+  "evidence_relation_labels": {
+    "energy_quadratic_and_envelope": "project_derived_measurement",
+    "core_sign_endpoint_screen": "project_derived_measurement",
+    "vorticity_morphology_span": "project_derived_measurement"
+  },
+  "evidence_relation_labels_are_source_classes": false,
+  "energy_envelope_evidence_only": {
+    "reference_time": 0.25,
+    "reference_baseline_energy": 0.9999997149435984,
+    "energy_linear_coefficient": 0.03692102381146128,
+    "energy_quadratic_coefficient": 0.008551626039491944,
+    "largest_symmetric_zero_centered_diagnostic_half_width": 0.0269246506530463,
+    "quadrature_orders": [96, 192],
+    "maximum_relative_quadratic_coefficient_change": 5.00846e-8,
+    "previous_capacity_trial_abs_coefficient": 0.25,
+    "previous_trial_over_diagnostic_half_width_ratio": 9.285167,
+    "diagnostic_envelope_is_selected_materialization_bound": false,
+    "diagnostic_envelope_selects_coefficient": false,
+    "diagnostic_envelope_is_complete_feasible_coefficient_interval": false,
+    "diagnostic_exact_normalization_root_selects_coefficient": false,
+    "fixed_parent_energy_admissibility_transfers_through_joint_renormalization": false,
+    "validation_time_energy_range_is_full_candidate_acceptance": false,
+    "quadrature_refinement_is_pde_validation": false,
+    "previous_capacity_trial_invalidated_by_energy_envelope": false
+  },
+  "morphology_semantics": {
+    "time": 0.5,
+    "grid_size": 25,
+    "axial_vorticity_rms_span_over_Zp": 0.0002507700,
+    "radial_vorticity_rms_span_over_Rp": 0.0002473638,
+    "axial_q90_span_over_Zp": 0.0,
+    "axial_q99_span_over_Zp": 0.0,
+    "outer_axial_enstrophy_fraction_span": 1.38749e-6,
+    "small_span_proves_no_pde_leverage": false,
+    "zero_q90_q99_span_proves_mode_useless": false,
+    "morphology_span_is_momentum_residual_jacobian": false,
+    "morphology_span_is_visual_correspondence": false,
+    "morphology_span_selects_coefficient_or_sign": false
+  },
+  "routing_scope": {
+    "live_integrated_mode": "COMPACT_C4_ODD_Z_POLOIDAL",
+    "live_mode_nonzero_child_materialized": false,
+    "energy_envelope_may_inform_future_autonomous_bound_design": true,
+    "energy_envelope_may_automatically_define_materialization_bound": false,
+    "exact_energy_root_may_automatically_define_materialized_child": false,
+    "larger_move_requires_explicit_joint_materialization_or_renormalization_contract": true,
+    "reference_energy_gate_may_be_relaxed_for_larger_move": false,
+    "live_next_task_remains_materialize_existing_compact_poloidal_child": true,
+    "additional_basis_growth_allowed_before_materialization_screen": false
+  },
+  "future_nonzero_materialization": {
+    "explicit_autonomous_coefficient_bound_required": true,
+    "explicit_coefficient_value_required": true,
+    "new_representation_family_identity_required": true,
+    "new_candidate_sha_required": true,
+    "recheck_reference_energy": true,
+    "recheck_validation_time_energy": true,
+    "recheck_core_rotation_sign_nontriviality": true,
+    "recheck_bipolar_radial_axial_direction_parity": true,
+    "recheck_axis_support_regularity": true,
+    "fresh_full_per_component_momentum_divergence_required": true,
+    "joint_renormalization_requires_fresh_nonlinear_pde_validation": true,
+    "model_selection_data_may_not_be_reused_as_acceptance_data": true
+  },
+  "canonical_cr001_snapshot": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "force_mode": "restricted_two_parameter_family",
+    "force_bounds": {"a": [0.0, 10.0], "c": [0.0, 10.0]},
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_energy_range": [0.1, 10.0],
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "divergence_max": 1e-5,
+    "divergence_L2": 1e-5,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001
+  },
+  "truth_boundary": {
+    "velocity_export_ready_may_remain_true_for_existing_candidate": true,
+    "compact_poloidal_nonzero_child_materialized": false,
+    "compact_poloidal_coefficient_bound_selected": false,
+    "compact_poloidal_coefficient_selected": false,
+    "candidate_selection_resolved": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  }
+}
