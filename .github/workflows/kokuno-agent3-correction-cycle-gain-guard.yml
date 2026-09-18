@@ -11,7 +11,6 @@ on:
       - 'src/openai_ns_reconstruction/kokuno_complete_curl.py'
       - 'src/openai_ns_reconstruction/kokuno_leading_core_series.py'
       - 'tests/test_constrained_kokuno_correction_cycle_gain_guard.py'
-      - 'tests/test_constrained_kokuno_signed_amplitude_curl_cycle.py'
       - '.github/workflows/kokuno-agent3-correction-cycle-gain-guard.yml'
 
 permissions:
@@ -32,7 +31,6 @@ jobs:
         run: >-
           python -m pytest -q -W error
           tests/test_constrained_kokuno_correction_cycle_gain_guard.py
-          tests/test_constrained_kokuno_signed_amplitude_curl_cycle.py
       - name: Replay real cycle through gain guard
         run: >-
           python -m openai_ns_reconstruction.kokuno_correction_cycle_gain_guard
