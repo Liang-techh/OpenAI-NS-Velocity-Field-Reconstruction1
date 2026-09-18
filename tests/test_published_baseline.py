@@ -39,7 +39,8 @@ def test_visualization_bundle_roundtrip_and_tamper(tmp_path):
     assert grid['velocity'].shape==(3,5,5,5,3) and grid['speed'].shape==(3,5,5,5)
     assert grid['candidate_sha256']==f.sha256 and grid['pde_validated'] is False
     direct=f.at_points([grid['x'][3],grid['y'][2],grid['z'][1]],.5)
-    np.testing.assert_allclose(grid['velocity'][1,3,2,1],direct,rtol=0,atol=0)
+    # Grid evaluation is batched; the same point evaluated alone can differ at roundoff level.
+    np.testing.assert_allclose(grid['velocity'][1,3,2,1],direct,rtol=2e-13,atol=2e-14)
     path=tmp_path/'st006-vis.npz';meta=write_visualization_bundle(path,5)
     loaded=load_visualization_bundle(path)
     assert meta['grid_sha256']==loaded['grid_sha256'] and loaded['visualization_ready'] is False
