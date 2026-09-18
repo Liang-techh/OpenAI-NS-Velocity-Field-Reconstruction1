@@ -4,6 +4,22 @@
 状态为 TODO/IN_PROGRESS/DONE/BLOCKED；DONE 只表示交付完成，acceptance 和 merge_status 单独记录。
 每项完成后附 commit、PR、实际命令/结果、参数和剩余限制。没有执行的检查写 not run。
 
+
+## 仓库级保留基线：ST006（所有 Agent 必读）
+
+`main` 已通过 PR #245 发布保留研究基线 ST006；PR #273 的独立重放再次确认同一冻结候选。ST006 candidate SHA256 为 `6b4d84b48ab9dbcd2ee1a1858d3e56ef81523f5864369d7e96c6431fccf107a3`。在原留出协议（seed `9172801`、4096 Cartesian points、六个固定时刻、独立 Cartesian FD、finest spatial step `0.005`）下：
+
+- full three-component momentum residual sampled max = **0.1082289305112118**；
+- momentum volume-L2 = **0.10758432876230622**；
+- registered target remains **1e-3**，因此 momentum gates 仍失败；
+- divergence_max 也仍失败；
+- `pde_validated=false`，不得称为 exact OpenAI field、paper-exact 或 blow-up proof。
+
+可复跑入口：`from research_baseline import load_best`，以及 `python scripts/ns_candidate.py validate --seed 9172801 ...`。
+
+**跨路线协调规则：** ST006 是仓库级 numerical baseline，不是 Kokuno-derived evidence，也不是已通过 PDE 验收的解。所有 Constrained/Kokuno Agent 后续报告 residual 时必须说明是否与 ST006 使用同一验证 operator / sample / time / forcing contract；若不同，不得直接宣称优于或劣于 ST006。Kokuno Agent 5 的后续 checkpoint 必须保留 baseline-vs-Kokuno 一行；Agent 4 在完整 global Kokuno candidate 出现后，除固定 `1e-3` formal gate 外，还应给出同协议 ST006 对照。Agent 1–3 可把 ST006 当性能参考，但不得把 ST006 coefficients/profiles 当作 Kokuno source truth。
+
+
 | ID | 交付 | 依赖 | 状态 | Owner | 验收 |
 | --- | --- | --- | --- | --- | --- |
 | CR001 | 可机读的公开约束与问题配置 | 无 | DONE | root | pending |
