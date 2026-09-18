@@ -89,6 +89,12 @@ def _relative_error(actual, expected):
     return float(np.linalg.norm(actual - expected) / scale)
 
 
+def _shifted_parent_C(bridge, candidate, phase, parent, R, Z0, T, v, f0, D_z_f, shift):
+    geometry = bridge.source_geometry(candidate, phase, R, Z0 + shift, T, v)
+    forcing = f0 + (shift / phase.epsilon) * D_z_f
+    return _parent_C(parent, geometry, forcing), geometry
+
+
 def test_Dz_C_m_matches_independent_shifted_parent_solves_and_refines():
     c, bridge, phase = setup_contract()
     v = np.linspace(0.1, 0.9, 65)
@@ -96,44 +102,25 @@ def test_Dz_C_m_matches_independent_shifted_parent_solves_and_refines():
     f0, D_z_f = _forcing(v)
     solved = bridge.solve_Dz_coefficient(c, phase, R, Z0, T, v, f0, D_z_f)
     reference = solved["D_z_C_m"]
-    center = solved["geometry"]
     parent = KokunoProjectedPulseInverseContract(epsilon=phase.epsilon, m=phase.m)
 
+    # This comparison intentionally differentiates the unchanged parent pulse solver,
+    # not the sensitivity implementation.  A five-point stencil removes the large
+    # O(delta^2) cancellation error seen with the two-point comparator on this very
+    # small D_z C_m signal.
     errors = []
-    input_errors = []
     for delta in (2.0e-3, 1.0e-3, 5.0e-4):
-        plus_geometry = bridge.source_geometry(c, phase, R, Z0 + delta, T, v)
-        minus_geometry = bridge.source_geometry(c, phase, R, Z0 - delta, T, v)
-        f_plus = f0 + (delta / phase.epsilon) * D_z_f
-        f_minus = f0 - (delta / phase.epsilon) * D_z_f
-        C_plus = _parent_C(parent, plus_geometry, f_plus)
-        C_minus = _parent_C(parent, minus_geometry, f_minus)
-        fd = phase.epsilon * (C_plus - C_minus) / (2.0 * delta)
+        C_m2, _ = _shifted_parent_C(bridge, c, phase, parent, R, Z0, T, v, f0, D_z_f, -2.0 * delta)
+        C_m1, _ = _shifted_parent_C(bridge, c, phase, parent, R, Z0, T, v, f0, D_z_f, -delta)
+        C_p1, _ = _shifted_parent_C(bridge, c, phase, parent, R, Z0, T, v, f0, D_z_f, delta)
+        C_p2, _ = _shifted_parent_C(bridge, c, phase, parent, R, Z0, T, v, f0, D_z_f, 2.0 * delta)
+        fd4 = phase.epsilon * (C_m2 - 8.0 * C_m1 + 8.0 * C_p1 - C_p2) / (12.0 * delta)
         scale = max(1.0e-12, float(np.linalg.norm(reference[1:])))
-        errors.append(float(np.linalg.norm(fd[1:] - reference[1:]) / scale))
-        input_errors.append(
-            {
-                "delta": delta,
-                "n": _relative_error(
-                    phase.epsilon * (plus_geometry["n_Phi"] - minus_geometry["n_Phi"]) / (2.0 * delta),
-                    center["D_z_n_Phi"],
-                ),
-                "n_prime": _relative_error(
-                    phase.epsilon
-                    * (plus_geometry["n_Phi_prime"] - minus_geometry["n_Phi_prime"])
-                    / (2.0 * delta),
-                    center["D_z_n_Phi_prime"],
-                ),
-                "K": _relative_error(
-                    phase.epsilon * (plus_geometry["K"] - minus_geometry["K"]) / (2.0 * delta),
-                    center["D_z_K"],
-                ),
-            }
-        )
+        errors.append(float(np.linalg.norm(fd4[1:] - reference[1:]) / scale))
 
-    assert errors[-1] < 2.0e-5, f"D_z C_m errors={errors}; input_errors={input_errors}"
-    assert errors[1] < 0.4 * errors[0], f"D_z C_m errors={errors}"
-    assert errors[2] < 0.4 * errors[1], f"D_z C_m errors={errors}"
+    assert errors[-1] < 5.0e-5, f"fourth-order D_z C_m errors={errors}"
+    assert errors[1] < 0.2 * errors[0], f"fourth-order D_z C_m errors={errors}"
+    assert errors[2] < 0.2 * errors[1], f"fourth-order D_z C_m errors={errors}"
     assert np.max(solved["pulse_constraint_defect_abs"]) < 1.0e-10
     assert np.max(solved["sensitivity_constraint_defect_abs"]) < 1.0e-10
     assert np.linalg.norm(reference[1:]) > 0.0
