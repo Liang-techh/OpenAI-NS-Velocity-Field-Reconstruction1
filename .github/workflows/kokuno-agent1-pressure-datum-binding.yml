@@ -44,10 +44,14 @@ jobs:
           import json
           from pathlib import Path
           report = json.loads(Path('artifacts/kokuno_agent1/pressure_datum_binding/report.json').read_text())
-          print('core_status=' + report['finite_core_probe']['status'])
-          print('appendix_status=' + report['appendix_B_probe']['status'])
+          core = report['finite_core_probe']
+          appendix = report['appendix_B_probe']
+          print('core_status=' + core['status'])
+          print('appendix_status=' + appendix['status'])
+          print('core_error=' + core.get('error_type', 'none'))
+          print('appendix_error=' + appendix.get('error_type', 'none'))
           PY
       - uses: actions/upload-artifact@v4
         with:
-          name: kokuno-agent1-pressure-datum-binding-v1-${{ steps.receipt_meta.outputs.core_status }}-${{ steps.receipt_meta.outputs.appendix_status }}
+          name: kokuno-agent1-pressure-datum-binding-v1-${{ steps.receipt_meta.outputs.core_status }}-${{ steps.receipt_meta.outputs.core_error }}-${{ steps.receipt_meta.outputs.appendix_status }}-${{ steps.receipt_meta.outputs.appendix_error }}
           path: artifacts/kokuno_agent1/pressure_datum_binding/report.json
