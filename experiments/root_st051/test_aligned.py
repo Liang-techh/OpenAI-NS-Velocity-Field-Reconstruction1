@@ -86,3 +86,10 @@ def test_frozen_replay_and_mutations():
         with pytest.raises(ValueError,match='hash mismatch'):reconstruct(ident,bad)
         bad=copy.deepcopy(records);bad[ident]['parent_id']='invented'
         with pytest.raises(ValueError,match='Parent identity'):reconstruct(ident,bad)
+
+def test_added_edge_modes_have_zero_direct_midplane_axial_velocity(setup):
+    m,_=setup;r=np.linspace(.025,1.8,13);D=m.cache(r*r,np.zeros_like(r),.43)
+    edge_columns=10*2
+    assert np.max(abs(D['M']['C'][:,-edge_columns:]))<1e-10
+    assert np.max(abs(D['M']['Cs'][:,-edge_columns:]))<1e-10
+    # Total normalized-field shear can still change: norm(c) rescales the parent.
