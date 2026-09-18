@@ -1,0 +1,171 @@
+{
+  "schema_version": 2,
+  "task_id": "CR002-CANDIDATE-PROMOTION-LIFECYCLE-061",
+  "purpose": "govern parent-local improvement, repository-benchmark challenge, benchmark retention, canonical velocity delivery, and scientific acceptance as separate lifecycle claims without changing any candidate or threshold",
+  "snapshot": {
+    "active_integration_head": "89f290930e632fdea5449eac755183bc7f2024be",
+    "active_integration_branch": "codex/cr001-constraints",
+    "stale_superseded_governance_pr": 308,
+    "note": "This is a governance snapshot. Later PR state changes do not retroactively change what was observed here."
+  },
+  "allowed_source_classes": [
+    "user_requirement",
+    "public_source_fact",
+    "autonomous_design",
+    "pending_unknown"
+  ],
+  "source_classification": {
+    "callable_velocity_delivery": "user_requirement",
+    "public_openai_visualization_structure": "public_source_fact",
+    "cr001_validation_protocol": "autonomous_design",
+    "st006_validation_protocol": "autonomous_design",
+    "st006_measured_residual_record": "autonomous_design",
+    "challenger_branch_measurements": "autonomous_design",
+    "candidate_promotion_lifecycle_policy": "autonomous_design",
+    "openai_hidden_numerical_profile": "pending_unknown"
+  },
+  "evidence_relation_labels": {
+    "project_derived_measurement": "measurement produced by a repository evaluation protocol; provenance relation only, not a fifth source class",
+    "frozen_parent_paired_comparison": "child and frozen parent evaluated under one identical declared protocol",
+    "repository_retained_benchmark": "retained numerical benchmark; retention is a lifecycle state, not scientific acceptance",
+    "protocol_scoped_challenger": "candidate with frozen evidence that may challenge a retained benchmark only within the protocol actually established"
+  },
+  "relation_labels_are_source_classes": false,
+  "paired_parent_claim_scope": {
+    "allowed_claim": "improved over this frozen parent under this exact declared protocol",
+    "allows_repository_st006_superiority_claim": false,
+    "allows_retained_baseline_replacement": false,
+    "allows_canonical_velocity_replacement": false,
+    "allows_pde_validation_claim": false,
+    "allows_visual_correspondence_claim": false,
+    "allows_paper_exact_claim": false,
+    "allows_openai_field_identification_claim": false
+  },
+  "repository_baseline": {
+    "benchmark_name": "ST006",
+    "lifecycle_state": "repository_retained_baseline",
+    "candidate_sha256": "6b4d84b48ab9dbcd2ee1a1858d3e56ef81523f5864369d7e96c6431fccf107a3",
+    "retained_seed": 9172801,
+    "retained_held_out_points": 4096,
+    "retained_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "retained_finest_spatial_step": 0.005,
+    "retained_momentum_sampled_max": 0.1082289305112118,
+    "retained_momentum_volume_L2": 0.10758432876230622,
+    "retained_pde_validated": false,
+    "formal_momentum_target": 0.001,
+    "direct_superiority_claim_requires_identical_protocol": true,
+    "required_protocol_identity_fields": [
+      "candidate_freeze_and_identity",
+      "sample_points_and_seed",
+      "evaluation_times",
+      "spatial_and_time_derivative_operator_and_ladders",
+      "momentum_residual_definition",
+      "reported_norm_definitions",
+      "forcing_family_and_bounds",
+      "pressure_convention",
+      "nu",
+      "physical_domain_and_support"
+    ],
+    "historical_or_cross_route_mismatch_role": "indicative_only",
+    "unknown_protocol_field_fails_closed": true
+  },
+  "canonical_cr001_comparability": {
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "seed_matches_st006_retained_protocol": false,
+    "directly_comparable_to_st006_without_replay": false,
+    "required_action_for_repository_level_superiority_claim": "reevaluate both candidates under one identical frozen protocol before comparing"
+  },
+  "lifecycle_separation": {
+    "allowed_states": [
+      "protocol_scoped_challenger",
+      "repository_retained_baseline",
+      "scientifically_accepted_candidate"
+    ],
+    "open_or_draft_pr_changes_retained_baseline": false,
+    "protocol_scoped_superiority_changes_retained_baseline": false,
+    "protocol_scoped_superiority_changes_canonical_velocity": false,
+    "retained_baseline_replacement_implies_pde_validated": false,
+    "retained_baseline_replacement_requires_explicit_integration_or_promotion": true,
+    "retained_baseline_replacement_requires_immutable_candidate_identity": true,
+    "retained_baseline_replacement_requires_governed_validation_receipt": true,
+    "retained_baseline_replacement_requires_status_document_update": true,
+    "canonical_velocity_replacement_requires_explicit_api_or_candidate_status_update": true,
+    "scientific_acceptance_requires_all_unchanged_formal_gates": true
+  },
+  "current_challenger_snapshot": {
+    "st047_e": {
+      "source_pr": 379,
+      "source_head": "2c51cd20e036ab29954cf77a70814bc918d5c6a5",
+      "observed_state": "draft_open_unintegrated",
+      "best_reported_fresh_sampled_max": 0.0507243092590924,
+      "best_reported_fresh_volume_L2": 0.05973280254563864,
+      "below_st006_numbers_on_own_fresh_holdouts": true,
+      "same_protocol_st006_superiority_established_here": false,
+      "retained_baseline_replaced": false,
+      "canonical_velocity_replaced": false,
+      "pde_validated": false
+    },
+    "st048": {
+      "source_pr": 390,
+      "source_head": "97695a86f85ce68fb4ae70c41fc81c904d655183",
+      "observed_state": "draft_open_unintegrated",
+      "best_reported_fresh_sampled_max": 0.04306546284390083,
+      "best_reported_fresh_volume_L2": 0.0505474714610945,
+      "below_st006_numbers_on_own_fresh_holdouts": true,
+      "same_protocol_st006_superiority_established_here": false,
+      "retained_baseline_replaced": false,
+      "canonical_velocity_replaced": false,
+      "pde_validated": false
+    },
+    "interpretation": "These are strong challenger measurements, but this governance snapshot does not replay ST006 on their exact fresh samples. They therefore remain protocol-scoped challenger evidence, not a retained-baseline replacement or PDE acceptance receipt."
+  },
+  "delivery_separation": {
+    "canonical_delivery_family": "eq45_supported_velocity_candidate_v1",
+    "canonical_delivery_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+    "velocity_export_ready": true,
+    "delivery_candidate_is_same_object_as_retained_pde_benchmark": false,
+    "benchmark_challenge_changes_velocity_api_automatically": false,
+    "pde_failure_blocks_callable_velocity_delivery": false
+  },
+  "scientific_truth_boundary": {
+    "velocity_export_ready_is_independent_of_pde_validation": true,
+    "paired_improvement_implies_pde_validated": false,
+    "repository_baseline_improvement_implies_pde_validated": false,
+    "retained_baseline_replacement_implies_pde_validated": false,
+    "green_ci_implies_pde_validated": false,
+    "visual_similarity_implies_pde_validated": false,
+    "pde_validated": false,
+    "visual_correspondence_verified": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "canonical_thresholds": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "force_mode": "restricted_two_parameter_family",
+    "force_bounds": {"a": [0.0, 10.0], "c": [0.0, 10.0]},
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "divergence_max": 1e-5,
+    "divergence_L2": 1e-5,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001
+  },
+  "mutation_scope": {
+    "velocity_changed": false,
+    "candidate_changed": false,
+    "pressure_changed": false,
+    "forcing_changed": false,
+    "optimizer_changed": false,
+    "sampling_changed": false,
+    "norm_definition_changed": false,
+    "threshold_changed": false,
+    "active_route_changed": false
+  }
+}
