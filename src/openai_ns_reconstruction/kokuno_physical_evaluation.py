@@ -6,7 +6,7 @@ variable Y and only afterwards evaluates it on physical space-time,
     Y(r,t) = v_r r**d_r + v_t t  (mod Z^2).
 
 For a smooth torus-dependent quantity F(r,theta,z,t,Y), differentiation after
-this evaluation is therefore not the plain partial derivative.  The source
+this evaluation is therefore not the plain partial derivative. The source
 operators are
 
     mathsf_r = partial_r + d_r r**(d_r-1) v_r . partial_Y,
@@ -18,10 +18,17 @@ and in the source wave chart
     D_z       = sqrt(Q) partial_z,
     mathsf_t* = Q**(1+h) mathsf_t.
 
-This module makes exactly that differential-algebra seam executable.  It does
-not recover the numerical torus vectors, group constants, positive-order
-background, pulse labels, or public xyz-t velocity.  Those numerical inputs
-remain caller supplied and are recorded as such in provenance.
+The same corrected reader also displays the numerical torus/group constants
+used by this pullback:
+
+    J_g = [[3,1],[1,5]],  b_g = sqrt(2)-1,
+    v_r = (1,-b_g),       v_t = (b_g,1),
+    Lambda_g = 4-sqrt(2), T_g = 4+sqrt(2), kappa_s = 1e-5.
+
+This module makes that differential-algebra seam executable and binds those
+*displayed source constants* through :meth:`from_corrected_source_constants`.
+It still does not reconstruct the positive-order background, pulse/mode labels,
+partition centers, or a public source oscillatory xyz-t velocity.
 """
 from __future__ import annotations
 
@@ -37,7 +44,16 @@ SOURCE_COMMIT = "143f6773feb424ad9ed3a8d116653200f20346b7"
 SOURCE_PATH = "navier-stokes/navier_stokes_workbench.tex"
 CORRECTED_RELEASE = "zenodo:22678406"
 CORRECTED_RELEASE_DATE = "2026-09-09"
-SCHEMA = "kokuno-physical-evaluation-differential-algebra-v1"
+SCHEMA = "kokuno-physical-evaluation-differential-algebra-v2"
+
+_SOURCE_SQRT2 = float(np.sqrt(2.0))
+SOURCE_J_G = ((3.0, 1.0), (1.0, 5.0))
+SOURCE_B_G = _SOURCE_SQRT2 - 1.0
+SOURCE_V_R = (1.0, -SOURCE_B_G)
+SOURCE_V_T = (SOURCE_B_G, 1.0)
+SOURCE_LAMBDA_G = 4.0 - _SOURCE_SQRT2
+SOURCE_T_G = 4.0 + _SOURCE_SQRT2
+SOURCE_KAPPA_S = 1.0e-5
 
 _SOURCE_IDENTITIES = {
     "phase_map": "Y=v_r*r^d_r+v_t*t mod Z^2",
@@ -46,15 +62,21 @@ _SOURCE_IDENTITIES = {
     "D_r": "sqrt(Q)*mathsf_r",
     "D_z": "sqrt(Q)*partial_z",
     "mathsf_t_star": "Q^(1+h)*mathsf_t",
-    "radial_exponent": "d_r=2*((1+h)*rho_g-h*kappa_s), rho_g=log(Lambda_g)/log(T_g)",
+    "group_matrix": "J_g=[[3,1],[1,5]]",
+    "torus_vectors": "b_g=sqrt(2)-1; v_r=(1,-b_g); v_t=(b_g,1)",
+    "group_eigenvalues": "Lambda_g=4-sqrt(2); T_g=4+sqrt(2)",
+    "group_relations": "J_g*v_r=Lambda_g*v_r; J_g*v_t=T_g*v_t; v_r dot v_t=0; det(J_g)=14",
+    "radial_exponent": "d_r=2*((1+h)*rho_g-h*kappa_s), rho_g=log(Lambda_g)/log(T_g), kappa_s=1e-5",
 }
 
 _TRUTH_BOUNDARY = {
     "auxiliary_torus_physical_evaluation_map_executable": True,
     "source_chain_rule_operators_executable": True,
     "source_normalized_Dr_Dz_tstar_executable": True,
-    "source_torus_vectors_recovered": False,
-    "source_group_constants_recovered": False,
+    "displayed_source_torus_vectors_bound": True,
+    "displayed_source_group_constants_bound": True,
+    "source_torus_vectors_recovered": True,
+    "source_group_constants_recovered": True,
     "actual_positive_order_background_bound": False,
     "actual_auxiliary_torus_mode_family_bound": False,
     "public_xyz_t_velocity_correction_materialized": False,
@@ -64,6 +86,8 @@ _TRUTH_BOUNDARY = {
     "openai_field_identified": False,
     "blowup_proved": False,
 }
+
+_BINDINGS = {"caller_supplied", "corrected_source_displayed_constants"}
 
 
 def _canonical_json(payload: dict[str, Any]) -> str:
@@ -84,33 +108,69 @@ def _two_vector(value: Any, name: str) -> np.ndarray:
     return out
 
 
+def corrected_source_torus_constants() -> dict[str, Any]:
+    """Return the auxiliary-torus constants displayed by the corrected reader.
+
+    The returned numerical values are source-bound, not autonomous fit
+    parameters. Diagnostics are recomputed from the displayed constants so a
+    caller can fail closed if the binding is edited inconsistently.
+    """
+    jg = np.asarray(SOURCE_J_G, dtype=float)
+    vr = np.asarray(SOURCE_V_R, dtype=float)
+    vt = np.asarray(SOURCE_V_T, dtype=float)
+    eigen_r = jg @ vr - SOURCE_LAMBDA_G * vr
+    eigen_t = jg @ vt - SOURCE_T_G * vt
+    return {
+        "J_g": [list(row) for row in SOURCE_J_G],
+        "b_g": SOURCE_B_G,
+        "v_r": list(SOURCE_V_R),
+        "v_t": list(SOURCE_V_T),
+        "Lambda_g": SOURCE_LAMBDA_G,
+        "T_g": SOURCE_T_G,
+        "kappa_s": SOURCE_KAPPA_S,
+        "identity_diagnostics": {
+            "Jg_vr_minus_Lambda_vr_max_abs": float(np.max(np.abs(eigen_r))),
+            "Jg_vt_minus_T_vt_max_abs": float(np.max(np.abs(eigen_t))),
+            "vr_dot_vt": float(vr @ vt),
+            "det_J_g": float(np.linalg.det(jg)),
+        },
+    }
+
+
 @dataclass(frozen=True)
 class KokunoPhysicalEvaluationMap:
     """Execute the source torus pullback and post-evaluation derivatives.
 
-    ``v_r`` and ``v_t`` are the two source torus directions, but their numerical
-    values are caller supplied here.  ``d_r`` may be supplied directly or
-    generated with :meth:`from_source_group_constants`.
+    Use :meth:`from_corrected_source_constants` to bind the numerical torus
+    directions and group constants displayed by the corrected reader. Direct
+    construction remains available for independent manufactured tests or other
+    caller-supplied source-compatible realizations, with provenance recording
+    that distinction explicitly.
     """
 
     v_r: tuple[float, float]
     v_t: tuple[float, float]
     d_r: float
     h: float
+    binding: str = "caller_supplied"
 
     def __post_init__(self) -> None:
         vr = _two_vector(self.v_r, "v_r")
         vt = _two_vector(self.v_t, "v_t")
         d_r = float(self.d_r)
         h = float(self.h)
+        binding = str(self.binding)
         if not np.isfinite(d_r) or d_r <= 0.0:
             raise ValueError("d_r must be finite and positive")
         if not np.isfinite(h) or not (0.0 < h < 0.01):
             raise ValueError("h must satisfy the corrected-reader range 0<h<1/100")
+        if binding not in _BINDINGS:
+            raise ValueError(f"binding must be one of {sorted(_BINDINGS)}")
         object.__setattr__(self, "v_r", (float(vr[0]), float(vr[1])))
         object.__setattr__(self, "v_t", (float(vt[0]), float(vt[1])))
         object.__setattr__(self, "d_r", d_r)
         object.__setattr__(self, "h", h)
+        object.__setattr__(self, "binding", binding)
 
     @staticmethod
     def source_radial_exponent(
@@ -118,7 +178,7 @@ class KokunoPhysicalEvaluationMap:
         t_g: float,
         h: float,
         *,
-        kappa_s: float = 1.0e-5,
+        kappa_s: float = SOURCE_KAPPA_S,
     ) -> dict[str, float]:
         """Evaluate the corrected-reader formula for ``rho_g`` and ``d_r``."""
         lam = float(lambda_g)
@@ -148,10 +208,24 @@ class KokunoPhysicalEvaluationMap:
         lambda_g: float,
         t_g: float,
         h: float,
-        kappa_s: float = 1.0e-5,
+        kappa_s: float = SOURCE_KAPPA_S,
+        binding: str = "caller_supplied",
     ) -> "KokunoPhysicalEvaluationMap":
         exponent = cls.source_radial_exponent(lambda_g, t_g, h, kappa_s=kappa_s)
-        return cls(v_r=v_r, v_t=v_t, d_r=exponent["d_r"], h=h)
+        return cls(v_r=v_r, v_t=v_t, d_r=exponent["d_r"], h=h, binding=binding)
+
+    @classmethod
+    def from_corrected_source_constants(cls, *, h: float) -> "KokunoPhysicalEvaluationMap":
+        """Bind the corrected reader's displayed torus/group constants."""
+        return cls.from_source_group_constants(
+            v_r=SOURCE_V_R,
+            v_t=SOURCE_V_T,
+            lambda_g=SOURCE_LAMBDA_G,
+            t_g=SOURCE_T_G,
+            h=h,
+            kappa_s=SOURCE_KAPPA_S,
+            binding="corrected_source_displayed_constants",
+        )
 
     @property
     def v_r_array(self) -> np.ndarray:
@@ -228,6 +302,7 @@ class KokunoPhysicalEvaluationMap:
         }
 
     def provenance(self) -> dict[str, Any]:
+        source_constants = corrected_source_torus_constants()
         payload = {
             "schema": SCHEMA,
             "source": {
@@ -238,11 +313,15 @@ class KokunoPhysicalEvaluationMap:
                 "release_date": CORRECTED_RELEASE_DATE,
             },
             "source_identities": dict(_SOURCE_IDENTITIES),
-            "caller_supplied_numerics": {
+            "source_displayed_torus_constants": source_constants,
+            "numeric_binding": {
+                "kind": self.binding,
                 "v_r": list(self.v_r),
                 "v_t": list(self.v_t),
                 "d_r": self.d_r,
                 "h": self.h,
+                "uses_displayed_source_torus_constants": self.binding
+                == "corrected_source_displayed_constants",
             },
             "truth_boundary": dict(_TRUTH_BOUNDARY),
         }

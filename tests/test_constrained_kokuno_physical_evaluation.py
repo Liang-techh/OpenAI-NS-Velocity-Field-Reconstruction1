@@ -2,12 +2,59 @@ import numpy as np
 import pytest
 
 from openai_ns_reconstruction.kokuno_physical_evaluation import (
+    SOURCE_B_G,
+    SOURCE_J_G,
+    SOURCE_KAPPA_S,
+    SOURCE_LAMBDA_G,
+    SOURCE_T_G,
+    SOURCE_V_R,
+    SOURCE_V_T,
     KokunoPhysicalEvaluationMap,
+    corrected_source_torus_constants,
 )
 
 
 def _fd4(fun, x, h):
     return (-fun(x + 2 * h) + 8 * fun(x + h) - 8 * fun(x - h) + fun(x - 2 * h)) / (12 * h)
+
+
+def test_displayed_source_torus_constants_and_group_identities():
+    source = corrected_source_torus_constants()
+    sqrt2 = np.sqrt(2.0)
+    assert SOURCE_B_G == pytest.approx(sqrt2 - 1.0)
+    assert SOURCE_V_R == pytest.approx((1.0, 1.0 - sqrt2))
+    assert SOURCE_V_T == pytest.approx((sqrt2 - 1.0, 1.0))
+    assert SOURCE_LAMBDA_G == pytest.approx(4.0 - sqrt2)
+    assert SOURCE_T_G == pytest.approx(4.0 + sqrt2)
+    assert SOURCE_KAPPA_S == pytest.approx(1.0e-5)
+
+    jg = np.asarray(SOURCE_J_G)
+    vr = np.asarray(SOURCE_V_R)
+    vt = np.asarray(SOURCE_V_T)
+    np.testing.assert_allclose(jg @ vr, SOURCE_LAMBDA_G * vr, rtol=0, atol=2e-15)
+    np.testing.assert_allclose(jg @ vt, SOURCE_T_G * vt, rtol=0, atol=2e-15)
+    assert vr @ vt == pytest.approx(0.0, abs=2e-16)
+    assert np.linalg.det(jg) == pytest.approx(14.0)
+    diag = source["identity_diagnostics"]
+    assert diag["Jg_vr_minus_Lambda_vr_max_abs"] < 2e-15
+    assert diag["Jg_vt_minus_T_vt_max_abs"] < 2e-15
+    assert abs(diag["vr_dot_vt"]) < 2e-16
+    assert diag["det_J_g"] == pytest.approx(14.0)
+
+
+def test_source_bound_constructor_uses_displayed_constants_and_radial_exponent():
+    h = 0.004
+    op = KokunoPhysicalEvaluationMap.from_corrected_source_constants(h=h)
+    expected_rho = np.log(4.0 - np.sqrt(2.0)) / np.log(4.0 + np.sqrt(2.0))
+    expected_dr = 2.0 * ((1.0 + h) * expected_rho - h * 1.0e-5)
+    assert op.v_r == pytest.approx(SOURCE_V_R)
+    assert op.v_t == pytest.approx(SOURCE_V_T)
+    assert op.d_r == pytest.approx(expected_dr)
+    assert op.binding == "corrected_source_displayed_constants"
+    p = op.provenance()
+    assert p["numeric_binding"]["uses_displayed_source_torus_constants"] is True
+    assert p["source_displayed_torus_constants"]["Lambda_g"] == pytest.approx(SOURCE_LAMBDA_G)
+    assert p["source_displayed_torus_constants"]["T_g"] == pytest.approx(SOURCE_T_G)
 
 
 def test_torus_phase_and_source_radial_exponent():
@@ -18,6 +65,7 @@ def test_torus_phase_and_source_radial_exponent():
     y = op.torus_phase(np.array([0.8, 1.1]), np.array([0.2, -0.1]))
     assert y.shape == (2, 2)
     assert np.all((y >= 0) & (y < 1))
+    assert op.binding == "caller_supplied"
 
 
 def test_chain_rule_matches_independent_fd4():
@@ -88,15 +136,19 @@ def test_batch_and_fail_closed_guards():
             partial_z=0,
             grad_y=np.zeros((4, 2)),
         )
+    with pytest.raises(ValueError, match="binding"):
+        KokunoPhysicalEvaluationMap((0.2, 0.3), (0.5, -0.4), 1.2, 0.003, binding="paper_exact")
 
 
 def test_provenance_keeps_truth_boundary():
-    op = KokunoPhysicalEvaluationMap((0.2, 0.3), (0.5, -0.4), 1.2, 0.003)
+    op = KokunoPhysicalEvaluationMap.from_corrected_source_constants(h=0.003)
     p = op.provenance()
     assert p["source"]["commit"] == "143f6773feb424ad9ed3a8d116653200f20346b7"
     assert p["truth_boundary"]["auxiliary_torus_physical_evaluation_map_executable"] is True
-    assert p["truth_boundary"]["source_torus_vectors_recovered"] is False
+    assert p["truth_boundary"]["source_torus_vectors_recovered"] is True
+    assert p["truth_boundary"]["source_group_constants_recovered"] is True
     assert p["truth_boundary"]["actual_positive_order_background_bound"] is False
+    assert p["truth_boundary"]["actual_auxiliary_torus_mode_family_bound"] is False
     assert p["truth_boundary"]["public_xyz_t_velocity_correction_materialized"] is False
     assert p["truth_boundary"]["paper_exact"] is False
     assert len(p["sha256"]) == 64
