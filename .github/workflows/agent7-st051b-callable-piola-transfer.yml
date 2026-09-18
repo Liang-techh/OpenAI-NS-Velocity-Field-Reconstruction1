@@ -1,0 +1,84 @@
+name: agent7-st051b-callable-piola-transfer
+
+on:
+  pull_request:
+    paths:
+      - "experiments/root_st051/agent7_st051b_callable_piola_transfer.py"
+      - "experiments/root_st051/test_agent7_st051b_callable_piola_transfer.py"
+      - ".github/workflows/agent7-st051b-callable-piola-transfer.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  callable-piola:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout exact Agent 7 head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install governed dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e . pytest
+
+      - name: Run focused warning-clean regressions
+        env:
+          PYTHONPATH: experiments/root_st051
+        run: |
+          python -W error -m py_compile experiments/root_st051/agent7_st051b_callable_piola_transfer.py
+          python -W error -m pytest -q experiments/root_st051/test_agent7_st051b_callable_piola_transfer.py
+
+      - name: Run fixed callable-parent Piola screen
+        env:
+          PYTHONPATH: experiments/root_st051
+        run: |
+          mkdir -p artifacts/agent7_st051b_callable_piola
+          python experiments/root_st051/agent7_st051b_callable_piola_transfer.py \
+            --out artifacts/agent7_st051b_callable_piola/report.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          report = json.loads(Path("artifacts/agent7_st051b_callable_piola/report.json").read_text())
+          if report["prereg_issue"] != 509:
+              raise SystemExit("preregistration identity drift")
+          if report["piola"]["beta"] != 0.075 or report["piola"]["beta_scan_performed"]:
+              raise SystemExit("fixed Piola contract drift")
+          if not report["piola"]["callable_parent_used"] or report["piola"]["sampled_grid_interpolation_used"]:
+              raise SystemExit("callable-parent representation contract drift")
+          if any(report["truth"].values()):
+              raise SystemExit("truth boundary unexpectedly promoted")
+          print(json.dumps({
+              "clean_callable_transfer": report["clean_callable_transfer"],
+              "energy_finest": report["energy_quadrature"][-1],
+              "morphology": [
+                  {
+                      "time": row["time"],
+                      "axial_rms_relative": row["axial_rms_relative"],
+                      "radial_rms_relative": row["radial_rms_relative"],
+                      "collar_absolute_ratio": row["collar_absolute_ratio"],
+                  }
+                  for row in report["morphology"]
+              ],
+              "structure": report["structure"],
+              "response": report["response_diagnostics"],
+          }, indent=2, sort_keys=True))
+          PY
+
+      - name: Upload Agent 7 callable Piola receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: ST051-B-callable-piola-transfer
+          path: artifacts/agent7_st051b_callable_piola/report.json
+          if-no-files-found: error
+          retention-days: 30
