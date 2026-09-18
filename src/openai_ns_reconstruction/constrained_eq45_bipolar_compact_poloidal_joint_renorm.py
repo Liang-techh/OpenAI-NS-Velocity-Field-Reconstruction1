@@ -36,7 +36,7 @@ from .constrained_eq45_bipolar_compact_poloidal_capacity import (
 from .constrained_eq45_bipolar_compact_poloidal_energy_envelope import (
     _constraints,
     _energy_quadratic,
-    _quadratic_refinement,
+    _quadrature_refinement,
     _quadratic_value,
 )
 
@@ -85,8 +85,9 @@ def _profile_bound_screen(field, scale: float, compact_coefficient: float) -> di
     effective_compact = float(scale) * float(compact_coefficient)
     max_before = float(np.max(np.abs(stored))) if stored.size else 0.0
     max_after = float(np.max(np.abs(scaled))) if scaled.size else 0.0
-    stored_ok = bool(max_after <= limit + 64.0 * np.finfo(float).eps * max(1.0, limit))
-    compact_guard_ok = bool(abs(effective_compact) <= limit + 64.0 * np.finfo(float).eps * max(1.0, limit))
+    tolerance = 64.0 * np.finfo(float).eps * max(1.0, limit)
+    stored_ok = bool(max_after <= limit + tolerance)
+    compact_guard_ok = bool(abs(effective_compact) <= limit + tolerance)
     return {
         "inherited_coefficient_limit": limit,
         "maximum_abs_stored_profile_coefficient_before_scale": max_before,
@@ -283,7 +284,7 @@ def audit_compact_poloidal_joint_renormalization(
             "reference_time": reference_time,
             "target_energy": target,
             "reference_energy_quadratic": reference,
-            "maximum_relative_quadratic_coefficient_change": _quadratic_refinement(rows_by_order),
+            "maximum_relative_quadratic_coefficient_change": _quadrature_refinement(rows_by_order),
         },
         "diagnostic_trial_magnitude": magnitude,
         "baseline_vorticity_morphology": baseline_morphology,
