@@ -1,8 +1,8 @@
-"""Fail-closed CR002 governance for axial-cap poloidal capacity evidence.
+"""Fail-closed CR002 governance for the integrated axial-cap poloidal route.
 
 This module changes no velocity value. It audits provenance, nonlinear morphology
-semantics, the canonical CR001 contract, and the current integration-routing
-boundary around the open Agent-7 axial-cap capacity screen.
+semantics, the canonical CR001 contract, and the live materialization-routing
+boundary around the integrated axial-cap capacity direction.
 """
 from __future__ import annotations
 
@@ -30,6 +30,13 @@ _FALSE_TRUTH_STATES = (
     "openai_field_identified",
     "blowup_proved",
 )
+_PROMOTION_REQUIREMENTS = [
+    "explicit_autonomous_coefficient_bound",
+    "explicit_nonzero_coefficient_value",
+    "new_representation_family_identity",
+    "new_candidate_sha256",
+    "fresh_full_candidate_validation",
+]
 
 
 def _repo_root() -> Path:
@@ -69,7 +76,7 @@ def audit_axial_cap_poloidal_scope(
     constraints: Mapping[str, Any] | None = None,
     project_status: Mapping[str, Any] | None = None,
 ) -> dict[str, Any]:
-    """Audit the axial-cap capacity evidence without promoting it into a candidate."""
+    """Audit integrated axial-cap evidence without promoting it into a candidate."""
 
     scope = deepcopy(dict(load_scope() if scope is None else scope))
     constraints = deepcopy(dict(load_constraints() if constraints is None else constraints))
@@ -135,30 +142,34 @@ def audit_axial_cap_poloidal_scope(
         _require_equal(nonlinear.get(key), False, key)
 
     routing = scope.get("integration_routing_scope", {})
-    _require_equal(routing.get("live_integrated_mode"), "COMPACT_C4_ODD_Z_POLOIDAL", "live integrated mode")
+    _require_equal(
+        routing.get("scope_kind"),
+        "active_child_materialization_route_with_prematerialization_evidence",
+        "routing scope kind",
+    )
+    _require_equal(routing.get("live_integrated_mode"), MODE_NAME, "live integrated mode")
+    _require_equal(
+        routing.get("live_route"),
+        project_status.get("active_scientific_route"),
+        "live scientific route",
+    )
     _require_equal(routing.get("live_mode_nonzero_child_materialized"), False, "live materialization state")
     _require_equal(
-        routing.get("live_next_integration_task_must_remain_materialize_existing_compact_poloidal_child"),
+        routing.get("axial_cap_capacity_is_integrated_prematerialization_evidence"),
         True,
-        "live next-task preservation",
-    )
-    _require_equal(routing.get("axial_cap_capacity_is_experimental_unintegrated"), True, "axial-cap integration state")
-    _require_equal(
-        routing.get("axial_cap_capacity_may_replace_live_next_task_without_explicit_integration_decision"),
-        False,
-        "silent route takeover",
+        "axial-cap integration state",
     )
     _require_equal(
         routing.get("additional_capacity_growth_allowed_before_live_materialization_screen"),
         False,
         "capacity-growth guard",
     )
-    _require_equal(routing.get("cap_mode_can_be_retained_as_later_capacity_evidence"), True, "capacity evidence retention")
     _require_equal(
-        routing.get("if_later_materialized_explicit_bound_value_and_new_identity_required"),
-        True,
-        "later materialization identity guard",
+        routing.get("route_guard"),
+        "axial_cap_prematerialization_evidence_does_not_itself_constitute_production_materialization_promotion_or_pde_validation",
+        "route semantic guard",
     )
+    _require_equal(routing.get("promotion_requires"), _PROMOTION_REQUIREMENTS, "promotion requirements")
 
     materialization = scope.get("future_nonzero_materialization", {})
     for key in (
@@ -209,19 +220,21 @@ def audit_axial_cap_poloidal_scope(
         _require_equal(actual, expected, label)
     _require("No residual-dependent basis" in forcing.get("restriction", ""), "free-force restriction weakened")
 
-    latest = project_status.get("latest_integrated_poloidal_capacity", {})
-    _require_equal(latest.get("mode"), "COMPACT_C4_ODD_Z_POLOIDAL", "project integrated poloidal mode")
-    _require("nonzero_child_not_materialized" in latest.get("status", ""), "integrated mode unexpectedly materialized")
-    _require_equal(latest.get("coefficient_bound_selected"), False, "integrated bound selection")
-    _require_equal(latest.get("coefficient_value_selected"), False, "integrated value selection")
-    _require_equal(latest.get("candidate_selection_resolved"), False, "integrated candidate selection")
+    latest = project_status.get("latest_integrated_axial_cap_capacity", {})
+    _require_equal(latest.get("mode"), MODE_NAME, "project integrated axial-cap mode")
+    _require("capacity_integrated_nonzero_child_not_materialized" in latest.get("status", ""), "axial-cap unexpectedly materialized")
+    _require_equal(latest.get("production_coefficient_bound_selected"), False, "integrated bound selection")
+    _require_equal(latest.get("production_coefficient_value_selected"), False, "integrated value selection")
+    _require_equal(latest.get("candidate_sha_created"), False, "integrated candidate SHA state")
+    _require_equal(latest.get("fresh_full_momentum_validated"), False, "integrated full-momentum state")
 
     next_task = project_status.get("next_integration_task", "")
     for token in (
-        "COMPACT_C4_ODD_Z_POLOIDAL",
+        MODE_NAME,
         "explicit autonomous coefficient bound/value",
         "new representation identity/candidate SHA",
         "fresh full-momentum/divergence validation",
+        "do not add another capacity basis first",
     ):
         _require(token in next_task, f"live next integration task lost token: {token}")
     avoided = set(project_status.get("integration_policy", {}).get("avoid", ()))
@@ -257,7 +270,7 @@ def audit_axial_cap_poloidal_scope(
         "canonical_thresholds_unchanged": True,
         "diagnostic_amplitude_selected": False,
         "nonlinear_reach_is_capacity_only": True,
-        "axial_cap_capacity_status": "experimental_unintegrated",
+        "axial_cap_capacity_status": "integrated_prematerialization",
         "live_next_integration_task_preserved": True,
         "velocity_export_ready": True,
         "visual_correspondence_verified": False,

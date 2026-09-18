@@ -56,14 +56,20 @@
     "reach_change_establishes_visual_correspondence": false
   },
   "integration_routing_scope": {
-    "live_integrated_mode": "COMPACT_C4_ODD_Z_POLOIDAL",
+    "scope_kind": "active_child_materialization_route_with_prematerialization_evidence",
+    "live_integrated_mode": "AXIAL_CAP_BANDED_C4_ODD_Z_POLOIDAL",
+    "live_route": "materialize_integrated_axial_cap_poloidal_child_then_fresh_validate",
     "live_mode_nonzero_child_materialized": false,
-    "live_next_integration_task_must_remain_materialize_existing_compact_poloidal_child": true,
-    "axial_cap_capacity_is_experimental_unintegrated": true,
-    "axial_cap_capacity_may_replace_live_next_task_without_explicit_integration_decision": false,
+    "axial_cap_capacity_is_integrated_prematerialization_evidence": true,
     "additional_capacity_growth_allowed_before_live_materialization_screen": false,
-    "cap_mode_can_be_retained_as_later_capacity_evidence": true,
-    "if_later_materialized_explicit_bound_value_and_new_identity_required": true
+    "route_guard": "axial_cap_prematerialization_evidence_does_not_itself_constitute_production_materialization_promotion_or_pde_validation",
+    "promotion_requires": [
+      "explicit_autonomous_coefficient_bound",
+      "explicit_nonzero_coefficient_value",
+      "new_representation_family_identity",
+      "new_candidate_sha256",
+      "fresh_full_candidate_validation"
+    ]
   },
   "future_nonzero_materialization": {
     "explicit_autonomous_coefficient_bound_required": true,
