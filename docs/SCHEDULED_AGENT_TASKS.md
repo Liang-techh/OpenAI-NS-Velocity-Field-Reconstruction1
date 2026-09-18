@@ -3,6 +3,21 @@
 Use the live Eq45 route in project_status.json and CURRENT_CHECKPOINT.md.
 Historical FUN/SCH lists below do not override this section.
 
+
+## Repository-wide PDE benchmark — ST006
+
+All scheduled NS agents must treat the published ST006 candidate on `main` as the current **repository-wide retained numerical baseline** for PDE progress. Independent replay (seed `9172801`, 4096 Cartesian points, six fixed times, independent Cartesian FD, finest spatial step `0.005`) gives momentum sampled max **0.1082289305112118** and volume-L2 **0.10758432876230622**. The registered target remains **1e-3** and ST006 still fails momentum and divergence gates, so `pde_validated=false`.
+
+Routing rule:
+1. Before claiming PDE progress, state whether the new metric is directly comparable with the ST006 validation protocol (same physical contract, residual definition/norm, pressure/forcing convention, and held-out character). If not directly comparable, say so explicitly.
+2. A candidate with directly comparable momentum max/L2 worse than ST006 is **not a repository-level PDE improvement**. It may still be useful as a structural/source/representation experiment, but must not replace the PDE baseline on that basis.
+3. Where representation compatibility permits, start optimization/continuation from ST006 or transfer a justified reusable component instead of restarting from an O(1) or O(10) field. Where it does not permit this (for example source-faithful Kokuno reconstruction), keep the route separate but use ST006 as the benchmark to beat before PDE promotion.
+4. Do not import ST006 coefficients as paper/Kokuno source truth. Do not relax `1e-3`, change forcing, or reuse validation data merely to beat 0.108.
+5. Once a candidate approaches or beats ST006 under development diagnostics, freeze it and run fresh held-out validation before any promotion.
+
+Reproduce the baseline with `from research_baseline import load_best` and `python scripts/ns_candidate.py validate --seed 9172801 ...`. Candidate SHA256: `6b4d84b48ab9dbcd2ee1a1858d3e56ef81523f5864369d7e96c6431fccf107a3`.
+
+
 1. Consume artifacts/delivery/eq45_bipolar/candidate.json through the supported
    public evaluator; compare against eq45_supported baseline. This candidate
    fixes central axial direction/parity on fresh probes but is not selected.

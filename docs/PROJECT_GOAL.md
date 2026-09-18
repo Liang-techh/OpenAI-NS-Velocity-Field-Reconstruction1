@@ -1,3 +1,7 @@
+## Repository-level progress baseline
+
+For all active NS construction routes, the current retained numerical baseline is ST006 on `main`: independent replay momentum max **0.1082289305112118** and volume-L2 **0.10758432876230622**, with the original `1e-3` target unchanged and `pde_validated=false`. New work should advance from this level: directly comparable candidates must beat ST006 to count as repository-level PDE improvement; non-comparable source/structural work must say so and should aim to produce a candidate that can eventually be evaluated against the same gate. ST006 is a performance baseline only, not paper/Kokuno source truth.
+
 ## Current instruction: velocity functions first (2026-09-16)
 
 The user explicitly deprioritized animation. The immediate deliverable is computable
