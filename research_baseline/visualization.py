@@ -180,7 +180,8 @@ def load_visualization_bundle(path) -> dict:
         raise ValueError("visualization array shape/layout mismatch")
     if not np.isfinite(velocity).all() or not np.isfinite(speed).all() or not np.any(velocity != 0.0):
         raise ValueError("invalid visualization velocity/speed values")
-    np.testing.assert_allclose(speed, np.linalg.norm(velocity, axis=-1), rtol=0.0, atol=0.0)
+    if not np.array_equal(speed, np.linalg.norm(velocity, axis=-1)):
+        raise ValueError("visualization speed does not match [u,v,w]")
     actual = _grid_sha256(x, y, z, times, velocity)
     if scalars["grid_sha256"] != actual:
         raise ValueError("visualization grid checksum mismatch")
