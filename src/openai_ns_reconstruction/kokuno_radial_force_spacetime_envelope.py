@@ -12,9 +12,9 @@ axial slices already used by Agent 3's 3x3 second-column screen.
 
 Every cell reuses #357's real Agent-1-leading + routed Agent-2 oscillatory
 phase-mean defect, the same compact radial inverse, and the unchanged centered
-z-derivative ladder ``(.02,.01,.005)``.  The 3x3 product grid is autonomous
+z-derivative ladder ``(.02,.01,.005)``. The 3x3 product grid is autonomous
 repository engineering; it is not a Kokuno source constant or a PDE acceptance
-threshold.  No second oscillatory column, correction velocity, pressure/force
+threshold. No second oscillatory column, correction velocity, pressure/force
 fit, or finite correction cycle is introduced here.
 """
 from __future__ import annotations
@@ -49,9 +49,12 @@ def _validate_axis(values: Iterable[float], *, name: str) -> tuple[float, ...]:
 def _cell_key(report: dict[str, Any]) -> tuple[float, float]:
     try:
         inputs = report["inputs"]
-        return float(inputs["time"]), float(inputs["z"])
+        key = float(inputs["time"]), float(inputs["z"])
     except (KeyError, TypeError, ValueError) as exc:
         raise ValueError("cell report is missing finite time/z inputs") from exc
+    if not np.isfinite(key).all():
+        raise ValueError("cell report time/z inputs must be finite")
+    return key
 
 
 def summarize_radial_force_spacetime(
@@ -228,43 +231,24 @@ def summarize_radial_force_spacetime(
     }
 
 
-def generate_actual_core_report(
+def _build_summary(
+    reports: list[dict[str, Any]],
     *,
-    output_dir: str | Path = "artifacts/kokuno_agent3/radial_force_spacetime_envelope_v17",
-    times: Iterable[float] = HELD_OUT_CYCLE_TIMES,
-    z_values: Iterable[float] = SPATIAL_SCREEN_Z,
+    times: tuple[float, ...],
+    z_values: tuple[float, ...],
 ) -> dict[str, Any]:
-    """Run the real #357 radial-force audit on every frozen spacetime cell."""
-    frozen_times = _validate_axis(times, name="times")
-    frozen_z = _validate_axis(z_values, name="z_values")
-    root = Path(output_dir)
-    cells_dir = root / "cells"
-    cells_dir.mkdir(parents=True, exist_ok=True)
-
-    reports: list[dict[str, Any]] = []
-    for z in frozen_z:
-        for time in frozen_times:
-            label = f"t{time:.3f}_z{z:.3f}".replace(".", "p")
-            report = generate_radial_force_cell_report(
-                output=cells_dir / f"{label}.json",
-                time=time,
-                z=z,
-                z_steps=Z_DERIVATIVE_STEP_LADDER,
-            )
-            reports.append(report)
-
     envelope = summarize_radial_force_spacetime(
         reports,
-        times=frozen_times,
-        z_values=frozen_z,
+        times=times,
+        z_values=z_values,
     )
     first = reports[0]
-    summary: dict[str, Any] = {
+    return {
         "task": TASK,
         "source": first["source"],
         "inputs": {
-            "times": list(frozen_times),
-            "z_values": list(frozen_z),
+            "times": list(times),
+            "z_values": list(z_values),
             "z_derivative_steps": list(Z_DERIVATIVE_STEP_LADDER),
             "fine_pair_relative_stability_tolerance": FINE_PAIR_RELATIVE_STABILITY_TOLERANCE,
             "surrogate_defect_used": False,
@@ -307,11 +291,65 @@ def generate_actual_core_report(
         },
     }
 
+
+def _write_summary(summary: dict[str, Any], output_dir: str | Path) -> Path:
+    root = Path(output_dir)
+    root.mkdir(parents=True, exist_ok=True)
     summary_path = root / "summary.json"
     summary_path.write_text(
         json.dumps(summary, indent=2, sort_keys=True, allow_nan=False) + "\n",
         encoding="utf-8",
     )
+    return summary_path
+
+
+def generate_actual_core_report(
+    *,
+    output_dir: str | Path = "artifacts/kokuno_agent3/radial_force_spacetime_envelope_v17",
+    times: Iterable[float] = HELD_OUT_CYCLE_TIMES,
+    z_values: Iterable[float] = SPATIAL_SCREEN_Z,
+) -> dict[str, Any]:
+    """Run the real #357 radial-force audit sequentially on every frozen cell."""
+    frozen_times = _validate_axis(times, name="times")
+    frozen_z = _validate_axis(z_values, name="z_values")
+    root = Path(output_dir)
+    cells_dir = root / "cells"
+    cells_dir.mkdir(parents=True, exist_ok=True)
+
+    reports: list[dict[str, Any]] = []
+    for z in frozen_z:
+        for time in frozen_times:
+            label = f"t{time:.3f}_z{z:.3f}".replace(".", "p")
+            reports.append(
+                generate_radial_force_cell_report(
+                    output=cells_dir / f"{label}.json",
+                    time=time,
+                    z=z,
+                    z_steps=Z_DERIVATIVE_STEP_LADDER,
+                )
+            )
+
+    summary = _build_summary(reports, times=frozen_times, z_values=frozen_z)
+    _write_summary(summary, root)
+    return summary
+
+
+def summarize_cell_directory(
+    cell_dir: str | Path,
+    *,
+    output_dir: str | Path,
+    times: Iterable[float] = HELD_OUT_CYCLE_TIMES,
+    z_values: Iterable[float] = SPATIAL_SCREEN_Z,
+) -> dict[str, Any]:
+    """Aggregate independently generated cell JSON receipts fail-closed."""
+    frozen_times = _validate_axis(times, name="times")
+    frozen_z = _validate_axis(z_values, name="z_values")
+    paths = sorted(Path(cell_dir).glob("*.json"))
+    if not paths:
+        raise ValueError("cell directory contains no JSON receipts")
+    reports = [json.loads(path.read_text(encoding="utf-8")) for path in paths]
+    summary = _build_summary(reports, times=frozen_times, z_values=frozen_z)
+    _write_summary(summary, output_dir)
     return summary
 
 
@@ -321,8 +359,33 @@ def main() -> None:
         "--output-dir",
         default="artifacts/kokuno_agent3/radial_force_spacetime_envelope_v17",
     )
+    parser.add_argument("--cell-time", type=float)
+    parser.add_argument("--cell-z", type=float)
+    parser.add_argument("--cell-output")
+    parser.add_argument("--summarize-cell-dir")
     args = parser.parse_args()
-    report = generate_actual_core_report(output_dir=args.output_dir)
+
+    cell_mode = any(
+        value is not None for value in (args.cell_time, args.cell_z, args.cell_output)
+    )
+    if cell_mode:
+        if args.summarize_cell_dir is not None:
+            parser.error("cell mode and summarize mode are mutually exclusive")
+        if args.cell_time is None or args.cell_z is None or args.cell_output is None:
+            parser.error("cell mode requires --cell-time, --cell-z and --cell-output")
+        report = generate_radial_force_cell_report(
+            output=args.cell_output,
+            time=args.cell_time,
+            z=args.cell_z,
+            z_steps=Z_DERIVATIVE_STEP_LADDER,
+        )
+    elif args.summarize_cell_dir is not None:
+        report = summarize_cell_directory(
+            args.summarize_cell_dir,
+            output_dir=args.output_dir,
+        )
+    else:
+        report = generate_actual_core_report(output_dir=args.output_dir)
     print(json.dumps(report, indent=2, sort_keys=True, allow_nan=False))
 
 
