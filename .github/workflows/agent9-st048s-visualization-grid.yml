@@ -1,0 +1,85 @@
+name: agent9-st048s-visualization-grid
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/constrained_st048s_visualization_grid.py'
+      - 'tests/test_constrained_st048s_visualization_grid.py'
+      - 'docs/external_methods/CR-A9-045-st048s-visualization-grid.md'
+      - '.github/workflows/agent9-st048s-visualization-grid.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  frozen-grid-export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - name: Checkout Agent 9 branch
+        uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numerical test dependencies
+        run: python -m pip install -e . 'pytest>=8,<10' 'sympy>=1.12,<2'
+      - name: Compile and run focused regressions
+        run: |
+          python -W error -m py_compile src/openai_ns_reconstruction/constrained_st048s_visualization_grid.py
+          python -m pytest -q -W error tests/test_constrained_st048s_visualization_grid.py
+      - name: Checkout pinned ST048 source tree
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: 97695a86f85ce68fb4ae70c41fc81c904d655183
+          path: external/st048
+          persist-credentials: false
+      - name: Export exact ST048-S visualization grid
+        run: |
+          test "$(git -C external/st048 rev-parse HEAD)" = "97695a86f85ce68fb4ae70c41fc81c904d655183"
+          python -m openai_ns_reconstruction.constrained_st048s_visualization_grid \
+            --candidate-root external/st048 \
+            --output outputs/agent9/ST048-S-visualization-grid-33.nc \
+            --receipt outputs/agent9/ST048-S-visualization-grid-33.json \
+            --resolution 33
+      - name: Fail closed on identity and truth-boundary drift
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('outputs/agent9/ST048-S-visualization-grid-33.json')
+          d=json.loads(p.read_text())
+          assert d['task_id']=='CR-A9-045'
+          assert d['base_main_sha']=='f0193d66c9d92948b4820ebcb70263673995b324'
+          c=d['candidate']
+          assert c['source_pr']==390
+          assert c['source_head_sha']=='97695a86f85ce68fb4ae70c41fc81c904d655183'
+          assert c['candidate_id']=='ST048-S'
+          assert c['original_raw_candidate_sha256']=='6d9ce8407e29aca20d32599332ae3ec654f45678e17783179267665428ec8e09'
+          assert c['pde_validated'] is False
+          assert d['grid']['resolution']==33
+          assert d['grid']['times']==[0.25,0.5,0.75]
+          assert len(d['grid']['grid_sha256'])==64
+          truth=d['truth_boundary']
+          for k in ('visualization_ready','visual_correspondence_verified','pde_validated',
+                    'source_correspondence_verified','paper_exact','openai_field_identified','blowup_proved'):
+              assert truth[k] is False
+          assert truth['grid_derivatives_are_pde_evidence'] is False
+          assert truth['visual_acceptance_threshold_defined'] is False
+          print(d['grid']['grid_sha256'])
+          print(d['report_sha256'])
+          print(d['grid']['speed_rms_by_time'])
+          print(d['grid']['speed_max_by_time'])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ST048-S-visualization-grid
+          path: |
+            outputs/agent9/ST048-S-visualization-grid-33.nc
+            outputs/agent9/ST048-S-visualization-grid-33.json
+          if-no-files-found: error
