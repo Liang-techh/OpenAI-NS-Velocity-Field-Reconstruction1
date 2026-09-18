@@ -23,6 +23,7 @@ _CANONICAL_SHA = "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b
 _CANONICAL_API = "openai_ns_reconstruction.eq45_supported_delivery:velocity"
 _OBSERVED_PR = 476
 _OBSERVED_HEAD = "d068e0d4c2cdce23a08aec791af8d2d59e459e65"
+_EXACT_SOURCE_WORKFLOW_RUN = 35389278384
 
 
 def _repo_root() -> Path:
@@ -172,7 +173,9 @@ def audit_delivery_readiness_scope(
     _require_equal(observed.get("creates_versioned_candidate_artifact"), False, "PR476 candidate artifact")
     _require_equal(observed.get("registers_repository_unified_velocity_api"), False, "PR476 unified API registration")
     _require_equal(observed.get("creates_checksum_guarded_sampled_grid"), True, "PR476 grid artifact")
-    _require_equal(observed.get("sampled_grid_export_ready_status"), "pending_exact_source_ci", "PR476 grid readiness")
+    _require_equal(observed.get("sampled_grid_export_ready_status"), "verified_exact_source_ci", "PR476 grid readiness")
+    _require_equal(observed.get("exact_source_workflow_run"), _EXACT_SOURCE_WORKFLOW_RUN, "PR476 exact-source workflow run")
+    _require_equal(observed.get("exact_source_workflow_conclusion"), "success", "PR476 exact-source workflow conclusion")
     _require_equal(observed.get("pr_body_claims_unqualified_velocity_export_ready_true"), True, "PR476 body claim")
     _require_equal(
         observed.get("netcdf_metadata_sets_unqualified_velocity_export_ready_one"),
@@ -238,7 +241,7 @@ def audit_delivery_readiness_scope(
     _require_equal(truth.get("canonical_velocity_export_ready"), True, "canonical export truth")
     _require_equal(states.get("velocity_export_ready"), True, "project export truth")
     _require_equal(truth.get("pr476_candidate_velocity_export_ready"), False, "PR476 candidate export truth")
-    _require_equal(truth.get("pr476_sampled_grid_export_ready"), "pending_exact_source_ci", "PR476 sampled-grid truth")
+    _require_equal(truth.get("pr476_sampled_grid_export_ready"), True, "PR476 sampled-grid truth")
     for key in (
         "visualization_ready",
         "visual_correspondence_verified",
@@ -273,7 +276,8 @@ def audit_delivery_readiness_scope(
         "sampled_grid_has_separate_readiness_scope": True,
         "pr476_unqualified_readiness_claim_contract_compatible": False,
         "pr476_candidate_velocity_export_ready": False,
-        "pr476_sampled_grid_export_ready": "pending_exact_source_ci",
+        "pr476_sampled_grid_export_ready": True,
+        "pr476_exact_source_workflow_run": _EXACT_SOURCE_WORKFLOW_RUN,
         "canonical_velocity_export_ready": True,
         "canonical_velocity_api": project_status.get("velocity_api"),
         "canonical_thresholds_unchanged": True,
