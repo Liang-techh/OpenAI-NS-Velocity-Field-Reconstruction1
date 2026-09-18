@@ -8,6 +8,7 @@ from openai_ns_reconstruction.kokuno_numeric_prerequisites_routing_checkpoint im
     AGENT1_PA10_SCREEN_RECEIPT,
     AGENT2_SIGNED_MASS_RECEIPT,
     AGENT3_AUTONOMOUS_MEAN_RECEIPT,
+    AGENT4_SIGNED_MASS_AUDIT_RECEIPT,
     FORMAL_GATES,
     PREVIOUS_AGENT5_RECEIPT,
     build_checkpoint,
@@ -22,7 +23,7 @@ def _rehash(payload):
     return payload
 
 
-def test_v35_records_three_numeric_prerequisites_without_readiness_promotion() -> None:
+def test_v35_records_numeric_prerequisites_without_readiness_promotion() -> None:
     payload = build_checkpoint()
     validate_checkpoint(payload)
     states = payload["states"]
@@ -31,6 +32,7 @@ def test_v35_records_three_numeric_prerequisites_without_readiness_promotion() -
     assert states["selected_shared_C_pa10_path_obstructed"]
     assert states["leading_pa10_required_band_executable"]
     assert states["candidate_signed_h_sigma_mass_executable"]
+    assert states["candidate_signed_h_sigma_mass_independently_audited"]
     assert states["autonomous_finite_head_mean_factor_executable"]
     assert not states["same_cycle_requested_stress_materialized"]
 
@@ -103,6 +105,33 @@ def test_agent3_autonomous_mean_factor_is_not_formal_missing_weight_or_defect() 
     assert not a3["finite_correction_cycle_rerun_allowed"]
 
 
+def test_agent4_independent_signed_mass_audit_closes_only_quadrature_seam() -> None:
+    a4 = build_checkpoint()["upstream"]["agent4_signed_mass_audit_sibling"]
+    assert a4 == AGENT4_SIGNED_MASS_AUDIT_RECEIPT
+    assert a4["head"] == "5c75dcd754df7887795e1f4fb03e81b043933d17"
+    assert a4["dedicated_run"] == 35407213280
+    assert a4["standard_run"] == 35407213658
+    assert a4["dedicated_status"] == "success"
+    assert a4["standard_status"] == "success"
+    assert a4["evidence_class"] == "independent_validation"
+    assert a4["candidate_signed_h_sigma_mass_independently_audited"]
+    assert a4["local_structural_preflight_passed"]
+    assert a4["pulse_finest_relative_rms"] == pytest.approx(8.76894947036802e-06)
+    assert a4["transverse_finest_relative"] == pytest.approx(3.8237722506116646e-12)
+    assert a4["combined_h_sigma_finest_relative_rms"] == pytest.approx(8.769044324282007e-06)
+    assert a4["combined_h_sigma_finest_relative_max"] == pytest.approx(1.683549760105144e-05)
+    assert a4["wrong_psi_power_mutation_relative_rms"] == pytest.approx(0.5328453830236527)
+    assert a4["wrong_transverse_prefactor_mutation_relative_rms"] == pytest.approx(0.7071067811865475)
+    assert not a4["agent2_trapezoid_helper_reused"]
+    assert not a4["agent2_complete_curl_reused"]
+    assert not a4["pressure_or_forcing_fit_used"]
+    assert not a4["actual_source_h_sigma_bound"]
+    assert not a4["actual_source_pulse_samples_recovered"]
+    assert not a4["public_source_bound_velocity_osc_materialized"]
+    assert not a4["heldout_ns_residual_assessed"]
+    assert not a4["pde_validated"]
+
+
 def test_v35_preserves_previous_agent5_and_formal_gates() -> None:
     payload = build_checkpoint()
     previous = payload["upstream"]["previous_agent5_v34_ancestry"]
@@ -135,6 +164,11 @@ def test_v35_fails_closed_on_truth_laundering_or_readiness_promotion() -> None:
 
     payload = json.loads(json.dumps(build_checkpoint()))
     payload["upstream"]["agent3_autonomous_mean_sibling"]["theorem_missing_weight_materialized"] = True
+    with pytest.raises(ValueError, match="receipt changed"):
+        validate_checkpoint(_rehash(payload))
+
+    payload = json.loads(json.dumps(build_checkpoint()))
+    payload["upstream"]["agent4_signed_mass_audit_sibling"]["actual_source_h_sigma_bound"] = True
     with pytest.raises(ValueError, match="receipt changed"):
         validate_checkpoint(_rehash(payload))
 
