@@ -1,0 +1,45 @@
+name: kokuno-agent1-rescaled-tsh-certificate
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a1-rescaled-tsh-certificate
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent1-rescaled-tsh-certificate-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHONHASHSEED: '0'
+
+jobs:
+  rescaled-tsh-certificate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Focused regressions
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_rescaled_outer_scale_binding.py \
+            tests/test_constrained_kokuno_rescaled_appendix_b_incoming_moments.py \
+            tests/test_constrained_kokuno_rescaled_inner_join_tsh_certificate.py
+      - name: Generate shared-C PA10 receipt
+        run: |
+          python -m openai_ns_reconstruction.kokuno_rescaled_inner_join_tsh_certificate \
+            --eta-nodes 9 \
+            --axis-quadrature-points 64 \
+            --output artifacts/kokuno_agent1/rescaled_tsh_certificate/report.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-rescaled-tsh-certificate-v1
+          path: artifacts/kokuno_agent1/rescaled_tsh_certificate/report.json
