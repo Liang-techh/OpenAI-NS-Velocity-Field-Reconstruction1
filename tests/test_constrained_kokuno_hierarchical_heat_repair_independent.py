@@ -44,7 +44,10 @@ def test_independent_audit_exposes_float64_moment_precision_barrier() -> None:
     report = build_report()
     summary = report["summary"]
 
-    assert report["local_audit_completed"] is True
+    assert report["local_audit_completed"] is True, {
+        "summary": summary,
+        "local_guards": report["local_guards"],
+    }
     assert summary["max_tensor_refinement_abs"] <= 1.0e-10
     assert summary["max_I_sub_relative_error"] <= 1.0e-10
     # The dominant I_sub channel survives, while the tiny C_p/S channels do
