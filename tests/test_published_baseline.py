@@ -49,6 +49,7 @@ def test_visualization_bundle_roundtrip_and_tamper(tmp_path):
     with np.load(path,allow_pickle=False) as data:
         payload={name:np.array(data[name],copy=True) for name in data.files}
     payload['velocity'][0,2,2,2,0]+=1e-3
+    payload['speed']=np.linalg.norm(payload['velocity'],axis=-1)
     np.savez_compressed(path,**payload)
     with pytest.raises(ValueError,match='checksum'):
         load_visualization_bundle(path)
