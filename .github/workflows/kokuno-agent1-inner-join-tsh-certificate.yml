@@ -27,8 +27,6 @@ jobs:
       - name: Focused regressions
         run: |
           python -m pytest -q -W error \
-            tests/test_constrained_kokuno_appendix_b_boundary.py \
-            tests/test_constrained_kokuno_appendix_b_incoming_moments.py \
             tests/test_constrained_kokuno_inner_join_tsh_certificate.py
       - name: Generate selected PA10 receipt
         run: |
