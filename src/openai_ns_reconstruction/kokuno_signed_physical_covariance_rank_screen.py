@@ -1,16 +1,16 @@
 """Agent-3 phase-mean covariance-rank screen for signed physical complete curls.
 
 This module is deliberately downstream of
-``KokunoSourceSignedCompleteCurlFamily``.  Agent 2 owns the signed auxiliary
+``KokunoSourceSignedCompleteCurlFamily``. Agent 2 owns the signed auxiliary
 rectangle amplitudes, slow derivatives, support localization, complete curl,
-Fourier reality pair, and Q scaling.  Agent 3 only asks whether the resulting
+Fourier reality pair, and Q scaling. Agent 3 only asks whether the resulting
 *physical* ``sigma=+/-`` columns survive the declared phase/angle average as
 independent mean-covariance directions.
 
 Let ``W`` be the assembled cylindrical physical velocity and let ``S_sigma``
 be the already-Q-scaled physical velocity contributed by rectangle sign
-``sigma`` after summing all beta labels.  A dimensionless fractional multiplier
-of one sign has tangent ``S_sigma``.  Repository product-rule algebra gives
+``sigma`` after summing all beta labels. A dimensionless fractional multiplier
+of one sign has tangent ``S_sigma``. Repository product-rule algebra gives
 
     d_sigma C_theta = <S_sigma,r W_theta + W_r S_sigma,theta>,
     d_sigma C_z     = <S_sigma,r W_z     + W_r S_sigma,z>.
@@ -18,9 +18,9 @@ of one sign has tangent ``S_sigma``.  Repository product-rule algebra gives
 Using the *assembled* W retains self, cross-sign, and cross-beta interactions.
 As a consistency identity, summing the two sign tangents must reproduce W, so
 summing the two covariance-response columns must reproduce twice the assembled
-covariance.  The screen checks this fail-closed before any SVD rank verdict.
+covariance. The screen checks this fail-closed before any SVD rank verdict.
 
-A PASS here is only a supplied/source-compatible structural result.  Agent 2's
+A PASS here is only a supplied/source-compatible structural result. Agent 2's
 current physical family still contains caller-supplied unreleased source data,
 so this module cannot promote source binding, correction readiness, finite-cycle
 readiness, or a Navier--Stokes residual claim.
@@ -90,8 +90,9 @@ class KokunoSignedPhysicalCovarianceRankScreen:
             raise ValueError(f"Agent-2 signed physical family is missing required keys: {missing}")
         if bool(physical_family_result["reference_covariance_rank_two"]) is not True:
             raise ValueError("source displayed signed reference inverse must be rank two")
-        if tuple(physical_family_result["sigma_labels"]) != ("+", "-"):
-            raise ValueError("signed physical family must preserve sigma ordering (+,-)")
+        sigma_labels = tuple(physical_family_result["sigma_labels"])
+        if sigma_labels != ("sigma_plus", "sigma_minus"):
+            raise ValueError("signed physical family must preserve source sigma ordering")
 
         by_beta_sign = np.asarray(
             physical_family_result["velocity_physical_cylindrical_by_beta_sign"], dtype=float
@@ -113,7 +114,6 @@ class KokunoSignedPhysicalCovarianceRankScreen:
         if total_error > self.consistency_atol * total_scale:
             raise RuntimeError("sign/beta columns do not reproduce the assembled physical total")
 
-        # Sum over beta, retaining the source rectangle sign as the two tangent axes.
         sign_tangents = np.sum(by_beta_sign, axis=-3)
         tangent_sum = np.sum(sign_tangents, axis=-2)
         tangent_error = float(np.max(np.abs(tangent_sum - total), initial=0.0))
@@ -172,7 +172,7 @@ class KokunoSignedPhysicalCovarianceRankScreen:
 
         return {
             "beta_labels": tuple(physical_family_result["beta_labels"]),
-            "sigma_labels": ("+", "-"),
+            "sigma_labels": sigma_labels,
             "parameter_names": ("delta_sigma_plus", "delta_sigma_minus"),
             "parameter_units": (
                 "dimensionless fractional multiplier of Q-scaled physical sigma+ velocity",
