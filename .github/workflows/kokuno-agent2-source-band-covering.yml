@@ -1,0 +1,33 @@
+name: kokuno-agent2-source-band-covering
+
+on:
+  push:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_source_band_covering.py'
+      - 'tests/test_constrained_kokuno_source_band_covering.py'
+      - '.github/workflows/kokuno-agent2-source-band-covering.yml'
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_source_band_covering.py'
+      - 'tests/test_constrained_kokuno_source_band_covering.py'
+      - '.github/workflows/kokuno-agent2-source-band-covering.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  source-band-covering:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Focused source-band covering tests
+        run: >-
+          python -m pytest -q -s -W error
+          tests/test_constrained_kokuno_source_band_covering.py
+          tests/test_constrained_kokuno_physical_evaluation.py
