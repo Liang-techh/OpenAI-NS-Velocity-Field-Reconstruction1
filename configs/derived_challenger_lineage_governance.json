@@ -1,0 +1,147 @@
+{
+  "schema_version": 1,
+  "task_id": "CR002-DERIVED-CHALLENGER-LINEAGE-063",
+  "purpose": "govern immutable lineage and promotion semantics when a transformed challenger is stacked on an open or otherwise unintegrated parent without changing any velocity, candidate, route, or threshold",
+  "snapshot": {
+    "active_integration_branch": "codex/cr001-constraints",
+    "active_integration_head": "a2b215790fc483766be712233a134cd48ad7c149",
+    "observed_child_pr": 407,
+    "observed_child_state": "open_unintegrated",
+    "observed_child_branch": "agent7/cr003-st048s-piola-warp-screen-061",
+    "observed_child_head": "2d7cb2fe05696c6303e09ad20b91c61aad5f977e",
+    "observed_parent_pr": 398,
+    "observed_parent_state": "open_unintegrated",
+    "observed_parent_branch": "agent7/cr003-st048-morphology-transfer-060",
+    "observed_parent_head": "107fb9aaa75edcf07225d664a38e0b8a779b2dcf",
+    "parent_analytic_candidate_id": "ST048-S",
+    "parent_analytic_candidate_sha256": "6d9ce8407e29aca20d32599332ae3ec654f45678e17783179267665428ec8e09",
+    "note": "These refs are an evidence snapshot. Mutable branch names are not immutable scientific identities and later PR state changes do not retroactively promote either parent or child."
+  },
+  "allowed_source_classes": [
+    "user_requirement",
+    "public_source_fact",
+    "autonomous_design",
+    "pending_unknown"
+  ],
+  "source_classification": {
+    "callable_velocity_x_y_z_t": "user_requirement",
+    "public_openai_visualization_observables": "public_source_fact",
+    "st048_candidate_recipe_and_repository_measurements": "autonomous_design",
+    "piola_warp_formula_beta_grid_and_capacity_metrics": "autonomous_design",
+    "derived_challenger_lineage_policy": "autonomous_design",
+    "cr001_validation_protocol": "autonomous_design",
+    "openai_hidden_coordinate_map": "pending_unknown",
+    "openai_hidden_numerical_velocity": "pending_unknown",
+    "openai_hidden_parameters": "pending_unknown"
+  },
+  "evidence_relation_labels": {
+    "immutable_parent_commit": "exact repository commit from which the derived experiment was constructed; provenance relation only",
+    "parent_candidate_identity": "content identity of the analytic parent object; provenance relation only",
+    "derived_child_identity": "content identity assigned after an actual child is materialized; provenance relation only",
+    "protocol_scoped_challenger": "evidence state that does not itself alter retained baseline, canonical delivery, or scientific truth"
+  },
+  "relation_labels_are_source_classes": false,
+  "lineage_contract": {
+    "mutable_branch_name_is_sufficient_parent_identity": false,
+    "promotion_requires_parent_git_commit": true,
+    "promotion_requires_parent_representation_identity": true,
+    "promotion_requires_parent_candidate_sha256": true,
+    "materialized_child_requires_new_representation_identity": true,
+    "materialized_child_requires_new_candidate_sha256": true,
+    "child_may_reuse_parent_candidate_sha256": false,
+    "parent_validation_receipt_transfers_automatically": false,
+    "parent_pressure_or_forcing_transfers_automatically": false,
+    "parent_retained_baseline_status_transfers_automatically": false,
+    "parent_canonical_delivery_status_transfers_automatically": false,
+    "parent_pde_status_transfers_automatically": false,
+    "parent_visual_status_transfers_automatically": false,
+    "parent_paper_exact_status_transfers_automatically": false,
+    "parent_openai_identity_status_transfers_automatically": false
+  },
+  "unintegrated_parent_dependency": {
+    "downstream_green_ci_promotes_parent": false,
+    "downstream_merge_promotes_parent": false,
+    "downstream_morphology_improvement_promotes_parent": false,
+    "downstream_divergence_preflight_promotes_parent": false,
+    "promotion_requires_explicit_dependency_resolution": true,
+    "allowed_dependency_resolution_modes": [
+      "integrate_or_vendor_exact_parent_representation_with_immutable_identity",
+      "materialize_self_contained_child_from_immutable_parent_identity"
+    ],
+    "branch_tip_only_dependency_is_acceptable_for_promotion": false,
+    "unresolved_stacked_dependency_role": "protocol_scoped_challenger_evidence_only"
+  },
+  "child_promotion_boundary": {
+    "open_or_stacked_child_replaces_retained_baseline": false,
+    "open_or_stacked_child_replaces_canonical_velocity": false,
+    "capacity_crossing_selects_production_parameter": false,
+    "divergence_preservation_implies_pde_validated": false,
+    "fresh_child_validation_required_after_materialization": true,
+    "explicit_repository_promotion_required_for_retained_baseline": true,
+    "explicit_status_update_required_for_canonical_velocity_replacement": true,
+    "formal_scientific_acceptance_requires_unchanged_cr001_gates": true
+  },
+  "current_child_snapshot": {
+    "derived_direction": "ST048-S plus one diagnostic Piola axial-warp degree",
+    "diagnostic_beta_crossing": 0.075,
+    "production_beta_selected": false,
+    "child_candidate_sha_created": false,
+    "child_representation_identity_created": false,
+    "fresh_child_full_momentum_evaluated": false,
+    "parent_full_momentum_may_be_inherited": false,
+    "canonical_velocity_changed": false,
+    "retained_baseline_changed": false,
+    "pde_validated": false,
+    "visual_correspondence_verified": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  },
+  "canonical_delivery_guard": {
+    "candidate_family": "eq45_supported_velocity_candidate_v1",
+    "candidate_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+    "velocity_api": "openai_ns_reconstruction.eq45_supported_delivery:velocity",
+    "velocity_export_ready": true,
+    "pde_failure_blocks_callable_velocity_delivery": false,
+    "stacked_challenger_changes_delivery_automatically": false
+  },
+  "canonical_cr001": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "force_mode": "restricted_two_parameter_family",
+    "force_bounds": {"a": [0.0, 10.0], "c": [0.0, 10.0]},
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "divergence_max": 1e-5,
+    "divergence_L2": 1e-5,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001
+  },
+  "truth_boundary": {
+    "velocity_export_ready": true,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "mutation_scope": {
+    "velocity_changed": false,
+    "candidate_changed": false,
+    "pressure_changed": false,
+    "forcing_changed": false,
+    "optimizer_changed": false,
+    "validation_sample_changed": false,
+    "norm_definition_changed": false,
+    "threshold_changed": false,
+    "active_route_changed": false,
+    "canonical_velocity_api_changed": false
+  }
+}
