@@ -82,7 +82,7 @@ def test_st006_netcdf_rejects_truth_state_laundering(tmp_path: Path):
 def test_st006_netcdf_fail_closed_inputs_and_overwrite(tmp_path: Path):
     with pytest.raises(ValueError, match="odd"):
         export_st006_netcdf(tmp_path / "even.nc", resolution=6)
-    with pytest.raises(ValueError, match="\.nc"):
+    with pytest.raises(ValueError, match=r"\.nc"):
         export_st006_netcdf(tmp_path / "wrong.bin", resolution=5)
 
     path = tmp_path / "st006.nc"
