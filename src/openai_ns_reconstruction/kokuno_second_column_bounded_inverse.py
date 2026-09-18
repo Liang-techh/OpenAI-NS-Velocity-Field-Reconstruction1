@@ -1,19 +1,19 @@
 """Bound a future second covariance column before another Kokuno correction cycle.
 
 PR #282 measured the real two-component compact-stress remainder not representable
-by Agent 2's current covariance column.  A second nonparallel column spans that
+by Agent 2's current covariance column. A nonparallel second column spans that
 remainder algebraically, but a nearly parallel or tiny response can require an
-arbitrarily large signed amplitude correction.  The corrected Kokuno reader uses
+arbitrarily large signed amplitude correction. The corrected Kokuno reader uses
 an invertible two-column covariance map H and a signed differential inverse.
 
 For current response c1, future response c2, and measured orthogonal remainder m,
-only c2_perp = c2 - proj_c1(c2) removes m.  At a rank-two node,
+only c2_perp = c2 - proj_c1(c2) removes m. At a rank-two node,
 
     |delta a_2| = |m| / |c2_perp|,
     |det[c1,c2]| = |c1| |c2_perp|.
 
 Thus a declared signed-coefficient budget B implies the necessary local floors
-|c2_perp| >= |m|/B and |det H| >= |c1||m|/B.  These are algebraic preflight
+|c2_perp| >= |m|/B and |det H| >= |c1||m|/B. These are algebraic preflight
 bounds, not Navier--Stokes residual contraction claims.
 """
 from __future__ import annotations
@@ -40,7 +40,6 @@ from .kokuno_missing_covariance_column_target import (
 )
 from .kokuno_signed_covariance_inverse import ROUTED_OSCILLATORY_AMPLITUDE
 
-
 TASK = "KOKUNO-A3-SECOND-COLUMN-BOUNDED-INVERSE-010"
 SOURCE_READER = "KokunoYumeto corrected 208-page reconstruction"
 SOURCE_EDITION = "2026.09.09-consolidated"
@@ -51,6 +50,7 @@ SOURCE_PATH = "navier-stokes/navier_stokes_workbench.tex"
 SOURCE_SECTION = "Signed covariance and exact signed differential inverse"
 RANK_RELATIVE_TOLERANCE = 1.0e-10
 ALGEBRAIC_RELATIVE_RESIDUAL_TOLERANCE = 1.0e-10
+BUDGET_ROUNDOFF_RELATIVE_TOLERANCE = 1.0e-12
 
 
 def _vector_rms(values: np.ndarray) -> float:
@@ -95,7 +95,6 @@ def required_second_column_envelope(
     budget = float(coefficient_budget)
     if not np.isfinite(budget) or budget <= 0.0:
         raise ValueError("coefficient_budget must be positive and finite")
-
     needed = _second_needed_mask(receipt)
     if not np.any(needed):
         raise ValueError("receipt has no nodes requiring a second covariance direction")
@@ -103,7 +102,6 @@ def required_second_column_envelope(
     missing_norm = np.linalg.norm(receipt.missing_response[needed], axis=1)
     if np.any(current_norm <= np.finfo(float).tiny):
         raise ValueError("second-needed node has a numerically zero current response")
-
     required_transverse = missing_norm / budget
     required_determinant = current_norm * required_transverse
     relative_to_current = required_transverse / current_norm
@@ -186,45 +184,33 @@ def evaluate_bounded_second_column(
         _vector_rms(target_active), np.finfo(float).tiny
     )
     rank2_needed = rank[needed] == 2
-    second_bounded = np.abs(beta[needed]) <= budget
+    budget_limit = budget * (1.0 + BUDGET_ROUNDOFF_RELATIVE_TOLERANCE) + np.finfo(float).eps
+    second_bounded = np.abs(beta[needed]) <= budget_limit
     both_bounded = (
-        (np.abs(alpha[needed]) <= budget) & second_bounded & rank2_needed
+        (np.abs(alpha[needed]) <= budget_limit) & second_bounded & rank2_needed
     )
     finite_conditions = condition[needed & np.isfinite(condition)]
 
     return {
         "coefficient_budget": budget,
+        "budget_roundoff_relative_tolerance": BUDGET_ROUNDOFF_RELATIVE_TOLERANCE,
         "active_target_nodes": int(np.count_nonzero(active)),
         "nodes_requiring_second_direction": int(np.count_nonzero(needed)),
         "rank2_required_nodes": int(np.count_nonzero(rank2_needed)),
         "rank_deficient_required_nodes": int(np.count_nonzero(~rank2_needed)),
-        "second_coefficient_within_budget_nodes": int(
-            np.count_nonzero(second_bounded & rank2_needed)
-        ),
+        "second_coefficient_within_budget_nodes": int(np.count_nonzero(second_bounded & rank2_needed)),
         "both_coefficients_within_budget_nodes": int(np.count_nonzero(both_bounded)),
-        "max_abs_first_signed_coefficient_on_required": float(
-            np.max(np.abs(alpha[needed]))
-        ),
-        "max_abs_second_signed_coefficient_on_required": float(
-            np.max(np.abs(beta[needed]))
-        ),
+        "max_abs_first_signed_coefficient_on_required": float(np.max(np.abs(alpha[needed]))),
+        "max_abs_second_signed_coefficient_on_required": float(np.max(np.abs(beta[needed]))),
         "min_transverse_response_on_required": float(np.min(transverse[needed])),
         "max_transverse_response_on_required": float(np.max(transverse[needed])),
         "min_determinant_abs_on_required": float(np.min(determinant[needed])),
-        "condition_max_on_required": (
-            float(np.max(finite_conditions)) if len(finite_conditions) else None
-        ),
-        "condition_median_on_required": (
-            float(np.median(finite_conditions)) if len(finite_conditions) else None
-        ),
+        "condition_max_on_required": float(np.max(finite_conditions)) if len(finite_conditions) else None,
+        "condition_median_on_required": float(np.median(finite_conditions)) if len(finite_conditions) else None,
         "two_column_relative_stress_residual_rms": float(relative_residual),
         "all_required_nodes_rank2": bool(np.all(rank2_needed)),
-        "second_signed_update_within_budget_on_all_required": bool(
-            np.all(second_bounded & rank2_needed)
-        ),
-        "both_signed_updates_within_budget_on_all_required": bool(
-            np.all(both_bounded)
-        ),
+        "second_signed_update_within_budget_on_all_required": bool(np.all(second_bounded & rank2_needed)),
+        "both_signed_updates_within_budget_on_all_required": bool(np.all(both_bounded)),
         "algebraic_stress_fit_within_tolerance": bool(
             relative_residual <= algebraic_relative_residual_tolerance
         ),
@@ -262,19 +248,10 @@ def generate_actual_core_report(
     receipt = _receipt_from_target_report(target_report)
     symmetric_budget = current_signed_coefficient_budget(receipt)
     routed_amplitude_budget = abs(float(ROUTED_OSCILLATORY_AMPLITUDE))
-
-    symmetric_envelope = required_second_column_envelope(
-        receipt, coefficient_budget=symmetric_budget
-    )
-    routed_envelope = required_second_column_envelope(
-        receipt, coefficient_budget=routed_amplitude_budget
-    )
-    duplicate = evaluate_bounded_second_column(
-        receipt, receipt.current_response, coefficient_budget=symmetric_budget
-    )
-    raw_missing = evaluate_bounded_second_column(
-        receipt, receipt.missing_response, coefficient_budget=symmetric_budget
-    )
+    symmetric_envelope = required_second_column_envelope(receipt, coefficient_budget=symmetric_budget)
+    routed_envelope = required_second_column_envelope(receipt, coefficient_budget=routed_amplitude_budget)
+    duplicate = evaluate_bounded_second_column(receipt, receipt.current_response, coefficient_budget=symmetric_budget)
+    raw_missing = evaluate_bounded_second_column(receipt, receipt.missing_response, coefficient_budget=symmetric_budget)
     scaled_missing = evaluate_bounded_second_column(
         receipt,
         receipt.missing_response / symmetric_budget,
@@ -332,17 +309,14 @@ def generate_actual_core_report(
             "validation_points": ST006_VALIDATION_POINTS,
             "finest_spatial_step": ST006_FINEST_SPATIAL_STEP,
             "directly_comparable": False,
-            "reason": (
-                "This report measures a local covariance/stress inverse scale, not the ST006 full-domain normalized momentum protocol."
-            ),
+            "reason": "Local covariance/stress inverse scale is not ST006's full-domain normalized momentum protocol.",
         },
         "routing": {
             "second_public_covariance_column_available": False,
             "finite_correction_cycle_rerun_allowed": False,
             "next_required": (
                 "When Agent 2 materializes a genuinely independent public covariance column, evaluate its measured response here. "
-                "Reject rank-two maps that require unbounded signed updates; only a bounded inverse may proceed to public-velocity "
-                "materialization and the frozen held-in/held-out residual cycle."
+                "Only a bounded inverse may proceed to public-velocity materialization and frozen held-in/held-out residual tests."
             ),
         },
         "truth_boundary": {
@@ -357,7 +331,7 @@ def generate_actual_core_report(
             "finite_correction_cycle_run": False,
             "residual_reduction_claimed": False,
             "formal_full_domain_normalized_pde_gate_assessed": False,
-            "normalized_ns_residual_le_1e3_claimed": False,
+            "normalized_ns_residual_le_1e_minus_3_claimed": False,
             "pde_validated": False,
             "paper_exact": False,
             "openai_field_identified": False,
@@ -372,14 +346,8 @@ def generate_actual_core_report(
 
 def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument(
-        "--output",
-        default="artifacts/kokuno_agent3/second_column_bounded_inverse_report.json",
-    )
-    parser.add_argument(
-        "--target-output",
-        default="artifacts/kokuno_agent3/second_column_bounded_inverse_target.json",
-    )
+    parser.add_argument("--output", default="artifacts/kokuno_agent3/second_column_bounded_inverse_report.json")
+    parser.add_argument("--target-output", default="artifacts/kokuno_agent3/second_column_bounded_inverse_target.json")
     return parser
 
 
