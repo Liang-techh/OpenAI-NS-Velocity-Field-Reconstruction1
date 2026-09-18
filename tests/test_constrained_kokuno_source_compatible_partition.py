@@ -118,8 +118,8 @@ def test_source_mesh_overlap_and_agent2_family_integration():
         data["D_z_eta"],
         data["beta_labels"],
     )
-    assert composed["velocity_cartesian_total"].shape == (2, 3)
-    assert np.all(np.isfinite(composed["velocity_cartesian_total"]))
+    assert composed["velocity_physical_cartesian_total"].shape == (2, 3)
+    assert np.all(np.isfinite(composed["velocity_physical_cartesian_total"]))
     np.testing.assert_allclose(
         composed["velocity_cylindrical_by_beta"],
         2.0 * composed["plus_velocity_by_beta"].real,
@@ -141,7 +141,7 @@ def test_fail_closed_partition_guard_and_truth_boundary_round_trip(tmp_path):
             np.zeros((1, 3)),
             np.zeros((1, 3)),
         )
-    with pytest.raises(ValueError, match="q.shape\+\(3,\)"):
+    with pytest.raises(ValueError, match=r"q.shape\+\(3,\)"):
         realization.evaluate(q, D_r_q, D_z_q, slow[:, :2], D_r_slow[:, :2], D_z_slow[:, :2])
 
     data = realization.evaluate(q, D_r_q, D_z_q, slow, D_r_slow, D_z_slow)
