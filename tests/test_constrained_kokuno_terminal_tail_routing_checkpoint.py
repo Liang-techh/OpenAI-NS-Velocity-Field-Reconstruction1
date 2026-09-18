@@ -15,7 +15,6 @@ from openai_ns_reconstruction.kokuno_terminal_tail_routing_checkpoint import (
 def test_terminal_tail_routing_bundle_round_trip(tmp_path):
     checkpoint = write_bundle(tmp_path)
     loaded = load_checkpoint(tmp_path / "terminal_tail_routing_checkpoint.json")
-
     assert loaded == checkpoint
     assert checkpoint["fixed_gates"] == FIXED_GATES
     assert checkpoint["states"] == STATES
@@ -35,7 +34,7 @@ def test_terminal_tail_routing_bundle_round_trip(tmp_path):
     assert states["pde_validated"] is False
 
     typed = checkpoint["typed_schedule_component"]
-    assert typed["default_heat_materialization_ready"] is False
+    assert typed["default_complete_heat_materialization_ready"] is False
     assert typed["full_domain_velocity_api_ready"] is False
     assert typed["pressure_api_ready"] is False
     assert typed["forcing_api_ready"] is False
@@ -43,7 +42,8 @@ def test_terminal_tail_routing_bundle_round_trip(tmp_path):
     scales = checkpoint["default_terminal_scales"]
     assert scales["log_X_tail"] > 709.0
     assert scales["X_tail"] is None
-    assert scales["c_inf"] is None
+    assert scales["c_inf"] > 0.0
+    assert scales["complete_heat_inputs_materializable"] is False
     assert scales["source_hidden_numeric_choices_recovered"] is False
 
     audit = checkpoint["independent_terminal_tail_audit"]
@@ -67,7 +67,6 @@ def test_terminal_tail_checkpoint_rejects_resigned_pde_promotion(tmp_path):
     unsigned = dict(promoted)
     unsigned.pop("checkpoint_sha256")
     promoted["checkpoint_sha256"] = _sha(unsigned)
-
     with pytest.raises(ValueError, match="scientific state vector changed"):
         validate_checkpoint(promoted)
 
@@ -79,6 +78,5 @@ def test_terminal_tail_checkpoint_rejects_resigned_st006_relabel(tmp_path):
     unsigned = dict(promoted)
     unsigned.pop("checkpoint_sha256")
     promoted["checkpoint_sha256"] = _sha(unsigned)
-
     with pytest.raises(ValueError, match="ST006-comparable"):
         validate_checkpoint(promoted)
