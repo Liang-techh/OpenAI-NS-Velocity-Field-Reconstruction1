@@ -1,0 +1,474 @@
+{
+  "date": "2026-09-18",
+  "experiment": "ST047",
+  "base_commit": "04d2fa64798d9639bddadb289cc9c23f116eec56",
+  "issue": 372,
+  "target_achieved": false,
+  "parent_reconstruction": {
+    "source_commit": "04d2fa64798d9639bddadb289cc9c23f116eec56",
+    "source_recipe": "experiments/root_st046/recipes.json:ST046-A",
+    "original_raw_sha256": "94f5eeb0d94568587c9f3d88e69876a8051632830ded796f7c8b0db8e6707619",
+    "numeric_reference_max_error": 1.3523904218715188e-14,
+    "note": "Reconstructed mathematical field; metadata and raw file SHA differ from original",
+    "pde_validated": false
+  },
+  "freeze_before_validation": "2026-09-18T10:02:26.825070+00:00",
+  "fits": {
+    "ST047-W": {
+      "experiment": "ST047",
+      "parent_sha256": "477d31158fd5493b34632a07b485e3edeb3b3dac86577baf3bc4179a2bd610ea",
+      "method": "whiten",
+      "maxiter": 180,
+      "wall_seconds": 480.0,
+      "radial": 4,
+      "axial": 4,
+      "time_degree": 4,
+      "pressure_ratio": 0.99,
+      "profile_ratio": 0.995,
+      "acceleration_ratio": 0.98,
+      "axis_weight": 0.02,
+      "training_space": [
+        32,
+        48
+      ],
+      "training_time": "13Gauss+endpoints",
+      "new_validation_seeds": [
+        9174701,
+        9174702
+      ],
+      "original_gates": "unchanged",
+      "normalized_training_feasibility_tolerance": 1e-07,
+      "registered_before_fit": true,
+      "conditioning": {
+        "method": "whiten",
+        "objective_scale": 10000.0,
+        "standardized_gram_eigen_min": 9.746664192582913e-16,
+        "standardized_gram_eigen_max": 14.980830220496562,
+        "standardized_gram_rank_rel1e10": 289,
+        "coordinate_condition": 37677.235906632195,
+        "coordinate_only": true
+      },
+      "success": true,
+      "message": "Optimization terminated successfully",
+      "selection": "best_feasible_training_checkpoint",
+      "nfev": 117,
+      "iterations": 82,
+      "loss": 6.696960118672589e-05,
+      "min_training_constraint": -2.4163162970377364e-10,
+      "elapsed": 73.025495154,
+      "variables": 290,
+      "pde_validated": false,
+      "source_correspondence_verified": false
+    },
+    "ST047-E": {
+      "experiment": "ST047",
+      "parent_sha256": "477d31158fd5493b34632a07b485e3edeb3b3dac86577baf3bc4179a2bd610ea",
+      "method": "whiten",
+      "maxiter": 250,
+      "wall_seconds": 600.0,
+      "radial": 5,
+      "axial": 5,
+      "time_degree": 4,
+      "pressure_ratio": 0.99,
+      "profile_ratio": 0.995,
+      "acceleration_ratio": 0.98,
+      "axis_weight": 0.02,
+      "training_space": [
+        32,
+        48
+      ],
+      "training_time": "13Gauss+endpoints",
+      "new_validation_seeds": [
+        9174701,
+        9174702
+      ],
+      "original_gates": "unchanged",
+      "normalized_training_feasibility_tolerance": 1e-07,
+      "registered_before_fit": true,
+      "conditioning": {
+        "method": "whiten",
+        "objective_scale": 10000.0,
+        "standardized_gram_eigen_min": -2.4011940969014466e-17,
+        "standardized_gram_eigen_max": 16.842009163101892,
+        "standardized_gram_rank_rel1e10": 397,
+        "coordinate_condition": 39585.802820464945,
+        "coordinate_only": true
+      },
+      "success": true,
+      "message": "Optimization terminated successfully",
+      "selection": "best_feasible_training_checkpoint",
+      "nfev": 189,
+      "iterations": 167,
+      "loss": 5.2886061135339604e-05,
+      "min_training_constraint": -1.4260381070441142e-13,
+      "elapsed": 170.26766754300002,
+      "variables": 398,
+      "pde_validated": false,
+      "source_correspondence_verified": false
+    }
+  },
+  "paired_results": [
+    {
+      "seed": 9174701,
+      "id": "ST046-A",
+      "max": 0.06243872786822228,
+      "volume_L2": 0.0700597337560552,
+      "divergence_max": 3.89715488855304e-06,
+      "gates": {
+        "momentum_max": false,
+        "momentum_L2": false,
+        "divergence_max": true,
+        "divergence_L2": true,
+        "initial_energy": true,
+        "energy_range": true,
+        "energy_quadrature": true,
+        "boundary": true,
+        "core_signs": true,
+        "scaled_core_drift": true,
+        "derived_amplitude": true
+      },
+      "candidate_sha256": "477d31158fd5493b34632a07b485e3edeb3b3dac86577baf3bc4179a2bd610ea"
+    },
+    {
+      "seed": 9174701,
+      "id": "ST047-W",
+      "max": 0.05481942936862595,
+      "volume_L2": 0.06895288073306848,
+      "divergence_max": 3.8012282272817995e-06,
+      "gates": {
+        "momentum_max": false,
+        "momentum_L2": false,
+        "divergence_max": true,
+        "divergence_L2": true,
+        "initial_energy": true,
+        "energy_range": true,
+        "energy_quadrature": true,
+        "boundary": true,
+        "core_signs": true,
+        "scaled_core_drift": true,
+        "derived_amplitude": true
+      },
+      "candidate_sha256": "879d02146e7eb2ebb3ac44d85ab983e7285167e9adca9d84e3a580f953a4acd4"
+    },
+    {
+      "seed": 9174701,
+      "id": "ST047-E",
+      "max": 0.0507243092590924,
+      "volume_L2": 0.060927329951063744,
+      "divergence_max": 2.8998107558490674e-06,
+      "gates": {
+        "momentum_max": false,
+        "momentum_L2": false,
+        "divergence_max": true,
+        "divergence_L2": true,
+        "initial_energy": true,
+        "energy_range": true,
+        "energy_quadrature": true,
+        "boundary": true,
+        "core_signs": true,
+        "scaled_core_drift": true,
+        "derived_amplitude": true
+      },
+      "candidate_sha256": "dfe6e51af93c9c42f1322798b82f89523e6a193c1b6495894cb60f63b4eb07e0"
+    },
+    {
+      "seed": 9174702,
+      "id": "ST046-A",
+      "max": 0.06394015187362563,
+      "volume_L2": 0.06792919443159356,
+      "divergence_max": 5.189436571829964e-06,
+      "gates": {
+        "momentum_max": false,
+        "momentum_L2": false,
+        "divergence_max": true,
+        "divergence_L2": true,
+        "initial_energy": true,
+        "energy_range": true,
+        "energy_quadrature": true,
+        "boundary": true,
+        "core_signs": true,
+        "scaled_core_drift": true,
+        "derived_amplitude": true
+      },
+      "candidate_sha256": "477d31158fd5493b34632a07b485e3edeb3b3dac86577baf3bc4179a2bd610ea"
+    },
+    {
+      "seed": 9174702,
+      "id": "ST047-W",
+      "max": 0.06489000302635815,
+      "volume_L2": 0.06699271195421982,
+      "divergence_max": 5.376713488401685e-06,
+      "gates": {
+        "momentum_max": false,
+        "momentum_L2": false,
+        "divergence_max": true,
+        "divergence_L2": true,
+        "initial_energy": true,
+        "energy_range": true,
+        "energy_quadrature": true,
+        "boundary": true,
+        "core_signs": true,
+        "scaled_core_drift": true,
+        "derived_amplitude": true
+      },
+      "candidate_sha256": "879d02146e7eb2ebb3ac44d85ab983e7285167e9adca9d84e3a580f953a4acd4"
+    },
+    {
+      "seed": 9174702,
+      "id": "ST047-E",
+      "max": 0.053606198667123996,
+      "volume_L2": 0.05973280254563864,
+      "divergence_max": 4.509322816951752e-06,
+      "gates": {
+        "momentum_max": false,
+        "momentum_L2": false,
+        "divergence_max": true,
+        "divergence_L2": true,
+        "initial_energy": true,
+        "energy_range": true,
+        "energy_quadrature": true,
+        "boundary": true,
+        "core_signs": true,
+        "scaled_core_drift": true,
+        "derived_amplitude": true
+      },
+      "candidate_sha256": "dfe6e51af93c9c42f1322798b82f89523e6a193c1b6495894cb60f63b4eb07e0"
+    }
+  ],
+  "structure": {
+    "ST046-A": {
+      "prior_grid_final": {
+        "time": 0.75,
+        "profile_drift": 0.1828093047965901,
+        "inward_fraction": 1.0,
+        "positive_swirl_fraction": 1.0,
+        "bipolar_fraction": 1.0,
+        "radial_pressure_inward_fraction": 1.0,
+        "axial_pressure_toward_fraction": 0.0,
+        "adverse_pressure_rms": 0.050076973528336795,
+        "positive_nonpressure_Mz_rms": 0.07406106454469935,
+        "core_residual_sampled_max": 0.04576966260471484
+      },
+      "fresh_grid_final": {
+        "time": 0.75,
+        "profile_drift": 0.21829878480432727,
+        "inward_fraction": 1.0,
+        "positive_swirl_fraction": 1.0,
+        "bipolar_fraction": 1.0,
+        "radial_pressure_inward_fraction": 1.0,
+        "axial_pressure_toward_fraction": 0.0,
+        "adverse_pressure_rms": 0.05759114645523042,
+        "positive_nonpressure_Mz_rms": 0.08449379729266449,
+        "core_residual_sampled_max": 0.04868849299879328
+      },
+      "midplane_t05": {
+        "time": 0.5,
+        "min_uz": 0.00048305831451446256,
+        "max_uz": 0.0013676137592189023,
+        "max_abs_radial_axial_shear": 0.002653071387191877
+      },
+      "trajectories": {
+        "seed_count": 36,
+        "inward_final_fraction": 1.0,
+        "positive_turn_fraction": 1.0,
+        "bipolar_outward_displacement_fraction": 1.0,
+        "radial_final_initial_ratio_range": [
+          0.9000028804786802,
+          0.9190219088706245
+        ],
+        "rotation_radians_range": [
+          0.08357441097019282,
+          0.1269690876299778
+        ],
+        "midplane_positive_displacement_fraction": 1.0,
+        "integrator_comparison_max": 1.8623991238087e-14,
+        "function_evaluations": [
+          377,
+          752
+        ],
+        "scope": "Actual nonautonomous particle trajectories on36autonomous seeds; not steady streamlines, source matching or a blow-up proof"
+      }
+    },
+    "ST047-W": {
+      "prior_grid_final": {
+        "time": 0.75,
+        "profile_drift": 0.18197539211754998,
+        "inward_fraction": 1.0,
+        "positive_swirl_fraction": 1.0,
+        "bipolar_fraction": 1.0,
+        "radial_pressure_inward_fraction": 1.0,
+        "axial_pressure_toward_fraction": 0.0,
+        "adverse_pressure_rms": 0.0493920714077241,
+        "positive_nonpressure_Mz_rms": 0.06427555964623725,
+        "core_residual_sampled_max": 0.03188068113134085
+      },
+      "fresh_grid_final": {
+        "time": 0.75,
+        "profile_drift": 0.2165815287008569,
+        "inward_fraction": 1.0,
+        "positive_swirl_fraction": 1.0,
+        "bipolar_fraction": 1.0,
+        "radial_pressure_inward_fraction": 1.0,
+        "axial_pressure_toward_fraction": 0.0,
+        "adverse_pressure_rms": 0.05675088389616334,
+        "positive_nonpressure_Mz_rms": 0.07333242164631758,
+        "core_residual_sampled_max": 0.033612128923595365
+      },
+      "midplane_t05": {
+        "time": 0.5,
+        "min_uz": 0.0005093742258295926,
+        "max_uz": 0.0013590433057790027,
+        "max_abs_radial_axial_shear": 0.002555554269732275
+      },
+      "trajectories": {
+        "seed_count": 36,
+        "inward_final_fraction": 1.0,
+        "positive_turn_fraction": 1.0,
+        "bipolar_outward_displacement_fraction": 1.0,
+        "radial_final_initial_ratio_range": [
+          0.904954932673105,
+          0.9250736197433708
+        ],
+        "rotation_radians_range": [
+          0.07624840361759491,
+          0.11281442710678717
+        ],
+        "midplane_positive_displacement_fraction": 1.0,
+        "integrator_comparison_max": 1.436004093413601e-14,
+        "function_evaluations": [
+          377,
+          752
+        ],
+        "scope": "Actual nonautonomous particle trajectories on36autonomous seeds; not steady streamlines, source matching or a blow-up proof"
+      }
+    },
+    "ST047-E": {
+      "prior_grid_final": {
+        "time": 0.75,
+        "profile_drift": 0.18250426823890598,
+        "inward_fraction": 1.0,
+        "positive_swirl_fraction": 1.0,
+        "bipolar_fraction": 1.0,
+        "radial_pressure_inward_fraction": 1.0,
+        "axial_pressure_toward_fraction": 0.0,
+        "adverse_pressure_rms": 0.04940861419665869,
+        "positive_nonpressure_Mz_rms": 0.06303239757938749,
+        "core_residual_sampled_max": 0.030771833921992946
+      },
+      "fresh_grid_final": {
+        "time": 0.75,
+        "profile_drift": 0.21538527459999587,
+        "inward_fraction": 1.0,
+        "positive_swirl_fraction": 1.0,
+        "bipolar_fraction": 1.0,
+        "radial_pressure_inward_fraction": 1.0,
+        "axial_pressure_toward_fraction": 0.0,
+        "adverse_pressure_rms": 0.0567774388369243,
+        "positive_nonpressure_Mz_rms": 0.07198488666374774,
+        "core_residual_sampled_max": 0.03242213682288385
+      },
+      "midplane_t05": {
+        "time": 0.5,
+        "min_uz": 0.0005854104532087609,
+        "max_uz": 0.0013029265972111916,
+        "max_abs_radial_axial_shear": 0.0021824389346682986
+      },
+      "trajectories": {
+        "seed_count": 36,
+        "inward_final_fraction": 1.0,
+        "positive_turn_fraction": 1.0,
+        "bipolar_outward_displacement_fraction": 1.0,
+        "radial_final_initial_ratio_range": [
+          0.9044775219624598,
+          0.9251239817691479
+        ],
+        "rotation_radians_range": [
+          0.07702601107596815,
+          0.11386001842518668
+        ],
+        "midplane_positive_displacement_fraction": 1.0,
+        "integrator_comparison_max": 1.683202188740296e-14,
+        "function_evaluations": [
+          377,
+          752
+        ],
+        "scope": "Actual nonautonomous particle trajectories on36autonomous seeds; not steady streamlines, source matching or a blow-up proof"
+      }
+    }
+  },
+  "dense_grid": {
+    "ST046-A": {
+      "maximum": 0.06888414931626298,
+      "maximum_FD_discrepancy": 2.318727848082184e-08,
+      "grid": [
+        81,
+        121
+      ],
+      "worst": {
+        "time": 0.6875,
+        "sampled_cylinder_grid_max": 0.06888414931626298,
+        "point": [
+          0.0,
+          0.0,
+          0.23275000000000023
+        ],
+        "component_vector": [
+          0.0,
+          0.0,
+          0.06888414931626298
+        ],
+        "independent_FD_vector": [
+          4.625929269271486e-16,
+          2.312964634635743e-16,
+          0.06888414933105731
+        ],
+        "FD_vector_difference": 1.479433243483405e-11
+      }
+    },
+    "ST047-E": {
+      "maximum": 0.05304219869515318,
+      "maximum_FD_discrepancy": 4.1815671043832214e-08,
+      "grid": [
+        81,
+        121
+      ],
+      "worst": {
+        "time": 0.25,
+        "sampled_cylinder_grid_max": 0.05304219869515318,
+        "point": [
+          0.249375,
+          0.0,
+          -1.89525
+        ],
+        "component_vector": [
+          0.0472187877409416,
+          0.011913600366363929,
+          -0.021022061102627075
+        ],
+        "independent_FD_vector": [
+          0.047218773633785106,
+          0.011913601088294905,
+          -0.02102204370765063
+        ],
+        "FD_vector_difference": 2.2407995317483403e-08
+      }
+    }
+  },
+  "validation_scope": "bothseeds4096freshCartesianpoints,sixoriginaltimes,full original independent FD and quadrature ladders; volumeL2 not RMS; not a continuum supremum",
+  "selection": "all models frozen before either holdout; both reported; no subsequent fitting",
+  "local_tests": "10 passed in9.67s, warnings-as-errors; compileall passed",
+  "prior_test_failure": "Initial unqualified replay module import collided with root_st040; entry renamed replay_st047, then tests passed. Frozen fields/numerics unchanged. Error log preserved.",
+  "additional_symbolic_checks": "divergence representation; energy normalization; pressure cancellation; aligned-pressure nonnegative increment",
+  "all_six_original_gate_exit_codes": 1,
+  "numerical_target": {
+    "momentum_max": 0.001,
+    "volume_L2": 0.001
+  },
+  "original_physical_gates": "unchanged",
+  "scientific_limits": "pressure remains outward on sampledcore; nonzero shear retained but magnitude decreases; no globalsourcecorrespondence, angular source pulses, heat exterior or blow-up proof",
+  "pde_validated": false,
+  "source_correspondence_verified": false,
+  "full_inherited_suite": "not run",
+  "Lean": "not run",
+  "cloud_CI": "see associatedPR actual run; not claimed here"
+}
