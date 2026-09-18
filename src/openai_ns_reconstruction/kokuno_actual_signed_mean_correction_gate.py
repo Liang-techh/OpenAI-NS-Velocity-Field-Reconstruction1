@@ -49,7 +49,7 @@ def _finite_vector(values: Sequence[float], name: str) -> tuple[float, ...]:
 
 @dataclass(frozen=True)
 class ActualSignedMeanNumericTarget:
-    """Numeric target that is cryptographically/semantically bound upstream.
+    """Numeric target semantically bound to the upstream theorem application.
 
     This object is deliberately stricter than a generic pair of arrays.  It is
     not accepted unless the accompanying formal admission says that the actual
@@ -144,6 +144,7 @@ class KokunoActualSignedMeanCorrectionGate:
         )
         actual_physical_rank_two = bool(
             actual_source_family_bound
+            and signed_rank_receipt["physical_complete_curl_covariance_rank_two_assessed"]
             and signed_rank_receipt["genuinely_independent_second_covariance_column_ready"]
         )
 
@@ -213,6 +214,9 @@ class KokunoActualSignedMeanCorrectionGate:
             "supplied_signed_physical_covariance_rank_two": supplied_physical_rank_two,
             "actual_signed_complete_curl_source_family_bound": actual_source_family_bound,
             "actual_source_physical_covariance_rank_two": actual_physical_rank_two,
+            "upstream_signed_rank_real_candidate_defect_consumed": bool(
+                signed_rank_receipt["real_candidate_defect_consumed"]
+            ),
             "real_numeric_target_bound": real_numeric_target_bound,
             "physical_to_reference_conversion": "H_ref y = Delta C / epsilon",
             "reference_target_theta": reference_target_theta,
@@ -220,7 +224,7 @@ class KokunoActualSignedMeanCorrectionGate:
             "signed_mean_inverse_input_ready": signed_mean_inverse_input_ready,
             "blockers": tuple(blockers),
             "surrogate_defect_used": False,
-            "real_candidate_defect_consumed": signed_mean_inverse_input_ready,
+            "real_candidate_defect_consumed": real_numeric_target_bound,
             "public_velocity_correction_materialized": False,
             "finite_correction_cycle_rerun_allowed": False,
             "finite_correction_cycle_run": False,
