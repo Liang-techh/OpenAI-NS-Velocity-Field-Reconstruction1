@@ -1,0 +1,72 @@
+name: st046-replay
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st046/**'
+      - '.github/workflows/st046-replay.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'experiments/root_st046/**'
+      - '.github/workflows/st046-replay.yml'
+permissions:
+  contents: read
+jobs:
+  frozen-acceleration-pressure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numerical and structural calibration dependencies
+        run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Verify published parent and test all four recipes
+        run: |
+          python scripts/ns_candidate.py verify
+          python -m pytest -q -W error experiments/root_st046/test_acceleration.py
+      - name: Independently replay A and D fields and structure
+        shell: bash
+        run: |
+          for candidate in ST046-A ST046-D; do
+            set +e
+            python experiments/root_st046/replay_st046.py --id "$candidate" --out "outputs/$candidate" --seed 9174601 --validate --structure
+            code=$?
+            set -e
+            test "$code" = 1
+          done
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          recorded=json.loads(Path('experiments/root_st046/results.json').read_text())
+          for ident in ('ST046-A','ST046-D'):
+              r=json.loads(Path(f'outputs/{ident}/validation.json').read_text())
+              reference=next(v for v in recorded['paired_results'] if v['id']==ident and v['seed']==9174601)
+              assert r['pde_validated'] is False and r['all_numeric_gates_pass'] is False
+              assert sorted(k for k,v in r['gates'].items() if not v)==sorted(reference['failed_gates'])
+              fine=[v for v in r['spatial_refinement'] if v['space_step']==.005]
+              maximum=max(v['momentum_max'] for v in fine);l2=max(v['momentum_L2'] for v in fine)
+              assert abs(maximum-reference['max'])<1e-5
+              assert abs(l2-reference['volume_L2'])<1e-5
+              s=json.loads(Path(f'outputs/{ident}/structure.json').read_text())
+              for case in s['cases']:
+                  for v in case['rows']:
+                      assert v['axial_pressure_toward_fraction']==0.
+                      assert v['radial_inward_fraction']==1. and v['positive_swirl_fraction']==1. and v['bipolar_fraction']==1.
+              drift=s['cases'][0]['rows'][-1]['profile_drift']
+              assert abs(drift-recorded['structure_summary'][ident]['comparable_final_drift'])<1e-7
+              print(ident,maximum,l2,'reproduced; momentum and pressure-direction goals remain unmet')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ST046-A-D-independent-replay
+          path: |
+            outputs/ST046-A/
+            outputs/ST046-D/
+          if-no-files-found: error
