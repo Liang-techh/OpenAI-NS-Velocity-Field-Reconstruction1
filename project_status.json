@@ -2,7 +2,7 @@
   "objective": "computable_3d_velocity_components_corresponding_to_openai_visualization",
   "migration": "complete",
   "integration_branch": "codex/cr001-constraints",
-  "status_snapshot_base_head": "412e6c35ce7c59e360ed8e40237f85d1856b75d4",
+  "status_snapshot_base_head": "3c22198881d5f46e04a1f6551f954eb73027cd07",
   "active_routing_document": "docs/AGENT_ROUTING_SWIRL_SPATIAL.md",
   "active_scientific_route": "bounded_spatial_swirl_redistribution_plus_minimal_poloidal_coordination",
   "candidate_status": "visualization_candidate_only",
@@ -66,7 +66,7 @@
   },
   "active_task_file": "docs/SCHEDULED_AGENT_TASKS.md",
   "central_coordination_issue": 15,
-  "next_integration_task": "materialize one bounded interior compact swirl child from the integrated INTERIOR_C4_SWIRL capacity direction; then run a force-respecting candidate screen and fresh full-momentum/divergence validation before any promotion",
+  "next_integration_task": "materialize one bounded nonzero COMPACT_C4_ODD_Z_POLOIDAL child from the already integrated compact-poloidal capacity direction, with an explicit autonomous coefficient bound/value and a new representation identity/candidate SHA; then run the unchanged force-respecting energy/sign/support screen and fresh full-momentum/divergence validation before any promotion",
   "latest_integrated_swirl_capacity": {
     "integration_head": "412e6c35ce7c59e360ed8e40237f85d1856b75d4",
     "mode": "INTERIOR_C4_SWIRL",
@@ -77,13 +77,26 @@
     "visualization_ready": false,
     "pde_validated": false
   },
+  "latest_integrated_poloidal_capacity": {
+    "capacity_integration_head": "a918e0f6b0f6fd05d1cd65252939c18af3cde6bb",
+    "governance_integration_head": "3c22198881d5f46e04a1f6551f954eb73027cd07",
+    "mode": "COMPACT_C4_ODD_Z_POLOIDAL",
+    "origin": "autonomous_compact_divergence_free_vector_potential_direction",
+    "status": "capacity_and_governance_integrated_nonzero_child_not_materialized",
+    "coefficient_bound_selected": false,
+    "coefficient_value_selected": false,
+    "candidate_selection_resolved": false,
+    "visualization_ready": false,
+    "pde_validated": false
+  },
   "integration_policy": {
     "preferred_loop": "capacity_to_materialize_to_fit_to_fresh_validate_to_spatial_diagnostics_to_capsule_to_governance_to_integrate",
     "avoid": [
       "wholesale_merge_of_old_stacked_temporal_or_visual_prs",
       "coefficient_selection_from_capacity_or_morphology_alone",
       "new_export_formats_without_a_current_delivery_blocker",
-      "scientific_state_promotion_from_green_ci_or_visual_similarity"
+      "scientific_state_promotion_from_green_ci_or_visual_similarity",
+      "additional_capacity_basis_growth_before_a_current_integrated_direction_is_materialized_and_screened"
     ]
   },
   "legacy_reference": {
