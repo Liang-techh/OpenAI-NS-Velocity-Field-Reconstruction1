@@ -57,6 +57,7 @@ def test_reference_stage_uses_three_resolutions_without_promoting_local_result(
 
     truth = report["truth_boundary"]
     assert truth["formal_full_domain_pde_gate_assessed"] is False
+    assert truth["normalized_ns_residual_le_1e-3_claimed"] is False
     assert truth["pde_validated"] is False
     assert truth["global_pressure_available"] is False
     assert truth["complete_leading_oscillatory_correction_composite_available"] is False
@@ -79,12 +80,15 @@ def test_i2_public_float64_contract_reports_visibility_without_prejudging_it(
     fraction = i2["public_float64_equals_uncorrected_base_fraction"]
     assert 0.0 <= fraction <= 1.0
     assert i2["router_vs_uncorrected_base_max_abs"] >= 0.0
+    assert i2["router_vs_uncorrected_base_max_relative_to_public_speed"] >= 0.0
     assert isinstance(i2["public_float64_heat_repair_visible"], bool)
     assert (
         i2["public_float64_heat_repair_visible"]
         is (not i2["public_float64_equals_uncorrected_base_all_probes"])
     )
+    assert i2["module_level_after_heat_repair_attribution_available"] is False
     assert report["truth_boundary"]["i2_float64_public_repair_observable_at_probes"] is i2[
         "public_float64_heat_repair_visible"
     ]
+    assert report["truth_boundary"]["i2_float64_public_repair_robustly_attributable"] is False
     assert report["preregistered_local_guards"]["all_local_implementation_guards_passed"] is True
