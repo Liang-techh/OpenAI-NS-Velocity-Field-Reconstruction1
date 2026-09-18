@@ -1,0 +1,72 @@
+name: agent7-st051b-temporal-redistribution
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st051/agent7_st051b_temporal_redistribution.py'
+      - 'experiments/root_st051/test_agent7_st051b_temporal_redistribution.py'
+      - '.github/workflows/agent7-st051b-temporal-redistribution.yml'
+permissions:
+  contents: read
+jobs:
+  temporal-screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Focused contract tests
+        run: python -m pytest -q -W error experiments/root_st051/test_agent7_st051b_temporal_redistribution.py experiments/root_st051/test_agent7_st051b_redistribution_headroom.py experiments/root_st051/test_agent7_st051b_frozen_redistribution_transfer.py
+      - name: Execute preregistered temporal screen
+        run: |
+          mkdir -p outputs/agent7-st051b-temporal-redistribution
+          python experiments/root_st051/agent7_st051b_temporal_redistribution.py \
+            --out outputs/agent7-st051b-temporal-redistribution/report.json
+      - name: Verify frozen identity and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st051b-temporal-redistribution/report.json').read_text())
+          assert r['prereg_issue']==488
+          assert r['parent_id']=='ST051-B'
+          assert r['parent_head']=='4b784f1b8457af2ead49295631d834d4e882000b'
+          assert r['stack_base_pr']==480
+          assert r['stack_base_head']=='187157d377b14bae56415648ac100342f2b8bbb0'
+          assert r['source_profile_pr']==458
+          assert r['transfer_pr']==469
+          assert abs(r['frozen_profile']['alpha']-2.520520814687742)<1e-15
+          assert r['frozen_profile']['base_gain']==0.025
+          assert r['preregistered_gammas']==[0.0,0.01,0.015,0.02,0.025]
+          assert r['gammas_outside_preregistered_grid_evaluated'] is False
+          assert r['diagnostic_added_spatial_basis_degrees']==0
+          assert r['diagnostic_temporal_degrees_screened']==1
+          assert r['canonical_velocity_changed'] is False
+          assert r['candidate_artifact_changed'] is False
+          assert r['pressure_or_force_changed'] is False
+          assert r['held_out_pde_residual_evaluated'] is False
+          assert r['material_paths_integrated'] is False
+          assert r['public_image_used'] is False
+          assert r['production_temporal_coefficient_selected'] is False
+          assert r['visualization_ready'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          assert r['source_correspondence_verified'] is False
+          print('sensitivity=',r['sensitivity'])
+          print('first_clean_temporal=',r['smallest_preregistered_clean_temporal_capacity'])
+          for row in r['rows']:
+              late=row['angular']['0.75']
+              print('gamma',row['gamma'],'gains',row['time_gains'],'late_additional',late['0.6']['additional_gain_from_static'],late['0.9']['additional_gain_from_static'],late['1.2']['additional_gain_from_static'],'clean',row['clean_temporal_capacity'])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st051b-temporal-redistribution
+          path: outputs/agent7-st051b-temporal-redistribution/
+          if-no-files-found: error
