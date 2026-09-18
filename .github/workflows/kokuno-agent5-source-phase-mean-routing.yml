@@ -1,0 +1,61 @@
+name: kokuno-agent5-source-phase-mean-routing
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-source-phase-mean-routing-032
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_source_phase_bound_signed_curl.py'
+      - 'src/openai_ns_reconstruction/kokuno_agent4_source_phase_independent_audit.py'
+      - 'src/openai_ns_reconstruction/kokuno_source_phase_mean_routing_checkpoint.py'
+      - 'tests/test_constrained_kokuno_source_phase_bound_signed_curl.py'
+      - 'tests/test_constrained_kokuno_agent4_source_phase_independent_audit.py'
+      - 'tests/test_constrained_kokuno_source_phase_mean_routing_checkpoint.py'
+      - '.github/workflows/kokuno-agent5-source-phase-mean-routing.yml'
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_source_phase_bound_signed_curl.py'
+      - 'src/openai_ns_reconstruction/kokuno_agent4_source_phase_independent_audit.py'
+      - 'src/openai_ns_reconstruction/kokuno_source_phase_mean_routing_checkpoint.py'
+      - 'tests/test_constrained_kokuno_source_phase_bound_signed_curl.py'
+      - 'tests/test_constrained_kokuno_agent4_source_phase_independent_audit.py'
+      - 'tests/test_constrained_kokuno_source_phase_mean_routing_checkpoint.py'
+      - '.github/workflows/kokuno-agent5-source-phase-mean-routing.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent5-source-phase-mean-routing-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  routing-checkpoint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Focused phase-bound, independent-audit and Agent-5 tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_source_phase_bound_signed_curl.py
+          tests/test_constrained_kokuno_agent4_source_phase_independent_audit.py
+          tests/test_constrained_kokuno_source_phase_mean_routing_checkpoint.py
+      - name: Generate deterministic Agent-5 checkpoint
+        run: >-
+          python -m openai_ns_reconstruction.kokuno_source_phase_mean_routing_checkpoint
+          --output artifacts/kokuno_agent5/source_phase_mean_routing_checkpoint_v32/checkpoint.json
+      - name: Show checkpoint
+        run: cat artifacts/kokuno_agent5/source_phase_mean_routing_checkpoint_v32/checkpoint.json
+      - name: Upload routing artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-source-phase-mean-routing-checkpoint-v32
+          path: artifacts/kokuno_agent5/source_phase_mean_routing_checkpoint_v32
+          if-no-files-found: error
