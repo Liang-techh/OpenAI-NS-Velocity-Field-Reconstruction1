@@ -1,0 +1,30 @@
+name: kokuno-agent2-source-real-pair
+
+on:
+  push:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_source_real_pair.py'
+      - 'tests/test_constrained_kokuno_source_real_pair.py'
+      - '.github/workflows/kokuno-agent2-source-real-pair.yml'
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_source_real_pair.py'
+      - 'tests/test_constrained_kokuno_source_real_pair.py'
+      - '.github/workflows/kokuno-agent2-source-real-pair.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  source-real-pair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Focused source real-pair tests
+        run: python -m pytest -q -W error tests/test_constrained_kokuno_source_real_pair.py
