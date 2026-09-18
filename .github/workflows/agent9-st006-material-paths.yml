@@ -39,7 +39,7 @@ jobs:
           assert r['interpretation_boundary']['pde_validated'] is False
           assert r['interpretation_boundary']['visual_correspondence_verified'] is False
           s=r['summary']
-          print(json.dumps({
+          summary={
               'candidate_sha256': r['candidate_sha256'],
               'report_sha256': r['report_sha256'],
               'path_count': s['path_count'],
@@ -58,7 +58,9 @@ jobs:
               'pair_axial_separation_shrink_count': s['pair_axial_separation_shrink_count'],
               'mean_speed_change': s['mean_speed_change'],
               'all_inside_box': r['interpretation_boundary']['all_sampled_points_inside_registered_box'],
-          }, indent=2))
+          }
+          print(json.dumps(summary, indent=2))
+          print('::notice title=ST006 material path summary::' + json.dumps(summary, sort_keys=True, separators=(',', ':')))
           PY
       - uses: actions/upload-artifact@v4
         with:
