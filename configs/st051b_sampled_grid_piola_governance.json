@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "task_id": "CR002-SAMPLED-GRID-PIOLA-SEMANTICS-083",
+  "purpose": "separate the exact smooth-parent Piola identity from the numerical representation obtained by applying the same map through trilinear interpolation of a frozen sampled velocity grid; preserve delivery, visual, and PDE truth boundaries without changing any field or threshold",
+  "snapshot": {
+    "active_integration_branch": "codex/cr001-constraints",
+    "active_integration_head": "fec97a1f25e914069e528dac0852d9a46244f159",
+    "observed_pr": 499,
+    "observed_pr_head": "cf5c678117678abe39704f9ee1c66180a0409916",
+    "observed_pr_state": "open_unintegrated_capacity_evidence",
+    "dedicated_workflow_run": 35400911257,
+    "dedicated_workflow_conclusion": "success",
+    "receipt_artifact_id": 10570795164,
+    "receipt_artifact_digest": "sha256:ec99470af7028e0004877def1065d11e4ee66c7b234c95283b20e923f2235f6d",
+    "source_grid_pr": 476,
+    "source_grid_run": 35389278384,
+    "source_grid_artifact_id": 10565335507,
+    "source_piola_pr": 407,
+    "source_piola_head": "2d7cb2fe05696c6303e09ad20b91c61aad5f977e"
+  },
+  "allowed_source_classes": [
+    "user_requirement",
+    "public_source_fact",
+    "autonomous_design",
+    "pending_unknown"
+  ],
+  "source_classification": {
+    "callable_saveable_velocity_x_y_z_t": "user_requirement",
+    "public_openai_visualization_observables": "public_source_fact",
+    "static_axial_piola_map_beta_0p075": "autonomous_design",
+    "trilinear_sampled_grid_interpolation": "autonomous_design",
+    "sampled_trapezoidal_energy_restoration": "autonomous_design",
+    "nested_17_from_33_subsampling_protocol": "autonomous_design",
+    "fixed_seed_streamline_and_vorticity_capacity_metrics": "autonomous_design",
+    "cr001_validation_protocol": "autonomous_design",
+    "openai_hidden_coordinate_map": "pending_unknown",
+    "openai_hidden_numerical_velocity": "pending_unknown",
+    "openai_hidden_frame_time_camera_mapping": "pending_unknown"
+  },
+  "representation_layers": {
+    "continuum_piola_operator": {
+      "map": "h_beta(z)=z*(1-beta*(1-(z/2)^2)^4) for abs(z)<2, identity outside",
+      "velocity": "P_beta[u]=[h_z*u_x(x,y,h_beta(z),t), h_z*u_y(x,y,h_beta(z),t), u_z(x,y,h_beta(z),t)]",
+      "beta": 0.075,
+      "beta_time_dependent": false,
+      "identity_scope": "sufficiently_smooth_callable_parent",
+      "divergence_identity": "div(P_beta[u])=h_z*(div u)(x,y,h_beta(z),t)",
+      "identity_is_analytic_consequence_of_autonomous_map": true
+    },
+    "sampled_parent": {
+      "role": "immutable_ST051B_gain_0p025_visualization_grid",
+      "fine_resolution": 33,
+      "times": [0.25, 0.5, 0.75],
+      "box": [[-2, 2], [-2, 2], [-2, 2]],
+      "interpolation": "trilinear",
+      "is_underlying_callable_parent": false,
+      "is_cr001_held_out_sample": false
+    },
+    "sampled_piola_child": {
+      "mathematical_form": "sample_nodes(P_beta[I_h[u_h]]) where I_h is the declared trilinear interpolant of the frozen sampled grid",
+      "same_object_as_P_beta_of_underlying_callable_parent": false,
+      "new_numerical_representation": true,
+      "identity_depends_on": [
+        "source_grid_identity",
+        "grid_resolution_and_nodes",
+        "sample_times",
+        "interpolation_kernel_and_boundary_behavior",
+        "beta",
+        "sampled_energy_normalization_rule"
+      ],
+      "beta_alone_identifies_child": false,
+      "continuum_divergence_identity_is_discrete_divergence_certificate": false,
+      "grid_level_divergence_preflight_if_run_is_pde_acceptance": false
+    },
+    "nested_coarse_view": {
+      "resolution": 17,
+      "construction": "take every second node from the frozen 33-grid, then reapply the sampled-grid Piola screen",
+      "independent_resample_from_callable_parent": false,
+      "continuum_convergence_study": false,
+      "role": "render_and_capacity_resolution_sensitivity_only"
+    }
+  },
+  "observed_pr499_evidence": {
+    "source_roundtrip_max_abs": 2.7755575615628914e-16,
+    "source_roundtrip_proves_only_frozen_sampled_transform_replay": true,
+    "source_roundtrip_recovers_underlying_analytic_parent_off_grid": false,
+    "fine_reference_energy": 1.0000242025023818,
+    "fine_raw_warped_reference_energy": 0.9929956918104804,
+    "fine_common_reference_energy_scale": 1.0035328035496631,
+    "coarse_reference_energy": 1.0000118807771181,
+    "coarse_raw_warped_reference_energy": 0.9861804255833833,
+    "coarse_common_reference_energy_scale": 1.006988221666327,
+    "sampled_energy_scale_is_resolution_specific": true,
+    "sampled_energy_restoration_is_cr001_reference_energy_validation": false,
+    "useful_axial_capacity_transfer": true,
+    "fine_min_axial_span_gain": 0.011535246386066733,
+    "fine_min_mean_turn_gain": 0.0035780356522554513,
+    "fine_max_radial_span_gain": 0.023506094198646466,
+    "response_rank": 2,
+    "response_condition": 1.0311877639509441,
+    "response_column_cosine": 0.03070165490405815,
+    "capacity_pass_selects_production_beta": false,
+    "capacity_pass_selects_production_candidate": false,
+    "capacity_pass_is_visual_correspondence": false,
+    "capacity_pass_is_pde_validation": false
+  },
+  "forbidden_inferences": [
+    {
+      "from": "smooth_parent_piola_divergence_identity",
+      "to": "sampled_interpolated_piola_child_is_exactly_divergence_free",
+      "allowed": false
+    },
+    {
+      "from": "source_grid_roundtrip_at_sample_nodes",
+      "to": "underlying_callable_ST051B_parent_recovered_off_grid",
+      "allowed": false
+    },
+    {
+      "from": "33_to_17_nested_sampled_sensitivity",
+      "to": "continuum_resolution_convergence",
+      "allowed": false
+    },
+    {
+      "from": "sampled_t025_trapezoidal_energy_restoration",
+      "to": "CR001_reference_energy_gate_passed",
+      "allowed": false
+    },
+    {
+      "from": "green_capacity_CI_or_target_free_morphology_gain",
+      "to": "visual_correspondence_verified_or_PDE_validated",
+      "allowed": false
+    },
+    {
+      "from": "beta_0p075_capacity_pass",
+      "to": "production_beta_or_OpenAI_hidden_coordinate_map",
+      "allowed": false
+    }
+  ],
+  "future_materialization_requirements": {
+    "explicit_production_beta_bound_and_value_required": true,
+    "new_representation_identity_required": true,
+    "new_candidate_sha_required": true,
+    "candidate_save_load_replay_required": true,
+    "preferred_callable_route": "apply the registered Piola transform to an explicitly identified callable parent rather than promoting a visualization grid interpolant",
+    "if_discrete_interpolant_is_delivered": [
+      "register exact source grid identity",
+      "register interpolation kernel and extrapolation/boundary behavior",
+      "register sampled times and temporal interpolation policy",
+      "label the result as a numerical interpolant rather than the exact underlying callable field"
+    ],
+    "fresh_reference_and_validation_energy_required": true,
+    "fresh_axis_near_axis_support_and_boundary_checks_required": true,
+    "fresh_independent_cartesian_divergence_required_before_divergence_claim": true,
+    "rebuild_or_refit_compatible_pressure_and_restricted_force_required_before_PDE_claim": true,
+    "fresh_full_momentum_and_divergence_on_unused_CR001_acceptance_data_required_before_PDE_promotion": true,
+    "public_reference_comparison_and_independent_resolution_stability_required_before_visual_correspondence": true
+  },
+  "canonical_cr001": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "force_mode": "restricted_two_parameter_family",
+    "force_bounds": {"a": [0.0, 10.0], "c": [0.0, 10.0]},
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "divergence_max": 1e-5,
+    "divergence_L2": 1e-5,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001
+  },
+  "canonical_delivery": {
+    "candidate_family": "eq45_supported_velocity_candidate_v1",
+    "candidate_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+    "velocity_api": "openai_ns_reconstruction.eq45_supported_delivery:velocity",
+    "velocity_export_ready": true,
+    "active_scientific_route": "materialize_integrated_axial_cap_poloidal_child_then_fresh_validate",
+    "pr499_changes_canonical_candidate": false,
+    "pr499_changes_canonical_velocity_api": false,
+    "pr499_changes_active_scientific_route": false
+  },
+  "truth_boundary": {
+    "canonical_velocity_export_ready": true,
+    "pr499_sampled_piola_child_materialized_as_callable_candidate": false,
+    "production_beta_selected": false,
+    "production_candidate_selected": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "mutation_scope": {
+    "velocity_changed": false,
+    "candidate_changed": false,
+    "pressure_changed": false,
+    "forcing_changed": false,
+    "optimizer_changed": false,
+    "validation_sample_changed": false,
+    "norm_definition_changed": false,
+    "threshold_changed": false,
+    "active_route_changed": false,
+    "canonical_velocity_api_changed": false,
+    "pr499_implementation_changed": false
+  }
+}
