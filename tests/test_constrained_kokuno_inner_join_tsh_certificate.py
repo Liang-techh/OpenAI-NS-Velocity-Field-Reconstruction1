@@ -53,14 +53,31 @@ def test_selected_separation_geometry_is_reported_without_relaxing_source_bounda
     assert report["max_T_sh_for_current_outer_schedule"] == pytest.approx(
         -8.0 - report["log_x_i"], rel=0.0, abs=1e-12
     )
+    assert math.isfinite(report["required_log_C_multiplier_if_only_X_R_is_enlarged"])
+    assert math.isfinite(report["required_log10_C_multiplier_if_only_X_R_is_enlarged"])
+    assert math.isfinite(report["required_C_multiplier_if_only_X_R_is_enlarged_float64"])
+    # The CLI/artifact report must remain strict JSON even when the true scale
+    # is many orders beyond a representable float multiplier.
+    json.dumps(report, sort_keys=True, allow_nan=False)
+
     if report["separation_geometry_feasible"]:
         join = cert.build_selected_inner_join(quadrature_points=32)
         assert join.T_sh == cert.selected_T_sh
         assert join.log_x_sep < -8.0
         assert cert.required_C_multiplier_if_only_X_R_is_enlarged == 1.0
+        assert report["required_C_multiplier_float64_saturated"] is False
     else:
         assert report["selected_log_x_sep"] >= -8.0
+        assert report["required_log_C_multiplier_if_only_X_R_is_enlarged"] > 0.0
+        assert report["required_log10_C_multiplier_if_only_X_R_is_enlarged"] > 0.0
         assert cert.required_C_multiplier_if_only_X_R_is_enlarged > 1.0
+        if report["required_C_multiplier_float64_saturated"]:
+            assert cert.required_C_multiplier_if_only_X_R_is_enlarged == np.finfo(float).max
+        else:
+            assert cert.required_C_multiplier_if_only_X_R_is_enlarged == pytest.approx(
+                math.exp(report["required_log_C_multiplier_if_only_X_R_is_enlarged"]),
+                rel=2e-15,
+            )
         with pytest.raises(ValueError, match="does not fit"):
             cert.build_selected_inner_join(quadrature_points=32)
 
