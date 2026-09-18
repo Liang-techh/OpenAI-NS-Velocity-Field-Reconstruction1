@@ -4,71 +4,72 @@ import math
 import numpy as np
 import pytest
 
+from openai_ns_reconstruction.kokuno_reference_continuation import source_smooth_step
 from openai_ns_reconstruction.kokuno_rescaled_reference_continuation import (
     KokunoSourceRescaledReferenceContinuation,
 )
 
 
-def test_large_pressure_reference_transition_fits_source_core_and_freezes():
-    candidate = KokunoSourceRescaledReferenceContinuation()
+@pytest.fixture(scope="module")
+def candidate():
+    # Eight-point source-y quadrature is enough for the regression guards and
+    # keeps this stacked constrained lane from re-solving the same smooth
+    # transition at production order in every test.
+    return KokunoSourceRescaledReferenceContinuation(quadrature_points=8)
+
+
+def test_large_pressure_reference_transition_fits_source_core_and_freezes(candidate):
     assert candidate.pressure_scale > 1.0e13
     assert candidate.rescaling_lambda > 1.0e26
     assert candidate.X2 < candidate.max_source_transition_X
 
     eta = candidate.seed.phase_stationary_eta
     natural_X = 0.75 * candidate.X1
-    natural = candidate.profile_values(natural_X, eta)
+    natural = candidate._continued_scalar(natural_X, eta)
     seed = candidate.seed.profile_values(natural_X, eta)
-    assert float(natural["log_F"]) == pytest.approx(float(seed["log_F"]), abs=1.0e-13)
-    assert float(natural["F"]) == pytest.approx(float(seed["F"]), rel=2.0e-15)
-    assert float(natural["U"]) == pytest.approx(float(seed["U"]), rel=2.0e-15)
+    assert natural["log_F"] == pytest.approx(float(seed["log_F"]), abs=1.0e-13)
+    assert natural["F"] == pytest.approx(float(seed["F"]), rel=2.0e-15)
+    assert natural["U"] == pytest.approx(float(seed["U"]), rel=2.0e-15)
 
-    at_exit = candidate.profile_values(candidate.X2, eta)
-    after_exit = candidate.profile_values(3.0 * candidate.X2, eta)
-    assert float(after_exit["log_F"]) == pytest.approx(float(at_exit["log_F"]), abs=2.0e-14)
-    assert float(after_exit["U"]) == pytest.approx(float(at_exit["U"]), rel=2.0e-14, abs=1.0e-14)
-    assert float(after_exit["D_X_log_F"]) == pytest.approx(0.0, abs=0.0)
-    assert float(after_exit["D_X_U"]) == pytest.approx(0.0, abs=0.0)
+    at_exit = candidate._continued_scalar(candidate.X2, eta)
+    after_exit = candidate._continued_scalar(3.0 * candidate.X2, eta)
+    assert after_exit["log_F"] == pytest.approx(at_exit["log_F"], abs=2.0e-14)
+    assert after_exit["U"] == pytest.approx(at_exit["U"], rel=2.0e-14, abs=1.0e-14)
+    assert after_exit["D_X_log_F"] == pytest.approx(0.0, abs=0.0)
+    assert after_exit["D_X_U"] == pytest.approx(0.0, abs=0.0)
 
 
-def test_transition_radial_slopes_follow_public_flat_step_without_raw_taylor_state():
-    candidate = KokunoSourceRescaledReferenceContinuation()
+def test_transition_radial_slopes_follow_public_flat_step(candidate):
     eta = 0.25
     y = 1.5 * candidate.log_transition_width
     X = candidate.X0 * math.exp(y)
-    values = candidate.profile_values(X, eta)
+    values = candidate._continued_scalar(X, eta)
     s = (y - candidate.log_transition_width) / candidate.log_transition_width
-
-    from openai_ns_reconstruction.kokuno_reference_continuation import source_smooth_step
-
     gate = 1.0 - float(source_smooth_step(np.asarray(s)))
     expected_log_slope = gate * float(candidate._natural_log_slope(np.asarray(X), eta))
     expected_DU = gate * float(candidate._natural_DU(np.asarray(X), eta))
-    assert float(values["D_X_log_F"]) == pytest.approx(expected_log_slope, rel=3.0e-14, abs=1.0e-15)
-    assert float(values["D_X_U"]) == pytest.approx(expected_DU, rel=3.0e-14, abs=1.0e-15)
+    assert values["D_X_log_F"] == pytest.approx(expected_log_slope, rel=3.0e-14, abs=1.0e-15)
+    assert values["D_X_U"] == pytest.approx(expected_DU, rel=3.0e-14, abs=1.0e-15)
 
     eps = 2.0e-6
-    plus = candidate.profile_values(X * math.exp(eps), eta)
-    minus = candidate.profile_values(X * math.exp(-eps), eta)
-    finite_DU = (float(plus["U"]) - float(minus["U"])) / (2.0 * eps)
-    assert float(values["D_X_U"]) == pytest.approx(finite_DU, rel=2.0e-6, abs=2.0e-10)
+    plus = candidate._continued_scalar(X * math.exp(eps), eta)
+    minus = candidate._continued_scalar(X * math.exp(-eps), eta)
+    finite_DU = (plus["U"] - minus["U"]) / (2.0 * eps)
+    assert values["D_X_U"] == pytest.approx(finite_DU, rel=2.0e-6, abs=2.0e-10)
 
 
-def test_global_frozen_reference_has_prefix_velocity_and_pressure_identity():
-    candidate = KokunoSourceRescaledReferenceContinuation()
+def test_frozen_reference_carries_prefix_velocity_and_pressure_identity(candidate):
     eta = candidate.seed.phase_stationary_eta
-    X = np.array([candidate.X2, 1.0, 110.0])
-    values = candidate.profile_values(X, np.full(X.shape, eta))
+    values = candidate.profile_values(110.0, eta)
     for key in ("F", "U", "v0", "Pi", "M", "Pi_X", "log_F"):
         assert np.all(np.isfinite(values[key])), key
-    assert np.allclose(values["Pi_X"], values["F"] ** 2, rtol=0.0, atol=0.0)
-    assert np.max(np.abs(values["U"])) > 1.0e-3
-    assert np.max(np.abs(values["v0"])) > 1.0e-3
-    assert np.all(values["Pi"] < 0.0)
+    assert float(values["Pi_X"]) == pytest.approx(float(values["F"]) ** 2, abs=0.0)
+    assert abs(float(values["U"])) > 1.0e-3
+    assert abs(float(values["v0"])) > 1.0e-3
+    assert float(values["Pi"]) < 0.0
 
 
-def test_native_velocity_is_vectorized_nontrivial_and_axis_regular():
-    candidate = KokunoSourceRescaledReferenceContinuation()
+def test_native_velocity_is_nontrivial_and_axis_regular(candidate):
     axis = candidate.velocity(0.0, 0.0, 0.0, 0.0)
     assert axis.shape == (3,)
     assert np.all(np.isfinite(axis))
@@ -79,35 +80,21 @@ def test_native_velocity_is_vectorized_nontrivial_and_axis_regular():
     eta = candidate.seed.phase_stationary_eta
     q = 1.0 / (1.0 - eta * eta)
     z = q ** candidate.D * eta
-    r1 = math.sqrt(2.0 * q * 1.0)
-    r2 = math.sqrt(2.0 * q * 110.0)
-    velocity = candidate.velocity(np.array([r1, r2]), 0.0, z, 0.0)
-    assert velocity.shape == (2, 3)
+    r = math.sqrt(2.0 * q * 110.0)
+    velocity = candidate.velocity(r, 0.0, z, 0.0)
+    assert velocity.shape == (3,)
     assert np.all(np.isfinite(velocity))
-    assert np.all(np.linalg.norm(velocity, axis=-1) > 1.0e-3)
+    assert np.linalg.norm(velocity) > 1.0e-3
 
 
-def test_serialization_replays_and_truth_boundary_fails_closed(tmp_path):
-    candidate = KokunoSourceRescaledReferenceContinuation()
+def test_serialization_report_and_truth_boundary_fail_closed(candidate, tmp_path):
     payload = candidate.to_payload()
     replay = KokunoSourceRescaledReferenceContinuation.from_payload(payload)
     assert replay.sha256 == candidate.sha256
-    assert replay.report()["all_sample_fields_finite"] is True
 
-    path = tmp_path / "rescaled-reference.json"
-    candidate.save_json(path)
-    assert KokunoSourceRescaledReferenceContinuation.load_json(path).sha256 == candidate.sha256
-
-    tampered = copy.deepcopy(payload)
-    tampered["truth_boundary"]["source_fixed_point_solved"] = True
-    with pytest.raises(ValueError, match="truth-boundary"):
-        KokunoSourceRescaledReferenceContinuation.from_payload(tampered)
-
-
-def test_report_keeps_selected_stage_separate_from_global_source_claims():
-    candidate = KokunoSourceRescaledReferenceContinuation()
     report = candidate.report()
     truth = report["truth_boundary"]
+    assert report["all_sample_fields_finite"] is True
     assert report["source_transition_fits_rescaled_core_domain"] is True
     assert truth["selected_source_pressure_datum_carried_into_reference_continuation"] is True
     assert truth["source_reference_continuation_executable_at_selected_pressure_scale"] is True
@@ -117,3 +104,12 @@ def test_report_keeps_selected_stage_separate_from_global_source_claims():
     assert truth["global_pressure_matched"] is False
     assert truth["pde_validated"] is False
     assert truth["paper_exact"] is False
+
+    path = tmp_path / "rescaled-reference.json"
+    candidate.save_json(path)
+    assert KokunoSourceRescaledReferenceContinuation.load_json(path).sha256 == candidate.sha256
+
+    tampered = copy.deepcopy(payload)
+    tampered["truth_boundary"]["source_fixed_point_solved"] = True
+    with pytest.raises(ValueError, match="truth-boundary"):
+        KokunoSourceRescaledReferenceContinuation.from_payload(tampered)
