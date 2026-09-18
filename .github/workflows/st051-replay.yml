@@ -1,0 +1,88 @@
+name: st051-replay
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st051/**'
+      - '.github/workflows/st051-replay.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'experiments/root_st051/**'
+      - '.github/workflows/st051-replay.yml'
+permissions:
+  contents: read
+jobs:
+  calibration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - run: |
+          python scripts/ns_candidate.py verify
+          python -m pytest -q -W error experiments/root_st051/test_aligned.py
+  frozen-field-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        candidate: [ST051-A, ST051-B]
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      FIELD_ID: ${{ matrix.candidate }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2'
+      - name: Reconstruct frozen field, audit structure and replay original full validator
+        shell: bash
+        run: |
+          set +e
+          python experiments/root_st051/replay_st051.py --id "$FIELD_ID" --out "outputs/$FIELD_ID" --seed 9175191 --validate --structure
+          code=$?
+          set -e
+          test "$code" = 1
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          ident=os.environ['FIELD_ID']
+          recorded=json.loads(Path('experiments/root_st051/results.json').read_text())
+          reference=next(row for row in recorded['paired_results'] if row['id']==ident and row['seed']==9175191)
+          actual=json.loads(Path(f'outputs/{ident}/validation.json').read_text())
+          assert actual['pde_validated'] is False and actual['all_numeric_gates_pass'] is False
+          assert actual['gates']==recorded['common_gates']
+          fine=[row for row in actual['spatial_refinement'] if row['space_step']==.005]
+          assert len(fine)==6
+          maximum=max(row['momentum_max'] for row in fine)
+          l2=max(row['momentum_L2'] for row in fine)
+          assert abs(maximum-reference['max'])<1e-5
+          assert abs(l2-reference['volume_L2'])<1e-5
+          structure=json.loads(Path(f'outputs/{ident}/structure.json').read_text())
+          assert structure['source_correspondence_verified'] is False
+          for case in structure['cases']:
+              for row in case['rows']:
+                  for key in ('inward_fraction','positive_swirl_fraction','bipolar_fraction','radial_pressure_inward_fraction','axial_pressure_toward_fraction'):
+                      assert row[key]==1.0
+          assert structure['shear']['sign_reversals']==0
+          assert structure['shear']['minimum_signed_ratio_to_P']>=.999
+          assert structure['shear']['minimum_signed_ratio_to_S']>=.995
+          print(ident,maximum,l2,'Frozen residuals and finite-grid structure reproduced. Full NS momentum gates still FAILED.')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ${{ matrix.candidate }}-independent-replay
+          path: outputs/${{ matrix.candidate }}/
+          if-no-files-found: error
