@@ -1,10 +1,11 @@
 """Agent-5 routing checkpoint for the first source-scheduled multi-band seam.
 
-This module records immutable upstream receipts and an integration failure without
-promoting it to a scientific rejection.  Agent 4's first independent audit never
-reached its frozen curl/divergence guards because its label/schedule mutation was
-rejected by Agent 2's fail-closed band-aggregation invariant.  The numerical
-mutation threshold is therefore retained unchanged for the next in-contract audit.
+The independent Cartesian numerical guards are now clean, but the public Agent-2
+multi-band contract fails a semantically identical simultaneous beta permutation at
+12/36 held-out points because its total and by-band aggregation use different
+floating summation orders after large Q**(-A) scaling.  This checkpoint preserves
+that structural rejection and routes the smallest upstream API fix without changing
+any local or formal validation threshold.
 """
 from __future__ import annotations
 
@@ -39,11 +40,9 @@ AGENT1_RECEIPT = {
     "standard_run": 35374048705,
     "standard_status": "success",
     "PA10_T_sh_formula_executable": True,
-    "selected_B0_C0_envelope_numerically_checked": True,
     "source_B0_analytic_bound_proved": False,
     "source_T_sh_lower_bound_verified": False,
     "source_outer_pressure_datum_bound": False,
-    "actual_source_incoming_five_moment_discrepancy_bound": False,
     "inner_to_outer_join_completed": False,
     "global_pressure_matched": False,
     "global_leading_profile_reconstructed": False,
@@ -89,21 +88,31 @@ AGENT3_RECEIPT = {
     "consumed_in_executable_ancestry": False,
 }
 
-AGENT4_FAILED_AUDIT_RECEIPT = {
+AGENT4_RECEIPT = {
     "pr": 451,
-    "head": "c314771d90a7d67c447526320ec91be2e4908bd9",
-    "dedicated_run": 35376636412,
-    "standard_run": 35376636366,
-    "dedicated_status": "failure",
-    "standard_status": "failure",
-    "focused_tests_passed_before_error": 7,
-    "focused_tests_errors": 3,
-    "scientific_report_generated": False,
+    "head": "3e8170bde17cfeee5189e453f304388e65564931",
+    "dedicated_run": 35377042248,
+    "standard_run": 35377042241,
+    "dedicated_status": "success",
+    "standard_status_at_routing_audit": "in_progress",
+    "artifact_id": 10560697796,
+    "artifact_digest": "sha256:9accb9aa62709d6cd865574e6e01f7d199d7150c9a1ebd447a8b936c4b2b7c17",
+    "scientific_report_generated": True,
+    "source_schedule_max_relative_error": 1.4432899320127035e-14,
+    "cartesian_curl_relative_rms": [8.601710891e-4, 5.910638257e-5, 3.789822318e-6],
+    "curl_refinement_ratios": [14.55293069, 15.59608277],
+    "normalized_divergence_rms": [1.174437055e-3, 8.397047230e-5, 5.450640031e-6],
+    "divergence_refinement_ratios": [13.98630999, 15.40561692],
+    "finest_normalized_divergence_point_max": 2.157397612e-5,
+    "shared_first_band_schedule_mutation_relative_rms": 0.5546591826,
+    "reversed_label_schedule_mutation_relative_rms": 1.1243576802,
+    "numeric_guards_passed": True,
+    "simultaneous_beta_permutation_rejections": 12,
+    "simultaneous_beta_permutation_points": 36,
+    "permutation_max_relative_change_where_evaluable": 1.6259252002601664e-16,
+    "local_structural_preflight_passed": False,
+    "failure_classification": "public_contract_summation_order_invariance_failure",
     "formal_full_domain_pde_gate_assessed": False,
-    "failure_phase": "mutation_control_report_construction",
-    "failure_exception": "RuntimeError: band aggregation does not reproduce the total Cartesian correction",
-    "failure_interpretation": "the swapped-label mutation violated Agent-2 label/data binding and was rejected by the public fail-closed aggregation invariant before frozen curl/divergence guards ran",
-    "scientific_preflight_status": "not_assessed_due_to_contract_mismatch",
     "pde_validated": False,
 }
 
@@ -116,7 +125,7 @@ FROZEN_AGENT4_LOCAL_GUARDS = {
     "divergence_refinement_ratio_min": 3.0,
     "shared_first_band_schedule_mutation_relative_rms_min": 0.10,
     "label_schedule_swap_mutation_relative_rms_min": 0.10,
-    "changed_after_failure": False,
+    "changed_after_result": False,
 }
 
 PREVIOUS_AGENT5_RECEIPT = {
@@ -141,14 +150,6 @@ ST006_BASELINE = {
 CANDIDATE_ARTIFACT_CONTRACT = {
     "schema_reserved": "kokuno-derived-3d-candidate-v1",
     "instantiated": False,
-    "required_provenance": [
-        "source repository/version/commit",
-        "repository-autonomous choices",
-        "Agent-1 leading receipt",
-        "Agent-2 oscillatory receipt",
-        "Agent-3 correction receipt",
-        "Agent-4 independent validation receipt",
-    ],
     "required_public_api": [
         "velocity(x,y,z,t)->[u,v,w]",
         "pressure(x,y,z,t)",
@@ -171,7 +172,8 @@ def build_checkpoint() -> dict[str, Any]:
     states = {
         "leading_ready": False,
         "source_scheduled_multiband_supplied_mode_interface_ready": True,
-        "source_multiband_independent_cartesian_audit_assessed": False,
+        "source_multiband_independent_cartesian_numeric_guards_passed": True,
+        "source_multiband_public_contract_structural_preflight_passed": False,
         "source_multiband_independent_cartesian_audit_passed": False,
         "actual_positive_order_background_bound": False,
         "actual_auxiliary_torus_mode_family_bound": False,
@@ -189,28 +191,29 @@ def build_checkpoint() -> dict[str, Any]:
         "blowup_proved": False,
     }
     pipeline = [
-        {"stage": "source_profile_ingest", "ready": False, "status": "displayed source constants/schedules and autonomous support geometry are executable; hidden positive-order/background data remain unbound"},
-        {"stage": "leading_candidate", "ready": False, "status": "PA.10 T_sh formula is executable but analytic B0/source pressure datum/complete join/global pressure remain open"},
-        {"stage": "oscillatory_augmentation", "ready": False, "status": "first source-scheduled >=2-band supplied-mode interface exists; independent audit #451 stopped at a label/data mutation contract mismatch before scientific guards"},
-        {"stage": "mean_radial_corrections", "ready": False, "status": "joint damping margin is green on the prior one-band negative control; no actual multiband rank-two receipt exists"},
-        {"stage": "finite_correction_cycle", "ready": False, "status": "blocked until an independently audited actual multiband family passes genuine rank/unit/budget/spacetime/radial/quadratic guards"},
+        {"stage": "source_profile_ingest", "ready": False, "status": "source constants/schedules and autonomous support geometry are executable; hidden positive-order/background data remain unbound"},
+        {"stage": "leading_candidate", "ready": False, "status": "PA.10 T_sh formula executable; analytic B0/source pressure datum/complete join/global pressure remain open"},
+        {"stage": "oscillatory_augmentation", "ready": False, "status": "independent curl/divergence/mutation numerics pass, but simultaneous beta permutation exposes a public aggregation-order invariant failure at 12/36 held-out points"},
+        {"stage": "mean_radial_corrections", "ready": False, "status": "joint damping margin is green only on prior one-band negative control; actual audited multiband rank-two receipt absent"},
+        {"stage": "finite_correction_cycle", "ready": False, "status": "blocked until actual multiband family passes structural API, genuine rank, unit/budget/spacetime/radial/quadratic guards"},
         {"stage": "candidate_artifact", "ready": False, "status": "schema reserved, not instantiated"},
-        {"stage": "independent_validation", "ready": False, "status": "Agent-4 #451 is an infrastructure/API mismatch, not a scientific pass or rejection; no global candidate exists for the formal PDE gate"},
-        {"stage": "report_and_export", "ready": False, "status": "blocked until a frozen candidate artifact exists"},
+        {"stage": "independent_validation", "ready": False, "status": "Agent-4 local multiband audit is a structural REJECT; no global candidate exists for formal PDE gate"},
+        {"stage": "report_and_export", "ready": False, "status": "blocked until frozen candidate artifact exists"},
     ]
     routing = {
-        "new_fact": "Agent 2 #450 is the first current source-scheduled multi-band supplied-mode family with distinct dyadic ell bands and per-band Q/epsilon. Agent 4 #451 attempted an independent Cartesian audit, but its swapped-label mutation violated Agent-2 label/data binding and the public family correctly failed closed before the frozen numerical guards could be evaluated.",
-        "classification": "integration_contract_mismatch_before_scientific_assessment",
+        "new_fact": "Agent 4 #451 independently clears every frozen source-schedule/curl/divergence/mutation numerical guard on Agent 2 #450, but a semantically identical simultaneous beta-data + beta-label permutation is rejected at 12/36 held-out points. Where evaluable, the field changes only 1.63e-16, so the mathematical field is permutation invariant while the public aggregation check is not.",
+        "classification": "local_structural_reject_after_numeric_guards_pass",
         "shortest_next_closure": [
-            "Agent 4: keep every #451 frozen numerical guard unchanged and replace only the invalid swapped-label mutation construction with an in-contract perturbation that returns a numeric altered field; rerun the same fresh-point FD4 audit. Do not reinterpret the present exception as satisfying the preregistered >=0.10 numeric mutation threshold.",
-            "Agent 2: after that audit passes, bind provenance-labelled positive-order/background and actual auxiliary-torus mode data to the already source-scheduled multi-band interface and expose public Q-scaled by-beta/total velocity(x,y,z,t) with explicit coefficient units.",
-            "Agent 3: consume the exact audited physical family and require genuine rank-two plus unchanged unit/budget/spacetime/radial/quadratic guards before materializing correction or rerunning the finite correction cycle.",
-            "Agent 1: close source pressure datum, analytic/validated T_sh requirements, full inner-to-outer join and global matched pressure under fixed/restricted forcing.",
-            "Agent 5: instantiate deterministic candidate artifact/save-load/Python-MATLAB smoke only when leading, oscillatory and correction lanes coexist in one executable ancestry; then hand the frozen artifact to Agent 4 for the formal held-out PDE gate and same-protocol ST006 comparison.",
+            "Agent 2: make cart_total and by-band aggregation use deterministic identical summation/order (or an algebraically identical ordered check) so simultaneous beta permutation is invariant; do not inflate the absolute 2e-12 tolerance after observing the failure.",
+            "Agent 4: rerun the exact same #451 independent audit and frozen guards against that API-only fix; only a structural PASS clears this seam.",
+            "Agent 2: after structural PASS, bind provenance-labelled positive-order/background and actual auxiliary-torus mode data and expose public Q-scaled by-beta/total velocity(x,y,z,t) with explicit coefficient units.",
+            "Agent 3: consume that exact audited physical family and require genuine rank-two plus unchanged unit/budget/spacetime/radial/quadratic guards before correction materialization or finite-cycle rerun.",
+            "Agent 1: close source pressure datum, validated T_sh/inner-to-outer join and global matched pressure under fixed/restricted forcing.",
+            "Agent 5: instantiate deterministic candidate artifact/save-load/Python-MATLAB smoke only after leading, oscillatory and correction lanes coexist; then hand frozen artifact to Agent 4 for formal held-out PDE gate and same-protocol ST006 comparison.",
         ],
         "do_not_do": [
-            "do not weaken or rewrite Agent-4 frozen thresholds after the failed run",
-            "do not count a fail-closed exception as the preregistered numeric mutation >=0.10 success",
+            "do not relax Agent-2 aggregation tolerance merely to make the permutation test green",
+            "do not promote passing local curl/divergence guards to oscillatory_ready or PDE validation",
             "do not call manufactured supplied-mode data recovered Kokuno source data",
             "do not infer genuine covariance rank from multiple dyadic band labels",
             "do not relax the 1e-3 momentum or 1e-5 divergence gates",
@@ -226,7 +229,7 @@ def build_checkpoint() -> dict[str, Any]:
             "agent1": AGENT1_RECEIPT,
             "agent2": AGENT2_RECEIPT,
             "agent3": AGENT3_RECEIPT,
-            "agent4_failed_audit": AGENT4_FAILED_AUDIT_RECEIPT,
+            "agent4": AGENT4_RECEIPT,
             "previous_agent5": PREVIOUS_AGENT5_RECEIPT,
         },
         "states": states,
@@ -256,11 +259,10 @@ def validate_checkpoint(payload: dict[str, Any]) -> None:
         raise ValueError("wrong Agent-5 checkpoint identity")
     if payload.get("checkpoint_sha256") != checkpoint_sha256(payload):
         raise ValueError("checkpoint sha256 mismatch")
-
-    states = payload["states"]
+    s = payload["states"]
     hard_false = (
         "leading_ready",
-        "source_multiband_independent_cartesian_audit_assessed",
+        "source_multiband_public_contract_structural_preflight_passed",
         "source_multiband_independent_cartesian_audit_passed",
         "actual_positive_order_background_bound",
         "actual_auxiliary_torus_mode_family_bound",
@@ -277,10 +279,10 @@ def validate_checkpoint(payload: dict[str, Any]) -> None:
         "openai_field_identified",
         "blowup_proved",
     )
-    if any(states[name] for name in hard_false):
+    if any(s[name] for name in hard_false):
         raise ValueError("fail-closed state was promoted without evidence")
-    if not states["source_scheduled_multiband_supplied_mode_interface_ready"]:
-        raise ValueError("stable Agent-2 multiband interface receipt was lost")
+    if not s["source_scheduled_multiband_supplied_mode_interface_ready"] or not s["source_multiband_independent_cartesian_numeric_guards_passed"]:
+        raise ValueError("stable multiband numerical receipt was lost")
 
     a2 = payload["upstream"]["agent2"]
     if a2["dedicated_status"] != "success" or a2["standard_status"] != "success":
@@ -288,15 +290,14 @@ def validate_checkpoint(payload: dict[str, Any]) -> None:
     if a2["actual_positive_order_background_bound"] or a2["actual_auxiliary_torus_mode_family_bound"]:
         raise ValueError("manufactured supplied-mode interface was promoted to source-bound data")
 
-    a4 = payload["upstream"]["agent4_failed_audit"]
-    if a4["dedicated_status"] != "failure" or a4["standard_status"] != "failure":
-        raise ValueError("Agent-4 failed CI receipt changed")
-    if a4["scientific_report_generated"] or a4["formal_full_domain_pde_gate_assessed"]:
-        raise ValueError("failed pre-report audit was promoted to scientific assessment")
-    if a4["scientific_preflight_status"] != "not_assessed_due_to_contract_mismatch":
-        raise ValueError("Agent-4 failure classification changed")
+    a4 = payload["upstream"]["agent4"]
+    if a4["dedicated_status"] != "success" or not a4["scientific_report_generated"] or not a4["numeric_guards_passed"]:
+        raise ValueError("Agent-4 numerical audit receipt is not stable")
+    if a4["local_structural_preflight_passed"] or a4["simultaneous_beta_permutation_rejections"] != 12:
+        raise ValueError("Agent-4 structural rejection was lost")
+    if a4["formal_full_domain_pde_gate_assessed"]:
+        raise ValueError("local audit was promoted to formal PDE assessment")
 
-    local = payload["agent4_frozen_local_guards"]
     expected_local = {
         "source_schedule_relative_error_max": 5.0e-14,
         "finest_cartesian_curl_relative_rms_max": 2.0e-5,
@@ -306,10 +307,10 @@ def validate_checkpoint(payload: dict[str, Any]) -> None:
         "divergence_refinement_ratio_min": 3.0,
         "shared_first_band_schedule_mutation_relative_rms_min": 0.10,
         "label_schedule_swap_mutation_relative_rms_min": 0.10,
-        "changed_after_failure": False,
+        "changed_after_result": False,
     }
-    if local != expected_local:
-        raise ValueError("Agent-4 frozen local guards changed after failure")
+    if payload["agent4_frozen_local_guards"] != expected_local:
+        raise ValueError("Agent-4 frozen local guards changed after result")
 
     gates = payload["formal_gates"]
     if gates != {
@@ -320,7 +321,6 @@ def validate_checkpoint(payload: dict[str, Any]) -> None:
         "changed_this_round": False,
     }:
         raise ValueError("formal PDE gates changed")
-
     baseline = payload["baseline_vs_kokuno"]["st006"]
     if baseline["momentum_sampled_max"] != 0.1082289305112118 or baseline["momentum_volume_l2"] != 0.10758432876230622:
         raise ValueError("ST006 baseline changed")
