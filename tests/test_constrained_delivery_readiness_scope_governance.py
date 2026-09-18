@@ -30,7 +30,8 @@ def test_delivery_readiness_scope_contract_passes_current_live_state():
     assert result["sampled_grid_has_separate_readiness_scope"] is True
     assert result["pr476_unqualified_readiness_claim_contract_compatible"] is False
     assert result["pr476_candidate_velocity_export_ready"] is False
-    assert result["pr476_sampled_grid_export_ready"] == "pending_exact_source_ci"
+    assert result["pr476_sampled_grid_export_ready"] is True
+    assert result["pr476_exact_source_workflow_run"] == 35389278384
     assert result["canonical_velocity_export_ready"] is True
     assert result["canonical_thresholds_unchanged"] is True
     assert result["pde_validated"] is False
@@ -86,16 +87,27 @@ def test_open_grid_export_cannot_replace_canonical_candidate_or_api():
         audit_delivery_readiness_scope(bad, delivery_state, grid_identity, constraints, project_status)
 
 
-def test_cr001_thresholds_and_scientific_truth_states_cannot_be_laundered():
+def test_successful_grid_ci_still_cannot_promote_candidate_or_science_states():
     contract, delivery_state, grid_identity, constraints, project_status = _inputs()
+    assert contract["truth_boundary"]["pr476_sampled_grid_export_ready"] is True
+    assert contract["truth_boundary"]["pr476_candidate_velocity_export_ready"] is False
+
     bad = deepcopy(contract)
-    bad["canonical_cr001"]["pde_residual_max"] = 0.01
-    with pytest.raises(ValueError, match="PDE max"):
+    bad["observed_pr476"]["grid_success_may_promote_candidate_velocity_export_ready"] = True
+    with pytest.raises(ValueError, match="grid_success_may_promote_candidate_velocity_export_ready"):
         audit_delivery_readiness_scope(bad, delivery_state, grid_identity, constraints, project_status)
 
     bad = deepcopy(contract)
     bad["truth_boundary"]["pde_validated"] = True
     with pytest.raises(ValueError, match="contract truth pde_validated"):
+        audit_delivery_readiness_scope(bad, delivery_state, grid_identity, constraints, project_status)
+
+
+def test_cr001_thresholds_and_source_classes_cannot_be_laundered():
+    contract, delivery_state, grid_identity, constraints, project_status = _inputs()
+    bad = deepcopy(contract)
+    bad["canonical_cr001"]["pde_residual_max"] = 0.01
+    with pytest.raises(ValueError, match="PDE max"):
         audit_delivery_readiness_scope(bad, delivery_state, grid_identity, constraints, project_status)
 
     bad = deepcopy(contract)
