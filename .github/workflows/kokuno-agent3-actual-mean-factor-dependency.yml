@@ -1,0 +1,46 @@
+name: kokuno-agent3-actual-mean-factor-dependency
+
+on:
+  push:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_actual_mean_factor_dependency.py'
+      - 'src/openai_ns_reconstruction/kokuno_actual_signed_mean_correction_gate.py'
+      - 'src/openai_ns_reconstruction/actual_signed_mean_defect.py'
+      - 'tests/test_actual_signed_mean_defect.py'
+      - 'tests/test_constrained_kokuno_actual_signed_mean_correction_gate.py'
+      - 'tests/test_constrained_kokuno_actual_mean_factor_dependency.py'
+      - '.github/workflows/kokuno-agent3-actual-mean-factor-dependency.yml'
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_actual_mean_factor_dependency.py'
+      - 'src/openai_ns_reconstruction/kokuno_actual_signed_mean_correction_gate.py'
+      - 'src/openai_ns_reconstruction/actual_signed_mean_defect.py'
+      - 'tests/test_actual_signed_mean_defect.py'
+      - 'tests/test_constrained_kokuno_actual_signed_mean_correction_gate.py'
+      - 'tests/test_constrained_kokuno_actual_mean_factor_dependency.py'
+      - '.github/workflows/kokuno-agent3-actual-mean-factor-dependency.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  actual-mean-factor-dependency:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Focused formal mean-factor and readiness tests
+        run: >-
+          python -m pytest -q -s -W error
+          tests/test_actual_signed_mean_defect.py
+          tests/test_constrained_kokuno_actual_signed_mean_correction_gate.py
+          tests/test_constrained_kokuno_actual_mean_factor_dependency.py
+      - name: Compile mean-factor dependency module
+        run: >-
+          python -m compileall -q
+          src/openai_ns_reconstruction/kokuno_actual_mean_factor_dependency.py
