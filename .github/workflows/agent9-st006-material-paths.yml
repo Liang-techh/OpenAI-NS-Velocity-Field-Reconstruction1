@@ -8,6 +8,7 @@ on:
       - '.github/workflows/agent9-st006-material-paths.yml'
 permissions:
   contents: read
+  pull-requests: write
 jobs:
   focused-audit:
     runs-on: ubuntu-latest
@@ -61,7 +62,13 @@ jobs:
           }
           print(json.dumps(summary, indent=2))
           print('::notice title=ST006 material path summary::' + json.dumps(summary, sort_keys=True, separators=(',', ':')))
+          lines=['<!-- CR-A9-040-ST006-MATERIAL-PATHS -->','### CR-A9-040 exact-head ST006 material-path receipt','',f"`head={__import__('os').environ['GITHUB_SHA']}`",'', '```json',json.dumps(summary,indent=2,sort_keys=True),'```','', 'Candidate-side kinematics only. This comment is not PDE validation or OpenAI-field identification.']
+          Path('outputs/ST006_material_paths_summary.md').write_text('\n'.join(lines)+'\n')
           PY
+      - name: Publish exact-head measurement receipt
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh pr comment "${{ github.event.pull_request.number }}" --repo "$GITHUB_REPOSITORY" --body-file outputs/ST006_material_paths_summary.md
       - uses: actions/upload-artifact@v4
         with:
           name: ST006-material-paths
