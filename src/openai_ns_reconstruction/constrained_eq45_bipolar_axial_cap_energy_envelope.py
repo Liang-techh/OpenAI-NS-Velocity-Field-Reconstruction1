@@ -28,6 +28,7 @@ from .constrained_eq45_bipolar_axial_cap_poloidal_capacity import (
 
 TASK_ID = "CR003-BIPOLAR-AXIAL-CAP-ENERGY-ENVELOPE-046"
 PREVIOUS_CAPACITY_TRIAL = 0.25
+MORPHOLOGY_ZERO_TOLERANCE = 1.0e-12
 TRUTH_BOUNDARY = {
     "velocity_changed": False,
     "candidate_artifact_changed": False,
@@ -226,10 +227,25 @@ def audit_axial_cap_energy_envelope(
         base = float(baseline[key])
         envelope_max = max(float(morphology["minus_envelope"][key]), float(morphology["plus_envelope"][key]))
         trial_max = max(float(morphology["minus_capacity_trial"][key]), float(morphology["plus_capacity_trial"][key]))
+        gain = float(envelope_max - base)
         morphology[f"baseline_q{percentile}_over_Zp"] = base
         morphology[f"energy_envelope_max_q{percentile}_over_Zp"] = envelope_max
         morphology[f"capacity_trial_max_q{percentile}_over_Zp"] = trial_max
-        morphology[f"energy_envelope_q{percentile}_moved_on_this_grid"] = bool(envelope_max != base)
+        morphology[f"energy_envelope_q{percentile}_absolute_gain_over_Zp"] = gain
+        morphology[f"energy_envelope_q{percentile}_moved_on_this_grid"] = bool(abs(gain) > MORPHOLOGY_ZERO_TOLERANCE)
+
+    baseline_axial = float(baseline["axial_rms_over_Zp"])
+    envelope_axial = max(float(morphology["minus_envelope"]["axial_rms_over_Zp"]),
+                         float(morphology["plus_envelope"]["axial_rms_over_Zp"]))
+    morphology["energy_envelope_max_axial_rms_relative_gain"] = float(envelope_axial / baseline_axial - 1.0)
+    baseline_outer065 = float(baseline["outer_065_enstrophy_fraction"])
+    baseline_outer075 = float(baseline["outer_075_enstrophy_fraction"])
+    envelope_outer065 = max(float(morphology["minus_envelope"]["outer_065_enstrophy_fraction"]),
+                            float(morphology["plus_envelope"]["outer_065_enstrophy_fraction"]))
+    envelope_outer075 = max(float(morphology["minus_envelope"]["outer_075_enstrophy_fraction"]),
+                            float(morphology["plus_envelope"]["outer_075_enstrophy_fraction"]))
+    morphology["energy_envelope_outer_065_enstrophy_gain_ratio"] = float(envelope_outer065 / baseline_outer065)
+    morphology["energy_envelope_outer_075_enstrophy_gain_ratio"] = float(envelope_outer075 / baseline_outer075)
 
     return {
         "task_id": TASK_ID,
