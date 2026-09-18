@@ -15,13 +15,15 @@ def test_checkpoint_is_deterministic_and_fail_closed():
     assert first == second
     validate_checkpoint(first)
     assert first["checkpoint_sha256"] == checkpoint_sha256(first)
-    assert first["states"]["source_scheduled_multiband_supplied_mode_interface_ready"]
-    assert not first["states"]["source_multiband_independent_cartesian_audit_assessed"]
-    assert not first["states"]["source_multiband_independent_cartesian_audit_passed"]
-    assert not first["states"]["oscillatory_ready"]
-    assert not first["states"]["correction_ready"]
-    assert not first["states"]["candidate_artifact_instantiated"]
-    assert not first["states"]["pde_validated"]
+    states = first["states"]
+    assert states["source_scheduled_multiband_supplied_mode_interface_ready"]
+    assert states["source_multiband_independent_cartesian_numeric_guards_passed"]
+    assert not states["source_multiband_public_contract_structural_preflight_passed"]
+    assert not states["source_multiband_independent_cartesian_audit_passed"]
+    assert not states["oscillatory_ready"]
+    assert not states["correction_ready"]
+    assert not states["candidate_artifact_instantiated"]
+    assert not states["pde_validated"]
 
 
 def test_agent2_receipt_is_green_but_not_source_bound():
@@ -34,28 +36,35 @@ def test_agent2_receipt_is_green_but_not_source_bound():
     assert a2["source_scheduled_multiband_supplied_mode_family_executable"]
     assert a2["requires_two_distinct_ell_bands"]
     assert a2["per_band_Q_epsilon_schedule_bound"]
-    assert a2["by_beta_cartesian_columns_exposed"]
-    assert a2["by_band_cartesian_columns_exposed"]
     assert not a2["actual_positive_order_background_bound"]
     assert not a2["actual_auxiliary_torus_mode_family_bound"]
     assert not a2["public_source_bound_xyz_t_velocity_ready"]
     assert not a2["genuinely_independent_second_covariance_column_ready"]
 
 
-def test_agent4_failure_is_contract_mismatch_not_scientific_verdict():
+def test_agent4_numeric_guards_pass_but_structural_preflight_rejects():
     payload = build_checkpoint()
-    a4 = payload["upstream"]["agent4_failed_audit"]
+    a4 = payload["upstream"]["agent4"]
     assert a4["pr"] == 451
-    assert a4["dedicated_run"] == 35376636412
-    assert a4["standard_run"] == 35376636366
-    assert a4["dedicated_status"] == "failure"
-    assert a4["standard_status"] == "failure"
-    assert a4["focused_tests_passed_before_error"] == 7
-    assert a4["focused_tests_errors"] == 3
-    assert not a4["scientific_report_generated"]
-    assert a4["failure_phase"] == "mutation_control_report_construction"
-    assert a4["scientific_preflight_status"] == "not_assessed_due_to_contract_mismatch"
-    assert "band aggregation does not reproduce" in a4["failure_exception"]
+    assert a4["head"] == "3e8170bde17cfeee5189e453f304388e65564931"
+    assert a4["dedicated_run"] == 35377042248
+    assert a4["dedicated_status"] == "success"
+    assert a4["scientific_report_generated"]
+    assert a4["numeric_guards_passed"]
+    assert a4["source_schedule_max_relative_error"] <= 5.0e-14
+    assert a4["cartesian_curl_relative_rms"][-1] <= 2.0e-5
+    assert min(a4["curl_refinement_ratios"]) >= 4.0
+    assert a4["normalized_divergence_rms"][-1] <= 2.0e-5
+    assert a4["finest_normalized_divergence_point_max"] <= 8.0e-5
+    assert min(a4["divergence_refinement_ratios"]) >= 3.0
+    assert a4["shared_first_band_schedule_mutation_relative_rms"] >= 0.10
+    assert a4["reversed_label_schedule_mutation_relative_rms"] >= 0.10
+    assert a4["simultaneous_beta_permutation_rejections"] == 12
+    assert a4["simultaneous_beta_permutation_points"] == 36
+    assert a4["permutation_max_relative_change_where_evaluable"] < 2.0e-15
+    assert not a4["local_structural_preflight_passed"]
+    assert a4["failure_classification"] == "public_contract_summation_order_invariance_failure"
+    assert not a4["formal_full_domain_pde_gate_assessed"]
 
 
 def test_agent4_frozen_guards_are_retained_verbatim():
@@ -69,7 +78,7 @@ def test_agent4_frozen_guards_are_retained_verbatim():
     assert guards["divergence_refinement_ratio_min"] == 3.0
     assert guards["shared_first_band_schedule_mutation_relative_rms_min"] == 0.10
     assert guards["label_schedule_swap_mutation_relative_rms_min"] == 0.10
-    assert not guards["changed_after_failure"]
+    assert not guards["changed_after_result"]
 
 
 def test_formal_gates_and_st006_baseline_are_unchanged():
@@ -90,19 +99,19 @@ def test_validator_rejects_posthoc_guard_or_truth_promotion():
     payload = build_checkpoint()
 
     bad = copy.deepcopy(payload)
-    bad["states"]["source_multiband_independent_cartesian_audit_passed"] = True
+    bad["states"]["source_multiband_public_contract_structural_preflight_passed"] = True
     bad["checkpoint_sha256"] = checkpoint_sha256(bad)
     with pytest.raises(ValueError, match="fail-closed"):
         validate_checkpoint(bad)
 
     bad = copy.deepcopy(payload)
-    bad["upstream"]["agent4_failed_audit"]["scientific_report_generated"] = True
+    bad["upstream"]["agent4"]["local_structural_preflight_passed"] = True
     bad["checkpoint_sha256"] = checkpoint_sha256(bad)
-    with pytest.raises(ValueError, match="scientific assessment"):
+    with pytest.raises(ValueError, match="structural rejection"):
         validate_checkpoint(bad)
 
     bad = copy.deepcopy(payload)
-    bad["agent4_frozen_local_guards"]["label_schedule_swap_mutation_relative_rms_min"] = 0.0
+    bad["agent4_frozen_local_guards"]["finest_cartesian_curl_relative_rms_max"] = 1.0e-4
     bad["checkpoint_sha256"] = checkpoint_sha256(bad)
     with pytest.raises(ValueError, match="frozen local guards"):
         validate_checkpoint(bad)
