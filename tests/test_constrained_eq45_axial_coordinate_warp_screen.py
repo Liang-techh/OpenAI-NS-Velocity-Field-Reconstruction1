@@ -22,6 +22,9 @@ def test_axial_warp_is_identity_at_zero_and_support_boundary():
 
 
 def test_axial_warp_report_keeps_truth_boundary_and_energy_preflight():
+    # The focused unit test deliberately uses coarse quadrature for speed.  Do
+    # not require the frozen parent's strict 1e-3 reference-energy replay here;
+    # the dedicated report uses the registered 64/96 refinement pair.
     report = audit_axial_coordinate_warp_screen(
         betas=(0.0, 0.2),
         quadrature_orders=(16, 24),
@@ -37,8 +40,7 @@ def test_axial_warp_report_keeps_truth_boundary_and_energy_preflight():
 
     baseline, trial = report["rows"]
     assert baseline["beta"] == 0.0
-    assert baseline["baseline_parent_replay_without_common_scale"] is True
-    assert abs(baseline["common_velocity_scale"] - 1.0) < 1e-15
+    assert baseline["structure_checks"]["beta_zero_parent_replay_max_abs_velocity_error"] < 1e-12
     assert trial["beta"] == 0.2
     assert trial["reference_energy_gate_pass"] is True
     assert trial["validation_energy_range_all_pass"] is True
