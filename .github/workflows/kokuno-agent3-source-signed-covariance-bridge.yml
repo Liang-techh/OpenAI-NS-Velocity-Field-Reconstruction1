@@ -1,0 +1,37 @@
+name: kokuno-agent3-source-signed-covariance-bridge
+
+on:
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_source_signed_covariance_pair.py"
+      - "src/openai_ns_reconstruction/kokuno_source_signed_covariance_bridge.py"
+      - "tests/test_constrained_kokuno_source_signed_covariance_pair.py"
+      - "tests/test_constrained_kokuno_source_signed_covariance_bridge.py"
+      - ".github/workflows/kokuno-agent3-source-signed-covariance-bridge.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-signed-covariance-bridge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+      - name: Compile source-facing signed inverse and Agent-3 bridge
+        run: >-
+          python -m py_compile
+          src/openai_ns_reconstruction/kokuno_source_signed_covariance_pair.py
+          src/openai_ns_reconstruction/kokuno_source_signed_covariance_bridge.py
+      - name: Run focused warnings-as-errors tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_source_signed_covariance_pair.py
+          tests/test_constrained_kokuno_source_signed_covariance_bridge.py
+      - name: Emit deterministic structural receipt
+        run: python -m openai_ns_reconstruction.kokuno_source_signed_covariance_bridge
