@@ -9,11 +9,25 @@ from openai_ns_reconstruction.kokuno_rescaled_appendix_b_boundary import (
     X_I,
     KokunoSourceRescaledAppendixBBoundary,
 )
+from openai_ns_reconstruction.kokuno_rescaled_appendix_b_selected import (
+    make_source_scale_aware_appendix_b_boundary,
+    selected_kappa0_relation,
+)
 
 
 @pytest.fixture(scope="module")
 def candidate():
-    return KokunoSourceRescaledAppendixBBoundary(max_step=0.5)
+    return make_source_scale_aware_appendix_b_boundary(max_step=0.5)
+
+
+def test_selected_pressure_path_uses_explicit_scale_aware_kappa(candidate):
+    relation = selected_kappa0_relation(candidate)
+    assert relation["source_hidden_numeric_choice_recovered"] is False
+    assert relation["kappa0_lambda_multiplier"] == pytest.approx(1.0, rel=2.0e-15)
+    assert relation["kappa0"] == pytest.approx(
+        1.0 / relation["rescaling_lambda"], rel=2.0e-15
+    )
+    assert relation["kappa0"] < 1.0e-20
 
 
 def test_selected_pressure_path_hands_off_exactly_from_rescaled_reference(candidate):
@@ -38,6 +52,7 @@ def test_xi_boundary_is_log_stable_and_reaches_public_final_slopes(candidate):
     )
     assert float(boundary["radial_log_slope_U_i"][0]) == pytest.approx(0.0, abs=1.0e-12)
     assert abs(float(boundary["G_i"][0])) > 1.0e-6
+    assert abs(float(boundary["log_F_i"][0])) < 10.0
     assert candidate.log_C > 1.0e10
     reconstructed = (
         candidate.log_C
