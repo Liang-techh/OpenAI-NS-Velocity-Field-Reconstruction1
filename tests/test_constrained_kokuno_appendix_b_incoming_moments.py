@@ -28,11 +28,23 @@ def test_selected_appendix_b_prefix_moments_are_finite_nontrivial_and_match_Xi_b
 
     truth = moments.to_payload()["truth_boundary"]
     assert truth["selected_appendix_B_prefix_moments_executable"] is True
-    assert truth["source_PA15_scaled_incoming_discrepancy_executable"] is True
+    assert truth["selected_PA15_scaled_incoming_discrepancy_executable"] is True
+    assert truth["source_outer_pressure_datum_bound"] is False
+    assert truth["actual_source_incoming_five_moment_discrepancy_bound"] is False
     assert truth["source_T_sh_lower_bound_verified"] is False
     assert truth["inner_to_outer_join_completed"] is False
     assert truth["pde_validated"] is False
     assert truth["paper_exact"] is False
+
+
+def test_selected_pressure_datum_is_explicitly_not_bound_to_outer_source_scale():
+    moments = KokunoAppendixBIncomingMoments(axis_quadrature_points=64)
+    report = moments.pressure_datum_report()
+    assert report["source_outer_pressure_datum_bound"] is False
+    assert report["actual_source_incoming_five_moment_discrepancy_bound"] is False
+    assert report["selected_reference_pressure_scale"] == pytest.approx(1.0)
+    assert report["required_source_lower_bound_for_reference_ansatz"] > 1e10
+    assert 0.0 < report["selected_to_required_ratio"] < 1e-10
 
 
 def test_axis_quadrature_refinement_stabilizes_incoming_target():
@@ -62,12 +74,12 @@ def test_ideal_prefix_is_analytic_and_vectorized_discrepancy_has_PA15_row_shape(
     np.testing.assert_allclose(discrepancy[2], scalar, rtol=0.0, atol=0.0)
 
 
-def test_real_incoming_target_routes_additively_into_existing_PA16_pre_repair_map():
+def test_selected_incoming_target_routes_additively_into_existing_PA16_pre_repair_map():
     moments = KokunoAppendixBIncomingMoments(axis_quadrature_points=64)
     receipt = moments.result_at_eta(0.2)
     join = KokunoInnerJoinExit(T_sh=1.0, outer_schedule=moments.outer_schedule)
     incoming = np.asarray(receipt.incoming_scaled_discrepancy)
-    pre_real = join.pre_repair_scaled_discrepancy(
+    pre_selected = join.pre_repair_scaled_discrepancy(
         eta=receipt.eta,
         ell_i=receipt.ell_i,
         G_i=receipt.G_i,
@@ -79,7 +91,7 @@ def test_real_incoming_target_routes_additively_into_existing_PA16_pre_repair_ma
         G_i=receipt.G_i,
         incoming_scaled_discrepancy=np.zeros(5),
     )
-    np.testing.assert_allclose(pre_real - pre_zero, incoming, rtol=3e-8, atol=3e-10)
+    np.testing.assert_allclose(pre_selected - pre_zero, incoming, rtol=3e-8, atol=3e-10)
 
 
 def test_payload_roundtrip_and_truth_tamper_fail_closed(tmp_path):
