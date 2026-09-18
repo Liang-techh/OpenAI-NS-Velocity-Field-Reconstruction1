@@ -1,0 +1,44 @@
+name: kokuno-agent4-source-phase-independent-audit
+
+on:
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_agent4_source_phase_independent_audit.py"
+      - "tests/test_constrained_kokuno_agent4_source_phase_independent_audit.py"
+      - "src/openai_ns_reconstruction/kokuno_source_phase_bound_signed_curl.py"
+      - "src/openai_ns_reconstruction/kokuno_source_signed_complete_curl_family.py"
+      - "src/openai_ns_reconstruction/kokuno_source_band_covering.py"
+      - ".github/workflows/kokuno-agent4-source-phase-independent-audit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  independent-source-phase-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+      - name: Compile independent audit
+        run: python -m py_compile src/openai_ns_reconstruction/kokuno_agent4_source_phase_independent_audit.py
+      - name: Run parent and independent focused tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_source_phase_bound_signed_curl.py
+          tests/test_constrained_kokuno_agent4_source_phase_independent_audit.py
+      - name: Generate independent receipt
+        run: >-
+          python -m openai_ns_reconstruction.kokuno_agent4_source_phase_independent_audit
+          --out outputs/kokuno_agent4_source_phase_independent_audit.json
+      - name: Print receipt
+        run: cat outputs/kokuno_agent4_source_phase_independent_audit.json
+      - name: Upload receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent4-source-phase-independent-audit-v1
+          path: outputs/kokuno_agent4_source_phase_independent_audit.json
