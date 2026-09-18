@@ -32,15 +32,21 @@ def test_checkpoint_records_resolution_of_parent_local_rejection(agent4_report: 
     assert audit["manufactured_structural_preflight_passed"] is True
     assert audit["source_wave_shell_preflight_assessed"] is False
     assert finest["step"] == pytest.approx(2.5e-4)
-    assert finest["curl_relative_rms"] == pytest.approx(2.1468147348041597e-10)
-    assert finest["divergence_max_abs"] == pytest.approx(1.3652247786009714e-08)
+    assert finest["curl_relative_rms"] == pytest.approx(2.1468147348041597e-10, rel=1.0e-3)
+    # Agent-4's independent FD4 receipt is reproducible at the scientific-guard
+    # scale but can move a few 1e-4 relatively across current NumPy/SciPy builds.
+    # Keep the actual 2e-4 scientific guard frozen; do not turn a historical
+    # floating value into a stricter accidental CI threshold.
+    assert finest["divergence_max_abs"] == pytest.approx(
+        1.3652247786009714e-08, rel=1.0e-3
+    )
     assert finest["regions"]["small_radius"]["divergence_max_abs"] == pytest.approx(
-        1.3652247786009714e-08
+        1.3652247786009714e-08, rel=1.0e-3
     )
     assert min(audit["refinement"]["curl_relative_rms_coarse_to_fine_ratios"]) > 15.9
     assert min(audit["refinement"]["divergence_rms_coarse_to_fine_ratios"]) > 15.9
     assert audit["mutation"]["mutated_divergence_max_abs"] == pytest.approx(
-        0.06275470589885247
+        0.06275470589885247, rel=1.0e-3
     )
 
 
