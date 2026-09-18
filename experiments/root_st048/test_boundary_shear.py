@@ -75,3 +75,40 @@ def test_random_time_operator_rejects_boundary_crossing(obj):
     from extra_audit import spacetime_fd
     with pytest.raises(ValueError,match='central time'):
         spacetime_fd(obj.m.f,obj.m.raw,np.zeros((1,3)),np.array([.25]))
+
+@pytest.mark.parametrize('ident',['ST048-S','ST048-B'])
+def test_frozen_recipe_replays_actual_reference_and_energy(ident):
+    from replay_st048 import reconstruct
+    from spacetime import quad
+    f,raw=reconstruct(ident);s,z,w=quad(96)
+    points=np.c_[np.sqrt(s),np.zeros(len(s)),z]
+    u,p=f.fields(raw,points,.25)
+    assert abs(.5*w@np.sum(u*u,axis=1)-1)<1e-7
+    assert np.isfinite(raw).all() and len(raw)==2594
+
+@pytest.mark.parametrize('key,value',[('pde_validated',True),('source_correspondence_verified',True),('parent_id','ST006')])
+def test_recipe_rejects_promoted_claim_or_wrong_parent(key,value):
+    import json
+    from replay_st048 import reconstruct,HERE
+    records=json.loads((HERE/'recipes.json').read_text())
+    records['ST048-B'][key]=value
+    with pytest.raises(ValueError,match='Wrong parent|unsupported scientific'):
+        reconstruct('ST048-B',records)
+
+
+def test_recipe_rejects_wrong_modifier_checksum():
+    import json
+    from replay_st048 import reconstruct,HERE
+    records=json.loads((HERE/'recipes.json').read_text())
+    records['ST048-S']['modifiers_sha256']='0'*64
+    with pytest.raises(ValueError,match='checksum'):
+        reconstruct('ST048-S',records)
+
+
+def test_parent_raw_tampering_rejected(tmp_path,monkeypatch):
+    import replay_st048 as replay
+    path=tmp_path/'artifacts/research/ST047-E/candidate.json'
+    path.parent.mkdir(parents=True);path.write_text('{}')
+    monkeypatch.setattr(replay,'ROOT',tmp_path)
+    with pytest.raises(ValueError,match='Parent raw checksum'):
+        replay.parent_field()
