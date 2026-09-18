@@ -1,0 +1,45 @@
+name: kokuno-agent5-high-precision-heat-handoff-routing
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_high_precision_heat_repair.py'
+      - 'src/openai_ns_reconstruction/kokuno_high_precision_heat_handoff_routing_checkpoint.py'
+      - 'tests/test_constrained_kokuno_high_precision_heat_repair.py'
+      - 'tests/test_constrained_kokuno_high_precision_heat_handoff_routing_checkpoint.py'
+      - '.github/workflows/kokuno-agent5-high-precision-heat-handoff-routing.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent5-high-precision-heat-handoff-routing-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checkpoint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Focused Agent-1/5 high-precision heat handoff tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_high_precision_heat_repair.py
+          tests/test_constrained_kokuno_high_precision_heat_handoff_routing_checkpoint.py
+      - name: Generate high-precision heat handoff routing bundle
+        run: >-
+          python -m openai_ns_reconstruction.kokuno_high_precision_heat_handoff_routing_checkpoint
+          --output-dir artifacts/kokuno_agent5/high_precision_heat_handoff_routing_checkpoint_v15
+      - name: Show receipt
+        run: cat artifacts/kokuno_agent5/high_precision_heat_handoff_routing_checkpoint_v15/high_precision_heat_handoff_routing_checkpoint.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-high-precision-heat-handoff-routing-checkpoint-v15
+          path: artifacts/kokuno_agent5/high_precision_heat_handoff_routing_checkpoint_v15
