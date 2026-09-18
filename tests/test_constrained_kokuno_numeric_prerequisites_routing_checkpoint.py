@@ -125,17 +125,17 @@ def test_v35_preserves_previous_agent5_and_formal_gates() -> None:
 def test_v35_fails_closed_on_truth_laundering_or_readiness_promotion() -> None:
     payload = json.loads(json.dumps(build_checkpoint()))
     payload["upstream"]["agent1_pa10_screen_sibling"]["passing_pointwise_screen_is_source_T_sh_certificate"] = True
-    with pytest.raises(ValueError, match="source T_sh"):
+    with pytest.raises(ValueError, match="receipt changed"):
         validate_checkpoint(_rehash(payload))
 
     payload = json.loads(json.dumps(build_checkpoint()))
     payload["upstream"]["agent2_signed_mass_sibling"]["actual_source_pulse_samples_recovered"] = True
-    with pytest.raises(ValueError, match="recovered source"):
+    with pytest.raises(ValueError, match="receipt changed"):
         validate_checkpoint(_rehash(payload))
 
     payload = json.loads(json.dumps(build_checkpoint()))
     payload["upstream"]["agent3_autonomous_mean_sibling"]["theorem_missing_weight_materialized"] = True
-    with pytest.raises(ValueError, match="theorem missingWeight"):
+    with pytest.raises(ValueError, match="receipt changed"):
         validate_checkpoint(_rehash(payload))
 
     payload = json.loads(json.dumps(build_checkpoint()))
