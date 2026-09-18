@@ -1,0 +1,81 @@
+name: agent7-st051b-piola-capacity
+
+on:
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/constrained_st051b_piola_capacity.py"
+      - "tests/test_constrained_st051b_piola_capacity.py"
+      - ".github/workflows/agent7-st051b-piola-capacity.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  capacity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout Agent 7 branch
+        uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install governed dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e . pytest
+
+      - name: Run focused warning-clean regressions
+        run: |
+          python -W error -m py_compile src/openai_ns_reconstruction/constrained_st051b_piola_capacity.py
+          python -W error -m pytest -q tests/test_constrained_st051b_piola_capacity.py
+
+      - name: Download immutable ST051-B .025 visualization grid
+        uses: actions/download-artifact@v4
+        with:
+          name: ST051-B-frozen-redistribution-visualization-grid
+          path: _source/grid_artifact
+          github-token: ${{ github.token }}
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          run-id: 35389278384
+
+      - name: Run one frozen Piola transfer screen
+        run: |
+          mkdir -p artifacts/agent7_st051b_piola
+          python -m openai_ns_reconstruction.constrained_st051b_piola_capacity \
+            --grid _source/grid_artifact/ST051-B-frozen-redistribution.nc \
+            --receipt _source/grid_artifact/ST051-B-frozen-redistribution-receipt.json \
+            --out artifacts/agent7_st051b_piola/report.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          report = json.loads(Path("artifacts/agent7_st051b_piola/report.json").read_text())
+          if report["contract"]["beta"] != 0.075 or report["contract"]["beta_scan_performed"]:
+              raise SystemExit("frozen beta contract drift")
+          if not report["decision"]["useful_axial_capacity_transfer"]:
+              raise SystemExit("registered transfer rule did not pass")
+          if report["response_diagnostics"]["normalized_rank"] != 2:
+              raise SystemExit("response block rank drift")
+          if any(report["truth"].values()):
+              raise SystemExit("truth boundary unexpectedly promoted")
+          print(json.dumps({
+              "decision": report["decision"],
+              "fine_scale": report["fine_reference_energy_scale"],
+              "response": report["response_diagnostics"],
+              "fine_relative": [row["relative"] for row in report["fine_morphology"]],
+              "coarse_relative": [row["relative"] for row in report["coarse_morphology"]],
+          }, indent=2, sort_keys=True))
+          PY
+
+      - name: Upload Agent 7 capacity receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: ST051-B-piola-axial-capacity-screen
+          path: artifacts/agent7_st051b_piola/report.json
+          if-no-files-found: error
+          retention-days: 30
