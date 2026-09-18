@@ -1,0 +1,154 @@
+name: agent9-st048s-energy-neutral-redist-material-path
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/constrained_st048s_energy_neutral_redist_material_path.py'
+      - 'tests/test_constrained_st048s_energy_neutral_redist_material_path.py'
+      - 'docs/external_methods/CR-A9-050-st048s-energy-neutral-redist-material-path.md'
+      - '.github/workflows/agent9-st048s-energy-neutral-redist-material-path.yml'
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  frozen-energy-neutral-redist-path-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - name: Checkout Agent 9 branch
+        uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numerical test dependencies
+        run: python -m pip install -e . 'pytest>=8,<10' 'sympy>=1.12,<2'
+      - name: Compile and run focused regressions
+        run: |
+          python -W error -m py_compile src/openai_ns_reconstruction/constrained_st048s_energy_neutral_redist_material_path.py
+          python -m pytest -q -W error tests/test_constrained_st048s_energy_neutral_redist_material_path.py
+      - name: Checkout pinned ST048 source tree
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: 97695a86f85ce68fb4ae70c41fc81c904d655183
+          path: external/st048
+          persist-credentials: false
+      - name: Checkout pinned Agent 9 frozen-path source tree
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: 6699a698c9fb2f0a0986e7aefc5fe0ee431cd5ad
+          path: external/agent9
+          persist-credentials: false
+      - name: Checkout pinned Agent 7 redistribution source tree
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: 527e20e7eaa506d144c725d2c90c468da6aa5d34
+          path: external/agent7
+          persist-credentials: false
+      - name: Verify pinned source identities
+        run: |
+          test "$(git -C external/st048 rev-parse HEAD)" = "97695a86f85ce68fb4ae70c41fc81c904d655183"
+          test "$(git -C external/agent9 rev-parse HEAD)" = "6699a698c9fb2f0a0986e7aefc5fe0ee431cd5ad"
+          test "$(git -C external/agent7 rev-parse HEAD)" = "527e20e7eaa506d144c725d2c90c468da6aa5d34"
+      - name: Replay energy-neutral redistribution on frozen Agent-9 material paths
+        run: |
+          python -m openai_ns_reconstruction.constrained_st048s_energy_neutral_redist_material_path \
+            --candidate-root external/st048 \
+            --agent9-root external/agent9 \
+            --agent7-root external/agent7 \
+            --output outputs/agent9/ST048-S-energy-neutral-redist-k0025-material-path.json
+      - name: Fail closed on provenance and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('outputs/agent9/ST048-S-energy-neutral-redist-k0025-material-path.json').read_text())
+          assert d['task_id']=='CR-A9-050'
+          assert d['base_main_sha']=='f0193d66c9d92948b4820ebcb70263673995b324'
+          c=d['candidate']
+          assert c['source_head_sha']=='97695a86f85ce68fb4ae70c41fc81c904d655183'
+          assert c['original_raw_candidate_sha256']=='6d9ce8407e29aca20d32599332ae3ec654f45678e17783179267665428ec8e09'
+          x=d['agent7_formula_crosscheck']
+          assert x['source_head_sha']=='527e20e7eaa506d144c725d2c90c468da6aa5d34'
+          assert x['task_id']=='CR003-ST048S-ENERGY-NEUTRAL-SWIRL-REDISTRIBUTION-065'
+          assert x['crosscheck_passed'] is True
+          assert x['profile_max_abs_difference'] <= 2e-15
+          assert d['frozen_path_source']['head']=='6699a698c9fb2f0a0986e7aefc5fe0ee431cd5ad'
+          n=d['normalization']
+          assert n['redistribution_gain']==.025
+          assert abs(n['beta_at_025']-.10)<1e-15 and abs(n['beta_at_050']-.075)<1e-15 and abs(n['beta_at_075']-.10)<1e-15
+          assert abs(n['balance']['outer_balance_coefficient_alpha']-2.415185613025038)<5e-10
+          assert abs(n['child_scale']-0.9985868857)<5e-9
+          assert abs(n['child_energy']-1.0)<5e-12
+          for key in ('redistribution_gain_0','redistribution_gain_0025'):
+              row=d['measurements'][key]
+              assert row['path_count']==48 and row['paired_material_line_count']==24
+              assert set(row['per_seed_radius'])=={'0.6','0.9','1.2'}
+          truth=d['truth_boundary']
+          for k in ('production_candidate_selected','production_redistribution_gain_selected','visualization_ready',
+                    'visual_correspondence_verified','pde_validated','source_correspondence_verified',
+                    'paper_exact','openai_field_identified','blowup_proved'):
+              assert truth[k] is False
+          assert truth['visual_acceptance_threshold_defined'] is False
+          assert truth['pressure_or_force_transferred_from_parent'] is False
+          assert truth['held_out_pde_residual_evaluated'] is False
+          print(d['report_sha256'])
+          print(json.dumps(d['comparisons']['gain_0025_vs_same_run_gain_0'],sort_keys=True))
+          print(json.dumps(d['measurements']['redistribution_gain_0025']['per_seed_radius'],sort_keys=True))
+          PY
+      - name: Publish exact-head numerical receipt
+        if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent9-receipt.md
+          import json
+          from pathlib import Path
+          d=json.loads(Path('outputs/agent9/ST048-S-energy-neutral-redist-k0025-material-path.json').read_text())
+          base=d['measurements']['redistribution_gain_0']
+          child=d['measurements']['redistribution_gain_0025']
+          comp=d['comparisons']['gain_0025_vs_same_run_gain_0']
+          n=d['normalization']
+          print('### CR-A9-050 exact-head numerical receipt')
+          print()
+          print(f"report SHA-256: `{d['report_sha256']}`")
+          print(f"alpha=`{n['balance']['outer_balance_coefficient_alpha']:.15g}`; redistribution gain=`{n['redistribution_gain']:.6g}`; child normalization=`{n['child_scale']:.15g}`")
+          print()
+          print('| metric | gain=0 temporal Piola | redist=.025 | child/base |')
+          print('|---|---:|---:|---:|')
+          rows=(
+              ('mean radius change','mean_radius_change','absolute_radial_contraction_ratio'),
+              ('mean absolute turns','mean_absolute_turns','mean_absolute_turns_ratio'),
+              ('maximum absolute turns','maximum_absolute_turns','maximum_absolute_turns_ratio'),
+              ('mean pair separation change','mean_pair_axial_separation_change','mean_pair_separation_change_ratio'),
+          )
+          for label,key,rkey in rows:
+              print(f"| {label} | {base[key]:.10g} | {child[key]:.10g} | {comp[rkey]:.8g} |")
+          print(f"| inward paths | {base['inward_path_count']}/48 | {child['inward_path_count']}/48 | — |")
+          print(f"| axial grow/shrink pairs | {base['pair_axial_separation_growth_count']}/{base['pair_axial_separation_shrink_count']} | {child['pair_axial_separation_growth_count']}/{child['pair_axial_separation_shrink_count']} | — |")
+          print()
+          print('| seed radius | gain=0 mean turns | redist=.025 mean turns | ratio | redist mean Δr |')
+          print('|---:|---:|---:|---:|---:|')
+          for r in ('0.6','0.9','1.2'):
+              b=base['per_seed_radius'][r]; c=child['per_seed_radius'][r]
+              print(f"| {r} | {b['mean_absolute_turns']:.10g} | {c['mean_absolute_turns']:.10g} | {c['mean_absolute_turns']/b['mean_absolute_turns']:.8g} | {c['mean_radius_change']:.10g} |")
+          print()
+          print('Descriptive candidate-side material kinematics only: no visual pass threshold, production redistribution coefficient, pressure/forcing transfer, or PDE promotion.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent9-receipt.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ST048-S-energy-neutral-redist-k0025-material-path
+          path: outputs/agent9/ST048-S-energy-neutral-redist-k0025-material-path.json
+          if-no-files-found: error
