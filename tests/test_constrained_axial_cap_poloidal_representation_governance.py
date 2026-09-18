@@ -18,7 +18,7 @@ def test_current_axial_cap_scope_passes():
     assert report["canonical_thresholds_unchanged"] is True
     assert report["diagnostic_amplitude_selected"] is False
     assert report["nonlinear_reach_is_capacity_only"] is True
-    assert report["axial_cap_capacity_status"] == "experimental_unintegrated"
+    assert report["axial_cap_capacity_status"] == "integrated_prematerialization"
     assert report["live_next_integration_task_preserved"] is True
     assert report["velocity_export_ready"] is True
     assert report["visual_correspondence_verified"] is False
@@ -63,10 +63,16 @@ def test_rejects_nonlinear_morphology_claim_laundering():
         audit_axial_cap_poloidal_scope(scope=mutated)
 
 
-def test_rejects_silent_live_routing_takeover():
+def test_rejects_live_route_drift():
     scope = load_scope()
+
     mutated = deepcopy(scope)
-    mutated["integration_routing_scope"]["axial_cap_capacity_may_replace_live_next_task_without_explicit_integration_decision"] = True
+    mutated["integration_routing_scope"]["live_integrated_mode"] = "COMPACT_C4_ODD_Z_POLOIDAL"
+    with pytest.raises(ValueError):
+        audit_axial_cap_poloidal_scope(scope=mutated)
+
+    mutated = deepcopy(scope)
+    mutated["integration_routing_scope"]["axial_cap_capacity_is_integrated_prematerialization_evidence"] = False
     with pytest.raises(ValueError):
         audit_axial_cap_poloidal_scope(scope=mutated)
 
@@ -76,7 +82,7 @@ def test_rejects_silent_live_routing_takeover():
         audit_axial_cap_poloidal_scope(scope=mutated)
 
     mutated = deepcopy(scope)
-    mutated["integration_routing_scope"]["live_next_integration_task_must_remain_materialize_existing_compact_poloidal_child"] = False
+    mutated["integration_routing_scope"]["promotion_requires"].remove("new_candidate_sha256")
     with pytest.raises(ValueError):
         audit_axial_cap_poloidal_scope(scope=mutated)
 
@@ -111,6 +117,16 @@ def test_rejects_cr001_and_project_status_drift():
     status = load_project_status()
     mutated_status = deepcopy(status)
     mutated_status["next_integration_task"] = "materialize AXIAL_CAP_BANDED_C4_ODD_Z_POLOIDAL now"
+    with pytest.raises(ValueError):
+        audit_axial_cap_poloidal_scope(project_status=mutated_status)
+
+    mutated_status = deepcopy(status)
+    mutated_status["active_scientific_route"] = "materialize_compact_poloidal_child"
+    with pytest.raises(ValueError):
+        audit_axial_cap_poloidal_scope(project_status=mutated_status)
+
+    mutated_status = deepcopy(status)
+    mutated_status["latest_integrated_axial_cap_capacity"]["production_coefficient_value_selected"] = True
     with pytest.raises(ValueError):
         audit_axial_cap_poloidal_scope(project_status=mutated_status)
 
