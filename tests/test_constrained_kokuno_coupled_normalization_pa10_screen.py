@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import copy
-import math
 
 import numpy as np
 import pytest
@@ -100,4 +99,4 @@ def test_empty_band_and_serialization_truth_fail_closed(selected_screen):
     with pytest.raises(ValueError, match="truth-boundary"):
         KokunoCoupledNormalizationPA10Screen.from_payload(tampered)
 
-    assert math.isfinite(selected_screen.sha256.__len__())
+    assert len(selected_screen.sha256) == 64
