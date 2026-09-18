@@ -25,6 +25,7 @@ blocker.  No hidden Kokuno/OpenAI parameter is inferred.
 from __future__ import annotations
 
 from dataclasses import dataclass, field
+from functools import cached_property
 import argparse
 import hashlib
 import json
@@ -134,7 +135,12 @@ class KokunoInnerJoinTshCertificate:
             raise RuntimeError("Appendix-B ell_i evaluation returned invalid values")
         return values
 
-    def envelope_report(self) -> dict[str, Any]:
+    @cached_property
+    def _envelope_cache(self) -> dict[str, Any]:
+        # Appendix-B boundary evaluation integrates a nontrivial ODE for every
+        # eta.  A certificate instance is immutable, so evaluating this finite
+        # construction/holdout set once is both exact replay and a substantial
+        # CI/runtime improvement; it does not change the numerical contract.
         construction = self._ell_values(self.construction_eta)
         holdout = self._ell_values(self.holdout_eta)
         construction_max = float(np.max(np.abs(construction)))
@@ -153,9 +159,12 @@ class KokunoInnerJoinTshCertificate:
             "analytic_source_B0_bound_proved": False,
         }
 
+    def envelope_report(self) -> dict[str, Any]:
+        return dict(self._envelope_cache)
+
     @property
     def selected_B0(self) -> float:
-        report = self.envelope_report()
+        report = self._envelope_cache
         if not report["disjoint_holdout_within_envelope"]:
             raise RuntimeError("selected numerical B0 envelope failed its disjoint eta holdout")
         return float(report["selected_numerical_B0_envelope"])
