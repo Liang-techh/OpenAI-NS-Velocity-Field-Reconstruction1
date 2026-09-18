@@ -1,21 +1,25 @@
-"""Agent-5 checkpoint for the next three Kokuno numeric prerequisite seams.
+"""Agent-5 checkpoint for the next Kokuno numeric prerequisite seams.
 
 This is one minimal integration/routing increment on top of the v34 Agent-5
-checkpoint.  It records three newly executable sibling deliveries without
-copying their mathematics into the integration lane or promoting a local
-engineering quantity into source truth:
+checkpoint.  It records newly executable sibling deliveries without copying
+their mathematics into the integration lane or promoting local engineering
+quantities into source truth:
 
 * Agent 1 exposes the strict pointwise PA.10 *necessary* admissible band for a
   newly propagated coupled normalization.  The old selected shared-C path is
   still excluded; passing the new screen would only mean "not excluded".
-* Agent 2 can numerically materialize the source-displayed signed covariance
-  mass law h_sigma on explicitly labelled candidate pulse/cutoff samples.  The
+* Agent 2 numerically materializes the source-displayed signed covariance mass
+  law h_sigma on explicitly labelled candidate pulse/cutoff samples.  The
   numerical samples remain repository/candidate choices, not recovered hidden
   Kokuno data, and no public physical oscillatory velocity is produced yet.
 * Agent 3 supplies a deterministic repository-autonomous finite-head mean
   factor for engineering closure.  It is deliberately distinct from the
   nonconstructively selected theorem-machine missingWeight and cannot become a
   physical Delta C until same-cycle requestedStress is materialized.
+* Agent 4 independently audits Agent 2's numerical signed-mass interface with a
+  separate Gauss--Legendre oracle and nonlinear profiles.  This closes the
+  candidate quadrature seam only; it does not recover source pulses or create a
+  physical oscillatory velocity.
 
 The result is a narrower shortest path, not a 3D candidate and not an NS gate.
 """
@@ -123,6 +127,49 @@ AGENT3_AUTONOMOUS_MEAN_RECEIPT = {
     "consumed_in_executable_ancestry": False,
 }
 
+AGENT4_SIGNED_MASS_AUDIT_RECEIPT = {
+    "pr": 515,
+    "head": "5c75dcd754df7887795e1f4fb03e81b043933d17",
+    "evidence_class": "independent_validation",
+    "dedicated_run": 35407213280,
+    "standard_run": 35407213658,
+    "dedicated_status": "success",
+    "standard_status": "success",
+    "artifact": "kokuno-agent4-source-signed-covariance-mass-independent-audit-v1",
+    "artifact_id": 10572752451,
+    "artifact_digest": "sha256:aaacc953922ff385a854667081fdc84ba292e132916ea09cdc03ba04a2522baa",
+    "seed": 9173221,
+    "independent_gauss_legendre_order": 256,
+    "resolution_ladder_samples": [33, 65, 129],
+    "pulse_finest_relative_rms": 8.76894947036802e-06,
+    "pulse_refinement_ratios": [4.005817038870726, 4.001449348865676],
+    "transverse_finest_relative": 3.8237722506116646e-12,
+    "transverse_refinement_ratios": [63.81764150254936, 63.95940114487011],
+    "combined_h_sigma_finest_relative_rms": 8.769044324282007e-06,
+    "combined_h_sigma_finest_relative_max": 1.683549760105144e-05,
+    "combined_refinement_ratios": [4.005631538638194, 4.001437682670171],
+    "wrong_psi_power_mutation_relative_rms": 0.5328453830236527,
+    "wrong_transverse_prefactor_mutation_relative_rms": 0.7071067811865475,
+    "agent2_trapezoid_helper_reused": False,
+    "agent2_band_covering_helper_reused": False,
+    "agent2_signed_inverse_reused": False,
+    "agent2_complete_curl_reused": False,
+    "pressure_or_forcing_fit_used": False,
+    "candidate_signed_h_sigma_mass_independently_audited": True,
+    "local_structural_preflight_passed": True,
+    "actual_source_h_sigma_bound": False,
+    "actual_source_pulse_samples_recovered": False,
+    "actual_positive_order_background_bound": False,
+    "actual_auxiliary_torus_mode_family_bound": False,
+    "public_source_bound_velocity_osc_materialized": False,
+    "public_velocity_correction_materialized": False,
+    "formal_full_domain_pde_gate_assessed": False,
+    "heldout_ns_residual_assessed": False,
+    "residual_reduction_claimed": False,
+    "pde_validated": False,
+    "consumed_in_executable_ancestry": False,
+}
+
 PREVIOUS_AGENT5_RECEIPT = {
     "pr": 511,
     "head": "d244804a4b2322127f42239803d7023557be2325",
@@ -161,11 +208,13 @@ def build_checkpoint() -> dict[str, Any]:
     upstream["agent1_pa10_screen_sibling"] = _copy(AGENT1_PA10_SCREEN_RECEIPT)
     upstream["agent2_signed_mass_sibling"] = _copy(AGENT2_SIGNED_MASS_RECEIPT)
     upstream["agent3_autonomous_mean_sibling"] = _copy(AGENT3_AUTONOMOUS_MEAN_RECEIPT)
+    upstream["agent4_signed_mass_audit_sibling"] = _copy(AGENT4_SIGNED_MASS_AUDIT_RECEIPT)
     upstream["previous_agent5_v34_ancestry"] = _copy(PREVIOUS_AGENT5_RECEIPT)
 
     states = payload["states"]
     states["leading_pa10_required_band_executable"] = True
     states["candidate_signed_h_sigma_mass_executable"] = True
+    states["candidate_signed_h_sigma_mass_independently_audited"] = True
     states["autonomous_finite_head_mean_factor_executable"] = True
     states["same_cycle_requested_stress_materialized"] = False
 
@@ -177,30 +226,31 @@ def build_checkpoint() -> dict[str, Any]:
     _set_pipeline_status(
         payload,
         "oscillatory_augmentation",
-        "Agent 2 now evaluates the displayed h_sigma mass law on labelled numerical candidate pulses over the independently audited autonomous geometry; next bind provenance-labelled positive-order/background and auxiliary modes into the audited phase/complete-curl path and emit Q-scaled by-sign/by-beta/total velocity_osc(x,y,z,t), without promoting candidate pulse samples to recovered source data",
+        "Agent 2 now evaluates the displayed h_sigma mass law on labelled numerical candidate pulses over the independently audited autonomous geometry, and Agent 4 independently passes that candidate quadrature seam on nonlinear profiles; stop spending rounds on h_sigma quadrature and next bind provenance-labelled positive-order/background plus signed auxiliary modes into the audited phase/complete-curl path, emitting Q-scaled by-sign/by-beta/total velocity_osc(x,y,z,t) without promoting candidate samples to recovered source data",
     )
     _set_pipeline_status(
         payload,
         "mean_radial_corrections",
-        "Agent 3 now has a deterministic autonomous finite-head mean factor, explicitly not theorem missingWeight; next materialize same-cycle physical requestedStress from the candidate state, form only a candidate-specific Delta C, then apply the existing signed inverse/budget/spacetime/radial/quadratic guards after the physical oscillatory covariance interface is independently audited",
+        "Agent 3 now has a deterministic autonomous finite-head mean factor, explicitly not theorem missingWeight; next materialize same-cycle physical requestedStress from the candidate state, form only a candidate-specific Delta C, then apply the existing signed inverse/budget/spacetime/radial/quadratic guards after the public physical oscillatory covariance interface is independently audited",
     )
     _set_pipeline_status(
         payload,
         "independent_validation",
-        "Agent 4 has already independently closed the autonomous rectangle geometry seam; its next highest-value target remains the first fully numerical provenance-labelled public physical oscillatory velocity and phase-mean covariance response, not the local h_sigma quadrature or autonomous mean-factor bookkeeping",
+        "Agent 4 independently clears both autonomous signed-rectangle geometry and candidate signed h_sigma quadrature; its next highest-value target is the first fully numerical provenance-labelled public physical oscillatory velocity, complete-curl/divergence behavior and phase-mean covariance response, not more local geometry or mass bookkeeping",
     )
 
     payload["routing"] = {
         "new_fact": (
-            "Three upstream numerical prerequisites are now executable with explicit truth boundaries: "
-            "a necessary PA.10 leading target band, candidate signed h_sigma mass evaluation, and a "
-            "repository-autonomous finite-head mean factor. None is yet the missing physical candidate seam."
+            "The PA.10 target band, candidate signed h_sigma mass, autonomous finite-head mean factor, "
+            "and an independent nonlinear audit of the candidate signed-mass quadrature are now executable "
+            "with explicit truth boundaries. The signed-mass numeric seam is closed; the missing oscillatory "
+            "seam is now the public physical complete-curl velocity/background/mode binding."
         ),
         "shortest_next_closure": [
             "Agent 1: propagate one fresh provenance-labelled normalization through Appendix B into the #512 required log E_i band and rerun the frozen PA.10 screen; no post-hoc C retuning and no PA.16 handoff merely because a pointwise screen passes.",
-            "Agent 2: stop at no more standalone h_sigma arithmetic; bind numerical positive-order/background plus signed auxiliary modes to the audited phase/complete-curl stack and expose Q-scaled by-sign/by-beta/total velocity_osc(x,y,z,t) with explicit source-vs-autonomous provenance.",
+            "Agent 2: stop standalone h_sigma/rectangle arithmetic now that #515 independently audits the candidate mass interface; bind numerical positive-order/background plus signed auxiliary modes to the audited phase/complete-curl stack and expose Q-scaled by-sign/by-beta/total velocity_osc(x,y,z,t) with explicit source-vs-autonomous provenance.",
             "Agent 3: compute theta/axial requestedStress from the same candidate cycle state and combine it with the autonomous factor only as a candidate-specific finite-head mean debt; do not name it formal missingWeight or run the finite correction cycle before the physical covariance interface passes independent audit.",
-            "Agent 4: black-box audit the first public fully numerical physical oscillatory velocity, complete-curl/divergence behavior and phase-mean covariance rank using only the public velocity interface and frozen guards.",
+            "Agent 4: black-box audit the first public fully numerical physical oscillatory velocity, complete-curl/divergence behavior and phase-mean covariance rank using only the public velocity interface and frozen guards; do not repeat the now-passed mass quadrature seam.",
             "Agent 5: when a non-obstructed leading candidate, independently audited public oscillatory velocity and guarded same-cycle correction coexist, instantiate the deterministic candidate artifact with velocity/pressure/restricted-forcing APIs, save/load plus Python/MATLAB smoke, and freeze it for held-out NS validation.",
         ],
     }
@@ -219,7 +269,7 @@ def validate_checkpoint(payload: dict[str, Any]) -> None:
     if payload.get("autonomous_realization_policy") != AUTONOMOUS_REALIZATION_POLICY:
         raise ValueError("autonomous realization policy changed")
 
-    # Reuse every v34 fail-closed check.  New sibling receipts are additive and
+    # Reuse every v34 fail-closed check. New sibling receipts are additive and
     # intentionally do not overwrite v34's frozen Agent-1/4 evidence.
     parent_view = _copy(payload)
     parent_view["schema"] = PARENT_SCHEMA
@@ -232,6 +282,8 @@ def validate_checkpoint(payload: dict[str, Any]) -> None:
         raise ValueError("leading PA.10 target band was removed")
     if states.get("candidate_signed_h_sigma_mass_executable") is not True:
         raise ValueError("candidate signed h_sigma mass seam was removed")
+    if states.get("candidate_signed_h_sigma_mass_independently_audited") is not True:
+        raise ValueError("independent signed h_sigma mass audit was removed")
     if states.get("autonomous_finite_head_mean_factor_executable") is not True:
         raise ValueError("autonomous finite-head mean factor was removed")
     if states.get("same_cycle_requested_stress_materialized") is not False:
@@ -286,6 +338,24 @@ def validate_checkpoint(payload: dict[str, Any]) -> None:
         raise ValueError("autonomous factor was promoted to same-cycle physical mean debt")
     if a3["finite_correction_cycle_rerun_allowed"]:
         raise ValueError("finite correction cycle was opened before same-cycle defect materialization")
+
+    a4 = payload["upstream"].get("agent4_signed_mass_audit_sibling")
+    if a4 != AGENT4_SIGNED_MASS_AUDIT_RECEIPT:
+        raise ValueError("Agent 4 signed-mass audit receipt changed")
+    if a4["evidence_class"] != "independent_validation" or not a4["local_structural_preflight_passed"]:
+        raise ValueError("Agent 4 independent signed-mass audit no longer passes")
+    if a4["agent2_trapezoid_helper_reused"] or a4["agent2_complete_curl_reused"]:
+        raise ValueError("Agent 4 mass audit reused the candidate implementation")
+    if a4["pressure_or_forcing_fit_used"]:
+        raise ValueError("Agent 4 local audit used pressure/forcing fit")
+    if a4["combined_h_sigma_finest_relative_rms"] > 1.0e-5:
+        raise ValueError("Agent 4 combined h_sigma RMS exceeds frozen guard")
+    if a4["combined_h_sigma_finest_relative_max"] > 2.0e-5:
+        raise ValueError("Agent 4 combined h_sigma max exceeds frozen guard")
+    if a4["actual_source_h_sigma_bound"] or a4["actual_source_pulse_samples_recovered"]:
+        raise ValueError("independent candidate mass audit was laundered into source recovery")
+    if a4["public_source_bound_velocity_osc_materialized"] or a4["heldout_ns_residual_assessed"]:
+        raise ValueError("local mass audit was promoted to physical/PDE validation")
 
     previous = payload["upstream"].get("previous_agent5_v34_ancestry")
     if previous != PREVIOUS_AGENT5_RECEIPT:
