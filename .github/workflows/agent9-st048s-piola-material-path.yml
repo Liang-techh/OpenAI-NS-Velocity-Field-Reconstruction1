@@ -1,0 +1,114 @@
+name: agent9-st048s-piola-material-path
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/constrained_st048s_piola_material_path.py'
+      - 'tests/test_constrained_st048s_piola_material_path.py'
+      - 'docs/external_methods/CR-A9-046-st048s-piola-material-path.md'
+      - '.github/workflows/agent9-st048s-piola-material-path.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  frozen-piola-path-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - name: Checkout Agent 9 branch
+        uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numerical test dependencies
+        run: python -m pip install -e . 'pytest>=8,<10' 'sympy>=1.12,<2'
+      - name: Compile and run focused regressions
+        run: |
+          python -W error -m py_compile src/openai_ns_reconstruction/constrained_st048s_piola_material_path.py
+          python -m pytest -q -W error tests/test_constrained_st048s_piola_material_path.py
+      - name: Checkout pinned ST048 source tree
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: 97695a86f85ce68fb4ae70c41fc81c904d655183
+          path: external/st048
+          persist-credentials: false
+      - name: Checkout pinned Agent 7 Piola source tree
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: 2d7cb2fe05696c6303e09ad20b91c61aad5f977e
+          path: external/agent7
+          persist-credentials: false
+      - name: Verify pinned sources and migrated Piola formula
+        run: |
+          test "$(git -C external/st048 rev-parse HEAD)" = "97695a86f85ce68fb4ae70c41fc81c904d655183"
+          test "$(git -C external/agent7 rev-parse HEAD)" = "2d7cb2fe05696c6303e09ad20b91c61aad5f977e"
+          python - <<'PY'
+          import importlib
+          import pathlib
+          import sys
+          import numpy as np
+          from openai_ns_reconstruction import constrained_st048s_piola_material_path as ours
+
+          root=pathlib.Path('external/agent7/experiments/root_st048').resolve()
+          sys.path.insert(0,str(root))
+          source=importlib.import_module('agent7_st048s_piola_warp_screen')
+          z=np.linspace(-2.2,2.2,1001)
+          a,b=ours._warp_z_and_jacobian(z,ours.PIOLA_BETA)
+          c,d=source._warp_z_and_jacobian(z,ours.PIOLA_BETA)
+          np.testing.assert_allclose(a,c,rtol=0,atol=0)
+          np.testing.assert_allclose(b,d,rtol=0,atol=0)
+          print('Agent-7 Piola map exact-reimplementation check: PASS')
+          PY
+      - name: Replay beta .075 on frozen Agent-9 material paths
+        run: |
+          python -m openai_ns_reconstruction.constrained_st048s_piola_material_path \
+            --candidate-root external/st048 \
+            --output outputs/agent9/ST048-S-piola-beta0075-material-path.json
+      - name: Fail closed on provenance and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('outputs/agent9/ST048-S-piola-beta0075-material-path.json')
+          d=json.loads(p.read_text())
+          assert d['task_id']=='CR-A9-046'
+          assert d['base_main_sha']=='f0193d66c9d92948b4820ebcb70263673995b324'
+          c=d['candidate_source']
+          assert c['source_head_sha']=='97695a86f85ce68fb4ae70c41fc81c904d655183'
+          assert c['original_raw_candidate_sha256']=='6d9ce8407e29aca20d32599332ae3ec654f45678e17783179267665428ec8e09'
+          a=d['agent7_piola_source']
+          assert a['source_head_sha']=='2d7cb2fe05696c6303e09ad20b91c61aad5f977e'
+          assert a['production_beta_selected'] is False
+          n=d['normalization']
+          assert n['beta']==0.075
+          assert abs(n['normalized_reference_energy']-1.0) < 5e-12
+          assert abs(n['normalization_scale']-0.9992827694) < 5e-9
+          parent=d['measurements']['reconstructed_parent_st048s']
+          child=d['measurements']['piola_beta_0075']
+          assert parent['path_count']==48 and child['path_count']==48
+          assert parent['paired_material_line_count']==24 and child['paired_material_line_count']==24
+          replay=d['parent_reference_replay']
+          for value in replay.values():
+              assert value < 5e-10
+          truth=d['truth_boundary']
+          for k in ('visualization_ready','visual_correspondence_verified','pde_validated',
+                    'source_correspondence_verified','paper_exact','openai_field_identified','blowup_proved'):
+              assert truth[k] is False
+          assert truth['visual_acceptance_threshold_defined'] is False
+          assert truth['pressure_or_force_transferred_from_parent'] is False
+          print(d['report_sha256'])
+          print(json.dumps(d['comparisons']['warped_vs_same_run_parent'],sort_keys=True))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ST048-S-piola-beta0075-material-path
+          path: outputs/agent9/ST048-S-piola-beta0075-material-path.json
+          if-no-files-found: error
