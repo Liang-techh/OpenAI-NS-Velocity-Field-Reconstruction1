@@ -13,8 +13,13 @@ from openai_ns_reconstruction.kokuno_inner_join_tsh_certificate import (
 )
 
 
-def test_selected_B0_envelope_and_PA10_formula_are_executable_and_fail_closed():
-    cert = KokunoInnerJoinTshCertificate(eta_nodes=9, envelope_relative_padding=0.05)
+@pytest.fixture(scope="module")
+def selected_certificate():
+    return KokunoInnerJoinTshCertificate(eta_nodes=9, envelope_relative_padding=0.05)
+
+
+def test_selected_B0_envelope_and_PA10_formula_are_executable_and_fail_closed(selected_certificate):
+    cert = selected_certificate
     envelope = cert.envelope_report()
     assert envelope["disjoint_holdout_within_envelope"] is True
     assert envelope["selected_numerical_B0_envelope"] > 0.0
@@ -38,8 +43,8 @@ def test_selected_B0_envelope_and_PA10_formula_are_executable_and_fail_closed():
     assert truth["paper_exact"] is False
 
 
-def test_selected_separation_geometry_is_reported_without_relaxing_source_boundary():
-    cert = KokunoInnerJoinTshCertificate(eta_nodes=9, envelope_relative_padding=0.05)
+def test_selected_separation_geometry_is_reported_without_relaxing_source_boundary(selected_certificate):
+    cert = selected_certificate
     report = cert.geometry_report()
     assert report["required_log_x_sep_upper_bound"] == -8.0
     assert report["selected_log_x_sep"] == pytest.approx(
@@ -60,9 +65,8 @@ def test_selected_separation_geometry_is_reported_without_relaxing_source_bounda
             cert.build_selected_inner_join(quadrature_points=32)
 
 
-def test_selected_Tsh_report_preserves_independent_pressure_blocker():
-    cert = KokunoInnerJoinTshCertificate(eta_nodes=9, envelope_relative_padding=0.05)
-    report = cert.report()
+def test_selected_Tsh_report_preserves_independent_pressure_blocker(selected_certificate):
+    report = selected_certificate.report()
     pressure = report["pressure_datum"]
     assert pressure["source_outer_pressure_datum_bound"] is False
     assert pressure["actual_source_incoming_five_moment_discrepancy_bound"] is False
@@ -71,8 +75,8 @@ def test_selected_Tsh_report_preserves_independent_pressure_blocker():
     assert report["source_route_ready"] is False
 
 
-def test_payload_roundtrip_and_truth_tamper_fail_closed(tmp_path):
-    cert = KokunoInnerJoinTshCertificate(eta_nodes=9, envelope_relative_padding=0.05)
+def test_payload_roundtrip_and_truth_tamper_fail_closed(tmp_path, selected_certificate):
+    cert = selected_certificate
     path = cert.save_json(tmp_path / "tsh.json")
     replay = KokunoInnerJoinTshCertificate.load_json(path)
     assert replay.to_payload() == cert.to_payload()
