@@ -13,6 +13,9 @@ concurrency:
   group: kokuno-a1-rescaled-pa15-incoming-moments-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  PYTHONHASHSEED: '0'
+
 jobs:
   rescaled-pa15-incoming-moments:
     runs-on: ubuntu-latest
