@@ -1,0 +1,66 @@
+name: st040-structure-residual
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st040/**'
+      - '.github/workflows/st040-structure-residual.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'experiments/root_st040/**'
+      - '.github/workflows/st040-structure-residual.yml'
+permissions:
+  contents: read
+jobs:
+  frozen-structure-and-residual:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numerical and regression dependencies
+        run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Test actual source structure and recipe reconstruction
+        run: |
+          python scripts/ns_candidate.py verify
+          python -m pytest -q -W error experiments/root_st040/test_progress.py
+      - name: Independently replay both frozen candidate recipes
+        shell: bash
+        run: |
+          for candidate in ST041 ST042; do
+            set +e
+            python experiments/root_st040/replay.py --id "$candidate" --out "outputs/$candidate" --seed 9174101 --validate --audit
+            code=$?
+            set -e
+            test "$code" = 1
+          done
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          recorded=json.loads(Path('experiments/root_st040/results.json').read_text())
+          for ident in ('ST041','ST042'):
+              result=json.loads(Path(f'outputs/{ident}/validation.json').read_text())
+              reference=next(r for r in recorded['paired_results'] if r['candidate']==ident and r['seed']==9174101)
+              assert result['pde_validated'] is False and result['all_numeric_gates_pass'] is False
+              assert result['gates']==reference['gates']
+              fine=[r for r in result['spatial_refinement'] if r['space_step']==.005]
+              maximum=max(r['momentum_max'] for r in fine)
+              l2=max(r['momentum_L2'] for r in fine)
+              assert abs(maximum-reference['max'])<1e-5
+              assert abs(l2-reference['volume_L2'])<1e-5
+              print(ident,maximum,l2,'Numerical replay matches; scientific gates still FAILED.')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ST041-ST042-independent-structure-replay
+          path: |
+            outputs/ST041/
+            outputs/ST042/
+          if-no-files-found: error
