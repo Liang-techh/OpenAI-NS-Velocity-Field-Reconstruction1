@@ -1,0 +1,63 @@
+{
+  "experiment": "ST046",
+  "task": 361,
+  "source_parent_commit": "5d238c99bc2b91030554013eef8447f83ade58e8",
+  "date": "2026-09-18",
+  "scientific_target_achieved": false,
+  "default_promoted": false,
+  "comparison_scope": "Same seed only; full-vector max and volume L2 sqrt(64*mean(|R|^2)), worst of six original times at h=.005/timeh=.0025. Both seeds have full original precision ladders.",
+  "points_per_seed": 4096,
+  "original_momentum_threshold": 0.001,
+  "paired_results": [
+    {"id":"ST045-G","seed":9174601,"max":0.07471214397593719,"volume_L2":0.07968662317478398,"failed_gates":["momentum_max","momentum_L2"]},
+    {"id":"ST045-G","seed":9174602,"max":0.07477054715047045,"volume_L2":0.0831320776128673,"failed_gates":["momentum_max","momentum_L2","divergence_max"]},
+    {"id":"ST045-H","seed":9174601,"max":0.07674535580480382,"volume_L2":0.08064581291609668,"failed_gates":["momentum_max","momentum_L2"]},
+    {"id":"ST045-H","seed":9174602,"max":0.07673119959220531,"volume_L2":0.08408912369121828,"failed_gates":["momentum_max","momentum_L2","divergence_max"]},
+    {"id":"ST046-A","seed":9174601,"max":0.06503956348404061,"volume_L2":0.06809665608033207,"failed_gates":["momentum_max","momentum_L2"]},
+    {"id":"ST046-A","seed":9174602,"max":0.06467294356585805,"volume_L2":0.07130998406485647,"failed_gates":["momentum_max","momentum_L2","divergence_max"]},
+    {"id":"ST046-B","seed":9174601,"max":0.07484902574226211,"volume_L2":0.07936196064304665,"failed_gates":["momentum_max","momentum_L2"]},
+    {"id":"ST046-B","seed":9174602,"max":0.07581457299436627,"volume_L2":0.0829238494260533,"failed_gates":["momentum_max","momentum_L2","divergence_max"]},
+    {"id":"ST046-C","seed":9174601,"max":0.07384221588260868,"volume_L2":0.0789479415334661,"failed_gates":["momentum_max","momentum_L2"]},
+    {"id":"ST046-C","seed":9174602,"max":0.07634044185477326,"volume_L2":0.08208235012598389,"failed_gates":["momentum_max","momentum_L2","divergence_max"]},
+    {"id":"ST046-D","seed":9174601,"max":0.054859044909861196,"volume_L2":0.07305800731901398,"failed_gates":["momentum_max","momentum_L2"]},
+    {"id":"ST046-D","seed":9174602,"max":0.06803447169896837,"volume_L2":0.07713613096845526,"failed_gates":["momentum_max","momentum_L2","divergence_max"]}
+  ],
+  "structure_summary": {
+    "ST045-H":{"comparable_final_drift":0.18697490106318393,"fresh_final_drift":0.18697826993207642,"adverse_pressure_RMS":0.056075419875174566,"positive_nonpressure_RMS":0.08194025042713882,"midplane_shear_t05":0.0024513017658683925,"dense_grid_max":0.09308694157482458},
+    "ST045-G":{"comparable_final_drift":0.19092018796434432,"dense_grid_max":0.091219704412785},
+    "ST046-A":{"comparable_final_drift":0.1828093047965901,"fresh_final_drift":0.18309119975838564,"adverse_pressure_RMS":0.050076973528336795,"positive_nonpressure_RMS":0.07406106454469935,"midplane_shear_t05":0.002653071387191877,"dense_grid_max":0.06888414931626298},
+    "ST046-B":{"comparable_final_drift":0.18470958689101016,"adverse_pressure_RMS":0.051127364472966945,"positive_nonpressure_RMS":0.08033677756425255,"dense_grid_max":0.07719953213485042},
+    "ST046-C":{"comparable_final_drift":0.17770652740325502,"adverse_pressure_RMS":0.03810421282319042,"positive_nonpressure_RMS":0.06059005291006121,"dense_grid_max":0.07765417994362273},
+    "ST046-D":{"comparable_final_drift":0.1833629073069478,"adverse_pressure_RMS":0.054133587749403286,"positive_nonpressure_RMS":0.06952872858255794,"dense_grid_max":0.05915446149317458}
+  },
+  "all_fields_pressure_toward_fraction_on_both_audit_grids": 0.0,
+  "all_fields_checked_inward_swirl_bipolar_radial_pressure_fractions": 1.0,
+  "optimizer_runs": {
+    "ST046-A":{"variables":290,"iterations":500,"nfev":584,"success":false,"minimum_constraint":-7.095816351165851e-9,"training_feasible_to_1e7":true,"stop":"iteration limit"},
+    "ST046-B":{"variables":146,"iterations":400,"nfev":462,"success":true,"minimum_constraint":-2.581120650238795e-13,"training_feasible_to_1e7":true},
+    "ST046-C":{"variables":290,"iterations":650,"nfev":860,"success":false,"minimum_constraint":-4.8255952147171706e-5,"training_feasible_to_1e7":false,"stop":"iteration limit"},
+    "ST046-D":{"variables":290,"iterations":650,"nfev":744,"success":false,"minimum_constraint":-2.0523905671602726e-5,"training_feasible_to_1e7":false,"stop":"iteration limit"}
+  },
+  "freeze_at": "2026-09-18T09:01:45.502704+00:00",
+  "all_fields_frozen_before_both_holdouts": true,
+  "original_raw_sha256": {
+    "ST045-G":"8eb99dc0bb97e01fa709f64961a8dfed857b565da04ddf92cbbc9f11ca9327be",
+    "ST045-H":"aac5ca26bcaaea4f0021e4b54d13b48c33e5c5d85ecc0c2e688975dd859580c6",
+    "ST046-A":"94f5eeb0d94568587c9f3d88e69876a8051632830ded796f7c8b0db8e6707619",
+    "ST046-B":"05f72b45d3d83ca59f84b1c0e887eee3b1ddbe4fad86d3f78257333741749bb6",
+    "ST046-C":"94cad48b1963f94fd327e93ffca460ab4ab75f54b27994aa655bf70d92df894a",
+    "ST046-D":"7279aa574785f64b9e96631c16b4af85c22b24d592c5418136bd2aaf155ac7c1"
+  },
+  "local_tests": "11 passed in21.22s; warnings-as-errors",
+  "all_12_primary_acceptance_commands_exit": 1,
+  "interrupted_run": "First A attempt timed out with checkpoints and no final field; independent same-config restart completed500steps. Interruption retained.",
+  "axis_history_note": "For D, inherited history.json records base objective components; iterations.json and final summary.loss include the extra axis term. No values altered.",
+  "structure_scope": "Comparable242point grid and fresh578point grid at19times. New finite grids/magnitudes autonomous; not calibrated source data. No source pulses/exterior/identity certificate.",
+  "supplementary_scope": "81x121 cylindrical grid including axis at six times; analytic residual independently FD-checked at peaks; separate1024Cartesian sample/11fresh times. Not a continuum upper bound.",
+  "replay_scope": "Frozen modifiers reconstruct mathematical fields and check16u/p references1e-8. Metadata differs; regenerated JSON hash is not asserted equal to original raw JSON.",
+  "github_ci": "pending at publication; recorded in PR after actual execution",
+  "full_inherited_suite": "not run",
+  "lean": "not run",
+  "pde_validated": false,
+  "source_correspondence_verified": false
+}
