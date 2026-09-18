@@ -56,6 +56,23 @@ def supplied_source_compatible_family() -> dict:
     return out
 
 
+def _velocity_band_rank(family: dict) -> dict:
+    by_band = np.asarray(family["velocity_physical_cartesian_by_band"], dtype=float)
+    if by_band.shape[-2] != 2 or by_band.shape[-1] != 3:
+        raise RuntimeError("receipt expects exactly two Cartesian band columns")
+    matrix = np.moveaxis(by_band, -2, 0).reshape(2, -1)
+    singular_values = np.linalg.svd(matrix, compute_uv=False)
+    ratio = float(singular_values[1] / singular_values[0]) if singular_values[0] > 0.0 else 0.0
+    return {
+        "band_column_norms": np.asarray(family["band_column_norms"], dtype=float).tolist(),
+        "velocity_band_singular_values": singular_values.tolist(),
+        "velocity_band_smallest_singular_ratio": ratio,
+        "velocity_band_rank_two_at_1e-8": bool(
+            singular_values[0] > 0.0 and singular_values[1] > 1.0e-8 * singular_values[0]
+        ),
+    }
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--out", required=True)
@@ -63,11 +80,13 @@ def main() -> None:
 
     family = supplied_source_compatible_family()
     radial = np.asarray(family.pop("_report_radial_nodes"), dtype=float)
+    velocity_rank = _velocity_band_rank(family)
     result = KokunoMultiBandCovarianceRankScreen().evaluate(family, averaging_axes=(1,))
     payload = {
         "schema": "kokuno-a3-supplied-multiband-covariance-rank-v1",
         "radial_nodes": radial.tolist(),
         "active_ell_bands": list(result["active_ell_bands"]),
+        **velocity_rank,
         "rank_two_cells": result["rank_two_cells"],
         "total_cells": result["total_cells"],
         "rank_two_fraction": result["rank_two_fraction"],
