@@ -148,6 +148,7 @@ def audit_cross_backbone_swirl_redistribution_governance(
     _require_equal(st048.get("material_path_replay_pr"), 455, "ST048 material-path PR")
     _require_equal(st050.get("redistribution_pr"), 458, "ST050R-C redistribution PR")
     _require_equal(st050.get("material_path_replay_pr"), 466, "ST050R-C material-path PR")
+    _require_equal(st050.get("material_path_replay_head_sha"), "b2edf64220ff18d7587b584974d883a7cf18f323", "ST050 material-path head")
     _require_equal(st048.get("inner_window"), st050.get("inner_window"), "shared inner window")
     _require_equal(st048.get("outer_window"), st050.get("outer_window"), "shared outer window")
     _require_equal(st048.get("gain_grid"), st050.get("gain_grid"), "shared diagnostic gain grid")
@@ -163,7 +164,7 @@ def audit_cross_backbone_swirl_redistribution_governance(
     _require_close(st048.get("material_path_mean_turns_relative_change"), 0.0150902, "ST048 mean-turn change", 1e-9)
     _require_close(st048.get("material_path_max_turns_relative_change"), 0.0221848, "ST048 max-turn change", 1e-9)
 
-    _require_equal(st050.get("material_path_dedicated_run"), 35383631171, "ST050 dedicated run")
+    _require_equal(st050.get("material_path_dedicated_run"), 35383982019, "ST050 dedicated run")
     _require_equal(
         st050.get("material_path_dedicated_run_status"),
         "execution_failed_before_numerical_receipt",
@@ -171,7 +172,9 @@ def audit_cross_backbone_swirl_redistribution_governance(
     )
     _require_equal(st050.get("material_path_failure_class"), "ModuleNotFoundError", "ST050 failure class")
     _require_equal(st050.get("material_path_failure_missing_module"), "validate", "ST050 missing module")
+    _require_equal(st050.get("material_path_standard_tests_run"), 35383982062, "ST050 standard tests run")
     _require_equal(st050.get("material_path_standard_tests_status"), "success", "ST050 standard CI status")
+    _require_equal(st050.get("material_path_research_publication_run"), 35383981981, "ST050 publication run")
     _require_equal(st050.get("material_path_research_publication_status"), "success", "ST050 publication CI status")
     _require_equal(st050.get("material_path_numerical_receipt_exists_at_this_head"), False, "ST050 numerical receipt")
 
