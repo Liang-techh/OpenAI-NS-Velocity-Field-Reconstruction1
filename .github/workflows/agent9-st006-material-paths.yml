@@ -17,8 +17,11 @@ jobs:
       OPENBLAS_NUM_THREADS: '1'
       OMP_NUM_THREADS: '1'
       MKL_NUM_THREADS: '1'
+      PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -34,6 +37,7 @@ jobs:
           python -m research_baseline.material_paths --output outputs/ST006_material_paths.json > outputs/ST006_material_paths.stdout.json
           python - <<'PY'
           import json
+          import os
           from pathlib import Path
           r=json.loads(Path('outputs/ST006_material_paths.json').read_text())
           assert r['candidate']=='ST006'
@@ -62,7 +66,7 @@ jobs:
           }
           print(json.dumps(summary, indent=2))
           print('::notice title=ST006 material path summary::' + json.dumps(summary, sort_keys=True, separators=(',', ':')))
-          lines=['<!-- CR-A9-040-ST006-MATERIAL-PATHS -->','### CR-A9-040 exact-head ST006 material-path receipt','',f"`head={__import__('os').environ['GITHUB_SHA']}`",'', '```json',json.dumps(summary,indent=2,sort_keys=True),'```','', 'Candidate-side kinematics only. This comment is not PDE validation or OpenAI-field identification.']
+          lines=['<!-- CR-A9-040-ST006-MATERIAL-PATHS -->','### CR-A9-040 exact-head ST006 material-path receipt','',f"`head={os.environ['PR_HEAD_SHA']}`",'', '```json',json.dumps(summary,indent=2,sort_keys=True),'```','', 'Candidate-side kinematics only. This comment is not PDE validation or OpenAI-field identification.']
           Path('outputs/ST006_material_paths_summary.md').write_text('\n'.join(lines)+'\n')
           PY
       - name: Publish exact-head measurement receipt
