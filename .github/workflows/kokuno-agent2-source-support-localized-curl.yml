@@ -1,0 +1,37 @@
+name: kokuno-agent2-source-support-localized-curl
+
+on:
+  push:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_source_support_localized_curl.py'
+      - 'src/openai_ns_reconstruction/kokuno_source_complete_curl.py'
+      - 'tests/test_constrained_kokuno_source_support_localized_curl.py'
+      - 'tests/test_constrained_kokuno_source_complete_curl.py'
+      - '.github/workflows/kokuno-agent2-source-support-localized-curl.yml'
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_source_support_localized_curl.py'
+      - 'src/openai_ns_reconstruction/kokuno_source_complete_curl.py'
+      - 'tests/test_constrained_kokuno_source_support_localized_curl.py'
+      - 'tests/test_constrained_kokuno_source_complete_curl.py'
+      - '.github/workflows/kokuno-agent2-source-support-localized-curl.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  source-support-localized-curl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Focused source support localized-curl tests
+        run: >-
+          python -m pytest -q -s -W error
+          tests/test_constrained_kokuno_source_support_localized_curl.py
+          tests/test_constrained_kokuno_source_complete_curl.py
