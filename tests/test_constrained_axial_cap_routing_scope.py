@@ -34,6 +34,12 @@ def test_axial_cap_routing_scope_matches_live_project_route():
         "fresh_full_candidate_validation",
     ]
 
-    assert status["next_integration_task"] == (
-        "materialize_bounded_nonzero_AXIAL_CAP_BANDED_C4_ODD_Z_POLOIDAL_child_then_validate"
-    )
+    next_task = status["next_integration_task"]
+    for token in (
+        "AXIAL_CAP_BANDED_C4_ODD_Z_POLOIDAL",
+        "explicit autonomous coefficient bound/value",
+        "new representation identity/candidate SHA",
+        "fresh full-momentum/divergence validation",
+        "do not add another capacity basis first",
+    ):
+        assert token in next_task
