@@ -1,0 +1,58 @@
+name: agent7-st048s-piola-swirl-gain-screen
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st048/agent7_st048s_piola_swirl_gain_screen.py'
+      - 'experiments/root_st048/test_agent7_st048s_piola_swirl_gain_screen.py'
+      - '.github/workflows/agent7-st048s-piola-swirl-gain-screen.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Test swirl gain screen
+        working-directory: experiments/root_st048
+        run: python -m pytest -q -W error test_agent7_st048s_piola_swirl_gain_screen.py
+      - name: Generate swirl gain report
+        working-directory: experiments/root_st048
+        run: |
+          python agent7_st048s_piola_swirl_gain_screen.py --output ../../artifacts/st048_agent7_piola_swirl_gain_screen/report.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('../../artifacts/st048_agent7_piola_swirl_gain_screen/report.json').read_text())
+          print('smallest_crossing_kappa=',r['smallest_preregistered_clean_winding_crossing_kappa'])
+          print('sensitivity=',json.dumps(r['three_column_velocity_sensitivity'],sort_keys=True))
+          for row in r['rows']:
+              print(json.dumps({
+                  'kappa':row['kappa'],
+                  'scale':row['common_energy_normalization_scale'],
+                  'preflight':row['preflight_pass'],
+                  'clean':row['clean_winding_capacity_rule_pass'],
+                  'angular':row['mean_angular_rate_relative_changes_vs_kappa0'],
+                  'swirl_poloidal':row['swirl_to_poloidal_relative_changes_vs_kappa0'],
+                  'pitch':row['helical_pitch_proxy_relative_changes_vs_kappa0'],
+                  'axial':row['axial_rms_relative_changes_vs_kappa0'],
+                  'radial':row['radial_rms_relative_changes_vs_kappa0'],
+                  'q90':row['q90_deltas_over_support_vs_kappa0'],
+                  'q99':row['q99_deltas_over_support_vs_kappa0'],
+                  'collar':row['collar_enstrophy_ratios_vs_kappa0'],
+              },sort_keys=True))
+          print(r['routing'])
+          PY
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: agent7-st048s-piola-swirl-gain-screen
+          path: artifacts/st048_agent7_piola_swirl_gain_screen/report.json
