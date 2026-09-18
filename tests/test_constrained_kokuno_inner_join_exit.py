@@ -156,7 +156,7 @@ def test_repair_interval_fails_closed_without_coefficients():
 
 
 def test_geometry_fails_closed_when_caller_Tsh_overruns_restore_stage():
-    with pytest.raises(ValueError, match="x_sep<exp\(-8\)"):
+    with pytest.raises(ValueError, match=r"x_sep<exp\(-8\)"):
         KokunoInnerJoinExit(T_sh=400.0)
 
 
