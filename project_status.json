@@ -66,7 +66,7 @@
   },
   "active_task_file": "docs/SCHEDULED_AGENT_TASKS.md",
   "central_coordination_issue": 15,
-  "next_integration_task": "materialize one explicitly bounded nonzero AXIAL_CAP_BANDED_C4_ODD_Z_POLOIDAL child from the already integrated #343 capacity direction, assign a new representation identity/candidate SHA, then run unchanged reference/validation energy, core-sign, axis/support, restricted pressure/force, and fresh 4096-point full-momentum/divergence validation before any promotion; do not add another capacity basis first",
+  "next_integration_task": "materialize one explicitly bounded nonzero AXIAL_CAP_BANDED_C4_ODD_Z_POLOIDAL child from the already integrated #343 capacity direction; this supersedes COMPACT_C4_ODD_Z_POLOIDAL as the active visual-geometry route while preserving its governance requirements: explicit autonomous coefficient bound/value, new representation identity/candidate SHA, unchanged reference/validation energy, core-sign, axis/support and restricted pressure/force screens, then fresh full-momentum/divergence validation on the 4096-point contract before any promotion; do not add another capacity basis first",
   "latest_integrated_swirl_capacity": {
     "integration_head": "412e6c35ce7c59e360ed8e40237f85d1856b75d4",
     "mode": "INTERIOR_C4_SWIRL",
