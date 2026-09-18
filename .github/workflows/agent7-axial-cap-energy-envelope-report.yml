@@ -1,0 +1,41 @@
+name: agent7-axial-cap-energy-envelope-report
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/constrained_eq45_bipolar_axial_cap_energy_envelope.py'
+      - 'tests/test_constrained_eq45_bipolar_axial_cap_energy_envelope.py'
+      - '.github/workflows/agent7-axial-cap-energy-envelope-report.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Test axial-cap energy envelope
+        run: python -m pytest -q -W error tests/test_constrained_eq45_bipolar_axial_cap_energy_envelope.py
+      - name: Generate refined axial-cap energy-envelope report
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction.constrained_eq45_bipolar_axial_cap_energy_envelope import audit_axial_cap_energy_envelope
+          report = audit_axial_cap_energy_envelope(quadrature_orders=(96, 192), morphology_grid_size=33)
+          path = Path('artifacts/bipolar_axial_cap_energy_envelope/report.json')
+          path.parent.mkdir(parents=True, exist_ok=True)
+          path.write_text(json.dumps(report, indent=2, sort_keys=True) + '\n', encoding='utf-8')
+          print(json.dumps(report, indent=2, sort_keys=True))
+          PY
+      - name: Upload axial-cap energy-envelope report
+        uses: actions/upload-artifact@v4
+        with:
+          name: agent7-axial-cap-energy-envelope-report
+          path: artifacts/bipolar_axial_cap_energy_envelope/report.json
