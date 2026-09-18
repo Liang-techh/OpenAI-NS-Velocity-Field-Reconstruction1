@@ -1,0 +1,43 @@
+name: kokuno-agent4-signed-covariance-independent-audit
+
+on:
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_source_signed_covariance_pair.py"
+      - "src/openai_ns_reconstruction/kokuno_signed_covariance_independent_audit.py"
+      - "tests/test_constrained_kokuno_source_signed_covariance_pair.py"
+      - "tests/test_constrained_kokuno_signed_covariance_independent_audit.py"
+      - ".github/workflows/kokuno-agent4-signed-covariance-independent-audit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  signed-covariance-independent-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+      - name: Compile audited paths
+        run: |
+          python -m py_compile src/openai_ns_reconstruction/kokuno_source_signed_covariance_pair.py
+          python -m py_compile src/openai_ns_reconstruction/kokuno_signed_covariance_independent_audit.py
+      - name: Run parent plus independent warnings-as-errors tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_source_signed_covariance_pair.py
+          tests/test_constrained_kokuno_signed_covariance_independent_audit.py
+      - name: Generate independent audit report
+        run: |
+          mkdir -p outputs
+          python -m openai_ns_reconstruction.kokuno_signed_covariance_independent_audit --out outputs/kokuno_agent4_signed_covariance_independent_audit.json
+      - name: Upload independent audit report
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent4-signed-covariance-independent-audit-v1
+          path: outputs/kokuno_agent4_signed_covariance_independent_audit.json
