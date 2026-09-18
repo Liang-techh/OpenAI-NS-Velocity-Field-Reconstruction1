@@ -1,0 +1,48 @@
+name: kokuno-agent3-supplied-multiband-covariance-rank
+
+on:
+  push:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_multiband_covariance_rank_screen.py'
+      - 'src/openai_ns_reconstruction/kokuno_source_multiband_real_pair_family.py'
+      - 'tests/test_constrained_kokuno_multiband_covariance_rank_screen.py'
+      - 'tests/test_constrained_kokuno_source_multiband_real_pair_family.py'
+      - 'scripts/kokuno_multiband_covariance_rank_report.py'
+      - '.github/workflows/kokuno-agent3-supplied-multiband-covariance-rank.yml'
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_multiband_covariance_rank_screen.py'
+      - 'src/openai_ns_reconstruction/kokuno_source_multiband_real_pair_family.py'
+      - 'tests/test_constrained_kokuno_multiband_covariance_rank_screen.py'
+      - 'tests/test_constrained_kokuno_source_multiband_real_pair_family.py'
+      - 'scripts/kokuno_multiband_covariance_rank_report.py'
+      - '.github/workflows/kokuno-agent3-supplied-multiband-covariance-rank.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  supplied-multiband-covariance-rank:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Focused Agent-2 handoff and Agent-3 rank tests
+        run: >-
+          python -m pytest -q -s -W error
+          tests/test_constrained_kokuno_source_multiband_real_pair_family.py
+          tests/test_constrained_kokuno_multiband_covariance_rank_screen.py
+      - name: Supplied-family covariance-rank receipt
+        run: >-
+          python scripts/kokuno_multiband_covariance_rank_report.py
+          --out artifacts/kokuno_agent3/supplied_multiband_covariance_rank_report.json
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent3-supplied-multiband-covariance-rank
+          path: artifacts/kokuno_agent3/supplied_multiband_covariance_rank_report.json
