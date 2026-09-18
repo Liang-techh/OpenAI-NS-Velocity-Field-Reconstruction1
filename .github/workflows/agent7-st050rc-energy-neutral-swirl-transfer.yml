@@ -1,0 +1,57 @@
+name: agent7-st050rc-energy-neutral-swirl-transfer
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st050r/agent7_st050rc_energy_neutral_swirl_transfer.py'
+      - 'experiments/root_st050r/test_agent7_st050rc_energy_neutral_swirl_transfer.py'
+      - '.github/workflows/agent7-st050rc-energy-neutral-swirl-transfer.yml'
+permissions:
+  contents: read
+jobs:
+  transfer-screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Focused unit tests
+        run: python -m pytest -q -W error experiments/root_st050r/test_agent7_st050rc_energy_neutral_swirl_transfer.py
+      - name: Execute preregistered frozen-field transfer screen
+        run: |
+          mkdir -p outputs/agent7-st050rc-energy-neutral-swirl-transfer
+          python experiments/root_st050r/agent7_st050rc_energy_neutral_swirl_transfer.py \
+            --out outputs/agent7-st050rc-energy-neutral-swirl-transfer/report.json
+      - name: Verify truth boundary and preregistration
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('outputs/agent7-st050rc-energy-neutral-swirl-transfer/report.json')
+          r=json.loads(p.read_text())
+          assert r['prereg_issue']==457
+          assert r['parent_id']=='ST050R-C'
+          assert r['parent_head']=='dc1d5476ea9979566b774293add76196083288c5'
+          assert r['gains']==[0.0,0.015,0.025,0.035,0.05]
+          assert r['diagnostic_added_velocity_degrees']==1
+          assert abs(r['balance']['balanced_moment_defect']) < 1e-12
+          assert r['canonical_velocity_changed'] is False
+          assert r['pressure_or_force_changed'] is False
+          assert r['held_out_pde_residual_evaluated'] is False
+          assert r['pde_validated'] is False
+          assert r['source_correspondence_verified'] is False
+          assert len(r['rows'])==5
+          print('first_clean_crossing_gain=',r['first_clean_crossing_gain'])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st050rc-energy-neutral-swirl-transfer
+          path: outputs/agent7-st050rc-energy-neutral-swirl-transfer/
+          if-no-files-found: error
