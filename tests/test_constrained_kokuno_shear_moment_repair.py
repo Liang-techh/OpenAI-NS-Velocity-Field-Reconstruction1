@@ -14,12 +14,13 @@ def _f(eta: float) -> float:
 
 
 def test_pa17_zero_jacobian_matches_source_power_blocks():
-    repair = KokunoShearMomentRepair(quadrature_points=192)
+    order = 192
+    repair = KokunoShearMomentRepair(quadrature_points=order)
     eta = 0.23
     f = _f(eta)
     jac = repair.coefficient_jacobian(np.zeros(5), f_eta=f)
 
-    nodes, weights = leggauss(256)
+    nodes, weights = leggauss(order)
     lo, hi = 0.80, 1.70
     xi = 0.5 * (hi - lo) * nodes + 0.5 * (hi + lo)
     w = 0.5 * (hi - lo) * weights
@@ -45,7 +46,7 @@ def test_pa17_zero_jacobian_matches_source_power_blocks():
         expected[3, column] = np.sum(w * e_weights[1] * basis[column])
         expected[4, column] = np.sum(w * e_weights[2] * basis[column])
 
-    assert np.allclose(jac, expected, rtol=2.0e-11, atol=2.0e-13)
+    assert np.allclose(jac, expected, rtol=3.0e-13, atol=3.0e-14)
     singular = np.linalg.svd(jac, compute_uv=False)
     assert singular[-1] > 0.0
     assert singular[0] / singular[-1] < 1.0e8
@@ -115,8 +116,6 @@ def test_i1_binding_profile_and_velocity_correction_are_executable():
         assert np.all(np.isfinite(values[key]))
     assert abs(float(values["delta_E"])) > 0.0
 
-    # eta=0, q=1 at z=t=0.  Choosing r from X gives a direct public Cartesian
-    # correction replay at a point inside I1 without inverting hidden state.
     X = repair.X_1 * xi
     r = math.sqrt(2.0 * X)
     velocity = repair.velocity_correction(
