@@ -1,26 +1,17 @@
-"""Hierarchical high-precision realization of the Kokuno three-bump heat repair.
+"""High-precision hierarchical Kokuno heat repair on the reserved I2 patch.
 
-This module closes one *numerical representation* gap between the signed-log
-heat-replacement target and the executable I2 reserved-patch correction.
+The corrected 2026-09-09 public reconstruction supplies a three-row heat-tail
+moment repair.  The repository's existing autonomous three-bump realization is
+well conditioned in float64, but the default source-existence schedule's target
+spans more than 400 decades.  A single float64 target therefore erases two
+nonzero rows before the solve.
 
-The corrected public reconstruction supplies the three normalized heat-moment
-rows and the source requires three compact bumps on an earlier reserved patch.
-The repository already implements those rows and one autonomous three-bump
-basis in :mod:`kokuno_heat_discrepancy_repair`.  For the default existence-style
-outer schedule, however, the corrected target spans more than 400 decades, so a
-single float64 coefficient vector erases two nonzero constraints.
-
-Here the existing repository discrete moment map (the same fixed Gauss-Legendre
-quadrature and autonomous bump basis) is solved with Python ``decimal`` at
-adaptive precision.  The coefficient is kept as a hierarchy of source-channel
-linear pieces plus nonlinear Newton counterterms.  This preserves all three
-signed-log target channels and also permits a high-precision local I2 velocity
-evaluation.
-
-Important scope boundary: this is a high-precision solve of the repository's
-*frozen discrete realization* of the source moment map.  It is not a proof that
-the continuous source integrals are closed to hundreds of digits, and it does
-not create a global Kokuno leading field or pass the Navier--Stokes PDE gate.
+This module keeps the corrected signed-log target in Python Decimal arithmetic,
+solves the existing frozen discrete three-bump polynomial map hierarchically,
+and exposes a local I2 velocity evaluator.  It is a numerical representation
+bridge only: the continuous source moments are not certified to hundreds of
+digits, no global leading field is assembled, and no PDE-validation claim is
+made.
 """
 
 from __future__ import annotations
@@ -83,48 +74,48 @@ def _canonical_json(payload: dict[str, Any]) -> str:
     return json.dumps(payload, sort_keys=True, separators=(",", ":"), allow_nan=False)
 
 
+def _json_logs(values: tuple[float, float, float]) -> list[float | None]:
+    """Use JSON null for the exact-zero signed-log sentinel -inf."""
+    return [value if math.isfinite(value) else None for value in values]
+
+
 def _D(value: Any) -> Decimal:
     if isinstance(value, Decimal):
         return value
     if isinstance(value, (np.integer, int)):
         return Decimal(int(value))
-    value_float = float(value)
-    if not math.isfinite(value_float):
+    number = float(value)
+    if not math.isfinite(number):
         raise ValueError("non-finite value cannot be converted to Decimal")
-    return Decimal(repr(value_float))
+    return Decimal(repr(number))
 
 
-def _decimal_linear_solve(
-    matrix: list[list[Decimal]], rhs: list[Decimal]
-) -> list[Decimal]:
+def _linear_solve(matrix: list[list[Decimal]], rhs: list[Decimal]) -> list[Decimal]:
     n = len(rhs)
     augmented = [list(matrix[i]) + [rhs[i]] for i in range(n)]
     for pivot in range(n):
-        row = max(range(pivot, n), key=lambda r: abs(augmented[r][pivot]))
-        if augmented[row][pivot] == 0:
+        best = max(range(pivot, n), key=lambda row: abs(augmented[row][pivot]))
+        if augmented[best][pivot] == 0:
             raise ValueError("hierarchical repair matrix is singular")
-        if row != pivot:
-            augmented[pivot], augmented[row] = augmented[row], augmented[pivot]
+        if best != pivot:
+            augmented[pivot], augmented[best] = augmented[best], augmented[pivot]
         scale = augmented[pivot][pivot]
         augmented[pivot] = [value / scale for value in augmented[pivot]]
-        for row_index in range(n):
-            if row_index == pivot:
+        for row in range(n):
+            if row == pivot:
                 continue
-            factor = augmented[row_index][pivot]
+            factor = augmented[row][pivot]
             if factor == 0:
                 continue
-            augmented[row_index] = [
-                augmented[row_index][column]
-                - factor * augmented[pivot][column]
+            augmented[row] = [
+                augmented[row][column] - factor * augmented[pivot][column]
                 for column in range(n + 1)
             ]
     return [augmented[index][-1] for index in range(n)]
 
 
 def _decimal_abs_log(value: Decimal) -> float:
-    if value == 0:
-        return -math.inf
-    return float(abs(value).ln())
+    return -math.inf if value == 0 else float(abs(value).ln())
 
 
 @dataclass(frozen=True)
@@ -157,7 +148,7 @@ class HierarchicalHeatRepairSolution:
             "achieved": list(self.achieved),
             "residual": list(self.residual),
             "target_sign": list(self.target_sign),
-            "target_log_abs": list(self.target_log_abs),
+            "target_log_abs": _json_logs(self.target_log_abs),
             "max_relative_residual": self.max_relative_residual,
             "newton_steps": self.newton_steps,
             "sha256": self.sha256,
@@ -166,7 +157,7 @@ class HierarchicalHeatRepairSolution:
 
 @dataclass(frozen=True)
 class KokunoHierarchicalHeatRepair:
-    """Precision-preserving local I2 realization of the source heat repair."""
+    """Precision-preserving local I2 realization of the heat repair."""
 
     target: KokunoLogRescaledHeatRepairTarget = field(
         default_factory=KokunoLogRescaledHeatRepairTarget
@@ -186,7 +177,7 @@ class KokunoHierarchicalHeatRepair:
             raise TypeError("target must be a KokunoLogRescaledHeatRepairTarget")
         if self.target.outer_schedule.lambda_outer > 0.5:
             raise ValueError(
-                "hierarchical repair currently requires lambda_outer<=0.5, "
+                "hierarchical repair requires lambda_outer<=0.5, "
                 "matching the existing three-bump repair contract"
             )
         for name, value, lo, hi in (
@@ -219,29 +210,22 @@ class KokunoHierarchicalHeatRepair:
         return self.target.outer_schedule
 
     def _discrete_tensors(
-        self,
-        f_eta: float,
+        self, f_eta: float
     ) -> tuple[list[list[Decimal]], list[list[list[Decimal]]]]:
-        zero = np.zeros(3, dtype=float)
-        linear_np = self._repair.coefficient_jacobian(zero, f_eta=f_eta)
+        linear_np = self._repair.coefficient_jacobian(
+            np.zeros(3, dtype=float), f_eta=f_eta
+        )
         x, weights = self._repair._quadrature()
         basis = self._repair.basis_values(x)
         quadratic_np = np.zeros((3, 3, 3), dtype=float)
         for i in range(3):
             for j in range(3):
                 product = basis[i] * basis[j]
-                quadratic_np[0, i, j] = np.sum(
-                    weights * 0.5 * product / x
-                )
-                quadratic_np[1, i, j] = np.sum(
-                    weights * -0.5 * product
-                )
+                quadratic_np[0, i, j] = np.sum(weights * 0.5 * product / x)
+                quadratic_np[1, i, j] = np.sum(weights * -0.5 * product)
         linear = [[_D(linear_np[r, c]) for c in range(3)] for r in range(3)]
         quadratic = [
-            [
-                [_D(quadratic_np[r, i, j]) for j in range(3)]
-                for i in range(3)
-            ]
+            [[_D(quadratic_np[r, i, j]) for j in range(3)] for i in range(3)]
             for r in range(3)
         ]
         return linear, quadratic
@@ -252,7 +236,7 @@ class KokunoHierarchicalHeatRepair:
         linear: list[list[Decimal]],
         quadratic: list[list[list[Decimal]]],
     ) -> list[Decimal]:
-        out: list[Decimal] = []
+        result: list[Decimal] = []
         for row in range(3):
             value = sum(
                 (linear[row][i] * coefficients[i] for i in range(3)),
@@ -265,8 +249,8 @@ class KokunoHierarchicalHeatRepair:
                         * coefficients[i]
                         * coefficients[j]
                     )
-            out.append(value)
-        return out
+            result.append(value)
+        return result
 
     @staticmethod
     def _jacobian(
@@ -277,13 +261,14 @@ class KokunoHierarchicalHeatRepair:
         jacobian = [[linear[r][c] for c in range(3)] for r in range(3)]
         for row in range(3):
             for column in range(3):
-                correction = Decimal(0)
-                for j in range(3):
-                    correction += (
-                        quadratic[row][column][j]
-                        + quadratic[row][j][column]
-                    ) * coefficients[j]
-                jacobian[row][column] += correction
+                jacobian[row][column] += sum(
+                    (
+                        (quadratic[row][column][j] + quadratic[row][j][column])
+                        * coefficients[j]
+                        for j in range(3)
+                    ),
+                    Decimal(0),
+                )
         return jacobian
 
     def _target_decimals(
@@ -296,10 +281,11 @@ class KokunoHierarchicalHeatRepair:
         with localcontext() as ctx:
             ctx.prec = precision_digits
             for sign, log_abs in zip(signs, logs):
-                if sign == 0:
-                    values.append(Decimal(0))
-                else:
-                    values.append(Decimal(sign) * _D(log_abs).exp())
+                values.append(
+                    Decimal(0)
+                    if sign == 0
+                    else Decimal(sign) * _D(log_abs).exp()
+                )
         return values, signs, logs
 
     def solve(self, eta: float) -> HierarchicalHeatRepairSolution:
@@ -316,34 +302,33 @@ class KokunoHierarchicalHeatRepair:
 
         with localcontext() as ctx:
             ctx.prec = precision_digits
-            target, signs, logs = self._target_decimals(
-                eta_value, precision_digits
-            )
+            target, signs, logs = self._target_decimals(eta_value, precision_digits)
+
             if not any(signs):
-                coefficients = [Decimal(0), Decimal(0), Decimal(0)]
-                achieved = [Decimal(0), Decimal(0), Decimal(0)]
-                residual = [Decimal(0), Decimal(0), Decimal(0)]
-                term_labels: list[str] = []
+                coefficients = [Decimal(0)] * 3
+                achieved = [Decimal(0)] * 3
+                residual = [Decimal(0)] * 3
+                labels: list[str] = []
                 terms: list[list[Decimal]] = []
                 newton_steps = 0
                 max_relative = 0.0
             else:
                 f_eta = float(self.outer_schedule.source_f(eta_value))
                 linear, quadratic = self._discrete_tensors(f_eta)
-                coefficients = [Decimal(0), Decimal(0), Decimal(0)]
-                term_labels = []
+                coefficients = [Decimal(0)] * 3
+                labels = []
                 terms = []
 
-                for channel_index, channel_name in enumerate(CHANNELS):
-                    if target[channel_index] == 0:
+                for channel, name in enumerate(CHANNELS):
+                    if target[channel] == 0:
                         continue
-                    rhs = [Decimal(0), Decimal(0), Decimal(0)]
-                    rhs[channel_index] = target[channel_index]
-                    term = _decimal_linear_solve(linear, rhs)
+                    rhs = [Decimal(0)] * 3
+                    rhs[channel] = target[channel]
+                    term = _linear_solve(linear, rhs)
                     terms.append(term)
-                    term_labels.append(f"linear_{channel_name}")
+                    labels.append(f"linear_{name}")
                     coefficients = [
-                        coefficients[i] + term[i] for i in range(3)
+                        coefficients[index] + term[index] for index in range(3)
                     ]
 
                 tolerance = Decimal(10) ** (-self.relative_residual_digits)
@@ -358,47 +343,41 @@ class KokunoHierarchicalHeatRepair:
                         for row in range(3)
                         if target[row] != 0
                     ]
-                    if relative and max(relative) <= tolerance:
+                    if max(relative) <= tolerance:
                         break
-                    jacobian = self._jacobian(
-                        coefficients, linear, quadratic
-                    )
-                    delta = _decimal_linear_solve(
-                        jacobian, [-value for value in residual]
+                    delta = _linear_solve(
+                        self._jacobian(coefficients, linear, quadratic),
+                        [-value for value in residual],
                     )
                     coefficients = [
-                        coefficients[i] + delta[i] for i in range(3)
+                        coefficients[index] + delta[index] for index in range(3)
                     ]
                     terms.append(delta)
-                    term_labels.append(f"newton_{step}")
+                    labels.append(f"newton_{step}")
                     newton_steps = step
                 else:
                     raise ValueError(
-                        "hierarchical three-bump solve did not reach the declared "
-                        "relative residual"
+                        "hierarchical three-bump solve did not reach the "
+                        "declared relative residual"
                     )
 
                 achieved = self._map(coefficients, linear, quadratic)
-                residual = [
-                    achieved[row] - target[row] for row in range(3)
-                ]
-                relative = [
-                    abs(residual[row]) / abs(target[row])
-                    for row in range(3)
-                    if target[row] != 0
-                ]
-                max_relative = float(max(relative)) if relative else 0.0
+                residual = [achieved[row] - target[row] for row in range(3)]
+                max_relative = float(
+                    max(
+                        abs(residual[row]) / abs(target[row])
+                        for row in range(3)
+                        if target[row] != 0
+                    )
+                )
 
-            limit = _D(self.coefficient_limit)
-            if any(abs(value) > limit for value in coefficients):
+            if any(abs(value) > _D(self.coefficient_limit) for value in coefficients):
                 raise ValueError(
                     "hierarchical coefficient exceeds the declared local repair bound"
                 )
 
             coefficient_strings = tuple(str(value) for value in coefficients)
-            term_strings = tuple(
-                tuple(str(value) for value in term) for term in terms
-            )
+            term_strings = tuple(tuple(str(value) for value in term) for term in terms)
             target_strings = tuple(str(value) for value in target)
             achieved_strings = tuple(str(value) for value in achieved)
             residual_strings = tuple(str(value) for value in residual)
@@ -406,14 +385,14 @@ class KokunoHierarchicalHeatRepair:
                 "schema": "kokuno-hierarchical-heat-repair-solution-v1",
                 "eta": eta_value,
                 "precision_digits": precision_digits,
-                "term_labels": term_labels,
+                "term_labels": labels,
                 "coefficient_terms": [list(row) for row in term_strings],
                 "coefficients": list(coefficient_strings),
                 "target": list(target_strings),
                 "achieved": list(achieved_strings),
                 "residual": list(residual_strings),
                 "target_sign": list(signs),
-                "target_log_abs": list(logs),
+                "target_log_abs": _json_logs(logs),
                 "max_relative_residual": max_relative,
                 "newton_steps": newton_steps,
             }
@@ -423,7 +402,7 @@ class KokunoHierarchicalHeatRepair:
             return HierarchicalHeatRepairSolution(
                 eta=eta_value,
                 precision_digits=precision_digits,
-                term_labels=tuple(term_labels),
+                term_labels=tuple(labels),
                 coefficient_terms=term_strings,
                 coefficients=coefficient_strings,  # type: ignore[arg-type]
                 target=target_strings,  # type: ignore[arg-type]
@@ -444,9 +423,7 @@ class KokunoHierarchicalHeatRepair:
             return Decimal(0)
         return (Decimal(1) - Decimal(1) / (Decimal(1) - s * s)).exp()
 
-    def correction_over_e_star_decimal(
-        self, x_star: float, eta: float
-    ) -> Decimal:
+    def correction_over_e_star_decimal(self, x_star: float, eta: float) -> Decimal:
         x_value = float(x_star)
         if not math.isfinite(x_value) or x_value <= 0.0:
             raise ValueError("x_star must be positive and finite")
@@ -454,8 +431,8 @@ class KokunoHierarchicalHeatRepair:
         with localcontext() as ctx:
             ctx.prec = solution.precision_digits
             x_decimal = _D(x_value)
-            coefficients = list(solution.coefficient_decimals())
             centers = (0.96, 1.24, 1.53)
+            coefficients = solution.coefficient_decimals()
             return sum(
                 (
                     coefficients[index]
@@ -468,13 +445,7 @@ class KokunoHierarchicalHeatRepair:
     def velocity_decimal(
         self, x: float, y: float, z: float, t: float
     ) -> tuple[Decimal, Decimal, Decimal]:
-        """Return the local I2 corrected velocity without collapsing its hierarchy.
-
-        Similarity coordinates are taken from the already tested repository
-        float evaluator.  The profile correction and the final base+correction
-        addition are then carried in Decimal at the precision required by the
-        signed-log target.
-        """
+        """Return the local I2 velocity with the repair retained in Decimal."""
 
         coordinates = self.outer_schedule._coordinates.evaluate(x, y, z, t)
         for name in ("X", "eta", "q"):
@@ -484,37 +455,34 @@ class KokunoHierarchicalHeatRepair:
         eta = float(coordinates["eta"])
         q = float(coordinates["q"])
         profile = self.outer_schedule.patch_profile_values(X, eta)
-        x_star = float(profile["x_star"])
-        base_velocity = np.asarray(
+        base = np.asarray(
             self.outer_schedule.patch_velocity(x, y, z, t), dtype=float
         )
         solution = self.solve(eta)
         with localcontext() as ctx:
             ctx.prec = solution.precision_digits
-            correction_ratio = self.correction_over_e_star_decimal(
-                x_star, eta
+            delta_E = (
+                _D(self.outer_schedule.log_e_star).exp()
+                * self.correction_over_e_star_decimal(float(profile["x_star"]), eta)
             )
-            e_star = _D(self.outer_schedule.log_e_star).exp()
-            delta_E = e_star * correction_ratio
-            exponent = -Decimal(1) - _D(self.outer_schedule.h)
-            q_factor = (exponent * _D(q).ln()).exp()
-            geom = q_factor / (Decimal(2) * _D(X)).sqrt()
+            q_exponent = -Decimal(1) - _D(self.outer_schedule.h)
+            q_factor = (q_exponent * _D(q).ln()).exp()
+            geometry = q_factor / (Decimal(2) * _D(X)).sqrt()
             delta = (
-                -_D(y) * geom * delta_E,
-                _D(x) * geom * delta_E,
+                -_D(y) * geometry * delta_E,
+                _D(x) * geometry * delta_E,
                 Decimal(0),
             )
             return tuple(
-                _D(base_velocity[index]) + delta[index]
-                for index in range(3)
+                _D(base[index]) + delta[index] for index in range(3)
             )  # type: ignore[return-value]
 
     def velocity(self, x: Any, y: Any, z: Any, t: Any) -> np.ndarray:
-        """Float64 compatibility view of the hierarchical local I2 velocity.
+        """Broadcast-compatible float64 candidate-evaluator view.
 
-        The Decimal path is authoritative for the tiny repair.  This method is
-        supplied for candidate-evaluator compatibility and may round the repair
-        away when it is below one ulp of the base velocity.
+        Use :meth:`velocity_decimal` when the repair itself must remain
+        distinguishable from the base value; the default repair is sub-ulp in
+        the float64 physical velocity.
         """
 
         x_array, y_array, z_array, t_array = np.broadcast_arrays(
@@ -535,15 +503,13 @@ class KokunoHierarchicalHeatRepair:
         return output
 
     def precision_report(self, eta: float) -> dict[str, Any]:
-        target_report = self.target.precision_report(float(eta))
         solution = self.solve(float(eta))
         coefficient_logs = [
-            _decimal_abs_log(value)
-            for value in solution.coefficient_decimals()
+            _decimal_abs_log(value) for value in solution.coefficient_decimals()
         ]
         return {
             "eta": float(eta),
-            "target": target_report,
+            "target": self.target.precision_report(float(eta)),
             "solve_precision_digits": solution.precision_digits,
             "solution_sha256": solution.sha256,
             "newton_steps": solution.newton_steps,
