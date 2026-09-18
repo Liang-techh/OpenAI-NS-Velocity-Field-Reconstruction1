@@ -1,0 +1,80 @@
+name: agent9-st006-material-paths
+on:
+  pull_request:
+    paths:
+      - 'research_baseline/material_paths.py'
+      - 'tests/test_research_baseline_material_paths.py'
+      - 'docs/external_methods/CR-A9-040-st006-material-paths.md'
+      - '.github/workflows/agent9-st006-material-paths.yml'
+permissions:
+  contents: read
+  pull-requests: write
+jobs:
+  focused-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install focused dependencies
+        run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'pytest>=8,<10'
+      - name: Warning-clean compile
+        run: python -W error -m py_compile research_baseline/material_paths.py tests/test_research_baseline_material_paths.py
+      - name: Run focused regressions
+        run: python -m pytest -q -W error tests/test_research_baseline_material_paths.py
+      - name: Measure retained ST006 material paths
+        run: |
+          mkdir -p outputs
+          python -m research_baseline.material_paths --output outputs/ST006_material_paths.json > outputs/ST006_material_paths.stdout.json
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          r=json.loads(Path('outputs/ST006_material_paths.json').read_text())
+          assert r['candidate']=='ST006'
+          assert r['interpretation_boundary']['pde_validated'] is False
+          assert r['interpretation_boundary']['visual_correspondence_verified'] is False
+          s=r['summary']
+          summary={
+              'candidate_sha256': r['candidate_sha256'],
+              'report_sha256': r['report_sha256'],
+              'path_count': s['path_count'],
+              'inward_path_count': s['inward_path_count'],
+              'outward_path_count': s['outward_path_count'],
+              'mean_radius_change': s['mean_radius_change'],
+              'median_radius_change': s['median_radius_change'],
+              'mean_absolute_turns': s['mean_absolute_turns'],
+              'minimum_absolute_turns': s['minimum_absolute_turns'],
+              'maximum_absolute_turns': s['maximum_absolute_turns'],
+              'axially_outward_path_count': s['axially_outward_path_count'],
+              'axially_inward_path_count': s['axially_inward_path_count'],
+              'mean_pair_axial_separation_change': s['mean_pair_axial_separation_change'],
+              'mean_pair_axial_separation_ratio': s['mean_pair_axial_separation_ratio'],
+              'pair_axial_separation_growth_count': s['pair_axial_separation_growth_count'],
+              'pair_axial_separation_shrink_count': s['pair_axial_separation_shrink_count'],
+              'mean_speed_change': s['mean_speed_change'],
+              'all_inside_box': r['interpretation_boundary']['all_sampled_points_inside_registered_box'],
+          }
+          print(json.dumps(summary, indent=2))
+          print('::notice title=ST006 material path summary::' + json.dumps(summary, sort_keys=True, separators=(',', ':')))
+          lines=['<!-- CR-A9-040-ST006-MATERIAL-PATHS -->','### CR-A9-040 exact-head ST006 material-path receipt','',f"`head={os.environ['PR_HEAD_SHA']}`",'', '```json',json.dumps(summary,indent=2,sort_keys=True),'```','', 'Candidate-side kinematics only. This comment is not PDE validation or OpenAI-field identification.']
+          Path('outputs/ST006_material_paths_summary.md').write_text('\n'.join(lines)+'\n')
+          PY
+      - name: Publish exact-head measurement receipt
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh pr comment "${{ github.event.pull_request.number }}" --repo "$GITHUB_REPOSITORY" --body-file outputs/ST006_material_paths_summary.md
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ST006-material-paths
+          path: outputs/ST006_material_paths.json
+          if-no-files-found: error
