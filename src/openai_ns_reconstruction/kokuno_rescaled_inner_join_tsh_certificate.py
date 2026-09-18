@@ -109,7 +109,7 @@ class KokunoRescaledInnerJoinTshCertificate:
     incoming: KokunoRescaledAppendixBIncomingMoments = field(
         default_factory=KokunoRescaledAppendixBIncomingMoments
     )
-    eta_nodes: int = 9
+    eta_nodes: int = 5
     envelope_relative_padding: float = 0.02
     envelope_absolute_padding: float = 1.0e-6
 
@@ -121,8 +121,8 @@ class KokunoRescaledInnerJoinTshCertificate:
         ):
             raise TypeError("eta_nodes must be an integer")
         n = int(self.eta_nodes)
-        if not 9 <= n <= 65 or n % 2 == 0:
-            raise ValueError("eta_nodes must be an odd integer in [9,65]")
+        if not 5 <= n <= 65 or n % 2 == 0:
+            raise ValueError("eta_nodes must be an odd integer in [5,65]")
         rel = float(self.envelope_relative_padding)
         absolute = float(self.envelope_absolute_padding)
         if not math.isfinite(rel) or not 0.0 < rel <= 0.2:
@@ -192,7 +192,6 @@ class KokunoRescaledInnerJoinTshCertificate:
 
     @property
     def max_T_sh_for_separation(self) -> float:
-        # log x_sep = log(X_i) + T_sh - log(X_R) < -8.
         return (
             float(self.incoming.binding.log_X_R)
             - math.log(X_I)
@@ -201,7 +200,6 @@ class KokunoRescaledInnerJoinTshCertificate:
 
     @property
     def separation_geometry_margin(self) -> float:
-        """Positive exactly when the selected source-form geometry fits."""
         return self.max_T_sh_for_separation - self.selected_T_sh
 
     @property
@@ -357,7 +355,7 @@ def main(argv: list[str] | None = None) -> int:
         description="Emit the selected shared-C PA.10 T_sh numerical certificate"
     )
     parser.add_argument("--output", type=Path, default=None)
-    parser.add_argument("--eta-nodes", type=int, default=9)
+    parser.add_argument("--eta-nodes", type=int, default=5)
     parser.add_argument("--axis-quadrature-points", type=int, default=64)
     args = parser.parse_args(argv)
     certificate = KokunoRescaledInnerJoinTshCertificate(
