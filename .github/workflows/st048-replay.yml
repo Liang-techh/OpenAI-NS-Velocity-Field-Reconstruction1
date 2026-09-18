@@ -1,0 +1,75 @@
+name: st048-replay
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st048/**'
+      - '.github/workflows/st048-replay.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'experiments/root_st048/**'
+      - '.github/workflows/st048-replay.yml'
+permissions:
+  contents: read
+jobs:
+  frozen-boundary-shear-fields:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numerical and test dependencies
+        run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Verify original artifact and new field/shear identities
+        run: |
+          python scripts/ns_candidate.py verify
+          python -m pytest -q -W error experiments/root_st048/test_boundary_shear.py
+      - name: Replay frozen fields and original scientific rejection
+        shell: bash
+        run: |
+          for candidate in ST048-S ST048-B; do
+            set +e
+            python experiments/root_st048/replay_st048.py --id "$candidate" --out "outputs/$candidate" --seed 9174801 --validate --structure
+            code=$?
+            set -e
+            test "$code" = 1
+          done
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          recorded=json.loads(Path('experiments/root_st048/results.json').read_text())
+          for ident in ('ST048-S','ST048-B'):
+              actual=json.loads(Path(f'outputs/{ident}/validation.json').read_text())
+              ref=next(r for r in recorded['paired_results'] if r['id']==ident and r['seed']==9174801)
+              assert actual['pde_validated'] is False and actual['all_numeric_gates_pass'] is False
+              assert actual['gates']==recorded['expected_gates']
+              fine=[r for r in actual['spatial_refinement'] if r['space_step']==.005]
+              maximum=max(r['momentum_max'] for r in fine)
+              l2=max(r['momentum_L2'] for r in fine)
+              assert abs(maximum-ref['max'])<1e-5
+              assert abs(l2-ref['volume_L2'])<1e-5
+              structure=json.loads(Path(f'outputs/{ident}/structure.json').read_text())
+              for case in structure['cases']:
+                  for row in case['rows']:
+                      assert row['axial_pressure_toward_fraction']==0.
+                      assert row['inward_fraction']==1. and row['positive_swirl_fraction']==1. and row['bipolar_fraction']==1.
+              tr=structure['trajectories']
+              assert tr['seed_count']==36 and tr['inward_final_fraction']==1.
+              assert tr['positive_turn_fraction']==1. and tr['midplane_positive_displacement_fraction']==1.
+              assert tr['bipolar_outward_displacement_fraction']==1. and tr['integrator_comparison_max']<1e-8
+              print(ident,maximum,l2,'Actual field replay matches; NS1e-3 and complete structure alignment remain unmet.')
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ST048-S-B-independent-replay
+          path: |
+            outputs/ST048-S/
+            outputs/ST048-B/
+          if-no-files-found: error

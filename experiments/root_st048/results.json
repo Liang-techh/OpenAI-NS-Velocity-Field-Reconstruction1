@@ -1,0 +1,316 @@
+{
+  "experiment": "ST048",
+  "task": 384,
+  "parent_pr": 379,
+  "base_commit": "2c51cd20e036ab29954cf77a70814bc918d5c6a5",
+  "original_NS_target_achieved": false,
+  "default_promoted": false,
+  "freeze_utc": "2026-09-18T11:05:01.762940+00:00",
+  "no_training_after_holdout": true,
+  "original_contract": "nu=.01, [.25,.75], smooth compact u and p in r<2, |z|<2; original curl force a,c in[0,10]; E0=1 and all original gates unchanged",
+  "norm": "Full-vector max and sqrt(64*mean(|R|^2)) at each original time; report worst time at spaceh=.005/timeh=.0025",
+  "momentum_thresholds": {
+    "max": 0.001,
+    "volume_L2": 0.001
+  },
+  "training_additions": {
+    "edge_probes": 3423,
+    "edge_times": [
+      0.25,
+      0.27,
+      0.33,
+      0.5,
+      0.67,
+      0.73,
+      0.75
+    ],
+    "edge_weight": 0.04,
+    "edge_temperature": 0.0001,
+    "signed_shear_ratio": 0.995,
+    "signed_shear_upper": "1.25*parent magnitude +1e-5",
+    "shear_radii": [
+      0.04,
+      0.08,
+      0.14,
+      0.23,
+      0.36,
+      0.48,
+      0.6
+    ],
+    "shear_times": 17,
+    "new_targets": "Autonomous, not recovered source parameters",
+    "remaining_constraints": "Prior conditioned coupled optimizer; same space/time training and physical constraints"
+  },
+  "runs": [
+    {
+      "experiment": "ST048-S",
+      "radial": 5,
+      "axial": 5,
+      "time_degree": 4,
+      "variables": 398,
+      "maxiter": 240,
+      "wall_seconds": 480.0,
+      "iterations": 196,
+      "nfev": 222,
+      "success": true,
+      "message": "Optimization terminated successfully",
+      "selection": "best_feasible_training",
+      "min_constraint": -3.689114755960648e-10,
+      "loss": 5.2937007166287256e-05,
+      "elapsed": 222.255374819,
+      "created_utc": "2026-09-18T10:52:39.534866+00:00"
+    },
+    {
+      "experiment": "ST048-B",
+      "radial": 6,
+      "axial": 6,
+      "time_degree": 4,
+      "variables": 530,
+      "maxiter": 300,
+      "wall_seconds": 600.0,
+      "iterations": 300,
+      "nfev": 339,
+      "success": false,
+      "message": "Iteration limit reached",
+      "selection": "best_feasible_training",
+      "min_constraint": -1.0571841927814811e-10,
+      "loss": 4.271910813590168e-05,
+      "elapsed": 581.974251203,
+      "created_utc": "2026-09-18T10:55:18.571259+00:00"
+    }
+  ],
+  "expected_gates": {
+    "momentum_max": false,
+    "momentum_L2": false,
+    "divergence_max": true,
+    "divergence_L2": true,
+    "initial_energy": true,
+    "energy_range": true,
+    "energy_quadrature": true,
+    "boundary": true,
+    "core_signs": true,
+    "scaled_core_drift": true,
+    "derived_amplitude": true
+  },
+  "paired_results": [
+    {
+      "id": "ST047-E",
+      "seed": 9174801,
+      "points": 4096,
+      "time_slices": 6,
+      "max": 0.05399676288959764,
+      "volume_L2": 0.059869538775917816
+    },
+    {
+      "id": "ST048-S",
+      "seed": 9174801,
+      "points": 4096,
+      "time_slices": 6,
+      "max": 0.04879064306743334,
+      "volume_L2": 0.05460780950352298
+    },
+    {
+      "id": "ST048-B",
+      "seed": 9174801,
+      "points": 4096,
+      "time_slices": 6,
+      "max": 0.05200676704563608,
+      "volume_L2": 0.0505474714610945
+    },
+    {
+      "id": "ST047-E",
+      "seed": 9174802,
+      "points": 4096,
+      "time_slices": 6,
+      "max": 0.04791787724752255,
+      "volume_L2": 0.06405751088886011
+    },
+    {
+      "id": "ST048-S",
+      "seed": 9174802,
+      "points": 4096,
+      "time_slices": 6,
+      "max": 0.04455119801122593,
+      "volume_L2": 0.05811971991929577
+    },
+    {
+      "id": "ST048-B",
+      "seed": 9174802,
+      "points": 4096,
+      "time_slices": 6,
+      "max": 0.04306546284390083,
+      "volume_L2": 0.05369193947150888
+    }
+  ],
+  "paired_improvements": [
+    {
+      "id": "ST048-S",
+      "seed": 9174801,
+      "max_reduction_percent": 9.641540610145082,
+      "L2_reduction_percent": 8.788658439625952
+    },
+    {
+      "id": "ST048-B",
+      "seed": 9174801,
+      "max_reduction_percent": 3.6853984155130304,
+      "L2_reduction_percent": 15.570634926242432
+    },
+    {
+      "id": "ST048-S",
+      "seed": 9174802,
+      "max_reduction_percent": 7.0259356834732944,
+      "L2_reduction_percent": 9.269468774499234
+    },
+    {
+      "id": "ST048-B",
+      "seed": 9174802,
+      "max_reduction_percent": 10.126522046367569,
+      "L2_reduction_percent": 16.181664372403592
+    }
+  ],
+  "structure": [
+    {
+      "id": "ST047-E",
+      "comparable_final": {
+        "time": 0.75,
+        "profile_drift": 0.18250426823890598,
+        "inward_fraction": 1.0,
+        "positive_swirl_fraction": 1.0,
+        "bipolar_fraction": 1.0,
+        "radial_pressure_inward_fraction": 1.0,
+        "axial_pressure_toward_fraction": 0.0,
+        "adverse_pressure_rms": 0.04940861419665869,
+        "positive_nonpressure_Mz_rms": 0.06303239757938749,
+        "core_residual_sampled_max": 0.030771833921992946
+      },
+      "midplane_t05_shear": 0.0021824389346682986,
+      "dense_grid_max": 0.05304219869515318,
+      "particle_radial_ratio_range": [
+        0.9044775219624598,
+        0.9251239817691479
+      ],
+      "particle_rotation_radians": [
+        0.07702601107596815,
+        0.11386001842518668
+      ]
+    },
+    {
+      "id": "ST048-S",
+      "comparable_final": {
+        "time": 0.75,
+        "profile_drift": 0.18143403657111856,
+        "inward_fraction": 1.0,
+        "positive_swirl_fraction": 1.0,
+        "bipolar_fraction": 1.0,
+        "radial_pressure_inward_fraction": 1.0,
+        "axial_pressure_toward_fraction": 0.0,
+        "adverse_pressure_rms": 0.048316972585128404,
+        "positive_nonpressure_Mz_rms": 0.06087306475152311,
+        "core_residual_sampled_max": 0.02897422994678128
+      },
+      "midplane_t05_shear": 0.0021932816598492404,
+      "dense_grid_max": 0.04970658426967791,
+      "particle_radial_ratio_range": [
+        0.909705143506061,
+        0.9306726115151496
+      ],
+      "particle_rotation_radians": [
+        0.07014183568845507,
+        0.09964876493143762
+      ],
+      "new_shear_min_ratio": 0.9950073478261634,
+      "new_shear_max_ratio": 1.0071634957804105,
+      "new_shear_below_target_fraction": 0.0,
+      "new_random_spacetime": [
+        {
+          "id": "parent",
+          "sampled_spacetime_max": 0.040328204573259994,
+          "volume_scaled_spacetime_RMS": 0.04339765979821827,
+          "FD_analytic_max_difference": 1.761477688737968e-06
+        },
+        {
+          "id": "child",
+          "sampled_spacetime_max": 0.0352680003677165,
+          "volume_scaled_spacetime_RMS": 0.041469779747619104,
+          "FD_analytic_max_difference": 1.5097326462344324e-06
+        }
+      ]
+    },
+    {
+      "id": "ST048-B",
+      "comparable_final": {
+        "time": 0.75,
+        "profile_drift": 0.18143548637996484,
+        "inward_fraction": 1.0,
+        "positive_swirl_fraction": 1.0,
+        "bipolar_fraction": 1.0,
+        "radial_pressure_inward_fraction": 1.0,
+        "axial_pressure_toward_fraction": 0.0,
+        "adverse_pressure_rms": 0.04872070217021485,
+        "positive_nonpressure_Mz_rms": 0.060799126445350675,
+        "core_residual_sampled_max": 0.028445162618768463
+      },
+      "midplane_t05_shear": 0.0021892497691643913,
+      "dense_grid_max": 0.0446883488698943,
+      "particle_radial_ratio_range": [
+        0.9080529666701989,
+        0.9303740118629137
+      ],
+      "particle_rotation_radians": [
+        0.06838187686314033,
+        0.09981598004335689
+      ],
+      "new_shear_min_ratio": 0.9950022763098008,
+      "new_shear_max_ratio": 1.005253304315828,
+      "new_shear_below_target_fraction": 0.0,
+      "new_random_spacetime": [
+        {
+          "id": "parent",
+          "sampled_spacetime_max": 0.040328204573259994,
+          "volume_scaled_spacetime_RMS": 0.04339765979821827,
+          "FD_analytic_max_difference": 1.761477688737968e-06
+        },
+        {
+          "id": "child",
+          "sampled_spacetime_max": 0.035103175402817134,
+          "volume_scaled_spacetime_RMS": 0.0371736007093717,
+          "FD_analytic_max_difference": 1.6731711166622935e-06
+        }
+      ]
+    }
+  ],
+  "diagnostic_scope": "Reused comparable242point core grid and prior722point grid are not newly fresh this round. New651shear points use seed9174881. New4096interior space-time points seed9174882 have a SPACE-TIME RMS, not original fixed-time spatialL2. Dense81x121axis-inclusive grid maxima are not continuum bounds. Pressure direction remains outward. 36 actual time-dependent particle trajectories retain direction but contract and turn less.",
+  "raw_candidate_sha256": {
+    "ST047-E": "dfe6e51af93c9c42f1322798b82f89523e6a193c1b6495894cb60f63b4eb07e0",
+    "ST048-S": "6d9ce8407e29aca20d32599332ae3ec654f45678e17783179267665428ec8e09",
+    "ST048-B": "b599856cf191be10d554bdfa260328c089c96875142b41466b2c601a44ba3262"
+  },
+  "local_tests": "17 passed in10.03s, warnings-as-errors",
+  "symbolic_checks": 3,
+  "local_recipe_equivalence": {
+    "ST048-S": {
+      "max_stored_coefficient_difference": 0.0,
+      "within_1e-10": true
+    },
+    "ST048-B": {
+      "max_stored_coefficient_difference": 0.0,
+      "within_1e-10": true
+    }
+  },
+  "original_scientific_exit_codes": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "cloud_CI": "Pending at snapshot creation; exact run results recorded in PR after execution",
+  "full_inherited_suite": "not run",
+  "lean": "not run",
+  "delivery": "Readable code, frozen modifier recipes and results summary in GitHub. Raw fields, original full reports and histories in accompanying archive. Recipe metadata can differ from original raw JSON.",
+  "pde_validated": false,
+  "source_correspondence_verified": false,
+  "paper_exact": false,
+  "blowup_proved": false
+}
