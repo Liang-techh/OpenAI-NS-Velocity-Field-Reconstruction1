@@ -15,9 +15,9 @@ def test_linear_ramp_replays_reference_and_reaches_terminal_value():
     assert _linear_ramp_coefficient(0.75, **kwargs) == pytest.approx(0.25)
 
 
-def test_axial_cap_temporal_ramp_preserves_registered_guards_and_reports_morphology():
+def test_axial_cap_temporal_ramp_preserves_guards_and_reverses_q99_shrinkage():
     report = audit_axial_cap_temporal_ramp_capacity(
-        quadrature_orders=(24, 48), morphology_grid_size=17
+        quadrature_orders=(24, 48), morphology_grid_size=33
     )
 
     growth = report["representation_increment"]
@@ -41,6 +41,18 @@ def test_axial_cap_temporal_ramp_preserves_registered_guards_and_reports_morphol
         assert row["coefficient_time_derivative"] == pytest.approx(sign * 0.5)
         coefficients = [entry["coefficient"] for entry in row["morphology_rows"]]
         assert coefficients == pytest.approx([0.0, sign * 0.125, sign * 0.25])
+
+        q99 = row["trend_summary"]["axial_q99_over_Zp"]
+        axial = row["trend_summary"]["axial_rms_over_Zp"]
+        final = row["final_time_incremental_tip_reach"]
+        assert q99["baseline_start_to_end_change"] < 0.0
+        assert q99["trial_start_to_end_change"] > 0.0
+        assert q99["incremental_change_vs_baseline_trend"] > 0.4
+        assert axial["incremental_change_vs_baseline_trend"] > 0.06
+        assert final["axial_q99_over_Zp_delta"] > 0.4
+        assert final["axial_q90_over_Zp_delta"] == pytest.approx(0.0, abs=1e-14)
+        assert abs(final["radial_rms_over_Rp_delta"]) < 1e-3
+
         for entry in row["morphology_rows"]:
             for value in entry["trial_morphology"].values():
                 if isinstance(value, (int, float)):
