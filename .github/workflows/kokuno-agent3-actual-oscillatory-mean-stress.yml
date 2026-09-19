@@ -39,11 +39,11 @@ jobs:
           tests/test_constrained_kokuno_actual_oscillatory_mean_stress.py
           tests/test_constrained_kokuno_public_oscillatory_time_derivative.py
           tests/test_constrained_kokuno_public_z_pullback_velocity.py
-      - name: Generate actual oscillatory mean-stress receipt
+      - name: Generate bounded-cost actual oscillatory mean-stress receipt
         run: >-
           python -W error -m openai_ns_reconstruction.kokuno_actual_oscillatory_mean_stress
           --output artifacts/kokuno_agent3_actual_oscillatory_mean_stress_v1.json
-          --radial-count 49 --angular-count 48 --time 0.5 --z 0.08
+          --radial-count 25 --angular-count 32 --time 0.5 --z 0.08
           --fd4-step 0.005 --nu 0.01
       - name: Check fail-closed truth boundary
         run: |
@@ -56,6 +56,10 @@ jobs:
           assert r['provenance']['independent_agent4_head'] == '9b0f86012c53fa8e32a19f766dbc150931870425'
           assert r['anti_surrogate_contract']['caller_supplied_target_parameters'] == []
           assert r['anti_surrogate_contract']['surrogate_defect_used'] is False
+          assert r['state']['radial_count'] == 25
+          assert r['state']['radial_evaluation_count'] == 23
+          assert r['state']['angular_count'] == 32
+          assert r['state']['boundary_values_inserted_from_registered_zero_extension'] is True
           t = r['truth_boundary']
           assert t['real_oscillatory_self_defect_component_consumed'] is True
           assert t['real_oscillatory_quadratic_mean_component_measured'] is True
@@ -69,9 +73,13 @@ jobs:
           assert t['residual_reduction_claimed'] is False
           assert t['pde_validated'] is False
           assert r['mean_operator']['raw_mean_vector_rms'] > 0.0
+          assert r['mean_operator']['quadratic_mean_vector_rms'] > 0.0
           assert r['requested_stress_component']['requested_stress_rms'] > 0.0
+          print('state=', r['state'])
           print('mean_operator=', r['mean_operator'])
           print('requested_stress_rms=', r['requested_stress_component']['requested_stress_rms'])
+          print('theta_e2=', r['requested_stress_component']['theta_e2'])
+          print('axial_e1=', r['requested_stress_component']['axial_e1'])
           PY
       - uses: actions/upload-artifact@v4
         with:
