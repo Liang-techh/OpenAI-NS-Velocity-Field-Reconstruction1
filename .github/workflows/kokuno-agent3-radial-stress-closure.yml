@@ -1,0 +1,82 @@
+name: kokuno-agent3-radial-stress-closure
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a3-radial-stress-closure-041
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_radial_stress_closure_audit.py"
+      - "src/openai_ns_reconstruction/kokuno_actual_oscillatory_mean_stress.py"
+      - "tests/test_constrained_kokuno_radial_stress_closure_audit.py"
+      - ".github/workflows/kokuno-agent3-radial-stress-closure.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent3-radial-stress-closure-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  radial-stress-closure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+      - name: Compile Agent-3 radial closure module
+        run: >-
+          python -W error -m py_compile
+          src/openai_ns_reconstruction/kokuno_radial_stress_closure_audit.py
+      - name: Run focused warnings-as-errors tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_radial_stress_closure_audit.py
+          tests/test_constrained_kokuno_actual_oscillatory_mean_stress.py
+      - name: Generate deterministic actual radial-stress closure receipt
+        run: >-
+          python -W error -m openai_ns_reconstruction.kokuno_radial_stress_closure_audit
+          --output artifacts/kokuno_agent3_radial_stress_closure_v1.json
+      - name: Check fail-closed truth boundary and print scientific verdict
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('artifacts/kokuno_agent3_radial_stress_closure_v1.json')
+          r = json.loads(p.read_text())
+          t = r['truth_boundary']
+          assert r['provenance']['parent_agent3_mean_debt_head'] == 'ca4da20c90ccd7a5046f79fb2e7965ec05b6086f'
+          assert r['provenance']['admitted_agent2_head'] == '732800ce4990464b49c8aa32d0dff4580f6684d4'
+          assert r['provenance']['independent_agent4_head'] == '9b0f86012c53fa8e32a19f766dbc150931870425'
+          assert t['real_oscillatory_self_defect_component_consumed'] is True
+          assert t['compact_radial_stress_reconstruction_audited'] is True
+          assert t['full_same_cycle_composite_requested_stress_materialized'] is False
+          assert t['candidate_finite_head_mean_debt_materialized'] is False
+          assert t['signed_mean_inverse_input_ready'] is False
+          assert t['public_velocity_correction_materialized'] is False
+          assert t['finite_correction_cycle_rerun_allowed'] is False
+          assert t['finite_correction_cycle_run'] is False
+          assert t['heldout_ns_residual_assessed'] is False
+          assert t['residual_reduction_claimed'] is False
+          assert t['pde_validated'] is False
+          print('radial_stress_closure_preflight_passed=', r['radial_stress_closure_preflight_passed'])
+          print('failed_guards=', r['failed_guards'])
+          for channel in ('theta_e2', 'axial_e1'):
+              c = r['convergence'][channel]
+              print(channel, 'relative_rms_by_radial_count=', c['relative_rms_by_radial_count'])
+              print(channel, 'refinement_ratios=', c['refinement_ratios'])
+              print(channel, 'finest_relative_max=', c['finest_relative_max'])
+              print(channel, 'finest_moment_complement_relative=', c['finest_moment_complement_relative'])
+              print(channel, 'finest_edge_relative=', c['finest_edge_relative'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent3-radial-stress-closure-v1
+          path: artifacts/kokuno_agent3_radial_stress_closure_v1.json
+          if-no-files-found: error
