@@ -25,14 +25,17 @@ weight ratios give the conservative executable factors
     ||Y F||_rho <= 80 ||F||_rho,
     ||partial_eta I F||_rho <= (80/rho) ||F||_rho.
 
-Together with the already recorded product algebra
+Together with the source product algebra
 
     ||F G||_rho <= C_sq^2 ||F||_rho ||G||_rho,
+    C_sq = 4 pi^2 / 3,
 
 this module turns the pressure map into a fail-closed radius-ball calculator.
-It also propagates local Lipschitz bounds by the source-described
-one-factor-at-a-time replacement rule. ``g`` is fixed with respect to the
-contraction-ball variables; only ``Phi`` varies in the pressure map.
+For the numerical envelope we use the elementary rational inequality
+``pi < 22/7`` and exact ``Fraction.from_float`` arithmetic before directed
+binary64 rounding. Thus every returned pressure bound is outward-rounded with
+respect to the supplied binary64 inputs rather than depending on accidental
+round-to-nearest direction.
 
 The calculator is conditional. A caller must still supply a source-valid
 ``rho``, a coefficient-space norm for ``g`` and a radius-ball norm/Lipschitz
@@ -47,6 +50,7 @@ from __future__ import annotations
 import argparse
 import copy
 from dataclasses import dataclass, field, replace
+from fractions import Fraction
 import hashlib
 import json
 import math
@@ -93,6 +97,7 @@ _TRUTH_BOUNDARY = {
     "conditional_pressure_ball_norm_executable": True,
     "conditional_pressure_ball_lipschitz_executable": True,
     "conditional_pressure_to_R1_R2_bridge_executable": True,
+    "binary64_bound_arithmetic_outward_rounded": True,
     "diagnostic_inputs_are_source_bounds": False,
     "source_rho_machine_bound": False,
     "source_g_coefficient_norm_machine_bound": False,
@@ -138,13 +143,22 @@ def _positive_finite(value: float, name: str) -> float:
     return out
 
 
-def _up(value: float) -> float:
+def _fraction_upper(value: Fraction) -> float:
+    """Smallest convenient binary64 upper bound for a nonnegative Fraction."""
+
+    if value < 0:
+        raise ValueError("fraction upper-bound helper requires a nonnegative value")
     out = float(value)
     if not math.isfinite(out):
         raise OverflowError("upper-bound arithmetic left binary64 range")
-    if out == 0.0:
-        return 0.0
-    return float(math.nextafter(out, math.inf))
+    if Fraction.from_float(out) < value:
+        out = math.nextafter(out, math.inf)
+    return float(out)
+
+
+def _as_fraction(value: float) -> Fraction:
+    out = _nonnegative_finite(value, "bound")
+    return Fraction.from_float(out)
 
 
 @dataclass(frozen=True)
@@ -161,9 +175,11 @@ class KokunoPA10PressureBallBounds:
 
     @property
     def product_constant_upper(self) -> float:
-        """One-float-up version of the source product constant ``C_sq^2``."""
+        """Rationally certified upper bound for ``C_sq^2`` using ``pi<22/7``."""
 
-        return _up(self.operators.product_constant)
+        pi_upper = Fraction(22, 7)
+        C_sq_upper = Fraction(4, 3) * pi_upper * pi_upper
+        return _fraction_upper(C_sq_upper * C_sq_upper)
 
     @staticmethod
     def radial_integral_factor() -> float:
@@ -183,42 +199,48 @@ class KokunoPA10PressureBallBounds:
 
         The source's second weight ratio contributes ``(80/rho)(i+1)`` and
         the radial integration divisor ``i+1`` cancels that final factor.
+        The supplied binary64 ``rho`` is treated as its exact rational value.
         """
 
         r = _positive_finite(rho, "rho")
-        return _up(80.0 / r)
+        exact = Fraction(80, 1) / Fraction.from_float(r)
+        return _fraction_upper(exact)
 
     def product(self, *factors: BallFactorBound) -> BallFactorBound:
-        """Iterate the source product estimate and replacement Lipschitz rule."""
+        """Iterate product algebra with exact-rational outward arithmetic."""
 
         if not factors:
             return BallFactorBound(1.0, 0.0)
         if not all(isinstance(item, BallFactorBound) for item in factors):
             raise TypeError("all factors must be BallFactorBound values")
-        algebra = self.product_constant_upper ** max(len(factors) - 1, 0)
-        if not math.isfinite(algebra):
-            raise OverflowError("iterated product constant is outside float range")
 
-        norm = algebra * math.prod(item.norm for item in factors)
-        lip_sum = 0.0
-        for index, item in enumerate(factors):
-            if item.lipschitz == 0.0:
+        P = Fraction.from_float(self.product_constant_upper)
+        algebra = P ** max(len(factors) - 1, 0)
+        norms = [_as_fraction(item.norm) for item in factors]
+        lips = [_as_fraction(item.lipschitz) for item in factors]
+        norm_exact = algebra * math.prod(norms, start=Fraction(1, 1))
+
+        lip_exact = Fraction(0, 1)
+        for index, lip in enumerate(lips):
+            if lip == 0:
                 continue
-            other_norm = math.prod(
-                other.norm for j, other in enumerate(factors) if j != index
+            other = math.prod(
+                (norm for j, norm in enumerate(norms) if j != index),
+                start=Fraction(1, 1),
             )
-            lip_sum += item.lipschitz * other_norm
-        lipschitz = algebra * lip_sum
-        return BallFactorBound(_up(norm), _up(lipschitz) if lipschitz else 0.0)
+            lip_exact += lip * other
+        lip_exact *= algebra
+        return BallFactorBound(_fraction_upper(norm_exact), _fraction_upper(lip_exact))
 
     @staticmethod
     def scale(factor: BallFactorBound, scalar: float) -> BallFactorBound:
         if not isinstance(factor, BallFactorBound):
             raise TypeError("factor must be a BallFactorBound")
         s = _nonnegative_finite(abs(float(scalar)), "scalar")
+        sf = Fraction.from_float(s)
         return BallFactorBound(
-            _up(s * factor.norm) if factor.norm else 0.0,
-            _up(s * factor.lipschitz) if factor.lipschitz else 0.0,
+            _fraction_upper(sf * _as_fraction(factor.norm)),
+            _fraction_upper(sf * _as_fraction(factor.lipschitz)),
         )
 
     def pressure_bounds(
@@ -338,8 +360,14 @@ class KokunoPA10PressureBallBounds:
                 "corrected_release_date": CORRECTED_RELEASE_DATE,
             },
             "source_formulas": copy.deepcopy(_SOURCE_FORMULAS),
+            "bound_arithmetic": {
+                "pi_upper_rational": "22/7",
+                "binary64_inputs_treated_as_exact_rationals": True,
+                "final_conversion_directed_upward": True,
+            },
             "derived_operator_factors": {
                 "product_constant_upper": self.product_constant_upper,
+                "source_product_constant_binary64_diagnostic": self.operators.product_constant,
                 "radial_integral_I": self.radial_integral_factor(),
                 "multiply_Y": self.multiply_Y_factor(),
                 "partial_eta_radial_integral": self.eta_radial_integral_factor(rho),
