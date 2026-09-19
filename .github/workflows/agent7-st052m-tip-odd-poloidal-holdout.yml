@@ -1,0 +1,98 @@
+name: agent7-st052m-tip-odd-poloidal-holdout
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_tip_odd_poloidal_holdout.py'
+      - 'experiments/root_st052/test_agent7_st052m_tip_odd_poloidal_holdout.py'
+      - '.github/workflows/agent7-st052m-tip-odd-poloidal-holdout.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  fresh-tip-path-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Focused contract tests
+        run: python -m pytest -q -W error experiments/root_st052/test_agent7_st052m_tip_odd_poloidal_holdout.py
+      - name: Execute preregistered fresh post-freeze path audit
+        run: |
+          mkdir -p outputs/agent7-st052m-tip-odd-poloidal-holdout
+          python experiments/root_st052/agent7_st052m_tip_odd_poloidal_holdout.py \
+            --out outputs/agent7-st052m-tip-odd-poloidal-holdout/report.json
+      - name: Verify frozen selection/evaluation separation and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-tip-odd-poloidal-holdout/report.json').read_text())
+          assert r['prereg_issue']==713
+          assert r['source_parent']=={'pr':701,'head':'e3ecc8654f2c9a2324265bbd01df596b4e503404'}
+          assert r['selection_governance_pr']==712
+          assert r['selection_stage']['development_path_count']==48
+          assert r['selection_stage']['heldout_data_used_for_alpha'] is False
+          assert r['selection_stage']['source_701_dedicated_pass_assumed'] is False
+          assert r['fresh_protocol']['path_count']==64
+          assert r['fresh_protocol']['output_samples']==37
+          assert r['fresh_protocol']['exact_seed_overlap_with_development']==0
+          assert r['fresh_protocol']['evaluation_feedback_into_alpha'] is False
+          assert r['canonical_velocity_changed'] is False
+          assert r['saved_velocity_changed'] is False
+          assert r['production_candidate_selected'] is False
+          assert r['new_spatial_basis_added'] is False
+          assert r['new_temporal_basis_added'] is False
+          assert r['held_out_pde_residual_evaluated'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          assert r['paper_exact'] is False
+          assert r['openai_field_identified'] is False
+          print('alpha=',r['selection_stage']['alpha'])
+          print('fresh_protocol=',r['fresh_protocol'])
+          print('fresh_preferred=',r['fresh_tip_path_directional_preferred'])
+          print('decision=',r['decision'])
+          print('routing=',r['routing'])
+          PY
+      - name: Publish compact numerical receipt
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent7-tip-holdout-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-tip-odd-poloidal-holdout/report.json').read_text())
+          print('<!-- agent7-st052m-tip-odd-poloidal-holdout-receipt -->')
+          print('**Agent 7 fresh post-freeze tip-path receipt (issue #713; no retuning):**')
+          print()
+          print(f"- frozen #701 alpha: `{r['selection_stage']['alpha']:.12g}`; held-out data used for alpha: `{r['selection_stage']['heldout_data_used_for_alpha']}`")
+          p=r['fresh_protocol']
+          print(f"- fresh protocol: `{p['path_count']}` paths, `{p['output_samples']}` outputs, seed overlap with development `{p['exact_seed_overlap_with_development']}`")
+          print(f"- fresh tip-path directional preferred: `{r['fresh_tip_path_directional_preferred']}`")
+          for key,row in r['decision']['segments'].items():
+              print(f"- {key}: tip dr #652 `{row['source_652_tip_mean_delta_r']:+.6g}` -> candidate `{row['candidate_tip_mean_delta_r']:+.6g}`; tip inward `{row['candidate_tip_mean_inward']}`; tip count change `{row['tip_inward_path_count_change']:+d}`; shoulder inward `{row['candidate_shoulder_mean_inward']}`; turns increment `{row['candidate_minus_linear_turns_fidelity_increment']:+.6g}`; preferred `{row['segment_preferred']}`")
+          print()
+          print('Truth boundary: fresh trajectory/radial directional generalization evidence only. No coefficient/basis retuning, production/canonical promotion, visual-correspondence verification, transformed-child PDE validation, exact OpenAI-field identity or blow-up claim.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-tip-holdout-receipt.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-tip-odd-poloidal-holdout
+          path: outputs/agent7-st052m-tip-odd-poloidal-holdout/
+          if-no-files-found: error
+
+# The fresh seeds, integration settings and all directional gates were frozen in issue #713 before held-out execution.
