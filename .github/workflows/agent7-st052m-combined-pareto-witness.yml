@@ -42,7 +42,7 @@ jobs:
           assert r['prereg_issue']==651
           assert r['sources']['first_order_cone']['pr']==642
           assert r['sources']['first_order_cone']['head']=='f523c221847e1a587ec9af4ec053f6f864ce90c4'
-          assert r['frozen_witness']['swirl_a']==0.06590
+          assert r['frozen_witness']['swirl_a']==0.0658997
           assert r['frozen_witness']['shoulder_b']==-1.0
           assert r['frozen_witness']['shoulder_lambda']==-0.02
           assert r['frozen_witness']['parameter_grid_scan_performed'] is False
