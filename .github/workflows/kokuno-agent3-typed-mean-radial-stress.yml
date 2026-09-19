@@ -8,7 +8,7 @@ on:
     paths:
       - "src/openai_ns_reconstruction/kokuno_same_cycle_defect_contract.py"
       - "src/openai_ns_reconstruction/kokuno_typed_mean_defect_projection.py"
-      - "src/openai_ns_reconstruction/kokuno_actual_oscillatory_mean_stress.py"
+      - "src/openai_ns_reconstruction/kokuno_compact_radial_stress_adapter.py"
       - "src/openai_ns_reconstruction/kokuno_typed_mean_radial_stress.py"
       - "tests/test_kokuno_typed_mean_defect_projection.py"
       - "tests/test_kokuno_typed_mean_radial_stress.py"
@@ -39,6 +39,7 @@ jobs:
           python -W error -m py_compile
           src/openai_ns_reconstruction/kokuno_same_cycle_defect_contract.py
           src/openai_ns_reconstruction/kokuno_typed_mean_defect_projection.py
+          src/openai_ns_reconstruction/kokuno_compact_radial_stress_adapter.py
           src/openai_ns_reconstruction/kokuno_typed_mean_radial_stress.py
       - name: Run focused warnings-as-errors tests
         run: >-
