@@ -1,0 +1,83 @@
+name: kokuno-agent5-independent-radial-stress-routing
+
+on:
+  push:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_independent_radial_stress_routing_checkpoint.py'
+      - 'tests/test_constrained_kokuno_independent_radial_stress_routing_checkpoint.py'
+      - 'src/openai_ns_reconstruction/kokuno_independent_radial_stress_admission.py'
+      - 'tests/test_constrained_kokuno_independent_radial_stress_admission.py'
+      - 'artifacts/constrained/kokuno_agent3/agent4_595_independent_radial_stress_audit.json'
+      - '.github/workflows/kokuno-agent5-independent-radial-stress-routing.yml'
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_independent_radial_stress_routing_checkpoint.py'
+      - 'tests/test_constrained_kokuno_independent_radial_stress_routing_checkpoint.py'
+      - 'src/openai_ns_reconstruction/kokuno_independent_radial_stress_admission.py'
+      - 'tests/test_constrained_kokuno_independent_radial_stress_admission.py'
+      - 'artifacts/constrained/kokuno_agent3/agent4_595_independent_radial_stress_audit.json'
+      - '.github/workflows/kokuno-agent5-independent-radial-stress-routing.yml'
+
+permissions:
+  contents: read
+
+env:
+  PYTHONHASHSEED: '0'
+
+jobs:
+  radial-stress-routing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile Agent-5 and upstream admission modules
+        run: >-
+          python -W error -m py_compile
+          src/openai_ns_reconstruction/kokuno_independent_radial_stress_admission.py
+          src/openai_ns_reconstruction/kokuno_independent_radial_stress_routing_checkpoint.py
+      - name: Focused warnings-as-errors regressions
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_independent_radial_stress_admission.py
+          tests/test_constrained_kokuno_independent_radial_stress_routing_checkpoint.py
+      - name: Generate deterministic Agent-5 routing checkpoint
+        run: >-
+          python -m openai_ns_reconstruction.kokuno_independent_radial_stress_routing_checkpoint
+          --audit artifacts/constrained/kokuno_agent3/agent4_595_independent_radial_stress_audit.json
+          --output kokuno_agent5_independent_radial_stress_routing_v44.json
+      - name: Validate narrow promotion and fixed final gate
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction.kokuno_independent_radial_stress_routing_checkpoint import validate_checkpoint
+
+          path = Path('kokuno_agent5_independent_radial_stress_routing_v44.json')
+          checkpoint = json.loads(path.read_text())
+          validate_checkpoint(checkpoint)
+          s = checkpoint['states']
+          assert s['compact_radial_stress_operator_independently_admitted'] is True
+          assert s['full_composite_radial_stress_execution_allowed_when_actual_defect_available'] is True
+          assert s['same_cycle_requested_stress_materialized'] is False
+          assert s['signed_mean_inverse_input_ready'] is False
+          assert s['public_velocity_correction_materialized'] is False
+          assert s['correction_ready'] is False
+          assert s['candidate_artifact_instantiated'] is False
+          assert s['formal_full_domain_pde_gate_assessed'] is False
+          assert s['pde_validated'] is False
+          assert checkpoint['formal_gates_unchanged']['held_out_normalized_momentum_max'] == 1e-3
+          assert checkpoint['formal_gates_unchanged']['held_out_normalized_momentum_l2'] == 1e-3
+          assert checkpoint['formal_gates_unchanged']['held_out_divergence_max'] == 1e-5
+          assert checkpoint['formal_gates_unchanged']['held_out_divergence_l2'] == 1e-5
+          print('checkpoint_sha256=', checkpoint['checkpoint_sha256'])
+          PY
+      - name: Upload Agent-5 routing checkpoint
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-independent-radial-stress-routing-checkpoint-v44
+          path: kokuno_agent5_independent_radial_stress_routing_v44.json
