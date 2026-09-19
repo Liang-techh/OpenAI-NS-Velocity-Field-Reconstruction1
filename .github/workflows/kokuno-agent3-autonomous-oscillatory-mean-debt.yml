@@ -1,0 +1,87 @@
+name: kokuno-agent3-autonomous-oscillatory-mean-debt
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a3-autonomous-osc-mean-debt-040
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_autonomous_oscillatory_mean_debt.py"
+      - "src/openai_ns_reconstruction/kokuno_actual_oscillatory_mean_stress.py"
+      - "tests/test_constrained_kokuno_autonomous_oscillatory_mean_debt.py"
+      - ".github/workflows/kokuno-agent3-autonomous-oscillatory-mean-debt.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent3-autonomous-oscillatory-mean-debt-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  autonomous-oscillatory-mean-debt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+      - name: Compile Agent-3 debt module
+        run: >-
+          python -W error -m py_compile
+          src/openai_ns_reconstruction/kokuno_autonomous_oscillatory_mean_debt.py
+      - name: Run focused warnings-as-errors tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_autonomous_oscillatory_mean_debt.py
+          tests/test_constrained_kokuno_actual_oscillatory_mean_stress.py
+      - name: Generate deterministic oscillatory-component mean-debt receipt
+        run: >-
+          python -W error -m openai_ns_reconstruction.kokuno_autonomous_oscillatory_mean_debt
+          --output artifacts/kokuno_agent3_autonomous_oscillatory_mean_debt_v1.json
+      - name: Check fail-closed truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('artifacts/kokuno_agent3_autonomous_oscillatory_mean_debt_v1.json')
+          r = json.loads(p.read_text())
+          f = r['autonomous_factor']
+          d = r['oscillatory_component_mean_debt']
+          t = r['truth_boundary']
+          a = r['anti_surrogate_contract']
+          assert r['provenance']['parent_agent3_stress_head'] == 'c95dab915ae25e689e7c82bf1b8614e205f9274c'
+          assert r['provenance']['autonomous_factor_origin_head'] == '50d1b8ca965b35d5e0a7210c22e2302cd30c20e8'
+          assert abs(f['autonomous_missing_weight'] - 0.28410624176179694) <= 5e-15
+          assert f['formal_missing_weight_equality_claimed'] is False
+          assert f['theorem_missing_weight_materialized'] is False
+          assert a['surrogate_defect_used'] is False
+          assert a['caller_supplied_defect_or_stress_parameters'] == []
+          assert d['debt_rms'] > 0.0
+          assert d['identity_closure_max_abs'] <= 1e-12
+          assert t['real_oscillatory_self_defect_component_consumed'] is True
+          assert t['oscillatory_component_finite_head_mean_debt_materialized'] is True
+          assert t['full_same_cycle_composite_requested_stress_materialized'] is False
+          assert t['candidate_finite_head_mean_debt_materialized'] is False
+          assert t['real_full_candidate_defect_consumed'] is False
+          assert t['signed_mean_inverse_input_ready'] is False
+          assert t['public_velocity_correction_materialized'] is False
+          assert t['finite_correction_cycle_rerun_allowed'] is False
+          assert t['heldout_ns_residual_assessed'] is False
+          assert t['residual_reduction_claimed'] is False
+          assert t['pde_validated'] is False
+          print('autonomous_missing_weight=', f['autonomous_missing_weight'])
+          print('requested_stress_rms=', r['oscillatory_requested_stress']['requested_stress_rms'])
+          print('oscillatory_component_debt_rms=', d['debt_rms'])
+          print('oscillatory_component_debt_max_abs=', d['debt_max_abs'])
+          print('identity_closure_max_abs=', d['identity_closure_max_abs'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent3-autonomous-oscillatory-mean-debt-v1
+          path: artifacts/kokuno_agent3_autonomous_oscillatory_mean_debt_v1.json
+          if-no-files-found: error
