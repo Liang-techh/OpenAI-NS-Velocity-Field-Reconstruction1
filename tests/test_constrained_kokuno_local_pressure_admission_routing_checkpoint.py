@@ -6,9 +6,15 @@ import pytest
 
 from openai_ns_reconstruction.kokuno_local_pressure_admission_routing_checkpoint import (
     FORMAL_GATES,
+    _canonical_sha256,
     build_checkpoint,
     validate_checkpoint,
 )
+
+
+def _resign(checkpoint: dict) -> dict:
+    checkpoint["checkpoint_sha256"] = _canonical_sha256(checkpoint)
+    return checkpoint
 
 
 def test_v48_admits_only_independent_local_pressure_preflight() -> None:
@@ -53,6 +59,7 @@ def test_v48_rejects_premature_leading_or_pde_promotion() -> None:
     for key in ("leading_ready", "global_matched_pressure_ready", "pde_validated"):
         checkpoint = build_checkpoint()
         checkpoint["states"][key] = True
+        _resign(checkpoint)
         with pytest.raises(ValueError, match="premature downstream promotion"):
             validate_checkpoint(checkpoint)
 
@@ -60,6 +67,7 @@ def test_v48_rejects_premature_leading_or_pde_promotion() -> None:
 def test_v48_rejects_local_pressure_pass_demotion() -> None:
     checkpoint = build_checkpoint()
     checkpoint["states"]["selected_pressure_local_coordinate_independently_admitted"] = False
+    _resign(checkpoint)
     with pytest.raises(ValueError, match="required admitted state"):
         validate_checkpoint(checkpoint)
 
@@ -68,7 +76,8 @@ def test_v48_rejects_gate_or_hash_mutation() -> None:
     checkpoint = build_checkpoint()
     bad_gate = copy.deepcopy(checkpoint)
     bad_gate["formal_gates_unchanged"]["held_out_normalized_momentum_max"] = 2.0e-3
-    with pytest.raises(ValueError, match="checkpoint SHA256 mismatch|formal PDE gates changed"):
+    _resign(bad_gate)
+    with pytest.raises(ValueError, match="formal PDE gates changed"):
         validate_checkpoint(bad_gate)
 
     bad_hash = copy.deepcopy(checkpoint)
@@ -82,5 +91,6 @@ def test_v48_rejects_unresolved_pressure_ball_promotion() -> None:
     checkpoint["upstream"]["newer_sibling_work"]["agent4_pressure_ball_audit"][
         "resolved_at_checkpoint_freeze"
     ] = True
-    with pytest.raises(ValueError, match="checkpoint SHA256 mismatch|unresolved pressure-ball audit"):
+    _resign(checkpoint)
+    with pytest.raises(ValueError, match="unresolved pressure-ball audit"):
         validate_checkpoint(checkpoint)
