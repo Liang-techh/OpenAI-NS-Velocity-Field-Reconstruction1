@@ -1,25 +1,32 @@
-"""Executable guard for Kokuno's rescaled-core fixed-point distance estimate.
+"""Executable guard for Kokuno's rescaled-core fixed-point theorem.
 
 Pinned public provenance is KokunoYumeto/yang-mills-interacting-workbench at
 ``143f6773feb424ad9ed3a8d116653200f20346b7``,
 ``navier-stokes/navier_stokes_workbench.tex``, corrected reader dated
 2026-09-09 (Zenodo 22678406).
 
-The corrected reconstruction places the rescaled-core map
+The corrected reconstruction works on the closed radius-one ball about
+``(Phi_0,u_0)``.  It lets ``M`` bound
+
+    ((1+T)^-1 J_2 R_1/2, J_1 R_2/2)
+
+and lets ``K`` be the corresponding Lipschitz constant.  It then chooses
+
+    Lambda >= max(1, 2 M, 2 K),
+
+which makes the map
 
     (Phi,u) -> (Phi_0 + (1+T)^-1 J_2 R_1/(2 Lambda),
                 u_0 + J_1 R_2/(2 Lambda))
 
-in a source-defined Banach ball, proves a contraction factor at most 1/2,
-and states that its unique fixed point has norm distance at most ``M/Lambda``
-from the center.  ``M`` is built from finite operator constants in that proof.
+invariant and contractive with factor at most 1/2, with unique fixed-point
+norm distance at most ``M/Lambda`` from the center.
 
-This module makes *that displayed radius relation* executable against the
-repository's selected Lambda.  It deliberately does not invent a numerical
-value for the source operator constant ``M`` and does not promote the selected
-autonomous Lambda into the source's existential large-parameter threshold.
-Therefore every returned radius is conditional on the source contraction
-hypotheses, and all source PA.10 B_0/T_sh gates remain fail closed.
+This module makes those displayed threshold/radius relations executable against
+the repository's selected Lambda.  It deliberately does not invent numerical
+values for the source constants M or K and does not promote the selected
+autonomous Lambda into the source's existential threshold.  All source PA.10
+B_0/T_sh gates therefore remain fail closed.
 """
 
 from __future__ import annotations
@@ -44,22 +51,28 @@ CORRECTED_RELEASE_DATE = "2026-09-09"
 SCHEMA = "kokuno-pa10-fixed-point-radius-v1"
 
 _SOURCE_FORMULAS = {
+    "center_ball": "closed radius-one ball about (Phi_0,u_0)",
+    "M_definition": "M bounds ((1+T)^-1 J_2 R_1/2, J_1 R_2/2)",
+    "K_definition": "K is the Lipschitz constant of that pair on the ball",
+    "large_parameter_threshold": "Lambda >= max(1,2M,2K)",
     "fixed_point_map": (
         "(Phi,u)->(Phi_0+(1+T)^-1 J_2 R_1/(2 Lambda),"
         "u_0+J_1 R_2/(2 Lambda))"
     ),
     "contraction_factor": "q<=1/2",
     "fixed_point_distance": "||(Phi,u)-(Phi_0,u_0)||_rho <= M/Lambda",
-    "M_provenance": "finite operator constants in the corrected reconstruction",
 }
 
 _TRUTH_BOUNDARY = {
     "public_reconstruction_source": True,
+    "source_fixed_point_threshold_formula_recorded": True,
+    "source_fixed_point_threshold_formula_executable": True,
     "source_fixed_point_radius_formula_recorded": True,
     "source_fixed_point_radius_formula_executable": True,
     "selected_lambda_executable": True,
     "selected_lambda_is_source_existential_threshold": False,
     "source_operator_constant_M_machine_bound": False,
+    "source_operator_constant_K_machine_bound": False,
     "source_contraction_invariant_ball_machine_verified": False,
     "source_contraction_factor_machine_verified": False,
     "source_fixed_point_distance_machine_bound": False,
@@ -86,28 +99,41 @@ def _canonical_json(payload: dict[str, Any]) -> str:
     return json.dumps(payload, sort_keys=True, separators=(",", ":"), allow_nan=False)
 
 
+def _positive_optional(value: float | None, name: str) -> float | None:
+    if value is None:
+        return None
+    out = float(value)
+    if not math.isfinite(out) or out <= 0.0:
+        raise ValueError(f"{name} must be finite and >0")
+    return out
+
+
 @dataclass(frozen=True)
 class KokunoPA10FixedPointRadiusGate:
-    """Conditional executable form of the source ``M/Lambda`` radius.
+    """Conditional executable form of the source fixed-point theorem.
 
-    ``operator_constant_M`` is intentionally optional.  Supplying a finite
-    positive value allows numerical sensitivity/replay of the displayed source
-    formula, but it is *not* treated as a source-certified constant unless a
-    future independent machine proof binds the finite operator constants.  The
-    current schema therefore always keeps the source truth flags false.
+    ``operator_constant_M`` and ``operator_constant_K`` are intentionally
+    optional.  Supplying finite positive values permits numerical replay of the
+    displayed theorem, but does not mark those inputs as source-certified.
     """
 
     seed: KokunoSourceRescaledCoreSeed = field(default_factory=KokunoSourceRescaledCoreSeed)
     operator_constant_M: float | None = None
+    operator_constant_K: float | None = None
 
     def __post_init__(self) -> None:
         if not isinstance(self.seed, KokunoSourceRescaledCoreSeed):
             raise TypeError("seed must be a KokunoSourceRescaledCoreSeed")
-        if self.operator_constant_M is not None:
-            value = float(self.operator_constant_M)
-            if not math.isfinite(value) or value <= 0.0:
-                raise ValueError("operator_constant_M must be finite and >0")
-            object.__setattr__(self, "operator_constant_M", value)
+        object.__setattr__(
+            self,
+            "operator_constant_M",
+            _positive_optional(self.operator_constant_M, "operator_constant_M"),
+        )
+        object.__setattr__(
+            self,
+            "operator_constant_K",
+            _positive_optional(self.operator_constant_K, "operator_constant_K"),
+        )
 
     @property
     def selected_lambda(self) -> float:
@@ -123,22 +149,50 @@ class KokunoPA10FixedPointRadiusGate:
             raise OverflowError("conditional M/Lambda radius is not finite")
         return float(radius)
 
+    @property
+    def conditional_threshold(self) -> float | None:
+        """Return source ``max(1,2M,2K)`` when both constants are supplied."""
+        if self.operator_constant_M is None or self.operator_constant_K is None:
+            return None
+        threshold = max(1.0, 2.0 * self.operator_constant_M, 2.0 * self.operator_constant_K)
+        if not math.isfinite(threshold):
+            raise OverflowError("conditional source Lambda threshold is not finite")
+        return float(threshold)
+
+    @property
+    def conditional_selected_lambda_passes_threshold(self) -> bool | None:
+        threshold = self.conditional_threshold
+        if threshold is None:
+            return None
+        return bool(self.selected_lambda >= threshold)
+
+    @property
+    def per_constant_threshold_budget(self) -> float:
+        """Largest individual M or K allowed by ``2 const <= Lambda``.
+
+        This is only a planning value until M and K are independently bounded.
+        """
+        return float(self.selected_lambda / 2.0)
+
     def radius_for_M(self, operator_constant_M: float) -> float:
-        """Evaluate the source-displayed radius for an explicit finite ``M``."""
-        value = float(operator_constant_M)
-        if not math.isfinite(value) or value <= 0.0:
-            raise ValueError("operator_constant_M must be finite and >0")
+        value = _positive_optional(operator_constant_M, "operator_constant_M")
+        assert value is not None
         radius = value / self.selected_lambda
         if not math.isfinite(radius) or radius < 0.0:
             raise OverflowError("conditional M/Lambda radius is not finite")
         return float(radius)
 
-    def M_budget_for_radius(self, target_radius: float) -> float:
-        """Return the largest ``M`` compatible with ``M/Lambda <= target``.
+    def threshold_for_MK(self, operator_constant_M: float, operator_constant_K: float) -> float:
+        M = _positive_optional(operator_constant_M, "operator_constant_M")
+        K = _positive_optional(operator_constant_K, "operator_constant_K")
+        assert M is not None and K is not None
+        threshold = max(1.0, 2.0 * M, 2.0 * K)
+        if not math.isfinite(threshold):
+            raise OverflowError("conditional source Lambda threshold is not finite")
+        return float(threshold)
 
-        This is a planning/sensitivity quantity only; it does not certify the
-        source operator constants or the source large-Lambda threshold.
-        """
+    def M_budget_for_radius(self, target_radius: float) -> float:
+        """Largest ``M`` compatible with ``M/Lambda <= target_radius``."""
         target = float(target_radius)
         if not math.isfinite(target) or target <= 0.0:
             raise ValueError("target_radius must be finite and >0")
@@ -152,7 +206,6 @@ class KokunoPA10FixedPointRadiusGate:
         return copy.deepcopy(_TRUTH_BOUNDARY)
 
     def report(self) -> dict[str, Any]:
-        radius = self.conditional_radius
         return {
             "schema": SCHEMA,
             "source": {
@@ -166,11 +219,17 @@ class KokunoPA10FixedPointRadiusGate:
             "selected_execution": {
                 "Lambda": self.selected_lambda,
                 "operator_constant_M_input": self.operator_constant_M,
-                "conditional_fixed_point_radius_M_over_Lambda": radius,
+                "operator_constant_K_input": self.operator_constant_K,
+                "conditional_source_Lambda_threshold": self.conditional_threshold,
+                "conditional_selected_Lambda_passes_threshold": (
+                    self.conditional_selected_lambda_passes_threshold
+                ),
+                "conditional_fixed_point_radius_M_over_Lambda": self.conditional_radius,
+                "per_constant_threshold_budget_Lambda_over_2": self.per_constant_threshold_budget,
                 "contraction_factor_source_upper_bound": 0.5,
                 "interpretation": (
-                    "formula replay only; conditional on source invariant-ball and "
-                    "contraction hypotheses"
+                    "formula replay only; M/K and the source operator estimates are not "
+                    "machine-bound by this artifact"
                 ),
             },
             "truth_boundary": self.truth_boundary,
@@ -197,15 +256,18 @@ class KokunoPA10FixedPointRadiusGate:
             raise ValueError("payload sha256 mismatch")
         if raw.get("schema") != SCHEMA:
             raise ValueError("schema mismatch")
-        if raw.get("source") != cls().report()["source"]:
+        baseline = cls().report()
+        if raw.get("source") != baseline["source"]:
             raise ValueError("source provenance mismatch")
         if raw.get("source_formulas") != _SOURCE_FORMULAS:
             raise ValueError("source formula metadata mismatch")
         if raw.get("truth_boundary") != _TRUTH_BOUNDARY:
             raise ValueError("truth boundary mismatch")
         selected = raw.get("selected_execution", {})
-        value = selected.get("operator_constant_M_input")
-        replay = cls(operator_constant_M=value)
+        replay = cls(
+            operator_constant_M=selected.get("operator_constant_M_input"),
+            operator_constant_K=selected.get("operator_constant_K_input"),
+        )
         if replay.report()["selected_execution"] != selected:
             raise ValueError("selected execution replay mismatch")
         return replay
