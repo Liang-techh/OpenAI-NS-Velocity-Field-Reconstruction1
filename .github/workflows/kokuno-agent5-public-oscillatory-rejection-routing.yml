@@ -1,0 +1,106 @@
+name: kokuno-agent5-public-oscillatory-rejection-routing
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-public-oscillatory-rejection-routing-037
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_public_oscillatory_rejection_routing_checkpoint.py"
+      - "tests/test_constrained_kokuno_public_oscillatory_rejection_routing_checkpoint.py"
+      - ".github/workflows/kokuno-agent5-public-oscillatory-rejection-routing.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent5-public-oscillatory-rejection-routing-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHONHASHSEED: '0'
+
+jobs:
+  rejection-routing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile Agent-5 checkpoint
+        run: python -m py_compile src/openai_ns_reconstruction/kokuno_public_oscillatory_rejection_routing_checkpoint.py
+      - name: Focused warnings-as-errors regressions
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_public_candidate_velocity.py \
+            tests/test_constrained_kokuno_public_oscillatory_independent_audit.py \
+            tests/test_constrained_kokuno_public_oscillatory_rejection_routing_checkpoint.py
+      - name: Re-run frozen Agent-4 public black-box audit
+        run: |
+          python -m openai_ns_reconstruction.kokuno_public_oscillatory_independent_audit \
+            --output outputs/kokuno_agent4_public_oscillatory_independent_audit.json
+      - name: Generate deterministic v37 checkpoint
+        run: |
+          python -m openai_ns_reconstruction.kokuno_public_oscillatory_rejection_routing_checkpoint \
+            --output artifacts/kokuno_agent5/public_oscillatory_rejection_routing_checkpoint_v37.json
+      - name: Validate frozen rejection and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          import math
+          from pathlib import Path
+
+          checkpoint = json.loads(Path('artifacts/kokuno_agent5/public_oscillatory_rejection_routing_checkpoint_v37.json').read_text())
+          audit = json.loads(Path('outputs/kokuno_agent4_public_oscillatory_independent_audit.json').read_text())
+          state = checkpoint['states']
+          frozen = checkpoint['upstream']['agent4_public_provider_audit']
+          fm = frozen['metrics']
+
+          assert state['public_provenance_labelled_xyz_t_oscillatory_velocity_ready'] is True
+          assert state['public_oscillatory_independent_audit_assessed'] is True
+          assert state['public_oscillatory_local_divergence_passed'] is False
+          assert state['public_oscillatory_covariance_rank_passed'] is False
+          assert state['public_oscillatory_project_support_passed'] is False
+          assert state['oscillatory_ready'] is False
+          assert state['correction_ingest_allowed'] is False
+          assert state['pde_validated'] is False
+
+          finest = audit['divergence']['rows'][-1]
+          cov = audit['phase_mean_covariance']
+          support = audit['support']
+          assert audit['local_curl_covariance_preflight_passed'] is False
+          assert audit['project_support_preflight_passed'] is False
+          assert audit['public_oscillatory_preflight_passed'] is False
+          assert audit['truth_boundary']['formal_full_domain_pde_gate_assessed'] is False
+          assert audit['truth_boundary']['heldout_ns_residual_assessed'] is False
+          assert audit['truth_boundary']['pde_validated'] is False
+
+          def close(a, b):
+              return math.isclose(float(a), float(b), rel_tol=1e-10, abs_tol=1e-12)
+
+          assert close(finest['relative_rms'], fm['finest_relative_divergence_rms'])
+          assert close(finest['relative_max'], fm['finest_relative_divergence_max'])
+          assert all(close(a, b) for a, b in zip(audit['divergence']['relative_rms_refinement_ratios'], fm['divergence_refinement_ratios']))
+          assert close(min(row['rank_ratio'] for row in cov['rows']), fm['minimum_covariance_rank_ratio'])
+          assert close(max(cov['relative_drift_to_finest']), fm['maximum_covariance_resolution_drift'])
+          assert close(support['project_axial_exterior_absolute_max'], fm['project_axial_exterior_absolute_max'])
+
+          assert checkpoint['formal_gates']['held_out_normalized_momentum_max'] == 1e-3
+          assert checkpoint['formal_gates']['held_out_normalized_momentum_l2'] == 1e-3
+          assert checkpoint['formal_gates']['held_out_divergence_max'] == 1e-5
+          assert checkpoint['formal_gates']['held_out_divergence_l2'] == 1e-5
+          assert checkpoint['baseline_vs_kokuno']['kokuno_current_comparable_full_domain_receipt'] is None
+          print('checkpoint_sha256=', checkpoint['checkpoint_sha256'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-public-oscillatory-rejection-routing-checkpoint-v37
+          path: |
+            artifacts/kokuno_agent5/public_oscillatory_rejection_routing_checkpoint_v37.json
+            outputs/kokuno_agent4_public_oscillatory_independent_audit.json
+          if-no-files-found: error
