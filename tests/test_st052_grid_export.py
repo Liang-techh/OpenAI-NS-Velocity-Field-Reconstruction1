@@ -7,9 +7,11 @@ import numpy as np
 import pytest
 
 from openai_ns_reconstruction.st052_grid_export import (
+    CALLABLE_GRID_PARITY_ATOL,
     MANIFEST_FILENAME,
     MAT_FILENAME,
     NPZ_FILENAME,
+    callable_grid_parity_passes,
     export_velocity_grid,
     sample_velocity_grid,
     verify_velocity_grid_export,
@@ -61,6 +63,15 @@ def test_npz_and_mat_roundtrip_exactly(tmp_path: Path):
     assert manifest["truth_boundary"]["pde_validated"] is False
     assert manifest["execution_environment"]["dependency_runtime_identity_closed"] is False
     assert manifest["matlab_compatibility"]["actual_matlab_runtime_executed"] is False
+
+
+def test_callable_grid_parity_uses_frozen_engineering_tolerance_only():
+    assert CALLABLE_GRID_PARITY_ATOL == 5e-12
+    assert callable_grid_parity_passes(0.0) is True
+    assert callable_grid_parity_passes(9.520162436160717e-15) is True
+    assert callable_grid_parity_passes(CALLABLE_GRID_PARITY_ATOL) is True
+    assert callable_grid_parity_passes(np.nextafter(CALLABLE_GRID_PARITY_ATOL, np.inf)) is False
+    assert callable_grid_parity_passes(float("nan")) is False
 
 
 def test_raw_file_tamper_fails_closed(tmp_path: Path):
