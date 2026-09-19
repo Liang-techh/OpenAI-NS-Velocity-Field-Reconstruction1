@@ -18,7 +18,7 @@ if ~isfield(m,'mode')||~ismember(m.mode,{'spectral','sampled'}),error('ns:Data',
 if isfield(m,'pde_validated')&&m.pde_validated,error('ns:Claims','This viewer does not accept unverified promoted claims.');end
 state=struct('t',(m.tmin+m.tmax)/2,'slice',0,'radius',1,'seedz',0,'count',200,...
     'length',5,'iso',1.5,'alpha',.20,'extent',2,'cut',2,'colorScale',1);
-V=[];cacheTime=NaN;cacheN=0;busy=false;lastDraw=tic;closed=false;
+V=[];cacheTime=NaN;cacheN=0;busy=false;lastDraw=tic;closed=false;controlLabels=struct();
 fig=uifigure('Name','NS field explorer | frozen research candidates','Position',[40 40 1440 900],...
     'Visible',p.Results.Visible,'Color',[.96 .97 .98]);
 fig.CloseRequestFcn=@closeApp;
@@ -66,7 +66,7 @@ time.Layout.Row=2;time.Layout.Column=[1 4];time.Tag='TimeSlider';
 status=uilabel(g,'Text','Preparing real coefficient evaluation...','FontSize',11);
 status.Layout.Row=4;status.Layout.Column=[1 3];
 tm=timer('ExecutionMode','fixedSpacing','Period',.18,'BusyMode','drop','TimerFcn',@tick);
-app=struct('Figure',fig,'TimeSlider',time,'ModelDropdown',candidate,'Axes3D',ax3,'AxesSlice',ax2,'Status',status,...
+app=struct('Figure',fig,'TimeSlider',time,'PlayButton',play,'ModelDropdown',candidate,'Axes3D',ax3,'AxesSlice',ax2,'Status',status,...
     'SetTime',@(t)setTime(t),'SetControl',@setControl,'SetMode',@setMode,...
     'SetScalar',@setScalar,'SetCandidate',@setCandidate,'Close',@()closeApp(),...
     'Snapshot',@()snapshot(),'Refresh',@()render(false));
@@ -77,7 +77,7 @@ updateImportRestrictions();render(false);
     end
     function place(h,row,col),h.Layout.Row=row;h.Layout.Column=col;end
     function h=control(text,row,limits,name)
-        L=uilabel(cg,'Text',sprintf('%s: %.3g',text,state.(name)),'FontSize',11);place(L,row,1);
+        L=uilabel(cg,'Text',sprintf('%s: %.3g',text,state.(name)),'FontSize',11);place(L,row,1);controlLabels.(name)={L,text};
         h=uislider(cg,'Limits',limits,'Value',state.(name),'MajorTicks',[],...
             'ValueChangingFcn',@(src,e)controlChanged(name,e.Value,true,L,text),...
             'ValueChangedFcn',@(src,e)controlChanged(name,e.Value,false,L,text));place(h,row,2);h.Tag=name;
@@ -100,7 +100,7 @@ updateImportRestrictions();render(false);
     function setControl(name,val)
         if ~isfield(sl,name),error('ns:Control','Unknown display control.');end
         if val<sl.(name).Limits(1)||val>sl.(name).Limits(2),error('ns:Control','Control outside limits.');end
-        sl.(name).Value=val;state.(name)=val;render(false);
+        sl.(name).Value=val;state.(name)=val;entry=controlLabels.(name);entry{1}.Text=sprintf('%s: %.3g',entry{2},val);render(false);
     end
     function setMode(value),mode.Value=value;render(false);end
     function setScalar(value),scalar.Value=value;render(false);end
@@ -173,7 +173,7 @@ updateImportRestrictions();render(false);
             else,detail=sprintf('Rendered-grid max |R| = %.5g (NOT an independent acceptance test).',max(V.residual(:)));end
             if preview,labelQuality='DRAG/PLAY PREVIEW';else,labelQuality='FULL VIEW';end
             status.Text=sprintf('%s | %d^3 nodes | %.2f s | %s | PDE target NOT met.',labelQuality,n,toc(started),detail);
-            drawnow limitrate;lastDraw=tic;
+            drawnow limitrate nocallbacks;lastDraw=tic;
         catch err
             setappdata(fig,'LastRenderError',err.message);status.Text=['Render error: ' err.message];warning('ns:Render','%s',getReport(err,'basic'));
         end
