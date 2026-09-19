@@ -1,0 +1,144 @@
+name: kokuno-agent1-pa10-local-phase-pressure-repair
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a1-pa10-local-phase-pressure-repair
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent1-pa10-local-phase-pressure-repair-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  local-phase-pressure-repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile
+        run: python -m compileall -q src/openai_ns_reconstruction/kokuno_pa10_selected_pressure_primitive.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_pa10_selected_pressure_primitive.py \
+            tests/test_constrained_kokuno_pa10_local_phase_pressure_repair.py
+      - name: Generate exact-head repair receipt
+        run: |
+          python -W error - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          import subprocess
+          import numpy as np
+
+          from openai_ns_reconstruction.kokuno_pa10_selected_pressure_primitive import (
+              KokunoPA10SelectedPressurePrimitive,
+          )
+
+          primitive = KokunoPA10SelectedPressurePrimitive(quadrature_points=64)
+          root = float(primitive.core.phase_stationary_eta)
+          lam = float(primitive.core.rescaling_lambda)
+          width = lam ** -0.5
+          offsets = np.asarray([-0.60, -0.30, 0.0, 0.30, 0.60], dtype=float)
+          eta = root + offsets * width
+          y = np.full_like(eta, 2.0)
+          values = primitive.evaluate(y, eta)
+          legacy = np.asarray(primitive.core.log_g(eta), dtype=float)
+
+          y_fd = np.asarray([0.73, 1.61, 2.84, 3.70], dtype=float)
+          eta_fd = root + np.asarray([-0.45, -0.20, 0.25, 0.50], dtype=float) * width
+          declared = np.asarray(primitive.evaluate(y_fd, eta_fd)['p_eta'], dtype=float)
+
+          def fd4(h):
+              def val(k):
+                  return np.asarray(primitive.evaluate(y_fd, eta_fd + k * h)['p'], dtype=float)
+              return (-val(2.0) + 8.0 * val(1.0) - 8.0 * val(-1.0) + val(-2.0)) / (12.0 * h)
+
+          def rel_rms(estimate):
+              error = np.asarray(estimate) - declared
+              return float(np.sqrt(np.mean(error * error)) / np.sqrt(np.mean(declared * declared)))
+
+          fd_levels = []
+          for fraction in (0.20, 0.10, 0.05):
+              h = fraction * width
+              estimate = fd4(h)
+              fd_levels.append({
+                  'width_fraction': fraction,
+                  'step': h,
+                  'relative_rms': rel_rms(estimate),
+                  'relative_max': float(
+                      np.max(np.abs(estimate - declared)) / np.max(np.abs(declared))
+                  ),
+              })
+
+          head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
+          payload = {
+              'schema': 'kokuno-agent1-pa10-local-phase-pressure-repair-receipt-v1',
+              'exact_head': head,
+              'candidate_sha256': primitive.sha256,
+              'selected_lambda': lam,
+              'phase_stationary_eta': root,
+              'lambda_minus_half_width': width,
+              'layer_offsets_in_widths': offsets.tolist(),
+              'stable_local_log_g': np.asarray(values['log_g'], dtype=float).tolist(),
+              'legacy_global_subtraction_log_g': legacy.tolist(),
+              'layer_pressure_p': np.asarray(values['p'], dtype=float).tolist(),
+              'layer_pressure_p_eta': np.asarray(values['p_eta'], dtype=float).tolist(),
+              'p_eta_fd4_levels': fd_levels,
+              'truth_boundary': primitive.truth_boundary,
+              'scientific_scope': {
+                  'selected_center_public_value_path_repaired': True,
+                  'source_pressure_radius_one_ball_bound_proved': False,
+                  'source_MK_proved': False,
+                  'global_leading_profile_reconstructed': False,
+                  'heldout_ns_residual_assessed': False,
+                  'pde_validated': False,
+                  'paper_exact': False,
+              },
+          }
+          out = Path('artifacts/kokuno_agent1/pa10_local_phase_pressure_repair/report.json')
+          out.parent.mkdir(parents=True, exist_ok=True)
+          raw = json.dumps(payload, indent=2, sort_keys=True) + '\n'
+          out.write_text(raw)
+          print('receipt_sha256=', hashlib.sha256(raw.encode()).hexdigest())
+          print('candidate_sha256=', primitive.sha256)
+          print('stable_local_log_g=', payload['stable_local_log_g'])
+          print('legacy_global_subtraction_log_g=', payload['legacy_global_subtraction_log_g'])
+          print('p_eta_fd4_levels=', fd_levels)
+          PY
+      - name: Validate immutable truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          payload = json.loads(Path(
+              'artifacts/kokuno_agent1/pa10_local_phase_pressure_repair/report.json'
+          ).read_text())
+          truth = payload['truth_boundary']
+          scope = payload['scientific_scope']
+          assert truth['selected_stationary_local_phase_value_path_executable'] is True
+          assert truth['source_pressure_radius_one_ball_norm_machine_bound'] is False
+          assert truth['source_operator_constant_M_machine_bound'] is False
+          assert truth['selected_pa16_handoff_allowed'] is False
+          assert truth['global_leading_profile_reconstructed'] is False
+          assert truth['heldout_ns_residual_assessed'] is False
+          assert truth['pde_validated'] is False
+          assert truth['paper_exact'] is False
+          assert scope['selected_center_public_value_path_repaired'] is True
+          assert scope['source_pressure_radius_one_ball_bound_proved'] is False
+          assert scope['source_MK_proved'] is False
+          assert scope['heldout_ns_residual_assessed'] is False
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-pa10-local-phase-pressure-repair-v1
+          path: artifacts/kokuno_agent1/pa10_local_phase_pressure_repair/report.json
