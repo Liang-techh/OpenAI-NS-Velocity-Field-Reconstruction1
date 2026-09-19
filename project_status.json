@@ -5,6 +5,7 @@
   "status_snapshot_base_head": "4858f5e5b17449414d4be0768858e2d2043b5324",
   "active_routing_document": "docs/AGENT_ROUTING_SWIRL_SPATIAL.md",
   "active_scientific_route": "materialize_integrated_axial_cap_poloidal_child_then_fresh_validate",
+  "delivery_shortest_route": "materialize_exact_st052m_local_swirl_energy_child_then_render_and_fresh_validate",
   "candidate_status": "visualization_candidate_only",
   "candidate_family": "eq45_supported_velocity_candidate_v1",
   "candidate_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
@@ -13,24 +14,8 @@
   "velocity_api": "openai_ns_reconstruction.eq45_supported_delivery:velocity",
   "grid_api": "openai_ns_reconstruction.eq45_supported_delivery:default_field().grid",
   "candidate_save_load_api": "openai_ns_reconstruction.eq45_supported_delivery:Eq45SupportedDeliveryField.load_candidate",
-  "evaluation_box": [
-    [
-      -2,
-      2
-    ],
-    [
-      -2,
-      2
-    ],
-    [
-      -2,
-      2
-    ]
-  ],
-  "time_interval": [
-    0.25,
-    0.75
-  ],
+  "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+  "time_interval": [0.25, 0.75],
   "physical_support": "r < 2 and abs(z) < 2",
   "states": {
     "velocity_export_ready": true,
@@ -54,11 +39,7 @@
   "preregistered_validation_contract": {
     "validation_seed": 914027,
     "held_out_points": 4096,
-    "derivative_steps": [
-      0.02,
-      0.01,
-      0.005
-    ],
+    "derivative_steps": [0.02, 0.01, 0.005],
     "divergence_max": 1e-05,
     "divergence_L2": 1e-05,
     "pde_residual_max": 0.001,
@@ -67,6 +48,27 @@
   "active_task_file": "docs/SCHEDULED_AGENT_TASKS.md",
   "central_coordination_issue": 15,
   "next_integration_task": "materialize one explicitly bounded nonzero AXIAL_CAP_BANDED_C4_ODD_Z_POLOIDAL child from the already integrated #343 capacity direction; this supersedes COMPACT_C4_ODD_Z_POLOIDAL as the active visual-geometry route while preserving its governance requirements: explicit autonomous coefficient bound/value, new representation identity/candidate SHA, unchanged reference/validation energy, core-sign, axis/support and restricted pressure/force screens, then fresh full-momentum/divergence validation on the 4096-point contract before any promotion; do not add another capacity basis first",
+  "next_delivery_task": "replay and materialize the exact ST052-M child defined by frozen kappa=0.05 redistribution, tau=0.05 localized tip Piola taper, shoulder window abs(z)/2 in (0.36,0.49), beta=0.08837490297155456 energy-only swirl compensation, and no post-transform common scale; assign a new versioned candidate identity/SHA plus save-load and unified velocity(x,y,z,t) adapter on the live constrained ancestry; then run fixed-camera/fixed-seed 3-D render and resolution-convergent threshold-free morphology checks before deciding whether to spend pressure/restricted-force rebuild budget; if promoted for PDE work, rebuild compatible pressure/forcing and run the unchanged 4096-point seed-914027 full momentum/divergence contract; do not add another generic basis first",
+  "latest_st052m_visual_candidate_evidence": {
+    "status": "strong_visualization_candidate_evidence_not_materialized_on_live_ancestry",
+    "exact_child_source_pr": 559,
+    "exact_child_source_head": "39b106ad8cb8df2064cabead3a12682089575e74",
+    "redistribution_kappa": 0.05,
+    "taper_tau": 0.05,
+    "shoulder_swirl_beta": 0.08837490297155456,
+    "post_transform_common_scale": 1.0,
+    "central_material_path_receipt_pr": 565,
+    "central_path_result": "no measured difference from redistributed control under the frozen 48-path central protocol",
+    "off_midplane_material_path_receipt_pr": 574,
+    "off_midplane_path_result": "descriptive tradeoff in active shoulder/tip regions: aggregate mean winding -2.3721%, max winding +6.7612%, contraction magnitude +28.0572%, mean axial-pair separation change -9.4131%; tip band contraction +16.5845% and pair separation -38.4420%",
+    "threshold_free_morphology_receipt_pr": 576,
+    "threshold_free_morphology_result": "positive preregistered 25^3/33^3/41^3 convergence: full enstrophy aspect rises about 1.77%-2.11%, smooth-tip radial RMS thins about 2.17%-2.57%, central change remains below 0.1%",
+    "production_candidate_selected": false,
+    "velocity_export_ready": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false
+  },
   "latest_integrated_swirl_capacity": {
     "integration_head": "412e6c35ce7c59e360ed8e40237f85d1856b75d4",
     "mode": "INTERIOR_C4_SWIRL",
@@ -131,20 +133,14 @@
     "normalized_candidate": "artifacts/bipolar_energy/normalized_candidate.json",
     "candidate_sha256": "c0e27269adfb6f305c2c0b5a2483f9eddd54f79691f69cacd7bb735ba592a702",
     "reference_energy": 1.0000000000000004,
-    "validation_energy_range": [
-      0.5842436855426052,
-      1.0000000000000004
-    ],
+    "validation_energy_range": [0.5842436855426052, 1.0000000000000004],
     "pde_validated": false,
     "default_promoted": false
   },
   "bipolar_theta_obstruction": {
     "report": "artifacts/bipolar_theta/report.json",
     "force_c": 0.0,
-    "finest_max_range": [
-      0.5779909449264289,
-      3.026685694217416
-    ],
+    "finest_max_range": [0.5779909449264289, 3.026685694217416],
     "status": "fails_necessary_axisymmetric_momentum_condition",
     "next_action": "Modify swirl profile or time evolution under fixed force bounds; pressure-only repair cannot eliminate theta residual."
   },
@@ -159,11 +155,7 @@
     "comparison": {
       "default_vs_bipolar_fine_uniform_l2_relative_change": 0.31452704008178234,
       "fine_step": 0.005,
-      "fine_step_uniform_l2_ordering": [
-        "bipolar",
-        "default",
-        "bipolar_energy_normalized"
-      ],
+      "fine_step_uniform_l2_ordering": ["bipolar", "default", "bipolar_energy_normalized"],
       "lower_fine_uniform_l2_candidate": "bipolar",
       "uniform_whole_volume_l2_max_by_candidate": {
         "bipolar": 13.708430179083468,
