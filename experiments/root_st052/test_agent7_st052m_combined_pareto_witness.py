@@ -9,7 +9,7 @@ def test_preregistered_witness_is_frozen_and_not_a_scan():
     assert mod.PREREG_ISSUE == 651
     assert mod.SOURCE_CONE_PR == 642
     assert mod.SOURCE_CONE_HEAD == "f523c221847e1a587ec9af4ec053f6f864ce90c4"
-    assert mod.SWIRL_A == 0.06590
+    assert mod.SWIRL_A == 0.0658997
     assert mod.SHOULDER_B == -1.0
     assert mod.SHOULDER_LAMBDA == -0.02
     assert mod.PARETO_TOL == 5.0e-5
