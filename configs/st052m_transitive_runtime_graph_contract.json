@@ -1,0 +1,126 @@
+{
+  "schema": "st052m-transitive-runtime-graph-governance/v1",
+  "task_id": "CR002-ST052-TRANSITIVE-RUNTIME-GRAPH-071",
+  "purpose": "separate exact source-checkout identity and direct replay-module cache eviction from transitive Python runtime-module identity closure for the ST052-M linear-temporal whole-candidate loader",
+  "snapshot": {
+    "active_integration_branch": "codex/cr001-constraints",
+    "active_integration_head": "458ace6f456cba8200048d2a63d102b6596fbc43",
+    "audited_upstream_pr": 649,
+    "audited_upstream_head": "f319b57aaaa8672ddbbaf833933b94396d3ccaad",
+    "note": "This governance PR is stacked on the exact #649 head because the stronger runtime-identity claim being audited exists only there; the live integration head remains the repository routing authority until #649 is integrated."
+  },
+  "upstream_ci": {
+    "dedicated_run": 35447803624,
+    "dedicated_conclusion": "success",
+    "standard_run": 35447803651,
+    "standard_conclusion": "success",
+    "receipt_scope": "exact #649 execution context only"
+  },
+  "source_classification": {
+    "user_requirement": [
+      "clear callable and save/load 3D time-varying velocity delivery"
+    ],
+    "public_source_fact": [
+      "qualitative observable structure shown in the public OpenAI velocity-field visualization"
+    ],
+    "autonomous_design": [
+      "ST052-M parent replay and linear-temporal transform",
+      "historical exact-source Git checkout as runtime dependency",
+      "Python sys.path and importlib bridge used to execute the historical evaluator",
+      "runtime-identity governance and cache-isolation policy"
+    ],
+    "pending_unknown": [
+      "hidden OpenAI coefficients, frame-time mapping, camera, seeds, and paper-exact field identity",
+      "transitive Python module-cache/origin isolation for the historical ST052 evaluator graph"
+    ]
+  },
+  "upstream_positive_facts": {
+    "whole_child_bundle_materialized": true,
+    "whole_child_save_load_ready_with_authenticated_exact_source_runtime": true,
+    "exact_source_git_head_tree_and_clean_worktree_authenticated": true,
+    "direct_replay_module_cache_evicted_before_import": true,
+    "direct_replay_entrypoint_covered_by_authenticated_source_tree": true,
+    "exact_head_parity_receipt_valid": true,
+    "standalone_package_parent_runtime_ready": false
+  },
+  "runtime_graph_scope": {
+    "direct_module": "replay_st052",
+    "direct_module_cache_eviction_verified": true,
+    "transitive_modules_observed": [
+      "minimax_exchange",
+      "spacetime",
+      "aligned_continuation"
+    ],
+    "transitive_module_cache_eviction_verified": false,
+    "transitive_module_origin_checks_verified": false,
+    "transitive_runtime_import_graph_identity_closed": false,
+    "scope_interpretation": "#649 closes the requested Git checkout/tree identity and the direct replay_st052 cache seam. It does not yet establish that every transitive bare-name module used by that replay is freshly loaded from, and origin-checked against, the authenticated checkout in an arbitrary long-lived Python process."
+  },
+  "allowed_states": {
+    "exact_source_checkout_identity_closed": true,
+    "direct_replay_import_cache_isolation_verified": true,
+    "transitive_runtime_import_cache_isolation_verified": false,
+    "whole_executable_runtime_identity_closed": false,
+    "standalone_reproducible_velocity_identity_ready": false,
+    "experimental_st052_velocity_export_ready": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "held_out_temporal_child_pde_residual_evaluated": false,
+    "pde_validated": false,
+    "source_correspondence_verified": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "promotion_requirements": {
+    "whole_executable_runtime_identity_closed": [
+      "fail closed against stale or substituted transitive modules such as minimax_exchange, spacetime, aligned_continuation and any recursively imported evaluator modules",
+      "verify imported module origins or otherwise load the historical evaluator in an isolated namespace/runtime whose code identity is cryptographically bound",
+      "replay the whole-child save/load parity check after the transitive runtime graph is bound"
+    ],
+    "experimental_st052_velocity_export_ready": [
+      "whole executable runtime identity closure or a deterministic parent evaluator ported into the installable package",
+      "whole-child save/load replay from that immutable runtime identity",
+      "finite broadcastable velocity(x,y,z,t) outputs from the reloaded object"
+    ],
+    "not_required_for_velocity_export_ready": [
+      "PDE residual <= 1e-3",
+      "visual correspondence verification",
+      "paper-exact or OpenAI-field identity"
+    ]
+  },
+  "cr001_nonmutation": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_parameter_bounds": {"a": [0.0, 10.0], "c": [0.0, 10.0]},
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "divergence_max": 0.00001,
+    "divergence_L2": 0.00001,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001,
+    "free_residual_defined_forcing_allowed": false,
+    "amplitude_collapse_success_allowed": false
+  },
+  "mutation_scope": {
+    "velocity_changed": false,
+    "candidate_changed": false,
+    "pressure_changed": false,
+    "forcing_changed": false,
+    "optimizer_changed": false,
+    "sampling_changed": false,
+    "norm_definition_changed": false,
+    "threshold_changed": false,
+    "canonical_api_changed": false,
+    "candidate_selection_changed": false
+  }
+}
