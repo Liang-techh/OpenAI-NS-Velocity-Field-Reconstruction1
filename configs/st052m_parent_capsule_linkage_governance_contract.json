@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "contract_id": "st052m_parent_capsule_linkage_governance_v1",
+  "status": "audit_of_open_upstream_parent_capsule",
+  "integration_base": {
+    "branch": "codex/cr001-constraints",
+    "head": "d3286b585d9e6dba6f3846ab94e9f7388d17176c"
+  },
+  "upstream_parent_capsule": {
+    "pull_request": 619,
+    "head": "088d7263c403b3aa3a3818ea527ea0c5845e3089",
+    "base_branch": "main",
+    "source_parent_pr": 508,
+    "source_parent_head": "b3b8bfdbe1077f9ec967d158602951997d81e17d",
+    "source_recipe_path": "experiments/root_st052/recipe.json",
+    "source_recipe_git_blob_sha1": "e30c769052379f72afeee46ca264482884cc5ac7",
+    "workflow_run": 35439178949,
+    "workflow_conclusion": "success",
+    "artifact_id": 10583008970,
+    "artifact_digest": "sha256:14bcd59291855960ed8ad2a5915de22e3a41b0814499235c1bd97b5312a3a002"
+  },
+  "exact_artifact_pair": {
+    "candidate_file_sha256": "99c5c3565e33fccc0df3026093e74cb4a78f36d037b9d5ac0f24f6958a6bc499",
+    "validation_file_sha256": "0a72607df330748c70948846582a0682339690f3f8b4c450694e7180135b0fdc",
+    "validation_report_candidate_sha256": "99c5c3565e33fccc0df3026093e74cb4a78f36d037b9d5ac0f24f6958a6bc499",
+    "replay_identity_sha256": "85781a70ac1a2fe32b6fb3cc3aea76e9205cb65ad390089402926f7daea10a44",
+    "replay_identity_scope": "source_commit_recipe_parent_modifier_reference_lineage_not_global_function_hash",
+    "validation_experiment": "additional_diagnostic",
+    "validation_seed": 9175291,
+    "held_out_points": 4096,
+    "pde_validated": false,
+    "all_numeric_gates_pass": false,
+    "momentum_max_gate": false,
+    "momentum_l2_gate": false,
+    "candidate_validation_sha_pair_matches": true
+  },
+  "governance_finding": {
+    "upstream_exact_artifact_pair_is_internally_consistent": true,
+    "upstream_builder_checks_validation_candidate_sha_against_candidate_file": false,
+    "cross_file_substitution_gap_present_at_builder_api": true,
+    "candidate_validation_sha_binding_required_before_manifest_claims_saved_file_validation": true,
+    "co_generated_files_in_ci_are_execution_evidence_not_a_general_builder_invariant": true,
+    "replay_identity_may_not_be_laundered_into_candidate_file_identity": true
+  },
+  "delivery_state": {
+    "live_integration_contains_parent_behavioral_binding": true,
+    "live_integration_contains_parent_replay_capsule": false,
+    "parent_replay_artifact_evidence_exists_on_open_pr": true,
+    "complete_temporal_child_materialized": false,
+    "complete_candidate_save_load_ready": false,
+    "experimental_st052_temporal_velocity_export_ready": false,
+    "canonical_eq45_velocity_export_ready": true
+  },
+  "truth_states": {
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "source_classification": {
+    "user_requirement": [
+      "explicit callable save-load 3D time-varying velocity(x,y,z,t)->[u,v,w]"
+    ],
+    "public_source_fact": [
+      "a public OpenAI velocity-field visualization exposes qualitative observable geometry only"
+    ],
+    "autonomous_design": [
+      "ST052-M reconstruction recipe, local-swirl/taper/shoulder transforms, linear temporal activation, and replay capsule layout"
+    ],
+    "pending_unknown": [
+      "hidden OpenAI field coefficients, exact frame-time map, camera, seeds, and paper-exact field identity"
+    ]
+  },
+  "cr001_snapshot": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_parameter_bounds": {"a": [0.0, 10.0], "c": [0.0, 10.0]},
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "formal_validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "divergence_max": 1e-05,
+    "divergence_l2": 1e-05,
+    "momentum_max": 0.001,
+    "momentum_l2": 0.001,
+    "free_residual_defined_forcing_allowed": false,
+    "amplitude_collapse_success_allowed": false
+  },
+  "limitations": [
+    "The exact PR #619 artifact pair is consistent, but PR #619 targets main rather than the active constrained integration branch.",
+    "The upstream manifest builder does not currently fail closed if a different candidate file is paired with an otherwise valid validation report.",
+    "Seed 9175291 is additional diagnostic evidence and is not the preregistered CR001 formal seed 914027.",
+    "No whole temporal child candidate ID/SHA or whole-child save/load capsule exists on the live integration ancestry yet."
+  ]
+}
