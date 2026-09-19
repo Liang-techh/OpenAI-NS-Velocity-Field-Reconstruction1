@@ -4,16 +4,21 @@ on:
   pull_request:
     paths:
       - 'src/openai_ns_reconstruction/st052_linear_temporal_capsule.py'
+      - 'src/openai_ns_reconstruction/st052_source_runtime_identity.py'
       - 'tests/test_st052_linear_temporal_capsule.py'
+      - 'tests/test_st052_source_runtime_identity.py'
       - 'scripts/verify_st052_linear_temporal_capsule.py'
       - '.github/workflows/agent9-st052-linear-temporal-capsule.yml'
   push:
     branches:
       - 'agent9/st052-linear-temporal-capsule-069'
+      - 'agent9/st052-runtime-identity-070'
       - 'codex/cr001-constraints'
     paths:
       - 'src/openai_ns_reconstruction/st052_linear_temporal_capsule.py'
+      - 'src/openai_ns_reconstruction/st052_source_runtime_identity.py'
       - 'tests/test_st052_linear_temporal_capsule.py'
+      - 'tests/test_st052_source_runtime_identity.py'
       - 'scripts/verify_st052_linear_temporal_capsule.py'
       - '.github/workflows/agent9-st052-linear-temporal-capsule.yml'
 
@@ -47,8 +52,33 @@ jobs:
       - name: Install frozen-source runtime and tests
         run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
 
-      - name: Focused checksum and truth-boundary tests
-        run: python -m pytest -q -W error tests/test_st052_linear_temporal_capsule.py
+      - name: Focused checksum, runtime-identity, and truth-boundary tests
+        run: python -m pytest -q -W error tests/test_st052_linear_temporal_capsule.py tests/test_st052_source_runtime_identity.py
+
+      - name: Authenticate exact source runtime and reject tracked tamper
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from openai_ns_reconstruction.st052_source_runtime_identity import authenticate_source_runtime
+          root=Path('source-st052')
+          receipt=authenticate_source_runtime(root)
+          print('source_head=',receipt['authenticated_head'])
+          print('source_tree=',receipt['authenticated_tree'])
+          target=root/'experiments/root_st052/replay_st052.py'
+          original=target.read_bytes()
+          target.write_bytes(original+b'\n# CR-A9-070 tamper probe\n')
+          try:
+              authenticate_source_runtime(root)
+          except ValueError as exc:
+              print('tamper_rejected=',type(exc).__name__,str(exc))
+          else:
+              raise SystemExit('runtime authenticator accepted a modified tracked source file')
+          finally:
+              target.write_bytes(original)
+          authenticate_source_runtime(root)
+          print('runtime identity restored after tamper probe')
+          PY
 
       - name: Materialize exact ST052-M parent with expected scientific rejection
         shell: bash
@@ -77,7 +107,7 @@ jobs:
           print('Exact parent replay retained expected momentum rejection.')
           PY
 
-      - name: Build, reload, and compare whole temporal child
+      - name: Build, reload, and compare runtime-bound temporal child
         run: |
           python scripts/verify_st052_linear_temporal_capsule.py \
             --source-root source-st052 \
@@ -89,14 +119,19 @@ jobs:
           import json
           from pathlib import Path
           r=json.loads(Path('outputs/ST052-M-linear-temporal-child-v1/agent9_receipt.json').read_text())
-          assert r['task_id']=='CR-A9-069'
+          assert r['task_id']=='CR-A9-070'
+          assert r['exact_source_runtime']['manifest_identity_matches'] is True
+          assert r['exact_source_runtime']['tracked_worktree_clean'] is True
+          assert r['exact_source_runtime']['untracked_python_sources_absent'] is True
           assert r['parity']['passed'] is True
           assert r['parity']['max_component_error'] <= 5e-12
           assert r['parent_scientific_receipt']['pde_validated'] is False
           assert r['parent_scientific_receipt']['transferred_to_temporal_child'] is False
+          assert r['truth_boundary']['exact_source_runtime_identity_closed'] is True
           assert r['truth_boundary']['visualization_ready'] is False
           assert r['truth_boundary']['pde_validated'] is False
           print('whole_candidate_identity_sha256=',r['whole_candidate_identity_sha256'])
+          print('exact_source_runtime_identity_sha256=',r['exact_source_runtime']['identity_sha256'])
           print('max_component_error=',r['parity']['max_component_error'])
           PY
 
@@ -104,7 +139,7 @@ jobs:
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: ST052-M-linear-temporal-whole-candidate-capsule
+          name: ST052-M-runtime-bound-linear-temporal-whole-candidate-capsule
           path: |
             outputs/ST052-M-linear-temporal-child-v1/
             outputs/whole_child_receipt.txt
