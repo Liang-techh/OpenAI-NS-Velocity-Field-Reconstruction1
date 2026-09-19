@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "task_id": "CR002-ST052-SAMPLED-MINIMAX-VALIDATION-SCOPE-085",
+  "scope": "Govern ST052-M sampled-minimax optimization and fresh-validation evidence without replacing the preregistered CR001 acceptance sample, conflating max and L2 residual behavior, or promoting an experimental frozen child to canonical/PDE/OpenAI truth.",
+  "snapshot": {
+    "active_integration_branch": "codex/cr001-constraints",
+    "active_integration_head": "3c028688b3ff3d2cece5f734a98f392725585493",
+    "observed_pr": 508,
+    "observed_pr_head": "b3b8bfdbe1077f9ec967d158602951997d81e17d",
+    "observed_pr_base": "4b784f1b8457af2ead49295631d834d4e882000b",
+    "observed_pr_state": "open_draft_unintegrated_experimental_candidate",
+    "standard_tests_run": 35404426881,
+    "standard_tests_conclusion": "success",
+    "dedicated_replay_run": 35404426929,
+    "dedicated_replay_conclusion": "success",
+    "dedicated_artifact_id": 10572166706,
+    "dedicated_artifact_digest": "sha256:4f379950d9aa9267e03feda49abdf9808635d490822fcefdafaf8bd1f9311239"
+  },
+  "allowed_source_classes": [
+    "user_requirement",
+    "public_source_fact",
+    "autonomous_design",
+    "pending_unknown"
+  ],
+  "source_classification": {
+    "callable_saveable_velocity_x_y_z_t": "user_requirement",
+    "public_openai_visualization_observables": "public_source_fact",
+    "st052_sampled_minimax_objective_and_training_pool": "autonomous_design",
+    "st052_pre_holdout_feasibility_restoration": "autonomous_design",
+    "fresh_validation_seeds_9175291_9175292": "autonomous_design",
+    "st052_structure_and_trajectory_diagnostics": "autonomous_design",
+    "openai_hidden_numerical_velocity_and_coefficients": "pending_unknown",
+    "openai_hidden_frame_time_camera_seed_mapping": "pending_unknown"
+  },
+  "candidate_identity": {
+    "candidate_id": "ST052-M",
+    "parent_id": "ST051-B",
+    "parent_sha256": "0071106ef10a5d77b620b942becc00b58c8a6765fd5fb7bc4dcd195ac65c970d",
+    "raw_candidate_sha256": "e078e753fab38ebfa0284d28ba64d26cb8538b700a3afc7705668849c43e12da",
+    "modifier_sha256": "4d8b6e92f47151a7eed112985779a58fdf1188bd30c35c3a59263910629f1be9",
+    "frozen_before_fresh_validation": true,
+    "replay_recipe_present": true,
+    "experimental_materialized_child": true,
+    "canonical_repository_candidate": false,
+    "production_candidate_selected": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  },
+  "optimization_and_selection": {
+    "training_seed": 9175250,
+    "training_pool_points": 23079,
+    "active_set_sizes": [528, 833],
+    "optimizer_stages": 2,
+    "optimizer_stages_converged": false,
+    "optimizer_stages_hit_wall_budget": true,
+    "pre_holdout_feasibility_restoration_allowed": true,
+    "pre_holdout_feasibility_restoration_used": true,
+    "restoration_corrections_used": 1,
+    "restoration_min_constraint": -3.2051e-9,
+    "restored_checkpoint_is_finite_training_feasible": true,
+    "restored_checkpoint_is_local_or_global_optimum": false,
+    "sampled_epigraph_is_continuum_bound": false,
+    "training_pool_max_is_continuum_bound": false,
+    "post_holdout_retuning_under_same_experiment_identity_allowed": false,
+    "fresh_validation_samples_may_be_recycled_for_model_selection_and_still_called_held_out": false
+  },
+  "observed_fresh_validation": {
+    "validation_points_per_seed": 4096,
+    "seeds": [9175291, 9175292],
+    "rows": [
+      {
+        "seed": 9175291,
+        "parent_momentum_max": 0.058161679441807,
+        "child_momentum_max": 0.03681687198184801,
+        "parent_momentum_L2": 0.05134763166762801,
+        "child_momentum_L2": 0.05179943624413842
+      },
+      {
+        "seed": 9175292,
+        "parent_momentum_max": 0.054758531349444965,
+        "child_momentum_max": 0.03697350305423294,
+        "parent_momentum_L2": 0.05213559608216369,
+        "child_momentum_L2": 0.05246325441518328
+      }
+    ],
+    "sampled_momentum_max_improves_on_both_fresh_seeds": true,
+    "sampled_momentum_L2_improves_on_both_fresh_seeds": false,
+    "both_registered_momentum_thresholds_pass": false,
+    "pde_validated": false,
+    "fresh_seed_results_are_additional_generalization_evidence": true,
+    "fresh_seed_results_are_the_preregistered_CR001_acceptance_sample": false,
+    "registered_CR001_seed_replayed_by_pr508": false,
+    "same_validator_shape_or_point_count_may_replace_registered_seed": false,
+    "unqualified_candidate_improved_claim_allowed": false,
+    "qualified_claim": "sampled_momentum_max_reduced_on_two_frozen_fresh_4096_point_validations_while_fixed_time_volume_L2_slightly_worsened_and_both_1e-3_momentum_gates_failed"
+  },
+  "sampled_evidence_scope": {
+    "active_set_epigraph_is_acceptance_evidence": false,
+    "full_training_pool_max_is_acceptance_evidence": false,
+    "independent_random_or_edge_grid_max_is_continuum_upper_bound": false,
+    "finite_core_structure_fractions_are_global_support_proofs": false,
+    "DOP853_self_refinement_is_independent_integrator_validation": false,
+    "trajectory_preservation_is_visual_correspondence": false,
+    "vorticity_moment_change_is_public_target_match": false,
+    "green_ci_is_scientific_acceptance": false
+  },
+  "canonical_cr001": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "force_mode": "restricted_two_parameter_family",
+    "force_bounds": {"a": [0.0, 10.0], "c": [0.0, 10.0]},
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "divergence_max": 1e-5,
+    "divergence_L2": 1e-5,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001,
+    "formal_momentum_gate_requires_max_and_L2": true,
+    "free_or_residual_defined_force_allowed": false,
+    "collapsed_velocity_success_allowed": false,
+    "threshold_relaxation_under_same_experiment_allowed": false
+  },
+  "canonical_delivery": {
+    "candidate_family": "eq45_supported_velocity_candidate_v1",
+    "candidate_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+    "velocity_api": "openai_ns_reconstruction.eq45_supported_delivery:velocity",
+    "velocity_export_ready": true,
+    "st052_replaces_canonical_candidate": false,
+    "st052_replaces_canonical_velocity_api": false,
+    "st052_fresh_validation_promotes_canonical_pde_state": false
+  },
+  "independent_truth_states": {
+    "velocity_export_ready": true,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "future_promotion_requirements": {
+    "preserve_st052_identity_and_recipe_hashes": true,
+    "no_retuning_after_acceptance_data_are_read_without_new_experiment_identity": true,
+    "run_preregistered_seed_914027_4096_point_acceptance_contract_before_formal_CR001_promotion": true,
+    "use_exact_registered_six_times_and_derivative_ladder": true,
+    "require_momentum_max_and_L2_both_at_or_below_1e-3": true,
+    "retain_divergence_and_other_hard_gates": true,
+    "retain_restricted_forcing_and_no_free_f_equals_R_shortcut": true,
+    "canonical_delivery_change_requires_explicit_versioned_identity_api_and_save_load_update": true,
+    "visual_correspondence_requires_public_reference_comparison_and_independent_resolution_stability": true,
+    "pde_failure_does_not_block_truth_bounded_candidate_save_load_or_visualization_work": true
+  },
+  "forbidden_inferences": [
+    {"from": "lower_fresh_sampled_momentum_max", "to": "pde_validated", "allowed": false},
+    {"from": "lower_fresh_sampled_momentum_max", "to": "unqualified_candidate_improved", "allowed": false},
+    {"from": "two_noncanonical_fresh_seeds", "to": "registered_CR001_acceptance_complete", "allowed": false},
+    {"from": "finite_training_feasibility_repair", "to": "optimizer_converged_or_minimax_certified", "allowed": false},
+    {"from": "training_or_edge_grid_max", "to": "continuum_residual_upper_bound", "allowed": false},
+    {"from": "structure_or_trajectory_diagnostics", "to": "visual_correspondence_or_source_identity", "allowed": false},
+    {"from": "green_standard_or_replay_ci", "to": "scientific_acceptance", "allowed": false},
+    {"from": "experimental_candidate_replayability", "to": "canonical_delivery_replacement", "allowed": false}
+  ],
+  "truth_boundary": "ST052-M is a frozen replayable experimental child with genuine sampled momentum-maximum reduction evidence and a simultaneous L2 regression. It remains far above the unchanged 1e-3 momentum gates; PR #508 did not replay the preregistered seed 914027 acceptance sample and does not replace the canonical Eq45 delivery, prove PDE validity, establish OpenAI visual correspondence, or identify the OpenAI field."
+}
