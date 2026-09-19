@@ -1,0 +1,103 @@
+name: agent7-st052m-linear-temporal-activation
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_linear_temporal_activation.py'
+      - 'experiments/root_st052/test_agent7_st052m_linear_temporal_activation.py'
+      - '.github/workflows/agent7-st052m-linear-temporal-activation.yml'
+permissions:
+  contents: read
+  pull-requests: write
+jobs:
+  linear-temporal-activation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Focused contract tests
+        run: python -m pytest -q -W error experiments/root_st052/test_agent7_st052m_linear_temporal_activation.py
+      - name: Execute preregistered linear temporal activation screen
+        run: |
+          mkdir -p outputs/agent7-st052m-linear-temporal-activation
+          python experiments/root_st052/agent7_st052m_linear_temporal_activation.py \
+            --out outputs/agent7-st052m-linear-temporal-activation/report.json
+      - name: Verify frozen identity and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-linear-temporal-activation/report.json').read_text())
+          assert r['prereg_issue']==585
+          assert r['source_agent7_head']=='39b106ad8cb8df2064cabead3a12682089575e74'
+          assert r['source_morph_head']=='0ddf5f6b321ba78e27aa3ca3e073ef593e55869a'
+          assert r['source_path_pr']==574
+          assert r['source_render_pr']==583
+          assert r['frozen_transform']['redistribution_gain']==0.05
+          assert r['frozen_transform']['taper_tau_static_endpoint']==0.05
+          assert abs(r['frozen_transform']['shoulder_beta_static_endpoint']-0.08837490297155456)<2e-10
+          assert r['frozen_transform']['post_transform_common_scale']==1.0
+          assert r['frozen_transform']['parameter_scan_performed'] is False
+          assert r['offmidplane_path_protocol']['path_count']==48
+          assert r['offmidplane_path_protocol']['solver']=='DOP853'
+          assert r['canonical_velocity_changed'] is False
+          assert r['saved_velocity_changed'] is False
+          assert r['pressure_or_force_changed'] is False
+          assert r['held_out_pde_residual_evaluated'] is False
+          assert r['visualization_ready'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          print('clean=',r['clean_linear_temporal_activation_capacity'])
+          print('reference_energy_relative_error=',r['reference_energy_relative_error'])
+          print('static_vs_control=',r['paths']['static_vs_control'])
+          print('ramp_vs_control=',r['paths']['ramp_vs_control'])
+          print('ramp_tip=',r['paths']['ramp_vs_control_by_seed_band']['tip'])
+          for row in r['morphology_41']:
+              print('morphology',row['time'],row['activation'],row['ramp_relative'],row['aspect_effect_retention'],row['tip_radial_effect_retention'])
+          print('response=',r['response_diagnostic'])
+          print('structure=',r['structure_preflight'])
+          PY
+      - name: Publish compact numerical receipt
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent7-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-linear-temporal-activation/report.json').read_text())
+          print('<!-- agent7-st052m-linear-temporal-activation-receipt -->')
+          print('**Agent 7 numerical receipt (issue #585; one fixed linear temporal activation):**')
+          print()
+          print(f"- clean linear temporal activation capacity: `{r['clean_linear_temporal_activation_capacity']}`")
+          print(f"- reference-energy relative error at t=.25: `{r['reference_energy_relative_error']:.3e}`")
+          s=r['paths']['static_vs_control']; q=r['paths']['ramp_vs_control']
+          print(f"- static #559 off-midplane: mean turns `{100*s['mean_absolute_turns_relative']:+.4f}%`, pair axial `{100*s['mean_pair_axial_separation_change_relative']:+.4f}%`")
+          print(f"- linear-ramp off-midplane: mean turns `{100*q['mean_absolute_turns_relative']:+.4f}%`, pair axial `{100*q['mean_pair_axial_separation_change_relative']:+.4f}%`")
+          tip=r['paths']['ramp_vs_control_by_seed_band']['tip']
+          print(f"- linear-ramp tip pair axial: `{100*tip['mean_pair_axial_separation_change_relative']:+.4f}%`")
+          for row in r['morphology_41']:
+              m=row['ramp_relative']
+              print(f"- t={row['time']:.2f}, g={row['activation']:.2f}: aspect `{100*m['full_aspect_ratio']:+.4f}%`, smooth-tip radial `{100*m['smooth_tip_radial_rms']:+.4f}%`, static-effect retention aspect `{row['aspect_effect_retention']}`, tip `{row['tip_radial_effect_retention']}`")
+          d=r['response_diagnostic']; st=r['structure_preflight']
+          print(f"- response rank `{d['rank']}`, condition `{d['condition_number']:.6f}`, cosine `{d['column_cosine']:.6f}`")
+          print(f"- support max `{st['support_max_abs']:.3e}`, sampled FD divergence max `{st['divergence_fd_max']:.3e}`")
+          print()
+          print('Truth boundary: target-free temporal expression-capacity / trajectory-vs-morphology evidence only. No coefficient/ramp/window scan, OpenAI image-derived numeric target, pressure/forcing refit, parent PDE receipt transfer, production selection, visual-correspondence verification, or exact-field claim.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-receipt.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-linear-temporal-activation
+          path: outputs/agent7-st052m-linear-temporal-activation/
+          if-no-files-found: error
+# The ramp, coefficients, windows, path protocol, morphology grid and gates were frozen in issue #585 before evaluation.
