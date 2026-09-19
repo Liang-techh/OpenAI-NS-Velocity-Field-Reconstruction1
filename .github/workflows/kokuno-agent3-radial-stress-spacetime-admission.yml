@@ -1,0 +1,113 @@
+name: kokuno-agent3-radial-stress-spacetime-admission
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a3-radial-stress-spacetime-admission-045
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_radial_stress_spacetime_admission.py"
+      - "tests/test_constrained_kokuno_radial_stress_spacetime_admission.py"
+      - ".github/workflows/kokuno-agent3-radial-stress-spacetime-admission.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: kokuno-agent3-radial-stress-spacetime-admission-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  admit-spacetime-radial-stress:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+      - name: Compile Agent-3 admission
+        run: >-
+          python -W error -m py_compile
+          src/openai_ns_reconstruction/kokuno_radial_stress_spacetime_admission.py
+      - name: Run focused warnings-as-errors tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_radial_stress_spacetime_admission.py
+      - name: Re-run public-only Agent-4 audit through Agent-3 gate
+        run: >-
+          python -W error -m openai_ns_reconstruction.kokuno_radial_stress_spacetime_admission
+          --output artifacts/kokuno_agent3_radial_stress_spacetime_admission_v1.json
+      - name: Check narrow correction-side promotion
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('artifacts/kokuno_agent3_radial_stress_spacetime_admission_v1.json')
+          r = json.loads(p.read_text())
+          assert r['source_agent4_head'] == '3c9934ba390e28597ad32fcaf0e320af8da990ad'
+          assert r['source_agent4_dedicated_workflow'] == 35434164786
+          assert r['source_agent4_artifact_id'] == 10581683366
+          assert r['failed_guards'] == []
+          assert r['independent_spacetime_radial_stress_generalization_admitted'] is True
+          assert r['compact_radial_stress_operator_independently_admitted'] is True
+          assert r['full_composite_radial_stress_execution_allowed_when_actual_defect_available'] is True
+          assert r['finite_correction_cycle_radial_operator_reuse_allowed_without_retuning'] is True
+          assert r['full_same_cycle_composite_requested_stress_materialized'] is False
+          assert r['candidate_finite_head_mean_debt_materialized'] is False
+          assert r['real_full_candidate_defect_consumed'] is False
+          assert r['signed_mean_inverse_input_ready'] is False
+          assert r['public_velocity_correction_materialized'] is False
+          assert r['finite_correction_cycle_run'] is False
+          assert r['heldout_ns_momentum_residual_assessed'] is False
+          assert r['residual_reduction_claimed'] is False
+          assert r['pde_validated'] is False
+          assert r['final_normalized_momentum_gate'] == 1e-3
+          assert r['final_normalized_divergence_gate'] == 1e-5
+          for state in r['states']:
+              assert state['passed'] is True
+              print('state=', state['state_index'], 't=', state['t'], 'z=', state['z'])
+              print('self_defect_rms=', state['finest_self_defect_rms'])
+              for channel in ('theta_e2', 'axial_e1'):
+                  c = state[channel]
+                  print(channel, 'relative_rms=', c['relative_rms_by_radial_count'])
+                  print(channel, 'ratios=', c['refinement_ratios'])
+                  print(channel, 'finest_max=', c['finest_relative_max'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent3-radial-stress-spacetime-admission-v1
+          path: artifacts/kokuno_agent3_radial_stress_spacetime_admission_v1.json
+          if-no-files-found: error
+      - name: Comment exact admission receipt on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const r = JSON.parse(fs.readFileSync('artifacts/kokuno_agent3_radial_stress_spacetime_admission_v1.json', 'utf8'));
+            const lines = [];
+            lines.push('### Kokuno Agent 3 exact-head spacetime radial-stress admission');
+            lines.push('');
+            lines.push(`Admission: **${r.independent_spacetime_radial_stress_generalization_admitted ? 'PASS' : 'FAIL'}**`);
+            lines.push(`Failed guards: \`${JSON.stringify(r.failed_guards)}\``);
+            lines.push('');
+            for (const s of r.states) {
+              lines.push(`- state ${s.state_index}: t=${s.t}, z=${s.z}, self-defect RMS=${s.finest_self_defect_rms}`);
+              for (const channel of ['theta_e2', 'axial_e1']) {
+                const c = s[channel];
+                lines.push(`  - ${channel}: relRMS=${JSON.stringify(c.relative_rms_by_radial_count)}, ratios=${JSON.stringify(c.refinement_ratios)}, finest relMax=${c.finest_relative_max}`);
+              }
+            }
+            lines.push('');
+            lines.push('Narrow promotion only: the compact radial operator may be reused without state-by-state retuning, but a real same-cycle full composite defect, signed inverse, correction velocity, finite correction cycle, held-out momentum residual, and `pde_validated` remain absent.');
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: lines.join('\n')
+            });
