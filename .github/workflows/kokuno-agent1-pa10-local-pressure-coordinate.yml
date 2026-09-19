@@ -1,0 +1,75 @@
+name: kokuno-agent1-pa10-local-pressure-coordinate
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a1-pa10-local-pressure-coordinate
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent1-pa10-local-pressure-coordinate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  local-pressure-coordinate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile
+        run: |
+          python -m compileall -q \
+            src/openai_ns_reconstruction/kokuno_pa10_selected_pressure_primitive.py \
+            src/openai_ns_reconstruction/kokuno_pa10_local_pressure_coordinate.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_pa10_selected_pressure_primitive.py \
+            tests/test_constrained_kokuno_pa10_local_phase_pressure_repair.py \
+            tests/test_constrained_kokuno_pa10_local_pressure_coordinate.py
+      - name: Generate exact-head local-coordinate receipt
+        run: |
+          python -W error -m openai_ns_reconstruction.kokuno_pa10_local_pressure_coordinate \
+            --output artifacts/kokuno_agent1/pa10_local_pressure_coordinate/report.json
+      - name: Bind exact head and validate immutable truth boundary
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          import subprocess
+
+          path = Path('artifacts/kokuno_agent1/pa10_local_pressure_coordinate/report.json')
+          payload = json.loads(path.read_text())
+          payload['exact_head'] = subprocess.check_output(
+              ['git', 'rev-parse', 'HEAD'], text=True
+          ).strip()
+          raw = json.dumps(payload, indent=2, sort_keys=True) + '\n'
+          path.write_text(raw)
+          assert payload['selfcheck_passed'] is True
+          assert payload['independent_agent4_audit'] == 'required'
+          assert payload['heldout_ns_residual_assessed'] is False
+          assert payload['pde_validated'] is False
+          assert payload['local_s_fundamental_theorem']['relative_rms'][-1] <= 1.0e-8
+          assert payload['local_s_fundamental_theorem']['relative_max'][-1] <= 5.0e-8
+          assert payload['fd6_local_p_s']['relative_rms'][-1] <= 2.0e-5
+          assert payload['fd6_local_p_s']['relative_max'][-1] <= 5.0e-5
+          assert min(payload['fd6_local_p_s']['rms_refinement_ratios']) >= 8.0
+          print('receipt_sha256=', hashlib.sha256(raw.encode()).hexdigest())
+          print('candidate_sha256=', payload['candidate_sha256'])
+          print('fd6_local_p_s=', payload['fd6_local_p_s'])
+          print('local_s_fundamental_theorem=', payload['local_s_fundamental_theorem'])
+          print('eta_ulp_over_layer_width=', payload['selected']['eta_ulp_over_layer_width'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-pa10-local-pressure-coordinate-v1
+          path: artifacts/kokuno_agent1/pa10_local_pressure_coordinate/report.json
