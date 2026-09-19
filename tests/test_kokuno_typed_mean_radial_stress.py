@@ -6,7 +6,7 @@ import math
 import numpy as np
 import pytest
 
-from openai_ns_reconstruction.kokuno_actual_oscillatory_mean_stress import (
+from openai_ns_reconstruction.kokuno_compact_radial_stress_adapter import (
     _compact_radial_stress,
 )
 from openai_ns_reconstruction.kokuno_same_cycle_defect_contract import (
