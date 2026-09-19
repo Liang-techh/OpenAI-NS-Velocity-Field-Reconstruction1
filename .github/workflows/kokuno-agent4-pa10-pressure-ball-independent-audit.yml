@@ -1,0 +1,87 @@
+name: kokuno-agent4-pa10-pressure-ball-independent-audit
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a4-pa10-pressure-ball-independent-audit
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent4-pa10-pressure-ball-independent-audit-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  independent-pressure-ball-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile
+        run: |
+          python -m compileall -q \
+            src/openai_ns_reconstruction/kokuno_pa10_pressure_ball_bounds.py \
+            src/openai_ns_reconstruction/kokuno_agent4_pa10_pressure_ball_audit.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_pa10_pressure_ball_bounds.py \
+            tests/test_constrained_kokuno_agent4_pa10_pressure_ball_audit.py
+      - name: Generate exact-head independent receipt
+        run: |
+          python -W error -m openai_ns_reconstruction.kokuno_agent4_pa10_pressure_ball_audit \
+            --output artifacts/kokuno_agent4/pa10_pressure_ball_audit/report.json
+      - name: Bind exact head and validate immutable truth boundary
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          import subprocess
+
+          path = Path('artifacts/kokuno_agent4/pa10_pressure_ball_audit/report.json')
+          payload = json.loads(path.read_text())
+          payload['exact_head'] = subprocess.check_output(
+              ['git', 'rev-parse', 'HEAD'], text=True
+          ).strip()
+          raw = json.dumps(payload, indent=2, sort_keys=True) + '\n'
+          path.write_text(raw)
+          assert payload['pressure_ball_operator_algebra_independent_preflight_passed'] is True
+          assert payload['failed_guards'] == []
+          assert payload['source_weight_audit']['failures'] == []
+          assert payload['eta_factor_underbounds'] == []
+          assert payload['public_pressure_underbounds'] == []
+          assert payload['minimum_public_to_independent_upper_ratio'] >= 1.0
+          assert payload['downward_mutation']['detected'] == payload['downward_mutation']['total']
+          truth = payload['truth_boundary']
+          assert truth['diagnostic_inputs_are_source_radius_one_ball_bounds'] is False
+          assert truth['source_rho_machine_bound'] is False
+          assert truth['source_g_coefficient_norm_machine_bound'] is False
+          assert truth['source_pressure_radius_one_ball_norm_machine_bound'] is False
+          assert truth['source_R1_R2_machine_bound'] is False
+          assert truth['global_pressure_matched'] is False
+          assert truth['global_leading_profile_reconstructed'] is False
+          assert truth['heldout_ns_momentum_residual_assessed'] is False
+          assert truth['formal_full_domain_pde_gate_assessed'] is False
+          assert truth['pde_validated'] is False
+          gates = payload['frozen_protocol']['final_project_gates_unchanged']
+          assert gates['normalized_momentum_max'] == 1.0e-3
+          assert gates['normalized_momentum_L2'] == 1.0e-3
+          assert gates['divergence_max'] == 1.0e-5
+          assert gates['divergence_L2'] == 1.0e-5
+          print('receipt_sha256=', hashlib.sha256(raw.encode()).hexdigest())
+          print('minimum_public_to_independent_upper_ratio=', payload['minimum_public_to_independent_upper_ratio'])
+          print('public_to_independent_product_constant_ratio=', payload['public_to_independent_product_constant_ratio'])
+          print('mutation=', payload['downward_mutation'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent4-pa10-pressure-ball-independent-audit-v1
+          path: artifacts/kokuno_agent4/pa10_pressure_ball_audit/report.json
