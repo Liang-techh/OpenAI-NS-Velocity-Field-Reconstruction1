@@ -41,12 +41,13 @@ def test_selected_profile_derivatives_match_independent_centered_differences():
     np.testing.assert_allclose(got["Phi_eta"], fd_eta, rtol=3.0e-7, atol=2.0e-10)
 
 
-def test_pressure_eta_vanishes_at_selected_phase_stationary_point():
+def test_pressure_axis_initial_value_and_eta_derivative_are_exactly_zero():
     primitive = KokunoPA10SelectedPressurePrimitive(quadrature_points=64)
-    eta0 = primitive.core.phase_stationary_eta
-    got = primitive.evaluate(np.asarray([0.0, 0.8, 2.0, 4.1]), eta0)
-    # At H_*=0 both zeta_* and chi_eta vanish exactly in the analytic formula.
-    assert np.max(np.abs(got["p_eta"])) <= 1.0e-10
+    eta = np.asarray([-0.9, -0.25, 0.0, 0.4, 0.95])
+    got = primitive.evaluate(np.zeros_like(eta), eta)
+    np.testing.assert_array_equal(got["p"], np.zeros_like(eta))
+    np.testing.assert_array_equal(got["p_eta"], np.zeros_like(eta))
+    np.testing.assert_array_equal(got["Y_p_Y"], np.zeros_like(eta))
 
 
 def test_engineering_envelope_is_nontrivial_nested_and_fail_closed():
@@ -79,8 +80,6 @@ def test_payload_roundtrip_and_truth_tamper_fail_closed(tmp_path):
     payload = primitive.to_payload()
     bad = copy.deepcopy(payload)
     bad["truth_boundary"]["source_pressure_radius_one_ball_norm_machine_bound"] = True
-    # Rehashing cannot launder a forbidden scientific promotion because the
-    # immutable truth-boundary dictionary is checked separately.
     unsigned = {key: value for key, value in bad.items() if key != "sha256"}
     import hashlib
 
