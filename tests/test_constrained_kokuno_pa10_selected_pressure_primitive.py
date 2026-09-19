@@ -57,6 +57,13 @@ def test_engineering_envelope_is_nontrivial_nested_and_fail_closed():
         assert report["engineering_abs_envelope"][name] >= report["fine_sampled_abs_max"][name]
         assert report["engineering_abs_envelope"][name] >= report["coarse_sampled_abs_max"][name]
     assert report["engineering_abs_envelope"]["Phi"] > 0.0
+    # The known selected phase maximizer is explicitly sampled so materialized
+    # g underflow on generic eta nodes cannot masquerade as p == 0 everywhere.
+    assert report["phase_stationary_eta_injected"] is True
+    assert report["engineering_abs_envelope"]["p"] > 1.0
+    assert report["engineering_abs_envelope"]["Y_p_Y"] > 1.0
+    assert report["coarse_grid"]["eta_count_actual"] >= report["coarse_grid"]["eta_count_requested"]
+    assert report["fine_grid"]["eta_count_actual"] >= report["fine_grid"]["eta_count_requested"]
     assert report["continuum_supremum_certified"] is False
     assert report["source_radius_one_ball_bound"] is False
     truth = primitive.truth_boundary
