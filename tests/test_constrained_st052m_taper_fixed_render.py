@@ -9,6 +9,18 @@ def _solid_rotation(points, time):
     return np.column_stack((-p[:, 1], p[:, 0], np.zeros(len(p))))
 
 
+def _helical_inflow(points, time):
+    del time
+    p = np.asarray(points, dtype=float)
+    return np.column_stack(
+        (
+            -p[:, 1] - 0.10 * p[:, 0],
+            p[:, 0] - 0.10 * p[:, 1],
+            np.full(len(p), 0.20),
+        )
+    )
+
+
 def test_frozen_seed_and_truth_contract():
     seeds = m.seed_points()
     assert seeds.shape == (48, 3)
@@ -30,7 +42,7 @@ def test_cartesian_vorticity_on_solid_rotation():
 
 
 def test_identical_pair_has_zero_relative_diagnostics():
-    axis, fields = m.sample_velocity_grid(_solid_rotation, resolution=17)
+    axis, fields = m.sample_velocity_grid(_helical_inflow, resolution=17)
     report = m.analyze_pair(axis, fields, fields.copy())
     assert report["contract"]["streamline_count"] == 48
     assert report["contract"]["image_or_openai_numeric_target_used"] is False
