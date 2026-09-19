@@ -1,0 +1,116 @@
+name: kokuno-agent5-source-leading-admission-firewall
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-source-leading-admission-firewall-055
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_a5_source_leading_admission_firewall.py"
+      - "tests/test_kokuno_a5_source_leading_admission_firewall.py"
+      - ".github/workflows/kokuno-agent5-source-leading-admission-firewall.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent5-source-leading-admission-firewall-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  source-leading-admission-firewall:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+      - name: Compile firewall and parent A5 finite-head seam
+        run: >-
+          python -W error -m py_compile
+          src/openai_ns_reconstruction/kokuno_a5_source_leading_admission_firewall.py
+          src/openai_ns_reconstruction/kokuno_typed_mean_finite_head_debt.py
+      - name: Run focused warnings-as-errors regressions
+        run: >-
+          python -m pytest -q -W error
+          tests/test_kokuno_a5_source_leading_admission_firewall.py
+          tests/test_kokuno_typed_mean_finite_head_debt.py
+      - name: Generate exact-head fail-closed admission receipt
+        run: |
+          HEAD_SHA="$(git rev-parse HEAD)"
+          python -W error -m openai_ns_reconstruction.kokuno_a5_source_leading_admission_firewall \
+            --exact-head "$HEAD_SHA" \
+            --output artifacts/kokuno_agent5_source_leading_admission_firewall_v1.json
+      - name: Enforce immutable admission and project gates
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          import subprocess
+
+          path = Path('artifacts/kokuno_agent5_source_leading_admission_firewall_v1.json')
+          r = json.loads(path.read_text())
+          head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
+          assert r['schema'] == 'kokuno-a5-source-leading-admission-firewall-v1'
+          assert r['exact_head'] == head
+          assert len(r['receipt_sha256']) == 64
+
+          e = r['evidence']
+          assert e['source_axis']['pr'] == 671
+          assert e['source_axis']['workflow_id'] == 35456226819
+          assert e['source_axis']['independently_admitted'] is True
+          assert e['pressure_r2_ordinary']['pr'] == 678
+          assert e['pressure_r2_ordinary']['workflow_id'] == 35459240658
+          assert e['pressure_r2_ordinary']['independently_admitted'] is True
+          assert e['source_u_ball']['pr'] == 687
+          assert e['source_u_ball']['workflow_id'] == 35462565728
+          assert e['source_u_ball']['independently_admitted'] is True
+          assert e['algebraic_r2_ordinary']['pr'] == 695
+          assert e['algebraic_r2_ordinary']['workflow_conclusion_at_freeze'] == 'queued'
+          assert e['algebraic_r2_ordinary']['independently_admitted'] is False
+          assert e['derivative_r2_ordinary']['pr'] == 693
+          assert e['derivative_r2_ordinary']['workflow_conclusion_at_freeze'] == 'queued'
+          assert e['derivative_r2_ordinary']['independently_admitted'] is False
+
+          s = r['derived_state']
+          assert s['source_r2_all_ordinary_slots_independently_admitted'] is False
+          assert s['source_full_post_J1_R2_independently_admitted'] is False
+          assert s['all_R1_ordinary_slots_source_bound'] is False
+          assert s['global_matched_pressure_materialized'] is False
+          assert s['global_leading_velocity_materialized'] is False
+          assert s['restricted_forcing_semantics_independently_validated'] is False
+          assert s['leading_ready'] is False
+          assert s['oscillatory_ready'] is True
+          assert s['same_cycle_actual_defect_chain_present_on_a5_stack'] is True
+          assert s['actual_mean_radial_finite_head_chain_present_on_a5_stack'] is True
+          assert s['real_full_candidate_defect_consumed'] is False
+          assert s['correction_ready'] is False
+          assert s['velocity_export_ready'] is False
+          assert s['formal_heldout_pde_gate_assessed'] is False
+          assert s['pde_validated'] is False
+
+          assert r['final_project_gates_unchanged'] == {
+              'normalized_momentum_max': 1e-3,
+              'normalized_momentum_L2': 1e-3,
+              'divergence_max': 1e-5,
+              'divergence_L2': 1e-5,
+          }
+          t = r['truth_boundary']
+          assert t['queued_workflow_treated_as_success'] is False
+          assert t['agent1_self_certificate_treated_as_independent_admission'] is False
+          assert t['free_residual_defined_forcing_allowed'] is False
+          assert t['threshold_relaxed'] is False
+          assert t['pde_validated'] is False
+          print('exact_head=', head)
+          print('receipt_sha256=', r['receipt_sha256'])
+          print('derived_state=', s)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-source-leading-admission-firewall-v1
+          path: artifacts/kokuno_agent5_source_leading_admission_firewall_v1.json
+          if-no-files-found: error
