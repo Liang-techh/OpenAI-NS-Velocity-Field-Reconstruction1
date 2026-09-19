@@ -1,0 +1,46 @@
+name: agent9-st054-python-evaluator
+
+on:
+  push:
+    branches:
+      - agent9/st054-python-evaluator-073
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/st054_snapshot.py'
+      - 'src/openai_ns_reconstruction/__init__.py'
+      - 'tests/test_st054_snapshot.py'
+      - 'visualization/matlab/data/st054_models.mat'
+      - '.github/workflows/agent9-st054-python-evaluator.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install package and test dependencies
+        run: python -m pip install -e '.[dev]'
+      - name: Compile new evaluator
+        run: python -m py_compile src/openai_ns_reconstruction/st054_snapshot.py tests/test_st054_snapshot.py
+      - name: Replay published ST054 velocity references
+        run: python -m pytest -q -W error tests/test_st054_snapshot.py
+      - name: Fail closed on scientific truth boundary
+        run: |
+          python - <<'PY'
+          from openai_ns_reconstruction import available_st054_models, load_st054
+          assert available_st054_models() == ('ST054-Q2', 'ST054-M3')
+          for ident in available_st054_models():
+              f = load_st054(ident)
+              assert f.source_commit == 'c77492a48e9c0f13d4d51244987c57c28519409b'
+              assert f.nu == 0.01
+              assert (f.tmin, f.tmax) == (0.25, 0.75)
+          print('software_delivery_only=true')
+          print('pde_validated=false')
+          print('visual_correspondence_verified=false')
+          print('openai_field_identified=false')
+          PY
