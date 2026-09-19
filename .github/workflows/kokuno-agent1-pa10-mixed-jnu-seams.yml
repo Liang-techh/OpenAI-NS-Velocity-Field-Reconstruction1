@@ -1,0 +1,90 @@
+name: kokuno-agent1-pa10-mixed-jnu-seams
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a1-pa10-mixed-jnu-seams-051
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent1-pa10-mixed-jnu-seams-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  mixed-jnu-seams:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile
+        run: |
+          python -m compileall -q \
+            src/openai_ns_reconstruction/kokuno_pa10_operator_primitives.py \
+            src/openai_ns_reconstruction/kokuno_pa10_source_axis_domain.py \
+            src/openai_ns_reconstruction/kokuno_pa10_source_phi_ball.py \
+            src/openai_ns_reconstruction/kokuno_pa10_mixed_jnu_seams.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_pa10_operator_primitives.py \
+            tests/test_constrained_kokuno_pa10_source_axis_domain.py \
+            tests/test_constrained_kokuno_pa10_source_phi_ball.py \
+            tests/test_constrained_kokuno_pa10_mixed_jnu_seams.py
+      - name: Generate exact-head mixed-Jnu receipt
+        run: |
+          python -W error -m openai_ns_reconstruction.kokuno_pa10_mixed_jnu_seams \
+            --output artifacts/kokuno_agent1/pa10_mixed_jnu_seams/report.json
+      - name: Bind exact head and validate truth boundary
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          import math
+          from pathlib import Path
+          import subprocess
+
+          path = Path('artifacts/kokuno_agent1/pa10_mixed_jnu_seams/report.json')
+          payload = json.loads(path.read_text())
+          payload['exact_head'] = subprocess.check_output(
+              ['git', 'rev-parse', 'HEAD'], text=True
+          ).strip()
+          raw = json.dumps(payload, indent=2, sort_keys=True) + '\n'
+          path.write_text(raw)
+
+          inputs = payload['source_compatible_inputs']
+          diag = payload['diagnostic_unit_u_fixture']
+          truth = payload['truth_boundary']
+          assert inputs['rho'] == 1e-6
+          assert inputs['d_ball']['norm'] == 1.0
+          assert inputs['mixed_operator_factor_no_extra'] > 1e10
+          assert inputs['mixed_operator_factor_one_extra'] > inputs['mixed_operator_factor_no_extra']
+          for key in ('post_J2_d_detaAu_YPhiY', 'post_J1_d_detaAu_YuY'):
+              assert math.isfinite(diag[key]['norm']) and diag[key]['norm'] > 0
+              assert math.isfinite(diag[key]['lipschitz']) and diag[key]['lipschitz'] > 0
+          assert truth['source_post_Jnu_mixed_derivative_bound_executable'] is True
+          assert truth['source_compatible_d_coefficient_norm_machine_bound'] is True
+          assert truth['source_u_radius_one_ball_norm_machine_bound'] is False
+          assert truth['source_R1_radius_one_ball_norm_machine_bound'] is False
+          assert truth['source_R2_radius_one_ball_norm_machine_bound'] is False
+          assert truth['source_operator_constant_M_machine_bound'] is False
+          assert truth['source_operator_constant_K_machine_bound'] is False
+          assert truth['global_leading_profile_reconstructed'] is False
+          assert payload['heldout_ns_residual_assessed'] is False
+          assert payload['pde_validated'] is False
+          print('artifact_sha256=', hashlib.sha256(raw.encode()).hexdigest())
+          print('receipt_sha256=', payload['receipt_sha256'])
+          print('source_compatible_inputs=', inputs)
+          print('diagnostic_unit_u_fixture=', diag)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-pa10-mixed-jnu-seams-v1
+          path: artifacts/kokuno_agent1/pa10_mixed_jnu_seams/report.json
