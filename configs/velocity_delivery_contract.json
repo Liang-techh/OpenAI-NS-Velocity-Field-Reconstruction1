@@ -1,75 +1,129 @@
 {
-  "schema_version": 1,
-  "task_id": "CR011-VELOCITY-DELIVERY-CONTRACT-INTEGRATION-001",
-  "source_pr": 22,
-  "scope": "Govern the function-first velocity deliverable separately from visual correspondence, PDE, paper-exact, and blow-up claims.",
+  "schema_version": 2,
+  "task_id": "CR002-UNIFIED-VELOCITY-API-084",
+  "scope": "Keep the current callable velocity delivery identity aligned across project status, documentation, serialization, and claim states without promoting visual or PDE evidence.",
+  "integration_branch": "codex/cr001-constraints",
   "primary_deliverable": {
-    "api": "openai_ns_reconstruction.velocity_components:velocity",
-    "component_apis": ["u", "v", "w"],
-    "component_order": ["u", "v", "w"],
-    "coordinates": "right-handed Cartesian; z is axial",
-    "time_interval": [0.25, 0.75],
+    "canonical": true,
+    "candidate_family": "eq45_supported_velocity_candidate_v1",
+    "candidate_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+    "api": "openai_ns_reconstruction.eq45_supported_delivery:velocity",
+    "api_signature": "velocity(x,y,z,t)->[u,v,w]",
+    "component_order": [
+      "u",
+      "v",
+      "w"
+    ],
+    "coordinates": "right-handed Cartesian x,y,z; z is axial",
+    "time_interval": [
+      0.25,
+      0.75
+    ],
+    "evaluation_box": [
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ]
+    ],
     "support": "r < 2 and abs(z) < 2",
-    "bundled_candidate": "src/openai_ns_reconstruction/data/velocity_candidate.json",
-    "bundled_candidate_family": "coupled_velocity_v1",
-    "documentation": "docs/VELOCITY_API.md"
+    "grid_api": "openai_ns_reconstruction.eq45_supported_delivery:default_field().grid",
+    "save_api": "openai_ns_reconstruction.eq45_supported_delivery:default_field().save_candidate",
+    "load_api": "openai_ns_reconstruction.eq45_supported_delivery:Eq45SupportedDeliveryField.load_candidate",
+    "portable_export": "python -m openai_ns_reconstruction.eq45_export_bundle",
+    "delivery_capsule": "artifacts/constrained/eq45_supported_delivery_capsule.json",
+    "documentation": "docs/EQ45_DELIVERY_API.md"
+  },
+  "legacy_compatibility_delivery": {
+    "canonical": false,
+    "candidate_family": "coupled_velocity_v1",
+    "api": "openai_ns_reconstruction.velocity_components:velocity",
+    "cli": "ns-velocity",
+    "status": "legacy_compatibility_only",
+    "prohibition": "must_not_be_presented_as_the_current_canonical_eq45_delivery_or_as_eq45_candidate_evidence"
   },
   "source_classification": [
     {
-      "item": "callable velocity components [u(x,y,z,t), v(x,y,z,t), w(x,y,z,t)] as the immediate deliverable",
-      "classification": "user_required",
+      "item": "callable velocity(x,y,z,t)->[u,v,w] as the immediate delivery objective",
+      "classification": "user_requirement",
       "source": "docs/PROJECT_GOAL.md"
     },
     {
-      "item": "cylindrical orientation and qualitative inward-spiral/axial-stretching target",
-      "classification": "public_source",
+      "item": "observable qualitative structure in the published OpenAI velocity-field visualization",
+      "classification": "public_source_fact",
       "source": "docs/VISUAL_TARGET.md"
     },
     {
-      "item": "finite time window, compact support cylinder, nu=0.01, energy normalization, forcing family, and PDE thresholds",
-      "classification": "autonomous",
-      "source": "configs/constraints_coupled.json"
+      "item": "Eq45 support-connected candidate identity, API, export format, and delivery wrapper",
+      "classification": "autonomous_design",
+      "source": "project_status.json and artifacts/constrained/eq45_supported_delivery_capsule.json"
     },
     {
-      "item": "exact OpenAI frame time, camera, trajectory seeds, color normalization, units, and numerical velocity samples",
-      "classification": "pending",
-      "source": "docs/VISUAL_TARGET.md"
+      "item": "legacy coupled_velocity_v1 compatibility surface",
+      "classification": "autonomous_design",
+      "source": "openai_ns_reconstruction.velocity_components"
+    },
+    {
+      "item": "exact OpenAI numerical velocity samples, hidden coefficients, frame/time map, camera, and trajectory seeds",
+      "classification": "pending_unknown",
+      "source": "not publicly identified"
     }
   ],
   "claim_status": {
     "velocity_export_ready": true,
-    "public_target_asset_identified": true,
-    "openai_numerical_field_identified": false,
-    "openai_correspondence_verified": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
     "pde_validated": false,
     "paper_exact": false,
-    "blowup_proof": false
+    "openai_field_identified": false,
+    "blowup_proved": false
   },
+  "consistency_requirements": [
+    "project_status candidate_family, candidate_sha256, and velocity_api must match primary_deliverable",
+    "the Eq45 delivery capsule family, child SHA, and public velocity entrypoint must match primary_deliverable",
+    "the README current-deliverable example must import the canonical Eq45 velocity API",
+    "the ns-velocity CLI and velocity_components API must be labelled legacy until their implementation is explicitly retargeted",
+    "candidate save/load replay must preserve the canonical candidate SHA and pointwise velocity",
+    "velocity_export_ready must not imply visualization_ready, visual_correspondence_verified, pde_validated, paper_exact, openai_field_identified, or blowup_proved"
+  ],
   "claim_gates": {
     "visual_correspondence": {
       "blocking_for_velocity_delivery": false,
       "required_for_correspondence_claim": true,
-      "comparison_evidence": [],
-      "time_mapping_status": "pending"
+      "time_mapping_status": "pending_unknown"
     },
     "pde_validation": {
       "blocking_for_velocity_delivery": false,
       "blocking_for_pde_claim": true,
-      "config": "configs/constraints_coupled.json",
-      "evidence": []
+      "config": "configs/constraints.json"
     }
   },
+  "cr001_nonmutation": {
+    "constraints_path": "configs/constraints.json",
+    "scientific_parameters_changed": false,
+    "thresholds_changed": false,
+    "forcing_contract_changed": false,
+    "validation_sample_changed": false
+  },
   "truth_boundary": [
-    "A callable nonzero velocity field may be delivered while PDE validation remains failed.",
-    "Visual or qualitative correspondence does not imply PDE validity.",
-    "The bundled candidate must not be labeled the exact OpenAI numerical field without independent source evidence.",
-    "PDE thresholds remain governed by the preregistered constrained configuration and are not relaxed by this delivery contract.",
+    "A callable nonzero velocity field may be delivered while PDE validation remains failed or pending.",
+    "Visual resemblance or target-free morphology does not imply visual correspondence or PDE validity.",
+    "The Eq45 candidate must not be labelled the exact OpenAI numerical field without independent public evidence.",
+    "The legacy coupled_velocity_v1 API and CLI do not define the current canonical Eq45 candidate identity.",
+    "PDE thresholds remain governed by configs/constraints.json and are not relaxed by this delivery contract.",
     "No velocity-field deliverable is a finite-time singularity proof."
   ],
   "pending": [
-    "numerical identification of the OpenAI field",
+    "verified numerical identification of the OpenAI field",
     "verified time/camera mapping to the public target",
     "quantitative visual correspondence evidence",
-    "independent PDE acceptance"
+    "independent PDE acceptance for the current active scientific route"
   ]
 }
