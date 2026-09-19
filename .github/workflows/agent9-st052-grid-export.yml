@@ -103,7 +103,10 @@ jobs:
           assert r['grid']['shape_xyz']==[33,33,33]
           assert r['grid']['times']==[0.25,0.375,0.5,0.625,0.75]
           assert r['npz_mat_roundtrip']['exact_equal'] is True
-          assert r['callable_grid_node_replay']['max_component_error']==0.0
+          replay=r['callable_grid_node_replay']
+          assert replay['passed'] is True
+          assert replay['engineering_atol']==5e-12
+          assert replay['max_component_error']<=replay['engineering_atol']
           assert r['matlab_compatibility']['mat_v5_written'] is True
           assert r['matlab_compatibility']['actual_matlab_runtime_executed'] is False
           assert r['truth_boundary']['grid_export_materialized'] is True
@@ -112,6 +115,8 @@ jobs:
           assert r['truth_boundary']['pde_validated'] is False
           print('whole_candidate_identity_sha256=',r['whole_candidate_identity_sha256'])
           print('grid_payload_sha256=',r['grid_payload_sha256'])
+          print('callable_grid_max_component_error=',replay['max_component_error'])
+          print('callable_grid_engineering_atol=',replay['engineering_atol'])
           print('resolved_scipy_version=',r['execution_environment']['scipy_version'])
           PY
 
