@@ -105,3 +105,4 @@ jobs:
           name: agent7-st052m-energy-neutral-taper
           path: outputs/agent7-st052m-energy-neutral-taper/
           if-no-files-found: error
+# Scientific thresholds and windows are frozen by issue #548 before this exact-head run.
