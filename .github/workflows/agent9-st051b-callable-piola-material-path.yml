@@ -21,7 +21,7 @@ jobs:
       OPENBLAS_NUM_THREADS: '1'
       OMP_NUM_THREADS: '1'
       MKL_NUM_THREADS: '1'
-      PYTHONPATH: external/agent7/experiments/root_st051:external/agent7/experiments/root_st050r:src
+      PYTHONPATH: external/agent7/experiments/root_st051:external/agent7/experiments/root_st050r:external/agent7/experiments/root_st048:external/agent7/experiments/root_st047:external/agent7/experiments/root_st043:external/agent7/experiments/root_st040:external/agent7/experiments/root_st030:src
     steps:
       - name: Checkout Agent-9 branch
         uses: actions/checkout@v4
@@ -63,6 +63,7 @@ jobs:
 
       - name: Execute exact callable material-path replay
         run: |
+          set -o pipefail
           mkdir -p outputs/agent9-st051b-callable-piola-material-path
           python -m openai_ns_reconstruction.constrained_st051b_callable_piola_material_path \
             --agent7-root external/agent7 \
