@@ -59,8 +59,9 @@ def test_v41_promotes_only_correction_ingest_permission() -> None:
 
 def test_v41_roundtrip_is_deterministic() -> None:
     checkpoint = _checkpoint()
-    replay = json.loads(json.dumps(checkpoint, sort_keys=True))
-    assert replay == checkpoint
+    encoded = json.dumps(checkpoint, sort_keys=True, separators=(",", ":"), allow_nan=False)
+    replay = json.loads(encoded)
+    assert json.dumps(replay, sort_keys=True, separators=(",", ":"), allow_nan=False) == encoded
     assert replay["checkpoint_sha256"] == _canonical_sha256(replay)
     validate_checkpoint(replay)
 
