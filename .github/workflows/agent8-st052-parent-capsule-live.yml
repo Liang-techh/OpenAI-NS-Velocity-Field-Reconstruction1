@@ -1,0 +1,109 @@
+name: agent8-st052-parent-capsule-live
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/st052_parent_capsule.py'
+      - 'tests/test_constrained_st052_parent_capsule.py'
+      - '.github/workflows/agent8-st052-parent-capsule-live.yml'
+  push:
+    branches:
+      - 'agent8/st052-parent-capsule-live-069'
+      - 'codex/cr001-constraints'
+    paths:
+      - 'src/openai_ns_reconstruction/st052_parent_capsule.py'
+      - 'tests/test_constrained_st052_parent_capsule.py'
+      - '.github/workflows/agent8-st052-parent-capsule-live.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  exact-source-parent-capsule:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - name: Checkout live integration branch
+        uses: actions/checkout@v4
+
+      - name: Checkout exact ST052-M source
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: b3b8bfdbe1077f9ec967d158602951997d81e17d
+          path: source-st052
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install frozen-source runtime and tests
+        run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+
+      - name: Focused fail-closed capsule tests
+        run: python -m pytest -q -W error tests/test_constrained_st052_parent_capsule.py
+
+      - name: Materialize exact ST052-M parent and replay saved-file validation
+        shell: bash
+        run: |
+          set +e
+          (
+            cd source-st052
+            python experiments/root_st052/replay_st052.py \
+              --out ../outputs/ST052-M-parent-capsule \
+              --seed 9175291 \
+              --validate
+          )
+          code=$?
+          set -e
+          test "$code" = 1
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('outputs/ST052-M-parent-capsule')
+          assert (p/'candidate.json').is_file()
+          r=json.loads((p/'validation.json').read_text())
+          assert r['pde_validated'] is False
+          assert r['all_numeric_gates_pass'] is False
+          assert r['gates']['momentum_max'] is False
+          assert r['gates']['momentum_L2'] is False
+          print('Saved candidate was reopened by exact-source validation; scientific rejection preserved.')
+          PY
+
+      - name: Bind materialized file to immutable exact-source replay identity
+        env:
+          PYTHONPATH: src
+        run: |
+          python -m openai_ns_reconstruction.st052_parent_capsule \
+            --source-root source-st052 \
+            --candidate outputs/ST052-M-parent-capsule/candidate.json \
+            --validation outputs/ST052-M-parent-capsule/validation.json \
+            --out outputs/ST052-M-parent-capsule/parent_capsule_manifest.json \
+            | tee outputs/ST052-M-parent-capsule/capsule_receipt.txt
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          m=json.loads(Path('outputs/ST052-M-parent-capsule/parent_capsule_manifest.json').read_text())
+          assert m['task_id']=='CR-A9-068'
+          assert m['candidate_id']=='ST052-M'
+          assert m['source']['head']=='b3b8bfdbe1077f9ec967d158602951997d81e17d'
+          assert m['source']['recipe_git_blob_sha1']=='e30c769052379f72afeee46ca264482884cc5ac7'
+          assert m['materialized_candidate']['runnable_source_replay_artifact'] is True
+          assert m['materialized_candidate']['save_load_exercised_by_validation'] is True
+          assert m['materialized_candidate']['historical_raw_sha_identity_claimed'] is False
+          assert m['truth_boundary']['pde_validated'] is False
+          assert m['truth_boundary']['whole_child_save_load_ready'] is False
+          print('replay_identity_sha256=',m['replay_identity']['sha256'])
+          print('candidate_file_sha256=',m['materialized_candidate']['sha256'])
+          PY
+
+      - name: Upload exact parent replay capsule
+        uses: actions/upload-artifact@v4
+        with:
+          name: ST052-M-parent-replay-capsule-live
+          path: outputs/ST052-M-parent-capsule/
+          if-no-files-found: error
