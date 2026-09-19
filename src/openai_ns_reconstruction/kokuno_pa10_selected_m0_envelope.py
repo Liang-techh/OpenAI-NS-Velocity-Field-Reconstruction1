@@ -99,6 +99,16 @@ _TRUTH_BOUNDARY = {
 }
 
 
+def _source_payload() -> dict[str, str]:
+    return {
+        "repository": SOURCE_REPOSITORY,
+        "commit": SOURCE_COMMIT,
+        "path": SOURCE_PATH,
+        "corrected_release": CORRECTED_RELEASE,
+        "corrected_release_date": CORRECTED_RELEASE_DATE,
+    }
+
+
 def _canonical_json(payload: dict[str, Any]) -> str:
     return json.dumps(payload, sort_keys=True, separators=(",", ":"), allow_nan=False)
 
@@ -110,15 +120,15 @@ class KokunoPA10SelectedM0Envelope:
     reference: KokunoSourceRescaledReferenceContinuation = field(
         default_factory=KokunoSourceRescaledReferenceContinuation
     )
-    coarse_eta_points: int = 17
-    fine_eta_points: int = 33
-    coarse_outer_y_points: int = 33
-    fine_outer_y_points: int = 65
+    coarse_eta_points: int = 9
+    fine_eta_points: int = 17
+    coarse_outer_y_points: int = 17
+    fine_outer_y_points: int = 33
     safety_fraction: float = 0.10
     max_refinement_drift_fraction: float = 0.05
     rtol: float = 5.0e-10
     atol: float = 5.0e-12
-    max_step: float = 0.20
+    max_step: float = 0.50
 
     _helper: KokunoSourceRescaledAppendixBBoundary = field(
         init=False, repr=False, compare=False
@@ -183,9 +193,6 @@ class KokunoPA10SelectedM0Envelope:
         return 2.0 * float(self.reference.log_transition_width)
 
     def _eta_grid(self, points: int) -> np.ndarray:
-        # Chebyshev-Lobatto nodes resolve endpoint structure, while the exact
-        # selected phase stationary point is added because it is a distinguished
-        # source axis location and need not coincide with an algebraic node.
         theta = np.linspace(0.0, math.pi, int(points), dtype=float)
         nodes = -np.cos(theta)
         stationary = float(self.reference.seed.phase_stationary_eta)
@@ -262,7 +269,7 @@ class KokunoPA10SelectedM0Envelope:
                 max_radial_derivative, float(np.max(derivatives))
             )
 
-        max_X = self.X_0 * math.exp(max_y)
+        max_X = min(X_I, self.X_0 * math.exp(max_y))
         return {
             "eta_grid_size": int(eta_grid.size),
             "radial_grid_size": int(y_grid.size),
@@ -303,11 +310,6 @@ class KokunoPA10SelectedM0Envelope:
         }
 
     def candidate_B0_diagnostic(self, combined_profile_C0_norm: float) -> float:
-        """Feed the candidate envelope into the displayed B0 formula only.
-
-        This is intentionally a diagnostic.  It does not mutate any truth gate
-        and cannot be promoted to a source B0/T_sh certificate.
-        """
         if not self.envelope["numerical_envelope_guard_passed"]:
             raise RuntimeError("selected M0 numerical envelope failed its refinement guard")
         binding = KokunoPA10L0Binding(seed=self.reference.seed)
@@ -321,13 +323,7 @@ class KokunoPA10SelectedM0Envelope:
     def report(self) -> dict[str, Any]:
         return {
             "schema": SCHEMA,
-            "source": {
-                "repository": SOURCE_REPOSITORY,
-                "commit": SOURCE_COMMIT,
-                "path": SOURCE_PATH,
-                "corrected_release": CORRECTED_RELEASE,
-                "corrected_release_date": CORRECTED_RELEASE_DATE,
-            },
+            "source": _source_payload(),
             "source_formulas": copy.deepcopy(_SOURCE_FORMULAS),
             "selected_reference_sha256": self.reference.sha256,
             "geometry": {
@@ -352,7 +348,7 @@ class KokunoPA10SelectedM0Envelope:
     def _unsigned_payload(self) -> dict[str, Any]:
         return {
             "schema": SCHEMA,
-            "source": self.report()["source"],
+            "source": _source_payload(),
             "source_formulas": copy.deepcopy(_SOURCE_FORMULAS),
             "reference": self.reference.to_payload(),
             "parameters": {
