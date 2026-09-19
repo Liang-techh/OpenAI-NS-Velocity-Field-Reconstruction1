@@ -1,0 +1,99 @@
+name: agent7-st052m-compact-swirl-screen
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_compact_swirl_screen.py'
+      - 'experiments/root_st052/test_agent7_st052m_compact_swirl_screen.py'
+      - '.github/workflows/agent7-st052m-compact-swirl-screen.yml'
+permissions:
+  contents: read
+  pull-requests: write
+jobs:
+  compact-swirl-screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Focused contract tests
+        run: python -m pytest -q -W error experiments/root_st052/test_agent7_st052m_compact_swirl_screen.py
+      - name: Execute preregistered compact swirl screen
+        run: |
+          mkdir -p outputs/agent7-st052m-compact-swirl-screen
+          python experiments/root_st052/agent7_st052m_compact_swirl_screen.py \
+            --out outputs/agent7-st052m-compact-swirl-screen/report.json
+      - name: Verify frozen contract and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-compact-swirl-screen/report.json').read_text())
+          assert r['prereg_issue']==620
+          assert r['source_temporal_pr']==587
+          assert r['source_temporal_head']=='0b93819095f6c8576a7571bdc2d2fbef4154944d'
+          assert r['source_vector_potential_pr']==613
+          assert r['source_vector_potential_head']=='f211e706caafc58687345ffa922a723380d4c472'
+          assert r['frozen_screen']['grid_resolution']==41
+          assert r['frozen_screen']['perturbation_rms_fraction']==0.005
+          assert r['frozen_screen']['radial_support_max']==1.35
+          assert r['frozen_screen']['axial_support_abs']==[0.7,1.45]
+          assert r['frozen_screen']['signs']==[-1,1]
+          assert r['frozen_screen']['parameter_scan_performed'] is False
+          assert r['normalization']['scaled_correction_to_velocity_rms_ratio'] == 0.005
+          assert r['candidate_basis_changed'] is False
+          assert r['canonical_velocity_changed'] is False
+          assert r['saved_velocity_changed'] is False
+          assert r['held_out_pde_residual_evaluated'] is False
+          assert r['visualization_ready'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          print('growth_justified=',r['compact_swirl_basis_growth_justified'])
+          print('pareto=',r['local_pareto_rule'])
+          print('oriented=',r['oriented_incremental_desirabilities'])
+          print('morphology=',r['morphology_relative_to_control'])
+          print('paths=',r['path_relative_to_control'])
+          print('response=',r['velocity_response_diagnostic'])
+          print('structure=',r['structure_preflight'])
+          print('energy=',r['midtime_energy'])
+          PY
+      - name: Publish compact numerical receipt
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent7-compact-swirl-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-compact-swirl-screen/report.json').read_text())
+          print('<!-- agent7-st052m-compact-swirl-screen-receipt -->')
+          print('**Agent 7 numerical receipt (issue #620; axis-regular compact swirl screen):**')
+          print()
+          print(f"- target-free compact-swirl basis growth justified: `{r['compact_swirl_basis_growth_justified']}`")
+          print(f"- local Pareto direction: `{r['local_pareto_rule']['target_free_pareto_direction']}`")
+          print(f"- derived RMS-normalized epsilon: `{r['normalization']['derived_epsilon']:.12g}`")
+          q=r['velocity_response_diagnostic']
+          print(f"- velocity response rank `{q['rank']}`, condition `{q['condition_number']:.6f}`, cosine `{q['column_cosine']:.6f}`")
+          m=r['morphology_relative_to_control']
+          p=r['path_relative_to_control']
+          for label in ('linear','minus','plus'):
+              print(f"- {label}: aspect `{100*m[label]['full_aspect_ratio']:+.4f}%`, tip radial `{100*m[label]['smooth_tip_radial_rms']:+.4f}%`, turns `{100*p[label]['mean_absolute_turns_relative']:+.4f}%`, axial-pair `{100*p[label]['mean_pair_axial_separation_change_relative']:+.4f}%`")
+          print(f"- structural gates pass: `{r['structural_gates_pass']}`; oriented increments: `{r['oriented_incremental_desirabilities']}`")
+          print()
+          print('Truth boundary: expression-capacity evidence only. No basis promotion, canonical/saved velocity change, image-derived numeric target, pressure/forcing refit, held-out PDE receipt, production selection, visual-correspondence verification, PDE validation, exact-field claim, or blow-up proof.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-compact-swirl-receipt.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-compact-swirl-screen
+          path: outputs/agent7-st052m-compact-swirl-screen/
+          if-no-files-found: error
+# Formula, support, RMS amplitude rule, two signs, observables and Pareto rule were frozen in issue #620 before evaluation.
