@@ -36,7 +36,7 @@ from typing import Sequence
 
 import numpy as np
 
-from .kokuno_actual_oscillatory_mean_stress import _compact_radial_stress
+from .kokuno_compact_radial_stress_adapter import _compact_radial_stress
 from .kokuno_same_cycle_defect_contract import (
     CycleIdentity,
     RestrictedForcingProvider,
@@ -218,7 +218,7 @@ def truth_boundary() -> dict[str, object]:
     return {
         "source_defect_formula": "u_t + (u dot grad)u + grad(p) - nu*Delta(u) - f",
         "actual_mean_projection_provider": "kokuno_typed_mean_defect_projection:evaluate_actual_mean_defect_ring",
-        "radial_stress_constructor": "kokuno_actual_oscillatory_mean_stress:_compact_radial_stress",
+        "radial_stress_constructor": "kokuno_compact_radial_stress_adapter:_compact_radial_stress (exact A3 operator extraction)",
         "theta_exponent": 2,
         "axial_exponent": 1,
         "radial_inverse_formula": "sigma_e=-r^(-e) integral r^e(F-b_e*M_e(F)) dr",
