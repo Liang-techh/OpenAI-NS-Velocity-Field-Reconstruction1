@@ -14,11 +14,9 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import hashlib
-import importlib
 import json
 from pathlib import Path
 import shutil
-import sys
 from typing import Any
 
 import numpy as np
@@ -32,10 +30,12 @@ from .st052_parent_capsule import CANDIDATE_ID, SOURCE_HEAD
 from .st052_parent_reference_binding import St052ReferenceBoundParent
 from .st052_source_runtime_identity import (
     authenticate_source_runtime,
+    import_authenticated_replay,
     source_runtime_identity_sha256,
+    verify_source_module_cache,
 )
 
-SCHEMA = "st052-linear-temporal-whole-candidate-capsule/v2"
+SCHEMA = "st052-linear-temporal-whole-candidate-capsule/v3"
 TASK_ID = "CR-A9-070"
 PARENT_CANDIDATE_FILENAME = "parent_candidate.json"
 PARENT_VALIDATION_FILENAME = "parent_validation.json"
@@ -188,12 +188,14 @@ def build_bundle(
             "exact_parent_source_runtime_required": True,
             "exact_source_runtime_identity_sha256": runtime_id,
             "exact_source_runtime_identity_closed": True,
+            "historical_module_cache_isolated": True,
             "standalone_package_parent_runtime_ready": False,
         },
         "truth_boundary": {
             "whole_child_bundle_materialized": True,
             "whole_child_save_load_ready_with_exact_source_runtime": True,
             "exact_source_runtime_identity_closed": True,
+            "historical_module_cache_isolated": True,
             "standalone_package_parent_runtime_ready": False,
             "velocity_export_ready": False,
             "visualization_ready": False,
@@ -264,6 +266,8 @@ def verify_bundle(bundle_dir: str | Path) -> dict[str, Any]:
         raise ValueError("whole-candidate exact source runtime identity mismatch")
     if runtime.get("exact_source_runtime_identity_closed") is not True:
         raise ValueError("whole-candidate runtime identity closure flag missing")
+    if runtime.get("historical_module_cache_isolated") is not True:
+        raise ValueError("whole-candidate historical module-cache isolation flag missing")
 
     truth = manifest.get("truth_boundary")
     if not isinstance(truth, dict):
@@ -279,28 +283,23 @@ def verify_bundle(bundle_dir: str | Path) -> dict[str, Any]:
         _require_false(truth, key, where="whole_manifest.truth_boundary")
     if truth.get("exact_source_runtime_identity_closed") is not True:
         raise ValueError("whole-candidate runtime identity truth flag missing")
+    if truth.get("historical_module_cache_isolated") is not True:
+        raise ValueError("whole-candidate module-cache isolation truth flag missing")
     return manifest
 
 
 def _load_exact_source_parent(source_root: Path, candidate_path: Path):
-    """Load bundled ST052-M bytes only after authenticating the exact #508 runtime."""
+    """Load bundled ST052-M bytes through an isolated exact #508 module graph."""
     source_root = source_root.resolve()
+    replay, import_receipt = import_authenticated_replay(source_root)
+    if import_receipt.get("module_cache_isolated") is not True:
+        raise ValueError("exact ST052 historical module cache was not isolated")
+    family, raw = replay.Family.load(candidate_path)
+    # Family.load may execute additional lazy historical imports.  Recheck all
+    # tracked experiment-module basenames after load, then re-authenticate the
+    # worktree so runtime initialization cannot silently change source bytes.
+    verify_source_module_cache(source_root)
     authenticate_source_runtime(source_root)
-
-    st052_dir = source_root / "experiments/root_st052"
-    inserted = str(st052_dir)
-    sys.path.insert(0, inserted)
-    try:
-        # Source identity is authenticated before any historical code executes.
-        # Importing replay_st052 installs the predecessor-chain paths used by
-        # the exact source replay; Family.load dispatches the frozen basis kind
-        # stored in the candidate bytes.
-        sys.modules.pop("replay_st052", None)
-        replay = importlib.import_module("replay_st052")
-        family, raw = replay.Family.load(candidate_path)
-    finally:
-        if sys.path and sys.path[0] == inserted:
-            sys.path.pop(0)
 
     def base_velocity(points: np.ndarray, time: float) -> np.ndarray:
         points = np.asarray(points, dtype=float)
@@ -337,11 +336,16 @@ def load_bundle_runtime(
 ) -> St052LinearTemporalWholeCandidate:
     """Verify + reload a bundle into the final broadcastable velocity callable.
 
-    The parent evaluator still comes from the historical source checkout, but
-    the checkout is now authenticated against the exact #508 Git commit/tree
-    and clean-worktree contract before source code is imported.  This closes
-    runtime substitution while keeping the separate truth that the parent
-    evaluator has not yet been ported into the installable package.
+    The parent evaluator still comes from the historical source checkout.  The
+    checkout is authenticated against the exact #508 Git commit/tree and clean
+    worktree, and the full tracked historical top-level module namespace is
+    evicted before import so a preloaded foreign/transmuted dependency cannot be
+    reused.  Loaded historical module origins and blobs are verified against the
+    exact source tree before the parent is admitted.
+
+    This closes runtime substitution under the explicit exact-checkout contract
+    while keeping the separate truth that the parent evaluator has not yet been
+    ported into the installable package.
     """
     bundle_dir = Path(bundle_dir)
     manifest = verify_bundle(bundle_dir)
@@ -364,6 +368,7 @@ TRUTH_BOUNDARY = {
     "whole_child_bundle_materialized": True,
     "whole_child_save_load_ready_with_exact_source_runtime": True,
     "exact_source_runtime_identity_closed": True,
+    "historical_module_cache_isolated": True,
     "standalone_package_parent_runtime_ready": False,
     "velocity_export_ready": False,
     "visualization_ready": False,
