@@ -22,7 +22,6 @@ SOURCE_TREE = "cbaf188a7079e17984b0f78d7c8c38df8e11401b"
 SOURCE_RECIPE_PATH = "experiments/root_st052/recipe.json"
 SOURCE_RECIPE_GIT_BLOB_SHA1 = "e30c769052379f72afeee46ca264482884cc5ac7"
 SOURCE_REPLAY_PATH = "experiments/root_st052/replay_st052.py"
-SOURCE_REPLAY_GIT_BLOB_SHA1 = "2fea9a78891d05024ab5ee927585912655b5e50b"
 SCHEMA = "st052-exact-source-runtime-identity/v1"
 TASK_ID = "CR-A9-070"
 
@@ -51,7 +50,7 @@ def source_runtime_identity_payload() -> dict[str, Any]:
         },
         "replay_entrypoint": {
             "path": SOURCE_REPLAY_PATH,
-            "git_blob_sha1": SOURCE_REPLAY_GIT_BLOB_SHA1,
+            "covered_by_source_tree": True,
         },
     }
 
@@ -79,9 +78,10 @@ def authenticate_source_runtime(source_root: str | Path) -> dict[str, Any]:
 
     The contract requires the supplied path itself to be the Git worktree root,
     the exact frozen commit/tree to be checked out, no tracked modifications or
-    staged changes, and no untracked ``*.py`` files that could shadow source
-    imports.  The recipe and replay entrypoint working bytes are independently
-    checked against their frozen Git blob identities as a readable receipt.
+    staged changes, and no untracked Python sources (including ignored ones)
+    that could shadow source imports.  The historical recipe keeps its existing
+    source-native blob receipt; all tracked runtime code is cryptographically
+    covered by the exact commit/tree plus the clean-worktree requirement.
     """
     root = Path(source_root).resolve()
     if not root.is_dir():
@@ -103,13 +103,18 @@ def authenticate_source_runtime(source_root: str | Path) -> dict[str, Any]:
     untracked_py = _git(root, "ls-files", "--others", "--exclude-standard", "--", "*.py")
     if untracked_py:
         raise ValueError("exact ST052 source worktree has untracked Python sources")
+    ignored_untracked_py = _git(
+        root, "ls-files", "--others", "--ignored", "--exclude-standard", "--", "*.py"
+    )
+    if ignored_untracked_py:
+        raise ValueError("exact ST052 source worktree has ignored untracked Python sources")
 
     recipe = root / SOURCE_RECIPE_PATH
     replay = root / SOURCE_REPLAY_PATH
     if not recipe.is_file() or _git_blob_sha1(recipe) != SOURCE_RECIPE_GIT_BLOB_SHA1:
         raise ValueError("exact ST052 source recipe identity mismatch")
-    if not replay.is_file() or _git_blob_sha1(replay) != SOURCE_REPLAY_GIT_BLOB_SHA1:
-        raise ValueError("exact ST052 replay entrypoint identity mismatch")
+    if not replay.is_file():
+        raise ValueError("exact ST052 replay entrypoint is missing")
 
     payload = source_runtime_identity_payload()
     return {
