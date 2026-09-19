@@ -1,0 +1,96 @@
+name: agent7-st052m-combined-witness-grid-robustness
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_combined_witness_grid_robustness.py'
+      - 'experiments/root_st052/test_agent7_st052m_combined_witness_grid_robustness.py'
+      - '.github/workflows/agent7-st052m-combined-witness-grid-robustness.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  grid-robustness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Focused contract tests
+        run: python -m pytest -q -W error experiments/root_st052/test_agent7_st052m_combined_witness_grid_robustness.py
+      - name: Execute preregistered grid-robustness audit
+        run: |
+          mkdir -p outputs/agent7-st052m-combined-witness-grid-robustness
+          python experiments/root_st052/agent7_st052m_combined_witness_grid_robustness.py \
+            --out outputs/agent7-st052m-combined-witness-grid-robustness/report.json
+      - name: Verify frozen contract and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-combined-witness-grid-robustness/report.json').read_text())
+          assert r['prereg_issue']==658
+          assert r['source_witness']['pr']==652
+          assert r['source_witness']['head']=='b0d98d0d5fdb3ca6a438fdf6ac0dbaaef7781faf'
+          assert r['grid_resolutions']==[33,41,49]
+          assert r['time']==0.5
+          assert r['source_652_formal_rejection_remains_binding'] is True
+          assert r['combined_child_promoted'] is False
+          assert r['basis_growth_justified_by_this_audit'] is False
+          assert r['witness_retuned'] is False
+          assert r['canonical_velocity_changed'] is False
+          assert r['saved_velocity_changed'] is False
+          assert r['new_spatial_basis_added'] is False
+          assert r['new_temporal_basis_added'] is False
+          assert r['held_out_pde_residual_evaluated'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          print('decision=',r['grid_robustness_decision'])
+          print('replay=',r['source_41_replay_identity'])
+          print('routing=',r['routing'])
+          PY
+      - name: Publish compact numerical receipt
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent7-grid-robustness-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-combined-witness-grid-robustness/report.json').read_text())
+          d=r['grid_robustness_decision']
+          print('<!-- agent7-st052m-combined-witness-grid-robustness-receipt -->')
+          print('**Agent 7 numerical receipt (issue #658; exact #652 child, no retuning):**')
+          print()
+          print(f"- #652 formal Pareto rejection remains binding: `{r['source_652_formal_rejection_remains_binding']}`")
+          print(f"- 41-grid rejection numerically resolved: `{d['pareto_rejection_grid_resolved']}`")
+          print(f"- tip increments 33/41/49: `{d['tip_increment_by_resolution']}`")
+          print(f"- aspect increments 33/41/49: `{d['aspect_increment_by_resolution']}`")
+          print(f"- distance of 41 tip increment from -5e-5 boundary: `{d['distance_of_41_tip_from_boundary']}`")
+          print(f"- 41->49 tip drift: `{d['tip_drift_41_to_49']}`")
+          print(f"- allowed drift for a resolution claim: `{d['allowed_drift_for_resolution_claim']}`")
+          print(f"- 41-grid source replay: `{r['source_41_replay_identity']}`")
+          print(f"- routing: {r['routing']}")
+          print()
+          print('Truth boundary: numerical-observable robustness only. This does not rescue/promote #652, add/retune a basis, rebuild pressure/forcing, evaluate held-out PDE residual, verify visual correspondence, validate PDE, identify an exact OpenAI field, or prove blow-up.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-grid-robustness-receipt.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-combined-witness-grid-robustness
+          path: outputs/agent7-st052m-combined-witness-grid-robustness/
+          if-no-files-found: error
+
+# Exact child, grids, decision-margin rule and no-retuning routing were frozen in issue #658 before evaluation.
