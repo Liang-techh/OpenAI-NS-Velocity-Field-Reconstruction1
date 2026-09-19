@@ -56,11 +56,11 @@ def test_ordinary_term_bridge_applies_L_inverse_and_Jnu_once() -> None:
     j1 = calc.ordinary_term_after_jnu(unit, nu=1)
     assert math.isfinite(j2.norm) and j2.norm > 0.0
     assert math.isfinite(j1.norm) and j1.norm > j2.norm
-    assert j2.lipschitz >= 2.0 * j2.norm
-    assert j1.lipschitz >= 2.0 * j1.norm
+    assert j2.lipschitz / j2.norm == pytest.approx(2.0, rel=3e-15)
+    assert j1.lipschitz / j1.norm == pytest.approx(2.0, rel=3e-15)
 
     # At vanishing order zero the source factors are J2<=40 and J1<=80.
-    assert j1.norm >= 2.0 * j2.norm * (1.0 - 1e-15)
+    assert j1.norm / j2.norm == pytest.approx(2.0, rel=3e-15)
 
 
 def test_full_mixed_terms_include_L_inverse_without_selecting_Lambda() -> None:
