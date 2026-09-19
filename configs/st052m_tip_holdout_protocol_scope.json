@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "task_id": "CR002-ST052M-TIP-HOLDOUT-PROTOCOL-SCOPE-075",
+  "status": "governance_only_pending_upstream_scientific_result",
+  "audited_upstream": {
+    "pull_request": 714,
+    "head_sha": "a352336d4b18771620fe0f5f554c3f3a7fb9d157",
+    "frozen_candidate_source_pr": 701,
+    "frozen_candidate_source_head": "e3ecc8654f2c9a2324265bbd01df596b4e503404",
+    "selection_data_governance_pr": 712,
+    "prior_band_localization_pr": 692,
+    "prior_band_localization_classification": "band_local"
+  },
+  "source_classification": {
+    "allowed_classes": [
+      "user_requirement",
+      "public_source_fact",
+      "autonomous_design",
+      "pending_unknown"
+    ],
+    "items": [
+      {
+        "item": "callable_saveable_loadable_3d_time_varying_velocity",
+        "class": "user_requirement"
+      },
+      {
+        "item": "public_qualitative_inward_spiraling_and_axial_stretching",
+        "class": "public_source_fact"
+      },
+      {
+        "item": "prior_shoulder_tip_band_localization_and_tip_localized_basis_design",
+        "class": "autonomous_design"
+      },
+      {
+        "item": "fresh_radii_angles_z_bands_solver_tolerances_and_directional_gates",
+        "class": "autonomous_design"
+      },
+      {
+        "item": "hidden_openai_path_seeds_camera_frame_time_mapping_coefficients_and_numeric_field",
+        "class": "pending_unknown"
+      }
+    ]
+  },
+  "selection_evaluation_separation": {
+    "candidate_parameter_frozen_before_fresh_path_evaluation": true,
+    "alpha_is_derived_only_from_historical_development_protocol": true,
+    "fresh_path_count": 64,
+    "development_path_count": 48,
+    "exact_seed_overlap_with_development_required": 0,
+    "fresh_paths_used_to_fit_alpha": false,
+    "fresh_results_feed_back_into_alpha": false,
+    "parameter_scan_or_retuning_on_fresh_paths": false,
+    "fresh_protocol_is_data_disjoint_from_alpha_calibration": true,
+    "fresh_protocol_is_post_freeze_directional_generalization_evidence_if_frozen_gate_passes": true
+  },
+  "protocol_independence_scope": {
+    "protocol_designed_after_prior_band_local_diagnosis": true,
+    "protocol_reuses_prior_shoulder_tip_semantic_partition": true,
+    "protocol_is_blind_to_prior_band_diagnosis": false,
+    "protocol_is_random_statistical_holdout": false,
+    "protocol_is_global_visual_validation": false,
+    "protocol_is_cr001_pde_acceptance_sample": false,
+    "fresh_seed_disjointness_alone_establishes_visual_correspondence": false,
+    "fresh_seed_disjointness_alone_establishes_pde_validation": false,
+    "interpretation": "The 64 paths are a legitimate data-disjoint post-freeze check of the frozen #701 directional effect. They are not a blind global visual-validation protocol because the shoulder/tip partition and the correction itself were chosen after #692 localized the development defect to that band."
+  },
+  "candidate_identity_scope": {
+    "frozen_candidate_is_procedurally_reconstructed_from_exact_701_source": true,
+    "alpha_is_recomputed_deterministically_from_frozen_historical_development_data": true,
+    "standalone_serialized_714_candidate_identity_created": false,
+    "velocity_export_ready_promoted_by_714": false,
+    "canonical_velocity_changed_by_714": false,
+    "saved_velocity_changed_by_714": false
+  },
+  "claim_states": {
+    "fresh_post_freeze_path_directional_generalization_verified": false,
+    "production_candidate_selected": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "source_correspondence_verified": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "upstream_result_policy": {
+    "while_714_ci_or_scientific_report_unresolved": "keep fresh_post_freeze_path_directional_generalization_verified false",
+    "if_714_frozen_gate_passes": "may promote only fresh_post_freeze_path_directional_generalization_verified after exact-head receipt review; stronger visual/PDE/exact states remain independent",
+    "if_714_frozen_gate_fails": "retain the negative result without retuning alpha or weakening gates"
+  },
+  "cr001_lock": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_bounds": {"a": [0.0, 10.0], "c": [0.0, 10.0]},
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "divergence_max": 1e-05,
+    "divergence_L2": 1e-05,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001,
+    "residual_defined_or_pointwise_free_force_allowed": false,
+    "amplitude_collapse_success_allowed": false,
+    "threshold_relaxation_allowed": false
+  }
+}
