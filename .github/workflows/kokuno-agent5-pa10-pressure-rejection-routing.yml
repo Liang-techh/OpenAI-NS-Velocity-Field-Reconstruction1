@@ -1,0 +1,70 @@
+name: kokuno-agent5-pa10-pressure-rejection-routing
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-pa10-pressure-rejection-routing-v45
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent5-pa10-pressure-rejection-routing-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHONHASHSEED: '0'
+
+jobs:
+  route-pressure-reject:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile routing checkpoint
+        run: python -m compileall -q src/openai_ns_reconstruction/kokuno_agent5_pa10_pressure_rejection_routing.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_pa10_selected_pressure_primitive.py \
+            tests/test_constrained_kokuno_agent4_pa10_pressure_primitive_audit.py \
+            tests/test_constrained_kokuno_agent5_pa10_pressure_rejection_routing.py
+      - name: Generate deterministic routing checkpoint
+        run: |
+          python -W error -m openai_ns_reconstruction.kokuno_agent5_pa10_pressure_rejection_routing \
+            --output artifacts/kokuno_agent5/pa10_pressure_rejection_routing/checkpoint.json
+      - name: Validate fail-closed truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction.kokuno_agent5_pa10_pressure_rejection_routing import (
+              EXPECTED_FAILED_GUARDS,
+              FORMAL_GATES,
+              validate_checkpoint,
+          )
+
+          path = Path("artifacts/kokuno_agent5/pa10_pressure_rejection_routing/checkpoint.json")
+          payload = json.loads(path.read_text())
+          validate_checkpoint(payload)
+          assert payload["formal_gates_unchanged"] == FORMAL_GATES
+          assert payload["upstream"]["agent4_independent_pressure_audit"]["scientific_verdict"] == "REJECT"
+          assert payload["upstream"]["agent4_independent_pressure_audit"]["failed_guards"] == EXPECTED_FAILED_GUARDS
+          assert payload["states"]["selected_pressure_primitive_independently_audited"] is False
+          assert payload["states"]["leading_ready"] is False
+          assert payload["states"]["correction_ready"] is False
+          assert payload["states"]["pde_validated"] is False
+          print("checkpoint_sha256=", payload["checkpoint_sha256"])
+          print("scientific_verdict=", payload["upstream"]["agent4_independent_pressure_audit"]["scientific_verdict"])
+          print("failed_guards=", payload["upstream"]["agent4_independent_pressure_audit"]["failed_guards"])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-pa10-pressure-rejection-routing-checkpoint-v45
+          path: artifacts/kokuno_agent5/pa10_pressure_rejection_routing/checkpoint.json
