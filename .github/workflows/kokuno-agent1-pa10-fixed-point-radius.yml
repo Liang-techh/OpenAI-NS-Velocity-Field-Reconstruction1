@@ -1,0 +1,85 @@
+name: kokuno-agent1-pa10-fixed-point-radius
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a1-pa10-fixed-point-radius
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent1-pa10-fixed-point-radius-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHONHASHSEED: '0'
+
+jobs:
+  pa10-fixed-point-radius:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile fixed-point radius module
+        run: python -m compileall -q src/openai_ns_reconstruction/kokuno_pa10_fixed_point_radius.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_pa10_selected_profile_norm.py \
+            tests/test_constrained_kokuno_pa10_fixed_point_radius.py
+      - name: Generate conditional fixed-point radius receipt
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction.kokuno_pa10_fixed_point_radius import KokunoPA10FixedPointRadiusGate
+
+          gate = KokunoPA10FixedPointRadiusGate()
+          report = gate.to_payload()
+          report["diagnostics"] = {
+              "radius_for_M_eq_1": gate.radius_for_M(1.0),
+              "M_budget_for_radius_1e-6": gate.M_budget_for_radius(1.0e-6),
+          }
+          out = Path("artifacts/kokuno_agent1/pa10_fixed_point_radius/report.json")
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
+          print("selected_Lambda=", gate.selected_lambda)
+          print("radius_for_M_eq_1=", report["diagnostics"]["radius_for_M_eq_1"])
+          print("M_budget_for_radius_1e-6=", report["diagnostics"]["M_budget_for_radius_1e-6"])
+          print("receipt_sha256=", report["sha256"])
+          PY
+      - name: Validate fail-closed source truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          report = json.loads(Path("artifacts/kokuno_agent1/pa10_fixed_point_radius/report.json").read_text())
+          truth = report["truth_boundary"]
+          assert report["selected_execution"]["operator_constant_M_input"] is None
+          assert report["selected_execution"]["conditional_fixed_point_radius_M_over_Lambda"] is None
+          assert report["diagnostics"]["radius_for_M_eq_1"] > 0.0
+          assert truth["source_fixed_point_radius_formula_executable"] is True
+          assert truth["selected_lambda_is_source_existential_threshold"] is False
+          assert truth["source_operator_constant_M_machine_bound"] is False
+          assert truth["source_contraction_invariant_ball_machine_verified"] is False
+          assert truth["source_contraction_factor_machine_verified"] is False
+          assert truth["source_fixed_point_distance_machine_bound"] is False
+          assert truth["source_B0_dependencies_machine_bound"] is False
+          assert truth["source_T_sh_lower_bound_verified"] is False
+          assert truth["selected_pa16_handoff_allowed"] is False
+          assert truth["heldout_ns_residual_assessed"] is False
+          assert truth["pde_validated"] is False
+          assert truth["paper_exact"] is False
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-pa10-fixed-point-radius-v1
+          path: artifacts/kokuno_agent1/pa10_fixed_point_radius/report.json
