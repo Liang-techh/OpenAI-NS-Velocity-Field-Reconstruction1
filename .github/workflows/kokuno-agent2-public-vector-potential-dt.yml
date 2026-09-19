@@ -1,0 +1,74 @@
+name: kokuno-agent2-public-vector-potential-dt
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a2-public-vector-potential-dt-043
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_public_oscillatory_vector_potential_time_derivative.py"
+      - "tests/test_constrained_kokuno_public_oscillatory_vector_potential_time_derivative.py"
+      - ".github/workflows/kokuno-agent2-public-vector-potential-dt.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent2-public-vector-potential-dt-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  public-vector-potential-dt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+      - name: Compile module
+        run: >-
+          python -W error -m py_compile
+          src/openai_ns_reconstruction/kokuno_public_oscillatory_vector_potential_time_derivative.py
+      - name: Run focused warnings-as-errors tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_public_oscillatory_vector_potential_time_derivative.py
+          tests/test_constrained_kokuno_public_oscillatory_vector_potential.py
+          tests/test_constrained_kokuno_public_oscillatory_time_derivative.py
+          tests/test_constrained_kokuno_public_z_pullback_velocity.py
+      - name: Generate vector-potential time-derivative receipt
+        run: >-
+          python -W error -m openai_ns_reconstruction.kokuno_public_oscillatory_vector_potential_time_derivative
+          --output artifacts/kokuno_agent2_public_vector_potential_dt_v1.json
+      - name: Check immutable truth boundary and frozen guards
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('artifacts/kokuno_agent2_public_vector_potential_dt_v1.json')
+          r = json.loads(p.read_text())
+          assert r['parent_agent2_head'] == 'aa79cb5eb601ad179c79fb8a4f3e21a093d94c31'
+          assert r['admitted_agent2_head'] == '732800ce4990464b49c8aa32d0dff4580f6684d4'
+          assert r['public_time_derivative_head'] == '6c8e71c800a17c0e9df1802042f9feebf9dbce04'
+          assert r['failed_guards'] == []
+          assert r['truth_boundary']['velocity_candidate_changed'] is False
+          assert r['truth_boundary']['vector_potential_candidate_changed'] is False
+          assert r['truth_boundary']['source_formula_changed'] is False
+          assert r['truth_boundary']['agent2_self_check_only'] is True
+          assert r['truth_boundary']['independent_agent4_vector_potential_audit_required'] is True
+          assert r['truth_boundary']['heldout_ns_momentum_residual_assessed'] is False
+          assert r['truth_boundary']['pde_validated'] is False
+          assert r['truth_boundary']['paper_exact'] is False
+          assert r['support_exterior_absolute_max'] == 0.0
+          print('time_fd6=', r['time_fd6_comparison'])
+          print('curl_dt_fd6=', r['curl_dt_fd6_comparison'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent2-public-vector-potential-dt-v1
+          path: artifacts/kokuno_agent2_public_vector_potential_dt_v1.json
+          if-no-files-found: error
