@@ -8,6 +8,7 @@ on:
   push:
     branches:
       - 'agent9/st052-octave-smoke-072'
+      - 'codex/cr001-constraints'
     paths:
       - 'scripts/smoke_st052_grid_octave.m'
       - '.github/workflows/agent9-st052-octave-smoke.yml'
