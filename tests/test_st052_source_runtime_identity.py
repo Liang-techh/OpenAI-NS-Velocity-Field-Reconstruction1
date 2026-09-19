@@ -3,6 +3,8 @@ from __future__ import annotations
 import hashlib
 from pathlib import Path
 import subprocess
+import sys
+import types
 
 import pytest
 
@@ -31,8 +33,13 @@ def _fake_exact_checkout(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Pat
     st052.mkdir(parents=True)
     recipe = st052 / "recipe.json"
     replay = st052 / "replay_st052.py"
+    dependency = st052 / "minimax_exchange.py"
     recipe.write_text('{"candidate":"ST052-M"}\n')
-    replay.write_text("VALUE = 'frozen'\n")
+    dependency.write_text("VALUE = 'frozen-dependency'\n")
+    replay.write_text(
+        "from minimax_exchange import VALUE as DEP_VALUE\n"
+        "VALUE = 'frozen:' + DEP_VALUE\n"
+    )
     (root / ".gitignore").write_text("ignored_shadow.py\n")
     _run(root, "init")
     _run(root, "add", ".")
@@ -63,6 +70,7 @@ def test_runtime_identity_is_deterministic():
     assert payload["source_head"] == identity.SOURCE_HEAD
     assert payload["source_tree"] == identity.SOURCE_TREE
     assert payload["replay_entrypoint"]["covered_by_source_tree"] is True
+    assert payload["module_import_guard"]["loaded_module_origin_and_blob_verified"] is True
 
 
 def test_authenticator_accepts_frozen_clean_checkout(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):
@@ -94,3 +102,28 @@ def test_authenticator_rejects_ignored_python_shadow(tmp_path: Path, monkeypatch
     (root / "ignored_shadow.py").write_text("VALUE = 'ignored shadow'\n")
     with pytest.raises(ValueError, match="ignored untracked Python"):
         identity.authenticate_source_runtime(root)
+
+
+def test_authenticated_import_isolates_preloaded_transitive_module(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+):
+    root = _fake_exact_checkout(tmp_path, monkeypatch)
+    poison = types.ModuleType("minimax_exchange")
+    poison.__file__ = str(tmp_path / "foreign" / "minimax_exchange.py")
+    poison.VALUE = "poisoned-cache"
+    monkeypatch.setitem(sys.modules, "minimax_exchange", poison)
+
+    try:
+        replay, receipt = identity.import_authenticated_replay(root)
+        assert replay.VALUE == "frozen:frozen-dependency"
+        assert sys.modules["minimax_exchange"] is not poison
+        assert receipt["module_cache_isolated"] is True
+        assert "minimax_exchange" in receipt["evicted_preexisting_module_names"]
+        records = {row["module_name"]: row for row in receipt["loaded_source_modules"]}
+        assert records["replay_st052"]["relative_path"] == identity.SOURCE_REPLAY_PATH
+        assert records["minimax_exchange"]["relative_path"].endswith(
+            "experiments/root_st052/minimax_exchange.py"
+        )
+    finally:
+        sys.modules.pop("replay_st052", None)
+        sys.modules.pop("minimax_exchange", None)
