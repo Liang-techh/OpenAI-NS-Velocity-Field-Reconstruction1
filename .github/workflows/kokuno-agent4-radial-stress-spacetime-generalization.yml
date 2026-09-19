@@ -42,18 +42,20 @@ jobs:
       - name: Generate deterministic spacetime generalization receipt
         run: >-
           python -W error -m openai_ns_reconstruction.kokuno_agent4_radial_stress_spacetime_generalization
-          --output artifacts/kokuno_agent4_radial_stress_spacetime_generalization_v1.json
+          --output artifacts/kokuno_agent4_radial_stress_spacetime_generalization_v2.json
       - name: Check fail-closed truth boundary and print scientific verdict
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
-          p = Path('artifacts/kokuno_agent4_radial_stress_spacetime_generalization_v1.json')
+          p = Path('artifacts/kokuno_agent4_radial_stress_spacetime_generalization_v2.json')
           r = json.loads(p.read_text())
           t = r['truth_boundary']
           assert r['provenance']['parent_agent3_head'] == 'a97f0882ab0b1fcc0d4b9575b5366fb44b35c233'
-          assert r['protocol']['radial_counts'] == [33, 65, 129]
+          assert r['protocol']['radial_counts'] == [25, 49, 97]
+          assert r['protocol']['angular_count'] == 16
           assert r['protocol']['cartesian_fd8_step'] == 0.0025
+          assert r['protocol_repair']['first_attempt_scientific_values_emitted'] is False
           assert t['agent3_self_defect_operator_used'] is False
           assert t['agent3_compact_stress_constructor_used'] is False
           assert t['agent3_radial_derivative_used'] is False
@@ -68,6 +70,7 @@ jobs:
           print('failed_guards=', r['failed_guards'])
           for state in r['states']:
               print('state=', state['state_index'], 't=', state['t'], 'z=', state['z'], 'passed=', state['state_passed'])
+              print('finest_self_defect_rms=', state['levels'][-1]['self_defect_rms'])
               for channel in ('theta_e2', 'axial_e1'):
                   c = state['convergence'][channel]
                   print(channel, 'relative_rms=', c['relative_rms_by_radial_count'])
@@ -79,8 +82,8 @@ jobs:
           PY
       - uses: actions/upload-artifact@v4
         with:
-          name: kokuno-agent4-radial-stress-spacetime-generalization-v1
-          path: artifacts/kokuno_agent4_radial_stress_spacetime_generalization_v1.json
+          name: kokuno-agent4-radial-stress-spacetime-generalization-v2
+          path: artifacts/kokuno_agent4_radial_stress_spacetime_generalization_v2.json
           if-no-files-found: error
       - name: Comment exact scientific receipt on PR
         if: github.event_name == 'pull_request'
@@ -88,12 +91,14 @@ jobs:
         with:
           script: |
             const fs = require('fs');
-            const r = JSON.parse(fs.readFileSync('artifacts/kokuno_agent4_radial_stress_spacetime_generalization_v1.json', 'utf8'));
+            const r = JSON.parse(fs.readFileSync('artifacts/kokuno_agent4_radial_stress_spacetime_generalization_v2.json', 'utf8'));
             const lines = [];
             lines.push('### Kokuno Agent 4 exact-head spacetime radial-stress receipt');
             lines.push('');
             lines.push(`Scientific verdict: **${r.spacetime_radial_stress_generalization_passed ? 'PASS' : 'FAIL'}**`);
             lines.push(`Failed guards: \`${JSON.stringify(r.failed_guards)}\``);
+            lines.push('');
+            lines.push('Protocol repair: first attempt emitted no scientific values; the invalid 129-node/.0025 FD8 stencil was replaced by a geometry-feasible 25/49/97 ladder before this scientific rerun. Thresholds and metrics were unchanged.');
             lines.push('');
             for (const s of r.states) {
               lines.push(`- state ${s.state_index}: t=${s.t}, z=${s.z}, passed=${s.state_passed}, finest self-defect RMS=${s.levels[s.levels.length-1].self_defect_rms}`);
