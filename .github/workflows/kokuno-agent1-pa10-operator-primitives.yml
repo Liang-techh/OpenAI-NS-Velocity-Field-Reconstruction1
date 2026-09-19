@@ -1,0 +1,127 @@
+name: kokuno-agent1-pa10-operator-primitives
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a1-pa10-operator-primitives
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent1-pa10-operator-primitives-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHONHASHSEED: '0'
+
+jobs:
+  pa10-operator-primitives:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile operator primitive module
+        run: python -m compileall -q src/openai_ns_reconstruction/kokuno_pa10_operator_primitives.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_pa10_fixed_point_radius.py \
+            tests/test_constrained_kokuno_pa10_operator_primitives.py
+      - name: Generate universal-primitive and conditional-planning receipt
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction.kokuno_pa10_operator_primitives import KokunoPA10OperatorPrimitiveBounds
+
+          bounds = KokunoPA10OperatorPrimitiveBounds()
+          # Unit inputs below are explicitly diagnostic arithmetic controls, not source estimates.
+          conditional = bounds.conditional_pair_envelopes(
+              multiplier_norm_chi=1.0,
+              R1_ball_norm=1.0,
+              R2_ball_norm=1.0,
+              R1_lipschitz_norm=1.0,
+              R2_lipschitz_norm=1.0,
+          )
+          gate = bounds.diagnostic_fixed_point_gate_from_remainder_bounds(
+              multiplier_norm_chi=1.0,
+              R1_ball_norm=1.0,
+              R2_ball_norm=1.0,
+              R1_lipschitz_norm=1.0,
+              R2_lipschitz_norm=1.0,
+          )
+          receipt = {
+              "module_payload": bounds.to_payload(),
+              "diagnostic_inputs_not_source_bounds": {
+                  "rho": 1.0,
+                  "multiplier_norm_chi": 1.0,
+                  "R1_ball_norm": 1.0,
+                  "R2_ball_norm": 1.0,
+                  "R1_lipschitz_norm": 1.0,
+                  "R2_lipschitz_norm": 1.0,
+              },
+              "diagnostic_arithmetic": {
+                  "mixed_derivative_template_constant_rho_eq_1": bounds.mixed_derivative_template_constant(1.0),
+                  "T_power_bound_k1_Mchi_eq_1": bounds.t_power_bound(1, 1.0),
+                  "inverse_one_plus_T_absolute_bound_Mchi_eq_1": bounds.inverse_one_plus_t_bound(1.0),
+                  "conditional_pair_envelopes": conditional,
+                  "conditional_fixed_point_threshold": gate.conditional_threshold,
+                  "conditional_fixed_point_radius": gate.conditional_radius,
+                  "selected_Lambda": gate.selected_lambda,
+              },
+          }
+          out = Path("artifacts/kokuno_agent1/pa10_operator_primitives/report.json")
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_text(json.dumps(receipt, indent=2, sort_keys=True) + "\n")
+          print("C_sq=", bounds.C_sq)
+          print("C_sq_squared=", bounds.product_constant)
+          print("J1_b0=", bounds.j_nu_bound(1, 0))
+          print("J2_b0=", bounds.j_nu_bound(2, 0))
+          print("inverse_bound_Mchi_eq_1=", receipt["diagnostic_arithmetic"]["inverse_one_plus_T_absolute_bound_Mchi_eq_1"])
+          print("conditional_M_unit_inputs=", conditional["conditional_M_pair_max_envelope"])
+          print("conditional_K_unit_inputs=", conditional["conditional_K_pair_max_envelope"])
+          print("module_receipt_sha256=", receipt["module_payload"]["sha256"])
+          PY
+      - name: Validate fail-closed source truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          receipt = json.loads(Path("artifacts/kokuno_agent1/pa10_operator_primitives/report.json").read_text())
+          truth = receipt["module_payload"]["truth_boundary"]
+          diagnostic_inputs = receipt["diagnostic_inputs_not_source_bounds"]
+          assert all(value == 1.0 for value in diagnostic_inputs.values())
+          assert truth["source_universal_operator_primitives_executable"] is True
+          assert truth["source_product_constant_executable"] is True
+          assert truth["source_J_nu_bound_executable"] is True
+          assert truth["source_T_power_bound_executable"] is True
+          assert truth["source_inverse_absolute_series_bound_executable"] is True
+          assert truth["conditional_MK_envelope_executable"] is True
+          assert truth["source_rho_machine_bound"] is False
+          assert truth["source_chi_multiplier_norm_machine_bound"] is False
+          assert truth["source_R1_radius_one_ball_norm_machine_bound"] is False
+          assert truth["source_R2_radius_one_ball_norm_machine_bound"] is False
+          assert truth["source_R1_radius_one_ball_lipschitz_machine_bound"] is False
+          assert truth["source_R2_radius_one_ball_lipschitz_machine_bound"] is False
+          assert truth["source_operator_constant_M_machine_bound"] is False
+          assert truth["source_operator_constant_K_machine_bound"] is False
+          assert truth["source_fixed_point_distance_machine_bound"] is False
+          assert truth["source_B0_dependencies_machine_bound"] is False
+          assert truth["source_T_sh_lower_bound_verified"] is False
+          assert truth["selected_pa16_handoff_allowed"] is False
+          assert truth["heldout_ns_residual_assessed"] is False
+          assert truth["pde_validated"] is False
+          assert truth["paper_exact"] is False
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-pa10-operator-primitives-v1
+          path: artifacts/kokuno_agent1/pa10_operator_primitives/report.json
