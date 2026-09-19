@@ -86,6 +86,10 @@ def test_deterministic_receipt_solves_only_uncertified_regression_operator() -> 
     inverse = evaluation["signed_reference_inverse"]
     assert inverse["channel_ordering"] == ["theta_e2", "axial_e1"]
     assert inverse["delta_y_ordering"] == ["sigma_plus", "sigma_minus"]
+    assert len(inverse["rhs"]) == 49
+    assert len(inverse["delta_y"]) == 49
+    assert all(len(row) == 2 for row in inverse["rhs"])
+    assert all(len(row) == 2 for row in inverse["delta_y"])
     assert inverse["delta_y_vector_rms"] > 0.0
     assert inverse["minimum_abs_determinant"] == pytest.approx(12.0, abs=2e-14)
     assert inverse["maximum_condition_number"] == pytest.approx(1.5, abs=2e-14)
