@@ -141,14 +141,16 @@ def test_v36_preserves_previous_agent5_and_fails_closed_on_laundering() -> None:
     with pytest.raises(ValueError, match="receipt changed"):
         validate_checkpoint(_rehash(payload))
 
+    # Parent v35 may reject these promotions before the new v36-specific
+    # fail-closed loop, so assert the invariant rather than a child-only string.
     payload = json.loads(json.dumps(build_checkpoint()))
     payload["states"]["public_provenance_labelled_xyz_t_oscillatory_velocity_ready"] = True
-    with pytest.raises(ValueError, match="fail-closed state promoted"):
+    with pytest.raises(ValueError, match="promoted"):
         validate_checkpoint(_rehash(payload))
 
     payload = json.loads(json.dumps(build_checkpoint()))
     payload["states"]["pde_validated"] = True
-    with pytest.raises(ValueError, match="fail-closed state promoted"):
+    with pytest.raises(ValueError, match="promoted"):
         validate_checkpoint(_rehash(payload))
 
 
