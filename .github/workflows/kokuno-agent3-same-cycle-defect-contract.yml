@@ -1,0 +1,108 @@
+name: kokuno-agent3-same-cycle-defect-contract
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a3-same-cycle-defect-contract-046
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_same_cycle_defect_contract.py"
+      - "tests/test_constrained_kokuno_same_cycle_defect_contract.py"
+      - ".github/workflows/kokuno-agent3-same-cycle-defect-contract.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: kokuno-agent3-same-cycle-defect-contract-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify-same-cycle-defect-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+      - name: Compile Agent-3 typed defect contract
+        run: >-
+          python -W error -m py_compile
+          src/openai_ns_reconstruction/kokuno_same_cycle_defect_contract.py
+      - name: Run focused warnings-as-errors tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_same_cycle_defect_contract.py
+      - name: Emit deterministic contract receipt
+        run: >-
+          python -W error -m openai_ns_reconstruction.kokuno_same_cycle_defect_contract
+          --output artifacts/kokuno_agent3_same_cycle_defect_contract_v1.json
+      - name: Check narrow truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r = json.loads(Path('artifacts/kokuno_agent3_same_cycle_defect_contract_v1.json').read_text())
+          assert r['schema'] == 'kokuno-a3-same-cycle-defect-contract-v1'
+          assert r['provenance']['parent_agent3_head'] == 'a2fc36a44771cffb173e391d53fb04df220ab638'
+          q = r['formula_regression']
+          assert q['maximum_absolute_error'] <= 2e-11
+          assert q['expected_residual'] == [2.0, 0.0, 3.0]
+          assert q['held_in']['vector_rms'] > 0.0
+          assert q['held_out']['vector_rms'] > 0.0
+          b = r['truth_boundary']
+          assert b['actual_momentum_defect_formula_executable'] is True
+          assert b['caller_supplied_residual_allowed'] is False
+          assert b['caller_supplied_stress_allowed'] is False
+          assert b['caller_supplied_target_allowed'] is False
+          assert b['same_cycle_identity_enforced'] is True
+          assert b['restricted_forcing_provider_required'] is True
+          assert b['heldin_heldout_disjointness_enforced'] is True
+          assert b['restricted_forcing_semantics_independently_validated_here'] is False
+          assert b['real_full_candidate_defect_consumed'] is False
+          assert b['full_same_cycle_composite_requested_stress_materialized'] is False
+          assert b['finite_correction_cycle_run'] is False
+          assert b['heldout_ns_momentum_residual_assessed'] is False
+          assert b['residual_reduction_claimed'] is False
+          assert b['pde_validated'] is False
+          assert b['final_normalized_momentum_gate'] == 1e-3
+          assert b['final_normalized_divergence_gate'] == 1e-5
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent3-same-cycle-defect-contract-v1
+          path: artifacts/kokuno_agent3_same_cycle_defect_contract_v1.json
+          if-no-files-found: error
+      - name: Comment exact contract receipt on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const r = JSON.parse(fs.readFileSync('artifacts/kokuno_agent3_same_cycle_defect_contract_v1.json', 'utf8'));
+            const q = r.formula_regression;
+            const b = r.truth_boundary;
+            const lines = [
+              '### Kokuno Agent 3 exact-head same-cycle defect contract',
+              '',
+              `Analytic nonzero regression max abs error: **${q.maximum_absolute_error}**`,
+              `held-in raw vector RMS: **${q.held_in.vector_rms}**`,
+              `held-out raw vector RMS: **${q.held_out.vector_rms}**`,
+              '',
+              `same-cycle identity enforced: **${b.same_cycle_identity_enforced}**`,
+              `held-in/out disjointness enforced: **${b.heldin_heldout_disjointness_enforced}**`,
+              `caller-supplied residual allowed: **${b.caller_supplied_residual_allowed}**`,
+              '',
+              'Narrow promotion only: the real momentum-defect formula is now executable from raw same-cycle field providers. The current Agent-1 full composite handoff is still absent, restricted-forcing semantics are not independently validated here, and full-candidate defect consumption, correction execution, held-out normalized NS assessment, and `pde_validated` remain false.'
+            ];
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: lines.join('\n')
+            });
