@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "task_id": "CR002-ST052M-LIVE-DELIVERY-STATE-ACCOUNTING-072",
+  "scope": "Reconcile the integrated ST052-M whole-candidate runtime with still-stale project-status routing without promoting experimental delivery, visual, PDE, paper-exact, or OpenAI-field claims.",
+  "integration_base": {
+    "branch": "codex/cr001-constraints",
+    "head": "b490b57ed5d1ccc56ee4e1e44025ec881721dc39"
+  },
+  "authorities": {
+    "live_runtime_module": "src/openai_ns_reconstruction/st052_linear_temporal_capsule.py",
+    "status_report": "project_status.json",
+    "canonical_delivery_contract": "configs/velocity_delivery_contract.json",
+    "scientific_constraints": "configs/constraints.json"
+  },
+  "integrated_st052_runtime": {
+    "candidate_id": "ST052-M-linear-temporal-child-v1",
+    "whole_candidate_schema": "st052-linear-temporal-whole-candidate-capsule/v3",
+    "task_id": "CR-A9-070",
+    "whole_child_bundle_materialized": true,
+    "whole_child_save_load_ready_with_authenticated_exact_source_runtime": true,
+    "exact_source_runtime_identity_closed": true,
+    "historical_module_cache_isolated": true,
+    "final_callable_surface": "load_bundle_runtime(..., exact_source_root=...).velocity(x,y,z,t)",
+    "standalone_package_parent_runtime_ready": false
+  },
+  "status_reporting_observation": {
+    "project_status_st052_materialization_fields_stale": true,
+    "observed_latest_st052_status": "strong_visualization_candidate_evidence_not_materialized_on_live_ancestry",
+    "observed_next_delivery_task_prefix": "replay and materialize the exact ST052-M child",
+    "accounting_rule": "The stale project-status materialization wording must not override the integrated executable capsule facts. Conversely, integrated materialization/save-load facts must not be laundered into velocity_export_ready, production selection, visual correspondence, PDE validation, paper exactness, or OpenAI-field identity.",
+    "upgrade_rule": "When project_status.json is corrected to the integrated ST052 materialization state, this v1 observation must fail and be deliberately revised rather than silently continuing."
+  },
+  "claim_states": {
+    "canonical_eq45_velocity_export_ready": true,
+    "st052_source_runtime_backed_callable_save_load_ready": true,
+    "st052_velocity_export_ready": false,
+    "st052_production_candidate_selected": false,
+    "st052_visualization_ready": false,
+    "st052_visual_correspondence_verified": false,
+    "st052_held_out_temporal_child_pde_residual_evaluated": false,
+    "st052_pde_validated": false,
+    "st052_source_correspondence_verified": false,
+    "st052_paper_exact": false,
+    "st052_openai_field_identified": false,
+    "st052_blowup_proved": false
+  },
+  "source_classification": [
+    {
+      "item": "explicit callable/save-load 3D time-varying velocity delivery",
+      "classification": "user_requirement",
+      "source": "docs/PROJECT_GOAL.md"
+    },
+    {
+      "item": "qualitative observable structure in the published OpenAI velocity-field visualization",
+      "classification": "public_source_fact",
+      "source": "docs/VISUAL_TARGET.md"
+    },
+    {
+      "item": "ST052-M parent replay, static transform, linear temporal transform, whole-candidate capsule, runtime authentication, and state-accounting scheme",
+      "classification": "autonomous_design",
+      "source": "src/openai_ns_reconstruction/st052_linear_temporal_capsule.py"
+    },
+    {
+      "item": "hidden OpenAI numerical field, coefficients, exact frame/time map, camera, seeds, and unresolved portable external dependency/build identity",
+      "classification": "pending_unknown",
+      "source": "delivery/source truth boundary"
+    }
+  ],
+  "cr001_nonmutation": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_parameter_bounds": {
+      "a": [0.0, 10.0],
+      "c": [0.0, 10.0]
+    },
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "divergence_max": 1e-05,
+    "divergence_L2": 1e-05,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001,
+    "thresholds_changed": false,
+    "forcing_contract_changed": false,
+    "validation_sample_changed": false
+  },
+  "prohibitions": [
+    "Do not treat the stale project-status materialization wording as proof that the live whole-child capsule is absent.",
+    "Do not treat whole-child materialization or source-runtime-backed save/load as experimental ST052 velocity_export_ready while the separately governed runtime/delivery prerequisites remain open.",
+    "Do not transfer parent pressure, forcing, or PDE receipts to the temporal child.",
+    "Do not infer visual correspondence, paper exactness, OpenAI-field identity, or blow-up from materialization, save/load, green CI, or morphology evidence.",
+    "Do not relax CR001 thresholds or introduce residual-defined free forcing."
+  ]
+}
