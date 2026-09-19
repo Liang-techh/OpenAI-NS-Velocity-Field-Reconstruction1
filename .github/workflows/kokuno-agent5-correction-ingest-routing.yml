@@ -1,0 +1,96 @@
+name: kokuno-agent5-correction-ingest-routing
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-correction-ingest-routing-041
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_correction_ingest_routing_checkpoint.py"
+      - "tests/test_constrained_kokuno_correction_ingest_routing_checkpoint.py"
+      - ".github/workflows/kokuno-agent5-correction-ingest-routing.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent5-correction-ingest-routing-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHONHASHSEED: '0'
+
+jobs:
+  correction-ingest-routing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile Agent-5 checkpoint
+        run: python -m py_compile src/openai_ns_reconstruction/kokuno_correction_ingest_routing_checkpoint.py
+      - name: Focused warnings-as-errors regressions
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_public_z_pass_admission.py \
+            tests/test_constrained_kokuno_correction_ingest_routing_checkpoint.py
+      - name: Generate deterministic v41 checkpoint
+        run: |
+          python -m openai_ns_reconstruction.kokuno_correction_ingest_routing_checkpoint \
+            --audit artifacts/constrained/kokuno_agent3/agent4_563_public_z_pullback_independent_audit.json \
+            --output artifacts/kokuno_agent5/correction_ingest_routing_checkpoint_v41.json
+      - name: Validate admitted state and unchanged final gates
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction.kokuno_correction_ingest_routing_checkpoint import (
+              A4_GENERALIZATION_GUARDS,
+              FORMAL_GATES,
+              validate_checkpoint,
+          )
+
+          path = Path('artifacts/kokuno_agent5/correction_ingest_routing_checkpoint_v41.json')
+          checkpoint = json.loads(path.read_text())
+          validate_checkpoint(checkpoint)
+
+          states = checkpoint['states']
+          assert states['oscillatory_ready'] is True
+          assert states['oscillatory_generalization_independently_passed'] is True
+          assert states['correction_receipt_identity_pinned_to_current_pass'] is True
+          assert states['correction_ingest_allowed'] is True
+          assert states['same_cycle_requested_stress_materialization_allowed'] is True
+          assert states['candidate_finite_head_mean_debt_materialization_allowed'] is True
+          assert states['same_cycle_requested_stress_materialized'] is False
+          assert states['candidate_numeric_finite_head_mean_debt_materialized'] is False
+          assert states['correction_ready'] is False
+          assert states['candidate_artifact_instantiated'] is False
+          assert states['formal_full_domain_pde_gate_assessed'] is False
+          assert states['pde_validated'] is False
+          assert checkpoint['formal_gates'] == FORMAL_GATES
+          assert checkpoint['baseline_vs_kokuno']['kokuno_current_comparable_full_domain_receipt'] is None
+
+          a4 = checkpoint['upstream']['agent4_supplemental_generalization']
+          assert all(a4['derived_guard_passes'].values())
+          assert a4['metrics']['relative_divergence_rms_by_step'][-1] <= A4_GENERALIZATION_GUARDS['finest_relative_divergence_rms']
+          assert a4['metrics']['finest_relative_divergence_max'] <= A4_GENERALIZATION_GUARDS['finest_relative_divergence_max']
+          assert min(a4['metrics']['refinement_ratios']) >= A4_GENERALIZATION_GUARDS['minimum_divergence_refinement_ratio']
+          assert max(a4['metrics']['finest_stratum_relative_rms'].values()) <= A4_GENERALIZATION_GUARDS['maximum_stratum_finest_relative_divergence_rms']
+          assert a4['metrics']['support_exterior_absolute_max'] == 0.0
+
+          print('checkpoint_sha256=', checkpoint['checkpoint_sha256'])
+          print('correction_ingest_allowed=', states['correction_ingest_allowed'])
+          print('supplemental_fd6_finest_relative_rms=', a4['metrics']['relative_divergence_rms_by_step'][-1])
+          print('supplemental_fd6_min_refinement=', min(a4['metrics']['refinement_ratios']))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-correction-ingest-routing-checkpoint-v41
+          path: |
+            artifacts/kokuno_agent5/correction_ingest_routing_checkpoint_v41.json
+            artifacts/constrained/kokuno_agent3/agent4_563_public_z_pullback_independent_audit.json
