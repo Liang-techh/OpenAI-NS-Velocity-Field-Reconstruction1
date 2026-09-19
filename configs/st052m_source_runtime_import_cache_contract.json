@@ -1,0 +1,141 @@
+{
+  "schema": "st052m-source-runtime-import-cache-governance/v1",
+  "task_id": "CR002",
+  "scope": "One minimal representation/delivery integrity audit for the integrated ST052-M whole-child exact-source runtime loader. No velocity, pressure, forcing, coefficient, optimizer, sample, norm, scientific threshold, canonical API, or candidate-selection change.",
+  "integration_base": {
+    "branch": "codex/cr001-constraints",
+    "head": "458ace6f456cba8200048d2a63d102b6596fbc43",
+    "integration_pr": 632,
+    "integration_pr_head": "46bbc10bb6b88ae637ac1559fec58c961013d987"
+  },
+  "source_runtime": {
+    "source_pr": 508,
+    "source_head": "b3b8bfdbe1077f9ec967d158602951997d81e17d",
+    "recipe_git_blob_sha1": "e30c769052379f72afeee46ca264482884cc5ac7",
+    "capsule_module": "openai_ns_reconstruction.st052_linear_temporal_capsule",
+    "parent_loader": "_load_exact_source_parent",
+    "whole_loader": "load_bundle_runtime",
+    "direct_module_name": "replay_st052",
+    "direct_expected_path": "experiments/root_st052/replay_st052.py",
+    "observed_import_pattern": "sys.path.insert(0, exact_root_st052); importlib.import_module('replay_st052')",
+    "preexisting_direct_module_cache_rejected": false,
+    "post_import_direct_module_file_origin_checked": false,
+    "known_transitive_bare_imports": [
+      "minimax_exchange",
+      "spacetime",
+      "aligned_continuation",
+      "pressure_morph"
+    ],
+    "transitive_module_cache_isolation_verified": false
+  },
+  "evidence_scope": {
+    "merged_source_pr_exact_head_dedicated_run": 35442084024,
+    "merged_source_pr_exact_head_standard_run": 35442084021,
+    "exact_source_checkout_in_dedicated_workflow": true,
+    "exact_source_parity_gate": 5e-12,
+    "receipt_interpretation": "Valid for the clean exact-checkout execution context used by PR 632. It does not establish arbitrary-process Python import-cache isolation or a standalone immutable executable-function identity."
+  },
+  "classification": {
+    "user_requirement": [
+      "A computable saveable/loadable time-varying 3D velocity API velocity(x,y,z,t)->[u,v,w].",
+      "PDE acceptance must remain independent from velocity delivery readiness."
+    ],
+    "public_source_fact": [
+      "Public OpenAI material motivates observable velocity-field structure only; it does not publish the hidden runtime, coefficients, frame-time mapping, camera, or seeds."
+    ],
+    "autonomous_design": [
+      "ST052-M parent replay capsule, static local-swirl transform, linear temporal transform, and the exact-source Python runtime bridge are repository designs.",
+      "Using sys.path plus bare-name importlib imports is an implementation choice and is not public-source evidence."
+    ],
+    "pending_unknown": [
+      "Whether the whole historical source runtime has a closed immutable identity in an arbitrary long-lived Python process.",
+      "Whether all direct and transitive bare-name imports are isolated from preexisting sys.modules entries.",
+      "OpenAI hidden coefficients, paper-exact identity, and exact visualization frame/time/camera/seed mapping."
+    ]
+  },
+  "allowed_states": {
+    "whole_child_bundle_materialized": true,
+    "whole_child_save_load_ready_with_exact_source_runtime": true,
+    "exact_ci_execution_context_evidence_valid": true,
+    "direct_replay_import_cache_isolation_verified": false,
+    "transitive_source_runtime_import_cache_isolation_verified": false,
+    "runtime_identity_closed": false,
+    "standalone_package_parent_runtime_ready": false,
+    "standalone_reproducible_velocity_identity_ready": false,
+    "velocity_export_ready": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "promotion_prerequisites": [
+    "Make direct replay-module loading fail closed against preexisting sys.modules substitution and verify the imported module origin, or load it under an isolated qualified identity.",
+    "Bind or isolate the transitive historical runtime modules needed by replay_st052 rather than relying on ambient bare-name sys.modules state.",
+    "Bind the resulting executable runtime identity into the whole-candidate load contract and replay save/load parity under that immutable identity.",
+    "Keep visual-correspondence and PDE validation gates independent from runtime/export readiness."
+  ],
+  "cr001_nonmutation": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ]
+    ],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [
+      0.25,
+      0.75
+    ],
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_parameter_bounds": {
+      "a": [
+        0.0,
+        10.0
+      ],
+      "c": [
+        0.0,
+        10.0
+      ]
+    },
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [
+      0.25,
+      0.3125,
+      0.4375,
+      0.5625,
+      0.6875,
+      0.75
+    ],
+    "derivative_steps": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "quadrature_orders_per_axis": [
+      24,
+      48,
+      96
+    ],
+    "divergence_max": 1e-05,
+    "divergence_L2": 1e-05,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001,
+    "free_residual_defined_forcing_allowed": false,
+    "amplitude_collapse_success_allowed": false
+  }
+}
