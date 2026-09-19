@@ -1,0 +1,101 @@
+name: agent7-st052m-public-source-temporal-persistence
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_public_source_temporal_persistence.py'
+      - 'experiments/root_st052/test_agent7_st052m_public_source_temporal_persistence.py'
+      - '.github/workflows/agent7-st052m-public-source-temporal-persistence.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  temporal-persistence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Focused contract tests
+        run: python -m pytest -q -W error experiments/root_st052/test_agent7_st052m_public_source_temporal_persistence.py
+      - name: Execute preregistered temporal persistence audit
+        run: |
+          mkdir -p outputs/agent7-st052m-public-source-temporal-persistence
+          python experiments/root_st052/agent7_st052m_public_source_temporal_persistence.py \
+            --out outputs/agent7-st052m-public-source-temporal-persistence/report.json
+      - name: Verify frozen pair and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-public-source-temporal-persistence/report.json').read_text())
+          assert r['prereg_issue']==673
+          assert r['public_source']['url']=='https://openai.com/index/navier-stokes-solution/'
+          assert r['public_source']['date']=='2026-09-08'
+          assert r['public_source']['qualitative_only'] is True
+          assert r['candidate_pair']['baseline']['pr']==587
+          assert r['candidate_pair']['challenger']['pr']==652
+          assert r['candidate_pair']['source_directional_audit']['pr']==667
+          assert r['frozen_witness']['swirl_a']==0.065899695471146
+          assert abs(r['frozen_witness']['shoulder_lambda']+0.02)<=1e-15
+          assert r['source_652_target_free_pareto_rejection_remains_binding'] is True
+          assert r['basis_growth_justified_by_this_audit'] is False
+          assert r['new_spatial_basis_added'] is False
+          assert r['new_temporal_basis_added'] is False
+          assert r['witness_retuned'] is False
+          assert r['optimization_performed'] is False
+          assert r['canonical_velocity_changed'] is False
+          assert r['saved_velocity_changed'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          assert r['paper_exact'] is False
+          assert r['openai_field_identified'] is False
+          print('preferred=',r['public_source_temporal_axial_stretch_preferred'])
+          print('decision=',r['temporal_axial_stretch_decision'])
+          print('routing=',r['routing'])
+          PY
+      - name: Publish compact numerical receipt
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent7-temporal-persistence-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-public-source-temporal-persistence/report.json').read_text())
+          d=r['temporal_axial_stretch_decision']
+          print('<!-- agent7-st052m-public-source-temporal-persistence-receipt -->')
+          print('**Agent 7 public-source temporal axial-stretch receipt (issue #673; exact #587 vs exact #652, no retuning):**')
+          print()
+          print(f"- preferred: `{r['public_source_temporal_axial_stretch_preferred']}`")
+          print(f"- child-minus-linear aspect increments by time: `{d['aspect_increment_child_vs_linear_by_time']}`")
+          print(f"- #587 relative-aspect sequence: `{d['linear_aspect_relative_to_control_sequence']}`")
+          print(f"- #652 relative-aspect sequence: `{d['child_aspect_relative_to_control_sequence']}`")
+          print(f"- start identity guard: `{d['start_identity_guard']}`")
+          print(f"- all-time challenger advantage: `{d['challenger_aspect_advantage_all_post_start_times']}`")
+          print(f"- #587/#652 increasing-elongation guards: `{d['linear_increasing_elongation_guard']}` / `{d['child_increasing_elongation_guard']}`")
+          print(f"- finite guard: `{d['all_morphology_values_finite']}`")
+          print(f"- routing: {r['routing']}")
+          print()
+          print('Truth boundary: this is a qualitative public-source time-persistence audit of one frozen morphology proxy. No basis/parameter retuning, no canonical or saved velocity mutation, no pixel correspondence, no held-out PDE evaluation, and no claim of PDE validity, paper exactness, exact OpenAI-field identity, or blow-up.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-temporal-persistence-receipt.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-public-source-temporal-persistence
+          path: outputs/agent7-st052m-public-source-temporal-persistence/
+          if-no-files-found: error
+
+# Exact pair, times, 41^3 resolution and decision semantics were frozen in issue #673 before execution.
