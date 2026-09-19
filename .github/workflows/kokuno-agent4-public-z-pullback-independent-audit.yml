@@ -13,6 +13,8 @@ on:
 
 permissions:
   contents: read
+  issues: write
+  pull-requests: write
 
 jobs:
   independent-audit:
@@ -60,6 +62,37 @@ jobs:
           print('divergence_mutation=', r['divergence_mutation'])
           print('public_oscillatory_preflight_passed=', r['public_oscillatory_preflight_passed'])
           PY
+      - name: Publish exact receipt to PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const marker = '<!-- kokuno-a4-public-z-pullback-receipt -->';
+            const receipt = fs.readFileSync('outputs/kokuno_agent4_public_z_pullback_independent_audit.json', 'utf8');
+            const body = `${marker}\n## Agent 4 exact independent receipt\n\n\`\`\`json\n${receipt}\`\`\``;
+            const issue_number = context.payload.pull_request?.number || 563;
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number,
+              per_page: 100,
+            });
+            const existing = comments.find(c => c.body && c.body.includes(marker));
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number,
+                body,
+              });
+            }
       - uses: actions/upload-artifact@v4
         with:
           name: kokuno-agent4-public-z-pullback-independent-audit-v1
