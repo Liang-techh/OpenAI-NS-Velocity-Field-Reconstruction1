@@ -95,6 +95,7 @@ def test_api_governance_does_not_mutate_cr001_contract():
     contract = _json("configs/velocity_delivery_contract.json")
     constraints = _json("configs/constraints.json")
     guard = contract["cr001_nonmutation"]
+    thresholds = constraints["validation"]["thresholds"]
 
     assert guard == {
         "constraints_path": "configs/constraints.json",
@@ -106,5 +107,5 @@ def test_api_governance_does_not_mutate_cr001_contract():
     assert constraints["nu"] == 0.01
     assert constraints["validation"]["seed"] == 914027
     assert constraints["validation"]["held_out_points"] == 4096
-    assert constraints["thresholds"]["pde_residual_max"] == 1e-3
-    assert constraints["thresholds"]["pde_residual_L2"] == 1e-3
+    assert thresholds["pde_residual_max"] == 1e-3
+    assert thresholds["pde_residual_L2"] == 1e-3
