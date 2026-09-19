@@ -1,10 +1,10 @@
-"""CR002 audit for the central live ST052-M grid-delivery identity contract.
+"""CR002 audit for the live ST052-M grid-delivery identity contract.
 
-This audit reconciles the repository's central sampled-grid governance record with
-the already-integrated ST052-M whole-child capsule, NPZ/MAT exporter, and GNU
-Octave software smoke.  It deliberately does not promote finite-grid or
-rendering evidence into continuous-function, PDE, visual-correspondence, or
-paper/OpenAI-field claims.
+This audit reconciles the already-integrated ST052-M whole-child capsule,
+NPZ/MAT exporter, and GNU Octave software smoke without destructively replacing
+the legacy sampled-grid governance contract still consumed by older fail-closed
+audits. It deliberately does not promote finite-grid or rendering evidence into
+continuous-function, PDE, visual-correspondence, or paper/OpenAI-field claims.
 """
 from __future__ import annotations
 
@@ -16,7 +16,7 @@ from . import st052_grid_export as grid_export
 from . import st052_linear_temporal_capsule as whole_capsule
 
 
-CONTRACT_FILENAME = "velocity_grid_delivery_identity_contract.json"
+CONTRACT_FILENAME = "live_st052_grid_delivery_identity_contract.json"
 
 
 def _repo_root() -> Path:
@@ -42,9 +42,9 @@ def audit_live_grid_delivery_identity(repo_root: str | Path | None = None) -> di
     constraints = _load_json(root / "configs" / "constraints.json")
 
     if contract.get("schema_version") != 2:
-        raise AssertionError("central velocity-grid contract must use reconciled schema v2")
+        raise AssertionError("live ST052 velocity-grid contract must use reconciled schema v2")
     if contract.get("task_id") != "CR002-VELOCITY-GRID-DELIVERY-IDENTITY-073":
-        raise AssertionError("unexpected central velocity-grid governance task id")
+        raise AssertionError("unexpected live ST052 velocity-grid governance task id")
 
     delivery = contract["current_st052_grid_delivery"]
     runtime = delivery["whole_child_runtime"]
@@ -153,9 +153,6 @@ def audit_live_grid_delivery_identity(repo_root: str | Path | None = None) -> di
     ):
         if octave.get(key) is not False:
             raise AssertionError(f"unverified Octave/metadata claim promoted: {key}")
-    # The merged smoke checks shape/time/domain and computes omega_z, but it does
-    # not consume these exporter metadata fields. A future consumer that starts
-    # doing so must revise this contract and audit instead of silently upgrading.
     for forbidden_current_token in (
         "array_layout",
         "whole_candidate_identity_sha256",
@@ -163,7 +160,7 @@ def audit_live_grid_delivery_identity(repo_root: str | Path | None = None) -> di
     ):
         if forbidden_current_token in octave_text:
             raise AssertionError(
-                "Octave consumer metadata behavior changed; re-audit central grid semantics"
+                "Octave consumer metadata behavior changed; re-audit live ST052 grid semantics"
             )
 
     boundary = contract["truth_boundary"]
