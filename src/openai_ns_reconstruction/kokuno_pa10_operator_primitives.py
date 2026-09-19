@@ -207,13 +207,15 @@ class KokunoPA10OperatorPrimitiveBounds:
         relative_tolerance: float = 2.0e-15,
         max_terms: int = 100000,
     ) -> float:
-        """Absolute-series upper bound for ``||(1+T)^-1||``.
+        """Tail-safe absolute-series upper bound for ``||(1+T)^-1||``.
 
-        The summand recurrence is
-        ``a_k/a_{k-1}=40 M_chi/(k(k+1))``.  Summation stops only after the
-        positive tail term is below a relative floating-point tolerance once
-        the terms are decreasing.  This is numerical evaluation of the
-        displayed convergent majorant, not an estimate of ``M_chi`` itself.
+        For ``x=40 M_chi`` the positive summands obey
+        ``a_k/a_{k-1}=x/(k(k+1))``.  Once the next ratio is below one, all
+        subsequent ratios only decrease, so the omitted positive tail is at
+        most ``a_{k+1}/(1-r_{k+1})``.  The returned value includes this
+        geometric tail majorant (and is rounded one float upward), rather than
+        silently treating a truncated positive partial sum as an upper bound.
+        This evaluates the source majorant; it does not estimate ``M_chi``.
         """
         m = _nonnegative_finite(multiplier_norm_chi, "multiplier_norm_chi")
         tol = _positive_finite(relative_tolerance, "relative_tolerance")
@@ -221,18 +223,29 @@ class KokunoPA10OperatorPrimitiveBounds:
             raise TypeError("max_terms must be an integer")
         if max_terms < 2:
             raise ValueError("max_terms must be >=2")
+        if m == 0.0:
+            return 1.0
+
+        x = 40.0 * m
         total = 1.0
         term = 1.0
-        previous = math.inf
         for k in range(1, max_terms + 1):
-            term *= (40.0 * m) / (float(k) * float(k + 1))
-            if not math.isfinite(term) or not math.isfinite(total):
-                raise OverflowError("inverse absolute-series bound is outside float range")
+            term *= x / (float(k) * float(k + 1))
+            if not math.isfinite(term):
+                raise OverflowError("inverse absolute-series term is outside float range")
             total += term
-            decreasing = term <= previous
-            if decreasing and term <= tol * total:
-                return float(total)
-            previous = term
+            if not math.isfinite(total):
+                raise OverflowError("inverse absolute-series bound is outside float range")
+
+            next_ratio = x / (float(k + 1) * float(k + 2))
+            if next_ratio < 1.0:
+                next_term = term * next_ratio
+                tail_upper = next_term / (1.0 - next_ratio)
+                if tail_upper <= tol * total:
+                    upper = total + tail_upper
+                    if not math.isfinite(upper):
+                        raise OverflowError("inverse absolute-series bound is outside float range")
+                    return float(math.nextafter(upper, math.inf))
         raise RuntimeError("inverse absolute-series bound did not converge within max_terms")
 
     def conditional_pair_envelopes(
