@@ -1,0 +1,112 @@
+name: kokuno-agent4-radial-stress-spacetime-generalization
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a4-radial-stress-spacetime-generalization-044
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_agent4_radial_stress_spacetime_generalization.py"
+      - "tests/test_constrained_kokuno_agent4_radial_stress_spacetime_generalization.py"
+      - ".github/workflows/kokuno-agent4-radial-stress-spacetime-generalization.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: kokuno-agent4-radial-stress-spacetime-generalization-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  spacetime-radial-stress-generalization:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+      - name: Compile validator
+        run: >-
+          python -W error -m py_compile
+          src/openai_ns_reconstruction/kokuno_agent4_radial_stress_spacetime_generalization.py
+      - name: Run focused warnings-as-errors tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_agent4_radial_stress_spacetime_generalization.py
+      - name: Generate deterministic spacetime generalization receipt
+        run: >-
+          python -W error -m openai_ns_reconstruction.kokuno_agent4_radial_stress_spacetime_generalization
+          --output artifacts/kokuno_agent4_radial_stress_spacetime_generalization_v1.json
+      - name: Check fail-closed truth boundary and print scientific verdict
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('artifacts/kokuno_agent4_radial_stress_spacetime_generalization_v1.json')
+          r = json.loads(p.read_text())
+          t = r['truth_boundary']
+          assert r['provenance']['parent_agent3_head'] == 'a97f0882ab0b1fcc0d4b9575b5366fb44b35c233'
+          assert r['protocol']['radial_counts'] == [33, 65, 129]
+          assert r['protocol']['cartesian_fd8_step'] == 0.0025
+          assert t['agent3_self_defect_operator_used'] is False
+          assert t['agent3_compact_stress_constructor_used'] is False
+          assert t['agent3_radial_derivative_used'] is False
+          assert t['pressure_fitted'] is False
+          assert t['forcing_fitted'] is False
+          assert t['full_same_cycle_composite_requested_stress_materialized'] is False
+          assert t['public_velocity_correction_materialized'] is False
+          assert t['heldout_ns_momentum_residual_assessed'] is False
+          assert t['formal_full_domain_pde_gate_assessed'] is False
+          assert t['pde_validated'] is False
+          print('spacetime_radial_stress_generalization_passed=', r['spacetime_radial_stress_generalization_passed'])
+          print('failed_guards=', r['failed_guards'])
+          for state in r['states']:
+              print('state=', state['state_index'], 't=', state['t'], 'z=', state['z'], 'passed=', state['state_passed'])
+              for channel in ('theta_e2', 'axial_e1'):
+                  c = state['convergence'][channel]
+                  print(channel, 'relative_rms=', c['relative_rms_by_radial_count'])
+                  print(channel, 'ratios=', c['refinement_ratios'])
+                  print(channel, 'finest_max=', c['finest_relative_max'])
+                  print(channel, 'moment=', c['finest_moment_complement_relative'])
+                  print(channel, 'edge=', c['finest_edge_relative'])
+                  print(channel, 'mutation=', c['finest_sign_flip_mutation_relative_rms'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent4-radial-stress-spacetime-generalization-v1
+          path: artifacts/kokuno_agent4_radial_stress_spacetime_generalization_v1.json
+          if-no-files-found: error
+      - name: Comment exact scientific receipt on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const r = JSON.parse(fs.readFileSync('artifacts/kokuno_agent4_radial_stress_spacetime_generalization_v1.json', 'utf8'));
+            const lines = [];
+            lines.push('### Kokuno Agent 4 exact-head spacetime radial-stress receipt');
+            lines.push('');
+            lines.push(`Scientific verdict: **${r.spacetime_radial_stress_generalization_passed ? 'PASS' : 'FAIL'}**`);
+            lines.push(`Failed guards: \`${JSON.stringify(r.failed_guards)}\``);
+            lines.push('');
+            for (const s of r.states) {
+              lines.push(`- state ${s.state_index}: t=${s.t}, z=${s.z}, passed=${s.state_passed}, finest self-defect RMS=${s.levels[s.levels.length-1].self_defect_rms}`);
+              for (const channel of ['theta_e2', 'axial_e1']) {
+                const c = s.convergence[channel];
+                lines.push(`  - ${channel}: relRMS=${JSON.stringify(c.relative_rms_by_radial_count)}, ratios=${JSON.stringify(c.refinement_ratios)}, finest relMax=${c.finest_relative_max}, moment=${c.finest_moment_complement_relative}, edge=${c.finest_edge_relative}, mutation=${c.finest_sign_flip_mutation_relative_rms}`);
+              }
+            }
+            lines.push('');
+            lines.push('Truth boundary: this is an oscillatory-component correction-operator generalization audit only; full same-cycle correction, pressure/forcing, held-out NS momentum residual, and `pde_validated` remain false.');
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: lines.join('\n')
+            });
