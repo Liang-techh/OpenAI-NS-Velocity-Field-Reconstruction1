@@ -1,0 +1,107 @@
+name: agent7-st052m-public-source-directional-fingerprint
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_public_source_directional_fingerprint.py'
+      - 'experiments/root_st052/test_agent7_st052m_public_source_directional_fingerprint.py'
+      - '.github/workflows/agent7-st052m-public-source-directional-fingerprint.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  directional-fingerprint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Focused contract tests
+        run: python -m pytest -q -W error experiments/root_st052/test_agent7_st052m_public_source_directional_fingerprint.py
+      - name: Execute preregistered public-source directional audit
+        run: |
+          mkdir -p outputs/agent7-st052m-public-source-directional-fingerprint
+          python experiments/root_st052/agent7_st052m_public_source_directional_fingerprint.py \
+            --out outputs/agent7-st052m-public-source-directional-fingerprint/report.json
+      - name: Verify frozen source mapping and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-public-source-directional-fingerprint/report.json').read_text())
+          assert r['prereg_issue']==666
+          assert r['public_source']['url']=='https://openai.com/index/navier-stokes-solution/'
+          assert r['public_source']['date']=='2026-09-08'
+          assert r['public_source']['qualitative_only'] is True
+          assert r['candidate_pair']['baseline']['pr']==587
+          assert r['candidate_pair']['challenger']['pr']==652
+          assert r['candidate_pair']['grid_audit']['pr']==659
+          assert r['source_652_formal_target_free_rejection_remains_binding'] is True
+          assert r['grid_659_tip_margin_not_grid_resolved'] is True
+          assert r['new_spatial_basis_added'] is False
+          assert r['new_temporal_basis_added'] is False
+          assert r['witness_retuned'] is False
+          assert r['optimization_performed'] is False
+          assert r['public_image_numeric_target_used'] is False
+          assert r['pixel_similarity_objective_used'] is False
+          assert r['canonical_velocity_changed'] is False
+          assert r['saved_velocity_changed'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          assert r['paper_exact'] is False
+          assert r['openai_field_identified'] is False
+          print('preferred=',r['public_source_directionally_preferred'])
+          print('decision=',r['public_source_directional_decision'])
+          print('secondary=',r['secondary_autonomous_diagnostics'])
+          print('routing=',r['routing'])
+          PY
+      - name: Publish compact numerical receipt
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent7-public-source-fingerprint-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-public-source-directional-fingerprint/report.json').read_text())
+          d=r['public_source_directional_decision']
+          s=r['secondary_autonomous_diagnostics']
+          print('<!-- agent7-st052m-public-source-directional-fingerprint-receipt -->')
+          print('**Agent 7 public-source directional fingerprint receipt (issue #666; exact #587 vs exact #652, no retuning):**')
+          print()
+          print(f"- public-source directionally preferred: `{r['public_source_directionally_preferred']}`")
+          print(f"- aspect increments 33/41/49: `{d['aspect_increment_by_resolution']}`")
+          print(f"- axial-stretching guard: `{d['axial_stretching_guard']}`")
+          print(f"- turns-fidelity increment: `{d['turns_fidelity_increment']}`")
+          print(f"- inward-path-count change: `{d['inward_path_count_change']}`")
+          print(f"- inward-spiraling guard: `{d['inward_spiraling_guard']}`")
+          print(f"- contraction linear/child/difference: `{d['linear_contraction_magnitude_relative']}` / `{d['child_contraction_magnitude_relative']}` / `{d['contraction_difference']}`")
+          print(f"- central-contraction retention guard: `{d['central_contraction_retained_guard']}`")
+          print(f"- support/divergence: `{d['support_max_abs']}` / `{d['divergence_fd_max']}`")
+          print(f"- source #652 target-free rejection remains binding: `{r['source_652_formal_target_free_rejection_remains_binding']}`")
+          print(f"- #659 tip-margin grid-resolved: `{not r['grid_659_tip_margin_not_grid_resolved']}`")
+          print(f"- secondary target-free tip-thinning increment (report-only): `{s['target_free_tip_thinning_increment']}`")
+          print(f"- routing: {r['routing']}")
+          print()
+          print('Truth boundary: qualitative public-source directional ranking only. This is not pixel/image correspondence, does not retune or promote a basis, does not rebuild pressure/forcing or evaluate held-out PDE residual, and does not establish PDE validity, paper exactness, OpenAI-field identity, or blow-up.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-public-source-fingerprint-receipt.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-public-source-directional-fingerprint
+          path: outputs/agent7-st052m-public-source-directional-fingerprint/
+          if-no-files-found: error
+
+# Public-source mapping, exact candidate pair and decision semantics were frozen in issue #666 before execution.
