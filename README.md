@@ -1,13 +1,40 @@
-## Current deliverable: callable 3D velocity components
+## Current deliverable: canonical callable 3D velocity
+
+The active delivery registered by `project_status.json` is the support-connected Eq45 candidate:
 
 ```python
-from openai_ns_reconstruction.velocity_components import velocity
+from openai_ns_reconstruction.eq45_supported_delivery import velocity
+
 u, v, w = velocity(x=0.1, y=0.0, z=0.1, t=0.5)
 ```
 
-Install with `python -m pip install -e .`, or use `PYTHONPATH=src`. CLI: `ns-velocity --point .1 0 .1 .5`. Export grids with `ns-velocity --export artifacts/visual/velocity_api`.
+`velocity(x,y,z,t)` returns Cartesian components `[u,v,w]` and supports NumPy broadcasting. The default candidate is versioned and can be saved/reloaded through `Eq45SupportedDeliveryField`:
 
-See [velocity API and coordinate contract](docs/VELOCITY_API.md), [saved grid metadata](artifacts/visual/velocity_api/metadata.json), and [active visual-delivery tasks](docs/SCHEDULED_AGENT_TASKS.md). This is the current nonzero candidate field: correspondence to the exact OpenAI visualization remains unverified, and the recorded PDE acceptance is still failed.
+```python
+from openai_ns_reconstruction.eq45_supported_delivery import (
+    Eq45SupportedDeliveryField,
+    default_field,
+)
+
+field = default_field()
+field.save_candidate("candidate.json")
+reloaded = Eq45SupportedDeliveryField.load_candidate("candidate.json")
+u, v, w = reloaded.velocity(0.1, 0.0, 0.1, 0.5)
+```
+
+Install with `python -m pip install -e .`, or use `PYTHONPATH=src`. Export the active candidate plus reproducible Python/MATLAB grid samples with:
+
+```sh
+python -m openai_ns_reconstruction.eq45_export_bundle --output artifacts/delivery/eq45_supported
+```
+
+See [Eq45 delivery API](docs/EQ45_DELIVERY_API.md), [current project state](project_status.json), and [active visual-delivery tasks](docs/SCHEDULED_AGENT_TASKS.md).
+
+### Legacy compatibility surface
+
+`openai_ns_reconstruction.velocity_components:velocity` and the `ns-velocity` CLI remain available for older `coupled_velocity_v1` workflows. They are **not** the current canonical Eq45 candidate and their output must not be used as evidence for the Eq45 candidate identity, PDE validation, or OpenAI-field correspondence.
+
+The current Eq45 delivery is a nonzero callable/exportable velocity candidate. `velocity_export_ready=true` does not imply `visualization_ready`, `visual_correspondence_verified`, `pde_validated`, `paper_exact`, `openai_field_identified`, or a blow-up proof.
 
 ---
 
