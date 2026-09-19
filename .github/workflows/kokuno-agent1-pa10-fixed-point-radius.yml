@@ -34,7 +34,7 @@ jobs:
           python -m pytest -q -W error \
             tests/test_constrained_kokuno_pa10_selected_profile_norm.py \
             tests/test_constrained_kokuno_pa10_fixed_point_radius.py
-      - name: Generate conditional fixed-point radius receipt
+      - name: Generate conditional fixed-point theorem receipt
         run: |
           python - <<'PY'
           import json
@@ -45,6 +45,8 @@ jobs:
           report = gate.to_payload()
           report["diagnostics"] = {
               "radius_for_M_eq_1": gate.radius_for_M(1.0),
+              "source_threshold_for_M_eq_K_eq_1": gate.threshold_for_MK(1.0, 1.0),
+              "per_constant_threshold_budget": gate.per_constant_threshold_budget,
               "M_budget_for_radius_1e-6": gate.M_budget_for_radius(1.0e-6),
           }
           out = Path("artifacts/kokuno_agent1/pa10_fixed_point_radius/report.json")
@@ -52,6 +54,8 @@ jobs:
           out.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
           print("selected_Lambda=", gate.selected_lambda)
           print("radius_for_M_eq_1=", report["diagnostics"]["radius_for_M_eq_1"])
+          print("threshold_for_M_eq_K_eq_1=", report["diagnostics"]["source_threshold_for_M_eq_K_eq_1"])
+          print("per_constant_threshold_budget=", report["diagnostics"]["per_constant_threshold_budget"])
           print("M_budget_for_radius_1e-6=", report["diagnostics"]["M_budget_for_radius_1e-6"])
           print("receipt_sha256=", report["sha256"])
           PY
@@ -62,13 +66,20 @@ jobs:
           from pathlib import Path
 
           report = json.loads(Path("artifacts/kokuno_agent1/pa10_fixed_point_radius/report.json").read_text())
+          selected = report["selected_execution"]
           truth = report["truth_boundary"]
-          assert report["selected_execution"]["operator_constant_M_input"] is None
-          assert report["selected_execution"]["conditional_fixed_point_radius_M_over_Lambda"] is None
+          assert selected["operator_constant_M_input"] is None
+          assert selected["operator_constant_K_input"] is None
+          assert selected["conditional_source_Lambda_threshold"] is None
+          assert selected["conditional_selected_Lambda_passes_threshold"] is None
+          assert selected["conditional_fixed_point_radius_M_over_Lambda"] is None
           assert report["diagnostics"]["radius_for_M_eq_1"] > 0.0
+          assert report["diagnostics"]["source_threshold_for_M_eq_K_eq_1"] == 2.0
+          assert truth["source_fixed_point_threshold_formula_executable"] is True
           assert truth["source_fixed_point_radius_formula_executable"] is True
           assert truth["selected_lambda_is_source_existential_threshold"] is False
           assert truth["source_operator_constant_M_machine_bound"] is False
+          assert truth["source_operator_constant_K_machine_bound"] is False
           assert truth["source_contraction_invariant_ball_machine_verified"] is False
           assert truth["source_contraction_factor_machine_verified"] is False
           assert truth["source_fixed_point_distance_machine_bound"] is False
