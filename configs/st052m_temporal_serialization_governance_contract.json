@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "task_id": "CR002-ST052M-TEMPORAL-SERIALIZATION-SCOPE-091",
+  "scope": "Govern the newly integrated ST052-M linear temporal transform spec serialization without relabelling transform metadata as a complete saved velocity candidate.",
+  "integration_base": "0ebfd73d7803c4cec6df7f72211bf27ac9ac508f",
+  "live_temporal_transform": {
+    "module": "openai_ns_reconstruction.st052_linear_temporal_transform",
+    "adapter": "St052LinearTemporalAdapter",
+    "transform_id": "st052m_local_swirl_energy_linear_temporal_v1",
+    "transform_spec_sha256": "003ca8434ae9ec59ced410c4bd5204abe24a40ba8d5edde5d31ec132a5d4f791",
+    "static_transform_spec_sha256": "470103b68fd5ccece5d43d054711c894e40e4cb2f7ce890d52d04c4623bf7c25",
+    "parent_candidate_id": "ST052-M",
+    "parent_source_head": "b3b8bfdbe1077f9ec967d158602951997d81e17d",
+    "source_temporal_pr": 587,
+    "source_temporal_head": "0b93819095f6c8576a7571bdc2d2fbef4154944d",
+    "time_law": "g(t)=2*(t-0.25); tau(t)=0.05*g(t); beta(t)=0.08837490297155456*g(t)",
+    "time_interval": [0.25, 0.75],
+    "spec_save_load_ready": true,
+    "spec_roundtrip_scope": "temporal_transform_metadata_only",
+    "base_velocity_serialized": false,
+    "parent_artifact_sha_bound": false,
+    "composite_candidate_sha_exists": false,
+    "complete_candidate_save_load_ready": false,
+    "experimental_velocity_export_ready": false
+  },
+  "identity_semantics": {
+    "transform_spec_sha_is_complete_candidate_sha": false,
+    "spec_save_load_is_complete_candidate_save_load": false,
+    "parent_metadata_strings_authenticate_parent_callable": false,
+    "static_transform_binding_authenticates_st052m_parent": false,
+    "endpoint_equivalence_defines_interior_time_field": false,
+    "temporal_transform_kernel_materialized": true,
+    "complete_temporal_child_materialized": false
+  },
+  "inherited_governance": {
+    "parent_identity_binding_pr": 602,
+    "parent_identity_rule": "A deterministic materialized ST052-M parent evaluator with immutable artifact/candidate identity must be bound beyond caller-supplied candidate/source strings.",
+    "temporal_semantics_pr": 592,
+    "temporal_semantics_rule": "The time law is part of candidate identity and its chain-rule time derivative prevents inheritance of static/parent PDE receipts."
+  },
+  "requirements_before_temporal_child_export_ready": [
+    "materialize deterministic ST052-M parent evaluator",
+    "assign immutable parent artifact or candidate SHA and bind it at runtime",
+    "compose parent identity, static transform identity, and temporal transform identity into a versioned child manifest",
+    "assign a complete child candidate ID and SHA",
+    "save and reload the complete child so the same parent plus transforms are reconstructed without an externally supplied unauthenticated callable",
+    "replay the unified velocity(x,y,z,t) API after reload and verify finite pointwise equality",
+    "keep visual correspondence and PDE validation as independent claim states"
+  ],
+  "canonical_delivery": {
+    "candidate_family": "eq45_supported_velocity_candidate_v1",
+    "candidate_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+    "velocity_api": "openai_ns_reconstruction.eq45_supported_delivery:velocity",
+    "velocity_export_ready": true,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "source_classification": [
+    {
+      "item": "callable and saveable/loadable velocity(x,y,z,t)->[u,v,w] delivery",
+      "classification": "user_requirement",
+      "source": "docs/PROJECT_GOAL.md"
+    },
+    {
+      "item": "qualitative observable structure of the published OpenAI velocity-field visualization",
+      "classification": "public_source_fact",
+      "source": "docs/VISUAL_TARGET.md"
+    },
+    {
+      "item": "ST052-M local-swirl transform and linear temporal activation, including serialization layout",
+      "classification": "autonomous_design",
+      "source": "repository PRs #559, #587 and integration commit 0ebfd73d7803c4cec6df7f72211bf27ac9ac508f"
+    },
+    {
+      "item": "exact OpenAI numerical field, hidden coefficients, exact frame/time map, camera and trajectory seeds",
+      "classification": "pending_unknown",
+      "source": "docs/VISUAL_TARGET.md"
+    }
+  ],
+  "cr001_nonmutation": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "force_mode": "restricted_two_parameter_family",
+    "force_parameter_bounds": {"a": [0.0, 10.0], "c": [0.0, 10.0]},
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "divergence_max": 1e-05,
+    "divergence_L2": 1e-05,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001
+  },
+  "truth_boundary": [
+    "A transform-spec checksum identifies only that transform specification, not the externally supplied parent field or a complete velocity candidate.",
+    "Saving and loading the temporal spec does not serialize the ST052-M parent evaluator and therefore is not complete candidate save/load.",
+    "A callable adapter around an externally injected parent may be useful before the complete child is versioned; this does not make that child velocity_export_ready.",
+    "PDE failure or pending PDE work does not block a future honestly labelled complete callable/save-load velocity delivery.",
+    "Target-free morphology or fixed-render evidence does not establish visual_correspondence_verified.",
+    "Neither the ST052-M transform route nor canonical Eq45 is the exact OpenAI numerical field without independent public evidence."
+  ]
+}
