@@ -1,0 +1,97 @@
+name: kokuno-agent1-pa10-pressure-ball-bounds
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a1-pa10-pressure-ball-048
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent1-pa10-pressure-ball-bounds-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pressure-ball-bounds:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile
+        run: |
+          python -m compileall -q \
+            src/openai_ns_reconstruction/kokuno_pa10_operator_primitives.py \
+            src/openai_ns_reconstruction/kokuno_pa10_remainder_ball_bounds.py \
+            src/openai_ns_reconstruction/kokuno_pa10_pressure_ball_bounds.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_pa10_operator_primitives.py \
+            tests/test_constrained_kokuno_pa10_remainder_ball_bounds.py \
+            tests/test_constrained_kokuno_pa10_pressure_ball_bounds.py
+      - name: Generate exact-head pressure-ball receipt
+        run: |
+          python -W error -m openai_ns_reconstruction.kokuno_pa10_pressure_ball_bounds \
+            --output artifacts/kokuno_agent1/pa10_pressure_ball_bounds/report.json
+      - name: Bind exact head and validate immutable truth boundary
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          import math
+          from pathlib import Path
+          import subprocess
+
+          path = Path('artifacts/kokuno_agent1/pa10_pressure_ball_bounds/report.json')
+          payload = json.loads(path.read_text())
+          payload['exact_head'] = subprocess.check_output(
+              ['git', 'rev-parse', 'HEAD'], text=True
+          ).strip()
+          raw = json.dumps(payload, indent=2, sort_keys=True) + '\n'
+          path.write_text(raw)
+
+          truth = payload['truth_boundary']
+          assert truth['source_pressure_operator_algebra_executable'] is True
+          assert truth['conditional_pressure_to_R1_R2_bridge_executable'] is True
+          assert truth['diagnostic_inputs_are_source_bounds'] is False
+          assert truth['source_rho_machine_bound'] is False
+          assert truth['source_g_coefficient_norm_machine_bound'] is False
+          assert truth['source_pressure_radius_one_ball_norm_machine_bound'] is False
+          assert truth['source_operator_constant_M_machine_bound'] is False
+          assert truth['source_operator_constant_K_machine_bound'] is False
+          assert truth['global_pressure_matched'] is False
+          assert truth['global_leading_profile_reconstructed'] is False
+          assert payload['heldout_ns_residual_assessed'] is False
+          assert payload['pde_validated'] is False
+
+          pressure = payload['conditional_pressure_bounds']
+          for name in ('p', 'p_eta', 'Y_p_Y'):
+              assert pressure[name]['norm'] > 0.0
+              assert pressure[name]['lipschitz'] > 0.0
+              assert math.isfinite(pressure[name]['norm'])
+              assert math.isfinite(pressure[name]['lipschitz'])
+          assert pressure['p_eta']['norm'] > pressure['p']['norm']
+
+          remainder = payload['conditional_remainder_totals_after_pressure_injection']
+          assert remainder['R1']['norm'] > 0.0
+          assert remainder['R2']['norm'] > 0.0
+          assert math.isfinite(remainder['R1']['norm'])
+          assert math.isfinite(remainder['R2']['norm'])
+
+          print('artifact_sha256=', hashlib.sha256(raw.encode()).hexdigest())
+          print('receipt_sha256=', payload['receipt_sha256'])
+          print('operator_factors=', payload['derived_operator_factors'])
+          print('conditional_pressure_bounds=', pressure)
+          print('conditional_remainder_totals=', remainder)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-pa10-pressure-ball-bounds-v1
+          path: artifacts/kokuno_agent1/pa10_pressure_ball_bounds/report.json
