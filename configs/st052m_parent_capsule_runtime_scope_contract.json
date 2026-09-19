@@ -1,0 +1,100 @@
+{
+  "schema": "st052m-parent-capsule-runtime-scope-governance/v1",
+  "task": "CR002",
+  "base_integration_head": "c76402986533346bc200234e8e27dd2f05ba8ccd",
+  "subject": {
+    "candidate_id": "ST052-M",
+    "module": "src/openai_ns_reconstruction/st052_parent_capsule.py",
+    "workflow": ".github/workflows/agent8-st052-parent-capsule-live.yml",
+    "source_pr": 508,
+    "source_head": "b3b8bfdbe1077f9ec967d158602951997d81e17d",
+    "source_recipe_path": "experiments/root_st052/recipe.json",
+    "source_recipe_git_blob_sha1": "e30c769052379f72afeee46ca264482884cc5ac7"
+  },
+  "classification": {
+    "user_requirement": [
+      "deliver an explicit callable and saveable/loadable 3D time-varying velocity field through velocity(x,y,z,t)->[u,v,w]"
+    ],
+    "public_source_fact": [
+      "the public OpenAI velocity-field visualization is only a qualitative correspondence target unless separately quantified"
+    ],
+    "autonomous_design": [
+      "ST052-M replay capsule packaging, live transform adapters, and repository delivery-accounting policy"
+    ],
+    "pending_unknown": [
+      "exact hidden OpenAI field parameters",
+      "paper-exact identity",
+      "exact OpenAI frame/time/camera/seed mapping"
+    ]
+  },
+  "observed_live_scope": {
+    "source_recipe_blob_verified_inside_builder": true,
+    "source_head_verified_inside_builder": false,
+    "source_head_enforced_by_exact_checkout_workflow": true,
+    "candidate_file_emitted_by_workflow": true,
+    "candidate_file_committed_to_live_repository": false,
+    "package_level_parent_velocity_loader_exposed": false,
+    "package_level_parent_velocity_api_exposed": false,
+    "parent_replay_manifest_builder_exposed": true,
+    "whole_child_save_load_ready": false,
+    "experimental_st052_velocity_export_ready": false
+  },
+  "evidence_scope_rules": {
+    "workflow_exact_source_checkout_plus_recipe_blob_check": "supports exact-source replay provenance for that workflow execution",
+    "builder_manifest_alone": "does not authenticate the source_root Git HEAD and must not be treated as a standalone source-head certificate",
+    "uploaded_actions_candidate": "is a reproducible workflow artifact, not by itself a live package-level parent evaluator or whole-child save/load capsule",
+    "candidate_validation_linkage": "governed separately by open PR #622; this contract does not duplicate that seam",
+    "pde_failure": "does not block honest callable velocity delivery, but no parent/static/temporal PDE receipt may be transferred to a transformed child without fresh validation"
+  },
+  "promotion_prerequisites": {
+    "parent_runtime_ready_requires": [
+      "deterministic live package path that reconstructs or loads the authenticated ST052-M parent without an unauthenticated external callable",
+      "immutable parent artifact/candidate identity bound to the evaluator",
+      "finite deterministic velocity replay after load"
+    ],
+    "whole_child_velocity_export_ready_requires": [
+      "authenticated parent runtime identity",
+      "static transform identity",
+      "temporal time-law identity when temporal child is selected",
+      "composite versioned child candidate ID/SHA",
+      "whole-child save/load replay",
+      "unified velocity(x,y,z,t) replay after reload"
+    ]
+  },
+  "truth_states": {
+    "parent_exact_source_replay_workflow_integrated": true,
+    "parent_manifest_builder_integrated": true,
+    "parent_runtime_ready": false,
+    "whole_child_save_load_ready": false,
+    "production_candidate_selected": false,
+    "experimental_st052_velocity_export_ready": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "cr001_nonmutation": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_parameter_bounds": {"a": [0.0, 10.0], "c": [0.0, 10.0]},
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "divergence_max": 1e-05,
+    "divergence_L2": 1e-05,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001,
+    "free_residual_defined_forcing_allowed": false,
+    "amplitude_collapse_success_allowed": false
+  }
+}
