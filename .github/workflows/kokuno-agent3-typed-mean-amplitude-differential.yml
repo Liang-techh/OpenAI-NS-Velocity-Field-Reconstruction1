@@ -1,0 +1,118 @@
+name: kokuno-agent3-typed-mean-amplitude-differential
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a3-typed-amplitude-differential-056
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_same_cycle_defect_contract.py"
+      - "src/openai_ns_reconstruction/kokuno_typed_mean_radial_stress.py"
+      - "src/openai_ns_reconstruction/kokuno_typed_mean_finite_head_debt.py"
+      - "src/openai_ns_reconstruction/kokuno_typed_mean_inverse_rhs.py"
+      - "src/openai_ns_reconstruction/kokuno_typed_mean_reference_inverse.py"
+      - "src/openai_ns_reconstruction/kokuno_typed_mean_amplitude_differential.py"
+      - "tests/test_kokuno_typed_mean_reference_inverse.py"
+      - "tests/test_kokuno_typed_mean_amplitude_differential.py"
+      - ".github/workflows/kokuno-agent3-typed-mean-amplitude-differential.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: kokuno-agent3-typed-mean-amplitude-differential-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify-typed-mean-amplitude-differential:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+      - name: Compile typed actual-defect to amplitude-differential chain
+        run: >-
+          python -W error -m py_compile
+          src/openai_ns_reconstruction/kokuno_same_cycle_defect_contract.py
+          src/openai_ns_reconstruction/kokuno_typed_mean_radial_stress.py
+          src/openai_ns_reconstruction/kokuno_typed_mean_finite_head_debt.py
+          src/openai_ns_reconstruction/kokuno_typed_mean_inverse_rhs.py
+          src/openai_ns_reconstruction/kokuno_typed_mean_reference_inverse.py
+          src/openai_ns_reconstruction/kokuno_typed_mean_amplitude_differential.py
+      - name: Run focused warnings-as-errors tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_kokuno_typed_mean_inverse_rhs.py
+          tests/test_kokuno_typed_mean_reference_inverse.py
+          tests/test_kokuno_typed_mean_amplitude_differential.py
+      - name: Emit deterministic typed amplitude-differential receipt
+        run: >-
+          python -W error -m openai_ns_reconstruction.kokuno_typed_mean_amplitude_differential
+          --output artifacts/kokuno_agent3_typed_mean_amplitude_differential_v1.json
+      - name: Check no-surrogate amplitude-differential truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r = json.loads(Path('artifacts/kokuno_agent3_typed_mean_amplitude_differential_v1.json').read_text())
+          assert r['schema'] == 'kokuno-a3-typed-mean-amplitude-differential-v1'
+          assert r['provenance']['parent_agent3_pr'] == 703
+          assert r['provenance']['parent_agent3_head'] == '56957cd51c7e6638608f28f8fa21df590194dc84'
+          assert r['provenance']['source_corrected_reader_commit'] == '143f6773feb424ad9ed3a8d116653200f20346b7'
+          q = r['analytic_regression']['evaluation']
+          assert q['base_amplitudes']['source_reference_base_amplitudes_certified'] is False
+          assert q['reference_inverse']['reference_operator']['source_reference_operator_certified'] is False
+          assert q['reference_inverse']['inverse_rhs']['reference_scale']['source_reference_scale_certified'] is False
+          d = q['amplitude_differential']
+          assert d['delta_a_vector_rms'] > 0.0
+          assert d['multiplication_back_closure_max_abs'] <= 1e-14
+          assert d['maximum_relative_differential'] > 0.0
+          assert d['full_step_positivity_is_diagnostic_not_admission_gate'] is True
+          b = r['truth_boundary']
+          assert b['raw_same_cycle_providers_required'] is True
+          assert b['caller_supplied_delta_y_allowed'] is False
+          assert b['caller_supplied_delta_a_allowed'] is False
+          assert b['provenance_bearing_positive_base_amplitudes_required'] is True
+          assert b['forbidden_public_parameters_absent'] is True
+          assert b['typed_amplitude_differential_executable'] is True
+          assert b['source_base_amplitudes_materialized_for_full_candidate'] is False
+          assert b['real_candidate_delta_amplitudes_materialized'] is False
+          assert b['public_velocity_correction_materialized'] is False
+          assert b['agent2_complete_curl_reimplemented'] is False
+          assert b['real_full_candidate_defect_consumed'] is False
+          assert b['heldout_normalized_ns_residual_assessed'] is False
+          assert b['residual_reduction_claimed'] is False
+          assert b['pde_validated'] is False
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent3-typed-mean-amplitude-differential-v1
+          path: artifacts/kokuno_agent3_typed_mean_amplitude_differential_v1.json
+          if-no-files-found: error
+      - name: Comment exact amplitude-differential receipt on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const r = JSON.parse(fs.readFileSync('artifacts/kokuno_agent3_typed_mean_amplitude_differential_v1.json', 'utf8'));
+            const q = r.analytic_regression.evaluation;
+            const d = q.amplitude_differential;
+            const lines = [
+              '### Kokuno Agent 3 exact-head typed delta_y -> delta_a seam',
+              '',
+              `signed delta_a vector RMS: **${d.delta_a_vector_rms}**`,
+              `2 a delta_a -> delta_y closure max abs: **${d.multiplication_back_closure_max_abs}**`,
+              `maximum |delta_a|/a diagnostic: **${d.maximum_relative_differential}**`,
+              `minimum a+delta_a diagnostic: **${d.minimum_full_step_amplitude}**`,
+              `full-step positive everywhere (diagnostic only): **${d.full_step_positive_everywhere}**`,
+              '',
+              'This receipt recomputes the nonzero actual defect from raw same-cycle fields. Its epsilon, H_ref and base amplitudes are analytic regression witnesses explicitly marked non-source-certified. It does not materialize Agent-2 complete curls, a public correction velocity, a real full-candidate finite cycle, held-out normalized NS residual reduction, or PDE validation.'
+            ];
+            await github.rest.issues.createComment({owner: context.repo.owner, repo: context.repo.repo, issue_number: context.issue.number, body: lines.join('\n')});
