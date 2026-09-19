@@ -221,7 +221,10 @@ def materialize_typed_mean_reference_inverse(
         raise ArithmeticError("reference operator singular values are invalid")
     condition_numbers = singular_values[:, 0] / singular_values[:, 1]
 
-    delta_y = np.linalg.solve(matrices, target)
+    # NumPy >=2 no longer treats a two-dimensional RHS with shape (N, M)
+    # as a stack of N vectors. Make the singleton K axis explicit so each
+    # radial 2x2 system receives one 2-vector, then drop only that axis.
+    delta_y = np.linalg.solve(matrices, target[..., np.newaxis])[..., 0]
     if not np.all(np.isfinite(delta_y)):
         raise ArithmeticError("signed reference inverse produced non-finite coordinates")
     reconstructed = np.einsum("nij,nj->ni", matrices, delta_y)
