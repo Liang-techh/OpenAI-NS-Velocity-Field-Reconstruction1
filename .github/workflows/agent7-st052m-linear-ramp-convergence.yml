@@ -1,0 +1,94 @@
+name: agent7-st052m-linear-ramp-convergence
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_linear_ramp_convergence.py'
+      - 'experiments/root_st052/test_agent7_st052m_linear_ramp_convergence.py'
+      - '.github/workflows/agent7-st052m-linear-ramp-convergence.yml'
+permissions:
+  contents: read
+  pull-requests: write
+jobs:
+  linear-ramp-convergence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Focused contract tests
+        run: python -m pytest -q -W error experiments/root_st052/test_agent7_st052m_linear_ramp_convergence.py
+      - name: Execute preregistered time-evolution convergence audit
+        run: |
+          mkdir -p outputs/agent7-st052m-linear-ramp-convergence
+          python experiments/root_st052/agent7_st052m_linear_ramp_convergence.py \
+            --out outputs/agent7-st052m-linear-ramp-convergence/report.json
+      - name: Verify frozen identity and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-linear-ramp-convergence/report.json').read_text())
+          assert r['prereg_issue']==593
+          assert r['source_temporal_pr']==587
+          assert r['source_temporal_head']=='0b93819095f6c8576a7571bdc2d2fbef4154944d'
+          assert r['source_static_pr']==559
+          assert r['source_static_head']=='39b106ad8cb8df2064cabead3a12682089575e74'
+          assert r['frozen_transform']['redistribution_gain']==0.05
+          assert abs(r['frozen_transform']['shoulder_beta_static_endpoint']-0.08837490297155456)<2e-10
+          assert r['frozen_transform']['post_transform_common_scale']==1.0
+          assert r['frozen_transform']['parameter_scan_performed'] is False
+          assert r['grid_levels']==[25,33,41]
+          assert r['reference_times']==[0.25,0.375,0.5,0.625,0.75]
+          assert r['basis_changed'] is False
+          assert r['canonical_velocity_changed'] is False
+          assert r['saved_velocity_changed'] is False
+          assert r['held_out_pde_residual_evaluated'] is False
+          assert r['visualization_ready'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          print('clean=',r['clean_linear_ramp_morphology_convergence'])
+          print('late_static_identity_abs_max=',r['late_static_identity_abs_max'])
+          for level in r['grid_levels']:
+              for row in r['levels'][str(level)]:
+                  print('morphology',level,row['time'],row['activation'],row['metrics']['relative'])
+          print('fine_drifts=',r['fine_drifts'])
+          print('finest_steps=',r['finest_adjacent_effect_steps'])
+          PY
+      - name: Publish compact numerical receipt
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent7-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-linear-ramp-convergence/report.json').read_text())
+          print('<!-- agent7-st052m-linear-ramp-convergence-receipt -->')
+          print('**Agent 7 numerical receipt (issue #593; frozen #587 linear-ramp time evolution):**')
+          print()
+          print(f"- clean resolution-stable time evolution: `{r['clean_linear_ramp_morphology_convergence']}`")
+          print(f"- late static identity max abs: `{r['late_static_identity_abs_max']:.3e}`")
+          for row in r['levels']['41']:
+              q=row['metrics']['relative']
+              print(f"- 41^3 t={row['time']:.3f}, g={row['activation']:.3f}: aspect `{100*q['full_aspect_ratio']:+.4f}%`, tip radial `{100*q['smooth_tip_radial_rms']:+.4f}%`, center radial `{100*q['central_radial_rms']:+.4f}%`, tip-enstrophy retention `{q['tip_enstrophy_fraction_retention']:.6f}`")
+          for d in r['fine_drifts']:
+              print(f"- 33^3->41^3 t={d['time']:.3f}: aspect drift `{100*d['aspect_effect_abs_drift']:.4f} pp`, tip drift `{100*d['tip_radial_effect_abs_drift']:.4f} pp`, pass `{d['passed']}`")
+          print()
+          print('Truth boundary: target-free time-evolution / expression-capacity evidence only. No velocity/basis/coefficient change, image-derived numeric target, pressure/forcing refit, parent PDE receipt transfer, production selection, visual-correspondence verification, or exact-field claim.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-receipt.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-linear-ramp-convergence
+          path: outputs/agent7-st052m-linear-ramp-convergence/
+          if-no-files-found: error
+# Times, grids, observables and gates were frozen in issue #593 before evaluation.
