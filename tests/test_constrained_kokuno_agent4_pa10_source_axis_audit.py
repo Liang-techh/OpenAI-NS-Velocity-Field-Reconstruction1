@@ -2,10 +2,10 @@ import inspect
 
 from openai_ns_reconstruction.kokuno_agent4_pa10_source_axis_audit import (
     AGENT1_HEAD,
-    OFFGRID_CELL_DISTANCE_FLOOR,
     PRIOR_A4_HEAD,
     PRIOR_FAILED_WORKFLOW,
     REAL_LEVELS,
+    TARGETED_MAX_SHRINK_LEVELS,
     TARGETED_OFFGRID_COUNT,
     _point_satisfies_pa8_separation,
     _targeted_offgrid_region,
@@ -35,10 +35,12 @@ def test_targeted_fresh_offgrid_cloud_is_nonvacuous_and_preserves_pa8():
     assert targeted["targeted_offgrid_PA8_passed"] is True
     assert K["selected_count"] == TARGETED_OFFGRID_COUNT
     assert Hsmall["selected_count"] == TARGETED_OFFGRID_COUNT
+    assert K["selected_shrink_level"] < TARGETED_MAX_SHRINK_LEVELS
+    assert Hsmall["selected_shrink_level"] < TARGETED_MAX_SHRINK_LEVELS
     assert K["all_points_strictly_off_dense_grid"] is True
     assert Hsmall["all_points_strictly_off_dense_grid"] is True
-    assert K["minimum_distance_from_dense_grid_in_cells"] > OFFGRID_CELL_DISTANCE_FLOOR
-    assert Hsmall["minimum_distance_from_dense_grid_in_cells"] > OFFGRID_CELL_DISTANCE_FLOOR
+    assert K["minimum_absolute_distance_from_dense_grid"] > 0.0
+    assert Hsmall["minimum_absolute_distance_from_dense_grid"] > 0.0
     assert K["max_abs_Z"] <= report["public_parameters"]["delta_star"]
     assert K["min_abs_H"] > 10.0 * report["public_parameters"]["sigma_star"]
     assert K["min_chi"] > 0.99
@@ -55,6 +57,8 @@ def test_protocol_repair_records_old_sampling_failure_without_threshold_retuning
     assert repair["source_parameters_changed"] is False
     assert repair["scientific_thresholds_changed"] is False
     assert repair["final_project_gates_changed"] is False
+    assert report["frozen_protocol"]["targeted_max_shrink_levels"] == 128
+    assert "nearest frozen dense-grid node" in report["frozen_protocol"]["offgrid_definition"]
     gates = report["frozen_protocol"]["final_project_gates_unchanged"]
     assert gates == {
         "normalized_momentum_max": 1.0e-3,
