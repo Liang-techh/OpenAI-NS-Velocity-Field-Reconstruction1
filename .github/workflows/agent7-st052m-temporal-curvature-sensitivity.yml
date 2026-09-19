@@ -1,0 +1,98 @@
+name: agent7-st052m-temporal-curvature-sensitivity
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_temporal_curvature_sensitivity.py'
+      - 'experiments/root_st052/test_agent7_st052m_temporal_curvature_sensitivity.py'
+      - '.github/workflows/agent7-st052m-temporal-curvature-sensitivity.yml'
+permissions:
+  contents: read
+  pull-requests: write
+jobs:
+  temporal-curvature-sensitivity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Focused contract tests
+        run: python -m pytest -q -W error experiments/root_st052/test_agent7_st052m_temporal_curvature_sensitivity.py
+      - name: Execute preregistered endpoint-zero curvature screen
+        run: |
+          mkdir -p outputs/agent7-st052m-temporal-curvature-sensitivity
+          python experiments/root_st052/agent7_st052m_temporal_curvature_sensitivity.py \
+            --out outputs/agent7-st052m-temporal-curvature-sensitivity/report.json
+      - name: Verify frozen identity and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-temporal-curvature-sensitivity/report.json').read_text())
+          assert r['prereg_issue']==603
+          assert r['source_temporal_pr']==587
+          assert r['source_temporal_head']=='0b93819095f6c8576a7571bdc2d2fbef4154944d'
+          assert r['source_static_pr']==559
+          assert r['source_static_head']=='39b106ad8cb8df2064cabead3a12682089575e74'
+          assert r['frozen_screen']['epsilon']==0.02
+          assert r['frozen_screen']['lambda_values']==[-0.02,0.02]
+          assert r['frozen_screen']['redistribution_gain']==0.05
+          assert abs(r['frozen_screen']['shoulder_beta_static_endpoint']-0.08837490297155456)<2e-10
+          assert r['frozen_screen']['post_transform_common_scale']==1.0
+          assert r['frozen_screen']['parameter_scan_performed'] is False
+          assert r['candidate_basis_changed'] is False
+          assert r['canonical_velocity_changed'] is False
+          assert r['saved_velocity_changed'] is False
+          assert r['held_out_pde_residual_evaluated'] is False
+          assert r['visualization_ready'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          print('growth_justified=',r['temporal_basis_growth_justified'])
+          print('pareto=',r['local_pareto_rule'])
+          print('oriented=',r['oriented_desirability_sensitivities'])
+          print('response=',r['velocity_response_diagnostic'])
+          print('morphology=',r['morphology_relative_to_control'])
+          print('paths=',r['path_relative_to_control'])
+          print('structure=',r['structure_preflight'])
+          PY
+      - name: Publish compact numerical receipt
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent7-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-temporal-curvature-sensitivity/report.json').read_text())
+          print('<!-- agent7-st052m-temporal-curvature-sensitivity-receipt -->')
+          print('**Agent 7 numerical receipt (issue #603; endpoint-zero temporal-curvature sensitivity):**')
+          print()
+          print(f"- target-free temporal basis growth justified: `{r['temporal_basis_growth_justified']}`")
+          print(f"- local Pareto direction: `{r['local_pareto_rule']['target_free_local_pareto_direction']}`")
+          print(f"- oriented central sensitivities: `{r['oriented_desirability_sensitivities']}`")
+          q=r['velocity_response_diagnostic']
+          print(f"- velocity response rank `{q['rank']}`, condition `{q['condition_number']:.6f}`, cosine `{q['column_cosine']:.6f}`")
+          m=r['morphology_relative_to_control']
+          for label in ('minus','linear','plus'):
+              print(f"- morphology {label}: aspect `{100*m[label]['full_aspect_ratio']:+.4f}%`, tip radial `{100*m[label]['smooth_tip_radial_rms']:+.4f}%`")
+          p=r['path_relative_to_control']
+          for label in ('minus','linear','plus'):
+              print(f"- paths {label}: turns `{100*p[label]['mean_absolute_turns_relative']:+.4f}%`, axial-pair `{100*p[label]['mean_pair_axial_separation_change_relative']:+.4f}%`")
+          print()
+          print('Truth boundary: local expression-capacity/sensitivity evidence only. No basis promotion, velocity change, image-derived target, pressure/forcing refit, PDE receipt transfer, production selection, visual-correspondence verification, or exact-field claim.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-receipt.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-temporal-curvature-sensitivity
+          path: outputs/agent7-st052m-temporal-curvature-sensitivity/
+          if-no-files-found: error
+# The perturbation, epsilon, observables and local Pareto rule were frozen in issue #603 before evaluation.
