@@ -32,15 +32,26 @@ def test_selected_combined_profile_is_vectorized_finite_and_nontrivial() -> None
     assert np.max(values) - np.min(values) > 1.0e10
 
 
-def test_stable_formula_matches_source_rescaling_at_X0_without_claiming_fixed_point() -> None:
+def test_stable_formula_avoids_logC_logF_cancellation_at_X0() -> None:
     model = _fast()
     eta = np.asarray([-1.0, -0.5, 0.0, 0.5, 1.0])
     center = model.seed.profile_values_scaled(np.full(eta.shape, 4.0), eta)
-    # For the selected real-axis normalization, log(phi)=log(C)+log(F).
+    # For the selected real-axis normalization, log(phi)=log(C)+log(F), but
+    # that representation catastrophically cancels the O(1) center value at
+    # eta=0 because log(C) and log(F) are both O(1e27).  The direct source
+    # rescaling used by combined_log_profile must retain that information.
     replay = model.seed.log_C_real_axis + center["log_F"]
     stable = model.combined_log_profile(eta)
-    scale = np.maximum(1.0, np.abs(stable))
-    assert np.all(np.abs(replay - stable) / scale < 5.0e-15)
+
+    large = np.abs(stable) > 1.0e20
+    scale = np.abs(stable[large])
+    assert np.all(np.abs(replay[large] - stable[large]) / scale < 5.0e-15)
+
+    zero_index = 2
+    assert replay[zero_index] == 0.0
+    assert stable[zero_index] != 0.0
+    expected_zero = np.log(model.seed.f0(4.0 * model.seed.chi(np.asarray(0.0))))
+    assert stable[zero_index] == pytest.approx(float(expected_zero), rel=0.0, abs=1.0e-15)
 
 
 def test_analytic_eta_derivative_agrees_with_centered_difference() -> None:
@@ -86,7 +97,9 @@ def test_candidate_B0_diagnostic_consumes_explicit_engineering_inputs_only() -> 
     model = _fast()
     value = model.candidate_B0_diagnostic(M0=4.0, L0=66.0)
     profile = model.envelope["combined_profile_C0_candidate_upper_envelope"]
-    assert value > profile
+    # The additive O(1e2) correction is below one binary64 ulp at the selected
+    # O(1e27) profile scale, so equality is an expected floating-point outcome.
+    assert value >= profile
     assert np.isfinite(value)
 
 
