@@ -1,0 +1,110 @@
+name: kokuno-agent3-typed-mean-inverse-rhs
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a3-typed-inverse-rhs-054
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_same_cycle_defect_contract.py"
+      - "src/openai_ns_reconstruction/kokuno_typed_mean_radial_stress.py"
+      - "src/openai_ns_reconstruction/kokuno_typed_mean_finite_head_debt.py"
+      - "src/openai_ns_reconstruction/kokuno_typed_mean_inverse_rhs.py"
+      - "tests/test_kokuno_typed_mean_finite_head_debt.py"
+      - "tests/test_kokuno_typed_mean_inverse_rhs.py"
+      - ".github/workflows/kokuno-agent3-typed-mean-inverse-rhs.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: kokuno-agent3-typed-mean-inverse-rhs-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify-typed-mean-inverse-rhs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+      - name: Compile typed actual-defect to inverse-RHS chain
+        run: >-
+          python -W error -m py_compile
+          src/openai_ns_reconstruction/kokuno_same_cycle_defect_contract.py
+          src/openai_ns_reconstruction/kokuno_typed_mean_radial_stress.py
+          src/openai_ns_reconstruction/kokuno_typed_mean_finite_head_debt.py
+          src/openai_ns_reconstruction/kokuno_typed_mean_inverse_rhs.py
+      - name: Run focused warnings-as-errors tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_kokuno_typed_mean_finite_head_debt.py
+          tests/test_kokuno_typed_mean_inverse_rhs.py
+      - name: Emit deterministic typed inverse-RHS receipt
+        run: >-
+          python -W error -m openai_ns_reconstruction.kokuno_typed_mean_inverse_rhs
+          --output artifacts/kokuno_agent3_typed_mean_inverse_rhs_v1.json
+      - name: Check no-surrogate inverse-RHS truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r = json.loads(Path('artifacts/kokuno_agent3_typed_mean_inverse_rhs_v1.json').read_text())
+          assert r['schema'] == 'kokuno-a3-typed-mean-inverse-rhs-v1'
+          assert r['provenance']['parent_agent3_pr'] == 686
+          assert r['provenance']['parent_agent3_head'] == 'df05669aaee94cd8de2463a35c99a73c476118c1'
+          q = r['analytic_regression']['evaluation']
+          assert q['reference_scale']['source_reference_scale_certified'] is False
+          h = q['mean_inverse_rhs']
+          assert h['rhs_rms'] > 0.0
+          assert h['rhs_max_abs'] > 0.0
+          assert h['reconstruction_closure_max_abs'] <= 1e-14
+          b = r['truth_boundary']
+          assert b['raw_same_cycle_providers_required'] is True
+          assert b['naked_epsilon_public_parameter_allowed'] is False
+          assert b['provenance_bearing_reference_scale_required'] is True
+          assert b['caller_supplied_precomputed_defect_allowed'] is False
+          assert b['caller_supplied_precomputed_debt_allowed'] is False
+          assert b['caller_supplied_inverse_rhs_allowed'] is False
+          assert b['forbidden_public_parameters_absent'] is True
+          assert b['profile_level_delta_c_over_epsilon_materialized'] is True
+          assert b['formal_missing_weight_materialized'] is False
+          assert b['h_ref_materialized'] is False
+          assert b['signed_mean_inverse_solved'] is False
+          assert b['signed_mean_inverse_input_ready'] is False
+          assert b['public_velocity_correction_materialized'] is False
+          assert b['real_full_candidate_defect_consumed'] is False
+          assert b['heldout_normalized_ns_residual_assessed'] is False
+          assert b['residual_reduction_claimed'] is False
+          assert b['pde_validated'] is False
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent3-typed-mean-inverse-rhs-v1
+          path: artifacts/kokuno_agent3_typed_mean_inverse_rhs_v1.json
+          if-no-files-found: error
+      - name: Comment exact inverse-RHS receipt on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const r = JSON.parse(fs.readFileSync('artifacts/kokuno_agent3_typed_mean_inverse_rhs_v1.json', 'utf8'));
+            const q = r.analytic_regression.evaluation;
+            const h = q.mean_inverse_rhs;
+            const lines = [
+              '### Kokuno Agent 3 exact-head typed finite-head debt -> inverse RHS seam',
+              '',
+              `inverse-RHS vector RMS: **${h.rhs_rms}**`,
+              `inverse-RHS max abs: **${h.rhs_max_abs}**`,
+              `DeltaC reconstruction closure max abs: **${h.reconstruction_closure_max_abs}**`,
+              '',
+              'This receipt recomputes the nonzero actual defect from raw same-cycle fields and materializes only the profile-level DeltaC/epsilon RHS using a provenance-bearing analytic regression scale. The regression scale is explicitly not source-certified; H_ref, the signed inverse, a velocity correction, held-out normalized NS residual reduction, and PDE validation remain unclaimed.'
+            ];
+            await github.rest.issues.createComment({owner: context.repo.owner, repo: context.repo.repo, issue_number: context.issue.number, body: lines.join('\n')});
