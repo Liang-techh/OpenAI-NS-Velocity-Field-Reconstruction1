@@ -32,7 +32,8 @@ for k=1:numel(modelIDs)
     end
     assert(~isempty(m),'ns:Model','Published model missing from MAT payload.');
     assert(~m.pde_validated);
-    filename=lower(strrep(char(modelID),'-','_')) + ".csv";
+    filename=lower(strrep(char(modelID),'-','_'));
+    filename=[filename '.csv'];
     table=readmatrix(fullfile(fixtureDir,filename));
     assert(isequal(size(table),[96*numel(expectedTimes),7]),'ns:Fixture','Unexpected fixture shape.');
     assert(all(isfinite(table),'all'),'ns:Fixture','Fixture contains non-finite values.');
