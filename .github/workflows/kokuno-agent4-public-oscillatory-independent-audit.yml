@@ -52,19 +52,30 @@ jobs:
           import json
           from pathlib import Path
           r = json.loads(Path('outputs/kokuno_agent4_public_oscillatory_independent_audit.json').read_text())
-          finest = r['divergence']['rows'][-1]
+          rows = r['divergence']['rows']
+          refs = r['divergence']['relative_rms_refinement_ratios']
           cov = r['phase_mean_covariance']
-          print(f"drms={finest['relative_rms']:.6e}")
-          print(f"dmax={finest['relative_max']:.6e}")
-          print(f"rank={min(x['rank_ratio'] for x in cov['rows']):.6e}")
-          print(f"axz={r['support']['project_axial_exterior_absolute_max']:.6e}")
-          print(f"local={int(r['local_curl_covariance_preflight_passed'])}")
-          print(f"support={int(r['project_support_preflight_passed'])}")
+          support = r['support']
+          params = r['parameter_perturbation']
+          print(f"r0={rows[0]['relative_rms']:.4e}")
+          print(f"r1={rows[1]['relative_rms']:.4e}")
+          print(f"r2={rows[2]['relative_rms']:.4e}")
+          print(f"rr={min(refs):.3e}")
+          print(f"rank={min(x['rank_ratio'] for x in cov['rows']):.4e}")
+          print(f"drift={max(cov['relative_drift_to_finest']):.3e}")
+          print(f"axz={support['project_axial_exterior_absolute_max']:.4e}")
+          print(f"vrms={r['nontriviality']['heldout_velocity_rms']:.4e}")
+          print(f"hchg={min(params['h_minus_10pct_relative_change'], params['h_plus_10pct_relative_change']):.3e}")
+          print(f"mut={r['divergence_mutation']['relative_rms']:.3e}")
+          print(f"div={int(r['divergence']['local_divergence_passed'])}")
+          print(f"cov={int(cov['covariance_rank_preflight_passed'])}")
+          print(f"rad={int(support['radial_axis_support_passed'])}")
+          print(f"axial={int(support['project_axial_support_passed'])}")
           print(f"overall={int(r['public_oscillatory_preflight_passed'])}")
           PY
       - name: Upload receipt
         uses: actions/upload-artifact@v4
         with:
-          name: kokuno-a4-public-osc-drms-${{ steps.metrics.outputs.drms }}-dmax-${{ steps.metrics.outputs.dmax }}-rank-${{ steps.metrics.outputs.rank }}-axz-${{ steps.metrics.outputs.axz }}-local-${{ steps.metrics.outputs.local }}-support-${{ steps.metrics.outputs.support }}-overall-${{ steps.metrics.outputs.overall }}
+          name: k4osc-r0-${{ steps.metrics.outputs.r0 }}-r1-${{ steps.metrics.outputs.r1 }}-r2-${{ steps.metrics.outputs.r2 }}-rr-${{ steps.metrics.outputs.rr }}-rank-${{ steps.metrics.outputs.rank }}-drift-${{ steps.metrics.outputs.drift }}-axz-${{ steps.metrics.outputs.axz }}-vrms-${{ steps.metrics.outputs.vrms }}-hchg-${{ steps.metrics.outputs.hchg }}-mut-${{ steps.metrics.outputs.mut }}-div-${{ steps.metrics.outputs.div }}-cov-${{ steps.metrics.outputs.cov }}-rad-${{ steps.metrics.outputs.rad }}-axial-${{ steps.metrics.outputs.axial }}-overall-${{ steps.metrics.outputs.overall }}
           path: outputs/kokuno_agent4_public_oscillatory_independent_audit.json
           if-no-files-found: error
