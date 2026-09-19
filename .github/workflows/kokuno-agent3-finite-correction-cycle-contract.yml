@@ -1,0 +1,115 @@
+name: kokuno-agent3-finite-correction-cycle-contract
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a3-finite-cycle-audit-contract-047
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_finite_correction_cycle_contract.py"
+      - "src/openai_ns_reconstruction/kokuno_same_cycle_defect_contract.py"
+      - "tests/test_constrained_kokuno_finite_correction_cycle_contract.py"
+      - ".github/workflows/kokuno-agent3-finite-correction-cycle-contract.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: kokuno-agent3-finite-correction-cycle-contract-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify-finite-correction-cycle-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+      - name: Compile finite correction-cycle contract
+        run: >-
+          python -W error -m py_compile
+          src/openai_ns_reconstruction/kokuno_same_cycle_defect_contract.py
+          src/openai_ns_reconstruction/kokuno_finite_correction_cycle_contract.py
+      - name: Run focused warnings-as-errors tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_same_cycle_defect_contract.py
+          tests/test_constrained_kokuno_finite_correction_cycle_contract.py
+      - name: Emit deterministic finite-cycle receipt
+        run: >-
+          python -W error -m openai_ns_reconstruction.kokuno_finite_correction_cycle_contract
+          --output artifacts/kokuno_agent3_finite_correction_cycle_contract_v1.json
+      - name: Check fail-closed truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r = json.loads(Path('artifacts/kokuno_agent3_finite_correction_cycle_contract_v1.json').read_text())
+          assert r['schema'] == 'kokuno-a3-finite-correction-cycle-contract-v1'
+          assert r['provenance']['parent_agent3_head'] == '0504056a6a5c9fb61193c68c1227b83dbd0a63ea'
+          q = r['analytic_mechanics_regression']
+          assert q['finite_step_gain_guard_passed'] is True
+          assert q['correction_nontrivial'] is True
+          assert abs(q['held_in_rms_ratio'] - .5) <= 2e-10
+          assert abs(q['held_out_rms_ratio'] - .5) <= 2e-10
+          assert q['update_velocity_closure_max'] <= 2e-11
+          assert q['update_velocity_dt_closure_max'] <= 2e-11
+          b = r['truth_boundary']
+          assert b['finite_correction_cycle_mechanics_executable'] is True
+          assert b['before_after_actual_defect_recomputed_from_raw_providers'] is True
+          assert b['divergent_correction_rejected_by_admission_api'] is True
+          assert b['caller_supplied_residual_allowed'] is False
+          assert b['caller_supplied_defect_allowed'] is False
+          assert b['caller_supplied_stress_allowed'] is False
+          assert b['caller_supplied_target_allowed'] is False
+          assert b['caller_supplied_gain_allowed'] is False
+          assert b['caller_supplied_scientific_threshold_allowed'] is False
+          assert b['formal_kokuno_correction_cycle_gain_bound_claimed'] is False
+          assert b['restricted_forcing_semantics_independently_validated_here'] is False
+          assert b['real_full_candidate_defect_consumed'] is False
+          assert b['real_candidate_finite_correction_cycle_run'] is False
+          assert b['heldout_normalized_ns_residual_assessed'] is False
+          assert b['residual_reduction_claimed_for_real_candidate'] is False
+          assert b['pde_validated'] is False
+          assert b['final_normalized_momentum_gate'] == 1e-3
+          assert b['final_normalized_divergence_gate'] == 1e-5
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent3-finite-correction-cycle-contract-v1
+          path: artifacts/kokuno_agent3_finite_correction_cycle_contract_v1.json
+          if-no-files-found: error
+      - name: Comment exact finite-cycle receipt on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const r = JSON.parse(fs.readFileSync('artifacts/kokuno_agent3_finite_correction_cycle_contract_v1.json', 'utf8'));
+            const q = r.analytic_mechanics_regression;
+            const b = r.truth_boundary;
+            const lines = [
+              '### Kokuno Agent 3 exact-head finite correction-cycle contract',
+              '',
+              `analytic held-in raw-defect RMS ratio: **${q.held_in_rms_ratio}**`,
+              `analytic held-out raw-defect RMS ratio: **${q.held_out_rms_ratio}**`,
+              `correction RMS: **${q.correction_vector_rms}**`,
+              `correction divergence max: **${q.correction_divergence_max}**`,
+              `velocity update closure max: **${q.update_velocity_closure_max}**`,
+              `time-derivative update closure max: **${q.update_velocity_dt_closure_max}**`,
+              `finite-step gain guard: **${q.finite_step_gain_guard_passed}**`,
+              '',
+              'This is an analytic mechanics regression for the finite-cycle audit API, not a Kokuno candidate residual improvement. Real full-candidate defect consumption, public correction materialization, a real finite correction cycle, held-out normalized NS assessment, and `pde_validated` remain false.'
+            ];
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: lines.join('\n')
+            });
