@@ -35,7 +35,7 @@ jobs:
       - name: Start virtual display for actual GUI export
         run: |
           sudo apt-get update -qq
-          sudo apt-get install -y xvfb
+          sudo apt-get install -y xvfb x11-utils
           Xvfb :99 -screen 0 1600x1200x24 -nolisten tcp > /tmp/ns-xvfb.log 2>&1 &
           sleep 2
           xdpyinfo -display :99 > /tmp/ns-display.txt
@@ -46,7 +46,7 @@ jobs:
       - uses: matlab-actions/run-command@v3
         with:
           startup-options: -display :99
-          command: addpath('visualization/matlab'); ns_selftest(fullfile(pwd,'visualization','matlab','data','st054_models.mat'),true,fullfile(pwd,'visualization','matlab','tests','output'));
+          command: addpath('visualization/matlab'); file=fullfile(pwd,'visualization','matlab','data','st054_models.mat'); out=fullfile(pwd,'visualization','matlab','tests','output'); ns_selftest(file,true,out); ns_callback_test(file,out);
       - name: Commit only verified data and native test receipt to own branch
         run: |
           git config user.name 'github-actions[bot]'
