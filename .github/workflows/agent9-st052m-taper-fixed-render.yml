@@ -53,6 +53,8 @@ jobs:
 
       - name: Execute frozen fixed-seed render comparison
         run: |
+          set -o pipefail
+          mkdir -p artifacts/agent9_st052m_taper_render
           python -m openai_ns_reconstruction.constrained_st052m_taper_fixed_render \
             --source-root _source/st052 \
             --output-dir artifacts/agent9_st052m_taper_render \
