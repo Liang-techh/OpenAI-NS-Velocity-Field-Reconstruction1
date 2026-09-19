@@ -1,0 +1,108 @@
+name: agent7-st052m-energy-neutral-taper
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_energy_neutral_taper.py'
+      - 'experiments/root_st052/test_agent7_st052m_energy_neutral_taper.py'
+      - '.github/workflows/agent7-st052m-energy-neutral-taper.yml'
+permissions:
+  contents: read
+  pull-requests: write
+jobs:
+  energy-neutral-taper-screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Focused contract tests
+        run: python -m pytest -q -W error experiments/root_st052/test_agent7_st052m_energy_neutral_taper.py
+      - name: Execute preregistered energy-neutral taper screen
+        run: |
+          mkdir -p outputs/agent7-st052m-energy-neutral-taper
+          python experiments/root_st052/agent7_st052m_energy_neutral_taper.py \
+            --out outputs/agent7-st052m-energy-neutral-taper/report.json
+      - name: Verify frozen identity and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-energy-neutral-taper/report.json').read_text())
+          assert r['prereg_issue']==548
+          assert r['parent_head']=='779ffca71066e2864496d37de55a7aafc45d6f57'
+          assert r['source_taper_head']=='093c7171cd61c6bd439afa30b2da69598a02d182'
+          assert r['frozen_transform']['tau']==0.05
+          assert r['frozen_transform']['tip_window_abs_z_over_2']==[0.5,0.82]
+          assert r['frozen_transform']['shoulder_window_abs_z_over_2']==[0.36,0.49]
+          assert r['frozen_transform']['energy_alpha_bracket']==[0.0,4.0]
+          assert r['frozen_transform']['redistribution_gain']==0.05
+          assert r['parameter_scan_performed'] is False
+          assert r['energy_only_dependent_root_solve'] is True
+          assert r['post_piola_common_scale_allowed'] is False
+          assert r['diagnostic_added_velocity_degrees']==1
+          assert r['independently_tuned_new_coefficients']==0
+          assert r['canonical_velocity_changed'] is False
+          assert r['saved_velocity_changed'] is False
+          assert r['pressure_or_force_changed'] is False
+          assert r['held_out_pde_residual_evaluated'] is False
+          assert r['material_paths_integrated'] is False
+          assert r['public_image_used'] is False
+          assert r['visualization_ready'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          q=r['row']
+          print('root_exists=',q['energy_solve']['root_exists'])
+          print('alpha_e=',q['alpha_e'])
+          print('clean_energy_neutral_taper_capacity=',q['clean_energy_neutral_taper_capacity'])
+          if q['energy_solve']['root_exists']:
+              print('energy_relative_error=',q['energy_solve']['relative_energy_error'])
+              print('central_identity=',q['central_velocity_identity'])
+              print('morphology=',[(x['time'],x['tip_radial_rms_relative'],x['central_radial_rms_relative'],x['shoulder_radial_rms_relative'],x['global_axial_rms_relative']) for x in q['morphology']])
+              print('response=',q['response'])
+          PY
+      - name: Publish compact numerical receipt
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent7-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-energy-neutral-taper/report.json').read_text())
+          q=r['row']; e=q['energy_solve']
+          print('<!-- agent7-st052m-energy-neutral-taper-receipt -->')
+          print('**Agent 7 numerical receipt (issue #548; fixed tip/shoulder Piola shape, energy-only dependent coefficient, no visual/path/PDE scan):**')
+          print()
+          print(f"- energy root exists: `{e['root_exists']}`; alpha_E `{q['alpha_e']}`; post-Piola common scale `1.0` by contract")
+          print(f"- clean energy-neutral taper capacity: `{q['clean_energy_neutral_taper_capacity']}`")
+          if e['root_exists']:
+              ms=q['morphology']; s=q['structure']; d=q['response']; ci=q['central_velocity_identity']
+              print(f"- relative reference-energy error: `{e['relative_energy_error']:.3e}`; central velocity identity max abs `{ci['max_abs']:.3e}`")
+              print('- tip radial RMS rel t=.25/.50/.75: `' + ' / '.join(f'{100*x["tip_radial_rms_relative"]:+.5f}%' for x in ms) + '`')
+              print('- central radial RMS rel: `' + ' / '.join(f'{100*x["central_radial_rms_relative"]:+.5f}%' for x in ms) + '`')
+              print('- shoulder radial RMS rel: `' + ' / '.join(f'{100*x["shoulder_radial_rms_relative"]:+.5f}%' for x in ms) + '`')
+              print('- global axial RMS rel: `' + ' / '.join(f'{100*x["global_axial_rms_relative"]:+.5f}%' for x in ms) + '`')
+              print('- tip enstrophy ratios: `' + ' / '.join(f'{x["tip_absolute_enstrophy_ratio"]:.6f}' for x in ms) + '`')
+              print('- shoulder enstrophy ratios: `' + ' / '.join(f'{x["shoulder_absolute_enstrophy_ratio"]:.6f}' for x in ms) + '`')
+              print(f"- central angular retention r=.6/.9: `{q['central_angular_retention']['0.6']:.12f} / {q['central_angular_retention']['0.9']:.12f}`")
+              print(f"- support max `{s['support_max_abs']:.3e}`; divergence FD max `{s['divergence_fd_max']:.3e}`; determinant min `{s['determinant_min']:.6f}`")
+              print(f"- response rank `{d['rank']}`; singular values `{d.get('singular_values')}`; condition `{d['condition_number']:.6f}`; max |cosine| `{d['max_pairwise_abs_cosine']:.6f}`")
+          print()
+          print('Truth boundary: expression-capacity / visualization-morphology only. No material-path integration, pressure/forcing refit, held-out PDE promotion, production selection, visual-correspondence claim, or OpenAI-field identity claim.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-receipt.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-energy-neutral-taper
+          path: outputs/agent7-st052m-energy-neutral-taper/
+          if-no-files-found: error
+# Scientific thresholds and windows are frozen by issue #548 before this exact-head run.
