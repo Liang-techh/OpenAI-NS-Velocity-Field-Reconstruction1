@@ -1,0 +1,111 @@
+name: kokuno-agent3-typed-velocity-correction-handoff
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a3-typed-velocity-correction-handoff-057
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_typed_mean_velocity_correction_handoff.py"
+      - "src/openai_ns_reconstruction/kokuno_typed_mean_amplitude_differential.py"
+      - "src/openai_ns_reconstruction/kokuno_finite_correction_cycle_contract.py"
+      - "tests/test_constrained_kokuno_typed_mean_velocity_correction_handoff.py"
+      - ".github/workflows/kokuno-agent3-typed-velocity-correction-handoff.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: kokuno-agent3-typed-velocity-correction-handoff-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify-typed-velocity-correction-handoff:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+      - name: Compile typed correction handoff
+        run: >-
+          python -W error -m py_compile
+          src/openai_ns_reconstruction/kokuno_typed_mean_velocity_correction_handoff.py
+      - name: Run focused warnings-as-errors tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_typed_mean_velocity_correction_handoff.py
+      - name: Emit deterministic typed handoff receipt
+        run: >-
+          python -W error -m openai_ns_reconstruction.kokuno_typed_mean_velocity_correction_handoff
+          --output artifacts/kokuno_agent3_typed_velocity_correction_handoff_v1.json
+      - name: Check fail-closed truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          r = json.loads(Path('artifacts/kokuno_agent3_typed_velocity_correction_handoff_v1.json').read_text())
+          assert r['schema'] == 'kokuno-a3-typed-velocity-correction-handoff-v1'
+          assert r['provenance']['parent_agent3_head'] == 'bfaebe3339c984b78e1a797c634b588d61a15cad'
+          q = r['analytic_regression']
+          assert q['forcing_is_zero_and_fixed_independently_of_residual'] is True
+          assert q['adapter_is_source_agent2_certified'] is False
+          assert q['adapter_is_only_typed_plumbing_probe'] is True
+          assert q['correction_nontrivial'] is True
+          assert q['correction_vector_rms'] > 0.0
+          assert q['correction_vector_max'] >= q['correction_vector_rms']
+          assert q['correction_dt_vector_max'] == 0.0
+          assert q['to_identity']['cycle_index'] == q['from_identity']['cycle_index'] + 1
+          b = r['truth_boundary']
+          assert b['typed_delta_a_recomputed_internally'] is True
+          assert b['external_complete_curl_adapter_required'] is True
+          assert b['velocity_and_time_derivative_required_from_adapter'] is True
+          assert b['caller_supplied_residual_allowed'] is False
+          assert b['caller_supplied_defect_allowed'] is False
+          assert b['caller_supplied_delta_y_allowed'] is False
+          assert b['caller_supplied_delta_a_allowed'] is False
+          assert b['caller_supplied_gain_allowed'] is False
+          assert b['caller_supplied_scientific_threshold_allowed'] is False
+          assert b['agent3_reimplements_agent2_complete_curl'] is False
+          assert b['source_agent2_complete_curl_adapter_bound_for_full_candidate'] is False
+          assert b['public_velocity_correction_materialized_for_real_candidate'] is False
+          assert b['real_candidate_finite_correction_cycle_run'] is False
+          assert b['heldout_normalized_ns_residual_assessed'] is False
+          assert b['residual_reduction_claimed'] is False
+          assert b['pde_validated'] is False
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent3-typed-velocity-correction-handoff-v1
+          path: artifacts/kokuno_agent3_typed_velocity_correction_handoff_v1.json
+          if-no-files-found: error
+      - name: Comment exact typed handoff receipt on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const r = JSON.parse(fs.readFileSync('artifacts/kokuno_agent3_typed_velocity_correction_handoff_v1.json', 'utf8'));
+            const q = r.analytic_regression;
+            const lines = [
+              '### Kokuno Agent 3 exact-head typed velocity-correction handoff',
+              '',
+              `analytic correction vector RMS: **${q.correction_vector_rms}**`,
+              `analytic correction vector max: **${q.correction_vector_max}**`,
+              `analytic correction dt max: **${q.correction_dt_vector_max}**`,
+              `nontrivial correction provider: **${q.correction_nontrivial}**`,
+              '',
+              'This receipt exercises only the typed handoff from internally recomputed `delta_a` into an external complete-curl adapter. The regression adapter is explicitly not Agent-2/source-certified and no Agent-2 curl formula is reproduced here. Real full-candidate correction materialization, a real finite correction cycle, held-out normalized NS assessment, residual-reduction claims, and `pde_validated` remain false.'
+            ];
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: lines.join('\n')
+            });
