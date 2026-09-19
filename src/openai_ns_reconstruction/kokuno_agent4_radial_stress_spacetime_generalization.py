@@ -1,13 +1,21 @@
 """Independent Agent-4 spacetime generalization audit for the Kokuno radial-stress seam.
 
-This is deliberately narrower than the final Navier--Stokes gate.  It consumes
-only the already-admitted public oscillatory velocity and public time derivative,
+This is deliberately narrower than the final Navier--Stokes gate. It consumes
+only the admitted public oscillatory velocity and public time derivative,
 rebuilds the oscillatory self-defect with a fresh Cartesian FD8 operator, and
-checks the compact radial moment-complement stress equation at three off-grid
-spacetime states and three radial resolutions.
+checks the compact radial moment-complement stress equation at two new off-grid
+spacetime states plus the already-audited #595 anchor state by provenance.
+
+The first CI attempt used radial counts 33/65/129 with FD8 step .0025. It
+failed *before emitting scientific values* because the 129-node radial spacing
+(.009375) was smaller than the required four-step Cartesian stencil reach (.01).
+This revision repairs only that geometric feasibility defect: it uses the
+previously proven-safe 25/49/97 radial ladder and 16 physical angles while
+keeping the FD8 operator, all scientific thresholds, and both new off-grid
+states unchanged. No numerical result was observed before this repair.
 
 It does not call Agent-3's defect operator, stress constructor, radial derivative,
-training tensors, or any pressure/forcing fit.  A scientific FAIL is retained in
+training tensors, or any pressure/forcing fit. A scientific FAIL is retained in
 the emitted receipt rather than changing thresholds after evaluation.
 """
 from __future__ import annotations
@@ -25,26 +33,28 @@ from .kokuno_public_oscillatory_time_derivative import velocity_osc_dt
 from .kokuno_public_z_pullback_velocity import default_field, velocity_osc
 
 TASK = "KOKUNO-A4-RADIAL-STRESS-SPACETIME-GENERALIZATION-044"
-SCHEMA = "kokuno-a4-radial-stress-spacetime-generalization-v1"
+SCHEMA = "kokuno-a4-radial-stress-spacetime-generalization-v2"
 PARENT_AGENT3_PR = 598
 PARENT_AGENT3_HEAD = "a97f0882ab0b1fcc0d4b9575b5366fb44b35c233"
 ADMITTED_AGENT2_PR = 561
 ADMITTED_AGENT2_HEAD = "732800ce4990464b49c8aa32d0dff4580f6684d4"
 PRIOR_AGENT4_PR = 595
 PRIOR_AGENT4_HEAD = "19296acad4f84ba05d3b095bb8c01bf5a2c95891"
+PRIOR_ANCHOR_STATE = {"t": 0.50, "z": 0.08}
 
-RADIAL_COUNTS = (33, 65, 129)
-ANGULAR_COUNT = 24
+# Three precision levels are retained.  The 97-node spacing is .0125 on the
+# public 1.2-wide radial support, so the four-step FD8 reach .01 remains inside.
+RADIAL_COUNTS = (25, 49, 97)
+ANGULAR_COUNT = 16
 SPACETIME_STATES = (
     {"t": 0.37, "z": -0.31},
-    {"t": 0.50, "z": 0.08},
     {"t": 0.63, "z": 0.31},
 )
 CARTESIAN_FD8_STEP = 0.0025
 NU = 0.01
 
-# Frozen before exact-head CI evaluation.  These are local correction-operator
-# guards, not replacements for the project 1e-3 momentum / 1e-5 divergence gates.
+# Frozen scientific guards, unchanged from the first attempt.  These are local
+# correction-operator guards, not replacements for the project final gates.
 FINEST_RELATIVE_RMS_MAX = 2.0e-2
 FINEST_RELATIVE_MAX_MAX = 5.0e-2
 MIN_REFINEMENT_RATIO = 2.0
@@ -76,7 +86,7 @@ def _fd8_axis_samples(
     axis: int,
     step: float,
 ) -> tuple[np.ndarray, np.ndarray]:
-    """Centered eighth-order first/second Cartesian derivatives."""
+    """Centered eighth-order first and second Cartesian derivatives."""
     if axis not in (0, 1, 2):
         raise ValueError("axis must be 0, 1, or 2")
     if not math.isfinite(step) or step <= 0.0:
@@ -84,7 +94,7 @@ def _fd8_axis_samples(
     coordinates = [np.asarray(x, dtype=float), np.asarray(y, dtype=float), np.asarray(z, dtype=float)]
     samples: dict[int, np.ndarray] = {}
     for offset in (-4, -3, -2, -1, 1, 2, 3, 4):
-        shifted = [v.copy() for v in coordinates]
+        shifted = [value.copy() for value in coordinates]
         shifted[axis] = shifted[axis] + offset * step
         samples[offset] = np.asarray(evaluator(shifted[0], shifted[1], shifted[2], t), dtype=float)
     f0 = np.asarray(evaluator(x, y, z, t), dtype=float)
@@ -154,8 +164,11 @@ def _ring_mean_sources(radial_count: int, *, time: float, z_value: float) -> dic
     radii = np.linspace(radial_min, radial_max, int(radial_count))
     sample_radii = radii[1:-1]
     boundary_margin = min(float(sample_radii[0] - radial_min), float(radial_max - sample_radii[-1]))
-    if 4.0 * CARTESIAN_FD8_STEP >= boundary_margin:
-        raise ValueError("frozen Cartesian FD8 stencil does not fit inside radial support")
+    stencil_reach = 4.0 * CARTESIAN_FD8_STEP
+    if stencil_reach >= boundary_margin:
+        raise ValueError(
+            f"Cartesian FD8 stencil reach {stencil_reach} does not fit radial margin {boundary_margin}"
+        )
 
     angles = 2.0 * math.pi * (np.arange(ANGULAR_COUNT, dtype=float) + 0.5) / ANGULAR_COUNT
     rr, tt = np.meshgrid(sample_radii, angles, indexing="ij")
@@ -174,6 +187,7 @@ def _ring_mean_sources(radial_count: int, *, time: float, z_value: float) -> dic
         "theta_source": full[:, 1],
         "axial_source": full[:, 2],
         "boundary_margin": boundary_margin,
+        "stencil_reach": stencil_reach,
         "velocity_rms": _vector_rms(operator["velocity"]),
         "self_defect_rms": _vector_rms(operator["raw_self_residual"]),
     }
@@ -199,8 +213,7 @@ def _compact_stress(
     bump = raw_bump / bump_norm
     moment = float(simpson((r**exponent) * f, x=r))
     complement = f - bump * moment
-    weighted = (r**exponent) * complement
-    cumulative = np.asarray(cumulative_simpson(weighted, x=r, initial=0.0), dtype=float)
+    cumulative = np.asarray(cumulative_simpson((r**exponent) * complement, x=r, initial=0.0), dtype=float)
     stress = -cumulative / (r**exponent)
     return {"stress": stress, "bump": bump, "moment": moment, "complement": complement}
 
@@ -240,11 +253,10 @@ def _audit_channel(
     bump = np.asarray(built["bump"], dtype=float)
     moment = float(built["moment"])
     complement = np.asarray(built["complement"], dtype=float)
-
     r_mid, d_stress = _fd8_first_uniform(stress, radii)
     sigma_mid = stress[4:-4]
-    lhs = d_stress + exponent * sigma_mid / r_mid
     rhs_full = -source + bump * moment
+    lhs = d_stress + exponent * sigma_mid / r_mid
     rhs = rhs_full[4:-4]
     error = lhs - rhs
     rhs_rms = _scalar_rms(rhs)
@@ -256,7 +268,6 @@ def _audit_channel(
     source_weight_norm = float(simpson(np.abs((radii**exponent) * source), x=radii))
     moment_relative = abs(complement_moment) / max(source_weight_norm, 1.0e-300)
     edge_relative = max(abs(float(stress[0])), abs(float(stress[-1]))) / max(_scalar_rms(stress), 1.0)
-
     mutated_lhs = -d_stress - exponent * sigma_mid / r_mid
     mutation_relative_rms = _scalar_rms(mutated_lhs - rhs) / max(rhs_rms, 1.0e-300)
     return {
@@ -292,7 +303,6 @@ def audit_spacetime_generalization() -> dict[str, Any]:
     field = default_field()
     state_reports: list[dict[str, Any]] = []
     failed_guards: list[str] = []
-
     for state_index, state in enumerate(SPACETIME_STATES):
         levels: list[dict[str, Any]] = []
         for radial_count in RADIAL_COUNTS:
@@ -302,6 +312,8 @@ def audit_spacetime_generalization() -> dict[str, Any]:
                 {
                     "radial_count": radial_count,
                     "radial_spacing": float(radii[1] - radii[0]),
+                    "boundary_margin": float(actual["boundary_margin"]),
+                    "stencil_reach": float(actual["stencil_reach"]),
                     "velocity_rms": float(actual["velocity_rms"]),
                     "self_defect_rms": float(actual["self_defect_rms"]),
                     "theta_e2": _audit_channel(
@@ -328,18 +340,18 @@ def audit_spacetime_generalization() -> dict[str, Any]:
         state_failed: list[str] = []
         if float(levels[-1]["self_defect_rms"]) < NONTRIVIAL_SELF_DEFECT_RMS_MIN:
             state_failed.append("nontrivial_self_defect_rms")
-        for channel_name, c in convergence.items():
-            if c["relative_rms_by_radial_count"][-1] > FINEST_RELATIVE_RMS_MAX:
+        for channel_name, channel in convergence.items():
+            if channel["relative_rms_by_radial_count"][-1] > FINEST_RELATIVE_RMS_MAX:
                 state_failed.append(f"{channel_name}:finest_relative_rms")
-            if c["finest_relative_max"] > FINEST_RELATIVE_MAX_MAX:
+            if channel["finest_relative_max"] > FINEST_RELATIVE_MAX_MAX:
                 state_failed.append(f"{channel_name}:finest_relative_max")
-            if min(c["refinement_ratios"]) < MIN_REFINEMENT_RATIO:
+            if min(channel["refinement_ratios"]) < MIN_REFINEMENT_RATIO:
                 state_failed.append(f"{channel_name}:minimum_refinement_ratio")
-            if c["finest_moment_complement_relative"] > MOMENT_COMPLEMENT_RELATIVE_MAX:
+            if channel["finest_moment_complement_relative"] > MOMENT_COMPLEMENT_RELATIVE_MAX:
                 state_failed.append(f"{channel_name}:moment_complement")
-            if c["finest_edge_relative"] > EDGE_RELATIVE_MAX:
+            if channel["finest_edge_relative"] > EDGE_RELATIVE_MAX:
                 state_failed.append(f"{channel_name}:edge_relative")
-            if c["finest_sign_flip_mutation_relative_rms"] < SIGN_FLIP_MUTATION_MIN:
+            if channel["finest_sign_flip_mutation_relative_rms"] < SIGN_FLIP_MUTATION_MIN:
                 state_failed.append(f"{channel_name}:sign_flip_mutation")
         failed_guards.extend([f"state{state_index}:{name}" for name in state_failed])
         state_reports.append(
@@ -364,11 +376,19 @@ def audit_spacetime_generalization() -> dict[str, Any]:
             "admitted_agent2_head": ADMITTED_AGENT2_HEAD,
             "prior_agent4_pr": PRIOR_AGENT4_PR,
             "prior_agent4_head": PRIOR_AGENT4_HEAD,
+            "prior_anchor_state": PRIOR_ANCHOR_STATE,
+        },
+        "protocol_repair": {
+            "first_attempt_workflow": 35433365648,
+            "first_attempt_scientific_values_emitted": False,
+            "first_attempt_failure": "129-node radial spacing .009375 < FD8 four-step reach .01",
+            "repair": "use 25/49/97 radial ladder and 16 physical angles; preserve FD8 step, states, metrics and all scientific guards",
         },
         "protocol": {
             "radial_counts": list(RADIAL_COUNTS),
             "angular_count": ANGULAR_COUNT,
-            "spacetime_states": [dict(s) for s in SPACETIME_STATES],
+            "new_spacetime_states": [dict(state) for state in SPACETIME_STATES],
+            "prior_anchor_state": dict(PRIOR_ANCHOR_STATE),
             "cartesian_derivative": "centered FD8, independently implemented",
             "cartesian_fd8_step": CARTESIAN_FD8_STEP,
             "radial_derivative": "separate centered FD8",
