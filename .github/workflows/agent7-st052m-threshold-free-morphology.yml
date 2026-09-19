@@ -1,0 +1,102 @@
+name: agent7-st052m-threshold-free-morphology
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_threshold_free_morphology.py'
+      - 'experiments/root_st052/test_agent7_st052m_threshold_free_morphology.py'
+      - '.github/workflows/agent7-st052m-threshold-free-morphology.yml'
+permissions:
+  contents: read
+  pull-requests: write
+jobs:
+  threshold-free-morphology:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Focused contract tests
+        run: python -m pytest -q -W error experiments/root_st052/test_agent7_st052m_threshold_free_morphology.py
+      - name: Execute preregistered threshold-free morphology convergence screen
+        run: |
+          mkdir -p outputs/agent7-st052m-threshold-free-morphology
+          python experiments/root_st052/agent7_st052m_threshold_free_morphology.py \
+            --out outputs/agent7-st052m-threshold-free-morphology/report.json
+      - name: Verify frozen identity and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-threshold-free-morphology/report.json').read_text())
+          assert r['prereg_issue']==575
+          assert r['source_prior_head']=='85f2f0940d80757313651d2ab50c6ef89dc22914'
+          assert r['source_compensated_head']=='39b106ad8cb8df2064cabead3a12682089575e74'
+          assert r['source_path_head']=='196bcc5445039a2b3533128daa5c20cbb151cd58'
+          assert r['frozen_transform']['redistribution_gain']==0.05
+          assert r['frozen_transform']['taper_tau']==0.05
+          assert r['frozen_transform']['taper_window_abs_z_over_2']==[0.5,0.82]
+          assert r['frozen_transform']['shoulder_window_abs_z_over_2']==[0.36,0.49]
+          assert abs(r['frozen_transform']['beta']-0.08837490297155456)<2e-10
+          assert r['frozen_transform']['post_transform_common_scale']==1.0
+          assert r['protocol']['grid_levels']==[25,33,41]
+          assert r['protocol']['data_dependent_threshold'] is None
+          assert r['protocol']['parameter_scan_performed'] is False
+          assert r['protocol']['basis_growth_performed'] is False
+          assert r['protocol']['image_or_openai_numeric_target_used'] is False
+          assert r['basis_changed'] is False
+          assert r['velocity_coefficient_changed'] is False
+          assert r['canonical_velocity_changed'] is False
+          assert r['saved_velocity_changed'] is False
+          assert r['pressure_or_force_changed'] is False
+          assert r['held_out_pde_residual_evaluated'] is False
+          assert r['material_paths_integrated_this_round'] is False
+          assert r['visualization_ready'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          print('clean=',r['clean_threshold_free_morphology_convergence'])
+          for n in ('25','33','41'):
+              for row in r['levels'][n]:
+                  print(n,row['time'],row['relative_compensated_vs_control'])
+          print('fine_drifts=',r['fine_33_to_41_drifts'])
+          PY
+      - name: Publish compact numerical receipt
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent7-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-threshold-free-morphology/report.json').read_text())
+          print('<!-- agent7-st052m-threshold-free-morphology-receipt -->')
+          print('**Agent 7 numerical receipt (issue #575; threshold-free enstrophy-moment convergence screen):**')
+          print()
+          print(f"- exact #559 beta replay: `{r['frozen_transform']['beta']}`; common scale `{r['frozen_transform']['post_transform_common_scale']}`")
+          print(f"- clean threshold-free morphology convergence: `{r['clean_threshold_free_morphology_convergence']}`")
+          for n in ('25','33','41'):
+              print(f'- grid `{n}^3`:')
+              for row in r['levels'][n]:
+                  q=row['relative_compensated_vs_control']
+                  print(f"  - t={row['time']:.2f}: axial `{100*q['full_axial_rms']:+.4f}%`, radial `{100*q['full_radial_rms']:+.4f}%`, aspect `{100*q['full_aspect_ratio']:+.4f}%`, smooth-tip radial `{100*q['smooth_tip_radial_rms']:+.4f}%`, central radial `{100*q['central_radial_rms']:+.4f}%`, tip-fraction retention `{q['tip_enstrophy_fraction_retention']:.6f}`")
+          print('- `33^3 -> 41^3` effect drifts:')
+          for d in r['fine_33_to_41_drifts']:
+              print(f"  - t={d['time']:.2f}: tip `{100*d['tip_radial_relative_effect_abs_drift']:.4f}` percentage points, aspect `{100*d['full_aspect_relative_effect_abs_drift']:.4f}` percentage points, pass `{d['passed']}`")
+          print()
+          print('Truth boundary: target-free, threshold-free morphology/convergence evidence only. No new basis/coefficient, OpenAI image-derived numeric target, pressure/forcing refit, held-out PDE promotion, production selection, or exact-field claim.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-receipt.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-threshold-free-morphology
+          path: outputs/agent7-st052m-threshold-free-morphology/
+          if-no-files-found: error
+# Grids, times, moments, smooth-tip window, criteria, and fine-grid drift guards were frozen in issue #575 before evaluation.
