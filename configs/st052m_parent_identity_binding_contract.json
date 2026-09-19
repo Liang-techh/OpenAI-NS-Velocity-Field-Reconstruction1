@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "task_id": "CR002-ST052M-PARENT-IDENTITY-BINDING-097",
+  "purpose": "Distinguish the newly integrated exact PR559 transform kernel and its transform-spec checksum from immutable identity of the injected ST052-M parent evaluator and from a complete versioned child candidate.",
+  "snapshot": {
+    "active_integration_branch": "codex/cr001-constraints",
+    "active_integration_head": "ea2b99903db40775f9397837eed3f26622dd09d3",
+    "integrated_replay_commit_message": "CR008: replay ST052-M transform kernel onto live delivery ancestry",
+    "source_migration_pr": 591,
+    "source_migration_head": "fd3929b6950e2821ac41a1930cd0620e43f7f2d6",
+    "source_migration_dedicated_run": 35431008466,
+    "source_migration_dedicated_conclusion": "success",
+    "source_migration_artifact_id": 10580832368,
+    "source_migration_artifact_digest": "sha256:4d6c5c6c1652f1ffad92f3a6f3068f53d6ef434dd039c9dd14cc22be890055da",
+    "exact_child_source_pr": 559,
+    "exact_child_source_head": "39b106ad8cb8df2064cabead3a12682089575e74",
+    "parent_source_head": "b3b8bfdbe1077f9ec967d158602951997d81e17d",
+    "transform_module": "openai_ns_reconstruction.st052_local_swirl_transform",
+    "transform_spec_sha256": "470103b68fd5ccece5d43d054711c894e40e4cb2f7ce890d52d04c4623bf7c25"
+  },
+  "allowed_source_classes": [
+    "user_requirement",
+    "public_source_fact",
+    "autonomous_design",
+    "pending_unknown"
+  ],
+  "source_classification": {
+    "callable_save_load_velocity_delivery": "user_requirement",
+    "public_openai_visualization_observables": "public_source_fact",
+    "st052m_local_swirl_transform_representation": "autonomous_design",
+    "transform_spec_checksum_and_exact_source_parity_protocol": "autonomous_design",
+    "parent_identity_binding_policy": "autonomous_design",
+    "cr001_validation_protocol": "autonomous_design",
+    "openai_hidden_velocity_parameters": "pending_unknown",
+    "openai_hidden_frame_time_camera_seed_mapping": "pending_unknown"
+  },
+  "migrated_transform_state": {
+    "package_transform_kernel_materialized_on_live_ancestry": true,
+    "package_vectorized_adapter_materialized_on_live_ancestry": true,
+    "transform_spec_save_load_ready": true,
+    "transform_spec_checksum_verified": true,
+    "exact_source_parity_receipt_passed": true,
+    "exact_source_parity_role": "verifies this migrated post-processing transform against one exact-source reconstruction under the frozen PR591 workflow",
+    "full_st052m_parent_evaluator_materialized_by_this_kernel": false,
+    "complete_child_candidate_materialized": false,
+    "complete_child_save_load_ready": false,
+    "experimental_child_velocity_export_ready": false
+  },
+  "parent_binding_current_state": {
+    "intended_parent_candidate_id": "ST052-M",
+    "intended_parent_source_head": "b3b8bfdbe1077f9ec967d158602951997d81e17d",
+    "adapter_accepts_external_base_velocity_callable": true,
+    "adapter_checks_parent_candidate_id_string": true,
+    "adapter_checks_parent_source_head_string": true,
+    "adapter_constructor_has_parent_artifact_sha256_parameter": false,
+    "adapter_constructor_has_parent_callable_digest_parameter": false,
+    "adapter_verifies_parent_artifact_bytes": false,
+    "adapter_verifies_parent_callable_behavior": false,
+    "correct_metadata_strings_are_cryptographic_parent_proof": false,
+    "arbitrary_finite_callable_with_correct_metadata_can_construct_current_adapter": true,
+    "transform_spec_sha256_is_parent_artifact_sha256": false,
+    "transform_spec_sha256_is_complete_child_candidate_sha256": false,
+    "exact_source_parity_of_migration_implies_all_future_injected_parents_are_equivalent": false
+  },
+  "identity_semantics": {
+    "transform_identity": "DEFAULT_SPEC.sha256() identifies only the frozen deterministic post-processing transform specification.",
+    "parent_identity": "The current adapter's parent_candidate_id and parent_source_head checks are caller-supplied metadata assertions; they do not hash or otherwise authenticate the supplied callable.",
+    "complete_child_identity": "A complete child identity must bind an immutable materialized parent representation to the immutable transform specification and then assign a versioned child candidate identity/SHA.",
+    "callability_without_complete_identity_allowed": true,
+    "callability_without_complete_identity_may_be_labelled_complete_delivery": false,
+    "pde_failure_blocks_honest_callable_delivery": false
+  },
+  "required_before_complete_child_promotion": {
+    "materialize_deterministic_st052m_parent_evaluator": true,
+    "assign_immutable_parent_candidate_identity_and_sha": true,
+    "bind_runtime_parent_to_immutable_identity_beyond_caller_metadata_strings": true,
+    "compose_parent_identity_with_transform_spec_identity": true,
+    "assign_versioned_child_candidate_id_and_sha": true,
+    "deterministic_whole_candidate_save_load_replay": true,
+    "registered_unified_velocity_api": true,
+    "finite_output_and_domain_time_checks": true,
+    "render_or_equivalence_replay_on_exact_materialized_child_before_evidence_transfer": true,
+    "fresh_cr001_pde_validation_required_only_for_pde_promotion": true
+  },
+  "forbidden_inferences": [
+    {
+      "from": "DEFAULT_SPEC.sha256() is stable and verified",
+      "to": "the injected ST052-M parent evaluator is authenticated",
+      "allowed": false
+    },
+    {
+      "from": "parent_candidate_id and parent_source_head strings match DEFAULT_SPEC",
+      "to": "the supplied base_velocity callable is the frozen ST052-M parent",
+      "allowed": false
+    },
+    {
+      "from": "PR591 exact-source parity passed for one exact-source reconstruction",
+      "to": "every future adapter instance with matching metadata has exact-source parity",
+      "allowed": false
+    },
+    {
+      "from": "package-level St052LocalSwirlAdapter.velocity is callable",
+      "to": "the complete PR559 child has a versioned saved candidate identity",
+      "allowed": false
+    },
+    {
+      "from": "transform kernel is now live on constrained ancestry",
+      "to": "experimental child velocity_export_ready",
+      "allowed": false
+    },
+    {
+      "from": "callable or renderable transformed velocity",
+      "to": "visual_correspondence_verified or pde_validated or paper_exact or openai_field_identified",
+      "allowed": false
+    }
+  ],
+  "prior_delivery_stage_contract_compatibility": {
+    "contract_path": "configs/st052m_delivery_stage_accounting_contract.json",
+    "transform_kernel_integration_is_new_since_that_snapshot": true,
+    "prior_full_child_materialization_stage_may_be_marked_complete_from_transform_kernel_alone": false,
+    "prior_identity_and_save_load_stage_may_be_marked_complete_from_transform_spec_save_load_alone": false,
+    "prior_experimental_child_velocity_export_ready_remains_false": true
+  },
+  "canonical_delivery": {
+    "candidate_family": "eq45_supported_velocity_candidate_v1",
+    "candidate_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+    "velocity_api": "openai_ns_reconstruction.eq45_supported_delivery:velocity",
+    "velocity_export_ready": true,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "unchanged_by_this_governance_increment": true
+  },
+  "canonical_cr001": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "force_mode": "restricted_two_parameter_family",
+    "force_bounds": {"a": [0.0, 10.0], "c": [0.0, 10.0]},
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "divergence_max": 1e-5,
+    "divergence_L2": 1e-5,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001
+  },
+  "truth_boundary": {
+    "transform_kernel_materialized": true,
+    "full_parent_materialized_and_bound": false,
+    "complete_child_candidate_materialized": false,
+    "experimental_child_velocity_export_ready": false,
+    "production_candidate_selected": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "mutation_scope": {
+    "velocity_changed": false,
+    "candidate_changed": false,
+    "pressure_changed": false,
+    "forcing_changed": false,
+    "optimizer_changed": false,
+    "validation_sample_changed": false,
+    "norm_definition_changed": false,
+    "threshold_changed": false,
+    "canonical_velocity_api_changed": false,
+    "active_scientific_route_changed": false,
+    "delivery_route_changed": false,
+    "transform_kernel_changed": false
+  }
+}
