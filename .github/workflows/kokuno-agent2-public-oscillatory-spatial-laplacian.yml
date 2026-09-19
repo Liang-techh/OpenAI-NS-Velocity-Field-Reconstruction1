@@ -1,0 +1,83 @@
+name: kokuno-agent2-public-oscillatory-spatial-laplacian
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a2-public-laplacian-047
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_public_oscillatory_spatial_laplacian.py"
+      - "tests/test_constrained_kokuno_public_oscillatory_spatial_laplacian.py"
+      - ".github/workflows/kokuno-agent2-public-oscillatory-spatial-laplacian.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent2-public-oscillatory-spatial-laplacian-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  public-oscillatory-spatial-laplacian:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+      - name: Compile module
+        run: >-
+          python -W error -m py_compile
+          src/openai_ns_reconstruction/kokuno_public_oscillatory_spatial_laplacian.py
+      - name: Run focused warnings-as-errors tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_public_oscillatory_spatial_laplacian.py
+          tests/test_constrained_kokuno_public_oscillatory_vorticity_diagnostic.py
+          tests/test_constrained_kokuno_public_oscillatory_vorticity_time_commutation.py
+      - name: Generate immutable spatial-Laplacian receipt
+        run: >-
+          python -W error -m openai_ns_reconstruction.kokuno_public_oscillatory_spatial_laplacian
+          --output artifacts/kokuno_agent2_public_oscillatory_spatial_laplacian_v1.json
+      - name: Check provenance, frozen guards and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('artifacts/kokuno_agent2_public_oscillatory_spatial_laplacian_v1.json')
+          r = json.loads(p.read_text())
+          assert r['parent_agent2_pr'] == 694
+          assert r['parent_agent2_head'] == '9c4d1feb514fe44ca16793130f7bd1acfda95e26'
+          assert r['velocity_pr'] == 561
+          assert r['spatial_steps'] == [0.018, 0.009, 0.0045]
+          assert r['failed_guards'] == []
+          assert r['self_diagnostic_passed'] is True
+          t = r['truth_boundary']
+          assert t['velocity_candidate_changed'] is False
+          assert t['oscillatory_coefficients_retuned'] is False
+          assert t['source_formula_changed'] is False
+          assert t['numerical_spatial_laplacian_diagnostic_only'] is True
+          assert t['viscous_term_ready_for_future_composite_diagnostics'] is True
+          assert t['independent_agent4_validation_replaced'] is False
+          assert t['independent_agent4_vector_potential_audit_required'] is True
+          assert t['agent3_momentum_defect_or_correction_duplicated'] is False
+          assert t['heldout_ns_momentum_residual_assessed'] is False
+          assert t['formal_full_domain_pde_gate_assessed'] is False
+          assert t['pde_validated'] is False
+          assert t['paper_exact'] is False
+          print('identity_sha256=', r['identity_sha256'])
+          print('laplacian_refinement=', r['laplacian_ladder']['successive_difference_refinement_ratio'])
+          print('finest_laplacian_rms=', r['finest_laplacian_rms'])
+          print('finest_laplacian_sampled_max=', r['finest_laplacian_sampled_max'])
+          print('manufactured_relative_max_error=', r['manufactured_polynomial']['relative_max_error'])
+          print('support_exterior_absolute_max=', r['support_exterior_absolute_max'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent2-public-oscillatory-spatial-laplacian-v1
+          path: artifacts/kokuno_agent2_public_oscillatory_spatial_laplacian_v1.json
+          if-no-files-found: error
