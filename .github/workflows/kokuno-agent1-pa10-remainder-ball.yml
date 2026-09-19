@@ -1,0 +1,107 @@
+name: kokuno-agent1-pa10-remainder-ball
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a1-pa10-remainder-ball
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent1-pa10-remainder-ball-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHONHASHSEED: '0'
+
+jobs:
+  pa10-remainder-ball:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile PA10 remainder ball module
+        run: python -m compileall -q src/openai_ns_reconstruction/kokuno_pa10_remainder_ball_bounds.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_pa10_operator_primitives.py \
+            tests/test_constrained_kokuno_pa10_chi_multiplier.py \
+            tests/test_constrained_kokuno_pa10_remainder_ball_bounds.py
+      - name: Generate conditional R1 R2 receipt
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          from openai_ns_reconstruction.kokuno_pa10_chi_multiplier import KokunoPA10SelectedChiMultiplier
+          from openai_ns_reconstruction.kokuno_pa10_remainder_ball_bounds import (
+              KokunoPA10RemainderBallBounds,
+              KokunoPA10RemainderPrimitiveBounds,
+          )
+          from openai_ns_reconstruction.kokuno_rescaled_core_seed import KokunoSourceRescaledCoreSeed
+
+          core = KokunoSourceRescaledCoreSeed()
+          calculator = KokunoPA10RemainderBallBounds(
+              h=core.h,
+              A=core.A,
+              D=core.D,
+              rescaling_lambda=core.rescaling_lambda,
+          )
+          primitives = KokunoPA10RemainderPrimitiveBounds.diagnostic_unit_fixture()
+          chi_payload = KokunoPA10SelectedChiMultiplier().to_payload()
+          mchi = float(chi_payload["certificate"]["selected_multiplier_norm_chi_upper"])
+          payload = calculator.to_payload(primitives, multiplier_norm_chi=mchi)
+          out = Path("artifacts/kokuno_agent1/pa10_remainder_ball/report.json")
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
+
+          remainder = payload["remainder_envelopes"]
+          pair = payload["diagnostic_conditional_MK"]
+          print("R1_diagnostic_norm=", remainder["R1"]["norm"])
+          print("R1_diagnostic_lipschitz=", remainder["R1"]["lipschitz"])
+          print("R2_diagnostic_norm=", remainder["R2"]["norm"])
+          print("R2_diagnostic_lipschitz=", remainder["R2"]["lipschitz"])
+          print("selected_M_chi=", mchi)
+          print("conditional_M_pair=", pair["conditional_M_pair_max_envelope"])
+          print("conditional_K_pair=", pair["conditional_K_pair_max_envelope"])
+          print("receipt_sha256=", payload["sha256"])
+          PY
+      - name: Validate fail-closed scientific boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          payload = json.loads(Path("artifacts/kokuno_agent1/pa10_remainder_ball/report.json").read_text())
+          truth = payload["truth_boundary"]
+          remainder = payload["remainder_envelopes"]
+          assert truth["exact_displayed_R1_R2_monomial_bookkeeping_executable"] is True
+          assert truth["one_factor_at_a_time_lipschitz_bookkeeping_executable"] is True
+          assert truth["conditional_remainder_ball_envelope_executable"] is True
+          assert truth["diagnostic_primitive_bounds_are_source_bounds"] is False
+          assert remainder["R1"]["norm"] > 0.0
+          assert remainder["R2"]["norm"] > 0.0
+          assert truth["source_R1_radius_one_ball_norm_machine_bound"] is False
+          assert truth["source_R2_radius_one_ball_norm_machine_bound"] is False
+          assert truth["source_R1_radius_one_ball_lipschitz_machine_bound"] is False
+          assert truth["source_R2_radius_one_ball_lipschitz_machine_bound"] is False
+          assert truth["source_operator_constant_M_machine_bound"] is False
+          assert truth["source_operator_constant_K_machine_bound"] is False
+          assert truth["source_T_sh_lower_bound_verified"] is False
+          assert truth["selected_pa16_handoff_allowed"] is False
+          assert truth["heldout_ns_residual_assessed"] is False
+          assert truth["pde_validated"] is False
+          assert truth["paper_exact"] is False
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-pa10-remainder-ball-v1
+          path: artifacts/kokuno_agent1/pa10_remainder_ball/report.json
