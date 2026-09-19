@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "task_id": "CR002-ST052M-DELIVERY-STAGE-ACCOUNTING-096",
+  "purpose": "Keep exact-source diagnostic render evidence separate from live-ancestry materialization and delivery-stage completion for the current ST052-M local-swirl route.",
+  "snapshot": {
+    "active_integration_branch": "codex/cr001-constraints",
+    "active_integration_head": "2d97cfaece49d62b163637348da56a545ab66fa7",
+    "project_status_delivery_shortest_route": "materialize_exact_st052m_local_swirl_energy_child_then_render_and_fresh_validate",
+    "source_child_pr": 559,
+    "source_child_head": "39b106ad8cb8df2064cabead3a12682089575e74",
+    "render_pr": 583,
+    "render_head": "ee80de11775bd45157d114000378b6ee3422ff46",
+    "render_workflow_run": 35428288859,
+    "render_workflow_conclusion": "success",
+    "standard_tests_run": 35428288863,
+    "standard_tests_conclusion": "success",
+    "render_report_sha256": "bc3b6ec175423636fe286b0f4cf86f1ffd706163dfa54d9cd3e2dadc8b1cc3ae"
+  },
+  "allowed_source_classes": [
+    "user_requirement",
+    "public_source_fact",
+    "autonomous_design",
+    "pending_unknown"
+  ],
+  "source_classification": {
+    "callable_save_load_velocity_delivery": "user_requirement",
+    "public_openai_visualization_observables": "public_source_fact",
+    "st052m_redistribution_taper_local_swirl_representation": "autonomous_design",
+    "fixed_render_grid_times_seeds_camera_integrator_and_diagnostics": "autonomous_design",
+    "delivery_stage_accounting_policy": "autonomous_design",
+    "cr001_validation_protocol": "autonomous_design",
+    "openai_hidden_velocity_parameters": "pending_unknown",
+    "openai_hidden_frame_time_camera_seed_mapping": "pending_unknown"
+  },
+  "exact_source_child": {
+    "representation": "ST052-M + kappa=0.05 redistribution + tau=0.05 localized tip Piola taper + shoulder local-swirl energy compensation",
+    "redistribution_kappa": 0.05,
+    "taper_tau": 0.05,
+    "shoulder_window_abs_z_over_2": [0.36, 0.49],
+    "shoulder_swirl_beta": 0.08837490297155456,
+    "post_transform_common_scale": 1.0,
+    "materialized_on_live_constrained_ancestry": false,
+    "versioned_candidate_id_assigned": false,
+    "versioned_candidate_sha_assigned": false,
+    "save_load_contract_registered": false,
+    "unified_velocity_api_registered": false,
+    "velocity_export_ready": false,
+    "production_candidate_selected": false
+  },
+  "render_evidence": {
+    "role": "target_free_exact_source_identity_render_replay",
+    "source_checkout_is_exact_pr559_head": true,
+    "source_checkout_is_separate_from_render_branch_ancestry": true,
+    "grid_resolution": 33,
+    "times": [0.25, 0.5, 0.75],
+    "streamline_count": 48,
+    "fixed_camera": {"elev": 18, "azim": -58},
+    "openai_numeric_image_target_used": false,
+    "visual_acceptance_threshold_used": false,
+    "render_artifact_exists": true,
+    "render_ci_success": true,
+    "may_describe_exact_source_child_under_frozen_protocol": true,
+    "counts_as_live_ancestry_materialization": false,
+    "counts_as_child_velocity_export_ready": false,
+    "counts_as_canonical_candidate_replacement": false,
+    "counts_as_visual_correspondence_verified": false,
+    "counts_as_pde_validation": false
+  },
+  "delivery_stage_accounting": {
+    "route_order": [
+      "materialize_exact_child_on_live_constrained_ancestry",
+      "assign_versioned_candidate_identity_and_sha",
+      "register_save_load_and_unified_velocity_api",
+      "render_materialized_identity",
+      "run_resolution_convergent_morphology",
+      "decide_pressure_restricted_forcing_rebuild",
+      "if_promoted_run_fresh_cr001_pde_validation"
+    ],
+    "source_child_defined": true,
+    "target_free_exact_source_render_available": true,
+    "materialization_stage_complete": false,
+    "identity_and_save_load_stage_complete": false,
+    "post_materialization_render_stage_complete": false,
+    "fresh_pde_validation_stage_complete": false,
+    "render_before_materialization_is_allowed_as_diagnostic": true,
+    "render_before_materialization_satisfies_materialization_prerequisite": false,
+    "render_before_materialization_satisfies_post_materialization_render_stage": false,
+    "delivery_route_complete": false
+  },
+  "later_materialized_child_evidence_transfer": {
+    "automatic_transfer_allowed": false,
+    "required_before_transfer": [
+      "explicit_functional_representation_binding_to_pr559_exact_source_identity",
+      "new_versioned_candidate_id_and_sha",
+      "deterministic_save_load_replay",
+      "unified_velocity_api_replay",
+      "render_or_equivalence_replay_on_the_materialized_identity"
+    ],
+    "same_parameters_alone_are_sufficient": false,
+    "same_source_commit_alone_is_sufficient": false,
+    "same_visual_appearance_alone_is_sufficient": false
+  },
+  "forbidden_inferences": [
+    {
+      "from": "separate exact-source checkout inside a green render workflow",
+      "to": "source child is materialized on the live constrained ancestry",
+      "allowed": false
+    },
+    {
+      "from": "render artifact exists for PR559 exact source identity",
+      "to": "PR559 child velocity_export_ready",
+      "allowed": false
+    },
+    {
+      "from": "render evidence for PR559 exact source identity",
+      "to": "same evidence automatically belongs to any later materialized child",
+      "allowed_without_identity_binding_and_replay": false
+    },
+    {
+      "from": "target-free fixed render plus morphology improvement",
+      "to": "visual_correspondence_verified",
+      "allowed": false
+    },
+    {
+      "from": "green render or standard CI",
+      "to": "pde_validated_or_paper_exact_or_openai_field_identified",
+      "allowed": false
+    },
+    {
+      "from": "pde_validation_failed_or_pending",
+      "to": "callable_save_load_velocity_delivery_is_forbidden",
+      "allowed": false
+    }
+  ],
+  "canonical_delivery": {
+    "candidate_family": "eq45_supported_velocity_candidate_v1",
+    "candidate_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+    "velocity_api": "openai_ns_reconstruction.eq45_supported_delivery:velocity",
+    "velocity_export_ready": true,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "unchanged_by_pr583": true
+  },
+  "canonical_cr001": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "force_mode": "restricted_two_parameter_family",
+    "force_bounds": {"a": [0.0, 10.0], "c": [0.0, 10.0]},
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "divergence_max": 1e-5,
+    "divergence_L2": 1e-5,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001
+  },
+  "truth_boundary": {
+    "canonical_velocity_export_ready": true,
+    "experimental_child_velocity_export_ready": false,
+    "production_candidate_selected": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "mutation_scope": {
+    "velocity_changed": false,
+    "candidate_changed": false,
+    "pressure_changed": false,
+    "forcing_changed": false,
+    "optimizer_changed": false,
+    "validation_sample_changed": false,
+    "norm_definition_changed": false,
+    "threshold_changed": false,
+    "canonical_velocity_api_changed": false,
+    "active_scientific_route_changed": false,
+    "delivery_route_changed": false,
+    "render_implementation_changed": false
+  }
+}
