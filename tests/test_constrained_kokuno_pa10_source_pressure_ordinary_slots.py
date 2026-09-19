@@ -3,8 +3,6 @@ from __future__ import annotations
 from dataclasses import asdict
 import math
 
-import pytest
-
 from openai_ns_reconstruction.kokuno_pa10_post_j_remainder_bridge import (
     R2_ORDINARY_TERMS,
 )
@@ -21,7 +19,8 @@ def test_eta_coefficient_ball_matches_source_weight() -> None:
         1.0 + calc.domain.enlarged_real_margin,
         4.0 * calc.domain.coefficient_rho,
     )
-    assert eta.norm == pytest.approx(expected, rel=2e-16)
+    assert eta.norm >= expected
+    assert eta.norm <= math.nextafter(expected, math.inf)
     assert eta.lipschitz == 0.0
 
 
