@@ -1,0 +1,120 @@
+name: kokuno-agent5-divergence-floor-routing
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-divergence-floor-routing-039
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_divergence_floor_routing_checkpoint.py"
+      - "tests/test_constrained_kokuno_divergence_floor_routing_checkpoint.py"
+      - ".github/workflows/kokuno-agent5-divergence-floor-routing.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent5-divergence-floor-routing-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHONHASHSEED: '0'
+
+jobs:
+  divergence-floor-routing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile Agent-5 checkpoint
+        run: python -m py_compile src/openai_ns_reconstruction/kokuno_divergence_floor_routing_checkpoint.py
+      - name: Focused warnings-as-errors regressions
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_carrier_resolved_agent4_audit.py \
+            tests/test_constrained_kokuno_divergence_floor_routing_checkpoint.py
+      - name: Re-run frozen Agent-4 carrier-resolved black-box audit
+        run: |
+          python -m openai_ns_reconstruction.kokuno_carrier_resolved_agent4_audit \
+            --output outputs/kokuno_agent4_carrier_resolved_independent_audit.json
+      - name: Generate deterministic v39 checkpoint
+        run: |
+          python -m openai_ns_reconstruction.kokuno_divergence_floor_routing_checkpoint \
+            --output artifacts/kokuno_agent5/divergence_floor_routing_checkpoint_v39.json
+      - name: Validate fresh audit and fail-closed routing
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction.kokuno_divergence_floor_routing_checkpoint import (
+              AGENT2_HEAD,
+              CURRENT_A4_METRICS,
+              FORMAL_GATES,
+              FROZEN_GUARDS,
+              validate_checkpoint,
+          )
+
+          audit = json.loads(Path('outputs/kokuno_agent4_carrier_resolved_independent_audit.json').read_text())
+          checkpoint = json.loads(Path('artifacts/kokuno_agent5/divergence_floor_routing_checkpoint_v39.json').read_text())
+          validate_checkpoint(checkpoint)
+
+          assert audit['audited_agent2_head'] == AGENT2_HEAD
+          assert audit['protocol']['scientific_guards_changed_from_agent4_543'] is False
+          assert audit['guards_frozen_before_actions']['finest_relative_divergence_rms'] == FROZEN_GUARDS['finest_relative_divergence_rms']
+          assert audit['guards_frozen_before_actions']['finest_relative_divergence_max'] == FROZEN_GUARDS['finest_relative_divergence_max']
+          assert audit['guards_frozen_before_actions']['minimum_divergence_refinement_ratio'] == FROZEN_GUARDS['minimum_divergence_refinement_ratio']
+          assert audit['guards_frozen_before_actions']['minimum_covariance_rank_ratio'] == FROZEN_GUARDS['minimum_covariance_rank_ratio']
+
+          rows = audit['divergence']['rows']
+          finest = rows[-1]
+          refs = audit['divergence']['relative_rms_refinement_ratios']
+          cov = audit['phase_mean_covariance']
+          support = audit['support']
+
+          assert finest['relative_rms'] == CURRENT_A4_METRICS['relative_divergence_rms_by_step']['0.005']
+          assert finest['relative_max'] == CURRENT_A4_METRICS['finest_relative_divergence_max']
+          assert refs == CURRENT_A4_METRICS['relative_rms_refinement_ratios']
+          assert audit['divergence']['local_divergence_passed'] is False
+          assert finest['relative_rms'] > FROZEN_GUARDS['finest_relative_divergence_rms']
+          assert finest['relative_max'] <= FROZEN_GUARDS['finest_relative_divergence_max']
+          assert min(refs) < FROZEN_GUARDS['minimum_divergence_refinement_ratio']
+
+          assert cov['covariance_rank_preflight_passed'] is True
+          assert min(row['rank_ratio'] for row in cov['rows']) >= FROZEN_GUARDS['minimum_covariance_rank_ratio']
+          assert max(cov['relative_drift_to_finest']) <= FROZEN_GUARDS['maximum_covariance_resolution_drift']
+          assert support['project_axial_exterior_absolute_max'] == 0.0
+          assert support['axis_near_absolute_max'] == 0.0
+          assert support['radial_exterior_absolute_max'] == 0.0
+          assert audit['project_support_preflight_passed'] is True
+          assert audit['public_oscillatory_preflight_passed'] is False
+
+          states = checkpoint['states']
+          assert states['public_oscillatory_project_support_passed'] is True
+          assert states['public_oscillatory_covariance_rank_passed'] is True
+          assert states['public_oscillatory_local_divergence_max_passed'] is True
+          assert states['public_oscillatory_local_divergence_rms_passed'] is False
+          assert states['public_oscillatory_divergence_refinement_passed'] is False
+          assert states['oscillatory_ready'] is False
+          assert states['correction_ingest_allowed'] is False
+          assert states['pde_validated'] is False
+          assert checkpoint['formal_gates'] == FORMAL_GATES
+          assert checkpoint['baseline_vs_kokuno']['kokuno_current_comparable_full_domain_receipt'] is None
+
+          print('checkpoint_sha256=', checkpoint['checkpoint_sha256'])
+          print('fresh_finest_relative_divergence_rms=', finest['relative_rms'])
+          print('fresh_finest_relative_divergence_max=', finest['relative_max'])
+          print('fresh_minimum_refinement_ratio=', min(refs))
+          print('fresh_minimum_covariance_rank_ratio=', min(row['rank_ratio'] for row in cov['rows']))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-divergence-floor-routing-checkpoint-v39
+          path: |
+            artifacts/kokuno_agent5/divergence_floor_routing_checkpoint_v39.json
+            outputs/kokuno_agent4_carrier_resolved_independent_audit.json
