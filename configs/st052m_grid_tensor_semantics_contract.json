@@ -1,0 +1,79 @@
+{
+  "schema": "st052m-grid-tensor-semantics-contract/v1",
+  "task_id": "CR002",
+  "scope": "finite-grid axis/component semantics only; no candidate or scientific-gate mutation",
+  "source_classification": {
+    "user_requirement": [
+      "deliver a callable time-varying Cartesian velocity(x,y,z,t)->[u,v,w]",
+      "keep callable/save-load delivery independent from PDE acceptance"
+    ],
+    "public_source_fact": [
+      "OpenAI public visualization supplies qualitative observable structure only",
+      "no hidden numerical axis permutation, camera map, or component ordering is inferred here"
+    ],
+    "autonomous_design": [
+      "ST052 sampled export uses u,v,w arrays in [time,x,y,z] order",
+      "ST052 sampled export uses numpy meshgrid indexing=ij",
+      "the frozen export grid is a 33x33x33 cube at five times",
+      "MAT-v5 and NPZ serialization are repository delivery choices"
+    ],
+    "pending_or_unknown": [
+      "a MATLAB/Octave consumer has independently enforced the exported tensor-layout metadata",
+      "a MATLAB/Octave consumer has machine-bound u/v/w to Cartesian x/y/z component semantics",
+      "derived vorticity from a downstream grid consumer is semantically equivalent to the source callable derivative",
+      "camera/frame mapping to the OpenAI visualization"
+    ]
+  },
+  "live_export_contract": {
+    "schema": "st052-linear-temporal-grid-export/v1",
+    "array_layout": "u,v,w: [time,x,y,z]",
+    "meshgrid_indexing": "ij",
+    "grid_points_per_axis": 33,
+    "times": [0.25, 0.375, 0.5, 0.625, 0.75],
+    "domain": [-2.0, 2.0],
+    "payload_checksum_bound_to_whole_candidate": true
+  },
+  "verified_state": {
+    "export_manifest_axis_layout_declared": true,
+    "export_manifest_meshgrid_indexing_declared": true,
+    "npz_mat_payload_checksum_bound": true,
+    "shape_only_consumer_axis_semantics_verified": false,
+    "matlab_octave_consumer_layout_metadata_enforced": false,
+    "component_basis_machine_bound_in_consumer": false,
+    "axis_permutation_equivalent_to_same_physical_field": false,
+    "derived_grid_vorticity_semantics_verified": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "semantic_witness": {
+    "purpose": "show that equal cubic axis lengths and coordinate arrays make shape-only checks unable to certify x/y/z tensor meaning",
+    "construction": "F(X,Y,Z)=X+10Y+100Z on the frozen equal-axis cube; swapping x/y tensor axes preserves shape but changes off-diagonal values",
+    "scientific_threshold": false,
+    "candidate_modified": false
+  },
+  "cr001_immutable": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_parameter_bounds": {"a": [0.0, 10.0], "c": [0.0, 10.0]},
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "divergence_max": 1e-5,
+    "divergence_L2": 1e-5,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001,
+    "residual_defined_free_force_allowed": false,
+    "amplitude_collapse_success_allowed": false
+  }
+}
