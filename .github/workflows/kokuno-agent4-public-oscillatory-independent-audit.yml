@@ -45,9 +45,26 @@ jobs:
           assert r['truth_boundary']['heldout_ns_residual_assessed'] is False
           assert r['truth_boundary']['pde_validated'] is False
           PY
+      - name: Extract receipt metrics
+        id: metrics
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          from pathlib import Path
+          r = json.loads(Path('outputs/kokuno_agent4_public_oscillatory_independent_audit.json').read_text())
+          finest = r['divergence']['rows'][-1]
+          cov = r['phase_mean_covariance']
+          print(f"drms={finest['relative_rms']:.6e}")
+          print(f"dmax={finest['relative_max']:.6e}")
+          print(f"rank={min(x['rank_ratio'] for x in cov['rows']):.6e}")
+          print(f"axz={r['support']['project_axial_exterior_absolute_max']:.6e}")
+          print(f"local={int(r['local_curl_covariance_preflight_passed'])}")
+          print(f"support={int(r['project_support_preflight_passed'])}")
+          print(f"overall={int(r['public_oscillatory_preflight_passed'])}")
+          PY
       - name: Upload receipt
         uses: actions/upload-artifact@v4
         with:
-          name: kokuno-agent4-public-oscillatory-independent-audit-v1
+          name: kokuno-a4-public-osc-drms-${{ steps.metrics.outputs.drms }}-dmax-${{ steps.metrics.outputs.dmax }}-rank-${{ steps.metrics.outputs.rank }}-axz-${{ steps.metrics.outputs.axz }}-local-${{ steps.metrics.outputs.local }}-support-${{ steps.metrics.outputs.support }}-overall-${{ steps.metrics.outputs.overall }}
           path: outputs/kokuno_agent4_public_oscillatory_independent_audit.json
           if-no-files-found: error
