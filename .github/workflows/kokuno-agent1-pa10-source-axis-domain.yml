@@ -1,0 +1,96 @@
+name: kokuno-agent1-pa10-source-axis-domain
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a1-pa10-source-axis-domain-049
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent1-pa10-source-axis-domain-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  source-axis-domain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile
+        run: |
+          python -m compileall -q \
+            src/openai_ns_reconstruction/kokuno_pressure_datum_binding.py \
+            src/openai_ns_reconstruction/kokuno_pa10_pressure_ball_bounds.py \
+            src/openai_ns_reconstruction/kokuno_pa10_source_axis_domain.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_pa10_pressure_ball_bounds.py \
+            tests/test_constrained_kokuno_pa10_source_axis_domain.py
+      - name: Generate exact-head source-axis receipt
+        run: |
+          python -W error -m openai_ns_reconstruction.kokuno_pa10_source_axis_domain \
+            --output artifacts/kokuno_agent1/pa10_source_axis_domain/report.json
+      - name: Bind exact head and validate truth boundary
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          import math
+          from pathlib import Path
+          import subprocess
+
+          path = Path('artifacts/kokuno_agent1/pa10_source_axis_domain/report.json')
+          payload = json.loads(path.read_text())
+          payload['exact_head'] = subprocess.check_output(
+              ['git', 'rev-parse', 'HEAD'], text=True
+          ).strip()
+          raw = json.dumps(payload, indent=2, sort_keys=True) + '\n'
+          path.write_text(raw)
+
+          real = payload['real_interval_certificate']
+          domain = payload['complex_domain_certificate']
+          inputs = payload['pressure_operator_inputs']
+          truth = payload['truth_boundary']
+
+          assert real['source_PA8_implication_machine_certified'] is True
+          assert real['failed_intervals'] == 0
+          assert real['PA8_chi_lower_from_dichotomy'] > .99
+          assert domain['source_complex_neighborhood_machine_certified'] is True
+          assert domain['H_square_plus_sigma_square_abs_lower'] > 0
+          assert domain['L_abs_lower'] > 0
+          assert domain['coefficient_rho'] > 0
+          assert math.isfinite(domain['source_normalized_g_coefficient_norm_upper'])
+          assert inputs['Phi_radius_one_ball_norm'] is None
+          assert inputs['ready_for_source_pressure_ball_now'] is False
+
+          assert truth['selected_source_compatible_sigma_PA8_machine_certified'] is True
+          assert truth['selected_source_compatible_coefficient_rho_machine_bound'] is True
+          assert truth['source_normalized_g_coefficient_norm_upper_executable'] is True
+          assert truth['old_selected_local_pressure_audit_transfers_to_new_sigma'] is False
+          assert truth['source_Phi_radius_one_ball_norm_machine_bound'] is False
+          assert truth['source_operator_constant_M_machine_bound'] is False
+          assert truth['source_operator_constant_K_machine_bound'] is False
+          assert truth['global_pressure_matched'] is False
+          assert truth['global_leading_profile_reconstructed'] is False
+          assert payload['heldout_ns_residual_assessed'] is False
+          assert payload['pde_validated'] is False
+
+          print('artifact_sha256=', hashlib.sha256(raw.encode()).hexdigest())
+          print('receipt_sha256=', payload['receipt_sha256'])
+          print('real_interval_certificate=', real)
+          print('complex_domain_certificate=', domain)
+          print('pressure_operator_inputs=', inputs)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-pa10-source-axis-domain-v1
+          path: artifacts/kokuno_agent1/pa10_source_axis_domain/report.json
