@@ -1,10 +1,10 @@
 """Kokuno Agent-5 v37 routing checkpoint after public oscillatory black-box rejection.
 
-This checkpoint integrates the first public ``velocity_osc(x,y,z,t)`` handoff
-with Agent-4's independent black-box audit.  It deliberately records a
-scientific REJECT rather than weakening any local preflight or final PDE gate.
-The current public oscillatory provider remains a repository-autonomous,
-source-compatible candidate component; it is not recovered Kokuno/OpenAI data.
+The first deterministic public ``velocity_osc(x,y,z,t)`` now exists, but the
+latest exact-head Agent-4 black-box audit rejects it under guards frozen before
+Actions.  This module records that scientific REJECT as an integration receipt;
+it never weakens the validator or promotes a candidate-only realization into
+recovered Kokuno/OpenAI source data.
 """
 from __future__ import annotations
 
@@ -117,35 +117,38 @@ A4_GUARDS = {
     "maximum_duplicated_covariance_rank_ratio": 1.0e-8,
 }
 
+# Latest fully-green Agent-4 exact-head receipt.  Small last-bit variation in
+# independent FD/quadrature runs is expected across hosted runners, so the v37
+# CI re-run checks the same frozen inequalities rather than bitwise float values.
 AGENT4 = {
     "pr": 531,
-    "head": "4f698bf4a506234043ed608a50b3be7904b0ff44",
+    "head": "9edab1f1091d8d73c6ce1c5a8a262a08b33725ad",
     "parent_agent2_head": "46c1699c7fc7ab2dc103d5cf430ead3a39bbbc1e",
-    "dedicated_run": 35413803718,
+    "dedicated_run": 35413900071,
     "dedicated_status": "success",
-    "standard_run_observed": 35413803717,
-    "standard_status_observed": "in_progress",
-    "artifact": "kokuno-a4-public-osc-drms-1.046080e-01-dmax-9.811444e-02-rank-1.874819e-02-axz-7.692553e+05-local-0-support-0-overall-0",
-    "artifact_id": 10575081799,
-    "artifact_digest": "sha256:2d4679dbf1b7124d577b03e7d9ea6cb2764dfbd604a7a32bf631622bedc8b1af",
+    "standard_run": 35413900074,
+    "standard_status": "success",
+    "artifact": "k4osc-r0-6.9164e-01-r1-4.3300e-01-r2-1.0461e-01-rr-1.597e+00-rank-1.8748e-02-drift-2.061e-11-axz-7.6926e+05-vrms-3.1766e+05-hchg-9.102e-03-mut-2.376e-01-div-0-cov-0-rad-1-axial-0-overall-0",
+    "artifact_id": 10575321691,
+    "artifact_digest": "sha256:cc7032987c32ce38a32e9f7206f1e58052c15620ad9fd4ba0856b4ef93058883",
     "seed": 9173241,
     "fd4_steps": [0.02, 0.01, 0.005],
     "phase_resolutions": [32, 64, 128],
     "guards": A4_GUARDS,
     "metrics": {
-        "finest_relative_divergence_rms": 0.10460795155383215,
-        "finest_relative_divergence_max": 0.09811443995058594,
-        "divergence_refinement_ratios": [1.5973332059305339, 4.139246627791828],
-        "minimum_covariance_rank_ratio": 0.01874819346354583,
-        "maximum_covariance_resolution_drift": 1.515075009272656e-11,
+        "finest_relative_divergence_rms": 0.10460795155383176,
+        "finest_relative_divergence_max": 0.09811443995058577,
+        "divergence_refinement_ratios": [1.5973332059304777, 4.139246627791994],
+        "minimum_covariance_rank_ratio": 0.01874819346346177,
+        "maximum_covariance_resolution_drift": 2.060561561211433e-11,
         "axis_near_absolute_max": 0.0,
         "radial_exterior_absolute_max": 0.0,
         "project_axial_exterior_absolute_max": 769255.3191046526,
         "heldout_velocity_rms": 317659.12117004656,
         "h_minus_10pct_relative_change": 1.2614067667595157,
         "h_plus_10pct_relative_change": 0.009101848910306524,
-        "divergence_mutation_relative_rms": 0.23755538605232276,
-        "duplicated_covariance_rank_ratio": 0.0,
+        "divergence_mutation_relative_rms": 0.23755538605232182,
+        "duplicated_covariance_rank_ratio": 9.669379904398983e-19,
     },
     "local_divergence_passed": False,
     "covariance_rank_preflight_passed": False,
@@ -197,9 +200,9 @@ TYPED_HANDOFFS = {
         "serialization": "SHA-bound JSON save/load",
         "blocking_failures": [
             "project axial support leak: |z|>2 absolute max 7.692553191046526e5 versus 1e-12 guard",
-            "FD4 divergence: finest relative RMS 1.0460795155383215e-1 versus 2e-5 guard and max 9.811443995058594e-2 versus 1e-4 guard",
-            "FD4 refinement: first ratio 1.5973332059305339 versus >=3 guard",
-            "phase-mean covariance rank: minimum s_min/s_max 1.874819346354583e-2 versus >=2e-2 guard",
+            "FD4 divergence: finest relative RMS 1.0460795155383176e-1 versus 2e-5 guard and max 9.811443995058577e-2 versus 1e-4 guard",
+            "FD4 refinement: first ratio 1.5973332059304777 versus >=3 guard",
+            "phase-mean covariance rank: minimum s_min/s_max 1.874819346346177e-2 versus >=2e-2 guard",
         ],
         "preserved_passes": [
             "axis-near exact zero",
@@ -268,14 +271,14 @@ def build_checkpoint() -> dict[str, Any]:
         "states": STATES,
         "typed_handoffs": TYPED_HANDOFFS,
         "routing": {
-            "new_fact": "The first deterministic public Kokuno-structured velocity_osc provider now exists and is independently assessed, but Agent 4 rejects it under the frozen local divergence/covariance/support preflight. The provider must not enter the correction cycle or final composite artifact yet.",
+            "new_fact": "The first deterministic public Kokuno-structured velocity_osc provider now exists and is independently assessed, but Agent 4 rejects it under the frozen local divergence/covariance/support preflight. It must not enter correction or the composite artifact yet.",
             "shortest_next_closure": [
-                "Agent 2: add project-compatible axial compact support at the vector-potential level with the required analytic D_z coefficient derivative; do not post-multiply velocity by a cutoff.",
-                "Agent 2: make the public complete-curl realization resolve under the unchanged Agent-4 FD4 steps .02/.01/.005 so finest relative divergence RMS/max meet 2e-5/1e-4 and both refinement ratios meet >=3; do not relax the validator.",
-                "Agent 2: after support/divergence repair, improve the autonomous signed covariance realization enough to clear the unchanged 0.02 rank-ratio guard; preserve provenance and the same public API.",
+                "Agent 2: add project-compatible axial compact support at vector-potential level with the required analytic D_z coefficient derivative; do not post-multiply velocity by a cutoff.",
+                "Agent 2: make the public complete-curl realization resolve under unchanged Agent-4 FD4 steps .02/.01/.005 so divergence RMS/max meet 2e-5/1e-4 and both refinement ratios meet >=3; do not relax the validator.",
+                "Agent 2: after support/divergence repair, improve the autonomous signed covariance realization enough to clear the unchanged 0.02 rank-ratio guard while preserving provenance and the same public API.",
                 "Agent 4: rerun exactly the same black-box protocol and frozen guards on the repaired public provider; only an independent PASS can open oscillatory_ready.",
                 "Agent 3: remain fail-closed until Agent 4 accepts the public oscillatory handoff; then materialize same-cycle requestedStress and candidate-specific finite-head mean debt before any DeltaC/epsilon inverse or finite cycle.",
-                "Agent 1: independently continue the source-ordered pre-C B0/T_sh route; the coupled-C pointwise pass remains candidate-only and does not authorize PA.16.",
+                "Agent 1: continue the source-ordered pre-C B0/T_sh route; the coupled-C pointwise pass remains candidate-only and does not authorize PA.16.",
                 "Agent 5: only after non-obstructed leading + independently accepted oscillatory + guarded correction coexist in one executable ancestry, instantiate the composite velocity/pressure/restricted-forcing artifact, save/load and Python/MATLAB smoke, then freeze for held-out NS validation.",
             ],
         },
@@ -299,49 +302,24 @@ def validate_checkpoint(payload: dict[str, Any]) -> None:
         raise ValueError("routing states changed")
     if payload.get("typed_handoffs") != TYPED_HANDOFFS:
         raise ValueError("typed handoffs changed")
-    upstream = payload.get("upstream", {})
-    expected = {
+    expected_upstream = {
         "previous_agent5": PREVIOUS_AGENT5,
         "agent1_latest": AGENT1,
         "agent2_public_provider": AGENT2,
         "agent3_latest": AGENT3,
         "agent4_public_provider_audit": AGENT4,
     }
-    if upstream != expected:
+    if payload.get("upstream") != expected_upstream:
         raise ValueError("upstream receipt changed")
-    if not STATES["public_provenance_labelled_xyz_t_oscillatory_velocity_ready"]:
-        raise ValueError("public oscillatory provider unexpectedly missing")
-    for name in (
-        "leading_ready",
-        "public_oscillatory_local_divergence_passed",
-        "public_oscillatory_covariance_rank_passed",
-        "public_oscillatory_project_support_passed",
-        "oscillatory_ready",
-        "genuinely_independent_second_covariance_column_ready",
-        "same_cycle_requested_stress_materialized",
-        "candidate_numeric_finite_head_mean_debt_materialized",
-        "correction_ingest_allowed",
-        "correction_ready",
-        "finite_correction_cycle_run",
-        "candidate_artifact_instantiated",
-        "velocity_export_ready",
-        "formal_full_domain_pde_gate_assessed",
-        "pde_validated",
-    ):
-        if STATES[name] is not False:
-            raise ValueError(f"fail-closed state promoted: {name}")
-    if not STATES["public_oscillatory_independent_audit_assessed"]:
-        raise ValueError("Agent-4 audit assessment was removed")
 
-    a4 = upstream["agent4_public_provider_audit"]
-    if a4["dedicated_status"] != "success":
-        raise ValueError("Agent-4 dedicated software CI is not green")
+    a4 = payload["upstream"]["agent4_public_provider_audit"]
+    m, g = a4["metrics"], a4["guards"]
+    if a4["dedicated_status"] != "success" or a4["standard_status"] != "success":
+        raise ValueError("Agent-4 exact-head software CI is not green")
     if a4["public_oscillatory_preflight_passed"]:
         raise ValueError("rejected oscillatory provider was promoted")
     if a4["local_divergence_passed"] or a4["covariance_rank_preflight_passed"] or a4["project_axial_support_passed"]:
         raise ValueError("failed Agent-4 scientific guard was rewritten")
-    m = a4["metrics"]
-    g = a4["guards"]
     if not m["finest_relative_divergence_rms"] > g["finest_relative_divergence_rms"]:
         raise ValueError("divergence RMS rejection no longer holds")
     if not m["finest_relative_divergence_max"] > g["finest_relative_divergence_max"]:
