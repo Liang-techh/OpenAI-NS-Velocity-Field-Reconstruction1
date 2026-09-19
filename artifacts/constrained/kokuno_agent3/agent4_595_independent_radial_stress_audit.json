@@ -1,0 +1,234 @@
+{
+  "convergence": {
+    "axial_e1": {
+      "finest_edge_relative": 1.353832968427077e-16,
+      "finest_moment_complement_relative": 8.569115706554926e-18,
+      "finest_relative_max": 0.00023610373350348252,
+      "finest_relative_rms": 0.0001864344008886948,
+      "finest_sign_flip_mutation_relative_rms": 1.9999645718968921,
+      "refinement_ratios": [
+        14.554891779445125,
+        14.786694125947507
+      ],
+      "relative_rms_by_radial_count": [
+        0.040124175505662586,
+        0.002756748460495406,
+        0.0001864344008886948
+      ]
+    },
+    "theta_e2": {
+      "finest_edge_relative": 1.4710310391189913e-16,
+      "finest_moment_complement_relative": 1.0549343397735615e-17,
+      "finest_relative_max": 0.00013808983925326713,
+      "finest_relative_rms": 0.00010215080513304861,
+      "finest_sign_flip_mutation_relative_rms": 1.9999875180782938,
+      "refinement_ratios": [
+        12.029826646162858,
+        14.923789334921668
+      ],
+      "relative_rms_by_radial_count": [
+        0.018339195193310717,
+        0.0015244770961982525,
+        0.00010215080513304861
+      ]
+    }
+  },
+  "failed_guards": [],
+  "frozen_guards": {
+    "edge_relative_max": 1e-08,
+    "finest_relative_max_max": 0.05,
+    "finest_relative_rms_max": 0.02,
+    "minimum_refinement_ratio": 2.0,
+    "moment_complement_relative_max": 1e-10,
+    "project_divergence_max_l2_gate": 1e-05,
+    "project_momentum_max_l2_gate": 0.001,
+    "sign_flip_mutation_relative_rms_min": 0.5
+  },
+  "frozen_state": {
+    "angular_count": 16,
+    "cartesian_fd6_step": 0.003,
+    "nu": 0.01,
+    "radial_counts": [
+      25,
+      49,
+      97
+    ],
+    "time": 0.5,
+    "z": 0.08
+  },
+  "independent_radial_stress_preflight_passed": true,
+  "levels": [
+    {
+      "axial_e1": {
+        "edge_relative": 2.841113596773783e-16,
+        "exponent": 1,
+        "fd6_interior_count": 19,
+        "inner_edge": -0.0,
+        "moment_complement_relative": 2.09969932947234e-17,
+        "operator_error_max_abs": 3661065.160164073,
+        "operator_error_rms": 1222079.9169087217,
+        "operator_relative_max": 0.050277373642569054,
+        "operator_relative_rms": 0.040124175505662586,
+        "outer_edge": -6.366359908385435e-10,
+        "rhs_max_abs": 72817350.92591049,
+        "rhs_rms": 30457446.20313142,
+        "sign_flip_mutation_relative_rms": 1.9869450108244278,
+        "stress_max_abs": 6438715.180465883,
+        "stress_rms": 2240797.3815671196,
+        "weighted_moment": -458802.8664488957
+      },
+      "boundary_margin": 0.04999999999999982,
+      "cartesian_fd6_step": 0.003,
+      "radial_count": 25,
+      "radial_spacing": 0.05000000000000002,
+      "self_defect_rms": 141952662.50884575,
+      "theta_e2": {
+        "edge_relative": 1.5812277853720002e-16,
+        "exponent": 2,
+        "fd6_interior_count": 19,
+        "inner_edge": -0.0,
+        "moment_complement_relative": 1.3416385420476267e-16,
+        "operator_error_max_abs": 1485069.9006523825,
+        "operator_error_rms": 621032.9177309114,
+        "operator_relative_max": 0.018103550536381054,
+        "operator_relative_rms": 0.018339195193310717,
+        "outer_edge": -5.711108464670103e-10,
+        "rhs_max_abs": 82031969.23542556,
+        "rhs_rms": 33863695.281319395,
+        "sign_flip_mutation_relative_rms": 1.9960525891533776,
+        "stress_max_abs": 9781115.159184966,
+        "stress_rms": 3611818.940638275,
+        "weighted_moment": -593884.6513233507
+      },
+      "velocity_rms": 3212.7324867476323
+    },
+    {
+      "axial_e1": {
+        "edge_relative": 1.2710787578988368e-16,
+        "exponent": 1,
+        "fd6_interior_count": 43,
+        "inner_edge": -0.0,
+        "moment_complement_relative": 3.460368786624795e-17,
+        "operator_error_max_abs": 271212.2450476289,
+        "operator_error_rms": 78931.10772254715,
+        "operator_relative_max": 0.003645621539572794,
+        "operator_relative_rms": 0.002756748460495406,
+        "outer_edge": -2.885939163987373e-10,
+        "rhs_max_abs": 74393966.05041192,
+        "rhs_rms": 28631958.574981015,
+        "sign_flip_mutation_relative_rms": 1.999387541459584,
+        "stress_max_abs": 6613813.261876073,
+        "stress_rms": 2270464.474410688,
+        "weighted_moment": -458802.95480641304
+      },
+      "boundary_margin": 0.02499999999999991,
+      "cartesian_fd6_step": 0.003,
+      "radial_count": 49,
+      "radial_spacing": 0.024999999999999994,
+      "self_defect_rms": 140434408.56280613,
+      "theta_e2": {
+        "edge_relative": 9.767730416657645e-17,
+        "exponent": 2,
+        "fd6_interior_count": 43,
+        "inner_edge": -0.0,
+        "moment_complement_relative": 0.0,
+        "operator_error_max_abs": 172332.1685864553,
+        "operator_error_rms": 48530.28286274617,
+        "operator_relative_max": 0.0021007927711651666,
+        "operator_relative_rms": 0.0015244770961982525,
+        "outer_edge": -3.56571651872706e-10,
+        "rhs_max_abs": 82031969.5268536,
+        "rhs_rms": 31834051.809483524,
+        "sign_flip_mutation_relative_rms": 1.9997853452529006,
+        "stress_max_abs": 9768336.141821906,
+        "stress_rms": 3650506.685407877,
+        "weighted_moment": -593884.5837440304
+      },
+      "velocity_rms": 3178.3707235417337
+    },
+    {
+      "axial_e1": {
+        "edge_relative": 1.353832968427077e-16,
+        "exponent": 1,
+        "fd6_interior_count": 91,
+        "inner_edge": -0.0,
+        "moment_complement_relative": 8.569115706554926e-18,
+        "operator_error_max_abs": 17826.810657069087,
+        "operator_error_rms": 5189.262474053109,
+        "operator_relative_max": 0.00023610373350348252,
+        "operator_relative_rms": 0.0001864344008886948,
+        "outer_edge": -3.0902066907256264e-10,
+        "rhs_max_abs": 75504145.54035904,
+        "rhs_rms": 27834254.028853863,
+        "sign_flip_mutation_relative_rms": 1.9999645718968921,
+        "stress_max_abs": 6620151.154948488,
+        "stress_rms": 2282561.26331147,
+        "weighted_moment": -458802.95480677515
+      },
+      "boundary_margin": 0.012499999999999734,
+      "cartesian_fd6_step": 0.003,
+      "radial_count": 97,
+      "radial_spacing": 0.012500000000000011,
+      "self_defect_rms": 139693324.71668842,
+      "theta_e2": {
+        "edge_relative": 1.4710310391189913e-16,
+        "exponent": 2,
+        "fd6_interior_count": 91,
+        "inner_edge": -0.0,
+        "moment_complement_relative": 1.0549343397735615e-17,
+        "operator_error_max_abs": 11327.781485594809,
+        "operator_error_rms": 3161.274747886859,
+        "operator_relative_max": 0.00013808983925326713,
+        "operator_relative_rms": 0.00010215080513304861,
+        "outer_edge": -5.397817523386409e-10,
+        "rhs_max_abs": 82031969.52687307,
+        "rhs_rms": 30947134.912636135,
+        "sign_flip_mutation_relative_rms": 1.9999875180782938,
+        "stress_max_abs": 9806801.565887937,
+        "stress_rms": 3669411.0320195504,
+        "weighted_moment": -593884.583743488
+      },
+      "velocity_rms": 3161.5982015914824
+    }
+  ],
+  "provenance": {
+    "admitted_agent2_head": "732800ce4990464b49c8aa32d0dff4580f6684d4",
+    "admitted_agent2_pr": 561,
+    "independent_agent4_dt_head": "6f7edb4d66dcb162a8510a40e4227f48f3c57e28",
+    "independent_agent4_dt_pr": 580,
+    "independent_agent4_velocity_head": "9b0f86012c53fa8e32a19f766dbc150931870425",
+    "independent_agent4_velocity_pr": 563,
+    "parent_agent3_head": "2271c52412922c8255cede8aee9a01e68ba55a55",
+    "parent_agent3_pr": 589,
+    "radial_derivative": "new centered uniform-grid FD6",
+    "spatial_operator": "new centered Cartesian FD6; no Agent-3 FD4 helper",
+    "stress_constructor": "new Simpson/cumulative-Simpson moment-complement implementation",
+    "time_derivative_provider": "openai_ns_reconstruction.kokuno_public_oscillatory_time_derivative:velocity_osc_dt",
+    "velocity_provider": "openai_ns_reconstruction.kokuno_public_z_pullback_velocity:velocity_osc"
+  },
+  "schema": "kokuno-a4-independent-radial-stress-audit-v1",
+  "task": "KOKUNO-A4-INDEPENDENT-RADIAL-STRESS-AUDIT-043",
+  "truth_boundary": {
+    "agent1_leading_cross_terms_included": false,
+    "agent3_compact_stress_constructor_used": false,
+    "agent3_fd4_self_defect_helper_used": false,
+    "agent3_radial_derivative_used": false,
+    "blowup_proved": false,
+    "candidate_finite_head_mean_debt_materialized": false,
+    "finite_correction_cycle_run": false,
+    "formal_full_domain_pde_gate_assessed": false,
+    "full_same_cycle_composite_requested_stress_materialized": false,
+    "heldout_ns_momentum_residual_assessed": false,
+    "independent_compact_radial_stress_reconstruction_audited": true,
+    "independent_real_oscillatory_self_defect_consumed": true,
+    "matched_pressure_included": false,
+    "openai_field_identified": false,
+    "paper_exact": false,
+    "pde_validated": false,
+    "public_black_box_time_derivative_consumed": true,
+    "public_black_box_velocity_consumed": true,
+    "public_velocity_correction_materialized": false,
+    "restricted_forcing_included": false,
+    "signed_mean_inverse_input_ready": false
+  }
+}
