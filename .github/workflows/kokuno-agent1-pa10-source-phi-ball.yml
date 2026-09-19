@@ -1,0 +1,104 @@
+name: kokuno-agent1-pa10-source-phi-ball
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a1-pa10-source-phi-ball-050
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent1-pa10-source-phi-ball-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  source-phi-ball:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile
+        run: |
+          python -m compileall -q \
+            src/openai_ns_reconstruction/kokuno_pa10_operator_primitives.py \
+            src/openai_ns_reconstruction/kokuno_pa10_pressure_ball_bounds.py \
+            src/openai_ns_reconstruction/kokuno_pa10_source_axis_domain.py \
+            src/openai_ns_reconstruction/kokuno_pa10_source_phi_ball.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_pa10_operator_primitives.py \
+            tests/test_constrained_kokuno_pa10_pressure_ball_bounds.py \
+            tests/test_constrained_kokuno_pa10_source_axis_domain.py \
+            tests/test_constrained_kokuno_pa10_source_phi_ball.py
+      - name: Generate exact-head source-Phi receipt
+        run: |
+          python -W error -m openai_ns_reconstruction.kokuno_pa10_source_phi_ball \
+            --output artifacts/kokuno_agent1/pa10_source_phi_ball/report.json
+      - name: Bind exact head and validate truth boundary
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          import math
+          from pathlib import Path
+          import subprocess
+
+          path = Path('artifacts/kokuno_agent1/pa10_source_phi_ball/report.json')
+          payload = json.loads(path.read_text())
+          payload['exact_head'] = subprocess.check_output(
+              ['git', 'rev-parse', 'HEAD'], text=True
+          ).strip()
+          raw = json.dumps(payload, indent=2, sort_keys=True) + '\n'
+          path.write_text(raw)
+
+          chi = payload['chi_certificate']
+          phi = payload['phi_ball_certificate']
+          inputs = payload['completed_pressure_operator_inputs']
+          pressure = payload['source_compatible_pressure_ball_envelope']
+          truth = payload['truth_boundary']
+
+          assert 0 < chi['relative_H_variation_e'] < 1
+          assert 1 < chi['chi_complex_sup_upper'] < 10
+          assert 1 < chi['chi_multiplier_norm_upper'] < 20
+          assert math.isfinite(phi['inverse_one_plus_T_absolute_series_upper'])
+          assert math.isfinite(phi['Phi_radius_one_ball_norm_upper'])
+          assert phi['Phi_radius_one_ball_lipschitz_upper'] == 1
+          assert inputs['Phi_radius_one_ball_norm'] is not None
+          assert inputs['Phi_radius_one_ball_lipschitz'] == 1
+          assert inputs['ready_for_source_compatible_pressure_operator'] is True
+          assert math.isfinite(pressure['p_eta']['norm'])
+          assert math.isfinite(pressure['p_eta']['lipschitz'])
+
+          assert truth['source_compatible_chi_multiplier_norm_machine_bound'] is True
+          assert truth['source_compatible_Phi_radius_one_ball_norm_machine_bound'] is True
+          assert truth['source_compatible_Phi_radius_one_ball_lipschitz_machine_bound'] is True
+          assert truth['source_mixed_Y_Phi_Y_radius_one_ball_bound_machine_bound'] is False
+          assert truth['source_mixed_Y_u_Y_radius_one_ball_bound_machine_bound'] is False
+          assert truth['source_R1_radius_one_ball_norm_machine_bound'] is False
+          assert truth['source_R2_radius_one_ball_norm_machine_bound'] is False
+          assert truth['source_operator_constant_M_machine_bound'] is False
+          assert truth['source_operator_constant_K_machine_bound'] is False
+          assert truth['global_pressure_matched'] is False
+          assert truth['global_leading_profile_reconstructed'] is False
+          assert payload['heldout_ns_residual_assessed'] is False
+          assert payload['pde_validated'] is False
+
+          print('artifact_sha256=', hashlib.sha256(raw.encode()).hexdigest())
+          print('receipt_sha256=', payload['receipt_sha256'])
+          print('chi_certificate=', chi)
+          print('phi_ball_certificate=', phi)
+          print('completed_pressure_operator_inputs=', inputs)
+          print('source_compatible_pressure_ball_envelope=', pressure)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-pa10-source-phi-ball-v1
+          path: artifacts/kokuno_agent1/pa10_source_phi_ball/report.json
