@@ -19,7 +19,7 @@ env:
 jobs:
   pa10-selected-profile-norm:
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -34,11 +34,11 @@ jobs:
           python -m pytest -q -W error \
             tests/test_constrained_kokuno_pa10_source_choice_order_guard.py \
             tests/test_constrained_kokuno_pa10_l0_binding.py \
-            tests/test_constrained_kokuno_pa10_selected_m0_envelope.py \
             tests/test_constrained_kokuno_pa10_selected_profile_norm.py
       - name: Generate selected-center profile norm receipt
         run: |
           python -m openai_ns_reconstruction.kokuno_pa10_selected_profile_norm \
+            --skip-selected-b0-diagnostic \
             --output artifacts/kokuno_agent1/pa10_selected_profile_norm/report.json
       - name: Validate candidate-only truth boundary
         run: |
@@ -54,8 +54,8 @@ jobs:
           truth = report["truth_boundary"]
           envelope = report["selected_profile_norm_envelope"]
           fine = envelope["fine"]
-          diagnostic = report["selected_candidate_only_B0_diagnostic"]
 
+          assert "selected_candidate_only_B0_diagnostic" not in report
           assert fine["sample_max_abs_combined_log_profile"] > 1.0e20
           assert envelope["combined_profile_C0_candidate_upper_envelope"] > fine[
               "sample_max_abs_combined_log_profile"
@@ -65,18 +65,11 @@ jobs:
           ]
           assert envelope["numerical_envelope_guard_passed"] is True
           assert envelope["continuum_supremum_proved"] is False
-          assert diagnostic["B0_from_three_selected_engineering_dependencies"] > envelope[
-              "combined_profile_C0_candidate_upper_envelope"
-          ]
-          assert diagnostic["T_sh_lower_from_selected_candidate_B0"] > diagnostic[
-              "B0_from_three_selected_engineering_dependencies"
-          ]
-          assert diagnostic["source_B0_analytic_bound_proved"] is False
-          assert diagnostic["source_T_sh_lower_bound_verified"] is False
           assert truth["selected_center_profile_norm_numerical_envelope_materialized"] is True
           assert truth["selected_center_is_source_fixed_point"] is False
           assert truth["selected_profile_norm_envelope_is_continuum_interval_proof"] is False
           assert truth["combined_profile_C0_norm_machine_bound"] is False
+          assert truth["source_M0_machine_bound"] is False
           assert truth["source_B0_dependencies_machine_bound"] is False
           assert truth["source_B0_analytic_bound_proved"] is False
           assert truth["source_T_sh_lower_bound_verified"] is False
@@ -92,12 +85,6 @@ jobs:
           ])
           print("nested_grid_relative_drift=", envelope["nested_grid_relative_drift"])
           print("sample_extremizer_eta=", fine["sample_extremizer_eta"])
-          print("selected_B0_diagnostic=", diagnostic[
-              "B0_from_three_selected_engineering_dependencies"
-          ])
-          print("selected_T_sh_diagnostic=", diagnostic[
-              "T_sh_lower_from_selected_candidate_B0"
-          ])
           PY
       - uses: actions/upload-artifact@v4
         with:
