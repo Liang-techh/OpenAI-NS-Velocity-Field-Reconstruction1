@@ -34,18 +34,21 @@ def test_v37_records_public_provider_but_rejects_oscillatory_readiness() -> None
     assert not states["pde_validated"]
 
 
-def test_agent4_rejection_metrics_and_frozen_guards_are_exactly_routed() -> None:
+def test_agent4_latest_exact_head_rejection_is_routed_without_threshold_changes() -> None:
     a4 = build_checkpoint()["upstream"]["agent4_public_provider_audit"]
     metrics = a4["metrics"]
     guards = a4["guards"]
     assert a4 == AGENT4
-    assert a4["dedicated_run"] == 35413803718
+    assert a4["head"] == "9edab1f1091d8d73c6ce1c5a8a262a08b33725ad"
+    assert a4["dedicated_run"] == 35413900071
+    assert a4["standard_run"] == 35413900074
     assert a4["dedicated_status"] == "success"
-    assert a4["artifact_id"] == 10575081799
+    assert a4["standard_status"] == "success"
+    assert a4["artifact_id"] == 10575321691
     assert not a4["public_oscillatory_preflight_passed"]
-    assert metrics["finest_relative_divergence_rms"] == pytest.approx(0.10460795155383215)
-    assert metrics["finest_relative_divergence_max"] == pytest.approx(0.09811443995058594)
-    assert metrics["minimum_covariance_rank_ratio"] == pytest.approx(0.01874819346354583)
+    assert metrics["finest_relative_divergence_rms"] == pytest.approx(0.10460795155383176)
+    assert metrics["finest_relative_divergence_max"] == pytest.approx(0.09811443995058577)
+    assert metrics["minimum_covariance_rank_ratio"] == pytest.approx(0.01874819346346177)
     assert metrics["project_axial_exterior_absolute_max"] == pytest.approx(769255.3191046526)
     assert metrics["finest_relative_divergence_rms"] > guards["finest_relative_divergence_rms"]
     assert metrics["finest_relative_divergence_max"] > guards["finest_relative_divergence_max"]
@@ -63,10 +66,7 @@ def test_v37_preserves_passed_subchecks_without_laundering_failure() -> None:
     assert metrics["radial_exterior_absolute_max"] <= guards["radial_exterior_absolute_max"]
     assert metrics["maximum_covariance_resolution_drift"] <= guards["maximum_covariance_resolution_drift"]
     assert metrics["heldout_velocity_rms"] >= guards["minimum_nontrivial_velocity_rms"]
-    assert min(
-        metrics["h_minus_10pct_relative_change"],
-        metrics["h_plus_10pct_relative_change"],
-    ) >= guards["minimum_parameter_perturbation_relative_change"]
+    assert min(metrics["h_minus_10pct_relative_change"], metrics["h_plus_10pct_relative_change"]) >= guards["minimum_parameter_perturbation_relative_change"]
     assert metrics["divergence_mutation_relative_rms"] >= guards["minimum_divergence_mutation_relative_rms"]
     assert metrics["duplicated_covariance_rank_ratio"] <= guards["maximum_duplicated_covariance_rank_ratio"]
     assert not a4["formal_full_domain_pde_gate_assessed"]
@@ -88,7 +88,7 @@ def test_v37_updates_leading_truth_boundary_to_source_choice_order_guard() -> No
     assert not a1["selected_pa16_handoff_allowed"]
 
 
-def test_v37_fail_closed_on_threshold_or_state_laundering() -> None:
+def test_v37_fail_closed_on_threshold_state_or_receipt_laundering() -> None:
     payload = copy.deepcopy(build_checkpoint())
     payload["formal_gates"]["held_out_normalized_momentum_max"] = 2.0e-3
     with pytest.raises(ValueError, match="sha256 mismatch"):
