@@ -11,6 +11,7 @@ on:
 
 permissions:
   contents: read
+  pull-requests: write
 
 jobs:
   render:
@@ -94,6 +95,42 @@ jobs:
               assert row['child']['vorticity']['enstrophy_aspect'] > 0
               print(row['time'], row['relative'])
           PY
+
+      - name: Publish exact numeric receipt to PR
+        if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent9-render-receipt.md
+          import hashlib
+          import json
+          from pathlib import Path
+
+          path = Path('artifacts/agent9_st052m_local_swirl_render/report.json')
+          body = path.read_bytes()
+          r = json.loads(body)
+          print('### CR-A9-064 exact-head render receipt')
+          print()
+          print(f"Report SHA-256: `{hashlib.sha256(body).hexdigest()}`")
+          print(f"Source beta: `{r['source_replay']['beta']}`; redistribution scale: `{r['source_replay']['redistribution_scale']}`; common post-scale: `{r['source_replay']['post_transform_common_scale']}`.")
+          print()
+          print('| t | mean turns | max turns | axial span | radial span | top axial ω RMS | top radial ω RMS | enstrophy axial RMS | enstrophy radial RMS | enstrophy aspect | tip radial RMS | central radial RMS | full ω RMS |')
+          print('|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|')
+          for row in r['per_time']:
+              q = row['relative']
+              values = [
+                  q['mean_absolute_turns'], q['max_absolute_turns'], q['mean_axial_span'],
+                  q['mean_radial_span'], q['top_vorticity_axial_rms'], q['top_vorticity_radial_rms'],
+                  q['enstrophy_axial_rms'], q['enstrophy_radial_rms'], q['enstrophy_aspect'],
+                  q['tip_vorticity_radial_rms'], q['central_vorticity_radial_rms'],
+                  q['full_vorticity_rms'],
+              ]
+              print('| ' + f"{row['time']:.2f}" + ' | ' + ' | '.join(f"{100*x:+.6f}%" for x in values) + ' |')
+          print()
+          print('Truth boundary: target-free visualization diagnostics only; no pressure/forcing transfer, held-out NS momentum assessment, visual correspondence claim, or PDE promotion.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent9-render-receipt.md
 
       - name: Upload exact render artifact
         uses: actions/upload-artifact@v4
