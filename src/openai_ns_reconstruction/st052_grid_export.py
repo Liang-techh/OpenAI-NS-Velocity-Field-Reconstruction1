@@ -30,6 +30,18 @@ MAT_FILENAME = "st052_velocity_grid.mat"
 MANIFEST_FILENAME = "st052_velocity_grid_manifest.json"
 _ARRAY_NAMES = ("x", "y", "z", "t", "u", "v", "w")
 
+# Engineering replay tolerance only.  This reuses the already-frozen 5e-12
+# exact-source whole-candidate parity tolerance from the ST052 capsule lane.
+# It is not a PDE, visualization, or source-correspondence acceptance gate.
+# NPZ <-> MAT serialized numerical payload equality remains exact below.
+CALLABLE_GRID_PARITY_ATOL = 5e-12
+
+
+def callable_grid_parity_passes(max_component_error: float) -> bool:
+    """Return whether scalar-vs-batched callable replay is within the fixed software tolerance."""
+    error = float(max_component_error)
+    return bool(np.isfinite(error) and 0.0 <= error <= CALLABLE_GRID_PARITY_ATOL)
+
 
 def _canonical_json_bytes(value: Any) -> bytes:
     return json.dumps(
