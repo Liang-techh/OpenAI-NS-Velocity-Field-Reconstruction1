@@ -1,0 +1,64 @@
+name: kokuno-agent3-oscillatory-audit-identity
+
+on:
+  push:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_oscillatory_audit_identity_admission.py'
+      - 'tests/test_constrained_kokuno_oscillatory_audit_identity_admission.py'
+      - 'artifacts/constrained/kokuno_agent3/agent4_543_public_oscillatory_audit.json'
+      - '.github/workflows/kokuno-agent3-oscillatory-audit-identity.yml'
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_oscillatory_audit_identity_admission.py'
+      - 'tests/test_constrained_kokuno_oscillatory_audit_identity_admission.py'
+      - 'artifacts/constrained/kokuno_agent3/agent4_543_public_oscillatory_audit.json'
+      - '.github/workflows/kokuno-agent3-oscillatory-audit-identity.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  oscillatory-audit-identity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Focused Agent-3 identity and parent admission tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_independent_oscillatory_admission.py
+          tests/test_constrained_kokuno_oscillatory_audit_identity_admission.py
+      - name: Compile Agent-3 identity module
+        run: >-
+          python -m py_compile
+          src/openai_ns_reconstruction/kokuno_oscillatory_audit_identity_admission.py
+      - name: Generate pinned execution-admission receipt
+        run: >-
+          python -m openai_ns_reconstruction.kokuno_oscillatory_audit_identity_admission
+          --audit artifacts/constrained/kokuno_agent3/agent4_543_public_oscillatory_audit.json
+          --output kokuno_agent3_oscillatory_audit_identity.json
+      - name: Check fail-closed scientific boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r = json.loads(Path('kokuno_agent3_oscillatory_audit_identity.json').read_text())
+          assert r['execution_identity_bound'] is True
+          assert r['independent_public_oscillatory_preflight_passed'] is False
+          assert r['correction_ingest_allowed'] is False
+          assert r['finite_correction_cycle_rerun_allowed'] is False
+          assert r['heldout_ns_residual_assessed'] is False
+          assert r['residual_reduction_claimed'] is False
+          assert r['pde_validated'] is False
+          assert r['future_pass_requires_new_agent3_identity_pin'] is True
+          PY
+      - name: Upload identity receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent3-oscillatory-audit-identity-v1
+          path: kokuno_agent3_oscillatory_audit_identity.json
