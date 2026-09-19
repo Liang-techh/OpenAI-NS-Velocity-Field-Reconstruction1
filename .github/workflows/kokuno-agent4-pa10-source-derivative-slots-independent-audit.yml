@@ -1,0 +1,103 @@
+name: kokuno-agent4-pa10-source-derivative-slots-independent-audit
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a4-pa10-derivative-ordinary-slots-independent-audit-058
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_pa10_source_derivative_slots_independent_audit.py"
+      - "tests/test_constrained_kokuno_pa10_source_derivative_slots_independent_audit.py"
+      - ".github/workflows/kokuno-agent4-pa10-source-derivative-slots-independent-audit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent4-pa10-source-derivative-slots-independent-audit-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  independent-derivative-slot-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile
+        run: |
+          python -m compileall -q \
+            src/openai_ns_reconstruction/kokuno_pa10_source_derivative_ordinary_slots.py \
+            src/openai_ns_reconstruction/kokuno_pa10_source_derivative_slots_independent_audit.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_pa10_source_derivative_ordinary_slots.py \
+            tests/test_constrained_kokuno_pa10_source_derivative_slots_independent_audit.py
+      - name: Generate exact-head Agent-4 receipt
+        run: |
+          python -W error -m openai_ns_reconstruction.kokuno_pa10_source_derivative_slots_independent_audit \
+            --output artifacts/kokuno_agent4/pa10_source_derivative_slots_independent_audit_v1/report.json
+      - name: Bind exact head and validate immutable truth boundary
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          import subprocess
+
+          path = Path('artifacts/kokuno_agent4/pa10_source_derivative_slots_independent_audit_v1/report.json')
+          payload = json.loads(path.read_text())
+          payload['exact_head'] = subprocess.check_output(
+              ['git', 'rev-parse', 'HEAD'], text=True
+          ).strip()
+          raw = json.dumps(payload, indent=2, sort_keys=True) + '\n'
+          path.write_text(raw)
+
+          assert payload['agent1_pr'] == 693
+          assert payload['agent1_exact_head'] == 'f2f79dc27259d35f0ca341d0a5fa03fe97d6c51e'
+          assert payload['failed_guards'] == []
+          assert payload['source_R2_derivative_ordinary_slots_independent_preflight_passed'] is True
+          assert len(payload['independent_values']['R2_derivative_ordinary_after_J1']) == 4
+
+          ratios = payload['public_over_independent_ratios']
+          assert min(ratios['fixed'].values()) >= 1.0
+          for item in ratios['derivative_slots'].values():
+              assert item['norm'] >= 1.0
+              assert item['lipschitz'] >= 1.0
+
+          neg = payload['negative_controls']
+          assert all(neg['fixed_0p999_detected'].values())
+          assert all(neg['slot_0p99_detected'].values())
+
+          truth = payload['truth_boundary']
+          assert truth['source_R2_derivative_ordinary_slots_independently_audited'] is True
+          assert truth['source_R2_algebraic_ordinary_slots_independent_audit_pending'] is True
+          assert truth['all_R2_ordinary_slots_independently_audited'] is False
+          assert truth['all_R1_ordinary_slots_source_bound'] is False
+          assert truth['heldout_ns_momentum_residual_assessed'] is False
+          assert truth['pde_validated'] is False
+
+          gates = payload['immutable_project_gates']
+          assert gates['normalized_momentum_max'] == 1e-3
+          assert gates['normalized_momentum_L2'] == 1e-3
+          assert gates['divergence_max'] == 1e-5
+          assert gates['divergence_L2'] == 1e-5
+
+          print('artifact_sha256=', hashlib.sha256(raw.encode()).hexdigest())
+          print('receipt_sha256=', payload['receipt_sha256'])
+          print('fixed_ratios=', ratios['fixed'])
+          print('slot_ratios=', ratios['derivative_slots'])
+          print('weight_ratio_stress=', payload['weight_ratio_stress'])
+          print('offgrid_stress=', payload['fresh_offgrid_polynomial_stress'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent4-pa10-source-derivative-slots-independent-audit-v1
+          path: artifacts/kokuno_agent4/pa10_source_derivative_slots_independent_audit_v1/report.json
+          if-no-files-found: error
