@@ -1,14 +1,28 @@
 from __future__ import annotations
 
+import json
+
 from openai_ns_reconstruction.kokuno_agent4_pa10_source_u_ball_audit import run_audit
 
 
 def test_independent_source_u_ball_audit_passes_without_promoting_pde() -> None:
     report = run_audit(pr_head="test-head", checkout_head="test-head")
-    assert report["source_u_ball_independent_preflight_passed"] is True
-    assert report["failed_guards"] == []
-    assert all(report["guards"].values())
-    assert all(report["mutation"].values())
+    diagnostic = json.dumps(
+        {
+            "failed_guards": report["failed_guards"],
+            "guards": report["guards"],
+            "mutation": report["mutation"],
+            "ratios": report["public_to_independent_ratios"],
+            "public_certificate": report["public_certificate"],
+            "fresh_real_value_path": report["fresh_real_value_path"],
+            "fresh_complex_offgrid_stress": report["fresh_complex_offgrid_stress"],
+        },
+        sort_keys=True,
+    )
+    assert report["source_u_ball_independent_preflight_passed"] is True, diagnostic
+    assert report["failed_guards"] == [], diagnostic
+    assert all(report["guards"].values()), diagnostic
+    assert all(report["mutation"].values()), diagnostic
 
     ratios = report["public_to_independent_ratios"]
     assert ratios["slope"] >= 1.0
