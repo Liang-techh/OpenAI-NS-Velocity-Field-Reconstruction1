@@ -50,16 +50,17 @@ def test_bundle_replays_all_four_frozen_public_interfaces_exactly() -> None:
 
 def test_bundle_preserves_broadcast_and_registered_support_zero() -> None:
     bundle = evaluate_oscillatory_bundle(
-        np.asarray([[0.0], [1.85], [0.8]]),
+        np.asarray([[0.0], [1.85], [0.0]]),
         np.zeros((3, 1)),
-        np.asarray([[0.0, 0.0, 2.15]]),
+        np.asarray([[0.0, 0.4, 2.15]]),
         0.5,
     )
     assert bundle["velocity"].shape == (3, 3, 3)
     assert bundle["support_mask"].shape == (3, 3)
 
-    # Every broadcast row or column is outside through axis, radial exterior,
-    # or axial exterior.  All four frozen public fields must remain exact zero.
+    # Every broadcast row is outside through the axis or radial exterior; the
+    # third column additionally exercises the axial exterior.  All four frozen
+    # public fields must remain exact zero.
     assert not np.any(bundle["support_mask"])
     for key in ("vector_potential", "velocity", "vector_potential_dt", "velocity_dt"):
         assert np.max(np.abs(bundle[key])) == 0.0
