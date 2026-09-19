@@ -248,6 +248,13 @@ def materialize_actual_oscillatory_mean_stress(
     is evaluated directly on the admitted public candidate.  The returned
     stresses are therefore candidate-generated data, not caller-supplied target
     data.  They remain only one component of the future full composite defect.
+
+    The registered field is exactly zero at the two radial support boundaries.
+    We therefore evaluate the public provider only on strict interior radial
+    nodes and insert those two known zero-extension boundary values before the
+    compact radial integral.  This avoids asking upstream complete-curl code to
+    normalize a zero tangent at a support endpoint while preserving the compact
+    support/moment contract.
     """
     if int(radial_count) != radial_count or radial_count < 17:
         raise ValueError("radial_count must be an integer >=17")
@@ -257,6 +264,9 @@ def materialize_actual_oscillatory_mean_stress(
     angular_count = int(angular_count)
     time_value = _finite_scalar(time, "time")
     z_value = _finite_scalar(z, "z")
+    h = _finite_scalar(fd4_step, "fd4_step")
+    if h <= 0.0:
+        raise ValueError("fd4_step must be positive")
 
     field = default_field()
     if not (field.time_min <= time_value <= field.time_max):
@@ -269,46 +279,69 @@ def materialize_actual_oscillatory_mean_stress(
         raise ValueError("z must lie strictly inside the admitted axial support")
 
     radii = np.linspace(radial_min, radial_max, radial_count)
+    sample_radii = radii[1:-1]
+    boundary_margin = min(
+        float(sample_radii[0] - radial_min),
+        float(radial_max - sample_radii[-1]),
+    )
+    if 2.0 * h >= boundary_margin:
+        raise ValueError(
+            "FD4 stencil must remain strictly inside the registered radial support; "
+            "increase radial boundary margin or decrease fd4_step"
+        )
+
     # Mid-cell angles avoid privileging the Cartesian axes while retaining an exact uniform ring.
     angles = 2.0 * math.pi * (np.arange(angular_count, dtype=float) + 0.5) / angular_count
-    rr, tt = np.meshgrid(radii, angles, indexing="ij")
+    rr, tt = np.meshgrid(sample_radii, angles, indexing="ij")
     x = (rr * np.cos(tt)).reshape(-1)
     y = (rr * np.sin(tt)).reshape(-1)
     zz = np.full_like(x, z_value)
     times = np.full_like(x, time_value)
 
-    operator = _fd4_spatial_operator(x, y, zz, times, step=fd4_step, nu=nu)
+    operator = _fd4_spatial_operator(x, y, zz, times, step=h, nu=nu)
+    interior_count = radial_count - 2
     cylindrical: dict[str, np.ndarray] = {}
     for name in ("linear", "quadratic", "raw_self_residual"):
         cyl = _cartesian_to_cylindrical(operator[name], tt.reshape(-1))
-        cylindrical[name] = cyl.reshape(radial_count, angular_count, 3)
+        cylindrical[name] = cyl.reshape(interior_count, angular_count, 3)
 
-    ring_mean = {name: np.mean(values, axis=1) for name, values in cylindrical.items()}
-    closure = ring_mean["raw_self_residual"] - (
-        ring_mean["linear"] + ring_mean["quadratic"]
+    ring_mean_interior = {
+        name: np.mean(values, axis=1) for name, values in cylindrical.items()
+    }
+    closure = ring_mean_interior["raw_self_residual"] - (
+        ring_mean_interior["linear"] + ring_mean_interior["quadratic"]
     )
+
+    # The public field has a registered smooth zero extension outside the annulus,
+    # so the exact endpoint values of all three operator components are inserted
+    # as zero rather than obtained by floating-point evaluation on the boundary.
+    ring_mean_full: dict[str, np.ndarray] = {}
+    for name, interior in ring_mean_interior.items():
+        full = np.zeros((radial_count, 3), dtype=float)
+        full[1:-1] = interior
+        ring_mean_full[name] = full
 
     # requestedStress ordering follows the corrected formal construction:
     # theta residual -> physicalBarSigma_2, axial residual -> physicalBarSigma_1.
     theta_stress = _compact_radial_stress(
         radii,
-        ring_mean["raw_self_residual"][:, 1],
+        ring_mean_full["raw_self_residual"][:, 1],
         exponent=2,
         bump_center=field.radial_center,
         bump_halfwidth=field.radial_halfwidth,
     )
     axial_stress = _compact_radial_stress(
         radii,
-        ring_mean["raw_self_residual"][:, 2],
+        ring_mean_full["raw_self_residual"][:, 2],
         exponent=1,
         bump_center=field.radial_center,
         bump_halfwidth=field.radial_halfwidth,
     )
 
     requested_stress = np.stack((theta_stress["stress"], axial_stress["stress"]), axis=-1)
-    raw_mean = ring_mean["raw_self_residual"]
-    quadratic_mean = ring_mean["quadratic"]
-    linear_mean = ring_mean["linear"]
+    raw_mean = ring_mean_interior["raw_self_residual"]
+    quadratic_mean = ring_mean_interior["quadratic"]
+    linear_mean = ring_mean_interior["linear"]
     raw_mean_rms = _vector_rms(raw_mean)
     quadratic_mean_rms = _vector_rms(quadratic_mean)
     linear_mean_rms = _vector_rms(linear_mean)
@@ -338,10 +371,13 @@ def materialize_actual_oscillatory_mean_stress(
             "time": time_value,
             "z": z_value,
             "nu": float(nu),
-            "fd4_step": float(fd4_step),
+            "fd4_step": h,
             "radial_count": radial_count,
+            "radial_evaluation_count": interior_count,
             "angular_count": angular_count,
             "radial_support": [float(radial_min), float(radial_max)],
+            "radial_boundary_margin": boundary_margin,
+            "boundary_values_inserted_from_registered_zero_extension": True,
         },
         "mean_operator": {
             "kind": "physical_uniform_angle_mean_of_raw_oscillatory_self_operator",
