@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "task_id": "CR002-ST052M-VISUAL-FINGERPRINT-RESOLUTION-SCOPE-089",
+  "scope": "Govern PR #568 fixed-grid morphology evidence for the exact ST052-M local-swirl energy child so fine-grid magnitude passes, the preregistered cross-resolution failure, descriptive morphology, visual correspondence, delivery readiness, and PDE validation remain separate claims.",
+  "snapshot": {
+    "active_integration_branch": "codex/cr001-constraints",
+    "active_integration_head": "8ff26526e687a4c7178e7996018af09671a49b90",
+    "governed_parent_pr": 559,
+    "governed_parent_head": "39b106ad8cb8df2064cabead3a12682089575e74",
+    "material_path_pr": 565,
+    "material_path_head": "196bcc5445039a2b3533128daa5c20cbb151cd58",
+    "visual_fingerprint_pr": 568,
+    "visual_fingerprint_head": "85f2f0940d80757313651d2ab50c6ef89dc22914",
+    "visual_fingerprint_standard_run": 35423257712,
+    "visual_fingerprint_dedicated_run": 35423257771,
+    "visual_fingerprint_replay_run": 35423257732,
+    "visual_fingerprint_artifact_id": 10578815385,
+    "visual_fingerprint_artifact_digest": "sha256:a82ea7d94e956f1213e2f1fb6b08e940e975eeeabdb9b3c2d249662986ea075c"
+  },
+  "allowed_source_classes": [
+    "user_requirement",
+    "public_source_fact",
+    "autonomous_design",
+    "pending_unknown"
+  ],
+  "source_classification": {
+    "callable_saveable_velocity_x_y_z_t": "user_requirement",
+    "public_openai_velocity_visualization_observables": "public_source_fact",
+    "st052m_kappa_0p05_taper_local_swirl_child": "autonomous_design",
+    "grid_sizes_times_quantile_fd2_metrics_and_thresholds": "autonomous_design",
+    "preregistered_cross_resolution_rule": "autonomous_design",
+    "openai_hidden_numerical_velocity_or_morphology_thresholds": "pending_unknown",
+    "openai_hidden_time_camera_seed_mapping": "pending_unknown"
+  },
+  "protocol": {
+    "child_identity": "exact PR559 compensated child",
+    "grid_sizes": [
+      25,
+      33
+    ],
+    "times": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "vorticity_operator": "second_order_cartesian_curl",
+    "top_vorticity_fraction": 0.015,
+    "top_cloud_metrics": [
+      "axial_rms",
+      "radial_rms"
+    ],
+    "band_metrics": [
+      "tip_enstrophy_weighted_radial_rms",
+      "central_enstrophy_weighted_radial_rms"
+    ],
+    "openai_image_or_numeric_target_used": false,
+    "visual_acceptance_threshold_against_openai_used": false
+  },
+  "preregistered_rule": {
+    "fine_grid": 33,
+    "coarse_grid": 25,
+    "fine_top_axial_gain_min": 0.04,
+    "fine_top_radial_gain_max": -0.015,
+    "fine_tip_radial_gain_max": -0.007,
+    "fine_central_radial_abs_change_max": 0.005,
+    "fine_normalized_taper_axial_gain_retention_min": 0.7,
+    "desired_sign_agreement_required_on_both_grids": true,
+    "aggregate_clean_verdict": false,
+    "failed_guard": "cross_resolution_top_cloud_radial_sign_agreement"
+  },
+  "fine_grid_evidence": {
+    "grid_size": 33,
+    "top_axial_relative_changes": [
+      0.092626,
+      0.093798,
+      0.08481
+    ],
+    "top_radial_relative_changes": [
+      -0.03089,
+      -0.03579,
+      -0.05594
+    ],
+    "tip_radial_relative_changes": [
+      -0.012168,
+      -0.012133,
+      -0.012354
+    ],
+    "central_radial_relative_changes": [
+      0.00027,
+      0.000134,
+      0.000087
+    ],
+    "normalized_taper_axial_gain_retention": [
+      1.0092,
+      1.038,
+      1.0201
+    ],
+    "all_frozen_magnitude_guards_pass": true
+  },
+  "coarse_grid_evidence": {
+    "grid_size": 25,
+    "top_axial_relative_changes": [
+      0.027411,
+      0.023478,
+      0.01545
+    ],
+    "top_radial_relative_changes": [
+      -0.008391,
+      -0.003799,
+      0.00475
+    ],
+    "tip_radial_relative_changes": [
+      -0.015264,
+      -0.015125,
+      -0.015508
+    ],
+    "central_radial_relative_changes": [
+      0.000977,
+      0.000461,
+      0.000237
+    ],
+    "top_cloud_radial_sign_flips_at_t_0p75": true
+  },
+  "resolution_semantics": {
+    "fine_grid_pass_can_override_preregistered_aggregate_fail": false,
+    "two_grid_comparison_is_continuum_convergence_certificate": false,
+    "two_grid_comparison_is_resolution_stability_certificate_for_top_cloud_radial_metric": false,
+    "thresholded_top_1p5pct_cloud_is_discretization_sensitive": true,
+    "tip_band_radial_thinning_has_same_desired_sign_on_both_grids_all_times": true,
+    "top_cloud_axial_gain_has_same_desired_sign_on_both_grids_all_times": true,
+    "top_cloud_radial_tightening_has_same_desired_sign_on_both_grids_all_times": false,
+    "stable_tip_band_sign_is_descriptive_morphology_evidence": true,
+    "stable_tip_band_sign_is_visual_correspondence_evidence": false,
+    "stable_tip_band_sign_is_pde_evidence": false,
+    "changing_grid_quantile_metric_threshold_or_sign_rule_after_result_requires_new_experiment_identity": true
+  },
+  "scientific_scope": {
+    "scientific_verdict": "FAIL",
+    "failure_is_in_preregistered_resolution_guard": true,
+    "fine_grid_morphology_signal_remains_descriptive": true,
+    "production_candidate_selected": false,
+    "production_visual_fingerprint_selected": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "child_delivery_scope": {
+    "versioned_child_materialized": false,
+    "child_candidate_id_assigned": false,
+    "child_candidate_sha256_assigned": false,
+    "save_load_contract_exists": false,
+    "unified_velocity_api_registered": false,
+    "velocity_export_ready": false,
+    "visual_fingerprint_receipt_can_replace_canonical_delivery": false
+  },
+  "canonical_cr001": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ]
+    ],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [
+      0.25,
+      0.75
+    ],
+    "force_mode": "restricted_two_parameter_family",
+    "force_bounds": {
+      "a": [
+        0.0,
+        10.0
+      ],
+      "c": [
+        0.0,
+        10.0
+      ]
+    },
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [
+      0.25,
+      0.3125,
+      0.4375,
+      0.5625,
+      0.6875,
+      0.75
+    ],
+    "derivative_steps": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "quadrature_orders_per_axis": [
+      24,
+      48,
+      96
+    ],
+    "divergence_max": 1e-05,
+    "divergence_L2": 1e-05,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001,
+    "free_or_residual_defined_force_allowed": false,
+    "collapsed_velocity_success_allowed": false,
+    "threshold_relaxation_under_same_experiment_allowed": false
+  },
+  "canonical_delivery": {
+    "candidate_family": "eq45_supported_velocity_candidate_v1",
+    "candidate_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+    "velocity_api": "openai_ns_reconstruction.eq45_supported_delivery:velocity",
+    "velocity_export_ready": true,
+    "visual_fingerprint_child_replaces_canonical_candidate": false,
+    "visual_fingerprint_child_replaces_canonical_velocity_api": false
+  },
+  "independent_truth_states": {
+    "canonical_velocity_export_ready": true,
+    "visual_fingerprint_child_velocity_export_ready": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "future_research_rules": {
+    "production_promotion_requires_versioned_child_identity_and_save_load": true,
+    "visual_correspondence_requires_public_reference_comparison_and_resolution_stability": true,
+    "continuum_claim_requires_more_than_two_fixed_grids_and_thresholded_cloud_sign_checks": true,
+    "pde_promotion_requires_exact_child_pressure_restricted_force_and_full_registered_validation": true,
+    "failed_cross_resolution_guard_may_not_be_relabelled_pass_by_reporting_only_33_grid": true
+  }
+}
