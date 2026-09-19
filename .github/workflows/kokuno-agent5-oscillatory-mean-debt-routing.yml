@@ -1,0 +1,83 @@
+name: kokuno-agent5-oscillatory-mean-debt-routing
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-osc-mean-debt-routing-043
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_oscillatory_mean_debt_routing_checkpoint.py'
+      - 'tests/test_constrained_kokuno_oscillatory_mean_debt_routing_checkpoint.py'
+      - '.github/workflows/kokuno-agent5-oscillatory-mean-debt-routing.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent5-oscillatory-mean-debt-routing-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  oscillatory-mean-debt-routing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+      - name: Compile Agent-5 v43 module
+        run: >-
+          python -W error -m py_compile
+          src/openai_ns_reconstruction/kokuno_oscillatory_mean_debt_routing_checkpoint.py
+      - name: Run focused warnings-as-errors tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_oscillatory_mean_debt_routing_checkpoint.py
+          tests/test_constrained_kokuno_autonomous_oscillatory_mean_debt.py
+      - name: Generate deterministic v43 checkpoint
+        run: >-
+          python -W error -m openai_ns_reconstruction.kokuno_oscillatory_mean_debt_routing_checkpoint
+          --output artifacts/constrained/kokuno_agent5_oscillatory_mean_debt_routing_checkpoint_v43.json
+          > /tmp/kokuno_agent5_v43_stdout.json
+      - name: Validate deterministic checkpoint and truth boundary
+        run: |
+          python -W error -m openai_ns_reconstruction.kokuno_oscillatory_mean_debt_routing_checkpoint \
+            --check artifacts/constrained/kokuno_agent5_oscillatory_mean_debt_routing_checkpoint_v43.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('artifacts/constrained/kokuno_agent5_oscillatory_mean_debt_routing_checkpoint_v43.json')
+          d = json.loads(p.read_text())
+          s = d['states']
+          assert s['oscillatory_ready'] is True
+          assert s['public_oscillatory_time_derivative_independently_validated'] is True
+          assert s['correction_ingest_allowed'] is True
+          assert s['oscillatory_requested_stress_component_materialized'] is True
+          assert s['oscillatory_component_finite_head_mean_debt_materialized'] is True
+          assert s['same_cycle_requested_stress_materialized'] is False
+          assert s['candidate_numeric_finite_head_mean_debt_materialized'] is False
+          assert s['signed_mean_inverse_input_ready'] is False
+          assert s['correction_ready'] is False
+          assert s['candidate_artifact_instantiated'] is False
+          assert s['formal_full_domain_pde_gate_assessed'] is False
+          assert s['pde_validated'] is False
+          assert d['formal_gates_unchanged']['held_out_normalized_momentum_max'] == 1e-3
+          assert d['formal_gates_unchanged']['held_out_divergence_max'] == 1e-5
+          a3 = d['upstream']['agent3_oscillatory_component_mean_debt']
+          assert a3['artifact_id'] == 10580380247
+          assert a3['oscillatory_component_debt_rms'] > 0.0
+          assert a3['full_same_cycle_composite_requested_stress_materialized'] is False
+          later = d['upstream']['agent3_later_radial_closure_audit']
+          assert later['status_at_checkpoint_freeze'] == 'in_progress'
+          assert later['scientific_promotion_allowed'] is False
+          print(d['checkpoint_sha256'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-oscillatory-mean-debt-routing-checkpoint-v43
+          path: artifacts/constrained/kokuno_agent5_oscillatory_mean_debt_routing_checkpoint_v43.json
+          if-no-files-found: error
