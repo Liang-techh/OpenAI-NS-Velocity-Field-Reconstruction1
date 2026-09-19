@@ -1,0 +1,92 @@
+name: agent7-st052m-localized-taper
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_localized_taper.py'
+      - 'experiments/root_st052/test_agent7_st052m_localized_taper.py'
+      - '.github/workflows/agent7-st052m-localized-taper.yml'
+permissions:
+  contents: read
+  pull-requests: write
+jobs:
+  localized-taper-screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Focused contract tests
+        run: python -m pytest -q -W error experiments/root_st052/test_agent7_st052m_localized_taper.py
+      - name: Execute preregistered localized taper screen
+        run: |
+          mkdir -p outputs/agent7-st052m-localized-taper
+          python experiments/root_st052/agent7_st052m_localized_taper.py \
+            --out outputs/agent7-st052m-localized-taper/report.json
+      - name: Verify frozen identity and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-localized-taper/report.json').read_text())
+          assert r['prereg_issue']==542
+          assert r['parent_head']=='779ffca71066e2864496d37de55a7aafc45d6f57'
+          assert r['frozen_transform']['tau']==0.05
+          assert r['frozen_transform']['axial_window_abs_z_over_2']==[0.5,0.82]
+          assert r['frozen_transform']['redistribution_gain']==0.05
+          assert r['parameter_scan_performed'] is False
+          assert r['diagnostic_added_velocity_degrees']==1
+          assert r['canonical_velocity_changed'] is False
+          assert r['saved_velocity_changed'] is False
+          assert r['pressure_or_force_changed'] is False
+          assert r['held_out_pde_residual_evaluated'] is False
+          assert r['material_paths_integrated'] is False
+          assert r['public_image_used'] is False
+          assert r['visualization_ready'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          q=r['row']
+          print('clean_localized_taper_capacity=',q['clean_localized_taper_capacity'])
+          print('taper_scale=',q['taper_scale'])
+          print('morphology=',[(x['time'],x['tip_radial_rms_relative'],x['central_radial_rms_relative'],x['global_axial_rms_relative']) for x in q['morphology']])
+          print('response=',q['response'])
+          PY
+      - name: Publish compact numerical receipt
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent7-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-localized-taper/report.json').read_text())
+          q=r['row']; ms=q['morphology']; s=q['structure']; d=q['response']
+          print('<!-- agent7-st052m-localized-taper-receipt -->')
+          print('**Agent 7 numerical receipt (issue #542; fixed localized taper `tau=.05`, no scan):**')
+          print()
+          print(f"- clean localized taper capacity: `{q['clean_localized_taper_capacity']}`; taper energy scale `{q['taper_scale']:.10f}`")
+          print('- tip radial RMS rel t=.25/.50/.75: `' + ' / '.join(f'{100*x["tip_radial_rms_relative"]:+.5f}%' for x in ms) + '`')
+          print('- central radial RMS rel: `' + ' / '.join(f'{100*x["central_radial_rms_relative"]:+.5f}%' for x in ms) + '`')
+          print('- global axial RMS rel: `' + ' / '.join(f'{100*x["global_axial_rms_relative"]:+.5f}%' for x in ms) + '`')
+          print('- tip enstrophy ratios: `' + ' / '.join(f'{x["tip_absolute_enstrophy_ratio"]:.6f}' for x in ms) + '`')
+          print('- collar ratios: `' + ' / '.join(f'{x["collar_absolute_ratio"]:.6f}' for x in ms) + '`')
+          print(f"- central angular retention r=.6/.9: `{q['central_angular_retention']['0.6']:.6f} / {q['central_angular_retention']['0.9']:.6f}`")
+          print(f"- support max `{s['support_max_abs']:.3e}`; divergence FD max `{s['divergence_fd_max']:.3e}`; central map identity `{s['central_map_identity_error']:.3e}`")
+          print(f"- response rank `{d['rank']}`; singular values `{d.get('singular_values')}`; condition `{d['condition_number']:.6f}`; max |cosine| `{d['max_pairwise_abs_cosine']:.6f}`")
+          print()
+          print('Truth boundary: expression-capacity / visualization-morphology only; no pressure/forcing refit, held-out PDE promotion, material-path integration, production selection, or OpenAI-field identity claim.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-receipt.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-localized-taper
+          path: outputs/agent7-st052m-localized-taper/
+          if-no-files-found: error
