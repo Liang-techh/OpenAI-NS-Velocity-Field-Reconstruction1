@@ -50,7 +50,8 @@ def test_stable_formula_avoids_logC_logF_cancellation_at_X0() -> None:
     zero_index = 2
     assert replay[zero_index] == 0.0
     assert stable[zero_index] != 0.0
-    expected_zero = np.log(model.seed.f0(4.0 * model.seed.chi(np.asarray(0.0))))
+    chi_zero = float(model.seed.axis_state(np.asarray(0.0))["chi"])
+    expected_zero = np.log(model.seed.f0(4.0 * chi_zero))
     assert stable[zero_index] == pytest.approx(float(expected_zero), rel=0.0, abs=1.0e-15)
 
 
