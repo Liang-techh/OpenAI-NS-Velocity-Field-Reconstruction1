@@ -3,8 +3,8 @@
 This module composes already-governed assets without adding representation
 freedom: the exact-source ST052-M parent replay capsule and the exact PR #587
 linear temporal transform spec.  The resulting directory is a checksum-bound
-save/load bundle for ``velocity(x,y,z,t)`` when an exact ST052 source runtime is
-provided.
+save/load bundle for ``velocity(x,y,z,t)`` when the authenticated exact ST052
+source runtime is provided.
 
 Important truth boundary: the bundled temporal child changes ``u_t``.  Parent
 pressure/forcing/residual receipts are therefore not inherited and this module
@@ -28,15 +28,15 @@ from .st052_linear_temporal_transform import (
     St052LinearTemporalAdapter,
     St052LinearTemporalTransformSpec,
 )
-from .st052_parent_capsule import (
-    CANDIDATE_ID,
-    SOURCE_HEAD,
-    SOURCE_RECIPE_GIT_BLOB_SHA1,
-)
+from .st052_parent_capsule import CANDIDATE_ID, SOURCE_HEAD
 from .st052_parent_reference_binding import St052ReferenceBoundParent
+from .st052_source_runtime_identity import (
+    authenticate_source_runtime,
+    source_runtime_identity_sha256,
+)
 
-SCHEMA = "st052-linear-temporal-whole-candidate-capsule/v1"
-TASK_ID = "CR-A9-069"
+SCHEMA = "st052-linear-temporal-whole-candidate-capsule/v2"
+TASK_ID = "CR-A9-070"
 PARENT_CANDIDATE_FILENAME = "parent_candidate.json"
 PARENT_VALIDATION_FILENAME = "parent_validation.json"
 PARENT_MANIFEST_FILENAME = "parent_replay_manifest.json"
@@ -62,12 +62,6 @@ def _sha256_file(path: Path) -> str:
     return h.hexdigest()
 
 
-def _git_blob_sha1(path: Path) -> str:
-    payload = path.read_bytes()
-    header = f"blob {len(payload)}\0".encode("ascii")
-    return hashlib.sha1(header + payload).hexdigest()
-
-
 def _read_json(path: Path) -> dict[str, Any]:
     obj = json.loads(path.read_text(encoding="utf-8"))
     if not isinstance(obj, dict):
@@ -88,6 +82,7 @@ def _identity_payload(
     parent_manifest_sha256: str,
     temporal_spec_sha256: str,
     static_transform_spec_sha256: str,
+    exact_source_runtime_identity_sha256: str,
 ) -> dict[str, Any]:
     return {
         "schema": SCHEMA,
@@ -99,6 +94,7 @@ def _identity_payload(
         "parent_manifest_file_sha256": parent_manifest_sha256,
         "temporal_transform_spec_sha256": temporal_spec_sha256,
         "static_transform_spec_sha256": static_transform_spec_sha256,
+        "exact_source_runtime_identity_sha256": exact_source_runtime_identity_sha256,
     }
 
 
@@ -163,6 +159,7 @@ def build_bundle(
 
     parent_manifest_sha = _sha256_file(dst_parent_manifest)
     temporal_spec_sha = temporal_spec.sha256()
+    runtime_id = source_runtime_identity_sha256()
     identity_payload = _identity_payload(
         parent_replay_identity=str(replay.get("sha256")),
         parent_candidate_sha256=_sha256_file(dst_candidate),
@@ -170,13 +167,14 @@ def build_bundle(
         parent_manifest_sha256=parent_manifest_sha,
         temporal_spec_sha256=temporal_spec_sha,
         static_transform_spec_sha256=temporal_spec.static_transform_spec_sha256,
+        exact_source_runtime_identity_sha256=runtime_id,
     )
     whole_id = _sha256_bytes(_canonical_bytes(identity_payload))
     manifest = {
         "schema": SCHEMA,
         "task_id": TASK_ID,
         "candidate_id": "ST052-M-linear-temporal-child-v1",
-        "migration_class": "direct_internal_composition",
+        "migration_class": "direct_internal_runtime_identity_binding",
         "whole_candidate_identity_sha256": whole_id,
         "identity_payload": identity_payload,
         "files": {
@@ -188,11 +186,14 @@ def build_bundle(
         "runtime": {
             "callable": "velocity(x,y,z,t)->[...,3]",
             "exact_parent_source_runtime_required": True,
+            "exact_source_runtime_identity_sha256": runtime_id,
+            "exact_source_runtime_identity_closed": True,
             "standalone_package_parent_runtime_ready": False,
         },
         "truth_boundary": {
             "whole_child_bundle_materialized": True,
             "whole_child_save_load_ready_with_exact_source_runtime": True,
+            "exact_source_runtime_identity_closed": True,
             "standalone_package_parent_runtime_ready": False,
             "velocity_export_ready": False,
             "visualization_ready": False,
@@ -241,6 +242,7 @@ def verify_bundle(bundle_dir: str | Path) -> dict[str, Any]:
     replay = parent_manifest.get("replay_identity")
     if not isinstance(replay, dict):
         raise ValueError("parent replay identity missing")
+    runtime_id = source_runtime_identity_sha256()
     expected_identity = _identity_payload(
         parent_replay_identity=str(replay.get("sha256")),
         parent_candidate_sha256=_sha256_file(bundle_dir / PARENT_CANDIDATE_FILENAME),
@@ -248,12 +250,20 @@ def verify_bundle(bundle_dir: str | Path) -> dict[str, Any]:
         parent_manifest_sha256=_sha256_file(bundle_dir / PARENT_MANIFEST_FILENAME),
         temporal_spec_sha256=temporal_spec.sha256(),
         static_transform_spec_sha256=temporal_spec.static_transform_spec_sha256,
+        exact_source_runtime_identity_sha256=runtime_id,
     )
     if identity != expected_identity:
         raise ValueError("whole-candidate identity payload mismatch")
     expected_id = _sha256_bytes(_canonical_bytes(expected_identity))
     if manifest.get("whole_candidate_identity_sha256") != expected_id:
         raise ValueError("whole-candidate identity checksum mismatch")
+    runtime = manifest.get("runtime")
+    if not isinstance(runtime, dict):
+        raise ValueError("whole-candidate runtime metadata missing")
+    if runtime.get("exact_source_runtime_identity_sha256") != runtime_id:
+        raise ValueError("whole-candidate exact source runtime identity mismatch")
+    if runtime.get("exact_source_runtime_identity_closed") is not True:
+        raise ValueError("whole-candidate runtime identity closure flag missing")
 
     truth = manifest.get("truth_boundary")
     if not isinstance(truth, dict):
@@ -267,25 +277,25 @@ def verify_bundle(bundle_dir: str | Path) -> dict[str, Any]:
         "parent_pressure_or_forcing_receipt_transferred",
     ):
         _require_false(truth, key, where="whole_manifest.truth_boundary")
+    if truth.get("exact_source_runtime_identity_closed") is not True:
+        raise ValueError("whole-candidate runtime identity truth flag missing")
     return manifest
 
 
 def _load_exact_source_parent(source_root: Path, candidate_path: Path):
-    """Load bundled ST052-M bytes through the exact-source Family runtime."""
+    """Load bundled ST052-M bytes only after authenticating the exact #508 runtime."""
     source_root = source_root.resolve()
-    recipe = source_root / "experiments/root_st052/recipe.json"
-    if not recipe.is_file() or _git_blob_sha1(recipe) != SOURCE_RECIPE_GIT_BLOB_SHA1:
-        raise ValueError("exact ST052 source recipe identity mismatch")
+    authenticate_source_runtime(source_root)
 
     st052_dir = source_root / "experiments/root_st052"
-    if not (st052_dir / "replay_st052.py").is_file():
-        raise FileNotFoundError(st052_dir / "replay_st052.py")
     inserted = str(st052_dir)
     sys.path.insert(0, inserted)
     try:
-        # Importing replay_st052 installs the exact predecessor-chain paths used
-        # by the source-native replay; Family.load then dispatches the frozen
-        # basis kind stored in the candidate bytes.
+        # Source identity is authenticated before any historical code executes.
+        # Importing replay_st052 installs the predecessor-chain paths used by
+        # the exact source replay; Family.load dispatches the frozen basis kind
+        # stored in the candidate bytes.
+        sys.modules.pop("replay_st052", None)
         replay = importlib.import_module("replay_st052")
         family, raw = replay.Family.load(candidate_path)
     finally:
@@ -327,10 +337,11 @@ def load_bundle_runtime(
 ) -> St052LinearTemporalWholeCandidate:
     """Verify + reload a bundle into the final broadcastable velocity callable.
 
-    This is intentionally source-runtime-backed.  It closes whole-child
-    save/load for the frozen source representation without pretending that the
-    historical ST052 evaluator has already been ported into the installable
-    package.
+    The parent evaluator still comes from the historical source checkout, but
+    the checkout is now authenticated against the exact #508 Git commit/tree
+    and clean-worktree contract before source code is imported.  This closes
+    runtime substitution while keeping the separate truth that the parent
+    evaluator has not yet been ported into the installable package.
     """
     bundle_dir = Path(bundle_dir)
     manifest = verify_bundle(bundle_dir)
@@ -352,6 +363,7 @@ def load_bundle_runtime(
 TRUTH_BOUNDARY = {
     "whole_child_bundle_materialized": True,
     "whole_child_save_load_ready_with_exact_source_runtime": True,
+    "exact_source_runtime_identity_closed": True,
     "standalone_package_parent_runtime_ready": False,
     "velocity_export_ready": False,
     "visualization_ready": False,
