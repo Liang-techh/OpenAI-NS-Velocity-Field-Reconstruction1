@@ -1,0 +1,104 @@
+name: agent9-st052m-local-swirl-fixed-render
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/constrained_st052m_local_swirl_fixed_render.py'
+      - 'tests/test_constrained_st052m_local_swirl_fixed_render.py'
+      - 'docs/external_methods/CR-A9-064-st052m-local-swirl-fixed-render.md'
+      - '.github/workflows/agent9-st052m-local-swirl-fixed-render.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      MPLBACKEND: Agg
+    steps:
+      - name: Checkout Agent 9 branch
+        uses: actions/checkout@v4
+
+      - name: Checkout exact Agent 7 local-swirl source
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: 39b106ad8cb8df2064cabead3a12682089575e74
+          path: _source/st052
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install governed render dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10' 'matplotlib==3.10.6'
+          python -m pip install -e . --no-deps
+
+      - name: Verify exact source checkout
+        run: |
+          test "$(git -C _source/st052 rev-parse HEAD)" = "39b106ad8cb8df2064cabead3a12682089575e74"
+
+      - name: Run warning-clean focused regressions
+        run: |
+          python -W error -m py_compile src/openai_ns_reconstruction/constrained_st052m_local_swirl_fixed_render.py
+          python -W error -m pytest -q tests/test_constrained_st052m_local_swirl_fixed_render.py
+
+      - name: Execute frozen fixed-seed render comparison
+        run: |
+          set -o pipefail
+          mkdir -p artifacts/agent9_st052m_local_swirl_render
+          python -m openai_ns_reconstruction.constrained_st052m_local_swirl_fixed_render \
+            --source-root _source/st052 \
+            --output-dir artifacts/agent9_st052m_local_swirl_render \
+            | tee artifacts/agent9_st052m_local_swirl_render/console-summary.json
+
+      - name: Verify fail-closed receipt
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          p = Path('artifacts/agent9_st052m_local_swirl_render/report.json')
+          r = json.loads(p.read_text())
+          assert r['task_id'] == 'CR-A9-064'
+          assert r['identities']['base_main_sha'] == 'f0193d66c9d92948b4820ebcb70263673995b324'
+          assert r['identities']['st052_head'] == 'b3b8bfdbe1077f9ec967d158602951997d81e17d'
+          assert r['identities']['redistribution_head'] == '779ffca71066e2864496d37de55a7aafc45d6f57'
+          assert r['identities']['local_swirl_head'] == '39b106ad8cb8df2064cabead3a12682089575e74'
+          assert r['identities']['morphology_convergence_head'] == '0ddf5f6b321ba78e27aa3ca3e073ef593e55869a'
+          assert r['source_replay']['source_checkout_expected_head'] == '39b106ad8cb8df2064cabead3a12682089575e74'
+          assert r['source_replay']['parent_head'] == '779ffca71066e2864496d37de55a7aafc45d6f57'
+          assert abs(r['source_replay']['redistribution_scale'] - 1.0032534663681094) < 5e-10
+          assert abs(r['source_replay']['beta'] - 0.08837490297155456) < 5e-10
+          assert abs(r['source_replay']['post_transform_common_scale'] - 1.0) < 1e-15
+          assert r['contract']['streamline_count'] == 48
+          assert r['contract']['grid_resolution'] == 33
+          assert r['contract']['image_or_openai_numeric_target_used'] is False
+          assert r['contract']['visual_acceptance_threshold_used'] is False
+          assert len(r['render_files']) == 3
+          assert not any(r['truth'].values())
+          for row in r['per_time']:
+              assert row['control']['streamlines']['line_count'] == 48
+              assert row['child']['streamlines']['line_count'] == 48
+              assert row['control']['vorticity']['selected_points'] > 0
+              assert row['child']['vorticity']['selected_points'] > 0
+              assert row['control']['vorticity']['enstrophy_aspect'] > 0
+              assert row['child']['vorticity']['enstrophy_aspect'] > 0
+              print(row['time'], row['relative'])
+          PY
+
+      - name: Upload exact render artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ST052-M-local-swirl-fixed-render
+          path: artifacts/agent9_st052m_local_swirl_render/
+          if-no-files-found: error
+          retention-days: 30
