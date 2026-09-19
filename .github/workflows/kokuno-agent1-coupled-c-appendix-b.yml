@@ -1,0 +1,84 @@
+name: kokuno-agent1-coupled-c-appendix-b
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a1-coupled-c-appendix-b
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent1-coupled-c-appendix-b-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHONHASHSEED: '0'
+
+jobs:
+  coupled-c-appendix-b:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Focused regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_coupled_normalization_pa10_screen.py \
+            tests/test_constrained_kokuno_coupled_c_appendix_b_normalization.py
+      - name: Generate coupled-C Appendix-B receipt
+        run: |
+          python -m openai_ns_reconstruction.kokuno_coupled_c_appendix_b_normalization \
+            --log-c-factor 32 \
+            --output artifacts/kokuno_agent1/coupled_c_appendix_b/report.json
+      - name: Validate fail-closed truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          report = json.loads(
+              Path("artifacts/kokuno_agent1/coupled_c_appendix_b/report.json").read_text()
+          )
+          point = report["pointwise_PA10"]
+          truth = report["truth_boundary"]
+
+          assert point["log_C_factor"] == 32.0
+          assert point["selected_log_C"] > point["minimal_real_axis_log_C"]
+          assert abs(point["ell_i"]) < point["ell_abs_strict_cap"]
+          assert point["strict_margin"] > 0.0
+          assert point["not_excluded_by_necessary_screen"] is True
+          assert abs(point["G_i"]) > 1e-3
+          assert point["source_B0_analytic_bound_proved"] is False
+          assert point["source_T_sh_lower_bound_verified"] is False
+          assert point["selected_pa16_handoff_allowed"] is False
+          assert truth["posthoc_C_multiplier_applied"] is False
+          assert truth["passing_pointwise_screen_is_source_T_sh_certificate"] is False
+          assert truth["source_complex_C_bound_verified"] is False
+          assert truth["source_T_sh_lower_bound_verified"] is False
+          assert truth["heldout_ns_residual_assessed"] is False
+          assert truth["pde_validated"] is False
+          assert truth["paper_exact"] is False
+
+          print("minimal_real_axis_log_C=", point["minimal_real_axis_log_C"])
+          print("selected_log_C=", point["selected_log_C"])
+          print("log_C_oversize=", point["log_C_oversize"])
+          print("ell_i=", point["ell_i"])
+          print("ell_abs_strict_cap=", point["ell_abs_strict_cap"])
+          print("pointwise_T_sh_lower_bound=", point["pointwise_T_sh_lower_bound"])
+          print("t_sh_strict_upper=", point["t_sh_strict_upper"])
+          print("strict_margin=", point["strict_margin"])
+          print("G_i=", point["G_i"])
+          print("materialized_E_i=", point["materialized_E_i"])
+          print("materialized_angular_amplitude_underflowed=", point["materialized_angular_amplitude_underflowed"])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-coupled-c-appendix-b-v1
+          path: artifacts/kokuno_agent1/coupled_c_appendix_b/report.json
