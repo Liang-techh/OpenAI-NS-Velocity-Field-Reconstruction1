@@ -1,0 +1,84 @@
+name: kokuno-agent5-pa10-pressure-reject-routing
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-pa10-pressure-reject-routing-v45
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_pa10_selected_pressure_primitive.py'
+      - 'src/openai_ns_reconstruction/kokuno_agent4_pa10_pressure_primitive_audit.py'
+      - 'src/openai_ns_reconstruction/kokuno_pa10_pressure_reject_routing_checkpoint.py'
+      - 'tests/test_constrained_kokuno_pa10_selected_pressure_primitive.py'
+      - 'tests/test_constrained_kokuno_agent4_pa10_pressure_primitive_audit.py'
+      - 'tests/test_constrained_kokuno_pa10_pressure_reject_routing_checkpoint.py'
+      - '.github/workflows/kokuno-agent5-pa10-pressure-reject-routing.yml'
+
+permissions:
+  contents: read
+
+env:
+  PYTHONHASHSEED: '0'
+
+jobs:
+  pressure-reject-routing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile pressure producer, independent audit and Agent-5 router
+        run: >-
+          python -W error -m py_compile
+          src/openai_ns_reconstruction/kokuno_pa10_selected_pressure_primitive.py
+          src/openai_ns_reconstruction/kokuno_agent4_pa10_pressure_primitive_audit.py
+          src/openai_ns_reconstruction/kokuno_pa10_pressure_reject_routing_checkpoint.py
+      - name: Focused warnings-as-errors regressions
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_pa10_selected_pressure_primitive.py
+          tests/test_constrained_kokuno_agent4_pa10_pressure_primitive_audit.py
+          tests/test_constrained_kokuno_pa10_pressure_reject_routing_checkpoint.py
+      - name: Generate deterministic Agent-5 routing checkpoint
+        run: >-
+          python -m openai_ns_reconstruction.kokuno_pa10_pressure_reject_routing_checkpoint
+          --output kokuno_agent5_pa10_pressure_reject_routing_v45.json
+      - name: Validate fail-closed routing and fixed final gate
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction.kokuno_pa10_pressure_reject_routing_checkpoint import validate_checkpoint
+
+          path = Path('kokuno_agent5_pa10_pressure_reject_routing_v45.json')
+          checkpoint = json.loads(path.read_text())
+          validate_checkpoint(checkpoint)
+          s = checkpoint['states']
+          assert s['selected_pressure_primitive_interface_exposed'] is True
+          assert s['selected_pressure_primitive_independent_preflight_passed'] is False
+          assert s['selected_pressure_public_value_path_repair_required'] is True
+          assert s['oscillatory_ready'] is True
+          assert s['independent_spacetime_radial_stress_generalization_admitted'] is True
+          assert s['leading_ready'] is False
+          assert s['same_cycle_requested_stress_materialized'] is False
+          assert s['public_velocity_correction_materialized'] is False
+          assert s['correction_ready'] is False
+          assert s['candidate_artifact_instantiated'] is False
+          assert s['formal_full_domain_pde_gate_assessed'] is False
+          assert s['pde_validated'] is False
+          assert checkpoint['formal_gates_unchanged']['held_out_normalized_momentum_max'] == 1e-3
+          assert checkpoint['formal_gates_unchanged']['held_out_normalized_momentum_l2'] == 1e-3
+          assert checkpoint['formal_gates_unchanged']['held_out_divergence_max'] == 1e-5
+          assert checkpoint['formal_gates_unchanged']['held_out_divergence_l2'] == 1e-5
+          print('checkpoint_sha256=', checkpoint['checkpoint_sha256'])
+          print('failed_pressure_guards=', checkpoint['upstream']['agent4_selected_pressure_audit']['failed_guards'])
+          PY
+      - name: Upload Agent-5 routing checkpoint
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-pa10-pressure-reject-routing-checkpoint-v45
+          path: kokuno_agent5_pa10_pressure_reject_routing_v45.json
