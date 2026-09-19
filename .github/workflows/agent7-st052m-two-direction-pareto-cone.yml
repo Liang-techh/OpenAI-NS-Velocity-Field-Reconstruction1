@@ -1,0 +1,101 @@
+name: agent7-st052m-two-direction-pareto-cone
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_two_direction_pareto_cone.py'
+      - 'experiments/root_st052/test_agent7_st052m_two_direction_pareto_cone.py'
+      - '.github/workflows/agent7-st052m-two-direction-pareto-cone.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  pareto-cone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Focused contract tests
+        run: python -m pytest -q -W error experiments/root_st052/test_agent7_st052m_two_direction_pareto_cone.py
+      - name: Execute preregistered two-direction cone audit
+        run: |
+          mkdir -p outputs/agent7-st052m-two-direction-pareto-cone
+          python experiments/root_st052/agent7_st052m_two_direction_pareto_cone.py \
+            --out outputs/agent7-st052m-two-direction-pareto-cone/report.json
+      - name: Verify frozen contract and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-two-direction-pareto-cone/report.json').read_text())
+          assert r['prereg_issue']==641
+          assert r['sources']['linear_temporal']['head']=='0b93819095f6c8576a7571bdc2d2fbef4154944d'
+          assert r['sources']['compact_swirl']['head']=='d01ea33e4e18c0fe8f3a40baaf22b233a66fe96a'
+          assert r['sources']['shoulder_temporal']['head']=='9c628326cad1b8637b13016ffefb945901c4dd53'
+          assert r['sources']['fixed_render']['head']=='02fb726e03268d17f3ecd1a7d503282a225d50eb'
+          assert r['pareto_cone']['tolerance']==5e-5
+          assert r['pareto_cone']['coordinate_bounds']=={'swirl_a':[-1.0,1.0],'shoulder_b':[-1.0,1.0]}
+          assert r['pareto_cone']['parameter_grid_scan_performed'] is False
+          assert r['response_diagnostic']['rank'] == 2
+          assert r['response_diagnostic']['normalized_condition_number'] <= 25.0
+          assert r['canonical_velocity_changed'] is False
+          assert r['saved_velocity_changed'] is False
+          assert r['combined_velocity_child_constructed'] is False
+          assert r['held_out_pde_residual_evaluated'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          print('basis_growth_combination_justified=',r['basis_growth_combination_justified'])
+          print('jacobian=',r['jacobian'])
+          print('response=',r['response_diagnostic'])
+          print('pareto=',r['pareto_cone'])
+          print('routing=',r['routing'])
+          PY
+      - name: Publish compact numerical receipt
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent7-pareto-cone-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-two-direction-pareto-cone/report.json').read_text())
+          print('<!-- agent7-st052m-two-direction-pareto-cone-receipt -->')
+          print('**Agent 7 numerical receipt (issue #641; two-direction Pareto-cone audit):**')
+          print()
+          print(f"- combination justified: `{r['basis_growth_combination_justified']}`")
+          print(f"- target-free local Pareto direction: `{r['pareto_cone']['target_free_local_pareto_direction']}`")
+          q=r['response_diagnostic']
+          print(f"- Jacobian rank `{q['rank']}`, normalized condition `{q['normalized_condition_number']:.6f}`, cosine `{q['normalized_column_cosine']:.6f}`")
+          j=r['jacobian']
+          print(f"- compact-swirl desirability column: `{j['compact_swirl_column']}`")
+          print(f"- shoulder-timing desirability column: `{j['shoulder_timing_column']}`")
+          for row in r['pareto_cone']['lp_attempts']:
+              if row['solver_success']:
+                  print(f"- LP maximize {row['metric']}: improvement `{row['optimized_metric_improvement']:.12g}`, witness `{row['witness']}`, deltas `{row['predicted_desirability_delta']}`, passes `{row['passes_pareto_rule']}`")
+              else:
+                  print(f"- LP maximize {row['metric']}: solver status `{row['solver_status']}` — `{row['solver_message']}`")
+          print(f"- routing: {r['routing']}")
+          print()
+          print('Truth boundary: local first-order expression-capacity evidence only. No combined child, canonical/saved velocity change, image-derived target, pressure/forcing rebuild, held-out PDE receipt, visual-correspondence verification, PDE validation, exact-field claim, or blow-up proof.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-pareto-cone-receipt.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-two-direction-pareto-cone
+          path: outputs/agent7-st052m-two-direction-pareto-cone/
+          if-no-files-found: error
+
+# Question, sources, normalized coordinates, tolerance, LP rule and truth boundary were frozen in issue #641 before evaluation.
