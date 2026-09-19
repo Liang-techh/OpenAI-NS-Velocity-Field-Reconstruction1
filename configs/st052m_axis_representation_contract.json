@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "task_id": "CR002-ST052M-AXIS-REPRESENTATION-073",
+  "scope": "Audit the already-integrated ST052-M static and linear-temporal transform for finite axis evaluation, conditional O(r) transverse scaling, and the exact claim limit introduced by its numerical radius guard.",
+  "integration_base": {
+    "branch": "codex/cr001-constraints",
+    "head": "b490b57ed5d1ccc56ee4e1e44025ec881721dc39"
+  },
+  "authorities": {
+    "static_transform": "src/openai_ns_reconstruction/st052_local_swirl_transform.py",
+    "temporal_transform": "src/openai_ns_reconstruction/st052_linear_temporal_transform.py",
+    "whole_candidate": "src/openai_ns_reconstruction/st052_linear_temporal_capsule.py",
+    "scientific_constraints": "configs/constraints.json"
+  },
+  "axis_representation": {
+    "parent_prerequisite": "At fixed z,t the parent Cartesian transverse velocity is O(r) as r=sqrt(x^2+y^2)->0 and u_z remains finite.",
+    "exact_axis_division_safe": true,
+    "conditional_transverse_O_r_preserved": true,
+    "static_radius_guard": 1e-14,
+    "hard_radius_guard_present": true,
+    "hard_radius_guard_is_autonomous_numerical_design": true,
+    "analytic_C1_or_smoother_axis_regularity_proved": false,
+    "whole_parent_axis_regularity_independently_proved_here": false,
+    "whole_candidate_axis_regularity_theorem_proved": false,
+    "interpretation": "At r=0 the 1/r cylindrical branches are skipped and the taper correction terms multiply x or y, so a regular parent evaluates finitely on-axis. For a parent with transverse O(r), the active shoulder correction is also O(r). However the implementation switches the cylindrical/shoulder branch at the finite radius 1e-14. This numerical guard is safe for evaluation but is not itself an analytic smoothness proof across that guard surface."
+  },
+  "synthetic_regression": {
+    "parent_kind": "smooth_axisymmetric_linear_in_xy_with_finite_uz",
+    "times": [0.25, 0.5, 0.75],
+    "z_values": [0.0, 0.8, 1.2],
+    "radii": [0.0, 5e-15, 1e-14, 2e-14, 1e-12, 1e-09, 1e-06],
+    "angles": [0.0, 1.0471975511965976, 1.5707963267948966],
+    "engineering_transverse_over_r_upper": 20.0,
+    "guard_probe_z": 0.8,
+    "guard_probe_time": 0.75,
+    "guard_probe_r_below": 9.99e-15,
+    "guard_probe_r_above": 1.001e-14,
+    "guard_effect_minimum": 0.001,
+    "scientific_acceptance_threshold": false
+  },
+  "claim_states": {
+    "velocity_formula_changed": false,
+    "candidate_bytes_changed": false,
+    "parent_evaluator_changed": false,
+    "pressure_or_force_changed": false,
+    "scientific_threshold_changed": false,
+    "production_candidate_selected": false,
+    "visual_correspondence_verified": false,
+    "held_out_temporal_child_pde_residual_evaluated": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "source_classification": [
+    {
+      "item": "callable finite 3D time-varying velocity including axis evaluation",
+      "classification": "user_requirement",
+      "source": "docs/PROJECT_GOAL.md"
+    },
+    {
+      "item": "qualitative observable OpenAI visualization structure",
+      "classification": "public_source_fact",
+      "source": "docs/VISUAL_TARGET.md"
+    },
+    {
+      "item": "ST052 cylindrical decomposition, Piola-like taper, shoulder swirl, linear activation, and 1e-14 numerical radius guard",
+      "classification": "autonomous_design",
+      "source": "integrated ST052 transform implementation"
+    },
+    {
+      "item": "hidden OpenAI axis formula/coefficients and any paper-exact whole-field axis regularity statement for this autonomous child",
+      "classification": "pending_unknown",
+      "source": "truth boundary"
+    }
+  ],
+  "cr001_nonmutation": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_parameter_bounds": {
+      "a": [0.0, 10.0],
+      "c": [0.0, 10.0]
+    },
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "divergence_max": 1e-05,
+    "divergence_L2": 1e-05,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001
+  }
+}
