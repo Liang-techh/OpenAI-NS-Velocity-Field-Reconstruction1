@@ -1,0 +1,171 @@
+name: agent9-st052-octave-smoke
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/smoke_st052_grid_octave.m'
+      - '.github/workflows/agent9-st052-octave-smoke.yml'
+  push:
+    branches:
+      - 'agent9/st052-octave-smoke-072'
+    paths:
+      - 'scripts/smoke_st052_grid_octave.m'
+      - '.github/workflows/agent9-st052-octave-smoke.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  octave-mat-load-and-render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONPATH: src
+    steps:
+      - name: Checkout Agent 9 branch
+        uses: actions/checkout@v4
+
+      - name: Checkout exact ST052-M source
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: b3b8bfdbe1077f9ec967d158602951997d81e17d
+          path: source-st052
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install frozen-source Python runtime
+        run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2'
+
+      - name: Materialize exact ST052-M parent and retain scientific rejection
+        shell: bash
+        run: |
+          mkdir -p outputs
+          set +e
+          (
+            cd source-st052
+            python experiments/root_st052/replay_st052.py \
+              --out ../outputs/ST052-M-parent \
+              --seed 9175291 \
+              --validate
+          )
+          code=$?
+          set -e
+          test "$code" = 1
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/ST052-M-parent/validation.json').read_text())
+          assert r['pde_validated'] is False
+          assert r['all_numeric_gates_pass'] is False
+          assert r['gates']['momentum_max'] is False
+          assert r['gates']['momentum_L2'] is False
+          print('Exact parent replay retained expected momentum rejection.')
+          PY
+
+      - name: Rebuild authenticated whole-child capsule
+        run: |
+          python scripts/verify_st052_linear_temporal_capsule.py \
+            --source-root source-st052 \
+            --parent-dir outputs/ST052-M-parent \
+            --out outputs \
+            --report outputs/ST052-M-linear-temporal-child-v1/agent9_capsule_receipt.json \
+            > outputs/whole_child_receipt.txt
+
+      - name: Materialize frozen NPZ and MATLAB-v5 grid
+        run: |
+          mkdir -p outputs/ST052-M-grid-export
+          python scripts/verify_st052_grid_export.py \
+            --source-root source-st052 \
+            --bundle-dir outputs/ST052-M-linear-temporal-child-v1 \
+            --out outputs/ST052-M-grid-export \
+            --report outputs/ST052-M-grid-export/agent9_grid_export_receipt.json \
+            --grid-points 33 \
+            > outputs/grid_export_receipt.txt
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/ST052-M-grid-export/agent9_grid_export_receipt.json').read_text())
+          assert r['npz_mat_roundtrip']['exact_equal'] is True
+          assert r['callable_grid_node_replay']['passed'] is True
+          assert r['truth_boundary']['visualization_ready'] is False
+          assert r['truth_boundary']['pde_validated'] is False
+          print('Frozen CR-A9-071 grid export reverified before Octave smoke.')
+          PY
+
+      - name: Install GNU Octave compatibility runtime
+        shell: bash
+        run: |
+          sudo apt-get update
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+            octave gnuplot-nox ghostscript fonts-freefont-otf
+          mkdir -p outputs/ST052-M-octave-smoke
+          {
+            octave --version | head -n 3
+            gnuplot --version
+            printf 'ghostscript '
+            gs --version
+          } | tee outputs/ST052-M-octave-smoke/runtime_versions.txt
+
+      - name: Octave MAT-v5 load and layout preflight
+        shell: bash
+        run: |
+          octave --no-gui --quiet --eval \
+            "S=load('outputs/ST052-M-grid-export/st052_velocity_grid.mat'); x=S.x(:); y=S.y(:); z=S.z(:); t=S.t(:); assert(numel(x)==33 && numel(y)==33 && numel(z)==33 && numel(t)==5); disp(size(S.u)); disp(size(S.v)); disp(size(S.w)); assert(isequal(size(S.u),[5,33,33,33])); assert(isequal(size(S.v),[5,33,33,33])); assert(isequal(size(S.w),[5,33,33,33])); disp('OCTAVE_LAYOUT_PREFLIGHT_PASS');"
+
+      - name: Octave finite-field and vorticity arithmetic preflight
+        shell: bash
+        run: |
+          octave --no-gui --quiet --eval \
+            "S=load('outputs/ST052-M-grid-export/st052_velocity_grid.mat'); x=S.x(:); y=S.y(:); z=S.z(:); t=S.t(:); assert(all(isfinite(S.u(:))) && all(isfinite(S.v(:))) && all(isfinite(S.w(:)))); [~,ti]=min(abs(t-0.5)); [~,kz]=min(abs(z)); U=squeeze(S.u(ti,:,:,kz)); V=squeeze(S.v(ti,:,:,kz)); W=squeeze(S.w(ti,:,:,kz)); dx=x(2)-x(1); dy=y(2)-y(1); oz=(V(3:end,2:end-1)-V(1:end-2,2:end-1))/(2*dx)-(U(2:end-1,3:end)-U(2:end-1,1:end-2))/(2*dy); speed=sqrt(U.^2+V.^2+W.^2); assert(isfinite(max(speed(:))) && max(speed(:))>0); assert(all(isfinite(oz(:)))); disp('OCTAVE_ARITHMETIC_PREFLIGHT_PASS');"
+
+      - name: Load MAT-v5 payload and render fixed mid-plane vorticity smoke
+        shell: bash
+        run: |
+          set +e
+          octave --no-gui --quiet --eval \
+            "addpath('scripts'); smoke_st052_grid_octave('outputs/ST052-M-grid-export/st052_velocity_grid.mat','outputs/ST052-M-octave-smoke/st052_midplane_omega_z.png','outputs/ST052-M-octave-smoke/octave_smoke_receipt.txt');" \
+            2>&1 | tee outputs/ST052-M-octave-smoke/octave_run.log
+          code=${PIPESTATUS[0]}
+          set -e
+          test "$code" = 0
+          cat outputs/ST052-M-octave-smoke/octave_smoke_receipt.txt
+
+      - name: Enforce fail-closed smoke receipt
+        shell: bash
+        run: |
+          receipt=outputs/ST052-M-octave-smoke/octave_smoke_receipt.txt
+          test -s "$receipt"
+          test -s outputs/ST052-M-octave-smoke/st052_midplane_omega_z.png
+          grep -qx 'task_id=CR-A9-072' "$receipt"
+          grep -qx 'mat_file_loaded=true' "$receipt"
+          grep -qx 'grid_shape=33,33,33' "$receipt"
+          grep -qx 'time_count=5' "$receipt"
+          grep -qx 'actual_octave_runtime_executed=true' "$receipt"
+          grep -qx 'actual_matlab_runtime_executed=false' "$receipt"
+          grep -qx 'fixed_visualization_smoke_passed=true' "$receipt"
+          grep -qx 'visualization_ready=false' "$receipt"
+          grep -qx 'visual_correspondence_verified=false' "$receipt"
+          grep -qx 'pde_validated=false' "$receipt"
+          sha256sum \
+            outputs/ST052-M-grid-export/st052_velocity_grid.mat \
+            outputs/ST052-M-octave-smoke/st052_midplane_omega_z.png \
+            outputs/ST052-M-octave-smoke/octave_smoke_receipt.txt \
+            | tee outputs/ST052-M-octave-smoke/sha256sums.txt
+
+      - name: Upload Octave compatibility smoke
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ST052-M-octave-visualization-smoke
+          path: |
+            outputs/ST052-M-octave-smoke/
+            outputs/ST052-M-grid-export/st052_velocity_grid.mat
+            outputs/ST052-M-grid-export/st052_velocity_grid_manifest.json
+            outputs/ST052-M-grid-export/agent9_grid_export_receipt.json
+          if-no-files-found: error
