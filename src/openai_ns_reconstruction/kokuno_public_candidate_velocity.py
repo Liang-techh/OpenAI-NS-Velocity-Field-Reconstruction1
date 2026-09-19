@@ -1,17 +1,17 @@
 """Public, deterministic Kokuno-structured candidate oscillatory velocity.
 
-This module closes one software seam only: it binds the already-audited Agent-2
-source-formula pipeline to one fully specified repository-autonomous numerical
-realization and exposes a callable ``velocity_osc(x,y,z,t)``.  It does *not*
-recover Kokuno's unpublished positive-order background, pulse data, auxiliary
-mode family, or partition grid.  Those choices remain explicitly candidate-only.
+This module binds the already-audited Agent-2 source-formula pipeline to one
+fully specified repository-autonomous numerical realization and exposes a
+callable ``velocity_osc(x,y,z,t)``.  It does *not* recover Kokuno's unpublished
+positive-order background, pulse data, auxiliary mode family, or partition
+realization.  Those choices remain explicitly candidate-only.
 
-The source-displayed parts reused here are the per-band schedule, signed
-covariance inverse, phase/frame equations, vector-potential complete curl,
-real m=+/-1 pairing, and Q_ell physical scaling.  The frozen numerical
-background, compact radial envelope, pulse/cutoff samples, transverse mode
-prototype, slow partition realization and time modulation are repository
-choices.  No forcing or pressure is introduced.
+Source-displayed parts reused here are the per-band schedule, signed covariance
+inverse, phase/frame equations, vector-potential complete curl, real m=+/-1
+pairing, and Q_ell physical scaling.  The frozen numerical background,
+radial/axial compact envelopes, pulse/cutoff samples, transverse mode prototype,
+slow partition realization and time modulation are repository choices.  No
+forcing or pressure is introduced.
 """
 from __future__ import annotations
 
@@ -30,8 +30,9 @@ from .kokuno_candidate_mass_bound_phase_curl import KokunoCandidateMassBoundPhas
 from .kokuno_source_compatible_partition import KokunoSourceCompatiblePartitionRealization
 from .kokuno_source_signed_covariance_mass import KokunoSourceSignedCovarianceMass
 
-SCHEMA = "kokuno-public-candidate-oscillatory-velocity-v1"
-PARENT_HEAD = "296ed78b79cade56547aa9b751735207685c80bc"
+SCHEMA = "kokuno-public-candidate-oscillatory-velocity-v2"
+PARENT_HEAD = "46c1699c7fc7ab2dc103d5cf430ead3a39bbbc1e"
+PROJECT_AXIAL_LIMIT = 2.0
 
 _SOURCE_BOUND = {
     "band_schedule": "Q_ell=2^(-ell), epsilon_ell=Q_ell^h and source covering schedule",
@@ -47,9 +48,9 @@ _AUTONOMOUS = {
     "signed_rectangles": "deterministic rational source-compatible witness, not recovered source rectangles",
     "background": "constant candidate F,G,F0,a,b_s,u_star,R0 values with zero slow spatial derivatives",
     "pulse_mass": "analytic positive signed pulse samples plus compact numerical cutoff, integrated by the existing mass adapter",
-    "mode": "signed transverse prototype t=alpha*x_sigma(v/L_s)*envelope(R)*(n_theta,-n_r,0)",
-    "mode_derivative": "analytic ordinary radial derivative of C=i(n x t)/(k|n|^2); auxiliary-independent candidate route",
-    "support": "repository C7 radial envelope cos(pi*s/2)^8 on |s|<1, applied at vector-potential coefficient level",
+    "mode": "signed transverse prototype t=alpha*x_sigma(v/L_s)*E_R(R)*E_Z(Z)*(n_theta,-n_r,0)",
+    "mode_derivative": "analytic ordinary radial and axial derivatives of C=i(n x t)/(k|n|^2); auxiliary-independent candidate route",
+    "support": "repository C7 cos(pi*s/2)^8 radial and axial envelopes, applied at vector-potential coefficient level before complete curl",
     "time": "bounded autonomous modulation of covariance targets only; spatial derivative inputs remain unchanged",
 }
 
@@ -58,8 +59,10 @@ _TRUTH = {
     "candidate_autonomous_background_bound": True,
     "candidate_autonomous_signed_mode_bound": True,
     "candidate_autonomous_partition_bound": True,
+    "candidate_project_axial_support_bound": True,
     "vector_potential_complete_curl_path_used": True,
     "axis_safe_by_compact_radial_support": True,
+    "project_axial_support_applied_before_curl": True,
     "source_formula_chain_preserved": True,
     "actual_positive_order_background_bound": False,
     "actual_source_h_sigma_pulse_integrals_bound": False,
@@ -92,9 +95,13 @@ def _pulse_x(s: np.ndarray) -> np.ndarray:
     return np.stack((2.0 + 0.15 * c, 3.0 - 0.12 * c), axis=-1)
 
 
-def _radial_envelope(R: np.ndarray, center: float, halfwidth: float) -> tuple[np.ndarray, np.ndarray]:
-    """Return C7 compact envelope and its ordinary radial derivative."""
-    s = (np.asarray(R, dtype=float) - center) / halfwidth
+def _compact_cos8_envelope(
+    coordinate: np.ndarray,
+    center: float,
+    halfwidth: float,
+) -> tuple[np.ndarray, np.ndarray]:
+    """Return a C7 compact cos^8 envelope and ordinary coordinate derivative."""
+    s = (np.asarray(coordinate, dtype=float) - center) / halfwidth
     value = np.zeros_like(s)
     derivative = np.zeros_like(s)
     mask = np.abs(s) < 1.0
@@ -106,19 +113,27 @@ def _radial_envelope(R: np.ndarray, center: float, halfwidth: float) -> tuple[np
     return value, derivative
 
 
+def _radial_envelope(R: np.ndarray, center: float, halfwidth: float) -> tuple[np.ndarray, np.ndarray]:
+    """Backward-compatible radial envelope helper used by focused tests."""
+    return _compact_cos8_envelope(R, center, halfwidth)
+
+
 @dataclass(frozen=True)
 class KokunoPublicCandidateOscillatoryVelocity:
     """One frozen, low-dimensional, provenance-labelled oscillatory candidate.
 
     Coordinates are repository wave-chart coordinates: ``R=hypot(x,y)``,
     ``theta=atan2(y,x)``, and ``Z=z``.  They are dimensionless here.  The
-    construction is identically zero outside the compact radial annulus and
-    therefore never evaluates the cylindrical source formulas on the axis.
+    construction is identically zero outside its radial annulus and outside the
+    registered project axial support, and therefore never evaluates the
+    cylindrical source formulas on the axis or beyond the compact support.
     """
 
     h: float = 0.005
     radial_center: float = 0.75
     radial_halfwidth: float = 0.60
+    axial_center: float = 0.0
+    axial_halfwidth: float = 2.0
     time_min: float = 0.25
     time_max: float = 0.75
     normal_target_ratio: float = 0.40
@@ -133,6 +148,8 @@ class KokunoPublicCandidateOscillatoryVelocity:
             "h": self.h,
             "radial_center": self.radial_center,
             "radial_halfwidth": self.radial_halfwidth,
+            "axial_center": self.axial_center,
+            "axial_halfwidth": self.axial_halfwidth,
             "time_min": self.time_min,
             "time_max": self.time_max,
             "normal_target_ratio": self.normal_target_ratio,
@@ -147,6 +164,10 @@ class KokunoPublicCandidateOscillatoryVelocity:
             raise ValueError("h must satisfy the corrected-reader range 0<h<1/100")
         if not (self.radial_center > self.radial_halfwidth > 0.0):
             raise ValueError("radial support must stay strictly away from the cylindrical axis")
+        if not self.axial_halfwidth > 0.0:
+            raise ValueError("axial_halfwidth must be positive")
+        if abs(self.axial_center) + self.axial_halfwidth > PROJECT_AXIAL_LIMIT:
+            raise ValueError("axial vector-potential support must stay within registered |z|<2 support")
         if not self.time_min < self.time_max:
             raise ValueError("time_min must be less than time_max")
         if not (0.10 <= self.normal_target_ratio <= 0.80):
@@ -175,6 +196,14 @@ class KokunoPublicCandidateOscillatoryVelocity:
     @property
     def radial_outer(self) -> float:
         return self.radial_center + self.radial_halfwidth
+
+    @property
+    def axial_lower(self) -> float:
+        return self.axial_center - self.axial_halfwidth
+
+    @property
+    def axial_upper(self) -> float:
+        return self.axial_center + self.axial_halfwidth
 
     @cached_property
     def _static(self) -> dict[str, Any]:
@@ -233,7 +262,7 @@ class KokunoPublicCandidateOscillatoryVelocity:
         }
 
     def _inside_family(self, R: np.ndarray, theta: np.ndarray, Z: np.ndarray, t: np.ndarray) -> dict[str, Any]:
-        """Evaluate only points strictly inside the compact radial support."""
+        """Evaluate points strictly inside both compact vector-potential supports."""
         labels = self.beta_labels
         n_beta = len(labels)
         geometry = self._static["geometry"]
@@ -256,7 +285,16 @@ class KokunoPublicCandidateOscillatoryVelocity:
         frame = self.bridge.phase_family.phase_frame(**frame_inputs)
         n_phi = np.asarray(frame["n_phi"], dtype=float)
 
-        envelope, D_r_envelope = _radial_envelope(R, self.radial_center, self.radial_halfwidth)
+        radial_envelope, D_r_radial_envelope = _compact_cos8_envelope(
+            R, self.radial_center, self.radial_halfwidth
+        )
+        axial_envelope, D_z_axial_envelope = _compact_cos8_envelope(
+            Z, self.axial_center, self.axial_halfwidth
+        )
+        envelope = radial_envelope * axial_envelope
+        D_r_envelope = D_r_radial_envelope * axial_envelope
+        D_z_envelope = radial_envelope * D_z_axial_envelope
+
         pulse_factors = _pulse_x(np.asarray((0.25, 0.75)))[np.arange(2), np.arange(2)]
         alpha = complex(1.0, self.mode_imaginary_ratio)
         base_direction = np.stack(
@@ -288,7 +326,10 @@ class KokunoPublicCandidateOscillatoryVelocity:
             D_r_envelope[:, None, None, None] * C_base
             + envelope[:, None, None, None] * D_r_C_base
         )
-        D_z_C = np.zeros_like(D_r_C)
+        # For this frozen constant background, the unlocalized C_base has no
+        # ordinary Z dependence.  The axial vector-potential localization is
+        # therefore the complete ordinary Z coefficient derivative.
+        D_z_C = D_z_envelope[:, None, None, None] * C_base
 
         eta0 = np.asarray(geometry["eta"], dtype=float)
         D_r_eta0 = np.asarray(geometry["D_r_eta"], dtype=float)
@@ -335,16 +376,22 @@ class KokunoPublicCandidateOscillatoryVelocity:
             "candidate_mode_C_plus_prototype": envelope[:, None, None, None] * C_base,
             "candidate_mode_D_r_C_plus_prototype": D_r_C,
             "candidate_mode_D_z_C_plus_prototype": D_z_C,
-            "candidate_radial_envelope": envelope,
-            "candidate_radial_envelope_D_r": D_r_envelope,
+            "candidate_radial_envelope": radial_envelope,
+            "candidate_radial_envelope_D_r": D_r_radial_envelope,
+            "candidate_axial_envelope": axial_envelope,
+            "candidate_axial_envelope_D_z": D_z_axial_envelope,
+            "candidate_product_envelope": envelope,
+            "candidate_product_envelope_D_r": D_r_envelope,
+            "candidate_product_envelope_D_z": D_z_envelope,
         }
 
     def evaluate(self, x: Any, y: Any, z: Any, t: Any) -> dict[str, Any]:
         """Evaluate total/by-beta/by-sign correction on broadcastable inputs.
 
-        The public result is exactly zero for ``R<=radial_inner`` and
-        ``R>=radial_outer``.  This is an autonomous compact-support choice made
-        before curling, not a post-hoc multiplication of the velocity.
+        The public result is exactly zero outside the radial annulus or outside
+        the registered axial support.  Both cutoffs are applied at the
+        vector-potential coefficient level, before the complete curl; the
+        corresponding coefficient derivatives are carried analytically.
         """
         x, y, z, t = np.broadcast_arrays(
             _real(x, "x"), _real(y, "y"), _real(z, "z"), _real(t, "t")
@@ -357,7 +404,12 @@ class KokunoPublicCandidateOscillatoryVelocity:
         by_beta = np.zeros(sample_shape + (n_beta, 3), dtype=float)
         by_beta_sign = np.zeros(sample_shape + (n_beta, 2, 3), dtype=float)
         R = np.hypot(x, y)
-        inside = (R > self.radial_inner) & (R < self.radial_outer)
+        inside = (
+            (R > self.radial_inner)
+            & (R < self.radial_outer)
+            & (z > self.axial_lower)
+            & (z < self.axial_upper)
+        )
 
         indices = np.flatnonzero(inside.ravel())
         if indices.size:
@@ -382,6 +434,7 @@ class KokunoPublicCandidateOscillatoryVelocity:
             "coordinate_contract": "dimensionless repository wave chart: R=hypot(x,y), theta=atan2(y,x), Z=z",
             "time_interval": (self.time_min, self.time_max),
             "radial_support": (self.radial_inner, self.radial_outer),
+            "axial_support": (self.axial_lower, self.axial_upper),
             "public_xyz_t_velocity_correction_materialized": True,
             "pde_validated": False,
             "paper_exact": False,
@@ -403,6 +456,8 @@ class KokunoPublicCandidateOscillatoryVelocity:
                 "h": self.h,
                 "radial_center": self.radial_center,
                 "radial_halfwidth": self.radial_halfwidth,
+                "axial_center": self.axial_center,
+                "axial_halfwidth": self.axial_halfwidth,
                 "time_min": self.time_min,
                 "time_max": self.time_max,
                 "normal_target_ratio": self.normal_target_ratio,
@@ -419,12 +474,26 @@ class KokunoPublicCandidateOscillatoryVelocity:
                 "center_index_by_beta_sign": np.asarray(geometry["center_index_by_beta_sign"], dtype=int).tolist(),
                 "h_sigma_by_beta_sign": np.asarray(mass["h_sigma_by_beta_sign"], dtype=float).tolist(),
                 "background": {
-                    "R0": 0.82, "F0": 1.20, "a": 3.20, "b_s": 0.20,
-                    "u_star": 2.10, "F": 1.10, "G": 0.24,
-                    "F_R": 0.0, "G_R": 0.0, "F_Z": 0.0, "G_Z": 0.0,
+                    "R0": 0.82,
+                    "F0": 1.20,
+                    "a": 3.20,
+                    "b_s": 0.20,
+                    "u_star": 2.10,
+                    "F": 1.10,
+                    "G": 0.24,
+                    "F_R": 0.0,
+                    "G_R": 0.0,
+                    "F_Z": 0.0,
+                    "G_Z": 0.0,
                 },
                 "pulse_sign_fractions": [0.25, 0.75],
                 "mode_complex_factor": [1.0, self.mode_imaginary_ratio],
+                "support_contract": {
+                    "radial": [self.radial_inner, self.radial_outer],
+                    "axial": [self.axial_lower, self.axial_upper],
+                    "project_axial_limit": PROJECT_AXIAL_LIMIT,
+                    "applied_at": "vector_potential_coefficient_before_complete_curl",
+                },
             },
             "truth_boundary": dict(_TRUTH),
         }
