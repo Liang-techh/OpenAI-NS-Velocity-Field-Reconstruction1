@@ -1,0 +1,66 @@
+name: kokuno-agent2-public-time-derivative
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a2-public-time-derivative-041
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_public_oscillatory_time_derivative.py"
+      - "tests/test_constrained_kokuno_public_oscillatory_time_derivative.py"
+      - ".github/workflows/kokuno-agent2-public-time-derivative.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent2-public-time-derivative-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  public-time-derivative:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+      - name: Compile derivative module
+        run: >-
+          python -W error -m py_compile
+          src/openai_ns_reconstruction/kokuno_public_oscillatory_time_derivative.py
+      - name: Run focused warnings-as-errors tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_public_oscillatory_time_derivative.py
+          tests/test_constrained_kokuno_public_z_pullback_velocity.py
+      - name: Generate exact-autonomous-time-derivative receipt
+        run: >-
+          python -W error -m openai_ns_reconstruction.kokuno_public_oscillatory_time_derivative
+          --output artifacts/kokuno_agent2_public_time_derivative_v1.json
+      - name: Check immutable truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('artifacts/kokuno_agent2_public_time_derivative_v1.json')
+          r = json.loads(p.read_text())
+          assert r['admitted_agent2_head'] == '732800ce4990464b49c8aa32d0dff4580f6684d4'
+          assert r['truth_boundary']['velocity_candidate_changed'] is False
+          assert r['truth_boundary']['source_formula_changed'] is False
+          assert r['truth_boundary']['autonomous_time_law_derivative_executable'] is True
+          assert r['truth_boundary']['heldout_ns_momentum_residual_assessed'] is False
+          assert r['truth_boundary']['pde_validated'] is False
+          assert r['truth_boundary']['paper_exact'] is False
+          assert r['support_exterior_absolute_max'] == 0.0
+          print('fd6_comparison=', r['fd6_comparison'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent2-public-time-derivative-v1
+          path: artifacts/kokuno_agent2_public_time_derivative_v1.json
+          if-no-files-found: error
