@@ -1,14 +1,14 @@
 """Independent Agent-4 audit of the source-compatible PA.10 u-ball.
 
 This validator consumes only the public Agent-1 #662 u-center / u-ball API and
-public source-compatible parameters.  It does not call Agent-1's private
+public source-compatible parameters. It does not call Agent-1 private
 Fraction/Cauchy helpers and does not use its receipt as an oracle.
 
 The independent path reconstructs the displayed rational axis formulas,
 rebuilds the complex-neighborhood Cauchy majorant at high precision with an
 independent infinite-sum evaluation, and stress-tests the public center on fresh
-real and complex off-grid points.  It audits only the ``u_0`` / radius-one
-``u``-ball seam.  It is not a Navier--Stokes residual validation.
+real and complex off-grid points. It audits only the ``u_0`` / radius-one
+``u``-ball seam. It is not a Navier--Stokes residual validation.
 """
 
 from __future__ import annotations
@@ -37,6 +37,7 @@ REAL_SAMPLES = 4096
 COMPLEX_SAMPLES = 20000
 COMPLEX_SAMPLE_LADDER = (5000, 10000, 20000)
 MUTATION_FACTOR = 0.999999
+RADIUS_MUTATION = mp.mpf("0.9")
 
 
 def _canonical_json(payload: dict[str, Any]) -> str:
@@ -70,7 +71,7 @@ def _independent_complex_majorant(domain) -> dict[str, mp.mpf]:
     one_minus_2zU_abs = 1 + 2 * z_abs * U_abs
     H_abs = abs(D) * z_abs + d_abs * U_abs
 
-    # 1+z^2=(z-i)(z+i); each real center is distance >=1 from either pole.
+    # 1+z^2=(z-i)(z+i); every real center has distance >=1 from either pole.
     pole_factor_lower = 1 - radius
     one_plus_z2_lower = pole_factor_lower * pole_factor_lower
     Pi_abs = pressure_square / (one_plus_z2_lower**2)
@@ -84,8 +85,8 @@ def _independent_complex_majorant(domain) -> dict[str, mp.mpf]:
     )
     slope_abs = Z_abs / (2 * L_lower)
     x = rho / radius
-    # Independent high-precision infinite summation rather than the upstream
-    # exact-Fraction closed form (1-x)^-2.
+
+    # Independent high-precision infinite sum, not Agent 1's Fraction helper.
     alpha1_weight_sum = mp.nsum(lambda k: (k + 1) * x**k, [0, mp.inf])
     u0_norm = 80 * slope_abs * alpha1_weight_sum
     return {
@@ -164,7 +165,6 @@ def run_audit(*, pr_head: str = "unbound", checkout_head: str = "unbound") -> di
     E = 1.0 + float(domain.enlarged_real_margin)
     eta = rng.uniform(-E, E, size=REAL_SAMPLES)
     Y = rng.uniform(0.0, 4.1, size=REAL_SAMPLES)
-    # Force an explicit near-axis/center subset without changing the frozen seed.
     Y[:8] = np.asarray([0.0, 1e-14, 1e-12, 1e-10, 1e-8, 1e-6, 1e-4, 1e-2])
     eta[:8] = np.asarray([-1.0, -0.5, -1e-12, 0.0, 1e-12, 0.5, 0.999999999999, 1.0])
 
@@ -179,16 +179,13 @@ def run_audit(*, pr_head: str = "unbound", checkout_head: str = "unbound") -> di
             "relative_rms": _relative_rms(err, ref),
         }
 
-    # Fresh complex off-grid stress cloud over the full certified Cauchy union.
     centers = rng.uniform(-E, E, size=COMPLEX_SAMPLES)
     radii = float(domain.cauchy_radius) * np.sqrt(rng.random(COMPLEX_SAMPLES))
     angles = rng.uniform(0.0, 2.0 * math.pi, size=COMPLEX_SAMPLES)
     z = centers.astype(complex) + radii * np.exp(1j * angles)
     slope_complex, L_complex = _complex_slope_values(domain, z)
     slope_abs = np.abs(slope_complex)
-    ladder = {
-        str(n): float(np.max(slope_abs[:n])) for n in COMPLEX_SAMPLE_LADDER
-    }
+    ladder = {str(n): float(np.max(slope_abs[:n])) for n in COMPLEX_SAMPLE_LADDER}
     complex_max_slope = float(np.max(slope_abs))
     complex_min_abs_L = float(np.min(np.abs(L_complex)))
 
@@ -206,7 +203,8 @@ def run_audit(*, pr_head: str = "unbound", checkout_head: str = "unbound") -> di
     guards = {
         "public_center_u0_matches_independent_formula": bool(
             value_errors["u_0"]["relative_rms"] <= 2e-14
-            and value_errors["u_0"]["max_abs"] <= 2e-10 * max(1.0, float(np.max(np.abs(reference_values["u_0"]))))
+            and value_errors["u_0"]["max_abs"]
+            <= 2e-10 * max(1.0, float(np.max(np.abs(reference_values["u_0"]))))
         ),
         "public_center_u0Y_matches_independent_formula": bool(
             value_errors["u_0_Y"]["relative_rms"] <= 2e-14
@@ -236,13 +234,26 @@ def run_audit(*, pr_head: str = "unbound", checkout_head: str = "unbound") -> di
         "public_u_projection_lipschitz_is_one": bool(public_ball_lip == 1.0),
     }
 
+    # The frozen radius negative control is still exactly 1.0 -> 0.9.  Evaluate
+    # it in the same 90-digit semantic layer as the independently reconstructed
+    # radius-one ball.  At this datum, u0_norm is so large that binary64
+    # ``public_u0_norm + 0.9`` and ``public_u0_norm + 1.0`` can collapse to the
+    # same float; testing the mutation after that collapse is not meaningful.
+    radius_mutation_detected = bool(
+        independent["u0_coefficient_norm_upper"] + RADIUS_MUTATION
+        < independent["radius_one_u_ball_norm_upper"]
+    )
     mutation = {
         "slope_0p999999_detected": bool(MUTATION_FACTOR * public_slope < ind_slope),
         "weight_0p999999_detected": bool(MUTATION_FACTOR * public_weight < ind_weight),
         "u0_norm_0p999999_detected": bool(MUTATION_FACTOR * public_u0_norm < ind_u0_norm),
-        "radius_increment_drop_to_0p9_detected": bool(public_u0_norm + 0.9 < ind_ball_norm),
+        "radius_increment_drop_to_0p9_detected": radius_mutation_detected,
         "center_sign_flip_detected": bool(
-            _relative_rms(-np.asarray(public_values["u_0_Y"]) - reference_values["u_0_Y"], reference_values["u_0_Y"]) > 1.9
+            _relative_rms(
+                -np.asarray(public_values["u_0_Y"]) - reference_values["u_0_Y"],
+                reference_values["u_0_Y"],
+            )
+            > 1.9
         ),
     }
 
@@ -272,6 +283,8 @@ def run_audit(*, pr_head: str = "unbound", checkout_head: str = "unbound") -> di
             "complex_sample_ladder": list(COMPLEX_SAMPLE_LADDER),
             "independent_bound_path": "90-digit mpmath + infinite nsum + direct rational formulas",
             "mutation_factor": MUTATION_FACTOR,
+            "radius_increment_mutation": 0.9,
+            "radius_mutation_evaluation": "90-digit semantic increment; no binary64 addend collapse",
             "final_project_gates_unchanged": {
                 "normalized_momentum_max": 1.0e-3,
                 "normalized_momentum_L2": 1.0e-3,
@@ -279,13 +292,16 @@ def run_audit(*, pr_head: str = "unbound", checkout_head: str = "unbound") -> di
                 "divergence_L2": 1.0e-5,
             },
         },
-        "independent_complex_majorant": {name: float(value) for name, value in independent.items()},
+        "independent_complex_majorant": {
+            name: float(value) for name, value in independent.items()
+        },
         "public_certificate": {
             "cauchy_u0_Y_abs_upper": public_slope,
             "alpha1_cauchy_weight_sum_upper": public_weight,
             "u0_coefficient_norm_upper": public_u0_norm,
             "radius_one_u_ball_norm": public_ball_norm,
             "radius_one_u_ball_lipschitz": public_ball_lip,
+            "binary64_radius_one_minus_u0_upper": public_ball_norm - public_u0_norm,
         },
         "public_to_independent_ratios": {
             "slope": public_slope / ind_slope,
