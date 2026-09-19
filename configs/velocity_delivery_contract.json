@@ -63,17 +63,17 @@
     {
       "item": "Eq45 support-connected candidate identity, API, export format, and delivery wrapper",
       "classification": "autonomous_design",
-      "source": "project_status.json and artifacts/constrained/eq45_supported_delivery_capsule.json"
+      "source": "artifacts/constrained/eq45_supported_delivery_capsule.json"
     },
     {
       "item": "legacy coupled_velocity_v1 compatibility surface",
       "classification": "autonomous_design",
-      "source": "openai_ns_reconstruction.velocity_components"
+      "source": "src/openai_ns_reconstruction/velocity_components.py"
     },
     {
-      "item": "exact OpenAI numerical velocity samples, hidden coefficients, frame/time map, camera, and trajectory seeds",
+      "item": "exact OpenAI numerical velocity samples, hidden coefficients, frame/time map, camera, and trajectory seeds remain unknown",
       "classification": "pending_unknown",
-      "source": "not publicly identified"
+      "source": "docs/VISUAL_TARGET.md"
     }
   ],
   "claim_status": {
@@ -97,12 +97,14 @@
     "visual_correspondence": {
       "blocking_for_velocity_delivery": false,
       "required_for_correspondence_claim": true,
-      "time_mapping_status": "pending_unknown"
+      "time_mapping_status": "pending_unknown",
+      "comparison_evidence": []
     },
     "pde_validation": {
       "blocking_for_velocity_delivery": false,
       "blocking_for_pde_claim": true,
-      "config": "configs/constraints.json"
+      "config": "configs/constraints.json",
+      "evidence": []
     }
   },
   "cr001_nonmutation": {
