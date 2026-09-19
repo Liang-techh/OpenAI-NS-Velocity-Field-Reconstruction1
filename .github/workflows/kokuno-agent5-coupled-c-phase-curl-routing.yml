@@ -1,0 +1,98 @@
+name: kokuno-agent5-coupled-c-phase-curl-routing
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-coupled-c-phase-curl-routing-036
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_coupled_c_phase_curl_routing_checkpoint.py"
+      - "tests/test_constrained_kokuno_coupled_c_phase_curl_routing_checkpoint.py"
+      - ".github/workflows/kokuno-agent5-coupled-c-phase-curl-routing.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent5-coupled-c-phase-curl-routing-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHONHASHSEED: '0'
+
+jobs:
+  coupled-c-phase-curl-routing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile Agent-5 checkpoint
+        run: python -m py_compile src/openai_ns_reconstruction/kokuno_coupled_c_phase_curl_routing_checkpoint.py
+      - name: Focused warnings-as-errors regressions
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_numeric_prerequisites_routing_checkpoint.py \
+            tests/test_constrained_kokuno_coupled_c_phase_curl_routing_checkpoint.py
+      - name: Generate deterministic v36 checkpoint
+        run: |
+          python -m openai_ns_reconstruction.kokuno_coupled_c_phase_curl_routing_checkpoint \
+            --output artifacts/kokuno_agent5/coupled_c_phase_curl_routing_checkpoint_v36.json
+      - name: Validate frozen truth boundary and typed handoffs
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("artifacts/kokuno_agent5/coupled_c_phase_curl_routing_checkpoint_v36.json")
+          report = json.loads(path.read_text())
+          state = report["states"]
+          a1 = report["upstream"]["agent1_coupled_c_sibling"]
+          a2 = report["upstream"]["agent2_mass_bound_phase_curl_sibling"]
+          handoff = report["typed_handoff_contracts"]
+
+          assert state["fresh_coupled_C_pa10_pointwise_not_excluded"] is True
+          assert state["fresh_coupled_C_pa16_handoff_allowed"] is False
+          assert state["candidate_mass_bound_phase_curl_composition_ready"] is True
+          assert state["candidate_h_sigma_spatial_derivatives_explicit"] is True
+          assert state["leading_ready"] is False
+          assert state["public_provenance_labelled_xyz_t_oscillatory_velocity_ready"] is False
+          assert state["oscillatory_ready"] is False
+          assert state["same_cycle_requested_stress_materialized"] is False
+          assert state["correction_ready"] is False
+          assert state["candidate_artifact_instantiated"] is False
+          assert state["formal_full_domain_pde_gate_assessed"] is False
+          assert state["pde_validated"] is False
+
+          assert a1["pointwise_PA10_necessary_screen_passed"] is True
+          assert a1["passing_pointwise_screen_is_source_T_sh_certificate"] is False
+          assert a1["selected_pa16_handoff_allowed"] is False
+          assert a1["global_pressure_matched"] is False
+          assert a2["candidate_signed_mass_consumed_directly"] is True
+          assert a2["explicit_D_r_h_sigma_required"] is True
+          assert a2["explicit_D_z_h_sigma_required"] is True
+          assert a2["public_xyz_t_velocity_osc_provider_ready"] is False
+          assert a2["actual_positive_order_background_bound"] is False
+          assert a2["actual_auxiliary_torus_mode_family_bound"] is False
+
+          assert handoff["leading"]["ready"] is False
+          assert handoff["oscillatory"]["missing_public_output"] == "velocity_osc(x,y,z,t)"
+          assert handoff["oscillatory"]["ready"] is False
+          assert handoff["correction"]["ready"] is False
+          assert handoff["independent_validator"]["ready_for_final_gate"] is False
+
+          assert report["formal_gates"]["held_out_normalized_momentum_max"] == 1.0e-3
+          assert report["formal_gates"]["held_out_normalized_momentum_l2"] == 1.0e-3
+          assert report["formal_gates"]["held_out_divergence_max"] == 1.0e-5
+          assert report["baseline_vs_kokuno"]["kokuno_current_comparable_full_domain_receipt"] is None
+          print("checkpoint_sha256=", report["checkpoint_sha256"])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-coupled-c-phase-curl-routing-checkpoint-v36
+          path: artifacts/kokuno_agent5/coupled_c_phase_curl_routing_checkpoint_v36.json
