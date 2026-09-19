@@ -1,0 +1,116 @@
+name: kokuno-agent1-pa10-source-r1-zeta-ordinary-slot
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a1-pa10-r1-zeta-ordinary-slot-058
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_pa10_source_r1_zeta_ordinary_slot.py"
+      - "tests/test_constrained_kokuno_pa10_source_r1_zeta_ordinary_slot.py"
+      - ".github/workflows/kokuno-agent1-pa10-source-r1-zeta-ordinary-slot.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent1-pa10-source-r1-zeta-ordinary-slot-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  source-r1-zeta-ordinary-slot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile
+        run: |
+          python -m compileall -q \
+            src/openai_ns_reconstruction/kokuno_pa10_source_axis_domain.py \
+            src/openai_ns_reconstruction/kokuno_pa10_source_phi_ball.py \
+            src/openai_ns_reconstruction/kokuno_pa10_source_u_ball.py \
+            src/openai_ns_reconstruction/kokuno_pa10_post_j_remainder_bridge.py \
+            src/openai_ns_reconstruction/kokuno_pa10_source_algebraic_ordinary_slots.py \
+            src/openai_ns_reconstruction/kokuno_pa10_source_derivative_ordinary_slots.py \
+            src/openai_ns_reconstruction/kokuno_pa10_source_r1_algebraic_ordinary_slots.py \
+            src/openai_ns_reconstruction/kokuno_pa10_source_r1_zeta_ordinary_slot.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_pa10_source_r1_algebraic_ordinary_slots.py \
+            tests/test_constrained_kokuno_pa10_source_r1_zeta_ordinary_slot.py
+      - name: Generate exact-head Agent-1 receipt
+        run: |
+          python -W error -m openai_ns_reconstruction.kokuno_pa10_source_r1_zeta_ordinary_slot \
+            --output artifacts/kokuno_agent1/pa10_source_r1_zeta_ordinary_slot_v1/report.json
+      - name: Bind exact head and validate immutable truth boundary
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          import subprocess
+
+          path = Path('artifacts/kokuno_agent1/pa10_source_r1_zeta_ordinary_slot_v1/report.json')
+          payload = json.loads(path.read_text())
+          payload['exact_head'] = subprocess.check_output(
+              ['git', 'rev-parse', 'HEAD'], text=True
+          ).strip()
+          raw = json.dumps(payload, indent=2, sort_keys=True) + '\n'
+          path.write_text(raw)
+
+          expected_new = {'d_u_zeta_star_times_Phi'}
+          assert set(payload['R1_zeta_ordinary_numerator_slot']) == expected_new
+          assert set(payload['R1_zeta_ordinary_after_J2']) == expected_new
+          for item in payload['R1_zeta_ordinary_after_J2'].values():
+              assert item['norm'] > 0.0
+              assert item['lipschitz'] > 0.0
+
+          zeta = payload['zeta_star_certificate']
+          assert zeta['H_factor_abs_lower_on_cauchy'] > 0.0
+          assert zeta['H_square_plus_sigma_square_abs_lower_on_cauchy'] > 0.0
+          assert zeta['zeta_star_coefficient_norm_upper'] > 0.0
+
+          progress = payload['ledger_progress']
+          assert progress['R1_source_bound_ordinary_slots_count'] == 6
+          assert progress['R1_total_ordinary_slots'] == 11
+          assert progress['R1_ordinary_slots_still_required'] == 5
+          assert progress['R1_mixed_slot_handled_upstream_by_A1_668'] is True
+          assert progress['R2_agent1_self_certificate_materialized_upstream'] is True
+          assert progress['full_R1_still_open'] is True
+          assert progress['M_K_not_promoted'] is True
+
+          truth = payload['truth_boundary']
+          assert truth['source_compatible_zeta_star_coefficient_norm_machine_bound'] is True
+          assert truth['source_compatible_R1_zeta_ordinary_post_J2_slot_machine_bound'] is True
+          assert truth['source_compatible_all_R1_ordinary_post_J2_slots_machine_bound'] is False
+          assert truth['standalone_Y_Phi_Y_coefficient_norm_invented'] is False
+          assert truth['standalone_Phi_eta_coefficient_norm_invented'] is False
+          assert truth['source_operator_constant_M_machine_bound'] is False
+          assert truth['source_operator_constant_K_machine_bound'] is False
+          assert truth['global_pressure_matched'] is False
+          assert truth['global_leading_profile_reconstructed'] is False
+          assert truth['heldout_ns_residual_assessed'] is False
+          assert truth['pde_validated'] is False
+
+          audit = payload['independent_audit_boundary']
+          assert audit['this_zeta_R1_slot_requires_independent_A4_audit'] is True
+          assert audit['R2_full_independent_A4_admission'] is False
+
+          print('artifact_sha256=', hashlib.sha256(raw.encode()).hexdigest())
+          print('receipt_sha256=', payload['receipt_sha256'])
+          print('zeta_star_certificate=', zeta)
+          print('R1_zeta_after_J2=', payload['R1_zeta_ordinary_after_J2'])
+          print('progress=', progress)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-pa10-source-r1-zeta-ordinary-slot-v1
+          path: artifacts/kokuno_agent1/pa10_source_r1_zeta_ordinary_slot_v1/report.json
+          if-no-files-found: error
