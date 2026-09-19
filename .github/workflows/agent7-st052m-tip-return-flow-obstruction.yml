@@ -1,0 +1,92 @@
+name: agent7-st052m-tip-return-flow-obstruction
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_tip_return_flow_obstruction.py'
+      - 'experiments/root_st052/test_agent7_st052m_tip_return_flow_obstruction.py'
+      - '.github/workflows/agent7-st052m-tip-return-flow-obstruction.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  analytic-return-flow-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Focused contract tests
+        run: python -m pytest -q -W error experiments/root_st052/test_agent7_st052m_tip_return_flow_obstruction.py
+      - name: Execute preregistered analytic audit
+        run: |
+          mkdir -p outputs/agent7-st052m-tip-return-flow-obstruction
+          python experiments/root_st052/agent7_st052m_tip_return_flow_obstruction.py \
+            --out outputs/agent7-st052m-tip-return-flow-obstruction/report.json
+      - name: Verify frozen truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-tip-return-flow-obstruction/report.json').read_text())
+          assert r['prereg_issue']==722
+          assert r['source_parent']=={'pr':701,'head':'e3ecc8654f2c9a2324265bbd01df596b4e503404'}
+          assert r['analytic_result']['return_flow_required_by_compact_lobe_identity'] is True
+          assert r['analytic_result']['single_compact_tip_channel_strictly_inward_everywhere_possible'] is False
+          assert r['fresh_holdout_scope']['tip_seed_inside_analytic_inward_subband'] is True
+          assert r['fresh_holdout_scope']['full_tip_support_inwardness_inferred_from_holdout'] is False
+          assert r['decision']['velocity_changed_this_increment'] is False
+          assert r['new_spatial_basis_added'] is False
+          assert r['new_temporal_basis_added'] is False
+          assert r['held_out_pde_residual_evaluated'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          assert r['paper_exact'] is False
+          assert r['openai_field_identified'] is False
+          print('z_sign_change=',r['analytic_result']['physical_abs_z_sign_change'])
+          print('classification=',r['decision']['classification'])
+          print('routing=',r['decision']['next_minimal_if_fresh_paths_still_require_change'])
+          PY
+      - name: Publish compact receipt
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent7-return-flow-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-tip-return-flow-obstruction/report.json').read_text())
+          a=r['analytic_result']
+          h=r['fresh_holdout_scope']
+          print('<!-- agent7-st052m-tip-return-flow-obstruction-receipt -->')
+          print('**Agent 7 analytic return-flow receipt (issue #722; no retuning):**')
+          print()
+          print(f"- physical sign change: `|z|={a['physical_abs_z_sign_change']:.12g}` (`q={a['physical_q_sign_change']:.12g}`)")
+          print(f"- inward correction sub-band: `{a['inward_correction_subband_abs_z']}`")
+          print(f"- outward return sub-band: `{a['outward_return_subband_abs_z']}`")
+          print(f"- exact compact-lobe radial integral: `{a['compact_lobe_integral_Cr_exact']}`")
+          print(f"- #714 fresh tip seed `|z|={h['tip_seed_abs_z']}` lies in inward sub-band: `{h['tip_seed_inside_analytic_inward_subband']}`")
+          print('- consequence: a nontrivial single compact channel of this frozen form cannot be strictly radial-inward across the entire axial lobe; some return flow is structurally required.')
+          print()
+          print('Truth boundary: expression-capacity/sign-structure evidence only. No candidate mutation, no full-support visual correspondence, no transformed-child PDE validation, no exact OpenAI-field or blow-up claim.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-return-flow-receipt.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-tip-return-flow-obstruction
+          path: outputs/agent7-st052m-tip-return-flow-obstruction/
+          if-no-files-found: error
+
+# Formula, source head, sign gate, and truth boundary were frozen in issue #722 before execution.
