@@ -62,7 +62,7 @@ def test_frozen_source_and_truth_contract() -> None:
 
 
 def test_by_seed_radius_uses_exact_frozen_population() -> None:
-    out = m.by_seed_radius(_measurement()["per_path"] and _measurement())
+    out = m.by_seed_radius(_measurement())
     assert set(out) == {"0.6", "0.9", "1.2"}
     assert all(row["path_count"] == 16 for row in out.values())
     assert out["0.6"]["mean_absolute_turns"] == pytest.approx(0.6)
