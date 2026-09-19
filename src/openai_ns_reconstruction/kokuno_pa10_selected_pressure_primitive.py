@@ -26,8 +26,16 @@ pressure primitive gives
     I_eta = integral_0^Y 2 Phi(v) f_0'(v chi) v chi_eta dv.
 
 The formula is evaluated directly rather than finite-differencing the huge
-``Lambda`` scale.  Vectorized evaluation, deterministic engineering envelopes,
-and SHA-bound save/load are provided.
+``Lambda`` scale.  Near the selected stationary phase point, ``log g`` is
+materialized from the local identity
+
+    log g(eta) = Lambda integral_{eta_*}^eta zeta_*(s) ds,
+
+instead of subtracting two independently rounded global phase integrals.  The
+stationary root is also used to factor ``H_*`` before forming ``zeta_*`` so the
+very narrow ``Lambda^{-1/2}`` pressure layer is not flattened by cancellation.
+Vectorized evaluation, deterministic engineering envelopes, and SHA-bound
+save/load are provided.
 
 Important truth boundary: this is the *selected contraction center*, not the
 source fixed point and not a radius-one-ball coefficient-space certificate.
@@ -57,7 +65,14 @@ SOURCE_COMMIT = "143f6773feb424ad9ed3a8d116653200f20346b7"
 SOURCE_PATH = "navier-stokes/navier_stokes_workbench.tex"
 CORRECTED_RELEASE = "zenodo:22678406"
 CORRECTED_RELEASE_DATE = "2026-09-09"
-SCHEMA = "kokuno-pa10-selected-pressure-primitive-v1"
+SCHEMA = "kokuno-pa10-selected-pressure-primitive-v2"
+
+_LOCAL_PHASE_QUADRATURE_ORDER = 64
+_LOCAL_PHASE_NODES, _LOCAL_PHASE_WEIGHTS = leggauss(_LOCAL_PHASE_QUADRATURE_ORDER)
+_LOCAL_PHASE_NODES = np.asarray(_LOCAL_PHASE_NODES, dtype=float)
+_LOCAL_PHASE_WEIGHTS = np.asarray(_LOCAL_PHASE_WEIGHTS, dtype=float)
+_LOCAL_PHASE_NODES.setflags(write=False)
+_LOCAL_PHASE_WEIGHTS.setflags(write=False)
 
 _SOURCE_FORMULAS = {
     "center_profile": "Phi_0(Y,eta)=f_0(Y chi(eta))",
@@ -67,9 +82,17 @@ _SOURCE_FORMULAS = {
         "p_eta=g^2[2 Lambda zeta_* I+I_eta], "
         "I_eta=integral_0^Y 2 Phi_0(v) f_0'(v chi) v chi_eta dv"
     ),
+    "stationary_local_phase": "log g=Lambda*integral_{eta_*}^eta zeta_*(s) ds",
     "profile_radial_derivative": "Y Phi_Y=Y chi f_0'(Y chi)",
     "profile_eta_derivative": "Phi_eta=Y chi_eta f_0'(Y chi)",
     "center_domain": "0<=Y<=4.1, |eta|<=1",
+}
+
+_NUMERICS = {
+    "stationary_local_phase_quadrature": "fixed Gauss-Legendre",
+    "stationary_local_phase_quadrature_order": _LOCAL_PHASE_QUADRATURE_ORDER,
+    "stationary_H_evaluation": "synthetic factorization about selected binary64 stationary root",
+    "global_phase_subtraction_used_for_public_pressure_values": False,
 }
 
 _TRUTH_BOUNDARY = {
@@ -78,8 +101,10 @@ _TRUTH_BOUNDARY = {
     "selected_center_pressure_eta_derivative_executable": True,
     "selected_center_Y_p_Y_executable": True,
     "selected_center_Y_Phi_Y_executable": True,
+    "selected_stationary_local_phase_value_path_executable": True,
     "vectorized_evaluation_executable": True,
     "selected_center_engineering_envelope_executable": True,
+    "selected_stationary_binary64_root_is_source_exact_hidden_value": False,
     "selected_center_engineering_envelope_is_source_ball_bound": False,
     "source_fixed_point_pressure_bound_machine_bound": False,
     "source_pressure_radius_one_ball_norm_machine_bound": False,
@@ -142,6 +167,62 @@ class KokunoPA10SelectedPressurePrimitive:
         object.__setattr__(self, "_nodes", nodes)
         object.__setattr__(self, "_weights", weights)
 
+    def _stationary_anchored_h_star(self, eta: Any) -> np.ndarray:
+        """Evaluate H_* without cancellation near its selected real root.
+
+        H_*(eta)=j0+(D+4)eta-j0 eta^2-4 eta^3.  Synthetic division by
+        ``eta-r`` with ``r=phase_stationary_eta`` enforces the defining
+        stationary-root identity at the selected binary64 root.  The dropped
+        polynomial remainder is only the rounding residual of that selected
+        root; this is a numerical representation choice, not recovery of a
+        hidden source parameter.
+        """
+
+        e = _finite_array(eta, "eta")
+        if np.any(np.abs(e) > 1.0):
+            raise ValueError("eta must lie in [-1,1]")
+        r = float(self.core.phase_stationary_eta)
+        a = -4.0
+        b = -float(self.core.j0)
+        c = float(self.core.D) + 4.0
+        quotient = a * e * e + (b + a * r) * e + (c + b * r + a * r * r)
+        return (e - r) * quotient
+
+    def _stationary_anchored_zeta_star(self, eta: Any) -> np.ndarray:
+        e = _finite_array(eta, "eta")
+        H = self._stationary_anchored_h_star(e)
+        L = 1.0 - 2.0 * float(self.core.h) * e * e
+        sigma2 = float(self.core.sigma_star) ** 2
+        return -L * H / (H * H + sigma2)
+
+    def _local_phase_difference(self, eta: Any) -> np.ndarray:
+        """Compute integral_{eta_*}^eta zeta_* directly in local coordinates."""
+
+        values = _finite_array(eta, "eta")
+        if np.any(np.abs(values) > 1.0):
+            raise ValueError("eta must lie in [-1,1]")
+        flat = values.reshape(-1)
+        out = np.empty_like(flat)
+        root = float(self.core.phase_stationary_eta)
+        for index, upper in enumerate(flat):
+            upper_value = float(upper)
+            if upper_value == root:
+                out[index] = 0.0
+                continue
+            half = 0.5 * (upper_value - root)
+            midpoint = 0.5 * (upper_value + root)
+            points = midpoint + half * _LOCAL_PHASE_NODES
+            zeta = self._stationary_anchored_zeta_star(points)
+            out[index] = half * float(np.dot(_LOCAL_PHASE_WEIGHTS, zeta))
+        return out.reshape(values.shape)
+
+    def _local_log_g(self, eta: Any) -> np.ndarray:
+        raw = float(self.core.rescaling_lambda) * self._local_phase_difference(eta)
+        # The stationary point is the selected real-axis maximum.  Clipping
+        # only suppresses a possible positive final-rounding ulp; no pair of
+        # global phase values is subtracted on this path.
+        return np.minimum(raw, 0.0)
+
     def _integrals(
         self,
         Y: np.ndarray,
@@ -181,7 +262,8 @@ class KokunoPA10SelectedPressurePrimitive:
             raise ValueError("eta must lie in [-1,1]")
 
         state = self.core.axis_state(eta_array)
-        log_g = self.core.log_g(eta_array)
+        log_g = self._local_log_g(eta_array)
+        zeta_star = self._stationary_anchored_zeta_star(eta_array)
         with np.errstate(under="ignore"):
             g = np.exp(log_g)
         arg = Y_array * state["chi"]
@@ -196,7 +278,7 @@ class KokunoPA10SelectedPressurePrimitive:
         p_Y = g2 * Phi * Phi
         Y_p_Y = Y_array * p_Y
         p_eta = g2 * (
-            2.0 * self.core.rescaling_lambda * state["zeta_star"] * I + I_eta
+            2.0 * self.core.rescaling_lambda * zeta_star * I + I_eta
         )
 
         result = {
@@ -207,6 +289,7 @@ class KokunoPA10SelectedPressurePrimitive:
             "Y_Phi_Y": Y_Phi_Y,
             "log_g": log_g,
             "g": g,
+            "zeta_star_local": zeta_star,
             "pressure_integral_I": I,
             "pressure_integral_I_eta": I_eta,
             "p": p,
@@ -317,12 +400,19 @@ class KokunoPA10SelectedPressurePrimitive:
     def report(self) -> dict[str, Any]:
         envelope = self.engineering_envelope()
         eta0 = self.core.phase_stationary_eta
-        sample = self.evaluate(np.asarray([0.0, 2.0, 4.1]), np.asarray([eta0, eta0, eta0]))
+        width = float(self.core.rescaling_lambda ** -0.5)
+        probe_eta = np.asarray([eta0 - 0.5 * width, eta0, eta0 + 0.5 * width])
+        sample = self.evaluate(np.asarray([2.0, 2.0, 2.0]), probe_eta)
+        legacy_log_g = np.asarray(self.core.log_g(probe_eta), dtype=float)
         return {
             "selected_lambda": self.core.rescaling_lambda,
             "phase_stationary_eta": eta0,
-            "stationary_sample_p": sample["p"].tolist(),
-            "stationary_sample_p_eta": sample["p_eta"].tolist(),
+            "stationary_layer_width_lambda_minus_half": width,
+            "stationary_layer_probe_eta": probe_eta.tolist(),
+            "stationary_layer_local_log_g": sample["log_g"].tolist(),
+            "stationary_layer_legacy_global_subtraction_log_g": legacy_log_g.tolist(),
+            "stationary_layer_sample_p": sample["p"].tolist(),
+            "stationary_layer_sample_p_eta": sample["p_eta"].tolist(),
             "envelope": envelope,
             "truth_boundary": self.truth_boundary,
         }
@@ -338,6 +428,7 @@ class KokunoPA10SelectedPressurePrimitive:
                 "corrected_release_date": CORRECTED_RELEASE_DATE,
             },
             "source_formulas": dict(_SOURCE_FORMULAS),
+            "numerics": dict(_NUMERICS),
             "core": self.core.to_payload(),
             "parameters": {"quadrature_points": self.quadrature_points},
             "truth_boundary": self.truth_boundary,
@@ -359,6 +450,8 @@ class KokunoPA10SelectedPressurePrimitive:
             raise ValueError("unexpected selected-pressure-primitive schema")
         if payload.get("source_formulas") != _SOURCE_FORMULAS:
             raise ValueError("selected-pressure source formulas changed")
+        if payload.get("numerics") != _NUMERICS:
+            raise ValueError("selected-pressure numerical representation changed")
         if payload.get("truth_boundary") != _TRUTH_BOUNDARY:
             raise ValueError("selected-pressure truth-boundary metadata changed")
         claimed = payload.get("sha256")
