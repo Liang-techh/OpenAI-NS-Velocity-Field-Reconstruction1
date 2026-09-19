@@ -1,0 +1,74 @@
+name: kokuno-agent2-public-oscillatory-bundle
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a2-public-oscillatory-bundle-044
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_public_oscillatory_bundle.py"
+      - "tests/test_constrained_kokuno_public_oscillatory_bundle.py"
+      - ".github/workflows/kokuno-agent2-public-oscillatory-bundle.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent2-public-oscillatory-bundle-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  public-oscillatory-bundle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+      - name: Compile module
+        run: >-
+          python -W error -m py_compile
+          src/openai_ns_reconstruction/kokuno_public_oscillatory_bundle.py
+      - name: Run focused warnings-as-errors tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_public_oscillatory_bundle.py
+          tests/test_constrained_kokuno_public_oscillatory_vector_potential_time_derivative.py
+          tests/test_constrained_kokuno_public_oscillatory_vector_potential.py
+          tests/test_constrained_kokuno_public_oscillatory_time_derivative.py
+          tests/test_constrained_kokuno_public_z_pullback_velocity.py
+      - name: Generate immutable bundle receipt
+        run: >-
+          python -W error -m openai_ns_reconstruction.kokuno_public_oscillatory_bundle
+          --output artifacts/kokuno_agent2_public_oscillatory_bundle_v1.json
+      - name: Check exact replay and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('artifacts/kokuno_agent2_public_oscillatory_bundle_v1.json')
+          r = json.loads(p.read_text())
+          assert r['parent_agent2_head'] == 'e12bfb0a65031e44b1556443d88d11f2e9e92904'
+          assert r['failed_guards'] == []
+          assert all(v == 0.0 for v in r['exact_public_api_replay_max_abs'].values())
+          assert r['support_exterior_absolute_max'] == 0.0
+          assert r['truth_boundary']['velocity_candidate_changed'] is False
+          assert r['truth_boundary']['vector_potential_candidate_changed'] is False
+          assert r['truth_boundary']['source_formula_changed'] is False
+          assert r['truth_boundary']['integration_adapter_only'] is True
+          assert r['truth_boundary']['independent_agent4_vector_potential_audit_required'] is True
+          assert r['truth_boundary']['heldout_ns_momentum_residual_assessed'] is False
+          assert r['truth_boundary']['pde_validated'] is False
+          assert r['truth_boundary']['paper_exact'] is False
+          print('bundle_identity_sha256=', r['bundle_identity_sha256'])
+          print('exact_replay=', r['exact_public_api_replay_max_abs'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent2-public-oscillatory-bundle-v1
+          path: artifacts/kokuno_agent2_public_oscillatory_bundle_v1.json
+          if-no-files-found: error
