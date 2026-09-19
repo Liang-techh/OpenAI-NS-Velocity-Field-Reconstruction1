@@ -18,7 +18,7 @@ and, after the leading rescaling,
     partial_eta p = partial_eta I(g^2 Phi^2).
 
 The source explicitly states that multiplication, ``I``, multiplication by
-``Y`` and ``partial_eta I`` are bounded in this coefficient space.  Its displayed
+``Y`` and ``partial_eta I`` are bounded in this coefficient space. Its displayed
 weight ratios give the conservative executable factors
 
     ||I F||_rho <= 80 ||F||_rho,
@@ -31,13 +31,13 @@ Together with the already recorded product algebra
 
 this module turns the pressure map into a fail-closed radius-ball calculator.
 It also propagates local Lipschitz bounds by the source-described
-one-factor-at-a-time replacement rule.  ``g`` is fixed with respect to the
+one-factor-at-a-time replacement rule. ``g`` is fixed with respect to the
 contraction-ball variables; only ``Phi`` varies in the pressure map.
 
-The calculator is conditional.  A caller must still supply a source-valid
+The calculator is conditional. A caller must still supply a source-valid
 ``rho``, a coefficient-space norm for ``g`` and a radius-ball norm/Lipschitz
-bound for ``Phi``.  Merely passing diagnostic numbers does not make the source
-pressure ball bound true.  In particular this module does not promote source
+bound for ``Phi``. Merely passing diagnostic numbers does not make the source
+pressure ball bound true. In particular this module does not promote source
 R1/R2, M/K, B0/T_sh, PA.16, global matched pressure, global leading velocity,
 or PDE validation.
 """
@@ -231,8 +231,8 @@ class KokunoPA10PressureBallBounds:
         """Return conditional bounds for ``p``, ``p_eta`` and ``Y p_Y``.
 
         ``g`` is fixed by the selected/source rescaling, so its contraction-ball
-        Lipschitz value is zero.  ``Phi.lipschitz`` is supplied by the caller's
-        ball metric.  The two copies of ``Phi`` are replaced one at a time,
+        Lipschitz value is zero. ``Phi.lipschitz`` is supplied by the caller's
+        ball metric. The two copies of ``Phi`` are replaced one at a time,
         exactly as in the source's local Lipschitz bookkeeping.
         """
 
@@ -325,8 +325,8 @@ class KokunoPA10PressureBallBounds:
             for name, bound in pressure.items()
         }
         remainder_totals = {
-            "R1": bridge["remainder"]["R1_total"].__dict__,
-            "R2": bridge["remainder"]["R2_total"].__dict__,
+            "R1": copy.deepcopy(bridge["remainder"]["R1"]),
+            "R2": copy.deepcopy(bridge["remainder"]["R2"]),
         }
         payload: dict[str, Any] = {
             "schema": SCHEMA,
