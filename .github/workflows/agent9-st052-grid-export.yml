@@ -1,0 +1,126 @@
+name: agent9-st052-grid-export
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/st052_grid_export.py'
+      - 'tests/test_st052_grid_export.py'
+      - 'scripts/verify_st052_grid_export.py'
+      - '.github/workflows/agent9-st052-grid-export.yml'
+  push:
+    branches:
+      - 'agent9/st052-grid-export-071'
+    paths:
+      - 'src/openai_ns_reconstruction/st052_grid_export.py'
+      - 'tests/test_st052_grid_export.py'
+      - 'scripts/verify_st052_grid_export.py'
+      - '.github/workflows/agent9-st052-grid-export.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  exact-source-grid-export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONPATH: src
+    steps:
+      - name: Checkout Agent 9 branch
+        uses: actions/checkout@v4
+
+      - name: Checkout exact ST052-M source
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: b3b8bfdbe1077f9ec967d158602951997d81e17d
+          path: source-st052
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install frozen-source runtime and tests
+        run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+
+      - name: Focused export tests
+        run: python -m pytest -q -W error tests/test_st052_grid_export.py
+
+      - name: Materialize exact ST052-M parent with expected scientific rejection
+        shell: bash
+        run: |
+          mkdir -p outputs
+          set +e
+          (
+            cd source-st052
+            python experiments/root_st052/replay_st052.py \
+              --out ../outputs/ST052-M-parent \
+              --seed 9175291 \
+              --validate
+          )
+          code=$?
+          set -e
+          test "$code" = 1
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/ST052-M-parent/validation.json').read_text())
+          assert r['pde_validated'] is False
+          assert r['all_numeric_gates_pass'] is False
+          assert r['gates']['momentum_max'] is False
+          assert r['gates']['momentum_L2'] is False
+          print('Exact parent replay retained expected momentum rejection.')
+          PY
+
+      - name: Rebuild authenticated whole-child capsule
+        run: |
+          python scripts/verify_st052_linear_temporal_capsule.py \
+            --source-root source-st052 \
+            --parent-dir outputs/ST052-M-parent \
+            --out outputs \
+            --report outputs/ST052-M-linear-temporal-child-v1/agent9_capsule_receipt.json \
+            > outputs/whole_child_receipt.txt
+
+      - name: Export 33-cubed five-time NPZ and MATLAB payload
+        run: |
+          mkdir -p outputs/ST052-M-grid-export
+          python scripts/verify_st052_grid_export.py \
+            --source-root source-st052 \
+            --bundle-dir outputs/ST052-M-linear-temporal-child-v1 \
+            --out outputs/ST052-M-grid-export \
+            --report outputs/ST052-M-grid-export/agent9_grid_export_receipt.json \
+            --grid-points 33 \
+            | tee outputs/grid_export_receipt.txt
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/ST052-M-grid-export/agent9_grid_export_receipt.json').read_text())
+          assert r['task_id']=='CR-A9-071'
+          assert r['grid']['shape_xyz']==[33,33,33]
+          assert r['grid']['times']==[0.25,0.375,0.5,0.625,0.75]
+          assert r['npz_mat_roundtrip']['exact_equal'] is True
+          assert r['callable_grid_node_replay']['max_component_error']==0.0
+          assert r['matlab_compatibility']['mat_v5_written'] is True
+          assert r['matlab_compatibility']['actual_matlab_runtime_executed'] is False
+          assert r['truth_boundary']['grid_export_materialized'] is True
+          assert r['truth_boundary']['dependency_runtime_identity_closed'] is False
+          assert r['truth_boundary']['visualization_ready'] is False
+          assert r['truth_boundary']['pde_validated'] is False
+          print('whole_candidate_identity_sha256=',r['whole_candidate_identity_sha256'])
+          print('grid_payload_sha256=',r['grid_payload_sha256'])
+          print('resolved_scipy_version=',r['execution_environment']['scipy_version'])
+          PY
+
+      - name: Upload grid export and receipts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ST052-M-linear-temporal-grid-export
+          path: |
+            outputs/ST052-M-grid-export/
+            outputs/whole_child_receipt.txt
+            outputs/grid_export_receipt.txt
+          if-no-files-found: error
