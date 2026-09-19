@@ -1,0 +1,147 @@
+name: agent9-st052m-redist-material-path
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/constrained_st052m_redist_material_path.py'
+      - 'tests/test_constrained_st052m_redist_material_path.py'
+      - 'docs/external_methods/CR-A9-059-st052m-redist-material-path.md'
+      - '.github/workflows/agent9-st052m-redist-material-path.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONPATH: external/agent7/experiments/root_st052:external/agent7/experiments/root_st051:external/agent7/experiments/root_st050r:external/agent7/experiments/root_st048:external/agent7/experiments/root_st047:external/agent7/experiments/root_st043:external/agent7/experiments/root_st040:external/agent7/experiments/root_st030:src
+    steps:
+      - name: Checkout Agent-9 branch
+        uses: actions/checkout@v4
+
+      - name: Checkout exact frozen Agent-7 ST052-M redistribution source
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: 779ffca71066e2864496d37de55a7aafc45d6f57
+          path: external/agent7
+          persist-credentials: false
+
+      - name: Checkout exact frozen Agent-9 path engine
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: 6699a698c9fb2f0a0986e7aefc5fe0ee431cd5ad
+          path: external/agent9_path
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install focused dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e . 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+
+      - name: Verify exact source identities
+        run: |
+          test "$(git -C external/agent7 rev-parse HEAD)" = "779ffca71066e2864496d37de55a7aafc45d6f57"
+          test "$(git -C external/agent9_path rev-parse HEAD)" = "6699a698c9fb2f0a0986e7aefc5fe0ee431cd5ad"
+
+      - name: Warning-clean compile and focused regressions
+        run: |
+          python -W error -m py_compile src/openai_ns_reconstruction/constrained_st052m_redist_material_path.py
+          python -W error -m pytest -q tests/test_constrained_st052m_redist_material_path.py
+
+      - name: Execute exact frozen material-path replay
+        run: |
+          set -o pipefail
+          mkdir -p outputs/agent9-st052m-redist-material-path
+          python -m openai_ns_reconstruction.constrained_st052m_redist_material_path \
+            --agent7-root external/agent7 \
+            --agent9-root external/agent9_path \
+            --out outputs/agent9-st052m-redist-material-path/report.json \
+            | tee outputs/agent9-st052m-redist-material-path/run.log
+
+      - name: Verify fail-closed receipt
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent9-st052m-redist-material-path/report.json').read_text())
+          assert r['task_id']=='CR-A9-059'
+          assert r['base_main_sha']=='f0193d66c9d92948b4820ebcb70263673995b324'
+          assert r['lineage']['parent_candidate']=='ST052-M'
+          assert r['lineage']['parent_head']=='b3b8bfdbe1077f9ec967d158602951997d81e17d'
+          assert r['lineage']['agent7_source_head']=='779ffca71066e2864496d37de55a7aafc45d6f57'
+          assert r['lineage']['agent9_path_engine_head']=='6699a698c9fb2f0a0986e7aefc5fe0ee431cd5ad'
+          assert abs(r['frozen_transform']['normalization']-1.0032534663681094)<2e-12
+          c=r['frozen_material_path_contract']
+          assert c['path_count']==48 and c['paired_material_line_count']==24
+          for key in ('st052_parent_material_paths','redistributed_child_material_paths'):
+              assert r[key]['path_count']==48
+              assert r[key]['paired_material_line_count']==24
+          truth=r['truth_boundary']
+          for key in ('canonical_velocity_changed','production_candidate_selected',
+                      'production_redistribution_gain_selected','pressure_or_force_refit_in_this_increment',
+                      'held_out_pde_residual_recomputed_in_this_increment','parent_pde_receipt_transferred',
+                      'upstream_eulerian_receipt_promoted_to_pde_truth','visualization_ready',
+                      'visual_correspondence_verified','pde_validated','source_correspondence_verified',
+                      'paper_exact','openai_field_identified','blowup_proved'):
+              assert truth[key] is False
+          assert truth['visual_acceptance_threshold_defined'] is False
+          assert truth['comparison_is_descriptive_not_acceptance'] is True
+          assert r['upstream_agent7_receipt']['pde_validated'] is False
+          assert r['upstream_agent7_receipt']['material_paths_integrated'] is False
+          print('report_sha256=',r['report_sha256'])
+          print('child_vs_parent=',r['child_vs_parent'])
+          print('by_radius=',r['child_vs_parent_by_seed_radius'])
+          PY
+
+      - name: Publish exact-head numerical receipt
+        if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent9-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent9-st052m-redist-material-path/report.json').read_text())
+          p=r['st052_parent_material_paths']; c=r['redistributed_child_material_paths']; d=r['child_vs_parent']
+          print('### CR-A9-059 exact-head numerical receipt')
+          print()
+          print(f"report SHA-256: `{r['report_sha256']}`")
+          print()
+          print('| metric | ST052-M parent | + frozen kappa=.05 redistribution | relative change |')
+          print('|---|---:|---:|---:|')
+          print(f"| mean absolute turns | {p['mean_absolute_turns']:.10g} | {c['mean_absolute_turns']:.10g} | {100*d['mean_absolute_turns_relative']:+.4f}% |")
+          print(f"| maximum absolute turns | {p['maximum_absolute_turns']:.10g} | {c['maximum_absolute_turns']:.10g} | {100*d['maximum_absolute_turns_relative']:+.4f}% |")
+          print(f"| contraction magnitude | {abs(p['mean_radius_change']):.10g} | {abs(c['mean_radius_change']):.10g} | {100*d['radial_contraction_magnitude_relative']:+.4f}% |")
+          print(f"| mean axial-pair separation change | {p['mean_pair_axial_separation_change']:.10g} | {c['mean_pair_axial_separation_change']:.10g} | {100*d['mean_pair_axial_separation_change_relative']:+.4f}% |")
+          print(f"| inward paths | {p['inward_path_count']}/48 | {c['inward_path_count']}/48 | — |")
+          print(f"| grow/shrink pairs | {p['pair_axial_separation_growth_count']}/{p['pair_axial_separation_shrink_count']} | {c['pair_axial_separation_growth_count']}/{c['pair_axial_separation_shrink_count']} | — |")
+          print()
+          print('By seed radius (child vs ST052-M):')
+          for radius,row in r['child_vs_parent_by_seed_radius'].items():
+              print(f"- r={radius}: {100*row['mean_absolute_turns_relative']:+.4f}% winding; {100*row['radial_contraction_magnitude_relative']:+.4f}% contraction magnitude")
+          print()
+          print('Truth boundary: this is descriptive material-path evidence only. No pressure/forcing refit or held-out PDE promotion was performed; all project scientific gates remain unchanged.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent9-receipt.md
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ST052-M-redist005-material-path
+          path: outputs/agent9-st052m-redist-material-path/
+          if-no-files-found: error
+          retention-days: 30
