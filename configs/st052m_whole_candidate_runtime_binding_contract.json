@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "task_id": "CR002-ST052M-WHOLE-CANDIDATE-RUNTIME-BINDING-072",
+  "purpose": "govern the identity scope of PR #632's checksum-bound ST052-M linear-temporal bundle separately from the external exact-source runtime needed to execute velocity(x,y,z,t)",
+  "snapshot": {
+    "active_integration_branch": "codex/cr001-constraints",
+    "active_integration_head": "c76402986533346bc200234e8e27dd2f05ba8ccd",
+    "source_pr": 632,
+    "source_pr_head": "46bbc10bb6b88ae637ac1559fec58c961013d987",
+    "source_parent_head": "b3b8bfdbe1077f9ec967d158602951997d81e17d",
+    "dedicated_workflow_run": 35442084024,
+    "standard_workflow_run": 35442084021,
+    "dedicated_workflow_success": true,
+    "standard_workflow_success": true,
+    "whole_candidate_identity_sha256": "333615d89423a22995d9356b29b604d1c241c1b40a631bd66892c2701c536064",
+    "dedicated_parity_max_component_error": 0.0,
+    "dedicated_parity_threshold": 5e-12,
+    "note": "This is a governance snapshot of the exact PR head and Actions execution. Later source changes do not retroactively widen its claim scope."
+  },
+  "allowed_source_classes": [
+    "user_requirement",
+    "public_source_fact",
+    "autonomous_design",
+    "pending_unknown"
+  ],
+  "source_classification": {
+    "callable_save_load_velocity_delivery": "user_requirement",
+    "public_openai_visualization_structure": "public_source_fact",
+    "st052_parent_and_temporal_capsule_architecture": "autonomous_design",
+    "cr001_validation_protocol": "autonomous_design",
+    "openai_hidden_velocity_coefficients": "pending_unknown",
+    "openai_hidden_frame_time_camera_seed_mapping": "pending_unknown"
+  },
+  "observed_whole_child_bundle": {
+    "candidate_id": "ST052-M-linear-temporal-child-v1",
+    "bundle_file_checksums_verified": true,
+    "composite_bundle_identity_exists": true,
+    "parent_candidate_bytes_bound": true,
+    "parent_validation_bytes_bound": true,
+    "parent_replay_manifest_bytes_bound": true,
+    "static_transform_spec_bound": true,
+    "temporal_transform_spec_bound": true,
+    "whole_child_bundle_materialized": true,
+    "whole_child_save_load_ready_with_exact_source_runtime": true
+  },
+  "external_runtime_binding": {
+    "external_exact_source_runtime_required": true,
+    "source_recipe_blob_sha1_verified_on_load": true,
+    "source_git_head_verified_on_load": false,
+    "source_git_tree_sha_bound_by_bundle": false,
+    "replay_module_sha_bound_by_bundle": false,
+    "ancestor_runtime_code_shas_bound_by_bundle": false,
+    "source_runtime_code_embedded_in_bundle": false,
+    "dedicated_ci_checks_out_exact_source_head": true,
+    "source_native_parent_probe_binding_applied": true,
+    "parent_probe_binding_is_whole_domain_function_identity": false,
+    "runtime_identity_closed": false
+  },
+  "identity_scope": {
+    "whole_candidate_identity_sha256_scope": "bundled parent evidence bytes plus static and temporal transform identities",
+    "whole_candidate_identity_sha256_is_complete_executable_function_identity": false,
+    "same_bundle_identity_guarantees_same_external_runtime_code": false,
+    "same_bundle_identity_alone_guarantees_same_velocity_function": false,
+    "dedicated_ci_parity_scope": "exact PR #632 execution with exact #508 source checkout and frozen replay protocol",
+    "dedicated_ci_parity_generalizes_to_arbitrary_exact_source_root_argument": false,
+    "green_ci_implies_standalone_runtime_identity_closed": false
+  },
+  "delivery_states": {
+    "standalone_package_parent_runtime_ready": false,
+    "standalone_reproducible_velocity_identity_ready": false,
+    "experimental_st052_velocity_export_ready": false,
+    "canonical_eq45_velocity_export_ready": true,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "production_candidate_selected": false,
+    "held_out_temporal_child_pde_residual_evaluated": false,
+    "pde_validated": false,
+    "source_correspondence_verified": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "promotion_requirements": {
+    "runtime_identity_must_be_bound_before_standalone_export": true,
+    "allowed_runtime_closure_routes": [
+      "port the deterministic ST052-M parent evaluator into the installable package and bind that package/runtime identity",
+      "bind and enforce exact source Git head/tree plus all runtime code needed by the evaluator as part of the candidate load contract"
+    ],
+    "loader_must_fail_on_runtime_identity_mismatch": true,
+    "complete_identity_must_include_or_immutably_reference_runtime_identity": true,
+    "reload_velocity_parity_must_be_replayed_after_runtime_closure": true,
+    "pde_validation_required_for_velocity_export_ready": false,
+    "visual_correspondence_required_for_velocity_export_ready": false
+  },
+  "cr001_frozen": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2.0, 2.0], [-2.0, 2.0], [-2.0, 2.0]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "force_mode": "restricted_two_parameter_family",
+    "force_bounds": {"a": [0.0, 10.0], "c": [0.0, 10.0]},
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "energy_quadrature_orders": [24, 48, 96],
+    "divergence_max": 1e-5,
+    "divergence_L2": 1e-5,
+    "momentum_max": 0.001,
+    "momentum_L2": 0.001,
+    "free_residual_defined_forcing_allowed": false,
+    "amplitude_collapse_success_allowed": false
+  },
+  "mutation_scope": {
+    "velocity_changed": false,
+    "candidate_bytes_changed": false,
+    "parent_runtime_changed": false,
+    "pressure_changed": false,
+    "forcing_changed": false,
+    "sampling_changed": false,
+    "norm_definition_changed": false,
+    "threshold_changed": false,
+    "canonical_api_changed": false
+  }
+}
