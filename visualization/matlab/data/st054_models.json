@@ -1,0 +1,36 @@
+{
+  "source_commit": "c77492a48e9c0f13d4d51244987c57c28519409b",
+  "schema": "ns_matlab_spectral_v1",
+  "mat_sha256": "59d43fdc40cd4df1675c2191f85810b9351802b2f4b1e0ac25a3bccfd9914c62",
+  "models": [
+    {
+      "id": "ST054-Q2",
+      "raw_array_sha256": "f5f4e74b1bb790157cef573816a6df0c14afb31c0533579a8217502c2de1c7c7",
+      "original_raw_sha256": "d772949621e0f7703a9d6b36f28828532ba3e5ec678dec14db5ce14eb8b851d5",
+      "reference_points": 96,
+      "times": [
+        0.25,
+        0.33173,
+        0.5,
+        0.63791,
+        0.75
+      ]
+    },
+    {
+      "id": "ST054-M3",
+      "raw_array_sha256": "0a058817d3fba16b6820921fc93d9b9c15a7d0ca48b321b60c58b82b3d768737",
+      "original_raw_sha256": "2b2b571986297b52bc884a2ee4808a7ade1ade86f38f938604f2a64118882df3",
+      "reference_points": 96,
+      "times": [
+        0.25,
+        0.33173,
+        0.5,
+        0.63791,
+        0.75
+      ]
+    }
+  ],
+  "roundtrip_exact": true,
+  "native_matlab_executed": false,
+  "scope": "Coefficient transfer, not a new fit or PDE validation. MATLAB tests run separately."
+}
