@@ -57,7 +57,8 @@ def test_deterministic_receipt_is_manufactured_and_fail_closed() -> None:
     assert boundary["pde_validated"] is False
     assert boundary["final_normalized_momentum_gate"] == FINAL_MOMENTUM_GATE == 1.0e-3
     assert boundary["final_normalized_divergence_gate"] == FINAL_DIVERGENCE_GATE == 1.0e-5
-    assert "manufactured" in receipt["scientific_scope"]
+    assert "integration regression only" in receipt["scientific_scope"]
+    assert "no real full-candidate defect" in receipt["scientific_scope"]
 
 
 def test_composite_sum_and_optional_correction_are_exact() -> None:
