@@ -1,0 +1,223 @@
+name: kokuno-agent5-typed-mean-inverse-rhs-integration
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-integrate-typed-inverse-rhs-056
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_a5_source_leading_admission_firewall.py"
+      - "src/openai_ns_reconstruction/kokuno_same_cycle_defect_contract.py"
+      - "src/openai_ns_reconstruction/kokuno_typed_mean_radial_stress.py"
+      - "src/openai_ns_reconstruction/kokuno_typed_mean_finite_head_debt.py"
+      - "src/openai_ns_reconstruction/kokuno_typed_mean_inverse_rhs.py"
+      - "tests/test_kokuno_a5_source_leading_admission_firewall.py"
+      - "tests/test_kokuno_typed_mean_finite_head_debt.py"
+      - "tests/test_kokuno_typed_mean_inverse_rhs.py"
+      - ".github/workflows/kokuno-agent5-typed-mean-inverse-rhs-integration.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: kokuno-agent5-typed-mean-inverse-rhs-integration-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify-agent5-typed-inverse-rhs-integration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+      - name: Compile integrated source-leading and correction seams
+        run: >-
+          python -W error -m py_compile
+          src/openai_ns_reconstruction/kokuno_a5_source_leading_admission_firewall.py
+          src/openai_ns_reconstruction/kokuno_same_cycle_defect_contract.py
+          src/openai_ns_reconstruction/kokuno_typed_mean_radial_stress.py
+          src/openai_ns_reconstruction/kokuno_typed_mean_finite_head_debt.py
+          src/openai_ns_reconstruction/kokuno_typed_mean_inverse_rhs.py
+      - name: Run focused warnings-as-errors integration tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_kokuno_a5_source_leading_admission_firewall.py
+          tests/test_kokuno_typed_mean_finite_head_debt.py
+          tests/test_kokuno_typed_mean_inverse_rhs.py
+      - name: Emit deterministic Agent-5 integration receipt
+        env:
+          EXACT_HEAD: ${{ github.sha }}
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+
+          from openai_ns_reconstruction.kokuno_a5_source_leading_admission_firewall import (
+              deterministic_receipt as leading_receipt,
+              validate_receipt as validate_leading_receipt,
+          )
+          from openai_ns_reconstruction.kokuno_typed_mean_inverse_rhs import (
+              deterministic_receipt as inverse_rhs_receipt,
+          )
+
+          exact_head = os.environ['EXACT_HEAD']
+          lead = leading_receipt(exact_head=exact_head)
+          validate_leading_receipt(lead)
+          inverse = inverse_rhs_receipt()
+          q = inverse['analytic_regression']['evaluation']
+          h = q['mean_inverse_rhs']
+          payload = {
+              'schema': 'kokuno-a5-typed-mean-inverse-rhs-integration-v1',
+              'task': 'KOKUNO-A5-INTEGRATE-TYPED-MEAN-INVERSE-RHS-056',
+              'exact_head': exact_head,
+              'parent_a5': {
+                  'pr': 697,
+                  'head': '6c28158c3f06843bf34b45521ac11c004b68876b',
+              },
+              'upstream_agent3': {
+                  'pr': 696,
+                  'head': 'a8b87637710df0469333e1c3fec03f3713fe4e0e',
+                  'dedicated_workflow_id': 35465686283,
+                  'dedicated_workflow_conclusion': 'success',
+                  'artifact_id': 10591665881,
+                  'artifact_digest': 'sha256:cf9747c685314e831ed53229e786cc04b8f2e5aa07e196fe2f6e19155ac0287c',
+                  'source_blob_sha': '3c3319458064664e2267d0ee39c4544e2585bb1e',
+                  'test_blob_sha': '5057eb24e8d2440139f163c6fc361415aa6ebcf9',
+              },
+              'executable_chain': [
+                  'raw same-cycle velocity/velocity_dt/pressure/restricted-forcing',
+                  'actual momentum defect',
+                  'actual cylindrical mean',
+                  'compact radial stress',
+                  'frozen autonomous finite-head debt',
+                  'profile-level DeltaC/epsilon inverse RHS',
+              ],
+              'analytic_regression': {
+                  'inverse_rhs_vector_rms': h['rhs_rms'],
+                  'inverse_rhs_max_abs': h['rhs_max_abs'],
+                  'delta_c_reconstruction_closure_max_abs': h['reconstruction_closure_max_abs'],
+                  'reference_scale_source_certified': q['reference_scale']['source_reference_scale_certified'],
+                  'fixed_zero_forcing_independent_of_residual': True,
+                  'not_a_full_ns_residual': True,
+              },
+              'integration_state': {
+                  'typed_mean_inverse_rhs_present_on_a5_stack': True,
+                  'source_reference_scale_for_real_candidate_certified': False,
+                  'h_ref_for_real_candidate_materialized': False,
+                  'signed_mean_inverse_for_real_candidate_solved': False,
+                  'public_velocity_correction_materialized': False,
+                  'leading_ready': False,
+                  'correction_ready': False,
+                  'velocity_export_ready': False,
+                  'formal_heldout_pde_gate_assessed': False,
+                  'pde_validated': False,
+              },
+              'source_leading_firewall_state': lead['derived_state'],
+              'baseline_vs_kokuno': {
+                  'st006_same_protocol_momentum_sampled_max': 0.1082289305112118,
+                  'st006_same_protocol_momentum_volume_l2': 0.10758432876230622,
+                  'kokuno_full_candidate_same_protocol_residual_available': False,
+                  'inverse_rhs_regression_comparable_to_st006': False,
+              },
+              'final_project_gates_unchanged': {
+                  'normalized_momentum_max': 1.0e-3,
+                  'normalized_momentum_L2': 1.0e-3,
+                  'divergence_max': 1.0e-5,
+                  'divergence_L2': 1.0e-5,
+              },
+              'truth_boundary': {
+                  'free_residual_defined_forcing_allowed': False,
+                  'surrogate_data_promoted_to_real_candidate': False,
+                  'kokuno_replay_used_as_final_independent_pde_validation': False,
+                  'threshold_relaxed': False,
+                  'paper_exact': False,
+                  'openai_field_identified': False,
+              },
+          }
+          canonical = json.dumps(payload, sort_keys=True, separators=(',', ':'), allow_nan=False).encode()
+          payload['receipt_sha256'] = hashlib.sha256(canonical).hexdigest()
+          out = Path('artifacts/kokuno_agent5_typed_mean_inverse_rhs_integration_v1.json')
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_text(json.dumps(payload, indent=2, sort_keys=True) + '\n')
+          PY
+      - name: Validate fail-closed Agent-5 truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = json.loads(Path('artifacts/kokuno_agent5_typed_mean_inverse_rhs_integration_v1.json').read_text())
+          assert p['schema'] == 'kokuno-a5-typed-mean-inverse-rhs-integration-v1'
+          assert p['parent_a5']['pr'] == 697
+          assert p['parent_a5']['head'] == '6c28158c3f06843bf34b45521ac11c004b68876b'
+          u = p['upstream_agent3']
+          assert u['pr'] == 696
+          assert u['head'] == 'a8b87637710df0469333e1c3fec03f3713fe4e0e'
+          assert u['dedicated_workflow_id'] == 35465686283
+          assert u['dedicated_workflow_conclusion'] == 'success'
+          assert u['artifact_id'] == 10591665881
+          r = p['analytic_regression']
+          assert r['inverse_rhs_vector_rms'] > 0.0
+          assert r['inverse_rhs_max_abs'] > 0.0
+          assert r['delta_c_reconstruction_closure_max_abs'] <= 1e-14
+          assert r['reference_scale_source_certified'] is False
+          assert r['fixed_zero_forcing_independent_of_residual'] is True
+          assert r['not_a_full_ns_residual'] is True
+          s = p['integration_state']
+          assert s['typed_mean_inverse_rhs_present_on_a5_stack'] is True
+          for key in (
+              'source_reference_scale_for_real_candidate_certified',
+              'h_ref_for_real_candidate_materialized',
+              'signed_mean_inverse_for_real_candidate_solved',
+              'public_velocity_correction_materialized',
+              'leading_ready', 'correction_ready', 'velocity_export_ready',
+              'formal_heldout_pde_gate_assessed', 'pde_validated',
+          ):
+              assert s[key] is False
+          f = p['source_leading_firewall_state']
+          assert f['leading_ready'] is False
+          assert f['pde_validated'] is False
+          assert p['baseline_vs_kokuno']['kokuno_full_candidate_same_protocol_residual_available'] is False
+          assert p['baseline_vs_kokuno']['inverse_rhs_regression_comparable_to_st006'] is False
+          assert p['final_project_gates_unchanged'] == {
+              'normalized_momentum_max': 1e-3,
+              'normalized_momentum_L2': 1e-3,
+              'divergence_max': 1e-5,
+              'divergence_L2': 1e-5,
+          }
+          t = p['truth_boundary']
+          assert t['free_residual_defined_forcing_allowed'] is False
+          assert t['surrogate_data_promoted_to_real_candidate'] is False
+          assert t['kokuno_replay_used_as_final_independent_pde_validation'] is False
+          assert t['threshold_relaxed'] is False
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-typed-mean-inverse-rhs-integration-v1
+          path: artifacts/kokuno_agent5_typed_mean_inverse_rhs_integration_v1.json
+          if-no-files-found: error
+      - name: Comment exact Agent-5 integration receipt on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const p = JSON.parse(fs.readFileSync('artifacts/kokuno_agent5_typed_mean_inverse_rhs_integration_v1.json', 'utf8'));
+            const r = p.analytic_regression;
+            const lines = [
+              '### Kokuno Agent 5 exact-head typed inverse-RHS integration',
+              '',
+              `upstream A3 #696 exact-head dedicated CI: **${p.upstream_agent3.dedicated_workflow_conclusion.toUpperCase()}**`,
+              `inverse-RHS regression RMS/max: **${r.inverse_rhs_vector_rms} / ${r.inverse_rhs_max_abs}**`,
+              `DeltaC reconstruction closure max abs: **${r.delta_c_reconstruction_closure_max_abs}**`,
+              '',
+              'This is correction-pipeline integration evidence only. The regression reference scale is not source-certified, no real H_ref/signed correction velocity is materialized, no Kokuno full-candidate NS residual is available, and the fixed 1e-3 / 1e-5 project gates remain unchanged.'
+            ];
+            await github.rest.issues.createComment({owner: context.repo.owner, repo: context.repo.repo, issue_number: context.issue.number, body: lines.join('\n')});
