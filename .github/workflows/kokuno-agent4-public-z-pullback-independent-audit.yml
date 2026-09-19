@@ -1,0 +1,100 @@
+name: kokuno-agent4-public-z-pullback-independent-audit
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a4-public-z-pullback-audit-040
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_public_z_pullback_agent4_audit.py"
+      - "tests/test_constrained_kokuno_public_z_pullback_agent4_audit.py"
+      - ".github/workflows/kokuno-agent4-public-z-pullback-independent-audit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  independent-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+      - name: Compile independent validator
+        run: python -m py_compile src/openai_ns_reconstruction/kokuno_public_z_pullback_agent4_audit.py
+      - name: Run Agent-2 parent and Agent-4 focused tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_public_z_pullback_velocity.py
+          tests/test_constrained_kokuno_public_carrier_resolved_velocity.py
+          tests/test_constrained_kokuno_public_candidate_velocity.py
+          tests/test_constrained_kokuno_public_z_pullback_agent4_audit.py
+      - name: Generate independent receipt
+        run: >-
+          python -m openai_ns_reconstruction.kokuno_public_z_pullback_agent4_audit
+          --output outputs/kokuno_agent4_public_z_pullback_independent_audit.json
+      - name: Check fixed truth boundary and print metrics
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('outputs/kokuno_agent4_public_z_pullback_independent_audit.json')
+          r = json.loads(p.read_text())
+          assert r['schema'] == 'kokuno-agent4-public-z-pullback-independent-audit-v1'
+          assert r['audited_agent2_head'] == '732800ce4990464b49c8aa32d0dff4580f6684d4'
+          assert r['protocol']['scientific_guards_changed_from_agent4_543'] is False
+          assert r['truth_boundary']['formal_full_domain_pde_gate_assessed'] is False
+          assert r['truth_boundary']['heldout_ns_residual_assessed'] is False
+          assert r['truth_boundary']['pde_validated'] is False
+          print('divergence_rows=', r['divergence']['rows'])
+          print('refinement=', r['divergence']['relative_rms_refinement_ratios'])
+          print('covariance_rows=', r['phase_mean_covariance']['rows'])
+          print('support=', r['support'])
+          print('nontriviality=', r['nontriviality'])
+          print('parameter_perturbation=', r['parameter_perturbation'])
+          print('divergence_mutation=', r['divergence_mutation'])
+          print('public_oscillatory_preflight_passed=', r['public_oscillatory_preflight_passed'])
+          PY
+      - name: Publish exact receipt to PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const marker = '<!-- kokuno-a4-public-z-pullback-receipt -->';
+            const receipt = fs.readFileSync('outputs/kokuno_agent4_public_z_pullback_independent_audit.json', 'utf8');
+            const body = `${marker}\n## Agent 4 exact independent receipt\n\n\`\`\`json\n${receipt}\`\`\``;
+            const issue_number = context.payload.pull_request?.number || 563;
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number,
+              per_page: 100,
+            });
+            const existing = comments.find(c => c.body && c.body.includes(marker));
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number,
+                body,
+              });
+            }
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent4-public-z-pullback-independent-audit-v1
+          path: outputs/kokuno_agent4_public_z_pullback_independent_audit.json
+          if-no-files-found: error
