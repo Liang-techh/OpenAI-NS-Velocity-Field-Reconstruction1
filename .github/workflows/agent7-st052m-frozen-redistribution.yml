@@ -7,6 +7,7 @@ on:
       - '.github/workflows/agent7-st052m-frozen-redistribution.yml'
 permissions:
   contents: read
+  pull-requests: write
 jobs:
   frozen-transfer-screen:
     runs-on: ubuntu-latest
@@ -57,6 +58,31 @@ jobs:
           print('normalization=',r['row']['normalization'])
           print('response=',r['response_independence'])
           PY
+      - name: Publish compact numerical receipt
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent7-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-frozen-redistribution/report.json').read_text())
+          q=r['row']; ind=r['response_independence']
+          print('<!-- agent7-st052m-frozen-redistribution-receipt -->')
+          print('**Agent 7 numerical receipt (issue #527, fixed `kappa=.05`, no scan):**')
+          print()
+          print(f"- clean transfer: `{q['clean_frozen_profile_transfer']}`; normalization `{q['normalization']:.10f}`")
+          print(f"- angular gain r=.6/.9/1.2: `{100*q['angular_gain_r06']:+.5f}% / {100*q['angular_gain_r09']:+.5f}% / {100*q['angular_gain_r12']:+.5f}%`")
+          print('- axial RMS rel t=.25/.50/.75: `' + ' / '.join(f'{100*x:+.5f}%' for x in q['axial_rms_relative_changes']) + '`')
+          print('- radial RMS rel t=.25/.50/.75: `' + ' / '.join(f'{100*x:+.5f}%' for x in q['radial_rms_relative_changes']) + '`')
+          print('- collar absolute-enstrophy ratios: `' + ' / '.join(f'{x:.6f}' for x in q['collar_ratios']) + '`')
+          print(f"- support max `{q['support_max_abs']:.3e}`; divergence FD max `{q['divergence_fd_max']:.3e}`; core signs `{q['core_signs_pass']}`")
+          print(f"- response rank `{ind['rank']}`; singular values `{ind.get('singular_values')}`; condition `{ind['condition_number']:.6f}`; cosine `{ind['cosine']:+.6f}`")
+          print()
+          print('Truth boundary: expression-capacity / visualization-morphology only; no pressure/forcing refit, held-out PDE promotion, material-path integration, or OpenAI-field identity claim.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-receipt.md
       - uses: actions/upload-artifact@v4
         if: always()
         with:
