@@ -33,6 +33,7 @@ def _fake_exact_checkout(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Pat
     replay = st052 / "replay_st052.py"
     recipe.write_text('{"candidate":"ST052-M"}\n')
     replay.write_text("VALUE = 'frozen'\n")
+    (root / ".gitignore").write_text("ignored_shadow.py\n")
     _run(root, "init")
     _run(root, "add", ".")
     subprocess.run(
@@ -50,7 +51,6 @@ def _fake_exact_checkout(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> Pat
     monkeypatch.setattr(identity, "SOURCE_HEAD", _run(root, "rev-parse", "HEAD"))
     monkeypatch.setattr(identity, "SOURCE_TREE", _run(root, "rev-parse", "HEAD^{tree}"))
     monkeypatch.setattr(identity, "SOURCE_RECIPE_GIT_BLOB_SHA1", _blob(recipe))
-    monkeypatch.setattr(identity, "SOURCE_REPLAY_GIT_BLOB_SHA1", _blob(replay))
     return root
 
 
@@ -62,6 +62,7 @@ def test_runtime_identity_is_deterministic():
     payload = identity.source_runtime_identity_payload()
     assert payload["source_head"] == identity.SOURCE_HEAD
     assert payload["source_tree"] == identity.SOURCE_TREE
+    assert payload["replay_entrypoint"]["covered_by_source_tree"] is True
 
 
 def test_authenticator_accepts_frozen_clean_checkout(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):
@@ -85,4 +86,11 @@ def test_authenticator_rejects_untracked_python_shadow(tmp_path: Path, monkeypat
     root = _fake_exact_checkout(tmp_path, monkeypatch)
     (root / "shadow.py").write_text("VALUE = 'shadow'\n")
     with pytest.raises(ValueError, match="untracked Python"):
+        identity.authenticate_source_runtime(root)
+
+
+def test_authenticator_rejects_ignored_python_shadow(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):
+    root = _fake_exact_checkout(tmp_path, monkeypatch)
+    (root / "ignored_shadow.py").write_text("VALUE = 'ignored shadow'\n")
+    with pytest.raises(ValueError, match="ignored untracked Python"):
         identity.authenticate_source_runtime(root)
