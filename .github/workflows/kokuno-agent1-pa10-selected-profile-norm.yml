@@ -1,0 +1,105 @@
+name: kokuno-agent1-pa10-selected-profile-norm
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a1-pa10-selected-profile-norm
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent1-pa10-selected-profile-norm-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHONHASHSEED: '0'
+
+jobs:
+  pa10-selected-profile-norm:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile profile norm module
+        run: python -m compileall -q src/openai_ns_reconstruction/kokuno_pa10_selected_profile_norm.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_pa10_source_choice_order_guard.py \
+            tests/test_constrained_kokuno_pa10_l0_binding.py \
+            tests/test_constrained_kokuno_pa10_selected_m0_envelope.py \
+            tests/test_constrained_kokuno_pa10_selected_profile_norm.py
+      - name: Generate selected-center profile norm receipt
+        run: |
+          python -m openai_ns_reconstruction.kokuno_pa10_selected_profile_norm \
+            --output artifacts/kokuno_agent1/pa10_selected_profile_norm/report.json
+      - name: Validate candidate-only truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          report = json.loads(
+              Path(
+                  "artifacts/kokuno_agent1/pa10_selected_profile_norm/report.json"
+              ).read_text()
+          )
+          truth = report["truth_boundary"]
+          envelope = report["selected_profile_norm_envelope"]
+          fine = envelope["fine"]
+          diagnostic = report["selected_candidate_only_B0_diagnostic"]
+
+          assert fine["sample_max_abs_combined_log_profile"] > 1.0e20
+          assert envelope["combined_profile_C0_candidate_upper_envelope"] > fine[
+              "sample_max_abs_combined_log_profile"
+          ]
+          assert envelope["nested_grid_relative_drift"] <= envelope[
+              "max_allowed_refinement_drift_fraction"
+          ]
+          assert envelope["numerical_envelope_guard_passed"] is True
+          assert envelope["continuum_supremum_proved"] is False
+          assert diagnostic["B0_from_three_selected_engineering_dependencies"] > envelope[
+              "combined_profile_C0_candidate_upper_envelope"
+          ]
+          assert diagnostic["T_sh_lower_from_selected_candidate_B0"] > diagnostic[
+              "B0_from_three_selected_engineering_dependencies"
+          ]
+          assert diagnostic["source_B0_analytic_bound_proved"] is False
+          assert diagnostic["source_T_sh_lower_bound_verified"] is False
+          assert truth["selected_center_profile_norm_numerical_envelope_materialized"] is True
+          assert truth["selected_center_is_source_fixed_point"] is False
+          assert truth["selected_profile_norm_envelope_is_continuum_interval_proof"] is False
+          assert truth["combined_profile_C0_norm_machine_bound"] is False
+          assert truth["source_B0_dependencies_machine_bound"] is False
+          assert truth["source_B0_analytic_bound_proved"] is False
+          assert truth["source_T_sh_lower_bound_verified"] is False
+          assert truth["selected_pa16_handoff_allowed"] is False
+          assert truth["heldout_ns_residual_assessed"] is False
+          assert truth["pde_validated"] is False
+          assert truth["paper_exact"] is False
+
+          print("profile_norm_sha256=", report["profile_norm_sha256"])
+          print("sample_profile_norm_fine=", fine["sample_max_abs_combined_log_profile"])
+          print("profile_norm_candidate_upper=", envelope[
+              "combined_profile_C0_candidate_upper_envelope"
+          ])
+          print("nested_grid_relative_drift=", envelope["nested_grid_relative_drift"])
+          print("sample_extremizer_eta=", fine["sample_extremizer_eta"])
+          print("selected_B0_diagnostic=", diagnostic[
+              "B0_from_three_selected_engineering_dependencies"
+          ])
+          print("selected_T_sh_diagnostic=", diagnostic[
+              "T_sh_lower_from_selected_candidate_B0"
+          ])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-pa10-selected-profile-norm-v1
+          path: artifacts/kokuno_agent1/pa10_selected_profile_norm/report.json
