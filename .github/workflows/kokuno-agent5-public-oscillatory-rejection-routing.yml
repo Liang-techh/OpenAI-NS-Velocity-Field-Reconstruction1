@@ -52,14 +52,12 @@ jobs:
         run: |
           python - <<'PY'
           import json
-          import math
           from pathlib import Path
 
           checkpoint = json.loads(Path('artifacts/kokuno_agent5/public_oscillatory_rejection_routing_checkpoint_v37.json').read_text())
           audit = json.loads(Path('outputs/kokuno_agent4_public_oscillatory_independent_audit.json').read_text())
           state = checkpoint['states']
-          frozen = checkpoint['upstream']['agent4_public_provider_audit']
-          fm = frozen['metrics']
+          guards = checkpoint['upstream']['agent4_public_provider_audit']['guards']
 
           assert state['public_provenance_labelled_xyz_t_oscillatory_velocity_ready'] is True
           assert state['public_oscillatory_independent_audit_assessed'] is True
@@ -70,32 +68,51 @@ jobs:
           assert state['correction_ingest_allowed'] is False
           assert state['pde_validated'] is False
 
-          finest = audit['divergence']['rows'][-1]
+          rows = audit['divergence']['rows']
+          finest = rows[-1]
+          refs = audit['divergence']['relative_rms_refinement_ratios']
           cov = audit['phase_mean_covariance']
           support = audit['support']
+          params = audit['parameter_perturbation']
+
+          # Re-run must preserve the exact same scientific rejection under the
+          # original Agent-4 guards; last-bit hosted-runner variation is not an
+          # excuse to alter any threshold.
+          assert finest['relative_rms'] > guards['finest_relative_divergence_rms']
+          assert finest['relative_max'] > guards['finest_relative_divergence_max']
+          assert min(refs) < guards['minimum_divergence_refinement_ratio']
+          assert min(row['rank_ratio'] for row in cov['rows']) < guards['minimum_covariance_rank_ratio']
+          assert support['project_axial_exterior_absolute_max'] > guards['project_axial_exterior_absolute_max']
+          assert audit['divergence']['local_divergence_passed'] is False
+          assert cov['covariance_rank_preflight_passed'] is False
+          assert support['radial_axis_support_passed'] is True
+          assert support['project_axial_support_passed'] is False
           assert audit['local_curl_covariance_preflight_passed'] is False
           assert audit['project_support_preflight_passed'] is False
           assert audit['public_oscillatory_preflight_passed'] is False
+
+          # Previously-passing controls must stay alive too.
+          assert support['axis_near_absolute_max'] <= guards['axis_near_absolute_max']
+          assert support['radial_exterior_absolute_max'] <= guards['radial_exterior_absolute_max']
+          assert max(cov['relative_drift_to_finest']) <= guards['maximum_covariance_resolution_drift']
+          assert audit['nontriviality']['heldout_velocity_rms'] >= guards['minimum_nontrivial_velocity_rms']
+          assert min(params['h_minus_10pct_relative_change'], params['h_plus_10pct_relative_change']) >= guards['minimum_parameter_perturbation_relative_change']
+          assert audit['divergence_mutation']['relative_rms'] >= guards['minimum_divergence_mutation_relative_rms']
+          assert cov['duplicated_first_column_rank_ratio'] <= guards['maximum_duplicated_covariance_rank_ratio']
+
           assert audit['truth_boundary']['formal_full_domain_pde_gate_assessed'] is False
           assert audit['truth_boundary']['heldout_ns_residual_assessed'] is False
           assert audit['truth_boundary']['pde_validated'] is False
-
-          def close(a, b):
-              return math.isclose(float(a), float(b), rel_tol=1e-10, abs_tol=1e-12)
-
-          assert close(finest['relative_rms'], fm['finest_relative_divergence_rms'])
-          assert close(finest['relative_max'], fm['finest_relative_divergence_max'])
-          assert all(close(a, b) for a, b in zip(audit['divergence']['relative_rms_refinement_ratios'], fm['divergence_refinement_ratios']))
-          assert close(min(row['rank_ratio'] for row in cov['rows']), fm['minimum_covariance_rank_ratio'])
-          assert close(max(cov['relative_drift_to_finest']), fm['maximum_covariance_resolution_drift'])
-          assert close(support['project_axial_exterior_absolute_max'], fm['project_axial_exterior_absolute_max'])
-
           assert checkpoint['formal_gates']['held_out_normalized_momentum_max'] == 1e-3
           assert checkpoint['formal_gates']['held_out_normalized_momentum_l2'] == 1e-3
           assert checkpoint['formal_gates']['held_out_divergence_max'] == 1e-5
           assert checkpoint['formal_gates']['held_out_divergence_l2'] == 1e-5
           assert checkpoint['baseline_vs_kokuno']['kokuno_current_comparable_full_domain_receipt'] is None
+
           print('checkpoint_sha256=', checkpoint['checkpoint_sha256'])
+          print('fresh_divergence_rms=', finest['relative_rms'])
+          print('fresh_covariance_rank=', min(row['rank_ratio'] for row in cov['rows']))
+          print('fresh_axial_exterior_max=', support['project_axial_exterior_absolute_max'])
           PY
       - uses: actions/upload-artifact@v4
         with:
