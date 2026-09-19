@@ -1,0 +1,177 @@
+{
+  "audited_agent2_head": "732800ce4990464b49c8aa32d0dff4580f6684d4",
+  "divergence": {
+    "local_divergence_passed": true,
+    "relative_rms_refinement_ratios": [
+      15.824371829440508,
+      15.955526532124916
+    ],
+    "rows": [
+      {
+        "absolute_max": 6.463289244403768,
+        "absolute_rms": 2.5634936334069836,
+        "gradient_max": 124761.99512545874,
+        "gradient_rms": 57450.98254506552,
+        "relative_max": 5.1804952605193465e-05,
+        "relative_rms": 4.462053597423048e-05,
+        "step": 0.02
+      },
+      {
+        "absolute_max": 0.40881590342087293,
+        "absolute_rms": 0.1620147797600492,
+        "gradient_max": 124777.3198479079,
+        "gradient_rms": 57457.44780539125,
+        "relative_max": 3.2763638770185316e-06,
+        "relative_rms": 2.8197350552150228e-06,
+        "step": 0.01
+      },
+      {
+        "absolute_max": 0.025627509897731215,
+        "absolute_rms": 0.010154220199650819,
+        "gradient_max": 124778.2877389366,
+        "gradient_rms": 57457.85566233372,
+        "relative_max": 2.0538436904463344e-07,
+        "relative_rms": 1.767246633658725e-07,
+        "step": 0.005
+      }
+    ]
+  },
+  "divergence_mutation": {
+    "caught": true,
+    "lambda": 14364.46391558343,
+    "mutation": "external u_x += lambda*x",
+    "relative_rms": 0.25000004186441394
+  },
+  "frozen_protocol_origin_agent4_head": "9498209376fd9dc5abf228248967958759e9f64a",
+  "guards_frozen_before_actions": {
+    "axis_near_absolute_max": 1e-14,
+    "finest_relative_divergence_max": 0.0001,
+    "finest_relative_divergence_rms": 2e-05,
+    "maximum_covariance_resolution_drift": 1e-06,
+    "maximum_duplicated_covariance_rank_ratio": 1e-08,
+    "minimum_covariance_rank_ratio": 0.02,
+    "minimum_divergence_mutation_relative_rms": 0.05,
+    "minimum_divergence_refinement_ratio": 3.0,
+    "minimum_nontrivial_velocity_rms": 1e-08,
+    "minimum_parameter_perturbation_relative_change": 0.0001,
+    "project_axial_exterior_absolute_max": 1e-12,
+    "radial_exterior_absolute_max": 1e-14
+  },
+  "local_curl_covariance_preflight_passed": true,
+  "nontriviality": {
+    "heldout_velocity_rms": 5087.870320629883,
+    "passed": true
+  },
+  "parameter_perturbation": {
+    "h_minus_10pct_relative_change": 0.0027257496677792563,
+    "h_plus_10pct_relative_change": 0.002731779028717074,
+    "passed": true
+  },
+  "phase_mean_covariance": {
+    "covariance_rank_preflight_passed": true,
+    "definition": "C=(mean(u_r*u_theta), mean(u_r*u_z)); columns are public normal/cross target finite differences",
+    "duplicated_first_column_rank_ratio": 7.034620062075487e-17,
+    "relative_drift_to_finest": [
+      1.1554379812996678e-13,
+      2.0012772886058432e-13
+    ],
+    "rows": [
+      {
+        "jacobian": [
+          [
+            -3075493.1474803016,
+            -63374606.08989932
+          ],
+          [
+            -5861739.518137183,
+            640800.7216616534
+          ]
+        ],
+        "phase_resolution": 32,
+        "rank_ratio": 0.09276278453864097,
+        "singular_values": [
+          63450194.11191789,
+          5885816.685338785
+        ]
+      },
+      {
+        "jacobian": [
+          [
+            -3075493.1474942714,
+            -63374606.08989932
+          ],
+          [
+            -5861739.518146496,
+            640800.7216616534
+          ]
+        ],
+        "phase_resolution": 64,
+        "rank_ratio": 0.09276278453878781,
+        "singular_values": [
+          63450194.11191857,
+          5885816.685348165
+        ]
+      },
+      {
+        "jacobian": [
+          [
+            -3075493.147484958,
+            -63374606.08989466
+          ],
+          [
+            -5861739.518139511,
+            640800.7216639817
+          ]
+        ],
+        "phase_resolution": 128,
+        "rank_ratio": 0.09276278453868625,
+        "singular_values": [
+          63450194.11191348,
+          5885816.685341249
+        ]
+      }
+    ]
+  },
+  "previous_agent4_execution_head": "2a18a87db0ef8c6682f10fc5a6355c90b4168c7c",
+  "project_support_preflight_passed": true,
+  "protocol": {
+    "candidate_internal_derivative_oracle_used": false,
+    "fd4_steps": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "heldout_offgrid_points": 24,
+    "phase_resolutions": [
+      32,
+      64,
+      128
+    ],
+    "pressure_or_forcing_fit": false,
+    "primary_interface": "public-z-pullback module-level velocity_osc(x,y,z,t) only",
+    "project_registered_support": "r<2 and |z|<2, smooth zero extension",
+    "scientific_guards_changed_from_agent4_543": false,
+    "training_tensor_or_loss_used": false
+  },
+  "public_oscillatory_preflight_passed": true,
+  "schema": "kokuno-agent4-public-z-pullback-independent-audit-v1",
+  "seed": 9173241,
+  "support": {
+    "axis_near_absolute_max": 0.0,
+    "project_axial_exterior_absolute_max": 0.0,
+    "project_axial_exterior_velocity_rms": 0.0,
+    "project_axial_support_passed": true,
+    "radial_axis_support_passed": true,
+    "radial_exterior_absolute_max": 0.0
+  },
+  "truth_boundary": {
+    "formal_divergence_max_l2_gate": 1e-05,
+    "formal_full_domain_pde_gate_assessed": false,
+    "formal_momentum_normalized_max_l2_gate": 0.001,
+    "global_leading_velocity_pressure_available": false,
+    "heldout_ns_residual_assessed": false,
+    "materialized_correction_available": false,
+    "oscillatory_component_only": true,
+    "pde_validated": false
+  }
+}
