@@ -1,0 +1,167 @@
+name: agent9-st052m-offmidplane-material-path
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/constrained_st052m_offmidplane_material_path.py'
+      - 'tests/test_constrained_st052m_offmidplane_material_path.py'
+      - 'docs/external_methods/CR-A9-063-st052m-offmidplane-material-path.md'
+      - '.github/workflows/agent9-st052m-offmidplane-material-path.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      PYTHONPATH: external/agent7/experiments/root_st052:external/agent7/experiments/root_st051:external/agent7/experiments/root_st050r:external/agent7/experiments/root_st048:external/agent7/experiments/root_st047:external/agent7/experiments/root_st043:external/agent7/experiments/root_st040:external/agent7/experiments/root_st030:src
+    steps:
+      - name: Checkout Agent-9 branch
+        uses: actions/checkout@v4
+
+      - name: Checkout exact frozen Agent-7 local swirl energy source
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: 39b106ad8cb8df2064cabead3a12682089575e74
+          path: external/agent7
+          persist-credentials: false
+
+      - name: Checkout exact frozen Agent-9 path-origin source
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: 6699a698c9fb2f0a0986e7aefc5fe0ee431cd5ad
+          path: external/agent9_path
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install focused dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e . 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+
+      - name: Verify exact source identities
+        run: |
+          test "$(git -C external/agent7 rev-parse HEAD)" = "39b106ad8cb8df2064cabead3a12682089575e74"
+          test "$(git -C external/agent9_path rev-parse HEAD)" = "6699a698c9fb2f0a0986e7aefc5fe0ee431cd5ad"
+
+      - name: Warning-clean compile and focused regressions
+        run: |
+          python -W error -m py_compile src/openai_ns_reconstruction/constrained_st052m_offmidplane_material_path.py
+          python -W error -m pytest -q tests/test_constrained_st052m_offmidplane_material_path.py
+
+      - name: Execute exact frozen off-midplane material-path replay
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdir -p outputs/agent9-st052m-offmidplane-material-path
+          python -m openai_ns_reconstruction.constrained_st052m_offmidplane_material_path \
+            --agent7-root external/agent7 \
+            --path-origin-root external/agent9_path \
+            --out outputs/agent9-st052m-offmidplane-material-path/report.json \
+            | tee outputs/agent9-st052m-offmidplane-material-path/run.log
+
+      - name: Verify fail-closed receipt
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent9-st052m-offmidplane-material-path/report.json').read_text())
+          assert r['task_id']=='CR-A9-063'
+          assert r['base_main_sha']=='f0193d66c9d92948b4820ebcb70263673995b324'
+          assert r['lineage']['agent7_source_head']=='39b106ad8cb8df2064cabead3a12682089575e74'
+          assert r['lineage']['path_origin_head']=='6699a698c9fb2f0a0986e7aefc5fe0ee431cd5ad'
+          f=r['frozen_transform']
+          assert f['taper_tau']==0.05
+          assert f['tip_window_abs_z_over_2']==[0.5,0.82]
+          assert f['shoulder_window_abs_z_over_2']==[0.36,0.49]
+          assert abs(f['beta']-0.08837490297155456)<5e-10
+          assert abs(f['post_transform_common_scale']-1.0)<1e-15
+          c=r['frozen_offmidplane_path_contract']
+          assert c['seed_bands_abs_z']=={'shoulder':0.85,'tip':1.15}
+          assert c['seed_angles']==4 and c['path_count']==48 and c['paired_material_line_count']==24
+          assert c['scientific_acceptance_threshold_defined'] is False
+          for key in ('redistributed_control_material_paths','local_swirl_energy_child_material_paths'):
+              m=r[key]
+              assert m['path_count']==48 and m['paired_material_line_count']==24
+              assert m['by_seed_band']['shoulder']['path_count']==24
+              assert m['by_seed_band']['tip']['path_count']==24
+              assert m['by_seed_band']['shoulder']['mean_shoulder_window_sample_fraction']>0.0
+              assert m['by_seed_band']['tip']['mean_tip_window_sample_fraction']>0.0
+          assert r['seed_response_by_band']['shoulder']['child_minus_control_velocity_rms']>0.0
+          assert r['seed_response_by_band']['tip']['child_minus_control_velocity_rms']>0.0
+          truth=r['truth_boundary']
+          for key in ('canonical_velocity_changed','production_candidate_selected','production_taper_selected',
+                      'production_compensation_selected','pressure_or_force_refit_in_this_increment',
+                      'held_out_pde_residual_recomputed_in_this_increment','parent_pde_receipt_transferred',
+                      'upstream_eulerian_receipt_promoted_to_pde_truth','public_image_used_as_numeric_target',
+                      'hidden_openai_time_camera_seed_or_velocity_used','visual_acceptance_threshold_defined',
+                      'trajectory_acceptance_threshold_defined','visualization_ready',
+                      'visual_correspondence_verified','pde_validated','source_correspondence_verified',
+                      'paper_exact','openai_field_identified','blowup_proved'):
+              assert truth[key] is False
+          assert truth['comparison_is_descriptive_not_acceptance'] is True
+          print('report_sha256=',r['report_sha256'])
+          print('seed_response_by_band=',r['seed_response_by_band'])
+          print('child_vs_control=',r['child_vs_control'])
+          print('child_vs_control_by_seed_band=',r['child_vs_control_by_seed_band'])
+          PY
+
+      - name: Publish exact-head numerical receipt
+        if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent9-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent9-st052m-offmidplane-material-path/report.json').read_text())
+          p=r['redistributed_control_material_paths']; c=r['local_swirl_energy_child_material_paths']; d=r['child_vs_control']
+          def pct(x):
+              return 'n/a' if x is None else f'{100*x:+.4f}%'
+          print('### CR-A9-063 exact-head numerical receipt')
+          print()
+          print(f"report SHA-256: `{r['report_sha256']}`")
+          print(f"energy-only beta: `{r['frozen_transform']['beta']}`; post-transform common scale: `{r['frozen_transform']['post_transform_common_scale']}`")
+          print()
+          print('| metric | redistributed control | local-swirl energy child | relative change |')
+          print('|---|---:|---:|---:|')
+          print(f"| mean absolute turns | {p['mean_absolute_turns']:.10g} | {c['mean_absolute_turns']:.10g} | {pct(d['mean_absolute_turns_relative'])} |")
+          print(f"| maximum absolute turns | {p['maximum_absolute_turns']:.10g} | {c['maximum_absolute_turns']:.10g} | {pct(d['maximum_absolute_turns_relative'])} |")
+          print(f"| contraction magnitude | {abs(p['mean_radius_change']):.10g} | {abs(c['mean_radius_change']):.10g} | {pct(d['radial_contraction_magnitude_relative'])} |")
+          print(f"| mean axial-pair separation change | {p['mean_pair_axial_separation_change']:.10g} | {c['mean_pair_axial_separation_change']:.10g} | {pct(d['mean_pair_axial_separation_change_relative'])} |")
+          print(f"| inward paths | {p['inward_path_count']}/48 | {c['inward_path_count']}/48 | — |")
+          print(f"| grow/shrink pairs | {p['pair_axial_separation_growth_count']}/{p['pair_axial_separation_shrink_count']} | {c['pair_axial_separation_growth_count']}/{c['pair_axial_separation_shrink_count']} | — |")
+          print()
+          print('By preregistered active seed band:')
+          for band in ('shoulder','tip'):
+              bp=p['by_seed_band'][band]; bc=c['by_seed_band'][band]; bd=r['child_vs_control_by_seed_band'][band]
+              print(f"- {band}: winding {bp['mean_absolute_turns']:.10g} -> {bc['mean_absolute_turns']:.10g} ({pct(bd['mean_absolute_turns_relative'])}); contraction {abs(bp['mean_radius_change']):.10g} -> {abs(bc['mean_radius_change']):.10g} ({pct(bd['radial_contraction_magnitude_relative'])}); axial-pair change {bp['mean_pair_axial_separation_change']:.10g} -> {bc['mean_pair_axial_separation_change']:.10g} ({pct(bd['mean_pair_axial_separation_change_relative'])})")
+          print()
+          print('Seed-response RMS confirms both active regions are probed:')
+          for band,row in r['seed_response_by_band'].items():
+              print(f"- {band}: child-control velocity RMS `{row['child_minus_control_velocity_rms']:.10g}`; relative `{100*row['relative_delta_rms']:.4f}%`")
+          print()
+          print('Truth boundary: descriptive off-midplane trajectory evidence only. No pressure/forcing refit, held-out PDE promotion, production selection, or visual/path acceptance threshold was introduced.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent9-receipt.md
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ST052-M-offmidplane-material-path
+          path: outputs/agent9-st052m-offmidplane-material-path/
+          if-no-files-found: error
+          retention-days: 30
