@@ -4,6 +4,7 @@
 
 | 分类 | 文档 |
 |---|---|
+| 交互式可视化 | [统一入口](../visualization/README.md)、[MATLAB 滑动条查看器](../visualization/matlab/README.md)、[原生执行记录](../visualization/matlab/VERIFICATION.md) |
 | 使用与目录 | [仓库指南](REPOSITORY_GUIDE.md)、[分支与 PR](BRANCH_AND_PR_GUIDE.md)、[发布交接](PUBLICATION_RECEIPT.md) |
 | 当前工作 | [当前检查点](CURRENT_CHECKPOINT.md)、[任务路由](AGENT_TASKS.md)、[研究状态](RESEARCH_STATUS.md) |
 | 冻结成果 | [ST006](../artifacts/research/ST006/README.md)、[实验索引](../artifacts/research/experiment_index.json) |

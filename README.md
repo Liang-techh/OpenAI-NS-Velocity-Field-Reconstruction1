@@ -8,11 +8,25 @@
 
 | 需要什么 | 入口 |
 |---|---|
+| MATLAB 交互式查看 ST054-Q2/M3 | [统一可视化入口](visualization/) / [运行与滑动条说明](visualization/matlab/README.md) |
 | 直接使用当前保留场 | [Python API](research_baseline/) / [使用说明](docs/REPOSITORY_GUIDE.md) |
 | 原始参数、哈希、完整验证 | [ST006 发布目录](artifacts/research/ST006/) / [manifest](artifacts/research/ST006/manifest.json) |
 | 当前结果与仍未通过的门槛 | [研究状态](docs/RESEARCH_STATUS.md) |
 | 后续实验为什么未获采用 | [实验索引](artifacts/research/experiment_index.json) / [ST030–ST033](experiments/root_st030/) |
 | 整个仓库与并行路线 | [目录指南](docs/REPOSITORY_GUIDE.md) / [分支与 PR 指南](docs/BRANCH_AND_PR_GUIDE.md) / [文档索引](docs/README.md) |
+
+## MATLAB 交互查看器
+
+在 MATLAB 的仓库根目录运行：
+
+```matlab
+addpath('visualization/matlab');
+ns_explorer;
+```
+
+数据随仓库保存，正常使用无需 Python。下方时间条按原系数连续求值，上方同步显示三维流线/涡量表面和速度、压力、涡量或残差切片。可调起点、密度、长度、切片位置及等值面阈值。查看器展示的是固定 ST054 研究快照，不替换 ST006 发布基线，也不代表科学验收已通过。
+
+[完整操作说明](visualization/matlab/README.md) · [实际 MATLAB 测试与截图](visualization/matlab/VERIFICATION.md)
 
 ## 直接运行，不需要训练
 

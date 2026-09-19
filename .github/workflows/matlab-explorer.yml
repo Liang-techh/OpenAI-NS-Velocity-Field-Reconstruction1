@@ -1,0 +1,50 @@
+name: matlab-explorer
+on:
+  pull_request:
+    paths:
+      - 'visualization/matlab/**'
+      - '.github/workflows/matlab-explorer.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'visualization/matlab/**'
+      - '.github/workflows/matlab-explorer.yml'
+permissions:
+  contents: read
+concurrency:
+  group: matlab-explorer-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  native-matlab:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    env:
+      DISPLAY: ':99'
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Start isolated virtual display
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y xvfb x11-utils
+          Xvfb :99 -screen 0 1600x1200x24 -nolisten tcp > /tmp/ns-xvfb.log 2>&1 &
+          sleep 2
+          xdpyinfo -display :99 > /tmp/ns-display.txt
+      - uses: matlab-actions/setup-matlab@v3
+        with:
+          release: R2024b
+          cache: true
+      - uses: matlab-actions/run-command@v3
+        with:
+          startup-options: -display :99
+          command: addpath('visualization/matlab'); file=fullfile(pwd,'visualization','matlab','data','st054_models.mat'); out=fullfile(tempdir,'ns-matlab-checks'); ns_selftest(file,true,out); ns_callback_test(file,out);
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: native-MATLAB-test-evidence
+          path: /tmp/ns-matlab-checks/
+          if-no-files-found: error
