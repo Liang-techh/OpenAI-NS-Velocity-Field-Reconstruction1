@@ -1,0 +1,100 @@
+name: agent7-st052m-radial-split-localization
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_radial_split_localization.py'
+      - 'experiments/root_st052/test_agent7_st052m_radial_split_localization.py'
+      - '.github/workflows/agent7-st052m-radial-split-localization.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  radial-split-localization:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Focused contract tests
+        run: python -m pytest -q -W error experiments/root_st052/test_agent7_st052m_radial_split_localization.py
+      - name: Execute preregistered radial split localization
+        run: |
+          mkdir -p outputs/agent7-st052m-radial-split-localization
+          python experiments/root_st052/agent7_st052m_radial_split_localization.py \
+            --out outputs/agent7-st052m-radial-split-localization/report.json
+      - name: Verify frozen ancestry and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-radial-split-localization/report.json').read_text())
+          assert r['prereg_issue']==691
+          assert r['source_parent']['pr']==683
+          assert r['source_parent']['head']=='c8046f42814a45ecaa9dbe44d5a0521ee0289948'
+          assert r['candidate_pair']['baseline_pr']==587
+          assert r['candidate_pair']['challenger_pr']==652
+          assert r['trajectory_protocol']['path_count']==48
+          assert r['trajectory_protocol']['checkpoint_indices']==[0,8,16,24,32]
+          assert r['parent_24_of_48_split_replayed'] is True
+          assert r['source_652_target_free_pareto_rejection_remains_binding'] is True
+          assert r['source_683_temporal_inward_spiral_failure_remains_binding'] is True
+          assert r['localization_decision']['basis_growth_justified_by_this_audit'] is False
+          assert r['new_spatial_basis_added'] is False
+          assert r['new_temporal_basis_added'] is False
+          assert r['witness_retuned'] is False
+          assert r['optimization_performed'] is False
+          assert r['canonical_velocity_changed'] is False
+          assert r['saved_velocity_changed'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          assert r['paper_exact'] is False
+          assert r['openai_field_identified'] is False
+          print('decision=',r['localization_decision'])
+          PY
+      - name: Publish compact numerical receipt
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent7-radial-split-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-radial-split-localization/report.json').read_text())
+          d=r['localization_decision']
+          print('<!-- agent7-st052m-radial-split-localization-receipt -->')
+          print('**Agent 7 frozen radial-split localization receipt (issue #691; exact #587 vs exact #652, no retuning):**')
+          print()
+          print(f"- classification: `{d['classification']}`")
+          print(f"- z_sign_exact_split: `{d['z_sign_exact_split']}`; inward_z_sign: `{d['inward_z_sign']}`")
+          print(f"- sign pattern: `{d['sign_uniform_pattern']}`")
+          print(f"- band pattern: `{d['band_uniform_pattern']}`")
+          print(f"- radius pattern: `{d['radius_uniform_pattern']}`")
+          for field in ('linear','child'):
+              print(f'- `{field}` grouped radial path records:')
+              for key,row in r['records'][field]['segments'].items():
+                  print(f"  - `{key}` sign=`{row['groups']['sign']}` band=`{row['groups']['band']}` radius=`{row['groups']['radius']}`")
+          print(f"- routing: {d['routing']}")
+          print()
+          print('Truth boundary: expression-capacity localization only. No basis/parameter retuning, no canonical/saved velocity mutation, no pixel correspondence, no held-out PDE evaluation, and no PDE-valid / paper-exact / OpenAI-field claim.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-radial-split-receipt.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-radial-split-localization
+          path: outputs/agent7-st052m-radial-split-localization/
+          if-no-files-found: error
+
+# Issue #691 froze the exact pair, 48-path protocol and metadata-localization routing before execution.
