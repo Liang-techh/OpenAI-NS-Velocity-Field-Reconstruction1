@@ -1,0 +1,100 @@
+name: kokuno-agent4-pa10-source-u-ball-independent-audit
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a4-pa10-source-u-ball-independent-audit-056
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_agent4_pa10_source_u_ball_audit.py"
+      - "tests/test_constrained_kokuno_agent4_pa10_source_u_ball_audit.py"
+      - ".github/workflows/kokuno-agent4-pa10-source-u-ball-independent-audit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent4-pa10-source-u-ball-independent-audit-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  independent-source-u-ball-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile
+        run: |
+          python -m compileall -q \
+            src/openai_ns_reconstruction/kokuno_pa10_source_u_ball.py \
+            src/openai_ns_reconstruction/kokuno_agent4_pa10_source_u_ball_audit.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_pa10_source_u_ball.py \
+            tests/test_constrained_kokuno_agent4_pa10_source_u_ball_audit.py
+      - name: Generate exact-head independent receipt
+        run: |
+          HEAD_SHA="$(git rev-parse HEAD)"
+          python -W error -m openai_ns_reconstruction.kokuno_agent4_pa10_source_u_ball_audit \
+            --output artifacts/kokuno_agent4/pa10_source_u_ball_audit/report.json \
+            --pr-head "$HEAD_SHA" \
+            --checkout-head "$HEAD_SHA"
+      - name: Bind exact head and enforce truth boundary
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          import subprocess
+
+          path = Path('artifacts/kokuno_agent4/pa10_source_u_ball_audit/report.json')
+          payload = json.loads(path.read_text())
+          head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
+          assert payload['pr_head'] == head
+          assert payload['checkout_head'] == head
+          assert payload['source_u_ball_independent_preflight_passed'] is True
+          assert payload['failed_guards'] == []
+          assert all(payload['guards'].values())
+          assert all(payload['mutation'].values())
+
+          truth = payload['truth_boundary']
+          assert truth['source_axis_domain_independently_audited_by_A4_671'] is True
+          assert truth['source_u0_formula_independently_audited'] is True
+          assert truth['source_u0_coefficient_norm_independently_audited'] is True
+          assert truth['source_u_radius_one_ball_norm_independently_audited'] is True
+          assert truth['source_u_radius_one_ball_lipschitz_independently_audited'] is True
+          assert truth['agent1_684_algebraic_R2_slots_independently_audited'] is False
+          assert truth['all_R2_ordinary_slots_source_bound'] is False
+          assert truth['all_R1_ordinary_slots_source_bound'] is False
+          assert truth['source_operator_constant_M_machine_bound'] is False
+          assert truth['source_operator_constant_K_machine_bound'] is False
+          assert truth['global_pressure_matched'] is False
+          assert truth['global_leading_profile_reconstructed'] is False
+          assert truth['heldout_ns_momentum_residual_assessed'] is False
+          assert truth['formal_full_domain_pde_gate_assessed'] is False
+          assert truth['pde_validated'] is False
+
+          gates = payload['frozen_protocol']['final_project_gates_unchanged']
+          assert gates['normalized_momentum_max'] == 1e-3
+          assert gates['normalized_momentum_L2'] == 1e-3
+          assert gates['divergence_max'] == 1e-5
+          assert gates['divergence_L2'] == 1e-5
+
+          raw = path.read_bytes()
+          print('artifact_file_sha256=', hashlib.sha256(raw).hexdigest())
+          print('receipt_sha256=', payload['receipt_sha256'])
+          print('ratios=', payload['public_to_independent_ratios'])
+          print('complex_stress=', payload['fresh_complex_offgrid_stress'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent4-pa10-source-u-ball-independent-audit-v1
+          path: artifacts/kokuno_agent4/pa10_source_u_ball_audit/report.json
+          if-no-files-found: error
