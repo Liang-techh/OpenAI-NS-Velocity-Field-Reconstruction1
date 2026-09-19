@@ -1,0 +1,65 @@
+name: agent7-st052m-frozen-redistribution
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_frozen_redistribution.py'
+      - 'experiments/root_st052/test_agent7_st052m_frozen_redistribution.py'
+      - '.github/workflows/agent7-st052m-frozen-redistribution.yml'
+permissions:
+  contents: read
+jobs:
+  frozen-transfer-screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Focused contract tests
+        run: python -m pytest -q -W error experiments/root_st052/test_agent7_st052m_frozen_redistribution.py
+      - name: Execute preregistered frozen transfer
+        run: |
+          mkdir -p outputs/agent7-st052m-frozen-redistribution
+          python experiments/root_st052/agent7_st052m_frozen_redistribution.py \
+            --out outputs/agent7-st052m-frozen-redistribution/report.json
+      - name: Verify truth boundary and frozen identity
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('outputs/agent7-st052m-frozen-redistribution/report.json')
+          r=json.loads(p.read_text())
+          assert r['prereg_issue']==527
+          assert r['parent_id']=='ST052-M'
+          assert r['parent_head']=='b3b8bfdbe1077f9ec967d158602951997d81e17d'
+          assert r['upstream_parent_id']=='ST051-B'
+          assert abs(r['frozen_transform']['alpha']-2.520520814687742)<1e-15
+          assert r['frozen_transform']['gain']==0.05
+          assert r['parameter_scan_performed'] is False
+          assert r['diagnostic_added_velocity_degrees']==1
+          assert r['canonical_velocity_changed'] is False
+          assert r['candidate_artifact_changed'] is False
+          assert r['pressure_or_force_changed'] is False
+          assert r['held_out_pde_residual_evaluated'] is False
+          assert r['material_paths_integrated'] is False
+          assert r['public_image_used'] is False
+          assert r['visualization_ready'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          assert r['source_correspondence_verified'] is False
+          print('clean_frozen_profile_transfer=',r['row']['clean_frozen_profile_transfer'])
+          print('normalization=',r['row']['normalization'])
+          print('response=',r['response_independence'])
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-frozen-redistribution
+          path: outputs/agent7-st052m-frozen-redistribution/
+          if-no-files-found: error
