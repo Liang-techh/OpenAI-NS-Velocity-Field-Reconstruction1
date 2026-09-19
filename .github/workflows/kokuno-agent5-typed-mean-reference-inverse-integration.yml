@@ -1,0 +1,197 @@
+name: kokuno-agent5-typed-mean-reference-inverse-integration
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-integrate-reference-inverse-numpy2-061
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_typed_mean_reference_inverse.py"
+      - "tests/test_kokuno_typed_mean_reference_inverse.py"
+      - "src/openai_ns_reconstruction/kokuno_a5_source_leading_admission_firewall_v2.py"
+      - "tests/test_kokuno_a5_source_leading_admission_firewall_v2.py"
+      - ".github/workflows/kokuno-agent5-typed-mean-reference-inverse-integration.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: kokuno-agent5-typed-mean-reference-inverse-integration-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify-a5-reference-inverse-integration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+      - name: Record exact checked-out head
+        run: |
+          git rev-parse HEAD
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha }}"
+          fi
+      - name: Compile typed actual-defect to reference-inverse chain
+        run: >-
+          python -W error -m py_compile
+          src/openai_ns_reconstruction/kokuno_same_cycle_defect_contract.py
+          src/openai_ns_reconstruction/kokuno_typed_mean_radial_stress.py
+          src/openai_ns_reconstruction/kokuno_typed_mean_finite_head_debt.py
+          src/openai_ns_reconstruction/kokuno_typed_mean_inverse_rhs.py
+          src/openai_ns_reconstruction/kokuno_typed_mean_reference_inverse.py
+          src/openai_ns_reconstruction/kokuno_a5_source_leading_admission_firewall_v2.py
+      - name: Run focused warnings-as-errors integration tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_kokuno_typed_mean_inverse_rhs.py
+          tests/test_kokuno_typed_mean_reference_inverse.py
+          tests/test_kokuno_a5_source_leading_admission_firewall_v2.py
+      - name: Emit upstream typed reference-inverse receipt
+        run: >-
+          python -W error -m openai_ns_reconstruction.kokuno_typed_mean_reference_inverse
+          --output artifacts/kokuno_agent5_reference_inverse_upstream_v1.json
+      - name: Emit Agent-5 integration receipt
+        run: |
+          python - <<'PY'
+          import json
+          import subprocess
+          from pathlib import Path
+
+          upstream_path = Path('artifacts/kokuno_agent5_reference_inverse_upstream_v1.json')
+          upstream = json.loads(upstream_path.read_text())
+          exact_head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
+          receipt = {
+              'schema': 'kokuno-agent5-typed-mean-reference-inverse-integration-v1',
+              'exact_head': exact_head,
+              'parent_a5': {
+                  'pr': 711,
+                  'head': '13a0aaaf9e3334eaf01d5382ce35185d2b53cc00',
+              },
+              'upstream_agent3': {
+                  'pr': 703,
+                  'head': '56957cd51c7e6638608f28f8fa21df590194dc84',
+                  'failed_dedicated_run': 35468271608,
+                  'failure_classification': 'NumPy>=2 stacked-vector RHS API shape mismatch at np.linalg.solve; not a scientific guard failure',
+              },
+              'integration_change': {
+                  'kind': 'API compatibility glue only',
+                  'old_solve': 'np.linalg.solve(matrices, target)',
+                  'new_solve': 'np.linalg.solve(matrices, target[..., np.newaxis])[..., 0]',
+                  'matrix_formula_changed': False,
+                  'rhs_changed': False,
+                  'forcing_changed': False,
+                  'scientific_threshold_changed': False,
+              },
+              'baseline_vs_kokuno': {
+                  'st006_same_protocol_momentum_sampled_max': 0.1082289305112118,
+                  'st006_same_protocol_momentum_volume_l2': 0.10758432876230622,
+                  'kokuno_full_candidate_same_protocol_residual_available': False,
+                  'comparison_claimed': False,
+              },
+              'fixed_project_gates': {
+                  'heldout_normalized_momentum_max': 1e-3,
+                  'heldout_normalized_momentum_l2': 1e-3,
+                  'divergence_max': 1e-5,
+                  'divergence_l2': 1e-5,
+              },
+              'state': {
+                  'typed_reference_inverse_mechanics_present_on_a5_stack': True,
+                  'source_reference_operator_certified_for_real_full_candidate': False,
+                  'source_reference_scale_certified_for_real_full_candidate': False,
+                  'leading_ready': False,
+                  'correction_ready': False,
+                  'velocity_export_ready': False,
+                  'formal_heldout_pde_gate_run': False,
+                  'pde_validated': False,
+              },
+              'truth_boundary': {
+                  'free_residual_defined_forcing_allowed': False,
+                  'kokuno_replay_counts_as_final_independent_validation': False,
+                  'manufactured_regression_counts_as_ns_residual': False,
+              },
+              'upstream_reference_inverse_receipt': upstream,
+          }
+          Path('artifacts/kokuno_agent5_typed_mean_reference_inverse_integration_v1.json').write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + '\n', encoding='utf-8'
+          )
+          PY
+      - name: Check fail-closed truth boundary and numerical mechanics
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r = json.loads(Path('artifacts/kokuno_agent5_typed_mean_reference_inverse_integration_v1.json').read_text())
+          assert r['schema'] == 'kokuno-agent5-typed-mean-reference-inverse-integration-v1'
+          assert r['parent_a5']['pr'] == 711
+          assert r['upstream_agent3']['pr'] == 703
+          c = r['integration_change']
+          assert c['kind'] == 'API compatibility glue only'
+          assert c['matrix_formula_changed'] is False
+          assert c['rhs_changed'] is False
+          assert c['forcing_changed'] is False
+          assert c['scientific_threshold_changed'] is False
+          b = r['baseline_vs_kokuno']
+          assert b['kokuno_full_candidate_same_protocol_residual_available'] is False
+          assert b['comparison_claimed'] is False
+          assert r['fixed_project_gates']['heldout_normalized_momentum_max'] == 1e-3
+          assert r['fixed_project_gates']['divergence_max'] == 1e-5
+          s = r['state']
+          assert s['typed_reference_inverse_mechanics_present_on_a5_stack'] is True
+          assert s['source_reference_operator_certified_for_real_full_candidate'] is False
+          assert s['source_reference_scale_certified_for_real_full_candidate'] is False
+          assert s['leading_ready'] is False
+          assert s['correction_ready'] is False
+          assert s['velocity_export_ready'] is False
+          assert s['formal_heldout_pde_gate_run'] is False
+          assert s['pde_validated'] is False
+          t = r['truth_boundary']
+          assert t['free_residual_defined_forcing_allowed'] is False
+          assert t['kokuno_replay_counts_as_final_independent_validation'] is False
+          assert t['manufactured_regression_counts_as_ns_residual'] is False
+          q = r['upstream_reference_inverse_receipt']['analytic_regression']['evaluation']
+          h = q['signed_reference_inverse']
+          assert len(h['rhs']) == 49
+          assert len(h['delta_y']) == 49
+          assert all(len(v) == 2 for v in h['rhs'])
+          assert all(len(v) == 2 for v in h['delta_y'])
+          assert h['delta_y_vector_rms'] > 0.0
+          assert abs(h['minimum_abs_determinant'] - 12.0) <= 2e-14
+          assert abs(h['maximum_condition_number'] - 1.5) <= 2e-14
+          assert h['reconstruction_closure_max_abs'] <= 1e-14
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-typed-mean-reference-inverse-integration-v1
+          path: |
+            artifacts/kokuno_agent5_reference_inverse_upstream_v1.json
+            artifacts/kokuno_agent5_typed_mean_reference_inverse_integration_v1.json
+          if-no-files-found: error
+      - name: Comment exact-head integration receipt on PR
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const r = JSON.parse(fs.readFileSync('artifacts/kokuno_agent5_typed_mean_reference_inverse_integration_v1.json', 'utf8'));
+            const h = r.upstream_reference_inverse_receipt.analytic_regression.evaluation.signed_reference_inverse;
+            const lines = [
+              '### Kokuno Agent 5 exact-head typed reference-inverse integration',
+              '',
+              `exact head: \`${r.exact_head}\``,
+              `delta_y vector RMS (manufactured mechanics only): **${h.delta_y_vector_rms}**`,
+              `minimum |det(H_ref)|: **${h.minimum_abs_determinant}**`,
+              `maximum cond(H_ref): **${h.maximum_condition_number}**`,
+              `reconstruction closure max abs: **${h.reconstruction_closure_max_abs}**`,
+              '',
+              'This repairs only the NumPy >=2 stacked-vector solve API shape on the A5 stack. H_ref/RHS algebra, forcing, residual definition and the fixed 1e-3/1e-5 gates are unchanged. No real full-candidate H_ref/epsilon, correction readiness, velocity export or PDE validation is claimed.'
+            ];
+            await github.rest.issues.createComment({owner: context.repo.owner, repo: context.repo.repo, issue_number: context.issue.number, body: lines.join('\n')});
