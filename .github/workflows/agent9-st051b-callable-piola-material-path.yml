@@ -21,6 +21,7 @@ jobs:
       OPENBLAS_NUM_THREADS: '1'
       OMP_NUM_THREADS: '1'
       MKL_NUM_THREADS: '1'
+      PYTHONPATH: external/agent7/experiments/root_st051:external/agent7/experiments/root_st050r:src
     steps:
       - name: Checkout Agent-9 branch
         uses: actions/checkout@v4
