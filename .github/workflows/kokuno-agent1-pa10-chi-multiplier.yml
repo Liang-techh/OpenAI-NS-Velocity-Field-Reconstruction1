@@ -1,0 +1,92 @@
+name: kokuno-agent1-pa10-chi-multiplier
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a1-pa10-chi-multiplier
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent1-pa10-chi-multiplier-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHONHASHSEED: '0'
+
+jobs:
+  pa10-chi-multiplier:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile selected chi multiplier module
+        run: python -m compileall -q src/openai_ns_reconstruction/kokuno_pa10_chi_multiplier.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_pa10_operator_primitives.py \
+            tests/test_constrained_kokuno_pa10_chi_multiplier.py
+      - name: Generate selected chi multiplier receipt
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction.kokuno_pa10_chi_multiplier import KokunoPA10SelectedChiMultiplier
+
+          certificate = KokunoPA10SelectedChiMultiplier()
+          payload = certificate.to_payload()
+          out = Path("artifacts/kokuno_agent1/pa10_chi_multiplier/report.json")
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
+          cert = payload["certificate"]
+          operator = payload["operator_input_receipt"]
+          print("analytic_tube_radius=", cert["analytic_tube_radius"])
+          print("coefficient_rho=", cert["coefficient_rho"])
+          print("chi_denominator_abs_lower=", cert["chi_denominator_abs_lower"])
+          print("chi_sup_abs_upper=", cert["chi_sup_abs_upper"])
+          print("selected_multiplier_norm_chi_upper=", cert["selected_multiplier_norm_chi_upper"])
+          print("inverse_one_plus_T_absolute_bound=", operator["inverse_one_plus_T_absolute_bound"])
+          print("receipt_sha256=", payload["sha256"])
+          PY
+      - name: Validate fail-closed source truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          payload = json.loads(Path("artifacts/kokuno_agent1/pa10_chi_multiplier/report.json").read_text())
+          cert = payload["certificate"]
+          truth = payload["truth_boundary"]
+          assert cert["selected_axis_complex_domain_certified"] is True
+          assert cert["H_plusminus_i_sigma_factor_abs_lower"] > 0.0
+          assert cert["L_abs_lower"] > 0.0
+          assert cert["one_plus_eta_squared_abs_lower"] > 0.0
+          assert cert["selected_multiplier_norm_chi_upper"] > 0.0
+          assert truth["selected_axis_chi_complex_tube_machine_bound"] is True
+          assert truth["selected_chi_multiplier_norm_machine_bound"] is True
+          assert truth["source_sigma_star_admissibility_verified"] is False
+          assert truth["source_enlarged_real_interval_I_recovered"] is False
+          assert truth["source_rho_machine_bound"] is False
+          assert truth["source_chi_multiplier_norm_machine_bound"] is False
+          assert truth["source_R1_radius_one_ball_norm_machine_bound"] is False
+          assert truth["source_R2_radius_one_ball_norm_machine_bound"] is False
+          assert truth["source_operator_constant_M_machine_bound"] is False
+          assert truth["source_operator_constant_K_machine_bound"] is False
+          assert truth["source_T_sh_lower_bound_verified"] is False
+          assert truth["selected_pa16_handoff_allowed"] is False
+          assert truth["heldout_ns_residual_assessed"] is False
+          assert truth["pde_validated"] is False
+          assert truth["paper_exact"] is False
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-pa10-chi-multiplier-v1
+          path: artifacts/kokuno_agent1/pa10_chi_multiplier/report.json
