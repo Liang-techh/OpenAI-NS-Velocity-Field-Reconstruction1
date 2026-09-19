@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "contract_id": "st052m_sampled_grid_representation_scope_v1",
+  "scope": "ST052-M linear-temporal child sampled-grid export only",
+  "classification": {
+    "user_requirement": [
+      "The delivery target remains a callable 3D time-varying velocity(x,y,z,t)->[u,v,w].",
+      "Save/load support must not conflate a finite sampled grid with the underlying continuous callable velocity field."
+    ],
+    "public_source_fact": [
+      "No public-source evidence used by this contract identifies this finite repository-created grid as an exact OpenAI velocity field or as the unpublished paper-exact field."
+    ],
+    "autonomous_design": [
+      "The integrated grid-export adapter samples the authenticated ST052-M linear-temporal whole child on a 33x33x33 Cartesian grid over [-2,2]^3.",
+      "The integrated adapter samples five times: 0.25, 0.375, 0.5, 0.625, and 0.75.",
+      "NPZ/MAT payload equality and the 5e-12 callable-at-grid-node replay tolerance are engineering serialization/replay checks, not PDE, visualization, or source-correspondence acceptance thresholds."
+    ],
+    "pending_unknown": [
+      "Any off-grid interpolation rule for the serialized grid unless a downstream consumer separately specifies and versions one.",
+      "Any verified bound on off-grid interpolation error relative to the source callable velocity.",
+      "Continuous derivative equivalence between a grid-derived interpolant and the source callable velocity.",
+      "PDE validation of any grid-derived interpolated field.",
+      "Visual correspondence, paper exactness, or identity with an unpublished OpenAI field."
+    ]
+  },
+  "representation": {
+    "grid_shape_xyz": [
+      33,
+      33,
+      33
+    ],
+    "domain": [
+      -2.0,
+      2.0
+    ],
+    "times": [
+      0.25,
+      0.375,
+      0.5,
+      0.625,
+      0.75
+    ],
+    "callable_grid_node_replay_atol": 5e-12,
+    "callable_grid_node_replay_tolerance_role": "engineering_serialization_replay_only"
+  },
+  "truth_boundary": {
+    "whole_child_runtime_callable_exists_with_authenticated_source_runtime": true,
+    "underlying_runtime_callable_remains_a_separate_delivery_representation": true,
+    "sampled_grid_export_path_integrated": true,
+    "grid_payload_bound_to_whole_candidate_identity": true,
+    "npz_mat_payload_exact_equality_verified_on_exact_ci_receipt": true,
+    "callable_values_replayed_at_serialized_grid_nodes": true,
+    "sampled_grid_is_complete_continuous_velocity_representation": false,
+    "grid_export_alone_satisfies_continuous_velocity_api": false,
+    "off_grid_interpolant_specified_and_identity_bound": false,
+    "off_grid_interpolation_error_bound_verified": false,
+    "continuous_derivative_equivalence_verified": false,
+    "pde_validation_transfers_to_grid_interpolant": false,
+    "pde_validated_for_grid_interpolant": false,
+    "visual_correspondence_verified": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  },
+  "nonuniqueness_witness": {
+    "description": "On the frozen x grid, delta(x)=sin(pi*(x-x_min)/h) vanishes at every serialized x node but is nonzero at half-grid points. Adding delta to one velocity component therefore leaves every serialized 4D grid sample unchanged while changing an off-grid continuous field.",
+    "purpose": "representation-scope witness only; not a candidate modification and not a PDE or visual test"
+  }
+}
