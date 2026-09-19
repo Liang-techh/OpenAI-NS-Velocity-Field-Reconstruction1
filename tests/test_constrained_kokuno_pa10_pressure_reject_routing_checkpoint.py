@@ -14,9 +14,15 @@ from openai_ns_reconstruction.kokuno_pa10_pressure_reject_routing_checkpoint imp
 )
 
 
-def test_v45_routes_scientific_pressure_reject_without_weakening_prior_handoffs():
-    checkpoint = build_checkpoint()
-    validate_checkpoint(checkpoint)
+@pytest.fixture(scope="module")
+def checkpoint():
+    """Run the expensive independent Agent-4 audit once for this regression module."""
+    value = build_checkpoint()
+    validate_checkpoint(value)
+    return value
+
+
+def test_v45_routes_scientific_pressure_reject_without_weakening_prior_handoffs(checkpoint):
     states = checkpoint["states"]
 
     assert states["selected_pressure_primitive_interface_exposed"] is True
@@ -40,8 +46,7 @@ def test_v45_routes_scientific_pressure_reject_without_weakening_prior_handoffs(
     assert checkpoint["formal_gates_unchanged"] == FORMAL_GATES
 
 
-def test_v45_pins_latest_agent3_and_agent4_execution_identity():
-    checkpoint = build_checkpoint()
+def test_v45_pins_latest_agent3_and_agent4_execution_identity(checkpoint):
     a3 = checkpoint["upstream"]["agent3_spacetime_radial_stress_admission"]
     a4 = checkpoint["upstream"]["agent4_selected_pressure_audit"]
 
@@ -63,20 +68,26 @@ def test_v45_pins_latest_agent3_and_agent4_execution_identity():
     assert set(a4["failed_guards"]) == EXPECTED_FAILED_GUARDS
 
 
-def test_v45_freezes_substantive_p_eta_failure_and_separates_roundoff_failures():
-    checkpoint = build_checkpoint()
+def test_v45_freezes_substantive_p_eta_failure_and_separates_roundoff_failures(checkpoint):
     a4 = checkpoint["upstream"]["agent4_selected_pressure_audit"]
     p_eta = a4["p_eta"]
     p_y = a4["p_Y"]
     phi_eta = a4["Phi_eta"]
 
-    assert [row["relative_rms"] for row in p_eta["levels"]] == pytest.approx(
+    errors = [row["relative_rms"] for row in p_eta["levels"]]
+    assert errors == pytest.approx(
         [0.9991143298529059, 0.9039058221188769, 1.226775129471845]
     )
     assert p_eta["levels"][-1]["relative_max"] == pytest.approx(1.5890750527047752)
-    assert p_eta["refinement_ratios"] == pytest.approx(
-        [1.1053285883656524, 0.736814206869151]
-    )
+
+    # Freeze the scientifically relevant fact rather than a rounded PR-body
+    # representation of derived ratios: the first refinement barely improves,
+    # while the second gets worse.  Also verify the receipt ratios are exactly
+    # the ratios implied by the live audit's own RMS ladder.
+    expected_ratios = [errors[0] / errors[1], errors[1] / errors[2]]
+    assert p_eta["refinement_ratios"] == pytest.approx(expected_ratios, rel=1e-12, abs=1e-12)
+    assert 1.0 < p_eta["refinement_ratios"][0] < 1.2
+    assert p_eta["refinement_ratios"][1] < 1.0
     assert a4["nontrivial_reference_rms"]["p_eta"] > 1.0e15
 
     assert p_y["levels"][-1]["relative_rms"] < 1.0e-12
@@ -107,8 +118,7 @@ def test_v45_freezes_substantive_p_eta_failure_and_separates_roundoff_failures()
         "pde_validated",
     ],
 )
-def test_v45_rejects_overpromotion_even_if_resigned(key):
-    checkpoint = build_checkpoint()
+def test_v45_rejects_overpromotion_even_if_resigned(checkpoint, key):
     tampered = copy.deepcopy(checkpoint)
     tampered["states"][key] = True
     tampered["checkpoint_sha256"] = _canonical_sha256(tampered)
@@ -116,8 +126,7 @@ def test_v45_rejects_overpromotion_even_if_resigned(key):
         validate_checkpoint(tampered)
 
 
-def test_v45_rejects_pressure_audit_identity_substitution_even_if_resigned():
-    checkpoint = build_checkpoint()
+def test_v45_rejects_pressure_audit_identity_substitution_even_if_resigned(checkpoint):
     tampered = copy.deepcopy(checkpoint)
     tampered["upstream"]["agent4_selected_pressure_audit"]["artifact_id"] += 1
     tampered["checkpoint_sha256"] = _canonical_sha256(tampered)
@@ -125,8 +134,7 @@ def test_v45_rejects_pressure_audit_identity_substitution_even_if_resigned():
         validate_checkpoint(tampered)
 
 
-def test_v45_rejects_failed_guard_laundering_even_if_resigned():
-    checkpoint = build_checkpoint()
+def test_v45_rejects_failed_guard_laundering_even_if_resigned(checkpoint):
     tampered = copy.deepcopy(checkpoint)
     tampered["upstream"]["agent4_selected_pressure_audit"]["failed_guards"] = []
     tampered["checkpoint_sha256"] = _canonical_sha256(tampered)
@@ -134,8 +142,7 @@ def test_v45_rejects_failed_guard_laundering_even_if_resigned():
         validate_checkpoint(tampered)
 
 
-def test_v45_rejects_threshold_change_even_if_resigned():
-    checkpoint = build_checkpoint()
+def test_v45_rejects_threshold_change_even_if_resigned(checkpoint):
     tampered = copy.deepcopy(checkpoint)
     tampered["formal_gates_unchanged"]["held_out_normalized_momentum_max"] = 2.0e-3
     tampered["checkpoint_sha256"] = _canonical_sha256(tampered)
