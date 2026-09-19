@@ -10,7 +10,11 @@ The repaired protocol keeps every source parameter and scientific threshold
 fixed.  It retains the three dense independent real-axis ladders and adds a
 stratified off-grid check: the finest independent grid is used only to locate a
 point deep inside each rare region, then a fresh seeded local cloud is drawn
-around that point.  The public upstream certificate helpers are never called.
+around that point.  Because K_delta can be many orders of magnitude narrower
+than one global grid cell, the local half-width is allowed to shrink over a
+predeclared geometric ladder.  Exact dense-grid nodes are rejected by direct
+nearest-node comparison, avoiding cancellation in a global cell coordinate.
+The public upstream certificate helpers are never used as the validation oracle.
 
 The result is still only a leading-side prerequisite audit.  It is not a
 Navier--Stokes momentum residual and cannot set ``pde_validated``.
@@ -40,8 +44,7 @@ REAL_LEVELS = (4097, 8193, 16385)
 TARGETED_OFFGRID_SEED = 9173341
 TARGETED_OFFGRID_COUNT = 256
 TARGETED_DRAW_BATCH = 8192
-TARGETED_MAX_SHRINK_LEVELS = 16
-OFFGRID_CELL_DISTANCE_FLOOR = 1.0e-10
+TARGETED_MAX_SHRINK_LEVELS = 128
 COMPLEX_TUBE_MUTATION_FACTOR = 100.0
 G_BOUND_MUTATION_FACTOR = 0.99
 
@@ -100,6 +103,24 @@ def _point_satisfies_pa8_separation(
     return True
 
 
+def _nearest_dense_distance(candidates: np.ndarray, dense_eta: np.ndarray) -> np.ndarray:
+    """Absolute distance to the nearest frozen dense-grid node.
+
+    This local subtraction remains meaningful even when the candidate offset is
+    far below a global grid spacing.  In particular, it avoids evaluating a
+    cell coordinate like ``(eta-lo)/h`` whose addition/subtraction near O(1)
+    can round away an O(1e-29) offset.
+    """
+
+    idx = np.searchsorted(dense_eta, candidates, side="left")
+    right = np.clip(idx, 0, dense_eta.size - 1)
+    left = np.clip(idx - 1, 0, dense_eta.size - 1)
+    return np.minimum(
+        np.abs(candidates - dense_eta[left]),
+        np.abs(candidates - dense_eta[right]),
+    )
+
+
 def _targeted_offgrid_region(
     *,
     region: Literal["K_delta", "H_small"],
@@ -118,7 +139,7 @@ def _targeted_offgrid_region(
     certificate is consulted.  Around the anchor, the sampling half-width is
     reduced geometrically until a fresh seeded cloud contains at least the
     preregistered target number of region points.  Exact dense-grid nodes are
-    excluded explicitly.
+    excluded explicitly by nearest-node distance.
     """
 
     if dense_eta.ndim != 1 or dense_eta.size != REAL_LEVELS[-1]:
@@ -137,7 +158,7 @@ def _targeted_offgrid_region(
     selected_level: int | None = None
     selected_halfwidth: float | None = None
     selected_acceptance_count: int | None = None
-    selected_min_cell_distance: float | None = None
+    selected_min_dense_distance: float | None = None
 
     for level in range(TARGETED_MAX_SHRINK_LEVELS):
         halfwidth = spacing * (0.5**level)
@@ -147,9 +168,8 @@ def _targeted_offgrid_region(
         candidates = candidates[(candidates > lo) & (candidates < hi)]
         if candidates.size == 0:
             continue
-        cell_coordinate = (candidates - lo) / spacing
-        offgrid_cell_distance = np.abs(cell_coordinate - np.rint(cell_coordinate))
-        offgrid = offgrid_cell_distance > OFFGRID_CELL_DISTANCE_FLOOR
+        nearest_dense_distance = _nearest_dense_distance(candidates, dense_eta)
+        offgrid = nearest_dense_distance > 0.0
 
         H = np.asarray(_H(candidates, D=datum.D, j0=datum.j0), dtype=float)
         Z = _Z(
@@ -169,9 +189,8 @@ def _targeted_offgrid_region(
             selected_level = level
             selected_halfwidth = halfwidth
             selected_acceptance_count = int(accepted.size)
-            selected_cells = (selected - lo) / spacing
-            selected_min_cell_distance = float(
-                np.min(np.abs(selected_cells - np.rint(selected_cells)))
+            selected_min_dense_distance = float(
+                np.min(_nearest_dense_distance(selected, dense_eta))
             )
             break
 
@@ -191,10 +210,11 @@ def _targeted_offgrid_region(
         "selected_shrink_level": int(selected_level),
         "selected_halfwidth": float(selected_halfwidth),
         "accepted_before_truncation": int(selected_acceptance_count),
-        "minimum_distance_from_dense_grid_in_cells": float(selected_min_cell_distance),
-        "all_points_strictly_off_dense_grid": bool(
-            selected_min_cell_distance > OFFGRID_CELL_DISTANCE_FLOOR
+        "minimum_absolute_distance_from_dense_grid": float(selected_min_dense_distance),
+        "minimum_distance_from_dense_grid_in_spacings": float(
+            selected_min_dense_distance / spacing
         ),
+        "all_points_strictly_off_dense_grid": bool(selected_min_dense_distance > 0.0),
     }
 
 
@@ -385,6 +405,7 @@ def run_audit() -> dict[str, Any]:
             "targeted_offgrid_count_per_region": TARGETED_OFFGRID_COUNT,
             "targeted_draw_batch": TARGETED_DRAW_BATCH,
             "targeted_max_shrink_levels": TARGETED_MAX_SHRINK_LEVELS,
+            "offgrid_definition": "strictly positive direct distance to nearest frozen dense-grid node",
             "complex_zero_method": "numpy polynomial roots of H_*(z)=+/- i sigma_*",
             "complex_tube_mutation_factor": COMPLEX_TUBE_MUTATION_FACTOR,
             "g_bound_mutation_factor": G_BOUND_MUTATION_FACTOR,
