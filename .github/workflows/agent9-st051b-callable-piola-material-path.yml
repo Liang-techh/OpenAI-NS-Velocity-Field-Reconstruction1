@@ -1,0 +1,147 @@
+name: agent9-st051b-callable-piola-material-path
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/constrained_st051b_callable_piola_material_path.py'
+      - 'tests/test_constrained_st051b_callable_piola_material_path.py'
+      - 'docs/external_methods/CR-A9-057-st051b-callable-piola-material-path.md'
+      - '.github/workflows/agent9-st051b-callable-piola-material-path.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - name: Checkout Agent-9 branch
+        uses: actions/checkout@v4
+
+      - name: Checkout exact Agent-7 callable Piola source
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: c87ffa3f1a798df0429f16f5ee12dfb41d6c8ded
+          path: external/agent7
+          persist-credentials: false
+
+      - name: Checkout exact frozen Agent-9 path engine
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: 6699a698c9fb2f0a0986e7aefc5fe0ee431cd5ad
+          path: external/agent9_path
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install focused dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e . 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+
+      - name: Verify exact source identities
+        run: |
+          test "$(git -C external/agent7 rev-parse HEAD)" = "c87ffa3f1a798df0429f16f5ee12dfb41d6c8ded"
+          test "$(git -C external/agent9_path rev-parse HEAD)" = "6699a698c9fb2f0a0986e7aefc5fe0ee431cd5ad"
+
+      - name: Warning-clean compile and focused regressions
+        run: |
+          python -W error -m py_compile src/openai_ns_reconstruction/constrained_st051b_callable_piola_material_path.py
+          python -W error -m pytest -q tests/test_constrained_st051b_callable_piola_material_path.py
+
+      - name: Execute exact callable material-path replay
+        run: |
+          mkdir -p outputs/agent9-st051b-callable-piola-material-path
+          python -m openai_ns_reconstruction.constrained_st051b_callable_piola_material_path \
+            --agent7-root external/agent7 \
+            --agent9-root external/agent9_path \
+            --out outputs/agent9-st051b-callable-piola-material-path/report.json \
+            | tee outputs/agent9-st051b-callable-piola-material-path/run.log
+
+      - name: Verify fail-closed receipt
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('outputs/agent9-st051b-callable-piola-material-path/report.json')
+          r=json.loads(p.read_text())
+          assert r['task_id']=='CR-A9-057'
+          assert r['base_main_sha']=='f0193d66c9d92948b4820ebcb70263673995b324'
+          assert r['lineage']['parent_candidate']=='ST051-B'
+          assert r['lineage']['agent7_callable_piola_head']=='c87ffa3f1a798df0429f16f5ee12dfb41d6c8ded'
+          assert r['lineage']['agent9_path_engine_head']=='6699a698c9fb2f0a0986e7aefc5fe0ee431cd5ad'
+          assert r['transform']['redistribution_gain']==0.025
+          assert r['transform']['piola_beta']==0.075
+          assert r['transform']['gain_scan_performed'] is False
+          assert r['transform']['beta_scan_performed'] is False
+          assert r['transform']['callable_parent_used'] is True
+          assert r['transform']['sampled_grid_interpolation_used'] is False
+          c=r['frozen_material_path_contract']
+          assert c['path_count']==48 and c['paired_material_line_count']==24
+          for key in ('redistribution_only_material_paths','piola_child_material_paths'):
+              assert r[key]['path_count']==48
+              assert r[key]['paired_material_line_count']==24
+          truth=r['truth_boundary']
+          for key in ('canonical_velocity_changed','production_beta_selected','production_candidate_selected',
+                      'held_out_pde_residual_evaluated','parent_pde_receipt_transferred','visualization_ready',
+                      'visual_correspondence_verified','pde_validated','source_correspondence_verified',
+                      'paper_exact','openai_field_identified','blowup_proved'):
+              assert truth[key] is False
+          assert truth['visual_acceptance_threshold_defined'] is False
+          print('report_sha256=',r['report_sha256'])
+          print('normalization=',r['normalization'])
+          print('piola_vs_redistribution=',r['piola_vs_redistribution'])
+          print('by_radius=',r['piola_vs_redistribution_by_seed_radius'])
+          PY
+
+      - name: Publish exact-head numerical receipt
+        if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent9-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent9-st051b-callable-piola-material-path/report.json').read_text())
+          b=r['redistribution_only_material_paths']; c=r['piola_child_material_paths']; d=r['piola_vs_redistribution']
+          print('### CR-A9-057 exact-head numerical receipt')
+          print()
+          print(f"report SHA-256: `{r['report_sha256']}`")
+          print(f"redistribution scale: `{r['normalization']['redistribution_scale']:.15g}`; Piola scale: `{r['normalization']['piola_scale']:.15g}`; beta=`{r['transform']['piola_beta']}`")
+          print()
+          print('| metric | callable .025 redistribution | + beta=.075 Piola | relative change |')
+          print('|---|---:|---:|---:|')
+          print(f"| mean absolute turns | {b['mean_absolute_turns']:.10g} | {c['mean_absolute_turns']:.10g} | {100*d['mean_absolute_turns_relative']:+.4f}% |")
+          print(f"| maximum absolute turns | {b['maximum_absolute_turns']:.10g} | {c['maximum_absolute_turns']:.10g} | {100*d['maximum_absolute_turns_relative']:+.4f}% |")
+          print(f"| contraction magnitude | {abs(b['mean_radius_change']):.10g} | {abs(c['mean_radius_change']):.10g} | {100*d['radial_contraction_magnitude_relative']:+.4f}% |")
+          print(f"| mean axial-pair separation change | {b['mean_pair_axial_separation_change']:.10g} | {c['mean_pair_axial_separation_change']:.10g} | {100*d['mean_pair_axial_separation_change_relative']:+.4f}% |")
+          print(f"| inward paths | {b['inward_path_count']}/48 | {c['inward_path_count']}/48 | — |")
+          print(f"| grow/shrink pairs | {b['pair_axial_separation_growth_count']}/{b['pair_axial_separation_shrink_count']} | {c['pair_axial_separation_growth_count']}/{c['pair_axial_separation_shrink_count']} | — |")
+          print()
+          print('By seed radius (mean winding relative change):')
+          for radius,row in r['piola_vs_redistribution_by_seed_radius'].items():
+              print(f"- r={radius}: {100*row['mean_absolute_turns_relative']:+.4f}% winding; {100*row['radial_contraction_magnitude_relative']:+.4f}% contraction magnitude")
+          print()
+          print('This is descriptive candidate-side kinematics only. No production beta, visual pass threshold, pressure/forcing transfer, or PDE promotion is defined.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent9-receipt.md
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ST051-B-callable-piola-material-path
+          path: outputs/agent9-st051b-callable-piola-material-path/
+          if-no-files-found: error
+          retention-days: 30
