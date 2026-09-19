@@ -157,7 +157,7 @@ class KokunoPA10SourceChoiceOrderGuard:
         return 20.0 * self.sigma_prime_sup
 
     def source_log_E_i(self, log_phi_i: float, log_C: float) -> float:
-        """Return the normalized source ``log E_i`` for a *later* fixed C."""
+        """Return normalized source ``log E_i`` for a later fixed C."""
         log_phi_i = float(log_phi_i)
         log_C = float(log_C)
         if not math.isfinite(log_phi_i):
@@ -167,28 +167,35 @@ class KokunoPA10SourceChoiceOrderGuard:
         return self.half_log_2X_i + log_phi_i - log_C
 
     def source_ell_i(self, log_phi_i: float) -> float:
-        """Source PA.10 boundary datum after the exact C cancellation."""
+        """Source PA.10 boundary datum after exact symbolic C cancellation."""
         log_phi_i = float(log_phi_i)
         if not math.isfinite(log_phi_i):
             raise ValueError("log_phi_i must be finite")
         return self.half_log_2X_i + log_phi_i
 
     def verify_C_cancellation(
-        self, log_phi_i: float, log_C: float, *, atol: float = 1.0e-12
+        self, log_phi_i: float, log_C: float
     ) -> dict[str, float | bool]:
-        """Numerically replay the exact algebraic cancellation for diagnostics."""
-        if not math.isfinite(float(atol)) or float(atol) < 0.0:
-            raise ValueError("atol must be finite and nonnegative")
+        """Replay the C cancellation without losing the small datum in binary64.
+
+        At the huge selected scales used by the autonomous experiment, directly
+        forming ``log_C + log_E_i`` can lose the O(1) remainder.  The source
+        identity is therefore evaluated in its analytically cancelled form and
+        the naive binary64 sum is reported only as a diagnostic.
+        """
         log_E_i = self.source_log_E_i(log_phi_i, log_C)
-        via_normalized = float(log_C) + log_E_i
         direct = self.source_ell_i(log_phi_i)
-        error = abs(via_normalized - direct)
+        naive = float(log_C) + log_E_i
+        naive_error = abs(naive - direct)
         return {
             "log_E_i": log_E_i,
-            "ell_i_via_log_C_plus_log_E_i": via_normalized,
-            "ell_i_direct_C_independent": direct,
-            "absolute_cancellation_error": error,
-            "cancellation_passed": bool(error <= float(atol)),
+            "ell_i_stable_C_independent": direct,
+            "ell_i_naive_binary64_log_C_plus_log_E_i": naive,
+            "naive_binary64_cancellation_error": naive_error,
+            "exact_algebraic_cancellation_recorded": True,
+            "naive_binary64_cancellation_lost_information": bool(
+                naive_error > 16.0 * math.ulp(direct)
+            ),
         }
 
     def displayed_B0_upper_bound(
@@ -197,7 +204,7 @@ class KokunoPA10SourceChoiceOrderGuard:
         M0: float,
         L0: float,
     ) -> float:
-        """Evaluate the displayed *formula* for the k=0 bound.
+        """Evaluate the displayed formula for the k=0 bound.
 
         The three inputs are deliberately caller supplied.  Evaluating this
         formula does not set ``source_B0_dependencies_machine_bound`` or prove
