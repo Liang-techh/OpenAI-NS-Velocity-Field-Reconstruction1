@@ -2,7 +2,7 @@
 
 Issue #651 freezes one point before this child is evaluated:
 
-    compact-swirl coordinate a = 0.0658997
+    compact-swirl coordinate a = 0.065899695471146
     shoulder-timing coordinate b = -1.0  -> lambda = -0.02
 
 The parent is the exact Agent-7 #587 linear-ramp child.  The shoulder-timing
@@ -43,7 +43,7 @@ SOURCE_TEMPORAL_HEAD = "0b93819095f6c8576a7571bdc2d2fbef4154944d"
 SOURCE_RENDER_PR = 601
 SOURCE_RENDER_HEAD = "02fb726e03268d17f3ecd1a7d503282a225d50eb"
 
-SWIRL_A = 0.0658997
+SWIRL_A = 0.065899695471146
 SHOULDER_B = -1.0
 SHOULDER_LAMBDA = SHOULDER_B * shoulder.EPSILON
 PARETO_TOL = cone.PARETO_TOL
