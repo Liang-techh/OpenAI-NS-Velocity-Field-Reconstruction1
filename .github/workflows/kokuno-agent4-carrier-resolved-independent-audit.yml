@@ -1,0 +1,66 @@
+name: kokuno-agent4-carrier-resolved-independent-audit
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a4-carrier-resolved-rerun-039
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_carrier_resolved_agent4_audit.py"
+      - "tests/test_constrained_kokuno_carrier_resolved_agent4_audit.py"
+      - ".github/workflows/kokuno-agent4-carrier-resolved-independent-audit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  independent-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+      - name: Compile independent validator
+        run: python -m py_compile src/openai_ns_reconstruction/kokuno_carrier_resolved_agent4_audit.py
+      - name: Run Agent-2 parent and Agent-4 focused tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_public_carrier_resolved_velocity.py
+          tests/test_constrained_kokuno_public_candidate_velocity.py
+          tests/test_constrained_kokuno_carrier_resolved_agent4_audit.py
+      - name: Generate independent receipt
+        run: >-
+          python -m openai_ns_reconstruction.kokuno_carrier_resolved_agent4_audit
+          --output outputs/kokuno_agent4_carrier_resolved_independent_audit.json
+      - name: Check fixed truth boundary and print metrics
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('outputs/kokuno_agent4_carrier_resolved_independent_audit.json')
+          r = json.loads(p.read_text())
+          assert r['schema'] == 'kokuno-agent4-carrier-resolved-independent-audit-v1'
+          assert r['audited_agent2_head'] == '92852046e6e1ec0a5889b53f989df3ea5d79cb3b'
+          assert r['protocol']['scientific_guards_changed_from_agent4_543'] is False
+          assert r['truth_boundary']['formal_full_domain_pde_gate_assessed'] is False
+          assert r['truth_boundary']['heldout_ns_residual_assessed'] is False
+          assert r['truth_boundary']['pde_validated'] is False
+          print('divergence_rows=', r['divergence']['rows'])
+          print('refinement=', r['divergence']['relative_rms_refinement_ratios'])
+          print('covariance_rows=', r['phase_mean_covariance']['rows'])
+          print('support=', r['support'])
+          print('nontriviality=', r['nontriviality'])
+          print('parameter_perturbation=', r['parameter_perturbation'])
+          print('divergence_mutation=', r['divergence_mutation'])
+          print('public_oscillatory_preflight_passed=', r['public_oscillatory_preflight_passed'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent4-carrier-resolved-independent-audit-v1
+          path: outputs/kokuno_agent4_carrier_resolved_independent_audit.json
+          if-no-files-found: error
