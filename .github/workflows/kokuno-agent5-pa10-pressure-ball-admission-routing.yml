@@ -1,0 +1,78 @@
+name: kokuno-agent5-pa10-pressure-ball-admission-routing
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-pa10-pressure-ball-admission-049
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent5-pa10-pressure-ball-admission-routing-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pressure-ball-admission-routing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile
+        run: |
+          python -m compileall -q \
+            src/openai_ns_reconstruction/kokuno_pa10_pressure_ball_bounds.py \
+            src/openai_ns_reconstruction/kokuno_agent4_pa10_pressure_ball_audit.py \
+            src/openai_ns_reconstruction/kokuno_pressure_ball_admission_routing_checkpoint.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_pa10_pressure_ball_bounds.py \
+            tests/test_constrained_kokuno_agent4_pa10_pressure_ball_audit.py \
+            tests/test_constrained_kokuno_pressure_ball_admission_routing_checkpoint.py
+      - name: Generate deterministic routing checkpoint
+        run: |
+          python -W error -m openai_ns_reconstruction.kokuno_pressure_ball_admission_routing_checkpoint \
+            --output artifacts/kokuno_agent5/pa10_pressure_ball_admission/checkpoint.json
+      - name: Validate exact-head truth boundary
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          import subprocess
+
+          from openai_ns_reconstruction.kokuno_pressure_ball_admission_routing_checkpoint import validate_checkpoint
+
+          path = Path('artifacts/kokuno_agent5/pa10_pressure_ball_admission/checkpoint.json')
+          payload = json.loads(path.read_text())
+          validate_checkpoint(payload)
+          states = payload['states']
+          assert states['pressure_ball_operator_algebra_independently_admitted'] is True
+          assert states['leading_ready'] is False
+          assert states['source_pressure_radius_one_ball_bounds_ready'] is False
+          assert states['correction_ready'] is False
+          assert states['candidate_artifact_instantiated'] is False
+          assert states['velocity_export_ready'] is False
+          assert states['pde_validated'] is False
+          assert payload['truth_boundary']['old_selected_center_pressure_pass_may_transfer_to_new_sigma'] is False
+          assert payload['formal_gates_unchanged']['held_out_normalized_momentum_max'] == 1.0e-3
+          assert payload['formal_gates_unchanged']['held_out_normalized_momentum_l2'] == 1.0e-3
+          assert payload['formal_gates_unchanged']['held_out_divergence_max'] == 1.0e-5
+          assert payload['formal_gates_unchanged']['held_out_divergence_l2'] == 1.0e-5
+          print('exact_head=', subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip())
+          print('file_sha256=', hashlib.sha256(path.read_bytes()).hexdigest())
+          print('checkpoint_sha256=', payload['checkpoint_sha256'])
+          print('minimum_public_to_independent_upper_ratio=', payload['independent_pressure_ball_metrics']['minimum_public_to_independent_upper_ratio'])
+          print('mutation=', payload['independent_pressure_ball_metrics']['downward_mutation_detected'], '/', payload['independent_pressure_ball_metrics']['downward_mutation_total'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-pa10-pressure-ball-admission-routing-checkpoint-v49
+          path: artifacts/kokuno_agent5/pa10_pressure_ball_admission/checkpoint.json
