@@ -1,0 +1,89 @@
+name: kokuno-agent2-signed-amplitude-complete-curl
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a2-signed-amplitude-complete-curl-049
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_public_signed_amplitude_complete_curl.py"
+      - "tests/test_constrained_kokuno_public_signed_amplitude_complete_curl.py"
+      - ".github/workflows/kokuno-agent2-signed-amplitude-complete-curl.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent2-signed-amplitude-complete-curl-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  signed-amplitude-complete-curl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+      - name: Compile module
+        run: >-
+          python -W error -m py_compile
+          src/openai_ns_reconstruction/kokuno_public_signed_amplitude_complete_curl.py
+      - name: Run focused warnings-as-errors tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_public_signed_amplitude_complete_curl.py
+          tests/test_constrained_kokuno_public_oscillatory_vector_potential.py
+          tests/test_constrained_kokuno_public_oscillatory_vector_potential_time_derivative.py
+      - name: Generate immutable signed-amplitude complete-curl receipt
+        run: >-
+          python -W error -m openai_ns_reconstruction.kokuno_public_signed_amplitude_complete_curl
+          --output artifacts/kokuno_agent2_signed_amplitude_complete_curl_v1.json
+      - name: Check provenance, frozen guards and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('artifacts/kokuno_agent2_signed_amplitude_complete_curl_v1.json')
+          r = json.loads(p.read_text())
+          assert r['parent_agent2_pr'] == 716
+          assert r['parent_agent2_head'] == 'b8d0a4965a95ffb024ca28b6649b795f72f00ce3'
+          assert r['source_corrected_reader_date'] == '2026-09-09'
+          assert r['sample_count'] == 18
+          assert r['curl_fd4_steps'] == [0.012, 0.006, 0.003]
+          assert r['time_fd6_steps'] == [0.012, 0.006, 0.003]
+          assert r['failed_guards'] == []
+          t = r['truth_boundary']
+          assert t['source_complete_curl_product_rule_reused'] is True
+          assert t['vector_potential_first_contract'] is True
+          assert t['signed_radial_delta_a_handoff_executable'] is True
+          assert t['correction_velocity_and_time_derivative_executable'] is True
+          assert t['agent3_mean_radial_chain_reimplemented'] is False
+          assert t['shared_across_beta_profile_is_repository_realization'] is True
+          assert t['quintic_profile_lift_is_repository_realization'] is True
+          assert t['autonomous_time_lift_is_repository_realization'] is True
+          assert t['source_agent2_complete_curl_certified_for_full_candidate'] is False
+          assert t['independent_agent4_correction_curl_audit_required'] is True
+          assert t['real_agent3_delta_a_bound'] is False
+          assert t['real_full_candidate_correction_cycle_run'] is False
+          assert t['heldout_ns_momentum_residual_assessed'] is False
+          assert t['pde_validated'] is False
+          assert t['paper_exact'] is False
+          print('curl_refinement=', r['curl_rms_refinement_ratios'])
+          print('curl_finest=', r['curl_A_vs_complete_curl'][-1])
+          print('divergence_relative_rms=', r['divergence_relative_rms'])
+          print('divergence_relative_max=', r['divergence_relative_max'])
+          print('time_refinement=', r['time_rms_refinement_ratios'])
+          print('time_finest=', r['time_derivative_comparison'][-1])
+          print('support_exterior_absolute_max=', r['support_exterior_absolute_max'])
+          print('compact_c2_boundary_max_abs=', r['compact_c2_boundary_max_abs'])
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent2-signed-amplitude-complete-curl-v1
+          path: artifacts/kokuno_agent2_signed_amplitude_complete_curl_v1.json
+          if-no-files-found: error
