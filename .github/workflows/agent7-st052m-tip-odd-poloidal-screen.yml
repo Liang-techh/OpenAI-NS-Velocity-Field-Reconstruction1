@@ -1,0 +1,105 @@
+name: agent7-st052m-tip-odd-poloidal-screen
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_tip_odd_poloidal_screen.py'
+      - 'experiments/root_st052/test_agent7_st052m_tip_odd_poloidal_screen.py'
+      - '.github/workflows/agent7-st052m-tip-odd-poloidal-screen.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  tip-odd-poloidal-screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Focused contract tests
+        run: python -m pytest -q -W error experiments/root_st052/test_agent7_st052m_tip_odd_poloidal_screen.py
+      - name: Execute preregistered tip odd-poloidal screen
+        run: |
+          mkdir -p outputs/agent7-st052m-tip-odd-poloidal-screen
+          python experiments/root_st052/agent7_st052m_tip_odd_poloidal_screen.py \
+            --out outputs/agent7-st052m-tip-odd-poloidal-screen/report.json
+      - name: Verify frozen ancestry and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-tip-odd-poloidal-screen/report.json').read_text())
+          assert r['prereg_issue']==700
+          assert r['source_parent']=={'pr':692,'head':'e3262d4c03dc2d0806eb46639a6e14b2edb5fcb7'}
+          assert r['frozen_basis']['new_spatial_channel_count']==1
+          assert r['frozen_basis']['new_temporal_channel_count']==0
+          assert r['frozen_basis']['parameter_grid_scan_performed'] is False
+          assert r['frozen_basis']['optimizer_used'] is False
+          assert r['coefficient_calibration']['derived_alpha']>0.0
+          assert r['response_diagnostic']['parameter_count_increment']==1
+          assert r['canonical_velocity_changed'] is False
+          assert r['saved_velocity_changed'] is False
+          assert r['production_candidate_selected'] is False
+          assert r['new_spatial_basis_promoted'] is False
+          assert r['held_out_pde_residual_evaluated'] is False
+          assert r['source_652_target_free_pareto_rejection_remains_binding'] is True
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          assert r['paper_exact'] is False
+          assert r['openai_field_identified'] is False
+          print('alpha=',r['coefficient_calibration'])
+          print('rms=',r['midpoint_correction_rms'])
+          print('growth_justified=',r['tip_odd_poloidal_basis_growth_justified'])
+          print('radial=',r['radial_band_replay']['decision'])
+          print('turns=',r['turns_replay']['decision'])
+          print('aspect=',r['axial_stretch_replay'])
+          print('response=',r['response_diagnostic'])
+          print('structure=',r['structure_preflight'])
+          print('routing=',r['routing'])
+          PY
+      - name: Publish compact numerical receipt
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent7-tip-poloidal-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-tip-odd-poloidal-screen/report.json').read_text())
+          print('<!-- agent7-st052m-tip-odd-poloidal-screen-receipt -->')
+          print('**Agent 7 frozen tip-band odd-poloidal receipt (issue #700; one derived coefficient, no scan):**')
+          print()
+          c=r['coefficient_calibration']; d=r['radial_band_replay']['decision']
+          print(f"- basis growth justified: `{r['tip_odd_poloidal_basis_growth_justified']}`")
+          print(f"- derived alpha: `{c['derived_alpha']:.12g}`; midpoint source mean u_r `{c['mean_base_radial_velocity']:.9g}`; unit mean u_r `{c['mean_unit_radial_velocity']:.9g}`")
+          print(f"- correction/base RMS at 41^3,t=.50: `{r['midpoint_correction_rms']['correction_to_base_rms_fraction']:.6g}`")
+          print(f"- all tip mean delta-r lower: `{d['all_tip_mean_delta_r_strictly_lower']}`; all tip start-u_r lower: `{d['all_tip_start_mean_radial_velocity_strictly_lower']}`; shoulder 24/24 retained: `{d['shoulder_24_of_24_inward_all_segments']}`")
+          print(f"- tip inward-count changes by segment: `{d['tip_inward_path_count_changes']}`")
+          print(f"- turns advantage retained all segments: `{r['turns_replay']['decision']['all_segments_positive']}`")
+          print(f"- aspect advantage retained all post-start times: `{r['axial_stretch_replay']['all_post_start_positive']}`")
+          q=r['response_diagnostic']; s=r['structure_preflight']
+          print(f"- response rank `{q['rank']}`, condition `{q['condition_number']:.6f}`, cosine `{q['column_cosine']:.6f}`")
+          print(f"- start identity `{s['start_identity_max_abs']:.3e}`, shoulder correction `{s['shoulder_seed_correction_max_abs']:.3e}`, outside correction `{s['outside_correction_max_abs']:.3e}`, FD divergence `{s['candidate_cartesian_fd_divergence_max']:.3e}`")
+          print()
+          print('Truth boundary: visualization-oriented expression-capacity evidence only. #652 target-free Pareto rejection remains binding. No pressure/forcing rebuild, transformed-child held-out momentum acceptance, canonical/saved candidate promotion, pixel correspondence, PDE validation, exact OpenAI-field identity or blow-up claim.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-tip-poloidal-receipt.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-tip-odd-poloidal-screen
+          path: outputs/agent7-st052m-tip-odd-poloidal-screen/
+          if-no-files-found: error
+
+# Formula, support, inherited time law, one-scalar calibration rule and all guards were frozen in issue #700 before child evaluation.
