@@ -236,8 +236,14 @@ class KokunoPA10SelectedPressurePrimitive:
     ) -> dict[str, Any]:
         """Return a nested-grid selected-center engineering envelope.
 
-        This is deliberately a numerical envelope, not a certified continuum
-        supremum and not a source radius-one-ball coefficient-space bound.
+        The selected phase maximizer is injected into both eta grids.  At the
+        current enormous autonomous ``Lambda`` scale, a generic binary64 eta
+        grid otherwise underflows ``g`` almost everywhere and can misleadingly
+        report an identically-zero materialized pressure.  Injecting the known
+        selected maximizer prevents that numerical false impression, but this
+        remains only a numerical engineering envelope, not a certified
+        continuum supremum and not a source radius-one-ball coefficient-space
+        bound.
         """
 
         if isinstance(y_count, bool) or not isinstance(y_count, int) or y_count < 5:
@@ -248,22 +254,34 @@ class KokunoPA10SelectedPressurePrimitive:
         if not math.isfinite(pad) or pad < 0.0 or pad > 0.1:
             raise ValueError("padding_fraction must lie in [0,0.1]")
 
-        def sample(ny: int, ne: int) -> dict[str, float]:
-            # Chebyshev-Lobatto includes endpoints and clusters near both ends.
+        def sample(ny: int, ne: int) -> tuple[dict[str, float], int]:
             y_nodes = 2.05 * (self._chebyshev_lobatto(ny) + 1.0)
-            eta_nodes = self._chebyshev_lobatto(ne)
+            eta_nodes = np.unique(
+                np.concatenate(
+                    (
+                        self._chebyshev_lobatto(ne),
+                        np.asarray([self.core.phase_stationary_eta], dtype=float),
+                    )
+                )
+            )
             Y_grid, eta_grid = np.meshgrid(y_nodes, eta_nodes, indexing="ij")
             values = self.evaluate(Y_grid, eta_grid)
             names = ("Phi", "Phi_eta", "Y_Phi_Y", "p", "p_eta", "Y_p_Y")
-            return {
+            maxima = {
                 name: float(np.max(np.abs(values[name])))
                 for name in names
             }
+            return maxima, int(eta_nodes.size)
 
-        coarse = sample(y_count, eta_count)
-        fine = sample(2 * y_count - 1, 2 * eta_count - 1)
+        coarse, coarse_eta_actual = sample(y_count, eta_count)
+        fine, fine_eta_actual = sample(2 * y_count - 1, 2 * eta_count - 1)
         envelope = {
-            name: float(math.nextafter(max(coarse[name], fine[name]) * (1.0 + pad), math.inf))
+            name: float(
+                math.nextafter(
+                    max(coarse[name], fine[name]) * (1.0 + pad),
+                    math.inf,
+                )
+            )
             for name in fine
         }
         drift = {
@@ -271,8 +289,18 @@ class KokunoPA10SelectedPressurePrimitive:
             for name in fine
         }
         return {
-            "coarse_grid": {"y_count": y_count, "eta_count": eta_count},
-            "fine_grid": {"y_count": 2 * y_count - 1, "eta_count": 2 * eta_count - 1},
+            "coarse_grid": {
+                "y_count": y_count,
+                "eta_count_requested": eta_count,
+                "eta_count_actual": coarse_eta_actual,
+            },
+            "fine_grid": {
+                "y_count": 2 * y_count - 1,
+                "eta_count_requested": 2 * eta_count - 1,
+                "eta_count_actual": fine_eta_actual,
+            },
+            "phase_stationary_eta_injected": True,
+            "phase_stationary_eta": self.core.phase_stationary_eta,
             "padding_fraction": pad,
             "coarse_sampled_abs_max": coarse,
             "fine_sampled_abs_max": fine,
