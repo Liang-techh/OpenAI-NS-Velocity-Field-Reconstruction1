@@ -13,21 +13,25 @@ from openai_ns_reconstruction.kokuno_pa10_source_choice_order_guard import (
 )
 
 
-def test_source_ell_i_cancels_later_normalization_C_exactly():
+def test_source_ell_i_cancels_later_normalization_C_exactly_and_log_stably():
     guard = KokunoPA10SourceChoiceOrderGuard()
     log_phi_i = -7.25
 
     small = guard.verify_C_cancellation(log_phi_i, math.log(2.0))
-    huge = guard.verify_C_cancellation(log_phi_i, 4.5e23, atol=1.0e-7)
+    huge = guard.verify_C_cancellation(log_phi_i, 4.5e23)
 
-    assert small["cancellation_passed"] is True
-    assert huge["cancellation_passed"] is True
-    assert small["ell_i_direct_C_independent"] == pytest.approx(
+    assert small["exact_algebraic_cancellation_recorded"] is True
+    assert huge["exact_algebraic_cancellation_recorded"] is True
+    assert small["ell_i_stable_C_independent"] == pytest.approx(
         guard.source_ell_i(log_phi_i), abs=1e-15
     )
-    assert huge["ell_i_direct_C_independent"] == pytest.approx(
+    assert huge["ell_i_stable_C_independent"] == pytest.approx(
         guard.source_ell_i(log_phi_i), abs=1e-15
     )
+    # The huge-C diagnostic must not mistake catastrophic binary64
+    # cancellation for a different mathematical ell_i.
+    assert huge["naive_binary64_cancellation_lost_information"] is True
+    assert huge["naive_binary64_cancellation_error"] > 1.0
 
 
 def test_displayed_B0_and_Tsh_formulas_are_executable_but_not_promoted():
