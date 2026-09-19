@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build and replay the CR-A9-069 ST052-M linear-temporal whole-child capsule."""
+"""Build and replay the CR-A9-070 runtime-bound ST052-M temporal capsule."""
 from __future__ import annotations
 
 import argparse
@@ -21,6 +21,10 @@ from openai_ns_reconstruction.st052_linear_temporal_transform import (
     St052LinearTemporalAdapter,
 )
 from openai_ns_reconstruction.st052_parent_capsule import write_manifest
+from openai_ns_reconstruction.st052_source_runtime_identity import (
+    authenticate_source_runtime,
+    source_runtime_identity_sha256,
+)
 
 
 def _sha(path: Path) -> str:
@@ -31,6 +35,7 @@ def _exact_reconstruct(source_root: Path):
     st052 = source_root.resolve() / "experiments/root_st052"
     sys.path.insert(0, str(st052))
     try:
+        sys.modules.pop("replay_st052", None)
         replay = importlib.import_module("replay_st052")
         family, raw = replay.reconstruct()
     finally:
@@ -56,6 +61,7 @@ def main() -> int:
     p.add_argument("--report", type=Path, required=True)
     a = p.parse_args()
 
+    runtime_receipt = authenticate_source_runtime(a.source_root)
     candidate = a.parent_dir / "candidate.json"
     validation = a.parent_dir / "validation.json"
     parent_manifest = a.parent_dir / "parent_replay_manifest.json"
@@ -71,6 +77,9 @@ def main() -> int:
     verified = verify_bundle(bundle)
     loaded = load_bundle_runtime(bundle, exact_source_root=a.source_root)
 
+    # Authenticate again before the independent direct-source comparator is
+    # imported, so both sides of the parity check share the frozen #508 runtime.
+    authenticate_source_runtime(a.source_root)
     family, raw = _exact_reconstruct(a.source_root)
     direct = St052LinearTemporalAdapter(
         _base(family, raw),
@@ -95,14 +104,23 @@ def main() -> int:
     fine = [row for row in validation_obj.get("spatial_refinement", []) if row.get("space_step") == 0.005]
     momentum_max = max((float(row["momentum_max"]) for row in fine), default=None)
     momentum_l2 = max((float(row["momentum_L2"]) for row in fine), default=None)
+    runtime_id = source_runtime_identity_sha256()
     report = {
-        "task_id": "CR-A9-069",
+        "task_id": "CR-A9-070",
         "whole_candidate_identity_sha256": manifest["whole_candidate_identity_sha256"],
         "bundle_manifest_reverified": verified["whole_candidate_identity_sha256"] == manifest["whole_candidate_identity_sha256"],
         "parent_candidate_sha256": _sha(candidate),
         "parent_validation_sha256": _sha(validation),
         "parent_replay_manifest_sha256": _sha(parent_manifest),
         "temporal_transform_spec_sha256": DEFAULT_TEMPORAL_SPEC.sha256(),
+        "exact_source_runtime": {
+            "identity_sha256": runtime_id,
+            "manifest_identity_matches": manifest["runtime"]["exact_source_runtime_identity_sha256"] == runtime_id,
+            "authenticated_head": runtime_receipt["authenticated_head"],
+            "authenticated_tree": runtime_receipt["authenticated_tree"],
+            "tracked_worktree_clean": runtime_receipt["tracked_worktree_clean"],
+            "untracked_python_sources_absent": runtime_receipt["untracked_python_sources_absent"],
+        },
         "parity": {
             "seed": 9069,
             "points_per_time": int(len(points)),
