@@ -1,0 +1,129 @@
+name: kokuno-agent5-post-axial-oscillatory-routing
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-post-axial-audit-routing-038
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_post_axial_oscillatory_routing_checkpoint.py"
+      - "tests/test_constrained_kokuno_post_axial_oscillatory_routing_checkpoint.py"
+      - ".github/workflows/kokuno-agent5-post-axial-oscillatory-routing.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent5-post-axial-oscillatory-routing-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHONHASHSEED: '0'
+
+jobs:
+  post-axial-routing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile Agent-5 checkpoint
+        run: python -m py_compile src/openai_ns_reconstruction/kokuno_post_axial_oscillatory_routing_checkpoint.py
+      - name: Focused warnings-as-errors regressions
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_public_candidate_velocity.py \
+            tests/test_constrained_kokuno_public_oscillatory_independent_audit.py \
+            tests/test_constrained_kokuno_post_axial_oscillatory_routing_checkpoint.py
+      - name: Re-run frozen Agent-4 public black-box audit
+        run: |
+          python -m openai_ns_reconstruction.kokuno_public_oscillatory_independent_audit \
+            --output outputs/kokuno_agent4_public_oscillatory_independent_audit.json
+      - name: Generate deterministic v38 checkpoint
+        run: |
+          python -m openai_ns_reconstruction.kokuno_post_axial_oscillatory_routing_checkpoint \
+            --output artifacts/kokuno_agent5/post_axial_oscillatory_routing_checkpoint_v38.json
+      - name: Validate closed support seam and remaining frozen blockers
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          checkpoint = json.loads(Path('artifacts/kokuno_agent5/post_axial_oscillatory_routing_checkpoint_v38.json').read_text())
+          audit = json.loads(Path('outputs/kokuno_agent4_public_oscillatory_independent_audit.json').read_text())
+          states = checkpoint['states']
+          a4 = checkpoint['upstream']['agent4_frozen_rerun']
+          guards = a4['guards']
+
+          assert states['public_provenance_labelled_xyz_t_oscillatory_velocity_ready'] is True
+          assert states['public_oscillatory_independent_audit_assessed'] is True
+          assert states['public_oscillatory_project_support_passed'] is True
+          assert states['public_oscillatory_local_divergence_passed'] is False
+          assert states['public_oscillatory_covariance_rank_passed'] is False
+          assert states['oscillatory_ready'] is False
+          assert states['correction_ingest_allowed'] is False
+          assert states['pde_validated'] is False
+
+          support = audit['support']
+          rows = audit['divergence']['rows']
+          finest = rows[-1]
+          refs = audit['divergence']['relative_rms_refinement_ratios']
+          cov = audit['phase_mean_covariance']
+
+          # This round closes only the support seam. The exact same frozen
+          # scientific guards remain active for all unresolved seams.
+          assert support['project_axial_support_passed'] is True
+          assert support['project_axial_exterior_absolute_max'] <= guards['project_axial_exterior_absolute_max']
+          assert support['axis_near_absolute_max'] <= guards['axis_near_absolute_max']
+          assert support['radial_exterior_absolute_max'] <= guards['radial_exterior_absolute_max']
+          assert audit['project_support_preflight_passed'] is True
+
+          assert finest['relative_rms'] > guards['finest_relative_divergence_rms']
+          assert finest['relative_max'] > guards['finest_relative_divergence_max']
+          assert min(refs) < guards['minimum_divergence_refinement_ratio']
+          assert min(row['rank_ratio'] for row in cov['rows']) < guards['minimum_covariance_rank_ratio']
+          assert audit['divergence']['local_divergence_passed'] is False
+          assert cov['covariance_rank_preflight_passed'] is False
+          assert audit['public_oscillatory_preflight_passed'] is False
+
+          # Preserve successful calibration/nontriviality checks.
+          assert audit['nontriviality']['heldout_velocity_rms'] >= guards['minimum_nontrivial_velocity_rms']
+          params = audit['parameter_perturbation']
+          assert min(params['h_minus_10pct_relative_change'], params['h_plus_10pct_relative_change']) >= guards['minimum_parameter_perturbation_relative_change']
+          assert audit['divergence_mutation']['relative_rms'] >= guards['minimum_divergence_mutation_relative_rms']
+          assert cov['duplicated_first_column_rank_ratio'] <= guards['maximum_duplicated_covariance_rank_ratio']
+          assert max(cov['relative_drift_to_finest']) <= guards['maximum_covariance_resolution_drift']
+
+          # Actual audited candidate identity is distinct from the copied
+          # validator's legacy protocol-origin field and must stay explicit.
+          assert a4['actual_audited_agent2_head'] == '985d1c3fc43081d2d87feb1f0c27643cc4ebe75b'
+          assert a4['actual_audited_agent2_head'] != a4['protocol_origin_parent_agent2_head']
+          correction = checkpoint['typed_handoffs']['correction']
+          assert correction['required_actual_identity']['agent4_artifact_id'] == 10576031714
+
+          assert audit['truth_boundary']['formal_full_domain_pde_gate_assessed'] is False
+          assert audit['truth_boundary']['heldout_ns_residual_assessed'] is False
+          assert audit['truth_boundary']['pde_validated'] is False
+          assert checkpoint['formal_gates']['held_out_normalized_momentum_max'] == 1e-3
+          assert checkpoint['formal_gates']['held_out_normalized_momentum_l2'] == 1e-3
+          assert checkpoint['formal_gates']['held_out_divergence_max'] == 1e-5
+          assert checkpoint['formal_gates']['held_out_divergence_l2'] == 1e-5
+          assert checkpoint['baseline_vs_kokuno']['kokuno_current_comparable_full_domain_receipt'] is None
+
+          print('checkpoint_sha256=', checkpoint['checkpoint_sha256'])
+          print('fresh_axial_exterior_max=', support['project_axial_exterior_absolute_max'])
+          print('fresh_divergence_rms=', finest['relative_rms'])
+          print('fresh_covariance_rank=', min(row['rank_ratio'] for row in cov['rows']))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-post-axial-oscillatory-routing-checkpoint-v38
+          path: |
+            artifacts/kokuno_agent5/post_axial_oscillatory_routing_checkpoint_v38.json
+            outputs/kokuno_agent4_public_oscillatory_independent_audit.json
+          if-no-files-found: error
