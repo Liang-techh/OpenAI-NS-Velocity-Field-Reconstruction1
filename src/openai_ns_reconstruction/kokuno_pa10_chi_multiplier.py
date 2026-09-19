@@ -25,7 +25,10 @@ and, after Leibniz plus the exact source weight ratios,
     ||chi F||_rho <= M_R sum_{j>=0}(j+1)^2 (rho/R)^j ||F||_rho
                   = M_R (1+x)/(1-x)^3 ||F||_rho,   x=rho/R<1.
 
-The certificate is intentionally labelled selected/autonomous.  In particular,
+All bound arithmetic is first evaluated exactly as rational arithmetic on the
+selected binary64 inputs and only then converted outward to binary64: upper
+bounds round toward +infinity and positive lower bounds toward -infinity.  The
+certificate is intentionally labelled selected/autonomous.  In particular,
 the repository's ``sigma_*`` has not been proved to be Kokuno's existential
 compact-set choice and the source's slightly enlarged real interval ``I`` is not
 numerically recovered.  Therefore this does not promote ``source_rho`` or
@@ -37,6 +40,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import copy
+from fractions import Fraction
 import hashlib
 import json
 import math
@@ -79,6 +83,10 @@ _DERIVED_FORMULAS = {
         "M_chi <= M_R sum_{j>=0}(j+1)^2(rho/R)^j "
         "= M_R(1+rho/R)/(1-rho/R)^3"
     ),
+    "machine_rounding": (
+        "evaluate inequalities exactly as Fractions of selected binary64 inputs; "
+        "convert upper bounds toward +inf and positive lower bounds toward -inf"
+    ),
 }
 
 _TRUTH_BOUNDARY = {
@@ -88,6 +96,7 @@ _TRUTH_BOUNDARY = {
     "selected_coefficient_rho_executable": True,
     "selected_chi_multiplier_norm_machine_bound": True,
     "selected_chi_bound_feeds_operator_primitives": True,
+    "selected_bounds_outward_rounded_from_exact_binary64_rationals": True,
     "selected_sigma_star_is_autonomous_repository_choice": True,
     "source_sigma_star_admissibility_verified": False,
     "source_enlarged_real_interval_I_recovered": False,
@@ -127,6 +136,34 @@ def _positive_finite(value: float, name: str) -> float:
     return out
 
 
+def _fraction(value: float) -> Fraction:
+    """Exact rational represented by one finite binary64 input."""
+    out = float(value)
+    if not math.isfinite(out):
+        raise ValueError("fraction input must be finite")
+    return Fraction.from_float(out)
+
+
+def _float_upper(value: Fraction) -> float:
+    """Smallest convenient binary64 value known to be >= exact ``value``."""
+    out = float(value)
+    if not math.isfinite(out):
+        raise OverflowError("exact upper bound is outside float range")
+    if Fraction.from_float(out) < value:
+        out = math.nextafter(out, math.inf)
+    return out
+
+
+def _float_lower(value: Fraction) -> float:
+    """Convenient binary64 value known to be <= exact ``value``."""
+    out = float(value)
+    if not math.isfinite(out):
+        raise OverflowError("exact lower bound is outside float range")
+    if Fraction.from_float(out) > value:
+        out = math.nextafter(out, -math.inf)
+    return out
+
+
 @dataclass(frozen=True)
 class KokunoPA10SelectedChiMultiplier:
     """Complex-tube and multiplier certificate for the selected core datum.
@@ -151,8 +188,6 @@ class KokunoPA10SelectedChiMultiplier:
             raise ValueError("coefficient_rho_fraction must be <1")
         object.__setattr__(self, "analytic_tube_radius", R)
         object.__setattr__(self, "coefficient_rho_fraction", fraction)
-        # Fail closed at construction time if the elementary tube proof does
-        # not actually certify all explicit selected axis denominators.
         certificate = self._certificate_unchecked()
         if not certificate["selected_axis_complex_domain_certified"]:
             raise ValueError("selected complex tube is not certified by the explicit bounds")
@@ -193,65 +228,90 @@ class KokunoPA10SelectedChiMultiplier:
         return H * H / denominator
 
     def _certificate_unchecked(self) -> dict[str, float | bool]:
-        R = self.analytic_tube_radius
-        rho = self.coefficient_rho
-        z_abs_upper = 1.0 + R
+        # Treat every configured binary64 input as its exact represented
+        # rational number.  This makes the inequality arithmetic independent
+        # of intermediate floating-point rounding.
+        R_q = _fraction(self.analytic_tube_radius)
+        rho_q = _fraction(self.coefficient_rho)
+        h_q = _fraction(self.h)
+        D_q = _fraction(self.D)
+        j0_q = _fraction(self.j0)
+        sigma_q = _fraction(self.sigma_star)
+        one = Fraction(1, 1)
+        two = Fraction(2, 1)
+        four = Fraction(4, 1)
+        twelve = Fraction(12, 1)
 
-        # H'(z)=D+4-2*j0*z-12*z^2.  Any point on a straight segment
-        # joining eta in [-1,1] to its tube point has |z|<=1+R.
-        H_prime_abs_upper = (
-            abs(self.D + 4.0)
-            + 2.0 * abs(self.j0) * z_abs_upper
-            + 12.0 * z_abs_upper * z_abs_upper
+        z_abs_upper_q = one + R_q
+        H_prime_abs_upper_q = (
+            abs(D_q + four)
+            + two * abs(j0_q) * z_abs_upper_q
+            + twelve * z_abs_upper_q * z_abs_upper_q
         )
-        H_variation_upper = R * H_prime_abs_upper
+        H_variation_upper_q = R_q * H_prime_abs_upper_q
 
-        # On the real interval, |D eta|<=|D| and
+        # On eta in [-1,1], |D eta|<=|D| and
         # |(1-eta^2)(4eta+j0)|<=4+|j0|.
-        H_real_abs_upper = abs(self.D) + 4.0 + abs(self.j0)
-        H_tube_abs_upper = H_real_abs_upper + H_variation_upper
+        H_real_abs_upper_q = abs(D_q) + four + abs(j0_q)
+        H_tube_abs_upper_q = H_real_abs_upper_q + H_variation_upper_q
 
-        factor_lower = self.sigma_star - H_variation_upper
-        chi_denominator_abs_lower = factor_lower * factor_lower
-        chi_sup_abs_upper = (
-            H_tube_abs_upper * H_tube_abs_upper / chi_denominator_abs_lower
-            if factor_lower > 0.0
-            else math.inf
+        factor_lower_q = sigma_q - H_variation_upper_q
+        chi_denominator_abs_lower_q = factor_lower_q * factor_lower_q
+        if factor_lower_q > 0:
+            chi_sup_abs_upper_q = (
+                H_tube_abs_upper_q * H_tube_abs_upper_q
+                / chi_denominator_abs_lower_q
+            )
+        else:
+            chi_sup_abs_upper_q = None
+
+        # Other explicit selected-core denominators on the same tube.
+        L_abs_lower_q = one - two * h_q * z_abs_upper_q * z_abs_upper_q
+        one_plus_eta_squared_abs_lower_q = (one - R_q) * (one - R_q)
+
+        x_q = rho_q / R_q
+        multiplier_series_factor_q = (one + x_q) / ((one - x_q) ** 3)
+        multiplier_norm_upper_q = (
+            chi_sup_abs_upper_q * multiplier_series_factor_q
+            if chi_sup_abs_upper_q is not None
+            else None
         )
-
-        # Other explicit axis denominators used by the same selected core.
-        # L=1-2h eta^2 and Pi0 uses (1+eta^2)^-2.
-        L_abs_lower = 1.0 - 2.0 * self.h * z_abs_upper * z_abs_upper
-        one_plus_eta_squared_abs_lower = (1.0 - R) * (1.0 - R)
-
-        x = rho / R
-        multiplier_series_factor = (1.0 + x) / ((1.0 - x) ** 3)
-        multiplier_norm_upper = chi_sup_abs_upper * multiplier_series_factor
 
         certified = bool(
-            R < 1.0
-            and rho < R
-            and factor_lower > 0.0
-            and L_abs_lower > 0.0
-            and one_plus_eta_squared_abs_lower > 0.0
-            and math.isfinite(multiplier_norm_upper)
+            R_q < one
+            and rho_q < R_q
+            and factor_lower_q > 0
+            and L_abs_lower_q > 0
+            and one_plus_eta_squared_abs_lower_q > 0
+            and multiplier_norm_upper_q is not None
         )
+        if multiplier_norm_upper_q is None:
+            chi_sup_abs_upper = math.inf
+            multiplier_norm_upper = math.inf
+        else:
+            chi_sup_abs_upper = _float_upper(chi_sup_abs_upper_q)
+            multiplier_norm_upper = _float_upper(multiplier_norm_upper_q)
+
         return {
-            "analytic_tube_radius": float(R),
-            "coefficient_rho": float(rho),
-            "rho_over_tube_radius": float(x),
-            "z_abs_upper": float(z_abs_upper),
-            "H_real_abs_upper": float(H_real_abs_upper),
-            "H_prime_abs_upper_on_tube": float(H_prime_abs_upper),
-            "H_variation_abs_upper": float(H_variation_upper),
-            "H_plusminus_i_sigma_factor_abs_lower": float(factor_lower),
-            "chi_denominator_abs_lower": float(chi_denominator_abs_lower),
-            "H_tube_abs_upper": float(H_tube_abs_upper),
-            "chi_sup_abs_upper": float(chi_sup_abs_upper),
-            "L_abs_lower": float(L_abs_lower),
-            "one_plus_eta_squared_abs_lower": float(one_plus_eta_squared_abs_lower),
-            "coefficient_multiplier_series_factor": float(multiplier_series_factor),
-            "selected_multiplier_norm_chi_upper": float(multiplier_norm_upper),
+            "analytic_tube_radius": float(self.analytic_tube_radius),
+            "coefficient_rho": float(self.coefficient_rho),
+            "rho_over_tube_radius": _float_upper(x_q),
+            "z_abs_upper": _float_upper(z_abs_upper_q),
+            "H_real_abs_upper": _float_upper(H_real_abs_upper_q),
+            "H_prime_abs_upper_on_tube": _float_upper(H_prime_abs_upper_q),
+            "H_variation_abs_upper": _float_upper(H_variation_upper_q),
+            "H_plusminus_i_sigma_factor_abs_lower": _float_lower(factor_lower_q),
+            "chi_denominator_abs_lower": _float_lower(chi_denominator_abs_lower_q),
+            "H_tube_abs_upper": _float_upper(H_tube_abs_upper_q),
+            "chi_sup_abs_upper": chi_sup_abs_upper,
+            "L_abs_lower": _float_lower(L_abs_lower_q),
+            "one_plus_eta_squared_abs_lower": _float_lower(
+                one_plus_eta_squared_abs_lower_q
+            ),
+            "coefficient_multiplier_series_factor": _float_upper(
+                multiplier_series_factor_q
+            ),
+            "selected_multiplier_norm_chi_upper": multiplier_norm_upper,
             "selected_axis_complex_domain_certified": certified,
         }
 
@@ -310,8 +370,9 @@ class KokunoPA10SelectedChiMultiplier:
             "certificate": self.certificate(),
             "operator_input_receipt": self.operator_input_receipt(),
             "interpretation": (
-                "rigorous elementary bound for the repository-selected explicit chi on [-1,1]; "
-                "not recovery of Kokuno's hidden/enlarged-I rho or existential sigma_* choice"
+                "outward-rounded rigorous bound for the repository-selected explicit chi on "
+                "[-1,1]; not recovery of Kokuno's hidden/enlarged-I rho or existential "
+                "sigma_* choice"
             ),
             "truth_boundary": self.truth_boundary,
         }
