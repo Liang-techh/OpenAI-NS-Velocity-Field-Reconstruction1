@@ -118,6 +118,10 @@ class CorrectionGainLadderReport:
 
     def to_receipt(self) -> dict[str, object]:
         payload = asdict(self)
+        # ``asdict`` preserves tuples.  The deterministic receipt is a JSON-facing
+        # contract, so canonicalize sequence-valued fields before tests/artifacts
+        # inspect the in-memory object as well as the serialized JSON bytes.
+        payload["project_derivative_steps"] = list(self.project_derivative_steps)
         payload["levels"] = [asdict(level) for level in self.levels]
         return payload
 
