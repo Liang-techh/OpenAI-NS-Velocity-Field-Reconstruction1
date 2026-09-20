@@ -1,0 +1,178 @@
+name: kokuno-agent5-cartesian-center-velocity-dt-ingest-contract
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-cartesian-center-velocity-dt-ingest-contract-072
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_a5_cartesian_center_ingest_contract.py"
+      - "src/openai_ns_reconstruction/kokuno_a5_cartesian_center_velocity_dt_ingest_contract.py"
+      - "tests/test_kokuno_a5_cartesian_center_ingest_contract.py"
+      - "tests/test_kokuno_a5_cartesian_center_velocity_dt_ingest_contract.py"
+      - ".github/workflows/kokuno-agent5-cartesian-center-velocity-dt-ingest-contract.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent5-cartesian-center-velocity-dt-ingest-contract-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  exact-head-cartesian-center-velocity-dt-ingest-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - name: Verify exact head checkout
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          ACTUAL_HEAD="$(git rev-parse HEAD)"
+          test "$ACTUAL_HEAD" = "$EXPECTED_HEAD"
+          echo "exact_head=$ACTUAL_HEAD"
+      - name: Verify frozen Agent-1 Cartesian-center velocity_dt source blob
+        env:
+          AGENT1_HEAD: 6f16e837c3a95a6e54af5c2cb7725d094f667026
+          EXPECTED_BLOB: c1d576820416945443bbc24cc931cb64e9e032d9
+        run: |
+          git fetch --no-tags origin "$AGENT1_HEAD"
+          ACTUAL_BLOB="$(git rev-parse "$AGENT1_HEAD:src/openai_ns_reconstruction/kokuno_pa10_cartesian_center_velocity_dt.py")"
+          test "$ACTUAL_BLOB" = "$EXPECTED_BLOB"
+          echo "agent1_velocity_dt_blob=$ACTUAL_BLOB"
+      - name: Verify frozen Agent-4 velocity_dt independent-audit blob
+        env:
+          AGENT4_HEAD: 6f2c9789921885a2c21bb69c642d7f820fdeed41
+          EXPECTED_BLOB: 210f445053f027034f3fe20dc7765cd32be1e74d
+        run: |
+          git fetch --no-tags origin "$AGENT4_HEAD"
+          ACTUAL_BLOB="$(git rev-parse "$AGENT4_HEAD:src/openai_ns_reconstruction/kokuno_a4_pa10_cartesian_center_velocity_dt_independent_audit.py")"
+          test "$ACTUAL_BLOB" = "$EXPECTED_BLOB"
+          echo "agent4_velocity_dt_audit_blob=$ACTUAL_BLOB"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile integration seam
+        run: |
+          python -m compileall -q \
+            src/openai_ns_reconstruction/kokuno_a5_cartesian_center_ingest_contract.py \
+            src/openai_ns_reconstruction/kokuno_a5_cartesian_center_velocity_dt_ingest_contract.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_a5_cartesian_center_ingest_contract.py \
+            tests/test_kokuno_a5_cartesian_center_velocity_dt_ingest_contract.py
+      - name: Generate exact-head Cartesian-center velocity_dt ingest artifact
+        run: |
+          HEAD_SHA="$(git rev-parse HEAD)"
+          python -W error -m openai_ns_reconstruction.kokuno_a5_cartesian_center_velocity_dt_ingest_contract \
+            --exact-head "$HEAD_SHA" \
+            --output artifacts/kokuno_agent5/cartesian_center_velocity_dt_ingest_contract_v1/report.json
+      - name: Validate frozen evidence and truth boundary
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          import subprocess
+
+          path = Path('artifacts/kokuno_agent5/cartesian_center_velocity_dt_ingest_contract_v1/report.json')
+          payload = json.loads(path.read_text())
+          exact_head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
+          assert payload['exact_head'] == exact_head
+          assert payload['schema'] == 'kokuno-a5-cartesian-center-velocity-dt-ingest-contract-v1'
+          assert payload['parent_a5'] == {
+              'pr': 807,
+              'head': '4c1b8b14151affd807fab9d9e3f8cac7d986b224',
+          }
+
+          a1 = payload['agent1_velocity_dt_binding']
+          assert a1['pr'] == 811
+          assert a1['head'] == '6f16e837c3a95a6e54af5c2cb7725d094f667026'
+          assert a1['source_blob_sha'] == 'c1d576820416945443bbc24cc931cb64e9e032d9'
+          assert a1['schema'] == 'kokuno-pa10-cartesian-center-velocity-dt-v1'
+          assert a1['public_velocity_dt_signature'] == 'velocity_dt(x,y,z,t)->[...,3]'
+          assert a1['registered_time_interval'] == [0.25, 0.75]
+          assert a1['identity_boundary'] == {
+              'underlying_field_sha256_preserved': True,
+              'derivative_sha256_separate': True,
+              'derivative_realization': 'analytic-source-chain-rule-v1',
+          }
+
+          a4 = payload['agent4_velocity_dt_binding']
+          assert a4['pr'] == 814
+          assert a4['head'] == '6f2c9789921885a2c21bb69c642d7f820fdeed41'
+          assert a4['source_blob_sha'] == '210f445053f027034f3fe20dc7765cd32be1e74d'
+          assert a4['schema'] == 'kokuno-a4-pa10-cartesian-center-velocity-dt-independent-audit-v1'
+          assert a4['seed'] == 9173471
+          assert a4['fresh_random_sample_count'] == 1024
+          assert a4['fd4_time_steps'] == [4e-4, 2e-4, 1e-4]
+          assert a4['fine_relative_rms_gate'] == 5e-6
+          assert a4['fine_relative_max_gate'] == 3e-5
+          assert a4['axis_near_required_only_finite'] is True
+          assert a4['mutations'] == ['velocity_dt_x0.99', 'flip_axial_velocity_dt_sign']
+
+          assert payload['evidence'] == {
+              'parent_inner_cartesian_center_velocity_ingest_admitted': False,
+              'agent1_exact_head_ci_conclusion': None,
+              'agent4_exact_head_ci_conclusion': None,
+              'agent4_inner_cartesian_center_velocity_dt_independently_audited': False,
+          }
+
+          api = payload['candidate_api_handoff']
+          assert api['velocity'] == 'Agent1#803.KokunoPA10CartesianCenterVelocity.velocity'
+          assert api['velocity_dt'] == 'Agent1#811.KokunoPA10CartesianCenterVelocityTimeDerivative.velocity_dt'
+          assert api['pressure'] is None
+          assert api['forcing'] is None
+          assert api['complete_candidate_api_ready'] is False
+
+          status = payload['ingest_status']
+          assert status['typed_inner_cartesian_center_velocity_dt_interface_registered'] is True
+          assert status['typed_inner_cartesian_center_velocity_dt_independent_audit_registered'] is True
+          assert status['inner_cartesian_center_velocity_dt_ingest_admitted'] is False
+          assert status['inner_cartesian_center_derivative_identity_registered'] is True
+          assert status['outer_global_leading_join_materialized'] is False
+          assert status['global_leading_velocity_materialized'] is False
+          assert status['matched_global_pressure_materialized'] is False
+          assert status['restricted_forcing_composite_validated'] is False
+          assert status['leading_ready'] is False
+
+          assert payload['stage_state'] == {
+              'leading_ready': False,
+              'oscillatory_ready': True,
+              'correction_ready': False,
+              'velocity_export_ready': False,
+              'pde_validated': False,
+          }
+          assert payload['baseline_vs_kokuno']['kokuno_same_protocol_full_candidate_residual_available'] is False
+          assert payload['baseline_vs_kokuno']['comparison_performed'] is False
+          assert payload['final_project_gates_unchanged'] == {
+              'normalized_momentum_max': 1e-3,
+              'normalized_momentum_L2': 1e-3,
+              'divergence_max': 1e-5,
+              'divergence_L2': 1e-5,
+          }
+
+          truth = payload['truth_boundary']
+          assert truth['interface_registration_not_scientific_admission'] is True
+          for key, value in truth.items():
+              if key == 'interface_registration_not_scientific_admission':
+                  continue
+              assert value is False, (key, value)
+
+          print('artifact_sha256=', hashlib.sha256(path.read_bytes()).hexdigest())
+          print('contract_sha256=', payload['contract_sha256'])
+          print('exact_head=', exact_head)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-cartesian-center-velocity-dt-ingest-contract-v1
+          path: artifacts/kokuno_agent5/cartesian_center_velocity_dt_ingest_contract_v1/report.json
+          if-no-files-found: error
