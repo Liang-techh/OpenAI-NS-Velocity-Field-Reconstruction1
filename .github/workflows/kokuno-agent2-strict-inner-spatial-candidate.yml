@@ -1,0 +1,342 @@
+name: kokuno-agent2-strict-inner-spatial-candidate
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_strict_inner_leading_oscillatory_spatial_candidate.py'
+      - 'tests/test_constrained_kokuno_strict_inner_leading_oscillatory_spatial_candidate.py'
+      - '.github/workflows/kokuno-agent2-strict-inner-spatial-candidate.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Assert exact head
+        if: github.event_name == 'pull_request'
+        run: test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha }}"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+
+      - name: Focused warnings-as-errors regression
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_strict_inner_leading_oscillatory_spatial_candidate.py
+
+      - name: Verify frozen A2 parent and fetch exact Agent-1 runtime
+        run: |
+          test "$(git rev-parse 68f84128f07b6743d368a9ab7a051e441f5a59b2:src/openai_ns_reconstruction/kokuno_strict_inner_leading_oscillatory_differentiable_candidate.py)" = "8c09048a1d15dff321642e21ee699cce7d19831a"
+          test "$(git rev-parse 68f84128f07b6743d368a9ab7a051e441f5a59b2:src/openai_ns_reconstruction/kokuno_public_oscillatory_vorticity_diagnostic.py)" = "4ae525bad1e4b83c9dcabc1a97d3931562d099a5"
+          git fetch origin 300919075c07396e4e466f553be78eaae0707df2
+          git worktree add --detach "$RUNNER_TEMP/kokuno-a1-848" 300919075c07396e4e466f553be78eaae0707df2
+          test "$(git -C "$RUNNER_TEMP/kokuno-a1-848" rev-parse HEAD)" = "300919075c07396e4e466f553be78eaae0707df2"
+          test "$(git -C "$RUNNER_TEMP/kokuno-a1-848" rev-parse HEAD:src/openai_ns_reconstruction/kokuno_pa10_cartesian_center_transport_viscous.py)" = "5076ffa69748c2d7e68289a155b67288eab6dab4"
+          test "$(git -C "$RUNNER_TEMP/kokuno-a1-848" rev-parse HEAD:src/openai_ns_reconstruction/kokuno_pa10_cartesian_center_spatial_derivatives.py)" = "3dbde84d431ba72e847c631543137a5fdfb69459"
+
+      - name: Exact A1 plus A2 spatial candidate receipt
+        env:
+          A1_WORKTREE: ${{ runner.temp }}/kokuno-a1-848
+        run: |
+          python - <<'PY'
+          from __future__ import annotations
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+          import subprocess
+          import sys
+
+          import numpy as np
+
+          from openai_ns_reconstruction.kokuno_strict_inner_leading_oscillatory_spatial_candidate import (
+              AGENT1_RUNTIME_BLOB,
+              AGENT1_RUNTIME_HEAD,
+              AGENT1_RUNTIME_PR,
+              AGENT1_SPATIAL_BLOB,
+              AGENT1_SPATIAL_HEAD,
+              AGENT1_SPATIAL_PR,
+              OSCILLATORY_JACOBIAN_BLOB,
+              OSCILLATORY_SPATIAL_STEP,
+              PARENT_AGENT2_HEAD,
+              KokunoStrictInnerLeadingOscillatorySpatialCandidate,
+              public_contract,
+          )
+
+          a1 = Path(os.environ['A1_WORKTREE'])
+          server_code = r'''
+          import json, sys
+          import numpy as np
+          from openai_ns_reconstruction.kokuno_pa10_cartesian_center_transport_viscous import KokunoPA10CartesianCenterTransportViscous
+          field = KokunoPA10CartesianCenterTransportViscous()
+          for line in sys.stdin:
+              request = json.loads(line)
+              op = request['op']
+              if op == 'meta':
+                  result = {
+                      'field_sha256': field.field_sha256,
+                      'temporal_derivative_sha256': field.temporal_derivative_sha256,
+                      'spatial_derivative_sha256': field.spatial_derivative_sha256,
+                      'source_X_interval': list(field.spatial.source_X_interval),
+                      'time_interval': list(field.field.time_interval),
+                  }
+              elif op == 'forward':
+                  out = field.field.cartesian_from_similarity(
+                      np.asarray(request['X'], dtype=float),
+                      np.asarray(request['eta'], dtype=float),
+                      np.asarray(request['t'], dtype=float),
+                      np.asarray(request['theta'], dtype=float),
+                  )
+                  result = {k: np.asarray(out[k], dtype=float).tolist() for k in ('x','y','z','t','X','eta')}
+              elif op in ('velocity', 'velocity_dt'):
+                  out = getattr(field, op)(
+                      np.asarray(request['x'], dtype=float),
+                      np.asarray(request['y'], dtype=float),
+                      np.asarray(request['z'], dtype=float),
+                      np.asarray(request['t'], dtype=float),
+                  )
+                  result = {'value': np.asarray(out, dtype=float).tolist()}
+              elif op == 'velocity_jacobian':
+                  out = field.spatial.velocity_jacobian(
+                      np.asarray(request['x'], dtype=float),
+                      np.asarray(request['y'], dtype=float),
+                      np.asarray(request['z'], dtype=float),
+                      np.asarray(request['t'], dtype=float),
+                  )
+                  result = {'value': np.asarray(out, dtype=float).tolist()}
+              else:
+                  raise RuntimeError(f'unknown op {op}')
+              print(json.dumps(result, sort_keys=True), flush=True)
+          '''
+
+          env = os.environ.copy()
+          env['PYTHONPATH'] = str(a1 / 'src')
+          proc = subprocess.Popen(
+              [sys.executable, '-u', '-c', server_code],
+              cwd=a1,
+              env=env,
+              stdin=subprocess.PIPE,
+              stdout=subprocess.PIPE,
+              stderr=subprocess.PIPE,
+              text=True,
+              bufsize=1,
+          )
+
+          def ask(payload):
+              assert proc.stdin is not None and proc.stdout is not None
+              proc.stdin.write(json.dumps(payload, separators=(',', ':')) + '\n')
+              proc.stdin.flush()
+              line = proc.stdout.readline()
+              if not line:
+                  assert proc.stderr is not None
+                  raise RuntimeError('Agent-1 backend exited: ' + proc.stderr.read())
+              return json.loads(line)
+
+          meta = ask({'op':'meta'})
+
+          class ExactAgent1SpatialBackend:
+              field_sha256 = meta['field_sha256']
+              temporal_derivative_sha256 = meta['temporal_derivative_sha256']
+              spatial_derivative_sha256 = meta['spatial_derivative_sha256']
+
+              @staticmethod
+              def _arrays(x, y, z, t):
+                  return np.broadcast_arrays(
+                      np.asarray(x, dtype=float), np.asarray(y, dtype=float),
+                      np.asarray(z, dtype=float), np.asarray(t, dtype=float),
+                  )
+
+              def _call(self, op, x, y, z, t):
+                  x,y,z,t = self._arrays(x,y,z,t)
+                  out = ask({
+                      'op':op, 'x':x.tolist(), 'y':y.tolist(),
+                      'z':z.tolist(), 't':t.tolist(),
+                  })
+                  return np.asarray(out['value'], dtype=float)
+
+              def velocity(self, x, y, z, t):
+                  return self._call('velocity', x, y, z, t)
+
+              def velocity_dt(self, x, y, z, t):
+                  return self._call('velocity_dt', x, y, z, t)
+
+              def velocity_jacobian(self, x, y, z, t):
+                  return self._call('velocity_jacobian', x, y, z, t)
+
+          if meta['time_interval'] != [0.25, 0.75]:
+              raise RuntimeError('unexpected Agent-1 time interval')
+          if meta['source_X_interval'][1] < 0.35:
+              raise RuntimeError('unexpected Agent-1 strict-inner X domain')
+
+          # Fresh strict-inner off-grid probes and all thresholds are frozen
+          # before observing this workflow's numerical result.
+          X = np.asarray([0.166,0.181,0.196,0.211,0.226,0.241,0.256,0.271,0.286,0.301,0.218,0.263], dtype=float)
+          eta = np.asarray([-0.31,-0.25,-0.19,-0.13,-0.07,-0.01,0.05,0.11,0.17,0.23,0.29,0.14], dtype=float)
+          t = np.asarray([0.466,0.478,0.490,0.502,0.514,0.526,0.538,0.530,0.518,0.506,0.494,0.482], dtype=float)
+          theta = np.asarray([0.23,0.69,1.15,1.61,2.07,2.53,2.99,-2.83,-2.31,-1.79,-1.27,-0.75], dtype=float)
+          forward = ask({'op':'forward','X':X.tolist(),'eta':eta.tolist(),'t':t.tolist(),'theta':theta.tolist()})
+          x = np.asarray(forward['x'], dtype=float)
+          y = np.asarray(forward['y'], dtype=float)
+          z = np.asarray(forward['z'], dtype=float)
+          tt = np.asarray(forward['t'], dtype=float)
+
+          backend = ExactAgent1SpatialBackend()
+          candidate = KokunoStrictInnerLeadingOscillatorySpatialCandidate(backend)
+          evaluated = candidate.evaluate(x, y, z, tt)
+          production = np.asarray(evaluated.velocity_jacobian, dtype=float)
+
+          def fd4_axis(axis, h):
+              coords = [x, y, z]
+              values = {}
+              for offset in (-2, -1, 1, 2):
+                  shifted = [np.array(v, copy=True) for v in coords]
+                  shifted[axis] = shifted[axis] + offset*h
+                  values[offset] = candidate.velocity(shifted[0], shifted[1], shifted[2], tt)
+              return (values[-2]-8.0*values[-1]+8.0*values[1]-values[2])/(12.0*h)
+
+          def fd4_jacobian(h):
+              return np.stack([fd4_axis(axis,h) for axis in range(3)], axis=-1)
+
+          def rms(a):
+              a=np.asarray(a,dtype=float)
+              return float(np.sqrt(np.mean(a*a)))
+
+          def relative_rms(a,b):
+              return rms(np.asarray(a)-np.asarray(b))/max(rms(b),1.0e-30)
+
+          def relative_sampled_max(a,b):
+              a=np.asarray(a,dtype=float); b=np.asarray(b,dtype=float)
+              error=np.linalg.norm((a-b).reshape(a.shape[0],-1),axis=-1)
+              scale=np.linalg.norm(b.reshape(b.shape[0],-1),axis=-1)
+              return float(np.max(error))/max(float(np.max(scale)),1.0e-30)
+
+          steps=(4.0e-3,2.0e-3,1.0e-3)
+          refs=[fd4_jacobian(h) for h in steps]
+          successive_coarse=rms(refs[0]-refs[1])
+          successive_fine=rms(refs[1]-refs[2])
+          refinement=successive_coarse/max(successive_fine,1.0e-30)
+          finest_rms=relative_rms(refs[-1],production)
+          finest_max=relative_sampled_max(refs[-1],production)
+
+          scalar=np.stack([
+              np.asarray(candidate.velocity_jacobian(x[i],y[i],z[i],tt[i]),dtype=float)
+              for i in range(x.size)
+          ],axis=0)
+          batch_scalar_abs_max=float(np.max(np.abs(scalar-production)))
+
+          Path('artifacts').mkdir(exist_ok=True)
+          manifest_path=Path('artifacts/kokuno_agent2_strict_inner_spatial_candidate_manifest.json')
+          manifest=candidate.save_manifest(manifest_path)
+          rebound=KokunoStrictInnerLeadingOscillatorySpatialCandidate.load_manifest(backend, manifest_path)
+          rebound_jacobian_abs_max=float(np.max(np.abs(rebound.velocity_jacobian(x,y,z,tt)-production)))
+          rebound_velocity_abs_max=float(np.max(np.abs(rebound.velocity(x,y,z,tt)-candidate.velocity(x,y,z,tt))))
+          rebound_dt_abs_max=float(np.max(np.abs(rebound.velocity_dt(x,y,z,tt)-candidate.velocity_dt(x,y,z,tt))))
+
+          contract=public_contract()
+          failed=[]
+          if successive_fine > 2.0e-10 and refinement < 6.0: failed.append('fd4_spatial_refinement')
+          if finest_rms > 5.0e-3: failed.append('finest_relative_rms')
+          if finest_max > 1.0e-2: failed.append('finest_relative_sampled_max')
+          if rms(production) < 1.0e-10: failed.append('composite_jacobian_nontrivial')
+          if rms(evaluated.oscillatory_jacobian) < 1.0e-10: failed.append('oscillatory_jacobian_nontrivial')
+          if evaluated.jacobian_additive_closure_abs_max > 1.0e-13: failed.append('jacobian_additive_closure')
+          if batch_scalar_abs_max > 1.0e-10: failed.append('batch_scalar_jacobian')
+          if rebound_jacobian_abs_max != 0.0: failed.append('manifest_rebind_jacobian')
+          if rebound_velocity_abs_max != 0.0: failed.append('manifest_rebind_velocity')
+          if rebound_dt_abs_max != 0.0: failed.append('manifest_rebind_velocity_dt')
+          if contract['forbidden_velocity_jacobian_inputs_present']: failed.append('forbidden_public_inputs')
+          if contract['oscillatory_spatial_step'] != 1.0e-3: failed.append('oscillatory_step_drift')
+
+          truth=contract['truth_boundary']
+          required_false=(
+              'inner_leading_is_final_corrected_fixed_point',
+              'global_leading_velocity_materialized',
+              'outer_join_materialized',
+              'matched_pressure_included',
+              'restricted_forcing_included',
+              'agent3_correction_velocity_included',
+              'complete_kokuno_candidate_assembled',
+              'complete_ns_momentum_residual_formed',
+              'heldout_ns_residual_assessed',
+              'residual_reduction_claimed',
+              'paper_exact',
+              'pde_validated',
+          )
+          if any(truth[name] for name in required_false): failed.append('truth_boundary_promotion')
+
+          exact_head=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()
+          receipt={
+              'schema':'kokuno-a2-strict-inner-spatial-candidate-receipt-v1',
+              'exact_head':exact_head,
+              'parent_agent2_head':PARENT_AGENT2_HEAD,
+              'agent1_runtime_pr':AGENT1_RUNTIME_PR,
+              'agent1_runtime_head':AGENT1_RUNTIME_HEAD,
+              'agent1_runtime_blob':AGENT1_RUNTIME_BLOB,
+              'agent1_spatial_pr':AGENT1_SPATIAL_PR,
+              'agent1_spatial_head':AGENT1_SPATIAL_HEAD,
+              'agent1_spatial_blob':AGENT1_SPATIAL_BLOB,
+              'oscillatory_jacobian_blob':OSCILLATORY_JACOBIAN_BLOB,
+              'agent1_field_sha256':meta['field_sha256'],
+              'agent1_temporal_derivative_sha256':meta['temporal_derivative_sha256'],
+              'agent1_spatial_derivative_sha256':meta['spatial_derivative_sha256'],
+              'velocity_candidate_sha256':candidate.velocity_candidate_sha256,
+              'differentiable_sha256':candidate.differentiable_sha256,
+              'spatial_sha256':candidate.spatial_sha256,
+              'sample_count':int(x.size),
+              'source_X_range':[float(np.min(X)),float(np.max(X))],
+              'sample_times':sorted({float(v) for v in tt}),
+              'oscillatory_production_fd6_step':OSCILLATORY_SPATIAL_STEP,
+              'independent_fd4_steps':list(steps),
+              'independent_successive_coarse_rms':successive_coarse,
+              'independent_successive_fine_rms':successive_fine,
+              'independent_refinement_ratio':refinement,
+              'finest_relative_rms':finest_rms,
+              'finest_relative_sampled_max':finest_max,
+              'composite_jacobian_rms':rms(production),
+              'oscillatory_jacobian_rms':rms(evaluated.oscillatory_jacobian),
+              'divergence_rms_diagnostic':rms(evaluated.divergence),
+              'vorticity_rms_diagnostic':rms(evaluated.vorticity),
+              'jacobian_additive_closure_abs_max':evaluated.jacobian_additive_closure_abs_max,
+              'batch_scalar_jacobian_abs_max':batch_scalar_abs_max,
+              'manifest_rebind_jacobian_abs_max':rebound_jacobian_abs_max,
+              'manifest_rebind_velocity_abs_max':rebound_velocity_abs_max,
+              'manifest_rebind_velocity_dt_abs_max':rebound_dt_abs_max,
+              'failed_guards':failed,
+              'truth_boundary':truth,
+          }
+          receipt_raw=json.dumps(receipt,indent=2,sort_keys=True)+'\n'
+          receipt_path=Path('artifacts/kokuno_agent2_strict_inner_spatial_candidate_receipt.json')
+          receipt_path.write_text(receipt_raw)
+          print(receipt_raw)
+          print('manifest_sha256=', manifest['manifest_sha256'])
+          print('receipt_file_sha256=', hashlib.sha256(receipt_raw.encode()).hexdigest())
+
+          if proc.stdin is not None:
+              proc.stdin.close()
+          proc.terminate()
+          proc.wait(timeout=10)
+          if failed:
+              raise SystemExit('failed guards: '+', '.join(failed))
+          PY
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kokuno-agent2-strict-inner-spatial-candidate-v1
+          path: |
+            artifacts/kokuno_agent2_strict_inner_spatial_candidate_manifest.json
+            artifacts/kokuno_agent2_strict_inner_spatial_candidate_receipt.json
+          if-no-files-found: warn
