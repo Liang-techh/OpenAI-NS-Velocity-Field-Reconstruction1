@@ -4,6 +4,9 @@ import copy
 
 import pytest
 
+from openai_ns_reconstruction.kokuno_a5_strict_inner_candidate_artifact_ingest_contract import (
+    deterministic_strict_inner_candidate_artifact_ingest_contract,
+)
 from openai_ns_reconstruction.kokuno_a5_strict_inner_differentiable_artifact_ingest_contract import (
     AGENT2_HEAD,
     AGENT2_SOURCE_BLOB,
@@ -15,6 +18,7 @@ from openai_ns_reconstruction.kokuno_a5_strict_inner_differentiable_artifact_ing
 
 
 EXACT_HEAD = "0" * 40
+PARENT_HEAD = "d295670e51802abc345801bcdfef0c99bbf91e98"
 
 
 def _payload():
@@ -74,12 +78,15 @@ def test_velocity_dt_audit_is_not_laundered_into_pde_validation() -> None:
     assert api["forcing"] is None
     assert api["complete_candidate_api_ready"] is False
 
-    gates = payload["final_project_gates_unchanged"]
-    assert gates["normalized_momentum_max"] == pytest.approx(1.0e-3)
-    assert gates["normalized_momentum_L2"] == pytest.approx(1.0e-3)
-    assert gates["normalized_divergence_max"] == pytest.approx(1.0e-5)
-    assert gates["normalized_divergence_L2"] == pytest.approx(1.0e-5)
-    assert gates["free_residual_defined_forcing_forbidden"] is True
+    parent = deterministic_strict_inner_candidate_artifact_ingest_contract(
+        exact_head=PARENT_HEAD
+    )
+    assert (
+        payload["final_project_gates_unchanged"]
+        == parent["final_project_gates_unchanged"]
+    )
+    assert payload["truth_boundary"]["free_residual_defined_forcing_allowed"] is False
+    assert payload["truth_boundary"]["threshold_relaxed"] is False
 
 
 @pytest.mark.parametrize(
