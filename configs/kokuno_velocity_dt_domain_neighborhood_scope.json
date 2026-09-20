@@ -45,7 +45,7 @@
     ],
     "public_source_fact": [
       "The pinned Kokuno PA.10 reconstruction supplies the inner similarity-coordinate relations tau=q(1-eta^2), z=q^D eta, X=(x^2+y^2)/(2q) and the displayed Cartesian inner-center velocity formula.",
-      "The source-native object is an inner contraction-center construction; no public outer/global continuation is materialized by PR #814."
+      "The pinned source object used on this stack is the PA.10 contraction-center reconstruction; this contract does not promote repository-chosen numerical protocol details into source facts."
     ],
     "user_requirement": [
       "Keep callable velocity delivery separate from PDE, visual-correspondence, paper-exact, and OpenAI-field claims.",
