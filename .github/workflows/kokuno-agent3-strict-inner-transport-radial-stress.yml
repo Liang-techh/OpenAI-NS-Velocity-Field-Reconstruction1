@@ -1,0 +1,303 @@
+name: kokuno-agent3-strict-inner-transport-radial-stress
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_strict_inner_transport_radial_stress.py'
+      - 'tests/test_constrained_kokuno_strict_inner_transport_radial_stress.py'
+      - '.github/workflows/kokuno-agent3-strict-inner-transport-radial-stress.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Check out exact event head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Assert exact head
+        if: github.event_name == 'pull_request'
+        run: test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha }}"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install repository
+        run: python -m pip install -e '.[dev]'
+
+      - name: Compile and run focused regressions
+        run: |
+          python -m py_compile \
+            src/openai_ns_reconstruction/kokuno_strict_inner_transport_radial_stress.py \
+            tests/test_constrained_kokuno_strict_inner_transport_radial_stress.py
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_strict_inner_transport_mean.py \
+            tests/test_constrained_kokuno_strict_inner_transport_radial_stress.py
+
+      - name: Generate mechanics-only receipt
+        run: |
+          mkdir -p artifacts/kokuno_agent3
+          python -m openai_ns_reconstruction.kokuno_strict_inner_transport_radial_stress \
+            --output artifacts/kokuno_agent3/strict_inner_transport_radial_stress_mechanics.json
+
+      - name: Fetch exact Agent-2 and Agent-1 heads
+        run: |
+          set -euo pipefail
+          A2_HEAD='016e3c152d7d11e4fedcd79b819df337f8942983'
+          A1_HEAD='e96ee90144976a992b62d76d4361a94eb16bd91e'
+          git fetch --no-tags --depth=1 origin "$A2_HEAD"
+          git fetch --no-tags --depth=1 origin "$A1_HEAD"
+          git worktree add --detach "$RUNNER_TEMP/kokuno-a2-840" "$A2_HEAD"
+          git worktree add --detach "$RUNNER_TEMP/kokuno-a1-839" "$A1_HEAD"
+          test "$(git -C "$RUNNER_TEMP/kokuno-a2-840" rev-parse HEAD)" = "$A2_HEAD"
+          test "$(git -C "$RUNNER_TEMP/kokuno-a1-839" rev-parse HEAD)" = "$A1_HEAD"
+          test "$(git -C "$RUNNER_TEMP/kokuno-a2-840" rev-parse HEAD:src/openai_ns_reconstruction/kokuno_public_inner_leading_oscillatory_transport.py)" = 'd6082ebd346ba8150321bf3d62f104c107a70300'
+          test "$(git -C "$RUNNER_TEMP/kokuno-a1-839" rev-parse HEAD:src/openai_ns_reconstruction/kokuno_pa10_cartesian_center_laplacian.py)" = '74b0e185e8e0bbb08695d493e0a091c305a03006'
+
+      - name: Build exact A2 runtime with exact A1 PA10 modules
+        shell: bash
+        run: |
+          set -euo pipefail
+          cp "$RUNNER_TEMP"/kokuno-a1-839/src/openai_ns_reconstruction/kokuno_pa10_*.py \
+             "$RUNNER_TEMP"/kokuno-a2-840/src/openai_ns_reconstruction/
+          test "$(git hash-object "$RUNNER_TEMP/kokuno-a2-840/src/openai_ns_reconstruction/kokuno_pa10_cartesian_center_laplacian.py")" = '74b0e185e8e0bbb08695d493e0a091c305a03006'
+          test "$(git hash-object "$RUNNER_TEMP/kokuno-a2-840/src/openai_ns_reconstruction/kokuno_public_inner_leading_oscillatory_transport.py")" = 'd6082ebd346ba8150321bf3d62f104c107a70300'
+
+      - name: Exact cross-head strict-inner radial-stress receipt
+        env:
+          COMPOSITE_WORKTREE: ${{ runner.temp }}/kokuno-a2-840
+        run: |
+          python - <<'PY'
+          from __future__ import annotations
+          import json
+          import os
+          from pathlib import Path
+          import subprocess
+          import sys
+          import numpy as np
+
+          from openai_ns_reconstruction.kokuno_strict_inner_transport_mean import (
+              ANGULAR_ORDERS,
+              _materialize_from_transport_provider,
+          )
+          from openai_ns_reconstruction.kokuno_strict_inner_transport_radial_stress import (
+              StrictInnerTransportRadialGeometry,
+              _materialize_from_mean_witness,
+              truth_boundary,
+          )
+
+          worktree = Path(os.environ['COMPOSITE_WORKTREE'])
+          server_code = r'''
+          import json, sys
+          import numpy as np
+          from openai_ns_reconstruction.kokuno_pa10_cartesian_center_laplacian import KokunoPA10CartesianCenterLaplacian
+          from openai_ns_reconstruction.kokuno_public_inner_leading_oscillatory_transport import evaluate_inner_leading_oscillatory_transport
+
+          inner = KokunoPA10CartesianCenterLaplacian()
+          for line in sys.stdin:
+              req = json.loads(line)
+              if req['op'] == 'meta':
+                  out = {
+                      'field_sha256': inner.field_sha256,
+                      'laplacian_sha256': inner.laplacian_sha256,
+                      'source_X_interval': list(inner.spatial.source_X_interval),
+                      'time_interval': list(inner.field.time_interval),
+                  }
+              elif req['op'] == 'forward':
+                  mapped = inner.field.cartesian_from_similarity(
+                      np.asarray(req['X'], dtype=float),
+                      np.asarray(req['eta'], dtype=float),
+                      np.asarray(req['t'], dtype=float),
+                      np.asarray(req['theta'], dtype=float),
+                  )
+                  out = {k: np.asarray(mapped[k], dtype=float).tolist() for k in ('x','y','z','t','X','eta')}
+              elif req['op'] == 'transport':
+                  x = np.asarray(req['x'], dtype=float)
+                  y = np.asarray(req['y'], dtype=float)
+                  z = np.asarray(req['z'], dtype=float)
+                  t = np.asarray(req['t'], dtype=float)
+                  result = evaluate_inner_leading_oscillatory_transport(inner, x, y, z, t)
+                  out = {
+                      'time': np.asarray(result.inner_plus_oscillatory_velocity_dt, dtype=float).tolist(),
+                      'advection': np.asarray(result.inner_plus_oscillatory_self_advection, dtype=float).tolist(),
+                      'viscous': np.asarray(result.viscous_term, dtype=float).tolist(),
+                      'transport': np.asarray(result.transport, dtype=float).tolist(),
+                      'viscosity': float(result.viscosity),
+                  }
+              else:
+                  raise RuntimeError('unknown operation')
+              print(json.dumps(out, sort_keys=True), flush=True)
+          '''
+          env = os.environ.copy()
+          env['PYTHONPATH'] = str(worktree / 'src')
+          proc = subprocess.Popen(
+              [sys.executable, '-u', '-c', server_code], cwd=worktree, env=env,
+              stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+              text=True, bufsize=1,
+          )
+
+          def ask(payload):
+              assert proc.stdin is not None and proc.stdout is not None
+              proc.stdin.write(json.dumps(payload, separators=(',', ':')) + '\n')
+              proc.stdin.flush()
+              line = proc.stdout.readline()
+              if not line:
+                  assert proc.stderr is not None
+                  raise RuntimeError('exact upstream runtime exited: ' + proc.stderr.read())
+              return json.loads(line)
+
+          meta = ask({'op': 'meta'})
+          if meta['source_X_interval'][1] < 0.35:
+              raise RuntimeError('unexpected strict-inner X interval')
+          if meta['time_interval'] != [0.25, 0.75]:
+              raise RuntimeError('unexpected strict-inner time interval')
+
+          count = 13
+          X = np.linspace(0.18, 0.34, count)
+          eta = np.full(count, 0.15)
+          tt = np.full(count, 0.50)
+          mapped = ask({
+              'op': 'forward',
+              'X': X.tolist(), 'eta': eta.tolist(), 't': tt.tolist(),
+              'theta': np.zeros(count).tolist(),
+          })
+          x0 = np.asarray(mapped['x'], dtype=float)
+          y0 = np.asarray(mapped['y'], dtype=float)
+          z = np.asarray(mapped['z'], dtype=float)
+          t = np.asarray(mapped['t'], dtype=float)
+          radius = np.sqrt(x0*x0 + y0*y0)
+          if np.max(np.abs(z - z[0])) > 1.0e-13 or np.max(np.abs(t - t[0])) > 1.0e-15:
+              raise RuntimeError('registered radial profile is not fixed-(z,t)')
+          if not np.all(np.diff(radius) > 0.0):
+              raise RuntimeError('registered physical radii are not strictly increasing')
+
+          def provider(x, y, z, t):
+              xb, yb, zb, tb = np.broadcast_arrays(
+                  np.asarray(x, dtype=float), np.asarray(y, dtype=float),
+                  np.asarray(z, dtype=float), np.asarray(t, dtype=float),
+              )
+              out = ask({
+                  'op': 'transport',
+                  'x': xb.tolist(), 'y': yb.tolist(),
+                  'z': zb.tolist(), 't': tb.tolist(),
+              })
+              return (
+                  np.asarray(out['time'], dtype=float),
+                  np.asarray(out['advection'], dtype=float),
+                  np.asarray(out['viscous'], dtype=float),
+                  np.asarray(out['transport'], dtype=float),
+                  float(out['viscosity']),
+              )
+
+          mean = _materialize_from_transport_provider(
+              provider, radius, z, t,
+              agent1_backend=None, agent2_backend=None,
+              backend_kind='exact-cross-head-a2-840-plus-a1-839',
+          )
+          geometry = StrictInnerTransportRadialGeometry(
+              time=float(t[0]), axial_z=float(z[0]),
+              radii=tuple(float(v) for v in radius),
+              bump_center=float(0.5*(radius[0] + radius[-1])),
+              bump_halfwidth=float(0.5*(radius[-1] - radius[0])),
+          )
+          result = _materialize_from_mean_witness(
+              mean, geometry,
+              backend_kind='exact-cross-head-a3-850-mean-to-admitted-radial-stress',
+          )
+
+          failed = []
+          if tuple(mean.angular_orders) != tuple(ANGULAR_ORDERS):
+              failed.append('angular_ladder')
+          if any(v > 1.0e-5 for v in mean.successive_transport_mean_relative_differences):
+              failed.append('angular_convergence')
+          if mean.pointwise_component_closure_absolute_max > 5.0e-13:
+              failed.append('pointwise_component_closure')
+          if mean.projected_component_closure_absolute_max > 1.0e-12:
+              failed.append('projected_component_closure')
+          if mean.transport_mean_rms < 1.0e-12:
+              failed.append('nonzero_transport_mean_floor')
+
+          for name, stress in [('theta', result.theta_stress), ('axial', result.axial_stress)]:
+              moment = abs(float(stress['weighted_moment']))
+              complement = abs(float(stress['moment_complement_weighted_moment']))
+              if abs(float(stress['bump_weighted_integral']) - 1.0) > 1.0e-12:
+                  failed.append(name + '_bump_normalization')
+              if complement > 1.0e-10 * max(1.0, moment):
+                  failed.append(name + '_moment_complement')
+              if abs(float(stress['stress_inner_edge'])) > 1.0e-12 * max(1.0, float(stress['stress_max_abs'])):
+                  failed.append(name + '_inner_edge')
+              if abs(float(stress['stress_outer_edge'])) > 1.0e-10 * max(1.0, float(stress['stress_max_abs'])):
+                  failed.append(name + '_outer_edge')
+          if max(float(result.theta_stress['stress_rms']), float(result.axial_stress['stress_rms'])) < 1.0e-12:
+              failed.append('nonzero_scoped_stress_floor')
+
+          boundary = truth_boundary()
+          if boundary['complete_ns_defect']:
+              failed.append('complete_defect_laundering')
+          if boundary['scoped_transport_stress_authorized_as_correction_target']:
+              failed.append('correction_target_laundering')
+          if boundary['finite_head_debt_authorized_from_scoped_transport']:
+              failed.append('finite_head_laundering')
+          if boundary['same_protocol_comparable_to_st006']:
+              failed.append('st006_comparison_laundering')
+
+          receipt = result.to_receipt()
+          receipt.update({
+              'schema': 'kokuno-a3-strict-inner-transport-radial-stress-exact-receipt-v1',
+              'agent1_field_sha256': meta['field_sha256'],
+              'agent1_laplacian_sha256': meta['laplacian_sha256'],
+              'source_X': X.tolist(),
+              'source_eta': eta.tolist(),
+              'failed_guards': failed,
+              'complete_ns_defect': False,
+              'correction_authorized': False,
+              'same_protocol_comparable_to_st006': False,
+          })
+          Path('artifacts/kokuno_agent3').mkdir(parents=True, exist_ok=True)
+          out = Path('artifacts/kokuno_agent3/strict_inner_transport_radial_stress_exact.json')
+          out.write_text(json.dumps(receipt, indent=2, sort_keys=True) + '\n')
+          print(json.dumps(receipt, indent=2, sort_keys=True))
+          if failed:
+              raise SystemExit('failed preregistered guards: ' + ', '.join(failed))
+
+          if proc.stdin is not None:
+              proc.stdin.close()
+          proc.terminate()
+          PY
+
+      - name: Reassert mechanics truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report = json.loads(Path('artifacts/kokuno_agent3/strict_inner_transport_radial_stress_mechanics.json').read_text())
+          assert report['mechanics_only'] is True
+          evaluation = report['evaluation']
+          assert evaluation['theta_e2']['stress_rms'] > 0.0
+          assert evaluation['axial_e1']['stress_rms'] > 0.0
+          tb = report['truth_boundary']
+          assert tb['complete_ns_defect'] is False
+          assert tb['scoped_transport_stress_authorized_as_correction_target'] is False
+          assert tb['finite_head_debt_authorized_from_scoped_transport'] is False
+          assert tb['heldout_normalized_ns_residual_assessed'] is False
+          assert tb['residual_reduction_claimed'] is False
+          assert tb['pde_validated'] is False
+          assert tb['final_normalized_momentum_gate'] == 1.0e-3
+          assert tb['final_normalized_divergence_gate'] == 1.0e-5
+          PY
+
+      - name: Upload receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent3-strict-inner-transport-radial-stress-v1
+          path: artifacts/kokuno_agent3/*.json
+          if-no-files-found: warn
