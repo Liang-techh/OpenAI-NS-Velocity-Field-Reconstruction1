@@ -38,7 +38,7 @@ def run(candidate,out):
                 bound=abs(v@coeff)/np.sqrt(coeff@M@coeff) if np.linalg.norm(coeff)>0 else 0.
                 levels.append(dict(max_degree=degree,L2_lower_bound_estimate=float(bound),gram_condition=float(np.linalg.cond(M))))
             rows.append(dict(order=n,time=t,weak_moments=d.tolist(),bounds=levels))
-    result=dict(candidate_sha256=hashlib.sha256(Path(candidate).read_bytes()).hexdigest(),harmonic_polynomials=[str(h) for h in H],exact_polynomial_gram_evaluated_float=G.tolist_value() if False else G.tolist(),rows=rows,scope='Exact integration-by-parts identity for compact solenoidal u/f and compact p. Gram matrix computed from exact polynomial integrals; velocity moments use floating quadrature, NOT interval-certified lower bounds. Post-freeze diagnosis only; no candidate retuning.',pde_validated=False)
+    result=dict(candidate_sha256=hashlib.sha256(Path(candidate).read_bytes()).hexdigest(),harmonic_polynomials=[str(h) for h in H],exact_polynomial_gram_evaluated_float=G.tolist(),rows=rows,scope='Exact integration-by-parts identity for compact solenoidal u/f and compact p. Gram matrix computed from exact polynomial integrals; velocity moments use floating quadrature, NOT interval-certified lower bounds. Post-freeze diagnosis only; no candidate retuning.',pde_validated=False)
     save(out,result);print(candidate,[(x['time'],x['bounds'][-1]['L2_lower_bound_estimate']) for x in rows[-3:]],flush=True)
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('candidate');p.add_argument('--out',required=True);a=p.parse_args();run(a.candidate,a.out)
