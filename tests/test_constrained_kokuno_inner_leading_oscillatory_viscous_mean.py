@@ -80,7 +80,7 @@ def test_malformed_or_nonfinite_laplacian_payloads_fail_closed():
         )[0]
         return np.zeros(xb.shape + (2,))
 
-    with pytest.raises(ValueError, match="unexpected"):
+    with pytest.raises(ValueError, match="expected"):
         _materialize_from_laplacian_providers(
             wrong_shape,
             good,
