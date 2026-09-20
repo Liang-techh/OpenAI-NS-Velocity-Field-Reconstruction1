@@ -1,0 +1,167 @@
+name: kokuno-agent5-cartesian-center-spatial-derivative-ingest-contract
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-cartesian-center-spatial-derivative-ingest-contract-073
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_a5_cartesian_center_velocity_dt_ingest_contract.py"
+      - "src/openai_ns_reconstruction/kokuno_a5_cartesian_center_spatial_derivative_ingest_contract.py"
+      - "tests/test_kokuno_a5_cartesian_center_velocity_dt_ingest_contract.py"
+      - "tests/test_kokuno_a5_cartesian_center_spatial_derivative_ingest_contract.py"
+      - ".github/workflows/kokuno-agent5-cartesian-center-spatial-derivative-ingest-contract.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent5-cartesian-center-spatial-derivative-ingest-contract-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  exact-head-cartesian-center-spatial-derivative-ingest-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - name: Verify exact head checkout
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          ACTUAL_HEAD="$(git rev-parse HEAD)"
+          test "$ACTUAL_HEAD" = "$EXPECTED_HEAD"
+          echo "exact_head=$ACTUAL_HEAD"
+      - name: Verify frozen Agent-1 Cartesian-center spatial-derivative source blob
+        env:
+          AGENT1_HEAD: cb54e6e1a9061cacf78e446dc66bc992f64a0f8d
+          EXPECTED_BLOB: 3dbde84d431ba72e847c631543137a5fdfb69459
+        run: |
+          git fetch --no-tags origin "$AGENT1_HEAD"
+          ACTUAL_BLOB="$(git rev-parse "$AGENT1_HEAD:src/openai_ns_reconstruction/kokuno_pa10_cartesian_center_spatial_derivatives.py")"
+          test "$ACTUAL_BLOB" = "$EXPECTED_BLOB"
+          echo "agent1_spatial_derivative_blob=$ACTUAL_BLOB"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile integration seam
+        run: |
+          python -m compileall -q \
+            src/openai_ns_reconstruction/kokuno_a5_cartesian_center_velocity_dt_ingest_contract.py \
+            src/openai_ns_reconstruction/kokuno_a5_cartesian_center_spatial_derivative_ingest_contract.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_a5_cartesian_center_velocity_dt_ingest_contract.py \
+            tests/test_kokuno_a5_cartesian_center_spatial_derivative_ingest_contract.py
+      - name: Generate exact-head Cartesian-center spatial-derivative ingest artifact
+        run: |
+          HEAD_SHA="$(git rev-parse HEAD)"
+          python -W error -m openai_ns_reconstruction.kokuno_a5_cartesian_center_spatial_derivative_ingest_contract \
+            --exact-head "$HEAD_SHA" \
+            --output artifacts/kokuno_agent5/cartesian_center_spatial_derivative_ingest_contract_v1/report.json
+      - name: Validate frozen evidence and truth boundary
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          import subprocess
+
+          path = Path('artifacts/kokuno_agent5/cartesian_center_spatial_derivative_ingest_contract_v1/report.json')
+          payload = json.loads(path.read_text())
+          exact_head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
+          assert payload['exact_head'] == exact_head
+          assert payload['schema'] == 'kokuno-a5-cartesian-center-spatial-derivative-ingest-contract-v1'
+          assert payload['parent_a5'] == {
+              'pr': 815,
+              'head': '5fb23be8c30b36736d44274e53304247bc81985e',
+          }
+
+          a1 = payload['agent1_spatial_derivative_binding']
+          assert a1['pr'] == 819
+          assert a1['head'] == 'cb54e6e1a9061cacf78e446dc66bc992f64a0f8d'
+          assert a1['source_blob_sha'] == '3dbde84d431ba72e847c631543137a5fdfb69459'
+          assert a1['dedicated_run'] == 35505168683
+          assert a1['schema'] == 'kokuno-pa10-cartesian-center-spatial-derivatives-v1'
+          assert a1['public_signatures'] == {
+              'velocity_jacobian': 'velocity_jacobian(x,y,z,t)->[...,3,3]',
+              'divergence': 'divergence(x,y,z,t)->[...]',
+              'vorticity': 'vorticity(x,y,z,t)->[...,3]',
+          }
+          assert a1['identity_boundary'] == {
+              'underlying_field_sha256_preserved': True,
+              'temporal_derivative_sha256_preserved': True,
+              'spatial_derivative_sha256_separate': True,
+              'production_finite_difference_used': False,
+          }
+
+          assert payload['agent4_spatial_derivative_audit_binding'] is None
+          assert payload['evidence'] == {
+              'parent_inner_cartesian_center_velocity_dt_ingest_admitted': False,
+              'agent1_exact_head_ci_conclusion': None,
+              'agent4_dedicated_spatial_derivative_audit_present': False,
+              'agent4_inner_cartesian_center_spatial_derivatives_independently_audited': False,
+          }
+
+          api = payload['candidate_api_handoff']
+          assert api['velocity'] == 'Agent1#803.KokunoPA10CartesianCenterVelocity.velocity'
+          assert api['velocity_dt'] == 'Agent1#811.KokunoPA10CartesianCenterVelocityTimeDerivative.velocity_dt'
+          assert api['pressure'] is None
+          assert api['forcing'] is None
+          assert api['complete_candidate_api_ready'] is False
+
+          ops = payload['differential_operator_handoff']
+          assert ops['velocity_jacobian'].endswith('.velocity_jacobian')
+          assert ops['divergence'].endswith('.divergence')
+          assert ops['vorticity'].endswith('.vorticity')
+          assert ops['independent_audit_available'] is False
+          assert ops['usable_for_final_independent_pde_validation'] is False
+
+          status = payload['ingest_status']
+          assert status['typed_inner_cartesian_center_spatial_derivative_interface_registered'] is True
+          assert status['typed_inner_cartesian_center_spatial_derivative_independent_audit_registered'] is False
+          assert status['inner_cartesian_center_spatial_derivative_ingest_admitted'] is False
+          assert status['global_leading_velocity_materialized'] is False
+          assert status['matched_global_pressure_materialized'] is False
+          assert status['restricted_forcing_composite_validated'] is False
+          assert status['leading_ready'] is False
+
+          assert payload['stage_state'] == {
+              'leading_ready': False,
+              'oscillatory_ready': True,
+              'correction_ready': False,
+              'velocity_export_ready': False,
+              'pde_validated': False,
+          }
+          assert payload['baseline_vs_kokuno']['kokuno_same_protocol_full_candidate_residual_available'] is False
+          assert payload['baseline_vs_kokuno']['comparison_performed'] is False
+          assert payload['final_project_gates_unchanged'] == {
+              'normalized_momentum_max': 1e-3,
+              'normalized_momentum_L2': 1e-3,
+              'divergence_max': 1e-5,
+              'divergence_L2': 1e-5,
+          }
+
+          truth = payload['truth_boundary']
+          assert truth['interface_registration_not_scientific_admission'] is True
+          for key, value in truth.items():
+              if key == 'interface_registration_not_scientific_admission':
+                  continue
+              assert value is False, (key, value)
+
+          print('artifact_sha256=', hashlib.sha256(path.read_bytes()).hexdigest())
+          print('contract_sha256=', payload['contract_sha256'])
+          print('exact_head=', exact_head)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-cartesian-center-spatial-derivative-ingest-contract-v1
+          path: artifacts/kokuno_agent5/cartesian_center_spatial_derivative_ingest_contract_v1/report.json
+          if-no-files-found: error
