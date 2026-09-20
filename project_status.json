@@ -4,7 +4,7 @@
   "integration_branch": "codex/cr001-constraints",
   "status_snapshot_base_head": "43d4c0309cdd22763eaba966de439cc1b4e1d9d9",
   "active_routing_document": "docs/AGENT_ROUTING_SWIRL_SPATIAL.md",
-  "active_scientific_route": "materialize_integrated_axial_cap_poloidal_child_then_fresh_validate",
+  "active_scientific_route": "frozen_st052m_standalone_runtime_to_unified_velocity_visual_diagnostics_then_optional_pde_validation",
   "delivery_shortest_route": "st052m_live_callable_grid_octave_closed_next_standalone_runtime_and_visual_fingerprint",
   "candidate_status": "visualization_candidate_only",
   "candidate_family": "eq45_supported_velocity_candidate_v1",
@@ -47,7 +47,7 @@
   },
   "active_task_file": "docs/SCHEDULED_AGENT_TASKS.md",
   "central_coordination_issue": 15,
-  "next_integration_task": "materialize one explicitly bounded nonzero AXIAL_CAP_BANDED_C4_ODD_Z_POLOIDAL child from the already integrated #343 capacity direction; this supersedes COMPACT_C4_ODD_Z_POLOIDAL as the active visual-geometry route while preserving its governance requirements: explicit autonomous coefficient bound/value, new representation identity/candidate SHA, unchanged reference/validation energy, core-sign, axis/support and restricted pressure/force screens, then fresh full-momentum/divergence validation on the 4096-point contract before any promotion; do not add another capacity basis first",
+  "next_integration_task": "close or explicitly accept the standalone-package parent-runtime dependency for the already-frozen ST052-M child, then run one end-to-end smoke through its unified velocity(x,y,z,t), serialization/33^3 x 5 grid export, fixed-seed/fixed-camera streamline-vorticity and source-observable diagnostics, and MATLAB/Python report. Do not rematerialize ST052-M or add another capacity basis on this route. Only if this exact visualization candidate is selected for PDE work, rebuild compatible pressure/restricted forcing and run fresh independent 4096-point momentum/divergence validation before any pde_validated promotion",
   "next_delivery_task": "do not rematerialize ST052-M: its whole-child exact-source runtime, checksum-bound 33^3 x 5 NPZ/MAT grid export, GNU Octave MAT load/render smoke, and delivery-identity reconciliation are already live. The remaining ST052 delivery seam is to close or explicitly accept the standalone-package parent-runtime dependency before setting ST052 velocity_export_ready=true, then consume the same frozen candidate through fixed-seed/fixed-camera streamline-vorticity and source-observable diagnostics. Keep visualization_ready=false and pde_validated=false unless their separate gates are met; do not let ST054 sibling plumbing silently replace the constrained canonical identity",
   "latest_st052m_visual_candidate_evidence": {
     "status": "materialized_on_live_ancestry_grid_exported_octave_consumed_not_promoted",
