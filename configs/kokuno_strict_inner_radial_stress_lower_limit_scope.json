@@ -1,0 +1,168 @@
+{
+  "classification": {
+    "autonomous_design": [
+      "strict_inner_positive_radius_sampling",
+      "finite_sample_trapezoid_moment",
+      "finite_sample_moment_complement",
+      "cumulative_trapezoid_initialized_at_first_supplied_radius",
+      "workflow_inner_outer_edge_checks",
+      "manufactured_lower_limit_witness",
+      "cr001_validation_protocol"
+    ],
+    "pending_unknown": [
+      "missing_axis_to_rmin_weighted_primitive",
+      "formal_full_radial_moment_correspondence",
+      "axis_regularity_of_current_stress",
+      "global_correction_stress",
+      "matched_pressure_and_restricted_forcing",
+      "complete_ns_validation",
+      "visual_correspondence",
+      "paper_exactness",
+      "openai_hidden_field_identity"
+    ],
+    "public_source_fact": [
+      "registered_compact_inverse_structure_Me_Pe_sigmae_with_formal_axis_lower_limit_zero"
+    ],
+    "user_requirement": [
+      "four_class_provenance_separation",
+      "pde_pending_does_not_block_callable_velocity_delivery",
+      "cr001_constraints_remain_locked"
+    ]
+  },
+  "cr001_snapshot": {
+    "amplitude_collapse_allowed": false,
+    "derivative_steps": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "divergence_L2": 1e-05,
+    "divergence_max": 1e-05,
+    "evaluation_box": [
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ]
+    ],
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_parameters": {
+      "a": [
+        0.0,
+        10.0
+      ],
+      "c": [
+        0.0,
+        10.0
+      ]
+    },
+    "free_residual_force_allowed": false,
+    "held_out_points": 4096,
+    "nu": 0.01,
+    "pde_residual_L2": 0.001,
+    "pde_residual_max": 0.001,
+    "physical_domain": "R^3",
+    "quadrature_orders_per_axis": [
+      24,
+      48,
+      96
+    ],
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [
+      0.25,
+      0.75
+    ],
+    "validation_seed": 914027,
+    "validation_times": [
+      0.25,
+      0.3125,
+      0.4375,
+      0.5625,
+      0.6875,
+      0.75
+    ]
+  },
+  "forbidden_promotions": [
+    "truncated_positive_radius_primitive_to_formal_axis_inverse",
+    "stress_inner_edge_zero_to_axis_regularity",
+    "sampled_weighted_moment_to_formal_full_domain_moment",
+    "scoped_transport_stress_to_global_correction_target",
+    "scoped_transport_stress_to_complete_ns_or_pde_validation",
+    "autonomous_discretization_to_public_source_fact",
+    "posthoc_threshold_relaxation",
+    "residual_defined_or_pointwise_free_forcing",
+    "amplitude_collapse",
+    "pde_pending_to_callable_velocity_delivery_blocker"
+  ],
+  "manufactured_mechanics_witness": {
+    "exponents": [
+      1,
+      2
+    ],
+    "formal_sigma_at_r_min": {
+      "e1": -0.1,
+      "e2": -0.06666666666666667
+    },
+    "missing_term_formula_at_r": "-r_min^(e+1)/((e+1)*r^e)",
+    "profile": "P_e(s)=1",
+    "r_min": 0.2,
+    "status": "autonomous_mechanics_only_not_candidate_evidence",
+    "truncated_discrete_sigma_at_r_min": 0.0
+  },
+  "radial_inverse_scope": {
+    "current_equivalence_to_formal_axis_inverse_proven": false,
+    "equivalence_requires": [
+      "missing integral_0^rmin s^e P_e(F)(s) ds equals zero",
+      "finite sampled weighted moment/complement matches the intended formal radial domain semantics"
+    ],
+    "formal_lower_limit": 0.0,
+    "formal_registered_formula": "sigma_e(r)=-r^(-e)*integral_0^r s^e P_e(F)(s) ds",
+    "realized_discrete_lower_limit": "r_min = first supplied strictly-positive radial sample",
+    "realized_primitive_initialization": "primitive[0]=0 by cumulative trapezoid construction",
+    "sampled_weighted_moment_is_formal_full_domain_moment": false,
+    "stress_inner_edge_zero_is_axis_regularity_evidence": false,
+    "strict_inner_radii_include_axis": false
+  },
+  "schema_version": 1,
+  "scope": "Separate the formal axis-based compact radial inverse from the current positive-radius truncated discrete primitive used by PR #858.",
+  "sibling_governance": {
+    "duplicate_of_sibling": false,
+    "pr_844": "vector_laplacian_and_cylindrical_projection_semantics",
+    "pr_853": "nonlinear_azimuthal_averaging_noncommutation",
+    "pr_856": "m0_projection_nullspace_and_sampled_ring_norm_scope"
+  },
+  "status": "governance_only_not_scientific_admission",
+  "target": {
+    "blob_sha": "785cb5a07a1e67f89005c1ad8082d93d9d34be49",
+    "head": "9140b0bab1bfc34d496460675e92e63fc6dd721b",
+    "helper_blob_sha": "3aacb0b5a34b3b1b8065d47f73039031da4c85a0",
+    "helper_path": "src/openai_ns_reconstruction/kokuno_actual_oscillatory_mean_stress.py",
+    "path": "src/openai_ns_reconstruction/kokuno_strict_inner_transport_radial_stress.py",
+    "pr": 858
+  },
+  "task": "CR002-KOKUNO-STRICT-INNER-RADIAL-STRESS-LOWER-LIMIT-SCOPE",
+  "truth_boundary": {
+    "axis_regularity_verified": false,
+    "blowup_proved": false,
+    "complete_ns_defect": false,
+    "correction_target_admitted": false,
+    "formal_axis_based_inverse_verified": false,
+    "formal_full_domain_moment_verified": false,
+    "openai_field_identified": false,
+    "paper_exact": false,
+    "pde_pending_blocks_callable_velocity_delivery": false,
+    "pde_validated": false,
+    "scoped_truncated_radial_stress_diagnostic_exists": true,
+    "velocity_export_ready_promoted_by_this_audit": false,
+    "visual_correspondence_verified": false
+  }
+}
