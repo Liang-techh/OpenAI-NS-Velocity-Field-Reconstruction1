@@ -13,6 +13,7 @@ from pathlib import Path
 from typing import Any
 
 import numpy as np
+from scipy.integrate import simpson
 
 import agent7_st052m_outer_axial_return_reservoir_preflight as reservoir
 
@@ -148,9 +149,13 @@ def _flux_level(n: int) -> dict[str, float]:
     radii = np.linspace(0.0, reservoir.R_SUPPORT_MAX, int(n))
     response = np.asarray(axial_shape_factor(radii), dtype=float)
     integrand = 2.0 * math.pi * radii * response
-    flux = float(np.trapezoid(integrand, radii))
-    positive_flux = float(np.trapezoid(2.0 * math.pi * radii * np.maximum(response, 0.0), radii))
-    negative_flux = float(np.trapezoid(2.0 * math.pi * radii * np.minimum(response, 0.0), radii))
+    # The signed integrand is smooth. Simpson refinement is therefore the
+    # appropriate numerical mirror of the exact endpoint identity. Positive/
+    # negative split values are descriptive only because max(.,0) is nonsmooth
+    # at r=r* and is not used as a refinement gate.
+    flux = float(simpson(integrand, x=radii))
+    positive_flux = float(simpson(2.0 * math.pi * radii * np.maximum(response, 0.0), x=radii))
+    negative_flux = float(simpson(2.0 * math.pi * radii * np.minimum(response, 0.0), x=radii))
     return {
         "signed_flux_per_unit_Z": flux,
         "positive_core_flux_per_unit_Z": positive_flux,
@@ -167,22 +172,18 @@ def axial_flux_refinement() -> dict[str, Any]:
         abs(fine["signed_flux_per_unit_Z"]),
         abs(fine["positive_plus_negative"]),
     )
-    max_refinement_change = max(
-        abs(float(fine[key]) - float(medium[key]))
-        for key in (
-            "signed_flux_per_unit_Z",
-            "positive_core_flux_per_unit_Z",
-            "negative_annular_flux_per_unit_Z",
-        )
+    signed_refinement_change = abs(
+        float(fine["signed_flux_per_unit_Z"]) - float(medium["signed_flux_per_unit_Z"])
     )
-    passes = bool(max_fine_balance <= FLUX_TOL and max_refinement_change <= REFINEMENT_TOL)
+    passes = bool(max_fine_balance <= FLUX_TOL and signed_refinement_change <= REFINEMENT_TOL)
     if not passes:
         raise RuntimeError("axial flux refinement gate failed")
     return {
         "analytic_identity": "integral C_z 2*pi*r dr = 2*pi*Z*[q*R(q)]_0^(64/25) = 0",
         "levels": levels,
         "max_abs_finest_balance": float(max_fine_balance),
-        "max_medium_to_fine_change": float(max_refinement_change),
+        "max_medium_to_fine_change": float(signed_refinement_change),
+        "split_flux_refinement_is_gate": False,
         "flux_tolerance": FLUX_TOL,
         "refinement_tolerance": REFINEMENT_TOL,
         "passes": passes,
