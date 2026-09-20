@@ -120,11 +120,12 @@ def test_geometry_and_mean_identity_mismatches_fail_closed():
             bump_halfwidth=0.3,
         )
 
+    shift = 1.0e-4
     shifted = StrictInnerTransportRadialGeometry(
         time=geometry.time,
         axial_z=geometry.axial_z,
-        radii=tuple(float(value) for value in (radii + 1.0e-4)),
-        bump_center=geometry.bump_center,
+        radii=tuple(float(value) for value in (radii + shift)),
+        bump_center=geometry.bump_center + shift,
         bump_halfwidth=geometry.bump_halfwidth,
     )
     with pytest.raises(ValueError, match="radial grid"):
