@@ -1,18 +1,15 @@
 """Fail-closed A5 registration of the Agent-3 finite-correction stage contract.
 
 Agent 3 PR #888 defines the typed one-step interface required for a future real
-Kokuno correction cycle.  It recomputes a complete Navier--Stokes residual
-before/after a correction on disjoint held-in / held-out partitions, binds the
-same residual-protocol identity across the stage, and rejects incomplete defect
-provenance, held-out leakage, residual-as-forcing shortcuts, trivial/divergent
-corrections, or residual growth.
+Kokuno correction cycle. It recomputes a complete Navier--Stokes residual on
+disjoint held-in/held-out partitions before and after a correction and refuses
+incomplete provenance, held-out leakage, protocol drift, residual-as-forcing,
+trivial/divergent corrections, or residual growth.
 
-This A5 module only registers that downstream integration seam.  It does not
-copy Agent-3 mathematics, does not run a surrogate correction cycle, and does
-not invent an Agent-4 audit.  The current strict-inner candidate still lacks the
-corrected/global leading join, matched pressure, preregistered restricted
-forcing and an authorized correction velocity, so registration is not
-scientific admission and ``correction_ready`` remains false.
+This module registers that downstream seam only. It does not copy Agent-3
+mathematics, run a surrogate correction cycle, or invent Agent-4 scientific
+evidence. The current candidate remains strict-inner and incomplete, therefore
+``correction_ready`` and ``pde_validated`` remain false.
 """
 from __future__ import annotations
 
@@ -27,7 +24,6 @@ from .kokuno_a5_strict_inner_vorticity_artifact_ingest_contract import (
     validate_strict_inner_vorticity_artifact_ingest_contract,
 )
 
-
 SCHEMA = "kokuno-a5-finite-correction-stage-ingest-contract-v1"
 TASK = "KOKUNO-A5-FINITE-CORRECTION-STAGE-INGEST-081"
 PARENT_A5_PR = 884
@@ -40,19 +36,19 @@ AGENT3_SOURCE_BLOB = "4fc931fe7703b8b8e05efb41af957b54c9f7a4f9"
 AGENT3_WORKFLOW_BLOB = "07da1793048fdfe4369d7327a8dc1d00427819e4"
 AGENT3_DEDICATED_RUN = 35530175857
 AGENT3_TESTS_RUN = 35530175820
-AGENT3_SCHEMA = "kokuno-a3-finite-correction-stage-contract-v1"
 AGENT3_MODULE = "openai_ns_reconstruction.kokuno_finite_correction_stage"
 AGENT3_PUBLIC_API = "run_finite_correction_stage(backend,candidate,correction,held_in,held_out)"
 AGENT3_PARENT_PR = 882
 AGENT3_PARENT_HEAD = "29b385398d0c7636ed8d4049821a534d80728b33"
-
-# Exact-head Actions were queued at this freeze. Queued is not PASS.
 AGENT3_EXACT_HEAD_CI_CONCLUSION: str | None = None
 
-# No matching A4 finite-correction-stage audit exists at this freeze.  Agent 4
-# #883 independently audits the strict-inner vorticity artifact only.
-LATEST_AGENT4_CONTEXT_PR = 883
-LATEST_AGENT4_CONTEXT_HEAD = "772acaced47beb8d6d7cc4745833cbde06f10940"
+# Freshness context only: #889 independently audits the saved/reloaded
+# strict-inner pressure/forcing-free transport precursor. It is not a finite
+# correction-stage audit and not final PDE validation.
+LATEST_AGENT4_CONTEXT_PR = 889
+LATEST_AGENT4_CONTEXT_HEAD = "574fd5f7d67e5fbf905ef91a483a7e9e8124698d"
+LATEST_AGENT4_DEDICATED_RUN = 35530344739
+LATEST_AGENT4_TESTS_RUN = 35530344662
 AGENT4_DEDICATED_FINITE_CORRECTION_STAGE_AUDIT_PRESENT = False
 AGENT4_FINITE_CORRECTION_STAGE_AUDIT_CONCLUSION: str | None = None
 
@@ -94,10 +90,7 @@ AGENT3_STAGE_PROTOCOL = {
         "normalized_divergence_volume_l2",
     ],
     "reported_correction_metrics": [
-        "l2_norm",
-        "max_norm",
-        "divergence_max",
-        "nontriviality",
+        "l2_norm", "max_norm", "divergence_max", "nontriviality"
     ],
     "observed_contraction_factors_recorded_for_held_in_and_held_out": True,
     "trivial_correction_rejected": True,
@@ -137,10 +130,10 @@ CURRENT_AGENT3_SCOPED_SOURCE_ADMISSION = {
 def _digest(payload: Mapping[str, Any]) -> str:
     body = dict(payload)
     body.pop("contract_sha256", None)
-    raw = json.dumps(
+    encoded = json.dumps(
         body, sort_keys=True, separators=(",", ":"), allow_nan=False
     ).encode("utf-8")
-    return hashlib.sha256(raw).hexdigest()
+    return hashlib.sha256(encoded).hexdigest()
 
 
 def deterministic_finite_correction_stage_ingest_contract(
@@ -151,10 +144,6 @@ def deterministic_finite_correction_stage_ingest_contract(
     )
     validate_strict_inner_vorticity_artifact_ingest_contract(parent)
 
-    # This is deliberately an integration-interface admission only.  It stays
-    # false while the exact A3 CI is unresolved and the inherited candidate is
-    # not a complete/global NS candidate.  A dedicated A4 correction/PDE audit
-    # is separately tracked and is not fabricated as a requirement already met.
     stage_contract_ingest_admitted = bool(
         parent["ingest_status"]["strict_inner_vorticity_artifact_ingest_admitted"]
         and AGENT3_EXACT_HEAD_CI_CONCLUSION == "success"
@@ -178,9 +167,8 @@ def deterministic_finite_correction_stage_ingest_contract(
             "full_pipeline_candidate_artifact_stage_reached": False,
             "independent_final_pde_validation_stage_reached": False,
             "reason": (
-                "the current Kokuno object remains strict-inner and lacks the corrected/global "
-                "leading join, complete NS defect, matched pressure, preregistered restricted "
-                "forcing and an authorized Agent-3 correction velocity"
+                "current Kokuno object lacks corrected/global leading join, complete NS defect, "
+                "matched pressure, preregistered restricted forcing and authorized correction velocity"
             ),
         },
         "agent3_binding": {
@@ -190,7 +178,6 @@ def deterministic_finite_correction_stage_ingest_contract(
             "workflow_blob_sha": AGENT3_WORKFLOW_BLOB,
             "dedicated_run": AGENT3_DEDICATED_RUN,
             "tests_run": AGENT3_TESTS_RUN,
-            "schema": AGENT3_SCHEMA,
             "module": AGENT3_MODULE,
             "public_api": AGENT3_PUBLIC_API,
             "parent_pr": AGENT3_PARENT_PR,
@@ -200,13 +187,17 @@ def deterministic_finite_correction_stage_ingest_contract(
         "agent4_context": {
             "latest_relevant_candidate_audit_pr": LATEST_AGENT4_CONTEXT_PR,
             "latest_relevant_candidate_audit_head": LATEST_AGENT4_CONTEXT_HEAD,
+            "latest_relevant_candidate_audit_dedicated_run": LATEST_AGENT4_DEDICATED_RUN,
+            "latest_relevant_candidate_audit_tests_run": LATEST_AGENT4_TESTS_RUN,
             "dedicated_finite_correction_stage_audit_present": (
                 AGENT4_DEDICATED_FINITE_CORRECTION_STAGE_AUDIT_PRESENT
             ),
             "finite_correction_stage_audit_conclusion": (
                 AGENT4_FINITE_CORRECTION_STAGE_AUDIT_CONCLUSION
             ),
-            "latest_a4_scope": "saved/reloaded strict-inner vorticity artifact curl/divergence audit",
+            "latest_a4_scope": (
+                "saved/reloaded strict-inner pressure/forcing-free transport precursor audit"
+            ),
             "latest_a4_scope_is_finite_correction_stage_audit": False,
             "latest_a4_scope_is_final_pde_validation": False,
         },
@@ -218,12 +209,8 @@ def deterministic_finite_correction_stage_ingest_contract(
             "agent3_typed_stage_contract_present": True,
             "agent3_mechanics_receipt_is_candidate_residual_evidence": False,
             "agent3_real_candidate_finite_correction_cycle_run": False,
-            "agent4_dedicated_finite_correction_stage_audit_present": (
-                AGENT4_DEDICATED_FINITE_CORRECTION_STAGE_AUDIT_PRESENT
-            ),
-            "agent4_finite_correction_stage_audit_conclusion": (
-                AGENT4_FINITE_CORRECTION_STAGE_AUDIT_CONCLUSION
-            ),
+            "agent4_dedicated_finite_correction_stage_audit_present": False,
+            "agent4_finite_correction_stage_audit_conclusion": None,
             "finite_correction_stage_contract_ingest_admitted": stage_contract_ingest_admitted,
             "real_correction_scientifically_admitted": False,
         },
