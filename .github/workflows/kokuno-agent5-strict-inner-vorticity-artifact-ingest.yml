@@ -1,0 +1,81 @@
+name: kokuno-agent5-strict-inner-vorticity-artifact-ingest
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_a5_strict_inner_vorticity_artifact_ingest_contract.py'
+      - 'tests/test_kokuno_a5_strict_inner_vorticity_artifact_ingest_contract.py'
+      - '.github/workflows/kokuno-agent5-strict-inner-vorticity-artifact-ingest.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Assert exact head
+        if: github.event_name == 'pull_request'
+        run: test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha }}"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+
+      - name: Focused warnings-as-errors regression
+        run: >-
+          python -m pytest -q -W error
+          tests/test_kokuno_a5_strict_inner_vorticity_artifact_ingest_contract.py
+
+      - name: Verify frozen parent and sibling exact identities
+        run: |
+          test "$(git rev-parse 550a7039390979f2705bb75da98b43cc7259af02:src/openai_ns_reconstruction/kokuno_a5_strict_inner_spatial_artifact_ingest_contract.py)" = "ddebb621746d63ba933cb8ce88d7e739c3aec724"
+          git fetch origin ded8c88dd03b784368cf1a30601faf76a3682c64
+          git fetch origin 772acaced47beb8d6d7cc4745833cbde06f10940
+          test "$(git rev-parse ded8c88dd03b784368cf1a30601faf76a3682c64:src/openai_ns_reconstruction/kokuno_strict_inner_leading_oscillatory_vorticity_candidate.py)" = "9dd3b7400fea8f2d4462cda86561103e29a1d053"
+          test "$(git rev-parse ded8c88dd03b784368cf1a30601faf76a3682c64:.github/workflows/kokuno-agent2-strict-inner-vorticity-candidate.yml)" = "024069383d9390e54e101529332bfd2707040659"
+          test "$(git rev-parse 772acaced47beb8d6d7cc4745833cbde06f10940:src/openai_ns_reconstruction/kokuno_a4_strict_inner_vorticity_artifact_independent_audit.py)" = "c0121785a487771711f6940426025d25731b4b3a"
+          test "$(git rev-parse 772acaced47beb8d6d7cc4745833cbde06f10940:.github/workflows/kokuno-agent4-strict-inner-vorticity-artifact-independent-audit.yml)" = "d47c069b81e6052fc112a3e2f3a1a3b32e9558a3"
+
+      - name: Emit fail-closed A5 routing receipt
+        run: |
+          HEAD_SHA="$(git rev-parse HEAD)"
+          python -m openai_ns_reconstruction.kokuno_a5_strict_inner_vorticity_artifact_ingest_contract \
+            --exact-head "$HEAD_SHA" \
+            --output artifacts/kokuno_agent5_strict_inner_vorticity_artifact_ingest_contract.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=json.loads(Path('artifacts/kokuno_agent5_strict_inner_vorticity_artifact_ingest_contract.json').read_text())
+          assert p['ingest_status']['strict_inner_vorticity_artifact_ingest_admitted'] is False
+          assert p['stage_state'] == {
+              'leading_ready': False,
+              'oscillatory_ready': True,
+              'correction_ready': False,
+              'velocity_export_ready': False,
+              'pde_validated': False,
+          }
+          assert p['vorticity_artifact_handoff']['pressure_in_artifact_surface'] is False
+          assert p['vorticity_artifact_handoff']['restricted_forcing_in_artifact_surface'] is False
+          assert p['truth_boundary']['three_resolution_morphology_verified'] is False
+          assert p['truth_boundary']['whole_domain_vorticity_morphology_verified'] is False
+          assert p['truth_boundary']['free_residual_defined_forcing_allowed'] is False
+          assert p['truth_boundary']['threshold_relaxed'] is False
+          PY
+
+      - name: Upload routing receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-strict-inner-vorticity-artifact-ingest-v1
+          path: artifacts/kokuno_agent5_strict_inner_vorticity_artifact_ingest_contract.json
+          if-no-files-found: error
