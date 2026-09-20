@@ -1,0 +1,495 @@
+name: kokuno-agent4-strict-inner-spatial-candidate-independent-audit
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_a4_strict_inner_spatial_candidate_independent_audit.py'
+      - 'tests/test_constrained_kokuno_a4_strict_inner_spatial_candidate_independent_audit.py'
+      - '.github/workflows/kokuno-agent4-strict-inner-spatial-candidate-independent-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Assert exact head
+        if: github.event_name == 'pull_request'
+        run: test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha }}"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+
+      - name: Focused warnings-as-errors regression
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_a4_strict_inner_spatial_candidate_independent_audit.py
+
+      - name: Verify exact Agent-2 spatial candidate and fetch Agent-1 runtime
+        run: |
+          test "$(git rev-parse 9cb3869b9cfd2d5b8dcb1da222df74d80e12d0c2:src/openai_ns_reconstruction/kokuno_strict_inner_leading_oscillatory_spatial_candidate.py)" = "276c943cd1e769c36d1615366266bf3b2c633040"
+          test "$(git rev-parse 68f84128f07b6743d368a9ab7a051e441f5a59b2:src/openai_ns_reconstruction/kokuno_strict_inner_leading_oscillatory_differentiable_candidate.py)" = "8c09048a1d15dff321642e21ee699cce7d19831a"
+          git fetch origin 300919075c07396e4e466f553be78eaae0707df2
+          git worktree add --detach "$RUNNER_TEMP/kokuno-a1-848" 300919075c07396e4e466f553be78eaae0707df2
+          test "$(git -C "$RUNNER_TEMP/kokuno-a1-848" rev-parse HEAD)" = "300919075c07396e4e466f553be78eaae0707df2"
+          test "$(git -C "$RUNNER_TEMP/kokuno-a1-848" rev-parse HEAD:src/openai_ns_reconstruction/kokuno_pa10_cartesian_center_transport_viscous.py)" = "5076ffa69748c2d7e68289a155b67288eab6dab4"
+          test "$(git -C "$RUNNER_TEMP/kokuno-a1-848" rev-parse HEAD:src/openai_ns_reconstruction/kokuno_pa10_cartesian_center_spatial_derivatives.py)" = "3dbde84d431ba72e847c631543137a5fdfb69459"
+
+      - name: Saved-reloaded black-box spatial audit
+        env:
+          A1_WORKTREE: ${{ runner.temp }}/kokuno-a1-848
+        run: |
+          python - <<'PY'
+          from __future__ import annotations
+
+          import copy
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+          import subprocess
+          import sys
+
+          import numpy as np
+
+          from openai_ns_reconstruction.kokuno_a4_strict_inner_spatial_candidate_independent_audit import (
+              AGENT1_REFERENCE_BLOB,
+              AGENT1_REFERENCE_HEAD,
+              AGENT2_SPATIAL_CANDIDATE_BLOB,
+              AGENT2_SPATIAL_CANDIDATE_HEAD,
+              DIVERGENCE_SAMPLED_MAX_GATE,
+              DIVERGENCE_SAMPLED_RMS_GATE,
+              HELDOUT_SEED,
+              NONTRIVIAL_VELOCITY_RMS_FLOOR,
+              RICHARDSON_SPATIAL_STEPS,
+              component_axis_error_metrics,
+              divergence_from_jacobian,
+              divergence_gate_failures,
+              frozen_gate_failures,
+              level_error_metrics,
+              public_contract,
+              refinement_ratio,
+              richardson_jacobian_level,
+              sampled_scalar_rms,
+              tensor_rms,
+              vector_rms,
+              vorticity_from_jacobian,
+          )
+          from openai_ns_reconstruction.kokuno_strict_inner_leading_oscillatory_spatial_candidate import (
+              KokunoStrictInnerLeadingOscillatorySpatialCandidate,
+          )
+
+          a1 = Path(os.environ['A1_WORKTREE'])
+          server_code = r'''
+          import json, sys
+          import numpy as np
+          from openai_ns_reconstruction.kokuno_pa10_cartesian_center_transport_viscous import KokunoPA10CartesianCenterTransportViscous
+          field = KokunoPA10CartesianCenterTransportViscous()
+          for line in sys.stdin:
+              request = json.loads(line)
+              op = request['op']
+              if op == 'meta':
+                  result = {
+                      'field_sha256': field.field_sha256,
+                      'temporal_derivative_sha256': field.temporal_derivative_sha256,
+                      'spatial_derivative_sha256': field.spatial_derivative_sha256,
+                      'source_X_interval': list(field.spatial.source_X_interval),
+                      'time_interval': list(field.field.time_interval),
+                  }
+              elif op == 'forward':
+                  out = field.field.cartesian_from_similarity(
+                      np.asarray(request['X'], dtype=float),
+                      np.asarray(request['eta'], dtype=float),
+                      np.asarray(request['t'], dtype=float),
+                      np.asarray(request['theta'], dtype=float),
+                  )
+                  result = {k: np.asarray(out[k], dtype=float).tolist() for k in ('x','y','z','t','X','eta')}
+              elif op in ('velocity', 'velocity_dt'):
+                  out = getattr(field, op)(
+                      np.asarray(request['x'], dtype=float),
+                      np.asarray(request['y'], dtype=float),
+                      np.asarray(request['z'], dtype=float),
+                      np.asarray(request['t'], dtype=float),
+                  )
+                  result = {'value': np.asarray(out, dtype=float).tolist()}
+              elif op == 'velocity_jacobian':
+                  out = field.spatial.velocity_jacobian(
+                      np.asarray(request['x'], dtype=float),
+                      np.asarray(request['y'], dtype=float),
+                      np.asarray(request['z'], dtype=float),
+                      np.asarray(request['t'], dtype=float),
+                  )
+                  result = {'value': np.asarray(out, dtype=float).tolist()}
+              else:
+                  raise RuntimeError(f'unknown op {op}')
+              print(json.dumps(result, sort_keys=True), flush=True)
+          '''
+
+          env = os.environ.copy()
+          env['PYTHONPATH'] = str(a1 / 'src')
+          proc = subprocess.Popen(
+              [sys.executable, '-u', '-c', server_code],
+              cwd=a1,
+              env=env,
+              stdin=subprocess.PIPE,
+              stdout=subprocess.PIPE,
+              stderr=subprocess.PIPE,
+              text=True,
+              bufsize=1,
+          )
+
+          def ask(payload):
+              assert proc.stdin is not None and proc.stdout is not None
+              proc.stdin.write(json.dumps(payload, separators=(',', ':')) + '\n')
+              proc.stdin.flush()
+              line = proc.stdout.readline()
+              if not line:
+                  assert proc.stderr is not None
+                  raise RuntimeError('Agent-1 backend exited: ' + proc.stderr.read())
+              return json.loads(line)
+
+          meta = ask({'op':'meta'})
+
+          class ExactAgent1SpatialBackend:
+              field_sha256 = meta['field_sha256']
+              temporal_derivative_sha256 = meta['temporal_derivative_sha256']
+              spatial_derivative_sha256 = meta['spatial_derivative_sha256']
+
+              @staticmethod
+              def _arrays(x, y, z, t):
+                  return np.broadcast_arrays(
+                      np.asarray(x, dtype=float), np.asarray(y, dtype=float),
+                      np.asarray(z, dtype=float), np.asarray(t, dtype=float),
+                  )
+
+              def _call(self, op, x, y, z, t):
+                  x, y, z, t = self._arrays(x, y, z, t)
+                  out = ask({
+                      'op': op,
+                      'x': x.tolist(), 'y': y.tolist(),
+                      'z': z.tolist(), 't': t.tolist(),
+                  })
+                  return np.asarray(out['value'], dtype=float)
+
+              def velocity(self, x, y, z, t):
+                  return self._call('velocity', x, y, z, t)
+
+              def velocity_dt(self, x, y, z, t):
+                  return self._call('velocity_dt', x, y, z, t)
+
+              def velocity_jacobian(self, x, y, z, t):
+                  return self._call('velocity_jacobian', x, y, z, t)
+
+          if meta['time_interval'] != [0.25, 0.75]:
+              raise RuntimeError('unexpected Agent-1 time interval')
+          if meta['source_X_interval'][1] < 0.35:
+              raise RuntimeError('unexpected Agent-1 strict-inner X domain')
+
+          # Fresh held-out source points.  All numerical choices were frozen in
+          # issue #15 before this Actions output existed.
+          rng = np.random.default_rng(HELDOUT_SEED)
+          random_count = 160
+          X_random = rng.uniform(0.17, 0.27, random_count)
+          eta_random = rng.uniform(-0.24, 0.24, random_count)
+          t_random = rng.uniform(0.46, 0.54, random_count)
+          theta_random = rng.uniform(-np.pi, np.pi, random_count)
+
+          X_probe = np.asarray([0.0, 0.0, 0.0, 1.0e-12, 1.0e-10, 1.0e-8], dtype=float)
+          eta_probe = np.asarray([-0.20, 0.00, 0.20, -0.15, 0.05, 0.15], dtype=float)
+          t_probe = np.asarray([0.47, 0.50, 0.53, 0.485, 0.515, 0.525], dtype=float)
+          theta_probe = np.asarray([0.0, 1.1, -2.2, 0.7, -1.4, 2.4], dtype=float)
+
+          X = np.concatenate((X_random, X_probe))
+          eta = np.concatenate((eta_random, eta_probe))
+          source_t = np.concatenate((t_random, t_probe))
+          theta = np.concatenate((theta_random, theta_probe))
+          probe_kind = ['off_grid'] * random_count + ['axis'] * 3 + ['axis_near'] * 3
+
+          forward = ask({
+              'op':'forward', 'X':X.tolist(), 'eta':eta.tolist(),
+              't':source_t.tolist(), 'theta':theta.tolist(),
+          })
+          x = np.asarray(forward['x'], dtype=float)
+          y = np.asarray(forward['y'], dtype=float)
+          z = np.asarray(forward['z'], dtype=float)
+          tt = np.asarray(forward['t'], dtype=float)
+
+          backend = ExactAgent1SpatialBackend()
+          candidate = KokunoStrictInnerLeadingOscillatorySpatialCandidate(backend)
+          artifact_dir = Path('artifacts/kokuno_a4_spatial_candidate_audit')
+          artifact_dir.mkdir(parents=True, exist_ok=True)
+          manifest_path = artifact_dir / 'candidate_manifest.json'
+          manifest = candidate.save_manifest(manifest_path)
+          rebound = KokunoStrictInnerLeadingOscillatorySpatialCandidate.load_manifest(
+              backend, manifest_path
+          )
+
+          # Candidate-facing production quantity and independent black-box
+          # reference.  The reference below calls rebound.velocity only.
+          production = np.asarray(
+              rebound.velocity_jacobian(x, y, z, tt), dtype=float
+          )
+          public_velocity = np.asarray(rebound.velocity(x, y, z, tt), dtype=float)
+          levels = tuple(
+              richardson_jacobian_level(
+                  rebound.velocity, x, y, z, tt, step=step
+              )
+              for step in RICHARDSON_SPATIAL_STEPS
+          )
+          fine = levels[-1].jacobian
+
+          failures = frozen_gate_failures(production, levels)
+          velocity_rms = vector_rms(public_velocity)
+          if velocity_rms < NONTRIVIAL_VELOCITY_RMS_FLOOR:
+              failures.append('velocity_nontriviality')
+
+          level_metrics = [level_error_metrics(production, level) for level in levels]
+          coarse_to_medium, medium_to_fine, refinement = refinement_ratio(*levels)
+          independent_divergence = divergence_from_jacobian(fine)
+          production_divergence = divergence_from_jacobian(production)
+          independent_vorticity = vorticity_from_jacobian(fine)
+          production_vorticity = vorticity_from_jacobian(production)
+          component_metrics = component_axis_error_metrics(production, fine)
+
+          # Exact saved/reloaded surface replay.
+          rebound_velocity_replay = float(np.max(np.abs(
+              rebound.velocity(x, y, z, tt) - candidate.velocity(x, y, z, tt)
+          )))
+          rebound_jacobian_replay = float(np.max(np.abs(
+              rebound.velocity_jacobian(x, y, z, tt)
+              - candidate.velocity_jacobian(x, y, z, tt)
+          )))
+          if rebound_velocity_replay != 0.0:
+              failures.append('manifest_rebind_velocity')
+          if rebound_jacobian_replay != 0.0:
+              failures.append('manifest_rebind_velocity_jacobian')
+
+          # Frozen production mutations must be detected by the unchanged
+          # implementation-consistency gates.
+          scale_mutation_failures = frozen_gate_failures(0.99 * production, levels)
+          if not ({'fine_relative_rms', 'fine_relative_sampled_max'} & set(scale_mutation_failures)):
+              failures.append('scale_mutation_not_detected')
+
+          entry_rms = np.sqrt(np.mean(production * production, axis=0))
+          component_index, axis_index = np.unravel_index(
+              int(np.argmax(entry_rms)), entry_rms.shape
+          )
+          sign_mutation = production.copy()
+          sign_mutation[..., component_index, axis_index] *= -1.0
+          sign_mutation_failures = frozen_gate_failures(sign_mutation, levels)
+          if not ({'fine_relative_rms', 'fine_relative_sampled_max'} & set(sign_mutation_failures)):
+              failures.append('sign_mutation_not_detected')
+
+          divergence_mutation = fine.copy()
+          divergence_mutation[..., 0, 0] += 1.0e-3
+          divergence_mutation_failures = divergence_gate_failures(divergence_mutation)
+          if not {'divergence_sampled_max', 'divergence_sampled_rms'} <= set(divergence_mutation_failures):
+              failures.append('divergence_mutation_not_detected')
+
+          # Checksum-valid semantic/scientific manifest mutations must fail at
+          # identity/gate validation rather than malformed-JSON validation.
+          def canonical_sha(payload):
+              return hashlib.sha256(
+                  json.dumps(
+                      payload, sort_keys=True, separators=(',', ':'), allow_nan=False
+                  ).encode('utf-8')
+              ).hexdigest()
+
+          def write_rehashed(payload, path):
+              data = copy.deepcopy(payload)
+              data.pop('manifest_sha256', None)
+              data['manifest_sha256'] = canonical_sha(data)
+              path.write_text(json.dumps(data, indent=2, sort_keys=True) + '\n')
+
+          semantic_mutation = copy.deepcopy(manifest)
+          semantic_mutation['spatial_sha256'] = (
+              ('0' if semantic_mutation['spatial_sha256'][0] != '0' else '1')
+              + semantic_mutation['spatial_sha256'][1:]
+          )
+          semantic_path = artifact_dir / 'mutated_spatial_sha_manifest.json'
+          write_rehashed(semantic_mutation, semantic_path)
+          semantic_rejected = False
+          try:
+              KokunoStrictInnerLeadingOscillatorySpatialCandidate.load_manifest(
+                  backend, semantic_path
+              )
+          except ValueError:
+              semantic_rejected = True
+          if not semantic_rejected:
+              failures.append('spatial_semantic_mutation_not_rejected')
+
+          gate_mutation = copy.deepcopy(manifest)
+          gate_mutation['scientific_gates']['momentum_max_l2'] = 1.001e-3
+          gate_path = artifact_dir / 'mutated_momentum_gate_manifest.json'
+          write_rehashed(gate_mutation, gate_path)
+          gate_rejected = False
+          try:
+              KokunoStrictInnerLeadingOscillatorySpatialCandidate.load_manifest(
+                  backend, gate_path
+              )
+          except ValueError:
+              gate_rejected = True
+          if not gate_rejected:
+              failures.append('momentum_gate_mutation_not_rejected')
+
+          contract = public_contract()
+          truth = contract['truth_boundary']
+          required_false = (
+              'global_leading_velocity_materialized',
+              'outer_join_materialized',
+              'matched_pressure_included',
+              'restricted_forcing_included',
+              'correction_velocity_included',
+              'complete_kokuno_candidate_assembled',
+              'leading_only_ns_residual_assessed',
+              'leading_plus_oscillatory_ns_residual_assessed',
+              'after_correction_ns_residual_assessed',
+              'heldout_ns_momentum_residual_assessed',
+              'formal_full_domain_pde_gate_assessed',
+              'whole_domain_boundary_support_gate_assessed',
+              'pde_validated',
+              'paper_exact',
+          )
+          if any(truth[name] for name in required_false):
+              failures.append('truth_boundary_promotion')
+
+          # Locate the worst individual component/axis discrepancy for precise
+          # routing to the upstream owner if the seam fails.
+          delta = fine - production
+          flat_index = int(np.argmax(np.abs(delta)))
+          sample_index, worst_component, worst_axis = np.unravel_index(
+              flat_index, delta.shape
+          )
+          labels = ('x', 'y', 'z')
+          components = ('u', 'v', 'w')
+
+          axis_mask = np.asarray([kind == 'axis' for kind in probe_kind], dtype=bool)
+          near_mask = np.asarray([kind == 'axis_near' for kind in probe_kind], dtype=bool)
+          exact_axis_finite = bool(np.all(np.isfinite(production[axis_mask])))
+          near_axis_finite = bool(np.all(np.isfinite(production[near_mask])))
+          if not exact_axis_finite:
+              failures.append('exact_axis_nonfinite')
+          if not near_axis_finite:
+              failures.append('axis_near_nonfinite')
+
+          receipt = {
+              'schema': 'kokuno-a4-strict-inner-spatial-candidate-independent-audit-receipt-v1',
+              'exact_head': subprocess.check_output(['git','rev-parse','HEAD'], text=True).strip(),
+              'agent2_spatial_candidate_head': AGENT2_SPATIAL_CANDIDATE_HEAD,
+              'agent2_spatial_candidate_blob': AGENT2_SPATIAL_CANDIDATE_BLOB,
+              'agent1_reference_head': AGENT1_REFERENCE_HEAD,
+              'agent1_reference_blob': AGENT1_REFERENCE_BLOB,
+              'velocity_candidate_sha256': rebound.velocity_candidate_sha256,
+              'differentiable_sha256': rebound.differentiable_sha256,
+              'spatial_sha256': rebound.spatial_sha256,
+              'manifest_sha256': manifest['manifest_sha256'],
+              'heldout_seed': HELDOUT_SEED,
+              'sample_count': int(x.size),
+              'off_grid_count': random_count,
+              'exact_axis_count': int(np.sum(axis_mask)),
+              'axis_near_count': int(np.sum(near_mask)),
+              'source_X_range_off_grid': [float(np.min(X_random)), float(np.max(X_random))],
+              'source_eta_range_off_grid': [float(np.min(eta_random)), float(np.max(eta_random))],
+              'time_range_off_grid': [float(np.min(t_random)), float(np.max(t_random))],
+              'richardson_spatial_steps': list(RICHARDSON_SPATIAL_STEPS),
+              'level_error_metrics': level_metrics,
+              'refinement': {
+                  'coarse_to_medium_absolute_rms': coarse_to_medium,
+                  'medium_to_fine_absolute_rms': medium_to_fine,
+                  'ratio': refinement,
+              },
+              'component_axis_fine_errors': component_metrics,
+              'production_jacobian_rms': tensor_rms(production),
+              'public_velocity_rms': velocity_rms,
+              'independent_divergence': {
+                  'sampled_max': float(np.max(np.abs(independent_divergence))),
+                  'sampled_rms': sampled_scalar_rms(independent_divergence),
+                  'gate_sampled_max': DIVERGENCE_SAMPLED_MAX_GATE,
+                  'gate_sampled_rms': DIVERGENCE_SAMPLED_RMS_GATE,
+                  'norm_scope': 'held-out sampled RMS, not whole-domain volume L2',
+              },
+              'production_divergence': {
+                  'sampled_max': float(np.max(np.abs(production_divergence))),
+                  'sampled_rms': sampled_scalar_rms(production_divergence),
+              },
+              'independent_vorticity_rms': vector_rms(independent_vorticity),
+              'production_vorticity_rms': vector_rms(production_vorticity),
+              'worst_component_axis': {
+                  'sample_index': sample_index,
+                  'probe_kind': probe_kind[sample_index],
+                  'x': float(x[sample_index]),
+                  'y': float(y[sample_index]),
+                  'z': float(z[sample_index]),
+                  't': float(tt[sample_index]),
+                  'source_X': float(X[sample_index]),
+                  'source_eta': float(eta[sample_index]),
+                  'component': components[worst_component],
+                  'axis': labels[worst_axis],
+                  'production_value': float(production[sample_index, worst_component, worst_axis]),
+                  'independent_value': float(fine[sample_index, worst_component, worst_axis]),
+                  'absolute_error': float(abs(delta[sample_index, worst_component, worst_axis])),
+              },
+              'axis_probe_finiteness': {
+                  'exact_axis': exact_axis_finite,
+                  'axis_near': near_axis_finite,
+              },
+              'manifest_replay': {
+                  'velocity_abs_max': rebound_velocity_replay,
+                  'velocity_jacobian_abs_max': rebound_jacobian_replay,
+              },
+              'mutations': {
+                  'production_scale_0p99_failures': scale_mutation_failures,
+                  'production_sign_flip_component': components[component_index],
+                  'production_sign_flip_axis': labels[axis_index],
+                  'production_sign_flip_failures': sign_mutation_failures,
+                  'independent_Jxx_plus_1e-3_failures': divergence_mutation_failures,
+                  'checksum_valid_spatial_sha_mutation_rejected': semantic_rejected,
+                  'checksum_valid_momentum_gate_1p001e-3_mutation_rejected': gate_rejected,
+              },
+              'frozen_final_project_gates': {
+                  'momentum_normalized_max_l2': 1.0e-3,
+                  'divergence_max_l2': 1.0e-5,
+                  'free_residual_defined_forcing_forbidden': True,
+              },
+              'truth_boundary': truth,
+              'scientific_failures': sorted(set(failures)),
+              'scoped_audit_passed': not failures,
+          }
+          receipt_without_sha = dict(receipt)
+          receipt['receipt_sha256'] = canonical_sha(receipt_without_sha)
+          receipt_path = artifact_dir / 'receipt.json'
+          receipt_path.write_text(json.dumps(receipt, indent=2, sort_keys=True) + '\n')
+          print(json.dumps(receipt, indent=2, sort_keys=True))
+
+          try:
+              if failures:
+                  raise SystemExit('scientific gate failures: ' + ', '.join(sorted(set(failures))))
+          finally:
+              if proc.stdin is not None:
+                  proc.stdin.close()
+              proc.terminate()
+              try:
+                  proc.wait(timeout=5)
+              except subprocess.TimeoutExpired:
+                  proc.kill()
+          PY
+
+      - name: Upload exact-head manifest and receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a4-strict-inner-spatial-candidate-independent-audit
+          path: artifacts/kokuno_a4_spatial_candidate_audit
+          if-no-files-found: warn
