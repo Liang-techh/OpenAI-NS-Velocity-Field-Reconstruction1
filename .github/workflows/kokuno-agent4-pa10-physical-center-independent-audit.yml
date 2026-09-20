@@ -1,0 +1,120 @@
+name: kokuno-agent4-pa10-physical-center-independent-audit
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a4-pa10-physical-center-independent-audit-068
+  pull_request:
+    paths:
+      - src/openai_ns_reconstruction/kokuno_pa10_physical_center_profile_contract.py
+      - src/openai_ns_reconstruction/kokuno_pa10_physical_center_independent_audit.py
+      - tests/test_constrained_kokuno_pa10_physical_center_profile_contract.py
+      - tests/test_constrained_kokuno_pa10_physical_center_independent_audit.py
+      - .github/workflows/kokuno-agent4-pa10-physical-center-independent-audit.yml
+
+jobs:
+  independent-physical-center-audit:
+    runs-on: ubuntu-latest
+    env:
+      EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+    steps:
+      - name: Check out exact head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 1
+
+      - name: Assert exact checkout
+        run: |
+          actual="$(git rev-parse HEAD)"
+          test "$actual" = "$EXPECTED_HEAD"
+          echo "exact_head=$actual"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install repository
+        run: python -m pip install -e '.[dev]'
+
+      - name: Compile independent audit
+        run: |
+          python -m compileall -q \
+            src/openai_ns_reconstruction/kokuno_pa10_physical_center_profile_contract.py \
+            src/openai_ns_reconstruction/kokuno_pa10_physical_center_independent_audit.py
+
+      - name: Run focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_pa10_physical_center_profile_contract.py \
+            tests/test_constrained_kokuno_pa10_physical_center_independent_audit.py
+
+      - name: Generate exact-head independent receipt
+        run: |
+          mkdir -p outputs/kokuno_agent4
+          python -m openai_ns_reconstruction.kokuno_pa10_physical_center_independent_audit \
+            --out outputs/kokuno_agent4/pa10_physical_center_independent_audit.json \
+            --seed 9173451 \
+            --samples 2048
+
+      - name: Validate receipt truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          path = Path('outputs/kokuno_agent4/pa10_physical_center_independent_audit.json')
+          report = json.loads(path.read_text())
+          assert report['exact_head'] == os.environ['EXPECTED_HEAD']
+          assert report['audit_passed'] is True
+          assert report['failed_guards'] == []
+          assert all(report['guards'].values())
+          assert report['mapping_formula_independently_consistent'] is True
+          assert report['configured_C_real_axis_normalization_obstruction_detected'] is True
+          assert report['normalization_margin_phi_minus_C'] > 0.0
+          assert report['physical_center_profile_independently_admitted'] is False
+          assert report['seed'] == 9173451
+          assert report['fresh_sample_count'] == 2048
+          assert report['simpson_levels'] == [64, 128, 256]
+          assert report['fd_steps'] == [0.004, 0.002, 0.001]
+          assert report['gates']['final_momentum_max_L2'] == 1e-3
+          assert report['gates']['final_divergence_max_L2'] == 1e-5
+          truth = report['truth_boundary']
+          for key in (
+              'source_complex_C_normalization_certified',
+              'configured_C_real_axis_source_condition_admitted',
+              'source_center_is_final_corrected_fixed_point',
+              'fixed_point_correction_materialized',
+              'global_leading_profile_reconstructed',
+              'cartesian_spacetime_velocity_materialized',
+              'matched_global_pressure_available',
+              'restricted_forcing_composite_available',
+              'leading_only_ns_residual_assessed',
+              'leading_plus_oscillatory_ns_residual_assessed',
+              'after_correction_ns_residual_assessed',
+              'heldout_ns_momentum_residual_assessed',
+              'formal_full_domain_pde_gate_assessed',
+              'pde_validated',
+              'paper_exact',
+              'openai_field_identified',
+              'blowup_proved',
+          ):
+              assert truth[key] is False, key
+          print(json.dumps({
+              'receipt_sha256': report['receipt_sha256'],
+              'maximum_mapping_relative_error': report['maximum_mapping_relative_error'],
+              'maximum_finest_derivative_relative_rms': report['maximum_finest_derivative_relative_rms'],
+              'configured_C': report['configured_C'],
+              'independent_real_axis_phi_star_sampled_max': report['independent_real_axis_phi_star_sampled_max'],
+              'normalization_margin_phi_minus_C': report['normalization_margin_phi_minus_C'],
+          }, sort_keys=True))
+          PY
+
+      - name: Upload independent receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent4-pa10-physical-center-independent-audit-v1
+          path: outputs/kokuno_agent4/pa10_physical_center_independent_audit.json
+          if-no-files-found: error
