@@ -1,0 +1,134 @@
+name: kokuno-agent5-fixed-contract-full-ns-validation-ingest
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_a5_fixed_contract_full_ns_validation_ingest_contract.py'
+      - 'tests/test_kokuno_a5_fixed_contract_full_ns_validation_ingest_contract.py'
+      - '.github/workflows/kokuno-agent5-fixed-contract-full-ns-validation-ingest.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out exact event head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Assert exact head
+        if: github.event_name == 'pull_request'
+        run: test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha }}"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install repository
+        run: python -m pip install -e '.[dev]'
+
+      - name: Compile and run focused A5 regressions
+        run: |
+          python -m py_compile \
+            src/openai_ns_reconstruction/kokuno_a5_fixed_contract_full_ns_validation_ingest_contract.py \
+            tests/test_kokuno_a5_fixed_contract_full_ns_validation_ingest_contract.py
+          python -m pytest -q -W error \
+            tests/test_kokuno_a5_finite_correction_stage_ingest_contract.py \
+            tests/test_kokuno_a5_fixed_contract_full_ns_validation_ingest_contract.py
+
+      - name: Verify exact Agent-3 and Agent-4 identities
+        run: |
+          set -euo pipefail
+          A3_HEAD='d305b64edcdde4f16dd8a48908f53fa23c2b9baf'
+          A3_SOURCE_BLOB='0cd41dfcc998064c37075b6086a246e93831ebfd'
+          A3_WORKFLOW_BLOB='1488f61035e47af3e7d8c2aac280c4201b75876d'
+          A4_HEAD='e8a7712515f75bb8a0a5d86b9a6177ab9447f2b1'
+          A4_SOURCE_BLOB='a9e46daf60d909a63261dd10821e1a08101dd872'
+          A4_WORKFLOW_BLOB='c4455ddef4c74b77707de770dcef91bb71af8144'
+          git fetch --no-tags --depth=1 origin "$A3_HEAD"
+          git fetch --no-tags --depth=1 origin "$A4_HEAD"
+          test "$(git rev-parse "$A3_HEAD":src/openai_ns_reconstruction/kokuno_finite_correction_fixed_physical_contract.py)" = "$A3_SOURCE_BLOB"
+          test "$(git rev-parse "$A3_HEAD":.github/workflows/kokuno-agent3-finite-correction-physical-contract.yml)" = "$A3_WORKFLOW_BLOB"
+          test "$(git rev-parse "$A4_HEAD":src/openai_ns_reconstruction/kokuno_a4_blackbox_full_ns_validator.py)" = "$A4_SOURCE_BLOB"
+          test "$(git rev-parse "$A4_HEAD":.github/workflows/kokuno-agent4-blackbox-full-ns-validator.yml)" = "$A4_WORKFLOW_BLOB"
+
+      - name: Materialize A5 integration contract
+        run: |
+          mkdir -p artifacts/kokuno_agent5
+          python -m openai_ns_reconstruction.kokuno_a5_fixed_contract_full_ns_validation_ingest_contract \
+            --exact-head "$(git rev-parse HEAD)" \
+            --output artifacts/kokuno_agent5/fixed_contract_full_ns_validation_ingest_contract.json
+
+      - name: Enforce fail-closed integration boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path('artifacts/kokuno_agent5/fixed_contract_full_ns_validation_ingest_contract.json')
+          payload = json.loads(path.read_text())
+          a3 = payload['agent3_fixed_physical_contract_handoff']
+          a4 = payload['agent4_blackbox_full_ns_validator_handoff']
+          seam = payload['integration_seam']
+          state = payload['readiness']
+          truth = payload['truth_boundary']
+
+          assert a3['head'] == 'd305b64edcdde4f16dd8a48908f53fa23c2b9baf'
+          assert a3['source_blob'] == '0cd41dfcc998064c37075b6086a246e93831ebfd'
+          assert a3['velocity_only_correction'] is True
+          assert a3['pressure_frozen_through_correction'] is True
+          assert a3['forcing_frozen_through_correction'] is True
+          assert a3['residual_defined_forcing_forbidden'] is True
+          assert a3['scientific_admission'] is False
+
+          assert a4['head'] == 'e8a7712515f75bb8a0a5d86b9a6177ab9447f2b1'
+          assert a4['source_blob'] == 'a9e46daf60d909a63261dd10821e1a08101dd872'
+          assert a4['public_candidate_surfaces'] == ['velocity', 'pressure', 'forcing', 'validation_metadata']
+          assert a4['construction_derivatives_allowed'] is False
+          assert a4['construction_defect_tensors_allowed'] is False
+          assert a4['canonical_quadrature_ladder'] == [24, 48, 96]
+          assert a4['quadrature_ladder_assessed_required_for_pde_validated'] is True
+          assert a4['scientific_admission'] is False
+
+          assert seam['correction_and_validator_physical_contract_sha256_must_match'] is True
+          assert seam['residual_defined_forcing_forbidden'] is True
+          assert seam['global_join_present'] is False
+          assert seam['matched_pressure_present'] is False
+          assert seam['restricted_forcing_present'] is False
+          assert seam['real_correction_velocity_present'] is False
+          assert seam['complete_candidate_api_ready'] is False
+          assert seam['current_candidate_eligible_for_full_ns_validation'] is False
+          assert seam['same_protocol_st006_comparison_available_now'] is False
+
+          assert payload['final_gate'] == {
+              'momentum_sampled_max': 1e-3,
+              'momentum_volume_l2': 1e-3,
+              'divergence_sampled_max': 1e-5,
+              'divergence_volume_l2': 1e-5,
+          }
+          assert state == {
+              'leading_ready': False,
+              'oscillatory_ready': True,
+              'correction_ready': False,
+              'velocity_export_ready': False,
+              'pde_validated': False,
+          }
+          assert truth['sampled_rms_is_not_canonical_volume_l2'] is True
+          assert truth['monte_carlo_volume_l2_does_not_replace_canonical_quadrature_ladder'] is True
+          assert truth['residual_defined_forcing_forbidden'] is True
+          assert truth['kokuno_reconstruction_is_paper_exact'] is False
+          PY
+
+      - name: Upload A5 integration contract
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-fixed-contract-full-ns-validation-ingest-contract
+          path: artifacts/kokuno_agent5/fixed_contract_full_ns_validation_ingest_contract.json
+          if-no-files-found: error
