@@ -190,7 +190,7 @@ def test_ring_validation_is_inherited_and_fail_closed() -> None:
             _analytic_regression_evaluator,
             object(),
             [0.5, 0.7],
-            [0.0],
+            [0.0, 0.1, 0.2],
             [0.5, 0.5],
             backend=None,
             backend_kind="test",
