@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "task_id": "CR002-KOKUNO-SOURCE-C-RECEIPT-FIELD-IDENTITY-071",
+  "status": "governance_only_pending_scientific_admission",
+  "upstream_binding": {
+    "pr": 796,
+    "head": "393abd5976d4c621ce37dad8544a1b645fdbe83b",
+    "source_path": "src/openai_ns_reconstruction/kokuno_pa10_source_c_normalized_physical_center.py",
+    "source_blob_sha": "722640b0e6e43a2bba521776398d2f9cc8d2a052",
+    "schema": "kokuno-pa10-source-c-normalized-physical-center-v1",
+    "class": "KokunoPA10SourceCNormalizedPhysicalCenter",
+    "selected_source_C": 1000.0
+  },
+  "source_classification": {
+    "user_requirement": [
+      "A delivered 3-D time-varying velocity must have a stable callable/save-load identity that denotes field-affecting semantics rather than evidence-execution settings.",
+      "Delivery, visual correspondence, PDE validation, paper exactness, and exact OpenAI-field identity remain independent states."
+    ],
+    "public_source_fact": [
+      "phi_*(eta)=exp(Lambda*integral_0^eta zeta_*(w)dw)",
+      "zeta_*=-L*H_*/(H_*^2+sigma_*^2)",
+      "the source normalization condition is C>=sup_Omega|phi_*|",
+      "g=phi_*/C and F=g*Phi",
+      "the same source-normalization C enters the outer schedule"
+    ],
+    "autonomous_design": [
+      "the repository choice C=1000 for the #796 source-compatible center",
+      "certificate_intervals and chunk_size used to execute the Agent-1 complex-domain self-certificate",
+      "receipt serialization and digest schema",
+      "any future repository field-identity digest schema"
+    ],
+    "pending_unknown": [
+      "independent Agent-4 admission of the C=1000 complex-domain certificate",
+      "the final corrected Kokuno fixed point and global Cartesian spacetime velocity",
+      "a stable candidate/field digest for the future global Kokuno velocity",
+      "held-out CR001 PDE acceptance",
+      "hidden OpenAI numerical field data and exact field identity"
+    ]
+  },
+  "current_representation_facts": {
+    "values_delegate_only_to_physical_profiles": true,
+    "derivatives_delegate_only_to_physical_profiles": true,
+    "certificate_intervals_enter_field_evaluation": false,
+    "chunk_size_enters_field_evaluation": false,
+    "configuration_contains_physical_profile_configuration": true,
+    "configuration_contains_certificate_intervals": true,
+    "configuration_contains_chunk_size": true,
+    "report_contains_source_C_certificate": true,
+    "report_contains_full_configuration": true,
+    "report_receipt_sha256_hashes_report_payload": true,
+    "sha256_property_returns_report_receipt_sha256": true,
+    "same_physical_profile_can_have_different_evidence_execution_configuration": true
+  },
+  "identity_roles": {
+    "current_sha256_role": "evidence_receipt_identity",
+    "current_sha256_is_stable_field_semantic_identity": false,
+    "current_sha256_is_candidate_sha256": false,
+    "certificate_execution_parameters_are_field_parameters": false,
+    "source_C_self_certificate_is_candidate_identity": false,
+    "stable_field_semantic_digest_exposed_by_796": false,
+    "future_field_identity_must_bind_selected_C": true,
+    "future_field_identity_must_bind_physical_profile_configuration": true,
+    "future_field_identity_must_not_change_only_because_certificate_intervals_change": true,
+    "future_field_identity_must_not_change_only_because_chunk_size_changes": true,
+    "future_evidence_receipt_may_bind_certificate_execution_parameters": true
+  },
+  "claim_boundaries": {
+    "receipt_sha256_is_field_identity": false,
+    "receipt_sha256_is_candidate_sha256": false,
+    "changing_certificate_resolution_changes_velocity_formula": false,
+    "changing_certificate_chunking_changes_velocity_formula": false,
+    "source_C_machine_self_certificate_implies_independent_admission": false,
+    "source_C_machine_self_certificate_implies_CR001_energy_acceptance": false,
+    "source_C_machine_self_certificate_implies_velocity_export_ready": false,
+    "source_C_machine_self_certificate_implies_pde_validated": false,
+    "source_C_machine_self_certificate_implies_visual_correspondence": false,
+    "source_C_machine_self_certificate_implies_paper_exact": false,
+    "source_C_machine_self_certificate_implies_openai_field_identified": false
+  },
+  "required_future_split": {
+    "field_semantic_identity": "Hash only field-affecting executable semantics, including the full physical-profile configuration and selected C, under a versioned schema.",
+    "evidence_receipt_identity": "Separately hash the certificate result, exact source/runtime binding, certificate_intervals, chunk_size, and other evidence-execution settings.",
+    "promotion_rule": "Fresh visual/path/PDE evidence may identify a candidate only by the frozen field-semantic identity; evidence-receipt identity may accompany it but must not substitute for it."
+  },
+  "CR001_lock": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_parameter_bounds": {"a": [0.0, 10.0], "c": [0.0, 10.0]},
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "divergence_max": 1e-05,
+    "divergence_L2": 1e-05,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001,
+    "residual_defined_or_pointwise_free_force_forbidden": true,
+    "amplitude_collapse_success_forbidden": true,
+    "post_hoc_threshold_relaxation_forbidden": true
+  },
+  "truth_boundary": {
+    "changes_velocity": false,
+    "changes_selected_C": false,
+    "changes_source_formula": false,
+    "changes_pressure_or_forcing": false,
+    "changes_scientific_threshold": false,
+    "independently_admits_source_C_certificate": false,
+    "materializes_global_kokuno_velocity": false,
+    "velocity_export_ready_promoted": false,
+    "visualization_ready_promoted": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  }
+}
