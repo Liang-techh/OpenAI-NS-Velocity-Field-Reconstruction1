@@ -1,0 +1,125 @@
+name: agent7-st052m-total-child-axial-stretch-fingerprint
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_total_child_axial_stretch_fingerprint.py'
+      - 'experiments/root_st052/test_agent7_st052m_total_child_axial_stretch_fingerprint.py'
+      - '.github/workflows/agent7-st052m-total-child-axial-stretch-fingerprint.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  total-child-axial-stretch-fingerprint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Verify exact PR head checkout
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+      - name: Focused contract tests
+        run: python -m pytest -q -W error experiments/root_st052/test_agent7_st052m_total_child_axial_stretch_fingerprint.py
+      - name: Execute preregistered total-child axial-stretch fingerprint
+        run: |
+          mkdir -p outputs/agent7-st052m-total-child-axial-stretch-fingerprint
+          python experiments/root_st052/agent7_st052m_total_child_axial_stretch_fingerprint.py \
+            --out outputs/agent7-st052m-total-child-axial-stretch-fingerprint/report.json
+      - name: Verify frozen ancestry and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-total-child-axial-stretch-fingerprint/report.json').read_text())
+          assert r['task_id']=='CR003-ST052M-TOTAL-CHILD-AXIAL-STRETCH-FINGERPRINT-113'
+          assert r['prereg_issue']==793
+          assert r['source_child']=={'pr':775,'head':'93887a59729d22113badf2ae4dac2f7d868e2703'}
+          assert r['source_unit_capacity_audit_pr']==785
+          assert r['source_scope_governance']=={'pr':786,'head':'f3c1e5a2a86bcc09c9d1f16e9f865c5d57a94ae3'}
+          assert r['fresh_holdout_pr_not_consumed']==714
+          assert r['probe_contract']['abs_z_bands']==[1.55,1.75]
+          assert r['probe_contract']['times']==[0.375,0.5,0.625,0.75]
+          assert len(r['probe_contract']['radii'])==55
+          assert r['probe_contract']['azimuth_count']==8
+          assert r['probe_contract']['z_sign_count']==2
+          assert r['probe_contract']['core_radius_max']==0.9
+          assert r['probe_contract']['annulus_radius_interval']==[1.2,1.5]
+          assert r['probe_contract']['crossing_acceptance_interval']==[0.9,1.5]
+          assert r['probe_contract']['public_openai_numeric_target'] is None
+          assert r['frozen_child']['coefficient_rederived_by_exact_775_rule_without_retuning'] is True
+          assert r['frozen_child']['coefficient_calibration']['fresh_714_data_used'] is False
+          assert r['velocity_formula_changed_this_increment'] is False
+          assert r['candidate_coefficient_changed_this_increment'] is False
+          assert r['basis_dimension_changed'] is False
+          assert r['fresh_714_path_data_used'] is False
+          assert r['parameter_scan_performed'] is False
+          assert r['optimization_performed'] is False
+          assert r['post_result_retuning_performed'] is False
+          assert r['pressure_or_force_changed'] is False
+          assert r['held_out_pde_residual_evaluated'] is False
+          assert r['public_image_numeric_target_used'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          assert r['paper_exact'] is False
+          assert r['openai_field_identified'] is False
+          assert r['decision']['second_poloidal_basis_justified_now'] is False
+          assert r['decision']['velocity_formula_changed_this_increment'] is False
+          print('fingerprint_pass=',r['total_child_axial_stretch_fingerprint_passed'])
+          print('crossings=',r['crossing_summary'])
+          for z,row in r['by_abs_z'].items():
+              print('|z|=',z,'all_times_pass=',row['all_times_pass_directional_gate'])
+              for t,entry in row['by_time'].items():
+                  print(' ',t,
+                        'core_delta=',entry['core_delta_mean_away_from_midplane_w'],
+                        'annulus_delta=',entry['annulus_delta_mean_away_from_midplane_w'],
+                        'crossing=',entry['first_positive_to_nonpositive_delta_crossing_radius'],
+                        'child_positive_fraction=',entry['child_total_positive_stretch_radius_fraction'])
+          PY
+      - name: Publish compact numerical receipt
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent7-total-child-axial-stretch-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-total-child-axial-stretch-fingerprint/report.json').read_text())
+          print('<!-- agent7-st052m-total-child-axial-stretch-fingerprint-receipt -->')
+          print('**Agent 7 frozen #775 total-child axial-stretch fingerprint (issue #793):**')
+          print()
+          print(f"- directional fingerprint pass: `{r['total_child_axial_stretch_fingerprint_passed']}`")
+          print(f"- frozen reservoir alpha replayed from #775 rule: `{r['frozen_child']['alpha_reservoir']:.12g}`")
+          c=r['crossing_summary']
+          print(f"- positive-to-nonpositive child-minus-parent crossings: count `{c['count']}`, range `{c['minimum']}` to `{c['maximum']}`")
+          for z,row in r['by_abs_z'].items():
+              print(f"- |z|={z}: all times pass `{row['all_times_pass_directional_gate']}`")
+              for t,e in row['by_time'].items():
+                  print(f"  - t={t}: core delta `{e['core_delta_mean_away_from_midplane_w']:.9g}`, annulus delta `{e['annulus_delta_mean_away_from_midplane_w']:.9g}`, crossing `{e['first_positive_to_nonpositive_delta_crossing_radius']}`; parent/child positive-radius fractions `{e['parent_total_positive_stretch_radius_fraction']:.3f}/{e['child_total_positive_stretch_radius_fraction']:.3f}`")
+          print()
+          print('Truth boundary: this evaluates the unchanged frozen #775 total velocity against exact #652 on an autonomous preregistered axial-stretch fingerprint. It does not use #714 fresh paths, alter alpha/basis/time law, define an OpenAI numerical target, rebuild pressure/forcing, evaluate held-out PDE residuals, or verify global visual/source correspondence.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-total-child-axial-stretch-receipt.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-total-child-axial-stretch-fingerprint
+          path: outputs/agent7-st052m-total-child-axial-stretch-fingerprint/
+          if-no-files-found: error
+
+# Scientific question and directional gate were frozen in issue #793 before implementation.
