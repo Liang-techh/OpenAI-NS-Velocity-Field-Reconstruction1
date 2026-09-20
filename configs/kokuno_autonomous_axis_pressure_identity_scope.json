@@ -1,0 +1,95 @@
+{
+  "schema": "cr002-kokuno-autonomous-axis-pressure-identity-scope-v1",
+  "scope_id": "CR002-KOKUNO-AXIS-PRESSURE-ADMISSIBILITY-IDENTITY-086",
+  "objective": "Keep source admissibility, repository-autonomous realization, implementation audit, and source identity as distinct claims.",
+  "integration_reference": {
+    "branch": "codex/cr001-constraints",
+    "head": "ca37d25d19b97d893030194ebd6364160ae4355e"
+  },
+  "stack_base": {
+    "agent4_pr": 916,
+    "agent4_head": "a793bffd4739de834a81e2ed32fdbf9821dad04e",
+    "agent1_pr": 913,
+    "agent1_head": "a5903ce594bf1c1f775d6fbba8a5eeca226622fa",
+    "agent1_axis_pressure_source_blob": "68dddc4f6ad1fb5bb6955498099b380240be6750",
+    "canonical_constraints_blob": "6c559e42895a606e2ef025ade4cb448966d75814"
+  },
+  "provenance": {
+    "user_requirement": [
+      "Keep user requirements, public-source facts, autonomous design choices, and pending or unknown facts distinct.",
+      "Keep callable velocity delivery, visual correspondence, PDE validation, paper exactness, and OpenAI-field identity independent.",
+      "Do not make unresolved Kokuno pressure or PDE work a blocker for the separately governed callable Eq45 velocity delivery."
+    ],
+    "public_source_fact": [
+      "The registered corrected-reader mapping says the source-prepared Appendix-A axis datum Pi_0 is holomorphic near [-1,1] and real/even there.",
+      "The registered admissibility envelope is Pi_0(eta) <= -(5/2) P_*^2 (1+eta^2)^-2.",
+      "The registered derivative-sign condition is eta*Pi_0'(eta) > 0 for eta != 0.",
+      "The registered dependency direction says the source-prepared Pi_0 is supplied by the outer Appendix-A construction; the local radial law determines only Pi_r-Pi_0."
+    ],
+    "autonomous_design": [
+      "Agent 1 PR 913 chooses P_*=1 as a repository-autonomous realization.",
+      "Agent 1 PR 913 chooses Pi0_seed(eta)=-(5/2)P_*^2(1+eta^2)^-2, saturating the displayed one-sided envelope.",
+      "Agent 4 PR 916 independently audits the numerical consistency of that repository-autonomous scalar and its exposed derivatives.",
+      "The non-uniqueness witness Pi0_alt=Pi0_seed-epsilon*(1+eta^2)^-3 with epsilon=0.1 is mechanics-only governance evidence."
+    ],
+    "pending_unknown": [
+      "The numerical source-prepared Appendix-A Pi_0 datum and its immutable identity are not materialized on this stack.",
+      "Whether the autonomous seed equals the source-prepared Appendix-A Pi_0 is unknown and must not be inferred from admissibility or audit success.",
+      "Outer-tail pressure compatibility, matched/global pressure, matched Cartesian grad p, global leading velocity, restricted forcing, and complete NS residual remain unresolved here."
+    ]
+  },
+  "representation_contract": {
+    "admissibility_conditions_satisfied_does_not_imply_source_identity": true,
+    "envelope_saturation_is_autonomous_selection_not_public_source_equality": true,
+    "implementation_distinct_audit_can_validate_realization_consistency_only": true,
+    "implementation_distinct_audit_does_not_upgrade_provenance": true,
+    "derived_quantities_using_autonomous_Pi0_remain_autonomous_unless_rebound_to_source_prepared_data": true,
+    "source_prepared_Pi0_identity_requires_independent_source_binding": true,
+    "pressure_scalar_identity_is_separate_from_matched_cartesian_gradient_identity": true
+  },
+  "mechanics_witness": {
+    "role": "autonomous_nonuniqueness_witness_not_candidate_evidence",
+    "P_star": 1.0,
+    "epsilon": 0.1,
+    "seed": "Pi0_seed(eta)=-(5/2)*(1+eta^2)^-2",
+    "alternative": "Pi0_alt(eta)=Pi0_seed(eta)-0.1*(1+eta^2)^-3",
+    "reason": "Both are real/even, satisfy the same one-sided envelope and eta*Pi0'(eta)>0 away from eta=0, yet they differ nontrivially. The displayed admissibility conditions therefore do not identify a unique Pi_0."
+  },
+  "cr001_invariants": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "momentum_max": 0.001,
+    "momentum_volume_l2": 0.001,
+    "divergence_max": 0.00001,
+    "divergence_volume_l2": 0.00001,
+    "residual_defined_pointwise_free_force_allowed": false,
+    "amplitude_collapse_allowed": false,
+    "post_hoc_threshold_relaxation_allowed": false
+  },
+  "truth_boundary": {
+    "repository_autonomous_axis_pressure_seed_materialized": true,
+    "autonomous_reference_pressure_numerically_auditable": true,
+    "source_prepared_appendixA_Pi0_materialized": false,
+    "source_prepared_appendixA_Pi0_identified_with_autonomous_seed": false,
+    "source_correspondence_verified": false,
+    "matched_global_pressure_materialized": false,
+    "cartesian_matched_pressure_gradient_materialized": false,
+    "complete_velocity_pressure_forcing_candidate_ready": false,
+    "kokuno_velocity_export_ready": false,
+    "pde_validated": false,
+    "visual_correspondence_verified": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "canonical_eq45_velocity_export_ready_remains_independent": true
+  }
+}
