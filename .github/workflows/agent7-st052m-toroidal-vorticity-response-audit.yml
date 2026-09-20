@@ -1,0 +1,107 @@
+name: agent7-st052m-toroidal-vorticity-response-audit
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_toroidal_vorticity_response_audit.py'
+      - 'experiments/root_st052/test_agent7_st052m_toroidal_vorticity_response_audit.py'
+      - '.github/workflows/agent7-st052m-toroidal-vorticity-response-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  toroidal-vorticity-response-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Verify exact PR head checkout
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+      - name: Focused frozen-protocol tests
+        run: python -m pytest -q -W error experiments/root_st052/test_agent7_st052m_toroidal_vorticity_response_audit.py
+      - name: Execute preregistered vorticity-response audit
+        run: |
+          mkdir -p outputs/agent7-st052m-toroidal-vorticity-response-audit
+          python experiments/root_st052/agent7_st052m_toroidal_vorticity_response_audit.py \
+            --out outputs/agent7-st052m-toroidal-vorticity-response-audit/report.json
+      - name: Verify frozen ancestry, gates and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-toroidal-vorticity-response-audit/report.json').read_text())
+          assert r['task_id']=='CR003-ST052M-TOROIDAL-VORTICITY-RESPONSE-AUDIT-121'
+          assert r['prereg_issue']==854
+          assert r['source_parent']=={'pr':846,'head':'55ea4f1ca34d81b386b1f9d647cfaae20b1863e0'}
+          assert r['source_toroidal_preflight']=={'pr':837,'head':'4c821c302cf89a7cc7a41730ce7029bdfbe6a7ef'}
+          assert r['source_reservoir_child']=={'pr':775,'head':'93887a59729d22113badf2ae4dac2f7d868e2703'}
+          assert r['frozen_protocol']['curl_step']==2e-5
+          assert r['symbolic_toroidal_curl']['exact_identity'] is True
+          assert r['unit_vorticity_selectivity']['passes'] is True
+          assert r['unit_vorticity_selectivity']['normalized_response']['rank']==2
+          assert r['actual_846_child_vorticity_response']['relative_delta_consistency']['passes'] is True
+          assert r['actual_846_child_vorticity_response']['fresh_714_data_used'] is False
+          assert r['held_out_pde_residual']['evaluated'] is False
+          assert r['held_out_pde_residual']['st006_comparison_performed'] is False
+          assert r['pressure_or_force_changed'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['source_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          assert r['paper_exact'] is False
+          assert r['openai_field_identified'] is False
+          assert r['toroidal_vorticity_response_audit_passed'] is True
+          print('screen_pass=',r['toroidal_vorticity_response_audit_passed'])
+          print('selectivity=',r['unit_vorticity_selectivity'])
+          print('actual_child=',r['actual_846_child_vorticity_response'])
+          PY
+      - name: Publish compact receipt
+        if: ${{ always() && github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          if [ ! -f outputs/agent7-st052m-toroidal-vorticity-response-audit/report.json ]; then exit 0; fi
+          python - <<'PY' > /tmp/agent7-vorticity-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-toroidal-vorticity-response-audit/report.json').read_text())
+          s=r['unit_vorticity_selectivity']; a=r['actual_846_child_vorticity_response']
+          print('<!-- agent7-st052m-toroidal-vorticity-response-audit-receipt -->')
+          print('**Agent 7 frozen toroidal-child vorticity receipt (issue #854):**')
+          print()
+          print(f"- audit pass: `{r['toroidal_vorticity_response_audit_passed']}`")
+          print(f"- toroidal curl omega_theta leakage: `{s['toroidal']['omega_theta_max_abs']:.3e}`; poloidal-vorticity RMS: `{s['toroidal']['omega_rz_rms']:.9g}`")
+          print(f"- live poloidal curl rz leakage: `{s['poloidal']['omega_rz_max_abs']:.3e}`; omega_theta RMS: `{s['poloidal']['omega_theta_rms']:.9g}`")
+          print(f"- normalized vorticity-response rank/condition/cosine: `{s['normalized_response']['rank']}` / `{s['normalized_response']['condition']:.6g}` / `{s['normalized_response']['cosine']:.3e}`")
+          c=a['relative_delta_consistency']
+          print(f"- actual #846 child delta consistency: relative RMS `{c['relative_rms']:.3e}`, sampled max `{c['relative_sampled_max']:.3e}`")
+          print(f"- parent total vorticity RMS `{a['parent_total_vorticity']['omega_total_rms']:.9g}` -> child `{a['child_total_vorticity']['omega_total_rms']:.9g}` (observation only; no public numeric target)")
+          print('- held-out full-PDE residual: `not evaluated`; no ST006 comparison or PDE-improvement claim.')
+          print()
+          print('Truth boundary: this audit quantifies complementary vorticity-morphology capacity of the already-frozen #846 child. It is not visual/source correspondence, PDE validation, paper exactness, exact OpenAI-field identity, or blow-up evidence.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-vorticity-receipt.md || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-toroidal-vorticity-response-audit
+          path: outputs/agent7-st052m-toroidal-vorticity-response-audit/
+          if-no-files-found: warn
+
+# Probe cloud, derivative step and gates were frozen in issue #854 before execution.
