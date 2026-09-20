@@ -1,0 +1,313 @@
+name: kokuno-agent2-strict-inner-differentiable-candidate
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_strict_inner_leading_oscillatory_differentiable_candidate.py'
+      - 'tests/test_constrained_kokuno_strict_inner_leading_oscillatory_differentiable_candidate.py'
+      - '.github/workflows/kokuno-agent2-strict-inner-differentiable-candidate.yml'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Assert exact head
+        if: github.event_name == 'pull_request'
+        run: test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha }}"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+
+      - name: Focused regressions
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_strict_inner_leading_oscillatory_differentiable_candidate.py
+
+      - name: Verify frozen A2 parent and fetch exact Agent-1 reference
+        run: |
+          test "$(git rev-parse a586b7afe4bb47dbfd4b25177586c79d362afff9:src/openai_ns_reconstruction/kokuno_strict_inner_leading_oscillatory_candidate.py)" = "82e732af14695c39afa3b631c00b7f20960976da"
+          test "$(git rev-parse a586b7afe4bb47dbfd4b25177586c79d362afff9:src/openai_ns_reconstruction/kokuno_public_inner_leading_oscillatory_time_derivative.py)" = "c780aea6d55daa62734b7906fe4e9e4f9ef752f0"
+          test "$(git rev-parse a586b7afe4bb47dbfd4b25177586c79d362afff9:src/openai_ns_reconstruction/kokuno_public_oscillatory_time_derivative.py)" = "e80fe68ad031197de95a8cb8692c02c6a1005936"
+          git fetch origin 300919075c07396e4e466f553be78eaae0707df2
+          git worktree add --detach "$RUNNER_TEMP/kokuno-a1-848" 300919075c07396e4e466f553be78eaae0707df2
+          test "$(git -C "$RUNNER_TEMP/kokuno-a1-848" rev-parse HEAD)" = "300919075c07396e4e466f553be78eaae0707df2"
+          test "$(git -C "$RUNNER_TEMP/kokuno-a1-848" rev-parse HEAD:src/openai_ns_reconstruction/kokuno_pa10_cartesian_center_transport_viscous.py)" = "5076ffa69748c2d7e68289a155b67288eab6dab4"
+
+      - name: Exact A1 plus A2 differentiable candidate receipt
+        env:
+          A1_WORKTREE: ${{ runner.temp }}/kokuno-a1-848
+        run: |
+          python - <<'PY'
+          from __future__ import annotations
+          import json
+          import os
+          from pathlib import Path
+          import subprocess
+          import sys
+
+          import numpy as np
+
+          from openai_ns_reconstruction.kokuno_strict_inner_leading_oscillatory_candidate import (
+              KokunoStrictInnerLeadingOscillatoryCandidate,
+          )
+          from openai_ns_reconstruction.kokuno_strict_inner_leading_oscillatory_differentiable_candidate import (
+              A2_TIME_COMPOSITION_BLOB,
+              AGENT1_REFERENCE_BLOB,
+              AGENT1_REFERENCE_HEAD,
+              AGENT1_REFERENCE_PR,
+              OSCILLATORY_TIME_DERIVATIVE_BLOB,
+              PARENT_AGENT2_HEAD,
+              KokunoStrictInnerLeadingOscillatoryDifferentiableCandidate,
+              public_contract,
+          )
+
+          a1 = Path(os.environ['A1_WORKTREE'])
+          server_code = r'''
+          import json, sys
+          import numpy as np
+          from openai_ns_reconstruction.kokuno_pa10_cartesian_center_transport_viscous import KokunoPA10CartesianCenterTransportViscous
+          field = KokunoPA10CartesianCenterTransportViscous()
+          for line in sys.stdin:
+              request = json.loads(line)
+              op = request['op']
+              if op == 'meta':
+                  result = {
+                      'field_sha256': field.field_sha256,
+                      'temporal_derivative_sha256': field.temporal_derivative_sha256,
+                      'transport_viscous_sha256': field.transport_viscous_sha256,
+                      'source_X_interval': list(field.spatial.source_X_interval),
+                      'time_interval': list(field.field.time_interval),
+                  }
+              elif op == 'forward':
+                  out = field.field.cartesian_from_similarity(
+                      np.asarray(request['X'], dtype=float),
+                      np.asarray(request['eta'], dtype=float),
+                      np.asarray(request['t'], dtype=float),
+                      np.asarray(request['theta'], dtype=float),
+                  )
+                  result = {k: np.asarray(out[k], dtype=float).tolist() for k in ('x','y','z','t','X','eta')}
+              elif op in ('velocity','velocity_dt'):
+                  method = getattr(field, op)
+                  out = method(
+                      np.asarray(request['x'], dtype=float),
+                      np.asarray(request['y'], dtype=float),
+                      np.asarray(request['z'], dtype=float),
+                      np.asarray(request['t'], dtype=float),
+                  )
+                  result = {'value': np.asarray(out, dtype=float).tolist()}
+              else:
+                  raise RuntimeError(f'unknown op {op}')
+              print(json.dumps(result, sort_keys=True), flush=True)
+          '''
+
+          env = os.environ.copy()
+          env['PYTHONPATH'] = str(a1 / 'src')
+          proc = subprocess.Popen(
+              [sys.executable, '-u', '-c', server_code],
+              cwd=a1,
+              env=env,
+              stdin=subprocess.PIPE,
+              stdout=subprocess.PIPE,
+              stderr=subprocess.PIPE,
+              text=True,
+              bufsize=1,
+          )
+
+          def ask(payload):
+              assert proc.stdin is not None and proc.stdout is not None
+              proc.stdin.write(json.dumps(payload, separators=(',', ':')) + '\n')
+              proc.stdin.flush()
+              line = proc.stdout.readline()
+              if not line:
+                  assert proc.stderr is not None
+                  raise RuntimeError('Agent-1 backend exited: ' + proc.stderr.read())
+              return json.loads(line)
+
+          meta = ask({'op':'meta'})
+
+          class ExactAgent1DifferentiableBackend:
+              field_sha256 = meta['field_sha256']
+              temporal_derivative_sha256 = meta['temporal_derivative_sha256']
+
+              @staticmethod
+              def _arrays(x, y, z, t):
+                  return np.broadcast_arrays(
+                      np.asarray(x, dtype=float), np.asarray(y, dtype=float),
+                      np.asarray(z, dtype=float), np.asarray(t, dtype=float),
+                  )
+
+              def _call(self, op, x, y, z, t):
+                  x,y,z,t = self._arrays(x,y,z,t)
+                  out = ask({
+                      'op':op, 'x':x.tolist(), 'y':y.tolist(),
+                      'z':z.tolist(), 't':t.tolist(),
+                  })
+                  return np.asarray(out['value'], dtype=float)
+
+              def velocity(self, x, y, z, t):
+                  return self._call('velocity', x, y, z, t)
+
+              def velocity_dt(self, x, y, z, t):
+                  return self._call('velocity_dt', x, y, z, t)
+
+          if meta['time_interval'] != [0.25, 0.75]:
+              raise RuntimeError('unexpected Agent-1 time interval')
+          if meta['source_X_interval'][1] < 0.35:
+              raise RuntimeError('unexpected Agent-1 strict-inner X domain')
+
+          # Fresh strict-inner source probes frozen before observing Actions output.
+          X = np.asarray([0.153,0.171,0.189,0.207,0.225,0.243,0.261,0.279,0.162,0.198,0.234,0.270], dtype=float)
+          eta = np.asarray([-0.34,-0.22,-0.10,0.02,0.14,0.26,0.38,0.30,-0.28,-0.16,0.08,0.20], dtype=float)
+          t = np.asarray([0.468,0.480,0.492,0.504,0.516,0.528,0.540,0.532,0.520,0.508,0.496,0.484], dtype=float)
+          theta = np.asarray([0.29,0.77,1.25,1.73,2.21,2.69,-3.11,-2.63,-2.11,-1.59,-1.07,-0.55], dtype=float)
+          forward = ask({'op':'forward','X':X.tolist(),'eta':eta.tolist(),'t':t.tolist(),'theta':theta.tolist()})
+          x = np.asarray(forward['x'], dtype=float)
+          y = np.asarray(forward['y'], dtype=float)
+          z = np.asarray(forward['z'], dtype=float)
+          tt = np.asarray(forward['t'], dtype=float)
+
+          backend = ExactAgent1DifferentiableBackend()
+          base = KokunoStrictInnerLeadingOscillatoryCandidate(backend)
+          candidate = KokunoStrictInnerLeadingOscillatoryDifferentiableCandidate(backend)
+          evaluated = candidate.evaluate(x, y, z, tt)
+
+          base_velocity = base.velocity(x, y, z, tt)
+          candidate_velocity = candidate.velocity(x, y, z, tt)
+          base_velocity_replay_abs_max = float(np.max(np.abs(candidate_velocity-base_velocity)))
+
+          def fd4_time(h):
+              return (
+                  -candidate.velocity(x,y,z,tt+2*h)
+                  + 8.0*candidate.velocity(x,y,z,tt+h)
+                  - 8.0*candidate.velocity(x,y,z,tt-h)
+                  + candidate.velocity(x,y,z,tt-2*h)
+              )/(12.0*h)
+
+          def vrms(a):
+              a=np.asarray(a,dtype=float)
+              return float(np.sqrt(np.mean(np.sum(a*a,axis=-1))))
+
+          def relative_rms(a,b):
+              return vrms(np.asarray(a)-np.asarray(b))/max(vrms(b),1.0e-30)
+
+          def relative_max(a,b):
+              err=np.linalg.norm(np.asarray(a)-np.asarray(b),axis=-1)
+              ref=np.linalg.norm(np.asarray(b),axis=-1)
+              return float(np.max(err))/max(float(np.max(ref)),1.0e-30)
+
+          steps=(4.0e-3,2.0e-3,1.0e-3)
+          refs=[fd4_time(h) for h in steps]
+          errors=[relative_rms(v,evaluated.velocity_dt) for v in refs]
+          ratios=[
+              errors[0]/max(errors[1],1.0e-30),
+              errors[1]/max(errors[2],1.0e-30),
+          ]
+          finest_rel_max=relative_max(refs[-1],evaluated.velocity_dt)
+
+          scalar_dt=np.stack([
+              np.asarray(candidate.velocity_dt(x[i],y[i],z[i],tt[i]),dtype=float)
+              for i in range(x.size)
+          ],axis=0)
+          batch_scalar_dt_abs_max=float(np.max(np.abs(scalar_dt-evaluated.velocity_dt)))
+
+          Path('artifacts').mkdir(exist_ok=True)
+          manifest_path=Path('artifacts/kokuno_agent2_strict_inner_differentiable_candidate_manifest.json')
+          manifest=candidate.save_manifest(manifest_path)
+          rebound=KokunoStrictInnerLeadingOscillatoryDifferentiableCandidate.load_manifest(
+              backend, manifest_path
+          )
+          rebound_velocity_abs_max=float(np.max(np.abs(rebound.velocity(x,y,z,tt)-candidate_velocity)))
+          rebound_velocity_dt_abs_max=float(np.max(np.abs(rebound.velocity_dt(x,y,z,tt)-evaluated.velocity_dt)))
+
+          contract=public_contract()
+          failed=[]
+          if base_velocity_replay_abs_max != 0.0: failed.append('base_velocity_exact_replay')
+          if candidate.velocity_candidate_sha256 != base.candidate_sha256: failed.append('base_candidate_sha_preservation')
+          if evaluated.velocity_replay_abs_max > 1.0e-14: failed.append('time_seam_velocity_replay')
+          if evaluated.velocity_dt_additive_closure_abs_max > 1.0e-13: failed.append('velocity_dt_additive_closure')
+          if min(ratios) < 8.0: failed.append('fd4_time_refinement')
+          if errors[-1] > 2.0e-3: failed.append('finest_relative_rms')
+          if finest_rel_max > 5.0e-3: failed.append('finest_relative_max')
+          if vrms(evaluated.velocity_dt) < 1.0e-10: failed.append('velocity_dt_nontrivial')
+          if batch_scalar_dt_abs_max > 1.0e-10: failed.append('batch_scalar_velocity_dt')
+          if rebound_velocity_abs_max != 0.0: failed.append('manifest_rebind_velocity')
+          if rebound_velocity_dt_abs_max != 0.0: failed.append('manifest_rebind_velocity_dt')
+          if contract['forbidden_velocity_inputs_present']: failed.append('forbidden_velocity_inputs')
+          if contract['forbidden_velocity_dt_inputs_present']: failed.append('forbidden_velocity_dt_inputs')
+          if manifest['differentiable_configuration']['inner_leading_time_derivative']['reference_agent1_head'] != AGENT1_REFERENCE_HEAD: failed.append('agent1_head_pin')
+          if manifest['differentiable_configuration']['inner_leading_time_derivative']['reference_agent1_source_blob'] != AGENT1_REFERENCE_BLOB: failed.append('agent1_blob_pin')
+          if manifest['differentiable_configuration']['inner_leading_time_derivative']['temporal_derivative_sha256'] != meta['temporal_derivative_sha256']: failed.append('agent1_temporal_identity')
+          if manifest['differentiable_configuration']['oscillatory_time_derivative']['source_blob'] != OSCILLATORY_TIME_DERIVATIVE_BLOB: failed.append('oscillatory_dt_blob_pin')
+          if manifest['differentiable_configuration']['oscillatory_time_derivative']['composition_source_blob'] != A2_TIME_COMPOSITION_BLOB: failed.append('time_composition_blob_pin')
+          truth=manifest['truth_boundary']
+          required_false=(
+              'inner_leading_is_final_corrected_fixed_point','global_leading_velocity_materialized',
+              'outer_join_materialized','matched_pressure_included','restricted_forcing_included',
+              'agent3_correction_velocity_included','complete_kokuno_candidate_assembled',
+              'complete_ns_momentum_residual_formed','heldout_ns_residual_assessed',
+              'st006_same_protocol_comparison_valid','residual_reduction_claimed','paper_exact','pde_validated',
+          )
+          if any(truth[k] for k in required_false): failed.append('truth_boundary_promotion')
+
+          receipt={
+              'schema':'kokuno-a2-strict-inner-differentiable-candidate-receipt-v1',
+              'parent_agent2_head':PARENT_AGENT2_HEAD,
+              'agent1_reference_pr':AGENT1_REFERENCE_PR,
+              'agent1_reference_head':AGENT1_REFERENCE_HEAD,
+              'agent1_reference_blob':AGENT1_REFERENCE_BLOB,
+              'agent1_field_sha256':meta['field_sha256'],
+              'agent1_temporal_derivative_sha256':meta['temporal_derivative_sha256'],
+              'agent1_transport_viscous_sha256':meta['transport_viscous_sha256'],
+              'a2_time_composition_blob':A2_TIME_COMPOSITION_BLOB,
+              'oscillatory_time_derivative_blob':OSCILLATORY_TIME_DERIVATIVE_BLOB,
+              'velocity_candidate_sha256':candidate.velocity_candidate_sha256,
+              'differentiable_sha256':candidate.differentiable_sha256,
+              'manifest_sha256':manifest['manifest_sha256'],
+              'sample_count':int(x.size),
+              'source_X_range':[float(np.min(X)),float(np.max(X))],
+              'sample_times':sorted({float(v) for v in tt}),
+              'fd4_time_steps':list(steps),
+              'fd4_relative_rms_errors':errors,
+              'fd4_successive_error_ratios':ratios,
+              'fd4_finest_relative_max':finest_rel_max,
+              'velocity_dt_rms':vrms(evaluated.velocity_dt),
+              'base_velocity_replay_abs_max':base_velocity_replay_abs_max,
+              'velocity_replay_abs_max':evaluated.velocity_replay_abs_max,
+              'velocity_dt_additive_closure_abs_max':evaluated.velocity_dt_additive_closure_abs_max,
+              'batch_scalar_velocity_dt_abs_max':batch_scalar_dt_abs_max,
+              'manifest_rebind_velocity_abs_max':rebound_velocity_abs_max,
+              'manifest_rebind_velocity_dt_abs_max':rebound_velocity_dt_abs_max,
+              'candidate_scope':'strict-inner PA.10 contraction-center + frozen A2 complete-curl oscillation',
+              'same_protocol_st006_comparison_valid':False,
+              'failed_guards':failed,
+              'truth_boundary':truth,
+          }
+          Path('artifacts/kokuno_agent2_strict_inner_differentiable_candidate_receipt.json').write_text(
+              json.dumps(receipt,indent=2,sort_keys=True)+'\n'
+          )
+          print(json.dumps(receipt,indent=2,sort_keys=True))
+          if proc.stdin is not None: proc.stdin.close()
+          proc.terminate(); proc.wait(timeout=10)
+          if failed:
+              raise SystemExit('failed guards: '+', '.join(failed))
+          PY
+
+      - name: Upload differentiable candidate manifest and receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent2-strict-inner-differentiable-candidate-v1
+          path: |
+            artifacts/kokuno_agent2_strict_inner_differentiable_candidate_manifest.json
+            artifacts/kokuno_agent2_strict_inner_differentiable_candidate_receipt.json
+          if-no-files-found: warn
