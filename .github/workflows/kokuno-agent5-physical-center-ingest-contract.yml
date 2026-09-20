@@ -1,0 +1,195 @@
+name: kokuno-agent5-physical-center-ingest-contract
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-physical-center-ingest-contract-069
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_a5_candidate_artifact_contract.py"
+      - "src/openai_ns_reconstruction/kokuno_a5_leading_profile_ingest_contract.py"
+      - "src/openai_ns_reconstruction/kokuno_a5_phi0_profile_ingest_contract.py"
+      - "src/openai_ns_reconstruction/kokuno_a5_physical_center_ingest_contract.py"
+      - "tests/test_kokuno_a5_candidate_artifact_contract.py"
+      - "tests/test_kokuno_a5_leading_profile_ingest_contract.py"
+      - "tests/test_kokuno_a5_phi0_profile_ingest_contract.py"
+      - "tests/test_kokuno_a5_physical_center_ingest_contract.py"
+      - ".github/workflows/kokuno-agent5-physical-center-ingest-contract.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent5-physical-center-ingest-contract-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  exact-head-physical-center-ingest-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - name: Verify exact head checkout
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          ACTUAL_HEAD="$(git rev-parse HEAD)"
+          test "$ACTUAL_HEAD" = "$EXPECTED_HEAD"
+          echo "exact_head=$ACTUAL_HEAD"
+      - name: Verify frozen Agent-1 physical-center source blob
+        env:
+          AGENT1_HEAD: dbde743d6f71146a3c591968cf60a0abe449d310
+          EXPECTED_BLOB: f24246ce84ccb8c1c6a7b1eba31865c416f2da80
+        run: |
+          git fetch --no-tags origin "$AGENT1_HEAD"
+          ACTUAL_BLOB="$(git rev-parse "$AGENT1_HEAD:src/openai_ns_reconstruction/kokuno_pa10_physical_center_profile_contract.py")"
+          test "$ACTUAL_BLOB" = "$EXPECTED_BLOB"
+          echo "agent1_physical_center_blob=$ACTUAL_BLOB"
+      - name: Verify frozen Agent-4 independent-audit source blob
+        env:
+          AGENT4_HEAD: cfd4ca4bb49940a9754f419404730b74fc1e7623
+          EXPECTED_BLOB: 1d1851d07db42834b594c55c8185f66d9de010fc
+        run: |
+          git fetch --no-tags origin "$AGENT4_HEAD"
+          ACTUAL_BLOB="$(git rev-parse "$AGENT4_HEAD:src/openai_ns_reconstruction/kokuno_pa10_physical_center_independent_audit.py")"
+          test "$ACTUAL_BLOB" = "$EXPECTED_BLOB"
+          echo "agent4_physical_center_audit_blob=$ACTUAL_BLOB"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile integration seam
+        run: |
+          python -m compileall -q \
+            src/openai_ns_reconstruction/kokuno_a5_candidate_artifact_contract.py \
+            src/openai_ns_reconstruction/kokuno_a5_leading_profile_ingest_contract.py \
+            src/openai_ns_reconstruction/kokuno_a5_phi0_profile_ingest_contract.py \
+            src/openai_ns_reconstruction/kokuno_a5_physical_center_ingest_contract.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_a5_candidate_artifact_contract.py \
+            tests/test_kokuno_a5_leading_profile_ingest_contract.py \
+            tests/test_kokuno_a5_phi0_profile_ingest_contract.py \
+            tests/test_kokuno_a5_physical_center_ingest_contract.py
+      - name: Generate exact-head physical-center ingest artifact
+        run: |
+          HEAD_SHA="$(git rev-parse HEAD)"
+          python -W error -m openai_ns_reconstruction.kokuno_a5_physical_center_ingest_contract \
+            --exact-head "$HEAD_SHA" \
+            --output artifacts/kokuno_agent5/physical_center_ingest_contract_v1/report.json
+      - name: Validate frozen evidence and truth boundary
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          import subprocess
+
+          path = Path('artifacts/kokuno_agent5/physical_center_ingest_contract_v1/report.json')
+          payload = json.loads(path.read_text())
+          exact_head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
+          assert payload['exact_head'] == exact_head
+          assert payload['schema'] == 'kokuno-a5-physical-center-ingest-contract-v1'
+          assert payload['parent_a5'] == {
+              'pr': 782,
+              'head': '1d7055bbbca528f8c542a65fbf71aeff84b6af43',
+          }
+
+          a1 = payload['agent1_physical_center_binding']
+          assert a1['pr'] == 787
+          assert a1['head'] == 'dbde743d6f71146a3c591968cf60a0abe449d310'
+          assert a1['source_blob_sha'] == 'f24246ce84ccb8c1c6a7b1eba31865c416f2da80'
+          assert a1['schema'] == 'kokuno-pa10-physical-center-profile-contract-v1'
+          assert a1['source_formulas'] == {
+              'source_radial_mapping': 'Y=Lambda X',
+              'physical_swirl_profile': 'F=(phi_*/C)Phi',
+              'physical_axial_profile': 'U=U_*+Lambda^-1 u',
+              'azimuthal_profile': 'E=sqrt(2X)F',
+              'radial_profile': 'V_0=X v_0',
+          }
+
+          a4 = payload['agent4_independent_audit_binding']
+          assert a4['pr'] == 790
+          assert a4['head'] == 'cfd4ca4bb49940a9754f419404730b74fc1e7623'
+          assert a4['source_blob_sha'] == '1d1851d07db42834b594c55c8185f66d9de010fc'
+          assert a4['schema'] == 'kokuno-agent4-pa10-physical-center-independent-audit-v1'
+
+          assert payload['evidence'] == {
+              'agent1_exact_head_ci_conclusion': None,
+              'agent4_audit_present': True,
+              'agent4_exact_head_ci_conclusion': None,
+              'agent4_mapping_formula_independently_consistent': None,
+              'agent4_configured_C_real_axis_obstruction_detected': None,
+              'agent4_physical_center_profile_independently_admitted': False,
+              'source_complex_C_normalization_certified': False,
+          }
+          assert payload['mapping_registration'] == {
+              'source_Y_equals_Lambda_X_formula_registered': True,
+              'physical_F_from_Phi_formula_registered': True,
+              'physical_U_from_u_formula_registered': True,
+              'repository_X_equals_source_Y_asserted': False,
+              'mapping_independently_admitted': False,
+          }
+
+          status = payload['ingest_status']
+          assert status['typed_physical_center_profile_interface_registered'] is True
+          assert status['physical_center_profile_ingest_admitted'] is False
+          assert status['source_complex_C_normalization_certified'] is False
+          assert status['fixed_point_correction_materialized'] is False
+          assert status['global_leading_velocity_materialized'] is False
+          assert status['matched_global_pressure_materialized'] is False
+          assert status['restricted_forcing_composite_validated'] is False
+          assert status['leading_ready'] is False
+
+          assert payload['stage_state'] == {
+              'leading_ready': False,
+              'oscillatory_ready': True,
+              'correction_ready': False,
+              'velocity_export_ready': False,
+              'pde_validated': False,
+          }
+          assert payload['baseline_vs_kokuno']['kokuno_same_protocol_full_candidate_residual_available'] is False
+          assert payload['baseline_vs_kokuno']['comparison_performed'] is False
+          assert payload['final_project_gates_unchanged'] == {
+              'normalized_momentum_max': 1e-3,
+              'normalized_momentum_L2': 1e-3,
+              'divergence_max': 1e-5,
+              'divergence_L2': 1e-5,
+          }
+
+          truth = payload['truth_boundary']
+          assert truth['interface_registration_not_scientific_admission'] is True
+          for key in (
+              'queued_sibling_ci_promoted',
+              'agent4_unknown_result_invented',
+              'repository_X_equals_source_Y_asserted',
+              'source_complex_C_normalization_claimed',
+              'contraction_center_promoted_to_final_fixed_point',
+              'source_native_center_promoted_to_cartesian_velocity',
+              'matched_global_pressure_invented',
+              'restricted_forcing_composite_invented',
+              'free_residual_defined_forcing_allowed',
+              'threshold_relaxed',
+              'kokuno_replay_used_as_final_independent_validation',
+              'leading_ready',
+              'correction_ready',
+              'velocity_export_ready',
+              'pde_validated',
+          ):
+              assert truth[key] is False
+
+          print('artifact_sha256=', hashlib.sha256(path.read_bytes()).hexdigest())
+          print('contract_sha256=', payload['contract_sha256'])
+          print('exact_head=', exact_head)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-physical-center-ingest-contract-v1
+          path: artifacts/kokuno_agent5/physical_center_ingest_contract_v1/report.json
+          if-no-files-found: error
