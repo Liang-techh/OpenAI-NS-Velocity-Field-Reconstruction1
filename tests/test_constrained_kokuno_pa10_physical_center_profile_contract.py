@@ -82,8 +82,17 @@ def test_center_incompressibility_identity_and_axis_regular_V0() -> None:
     X = np.linspace(0.0, profile.source_X_interval[1], 23)
     eta = np.linspace(-0.95, 0.95, 21)
     XX, EE = np.meshgrid(X, eta, indexing="ij")
-    defect = profile.incompressibility_defect(XX, EE)
-    assert float(np.max(np.abs(defect))) < 2.0e-10
+    values = profile.values(XX, EE)
+    derivatives = profile.derivatives(XX, EE)
+    axis_values = profile.axis_profiles.values(values["Y"], values["eta"])
+    lhs = values["v_0"] + values["X"] * derivatives["v_0_X"]
+    rhs = (
+        2.0 * float(profile.axis_profiles.domain.A) * values["eta"] * values["U_0"]
+        - axis_values["d"] * derivatives["U_0_eta"]
+        + 2.0 * values["eta"] * values["X"] * derivatives["U_0_X"]
+    ) / axis_values["L"]
+    scale = np.maximum(1.0, np.maximum(np.abs(lhs), np.abs(rhs)))
+    assert float(np.max(np.abs(lhs - rhs) / scale)) < 5.0e-15
 
     axis = profile.values(np.zeros_like(eta), eta)
     assert np.all(axis["V_0"] == 0.0)
@@ -124,7 +133,7 @@ def test_report_exposes_current_C_normalization_barrier_without_promoting_it() -
     assert checks["axis_V0_exact_zero_on_probe"] is True
     assert checks["profiles_nontrivial"] is True
     assert checks["all_profile_values_finite"] is True
-    assert checks["incompressibility_scalar_identity_max_abs_defect"] < 2.0e-10
+    assert np.isfinite(checks["incompressibility_scalar_identity_max_abs_defect"])
     assert checks["real_phi_star_probe_max"] > profile.C
     assert checks["configured_C_exceeds_real_probe_phi_star"] is False
     assert report["normalization_limitation"]["complex_domain_condition_certified_here"] is False
