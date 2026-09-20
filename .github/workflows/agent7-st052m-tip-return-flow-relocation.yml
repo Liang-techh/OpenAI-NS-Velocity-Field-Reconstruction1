@@ -1,0 +1,103 @@
+name: agent7-st052m-tip-return-flow-relocation
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_tip_return_flow_relocation.py'
+      - 'experiments/root_st052/test_agent7_st052m_tip_return_flow_relocation.py'
+      - '.github/workflows/agent7-st052m-tip-return-flow-relocation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  analytic-return-flow-relocation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Verify exact PR head checkout
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+      - name: Focused contract tests
+        run: python -m pytest -q -W error experiments/root_st052/test_agent7_st052m_tip_return_flow_relocation.py
+      - name: Execute preregistered analytic preflight
+        run: |
+          mkdir -p outputs/agent7-st052m-tip-return-flow-relocation
+          python experiments/root_st052/agent7_st052m_tip_return_flow_relocation.py \
+            --out outputs/agent7-st052m-tip-return-flow-relocation/report.json
+      - name: Verify frozen truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-tip-return-flow-relocation/report.json').read_text())
+          assert r['prereg_issue']==731
+          assert r['source_parent']=={'pr':723,'head':'1b16147b93e7b5279c833e8629e10aff1ef4f5a6'}
+          assert r['selected_envelope']['inner_exponent_p']==9
+          assert r['selected_envelope']['outer_exponent_m']==4
+          assert r['selected_envelope']['physical_abs_z_sign_change']>=1.60
+          assert r['baseline_comparison']['reshaped_return_collar_thickness'] < r['baseline_comparison']['baseline_return_collar_thickness']
+          assert r['structural_scope']['return_flow_removed'] is False
+          assert r['structural_scope']['return_flow_relocated_outward'] is True
+          assert r['decision']['same_dimension_envelope_reshape_justified_for_one_nonlinear_replay'] is True
+          assert r['decision']['second_poloidal_channel_justified_now'] is False
+          assert r['decision']['velocity_changed_this_increment'] is False
+          assert r['basis_dimension_changed'] is False
+          assert r['nonlinear_child_evaluated'] is False
+          assert r['trajectory_result_used'] is False
+          assert r['held_out_pde_residual_evaluated'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          assert r['paper_exact'] is False
+          assert r['openai_field_identified'] is False
+          print('selected_p=',r['selected_envelope']['inner_exponent_p'])
+          print('z_sign_change=',r['selected_envelope']['physical_abs_z_sign_change'])
+          print('collar_reduction_fraction=',r['baseline_comparison']['return_collar_reduction_fraction'])
+          PY
+      - name: Publish compact receipt
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent7-return-flow-relocation-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-tip-return-flow-relocation/report.json').read_text())
+          s=r['selected_envelope']
+          b=r['baseline_comparison']
+          print('<!-- agent7-st052m-tip-return-flow-relocation-receipt -->')
+          print('**Agent 7 same-dimension return-flow relocation receipt (issue #731):**')
+          print()
+          print(f"- deterministic minimal exponents: `p={s['inner_exponent_p']}, m={s['outer_exponent_m']}`")
+          print(f"- physical sign change: `|z|={s['physical_abs_z_sign_change']:.12g}`")
+          print(f"- baseline return collar: `{b['baseline_return_collar_thickness']:.12g}`")
+          print(f"- reshaped return collar: `{b['reshaped_return_collar_thickness']:.12g}`")
+          print(f"- collar reduction: `{100*b['return_collar_reduction_fraction']:.6g}%`")
+          print('- return flow is **relocated, not removed**; compact-lobe integral obstruction remains.')
+          print('- no new basis dimension, time basis, alpha fit, trajectory replay, pressure/forcing change, visual target or PDE threshold.')
+          print()
+          print('Truth boundary: this is representation-capacity preflight only. It changes no velocity candidate and does not establish visual correspondence, PDE validity, paper exactness, OpenAI-field identity or blow-up.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-return-flow-relocation-receipt.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-tip-return-flow-relocation
+          path: outputs/agent7-st052m-tip-return-flow-relocation/
+          if-no-files-found: error
+
+# Family, integer-selection rule, sign-location gate and truth boundary were frozen in issue #731 before execution.
