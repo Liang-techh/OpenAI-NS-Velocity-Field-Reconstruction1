@@ -1,0 +1,119 @@
+name: kokuno-agent1-pa10-physical-center-profile-map
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a1-pa10-physical-center-profile-map-067
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_pa10_physical_center_profile_contract.py"
+      - "tests/test_constrained_kokuno_pa10_physical_center_profile_contract.py"
+      - ".github/workflows/kokuno-agent1-pa10-physical-center-profile-map.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent1-pa10-physical-center-profile-map-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  physical-center-profile-map:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify exact checked-out head
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          echo "exact_head=$EXPECTED_HEAD"
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile
+        run: |
+          python -m compileall -q \
+            src/openai_ns_reconstruction/kokuno_pa10_leading_axis_profile_contract.py \
+            src/openai_ns_reconstruction/kokuno_pa10_phi0_profile_contract.py \
+            src/openai_ns_reconstruction/kokuno_pa10_physical_center_profile_contract.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_pa10_leading_axis_profile_contract.py \
+            tests/test_constrained_kokuno_pa10_phi0_profile_contract.py \
+            tests/test_constrained_kokuno_pa10_physical_center_profile_contract.py
+      - name: Generate exact-head physical-center receipt and reloadable config
+        run: |
+          python -W error -m openai_ns_reconstruction.kokuno_pa10_physical_center_profile_contract \
+            --output artifacts/kokuno_agent1/pa10_physical_center_profile_v1/report.json \
+            --config-output artifacts/kokuno_agent1/pa10_physical_center_profile_v1/config.json
+      - name: Bind exact head and validate truth boundary
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          import subprocess
+
+          from openai_ns_reconstruction.kokuno_pa10_physical_center_profile_contract import (
+              KokunoPA10PhysicalCenterProfileContract,
+          )
+
+          root = Path('artifacts/kokuno_agent1/pa10_physical_center_profile_v1')
+          report_path = root / 'report.json'
+          config_path = root / 'config.json'
+          payload = json.loads(report_path.read_text())
+          payload['exact_head'] = subprocess.check_output(
+              ['git', 'rev-parse', 'HEAD'], text=True
+          ).strip()
+          raw = json.dumps(payload, indent=2, sort_keys=True) + '\n'
+          report_path.write_text(raw)
+
+          profile = KokunoPA10PhysicalCenterProfileContract.load_configuration(config_path)
+          assert profile.configuration() == payload['configuration']
+          mapping = payload['mapping_contract']
+          assert mapping['source_Y_equals_Lambda_X'] is True
+          assert mapping['physical_F_equals_phi_star_over_C_times_Phi'] is True
+          assert mapping['physical_U_equals_Ustar_plus_u_over_Lambda'] is True
+
+          checks = payload['machine_checks']
+          assert checks['Y_equals_Lambda_X_exact_on_probe'] is True
+          assert checks['axis_V0_exact_zero_on_probe'] is True
+          assert checks['profiles_nontrivial'] is True
+          assert checks['all_profile_values_finite'] is True
+          # This negative result is intentional: the inherited autonomous C=2
+          # does not even dominate the real-axis phi_* probe, so it cannot be
+          # laundered into the source complex normalization condition.
+          assert checks['real_phi_star_probe_max'] > mapping['configured_C']
+          assert checks['configured_C_exceeds_real_probe_phi_star'] is False
+
+          truth = payload['truth_boundary']
+          assert truth['source_Y_equals_Lambda_X_mapping_resolved'] is True
+          assert truth['physical_F_from_Phi_mapping_resolved'] is True
+          assert truth['physical_U_from_u_mapping_resolved'] is True
+          assert truth['source_complex_C_normalization_certified'] is False
+          assert truth['source_center_is_final_corrected_fixed_point'] is False
+          assert truth['fixed_point_correction_materialized'] is False
+          assert truth['global_leading_profile_reconstructed'] is False
+          assert truth['cartesian_spacetime_velocity_materialized'] is False
+          assert truth['heldout_ns_residual_assessed'] is False
+          assert truth['pde_validated'] is False
+          assert truth['paper_exact'] is False
+          assert truth['openai_field_identified'] is False
+
+          print('artifact_sha256=', hashlib.sha256(raw.encode()).hexdigest())
+          print('receipt_sha256=', payload['receipt_sha256'])
+          print('machine_checks=', checks)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-pa10-physical-center-profile-v1
+          path: artifacts/kokuno_agent1/pa10_physical_center_profile_v1/
+          if-no-files-found: error
