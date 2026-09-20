@@ -20,7 +20,6 @@ from openai_ns_reconstruction.kokuno_a5_strict_inner_vorticity_artifact_ingest_c
     deterministic_strict_inner_vorticity_artifact_ingest_contract,
 )
 
-
 EXACT_HEAD = "0" * 40
 
 
@@ -28,13 +27,12 @@ def _payload():
     return deterministic_finite_correction_stage_ingest_contract(exact_head=EXACT_HEAD)
 
 
-def test_agent3_finite_correction_stage_is_registered_but_not_run() -> None:
+def test_agent3_stage_is_registered_but_not_a_real_cycle() -> None:
     payload = _payload()
     validate_finite_correction_stage_ingest_contract(payload)
 
     assert payload["parent_a5"]["pr"] == 884
     assert payload["parent_a5"]["head"] == PARENT_A5_HEAD
-
     a3 = payload["agent3_binding"]
     assert a3["pr"] == 888
     assert a3["head"] == AGENT3_HEAD
@@ -95,10 +93,8 @@ def test_agent3_finite_correction_stage_is_registered_but_not_run() -> None:
     }
 
 
-def test_finite_stage_protocol_freezes_complete_defect_and_antileakage_contract() -> None:
-    payload = _payload()
-    protocol = payload["agent3_binding"]["protocol"]
-
+def test_protocol_freezes_complete_defect_and_antileakage_requirements() -> None:
+    protocol = _payload()["agent3_binding"]["protocol"]
     assert protocol["candidate_admission_requires"] == [
         "complete_ns_defect",
         "corrected_global_leading_join_complete",
@@ -138,6 +134,9 @@ def test_finite_stage_protocol_freezes_complete_defect_and_antileakage_contract(
     assert protocol["mechanics_only_receipt_is_candidate_residual_evidence"] is False
     assert protocol["mechanics_only_receipt_can_set_pde_validated"] is False
 
+
+def test_current_source_and_a4_context_remain_fail_closed() -> None:
+    payload = _payload()
     current = payload["current_source_admission"]
     assert current["complete_ns_defect"] is False
     assert current["pressure_gradient_included"] is False
@@ -151,13 +150,24 @@ def test_finite_stage_protocol_freezes_complete_defect_and_antileakage_contract(
     assert current["residual_reduction_claimed"] is False
     assert current["same_protocol_comparable_to_st006"] is False
 
+    a4 = payload["agent4_context"]
+    assert a4["latest_relevant_candidate_audit_pr"] == 889
+    assert a4["latest_relevant_candidate_audit_head"] == (
+        "574fd5f7d67e5fbf905ef91a483a7e9e8124698d"
+    )
+    assert a4["latest_relevant_candidate_audit_dedicated_run"] == 35530344739
+    assert a4["latest_relevant_candidate_audit_tests_run"] == 35530344662
+    assert a4["dedicated_finite_correction_stage_audit_present"] is False
+    assert a4["finite_correction_stage_audit_conclusion"] is None
+    assert a4["latest_a4_scope_is_finite_correction_stage_audit"] is False
+    assert a4["latest_a4_scope_is_final_pde_validation"] is False
 
-def test_parent_candidate_api_and_repository_gates_remain_unchanged() -> None:
+
+def test_parent_candidate_api_baseline_and_gates_are_unchanged() -> None:
     payload = _payload()
     parent = deterministic_strict_inner_vorticity_artifact_ingest_contract(
         exact_head=PARENT_A5_HEAD
     )
-
     assert payload["candidate_api_handoff"] == parent["candidate_api_handoff"]
     assert payload["candidate_api_handoff"]["pressure"] is None
     assert payload["candidate_api_handoff"]["forcing"] is None
@@ -166,16 +176,6 @@ def test_parent_candidate_api_and_repository_gates_remain_unchanged() -> None:
     assert payload["final_project_gates_unchanged"] == parent["final_project_gates_unchanged"]
     assert FINAL_NORMALIZED_MOMENTUM_GATE == 1e-3
     assert FINAL_NORMALIZED_DIVERGENCE_GATE == 1e-5
-
-    a4 = payload["agent4_context"]
-    assert a4["latest_relevant_candidate_audit_pr"] == 883
-    assert a4["latest_relevant_candidate_audit_head"] == (
-        "772acaced47beb8d6d7cc4745833cbde06f10940"
-    )
-    assert a4["dedicated_finite_correction_stage_audit_present"] is False
-    assert a4["finite_correction_stage_audit_conclusion"] is None
-    assert a4["latest_a4_scope_is_finite_correction_stage_audit"] is False
-    assert a4["latest_a4_scope_is_final_pde_validation"] is False
 
     truth = payload["truth_boundary"]
     assert truth["agent3_mechanics_receipt_laundered_as_candidate_evidence"] is False
@@ -218,7 +218,7 @@ def test_parent_candidate_api_and_repository_gates_remain_unchanged() -> None:
         lambda p: p["truth_boundary"].__setitem__("threshold_relaxed", True),
     ],
 )
-def test_truth_boundary_mutations_fail_closed(mutate) -> None:
+def test_truth_mutations_fail_closed(mutate) -> None:
     payload = copy.deepcopy(_payload())
     mutate(payload)
     with pytest.raises(ValueError, match="drifted"):
