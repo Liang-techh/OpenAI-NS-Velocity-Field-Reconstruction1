@@ -1,0 +1,102 @@
+name: kokuno-agent2-oscillatory-correction-cross-advection
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a2-osc-correction-cross-advection-056
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_public_oscillatory_correction_cross_advection.py"
+      - "src/openai_ns_reconstruction/kokuno_public_oscillatory_self_advection.py"
+      - "src/openai_ns_reconstruction/kokuno_public_oscillatory_vorticity_diagnostic.py"
+      - "src/openai_ns_reconstruction/kokuno_public_signed_amplitude_complete_curl.py"
+      - "src/openai_ns_reconstruction/kokuno_public_signed_amplitude_spatial_jacobian.py"
+      - "tests/test_constrained_kokuno_public_oscillatory_correction_cross_advection.py"
+      - ".github/workflows/kokuno-agent2-oscillatory-correction-cross-advection.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent2-oscillatory-correction-cross-advection-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  oscillatory-correction-cross-advection:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Verify exact head
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+      - name: Compile mixed nonlinear seam
+        run: >-
+          python -W error -m py_compile
+          src/openai_ns_reconstruction/kokuno_public_oscillatory_correction_cross_advection.py
+          src/openai_ns_reconstruction/kokuno_public_oscillatory_self_advection.py
+          src/openai_ns_reconstruction/kokuno_public_oscillatory_vorticity_diagnostic.py
+          src/openai_ns_reconstruction/kokuno_public_signed_amplitude_complete_curl.py
+          src/openai_ns_reconstruction/kokuno_public_signed_amplitude_spatial_jacobian.py
+      - name: Run focused warnings-as-errors tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_public_oscillatory_self_advection.py
+          tests/test_constrained_kokuno_public_signed_amplitude_spatial_jacobian.py
+          tests/test_constrained_kokuno_public_oscillatory_correction_cross_advection.py
+      - name: Generate immutable mixed-advection receipt
+        run: >-
+          python -W error -m openai_ns_reconstruction.kokuno_public_oscillatory_correction_cross_advection
+          --output artifacts/kokuno_agent2_oscillatory_correction_cross_advection_v1.json
+      - name: Check preregistered gates and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('artifacts/kokuno_agent2_oscillatory_correction_cross_advection_v1.json')
+          r = json.loads(p.read_text())
+          assert r['schema'] == 'kokuno-a2-oscillatory-correction-cross-advection-v1'
+          assert r['sample_count'] == 18
+          assert r['sample_times'] == [0.43, 0.50, 0.57]
+          assert r['oscillatory_fd6_step'] == 0.001
+          assert r['correction_fd4_step'] == 0.001
+          assert r['directional_fd4_steps'] == [0.004, 0.002, 0.001]
+          assert r['failed_guards'] == []
+          assert r['cross_advection_rms'] >= 1.0e-10
+          assert r['directional_refinement_ratio'] >= 8.0
+          assert r['directional_finest_relative_rms'] <= 5.0e-3
+          assert r['directional_finest_relative_sampled_max'] <= 1.0e-2
+          assert max(r['manufactured_algebra'].values()) <= 1.0e-14
+          assert r['support_exterior_absolute_max'] <= 1.0e-12
+          t = r['truth_boundary']
+          assert t['oscillatory_velocity_candidate_changed'] is False
+          assert t['correction_velocity_candidate_changed'] is False
+          assert t['amplitude_phase_carrier_support_retuned'] is False
+          assert t['complete_curl_correction_reused'] is True
+          assert t['cross_advection_executable'] is True
+          assert t['cross_advection_is_ns_residual'] is False
+          assert t['agent3_mean_radial_chain_reimplemented'] is False
+          assert t['agent3_mean_defect_contract_emitted'] is False
+          assert t['real_agent3_delta_a_bound'] is False
+          assert t['real_global_leading_field_bound'] is False
+          assert t['full_composite_velocity_available'] is False
+          assert t['heldout_ns_momentum_residual_assessed'] is False
+          assert t['residual_reduction_claimed'] is False
+          assert t['paper_exact'] is False
+          assert t['pde_validated'] is False
+          print('oscillatory_correction_cross_advection=PASS')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent2-oscillatory-correction-cross-advection-v1
+          path: artifacts/kokuno_agent2_oscillatory_correction_cross_advection_v1.json
+          if-no-files-found: error
