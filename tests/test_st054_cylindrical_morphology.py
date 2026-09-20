@@ -9,6 +9,7 @@ from openai_ns_reconstruction.st054_cylindrical_morphology import (
     EXTERNAL_METHOD_SCREEN,
     TRUTH_BOUNDARY,
     fingerprint_velocity_field,
+    validate_fingerprint_receipt,
 )
 from openai_ns_reconstruction.st054_snapshot import load_st054
 
@@ -139,6 +140,8 @@ def test_protocol_rejects_degenerate_or_ambiguous_sampling_inputs():
         fingerprint_velocity_field(field, azimuth_count=7)
     with pytest.raises(ValueError, match="times"):
         fingerprint_velocity_field(field, times=(np.nan,))
+    with pytest.raises(ValueError, match="core_radii"):
+        fingerprint_velocity_field(field, core_radii=(0.0,))
 
 
 def test_receipt_is_deterministic_and_external_screen_is_non_migration():
@@ -159,7 +162,7 @@ def test_receipt_is_deterministic_and_external_screen_is_non_migration():
     assert EXTERNAL_METHOD_SCREEN[0]["classification"] == "screened_not_adopted"
 
 
-def test_truth_boundary_cannot_be_confused_with_diagnostic_readiness():
+def test_receipt_verifier_rejects_truth_promotion_target_invention_and_tampering():
     receipt = fingerprint_velocity_field(
         ManufacturedSpiralStretchField(),
         radii=(0.5,),
@@ -168,9 +171,29 @@ def test_truth_boundary_cannot_be_confused_with_diagnostic_readiness():
         azimuth_count=8,
         core_radii=(0.25, 0.5),
     )
+    validate_fingerprint_receipt(receipt)
+
     promoted = copy.deepcopy(receipt)
     promoted["visual_correspondence_verified"] = True
-    assert promoted["cylindrical_morphology_diagnostic_ready"] is True
-    assert promoted["visual_correspondence_verified"] is True
-    assert receipt["visual_correspondence_verified"] is False
-    assert receipt["pde_validated"] is False
+    with pytest.raises(ValueError, match="truth boundary promoted"):
+        validate_fingerprint_receipt(promoted)
+
+    invented_target = copy.deepcopy(receipt)
+    invented_target["protocol"]["source_numeric_targets_used"] = True
+    with pytest.raises(ValueError, match="source_numeric_targets_used"):
+        validate_fingerprint_receipt(invented_target)
+
+    pixelized = copy.deepcopy(receipt)
+    pixelized["protocol"]["pixel_loss_used"] = True
+    with pytest.raises(ValueError, match="pixel_loss_used"):
+        validate_fingerprint_receipt(pixelized)
+
+    migrated = copy.deepcopy(receipt)
+    migrated["external_method_screen"][0]["classification"] = "direct_migration"
+    with pytest.raises(ValueError, match="external method screen drift"):
+        validate_fingerprint_receipt(migrated)
+
+    tampered = copy.deepcopy(receipt)
+    tampered["measurements"]["ring_rows"][0]["mean_u_r"] += 1.0
+    with pytest.raises(ValueError, match="digest mismatch"):
+        validate_fingerprint_receipt(tampered)
