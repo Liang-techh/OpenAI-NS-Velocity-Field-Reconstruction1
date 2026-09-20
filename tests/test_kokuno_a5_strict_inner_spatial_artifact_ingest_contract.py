@@ -10,6 +10,8 @@ from openai_ns_reconstruction.kokuno_a5_strict_inner_differentiable_artifact_ing
 from openai_ns_reconstruction.kokuno_a5_strict_inner_spatial_artifact_ingest_contract import (
     AGENT2_HEAD,
     AGENT2_SOURCE_BLOB,
+    AGENT4_HEAD,
+    AGENT4_SOURCE_BLOB,
     deterministic_strict_inner_spatial_artifact_ingest_contract,
     validate_strict_inner_spatial_artifact_ingest_contract,
 )
@@ -25,7 +27,7 @@ def _payload():
     )
 
 
-def test_spatial_artifact_is_registered_but_waits_for_agent4() -> None:
+def test_spatial_artifact_and_a4_audit_are_registered_but_unresolved() -> None:
     payload = _payload()
     validate_strict_inner_spatial_artifact_ingest_contract(payload)
 
@@ -35,25 +37,29 @@ def test_spatial_artifact_is_registered_but_waits_for_agent4() -> None:
     assert payload["agent2_binding"]["class"] == "KokunoStrictInnerLeadingOscillatorySpatialCandidate"
 
     a4 = payload["agent4_binding"]
-    assert a4["dedicated_spatial_artifact_audit_present"] is False
-    assert a4["authority"] is None
-    assert a4["audited_agent2_pr"] is None
-    assert a4["exact_head_ci_conclusion"] is None
-    assert a4["independent_audit_conclusion"] is None
+    assert a4["head"] == AGENT4_HEAD
+    assert a4["source_blob_sha"] == AGENT4_SOURCE_BLOB
+    assert a4["schema"] == "kokuno-a4-strict-inner-spatial-candidate-independent-audit-v1"
+    assert a4["dedicated_spatial_artifact_audit_present"] is True
+    assert a4["authority"] == "Agent4#876"
+    assert a4["audited_agent2_pr"] == 874
+    assert a4["audited_agent2_head"] == AGENT2_HEAD
 
     evidence = payload["evidence"]
     assert evidence["agent2_exact_head_ci_conclusion"] is None
     assert evidence["agent2_construction_side_fd4_verifier_present"] is True
-    assert evidence["agent4_dedicated_spatial_artifact_audit_present"] is False
+    assert evidence["agent4_dedicated_spatial_artifact_audit_present"] is True
+    assert evidence["agent4_exact_head_ci_conclusion"] is None
+    assert evidence["agent4_independent_audit_conclusion"] is None
     assert evidence["agent4_scientific_receipt_admitted"] is False
     assert evidence["strict_inner_spatial_artifact_scientifically_admitted"] is False
 
     handoff = payload["spatial_artifact_handoff"]
     assert handoff["registered"] is True
-    assert handoff["status"] == "registered_waiting_for_independent_a4_audit"
+    assert handoff["status"] == "registered_unresolved"
     assert handoff["construction_authority"] == "Agent2#874"
-    assert handoff["independent_audit_available"] is False
-    assert handoff["independent_audit_authority"] is None
+    assert handoff["independent_audit_available"] is True
+    assert handoff["independent_audit_authority"] == "Agent4#876"
     assert handoff["public_velocity_binding"].endswith(".velocity")
     assert handoff["public_velocity_dt_binding"].endswith(".velocity_dt")
     assert handoff["public_velocity_jacobian_binding"].endswith(".velocity_jacobian")
@@ -69,6 +75,7 @@ def test_spatial_artifact_is_registered_but_waits_for_agent4() -> None:
     assert handoff["eligible_for_velocity_export_ready"] is False
     assert handoff["usable_for_final_independent_pde_validation"] is False
 
+    assert payload["ingest_status"]["typed_strict_inner_spatial_artifact_independent_audit_registered"] is True
     assert payload["ingest_status"]["strict_inner_spatial_artifact_ingest_admitted"] is False
     assert payload["stage_state"] == {
         "leading_ready": False,
@@ -79,7 +86,7 @@ def test_spatial_artifact_is_registered_but_waits_for_agent4() -> None:
     }
 
 
-def test_agent2_spatial_engineering_checks_are_not_laundered() -> None:
+def test_construction_and_independent_spatial_checks_keep_norm_scope_separate() -> None:
     payload = _payload()
     protocol = payload["agent2_binding"]["protocol"]
     assert protocol["oscillatory_jacobian_operator"] == "centered_cartesian_fd6"
@@ -91,14 +98,32 @@ def test_agent2_spatial_engineering_checks_are_not_laundered() -> None:
     assert protocol["construction_side_fd4_fine_relative_rms_gate"] == 5e-3
     assert protocol["construction_side_fd4_fine_relative_sampled_max_gate"] == 1e-2
 
-    firewall = payload["agent2_binding"]["norm_scope_firewall"]
-    assert firewall["agent2_fd4_is_independent_agent4_validation"] is False
-    assert firewall["jacobian_consistency_is_complete_ns_residual"] is False
-    assert firewall["jacobian_consistency_is_cr001_momentum_norm"] is False
-    assert firewall["derived_divergence_diagnostic_is_final_divergence_gate"] is False
-    assert firewall["whole_domain_volume_weighted_l2_assessed"] is False
-    assert firewall["same_protocol_st006_comparison_legal"] is False
-    assert firewall["formal_full_domain_pde_gate_assessed"] is False
+    a2_firewall = payload["agent2_binding"]["norm_scope_firewall"]
+    assert a2_firewall["agent2_fd4_is_independent_agent4_validation"] is False
+    assert a2_firewall["jacobian_consistency_is_complete_ns_residual"] is False
+    assert a2_firewall["jacobian_consistency_is_cr001_momentum_norm"] is False
+    assert a2_firewall["derived_divergence_diagnostic_is_final_divergence_gate"] is False
+    assert a2_firewall["whole_domain_volume_weighted_l2_assessed"] is False
+
+    a4_protocol = payload["agent4_binding"]["protocol"]
+    assert a4_protocol["seed"] == 9173541
+    assert a4_protocol["random_offgrid_sample_count"] == 160
+    assert a4_protocol["exact_axis_probe_count"] == 3
+    assert a4_protocol["axis_near_probe_count"] == 3
+    assert a4_protocol["nominal_richardson_spatial_steps"] == [2.4e-3, 1.2e-3, 6e-4]
+    assert a4_protocol["fine_relative_rms_gate"] == 3e-3
+    assert a4_protocol["fine_relative_sampled_max_gate"] == 8e-3
+    assert a4_protocol["refinement_ratio_gate"] == 6.0
+    assert a4_protocol["uses_agent1_analytic_jacobian_as_reference"] is False
+    assert a4_protocol["uses_agent2_fd6_jacobian_as_reference"] is False
+    assert a4_protocol["uses_agent2_fd4_verifier_as_reference"] is False
+
+    a4_firewall = payload["agent4_binding"]["norm_scope_firewall"]
+    assert a4_firewall["spatial_jacobian_consistency_is_complete_ns_residual"] is False
+    assert a4_firewall["spatial_jacobian_consistency_is_cr001_momentum_norm"] is False
+    assert a4_firewall["divergence_rms_is_heldout_sampled_rms"] is True
+    assert a4_firewall["divergence_rms_is_whole_domain_volume_weighted_l2"] is False
+    assert a4_firewall["same_protocol_st006_comparison_legal"] is False
 
     api = payload["candidate_api_handoff"]
     assert api["strict_inner_artifact_velocity"] == "Agent2#874.velocity"
@@ -114,6 +139,7 @@ def test_agent2_spatial_engineering_checks_are_not_laundered() -> None:
     assert payload["final_project_gates_unchanged"] == parent["final_project_gates_unchanged"]
     assert payload["truth_boundary"]["agent2_fd4_laundered_as_independent_a4_validation"] is False
     assert payload["truth_boundary"]["jacobian_consistency_laundered_as_pde_residual"] is False
+    assert payload["truth_boundary"]["sampled_divergence_laundered_as_whole_domain_l2"] is False
     assert payload["truth_boundary"]["free_residual_defined_forcing_allowed"] is False
     assert payload["truth_boundary"]["threshold_relaxed"] is False
 
@@ -122,13 +148,15 @@ def test_agent2_spatial_engineering_checks_are_not_laundered() -> None:
     "mutate",
     [
         lambda p: p["evidence"].__setitem__("agent2_exact_head_ci_conclusion", "success"),
-        lambda p: p["evidence"].__setitem__("agent4_dedicated_spatial_artifact_audit_present", True),
-        lambda p: p["agent4_binding"].__setitem__("authority", "Agent4#fake"),
+        lambda p: p["evidence"].__setitem__("agent4_exact_head_ci_conclusion", "success"),
+        lambda p: p["evidence"].__setitem__("agent4_independent_audit_conclusion", "pass"),
         lambda p: p["agent2_binding"].__setitem__("head", "1" * 40),
         lambda p: p["agent2_binding"].__setitem__("source_blob_sha", "2" * 40),
+        lambda p: p["agent4_binding"].__setitem__("head", "3" * 40),
+        lambda p: p["agent4_binding"].__setitem__("source_blob_sha", "4" * 40),
         lambda p: p["agent2_binding"]["protocol"].__setitem__("oscillatory_jacobian_fixed_step", 2e-3),
         lambda p: p["agent2_binding"]["norm_scope_firewall"].__setitem__("agent2_fd4_is_independent_agent4_validation", True),
-        lambda p: p["spatial_artifact_handoff"].__setitem__("independent_audit_available", True),
+        lambda p: p["agent4_binding"]["norm_scope_firewall"].__setitem__("divergence_rms_is_whole_domain_volume_weighted_l2", True),
         lambda p: p["spatial_artifact_handoff"].__setitem__("pressure_in_artifact_surface", True),
         lambda p: p["spatial_artifact_handoff"].__setitem__("restricted_forcing_in_artifact_surface", True),
         lambda p: p["spatial_artifact_handoff"].__setitem__("agent3_correction_velocity_in_artifact", True),
