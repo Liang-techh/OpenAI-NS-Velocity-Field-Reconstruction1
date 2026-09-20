@@ -1,0 +1,149 @@
+name: agent9-st054-vtk-export
+
+on:
+  push:
+    branches:
+      - agent9/st054-vtk-export-077
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/st054_vtk.py'
+      - 'tests/test_st054_vtk.py'
+      - '.github/workflows/agent9-st054-vtk-export.yml'
+      - 'src/openai_ns_reconstruction/st054_snapshot.py'
+      - 'visualization/matlab/data/st054_models.mat'
+
+permissions:
+  contents: read
+
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - name: Bind exact checkout
+        shell: bash
+        run: |
+          expected='${{ github.event.pull_request.head.sha || github.sha }}'
+          actual="$(git rev-parse HEAD)"
+          test "$actual" = "$expected"
+          printf 'exact_head=%s\n' "$actual"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install package and independent VTK reader
+        run: python -m pip install -e '.[dev]' meshio==5.3.5
+
+      - name: Compile VTK exporter
+        run: python -m py_compile src/openai_ns_reconstruction/st054_vtk.py tests/test_st054_vtk.py
+
+      - name: Run focused fail-closed tests
+        run: python -m pytest -q -W error tests/test_st054_vtk.py
+
+      - name: Export frozen VTK smoke matrix
+        shell: bash
+        run: |
+          mkdir -p outputs/st054_vtk
+          for model in ST054-Q2 ST054-M3; do
+            for item in '0.25:t025' '0.50:t050' '0.75:t075'; do
+              t="${item%%:*}"
+              tag="${item##*:}"
+              python -m openai_ns_reconstruction.st054_vtk \
+                --model "$model" \
+                --time "$t" \
+                --grid-size 21 \
+                --out "outputs/st054_vtk/${model}_${tag}_n21.vtk"
+            done
+          done
+
+      - name: Independent meshio read-back and continuous-field replay
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          import meshio
+          import numpy as np
+
+          from openai_ns_reconstruction import load_st054
+          from openai_ns_reconstruction.st054_vtk import (
+              MESHIO_SOURCE,
+              VTK_SOURCE,
+              verify_vtk_export,
+          )
+
+          root = Path("outputs/st054_vtk")
+          vtk_files = sorted(root.glob("*.vtk"))
+          assert len(vtk_files) == 6
+          worst = 0.0
+          for vtk_path in vtk_files:
+              manifest_path = vtk_path.with_suffix(".vtk.json")
+              manifest = verify_vtk_export(vtk_path, manifest_path)
+              assert manifest["external_result_screening"] == [VTK_SOURCE, MESHIO_SOURCE]
+              assert manifest["source"]["source_commit"] == "c77492a48e9c0f13d4d51244987c57c28519409b"
+              assert manifest["source"]["source_mat_sha256"] == "59d43fdc40cd4df1675c2191f85810b9351802b2f4b1e0ac25a3bccfd9914c62"
+              assert manifest["source"]["nu"] == 0.01
+              assert manifest["truth_boundary"]["vtk_export_ready"] is True
+              assert manifest["truth_boundary"]["visualization_ready"] is False
+              assert manifest["truth_boundary"]["visual_correspondence_verified"] is False
+              assert manifest["truth_boundary"]["pde_validated"] is False
+
+              mesh = meshio.read(vtk_path)
+              n = manifest["grid"]["dimensions"][0]
+              expected_points = n ** 3
+              points = np.asarray(mesh.points, dtype=float)
+              velocity = np.asarray(mesh.point_data["velocity"], dtype=float)
+              speed = np.asarray(mesh.point_data["speed"], dtype=float).reshape(-1)
+              assert points.shape == (expected_points, 3)
+              assert velocity.shape == (expected_points, 3)
+              assert speed.shape == (expected_points,)
+              assert np.isfinite(points).all()
+              assert np.isfinite(velocity).all()
+              assert np.isfinite(speed).all()
+              assert np.max(np.abs(np.linalg.norm(velocity, axis=1) - speed)) <= 2.0e-12
+
+              field = load_st054(manifest["model_id"])
+              replay = field.velocity(
+                  points[:, 0],
+                  points[:, 1],
+                  points[:, 2],
+                  manifest["physical_time"],
+              )
+              err = float(np.max(np.abs(replay - velocity)))
+              worst = max(worst, err)
+              assert err <= manifest["engineering_node_replay_atol"]
+
+          receipt = {
+              "task_id": "CR-A9-077",
+              "file_count": len(vtk_files),
+              "meshio_version": meshio.__version__,
+              "grid_size": 21,
+              "times": [0.25, 0.5, 0.75],
+              "models": ["ST054-Q2", "ST054-M3"],
+              "max_meshio_to_continuous_velocity_error": worst,
+              "engineering_gate": 1.0e-8,
+              "vtk_consumer_smoke_ready": True,
+              "visualization_ready": False,
+              "visual_correspondence_verified": False,
+              "pde_validated": False,
+              "paper_exact": False,
+              "openai_field_identified": False,
+              "blowup_proved": False,
+          }
+          (root / "vtk_readback_receipt.json").write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          print(json.dumps(receipt, sort_keys=True))
+          PY
+
+      - name: Upload VTK handoff smoke
+        uses: actions/upload-artifact@v4
+        with:
+          name: ST054-legacy-VTK-continuous-sample
+          path: outputs/st054_vtk/
+          if-no-files-found: error
