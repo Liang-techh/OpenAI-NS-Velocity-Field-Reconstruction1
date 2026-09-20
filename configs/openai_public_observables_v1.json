@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "task_id": "CR-A9-078",
+  "status": "preregistered_public_observable_contract",
+  "purpose": "Freeze only publicly observable morphology statements that may guide later visualization comparison of a delivered velocity(x,y,z,t) field. This file is not a numeric fit target and is not PDE evidence.",
+  "source": {
+    "kind": "official_public_webpage",
+    "publisher": "OpenAI",
+    "title": "On the Navier-Stokes Millennium Prize Problem",
+    "published_date": "2026-09-08",
+    "url": "https://openai.com/index/navier-stokes-solution/",
+    "retrieved_date": "2026-09-20",
+    "evidence_scope": "Public prose and figure caption only; no hidden velocity samples, coefficients, camera metadata, or source data are asserted."
+  },
+  "observables": [
+    {
+      "id": "vortex_swirl_presence",
+      "kind": "qualitative_geometry",
+      "public_observation": "The displayed motion is described as a rotating vortex or swirl.",
+      "source_location": "result prose and figure caption",
+      "numerical_target": null
+    },
+    {
+      "id": "inward_spiraling_trajectories",
+      "kind": "qualitative_trajectory",
+      "public_observation": "Displayed trajectories spiral inward.",
+      "source_location": "result prose and figure caption",
+      "numerical_target": null
+    },
+    {
+      "id": "axial_stretching_trajectories",
+      "kind": "qualitative_trajectory",
+      "public_observation": "Displayed trajectories stretch or elongate along the vortex axis.",
+      "source_location": "result prose and figure caption",
+      "numerical_target": null
+    },
+    {
+      "id": "shrinking_accelerating_core",
+      "kind": "qualitative_time_evolution",
+      "public_observation": "The central region is described as shrinking while its speed increases.",
+      "source_location": "result prose",
+      "numerical_target": null
+    },
+    {
+      "id": "angular_rotation_variation",
+      "kind": "qualitative_velocity_structure",
+      "public_observation": "The public rendering distinguishes regions of faster and slower angular rotation.",
+      "source_location": "figure caption",
+      "numerical_target": null
+    },
+    {
+      "id": "radius_dependent_circulation",
+      "kind": "qualitative_velocity_structure",
+      "public_observation": "Circulating speed is described as depending on radius.",
+      "source_location": "figure caption",
+      "numerical_target": null
+    }
+  ],
+  "unknown_or_unrecoverable_from_public_display": [
+    "exact velocity samples",
+    "hidden coefficients or search trajectory",
+    "absolute spatial scale and coordinate registration",
+    "camera and projection parameters",
+    "color transfer function and rendering normalization",
+    "exact frame-to-physical-time mapping",
+    "pressure and forcing data"
+  ],
+  "allowed_downstream_use": [
+    "Use the observable IDs as qualitative labels in a separately preregistered candidate comparison.",
+    "Derive autonomous numerical diagnostics only after recording their definitions, sample sets, and thresholds separately from this source contract.",
+    "Keep visual/morphology evidence independent from PDE acceptance."
+  ],
+  "forbidden_inferences": [
+    "Treating a pixel or color match as recovery of the hidden OpenAI velocity field.",
+    "Inferring exact camera, coordinates, coefficients, pressure, forcing, or time mapping from the public display.",
+    "Promoting qualitative visual agreement to Navier-Stokes residual acceptance.",
+    "Retuning a candidate on held-out visual evidence and then calling that same evidence independent validation."
+  ],
+  "external_method_screening": [
+    {
+      "source_repo": "scikit-image/scikit-image",
+      "source_commit": "cc0a4b16ebf655873cd6f770e897460abdade288",
+      "license": "BSD-3-Clause (project default; individual vendored files may differ)",
+      "candidate_scope": "image segmentation, morphology, feature extraction, and optical-flow style tooling for future public-frame diagnostics",
+      "classification": "screened_not_adopted",
+      "migration_scope": "none",
+      "reason": "A pixel-space objective is premature without a frozen public frame, camera/projection model, color mapping, and frame-to-time registration. Adopting it now would create styling-specific numerical targets rather than source-supported velocity constraints."
+    }
+  ],
+  "truth_boundary": {
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "source_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  }
+}
