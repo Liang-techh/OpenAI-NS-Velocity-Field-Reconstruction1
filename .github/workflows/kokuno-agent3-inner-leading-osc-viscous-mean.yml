@@ -1,0 +1,108 @@
+name: kokuno-agent3-inner-leading-osc-viscous-mean
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a3-inner-leading-osc-viscous-mean-071
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_inner_leading_oscillatory_viscous_mean.py'
+      - 'tests/test_constrained_kokuno_inner_leading_oscillatory_viscous_mean.py'
+      - '.github/workflows/kokuno-agent3-inner-leading-osc-viscous-mean.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out exact event head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 1
+
+      - name: Assert exact checkout identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          EXPECTED='${{ github.event.pull_request.head.sha || github.sha }}'
+          test "$(git rev-parse HEAD)" = "$EXPECTED"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install repository
+        run: python -m pip install -e '.[dev]'
+
+      - name: Compile focused module and tests
+        run: |
+          python -m py_compile \
+            src/openai_ns_reconstruction/kokuno_inner_leading_oscillatory_viscous_mean.py \
+            tests/test_constrained_kokuno_inner_leading_oscillatory_viscous_mean.py
+
+      - name: Verify exact upstream source blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          A1_HEAD='e96ee90144976a992b62d76d4361a94eb16bd91e'
+          A2_HEAD='9f8bae37c4d3b2559bee6db050655702e4c058e9'
+          A1_EXPECTED='74b0e185e8e0bbb08695d493e0a091c305a03006'
+          A2_EXPECTED='7dfd3dabd28147dffac6ff77ec5457c17689bfe1'
+          git fetch --no-tags --depth=1 origin "$A1_HEAD"
+          git fetch --no-tags --depth=1 origin "$A2_HEAD"
+          A1_ACTUAL="$(git show "$A1_HEAD":src/openai_ns_reconstruction/kokuno_pa10_cartesian_center_laplacian.py | git hash-object --stdin)"
+          A2_ACTUAL="$(git show "$A2_HEAD":src/openai_ns_reconstruction/kokuno_public_oscillatory_spatial_laplacian.py | git hash-object --stdin)"
+          test "$A1_ACTUAL" = "$A1_EXPECTED"
+          test "$A2_ACTUAL" = "$A2_EXPECTED"
+
+      - name: Run focused regression with warnings as errors
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_inner_leading_oscillatory_viscous_mean.py
+
+      - name: Generate mechanics-only receipt
+        run: |
+          mkdir -p artifacts/kokuno_agent3
+          python -m openai_ns_reconstruction.kokuno_inner_leading_oscillatory_viscous_mean \
+            --output artifacts/kokuno_agent3/inner_leading_oscillatory_viscous_mean_mechanics.json
+
+      - name: Reassert frozen truth boundary and mechanics fingerprint
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          import numpy as np
+
+          path = Path('artifacts/kokuno_agent3/inner_leading_oscillatory_viscous_mean_mechanics.json')
+          report = json.loads(path.read_text())
+          assert report['mechanics_only'] is True
+          assert report['angular_orders'] == [32, 64, 128]
+          assert report['viscosity'] == 0.01
+          np.testing.assert_allclose(report['expected_inner_viscous_mean'], [-0.01, 0.02, -0.03])
+          np.testing.assert_allclose(report['expected_oscillatory_viscous_mean'], [-0.005, -0.01, 0.01])
+          np.testing.assert_allclose(report['expected_total_viscous_mean'], [-0.015, 0.01, -0.02])
+          tb = report['truth_boundary']
+          assert tb['complete_ns_defect'] is False
+          assert tb['pressure_gradient_included'] is False
+          assert tb['restricted_forcing_included'] is False
+          assert tb['global_corrected_leading_join_materialized'] is False
+          assert tb['real_candidate_finite_correction_cycle_run'] is False
+          assert tb['heldout_normalized_ns_residual_assessed'] is False
+          assert tb['residual_reduction_claimed'] is False
+          assert tb['pde_validated'] is False
+          assert tb['final_normalized_momentum_gate'] == 1.0e-3
+          assert tb['final_normalized_divergence_gate'] == 1.0e-5
+          PY
+
+      - name: Upload mechanics receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent3-inner-leading-osc-viscous-mean-mechanics-v1
+          path: artifacts/kokuno_agent3/inner_leading_oscillatory_viscous_mean_mechanics.json
+          if-no-files-found: warn
