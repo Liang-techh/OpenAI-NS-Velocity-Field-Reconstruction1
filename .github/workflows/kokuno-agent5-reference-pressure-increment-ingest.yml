@@ -1,0 +1,110 @@
+name: kokuno-agent5-reference-pressure-increment-ingest
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-reference-pressure-increment-ingest-084
+  pull_request:
+    branches:
+      - codex/kokuno-a5-canonical-quadrature-evidence-ingest-083
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_a5_reference_pressure_increment_ingest_contract.py"
+      - "tests/test_kokuno_a5_reference_pressure_increment_ingest_contract.py"
+      - ".github/workflows/kokuno-agent5-reference-pressure-increment-ingest.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  reference-pressure-increment-ingest-firewall:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout exact Agent-5 head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Verify exact checked-out head
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          echo "exact_head=$EXPECTED_HEAD"
+
+      - name: Fetch and verify pinned Agent-1 / Agent-4 artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          A1_HEAD=3f43931cec1fc762678a5a8134adfceaf7edfa81
+          A4_HEAD=68a9ee155f3e4e7f50ff625778d3fbe21d4021cb
+          git fetch --no-tags origin \
+            codex/kokuno-a1-reference-pressure-increment-x100-081 \
+            codex/kokuno-a4-reference-pressure-increment-audit-083
+
+          test "$(git rev-parse "$A1_HEAD")" = "$A1_HEAD"
+          test "$(git rev-parse "$A4_HEAD")" = "$A4_HEAD"
+
+          test "$(git ls-tree 94fe65a1b93b0a9b67e4736015ed93034c2a88df -- src/openai_ns_reconstruction/kokuno_a5_canonical_quadrature_evidence_ingest_contract.py | awk '{print $3}')" = "14b4352ce4248cf0d6b197835aa7efad2edbd906"
+          test "$(git ls-tree "$A1_HEAD" -- src/openai_ns_reconstruction/kokuno_pa10_reference_pressure_increment_x100.py | awk '{print $3}')" = "4704fed4271da2c6070110a6935d2f33f7932f56"
+          test "$(git ls-tree "$A1_HEAD" -- .github/workflows/kokuno-agent1-reference-pressure-increment-x100.yml | awk '{print $3}')" = "b88fb38ef162097e9b471e67e05566dd3e2ad61a"
+          test "$(git ls-tree "$A4_HEAD" -- src/openai_ns_reconstruction/kokuno_a4_reference_pressure_increment_independent_audit.py | awk '{print $3}')" = "027abf88fa1a916fcde3c6d818b19a9ff143c445"
+          test "$(git ls-tree "$A4_HEAD" -- tests/test_constrained_kokuno_a4_reference_pressure_increment_independent_audit.py | awk '{print $3}')" = "59595ca760e136649b958e96fecb48633e23de90"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install repository
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e '.[dev]'
+
+      - name: Run parent and pressure-ingest Agent-5 tests
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_a5_canonical_quadrature_evidence_ingest_contract.py \
+            tests/test_kokuno_a5_reference_pressure_increment_ingest_contract.py
+
+      - name: Materialize fail-closed Agent-5 pressure ingest receipt
+        env:
+          EXACT_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          python -m openai_ns_reconstruction.kokuno_a5_reference_pressure_increment_ingest_contract \
+            --exact-head "$EXACT_HEAD" \
+            --output artifacts/kokuno_a5_reference_pressure_increment_ingest_contract.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("artifacts/kokuno_a5_reference_pressure_increment_ingest_contract.json")
+          contract = json.loads(path.read_text(encoding="utf-8"))
+          a1 = contract["agent1_pressure_increment"]
+          a4 = contract["agent4_pressure_increment_audit"]
+          seam = contract["pressure_ingest_seam"]
+          assert a1["source_determined_pressure_increment"] is True
+          assert a1["absolute_axis_pressure_Pi0_materialized"] is False
+          assert a1["matched_global_pressure_materialized"] is False
+          assert a4["saved_reloaded_public_surface_only"] is True
+          assert a4["implementation_distinct_from_agent1_production_derivatives"] is True
+          assert a4["reference_pressure_increment_independently_audited"] is False
+          assert a4["dedicated_workflow_present"] is False
+          assert seam["pressure_increment_is_absolute_pressure"] is False
+          assert seam["pressure_increment_authorized_as_matched_global_pressure"] is False
+          assert seam["pressure_increment_authorized_as_cartesian_grad_p"] is False
+          assert seam["complete_candidate_pressure_api_ready"] is False
+          assert seam["current_candidate_eligible_for_full_ns_validation"] is False
+          assert seam["residual_defined_forcing_forbidden"] is True
+          assert contract["final_gate"]["momentum_volume_l2"] == 1e-3
+          assert contract["final_gate"]["divergence_volume_l2"] == 1e-5
+          assert contract["readiness"]["pde_validated"] is False
+          PY
+
+      - name: Upload Agent-5 pressure ingest contract
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a5-reference-pressure-increment-ingest-contract
+          path: artifacts/kokuno_a5_reference_pressure_increment_ingest_contract.json
+          if-no-files-found: error
