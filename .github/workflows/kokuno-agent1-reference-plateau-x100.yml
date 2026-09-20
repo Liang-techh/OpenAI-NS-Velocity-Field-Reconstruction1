@@ -1,0 +1,82 @@
+name: kokuno-agent1-reference-plateau-x100
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a1-reference-plateau-x100-079
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_pa10_reference_plateau_x100.py"
+      - "tests/test_kokuno_pa10_reference_plateau_x100.py"
+      - ".github/workflows/kokuno-agent1-reference-plateau-x100.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent1-reference-plateau-x100-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  reference-plateau-x100:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify exact checked-out head
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          echo "exact_head=$EXPECTED_HEAD"
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile executable reference plateau
+        run: |
+          python -m compileall -q \
+            src/openai_ns_reconstruction/kokuno_pa10_reference_plateau_x100.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_pa10_reference_continuation_collar.py \
+            tests/test_kokuno_pa10_reference_plateau_x100.py
+      - name: Emit public X100 reference handoff receipt
+        run: |
+          python - <<'PY'
+          import json
+          from openai_ns_reconstruction.kokuno_pa10_reference_plateau_x100 import (
+              KokunoPA10ReferencePlateauToX100,
+          )
+
+          profile = KokunoPA10ReferencePlateauToX100()
+          report = profile.report()
+          truth = report['truth_boundary']
+          geometry = report['geometry']
+          probe = report['X100_handoff_probe']
+          assert geometry['X_2'] < geometry['X_b_ref'] == 100.0 < geometry['X_i'] == 110.0
+          assert probe['max_abs_F_plateau_value_drift'] == 0.0
+          assert probe['max_abs_U_plateau_value_drift'] == 0.0
+          assert max(abs(x) for x in probe['F_X']) == 0.0
+          assert max(abs(x) for x in probe['U_X']) == 0.0
+          assert max(abs(x - 1.0) for x in probe['l_reference']) == 0.0
+          assert truth['public_reference_plateau_to_X100_executable'] is True
+          assert truth['reference_stress_primitives_p1r_nsr_materialized'] is False
+          assert truth['kappa0_continuation_to_X100_materialized'] is False
+          assert truth['actual_inner_to_outer_bridge_materialized'] is False
+          assert truth['heldout_ns_residual_assessed'] is False
+          assert truth['pde_validated'] is False
+          assert truth['paper_exact'] is False
+          assert truth['openai_field_identified'] is False
+
+          print(json.dumps({
+              'semantic_sha256': report['semantic_sha256'],
+              'geometry': geometry,
+              'X100_handoff_probe': probe,
+          }, indent=2, sort_keys=True))
+          PY
