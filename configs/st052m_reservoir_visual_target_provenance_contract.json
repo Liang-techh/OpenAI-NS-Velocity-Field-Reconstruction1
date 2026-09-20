@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "task_id": "CR002-ST052M-RESERVOIR-VISUAL-TARGET-PROVENANCE-111",
+  "status": "preregistered_claim_scope_audit",
+  "purpose": "Keep the numeric geometry and gates used by the ST052-M outer-reservoir nonlinear screen separate from qualitative OpenAI public observables and from PDE acceptance.",
+  "audited_increment": {
+    "pr": 775,
+    "head": "93887a59729d22113badf2ae4dac2f7d868e2703",
+    "module": "experiments/root_st052/agent7_st052m_outer_reservoir_nonlinear_replay.py",
+    "task_id": "CR003-ST052M-OUTER-RESERVOIR-NONLINEAR-REPLAY-110"
+  },
+  "public_observable_authority": {
+    "pr": 773,
+    "head": "a6d713e3679024d58f2650e0a75ef2092a8dddff",
+    "config_blob_sha": "a222dbf88c4cf61e1dcc21e33cecefb7bb1aa4d1",
+    "integration_state_at_freeze": "open_external_pr_not_live_on_constrained_integration",
+    "relevant_qualitative_observable_ids": [
+      "inward_spiraling_trajectories",
+      "axial_stretching_trajectories"
+    ],
+    "public_numeric_targets_available": false,
+    "note": "This audit does not re-create the public-source contract or assume its queued CI has passed. It only prevents PR #775 project-chosen numeric probes from masquerading as public OpenAI numbers."
+  },
+  "classification_vocabulary": [
+    "user_requirement",
+    "public_source_fact",
+    "autonomous_design",
+    "pending_unknown"
+  ],
+  "classification": {
+    "user_requirement": [
+      "Deliver an explicit callable/saveable 3D time-varying velocity field whose publicly observable structure is made as consistent as practicable with the public OpenAI velocity-field visualization."
+    ],
+    "public_source_fact": [
+      "The official-public observable contract records inward-spiraling trajectories as a qualitative observation with no numerical target.",
+      "The official-public observable contract records axial stretching/elongation as a qualitative observation with no numerical target."
+    ],
+    "autonomous_design": [
+      "Calling 1<abs(z)<1.8 the visualization-relevant visible tip lobe for this development screen.",
+      "Using abs(z)=1.55 and 1.75 as visible-tip probe bands.",
+      "Using abs(z)=1.85 and 1.95 as outer-reservoir diagnostic bands.",
+      "Using radii 0.6, 0.9, 1.2, four cardinal azimuths, and times 0.375, 0.50, 0.625, 0.75.",
+      "Requiring the reservoir-child mean cylindrical radial velocity to be negative and strictly below both #652 and the frozen #740 p=9 child at every selected visible-tip band/time.",
+      "Using historical #701 development positions at t=0.50 to derive the single reservoir coefficient.",
+      "Using #652 and #740 as project-selected development comparators."
+    ],
+    "pending_unknown": [
+      "Exact mapping from public-render image locations to repository x/y/z coordinates.",
+      "Whether repository abs(z)=1.55 or 1.75 corresponds to any particular OpenAI-render location.",
+      "Absolute public spatial scale and coordinate registration.",
+      "Camera and projection parameters.",
+      "Color transfer function and rendering normalization.",
+      "Exact public frame-to-physical-time mapping.",
+      "Hidden OpenAI velocity samples, coefficients, pressure, and forcing."
+    ]
+  },
+  "frozen_numeric_screen": {
+    "visible_abs_z": [1.55, 1.75],
+    "outer_reservoir_abs_z": [1.85, 1.95],
+    "probe_radii": [0.6, 0.9, 1.2],
+    "probe_times": [0.375, 0.5, 0.625, 0.75],
+    "visible_lobe_abs_z_interval": [1.0, 1.8],
+    "return_reservoir_abs_z_interval": [1.8, 2.0],
+    "numeric_screen_provenance": "autonomous_design",
+    "public_numeric_target": null,
+    "independent_visual_validation": false,
+    "global_visual_validation": false
+  },
+  "evidence_scope": {
+    "pr775_pass_may_support": "targeted development evidence that one frozen autonomous reservoir child moves the selected radial/morphology diagnostics in the intended direction on the preregistered project probe set",
+    "pr775_pass_does_not_support": [
+      "A public OpenAI numerical threshold was met.",
+      "The selected z/r/time probe coordinates are sourced from OpenAI.",
+      "Visual correspondence is globally or independently verified.",
+      "The exact OpenAI field or hidden parameters were recovered.",
+      "Navier-Stokes PDE acceptance was achieved.",
+      "Paper-exact reconstruction or blow-up proof was achieved."
+    ],
+    "next_independent_visual_evidence_requires": [
+      "Freeze the exact candidate identity before using disjoint evidence.",
+      "Preregister any render/camera/coordinate/time mapping as autonomous unless independently sourced.",
+      "Do not use the disjoint comparison to retune the candidate and then call the same comparison independent validation."
+    ]
+  },
+  "anti_shortcut": {
+    "residual_defined_or_pointwise_free_force_allowed": false,
+    "amplitude_collapse_success_route_allowed": false,
+    "post_hoc_scientific_threshold_relaxation_allowed": false,
+    "visual_gate_may_promote_pde_validated": false,
+    "development_gate_may_promote_openai_field_identified": false
+  },
+  "truth_boundary": {
+    "canonical_velocity_changed_by_this_audit": false,
+    "velocity_export_ready_promoted_by_this_audit": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "source_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  }
+}
