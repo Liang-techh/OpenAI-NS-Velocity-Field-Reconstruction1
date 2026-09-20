@@ -1,0 +1,99 @@
+{
+  "schema": "cr002-kokuno-axis-completed-first-cell-quadrature-scope-v1",
+  "task": "CR002-KOKUNO-AXIS-COMPLETED-FIRST-CELL-QUADRATURE-SCOPE-118",
+  "audited_upstream": {
+    "pr": 868,
+    "head": "c8268100a36942de9fa966d76f22ad6148ceaa02",
+    "path": "src/openai_ns_reconstruction/kokuno_strict_inner_transport_axis_completed_radial_stress.py",
+    "git_blob_sha1": "041d4298b5350b25a5699492ddf39c35fae4aaab",
+    "parent_scope_audit_pr": 863
+  },
+  "provenance": {
+    "user_requirement": [
+      "keep user requirement, public-source fact, autonomous design, and pending/unknown separate",
+      "keep callable velocity delivery independent from PDE validation",
+      "do not relax scientific thresholds or use residual-defined free forcing or amplitude collapse"
+    ],
+    "public_source_fact": [
+      "the registered compact radial inverse has formal lower limit r=0: sigma_e(r)=-r^(-e) integral_0^r s^e P_e(F)(s) ds"
+    ],
+    "autonomous_design": [
+      "PR #868 prepends a virtual axis node with weighted endpoint value zero and applies a trapezoidal first cell",
+      "the finite positive-radius grid and its first positive radius are repository numerical choices",
+      "the constant-source first-cell witness in this contract is mechanics-only audit data"
+    ],
+    "pending_unknown": [
+      "independent convergence or error certification of the 0-to-r_min first-cell quadrature for the real typed source",
+      "formal full-domain moment correspondence",
+      "axis regularity of a future global candidate",
+      "global corrected leading join, matched pressure, restricted forcing, complete residual, and PDE validation"
+    ]
+  },
+  "representation_scope": {
+    "formal_weighted_primitive": "I_e(r_min)=integral_0^r_min s^e P_e(F)(s) ds",
+    "upstream_discrete_first_cell": "I_e^trap(r_min)=0.5*r_min*(0+r_min^e*P_e(F)(r_min))",
+    "virtual_axis_node_is_quadrature_realization_not_formal_integral_certificate": true,
+    "first_cell_convergence_required_before_formal_lower_limit_accuracy_claim": true,
+    "axis_completed_discrete_lower_limit_may_be_claimed": true,
+    "formal_axis_based_inverse_verified": false,
+    "formal_first_cell_accuracy_verified": false,
+    "formal_full_domain_moment_verified": false,
+    "axis_regularity_verified": false
+  },
+  "mechanics_witness": {
+    "source": "P_e(s)=1 on [0,r_min] with compact bump inactive on the first cell",
+    "r_min": 0.2,
+    "e1": {
+      "formal_primitive": 0.020000000000000004,
+      "trapezoid_primitive": 0.020000000000000004,
+      "formal_stress_at_r_min": -0.1,
+      "trapezoid_stress_at_r_min": -0.1,
+      "relative_primitive_overestimate": 0.0
+    },
+    "e2": {
+      "formal_primitive": 0.0026666666666666674,
+      "trapezoid_primitive": 0.004000000000000001,
+      "formal_stress_at_r_min": -0.06666666666666668,
+      "trapezoid_stress_at_r_min": -0.1,
+      "relative_primitive_overestimate": 0.5
+    },
+    "candidate_evidence": false,
+    "public_source_numeric_target": false
+  },
+  "cr001_snapshot": {
+    "constraints_blob_sha1": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "divergence_max": 1e-05,
+    "divergence_L2": 1e-05,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001,
+    "residual_defined_pointwise_free_force_allowed": false,
+    "amplitude_collapse_allowed": false,
+    "post_hoc_threshold_relaxation_allowed": false
+  },
+  "truth_state": {
+    "changes_velocity": false,
+    "changes_pressure": false,
+    "changes_forcing": false,
+    "changes_candidate_bytes": false,
+    "changes_scientific_thresholds": false,
+    "velocity_export_ready_promoted": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false,
+    "pde_pending_blocks_existing_callable_velocity_delivery": false
+  }
+}
