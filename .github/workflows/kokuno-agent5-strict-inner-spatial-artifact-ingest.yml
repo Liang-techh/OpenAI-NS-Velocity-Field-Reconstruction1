@@ -1,0 +1,215 @@
+name: kokuno-agent5-strict-inner-spatial-artifact-ingest
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-strict-inner-spatial-artifact-ingest-079
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_a5_strict_inner_differentiable_artifact_ingest_contract.py"
+      - "src/openai_ns_reconstruction/kokuno_a5_strict_inner_spatial_artifact_ingest_contract.py"
+      - "tests/test_kokuno_a5_strict_inner_differentiable_artifact_ingest_contract.py"
+      - "tests/test_kokuno_a5_strict_inner_spatial_artifact_ingest_contract.py"
+      - ".github/workflows/kokuno-agent5-strict-inner-spatial-artifact-ingest.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent5-strict-inner-spatial-artifact-ingest-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  exact-head-strict-inner-spatial-artifact-ingest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Verify exact head checkout
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          ACTUAL_HEAD="$(git rev-parse HEAD)"
+          test "$ACTUAL_HEAD" = "$EXPECTED_HEAD"
+          echo "exact_head=$ACTUAL_HEAD"
+
+      - name: Verify frozen Agent-2 spatial-candidate source blob
+        env:
+          AGENT2_HEAD: 9cb3869b9cfd2d5b8dcb1da222df74d80e12d0c2
+          EXPECTED_BLOB: 276c943cd1e769c36d1615366266bf3b2c633040
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin "$AGENT2_HEAD"
+          ACTUAL_BLOB="$(git rev-parse "$AGENT2_HEAD:src/openai_ns_reconstruction/kokuno_strict_inner_leading_oscillatory_spatial_candidate.py")"
+          test "$ACTUAL_BLOB" = "$EXPECTED_BLOB"
+          echo "agent2_spatial_candidate_blob=$ACTUAL_BLOB"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+
+      - name: Compile integration seam
+        run: |
+          python -m compileall -q \
+            src/openai_ns_reconstruction/kokuno_a5_strict_inner_differentiable_artifact_ingest_contract.py \
+            src/openai_ns_reconstruction/kokuno_a5_strict_inner_spatial_artifact_ingest_contract.py
+
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_a5_strict_inner_differentiable_artifact_ingest_contract.py \
+            tests/test_kokuno_a5_strict_inner_spatial_artifact_ingest_contract.py
+
+      - name: Generate exact-head spatial artifact ingest report
+        run: |
+          HEAD_SHA="$(git rev-parse HEAD)"
+          python -W error -m openai_ns_reconstruction.kokuno_a5_strict_inner_spatial_artifact_ingest_contract \
+            --exact-head "$HEAD_SHA" \
+            --output artifacts/kokuno_agent5/strict_inner_spatial_artifact_ingest_v1/report.json
+
+      - name: Validate frozen spatial-artifact scope and truth boundary
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          import subprocess
+
+          path = Path('artifacts/kokuno_agent5/strict_inner_spatial_artifact_ingest_v1/report.json')
+          payload = json.loads(path.read_text())
+          exact_head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
+          assert payload['exact_head'] == exact_head
+          assert payload['schema'] == 'kokuno-a5-strict-inner-spatial-artifact-ingest-contract-v1'
+          assert payload['parent_a5'] == {
+              'pr': 870,
+              'head': 'b155d5a170ad56bb5a2dde9d5f4e0f43d1e2b474',
+          }
+
+          a2 = payload['agent2_binding']
+          assert a2['pr'] == 874
+          assert a2['head'] == '9cb3869b9cfd2d5b8dcb1da222df74d80e12d0c2'
+          assert a2['source_blob_sha'] == '276c943cd1e769c36d1615366266bf3b2c633040'
+          assert a2['dedicated_run'] == 35523243070
+          assert a2['tests_run'] == 35523243046
+          assert a2['schema'] == 'kokuno-a2-strict-inner-spatial-candidate-v1'
+          assert a2['class'] == 'KokunoStrictInnerLeadingOscillatorySpatialCandidate'
+          protocol = a2['protocol']
+          assert protocol['velocity_candidate_sha256_preserved'] is True
+          assert protocol['differentiable_sha256_preserved'] is True
+          assert protocol['spatial_sha256_bound'] is True
+          assert protocol['oscillatory_jacobian_operator'] == 'centered_cartesian_fd6'
+          assert protocol['oscillatory_jacobian_fixed_step'] == 1e-3
+          assert protocol['caller_spatial_step_knob_present'] is False
+          assert protocol['construction_side_fd4_sample_count'] == 12
+          assert protocol['construction_side_fd4_steps'] == [0.004, 0.002, 0.001]
+          assert protocol['construction_side_fd4_refinement_ratio_gate'] == 6.0
+          assert protocol['construction_side_fd4_fine_relative_rms_gate'] == 5e-3
+          assert protocol['construction_side_fd4_fine_relative_sampled_max_gate'] == 1e-2
+
+          scope = a2['norm_scope_firewall']
+          assert scope['agent2_fd4_is_independent_agent4_validation'] is False
+          assert scope['jacobian_consistency_is_complete_ns_residual'] is False
+          assert scope['jacobian_consistency_is_cr001_momentum_norm'] is False
+          assert scope['derived_divergence_diagnostic_is_final_divergence_gate'] is False
+          assert scope['whole_domain_volume_weighted_l2_assessed'] is False
+          assert scope['same_protocol_st006_comparison_legal'] is False
+          assert scope['formal_full_domain_pde_gate_assessed'] is False
+
+          a4 = payload['agent4_binding']
+          assert a4['dedicated_spatial_artifact_audit_present'] is False
+          assert a4['authority'] is None
+          assert a4['audited_agent2_pr'] is None
+          assert a4['exact_head_ci_conclusion'] is None
+          assert a4['independent_audit_conclusion'] is None
+
+          evidence = payload['evidence']
+          assert evidence['parent_differentiable_artifact_ingest_admitted'] is False
+          assert evidence['agent2_exact_head_ci_conclusion'] is None
+          assert evidence['agent2_construction_side_fd4_verifier_present'] is True
+          assert evidence['agent4_dedicated_spatial_artifact_audit_present'] is False
+          assert evidence['agent4_scientific_receipt_admitted'] is False
+          assert evidence['strict_inner_spatial_artifact_scientifically_admitted'] is False
+
+          handoff = payload['spatial_artifact_handoff']
+          assert handoff['registered'] is True
+          assert handoff['status'] == 'registered_waiting_for_independent_a4_audit'
+          assert handoff['construction_authority'] == 'Agent2#874'
+          assert handoff['independent_audit_available'] is False
+          assert handoff['independent_audit_authority'] is None
+          assert handoff['base_velocity_candidate_sha256_preserved'] is True
+          assert handoff['differentiable_sha256_preserved'] is True
+          assert handoff['spatial_sha256_registered'] is True
+          assert handoff['manifest_sha256_registered'] is True
+          assert handoff['python_velocity_velocity_dt_and_jacobian_callable_surface_registered'] is True
+          assert handoff['matlab_export_materialized'] is False
+          assert handoff['pressure_in_artifact_surface'] is False
+          assert handoff['restricted_forcing_in_artifact_surface'] is False
+          assert handoff['agent3_correction_velocity_in_artifact'] is False
+          assert handoff['outer_global_join_in_artifact'] is False
+          assert handoff['complete_candidate_artifact'] is False
+          assert handoff['eligible_for_velocity_export_ready'] is False
+          assert handoff['usable_as_complete_ns_defect_input'] is False
+          assert handoff['usable_for_final_independent_pde_validation'] is False
+
+          api = payload['candidate_api_handoff']
+          assert api['strict_inner_artifact_velocity'] == 'Agent2#874.velocity'
+          assert api['strict_inner_artifact_velocity_dt'] == 'Agent2#874.velocity_dt'
+          assert api['strict_inner_artifact_velocity_jacobian'] == 'Agent2#874.velocity_jacobian'
+          assert api['pressure'] is None
+          assert api['forcing'] is None
+          assert api['complete_candidate_api_ready'] is False
+
+          status = payload['ingest_status']
+          assert status['typed_strict_inner_spatial_artifact_registered'] is True
+          assert status['typed_strict_inner_spatial_artifact_independent_audit_registered'] is False
+          assert status['strict_inner_spatial_artifact_ingest_admitted'] is False
+          assert status['full_candidate_artifact_ready'] is False
+
+          assert payload['stage_state'] == {
+              'leading_ready': False,
+              'oscillatory_ready': True,
+              'correction_ready': False,
+              'velocity_export_ready': False,
+              'pde_validated': False,
+          }
+          assert payload['baseline_vs_kokuno']['comparison_performed'] is False
+          assert payload['final_project_gates_unchanged'] == {
+              'normalized_momentum_max': 1e-3,
+              'normalized_momentum_L2': 1e-3,
+              'divergence_max': 1e-5,
+              'divergence_L2': 1e-5,
+          }
+
+          truth = payload['truth_boundary']
+          true_keys = {
+              'strict_inner_spatial_artifact_surface_registered',
+              'agent2_construction_side_fd4_verifier_registered',
+              'registration_not_scientific_admission',
+              'strict_inner_scope_preserved',
+          }
+          for key in true_keys:
+              assert truth[key] is True
+          for key, value in truth.items():
+              if key in true_keys:
+                  continue
+              assert value is False, (key, value)
+
+          print('artifact_sha256=', hashlib.sha256(path.read_bytes()).hexdigest())
+          print('contract_sha256=', payload['contract_sha256'])
+          print('exact_head=', exact_head)
+          PY
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-strict-inner-spatial-artifact-ingest-contract-v1
+          path: artifacts/kokuno_agent5/strict_inner_spatial_artifact_ingest_v1/report.json
+          if-no-files-found: error
