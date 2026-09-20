@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0",
+  "task_id": "CR002-KOKUNO-INNER-DIVERGENCE-NORM-SCOPE-118",
+  "purpose": "Keep the Agent-4 inner held-out sampled divergence RMS distinct from the canonical CR001 volume-weighted spatial L2 validation norm, even though both currently use a numerical 1e-5 gate.",
+  "upstream": {
+    "pr": 823,
+    "head_sha": "56f4cf63e79fd08fe005ea3dce061f9a2f8ce50e",
+    "source_path": "src/openai_ns_reconstruction/kokuno_a4_pa10_cartesian_center_spatial_derivatives_independent_audit.py",
+    "source_blob_sha": "9e6a4c95ef0f52d952c3278d028a201d85efa578"
+  },
+  "classification": {
+    "user_requirement": [
+      "Keep CR001 constraints frozen; do not relax thresholds or introduce residual-defined pointwise free forcing.",
+      "Keep callable velocity delivery independent from visual correspondence, PDE validation, paper exactness, and OpenAI-field identity."
+    ],
+    "public_source_fact": [],
+    "autonomous_design": [
+      "PR #823 uses an inner held-out Cartesian finite-difference audit with 384 preregistered random samples plus fixed axis probes.",
+      "PR #823 reports divergence_sampled_l2_rms as sqrt(mean(divergence**2)) over its finite held-out sample.",
+      "Canonical CR001 defines divergence_L2 through the project validation protocol as a volume-weighted L2 spatial norm at each validation time."
+    ],
+    "pending_unknown": [
+      "Whether PR #823 exact-head CI and its dedicated independent audit pass.",
+      "Whether any complete Kokuno candidate passes canonical CR001 divergence validation.",
+      "Global join, pressure, restricted-forcing, held-out momentum, visual-correspondence, paper-exact, and OpenAI-field status for the Kokuno route."
+    ]
+  },
+  "metric_scope": {
+    "upstream_metric_name": "independent_divergence_sampled_l2_rms",
+    "upstream_formula": "sqrt(mean(divergence**2)) on PR #823 finite held-out samples",
+    "upstream_random_sample_count": 384,
+    "upstream_sample_seed": 9173481,
+    "upstream_threshold": 0.00001,
+    "canonical_metric_name": "divergence_L2",
+    "canonical_norm_definition": "volume-weighted L2 spatial norm at each time",
+    "canonical_threshold": 0.00001,
+    "same_numeric_threshold": true,
+    "metrics_equivalent": false,
+    "upstream_pass_can_discharge_cr001_divergence_L2": false,
+    "upstream_pass_can_discharge_complete_candidate_divergence_acceptance": false,
+    "upstream_pass_can_discharge_pde_validation": false
+  },
+  "canonical_cr001_snapshot": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_parameter_bounds": {"a": [0.0, 10.0], "c": [0.0, 10.0]},
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "divergence_max": 0.00001,
+    "divergence_L2": 0.00001,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001,
+    "residual_defined_pointwise_free_force_allowed": false,
+    "amplitude_collapse_allowed": false,
+    "post_hoc_threshold_relaxation_allowed": false
+  },
+  "status_separation": {
+    "inner_spatial_derivative_admission": "pending",
+    "canonical_cr001_divergence_validated": false,
+    "complete_kokuno_candidate_validated": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "callable_velocity_delivery_blocked_by_pde_pending": false
+  },
+  "forbidden_promotions": [
+    "PR #823 sampled-RMS PASS -> canonical CR001 volume-weighted divergence_L2 PASS",
+    "PR #823 inner spatial-derivative PASS -> complete/global candidate divergence validation",
+    "PR #823 inner spatial-derivative PASS -> PDE validation",
+    "PR #823 inner spatial-derivative PASS -> visual correspondence, paper exactness, or OpenAI-field identity",
+    "same numerical threshold -> same mathematical norm or validation protocol"
+  ]
+}
