@@ -1,0 +1,119 @@
+{
+  "contract_id": "cr002-st052m-tip-return-concentration-metric-scope-v1",
+  "status": "governance_scope_for_exact_750_head",
+  "live_integration_authority": {
+    "branch": "codex/cr001-constraints",
+    "head_sha": "7b32d9c0fa46fe369d0fc636eb5a7530aadebe04"
+  },
+  "audited_upstream": {
+    "pull_request": 750,
+    "head_sha": "376223a3bb2dae0d53756ea48da26937a95b6e58",
+    "nonlinear_child_pull_request": 740,
+    "nonlinear_child_head_sha": "21019df839557e64b8d8689f68cdf8fc685a3a36",
+    "reshape_preflight_pull_request": 732,
+    "prior_return_flow_scope_pull_request": 730,
+    "coefficient_coordinate_scope_pull_request": 738,
+    "child_identity_scope_pull_request": 748
+  },
+  "source_classification": {
+    "allowed_classes": [
+      "user_requirement",
+      "public_source_fact",
+      "autonomous_design",
+      "pending_unknown"
+    ],
+    "items": [
+      {
+        "class": "user_requirement",
+        "fact": "Deliver a callable, saveable/loadable time-varying Cartesian velocity while keeping velocity delivery, visual correspondence, PDE validation, paper exactness and exact OpenAI-field identity as independent states."
+      },
+      {
+        "class": "public_source_fact",
+        "fact": "Public material supports only qualitative observable structure such as inward spiraling / axial elongation; it does not publish the hidden numerical field, p=9 envelope, alpha_94, or the Agent-7 axial concentration metric."
+      },
+      {
+        "class": "autonomous_design",
+        "fact": "PR #750 compares the repository-designed p=4,m=4 and p=9,m=4 compact tip-channel axial response G_p(z)=B_p,4(z^2)+2 z^2 dB_p,4/dq using deterministic unweighted z-grid quadrature and shape-normalized diagnostics."
+      },
+      {
+        "class": "pending_unknown",
+        "fact": "Whether the p=9 nonlinear child passes PR #740, whether its actual 3D correction or total field concentrates return flow under a physical volume measure, and whether any candidate corresponds to the public OpenAI visualization remain unresolved."
+      }
+    ]
+  },
+  "metric_semantics": {
+    "diagnostic_object": "one_dimensional_axial_response_shape_of_autonomous_tip_correction_channel",
+    "response_formula": "G_p(z)=B_p,4(z^2)+2*z^2*dB_p,4/dq(z^2)",
+    "integration_variable": "z",
+    "integration_measure": "unweighted_dz_on_positive_tip_lobe_[1,1.8]",
+    "grid_sizes": [25001, 50001, 100001],
+    "compares_p4_m4_to_p9_m4": true,
+    "coefficient_alpha_used": false,
+    "recalibrated_alpha_94_used": false,
+    "radial_profile_used_in_metric": false,
+    "cylindrical_volume_jacobian_used": false,
+    "cartesian_or_cylindrical_3d_volume_integral_used": false,
+    "nonlinear_child_velocity_evaluated": false,
+    "total_parent_plus_correction_velocity_evaluated": false,
+    "absolute_correction_magnitude_compared": false,
+    "three_dimensional_correction_energy_compared": false,
+    "metric_is_shape_level_representation_diagnostic": true,
+    "metric_is_not_a_physical_3d_energy_norm": true
+  },
+  "interpretation_rule": {
+    "a_successful_750_receipt_may_support_axial_shape_return_concentration": true,
+    "a_successful_750_receipt_may_support_thinner_geometric_return_collar": true,
+    "a_successful_750_receipt_may_support_p9_has_higher_shape_normalized_outward_fraction_or_sharpness": true,
+    "axial_shape_concentration_implies_larger_absolute_physical_return_velocity": false,
+    "axial_shape_concentration_implies_three_dimensional_correction_energy_concentration": false,
+    "axial_shape_concentration_implies_total_child_return_flow_concentration": false,
+    "axial_shape_concentration_implies_nonlinear_child_passes_740": false,
+    "axial_shape_concentration_implies_visual_correspondence": false,
+    "axial_shape_concentration_implies_pde_validation": false,
+    "later_absolute_or_3d_claim_requires_alpha_bound_and_physical_measure": true,
+    "later_total_field_claim_requires_parent_plus_correction_evaluation": true,
+    "queued_740_ci_must_not_be_laundered_into_pass": true
+  },
+  "claim_states": {
+    "axial_response_shape_scope_defined": true,
+    "absolute_correction_magnitude_verified_by_750": false,
+    "three_dimensional_correction_energy_concentration_verified": false,
+    "cylindrical_volume_weighted_concentration_verified": false,
+    "nonlinear_child_total_field_return_flow_concentration_verified": false,
+    "nonlinear_child_740_passed_at_contract_freeze": false,
+    "production_candidate_selected": false,
+    "velocity_export_ready_promoted_by_750": false,
+    "visualization_ready_promoted_by_750": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "cr001_lock": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_bounds": {
+      "a": [0.0, 10.0],
+      "c": [0.0, 10.0]
+    },
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "divergence_max": 1e-05,
+    "divergence_L2": 1e-05,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001,
+    "residual_defined_or_pointwise_free_force_allowed": false,
+    "amplitude_collapse_success_allowed": false,
+    "threshold_relaxation_allowed": false
+  }
+}
