@@ -1,0 +1,318 @@
+name: kokuno-agent3-oscillatory-nonlinear-mean-attribution
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_oscillatory_nonlinear_mean_attribution.py'
+      - 'tests/test_constrained_kokuno_oscillatory_nonlinear_mean_attribution.py'
+      - '.github/workflows/kokuno-agent3-oscillatory-nonlinear-mean-attribution.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Check out exact event head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Assert exact Agent-3 ancestry
+        if: github.event_name == 'pull_request'
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha }}"
+          git merge-base --is-ancestor cd53700a4644b1c10cb008fdca068d52e99cdcb2 HEAD
+          test "$(git rev-parse HEAD:src/openai_ns_reconstruction/kokuno_oscillatory_transport_mean.py)" = '08933745fa25d0f1a8a136843f855cee7675bf75'
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Agent-3 head
+        run: python -m pip install -e '.[dev]'
+
+      - name: Focused Agent-3 regressions
+        run: |
+          python -m py_compile \
+            src/openai_ns_reconstruction/kokuno_oscillatory_nonlinear_mean_attribution.py \
+            tests/test_constrained_kokuno_oscillatory_nonlinear_mean_attribution.py
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_oscillatory_nonlinear_mean_attribution.py \
+            tests/test_constrained_kokuno_oscillatory_transport_mean.py
+
+      - name: Generate mechanics-only receipt
+        run: |
+          mkdir -p artifacts/kokuno_agent3
+          python -m openai_ns_reconstruction.kokuno_oscillatory_nonlinear_mean_attribution \
+            --output artifacts/kokuno_agent3/oscillatory_nonlinear_mean_attribution_mechanics.json
+
+      - name: Fetch exact Agent-2 decomposition and Agent-1 backend
+        run: |
+          set -euo pipefail
+          git fetch origin b88f97cb14ea9849b7bbd7cf9ff9f410161e8c2a
+          git worktree add --detach "$RUNNER_TEMP/kokuno-a2-908" b88f97cb14ea9849b7bbd7cf9ff9f410161e8c2a
+          test "$(git -C "$RUNNER_TEMP/kokuno-a2-908" rev-parse HEAD)" = 'b88f97cb14ea9849b7bbd7cf9ff9f410161e8c2a'
+          test "$(git -C "$RUNNER_TEMP/kokuno-a2-908" rev-parse HEAD:src/openai_ns_reconstruction/kokuno_oscillatory_nonlinear_handoff.py)" = 'e8d5e2d590ae839296a76268a8c787e609bc7fb1'
+          test "$(git -C "$RUNNER_TEMP/kokuno-a2-908" rev-parse HEAD:src/openai_ns_reconstruction/kokuno_oscillatory_transport_handoff.py)" = '57932afda3b65e4cb63e9ae7c8ceeb0aba141cc5'
+
+          git fetch origin 300919075c07396e4e466f553be78eaae0707df2
+          git worktree add --detach "$RUNNER_TEMP/kokuno-a1-848" 300919075c07396e4e466f553be78eaae0707df2
+          test "$(git -C "$RUNNER_TEMP/kokuno-a1-848" rev-parse HEAD)" = '300919075c07396e4e466f553be78eaae0707df2'
+          test "$(git -C "$RUNNER_TEMP/kokuno-a1-848" rev-parse HEAD:src/openai_ns_reconstruction/kokuno_pa10_cartesian_center_transport_viscous.py)" = '5076ffa69748c2d7e68289a155b67288eab6dab4'
+
+      - name: Exact A2-to-A3 nonlinear mean attribution receipt
+        env:
+          A2_WORKTREE: ${{ runner.temp }}/kokuno-a2-908
+          A1_WORKTREE: ${{ runner.temp }}/kokuno-a1-848
+        run: |
+          python - <<'PY'
+          from __future__ import annotations
+          import json
+          import os
+          from pathlib import Path
+          import subprocess
+          import sys
+          import numpy as np
+
+          import openai_ns_reconstruction as package
+          from openai_ns_reconstruction.kokuno_oscillatory_nonlinear_mean_attribution import (
+              ANGULAR_CONVERGENCE_GATE,
+              NONZERO_MEAN_FLOOR,
+              POINTWISE_CLOSURE_GATE,
+              PROJECTED_CLOSURE_GATE,
+              ExactAgent2OscillatoryNonlinearHandoff,
+              materialize_oscillatory_nonlinear_mean_attribution,
+              truth_boundary,
+          )
+          from openai_ns_reconstruction.kokuno_oscillatory_transport_mean import (
+              ExactAgent2OscillatoryTransportHandoff,
+              materialize_oscillatory_transport_mean,
+          )
+
+          a2 = Path(os.environ['A2_WORKTREE'])
+          a1 = Path(os.environ['A1_WORKTREE'])
+          package.__path__.insert(0, str(a2 / 'src' / 'openai_ns_reconstruction'))
+          from openai_ns_reconstruction.kokuno_oscillatory_nonlinear_handoff import (
+              KokunoOscillatoryNonlinearHandoff,
+          )
+          from openai_ns_reconstruction.kokuno_oscillatory_transport_handoff import (
+              KokunoOscillatoryTransportHandoff,
+          )
+
+          server_code = r'''
+          import json, sys
+          import numpy as np
+          from openai_ns_reconstruction.kokuno_pa10_cartesian_center_transport_viscous import KokunoPA10CartesianCenterTransportViscous
+          field = KokunoPA10CartesianCenterTransportViscous()
+          for line in sys.stdin:
+              request = json.loads(line)
+              op = request['op']
+              if op == 'meta':
+                  result = {'field_sha256': field.field_sha256}
+              elif op == 'forward':
+                  out = field.field.cartesian_from_similarity(
+                      np.asarray(request['X'], dtype=float),
+                      np.asarray(request['eta'], dtype=float),
+                      np.asarray(request['t'], dtype=float),
+                      np.asarray(request['theta'], dtype=float),
+                  )
+                  result = {k: np.asarray(out[k], dtype=float).tolist() for k in ('x','y','z','t')}
+              elif op in ('velocity','velocity_dt','self_advection','velocity_laplacian'):
+                  out = getattr(field, op)(
+                      np.asarray(request['x'], dtype=float),
+                      np.asarray(request['y'], dtype=float),
+                      np.asarray(request['z'], dtype=float),
+                      np.asarray(request['t'], dtype=float),
+                  )
+                  result = {'value': np.asarray(out, dtype=float).tolist()}
+              else:
+                  raise RuntimeError(f'unknown op {op}')
+              print(json.dumps(result, sort_keys=True), flush=True)
+          '''
+          env = os.environ.copy()
+          env['PYTHONPATH'] = str(a1 / 'src')
+          proc = subprocess.Popen(
+              [sys.executable, '-u', '-c', server_code],
+              cwd=a1,
+              env=env,
+              stdin=subprocess.PIPE,
+              stdout=subprocess.PIPE,
+              stderr=subprocess.PIPE,
+              text=True,
+              bufsize=1,
+          )
+
+          def ask(payload):
+              assert proc.stdin is not None and proc.stdout is not None
+              proc.stdin.write(json.dumps(payload, separators=(',', ':')) + '\n')
+              proc.stdin.flush()
+              line = proc.stdout.readline()
+              if not line:
+                  assert proc.stderr is not None
+                  raise RuntimeError('Agent-1 backend exited: ' + proc.stderr.read())
+              return json.loads(line)
+
+          meta = ask({'op':'meta'})
+
+          class ExactAgent1Backend:
+              field_sha256 = meta['field_sha256']
+
+              @staticmethod
+              def _arrays(x, y, z, t):
+                  return np.broadcast_arrays(
+                      np.asarray(x, dtype=float),
+                      np.asarray(y, dtype=float),
+                      np.asarray(z, dtype=float),
+                      np.asarray(t, dtype=float),
+                  )
+
+              def _call(self, op, x, y, z, t):
+                  x, y, z, t = self._arrays(x, y, z, t)
+                  result = ask({
+                      'op': op,
+                      'x': x.tolist(),
+                      'y': y.tolist(),
+                      'z': z.tolist(),
+                      't': t.tolist(),
+                  })
+                  return np.asarray(result['value'], dtype=float)
+
+              def velocity(self, x, y, z, t):
+                  return self._call('velocity', x, y, z, t)
+
+              def velocity_dt(self, x, y, z, t):
+                  return self._call('velocity_dt', x, y, z, t)
+
+              def self_advection(self, x, y, z, t):
+                  return self._call('self_advection', x, y, z, t)
+
+              def velocity_laplacian(self, x, y, z, t):
+                  return self._call('velocity_laplacian', x, y, z, t)
+
+          X = np.asarray([0.178, 0.198, 0.218, 0.238, 0.258, 0.278], dtype=float)
+          eta = np.asarray([-0.24, -0.14, -0.04, 0.06, 0.16, 0.26], dtype=float)
+          tt = np.asarray([0.476, 0.488, 0.500, 0.512, 0.524, 0.536], dtype=float)
+          mapped = ask({
+              'op':'forward',
+              'X': X.tolist(),
+              'eta': eta.tolist(),
+              't': tt.tolist(),
+              'theta': np.zeros_like(X).tolist(),
+          })
+          xx = np.asarray(mapped['x'], dtype=float)
+          yy = np.asarray(mapped['y'], dtype=float)
+          zz = np.asarray(mapped['z'], dtype=float)
+          physical_t = np.asarray(mapped['t'], dtype=float)
+          radius = np.sqrt(xx * xx + yy * yy)
+
+          backend = ExactAgent1Backend()
+          nonlinear = KokunoOscillatoryNonlinearHandoff(backend)
+          exact_nonlinear = ExactAgent2OscillatoryNonlinearHandoff.bind(nonlinear)
+          witness = materialize_oscillatory_nonlinear_mean_attribution(
+              exact_nonlinear, radius, zz, physical_t
+          )
+
+          parent = KokunoOscillatoryTransportHandoff(backend)
+          exact_parent = ExactAgent2OscillatoryTransportHandoff.bind(parent)
+          transport_witness = materialize_oscillatory_transport_mean(
+              exact_parent, radius, zz, physical_t
+          )
+          replay = float(np.max(np.abs(
+              witness.mean_aggregate_nonlinear_cylindrical
+              - transport_witness.mean_nonlinear_increment_cylindrical
+          )))
+
+          failed = []
+          for label, values in (
+              ('aggregate_angular_convergence', witness.successive_aggregate_mean_relative_differences),
+              ('mixed_angular_convergence', witness.successive_mixed_mean_relative_differences),
+              ('quadratic_angular_convergence', witness.successive_quadratic_mean_relative_differences),
+          ):
+              if max(values) > ANGULAR_CONVERGENCE_GATE:
+                  failed.append(label)
+          if witness.pointwise_three_piece_closure_absolute_max > POINTWISE_CLOSURE_GATE:
+              failed.append('pointwise_three_piece_closure')
+          if witness.pointwise_mixed_closure_absolute_max > POINTWISE_CLOSURE_GATE:
+              failed.append('pointwise_mixed_closure')
+          if witness.projected_three_piece_closure_absolute_max > PROJECTED_CLOSURE_GATE:
+              failed.append('projected_three_piece_closure')
+          if witness.projected_mixed_closure_absolute_max > PROJECTED_CLOSURE_GATE:
+              failed.append('projected_mixed_closure')
+          if replay > PROJECTED_CLOSURE_GATE:
+              failed.append('a3_902_aggregate_nonlinear_replay')
+          if witness.aggregate_mean_to_full_rms_ratio > 1.0 + 1e-12:
+              failed.append('aggregate_jensen')
+          if witness.mixed_mean_to_full_rms_ratio > 1.0 + 1e-12:
+              failed.append('mixed_jensen')
+          if witness.quadratic_mean_to_full_rms_ratio > 1.0 + 1e-12:
+              failed.append('quadratic_jensen')
+          if witness.aggregate_mean_rms < NONZERO_MEAN_FLOOR:
+              failed.append('aggregate_mean_degenerate')
+          if witness.quadratic_mean_rms < NONZERO_MEAN_FLOOR:
+              failed.append('quadratic_mean_degenerate')
+
+          receipt = {
+              'schema': 'kokuno-a3-oscillatory-nonlinear-mean-attribution-exact-v1',
+              'agent3_parent_head': 'cd53700a4644b1c10cb008fdca068d52e99cdcb2',
+              'agent2_head': 'b88f97cb14ea9849b7bbd7cf9ff9f410161e8c2a',
+              'agent1_head': '300919075c07396e4e466f553be78eaae0707df2',
+              'agent1_field_sha256': meta['field_sha256'],
+              'source_X': X.tolist(),
+              'source_eta': eta.tolist(),
+              'source_t': tt.tolist(),
+              'physical_radius': radius.tolist(),
+              'physical_z': zz.tolist(),
+              'physical_t': physical_t.tolist(),
+              'sample_ring_count': int(radius.size),
+              'a3_902_aggregate_nonlinear_replay_abs_max': replay,
+              'aggregate_mean_rms': witness.aggregate_mean_rms,
+              'mixed_mean_rms': witness.mixed_mean_rms,
+              'quadratic_mean_rms': witness.quadratic_mean_rms,
+              'mixed_mean_to_aggregate_mean_rms_ratio': witness.mixed_mean_to_aggregate_mean_rms_ratio,
+              'quadratic_mean_to_aggregate_mean_rms_ratio': witness.quadratic_mean_to_aggregate_mean_rms_ratio,
+              'aggregate_mean_to_full_rms_ratio': witness.aggregate_mean_to_full_rms_ratio,
+              'mixed_mean_to_full_rms_ratio': witness.mixed_mean_to_full_rms_ratio,
+              'quadratic_mean_to_full_rms_ratio': witness.quadratic_mean_to_full_rms_ratio,
+              'successive_aggregate_mean_relative_differences': list(witness.successive_aggregate_mean_relative_differences),
+              'successive_mixed_mean_relative_differences': list(witness.successive_mixed_mean_relative_differences),
+              'successive_quadratic_mean_relative_differences': list(witness.successive_quadratic_mean_relative_differences),
+              'pointwise_three_piece_closure_absolute_max': witness.pointwise_three_piece_closure_absolute_max,
+              'pointwise_mixed_closure_absolute_max': witness.pointwise_mixed_closure_absolute_max,
+              'projected_three_piece_closure_absolute_max': witness.projected_three_piece_closure_absolute_max,
+              'projected_mixed_closure_absolute_max': witness.projected_mixed_closure_absolute_max,
+              'failed_guards': failed,
+              'complete_ns_defect': False,
+              'correction_target_authorized': False,
+              'residual_reduction_claimed': False,
+              'same_protocol_comparable_to_st006': False,
+              'pde_validated': False,
+              'truth_boundary': truth_boundary(),
+          }
+          Path('artifacts/kokuno_agent3').mkdir(parents=True, exist_ok=True)
+          output = Path('artifacts/kokuno_agent3/oscillatory_nonlinear_mean_attribution_exact.json')
+          output.write_text(json.dumps(receipt, indent=2, sort_keys=True) + '\n')
+          print(json.dumps(receipt, indent=2, sort_keys=True))
+
+          if proc.stdin is not None:
+              proc.stdin.close()
+          proc.terminate()
+          proc.wait(timeout=10)
+          if failed:
+              raise SystemExit('failed guards: ' + ', '.join(failed))
+          PY
+
+      - name: Upload receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent3-oscillatory-nonlinear-mean-attribution-v1
+          path: |
+            artifacts/kokuno_agent3/oscillatory_nonlinear_mean_attribution_mechanics.json
+            artifacts/kokuno_agent3/oscillatory_nonlinear_mean_attribution_exact.json
+          if-no-files-found: warn
