@@ -185,6 +185,38 @@ def _core_speed_proxy(
     }
 
 
+def validate_fingerprint_receipt(receipt: dict[str, Any]) -> None:
+    """Fail closed if an autonomous diagnostic is laundered into a source/PDE claim."""
+    if receipt.get("schema") != SCHEMA:
+        raise ValueError("unexpected cylindrical morphology schema")
+    if receipt.get("cylindrical_morphology_diagnostic_ready") is not True:
+        raise ValueError("diagnostic readiness must be explicitly true")
+    protocol = receipt.get("protocol")
+    if not isinstance(protocol, dict):
+        raise ValueError("missing morphology protocol")
+    for key in ("source_numeric_targets_used", "renderer_or_camera_used", "pixel_loss_used"):
+        if protocol.get(key) is not False:
+            raise ValueError(f"{key} must remain false")
+    for key, expected in TRUTH_BOUNDARY.items():
+        if receipt.get(key) is not expected:
+            raise ValueError(f"truth boundary promoted: {key}")
+    screen = receipt.get("external_method_screen")
+    if not isinstance(screen, list) or len(screen) != 1:
+        raise ValueError("external method screen drift")
+    expected_screen = EXTERNAL_METHOD_SCREEN[0]
+    for key in ("repo", "screened_commit", "license", "classification", "scope", "difference"):
+        if screen[0].get(key) != expected_screen[key]:
+            raise ValueError(f"external method screen drift: {key}")
+    measurements = receipt.get("measurements")
+    if not isinstance(measurements, dict):
+        raise ValueError("missing morphology measurements")
+    digest = hashlib.sha256(
+        json.dumps(measurements, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    ).hexdigest()
+    if receipt.get("measurement_sha256") != digest:
+        raise ValueError("morphology measurement digest mismatch")
+
+
 def fingerprint_velocity_field(
     field: VelocityField,
     *,
@@ -204,6 +236,7 @@ def fingerprint_velocity_field(
     radii_tuple = _finite_positive(radii, "radii")
     z_tuple = _finite_positive(z_magnitudes, "z_magnitudes")
     times_tuple = _finite_times(times)
+    core_radii_tuple = _finite_positive(core_radii, "core_radii")
     _azimuth_grid(azimuth_count)
 
     rows: list[dict[str, float | int]] = []
@@ -241,7 +274,7 @@ def fingerprint_velocity_field(
         _core_speed_proxy(
             field,
             time=time,
-            radii=core_radii,
+            radii=core_radii_tuple,
             azimuth_count=azimuth_count,
         )
         for time in times_tuple
@@ -283,7 +316,7 @@ def fingerprint_velocity_field(
             "z_magnitudes": list(z_tuple),
             "times": list(times_tuple),
             "azimuth_count": int(azimuth_count),
-            "core_radii": [float(value) for value in core_radii],
+            "core_radii": list(core_radii_tuple),
             "coordinate_conversion": "u_r=u_x*cos(phi)+u_y*sin(phi); u_theta=-u_x*sin(phi)+u_y*cos(phi)",
             "spiral_proxy": "-u_r/abs(u_theta) where abs(u_theta)>1e-12",
             "source_numeric_targets_used": False,
@@ -297,6 +330,7 @@ def fingerprint_velocity_field(
         **TRUTH_BOUNDARY,
         "scope": "autonomous_renderer_independent_velocity_kinematics_not_source_or_pde_acceptance",
     }
+    validate_fingerprint_receipt(receipt)
     return receipt
 
 
