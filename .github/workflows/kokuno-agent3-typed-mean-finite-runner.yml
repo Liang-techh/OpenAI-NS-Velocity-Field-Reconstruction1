@@ -1,0 +1,98 @@
+name: kokuno-agent3-typed-mean-finite-runner
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a3-typed-finite-runner-063
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_typed_mean_finite_runner.py"
+      - "tests/test_constrained_kokuno_typed_mean_finite_runner.py"
+      - ".github/workflows/kokuno-agent3-typed-mean-finite-runner.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent3-typed-mean-finite-runner-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  exact-typed-mean-finite-runner:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+      - name: Verify exact Agent-3 head
+        run: |
+          git rev-parse HEAD
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha }}"
+          fi
+      - name: Compile typed finite-runner chain
+        run: >-
+          python -W error -m py_compile
+          src/openai_ns_reconstruction/kokuno_typed_mean_finite_runner.py
+          src/openai_ns_reconstruction/kokuno_typed_mean_selected_state.py
+          src/openai_ns_reconstruction/kokuno_typed_mean_damped_cycle_bridge.py
+          src/openai_ns_reconstruction/kokuno_correction_cycle_gain_diagnostic.py
+          src/openai_ns_reconstruction/kokuno_finite_correction_damping.py
+          src/openai_ns_reconstruction/kokuno_finite_correction_cycle_contract.py
+      - name: Run focused warnings-as-errors regressions
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_typed_mean_finite_runner.py
+          tests/test_constrained_kokuno_typed_mean_selected_state.py
+          tests/test_constrained_kokuno_correction_cycle_gain_diagnostic.py
+      - name: Emit exact-head finite-runner receipt
+        run: >-
+          python -W error -m
+          openai_ns_reconstruction.kokuno_typed_mean_finite_runner
+          --output artifacts/kokuno_agent3_typed_mean_finite_runner_v1.json
+      - name: Freeze orchestration and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          r = json.loads(
+              Path("artifacts/kokuno_agent3_typed_mean_finite_runner_v1.json").read_text()
+          )
+          assert r["schema"] == "kokuno-a3-typed-mean-finite-runner-v1"
+          assert r["task"] == "KOKUNO-A3-TYPED-MEAN-FINITE-RUNNER-063"
+          stages = r["source_stage_examples"]
+          assert [s["stage_index"] for s in stages] == [0, 1]
+          assert all(s["source_bound_passed"] is True for s in stages)
+          assert abs(stages[0]["wave_residual_gain"] - 0.39999) <= 1e-12
+          assert abs(stages[0]["tangential_mean_gain"] - 0.17) <= 1e-12
+          assert r["runner_contract"]["heldout_reaudit_by_runner"] is False
+          assert r["runner_contract"]["real_candidate_run"] is False
+          b = r["truth_boundary"]
+          assert b["typed_mean_finite_runner_executable"] is True
+          assert b["selected_after_state_fed_directly_to_next_stage"] is True
+          assert b["actual_defect_recomputed_inside_each_typed_step"] is True
+          assert b["runner_reaudits_heldout_transitions"] is False
+          assert b["heldout_evaluated_once_per_selected_step"] is True
+          assert b["heldout_used_for_alpha_selection"] is False
+          assert b["caller_supplied_residual_allowed"] is False
+          assert b["caller_supplied_gain_allowed"] is False
+          assert b["real_candidate_finite_correction_cycle_run"] is False
+          assert b["heldout_normalized_ns_residual_assessed"] is False
+          assert b["pde_validated"] is False
+          assert b["final_normalized_momentum_gate"] == 1e-3
+          assert b["final_normalized_divergence_gate"] == 1e-5
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent3-typed-mean-finite-runner-v1
+          path: artifacts/kokuno_agent3_typed_mean_finite_runner_v1.json
+          if-no-files-found: error
