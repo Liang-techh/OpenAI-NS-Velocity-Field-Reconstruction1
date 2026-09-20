@@ -1,0 +1,80 @@
+name: kokuno-agent4-blackbox-full-ns-validator
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a4-blackbox-full-ns-validator-contract-081
+  pull_request:
+    branches:
+      - codex/kokuno-a4-strict-inner-transport-artifact-audit-080
+
+jobs:
+  blackbox-full-ns-validator-contract:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout exact head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install repository
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e '.[dev]'
+
+      - name: Run focused Agent-4 validator tests
+        run: |
+          python -m pytest -q -W error tests/test_constrained_kokuno_a4_blackbox_full_ns_validator.py
+
+      - name: Materialize fail-closed contract receipt
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction.kokuno_a4_blackbox_full_ns_validator import (
+              current_strict_inner_ineligibility,
+              public_contract,
+          )
+
+          contract = public_contract()
+          state = current_strict_inner_ineligibility()
+          assert contract["frozen_gates"]["momentum_max"] == 1e-3
+          assert contract["frozen_gates"]["momentum_volume_l2"] == 1e-3
+          assert contract["frozen_gates"]["divergence_max"] == 1e-5
+          assert contract["frozen_gates"]["divergence_volume_l2"] == 1e-5
+          assert contract["truth_boundary"]["residual_defined_free_forcing_allowed"] is False
+          assert contract["truth_boundary"]["pde_validated"] is False
+          assert state["complete_blackbox_candidate_available"] is False
+          assert state["matched_pressure_included"] is False
+          assert state["restricted_forcing_included"] is False
+          assert state["agent3_correction_velocity_materialized"] is False
+
+          out = Path("artifacts/kokuno_a4_blackbox_full_ns_validator_contract.json")
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_text(
+              json.dumps(
+                  {
+                      "contract": contract,
+                      "current_strict_inner_ineligibility": state,
+                      "scientific_result": "not_run_current_candidate_ineligible",
+                  },
+                  indent=2,
+                  sort_keys=True,
+              ) + "\n",
+              encoding="utf-8",
+          )
+          PY
+
+      - name: Upload contract receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a4-blackbox-full-ns-validator-contract
+          path: artifacts/kokuno_a4_blackbox_full_ns_validator_contract.json
+          if-no-files-found: error
