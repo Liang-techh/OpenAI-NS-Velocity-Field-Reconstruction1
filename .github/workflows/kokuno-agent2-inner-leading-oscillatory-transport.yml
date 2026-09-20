@@ -1,0 +1,293 @@
+name: kokuno-agent2-inner-leading-oscillatory-transport
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_public_inner_leading_oscillatory_transport.py'
+      - 'tests/test_constrained_kokuno_public_inner_leading_oscillatory_transport.py'
+      - '.github/workflows/kokuno-agent2-inner-leading-oscillatory-transport.yml'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Assert exact head
+        if: github.event_name == 'pull_request'
+        run: test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha }}"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+
+      - name: Focused regressions
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_public_inner_leading_oscillatory_transport.py
+
+      - name: Fetch exact Agent-1 inner Laplacian head
+        run: |
+          git fetch origin e96ee90144976a992b62d76d4361a94eb16bd91e
+          git worktree add --detach "$RUNNER_TEMP/kokuno-a1-839" e96ee90144976a992b62d76d4361a94eb16bd91e
+          test "$(git -C "$RUNNER_TEMP/kokuno-a1-839" rev-parse HEAD)" = "e96ee90144976a992b62d76d4361a94eb16bd91e"
+          test "$(git -C "$RUNNER_TEMP/kokuno-a1-839" rev-parse HEAD:src/openai_ns_reconstruction/kokuno_pa10_cartesian_center_laplacian.py)" = "74b0e185e8e0bbb08695d493e0a091c305a03006"
+
+      - name: Exact A1 plus A2 strict-inner transport receipt
+        env:
+          A1_WORKTREE: ${{ runner.temp }}/kokuno-a1-839
+        run: |
+          python - <<'PY'
+          from __future__ import annotations
+          import json
+          import os
+          from pathlib import Path
+          import subprocess
+          import sys
+
+          import numpy as np
+
+          from openai_ns_reconstruction.kokuno_public_inner_leading_oscillatory_transport import (
+              AGENT1_LAPLACIAN_BLOB,
+              AGENT1_LAPLACIAN_HEAD,
+              AGENT1_LAPLACIAN_PR,
+              INDEPENDENT_FD4_STEPS,
+              VISCOSITY,
+              evaluate_inner_leading_oscillatory_transport,
+              independent_fd4_inner_plus_oscillatory_transport,
+              public_contract,
+          )
+
+          a1 = Path(os.environ['A1_WORKTREE'])
+          server_code = r'''
+          import json, sys
+          import numpy as np
+          from openai_ns_reconstruction.kokuno_pa10_cartesian_center_laplacian import KokunoPA10CartesianCenterLaplacian
+          field = KokunoPA10CartesianCenterLaplacian()
+          for line in sys.stdin:
+              request = json.loads(line)
+              op = request['op']
+              if op == 'meta':
+                  result = {
+                      'field_sha256': field.field_sha256,
+                      'temporal_derivative_sha256': field.temporal_derivative_sha256,
+                      'spatial_derivative_sha256': field.spatial_derivative_sha256,
+                      'self_advection_sha256': field.self_advection_sha256,
+                      'laplacian_sha256': field.laplacian_sha256,
+                      'source_X_interval': list(field.spatial.source_X_interval),
+                      'time_interval': list(field.field.time_interval),
+                  }
+              elif op == 'forward':
+                  out = field.field.cartesian_from_similarity(
+                      np.asarray(request['X'], dtype=float),
+                      np.asarray(request['eta'], dtype=float),
+                      np.asarray(request['t'], dtype=float),
+                      np.asarray(request['theta'], dtype=float),
+                  )
+                  result = {k: np.asarray(out[k], dtype=float).tolist() for k in ('x','y','z','t','X','eta')}
+              elif op in ('velocity','velocity_dt','self_advection','velocity_laplacian'):
+                  method = getattr(field, op)
+                  out = method(
+                      np.asarray(request['x'], dtype=float),
+                      np.asarray(request['y'], dtype=float),
+                      np.asarray(request['z'], dtype=float),
+                      np.asarray(request['t'], dtype=float),
+                  )
+                  result = {'value': np.asarray(out, dtype=float).tolist()}
+              else:
+                  raise RuntimeError(f'unknown op {op}')
+              print(json.dumps(result, sort_keys=True), flush=True)
+          '''
+
+          env = os.environ.copy()
+          env['PYTHONPATH'] = str(a1 / 'src')
+          proc = subprocess.Popen(
+              [sys.executable, '-u', '-c', server_code],
+              cwd=a1,
+              env=env,
+              stdin=subprocess.PIPE,
+              stdout=subprocess.PIPE,
+              stderr=subprocess.PIPE,
+              text=True,
+              bufsize=1,
+          )
+
+          def ask(payload):
+              assert proc.stdin is not None and proc.stdout is not None
+              proc.stdin.write(json.dumps(payload, separators=(',', ':')) + '\n')
+              proc.stdin.flush()
+              line = proc.stdout.readline()
+              if not line:
+                  assert proc.stderr is not None
+                  raise RuntimeError('Agent-1 backend exited: ' + proc.stderr.read())
+              return json.loads(line)
+
+          class ExactAgent1TransportBackend:
+              @staticmethod
+              def _arrays(x, y, z, t):
+                  return np.broadcast_arrays(
+                      np.asarray(x, dtype=float), np.asarray(y, dtype=float),
+                      np.asarray(z, dtype=float), np.asarray(t, dtype=float),
+                  )
+              def _call(self, op, x, y, z, t):
+                  x,y,z,t = self._arrays(x,y,z,t)
+                  out = ask({'op':op,'x':x.tolist(),'y':y.tolist(),'z':z.tolist(),'t':t.tolist()})
+                  return np.asarray(out['value'], dtype=float)
+              def velocity(self, x, y, z, t):
+                  return self._call('velocity', x, y, z, t)
+              def velocity_dt(self, x, y, z, t):
+                  return self._call('velocity_dt', x, y, z, t)
+              def self_advection(self, x, y, z, t):
+                  return self._call('self_advection', x, y, z, t)
+              def velocity_laplacian(self, x, y, z, t):
+                  return self._call('velocity_laplacian', x, y, z, t)
+
+          meta = ask({'op':'meta'})
+          if meta['source_X_interval'][1] < 0.39:
+              raise RuntimeError('unexpected Agent-1 inner X domain')
+          if meta['time_interval'] != [0.25, 0.75]:
+              raise RuntimeError('unexpected Agent-1 time interval')
+
+          # Fresh strict-inner probes frozen before observing Actions output.
+          X = np.asarray([0.172,0.194,0.216,0.238,0.260,0.282,0.181,0.203,0.225,0.247,0.269,0.291], dtype=float)
+          eta = np.asarray([-0.44,-0.31,-0.17,-0.04,0.11,0.27,0.43,0.34,-0.39,-0.23,0.06,0.21], dtype=float)
+          t = np.asarray([0.462,0.474,0.486,0.498,0.510,0.522,0.534,0.542,0.518,0.506,0.494,0.482], dtype=float)
+          theta = np.asarray([0.23,0.71,1.19,1.67,2.15,2.63,-2.91,-2.43,-1.95,-1.47,-0.99,-0.31], dtype=float)
+          forward = ask({'op':'forward','X':X.tolist(),'eta':eta.tolist(),'t':t.tolist(),'theta':theta.tolist()})
+          x = np.asarray(forward['x'], dtype=float)
+          y = np.asarray(forward['y'], dtype=float)
+          z = np.asarray(forward['z'], dtype=float)
+          tt = np.asarray(forward['t'], dtype=float)
+
+          backend = ExactAgent1TransportBackend()
+          production = evaluate_inner_leading_oscillatory_transport(backend, x, y, z, tt)
+          numerical = [
+              independent_fd4_inner_plus_oscillatory_transport(
+                  backend, x, y, z, tt, step=h
+              )
+              for h in INDEPENDENT_FD4_STEPS
+          ]
+          reference = np.asarray(production.transport, dtype=float)
+
+          def vrms(a):
+              a = np.asarray(a, dtype=float)
+              return float(np.sqrt(np.mean(np.sum(a*a, axis=-1))))
+
+          def relative_rms(a,b):
+              return vrms(np.asarray(a)-np.asarray(b)) / max(vrms(a), np.finfo(float).tiny)
+
+          def relative_max(a,b):
+              a=np.asarray(a,dtype=float); b=np.asarray(b,dtype=float)
+              return float(np.max(np.linalg.norm(a-b,axis=-1)) / max(np.max(np.linalg.norm(a,axis=-1)), np.finfo(float).tiny))
+
+          coarse_diff = vrms(numerical[0]-numerical[1])
+          fine_diff = vrms(numerical[1]-numerical[2])
+          refinement = coarse_diff / max(fine_diff, np.finfo(float).tiny)
+          finest_rms = relative_rms(reference, numerical[-1])
+          finest_max = relative_max(reference, numerical[-1])
+          velocity_closure = float(np.max(np.abs(
+              production.inner_plus_oscillatory_velocity
+              - production.inner_leading_velocity
+              - production.oscillatory_velocity
+          )))
+          dt_closure = float(np.max(np.abs(
+              production.inner_plus_oscillatory_velocity_dt
+              - production.inner_leading_velocity_dt
+              - production.oscillatory_velocity_dt
+          )))
+          laplacian_closure = float(np.max(np.abs(
+              production.inner_plus_oscillatory_laplacian
+              - production.inner_leading_laplacian
+              - production.oscillatory_laplacian
+          )))
+          viscous_closure = float(np.max(np.abs(
+              production.viscous_term + VISCOSITY * production.inner_plus_oscillatory_laplacian
+          )))
+          transport_closure = float(np.max(np.abs(
+              production.transport
+              - production.inner_plus_oscillatory_velocity_dt
+              - production.inner_plus_oscillatory_self_advection
+              - production.viscous_term
+          )))
+
+          failed=[]
+          if refinement < 4.0: failed.append('independent_fd4_refinement')
+          if finest_rms > 2.0e-2: failed.append('finest_relative_rms')
+          if finest_max > 5.0e-2: failed.append('finest_relative_sampled_max')
+          if vrms(reference) < 1.0e-10: failed.append('transport_nontrivial')
+          if vrms(production.inner_plus_oscillatory_velocity) < 1.0e-8: failed.append('composite_velocity_nontrivial')
+          if velocity_closure > 1.0e-14: failed.append('velocity_additive_closure')
+          if dt_closure > 1.0e-13: failed.append('time_additive_closure')
+          if laplacian_closure > 1.0e-13: failed.append('laplacian_additive_closure')
+          if viscous_closure > 1.0e-13: failed.append('viscous_closure')
+          if transport_closure > 1.0e-13: failed.append('transport_assembly_closure')
+
+          contract=public_contract()
+          if contract['forbidden_public_inputs_present']: failed.append('forbidden_public_inputs')
+          if contract['viscosity'] != 0.01: failed.append('viscosity_drift')
+          truth=contract['truth_boundary']
+          required_false=(
+              'agent1_exact_head_ci_assumed_passed','agent4_inner_field_independent_admission_assumed',
+              'agent4_a2_oscillatory_independent_admission_assumed',
+              'inner_leading_is_final_corrected_fixed_point','global_leading_velocity_materialized',
+              'outer_join_materialized','matched_pressure_included','restricted_forcing_included',
+              'agent3_mean_radial_chain_reimplemented','correction_velocity_included',
+              'complete_kokuno_candidate_assembled','complete_ns_residual',
+              'heldout_ns_residual_assessed','residual_reduction_claimed','paper_exact','pde_validated',
+          )
+          if any(truth[k] for k in required_false): failed.append('truth_boundary_promotion')
+
+          receipt={
+              'schema':'kokuno-a2-inner-leading-oscillatory-transport-receipt-v1',
+              'agent1_pr':AGENT1_LAPLACIAN_PR,
+              'agent1_head':AGENT1_LAPLACIAN_HEAD,
+              'agent1_source_blob':AGENT1_LAPLACIAN_BLOB,
+              'agent1_field_sha256':meta['field_sha256'],
+              'agent1_laplacian_sha256':meta['laplacian_sha256'],
+              'sample_count':int(x.size),
+              'sample_times':sorted({float(v) for v in tt}),
+              'source_X_range':[float(np.min(X)),float(np.max(X))],
+              'viscosity':VISCOSITY,
+              'production_inner_laplacian_fd6_step':1.0e-3,
+              'production_oscillatory_laplacian_fd6_step':1.0e-3,
+              'production_inner_advection_fd4_step':1.0e-3,
+              'production_oscillatory_advection_fd6_step':1.0e-3,
+              'independent_fd4_steps':list(INDEPENDENT_FD4_STEPS),
+              'independent_successive_refinement_ratio':refinement,
+              'finest_independent_relative_rms':finest_rms,
+              'finest_independent_relative_sampled_max':finest_max,
+              'transport_rms':vrms(reference),
+              'composite_velocity_rms':vrms(production.inner_plus_oscillatory_velocity),
+              'velocity_additive_closure_abs_max':velocity_closure,
+              'time_additive_closure_abs_max':dt_closure,
+              'laplacian_additive_closure_abs_max':laplacian_closure,
+              'viscous_closure_abs_max':viscous_closure,
+              'transport_assembly_closure_abs_max':transport_closure,
+              'failed_guards':failed,
+              'truth_boundary':truth,
+          }
+          Path('artifacts').mkdir(exist_ok=True)
+          Path('artifacts/kokuno_agent2_inner_leading_oscillatory_transport_receipt.json').write_text(
+              json.dumps(receipt, indent=2, sort_keys=True)+'\n'
+          )
+          print(json.dumps(receipt, indent=2, sort_keys=True))
+          if proc.stdin is not None: proc.stdin.close()
+          proc.terminate(); proc.wait(timeout=10)
+          if failed:
+              raise SystemExit('failed guards: '+', '.join(failed))
+          PY
+
+      - name: Upload receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent2-inner-leading-oscillatory-transport-v1
+          path: artifacts/kokuno_agent2_inner_leading_oscillatory_transport_receipt.json
+          if-no-files-found: warn
