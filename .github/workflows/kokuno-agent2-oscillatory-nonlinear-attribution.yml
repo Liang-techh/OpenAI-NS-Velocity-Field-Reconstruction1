@@ -1,0 +1,155 @@
+name: kokuno-agent2-oscillatory-nonlinear-attribution
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_oscillatory_nonlinear_attribution.py'
+      - 'tests/test_constrained_kokuno_oscillatory_nonlinear_attribution.py'
+      - '.github/workflows/kokuno-agent2-oscillatory-nonlinear-attribution.yml'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Assert pinned A2 ancestry
+        if: github.event_name == 'pull_request'
+        run: |
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha }}"
+          git merge-base --is-ancestor b88f97cb14ea9849b7bbd7cf9ff9f410161e8c2a HEAD
+          test "$(git rev-parse b88f97cb14ea9849b7bbd7cf9ff9f410161e8c2a:src/openai_ns_reconstruction/kokuno_oscillatory_nonlinear_handoff.py)" = "e8d5e2d590ae839296a76268a8c787e609bc7fb1"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+
+      - name: Focused regressions
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_oscillatory_nonlinear_attribution.py
+          tests/test_constrained_kokuno_oscillatory_nonlinear_handoff.py
+
+      - name: Fetch exact Agent-1 strict-inner backend
+        run: |
+          git fetch origin 300919075c07396e4e466f553be78eaae0707df2
+          git worktree add --detach "$RUNNER_TEMP/kokuno-a1-848" 300919075c07396e4e466f553be78eaae0707df2
+          test "$(git -C "$RUNNER_TEMP/kokuno-a1-848" rev-parse HEAD)" = "300919075c07396e4e466f553be78eaae0707df2"
+          test "$(git -C "$RUNNER_TEMP/kokuno-a1-848" rev-parse HEAD:src/openai_ns_reconstruction/kokuno_pa10_cartesian_center_transport_viscous.py)" = "5076ffa69748c2d7e68289a155b67288eab6dab4"
+
+      - name: Materialize exact strict-inner nonlinear attribution receipt
+        env:
+          A1_WORKTREE: ${{ runner.temp }}/kokuno-a1-848
+        run: |
+          python - <<'PY'
+          from __future__ import annotations
+          import json, os, subprocess, sys
+          from pathlib import Path
+          import numpy as np
+          from openai_ns_reconstruction.kokuno_oscillatory_nonlinear_attribution import (
+              KokunoOscillatoryNonlinearAttribution, public_contract,
+          )
+
+          a1 = Path(os.environ['A1_WORKTREE'])
+          server = r'''
+          import json, sys
+          import numpy as np
+          from openai_ns_reconstruction.kokuno_pa10_cartesian_center_transport_viscous import KokunoPA10CartesianCenterTransportViscous
+          field=KokunoPA10CartesianCenterTransportViscous()
+          for line in sys.stdin:
+              q=json.loads(line); op=q['op']
+              if op=='meta': out={'field_sha256':field.field_sha256}
+              elif op=='forward':
+                  r=field.field.cartesian_from_similarity(np.asarray(q['X']),np.asarray(q['eta']),np.asarray(q['t']),np.asarray(q['theta']))
+                  out={k:np.asarray(r[k],dtype=float).tolist() for k in ('x','y','z','t')}
+              else:
+                  r=getattr(field,op)(np.asarray(q['x']),np.asarray(q['y']),np.asarray(q['z']),np.asarray(q['t']))
+                  out={'value':np.asarray(r,dtype=float).tolist()}
+              print(json.dumps(out,sort_keys=True),flush=True)
+          '''
+          env=os.environ.copy(); env['PYTHONPATH']=str(a1/'src')
+          p=subprocess.Popen([sys.executable,'-u','-c',server],cwd=a1,env=env,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,bufsize=1)
+          def ask(q):
+              p.stdin.write(json.dumps(q,separators=(',',':'))+'\n'); p.stdin.flush()
+              line=p.stdout.readline()
+              if not line: raise RuntimeError(p.stderr.read())
+              return json.loads(line)
+          meta=ask({'op':'meta'})
+          class Backend:
+              field_sha256=meta['field_sha256']
+              def _call(self,op,x,y,z,t):
+                  x,y,z,t=np.broadcast_arrays(np.asarray(x,dtype=float),np.asarray(y,dtype=float),np.asarray(z,dtype=float),np.asarray(t,dtype=float))
+                  return np.asarray(ask({'op':op,'x':x.tolist(),'y':y.tolist(),'z':z.tolist(),'t':t.tolist()})['value'],dtype=float)
+              def velocity(self,x,y,z,t): return self._call('velocity',x,y,z,t)
+              def velocity_dt(self,x,y,z,t): return self._call('velocity_dt',x,y,z,t)
+              def self_advection(self,x,y,z,t): return self._call('self_advection',x,y,z,t)
+              def velocity_laplacian(self,x,y,z,t): return self._call('velocity_laplacian',x,y,z,t)
+
+          # Fresh preregistered strict-inner source probes for attribution only.
+          X=np.asarray([0.183,0.197,0.214,0.231,0.247,0.263,0.279,0.293],dtype=float)
+          eta=np.asarray([-0.23,-0.17,-0.09,-0.02,0.07,0.13,0.19,0.25],dtype=float)
+          tt=np.asarray([0.478,0.486,0.494,0.502,0.510,0.518,0.526,0.534],dtype=float)
+          theta=np.asarray([0.29,0.73,1.17,1.61,2.05,2.49,2.93,-2.67],dtype=float)
+          m=ask({'op':'forward','X':X.tolist(),'eta':eta.tolist(),'t':tt.tolist(),'theta':theta.tolist()})
+          x,y,z,t=(np.asarray(m[k],dtype=float) for k in ('x','y','z','t'))
+
+          attribution=KokunoOscillatoryNonlinearAttribution(Backend())
+          result=attribution.evaluate(x,y,z,t)
+          contract=public_contract()
+          shares=np.asarray([
+              result.inner_advects_oscillation_share,
+              result.oscillation_advects_inner_share,
+              result.oscillatory_self_advection_share,
+          ],dtype=float)
+          failed=[]
+          if not np.all(np.isfinite(shares)): failed.append('nonfinite_shares')
+          if np.min(shares)<0.0 or np.max(shares)>1.0: failed.append('share_bounds')
+          if abs(float(np.sum(shares))-1.0)>1e-12: failed.append('share_partition')
+          if result.decomposition_closure_abs_max>5e-13: failed.append('three_piece_closure')
+          if result.mixed_closure_abs_max>5e-13: failed.append('mixed_closure')
+          if contract['forbidden_evaluate_inputs_present']: failed.append('forbidden_inputs')
+          if contract['mean_projection_performed']: failed.append('agent3_mean_lane_crossed')
+          if contract['correction_velocity_constructed']: failed.append('agent3_correction_lane_crossed')
+          if contract['shares_are_acceptance_gates']: failed.append('shares_promoted_to_gate')
+
+          Path('artifacts').mkdir(exist_ok=True)
+          receipt={
+              'schema':'kokuno-a2-oscillatory-nonlinear-attribution-receipt-v1',
+              'parent_agent2_head':'b88f97cb14ea9849b7bbd7cf9ff9f410161e8c2a',
+              'agent1_reference_head':'300919075c07396e4e466f553be78eaae0707df2',
+              'agent1_field_sha256':meta['field_sha256'],
+              'attribution_sha256':attribution.attribution_sha256,
+              'parent_handoff_sha256':attribution.parent_handoff_sha256,
+              'source_contract_sha256':attribution.source_contract_sha256,
+              'sample_count':int(x.size),
+              'source_X_range':[float(X.min()),float(X.max())],
+              'metrics':result.to_payload(),
+              'share_interpretation':'non-cancelling Cartesian magnitude diagnostic only',
+              'mean_projection_performed':False,
+              'correction_velocity_constructed':False,
+              'complete_ns_residual':False,
+              'same_protocol_st006_comparison_valid':False,
+              'paper_exact':False,
+              'pde_validated':False,
+              'failed_guards':failed,
+          }
+          Path('artifacts/kokuno_agent2_oscillatory_nonlinear_attribution_receipt.json').write_text(json.dumps(receipt,indent=2,sort_keys=True)+'\n')
+          print(json.dumps(receipt,indent=2,sort_keys=True))
+          p.stdin.close(); p.terminate(); p.wait(timeout=10)
+          if failed: raise SystemExit('failed guards: '+', '.join(failed))
+          PY
+
+      - name: Upload receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent2-oscillatory-nonlinear-attribution-v1
+          path: artifacts/kokuno_agent2_oscillatory_nonlinear_attribution_receipt.json
+          if-no-files-found: warn
