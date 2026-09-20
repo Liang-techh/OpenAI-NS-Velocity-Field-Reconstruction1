@@ -1,0 +1,127 @@
+name: kokuno-agent5-finite-correction-stage-ingest
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_a5_finite_correction_stage_ingest_contract.py'
+      - 'tests/test_kokuno_a5_finite_correction_stage_ingest_contract.py'
+      - '.github/workflows/kokuno-agent5-finite-correction-stage-ingest.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out exact event head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Assert exact head
+        if: github.event_name == 'pull_request'
+        run: test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha }}"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install repository
+        run: python -m pip install -e '.[dev]'
+
+      - name: Compile and run focused A5 regressions
+        run: |
+          python -m py_compile \
+            src/openai_ns_reconstruction/kokuno_a5_finite_correction_stage_ingest_contract.py \
+            tests/test_kokuno_a5_finite_correction_stage_ingest_contract.py
+          python -m pytest -q -W error \
+            tests/test_kokuno_a5_strict_inner_vorticity_artifact_ingest_contract.py \
+            tests/test_kokuno_a5_finite_correction_stage_ingest_contract.py
+
+      - name: Verify exact Agent-3 finite-stage identities
+        run: |
+          set -euo pipefail
+          A3_HEAD='3fd33d3ca20d3ebed7dad872d3264036bdd9cb51'
+          A3_SOURCE_BLOB='4fc931fe7703b8b8e05efb41af957b54c9f7a4f9'
+          A3_WORKFLOW_BLOB='07da1793048fdfe4369d7327a8dc1d00427819e4'
+          git fetch --no-tags --depth=1 origin "$A3_HEAD"
+          test "$(git rev-parse "$A3_HEAD":src/openai_ns_reconstruction/kokuno_finite_correction_stage.py)" = "$A3_SOURCE_BLOB"
+          test "$(git rev-parse "$A3_HEAD":.github/workflows/kokuno-agent3-finite-correction-stage-contract.yml)" = "$A3_WORKFLOW_BLOB"
+
+      - name: Materialize A5 finite-stage ingest report
+        run: |
+          mkdir -p artifacts/kokuno_agent5
+          python -m openai_ns_reconstruction.kokuno_a5_finite_correction_stage_ingest_contract \
+            --exact-head "$(git rev-parse HEAD)" \
+            --output artifacts/kokuno_agent5/finite_correction_stage_ingest_contract.json
+
+      - name: Enforce fail-closed integration boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path('artifacts/kokuno_agent5/finite_correction_stage_ingest_contract.json')
+          payload = json.loads(path.read_text())
+          evidence = payload['evidence']
+          handoff = payload['finite_correction_stage_handoff']
+          current = payload['current_source_admission']
+          truth = payload['truth_boundary']
+          state = payload['stage_state']
+
+          assert payload['agent3_binding']['head'] == '3fd33d3ca20d3ebed7dad872d3264036bdd9cb51'
+          assert payload['agent3_binding']['source_blob_sha'] == '4fc931fe7703b8b8e05efb41af957b54c9f7a4f9'
+          assert payload['agent3_binding']['workflow_blob_sha'] == '07da1793048fdfe4369d7327a8dc1d00427819e4'
+          assert evidence['agent3_exact_head_ci_conclusion'] is None
+          assert evidence['agent3_mechanics_receipt_is_candidate_residual_evidence'] is False
+          assert evidence['agent3_real_candidate_finite_correction_cycle_run'] is False
+          assert evidence['agent4_dedicated_finite_correction_stage_audit_present'] is False
+          assert evidence['finite_correction_stage_contract_ingest_admitted'] is False
+          assert evidence['real_correction_scientifically_admitted'] is False
+
+          assert handoff['registered'] is True
+          assert handoff['complete_ns_residual_required'] is True
+          assert handoff['matched_pressure_required'] is True
+          assert handoff['restricted_forcing_required'] is True
+          assert handoff['restricted_forcing_preregistered_required'] is True
+          assert handoff['residual_as_forcing_shortcut_forbidden'] is True
+          assert handoff['dedicated_agent4_stage_audit_available'] is False
+          assert handoff['usable_for_real_cycle_now'] is False
+          assert handoff['usable_as_st006_comparison_now'] is False
+          assert handoff['usable_for_final_independent_pde_validation_now'] is False
+
+          assert current['complete_ns_defect'] is False
+          assert current['pressure_gradient_included'] is False
+          assert current['restricted_forcing_included'] is False
+          assert current['scoped_transport_stress_authorized_as_correction_target'] is False
+          assert current['admitted_to_real_finite_correction_cycle'] is False
+          assert current['surrogate_defect_substitution_allowed'] is False
+          assert current['residual_as_forcing_shortcut_allowed'] is False
+
+          assert state == {
+              'leading_ready': False,
+              'oscillatory_ready': True,
+              'correction_ready': False,
+              'velocity_export_ready': False,
+              'pde_validated': False,
+          }
+          assert truth['real_candidate_finite_correction_cycle_run'] is False
+          assert truth['heldout_normalized_ns_residual_assessed'] is False
+          assert truth['residual_reduction_claimed'] is False
+          assert truth['same_protocol_st006_comparison_performed'] is False
+          assert truth['free_residual_defined_forcing_allowed'] is False
+          assert truth['threshold_relaxed'] is False
+          assert truth['pde_validated'] is False
+          PY
+
+      - name: Upload A5 finite-stage ingest contract
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-finite-correction-stage-ingest-contract
+          path: artifacts/kokuno_agent5/finite_correction_stage_ingest_contract.json
+          if-no-files-found: error
