@@ -1,0 +1,94 @@
+{
+  "schema": "cr002-kokuno-physical-center-normalization-scope-v1",
+  "audited_parent": {
+    "pr": 791,
+    "head": "566a3fe7d53918c19016aa11d55c3e071dff779d",
+    "task": "KOKUNO-A5-PHYSICAL-CENTER-INGEST-CONTRACT-069"
+  },
+  "active_integration_at_freeze": {
+    "branch": "codex/cr001-constraints",
+    "head": "43d4c0309cdd22763eaba966de439cc1b4e1d9d9"
+  },
+  "classification": {
+    "user_requirement": [
+      "deliver a nontrivial callable/saveable time-varying 3-D velocity candidate without treating PDE failure as a delivery prohibition",
+      "keep velocity delivery, visual correspondence, PDE validation, paper exactness and OpenAI-field identity as independent states"
+    ],
+    "public_source_fact": [
+      "PA.10 physical-center mapping uses F=(phi_*/C)Phi",
+      "the source normalization condition is C >= sup_{eta in Omega}|phi_*(eta)|"
+    ],
+    "autonomous_design": [
+      "the currently configured numerical C is inherited from the repository source-compatible configuration and is not recovered hidden OpenAI data",
+      "CR001 candidate nontriviality is a separate repository acceptance contract using E(t)=0.5*integral_R3 |u|^2 dx with E(0.25)=1+-0.001"
+    ],
+    "pending_unknown": [
+      "whether the currently configured C satisfies the source complex-domain normalization condition",
+      "the final corrected Kokuno fixed point and global Cartesian spacetime velocity",
+      "the energy of any future complete Kokuno candidate under the CR001 acceptance quadrature",
+      "any hidden OpenAI numerical profiles, coefficients or exact field identity"
+    ]
+  },
+  "source_C_role": {
+    "formula": "F=(phi_*/C)Phi",
+    "source_condition": "C >= sup_{eta in Omega}|phi_*(eta)|",
+    "current_complex_domain_certified": false,
+    "current_physical_center_ingest_admitted": false,
+    "is_CR001_energy_normalizer": false,
+    "may_be_tuned_posthoc_to_reduce_NS_residual": false,
+    "may_be_inflated_posthoc_to_shrink_F_or_velocity_amplitude": false,
+    "may_be_selected_from_CR001_heldout_validation": false,
+    "unresolved_source_normalization_authorizes_free_amplitude_tuning": false
+  },
+  "cr001_energy_normalization_role": {
+    "definition": "E(t)=0.5*integral_R3 |u|^2 dx",
+    "reference_time": 0.25,
+    "reference_energy": 1.0,
+    "absolute_tolerance": 0.001,
+    "minimum_energy_each_validation_time": 0.1,
+    "maximum_energy_each_validation_time": 10.0,
+    "enforcement": "normalize initial velocity parameters, reject collapsed candidates",
+    "applies_to_complete_candidate_acceptance": true,
+    "physical_center_profile_energy_assessed_here": false,
+    "certifies_source_complex_C_condition": false,
+    "may_replace_source_C_condition": false
+  },
+  "cr001_frozen_contract": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_parameter_bounds": {"a": [0.0, 10.0], "c": [0.0, 10.0]},
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "divergence_max": 0.00001,
+    "divergence_L2": 0.00001,
+    "momentum_max": 0.001,
+    "momentum_L2": 0.001,
+    "residual_defined_or_pointwise_free_force_allowed": false,
+    "amplitude_collapse_success_route_allowed": false,
+    "posthoc_threshold_relaxation_allowed": false
+  },
+  "state_separation": {
+    "physical_center_formula_interface_registered": true,
+    "physical_center_profile_ingest_admitted": false,
+    "kokuno_global_cartesian_velocity_materialized": false,
+    "kokuno_velocity_export_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "claim_boundary": {
+    "source_C_normalization_failure_or_pending_does_not_retroactively_invalidate_other_honestly_labeled_callable_repository_candidates": true,
+    "a_future_source_C_certification_alone_does_not_establish_CR001_energy_normalization": true,
+    "a_future_CR001_energy_normalization_pass_alone_does_not_establish_source_C_certification": true,
+    "no_state_promotion_in_this_contract": true
+  }
+}
