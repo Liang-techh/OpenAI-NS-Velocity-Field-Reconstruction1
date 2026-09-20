@@ -52,7 +52,11 @@ def _mechanics_provider(*, break_before_after: bool = False):
         inner = inner_field(x, y, z, t)
         combined = inner + delta
         if break_before_after:
-            combined = combined + np.array([1.0e-3, 0.0, 0.0])
+            theta = np.arctan2(np.asarray(y, dtype=float), np.asarray(x, dtype=float))
+            combined = combined + np.stack(
+                (1.0e-3 * np.cos(theta), 1.0e-3 * np.sin(theta), np.zeros_like(theta)),
+                axis=-1,
+            )
         return (
             time_part,
             nonlinear,
@@ -125,7 +129,7 @@ def test_before_after_transport_difference_is_not_silently_ignored():
         backend_kind="negative-control",
     )
     assert witness.pointwise_before_after_closure_absolute_max > 9.0e-4
-    assert witness.projected_before_after_closure_absolute_max > 1.0e-5
+    assert witness.projected_before_after_closure_absolute_max > 9.0e-4
 
 
 def test_public_materializer_rejects_untyped_surrogate_backend():
