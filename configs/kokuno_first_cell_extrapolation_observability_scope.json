@@ -1,0 +1,108 @@
+{
+  "schema": "cr002-kokuno-first-cell-extrapolation-observability-scope-v1",
+  "task": "CR002-KOKUNO-FIRST-CELL-EXTRAPOLATION-OBSERVABILITY-SCOPE-119",
+  "audited_pr": 875,
+  "audited_head": "4b302412fe5733690394002a947eeedaa61a1835",
+  "audited_source_path": "src/openai_ns_reconstruction/kokuno_strict_inner_transport_first_cell_polynomial_radial_stress.py",
+  "audited_source_blob": "19f8cf9fa909fef7be2cf53c84df269e696b647c",
+  "parent_scope_audit_pr": 871,
+  "parent_scope_audit_head": "594af2273c2c27a7a64a9a4340da43472343b83a",
+  "canonical_constraints_path": "configs/constraints.json",
+  "canonical_constraints_blob": "6c559e42895a606e2ef025ade4cb448966d75814",
+  "provenance": {
+    "user_requirement": [
+      "keep callable velocity delivery independent from PDE-validation status",
+      "keep user requirements, public-source facts, autonomous design, and pending unknowns separate",
+      "do not promote scoped numerical mechanics into paper-exact, OpenAI-field, PDE, or blow-up claims"
+    ],
+    "public_source_fact": [
+      "the inherited source-facing radial-inverse structure uses a lower limit at r=0; this contract does not add any new public numerical source parameter"
+    ],
+    "autonomous_design": [
+      "PR #875 reconstructs the unweighted first-cell source from the first three strictly positive radii with a degree-2 Lagrange polynomial",
+      "PR #875 integrates r^e times that extrapolant analytically over [0,r_min] for e in {1,2}",
+      "PR #875 records a separate degree-1 affine first-cell estimate only as a local sensitivity diagnostic",
+      "the hidden-cell mechanics witness in this contract uses r_min=0.2 and H(r)=(r_min-r)^4 on 0<=r<r_min, zero at and above r_min",
+      "the CR001 finite-difference, quadrature, forcing, nontriviality, and validation thresholds are repository choices"
+    ],
+    "pending_unknown": [
+      "an independently justified regularity or shape bound for the real typed source on the unsampled interval [0,r_min] sufficient to turn extrapolation disagreement into an error bound",
+      "real-source first-cell convergence under radial refinement",
+      "formal first-cell accuracy for the real typed source",
+      "formal axis-based inverse equivalence for the realized finite-grid operator",
+      "formal full-domain moment correspondence",
+      "global axis regularity",
+      "complete corrected/global Kokuno velocity, matched pressure, preregistered restricted forcing, and held-out full NS validation"
+    ]
+  },
+  "audited_realization": {
+    "first_positive_node_is_integration_upper_limit": true,
+    "production_first_cell_degree": 2,
+    "sensitivity_first_cell_degree": 1,
+    "both_extrapolants_use_only_positive_radius_samples": true,
+    "samples_inside_open_interval_0_rmin_used": false,
+    "linear_quadratic_disagreement_recorded": true,
+    "linear_quadratic_disagreement_is_formal_error_bound": false,
+    "polynomial_exactness_through_degree_2_is_real_source_error_bound": false,
+    "real_source_first_cell_convergence_verified": false,
+    "formal_first_cell_accuracy_verified": false,
+    "formal_axis_based_inverse_verified": false,
+    "formal_full_domain_moment_verified": false,
+    "axis_regularity_verified": false
+  },
+  "observability_boundary": {
+    "statement": "Agreement of the degree-1 and degree-2 extrapolated first-cell integrals is not, by itself, an a-posteriori error certificate for the formal 0-to-r_min integral. Both estimators use only positive-radius node values, so without an independently justified source regularity/shape bound they cannot exclude a sub-first-cell contribution that vanishes at every observed positive node.",
+    "hidden_cell_witness_is_real_source_claim": false,
+    "hidden_cell_witness_is_public_source_fact": false,
+    "hidden_cell_witness_is_mechanics_only": true,
+    "witness_r_min": 0.2,
+    "witness_amplitude": 1.0,
+    "witness_definition": "H(r)=(r_min-r)^4 for 0<=r<r_min and H(r)=0 for r>=r_min",
+    "sampled_positive_node_values": "all zero for every node r>=r_min",
+    "degree_1_extrapolated_integral": 0.0,
+    "degree_2_extrapolated_integral": 0.0,
+    "degree_1_degree_2_disagreement": 0.0,
+    "formal_weighted_integral_e1": 2.133333333333334e-06,
+    "formal_weighted_integral_e2": 1.2190476190476194e-07,
+    "formal_weighted_integral_formula": "integral_0^a r^e (a-r)^4 dr = a^(e+5) * e! * 4! / (e+5)!",
+    "consequence": "zero estimator disagreement does not imply zero formal first-cell error in the sample-only observation model"
+  },
+  "canonical_cr001": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_parameter_bounds": {"a": [0.0, 10.0], "c": [0.0, 10.0]},
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "divergence_max": 1e-05,
+    "divergence_L2": 1e-05,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001,
+    "residual_defined_pointwise_free_force_allowed": false,
+    "amplitude_collapse_allowed": false,
+    "post_hoc_threshold_relaxation_allowed": false
+  },
+  "status_firewall": {
+    "velocity_bytes_changed": false,
+    "pressure_changed": false,
+    "forcing_changed": false,
+    "radial_stress_values_changed": false,
+    "source_formula_changed": false,
+    "candidate_coefficients_changed": false,
+    "scientific_thresholds_changed": false,
+    "velocity_export_ready_promoted_by_this_scope": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false,
+    "pde_pending_blocks_callable_velocity_delivery": false
+  }
+}
