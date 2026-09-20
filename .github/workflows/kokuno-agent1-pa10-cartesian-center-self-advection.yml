@@ -1,0 +1,125 @@
+name: kokuno-agent1-pa10-cartesian-center-self-advection
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a1-pa10-cartesian-center-self-advection-072
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_pa10_cartesian_center_self_advection.py"
+      - "tests/test_constrained_kokuno_pa10_cartesian_center_self_advection.py"
+      - ".github/workflows/kokuno-agent1-pa10-cartesian-center-self-advection.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent1-pa10-cartesian-center-self-advection-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  cartesian-center-self-advection:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify exact checked-out head
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          echo "exact_head=$EXPECTED_HEAD"
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile candidate-facing nonlinear stack
+        run: |
+          python -m compileall -q \
+            src/openai_ns_reconstruction/kokuno_pa10_cartesian_center_velocity.py \
+            src/openai_ns_reconstruction/kokuno_pa10_cartesian_center_velocity_dt.py \
+            src/openai_ns_reconstruction/kokuno_pa10_cartesian_center_spatial_derivatives.py \
+            src/openai_ns_reconstruction/kokuno_pa10_cartesian_center_self_advection.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_pa10_cartesian_center_spatial_derivatives.py \
+            tests/test_constrained_kokuno_pa10_cartesian_center_self_advection.py
+      - name: Generate exact-head self-advection receipt and reloadable config
+        run: |
+          python -W error -m openai_ns_reconstruction.kokuno_pa10_cartesian_center_self_advection \
+            --output artifacts/kokuno_agent1/pa10_cartesian_center_self_advection_v1/report.json \
+            --config-output artifacts/kokuno_agent1/pa10_cartesian_center_self_advection_v1/config.json
+      - name: Bind exact head and validate self-advection truth boundary
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          import subprocess
+
+          from openai_ns_reconstruction.kokuno_pa10_cartesian_center_self_advection import (
+              KokunoPA10CartesianCenterSelfAdvection,
+          )
+
+          root = Path('artifacts/kokuno_agent1/pa10_cartesian_center_self_advection_v1')
+          report_path = root / 'report.json'
+          config_path = root / 'config.json'
+          payload = json.loads(report_path.read_text())
+          candidate = KokunoPA10CartesianCenterSelfAdvection.load_configuration(config_path)
+          assert candidate.configuration() == payload['configuration']
+          assert candidate.field_sha256 == payload['field_sha256']
+          assert candidate.temporal_derivative_sha256 == payload['temporal_derivative_sha256']
+          assert candidate.spatial_derivative_sha256 == payload['spatial_derivative_sha256']
+          assert candidate.self_advection_sha256 == payload['self_advection_sha256']
+
+          checks = payload['machine_checks']
+          assert checks['production_matches_explicit_jacobian_contraction_abs_max'] == 0.0
+          assert checks['self_advection_vs_directional_fd4_fine_relative_max'] < 5e-5
+          assert checks['directional_fd4_fine_vs_coarse_relative_max'] < 5e-5
+          assert checks['rotation_covariance_relative_max'] < 5e-10
+          assert checks['axis_transverse_self_advection_abs_max'] < 1e-12
+          assert checks['self_advection_nontrivial_rms'] > 1e-10
+          assert checks['all_probe_values_finite'] is True
+
+          truth = payload['truth_boundary']
+          assert truth['inner_cartesian_center_self_advection_executable'] is True
+          assert truth['self_advection_uses_finite_difference_in_production'] is False
+          assert truth['source_center_is_final_corrected_fixed_point'] is False
+          assert truth['global_cartesian_spacetime_leading_velocity_materialized'] is False
+          assert truth['outer_join_localization_materialized'] is False
+          assert truth['matched_global_pressure_materialized'] is False
+          assert truth['restricted_forcing_materialized'] is False
+          assert truth['viscous_laplacian_materialized_here'] is False
+          assert truth['complete_candidate_api_ready'] is False
+          assert truth['heldout_ns_residual_assessed'] is False
+          assert truth['pde_validated'] is False
+          assert truth['paper_exact'] is False
+          assert truth['openai_field_identified'] is False
+
+          gates = payload['scientific_gates']
+          assert gates['momentum_max_l2'] == 1e-3
+          assert gates['divergence_max_l2'] == 1e-5
+          assert gates['free_residual_defined_forcing_forbidden'] is True
+
+          payload['exact_head'] = subprocess.check_output(
+              ['git', 'rev-parse', 'HEAD'], text=True
+          ).strip()
+          raw = json.dumps(payload, indent=2, sort_keys=True) + '\n'
+          report_path.write_text(raw)
+          print('field_sha256=', payload['field_sha256'])
+          print('spatial_derivative_sha256=', payload['spatial_derivative_sha256'])
+          print('self_advection_sha256=', payload['self_advection_sha256'])
+          print('receipt_sha256=', payload['receipt_sha256'])
+          print('artifact_sha256=', hashlib.sha256(raw.encode()).hexdigest())
+          print('machine_checks=', checks)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-pa10-cartesian-center-self-advection-v1
+          path: artifacts/kokuno_agent1/pa10_cartesian_center_self_advection_v1/
+          if-no-files-found: error
