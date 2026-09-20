@@ -1,0 +1,106 @@
+name: kokuno-agent1-pa10-leading-axis-profile-contract
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a1-pa10-leading-axis-profile-contract-065
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_pa10_leading_axis_profile_contract.py"
+      - "tests/test_constrained_kokuno_pa10_leading_axis_profile_contract.py"
+      - ".github/workflows/kokuno-agent1-pa10-leading-axis-profile-contract.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent1-pa10-leading-axis-profile-contract-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  leading-axis-profile-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify exact checked-out head
+        run: echo "exact_head=$(git rev-parse HEAD)"
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile
+        run: |
+          python -m compileall -q \
+            src/openai_ns_reconstruction/kokuno_pa10_source_axis_domain.py \
+            src/openai_ns_reconstruction/kokuno_pa10_leading_axis_profile_contract.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_pa10_leading_axis_profile_contract.py
+      - name: Generate exact-head profile receipt and reloadable config
+        run: |
+          python -W error -m openai_ns_reconstruction.kokuno_pa10_leading_axis_profile_contract \
+            --output artifacts/kokuno_agent1/pa10_leading_axis_profile_contract_v1/report.json \
+            --config-output artifacts/kokuno_agent1/pa10_leading_axis_profile_contract_v1/config.json
+      - name: Bind exact head and validate immutable truth boundary
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          import subprocess
+
+          from openai_ns_reconstruction.kokuno_pa10_leading_axis_profile_contract import (
+              KokunoPA10LeadingAxisProfileContract,
+          )
+
+          root = Path('artifacts/kokuno_agent1/pa10_leading_axis_profile_contract_v1')
+          report_path = root / 'report.json'
+          config_path = root / 'config.json'
+          payload = json.loads(report_path.read_text())
+          payload['exact_head'] = subprocess.check_output(
+              ['git', 'rev-parse', 'HEAD'], text=True
+          ).strip()
+          raw = json.dumps(payload, indent=2, sort_keys=True) + '\n'
+          report_path.write_text(raw)
+
+          contract = KokunoPA10LeadingAxisProfileContract.load_configuration(config_path)
+          assert contract.configuration() == payload['configuration']
+          mapping = payload['coordinate_contract']
+          assert mapping['native_similarity_coordinates'] == ['Y', 'eta']
+          assert mapping['repository_X_identification_asserted'] is False
+          assert mapping['fixed_axis_profiles_are_Y_independent'] is True
+          assert mapping['u_0_is_source_PA10_contraction_center'] is True
+
+          checks = payload['machine_checks']
+          assert checks['axis_regular_u0_exact_zero_on_probe'] is True
+          assert checks['u0_nontrivial_off_axis_on_probe'] is True
+          assert checks['H_zeta_over_L_equals_minus_chi_abs_error'] < 1e-12
+          assert checks['all_profile_values_finite'] is True
+          assert checks['all_analytic_derivatives_finite'] is True
+
+          truth = payload['truth_boundary']
+          assert truth['source_native_leading_axis_profile_api_executable'] is True
+          assert truth['source_native_profile_analytic_derivatives_executable'] is True
+          assert truth['source_native_profile_configuration_serializable'] is True
+          assert truth['repository_X_identified_with_source_Y'] is False
+          assert truth['global_leading_profile_reconstructed'] is False
+          assert truth['complete_kokuno_composite_velocity'] is False
+          assert truth['unified_cartesian_velocity_export_ready'] is False
+          assert truth['heldout_ns_residual_assessed'] is False
+          assert truth['pde_validated'] is False
+          assert truth['paper_exact'] is False
+          assert truth['openai_field_identified'] is False
+
+          print('artifact_sha256=', hashlib.sha256(raw.encode()).hexdigest())
+          print('receipt_sha256=', payload['receipt_sha256'])
+          print('machine_checks=', checks)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-pa10-leading-axis-profile-contract-v1
+          path: artifacts/kokuno_agent1/pa10_leading_axis_profile_contract_v1/
+          if-no-files-found: error
