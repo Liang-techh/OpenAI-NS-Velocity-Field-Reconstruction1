@@ -1,0 +1,118 @@
+name: agent7-st052m-tip-reshaped-nonlinear-replay
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_tip_reshaped_nonlinear_replay.py'
+      - 'experiments/root_st052/test_agent7_st052m_tip_reshaped_nonlinear_replay.py'
+      - '.github/workflows/agent7-st052m-tip-reshaped-nonlinear-replay.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  reshaped-tip-nonlinear-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Verify exact PR head checkout
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+      - name: Focused contract tests
+        run: python -m pytest -q -W error experiments/root_st052/test_agent7_st052m_tip_reshaped_nonlinear_replay.py
+      - name: Execute preregistered same-dimension nonlinear replay
+        run: |
+          mkdir -p outputs/agent7-st052m-tip-reshaped-nonlinear-replay
+          python experiments/root_st052/agent7_st052m_tip_reshaped_nonlinear_replay.py \
+            --out outputs/agent7-st052m-tip-reshaped-nonlinear-replay/report.json
+      - name: Verify frozen ancestry and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-tip-reshaped-nonlinear-replay/report.json').read_text())
+          assert r['task_id']=='CR003-ST052M-TIP-RESHAPED-NONLINEAR-REPLAY-103'
+          assert r['prereg_issue']==739
+          assert r['source_parent']=={'pr':738,'head':'8072b099b8886e7c8716347ef2a60066d5985206'}
+          assert r['frozen_reshaped_basis']['inner_exponent_p']==9
+          assert r['frozen_reshaped_basis']['outer_exponent_m']==4
+          assert r['coefficient_calibration']['historical_development_protocol_used'] is True
+          assert r['coefficient_calibration']['fresh_714_data_used'] is False
+          assert r['coefficient_comparison']['old_alpha_reused_as_same_coordinate'] is False
+          assert r['targeted_outer_tip_fingerprint']['probe_count']==24
+          assert r['basis_dimension_changed'] is False
+          assert r['second_poloidal_basis_added'] is False
+          assert r['new_temporal_basis_added'] is False
+          assert r['fresh_714_path_data_used'] is False
+          assert r['parameter_grid_scan_performed'] is False
+          assert r['optimization_performed'] is False
+          assert r['pressure_or_force_changed'] is False
+          assert r['held_out_pde_residual_evaluated'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          assert r['paper_exact'] is False
+          assert r['openai_field_identified'] is False
+          assert r['decision']['second_poloidal_channel_justified_now'] is False
+          assert r['decision']['retune_alpha_or_p_m_from_this_result_allowed'] is False
+          print('screen_pass=',r['same_dimension_reshaped_child_visualization_direction_screen_passed'])
+          print('coefficient_comparison=',r['coefficient_comparison'])
+          print('targeted_outer_tip=',r['targeted_outer_tip_fingerprint'])
+          print('radial=',r['historical_radial_band_replay']['decision'])
+          print('turns=',r['historical_turns_replay']['decision'])
+          print('aspect=',r['axial_stretch_replay'])
+          print('response=',r['response_diagnostic'])
+          print('structure=',r['structure_preflight'])
+          PY
+      - name: Publish compact numerical receipt
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent7-tip-reshaped-replay-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-tip-reshaped-nonlinear-replay/report.json').read_text())
+          c=r['coefficient_calibration']; q=r['coefficient_comparison']
+          t=r['targeted_outer_tip_fingerprint']; d=r['historical_radial_band_replay']['decision']
+          print('<!-- agent7-st052m-tip-reshaped-nonlinear-replay-receipt -->')
+          print('**Agent 7 p=9,m=4 same-dimension nonlinear replay receipt (issue #739):**')
+          print()
+          print(f"- visualization-direction screen pass: `{r['same_dimension_reshaped_child_visualization_direction_screen_passed']}`")
+          print(f"- old #701 alpha: `{q['old_701_alpha']:.12g}`; rederived p=9,m=4 alpha: `{q['reshaped_alpha_94']:.12g}`; ratio: `{q['reshaped_to_old_alpha_ratio']:.12g}`")
+          print(f"- new fixed-position calibration means: source #652 u_r `{c['mean_source_652_radial_velocity']:.9g}`, reshaped unit u_r `{c['mean_reshaped_unit_radial_velocity']:.9g}`")
+          print(f"- correction/base RMS at 41^3,t=.50: `{r['midpoint_correction_rms']['correction_to_base_rms_fraction']:.6g}`")
+          print(f"- targeted z=+/-1.55 total-field gate all times: `{t['all_times_strictly_lower_than_both_and_inward']}`")
+          print(f"- historical tip mean delta-r lower all segments: `{d['all_tip_mean_delta_r_strictly_lower']}`; tip start-u_r lower: `{d['all_tip_start_mean_radial_velocity_strictly_lower']}`; shoulder 24/24 retained: `{d['shoulder_24_of_24_inward_all_segments']}`")
+          print(f"- turns advantage retained all segments: `{r['historical_turns_replay']['decision']['all_segments_positive']}`")
+          print(f"- aspect advantage retained all post-start times: `{r['axial_stretch_replay']['all_post_start_positive']}`")
+          s=r['structure_preflight']; v=r['response_diagnostic']
+          print(f"- response rank `{v['rank']}`, condition `{v['condition_number']:.6f}`, cosine `{v['column_cosine']:.6f}`")
+          print(f"- start identity `{s['start_identity_max_abs']:.3e}`, support leak `{s['outside_correction_max_abs']:.3e}`, FD divergence `{s['candidate_cartesian_fd_divergence_max']:.3e}`")
+          print()
+          print('Truth boundary: targeted development morphology/path evidence only. No #714 fresh-path data were used, no coefficient scan or post-result retuning occurred, and no pressure/forcing/PDE acceptance was rebuilt. This is not visual correspondence verification, PDE validity, paper exactness, exact OpenAI-field identity or a blow-up result.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-tip-reshaped-replay-receipt.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-tip-reshaped-nonlinear-replay
+          path: outputs/agent7-st052m-tip-reshaped-nonlinear-replay/
+          if-no-files-found: error
+
+# Envelope, coefficient semantics, targeted z=1.55 fingerprint and all guards were frozen in issue #739 before nonlinear execution.
