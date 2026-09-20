@@ -1,0 +1,88 @@
+name: kokuno-agent2-signed-amplitude-spatial-jacobian
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a2-correction-spatial-jacobian-054
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_public_signed_amplitude_spatial_jacobian.py"
+      - "src/openai_ns_reconstruction/kokuno_public_signed_amplitude_complete_curl.py"
+      - "tests/test_constrained_kokuno_public_signed_amplitude_spatial_jacobian.py"
+      - ".github/workflows/kokuno-agent2-signed-amplitude-spatial-jacobian.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent2-signed-amplitude-spatial-jacobian-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  signed-amplitude-spatial-jacobian:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify exact head
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+      - name: Compile correction spatial-Jacobian seam
+        run: >-
+          python -W error -m py_compile
+          src/openai_ns_reconstruction/kokuno_public_signed_amplitude_complete_curl.py
+          src/openai_ns_reconstruction/kokuno_public_signed_amplitude_spatial_jacobian.py
+      - name: Run focused warnings-as-errors tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_public_signed_amplitude_complete_curl.py
+          tests/test_constrained_kokuno_public_signed_amplitude_spatial_jacobian.py
+      - name: Generate immutable correction-Jacobian receipt
+        run: >-
+          python -W error -m openai_ns_reconstruction.kokuno_public_signed_amplitude_spatial_jacobian
+          --output artifacts/kokuno_agent2_signed_amplitude_spatial_jacobian_v1.json
+      - name: Check preregistered gates and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('artifacts/kokuno_agent2_signed_amplitude_spatial_jacobian_v1.json')
+          r = json.loads(p.read_text())
+          assert r['schema'] == 'kokuno-a2-signed-amplitude-spatial-jacobian-v1'
+          assert r['sample_count'] == 18
+          assert r['fd4_steps'] == [0.004, 0.002, 0.001]
+          assert r['failed_guards'] == []
+          assert r['successive_difference_refinement_ratio'] >= 4.0
+          assert r['finest_relative_divergence_rms'] <= 5.0e-3
+          assert r['manufactured_polynomial']['relative_max_error'] <= 5.0e-9
+          assert r['support_exterior_absolute_max'] <= 1.0e-12
+          t = r['truth_boundary']
+          assert t['correction_velocity_spatial_jacobian_executable'] is True
+          assert t['convective_cross_term_derivatives_ready_for_future_diagnostics'] is True
+          assert t['divergence_and_vorticity_derived_from_same_jacobian'] is True
+          assert t['vector_potential_first_complete_curl_reused'] is True
+          assert t['candidate_amplitude_phase_support_retuned'] is False
+          assert t['agent3_mean_radial_chain_reimplemented'] is False
+          assert t['source_agent2_complete_curl_certified_for_full_candidate'] is False
+          assert t['independent_agent4_correction_vector_potential_audit_required'] is True
+          assert t['real_agent3_delta_a_bound'] is False
+          assert t['full_composite_velocity_available'] is False
+          assert t['real_full_candidate_correction_cycle_run'] is False
+          assert t['heldout_ns_momentum_residual_assessed'] is False
+          assert t['residual_reduction_claimed'] is False
+          assert t['pde_validated'] is False
+          assert t['paper_exact'] is False
+          print('signed_amplitude_spatial_jacobian=PASS')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent2-signed-amplitude-spatial-jacobian-v1
+          path: artifacts/kokuno_agent2_signed_amplitude_spatial_jacobian_v1.json
+          if-no-files-found: error
