@@ -1,0 +1,117 @@
+name: agent7-st052m-compact-toroidal-swirl-preflight
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_compact_toroidal_swirl_preflight.py'
+      - 'experiments/root_st052/test_agent7_st052m_compact_toroidal_swirl_preflight.py'
+      - '.github/workflows/agent7-st052m-compact-toroidal-swirl-preflight.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  compact-toroidal-swirl-preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Verify exact PR head checkout
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+      - name: Focused contract tests
+        run: python -m pytest -q -W error experiments/root_st052/test_agent7_st052m_compact_toroidal_swirl_preflight.py
+      - name: Execute frozen toroidal capacity preflight
+        run: |
+          mkdir -p outputs/agent7-st052m-compact-toroidal-swirl-preflight
+          python experiments/root_st052/agent7_st052m_compact_toroidal_swirl_preflight.py \
+            --out outputs/agent7-st052m-compact-toroidal-swirl-preflight/report.json
+      - name: Verify preregistration, capacity gates and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-compact-toroidal-swirl-preflight/report.json').read_text())
+          assert r['task_id']=='CR003-ST052M-COMPACT-TOROIDAL-SWIRL-PREFLIGHT-119'
+          assert r['prereg_issue']==836
+          assert r['source_parent']=={'pr':828,'head':'034a5e04df8900d8def05099fdbd1a287b43b4a0'}
+          assert r['symbolic_divergence']['exact_identity'] is True
+          s=r['channel_selectivity']
+          assert s['toroidal_u_r_max_abs'] <= 1e-12
+          assert s['toroidal_u_z_max_abs'] <= 1e-12
+          assert s['toroidal_u_theta_rms'] > 1e-8
+          assert s['poloidal_u_theta_max_abs'] <= 1e-12
+          assert s['poloidal_rz_rms'] > 1e-8
+          assert s['passes'] is True
+          b=r['support_and_axis']
+          assert b['toroidal_outside_max_abs'] <= 1e-12
+          assert b['poloidal_outside_max_abs'] <= 1e-12
+          assert b['toroidal_axis_transverse_max_abs'] <= 1e-12
+          assert b['passes'] is True
+          d=r['response_identifiability']
+          assert d['normalized_column_rank']==2
+          assert abs(d['normalized_column_cosine']) <= 1e-12
+          assert d['normalized_column_condition'] <= 1.01
+          assert d['passes'] is True
+          assert r['decision']['frozen_preflight_passes'] is True
+          assert r['decision']['toroidal_direction_is_independent_of_live_poloidal_direction'] is True
+          assert r['decision']['instantaneous_swirl_control_without_poloidal_leakage_established'] is True
+          assert r['decision']['coefficient_selected'] is False
+          assert r['decision']['actual_velocity_changed'] is False
+          assert r['decision']['closer_visualization_delivery_established'] is False
+          assert r['candidate_velocity_changed'] is False
+          assert r['parameter_scan_performed'] is False
+          assert r['fresh_714_path_data_used'] is False
+          assert r['held_out_pde_residual_evaluated'] is False
+          assert r['source_numeric_swirl_target_used'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          assert r['openai_field_identified'] is False
+          print('selectivity=', s)
+          print('identifiability=', d)
+          PY
+      - name: Publish compact capacity receipt
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent7-toroidal-preflight-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-compact-toroidal-swirl-preflight/report.json').read_text())
+          s=r['channel_selectivity']
+          d=r['response_identifiability']
+          print('<!-- agent7-st052m-compact-toroidal-swirl-preflight-receipt -->')
+          print('**Agent 7 compact toroidal/swirl capacity preflight (issue #836):**')
+          print()
+          print(f"- symbolic toroidal divergence identity exact: `{r['symbolic_divergence']['exact_identity']}`")
+          print(f"- toroidal u_theta RMS: `{s['toroidal_u_theta_rms']:.9g}`; max |u_r| / |u_z| leakage: `{s['toroidal_u_r_max_abs']:.3g}` / `{s['toroidal_u_z_max_abs']:.3g}`")
+          print(f"- normalized poloidal/toroidal response cosine: `{d['normalized_column_cosine']:.9g}`")
+          print(f"- normalized rank / condition: `{d['normalized_column_rank']}` / `{d['normalized_column_condition']:.9g}`")
+          print()
+          print('Routing: this is capacity only. No toroidal coefficient is selected and the candidate velocity is unchanged. A later toroidal child is justified only after a preregistered swirl/circulation mismatch; no visual/PDE/exact-field claim is promoted.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-toroidal-preflight-receipt.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-compact-toroidal-swirl-preflight
+          path: outputs/agent7-st052m-compact-toroidal-swirl-preflight/
+          if-no-files-found: error
+
+# Basis shape and gates frozen in issue #836 before repository execution.
