@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "task": "CR002-KOKUNO-STRICT-INNER-TRANSPORT-MEAN-NONLINEAR-SCOPE",
+  "status": "governance_only_not_scientific_admission",
+  "target": {
+    "pull_request": 850,
+    "head_sha": "7c3e5c23df9125722f055df4696f593ea17dd0e8",
+    "path": "src/openai_ns_reconstruction/kokuno_strict_inner_transport_mean.py",
+    "task": "KOKUNO-A3-STRICT-INNER-TRANSPORT-MEAN-072",
+    "schema": "kokuno-a3-strict-inner-transport-mean-v1"
+  },
+  "classification_taxonomy": [
+    "user_requirement",
+    "public_source_fact",
+    "autonomous_design",
+    "pending_unknown"
+  ],
+  "classification": {
+    "user_requirement": [
+      "keep velocity(x,y,z,t)->[u,v,w] delivery separable from PDE validation",
+      "do not promote visual similarity to paper-exact or OpenAI-field identity",
+      "keep PDE forcing and validation thresholds preregistered"
+    ],
+    "public_source_fact": [
+      "the Kokuno-derived strict-inner source formulas are upstream source-derived structure; this contract does not add any public mean-closure theorem"
+    ],
+    "autonomous_design": [
+      "the repository cylindrical projection and discrete angular averaging protocol",
+      "the angular ladder [32,64,128]",
+      "the manufactured annular nonlinear-averaging counterexample used by this audit",
+      "the CR001 validation protocol and scientific thresholds"
+    ],
+    "pending_unknown": [
+      "matched pressure gradient for a complete candidate",
+      "restricted forcing for a complete candidate",
+      "correction transport and global corrected leading join",
+      "a closed equation for the azimuthal mean velocity",
+      "complete held-out Navier-Stokes validation",
+      "visual correspondence verification",
+      "paper-exact field identity",
+      "OpenAI hidden-field identity"
+    ]
+  },
+  "observed_operator": {
+    "raw_field": "u = u_inner + u_osc on the strict-inner scope",
+    "raw_transport": "T(u)=partial_t u + (u dot grad)u - nu*Delta u",
+    "reported_mean": "azimuthal mean after evaluating raw Cartesian time/advection/viscous/transport vectors and projecting each vector onto the rotating cylindrical frame",
+    "reported_advection": "< (u dot grad)u >_theta after raw Cartesian nonlinear evaluation and cylindrical projection",
+    "not_reported": [
+      "T(<u>_theta)",
+      "(<u>_theta dot grad)<u>_theta",
+      "a closed mean-field Navier-Stokes defect"
+    ]
+  },
+  "nonlinear_mean_boundary": {
+    "mean_of_advection_equals_advection_of_mean": false,
+    "mean_of_transport_equals_transport_of_mean": false,
+    "closed_mean_velocity_pde_established": false,
+    "fluctuation_or_closure_term_proved_zero": false,
+    "rule": "Do not replace <(u dot grad)u> by (<u> dot grad)<u> without an independent closure argument. Nonlinear averaging need not commute."
+  },
+  "manufactured_annular_witness": {
+    "classification": "autonomous_design",
+    "scope": "annulus r>0; mechanics-only counterexample, not repository candidate data",
+    "field_cylindrical": {
+      "u_r": "a*cos(theta)",
+      "u_theta": "a*sin(theta)",
+      "u_z": "0",
+      "r_dependence": "none",
+      "z_dependence": "none"
+    },
+    "parameters": {
+      "a": 0.4,
+      "r": 1.25
+    },
+    "mean_velocity_cylindrical": [0.0, 0.0, 0.0],
+    "mean_advection_cylindrical": [-0.128, 0.0, 0.0],
+    "derivation": "A_r=(u_theta/r)*partial_theta(u_r)-u_theta^2/r=-2*a^2*sin(theta)^2/r, so <A_r>=-a^2/r while advection of the zero mean velocity is zero.",
+    "axis_or_global_smoothness_claimed": false,
+    "candidate_or_source_fact_claimed": false
+  },
+  "cr001_snapshot": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2,2],[-2,2],[-2,2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25,0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_parameter_bounds": {"a":[0.0,10.0],"c":[0.0,10.0]},
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [0.25,0.3125,0.4375,0.5625,0.6875,0.75],
+    "derivative_steps": [0.02,0.01,0.005],
+    "quadrature_orders_per_axis": [24,48,96],
+    "divergence_max": 0.00001,
+    "divergence_L2": 0.00001,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001,
+    "residual_defined_pointwise_free_force_allowed": false,
+    "amplitude_collapse_allowed": false,
+    "post_hoc_threshold_relaxation_allowed": false
+  },
+  "truth_boundary": {
+    "strict_inner_transport_mean_bookkeeping_scoped": true,
+    "complete_ns_defect": false,
+    "st006_same_protocol_comparable": false,
+    "pde_validated": false,
+    "visual_correspondence_verified": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false,
+    "pde_pending_blocks_callable_velocity_delivery": false
+  },
+  "forbidden_promotions": {
+    "mean_of_advection_to_advection_of_mean": false,
+    "mean_of_transport_to_transport_of_mean": false,
+    "scoped_mean_to_closed_mean_pde": false,
+    "scoped_mean_to_complete_ns_defect": false,
+    "scoped_mean_to_st006_comparability": false,
+    "scoped_mean_to_pde_validated": false,
+    "autonomous_protocol_to_public_source_fact": false,
+    "relax_cr001_thresholds": false,
+    "enable_residual_defined_pointwise_free_force": false,
+    "permit_amplitude_collapse": false,
+    "use_pde_pending_as_velocity_delivery_blocker": false
+  }
+}
