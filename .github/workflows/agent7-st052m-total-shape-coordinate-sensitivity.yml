@@ -1,0 +1,115 @@
+name: agent7-st052m-total-shape-coordinate-sensitivity
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_total_shape_coordinate_sensitivity.py'
+      - 'experiments/root_st052/test_agent7_st052m_total_shape_coordinate_sensitivity.py'
+      - '.github/workflows/agent7-st052m-total-shape-coordinate-sensitivity.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  total-shape-coordinate-sensitivity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'pytest>=8,<10'
+      - name: Verify exact PR head checkout
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+      - name: Focused contract tests
+        run: python -m pytest -q -W error experiments/root_st052/test_agent7_st052m_total_shape_coordinate_sensitivity.py
+      - name: Execute frozen total-family shape tangent audit
+        run: |
+          mkdir -p outputs/agent7-st052m-total-shape-coordinate-sensitivity
+          python experiments/root_st052/agent7_st052m_total_shape_coordinate_sensitivity.py \
+            --out outputs/agent7-st052m-total-shape-coordinate-sensitivity/report.json
+      - name: Verify issue contract, identifiability gate and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-total-shape-coordinate-sensitivity/report.json').read_text())
+          assert r['task_id']=='CR003-ST052M-TOTAL-SHAPE-COORDINATE-SENSITIVITY-115'
+          assert r['prereg_issue']==809
+          assert r['source_parent']=={'pr':801,'head':'5eb09a8ea6a6a4f79b7deee020690eba1612b5e2'}
+          assert r['source_frozen_child']=={'pr':775,'head':'93887a59729d22113badf2ae4dac2f7d868e2703'}
+          assert r['family']['k_values']==[0.9,1.0,1.1]
+          assert r['family']['live_k']==1.0
+          assert r['family']['candidate_selection'] is None
+          assert r['family']['public_openai_numeric_target'] is None
+          assert r['coefficients']['k=1.00']['calibration']['relative_mismatch_vs_exact_775'] <= 2e-12
+          d=r['total_family_identifiability']
+          assert d['normalized_column_rank']==2
+          assert abs(d['normalized_column_cosine']) < 0.995
+          assert d['normalized_two_column_condition'] <= 25.0
+          assert d['passes'] is True
+          assert r['decision']['same_dimension_total_shape_tangent_identifiable'] is True
+          assert r['decision']['second_poloidal_basis_justified_by_this_increment'] is False
+          assert r['decision']['candidate_k_selected'] is False
+          assert r['decision']['actual_velocity_changed'] is False
+          assert r['decision']['closer_visualization_delivery_established'] is False
+          assert r['candidate_velocity_changed'] is False
+          assert r['basis_dimension_changed'] is False
+          assert r['parameter_scan_performed'] is False
+          assert r['fresh_714_path_data_used'] is False
+          assert r['held_out_pde_residual_evaluated'] is False
+          assert r['public_image_numeric_target_used'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          assert r['openai_field_identified'] is False
+          print('alphas=', {k:v['alpha'] for k,v in r['coefficients'].items()})
+          print('identifiability=', d)
+          print('visible_inward_triplet=', r['visible_radial_fingerprints']['all_local_children_inward_on_all_registered_means'])
+          print('vorticity_sensitivity=', r['vorticity_morphology_fingerprints']['symmetric_d_metric_dk'])
+          PY
+      - name: Publish compact numerical receipt
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent7-total-shape-tangent-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-total-shape-coordinate-sensitivity/report.json').read_text())
+          d=r['total_family_identifiability']
+          print('<!-- agent7-st052m-total-shape-coordinate-sensitivity-receipt -->')
+          print('**Agent 7 recalibrated total-child radial-shape tangent audit (issue #809):**')
+          print()
+          for key,row in r['coefficients'].items():
+              print(f"- {key}: alpha `{row['alpha']:.12g}`, alpha/live `{row['alpha_ratio_to_live_k1']:.9g}`")
+          print(f"- normalized amplitude/shape tangent cosine: `{d['normalized_column_cosine']:.9g}`")
+          print(f"- tangent rank / condition: `{d['normalized_column_rank']}` / `{d['normalized_two_column_condition']:.9g}`")
+          print(f"- all local children inward on registered visible-tip means (diagnostic, not acceptance): `{r['visible_radial_fingerprints']['all_local_children_inward_on_all_registered_means']}`")
+          v=r['vorticity_morphology_fingerprints']['symmetric_d_metric_dk']
+          print(f"- d(full_aspect_ratio)/dk: `{v['full_aspect_ratio']:.9g}`")
+          print(f"- d(smooth_tip_radial_rms)/dk: `{v['smooth_tip_radial_rms']:.9g}`")
+          print()
+          print('Truth boundary: this audit changes no candidate velocity and selects no k. It only tests whether the recalibrated same-dimension radial-shape coordinate is locally independent of scalar amplitude and records autonomous total-field morphology sensitivities. It is not visual-correspondence or PDE validation.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-total-shape-tangent-receipt.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-total-shape-coordinate-sensitivity
+          path: outputs/agent7-st052m-total-shape-coordinate-sensitivity/
+          if-no-files-found: error
+
+# Scientific family/gates frozen in issue #809 before repository execution.
