@@ -1,0 +1,117 @@
+{
+  "audited_upstream": {
+    "agent3_head": "3fd33d3ca20d3ebed7dad872d3264036bdd9cb51",
+    "agent3_pr": 888,
+    "agent3_source_blob_sha": "4fc931fe7703b8b8e05efb41af957b54c9f7a4f9",
+    "agent5_head": "e833441279ed1f1df28c83b91b6226257e478e3f",
+    "agent5_pr": 890,
+    "canonical_constraints_blob_sha": "6c559e42895a606e2ef025ade4cb448966d75814"
+  },
+  "canonical_cr001_snapshot": {
+    "amplitude_collapse_allowed": false,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "divergence_L2": 1e-05,
+    "divergence_max": 1e-05,
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_parameters": {
+      "a": [0.0, 10.0],
+      "c": [0.0, 10.0]
+    },
+    "held_out_points": 4096,
+    "nu": 0.01,
+    "pde_residual_L2": 0.001,
+    "pde_residual_max": 0.001,
+    "physical_domain": "R^3",
+    "post_hoc_threshold_relaxation_allowed": false,
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "residual_defined_pointwise_free_force_allowed": false,
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "validation_seed": 914027
+  },
+  "existing_stage_semantics": {
+    "candidate_hash_must_change_after_correction": true,
+    "complete_ns_residual_flag_required": true,
+    "residual_as_forcing_shortcut_forbidden": true,
+    "restricted_forcing_included_and_preregistered_flags_required": true,
+    "same_physical_contract_sha_before_after_enforced": false,
+    "same_pressure_identity_before_after_enforced": false,
+    "same_residual_protocol_sha_before_after_enforced": true,
+    "same_restricted_forcing_parameter_identity_before_after_enforced": false,
+    "same_viscosity_domain_support_time_normalization_identity_before_after_enforced": false
+  },
+  "mechanics_witness": {
+    "after_forcing_parameter": 0.4,
+    "after_residual_abs": 0.6,
+    "apparent_contraction_factor": 0.75,
+    "before_forcing_parameter": 0.2,
+    "before_residual_abs": 0.8,
+    "candidate_scientific_evidence": false,
+    "free_residual_defined_forcing_used": false,
+    "kind": "autonomous_protocol-vs-physical-contract counterexample",
+    "physical_contract_same": false,
+    "residual_protocol_sha_same": true,
+    "restricted_forcing_family": "fixed_one_basis_scalar_parameter",
+    "transport_scalar": 1.0
+  },
+  "promotion_guards": {
+    "joint_physical_contract_update_may_be_labeled_velocity_only_correction": false,
+    "pde_pending_blocks_callable_velocity_delivery": false,
+    "residual_contraction_claimable_under_fixed_physical_contract_without_identity_binding": false,
+    "same_forcing_family_flags_imply_same_forcing_parameters": false,
+    "same_residual_protocol_sha_implies_same_physical_contract": false,
+    "silent_pressure_or_forcing_drift_allowed_in_velocity_only_correction_claim": false,
+    "stage_acceptance_implies_pde_validated": false,
+    "stage_accepted_implies_velocity_only_residual_improvement": false
+  },
+  "provenance": {
+    "autonomous_design": [
+      "Agent-3 typed finite-correction API and same-residual-protocol-SHA check",
+      "Agent-5 registration of that finite-correction interface",
+      "this CR002 physical-contract invariance audit and mechanics witness"
+    ],
+    "pending_unknown": [
+      "before/after candidate physical-contract SHA binding",
+      "before/after matched-pressure identity binding",
+      "before/after restricted-forcing family and parameter identity binding",
+      "before/after viscosity, domain, support, time-window and normalization identity binding",
+      "whether a future accepted stage is a velocity-only correction or an explicitly typed joint physical-contract update"
+    ],
+    "public_source_fact": [],
+    "user_requirement": [
+      "CR001 physical, forcing, nontriviality and threshold contracts remain preregistered and separately governed",
+      "PDE status must not block delivery of an independently governed callable velocity artifact"
+    ]
+  },
+  "public_source_boundary": {
+    "mechanics_witness_is_public_source_data": false,
+    "repository_protocol_or_threshold_is_public_source_data": false,
+    "this_increment_adds_new_public_source_fact": false
+  },
+  "required_future_binding_for_fixed_contract_contraction_claim": [
+    "physical_contract_sha256_before_equals_after",
+    "nu_domain_support_time_normalization_identity_before_equals_after",
+    "matched_pressure_identity_before_equals_after_or_explicitly_typed_joint_update",
+    "restricted_forcing_family_and_parameter_identity_before_equals_after_or_explicitly_typed_joint_update",
+    "same_residual_protocol_sha256",
+    "disjoint_held_in_held_out_partitions"
+  ],
+  "schema": "cr002-kokuno-finite-correction-physical-contract-scope-v1",
+  "task": "CR002-KOKUNO-FINITE-CORRECTION-PHYSICAL-CONTRACT-082",
+  "truth_boundary": {
+    "candidate_bytes_changed": false,
+    "fixed_physical_contract_residual_contraction_verified": false,
+    "forcing_changed": false,
+    "openai_field_identified": false,
+    "paper_exact": false,
+    "pde_validated": false,
+    "pressure_changed": false,
+    "real_candidate_finite_correction_cycle_run": false,
+    "threshold_changed": false,
+    "velocity_changed": false,
+    "visual_correspondence_verified": false
+  }
+}
