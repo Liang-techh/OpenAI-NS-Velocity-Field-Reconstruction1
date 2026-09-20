@@ -32,6 +32,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Checkout accepted exact ST052 source dependency
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: b3b8bfdbe1077f9ec967d158602951997d81e17d
+          path: source-st052
+
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -53,6 +60,39 @@ jobs:
               'numpy': numpy.__version__,
               'scipy': scipy.__version__,
               'sympy': sympy.__version__,
+          }, sort_keys=True))
+          PY
+
+      - name: Authenticate accepted exact source runtime dependency
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction import st052_source_runtime_identity as source_runtime
+
+          root = Path('source-st052').resolve()
+          auth = source_runtime.authenticate_source_runtime(root)
+          replay, imported = source_runtime.import_authenticated_replay(root)
+
+          assert auth['authenticated_head'] == source_runtime.SOURCE_HEAD
+          assert auth['authenticated_tree'] == source_runtime.SOURCE_TREE
+          assert auth['tracked_worktree_clean'] is True
+          assert auth['untracked_python_sources_absent'] is True
+          assert imported['identity_sha256'] == source_runtime.source_runtime_identity_sha256()
+          assert imported['module_cache_isolated'] is True
+          assert replay.__name__ == 'replay_st052'
+          assert any(
+              row['module_name'] == 'replay_st052'
+              and row['relative_path'] == source_runtime.SOURCE_REPLAY_PATH
+              for row in imported['loaded_source_modules']
+          )
+
+          print(json.dumps({
+              'authenticated_head': auth['authenticated_head'],
+              'authenticated_tree': auth['authenticated_tree'],
+              'identity_sha256': imported['identity_sha256'],
+              'module_cache_isolated': imported['module_cache_isolated'],
+              'loaded_source_module_count': len(imported['loaded_source_modules']),
           }, sort_keys=True))
           PY
 
