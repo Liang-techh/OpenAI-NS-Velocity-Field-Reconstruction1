@@ -1,0 +1,105 @@
+name: agent7-st052m-outer-axial-return-reservoir-preflight
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_outer_axial_return_reservoir_preflight.py'
+      - 'experiments/root_st052/test_agent7_st052m_outer_axial_return_reservoir_preflight.py'
+      - '.github/workflows/agent7-st052m-outer-axial-return-reservoir-preflight.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  outer-axial-return-reservoir-preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'pytest>=8,<10'
+      - name: Verify exact PR head checkout
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+      - name: Focused contract tests
+        run: python -m pytest -q -W error experiments/root_st052/test_agent7_st052m_outer_axial_return_reservoir_preflight.py
+      - name: Execute deterministic outer-reservoir preflight
+        run: |
+          mkdir -p outputs/agent7-st052m-outer-axial-return-reservoir-preflight
+          python experiments/root_st052/agent7_st052m_outer_axial_return_reservoir_preflight.py \
+            --out outputs/agent7-st052m-outer-axial-return-reservoir-preflight/report.json
+      - name: Verify preregistered truth boundary and gates
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-outer-axial-return-reservoir-preflight/report.json').read_text())
+          assert r['task_id']=='CR003-ST052M-OUTER-AXIAL-RETURN-RESERVOIR-PREFLIGHT-108'
+          assert r['issue']==766
+          assert r['source_parent']=={'pr':759,'head':'40c7c1cd0ed611788b6766a0e5b3a5782a0418d7'}
+          assert r['candidate_velocity_changed'] is False
+          assert r['basis_dimension_changed'] is False
+          assert r['fresh_714_path_data_used'] is False
+          assert r['held_out_pde_residual_evaluated'] is False
+          assert r['pressure_or_force_changed'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          assert r['signed_integral_refinement']['gate']['passes'] is True
+          assert r['response_geometry_vs_p9']['passes'] is True
+          d=r['decision']
+          assert d['outer_axial_return_reservoir_is_structural_escape_from_1p8_endpoint_obstruction'] is True
+          assert d['add_second_basis_dimension_now'] is False
+          assert d['closer_visualization_delivery_this_increment'] is False
+          q=r['directional_spot_checks']
+          assert q['p9_radial_at_abs_z_1p75'] > 0
+          assert q['reservoir_radial_at_abs_z_1p75'] < 0
+          g=r['signed_integral_refinement']['gate']
+          h=r['response_geometry_vs_p9']
+          print('p9_Cr_at_1p75=',q['p9_radial_at_abs_z_1p75'])
+          print('reservoir_Cr_at_1p75=',q['reservoir_radial_at_abs_z_1p75'])
+          print('max_abs_full_integral=',g['max_abs_finest_full_integral'])
+          print('max_visible_plus_reservoir=',g['max_abs_finest_visible_plus_reservoir'])
+          print('rank=',h['rank'])
+          print('cosine=',h['column_cosine'])
+          print('condition=',h['condition_number'])
+          PY
+      - name: Publish compact receipt
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent7-outer-axial-return-reservoir-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-outer-axial-return-reservoir-preflight/report.json').read_text())
+          q=r['directional_spot_checks']; g=r['signed_integral_refinement']['gate']; h=r['response_geometry_vs_p9']
+          print('<!-- agent7-st052m-outer-axial-return-reservoir-preflight-receipt -->')
+          print('**Agent 7 outer axial return-reservoir preflight (issue #766):**')
+          print()
+          print(f"- p=9 vs reservoir C_r at |z|=1.75: `{q['p9_radial_at_abs_z_1p75']:.12g}` -> `{q['reservoir_radial_at_abs_z_1p75']:.12g}`")
+          print(f"- finest max |full [1,2] signed integral|: `{g['max_abs_finest_full_integral']:.12g}`")
+          print(f"- finest max |visible+reservoir balance|: `{g['max_abs_finest_visible_plus_reservoir']:.12g}`")
+          print(f"- p9/reservoir response rank/cosine/condition: `{h['rank']}` / `{h['column_cosine']:.9g}` / `{h['condition_number']:.9g}`")
+          print()
+          print('The correction can be inward over the visible 1<|z|<1.8 lobe while placing the required outward return in 1.8<|z|<2. This changes no candidate velocity and establishes neither visual correspondence nor PDE validity.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-outer-axial-return-reservoir-receipt.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-outer-axial-return-reservoir-preflight
+          path: outputs/agent7-st052m-outer-axial-return-reservoir-preflight/
+          if-no-files-found: error
