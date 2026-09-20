@@ -1,0 +1,183 @@
+{
+  "schema_version": 1,
+  "task": "CR002-KOKUNO-STRICT-INNER-TRANSPORT-M0-NULLSPACE-SCOPE",
+  "status": "governance_only_not_scientific_admission",
+  "target": {
+    "pull_request": 850,
+    "head_sha": "7c3e5c23df9125722f055df4696f593ea17dd0e8",
+    "path": "src/openai_ns_reconstruction/kokuno_strict_inner_transport_mean.py",
+    "source_blob_sha": "244006a59e4d8a68e9acd7c7cc1c885be279f7f7",
+    "task": "KOKUNO-A3-STRICT-INNER-TRANSPORT-MEAN-072",
+    "schema": "kokuno-a3-strict-inner-transport-mean-v1"
+  },
+  "classification_taxonomy": [
+    "user_requirement",
+    "public_source_fact",
+    "autonomous_design",
+    "pending_unknown"
+  ],
+  "classification": {
+    "user_requirement": [
+      "keep velocity(x,y,z,t)->[u,v,w] delivery separable from PDE validation",
+      "do not promote visual similarity to paper-exact or OpenAI-field identity",
+      "keep PDE forcing and validation thresholds preregistered"
+    ],
+    "public_source_fact": [
+      "the inherited Kokuno strict-inner formulas are source-derived structure; no public source theorem states that an azimuthal m=0 transport mean controls the complete three-dimensional transport or residual"
+    ],
+    "autonomous_design": [
+      "the repository rotating-cylindrical projection and discrete azimuthal averaging protocol",
+      "the inherited angular ladder [32,64,128]",
+      "the finite strict-inner ring set used by PR #850",
+      "the manufactured pure-m=2 nullspace witness used by this audit",
+      "the CR001 validation protocol and scientific thresholds"
+    ],
+    "pending_unknown": [
+      "matched pressure gradient for a complete candidate",
+      "preregistered restricted forcing for a complete candidate",
+      "correction transport and global corrected leading join",
+      "whole-domain full-candidate momentum residual",
+      "whether non-axisymmetric transport modes are acceptably small in the final candidate",
+      "complete held-out Navier-Stokes validation",
+      "visual correspondence verification",
+      "paper-exact field identity",
+      "OpenAI hidden-field identity"
+    ]
+  },
+  "reported_metrics": {
+    "transport_mean_rms": "RMS across the frozen rings of the azimuthal m=0 cylindrical transport vector",
+    "full_ring_transport_rms": "unweighted RMS of the raw pressure/forcing-free transport over the frozen ring-angle samples",
+    "transport_mean_to_full_rms_ratio": "transport_mean_rms divided by full_ring_transport_rms with only a numerical tiny-value guard",
+    "canonical_cr001_momentum_L2": "volume-weighted spatial L2 of the complete momentum residual at each validation time",
+    "metrics_are_interchangeable": false
+  },
+  "projection_boundary": {
+    "operator": "P0 = rotating-cylindrical azimuthal m=0 projection",
+    "jensen_forward_bound_supported": "transport_mean_rms <= full_ring_transport_rms on the same sampled rings",
+    "reverse_bound_from_mean_to_full_supported": false,
+    "m0_nullspace_nontrivial": true,
+    "zero_m0_mean_implies_zero_full_ring_transport": false,
+    "small_m0_mean_implies_small_full_ring_transport": false,
+    "m0_mean_controls_nonaxisymmetric_modes": false,
+    "rule": "A small or zero m=0 transport mean cannot by itself establish a small raw three-dimensional transport; m!=0 angular content can cancel under P0."
+  },
+  "manufactured_nullspace_witness": {
+    "classification": "autonomous_design",
+    "scope": "annulus r>0; mechanics-only projection witness, not repository candidate/source data",
+    "angular_order": 128,
+    "amplitude": 0.6,
+    "field": "T(theta)=amplitude*cos(2*theta)*e_z",
+    "expected_m0_mean_vector": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "expected_full_ring_rms": 0.4242640687119285,
+    "expected_mean_to_full_ratio": 0.0,
+    "axis_or_global_smoothness_claimed": false,
+    "candidate_or_source_fact_claimed": false
+  },
+  "norm_scope": {
+    "pr850_full_ring_rms_is_whole_domain_volume_weighted_L2": false,
+    "pr850_mean_rms_is_whole_domain_volume_weighted_L2": false,
+    "pr850_transport_contains_pressure_gradient": false,
+    "pr850_transport_contains_restricted_forcing": false,
+    "pr850_transport_is_complete_ns_momentum_residual": false,
+    "st006_same_protocol_comparable": false
+  },
+  "cr001_snapshot": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ]
+    ],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [
+      0.25,
+      0.75
+    ],
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_parameter_bounds": {
+      "a": [
+        0.0,
+        10.0
+      ],
+      "c": [
+        0.0,
+        10.0
+      ]
+    },
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [
+      0.25,
+      0.3125,
+      0.4375,
+      0.5625,
+      0.6875,
+      0.75
+    ],
+    "derivative_steps": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "quadrature_orders_per_axis": [
+      24,
+      48,
+      96
+    ],
+    "divergence_max": 1e-05,
+    "divergence_L2": 1e-05,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001,
+    "residual_defined_pointwise_free_force_allowed": false,
+    "amplitude_collapse_allowed": false,
+    "post_hoc_threshold_relaxation_allowed": false
+  },
+  "truth_boundary": {
+    "strict_inner_transport_mean_bookkeeping_scoped": true,
+    "m0_projection_nullspace_governed": true,
+    "complete_ns_defect": false,
+    "whole_domain_momentum_L2_assessed": false,
+    "st006_same_protocol_comparable": false,
+    "pde_validated": false,
+    "visual_correspondence_verified": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false,
+    "pde_pending_blocks_callable_velocity_delivery": false
+  },
+  "forbidden_promotions": {
+    "zero_m0_mean_to_zero_full_transport": false,
+    "small_m0_mean_to_small_full_transport": false,
+    "m0_mean_to_whole_domain_volume_L2": false,
+    "selected_ring_rms_to_whole_domain_volume_L2": false,
+    "scoped_transport_to_complete_ns_defect": false,
+    "scoped_transport_to_st006_comparability": false,
+    "scoped_transport_to_pde_validated": false,
+    "autonomous_protocol_to_public_source_fact": false,
+    "relax_cr001_thresholds": false,
+    "enable_residual_defined_pointwise_free_force": false,
+    "permit_amplitude_collapse": false,
+    "use_pde_pending_as_velocity_delivery_blocker": false
+  },
+  "relationship_to_sibling_governance": {
+    "pr853": "governs nonlinear mean-of-advection versus advection-of-mean noncommutation",
+    "this_increment": "governs the linear m=0 projection nullspace and norm-scope loss even when no nonlinear mean-field replacement is attempted",
+    "duplicate": false
+  }
+}
