@@ -1,0 +1,257 @@
+name: kokuno-agent4-strict-inner-transport-artifact-independent-audit
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_a4_strict_inner_transport_artifact_independent_audit.py'
+      - 'tests/test_constrained_kokuno_a4_strict_inner_transport_artifact_independent_audit.py'
+      - '.github/workflows/kokuno-agent4-strict-inner-transport-artifact-independent-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Assert exact head
+        if: github.event_name == 'pull_request'
+        run: test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha }}"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+
+      - name: Focused warnings-as-errors regression
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_a4_strict_inner_transport_artifact_independent_audit.py
+
+      - name: Verify exact A2 ancestry and fetch exact Agent-1 runtime
+        run: |
+          git merge-base --is-ancestor 946b4d13f63ae6761f02e9e66d4c3c7ed485ffa6 HEAD
+          test "$(git rev-parse ded8c88dd03b784368cf1a30601faf76a3682c64:src/openai_ns_reconstruction/kokuno_strict_inner_leading_oscillatory_vorticity_candidate.py)" = "9dd3b7400fea8f2d4462cda86561103e29a1d053"
+          git fetch origin 300919075c07396e4e466f553be78eaae0707df2
+          git worktree add --detach "$RUNNER_TEMP/kokuno-a1-848" 300919075c07396e4e466f553be78eaae0707df2
+          test "$(git -C "$RUNNER_TEMP/kokuno-a1-848" rev-parse HEAD)" = "300919075c07396e4e466f553be78eaae0707df2"
+          test "$(git -C "$RUNNER_TEMP/kokuno-a1-848" rev-parse HEAD:src/openai_ns_reconstruction/kokuno_pa10_cartesian_center_transport_viscous.py)" = "5076ffa69748c2d7e68289a155b67288eab6dab4"
+
+      - name: Run saved-reloaded held-out A4 transport precursor audit
+        env:
+          A1_WORKTREE: ${{ runner.temp }}/kokuno-a1-848
+        run: |
+          python - <<'PY'
+          from __future__ import annotations
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+          import subprocess
+          import sys
+          import numpy as np
+
+          from openai_ns_reconstruction.kokuno_a4_strict_inner_transport_artifact_independent_audit import (
+              FINAL_MOMENTUM_NORMALIZED_GATE,
+              HELDOUT_SEED,
+              NU,
+              SPACE_STEPS,
+              TIME_STEPS,
+              gate_failures,
+              public_contract,
+              resolution_metrics,
+              sampled_vector_max,
+              three_resolution_levels,
+              transport_level,
+              vector_rms,
+          )
+          from openai_ns_reconstruction.kokuno_strict_inner_leading_oscillatory_vorticity_candidate import (
+              KokunoStrictInnerLeadingOscillatoryVorticityCandidate,
+          )
+
+          a1 = Path(os.environ['A1_WORKTREE'])
+          server = r'''
+          import json, sys
+          import numpy as np
+          from openai_ns_reconstruction.kokuno_pa10_cartesian_center_transport_viscous import KokunoPA10CartesianCenterTransportViscous
+          field = KokunoPA10CartesianCenterTransportViscous()
+          for line in sys.stdin:
+              q=json.loads(line); op=q['op']
+              if op=='meta':
+                  out={'field_sha256':field.field_sha256,'temporal_derivative_sha256':field.temporal_derivative_sha256,'spatial_derivative_sha256':field.spatial_derivative_sha256}
+              elif op=='forward':
+                  raw=field.field.cartesian_from_similarity(np.asarray(q['X']),np.asarray(q['eta']),np.asarray(q['t']),np.asarray(q['theta']))
+                  out={k:np.asarray(raw[k],dtype=float).tolist() for k in ('x','y','z','t')}
+              elif op in ('velocity','velocity_dt'):
+                  raw=getattr(field,op)(np.asarray(q['x']),np.asarray(q['y']),np.asarray(q['z']),np.asarray(q['t']))
+                  out={'value':np.asarray(raw,dtype=float).tolist()}
+              elif op=='velocity_jacobian':
+                  raw=field.spatial.velocity_jacobian(np.asarray(q['x']),np.asarray(q['y']),np.asarray(q['z']),np.asarray(q['t']))
+                  out={'value':np.asarray(raw,dtype=float).tolist()}
+              else:
+                  raise RuntimeError(op)
+              print(json.dumps(out,sort_keys=True),flush=True)
+          '''
+          env=os.environ.copy(); env['PYTHONPATH']=str(a1/'src')
+          proc=subprocess.Popen([sys.executable,'-u','-c',server],cwd=a1,env=env,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,bufsize=1)
+
+          def ask(payload):
+              proc.stdin.write(json.dumps(payload,separators=(',',':'))+'\n'); proc.stdin.flush()
+              line=proc.stdout.readline()
+              if not line:
+                  raise RuntimeError(proc.stderr.read())
+              return json.loads(line)
+
+          meta=ask({'op':'meta'})
+          class Backend:
+              field_sha256=meta['field_sha256']
+              temporal_derivative_sha256=meta['temporal_derivative_sha256']
+              spatial_derivative_sha256=meta['spatial_derivative_sha256']
+              @staticmethod
+              def _arr(x,y,z,t):
+                  return np.broadcast_arrays(np.asarray(x,dtype=float),np.asarray(y,dtype=float),np.asarray(z,dtype=float),np.asarray(t,dtype=float))
+              def _call(self,op,x,y,z,t):
+                  x,y,z,t=self._arr(x,y,z,t)
+                  return np.asarray(ask({'op':op,'x':x.tolist(),'y':y.tolist(),'z':z.tolist(),'t':t.tolist()})['value'],dtype=float)
+              def velocity(self,x,y,z,t): return self._call('velocity',x,y,z,t)
+              def velocity_dt(self,x,y,z,t): return self._call('velocity_dt',x,y,z,t)
+              def velocity_jacobian(self,x,y,z,t): return self._call('velocity_jacobian',x,y,z,t)
+
+          rng=np.random.default_rng(HELDOUT_SEED)
+          n=96
+          X=rng.uniform(.19,.26,n)
+          eta=rng.uniform(-.18,.18,n)
+          tt=rng.uniform(.48,.52,n)
+          theta=rng.uniform(-np.pi,np.pi,n)
+          X=np.concatenate([X,np.zeros(3),np.full(3,1e-6)])
+          eta=np.concatenate([eta,np.asarray([-.15,0.0,.15,-.14,0.0,.14])])
+          tt=np.concatenate([tt,np.asarray([.485,.50,.515,.487,.50,.513])])
+          theta=np.concatenate([theta,np.asarray([0.0,1.2,-2.1,.5,-1.3,2.4])])
+          f=ask({'op':'forward','X':X.tolist(),'eta':eta.tolist(),'t':tt.tolist(),'theta':theta.tolist()})
+          x=np.asarray(f['x']); y=np.asarray(f['y']); z=np.asarray(f['z']); t=np.asarray(f['t'])
+
+          Path('artifacts').mkdir(exist_ok=True)
+          source_candidate=KokunoStrictInnerLeadingOscillatoryVorticityCandidate(Backend())
+          manifest_path=Path('artifacts/kokuno_agent4_strict_inner_transport_artifact_manifest.json')
+          source_candidate.save_manifest(manifest_path)
+          candidate=KokunoStrictInnerLeadingOscillatoryVorticityCandidate.load_manifest(Backend(),manifest_path)
+
+          source_velocity=np.asarray(source_candidate.velocity(x,y,z,t),dtype=float)
+          rebound_velocity=np.asarray(candidate.velocity(x,y,z,t),dtype=float)
+          replay=float(np.max(np.abs(source_velocity-rebound_velocity)))
+
+          levels=three_resolution_levels(candidate.velocity,x,y,z,t)
+          failures=gate_failures(levels)
+          if replay != 0.0: failures.append('manifest_velocity_replay')
+
+          c2m,m2f,relative_m2f,ratio=resolution_metrics(levels)
+          div_max=[float(np.max(np.abs(level.divergence))) for level in levels]
+          div_rms=[float(np.sqrt(np.mean(level.divergence*level.divergence))) for level in levels]
+          transport_rms=[vector_rms(level.transport) for level in levels]
+          transport_max=[sampled_vector_max(level.transport) for level in levels]
+          normalized_rms=[float(level.normalized_rms) for level in levels]
+          normalized_max=[float(level.normalized_sampled_max) for level in levels]
+
+          fine=levels[-1]
+          diff=np.abs(fine.transport)
+          flat_index=int(np.argmax(diff))
+          sample_index,component=np.unravel_index(flat_index,diff.shape)
+          labels=('x','y','z')
+
+          # Frozen mutation control: a 1e-3*x longitudinal term must break divergence.
+          def divergent_velocity(xv,yv,zv,tv):
+              base=np.asarray(candidate.velocity(xv,yv,zv,tv),dtype=float)
+              xb=np.broadcast_arrays(np.asarray(xv,dtype=float),np.asarray(yv,dtype=float),np.asarray(zv,dtype=float),np.asarray(tv,dtype=float))[0]
+              out=np.array(base,copy=True); out[...,0]+=1e-3*xb
+              return out
+          mutation_failures=gate_failures(three_resolution_levels(divergent_velocity,x,y,z,t))
+          mutation_detected=('fine_divergence_sampled_max' in mutation_failures and 'fine_divergence_sampled_rms' in mutation_failures)
+          if not mutation_detected: failures.append('divergence_mutation_not_detected')
+
+          # Viscosity +/-0.1% is observation-only and cannot retune nu.
+          plus=transport_level(candidate.velocity,x,y,z,t,space_step=SPACE_STEPS[-1],time_step=TIME_STEPS[-1],nu=NU*1.001)
+          minus=transport_level(candidate.velocity,x,y,z,t,space_step=SPACE_STEPS[-1],time_step=TIME_STEPS[-1],nu=NU*0.999)
+          viscosity_sensitivity={
+              'plus_0p1pct_delta_rms':vector_rms(plus.transport-fine.transport),
+              'minus_0p1pct_delta_rms':vector_rms(minus.transport-fine.transport),
+          }
+
+          contract=public_contract(); truth=contract['truth_boundary']
+          if truth['pde_validated'] or truth['heldout_ns_momentum_residual_assessed'] or truth['transport_precursor_is_complete_ns_residual']:
+              failures.append('truth_boundary_promotion')
+
+          receipt={
+              'schema':'kokuno-a4-strict-inner-transport-artifact-independent-audit-receipt-v1',
+              'exact_head':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
+              'agent2_base_head':contract['agent2_base_head'],
+              'agent2_candidate_head':contract['agent2_candidate_head'],
+              'heldout_seed':HELDOUT_SEED,
+              'sample_count':int(x.size),
+              'random_offgrid_count':n,
+              'axis_probe_count':3,
+              'axis_near_probe_count':3,
+              'source_ranges':{'X_random':[.19,.26],'eta_random':[-.18,.18],'t_random':[.48,.52]},
+              'space_steps':list(SPACE_STEPS),
+              'time_steps':list(TIME_STEPS),
+              'nu':NU,
+              'transport_sampled_max':transport_max,
+              'transport_sampled_rms':transport_rms,
+              'transport_term_normalized_max':normalized_max,
+              'transport_term_normalized_rms':normalized_rms,
+              'independent_divergence_sampled_max':div_max,
+              'independent_divergence_sampled_rms':div_rms,
+              'resolution':{
+                  'coarse_to_medium_rms':c2m,
+                  'medium_to_fine_rms':m2f,
+                  'medium_to_fine_relative_change':relative_m2f,
+                  'ratio':ratio,
+              },
+              'fine_term_rms':{
+                  'velocity_dt':vector_rms(fine.velocity_dt),
+                  'advection':vector_rms(fine.advection),
+                  'laplacian':vector_rms(fine.laplacian),
+                  'viscous':NU*vector_rms(fine.laplacian),
+              },
+              'worst_raw_transport_component':{
+                  'sample_index':sample_index,
+                  'component':labels[component],
+                  'x':float(x[sample_index]),'y':float(y[sample_index]),'z':float(z[sample_index]),'t':float(t[sample_index]),
+                  'source_X':float(X[sample_index]),'source_eta':float(eta[sample_index]),
+                  'value':float(fine.transport[sample_index,component]),
+              },
+              'manifest_velocity_replay_abs_max':replay,
+              'divergence_mutation_detected':mutation_detected,
+              'viscosity_sensitivity_observation_only':viscosity_sensitivity,
+              'raw_transport_below_final_1e3_gate_observation_only':bool(transport_max[-1] <= FINAL_MOMENTUM_NORMALIZED_GATE and transport_rms[-1] <= FINAL_MOMENTUM_NORMALIZED_GATE),
+              'scientific_scope':'saved/reloaded strict-inner pressure/forcing-free transport precursor only; not complete NS residual, not whole-domain L2, not ST006-comparable',
+              'final_momentum_gate_unchanged':1e-3,
+              'final_divergence_gate_unchanged':1e-5,
+              'failed_gates':sorted(set(failures)),
+          }
+          receipt['passed']=not receipt['failed_gates']
+          raw=json.dumps(receipt,sort_keys=True,separators=(',',':'),allow_nan=False)
+          receipt['receipt_sha256']=hashlib.sha256(raw.encode()).hexdigest()
+          Path('artifacts/kokuno_agent4_strict_inner_transport_artifact_receipt.json').write_text(json.dumps(receipt,indent=2,sort_keys=True)+'\n')
+          print(json.dumps(receipt,indent=2,sort_keys=True))
+          proc.terminate()
+          if receipt['failed_gates']:
+              raise SystemExit('failed gates: '+', '.join(receipt['failed_gates']))
+          PY
+
+      - name: Upload independent audit receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent4-strict-inner-transport-artifact-independent-audit
+          path: |
+            artifacts/kokuno_agent4_strict_inner_transport_artifact_manifest.json
+            artifacts/kokuno_agent4_strict_inner_transport_artifact_receipt.json
