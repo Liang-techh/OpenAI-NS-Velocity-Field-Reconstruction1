@@ -1,0 +1,108 @@
+name: agent7-st052m-streamfunction-vector-potential-equivalence
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_streamfunction_vector_potential_equivalence.py'
+      - 'experiments/root_st052/test_agent7_st052m_streamfunction_vector_potential_equivalence.py'
+      - '.github/workflows/agent7-st052m-streamfunction-vector-potential-equivalence.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  streamfunction-vector-potential-equivalence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Verify exact PR head checkout
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+      - name: Focused contract tests
+        run: python -m pytest -q -W error experiments/root_st052/test_agent7_st052m_streamfunction_vector_potential_equivalence.py
+      - name: Execute frozen representation-equivalence audit
+        run: |
+          mkdir -p outputs/agent7-st052m-streamfunction-vector-potential-equivalence
+          python experiments/root_st052/agent7_st052m_streamfunction_vector_potential_equivalence.py \
+            --out outputs/agent7-st052m-streamfunction-vector-potential-equivalence/report.json
+      - name: Verify preregistration, equivalence and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-streamfunction-vector-potential-equivalence/report.json').read_text())
+          assert r['task_id']=='CR003-ST052M-STREAMFUNCTION-VECTOR-POTENTIAL-EQUIVALENCE-118'
+          assert r['prereg_issue']==827
+          assert r['source_parent']=={'pr':818,'head':'c5acc7f8f65b64885ec5660ed9c991696668e300'}
+          assert r['source_live_reservoir']['pr']==767
+          assert r['source_live_reservoir']['k']==1.0
+          assert r['symbolic_equivalence']['exact_identity'] is True
+          d=r['live_reservoir_equivalence']
+          assert d['max_component_abs_difference'] <= 1e-12
+          assert d['axis_finite'] is True
+          assert d['near_axis_finite'] is True
+          assert d['outside_support_streamfunction_max_abs'] <= 1e-12
+          assert d['passes'] is True
+          assert r['manufactured_convention_check']['passes'] is True
+          assert r['decision']['frozen_audit_passes'] is True
+          assert r['decision']['streamfunction_switch_adds_basis_dimension'] is False
+          assert r['decision']['streamfunction_switch_adds_morphology_degree_of_freedom'] is False
+          assert r['decision']['actual_velocity_changed'] is False
+          assert r['decision']['closer_visualization_delivery_established'] is False
+          assert r['candidate_velocity_changed'] is False
+          assert r['basis_dimension_changed'] is False
+          assert r['parameter_scan_performed'] is False
+          assert r['fresh_714_path_data_used'] is False
+          assert r['held_out_pde_residual_evaluated'] is False
+          assert r['public_image_numeric_target_used'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          assert r['openai_field_identified'] is False
+          print('symbolic=', r['symbolic_equivalence'])
+          print('live=', d)
+          PY
+      - name: Publish compact numerical receipt
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent7-representation-equivalence-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-streamfunction-vector-potential-equivalence/report.json').read_text())
+          d=r['live_reservoir_equivalence']
+          print('<!-- agent7-st052m-streamfunction-vector-potential-equivalence-receipt -->')
+          print('**Agent 7 streamfunction/vector-potential equivalence audit (issue #827):**')
+          print()
+          print(f"- symbolic identity exact: `{r['symbolic_equivalence']['exact_identity']}`")
+          print(f"- deterministic point count: `{d['point_count']}`")
+          print(f"- max component |stream-vector|: `{d['max_component_abs_difference']:.9g}`")
+          print(f"- axis / near-axis finite: `{d['axis_finite']}` / `{d['near_axis_finite']}`")
+          print()
+          print('Routing: for A=(-y f,x f,0), psi=r^2 f is the same axisymmetric poloidal velocity family; changing only this representation does not add a morphology degree of freedom. Truth boundary: no candidate velocity changes, and no visual/PDE/exact-field claim is promoted.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-representation-equivalence-receipt.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-streamfunction-vector-potential-equivalence
+          path: outputs/agent7-st052m-streamfunction-vector-potential-equivalence/
+          if-no-files-found: error
+
+# Representation family and gates frozen in issue #827 before repository execution.
