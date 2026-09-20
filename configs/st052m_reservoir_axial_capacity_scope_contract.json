@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "task_id": "CR002-ST052M-RESERVOIR-AXIAL-CAPACITY-SCOPE-112",
+  "status": "preregistered_claim_scope_audit",
+  "purpose": "Keep the axial-stretch/core-radius geometry of the frozen ST052-M outer-reservoir correction channel separate from total-child behavior, public-source numerical claims, visual correspondence, and PDE acceptance.",
+  "audited_increment": {
+    "pr": 785,
+    "head": "55747bb813fedccd3df5635668fce9099a2c13dc",
+    "module": "experiments/root_st052/agent7_st052m_reservoir_axial_stretch_audit.py",
+    "task_id": "CR003-ST052M-RESERVOIR-AXIAL-STRETCH-AUDIT-111",
+    "parent_pr": 775,
+    "parent_head": "93887a59729d22113badf2ae4dac2f7d868e2703"
+  },
+  "related_governance": {
+    "reservoir_visual_target_provenance_pr": 783,
+    "reservoir_visual_target_provenance_head": "d0150086e92763f87bc0ee23a45e9bd83526c5fe",
+    "integration_state_at_freeze": "open_sibling_governance_not_assumed_merged_or_green",
+    "nonduplication": "PR #783 governs whether project-selected z/r/time visual-development coordinates can be mislabeled as public OpenAI numbers. This contract instead governs whether PR #785 correction-channel geometry can be mislabeled as total-child geometry or source/visual/PDE evidence."
+  },
+  "classification_vocabulary": [
+    "user_requirement",
+    "public_source_fact",
+    "autonomous_design",
+    "pending_unknown"
+  ],
+  "classification": {
+    "user_requirement": [
+      "Deliver an explicit callable/saveable time-varying 3D velocity field velocity(x,y,z,t)->[u,v,w].",
+      "Make publicly observable field structure as consistent as practicable with the public OpenAI visualization while keeping source, visual, and PDE claims separate."
+    ],
+    "public_source_fact": [
+      "Axial stretching/elongation is an admitted qualitative public observable in the separate public-observable authority.",
+      "No public numerical core radius, core-area fraction, repository radial coordinate, or correction-channel axial sign-change radius is admitted here."
+    ],
+    "autonomous_design": [
+      "The correction-channel vector-potential form A=(-y*f,x*f,0) with f=R(r^2)Z(z).",
+      "The radial profile proportional to ((q+1)*(64/25-q))^4 and correction support radius r<1.6.",
+      "The unit-channel axial response C_z/Z=2*(R+q*R_q), its polynomial sign equation -225*q^2+195*q+64=0, and the resulting r-star/core-area geometry.",
+      "The |z|=1.55 and radii 0.6,0.9,1.2,1.5 live probe choices.",
+      "The 5001/20001/80001 radial-grid numerical mirror of the full-disk signed axial-flux identity."
+    ],
+    "pending_unknown": [
+      "Whether the total nonlinear #775 child has the same axial sign-change radius after adding the parent field and frozen child coefficient.",
+      "Any public numerical core radius or core-area fraction corresponding to the OpenAI visualization.",
+      "Any physical/source scale map identifying repository r-star with a public-render length scale.",
+      "Global visual correspondence of the candidate field, including camera/projection/time registration.",
+      "Hidden OpenAI field samples, coefficients, pressure, forcing, and exact field identity."
+    ]
+  },
+  "frozen_channel_geometry": {
+    "quantity_under_audit": "outer_reservoir_correction_channel_unit_axial_response",
+    "axial_response_per_unit_Z": "C_z/Z = 2*(R(q)+q*R_q(q)), q=r^2",
+    "sign_polynomial_coefficients": [-225, 195, 64],
+    "exact_q_root_formula": "(13+5*sqrt(17))/30",
+    "physical_q_root": 1.1205176042696101,
+    "exact_r_root_formula": "sqrt((13+5*sqrt(17))/30)",
+    "physical_r_root": 1.0585450412096833,
+    "support_radius": 1.6,
+    "core_cross_section_area_fraction": 0.43770218916781645,
+    "live_probe_abs_z": 1.55,
+    "live_probe_radii": [0.6, 0.9, 1.2, 1.5],
+    "radial_refinement_grids": [5001, 20001, 80001],
+    "correction_channel_flux_identity": "integral C_z*2*pi*r dr = 2*pi*Z*[q*R(q)]_0^(64/25) = 0",
+    "geometry_provenance": "autonomous_design",
+    "public_numeric_core_target": null
+  },
+  "channel_vs_total_field": {
+    "correction_channel_geometry_eligible_if_pr785_passes": true,
+    "total_child_axial_velocity_evaluated_by_pr785": false,
+    "parent_velocity_contribution_included_in_axial_shape_factor": false,
+    "frozen_child_coefficient_included_in_axial_shape_factor": false,
+    "channel_core_radius_may_be_called_total_child_core_radius": false,
+    "channel_zero_axial_flux_may_be_called_total_child_zero_axial_flux": false,
+    "channel_core_area_fraction_may_be_called_public_openai_core_fraction": false
+  },
+  "evidence_scope": {
+    "pr785_pass_may_support": [
+      "The frozen correction representation contains a repository-defined unit-response mechanism with visible-band inward radial correction and core-away-from-midplane axial correction on the preregistered probes.",
+      "The correction channel has the stated internal radial sign geometry and full-disk signed axial-flux balance."
+    ],
+    "pr785_pass_does_not_support": [
+      "The total #775 child has axial stretch at every point where the correction channel does.",
+      "The total #775 child core radius equals the correction-channel r-star.",
+      "The total candidate has zero axial flux because the correction channel has zero axial flux.",
+      "The numerical r-star/core-area fraction is sourced from OpenAI.",
+      "Global or independent visual correspondence is verified.",
+      "Navier-Stokes PDE acceptance, paper-exact recovery, exact OpenAI-field identity, or blow-up proof."
+    ],
+    "stronger_total_child_claim_requires": [
+      "Freeze the exact child identity and coefficient before evaluation.",
+      "Evaluate parent plus frozen correction rather than the unit correction channel alone.",
+      "Preregister total-field probes or a disjoint fixed-render protocol before observing the result.",
+      "Do not use the evaluation evidence to retune the same child and then relabel it independent."
+    ]
+  },
+  "anti_shortcut": {
+    "residual_defined_or_pointwise_free_force_allowed": false,
+    "amplitude_collapse_success_route_allowed": false,
+    "post_hoc_scientific_threshold_relaxation_allowed": false,
+    "channel_geometry_may_promote_visual_correspondence": false,
+    "channel_geometry_may_promote_pde_validated": false,
+    "channel_geometry_may_promote_openai_field_identified": false
+  },
+  "cr001_snapshot": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_parameter_bounds": {"a": [0.0, 10.0], "c": [0.0, 10.0]},
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "divergence_max": 1e-5,
+    "divergence_L2": 1e-5,
+    "pde_residual_max": 1e-3,
+    "pde_residual_L2": 1e-3
+  },
+  "truth_boundary": {
+    "canonical_velocity_changed_by_this_audit": false,
+    "candidate_velocity_changed_by_this_audit": false,
+    "velocity_export_ready_promoted_by_this_audit": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "source_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  }
+}
