@@ -1,0 +1,231 @@
+name: kokuno-agent5-strict-inner-differentiable-artifact-ingest
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-strict-inner-differentiable-artifact-ingest-078
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_a5_strict_inner_candidate_artifact_ingest_contract.py"
+      - "src/openai_ns_reconstruction/kokuno_a5_strict_inner_differentiable_artifact_ingest_contract.py"
+      - "tests/test_kokuno_a5_strict_inner_candidate_artifact_ingest_contract.py"
+      - "tests/test_kokuno_a5_strict_inner_differentiable_artifact_ingest_contract.py"
+      - ".github/workflows/kokuno-agent5-strict-inner-differentiable-artifact-ingest.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent5-strict-inner-differentiable-artifact-ingest-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  exact-head-strict-inner-differentiable-artifact-ingest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Verify exact head checkout
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          ACTUAL_HEAD="$(git rev-parse HEAD)"
+          test "$ACTUAL_HEAD" = "$EXPECTED_HEAD"
+          echo "exact_head=$ACTUAL_HEAD"
+
+      - name: Verify frozen Agent-2 differentiable-candidate source blob
+        env:
+          AGENT2_HEAD: 68f84128f07b6743d368a9ab7a051e441f5a59b2
+          EXPECTED_BLOB: 8c09048a1d15dff321642e21ee699cce7d19831a
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin "$AGENT2_HEAD"
+          ACTUAL_BLOB="$(git rev-parse "$AGENT2_HEAD:src/openai_ns_reconstruction/kokuno_strict_inner_leading_oscillatory_differentiable_candidate.py")"
+          test "$ACTUAL_BLOB" = "$EXPECTED_BLOB"
+          echo "agent2_differentiable_candidate_blob=$ACTUAL_BLOB"
+
+      - name: Verify frozen Agent-4 differentiable-artifact audit source blob
+        env:
+          AGENT4_HEAD: ef10076fee8f5f4c5bb589ca7d2cd90ae0c889a4
+          EXPECTED_BLOB: ff32f0cd641ff59f1d4e2fa7535c100087ce00f6
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin "$AGENT4_HEAD"
+          ACTUAL_BLOB="$(git rev-parse "$AGENT4_HEAD:src/openai_ns_reconstruction/kokuno_a4_strict_inner_differentiable_candidate_independent_audit.py")"
+          test "$ACTUAL_BLOB" = "$EXPECTED_BLOB"
+          echo "agent4_differentiable_artifact_audit_blob=$ACTUAL_BLOB"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+
+      - name: Compile integration seam
+        run: |
+          python -m compileall -q \
+            src/openai_ns_reconstruction/kokuno_a5_strict_inner_candidate_artifact_ingest_contract.py \
+            src/openai_ns_reconstruction/kokuno_a5_strict_inner_differentiable_artifact_ingest_contract.py
+
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_a5_strict_inner_candidate_artifact_ingest_contract.py \
+            tests/test_kokuno_a5_strict_inner_differentiable_artifact_ingest_contract.py
+
+      - name: Generate exact-head differentiable artifact ingest report
+        run: |
+          HEAD_SHA="$(git rev-parse HEAD)"
+          python -W error -m openai_ns_reconstruction.kokuno_a5_strict_inner_differentiable_artifact_ingest_contract \
+            --exact-head "$HEAD_SHA" \
+            --output artifacts/kokuno_agent5/strict_inner_differentiable_artifact_ingest_v1/report.json
+
+      - name: Validate frozen differentiable-artifact scope and truth boundary
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          import subprocess
+
+          path = Path('artifacts/kokuno_agent5/strict_inner_differentiable_artifact_ingest_v1/report.json')
+          payload = json.loads(path.read_text())
+          exact_head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
+          assert payload['exact_head'] == exact_head
+          assert payload['schema'] == 'kokuno-a5-strict-inner-differentiable-artifact-ingest-contract-v1'
+          assert payload['parent_a5'] == {
+              'pr': 860,
+              'head': 'd295670e51802abc345801bcdfef0c99bbf91e98',
+          }
+
+          a2 = payload['agent2_binding']
+          assert a2['pr'] == 866
+          assert a2['head'] == '68f84128f07b6743d368a9ab7a051e441f5a59b2'
+          assert a2['source_blob_sha'] == '8c09048a1d15dff321642e21ee699cce7d19831a'
+          assert a2['dedicated_run'] == 35520204098
+          assert a2['tests_run'] == 35520204018
+          assert a2['schema'] == 'kokuno-a2-strict-inner-differentiable-candidate-v1'
+          assert a2['class'] == 'KokunoStrictInnerLeadingOscillatoryDifferentiableCandidate'
+          assert a2['protocol']['base_velocity_candidate_identity_preserved'] is True
+          assert a2['protocol']['production_velocity_dt_uses_finite_difference'] is False
+
+          a4 = payload['agent4_binding']
+          assert a4['pr'] == 869
+          assert a4['head'] == 'ef10076fee8f5f4c5bb589ca7d2cd90ae0c889a4'
+          assert a4['source_blob_sha'] == 'ff32f0cd641ff59f1d4e2fa7535c100087ce00f6'
+          assert a4['dedicated_run'] == 35520902624
+          assert a4['tests_run'] == 35520902790
+          assert a4['schema'] == 'kokuno-a4-strict-inner-differentiable-candidate-independent-audit-v1'
+          protocol = a4['protocol']
+          assert protocol['seed'] == 9173531
+          assert protocol['random_sample_count'] == 128
+          assert protocol['axis_and_axis_near_probe_count'] == 6
+          assert protocol['nominal_richardson_time_steps'] == [0.0032, 0.0016, 0.0008]
+          assert protocol['fine_relative_rms_gate'] == 2e-3
+          assert protocol['fine_relative_sampled_max_gate'] == 5e-3
+          assert protocol['refinement_ratio_gate'] == 6.0
+          assert protocol['uses_agent1_analytic_time_derivative_as_reference'] is False
+          assert protocol['uses_agent2_fd4_verifier_as_reference'] is False
+
+          scope = a4['norm_scope_firewall']
+          assert scope['velocity_dt_consistency_is_complete_ns_residual'] is False
+          assert scope['velocity_dt_consistency_is_cr001_momentum_norm'] is False
+          assert scope['whole_domain_volume_weighted_l2_assessed'] is False
+          assert scope['whole_domain_boundary_support_assessed'] is False
+          assert scope['same_protocol_st006_comparison_legal'] is False
+          assert scope['formal_full_domain_pde_gate_assessed'] is False
+
+          assert payload['evidence'] == {
+              'parent_strict_inner_artifact_ingest_admitted': False,
+              'agent2_exact_head_ci_conclusion': None,
+              'agent4_dedicated_differentiable_artifact_audit_present': True,
+              'agent4_exact_head_ci_conclusion': None,
+              'agent4_independent_audit_conclusion': None,
+              'agent4_scientific_receipt_admitted': False,
+              'strict_inner_differentiable_artifact_scientifically_admitted': False,
+          }
+
+          handoff = payload['differentiable_artifact_handoff']
+          assert handoff['registered'] is True
+          assert handoff['status'] == 'registered_unresolved'
+          assert handoff['construction_authority'] == 'Agent2#866'
+          assert handoff['independent_audit_authority'] == 'Agent4#869'
+          assert handoff['base_velocity_candidate_sha256_preserved'] is True
+          assert handoff['differentiable_sha256_registered'] is True
+          assert handoff['manifest_sha256_registered'] is True
+          assert handoff['python_velocity_and_velocity_dt_callable_surface_registered'] is True
+          assert handoff['matlab_export_materialized'] is False
+          assert handoff['pressure_in_artifact_surface'] is False
+          assert handoff['restricted_forcing_in_artifact_surface'] is False
+          assert handoff['agent3_correction_velocity_in_artifact'] is False
+          assert handoff['outer_global_join_in_artifact'] is False
+          assert handoff['complete_candidate_artifact'] is False
+          assert handoff['eligible_for_velocity_export_ready'] is False
+          assert handoff['usable_as_complete_ns_defect_input'] is False
+          assert handoff['usable_for_final_independent_pde_validation'] is False
+
+          api = payload['candidate_api_handoff']
+          assert api['strict_inner_artifact_velocity'] == 'Agent2#866.velocity'
+          assert api['strict_inner_artifact_velocity_dt'] == 'Agent2#866.velocity_dt'
+          assert api['pressure'] is None
+          assert api['forcing'] is None
+          assert api['complete_candidate_api_ready'] is False
+
+          artifact = payload['artifact_status']
+          assert artifact['upstream_strict_inner_differentiable_artifact_implementation_present'] is True
+          assert artifact['upstream_velocity_dt_surface_present'] is True
+          assert artifact['strict_inner_differentiable_artifact_ingest_admitted'] is False
+          assert artifact['complete_global_candidate_artifact_materialized'] is False
+
+          status = payload['ingest_status']
+          assert status['typed_strict_inner_differentiable_artifact_registered'] is True
+          assert status['typed_strict_inner_differentiable_artifact_independent_audit_registered'] is True
+          assert status['strict_inner_differentiable_artifact_ingest_admitted'] is False
+          assert status['full_candidate_artifact_ready'] is False
+
+          assert payload['stage_state'] == {
+              'leading_ready': False,
+              'oscillatory_ready': True,
+              'correction_ready': False,
+              'velocity_export_ready': False,
+              'pde_validated': False,
+          }
+          assert payload['baseline_vs_kokuno']['comparison_performed'] is False
+          assert payload['final_project_gates_unchanged'] == {
+              'normalized_momentum_max': 1e-3,
+              'normalized_momentum_L2': 1e-3,
+              'divergence_max': 1e-5,
+              'divergence_L2': 1e-5,
+          }
+
+          truth = payload['truth_boundary']
+          true_keys = {
+              'strict_inner_differentiable_artifact_surface_registered',
+              'agent4_differentiable_artifact_audit_surface_registered',
+              'registration_not_scientific_admission',
+              'strict_inner_scope_preserved',
+          }
+          for key in true_keys:
+              assert truth[key] is True
+          for key, value in truth.items():
+              if key in true_keys:
+                  continue
+              assert value is False, (key, value)
+
+          print('artifact_sha256=', hashlib.sha256(path.read_bytes()).hexdigest())
+          print('contract_sha256=', payload['contract_sha256'])
+          print('exact_head=', exact_head)
+          PY
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-strict-inner-differentiable-artifact-ingest-contract-v1
+          path: artifacts/kokuno_agent5/strict_inner_differentiable_artifact_ingest_v1/report.json
+          if-no-files-found: error
