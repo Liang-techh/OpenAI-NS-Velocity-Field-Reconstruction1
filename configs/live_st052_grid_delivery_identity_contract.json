@@ -1,0 +1,160 @@
+{
+  "schema_version": 2,
+  "task_id": "CR002-VELOCITY-GRID-DELIVERY-IDENTITY-073",
+  "purpose": "reconcile the sampled-grid delivery identity contract with the integrated ST052-M NPZ/MAT export and GNU Octave smoke while keeping callable, finite-grid, interpolation, visualization, PDE, and paper/OpenAI identity states separate",
+  "snapshot": {
+    "active_integration_branch": "codex/cr001-constraints",
+    "active_integration_head": "7b32d9c0fa46fe369d0fc636eb5a7530aadebe04",
+    "integrated_grid_export_pr": 665,
+    "integrated_octave_smoke_pr": 680,
+    "note": "This snapshot records integrated delivery facts at the stated head; later code changes require re-audit rather than automatic scientific promotion."
+  },
+  "allowed_source_classes": [
+    "user_requirement",
+    "public_source_fact",
+    "autonomous_design",
+    "pending_unknown"
+  ],
+  "source_classification": {
+    "callable_velocity_x_y_z_t": "user_requirement",
+    "save_load_delivery": "user_requirement",
+    "public_openai_visualization_observables": "public_source_fact",
+    "st052_parent_static_temporal_composition": "autonomous_design",
+    "grid_resolution_times_formats_layout_and_checksum_scheme": "autonomous_design",
+    "gnu_octave_smoke_and_centered_difference_diagnostic": "autonomous_design",
+    "cr001_validation_protocol": "autonomous_design",
+    "openai_hidden_numerical_velocity": "pending_unknown",
+    "openai_hidden_frame_time_camera_mapping": "pending_unknown",
+    "openai_hidden_parameters": "pending_unknown"
+  },
+  "current_st052_grid_delivery": {
+    "candidate_id": "ST052-M-linear-temporal-child-v1",
+    "whole_child_runtime": {
+      "save_load_ready_with_exact_source_runtime": true,
+      "exact_source_runtime_identity_closed": true,
+      "historical_module_cache_isolated": true,
+      "standalone_package_parent_runtime_ready": false,
+      "velocity_export_ready": false
+    },
+    "export_schema": "st052-linear-temporal-grid-export/v1",
+    "producer_task_id": "CR-A9-071",
+    "formats": {
+      "npz": "NumPy compressed NPZ",
+      "mat": "MATLAB v5 MAT via scipy.io.savemat"
+    },
+    "filenames": {
+      "npz": "st052_velocity_grid.npz",
+      "mat": "st052_velocity_grid.mat",
+      "manifest": "st052_velocity_grid_manifest.json"
+    },
+    "spatial_points_per_axis": 33,
+    "times": [0.25, 0.375, 0.5, 0.625, 0.75],
+    "domain": [-2.0, 2.0],
+    "component_order": ["u", "v", "w"],
+    "velocity_component_shape": [5, 33, 33, 33],
+    "array_layout": "u,v,w: [time,x,y,z]",
+    "meshgrid_indexing": "ij",
+    "payload_checksum_bound_to_whole_candidate_identity": true,
+    "npz_mat_numerical_payload_exact_equal_required": true,
+    "callable_node_replay_tolerance": 5e-12,
+    "callable_node_replay_tolerance_scope": "engineering_serialization_replay_only"
+  },
+  "representation_scope": {
+    "sampled_grid_is_finite_representation": true,
+    "sampled_grid_is_continuum_velocity_api": false,
+    "node_equality_implies_continuous_function_identity": false,
+    "off_grid_interpolant_specified": false,
+    "off_grid_error_bound_established": false,
+    "continuous_derivative_equivalence_established": false,
+    "grid_derivatives_are_cr001_pde_acceptance_evidence": false,
+    "grid_nodes_may_replace_cr001_held_out_sample": false,
+    "five_grid_times_may_replace_six_cr001_validation_times": false,
+    "visual_interpolation_may_be_called_exact_candidate_without_contract": false,
+    "sampled_grid_may_be_called_exact_openai_field": false
+  },
+  "octave_consumer": {
+    "task_id": "CR-A9-072",
+    "actual_octave_runtime_executed": true,
+    "actual_matlab_runtime_executed": false,
+    "mat_file_load_smoke_verified": true,
+    "fixed_png_render_smoke_verified": true,
+    "shape_time_domain_finite_checks_executed": true,
+    "layout_metadata_field_enforced": false,
+    "whole_candidate_identity_metadata_enforced": false,
+    "grid_payload_checksum_metadata_enforced": false,
+    "component_basis_machine_bound_from_metadata": false,
+    "centered_difference_omega_z_is_software_diagnostic_only": true,
+    "derived_grid_vorticity_scientific_semantics_verified": false
+  },
+  "historical_routes": {
+    "st048_pr404_netcdf": {
+      "status": "historical_superseded_delivery_governance_snapshot",
+      "candidate_id": "ST048-S",
+      "producer_pr": 404,
+      "source_pr": 390,
+      "source_head_sha": "97695a86f85ce68fb4ae70c41fc81c904d655183",
+      "archived_raw_candidate_sha256": "6d9ce8407e29aca20d32599332ae3ec654f45678e17783179267665428ec8e09",
+      "format": "NetCDF",
+      "resolution": 33,
+      "times": [0.25, 0.5, 0.75],
+      "was_canonical_velocity_replacement": false,
+      "pde_validated": false
+    }
+  },
+  "canonical_callable_delivery": {
+    "candidate_family": "eq45_supported_velocity_candidate_v1",
+    "candidate_sha256": "2fdff812c22131d56eac1b7d6e455187ff3207500c6385aa9abf282a8e3d7b1d",
+    "velocity_api": "openai_ns_reconstruction.eq45_supported_delivery:velocity",
+    "velocity_export_ready": true,
+    "pde_failure_blocks_callable_velocity_delivery": false,
+    "st052_grid_or_octave_delivery_replaces_canonical_eq45": false
+  },
+  "canonical_cr001": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "force_mode": "restricted_two_parameter_family",
+    "force_bounds": {"a": [0.0, 10.0], "c": [0.0, 10.0]},
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "divergence_max": 1e-5,
+    "divergence_L2": 1e-5,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001,
+    "residual_defined_free_force_allowed": false,
+    "amplitude_collapse_success_allowed": false
+  },
+  "truth_boundary": {
+    "canonical_velocity_export_ready": true,
+    "st052_source_runtime_backed_callable_save_load_ready": true,
+    "st052_grid_export_materialized": true,
+    "st052_octave_software_smoke_passed": true,
+    "st052_velocity_export_ready": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "mutation_scope": {
+    "velocity_changed": false,
+    "candidate_changed": false,
+    "pressure_changed": false,
+    "forcing_changed": false,
+    "optimizer_changed": false,
+    "validation_sample_changed": false,
+    "norm_definition_changed": false,
+    "threshold_changed": false,
+    "active_route_changed": false,
+    "canonical_velocity_api_changed": false,
+    "interpolation_rule_added": false
+  }
+}
