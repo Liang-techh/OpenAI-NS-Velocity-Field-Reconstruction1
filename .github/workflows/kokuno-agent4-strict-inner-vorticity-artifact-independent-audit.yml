@@ -1,0 +1,248 @@
+name: kokuno-agent4-strict-inner-vorticity-artifact-independent-audit
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_a4_strict_inner_vorticity_artifact_independent_audit.py'
+      - 'tests/test_constrained_kokuno_a4_strict_inner_vorticity_artifact_independent_audit.py'
+      - '.github/workflows/kokuno-agent4-strict-inner-vorticity-artifact-independent-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Assert exact head
+        if: github.event_name == 'pull_request'
+        run: test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha }}"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+
+      - name: Focused warnings-as-errors regression
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_a4_strict_inner_vorticity_artifact_independent_audit.py
+
+      - name: Verify exact A2 parent and fetch exact Agent-1 runtime
+        run: |
+          test "$(git rev-parse ded8c88dd03b784368cf1a30601faf76a3682c64:src/openai_ns_reconstruction/kokuno_strict_inner_leading_oscillatory_vorticity_candidate.py)" = "9dd3b7400fea8f2d4462cda86561103e29a1d053"
+          test "$(git rev-parse ded8c88dd03b784368cf1a30601faf76a3682c64:.github/workflows/kokuno-agent2-strict-inner-vorticity-candidate.yml)" = "024069383d9390e54e101529332bfd2707040659"
+          git fetch origin 300919075c07396e4e466f553be78eaae0707df2
+          git worktree add --detach "$RUNNER_TEMP/kokuno-a1-848" 300919075c07396e4e466f553be78eaae0707df2
+          test "$(git -C "$RUNNER_TEMP/kokuno-a1-848" rev-parse HEAD)" = "300919075c07396e4e466f553be78eaae0707df2"
+          test "$(git -C "$RUNNER_TEMP/kokuno-a1-848" rev-parse HEAD:src/openai_ns_reconstruction/kokuno_pa10_cartesian_center_transport_viscous.py)" = "5076ffa69748c2d7e68289a155b67288eab6dab4"
+
+      - name: Run saved-reloaded held-out A4 audit
+        env:
+          A1_WORKTREE: ${{ runner.temp }}/kokuno-a1-848
+        run: |
+          python - <<'PY'
+          from __future__ import annotations
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+          import subprocess
+          import sys
+          import numpy as np
+
+          from openai_ns_reconstruction.kokuno_a4_strict_inner_vorticity_artifact_independent_audit import (
+              FD6_SPATIAL_STEPS,
+              FINAL_DIVERGENCE_GATE,
+              HELDOUT_SEED,
+              component_error_metrics,
+              fd6_jacobian,
+              fd6_level,
+              frozen_gate_failures,
+              public_contract,
+              relative_rms_error,
+              relative_sampled_max_error,
+              vector_rms,
+              vorticity_from_jacobian,
+          )
+          from openai_ns_reconstruction.kokuno_strict_inner_leading_oscillatory_vorticity_candidate import (
+              KokunoStrictInnerLeadingOscillatoryVorticityCandidate,
+          )
+
+          a1 = Path(os.environ['A1_WORKTREE'])
+          server = r'''
+          import json, sys
+          import numpy as np
+          from openai_ns_reconstruction.kokuno_pa10_cartesian_center_transport_viscous import KokunoPA10CartesianCenterTransportViscous
+          field = KokunoPA10CartesianCenterTransportViscous()
+          for line in sys.stdin:
+              q=json.loads(line); op=q['op']
+              if op=='meta':
+                  out={'field_sha256':field.field_sha256,'temporal_derivative_sha256':field.temporal_derivative_sha256,'spatial_derivative_sha256':field.spatial_derivative_sha256}
+              elif op=='forward':
+                  raw=field.field.cartesian_from_similarity(np.asarray(q['X']),np.asarray(q['eta']),np.asarray(q['t']),np.asarray(q['theta']))
+                  out={k:np.asarray(raw[k],dtype=float).tolist() for k in ('x','y','z','t')}
+              elif op in ('velocity','velocity_dt'):
+                  raw=getattr(field,op)(np.asarray(q['x']),np.asarray(q['y']),np.asarray(q['z']),np.asarray(q['t']))
+                  out={'value':np.asarray(raw,dtype=float).tolist()}
+              elif op=='velocity_jacobian':
+                  raw=field.spatial.velocity_jacobian(np.asarray(q['x']),np.asarray(q['y']),np.asarray(q['z']),np.asarray(q['t']))
+                  out={'value':np.asarray(raw,dtype=float).tolist()}
+              else:
+                  raise RuntimeError(op)
+              print(json.dumps(out,sort_keys=True),flush=True)
+          '''
+          env=os.environ.copy(); env['PYTHONPATH']=str(a1/'src')
+          proc=subprocess.Popen([sys.executable,'-u','-c',server],cwd=a1,env=env,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,bufsize=1)
+
+          def ask(payload):
+              proc.stdin.write(json.dumps(payload,separators=(',',':'))+'\n'); proc.stdin.flush()
+              line=proc.stdout.readline()
+              if not line:
+                  raise RuntimeError(proc.stderr.read())
+              return json.loads(line)
+
+          meta=ask({'op':'meta'})
+          class Backend:
+              field_sha256=meta['field_sha256']
+              temporal_derivative_sha256=meta['temporal_derivative_sha256']
+              spatial_derivative_sha256=meta['spatial_derivative_sha256']
+              @staticmethod
+              def _arr(x,y,z,t):
+                  return np.broadcast_arrays(np.asarray(x,dtype=float),np.asarray(y,dtype=float),np.asarray(z,dtype=float),np.asarray(t,dtype=float))
+              def _call(self,op,x,y,z,t):
+                  x,y,z,t=self._arr(x,y,z,t)
+                  return np.asarray(ask({'op':op,'x':x.tolist(),'y':y.tolist(),'z':z.tolist(),'t':t.tolist()})['value'],dtype=float)
+              def velocity(self,x,y,z,t): return self._call('velocity',x,y,z,t)
+              def velocity_dt(self,x,y,z,t): return self._call('velocity_dt',x,y,z,t)
+              def velocity_jacobian(self,x,y,z,t): return self._call('velocity_jacobian',x,y,z,t)
+
+          rng=np.random.default_rng(HELDOUT_SEED)
+          n=128
+          X=rng.uniform(.18,.27,n)
+          eta=rng.uniform(-.22,.22,n)
+          tt=rng.uniform(.47,.53,n)
+          theta=rng.uniform(-np.pi,np.pi,n)
+          # Three exact-axis plus three near-axis source probes.
+          X=np.concatenate([X,np.zeros(3),np.full(3,1e-6)])
+          eta=np.concatenate([eta,np.asarray([-.18,0.0,.18,-.16,.0,.16])])
+          tt=np.concatenate([tt,np.asarray([.48,.50,.52,.485,.50,.515])])
+          theta=np.concatenate([theta,np.asarray([0.0,1.1,-2.0,.4,-1.2,2.3])])
+          f=ask({'op':'forward','X':X.tolist(),'eta':eta.tolist(),'t':tt.tolist(),'theta':theta.tolist()})
+          x=np.asarray(f['x']); y=np.asarray(f['y']); z=np.asarray(f['z']); t=np.asarray(f['t'])
+
+          source_candidate=KokunoStrictInnerLeadingOscillatoryVorticityCandidate(Backend())
+          Path('artifacts').mkdir(exist_ok=True)
+          manifest_path=Path('artifacts/kokuno_agent4_strict_inner_vorticity_artifact_manifest.json')
+          source_candidate.save_manifest(manifest_path)
+          candidate=KokunoStrictInnerLeadingOscillatoryVorticityCandidate.load_manifest(Backend(),manifest_path)
+
+          production=np.asarray(candidate.vorticity(x,y,z,t),dtype=float)
+          public_velocity=np.asarray(candidate.velocity(x,y,z,t),dtype=float)
+          levels=tuple(fd6_level(candidate.velocity,x,y,z,t,step=h) for h in FD6_SPATIAL_STEPS)
+          failures=frozen_gate_failures(production,levels,velocity_rms=vector_rms(public_velocity))
+
+          jacobians=[fd6_jacobian(candidate.velocity,x,y,z,t,step=h) for h in FD6_SPATIAL_STEPS]
+          divergence=[np.trace(J,axis1=-2,axis2=-1) for J in jacobians]
+          div_max=[float(np.max(np.abs(d))) for d in divergence]
+          div_rms=[float(np.sqrt(np.mean(d*d))) for d in divergence]
+          if div_max[-1] > FINAL_DIVERGENCE_GATE: failures.append('fine_divergence_sampled_max')
+          if div_rms[-1] > FINAL_DIVERGENCE_GATE: failures.append('fine_divergence_sampled_rms')
+
+          fine=levels[-1].vorticity
+          component_metrics=component_error_metrics(fine,production)
+          diff=np.abs(production-fine)
+          flat_index=int(np.argmax(diff))
+          sample_index,component=np.unravel_index(flat_index,diff.shape)
+          labels=('omega_x','omega_y','omega_z')
+
+          # Axis/near-axis probes are diagnostics but must remain finite.
+          if not np.all(np.isfinite(production[-6:])): failures.append('axis_near_vorticity_finite')
+          if not np.all(np.isfinite(fine[-6:])): failures.append('axis_near_reference_finite')
+
+          # Frozen mutation controls.
+          scaled=production*0.90
+          if not frozen_gate_failures(scaled,levels,velocity_rms=vector_rms(public_velocity)):
+              failures.append('scaled_vorticity_mutation_not_detected')
+          comp_rms=np.asarray([np.sqrt(np.mean(production[:,j]**2)) for j in range(3)])
+          largest=int(np.argmax(comp_rms))
+          flipped=np.array(production,copy=True); flipped[:,largest]*=-1.0
+          if not frozen_gate_failures(flipped,levels,velocity_rms=vector_rms(public_velocity)):
+              failures.append('component_sign_mutation_not_detected')
+
+          # Save/reload exact replay is required before any scientific metric counts.
+          rebound=np.asarray(candidate.vorticity(x,y,z,t),dtype=float)
+          replay=float(np.max(np.abs(rebound-production)))
+          if replay != 0.0: failures.append('manifest_replay')
+
+          # Parameter perturbation is observation-only: perturb evaluation time, not a scientific model knob.
+          shifted=np.asarray(candidate.vorticity(x,y,z,t+1e-4),dtype=float)
+          time_response=vector_rms(shifted-production)
+
+          contract=public_contract()
+          truth=contract['truth_boundary']
+          if truth['pde_validated'] or truth['heldout_ns_momentum_residual_assessed']:
+              failures.append('truth_boundary_promotion')
+
+          receipt={
+              'schema':'kokuno-a4-strict-inner-vorticity-artifact-independent-audit-receipt-v1',
+              'exact_head':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
+              'agent2_vorticity_head':contract['agent2_vorticity_head'],
+              'heldout_seed':HELDOUT_SEED,
+              'sample_count':int(x.size),
+              'random_offgrid_count':n,
+              'axis_probe_count':3,
+              'axis_near_probe_count':3,
+              'source_ranges':{'X_random':[.18,.27],'eta_random':[-.22,.22],'t_random':[.47,.53]},
+              'fd6_steps':list(FD6_SPATIAL_STEPS),
+              'level_relative_rms':[relative_rms_error(level.vorticity,production) for level in levels],
+              'level_relative_sampled_max':[relative_sampled_max_error(level.vorticity,production) for level in levels],
+              'independent_divergence_sampled_max':div_max,
+              'independent_divergence_sampled_rms':div_rms,
+              'production_vorticity_rms':vector_rms(production),
+              'public_velocity_rms':vector_rms(public_velocity),
+              'component_error_metrics':component_metrics,
+              'worst_error':{
+                  'sample_index':sample_index,
+                  'component':labels[component],
+                  'x':float(x[sample_index]),'y':float(y[sample_index]),'z':float(z[sample_index]),'t':float(t[sample_index]),
+                  'source_X':float(X[sample_index]),'source_eta':float(eta[sample_index]),
+                  'production':float(production[sample_index,component]),
+                  'independent_fd6':float(fine[sample_index,component]),
+                  'absolute_error':float(diff[sample_index,component]),
+              },
+              'manifest_replay_abs_max':replay,
+              'time_plus_1e4_response_rms':time_response,
+              'mutation_controls':{'scale_0p90_detected':True,'largest_component_sign_flip_detected':True},
+              'scientific_scope':'saved/reloaded strict-inner vorticity plus sampled divergence consistency only; not whole-domain morphology or complete NS residual',
+              'final_momentum_gate_unchanged':1e-3,
+              'final_divergence_gate_unchanged':1e-5,
+              'failed_gates':sorted(set(failures)),
+          }
+          receipt['passed']=not receipt['failed_gates']
+          raw=json.dumps(receipt,sort_keys=True,separators=(',',':'),allow_nan=False)
+          receipt['receipt_sha256']=hashlib.sha256(raw.encode()).hexdigest()
+          Path('artifacts/kokuno_agent4_strict_inner_vorticity_artifact_receipt.json').write_text(json.dumps(receipt,indent=2,sort_keys=True)+'\n')
+          print(json.dumps(receipt,indent=2,sort_keys=True))
+          proc.terminate()
+          if receipt['failed_gates']:
+              raise SystemExit('failed gates: '+', '.join(receipt['failed_gates']))
+          PY
+
+      - name: Upload independent audit receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent4-strict-inner-vorticity-artifact-independent-audit
+          path: |
+            artifacts/kokuno_agent4_strict_inner_vorticity_artifact_manifest.json
+            artifacts/kokuno_agent4_strict_inner_vorticity_artifact_receipt.json
