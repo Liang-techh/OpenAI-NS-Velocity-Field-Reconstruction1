@@ -8,6 +8,9 @@ import pytest
 from openai_ns_reconstruction.kokuno_a5_inner_leading_oscillatory_transport_ingest_contract import (
     AGENT1_LAPLACIAN_HEAD,
     AGENT2_TRANSPORT_HEAD,
+    AGENT4_PROTOCOL,
+    AGENT4_TRANSPORT_AUDIT_HEAD,
+    NORM_SCOPE_FIREWALL,
     PARENT_A5_HEAD,
     SCHEMA,
     TRANSPORT_PROTOCOL,
@@ -30,7 +33,7 @@ def _reject(mutator) -> None:
         validate_inner_leading_oscillatory_transport_ingest_contract(payload)
 
 
-def test_contract_registers_transport_without_promoting_residual_or_readiness() -> None:
+def test_contract_registers_transport_and_a4_without_promoting_residual() -> None:
     payload = _payload()
     validate_inner_leading_oscillatory_transport_ingest_contract(payload)
 
@@ -39,21 +42,28 @@ def test_contract_registers_transport_without_promoting_residual_or_readiness() 
     assert payload["agent1_laplacian_binding"]["head"] == AGENT1_LAPLACIAN_HEAD
     assert payload["agent2_transport_binding"]["head"] == AGENT2_TRANSPORT_HEAD
     assert payload["agent2_transport_binding"]["protocol"] == TRANSPORT_PROTOCOL
+    assert payload["agent4_transport_audit_binding"]["head"] == AGENT4_TRANSPORT_AUDIT_HEAD
+    assert payload["agent4_transport_audit_binding"]["protocol"] == AGENT4_PROTOCOL
+    assert payload["agent4_transport_audit_binding"]["norm_scope_firewall"] == NORM_SCOPE_FIREWALL
 
-    evidence = payload["evidence"]
-    assert evidence == {
+    assert payload["evidence"] == {
         "parent_inner_spatial_derivative_ingest_admitted": False,
         "agent1_laplacian_exact_head_ci_conclusion": None,
         "agent2_transport_exact_head_ci_conclusion": None,
-        "agent4_dedicated_transport_audit_present": False,
+        "agent4_dedicated_transport_audit_present": True,
+        "agent4_transport_exact_head_ci_conclusion": None,
         "agent4_transport_audit_conclusion": None,
+        "agent4_transport_scientific_receipt_admitted": False,
         "strict_inner_transport_scientifically_admitted": False,
     }
 
     handoff = payload["transport_operator_handoff"]
     assert handoff["registered"] is True
     assert handoff["status"] == "registered_unresolved"
-    assert handoff["authority"] == "Agent2#840"
+    assert handoff["construction_authority"] == "Agent2#840"
+    assert handoff["independent_audit_available"] is True
+    assert handoff["independent_audit_status"] == "registered_unresolved"
+    assert handoff["independent_audit_authority"] == "Agent4#842"
     assert handoff["includes_velocity_dt"] is True
     assert handoff["includes_full_strict_inner_advection"] is True
     assert handoff["includes_base_viscosity"] is True
@@ -61,8 +71,20 @@ def test_contract_registers_transport_without_promoting_residual_or_readiness() 
     assert handoff["includes_restricted_forcing"] is False
     assert handoff["includes_correction_velocity"] is False
     assert handoff["complete_ns_momentum_residual"] is False
+    assert handoff["usable_for_strict_inner_transport_admission_if_passes"] is True
     assert handoff["usable_as_actual_defect_input_now"] is False
     assert handoff["usable_for_final_independent_pde_validation"] is False
+
+    assert NORM_SCOPE_FIREWALL[
+        "agent4_relative_transport_consistency_is_cr001_momentum_residual"
+    ] is False
+    assert NORM_SCOPE_FIREWALL[
+        "agent4_transport_consistency_directly_comparable_to_ST006_full_residual"
+    ] is False
+    assert NORM_SCOPE_FIREWALL["agent4_divergence_rms_is_sampled_rms"] is True
+    assert NORM_SCOPE_FIREWALL[
+        "agent4_divergence_rms_is_canonical_volume_weighted_L2"
+    ] is False
 
     assert payload["candidate_api_handoff"]["pressure"] is None
     assert payload["candidate_api_handoff"]["forcing"] is None
@@ -70,6 +92,7 @@ def test_contract_registers_transport_without_promoting_residual_or_readiness() 
 
     status = payload["ingest_status"]
     assert status["typed_strict_inner_leading_oscillatory_transport_registered"] is True
+    assert status["typed_strict_inner_transport_independent_audit_registered"] is True
     assert status["strict_inner_leading_oscillatory_transport_ingest_admitted"] is False
     assert status["strict_inner_transport_ready"] is False
     assert status["leading_ready"] is False
@@ -98,7 +121,13 @@ def test_rejects_queued_evidence_laundering() -> None:
         "agent2_transport_exact_head_ci_conclusion", "success"
     ))
     _reject(lambda p: p["evidence"].__setitem__(
-        "agent4_dedicated_transport_audit_present", True
+        "agent4_transport_exact_head_ci_conclusion", "success"
+    ))
+    _reject(lambda p: p["evidence"].__setitem__(
+        "agent4_transport_audit_conclusion", "pass"
+    ))
+    _reject(lambda p: p["evidence"].__setitem__(
+        "agent4_transport_scientific_receipt_admitted", True
     ))
     _reject(lambda p: p["evidence"].__setitem__(
         "strict_inner_transport_scientifically_admitted", True
@@ -111,11 +140,27 @@ def test_rejects_upstream_identity_or_protocol_drift() -> None:
         "source_blob_sha", "1" * 40
     ))
     _reject(lambda p: p["agent1_laplacian_binding"].__setitem__("head", "2" * 40))
+    _reject(lambda p: p["agent4_transport_audit_binding"].__setitem__("head", "3" * 40))
     _reject(lambda p: p["agent2_transport_binding"]["protocol"].__setitem__(
         "viscosity", 0.02
     ))
-    _reject(lambda p: p["agent2_transport_binding"]["protocol"].__setitem__(
-        "independent_fd4_steps", [0.008, 0.004, 0.002]
+    _reject(lambda p: p["agent4_transport_audit_binding"]["protocol"].__setitem__(
+        "fd8_steps", [0.004, 0.002, 0.001]
+    ))
+
+
+def test_rejects_a4_norm_scope_laundering() -> None:
+    _reject(lambda p: p["agent4_transport_audit_binding"]["norm_scope_firewall"].__setitem__(
+        "agent4_relative_transport_consistency_is_cr001_momentum_residual", True
+    ))
+    _reject(lambda p: p["agent4_transport_audit_binding"]["norm_scope_firewall"].__setitem__(
+        "agent4_divergence_rms_is_canonical_volume_weighted_L2", True
+    ))
+    _reject(lambda p: p["truth_boundary"].__setitem__(
+        "a4_scoped_consistency_laundered_as_cr001_momentum_residual", True
+    ))
+    _reject(lambda p: p["truth_boundary"].__setitem__(
+        "sampled_divergence_rms_laundered_as_cr001_volume_l2", True
     ))
 
 
