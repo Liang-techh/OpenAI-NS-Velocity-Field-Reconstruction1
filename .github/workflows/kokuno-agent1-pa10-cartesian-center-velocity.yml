@@ -1,0 +1,120 @@
+name: kokuno-agent1-pa10-cartesian-center-velocity
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a1-pa10-cartesian-center-velocity-069
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_pa10_cartesian_center_velocity.py"
+      - "tests/test_constrained_kokuno_pa10_cartesian_center_velocity.py"
+      - ".github/workflows/kokuno-agent1-pa10-cartesian-center-velocity.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent1-pa10-cartesian-center-velocity-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  cartesian-center-velocity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify exact checked-out head
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          echo "exact_head=$EXPECTED_HEAD"
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile candidate-facing stack
+        run: |
+          python -m compileall -q \
+            src/openai_ns_reconstruction/kokuno_pa10_leading_axis_profile_contract.py \
+            src/openai_ns_reconstruction/kokuno_pa10_phi0_profile_contract.py \
+            src/openai_ns_reconstruction/kokuno_pa10_physical_center_profile_contract.py \
+            src/openai_ns_reconstruction/kokuno_pa10_source_c_normalized_physical_center.py \
+            src/openai_ns_reconstruction/kokuno_pa10_cartesian_center_velocity.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_pa10_physical_center_profile_contract.py \
+            tests/test_constrained_kokuno_pa10_cartesian_center_velocity.py
+      - name: Generate exact-head center-velocity receipt and reloadable field config
+        run: |
+          python -W error -m openai_ns_reconstruction.kokuno_pa10_cartesian_center_velocity \
+            --output artifacts/kokuno_agent1/pa10_cartesian_center_velocity_v1/report.json \
+            --config-output artifacts/kokuno_agent1/pa10_cartesian_center_velocity_v1/config.json
+      - name: Bind exact head and validate truth boundary
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          import subprocess
+
+          from openai_ns_reconstruction.kokuno_pa10_cartesian_center_velocity import (
+              KokunoPA10CartesianCenterVelocity,
+          )
+
+          root = Path('artifacts/kokuno_agent1/pa10_cartesian_center_velocity_v1')
+          report_path = root / 'report.json'
+          config_path = root / 'config.json'
+          payload = json.loads(report_path.read_text())
+          field = KokunoPA10CartesianCenterVelocity.load_configuration(config_path)
+          assert field.field_configuration() == payload['field_configuration']
+          assert field.field_sha256 == payload['field_sha256']
+
+          checks = payload['machine_checks']
+          assert checks['coordinate_roundtrip_max_abs_X'] < 1e-12
+          assert checks['coordinate_roundtrip_max_abs_eta'] < 1e-12
+          assert checks['q_equation_relative_residual_max'] < 1e-14
+          assert checks['axis_transverse_velocity_exact_zero'] is True
+          assert checks['velocity_nontrivial_on_probe'] is True
+          assert checks['all_probe_values_finite'] is True
+
+          truth = payload['truth_boundary']
+          assert truth['inner_cartesian_spacetime_center_velocity_executable'] is True
+          assert truth['field_semantic_identity_separate_from_evidence_receipt_identity'] is True
+          assert truth['source_center_is_final_corrected_fixed_point'] is False
+          assert truth['fixed_point_correction_materialized'] is False
+          assert truth['global_cartesian_spacetime_leading_velocity_materialized'] is False
+          assert truth['outer_join_localization_materialized'] is False
+          assert truth['matched_global_pressure_materialized'] is False
+          assert truth['complete_kokuno_composite_velocity'] is False
+          assert truth['unified_cartesian_velocity_export_ready'] is False
+          assert truth['heldout_ns_residual_assessed'] is False
+          assert truth['pde_validated'] is False
+          assert truth['paper_exact'] is False
+          assert truth['openai_field_identified'] is False
+
+          gates = payload['scientific_gates']
+          assert gates['momentum_max_l2'] == 1e-3
+          assert gates['divergence_max_l2'] == 1e-5
+          assert gates['free_residual_defined_forcing_forbidden'] is True
+
+          payload['exact_head'] = subprocess.check_output(
+              ['git', 'rev-parse', 'HEAD'], text=True
+          ).strip()
+          raw = json.dumps(payload, indent=2, sort_keys=True) + '\n'
+          report_path.write_text(raw)
+          print('field_sha256=', payload['field_sha256'])
+          print('receipt_sha256=', payload['receipt_sha256'])
+          print('artifact_sha256=', hashlib.sha256(raw.encode()).hexdigest())
+          print('machine_checks=', checks)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-pa10-cartesian-center-velocity-v1
+          path: artifacts/kokuno_agent1/pa10_cartesian_center_velocity_v1/
+          if-no-files-found: error
