@@ -1,0 +1,131 @@
+name: kokuno-agent4-pa10-source-pair-mk-independent-audit
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a4-pa10-source-pair-mk-independent-audit-065
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_pa10_source_pair_mk.py"
+      - "src/openai_ns_reconstruction/kokuno_pa10_source_pair_mk_independent_audit.py"
+      - "tests/test_constrained_kokuno_pa10_source_pair_mk.py"
+      - "tests/test_constrained_kokuno_pa10_source_pair_mk_independent_audit.py"
+      - ".github/workflows/kokuno-agent4-pa10-source-pair-mk-independent-audit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent4-pa10-source-pair-mk-independent-audit-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  independent-pair-mk-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Verify exact checked-out head
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          ACTUAL_HEAD="$(git rev-parse HEAD)"
+          echo "expected_head=${EXPECTED_HEAD}"
+          echo "actual_head=${ACTUAL_HEAD}"
+          test "${ACTUAL_HEAD}" = "${EXPECTED_HEAD}"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile
+        run: |
+          python -m compileall -q \
+            src/openai_ns_reconstruction/kokuno_pa10_source_pair_mk.py \
+            src/openai_ns_reconstruction/kokuno_pa10_source_pair_mk_independent_audit.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_pa10_source_pair_mk.py \
+            tests/test_constrained_kokuno_pa10_source_pair_mk_independent_audit.py
+      - name: Generate independent Agent-4 receipt
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          python -W error -m openai_ns_reconstruction.kokuno_pa10_source_pair_mk_independent_audit \
+            --output artifacts/kokuno_agent4/pa10_source_pair_mk_independent_audit_v1/report.json \
+            --pr-head "${EXPECTED_HEAD}" \
+            --checkout-head "$(git rev-parse HEAD)"
+      - name: Enforce immutable truth boundary
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+
+          path = Path(
+              'artifacts/kokuno_agent4/'
+              'pa10_source_pair_mk_independent_audit_v1/report.json'
+          )
+          payload = json.loads(path.read_text())
+          expected = os.environ['EXPECTED_HEAD']
+          assert payload['audited_agent1_pr'] == 760
+          assert payload['audited_agent1_exact_head'] == '76517f4e6084429a84b2f2e44189a3d287a4187e'
+          assert payload['pr_head'] == expected
+          assert payload['checkout_head'] == expected
+          assert payload['passed'] is True
+          assert payload['failed_guards'] == []
+          assert all(payload['negative_controls'].values())
+          assert all(payload['component_guards'].values())
+          assert all(
+              1.0 <= value <= 1.000000000001
+              for value in payload['public_to_independent_ratios'].values()
+          )
+
+          sensitivity = payload['inverse_plus_minus_0p1_percent_sensitivity']
+          assert sensitivity['M_u_invariant'] is True
+          assert sensitivity['K_u_invariant'] is True
+          assert sensitivity['monotone_phi_components'] is True
+
+          comparison = payload['same_protocol_PDE_comparison']
+          assert comparison['performed'] is False
+          assert comparison['ST006_momentum_sampled_max'] == 0.1082289305112118
+          assert comparison['ST006_momentum_volume_L2'] == 0.10758432876230622
+
+          gates = payload['project_gates_unchanged']
+          assert gates['normalized_momentum_max'] == 1.0e-3
+          assert gates['normalized_momentum_L2'] == 1.0e-3
+          assert gates['divergence_max'] == 1.0e-5
+          assert gates['divergence_L2'] == 1.0e-5
+          assert gates['free_residual_defined_forcing_allowed'] is False
+
+          truth = payload['truth_boundary']
+          assert truth['source_pair_MK_arithmetic_independently_audited'] is True
+          assert truth['source_full_post_J2_R1_independent_admission'] is False
+          assert truth['source_full_post_J1_R2_independent_admission'] is False
+          assert truth['source_operator_constant_M_independent_agent4_admission'] is False
+          assert truth['source_operator_constant_K_independent_agent4_admission'] is False
+          assert truth['global_pressure_matched'] is False
+          assert truth['global_leading_profile_reconstructed'] is False
+          assert truth['heldout_ns_momentum_residual_assessed'] is False
+          assert truth['pde_validated'] is False
+
+          raw = json.dumps(payload, indent=2, sort_keys=True) + '\n'
+          path.write_text(raw)
+          print('artifact_sha256=', hashlib.sha256(raw.encode()).hexdigest())
+          print('receipt_sha256=', payload['receipt_sha256'])
+          print('ratios=', payload['public_to_independent_ratios'])
+          print('independent_values=', payload['independent_values'])
+          print('sensitivity=', sensitivity)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent4-pa10-source-pair-mk-independent-audit-v1
+          path: artifacts/kokuno_agent4/pa10_source_pair_mk_independent_audit_v1/report.json
+          if-no-files-found: error
