@@ -1,0 +1,124 @@
+name: agent9-st054-python-visualization
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/st054_snapshot.py'
+      - 'src/openai_ns_reconstruction/__init__.py'
+      - 'visualization/python/st054_visualize.py'
+      - 'visualization/python/README.md'
+      - 'visualization/matlab/data/st054_models.mat'
+      - '.github/workflows/agent9-st054-python-visualization.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'src/openai_ns_reconstruction/st054_snapshot.py'
+      - 'src/openai_ns_reconstruction/__init__.py'
+      - 'visualization/python/st054_visualize.py'
+      - 'visualization/python/README.md'
+      - 'visualization/matlab/data/st054_models.mat'
+      - '.github/workflows/agent9-st054-python-visualization.yml'
+permissions:
+  contents: read
+concurrency:
+  group: agent9-st054-python-visualization-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  continuous-field-python-render:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    env:
+      MPLBACKEND: Agg
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install repository package and visualization dependency
+        run: python -m pip install -e '.[dev]'
+      - name: Compile Python visualizer
+        run: python -m py_compile visualization/python/st054_visualize.py
+      - name: Render both published fields across the frozen time window
+        shell: bash
+        run: |
+          set -euo pipefail
+          out=/tmp/st054-python-visualization
+          mkdir -p "$out"
+          for model in ST054-Q2 ST054-M3; do
+            stem=$(echo "$model" | tr '[:upper:]-' '[:lower:]_')
+            for t in 0.25 0.50 0.75; do
+              tag=$(echo "$t" | tr '.' 'p')
+              python visualization/python/st054_visualize.py \
+                --model "$model" \
+                --time "$t" \
+                --output "$out/${stem}_${tag}.png" \
+                --receipt "$out/${stem}_${tag}.json"
+            done
+          done
+      - name: Enforce software-only visualization receipt
+        run: |
+          python - <<'PY'
+          import json
+          import math
+          from pathlib import Path
+
+          out = Path('/tmp/st054-python-visualization')
+          receipts = [json.loads(path.read_text()) for path in sorted(out.glob('*.json'))]
+          assert len(receipts) == 6, len(receipts)
+          assert {r['model_id'] for r in receipts} == {'ST054-Q2', 'ST054-M3'}
+          assert {r['time'] for r in receipts} == {0.25, 0.5, 0.75}
+          expected_mat = '59d43fdc40cd4df1675c2191f85810b9351802b2f4b1e0ac25a3bccfd9914c62'
+          expected_source = 'c77492a48e9c0f13d4d51244987c57c28519409b'
+          for receipt in receipts:
+              assert receipt['schema'] == 'st054_python_visualization_smoke_v1'
+              assert receipt['source_mat_sha256'] == expected_mat
+              assert receipt['source_commit'] == expected_source
+              assert receipt['nu'] == 0.01
+              assert receipt['support_radius'] == 2.0
+              assert receipt['support_z'] == 2.0
+              assert receipt['time_interval'] == [0.25, 0.75]
+              assert receipt['streamline_protocol']['seed_count'] == 48
+              assert receipt['measurements']['nonempty_streamlines'] > 0
+              assert receipt['measurements']['line_segments'] > 0
+              assert receipt['measurements']['speed_max'] > 0.0
+              assert math.isfinite(receipt['measurements']['omega_z_rms'])
+              png = out / receipt['png']['filename']
+              assert png.is_file() and png.stat().st_size == receipt['png']['bytes'] > 0
+              assert receipt['python_visualization_smoke_ready'] is True
+              assert receipt['visualization_ready'] is False
+              for key in (
+                  'visual_correspondence_verified',
+                  'source_correspondence_verified',
+                  'pde_validated',
+                  'paper_exact',
+                  'openai_field_identified',
+                  'blowup_proved',
+              ):
+                  assert receipt[key] is False, (key, receipt[key])
+
+          summary = {
+              'schema': 'st054_python_visualization_matrix_v1',
+              'models': ['ST054-Q2', 'ST054-M3'],
+              'times': [0.25, 0.5, 0.75],
+              'render_count': len(receipts),
+              'source_mat_sha256': expected_mat,
+              'source_commit': expected_source,
+              'python_visualization_smoke_ready': True,
+              'visualization_ready': False,
+              'visual_correspondence_verified': False,
+              'pde_validated': False,
+              'engineering_scope': 'headless_python_render_smoke_only_not_pde_or_visual_acceptance',
+          }
+          (out / 'matrix_receipt.json').write_text(json.dumps(summary, indent=2, sort_keys=True) + '\n')
+          print(json.dumps(summary, sort_keys=True))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ST054-python-continuous-visualization-smoke
+          path: /tmp/st054-python-visualization/
+          if-no-files-found: error
