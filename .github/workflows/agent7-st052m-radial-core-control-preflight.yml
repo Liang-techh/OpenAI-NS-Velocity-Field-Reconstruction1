@@ -1,0 +1,117 @@
+name: agent7-st052m-radial-core-control-preflight
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_radial_core_control_preflight.py'
+      - 'experiments/root_st052/test_agent7_st052m_radial_core_control_preflight.py'
+      - '.github/workflows/agent7-st052m-radial-core-control-preflight.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  radial-core-control-preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'pytest>=8,<10'
+      - name: Verify exact PR head checkout
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+      - name: Focused contract tests
+        run: python -m pytest -q -W error experiments/root_st052/test_agent7_st052m_radial_core_control_preflight.py
+      - name: Execute frozen same-dimension core-control audit
+        run: |
+          mkdir -p outputs/agent7-st052m-radial-core-control-preflight
+          python experiments/root_st052/agent7_st052m_radial_core_control_preflight.py \
+            --out outputs/agent7-st052m-radial-core-control-preflight/report.json
+      - name: Verify frozen issue contract and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-radial-core-control-preflight/report.json').read_text())
+          assert r['task_id']=='CR003-ST052M-RADIAL-CORE-CONTROL-PREFLIGHT-114'
+          assert r['prereg_issue']==800
+          assert r['source_parent']=={'pr':794,'head':'5a3992e15f56aafa81e934c9ec306a2a10fa4e60'}
+          assert r['family']['k_values']==[0.5,0.75,1.0,1.5,2.0]
+          assert r['family']['live_k']==1.0
+          assert r['family']['candidate_selection'] is None
+          assert r['family']['public_openai_core_radius_target'] is None
+          assert all(a>b for a,b in zip(r['r_star_sequence'],r['r_star_sequence'][1:]))
+          for key,row in r['by_k'].items():
+              assert row['root']['analytic_numeric_q_mismatch'] <= 1e-10
+              assert row['axial_flux']['passes'] is True
+              if key!='k=1.00':
+                  assert row['response_vs_live_k1']['two_column_rank_vs_live_k1']==2
+                  assert row['response_vs_live_k1']['two_column_condition_vs_live_k1']<=25.0
+          assert r['live_sensitivity']['analytic_dr_star_dk'] < 0.0
+          assert r['live_sensitivity']['relative_mismatch'] <= 1e-6
+          assert r['capacity_conclusion']['same_dimension_core_thickness_control_demonstrated'] is True
+          assert r['capacity_conclusion']['candidate_k_selected'] is False
+          assert r['capacity_conclusion']['total_child_visual_improvement_established'] is False
+          assert r['candidate_velocity_changed'] is False
+          assert r['basis_dimension_changed'] is False
+          assert r['parameter_fit_performed'] is False
+          assert r['fresh_714_path_data_used'] is False
+          assert r['held_out_pde_residual_evaluated'] is False
+          assert r['public_image_numeric_target_used'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          assert r['openai_field_identified'] is False
+          print('r_star_sequence=',r['r_star_sequence'])
+          print('r_star_range=',r['r_star_range'])
+          print('live_sensitivity=',r['live_sensitivity'])
+          for key,row in r['by_k'].items():
+              print(key,
+                    'r*=',row['root']['r_star'],
+                    'area=',row['root']['core_area_fraction'],
+                    'cos=',row['response_vs_live_k1']['response_cosine_vs_live_k1'],
+                    'cond=',row['response_vs_live_k1']['two_column_condition_vs_live_k1'])
+          PY
+      - name: Publish compact numerical receipt
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent7-radial-core-control-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-radial-core-control-preflight/report.json').read_text())
+          print('<!-- agent7-st052m-radial-core-control-preflight-receipt -->')
+          print('**Agent 7 same-dimension radial core-thickness control audit (issue #800):**')
+          print()
+          print(f"- frozen r* range: `{r['r_star_range']['minimum']:.9g}` to `{r['r_star_range']['maximum']:.9g}` (span `{r['r_star_range']['span']:.9g}`)")
+          s=r['live_sensitivity']
+          print(f"- live k=1 sensitivity dr*/dk: `{s['analytic_dr_star_dk']:.9g}`; analytic-vs-FD relative mismatch `{s['relative_mismatch']:.3g}`")
+          for key,row in r['by_k'].items():
+              resp=row['response_vs_live_k1']
+              print(f"- {key}: r* `{row['root']['r_star']:.9g}`, area fraction `{row['root']['core_area_fraction']:.6f}`, cosine vs k=1 `{resp['response_cosine_vs_live_k1']:.6f}`, condition `{resp['two_column_condition_vs_live_k1']}`")
+          print()
+          print('Truth boundary: this is a shape-capacity audit only. It selects no k, changes no candidate velocity, uses no #714 fresh-path data or OpenAI numeric core-radius target, and does not establish total-child visual improvement or PDE validity.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-radial-core-control-receipt.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-radial-core-control-preflight
+          path: outputs/agent7-st052m-radial-core-control-preflight/
+          if-no-files-found: error
+
+# Scientific family/gates frozen in issue #800 before repository execution.
