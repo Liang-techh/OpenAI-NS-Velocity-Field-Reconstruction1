@@ -1,0 +1,66 @@
+name: kokuno-agent4-autonomous-reference-ns-independent-audit
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a4-autonomous-reference-ns-independent-audit-085
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_a4_autonomous_reference_ns_independent_audit.py"
+      - "tests/test_constrained_kokuno_a4_autonomous_reference_ns_independent_audit.py"
+      - ".github/workflows/kokuno-agent4-autonomous-reference-ns-independent-audit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent4-autonomous-reference-ns-independent-audit-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  autonomous-reference-stress-independent-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify exact head and pinned Agent-1 ancestry
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+          A1_HEAD: c5ccdb8fd790c62cfb760139e5ec108c26d88a81
+          A1_SOURCE_BLOB: 44159b63c440ee9764261dad41fb3f9d3fec7b0d
+        run: |
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          git merge-base --is-ancestor "$A1_HEAD" HEAD
+          test "$(git rev-parse HEAD:src/openai_ns_reconstruction/kokuno_pa10_autonomous_reference_ns_x100.py)" = "$A1_SOURCE_BLOB"
+          echo "exact_head=$EXPECTED_HEAD"
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile independent audit
+        run: |
+          python -m compileall -q \
+            src/openai_ns_reconstruction/kokuno_a4_autonomous_reference_ns_independent_audit.py \
+            tests/test_constrained_kokuno_a4_autonomous_reference_ns_independent_audit.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_pa10_autonomous_reference_ns_x100.py \
+            tests/test_constrained_kokuno_a4_autonomous_reference_ns_independent_audit.py
+      - name: Emit real save-reload independent receipt
+        run: |
+          mkdir -p outputs/kokuno_a4
+          python -m openai_ns_reconstruction.kokuno_a4_autonomous_reference_ns_independent_audit \
+            --output outputs/kokuno_a4/autonomous_reference_ns_independent_receipt.json
+      - name: Upload receipt even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a4-autonomous-reference-ns-independent-receipt
+          path: outputs/kokuno_a4/autonomous_reference_ns_independent_receipt.json
+          if-no-files-found: warn
