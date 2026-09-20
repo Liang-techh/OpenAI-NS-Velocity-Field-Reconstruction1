@@ -1,0 +1,145 @@
+{
+  "CR001_lock": {
+    "derivative_steps": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "divergence_L2": 1e-05,
+    "divergence_max": 1e-05,
+    "evaluation_box": [
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ]
+    ],
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_parameter_bounds": {
+      "a": [
+        0.0,
+        10.0
+      ],
+      "c": [
+        0.0,
+        10.0
+      ]
+    },
+    "held_out_points": 4096,
+    "nu": 0.01,
+    "pde_residual_L2": 0.001,
+    "pde_residual_max": 0.001,
+    "physical_domain": "R^3",
+    "quadrature_orders_per_axis": [
+      24,
+      48,
+      96
+    ],
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [
+      0.25,
+      0.75
+    ],
+    "validation_seed": 914027,
+    "validation_times": [
+      0.25,
+      0.3125,
+      0.4375,
+      0.5625,
+      0.6875,
+      0.75
+    ]
+  },
+  "claim_boundaries": {
+    "field_sha_difference_proves_different_public_source_formula": false,
+    "field_sha_match_is_required_for_source_level_cross_implementation_validation": false,
+    "inner_callable_velocity_is_exact_openai_field": false,
+    "inner_callable_velocity_is_global_kokuno_field": false,
+    "solver_iteration_count_is_openai_hidden_parameter": false,
+    "solver_iteration_count_is_paper_parameter": false,
+    "visual_similarity_implies_pde_validation": false
+  },
+  "cross_implementation_validation_rules": {
+    "different_evaluator_sha_may_be_called_same_exact_executable_artifact": false,
+    "different_evaluator_sha_may_still_target_same_source_mathematical_field": true,
+    "exact_numeric_replay_must_bind_evaluator_realization_identity": true,
+    "independent_validator_may_use_different_q_solver_realization": true,
+    "numeric_equality_across_realizations_is_assumed_without_test": false,
+    "source_field_correspondence_must_bind_source_formula_profile_configuration_and_domain": true
+  },
+  "current_representation_facts": {
+    "bisection_iterations_change_field_sha256": true,
+    "changing_only_bisection_iterations_changes_physical_profile_configuration": false,
+    "changing_only_bisection_iterations_changes_public_source_formula": false,
+    "field_configuration_contains_bisection_iterations": true,
+    "field_configuration_contains_physical_profile_configuration": true,
+    "field_configuration_contains_q_inverse_method": true,
+    "field_configuration_contains_registered_time_interval": true,
+    "field_configuration_save_load_roundtrip": true,
+    "field_sha256_hashes_complete_field_configuration": true,
+    "inner_source_X_only_fail_closed": true,
+    "inner_velocity_callable": true,
+    "velocity_vectorized": true
+  },
+  "delivery_claim_boundary": {
+    "blowup_proved": false,
+    "complete_candidate_api_ready": false,
+    "global_leading_velocity_materialized": false,
+    "inner_velocity_callable": true,
+    "inner_velocity_save_load_capable": true,
+    "openai_field_identified": false,
+    "paper_exact": false,
+    "pde_validated": false,
+    "unified_kokuno_velocity_export_ready": false,
+    "visual_correspondence_verified": false
+  },
+  "identity_roles": {
+    "bisection_iterations_are_autonomous_evaluator_parameters": true,
+    "bisection_iterations_are_public_source_parameters": false,
+    "current_field_sha256_role": "executable_evaluator_realization_identity",
+    "current_field_sha_is_source_mathematical_definition_identity": false,
+    "current_field_sha_is_valid_for_exact_numeric_replay_binding": true,
+    "dedicated_source_mathematical_definition_digest_exposed_by_803": false,
+    "field_sha_change_alone_proves_public_source_field_definition_changed": false,
+    "mathematical_definition_equivalence_implies_bitwise_velocity_equality": false
+  },
+  "schema_version": 1,
+  "source_classification": {
+    "autonomous_design": [
+      "registered delivery/validation time window [0.25,0.75]",
+      "source-monotone certified-bracket bisection as the executable q-inverse realization",
+      "DEFAULT_BISECTION_ITERATIONS=80 and the allowed evaluator range [56,128]",
+      "hashing the q-inverse method and iteration count into the current field_sha256"
+    ],
+    "pending_unknown": [
+      "final fixed-point correction and outer/global Kokuno continuation",
+      "matched global pressure and restricted forcing composite",
+      "whether this inner center corresponds numerically to the public OpenAI visualization",
+      "paper-exact or exact OpenAI hidden field identity"
+    ],
+    "public_source_fact": [
+      "q is the unique source coordinate solving q-z^2*q^(2h)-(1-t)=0 on the stated source regime",
+      "Cartesian center velocity uses u1=(v0/(2q))x-q^(-A-1/2)Fy, u2=(v0/(2q))y+q^(-A-1/2)Fx, u3=q^(-A)U"
+    ],
+    "user_requirement": [
+      "deliver an explicit computable save/load-capable velocity(x,y,z,t)->[u,v,w]",
+      "keep velocity delivery status independent from visual/PDE/paper-exact/OpenAI-field claims"
+    ]
+  },
+  "task_id": "CR002-KOKUNO-CENTER-DEFINITION-EVALUATOR-IDENTITY-072",
+  "upstream_binding": {
+    "head": "0666fff748d7c2659774b0aacba70042d045aab5",
+    "pr": 803,
+    "schema": "kokuno-pa10-cartesian-center-velocity-v1",
+    "source_blob_sha": "f404eff536b91248f76095c111d788482a19f6a3"
+  }
+}
