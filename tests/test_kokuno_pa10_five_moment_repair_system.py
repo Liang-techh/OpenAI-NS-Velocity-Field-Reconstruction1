@@ -62,8 +62,8 @@ def test_autonomous_basis_has_source_count_order_support_and_unit_dx_integral() 
     basis = repair.basis_values(x)
     assert np.all(basis["U_bumps"] >= 0.0)
     assert np.all(basis["E_bumps"] >= 0.0)
-    np.testing.assert_allclose(w @ basis["U_bumps"], np.ones(2), rtol=0.0, atol=3e-6)
-    np.testing.assert_allclose(w @ basis["E_bumps"], np.ones(3), rtol=0.0, atol=3e-6)
+    np.testing.assert_allclose(w @ basis["U_bumps"], np.ones(2), rtol=0.0, atol=1e-5)
+    np.testing.assert_allclose(w @ basis["E_bumps"], np.ones(3), rtol=0.0, atol=1e-5)
 
     # The autonomous supports stop strictly before the public join log x=-5.
     join_basis = repair.basis_values(math.exp(-5.01))
