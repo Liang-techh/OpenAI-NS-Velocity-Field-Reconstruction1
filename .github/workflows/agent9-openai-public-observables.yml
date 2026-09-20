@@ -1,0 +1,58 @@
+name: agent9-openai-public-observables
+
+on:
+  push:
+    branches:
+      - agent9/openai-observable-contract-078
+  pull_request:
+    paths:
+      - 'configs/openai_public_observables_v1.json'
+      - 'src/openai_ns_reconstruction/openai_public_observables.py'
+      - 'tests/test_openai_public_observables.py'
+      - '.github/workflows/agent9-openai-public-observables.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Assert exact pull-request head
+        if: github.event_name == 'pull_request'
+        run: test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha }}"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install package and tests
+        run: python -m pip install -e '.[dev]'
+      - name: Compile observable contract loader
+        run: python -m py_compile src/openai_ns_reconstruction/openai_public_observables.py tests/test_openai_public_observables.py
+      - name: Run focused fail-closed tests
+        run: python -m pytest -q -W error tests/test_openai_public_observables.py
+      - name: Emit machine-readable receipt
+        run: python -m openai_ns_reconstruction.openai_public_observables > openai_public_observables_receipt.json
+      - name: Freeze truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report = json.loads(Path('openai_public_observables_receipt.json').read_text())
+          assert report['numeric_visual_target_defined'] is False
+          assert report['external_method_classification'] == 'screened_not_adopted'
+          for key in (
+              'visualization_ready', 'visual_correspondence_verified',
+              'source_correspondence_verified', 'pde_validated', 'paper_exact',
+              'openai_field_identified', 'blowup_proved'):
+              assert report[key] is False, key
+          print('public_observable_contract_only=true')
+          print('pde_validated=false')
+          print('visual_correspondence_verified=false')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: openai-public-observable-contract-v1
+          path: openai_public_observables_receipt.json
