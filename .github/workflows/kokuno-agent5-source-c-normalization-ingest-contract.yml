@@ -1,0 +1,156 @@
+name: kokuno-agent5-source-c-normalization-ingest-contract
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-source-c-normalization-ingest-contract-070
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_a5_candidate_artifact_contract.py"
+      - "src/openai_ns_reconstruction/kokuno_a5_physical_center_ingest_contract.py"
+      - "src/openai_ns_reconstruction/kokuno_a5_source_c_normalization_ingest_contract.py"
+      - "tests/test_kokuno_a5_physical_center_ingest_contract.py"
+      - "tests/test_kokuno_a5_source_c_normalization_ingest_contract.py"
+      - ".github/workflows/kokuno-agent5-source-c-normalization-ingest-contract.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent5-source-c-normalization-ingest-contract-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  exact-head-source-c-normalization-ingest-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - name: Verify exact head checkout
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          ACTUAL_HEAD="$(git rev-parse HEAD)"
+          test "$ACTUAL_HEAD" = "$EXPECTED_HEAD"
+          echo "exact_head=$ACTUAL_HEAD"
+      - name: Verify frozen Agent-1 source-C source blob
+        env:
+          AGENT1_HEAD: 393abd5976d4c621ce37dad8544a1b645fdbe83b
+          EXPECTED_BLOB: 722640b0e6e43a2bba521776398d2f9cc8d2a052
+        run: |
+          git fetch --no-tags origin "$AGENT1_HEAD"
+          ACTUAL_BLOB="$(git rev-parse "$AGENT1_HEAD:src/openai_ns_reconstruction/kokuno_pa10_source_c_normalized_physical_center.py")"
+          test "$ACTUAL_BLOB" = "$EXPECTED_BLOB"
+          echo "agent1_source_c_blob=$ACTUAL_BLOB"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile integration seam
+        run: |
+          python -m compileall -q \
+            src/openai_ns_reconstruction/kokuno_a5_candidate_artifact_contract.py \
+            src/openai_ns_reconstruction/kokuno_a5_physical_center_ingest_contract.py \
+            src/openai_ns_reconstruction/kokuno_a5_source_c_normalization_ingest_contract.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_a5_physical_center_ingest_contract.py \
+            tests/test_kokuno_a5_source_c_normalization_ingest_contract.py
+      - name: Generate exact-head source-C ingest artifact
+        run: |
+          HEAD_SHA="$(git rev-parse HEAD)"
+          python -W error -m openai_ns_reconstruction.kokuno_a5_source_c_normalization_ingest_contract \
+            --exact-head "$HEAD_SHA" \
+            --output artifacts/kokuno_agent5/source_c_normalization_ingest_contract_v1/report.json
+      - name: Validate frozen evidence and truth boundary
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          import subprocess
+
+          path = Path('artifacts/kokuno_agent5/source_c_normalization_ingest_contract_v1/report.json')
+          payload = json.loads(path.read_text())
+          exact_head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
+          assert payload['exact_head'] == exact_head
+          assert payload['schema'] == 'kokuno-a5-source-c-normalization-ingest-contract-v1'
+          assert payload['parent_a5'] == {
+              'pr': 791,
+              'head': '566a3fe7d53918c19016aa11d55c3e071dff779d',
+          }
+
+          a1 = payload['agent1_source_C_binding']
+          assert a1['pr'] == 796
+          assert a1['head'] == '393abd5976d4c621ce37dad8544a1b645fdbe83b'
+          assert a1['source_blob_sha'] == '722640b0e6e43a2bba521776398d2f9cc8d2a052'
+          assert a1['schema'] == 'kokuno-pa10-source-c-normalized-physical-center-v1'
+          assert a1['selected_source_C'] == 1000.0
+          assert a1['selection_boundary']['chosen_from_NS_residual'] is False
+          assert a1['selection_boundary']['chosen_from_CR001_energy'] is False
+          assert a1['selection_boundary']['same_C_required_in_physical_F_and_outer_schedule'] is True
+
+          assert payload['independent_audit_requirement'] == {
+              'dedicated_agent4_source_C_audit_required': True,
+              'prior_agent4_physical_mapping_audit_pr': 790,
+              'prior_mapping_audit_is_source_C_authority': False,
+              'source_C_audit_pr': None,
+              'source_C_audit_head': None,
+              'source_C_audit_dedicated_run': None,
+          }
+          assert payload['evidence'] == {
+              'agent1_exact_head_ci_conclusion': None,
+              'agent1_self_certificate_executed_and_passed': None,
+              'agent4_dedicated_source_C_audit_present': False,
+              'agent4_source_C_audit_conclusion': None,
+              'agent4_source_C_independently_admitted': False,
+          }
+
+          status = payload['ingest_status']
+          assert status['typed_source_C_normalized_physical_center_interface_registered'] is True
+          assert status['source_C_normalized_physical_center_ingest_admitted'] is False
+          assert status['source_complex_C_normalization_agent1_self_certificate_passed'] is False
+          assert status['source_complex_C_normalization_independently_admitted'] is False
+          assert status['global_leading_velocity_materialized'] is False
+          assert status['matched_global_pressure_materialized'] is False
+          assert status['restricted_forcing_composite_validated'] is False
+          assert status['leading_ready'] is False
+
+          assert payload['stage_state'] == {
+              'leading_ready': False,
+              'oscillatory_ready': True,
+              'correction_ready': False,
+              'velocity_export_ready': False,
+              'pde_validated': False,
+          }
+          assert payload['baseline_vs_kokuno']['kokuno_same_protocol_full_candidate_residual_available'] is False
+          assert payload['baseline_vs_kokuno']['comparison_performed'] is False
+          assert payload['final_project_gates_unchanged'] == {
+              'normalized_momentum_max': 1e-3,
+              'normalized_momentum_L2': 1e-3,
+              'divergence_max': 1e-5,
+              'divergence_L2': 1e-5,
+          }
+
+          truth = payload['truth_boundary']
+          assert truth['interface_registration_not_scientific_admission'] is True
+          for key, value in truth.items():
+              if key == 'interface_registration_not_scientific_admission':
+                  continue
+              assert value is False, (key, value)
+
+          print('artifact_sha256=', hashlib.sha256(path.read_bytes()).hexdigest())
+          print('contract_sha256=', payload['contract_sha256'])
+          print('exact_head=', exact_head)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-source-c-normalization-ingest-contract-v1
+          path: artifacts/kokuno_agent5/source_c_normalization_ingest_contract_v1/report.json
+          if-no-files-found: error
