@@ -1,0 +1,155 @@
+{
+  "agent4_protocol": {
+    "eta_range": [
+      -0.42,
+      0.42
+    ],
+    "fd4_time_steps": [
+      0.0004,
+      0.0002,
+      0.0001
+    ],
+    "largest_absolute_time_offset": 0.0008,
+    "random_sample_count": 1024,
+    "sampling_selected_to_be_strictly_interior": true,
+    "seed": 9173471,
+    "source_X_fraction_range": [
+      0.06,
+      0.3
+    ],
+    "time_range": [
+      0.34,
+      0.66
+    ]
+  },
+  "boundary_witness": {
+    "claim_is_about_current_representation_domain_not_physical_singularity": true,
+    "eta": 0.0,
+    "expected_crossing_delta_at_eta_zero": 0.0001,
+    "fd4_step": 0.0001,
+    "pointwise_velocity_dt_expected_callable": true,
+    "positive_outer_offset": 0.0002,
+    "purpose": "Show that a point can admit the analytic pointwise inner velocity_dt while the frozen fine FD4 stencil at the same fixed Cartesian xyz leaves the current inner-X representation domain.",
+    "source_X_fraction_of_upper_bound": 0.9998,
+    "t": 0.5,
+    "velocity_at_t_plus_2h_expected_outside_inner_X": true
+  },
+  "classification": {
+    "autonomous_design": [
+      "The registered numerical time interval [0.25,0.75], bisection realization, analytic velocity_dt implementation, Agent-4 FD4 steps/sampling protocol, and this neighborhood-scope policy are repository designs.",
+      "Agent-4 samples random source X only in [0.06,0.30] times X_max and t only in [0.34,0.66], then applies fixed-Cartesian FD4 steps [0.0004,0.0002,0.0001]."
+    ],
+    "pending_unknown": [
+      "A final fixed-point correction, outer/global join, matched pressure, restricted forcing, and full-domain Navier-Stokes derivative/residual validation remain unavailable on this stack.",
+      "Derivative behavior across the current inner-X representation boundary is not a validated property of a future global Kokuno field."
+    ],
+    "public_source_fact": [
+      "The pinned Kokuno PA.10 reconstruction supplies the inner similarity-coordinate relations tau=q(1-eta^2), z=q^D eta, X=(x^2+y^2)/(2q) and the displayed Cartesian inner-center velocity formula.",
+      "The pinned source object used on this stack is the PA.10 contraction-center reconstruction; this contract does not promote repository-chosen numerical protocol details into source facts."
+    ],
+    "user_requirement": [
+      "Keep callable velocity delivery separate from PDE, visual-correspondence, paper-exact, and OpenAI-field claims.",
+      "A derivative or validator must state its actual mathematical/evaluation domain and must not promote interior evidence to full-domain PDE validation."
+    ]
+  },
+  "cr001_snapshot": {
+    "amplitude_collapse_forbidden": true,
+    "constraints_blob": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "derivative_steps": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "divergence_L2": 1e-05,
+    "divergence_max": 1e-05,
+    "evaluation_box": [
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ]
+    ],
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_parameter_bounds": {
+      "a": [
+        0.0,
+        10.0
+      ],
+      "c": [
+        0.0,
+        10.0
+      ]
+    },
+    "free_residual_defined_forcing_forbidden": true,
+    "held_out_points": 4096,
+    "nu": 0.01,
+    "pde_residual_L2": 0.001,
+    "pde_residual_max": 0.001,
+    "physical_domain": "R^3",
+    "post_hoc_threshold_relaxation_forbidden": true,
+    "quadrature_orders_per_axis": [
+      24,
+      48,
+      96
+    ],
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [
+      0.25,
+      0.75
+    ],
+    "validation_seed": 914027
+  },
+  "domain_scope": {
+    "agent4_fd4_evidence_establishes_entire_inner_X_domain": false,
+    "agent4_fd4_evidence_establishes_global_join_behavior": false,
+    "agent4_fd4_evidence_establishes_inner_boundary_behavior": false,
+    "agent4_fd4_evidence_is_interior_subdomain_evidence": true,
+    "analytic_velocity_dt_is_fixed_cartesian": true,
+    "full_inner_domain_pde_derivative_validated": false,
+    "global_pde_derivative_validated": false,
+    "inner_source_X_only": true,
+    "outside_inner_X_raises": true,
+    "pointwise_velocity_dt_evaluable_does_not_imply_frozen_fd_stencil_fits": true,
+    "registered_time_interval": [
+      0.25,
+      0.75
+    ]
+  },
+  "forbidden_promotions": [
+    "interior FD4 agreement -> entire inner-X derivative validation",
+    "pointwise analytic velocity_dt callable -> every preregistered finite-difference stencil is admissible",
+    "inner-center derivative evidence -> outer/global join evidence",
+    "velocity_dt evidence -> pressure/forcing/complete candidate readiness",
+    "velocity_dt evidence -> PDE validation",
+    "velocity_dt evidence -> paper-exact or OpenAI-field identity"
+  ],
+  "independent_states": {
+    "blowup_proved": false,
+    "inner_velocity_dt_agent4_interior_audit_registered": true,
+    "inner_velocity_dt_interface_available": true,
+    "openai_field_identified": false,
+    "paper_exact": false,
+    "pde_validated": false,
+    "velocity_export_ready_promoted_by_this_contract": false,
+    "visual_correspondence_verified": false
+  },
+  "schema": "cr002-kokuno-velocity-dt-domain-neighborhood-scope-v1",
+  "stack": {
+    "agent1_velocity_dt_head": "6f16e837c3a95a6e54af5c2cb7725d094f667026",
+    "agent1_velocity_dt_pr": 811,
+    "agent1_velocity_dt_source_blob": "c1d576820416945443bbc24cc931cb64e9e032d9",
+    "agent4_audit_source_blob": "210f445053f027034f3fe20dc7765cd32be1e74d",
+    "audited_head": "6f2c9789921885a2c21bb69c642d7f820fdeed41",
+    "audited_pr": 814
+  },
+  "task": "CR002-KOKUNO-VELOCITY-DT-DOMAIN-NEIGHBORHOOD-073"
+}
