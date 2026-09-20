@@ -1,13 +1,13 @@
 """Independent Agent-4 audit of the public PA.10 source-native leading-axis profile.
 
 This validator is intentionally downstream of the candidate-facing public API in
-``kokuno_pa10_leading_axis_profile_contract``.  It does not call the Agent-1
+``kokuno_pa10_leading_axis_profile_contract``. It does not call the Agent-1
 ``axis_state`` implementation or any private Fraction/product/rounding helper.
 Instead it reconstructs the exported formulas from the serialized scalar
 configuration and compares them with fresh public API evaluations.
 
 The audit also differentiates the public value path with an independent centered
-FD4 operator on three fixed step sizes.  This is a profile-contract audit only:
+FD4 operator on three fixed step sizes. This is a profile-contract audit only:
 it is not a Cartesian velocity, pressure/forcing composite, or Navier-Stokes
 residual validation.
 """
@@ -207,6 +207,7 @@ def _independent_derivatives(
         "H_star_eta": H_eta,
         "W_star_eta": W_eta,
         "Z_star_eta": Z_eta,
+        "Pi_0_eta": Pi_eta,
         "Pi_0_eta_eta": Pi_eta_eta,
         "chi_eta": chi_eta,
         "zeta_star_eta": zeta_eta,
