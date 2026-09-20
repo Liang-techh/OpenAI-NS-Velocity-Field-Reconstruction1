@@ -1,0 +1,71 @@
+name: kokuno-agent5-canonical-quadrature-evidence-ingest
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-canonical-quadrature-evidence-ingest-083
+  pull_request:
+    branches:
+      - codex/kokuno-a5-fixed-contract-full-ns-validation-ingest-082
+
+jobs:
+  canonical-quadrature-evidence-ingest-firewall:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout exact head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install repository
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e '.[dev]'
+
+      - name: Run parent and canonical-evidence Agent-5 tests
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_a5_fixed_contract_full_ns_validation_ingest_contract.py \
+            tests/test_kokuno_a5_canonical_quadrature_evidence_ingest_contract.py
+
+      - name: Materialize fail-closed Agent-5 ingest receipt
+        env:
+          EXACT_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          python -m openai_ns_reconstruction.kokuno_a5_canonical_quadrature_evidence_ingest_contract \
+            --exact-head "$EXACT_HEAD" \
+            --output artifacts/kokuno_a5_canonical_quadrature_evidence_ingest_contract.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("artifacts/kokuno_a5_canonical_quadrature_evidence_ingest_contract.json")
+          contract = json.loads(path.read_text(encoding="utf-8"))
+          a4 = contract["agent4_canonical_quadrature_handoff"]
+          seam = contract["admission_seam"]
+          assert a4["quadrature_orders_per_axis"] == [24, 48, 96]
+          assert a4["bare_boolean_authorizes_pde_promotion"] is False
+          assert a4["caller_sample_weights_are_canonical_quadrature"] is False
+          assert a4["real_canonical_quadrature_run_completed"] is False
+          assert a4["real_receipt_available"] is False
+          assert seam["typed_receipt_required"] is True
+          assert seam["current_evidence_admitted"] is False
+          assert seam["residual_defined_forcing_forbidden"] is True
+          assert contract["final_gate"]["momentum_volume_l2"] == 1e-3
+          assert contract["final_gate"]["divergence_volume_l2"] == 1e-5
+          assert contract["readiness"]["pde_validated"] is False
+          PY
+
+      - name: Upload Agent-5 ingest contract
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a5-canonical-quadrature-evidence-ingest-contract
+          path: artifacts/kokuno_a5_canonical_quadrature_evidence_ingest_contract.json
+          if-no-files-found: error
