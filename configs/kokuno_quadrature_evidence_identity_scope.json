@@ -1,0 +1,138 @@
+{
+  "schema": "cr002-kokuno-quadrature-evidence-identity-scope-v1",
+  "task": "CR002-KOKUNO-QUADRATURE-EVIDENCE-IDENTITY-083",
+  "audited_upstream": {
+    "agent4_pr": 896,
+    "agent4_head": "e8a7712515f75bb8a0a5d86b9a6177ab9447f2b1",
+    "agent4_source_path": "src/openai_ns_reconstruction/kokuno_a4_blackbox_full_ns_validator.py",
+    "agent4_source_blob_sha": "a9e46daf60d909a63261dd10821e1a08101dd872",
+    "agent5_registration_pr": 897,
+    "agent5_registration_head": "21ff4a86638a1d8e179e25ed25886a68a34b4e6b",
+    "agent5_registration_source_blob_sha": "fcf2f8945592782b2dd4008007a970d5d4fdf83d",
+    "canonical_constraints_blob_sha": "6c559e42895a606e2ef025ade4cb448966d75814"
+  },
+  "canonical_cr001_snapshot": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "norms": [
+      "max Euclidean vector norm",
+      "volume-weighted L2 spatial norm at each time"
+    ],
+    "divergence_max": 1e-05,
+    "divergence_L2": 1e-05,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001,
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "forcing_mode": "restricted_two_parameter_family",
+    "residual_defined_pointwise_free_force_allowed": false,
+    "amplitude_collapse_allowed": false,
+    "post_hoc_threshold_relaxation_allowed": false
+  },
+  "observed_agent4_validator_semantics": {
+    "validate_complete_candidate_accepts_caller_volume_weights": true,
+    "validate_complete_candidate_accepts_bare_quadrature_ladder_assessed_boolean": true,
+    "sample_volume_l2_is_computed_from_caller_weights": true,
+    "pde_validated_formula_depends_on_bare_quadrature_boolean": true,
+    "typed_canonical_quadrature_receipt_parameter_present": false,
+    "quadrature_receipt_sha256_present": false,
+    "quadrature_receipt_candidate_sha256_binding_present": false,
+    "quadrature_receipt_physical_contract_sha256_binding_present": false,
+    "quadrature_receipt_operator_identity_binding_present": false,
+    "quadrature_receipt_24_48_96_metrics_binding_present": false
+  },
+  "observed_agent5_registration_semantics": {
+    "canonical_quadrature_ladder_registered": [24, 48, 96],
+    "quadrature_ladder_assessed_required_for_pde_validated": true,
+    "monte_carlo_volume_l2_does_not_replace_canonical_quadrature_ladder": true,
+    "scientific_admission": false
+  },
+  "promotion_guards": {
+    "bare_boolean_is_canonical_quadrature_evidence": false,
+    "caller_supplied_sample_weights_are_canonical_24_48_96_quadrature": false,
+    "sampled_or_monte_carlo_l2_may_replace_canonical_volume_l2": false,
+    "quadrature_ladder_assessed_true_alone_may_authorize_pde_validated": false,
+    "quadrature_evidence_may_be_reused_across_candidate_sha": false,
+    "quadrature_evidence_may_be_reused_across_physical_contract_sha": false,
+    "quadrature_evidence_may_omit_operator_and_derivative_identity": false,
+    "quadrature_evidence_may_omit_per_level_metrics": false,
+    "pde_pending_blocks_callable_velocity_delivery": false,
+    "validator_contract_registration_implies_pde_validated": false
+  },
+  "required_future_quadrature_receipt": {
+    "receipt_schema": "canonical-cr001-quadrature-receipt-v1-or-successor",
+    "receipt_sha256": "required",
+    "candidate_sha256": "required_exact_match_to_validated_candidate",
+    "physical_contract_sha256": "required_exact_match_to_blackbox_validator_contract",
+    "validator_operator_identity": "required",
+    "derivative_step_ladder": [0.02, 0.01, 0.005],
+    "validation_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "momentum_volume_l2_by_time_and_order": "required",
+    "divergence_volume_l2_by_time_and_order": "required",
+    "energy_by_time_and_order": "required",
+    "convergence_assessment": "required",
+    "thresholds_bound": {
+      "momentum_volume_l2": 0.001,
+      "divergence_volume_l2": 1e-05,
+      "reference_energy_abs_tolerance": 0.001
+    },
+    "independent_of_training_and_held_in_selection": true,
+    "residual_defined_forcing_forbidden": true
+  },
+  "mechanics_witness": {
+    "kind": "autonomous_boolean-vs-evidence counterexample",
+    "candidate_scientific_evidence": false,
+    "canonical_quadrature_was_run": false,
+    "caller_sets_quadrature_ladder_assessed": true,
+    "logical_observation": "a boolean can assert an external computation without carrying its identity, inputs, levels, metrics, or digest",
+    "purpose": "show that truth of a flag is not provenance-bearing canonical quadrature evidence"
+  },
+  "provenance": {
+    "user_requirement": [
+      "CR001 validation norms, quadrature ladder, thresholds, forcing and nontriviality contracts remain preregistered and separately governed",
+      "PDE validation status must remain independent from callable/save-load velocity delivery status"
+    ],
+    "public_source_fact": [],
+    "autonomous_design": [
+      "Agent-4 black-box validator API and its caller-supplied weight/boolean admission mechanics",
+      "Agent-5 registration of the canonical 24/48/96 quadrature requirement",
+      "this CR002 quadrature-evidence identity audit, receipt requirements and mechanics witness"
+    ],
+    "pending_unknown": [
+      "a real Kokuno complete candidate eligible for canonical quadrature",
+      "a canonical 24/48/96 quadrature receipt bound to the real candidate and physical contract",
+      "real per-time/per-order momentum and divergence volume-L2 values",
+      "real per-time/per-order kinetic-energy values and convergence",
+      "PDE admission after all independent CR001 gates are jointly satisfied"
+    ]
+  },
+  "public_source_boundary": {
+    "this_increment_adds_new_public_source_fact": false,
+    "repository_validator_mechanics_are_public_source_fact": false,
+    "mechanics_witness_is_public_source_data": false,
+    "canonical_cr001_thresholds_are_openai_or_kokuno_paper_parameters": false
+  },
+  "truth_boundary": {
+    "candidate_bytes_changed": false,
+    "velocity_changed": false,
+    "pressure_changed": false,
+    "forcing_changed": false,
+    "threshold_changed": false,
+    "canonical_quadrature_receipt_exists": false,
+    "real_kokuno_complete_ns_residual_assessed": false,
+    "velocity_export_ready_promoted": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  }
+}
