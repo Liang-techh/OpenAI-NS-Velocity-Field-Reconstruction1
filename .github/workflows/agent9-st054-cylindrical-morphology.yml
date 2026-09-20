@@ -1,0 +1,147 @@
+name: agent9-st054-cylindrical-morphology
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/st054_snapshot.py'
+      - 'src/openai_ns_reconstruction/st054_cylindrical_morphology.py'
+      - 'tests/test_st054_cylindrical_morphology.py'
+      - 'visualization/matlab/data/st054_models.mat'
+      - '.github/workflows/agent9-st054-cylindrical-morphology.yml'
+  push:
+    branches: [main, 'agent9/st054-cylindrical-morphology-079']
+    paths:
+      - 'src/openai_ns_reconstruction/st054_snapshot.py'
+      - 'src/openai_ns_reconstruction/st054_cylindrical_morphology.py'
+      - 'tests/test_st054_cylindrical_morphology.py'
+      - 'visualization/matlab/data/st054_models.mat'
+      - '.github/workflows/agent9-st054-cylindrical-morphology.yml'
+permissions:
+  contents: read
+concurrency:
+  group: agent9-st054-cylindrical-morphology-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  continuous-field-cylindrical-fingerprint:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - name: Assert exact checkout
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "HEAD=$(git rev-parse HEAD)"
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install repository package
+        run: python -m pip install -e '.[dev]'
+      - name: Compile diagnostic and focused regression
+        run: |
+          python -m py_compile src/openai_ns_reconstruction/st054_cylindrical_morphology.py
+          python -m py_compile tests/test_st054_cylindrical_morphology.py
+          python -m pytest -q -W error tests/test_st054_cylindrical_morphology.py
+      - name: Generate renderer-independent fingerprints for both published fields
+        shell: bash
+        run: |
+          set -euo pipefail
+          out=/tmp/st054-cylindrical-morphology
+          mkdir -p "$out"
+          python -m openai_ns_reconstruction.st054_cylindrical_morphology --model ST054-Q2 --output "$out/ST054-Q2.json"
+          python -m openai_ns_reconstruction.st054_cylindrical_morphology --model ST054-M3 --output "$out/ST054-M3.json"
+      - name: Enforce autonomous-diagnostic and truth boundaries
+        run: |
+          python - <<'PY'
+          import json
+          import math
+          from pathlib import Path
+
+          out = Path('/tmp/st054-cylindrical-morphology')
+          receipts = [json.loads(path.read_text()) for path in sorted(out.glob('ST054-*.json'))]
+          assert len(receipts) == 2, len(receipts)
+          assert {r['model_id'] for r in receipts} == {'ST054-Q2', 'ST054-M3'}
+          expected_source = 'c77492a48e9c0f13d4d51244987c57c28519409b'
+          expected_mat = '59d43fdc40cd4df1675c2191f85810b9351802b2f4b1e0ac25a3bccfd9914c62'
+          summaries = []
+          false_flags = (
+              'visualization_ready',
+              'visual_correspondence_verified',
+              'source_correspondence_verified',
+              'pde_validated',
+              'paper_exact',
+              'openai_field_identified',
+              'blowup_proved',
+          )
+          for receipt in receipts:
+              assert receipt['schema'] == 'st054_cylindrical_morphology_fingerprint_v1'
+              assert receipt['source_commit'] == expected_source
+              assert receipt['source_mat_sha256'] == expected_mat
+              protocol = receipt['protocol']
+              assert protocol['radii'] == [0.4, 0.7, 1.0, 1.3]
+              assert protocol['z_magnitudes'] == [0.3, 0.8]
+              assert protocol['times'] == [0.25, 0.5, 0.75]
+              assert protocol['azimuth_count'] == 16
+              assert protocol['source_numeric_targets_used'] is False
+              assert protocol['renderer_or_camera_used'] is False
+              assert protocol['pixel_loss_used'] is False
+              measurements = receipt['measurements']
+              assert len(measurements['ring_rows']) == 48
+              assert len(measurements['radial_variation']) == 12
+              assert len(measurements['core_speed_proxy']) == 3
+              for row in measurements['ring_rows']:
+                  for key in (
+                      'mean_u_r', 'mean_u_theta', 'mean_abs_u_theta',
+                      'mean_angular_rate', 'mean_away_from_midplane_u_z',
+                      'mean_speed', 'max_speed', 'inward_fraction',
+                      'swirl_nonzero_fraction', 'inward_swirl_fraction',
+                      'mean_inward_to_circulation_ratio',
+                  ):
+                      assert math.isfinite(row[key]), (receipt['model_id'], key, row[key])
+              assert len(receipt['measurement_sha256']) == 64
+              assert receipt['cylindrical_morphology_diagnostic_ready'] is True
+              for key in false_flags:
+                  assert receipt[key] is False, (key, receipt[key])
+              ext = receipt['external_method_screen']
+              assert len(ext) == 1
+              assert ext[0]['repo'] == 'pyvista/pyvista'
+              assert ext[0]['screened_commit'] == 'f749a1b0a10a5a4c3c5ca3eedbc8f7860c6f9d9e'
+              assert ext[0]['license'] == 'MIT'
+              assert ext[0]['classification'] == 'screened_not_adopted'
+              summaries.append({
+                  'model_id': receipt['model_id'],
+                  'measurement_sha256': receipt['measurement_sha256'],
+                  'all_inward_ring_groups': sum(
+                      int(item['all_rings_inward']) for item in measurements['radial_variation']
+                  ),
+                  'ring_group_count': len(measurements['radial_variation']),
+                  'speed_weighted_radius_decreased': measurements['time_evolution_proxy']['speed_weighted_radius_decreased'],
+                  'peak_mean_speed_increased': measurements['time_evolution_proxy']['peak_mean_speed_increased'],
+              })
+
+          matrix = {
+              'schema': 'st054_cylindrical_morphology_matrix_v1',
+              'source_commit': expected_source,
+              'source_mat_sha256': expected_mat,
+              'models': summaries,
+              'source_numeric_targets_used': False,
+              'visual_correspondence_verified': False,
+              'pde_validated': False,
+              'scope': 'autonomous_renderer_independent_velocity_kinematics_only',
+          }
+          (out / 'matrix_receipt.json').write_text(json.dumps(matrix, indent=2, sort_keys=True) + '\n')
+          print(json.dumps(matrix, sort_keys=True))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ST054-cylindrical-morphology-fingerprint
+          path: /tmp/st054-cylindrical-morphology/
+          if-no-files-found: error
