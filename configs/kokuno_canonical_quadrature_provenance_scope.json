@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "audit_id": "CR002-KOKUNO-QUADRATURE-PROVENANCE-084",
+  "status": "governance_only_no_scientific_promotion",
+  "base": {
+    "active_integration_branch": "codex/cr001-constraints",
+    "active_integration_head_at_claim": "ca37d25d19b97d893030194ebd6364160ae4355e",
+    "audited_pr": 903,
+    "audited_head": "065810d94a37ade8d81acd2c7f622c1ff8cc6bdd",
+    "audited_source_path": "src/openai_ns_reconstruction/kokuno_a4_canonical_quadrature_evidence.py",
+    "audited_source_blob": "4a14a2e2bd6c06280d992802414109444d41e84b",
+    "canonical_constraints_path": "configs/constraints.json",
+    "canonical_constraints_blob": "6c559e42895a606e2ef025ade4cb448966d75814"
+  },
+  "scope": {
+    "question": "Does a checksum-valid CanonicalQuadratureEvidence built from caller-supplied metric rows itself prove that a real independent registered 24/48/96 quadrature run occurred?",
+    "answer": false,
+    "reason": "The audited builder binds supplied values and identities, but it sets convergence_assessed and independent_of_training_and_held_in_selection to true internally without accepting or binding a distinct execution/producer provenance receipt. The checksum proves receipt integrity, not how the metric rows were generated.",
+    "governed_boundary": "typed_receipt_integrity_is_not_execution_provenance",
+    "scientific_operator_or_candidate_changed": false
+  },
+  "four_way_provenance": {
+    "user_requirement": [
+      "Keep user requirements, public-source facts, autonomous design, and pending/unknown separate.",
+      "Keep velocity_export_ready, visual_correspondence_verified, pde_validated, and paper_exact independent.",
+      "Do not relax the registered PDE thresholds, allow residual-defined free forcing, or permit amplitude collapse."
+    ],
+    "public_source_fact": [],
+    "autonomous_design": [
+      "PR #903's CanonicalQuadratureEvidence schema and checksum binding are repository-autonomous validation infrastructure.",
+      "This audit's fabricated metric-row witness is a mechanics/provenance witness only and is not Kokuno/OpenAI candidate evidence.",
+      "A future execution-provenance receipt may use any fail-closed schema that binds the real producer/run identity; this audit does not prescribe a paper-source format."
+    ],
+    "pending_unknown": [
+      "No real complete Kokuno black-box candidate is currently available for canonical 24/48/96 quadrature admission.",
+      "No real canonical 24/48/96 Kokuno execution receipt is currently registered here.",
+      "Independent producer/run provenance for future quadrature metric rows remains to be implemented or otherwise independently evidenced.",
+      "Kokuno pde_validated, visual correspondence, paper exactness, and OpenAI-field identity remain unverified."
+    ]
+  },
+  "required_claim_separation": {
+    "checksum_valid_receipt_may_claim": [
+      "the serialized receipt payload is internally checksum-consistent",
+      "the recorded candidate/contract/operator/protocol/ladder identities match the verifier's expected identities when the verifier accepts them",
+      "the recorded numerical rows pass the encoded numerical gate checks"
+    ],
+    "checksum_valid_receipt_may_not_claim_without_separate_execution_provenance": [
+      "the metric rows were actually produced by an independent canonical 24/48/96 quadrature run",
+      "the metric rows were independent of training or held-in model selection merely because the builder-set boolean is true",
+      "the convergence assessment was independently performed merely because the builder-set boolean is true",
+      "pde_validated is scientifically established from self-authored rows alone"
+    ]
+  },
+  "future_promotion_requirement": {
+    "execution_provenance_needed": true,
+    "minimum_binding_semantics": [
+      "exact candidate_sha256",
+      "exact physical_contract_sha256",
+      "exact validator/operator identity",
+      "registered quadrature orders 24/48/96",
+      "registered derivative ladder 0.02/0.01/0.005",
+      "registered validation times",
+      "producer or workflow/run identity distinct from the metric-row checksum itself",
+      "artifact or output digest covering the actual per-level numerical outputs",
+      "independence statement whose provenance is external to build_canonical_quadrature_evidence's hard-coded booleans"
+    ]
+  },
+  "canonical_cr001_invariants": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "divergence_max": 1e-5,
+    "divergence_L2": 1e-5,
+    "pde_residual_max": 1e-3,
+    "pde_residual_L2": 1e-3,
+    "residual_defined_free_forcing_allowed": false,
+    "amplitude_collapse_allowed": false,
+    "threshold_relaxation_allowed": false
+  },
+  "independent_truth_states": {
+    "canonical_eq45_velocity_export_ready": true,
+    "kokuno_real_canonical_quadrature_execution_verified": false,
+    "kokuno_pde_validated": false,
+    "visual_correspondence_verified": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  }
+}
