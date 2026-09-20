@@ -1,0 +1,95 @@
+name: agent7-st052m-fixed-radius-return-balance-audit
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_fixed_radius_return_balance_audit.py'
+      - 'experiments/root_st052/test_agent7_st052m_fixed_radius_return_balance_audit.py'
+      - '.github/workflows/agent7-st052m-fixed-radius-return-balance-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  fixed-radius-return-balance-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'pytest>=8,<10'
+      - name: Verify exact PR head checkout
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+      - name: Focused contract tests
+        run: python -m pytest -q -W error experiments/root_st052/test_agent7_st052m_fixed_radius_return_balance_audit.py
+      - name: Execute deterministic fixed-radius audit
+        run: |
+          mkdir -p outputs/agent7-st052m-fixed-radius-return-balance-audit
+          python experiments/root_st052/agent7_st052m_fixed_radius_return_balance_audit.py \
+            --out outputs/agent7-st052m-fixed-radius-return-balance-audit/report.json
+      - name: Verify truth boundary and routing
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-fixed-radius-return-balance-audit/report.json').read_text())
+          assert r['task_id']=='CR003-ST052M-FIXED-RADIUS-RETURN-BALANCE-AUDIT-106'
+          assert r['issue']==758
+          assert r['source_parent']=={'pr':750,'head':'376223a3bb2dae0d53756ea48da26937a95b6e58'}
+          assert r['candidate_velocity_changed'] is False
+          assert r['basis_dimension_changed'] is False
+          assert r['fresh_714_path_data_used'] is False
+          assert r['held_out_pde_residual_evaluated'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          assert r['numerical_gate']['passes'] is True
+          assert r['response_geometry']['rank']==2
+          assert r['decision']['radial_only_second_channel_can_move_return_debt_between_radii'] is False
+          assert r['decision']['add_second_radial_localized_channel_now'] is False
+          print('max_abs_finest_signed_integral=',r['numerical_gate']['max_abs_finest_signed_integral'])
+          print('max_medium_to_fine_change=',r['numerical_gate']['max_medium_to_fine_change'])
+          print('rank=',r['response_geometry']['rank'])
+          print('cosine=',r['response_geometry']['column_cosine'])
+          print('condition=',r['response_geometry']['condition_number'])
+          PY
+      - name: Publish compact receipt
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent7-fixed-radius-return-balance-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-fixed-radius-return-balance-audit/report.json').read_text())
+          g=r['response_geometry']; n=r['numerical_gate']; d=r['decision']
+          print('<!-- agent7-st052m-fixed-radius-return-balance-audit-receipt -->')
+          print('**Agent 7 fixed-radius compact return-balance audit (issue #758):**')
+          print()
+          print(f"- finest max |signed radial integral|: `{n['max_abs_finest_signed_integral']:.12g}`")
+          print(f"- medium->fine max change: `{n['max_medium_to_fine_change']:.12g}`")
+          print(f"- two-channel response rank/cosine/condition: `{g['rank']}` / `{g['column_cosine']:.9g}` / `{g['condition_number']:.9g}`")
+          print(f"- radial-only second channel can move return debt between radii: `{d['radial_only_second_channel_can_move_return_debt_between_radii']}`")
+          print()
+          print('This is an expression-capacity result for the compact vector-potential class only. It changes no velocity, consumes no fresh #714 paths, performs no PDE acceptance, and does not establish visual correspondence or exact OpenAI-field identity.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-fixed-radius-return-balance-receipt.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-fixed-radius-return-balance-audit
+          path: outputs/agent7-st052m-fixed-radius-return-balance-audit/
+          if-no-files-found: error
