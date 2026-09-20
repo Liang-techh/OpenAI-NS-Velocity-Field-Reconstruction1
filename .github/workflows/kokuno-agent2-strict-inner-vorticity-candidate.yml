@@ -1,0 +1,205 @@
+name: kokuno-agent2-strict-inner-vorticity-candidate
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_strict_inner_leading_oscillatory_vorticity_candidate.py'
+      - 'tests/test_constrained_kokuno_strict_inner_leading_oscillatory_vorticity_candidate.py'
+      - '.github/workflows/kokuno-agent2-strict-inner-vorticity-candidate.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Assert exact head
+        if: github.event_name == 'pull_request'
+        run: test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha }}"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+
+      - name: Focused warnings-as-errors regression
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_strict_inner_leading_oscillatory_vorticity_candidate.py
+
+      - name: Verify frozen parent and fetch exact Agent-1 runtime
+        run: |
+          test "$(git rev-parse 9cb3869b9cfd2d5b8dcb1da222df74d80e12d0c2:src/openai_ns_reconstruction/kokuno_strict_inner_leading_oscillatory_spatial_candidate.py)" = "276c943cd1e769c36d1615366266bf3b2c633040"
+          git fetch origin 300919075c07396e4e466f553be78eaae0707df2
+          git worktree add --detach "$RUNNER_TEMP/kokuno-a1-848" 300919075c07396e4e466f553be78eaae0707df2
+          test "$(git -C "$RUNNER_TEMP/kokuno-a1-848" rev-parse HEAD)" = "300919075c07396e4e466f553be78eaae0707df2"
+          test "$(git -C "$RUNNER_TEMP/kokuno-a1-848" rev-parse HEAD:src/openai_ns_reconstruction/kokuno_pa10_cartesian_center_transport_viscous.py)" = "5076ffa69748c2d7e68289a155b67288eab6dab4"
+
+      - name: Exact A1 plus A2 vorticity receipt
+        env:
+          A1_WORKTREE: ${{ runner.temp }}/kokuno-a1-848
+        run: |
+          python - <<'PY'
+          from __future__ import annotations
+          import hashlib
+          import json
+          import os
+          from pathlib import Path
+          import subprocess
+          import sys
+          import numpy as np
+
+          from openai_ns_reconstruction.kokuno_strict_inner_leading_oscillatory_vorticity_candidate import (
+              PARENT_AGENT2_HEAD,
+              KokunoStrictInnerLeadingOscillatoryVorticityCandidate,
+              public_contract,
+          )
+
+          a1 = Path(os.environ['A1_WORKTREE'])
+          server = r'''
+          import json, sys
+          import numpy as np
+          from openai_ns_reconstruction.kokuno_pa10_cartesian_center_transport_viscous import KokunoPA10CartesianCenterTransportViscous
+          field = KokunoPA10CartesianCenterTransportViscous()
+          for line in sys.stdin:
+              q=json.loads(line); op=q['op']
+              if op=='meta':
+                  out={'field_sha256':field.field_sha256,'temporal_derivative_sha256':field.temporal_derivative_sha256,'spatial_derivative_sha256':field.spatial_derivative_sha256}
+              elif op=='forward':
+                  raw=field.field.cartesian_from_similarity(np.asarray(q['X']),np.asarray(q['eta']),np.asarray(q['t']),np.asarray(q['theta']))
+                  out={k:np.asarray(raw[k],dtype=float).tolist() for k in ('x','y','z','t')}
+              elif op in ('velocity','velocity_dt'):
+                  raw=getattr(field,op)(np.asarray(q['x']),np.asarray(q['y']),np.asarray(q['z']),np.asarray(q['t']))
+                  out={'value':np.asarray(raw,dtype=float).tolist()}
+              elif op=='velocity_jacobian':
+                  raw=field.spatial.velocity_jacobian(np.asarray(q['x']),np.asarray(q['y']),np.asarray(q['z']),np.asarray(q['t']))
+                  out={'value':np.asarray(raw,dtype=float).tolist()}
+              else:
+                  raise RuntimeError(op)
+              print(json.dumps(out,sort_keys=True),flush=True)
+          '''
+          env=os.environ.copy(); env['PYTHONPATH']=str(a1/'src')
+          proc=subprocess.Popen([sys.executable,'-u','-c',server],cwd=a1,env=env,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,bufsize=1)
+
+          def ask(payload):
+              proc.stdin.write(json.dumps(payload,separators=(',',':'))+'\n'); proc.stdin.flush()
+              line=proc.stdout.readline()
+              if not line:
+                  raise RuntimeError(proc.stderr.read())
+              return json.loads(line)
+
+          meta=ask({'op':'meta'})
+          class Backend:
+              field_sha256=meta['field_sha256']
+              temporal_derivative_sha256=meta['temporal_derivative_sha256']
+              spatial_derivative_sha256=meta['spatial_derivative_sha256']
+              @staticmethod
+              def _arr(x,y,z,t):
+                  return np.broadcast_arrays(np.asarray(x,dtype=float),np.asarray(y,dtype=float),np.asarray(z,dtype=float),np.asarray(t,dtype=float))
+              def _call(self,op,x,y,z,t):
+                  x,y,z,t=self._arr(x,y,z,t)
+                  return np.asarray(ask({'op':op,'x':x.tolist(),'y':y.tolist(),'z':z.tolist(),'t':t.tolist()})['value'],dtype=float)
+              def velocity(self,x,y,z,t): return self._call('velocity',x,y,z,t)
+              def velocity_dt(self,x,y,z,t): return self._call('velocity_dt',x,y,z,t)
+              def velocity_jacobian(self,x,y,z,t): return self._call('velocity_jacobian',x,y,z,t)
+
+          X=np.asarray([.168,.183,.198,.213,.228,.243,.258,.273,.288,.298,.221,.266])
+          eta=np.asarray([-.29,-.23,-.17,-.11,-.05,.01,.07,.13,.19,.25,.28,.15])
+          tt=np.asarray([.468,.480,.492,.504,.516,.528,.540,.532,.520,.508,.496,.484])
+          theta=np.asarray([.27,.73,1.19,1.65,2.11,2.57,3.03,-2.79,-2.27,-1.75,-1.23,-.71])
+          f=ask({'op':'forward','X':X.tolist(),'eta':eta.tolist(),'t':tt.tolist(),'theta':theta.tolist()})
+          x=np.asarray(f['x']); y=np.asarray(f['y']); z=np.asarray(f['z']); t=np.asarray(f['t'])
+
+          candidate=KokunoStrictInnerLeadingOscillatoryVorticityCandidate(Backend())
+          production=np.asarray(candidate.vorticity(x,y,z,t),dtype=float)
+
+          def fd4_axis(axis,h):
+              coords=[x,y,z]; vals={}
+              for k in (-2,-1,1,2):
+                  shifted=[np.array(v,copy=True) for v in coords]
+                  shifted[axis]=shifted[axis]+k*h
+                  vals[k]=candidate.velocity(shifted[0],shifted[1],shifted[2],t)
+              return (vals[-2]-8*vals[-1]+8*vals[1]-vals[2])/(12*h)
+
+          def curl_fd4(h):
+              J=np.stack([fd4_axis(axis,h) for axis in range(3)],axis=-1)
+              return np.stack((J[...,2,1]-J[...,1,2],J[...,0,2]-J[...,2,0],J[...,1,0]-J[...,0,1]),axis=-1)
+
+          def rms(a):
+              a=np.asarray(a,dtype=float); return float(np.sqrt(np.mean(a*a)))
+          def rel_rms(a,b): return rms(np.asarray(a)-np.asarray(b))/max(rms(b),1e-30)
+          def rel_max(a,b):
+              e=np.linalg.norm(np.asarray(a)-np.asarray(b),axis=-1); s=np.linalg.norm(np.asarray(b),axis=-1)
+              return float(np.max(e))/max(float(np.max(s)),1e-30)
+
+          steps=(4e-3,2e-3,1e-3)
+          refs=[curl_fd4(h) for h in steps]
+          coarse=rms(refs[0]-refs[1]); fine=rms(refs[1]-refs[2]); refinement=coarse/max(fine,1e-30)
+          fine_rel_rms=rel_rms(refs[-1],production); fine_rel_max=rel_max(refs[-1],production)
+          scalar=np.stack([candidate.vorticity(x[i],y[i],z[i],t[i]) for i in range(x.size)],axis=0)
+          batch_scalar=float(np.max(np.abs(scalar-production)))
+
+          Path('artifacts').mkdir(exist_ok=True)
+          manifest_path=Path('artifacts/kokuno_agent2_strict_inner_vorticity_candidate_manifest.json')
+          candidate.save_manifest(manifest_path)
+          rebound=KokunoStrictInnerLeadingOscillatoryVorticityCandidate.load_manifest(Backend(),manifest_path)
+          replay=float(np.max(np.abs(rebound.vorticity(x,y,z,t)-production)))
+
+          failed=[]
+          if fine>2e-10 and refinement<6.0: failed.append('fd4_vorticity_refinement')
+          if fine_rel_rms>5e-3: failed.append('finest_relative_rms')
+          if fine_rel_max>1e-2: failed.append('finest_relative_sampled_max')
+          if rms(production)<1e-10: failed.append('vorticity_nontrivial')
+          if batch_scalar>1e-10: failed.append('batch_scalar_vorticity')
+          if replay!=0.0: failed.append('manifest_replay')
+          contract=public_contract()
+          if contract['forbidden_vorticity_inputs_present']: failed.append('forbidden_inputs')
+          truth=contract['truth_boundary']
+          if truth['three_resolution_morphology_verified'] or truth['whole_domain_vorticity_morphology_verified'] or truth['pde_validated']: failed.append('truth_boundary_promotion')
+
+          receipt={
+              'schema':'kokuno-a2-strict-inner-vorticity-candidate-receipt-v1',
+              'exact_head':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),
+              'parent_agent2_head':PARENT_AGENT2_HEAD,
+              'sample_count':int(x.size),
+              'source_X_range':[float(X.min()),float(X.max())],
+              'fd4_steps':list(steps),
+              'successive_difference_rms':[coarse,fine],
+              'refinement_ratio':refinement,
+              'finest_relative_rms':fine_rel_rms,
+              'finest_relative_sampled_max':fine_rel_max,
+              'production_vorticity_rms':rms(production),
+              'production_vorticity_component_rms':[rms(production[:,i]) for i in range(3)],
+              'batch_scalar_abs_max':batch_scalar,
+              'manifest_replay_abs_max':replay,
+              'vorticity_sha256':candidate.vorticity_sha256,
+              'scientific_scope':'strict-inner vorticity consistency only; not whole-domain morphology or NS residual',
+              'failed_gates':failed,
+              'passed':not failed,
+          }
+          raw=json.dumps(receipt,sort_keys=True,separators=(',',':'),allow_nan=False)
+          receipt['receipt_sha256']=hashlib.sha256(raw.encode()).hexdigest()
+          Path('artifacts/kokuno_agent2_strict_inner_vorticity_candidate_receipt.json').write_text(json.dumps(receipt,indent=2,sort_keys=True)+'\n')
+          print(json.dumps(receipt,indent=2,sort_keys=True))
+          proc.terminate()
+          if failed: raise SystemExit('failed gates: '+', '.join(failed))
+          PY
+
+      - name: Upload vorticity receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent2-strict-inner-vorticity-candidate
+          path: |
+            artifacts/kokuno_agent2_strict_inner_vorticity_candidate_manifest.json
+            artifacts/kokuno_agent2_strict_inner_vorticity_candidate_receipt.json
