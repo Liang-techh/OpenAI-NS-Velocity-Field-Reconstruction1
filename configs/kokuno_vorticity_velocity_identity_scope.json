@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "task": "CR002-KOKUNO-VORTICITY-VELOCITY-IDENTITY-081",
+  "status": "governance_only_not_scientific_admission",
+  "scope": "strict-inner Kokuno vorticity artifact identity versus velocity-field identity",
+  "audited_upstream": {
+    "pr": 884,
+    "head": "1d947d4c71812b59b6729befb2be9c46914852cb",
+    "source_path": "src/openai_ns_reconstruction/kokuno_a5_strict_inner_vorticity_artifact_ingest_contract.py",
+    "source_git_blob_sha1": "c5633e309990c4627c3a2fa858c011c5cb308cb6",
+    "agent2_vorticity_pr": 881,
+    "agent2_head": "ded8c88dd03b784368cf1a30601faf76a3682c64",
+    "agent4_audit_pr": 883,
+    "agent4_head": "772acaced47beb8d6d7cc4745833cbde06f10940"
+  },
+  "canonical_cr001_binding": {
+    "path": "configs/constraints.json",
+    "git_blob_sha1": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "divergence_max": 1e-5,
+    "divergence_L2": 1e-5,
+    "pde_residual_max": 1e-3,
+    "pde_residual_L2": 1e-3,
+    "residual_defined_pointwise_free_force_allowed": false,
+    "amplitude_collapse_allowed": false,
+    "post_hoc_threshold_relaxation_allowed": false
+  },
+  "provenance_classes": {
+    "user_requirement": [
+      "the primary deliverable is an explicit callable and saveable velocity(x,y,z,t)->[u,v,w]",
+      "velocity delivery, visual correspondence, PDE validation and paper/OpenAI exactness are independent states",
+      "a callable velocity must not be relabeled as the exact OpenAI field without independent public evidence"
+    ],
+    "public_source_fact": [
+      "the registered Kokuno route uses the corrected public reader only as structural provenance for the upstream PA.10 / localized complete-curl organization",
+      "no public OpenAI numerical velocity coefficients or hidden field identity are introduced by this audit"
+    ],
+    "autonomous_design": [
+      "Agent-2 PR 881 exposes vorticity as curl of its registered strict-inner velocity via the inherited spatial Jacobian",
+      "Agent-2 and Agent-4 finite-difference curl consistency protocols and their numerical gates are repository validation designs",
+      "vorticity_sha256 and manifest identity layering are repository artifact designs",
+      "the local same-curl witness in this contract is a mechanics-only repository witness"
+    ],
+    "pending_unknown": [
+      "corrected/global Kokuno leading velocity and outer join",
+      "global boundary/support data sufficient to reconstruct a velocity uniquely from vorticity/divergence",
+      "whole-domain vorticity morphology",
+      "matched pressure and preregistered restricted forcing",
+      "complete held-out NS residual",
+      "visual correspondence to the public OpenAI velocity-field visualization",
+      "paper-exact or exact OpenAI-field identity"
+    ]
+  },
+  "identity_boundary": {
+    "vorticity_surface_registered": true,
+    "vorticity_is_derived_from_registered_velocity_jacobian": true,
+    "vorticity_sha256_is_velocity_candidate_identity": false,
+    "matching_vorticity_alone_identifies_velocity": false,
+    "matching_vorticity_and_divergence_locally_identifies_velocity_without_global_boundary_data": false,
+    "strict_inner_vorticity_consistency_can_promote_whole_domain_velocity_identity": false,
+    "strict_inner_vorticity_consistency_can_promote_visual_correspondence": false,
+    "strict_inner_vorticity_consistency_can_promote_pde_validation": false,
+    "velocity_identity_must_remain_bound_to_the_velocity_artifact_identity": true
+  },
+  "mechanics_witness": {
+    "classification": "autonomous_design_mechanics_only",
+    "domain": "local Cartesian neighborhood containing the axis",
+    "field_A": "u_A(x,y,z)=(-y/2, x/2, 0)",
+    "field_B": "u_B(x,y,z)=(-y/2, x/2, c), c=0.3",
+    "axisymmetry": "both are axisymmetric with swirl and axis-regular",
+    "divergence_A": 0.0,
+    "divergence_B": 0.0,
+    "curl_A": [0.0, 0.0, 1.0],
+    "curl_B": [0.0, 0.0, 1.0],
+    "velocity_difference": "u_B-u_A=(0,0,0.3)",
+    "conclusion": "equal local vorticity, even together with equal local divergence, does not determine the local velocity unless the missing global/boundary/gauge information is supplied",
+    "real_kokuno_source_claim": false,
+    "openai_source_claim": false
+  },
+  "route_state": {
+    "kokuno_strict_inner_velocity_surface_registered": true,
+    "kokuno_strict_inner_vorticity_surface_registered": true,
+    "kokuno_velocity_export_ready": false,
+    "kokuno_visual_correspondence_verified": false,
+    "kokuno_pde_validated": false,
+    "kokuno_paper_exact": false,
+    "kokuno_openai_field_identified": false,
+    "canonical_eq45_velocity_export_ready_unaffected": true
+  },
+  "forbidden_promotions": [
+    "vorticity consistency -> velocity-field identity",
+    "vorticity SHA -> velocity candidate SHA",
+    "local vorticity+divergence agreement -> unique global velocity",
+    "strict-inner curl audit -> whole-domain morphology validation",
+    "strict-inner curl audit -> visual correspondence",
+    "strict-inner curl audit -> PDE validation",
+    "visual vorticity resemblance -> exact OpenAI field",
+    "pending Kokuno PDE work -> blocker for the separately governed callable Eq45 delivery"
+  ]
+}
