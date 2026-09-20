@@ -354,6 +354,10 @@ class KokunoPA10ReferenceContinuationCollar:
                 raise RuntimeError("natural F must stay positive in transition")
             y = np.log(xt / self.X_0)
             gate = 1.0 - smooth_step((y - SELECTED_T1) / SELECTED_T1)
+            # The public flat step has zero right-end jet.  Force the exact
+            # serialized collar endpoint to that mathematical value instead
+            # of leaving it to log/exp roundoff around s=1.
+            gate = np.where(xt >= self.X_2, 0.0, gate)
             F_X[transition_mask] = (
                 ref["F_reference"]
                 * gate
