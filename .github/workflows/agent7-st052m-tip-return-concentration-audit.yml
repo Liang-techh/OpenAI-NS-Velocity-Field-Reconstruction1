@@ -1,0 +1,98 @@
+name: agent7-st052m-tip-return-concentration-audit
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_tip_return_concentration_audit.py'
+      - 'experiments/root_st052/test_agent7_st052m_tip_return_concentration_audit.py'
+      - '.github/workflows/agent7-st052m-tip-return-concentration-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  tip-return-concentration-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'pytest>=8,<10'
+      - name: Verify exact PR head checkout
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+      - name: Focused contract tests
+        run: python -m pytest -q -W error experiments/root_st052/test_agent7_st052m_tip_return_concentration_audit.py
+      - name: Execute deterministic concentration audit
+        run: |
+          mkdir -p outputs/agent7-st052m-tip-return-concentration-audit
+          python experiments/root_st052/agent7_st052m_tip_return_concentration_audit.py \
+            --out outputs/agent7-st052m-tip-return-concentration-audit/report.json
+      - name: Verify truth boundary and routing
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-tip-return-concentration-audit/report.json').read_text())
+          assert r['task_id']=='CR003-ST052M-TIP-RETURN-CONCENTRATION-AUDIT-104'
+          assert r['issue']==749
+          assert r['source_nonlinear_pr']=={'pr':740,'head':'21019df839557e64b8d8689f68cdf8fc685a3a36'}
+          assert r['stability']['passes'] is True
+          assert r['candidate_velocity_changed'] is False
+          assert r['basis_dimension_changed'] is False
+          assert r['second_poloidal_basis_added'] is False
+          assert r['fresh_714_path_data_used'] is False
+          assert r['held_out_pde_residual_evaluated'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          assert r['decision']['increase_inner_exponent_again_justified_now'] is False
+          c=r['finest_comparison']; d=r['decision']
+          print('concentrated=',d['return_flow_concentrated_by_reshape'])
+          print('collar_reduction=',c['return_collar_reduction_fraction'])
+          print('outward_fraction_change=',c['outward_squared_response_fraction_absolute_change'])
+          print('sharpness_ratio=',c['normalized_derivative_sharpness_ratio'])
+          print('peak_ratio=',c['normalized_peak_response_ratio'])
+          print('profile_cosine=',c['profile_cosine'])
+          PY
+      - name: Publish compact receipt
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent7-return-concentration-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-tip-return-concentration-audit/report.json').read_text())
+          c=r['finest_comparison']; b=c['baseline_p4']; n=c['reshaped_p9']; d=r['decision']
+          print('<!-- agent7-st052m-tip-return-concentration-audit-receipt -->')
+          print('**Agent 7 p=9 return-flow concentration audit (issue #749):**')
+          print()
+          print(f"- return collar: p4 `{b['return_collar_thickness']:.9g}` -> p9 `{n['return_collar_thickness']:.9g}`; reduction `{c['return_collar_reduction_fraction']:.3%}`")
+          print(f"- outward squared-response fraction: `{b['outward_squared_response_fraction']:.9g}` -> `{n['outward_squared_response_fraction']:.9g}`")
+          print(f"- normalized derivative sharpness ratio p9/p4: `{c['normalized_derivative_sharpness_ratio']:.9g}`")
+          print(f"- normalized peak-response ratio p9/p4: `{c['normalized_peak_response_ratio']:.9g}`")
+          print(f"- p4/p9 L2 response cosine: `{c['profile_cosine']:.9g}`")
+          print(f"- return flow concentrated by reshape: `{d['return_flow_concentrated_by_reshape']}`")
+          print()
+          print('This is a representation diagnostic only. It changes no velocity, uses no fresh #714 path data, does no PDE acceptance, and does not establish visual correspondence or exact OpenAI-field identity.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-return-concentration-receipt.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-tip-return-concentration-audit
+          path: outputs/agent7-st052m-tip-return-concentration-audit/
+          if-no-files-found: error
