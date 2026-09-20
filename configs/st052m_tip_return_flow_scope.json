@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "contract_id": "cr002-st052m-tip-return-flow-scope-v1",
+  "status": "governance_scope_for_exact_723_head",
+  "audited_upstream": {
+    "pull_request": 723,
+    "head_sha": "1b16147b93e7b5279c833e8629e10aff1ef4f5a6",
+    "source_candidate_pull_request": 701,
+    "source_candidate_head_sha": "e3ecc8654f2c9a2324265bbd01df596b4e503404",
+    "fresh_path_pull_request": 714,
+    "fresh_path_scope_governance_pull_request": 721,
+    "upstream_exact_head_ci_passed_at_contract_freeze": false
+  },
+  "source_classification": {
+    "allowed_classes": [
+      "user_requirement",
+      "public_source_fact",
+      "autonomous_design",
+      "pending_unknown"
+    ],
+    "items": [
+      {
+        "item": "callable_saveable_loadable_velocity_and_independent_delivery_visual_pde_exact_states",
+        "class": "user_requirement"
+      },
+      {
+        "item": "openai_public_qualitative_inward_spiraling_and_axial_elongation",
+        "class": "public_source_fact"
+      },
+      {
+        "item": "claim_that_every_point_of_the_compact_tip_lobe_has_inward_radial_velocity",
+        "class": "pending_unknown"
+      },
+      {
+        "item": "701_tip_local_compact_odd_poloidal_channel_formula_support_orientation_and_alpha_rule",
+        "class": "autonomous_design"
+      },
+      {
+        "item": "723_sign_polynomial_root_and_compact_lobe_return_flow_audit_for_the_701_correction_channel",
+        "class": "autonomous_design"
+      },
+      {
+        "item": "714_fresh_tip_seed_geometry_and_directional_gate",
+        "class": "autonomous_design"
+      },
+      {
+        "item": "hidden_openai_velocity_coefficients_camera_frame_time_mapping_and_full_numeric_field",
+        "class": "pending_unknown"
+      },
+      {
+        "item": "whether_one_channel_axial_envelope_reshaping_can_concentrate_return_flow_without_losing_existing_guards",
+        "class": "pending_unknown"
+      }
+    ]
+  },
+  "single_channel_scope": {
+    "vector_potential": "A=(-y*f,x*f,0)",
+    "scalar": "f=R(r^2)*z*B(z^2)",
+    "radial_component": "C_r=-r*f_z",
+    "axial_q_support": [1.0, 3.24],
+    "axial_abs_z_support": [1.0, 1.8],
+    "sign_polynomial": "N(q)=-17*q^2+(954/25)*q-(81/25)",
+    "physical_abs_z_sign_change_expected": 1.46844135228393,
+    "fresh_714_tip_abs_z": 1.25,
+    "outer_return_flow_spot_abs_z": 1.6,
+    "compact_lobe_integral_identity": "integral(C_r dz)=-r*(f(z_outer)-f(z_inner))=0",
+    "correction_channel_has_inward_and_outward_radial_subbands": true,
+    "nontrivial_single_compact_correction_channel_can_be_strictly_inward_on_entire_connected_lobe": false,
+    "fresh_714_tip_seed_lies_in_analytic_inward_subband": true
+  },
+  "scope_limits": {
+    "obstruction_applies_to_701_correction_channel": true,
+    "obstruction_proves_total_701_child_radial_velocity_has_return_flow": false,
+    "obstruction_proves_any_divergence_free_compact_field_requires_same_return_flow_pattern": false,
+    "fresh_714_pass_may_support_local_post_freeze_directional_generalization": true,
+    "fresh_714_pass_may_support_whole_tip_support_inwardness": false,
+    "fresh_714_pass_may_support_global_visual_correspondence": false,
+    "return_flow_obstruction_is_a_pde_acceptance_result": false,
+    "return_flow_obstruction_is_a_public_openai_field_identity_result": false
+  },
+  "promotion_rules": {
+    "whole_tip_support_inwardness_requires_direct_total_field_evidence_over_the_claimed_support": true,
+    "full_candidate_return_flow_claim_requires_a_total_velocity_argument_not_correction_only": true,
+    "arbitrary_divergence_free_field_obstruction_requires_a_separate_theorem": true,
+    "visual_correspondence_requires_independent_visual_evidence": true,
+    "pde_validation_requires_cr001_held_out_acceptance": true,
+    "fresh_path_evidence_must_not_be_relabelled_as_cr001_pde_validation": true
+  },
+  "claim_states": {
+    "full_candidate_tip_support_inwardness_verified": false,
+    "full_candidate_return_flow_required": false,
+    "arbitrary_divergence_free_return_flow_theorem_proved": false,
+    "production_candidate_selected": false,
+    "velocity_export_ready_promoted_by_this_audit": false,
+    "visualization_ready_promoted_by_this_audit": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "source_correspondence_verified": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "cr001_lock": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_bounds": {"a": [0.0, 10.0], "c": [0.0, 10.0]},
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "divergence_max": 1e-5,
+    "divergence_L2": 1e-5,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001,
+    "residual_defined_or_pointwise_free_force_allowed": false,
+    "amplitude_collapse_success_allowed": false,
+    "threshold_relaxation_allowed": false
+  }
+}
