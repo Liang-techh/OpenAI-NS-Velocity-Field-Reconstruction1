@@ -1,0 +1,91 @@
+name: kokuno-agent1-pa10-five-moment-repair
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a1-five-moment-repair-system-076
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_pa10_five_moment_repair_system.py"
+      - "tests/test_kokuno_pa10_five_moment_repair_system.py"
+      - ".github/workflows/kokuno-agent1-pa10-five-moment-repair.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent1-pa10-five-moment-repair-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  five-moment-repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify exact checked-out head
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          echo "exact_head=$EXPECTED_HEAD"
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile executable PA14 repair system
+        run: |
+          python -m compileall -q \
+            src/openai_ns_reconstruction/kokuno_pa10_five_moment_repair_system.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_pa10_five_moment_repair_system.py
+      - name: Emit exact PA14/local-inversion receipt
+        run: |
+          python - <<'PY'
+          import json
+          import numpy as np
+          from openai_ns_reconstruction.kokuno_pa10_five_moment_repair_system import (
+              COEFFICIENT_TRUST_RADIUS,
+              KokunoPA10FiveMomentRepairSystem,
+          )
+
+          repair = KokunoPA10FiveMomentRepairSystem()
+          report = repair.report()
+          linear = repair.linearized_system(0.3)
+          known = np.array([8e-7, -6e-7, 5e-7, -4e-7, 3e-7])
+          target = repair.moment_increment(known, 0.3)
+          solved = repair.solve_moment_delta(target, 0.3)
+          truth = report['truth_boundary']
+
+          assert linear['rank'] == 5
+          assert linear['condition_number_2'] < 3e5
+          assert solved['converged'] is True
+          assert solved['residual_inf'] <= 2e-13
+          assert float(np.max(np.abs(solved['coefficients']))) < COEFFICIENT_TRUST_RADIUS
+          assert truth['public_pa14_exact_moment_increment_map_executable'] is True
+          assert truth['repository_autonomous_bump_shapes_materialized'] is True
+          assert truth['source_bump_shapes_numerically_identified'] is False
+          assert truth['actual_upstream_five_moment_discrepancy_materialized'] is False
+          assert truth['actual_inner_to_outer_bridge_materialized'] is False
+          assert truth['outer_global_leading_velocity_materialized'] is False
+          assert truth['heldout_ns_residual_assessed'] is False
+          assert truth['pde_validated'] is False
+          assert truth['paper_exact'] is False
+          assert truth['openai_field_identified'] is False
+
+          print(json.dumps({
+              'semantic_sha256': report['semantic_sha256'],
+              'linearized_rank_eta_0p3': linear['rank'],
+              'linearized_condition_number_eta_0p3': linear['condition_number_2'],
+              'manufactured_target': target.tolist(),
+              'recovered_coefficients': solved['coefficients'].tolist(),
+              'manufactured_residual_inf': solved['residual_inf'],
+              'newton_iterations': solved['iterations'],
+          }, indent=2, sort_keys=True))
+          PY
