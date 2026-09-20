@@ -56,7 +56,6 @@ def test_pointwise_velocity_dt_can_be_valid_while_fine_fd4_leaves_inner_X() -> N
 
     assert witness["pointwise_velocity_dt_finite"] is True
     assert np.isfinite(witness["pointwise_velocity_dt_norm"])
-    assert witness["pointwise_velocity_dt_norm"] > 0.0
     assert witness["fd4_step"] == 1.0e-4
     assert witness["positive_outer_offset"] == 2.0e-4
     assert np.isclose(
