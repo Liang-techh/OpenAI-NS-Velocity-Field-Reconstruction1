@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "task_id": "CR002-KOKUNO-PRESSURE-INCREMENT-GRADIENT-SCOPE-085",
+  "scope": "reference pressure increment versus absolute/matched Cartesian pressure-gradient identity",
+  "audited_upstream": {
+    "agent5_pr": 911,
+    "agent5_head": "dd613c3636391f23a8fc8958af6f17d024482f5f",
+    "agent5_source_path": "src/openai_ns_reconstruction/kokuno_a5_reference_pressure_increment_ingest_contract.py",
+    "agent5_source_blob": "c8c23490c62c981440e7e725f8345335df3e59f9",
+    "agent1_pr": 907,
+    "agent1_head": "3f43931cec1fc762678a5a8134adfceaf7edfa81",
+    "agent1_source_blob": "4704fed4271da2c6070110a6935d2f33f7932f56",
+    "agent4_pr": 910,
+    "agent4_head": "68a9ee155f3e4e7f50ff625778d3fbe21d4021cb",
+    "agent4_source_blob": "027abf88fa1a916fcde3c6d818b19a9ff143c445",
+    "canonical_constraints_path": "configs/constraints.json",
+    "canonical_constraints_blob": "6c559e42895a606e2ef025ade4cb448966d75814"
+  },
+  "provenance": {
+    "user_requirement": [
+      "keep velocity delivery, visual correspondence, PDE validation, paper exactness, and OpenAI-field identity as independent states",
+      "keep user requirements, public-source facts, autonomous design, and pending/unknown information separate"
+    ],
+    "public_source_fact": [
+      "C_p_reference(X,eta)=Pi_r(X,eta)-Pi_0(eta)",
+      "partial_X C_p_reference=F_r^2=E_r^2/(2X)",
+      "Pi_0(eta) is an outer-construction datum and is not determined by the local radial pressure-increment identity alone"
+    ],
+    "autonomous_design": [
+      "calculus identity grad p = C_p,X grad X + (C_p,eta + Pi_0'(eta)) grad eta for a two-coordinate pressure representation",
+      "mechanics witness X=x, eta=z with p_A=X^2 and p_B=X^2+0.3 eta",
+      "mutation regressions that reject pressure-increment-to-grad-p claim promotion"
+    ],
+    "pending_unknown": [
+      "numerical materialization of the source-consistent Pi_0(eta)",
+      "Pi_0'(eta) on the eventual source-consistent pressure representation",
+      "the full source-to-Cartesian coordinate pullback needed for matched global grad p",
+      "matched/global pressure on a complete Kokuno candidate",
+      "complete Kokuno velocity-pressure-forcing API and full-NS validation"
+    ]
+  },
+  "representation_rules": {
+    "pressure_increment_identity_is_absolute_pressure_identity": false,
+    "pressure_increment_derivative_audit_authorizes_cartesian_grad_p": false,
+    "eta_dependent_axis_datum_is_gradient_gauge": false,
+    "spatially_constant_pressure_addition_leaves_spatial_gradient_unchanged": true,
+    "canonical_pressure_gauge_and_boundary_still_must_be_satisfied": true,
+    "Pi0_eta_required_for_full_eta_pressure_derivative": true,
+    "coordinate_pullback_required_for_cartesian_grad_p": true,
+    "matched_global_pressure_required_before_complete_ns_residual": true,
+    "reference_increment_failure_blocks_existing_callable_eq45_delivery": false
+  },
+  "mechanics_witness": {
+    "classification": "autonomous_design",
+    "coordinate_choice": "X=x, eta=z",
+    "alpha": 0.3,
+    "pressure_A": "p_A(X,eta)=X^2",
+    "pressure_B": "p_B(X,eta)=X^2+alpha*eta",
+    "axis_datum_A": "Pi0_A(eta)=0",
+    "axis_datum_B": "Pi0_B(eta)=alpha*eta",
+    "shared_increment": "C_p(X,eta)=X^2",
+    "shared_increment_X_derivative": "2X",
+    "shared_increment_eta_derivative": "0",
+    "cartesian_gradient_A": "(2x,0,0)",
+    "cartesian_gradient_B": "(2x,0,alpha)",
+    "claim": "identical C_p and identical C_p derivatives do not determine identical Cartesian pressure gradients when the missing axis datum may depend on eta",
+    "candidate_evidence": false,
+    "kokuno_or_openai_parameter_evidence": false
+  },
+  "cr001_invariants": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "pressure_gauge": "p=0 outside compact support",
+    "forcing_mode": "restricted_two_parameter_family",
+    "residual_defined_pointwise_free_force_forbidden": true,
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "momentum_sampled_max_gate": 0.001,
+    "momentum_volume_l2_gate": 0.001,
+    "divergence_sampled_max_gate": 0.00001,
+    "divergence_volume_l2_gate": 0.00001,
+    "boundary_pressure_max_gate": 1e-10,
+    "amplitude_collapse_forbidden": true,
+    "post_hoc_threshold_relaxation_forbidden": true
+  },
+  "truth_state": {
+    "kokuno_pressure_increment_registered": true,
+    "kokuno_absolute_axis_pressure_materialized": false,
+    "kokuno_matched_global_pressure_materialized": false,
+    "kokuno_cartesian_pressure_gradient_ready": false,
+    "kokuno_complete_candidate_api_ready": false,
+    "kokuno_pde_validated": false,
+    "visual_correspondence_verified": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false,
+    "canonical_eq45_velocity_delivery_remains_independent": true
+  }
+}
