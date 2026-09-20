@@ -1,0 +1,63 @@
+name: agent9-st054-grid-export
+
+on:
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/st054_grid_export.py"
+      - "tests/test_st054_grid_export.py"
+      - ".github/workflows/agent9-st054-grid-export.yml"
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install package
+        run: python -m pip install -e ".[dev]"
+      - name: Focused tests
+        run: python -m pytest -q tests/test_st054_grid_export.py
+      - name: Export frozen visualization grids
+        run: |
+          rm -rf outputs/agent9_st054_grid_export
+          python -m openai_ns_reconstruction.st054_grid_export \
+            --model ST054-Q2 \
+            --grid-size 33 \
+            --times 0.25 0.375 0.5 0.625 0.75 \
+            --output-dir outputs/agent9_st054_grid_export
+          python -m openai_ns_reconstruction.st054_grid_export \
+            --model ST054-M3 \
+            --grid-size 33 \
+            --times 0.25 0.375 0.5 0.625 0.75 \
+            --output-dir outputs/agent9_st054_grid_export
+      - name: Fail closed on truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          roots = sorted(Path("outputs/agent9_st054_grid_export").glob("*.json"))
+          assert len(roots) == 2, roots
+          for path in roots:
+              data = json.loads(path.read_text())
+              truth = data["truth_boundary"]
+              assert data["sampling_only"] is True
+              assert data["grid_interpolation_used"] is False
+              assert truth["pde_validated"] is False
+              assert truth["visualization_ready"] is False
+              assert truth["visual_correspondence_verified"] is False
+              assert truth["source_correspondence_verified"] is False
+              assert truth["paper_exact"] is False
+              assert truth["openai_field_identified"] is False
+              assert truth["blowup_proved"] is False
+          PY
+      - name: Upload sampled-grid handoff
+        uses: actions/upload-artifact@v4
+        with:
+          name: ST054-sampled-grid-NPZ-MAT
+          path: outputs/agent9_st054_grid_export/
+          if-no-files-found: error
