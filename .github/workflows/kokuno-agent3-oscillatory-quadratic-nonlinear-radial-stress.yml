@@ -1,0 +1,89 @@
+name: kokuno-agent3-oscillatory-quadratic-nonlinear-radial-stress
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_oscillatory_quadratic_nonlinear_radial_stress.py'
+      - 'tests/test_constrained_kokuno_oscillatory_quadratic_nonlinear_radial_stress.py'
+      - '.github/workflows/kokuno-agent3-oscillatory-quadratic-nonlinear-radial-stress.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out exact event head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Assert exact Agent-3 parent and radial-operator identities
+        if: github.event_name == 'pull_request'
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha }}"
+          git merge-base --is-ancestor 278b98dbda2f8de8b21a86f7e7e4740939387dd2 HEAD
+          test "$(git rev-parse HEAD:src/openai_ns_reconstruction/kokuno_oscillatory_nonlinear_mean_attribution.py)" = 'ff3bb9d29ecab1c8469dc2599ce67dcc9cc13805'
+          test "$(git rev-parse HEAD:src/openai_ns_reconstruction/kokuno_strict_inner_transport_first_cell_polynomial_radial_stress.py)" = '19f8cf9fa909fef7be2cf53c84df269e696b647c'
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install exact Agent-3 head
+        run: python -m pip install -e '.[dev]'
+
+      - name: Focused regressions
+        run: |
+          python -m py_compile \
+            src/openai_ns_reconstruction/kokuno_oscillatory_quadratic_nonlinear_radial_stress.py \
+            tests/test_constrained_kokuno_oscillatory_quadratic_nonlinear_radial_stress.py
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_oscillatory_nonlinear_mean_attribution.py \
+            tests/test_constrained_kokuno_oscillatory_transport_radial_stress.py \
+            tests/test_constrained_kokuno_oscillatory_quadratic_nonlinear_radial_stress.py
+
+      - name: Generate mechanics-only radial-stress receipt
+        run: |
+          mkdir -p artifacts/kokuno_agent3
+          python -m openai_ns_reconstruction.kokuno_oscillatory_quadratic_nonlinear_radial_stress \
+            --output artifacts/kokuno_agent3/oscillatory_quadratic_nonlinear_radial_stress_mechanics.json
+
+      - name: Fail closed on scientific promotion
+        run: |
+          python - <<'PY'
+          from openai_ns_reconstruction.kokuno_oscillatory_quadratic_nonlinear_radial_stress import truth_boundary
+          b = truth_boundary()
+          assert b['scoped_quadratic_nonlinear_radial_inverse_performed'] is True
+          assert b['stress_level_quadratic_mixed_attribution_checked'] is True
+          assert b['agent2_curl_or_advection_reimplemented_by_agent3'] is False
+          for key in (
+              'pressure_gradient_included',
+              'restricted_forcing_included',
+              'global_corrected_leading_join_materialized',
+              'complete_ns_defect',
+              'scoped_quadratic_radial_stress_authorized_as_correction_target',
+              'mean_correction_velocity_materialized',
+              'real_candidate_finite_correction_cycle_run',
+              'heldout_normalized_ns_residual_assessed',
+              'residual_reduction_claimed',
+              'same_protocol_comparable_to_st006',
+              'pde_validated',
+          ):
+              assert b[key] is False, key
+          assert b['final_normalized_momentum_gate'] == 1e-3
+          assert b['final_normalized_divergence_gate'] == 1e-5
+          PY
+
+      - name: Upload receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent3-oscillatory-quadratic-nonlinear-radial-stress
+          path: artifacts/kokuno_agent3/oscillatory_quadratic_nonlinear_radial_stress_mechanics.json
+          if-no-files-found: warn
