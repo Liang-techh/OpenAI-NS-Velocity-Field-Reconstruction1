@@ -1,0 +1,62 @@
+name: kokuno-agent4-autonomous-reference-pressure-independent-audit
+
+on:
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_a4_autonomous_reference_pressure_independent_audit.py"
+      - "tests/test_constrained_kokuno_a4_autonomous_reference_pressure_independent_audit.py"
+      - ".github/workflows/kokuno-agent4-autonomous-reference-pressure-independent-audit.yml"
+      - "src/openai_ns_reconstruction/kokuno_pa10_autonomous_axis_pressure_seed_x100.py"
+      - "src/openai_ns_reconstruction/kokuno_pa10_reference_pressure_increment_x100.py"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-head-independent-pressure-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout exact pull-request head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Verify exact Agent-1 ancestry and source blob
+        shell: bash
+        run: |
+          set -euo pipefail
+          git merge-base --is-ancestor a5903ce594bf1c1f775d6fbba8a5eeca226622fa HEAD
+          test "$(git rev-parse a5903ce594bf1c1f775d6fbba8a5eeca226622fa:src/openai_ns_reconstruction/kokuno_pa10_autonomous_axis_pressure_seed_x100.py)" = "68dddc4f6ad1fb5bb6955498099b380240be6750"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package and test dependencies
+        run: python -m pip install -e ".[dev]"
+
+      - name: Run Agent-1 pressure regressions and Agent-4 focused audit tests
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_pa10_autonomous_axis_pressure_seed_x100.py \
+            tests/test_constrained_kokuno_a4_autonomous_reference_pressure_independent_audit.py
+
+      - name: Materialize exact-head independent audit receipt
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p artifacts/kokuno_a4
+          python -m openai_ns_reconstruction.kokuno_a4_autonomous_reference_pressure_independent_audit \
+            --output artifacts/kokuno_a4/autonomous_reference_pressure_independent_audit.json
+
+      - name: Upload receipt even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a4-autonomous-reference-pressure-independent-audit
+          path: artifacts/kokuno_a4/autonomous_reference_pressure_independent_audit.json
+          if-no-files-found: warn
