@@ -1,0 +1,111 @@
+name: agent7-st052m-endpoint-temporal-curvature-preflight
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_endpoint_temporal_curvature_preflight.py'
+      - 'experiments/root_st052/test_agent7_st052m_endpoint_temporal_curvature_preflight.py'
+      - '.github/workflows/agent7-st052m-endpoint-temporal-curvature-preflight.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  endpoint-temporal-curvature-preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'pytest>=8,<10'
+      - name: Verify exact PR head checkout
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+      - name: Focused contract tests
+        run: python -m pytest -q -W error experiments/root_st052/test_agent7_st052m_endpoint_temporal_curvature_preflight.py
+      - name: Execute frozen temporal-curvature capacity audit
+        run: |
+          mkdir -p outputs/agent7-st052m-endpoint-temporal-curvature-preflight
+          python experiments/root_st052/agent7_st052m_endpoint_temporal_curvature_preflight.py \
+            --out outputs/agent7-st052m-endpoint-temporal-curvature-preflight/report.json
+      - name: Verify preregistration, identifiability and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-endpoint-temporal-curvature-preflight/report.json').read_text())
+          assert r['task_id']=='CR003-ST052M-ENDPOINT-TEMPORAL-CURVATURE-PREFLIGHT-116'
+          assert r['prereg_issue']==817
+          assert r['source_parent']=={'pr':810,'head':'b077eaffabfe66ce0b15ac29601a82bfddeb4cf9'}
+          assert r['source_frozen_child']=={'pr':775,'head':'93887a59729d22113badf2ae4dac2f7d868e2703'}
+          assert r['time_basis']['registered_interval']==[0.25,0.75]
+          assert r['time_basis']['g2_start']==0.0
+          assert r['time_basis']['g2_mid']==1.0
+          assert r['time_basis']['g2_end']==0.0
+          assert r['time_basis']['coefficient_selected'] is None
+          d=r['three_column_identifiability']
+          assert d['normalized_column_rank']==3
+          assert d['normalized_three_column_condition'] <= 25.0
+          assert d['max_abs_pairwise_cosine'] < 0.995
+          assert d['passes'] is True
+          assert r['decision']['endpoint_preserving_temporal_curvature_direction_identifiable'] is True
+          assert r['decision']['endpoint_field_exactly_preserved_by_unit_time_tangent'] is True
+          assert r['decision']['temporal_coefficient_selected'] is False
+          assert r['decision']['second_spatial_poloidal_basis_justified_by_this_increment'] is False
+          assert r['decision']['actual_velocity_changed'] is False
+          assert r['decision']['closer_visualization_delivery_established'] is False
+          assert r['candidate_velocity_changed'] is False
+          assert r['temporal_basis_dimension_changed'] is False
+          assert r['parameter_scan_performed'] is False
+          assert r['fresh_714_path_data_used'] is False
+          assert r['held_out_pde_residual_evaluated'] is False
+          assert r['public_image_numeric_target_used'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          assert r['openai_field_identified'] is False
+          print('identifiability=', d)
+          print('time_profile=', r['temporal_morphology_fingerprints']['time_profile'])
+          print('endpoint_zero=', r['temporal_morphology_fingerprints']['endpoint_zero'])
+          PY
+      - name: Publish compact numerical receipt
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          python - <<'PY' > /tmp/agent7-temporal-curvature-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-endpoint-temporal-curvature-preflight/report.json').read_text())
+          d=r['three_column_identifiability']
+          print('<!-- agent7-st052m-endpoint-temporal-curvature-preflight-receipt -->')
+          print('**Agent 7 endpoint-preserving temporal-curvature capacity audit (issue #817):**')
+          print()
+          print(f"- normalized 3-column rank / condition: `{d['normalized_column_rank']}` / `{d['normalized_three_column_condition']:.9g}`")
+          print(f"- pairwise cosines: `{d['normalized_pairwise_cosines']}`")
+          print(f"- g2(.25/.50/.75): `0 / 1 / 0`")
+          print(f"- endpoint tangent max-abs: `{r['temporal_morphology_fingerprints']['endpoint_zero']}`")
+          print()
+          print('Truth boundary: this is a basis-capacity preflight only. It changes no candidate velocity and selects no temporal coefficient. It does not establish closer visual correspondence, PDE validity, paper exactness, or exact OpenAI-field identity.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-temporal-curvature-receipt.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-endpoint-temporal-curvature-preflight
+          path: outputs/agent7-st052m-endpoint-temporal-curvature-preflight/
+          if-no-files-found: error
+
+# Scientific family/gates frozen in issue #817 before repository execution.
