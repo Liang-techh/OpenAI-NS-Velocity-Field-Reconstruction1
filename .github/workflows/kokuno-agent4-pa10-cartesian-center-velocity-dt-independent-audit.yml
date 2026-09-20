@@ -1,0 +1,102 @@
+name: kokuno-agent4-pa10-cartesian-center-velocity-dt-independent-audit
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a4-pa10-cartesian-center-velocity-dt-independent-audit-071
+  pull_request:
+    branches:
+      - codex/kokuno-a1-pa10-cartesian-center-velocity-dt-070
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  independent-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Resolve exact event head
+        id: exact
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "sha=${{ github.event.pull_request.head.sha }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "sha=${{ github.sha }}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout exact head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.exact.outputs.sha }}
+          fetch-depth: 0
+
+      - name: Assert exact checkout provenance
+        shell: bash
+        run: |
+          test "$(git rev-parse HEAD)" = "${{ steps.exact.outputs.sha }}"
+          git status --short
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install repository
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e '.[dev]'
+
+      - name: Compile candidate-facing stack
+        run: |
+          python -m compileall -q \
+            src/openai_ns_reconstruction/kokuno_pa10_cartesian_center_velocity.py \
+            src/openai_ns_reconstruction/kokuno_pa10_cartesian_center_velocity_dt.py \
+            src/openai_ns_reconstruction/kokuno_a4_pa10_cartesian_center_velocity_dt_independent_audit.py \
+            tests/test_kokuno_a4_pa10_cartesian_center_velocity_dt_independent_audit.py
+
+      - name: Run focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_pa10_cartesian_center_velocity.py \
+            tests/test_constrained_kokuno_pa10_cartesian_center_velocity_dt.py \
+            tests/test_kokuno_a4_pa10_cartesian_center_velocity_dt_independent_audit.py
+
+      - name: Generate exact-head independent receipt
+        run: |
+          mkdir -p artifacts/kokuno/a4_pa10_cartesian_center_velocity_dt_independent_audit
+          python -m openai_ns_reconstruction.kokuno_a4_pa10_cartesian_center_velocity_dt_independent_audit \
+            --output artifacts/kokuno/a4_pa10_cartesian_center_velocity_dt_independent_audit/receipt.json
+
+      - name: Assert frozen truth boundary and gates
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("artifacts/kokuno/a4_pa10_cartesian_center_velocity_dt_independent_audit/receipt.json")
+          data = json.loads(path.read_text(encoding="utf-8"))
+          assert data["passed"] is True
+          assert data["seed"] == 9173471
+          assert data["time_steps"] == [0.0004, 0.0002, 0.0001]
+          assert data["frozen_gates"]["final_normalized_momentum_max_l2"] == 0.001
+          assert data["frozen_gates"]["final_divergence_max_l2"] == 1e-5
+          truth = data["truth_boundary"]
+          assert truth["source_complex_C_normalization_independently_admitted"] is False
+          assert truth["global_cartesian_spacetime_leading_velocity_materialized"] is False
+          assert truth["matched_global_pressure_materialized"] is False
+          assert truth["complete_restricted_forcing_materialized"] is False
+          assert truth["leading_only_ns_residual_assessed"] is False
+          assert truth["leading_plus_oscillatory_ns_residual_assessed"] is False
+          assert truth["after_correction_ns_residual_assessed"] is False
+          assert truth["pde_validated"] is False
+          PY
+
+      - name: Upload independent receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent4-pa10-cartesian-center-velocity-dt-independent-audit-v1
+          path: artifacts/kokuno/a4_pa10_cartesian_center_velocity_dt_independent_audit/receipt.json
+          if-no-files-found: error
