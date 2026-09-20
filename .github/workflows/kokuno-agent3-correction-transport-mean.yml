@@ -1,0 +1,179 @@
+name: kokuno-agent3-correction-transport-mean
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a3-correction-transport-mean-067
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_correction_transport_mean.py"
+      - "tests/test_constrained_kokuno_correction_transport_mean.py"
+      - ".github/workflows/kokuno-agent3-correction-transport-mean.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent3-correction-transport-mean-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  exact-correction-transport-mean:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      A2_HEAD: 9bd1623f238a7827019a336aee435216fc38d393
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Verify exact Agent-3 head
+        run: |
+          git rev-parse HEAD
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha }}"
+          fi
+      - name: Install Agent-3 branch
+        run: python -m pip install -e '.[dev]'
+      - name: Compile and run focused mean regressions
+        run: |
+          python -W error -m py_compile \
+            src/openai_ns_reconstruction/kokuno_correction_transport_mean.py \
+            tests/test_constrained_kokuno_correction_transport_mean.py
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_correction_transport_mean.py \
+            tests/test_constrained_kokuno_correction_self_advection_mean.py \
+            tests/test_constrained_kokuno_oscillatory_correction_cross_mean.py \
+            tests/test_constrained_kokuno_oscillatory_quadratic_mean.py
+      - name: Emit projection-contract receipt
+        run: >-
+          python -W error -m
+          openai_ns_reconstruction.kokuno_correction_transport_mean
+          --output artifacts/kokuno_agent3_correction_transport_mean_contract_v1.json
+      - name: Fetch exact Agent-2 correction transport producer
+        run: |
+          git fetch --no-tags origin "$A2_HEAD"
+          test "$(git rev-parse FETCH_HEAD)" = "$A2_HEAD"
+          rm -rf /tmp/kokuno-a2-correction-transport
+          git worktree add --detach /tmp/kokuno-a2-correction-transport "$A2_HEAD"
+          test "$(git -C /tmp/kokuno-a2-correction-transport rev-parse HEAD)" = "$A2_HEAD"
+      - name: Project real A2 correction transport onto cylindrical mean
+        run: |
+          python -W error - <<'PY'
+          import json
+          from pathlib import Path
+          import numpy as np
+          import openai_ns_reconstruction
+          from openai_ns_reconstruction.kokuno_correction_transport_mean import (
+              AGENT2_HEAD,
+              AGENT2_SOURCE_BLOB_SHA,
+              ExactAgent2CorrectionTransportBackend,
+              materialize_agent2_correction_transport_mean,
+          )
+
+          assert AGENT2_HEAD == "9bd1623f238a7827019a336aee435216fc38d393"
+          openai_ns_reconstruction.__path__.insert(
+              0, "/tmp/kokuno-a2-correction-transport/src/openai_ns_reconstruction"
+          )
+          from openai_ns_reconstruction.kokuno_public_correction_transport_increment import (
+              _verification_profile,
+              evaluate_correction_transport_increment,
+          )
+
+          backend = ExactAgent2CorrectionTransportBackend.bind(
+              evaluate_correction_transport_increment
+          )
+          assert backend.source_blob_sha == AGENT2_SOURCE_BLOB_SHA
+          correction = _verification_profile()
+
+          radius = np.asarray([0.44, 0.56, 0.68, 0.80, 0.92, 1.04])
+          z = np.asarray([-0.50, -0.30, -0.10, 0.10, 0.30, 0.50])
+          t = np.asarray([0.44, 0.44, 0.50, 0.50, 0.56, 0.56])
+          witness = materialize_agent2_correction_transport_mean(
+              backend, correction, radius, z, t
+          )
+          receipt = witness.to_receipt()
+          receipt["agent2_exact_head_runtime"] = AGENT2_HEAD
+          receipt["preregistered_ring_count"] = 6
+          receipt["projection_stability_gate"] = 1.0e-5
+          receipt["component_closure_relative_rms_gate"] = 1.0e-12
+          receipt["component_closure_absolute_max_gate"] = 1.0e-12
+          receipt["nonzero_correction_transport_mean_floor"] = 1.0e-12
+          Path("artifacts").mkdir(exist_ok=True)
+          Path(
+              "artifacts/kokuno_agent3_correction_transport_mean_a2_v1.json"
+          ).write_text(json.dumps(receipt, indent=2, sort_keys=True) + "\n")
+
+          assert receipt["backend"]["source_blob_matches_pinned"] is True
+          assert receipt["angular_orders"] == [32, 64, 128]
+          assert max(receipt["successive_mean_relative_differences"]) <= 1.0e-5
+          assert receipt["pointwise_component_closure_absolute_max"] <= 1.0e-12
+          assert receipt["projected_component_closure_absolute_max"] <= 1.0e-12
+          assert receipt["projected_component_closure_relative_rms"] <= 1.0e-12
+          assert receipt["viscosity"] == 0.01
+          assert receipt["full_ring_correction_transport_rms"] >= receipt["correction_transport_mean_rms"]
+          assert receipt["correction_transport_mean_to_full_rms_ratio"] <= 1.0 + 1.0e-12
+          assert receipt["correction_transport_mean_rms"] >= 1.0e-12
+          boundary = receipt["truth_boundary"]
+          assert boundary["correction_transport_mean_is_complete_ns_defect"] is False
+          assert boundary["includes_correction_time_derivative"] is True
+          assert boundary["includes_oscillation_correction_cross_advection"] is True
+          assert boundary["includes_correction_self_advection"] is True
+          assert boundary["includes_correction_viscosity"] is True
+          assert boundary["leading_cross_terms_included"] is False
+          assert boundary["pressure_gradient_included"] is False
+          assert boundary["restricted_forcing_included"] is False
+          assert boundary["real_agent3_delta_a_bound"] is False
+          assert boundary["heldout_normalized_ns_residual_assessed"] is False
+          assert boundary["residual_reduction_claimed"] is False
+          assert boundary["pde_validated"] is False
+          print("a2_correction_transport_mean_projection=PASS")
+          print("correction_transport_mean_rms=", receipt["correction_transport_mean_rms"])
+          print("full_ring_correction_transport_rms=", receipt["full_ring_correction_transport_rms"])
+          print("mean_to_full_ratio=", receipt["correction_transport_mean_to_full_rms_ratio"])
+          print("mean_correction_transport_cylindrical=", receipt["mean_correction_transport_cylindrical"])
+          PY
+      - name: Freeze contract truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r = json.loads(
+              Path(
+                  "artifacts/kokuno_agent3_correction_transport_mean_contract_v1.json"
+              ).read_text()
+          )
+          assert r["schema"] == "kokuno-a3-correction-transport-mean-v1"
+          assert r["task"] == "KOKUNO-A3-CORRECTION-TRANSPORT-MEAN-067"
+          assert r["parent_agent3_head"] == "5e329af22540ca791a61482ab777769eb337b1d9"
+          assert r["agent2_expected_head"] == "9bd1623f238a7827019a336aee435216fc38d393"
+          assert r["projection_ladder"] == [32, 64, 128]
+          assert max(r["analytic_projection_absolute_max_errors"].values()) < 2.0e-14
+          assert r["real_agent2_numeric_correction_transport_mean_observed_in_this_receipt"] is False
+          w = r["analytic_witness"]
+          assert w["pointwise_component_closure_absolute_max"] < 2.0e-14
+          assert w["projected_component_closure_absolute_max"] < 2.0e-14
+          assert w["projected_component_closure_relative_rms"] < 2.0e-14
+          b = r["truth_boundary"]
+          assert b["agent2_correction_transport_reimplemented_by_agent3"] is False
+          assert b["cylindrical_m0_correction_transport_projection_executable"] is True
+          assert b["componentwise_projected_closure_checked"] is True
+          assert b["correction_transport_mean_is_complete_ns_defect"] is False
+          assert b["caller_supplied_residual_allowed"] is False
+          assert b["caller_supplied_mean_values_allowed"] is False
+          assert b["caller_supplied_viscosity_allowed"] is False
+          assert b["caller_supplied_derivative_resolution_allowed"] is False
+          assert b["pde_validated"] is False
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent3-correction-transport-mean-v1
+          path: |
+            artifacts/kokuno_agent3_correction_transport_mean_contract_v1.json
+            artifacts/kokuno_agent3_correction_transport_mean_a2_v1.json
+          if-no-files-found: error
