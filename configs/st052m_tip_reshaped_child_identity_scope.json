@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "contract_id": "cr002-st052m-tip-reshaped-child-identity-scope-v1",
+  "status": "governance_scope_for_exact_740_head",
+  "live_integration_authority": {
+    "branch": "codex/cr001-constraints",
+    "head_sha": "7b32d9c0fa46fe369d0fc636eb5a7530aadebe04"
+  },
+  "audited_upstream": {
+    "pull_request": 740,
+    "head_sha": "21019df839557e64b8d8689f68cdf8fc685a3a36",
+    "coordinate_governance_pull_request": 738,
+    "reshape_preflight_pull_request": 732,
+    "selection_data_governance_pull_request": 712,
+    "fresh_path_scope_governance_pull_request": 721,
+    "source_visual_child_pull_request": 652,
+    "old_tip_child_pull_request": 701
+  },
+  "source_classification": {
+    "allowed_classes": [
+      "user_requirement",
+      "public_source_fact",
+      "autonomous_design",
+      "pending_unknown"
+    ],
+    "items": [
+      {
+        "item": "callable_saveable_loadable_3d_time_varying_velocity_with_independent_delivery_visual_pde_exact_states",
+        "class": "user_requirement"
+      },
+      {
+        "item": "openai_public_qualitative_inward_spiraling_and_axial_elongation",
+        "class": "public_source_fact"
+      },
+      {
+        "item": "740_p9_m4_same_dimension_tip_envelope_and_one_shot_alpha_rule",
+        "class": "autonomous_design"
+      },
+      {
+        "item": "740_targeted_z_1p55_development_fingerprint_and_historical_path_morphology_guards",
+        "class": "autonomous_design"
+      },
+      {
+        "item": "whether_740_passes_its_preregistered_nonlinear_screen",
+        "class": "pending_unknown"
+      },
+      {
+        "item": "whether_a_frozen_serialized_740_child_generalizes_on_fresh_paths_or_fixed_public_visual_comparison",
+        "class": "pending_unknown"
+      },
+      {
+        "item": "hidden_openai_velocity_coefficients_camera_frame_mapping_and_exact_numeric_field",
+        "class": "pending_unknown"
+      }
+    ]
+  },
+  "procedural_child_scope": {
+    "velocity_formula_evaluable_in_740": true,
+    "new_alpha_rederived_from_historical_development_paths": true,
+    "fresh_714_data_used_for_alpha": false,
+    "old_701_alpha_reused_as_same_coordinate": false,
+    "basis_dimension_changed": false,
+    "pressure_or_force_rebuilt": false,
+    "held_out_pde_residual_evaluated": false,
+    "candidate_lambda_constructed_inside_run": true,
+    "alpha_recorded_in_report_when_run_completes": true,
+    "standalone_candidate_payload_emitted": false,
+    "standalone_candidate_load_api_provided": false,
+    "standalone_candidate_identity_digest_bound": false,
+    "canonical_or_saved_velocity_promoted": false
+  },
+  "identity_rule": {
+    "procedural_reconstruction_is_not_the_same_claim_as_saved_loadable_candidate_identity": true,
+    "a_future_fresh_post_freeze_evaluation_must_not_rederive_or_retune_candidate_parameters_from_the_fresh_data": true,
+    "before_calling_a_future_740_child_check_post_freeze_evidence_freeze_the_child_identity": true,
+    "minimum_frozen_identity_fields": [
+      "parent/source candidate identity",
+      "p=9,m=4 envelope identity",
+      "numeric alpha_94",
+      "time activation g(t)=2*(t-.25)",
+      "support r<1.6 and 1<|z|<1.8",
+      "exact source/runtime or equivalent reproducibility binding"
+    ],
+    "acceptable_freeze_forms": [
+      "standalone serialized candidate with load API",
+      "checksum-bound immutable candidate capsule with a deterministic evaluator"
+    ],
+    "740_targeted_and_historical_development_evidence_can_select_or_reject_the_child": true,
+    "740_targeted_and_historical_development_evidence_is_independent_visual_validation": false,
+    "fresh_path_or_render_evidence_may_promote_visual_correspondence_without_public_target_protocol": false,
+    "pde_validation_requires_cr001_independent_acceptance": true
+  },
+  "claim_states": {
+    "procedural_velocity_evaluable": true,
+    "standalone_saved_loadable_child_ready": false,
+    "velocity_export_ready_promoted_by_740": false,
+    "visualization_ready_promoted_by_740": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "source_correspondence_verified": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "cr001_lock": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_bounds": {"a": [0.0, 10.0], "c": [0.0, 10.0]},
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "divergence_max": 1e-5,
+    "divergence_L2": 1e-5,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001,
+    "residual_defined_or_pointwise_free_force_allowed": false,
+    "amplitude_collapse_success_allowed": false,
+    "threshold_relaxation_allowed": false
+  }
+}
