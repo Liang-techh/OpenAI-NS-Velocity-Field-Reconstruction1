@@ -5,15 +5,17 @@ velocity with the frozen oscillatory field into
 
     T = d_t u + (u . grad)u - nu Delta u,  nu = 0.01,
 
-for ``u = u_inner + u_osc``.  This A5 layer binds that typed handoff into the
-integration pipeline without copying Agent-1/2 mathematics and without calling
-it a Navier--Stokes residual: pressure, restricted forcing, the corrected/global
-leading field, and the real correction velocity are all still absent.
+for ``u = u_inner + u_osc``. Agent 4 #842 independently audits that scoped
+transport block from the public summed velocity with a centered FD8 realization.
+A5 binds both exact interfaces into the integration pipeline without copying
+sibling mathematics and without calling this a Navier--Stokes residual: pressure,
+restricted forcing, the corrected/global leading field, and the real correction
+velocity are still absent.
 
-The seam is useful because it closes the pressure/forcing-free transport block
-needed by a future actual-defect operator.  Registration is not scientific
-admission.  Exact-head CI is unresolved at this integration cut and no dedicated
-Agent-4 audit of #840 exists yet.
+Registration is not scientific admission. Exact-head CI for #839/#840/#842 is
+unresolved at this integration cut. Agent-4's transport-consistency relative
+errors are sub-operator checks, not CR001 momentum residual norms, and its
+sampled divergence RMS is not canonical whole-domain volume-weighted L2.
 """
 from __future__ import annotations
 
@@ -50,9 +52,23 @@ AGENT1_LAPLACIAN_SOURCE_BLOB = "74b0e185e8e0bbb08695d493e0a091c305a03006"
 AGENT1_LAPLACIAN_DEDICATED_RUN = 35510543422
 AGENT1_LAPLACIAN_TESTS_RUN = 35510543420
 
-# Frozen facts at this integration cut.  Queued/not-yet-run is not PASS.
+AGENT4_TRANSPORT_AUDIT_PR = 842
+AGENT4_TRANSPORT_AUDIT_HEAD = "fca8c7e0bcfa1a96eb073a9cde8826553d19aae9"
+AGENT4_TRANSPORT_AUDIT_SOURCE_BLOB = "bd372dae8b665c44ecaf6b2706ebebe53cd7936b"
+AGENT4_TRANSPORT_AUDIT_DEDICATED_RUN = 35511772346
+AGENT4_TRANSPORT_AUDIT_TESTS_RUN = 35511772368
+AGENT4_TRANSPORT_AUDIT_SCHEMA = (
+    "kokuno-a4-inner-leading-oscillatory-transport-independent-audit-v1"
+)
+AGENT4_TRANSPORT_AUDIT_MODULE = (
+    "openai_ns_reconstruction."
+    "kokuno_a4_inner_leading_oscillatory_transport_independent_audit"
+)
+
+# Frozen facts at this integration cut. Queued/not-yet-run is not PASS.
 AGENT1_LAPLACIAN_EXACT_HEAD_CI_CONCLUSION: str | None = None
 AGENT2_TRANSPORT_EXACT_HEAD_CI_CONCLUSION: str | None = None
+AGENT4_TRANSPORT_EXACT_HEAD_CI_CONCLUSION: str | None = None
 AGENT4_TRANSPORT_AUDIT_CONCLUSION: str | None = None
 
 TRANSPORT_PROTOCOL = {
@@ -63,19 +79,54 @@ TRANSPORT_PROTOCOL = {
     "oscillatory_advection_spatial_step": 1.0e-3,
     "inner_laplacian_spatial_step": 1.0e-3,
     "oscillatory_laplacian_spatial_step": 1.0e-3,
-    "independent_reference": "public-summed-velocity-only-centered-FD4",
-    "independent_fd4_steps": [4.0e-3, 2.0e-3, 1.0e-3],
-    "fresh_probe_count": 12,
-    "source_X_range": [0.172, 0.291],
-    "time_range": [0.462, 0.542],
-    "successive_stabilization_ratio_gate": 4.0,
-    "finest_relative_rms_gate": 2.0e-2,
-    "finest_relative_sampled_max_gate": 5.0e-2,
+    "agent2_independent_reference": "public-summed-velocity-only-centered-FD4",
+    "agent2_independent_fd4_steps": [4.0e-3, 2.0e-3, 1.0e-3],
+    "agent2_fresh_probe_count": 12,
+    "agent2_source_X_range": [0.172, 0.291],
+    "agent2_time_range": [0.462, 0.542],
+    "agent2_stabilization_ratio_gate": 4.0,
+    "agent2_finest_relative_rms_gate": 2.0e-2,
+    "agent2_finest_relative_sampled_max_gate": 5.0e-2,
     "transport_rms_nontriviality_floor": 1.0e-10,
     "composite_velocity_rms_nontriviality_floor": 1.0e-8,
     "additive_velocity_closure_gate": 1.0e-14,
     "time_laplacian_viscous_transport_closure_gate": 1.0e-13,
     "post_observation_retuning_allowed": False,
+}
+
+AGENT4_PROTOCOL = {
+    "independent_reference": "public-summed-velocity-only-centered-FD8",
+    "seed": 9173501,
+    "random_sample_count": 128,
+    "axis_and_axis_near_probe_count": 6,
+    "source_X_range": [0.15, 0.27],
+    "source_eta_range": [-0.28, 0.28],
+    "time_range": [0.44, 0.56],
+    "fd8_steps": [2.0e-3, 1.0e-3, 5.0e-4],
+    "transport_consistency_relative_rms_gate": 1.5e-2,
+    "transport_consistency_relative_sampled_max_gate": 4.0e-2,
+    "transport_refinement_ratio_gate": 8.0,
+    "transport_refinement_floor": 2.0e-8,
+    "divergence_sampled_max_gate": 1.0e-5,
+    "divergence_sampled_rms_gate": 1.0e-5,
+    "transport_rms_nontriviality_floor": 1.0e-10,
+    "composite_velocity_rms_nontriviality_floor": 1.0e-8,
+    "direct_public_sum_velocity_closure_gate": 1.0e-14,
+    "negative_controls": [
+        "0.90x-production-transport",
+        "axial-production-transport-sign-flip",
+        "+1e-3-independent-finest-divergence",
+    ],
+    "viscosity_sensitivity_only": "nu +/-0.1%",
+    "post_observation_retuning_allowed": False,
+}
+
+NORM_SCOPE_FIREWALL = {
+    "agent4_relative_transport_consistency_is_cr001_momentum_residual": False,
+    "agent4_transport_consistency_directly_comparable_to_ST006_full_residual": False,
+    "agent4_divergence_rms_is_sampled_rms": True,
+    "agent4_divergence_rms_is_canonical_volume_weighted_L2": False,
+    "whole_domain_global_candidate_divergence_established": False,
 }
 
 
@@ -101,6 +152,7 @@ def deterministic_inner_leading_oscillatory_transport_ingest_contract(
         parent_status["inner_cartesian_center_spatial_derivative_ingest_admitted"]
         and AGENT1_LAPLACIAN_EXACT_HEAD_CI_CONCLUSION == "success"
         and AGENT2_TRANSPORT_EXACT_HEAD_CI_CONCLUSION == "success"
+        and AGENT4_TRANSPORT_EXACT_HEAD_CI_CONCLUSION == "success"
         and AGENT4_TRANSPORT_AUDIT_CONCLUSION == "pass"
     )
 
@@ -132,6 +184,19 @@ def deterministic_inner_leading_oscillatory_transport_ingest_contract(
             "production_realization": "fixed centered Cartesian FD6",
             "production_spatial_step": 1.0e-3,
         },
+        "agent4_transport_audit_binding": {
+            "pr": AGENT4_TRANSPORT_AUDIT_PR,
+            "head": AGENT4_TRANSPORT_AUDIT_HEAD,
+            "source_blob_sha": AGENT4_TRANSPORT_AUDIT_SOURCE_BLOB,
+            "dedicated_run": AGENT4_TRANSPORT_AUDIT_DEDICATED_RUN,
+            "tests_run": AGENT4_TRANSPORT_AUDIT_TESTS_RUN,
+            "schema": AGENT4_TRANSPORT_AUDIT_SCHEMA,
+            "module": AGENT4_TRANSPORT_AUDIT_MODULE,
+            "audited_agent2_pr": AGENT2_TRANSPORT_PR,
+            "audited_agent2_head": AGENT2_TRANSPORT_HEAD,
+            "protocol": dict(AGENT4_PROTOCOL),
+            "norm_scope_firewall": dict(NORM_SCOPE_FIREWALL),
+        },
         "evidence": {
             "parent_inner_spatial_derivative_ingest_admitted": bool(
                 parent_status["inner_cartesian_center_spatial_derivative_ingest_admitted"]
@@ -142,8 +207,12 @@ def deterministic_inner_leading_oscillatory_transport_ingest_contract(
             "agent2_transport_exact_head_ci_conclusion": (
                 AGENT2_TRANSPORT_EXACT_HEAD_CI_CONCLUSION
             ),
-            "agent4_dedicated_transport_audit_present": False,
+            "agent4_dedicated_transport_audit_present": True,
+            "agent4_transport_exact_head_ci_conclusion": (
+                AGENT4_TRANSPORT_EXACT_HEAD_CI_CONCLUSION
+            ),
             "agent4_transport_audit_conclusion": AGENT4_TRANSPORT_AUDIT_CONCLUSION,
+            "agent4_transport_scientific_receipt_admitted": False,
             "strict_inner_transport_scientifically_admitted": False,
         },
         "candidate_api_handoff": dict(parent["candidate_api_handoff"]),
@@ -151,10 +220,11 @@ def deterministic_inner_leading_oscillatory_transport_ingest_contract(
         "transport_operator_handoff": {
             "registered": True,
             "status": "registered_unresolved",
-            "authority": "Agent2#840",
-            "evaluator": (
-                "Agent2#840.evaluate_inner_leading_oscillatory_transport"
-            ),
+            "construction_authority": "Agent2#840",
+            "independent_audit_available": True,
+            "independent_audit_status": "registered_unresolved",
+            "independent_audit_authority": "Agent4#842",
+            "evaluator": "Agent2#840.evaluate_inner_leading_oscillatory_transport",
             "velocity_scope": "u_inner+u_osc only",
             "includes_velocity_dt": True,
             "includes_full_strict_inner_advection": True,
@@ -164,11 +234,12 @@ def deterministic_inner_leading_oscillatory_transport_ingest_contract(
             "includes_correction_velocity": False,
             "includes_outer_global_leading_join": False,
             "complete_ns_momentum_residual": False,
+            "usable_for_strict_inner_transport_admission_if_passes": True,
             "usable_as_actual_defect_input_now": False,
             "usable_for_final_independent_pde_validation": False,
             "reason": (
-                "the executable transport block is inner-only and pressure/forcing-free; "
-                "its exact-head CI is unresolved and no dedicated Agent-4 transport audit exists"
+                "the executable/audited transport block is inner-only and pressure/forcing-free; "
+                "all exact-head evidence is unresolved and A4 metrics remain scoped sub-operator checks"
             ),
         },
         "staged_residual_availability": {
@@ -188,6 +259,7 @@ def deterministic_inner_leading_oscillatory_transport_ingest_contract(
         "ingest_status": {
             **dict(parent_status),
             "typed_strict_inner_leading_oscillatory_transport_registered": True,
+            "typed_strict_inner_transport_independent_audit_registered": True,
             "strict_inner_leading_oscillatory_transport_ingest_admitted": admitted,
             "strict_inner_transport_ready": False,
             "outer_global_leading_join_materialized": False,
@@ -201,11 +273,15 @@ def deterministic_inner_leading_oscillatory_transport_ingest_contract(
         "final_project_gates_unchanged": dict(parent["final_project_gates_unchanged"]),
         "truth_boundary": {
             "strict_inner_transport_surface_registered": True,
+            "agent4_transport_audit_surface_registered": True,
             "registration_not_scientific_admission": True,
             "agent1_laplacian_ci_promoted": False,
             "agent2_transport_ci_promoted": False,
-            "agent4_transport_audit_invented": False,
+            "agent4_transport_ci_promoted": False,
+            "agent4_transport_receipt_invented": False,
             "strict_inner_transport_independently_admitted": False,
+            "a4_scoped_consistency_laundered_as_cr001_momentum_residual": False,
+            "sampled_divergence_rms_laundered_as_cr001_volume_l2": False,
             "transport_relabelled_as_complete_ns_residual": False,
             "source_center_promoted_to_final_fixed_point": False,
             "outer_global_join_invented": False,
@@ -264,8 +340,6 @@ def validate_inner_leading_oscillatory_transport_ingest_contract(
         raise ValueError("Agent-2 transport protocol drift")
 
     a1 = payload.get("agent1_laplacian_binding")
-    if not isinstance(a1, Mapping):
-        raise ValueError("missing Agent-1 Laplacian binding")
     expected_a1 = {
         "pr": AGENT1_LAPLACIAN_PR,
         "head": AGENT1_LAPLACIAN_HEAD,
@@ -275,15 +349,39 @@ def validate_inner_leading_oscillatory_transport_ingest_contract(
         "production_realization": "fixed centered Cartesian FD6",
         "production_spatial_step": 1.0e-3,
     }
-    if dict(a1) != expected_a1:
+    if not isinstance(a1, Mapping) or dict(a1) != expected_a1:
         raise ValueError("Agent-1 Laplacian binding drift")
+
+    a4 = payload.get("agent4_transport_audit_binding")
+    if not isinstance(a4, Mapping):
+        raise ValueError("missing Agent-4 transport audit binding")
+    expected_a4 = {
+        "pr": AGENT4_TRANSPORT_AUDIT_PR,
+        "head": AGENT4_TRANSPORT_AUDIT_HEAD,
+        "source_blob_sha": AGENT4_TRANSPORT_AUDIT_SOURCE_BLOB,
+        "dedicated_run": AGENT4_TRANSPORT_AUDIT_DEDICATED_RUN,
+        "tests_run": AGENT4_TRANSPORT_AUDIT_TESTS_RUN,
+        "schema": AGENT4_TRANSPORT_AUDIT_SCHEMA,
+        "module": AGENT4_TRANSPORT_AUDIT_MODULE,
+        "audited_agent2_pr": AGENT2_TRANSPORT_PR,
+        "audited_agent2_head": AGENT2_TRANSPORT_HEAD,
+    }
+    for key, value in expected_a4.items():
+        if a4.get(key) != value:
+            raise ValueError(f"Agent-4 {key} drift")
+    if a4.get("protocol") != AGENT4_PROTOCOL:
+        raise ValueError("Agent-4 transport audit protocol drift")
+    if a4.get("norm_scope_firewall") != NORM_SCOPE_FIREWALL:
+        raise ValueError("Agent-4 norm scope firewall drift")
 
     expected_evidence = {
         "parent_inner_spatial_derivative_ingest_admitted": False,
         "agent1_laplacian_exact_head_ci_conclusion": None,
         "agent2_transport_exact_head_ci_conclusion": None,
-        "agent4_dedicated_transport_audit_present": False,
+        "agent4_dedicated_transport_audit_present": True,
+        "agent4_transport_exact_head_ci_conclusion": None,
         "agent4_transport_audit_conclusion": None,
+        "agent4_transport_scientific_receipt_admitted": False,
         "strict_inner_transport_scientifically_admitted": False,
     }
     if payload.get("evidence") != expected_evidence:
@@ -302,7 +400,10 @@ def validate_inner_leading_oscillatory_transport_ingest_contract(
     required_transport = {
         "registered": True,
         "status": "registered_unresolved",
-        "authority": "Agent2#840",
+        "construction_authority": "Agent2#840",
+        "independent_audit_available": True,
+        "independent_audit_status": "registered_unresolved",
+        "independent_audit_authority": "Agent4#842",
         "evaluator": "Agent2#840.evaluate_inner_leading_oscillatory_transport",
         "velocity_scope": "u_inner+u_osc only",
         "includes_velocity_dt": True,
@@ -313,6 +414,7 @@ def validate_inner_leading_oscillatory_transport_ingest_contract(
         "includes_correction_velocity": False,
         "includes_outer_global_leading_join": False,
         "complete_ns_momentum_residual": False,
+        "usable_for_strict_inner_transport_admission_if_passes": True,
         "usable_as_actual_defect_input_now": False,
         "usable_for_final_independent_pde_validation": False,
     }
@@ -341,6 +443,7 @@ def validate_inner_leading_oscillatory_transport_ingest_contract(
     expected_status.update(
         {
             "typed_strict_inner_leading_oscillatory_transport_registered": True,
+            "typed_strict_inner_transport_independent_audit_registered": True,
             "strict_inner_leading_oscillatory_transport_ingest_admitted": False,
             "strict_inner_transport_ready": False,
             "outer_global_leading_join_materialized": False,
@@ -367,6 +470,7 @@ def validate_inner_leading_oscillatory_transport_ingest_contract(
         raise ValueError("missing truth boundary")
     true_keys = {
         "strict_inner_transport_surface_registered",
+        "agent4_transport_audit_surface_registered",
         "registration_not_scientific_admission",
     }
     for key in true_keys:
