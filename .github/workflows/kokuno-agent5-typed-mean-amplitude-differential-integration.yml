@@ -1,0 +1,190 @@
+name: kokuno-agent5-typed-mean-amplitude-differential-integration
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-integrate-amplitude-differential-064
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_typed_mean_amplitude_differential.py"
+      - "tests/test_kokuno_typed_mean_amplitude_differential.py"
+      - ".github/workflows/kokuno-agent5-typed-mean-amplitude-differential-integration.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent5-typed-mean-amplitude-differential-integration-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  exact-head-amplitude-differential-integration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Verify exact head checkout
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          ACTUAL_HEAD="$(git rev-parse HEAD)"
+          test "$ACTUAL_HEAD" = "$EXPECTED_HEAD"
+          echo "exact_head=$ACTUAL_HEAD"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Verify byte-identical Agent-3 harvest
+        run: |
+          test "$(git hash-object src/openai_ns_reconstruction/kokuno_typed_mean_amplitude_differential.py)" = "d8ff065a53f57e61e17667fdb50c441e35947e35"
+          test "$(git hash-object tests/test_kokuno_typed_mean_amplitude_differential.py)" = "0bdf19c3e4ce547d2b37e96632cf72c5025871aa"
+      - name: Compile typed correction spine
+        run: |
+          python -m compileall -q \
+            src/openai_ns_reconstruction/kokuno_same_cycle_defect_contract.py \
+            src/openai_ns_reconstruction/kokuno_typed_mean_inverse_rhs.py \
+            src/openai_ns_reconstruction/kokuno_typed_mean_reference_inverse.py \
+            src/openai_ns_reconstruction/kokuno_typed_mean_amplitude_differential.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_typed_mean_inverse_rhs.py \
+            tests/test_kokuno_typed_mean_reference_inverse.py \
+            tests/test_kokuno_typed_mean_amplitude_differential.py
+      - name: Generate deterministic upstream mechanics receipt
+        run: |
+          python -W error -m openai_ns_reconstruction.kokuno_typed_mean_amplitude_differential \
+            --output artifacts/kokuno_agent5/typed_mean_amplitude_differential/upstream_receipt.json
+      - name: Generate exact-head Agent-5 integration receipt
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          import subprocess
+          from pathlib import Path
+
+          upstream_path = Path('artifacts/kokuno_agent5/typed_mean_amplitude_differential/upstream_receipt.json')
+          upstream = json.loads(upstream_path.read_text())
+          exact_head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
+
+          amplitude = upstream['analytic_regression']['evaluation']['amplitude_differential']
+          truth = upstream['truth_boundary']
+          assert upstream['analytic_regression']['forcing_is_zero_and_fixed_independently_of_residual'] is True
+          assert truth['typed_amplitude_differential_executable'] is True
+          assert truth['source_epsilon_materialized_for_full_candidate'] is False
+          assert truth['source_h_ref_materialized_for_full_candidate'] is False
+          assert truth['source_base_amplitudes_materialized_for_full_candidate'] is False
+          assert truth['real_candidate_delta_amplitudes_materialized'] is False
+          assert truth['public_velocity_correction_materialized'] is False
+          assert truth['real_candidate_finite_correction_cycle_run'] is False
+          assert truth['heldout_normalized_ns_residual_assessed'] is False
+          assert truth['pde_validated'] is False
+          assert amplitude['multiplication_back_closure_max_abs'] <= 1e-14
+
+          payload = {
+              'schema': 'kokuno-agent5-typed-mean-amplitude-differential-integration-v1',
+              'exact_head': exact_head,
+              'parent_agent5_pr': 737,
+              'parent_agent5_head': 'fdcb55964054911255e5d3c8b0a91e2525306daf',
+              'harvest': {
+                  'origin_agent3_pr': 709,
+                  'validated_on_agent3_pr': 726,
+                  'validated_head': '87c39f48113908c0755497de973c05ed66f1ba21',
+                  'validated_workflow_id': 35476709218,
+                  'validated_workflow_name': 'kokuno-agent3-typed-mean-amplitude-differential',
+                  'validated_workflow_conclusion': 'success',
+                  'artifact_id': 10595906699,
+                  'artifact_digest': 'sha256:0cc2ec3a654c30978bf59dcc343e05e3f93335a39e2d8170cb0e771c302c57ee',
+                  'source_blob_sha': 'd8ff065a53f57e61e17667fdb50c441e35947e35',
+                  'test_blob_sha': '0bdf19c3e4ce547d2b37e96632cf72c5025871aa',
+                  'byte_identical_source_and_test': True,
+              },
+              'integration_state': {
+                  'typed_amplitude_differential_integrated': True,
+                  'raw_same_cycle_providers_required': True,
+                  'caller_supplied_delta_y_allowed': False,
+                  'caller_supplied_delta_a_allowed': False,
+                  'source_full_candidate_epsilon_certified': False,
+                  'source_full_candidate_h_ref_certified': False,
+                  'source_full_candidate_base_amplitudes_certified': False,
+                  'real_full_candidate_delta_a_materialized': False,
+                  'agent2_complete_curl_correction_bound_for_real_candidate': False,
+                  'real_candidate_finite_correction_cycle_run': False,
+                  'leading_ready': False,
+                  'correction_ready': False,
+                  'velocity_export_ready': False,
+                  'pde_validated': False,
+              },
+              'baseline_vs_kokuno': {
+                  'retained_repository_baseline': {
+                      'name': 'ST006',
+                      'same_protocol_momentum_sampled_max': 0.1082289305112118,
+                      'same_protocol_momentum_volume_L2': 0.10758432876230622,
+                  },
+                  'kokuno_same_protocol_full_candidate_residual_available': False,
+                  'mechanics_regression_is_not_pde_progress': True,
+              },
+              'final_project_gates_unchanged': {
+                  'normalized_momentum_max': 1e-3,
+                  'normalized_momentum_L2': 1e-3,
+                  'divergence_max': 1e-5,
+                  'divergence_L2': 1e-5,
+              },
+              'truth_boundary': {
+                  'forcing_is_zero_and_fixed_independently_of_residual_in_regression': True,
+                  'free_residual_defined_forcing_allowed': False,
+                  'kokuno_replay_counts_as_final_independent_validation': False,
+                  'threshold_relaxed': False,
+                  'pde_validated': False,
+              },
+              'upstream_receipt_sha256': hashlib.sha256(upstream_path.read_bytes()).hexdigest(),
+          }
+          out = Path('artifacts/kokuno_agent5/typed_mean_amplitude_differential/integration_receipt.json')
+          out.parent.mkdir(parents=True, exist_ok=True)
+          out.write_text(json.dumps(payload, indent=2, sort_keys=True) + '\n')
+          print('exact_head=', exact_head)
+          print('delta_a_vector_rms=', amplitude['delta_a_vector_rms'])
+          print('multiplication_back_closure_max_abs=', amplitude['multiplication_back_closure_max_abs'])
+          print('integration_receipt_sha256=', hashlib.sha256(out.read_bytes()).hexdigest())
+          PY
+      - name: Validate immutable truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          import subprocess
+
+          path = Path('artifacts/kokuno_agent5/typed_mean_amplitude_differential/integration_receipt.json')
+          payload = json.loads(path.read_text())
+          exact_head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
+          assert payload['exact_head'] == exact_head
+          assert payload['harvest']['validated_workflow_conclusion'] == 'success'
+          assert payload['harvest']['byte_identical_source_and_test'] is True
+          state = payload['integration_state']
+          assert state['typed_amplitude_differential_integrated'] is True
+          assert state['leading_ready'] is False
+          assert state['correction_ready'] is False
+          assert state['velocity_export_ready'] is False
+          assert state['pde_validated'] is False
+          baseline = payload['baseline_vs_kokuno']
+          assert baseline['kokuno_same_protocol_full_candidate_residual_available'] is False
+          gates = payload['final_project_gates_unchanged']
+          assert gates['normalized_momentum_max'] == 1e-3
+          assert gates['normalized_momentum_L2'] == 1e-3
+          assert gates['divergence_max'] == 1e-5
+          assert gates['divergence_L2'] == 1e-5
+          truth = payload['truth_boundary']
+          assert truth['free_residual_defined_forcing_allowed'] is False
+          assert truth['kokuno_replay_counts_as_final_independent_validation'] is False
+          assert truth['threshold_relaxed'] is False
+          assert truth['pde_validated'] is False
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-typed-mean-amplitude-differential-integration-v1
+          path: artifacts/kokuno_agent5/typed_mean_amplitude_differential/*.json
+          if-no-files-found: error
