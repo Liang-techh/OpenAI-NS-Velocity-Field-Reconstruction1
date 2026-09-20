@@ -1,0 +1,113 @@
+name: kokuno-agent5-autonomous-reference-stress-ingest
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-autonomous-reference-stress-ingest-085
+  pull_request:
+    branches:
+      - codex/kokuno-a5-reference-pressure-increment-ingest-084
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_a5_autonomous_reference_stress_ingest_contract.py"
+      - "tests/test_kokuno_a5_autonomous_reference_stress_ingest_contract.py"
+      - ".github/workflows/kokuno-agent5-autonomous-reference-stress-ingest.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  autonomous-reference-stress-ingest-firewall:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout exact Agent-5 head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Verify exact checked-out head
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          echo "exact_head=$EXPECTED_HEAD"
+
+      - name: Fetch and verify pinned Agent-1 / Agent-4 reference-stress artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          A1_HEAD=c5ccdb8fd790c62cfb760139e5ec108c26d88a81
+          A4_HEAD=6e6e0e21be5c3a547a2a8db5088eaaf33d63c48b
+          git fetch --no-tags origin \
+            codex/kokuno-a1-autonomous-reference-ns-x100-083 \
+            codex/kokuno-a4-autonomous-reference-ns-independent-audit-085
+
+          test "$(git rev-parse "$A1_HEAD")" = "$A1_HEAD"
+          test "$(git rev-parse "$A4_HEAD")" = "$A4_HEAD"
+
+          test "$(git ls-tree dd613c3636391f23a8fc8958af6f17d024482f5f -- src/openai_ns_reconstruction/kokuno_a5_reference_pressure_increment_ingest_contract.py | awk '{print $3}')" = "c8c23490c62c981440e7e725f8345335df3e59f9"
+          test "$(git ls-tree "$A1_HEAD" -- src/openai_ns_reconstruction/kokuno_pa10_autonomous_reference_ns_x100.py | awk '{print $3}')" = "44159b63c440ee9764261dad41fb3f9d3fec7b0d"
+          test "$(git ls-tree "$A1_HEAD" -- tests/test_kokuno_pa10_autonomous_reference_ns_x100.py | awk '{print $3}')" = "77eda6075ca185b28700c14a81d18a86b846c94d"
+          test "$(git ls-tree "$A1_HEAD" -- .github/workflows/kokuno-agent1-autonomous-reference-ns-x100.yml | awk '{print $3}')" = "242da4be9d8ab9af10901be94f4e7b1edbd7c992"
+          test "$(git ls-tree "$A4_HEAD" -- src/openai_ns_reconstruction/kokuno_a4_autonomous_reference_ns_independent_audit.py | awk '{print $3}')" = "4707b4de00d79f7ae9db6531ff625bece4ead2df"
+          test "$(git ls-tree "$A4_HEAD" -- tests/test_constrained_kokuno_a4_autonomous_reference_ns_independent_audit.py | awk '{print $3}')" = "f4c3b76606907f5b5fd6b82b89dcc5cbffcd9434"
+          test "$(git ls-tree "$A4_HEAD" -- .github/workflows/kokuno-agent4-autonomous-reference-ns-independent-audit.yml | awk '{print $3}')" = "ef632d50117370a84f26d672316e3546f46adb74"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install repository
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e '.[dev]'
+
+      - name: Run parent and autonomous-reference-stress Agent-5 tests
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_a5_reference_pressure_increment_ingest_contract.py \
+            tests/test_kokuno_a5_autonomous_reference_stress_ingest_contract.py
+
+      - name: Materialize fail-closed Agent-5 reference-stress ingest receipt
+        env:
+          EXACT_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          python -m openai_ns_reconstruction.kokuno_a5_autonomous_reference_stress_ingest_contract \
+            --exact-head "$EXACT_HEAD" \
+            --output artifacts/kokuno_a5_autonomous_reference_stress_ingest_contract.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("artifacts/kokuno_a5_autonomous_reference_stress_ingest_contract.json")
+          contract = json.loads(path.read_text(encoding="utf-8"))
+          a1 = contract["agent1_autonomous_reference_stress"]
+          a4 = contract["agent4_autonomous_reference_stress_audit"]
+          seam = contract["reference_stress_ingest_seam"]
+          assert a1["autonomous_pressure_reference_stress_pair_callable"] is True
+          assert a1["source_prepared_appendixA_Pi0_materialized"] is False
+          assert a1["source_prepared_full_reference_stress_pair_materialized"] is False
+          assert a1["matched_global_pressure_materialized"] is False
+          assert a4["saved_reloaded_public_values_only"] is True
+          assert a4["implementation_distinct_from_agent1_radial_derivative"] is True
+          assert a4["autonomous_reference_stress_independently_audited"] is False
+          assert seam["queued_or_unresolved_ci_is_pass"] is False
+          assert seam["autonomous_pressure_realization_is_source_prepared_Pi0"] is False
+          assert seam["actual_fixed_kappa_continuation_materialized"] is False
+          assert seam["outer_global_leading_velocity_materialized"] is False
+          assert seam["complete_candidate_api_ready"] is False
+          assert seam["current_candidate_eligible_for_full_ns_validation"] is False
+          assert seam["residual_defined_forcing_forbidden"] is True
+          assert contract["final_gate"]["momentum_volume_l2"] == 1e-3
+          assert contract["final_gate"]["divergence_volume_l2"] == 1e-5
+          assert contract["readiness"]["pde_validated"] is False
+          PY
+
+      - name: Upload Agent-5 autonomous reference-stress ingest contract
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a5-autonomous-reference-stress-ingest-contract
+          path: artifacts/kokuno_a5_autonomous_reference_stress_ingest_contract.json
+          if-no-files-found: error
