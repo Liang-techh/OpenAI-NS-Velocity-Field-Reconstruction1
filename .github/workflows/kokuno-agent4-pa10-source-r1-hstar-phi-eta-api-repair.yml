@@ -1,0 +1,100 @@
+name: kokuno-agent4-pa10-source-r1-hstar-phi-eta-api-repair
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a4-pa10-r1-hstar-phi-eta-api-repair-069
+  pull_request:
+    branches:
+      - codex/kokuno-a4-pa10-source-r1-hstar-phi-eta-independent-audit-063
+
+permissions:
+  contents: read
+
+jobs:
+  repaired-independent-r1-hstar-phi-eta-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 1
+
+      - name: Verify exact checked-out head
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          ACTUAL_HEAD="$(git rev-parse HEAD)"
+          echo "expected_head=${EXPECTED_HEAD}"
+          echo "actual_head=${ACTUAL_HEAD}"
+          test "${ACTUAL_HEAD}" = "${EXPECTED_HEAD}"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+
+      - name: Compile
+        run: |
+          python -m compileall -q \
+            src/openai_ns_reconstruction/kokuno_pa10_source_r1_hstar_phi_eta_ordinary_slot.py \
+            src/openai_ns_reconstruction/kokuno_pa10_source_r1_hstar_phi_eta_independent_audit.py \
+            src/openai_ns_reconstruction/kokuno_pa10_source_r1_hstar_phi_eta_api_repair.py
+
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_pa10_source_r1_hstar_phi_eta_ordinary_slot.py \
+            tests/test_constrained_kokuno_pa10_source_r1_hstar_phi_eta_api_repair.py
+
+      - name: Generate exact-head Agent-4 repair receipt
+        run: |
+          mkdir -p artifacts
+          python -m openai_ns_reconstruction.kokuno_pa10_source_r1_hstar_phi_eta_api_repair \
+            --output artifacts/kokuno-agent4-pa10-source-r1-hstar-phi-eta-api-repair.json
+
+      - name: Bind exact head and validate immutable truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          import subprocess
+          from pathlib import Path
+
+          path = Path("artifacts/kokuno-agent4-pa10-source-r1-hstar-phi-eta-api-repair.json")
+          payload = json.loads(path.read_text())
+          actual = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
+          assert payload["exact_head"] == actual
+          assert payload["failed_guards"] == []
+          assert payload["source_R1_Hstar_Phi_eta_ordinary_slot_independent_preflight_passed"] is True
+          assert payload["superseded_failed_a4"]["receipt_generated"] is False
+          assert payload["superseded_failed_a4"]["scientific_reject"] is False
+          assert payload["repair"]["changed_scientific_formula"] is False
+          assert payload["repair"]["changed_seed"] is False
+          assert payload["repair"]["changed_mutation_factor"] is False
+          assert payload["repair"]["changed_ratio_gate"] is False
+          assert payload["repair"]["changed_final_pde_gate"] is False
+          gates = payload["project_gates_unchanged"]
+          assert gates["normalized_momentum_max"] == 1e-3
+          assert gates["normalized_momentum_L2"] == 1e-3
+          assert gates["divergence_max"] == 1e-5
+          assert gates["divergence_L2"] == 1e-5
+          assert gates["free_residual_defined_forcing_allowed"] is False
+          truth = payload["truth_boundary"]
+          assert truth["source_R1_all_ordinary_slots_independently_admitted"] is False
+          assert truth["source_full_post_J2_R1_independently_admitted"] is False
+          assert truth["global_pressure_matched"] is False
+          assert truth["global_leading_profile_reconstructed"] is False
+          assert truth["complete_kokuno_composite_velocity"] is False
+          assert truth["heldout_ns_momentum_residual_assessed"] is False
+          assert truth["formal_full_domain_pde_gate_assessed"] is False
+          assert truth["pde_validated"] is False
+          print("receipt_sha256=", payload["receipt_sha256"])
+          print("public_to_independent_ratios=", payload["public_to_independent_ratios"])
+          PY
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent4-pa10-source-r1-hstar-phi-eta-api-repair-v1
+          path: artifacts/kokuno-agent4-pa10-source-r1-hstar-phi-eta-api-repair.json
