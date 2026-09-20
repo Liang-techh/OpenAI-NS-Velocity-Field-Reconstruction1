@@ -1,0 +1,85 @@
+name: kokuno-agent1-autonomous-axis-pressure-seed-x100
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a1-autonomous-axis-pressure-seed-082
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_pa10_autonomous_axis_pressure_seed_x100.py"
+      - "tests/test_kokuno_pa10_autonomous_axis_pressure_seed_x100.py"
+      - ".github/workflows/kokuno-agent1-autonomous-axis-pressure-seed-x100.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent1-autonomous-axis-pressure-seed-x100-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  autonomous-axis-pressure-seed-x100:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify exact checked-out head
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          echo "exact_head=$EXPECTED_HEAD"
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile autonomous axis-pressure seam
+        run: |
+          python -m compileall -q \
+            src/openai_ns_reconstruction/kokuno_pa10_autonomous_axis_pressure_seed_x100.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_pa10_reference_pressure_increment_x100.py \
+            tests/test_kokuno_pa10_autonomous_axis_pressure_seed_x100.py
+      - name: Emit autonomous axis-pressure receipt
+        run: |
+          python - <<'PY'
+          import json
+          from openai_ns_reconstruction.kokuno_pa10_autonomous_axis_pressure_seed_x100 import (
+              KokunoPA10AutonomousAxisPressureSeedToX100,
+          )
+
+          pressure = KokunoPA10AutonomousAxisPressureSeedToX100()
+          report = pressure.report()
+          truth = report['truth_boundary']
+          axis = report['axis_admissibility_probe']
+          probe = report['X100_handoff_probe']
+
+          assert pressure.P_star == 1.0
+          assert max(abs(x) for x in axis['envelope_margin']) == 0.0
+          assert axis['eta_times_Pi0_seed_eta'][0] > 0.0
+          assert axis['eta_times_Pi0_seed_eta'][-1] > 0.0
+          assert max(probe['Pi_reference_autonomous_X']) > 1.0e-12
+          assert truth['repository_autonomous_axis_pressure_seed_materialized'] is True
+          assert truth['autonomous_reference_pressure_to_X100_executable'] is True
+          assert truth['source_prepared_appendixA_Pi0_materialized'] is False
+          assert truth['source_large_P_star_regime_admitted'] is False
+          assert truth['outer_tail_pressure_compatibility_verified'] is False
+          assert truth['matched_global_pressure_materialized'] is False
+          assert truth['reference_nsr_materialized'] is False
+          assert truth['heldout_ns_residual_assessed'] is False
+          assert truth['pde_validated'] is False
+          assert truth['paper_exact'] is False
+          assert truth['openai_field_identified'] is False
+
+          print(json.dumps({
+              'semantic_sha256': report['semantic_sha256'],
+              'axis_admissibility_probe': axis,
+              'X100_handoff_probe': probe,
+          }, indent=2, sort_keys=True))
+          PY
