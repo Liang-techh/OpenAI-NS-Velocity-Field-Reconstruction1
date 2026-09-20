@@ -1,0 +1,81 @@
+name: kokuno-agent1-pa10-reference-collar
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a1-reference-collar-077
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_pa10_reference_continuation_collar.py"
+      - "tests/test_kokuno_pa10_reference_continuation_collar.py"
+      - ".github/workflows/kokuno-agent1-pa10-reference-collar.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent1-pa10-reference-collar-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  reference-collar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify exact checked-out head
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          echo "exact_head=$EXPECTED_HEAD"
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile executable reference collar
+        run: |
+          python -m compileall -q \
+            src/openai_ns_reconstruction/kokuno_pa10_reference_continuation_collar.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_pa10_reference_continuation_collar.py
+      - name: Emit source-collar handoff receipt
+        run: |
+          python - <<'PY'
+          import json
+          from openai_ns_reconstruction.kokuno_pa10_reference_continuation_collar import (
+              KokunoPA10ReferenceContinuationCollar,
+          )
+
+          collar = KokunoPA10ReferenceContinuationCollar()
+          report = collar.report()
+          truth = report['truth_boundary']
+          assert report['geometry']['geometric_source_bound_satisfied'] is True
+          assert report['geometry']['X_0'] < report['geometry']['X_1'] < report['geometry']['X_2']
+          assert report['handoff_probe']['max_abs_radial_derivative_at_X2'] == 0.0
+          assert truth['public_first_reference_collar_formula_executable'] is True
+          assert truth['exact_public_smooth_step_executable'] is True
+          assert truth['selected_t1_chosen_from_ns_residual'] is False
+          assert truth['selected_t1_full_later_smallness_admitted'] is False
+          assert truth['stress_activation_materialized'] is False
+          assert truth['kappa0_continuation_to_X100_materialized'] is False
+          assert truth['final_interpolation_to_Xi_materialized'] is False
+          assert truth['actual_G_i_at_Xi_materialized'] is False
+          assert truth['actual_inner_to_outer_bridge_materialized'] is False
+          assert truth['heldout_ns_residual_assessed'] is False
+          assert truth['pde_validated'] is False
+          assert truth['paper_exact'] is False
+          assert truth['openai_field_identified'] is False
+
+          print(json.dumps({
+              'semantic_sha256': report['semantic_sha256'],
+              'geometry': report['geometry'],
+              'handoff_probe': report['handoff_probe'],
+          }, indent=2, sort_keys=True))
+          PY
