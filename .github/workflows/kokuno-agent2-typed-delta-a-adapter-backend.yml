@@ -1,0 +1,83 @@
+name: kokuno-agent2-typed-delta-a-adapter-backend
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a2-agent3-adapter-backend-050
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_typed_delta_a_complete_curl_backend.py"
+      - "src/openai_ns_reconstruction/kokuno_public_signed_amplitude_complete_curl.py"
+      - "tests/test_constrained_kokuno_typed_delta_a_complete_curl_backend.py"
+      - ".github/workflows/kokuno-agent2-typed-delta-a-adapter-backend.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent2-typed-delta-a-adapter-backend-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  typed-delta-a-adapter-backend:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+      - name: Compile module
+        run: >-
+          python -W error -m py_compile
+          src/openai_ns_reconstruction/kokuno_typed_delta_a_complete_curl_backend.py
+      - name: Run focused warnings-as-errors tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_typed_delta_a_complete_curl_backend.py
+          tests/test_constrained_kokuno_public_signed_amplitude_complete_curl.py
+      - name: Generate immutable adapter receipt
+        run: >-
+          python -W error -m openai_ns_reconstruction.kokuno_typed_delta_a_complete_curl_backend
+          --output artifacts/kokuno_agent2_typed_delta_a_adapter_backend_v1.json
+      - name: Check exact replay and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('artifacts/kokuno_agent2_typed_delta_a_adapter_backend_v1.json')
+          r = json.loads(p.read_text())
+          assert r['schema'] == 'kokuno-a2-typed-delta-a-complete-curl-backend-v1'
+          assert r['sample_count'] == 12
+          assert r['failed_guards'] == []
+          e = r['exact_replay']
+          assert e['velocity_max_abs_difference'] == 0.0
+          assert e['velocity_dt_max_abs_difference'] == 0.0
+          assert e['vector_potential_max_abs_difference'] == 0.0
+          a = r['agent3_adapter_payload']
+          assert a['velocity_callable'] is True
+          assert a['velocity_dt_callable'] is True
+          assert a['source_agent2_complete_curl_certified'] is False
+          t = r['truth_boundary']
+          assert t['parent_agent2_pr'] == 725
+          assert t['agent3_handoff_pr'] == 717
+          assert t['typed_delta_a_consumed_only_after_agent3_materialization'] is True
+          assert t['agent3_mean_radial_chain_reimplemented'] is False
+          assert t['vector_potential_first_complete_curl_reused'] is True
+          assert t['source_agent2_complete_curl_certified_for_full_candidate'] is False
+          assert t['source_mean_amplitude_differential_certified_for_full_candidate'] is False
+          assert t['independent_agent4_correction_audit_required'] is True
+          assert t['real_full_candidate_bound'] is False
+          assert t['heldout_ns_momentum_residual_assessed'] is False
+          assert t['pde_validated'] is False
+          assert t['paper_exact'] is False
+          print('typed_delta_a_adapter_exact_replay=PASS')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent2-typed-delta-a-adapter-backend-v1
+          path: artifacts/kokuno_agent2_typed_delta_a_adapter_backend_v1.json
+          if-no-files-found: error
