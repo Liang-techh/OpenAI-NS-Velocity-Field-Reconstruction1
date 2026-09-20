@@ -1,0 +1,214 @@
+name: kokuno-agent5-oscillatory-transport-delta-ingest
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-oscillatory-transport-delta-ingest-076
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_a5_inner_leading_oscillatory_transport_ingest_contract.py"
+      - "src/openai_ns_reconstruction/kokuno_a5_oscillatory_transport_delta_ingest_contract.py"
+      - "tests/test_kokuno_a5_inner_leading_oscillatory_transport_ingest_contract.py"
+      - "tests/test_kokuno_a5_oscillatory_transport_delta_ingest_contract.py"
+      - ".github/workflows/kokuno-agent5-oscillatory-transport-delta-ingest.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent5-oscillatory-transport-delta-ingest-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  exact-head-oscillatory-transport-delta-ingest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - name: Verify exact head checkout
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          ACTUAL_HEAD="$(git rev-parse HEAD)"
+          test "$ACTUAL_HEAD" = "$EXPECTED_HEAD"
+          echo "exact_head=$ACTUAL_HEAD"
+      - name: Verify frozen Agent-2 transport-delta source blob
+        env:
+          AGENT2_HEAD: 616e61abd2420a7c7aff3590a08393360039cd1a
+          EXPECTED_BLOB: 0f4d1614945688a6f5d0d6f4192979cabbbe9da8
+        run: |
+          git fetch --no-tags origin "$AGENT2_HEAD"
+          ACTUAL_BLOB="$(git rev-parse "$AGENT2_HEAD:src/openai_ns_reconstruction/kokuno_public_inner_leading_oscillatory_transport_delta.py")"
+          test "$ACTUAL_BLOB" = "$EXPECTED_BLOB"
+          echo "agent2_delta_blob=$ACTUAL_BLOB"
+      - name: Verify frozen Agent-4 delta-audit source blob
+        env:
+          AGENT4_HEAD: 579bc7555ae3b2e74adb10669b95d75aeef3dd53
+          EXPECTED_BLOB: a1ce30cc1067a854f1d4c252dd24b5b1e9fb9a64
+        run: |
+          git fetch --no-tags origin "$AGENT4_HEAD"
+          ACTUAL_BLOB="$(git rev-parse "$AGENT4_HEAD:src/openai_ns_reconstruction/kokuno_a4_oscillatory_transport_delta_independent_audit.py")"
+          test "$ACTUAL_BLOB" = "$EXPECTED_BLOB"
+          echo "agent4_delta_audit_blob=$ACTUAL_BLOB"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile integration seam
+        run: |
+          python -m compileall -q \
+            src/openai_ns_reconstruction/kokuno_a5_inner_leading_oscillatory_transport_ingest_contract.py \
+            src/openai_ns_reconstruction/kokuno_a5_oscillatory_transport_delta_ingest_contract.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_a5_inner_leading_oscillatory_transport_ingest_contract.py \
+            tests/test_kokuno_a5_oscillatory_transport_delta_ingest_contract.py
+      - name: Generate exact-head oscillatory-delta ingest artifact
+        run: |
+          HEAD_SHA="$(git rev-parse HEAD)"
+          python -W error -m openai_ns_reconstruction.kokuno_a5_oscillatory_transport_delta_ingest_contract \
+            --exact-head "$HEAD_SHA" \
+            --output artifacts/kokuno_agent5/oscillatory_transport_delta_ingest_v1/report.json
+      - name: Validate frozen staged-attribution scope and truth boundary
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          import subprocess
+
+          path = Path('artifacts/kokuno_agent5/oscillatory_transport_delta_ingest_v1/report.json')
+          payload = json.loads(path.read_text())
+          exact_head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
+          assert payload['exact_head'] == exact_head
+          assert payload['schema'] == 'kokuno-a5-oscillatory-transport-delta-ingest-contract-v1'
+          assert payload['parent_a5'] == {
+              'pr': 843,
+              'head': '7ba3fc1dd2aab2f09b0c4708a6b45bf08589f932',
+          }
+
+          a2 = payload['agent2_delta_binding']
+          assert a2['pr'] == 849
+          assert a2['head'] == '616e61abd2420a7c7aff3590a08393360039cd1a'
+          assert a2['source_blob_sha'] == '0f4d1614945688a6f5d0d6f4192979cabbbe9da8'
+          assert a2['dedicated_run'] == 35513939185
+          assert a2['tests_run'] == 35513939315
+          assert a2['schema'] == 'kokuno-a2-inner-leading-oscillatory-transport-delta-v1'
+          protocol = a2['protocol']
+          assert protocol['viscosity'] == 0.01
+          assert protocol['fd4_steps'] == [0.004, 0.002, 0.001]
+          assert protocol['delta_refinement_ratio_gate'] == 3.0
+          assert protocol['delta_finest_relative_rms_gate'] == 5e-2
+          assert protocol['delta_finest_relative_sampled_max_gate'] == 1e-1
+          assert protocol['ratio_R_is_observation_only'] is True
+          assert protocol['post_observation_retuning_allowed'] is False
+
+          a4 = payload['agent4_delta_audit_binding']
+          assert a4['pr'] == 851
+          assert a4['head'] == '579bc7555ae3b2e74adb10669b95d75aeef3dd53'
+          assert a4['source_blob_sha'] == 'a1ce30cc1067a854f1d4c252dd24b5b1e9fb9a64'
+          assert a4['dedicated_run'] == 35514693095
+          assert a4['tests_run'] == 35514693112
+          assert a4['schema'] == 'kokuno-a4-oscillatory-transport-delta-independent-audit-v1'
+          assert a4['protocol']['seed'] == 9173511
+          assert a4['protocol']['fd8_steps'] == [0.002, 0.001, 0.0005]
+          assert a4['protocol']['delta_transport_consistency_relative_rms_gate'] == 5e-2
+          assert a4['protocol']['delta_transport_consistency_relative_sampled_max_gate'] == 1e-1
+          assert a4['protocol']['divergence_sampled_max_gate'] == 1e-5
+          assert a4['protocol']['divergence_sampled_rms_gate'] == 1e-5
+          scope = a4['norm_scope_firewall']
+          assert scope['transport_delta_is_complete_ns_momentum_residual'] is False
+          assert scope['transport_ratio_is_cr001_acceptance_metric'] is False
+          assert scope['transport_ratio_directly_comparable_to_ST006_full_residual'] is False
+          assert scope['agent4_divergence_rms_is_sampled_rms'] is True
+          assert scope['agent4_divergence_rms_is_canonical_volume_weighted_L2'] is False
+
+          assert payload['evidence'] == {
+              'parent_strict_inner_transport_ingest_admitted': False,
+              'agent2_delta_exact_head_ci_conclusion': None,
+              'agent4_dedicated_delta_audit_present': True,
+              'agent4_delta_exact_head_ci_conclusion': None,
+              'agent4_delta_audit_conclusion': None,
+              'agent4_delta_scientific_receipt_admitted': False,
+              'oscillatory_transport_delta_scientifically_admitted': False,
+              'staged_transport_ratio_numeric_value': None,
+          }
+
+          handoff = payload['oscillatory_transport_delta_handoff']
+          assert handoff['registered'] is True
+          assert handoff['status'] == 'registered_unresolved'
+          assert handoff['construction_authority'] == 'Agent2#849'
+          assert handoff['independent_audit_authority'] == 'Agent4#851'
+          assert handoff['complete_ns_momentum_residual'] is False
+          assert handoff['ratio_R_observation_only'] is True
+          assert handoff['ratio_R_available_now'] is False
+          assert handoff['usable_as_full_candidate_defect_now'] is False
+          assert handoff['usable_for_final_independent_pde_validation'] is False
+
+          staged = payload['staged_comparison']
+          assert staged['leading_only_transport_surface_available'] is True
+          assert staged['leading_plus_oscillatory_transport_surface_available'] is True
+          assert staged['oscillatory_transport_delta_surface_available'] is True
+          assert staged['independent_before_after_delta_audit_registered'] is True
+          assert staged['numeric_before_after_ratio_available'] is False
+          assert staged['leading_only_full_ns_residual_available'] is False
+          assert staged['leading_plus_oscillatory_full_ns_residual_available'] is False
+          assert staged['after_correction_full_ns_residual_available'] is False
+          assert staged['same_protocol_ST006_comparison_legal'] is False
+
+          api = payload['candidate_api_handoff']
+          assert api['pressure'] is None
+          assert api['forcing'] is None
+          assert api['complete_candidate_api_ready'] is False
+
+          status = payload['ingest_status']
+          assert status['typed_oscillatory_transport_delta_registered'] is True
+          assert status['typed_oscillatory_transport_delta_independent_audit_registered'] is True
+          assert status['oscillatory_transport_delta_ingest_admitted'] is False
+          assert status['staged_transport_attribution_ready'] is False
+
+          assert payload['stage_state'] == {
+              'leading_ready': False,
+              'oscillatory_ready': True,
+              'correction_ready': False,
+              'velocity_export_ready': False,
+              'pde_validated': False,
+          }
+          assert payload['baseline_vs_kokuno']['comparison_performed'] is False
+          assert payload['final_project_gates_unchanged'] == {
+              'normalized_momentum_max': 1e-3,
+              'normalized_momentum_L2': 1e-3,
+              'divergence_max': 1e-5,
+              'divergence_L2': 1e-5,
+          }
+
+          truth = payload['truth_boundary']
+          true_keys = {
+              'oscillatory_transport_delta_surface_registered',
+              'agent4_delta_audit_surface_registered',
+              'registration_not_scientific_admission',
+              'transport_delta_is_not_ns_residual',
+              'transport_ratio_is_observation_only',
+          }
+          for key in true_keys:
+              assert truth[key] is True
+          for key, value in truth.items():
+              if key in true_keys:
+                  continue
+              assert value is False, (key, value)
+
+          print('artifact_sha256=', hashlib.sha256(path.read_bytes()).hexdigest())
+          print('contract_sha256=', payload['contract_sha256'])
+          print('exact_head=', exact_head)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-oscillatory-transport-delta-ingest-contract-v1
+          path: artifacts/kokuno_agent5/oscillatory_transport_delta_ingest_v1/report.json
+          if-no-files-found: error
