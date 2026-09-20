@@ -1,0 +1,63 @@
+name: agent8-st052-runtime-dependency-acceptance
+
+on:
+  pull_request:
+    paths:
+      - 'configs/st052m_runtime_dependency_acceptance.json'
+      - 'src/openai_ns_reconstruction/constrained_st052_runtime_dependency_acceptance.py'
+      - 'tests/test_constrained_st052_runtime_dependency_acceptance.py'
+      - '.github/workflows/agent8-st052-runtime-dependency-acceptance.yml'
+  push:
+    branches:
+      - 'agent8/st052-runtime-dependency-acceptance-011'
+      - 'codex/cr001-constraints'
+    paths:
+      - 'configs/st052m_runtime_dependency_acceptance.json'
+      - 'src/openai_ns_reconstruction/constrained_st052_runtime_dependency_acceptance.py'
+      - 'tests/test_constrained_st052_runtime_dependency_acceptance.py'
+      - '.github/workflows/agent8-st052-runtime-dependency-acceptance.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  runtime-dependency-acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PYTHONPATH: src
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install numerical runtime and focused test dependency
+        run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+
+      - name: Record resolved runtime receipt
+        run: |
+          python - <<'PY'
+          import json
+          import platform
+          import numpy
+          import scipy
+          import sympy
+          print(json.dumps({
+              'python': platform.python_version(),
+              'python_implementation': platform.python_implementation(),
+              'numpy': numpy.__version__,
+              'scipy': scipy.__version__,
+              'sympy': sympy.__version__,
+          }, sort_keys=True))
+          PY
+
+      - name: Focused fail-closed acceptance tests
+        run: python -m pytest -q -W error tests/test_constrained_st052_runtime_dependency_acceptance.py
+
+      - name: Emit machine-readable acceptance receipt
+        run: python -m openai_ns_reconstruction.constrained_st052_runtime_dependency_acceptance
