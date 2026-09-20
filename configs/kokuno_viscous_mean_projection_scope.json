@@ -1,0 +1,119 @@
+{
+  "schema": "cr002-kokuno-viscous-mean-projection-scope-v1",
+  "task": "CR002-KOKUNO-VISCOUS-MEAN-PROJECTION-SCOPE",
+  "purpose": "Keep the Agent-3 rotating-cylindrical mean of the Cartesian vector Laplacian distinct from a naive componentwise scalar Laplacian of cylindrical mean components and from complete CR001 momentum acceptance.",
+  "upstream": {
+    "pr": 841,
+    "head": "d8b0e792d2a263bb97754d99ee6be998611c90c3",
+    "module": "src/openai_ns_reconstruction/kokuno_inner_leading_oscillatory_viscous_mean.py",
+    "module_blob": "2801435cd1f968194cd819bf19d32468b537f71d",
+    "quantity": "mean_theta[ -nu * Delta_cartesian(u_inner + u_osc) projected onto (e_r,e_theta,e_z) ]",
+    "scope": "strict_inner_pa10_contraction_center_plus_frozen_oscillatory_field"
+  },
+  "classification": {
+    "user_requirement": [
+      "Keep user requirements, public-source facts, autonomous repository design, and pending/unknown information separate.",
+      "Keep callable/saveable velocity delivery logically independent from PDE validation.",
+      "Do not relax scientific thresholds, permit amplitude collapse, or use residual-defined free forcing to manufacture acceptance."
+    ],
+    "public_source_fact": [
+      "The pinned Kokuno reconstruction supplies the source-facing PA.10 inner-center structure consumed upstream; this contract does not promote repository finite-difference or cylindrical-averaging choices into source facts."
+    ],
+    "autonomous_design": [
+      "Repository viscosity nu=0.01 used by the constrained validation program.",
+      "Agent-1 inner Laplacian FD6 realization at step 0.001 and Agent-2 oscillatory Laplacian FD6 realization at step 0.0045.",
+      "Agent-3 rotating cylindrical projection and angular quadrature ladder 32/64/128.",
+      "The distinction between vector-Laplacian projection semantics and any future cylindrical operator-on-mean diagnostic."
+    ],
+    "pending_unknown": [
+      "Whether PR #841 exact-head CI and its mechanics/scientific checks pass.",
+      "Whether a future full angular/radial/z regularity audit establishes commutation between the vector Laplacian and the m=0 cylindrical projection for the complete candidate.",
+      "The corrected/global Kokuno leading field, matched pressure, restricted forcing composite and correction field.",
+      "Whether any future complete candidate passes canonical CR001 momentum/divergence validation or corresponds numerically to the hidden OpenAI field."
+    ]
+  },
+  "upstream_operator_semantics": {
+    "input_operator": "Cartesian vector Laplacian evaluated pointwise before angular projection",
+    "viscous_term": "-nu * Delta_cartesian(u)",
+    "angular_projection": "mean_theta of Cartesian viscous vector dotted with rotating cylindrical basis",
+    "angular_orders": [32, 64, 128],
+    "nu": 0.01,
+    "inner_laplacian_step": 0.001,
+    "oscillatory_laplacian_step": 0.0045,
+    "naive_componentwise_scalar_laplacian_of_mean_components": false,
+    "operator_on_mean_equivalence_established_here": false,
+    "radial_and_axial_derivatives_of_mean_components_computed_here": false,
+    "complete_ns_defect": false,
+    "directly_comparable_to_st006_full_residual": false
+  },
+  "cylindrical_vector_laplacian_boundary": {
+    "reason": "In a cylindrical basis the vector Laplacian is not obtained by applying the scalar Laplacian independently to every cylindrical component. Geometric basis terms matter.",
+    "axisymmetric_m0_radial_component": "(d_rr + r^-1 d_r + d_zz - r^-2) u_r",
+    "axisymmetric_m0_tangential_component": "(d_rr + r^-1 d_r + d_zz - r^-2) u_theta",
+    "axisymmetric_m0_axial_component": "(d_rr + r^-1 d_r + d_zz) u_z",
+    "safe_future_claim_requires": [
+      "explicit vector-Laplacian cylindrical formulas including geometric terms",
+      "sufficient regularity and axis handling",
+      "a separately audited commutation/equivalence argument or numerical regression",
+      "the same frozen field identity and angular projection convention"
+    ],
+    "not_established_by_841": [
+      "naive scalar-Laplacian equivalence for radial or tangential mean components",
+      "full operator-on-mean closure",
+      "global/corrected-candidate viscous residual",
+      "complete momentum residual"
+    ]
+  },
+  "canonical_cr001": {
+    "equation": "u_t + (u dot grad)u + grad(p) - nu*laplacian(u) = f; div(u)=0",
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2,2],[-2,2],[-2,2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25,0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "free_residual_defined_force_allowed": false,
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "reject_amplitude_collapse": true,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [0.25,0.3125,0.4375,0.5625,0.6875,0.75],
+    "derivative_steps": [0.02,0.01,0.005],
+    "quadrature_orders_per_axis": [24,48,96],
+    "momentum_max_threshold": 0.001,
+    "momentum_l2_threshold": 0.001,
+    "divergence_max_threshold": 0.00001,
+    "divergence_l2_threshold": 0.00001,
+    "posthoc_threshold_relaxation_allowed": false
+  },
+  "promotion_boundary": {
+    "future_841_pass_may_support": [
+      "mechanically consistent strict-inner rotating-cylindrical mean of the frozen Cartesian viscous vector on the 841 protocol"
+    ],
+    "future_841_pass_does_not_establish": [
+      "naive_componentwise_scalar_laplacian_of_cylindrical_mean",
+      "operator_on_mean_equivalence",
+      "complete_global_kokuno_candidate",
+      "canonical_cr001_momentum_acceptance",
+      "st006_same_protocol_improvement",
+      "pde_validated",
+      "visual_correspondence_verified",
+      "paper_exact",
+      "openai_field_identified",
+      "blowup_proved"
+    ],
+    "upstream_failure_invalidates_existing_callable_velocity_delivery": false
+  },
+  "states": {
+    "viscous_mean_projection_registered": true,
+    "upstream_841_ci_passed": null,
+    "operator_on_mean_equivalence_established": false,
+    "canonical_cr001_momentum_assessed_by_this_contract": false,
+    "st006_comparable": false,
+    "pde_validated": false,
+    "visual_correspondence_verified": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  }
+}
