@@ -6,7 +6,6 @@ on:
       - codex/kokuno-a5-inner-leading-oscillatory-transport-ingest-075
   pull_request:
     paths:
-      - "src/openai_ns_reconstruction/kokuno_a5_cartesian_center_spatial_derivative_ingest_contract.py"
       - "src/openai_ns_reconstruction/kokuno_a5_cartesian_center_spatial_derivative_audit_ingest_contract.py"
       - "src/openai_ns_reconstruction/kokuno_a5_inner_leading_oscillatory_transport_ingest_contract.py"
       - "tests/test_kokuno_a5_cartesian_center_spatial_derivative_audit_ingest_contract.py"
@@ -55,6 +54,15 @@ jobs:
           ACTUAL_BLOB="$(git rev-parse "$AGENT2_HEAD:src/openai_ns_reconstruction/kokuno_public_inner_leading_oscillatory_transport.py")"
           test "$ACTUAL_BLOB" = "$EXPECTED_BLOB"
           echo "agent2_transport_blob=$ACTUAL_BLOB"
+      - name: Verify frozen Agent-4 independent-audit source blob
+        env:
+          AGENT4_HEAD: fca8c7e0bcfa1a96eb073a9cde8826553d19aae9
+          EXPECTED_BLOB: bd372dae8b665c44ecaf6b2706ebebe53cd7936b
+        run: |
+          git fetch --no-tags origin "$AGENT4_HEAD"
+          ACTUAL_BLOB="$(git rev-parse "$AGENT4_HEAD:src/openai_ns_reconstruction/kokuno_a4_inner_leading_oscillatory_transport_independent_audit.py")"
+          test "$ACTUAL_BLOB" = "$EXPECTED_BLOB"
+          echo "agent4_transport_audit_blob=$ACTUAL_BLOB"
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -76,7 +84,7 @@ jobs:
           python -W error -m openai_ns_reconstruction.kokuno_a5_inner_leading_oscillatory_transport_ingest_contract \
             --exact-head "$HEAD_SHA" \
             --output artifacts/kokuno_agent5/inner_leading_oscillatory_transport_ingest_v1/report.json
-      - name: Validate frozen transport scope and truth boundary
+      - name: Validate frozen transport audit scope and truth boundary
         run: |
           python - <<'PY'
           import hashlib
@@ -111,25 +119,51 @@ jobs:
           assert a2['schema'] == 'kokuno-a2-inner-leading-oscillatory-transport-v1'
           protocol = a2['protocol']
           assert protocol['viscosity'] == 0.01
-          assert protocol['independent_fd4_steps'] == [0.004, 0.002, 0.001]
-          assert protocol['successive_stabilization_ratio_gate'] == 4.0
-          assert protocol['finest_relative_rms_gate'] == 2e-2
-          assert protocol['finest_relative_sampled_max_gate'] == 5e-2
+          assert protocol['agent2_independent_fd4_steps'] == [0.004, 0.002, 0.001]
+          assert protocol['agent2_stabilization_ratio_gate'] == 4.0
+          assert protocol['agent2_finest_relative_rms_gate'] == 2e-2
+          assert protocol['agent2_finest_relative_sampled_max_gate'] == 5e-2
           assert protocol['post_observation_retuning_allowed'] is False
+
+          a4 = payload['agent4_transport_audit_binding']
+          assert a4['pr'] == 842
+          assert a4['head'] == 'fca8c7e0bcfa1a96eb073a9cde8826553d19aae9'
+          assert a4['source_blob_sha'] == 'bd372dae8b665c44ecaf6b2706ebebe53cd7936b'
+          assert a4['dedicated_run'] == 35511772346
+          assert a4['tests_run'] == 35511772368
+          assert a4['schema'] == 'kokuno-a4-inner-leading-oscillatory-transport-independent-audit-v1'
+          assert a4['audited_agent2_pr'] == 840
+          assert a4['audited_agent2_head'] == '016e3c152d7d11e4fedcd79b819df337f8942983'
+          assert a4['protocol']['seed'] == 9173501
+          assert a4['protocol']['fd8_steps'] == [0.002, 0.001, 0.0005]
+          assert a4['protocol']['transport_consistency_relative_rms_gate'] == 1.5e-2
+          assert a4['protocol']['transport_consistency_relative_sampled_max_gate'] == 4e-2
+          assert a4['protocol']['divergence_sampled_max_gate'] == 1e-5
+          assert a4['protocol']['divergence_sampled_rms_gate'] == 1e-5
+          scope = a4['norm_scope_firewall']
+          assert scope['agent4_relative_transport_consistency_is_cr001_momentum_residual'] is False
+          assert scope['agent4_transport_consistency_directly_comparable_to_ST006_full_residual'] is False
+          assert scope['agent4_divergence_rms_is_sampled_rms'] is True
+          assert scope['agent4_divergence_rms_is_canonical_volume_weighted_L2'] is False
 
           assert payload['evidence'] == {
               'parent_inner_spatial_derivative_ingest_admitted': False,
               'agent1_laplacian_exact_head_ci_conclusion': None,
               'agent2_transport_exact_head_ci_conclusion': None,
-              'agent4_dedicated_transport_audit_present': False,
+              'agent4_dedicated_transport_audit_present': True,
+              'agent4_transport_exact_head_ci_conclusion': None,
               'agent4_transport_audit_conclusion': None,
+              'agent4_transport_scientific_receipt_admitted': False,
               'strict_inner_transport_scientifically_admitted': False,
           }
 
           handoff = payload['transport_operator_handoff']
           assert handoff['registered'] is True
           assert handoff['status'] == 'registered_unresolved'
-          assert handoff['authority'] == 'Agent2#840'
+          assert handoff['construction_authority'] == 'Agent2#840'
+          assert handoff['independent_audit_available'] is True
+          assert handoff['independent_audit_status'] == 'registered_unresolved'
+          assert handoff['independent_audit_authority'] == 'Agent4#842'
           assert handoff['includes_velocity_dt'] is True
           assert handoff['includes_full_strict_inner_advection'] is True
           assert handoff['includes_base_viscosity'] is True
@@ -153,6 +187,7 @@ jobs:
 
           status = payload['ingest_status']
           assert status['typed_strict_inner_leading_oscillatory_transport_registered'] is True
+          assert status['typed_strict_inner_transport_independent_audit_registered'] is True
           assert status['strict_inner_leading_oscillatory_transport_ingest_admitted'] is False
           assert status['strict_inner_transport_ready'] is False
           assert status['leading_ready'] is False
@@ -176,6 +211,7 @@ jobs:
           truth = payload['truth_boundary']
           true_keys = {
               'strict_inner_transport_surface_registered',
+              'agent4_transport_audit_surface_registered',
               'registration_not_scientific_admission',
           }
           for key in true_keys:
