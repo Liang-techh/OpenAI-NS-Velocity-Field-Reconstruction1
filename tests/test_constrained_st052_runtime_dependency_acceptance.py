@@ -63,11 +63,13 @@ def test_runtime_receipt_requirement_cannot_be_removed(monkeypatch: pytest.Monke
 
 
 def test_scientific_state_promotion_fails_closed(monkeypatch: pytest.MonkeyPatch) -> None:
+    base_contract = _contract()
     for key in ("velocity_export_ready", "visualization_ready", "pde_validated", "openai_field_identified"):
-        contract = deepcopy(_contract())
+        contract = deepcopy(base_contract)
         contract["truth_boundary"][key] = True
-        with pytest.raises(ValueError, match=key):
-            _audit_mutated(monkeypatch, contract)
+        with monkeypatch.context() as scoped:
+            with pytest.raises(ValueError, match=key):
+                _audit_mutated(scoped, contract)
 
 
 def test_runtime_acceptance_unblocks_only_next_delivery_smoke(monkeypatch: pytest.MonkeyPatch) -> None:
