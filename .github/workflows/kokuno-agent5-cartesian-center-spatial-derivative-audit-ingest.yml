@@ -1,0 +1,165 @@
+name: kokuno-agent5-cartesian-center-spatial-derivative-audit-ingest
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-cartesian-center-spatial-derivative-audit-ingest-074
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_a5_cartesian_center_spatial_derivative_ingest_contract.py"
+      - "src/openai_ns_reconstruction/kokuno_a5_cartesian_center_spatial_derivative_audit_ingest_contract.py"
+      - "tests/test_kokuno_a5_cartesian_center_spatial_derivative_ingest_contract.py"
+      - "tests/test_kokuno_a5_cartesian_center_spatial_derivative_audit_ingest_contract.py"
+      - ".github/workflows/kokuno-agent5-cartesian-center-spatial-derivative-audit-ingest.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent5-cartesian-center-spatial-derivative-audit-ingest-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  exact-head-cartesian-center-spatial-derivative-audit-ingest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - name: Verify exact head checkout
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          ACTUAL_HEAD="$(git rev-parse HEAD)"
+          test "$ACTUAL_HEAD" = "$EXPECTED_HEAD"
+          echo "exact_head=$ACTUAL_HEAD"
+      - name: Verify frozen Agent-4 independent-audit source blob
+        env:
+          AGENT4_HEAD: 56f4cf63e79fd08fe005ea3dce061f9a2f8ce50e
+          EXPECTED_BLOB: 9e6a4c95ef0f52d952c3278d028a201d85efa578
+        run: |
+          git fetch --no-tags origin "$AGENT4_HEAD"
+          ACTUAL_BLOB="$(git rev-parse "$AGENT4_HEAD:src/openai_ns_reconstruction/kokuno_a4_pa10_cartesian_center_spatial_derivatives_independent_audit.py")"
+          test "$ACTUAL_BLOB" = "$EXPECTED_BLOB"
+          echo "agent4_spatial_derivative_audit_blob=$ACTUAL_BLOB"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile integration seam
+        run: |
+          python -m compileall -q \
+            src/openai_ns_reconstruction/kokuno_a5_cartesian_center_spatial_derivative_ingest_contract.py \
+            src/openai_ns_reconstruction/kokuno_a5_cartesian_center_spatial_derivative_audit_ingest_contract.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_a5_cartesian_center_spatial_derivative_ingest_contract.py \
+            tests/test_kokuno_a5_cartesian_center_spatial_derivative_audit_ingest_contract.py
+      - name: Generate exact-head audit-ingest artifact
+        run: |
+          HEAD_SHA="$(git rev-parse HEAD)"
+          python -W error -m openai_ns_reconstruction.kokuno_a5_cartesian_center_spatial_derivative_audit_ingest_contract \
+            --exact-head "$HEAD_SHA" \
+            --output artifacts/kokuno_agent5/cartesian_center_spatial_derivative_audit_ingest_v1/report.json
+      - name: Validate frozen evidence, scope and truth boundary
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          import subprocess
+
+          path = Path('artifacts/kokuno_agent5/cartesian_center_spatial_derivative_audit_ingest_v1/report.json')
+          payload = json.loads(path.read_text())
+          exact_head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
+          assert payload['exact_head'] == exact_head
+          assert payload['schema'] == 'kokuno-a5-cartesian-center-spatial-derivative-audit-ingest-contract-v1'
+          assert payload['parent_a5'] == {
+              'pr': 824,
+              'head': '089e7589f3f0a9ba50f3cc764bd20c348f926654',
+          }
+
+          a4 = payload['agent4_spatial_derivative_audit_binding']
+          assert a4['pr'] == 823
+          assert a4['head'] == '56f4cf63e79fd08fe005ea3dce061f9a2f8ce50e'
+          assert a4['source_blob_sha'] == '9e6a4c95ef0f52d952c3278d028a201d85efa578'
+          assert a4['dedicated_run'] == 35506076292
+          assert a4['tests_run'] == 35506076340
+          assert a4['schema'] == 'kokuno-a4-pa10-cartesian-center-spatial-derivatives-independent-audit-v1'
+          assert a4['protocol']['independent_reference'] == 'public-velocity-only-centered-FD6'
+          assert a4['protocol']['space_steps'] == [0.0012, 0.0006, 0.0003]
+          assert a4['protocol']['divergence_sampled_max_gate'] == 1e-5
+          assert a4['protocol']['divergence_sampled_rms_gate'] == 1e-5
+          scope = a4['divergence_norm_scope']
+          assert scope['canonical_cr001_volume_weighted_spatial_l2_established'] is False
+          assert scope['whole_domain_global_candidate_divergence_established'] is False
+          assert scope['same_metric_as_final_cr001_divergence_l2'] is False
+
+          assert payload['evidence'] == {
+              'parent_inner_cartesian_center_spatial_derivative_ingest_admitted': False,
+              'agent4_dedicated_spatial_derivative_audit_present': True,
+              'agent4_exact_head_ci_conclusion': None,
+              'agent4_independent_audit_conclusion': None,
+              'agent4_scientific_receipt_admitted': False,
+          }
+
+          api = payload['candidate_api_handoff']
+          assert api['velocity'] == 'Agent1#803.KokunoPA10CartesianCenterVelocity.velocity'
+          assert api['velocity_dt'] == 'Agent1#811.KokunoPA10CartesianCenterVelocityTimeDerivative.velocity_dt'
+          assert api['pressure'] is None
+          assert api['forcing'] is None
+          assert api['complete_candidate_api_ready'] is False
+
+          ops = payload['differential_operator_handoff']
+          assert ops['independent_audit_available'] is True
+          assert ops['independent_audit_status'] == 'registered_unresolved'
+          assert ops['independent_audit_authority'] == 'Agent4#823'
+          assert ops['usable_for_inner_spatial_derivative_admission_if_passes'] is True
+          assert ops['usable_for_final_independent_pde_validation'] is False
+
+          status = payload['ingest_status']
+          assert status['typed_inner_cartesian_center_spatial_derivative_independent_audit_registered'] is True
+          assert status['inner_cartesian_center_spatial_derivative_ingest_admitted'] is False
+          assert status['global_leading_velocity_materialized'] is False
+          assert status['matched_global_pressure_materialized'] is False
+          assert status['restricted_forcing_composite_validated'] is False
+          assert status['leading_ready'] is False
+
+          assert payload['stage_state'] == {
+              'leading_ready': False,
+              'oscillatory_ready': True,
+              'correction_ready': False,
+              'velocity_export_ready': False,
+              'pde_validated': False,
+          }
+          assert payload['baseline_vs_kokuno']['kokuno_same_protocol_full_candidate_residual_available'] is False
+          assert payload['baseline_vs_kokuno']['comparison_performed'] is False
+          assert payload['final_project_gates_unchanged'] == {
+              'normalized_momentum_max': 1e-3,
+              'normalized_momentum_L2': 1e-3,
+              'divergence_max': 1e-5,
+              'divergence_L2': 1e-5,
+          }
+
+          truth = payload['truth_boundary']
+          assert truth['a4_audit_surface_registered'] is True
+          assert truth['interface_registration_not_scientific_admission'] is True
+          for key, value in truth.items():
+              if key in {'a4_audit_surface_registered', 'interface_registration_not_scientific_admission'}:
+                  continue
+              assert value is False, (key, value)
+
+          print('artifact_sha256=', hashlib.sha256(path.read_bytes()).hexdigest())
+          print('contract_sha256=', payload['contract_sha256'])
+          print('exact_head=', exact_head)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-cartesian-center-spatial-derivative-audit-ingest-contract-v1
+          path: artifacts/kokuno_agent5/cartesian_center_spatial_derivative_audit_ingest_v1/report.json
+          if-no-files-found: error
