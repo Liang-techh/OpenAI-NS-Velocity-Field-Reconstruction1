@@ -1,0 +1,111 @@
+name: agent7-st052m-toroidal-child-morphology-replay
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_toroidal_child_morphology_replay.py'
+      - 'experiments/root_st052/test_agent7_st052m_toroidal_child_morphology_replay.py'
+      - '.github/workflows/agent7-st052m-toroidal-child-morphology-replay.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  toroidal-child-morphology-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Verify exact PR head checkout
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+      - name: Focused frozen-protocol tests
+        run: python -m pytest -q -W error experiments/root_st052/test_agent7_st052m_toroidal_child_morphology_replay.py
+      - name: Execute preregistered toroidal child replay
+        run: |
+          mkdir -p outputs/agent7-st052m-toroidal-child-morphology-replay
+          python experiments/root_st052/agent7_st052m_toroidal_child_morphology_replay.py \
+            --out outputs/agent7-st052m-toroidal-child-morphology-replay/report.json
+      - name: Verify frozen ancestry, gates and truth boundary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-toroidal-child-morphology-replay/report.json').read_text())
+          assert r['task_id']=='CR003-ST052M-TOROIDAL-CHILD-MORPHOLOGY-REPLAY-120'
+          assert r['prereg_issue']==845
+          assert r['source_parent']=={'pr':837,'head':'4c821c302cf89a7cc7a41730ce7029bdfbe6a7ef'}
+          assert r['source_reservoir_child']['pr']==775
+          assert r['source_reservoir_child']['head']=='93887a59729d22113badf2ae4dac2f7d868e2703'
+          assert r['frozen_toroidal_basis']['parameter_count_increment']==1
+          assert r['coefficient_calibration']['projection_strength']==0.10
+          assert r['coefficient_calibration']['coefficient_scan_performed'] is False
+          assert r['coefficient_calibration']['optimizer_used'] is False
+          assert r['coefficient_calibration']['fresh_714_data_used'] is False
+          assert r['morphology_fingerprint']['midpoint_swirl_rms_strictly_increased'] is True
+          assert r['morphology_fingerprint']['radial_axial_invariant_all_times'] is True
+          assert r['structure_check']['passes'] is True
+          assert r['held_out_pde_residual']['evaluated'] is False
+          assert r['held_out_pde_residual']['st006_comparison_performed'] is False
+          assert r['pressure_or_force_changed'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['source_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          assert r['paper_exact'] is False
+          assert r['openai_field_identified'] is False
+          assert r['toroidal_child_morphology_screen_passed'] is True
+          print('screen_pass=',r['toroidal_child_morphology_screen_passed'])
+          print('beta=',r['coefficient_calibration']['beta_theta'])
+          print('relative_correction=',r['coefficient_calibration']['correction_to_parent_u_theta_l2_ratio'])
+          print('midpoint=',r['morphology_fingerprint']['by_time']['0.500'])
+          print('capacity=',r['structure_check']['poloidal_toroidal_capacity'])
+          print('residual_boundary=',r['held_out_pde_residual'])
+          PY
+      - name: Publish compact receipt
+        if: ${{ always() && github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          if [ ! -f outputs/agent7-st052m-toroidal-child-morphology-replay/report.json ]; then exit 0; fi
+          python - <<'PY' > /tmp/agent7-toroidal-child-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-toroidal-child-morphology-replay/report.json').read_text())
+          c=r['coefficient_calibration']; m=r['morphology_fingerprint']; s=r['structure_check']
+          mid=m['by_time']['0.500']
+          print('<!-- agent7-st052m-toroidal-child-morphology-replay-receipt -->')
+          print('**Agent 7 frozen toroidal-child morphology receipt (issue #845):**')
+          print()
+          print(f"- screen pass: `{r['toroidal_child_morphology_screen_passed']}`")
+          print(f"- beta_theta: `{c['beta_theta']:.12g}` from frozen 10% projection rule; correction/parent swirl L2: `{c['correction_to_parent_u_theta_l2_ratio']:.6g}`")
+          print(f"- midpoint u_theta RMS: parent `{mid['parent_u_theta_rms']:.9g}` -> child `{mid['child_u_theta_rms']:.9g}` (delta `{mid['u_theta_rms_delta']:.9g}`)")
+          print(f"- radial/axial invariance across frozen times: `{m['radial_axial_invariant_all_times']}`")
+          print(f"- correction FD divergence max: `{s['toroidal_correction_cartesian_fd_divergence_max']:.3e}`; poloidal/toroidal rank `{s['poloidal_toroidal_capacity']['normalized_column_rank']}`, condition `{s['poloidal_toroidal_capacity']['normalized_column_condition']:.6g}`")
+          print('- held-out full-PDE residual: `not evaluated` because this child has no newly matched pressure/forcing; no ST006 improvement claim is made.')
+          print()
+          print('Truth boundary: this is one autonomous velocity-space morphology child. It is not global visual/source correspondence, PDE validation, paper exactness, exact OpenAI-field identity, or blow-up evidence.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-toroidal-child-receipt.md || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-toroidal-child-morphology-replay
+          path: outputs/agent7-st052m-toroidal-child-morphology-replay/
+          if-no-files-found: warn
+
+# All coefficient semantics, probes and acceptance gates were frozen in issue #845 before execution.
