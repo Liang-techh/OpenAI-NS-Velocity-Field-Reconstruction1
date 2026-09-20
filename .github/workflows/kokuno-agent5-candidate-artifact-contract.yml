@@ -1,0 +1,146 @@
+name: kokuno-agent5-candidate-artifact-contract
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-candidate-artifact-contract-066
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_a5_candidate_artifact_contract.py"
+      - "src/openai_ns_reconstruction/kokuno_a5_source_leading_admission_firewall.py"
+      - "src/openai_ns_reconstruction/kokuno_a5_source_leading_admission_firewall_v4.py"
+      - "src/openai_ns_reconstruction/kokuno_a5_source_leading_admission_firewall_v5.py"
+      - "tests/test_kokuno_a5_candidate_artifact_contract.py"
+      - ".github/workflows/kokuno-agent5-candidate-artifact-contract.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kokuno-agent5-candidate-artifact-contract-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  exact-head-candidate-artifact-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - name: Verify exact head checkout
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          ACTUAL_HEAD="$(git rev-parse HEAD)"
+          test "$ACTUAL_HEAD" = "$EXPECTED_HEAD"
+          echo "exact_head=$ACTUAL_HEAD"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+      - name: Compile candidate-artifact contract
+        run: |
+          python -m compileall -q \
+            src/openai_ns_reconstruction/kokuno_a5_source_leading_admission_firewall.py \
+            src/openai_ns_reconstruction/kokuno_a5_source_leading_admission_firewall_v4.py \
+            src/openai_ns_reconstruction/kokuno_a5_source_leading_admission_firewall_v5.py \
+            src/openai_ns_reconstruction/kokuno_a5_candidate_artifact_contract.py
+      - name: Focused warnings-as-errors regression
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_a5_candidate_artifact_contract.py
+      - name: Generate exact-head contract artifact
+        run: |
+          HEAD_SHA="$(git rev-parse HEAD)"
+          python -W error -m openai_ns_reconstruction.kokuno_a5_candidate_artifact_contract \
+            --exact-head "$HEAD_SHA" \
+            --output artifacts/kokuno_agent5/candidate_artifact_contract_v1/report.json
+      - name: Validate immutable truth boundary and public API contract
+        run: |
+          python - <<'PY'
+          import hashlib
+          import json
+          from pathlib import Path
+          import subprocess
+
+          path = Path('artifacts/kokuno_agent5/candidate_artifact_contract_v1/report.json')
+          payload = json.loads(path.read_text())
+          exact_head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip()
+          assert payload['exact_head'] == exact_head
+          assert payload['schema'] == 'kokuno-a5-candidate-artifact-contract-v1'
+          assert payload['parent_a5']['pr'] == 756
+          assert payload['parent_a5']['head'] == '44b68dc387bb4482f4a836a06b14698e93a70a71'
+
+          assert payload['pipeline_order'] == [
+              'source_profile_ingest',
+              'leading_candidate',
+              'oscillatory_augmentation',
+              'mean_radial_corrections',
+              'finite_correction_cycle',
+              'candidate_artifact',
+              'independent_validation',
+              'report',
+          ]
+          api = payload['public_api_contract']
+          assert set(api) == {'velocity', 'velocity_dt', 'pressure', 'forcing'}
+          assert api['forcing']['must_be_preregistered_restricted_family'] is True
+          assert api['forcing']['may_not_be_defined_from_residual'] is True
+
+          params = payload['parameter_serialization']
+          assert params['format'] == 'canonical-json-utf8'
+          assert params['parameter_sha256_required'] is True
+          assert params['source_and_version_provenance_required'] is True
+
+          state = payload['stage_state']
+          assert state == {
+              'leading_ready': False,
+              'oscillatory_ready': True,
+              'correction_ready': False,
+              'velocity_export_ready': False,
+              'pde_validated': False,
+          }
+          candidate = payload['candidate_payload']
+          assert candidate['materialized'] is False
+          assert candidate['candidate_id'] is None
+          assert candidate['parameter_payload'] is None
+          assert candidate['parameter_sha256'] is None
+          assert candidate['evaluator_bindings'] is None
+          assert candidate['validation_receipt'] is None
+
+          baseline = payload['baseline_vs_kokuno']
+          assert baseline['retained_repository_baseline']['same_protocol_momentum_sampled_max'] == 0.1082289305112118
+          assert baseline['retained_repository_baseline']['same_protocol_momentum_volume_L2'] == 0.10758432876230622
+          assert baseline['kokuno_same_protocol_full_candidate_residual_available'] is False
+          assert baseline['comparison_performed'] is False
+
+          gates = payload['final_project_gates_unchanged']
+          assert gates == {
+              'normalized_momentum_max': 1e-3,
+              'normalized_momentum_L2': 1e-3,
+              'divergence_max': 1e-5,
+              'divergence_L2': 1e-5,
+          }
+          truth = payload['truth_boundary']
+          assert truth['contract_only_not_candidate'] is True
+          assert truth['surrogate_promoted_to_candidate'] is False
+          assert truth['free_residual_defined_forcing_allowed'] is False
+          assert truth['threshold_relaxed'] is False
+          assert truth['kokuno_replay_used_as_final_independent_validation'] is False
+          assert truth['leading_ready'] is False
+          assert truth['correction_ready'] is False
+          assert truth['velocity_export_ready'] is False
+          assert truth['pde_validated'] is False
+
+          report_sha = hashlib.sha256(path.read_bytes()).hexdigest()
+          print('artifact_sha256=', report_sha)
+          print('contract_sha256=', payload['contract_sha256'])
+          print('exact_head=', exact_head)
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-candidate-artifact-contract-v1
+          path: artifacts/kokuno_agent5/candidate_artifact_contract_v1/report.json
+          if-no-files-found: error
