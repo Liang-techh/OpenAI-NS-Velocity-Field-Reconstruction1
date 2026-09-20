@@ -104,6 +104,34 @@ def test_agent1_configuration_mutation_is_rejected_after_serialization(tmp_path)
         KokunoPA10ReferencePressureIncrementToX100.load_configuration(path)
 
 
+def test_real_agent1_serialized_pressure_increment_runs_frozen_scientific_audit(tmp_path):
+    original = KokunoPA10ReferencePressureIncrementToX100()
+    config_path = tmp_path / "reference-pressure-increment.json"
+    original.save_configuration(config_path)
+    rebound = KokunoPA10ReferencePressureIncrementToX100.load_configuration(config_path)
+    assert rebound.semantic_sha256 == original.semantic_sha256
+
+    receipt = audit.materialize_reference_pressure_increment_audit(rebound)
+    audit.save_audit_receipt(tmp_path / "receipt.json", receipt)
+    assert receipt["agent1_exact_head"] == "3f43931cec1fc762678a5a8134adfceaf7edfa81"
+    assert receipt["pressure_semantic_sha256"] == original.semantic_sha256
+    assert receipt["truth_boundary"]["absolute_reference_pressure_materialized"] is False
+    assert receipt["truth_boundary"]["cartesian_pressure_gradient_assessed"] is False
+    assert receipt["truth_boundary"]["pde_validated"] is False
+    assert receipt["passed"] is True, json.dumps(
+        {
+            "radial_three_resolution_match": receipt["radial_three_resolution_match"],
+            "eta_three_resolution_match": receipt["eta_three_resolution_match"],
+            "radial_resolution_stability": receipt["radial_resolution_stability"],
+            "eta_resolution_stability": receipt["eta_resolution_stability"],
+            "worst_radial_match": receipt["worst_radial_match"],
+            "worst_eta_match": receipt["worst_eta_match"],
+            "checks": receipt["checks"],
+        },
+        sort_keys=True,
+    )
+
+
 def test_parent_identity_and_truth_boundary_are_exactly_scoped():
     contract = audit.public_contract()
     assert contract["agent1_pr"] == 907
