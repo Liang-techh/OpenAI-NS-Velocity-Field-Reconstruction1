@@ -1,0 +1,113 @@
+{
+  "schema": "cr002-st052m-endpoint-temporal-derivative-scope-v1",
+  "task": "CR002-ST052M-ENDPOINT-TEMPORAL-DERIVATIVE-SCOPE-117",
+  "stack": {
+    "audited_pr": 818,
+    "audited_head": "c5acc7f8f65b64885ec5660ed9c991696668e300",
+    "audited_source_path": "experiments/root_st052/agent7_st052m_endpoint_temporal_curvature_preflight.py",
+    "audited_source_blob": "1d5e5353e3792ceb0a3f99d16749cbb63e3cc301",
+    "source_parent_pr": 810,
+    "frozen_child_pr": 775
+  },
+  "classification": {
+    "user_requirement": [
+      "Keep callable velocity delivery independent from visual-correspondence, PDE-validation, paper-exact, OpenAI-field, and blow-up claims.",
+      "Do not let a velocity-value endpoint constraint silently stand in for a time-derivative or momentum-residual constraint.",
+      "Preserve CR001 forcing, nontriviality, held-out validation, and threshold policy without post-hoc relaxation."
+    ],
+    "public_source_fact": [],
+    "autonomous_design": [
+      "Agent-7 freezes the repository time-shape g2(t)=16*(t-0.25)*(0.75-t) on the repository interval [0.25,0.75].",
+      "The numerical factor 16, endpoint choices, midpoint normalization, identifiability gate, response times, and morphology probes are repository designs rather than OpenAI-published numerical data.",
+      "This contract distinguishes endpoint velocity-value preservation from fixed-Cartesian velocity_dt and momentum-residual behavior for a hypothetical additive temporal child."
+    ],
+    "pending_unknown": [
+      "No temporal coefficient beta has been selected, so no new child velocity field is materialized by PR #818.",
+      "Whether a future frozen temporal child improves any preregistered public-observable visual mismatch remains unknown.",
+      "Whether any future temporal child passes the frozen CR001 divergence, momentum-residual, energy, and convergence gates remains unknown."
+    ]
+  },
+  "time_basis": {
+    "formula": "g2(t)=16*(t-0.25)*(0.75-t)",
+    "derivative_formula": "g2_prime(t)=16*(1-2*t)",
+    "registered_interval": [0.25, 0.75],
+    "witness": {
+      "g2_start": 0.0,
+      "g2_mid": 1.0,
+      "g2_end": 0.0,
+      "g2_prime_start": 8.0,
+      "g2_prime_mid": 0.0,
+      "g2_prime_end": -8.0
+    },
+    "coefficient_selected": false,
+    "coefficient_may_not_be_selected_from_cr001_held_out_pde_samples": true,
+    "public_openai_numeric_time_law_claimed": false
+  },
+  "scope": {
+    "preflight_changes_candidate_velocity": false,
+    "future_additive_child_form": "u_beta(x,t)=u_parent(x,t)+beta*g2(t)*C(x)",
+    "future_child_assumes_static_spatial_channel_for_this_identity": true,
+    "g2_zero_endpoints_preserve_additive_velocity_values_at_endpoints": true,
+    "g2_zero_at_t025_preserves_initial_kinetic_energy_value_if_parent_and_domain_are_unchanged": true,
+    "g2_zero_endpoints_imply_velocity_dt_endpoint_preservation": false,
+    "g2_zero_endpoints_imply_momentum_residual_endpoint_neutrality": false,
+    "nonzero_g2_prime_endpoints_require_explicit_velocity_dt_accounting_if_beta_times_C_is_nonzero": true,
+    "initial_energy_value_preservation_is_not_pde_validation": true,
+    "initial_energy_value_preservation_is_not_new_nontriviality_evidence": true,
+    "endpoint_velocity_value_preservation_is_not_visual_correspondence": true,
+    "identifiability_pass_would_only_establish_local_expression_capacity": true,
+    "identifiability_pass_would_not_select_beta": true,
+    "held_out_pde_residual_evaluated_by_this_increment": false
+  },
+  "cr001_snapshot": {
+    "constraints_blob": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_parameter_bounds": {
+      "a": [0.0, 10.0],
+      "c": [0.0, 10.0]
+    },
+    "free_residual_defined_forcing_forbidden": true,
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "amplitude_collapse_forbidden": true,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "validation_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "endpoint_time_derivatives_use_one_sided_calibrated_stencils": true,
+    "divergence_max": 1e-05,
+    "divergence_L2": 1e-05,
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001,
+    "post_hoc_threshold_relaxation_forbidden": true
+  },
+  "independent_states": {
+    "existing_callable_velocity_delivery_invalidated": false,
+    "velocity_export_ready_promoted_by_this_contract": false,
+    "temporal_child_materialized": false,
+    "temporal_coefficient_selected": false,
+    "visualization_ready_promoted_by_this_contract": false,
+    "visual_correspondence_verified": false,
+    "source_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "forbidden_promotions": [
+    "g2 endpoint value zero -> endpoint velocity_dt unchanged",
+    "g2 endpoint value zero -> endpoint momentum residual unchanged",
+    "initial velocity/energy value preserved -> PDE validation",
+    "autonomous g2 constants -> OpenAI-published numerical time law",
+    "three-column identifiability -> visual correspondence",
+    "three-column identifiability -> temporal coefficient selected",
+    "preflight capacity -> paper-exact or OpenAI-field identity",
+    "held-out CR001 residual samples -> temporal coefficient tuning data"
+  ]
+}
