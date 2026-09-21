@@ -1,0 +1,80 @@
+name: agent9-source-faithful-outer-crosswalk
+on:
+  pull_request:
+    paths:
+      - 'configs/external_openai_source_faithful_outer_v1.json'
+      - 'tests/test_constrained_a9_source_faithful_outer_contract.py'
+      - '.github/workflows/agent9-source-faithful-outer-crosswalk.yml'
+  push:
+    branches: [main, 'agent9/source-faithful-outer-crosswalk-099']
+    paths:
+      - 'configs/external_openai_source_faithful_outer_v1.json'
+      - 'tests/test_constrained_a9_source_faithful_outer_contract.py'
+      - '.github/workflows/agent9-source-faithful-outer-crosswalk.yml'
+permissions:
+  contents: read
+concurrency:
+  group: agent9-source-faithful-outer-crosswalk-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify-crosswalk:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - name: Assert exact checkout
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install focused test dependency
+        run: python -m pip install pytest
+      - name: Run fail-closed contract regressions
+        run: python -m pytest -q -W error tests/test_constrained_a9_source_faithful_outer_contract.py
+      - name: Verify pinned external source identity and formula locators
+        env:
+          SOURCE_COMMIT: 9fd8c271372b5f53bb7f5613118794d6ecd0250f
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import urllib.request
+
+          commit = os.environ['SOURCE_COMMIT']
+          root = f'https://raw.githubusercontent.com/KokunoYumeto/yang-mills-interacting-workbench/{commit}'
+
+          def read(path):
+              with urllib.request.urlopen(f'{root}/{path}', timeout=30) as response:
+                  return response.read().decode('utf-8')
+
+          record = json.loads(read('navier-stokes/SOURCE_READING_20260920.json'))
+          assert record['schema'] == 'pinned-external-mathematical-source-v1'
+          assert record['primary_paper']['pages'] == 166
+          assert record['primary_paper']['sha256'] == '0e779481c4da40bd28d1e642e1d8ca57447d129610df28dfa5a11e9af8ae228f'
+          assert record['reconstruction']['commit'] == '5e162f34cd2d3581f890660e81fbf063509085d0'
+          assert record['reconstruction']['independent_reconstruction'] is True
+          assert record['reconstruction']['official_source_release'] is False
+          assert record['publisher_reported_transcription_checks']['independent_mathematical_proof_verification'] is False
+          assert record['workbench_mirror']['zip_sha256'] == '997e825e34fa825d189bd301edaa6251e5505710fe294bec99c83a9712558e4c'
+          assert 'without assigning any new licence' in record['reuse']
+
+          sec4 = read('navier-stokes/sources/openai-source-faithful-20260920/upstream/reconstruction/sections/pp025-030.tex')
+          appa = read('navier-stokes/sources/openai-source-faithful-20260920/upstream/reconstruction/sections/pp127-132.tex')
+          for marker in ('\\tag{4.5}', '\\tag{4.7}'):
+              assert marker in sec4
+          for marker in ('\\tag{A.5}', '\\tag{A.9}', '\\tag{A.10}', '\\tag{A.12}', '\\tag{A.13}'):
+              assert marker in appa
+          print(json.dumps({
+              'workbench_commit': commit,
+              'source_pages': record['primary_paper']['pages'],
+              'classification': 'reimplement_math_only',
+              'direct_copy_allowed': False,
+              'outer_schedule_markers_verified': True,
+          }, sort_keys=True))
+          PY
