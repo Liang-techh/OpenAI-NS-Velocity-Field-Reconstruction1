@@ -1,0 +1,202 @@
+{
+  "schema": "cr002-kokuno-rf40-power-law-composite-audit-scope-v1",
+  "task_id": "CR002-KOKUNO-RF40-POWER-LAW-COMPOSITE-AUDIT-SCOPE-104",
+  "purpose": "Govern the representation/evidence boundary created when A1 #1005 extends the leading-only Cartesian field through RF40 power law X_4 while the matched A2/A4/A5 composite-and-independent-audit lineage still stops at lambda turn X_3.",
+  "exact_base": {
+    "pr": 1008,
+    "head": "28860ee1f4655670c62b24880f08aa3d50459623",
+    "branch": "codex/kokuno-a5-rf40-lambda-turn-composite-ingest-099",
+    "source_blob": "c71499e4e0ae38c9f6eb1032c2e63be7dde58894"
+  },
+  "active_integration_reference": {
+    "branch": "codex/cr001-constraints",
+    "head": "7f6658cac1a8ffea178bec5accf2fa5a784b8249",
+    "role": "live constrained truth/routing reference; this narrow Kokuno governance increment is stacked on exact A5 #1008 to avoid retargeting sibling evidence"
+  },
+  "four_way_provenance": {
+    "user_requirements": [
+      "Deliver an explicit computable save/load 3-D time-dependent velocity(x,y,z,t)->[u,v,w].",
+      "Keep velocity delivery, visual correspondence, PDE validation, paper exactness and OpenAI-field identity as independent states.",
+      "Do not weaken preregistered PDE, forcing, nontriviality or validation gates to manufacture success."
+    ],
+    "public_source_facts": [
+      "No new public-source numerical datum or formula is asserted by this governance increment.",
+      "The RF40 power-law formula provenance remains the public corrected reconstruction identity already pinned by A1 #1005; this contract does not independently reverify original-OpenAI-paper exact correspondence."
+    ],
+    "autonomous_repository_facts": [
+      "A1 #1005 materializes a repository candidate-side leading-only Cartesian velocity through the RF40 constant-lambda power-law endpoint X_4 and exposes deterministic configuration save/load.",
+      "A2 #1004 composes the frozen complete-curl oscillatory runtime only through lambda-turn endpoint X_3=X_w and fails closed after X_3.",
+      "A4 #1007 independently audits the save/reloaded A2 #1004 public Cartesian composite only on the lambda-turn domain through X_3.",
+      "A5 #1008 registers the matched A1 #998 -> A2 #1004 -> A4 #1007 lambda-turn seam and records A1 #1005 only as a non-consumed newer sibling."
+    ],
+    "pending_or_unknown": [
+      "A leading+oscillatory composite materialized through the exact A1 #1005 RF40 power-law domain X_3<X<=X_4.",
+      "Implementation-distinct public-Cartesian validation of that exact power-law composite on points strictly in X_3<X<=X_4.",
+      "Correction-side nonlinear mean/stress/force carried to the same power-law identity.",
+      "Cone/I1-I4 overlays, terminal-tail/global completion, global compact-support join and unified Kokuno export.",
+      "Matched Cartesian pressure, preregistered restricted forcing, complete NS defect, correction velocity, finite correction cycle and held-out full-PDE admission.",
+      "Visual correspondence, paper exactness, OpenAI-field identity and blow-up proof."
+    ]
+  },
+  "upstream_scope": {
+    "agent1_1005": {
+      "pr": 1005,
+      "head": "2c76ebdc41d6c566f43a1305034ba2ff9dce410b",
+      "source_blob": "36a0183352a2005bd0b5f477594e05a2e4fe3868",
+      "test_blob": "9c88ab44c3a195b42f6f600b54563491869be64f",
+      "workflow_blob": "2f871a63034ca0284761e97cdd014766c9820d94",
+      "materialized_domain": "leading-only through RF40 constant-lambda power-law endpoint X_4",
+      "public_velocity_api": "velocity(x,y,z,t)->[...,3]",
+      "deterministic_configuration_save_load": true,
+      "fails_closed_after_X_4": true,
+      "power_law_leading_materialized": true,
+      "power_law_composite_materialized": false,
+      "implementation_distinct_power_law_composite_audit_available": false,
+      "global_complete_velocity_materialized": false,
+      "pde_validated": false
+    },
+    "agent2_1004": {
+      "pr": 1004,
+      "head": "e9697cdfe2249e1b8bc2f9241bd16d456c60418f",
+      "source_blob": "def2998256b2339115c2400c75b6db6ab58dfe95",
+      "materialized_domain": "leading + frozen complete-curl oscillation through RF40 lambda turn X_3=X_w",
+      "identity_preserving_save_load": true,
+      "full_concrete_oscillatory_runtime_digest_bound": true,
+      "fails_closed_after_X_3": true,
+      "power_law_composite_materialized": false
+    },
+    "agent4_1007": {
+      "pr": 1007,
+      "head": "8b5b337940edd568bf30ddba7afe68815bce1fd9",
+      "source_blob": "2ae59ab9bc8480979f0b0660b1db8b801fe847c1",
+      "audited_agent2_pr": 1004,
+      "audited_agent2_head": "e9697cdfe2249e1b8bc2f9241bd16d456c60418f",
+      "audited_domain": "lambda-turn composite through X_3=X_w",
+      "strict_power_law_probes_X3_to_X4": false,
+      "uses_only_save_reloaded_public_cartesian_velocity_for_numerical_differentiation": true,
+      "uses_agent1_source_derivative_helpers": false,
+      "scoped_divergence_evidence_only": true,
+      "canonical_whole_domain_admission": false,
+      "momentum_or_full_ns_evidence": false
+    },
+    "agent5_1008": {
+      "pr": 1008,
+      "head": "28860ee1f4655670c62b24880f08aa3d50459623",
+      "source_blob": "c71499e4e0ae38c9f6eb1032c2e63be7dde58894",
+      "lambda_turn_composite_registered": true,
+      "lambda_turn_independent_audit_registered": true,
+      "agent1_1005_power_law_recorded_as_non_consumed_sibling": true,
+      "leading_plus_oscillatory_velocity_through_power_law_materialized": false,
+      "independent_power_law_composite_audit_available": false,
+      "complete_post_xr_rf40_current_lineage_materialized": false,
+      "velocity_export_ready": false,
+      "pde_validated": false
+    }
+  },
+  "machine_locked_distinctions": {
+    "agent1_1005_power_law_leading_only_callable_materialized": true,
+    "agent1_1005_has_deterministic_configuration_save_load": true,
+    "agent2_1004_lambda_turn_composite_exists": true,
+    "agent4_1007_lambda_turn_public_cartesian_audit_exists": true,
+    "agent4_1007_covers_power_law_X3_to_X4": false,
+    "power_law_composite_materialized": false,
+    "power_law_composite_independent_cartesian_public_velocity_audit_available": false,
+    "lambda_turn_composite_or_audit_may_be_relabelled_as_power_law_composite_or_audit": false,
+    "agent1_1005_production_or_source_coordinate_checks_may_be_relabelled_as_independent_power_law_composite_validation": false,
+    "power_law_leading_materialization_implies_power_law_leading_plus_oscillatory_composite": false,
+    "power_law_leading_materialization_implies_global_project_domain_totality": false,
+    "power_law_leading_materialization_implies_complete_ns_defect": false,
+    "power_law_leading_materialization_implies_pde_validation": false,
+    "lambda_turn_composite_save_load_identity_implies_power_law_composite_save_load_identity": false
+  },
+  "scope_logic_witness": {
+    "classification": "autonomous_mechanics_only",
+    "statement": "A field/evidence object defined only on D3={X<=X_3} cannot establish a composite or independent validation on the disjoint extension P={X_3<X<=X_4}; leading-only availability on P supplies neither the missing oscillatory composition nor implementation-distinct composite evidence there.",
+    "not_a_public_source_fact": true,
+    "not_candidate_numerical_evidence": true
+  },
+  "future_promotion_requirements": {
+    "power_law_composite_ready": [
+      "Consume exact A1 #1005 rather than reimplementing its power-law schedule or primitive-memory bookkeeping.",
+      "Recompose the already-frozen complete-curl oscillatory runtime on the exact #1005 identity through X_4 and bind the complete concrete oscillatory runtime in deterministic identity-preserving save/load.",
+      "Fail closed after the actually materialized X_4 domain and preserve source-vs-autonomous provenance without converting visual resemblance into a PDE or paper-exact claim."
+    ],
+    "power_law_composite_independent_cartesian_public_velocity_audit_available": [
+      "Consume the exact serialized/reloaded power-law composite, not A1 #1005 leading-only internals or the older A2 #1004 lambda-turn object.",
+      "Include probes strictly in X_3<X<=X_4 plus seam probes on both sides of X_3.",
+      "Reconstruct Cartesian derivatives with an implementation-distinct operator using only the public velocity surface and bind the exact composite semantic/save-load identity.",
+      "Report only the covered power-law domain; scoped divergence evidence remains separate from canonical [24,48,96] whole-domain admission and momentum/full-NS evidence."
+    ],
+    "correction_or_pde_promotion": [
+      "Carry A3 mean/stress/force plumbing to the same exact power-law composite identity rather than retargeting first-turn siblings.",
+      "Materialize matched Cartesian pressure and the preregistered restricted forcing before constructing a complete NS defect.",
+      "Run the frozen held-out full-protocol validation before any pde_validated or same-protocol ST006 improvement claim."
+    ]
+  },
+  "cr001_snapshot": {
+    "constraints_blob_sha1": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "momentum_max": 0.001,
+    "momentum_l2": 0.001,
+    "divergence_max": 1e-05,
+    "divergence_l2": 1e-05,
+    "residual_defined_free_forcing_forbidden": true,
+    "candidate_collapse_forbidden": true,
+    "post_hoc_threshold_relaxation_forbidden": true
+  },
+  "canonical_delivery_independence": {
+    "candidate_family": "eq45_supported_velocity_candidate_v1",
+    "velocity_api": "openai_ns_reconstruction.eq45_supported_delivery:velocity",
+    "velocity_export_ready": true,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  },
+  "kokuno_route_state": {
+    "velocity_export_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "complete_candidate_api_ready": false
+  },
+  "forbidden_promotions": [
+    "A2 #1004 lambda-turn composite -> power-law composite",
+    "A4 #1007 lambda-turn audit -> power-law composite audit",
+    "A1 #1005 leading-only power-law callable -> leading+oscillatory power-law composite",
+    "A1 #1005 production/source-coordinate checks -> implementation-distinct power-law composite audit",
+    "lambda-turn composite save/load -> power-law composite save/load",
+    "scoped divergence evidence -> canonical whole-domain admission",
+    "scoped divergence evidence -> momentum/full-NS evidence",
+    "callable or save/load velocity -> visual correspondence",
+    "visual resemblance -> PDE validation",
+    "visual resemblance -> exact OpenAI field",
+    "queued or green CI -> scientific admission",
+    "Kokuno route incompleteness -> downgrade of canonical Eq45 velocity_export_ready",
+    "residual -> unrestricted pointwise forcing",
+    "failed fixed gate -> post-hoc threshold relaxation"
+  ],
+  "scientific_changes": {
+    "velocity_or_profile_bytes_changed": false,
+    "pressure_changed": false,
+    "forcing_changed": false,
+    "viscosity_changed": false,
+    "candidate_coefficients_changed": false,
+    "validation_samples_changed": false,
+    "derivative_or_quadrature_protocol_changed": false,
+    "scientific_thresholds_changed": false
+  }
+}
