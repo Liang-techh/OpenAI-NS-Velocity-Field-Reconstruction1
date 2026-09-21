@@ -1,0 +1,102 @@
+name: kokuno-agent5-current-i1-routing-checkpoint
+
+on:
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_a5_current_i1_routing_checkpoint.py"
+      - "tests/test_kokuno_a5_current_i1_routing_checkpoint.py"
+      - ".github/workflows/kokuno-agent5-current-i1-routing-checkpoint.yml"
+  workflow_dispatch:
+
+jobs:
+  current-i1-routing:
+    runs-on: ubuntu-latest
+    env:
+      A1_HEAD: ea59dc305b4265fcb0bb0f948c2a45f4477d1ae5
+      A1_PATH: src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_i1_frozen_gate.py
+      A1_BLOB: fe14dab8dccdbca828d722bdfe2f75f287aa9ea8
+      A4_HEAD: ad9f8722b6ec89df975f9b2402e63066dc14422d
+      A4_PATH: src/openai_ns_reconstruction/kokuno_a4_current_i1_leading_divergence_independent_audit.py
+      A4_BLOB: cc8c8f9ed0e8f727035c14232bb7f80d2703ac76
+      A2_HEAD: d58cee2bf38bdca8da13a796215a079a569ad7d7
+      A2_PATH: src/openai_ns_reconstruction/kokuno_source_zero_data_amplitude_sensitivity.py
+      A2_BLOB: eba3c00703bd5763b12e6f48a8c34eb918dec82e
+      A3_HEAD: 8f2f485e2000955bab47fc08f478b512d3b49e5d
+      A3_PATH: src/openai_ns_reconstruction/kokuno_complete_ns_defect_cycle_admission.py
+      A3_BLOB: d62ffa13f910e508e7b387b2e553fdc6b40c6ed8
+      PRIOR_A5_HEAD: 1f6cf97c386080ea3547568a2743e708562a4b01
+      PRIOR_A5_PATH: src/openai_ns_reconstruction/kokuno_a5_rf40_power_law_radial_force_ingest_contract.py
+      PRIOR_A5_BLOB: b8991b6c381620123e3f82c8eb78c16a3e8ced13
+      ARTIFACT_DIR: artifacts/kokuno_agent5/current_i1_routing_checkpoint_106
+
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Authenticate exact current-lineage ancestry and sibling blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          git cat-file -e "${A4_HEAD}^{commit}"
+          git cat-file -e "${A1_HEAD}^{commit}"
+          git merge-base --is-ancestor "${A4_HEAD}" HEAD
+          git merge-base --is-ancestor "${A1_HEAD}" "${A4_HEAD}"
+          test "$(git rev-parse "${A4_HEAD}:${A4_PATH}")" = "${A4_BLOB}"
+          test "$(git rev-parse "${A1_HEAD}:${A1_PATH}")" = "${A1_BLOB}"
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            test "${{ github.event.pull_request.base.sha }}" = "${A4_HEAD}"
+          fi
+
+          git fetch --no-tags origin \
+            "+refs/pull/1052/head:refs/remotes/origin/a5-a2-1052" \
+            "+refs/pull/1054/head:refs/remotes/origin/a5-a3-1054" \
+            "+refs/pull/1047/head:refs/remotes/origin/a5-prior-1047"
+          test "$(git rev-parse refs/remotes/origin/a5-a2-1052)" = "${A2_HEAD}"
+          test "$(git rev-parse refs/remotes/origin/a5-a3-1054)" = "${A3_HEAD}"
+          test "$(git rev-parse refs/remotes/origin/a5-prior-1047)" = "${PRIOR_A5_HEAD}"
+          test "$(git rev-parse "${A2_HEAD}:${A2_PATH}")" = "${A2_BLOB}"
+          test "$(git rev-parse "${A3_HEAD}:${A3_PATH}")" = "${A3_BLOB}"
+          test "$(git rev-parse "${PRIOR_A5_HEAD}:${PRIOR_A5_PATH}")" = "${PRIOR_A5_BLOB}"
+
+      - name: Install package
+        run: python -m pip install -e .
+
+      - name: Run focused parent and Agent-5 regressions
+        run: |
+          python -m pytest -q \
+            tests/test_kokuno_pa16_current_cartesian_i1_frozen_gate.py \
+            tests/test_constrained_kokuno_a4_current_i1_leading_divergence_independent_audit.py \
+            tests/test_kokuno_a5_current_i1_routing_checkpoint.py
+
+      - name: Materialize raw independent A4 receipt and A5 routing checkpoint
+        run: |
+          mkdir -p "${ARTIFACT_DIR}"
+          python -m openai_ns_reconstruction.kokuno_a4_current_i1_leading_divergence_independent_audit \
+            --output "${ARTIFACT_DIR}/a4_current_i1_divergence_receipt.json"
+          python -m openai_ns_reconstruction.kokuno_a5_current_i1_routing_checkpoint \
+            --audit-input "${ARTIFACT_DIR}/a4_current_i1_divergence_receipt.json" \
+            --output "${ARTIFACT_DIR}/a5_current_i1_routing_checkpoint.json"
+
+      - name: Upload raw evidence before scientific gate enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-current-i1-routing-checkpoint-106
+          path: artifacts/kokuno_agent5/current_i1_routing_checkpoint_106
+          if-no-files-found: warn
+
+      - name: Enforce preregistered scoped A4 gate and A5 truth firewall
+        run: |
+          python -m openai_ns_reconstruction.kokuno_a4_current_i1_leading_divergence_independent_audit \
+            --output "${ARTIFACT_DIR}/a4_current_i1_divergence_receipt.json" \
+            --enforce-existing
+          python -m openai_ns_reconstruction.kokuno_a5_current_i1_routing_checkpoint \
+            --output "${ARTIFACT_DIR}/a5_current_i1_routing_checkpoint.json" \
+            --enforce-existing
