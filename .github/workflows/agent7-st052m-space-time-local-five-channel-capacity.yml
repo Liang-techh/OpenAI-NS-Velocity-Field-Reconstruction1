@@ -1,0 +1,135 @@
+name: agent7-st052m-space-time-local-five-channel-capacity
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_space_time_local_five_channel_capacity.py'
+      - 'experiments/root_st052/test_agent7_st052m_space_time_local_five_channel_capacity.py'
+      - '.github/workflows/agent7-st052m-space-time-local-five-channel-capacity.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  space-time-local-five-channel-capacity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Verify exact PR head checkout
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+      - name: Focused parent and space-time-local tests
+        run: |
+          python -m pytest -q -W error \
+            experiments/root_st052/test_agent7_st052m_joint_five_channel_capacity_preflight.py \
+            experiments/root_st052/test_agent7_st052m_regional_five_channel_capacity_localization.py \
+            experiments/root_st052/test_agent7_st052m_time_local_five_channel_capacity.py \
+            experiments/root_st052/test_agent7_st052m_space_time_local_five_channel_capacity.py
+      - name: Execute preregistered space-time-local capacity audit
+        run: |
+          mkdir -p outputs/agent7-st052m-space-time-local-five-channel-capacity
+          python experiments/root_st052/agent7_st052m_space_time_local_five_channel_capacity.py \
+            --out outputs/agent7-st052m-space-time-local-five-channel-capacity/report.json
+      - name: Verify receipt completeness and fail-closed truth boundary
+        run: |
+          python - <<'PY'
+          import json, math
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-space-time-local-five-channel-capacity/report.json').read_text())
+          assert r['task_id']=='CR003-ST052M-SPACE-TIME-LOCAL-FIVE-CHANNEL-CAPACITY-126'
+          assert r['prereg_issue']==1057
+          assert r['source_parent']=={'pr':1050,'head':'3b94159939ddc48811069a34bc84e5fe18e2fbb2'}
+          p=r['frozen_protocol']
+          assert p['channels']==['amplitude','radial_shape','axial_turnover','temporal_curvature','toroidal_swirl']
+          assert p['regions']==['inner_core','outer_radial','midplane','axial_tip']
+          assert p['times']==[0.25,0.375,0.5,0.625,0.75]
+          assert p['cell_count']==20
+          assert p['new_basis_dimension']==0
+          assert p['coefficient_selected'] is None
+          cap=r['space_time_local_capacity']
+          assert cap['cell_count']==20
+          assert cap['unexpected_global_inactive_time_slices']==[]
+          assert cap['all_global_time_activity_semantics_match'] is True
+          expected_start=[f'0.250/{region}' for region in p['regions']]
+          assert cap['expected_start_endpoint_obstruction_cells']==expected_start
+          for region in p['regions']:
+              q=cap['by_time']['0.250']['regions'][region]
+              assert q['expected_start_endpoint_obstruction'] is True
+              assert q['active_subspace_rank']==0
+              assert q['active_subspace_condition'] is None
+              assert q['passes_preregistered_cell_gate'] is True
+          for key in ('0.375','0.500','0.625','0.750'):
+              for region in p['regions']:
+                  q=cap['by_time'][key]['regions'][region]
+                  assert isinstance(q['active_subspace_pass'], bool)
+                  assert isinstance(q['selectivity_guard_pass'], bool)
+                  assert isinstance(q['local_representation_obstruction'], bool)
+                  if q['active_subspace_condition'] is not None:
+                      assert math.isfinite(q['active_subspace_condition'])
+                  if q['max_abs_pairwise_cosine_active_subspace'] is not None:
+                      assert math.isfinite(q['max_abs_pairwise_cosine_active_subspace'])
+          assert r['decision']['additional_basis_dimension_justified_by_this_audit'] is False
+          assert r['decision']['actual_velocity_changed'] is False
+          assert r['decision']['direct_visualization_fingerprint_improvement']==0.0
+          assert r['held_out_pde_residual']['evaluated'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          assert r['paper_exact'] is False
+          assert r['openai_field_identified'] is False
+          print('all_nonendpoint_cells_pass=', cap['all_nonendpoint_cells_pass_preregistered_gates'])
+          print('unexpected_capacity_failure_cells=', cap['unexpected_capacity_failure_cells'])
+          print('locally_negligible_channels_by_cell=', cap['locally_negligible_channels_by_cell'])
+          PY
+      - name: Publish compact space-time-local receipt
+        if: ${{ always() && github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          if [ ! -f outputs/agent7-st052m-space-time-local-five-channel-capacity/report.json ]; then exit 0; fi
+          python - <<'PY' > /tmp/agent7-space-time-local-capacity-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-space-time-local-five-channel-capacity/report.json').read_text())
+          cap=r['space_time_local_capacity']
+          print('<!-- agent7-st052m-space-time-local-five-channel-capacity-receipt -->')
+          print('**Agent 7 space-time-local five-channel capacity receipt (issue #1057):**')
+          print()
+          print(f"- 20 region×time cells materialized; global time-activity semantics match: `{cap['all_global_time_activity_semantics_match']}`")
+          print(f"- non-endpoint cells pass preregistered gates: `{cap['all_nonendpoint_cells_pass_preregistered_gates']}`")
+          print(f"- unexpected capacity-failure cells: `{cap['unexpected_capacity_failure_cells']}`")
+          print(f"- locally negligible globally-active channels: `{cap['locally_negligible_channels_by_cell']}`")
+          print('- `t=.250` in all four regions is an expected structural endpoint obstruction: the current correction family is inactive there.')
+          for key in ('0.375','0.500','0.625','0.750'):
+              for region in ('inner_core','outer_radial','midplane','axial_tip'):
+                  q=cap['by_time'][key]['regions'][region]
+                  print(f"- `{key}/{region}`: rank `{q['active_subspace_rank']}/{q['active_subspace_rank_target']}`, condition `{q['active_subspace_condition']}`, max |cos| `{q['max_abs_pairwise_cosine_active_subspace']}`, top `{q['top_two_channels_by_raw_regional_response']}`, local-negligible `{q['locally_negligible_globally_active_channels']}`")
+          print('- basis dimension change: `0`; coefficient selected: `none`; candidate velocity unchanged; direct visualization-fingerprint improvement: `0.0`.')
+          print('- held-out complete-PDE residual: `not evaluated`; no ST006 improvement claim.')
+          print()
+          print('Truth boundary: this is target-free local expression-capacity routing only. It does not establish visual/source correspondence, PDE validity, paper exactness, exact OpenAI-field identity, or blow-up.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-space-time-local-capacity-receipt.md || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-space-time-local-five-channel-capacity
+          path: outputs/agent7-st052m-space-time-local-five-channel-capacity/
+          if-no-files-found: warn
+
+# Regions, times, activity threshold and scientific gates were frozen in issue #1057 before execution.
