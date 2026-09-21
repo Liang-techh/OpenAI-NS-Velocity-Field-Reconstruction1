@@ -1,0 +1,171 @@
+name: kokuno-agent2-current-partial-composite-identity-save-load
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a2-partial-composite-identity-save-load-082
+  pull_request:
+    branches:
+      - codex/kokuno-a2-partial-composite-differentials-081
+  workflow_dispatch:
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out exact A2 head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: a2
+          fetch-depth: 0
+
+      - name: Verify exact parent ancestry and three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd a2
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+          git merge-base --is-ancestor b716dfe495763439ac51f6e866211337910017cb HEAD
+          test "$(git rev-list --count b716dfe495763439ac51f6e866211337910017cb..HEAD)" -eq 3
+          mapfile -t files < <(git diff --name-only b716dfe495763439ac51f6e866211337910017cb..HEAD)
+          test "${#files[@]}" -eq 3
+          printf '%s\n' "${files[@]}" | sort > /tmp/actual-files
+          printf '%s\n' \
+            .github/workflows/kokuno-agent2-current-partial-composite-identity-save-load.yml \
+            src/openai_ns_reconstruction/kokuno_current_partial_composite_identity_save_load.py \
+            tests/test_constrained_kokuno_current_partial_composite_identity_save_load.py \
+            | sort > /tmp/expected-files
+          diff -u /tmp/expected-files /tmp/actual-files
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install A2 test dependencies
+        shell: bash
+        run: python -m pip install -e './a2[dev]'
+
+      - name: Run A2 identity mechanics and parent regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH="$PWD/a2/src" python -m pytest -q \
+            a2/tests/test_constrained_kokuno_current_partial_leading_oscillatory_velocity.py \
+            a2/tests/test_constrained_kokuno_current_partial_composite_batch_differentials.py \
+            a2/tests/test_constrained_kokuno_current_partial_composite_identity_save_load.py
+
+      - name: Check out exact Agent-1 Cartesian leading sibling
+        uses: actions/checkout@v4
+        with:
+          ref: 7dc09c59584a6b1bfaabcbb8df00283d9f9a40c1
+          path: a1
+          fetch-depth: 1
+
+      - name: Authenticate exact Agent-1 and oscillatory implementation blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C a1 rev-parse HEAD)" = "7dc09c59584a6b1bfaabcbb8df00283d9f9a40c1"
+          test "$(git -C a1 hash-object src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_leading_velocity.py)" = \
+            "ca8b80b0451be1a8f31deaf620f542d8c2e92c0c"
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_public_z_pullback_velocity.py)" = \
+            "4a3abc1a11f7e054f651dd7bace8ada6d5a6b653"
+
+      - name: Materialize exact identity-bound candidate and save-load receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p receipts
+          PYTHONPATH="$PWD/a1/src" python - <<'PY'
+          from pathlib import Path
+          import json
+          import openai_ns_reconstruction
+
+          from openai_ns_reconstruction.kokuno_pa16_current_cartesian_leading_velocity import (
+              KokunoPA16CurrentCartesianLeadingVelocity,
+          )
+          assert KokunoPA16CurrentCartesianLeadingVelocity.__module__ == (
+              "openai_ns_reconstruction.kokuno_pa16_current_cartesian_leading_velocity"
+          )
+
+          a2_pkg = str((Path("a2/src/openai_ns_reconstruction")).resolve())
+          openai_ns_reconstruction.__path__.insert(0, a2_pkg)
+
+          import openai_ns_reconstruction.kokuno_current_partial_composite_identity_save_load as mod
+
+          field = mod.default_field()
+          candidate_path = Path("receipts/kokuno_a2_current_partial_composite_candidate.json")
+          saved = field.save_candidate(candidate_path)
+          loaded = mod.CurrentPartialCompositeIdentityField.load_candidate(candidate_path)
+          assert loaded.semantic_sha256 == field.semantic_sha256 == saved["semantic_sha256"]
+          assert loaded.oscillatory_runtime_sha256 == field.oscillatory_runtime_sha256
+
+          receipt = mod.materialize_identity_save_load_receipt()
+          Path("receipts/kokuno_a2_current_partial_composite_identity_save_load.json").write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          PY
+
+      - name: Upload candidate and receipt before gate enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a2-current-partial-composite-identity-save-load
+          path: |
+            receipts/kokuno_a2_current_partial_composite_candidate.json
+            receipts/kokuno_a2_current_partial_composite_identity_save_load.json
+          if-no-files-found: error
+
+      - name: Enforce frozen identity and truth gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH="$PWD/a1/src" python - <<'PY'
+          from pathlib import Path
+          import copy
+          import json
+          import openai_ns_reconstruction
+
+          from openai_ns_reconstruction.kokuno_pa16_current_cartesian_leading_velocity import (
+              KokunoPA16CurrentCartesianLeadingVelocity,
+          )
+          assert KokunoPA16CurrentCartesianLeadingVelocity.__module__ == (
+              "openai_ns_reconstruction.kokuno_pa16_current_cartesian_leading_velocity"
+          )
+          a2_pkg = str((Path("a2/src/openai_ns_reconstruction")).resolve())
+          openai_ns_reconstruction.__path__.insert(0, a2_pkg)
+
+          import openai_ns_reconstruction.kokuno_current_partial_composite_identity_save_load as mod
+
+          receipt = json.loads(
+              Path("receipts/kokuno_a2_current_partial_composite_identity_save_load.json").read_text(
+                  encoding="utf-8"
+              )
+          )
+          mod.enforce_receipt(receipt)
+
+          # Mutation firewall: even if a tampered stored oscillatory payload is re-hashed
+          # consistently, reload must compare it with the actual frozen runtime and fail.
+          candidate = json.loads(
+              Path("receipts/kokuno_a2_current_partial_composite_candidate.json").read_text(
+                  encoding="utf-8"
+              )
+          )
+          mutated = copy.deepcopy(candidate)
+          osc = mutated["configuration"]["oscillatory_runtime"]
+          osc["payload"]["parameters"]["mode_imaginary_ratio"] += 0.125
+          osc["payload_sha256"] = mod._sha256(osc["payload"])
+          mutated["semantic_sha256"] = mod._sha256(mutated["configuration"])
+          mutation_path = Path("receipts/mutated_candidate.json")
+          mutation_path.write_text(json.dumps(mutated, indent=2, sort_keys=True) + "\n")
+          try:
+              mod.CurrentPartialCompositeIdentityField.load_candidate(mutation_path)
+          except ValueError as exc:
+              assert "oscillatory runtime" in str(exc)
+          else:
+              raise AssertionError("rehash-consistent oscillatory runtime mutation was accepted")
+          PY
