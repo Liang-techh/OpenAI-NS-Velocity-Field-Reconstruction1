@@ -1,0 +1,93 @@
+name: kokuno-agent3-five-moment-correction-gain
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_five_moment_correction_gain.py'
+      - 'tests/test_constrained_kokuno_five_moment_correction_gain.py'
+      - '.github/workflows/kokuno-agent3-five-moment-correction-gain.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out exact event head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Assert exact Agent-3 parent
+        if: github.event_name == 'pull_request'
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha }}"
+          git merge-base --is-ancestor 3ca100009e770f2aecb5859c721bdd99ffb8552c HEAD
+
+      - name: Verify pinned corrected-reader source blob
+        run: |
+          set -euo pipefail
+          git clone --quiet https://github.com/KokunoYumeto/yang-mills-interacting-workbench.git kokuno-reader
+          git -C kokuno-reader checkout --quiet 143f6773feb424ad9ed3a8d116653200f20346b7
+          test "$(git -C kokuno-reader rev-parse HEAD:navier-stokes/navier_stokes_workbench.tex)" = '205a99807302e21a51c5eaf223390c0dfc42bcd0'
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install exact Agent-3 head
+        run: python -m pip install -e '.[dev]'
+
+      - name: Focused regressions
+        run: |
+          python -m py_compile \
+            src/openai_ns_reconstruction/kokuno_five_moment_correction_gain.py \
+            tests/test_constrained_kokuno_five_moment_correction_gain.py
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_oscillatory_quadratic_nonlinear_radial_stress.py \
+            tests/test_constrained_kokuno_five_moment_correction_gain.py
+
+      - name: Generate deterministic mechanics receipt
+        run: |
+          mkdir -p artifacts/kokuno_agent3
+          python -m openai_ns_reconstruction.kokuno_five_moment_correction_gain \
+            --out artifacts/kokuno_agent3/five_moment_correction_gain_mechanics.json
+
+      - name: Fail closed on full-NS promotion
+        run: |
+          python - <<'PY'
+          from openai_ns_reconstruction.kokuno_five_moment_correction_gain import build_mechanics_report, truth_boundary
+          report = build_mechanics_report()
+          b = truth_boundary()
+          assert report['accepted_mechanics']['local_moment_fixed_point_converged'] is True
+          assert report['rejected_mechanics_would_be_blocked'] is True
+          assert report['candidate_residual_evidence'] is False
+          assert b['local_five_moment_analytic_contraction_gain_available'] is True
+          assert b['divergent_local_moment_correction_rejected_before_iteration'] is True
+          for key in (
+              'analytic_full_ns_cycle_gain_available',
+              'current_strict_inner_radial_stress_authorized_as_ns_correction',
+              'complete_ns_correction_velocity_materialized',
+              'real_candidate_finite_correction_cycle_run',
+              'heldout_normalized_ns_residual_assessed',
+              'residual_reduction_claimed',
+              'same_protocol_comparable_to_st006',
+              'pde_validated',
+          ):
+              assert b[key] is False, key
+          assert b['final_normalized_momentum_gate'] == 1e-3
+          assert b['final_normalized_divergence_gate'] == 1e-5
+          PY
+
+      - name: Upload receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent3-five-moment-correction-gain
+          path: artifacts/kokuno_agent3/five_moment_correction_gain_mechanics.json
+          if-no-files-found: warn
