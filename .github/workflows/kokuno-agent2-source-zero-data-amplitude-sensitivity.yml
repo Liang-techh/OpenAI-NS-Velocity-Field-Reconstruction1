@@ -1,0 +1,259 @@
+name: kokuno-agent2-source-zero-data-amplitude-sensitivity
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a2-source-amplitude-sensitivity-094
+  pull_request:
+    branches:
+      - codex/kokuno-a2-source-zero-data-ivp-093
+  workflow_dispatch:
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out exact A2 head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: a2
+          fetch-depth: 0
+
+      - name: Verify exact parent ancestry and strict three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd a2
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+          git merge-base --is-ancestor b3ac194b410073820d8160a470824034e08e9b5a HEAD
+          test "$(git rev-list --count b3ac194b410073820d8160a470824034e08e9b5a..HEAD)" -eq 3
+          mapfile -t files < <(git diff --name-only b3ac194b410073820d8160a470824034e08e9b5a..HEAD)
+          test "${#files[@]}" -eq 3
+          printf '%s\n' "${files[@]}" | sort > /tmp/actual-files
+          printf '%s\n' \
+            .github/workflows/kokuno-agent2-source-zero-data-amplitude-sensitivity.yml \
+            src/openai_ns_reconstruction/kokuno_source_zero_data_amplitude_sensitivity.py \
+            tests/test_constrained_kokuno_source_zero_data_amplitude_sensitivity.py \
+            | sort > /tmp/expected-files
+          diff -u /tmp/expected-files /tmp/actual-files
+          test "$(git hash-object src/openai_ns_reconstruction/kokuno_source_zero_data_amplitude_ivp.py)" = \
+            "1e13e81bea6c586938c91c610e0812f7283f131d"
+          test "$(git hash-object src/openai_ns_reconstruction/kokuno_source_projected_amplitude_ode.py)" = \
+            "ee55f4cb00eee67a11bcf0361aadd1c0c3012441"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install A2 test dependencies
+        shell: bash
+        run: python -m pip install -e './a2[dev]'
+
+      - name: Compile and run focused source-amplitude sensitivity tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            a2/src/openai_ns_reconstruction/kokuno_source_zero_data_amplitude_sensitivity.py \
+            a2/tests/test_constrained_kokuno_source_zero_data_amplitude_sensitivity.py
+          PYTHONPATH="$PWD/a2/src" python -m pytest -q \
+            a2/tests/test_constrained_kokuno_source_projected_amplitude_ode.py \
+            a2/tests/test_constrained_kokuno_source_zero_data_amplitude_ivp.py \
+            a2/tests/test_constrained_kokuno_source_zero_data_amplitude_sensitivity.py
+
+      - name: Check out exact corrected Kokuno public source
+        uses: actions/checkout@v4
+        with:
+          repository: KokunoYumeto/yang-mills-interacting-workbench
+          ref: 143f6773feb424ad9ed3a8d116653200f20346b7
+          path: source
+          fetch-depth: 1
+
+      - name: Authenticate source bytes and operator/amplitude formulas
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C source rev-parse HEAD)" = "143f6773feb424ad9ed3a8d116653200f20346b7"
+          test "$(git -C source hash-object navier-stokes/navier_stokes_workbench.tex)" = \
+            "205a99807302e21a51c5eaf223390c0dfc42bcd0"
+          python - <<'PY'
+          from pathlib import Path
+          text = Path("source/navier-stokes/navier_stokes_workbench.tex").read_text(encoding="utf-8")
+          assert r"D_r=\partial_R+Md_rR^{d_r-1}L" in text
+          assert r"D_z=\epsilon\partial_Z" in text
+          assert r"t_m'+\mathcal Kt_m+m^2dt_m+ikm n_\Phi\pi_m=-f_m" in text
+          assert r"(n_\Phi\cdot t_m)'=-m^2d(n_\Phi\cdot t_m)" in text
+          PY
+
+      - name: Materialize directional-sensitivity receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p receipts
+          PYTHONPATH="$PWD/a2/src" python - <<'PY'
+          from __future__ import annotations
+          import json
+          from pathlib import Path
+          import numpy as np
+
+          from openai_ns_reconstruction.kokuno_source_phase_coefficient_jet import (
+              SourceBackgroundPhaseJet,
+              complete_harmonic_from_source_phase_jet,
+              source_phase_vector_jet,
+          )
+          from openai_ns_reconstruction.kokuno_source_zero_data_amplitude_sensitivity import (
+              SourceModeForcingDirectionalJet,
+              solve_source_zero_data_amplitude_sensitivity,
+              source_zero_data_amplitude_sensitivity_contract,
+          )
+
+          R = 1.2
+          Z = -0.25
+          epsilon = 0.15
+          p = 1.1
+          p_z = -0.4
+          x_0 = 0.22
+          k = 2.2
+          m = 1
+          pulse_v = 0.4
+          background = SourceBackgroundPhaseJet(
+              f=0.12*R**2 + 0.07*R*Z + 0.04*Z**2 + 0.03*R + 0.02*Z + 0.1,
+              g=-0.05*R**2 + 0.09*R*Z + 0.03*Z**2 - 0.02*R + 0.04*Z,
+              f_r=0.24*R + 0.07*Z + 0.03,
+              g_r=-0.10*R + 0.09*Z - 0.02,
+              f_z=0.07*R + 0.08*Z + 0.02,
+              g_z=0.09*R + 0.06*Z + 0.04,
+              f_rr=0.24, g_rr=-0.10,
+              f_rz=0.07, g_rz=0.09,
+              f_zz=0.08, g_zz=0.06,
+          )
+          coeff = np.array([0.20+0.03j, -0.11+0.07j, 0.05-0.02j])
+          dr = np.array([0.10, -0.08, 0.02]) * coeff
+          dz = epsilon * np.array([0.05, 0.03, -0.04]) * coeff
+
+          def forcing(v):
+              shape = np.array([
+                  1.0 + 0.10*R + 0.05*Z + 0.20*v,
+                  1.0 - 0.08*R + 0.03*Z - 0.10*v,
+                  1.0 + 0.02*R - 0.04*Z + 0.15*v,
+              ])
+              return SourceModeForcingDirectionalJet(
+                  value=shape*coeff, dr_value=dr, dz_value=dz
+              )
+
+          result = solve_source_zero_data_amplitude_sensitivity(
+              pulse_v, R, 0.27, Z, background, forcing,
+              epsilon=epsilon, p=p, p_z=p_z, x_0=x_0, k=k, m=m,
+          )
+          phase = source_phase_vector_jet(
+              R, 0.27, Z, pulse_v, background,
+              epsilon=epsilon, p=p, p_z=p_z, x_0=x_0,
+          )
+          complete = complete_harmonic_from_source_phase_jet(
+              R, phase, result.amplitude_jet, k=k, m=m
+          )
+          contract = source_zero_data_amplitude_sensitivity_contract()
+          receipt = {
+              "schema": "kokuno-agent2-source-zero-data-amplitude-sensitivity-receipt-v1",
+              "head": "${{ github.event.pull_request.head.sha || github.sha }}",
+              "source_commit": contract["source_commit"],
+              "source_workbench_blob": contract["source_workbench_blob"],
+              "panel_ladder": contract["panel_ladder"],
+              "t_coarse_medium_abs_max": result.t_coarse_medium_abs_max,
+              "t_medium_fine_abs_max": result.t_medium_fine_abs_max,
+              "dr_coarse_medium_abs_max": result.dr_coarse_medium_abs_max,
+              "dr_medium_fine_abs_max": result.dr_medium_fine_abs_max,
+              "dz_coarse_medium_abs_max": result.dz_coarse_medium_abs_max,
+              "dz_medium_fine_abs_max": result.dz_medium_fine_abs_max,
+              "endpoint_constraint_abs": float(abs(complex(result.endpoint.base_ode.constraint))),
+              "endpoint_dr_constraint_abs": float(abs(complex(result.endpoint.dr_constraint))),
+              "endpoint_dz_constraint_abs": float(abs(complex(result.endpoint.dz_constraint))),
+              "endpoint_equation_residual_abs_max": float(
+                  np.max(np.abs(result.endpoint.base_ode.full_equation_residual))
+              ),
+              "complete_curl_amplitude_abs_max": float(
+                  np.max(np.abs(complete.complete_amplitude.amplitude))
+              ),
+              "source_normalized_dr_operator_has_auxiliary_L_term": contract[
+                  "source_normalized_dr_operator_has_auxiliary_L_term"
+              ],
+              "forcing_dr_input_is_full_normalized_source_Dr": contract[
+                  "forcing_dr_input_is_full_normalized_source_Dr"
+              ],
+              "caller_supplies_amplitude_directional_jet": contract[
+                  "caller_supplies_amplitude_directional_jet"
+              ],
+              "caller_supplies_mode_forcing_directional_jet": contract[
+                  "caller_supplies_mode_forcing_directional_jet"
+              ],
+              "source_amplitude_directional_jet_materialized": contract[
+                  "source_amplitude_directional_jet_materialized"
+              ],
+              "source_forcing_provider_materialized": contract[
+                  "source_forcing_provider_materialized"
+              ],
+              "self_contained_velocity_xyzt_provider": contract[
+                  "self_contained_velocity_xyzt_provider"
+              ],
+              "paper_exact": contract["paper_exact"],
+              "complete_ns_residual_assessed": contract[
+                  "complete_ns_residual_assessed"
+              ],
+              "residual_reduction_claimed": contract["residual_reduction_claimed"],
+              "pde_validated": contract["pde_validated"],
+          }
+          Path("receipts/kokuno_a2_source_zero_data_amplitude_sensitivity.json").write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+          )
+          PY
+
+      - name: Upload receipt before gate enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a2-source-zero-data-amplitude-sensitivity
+          path: receipts/kokuno_a2_source_zero_data_amplitude_sensitivity.json
+          if-no-files-found: error
+
+      - name: Enforce sensitivity mechanics and truth boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          import math
+          from pathlib import Path
+
+          receipt = json.loads(
+              Path("receipts/kokuno_a2_source_zero_data_amplitude_sensitivity.json").read_text(
+                  encoding="utf-8"
+              )
+          )
+          assert receipt["panel_ladder"] == [32, 64, 128]
+          for key in (
+              "t_coarse_medium_abs_max", "t_medium_fine_abs_max",
+              "dr_coarse_medium_abs_max", "dr_medium_fine_abs_max",
+              "dz_coarse_medium_abs_max", "dz_medium_fine_abs_max",
+              "complete_curl_amplitude_abs_max",
+          ):
+              assert math.isfinite(receipt[key])
+          assert receipt["complete_curl_amplitude_abs_max"] > 1e-12
+          assert receipt["endpoint_constraint_abs"] <= 5e-10
+          assert receipt["endpoint_dr_constraint_abs"] <= 5e-10
+          assert receipt["endpoint_dz_constraint_abs"] <= 5e-10
+          assert receipt["endpoint_equation_residual_abs_max"] <= 5e-12
+          assert receipt["source_normalized_dr_operator_has_auxiliary_L_term"] is True
+          assert receipt["forcing_dr_input_is_full_normalized_source_Dr"] is True
+          assert receipt["caller_supplies_amplitude_directional_jet"] is False
+          assert receipt["caller_supplies_mode_forcing_directional_jet"] is True
+          assert receipt["source_amplitude_directional_jet_materialized"] is True
+          assert receipt["source_forcing_provider_materialized"] is False
+          assert receipt["self_contained_velocity_xyzt_provider"] is False
+          assert receipt["paper_exact"] is False
+          assert receipt["complete_ns_residual_assessed"] is False
+          assert receipt["residual_reduction_claimed"] is False
+          assert receipt["pde_validated"] is False
+          PY
