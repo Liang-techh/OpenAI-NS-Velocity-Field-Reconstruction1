@@ -1,0 +1,177 @@
+name: kokuno-agent3-current-xi-moment-discrepancy-bridge
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_current_xi_moment_discrepancy_bridge.py'
+      - 'tests/test_constrained_kokuno_current_xi_moment_discrepancy_bridge.py'
+      - '.github/workflows/kokuno-agent3-current-xi-moment-discrepancy-bridge.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  PARENT_A3_HEAD: 728b58cf834a45960c8190d5a3898ba7f6ead273
+  UPSTREAM_A1_HEAD: 2797eed8e3b9b3374c676d8f517f05e3f0fc3e6b
+  UPSTREAM_A1_SOURCE: src/openai_ns_reconstruction/kokuno_pa10_actual_xi_prefix_moments.py
+  UPSTREAM_A1_SOURCE_BLOB: 92dce65c9a8793e06497a7e7347c832861032238
+  SOURCE_READER_HEAD: 143f6773feb424ad9ed3a8d116653200f20346b7
+  SOURCE_READER_TEX: navier-stokes/navier_stokes_workbench.tex
+  SOURCE_READER_TEX_BLOB: 205a99807302e21a51c5eaf223390c0dfc42bcd0
+
+jobs:
+  exact-current-xi-handoff:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout exact Agent-3 event head
+        uses: actions/checkout@v4
+        with:
+          path: current
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - name: Assert exact head and Agent-3 ancestry
+        shell: bash
+        run: |
+          set -euo pipefail
+          expected='${{ github.event.pull_request.head.sha || github.sha }}'
+          test "$(git -C current rev-parse HEAD)" = "$expected"
+          git -C current merge-base --is-ancestor "$PARENT_A3_HEAD" HEAD
+
+      - name: Checkout exact current Agent-1 Xi handoff
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          path: upstream-a1
+          fetch-depth: 1
+          ref: ${{ env.UPSTREAM_A1_HEAD }}
+
+      - name: Authenticate Agent-1 handoff source
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C upstream-a1 rev-parse HEAD)" = "$UPSTREAM_A1_HEAD"
+          test "$(git -C upstream-a1 hash-object "$UPSTREAM_A1_SOURCE")" = "$UPSTREAM_A1_SOURCE_BLOB"
+
+      - name: Checkout corrected Kokuno reader
+        uses: actions/checkout@v4
+        with:
+          repository: KokunoYumeto/yang-mills-interacting-workbench
+          path: corrected-reader
+          fetch-depth: 1
+          ref: ${{ env.SOURCE_READER_HEAD }}
+
+      - name: Authenticate corrected reader text
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C corrected-reader rev-parse HEAD)" = "$SOURCE_READER_HEAD"
+          test "$(git -C corrected-reader hash-object "$SOURCE_READER_TEX")" = "$SOURCE_READER_TEX_BLOB"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install current Agent-3 branch
+        run: python -m pip install -e './current[dev]'
+
+      - name: Materialize exact Agent-1 current-Xi report
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH="$GITHUB_WORKSPACE/upstream-a1/src" python - <<'PY'
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction.kokuno_pa10_actual_xi_prefix_moments import KokunoPA10ActualXiPrefixMoments
+
+          report = KokunoPA10ActualXiPrefixMoments().report()
+          Path("current/current_xi_a1_report.json").write_text(
+              json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+          )
+          PY
+
+      - name: Consume real current-Xi discrepancy through Agent-3 bridge
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH="$GITHUB_WORKSPACE/current/src" python - <<'PY'
+          import json
+          from pathlib import Path
+
+          from openai_ns_reconstruction.kokuno_current_xi_moment_discrepancy_bridge import (
+              NONTRIVIAL_DISCREPANCY_FLOOR,
+              UPSTREAM_AGENT1_HEAD,
+              UPSTREAM_AGENT1_PR,
+              UPSTREAM_AGENT1_SCHEMA,
+              UPSTREAM_AGENT1_SOURCE_BLOB,
+              UPSTREAM_AGENT1_SOURCE_PATH,
+              UpstreamA1Identity,
+              materialize_current_xi_moment_bridge,
+          )
+
+          report = json.loads(Path("current/current_xi_a1_report.json").read_text(encoding="utf-8"))
+
+          class ExactA1Backend:
+              def upstream_identity(self):
+                  return UpstreamA1Identity(
+                      pr_number=UPSTREAM_AGENT1_PR,
+                      exact_head=UPSTREAM_AGENT1_HEAD,
+                      source_path=UPSTREAM_AGENT1_SOURCE_PATH,
+                      source_blob=UPSTREAM_AGENT1_SOURCE_BLOB,
+                      report_schema=UPSTREAM_AGENT1_SCHEMA,
+                  )
+
+              def current_xi_moment_report(self):
+                  return report
+
+          receipt = materialize_current_xi_moment_bridge(ExactA1Backend())
+          if not receipt.any_correction_needed:
+              raise SystemExit("current Xi discrepancy unexpectedly has no nontrivial correction row")
+          if not receipt.max_raw_l2_norm > NONTRIVIAL_DISCREPANCY_FLOOR:
+              raise SystemExit("current Xi discrepancy did not clear preregistered nontriviality floor")
+          payload = receipt.to_dict()
+          truth = payload["truth_boundary"]
+          required_false = (
+              "discrepancy_from_complete_ns_defect",
+              "authorized_for_gain_gated_ns_stage",
+              "current_real_ns_defect_five_moment_discrepancy_materialized",
+              "current_real_ns_correction_velocity_materialized",
+              "real_candidate_finite_correction_cycle_run",
+              "heldout_normalized_ns_residual_assessed",
+              "residual_reduction_claimed",
+              "same_protocol_comparable_to_st006",
+              "pde_validated",
+          )
+          if any(truth[name] is not False for name in required_false):
+              raise SystemExit("current Xi source-moment handoff attempted a forbidden NS promotion")
+          Path("current/current_xi_a3_bridge_receipt.json").write_text(
+              json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+          )
+          print(json.dumps({
+              "max_raw_l2_norm": receipt.max_raw_l2_norm,
+              "max_pa16_transformed_l2_norm": receipt.max_pa16_transformed_l2_norm,
+              "sample_count": len(receipt.samples),
+              "handoff_sha256": receipt.handoff_sha256,
+          }, indent=2, sort_keys=True))
+          PY
+
+      - name: Run focused Agent-3 regressions
+        working-directory: current
+        run: |
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_current_xi_moment_discrepancy_bridge.py \
+            tests/test_constrained_kokuno_gain_gated_finite_correction_cycle.py
+          git diff --check
+
+      - name: Upload typed bridge evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a3-current-xi-moment-discrepancy-bridge
+          path: |
+            current/current_xi_a1_report.json
+            current/current_xi_a3_bridge_receipt.json
+          if-no-files-found: warn
