@@ -1,25 +1,25 @@
 """Agent-5 integration contract for the current Cartesian leading field through X_R.
 
-This module is integration/provenance glue only.  It registers Agent-1 PR #980,
-which extends the current candidate-side Cartesian leading velocity from the
-previous X_h boundary through the public exterior-preservation interval ending
-at X_R.  It does not reimplement Agent-1 mathematics and it does not promote
-that scoped extension into a global compactly-supported velocity field.
+This module is integration/provenance glue only. It registers the current
+candidate-side leading extension and its matching implementation-distinct
+independent audit without reimplementing either mathematical lane.
 
-Current registered seam:
+Registered seam:
 
     A5 #978 current correction-side/radial-stress registration
       -> A1 #980 current Cartesian leading velocity through X_R
+      -> A4 #983 public-velocity-only scoped divergence audit of #980
 
 Agent-2 #981 (identity-preserving save/load for the older partial
 leading+oscillatory composite through X_h) and Agent-3 #982 (current partial
-radial force from d_z sigma_1) are recorded as siblings only.  Neither is
-silently retargeted to the new X_R leading lineage here.  No Agent-4 audit of
-#980 exists at this freeze, so independent exterior validation stays false.
+radial force from d_z sigma_1) are recorded as siblings only. Neither is
+silently retargeted to the new X_R lineage.
 
-The fixed full-PDE gates remain unchanged.  In particular, no scoped profile,
-divergence, stress, or delivery receipt is equivalent to held-out normalized
-Navier--Stokes validation.
+A4 #983 is registered, not scientifically admitted while its exact-head Actions
+remain unresolved. Its source-cell/log-X scoped divergence metrics are not the
+canonical whole-domain [24,48,96] admission and are not momentum/full-NS
+validation. The final 1e-3 / 1e-5 gates and the prohibition on residual-defined
+free forcing remain unchanged.
 """
 from __future__ import annotations
 
@@ -69,11 +69,47 @@ AGENT1_EXTERIOR_TO_XR = {
     "heldout_complete_ns_residual_assessed": False,
 }
 
+AGENT4_EXTERIOR_TO_XR_AUDIT = {
+    "pr": 983,
+    "head": "5fdb59afbbe89525e43164f92f0856aad2949600",
+    "branch": "codex/kokuno-a4-cartesian-exterior-xr-divergence-audit-097",
+    "audited_agent1_pr": 980,
+    "audited_agent1_head": "d3c971f2c62e272333e124e532212d23cca4908d",
+    "source_path": "src/openai_ns_reconstruction/kokuno_a4_current_cartesian_exterior_to_xr_divergence_independent_audit.py",
+    "source_blob": "8df8dbad1d9f7294c8d7d5e310cdecbea5a98f0b",
+    "test_path": "tests/test_constrained_kokuno_a4_current_cartesian_exterior_to_xr_divergence_independent_audit.py",
+    "test_blob": "a7c7af47e48715b0e7c90a587347459d849b948a",
+    "workflow_path": ".github/workflows/kokuno-agent4-current-cartesian-exterior-to-xr-divergence-audit.yml",
+    "workflow_blob": "0d87c10225444b559106b1130c7683ca56ce1472",
+    "reference_path": "public velocity only; centered Cartesian FD2 Jacobian",
+    "uses_agent1_derivative_helpers": False,
+    "uses_pressure_or_forcing": False,
+    "seed": 9173691,
+    "times": [0.31, 0.47, 0.63, 0.71],
+    "eta_interval": [-0.60, 0.60],
+    "log_x_over_xr_zones": [[-4.80, -4.10], [-3.45, -1.85], [-1.35, -0.35]],
+    "off_grid_exterior_probe_count": 72,
+    "seam_near_probe_count": 16,
+    "axis_regression_probe_count": 5,
+    "fd2_step_ladder": [0.02, 0.01, 0.005],
+    "finest_exterior_sampled_max_gate": 1.0e-5,
+    "finest_exterior_weighted_rms_gate": 1.0e-5,
+    "finest_seam_max_gate": 1.0e-5,
+    "finest_axis_regression_max_gate": 1.0e-5,
+    "nontrivial_speed_rms_floor": 1.0e-10,
+    "medium_to_fine_degradation_ratio_cap": 1.25,
+    "numerical_floor": 2.0e-8,
+    "scoped_divergence_evidence_only": True,
+    "canonical_whole_domain_admission": False,
+    "candidate_momentum_residual_evidence": False,
+    "scientific_admission": False,
+}
+
 AGENT2_IDENTITY_SAVE_LOAD_SIBLING = {
     "pr": 981,
     "head": "9997fc55455d126f935643da36bf17eaa0491aa4",
     "branch": "codex/kokuno-a2-partial-composite-identity-save-load-082",
-    "role": "identity-preserving save/load for the existing partial u_lead(#965 through X_h)+u_osc composite",
+    "role": "identity-preserving save/load for existing partial u_lead(#965 through X_h)+u_osc composite",
     "full_concrete_oscillatory_runtime_digest_bound": True,
     "identity_preserving_partial_composite_save_load_available": True,
     "composite_extended_to_agent1_980_X_R": False,
@@ -90,14 +126,6 @@ AGENT3_RADIAL_FORCE_SIBLING = {
     "authorized_as_correction_target": False,
     "consumes_agent1_980_exterior": False,
     "consumed_by_this_increment": False,
-}
-
-LATEST_MATCHING_A4 = {
-    "pr": 977,
-    "head": "2b015feccb5d55735ced8763fcb05a563a4cf12e",
-    "role": "implementation-distinct audit of A3 #976 theta/axial scoped radial stresses",
-    "audits_agent1_980_exterior": False,
-    "agent1_980_independent_a4_audit_available": False,
 }
 
 OBSERVED_CI_AT_FREEZE = {
@@ -122,6 +150,12 @@ OBSERVED_CI_AT_FREEZE = {
     "agent3_982": {
         "repository_tests_run": 35584768010,
         "dedicated_run": 35584768136,
+        "status": "queued",
+        "conclusion": None,
+    },
+    "agent4_983": {
+        "repository_tests_run": 35585692398,
+        "dedicated_run": 35585692474,
         "status": "queued",
         "conclusion": None,
     },
@@ -164,8 +198,8 @@ TRUTH_BOUNDARY = {
     "velocity_beyond_xr_materialized": False,
     "agent1_980_save_load_materialized": True,
     "agent1_980_semantic_identity_materialized": True,
-    "agent1_980_independent_a4_audit_registered": False,
-    "agent1_980_independent_a4_audit_admitted": False,
+    "agent4_983_independent_xr_divergence_audit_registered": True,
+    "agent4_983_independent_xr_divergence_audit_admitted": False,
     "post_xr_rf40_current_lineage_materialized": False,
     "cone_i1_i2_i3_i4_outer_overlays_completed": False,
     "outer_global_leading_velocity_materialized": False,
@@ -190,9 +224,9 @@ TRUTH_BOUNDARY = {
 }
 
 PIPELINE_POSITION = {
-    "stage": "current Cartesian leading extension from X_h through X_R",
-    "input": "A5 #978 plus exact A1 #980; A2 #981 and A3 #982 are non-consumed siblings",
-    "new_output": "checksum-bound registration of a callable/save-load Cartesian leading velocity through X_R",
+    "stage": "current Cartesian leading extension through X_R plus independent scoped divergence audit registration",
+    "input": "A5 #978 + A1 #980 + A4 #983; A2 #981 and A3 #982 retained as non-consumed siblings",
+    "new_output": "checksum-bound registration of callable/save-load leading velocity through X_R and its independent public-velocity scoped divergence audit protocol",
     "not_output": "post-X_R/global velocity, X_R-matched leading+oscillatory composite, pressure, forcing, correction velocity, full residual, or PDE validation",
     "next_shortest_blocker": "post-X_R RF40 plus cone/I1-I4 outer completion, then recompose the exact oscillatory runtime on that extended/global leading identity before matched pressure/restricted forcing and complete-defect correction",
 }
@@ -220,9 +254,9 @@ def build_contract(exact_head: str) -> dict[str, Any]:
         "agent5_exact_head": exact_head,
         "parent_a5": copy.deepcopy(PARENT_A5),
         "agent1_exterior_to_xr": copy.deepcopy(AGENT1_EXTERIOR_TO_XR),
+        "agent4_exterior_to_xr_audit": copy.deepcopy(AGENT4_EXTERIOR_TO_XR_AUDIT),
         "agent2_identity_save_load_sibling": copy.deepcopy(AGENT2_IDENTITY_SAVE_LOAD_SIBLING),
         "agent3_radial_force_sibling": copy.deepcopy(AGENT3_RADIAL_FORCE_SIBLING),
-        "latest_matching_a4": copy.deepcopy(LATEST_MATCHING_A4),
         "observed_ci_at_freeze": copy.deepcopy(OBSERVED_CI_AT_FREEZE),
         "frozen_science": copy.deepcopy(FROZEN_SCIENCE),
         "final_gate": copy.deepcopy(FINAL_GATE),
@@ -249,9 +283,9 @@ def validate_contract(payload: Mapping[str, Any]) -> list[str]:
         "task_id": TASK_ID,
         "parent_a5": PARENT_A5,
         "agent1_exterior_to_xr": AGENT1_EXTERIOR_TO_XR,
+        "agent4_exterior_to_xr_audit": AGENT4_EXTERIOR_TO_XR_AUDIT,
         "agent2_identity_save_load_sibling": AGENT2_IDENTITY_SAVE_LOAD_SIBLING,
         "agent3_radial_force_sibling": AGENT3_RADIAL_FORCE_SIBLING,
-        "latest_matching_a4": LATEST_MATCHING_A4,
         "observed_ci_at_freeze": OBSERVED_CI_AT_FREEZE,
         "frozen_science": FROZEN_SCIENCE,
         "final_gate": FINAL_GATE,
@@ -273,9 +307,9 @@ def validate_contract(payload: Mapping[str, Any]) -> list[str]:
     truth = observed.get("truth_boundary", {})
     readiness = observed.get("readiness", {})
     a1 = observed.get("agent1_exterior_to_xr", {})
+    a4 = observed.get("agent4_exterior_to_xr_audit", {})
     a2 = observed.get("agent2_identity_save_load_sibling", {})
     a3 = observed.get("agent3_radial_force_sibling", {})
-    a4 = observed.get("latest_matching_a4", {})
 
     if truth.get("current_cartesian_leading_velocity_materialized_through_xr") is not True:
         errors.append("xr_materialization_lost")
@@ -285,8 +319,22 @@ def validate_contract(payload: Mapping[str, Any]) -> list[str]:
         errors.append("global_leading_promoted")
     if truth.get("current_partial_composite_extended_through_xr") is not False:
         errors.append("composite_lineage_laundered_to_xr")
+    if truth.get("agent4_983_independent_xr_divergence_audit_registered") is not True:
+        errors.append("a4_xr_audit_registration_lost")
+    if truth.get("agent4_983_independent_xr_divergence_audit_admitted") is not False:
+        errors.append("a4_xr_audit_preadmitted")
     if a1.get("fails_closed_after_X_R") is not True:
         errors.append("agent1_xr_fail_closed_lost")
+    if a4.get("audited_agent1_head") != AGENT1_EXTERIOR_TO_XR["head"]:
+        errors.append("agent4_wrong_agent1_lineage")
+    if a4.get("scoped_divergence_evidence_only") is not True:
+        errors.append("agent4_scope_laundered")
+    if a4.get("canonical_whole_domain_admission") is not False:
+        errors.append("agent4_canonical_admission_promoted")
+    if a4.get("candidate_momentum_residual_evidence") is not False:
+        errors.append("agent4_momentum_evidence_promoted")
+    if a4.get("scientific_admission") is not False:
+        errors.append("agent4_scientific_admission_premature")
     if a2.get("consumed_by_this_increment") is not False:
         errors.append("agent2_sibling_silently_consumed")
     if a2.get("composite_extended_to_agent1_980_X_R") is not False:
@@ -295,8 +343,6 @@ def validate_contract(payload: Mapping[str, Any]) -> list[str]:
         errors.append("agent3_sibling_silently_consumed")
     if a3.get("consumes_agent1_980_exterior") is not False:
         errors.append("agent3_lineage_silently_retargeted")
-    if a4.get("agent1_980_independent_a4_audit_available") is not False:
-        errors.append("missing_a4_audit_promoted")
 
     for key in ("leading_ready", "correction_ready", "velocity_export_ready", "pde_validated"):
         if readiness.get(key) is not False:
