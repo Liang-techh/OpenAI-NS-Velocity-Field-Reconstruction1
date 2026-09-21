@@ -1,0 +1,179 @@
+name: kokuno-agent3-current-i1-nonlinear-mean
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_current_i1_nonlinear_mean_attribution.py'
+      - 'tests/test_constrained_kokuno_current_i1_nonlinear_mean_attribution.py'
+      - '.github/workflows/kokuno-agent3-current-i1-nonlinear-mean.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  current-i1-nonlinear-mean:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact Agent-3 PR head
+        uses: actions/checkout@v4
+        with:
+          path: a3
+          fetch-depth: 0
+
+      - name: Verify one-increment Agent-3 stack
+        shell: bash
+        run: |
+          set -euo pipefail
+          parent=8f2f485e2000955bab47fc08f478b512d3b49e5d
+          git -C a3 merge-base --is-ancestor "$parent" HEAD
+          test "$(git -C a3 rev-list --count "$parent"..HEAD)" -eq 3
+          git -C a3 diff --name-only "$parent"...HEAD | sort > /tmp/changed.txt
+          cat > /tmp/expected.txt <<'EOF'
+          .github/workflows/kokuno-agent3-current-i1-nonlinear-mean.yml
+          src/openai_ns_reconstruction/kokuno_current_i1_nonlinear_mean_attribution.py
+          tests/test_constrained_kokuno_current_i1_nonlinear_mean_attribution.py
+          EOF
+          diff -u /tmp/expected.txt /tmp/changed.txt
+
+      - name: Checkout exact Agent-2 current-I1 composite
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: 109527f520abb29bbe10372b0517eda44bcad0b6
+          path: a2
+          fetch-depth: 1
+
+      - name: Checkout exact Agent-1 current-I1 leading
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: ea59dc305b4265fcb0bb0f948c2a45f4477d1ae5
+          path: a1
+          fetch-depth: 1
+
+      - name: Authenticate sibling source blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C a2 rev-parse HEAD)" = 109527f520abb29bbe10372b0517eda44bcad0b6
+          test "$(git -C a1 rev-parse HEAD)" = ea59dc305b4265fcb0bb0f948c2a45f4477d1ae5
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_current_i1_leading_oscillatory_identity.py)" = 3a8db3e12f57050fd6579b36b9e20ce0e6b95af7
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_oscillatory_batch_differentials.py)" = 12df3bf6c949baeebf609b366f2973e7f515a157
+          test "$(git -C a1 hash-object src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_i1_frozen_gate.py)" = fe14dab8dccdbca828d722bdfe2f75f287aa9ea8
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Agent-3 tree
+        run: python -m pip install -e a3
+
+      - name: Run focused contract tests
+        run: python -m pytest -q a3/tests/test_constrained_kokuno_current_i1_nonlinear_mean_attribution.py
+
+      - name: Materialize exact current-I1 mean receipts
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python - <<'PY'
+          from __future__ import annotations
+          import json
+          from math import exp, hypot, log, sqrt
+          from pathlib import Path
+          import importlib
+          import numpy as np
+          import openai_ns_reconstruction as pkg
+
+          root = Path.cwd()
+          for sibling in (root / 'a1' / 'src' / 'openai_ns_reconstruction', root / 'a2' / 'src' / 'openai_ns_reconstruction'):
+              text = str(sibling)
+              if text not in pkg.__path__:
+                  pkg.__path__.append(text)
+
+          a2_field_mod = importlib.import_module('openai_ns_reconstruction.kokuno_current_i1_leading_oscillatory_identity')
+          a2_diff_mod = importlib.import_module('openai_ns_reconstruction.kokuno_oscillatory_batch_differentials')
+          a3_mod = importlib.import_module('openai_ns_reconstruction.kokuno_current_i1_nonlinear_mean_attribution')
+
+          field = a2_field_mod.default_field()
+          backend = a3_mod.ExactCurrentI1NonlinearBackend.bind(
+              field,
+              a2_diff_mod.evaluate_oscillatory_batch_differentials,
+          )
+
+          inner = a3_mod.materialize_current_i1_nonlinear_mean_attribution(
+              backend,
+              np.asarray([hypot(0.41, -0.17)], dtype=float),
+              np.asarray([-0.08], dtype=float),
+              np.asarray([0.39], dtype=float),
+          )
+
+          fraction = 0.57
+          eta = 0.08
+          time = 0.55
+          X = exp(log(field.X_I1_start) + fraction * (log(field.X_I1_end) - log(field.X_I1_start)))
+          q = (1.0 - time) / (1.0 - eta * eta)
+          radius = sqrt(2.0 * q * X)
+          z = (q ** field.D) * eta
+          stage = a3_mod.materialize_current_i1_nonlinear_mean_attribution(
+              backend,
+              np.asarray([radius], dtype=float),
+              np.asarray([z], dtype=float),
+              np.asarray([time], dtype=float),
+          )
+
+          payload = {
+              'schema': 'kokuno-a3-current-i1-nonlinear-mean-receipt-v1',
+              'backend': backend.to_receipt(),
+              'truth_boundary': a3_mod.truth_boundary(),
+              'inner': inner.to_receipt(),
+              'i1_probe': {
+                  'fraction': fraction,
+                  'eta': eta,
+                  'time': time,
+                  'X': X,
+                  'X_I1_start': field.X_I1_start,
+                  'X_I1_end': field.X_I1_end,
+                  'radius': radius,
+                  'z': z,
+                  'witness': stage.to_receipt(),
+              },
+          }
+          Path('artifacts/current_i1_nonlinear_mean_receipt.json').write_text(
+              json.dumps(payload, indent=2, sort_keys=True) + '\n', encoding='utf-8'
+          )
+
+          gates = {
+              'inner_pointwise_three_piece_closure_absolute_max': float(inner.pointwise_three_piece_closure_absolute_max),
+              'inner_projected_three_piece_closure_absolute_max': float(inner.projected_three_piece_closure_absolute_max),
+              'inner_quadratic_mean_rms': float(inner.quadratic_mean_rms),
+              'i1_pointwise_three_piece_closure_absolute_max': float(stage.pointwise_three_piece_closure_absolute_max),
+              'i1_projected_three_piece_closure_absolute_max': float(stage.projected_three_piece_closure_absolute_max),
+              'i1_domain_strictly_inside': bool(field.X_I1_start < X < field.X_I1_end),
+          }
+          Path('artifacts/gates.json').write_text(json.dumps(gates, indent=2, sort_keys=True) + '\n', encoding='utf-8')
+          PY
+
+      - name: Upload receipt before scientific gate enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent3-current-i1-nonlinear-mean-receipt
+          path: artifacts/
+
+      - name: Enforce scoped mean-attribution gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          g = json.loads(Path('artifacts/gates.json').read_text(encoding='utf-8'))
+          assert g['i1_domain_strictly_inside'] is True
+          assert g['inner_pointwise_three_piece_closure_absolute_max'] <= 5.0e-13
+          assert g['inner_projected_three_piece_closure_absolute_max'] <= 1.0e-12
+          assert g['i1_pointwise_three_piece_closure_absolute_max'] <= 5.0e-13
+          assert g['i1_projected_three_piece_closure_absolute_max'] <= 1.0e-12
+          assert g['inner_quadratic_mean_rms'] > 1.0e-12
+          PY
