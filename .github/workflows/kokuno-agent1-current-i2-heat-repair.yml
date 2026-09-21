@@ -1,0 +1,87 @@
+name: kokuno-agent1-current-i2-heat-repair
+
+on:
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_i2_heat_repair.py"
+      - "tests/test_kokuno_pa16_current_cartesian_i2_heat_repair.py"
+      - ".github/workflows/kokuno-agent1-current-i2-heat-repair.yml"
+  workflow_dispatch:
+
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+
+      - name: Authenticate exact current-I1 parent and high-precision I2 source
+        shell: bash
+        run: |
+          git merge-base --is-ancestor ea59dc305b4265fcb0bb0f948c2a45f4477d1ae5 HEAD
+          parent_blob="$(git rev-parse ea59dc305b4265fcb0bb0f948c2a45f4477d1ae5:src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_i1_frozen_gate.py)"
+          test "$parent_blob" = "fe14dab8dccdbca828d722bdfe2f75f287aa9ea8"
+          i2_blob="$(git rev-parse ea59dc305b4265fcb0bb0f948c2a45f4477d1ae5:src/openai_ns_reconstruction/kokuno_high_precision_heat_repair.py)"
+          test "$i2_blob" = "a741dea676e003213d6e59c31dfb1780d61cd7c8"
+          echo "authenticated #1051 parent $parent_blob and bound high-precision I2 $i2_blob"
+
+      - name: Compile focused files
+        run: |
+          python -m py_compile src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_i2_heat_repair.py
+          python -m py_compile tests/test_kokuno_pa16_current_cartesian_i2_heat_repair.py
+
+      - name: Run frozen-I1 parent and current-I2 regressions
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_pa16_current_cartesian_i1_frozen_gate.py \
+            tests/test_kokuno_pa16_current_cartesian_i2_heat_repair.py
+
+      - name: Emit deterministic scoped receipt
+        run: |
+          mkdir -p artifacts/kokuno_agent1_current_i2_heat_repair
+          python -m openai_ns_reconstruction.kokuno_pa16_current_cartesian_i2_heat_repair \
+            --output artifacts/kokuno_agent1_current_i2_heat_repair/receipt.json \
+            --config-output artifacts/kokuno_agent1_current_i2_heat_repair/config.json
+          python - <<'PY'
+          import copy
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction.kokuno_pa16_current_cartesian_i2_heat_repair import (
+              KokunoPA16CurrentCartesianI2HeatRepair,
+          )
+
+          root = Path("artifacts/kokuno_agent1_current_i2_heat_repair")
+          receipt = json.loads((root / "receipt.json").read_text())
+          config = json.loads((root / "config.json").read_text())
+          assert receipt["truth_boundary"]["current_I2_overlay_applied"] is True
+          assert receipt["truth_boundary"]["current_I3_overlay_applied"] is False
+          assert receipt["high_precision_I2"]["independent_audit_pr"] == 339
+          assert receipt["high_precision_I2"]["independent_audit_head"] == "abf4152b981fba12a493f1fc9db0495661995505"
+          mutated = copy.deepcopy(config)
+          mutated["bound_high_precision_i2"]["sha256"] = "0" * 64
+          try:
+              KokunoPA16CurrentCartesianI2HeatRepair.from_configuration(mutated)
+          except ValueError:
+              pass
+          else:
+              raise SystemExit("I2 dependency-SHA mutation did not fail closed")
+          print(json.dumps(receipt, indent=2, sort_keys=True))
+          PY
+
+      - name: Upload scoped receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-current-i2-heat-repair
+          path: artifacts/kokuno_agent1_current_i2_heat_repair/
