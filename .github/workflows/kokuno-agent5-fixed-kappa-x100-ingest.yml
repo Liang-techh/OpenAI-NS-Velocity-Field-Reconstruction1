@@ -1,0 +1,113 @@
+name: kokuno-agent5-fixed-kappa-x100-ingest
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-fixed-kappa-x100-ingest-086
+  pull_request:
+    branches:
+      - codex/kokuno-a5-autonomous-reference-stress-ingest-085
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_a5_fixed_kappa_x100_ingest_contract.py"
+      - "tests/test_kokuno_a5_fixed_kappa_x100_ingest_contract.py"
+      - ".github/workflows/kokuno-agent5-fixed-kappa-x100-ingest.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  fixed-kappa-x100-ingest-firewall:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout exact Agent-5 head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Verify exact checked-out head and parent ancestry
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+          PARENT_HEAD: 8bb1139f2b2d9824fd3bbac693ffa4bf2e71dea2
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          git merge-base --is-ancestor "$PARENT_HEAD" HEAD
+          test "$(git ls-tree "$PARENT_HEAD" -- src/openai_ns_reconstruction/kokuno_a5_autonomous_reference_stress_ingest_contract.py | awk '{print $3}')" = "733f76ab40bd48d916301ea9ed2d4c8f9e1eff09"
+          test "$(git ls-tree "$PARENT_HEAD" -- tests/test_kokuno_a5_autonomous_reference_stress_ingest_contract.py | awk '{print $3}')" = "2f7d14f70ba86efa1cc7422ac0baa70eb3d65cd1"
+          echo "exact_head=$EXPECTED_HEAD"
+
+      - name: Fetch and verify pinned Agent-1 / Agent-4 artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          A1_HEAD=1f3dec711f8ce2052276cd951b2f44d2849579bf
+          A4_HEAD=602a8bb17d78421cddd493e2a6688a7e4c622e1e
+          git fetch --no-tags origin \
+            codex/kokuno-a1-fixed-kappa-x100-084 \
+            codex/kokuno-a4-fixed-kappa-x100-independent-audit-086
+          test "$(git rev-parse "$A1_HEAD")" = "$A1_HEAD"
+          test "$(git rev-parse "$A4_HEAD")" = "$A4_HEAD"
+          test "$(git ls-tree "$A1_HEAD" -- src/openai_ns_reconstruction/kokuno_pa10_fixed_kappa_x100.py | awk '{print $3}')" = "818d965d82bd92505bd6d3e805e698e1e0da64d8"
+          test "$(git ls-tree "$A1_HEAD" -- tests/test_kokuno_pa10_fixed_kappa_x100.py | awk '{print $3}')" = "dcf0e4b02000364eb77abb85751a4f76fecb9da7"
+          test "$(git ls-tree "$A1_HEAD" -- .github/workflows/kokuno-agent1-fixed-kappa-x100.yml | awk '{print $3}')" = "87352d0a12e72a898f0a3b74bf98dccbd13c65b5"
+          test "$(git ls-tree "$A4_HEAD" -- src/openai_ns_reconstruction/kokuno_a4_fixed_kappa_x100_independent_audit.py | awk '{print $3}')" = "d6df5ca24c92fe8e2a608dca983719711ca2f85d"
+          test "$(git ls-tree "$A4_HEAD" -- tests/test_constrained_kokuno_a4_fixed_kappa_x100_independent_audit.py | awk '{print $3}')" = "95710d62c4889f4822dd80eb3b14912a3ca8e667"
+          test "$(git ls-tree "$A4_HEAD" -- .github/workflows/kokuno-agent4-fixed-kappa-x100-independent-audit.yml | awk '{print $3}')" = "9693c6347d4904b63690db83e8b51e630e5b190b"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install repository
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e '.[dev]'
+
+      - name: Run parent and fixed-kappa Agent-5 contract tests
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_a5_autonomous_reference_stress_ingest_contract.py \
+            tests/test_kokuno_a5_fixed_kappa_x100_ingest_contract.py
+
+      - name: Materialize fail-closed Agent-5 fixed-kappa ingest receipt
+        env:
+          EXACT_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          python -m openai_ns_reconstruction.kokuno_a5_fixed_kappa_x100_ingest_contract \
+            --exact-head "$EXACT_HEAD" \
+            --output artifacts/kokuno_a5_fixed_kappa_x100_ingest_contract.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("artifacts/kokuno_a5_fixed_kappa_x100_ingest_contract.json")
+          contract = json.loads(path.read_text(encoding="utf-8"))
+          a1 = contract["agent1_fixed_kappa_x100"]
+          a4 = contract["agent4_fixed_kappa_x100_audit"]
+          truth = contract["truth_boundary"]
+          assert a1["selected_kappa0"] == 0.1
+          assert a1["continuation_range"] == [8.0, 100.0]
+          assert a1["source_exact_fixed_kappa_continuation"] is False
+          assert a4["saved_reloaded_public_values_only"] is True
+          assert a4["production_derivatives_used_as_reference"] is False
+          assert contract["fixed_kappa_x100_ingest_seam"]["queued_or_unresolved_ci_is_pass"] is False
+          assert truth["final_X100_to_X110_interpolation_materialized"] is False
+          assert truth["corrected_global_cartesian_leading_velocity_materialized"] is False
+          assert truth["matched_cartesian_pressure_materialized"] is False
+          assert truth["restricted_forcing_materialized"] is False
+          assert truth["real_agent3_correction_velocity_materialized"] is False
+          assert truth["complete_candidate_api_ready"] is False
+          assert contract["final_gate"]["normalized_momentum_volume_l2"] == 1e-3
+          assert contract["final_gate"]["divergence_volume_l2"] == 1e-5
+          assert contract["readiness"]["pde_validated"] is False
+          PY
+
+      - name: Upload Agent-5 fixed-kappa ingest contract
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a5-fixed-kappa-x100-ingest-contract
+          path: artifacts/kokuno_a5_fixed_kappa_x100_ingest_contract.json
+          if-no-files-found: error
