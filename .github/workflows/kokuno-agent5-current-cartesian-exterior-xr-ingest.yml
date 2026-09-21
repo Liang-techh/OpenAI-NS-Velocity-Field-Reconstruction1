@@ -1,0 +1,110 @@
+name: kokuno-agent5-current-cartesian-exterior-xr-ingest
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_a5_current_cartesian_exterior_xr_ingest_contract.py'
+      - 'tests/test_kokuno_a5_current_cartesian_exterior_xr_ingest_contract.py'
+      - '.github/workflows/kokuno-agent5-current-cartesian-exterior-xr-ingest.yml'
+  push:
+    branches:
+      - 'codex/kokuno-a5-current-cartesian-exterior-xr-ingest-095'
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_a5_current_cartesian_exterior_xr_ingest_contract.py'
+      - 'tests/test_kokuno_a5_current_cartesian_exterior_xr_ingest_contract.py'
+      - '.github/workflows/kokuno-agent5-current-cartesian-exterior-xr-ingest.yml'
+
+permissions:
+  contents: read
+
+env:
+  PARENT_A5: cb67fed42c459d9d753ad17cbc339744e51a9b84
+  A1_HEAD: d3c971f2c62e272333e124e532212d23cca4908d
+  A1_BRANCH: agent-kokuno-1/current-cartesian-exterior-to-xr-096
+  A1_SOURCE_BLOB: 2ba28636a56b252fa485719e7b3e8da754d7e588
+  A1_TEST_BLOB: ecbab9822c54f440f5555f25cd5e7e1648d84bd2
+  A1_WORKFLOW_BLOB: 5c2d68211e8fea526e06087fc4475f7bab9eb563
+  A4_HEAD: 5fdb59afbbe89525e43164f92f0856aad2949600
+  A4_BRANCH: codex/kokuno-a4-cartesian-exterior-xr-divergence-audit-097
+  A4_SOURCE_BLOB: 8df8dbad1d9f7294c8d7d5e310cdecbea5a98f0b
+  A4_TEST_BLOB: a7c7af47e48715b0e7c90a587347459d849b948a
+  A4_WORKFLOW_BLOB: 0d87c10225444b559106b1130c7683ca56ce1472
+  A2_HEAD: 9997fc55455d126f935643da36bf17eaa0491aa4
+  A2_BRANCH: codex/kokuno-a2-partial-composite-identity-save-load-082
+  A3_HEAD: dd11348e8eecf298656d7da58aee4526c6102306
+  A3_BRANCH: codex/kokuno-a3-current-partial-nonlinear-radial-force-104
+
+jobs:
+  exact-head-registration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Verify exact parent ancestry and three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git merge-base "$GITHUB_SHA" "$PARENT_A5")" = "$PARENT_A5"
+          diff -u \
+            <(printf '%s\n' \
+              '.github/workflows/kokuno-agent5-current-cartesian-exterior-xr-ingest.yml' \
+              'src/openai_ns_reconstruction/kokuno_a5_current_cartesian_exterior_xr_ingest_contract.py' \
+              'tests/test_kokuno_a5_current_cartesian_exterior_xr_ingest_contract.py' | sort) \
+            <(git diff --name-only "$PARENT_A5"..."$GITHUB_SHA" | sort)
+
+      - name: Authenticate exact Agent-1 exterior-to-XR delivery
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin "$A1_BRANCH"
+          test "$(git rev-parse FETCH_HEAD)" = "$A1_HEAD"
+          test "$(git rev-parse "${A1_HEAD}:src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_exterior_to_xr.py")" = "$A1_SOURCE_BLOB"
+          test "$(git rev-parse "${A1_HEAD}:tests/test_kokuno_pa16_current_cartesian_exterior_to_xr.py")" = "$A1_TEST_BLOB"
+          test "$(git rev-parse "${A1_HEAD}:.github/workflows/kokuno-agent1-current-cartesian-exterior-to-xr.yml")" = "$A1_WORKFLOW_BLOB"
+
+      - name: Authenticate matching Agent-4 independent audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin "$A4_BRANCH"
+          test "$(git rev-parse FETCH_HEAD)" = "$A4_HEAD"
+          test "$(git rev-parse "${A4_HEAD}:src/openai_ns_reconstruction/kokuno_a4_current_cartesian_exterior_to_xr_divergence_independent_audit.py")" = "$A4_SOURCE_BLOB"
+          test "$(git rev-parse "${A4_HEAD}:tests/test_constrained_kokuno_a4_current_cartesian_exterior_to_xr_divergence_independent_audit.py")" = "$A4_TEST_BLOB"
+          test "$(git rev-parse "${A4_HEAD}:.github/workflows/kokuno-agent4-current-cartesian-exterior-to-xr-divergence-audit.yml")" = "$A4_WORKFLOW_BLOB"
+
+      - name: Authenticate sibling heads without consuming them
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git ls-remote origin "refs/heads/$A2_BRANCH" | awk '{print $1}')" = "$A2_HEAD"
+          test "$(git ls-remote origin "refs/heads/$A3_BRANCH" | awk '{print $1}')" = "$A3_HEAD"
+
+      - name: Install focused test environment
+        run: python -m pip install -e '.[dev]'
+
+      - name: Materialize checksum-bound registration receipt
+        run: |
+          mkdir -p artifacts/kokuno/a5/current_cartesian_exterior_xr
+          python -m openai_ns_reconstruction.kokuno_a5_current_cartesian_exterior_xr_ingest_contract \
+            --head "$GITHUB_SHA" \
+            --out artifacts/kokuno/a5/current_cartesian_exterior_xr/registration.json
+
+      - name: Upload registration receipt before enforcement
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a5-current-cartesian-exterior-xr-registration-${{ github.sha }}
+          path: artifacts/kokuno/a5/current_cartesian_exterior_xr/registration.json
+          if-no-files-found: error
+
+      - name: Run parent and new fail-closed integration tests
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_a5_current_partial_radial_stress_ingest_contract.py \
+            tests/test_kokuno_a5_current_cartesian_exterior_xr_ingest_contract.py
