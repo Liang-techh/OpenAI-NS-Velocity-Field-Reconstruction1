@@ -1,0 +1,232 @@
+name: kokuno-agent2-source-phase-coefficient-jet
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a2-source-phase-coefficient-jet-090
+  pull_request:
+    branches:
+      - codex/kokuno-a2-source-complete-curl-reference-089
+  workflow_dispatch:
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out exact A2 head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: a2
+          fetch-depth: 0
+
+      - name: Verify exact parent ancestry and strict three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd a2
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+          git merge-base --is-ancestor ecc2be96eee441308cc0216bf187b43bbd7fd3a0 HEAD
+          test "$(git rev-list --count ecc2be96eee441308cc0216bf187b43bbd7fd3a0..HEAD)" -eq 3
+          mapfile -t files < <(git diff --name-only ecc2be96eee441308cc0216bf187b43bbd7fd3a0..HEAD)
+          test "${#files[@]}" -eq 3
+          printf '%s\n' "${files[@]}" | sort > /tmp/actual-files
+          printf '%s\n' \
+            .github/workflows/kokuno-agent2-source-phase-coefficient-jet.yml \
+            src/openai_ns_reconstruction/kokuno_source_phase_coefficient_jet.py \
+            tests/test_constrained_kokuno_source_phase_coefficient_jet.py \
+            | sort > /tmp/expected-files
+          diff -u /tmp/expected-files /tmp/actual-files
+          test "$(git hash-object src/openai_ns_reconstruction/kokuno_source_normalized_complete_curl_reference.py)" = \
+            "42809fc1b10937b4246c65121ac1dbfdc2986822"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install A2 test dependencies
+        shell: bash
+        run: python -m pip install -e './a2[dev]'
+
+      - name: Compile and run focused source-jet tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            a2/src/openai_ns_reconstruction/kokuno_source_phase_coefficient_jet.py \
+            a2/tests/test_constrained_kokuno_source_phase_coefficient_jet.py
+          PYTHONPATH="$PWD/a2/src" python -m pytest -q \
+            a2/tests/test_constrained_kokuno_source_normalized_complete_curl_reference.py \
+            a2/tests/test_constrained_kokuno_source_phase_coefficient_jet.py
+
+      - name: Check out exact corrected Kokuno public source
+        uses: actions/checkout@v4
+        with:
+          repository: KokunoYumeto/yang-mills-interacting-workbench
+          ref: 143f6773feb424ad9ed3a8d116653200f20346b7
+          path: source
+          fetch-depth: 1
+
+      - name: Authenticate corrected source bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C source rev-parse HEAD)" = "143f6773feb424ad9ed3a8d116653200f20346b7"
+          test "$(git -C source hash-object navier-stokes/navier_stokes_workbench.tex)" = \
+            "205a99807302e21a51c5eaf223390c0dfc42bcd0"
+
+      - name: Materialize source phase/coefficient-jet receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p receipts
+          PYTHONPATH="$PWD/a2/src" python - <<'PY'
+          from __future__ import annotations
+
+          import json
+          from pathlib import Path
+          import numpy as np
+
+          from openai_ns_reconstruction.kokuno_source_normalized_complete_curl_reference import (
+              harmonic_vector_potential_coefficient,
+          )
+          from openai_ns_reconstruction.kokuno_source_phase_coefficient_jet import (
+              SourceAmplitudeDirectionalJet,
+              SourceBackgroundPhaseJet,
+              complete_harmonic_from_source_phase_jet,
+              harmonic_coefficient_directional_jet,
+              source_phase_coefficient_jet_contract,
+              source_phase_vector_jet,
+          )
+
+          epsilon = 0.2
+          p = 1.25
+          p_z = -0.4
+          x_0 = 0.8
+          pulse_v = 0.35
+          k = 7.0
+          m = 1
+          b = np.array([0.3, -0.7, 1.1])
+
+          def background(radius, zed):
+              radius = np.asarray(radius, dtype=float)
+              zed = np.asarray(zed, dtype=float)
+              radius, zed = np.broadcast_arrays(radius, zed)
+              return SourceBackgroundPhaseJet(
+                  f=radius**2 + zed**2,
+                  g=radius * zed,
+                  f_r=2.0 * radius,
+                  g_r=zed,
+                  f_z=2.0 * zed,
+                  g_z=radius,
+                  f_rr=2.0 * np.ones_like(radius),
+                  g_rr=np.zeros_like(radius),
+                  f_rz=np.zeros_like(radius),
+                  g_rz=np.ones_like(radius),
+                  f_zz=2.0 * np.ones_like(radius),
+                  g_zz=np.zeros_like(radius),
+              )
+
+          def phase(radius, zed):
+              return source_phase_vector_jet(
+                  radius, 0.37, zed, pulse_v, background(radius, zed),
+                  epsilon=epsilon, p=p, p_z=p_z, x_0=x_0,
+              )
+
+          def coefficient(radius, zed):
+              ph = phase(radius, zed)
+              t_m = np.cross(ph.n_phi, b)
+              return harmonic_vector_potential_coefficient(ph.n_phi, t_m, k=k, m=m)
+
+          radius = 1.23
+          zed = -0.27
+          ph = phase(radius, zed)
+          amp = SourceAmplitudeDirectionalJet(
+              t_m=np.cross(ph.n_phi, b),
+              dr_t_m=np.cross(ph.dr_n_phi, b),
+              dz_t_m=np.cross(ph.dz_n_phi, b),
+          )
+          cj = harmonic_coefficient_directional_jet(ph, amp, k=k, m=m)
+          complete = complete_harmonic_from_source_phase_jet(radius, ph, amp, k=k, m=m)
+
+          h = 1.0e-6
+          fd_r = (coefficient(radius + h, zed) - coefficient(radius - h, zed)) / (2.0 * h)
+          fd_z = epsilon * (
+              coefficient(radius, zed + h) - coefficient(radius, zed - h)
+          ) / (2.0 * h)
+
+          contract = source_phase_coefficient_jet_contract()
+          receipt = {
+              "schema": "kokuno-agent2-source-phase-coefficient-jet-receipt-v1",
+              "head": "${{ github.event.pull_request.head.sha || github.sha }}",
+              "source_commit": contract["source_commit"],
+              "source_workbench_blob": contract["source_workbench_blob"],
+              "dr_coefficient_fd_abs_max_error": float(np.max(np.abs(cj.dr_coefficient - fd_r))),
+              "dz_coefficient_fd_abs_max_error": float(np.max(np.abs(cj.dz_coefficient - fd_z))),
+              "complete_coefficient_closure_abs_max": float(
+                  np.max(np.abs(complete.complete_amplitude.coefficient - cj.coefficient))
+              ),
+              "retained_longitudinal_closure_abs_max": float(
+                  np.max(np.abs(
+                      complete.complete_amplitude.longitudinal_amplitude
+                      - complete.complete_amplitude.longitudinal_remainder
+                  ))
+              ),
+              "source_phase_vector_jet_executable": contract["source_phase_vector_jet_executable"],
+              "source_coefficient_directional_jets_derived_analytically": contract[
+                  "source_coefficient_directional_jets_derived_analytically"
+              ],
+              "caller_supplies_coefficient_directional_jets": contract[
+                  "caller_supplies_coefficient_directional_jets"
+              ],
+              "source_amplitude_ode_materialized": contract["source_amplitude_ode_materialized"],
+              "self_contained_velocity_xyzt_provider": contract[
+                  "self_contained_velocity_xyzt_provider"
+              ],
+              "paper_exact": contract["paper_exact"],
+              "complete_ns_residual_assessed": contract["complete_ns_residual_assessed"],
+              "residual_reduction_claimed": contract["residual_reduction_claimed"],
+              "pde_validated": contract["pde_validated"],
+          }
+          Path("receipts/kokuno_a2_source_phase_coefficient_jet.json").write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+          )
+          PY
+
+      - name: Upload receipt before gate enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a2-source-phase-coefficient-jet
+          path: receipts/kokuno_a2_source_phase_coefficient_jet.json
+          if-no-files-found: error
+
+      - name: Enforce source-jet mechanics and truth boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          receipt = json.loads(
+              Path("receipts/kokuno_a2_source_phase_coefficient_jet.json").read_text(
+                  encoding="utf-8"
+              )
+          )
+          assert receipt["dr_coefficient_fd_abs_max_error"] <= 2.0e-8
+          assert receipt["dz_coefficient_fd_abs_max_error"] <= 2.0e-8
+          assert receipt["complete_coefficient_closure_abs_max"] <= 5.0e-13
+          assert receipt["retained_longitudinal_closure_abs_max"] <= 5.0e-12
+          assert receipt["source_phase_vector_jet_executable"] is True
+          assert receipt["source_coefficient_directional_jets_derived_analytically"] is True
+          assert receipt["caller_supplies_coefficient_directional_jets"] is False
+          assert receipt["source_amplitude_ode_materialized"] is False
+          assert receipt["self_contained_velocity_xyzt_provider"] is False
+          assert receipt["paper_exact"] is False
+          assert receipt["complete_ns_residual_assessed"] is False
+          assert receipt["residual_reduction_claimed"] is False
+          assert receipt["pde_validated"] is False
+          PY
