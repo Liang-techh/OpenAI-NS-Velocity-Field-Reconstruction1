@@ -1,0 +1,226 @@
+name: kokuno-agent4-current-rf40-power-law-nonlinear-mean-independent-audit
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a4-rf40-power-law-nonlinear-mean-independent-audit-105
+  pull_request:
+    branches:
+      - codex/kokuno-a3-rf40-power-law-nonlinear-mean-112
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - name: Check out exact A4 event head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: a4
+          fetch-depth: 0
+
+      - name: Verify exact A3 parent and three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd a4
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+          git merge-base --is-ancestor 4b7a4400dcf1ee0be6bb07f23c2f8af6f893de88 HEAD
+          test "$(git rev-list --count 4b7a4400dcf1ee0be6bb07f23c2f8af6f893de88..HEAD)" -eq 3
+          mapfile -t files < <(git diff --name-only 4b7a4400dcf1ee0be6bb07f23c2f8af6f893de88..HEAD)
+          test "${#files[@]}" -eq 3
+          printf '%s\n' "${files[@]}" | sort > /tmp/actual-files
+          printf '%s\n' \
+            .github/workflows/kokuno-agent4-current-rf40-power-law-nonlinear-mean-independent-audit.yml \
+            src/openai_ns_reconstruction/kokuno_a4_current_rf40_power_law_nonlinear_mean_independent_audit.py \
+            tests/test_constrained_kokuno_a4_current_rf40_power_law_nonlinear_mean_independent_audit.py \
+            | sort > /tmp/expected-files
+          diff -u /tmp/expected-files /tmp/actual-files
+          test "$(git hash-object src/openai_ns_reconstruction/kokuno_current_rf40_power_law_nonlinear_mean_attribution.py)" = \
+            "4ec98a6adbb7afd16d6595cc24072fe18e62fa87"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install exact A4 head
+        shell: bash
+        run: python -m pip install -e './a4[dev]'
+
+      - name: Run focused A4 software and mutation regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            a4/src/openai_ns_reconstruction/kokuno_a4_current_rf40_power_law_nonlinear_mean_independent_audit.py \
+            a4/tests/test_constrained_kokuno_a4_current_rf40_power_law_nonlinear_mean_independent_audit.py
+          python -m pytest -q -W error \
+            a4/tests/test_constrained_kokuno_a4_current_rf40_power_law_nonlinear_mean_independent_audit.py
+
+      - name: Check out exact A2 RF40 power-law composite
+        uses: actions/checkout@v4
+        with:
+          ref: e36d9da4b7f037e998f5b1658f8c0ea291a76b80
+          path: a2
+          fetch-depth: 1
+
+      - name: Check out exact A1 RF40 power-law leading
+        uses: actions/checkout@v4
+        with:
+          ref: 2c76ebdc41d6c566f43a1305034ba2ff9dce410b
+          path: a1
+          fetch-depth: 1
+
+      - name: Authenticate sibling candidate sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C a2 rev-parse HEAD)" = "e36d9da4b7f037e998f5b1658f8c0ea291a76b80"
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_current_rf40_power_law_leading_oscillatory_identity.py)" = \
+            "4f1dc0566c041b9de20f18b4ae9c49d9fd93c58d"
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_oscillatory_batch_differentials.py)" = \
+            "12df3bf6c949baeebf609b366f2973e7f515a157"
+          test "$(git -C a1 rev-parse HEAD)" = "2c76ebdc41d6c566f43a1305034ba2ff9dce410b"
+          test "$(git -C a1 hash-object src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_rf40_power_law.py)" = \
+            "36a0183352a2005bd0b5f477594e05a2e4fe3868"
+
+      - name: Materialize JSON-round-tripped production receipts and independent A4 report
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p receipts
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          import numpy as np
+          import openai_ns_reconstruction
+
+          pkg = openai_ns_reconstruction
+          a1_pkg = str(Path('a1/src/openai_ns_reconstruction').resolve())
+          a2_pkg = str(Path('a2/src/openai_ns_reconstruction').resolve())
+          a4_pkg = str(Path('a4/src/openai_ns_reconstruction').resolve())
+
+          pkg.__path__.insert(0, a1_pkg)
+          from openai_ns_reconstruction.kokuno_pa16_current_cartesian_rf40_power_law import (
+              KokunoPA16CurrentCartesianRF40PowerLaw,
+          )
+          leading = KokunoPA16CurrentCartesianRF40PowerLaw()
+
+          pkg.__path__.insert(0, a2_pkg)
+          from openai_ns_reconstruction.kokuno_current_rf40_power_law_leading_oscillatory_identity import (
+              CurrentRF40PowerLawLeadingOscillatoryField,
+          )
+          from openai_ns_reconstruction.kokuno_oscillatory_batch_differentials import (
+              evaluate_oscillatory_batch_differentials,
+          )
+          original = CurrentRF40PowerLawLeadingOscillatoryField(leading)
+          saved_path = Path('receipts/a2_pr1010_saved_candidate.json')
+          original.save_candidate(saved_path)
+          field = CurrentRF40PowerLawLeadingOscillatoryField.load_candidate(saved_path)
+
+          replay_points = np.asarray(
+              [[0.41, -0.17, -0.08], [0.32, 0.11, -0.20], [-0.36, 0.24, 0.05]],
+              dtype=float,
+          )
+          replay_times = np.asarray([0.39, 0.31, 0.47], dtype=float)
+          before = original.velocity(
+              replay_points[:,0], replay_points[:,1], replay_points[:,2], replay_times
+          )
+          after = field.velocity(
+              replay_points[:,0], replay_points[:,1], replay_points[:,2], replay_times
+          )
+          replay_max = float(np.max(np.abs(before - after)))
+
+          pkg.__path__.insert(0, a4_pkg)
+          from openai_ns_reconstruction.kokuno_current_rf40_power_law_nonlinear_mean_attribution import (
+              ExactCurrentRF40PowerLawNonlinearBackend,
+              materialize_current_rf40_power_law_nonlinear_mean_attribution,
+              truth_boundary as a3_truth_boundary,
+          )
+          from openai_ns_reconstruction.kokuno_a4_current_rf40_power_law_nonlinear_mean_independent_audit import (
+              audit_current_rf40_power_law_nonlinear_mean,
+              enforce_scoped_gates,
+              frozen_axis_near_specs,
+              frozen_inner_ring_specs,
+              frozen_power_law_specs,
+          )
+
+          backend = ExactCurrentRF40PowerLawNonlinearBackend.bind(
+              field, evaluate_oscillatory_batch_differentials
+          )
+          specs = (
+              frozen_inner_ring_specs()
+              + frozen_axis_near_specs()
+              + frozen_power_law_specs(field)
+          )
+          production = {}
+          for spec in specs:
+              witness = materialize_current_rf40_power_law_nonlinear_mean_attribution(
+                  backend,
+                  np.asarray([spec.radius], dtype=float),
+                  np.asarray([spec.z], dtype=float),
+                  np.asarray([spec.t], dtype=float),
+              )
+              production[spec.label] = witness.to_receipt()
+
+          # Scientific reference consumes only public JSON data, not witness internals.
+          production_public = json.loads(json.dumps(production, sort_keys=True))
+          boundary_public = json.loads(json.dumps(a3_truth_boundary(), sort_keys=True))
+          report = audit_current_rf40_power_law_nonlinear_mean(
+              field, production_public, boundary_public
+          )
+          report['save_load_public_velocity_replay_max'] = replay_max
+          report['production_receipt_count'] = len(production_public)
+          report['production_receipts'] = production_public
+          report['a3_truth_boundary'] = boundary_public
+          Path('receipts/kokuno_a4_rf40_power_law_nonlinear_mean_independent_audit.json').write_text(
+              json.dumps(report, indent=2, sort_keys=True) + '\n', encoding='utf-8'
+          )
+          PY
+
+      - name: Upload raw public receipts and independent report before enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a4-rf40-power-law-nonlinear-mean-independent-audit
+          path: |
+            receipts/a2_pr1010_saved_candidate.json
+            receipts/kokuno_a4_rf40_power_law_nonlinear_mean_independent_audit.json
+          if-no-files-found: error
+
+      - name: Enforce preregistered scoped gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          from openai_ns_reconstruction.kokuno_a4_current_rf40_power_law_nonlinear_mean_independent_audit import (
+              enforce_scoped_gates,
+          )
+
+          report = json.loads(
+              Path('receipts/kokuno_a4_rf40_power_law_nonlinear_mean_independent_audit.json').read_text()
+          )
+          assert report['save_load_public_velocity_replay_max'] <= 2e-12
+          assert report['production_receipt_count'] == 12
+          enforce_scoped_gates(report)
+          assert report['audit_pass'] is True
+
+          boundary = report['scientific_boundary']
+          assert boundary['complete_ns_defect'] is False
+          assert boundary['matched_pressure_materialized'] is False
+          assert boundary['restricted_forcing_materialized'] is False
+          assert boundary['correction_velocity_materialized'] is False
+          assert boundary['after_correction_residual_assessed'] is False
+          assert boundary['heldout_normalized_ns_residual_assessed'] is False
+          assert boundary['same_protocol_comparable_to_st006'] is False
+          assert boundary['pde_validated'] is False
+          assert boundary['final_normalized_momentum_gate'] == 1e-3
+          assert boundary['final_normalized_divergence_gate'] == 1e-5
+          PY
