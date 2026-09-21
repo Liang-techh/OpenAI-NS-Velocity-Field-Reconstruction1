@@ -1,0 +1,217 @@
+name: kokuno-agent2-source-background-phase-jet
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a2-source-background-phase-jet-091
+  pull_request:
+    branches:
+      - codex/kokuno-a2-source-phase-coefficient-jet-090
+  workflow_dispatch:
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out exact A2 head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: a2
+          fetch-depth: 0
+
+      - name: Verify exact parent ancestry and strict three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd a2
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+          git merge-base --is-ancestor 0f4006bfd159281d96a7dc90a3ab50f0566f13e1 HEAD
+          test "$(git rev-list --count 0f4006bfd159281d96a7dc90a3ab50f0566f13e1..HEAD)" -eq 3
+          mapfile -t files < <(git diff --name-only 0f4006bfd159281d96a7dc90a3ab50f0566f13e1..HEAD)
+          test "${#files[@]}" -eq 3
+          printf '%s\n' "${files[@]}" | sort > /tmp/actual-files
+          printf '%s\n' \
+            .github/workflows/kokuno-agent2-source-background-phase-jet.yml \
+            src/openai_ns_reconstruction/kokuno_source_background_phase_jet.py \
+            tests/test_constrained_kokuno_source_background_phase_jet.py \
+            | sort > /tmp/expected-files
+          diff -u /tmp/expected-files /tmp/actual-files
+          test "$(git hash-object src/openai_ns_reconstruction/kokuno_source_phase_coefficient_jet.py)" = \
+            "d3c9684d47cec5dfabf713db01ffab45ea9461c4"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install A2 test dependencies
+        shell: bash
+        run: python -m pip install -e './a2[dev]'
+
+      - name: Compile and run focused source-background tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            a2/src/openai_ns_reconstruction/kokuno_source_background_phase_jet.py \
+            a2/tests/test_constrained_kokuno_source_background_phase_jet.py
+          PYTHONPATH="$PWD/a2/src" python -m pytest -q \
+            a2/tests/test_constrained_kokuno_source_phase_coefficient_jet.py \
+            a2/tests/test_constrained_kokuno_source_background_phase_jet.py
+
+      - name: Check out exact corrected Kokuno public source
+        uses: actions/checkout@v4
+        with:
+          repository: KokunoYumeto/yang-mills-interacting-workbench
+          ref: 143f6773feb424ad9ed3a8d116653200f20346b7
+          path: source
+          fetch-depth: 1
+
+      - name: Authenticate corrected source bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C source rev-parse HEAD)" = "143f6773feb424ad9ed3a8d116653200f20346b7"
+          test "$(git -C source hash-object navier-stokes/navier_stokes_workbench.tex)" = \
+            "205a99807302e21a51c5eaf223390c0dfc42bcd0"
+
+      - name: Materialize source-background jet receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p receipts
+          PYTHONPATH="$PWD/a2/src" python - <<'PY'
+          from __future__ import annotations
+
+          import json
+          from pathlib import Path
+          import numpy as np
+
+          from openai_ns_reconstruction.kokuno_source_background_phase_jet import (
+              SourceActualBackgroundVGJet,
+              source_background_phase_jet_contract,
+              source_background_phase_jet_from_vg,
+              source_phase_vector_jet_from_vg,
+          )
+
+          radius = np.array([0.83, 1.27, 1.61])
+          zed = np.array([-0.31, 0.44, 0.12])
+          actual = SourceActualBackgroundVGJet(
+              v=radius * (radius**2 + zed**2),
+              g=radius * zed,
+              v_r=3.0 * radius**2 + zed**2,
+              g_r=zed,
+              v_z=2.0 * radius * zed,
+              g_z=radius,
+              v_rr=6.0 * radius,
+              g_rr=np.zeros_like(radius),
+              v_rz=2.0 * zed,
+              g_rz=np.ones_like(radius),
+              v_zz=2.0 * radius,
+              g_zz=np.zeros_like(radius),
+          )
+          bg = source_background_phase_jet_from_vg(radius, actual)
+          adapted = source_phase_vector_jet_from_vg(
+              radius,
+              np.array([0.2, -0.6, 0.4]),
+              zed,
+              np.array([0.35, 0.58, 0.41]),
+              actual,
+              epsilon=0.17,
+              p=2.0,
+              p_z=-0.75,
+              x_0=0.41,
+          )
+          contract = source_background_phase_jet_contract()
+
+          expected_f = radius**2 + zed**2
+          expected_fr = 2.0 * radius
+          expected_fz = 2.0 * zed
+          expected_frr = 2.0 * np.ones_like(radius)
+          expected_frz = np.zeros_like(radius)
+          expected_fzz = 2.0 * np.ones_like(radius)
+
+          receipt = {
+              "schema": "kokuno-agent2-source-background-phase-jet-receipt-v1",
+              "head": "${{ github.event.pull_request.head.sha || github.sha }}",
+              "source_commit": contract["source_commit"],
+              "source_workbench_blob": contract["source_workbench_blob"],
+              "f_equals_v_over_r_abs_max_error": float(np.max(np.abs(bg.f - expected_f))),
+              "f_r_abs_max_error": float(np.max(np.abs(bg.f_r - expected_fr))),
+              "f_z_abs_max_error": float(np.max(np.abs(bg.f_z - expected_fz))),
+              "f_rr_abs_max_error": float(np.max(np.abs(bg.f_rr - expected_frr))),
+              "f_rz_abs_max_error": float(np.max(np.abs(bg.f_rz - expected_frz))),
+              "f_zz_abs_max_error": float(np.max(np.abs(bg.f_zz - expected_fzz))),
+              "phase_vector_finite": bool(np.all(np.isfinite(adapted.phase_vector_jet.n_phi))),
+              "source_f_equals_v_over_r_executed": contract["source_f_equals_v_over_r_executed"],
+              "caller_supplies_background_phase_derivative_jet": contract[
+                  "caller_supplies_background_phase_derivative_jet"
+              ],
+              "caller_supplies_actual_background_vg_derivative_jet": contract[
+                  "caller_supplies_actual_background_vg_derivative_jet"
+              ],
+              "actual_corrected_background_provider_materialized": contract[
+                  "actual_corrected_background_provider_materialized"
+              ],
+              "agent1_leading_substituted_for_corrected_background": contract[
+                  "agent1_leading_substituted_for_corrected_background"
+              ],
+              "source_amplitude_ode_materialized": contract["source_amplitude_ode_materialized"],
+              "self_contained_velocity_xyzt_provider": contract[
+                  "self_contained_velocity_xyzt_provider"
+              ],
+              "paper_exact": contract["paper_exact"],
+              "complete_ns_residual_assessed": contract["complete_ns_residual_assessed"],
+              "residual_reduction_claimed": contract["residual_reduction_claimed"],
+              "pde_validated": contract["pde_validated"],
+          }
+          Path("receipts/kokuno_a2_source_background_phase_jet.json").write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+          )
+          PY
+
+      - name: Upload receipt before gate enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a2-source-background-phase-jet
+          path: receipts/kokuno_a2_source_background_phase_jet.json
+          if-no-files-found: error
+
+      - name: Enforce background algebra and truth boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          receipt = json.loads(
+              Path("receipts/kokuno_a2_source_background_phase_jet.json").read_text(
+                  encoding="utf-8"
+              )
+          )
+          for key in (
+              "f_equals_v_over_r_abs_max_error",
+              "f_r_abs_max_error",
+              "f_z_abs_max_error",
+              "f_rr_abs_max_error",
+              "f_rz_abs_max_error",
+              "f_zz_abs_max_error",
+          ):
+              assert receipt[key] <= 2.0e-12, (key, receipt[key])
+          assert receipt["phase_vector_finite"] is True
+          assert receipt["source_f_equals_v_over_r_executed"] is True
+          assert receipt["caller_supplies_background_phase_derivative_jet"] is False
+          assert receipt["caller_supplies_actual_background_vg_derivative_jet"] is True
+          assert receipt["actual_corrected_background_provider_materialized"] is False
+          assert receipt["agent1_leading_substituted_for_corrected_background"] is False
+          assert receipt["source_amplitude_ode_materialized"] is False
+          assert receipt["self_contained_velocity_xyzt_provider"] is False
+          assert receipt["paper_exact"] is False
+          assert receipt["complete_ns_residual_assessed"] is False
+          assert receipt["residual_reduction_claimed"] is False
+          assert receipt["pde_validated"] is False
+          PY
