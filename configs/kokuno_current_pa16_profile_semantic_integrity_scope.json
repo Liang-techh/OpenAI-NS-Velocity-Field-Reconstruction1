@@ -1,0 +1,102 @@
+{
+  "schema": "cr002-kokuno-joined-profile-semantic-integrity-scope-v1",
+  "task": "CR002-KOKUNO-JOINED-PROFILE-SEMANTIC-INTEGRITY-095",
+  "scope": "runtime provenance integrity for the exact #959 joined-profile configuration consumed by #961",
+  "active_integration_reference": {
+    "branch": "codex/cr001-constraints",
+    "head_at_claim": "7f6658cac1a8ffea178bec5accf2fa5a784b8249",
+    "role": "routing authority reference only; this increment stacks on the exact relevant open PR"
+  },
+  "exact_stack": {
+    "parent_pr": 961,
+    "parent_head": "670f7b71d72735d441dcf48f2391c271ee5c163c",
+    "parent_source": "src/openai_ns_reconstruction/kokuno_current_pa16_profile_application.py",
+    "parent_source_blob": "cb3dcd25e0c55a7935daee1b77ffb1741320f83b",
+    "joined_profile_pr": 959,
+    "joined_profile_head": "61b8730fba5623c5acfbd3ec42d54f7cc4f45748",
+    "joined_profile_source": "src/openai_ns_reconstruction/kokuno_pa16_current_joined_profile.py",
+    "joined_profile_source_blob": "e38b9b79378aaf97a17226e41da75b477f26ae23",
+    "joined_profile_schema": "kokuno-pa16-current-joined-profile-v1"
+  },
+  "identity_definition": {
+    "public_runtime_field": "joined_profile_report.semantic_sha256",
+    "upstream_definition": "sha256(canonical_json(KokunoPA16CurrentJoinedProfile.configuration()))",
+    "canonical_json": "json.dumps(value, sort_keys=True, separators=(',', ':'), allow_nan=False)",
+    "required_replay": true,
+    "configuration_must_be_stable_across_authentication": true,
+    "authenticated_report_must_be_pinned_during_parent_961_delegation": true,
+    "parent_961_receipt_semantic_sha_must_equal_replayed_configuration_sha": true
+  },
+  "four_way_provenance": {
+    "user_requirement": [
+      "maintain machine-readable source/delivery contracts",
+      "keep callable velocity delivery independent from PDE validation",
+      "do not promote visual or source-coordinate similarity into paper-exact or PDE claims",
+      "preserve preregistered forcing and thresholds"
+    ],
+    "public_source_fact": [
+      "no new Kokuno/OpenAI mathematical or numerical fact is introduced by this increment"
+    ],
+    "autonomous_design": [
+      "replay the upstream configuration semantic hash before #961 consumption",
+      "read configuration twice around report authentication and reject drift",
+      "pin the authenticated joined-profile identity and report during delegation",
+      "wrap the existing #961 receipt in a new CR002 integrity receipt"
+    ],
+    "pending_unknown": [
+      "process-wide immutability of an arbitrary backend evaluator after authentication",
+      "global Cartesian Kokuno leading velocity",
+      "current real NS correction velocity",
+      "matched global pressure and Cartesian pressure gradient",
+      "restricted forcing in a complete Kokuno candidate",
+      "complete held-out NS residual and canonical quadrature admission",
+      "visual correspondence, PDE validation, paper exactness, OpenAI-field identity and blow-up"
+    ]
+  },
+  "forbidden_promotions": {
+    "source_coordinate_repair_application_to_cartesian_velocity": false,
+    "configuration_hash_integrity_to_source_T_sh_admission": false,
+    "configuration_hash_integrity_to_complete_ns_defect": false,
+    "configuration_hash_integrity_to_gain_stage_authorization": false,
+    "configuration_hash_integrity_to_pde_validated": false,
+    "configuration_hash_integrity_to_visual_correspondence": false,
+    "configuration_hash_integrity_to_paper_exact": false,
+    "configuration_hash_integrity_to_openai_field_identified": false
+  },
+  "entrypoint_boundary": {
+    "parent_961_entrypoint_modified": false,
+    "guarded_entrypoint": "materialize_semantic_verified_current_pa16_profile_application_receipt",
+    "claim_rule": "callers may claim configuration-authenticated #959 joined-profile identity only after using the guarded entrypoint"
+  },
+  "canonical_cr001_binding": {
+    "path": "configs/constraints.json",
+    "blob": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001,
+    "divergence_max": 0.00001,
+    "divergence_L2": 0.00001,
+    "free_residual_defined_forcing_allowed": false,
+    "collapsed_candidate_allowed": false,
+    "posthoc_threshold_relaxation_allowed": false
+  },
+  "delivery_state_boundary": {
+    "canonical_eq45_velocity_export_ready": true,
+    "kokuno_global_cartesian_velocity_materialized": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  }
+}
