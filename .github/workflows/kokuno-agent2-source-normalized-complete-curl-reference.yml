@@ -1,0 +1,208 @@
+name: kokuno-agent2-source-normalized-complete-curl-reference
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a2-source-complete-curl-reference-089
+  pull_request:
+    branches:
+      - codex/kokuno-a2-corrected-oscillation-source-ledger-088
+  workflow_dispatch:
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out exact A2 head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: a2
+          fetch-depth: 0
+
+      - name: Verify exact parent ancestry and strict three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd a2
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+          git merge-base --is-ancestor bea6517b0f5a827bb2b35f05736e66a54177ed23 HEAD
+          test "$(git rev-list --count bea6517b0f5a827bb2b35f05736e66a54177ed23..HEAD)" -eq 3
+          mapfile -t files < <(git diff --name-only bea6517b0f5a827bb2b35f05736e66a54177ed23..HEAD)
+          test "${#files[@]}" -eq 3
+          printf '%s\n' "${files[@]}" | sort > /tmp/actual-files
+          printf '%s\n' \
+            .github/workflows/kokuno-agent2-source-normalized-complete-curl-reference.yml \
+            src/openai_ns_reconstruction/kokuno_source_normalized_complete_curl_reference.py \
+            tests/test_constrained_kokuno_source_normalized_complete_curl_reference.py \
+            | sort > /tmp/expected-files
+          diff -u /tmp/expected-files /tmp/actual-files
+          test "$(git hash-object src/openai_ns_reconstruction/kokuno_corrected_oscillation_source_ledger.py)" = \
+            "241ee6a9210aa2f4c8e3e9678e7b2175731c2b4a"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install A2 test dependencies
+        shell: bash
+        run: python -m pip install -e './a2[dev]'
+
+      - name: Compile and run focused complete-curl tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            a2/src/openai_ns_reconstruction/kokuno_source_normalized_complete_curl_reference.py \
+            a2/tests/test_constrained_kokuno_source_normalized_complete_curl_reference.py
+          PYTHONPATH="$PWD/a2/src" python -m pytest -q \
+            a2/tests/test_constrained_kokuno_corrected_oscillation_source_ledger.py \
+            a2/tests/test_constrained_kokuno_source_normalized_complete_curl_reference.py
+
+      - name: Check out exact corrected Kokuno public source
+        uses: actions/checkout@v4
+        with:
+          repository: KokunoYumeto/yang-mills-interacting-workbench
+          ref: 143f6773feb424ad9ed3a8d116653200f20346b7
+          path: source
+          fetch-depth: 1
+
+      - name: Authenticate corrected source bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C source rev-parse HEAD)" = "143f6773feb424ad9ed3a8d116653200f20346b7"
+          test "$(git -C source hash-object navier-stokes/navier_stokes_workbench.tex)" = \
+            "205a99807302e21a51c5eaf223390c0dfc42bcd0"
+          test "$(git -C source hash-object navier-stokes/navier_stokes_source_bundle.zip)" = \
+            "b3cf96edff06e39e066a4a6b9522362975d3fbb1"
+
+      - name: Materialize complete-curl reference receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p receipts
+          PYTHONPATH="$PWD/a2/src" python - <<'PY'
+          from __future__ import annotations
+
+          import json
+          from pathlib import Path
+          import numpy as np
+
+          from openai_ns_reconstruction.kokuno_source_normalized_complete_curl_reference import (
+              NormalizedPotentialJet,
+              complete_harmonic_amplitude_from_coefficient_jet,
+              normalized_curl_from_potential_jet,
+              normalized_divergence_from_vector_jet,
+              source_reference_contract,
+          )
+
+          radius = np.linspace(0.61, 2.31, 37)
+          theta = np.linspace(-1.15, 1.25, 37)
+          zed = np.linspace(-0.43, 0.39, 37)
+          epsilon = 0.17
+          jet = NormalizedPotentialJet(
+              a_r=radius**2 * np.sin(theta) + zed,
+              a_theta=radius * zed * np.cos(theta),
+              a_z=radius**2 * zed + np.cos(theta),
+              dtheta_a_r=radius**2 * np.cos(theta),
+              dtheta_a_z=-np.sin(theta),
+              dr_a_z=2.0 * radius * zed,
+              dr_a_theta=zed * np.cos(theta),
+              dz_a_r=epsilon * np.ones_like(radius),
+              dz_a_theta=epsilon * radius * np.cos(theta),
+          )
+          curl = normalized_curl_from_potential_jet(radius, jet)
+          expected = np.stack(
+              (
+                  -np.sin(theta) / radius - epsilon * radius * np.cos(theta),
+                  epsilon - 2.0 * radius * zed,
+                  (2.0 * zed - radius) * np.cos(theta),
+              ),
+              axis=-1,
+          )
+          curl_error = float(np.max(np.abs(curl - expected)))
+
+          divergence = normalized_divergence_from_vector_jet(
+              radius,
+              curl[..., 0],
+              np.sin(theta) / radius**2 - epsilon * np.cos(theta),
+              np.zeros_like(radius),
+              2.0 * epsilon * np.cos(theta),
+          )
+          divergence_abs_max = float(np.max(np.abs(divergence)))
+
+          n_phi = np.array([2.0, -1.0, 0.5])
+          t_m = np.array([1.0, 2.0, 0.0], dtype=np.complex128)
+          result = complete_harmonic_amplitude_from_coefficient_jet(
+              2.0,
+              n_phi,
+              t_m,
+              np.array([0.2 + 0.1j, 0.7 - 0.2j, -0.4 + 0.3j]),
+              np.array([-0.3 + 0.2j, 0.6 + 0.1j, 0.5 - 0.4j]),
+              k=5.0,
+              m=1,
+          )
+          longitudinal_closure = float(
+              np.max(np.abs(result.longitudinal_amplitude - result.longitudinal_remainder))
+          )
+          longitudinal_signal = float(np.max(np.abs(result.longitudinal_remainder)))
+
+          contract = source_reference_contract()
+          receipt = {
+              "schema": "kokuno-agent2-source-normalized-complete-curl-reference-receipt-v1",
+              "head": "${{ github.event.pull_request.head.sha || github.sha }}",
+              "source_commit": contract["source_commit"],
+              "source_workbench_blob": contract["source_workbench_blob"],
+              "manufactured_point_count": int(radius.size),
+              "curl_formula_abs_max_error": curl_error,
+              "normalized_divergence_abs_max": divergence_abs_max,
+              "longitudinal_closure_abs_max": longitudinal_closure,
+              "retained_longitudinal_signal_abs": longitudinal_signal,
+              "source_normalized_curl_formula_executable": True,
+              "source_complete_harmonic_amplitude_algebra_executable": True,
+              "current_runtime_mapping_status": "not_verified",
+              "paper_exact": False,
+              "complete_ns_residual_assessed": False,
+              "residual_reduction_claimed": False,
+              "pde_validated": False,
+          }
+          Path("receipts/kokuno_a2_source_normalized_complete_curl_reference.json").write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          PY
+
+      - name: Upload receipt before gate enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a2-source-normalized-complete-curl-reference
+          path: receipts/kokuno_a2_source_normalized_complete_curl_reference.json
+          if-no-files-found: error
+
+      - name: Enforce reference mechanics and truth boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          receipt = json.loads(
+              Path("receipts/kokuno_a2_source_normalized_complete_curl_reference.json").read_text(
+                  encoding="utf-8"
+              )
+          )
+          assert receipt["curl_formula_abs_max_error"] <= 5.0e-13
+          assert receipt["normalized_divergence_abs_max"] <= 5.0e-13
+          assert receipt["longitudinal_closure_abs_max"] <= 5.0e-13
+          assert receipt["retained_longitudinal_signal_abs"] >= 1.0e-3
+          assert receipt["current_runtime_mapping_status"] == "not_verified"
+          assert receipt["paper_exact"] is False
+          assert receipt["complete_ns_residual_assessed"] is False
+          assert receipt["residual_reduction_claimed"] is False
+          assert receipt["pde_validated"] is False
+          PY
