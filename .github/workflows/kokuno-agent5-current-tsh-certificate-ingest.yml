@@ -1,6 +1,13 @@
 name: kokuno-agent5-current-tsh-certificate-ingest
 
 on:
+  push:
+    branches:
+      - "codex/kokuno-a5-current-tsh-certificate-ingest-090"
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_a5_current_tsh_certificate_ingest_contract.py"
+      - "tests/test_kokuno_a5_current_tsh_certificate_ingest_contract.py"
+      - ".github/workflows/kokuno-agent5-current-tsh-certificate-ingest.yml"
   pull_request:
     paths:
       - "src/openai_ns_reconstruction/kokuno_a5_current_tsh_certificate_ingest_contract.py"
