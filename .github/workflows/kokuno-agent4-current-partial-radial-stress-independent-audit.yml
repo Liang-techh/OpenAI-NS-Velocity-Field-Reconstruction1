@@ -1,0 +1,244 @@
+name: kokuno-agent4-current-partial-radial-stress-independent-audit
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a4-current-partial-radial-stress-audit-096
+  pull_request:
+    branches:
+      - codex/kokuno-a3-current-partial-nonlinear-radial-stress-103
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Check out exact A4 event head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: a4
+          fetch-depth: 0
+
+      - name: Verify exact parent and three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd a4
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+          git merge-base --is-ancestor 0a777668050ff9e73d6c8db1f72e5fabfa9b04a6 HEAD
+          test "$(git rev-list --count 0a777668050ff9e73d6c8db1f72e5fabfa9b04a6..HEAD)" -eq 3
+          mapfile -t files < <(git diff --name-only 0a777668050ff9e73d6c8db1f72e5fabfa9b04a6..HEAD)
+          test "${#files[@]}" -eq 3
+          printf '%s\n' "${files[@]}" | sort > /tmp/actual-files
+          printf '%s\n' \
+            .github/workflows/kokuno-agent4-current-partial-radial-stress-independent-audit.yml \
+            src/openai_ns_reconstruction/kokuno_a4_current_partial_radial_stress_independent_audit.py \
+            tests/test_constrained_kokuno_a4_current_partial_radial_stress_independent_audit.py \
+            | sort > /tmp/expected-files
+          diff -u /tmp/expected-files /tmp/actual-files
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install exact A4 head
+        shell: bash
+        run: python -m pip install -e './a4[dev]'
+
+      - name: Authenticate exact A3 parent source
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C a4 hash-object src/openai_ns_reconstruction/kokuno_current_partial_nonlinear_radial_stress.py)" = \
+            "9afa50c573186b86cd86fa7ffe44a5986a808b6d"
+          test "$(git -C a4 hash-object src/openai_ns_reconstruction/kokuno_current_partial_nonlinear_mean_attribution.py)" = \
+            "9c62ae3c3b4b3ca2d9082f822d57feef700ea6cf"
+
+      - name: Run focused A4 regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            a4/src/openai_ns_reconstruction/kokuno_a4_current_partial_radial_stress_independent_audit.py \
+            a4/tests/test_constrained_kokuno_a4_current_partial_radial_stress_independent_audit.py
+          python -m pytest -q -W error \
+            a4/tests/test_constrained_kokuno_current_partial_nonlinear_radial_stress.py \
+            a4/tests/test_constrained_kokuno_a4_current_partial_radial_stress_independent_audit.py
+
+      - name: Check out exact A2 current partial composite
+        uses: actions/checkout@v4
+        with:
+          ref: 3a6405bbd3d10b8c3b38078f0c989c45e5d407b4
+          path: a2
+          fetch-depth: 1
+
+      - name: Check out exact A1 current Cartesian leading
+        uses: actions/checkout@v4
+        with:
+          ref: 7dc09c59584a6b1bfaabcbb8df00283d9f9a40c1
+          path: a1
+          fetch-depth: 1
+
+      - name: Authenticate sibling heads and source blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C a2 rev-parse HEAD)" = "3a6405bbd3d10b8c3b38078f0c989c45e5d407b4"
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_current_partial_leading_oscillatory_velocity.py)" = \
+            "532435705bd5db341e82371180da8c04c3dd6c14"
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_oscillatory_batch_differentials.py)" = \
+            "12df3bf6c949baeebf609b366f2973e7f515a157"
+          test "$(git -C a1 rev-parse HEAD)" = "7dc09c59584a6b1bfaabcbb8df00283d9f9a40c1"
+          test "$(git -C a1 hash-object src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_leading_velocity.py)" = \
+            "ca8b80b0451be1a8f31deaf620f542d8c2e92c0c"
+
+      - name: Materialize real public-receipt independent audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p receipts
+          python - <<'PY'
+          from pathlib import Path
+          import copy
+          import json
+          import openai_ns_reconstruction
+
+          pkg = openai_ns_reconstruction
+          a1_pkg = str(Path('a1/src/openai_ns_reconstruction').resolve())
+          a2_pkg = str(Path('a2/src/openai_ns_reconstruction').resolve())
+          a4_pkg = str(Path('a4/src/openai_ns_reconstruction').resolve())
+
+          pkg.__path__.insert(0, a1_pkg)
+          from openai_ns_reconstruction.kokuno_pa16_current_cartesian_leading_velocity import (
+              KokunoPA16CurrentCartesianLeadingVelocity,
+          )
+          leading = KokunoPA16CurrentCartesianLeadingVelocity()
+
+          pkg.__path__.insert(0, a2_pkg)
+          from openai_ns_reconstruction.kokuno_current_partial_leading_oscillatory_velocity import (
+              _CurrentPartialLeadingOscillatoryField,
+          )
+          from openai_ns_reconstruction.kokuno_oscillatory_batch_differentials import (
+              evaluate_oscillatory_batch_differentials,
+          )
+          field = _CurrentPartialLeadingOscillatoryField(leading)
+
+          pkg.__path__.insert(0, a4_pkg)
+          from openai_ns_reconstruction.kokuno_current_partial_nonlinear_mean_attribution import (
+              ExactCurrentPartialNonlinearBackend,
+          )
+          from openai_ns_reconstruction.kokuno_current_partial_nonlinear_radial_stress import (
+              materialize_current_partial_nonlinear_radial_stress,
+          )
+          from openai_ns_reconstruction.kokuno_strict_inner_transport_radial_stress import (
+              StrictInnerTransportRadialGeometry,
+          )
+          from openai_ns_reconstruction.kokuno_a4_current_partial_radial_stress_independent_audit import (
+              FROZEN_BUMP_CENTER,
+              FROZEN_BUMP_HALFWIDTH,
+              FROZEN_TIME,
+              FROZEN_Z,
+              audit_serialized_receipts,
+              enforce_audit,
+              frozen_radial_grids,
+              mutate_bump_geometry,
+              mutate_fine_stress_tangent,
+          )
+
+          backend = ExactCurrentPartialNonlinearBackend.bind(
+              field, evaluate_oscillatory_batch_differentials
+          )
+          public_receipts = []
+          for radii in frozen_radial_grids():
+              geometry = StrictInnerTransportRadialGeometry(
+                  time=FROZEN_TIME,
+                  axial_z=FROZEN_Z,
+                  radii=tuple(float(v) for v in radii),
+                  bump_center=FROZEN_BUMP_CENTER,
+                  bump_halfwidth=FROZEN_BUMP_HALFWIDTH,
+              )
+              witness = materialize_current_partial_nonlinear_radial_stress(
+                  backend, geometry
+              )
+              # Hard serialization boundary: A4 only sees the reloaded public receipt.
+              public_receipts.append(json.loads(json.dumps(witness.to_receipt())))
+
+          report = audit_serialized_receipts(public_receipts)
+
+          tangent = copy.deepcopy(public_receipts)
+          tangent[2] = mutate_fine_stress_tangent(tangent[2])
+          tangent_detected = False
+          try:
+              enforce_audit(audit_serialized_receipts(tangent))
+          except AssertionError:
+              tangent_detected = True
+
+          parameter = copy.deepcopy(public_receipts)
+          parameter[3] = mutate_bump_geometry(parameter[3])
+          parameter_detected = False
+          try:
+              audit_serialized_receipts(parameter)
+          except ValueError:
+              parameter_detected = True
+
+          report['mutation_tests'] = {
+              'outer_edge_value_preserving_stress_tangent_detected': tangent_detected,
+              'bump_parameter_drift_detected': parameter_detected,
+          }
+          Path('receipts/kokuno_a4_current_partial_radial_stress_independent_audit.json').write_text(
+              json.dumps(report, indent=2, sort_keys=True) + '\n', encoding='utf-8'
+          )
+          PY
+
+      - name: Upload real audit receipt before scientific enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a4-current-partial-radial-stress-independent-audit
+          path: receipts/kokuno_a4_current_partial_radial_stress_independent_audit.json
+          if-no-files-found: error
+
+      - name: Enforce preregistered scoped gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          from openai_ns_reconstruction.kokuno_a4_current_partial_radial_stress_independent_audit import enforce_audit
+
+          report = json.loads(
+              Path('receipts/kokuno_a4_current_partial_radial_stress_independent_audit.json').read_text()
+          )
+          enforce_audit(report)
+          assert report['mutation_tests']['outer_edge_value_preserving_stress_tangent_detected'] is True
+          assert report['mutation_tests']['bump_parameter_drift_detected'] is True
+          assert report['candidate_residual_evidence'] is False
+          boundary = report['truth_boundary']
+          assert boundary['complete_ns_defect'] is False
+          assert boundary['current_real_ns_correction_velocity_materialized'] is False
+          assert boundary['heldout_normalized_ns_residual_assessed'] is False
+          assert boundary['same_protocol_comparable_to_st006'] is False
+          assert boundary['pde_validated'] is False
+          assert boundary['final_normalized_momentum_gate'] == 1e-3
+          assert boundary['final_normalized_divergence_gate'] == 1e-5
+
+          fine = report['levels'][-1]
+          off = report['offgrid']
+          for channel in ('theta_e2', 'axial_e1'):
+              for piece in ('quadratic', 'mixed', 'aggregate'):
+                  f = fine['channels'][channel][piece]
+                  o = off['channels'][channel][piece]
+                  print(
+                      channel, piece,
+                      'fine_rel_rms=', f['stress_relative_rms'],
+                      'fine_rel_max=', f['stress_relative_max'],
+                      'fine_moment_rel=', f['weighted_moment_relative_error'],
+                      'offgrid_rel_rms=', o['stress_relative_rms'],
+                  )
+          PY
