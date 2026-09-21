@@ -1,0 +1,46 @@
+name: kokuno-agent4-current-cartesian-exterior-to-xr-divergence-audit
+
+on:
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_a4_current_cartesian_exterior_to_xr_divergence_independent_audit.py"
+      - "tests/test_constrained_kokuno_a4_current_cartesian_exterior_to_xr_divergence_independent_audit.py"
+      - ".github/workflows/kokuno-agent4-current-cartesian-exterior-to-xr-divergence-audit.yml"
+  push:
+    branches: ["codex/kokuno-a4-cartesian-exterior-xr-divergence-audit-097"]
+  workflow_dispatch:
+
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install -e '.[dev]'
+      - name: Pin A1 #980 exact ancestry and source blob
+        run: |
+          git merge-base --is-ancestor d3c971f2c62e272333e124e532212d23cca4908d HEAD
+          test "$(git hash-object src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_exterior_to_xr.py)" = "2ba28636a56b252fa485719e7b3e8da754d7e588"
+      - name: Compile and run focused regressions
+        run: |
+          python -m py_compile src/openai_ns_reconstruction/kokuno_a4_current_cartesian_exterior_to_xr_divergence_independent_audit.py
+          python -m py_compile tests/test_constrained_kokuno_a4_current_cartesian_exterior_to_xr_divergence_independent_audit.py
+          python -m pytest -q -W error tests/test_kokuno_pa16_current_cartesian_exterior_to_xr.py tests/test_constrained_kokuno_a4_current_cartesian_exterior_to_xr_divergence_independent_audit.py
+      - name: Materialize real independent receipt before enforcement
+        run: |
+          mkdir -p artifacts/kokuno_agent4_current_cartesian_exterior_to_xr_divergence_audit
+          python -m openai_ns_reconstruction.kokuno_a4_current_cartesian_exterior_to_xr_divergence_independent_audit --output artifacts/kokuno_agent4_current_cartesian_exterior_to_xr_divergence_audit/receipt.json
+          cat artifacts/kokuno_agent4_current_cartesian_exterior_to_xr_divergence_audit/receipt.json
+      - name: Upload receipt before scientific gate enforcement
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent4-current-cartesian-exterior-to-xr-divergence-audit
+          path: artifacts/kokuno_agent4_current_cartesian_exterior_to_xr_divergence_audit/
+      - name: Enforce frozen independent divergence gates
+        run: python -m openai_ns_reconstruction.kokuno_a4_current_cartesian_exterior_to_xr_divergence_independent_audit --verify-receipt artifacts/kokuno_agent4_current_cartesian_exterior_to_xr_divergence_audit/receipt.json
