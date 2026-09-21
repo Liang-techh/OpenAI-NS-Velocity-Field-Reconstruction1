@@ -1,15 +1,17 @@
 """Agent-5 integration checkpoint for the exact current-I1 composite/mean seam.
 
-This module is glue only. It advances the A5 routing truth after Agent-2 #1062
-materialized the exact Agent-1 #1051 current-I1 leading plus the frozen
-complete-curl oscillation, and Agent-3 #1063 consumed that exact composite to
-materialize the current-I1 nonlinear m=0 mean attribution.
+This module is glue only. It advances A5 routing truth after Agent-2 #1062
+materialized the exact Agent-1 #1051 current-I1 leading plus frozen complete-
+curl oscillation, Agent-3 #1063 consumed that exact composite to materialize
+the current-I1 nonlinear m=0 mean attribution, and Agent-4 #1064 added the
+matching implementation-distinct scoped divergence audit of the #1062
+save/reloaded composite.
 
-It deliberately does not copy Agent-1/2/3 mathematics. Agent-4 #1053 remains a
-leading-only divergence audit and is not laundered into an audit of the #1062
-composite or #1063 nonlinear mean. Agent-1 #1061 is recorded as a newer I2
-leading-only sibling; no matching I2 oscillatory composite exists at this
-checkpoint.
+It deliberately does not copy Agent-1/2/3/4 mathematics. Agent-4 #1053 remains
+the older leading-only divergence audit; #1064 is registered separately and is
+not laundered into an audit of the #1063 nonlinear mean or a full-NS momentum
+validation. Agent-1 #1061 is recorded as a newer I2 leading-only sibling; no
+matching I2 oscillatory composite exists at this checkpoint.
 
 No pressure, forcing, complete Navier--Stokes defect, correction velocity,
 finite correction cycle, held-out full-NS residual, or PDE admission is created
@@ -116,6 +118,26 @@ AGENT4_CURRENT_I1_LEADING_AUDIT = {
     "complete_ns_residual_evidence": False,
 }
 
+AGENT4_CURRENT_I1_COMPOSITE_AUDIT = {
+    "pr": 1064,
+    "head": "33626e55f301bbb5a28f75684de49d020bc6039d",
+    "branch": "kokuno-agent4/current-i1-leading-oscillatory-divergence-109",
+    "source_path": "src/openai_ns_reconstruction/kokuno_a4_current_i1_composite_divergence_independent_audit.py",
+    "source_blob": "22b9947684f318e892e17b0a455efac8da63fdb8",
+    "schema": "kokuno-a4-current-i1-composite-divergence-audit-v1",
+    "audited_agent2_pr": 1062,
+    "audited_agent2_head": "109527f520abb29bbe10372b0517eda44bcad0b6",
+    "audited_agent1_pr": 1051,
+    "audited_agent1_head": "ea59dc305b4265fcb0bb0f948c2a45f4477d1ae5",
+    "operator": "centered Cartesian FD2 from public save/reloaded velocity only",
+    "spatial_steps": [0.02, 0.01, 0.005],
+    "seed": 9173811,
+    "scope": "leading, leading+oscillatory, and oscillatory-increment divergence through current I1",
+    "implementation_distinct": True,
+    "scientific_admission": False,
+    "complete_ns_residual_evidence": False,
+}
+
 FINAL_GATES = copy.deepcopy(parent_a5.FINAL_GATES)
 ST006_BASELINE = copy.deepcopy(parent_a5.ST006_BASELINE)
 READINESS = copy.deepcopy(parent_a5.READINESS)
@@ -127,8 +149,8 @@ TRUTH_BOUNDARY = {
     "current_i1_full_concrete_oscillatory_runtime_digest_bound": True,
     "current_i1_nonlinear_m0_mean_attribution_materialized": True,
     "agent4_leading_only_audit_registered": True,
-    "agent4_matching_current_i1_composite_audit_present": False,
-    "agent4_matching_current_i1_composite_audit_registered": False,
+    "agent4_matching_current_i1_composite_audit_present": True,
+    "agent4_matching_current_i1_composite_audit_registered": True,
     "agent4_matching_current_i1_composite_audit_admitted": False,
     "agent4_matching_current_i1_nonlinear_mean_audit_present": False,
     "agent4_matching_current_i1_nonlinear_mean_audit_registered": False,
@@ -162,11 +184,11 @@ TRUTH_BOUNDARY = {
 }
 
 PIPELINE_POSITION = {
-    "current_stage": "exact current-I1 leading+oscillatory composite plus nonlinear m=0 mean attribution",
-    "current_identity": "A1 #1051 -> A2 #1062 -> A3 #1063",
-    "independent_evidence": "A4 #1053 audits only A1 #1051 leading divergence; it does not audit A2 #1062 composite or A3 #1063 mean",
+    "current_stage": "exact current-I1 leading+oscillatory composite, matching scoped A4 divergence audit registered, plus nonlinear m=0 mean attribution",
+    "current_identity": "A1 #1051 -> A2 #1062 -> A3 #1063; A4 #1064 independently audits exact A2 #1062 composite",
+    "independent_evidence": "A4 #1064 is implementation-distinct scoped divergence evidence for A2 #1062 only; A4 #1053 remains leading-only and neither audits A3 #1063 nonlinear mean nor supplies full-NS momentum evidence",
     "newer_non_consumed_sibling": "A1 #1061 leading-only through I2; no matching A2 I2 composite yet",
-    "next_shortest_blocker": "recompose frozen oscillation onto exact A1 #1061 I2 identity and obtain implementation-distinct A4 audit of the matching current composite; do not transfer the #1053 leading-only audit",
+    "next_shortest_blocker": "recompose frozen oscillation onto exact A1 #1061 I2 identity, then advance current-lineage mean/stress/force and matching independent audits on that same identity; global pressure/forcing/full-NS remain later gates",
 }
 
 
@@ -213,6 +235,7 @@ def build_registration() -> dict[str, Any]:
         "agent3_current_i1_mean": copy.deepcopy(AGENT3_CURRENT_I1_MEAN),
         "agent1_current_i2_sibling": copy.deepcopy(AGENT1_CURRENT_I2_SIBLING),
         "agent4_current_i1_leading_audit": copy.deepcopy(AGENT4_CURRENT_I1_LEADING_AUDIT),
+        "agent4_current_i1_composite_audit": copy.deepcopy(AGENT4_CURRENT_I1_COMPOSITE_AUDIT),
         "final_gates": copy.deepcopy(FINAL_GATES),
         "st006_baseline": copy.deepcopy(ST006_BASELINE),
         "readiness": copy.deepcopy(READINESS),
@@ -237,6 +260,7 @@ def validate_registration(registration: Mapping[str, Any]) -> None:
         "agent3_current_i1_mean": AGENT3_CURRENT_I1_MEAN,
         "agent1_current_i2_sibling": AGENT1_CURRENT_I2_SIBLING,
         "agent4_current_i1_leading_audit": AGENT4_CURRENT_I1_LEADING_AUDIT,
+        "agent4_current_i1_composite_audit": AGENT4_CURRENT_I1_COMPOSITE_AUDIT,
     }
     for name, expected in expected_blocks.items():
         block = registration.get(name)
@@ -261,15 +285,20 @@ def validate_registration(registration: Mapping[str, Any]) -> None:
     a2 = registration["agent2_current_i1_composite"]
     a3 = registration["agent3_current_i1_mean"]
     i2 = registration["agent1_current_i2_sibling"]
-    a4 = registration["agent4_current_i1_leading_audit"]
+    a4_leading = registration["agent4_current_i1_leading_audit"]
+    a4_composite = registration["agent4_current_i1_composite_audit"]
     if a2["consumes_agent1_head"] != AGENT1_CURRENT_I1["head"]:
         raise ValueError("A2 composite detached from exact current-I1 leading")
     if a3["consumes_agent2_head"] != a2["head"] or a3["consumes_agent1_head"] != AGENT1_CURRENT_I1["head"]:
         raise ValueError("A3 nonlinear mean detached from exact current-I1 composite")
     if i2["consumed_by_this_i1_checkpoint"] is not False or i2["matching_agent2_i2_composite_materialized"] is not False:
         raise ValueError("newer I2 leading sibling was illegally consumed")
-    if a4["audits_agent2_1062_composite"] is not False or a4["audits_agent3_1063_nonlinear_mean"] is not False:
+    if a4_leading["audits_agent2_1062_composite"] is not False or a4_leading["audits_agent3_1063_nonlinear_mean"] is not False:
         raise ValueError("leading-only A4 evidence was laundered into composite/mean validation")
+    if a4_composite["audited_agent2_head"] != a2["head"] or a4_composite["audited_agent1_head"] != AGENT1_CURRENT_I1["head"]:
+        raise ValueError("matching A4 composite audit detached from exact current-I1 identity")
+    if a4_composite["scientific_admission"] is not False or a4_composite["complete_ns_residual_evidence"] is not False:
+        raise ValueError("scoped A4 composite audit was promoted beyond its evidence")
 
     if registration["readiness"] != {
         "leading_ready": False,
