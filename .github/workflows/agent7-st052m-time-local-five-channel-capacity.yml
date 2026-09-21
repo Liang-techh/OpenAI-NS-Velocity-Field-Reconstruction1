@@ -1,0 +1,131 @@
+name: agent7-st052m-time-local-five-channel-capacity
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_time_local_five_channel_capacity.py'
+      - 'experiments/root_st052/test_agent7_st052m_time_local_five_channel_capacity.py'
+      - '.github/workflows/agent7-st052m-time-local-five-channel-capacity.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  time-local-five-channel-capacity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Verify exact PR head checkout
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+      - name: Focused parent and time-local tests
+        run: |
+          python -m pytest -q -W error \
+            experiments/root_st052/test_agent7_st052m_joint_five_channel_capacity_preflight.py \
+            experiments/root_st052/test_agent7_st052m_regional_five_channel_capacity_localization.py \
+            experiments/root_st052/test_agent7_st052m_time_local_five_channel_capacity.py
+      - name: Execute preregistered time-local capacity audit
+        run: |
+          mkdir -p outputs/agent7-st052m-time-local-five-channel-capacity
+          python experiments/root_st052/agent7_st052m_time_local_five_channel_capacity.py \
+            --out outputs/agent7-st052m-time-local-five-channel-capacity/report.json
+      - name: Verify receipt completeness and fail-closed truth boundary
+        run: |
+          python - <<'PY'
+          import json, math
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-time-local-five-channel-capacity/report.json').read_text())
+          assert r['task_id']=='CR003-ST052M-TIME-LOCAL-FIVE-CHANNEL-CAPACITY-125'
+          assert r['prereg_issue']==1048
+          assert r['source_parent']=={'pr':1042,'head':'63a114c466041f8e3281e0f80e8268611505828d'}
+          p=r['frozen_protocol']
+          assert p['channels']==['amplitude','radial_shape','axial_turnover','temporal_curvature','toroidal_swirl']
+          assert p['times']==[0.25,0.375,0.5,0.625,0.75]
+          assert p['active_relative_norm_gate']==1e-12
+          assert p['new_basis_dimension']==0
+          assert p['coefficient_selected'] is None
+          cap=r['time_local_capacity']
+          assert cap['start_endpoint_all_current_corrections_inactive'] is True
+          assert cap['end_endpoint_temporal_curvature_inactive'] is True
+          assert cap['unexpected_inactive_time_slices']==[]
+          start=cap['by_time']['0.250']
+          assert start['active_channels']==[]
+          assert start['inactive_channels']==p['channels']
+          end=cap['by_time']['0.750']
+          assert end['inactive_channels']==['temporal_curvature']
+          for key,row in cap['by_time'].items():
+              assert row['selectivity_guard_pass'] is True
+              assert isinstance(row['passes_preregistered_time_slice_gate'], bool)
+              if row['active_subspace_condition'] is not None:
+                  assert math.isfinite(row['active_subspace_condition'])
+              if row['max_abs_pairwise_cosine_active_subspace'] is not None:
+                  assert math.isfinite(row['max_abs_pairwise_cosine_active_subspace'])
+          assert r['decision']['start_endpoint_repair_available_in_current_correction_family'] is False
+          assert r['decision']['endpoint_preserving_temporal_channel_can_change_t075'] is False
+          assert r['decision']['additional_basis_dimension_justified_by_this_audit'] is False
+          assert r['decision']['actual_velocity_changed'] is False
+          assert r['decision']['direct_visualization_fingerprint_improvement']==0.0
+          assert r['held_out_pde_residual']['evaluated'] is False
+          assert r['held_out_pde_residual']['st006_comparison_performed'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          assert r['paper_exact'] is False
+          assert r['openai_field_identified'] is False
+          print('all_time_slices_match=', cap['all_time_slices_match_preregistered_capacity_semantics'])
+          print('failing_time_slices=', cap['failing_time_slices'])
+          for key in ('0.250','0.375','0.500','0.625','0.750'):
+              row=cap['by_time'][key]
+              print(key, 'active=', row['active_channels'], 'rank=', row['active_subspace_rank'], 'condition=', row['active_subspace_condition'], 'max_abs_cosine=', row['max_abs_pairwise_cosine_active_subspace'])
+          PY
+      - name: Publish compact time-local receipt
+        if: ${{ always() && github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          if [ ! -f outputs/agent7-st052m-time-local-five-channel-capacity/report.json ]; then exit 0; fi
+          python - <<'PY' > /tmp/agent7-time-local-capacity-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-time-local-five-channel-capacity/report.json').read_text())
+          cap=r['time_local_capacity']
+          print('<!-- agent7-st052m-time-local-five-channel-capacity-receipt -->')
+          print('**Agent 7 time-local five-channel capacity receipt (issue #1048):**')
+          print()
+          print(f"- all preregistered time-slice semantics/gates pass: `{cap['all_time_slices_match_preregistered_capacity_semantics']}`")
+          print(f"- failing time slices: `{cap['failing_time_slices']}`")
+          print('- `t=.250`: current correction family is intentionally inactive; this endpoint cannot be repaired by any of the five current correction coordinates.')
+          print('- `t=.750`: endpoint-preserving temporal curvature is intentionally inactive; remaining spatial channels are audited independently.')
+          for key in ('0.250','0.375','0.500','0.625','0.750'):
+              q=cap['by_time'][key]
+              print(f"- `t={key}`: active `{q['active_channels']}`, rank `{q['active_subspace_rank']}`, condition `{q['active_subspace_condition']}`, max |cos| `{q['max_abs_pairwise_cosine_active_subspace']}`")
+          print('- basis dimension change: `0`; coefficient selected: `none`; candidate velocity unchanged.')
+          print('- direct visualization-fingerprint improvement this increment: `0.0`.')
+          print('- held-out complete-PDE residual: `not evaluated`; no ST006 improvement claim.')
+          print()
+          print('Truth boundary: this is target-free time-local expression-capacity routing only. Endpoint obstruction or interior PASS/FAIL does not establish visual/source correspondence, PDE validity, paper exactness, exact OpenAI-field identity, or blow-up.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-time-local-capacity-receipt.md || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-time-local-five-channel-capacity
+          path: outputs/agent7-st052m-time-local-five-channel-capacity/
+          if-no-files-found: warn
+
+# Times, active-threshold, expected endpoint inactivity, and gates were frozen in issue #1048 before execution.
