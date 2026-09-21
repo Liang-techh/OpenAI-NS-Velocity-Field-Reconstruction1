@@ -1,0 +1,66 @@
+name: kokuno-agent4-current-cartesian-leading-divergence-audit
+
+on:
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_a4_current_cartesian_leading_divergence_independent_audit.py"
+      - "tests/test_constrained_kokuno_a4_current_cartesian_leading_divergence_independent_audit.py"
+      - ".github/workflows/kokuno-agent4-current-cartesian-leading-divergence-audit.yml"
+  push:
+    branches:
+      - "agent-kokuno-4/current-cartesian-leading-divergence-094"
+  workflow_dispatch:
+
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout exact head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+
+      - name: Assert exact A1 #965 ancestry and source blob
+        shell: bash
+        run: |
+          git merge-base --is-ancestor 7dc09c59584a6b1bfaabcbb8df00283d9f9a40c1 HEAD
+          observed="$(git rev-parse 7dc09c59584a6b1bfaabcbb8df00283d9f9a40c1:src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_leading_velocity.py)"
+          test "$observed" = "ca8b80b0451be1a8f31deaf620f542d8c2e92c0c"
+
+      - name: Compile focused files
+        run: |
+          python -m py_compile src/openai_ns_reconstruction/kokuno_a4_current_cartesian_leading_divergence_independent_audit.py
+          python -m py_compile tests/test_constrained_kokuno_a4_current_cartesian_leading_divergence_independent_audit.py
+
+      - name: Run upstream and A4 focused regressions
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_pa16_current_cartesian_leading_velocity.py \
+            tests/test_constrained_kokuno_a4_current_cartesian_leading_divergence_independent_audit.py
+
+      - name: Materialize real save-reload independent receipt
+        run: |
+          mkdir -p artifacts/kokuno_agent4_current_cartesian_leading_divergence
+          python -m openai_ns_reconstruction.kokuno_a4_current_cartesian_leading_divergence_independent_audit \
+            --output artifacts/kokuno_agent4_current_cartesian_leading_divergence/receipt.json
+
+      - name: Upload receipt before scientific enforcement
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent4-current-cartesian-leading-divergence-receipt
+          path: artifacts/kokuno_agent4_current_cartesian_leading_divergence/receipt.json
+
+      - name: Enforce frozen divergence gates
+        run: |
+          python -m openai_ns_reconstruction.kokuno_a4_current_cartesian_leading_divergence_independent_audit \
+            --verify-receipt artifacts/kokuno_agent4_current_cartesian_leading_divergence/receipt.json
