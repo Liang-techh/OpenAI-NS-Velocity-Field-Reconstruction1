@@ -100,8 +100,8 @@ AGENT4_FIXED_KAPPA_X100_AUDIT = {
     "source_coordinate_profile_audit_only": True,
     "complete_ns_residual_audit": False,
     "observed_ci_at_registration": {
-        "repository_tests": {"run_id": 35548886917, "status": "queued", "conclusion": None},
-        "dedicated": {"run_id": 35548886935, "status": "queued", "conclusion": None},
+        "repository_tests": {"run_id": 35548968212, "status": "queued", "conclusion": None},
+        "dedicated": {"run_id": 35548968209, "status": "queued", "conclusion": None},
     },
 }
 
