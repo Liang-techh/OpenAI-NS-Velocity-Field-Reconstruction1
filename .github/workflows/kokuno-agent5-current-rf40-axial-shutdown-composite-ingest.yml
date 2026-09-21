@@ -1,0 +1,159 @@
+name: kokuno-agent5-current-rf40-axial-shutdown-composite-ingest
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-rf40-axial-shutdown-composite-ingest-098
+  pull_request:
+    branches:
+      - codex/kokuno-a5-rf40-first-turn-composite-ingest-097
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Check out exact A5 event head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: a5
+          fetch-depth: 0
+
+      - name: Verify exact A5 parent ancestry and strict three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd a5
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+          git merge-base --is-ancestor 88fdafc03ab71e3f8ffe7f39add900e548627daf HEAD
+          test "$(git rev-list --count 88fdafc03ab71e3f8ffe7f39add900e548627daf..HEAD)" -eq 3
+          mapfile -t files < <(git diff --name-only 88fdafc03ab71e3f8ffe7f39add900e548627daf..HEAD)
+          test "${#files[@]}" -eq 3
+          printf '%s\n' "${files[@]}" | sort > /tmp/actual-files
+          printf '%s\n' \
+            .github/workflows/kokuno-agent5-current-rf40-axial-shutdown-composite-ingest.yml \
+            src/openai_ns_reconstruction/kokuno_a5_current_rf40_axial_shutdown_composite_ingest_contract.py \
+            tests/test_kokuno_a5_current_rf40_axial_shutdown_composite_ingest_contract.py \
+            | sort > /tmp/expected-files
+          diff -u /tmp/expected-files /tmp/actual-files
+          test "$(git hash-object src/openai_ns_reconstruction/kokuno_a5_current_rf40_first_turn_composite_ingest_contract.py)" = \
+            "07cd42a7f393bf34b918090630a2a263c2610289"
+          test "$(git hash-object tests/test_kokuno_a5_current_rf40_first_turn_composite_ingest_contract.py)" = \
+            "89d9874509ad780426de99a673a5a46e79dd4eaf"
+          test "$(git hash-object .github/workflows/kokuno-agent5-current-rf40-first-turn-composite-ingest.yml)" = \
+            "22103cad6a1b5d8558cbe9371d93dc9ec8f901b8"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install A5 dependencies
+        shell: bash
+        run: python -m pip install -e './a5[dev]'
+
+      - name: Compile and run parent plus new A5 fail-closed tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            a5/src/openai_ns_reconstruction/kokuno_a5_current_rf40_axial_shutdown_composite_ingest_contract.py \
+            a5/tests/test_kokuno_a5_current_rf40_axial_shutdown_composite_ingest_contract.py
+          PYTHONPATH="$PWD/a5/src" python -m pytest -q -W error \
+            a5/tests/test_kokuno_a5_current_rf40_first_turn_composite_ingest_contract.py \
+            a5/tests/test_kokuno_a5_current_rf40_axial_shutdown_composite_ingest_contract.py
+
+      - name: Check out exact A2 axial-shutdown composite
+        uses: actions/checkout@v4
+        with:
+          ref: 93b99292fcf141f24b7c6d7e4fbf95775e6a07e5
+          path: a2
+          fetch-depth: 1
+
+      - name: Check out exact A4 axial-shutdown independent audit
+        uses: actions/checkout@v4
+        with:
+          ref: a4775ffbe89e6106322567a05d2f547173e39b0b
+          path: a4
+          fetch-depth: 1
+
+      - name: Check out exact A1 lambda-turn sibling
+        uses: actions/checkout@v4
+        with:
+          ref: 43b295444b1e9558222d757cb551e04385eddcb5
+          path: a1
+          fetch-depth: 1
+
+      - name: Check out exact A3 first-turn radial-stress sibling
+        uses: actions/checkout@v4
+        with:
+          ref: 1dde810a0a3f2f93c268ca10a86b3443dea14e9f
+          path: a3
+          fetch-depth: 1
+
+      - name: Authenticate exact sibling heads and blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C a2 rev-parse HEAD)" = "93b99292fcf141f24b7c6d7e4fbf95775e6a07e5"
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_current_rf40_axial_shutdown_leading_oscillatory_identity.py)" = "255e65ce0c37652858509c33e7c9fad40b73ca97"
+          test "$(git -C a2 hash-object tests/test_constrained_kokuno_current_rf40_axial_shutdown_leading_oscillatory_identity.py)" = "39663c3d7cb13303da08e0479b017e4cb093ad29"
+          test "$(git -C a2 hash-object .github/workflows/kokuno-agent2-current-rf40-axial-shutdown-leading-oscillatory.yml)" = "f1811d51b247250751d84615150de6680c60739b"
+
+          test "$(git -C a4 rev-parse HEAD)" = "a4775ffbe89e6106322567a05d2f547173e39b0b"
+          test "$(git -C a4 hash-object src/openai_ns_reconstruction/kokuno_a4_current_rf40_axial_shutdown_leading_oscillatory_divergence_independent_audit.py)" = "c72b833e81c7ecff56e0b78d596434e90e13f795"
+          test "$(git -C a4 hash-object tests/test_constrained_kokuno_a4_current_rf40_axial_shutdown_leading_oscillatory_divergence_independent_audit.py)" = "20aa826d6e05de28c948ef2f97262afa1fd1b461"
+          test "$(git -C a4 hash-object .github/workflows/kokuno-agent4-current-rf40-axial-shutdown-leading-oscillatory-divergence-audit.yml)" = "ec698850df8840a078c7748fd01093bbadaa7e4e"
+
+          test "$(git -C a1 rev-parse HEAD)" = "43b295444b1e9558222d757cb551e04385eddcb5"
+          test "$(git -C a1 hash-object src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_rf40_lambda_turn.py)" = "07743c30978360e305a8863e05e7ed322d818b32"
+          test "$(git -C a1 hash-object tests/test_kokuno_pa16_current_cartesian_rf40_lambda_turn.py)" = "efa89ba23365d3a1b72d55d7aaa7837108cbc9a6"
+          test "$(git -C a1 hash-object .github/workflows/kokuno-agent1-current-cartesian-rf40-lambda-turn.yml)" = "97674e6f567e600300ca0e7169c1cbd02fd6bace"
+
+          test "$(git -C a3 rev-parse HEAD)" = "1dde810a0a3f2f93c268ca10a86b3443dea14e9f"
+          test "$(git -C a3 hash-object src/openai_ns_reconstruction/kokuno_current_rf40_first_turn_nonlinear_radial_stress.py)" = "6334b2fa37d49b60548147e6ae5beca6da652d80"
+          test "$(git -C a3 hash-object tests/test_constrained_kokuno_current_rf40_first_turn_nonlinear_radial_stress.py)" = "dba29f3d13f789707bc4948e00df170cfa50627c"
+          test "$(git -C a3 hash-object .github/workflows/kokuno-agent3-current-rf40-first-turn-nonlinear-radial-stress.yml)" = "afeb7fb8f703d298af0f7149466477a524c332a6"
+
+      - name: Materialize checksum-bound A5 registration receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p receipts
+          PYTHONPATH="$PWD/a5/src" python -m \
+            openai_ns_reconstruction.kokuno_a5_current_rf40_axial_shutdown_composite_ingest_contract \
+            --output receipts/kokuno_a5_current_rf40_axial_shutdown_composite_ingest.json
+          cat receipts/kokuno_a5_current_rf40_axial_shutdown_composite_ingest.json
+
+      - name: Upload registration receipt before enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a5-current-rf40-axial-shutdown-composite-ingest
+          path: receipts/kokuno_a5_current_rf40_axial_shutdown_composite_ingest.json
+          if-no-files-found: error
+
+      - name: Enforce A5 frozen truth boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH="$PWD/a5/src" python - <<'PY'
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction import kokuno_a5_current_rf40_axial_shutdown_composite_ingest_contract as mod
+
+          receipt = json.loads(
+              Path("receipts/kokuno_a5_current_rf40_axial_shutdown_composite_ingest.json").read_text(
+                  encoding="utf-8"
+              )
+          )
+          mod.enforce_registration_receipt(receipt)
+          assert receipt["registration"]["readiness"]["pde_validated"] is False
+          assert receipt["registration"]["truth_boundary"]["heldout_normalized_ns_residual_assessed"] is False
+          assert receipt["registration"]["frozen_science"]["residual_defined_free_forcing_forbidden"] is True
+          PY
