@@ -1,0 +1,89 @@
+name: kokuno-agent1-current-leading-preserve-i4
+
+on:
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_i4_leading_preservation.py"
+      - "tests/test_kokuno_pa16_current_cartesian_i4_leading_preservation.py"
+      - ".github/workflows/kokuno-agent1-current-leading-preserve-i4.yml"
+  workflow_dispatch:
+
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+
+      - name: Authenticate exact current-I3 parent
+        shell: bash
+        run: |
+          git merge-base --is-ancestor 5fb7b583062b4a991db86e39fdcdb231022b70c9 HEAD
+          test "$(git show -s --format=%H 5fb7b583062b4a991db86e39fdcdb231022b70c9)" = "5fb7b583062b4a991db86e39fdcdb231022b70c9"
+          echo "authenticated #1072 current-I3 parent 5fb7b583062b4a991db86e39fdcdb231022b70c9"
+
+      - name: Compile focused files
+        run: |
+          python -m py_compile src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_i4_leading_preservation.py
+          python -m py_compile tests/test_kokuno_pa16_current_cartesian_i4_leading_preservation.py
+
+      - name: Run through-I3 parent and through-I4 regressions
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_pa16_current_cartesian_i3_leading_preservation.py \
+            tests/test_kokuno_pa16_current_cartesian_i4_leading_preservation.py
+
+      - name: Emit deterministic scoped receipt
+        run: |
+          mkdir -p artifacts/kokuno_agent1_current_leading_preserve_i4
+          python -m openai_ns_reconstruction.kokuno_pa16_current_cartesian_i4_leading_preservation \
+            --output artifacts/kokuno_agent1_current_leading_preserve_i4/receipt.json \
+            --config-output artifacts/kokuno_agent1_current_leading_preserve_i4/config.json
+          python - <<'PY'
+          import copy
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction.kokuno_pa16_current_cartesian_i4_leading_preservation import (
+              KokunoPA16CurrentCartesianI4LeadingPreservation,
+          )
+
+          root = Path("artifacts/kokuno_agent1_current_leading_preserve_i4")
+          receipt = json.loads((root / "receipt.json").read_text())
+          config = json.loads((root / "config.json").read_text())
+          truth = receipt["truth_boundary"]
+          assert truth["source_I4_is_reserved_mean_correction_interval"] is True
+          assert truth["source_leading_E0_U0_unchanged_on_I4"] is True
+          assert truth["source_I4_is_not_a_leading_E0_U0_patch"] is True
+          assert truth["current_leading_preserved_through_I4"] is True
+          assert truth["source_I4_mean_correction_materialized"] is False
+          assert truth["current_I4_mean_correction_materialized"] is False
+          assert truth["pde_validated"] is False
+          assert truth["paper_exact"] is False
+          mutated = copy.deepcopy(config)
+          mutated["bound_source_scope"]["I4_role"] = "leading_patch"
+          try:
+              KokunoPA16CurrentCartesianI4LeadingPreservation.from_configuration(mutated)
+          except ValueError:
+              pass
+          else:
+              raise SystemExit("I4 source-scope mutation did not fail closed")
+          print(json.dumps(receipt, indent=2, sort_keys=True))
+          PY
+
+      - name: Upload scoped receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-current-leading-preserve-i4
+          path: artifacts/kokuno_agent1_current_leading_preserve_i4/
