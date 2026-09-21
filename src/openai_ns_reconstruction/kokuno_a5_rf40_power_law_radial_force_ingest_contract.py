@@ -22,7 +22,7 @@ _HEX40 = re.compile(r"^[0-9a-f]{40}$")
 PARENT_A5 = {
     "pr": 1039,
     "head": "6d88e8a83b51704f65aa125006b7671546c77c43",
-    "branch": "codex/kokuno-a5-rf40-power-law-radial-stress-ingest",
+    "branch": "codex/kokuno-a5-rf40-power-law-radial-stress-ingest-104",
 }
 
 AGENT3_POWER_LAW_FORCE = {
