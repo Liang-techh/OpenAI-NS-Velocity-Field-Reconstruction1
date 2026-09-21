@@ -1,0 +1,107 @@
+name: kokuno-agent5-current-i4-routing-i2-stress-ingest
+
+on:
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_a5_current_i4_routing_i2_stress_ingest.py"
+      - "tests/test_kokuno_a5_current_i4_routing_i2_stress_ingest.py"
+      - ".github/workflows/kokuno-agent5-current-i4-routing-i2-stress-ingest.yml"
+  workflow_dispatch:
+
+jobs:
+  current-i4-routing-i2-stress-ingest:
+    runs-on: ubuntu-latest
+    env:
+      PARENT_A5_HEAD: bb9beb985a44c6868fe36daa025704742508e9d4
+      PARENT_A5_PATH: src/openai_ns_reconstruction/kokuno_a5_current_i2_composite_mean_ingest.py
+      PARENT_A5_BLOB: bd34059f6bb2d1c4996f226b023588b4b6806680
+      A3_I2_STRESS_HEAD: cb9ee25d0c466d42ec7ca30ee89cc10517d4b5c4
+      A3_I2_STRESS_PATH: src/openai_ns_reconstruction/kokuno_current_i2_nonlinear_radial_stress.py
+      A3_I2_STRESS_BLOB: 876cdd2cbe4060b9d249cfc4960c26da0d577ca9
+      A1_I4_HEAD: b06742ca6e189499192ede3cce40f62cdc1e35ca
+      A1_I4_PATH: src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_i4_leading_preservation.py
+      A1_I4_BLOB: 6f04ce0a856b44430402576dad88438da90d1ebb
+      A2_I4_HEAD: c40d8ddecd2971544a6e07dab093436b423cf326
+      A2_I4_PATH: src/openai_ns_reconstruction/kokuno_current_i4_leading_oscillatory_identity.py
+      A2_I4_BLOB: 2a0a5aa5966b02da856bdcf51940f3c186042802
+      A4_I4_HEAD: 0ff663fcabaa52af984d273ba87356a72481c85c
+      A4_I4_PATH: src/openai_ns_reconstruction/kokuno_a4_current_i4_composite_divergence_independent_audit.py
+      A4_I4_BLOB: 518208d1feac5b0f09d08e9989b2eba9275fbd82
+      ARTIFACT_DIR: artifacts/kokuno_agent5/current_i4_routing_i2_stress_ingest_109
+
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Authenticate exact A5 parent and A1-A4 frontiers
+        shell: bash
+        run: |
+          set -euo pipefail
+          git cat-file -e "${PARENT_A5_HEAD}^{commit}"
+          git merge-base --is-ancestor "${PARENT_A5_HEAD}" HEAD
+          test "$(git rev-parse "${PARENT_A5_HEAD}:${PARENT_A5_PATH}")" = "${PARENT_A5_BLOB}"
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            test "${{ github.event.pull_request.base.sha }}" = "${PARENT_A5_HEAD}"
+          fi
+
+          git fetch --no-tags origin \
+            "+refs/pull/1081/head:refs/remotes/origin/a5-a3-i2-stress-1081" \
+            "+refs/pull/1079/head:refs/remotes/origin/a5-a1-i4-1079" \
+            "+refs/pull/1080/head:refs/remotes/origin/a5-a2-i4-1080" \
+            "+refs/pull/1082/head:refs/remotes/origin/a5-a4-i4-1082"
+
+          test "$(git rev-parse refs/remotes/origin/a5-a3-i2-stress-1081)" = "${A3_I2_STRESS_HEAD}"
+          test "$(git rev-parse refs/remotes/origin/a5-a1-i4-1079)" = "${A1_I4_HEAD}"
+          test "$(git rev-parse refs/remotes/origin/a5-a2-i4-1080)" = "${A2_I4_HEAD}"
+          test "$(git rev-parse refs/remotes/origin/a5-a4-i4-1082)" = "${A4_I4_HEAD}"
+
+          test "$(git rev-parse "${A3_I2_STRESS_HEAD}:${A3_I2_STRESS_PATH}")" = "${A3_I2_STRESS_BLOB}"
+          test "$(git rev-parse "${A1_I4_HEAD}:${A1_I4_PATH}")" = "${A1_I4_BLOB}"
+          test "$(git rev-parse "${A2_I4_HEAD}:${A2_I4_PATH}")" = "${A2_I4_BLOB}"
+          test "$(git rev-parse "${A4_I4_HEAD}:${A4_I4_PATH}")" = "${A4_I4_BLOB}"
+
+      - name: Verify bounded Agent-5 delta
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git diff --name-only "${PARENT_A5_HEAD}..HEAD" | wc -l)" -eq 3
+          test "$(git diff --diff-filter=D --name-only "${PARENT_A5_HEAD}..HEAD" | wc -l)" -eq 0
+          git diff --name-only "${PARENT_A5_HEAD}..HEAD" | grep -Fx "src/openai_ns_reconstruction/kokuno_a5_current_i4_routing_i2_stress_ingest.py"
+          git diff --name-only "${PARENT_A5_HEAD}..HEAD" | grep -Fx "tests/test_kokuno_a5_current_i4_routing_i2_stress_ingest.py"
+          git diff --name-only "${PARENT_A5_HEAD}..HEAD" | grep -Fx ".github/workflows/kokuno-agent5-current-i4-routing-i2-stress-ingest.yml"
+
+      - name: Install package
+        run: python -m pip install -e .
+
+      - name: Run focused parent and Agent-5 regressions
+        run: |
+          python -m pytest -q \
+            tests/test_kokuno_a5_current_i2_composite_mean_ingest.py \
+            tests/test_kokuno_a5_current_i4_routing_i2_stress_ingest.py
+
+      - name: Materialize deterministic routing artifact
+        run: |
+          mkdir -p "${ARTIFACT_DIR}"
+          python -m openai_ns_reconstruction.kokuno_a5_current_i4_routing_i2_stress_ingest \
+            --output "${ARTIFACT_DIR}/a5_current_i4_routing_i2_stress_ingest.json"
+
+      - name: Upload routing artifact before enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-current-i4-routing-i2-stress-ingest-109
+          path: artifacts/kokuno_agent5/current_i4_routing_i2_stress_ingest_109
+          if-no-files-found: error
+
+      - name: Enforce deterministic artifact and fail-closed truth boundary
+        run: |
+          python -m openai_ns_reconstruction.kokuno_a5_current_i4_routing_i2_stress_ingest \
+            --output "${ARTIFACT_DIR}/a5_current_i4_routing_i2_stress_ingest.json" \
+            --enforce-existing
