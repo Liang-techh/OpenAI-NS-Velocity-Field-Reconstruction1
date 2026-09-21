@@ -1,0 +1,129 @@
+name: kokuno-agent5-reference-stress-xi110-ingest
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-reference-stress-xi110-ingest-087
+  pull_request:
+    branches:
+      - codex/kokuno-a5-fixed-kappa-x100-ingest-086
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_a5_reference_stress_xi110_ingest_contract.py"
+      - "tests/test_kokuno_a5_reference_stress_xi110_ingest_contract.py"
+      - ".github/workflows/kokuno-agent5-reference-stress-xi110-ingest.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  reference-stress-xi110-ingest-firewall:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout exact Agent-5 head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Verify exact checked-out head, parent ancestry, and bounded diff
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+          PARENT_HEAD: 744a4fbc642b861f61da91de713dd06adc357f09
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+          git merge-base --is-ancestor "$PARENT_HEAD" HEAD
+          test "$(git ls-tree "$PARENT_HEAD" -- src/openai_ns_reconstruction/kokuno_a5_fixed_kappa_x100_ingest_contract.py | awk '{print $3}')" = "502e64e97903853a16025815eabe31bf8b2111d0"
+          test "$(git ls-tree "$PARENT_HEAD" -- tests/test_kokuno_a5_fixed_kappa_x100_ingest_contract.py | awk '{print $3}')" = "cb6ab8142651b1879bd1a4d597fb7f9e3f6f9266"
+          test "$(git ls-tree "$PARENT_HEAD" -- .github/workflows/kokuno-agent5-fixed-kappa-x100-ingest.yml | awk '{print $3}')" = "57b90219fcc45be891b6a826bd53a0c908ca2a65"
+          mapfile -t changed < <(git diff --name-only "$PARENT_HEAD" HEAD | sort)
+          expected=(
+            ".github/workflows/kokuno-agent5-reference-stress-xi110-ingest.yml"
+            "src/openai_ns_reconstruction/kokuno_a5_reference_stress_xi110_ingest_contract.py"
+            "tests/test_kokuno_a5_reference_stress_xi110_ingest_contract.py"
+          )
+          test "${#changed[@]}" -eq "${#expected[@]}"
+          for i in "${!expected[@]}"; do test "${changed[$i]}" = "${expected[$i]}"; done
+          echo "exact_head=$EXPECTED_HEAD"
+
+      - name: Fetch and verify pinned Agent-1 / Agent-4 Xi110 artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          A1_HEAD=15791891fbbcfdaa614930791a843983afde2b4d
+          A4_HEAD=5580526b783500be3701fbddabd6d7c7f90a5a61
+          git fetch --no-tags origin \
+            codex/kokuno-a1-reference-stress-xi110-085 \
+            codex/kokuno-a4-reference-stress-xi110-independent-audit-087
+          test "$(git rev-parse "$A1_HEAD")" = "$A1_HEAD"
+          test "$(git rev-parse "$A4_HEAD")" = "$A4_HEAD"
+          test "$(git ls-tree "$A1_HEAD" -- src/openai_ns_reconstruction/kokuno_pa10_autonomous_reference_stress_xi110.py | awk '{print $3}')" = "d534da9efed25df9d281bd0c78fc18ec9b706c09"
+          test "$(git ls-tree "$A1_HEAD" -- tests/test_kokuno_pa10_autonomous_reference_stress_xi110.py | awk '{print $3}')" = "369f9201303375a446a3d1bf04d019f5c0029d29"
+          test "$(git ls-tree "$A1_HEAD" -- .github/workflows/kokuno-agent1-reference-stress-xi110.yml | awk '{print $3}')" = "1144c17afa4d918f213d5477cd51e2c8b8ba4ed5"
+          test "$(git ls-tree "$A4_HEAD" -- src/openai_ns_reconstruction/kokuno_a4_reference_stress_xi110_independent_audit.py | awk '{print $3}')" = "43b73888c2ceeeb3c406cfc3c884eb0935855118"
+          test "$(git ls-tree "$A4_HEAD" -- tests/test_constrained_kokuno_a4_reference_stress_xi110_independent_audit.py | awk '{print $3}')" = "b1be7ada5ccfad758692052398efd63e695b8206"
+          test "$(git ls-tree "$A4_HEAD" -- .github/workflows/kokuno-agent4-reference-stress-xi110-independent-audit.yml | awk '{print $3}')" = "de2285dfe7575285629f1ff66dc7ba72412c7497"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install repository
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e '.[dev]'
+
+      - name: Compile and run parent plus Xi110 Agent-5 contract tests
+        run: |
+          python -m py_compile \
+            src/openai_ns_reconstruction/kokuno_a5_reference_stress_xi110_ingest_contract.py \
+            tests/test_kokuno_a5_reference_stress_xi110_ingest_contract.py
+          python -m pytest -q -W error \
+            tests/test_kokuno_a5_fixed_kappa_x100_ingest_contract.py \
+            tests/test_kokuno_a5_reference_stress_xi110_ingest_contract.py
+
+      - name: Materialize fail-closed Agent-5 Xi110 ingest receipt
+        env:
+          EXACT_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          python -m openai_ns_reconstruction.kokuno_a5_reference_stress_xi110_ingest_contract \
+            --exact-head "$EXACT_HEAD" \
+            --output artifacts/kokuno_a5_reference_stress_xi110_ingest_contract.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("artifacts/kokuno_a5_reference_stress_xi110_ingest_contract.json")
+          contract = json.loads(path.read_text(encoding="utf-8"))
+          a1 = contract["agent1_reference_stress_xi110"]
+          a4 = contract["agent4_reference_stress_xi110_audit"]
+          seam = contract["reference_stress_xi110_ingest_seam"]
+          truth = contract["truth_boundary"]
+          assert a1["reference_range"] == [100.0, 110.0]
+          assert a1["X_i"] == 110.0
+          assert a1["actual_candidate_fixed_kappa_FUE_bridge_100_to_Xi"] is False
+          assert a4["saved_reloaded_public_values_only"] is True
+          assert a4["production_derivatives_used_as_reference"] is False
+          assert a4["actual_candidate_bridge_audit"] is False
+          assert seam["queued_or_unresolved_ci_is_pass"] is False
+          assert seam["this_is_actual_candidate_fixed_kappa_FUE_bridge"] is False
+          assert truth["fixed_kappa_FUE_X100_to_Xi_bridge_materialized"] is False
+          assert truth["actual_upstream_five_moment_discrepancy_materialized"] is False
+          assert truth["corrected_global_cartesian_leading_velocity_materialized"] is False
+          assert truth["matched_cartesian_pressure_materialized"] is False
+          assert truth["restricted_forcing_materialized"] is False
+          assert truth["real_agent3_correction_velocity_materialized"] is False
+          assert truth["complete_candidate_api_ready"] is False
+          assert contract["final_gate"]["normalized_momentum_volume_l2"] == 1e-3
+          assert contract["final_gate"]["divergence_volume_l2"] == 1e-5
+          assert contract["readiness"]["pde_validated"] is False
+          PY
+
+      - name: Upload Agent-5 Xi110 ingest contract
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a5-reference-stress-xi110-ingest-contract
+          path: artifacts/kokuno_a5_reference_stress_xi110_ingest_contract.json
+          if-no-files-found: error
