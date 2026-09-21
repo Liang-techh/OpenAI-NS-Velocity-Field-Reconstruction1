@@ -1,0 +1,142 @@
+{
+  "schema": "cr002-kokuno-post-xr-leading-independent-audit-scope-v1",
+  "task_id": "CR002-KOKUNO-POST-XR-LEADING-INDEPENDENT-AUDIT-SCOPE-101",
+  "purpose": "Govern the evidence boundary between A1 #986 production/source-coordinate checks on the first post-X_R leading turn and implementation-distinct Cartesian public-velocity validation.",
+  "exact_base": {
+    "pr": 990,
+    "head": "92def17ccab4192a7bd270a4f4d637138e953266",
+    "branch": "codex/kokuno-a5-current-exterior-xr-composite-ingest-096"
+  },
+  "four_way_provenance": {
+    "user_requirements": [
+      "Deliver an explicit computable save/load 3-D time-dependent velocity(x,y,z,t)->[u,v,w].",
+      "Keep velocity delivery, visual correspondence, PDE validation and paper/OpenAI exactness as independent states.",
+      "Do not weaken preregistered PDE/forcing/nontriviality/validation gates to manufacture success."
+    ],
+    "public_source_facts": [
+      "No new public-source formula or numerical datum is asserted by this governance increment.",
+      "Any Kokuno formula already consumed by A1 #986 retains the provenance and scope recorded by that upstream PR; this contract does not independently reverify the original OpenAI paper."
+    ],
+    "autonomous_repository_facts": [
+      "A1 #986 materializes a repository candidate-side leading velocity through the first post-X_R RF40 turn and records focused production/source-coordinate checks.",
+      "A4 #983 independently audits the earlier leading field only through X_R.",
+      "A4 #989 independently audits the leading+oscillatory composite only through X_R and explicitly does not cover A1 #986 post-X_R.",
+      "A5 #990 records A1 #986 as a non-consumed leading-only sibling and keeps post-X_R composite/audit/global readiness false."
+    ],
+    "pending_or_unknown": [
+      "Implementation-distinct Cartesian public-velocity validation on points strictly after X_R for the A1 #986 leading field.",
+      "A leading+oscillatory composite materialized after X_R on the #986 or later leading lineage.",
+      "Independent post-X_R composite validation.",
+      "Complete RF40/cone/I1-I4 outer/global leading completion and compact-support join.",
+      "Matched Cartesian pressure, preregistered restricted forcing, complete NS defect, correction velocity and held-out full-PDE admission.",
+      "Visual correspondence, paper exactness, OpenAI-field identity and blow-up proof."
+    ]
+  },
+  "upstream_scope": {
+    "agent1_986": {
+      "pr": 986,
+      "head": "23c00b98526e187ff04d432745300a084ec859f2",
+      "source_blob": "bf71948cbdb827d791b86ab8f00496bd1b231961",
+      "materialized_domain": "leading-only through X_1=e X_R",
+      "production_checks": [
+        "X_R F/U/E value and first-radial-jet handoff",
+        "centered source-coordinate check of dM/dX=U",
+        "source radial derivative replay plus centered-X F_X check",
+        "vectorized Cartesian evaluation across X_R",
+        "transverse-axis regularity",
+        "fail-closed after X_1"
+      ],
+      "implementation_distinct_post_xr_cartesian_public_velocity_audit": false
+    },
+    "agent4_983": {
+      "pr": 983,
+      "head": "5fdb59afbbe89525e43164f92f0856aad2949600",
+      "audited_leading_pr": 980,
+      "audited_domain": "through X_R",
+      "covers_agent1_986_post_xr_first_turn": false
+    },
+    "agent4_989": {
+      "pr": 989,
+      "head": "84b8aab2f5a56dbfc8ef02b6053d19bea910a959",
+      "audited_composite_pr": 987,
+      "audited_domain": "through X_R",
+      "covers_agent1_986_post_xr_first_turn": false,
+      "scientific_admission": false
+    },
+    "agent5_990": {
+      "pr": 990,
+      "head": "92def17ccab4192a7bd270a4f4d637138e953266",
+      "agent1_986_recorded_as_non_consumed_sibling": true,
+      "post_xr_composite_materialized": false,
+      "independent_post_xr_composite_audit_available": false,
+      "velocity_export_ready": false,
+      "pde_validated": false
+    }
+  },
+  "machine_locked_distinctions": {
+    "a1_986_post_xr_leading_callable_materialized": true,
+    "a1_986_has_focused_production_and_source_coordinate_checks": true,
+    "post_xr_leading_independent_cartesian_public_velocity_audit_available": false,
+    "through_xr_a4_audit_may_be_relabelled_as_post_xr_audit": false,
+    "source_coordinate_handoff_or_derivative_replay_may_be_relabelled_as_independent_cartesian_post_xr_validation": false,
+    "post_xr_leading_materialization_implies_post_xr_composite_materialization": false,
+    "post_xr_leading_materialization_implies_global_project_domain_totality": false,
+    "post_xr_leading_materialization_implies_pde_validation": false
+  },
+  "future_promotion_requirements": {
+    "post_xr_leading_independent_cartesian_public_velocity_audit_available": [
+      "Use an implementation-distinct validator that consumes only the serialized/reloaded public Cartesian velocity surface of the exact post-X_R leading candidate.",
+      "Include probes strictly in X_R < X <= X_1 and seam-near probes on both sides of X_R.",
+      "Reconstruct Cartesian derivatives independently; do not call A1 source-coordinate derivative or primitive helpers as the numerical reference.",
+      "Bind the exact candidate semantic/save-load identity and report the actual domain covered.",
+      "Keep any scoped divergence/regularity result separate from canonical whole-domain [24,48,96] admission and from momentum/full-NS evidence."
+    ],
+    "post_xr_composite_ready": [
+      "Materialize leading+oscillatory velocity on the same post-X_R leading identity instead of inferring it from separate sibling artifacts.",
+      "Bind the complete oscillatory runtime identity/save-load on that extended composite.",
+      "Carry matching independent validation to the same extended composite domain."
+    ]
+  },
+  "cr001_snapshot": {
+    "constraints_blob_sha1": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "momentum_max": 0.001,
+    "momentum_l2": 0.001,
+    "divergence_max": 0.00001,
+    "divergence_l2": 0.00001,
+    "residual_defined_free_forcing_forbidden": true,
+    "candidate_collapse_forbidden": true,
+    "post_hoc_threshold_relaxation_forbidden": true
+  },
+  "canonical_delivery_independence": {
+    "candidate_family": "eq45_supported_velocity_candidate_v1",
+    "velocity_export_ready": true,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  },
+  "forbidden_promotions": [
+    "post-X_R production self-check -> implementation-distinct post-X_R Cartesian audit",
+    "through-X_R A4 audit -> post-X_R A4 coverage",
+    "post-X_R leading-only callable -> post-X_R leading+oscillatory composite",
+    "post-X_R leading-only callable -> complete/global velocity API",
+    "scoped divergence/regularity evidence -> canonical whole-domain PDE admission",
+    "callable/save-load velocity -> visual correspondence",
+    "visual resemblance -> PDE validation",
+    "visual resemblance -> exact OpenAI field",
+    "PDE validation -> blow-up proof"
+  ]
+}
