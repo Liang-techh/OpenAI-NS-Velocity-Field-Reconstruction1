@@ -1,0 +1,155 @@
+name: kokuno-agent2-oscillatory-closed-surface-flux
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_oscillatory_closed_surface_flux.py'
+      - 'tests/test_constrained_kokuno_oscillatory_closed_surface_flux.py'
+      - '.github/workflows/kokuno-agent2-oscillatory-closed-surface-flux.yml'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Assert pinned A2 ancestry
+        if: github.event_name == 'pull_request'
+        run: |
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha }}"
+          git merge-base --is-ancestor c542ae397f3aadf52d7f63fe32d0d19fac866273 HEAD
+          test "$(git rev-parse c542ae397f3aadf52d7f63fe32d0d19fac866273:src/openai_ns_reconstruction/kokuno_oscillatory_support_boundary_flux.py)" = "ec4e6f30da60fa9a5645d4e938f5ece1830dc4d4"
+          test "$(git rev-parse c542ae397f3aadf52d7f63fe32d0d19fac866273:src/openai_ns_reconstruction/kokuno_public_z_pullback_velocity.py)" = "4a3abc1a11f7e054f651dd7bace8ada6d5a6b653"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+
+      - name: Compile
+        run: >-
+          python -m py_compile
+          src/openai_ns_reconstruction/kokuno_oscillatory_closed_surface_flux.py
+          tests/test_constrained_kokuno_oscillatory_closed_surface_flux.py
+
+      - name: Focused regressions
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_oscillatory_closed_surface_flux.py
+          tests/test_constrained_kokuno_oscillatory_support_boundary_flux.py
+
+      - name: Materialize public-velocity closed-surface receipt
+        run: |
+          mkdir -p artifacts
+          python - <<'PY'
+          from __future__ import annotations
+          import json
+          import os
+          from pathlib import Path
+
+          from openai_ns_reconstruction.kokuno_oscillatory_closed_surface_flux import (
+              KokunoOscillatoryClosedSurfaceFlux,
+              public_contract,
+          )
+
+          obj = KokunoOscillatoryClosedSurfaceFlux()
+          result = obj.materialize()
+          receipt = {
+              'schema': 'kokuno-a2-oscillatory-closed-surface-flux-receipt-v1',
+              'git_sha': os.environ.get('GITHUB_SHA'),
+              'closed_surface_flux_sha256': obj.closed_surface_flux_sha256,
+              'semantic_payload': obj.semantic_payload(),
+              'result': result.summary_payload(),
+              'public_contract': public_contract(),
+          }
+          Path('artifacts/kokuno_agent2_oscillatory_closed_surface_flux.json').write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + '\n', encoding='utf-8'
+          )
+          print(json.dumps({
+              'level_max_relative_closure': [x['max_relative_closure'] for x in receipt['result']['levels']],
+              'level_min_absolute_face_flux_sum': [x['min_absolute_face_flux_sum'] for x in receipt['result']['levels']],
+              'shifted_fine_max_relative_closure': receipt['result']['shifted_fine']['max_relative_closure'],
+              'shifted_fine_min_absolute_face_flux_sum': receipt['result']['shifted_fine']['min_absolute_face_flux_sum'],
+          }, indent=2, sort_keys=True))
+          PY
+
+      - name: Upload closed-surface receipt before scientific gate
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent2-oscillatory-closed-surface-flux
+          path: artifacts/kokuno_agent2_oscillatory_closed_surface_flux.json
+          if-no-files-found: warn
+
+      - name: Enforce frozen closed-surface flux gates
+        run: |
+          python - <<'PY'
+          from __future__ import annotations
+          import json
+          from pathlib import Path
+
+          from openai_ns_reconstruction.kokuno_oscillatory_closed_surface_flux import (
+              COARSE_RELATIVE_CLOSURE_MAX,
+              FACE_FLUX_DENOMINATOR_FLOOR,
+              FINE_RELATIVE_CLOSURE_MAX,
+              MEDIUM_RELATIVE_CLOSURE_MAX,
+              SHIFTED_FINE_RELATIVE_CLOSURE_MAX,
+          )
+
+          receipt = json.loads(Path('artifacts/kokuno_agent2_oscillatory_closed_surface_flux.json').read_text())
+          result = receipt['result']
+          contract = receipt['public_contract']
+          failed = []
+
+          limits = (
+              COARSE_RELATIVE_CLOSURE_MAX,
+              MEDIUM_RELATIVE_CLOSURE_MAX,
+              FINE_RELATIVE_CLOSURE_MAX,
+          )
+          for index, (level, limit) in enumerate(zip(result['levels'], limits)):
+              if level['max_relative_closure'] > limit:
+                  failed.append(f'level_{index}_relative_closure')
+              if level['min_absolute_face_flux_sum'] < FACE_FLUX_DENOMINATOR_FLOOR:
+                  failed.append(f'level_{index}_trivial_face_flux')
+              for case_index, case in enumerate(level['cases']):
+                  faces = [
+                      case['radial_inner'], case['radial_outer'],
+                      case['axial_lower'], case['axial_upper'],
+                  ]
+                  if sum(abs(value) > FACE_FLUX_DENOMINATOR_FLOOR for value in faces) < 2:
+                      failed.append(f'level_{index}_case_{case_index}_insufficient_nonzero_faces')
+
+          shifted = result['shifted_fine']
+          if shifted['max_relative_closure'] > SHIFTED_FINE_RELATIVE_CLOSURE_MAX:
+              failed.append('shifted_fine_relative_closure')
+          if shifted['min_absolute_face_flux_sum'] < FACE_FLUX_DENOMINATOR_FLOOR:
+              failed.append('shifted_fine_trivial_face_flux')
+          for case_index, case in enumerate(shifted['cases']):
+              faces = [
+                  case['radial_inner'], case['radial_outer'],
+                  case['axial_lower'], case['axial_upper'],
+              ]
+              if sum(abs(value) > FACE_FLUX_DENOMINATOR_FLOOR for value in faces) < 2:
+                  failed.append(f'shifted_case_{case_index}_insufficient_nonzero_faces')
+
+          if contract['forbidden_materialize_inputs_present']:
+              failed.append('forbidden_inputs')
+          if not contract['uses_only_public_velocity_values']:
+              failed.append('nonpublic_velocity_dependency')
+          if contract['volume_divergence_integral_assessed'] or contract['whole_domain_divergence_volume_l2_assessed']:
+              failed.append('flux_receipt_promoted_to_volume_divergence')
+          if contract['mean_projection_performed'] or contract['correction_velocity_constructed']:
+              failed.append('agent3_lane_crossed')
+          if contract['complete_ns_residual'] or contract['paper_exact'] or contract['pde_validated']:
+              failed.append('scientific_boundary_promoted')
+
+          if failed:
+              raise SystemExit('closed-surface flux gate failed: ' + ', '.join(failed))
+          print('closed-surface flux gates passed')
+          PY
