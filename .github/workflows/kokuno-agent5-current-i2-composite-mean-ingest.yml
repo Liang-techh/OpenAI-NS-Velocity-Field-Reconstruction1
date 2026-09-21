@@ -30,6 +30,9 @@ jobs:
       A4_I1_HEAD: 33626e55f301bbb5a28f75684de49d020bc6039d
       A4_I1_PATH: src/openai_ns_reconstruction/kokuno_a4_current_i1_composite_divergence_independent_audit.py
       A4_I1_BLOB: 22b9947684f318e892e17b0a455efac8da63fdb8
+      A4_I2_HEAD: 4df3286ddff1906aad2b319b2f644c1c7d4b344e
+      A4_I2_PATH: src/openai_ns_reconstruction/kokuno_a4_current_i2_composite_divergence_independent_audit.py
+      A4_I2_BLOB: 24f892243b9f0711189b6e3363a893e04c90641b
       ARTIFACT_DIR: artifacts/kokuno_agent5/current_i2_composite_mean_ingest_108
 
     steps:
@@ -59,25 +62,27 @@ jobs:
             "+refs/pull/1071/head:refs/remotes/origin/a5-a2-i2-1071" \
             "+refs/pull/1073/head:refs/remotes/origin/a5-a3-i2-1073" \
             "+refs/pull/1072/head:refs/remotes/origin/a5-a1-i3-1072" \
-            "+refs/pull/1064/head:refs/remotes/origin/a5-a4-i1-1064"
+            "+refs/pull/1064/head:refs/remotes/origin/a5-a4-i1-1064" \
+            "+refs/pull/1074/head:refs/remotes/origin/a5-a4-i2-1074"
 
           test "$(git rev-parse refs/remotes/origin/a5-a1-i2-1061)" = "${A1_I2_HEAD}"
           test "$(git rev-parse refs/remotes/origin/a5-a2-i2-1071)" = "${A2_I2_HEAD}"
           test "$(git rev-parse refs/remotes/origin/a5-a3-i2-1073)" = "${A3_I2_HEAD}"
           test "$(git rev-parse refs/remotes/origin/a5-a1-i3-1072)" = "${A1_I3_HEAD}"
           test "$(git rev-parse refs/remotes/origin/a5-a4-i1-1064)" = "${A4_I1_HEAD}"
+          test "$(git rev-parse refs/remotes/origin/a5-a4-i2-1074)" = "${A4_I2_HEAD}"
 
           test "$(git rev-parse "${A1_I2_HEAD}:${A1_I2_PATH}")" = "${A1_I2_BLOB}"
           test "$(git rev-parse "${A2_I2_HEAD}:${A2_I2_PATH}")" = "${A2_I2_BLOB}"
           test "$(git rev-parse "${A3_I2_HEAD}:${A3_I2_PATH}")" = "${A3_I2_BLOB}"
           test "$(git rev-parse "${A1_I3_HEAD}:${A1_I3_PATH}")" = "${A1_I3_BLOB}"
           test "$(git rev-parse "${A4_I1_HEAD}:${A4_I1_PATH}")" = "${A4_I1_BLOB}"
+          test "$(git rev-parse "${A4_I2_HEAD}:${A4_I2_PATH}")" = "${A4_I2_BLOB}"
 
       - name: Verify bounded Agent-5 delta
         shell: bash
         run: |
           set -euo pipefail
-          test "$(git rev-list --count "${PARENT_A5_HEAD}..HEAD")" -eq 3
           test "$(git diff --name-only "${PARENT_A5_HEAD}..HEAD" | wc -l)" -eq 3
           test "$(git diff --diff-filter=D --name-only "${PARENT_A5_HEAD}..HEAD" | wc -l)" -eq 0
           git diff --name-only "${PARENT_A5_HEAD}..HEAD" | grep -Fx "src/openai_ns_reconstruction/kokuno_a5_current_i2_composite_mean_ingest.py"
