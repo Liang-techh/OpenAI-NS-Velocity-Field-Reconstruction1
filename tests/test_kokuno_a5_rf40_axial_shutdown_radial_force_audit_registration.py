@@ -95,7 +95,7 @@ def test_rejects_premature_a4_scientific_admission() -> None:
 
 def test_rejects_final_gate_or_baseline_drift() -> None:
     receipt = reg.materialize_registration_receipt()
-    receipt["registration"]["final_gate"]["normalized_momentum_max"] = 2.0e-3
+    receipt["registration"]["final_gate"]["normalized_momentum_sampled_max"] = 2.0e-3
     with pytest.raises(ValueError):
         reg.enforce_registration_receipt(_rehash(receipt))
 
