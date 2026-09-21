@@ -1,0 +1,258 @@
+name: kokuno-agent3-current-pa16-repair-receipt
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_current_pa16_repair_receipt.py'
+      - 'tests/test_kokuno_current_pa16_repair_receipt.py'
+      - '.github/workflows/kokuno-agent3-current-pa16-repair-receipt.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  PARENT_A3_HEAD: 87c1ef765d6bf3613c7c6c301669ffccf5260117
+  PARENT_A3_SOURCE: src/openai_ns_reconstruction/kokuno_current_xi_moment_discrepancy_bridge.py
+  PARENT_A3_SOURCE_BLOB: 223058e2132bb22298c6a642b0f2a55562181e25
+  UPSTREAM_A1_HEAD: bf16b88db92d23923b3e049c00e000a5bfa09992
+  UPSTREAM_A1_TSH_SOURCE: src/openai_ns_reconstruction/kokuno_pa16_current_tsh_certificate.py
+  UPSTREAM_A1_TSH_BLOB: 5fd610b417ccaa1c4673ea64985296b94dfe5946
+  UPSTREAM_A1_JOIN_SOURCE: src/openai_ns_reconstruction/kokuno_inner_join_exit.py
+  UPSTREAM_A1_JOIN_BLOB: baa283c9592e19653e20f5c24371230d680704f5
+  SOURCE_READER_HEAD: 143f6773feb424ad9ed3a8d116653200f20346b7
+  SOURCE_READER_TEX: navier-stokes/navier_stokes_workbench.tex
+  SOURCE_READER_TEX_BLOB: 205a99807302e21a51c5eaf223390c0dfc42bcd0
+
+jobs:
+  exact-current-pa16-repair-receipt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout exact Agent-3 event head
+        uses: actions/checkout@v4
+        with:
+          path: current
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - name: Assert exact head and Agent-3 ancestry
+        shell: bash
+        run: |
+          set -euo pipefail
+          expected='${{ github.event.pull_request.head.sha || github.sha }}'
+          test "$(git -C current rev-parse HEAD)" = "$expected"
+          git -C current merge-base --is-ancestor "$PARENT_A3_HEAD" HEAD
+          test "$(git -C current rev-parse "$PARENT_A3_HEAD:$PARENT_A3_SOURCE")" = "$PARENT_A3_SOURCE_BLOB"
+
+      - name: Checkout exact Agent-1 current T_sh + PA16 solver
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          path: upstream-a1
+          fetch-depth: 1
+          ref: ${{ env.UPSTREAM_A1_HEAD }}
+
+      - name: Authenticate Agent-1 sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C upstream-a1 rev-parse HEAD)" = "$UPSTREAM_A1_HEAD"
+          test "$(git -C upstream-a1 hash-object "$UPSTREAM_A1_TSH_SOURCE")" = "$UPSTREAM_A1_TSH_BLOB"
+          test "$(git -C upstream-a1 hash-object "$UPSTREAM_A1_JOIN_SOURCE")" = "$UPSTREAM_A1_JOIN_BLOB"
+
+      - name: Checkout corrected Kokuno reader
+        uses: actions/checkout@v4
+        with:
+          repository: KokunoYumeto/yang-mills-interacting-workbench
+          path: corrected-reader
+          fetch-depth: 1
+          ref: ${{ env.SOURCE_READER_HEAD }}
+
+      - name: Authenticate corrected reader text
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C corrected-reader rev-parse HEAD)" = "$SOURCE_READER_HEAD"
+          test "$(git -C corrected-reader hash-object "$SOURCE_READER_TEX")" = "$SOURCE_READER_TEX_BLOB"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install current Agent-3 branch
+        run: python -m pip install -e './current[dev]'
+
+      - name: Materialize exact Agent-1 current T_sh and existing PA16 solves
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH="$GITHUB_WORKSPACE/upstream-a1/src" python - <<'PY'
+          from dataclasses import asdict
+          import json
+          from pathlib import Path
+
+          from openai_ns_reconstruction.kokuno_pa16_current_tsh_certificate import (
+              KokunoPA16CurrentTshCertificate,
+          )
+
+          certificate = KokunoPA16CurrentTshCertificate()
+          tsh_report = certificate.report()
+          xi_report = certificate.moments.report()
+          solves = {}
+          if tsh_report["selected_route_ready"]:
+              for eta in xi_report["eta_probe"]:
+                  result = certificate.solve_selected_at_eta(float(eta))
+                  solves[repr(float(eta))] = asdict(result)
+          payload = {
+              "tsh_report": tsh_report,
+              "xi_report": xi_report,
+              "solves": solves,
+          }
+          Path("current/current_pa16_a1_payload.json").write_text(
+              json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+          )
+          print(json.dumps({
+              "selected_route_ready": tsh_report["selected_route_ready"],
+              "selected_T_sh": tsh_report["geometry"]["selected_T_sh"],
+              "geometry_margin": tsh_report["geometry"]["geometry_margin"],
+              "solve_count": len(solves),
+          }, indent=2, sort_keys=True))
+          PY
+
+      - name: Bind Agent-1 PA16 solve to exact Agent-3 current-Xi handoff
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH="$GITHUB_WORKSPACE/current/src" python - <<'PY'
+          import json
+          from pathlib import Path
+
+          from openai_ns_reconstruction.kokuno_current_xi_moment_discrepancy_bridge import (
+              UPSTREAM_AGENT1_HEAD,
+              UPSTREAM_AGENT1_PR,
+              UPSTREAM_AGENT1_SCHEMA,
+              UPSTREAM_AGENT1_SOURCE_BLOB,
+              UPSTREAM_AGENT1_SOURCE_PATH,
+              UpstreamA1Identity,
+              materialize_current_xi_moment_bridge,
+          )
+          from openai_ns_reconstruction.kokuno_current_pa16_repair_receipt import (
+              UPSTREAM_AGENT1_HEAD as PA16_HEAD,
+              UPSTREAM_AGENT1_PARENT_HEAD,
+              UPSTREAM_AGENT1_PARENT_PR,
+              UPSTREAM_AGENT1_PR as PA16_PR,
+              UPSTREAM_JOIN_SOURCE_BLOB,
+              UPSTREAM_JOIN_SOURCE_PATH,
+              UPSTREAM_TSH_SOURCE_BLOB,
+              UPSTREAM_TSH_SOURCE_PATH,
+              UpstreamPA16Identity,
+              materialize_current_pa16_repair_receipt,
+          )
+
+          payload = json.loads(Path("current/current_pa16_a1_payload.json").read_text(encoding="utf-8"))
+
+          class XiBackend:
+              def upstream_identity(self):
+                  return UpstreamA1Identity(
+                      pr_number=UPSTREAM_AGENT1_PR,
+                      exact_head=UPSTREAM_AGENT1_HEAD,
+                      source_path=UPSTREAM_AGENT1_SOURCE_PATH,
+                      source_blob=UPSTREAM_AGENT1_SOURCE_BLOB,
+                      report_schema=UPSTREAM_AGENT1_SCHEMA,
+                  )
+              def current_xi_moment_report(self):
+                  return payload["xi_report"]
+
+          xi_receipt = materialize_current_xi_moment_bridge(XiBackend())
+
+          class RepairBackend:
+              def current_xi_bridge_receipt(self):
+                  return xi_receipt
+              def upstream_identity(self):
+                  return UpstreamPA16Identity(
+                      pr_number=PA16_PR,
+                      exact_head=PA16_HEAD,
+                      parent_pr_number=UPSTREAM_AGENT1_PARENT_PR,
+                      parent_exact_head=UPSTREAM_AGENT1_PARENT_HEAD,
+                      tsh_source_path=UPSTREAM_TSH_SOURCE_PATH,
+                      tsh_source_blob=UPSTREAM_TSH_SOURCE_BLOB,
+                      join_source_path=UPSTREAM_JOIN_SOURCE_PATH,
+                      join_source_blob=UPSTREAM_JOIN_SOURCE_BLOB,
+                  )
+              def tsh_report(self):
+                  return payload["tsh_report"]
+              def pa16_solve_at_eta(self, eta):
+                  raw = payload["solves"][repr(float(eta))]
+                  repair = raw["repair"]
+                  return {
+                      "eta": raw["eta"],
+                      "incoming_scaled_discrepancy": raw["incoming_scaled_discrepancy"],
+                      "pre_repair_scaled_discrepancy": raw["pre_repair_scaled_discrepancy"],
+                      "repair_achieved_scaled_moments": repair["achieved_scaled_moments"],
+                      "repair_target_scaled_moments": repair["target_scaled_moments"],
+                      "repair_residual_scaled_moments": repair["residual_scaled_moments"],
+                      "exit_scaled_discrepancy": raw["exit_scaled_discrepancy"],
+                      "coefficients": repair["coefficients"],
+                      "max_abs_exit_discrepancy": raw["max_abs_exit_discrepancy"],
+                      "scaled_jacobian_condition": raw["scaled_jacobian_condition"],
+                  }
+
+          receipt = materialize_current_pa16_repair_receipt(RepairBackend())
+          truth = receipt.to_dict()["truth_boundary"]
+          required_false = (
+              "source_T_sh_lower_bound_verified",
+              "global_inner_to_outer_join_completed",
+              "matched_global_pressure_materialized",
+              "restricted_forcing_materialized",
+              "discrepancy_from_complete_ns_defect",
+              "authorized_for_gain_gated_ns_stage",
+              "current_real_ns_correction_velocity_materialized",
+              "real_candidate_finite_correction_cycle_run",
+              "heldout_normalized_ns_residual_assessed",
+              "residual_reduction_claimed",
+              "same_protocol_comparable_to_st006",
+              "pde_validated",
+          )
+          if any(truth[name] is not False for name in required_false):
+              raise SystemExit("PA.16 source-moment repair receipt attempted forbidden NS promotion")
+          if receipt.selected_route_ready:
+              if receipt.status != "current_source_moment_repair_verified":
+                  raise SystemExit("ready route did not produce a verified repair receipt")
+              if len(receipt.samples) != len(xi_receipt.samples):
+                  raise SystemExit("PA.16 solve count does not match current-Xi handoff")
+          else:
+              if receipt.status != "blocked_by_current_tsh_geometry" or receipt.samples:
+                  raise SystemExit("infeasible T_sh route did not fail closed")
+
+          Path("current/current_pa16_a3_receipt.json").write_text(
+              json.dumps(receipt.to_dict(), indent=2, sort_keys=True) + "\n", encoding="utf-8"
+          )
+          print(json.dumps({
+              "status": receipt.status,
+              "selected_route_ready": receipt.selected_route_ready,
+              "sample_count": len(receipt.samples),
+              "max_incoming_alignment_abs": receipt.max_incoming_alignment_abs,
+              "max_repair_algebra_abs": receipt.max_repair_algebra_abs,
+              "max_exit_raw_l2_norm": receipt.max_exit_raw_l2_norm,
+              "max_exit_transformed_l2_norm": receipt.max_exit_transformed_l2_norm,
+              "receipt_sha256": receipt.receipt_sha256,
+          }, indent=2, sort_keys=True))
+          PY
+
+      - name: Run focused Agent-3 regressions
+        working-directory: current
+        run: |
+          python -m pytest -q -W error tests/test_kokuno_current_pa16_repair_receipt.py
+          git diff --check
+
+      - name: Upload typed repair evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a3-current-pa16-repair-receipt
+          path: |
+            current/current_pa16_a1_payload.json
+            current/current_pa16_a3_receipt.json
+          if-no-files-found: warn
