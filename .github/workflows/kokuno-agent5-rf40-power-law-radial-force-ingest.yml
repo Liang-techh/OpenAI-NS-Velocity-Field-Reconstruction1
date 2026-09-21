@@ -1,0 +1,118 @@
+name: kokuno-agent5-rf40-power-law-radial-force-ingest
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-rf40-power-law-radial-force-ingest
+  pull_request:
+    branches:
+      - codex/kokuno-a5-rf40-power-law-radial-stress-ingest
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out exact A5 event head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: a5
+          fetch-depth: 0
+
+      - name: Verify exact parent and three-file integration scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd a5
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+          git merge-base --is-ancestor 6d88e8a83b51704f65aa125006b7671546c77c43 HEAD
+          test "$(git rev-list --count 6d88e8a83b51704f65aa125006b7671546c77c43..HEAD)" -eq 3
+          mapfile -t files < <(git diff --name-only 6d88e8a83b51704f65aa125006b7671546c77c43..HEAD)
+          test "${#files[@]}" -eq 3
+          printf '%s\n' "${files[@]}" | sort > /tmp/actual-files
+          printf '%s\n' \
+            .github/workflows/kokuno-agent5-rf40-power-law-radial-force-ingest.yml \
+            src/openai_ns_reconstruction/kokuno_a5_rf40_power_law_radial_force_ingest_contract.py \
+            tests/test_kokuno_a5_rf40_power_law_radial_force_ingest_contract.py \
+            | sort > /tmp/expected-files
+          diff -u /tmp/expected-files /tmp/actual-files
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install exact A5 head
+        shell: bash
+        run: python -m pip install -e './a5[dev]'
+
+      - name: Run parent and new A5 fail-closed contracts
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            a5/src/openai_ns_reconstruction/kokuno_a5_rf40_power_law_radial_force_ingest_contract.py \
+            a5/tests/test_kokuno_a5_rf40_power_law_radial_force_ingest_contract.py
+          python -m pytest -q -W error \
+            a5/tests/test_kokuno_a5_rf40_power_law_radial_stress_ingest_contract.py \
+            a5/tests/test_kokuno_a5_rf40_power_law_radial_force_ingest_contract.py
+
+      - name: Check out exact A3 radial-force delivery
+        uses: actions/checkout@v4
+        with:
+          ref: 3ec20a77b551be819a71e3308e9ecab2a2226406
+          path: a3
+          fetch-depth: 1
+
+      - name: Check out exact A4 independent radial-force audit
+        uses: actions/checkout@v4
+        with:
+          ref: df5af9c503d69d665cea93d66fa30bf6f00863a8
+          path: a4
+          fetch-depth: 1
+
+      - name: Authenticate exact sibling identities and public interfaces
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C a3 rev-parse HEAD)" = "3ec20a77b551be819a71e3308e9ecab2a2226406"
+          test "$(git -C a3 hash-object src/openai_ns_reconstruction/kokuno_current_rf40_power_law_nonlinear_radial_force.py)" = \
+            "39c98d3f4df05846848b897c240b3b56fb6fbe2c"
+          test -f a3/tests/test_constrained_kokuno_current_rf40_power_law_nonlinear_radial_force.py
+          test -f a3/.github/workflows/kokuno-agent3-current-rf40-power-law-nonlinear-radial-force.yml
+
+          test "$(git -C a4 rev-parse HEAD)" = "df5af9c503d69d665cea93d66fa30bf6f00863a8"
+          test -f a4/src/openai_ns_reconstruction/kokuno_a4_current_rf40_power_law_radial_force_independent_audit.py
+          test -f a4/tests/test_constrained_kokuno_a4_current_rf40_power_law_radial_force_independent_audit.py
+          test -f a4/.github/workflows/kokuno-agent4-current-rf40-power-law-radial-force-independent-audit.yml
+          grep -Fq 'PARENT_AGENT3_HEAD = "3ec20a77b551be819a71e3308e9ecab2a2226406"' \
+            a4/src/openai_ns_reconstruction/kokuno_a4_current_rf40_power_law_radial_force_independent_audit.py
+          grep -Fq 'PARENT_AGENT3_SOURCE_BLOB = "39c98d3f4df05846848b897c240b3b56fb6fbe2c"' \
+            a4/src/openai_ns_reconstruction/kokuno_a4_current_rf40_power_law_radial_force_independent_audit.py
+          grep -Fq 'FROZEN_SEED = 9173791' \
+            a4/src/openai_ns_reconstruction/kokuno_a4_current_rf40_power_law_radial_force_independent_audit.py
+
+      - name: Materialize deterministic A5 registration receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p receipts
+          python - <<'PY'
+          from pathlib import Path
+          from openai_ns_reconstruction.kokuno_a5_rf40_power_law_radial_force_ingest_contract import registration_json
+          Path('receipts/kokuno_a5_rf40_power_law_radial_force_registration.json').write_text(
+              registration_json(), encoding='utf-8'
+          )
+          PY
+          python -m json.tool receipts/kokuno_a5_rf40_power_law_radial_force_registration.json >/dev/null
+
+      - name: Upload registration receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a5-rf40-power-law-radial-force-registration
+          path: receipts/kokuno_a5_rf40_power_law_radial_force_registration.json
+          if-no-files-found: error
