@@ -1,0 +1,125 @@
+name: kokuno-agent2-oscillatory-batch-differentials
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_oscillatory_batch_differentials.py'
+      - 'tests/test_constrained_kokuno_oscillatory_batch_differentials.py'
+      - '.github/workflows/kokuno-agent2-oscillatory-batch-differentials.yml'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Assert pinned A2 ancestry and parent batch identity
+        if: github.event_name == 'pull_request'
+        run: |
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha }}"
+          git merge-base --is-ancestor e43c32c3d0258f635e8b1f999d89c38524355856 HEAD
+          test "$(git rev-parse e43c32c3d0258f635e8b1f999d89c38524355856:src/openai_ns_reconstruction/kokuno_oscillatory_batch_axis_safety.py)" = "599baa190ec742d0e532e5517078534124e68d6b"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+
+      - name: Compile
+        run: >-
+          python -m py_compile
+          src/openai_ns_reconstruction/kokuno_oscillatory_batch_differentials.py
+          tests/test_constrained_kokuno_oscillatory_batch_differentials.py
+
+      - name: Focused regressions
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_oscillatory_batch_differentials.py
+          tests/test_constrained_kokuno_oscillatory_batch_axis_safety.py
+
+      - name: Materialize batch differential receipt
+        run: |
+          mkdir -p artifacts
+          python - <<'PY'
+          from __future__ import annotations
+          import json
+          import subprocess
+          from pathlib import Path
+
+          from openai_ns_reconstruction.kokuno_oscillatory_batch_differentials import (
+              materialize_batch_differentials_receipt,
+          )
+
+          receipt = materialize_batch_differentials_receipt()
+          receipt['git_sha'] = subprocess.check_output(
+              ['git', 'rev-parse', 'HEAD'], text=True
+          ).strip()
+          Path('artifacts/kokuno_agent2_oscillatory_batch_differentials.json').write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + '\n', encoding='utf-8'
+          )
+          print(json.dumps(receipt['diagnostic'], indent=2, sort_keys=True))
+          PY
+
+      - name: Upload batch differential receipt before gate
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent2-oscillatory-batch-differentials
+          path: artifacts/kokuno_agent2_oscillatory_batch_differentials.json
+          if-no-files-found: warn
+
+      - name: Enforce frozen batch differential gates
+        run: |
+          python - <<'PY'
+          from __future__ import annotations
+          import json
+          from pathlib import Path
+
+          from openai_ns_reconstruction.kokuno_oscillatory_batch_differentials import (
+              INTERIOR_VORTICITY_RMS_FLOOR,
+              SCALAR_REPLAY_ATOL,
+          )
+
+          receipt = json.loads(
+              Path('artifacts/kokuno_agent2_oscillatory_batch_differentials.json').read_text()
+          )
+          d = receipt['diagnostic']
+          c = receipt['public_contract']
+          failed = []
+
+          for key in (
+              'jacobian_scalar_replay_max_abs',
+              'vorticity_scalar_replay_max_abs',
+              'divergence_scalar_replay_max_abs',
+          ):
+              if d[key] > SCALAR_REPLAY_ATOL:
+                  failed.append(key)
+          if d['vorticity_curl_closure_max_abs'] != 0.0:
+              failed.append('vorticity_curl_closure')
+          if d['divergence_trace_closure_max_abs'] != 0.0:
+              failed.append('divergence_trace_closure')
+          if d['masked_all_fields_abs_max'] != 0.0:
+              failed.append('axis_support_mask_exact_zero')
+          if d['interior_vorticity_vector_rms'] < INTERIOR_VORTICITY_RMS_FLOOR:
+              failed.append('trivial_interior_vorticity')
+          if d['batch_velocity_shape'] != [8, 3] or d['batch_jacobian_shape'] != [8, 3, 3] or d['batch_vorticity_shape'] != [8, 3]:
+              failed.append('batch_shapes')
+          if c['forbidden_inputs_present']:
+              failed.append('forbidden_tuning_inputs')
+          if c['caller_tunable_step'] or c['complete_curl_reimplemented'] or c['new_derivative_realization_introduced']:
+              failed.append('differential_contract')
+          if c['mean_projection_performed'] or c['radial_inverse_performed'] or c['correction_velocity_constructed']:
+              failed.append('agent3_lane_crossed')
+          if c['complete_ns_residual'] or c['paper_exact'] or c['pde_validated']:
+              failed.append('scientific_boundary_promoted')
+
+          if failed:
+              raise SystemExit('oscillatory batch differential gate failed: ' + ', '.join(failed))
+          print('oscillatory batch differential gates passed')
+          PY
