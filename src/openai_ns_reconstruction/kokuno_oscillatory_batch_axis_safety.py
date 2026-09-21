@@ -75,6 +75,15 @@ def _support() -> tuple[float, float, float, float]:
     return values
 
 
+def _time_interval() -> tuple[float, float]:
+    field = default_field()
+    t0 = float(field.time_min)
+    t1 = float(field.time_max)
+    if not (np.isfinite(t0) and np.isfinite(t1) and t0 < t1):
+        raise RuntimeError("oscillatory public time interval is malformed")
+    return t0, t1
+
+
 def _broadcast_time(time: Any, shape: tuple[int, ...]) -> np.ndarray:
     raw = np.asarray(time, dtype=float)
     try:
@@ -83,6 +92,9 @@ def _broadcast_time(time: Any, shape: tuple[int, ...]) -> np.ndarray:
         raise ValueError("time must broadcast to points.shape[:-1]") from exc
     if not np.all(np.isfinite(out)):
         raise ValueError("time must be finite")
+    t0, t1 = _time_interval()
+    if np.any(out < t0) or np.any(out > t1):
+        raise ValueError("time is outside the registered candidate interval")
     return np.asarray(out, dtype=float)
 
 
@@ -92,7 +104,9 @@ def velocity_osc_batch(points: Any, time: Any) -> np.ndarray:
     The adapter is deliberately parameter-free.  Points outside the registered
     strict support, including the entire symmetry axis, are assigned exact zero
     before the interior public evaluator is called.  Strictly interior points are
-    evaluated in one vectorized call to the pre-existing ``velocity_osc``.
+    evaluated in one vectorized call to the pre-existing ``velocity_osc``.  The
+    parent public field's registered time interval is enforced before masking so
+    support-exterior samples cannot bypass the original domain contract.
     """
     xyz = np.asarray(points, dtype=float)
     if xyz.ndim < 1 or xyz.shape[-1] != 3:
@@ -127,6 +141,7 @@ def velocity_osc_batch(points: Any, time: Any) -> np.ndarray:
 
 def semantic_payload() -> dict[str, Any]:
     r0, r1, z0, z1 = _support()
+    t0, t1 = _time_interval()
     return {
         "schema": SCHEMA,
         "task": TASK,
@@ -139,7 +154,7 @@ def semantic_payload() -> dict[str, Any]:
             "scope": "localized oscillatory fields and complete-curl organization",
         },
         "batch_contract": {
-            "input": "finite points[...,3] plus finite broadcastable time",
+            "input": "finite points[...,3] plus finite broadcastable time in the registered parent interval",
             "output": "finite velocity[...,3]",
             "strict_support": {
                 "radial_inner": r0,
@@ -147,9 +162,11 @@ def semantic_payload() -> dict[str, Any]:
                 "axial_lower": z0,
                 "axial_upper": z1,
             },
+            "time_interval": [t0, t1],
             "outside_support_behavior": "exact zero without entering interior cylindrical evaluator",
             "inside_support_behavior": "one vectorized call to existing public velocity_osc",
             "axis_safe_by_support_mask": True,
+            "parent_time_domain_preserved_before_masking": True,
             "new_oscillatory_parameters": False,
         },
         "truth_boundary": {
@@ -197,6 +214,7 @@ def public_contract() -> dict[str, Any]:
         "vectorized_batch_api": True,
         "shape_preserving": True,
         "time_broadcast_supported": True,
+        "parent_time_domain_preserved_before_masking": True,
         "axis_safe_by_strict_support_mask": True,
         "interior_uses_existing_public_velocity": True,
         "complete_curl_reimplemented": False,
