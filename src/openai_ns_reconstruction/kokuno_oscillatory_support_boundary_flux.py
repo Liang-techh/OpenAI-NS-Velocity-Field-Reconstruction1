@@ -40,7 +40,10 @@ PUBLIC_Z_VELOCITY_BLOB = "4a3abc1a11f7e054f651dd7bace8ada6d5a6b653"
 SOURCE_CORRECTED_READER_COMMIT = "143f6773feb424ad9ed3a8d116653200f20346b7"
 SOURCE_CORRECTED_READER_DATE = "2026-09-09"
 
-BOUNDARY_THETA_COUNT = 24
+# Cardinal angles make the Cartesian representatives of the exact radial
+# boundaries numerically exact under hypot, avoiding a floating-point
+# classification artefact in the strict public support mask.
+BOUNDARY_THETA_COUNT = 4
 BOUNDARY_Z_COUNT = 7
 BOUNDARY_RADIUS_COUNT = 7
 BOUNDARY_TIMES = (0.31, 0.50, 0.69)
@@ -131,6 +134,7 @@ class KokunoOscillatorySupportBoundaryFlux:
             },
             "frozen_diagnostic_protocol": {
                 "boundary_theta_count": BOUNDARY_THETA_COUNT,
+                "boundary_angles": [0.0, 0.5 * math.pi, math.pi, -0.5 * math.pi],
                 "boundary_z_count": BOUNDARY_Z_COUNT,
                 "boundary_radius_count": BOUNDARY_RADIUS_COUNT,
                 "boundary_times": list(BOUNDARY_TIMES),
@@ -171,7 +175,7 @@ class KokunoOscillatorySupportBoundaryFlux:
 
     def materialize(self) -> OscillatorySupportBoundaryFluxResult:
         r0, r1, z0, z1 = self._support()
-        theta = np.linspace(-math.pi, math.pi, BOUNDARY_THETA_COUNT, endpoint=False)
+        theta = np.asarray((0.0, 0.5 * math.pi, math.pi, -0.5 * math.pi), dtype=float)
         z_line = np.linspace(z0 + 0.2 * (z1 - z0), z1 - 0.2 * (z1 - z0), BOUNDARY_Z_COUNT)
         r_line = np.linspace(r0 + 0.2 * (r1 - r0), r1 - 0.2 * (r1 - r0), BOUNDARY_RADIUS_COUNT)
         times = np.asarray(BOUNDARY_TIMES, dtype=float)
