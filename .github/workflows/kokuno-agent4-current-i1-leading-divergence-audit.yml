@@ -1,0 +1,79 @@
+name: kokuno-agent4-current-i1-leading-divergence-audit
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_a4_current_i1_leading_divergence_independent_audit.py'
+      - 'tests/test_constrained_kokuno_a4_current_i1_leading_divergence_independent_audit.py'
+      - '.github/workflows/kokuno-agent4-current-i1-leading-divergence-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  independent-current-i1-divergence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Authenticate exact A1 #1051 ancestry and strict delta
+        shell: bash
+        run: |
+          set -euo pipefail
+          upstream=ea59dc305b4265fcb0bb0f948c2a45f4477d1ae5
+          git cat-file -e "${upstream}^{commit}"
+          git merge-base --is-ancestor "$upstream" HEAD
+          actual_blob=$(git rev-parse "${upstream}:src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_i1_frozen_gate.py")
+          test "$actual_blob" = fe14dab8dccdbca828d722bdfe2f75f287aa9ea8
+          git diff --name-only "${upstream}...HEAD" | sort > /tmp/actual-files.txt
+          cat > /tmp/expected-files.txt <<'EOF'
+          .github/workflows/kokuno-agent4-current-i1-leading-divergence-audit.yml
+          src/openai_ns_reconstruction/kokuno_a4_current_i1_leading_divergence_independent_audit.py
+          tests/test_constrained_kokuno_a4_current_i1_leading_divergence_independent_audit.py
+          EOF
+          sort -o /tmp/expected-files.txt /tmp/expected-files.txt
+          diff -u /tmp/expected-files.txt /tmp/actual-files.txt
+          test "$(git rev-list --count "${upstream}..HEAD")" -eq 3
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install repository
+        run: python -m pip install -e '.[dev]'
+
+      - name: Compile focused implementation
+        run: |
+          python -m py_compile src/openai_ns_reconstruction/kokuno_a4_current_i1_leading_divergence_independent_audit.py
+          python -m py_compile tests/test_constrained_kokuno_a4_current_i1_leading_divergence_independent_audit.py
+
+      - name: Run parent and independent-validator software regressions
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_pa16_current_cartesian_i1_frozen_gate.py \
+            tests/test_constrained_kokuno_a4_current_i1_leading_divergence_independent_audit.py
+
+      - name: Materialize real save-reloaded current-I1 audit receipt
+        run: |
+          mkdir -p outputs/kokuno_agent4_current_i1
+          python -m openai_ns_reconstruction.kokuno_a4_current_i1_leading_divergence_independent_audit \
+            --output outputs/kokuno_agent4_current_i1/K4_VAL_108_current_i1_divergence.json
+
+      - name: Upload raw scientific receipt before gate enforcement
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a4-current-i1-divergence-receipt
+          path: outputs/kokuno_agent4_current_i1/K4_VAL_108_current_i1_divergence.json
+          if-no-files-found: error
+
+      - name: Enforce preregistered scoped gates
+        run: |
+          python -m openai_ns_reconstruction.kokuno_a4_current_i1_leading_divergence_independent_audit \
+            --output outputs/kokuno_agent4_current_i1/K4_VAL_108_current_i1_divergence.json \
+            --enforce-existing
