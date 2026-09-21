@@ -1,0 +1,308 @@
+name: kokuno-agent3-current-pa16-profile-application
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_current_pa16_profile_application.py'
+      - 'tests/test_kokuno_current_pa16_profile_application.py'
+      - '.github/workflows/kokuno-agent3-current-pa16-profile-application.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  PARENT_CR002_HEAD: 0c16e1f1a2ff22b2a3950e77041ce1fbb11e19c7
+  PARENT_CR002_SOURCE: src/openai_ns_reconstruction/kokuno_current_pa16_bridge_integrity.py
+  PARENT_CR002_SOURCE_BLOB: a58349dbe7fa510573349ae3dd26735b6aedde94
+  UPSTREAM_A1_HEAD: 61b8730fba5623c5acfbd3ec42d54f7cc4f45748
+  UPSTREAM_A1_PROFILE_SOURCE: src/openai_ns_reconstruction/kokuno_pa16_current_joined_profile.py
+  UPSTREAM_A1_PROFILE_BLOB: e38b9b79378aaf97a17226e41da75b477f26ae23
+  UPSTREAM_A1_TSH_SOURCE: src/openai_ns_reconstruction/kokuno_pa16_current_tsh_certificate.py
+  UPSTREAM_A1_TSH_BLOB: 5fd610b417ccaa1c4673ea64985296b94dfe5946
+  UPSTREAM_A1_JOIN_SOURCE: src/openai_ns_reconstruction/kokuno_inner_join_exit.py
+  UPSTREAM_A1_JOIN_BLOB: baa283c9592e19653e20f5c24371230d680704f5
+  SOURCE_READER_HEAD: 143f6773feb424ad9ed3a8d116653200f20346b7
+  SOURCE_READER_TEX: navier-stokes/navier_stokes_workbench.tex
+  SOURCE_READER_TEX_BLOB: 205a99807302e21a51c5eaf223390c0dfc42bcd0
+
+jobs:
+  exact-current-pa16-profile-application:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout exact Agent-3 event head
+        uses: actions/checkout@v4
+        with:
+          path: current
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - name: Assert exact head and CR002 ancestry
+        shell: bash
+        run: |
+          set -euo pipefail
+          expected='${{ github.event.pull_request.head.sha || github.sha }}'
+          test "$(git -C current rev-parse HEAD)" = "$expected"
+          git -C current merge-base --is-ancestor "$PARENT_CR002_HEAD" HEAD
+          test "$(git -C current rev-parse "$PARENT_CR002_HEAD:$PARENT_CR002_SOURCE")" = "$PARENT_CR002_SOURCE_BLOB"
+
+      - name: Checkout exact Agent-1 joined profile
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          path: upstream-a1
+          fetch-depth: 1
+          ref: ${{ env.UPSTREAM_A1_HEAD }}
+
+      - name: Authenticate Agent-1 joined-profile lineage
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C upstream-a1 rev-parse HEAD)" = "$UPSTREAM_A1_HEAD"
+          test "$(git -C upstream-a1 hash-object "$UPSTREAM_A1_PROFILE_SOURCE")" = "$UPSTREAM_A1_PROFILE_BLOB"
+          test "$(git -C upstream-a1 hash-object "$UPSTREAM_A1_TSH_SOURCE")" = "$UPSTREAM_A1_TSH_BLOB"
+          test "$(git -C upstream-a1 hash-object "$UPSTREAM_A1_JOIN_SOURCE")" = "$UPSTREAM_A1_JOIN_BLOB"
+
+      - name: Checkout corrected Kokuno reader
+        uses: actions/checkout@v4
+        with:
+          repository: KokunoYumeto/yang-mills-interacting-workbench
+          path: corrected-reader
+          fetch-depth: 1
+          ref: ${{ env.SOURCE_READER_HEAD }}
+
+      - name: Authenticate corrected reader text
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C corrected-reader rev-parse HEAD)" = "$SOURCE_READER_HEAD"
+          test "$(git -C corrected-reader hash-object "$SOURCE_READER_TEX")" = "$SOURCE_READER_TEX_BLOB"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install current Agent-3 branch
+        run: python -m pip install -e './current[dev]'
+
+      - name: Compile focused Agent-3 files
+        run: |
+          python -m py_compile current/src/openai_ns_reconstruction/kokuno_current_pa16_profile_application.py
+          python -m py_compile current/tests/test_kokuno_current_pa16_profile_application.py
+
+      - name: Materialize checksum-bound repair and verify actual joined-profile application
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH="$GITHUB_WORKSPACE/current/src" python - <<'PY'
+          from dataclasses import asdict
+          import json
+          import math
+          from pathlib import Path
+          import sys
+
+          import numpy as np
+          import openai_ns_reconstruction
+
+          # The Agent-3 branch intentionally does not vendor the newer Agent-1
+          # implementation. Extend only the package search path to the exact
+          # separately authenticated #959 worktree.
+          openai_ns_reconstruction.__path__.append(
+              str(Path("upstream-a1/src/openai_ns_reconstruction").resolve())
+          )
+
+          from openai_ns_reconstruction.kokuno_pa16_current_joined_profile import (
+              KokunoPA16CurrentJoinedProfile,
+          )
+          from openai_ns_reconstruction.kokuno_current_xi_moment_discrepancy_bridge import (
+              UPSTREAM_AGENT1_HEAD as XI_HEAD,
+              UPSTREAM_AGENT1_PR as XI_PR,
+              UPSTREAM_AGENT1_SCHEMA as XI_SCHEMA,
+              UPSTREAM_AGENT1_SOURCE_BLOB as XI_BLOB,
+              UPSTREAM_AGENT1_SOURCE_PATH as XI_PATH,
+              UpstreamA1Identity,
+              materialize_current_xi_moment_bridge,
+          )
+          from openai_ns_reconstruction.kokuno_current_pa16_repair_receipt import (
+              UPSTREAM_AGENT1_HEAD as PA16_HEAD,
+              UPSTREAM_AGENT1_PARENT_HEAD,
+              UPSTREAM_AGENT1_PARENT_PR,
+              UPSTREAM_AGENT1_PR as PA16_PR,
+              UPSTREAM_JOIN_SOURCE_BLOB,
+              UPSTREAM_JOIN_SOURCE_PATH,
+              UPSTREAM_TSH_SOURCE_BLOB,
+              UPSTREAM_TSH_SOURCE_PATH,
+              UpstreamPA16Identity,
+          )
+          from openai_ns_reconstruction.kokuno_current_pa16_profile_application import (
+              JoinedProfileIdentity,
+              UPSTREAM_AGENT1_HEAD as PROFILE_HEAD,
+              UPSTREAM_AGENT1_PR as PROFILE_PR,
+              UPSTREAM_AGENT1_SCHEMA as PROFILE_SCHEMA,
+              UPSTREAM_AGENT1_SOURCE_BLOB as PROFILE_BLOB,
+              UPSTREAM_AGENT1_SOURCE_PATH as PROFILE_PATH,
+              materialize_current_pa16_profile_application_receipt,
+          )
+
+          profile = KokunoPA16CurrentJoinedProfile()
+          certificate = profile.certificate
+          xi_report = certificate.moments.report()
+          tsh_report = certificate.report()
+
+          class XiBackend:
+              def upstream_identity(self):
+                  return UpstreamA1Identity(
+                      pr_number=XI_PR,
+                      exact_head=XI_HEAD,
+                      source_path=XI_PATH,
+                      source_blob=XI_BLOB,
+                      report_schema=XI_SCHEMA,
+                  )
+              def current_xi_moment_report(self):
+                  return xi_report
+
+          xi_receipt = materialize_current_xi_moment_bridge(XiBackend())
+          solve_cache = {}
+
+          def solve_payload(eta: float):
+              key = repr(float(eta))
+              if key not in solve_cache:
+                  solved = certificate.solve_selected_at_eta(float(eta))
+                  raw = asdict(solved)
+                  repair = raw["repair"]
+                  solve_cache[key] = {
+                      "eta": raw["eta"],
+                      "incoming_scaled_discrepancy": raw["incoming_scaled_discrepancy"],
+                      "pre_repair_scaled_discrepancy": raw["pre_repair_scaled_discrepancy"],
+                      "repair_achieved_scaled_moments": repair["achieved_scaled_moments"],
+                      "repair_target_scaled_moments": repair["target_scaled_moments"],
+                      "repair_residual_scaled_moments": repair["residual_scaled_moments"],
+                      "exit_scaled_discrepancy": raw["exit_scaled_discrepancy"],
+                      "coefficients": repair["coefficients"],
+                      "max_abs_exit_discrepancy": raw["max_abs_exit_discrepancy"],
+                      "scaled_jacobian_condition": raw["scaled_jacobian_condition"],
+                  }
+              return solve_cache[key]
+
+          class Backend:
+              def current_xi_bridge_receipt(self):
+                  return xi_receipt
+              def upstream_identity(self):
+                  return UpstreamPA16Identity(
+                      pr_number=PA16_PR,
+                      exact_head=PA16_HEAD,
+                      parent_pr_number=UPSTREAM_AGENT1_PARENT_PR,
+                      parent_exact_head=UPSTREAM_AGENT1_PARENT_HEAD,
+                      tsh_source_path=UPSTREAM_TSH_SOURCE_PATH,
+                      tsh_source_blob=UPSTREAM_TSH_SOURCE_BLOB,
+                      join_source_path=UPSTREAM_JOIN_SOURCE_PATH,
+                      join_source_blob=UPSTREAM_JOIN_SOURCE_BLOB,
+                  )
+              def tsh_report(self):
+                  return tsh_report
+              def pa16_solve_at_eta(self, eta: float):
+                  return solve_payload(float(eta))
+              def joined_profile_identity(self):
+                  return JoinedProfileIdentity(
+                      pr_number=PROFILE_PR,
+                      exact_head=PROFILE_HEAD,
+                      source_path=PROFILE_PATH,
+                      source_blob=PROFILE_BLOB,
+                      report_schema=PROFILE_SCHEMA,
+                  )
+              def joined_profile_report(self):
+                  return profile.report()
+              def joined_profile_values(self, eta: float, X):
+                  values = profile.profile_values(np.asarray(X, dtype=float), float(eta))
+                  return {
+                      "F": np.asarray(values["F_current_joined"], dtype=float),
+                      "U": np.asarray(values["U_current_joined"], dtype=float),
+                      "E": np.asarray(values["E_current_joined"], dtype=float),
+                  }
+              def joined_profile_replay_with_coefficients(self, eta: float, X, coefficients):
+                  X_arr = np.asarray(X, dtype=float)
+                  join = profile._selected_join()
+                  data = profile._join_inputs(float(eta))
+                  scaled = join.profile_values_scaled(
+                      X_arr / profile.X_R,
+                      eta=float(eta),
+                      ell_i=float(data["ell_i"]),
+                      G_i=float(data["G_i"]),
+                      coefficients=np.asarray(coefficients, dtype=float),
+                  )
+                  E = np.asarray(scaled["E"], dtype=float)
+                  return {
+                      "F": E / np.sqrt(2.0 * X_arr),
+                      "U": np.asarray(scaled["U"], dtype=float),
+                      "E": E,
+                  }
+
+          receipt = materialize_current_pa16_profile_application_receipt(Backend())
+          truth = receipt.to_dict()["truth_boundary"]
+          required_false = (
+              "source_T_sh_lower_bound_verified",
+              "source_global_inner_to_outer_join_admitted",
+              "global_cartesian_leading_velocity_materialized",
+              "current_real_ns_correction_velocity_materialized",
+              "matched_global_pressure_materialized",
+              "restricted_forcing_materialized",
+              "discrepancy_from_complete_ns_defect",
+              "authorized_for_gain_gated_ns_stage",
+              "real_candidate_finite_correction_cycle_run",
+              "heldout_normalized_ns_residual_assessed",
+              "residual_reduction_claimed",
+              "same_protocol_comparable_to_st006",
+              "pde_validated",
+          )
+          if any(truth[name] is not False for name in required_false):
+              raise SystemExit("profile application receipt attempted forbidden NS promotion")
+          if receipt.selected_route_ready:
+              if receipt.status != "current_source_moment_repair_applied_in_joined_profile":
+                  raise SystemExit("ready route did not bind the repair to the joined profile")
+              if len(receipt.samples) != len(xi_receipt.samples):
+                  raise SystemExit("profile-application sample count does not match Xi handoff")
+              if receipt.max_application_abs > 5.0e-10 and receipt.max_application_rel > 5.0e-10:
+                  raise SystemExit("exact coefficient replay exceeded frozen application gate")
+              if any(sample.coefficient_vector and sample.nontrivial_repair_effect_observed is False
+                     for sample in receipt.samples
+                     if max(abs(v) for v in sample.coefficient_vector) > 1.0e-14):
+                  raise SystemExit("nontrivial PA.16 coefficient vector had no profile effect")
+          else:
+              if receipt.status != "blocked_by_current_tsh_geometry" or receipt.samples:
+                  raise SystemExit("infeasible T_sh route did not remain fail-closed")
+
+          out = Path("current/current_pa16_profile_application_receipt.json")
+          out.write_text(
+              json.dumps(receipt.to_dict(), indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          print(json.dumps({
+              "status": receipt.status,
+              "selected_route_ready": receipt.selected_route_ready,
+              "sample_count": len(receipt.samples),
+              "max_application_abs": receipt.max_application_abs,
+              "max_application_rel": receipt.max_application_rel,
+              "max_zero_coefficient_effect_l2": receipt.max_zero_coefficient_effect_l2,
+              "any_nontrivial_repair_effect": receipt.any_nontrivial_repair_effect,
+              "receipt_sha256": receipt.receipt_sha256,
+          }, indent=2, sort_keys=True))
+          PY
+
+      - name: Run focused Agent-3 regressions
+        working-directory: current
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_current_pa16_bridge_integrity.py \
+            tests/test_kokuno_current_pa16_repair_receipt.py \
+            tests/test_kokuno_current_pa16_profile_application.py
+          git diff --check
+
+      - name: Upload typed profile-application evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a3-current-pa16-profile-application
+          path: current/current_pa16_profile_application_receipt.json
+          if-no-files-found: warn
