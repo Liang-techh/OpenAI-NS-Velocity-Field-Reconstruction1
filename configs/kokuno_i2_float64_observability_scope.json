@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "contract_id": "cr002-kokuno-i2-float64-observability-scope-v1",
+  "scope": "representation_and_delivery_evidence_only",
+  "target": {
+    "repository": "Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1",
+    "upstream_pr": 1061,
+    "upstream_head": "9c2abbc69ba1ef8c8a9e8d1699a466a75d0293c3",
+    "parent_i1_pr": 1051,
+    "parent_i1_head": "ea59dc305b4265fcb0bb0f948c2a45f4477d1ae5",
+    "module_path": "src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_i2_heat_repair.py",
+    "candidate_scope": "current leading-only Cartesian field through reserved I2; fail closed before I3"
+  },
+  "provenance_classes": {
+    "user_requirements": [
+      "deliver an explicit computable save/load velocity(x,y,z,t)->[u,v,w]",
+      "keep public visual correspondence independent from PDE validity, paper exactness, and OpenAI-field identity",
+      "do not let an unresolved PDE gate block a clearly labelled callable velocity delivery"
+    ],
+    "public_source_facts": [
+      "exact #1061 authenticates corrected Kokuno public reconstruction provenance for the reserved-I2 heat-repair source form; this contract does not add a new public numerical target"
+    ],
+    "autonomous_repository_design": [
+      "the concrete high-precision I2 bump/tanh-sinh realization and finite-N current lineage are repository-autonomous",
+      "the current low-dimensional public candidate view converts the selected Decimal I2 correction to float64 at the candidate API boundary",
+      "this observability firewall and its sub-ulp witness are repository-autonomous governance mechanics"
+    ],
+    "pending_or_unknown": [
+      "whether exact #1061 produces a nonzero difference from exact #1051 in the public float64 F/E/velocity view on a preregistered I2 probe protocol",
+      "whether the I2 repair changes any renderer-independent public morphology diagnostic",
+      "matching current-I2 leading-plus-oscillatory composition and independent audit",
+      "I3/I4/terminal/global leading completion",
+      "matched pressure, preregistered restricted forcing, complete NS defect, and held-out complete-NS validation"
+    ]
+  },
+  "representation_truth": {
+    "high_precision_i2_correction_receipt_nonzero": true,
+    "decimal_retained_until_float64_api_boundary": true,
+    "public_float64_velocity_callable_through_i2": true,
+    "configuration_save_load_semantic_identity_available": true,
+    "public_float64_delta_from_i1_parent_verified": false,
+    "public_float64_delta_probe_protocol_registered": false,
+    "public_float64_visual_effect_verified": false,
+    "high_precision_nonzero_implies_public_float64_delta": false,
+    "semantic_identity_progress_implies_public_float64_delta": false,
+    "callable_through_i2_implies_visual_correspondence": false
+  },
+  "forbidden_implications": [
+    "high_precision_nonzero_correction -> nonzero_public_float64_velocity_delta",
+    "new_semantic_identity -> nonzero_public_float64_velocity_delta",
+    "callable_through_I2 -> visual_correspondence_verified",
+    "public_float64_velocity_delta -> visual_correspondence_verified",
+    "visual_correspondence -> pde_validated",
+    "scoped_or_local_audit -> complete_ns_validation",
+    "ci_green -> pde_validated",
+    "callable_or_save_load -> paper_exact_or_openai_field_identified"
+  ],
+  "promotion_requirements": {
+    "public_float64_delta_from_i1_parent_verified": [
+      "consume exact #1061 configuration, save it, reload it, and preserve the same semantic identity",
+      "compare only public F/E/velocity outputs against exact #1051 parent on a preregistered strict-interior-I2 probe set",
+      "record componentwise absolute deltas together with local float64 ulp/spacing context",
+      "require an actually observed nonzero public-precision delta; retain a zero/sub-ulp result as negative evidence",
+      "do not change I2 coefficients, precision boundary, construction gates, forcing, or scientific thresholds to manufacture observability"
+    ],
+    "different_public_precision_or_interface": [
+      "treat a higher-precision or alternate public evaluator as a new representation contract and bind its consumer precision into identity",
+      "preserve deterministic save/load and rerun representation-distinct validation before transferring output-level evidence"
+    ],
+    "visual_correspondence_verified": [
+      "first establish the selected candidate identity and its public velocity representation",
+      "run the separately governed renderer-independent/public-observable comparison without inventing source numerical targets"
+    ]
+  },
+  "cr001_freeze": {
+    "constraints_blob_sha": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [
+      [-2, 2],
+      [-2, 2],
+      [-2, 2]
+    ],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "momentum_max": 0.001,
+    "momentum_L2": 0.001,
+    "divergence_max": 1e-05,
+    "divergence_L2": 1e-05,
+    "residual_defined_free_force_forbidden": true,
+    "candidate_collapse_forbidden": true,
+    "posthoc_threshold_relaxation_forbidden": true
+  },
+  "independent_project_states": {
+    "canonical_eq45_velocity_export_ready": true,
+    "canonical_eq45_visualization_ready": false,
+    "canonical_eq45_visual_correspondence_verified": false,
+    "canonical_eq45_pde_validated": false,
+    "kokuno_current_route_velocity_export_ready": false,
+    "kokuno_current_route_visual_correspondence_verified": false,
+    "kokuno_current_route_pde_validated": false,
+    "kokuno_current_route_paper_exact": false,
+    "kokuno_current_route_openai_field_identified": false
+  },
+  "mechanics_witness": {
+    "classification": "autonomous_mechanics_only_not_kokuno_or_openai_candidate_data",
+    "purpose": "demonstrate that a nonzero high-precision correction and a changed semantic payload can still round to the same float64 public value"
+  },
+  "truth_boundary": "This contract governs representation evidence only. It changes no velocity/profile/source formula/pressure/forcing/candidate coefficient/validation sample/threshold/project state."
+}
