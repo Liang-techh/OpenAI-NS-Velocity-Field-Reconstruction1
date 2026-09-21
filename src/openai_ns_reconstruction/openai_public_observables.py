@@ -15,6 +15,9 @@ _SCHEMA_VERSION = 1
 _TASK_ID = "CR-A9-078"
 _SOURCE_URL = "https://openai.com/index/navier-stokes-solution/"
 _SOURCE_DATE = "2026-09-08"
+_EXTERNAL_METHOD_REPO = "scikit-image/scikit-image"
+_EXTERNAL_METHOD_COMMIT = "cc0a4b16ebf655873cd6f770e897460abdade288"
+_EXTERNAL_METHOD_LICENSE = "BSD-3-Clause (project default; individual vendored files may differ)"
 _EXPECTED_IDS = (
     "vortex_swirl_presence",
     "inward_spiraling_trajectories",
@@ -101,12 +104,18 @@ def validate_openai_public_observable_contract(contract: Mapping[str, Any]) -> N
     method = screening[0]
     if not isinstance(method, Mapping):
         raise ValueError("malformed external screening record")
-    if method.get("source_repo") != "scikit-image/scikit-image":
+    if method.get("source_repo") != _EXTERNAL_METHOD_REPO:
         raise ValueError("external screening source drift")
-    if method.get("source_commit") != "cc0a4b16ebf655873cd6f770e897460abdade288":
+    if method.get("source_commit") != _EXTERNAL_METHOD_COMMIT:
         raise ValueError("external screening commit drift")
+    if method.get("license") != _EXTERNAL_METHOD_LICENSE:
+        raise ValueError("external screening license drift")
+    if not isinstance(method.get("candidate_scope"), str) or not method["candidate_scope"].strip():
+        raise ValueError("external screening candidate scope missing")
     if method.get("classification") != "screened_not_adopted" or method.get("migration_scope") != "none":
         raise ValueError("pixel-space tooling may not be silently promoted or migrated")
+    if not isinstance(method.get("reason"), str) or not method["reason"].strip():
+        raise ValueError("external screening rationale missing")
 
     truth = contract.get("truth_boundary")
     if not isinstance(truth, Mapping) or set(truth) != set(_FALSE_TRUTH_KEYS):
@@ -134,12 +143,17 @@ def load_openai_public_observable_contract(path: str | Path | None = None) -> di
 def observable_contract_report(path: str | Path | None = None) -> dict[str, Any]:
     """Return a compact machine-readable receipt without upgrading any truth claim."""
     payload = load_openai_public_observable_contract(path)
+    method = payload["external_method_screening"][0]
     return {
         "task_id": payload["task_id"],
         "source_url": payload["source"]["url"],
         "source_published_date": payload["source"]["published_date"],
         "observable_ids": [item["id"] for item in payload["observables"]],
-        "external_method_classification": payload["external_method_screening"][0]["classification"],
+        "external_method_source_repo": method["source_repo"],
+        "external_method_source_commit": method["source_commit"],
+        "external_method_license": method["license"],
+        "external_method_classification": method["classification"],
+        "external_method_migration_scope": method["migration_scope"],
         "contract_sha256": contract_sha256(payload),
         "numeric_visual_target_defined": False,
         **payload["truth_boundary"],
