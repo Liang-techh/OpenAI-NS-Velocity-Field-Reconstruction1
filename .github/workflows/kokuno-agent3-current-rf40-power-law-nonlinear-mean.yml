@@ -1,0 +1,243 @@
+name: kokuno-agent3-current-rf40-power-law-nonlinear-mean
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a3-rf40-power-law-nonlinear-mean-112
+  pull_request:
+    branches:
+      - codex/kokuno-a3-rf40-axial-shutdown-radial-force-111
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Check out exact A3 event head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: a3
+          fetch-depth: 0
+
+      - name: Verify A3 parent and three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd a3
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+          git merge-base --is-ancestor 93200f28deae4372c2338e0620b785543af892d4 HEAD
+          test "$(git rev-list --count 93200f28deae4372c2338e0620b785543af892d4..HEAD)" -eq 3
+          mapfile -t files < <(git diff --name-only 93200f28deae4372c2338e0620b785543af892d4..HEAD)
+          test "${#files[@]}" -eq 3
+          printf '%s\n' "${files[@]}" | sort > /tmp/actual-files
+          printf '%s\n' \
+            .github/workflows/kokuno-agent3-current-rf40-power-law-nonlinear-mean.yml \
+            src/openai_ns_reconstruction/kokuno_current_rf40_power_law_nonlinear_mean_attribution.py \
+            tests/test_constrained_kokuno_current_rf40_power_law_nonlinear_mean_attribution.py \
+            | sort > /tmp/expected-files
+          diff -u /tmp/expected-files /tmp/actual-files
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install exact A3 head
+        shell: bash
+        run: python -m pip install -e './a3[dev]'
+
+      - name: Run focused A3 regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            a3/src/openai_ns_reconstruction/kokuno_current_rf40_power_law_nonlinear_mean_attribution.py \
+            a3/tests/test_constrained_kokuno_current_rf40_power_law_nonlinear_mean_attribution.py
+          python -m pytest -q -W error \
+            a3/tests/test_constrained_kokuno_current_rf40_axial_shutdown_nonlinear_mean_attribution.py \
+            a3/tests/test_constrained_kokuno_current_rf40_power_law_nonlinear_mean_attribution.py
+
+      - name: Check out exact A2 RF40 power-law composite
+        uses: actions/checkout@v4
+        with:
+          ref: e36d9da4b7f037e998f5b1658f8c0ea291a76b80
+          path: a2
+          fetch-depth: 1
+
+      - name: Check out exact A1 RF40 power-law leading
+        uses: actions/checkout@v4
+        with:
+          ref: 2c76ebdc41d6c566f43a1305034ba2ff9dce410b
+          path: a1
+          fetch-depth: 1
+
+      - name: Authenticate sibling heads and source blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C a2 rev-parse HEAD)" = "e36d9da4b7f037e998f5b1658f8c0ea291a76b80"
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_current_rf40_power_law_leading_oscillatory_identity.py)" = \
+            "4f1dc0566c041b9de20f18b4ae9c49d9fd93c58d"
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_current_rf40_lambda_turn_leading_oscillatory_identity.py)" = \
+            "def2998256b2339115c2400c75b6db6ab58dfe95"
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_oscillatory_batch_differentials.py)" = \
+            "12df3bf6c949baeebf609b366f2973e7f515a157"
+          test "$(git -C a1 rev-parse HEAD)" = "2c76ebdc41d6c566f43a1305034ba2ff9dce410b"
+          test "$(git -C a1 hash-object src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_rf40_power_law.py)" = \
+            "36a0183352a2005bd0b5f477594e05a2e4fe3868"
+
+      - name: Materialize real current-lineage RF40 power-law nonlinear mean receipts
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p receipts
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          import math
+          import numpy as np
+          import openai_ns_reconstruction
+
+          pkg = openai_ns_reconstruction
+          a1_pkg = str(Path('a1/src/openai_ns_reconstruction').resolve())
+          a2_pkg = str(Path('a2/src/openai_ns_reconstruction').resolve())
+          a3_pkg = str(Path('a3/src/openai_ns_reconstruction').resolve())
+
+          pkg.__path__.insert(0, a1_pkg)
+          from openai_ns_reconstruction.kokuno_pa16_current_cartesian_rf40_power_law import (
+              KokunoPA16CurrentCartesianRF40PowerLaw,
+          )
+          leading = KokunoPA16CurrentCartesianRF40PowerLaw()
+
+          pkg.__path__.insert(0, a2_pkg)
+          from openai_ns_reconstruction.kokuno_current_rf40_power_law_leading_oscillatory_identity import (
+              CurrentRF40PowerLawLeadingOscillatoryField,
+          )
+          from openai_ns_reconstruction.kokuno_oscillatory_batch_differentials import (
+              evaluate_oscillatory_batch_differentials,
+          )
+          field = CurrentRF40PowerLawLeadingOscillatoryField(leading)
+
+          pkg.__path__.insert(0, a3_pkg)
+          from openai_ns_reconstruction.kokuno_current_rf40_power_law_nonlinear_mean_attribution import (
+              ExactCurrentRF40PowerLawNonlinearBackend,
+              materialize_current_rf40_power_law_nonlinear_mean_attribution,
+              truth_boundary,
+          )
+
+          backend = ExactCurrentRF40PowerLawNonlinearBackend.bind(
+              field, evaluate_oscillatory_batch_differentials
+          )
+
+          inner = materialize_current_rf40_power_law_nonlinear_mean_attribution(
+              backend,
+              np.asarray([math.hypot(0.41, -0.17)], dtype=float),
+              np.asarray([-0.08], dtype=float),
+              np.asarray([0.39], dtype=float),
+          )
+
+          stage_fraction = 0.37
+          X_power = field.X_3 * math.exp(stage_fraction * field.T_w)
+          eta_power = 0.17
+          t_power = 0.53
+          q_power = (1.0 - t_power) / (1.0 - eta_power * eta_power)
+          r_power = math.sqrt(2.0 * q_power * X_power)
+          z_power = (q_power ** field.D) * eta_power
+          power_law = materialize_current_rf40_power_law_nonlinear_mean_attribution(
+              backend,
+              np.asarray([r_power], dtype=float),
+              np.asarray([z_power], dtype=float),
+              np.asarray([t_power], dtype=float),
+          )
+
+          receipt = {
+              "inner": inner.to_receipt(),
+              "power_law": power_law.to_receipt(),
+              "power_law_probe": {
+                  "stage_fraction": stage_fraction,
+                  "X_over_X3": X_power / field.X_3,
+                  "X_over_X4": X_power / field.X_4,
+                  "eta": eta_power,
+                  "time": t_power,
+              },
+              "power_law_oscillatory_nontriviality_required": False,
+              "a3_truth_boundary": truth_boundary(),
+          }
+          Path('receipts/kokuno_a3_current_rf40_power_law_nonlinear_mean.json').write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + '\n', encoding='utf-8'
+          )
+          PY
+
+      - name: Upload receipt before gate enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a3-current-rf40-power-law-nonlinear-mean
+          path: receipts/kokuno_a3_current_rf40_power_law_nonlinear_mean.json
+          if-no-files-found: error
+
+      - name: Enforce scoped scientific gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import json
+
+          receipt = json.loads(
+              Path('receipts/kokuno_a3_current_rf40_power_law_nonlinear_mean.json').read_text()
+          )
+          inner = receipt['inner']
+          power = receipt['power_law']
+          expected_kind = 'exact-current-a2-pr1010-through-rf40-power-law-nonlinear-attribution'
+          assert inner['backend_kind'] == expected_kind
+          assert power['backend_kind'] == expected_kind
+
+          assert inner['pointwise_three_piece_closure_absolute_max'] <= 5e-13
+          assert inner['projected_three_piece_closure_absolute_max'] <= 1e-12
+          assert inner['quadratic_mean_rms'] > 1e-12
+          assert power['pointwise_three_piece_closure_absolute_max'] <= 5e-13
+          assert power['projected_three_piece_closure_absolute_max'] <= 1e-12
+          assert receipt['power_law_oscillatory_nontriviality_required'] is False
+
+          probe = receipt['power_law_probe']
+          assert 0.0 < probe['stage_fraction'] < 1.0
+          assert probe['X_over_X3'] > 1.0
+          assert probe['X_over_X4'] < 1.0
+
+          backend = inner['agent2_backend']
+          assert backend['agent2_composite_pr'] == 1010
+          assert backend['agent2_composite_head'] == 'e36d9da4b7f037e998f5b1658f8c0ea291a76b80'
+          assert backend['agent1_leading_pr'] == 1005
+          assert backend['agent1_leading_head'] == '2c76ebdc41d6c566f43a1305034ba2ff9dce410b'
+
+          boundary = receipt['a3_truth_boundary']
+          assert boundary['current_leading_plus_oscillation_through_RF40_power_law_consumed'] is True
+          assert boundary['RF40_power_law_velocity_materialized'] is True
+          assert boundary['current_RF40_power_law_mixed_nonlinear_mean_materialized'] is True
+          assert boundary['current_RF40_power_law_quadratic_nonlinear_mean_materialized'] is True
+          for key in (
+              'velocity_after_RF40_power_law_materialized',
+              'full_post_XR_RF40_current_lineage_materialized',
+              'outer_global_leading_velocity_materialized',
+              'radial_inverse_performed_in_this_increment',
+              'pressure_gradient_included',
+              'restricted_forcing_included',
+              'complete_ns_defect',
+              'scoped_nonlinear_mean_authorized_as_correction_target',
+              'mean_correction_velocity_materialized',
+              'real_candidate_finite_correction_cycle_run',
+              'heldout_normalized_ns_residual_assessed',
+              'residual_reduction_claimed',
+              'same_protocol_comparable_to_st006',
+              'pde_validated',
+              'blowup_proved',
+          ):
+              assert boundary[key] is False, key
+          assert boundary['final_normalized_momentum_gate'] == 1e-3
+          assert boundary['final_normalized_divergence_gate'] == 1e-5
+          PY
