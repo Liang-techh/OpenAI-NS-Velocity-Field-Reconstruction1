@@ -1,12 +1,13 @@
 """Agent-5 registration seam for the current actual Kokuno final bridge through Xi=110.
 
 Integration glue only.  This module pins Agent 1 PR #940's executable
-candidate-side source-coordinate bridge on ``100 <= X <= 110`` while preserving
-all missing independent-validation and global-candidate boundaries.  In
-particular, there is not yet an implementation-distinct Agent-4 audit of the
-#940 actual bridge, and the source-coordinate ``F/U/E`` + ``G_i/ell_i`` handoff
-is not a Cartesian ``velocity(x,y,z,t)`` artifact.
+candidate-side source-coordinate bridge on ``100 <= X <= 110`` and Agent 4 PR
+#943's implementation-distinct save/reload public-values-only audit of that
+same bridge, including one-sided endpoint differentiation at Xi.
 
+Registration is not scientific admission: the matching A4 exact-head CI is
+still unresolved at the frozen snapshot.  The source-coordinate ``F/U/E`` +
+``G_i/ell_i`` handoff is also not a Cartesian ``velocity(x,y,z,t)`` artifact.
 The reconstruction remains provenance-labelled and is not paper-exact.
 """
 from __future__ import annotations
@@ -83,18 +84,55 @@ AGENT1_ACTUAL_FINAL_BRIDGE_XI110 = {
     },
 }
 
-INDEPENDENT_AUDIT_STATUS = {
-    "latest_relevant_agent4_reference_stress_pr": 936,
-    "latest_relevant_agent4_reference_stress_head": "5580526b783500be3701fbddabd6d7c7f90a5a61",
-    "reference_stress_xi110_independent_audit_registered": True,
-    "actual_final_bridge_independent_a4_audit_registered": False,
-    "actual_Xi_endpoint_derivative_independently_verified": False,
-    "interior_reference_stress_audit_implies_actual_bridge_audit": False,
-    "production_handoff_replay_is_independent_endpoint_derivative_evidence": False,
-    "required_next_validator": (
-        "implementation-distinct save/reload public-values-only audit of Agent-1 #940 "
-        "actual bridge, including an endpoint-safe Xi derivative check"
+AGENT4_ACTUAL_FINAL_BRIDGE_AUDIT = {
+    "pr": 943,
+    "head": "d090572fdc766626c417cb53b8acc8632b2bdb63",
+    "branch": "codex/kokuno-a4-actual-final-bridge-xi110-independent-audit-088",
+    "source_path": "src/openai_ns_reconstruction/kokuno_a4_actual_final_bridge_xi110_independent_audit.py",
+    "source_blob": "afe00af9274408051bb01ec9924ac287c538fe5f",
+    "test_path": "tests/test_constrained_kokuno_a4_actual_final_bridge_xi110_independent_audit.py",
+    "test_blob": "0a5de622f718321c74de8733718daf989928a97b",
+    "workflow_path": ".github/workflows/kokuno-agent4-actual-final-bridge-xi110-independent-audit.yml",
+    "workflow_blob": "2e96ff193b603cd283ac8e342434a0336a9df931",
+    "audited_agent1_pr": 940,
+    "audited_agent1_head": "f430f8f97df3bfafce56bf094047c769ecec922d",
+    "saved_reloaded_public_values_only": True,
+    "production_derivatives_used_as_reference": False,
+    "independent_operator": (
+        "degree-six local polynomial derivatives reconstructed from public values only; "
+        "asymmetric seven-node interior stencil plus distinct forward/backward one-sided endpoint stencils"
     ),
+    "protocol": {
+        "seed": 9173621,
+        "random_per_region": 40,
+        "interior_sample_count": 130,
+        "endpoint_sample_count": 7,
+        "interior_halfwidths": [0.12, 0.06, 0.03],
+        "endpoint_steps": [0.08, 0.04, 0.02],
+        "derivative_relative_rms_gate": 5.0e-3,
+        "derivative_relative_max_gate": 2.0e-2,
+        "endpoint_scale_normalized_rms_gate": 5.0e-3,
+        "endpoint_scale_normalized_max_gate": 2.0e-2,
+        "refinement_ratio_gate": 8.0,
+        "refinement_floor": 2.0e-9,
+        "value_identity_relative_gate": 5.0e-12,
+        "derivative_chain_relative_gate": 5.0e-5,
+        "endpoint_value_handoff_abs_gate": 2.0e-12,
+        "xi_final_slope_abs_gate": 2.0e-4,
+        "xi_zero_Ux_scale_normalized_gate": 5.0e-3,
+        "value_rms_floor": 1.0e-10,
+        "derivative_rms_floor": 1.0e-12,
+    },
+    "endpoint_safe_independent_method_registered": True,
+    "negative_result_receipt_retained_before_gate": True,
+    "actual_final_bridge_independent_a4_audit_registered": True,
+    "actual_final_bridge_independent_a4_audit_admitted": False,
+    "actual_Xi_endpoint_derivative_independently_verified": False,
+    "complete_ns_residual_audit": False,
+    "observed_ci_at_registration": {
+        "repository_tests": {"run_id": 35555427211, "status": "queued", "conclusion": None},
+        "dedicated": {"run_id": 35555427197, "status": "queued", "conclusion": None},
+    },
 }
 
 FROZEN_SCIENCE = {
@@ -131,8 +169,10 @@ TRUTH_BOUNDARY = {
     "candidate_side_actual_G_i_at_Xi_registered": True,
     "candidate_side_actual_ell_i_at_Xi_registered": True,
     "semantic_identity_and_save_load_registered": True,
+    "actual_final_bridge_independent_a4_audit_registered": True,
+    "Xi_endpoint_independent_derivative_method_registered": True,
     "upstream_ci_admitted_as_pass": False,
-    "actual_final_bridge_independent_a4_audit_registered": False,
+    "actual_final_bridge_independent_a4_audit_admitted": False,
     "actual_Xi_endpoint_derivative_independently_verified": False,
     "source_coordinate_profiles_are_cartesian_velocity": False,
     "source_prepared_appendixA_pressure_materialized": False,
@@ -157,13 +197,13 @@ TRUTH_BOUNDARY = {
 }
 
 PIPELINE_POSITION = {
-    "stage": "candidate-side source-coordinate final-bridge ingest",
+    "stage": "candidate-side source-coordinate final-bridge plus independent-audit registration",
     "input": "A5 #937 registered Xi110 reference-stress prerequisite",
-    "new_output": "A1 #940 typed F/U/E bridge plus G_i/ell_i handoff",
+    "new_output": "A1 #940 typed F/U/E bridge plus G_i/ell_i handoff, paired with A4 #943 independent audit protocol",
     "not_output": "global Cartesian velocity/pressure/forcing candidate",
     "next_shortest_blocker": (
-        "independent A4 audit of #940 actual bridge, then actual inner-to-outer/global "
-        "Cartesian leading join and matched pressure"
+        "A1/A4 exact-head evidence resolution, then actual upstream five-moment discrepancy and "
+        "inner-to-outer/global Cartesian leading join with matched pressure"
     ),
 }
 
@@ -189,12 +229,13 @@ def build_contract(exact_head: str) -> dict[str, Any]:
         "agent5_exact_head": exact_head,
         "parent_a5": copy.deepcopy(PARENT_A5),
         "agent1_actual_final_bridge_xi110": copy.deepcopy(AGENT1_ACTUAL_FINAL_BRIDGE_XI110),
-        "independent_audit_status": copy.deepcopy(INDEPENDENT_AUDIT_STATUS),
+        "agent4_actual_final_bridge_audit": copy.deepcopy(AGENT4_ACTUAL_FINAL_BRIDGE_AUDIT),
         "actual_final_bridge_ingest_seam": {
             "registration_only": True,
             "actual_candidate_source_coordinate_bridge_registered": True,
             "G_i_ell_i_handoff_registered": True,
-            "independent_a4_actual_bridge_audit_required_before_admission": True,
+            "matching_independent_a4_audit_protocol_registered": True,
+            "a4_exact_head_pass_required_before_audit_admission": True,
             "queued_or_unresolved_ci_is_pass": False,
             "profile_success_substitutes_for_cartesian_delivery": False,
             "profile_or_visual_success_substitutes_for_pde_validation": False,
