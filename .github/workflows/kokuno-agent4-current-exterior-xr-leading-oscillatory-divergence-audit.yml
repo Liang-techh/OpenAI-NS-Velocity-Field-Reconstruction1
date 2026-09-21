@@ -1,0 +1,131 @@
+name: kokuno-agent4-current-exterior-xr-leading-oscillatory-divergence-audit
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a4-exterior-xr-composite-divergence-audit-098
+  pull_request:
+    branches:
+      - codex/kokuno-a2-exterior-xr-composite-083
+  workflow_dispatch:
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Check out exact A4 head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: a4
+          fetch-depth: 0
+
+      - name: Verify exact A2 parent and strict three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd a4
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+          git merge-base --is-ancestor 4be2c9ee898c44dd1ad2217e90601b161fe81964 HEAD
+          test "$(git rev-list --count 4be2c9ee898c44dd1ad2217e90601b161fe81964..HEAD)" -eq 3
+          mapfile -t files < <(git diff --name-only 4be2c9ee898c44dd1ad2217e90601b161fe81964..HEAD)
+          test "${#files[@]}" -eq 3
+          printf '%s\n' "${files[@]}" | sort > /tmp/actual-files
+          printf '%s\n' \
+            .github/workflows/kokuno-agent4-current-exterior-xr-leading-oscillatory-divergence-audit.yml \
+            src/openai_ns_reconstruction/kokuno_a4_current_exterior_xr_leading_oscillatory_divergence_independent_audit.py \
+            tests/test_constrained_kokuno_a4_current_exterior_xr_leading_oscillatory_divergence_independent_audit.py \
+            | sort > /tmp/expected-files
+          diff -u /tmp/expected-files /tmp/actual-files
+          test "$(git hash-object src/openai_ns_reconstruction/kokuno_current_exterior_xr_leading_oscillatory_identity.py)" = \
+            "93a3da5c3aed4be8310cc510edfab6af940b64dc"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install A4 branch dependencies
+        shell: bash
+        run: python -m pip install -e './a4[dev]'
+
+      - name: Compile and run independent manufactured regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            a4/src/openai_ns_reconstruction/kokuno_a4_current_exterior_xr_leading_oscillatory_divergence_independent_audit.py \
+            a4/tests/test_constrained_kokuno_a4_current_exterior_xr_leading_oscillatory_divergence_independent_audit.py
+          PYTHONPATH="$PWD/a4/src" python -m pytest -q -W error \
+            a4/tests/test_constrained_kokuno_a4_current_exterior_xr_leading_oscillatory_divergence_independent_audit.py
+
+      - name: Check out exact Agent-1 through-XR sibling
+        uses: actions/checkout@v4
+        with:
+          ref: d3c971f2c62e272333e124e532212d23cca4908d
+          path: a1
+          fetch-depth: 1
+
+      - name: Authenticate exact A1 and A2 runtime sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C a1 rev-parse HEAD)" = "d3c971f2c62e272333e124e532212d23cca4908d"
+          test "$(git -C a1 hash-object src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_exterior_to_xr.py)" = \
+            "2ba28636a56b252fa485719e7b3e8da754d7e588"
+          test "$(git -C a4 hash-object src/openai_ns_reconstruction/kokuno_current_exterior_xr_leading_oscillatory_identity.py)" = \
+            "93a3da5c3aed4be8310cc510edfab6af940b64dc"
+          PYTHONPATH="$PWD/a1/src" python -m pytest -q -W error \
+            a1/tests/test_kokuno_pa16_current_cartesian_exterior_to_xr.py
+
+      - name: Materialize real independent receipt before enforcement
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p receipts
+          PYTHONPATH="$PWD/a1/src" python - <<'PY'
+          from pathlib import Path
+          import json
+          import openai_ns_reconstruction
+
+          from openai_ns_reconstruction.kokuno_pa16_current_cartesian_exterior_to_xr import (
+              KokunoPA16CurrentCartesianExteriorToXR,
+          )
+          assert KokunoPA16CurrentCartesianExteriorToXR.__module__ == (
+              "openai_ns_reconstruction.kokuno_pa16_current_cartesian_exterior_to_xr"
+          )
+          a4_pkg = str(Path("a4/src/openai_ns_reconstruction").resolve())
+          openai_ns_reconstruction.__path__.insert(0, a4_pkg)
+          import openai_ns_reconstruction.kokuno_a4_current_exterior_xr_leading_oscillatory_divergence_independent_audit as mod
+
+          receipt = mod.materialize_receipt()
+          Path("receipts/kokuno_a4_current_exterior_xr_composite_divergence_receipt.json").write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+          )
+          PY
+          cat receipts/kokuno_a4_current_exterior_xr_composite_divergence_receipt.json
+
+      - name: Upload independent receipt before scientific enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a4-current-exterior-xr-leading-oscillatory-divergence-audit
+          path: receipts/kokuno_a4_current_exterior_xr_composite_divergence_receipt.json
+          if-no-files-found: error
+
+      - name: Enforce frozen independent divergence gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH="$PWD/a1/src" python - <<'PY'
+          from pathlib import Path
+          import json
+          import openai_ns_reconstruction
+          from openai_ns_reconstruction.kokuno_pa16_current_cartesian_exterior_to_xr import KokunoPA16CurrentCartesianExteriorToXR
+          a4_pkg = str(Path("a4/src/openai_ns_reconstruction").resolve())
+          openai_ns_reconstruction.__path__.insert(0, a4_pkg)
+          import openai_ns_reconstruction.kokuno_a4_current_exterior_xr_leading_oscillatory_divergence_independent_audit as mod
+          receipt = json.loads(Path("receipts/kokuno_a4_current_exterior_xr_composite_divergence_receipt.json").read_text(encoding="utf-8"))
+          mod.enforce_receipt(receipt)
+          PY
