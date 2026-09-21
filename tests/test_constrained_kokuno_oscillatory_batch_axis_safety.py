@@ -127,15 +127,21 @@ def test_batch_supports_higher_rank_shapes_and_scalar_time():
     assert np.all(np.isfinite(out))
 
 
-def test_invalid_shape_nonfinite_and_time_broadcast_fail_closed():
+def test_invalid_shape_nonfinite_time_domain_and_broadcast_fail_closed():
+    field = batchmod.default_field()
+    point = np.asarray(((0.4, 0.2, 0.1),))
     with pytest.raises(ValueError, match="shape"):
         batchmod.velocity_osc_batch(np.zeros((4, 2)), 0.4)
     with pytest.raises(ValueError, match="finite"):
         batchmod.velocity_osc_batch(np.asarray(((0.4, 0.2, np.nan),)), 0.4)
     with pytest.raises(ValueError, match="finite"):
-        batchmod.velocity_osc_batch(np.asarray(((0.4, 0.2, 0.1),)), np.nan)
+        batchmod.velocity_osc_batch(point, np.nan)
     with pytest.raises(ValueError, match="broadcast"):
         batchmod.velocity_osc_batch(np.zeros((2, 3)), np.zeros(3))
+    with pytest.raises(ValueError, match="registered candidate interval"):
+        batchmod.velocity_osc_batch(np.asarray(((0.0, 0.0, 0.0),)), float(field.time_min) - 1.0e-6)
+    with pytest.raises(ValueError, match="registered candidate interval"):
+        batchmod.velocity_osc_batch(np.asarray(((0.0, 0.0, 0.0),)), float(field.time_max) + 1.0e-6)
 
 
 def test_receipt_and_public_contract_preserve_scientific_boundary():
@@ -152,6 +158,7 @@ def test_receipt_and_public_contract_preserve_scientific_boundary():
     assert contract["vectorized_batch_api"] is True
     assert contract["shape_preserving"] is True
     assert contract["time_broadcast_supported"] is True
+    assert contract["parent_time_domain_preserved_before_masking"] is True
     assert contract["axis_safe_by_strict_support_mask"] is True
     assert contract["interior_uses_existing_public_velocity"] is True
     assert contract["complete_curl_reimplemented"] is False
