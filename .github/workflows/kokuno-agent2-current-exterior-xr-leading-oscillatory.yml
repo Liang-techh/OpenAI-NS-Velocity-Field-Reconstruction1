@@ -1,0 +1,178 @@
+name: kokuno-agent2-current-exterior-xr-leading-oscillatory
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a2-exterior-xr-composite-083
+  pull_request:
+    branches:
+      - codex/kokuno-a2-partial-composite-identity-save-load-082
+  workflow_dispatch:
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Check out exact A2 head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: a2
+          fetch-depth: 0
+
+      - name: Verify exact parent ancestry and three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd a2
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+          git merge-base --is-ancestor 9997fc55455d126f935643da36bf17eaa0491aa4 HEAD
+          test "$(git rev-list --count 9997fc55455d126f935643da36bf17eaa0491aa4..HEAD)" -eq 3
+          mapfile -t files < <(git diff --name-only 9997fc55455d126f935643da36bf17eaa0491aa4..HEAD)
+          test "${#files[@]}" -eq 3
+          printf '%s\n' "${files[@]}" | sort > /tmp/actual-files
+          printf '%s\n' \
+            .github/workflows/kokuno-agent2-current-exterior-xr-leading-oscillatory.yml \
+            src/openai_ns_reconstruction/kokuno_current_exterior_xr_leading_oscillatory_identity.py \
+            tests/test_constrained_kokuno_current_exterior_xr_leading_oscillatory_identity.py \
+            | sort > /tmp/expected-files
+          diff -u /tmp/expected-files /tmp/actual-files
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install A2 test dependencies
+        shell: bash
+        run: python -m pip install -e './a2[dev]'
+
+      - name: Compile and run A2 parent plus through-XR mechanics
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            a2/src/openai_ns_reconstruction/kokuno_current_exterior_xr_leading_oscillatory_identity.py \
+            a2/tests/test_constrained_kokuno_current_exterior_xr_leading_oscillatory_identity.py
+          PYTHONPATH="$PWD/a2/src" python -m pytest -q \
+            a2/tests/test_constrained_kokuno_current_partial_composite_identity_save_load.py \
+            a2/tests/test_constrained_kokuno_current_exterior_xr_leading_oscillatory_identity.py
+
+      - name: Check out exact Agent-1 through-XR sibling
+        uses: actions/checkout@v4
+        with:
+          ref: d3c971f2c62e272333e124e532212d23cca4908d
+          path: a1
+          fetch-depth: 1
+
+      - name: Authenticate and regression-test exact Agent-1 through-XR sibling
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C a1 rev-parse HEAD)" = "d3c971f2c62e272333e124e532212d23cca4908d"
+          test "$(git -C a1 hash-object src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_exterior_to_xr.py)" = \
+            "2ba28636a56b252fa485719e7b3e8da754d7e588"
+          test "$(git -C a1 hash-object tests/test_kokuno_pa16_current_cartesian_exterior_to_xr.py)" = \
+            "ecbab9822c54f440f5555f25cd5e7e1648d84bd2"
+          test "$(git -C a1 hash-object .github/workflows/kokuno-agent1-current-cartesian-exterior-to-xr.yml)" = \
+            "5c2d68211e8fea526e06087fc4475f7bab9eb563"
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_public_z_pullback_velocity.py)" = \
+            "4a3abc1a11f7e054f651dd7bace8ada6d5a6b653"
+          PYTHONPATH="$PWD/a1/src" python -m pytest -q \
+            a1/tests/test_kokuno_pa16_current_cartesian_exterior_to_xr.py
+
+      - name: Materialize exact through-XR identity-bound candidate and receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p receipts
+          PYTHONPATH="$PWD/a1/src" python - <<'PY'
+          from pathlib import Path
+          import json
+          import openai_ns_reconstruction
+
+          from openai_ns_reconstruction.kokuno_pa16_current_cartesian_exterior_to_xr import (
+              KokunoPA16CurrentCartesianExteriorToXR,
+          )
+          assert KokunoPA16CurrentCartesianExteriorToXR.__module__ == (
+              "openai_ns_reconstruction.kokuno_pa16_current_cartesian_exterior_to_xr"
+          )
+
+          a2_pkg = str((Path("a2/src/openai_ns_reconstruction")).resolve())
+          openai_ns_reconstruction.__path__.insert(0, a2_pkg)
+
+          import openai_ns_reconstruction.kokuno_current_exterior_xr_leading_oscillatory_identity as mod
+
+          field = mod.default_field()
+          candidate_path = Path("receipts/kokuno_a2_current_exterior_xr_candidate.json")
+          saved = field.save_candidate(candidate_path)
+          loaded = mod.CurrentExteriorXRLeadingOscillatoryField.load_candidate(candidate_path)
+          assert loaded.semantic_sha256 == field.semantic_sha256 == saved["semantic_sha256"]
+          assert loaded.oscillatory_runtime_sha256 == field.oscillatory_runtime_sha256
+          assert loaded.X_R == field.X_R
+
+          receipt = mod.materialize_through_xr_composite_receipt()
+          Path("receipts/kokuno_a2_current_exterior_xr_composite_receipt.json").write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          PY
+
+      - name: Upload candidate and receipt before gate enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a2-current-exterior-xr-leading-oscillatory
+          path: |
+            receipts/kokuno_a2_current_exterior_xr_candidate.json
+            receipts/kokuno_a2_current_exterior_xr_composite_receipt.json
+          if-no-files-found: error
+
+      - name: Enforce frozen through-XR identity and truth gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH="$PWD/a1/src" python - <<'PY'
+          from pathlib import Path
+          import copy
+          import json
+          import openai_ns_reconstruction
+
+          from openai_ns_reconstruction.kokuno_pa16_current_cartesian_exterior_to_xr import (
+              KokunoPA16CurrentCartesianExteriorToXR,
+          )
+          assert KokunoPA16CurrentCartesianExteriorToXR.__module__ == (
+              "openai_ns_reconstruction.kokuno_pa16_current_cartesian_exterior_to_xr"
+          )
+          a2_pkg = str((Path("a2/src/openai_ns_reconstruction")).resolve())
+          openai_ns_reconstruction.__path__.insert(0, a2_pkg)
+
+          import openai_ns_reconstruction.kokuno_current_exterior_xr_leading_oscillatory_identity as mod
+
+          receipt = json.loads(
+              Path("receipts/kokuno_a2_current_exterior_xr_composite_receipt.json").read_text(
+                  encoding="utf-8"
+              )
+          )
+          mod.enforce_receipt(receipt)
+
+          candidate = json.loads(
+              Path("receipts/kokuno_a2_current_exterior_xr_candidate.json").read_text(
+                  encoding="utf-8"
+              )
+          )
+          mutated = copy.deepcopy(candidate)
+          osc = mutated["configuration"]["oscillatory_runtime"]
+          osc["payload"]["parameters"]["mode_imaginary_ratio"] += 0.125
+          osc["payload_sha256"] = mod._identity._sha256(osc["payload"])
+          mutated["semantic_sha256"] = mod._identity._sha256(mutated["configuration"])
+          mutation_path = Path("receipts/mutated_candidate.json")
+          mutation_path.write_text(json.dumps(mutated, indent=2, sort_keys=True) + "\n")
+          try:
+              mod.CurrentExteriorXRLeadingOscillatoryField.load_candidate(mutation_path)
+          except ValueError as exc:
+              assert "oscillatory runtime" in str(exc)
+          else:
+              raise AssertionError("rehash-consistent oscillatory runtime mutation was accepted")
+          PY
