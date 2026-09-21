@@ -18,7 +18,7 @@
       "head": "c5ccdb8fd790c62cfb760139e5ec108c26d88a81",
       "source_blob": "44159b63c440ee9764261dad41fb3f9d3fec7b0d",
       "registered_value_handoff": "n_s(X_0,eta)=-2*U_X(X_0,eta)",
-      "right_branch_ode": "D_X N_s+N_s=S_n; D_X=X*partial_X; n_s=N_s/L",
+      "right_branch_ode": "D_X N_s + N_s = S_n; D_X=X*partial_X; n_s=N_s/L; p_2=X*n_s/E",
       "pressure_provenance": "repository-autonomous admissible Pi0 seed plus source-determined C_p increment"
     },
     "agent4_reference_stress_audit": {
