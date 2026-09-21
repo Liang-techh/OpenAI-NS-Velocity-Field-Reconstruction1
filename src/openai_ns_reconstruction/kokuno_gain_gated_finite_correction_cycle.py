@@ -7,10 +7,10 @@ Parent #935 authenticates one correction stage:
     complete typed defect -> five-moment gain gate -> coefficients
     -> velocity correction -> fixed physical contract -> held-in/held-out replay.
 
-This module adds only the missing finite *cycle* orchestration.  It reruns that
+This module adds only the missing finite *cycle* orchestration. It reruns that
 stage from each newly accepted candidate, records every round, and fails closed
 if candidate lineage, residual protocol, or the physical contract changes
-between accepted rounds.  The stage budget is frozen internally; callers do not
+between accepted rounds. The stage budget is frozen internally; callers do not
 supply residuals, gains, damping, forcing, pressure, thresholds, or a stage
 count.
 
@@ -187,7 +187,7 @@ def run_gain_gated_finite_correction_cycle(
     """Run at most four authenticated correction stages on one fixed problem.
 
     Every accepted round recomputes its five-moment discrepancy from the new
-    candidate through #935.  A rejected stage is recorded but never applied.
+    candidate through #935. A rejected stage is recorded but never applied.
     A real repository-protocol candidate stops early only if the unchanged
     held-out momentum/divergence gates are actually met.
     """
@@ -207,6 +207,7 @@ def run_gain_gated_finite_correction_cycle(
     accepted = 0
     stop_reason = "fixed_stage_budget_exhausted"
     repository_gate_met = False
+    all_held_out_excluded = True
 
     for stage_index in range(MAX_FINITE_STAGES):
         result = run_gain_gated_finite_correction_stage(
@@ -215,6 +216,10 @@ def run_gain_gated_finite_correction_cycle(
         stage = result.receipt
         fixed = stage.fixed_physical_stage
         parent = fixed.parent_stage
+        all_held_out_excluded = (
+            all_held_out_excluded
+            and bool(stage.held_out_excluded_from_correction_fit)
+        )
 
         if previous_accepted_after is not None and parent.candidate_before != previous_accepted_after:
             raise GainGatedFiniteCorrectionCycleError(
@@ -246,10 +251,7 @@ def run_gain_gated_finite_correction_cycle(
             raise GainGatedFiniteCorrectionCycleError(
                 "accepted stage omitted physical-contract-after provenance"
             )
-        if (
-            fixed.physical_contract_after.physical_contract_sha256
-            != initial_contract_sha
-        ):
+        if fixed.physical_contract_after.physical_contract_sha256 != initial_contract_sha:
             raise GainGatedFiniteCorrectionCycleError(
                 "accepted stage changed the cycle physical contract"
             )
@@ -289,13 +291,7 @@ def run_gain_gated_finite_correction_cycle(
         candidate_lineage_preserved_across_accepted_stages=True,
         physical_contract_preserved_across_accepted_stages=True,
         residual_protocol_preserved_across_accepted_stages=True,
-        held_out_excluded_from_every_correction_fit=all(
-            r.stage_accepted is False or r.local_five_moment_gain_gate_passed
-            for r in rounds
-        ) and all(stage.held_out_excluded_from_correction_fit for stage in [
-            # The detailed held-out flag is already enforced before every accepted step;
-            # this list is intentionally reconstructed from the stage receipts below.
-        ]),
+        held_out_excluded_from_every_correction_fit=all_held_out_excluded,
         repository_numeric_gate_met=repository_gate_met,
         mechanics_only=mechanics_only,
         candidate_residual_evidence=bool(accepted > 0 and not mechanics_only),
@@ -304,9 +300,6 @@ def run_gain_gated_finite_correction_cycle(
         finite_stage_numeric_gate_is_blowup_proof=False,
         pde_validated=False,
     )
-    # The cycle only reaches this line if every accepted stage passed the held-out
-    # exclusion assertion above, so record that invariant explicitly.
-    receipt = replace(receipt, held_out_excluded_from_every_correction_fit=True)
     return GainGatedFiniteCorrectionCycleResult(
         candidate_after_last_accepted_stage=current,
         receipt=receipt,
@@ -400,7 +393,9 @@ def build_mechanics_report() -> dict[str, Any]:
         "mechanics_only": True,
         "candidate_residual_evidence": False,
         "initial_amplitude": 1.0,
-        "final_amplitude": float(result.candidate_after_last_accepted_stage["amplitude"]),
+        "final_amplitude": float(
+            result.candidate_after_last_accepted_stage["amplitude"]
+        ),
         "cycle_receipt": result.receipt.to_dict(),
         "truth_boundary": truth_boundary(),
     }
