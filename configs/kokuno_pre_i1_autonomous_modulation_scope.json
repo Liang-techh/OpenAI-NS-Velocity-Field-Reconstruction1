@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "contract_id": "CR002-KOKUNO-PRE-I1-AUTONOMOUS-MODULATION-SCOPE-110",
+  "status": "governance_only_no_scientific_promotion",
+  "base_a1_modulated": {
+    "pr": 1035,
+    "head": "ddf71bab2a2038bab2fba5b854ad713c6b6c7e95",
+    "source_blob": "ef124c53163bb452096168648f0e22d9226750fe",
+    "meaning": "current leading-only Cartesian candidate with repository-autonomous finite-N pre-I1 modulation bound to the A1 #1005 RF40 lineage"
+  },
+  "source_classification": {
+    "public_corrected_reconstruction": {
+      "repository": "KokunoYumeto/yang-mills-interacting-workbench",
+      "commit": "143f6773feb424ad9ed3a8d116653200f20346b7",
+      "path": "navier-stokes/navier_stokes_workbench.tex",
+      "blob": "205a99807302e21a51c5eaf223390c0dfc42bcd0",
+      "release_date": "2026-09-09",
+      "scope": "public corrected Kokuno reconstruction only; not an official OpenAI field release and not independently paper-exact here",
+      "source_form_statement": "finite-N radial-shear modulation is represented in source form; existence/structure does not publish the hidden numerical loop used by the original construction"
+    },
+    "repository_autonomous_realization": {
+      "frequency": 16,
+      "alpha": 0.0005,
+      "beta": 0.0005,
+      "support_left_offset": -35.3,
+      "support_right_offset": -29.1,
+      "memory_quadrature": "deterministic Gauss-Legendre panels in log X",
+      "classification": "autonomous_design_not_public_source_parameter_recovery"
+    }
+  },
+  "lineage_evidence": {
+    "a1_1005_pr": 1005,
+    "a1_1005_head": "2c76ebdc41d6c566f43a1305034ba2ff9dce410b",
+    "a1_1035_pr": 1035,
+    "a1_1035_head": "ddf71bab2a2038bab2fba5b854ad713c6b6c7e95",
+    "a2_1010_pr": 1010,
+    "a2_1010_head": "e36d9da4b7f037e998f5b1658f8c0ea291a76b80",
+    "a2_1010_consumed_leading_head": "2c76ebdc41d6c566f43a1305034ba2ff9dce410b",
+    "a3_1037_pr": 1037,
+    "a3_1037_head": "9a5cdcdf78b7862d5ebe171efb9ca56d53664612",
+    "a3_1037_consumes_unmodulated_a2_1010_lineage": true,
+    "a4_1012_pr": 1012,
+    "a4_1012_head": "9b2be0ffecc14479dbd941eebd663d63f89f2a2f",
+    "a4_1012_audits_unmodulated_a2_1010_composite": true,
+    "a4_1038_pr": 1038,
+    "a4_1038_head": "a4546cacfa224c82398ef7245ba41cca41159800",
+    "a4_1038_audits_a3_1037_unmodulated_x4_stress": true
+  },
+  "allowed_true": {
+    "a1_1035_pre_i1_leading_cartesian_velocity_callable": true,
+    "a1_1035_configuration_serializable": true,
+    "a1_1035_semantic_identity_available": true,
+    "a1_1035_repository_autonomous_modulation_bound": true,
+    "a1_1035_prefix_incompressibility_memory_carried": true,
+    "a1_1035_fails_closed_at_reserved_i1_boundary": true,
+    "corrected_public_source_provenance_pinned": true,
+    "existing_unmodulated_a2_a3_a4_evidence_remains_scoped_to_its_own_identity": true
+  },
+  "required_false": {
+    "source_hidden_loop_parameters_recovered": false,
+    "source_admissible_loop_reconstructed": false,
+    "autonomous_modulation_equals_hidden_source_loop": false,
+    "a2_1010_consumes_a1_1035_modulated_identity": false,
+    "a4_1012_validates_a1_1035_modulated_velocity": false,
+    "a3_1037_stress_applies_to_a1_1035_modulated_identity": false,
+    "a4_1038_validates_a1_1035_modulated_identity": false,
+    "leading_plus_oscillatory_modulated_pre_i1_materialized": false,
+    "modulated_pre_i1_independent_cartesian_audit_available": false,
+    "modulated_pre_i1_correction_mean_stress_force_materialized": false,
+    "outer_global_leading_velocity_materialized": false,
+    "kokuno_velocity_export_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  },
+  "identity_semantics": {
+    "domain_overlap_rule": "Shared coordinate/domain coverage does not make two candidate identities interchangeable and does not transfer validation evidence.",
+    "lineage_rule": "A2/A3/A4 evidence tied to A1 #1005 remains evidence for that unmodulated lineage until exact A1 #1035 is explicitly recomposed and revalidated.",
+    "source_rule": "A public source-form modulation statement plus a repository-autonomous numerical realization does not recover hidden source parameters or establish paper/OpenAI-field identity.",
+    "delivery_rule": "A callable/saveable leading-only pre-I1 field is not a complete leading+oscillatory/correction/global project velocity provider.",
+    "ci_rule": "queued/running is neither PASS nor FAIL; CI success on scoped mechanics cannot promote visual, PDE, paper-exact, or OpenAI-field states."
+  },
+  "promotion_requirements": {
+    "future_modulated_composite": [
+      "consume exact A1 #1035 identity rather than replaying or transplanting A1 #1005",
+      "bind the concrete oscillatory runtime to the same candidate identity and preserve identity across save/load",
+      "obtain an implementation-distinct A4 audit from save/reloaded public Cartesian velocity on the same modulated identity"
+    ],
+    "future_modulated_correction": [
+      "recompute nonlinear mean and downstream compact stress/force from the exact modulated composite identity",
+      "do not transplant A3 #1037 or A4 #1038 receipts from the unmodulated A1 #1005 lineage",
+      "remain unauthorized as a complete-NS correction target until a complete defect with matched pressure and preregistered restricted forcing exists"
+    ],
+    "future_source_exactness": [
+      "independently establish the numerical loop/parameter correspondence from public evidence before any source-exact claim",
+      "keep visual correspondence, PDE validity, paper exactness, and OpenAI-field identity as separate gates"
+    ]
+  },
+  "provenance_classes": {
+    "user_requirement": [
+      "deliver a callable/save-loadable 3D time-dependent velocity while keeping visual/PDE/exactness states independent",
+      "separate user requirements, public-source facts, autonomous design, and pending/unknown claims",
+      "do not transfer validation evidence across different candidate identities"
+    ],
+    "public_source_fact": [
+      "the pinned corrected Kokuno public reconstruction contains the source-form finite-N modulation construction referenced by A1 #1035",
+      "the pinned corrected reconstruction does not supply the repository's autonomous numerical loop as an identified hidden OpenAI field"
+    ],
+    "autonomous_design": [
+      "N=16 and alpha=beta=5e-4 realization",
+      "compact support offsets -35.3 and -29.1",
+      "deterministic log-X Gauss-Legendre memory quadrature",
+      "candidate-identity and evidence-transfer firewall in this contract"
+    ],
+    "pending_unknown": [
+      "whether the autonomous loop corresponds numerically to any hidden source loop",
+      "leading+oscillatory recomposition on exact A1 #1035",
+      "independent Cartesian validation on the modulated identity",
+      "modulated correction mean/stress/force",
+      "post-I1/global Kokuno velocity completion",
+      "visual correspondence and complete NS/PDE admission"
+    ]
+  },
+  "ci_observation_at_creation": {
+    "a1_1035_dedicated_run": 35639014301,
+    "a1_1035_repository_tests_run": 35639014464,
+    "a1_1035_observed_status": "queued",
+    "scientific_pass_claimed_from_these_observations": false
+  },
+  "active_integration_snapshot": {
+    "branch": "codex/cr001-constraints",
+    "live_head": "7f6658cac1a8ffea178bec5accf2fa5a784b8249",
+    "note": "routing documents may contain older snapshot heads; the live git ref is authoritative"
+  },
+  "cr001_snapshot": {
+    "constraints_blob": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "momentum_max_l2_threshold": 0.001,
+    "divergence_max_l2_threshold": 0.00001,
+    "residual_defined_free_force_forbidden": true,
+    "candidate_collapse_forbidden": true,
+    "post_hoc_threshold_relaxation_forbidden": true
+  },
+  "canonical_delivery_independence": {
+    "candidate": "eq45_supported_velocity_candidate_v1",
+    "velocity_export_ready": true,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  }
+}
