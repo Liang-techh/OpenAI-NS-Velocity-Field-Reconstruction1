@@ -6,7 +6,7 @@ on:
       - codex/kokuno-a5-rf40-power-law-radial-force-ingest
   pull_request:
     branches:
-      - codex/kokuno-a5-rf40-power-law-radial-stress-ingest
+      - codex/kokuno-a5-rf40-power-law-radial-stress-ingest-104
   workflow_dispatch:
 
 permissions:
@@ -31,7 +31,7 @@ jobs:
           cd a5
           test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
           git merge-base --is-ancestor 6d88e8a83b51704f65aa125006b7671546c77c43 HEAD
-          test "$(git rev-list --count 6d88e8a83b51704f65aa125006b7671546c77c43..HEAD)" -eq 3
+          test "$(git rev-list --count 6d88e8a83b51704f65aa125006b7671546c77c43..HEAD)" -eq 5
           mapfile -t files < <(git diff --name-only 6d88e8a83b51704f65aa125006b7671546c77c43..HEAD)
           test "${#files[@]}" -eq 3
           printf '%s\n' "${files[@]}" | sort > /tmp/actual-files
