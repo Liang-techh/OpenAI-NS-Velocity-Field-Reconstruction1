@@ -1,0 +1,85 @@
+name: kokuno-agent5-current-pa16-profile-application-ingest
+
+on:
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_a5_current_pa16_profile_application_ingest_contract.py"
+      - "tests/test_kokuno_a5_current_pa16_profile_application_ingest_contract.py"
+      - ".github/workflows/kokuno-agent5-current-pa16-profile-application-ingest.yml"
+  push:
+    branches:
+      - "codex/kokuno-a5-current-pa16-profile-application-ingest-091"
+
+permissions:
+  contents: read
+
+jobs:
+  ingest-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify exact A5 parent ancestry
+        shell: bash
+        run: |
+          set -euo pipefail
+          git merge-base --is-ancestor 77d29056ac960fa09fdc899ce596dce68f842cd1 HEAD
+
+      - name: Verify minimal three-file A5 diff
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t changed < <(git diff --name-only 77d29056ac960fa09fdc899ce596dce68f842cd1...HEAD | sort)
+          expected=(
+            ".github/workflows/kokuno-agent5-current-pa16-profile-application-ingest.yml"
+            "src/openai_ns_reconstruction/kokuno_a5_current_pa16_profile_application_ingest_contract.py"
+            "tests/test_kokuno_a5_current_pa16_profile_application_ingest_contract.py"
+          )
+          if [[ "${changed[*]}" != "${expected[*]}" ]]; then
+            printf 'Unexpected diff relative to exact A5 parent:\n'
+            printf '  %s\n' "${changed[@]}"
+            exit 1
+          fi
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package and test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e .
+          python -m pip install pytest
+
+      - name: Run parent and new Agent-5 contract tests
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_a5_current_tsh_certificate_ingest_contract.py \
+            tests/test_kokuno_a5_current_pa16_profile_application_ingest_contract.py
+
+      - name: Materialize checksum-bound registration receipt
+        run: |
+          python -m openai_ns_reconstruction.kokuno_a5_current_pa16_profile_application_ingest_contract \
+            --exact-head "${GITHUB_SHA}" \
+            --output /tmp/kokuno-a5-current-pa16-profile-application-ingest.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = json.loads(Path('/tmp/kokuno-a5-current-pa16-profile-application-ingest.json').read_text())
+          assert p['truth_boundary']['current_pa16_source_profile_application_materialized'] is True
+          assert p['truth_boundary']['current_repaired_profile_independent_a4_audit_available'] is False
+          assert p['truth_boundary']['five_moment_repair_closed'] is False
+          assert p['truth_boundary']['source_profile_repair_is_complete_ns_correction'] is False
+          assert p['readiness'] == {
+              'leading_ready': False,
+              'oscillatory_ready': True,
+              'correction_ready': False,
+              'velocity_export_ready': False,
+              'pde_validated': False,
+          }
+          assert p['final_gate']['normalized_momentum_volume_l2'] == 1.0e-3
+          assert p['final_gate']['divergence_volume_l2'] == 1.0e-5
+          assert p['frozen_science']['residual_defined_free_forcing_forbidden'] is True
+          PY
