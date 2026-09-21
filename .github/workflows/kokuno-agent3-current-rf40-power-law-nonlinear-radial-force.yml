@@ -1,0 +1,229 @@
+name: kokuno-agent3-current-rf40-power-law-nonlinear-radial-force
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a3-rf40-power-law-radial-force-114
+  pull_request:
+    branches:
+      - codex/kokuno-a3-rf40-power-law-radial-stress-113
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Check out exact A3 event head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: a3
+          fetch-depth: 0
+
+      - name: Verify exact parent and three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd a3
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+          git merge-base --is-ancestor 9a5cdcdf78b7862d5ebe171efb9ca56d53664612 HEAD
+          test "$(git rev-list --count 9a5cdcdf78b7862d5ebe171efb9ca56d53664612..HEAD)" -eq 3
+          mapfile -t files < <(git diff --name-only 9a5cdcdf78b7862d5ebe171efb9ca56d53664612..HEAD)
+          test "${#files[@]}" -eq 3
+          printf '%s\n' "${files[@]}" | sort > /tmp/actual-files
+          printf '%s\n' \
+            .github/workflows/kokuno-agent3-current-rf40-power-law-nonlinear-radial-force.yml \
+            src/openai_ns_reconstruction/kokuno_current_rf40_power_law_nonlinear_radial_force.py \
+            tests/test_constrained_kokuno_current_rf40_power_law_nonlinear_radial_force.py \
+            | sort > /tmp/expected-files
+          diff -u /tmp/expected-files /tmp/actual-files
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install exact A3 head
+        shell: bash
+        run: python -m pip install -e './a3[dev]'
+
+      - name: Authenticate inherited A3 source
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C a3 hash-object src/openai_ns_reconstruction/kokuno_current_rf40_power_law_nonlinear_radial_stress.py)" = \
+            "44dc6d61bc965cef08b119aa5df3026175abd5de"
+          git -C a3 merge-base --is-ancestor 9a5cdcdf78b7862d5ebe171efb9ca56d53664612 HEAD
+
+      - name: Run focused A3 regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            a3/src/openai_ns_reconstruction/kokuno_current_rf40_power_law_nonlinear_radial_force.py \
+            a3/tests/test_constrained_kokuno_current_rf40_power_law_nonlinear_radial_force.py
+          python -m pytest -q -W error \
+            a3/tests/test_constrained_kokuno_current_rf40_power_law_nonlinear_radial_stress.py \
+            a3/tests/test_constrained_kokuno_current_rf40_power_law_nonlinear_radial_force.py
+
+      - name: Check out exact A2 RF40 power-law composite
+        uses: actions/checkout@v4
+        with:
+          ref: e36d9da4b7f037e998f5b1658f8c0ea291a76b80
+          path: a2
+          fetch-depth: 1
+
+      - name: Check out exact A1 RF40 power-law leading
+        uses: actions/checkout@v4
+        with:
+          ref: 2c76ebdc41d6c566f43a1305034ba2ff9dce410b
+          path: a1
+          fetch-depth: 1
+
+      - name: Authenticate sibling heads and source blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C a2 rev-parse HEAD)" = "e36d9da4b7f037e998f5b1658f8c0ea291a76b80"
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_current_rf40_power_law_leading_oscillatory_identity.py)" = \
+            "4f1dc0566c041b9de20f18b4ae9c49d9fd93c58d"
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_oscillatory_batch_differentials.py)" = \
+            "12df3bf6c949baeebf609b366f2973e7f515a157"
+          test "$(git -C a1 rev-parse HEAD)" = "2c76ebdc41d6c566f43a1305034ba2ff9dce410b"
+          test "$(git -C a1 hash-object src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_rf40_power_law.py)" = \
+            "36a0183352a2005bd0b5f477594e05a2e4fe3868"
+
+      - name: Materialize real RF40 power-law radial-force receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p receipts
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          import numpy as np
+          import openai_ns_reconstruction
+
+          pkg = openai_ns_reconstruction
+          a1_pkg = str(Path('a1/src/openai_ns_reconstruction').resolve())
+          a2_pkg = str(Path('a2/src/openai_ns_reconstruction').resolve())
+          a3_pkg = str(Path('a3/src/openai_ns_reconstruction').resolve())
+
+          pkg.__path__.insert(0, a1_pkg)
+          from openai_ns_reconstruction.kokuno_pa16_current_cartesian_rf40_power_law import (
+              KokunoPA16CurrentCartesianRF40PowerLaw,
+          )
+          leading = KokunoPA16CurrentCartesianRF40PowerLaw()
+
+          pkg.__path__.insert(0, a2_pkg)
+          from openai_ns_reconstruction.kokuno_current_rf40_power_law_leading_oscillatory_identity import (
+              CurrentRF40PowerLawLeadingOscillatoryField,
+          )
+          from openai_ns_reconstruction.kokuno_oscillatory_batch_differentials import (
+              evaluate_oscillatory_batch_differentials,
+          )
+          field = CurrentRF40PowerLawLeadingOscillatoryField(leading)
+
+          pkg.__path__.insert(0, a3_pkg)
+          from openai_ns_reconstruction.kokuno_current_rf40_power_law_nonlinear_mean_attribution import (
+              ExactCurrentRF40PowerLawNonlinearBackend,
+          )
+          from openai_ns_reconstruction.kokuno_current_rf40_power_law_nonlinear_radial_force import (
+              materialize_current_rf40_power_law_nonlinear_radial_force,
+              truth_boundary,
+          )
+          from openai_ns_reconstruction.kokuno_strict_inner_transport_radial_stress import (
+              StrictInnerTransportRadialGeometry,
+          )
+
+          backend = ExactCurrentRF40PowerLawNonlinearBackend.bind(
+              field, evaluate_oscillatory_batch_differentials
+          )
+          radii = np.linspace(0.02, 0.44, 22)
+          geometry = StrictInnerTransportRadialGeometry(
+              time=0.39,
+              axial_z=-0.08,
+              radii=tuple(float(v) for v in radii),
+              bump_center=0.30,
+              bump_halfwidth=0.10,
+          )
+          witness = materialize_current_rf40_power_law_nonlinear_radial_force(
+              backend, geometry
+          )
+          receipt = witness.to_receipt()
+          receipt['a3_truth_boundary'] = truth_boundary()
+          receipt['candidate_residual_evidence'] = False
+          Path('receipts/kokuno_a3_current_rf40_power_law_nonlinear_radial_force.json').write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + '\n', encoding='utf-8'
+          )
+          PY
+
+      - name: Upload receipt before gate enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a3-current-rf40-power-law-nonlinear-radial-force
+          path: receipts/kokuno_a3_current_rf40_power_law_nonlinear_radial_force.json
+          if-no-files-found: error
+
+      - name: Enforce scoped scientific gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          import math
+
+          receipt = json.loads(
+              Path('receipts/kokuno_a3_current_rf40_power_law_nonlinear_radial_force.json').read_text()
+          )
+          assert receipt['backend_kind'] == (
+              'exact-current-a3-pr1037-power-law-axial-stress-to-radial-force'
+          )
+          assert receipt['parent_agent3_1037_source_blob'] == (
+              '44dc6d61bc965cef08b119aa5df3026175abd5de'
+          )
+          assert receipt['z_derivative_step_ladder'] == [0.02, 0.01, 0.005]
+          assert max(receipt['piece_closure_relative_max_levels']) <= 5e-10
+          assert receipt['aggregate_derivative_stability_preflight_passed'] is True
+          for piece in ('quadratic', 'mixed', 'aggregate'):
+              report = receipt[piece]
+              assert math.isfinite(float(report['finest_radial_force_rms']))
+              assert math.isfinite(float(report['finest_radial_force_max_abs']))
+          assert receipt['candidate_residual_evidence'] is False
+          boundary = receipt['a3_truth_boundary']
+          assert boundary['current_RF40_power_law_axial_e1_stress_consumed'] is True
+          assert boundary['current_RF40_power_law_radial_force_from_dz_sigma1_materialized'] is True
+          assert boundary['quadratic_mixed_aggregate_radial_force_attribution_materialized'] is True
+          assert boundary['independent_third_radial_moment_inverse_introduced'] is False
+          assert boundary['recorded_radial_mean_equated_to_radial_force'] is False
+          assert boundary['agent2_curl_or_jacobian_reimplemented_by_agent3'] is False
+          assert boundary['newer_agent1_modulated_lineage_consumed'] is False
+          for key in (
+              'velocity_after_RF40_power_law_materialized',
+              'current_lineage_cone_I1_I2_I3_I4_outer_overlays_completed',
+              'full_post_XR_RF40_current_lineage_materialized',
+              'outer_global_leading_velocity_materialized',
+              'pressure_gradient_included',
+              'matched_global_pressure_materialized',
+              'restricted_forcing_included',
+              'complete_ns_defect',
+              'full_three_component_ns_correction_object_materialized',
+              'scoped_current_RF40_power_law_radial_force_authorized_as_correction_target',
+              'mean_correction_velocity_materialized',
+              'current_real_ns_correction_velocity_materialized',
+              'real_candidate_finite_correction_cycle_run',
+              'heldout_normalized_ns_residual_assessed',
+              'residual_reduction_claimed',
+              'same_protocol_comparable_to_st006',
+              'pde_validated',
+              'blowup_proved',
+          ):
+              assert boundary[key] is False, key
+          assert boundary['final_normalized_momentum_gate'] == 1e-3
+          assert boundary['final_normalized_divergence_gate'] == 1e-5
+          PY
