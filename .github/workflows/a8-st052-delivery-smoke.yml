@@ -1,0 +1,250 @@
+name: a8-st052-delivery-smoke
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/a8-st052-delivery-smoke.yml'
+      - 'src/openai_ns_reconstruction/st052_linear_temporal_capsule.py'
+      - 'src/openai_ns_reconstruction/st052_grid_export.py'
+      - 'src/openai_ns_reconstruction/constrained_st052_runtime_dependency_acceptance.py'
+      - 'scripts/verify_st052_linear_temporal_capsule.py'
+      - 'scripts/verify_st052_grid_export.py'
+      - 'configs/st052m_runtime_dependency_acceptance.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  OPENBLAS_NUM_THREADS: '1'
+  OMP_NUM_THREADS: '1'
+  MKL_NUM_THREADS: '1'
+  PYTHONPATH: src
+
+jobs:
+  frozen-st052-identity-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout constrained integration head
+        uses: actions/checkout@v4
+
+      - name: Checkout authenticated exact ST052 source
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: b3b8bfdbe1077f9ec967d158602951997d81e17d
+          path: source-st052
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install accepted numerical runtime
+        run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+
+      - name: Recheck A8 runtime-dependency admission
+        run: python -m pytest -q -W error tests/test_constrained_st052_runtime_dependency_acceptance.py
+
+      - name: Replay frozen ST052 parent with expected PDE rejection
+        shell: bash
+        run: |
+          mkdir -p outputs
+          set +e
+          (
+            cd source-st052
+            python experiments/root_st052/replay_st052.py \
+              --out ../outputs/ST052-M-parent \
+              --seed 9175291 \
+              --validate
+          )
+          code=$?
+          set -e
+          test "$code" = 1
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r = json.loads(Path('outputs/ST052-M-parent/validation.json').read_text())
+          assert r['pde_validated'] is False
+          assert r['all_numeric_gates_pass'] is False
+          assert r['gates']['momentum_max'] is False
+          assert r['gates']['momentum_L2'] is False
+          print('Frozen parent replay retained the registered momentum rejection.')
+          PY
+
+      - name: Reload existing whole-child save/load identity
+        run: |
+          python scripts/verify_st052_linear_temporal_capsule.py \
+            --source-root source-st052 \
+            --parent-dir outputs/ST052-M-parent \
+            --out outputs \
+            --report outputs/ST052-M-linear-temporal-child-v1/a8_capsule_receipt.json \
+            > outputs/a8_capsule_stdout.txt
+
+      - name: Replay existing CR-A9-071 33-cubed x 5 NPZ/MAT delivery
+        run: |
+          mkdir -p outputs/ST052-M-grid-export
+          python scripts/verify_st052_grid_export.py \
+            --source-root source-st052 \
+            --bundle-dir outputs/ST052-M-linear-temporal-child-v1 \
+            --out outputs/ST052-M-grid-export \
+            --report outputs/ST052-M-grid-export/a8_grid_replay_receipt.json \
+            --grid-points 33 \
+            > outputs/a8_grid_replay_stdout.txt
+
+      - name: Run identity-bound callable/save-load/grid integration smoke
+        run: |
+          python - <<'PY'
+          from __future__ import annotations
+
+          import json
+          import platform
+          from pathlib import Path
+
+          import numpy as np
+          import scipy
+          import sympy
+
+          from openai_ns_reconstruction import constrained_st052_runtime_dependency_acceptance as acceptance
+          from openai_ns_reconstruction.st052_grid_export import (
+              CALLABLE_GRID_PARITY_ATOL,
+              NPZ_FILENAME,
+              verify_velocity_grid_export,
+          )
+          from openai_ns_reconstruction.st052_linear_temporal_capsule import load_bundle_runtime
+
+          root = Path.cwd()
+          source_root = root / 'source-st052'
+          bundle_dir = root / 'outputs' / 'ST052-M-linear-temporal-child-v1'
+          export_dir = root / 'outputs' / 'ST052-M-grid-export'
+
+          acceptance_receipt = acceptance.audit(root)
+          assert acceptance_receipt['candidate_id'] == 'ST052-M-linear-temporal-child-v1'
+          assert acceptance_receipt['external_runtime_dependency_accepted_for_visualization_delivery'] is True
+
+          fixed_probes = (
+              (-1.25, -0.75, -0.50, 0.25),
+              (-0.50,  0.25,  0.75, 0.375),
+              ( 0.00,  0.00,  0.00, 0.50),
+              ( 0.50, -0.25,  1.00, 0.625),
+              ( 1.25,  0.75, -1.00, 0.75),
+          )
+
+          first = load_bundle_runtime(bundle_dir, exact_source_root=source_root)
+          first_id = first.identity_sha256
+          first_values = np.asarray([
+              first.velocity(x, y, z, t) for x, y, z, t in fixed_probes
+          ], dtype=float)
+          assert first_values.shape == (len(fixed_probes), 3)
+          assert np.all(np.isfinite(first_values))
+
+          second = load_bundle_runtime(bundle_dir, exact_source_root=source_root)
+          second_id = second.identity_sha256
+          second_values = np.asarray([
+              second.velocity(x, y, z, t) for x, y, z, t in fixed_probes
+          ], dtype=float)
+          assert first_id == second_id
+          reload_error = float(np.max(np.abs(first_values - second_values)))
+          assert reload_error <= CALLABLE_GRID_PARITY_ATOL
+
+          grid_verified = verify_velocity_grid_export(export_dir)
+          grid_manifest = grid_verified['manifest']
+          assert grid_manifest['candidate_id'] == second.candidate_id
+          assert grid_manifest['whole_candidate_identity_sha256'] == second_id
+          assert grid_manifest['grid']['shape_xyz'] == [33, 33, 33]
+          assert grid_manifest['grid']['times'] == [0.25, 0.375, 0.5, 0.625, 0.75]
+          assert grid_verified['npz_mat_exact_equal'] is True
+
+          selected = (
+              (0, 0, 0, 0),
+              (1, 8, 16, 24),
+              (2, 16, 16, 16),
+              (3, 24, 8, 16),
+              (4, 32, 32, 32),
+          )
+          with np.load(export_dir / NPZ_FILENAME, allow_pickle=False) as data:
+              node_errors = []
+              for ti, xi, yi, zi in selected:
+                  observed = np.asarray(second.velocity(
+                      float(data['x'][xi]),
+                      float(data['y'][yi]),
+                      float(data['z'][zi]),
+                      float(data['t'][ti]),
+                  ), dtype=float).reshape(3)
+                  expected = np.asarray([
+                      data['u'][ti, xi, yi, zi],
+                      data['v'][ti, xi, yi, zi],
+                      data['w'][ti, xi, yi, zi],
+                  ], dtype=float)
+                  node_errors.append(float(np.max(np.abs(observed - expected))))
+          selected_node_max_error = max(node_errors)
+          assert selected_node_max_error <= CALLABLE_GRID_PARITY_ATOL
+
+          truth = grid_manifest['truth_boundary']
+          assert truth['visualization_ready'] is False
+          assert truth['pde_validated'] is False
+          assert acceptance_receipt['velocity_export_ready'] is False
+          assert acceptance_receipt['visualization_ready'] is False
+          assert acceptance_receipt['pde_validated'] is False
+
+          receipt = {
+              'schema': 'a8-st052-delivery-integration-smoke/v1',
+              'task_id': 'A8-DELIVERY-02a',
+              'candidate_id': second.candidate_id,
+              'whole_candidate_identity_sha256': second_id,
+              'exact_source_runtime_identity_sha256': acceptance_receipt['exact_source_runtime_identity_sha256'],
+              'runtime_dependency_accepted': True,
+              'whole_bundle_reload': {
+                  'identity_equal': True,
+                  'fixed_probe_count': len(fixed_probes),
+                  'max_component_error': reload_error,
+                  'engineering_atol': CALLABLE_GRID_PARITY_ATOL,
+                  'passed': True,
+              },
+              'existing_grid_delivery_replay': {
+                  'shape_xyz': grid_manifest['grid']['shape_xyz'],
+                  'times': grid_manifest['grid']['times'],
+                  'grid_payload_sha256': grid_manifest['grid_payload_sha256'],
+                  'npz_mat_exact_equal': True,
+                  'selected_node_count': len(selected),
+                  'selected_node_max_component_error': selected_node_max_error,
+                  'engineering_atol': CALLABLE_GRID_PARITY_ATOL,
+                  'passed': True,
+              },
+              'execution_environment': {
+                  'python_implementation': platform.python_implementation(),
+                  'python_version': platform.python_version(),
+                  'numpy_version': np.__version__,
+                  'scipy_version': scipy.__version__,
+                  'sympy_version': sympy.__version__,
+                  'portable_bitwise_identity_across_dependency_builds_claimed': False,
+              },
+              'truth_boundary': {
+                  'identity_bound_delivery_smoke_passed': True,
+                  'velocity_export_ready': False,
+                  'visualization_ready': False,
+                  'visual_correspondence_verified': False,
+                  'pde_validated': False,
+                  'paper_exact': False,
+                  'openai_field_identified': False,
+              },
+              'next_task': 'A8-DELIVERY-02b-identity-bound-visual-diagnostics',
+          }
+          report = root / 'outputs' / 'a8_st052_delivery_integration_smoke.json'
+          report.write_text(json.dumps(receipt, indent=2, sort_keys=True) + '\n')
+          print(json.dumps(receipt, indent=2, sort_keys=True))
+          PY
+
+      - name: Upload A8 integration receipt
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: A8-ST052-delivery-integration-smoke
+          path: |
+            outputs/a8_st052_delivery_integration_smoke.json
+            outputs/a8_capsule_stdout.txt
+            outputs/a8_grid_replay_stdout.txt
+            outputs/ST052-M-linear-temporal-child-v1/whole_candidate_manifest.json
+            outputs/ST052-M-grid-export/st052_velocity_grid_manifest.json
+            outputs/ST052-M-grid-export/a8_grid_replay_receipt.json
+          if-no-files-found: warn
