@@ -17,7 +17,7 @@ def _redigest(registration: dict[str, object]) -> None:
     registration["digest"] = a5._sha256(payload)
 
 
-def test_registration_binds_exact_current_i1_composite_and_mean() -> None:
+def test_registration_binds_exact_current_i1_composite_mean_and_matching_a4_audit() -> None:
     registration = a5.build_registration()
     a5.validate_registration(registration)
 
@@ -32,7 +32,12 @@ def test_registration_binds_exact_current_i1_composite_and_mean() -> None:
     assert registration["agent4_current_i1_leading_audit"]["audits_agent1_1051_leading"] is True
     assert registration["agent4_current_i1_leading_audit"]["audits_agent2_1062_composite"] is False
     assert registration["agent4_current_i1_leading_audit"]["audits_agent3_1063_nonlinear_mean"] is False
-    assert registration["truth_boundary"]["agent4_matching_current_i1_composite_audit_registered"] is False
+    assert registration["agent4_current_i1_composite_audit"]["head"] == "33626e55f301bbb5a28f75684de49d020bc6039d"
+    assert registration["agent4_current_i1_composite_audit"]["audited_agent2_head"] == registration["agent2_current_i1_composite"]["head"]
+    assert registration["agent4_current_i1_composite_audit"]["scientific_admission"] is False
+    assert registration["truth_boundary"]["agent4_matching_current_i1_composite_audit_present"] is True
+    assert registration["truth_boundary"]["agent4_matching_current_i1_composite_audit_registered"] is True
+    assert registration["truth_boundary"]["agent4_matching_current_i1_composite_audit_admitted"] is False
     assert registration["truth_boundary"]["agent4_matching_current_i1_nonlinear_mean_audit_registered"] is False
 
     assert registration["agent1_current_i2_sibling"]["leading_velocity_through_i2_materialized"] is True
@@ -62,7 +67,19 @@ def test_a4_evidence_and_i2_sibling_cannot_be_laundered() -> None:
         a5.validate_registration(mutated)
 
     mutated = copy.deepcopy(base)
-    mutated["truth_boundary"]["agent4_matching_current_i1_composite_audit_registered"] = True
+    mutated["agent4_current_i1_composite_audit"]["scientific_admission"] = True
+    _redigest(mutated)
+    with pytest.raises(ValueError, match="agent4_current_i1_composite_audit identity/truth drifted"):
+        a5.validate_registration(mutated)
+
+    mutated = copy.deepcopy(base)
+    mutated["truth_boundary"]["agent4_matching_current_i1_composite_audit_admitted"] = True
+    _redigest(mutated)
+    with pytest.raises(ValueError, match="truth boundary drifted"):
+        a5.validate_registration(mutated)
+
+    mutated = copy.deepcopy(base)
+    mutated["truth_boundary"]["agent4_matching_current_i1_nonlinear_mean_audit_registered"] = True
     _redigest(mutated)
     with pytest.raises(ValueError, match="truth boundary drifted"):
         a5.validate_registration(mutated)
