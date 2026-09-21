@@ -1,0 +1,153 @@
+name: kokuno-agent5-current-exterior-xr-composite-ingest
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-current-exterior-xr-composite-ingest-096
+  pull_request:
+    branches:
+      - codex/kokuno-a5-current-cartesian-exterior-xr-ingest-095
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_a5_current_exterior_xr_composite_ingest_contract.py"
+      - "tests/test_kokuno_a5_current_exterior_xr_composite_ingest_contract.py"
+      - ".github/workflows/kokuno-agent5-current-exterior-xr-composite-ingest.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout exact A5 head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+
+      - name: Assert exact parent and strict three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          parent=dae4797fbd270a4f676b113f5ca3f7801d71a47e
+          git merge-base --is-ancestor "$parent" HEAD
+          test "$(git merge-base "$parent" HEAD)" = "$parent"
+          python - <<'PY'
+          import subprocess
+          parent = "dae4797fbd270a4f676b113f5ca3f7801d71a47e"
+          expected = {
+              "src/openai_ns_reconstruction/kokuno_a5_current_exterior_xr_composite_ingest_contract.py",
+              "tests/test_kokuno_a5_current_exterior_xr_composite_ingest_contract.py",
+              ".github/workflows/kokuno-agent5-current-exterior-xr-composite-ingest.yml",
+          }
+          observed = set(
+              subprocess.check_output(
+                  ["git", "diff", "--name-only", parent, "HEAD"], text=True
+              ).splitlines()
+          )
+          assert observed == expected, (observed, expected)
+          PY
+
+      - name: Authenticate exact upstream heads and blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          verify_ref () {
+            branch="$1"; head="$2"; path="$3"; blob="$4"
+            git fetch --no-tags origin "$branch:refs/remotes/origin/$branch"
+            test "$(git rev-parse "refs/remotes/origin/$branch")" = "$head"
+            test "$(git rev-parse "$head:$path")" = "$blob"
+          }
+
+          verify_ref \
+            codex/kokuno-a2-exterior-xr-composite-083 \
+            4be2c9ee898c44dd1ad2217e90601b161fe81964 \
+            src/openai_ns_reconstruction/kokuno_current_exterior_xr_leading_oscillatory_identity.py \
+            93a3da5c3aed4be8310cc510edfab6af940b64dc
+          verify_ref \
+            codex/kokuno-a2-exterior-xr-composite-083 \
+            4be2c9ee898c44dd1ad2217e90601b161fe81964 \
+            tests/test_constrained_kokuno_current_exterior_xr_leading_oscillatory_identity.py \
+            ff9f6e419ebf4ff24dfaf5716e8a7b047c1f2893
+          verify_ref \
+            codex/kokuno-a2-exterior-xr-composite-083 \
+            4be2c9ee898c44dd1ad2217e90601b161fe81964 \
+            .github/workflows/kokuno-agent2-current-exterior-xr-leading-oscillatory.yml \
+            c00bea38acfa1342ba7f77a17238029c58c157f3
+
+          verify_ref \
+            codex/kokuno-a3-current-exterior-xr-nonlinear-mean-105 \
+            fa95dee3709a82326167af1a2cb42b9b5f9a88a5 \
+            src/openai_ns_reconstruction/kokuno_current_exterior_xr_nonlinear_mean_attribution.py \
+            fdb01b9f02942060e8c343533c91fd44431b908e
+          verify_ref \
+            codex/kokuno-a3-current-exterior-xr-nonlinear-mean-105 \
+            fa95dee3709a82326167af1a2cb42b9b5f9a88a5 \
+            tests/test_constrained_kokuno_current_exterior_xr_nonlinear_mean_attribution.py \
+            71a47b51a9335d58f5b6809ff515d7dee80c6c62
+          verify_ref \
+            codex/kokuno-a3-current-exterior-xr-nonlinear-mean-105 \
+            fa95dee3709a82326167af1a2cb42b9b5f9a88a5 \
+            .github/workflows/kokuno-agent3-current-exterior-xr-nonlinear-mean.yml \
+            b6d959a720c91ffa9b7e4d5d2b0e8eb1f5a94fac
+
+          verify_ref \
+            codex/kokuno-a4-exterior-xr-composite-divergence-audit-098 \
+            84b8aab2f5a56dbfc8ef02b6053d19bea910a959 \
+            src/openai_ns_reconstruction/kokuno_a4_current_exterior_xr_leading_oscillatory_divergence_independent_audit.py \
+            be05390250ce21056e315a8a2b893c36cb1cc7e8
+          verify_ref \
+            codex/kokuno-a4-exterior-xr-composite-divergence-audit-098 \
+            84b8aab2f5a56dbfc8ef02b6053d19bea910a959 \
+            tests/test_constrained_kokuno_a4_current_exterior_xr_leading_oscillatory_divergence_independent_audit.py \
+            b738f3613684175701fac4a6e26b2e8762b8c908
+          verify_ref \
+            codex/kokuno-a4-exterior-xr-composite-divergence-audit-098 \
+            84b8aab2f5a56dbfc8ef02b6053d19bea910a959 \
+            .github/workflows/kokuno-agent4-current-exterior-xr-leading-oscillatory-divergence-audit.yml \
+            d17a0cc8067cdc5266e8b852dba5fc9b47258d37
+
+          verify_ref \
+            agent-kokuno-1/current-cartesian-rf40-first-turn-097 \
+            23c00b98526e187ff04d432745300a084ec859f2 \
+            src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_rf40_first_turn.py \
+            bf71948cbdb827d791b86ab8f00496bd1b231961
+          verify_ref \
+            agent-kokuno-1/current-cartesian-rf40-first-turn-097 \
+            23c00b98526e187ff04d432745300a084ec859f2 \
+            tests/test_kokuno_pa16_current_cartesian_rf40_first_turn.py \
+            14703a4151ef86fecc2a3731f7e0bd3f81602ad2
+          verify_ref \
+            agent-kokuno-1/current-cartesian-rf40-first-turn-097 \
+            23c00b98526e187ff04d432745300a084ec859f2 \
+            .github/workflows/kokuno-agent1-current-cartesian-rf40-first-turn.yml \
+            c723e37ec024e5bbde4a4c05e83401b6d0e9c6ab
+
+      - name: Run parent and new Agent-5 fail-closed tests
+        run: >-
+          python -m pytest -q -W error
+          tests/test_kokuno_a5_current_cartesian_exterior_xr_ingest_contract.py
+          tests/test_kokuno_a5_current_exterior_xr_composite_ingest_contract.py
+
+      - name: Materialize checksum-bound registration receipt
+        run: |
+          mkdir -p artifacts/kokuno_agent5
+          PYTHONPATH=src python -m openai_ns_reconstruction.kokuno_a5_current_exterior_xr_composite_ingest_contract \
+            --exact-head "$(git rev-parse HEAD)" \
+            --output artifacts/kokuno_agent5/current_exterior_xr_composite_ingest_receipt.json
+
+      - name: Upload registration receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-current-exterior-xr-composite-ingest-receipt
+          path: artifacts/kokuno_agent5/current_exterior_xr_composite_ingest_receipt.json
