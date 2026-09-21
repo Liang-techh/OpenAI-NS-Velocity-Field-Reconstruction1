@@ -1,0 +1,133 @@
+name: kokuno-agent5-current-partial-composite-mean-ingest
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-current-partial-composite-mean-ingest-093
+  pull_request:
+    branches:
+      - codex/kokuno-a5-current-cartesian-leading-ingest-092
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out exact A5 event head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: a5
+          fetch-depth: 0
+
+      - name: Verify exact parent and strict three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd a5
+          HEAD_SHA="${{ github.event.pull_request.head.sha || github.sha }}"
+          test "$(git rev-parse HEAD)" = "$HEAD_SHA"
+          git merge-base --is-ancestor 5558d0859d142914ae8921a4286f56077fe2232c HEAD
+          test "$(git rev-list --count 5558d0859d142914ae8921a4286f56077fe2232c..HEAD)" -eq 3
+          mapfile -t files < <(git diff --name-only 5558d0859d142914ae8921a4286f56077fe2232c..HEAD)
+          test "${#files[@]}" -eq 3
+          printf '%s\n' "${files[@]}" | sort > /tmp/actual-files
+          printf '%s\n' \
+            .github/workflows/kokuno-agent5-current-partial-composite-mean-ingest.yml \
+            src/openai_ns_reconstruction/kokuno_a5_current_partial_composite_mean_ingest_contract.py \
+            tests/test_kokuno_a5_current_partial_composite_mean_ingest_contract.py \
+            | sort > /tmp/expected-files
+          diff -u /tmp/expected-files /tmp/actual-files
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install A5 test dependencies
+        shell: bash
+        run: python -m pip install -e './a5[dev]'
+
+      - name: Run parent and new A5 fail-closed regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH="$PWD/a5/src" python -m py_compile \
+            a5/src/openai_ns_reconstruction/kokuno_a5_current_partial_composite_mean_ingest_contract.py \
+            a5/tests/test_kokuno_a5_current_partial_composite_mean_ingest_contract.py
+          PYTHONPATH="$PWD/a5/src" python -m pytest -q -W error \
+            a5/tests/test_kokuno_a5_current_cartesian_leading_ingest_contract.py \
+            a5/tests/test_kokuno_a5_current_partial_composite_mean_ingest_contract.py
+
+      - name: Check out exact A2 partial composite
+        uses: actions/checkout@v4
+        with:
+          ref: 3a6405bbd3d10b8c3b38078f0c989c45e5d407b4
+          path: a2
+          fetch-depth: 1
+
+      - name: Check out exact A3 current partial nonlinear mean
+        uses: actions/checkout@v4
+        with:
+          ref: bdb02ad487a175ab62748687c3172127d09aeb9c
+          path: a3
+          fetch-depth: 1
+
+      - name: Check out exact A4 leading-only audit
+        uses: actions/checkout@v4
+        with:
+          ref: 50485166808ac9d942ab017708c23438dfdb01a6
+          path: a4
+          fetch-depth: 1
+
+      - name: Authenticate exact sibling heads and blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C a2 rev-parse HEAD)" = "3a6405bbd3d10b8c3b38078f0c989c45e5d407b4"
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_current_partial_leading_oscillatory_velocity.py)" = \
+            "532435705bd5db341e82371180da8c04c3dd6c14"
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_oscillatory_batch_differentials.py)" = \
+            "12df3bf6c949baeebf609b366f2973e7f515a157"
+
+          test "$(git -C a3 rev-parse HEAD)" = "bdb02ad487a175ab62748687c3172127d09aeb9c"
+          test "$(git -C a3 hash-object src/openai_ns_reconstruction/kokuno_current_partial_nonlinear_mean_attribution.py)" = \
+            "9c62ae3c3b4b3ca2d9082f822d57feef700ea6cf"
+          test "$(git -C a3 hash-object tests/test_constrained_kokuno_current_partial_nonlinear_mean_attribution.py)" = \
+            "4e70f5b7b51105e00ff44b32a2fe16473854c810"
+          test "$(git -C a3 hash-object .github/workflows/kokuno-agent3-current-partial-nonlinear-mean.yml)" = \
+            "2b8514c25dc74e7b2aa4df43cf3cf23d00993572"
+
+          test "$(git -C a4 rev-parse HEAD)" = "50485166808ac9d942ab017708c23438dfdb01a6"
+          test "$(git -C a4 hash-object src/openai_ns_reconstruction/kokuno_a4_current_cartesian_leading_divergence_independent_audit.py)" = \
+            "c0773b7c30a99216147dcc605a9d61b88ebbccb5"
+
+      - name: Materialize checksum-bound A5 registration receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p receipts
+          HEAD_SHA="${{ github.event.pull_request.head.sha || github.sha }}"
+          PYTHONPATH="$PWD/a5/src" python -m \
+            openai_ns_reconstruction.kokuno_a5_current_partial_composite_mean_ingest_contract \
+            --exact-head "$HEAD_SHA" \
+            --out receipts/kokuno_a5_current_partial_composite_mean_ingest.json
+
+      - name: Upload registration receipt before enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a5-current-partial-composite-mean-ingest
+          path: receipts/kokuno_a5_current_partial_composite_mean_ingest.json
+          if-no-files-found: error
+
+      - name: Enforce frozen A5 registration contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH="$PWD/a5/src" python -m \
+            openai_ns_reconstruction.kokuno_a5_current_partial_composite_mean_ingest_contract \
+            --check receipts/kokuno_a5_current_partial_composite_mean_ingest.json
