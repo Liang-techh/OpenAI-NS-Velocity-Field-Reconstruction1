@@ -15,5 +15,14 @@
   "paper_exact": false,
   "openai_field_identified": false,
   "blowup_proved": false,
-  "publication_scope": "Current retained root baseline published; other agent branches preserved, no global best claim"
+  "publication_scope": "Current retained root baseline published; other agent branches preserved, no global best claim",
+  "navigation_updated": "2026-09-21",
+  "retained_candidate_scope": "Backward-compatible main Python API default, not the latest documented research candidate",
+  "latest_documented_geometry_candidate": "ST063-G2R",
+  "documented_residual_controls": ["ST061-D", "ST061-P"],
+  "bundled_main_viewer_candidates": ["ST054-Q2", "ST054-M3"],
+  "research_catalog": "docs/research_catalog.json",
+  "latest_results": "docs/RESEARCH_STATUS.md",
+  "latest_research_assets_fully_imported_to_main": false,
+  "organization_changes_scientific_defaults": false
 }

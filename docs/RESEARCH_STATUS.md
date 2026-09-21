@@ -1,36 +1,61 @@
-# 当前研究状态 — 2026-09-17 发布快照
+# Research results and limitations
 
-## 保留 ST006，不宣称达标
+Updated 2026-09-21 from pinned ST061 and ST063 study records. This is a navigation and reporting update, not a new fit or a new scientific validation. The original full momentum maximum and spatial volume L2 targets remain 0.001 and remain unmet.
 
-ST006 是此根研究路线当前保留基线，不是数学全局最优，也不是通过完整 NS 验收的解。后续 ST030、ST032、ST033 没有同时改善完整动量最大残差和体积 L2，故未替换它。
+## Latest geometry experiment: ST063
 
-[冻结原始参数](../artifacts/research/ST006/candidate.json) 的 SHA256：
-`6b4d84b48ab9dbcd2ee1a1858d3e56ef81523f5864369d7e96c6431fccf107a3`
+Source: [unaltered ST063 record](research_snapshots/ST063.md), copied from commit `a3d04d3467361bab7c9fc7c8c6aedf31987ee069`, issue #939.
 
-1946 个存储参数，9×9×8 混合空间—时间表示。全局轴对称，流函数保证解析散度恒等式，光滑紧支撑。初始能量归一化，原受限外力，不能通过缩小到零或定义任意外力通过验收。
+All selected arrays were frozen before the two holdouts. Each validation used 4,096 Cartesian points and six original times, with separate original spatial, temporal and energy-quadrature refinements. Reported values are worst over the six times at h=0.005 and time step=0.0025.
 
-## 数值证据
+| Seed | Candidate | Sampled full-vector max | Spatial volume L2 |
+|---|---|---:|---:|
+| 9216391 | ST061-P | 0.026279255060335002 | 0.034035600656015505 |
+| 9216391 | ST063-G1R | 0.024546533709074312 | 0.033767328775136926 |
+| 9216391 | ST063-G2R | 0.02438535329193401 | 0.03425749818472021 |
+| 9216392 | ST061-P | 0.02566467314396125 | 0.03358854497849373 |
+| 9216392 | ST063-G1R | 0.026861392722101148 | 0.033883206585681475 |
+| 9216392 | ST063-G2R | 0.02250355909296729 | 0.034206087967209475 |
 
-[原始 9172801 留出报告](../artifacts/research/ST006/evidence/round2/ST006_validation.json)：4096 个 Cartesian 点，六个时刻，空间步长 .005，时间步长 .0025。最差完整动量采样最大值 .1082289305，体积 L2 .1075843288，均高于 .001。原梯级散度最大误差也失败；[追加细化](../artifacts/research/ST006/evidence/round2/additional_refinement.json)改善散度但不消除动量误差。
+G2R decreases paired sampled maxima by 7.21%/12.32%, but increases L2 by 0.65%/1.84%. G1R worsens the second maximum and second L2; its independent structure audit also records a radial-pressure sign miss. All six original reports fail both momentum gates. The other original sampled gates passing is not a full-domain structure certificate.
 
-后续同样本配对结果来源于 [固定研究提交结果摘要](../experiments/root_st030/result_summary.json)：
+### Geometry, not image similarity
 
-| 种子 / 候选 | ST006 max → child max | ST006 L2 → child L2 |
+In the declared cylinder r<=0.35, |z|<=0.60, using omega_z squared, centered axial variance, and single-transverse variance r^2/2:
+
+| Time | Parent aspect | G2R aspect |
 |---|---:|---:|
-| 9172910 / ST030 | .1084423 → .2158413 | .1066216 → .1216973 |
-| 9172911 / ST032 | .1112947 → .1498017 | .1113323 → .1073684 |
-| 9172912 / ST033 | .0965606 → .1161918 | .1082705 → .1219378 |
+| 0.25 | 1.48755304 | 1.59680197 |
+| 0.50 | 1.65049839 | 1.73146643 |
+| 0.75 | 1.75122740 | 1.81256943 |
 
-只比较同一行；不跨种子选择较小数字宣称改善。ST031 是非轴对称有限模式能力诊断，不具备原全场轴对称实验验收资格。完整历史运行日志和未获采用参数仍在此前研究档案，本次 main 发布三份 ST006 原始证据和后续对照摘要，不声称历史档案全部入库。
+At t=0.5, the on-axis angular-velocity factor at z=0.6 changes from 0.02876447 to 0.08350277; at z=0 it decreases from 0.09172868 to 0.08589759. This is redistribution, not stronger rotation everywhere. The low-threshold omega_z>=0.15 near-axis band spans the observation window; its length is observation-limited. Neither field forms the claimed axis-connected strong band at 0.25 or 0.35. The hoped-for 10%–20% aspect improvement is not achieved and the central disk remains.
 
-## 三种“通过”严格分开
+G2R retains five direction checks on the stated fresh core probes and at least 99.699% signed shear on the fresh midplane probes. Bias remains positive but its minimum decreases. Effective-volume changes are small, not literally zero or certified for every time. Exact windows, tolerances, rejected fits and restart limits remain in the original record.
 
-1. 文件哈希、序列化、API 与回归测试：软件/发布完整性。
-2. 明确域、样本与精度下的散度、动量、能量等门槛：独立数值科学验收，当前失败。
-3. 连续域严格证书、原场身份或奇异性证明：未完成、未声称。
+## Residual-oriented controls: ST061
 
-`pde_validated=false`, `paper_exact=false`, `openai_field_identified=false`, `blowup_proved=false`。
+Source: [unaltered ST061 record](research_snapshots/ST061.md), commit `ad0e6dacf3851a12f4272bb4f6b282cf49506d8e`, issue #900. These are different holdouts from ST063; do not rank candidates by picking a favorable value across experiments.
 
-## 下一阶段
+| Seed | Candidate | Sampled full-vector max | Spatial volume L2 |
+|---|---|---:|---:|
+| 9206291 | ST060-Q | 0.027559315226219006 | 0.03374187106068435 |
+| 9206291 | ST061-D | 0.026788020110924435 | 0.03333465903335943 |
+| 9206291 | ST061-P | 0.02580782220423295 | 0.03347432641256566 |
+| 9206292 | ST060-Q | 0.027992393733693038 | 0.03457784543286563 |
+| 9206292 | ST061-D | 0.027204469154934973 | 0.03426968736612646 |
+| 9206292 | ST061-P | 0.02620795221578385 | 0.034440441141806846 |
 
-优先审查固定双参数无散外力、紧支撑压力和所需流动结构的相容性，再选择有证据的构造。并行 Kokuno 核心/振荡/修正路线与该基线不同，不把局部核区 RMS 或软件 CI 当成全域动量验收。研究需要新实验号与独立样本，不回填修改原报告。
+D is the lower-L2 alternative, P the lower-peak alternative on these paired samples. The finite-budget optimizers were not proved optimal. Unconstrained pressure projection was rejected because it reversed the audited axial pressure directions. This organization update does not re-run those studies or reinterpret internal optimizer failures as convergence.
+
+## Historical compatibility baseline
+
+[ST006](../artifacts/research/ST006/manifest.json) remains the `research_baseline` API default for compatibility. Its original seed 9172801 report records max 0.1082289305, volume L2 0.1075843288 and a failed original divergence maximum gate. It is not the latest scientific result. Its bytes, evidence and API are not changed here.
+
+The old ST006/ST030–ST033 publication discussion is retained at the pre-organization commit and in [the old experiment index](../artifacts/research/experiment_index.json). The newer [catalog](research_catalog.json) is an additional discovery index, not a replacement of historical evidence.
+
+## Acceptance and availability
+
+Spatial volume L2 is sqrt(64*mean(|R|^2)) at each time. It is not RMS, a time average, a color scale or an effective-volume statistic. Finite maxima are not continuous suprema. All source-field identity, PDE-validation and blow-up flags stay false.
+
+ST061/ST063 complete offline bundles contain more than their current GitHub branches. New MATLAB comparison code was exported and checked through Python references but not run natively in ST063. Original ST054 native receipts cannot certify this new interface. See [availability and exact hashes](research_catalog.json) and [visualization](../visualization/README.md).

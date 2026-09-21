@@ -1,16 +1,19 @@
-# 分支与 PR 导航
+# Branch and PR guide
 
-这是 2026-09-17 的作用域导航，不是全部分支的完整清单。开放状态会变化；应读取 GitHub 当时的 PR 与头提交，不依赖本页推断可合并性。
+Updated 2026-09-21. This is a curated scope guide, not a complete inventory of every branch or a live claim that all CI has passed.
 
-| 分支 / PR | 作用 | 发布策略 |
+| Branch / location | Purpose | Safe interpretation |
 |---|---|---|
-| `main` | 保留 ST006 的可运行发布入口与统一目录 | 本次只导入已指明源文件和证据，不整栈合并并行研究 |
-| `codex/cr001-constraints` / #1 | 多 agent 集成研究、Eq45/Kokuno 等工作 | 保留其原任务与排程；不要误用 main 的旧任务状态替换它 |
-| `research/root-st001-full-momentum` / #210 | 首轮完整动量构造、压力矩必要条件及失败记录 | 保留历史与 review，不自动关闭 |
-| `research/st030-curvature-source-audit` / #240 | ST030–ST033 数值实验与广泛来源审查 | 固定提交 `7c63cdb9...` 中的独立实现导入发布；不是所有原分支文件的合并 |
-| Kokuno / #233 及其依赖 | 来源原生核心主场与振荡等并行整合 | 核区诊断不等于原全域 1e-3 验收；依赖与最终外层匹配另行审查 |
-| `research/publish-st006-organize` | 本次冻结成果发布与非破坏性目录整理 | 合并后保留审计历史；不得把发布视为 PDE 成功 |
+| `main` | Stable checkout, compatible ST006 API, bundled ST054 viewer and current research navigation | Updated documentation does not change runtime candidate selection |
+| `research/st063-axial-core` | Latest user-requested geometry experiment, issue #939 | Pinned record `a3d04d3467361bab7c9fc7c8c6aedf31987ee069`; complete data remains in the delivered bundles |
+| `research/st061-quadratic-subspace` | Residual/volume method controls, issue #900 | Pinned record `ad0e6dacf3851a12f4272bb4f6b282cf49506d8e`; retain D/P tradeoffs |
+| `research/st062-feasible-subproblems` | Solver-diagnosis work, issue #932 | Do not infer a completed ST062 candidate from its issue number |
+| `codex/cr001-constraints` | Separate multi-agent integration and live task routing | Read that branch's current task file; do not replace its state with this overview |
+| `docs/st063-repository-refresh` | This maintenance change, issue #1068 | English entry points and evidence indexing only; no new fit or scientific promotion |
+| Historical experiment branches and PRs | Original code, failures and previous research | Preserve; an old number or open state is not proof of incompleteness or acceptance |
 
-共同任务讨论：[Issue #205](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/issues/205)。
+Pinned original study records are available directly on main as [ST061](research_snapshots/ST061.md) and [ST063](research_snapshots/ST063.md). The [catalog](research_catalog.json) identifies complete offline bundles separately from branch source files.
 
-不批量删除分支、不批量关闭 PR、不强推、不把开放 PR 视为未开始任务。不改变已有定时 agent。合并时核对精确 head、依赖和实际测试；对方分支变动时重读后再写。
+The repository without a trailing `1` is a separate publication project. This change does not update that repository, its release artifacts or its About metadata.
+
+No branches or PRs are bulk-deleted, no histories are rewritten, and no scientific issues are closed by this cleanup. Before merging a numerical change, recheck the exact head, dependencies and actual executed tests. Never treat a merged documentation PR as a merged candidate or a proof.

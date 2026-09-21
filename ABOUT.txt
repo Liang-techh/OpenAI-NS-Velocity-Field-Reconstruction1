@@ -1,0 +1,1 @@
+Independent Navier-Stokes candidates: full-residual validation, effective-volume safeguards, axial-core geometry and MATLAB visualization. Latest study: ST063; 1e-3 unmet.
