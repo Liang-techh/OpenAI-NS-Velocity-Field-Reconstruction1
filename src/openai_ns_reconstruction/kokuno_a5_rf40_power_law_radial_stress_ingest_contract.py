@@ -1,11 +1,10 @@
 """Kokuno Agent-5 ingest contract for the current RF40 power-law radial-stress seam.
 
-Integration/provenance glue only.  The exact production chain is
-A1 #1005 -> A2 #1010 -> A3 #1028 nonlinear m=0 mean -> A3 #1037 compact
-(theta e=2 / axial e=1) radial stress through X_4.  A4 #1029 independently
-audits the parent X_4 nonlinear-mean handoff, not the new stress operator.
-At this freeze no concrete dedicated A4 stress-audit PR exists, so that state
-remains fail-closed even though K4-VAL-106 has been preregistered in Issue #15.
+Integration/provenance glue only. Exact current chain:
+A1 #1005 -> A2 #1010 -> A3 #1028 X4 nonlinear m=0 mean -> A3 #1037
+compact theta(e=2)/axial(e=1) stress -> A4 #1038 implementation-distinct
+stress audit. A4 #1029 remains the independent audit of the parent X4 mean.
+No radial force, complete NS defect, correction authorization, or PDE promotion.
 """
 from __future__ import annotations
 
@@ -76,10 +75,43 @@ AGENT4_POWER_LAW_MEAN_AUDIT = {
     "implementation_distinct": True,
 }
 
+AGENT4_POWER_LAW_STRESS_AUDIT = {
+    "pr": 1038,
+    "head": "a4546cacfa224c82398ef7245ba41cca41159800",
+    "branch": "codex/kokuno-a4-rf40-power-law-radial-stress-audit-106",
+    "source_path": "src/openai_ns_reconstruction/kokuno_a4_current_rf40_power_law_radial_stress_independent_audit.py",
+    "source_blob": "17f98a0c1054132d251dfe7310120e8d41f60244",
+    "test_path": "tests/test_constrained_kokuno_a4_current_rf40_power_law_radial_stress_independent_audit.py",
+    "test_blob": "2d476a7dc71dfa90351b1c3de2be1c2bc50cb8d7",
+    "workflow_path": ".github/workflows/kokuno-agent4-current-rf40-power-law-radial-stress-independent-audit.yml",
+    "workflow_blob": "016a80bdb311e547db4fb4cde85e2a9accb2b241",
+    "audited_agent3_pr": 1037,
+    "audited_agent3_head": "9a5cdcdf78b7862d5ebe171efb9ca56d53664612",
+    "audited_agent3_source_blob": "44dc6d61bc965cef08b119aa5df3026175abd5de",
+    "production_operator": "a3_inherited_compact_moment_complement_first_cell_trapezoidal",
+    "independent_operator": "local_piecewise_cubic_plus_order8_gauss_legendre_on_json_public_receipts",
+    "frozen_seed": 9173781,
+    "frozen_time": 0.39,
+    "frozen_z": -0.08,
+    "radial_interval": [0.005, 0.44],
+    "radial_counts": [43, 85, 169],
+    "offgrid_count": 169,
+    "fine_relative_rms_gate": 5.0e-2,
+    "fine_relative_max_gate": 1.5e-1,
+    "weighted_moment_relative_error_gate": 3.0e-2,
+    "axis_near_normalized_error_gate": 1.5e-1,
+    "outer_edge_normalized_stress_gate": 1.0e-8,
+    "nontrivial_stress_rms_floor": 1.0e-12,
+    "implementation_distinct": True,
+    "complete_ns_residual_evidence": False,
+    "authorized_as_ns_correction_target": False,
+}
+
 OBSERVED_CI_AT_FREEZE = {
     "parent_a5_1030": {"repository_tests_run": 35635405082, "dedicated_run": 35635405080, "status": "queued", "conclusion": None},
     "agent3_1037_power_law_stress": {"repository_tests_run": 35640260781, "dedicated_run": 35640260778, "status": "queued", "conclusion": None},
     "agent4_1029_power_law_mean_audit": {"repository_tests_run": 35635278480, "dedicated_run": 35635278504, "status": "queued", "conclusion": None},
+    "agent4_1038_power_law_stress_audit": {"repository_tests_run": 35641711974, "dedicated_run": 35641712034, "status": "queued", "conclusion": None},
 }
 
 FROZEN_SCIENCE = copy.deepcopy(parent.FROZEN_SCIENCE)
@@ -93,27 +125,28 @@ TRUTH_BOUNDARY.update({
     "agent4_1029_power_law_mean_audit_registered": True,
     "agent3_1037_power_law_radial_stress_registered": True,
     "current_nonlinear_radial_stress_through_power_law_materialized": True,
-    "agent4_dedicated_power_law_radial_stress_audit_present": False,
-    "agent4_independent_power_law_radial_stress_audit_registered": False,
+    "agent4_dedicated_power_law_radial_stress_audit_present": True,
+    "agent4_independent_power_law_radial_stress_audit_registered": True,
     "agent4_independent_power_law_radial_stress_audit_admitted": False,
     "current_nonlinear_radial_force_through_power_law_materialized": False,
     "scoped_power_law_radial_stress_authorized_as_ns_correction_target": False,
 })
 
 PIPELINE_POSITION = {
-    "stage": "production velocity remains identity-bound through X_4; correction-side X_4 nonlinear mean now reaches compact theta/axial stress",
+    "stage": "production velocity is identity-bound through X_4; correction-side X_4 mean reaches compact stress with a matching independent A4 stress audit registered",
     "production_velocity": "A1 #1005 -> A2 #1010 through RF40 power-law X_4",
     "correction_side": "A3 #1028 X_4 nonlinear m=0 mean -> A3 #1037 compact theta(e=2)/axial(e=1) stress",
-    "independent_evidence": "A4 #1029 audits the parent X_4 nonlinear mean only; no concrete dedicated A4 stress-audit PR exists at freeze",
-    "new_output": "checksum-bound A5 ingest receipt for exact A3 #1037 X_4 radial-stress artifact",
-    "not_output": "X_4 partial_z sigma_1 force, stress scientific admission, complete NS defect, correction authorization/velocity, finite cycle, export-ready candidate, or PDE validation",
-    "next_shortest_blocker": "obtain matching implementation-distinct A4 audit of #1037, then materialize X_4 partial_z sigma_1 radial force on this exact identity and independently audit that force",
+    "independent_evidence": "A4 #1029 audits the parent X_4 nonlinear mean; A4 #1038 independently audits exact A3 #1037 stress via JSON-round-tripped public receipts and a distinct cubic+GL8 operator",
+    "new_output": "checksum-bound A5 ingest/registration receipt for exact A3 #1037 plus matching A4 #1038 stress audit",
+    "not_output": "scientific admission while CI is unresolved, X_4 partial_z sigma_1 force, complete NS defect, correction authorization/velocity, finite cycle, export-ready candidate, or PDE validation",
+    "next_shortest_blocker": "materialize X_4 partial_z sigma_1 radial force on exact #1037 and obtain matching implementation-distinct A4 force audit while A1/A2 continue post-X4/global completion",
 }
 
 _EXPECTED = {
     "parent_a5": PARENT_A5,
     "agent3_power_law_stress": AGENT3_POWER_LAW_STRESS,
     "agent4_power_law_mean_audit": AGENT4_POWER_LAW_MEAN_AUDIT,
+    "agent4_power_law_stress_audit": AGENT4_POWER_LAW_STRESS_AUDIT,
     "observed_ci_at_freeze": OBSERVED_CI_AT_FREEZE,
     "frozen_science": FROZEN_SCIENCE,
     "final_gate": FINAL_GATE,
@@ -138,7 +171,7 @@ def _require_hex40(value: str, label: str) -> None:
 
 
 def _enforce_internal_relations(registration: Mapping[str, Any]) -> None:
-    for label in ("parent_a5", "agent3_power_law_stress", "agent4_power_law_mean_audit"):
+    for label in ("parent_a5", "agent3_power_law_stress", "agent4_power_law_mean_audit", "agent4_power_law_stress_audit"):
         obj = registration[label]
         _require_hex40(obj["head"], f"{label}.head")
         for key in ("source_blob", "test_blob", "workflow_blob"):
@@ -146,14 +179,17 @@ def _enforce_internal_relations(registration: Mapping[str, Any]) -> None:
 
     stress = registration["agent3_power_law_stress"]
     mean_audit = registration["agent4_power_law_mean_audit"]
-    if stress["parent_agent3_pr"] != mean_audit["audited_agent3_pr"]:
-        raise ValueError("A3 stress must consume the exact mean artifact audited by A4 #1029")
-    if stress["parent_agent3_head"] != mean_audit["audited_agent3_head"]:
-        raise ValueError("A3 stress parent and A4 mean-audit target head drifted")
+    stress_audit = registration["agent4_power_law_stress_audit"]
+    if stress["parent_agent3_pr"] != mean_audit["audited_agent3_pr"] or stress["parent_agent3_head"] != mean_audit["audited_agent3_head"]:
+        raise ValueError("A3 stress must consume the exact X4 mean artifact audited by A4 #1029")
     if mean_audit["audits_agent3_1037_radial_stress"]:
         raise ValueError("A4 #1029 must not be relabeled as a stress audit")
-    if stress["complete_ns_defect_evidence"] or stress["authorized_as_ns_correction_target"]:
-        raise ValueError("scoped X4 radial stress cannot be promoted to complete-NS evidence")
+    if stress_audit["audited_agent3_pr"] != stress["pr"] or stress_audit["audited_agent3_head"] != stress["head"] or stress_audit["audited_agent3_source_blob"] != stress["source_blob"]:
+        raise ValueError("A4 #1038 must target the exact registered A3 #1037 stress artifact")
+    if not stress_audit["implementation_distinct"] or stress_audit["independent_operator"] == stress_audit["production_operator"]:
+        raise ValueError("A4 #1038 stress audit must remain implementation-distinct")
+    if stress["complete_ns_defect_evidence"] or stress["authorized_as_ns_correction_target"] or stress_audit["complete_ns_residual_evidence"] or stress_audit["authorized_as_ns_correction_target"]:
+        raise ValueError("scoped X4 radial stress/audit cannot be promoted to complete-NS evidence")
 
     truth = registration["truth_boundary"]
     for key in (
@@ -161,12 +197,12 @@ def _enforce_internal_relations(registration: Mapping[str, Any]) -> None:
         "agent4_1029_power_law_mean_audit_registered",
         "agent3_1037_power_law_radial_stress_registered",
         "current_nonlinear_radial_stress_through_power_law_materialized",
+        "agent4_dedicated_power_law_radial_stress_audit_present",
+        "agent4_independent_power_law_radial_stress_audit_registered",
     ):
         if truth.get(key) is not True:
             raise ValueError(f"required X4 stress truth regressed: {key}")
     for key in (
-        "agent4_dedicated_power_law_radial_stress_audit_present",
-        "agent4_independent_power_law_radial_stress_audit_registered",
         "agent4_independent_power_law_radial_stress_audit_admitted",
         "current_nonlinear_radial_force_through_power_law_materialized",
         "scoped_power_law_radial_stress_authorized_as_ns_correction_target",
