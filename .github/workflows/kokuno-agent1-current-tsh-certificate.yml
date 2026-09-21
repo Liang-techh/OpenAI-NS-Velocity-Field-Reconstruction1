@@ -1,0 +1,74 @@
+name: kokuno-agent1-current-tsh-certificate
+
+on:
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_pa16_current_tsh_certificate.py"
+      - "tests/test_kokuno_pa16_current_tsh_certificate.py"
+      - ".github/workflows/kokuno-agent1-current-tsh-certificate.yml"
+  workflow_dispatch:
+
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+
+      - name: Assert stacked A1 ancestry
+        shell: bash
+        run: |
+          git merge-base --is-ancestor 2797eed8e3b9b3374c676d8f517f05e3f0fc3e6b HEAD
+
+      - name: Verify pinned corrected-source blob
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib
+          import urllib.request
+
+          url = "https://raw.githubusercontent.com/KokunoYumeto/yang-mills-interacting-workbench/143f6773feb424ad9ed3a8d116653200f20346b7/navier-stokes/navier_stokes_workbench.tex"
+          data = urllib.request.urlopen(url, timeout=30).read()
+          digest = hashlib.sha1(b"blob %d\0" % len(data) + data).hexdigest()
+          expected = "205a99807302e21a51c5eaf223390c0dfc42bcd0"
+          if digest != expected:
+              raise SystemExit(f"corrected source blob drifted: {digest} != {expected}")
+          print("corrected 2026-09-09 source blob pinned")
+          PY
+
+      - name: Compile focused files
+        run: |
+          python -m py_compile src/openai_ns_reconstruction/kokuno_pa16_current_tsh_certificate.py
+          python -m py_compile tests/test_kokuno_pa16_current_tsh_certificate.py
+
+      - name: Run parent and current T_sh regressions
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_pa10_actual_xi_prefix_moments.py \
+            tests/test_kokuno_pa16_current_tsh_certificate.py
+
+      - name: Emit deterministic scoped receipt
+        run: |
+          mkdir -p artifacts/kokuno_agent1_current_tsh
+          python -m openai_ns_reconstruction.kokuno_pa16_current_tsh_certificate \
+            --eta-nodes 17 \
+            --output artifacts/kokuno_agent1_current_tsh/receipt.json
+          cat artifacts/kokuno_agent1_current_tsh/receipt.json
+
+      - name: Upload scoped receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-current-tsh-certificate
+          path: artifacts/kokuno_agent1_current_tsh/receipt.json
