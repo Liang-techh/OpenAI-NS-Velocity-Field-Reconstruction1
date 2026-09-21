@@ -1,0 +1,188 @@
+name: kokuno-agent3-current-partial-nonlinear-mean
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a3-current-partial-nonlinear-mean-102
+  pull_request:
+    branches:
+      - agent-kokuno-3/current-pa16-cartesian-leading-bind-096
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Check out exact A3 event head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: a3
+          fetch-depth: 0
+
+      - name: Verify A3 parent and three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd a3
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+          git merge-base --is-ancestor 4259def27bc2395a046dd8bcb778fb3fa036d64d HEAD
+          test "$(git rev-list --count 4259def27bc2395a046dd8bcb778fb3fa036d64d..HEAD)" -eq 3
+          mapfile -t files < <(git diff --name-only 4259def27bc2395a046dd8bcb778fb3fa036d64d..HEAD)
+          test "${#files[@]}" -eq 3
+          printf '%s\n' "${files[@]}" | sort > /tmp/actual-files
+          printf '%s\n' \
+            .github/workflows/kokuno-agent3-current-partial-nonlinear-mean.yml \
+            src/openai_ns_reconstruction/kokuno_current_partial_nonlinear_mean_attribution.py \
+            tests/test_constrained_kokuno_current_partial_nonlinear_mean_attribution.py \
+            | sort > /tmp/expected-files
+          diff -u /tmp/expected-files /tmp/actual-files
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install exact A3 head
+        shell: bash
+        run: python -m pip install -e './a3[dev]'
+
+      - name: Run focused A3 regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            a3/src/openai_ns_reconstruction/kokuno_current_partial_nonlinear_mean_attribution.py \
+            a3/tests/test_constrained_kokuno_current_partial_nonlinear_mean_attribution.py
+          python -m pytest -q -W error \
+            a3/tests/test_constrained_kokuno_oscillatory_nonlinear_mean_attribution.py \
+            a3/tests/test_constrained_kokuno_current_partial_nonlinear_mean_attribution.py
+
+      - name: Check out exact A2 current partial composite
+        uses: actions/checkout@v4
+        with:
+          ref: 3a6405bbd3d10b8c3b38078f0c989c45e5d407b4
+          path: a2
+          fetch-depth: 1
+
+      - name: Check out exact A1 current Cartesian leading
+        uses: actions/checkout@v4
+        with:
+          ref: 7dc09c59584a6b1bfaabcbb8df00283d9f9a40c1
+          path: a1
+          fetch-depth: 1
+
+      - name: Authenticate sibling heads and source blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C a2 rev-parse HEAD)" = "3a6405bbd3d10b8c3b38078f0c989c45e5d407b4"
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_current_partial_leading_oscillatory_velocity.py)" = \
+            "532435705bd5db341e82371180da8c04c3dd6c14"
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_oscillatory_batch_differentials.py)" = \
+            "12df3bf6c949baeebf609b366f2973e7f515a157"
+          test "$(git -C a1 rev-parse HEAD)" = "7dc09c59584a6b1bfaabcbb8df00283d9f9a40c1"
+          test "$(git -C a1 hash-object src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_leading_velocity.py)" = \
+            "ca8b80b0451be1a8f31deaf620f542d8c2e92c0c"
+
+      - name: Materialize real current-lineage nonlinear mean receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p receipts
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          import math
+          import numpy as np
+          import openai_ns_reconstruction
+
+          pkg = openai_ns_reconstruction
+          a1_pkg = str(Path('a1/src/openai_ns_reconstruction').resolve())
+          a2_pkg = str(Path('a2/src/openai_ns_reconstruction').resolve())
+          a3_pkg = str(Path('a3/src/openai_ns_reconstruction').resolve())
+
+          pkg.__path__.insert(0, a1_pkg)
+          from openai_ns_reconstruction.kokuno_pa16_current_cartesian_leading_velocity import (
+              KokunoPA16CurrentCartesianLeadingVelocity,
+          )
+          leading = KokunoPA16CurrentCartesianLeadingVelocity()
+
+          pkg.__path__.insert(0, a2_pkg)
+          from openai_ns_reconstruction.kokuno_current_partial_leading_oscillatory_velocity import (
+              _CurrentPartialLeadingOscillatoryField,
+          )
+          from openai_ns_reconstruction.kokuno_oscillatory_batch_differentials import (
+              evaluate_oscillatory_batch_differentials,
+          )
+          field = _CurrentPartialLeadingOscillatoryField(leading)
+
+          pkg.__path__.insert(0, a3_pkg)
+          from openai_ns_reconstruction.kokuno_current_partial_nonlinear_mean_attribution import (
+              ExactCurrentPartialNonlinearBackend,
+              materialize_current_partial_nonlinear_mean_attribution,
+              truth_boundary,
+          )
+
+          backend = ExactCurrentPartialNonlinearBackend.bind(
+              field, evaluate_oscillatory_batch_differentials
+          )
+          radius = np.asarray([math.hypot(0.41, -0.17)], dtype=float)
+          z = np.asarray([-0.08], dtype=float)
+          t = np.asarray([0.39], dtype=float)
+          witness = materialize_current_partial_nonlinear_mean_attribution(
+              backend, radius, z, t
+          )
+          receipt = witness.to_receipt()
+          receipt['a3_truth_boundary'] = truth_boundary()
+          Path('receipts/kokuno_a3_current_partial_nonlinear_mean.json').write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + '\n', encoding='utf-8'
+          )
+          PY
+
+      - name: Upload receipt before gate enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a3-current-partial-nonlinear-mean
+          path: receipts/kokuno_a3_current_partial_nonlinear_mean.json
+          if-no-files-found: error
+
+      - name: Enforce scoped scientific gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          receipt = json.loads(Path('receipts/kokuno_a3_current_partial_nonlinear_mean.json').read_text())
+          assert receipt['backend_kind'] == 'exact-current-a2-pr970-partial-nonlinear-attribution'
+          assert receipt['pointwise_three_piece_closure_absolute_max'] <= 5e-13
+          assert receipt['projected_three_piece_closure_absolute_max'] <= 1e-12
+          assert receipt['quadratic_mean_rms'] > 1e-12
+          boundary = receipt['a3_truth_boundary']
+          assert boundary['current_partial_mixed_nonlinear_mean_materialized'] is True
+          assert boundary['current_partial_quadratic_nonlinear_mean_materialized'] is True
+          for key in (
+              'radial_inverse_performed_in_this_increment',
+              'pressure_gradient_included',
+              'restricted_forcing_included',
+              'velocity_beyond_Xh_materialized',
+              'outer_global_leading_velocity_materialized',
+              'complete_ns_defect',
+              'scoped_nonlinear_mean_authorized_as_correction_target',
+              'mean_correction_velocity_materialized',
+              'real_candidate_finite_correction_cycle_run',
+              'heldout_normalized_ns_residual_assessed',
+              'residual_reduction_claimed',
+              'same_protocol_comparable_to_st006',
+              'pde_validated',
+              'blowup_proved',
+          ):
+              assert boundary[key] is False, key
+          assert boundary['final_normalized_momentum_gate'] == 1e-3
+          assert boundary['final_normalized_divergence_gate'] == 1e-5
+          PY
