@@ -1,0 +1,251 @@
+name: kokuno-agent4-current-rf40-axial-shutdown-radial-force-independent-audit
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a4-rf40-axial-shutdown-radial-force-independent-audit-104
+  pull_request:
+    branches:
+      - codex/kokuno-a3-rf40-axial-shutdown-radial-force-111
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Check out exact A4 event head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: a4
+          fetch-depth: 0
+
+      - name: Verify exact parent and three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd a4
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+          git merge-base --is-ancestor 93200f28deae4372c2338e0620b785543af892d4 HEAD
+          test "$(git rev-list --count 93200f28deae4372c2338e0620b785543af892d4..HEAD)" -eq 3
+          mapfile -t files < <(git diff --name-only 93200f28deae4372c2338e0620b785543af892d4..HEAD)
+          test "${#files[@]}" -eq 3
+          printf '%s\n' "${files[@]}" | sort > /tmp/actual-files
+          printf '%s\n' \
+            .github/workflows/kokuno-agent4-current-rf40-axial-shutdown-radial-force-independent-audit.yml \
+            src/openai_ns_reconstruction/kokuno_a4_current_rf40_axial_shutdown_radial_force_independent_audit.py \
+            tests/test_constrained_kokuno_a4_current_rf40_axial_shutdown_radial_force_independent_audit.py \
+            | sort > /tmp/expected-files
+          diff -u /tmp/expected-files /tmp/actual-files
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install exact A4 head
+        shell: bash
+        run: python -m pip install -e './a4[dev]'
+
+      - name: Authenticate exact A3 parent source
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C a4 hash-object src/openai_ns_reconstruction/kokuno_current_rf40_axial_shutdown_nonlinear_radial_force.py)" = \
+            "222e75ab5ecb1f0625ed3b25d4e2defe6f780b8f"
+          test "$(git -C a4 hash-object src/openai_ns_reconstruction/kokuno_current_rf40_axial_shutdown_nonlinear_radial_stress.py)" = \
+            "9c6082e6dc5edacf7b6a64e87549cbec142b3d4a"
+
+      - name: Run focused A4 software regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            a4/src/openai_ns_reconstruction/kokuno_a4_current_rf40_axial_shutdown_radial_force_independent_audit.py \
+            a4/tests/test_constrained_kokuno_a4_current_rf40_axial_shutdown_radial_force_independent_audit.py
+          python -m pytest -q -W error \
+            a4/tests/test_constrained_kokuno_current_rf40_axial_shutdown_nonlinear_radial_force.py \
+            a4/tests/test_constrained_kokuno_a4_current_rf40_axial_shutdown_radial_force_independent_audit.py
+
+      - name: Check out exact A2 RF40 axial-shutdown composite
+        uses: actions/checkout@v4
+        with:
+          ref: 93b99292fcf141f24b7c6d7e4fbf95775e6a07e5
+          path: a2
+          fetch-depth: 1
+
+      - name: Check out exact A1 RF40 axial-shutdown leading
+        uses: actions/checkout@v4
+        with:
+          ref: 2ac6460b483efb1c07f2fa65e7fed781a32f2718
+          path: a1
+          fetch-depth: 1
+
+      - name: Authenticate sibling heads and source blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C a2 rev-parse HEAD)" = "93b99292fcf141f24b7c6d7e4fbf95775e6a07e5"
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_current_rf40_axial_shutdown_leading_oscillatory_identity.py)" = \
+            "255e65ce0c37652858509c33e7c9fad40b73ca97"
+          test "$(git -C a1 rev-parse HEAD)" = "2ac6460b483efb1c07f2fa65e7fed781a32f2718"
+          test "$(git -C a1 hash-object src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_rf40_axial_shutdown.py)" = \
+            "057a0514c8a941c3e59922b8158f480434b4441e"
+
+      - name: Materialize public receipts and independent FD4 report
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p receipts
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          import traceback
+          import openai_ns_reconstruction
+
+          out = Path('receipts')
+          cases = []
+          try:
+              pkg = openai_ns_reconstruction
+              a1_pkg = str(Path('a1/src/openai_ns_reconstruction').resolve())
+              a2_pkg = str(Path('a2/src/openai_ns_reconstruction').resolve())
+              a4_pkg = str(Path('a4/src/openai_ns_reconstruction').resolve())
+
+              pkg.__path__.insert(0, a1_pkg)
+              from openai_ns_reconstruction.kokuno_pa16_current_cartesian_rf40_axial_shutdown import (
+                  KokunoPA16CurrentCartesianRF40AxialShutdown,
+              )
+              leading = KokunoPA16CurrentCartesianRF40AxialShutdown()
+
+              pkg.__path__.insert(0, a2_pkg)
+              from openai_ns_reconstruction.kokuno_current_rf40_axial_shutdown_leading_oscillatory_identity import (
+                  CurrentRF40AxialShutdownLeadingOscillatoryField,
+              )
+              from openai_ns_reconstruction.kokuno_oscillatory_batch_differentials import (
+                  evaluate_oscillatory_batch_differentials,
+              )
+              field = CurrentRF40AxialShutdownLeadingOscillatoryField(leading)
+
+              pkg.__path__.insert(0, a4_pkg)
+              from openai_ns_reconstruction.kokuno_current_rf40_axial_shutdown_nonlinear_mean_attribution import (
+                  ExactCurrentRF40AxialShutdownNonlinearBackend,
+              )
+              from openai_ns_reconstruction.kokuno_current_rf40_axial_shutdown_nonlinear_radial_force import (
+                  materialize_current_rf40_axial_shutdown_nonlinear_radial_force,
+              )
+              from openai_ns_reconstruction.kokuno_current_rf40_axial_shutdown_nonlinear_radial_stress import (
+                  materialize_current_rf40_axial_shutdown_nonlinear_radial_stress,
+              )
+              from openai_ns_reconstruction.kokuno_strict_inner_transport_radial_stress import (
+                  StrictInnerTransportRadialGeometry,
+              )
+              from openai_ns_reconstruction.kokuno_a4_current_rf40_axial_shutdown_radial_force_independent_audit import (
+                  FROZEN_BUMP_CENTER,
+                  FROZEN_BUMP_HALFWIDTH,
+                  FROZEN_TIME,
+                  FROZEN_Z_CENTERS,
+                  SCHEMA,
+                  TASK,
+                  PARENT_AGENT3_HEAD,
+                  audit_serialized_cases,
+                  frozen_radial_grid,
+                  required_z_offsets,
+              )
+
+              backend = ExactCurrentRF40AxialShutdownNonlinearBackend.bind(
+                  field, evaluate_oscillatory_batch_differentials
+              )
+              radii = frozen_radial_grid()
+
+              def roundtrip(value):
+                  return json.loads(json.dumps(value, sort_keys=True))
+
+              for center in FROZEN_Z_CENTERS:
+                  geometry = StrictInnerTransportRadialGeometry(
+                      time=FROZEN_TIME,
+                      axial_z=float(center),
+                      radii=tuple(float(v) for v in radii),
+                      bump_center=FROZEN_BUMP_CENTER,
+                      bump_halfwidth=FROZEN_BUMP_HALFWIDTH,
+                  )
+                  force_receipt = roundtrip(
+                      materialize_current_rf40_axial_shutdown_nonlinear_radial_force(
+                          backend, geometry
+                      ).to_receipt()
+                  )
+                  stress_receipts = []
+                  for offset in required_z_offsets():
+                      shifted = StrictInnerTransportRadialGeometry(
+                          time=FROZEN_TIME,
+                          axial_z=float(center + offset),
+                          radii=tuple(float(v) for v in radii),
+                          bump_center=FROZEN_BUMP_CENTER,
+                          bump_halfwidth=FROZEN_BUMP_HALFWIDTH,
+                      )
+                      stress_receipts.append(
+                          roundtrip(
+                              materialize_current_rf40_axial_shutdown_nonlinear_radial_stress(
+                                  backend, shifted
+                              ).to_receipt()
+                          )
+                      )
+                  cases.append({
+                      'force_receipt': force_receipt,
+                      'stress_receipts': stress_receipts,
+                  })
+
+              out.joinpath('public_receipts.json').write_text(
+                  json.dumps({'cases': cases}, indent=2, sort_keys=True) + '\n',
+                  encoding='utf-8',
+              )
+              report = audit_serialized_cases(roundtrip(cases))
+          except Exception as exc:
+              report = {
+                  'schema': locals().get('SCHEMA', 'kokuno-a4-current-rf40-axial-shutdown-radial-force-independent-audit-v1'),
+                  'task': locals().get('TASK', 'K4-VAL-104'),
+                  'parent_agent3_head': locals().get('PARENT_AGENT3_HEAD', '93200f28deae4372c2338e0620b785543af892d4'),
+                  'audit_pass': False,
+                  'failures': ['materialization_or_audit_error'],
+                  'error': f'{type(exc).__name__}: {exc}',
+                  'traceback': traceback.format_exc(),
+                  'truth_boundary': {'pde_validated': False},
+              }
+              out.joinpath('public_receipts_partial.json').write_text(
+                  json.dumps({'cases': cases}, indent=2, sort_keys=True) + '\n',
+                  encoding='utf-8',
+              )
+          out.joinpath('independent_report.json').write_text(
+              json.dumps(report, indent=2, sort_keys=True) + '\n',
+              encoding='utf-8',
+          )
+          PY
+
+      - name: Upload real receipts before scientific enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a4-rf40-axial-shutdown-radial-force-independent-audit
+          path: receipts/
+          if-no-files-found: error
+
+      - name: Enforce preregistered scoped scientific gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          from openai_ns_reconstruction.kokuno_a4_current_rf40_axial_shutdown_radial_force_independent_audit import (
+              enforce_scientific_gates,
+          )
+          report = json.loads(Path('receipts/independent_report.json').read_text())
+          enforce_scientific_gates(report)
+          assert report['truth_boundary']['pde_validated'] is False
+          assert report['truth_boundary']['complete_ns_defect'] is False
+          assert report['truth_boundary']['cartesian_correction_velocity_materialized'] is False
+          assert report['truth_boundary']['final_normalized_momentum_gate'] == 1e-3
+          assert report['truth_boundary']['final_normalized_divergence_gate'] == 1e-5
+          PY
