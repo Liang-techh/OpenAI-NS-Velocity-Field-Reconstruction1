@@ -1,0 +1,85 @@
+name: kokuno-agent5-current-cartesian-leading-ingest
+
+on:
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_a5_current_cartesian_leading_ingest_contract.py"
+      - "tests/test_kokuno_a5_current_cartesian_leading_ingest_contract.py"
+      - ".github/workflows/kokuno-agent5-current-cartesian-leading-ingest.yml"
+  push:
+    branches:
+      - "codex/kokuno-a5-current-cartesian-leading-ingest-092"
+  workflow_dispatch:
+
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout exact head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Verify exact parent and strict three-file delta
+        shell: bash
+        run: |
+          set -euo pipefail
+          PARENT=0a17e4b8d2ca90997bc9397d548cef94d792ccbe
+          git merge-base --is-ancestor "$PARENT" HEAD
+          test "$(git rev-parse "$PARENT")" = "$PARENT"
+          mapfile -t changed < <(git diff --name-only "$PARENT"...HEAD | sort)
+          expected=(
+            ".github/workflows/kokuno-agent5-current-cartesian-leading-ingest.yml"
+            "src/openai_ns_reconstruction/kokuno_a5_current_cartesian_leading_ingest_contract.py"
+            "tests/test_kokuno_a5_current_cartesian_leading_ingest_contract.py"
+          )
+          printf '%s\n' "${expected[@]}" | sort > /tmp/expected
+          printf '%s\n' "${changed[@]}" > /tmp/actual
+          diff -u /tmp/expected /tmp/actual
+          test "$(git rev-parse "$PARENT":src/openai_ns_reconstruction/kokuno_a5_current_pa16_profile_application_ingest_contract.py)" = "3dfe723ae2fd3a6209cbfffead3c13b4ee57bcef"
+
+      - name: Pin Agent-1 and Agent-4 exact upstream blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin \
+            refs/heads/codex/cr001-kokuno-agent1-current-cartesian-leading:refs/remotes/origin/kokuno-a1-pin \
+            refs/heads/agent-kokuno-4/current-cartesian-leading-divergence-094:refs/remotes/origin/kokuno-a4-pin
+          test "$(git rev-parse refs/remotes/origin/kokuno-a1-pin)" = "7dc09c59584a6b1bfaabcbb8df00283d9f9a40c1"
+          test "$(git rev-parse refs/remotes/origin/kokuno-a4-pin)" = "50485166808ac9d942ab017708c23438dfdb01a6"
+          test "$(git rev-parse refs/remotes/origin/kokuno-a1-pin:src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_leading_velocity.py)" = "ca8b80b0451be1a8f31deaf620f542d8c2e92c0c"
+          test "$(git rev-parse refs/remotes/origin/kokuno-a1-pin:tests/test_kokuno_pa16_current_cartesian_leading_velocity.py)" = "c8c4322789df1b24b1499ff574571243ffc073e4"
+          test "$(git rev-parse refs/remotes/origin/kokuno-a1-pin:.github/workflows/kokuno-agent1-current-cartesian-leading.yml)" = "794d85ec77d1a2cfae121bf4d11cbe89017df44a"
+          test "$(git rev-parse refs/remotes/origin/kokuno-a4-pin:src/openai_ns_reconstruction/kokuno_a4_current_cartesian_leading_divergence_independent_audit.py)" = "c0773b7c30a99216147dcc605a9d61b88ebbccb5"
+          test "$(git rev-parse refs/remotes/origin/kokuno-a4-pin:tests/test_constrained_kokuno_a4_current_cartesian_leading_divergence_independent_audit.py)" = "2780fdb995a344052c8801ee5e101940ed245fa0"
+          test "$(git rev-parse refs/remotes/origin/kokuno-a4-pin:.github/workflows/kokuno-agent4-current-cartesian-leading-divergence-audit.yml)" = "a68106945d939a49a4edf2c7ceb9d7ba61aed765"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install focused test dependencies
+        run: python -m pip install -e '.[dev]'
+
+      - name: Run Agent-5 fail-closed regressions
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_a5_current_pa16_profile_application_ingest_contract.py \
+            tests/test_kokuno_a5_current_cartesian_leading_ingest_contract.py
+
+      - name: Materialize checksum-bound registration receipt
+        run: |
+          mkdir -p outputs
+          python -m openai_ns_reconstruction.kokuno_a5_current_cartesian_leading_ingest_contract \
+            --exact-head "$(git rev-parse HEAD)" \
+            --out outputs/kokuno_a5_current_cartesian_leading_ingest.json
+
+      - name: Upload registration receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a5-current-cartesian-leading-ingest-${{ github.run_id }}
+          path: outputs/kokuno_a5_current_cartesian_leading_ingest.json
+          if-no-files-found: error
