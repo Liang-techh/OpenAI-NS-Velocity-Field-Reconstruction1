@@ -1,0 +1,178 @@
+{
+  "schema": "cr002-kokuno-rf40-power-law-oscillatory-support-scope-v1",
+  "task_id": "CR002-KOKUNO-RF40-POWER-LAW-OSCILLATORY-SUPPORT-SCOPE-105",
+  "purpose": "Govern the support/evidence boundary exposed after A2 #1010 and A4 #1012 extend the composite callable and independent divergence audit through RF40 power law X_4 while the frozen oscillatory summand is required to vanish on the registered power-law probes.",
+  "exact_base": {
+    "pr": 1012,
+    "head": "9b2be0ffecc14479dbd941eebd663d63f89f2a2f",
+    "branch": "codex/kokuno-a4-rf40-power-law-composite-divergence-audit-102",
+    "source_blob": "f5f7acf0c02f5f0712943ba841b1bc04478bcdd9"
+  },
+  "active_integration_reference": {
+    "branch": "codex/cr001-constraints",
+    "head": "7f6658cac1a8ffea178bec5accf2fa5a784b8249",
+    "role": "live constrained truth/routing authority; the narrow governance delta is stacked on exact A4 #1012 because that is the first matched X4 composite-plus-independent-audit artifact"
+  },
+  "four_way_provenance": {
+    "user_requirements": [
+      "Deliver an explicit computable save/load 3-D time-dependent velocity(x,y,z,t)->[u,v,w].",
+      "Keep velocity delivery, visual correspondence, PDE validation, paper exactness and OpenAI-field identity independent.",
+      "Do not weaken domain/support/forcing/nontriviality/residual gates or use u->0/free f=R shortcuts."
+    ],
+    "public_source_facts": [
+      "No new public-source numerical target, hidden coefficient, support radius or visualization parameter is asserted by this increment.",
+      "The corrected-reader structural provenance already carried by the Kokuno lineage is not upgraded here to original-paper exactness or OpenAI-field identity."
+    ],
+    "autonomous_repository_facts": [
+      "A2 #1010 materializes identity-bound leading plus frozen complete-curl oscillation through RF40 power-law endpoint X_4 with deterministic save/load.",
+      "A2 #1010 freezes a nontrivial oscillatory signal check on inner probes but requires power_law_oscillatory_abs_max == 0.0 on its registered strict power-law probes.",
+      "A4 #1012 save/reloads exact A2 #1010 and independently differentiates the public Cartesian composite on strict X_3<X<X_4 probes, the X_3 seam, inner probes and axis/near-axis probes.",
+      "The zero power-law oscillatory value is a property of the current repository realization/support placement, not a newly inferred public-source fact."
+    ],
+    "pending_or_unknown": [
+      "Whether any later source-faithful or autonomous oscillatory realization should be nonzero in the RF40 power-law interval.",
+      "Visual correspondence of the total field or any individual summand to the public OpenAI visualization.",
+      "Global/cone/I1-I4/terminal completion and a unified Kokuno export over the project physical delivery domain.",
+      "Matched pressure, preregistered restricted forcing, complete NS defect/correction and held-out full-PDE admission.",
+      "Paper exactness, exact OpenAI-field identity and blow-up proof."
+    ]
+  },
+  "upstream_scope": {
+    "agent2_1010": {
+      "pr": 1010,
+      "head": "e36d9da4b7f037e998f5b1658f8c0ea291a76b80",
+      "source_blob": "4f1dc0566c041b9de20f18b4ae9c49d9fd93c58d",
+      "task": "K2-OSC-087",
+      "materialized_domain": "leading + frozen complete-curl oscillation through RF40 power-law endpoint X_4",
+      "identity_preserving_save_load": true,
+      "full_concrete_oscillatory_runtime_digest_bound": true,
+      "inner_oscillatory_nontrivial_gate": true,
+      "registered_power_law_oscillatory_abs_max_gate": 0.0,
+      "fails_closed_after_X_4": true,
+      "velocity_export_ready": false,
+      "pde_validated": false
+    },
+    "agent4_1012": {
+      "pr": 1012,
+      "head": "9b2be0ffecc14479dbd941eebd663d63f89f2a2f",
+      "source_blob": "f5f7acf0c02f5f0712943ba841b1bc04478bcdd9",
+      "task": "K4-VAL-102",
+      "audited_agent2_pr": 1010,
+      "audited_agent2_head": "e36d9da4b7f037e998f5b1658f8c0ea291a76b80",
+      "audited_domain": "scoped independent Cartesian divergence on X_3<X<X_4 plus seam/inner/axis probes",
+      "candidate_save_reload_required": true,
+      "public_cartesian_velocity_only_for_numerical_differentiation": true,
+      "staged_leading_total_oscillatory_increment_metrics": true,
+      "scoped_divergence_evidence_only": true,
+      "momentum_or_full_ns_evidence": false,
+      "pde_validated": false
+    }
+  },
+  "machine_locked_distinctions": {
+    "power_law_composite_callable_materialized": true,
+    "power_law_composite_identity_preserving_save_load_materialized": true,
+    "power_law_independent_cartesian_divergence_audit_materialized": true,
+    "inner_oscillatory_signal_required_nontrivial": true,
+    "registered_power_law_oscillatory_velocity_required_zero": true,
+    "composite_callable_means_each_summand_nonzero_everywhere": false,
+    "power_law_composite_label_implies_nontrivial_oscillatory_contribution_on_power_law_interval": false,
+    "power_law_independent_divergence_audit_implies_nontrivial_oscillatory_structure_validated_there": false,
+    "zero_power_law_oscillatory_increment_is_public_source_support_fact": false,
+    "zero_power_law_oscillatory_increment_establishes_visual_correspondence": false,
+    "scoped_divergence_audit_implies_canonical_whole_domain_admission": false,
+    "scoped_divergence_audit_implies_momentum_or_full_ns_validation": false,
+    "callable_save_load_implies_global_project_domain_totality": false
+  },
+  "scope_logic_witness": {
+    "classification": "autonomous_mechanics_only",
+    "statement": "For u=u_lead+u_osc, the object is still a valid composite on a region where u_osc=0; callable/save-load and a divergence audit of u on that region do not prove that u_osc is nonzero or visually active there.",
+    "toy_values": {
+      "u_lead_at_probe": [2.0, -1.0, 0.5],
+      "u_osc_at_probe": [0.0, 0.0, 0.0],
+      "u_total_at_probe": [2.0, -1.0, 0.5]
+    },
+    "not_a_public_source_fact": true,
+    "not_candidate_numerical_evidence": true
+  },
+  "future_promotion_requirements": {
+    "nontrivial_power_law_oscillatory_structure_claim": [
+      "Provide direct same-identity evidence that the oscillatory summand is nonzero on the claimed RF40 power-law region; do not infer it from the word composite or from inner-domain nontriviality.",
+      "Bind the exact oscillatory runtime/support identity and state whether any support change is autonomous design or sourced structure.",
+      "If support/parameters are changed, treat that as a new candidate identity and rerun the relevant independent validation rather than retargeting #1012."
+    ],
+    "visual_correspondence_claim": [
+      "Compare reproducible observables of the total public velocity to the public-source qualitative observable contract.",
+      "Do not infer visual correspondence of the oscillatory summand from a divergence audit or from source terminology.",
+      "Keep exact camera, hidden coefficients, paper-exact field and OpenAI-field identity pending absent independent public evidence."
+    ],
+    "pde_promotion": [
+      "Materialize matched Cartesian pressure and preregistered restricted forcing for the same global candidate.",
+      "Use the frozen held-out full protocol and original thresholds before pde_validated or same-protocol ST006 improvement claims."
+    ]
+  },
+  "cr001_snapshot": {
+    "constraints_blob_sha1": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "momentum_max": 0.001,
+    "momentum_l2": 0.001,
+    "divergence_max": 1e-05,
+    "divergence_l2": 1e-05,
+    "residual_defined_free_forcing_forbidden": true,
+    "candidate_collapse_forbidden": true,
+    "post_hoc_threshold_relaxation_forbidden": true
+  },
+  "canonical_delivery_independence": {
+    "candidate_family": "eq45_supported_velocity_candidate_v1",
+    "velocity_api": "openai_ns_reconstruction.eq45_supported_delivery:velocity",
+    "velocity_export_ready": true,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  },
+  "kokuno_route_state": {
+    "velocity_export_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "complete_candidate_api_ready": false
+  },
+  "forbidden_promotions": [
+    "A2 #1010 composite through X_4 -> nontrivial oscillatory contribution throughout X_3<X<X_4",
+    "A4 #1012 scoped composite divergence audit -> nontrivial oscillatory-structure validation on X_3<X<X_4",
+    "inner oscillatory nontriviality -> power-law oscillatory nontriviality",
+    "repository zero-support placement -> public-source support fact",
+    "zero oscillatory contribution -> visual mismatch or visual correspondence by itself",
+    "scoped divergence evidence -> canonical whole-domain admission",
+    "scoped divergence evidence -> momentum/full-NS evidence",
+    "callable or save/load velocity -> visual correspondence",
+    "visual resemblance -> PDE validation or exact OpenAI field",
+    "queued or green CI -> scientific admission",
+    "Kokuno route incompleteness -> downgrade of canonical Eq45 velocity_export_ready",
+    "residual -> unrestricted pointwise forcing",
+    "failed fixed gate -> post-hoc threshold relaxation"
+  ],
+  "scientific_changes": {
+    "velocity_or_profile_bytes_changed": false,
+    "pressure_changed": false,
+    "forcing_changed": false,
+    "viscosity_changed": false,
+    "candidate_coefficients_changed": false,
+    "validation_samples_changed": false,
+    "derivative_or_quadrature_protocol_changed": false,
+    "scientific_thresholds_changed": false
+  }
+}
