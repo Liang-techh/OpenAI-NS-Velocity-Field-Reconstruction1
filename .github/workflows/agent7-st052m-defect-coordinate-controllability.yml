@@ -1,0 +1,150 @@
+name: agent7-st052m-defect-coordinate-controllability
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_defect_coordinate_controllability.py'
+      - 'experiments/root_st052/test_agent7_st052m_defect_coordinate_controllability.py'
+      - '.github/workflows/agent7-st052m-defect-coordinate-controllability.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  defect-coordinate-controllability:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Verify exact PR head checkout
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+      - name: Verify exact three-file delta from Agent-7 parent
+        run: |
+          git diff --name-only a564fbc8bfa6a5c630b5839fa208e41cb7bc72d7...HEAD | sort > /tmp/changed.txt
+          cat > /tmp/expected.txt <<'EOF'
+          .github/workflows/agent7-st052m-defect-coordinate-controllability.yml
+          experiments/root_st052/agent7_st052m_defect_coordinate_controllability.py
+          experiments/root_st052/test_agent7_st052m_defect_coordinate_controllability.py
+          EOF
+          diff -u /tmp/expected.txt /tmp/changed.txt
+      - name: Focused defect-coordinate contract tests
+        run: |
+          python -m pytest -q -W error \
+            experiments/root_st052/test_agent7_st052m_defect_coordinate_controllability.py
+      - name: Execute preregistered defect-coordinate audit
+        run: |
+          mkdir -p outputs/agent7-st052m-defect-coordinate-controllability
+          python experiments/root_st052/agent7_st052m_defect_coordinate_controllability.py \
+            --out outputs/agent7-st052m-defect-coordinate-controllability/report.json
+      - name: Verify receipt completeness and fail-closed truth boundary
+        run: |
+          python - <<'PY'
+          import json, math
+          from pathlib import Path
+
+          r=json.loads(Path('outputs/agent7-st052m-defect-coordinate-controllability/report.json').read_text())
+          assert r['task_id']=='CR003-ST052M-DEFECT-COORDINATE-CONTROLLABILITY-128'
+          assert r['prereg_issue']==1077
+          assert r['source_parent']=={'pr':1069,'head':'a564fbc8bfa6a5c630b5839fa208e41cb7bc72d7'}
+          p=r['frozen_protocol']
+          assert p['channels']==['amplitude','radial_shape','axial_turnover','temporal_curvature','toroidal_swirl']
+          assert p['defect_coordinates']==[
+              'inward_radial_index_t050',
+              'swirl_to_poloidal_ratio_t050',
+              'axial_vorticity_aspect_t050',
+              'core_width_t050',
+              'tip_radial_thickness_t050',
+              'angular_rotation_radial_variation_t050',
+              'core_width_change_025_to_075',
+              'core_speed_change_025_to_075',
+          ]
+          assert p['support_radius_scale']==2.0
+          assert p['epsilons']==[0.001,0.0005]
+          assert p['new_basis_dimension']==0
+          assert p['coefficient_selected'] is None
+          assert p['public_openai_numeric_target'] is None
+
+          a=r['defect_coordinate_controllability']
+          assert a['defect_coordinate_count']==8
+          assert 0 <= a['normalized_column_rank'] <= 5
+          assert isinstance(a['compressed_routing_geometry_gate_passes'], bool)
+          assert isinstance(a['all_derivative_stability_gates_pass'], bool)
+          assert isinstance(a['all_coordinates_have_numeric_response'], bool)
+          if a['normalized_condition'] is not None:
+              assert math.isfinite(a['normalized_condition'])
+          if a['max_abs_pairwise_cosine'] is not None:
+              assert math.isfinite(a['max_abs_pairwise_cosine'])
+          for name,row in a['coordinates'].items():
+              assert math.isfinite(row['baseline_value'])
+              assert math.isfinite(row['fine_raw_row_l2'])
+              assert isinstance(row['structurally_unresponsive_at_numeric_floor'], bool)
+              dominant=row['dominant_aligned_existing_channel']
+              if dominant is not None:
+                  assert dominant in p['channels']
+          assert r['decision']['additional_basis_dimension_justified_by_this_audit'] is False
+          assert r['decision']['candidate_mutation_authorized_by_this_audit'] is False
+          assert r['decision']['actual_velocity_changed'] is False
+          assert r['decision']['direct_visualization_fingerprint_improvement']==0.0
+          assert r['held_out_pde_residual']['evaluated'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          assert r['paper_exact'] is False
+          assert r['openai_field_identified'] is False
+          print('defect_rank=', a['normalized_column_rank'])
+          print('defect_condition=', a['normalized_condition'])
+          print('defect_max_abs_cos=', a['max_abs_pairwise_cosine'])
+          print('routing_geometry_passes=', a['compressed_routing_geometry_gate_passes'])
+          print('stability_passes=', a['all_derivative_stability_gates_pass'])
+          print('all_rows_respond=', a['all_coordinates_have_numeric_response'])
+          for name,row in a['coordinates'].items():
+              print(name, row['dominant_aligned_existing_channel'], row['fine_raw_derivative_by_channel'])
+          PY
+      - name: Publish compact defect-coordinate receipt
+        if: ${{ always() && github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          if [ ! -f outputs/agent7-st052m-defect-coordinate-controllability/report.json ]; then exit 0; fi
+          python - <<'PY' > /tmp/agent7-defect-coordinate-receipt.md
+          import json
+          from pathlib import Path
+
+          r=json.loads(Path('outputs/agent7-st052m-defect-coordinate-controllability/report.json').read_text())
+          a=r['defect_coordinate_controllability']
+          print('<!-- agent7-st052m-defect-coordinate-controllability-receipt -->')
+          print('**Agent 7 defect-coordinate controllability receipt (issue #1077):**')
+          print()
+          print(f"- coordinates: `{a['defect_coordinate_count']}`; normalized rank: `{a['normalized_column_rank']}/5`; condition: `{a['normalized_condition']}`; max |cos|: `{a['max_abs_pairwise_cosine']}`")
+          print(f"- routing geometry gate: `{a['compressed_routing_geometry_gate_passes']}`; derivative stability: `{a['all_derivative_stability_gates_pass']}`; every coordinate has numeric response: `{a['all_coordinates_have_numeric_response']}`")
+          for name,row in a['coordinates'].items():
+              print(f"- `{name}`: baseline `{row['baseline_value']}`; dominant aligned existing channel `{row['dominant_aligned_existing_channel']}`; row L2 `{row['fine_raw_row_l2']}`")
+          print('- basis dimension change: `0`; coefficient selected: `none`; candidate velocity unchanged; direct visualization-fingerprint improvement: `0.0`.')
+          print('- No public/OpenAI numerical target was used; held-out complete-PDE residual was not evaluated.')
+          print()
+          print('Truth boundary: these signed defect coordinates are target-free routing surrogates. They do not establish that the candidate matches the public visualization, and they do not establish PDE validity, paper exactness, exact OpenAI-field identity, or blow-up.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-defect-coordinate-receipt.md || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-defect-coordinate-controllability
+          path: outputs/agent7-st052m-defect-coordinate-controllability/
+          if-no-files-found: warn
+
+# Defect coordinates and numerical-locality gates were frozen in issue #1077 before execution.
