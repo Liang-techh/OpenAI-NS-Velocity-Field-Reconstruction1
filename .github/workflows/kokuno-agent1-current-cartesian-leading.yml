@@ -1,0 +1,74 @@
+name: kokuno-agent1-current-cartesian-leading
+
+on:
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_leading_velocity.py"
+      - "tests/test_kokuno_pa16_current_cartesian_leading_velocity.py"
+      - ".github/workflows/kokuno-agent1-current-cartesian-leading.yml"
+  workflow_dispatch:
+
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+
+      - name: Assert exact A1 parent ancestry
+        shell: bash
+        run: |
+          git merge-base --is-ancestor 61b8730fba5623c5acfbd3ec42d54f7cc4f45748 HEAD
+
+      - name: Verify pinned corrected-source blob
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib
+          import urllib.request
+
+          url = "https://raw.githubusercontent.com/KokunoYumeto/yang-mills-interacting-workbench/143f6773feb424ad9ed3a8d116653200f20346b7/navier-stokes/navier_stokes_workbench.tex"
+          data = urllib.request.urlopen(url, timeout=30).read()
+          digest = hashlib.sha1(b"blob %d\0" % len(data) + data).hexdigest()
+          expected = "205a99807302e21a51c5eaf223390c0dfc42bcd0"
+          if digest != expected:
+              raise SystemExit(f"corrected source blob drifted: {digest} != {expected}")
+          print("corrected 2026-09-09 source blob pinned")
+          PY
+
+      - name: Compile focused files
+        run: |
+          python -m py_compile src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_leading_velocity.py
+          python -m py_compile tests/test_kokuno_pa16_current_cartesian_leading_velocity.py
+
+      - name: Run joined-profile and Cartesian-leading regressions
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_pa16_current_joined_profile.py \
+            tests/test_kokuno_pa16_current_cartesian_leading_velocity.py
+
+      - name: Emit deterministic scoped receipt
+        run: |
+          mkdir -p artifacts/kokuno_agent1_current_cartesian_leading
+          python -m openai_ns_reconstruction.kokuno_pa16_current_cartesian_leading_velocity \
+            --output artifacts/kokuno_agent1_current_cartesian_leading/receipt.json \
+            --config-output artifacts/kokuno_agent1_current_cartesian_leading/config.json
+          cat artifacts/kokuno_agent1_current_cartesian_leading/receipt.json
+
+      - name: Upload scoped receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-current-cartesian-leading
+          path: artifacts/kokuno_agent1_current_cartesian_leading/
