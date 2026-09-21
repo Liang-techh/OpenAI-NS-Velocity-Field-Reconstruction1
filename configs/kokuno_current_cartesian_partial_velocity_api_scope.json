@@ -1,0 +1,107 @@
+{
+  "schema": "cr002-kokuno-current-cartesian-partial-api-scope-v1",
+  "task": "CR002-KOKUNO-CURRENT-CARTESIAN-PARTIAL-API-TOTALITY-097",
+  "parent": {
+    "pr": 968,
+    "exact_head": "5558d0859d142914ae8921a4286f56077fe2232c",
+    "source_path": "src/openai_ns_reconstruction/kokuno_a5_current_cartesian_leading_ingest_contract.py",
+    "source_blob": "a3456aa45f8372359a4c9b53c8ecab317291f2ca"
+  },
+  "upstream_cartesian_leading": {
+    "pr": 965,
+    "exact_head": "7dc09c59584a6b1bfaabcbb8df00283d9f9a40c1",
+    "source_path": "src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_leading_velocity.py",
+    "source_blob": "ca8b80b0451be1a8f31deaf620f542d8c2e92c0c",
+    "public_api": [
+      "velocity",
+      "save_configuration",
+      "load_configuration"
+    ]
+  },
+  "provenance": {
+    "user_requirement": [
+      "deliver an explicit computable save-load 3D time-varying velocity(x,y,z,t)->[u,v,w]",
+      "keep callable velocity delivery independent from PDE validation, visual correspondence, paper exactness, and OpenAI-field identity"
+    ],
+    "public_source_fact": [
+      "the governed Kokuno reconstruction lineage supplies the public source-coordinate and Cartesian component formulas already pinned by Agent-1 #965"
+    ],
+    "autonomous_design": [
+      "the current joined-profile realization and its numerical quadrature/eta-derivative implementation",
+      "the repository fail-closed evaluator domain ending at the currently materialized X_h",
+      "this partial-provider totality governance contract and mechanics witness"
+    ],
+    "pending_unknown": [
+      "outer/global Cartesian leading completion beyond current X_h",
+      "global compact-support join compatible with the registered physical contract",
+      "complete Kokuno velocity-plus-pressure-plus-restricted-forcing candidate API",
+      "visual correspondence, PDE validation, paper exactness, and OpenAI-field identity"
+    ]
+  },
+  "delivery_contract": {
+    "cartesian_velocity_callable_through_current_xh": true,
+    "cartesian_velocity_vectorized_through_current_xh": true,
+    "configuration_save_load_materialized": true,
+    "semantic_identity_materialized": true,
+    "calls_beyond_current_xh_fail_closed": true,
+    "provider_domain_is_partial_relative_to_global_project_delivery": true,
+    "global_or_r3_total_velocity_materialized": false,
+    "velocity_beyond_current_xh_materialized": false,
+    "complete_candidate_api_ready": false,
+    "kokuno_velocity_export_ready": false,
+    "callable_implies_global_api_totality": false,
+    "save_load_implies_global_api_totality": false,
+    "semantic_identity_implies_global_api_totality": false,
+    "pde_pending_blocks_callable_velocity_delivery": false,
+    "canonical_eq45_velocity_export_ready_independent": true
+  },
+  "mechanics_witness": {
+    "classification": "autonomous_design",
+    "provider": "toy v(s)=(s,0,0) for s<=1 and fail-closed for s>1",
+    "save_reload_identity_preserved": true,
+    "call_at_s_0_5_defined": true,
+    "call_at_s_2_defined": false,
+    "inference": "a provider can be callable, serializable, reloadable, and identity-bound while remaining partial on a larger required domain",
+    "not_public_source_or_candidate_evidence": true
+  },
+  "truth_boundary": {
+    "current_cartesian_leading_velocity_materialized_through_xh": true,
+    "current_cartesian_leading_save_load_materialized": true,
+    "global_cartesian_leading_velocity_materialized": false,
+    "velocity_beyond_xh_materialized": false,
+    "global_compact_supported_leading_velocity_materialized": false,
+    "leading_plus_oscillatory_cartesian_velocity_materialized": false,
+    "complete_velocity_candidate_materialized": false,
+    "matched_cartesian_pressure_materialized": false,
+    "restricted_forcing_materialized": false,
+    "canonical_whole_domain_divergence_l2_assessed": false,
+    "same_protocol_full_ns_residual_available": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "cr001_lock": {
+    "constraints_blob": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "momentum_max": 0.001,
+    "momentum_l2": 0.001,
+    "divergence_max": 0.00001,
+    "divergence_l2": 0.00001,
+    "residual_defined_free_forcing_forbidden": true,
+    "candidate_collapse_forbidden": true,
+    "post_hoc_threshold_relaxation_forbidden": true
+  }
+}
