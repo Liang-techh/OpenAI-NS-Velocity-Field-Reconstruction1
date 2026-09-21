@@ -65,7 +65,11 @@ def test_actual_i1_exit_memory_is_carried_as_constant_physical_M(candidate):
         exit_total["M_eta_over_X_current_i1_repair"]
     ) - np.asarray(exit_base["M_eta_over_X_current_rf40_power_law"])
 
-    X = np.full(eta.shape, candidate.X_I2_start)
+    # I1 and I2 can share a boundary.  Probe strictly on the I2 side so the
+    # child is exercising the carried-memory branch rather than exact parent
+    # delegation at the seam itself.
+    X_scalar = math.exp(candidate.log_X_I2_start + 1.0e-8)
+    X = np.full(eta.shape, X_scalar)
     child = candidate.similarity_profile_values(X, eta)
     np.testing.assert_allclose(
         child["delta_M_over_X_from_I1_exit"],
@@ -115,7 +119,10 @@ def test_active_i2_uses_pure_swirl_heat_delta_without_resetting_memory(candidate
 
 
 def test_i2_analytic_decimal_radial_derivative_matches_centered_difference(candidate):
-    X = _active_i2_X(candidate)
+    # Use an off-center point of the second bump; exactly at x_*=1.24 its
+    # analytic derivative vanishes by symmetry and would be a weak derivative
+    # regression.
+    X = _active_i2_X(candidate, 1.20)
     eta = 0.0
     eps = 2.0e-6
     dE, dEX, _, _ = candidate._i2_delta_decimal(X, eta)
@@ -160,7 +167,7 @@ def test_vectorized_cartesian_velocity_and_axis_regularity(candidate):
 
 
 def test_radial_derivative_api_is_finite_and_i2_delta_is_analytic(candidate):
-    X = _active_i2_X(candidate)
+    X = _active_i2_X(candidate, 1.20)
     out = candidate.similarity_radial_derivatives(
         np.asarray([X, X * 1.01]), np.asarray([0.0, 0.0])
     )
