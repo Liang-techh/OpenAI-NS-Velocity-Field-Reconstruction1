@@ -1,0 +1,114 @@
+{
+  "schema": "cr002-kokuno-final-bridge-width-cone-scope-v1",
+  "task_id": "CR002-KOKUNO-FINAL-BRIDGE-WIDTH-CONE-SCOPE-090",
+  "audited_active_integration": {
+    "branch": "codex/cr001-constraints",
+    "head": "7f6658cac1a8ffea178bec5accf2fa5a784b8249"
+  },
+  "audited_parent": {
+    "pr": 944,
+    "head": "a732424661a615f24b7034f733bf5f281ac9a2d2",
+    "source_path": "src/openai_ns_reconstruction/kokuno_a5_actual_final_bridge_xi110_ingest_contract.py",
+    "source_blob": "fc0f463a451fd26d0d7a5e90570a2c1698f725e6"
+  },
+  "upstream_identity": {
+    "agent1_pr": 940,
+    "agent1_head": "f430f8f97df3bfafce56bf094047c769ecec922d",
+    "agent1_source_blob": "0cbd49ad0726c1573f2e649c96a3b516d8df053e",
+    "agent4_pr": 943,
+    "agent4_head": "d090572fdc766626c417cb53b8acc8632b2bdb63",
+    "agent4_source_blob": "afe00af9274408051bb01ec9924ac287c538fe5f"
+  },
+  "provenance": {
+    "user_requirement": [
+      "keep callable velocity delivery independent from PDE, visual-correspondence, paper-exact and hidden-field claims",
+      "keep user requirements, public-source facts, autonomous design choices and pending/unknown information separate",
+      "do not relax preregistered CR001 forcing or validation gates"
+    ],
+    "public_source_fact": [
+      "the corrected reconstruction prescribes two short logarithmic final-bridge intervals that fit strictly between X=100 and X_i=110",
+      "the corrected reconstruction prescribes the terminal schedule a=0.8, l=0.6 and D_X U=0 through X_i=110"
+    ],
+    "autonomous_design": [
+      "the repository freezes axial_shutdown_log_width=0.02 before residual evaluation",
+      "the repository freezes angular_settle_log_width=0.02 before residual evaluation",
+      "the repository freezes kappa_0=0.1 on this candidate lineage",
+      "Agent 4 PR 943 uses an implementation-distinct public-values-only profile and endpoint derivative audit",
+      "the toy existential-versus-selected-width witness in this contract is mechanics-only"
+    ],
+    "pending_unknown": [
+      "source-hidden numerical values of the two final-bridge widths",
+      "whether the repository-autonomous 0.02/0.02 widths satisfy every proof-dependent source cone estimate",
+      "source-admitted global kappa_0 smallness and cone conditions for this realization",
+      "source-prepared Appendix-A pressure and full reference-stress identity",
+      "actual inner-to-outer global Cartesian leading join and Kokuno Cartesian velocity provider",
+      "matched Cartesian pressure gradient, preregistered restricted forcing and complete full-NS admission"
+    ]
+  },
+  "registered_realization": {
+    "X_b_ref": 100.0,
+    "X_i": 110.0,
+    "axial_shutdown_log_width": 0.02,
+    "angular_settle_log_width": 0.02,
+    "selected_kappa_0": 0.1,
+    "bridge_quadrature_order": 48,
+    "widths_are_repository_autonomous": true,
+    "widths_recovered_from_public_source": false,
+    "widths_fixed_before_residual_evaluation": true,
+    "widths_fit_strictly_inside_100_to_110": true
+  },
+  "evidence_scope": {
+    "candidate_side_final_bridge_materialized": true,
+    "candidate_side_G_i_ell_i_materialized": true,
+    "independent_profile_derivative_audit_protocol_registered": true,
+    "independent_endpoint_derivative_method_registered": true,
+    "agent4_exact_head_scientific_admission_observed": false,
+    "geometric_width_fit_implies_source_cone_admission": false,
+    "profile_derivative_consistency_implies_source_cone_admission": false,
+    "endpoint_handoff_consistency_implies_source_cone_admission": false,
+    "autonomous_widths_identify_source_hidden_widths": false,
+    "final_bridge_cone_admissibility_independently_certified": false,
+    "source_admitted_global_kappa0_smallness": false
+  },
+  "mechanics_witness": {
+    "scope": "logic-only existential-versus-selected-parameter witness; not a Kokuno/OpenAI bound or candidate datum",
+    "toy_allowed_interval": [0.0, 1.0],
+    "toy_admissible_upper_bound": 0.15,
+    "toy_existing_admissible_width": 0.1,
+    "toy_autonomous_selected_width": 0.2,
+    "existing_width_satisfies_toy_admissibility": true,
+    "autonomous_selected_width_is_geometrically_inside_interval": true,
+    "autonomous_selected_width_satisfies_toy_admissibility": false,
+    "conclusion": "existence of a short admissible width and geometric interval fit do not imply that an independently selected width satisfies an additional proof-dependent admissibility condition"
+  },
+  "cr001_lock": {
+    "constraints_blob": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2.0, 2.0], [-2.0, 2.0], [-2.0, 2.0]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "residual_defined_free_force_forbidden": true,
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "momentum_max_gate": 0.001,
+    "momentum_volume_l2_gate": 0.001,
+    "divergence_max_gate": 0.00001,
+    "divergence_volume_l2_gate": 0.00001
+  },
+  "state_boundary": {
+    "canonical_eq45_velocity_export_ready": true,
+    "kokuno_velocity_export_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false,
+    "pending_kokuno_cone_or_pde_work_blocks_canonical_callable_velocity_delivery": false
+  }
+}
