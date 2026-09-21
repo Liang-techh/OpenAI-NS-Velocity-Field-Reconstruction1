@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "contract_id": "CR002-KOKUNO-X4-MEAN-AUDIT-REGISTRATION-SCOPE-109",
+  "status": "governance_only_no_scientific_promotion",
+  "base_a5": {
+    "pr": 1030,
+    "head": "2dab469f3d48268bfb7edac18ae454b8265a99c0",
+    "meaning": "A5 checkpoint that registers the earlier X2 radial-force audit and leaves the newer X4 nonlinear-mean lineage non-consumed"
+  },
+  "current_repository_evidence": {
+    "agent3_x4_mean_pr": 1028,
+    "agent3_x4_mean_head": "4b7a4400dcf1ee0be6bb07f23c2f8af6f893de88",
+    "agent4_x4_mean_audit_pr": 1029,
+    "agent4_x4_mean_audit_head": "8a34d11605d095334175df9618f8f5b18f5c210e",
+    "agent4_x4_mean_audit_artifact_exists": true,
+    "agent5_1030_consumes_agent3_1028": false,
+    "agent5_1030_consumes_agent4_1029": false,
+    "agent5_1030_registers_agent4_1029": false
+  },
+  "allowed_true": {
+    "a3_1028_nonlinear_m0_mean_attribution_materialized_through_x4": true,
+    "a4_1029_implementation_distinct_x4_mean_audit_artifact_exists": true,
+    "a4_1029_uses_save_reloaded_public_cartesian_velocity_reference": true,
+    "a5_1030_registers_prior_x2_radial_force_audit": true
+  },
+  "required_false": {
+    "a5_1030_consumes_a3_1028_x4_mean": false,
+    "a5_1030_consumes_or_registers_a4_1029_x4_mean_audit": false,
+    "x4_compact_radial_stress_materialized": false,
+    "x4_radial_force_partial_z_sigma1_materialized": false,
+    "x4_mean_audit_means_x4_stress_or_force_audit": false,
+    "x4_mean_audit_means_complete_ns_defect": false,
+    "x4_mean_audit_means_authorized_correction_target": false,
+    "cartesian_correction_velocity_materialized": false,
+    "complete_candidate_api_materialized_on_kokuno_route": false,
+    "pde_validated": false,
+    "visual_correspondence_verified": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  },
+  "evidence_semantics": {
+    "artifact_vs_registration_rule": "A sibling audit artifact may exist in the repository without being consumed, registered, or scientifically admitted by the frozen A5 checkpoint.",
+    "representation_rule": "Independent validation of nonlinear m=0 mean attribution through X4 does not materialize or validate the downstream compact stress or radial-force representation.",
+    "correction_authorization_rule": "A scoped nonlinear-mean audit is not a complete NS defect and cannot authorize a correction target or Cartesian correction velocity.",
+    "ci_rule": "queued/running is neither PASS nor FAIL; CI success on a scoped audit does not promote complete-NS or PDE state."
+  },
+  "promotion_requirements": {
+    "future_a5_x4_mean_audit_registration": [
+      "bind exact A3 #1028 and A4 #1029 identities",
+      "record current exact-head CI status without converting queued/running to PASS",
+      "preserve nonlinear-mean-audit scope as distinct from stress/force validation"
+    ],
+    "future_x4_radial_force_materialization": [
+      "consume the exact X4 production composite identity used by A3 #1028",
+      "materialize compact stress on that same X4 identity before taking partial_z sigma_1",
+      "obtain a matching implementation-distinct A4 stress/force audit",
+      "keep the result unauthorized as a complete-NS correction target until a complete defect exists"
+    ]
+  },
+  "provenance_classes": {
+    "user_requirement": [
+      "maintain independent velocity-delivery, visual-correspondence, PDE-validation and exactness states",
+      "record real tests, commits and CI",
+      "avoid duplicate work and evidence-scope laundering"
+    ],
+    "public_source_fact": [],
+    "autonomous_governance": [
+      "artifact-exists-vs-downstream-registration distinction",
+      "nonlinear-mean-audit-vs-stress-force-audit distinction",
+      "A5 checkpoint evidence-scope firewall"
+    ],
+    "pending_unknown": [
+      "A5 registration or scientific admission of A4 #1029",
+      "compact radial stress and partial_z sigma_1 force through X4",
+      "complete NS defect and correction authorization",
+      "post-X4/global Kokuno velocity completion"
+    ]
+  },
+  "ci_observation_at_creation": {
+    "agent4_1029_tests_run": 35635278480,
+    "agent4_1029_dedicated_run": 35635278504,
+    "agent4_1029_observed_status": "queued",
+    "agent5_1030_tests_run": 35635405082,
+    "agent5_1030_dedicated_run": 35635405080,
+    "agent5_1030_observed_status": "queued",
+    "scientific_pass_claimed_from_these_observations": false
+  },
+  "cr001_snapshot": {
+    "constraints_blob": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "momentum_max_l2_threshold": 0.001,
+    "divergence_max_l2_threshold": 0.00001,
+    "residual_defined_free_force_forbidden": true,
+    "candidate_collapse_forbidden": true,
+    "post_hoc_threshold_relaxation_forbidden": true
+  },
+  "canonical_delivery_independence": {
+    "candidate": "eq45_supported_velocity_candidate_v1",
+    "velocity_export_ready": true,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  }
+}
