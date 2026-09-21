@@ -1,0 +1,141 @@
+name: kokuno-agent5-current-tsh-certificate-ingest
+
+on:
+  push:
+    branches:
+      - "codex/kokuno-a5-current-tsh-certificate-ingest-090"
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_a5_current_tsh_certificate_ingest_contract.py"
+      - "tests/test_kokuno_a5_current_tsh_certificate_ingest_contract.py"
+      - ".github/workflows/kokuno-agent5-current-tsh-certificate-ingest.yml"
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_a5_current_tsh_certificate_ingest_contract.py"
+      - "tests/test_kokuno_a5_current_tsh_certificate_ingest_contract.py"
+      - ".github/workflows/kokuno-agent5-current-tsh-certificate-ingest.yml"
+  workflow_dispatch:
+
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+
+      - name: Assert exact A5 parent ancestry and minimal diff
+        shell: bash
+        run: |
+          set -euo pipefail
+          parent=b3fb36d91239a2ce2669971b7b07bfe892cfdf1c
+          git merge-base --is-ancestor "$parent" HEAD
+          mapfile -t files < <(git diff --name-only "$parent" HEAD | sort)
+          expected=(
+            ".github/workflows/kokuno-agent5-current-tsh-certificate-ingest.yml"
+            "src/openai_ns_reconstruction/kokuno_a5_current_tsh_certificate_ingest_contract.py"
+            "tests/test_kokuno_a5_current_tsh_certificate_ingest_contract.py"
+          )
+          mapfile -t expected_sorted < <(printf '%s\n' "${expected[@]}" | sort)
+          diff -u <(printf '%s\n' "${expected_sorted[@]}") <(printf '%s\n' "${files[@]}")
+
+      - name: Verify exact upstream heads and blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          verify_blob() {
+            local commit="$1" path="$2" expected="$3"
+            git fetch --no-tags --depth=1 origin "$commit"
+            local actual
+            actual=$(git rev-parse "${commit}:${path}")
+            test "$actual" = "$expected" || {
+              echo "blob drift: ${commit}:${path}: ${actual} != ${expected}" >&2
+              exit 1
+            }
+          }
+
+          verify_blob bf16b88db92d23923b3e049c00e000a5bfa09992 \
+            src/openai_ns_reconstruction/kokuno_pa16_current_tsh_certificate.py \
+            5fd610b417ccaa1c4673ea64985296b94dfe5946
+          verify_blob bf16b88db92d23923b3e049c00e000a5bfa09992 \
+            tests/test_kokuno_pa16_current_tsh_certificate.py \
+            dbf43e26bb6b37f6167c923cc9880e2911a09177
+          verify_blob bf16b88db92d23923b3e049c00e000a5bfa09992 \
+            .github/workflows/kokuno-agent1-current-tsh-certificate.yml \
+            e2c666e31cd124081b88102d09622f7255bac9fe
+
+          verify_blob 811fcd9bf5cc3d48264d2f7f7d3763d2167db83e \
+            src/openai_ns_reconstruction/kokuno_a4_current_tsh_independent_audit.py \
+            e517a400be283131d530e0b34f3d6c0712667a7b
+          verify_blob 811fcd9bf5cc3d48264d2f7f7d3763d2167db83e \
+            tests/test_constrained_kokuno_a4_current_tsh_independent_audit.py \
+            d1441d0047deaa93d27622cedd2176e99c2e57de
+          verify_blob 811fcd9bf5cc3d48264d2f7f7d3763d2167db83e \
+            .github/workflows/kokuno-agent4-current-tsh-independent-audit.yml \
+            5f5940b1f774640c4e2385d3be9ada2bca4b220c
+
+          verify_blob e43c32c3d0258f635e8b1f999d89c38524355856 \
+            src/openai_ns_reconstruction/kokuno_oscillatory_batch_axis_safety.py \
+            599baa190ec742d0e532e5517078534124e68d6b
+
+      - name: Compile focused files
+        run: |
+          python -m py_compile src/openai_ns_reconstruction/kokuno_a5_current_tsh_certificate_ingest_contract.py
+          python -m py_compile tests/test_kokuno_a5_current_tsh_certificate_ingest_contract.py
+
+      - name: Run parent and current Agent-5 regressions
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_a5_current_xi_moment_discrepancy_ingest_contract.py \
+            tests/test_kokuno_a5_current_tsh_certificate_ingest_contract.py
+
+      - name: Emit deterministic registration receipt
+        run: |
+          mkdir -p artifacts/kokuno_agent5_current_tsh_ingest
+          python -m openai_ns_reconstruction.kokuno_a5_current_tsh_certificate_ingest_contract \
+            --exact-head "$(git rev-parse HEAD)" \
+            --output artifacts/kokuno_agent5_current_tsh_ingest/receipt.json
+
+      - name: Enforce fail-closed scientific boundary
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = json.loads(Path("artifacts/kokuno_agent5_current_tsh_ingest/receipt.json").read_text())
+          assert p["readiness"] == {
+              "leading_ready": False,
+              "oscillatory_ready": True,
+              "correction_ready": False,
+              "velocity_export_ready": False,
+              "pde_validated": False,
+          }
+          t = p["truth_boundary"]
+          assert t["source_T_sh_lower_bound_verified"] is False
+          assert t["pa16_repair_applied"] is False
+          assert t["actual_inner_to_outer_global_join_materialized"] is False
+          assert t["matched_cartesian_pressure_materialized"] is False
+          assert t["restricted_forcing_materialized"] is False
+          assert t["real_agent3_correction_velocity_materialized"] is False
+          assert t["same_protocol_full_ns_residual_available"] is False
+          assert t["scientific_admission"] is False
+          assert p["frozen_science"]["residual_defined_free_forcing_forbidden"] is True
+          assert p["final_gate"]["normalized_momentum_volume_l2"] == 1e-3
+          assert p["final_gate"]["divergence_volume_l2"] == 1e-5
+          PY
+
+      - name: Upload registration receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-current-tsh-certificate-ingest-v1
+          path: artifacts/kokuno_agent5_current_tsh_ingest/receipt.json
