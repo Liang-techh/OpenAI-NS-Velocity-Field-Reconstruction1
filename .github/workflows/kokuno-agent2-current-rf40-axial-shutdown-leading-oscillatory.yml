@@ -1,0 +1,204 @@
+name: kokuno-agent2-current-rf40-axial-shutdown-leading-oscillatory
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a2-rf40-axial-shutdown-composite-085
+  pull_request:
+    branches:
+      - codex/kokuno-a2-rf40-first-turn-composite-084
+  workflow_dispatch:
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Check out exact A2 head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: a2
+          fetch-depth: 0
+
+      - name: Verify exact parent ancestry and three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd a2
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+          git merge-base --is-ancestor 2a2fad307a674ec1eb5a2bc426c0d01c3a0e7377 HEAD
+          test "$(git rev-list --count 2a2fad307a674ec1eb5a2bc426c0d01c3a0e7377..HEAD)" -eq 3
+          mapfile -t files < <(git diff --name-only 2a2fad307a674ec1eb5a2bc426c0d01c3a0e7377..HEAD)
+          test "${#files[@]}" -eq 3
+          printf '%s\n' "${files[@]}" | sort > /tmp/actual-files
+          printf '%s\n' \
+            .github/workflows/kokuno-agent2-current-rf40-axial-shutdown-leading-oscillatory.yml \
+            src/openai_ns_reconstruction/kokuno_current_rf40_axial_shutdown_leading_oscillatory_identity.py \
+            tests/test_constrained_kokuno_current_rf40_axial_shutdown_leading_oscillatory_identity.py \
+            | sort > /tmp/expected-files
+          diff -u /tmp/expected-files /tmp/actual-files
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install A2 test dependencies
+        shell: bash
+        run: python -m pip install -e './a2[dev]'
+
+      - name: Compile and run A2 scoped contract tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            a2/src/openai_ns_reconstruction/kokuno_current_rf40_axial_shutdown_leading_oscillatory_identity.py \
+            a2/tests/test_constrained_kokuno_current_rf40_axial_shutdown_leading_oscillatory_identity.py
+          PYTHONPATH="$PWD/a2/src" python -m pytest -q \
+            a2/tests/test_constrained_kokuno_current_rf40_axial_shutdown_leading_oscillatory_identity.py
+
+      - name: Check out exact Agent-1 RF40 axial-shutdown sibling
+        uses: actions/checkout@v4
+        with:
+          ref: 2ac6460b483efb1c07f2fa65e7fed781a32f2718
+          path: a1
+          fetch-depth: 1
+
+      - name: Authenticate and regression-test exact Agent-1 RF40 axial-shutdown sibling
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C a1 rev-parse HEAD)" = "2ac6460b483efb1c07f2fa65e7fed781a32f2718"
+          test "$(git -C a1 hash-object src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_rf40_axial_shutdown.py)" = \
+            "057a0514c8a941c3e59922b8158f480434b4441e"
+          test "$(git -C a1 hash-object tests/test_kokuno_pa16_current_cartesian_rf40_axial_shutdown.py)" = \
+            "b1703748f567d7d7d505bf7f2e07aa287a8c0559"
+          test "$(git -C a1 hash-object .github/workflows/kokuno-agent1-current-cartesian-rf40-axial-shutdown.yml)" = \
+            "a5f485f89456c7171bf3789d11f677c4d800658a"
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_current_rf40_first_turn_leading_oscillatory_identity.py)" = \
+            "c126dace161e5dae1745185c79152736817994b8"
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_public_z_pullback_velocity.py)" = \
+            "4a3abc1a11f7e054f651dd7bace8ada6d5a6b653"
+          PYTHONPATH="$PWD/a1/src" python -m pytest -q \
+            a1/tests/test_kokuno_pa16_current_cartesian_rf40_axial_shutdown.py
+
+      - name: Materialize exact RF40 axial-shutdown identity-bound candidate and receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p receipts
+          PYTHONPATH="$PWD/a1/src" python - <<'PY'
+          from pathlib import Path
+          import json
+          import openai_ns_reconstruction
+
+          from openai_ns_reconstruction.kokuno_pa16_current_cartesian_rf40_axial_shutdown import (
+              KokunoPA16CurrentCartesianRF40AxialShutdown,
+          )
+          assert KokunoPA16CurrentCartesianRF40AxialShutdown.__module__ == (
+              "openai_ns_reconstruction.kokuno_pa16_current_cartesian_rf40_axial_shutdown"
+          )
+
+          a2_pkg = str((Path("a2/src/openai_ns_reconstruction")).resolve())
+          openai_ns_reconstruction.__path__.insert(0, a2_pkg)
+
+          import openai_ns_reconstruction.kokuno_current_rf40_axial_shutdown_leading_oscillatory_identity as mod
+
+          field = mod.default_field()
+          candidate_path = Path("receipts/kokuno_a2_current_rf40_axial_shutdown_candidate.json")
+          saved = field.save_candidate(candidate_path)
+          loaded = mod.CurrentRF40AxialShutdownLeadingOscillatoryField.load_candidate(candidate_path)
+          assert loaded.semantic_sha256 == field.semantic_sha256 == saved["semantic_sha256"]
+          assert loaded.oscillatory_runtime_sha256 == field.oscillatory_runtime_sha256
+          assert loaded.X_1 == field.X_1
+          assert loaded.X_2 == field.X_2
+          assert loaded.T_d == field.T_d
+
+          receipt = mod.materialize_rf40_axial_shutdown_composite_receipt()
+          Path("receipts/kokuno_a2_current_rf40_axial_shutdown_composite_receipt.json").write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          PY
+
+      - name: Upload candidate and receipt before gate enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a2-current-rf40-axial-shutdown-leading-oscillatory
+          path: |
+            receipts/kokuno_a2_current_rf40_axial_shutdown_candidate.json
+            receipts/kokuno_a2_current_rf40_axial_shutdown_composite_receipt.json
+          if-no-files-found: error
+
+      - name: Enforce frozen RF40 axial-shutdown identity and truth gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH="$PWD/a1/src" python - <<'PY'
+          from pathlib import Path
+          import copy
+          import json
+          import openai_ns_reconstruction
+
+          from openai_ns_reconstruction.kokuno_pa16_current_cartesian_rf40_axial_shutdown import (
+              KokunoPA16CurrentCartesianRF40AxialShutdown,
+          )
+          assert KokunoPA16CurrentCartesianRF40AxialShutdown.__module__ == (
+              "openai_ns_reconstruction.kokuno_pa16_current_cartesian_rf40_axial_shutdown"
+          )
+
+          a2_pkg = str((Path("a2/src/openai_ns_reconstruction")).resolve())
+          openai_ns_reconstruction.__path__.insert(0, a2_pkg)
+
+          import openai_ns_reconstruction.kokuno_current_rf40_axial_shutdown_leading_oscillatory_identity as mod
+
+          receipt = json.loads(
+              Path("receipts/kokuno_a2_current_rf40_axial_shutdown_composite_receipt.json").read_text(
+                  encoding="utf-8"
+              )
+          )
+          mod.enforce_receipt(receipt)
+
+          candidate_path = Path("receipts/kokuno_a2_current_rf40_axial_shutdown_candidate.json")
+          candidate = json.loads(candidate_path.read_text(encoding="utf-8"))
+
+          mutated_osc = copy.deepcopy(candidate)
+          osc = mutated_osc["configuration"]["oscillatory_runtime"]
+          osc["payload"]["parameters"]["mode_imaginary_ratio"] += 0.125
+          osc["payload_sha256"] = mod._identity._sha256(osc["payload"])
+          mutated_osc["semantic_sha256"] = mod._identity._sha256(mutated_osc["configuration"])
+          p = Path("receipts/mutated_osc_candidate.json")
+          p.write_text(json.dumps(mutated_osc, indent=2, sort_keys=True) + "\n")
+          try:
+              mod.CurrentRF40AxialShutdownLeadingOscillatoryField.load_candidate(p)
+          except ValueError as exc:
+              assert "oscillatory runtime" in str(exc)
+          else:
+              raise AssertionError("rehash-consistent oscillatory runtime mutation was accepted")
+
+          mutated_source = copy.deepcopy(candidate)
+          mutated_source["configuration"]["source_provenance"]["corrected_release_date"] = "2099-01-01"
+          mutated_source["semantic_sha256"] = mod._identity._sha256(mutated_source["configuration"])
+          p = Path("receipts/mutated_source_candidate.json")
+          p.write_text(json.dumps(mutated_source, indent=2, sort_keys=True) + "\n")
+          try:
+              mod.CurrentRF40AxialShutdownLeadingOscillatoryField.load_candidate(p)
+          except ValueError as exc:
+              assert "provenance" in str(exc)
+          else:
+              raise AssertionError("rehash-consistent corrected-source provenance mutation was accepted")
+
+          mutated_parent = copy.deepcopy(candidate)
+          mutated_parent["configuration"]["agent1_leading"]["semantic_sha256"] = "a" * 64
+          mutated_parent["semantic_sha256"] = mod._identity._sha256(mutated_parent["configuration"])
+          p = Path("receipts/mutated_agent1_semantic_candidate.json")
+          p.write_text(json.dumps(mutated_parent, indent=2, sort_keys=True) + "\n")
+          try:
+              mod.CurrentRF40AxialShutdownLeadingOscillatoryField.load_candidate(p)
+          except ValueError as exc:
+              assert "semantic identity" in str(exc)
+          else:
+              raise AssertionError("rehash-consistent Agent-1 semantic mutation was accepted")
+          PY
