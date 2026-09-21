@@ -1,0 +1,141 @@
+name: agent7-st052m-observable-space-five-channel-jacobian
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_observable_space_five_channel_jacobian.py'
+      - 'experiments/root_st052/test_agent7_st052m_observable_space_five_channel_jacobian.py'
+      - '.github/workflows/agent7-st052m-observable-space-five-channel-jacobian.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  observable-space-five-channel-jacobian:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Verify exact PR head checkout
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+      - name: Focused observable-Jacobian contract tests
+        run: |
+          python -m pytest -q -W error \
+            experiments/root_st052/test_agent7_st052m_observable_space_five_channel_jacobian.py
+      - name: Execute preregistered observable-space Jacobian audit
+        run: |
+          mkdir -p outputs/agent7-st052m-observable-space-five-channel-jacobian
+          python experiments/root_st052/agent7_st052m_observable_space_five_channel_jacobian.py \
+            --out outputs/agent7-st052m-observable-space-five-channel-jacobian/report.json
+      - name: Verify receipt completeness and fail-closed truth boundary
+        run: |
+          python - <<'PY'
+          import json, math
+          from pathlib import Path
+
+          r=json.loads(Path('outputs/agent7-st052m-observable-space-five-channel-jacobian/report.json').read_text())
+          assert r['task_id']=='CR003-ST052M-OBSERVABLE-SPACE-FIVE-CHANNEL-JACOBIAN-127'
+          assert r['prereg_issue']==1067
+          assert r['source_parent']=={'pr':1060,'head':'637a86d84928c543526d0a7068b699ca90fe38a8'}
+          p=r['frozen_protocol']
+          assert p['channels']==['amplitude','radial_shape','axial_turnover','temporal_curvature','toroidal_swirl']
+          assert p['times']==[0.25,0.5,0.75]
+          assert p['ring_radii']==[0.4,0.7,1.0,1.3]
+          assert p['ring_abs_z']==[0.3,0.8]
+          assert p['azimuth_count']==16
+          assert p['vorticity_grid']==25
+          assert p['epsilons']==[0.001,0.0005]
+          assert p['new_basis_dimension']==0
+          assert p['coefficient_selected'] is None
+          assert p['public_openai_numeric_target'] is None
+
+          j=r['observable_space_jacobian']
+          assert j['observable_count']==163
+          assert j['observable_count_by_group']=={
+              'radial_ring':48,
+              'swirl_ring':48,
+              'axial_ring':48,
+              'core_speed_width':12,
+              'vorticity_shape':7,
+          }
+          assert 0 <= j['normalized_column_rank'] <= 5
+          assert isinstance(j['capacity_gate_passes'], bool)
+          assert isinstance(j['all_derivative_stability_gates_pass'], bool)
+          if j['normalized_condition'] is not None:
+              assert math.isfinite(j['normalized_condition'])
+          if j['max_abs_pairwise_cosine'] is not None:
+              assert math.isfinite(j['max_abs_pairwise_cosine'])
+          for channel,row in j['channels'].items():
+              assert math.isfinite(row['scaled_derivative_l2'])
+              assert len(row['dominant_observables'])==8
+              assert set(row['observable_group_energy_fractions'])=={
+                  'radial_ring','swirl_ring','axial_ring','core_speed_width','vorticity_shape'
+              }
+          assert r['structural_endpoint_guards']['all_current_channels_exact_start_identity'] is True
+          assert r['structural_endpoint_guards']['temporal_curvature_exact_end_identity'] is True
+          assert r['decision']['additional_basis_dimension_justified_by_this_audit'] is False
+          assert r['decision']['actual_velocity_changed'] is False
+          assert r['decision']['direct_visualization_fingerprint_improvement']==0.0
+          assert r['held_out_pde_residual']['evaluated'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          assert r['paper_exact'] is False
+          assert r['openai_field_identified'] is False
+          print('observable_rank=', j['normalized_column_rank'])
+          print('observable_condition=', j['normalized_condition'])
+          print('observable_max_abs_cos=', j['max_abs_pairwise_cosine'])
+          print('capacity_gate_passes=', j['capacity_gate_passes'])
+          print('stability_passes=', j['all_derivative_stability_gates_pass'])
+          for channel,row in j['channels'].items():
+              print(channel, row['observable_group_energy_fractions'])
+          PY
+      - name: Publish compact observable-space receipt
+        if: ${{ always() && github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          if [ ! -f outputs/agent7-st052m-observable-space-five-channel-jacobian/report.json ]; then exit 0; fi
+          python - <<'PY' > /tmp/agent7-observable-jacobian-receipt.md
+          import json
+          from pathlib import Path
+
+          r=json.loads(Path('outputs/agent7-st052m-observable-space-five-channel-jacobian/report.json').read_text())
+          j=r['observable_space_jacobian']
+          print('<!-- agent7-st052m-observable-space-five-channel-jacobian-receipt -->')
+          print('**Agent 7 observable-space five-channel Jacobian receipt (issue #1067):**')
+          print()
+          print(f"- observables: `{j['observable_count']}`; normalized rank: `{j['normalized_column_rank']}/5`; condition: `{j['normalized_condition']}`; max |cos|: `{j['max_abs_pairwise_cosine']}`")
+          print(f"- observable-space capacity gate: `{j['capacity_gate_passes']}`; two-step derivative-stability gate: `{j['all_derivative_stability_gates_pass']}`")
+          for channel,row in j['channels'].items():
+              top=row['dominant_observables'][:3]
+              print(f"- `{channel}` group-energy fractions: `{row['observable_group_energy_fractions']}`; top observables: `{top}`")
+          print('- basis dimension change: `0`; coefficient selected: `none`; candidate velocity unchanged; direct visualization-fingerprint improvement: `0.0`.')
+          print('- held-out complete-PDE residual: `not evaluated`; no ST006 improvement claim.')
+          print()
+          print('Truth boundary: this is target-free local observable-space sensitivity/routing evidence only. It does not establish visual/source correspondence, PDE validity, paper exactness, exact OpenAI-field identity, or blow-up.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-observable-jacobian-receipt.md || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-observable-space-five-channel-jacobian
+          path: outputs/agent7-st052m-observable-space-five-channel-jacobian/
+          if-no-files-found: warn
+
+# Observable protocol, local-linearization steps and gates were frozen in issue #1067 before execution.
