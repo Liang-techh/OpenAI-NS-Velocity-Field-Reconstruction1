@@ -1,0 +1,86 @@
+name: kokuno-agent1-actual-xi-prefix-moments
+
+on:
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_pa10_actual_xi_prefix_moments.py"
+      - "tests/test_kokuno_pa10_actual_xi_prefix_moments.py"
+      - ".github/workflows/kokuno-agent1-actual-xi-prefix-moments.yml"
+  workflow_dispatch:
+
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+
+      - name: Assert stacked A1 ancestry
+        shell: bash
+        run: |
+          git merge-base --is-ancestor f430f8f97df3bfafce56bf094047c769ecec922d HEAD
+
+      - name: Verify pinned corrected-source blob
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib
+          import urllib.request
+
+          url = "https://raw.githubusercontent.com/KokunoYumeto/yang-mills-interacting-workbench/143f6773feb424ad9ed3a8d116653200f20346b7/navier-stokes/navier_stokes_workbench.tex"
+          data = urllib.request.urlopen(url, timeout=30).read()
+          digest = hashlib.sha1(b"blob %d\0" % len(data) + data).hexdigest()
+          expected = "205a99807302e21a51c5eaf223390c0dfc42bcd0"
+          if digest != expected:
+              raise SystemExit(f"corrected source blob drifted: {digest} != {expected}")
+          print("corrected 2026-09-09 source blob pinned")
+          PY
+
+      - name: Compile focused files
+        run: |
+          python -m py_compile src/openai_ns_reconstruction/kokuno_pa10_actual_xi_prefix_moments.py
+          python -m py_compile tests/test_kokuno_pa10_actual_xi_prefix_moments.py
+
+      - name: Run parent and new focused regressions
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_pa10_actual_final_bridge_xi110.py \
+            tests/test_kokuno_pa10_actual_xi_prefix_moments.py
+
+      - name: Emit deterministic scoped receipt
+        run: |
+          python - <<'PY'
+          import json
+          import numpy as np
+          from openai_ns_reconstruction.kokuno_pa10_actual_xi_prefix_moments import KokunoPA10ActualXiPrefixMoments
+
+          obj = KokunoPA10ActualXiPrefixMoments(quadrature_order=32)
+          eta = np.array([-0.3, 0.0, 0.3])
+          discrepancy = obj.incoming_PA15_discrepancy(eta)
+          receipt = {
+              "schema": "kokuno-agent1-actual-xi-prefix-moments-receipt-v1",
+              "semantic_sha256": obj.semantic_sha256,
+              "eta": eta.tolist(),
+              "geometry": {
+                  "X_i": obj.X_i,
+                  "log_X_R": obj.log_X_R,
+                  "log_x_i": obj.log_x_i,
+              },
+              "incoming_PA15_discrepancy": discrepancy.tolist(),
+              "pa16_inputs": [obj.pa16_input_at_eta(float(v)) for v in eta],
+              "truth_boundary": obj.truth_boundary,
+          }
+          print(json.dumps(receipt, indent=2, sort_keys=True))
+          PY
