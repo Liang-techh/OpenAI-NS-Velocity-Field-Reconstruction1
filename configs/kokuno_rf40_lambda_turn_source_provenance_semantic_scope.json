@@ -1,0 +1,191 @@
+{
+  "schema": "cr002-kokuno-rf40-lambda-turn-source-provenance-semantic-scope-v1",
+  "task_id": "CR002-KOKUNO-RF40-LAMBDA-TURN-SOURCE-PROVENANCE-IDENTITY-103",
+  "purpose": "Govern the distinction between A1 #998 callable/save-load RF40 lambda-turn identity and cryptographic binding of the external corrected-reader provenance tuple.",
+  "exact_base": {
+    "pr": 1002,
+    "head": "bb3d943461820fe43c0bdb2063cb11b428c4ea1c",
+    "branch": "codex/kokuno-a5-rf40-axial-shutdown-composite-ingest-098"
+  },
+  "active_constrained_integration_observed": {
+    "branch": "codex/cr001-constraints",
+    "head": "7f6658cac1a8ffea178bec5accf2fa5a784b8249",
+    "note": "Observed separately from this stacked Kokuno governance base; no scientific promotion is inferred from branch routing."
+  },
+  "four_way_provenance": {
+    "user_requirements": [
+      "Deliver an explicit computable save/load 3-D time-dependent velocity(x,y,z,t)->[u,v,w].",
+      "Keep user requirements, public-source facts, autonomous repository design and pending/unknown items separate.",
+      "Keep velocity delivery, visual correspondence, PDE validation and paper/OpenAI identity as independent states.",
+      "Do not relax preregistered PDE, forcing, nontriviality or validation gates to manufacture success."
+    ],
+    "public_source_facts": [
+      "A1 #998 records the public corrected KokunoYumeto reconstruction as its source provenance: repository, commit, TeX path/blob, corrected release date and Zenodo record listed in corrected_public_source_provenance.",
+      "This governance increment does not independently reverify the original OpenAI paper and does not upgrade the corrected-reader formulas to paper-exact truth."
+    ],
+    "autonomous_repository_facts": [
+      "A1 #998 materializes a repository candidate-side leading Cartesian velocity through the RF40 lambda-turn endpoint X_3 with vectorized velocity(x,y,z,t), deterministic configuration save/load and a runtime semantic SHA-256.",
+      "Inspection of the exact A1 #998 implementation shows its semantic_sha256 payload contains schema, source_formulas, numerical_realization, truth_boundary and configuration, while the external source provenance block is emitted separately in report().",
+      "A5 #1002 records A1 #998 as a non-consumed newer sibling while the matched A2/A4 chain currently stops at RF40 axial shutdown X_2.",
+      "This contract, auditor and mutation witness are repository-autonomous governance."
+    ],
+    "pending_or_unknown": [
+      "An A1 lambda-turn serialization identity whose semantic digest itself binds the full corrected-reader provenance tuple.",
+      "A leading+oscillatory composite materialized through the lambda-turn domain on exact A1 #998 identity.",
+      "Implementation-distinct Cartesian validation on the lambda-turn composite/domain.",
+      "The following constant-lambda power-law stage, cone/I1-I4 overlays and outer/global completion.",
+      "Matched Cartesian pressure, preregistered restricted forcing, complete NS defect/correction and held-out full-PDE admission.",
+      "Visual correspondence, paper exactness, OpenAI-field identity and blow-up proof."
+    ]
+  },
+  "upstream_scope": {
+    "agent1_998": {
+      "pr": 998,
+      "head": "43b295444b1e9558222d757cb551e04385eddcb5",
+      "branch": "agent-kokuno-1/current-cartesian-rf40-lambda-turn-099",
+      "source_module": "src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_rf40_lambda_turn.py",
+      "source_blob": "07743c30978360e305a8863e05e7ed322d818b32",
+      "test_blob": "efa89ba23365d3a1b72d55d7aaa7837108cbc9a6",
+      "workflow_blob": "97674e6f567e600300ca0e7169c1cbd02fd6bace",
+      "materialized_domain": "leading-only through RF40 lambda turn X_3",
+      "public_velocity_api": "velocity(x,y,z,t)->[...,3]",
+      "configuration_save_load_available": true,
+      "runtime_semantic_sha256_available": true,
+      "dedicated_ci_pins_corrected_source_blob": true,
+      "semantic_payload_fields_observed": [
+        "schema",
+        "source_formulas",
+        "numerical_realization",
+        "truth_boundary",
+        "configuration"
+      ],
+      "report_carries_external_source_provenance": true,
+      "configuration_carries_external_source_provenance": false,
+      "semantic_sha256_carries_external_source_provenance": false
+    },
+    "agent5_1002": {
+      "pr": 1002,
+      "head": "bb3d943461820fe43c0bdb2063cb11b428c4ea1c",
+      "matched_composite_domain": "through RF40 axial shutdown X_2",
+      "agent1_998_recorded_as_non_consumed_newer_sibling": true,
+      "lambda_turn_composite_materialized": false,
+      "lambda_turn_independent_audit_registered": false,
+      "velocity_export_ready": false,
+      "pde_validated": false
+    }
+  },
+  "corrected_public_source_provenance": {
+    "repository": "KokunoYumeto/yang-mills-interacting-workbench",
+    "commit": "143f6773feb424ad9ed3a8d116653200f20346b7",
+    "path": "navier-stokes/navier_stokes_workbench.tex",
+    "git_blob": "205a99807302e21a51c5eaf223390c0dfc42bcd0",
+    "corrected_release_date": "2026-09-09",
+    "zenodo_record": "22678406",
+    "classification": "public_corrected_reader_provenance",
+    "original_openai_paper_exact_correspondence_independently_verified_here": false
+  },
+  "machine_locked_distinctions": {
+    "a1_998_lambda_turn_leading_callable_materialized": true,
+    "a1_998_configuration_save_load_available": true,
+    "a1_998_runtime_semantic_sha256_available": true,
+    "a1_998_report_carries_external_source_provenance": true,
+    "a1_998_dedicated_ci_pins_external_source_blob": true,
+    "a1_998_semantic_sha_binds_schema_source_formulas_numerical_realization_truth_boundary_configuration": true,
+    "a1_998_configuration_binds_external_source_provenance": false,
+    "a1_998_semantic_sha_binds_external_source_provenance": false,
+    "ci_source_blob_pin_implies_serialized_semantic_source_binding": false,
+    "report_source_block_implies_serialized_semantic_source_binding": false,
+    "source_provenance_semantic_identity_closed": false,
+    "source_provenance_semantic_identity_closed_implies_paper_exact": false,
+    "source_provenance_semantic_identity_closed_implies_openai_field_identified": false,
+    "lambda_turn_callable_save_load_implies_lambda_turn_composite_materialized": false,
+    "lambda_turn_callable_save_load_implies_global_project_domain_totality": false,
+    "lambda_turn_callable_save_load_implies_pde_validation": false
+  },
+  "semantic_scope_witness": {
+    "classification": "autonomous_mechanics_only",
+    "statement": "If an artifact digest is computed from an artifact payload that excludes external source metadata, changing only that external metadata leaves the artifact digest unchanged; including a canonical source-provenance block in the digest makes the same mutation detectable.",
+    "not_a_public_source_fact": true,
+    "not_candidate_numerical_evidence": true
+  },
+  "future_promotion_requirements": {
+    "source_provenance_semantic_identity_closed": [
+      "Bind a canonical source-provenance block into the serialized/runtime semantic identity, including repository, commit, source path, source blob and release/record identity used by the claim.",
+      "On load or downstream consumption, recompute and fail closed on any mutation of that bound provenance block rather than trusting report text alone.",
+      "Preserve the distinction between corrected-reader provenance binding and independent verification of original-paper exact correspondence.",
+      "Do not infer visual correspondence, PDE validity, paper exactness or OpenAI-field identity from provenance closure."
+    ],
+    "lambda_turn_delivery_progress": [
+      "A2 must actually compose the frozen complete-curl oscillatory runtime onto exact A1 #998 before a lambda-turn composite may be claimed.",
+      "Any A4 lambda-turn validation must consume the exact saved/reloaded public Cartesian candidate on its actual covered domain and remain distinct from canonical whole-domain PDE admission."
+    ]
+  },
+  "cr001_snapshot": {
+    "canonical_constraints_path": "configs/constraints.json",
+    "canonical_constraints_blob": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ]
+    ],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [
+      0.25,
+      0.75
+    ],
+    "forcing_mode": "restricted_two_parameter_family",
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "quadrature_orders_per_axis": [
+      24,
+      48,
+      96
+    ],
+    "momentum_max_threshold": 0.001,
+    "momentum_l2_threshold": 0.001,
+    "divergence_max_threshold": 1e-05,
+    "divergence_l2_threshold": 1e-05,
+    "residual_defined_free_force_allowed": false,
+    "candidate_collapse_allowed": false,
+    "post_hoc_threshold_relaxation_allowed": false
+  },
+  "canonical_delivery_independent_state": {
+    "candidate_family": "eq45_supported_velocity_candidate_v1",
+    "velocity_api": "openai_ns_reconstruction.eq45_supported_delivery:velocity",
+    "velocity_export_ready": true,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "kokuno_scope_may_downgrade_eq45_velocity_export_ready": false
+  },
+  "forbidden_promotions": {
+    "kokuno_lambda_turn_velocity_export_ready": false,
+    "kokuno_pde_validated": false,
+    "kokuno_paper_exact": false,
+    "kokuno_openai_field_identified": false,
+    "kokuno_blowup_proved": false,
+    "residual_defined_free_force_allowed": false,
+    "candidate_collapse_allowed": false,
+    "post_hoc_threshold_relaxation_allowed": false
+  }
+}
