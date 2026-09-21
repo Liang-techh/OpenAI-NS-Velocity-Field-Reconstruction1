@@ -24,6 +24,11 @@ env:
   A1_SOURCE_BLOB: 2ba28636a56b252fa485719e7b3e8da754d7e588
   A1_TEST_BLOB: ecbab9822c54f440f5555f25cd5e7e1648d84bd2
   A1_WORKFLOW_BLOB: 5c2d68211e8fea526e06087fc4475f7bab9eb563
+  A4_HEAD: 5fdb59afbbe89525e43164f92f0856aad2949600
+  A4_BRANCH: codex/kokuno-a4-cartesian-exterior-xr-divergence-audit-097
+  A4_SOURCE_BLOB: 8df8dbad1d9f7294c8d7d5e310cdecbea5a98f0b
+  A4_TEST_BLOB: a7c7af47e48715b0e7c90a587347459d849b948a
+  A4_WORKFLOW_BLOB: 0d87c10225444b559106b1130c7683ca56ce1472
   A2_HEAD: 9997fc55455d126f935643da36bf17eaa0491aa4
   A2_BRANCH: codex/kokuno-a2-partial-composite-identity-save-load-082
   A3_HEAD: dd11348e8eecf298656d7da58aee4526c6102306
@@ -63,6 +68,16 @@ jobs:
           test "$(git rev-parse "${A1_HEAD}:src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_exterior_to_xr.py")" = "$A1_SOURCE_BLOB"
           test "$(git rev-parse "${A1_HEAD}:tests/test_kokuno_pa16_current_cartesian_exterior_to_xr.py")" = "$A1_TEST_BLOB"
           test "$(git rev-parse "${A1_HEAD}:.github/workflows/kokuno-agent1-current-cartesian-exterior-to-xr.yml")" = "$A1_WORKFLOW_BLOB"
+
+      - name: Authenticate matching Agent-4 independent audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin "$A4_BRANCH"
+          test "$(git rev-parse FETCH_HEAD)" = "$A4_HEAD"
+          test "$(git rev-parse "${A4_HEAD}:src/openai_ns_reconstruction/kokuno_a4_current_cartesian_exterior_to_xr_divergence_independent_audit.py")" = "$A4_SOURCE_BLOB"
+          test "$(git rev-parse "${A4_HEAD}:tests/test_constrained_kokuno_a4_current_cartesian_exterior_to_xr_divergence_independent_audit.py")" = "$A4_TEST_BLOB"
+          test "$(git rev-parse "${A4_HEAD}:.github/workflows/kokuno-agent4-current-cartesian-exterior-to-xr-divergence-audit.yml")" = "$A4_WORKFLOW_BLOB"
 
       - name: Authenticate sibling heads without consuming them
         shell: bash
