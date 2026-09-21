@@ -1,0 +1,148 @@
+{
+  "schema": "cr002-kokuno-profile-cartesian-velocity-identity-scope-v1",
+  "task_id": "CR002-KOKUNO-PROFILE-CARTESIAN-IDENTITY-088",
+  "purpose": "Keep the executable fixed-kappa source-coordinate profile packet F(X,eta), U(X,eta), E(X,eta) separate from a physical Cartesian velocity(x,y,z,t)->[u,v,w] delivery identity.",
+  "active_integration_reference": {
+    "branch": "codex/cr001-constraints",
+    "head": "ca37d25d19b97d893030194ebd6364160ae4355e"
+  },
+  "audited_parent": {
+    "pr": 929,
+    "head": "744a4fbc642b861f61da91de713dd06adc357f09",
+    "source_path": "src/openai_ns_reconstruction/kokuno_a5_fixed_kappa_x100_ingest_contract.py",
+    "source_blob": "502e64e97903853a16025815eabe31bf8b2111d0"
+  },
+  "upstream_pins": {
+    "agent1_fixed_kappa_profile": {
+      "pr": 925,
+      "head": "1f3dec711f8ce2052276cd951b2f44d2849579bf",
+      "source_path": "src/openai_ns_reconstruction/kokuno_pa10_fixed_kappa_x100.py",
+      "source_blob": "818d965d82bd92505bd6d3e805e698e1e0da64d8",
+      "registered_public_values": ["F", "U", "E"],
+      "registered_public_radial_derivatives": ["F_X", "U_X", "E_X"],
+      "semantic_identity_and_save_load_registered": true,
+      "source_prepared_appendixA_pressure": false,
+      "source_exact_fixed_kappa_continuation": false
+    },
+    "agent4_profile_audit": {
+      "pr": 928,
+      "head": "602a8bb17d78421cddd493e2a6688a7e4c622e1e",
+      "source_path": "src/openai_ns_reconstruction/kokuno_a4_fixed_kappa_x100_independent_audit.py",
+      "source_blob": "d6df5ca24c92fe8e2a608dca983719711ca2f85d",
+      "saved_reloaded_public_values_only": true,
+      "production_derivatives_used_as_reference": false,
+      "source_coordinate_profile_audit_only": true,
+      "complete_ns_residual_audit": false
+    }
+  },
+  "canonical_constraints": {
+    "path": "configs/constraints.json",
+    "blob": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "momentum_max_gate": 0.001,
+    "momentum_l2_gate": 0.001,
+    "divergence_max_gate": 0.00001,
+    "divergence_l2_gate": 0.00001,
+    "residual_defined_pointwise_force_forbidden": true,
+    "collapsed_candidate_forbidden": true,
+    "post_hoc_threshold_relaxation_forbidden": true,
+    "boundary": "smooth zero extension of velocity and pressure outside support",
+    "pressure_gauge": "p=0 outside compact support",
+    "forcing_a_bounds": [0.0, 10.0],
+    "forcing_c_bounds": [0.0, 10.0],
+    "minimum_energy_each_validation_time": 0.1,
+    "maximum_energy_each_validation_time": 10.0,
+    "validation_times": [0.25, 0.3125, 0.4375, 0.5625, 0.6875, 0.75],
+    "residual_norms": [
+      "max Euclidean vector norm",
+      "volume-weighted L2 spatial norm at each time"
+    ]
+  },
+  "provenance_classes": {
+    "user_requirement": [
+      "The highest-priority delivery is an explicit callable and save/load 3D time-dependent velocity(x,y,z,t)->[u,v,w].",
+      "Callable velocity delivery is governed independently from visual correspondence, PDE validation, paper exactness, and OpenAI-field identity.",
+      "User requirements, public-source facts, autonomous design, and pending/unknown information remain separate."
+    ],
+    "public_source_fact": [
+      "As registered by Agent 1 #925 from the pinned corrected public reader, the fixed-kappa continuation uses partial_X log(F)=-kappa_0*p1r/(2X), partial_X U=-kappa_0*nsr/2, and E=sqrt(2X)*F on its stated source-coordinate interval.",
+      "As registered by Agent 1 #925, the displayed fixed-kappa shear schedule is kappa_0*(p1r,p2r*E_r/E)."
+    ],
+    "autonomous_design": [
+      "The current executable continuation freezes repository-autonomous kappa_0=0.1, uses the repository-autonomous pressure-derived reference stress, and evaluates the radial integrals with fixed Gauss-Legendre order 48.",
+      "Agent 4 #928 independently audits save/reloaded public F/U/E values with a centered eighth-order X finite-difference operator.",
+      "The two-component-map counterexample in this CR002 increment is mechanics-only and is not Kokuno/OpenAI candidate evidence."
+    ],
+    "pending_unknown": [
+      "A repository-level executable pullback that binds this exact profile artifact to physical inputs (x,y,z,t) and returns Cartesian [u,v,w].",
+      "A profile-artifact-bound source-coordinate-to-cylindrical/Cartesian component map, including any required azimuthal/time/scaling factors.",
+      "An axis-regular Cartesian branch or limiting rule for the resulting physical velocity provider.",
+      "The final X=100 to X=110 bridge, corrected/global leading join and declared support/extension needed for a global physical velocity artifact.",
+      "A save/load semantic identity for the actual Kokuno Cartesian velocity provider rather than only the source-coordinate profile configuration.",
+      "Matched Cartesian pressure/grad p, preregistered restricted forcing, real correction velocity, complete held-out NS residual, visual correspondence, PDE validation, paper exactness, and exact OpenAI-field identity."
+    ]
+  },
+  "governed_distinctions": {
+    "source_coordinate_profile_executable": true,
+    "profile_save_load_semantic_identity_registered": true,
+    "profile_radial_derivative_audit_registered": true,
+    "profile_identity_implies_cartesian_velocity_identity": false,
+    "profile_semantic_sha_is_velocity_candidate_sha": false,
+    "profile_radial_derivatives_imply_cartesian_velocity_jacobian": false,
+    "profile_values_alone_fix_unique_cartesian_component_map": false,
+    "kokuno_cartesian_coordinate_time_pullback_materialized": false,
+    "kokuno_cartesian_component_map_bound_to_profile_artifact": false,
+    "kokuno_axis_regular_cartesian_velocity_materialized": false,
+    "kokuno_global_outer_join_materialized": false,
+    "kokuno_velocity_provider_save_load_identity_materialized": false,
+    "kokuno_complete_candidate_api_ready": false,
+    "kokuno_velocity_export_ready": false
+  },
+  "cartesian_velocity_delivery_requirements": [
+    "A callable physical-input API velocity(x,y,z,t)->[u,v,w] with explicit units/domain/time semantics.",
+    "An executable coordinate/time pullback from physical (x,y,z,t) into every source-coordinate variable consumed by the exact profile artifact.",
+    "An explicit component/scaling map from profile quantities to cylindrical and then Cartesian velocity components, bound to the same profile semantic identity.",
+    "A finite axis branch or mathematically defined r->0 limit wherever cylindrical-to-Cartesian conversion is singular.",
+    "A complete/global join and support/extension rule covering the declared physical delivery domain rather than only X_1<=X<=100.",
+    "Save/load identity and candidate SHA bound to the actual Cartesian velocity provider/artifact, not merely to F/U/E profile configuration.",
+    "Independent state flags so exportability cannot promote visual correspondence, PDE validation, paper exactness, or OpenAI-field identity."
+  ],
+  "mechanics_witness": {
+    "classification": "autonomous_mechanics_only",
+    "profile_packet": {"F": 1.0, "U": 0.2, "E": 0.3},
+    "azimuth_phi": 0.0,
+    "map_a": "(u_r,u_theta,u_z)=(U,E,F)",
+    "map_b": "(u_r,u_theta,u_z)=(U,F,E)",
+    "cartesian_a_at_phi0": [0.2, 0.3, 1.0],
+    "cartesian_b_at_phi0": [0.2, 1.0, 0.3],
+    "same_profile_packet": true,
+    "different_cartesian_velocity": true,
+    "interpretation": "The same scalar profile payload can produce different Cartesian vectors when the component map is not part of the artifact identity; this is only a logical witness and does not assert ambiguity in the public Kokuno formulas."
+  },
+  "delivery_and_scientific_state": {
+    "canonical_eq45_velocity_delivery_remains_independent": true,
+    "canonical_eq45_velocity_export_ready": true,
+    "kokuno_velocity_export_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "non_changes": [
+    "No F/U/E value, derivative, kappa_0, stress, pressure, forcing, coefficient, optimizer, sample, source formula, artifact byte, or scientific threshold is modified.",
+    "No residual-defined f=R shortcut, amplitude collapse, post-hoc threshold relaxation, or visual-to-PDE/exactness promotion is introduced.",
+    "This scope does not say a source-coordinate profile is useless; it only prevents profile identity from being relabeled as Cartesian velocity-delivery identity before the missing representation contract is executable and bound."
+  ]
+}
