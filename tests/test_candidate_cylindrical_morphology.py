@@ -64,6 +64,7 @@ def test_identity_bound_wrapper_reuses_measurements_without_st054_identity_laund
     assert receipt["candidate_identity_bound"] is True
     assert receipt["measurements"] == direct["measurements"]
     assert receipt["measurement_sha256"] == direct["measurement_sha256"]
+    assert len(receipt["candidate_measurement_binding_sha256"]) == 64
     assert "source_commit" not in receipt
     assert "source_mat_sha256" not in receipt
     for key, expected in TRUTH_BOUNDARY.items():
@@ -116,10 +117,20 @@ def test_candidate_receipt_verifier_rejects_identity_tampering_and_truth_promoti
     with pytest.raises(ValueError, match="identity must be explicitly bound"):
         validate_candidate_morphology_receipt(unbound)
 
-    bad_identity = copy.deepcopy(receipt)
-    bad_identity["candidate_identity"]["candidate_sha256"] = "c" * 63
+    malformed_identity = copy.deepcopy(receipt)
+    malformed_identity["candidate_identity"]["candidate_sha256"] = "c" * 63
     with pytest.raises(ValueError, match="candidate_sha256"):
-        validate_candidate_morphology_receipt(bad_identity)
+        validate_candidate_morphology_receipt(malformed_identity)
+
+    valid_shape_identity_tamper = copy.deepcopy(receipt)
+    valid_shape_identity_tamper["candidate_identity"]["candidate_sha256"] = "c" * 64
+    with pytest.raises(ValueError, match="binding digest mismatch"):
+        validate_candidate_morphology_receipt(valid_shape_identity_tamper)
+
+    valid_shape_velocity_identity_tamper = copy.deepcopy(receipt)
+    valid_shape_velocity_identity_tamper["candidate_identity"]["velocity_identity_sha256"] = "d" * 64
+    with pytest.raises(ValueError, match="binding digest mismatch"):
+        validate_candidate_morphology_receipt(valid_shape_velocity_identity_tamper)
 
     promoted = copy.deepcopy(receipt)
     promoted["visualization_ready"] = True
@@ -130,6 +141,11 @@ def test_candidate_receipt_verifier_rejects_identity_tampering_and_truth_promoti
     invented_target["protocol"]["source_numeric_targets_used"] = True
     with pytest.raises(ValueError, match="source_numeric_targets_used"):
         validate_candidate_morphology_receipt(invented_target)
+
+    protocol_tampered = copy.deepcopy(receipt)
+    protocol_tampered["protocol"]["radii"][0] += 0.01
+    with pytest.raises(ValueError, match="binding digest mismatch"):
+        validate_candidate_morphology_receipt(protocol_tampered)
 
     tampered = copy.deepcopy(receipt)
     tampered["measurements"]["ring_rows"][0]["mean_u_r"] += 1.0

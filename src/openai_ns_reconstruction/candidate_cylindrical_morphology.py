@@ -45,10 +45,31 @@ def _require_sha256(value: str, name: str) -> str:
     return value
 
 
-def _measurement_sha256(measurements: dict[str, Any]) -> str:
+def _canonical_sha256(value: Any) -> str:
     return hashlib.sha256(
-        json.dumps(measurements, sort_keys=True, separators=(",", ":")).encode("utf-8")
+        json.dumps(value, sort_keys=True, separators=(",", ":")).encode("utf-8")
     ).hexdigest()
+
+
+def _measurement_sha256(measurements: dict[str, Any]) -> str:
+    return _canonical_sha256(measurements)
+
+
+def _candidate_measurement_binding_sha256(
+    identity: dict[str, str],
+    protocol: dict[str, Any],
+    measurement_sha256: str,
+) -> str:
+    """Bind the frozen candidate identity to the exact diagnostic protocol/output digest."""
+    return _canonical_sha256(
+        {
+            "schema": SCHEMA,
+            "candidate_identity": identity,
+            "diagnostic_implementation": IMPLEMENTATION,
+            "protocol": protocol,
+            "measurement_sha256": measurement_sha256,
+        }
+    )
 
 
 def validate_candidate_morphology_receipt(receipt: dict[str, Any]) -> None:
@@ -88,8 +109,19 @@ def validate_candidate_morphology_receipt(receipt: dict[str, Any]) -> None:
     measurements = receipt.get("measurements")
     if not isinstance(measurements, dict):
         raise ValueError("missing morphology measurements")
-    if receipt.get("measurement_sha256") != _measurement_sha256(measurements):
+    measurement_sha256 = _measurement_sha256(measurements)
+    if receipt.get("measurement_sha256") != measurement_sha256:
         raise ValueError("morphology measurement digest mismatch")
+
+    binding_sha256 = receipt.get("candidate_measurement_binding_sha256")
+    _require_sha256(binding_sha256, "candidate_measurement_binding_sha256")
+    expected_binding = _candidate_measurement_binding_sha256(
+        identity,
+        protocol,
+        measurement_sha256,
+    )
+    if binding_sha256 != expected_binding:
+        raise ValueError("candidate/measurement binding digest mismatch")
 
 
 def fingerprint_identified_velocity_field(
@@ -128,6 +160,11 @@ def fingerprint_identified_velocity_field(
         azimuth_count=azimuth_count,
         core_radii=core_radii,
     )
+    binding_sha256 = _candidate_measurement_binding_sha256(
+        identity,
+        base["protocol"],
+        base["measurement_sha256"],
+    )
 
     receipt: dict[str, Any] = {
         "schema": SCHEMA,
@@ -137,6 +174,7 @@ def fingerprint_identified_velocity_field(
         "protocol": base["protocol"],
         "measurements": base["measurements"],
         "measurement_sha256": base["measurement_sha256"],
+        "candidate_measurement_binding_sha256": binding_sha256,
         "external_method_screen": list(EXTERNAL_METHOD_SCREEN),
         "cylindrical_morphology_diagnostic_ready": True,
         **TRUTH_BOUNDARY,
