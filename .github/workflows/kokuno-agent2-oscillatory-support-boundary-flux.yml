@@ -142,7 +142,7 @@ jobs:
               arr=np.asarray(values,float)
               if not np.all(np.isfinite(arr)) or np.any(arr <= np.finfo(float).tiny):
                   failed.append(f'{name}_collar_nonfinite_or_trivial')
-                  reductions[name]=[float('nan'),float('nan')]
+                  reductions[name]=[None,None]
                   continue
               ratios=[float(arr[0]/arr[1]),float(arr[1]/arr[2])]
               reductions[name]=ratios
