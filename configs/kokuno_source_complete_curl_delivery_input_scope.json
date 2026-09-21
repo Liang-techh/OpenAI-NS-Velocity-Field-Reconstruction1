@@ -1,0 +1,173 @@
+{
+  "schema": "cr002-kokuno-source-complete-curl-delivery-input-scope-v1",
+  "task_id": "CR002-KOKUNO-SOURCE-CURL-DELIVERY-INPUT-SCOPE-106",
+  "purpose": "Govern the delivery/input-completeness boundary created when A2 #1018 makes corrected-source normalized complete-curl algebra executable without supplying the missing source background/phase realization needed to evaluate its directional coefficient jets from project Cartesian inputs.",
+  "exact_base": {
+    "pr": 1018,
+    "head": "ecc2be96eee441308cc0216bf187b43bbd7fd3a0",
+    "branch": "codex/kokuno-a2-source-complete-curl-reference-089",
+    "source_module": "src/openai_ns_reconstruction/kokuno_source_normalized_complete_curl_reference.py",
+    "source_module_blob": "42809fc1b10937b4246c65121ac1dbfdc2986822"
+  },
+  "active_integration_reference": {
+    "branch": "codex/cr001-constraints",
+    "head": "7f6658cac1a8ffea178bec5accf2fa5a784b8249",
+    "role": "live constrained truth/routing authority; this narrow governance delta stacks on exact A2 #1018 because #1018 first exposes the executable corrected-source complete-curl input surface"
+  },
+  "four_way_provenance": {
+    "user_requirements": [
+      "Deliver an explicit computable save/load 3-D time-dependent Cartesian velocity(x,y,z,t)->[u,v,w].",
+      "Keep velocity delivery, visual correspondence, PDE validation, paper exactness and OpenAI-field identity independent.",
+      "Do not weaken domain/support/forcing/nontriviality/residual gates or use u->0/free f=R shortcuts."
+    ],
+    "public_source_facts": [
+      "A2 #1018 authenticates the public corrected Kokuno source repository/commit and exposes its normalized complete-curl algebra as an executable annular reference.",
+      "The corrected-source reference uses normalized directional derivatives D_r and D_z and is defined on an annular chart requiring positive radius.",
+      "This increment does not independently establish original OpenAI-paper exact correspondence, hidden parameters, a numerical OpenAI field, pressure, forcing or a visual target."
+    ],
+    "autonomous_repository_facts": [
+      "A2 #1018 accepts already-evaluated source directional coefficient jets as caller inputs instead of reconstructing the missing source background/phase map.",
+      "The current repository physical Cartesian oscillatory runtime has separate axis-safe support machinery and is not declared source-equivalent by #1018.",
+      "This contract, auditor and mechanics witness are repository-side governance only."
+    ],
+    "pending_or_unknown": [
+      "A complete source background/phase realization mapping project variables to the source normalized directional operators and coefficient jets.",
+      "A complete source-to-runtime parameter/support/phase map for the autonomous oscillatory runtime.",
+      "A source-derived global Cartesian and axis-safe velocity realization over the project delivery domain.",
+      "Visual correspondence, matched pressure/restricted forcing, complete NS residual admission, paper exactness, exact OpenAI-field identity and blow-up."
+    ]
+  },
+  "upstream_source_reference": {
+    "source_repository": "KokunoYumeto/yang-mills-interacting-workbench",
+    "source_commit": "143f6773feb424ad9ed3a8d116653200f20346b7",
+    "source_workbench_blob": "205a99807302e21a51c5eaf223390c0dfc42bcd0",
+    "source_normalized_curl_formula_executable": true,
+    "source_complete_harmonic_amplitude_algebra_executable": true,
+    "source_annular_domain_requires_positive_radius": true,
+    "source_directional_derivatives_supplied_by_caller": true,
+    "current_runtime_phase_source_exact": false,
+    "current_runtime_support_source_exact": false,
+    "current_runtime_complete_curl_source_equivalence_verified": false,
+    "source_to_runtime_parameter_map_complete": false
+  },
+  "delivery_input_boundary": {
+    "project_delivery_signature": "velocity(x,y,z,t)->[u,v,w]",
+    "source_reference_primary_inputs": [
+      "radius",
+      "normalized potential directional jet",
+      "n_phi",
+      "t_m",
+      "D_r C_m",
+      "D_z C_m",
+      "k",
+      "m"
+    ],
+    "source_reference_self_contained_cartesian_velocity_provider": false,
+    "source_reference_accepts_x_y_z_t_only": false,
+    "source_reference_defines_global_axis_extension": false,
+    "source_reference_establishes_axis_safe_global_cartesian_runtime": false,
+    "source_reference_establishes_project_domain_totality": false,
+    "source_reference_establishes_identity_preserving_velocity_save_load": false,
+    "source_reference_velocity_export_ready": false,
+    "source_formula_executable_can_be_true_while_velocity_delivery_remains_false": true
+  },
+  "machine_locked_nonimplications": {
+    "executable_source_formula_implies_self_contained_velocity_provider": false,
+    "caller_supplied_directional_jets_imply_source_background_realized": false,
+    "manufactured_curl_or_divergence_identity_implies_runtime_source_equivalence": false,
+    "annular_fail_closed_reference_implies_project_velocity_cannot_be_axis_safe": false,
+    "source_formula_reference_implies_visual_correspondence": false,
+    "source_formula_reference_implies_pde_validation": false,
+    "source_formula_reference_implies_paper_exact": false,
+    "source_formula_reference_implies_openai_field_identity": false,
+    "green_or_queued_ci_implies_scientific_promotion": false
+  },
+  "scope_logic_witness": {
+    "classification": "autonomous_mechanics_only",
+    "statement": "Holding radius, phase vector, transverse harmonic and carrier fixed while changing caller-supplied D_r C_m/D_z C_m can change the returned complete harmonic amplitude. Therefore the source reference is not a function of project x,y,z,t alone until a source background/phase realization determines those jets.",
+    "fixed_inputs": {
+      "radius": 1.0,
+      "n_phi": [1.0, 0.0, 0.0],
+      "t_m": [0.0, 1.0, 0.0],
+      "k": 2.0,
+      "m": 1
+    },
+    "jet_realization_a": {
+      "D_r_C_m": [0.0, 0.0, 0.0],
+      "D_z_C_m": [0.0, 0.0, 0.0]
+    },
+    "jet_realization_b": {
+      "D_r_C_m": [0.0, 0.0, 0.0],
+      "D_z_C_m": [0.0, 1.0, 0.0]
+    },
+    "not_a_public_source_parameter_claim": true,
+    "not_candidate_numerical_evidence": true
+  },
+  "future_promotion_requirements": {
+    "source_reference_to_velocity_provider": [
+      "Materialize the missing source background/phase realization so D_r C_m and D_z C_m are computed from the same declared source variables rather than supplied freely by a caller.",
+      "Bind the complete source-to-runtime parameter, support and phase map and state which remaining choices are autonomous design.",
+      "Provide a Cartesian component map and truthful axis/global-domain treatment that yields one deterministic velocity(x,y,z,t) provider.",
+      "If save/load delivery is claimed, bind the complete runtime/source realization identity and recompute it on load."
+    ],
+    "visual_correspondence": [
+      "Compare reproducible observables of the resulting total public velocity with only the public qualitative observable contract.",
+      "Do not infer visual correspondence from source terminology, complete-curl algebra, manufactured identities or source provenance alone."
+    ],
+    "pde_promotion": [
+      "Materialize matched Cartesian pressure and the preregistered restricted forcing for the same global candidate.",
+      "Run the frozen independent held-out complete-NS validation protocol without threshold relaxation or residual-defined free forcing."
+    ]
+  },
+  "cr001_snapshot": {
+    "constraints_blob_sha1": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "momentum_max": 0.001,
+    "momentum_l2": 0.001,
+    "divergence_max": 1e-05,
+    "divergence_l2": 1e-05,
+    "residual_defined_free_forcing_forbidden": true,
+    "candidate_collapse_forbidden": true,
+    "post_hoc_threshold_relaxation_forbidden": true
+  },
+  "canonical_delivery_independence": {
+    "candidate_family": "eq45_supported_velocity_candidate_v1",
+    "velocity_api": "openai_ns_reconstruction.eq45_supported_delivery:velocity",
+    "velocity_export_ready": true,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  },
+  "kokuno_source_reference_state": {
+    "self_contained_cartesian_velocity_provider": false,
+    "velocity_export_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  },
+  "forbidden_promotions": [
+    "A2 #1018 executable source complete-curl formula -> self-contained velocity(x,y,z,t) delivery",
+    "caller-supplied D_r C_m/D_z C_m jets -> source background/phase realization complete",
+    "annular source reference -> global axis-safe Cartesian realization",
+    "manufactured divergence cancellation -> current autonomous runtime is source-equivalent",
+    "source provenance/formula execution -> visual correspondence",
+    "source provenance/formula execution -> PDE validation or exact OpenAI field",
+    "Kokuno source-reference incompleteness -> downgrade canonical Eq45 velocity_export_ready",
+    "residual -> unrestricted pointwise forcing",
+    "failed fixed gate -> post-hoc threshold relaxation"
+  ]
+}
