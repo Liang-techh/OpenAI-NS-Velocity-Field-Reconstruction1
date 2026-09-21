@@ -1,13 +1,28 @@
-# 当前检查点：ST006 可复验发布
+# Current checkpoint and candidate selection
 
-本页是 **main 发布入口**，不是并行集成分支完整研究日志。
+Updated 2026-09-21. This page separates latest documented research from what the `main` checkout can currently execute. It is not the integration branch's task queue.
 
-保留候选 ST006 的原始参数和三份独立证据已版本化：[manifest](../artifacts/research/ST006/manifest.json)。稳定调用入口为 `research_baseline.load_best()`，命令入口为 `python scripts/ns_candidate.py`。
+## Four distinct entry points
 
-完整 NS `1e-3` 目标仍未达成。原始种子 9172801 的 max≈.108229、体积 L2≈.107584；原差分梯级散度最大值也失败。后续 ST030/ST032/ST033 未同时改善两项动量指标，保留 ST006。见 [研究状态](RESEARCH_STATUS.md)。
+| Role | Candidate | Where to start | State |
+|---|---|---|---|
+| Latest geometry experiment | ST063-G2R | [ST063 record](research_snapshots/ST063.md), [comparison guide](../visualization/README.md) | Local study and complete offline bundle; full array/runtime import to `main` not performed |
+| Residual-oriented controls | ST061-D and ST061-P | [ST061 record](research_snapshots/ST061.md) | D lower L2, P lower peak within the ST061 paired samples; no universal winner |
+| Viewer bundled on `main` | ST054-Q2 and ST054-M3 | [MATLAB viewer](../visualization/matlab/README.md) | Existing frozen export and original native-test receipts; not the latest geometry field |
+| Backward-compatible Python baseline | ST006 | [Frozen manifest](../artifacts/research/ST006/manifest.json), `research_baseline.load_best()` | Historical retained API default; not a claim that subsequent studies do not exist |
 
-发布后使用：[目录/API 指南](REPOSITORY_GUIDE.md)、[实验索引](../artifacts/research/experiment_index.json)。
+ST063-G1R remains an explicitly reported control, including its second-sample residual regressions and one off-grid radial-pressure sign miss. It is not hidden, but is not the preferred geometry example.
 
-继续科学构造时，先读取 `codex/cr001-constraints` 的最新任务与检查点，并查看 #205、#210、#240 及相关开放 PR。其他 agent 的路线、候选与时序未被本次发布替换。科学与软件状态独立。
+## What changed most recently
 
-发布前的 main 原检查点保存在 [archive/pre_publication/CURRENT_CHECKPOINT.md](archive/pre_publication/CURRENT_CHECKPOINT.md)，供追溯，不再作为当前候选存在与否的状态源。
+G2R has a longer moderate-strength axial rotation plateau and a 3.5%–7.3% fixed-window aspect increase at t=0.25/0.5/0.75. Its paired sampled peaks decrease, but paired volume L2 increases by 0.65%/1.84%. Strong-axis continuity at thresholds 0.25 and 0.35 is not established. The new comparison UI is supplied, not natively MATLAB-tested in that round.
+
+Every candidate above remains unvalidated for the original full NS target. No geometry result, source-code upload or software test changes that status.
+
+## Resume the right experiment
+
+A working continuation needs the actual frozen candidate, compatible runtime, registration, source identity and evidence. A branch README or hash alone is not a recoverable field. [The catalog](research_catalog.json) binds the available complete bundle names and hashes, source commits, exact raw identities and test limits. Do not run an ST063 command from a checkout that lacks its complete bundle.
+
+The main ST006 API and its original failure reports remain unchanged. See [results](RESEARCH_STATUS.md) for current paired comparisons and [repository guide](REPOSITORY_GUIDE.md) for runnable commands.
+
+For multi-agent routing use [the live integration task file](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/codex/cr001-constraints/docs/AGENT_TASKS.md). This organization change does not close, duplicate, unblock or reassign those tasks.

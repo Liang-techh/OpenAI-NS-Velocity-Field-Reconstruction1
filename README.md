@@ -1,78 +1,82 @@
-# Constrained Navier–Stokes Reconstruction
+# Navier–Stokes Candidate Research
 
-**当前保留研究基线：ST006。完整 NS `1e-3` 目标尚未达成。**
+**Independent velocity-field construction, full-residual validation, and interactive visualization.**
 
-这不是 OpenAI 官方仓库。这里提供公开约束下的独立候选、可复验数值证据和后续构造实验，不宣称恢复了 OpenAI 原始速度场，也不宣称证明了奇异性。
+We construct nontrivial, time-dependent Navier–Stokes candidates while balancing momentum residuals, effective flow volume, and axial-core geometry. This is an independent research workspace, not an OpenAI repository or a claim to have recovered OpenAI's exact velocity field.
 
-## 先从这里开始
+**Latest documented geometry experiment: ST063-G2R. Numerical controls: ST061-D/P. The original full `1e-3` momentum target remains unmet.** Repository organization and visualization do not change that scientific status.
 
-| 需要什么 | 入口 |
-|---|---|
-| MATLAB 交互式查看 ST054-Q2/M3 | [统一可视化入口](visualization/) / [运行与滑动条说明](visualization/matlab/README.md) |
-| 直接使用当前保留场 | [Python API](research_baseline/) / [使用说明](docs/REPOSITORY_GUIDE.md) |
-| 原始参数、哈希、完整验证 | [ST006 发布目录](artifacts/research/ST006/) / [manifest](artifacts/research/ST006/manifest.json) |
-| 当前结果与仍未通过的门槛 | [研究状态](docs/RESEARCH_STATUS.md) |
-| 后续实验为什么未获采用 | [实验索引](artifacts/research/experiment_index.json) / [ST030–ST033](experiments/root_st030/) |
-| 整个仓库与并行路线 | [目录指南](docs/REPOSITORY_GUIDE.md) / [分支与 PR 指南](docs/BRANCH_AND_PR_GUIDE.md) / [文档索引](docs/README.md) |
+[Latest results](docs/RESEARCH_STATUS.md) · [Which version should I use?](docs/CURRENT_CHECKPOINT.md) · [Visualization](visualization/README.md) · [Repository map](docs/REPOSITORY_GUIDE.md) · [Experiment catalog](experiments/README.md)
 
-## MATLAB 交互查看器
+## What is new
 
-在 MATLAB 的仓库根目录运行：
+ST063-G2R redistributes rotation along the axis without graphically stretching the field. In the declared observation cylinder, its axial-to-single-transverse RMS aspect ratio increases by **3.5%–7.3%** at the three principal checked times. The moderate-strength axial rotation profile is more continuous, but the hoped-for 10%–20% aspect improvement and a continuous high-threshold strong core have **not** been achieved.
+
+On two new paired validation samples, G2R reduces the sampled momentum maximum by **7.21% / 12.32%** relative to ST061-P, while spatial volume L2 **increases by 0.65% / 1.84%**. It is a geometry/residual tradeoff, not a universally better candidate.
+
+Source: [immutable ST063 study record](docs/research_snapshots/ST063.md). [Results and availability catalog](docs/research_catalog.json) records candidate identities, sample IDs, source commits and what is actually available on GitHub.
+
+## Choose the right entry point
+
+| Purpose | Entry | Important distinction |
+|---|---|---|
+| Inspect the latest axial-core improvement | [ST063 comparison guide](visualization/README.md#latest-st063-parentchild-comparison) | Complete comparison data is in the delivered ST063 ZIP; the research branch does not contain every dependency or array |
+| Compare residual-oriented alternatives | [ST061-D/P results](docs/RESEARCH_STATUS.md#residual-oriented-controls-st061) | D has lower L2; P has lower sampled peaks on the same ST061 samples |
+| Run the viewer already bundled on `main` | `visualization/matlab/ns_explorer.m` | Displays ST054-Q2/M3, not ST063 |
+| Run the backward-compatible Python API | `research_baseline.load_best()` | Still returns frozen ST006; the historical function name is not a latest-candidate selector |
+| Continue research | [Experiment and branch guide](experiments/README.md) | Use the selected candidate's complete bundle, not another stage's missing dependencies |
+| Find older evidence | [Documentation index](docs/README.md) | Historical files and failed experiments remain available at their original paths |
+
+## Latest paired numerical results
+
+ST063 validation used 4,096 Cartesian points per seed, six fixed times and the original separate spatial/time/energy-quadrature refinement ladders. Values are worst over those times at spatial step `0.005` and time step `0.0025`.
+
+| Seed | Candidate | Full-vector sampled maximum | Spatial volume L2 |
+|---|---|---:|---:|
+| 9216391 | ST061-P, parent | 0.02627926 | 0.03403560 |
+| 9216391 | ST063-G2R | **0.02438535** | 0.03425750 |
+| 9216392 | ST061-P, parent | 0.02566467 | 0.03358854 |
+| 9216392 | ST063-G2R | **0.02250356** | 0.03420609 |
+
+Compare within a seed. Spatial volume L2 is `sqrt(64 * mean(|R|^2))` at each time, not RMS or a time average. **Both original momentum gates still fail.** Sampled maxima, local peak searches and plots are not continuous-domain upper bounds. See [full comparison and limitations](docs/RESEARCH_STATUS.md).
+
+## Visualization quick start
+
+For the ST054 viewer and data already present in a normal `main` checkout:
 
 ```matlab
 addpath('visualization/matlab');
 ns_explorer;
 ```
 
-数据随仓库保存，正常使用无需 Python。下方时间条按原系数连续求值，上方同步显示三维流线/涡量表面和速度、压力、涡量或残差切片。可调起点、密度、长度、切片位置及等值面阈值。查看器展示的是固定 ST054 研究快照，不替换 ST006 发布基线，也不代表科学验收已通过。
+For the latest parent/G2R comparison, extract the separately delivered **`NS_ST063_MATLAB_Comparison.zip`**, switch MATLAB's Current Folder to its `NS_ST063_MATLAB_Comparison` directory, then run:
 
-[完整操作说明](visualization/matlab/README.md) · [实际 MATLAB 测试与截图](visualization/matlab/VERIFICATION.md)
+```matlab
+start_here
+```
 
-## 直接运行，不需要训练
+The ST063 comparison shares physical axis scales, camera, time, seeds and absolute thresholds between the two fields. Its new MATLAB UI has **not been executed natively** in the ST063 study; MAT export/reference tests and Python renders are separate evidence. The [visualization guide](visualization/README.md) explains exactly which data and tests belong to each viewer.
 
-在仓库根目录执行，Python 3.10+：
+## Compatible Python baseline
 
 ```bash
 python -m pip install -e '.[dev]'
 python scripts/ns_candidate.py verify
 python scripts/ns_candidate.py evaluate --point 0.1 0 0.1 --time 0.5
-python -m pytest -q -W error tests/test_published_baseline.py
 ```
 
-```python
-from research_baseline import load_best
-field = load_best()  # repository-local API; retained baseline, NOT PDE-validated
-u, p = field.fields([[0.1, 0.0, 0.1], [0.0, 0.0, 0.2]], 0.5)
-f = field.forcing([[0.1, 0.0, 0.1], [0.0, 0.0, 0.2]], 0.5)
-uvw = field.velocity(0.1, 0.0, 0.1, 0.5)
-```
+These commands deliberately retain **ST006** compatibility. For ST061/ST063, use the corresponding complete research bundle and its replay entry. Updating this homepage does not relabel the old baseline or silently replace anyone's numerical arrays.
 
-该 API 使用冻结参数和原数值公式，只有命名空间、输入检查和分批求值的封装变化。`load_best` 的“best”仅指本项目根研究路线当前保留基线，不代表数学全局最优。包从仓库根目录导入，当前不作为独立 wheel 发布。
+## Scientific contract
 
-## 数值状态，不隐藏失败
+The constrained research family uses viscosity `0.01`, time `[0.25,0.75]`, physical domain `R^3`, evaluation box `[-2,2]^3`, and smooth compact velocity and pressure inside `r<2`, `|z|<2`. Initial energy is one. The force is independently prescribed within the original bounded two-parameter divergence-free family, not defined from the candidate residual.
 
-原始留出种子 `9172801`、4096 个笛卡尔点、六个固定时刻、空间步长 `0.005`：
+New geometric targets and relative training allowances are autonomous experiment settings, not numerical targets extracted from a schematic. Software integrity, visualization readiness, sampled scientific acceptance and mathematical proof remain separate states.
 
-| 指标 | 记录值 | 原门槛 | 结果 |
-|---|---:|---:|---|
-| 完整三分量动量残差采样最大值 | 0.1082289305 | 0.001 | **失败** |
-| 动量残差体积 L2 | 0.1075843288 | 0.001 | **失败** |
-| 原梯级散度最大误差 | 大于 1e-5 | 1e-5 | **失败** |
+`pde_validated=false` · `source_correspondence_verified=false` · `paper_exact=false` · `blowup_proved=false`
 
-来源：[原始完整报告](artifacts/research/ST006/evidence/round2/ST006_validation.json)。追加空间细化改善散度数值误差，但没有消除动量残差：[细化记录](artifacts/research/ST006/evidence/round2/additional_refinement.json)。采样最大值不是连续时空上确界。
+## Workspace organization
 
-```bash
-python scripts/ns_candidate.py validate --seed 9172801 --out outputs/ST006_recheck.json
-```
+This repository, whose name ends in **Reconstruction1**, is the research workspace. [The separate publication repository](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction) is a different checkout and is not changed by this organization update.
 
-该命令实际调用独立 Cartesian FD 验证器，然后检查科学门槛。**当前预期退出码是 1**，包括 `momentum_max`、`momentum_L2`、`divergence_max` 失败；这与软件发布测试通过不矛盾。输出路径已存在时拒绝覆盖。
-
-## 固定物理约束
-
-`nu=0.01`，物理域 `R^3`，评估盒 `[-2,2]^3`，时间 `[0.25,0.75]`；速度与压力在 `r<2, |z|<2` 内光滑紧支撑；原两参数 curl 外力 `a,c in [0,10]`；`E(0.25)=1`。详细约束见 [manifest](artifacts/research/ST006/manifest.json) 和 [原始约束配置](configs/constraints.json)。未通过实验不通过改阈值重新命名为成功。
-
-## 分支分工与历史
-
-`main` 是可检出、可运行的发布入口；`codex/cr001-constraints` 保留并行集成研究；原 `src/openai_ns_reconstruction`、旧 CLI 和测试保持兼容，未被重命名或删除。原始精确复刻资料保留在 `docs/legacy_exact_reconstruction/`，发布前的入口文件保留在 `docs/archive/pre_publication/`。旧 demo 不是新候选通过验证的证据。
-
-`pde_validated=false` · `paper_exact=false` · `openai_field_identified=false` · `blowup_proved=false`
+Existing source paths, parameter files, validation reports, integration tasks, branches and scientific defaults are preserved. New English navigation distinguishes current research from the compatibility release and legacy exact-reconstruction material. See [organization record](docs/ORGANIZATION.md) and [branch guide](docs/BRANCH_AND_PR_GUIDE.md).

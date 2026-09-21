@@ -1,0 +1,22 @@
+{
+  "scope": "Read-only evidence consistency checks for the ST063 repository navigation update",
+  "date": "2026-09-21",
+  "base_main": "502936d119a0b582e6f271813804581abf9cc9e5",
+  "task_issue": 1068,
+  "archive_sha256_and_zip_crc_checks": 3,
+  "raw_candidate_sha256_checks": 4,
+  "paired_table_rows_matched_exactly_to_original_full_reports": 12,
+  "mat_data_sha256_verified": "1f9402c4205b0548e789e64fb0c754d3f1c78830e3720b36167731c83d2f87c4",
+  "all_above_checks_passed": true,
+  "source_snapshot_blobs": {
+    "ST061": "c6e07bf8ce2711033f57d22881a27d1c9b219fb5",
+    "ST063": "f699535a5fba0d31930fbdfd4149590d6f9716c2"
+  },
+  "optimizer_executed": false,
+  "new_scientific_validation_executed": false,
+  "native_matlab_executed": false,
+  "full_repository_tests_executed": false,
+  "scientific_gate_flags_changed": false,
+  "github_about_field_updated": false,
+  "limits": "These checks validate archive identities and the reported tables only. They are not a rerun of the PDE solver or a claim that complete offline assets have been uploaded to main. Sidebar metadata requires a separate administration action."
+}

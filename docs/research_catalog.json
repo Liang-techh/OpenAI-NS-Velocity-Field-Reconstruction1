@@ -1,0 +1,94 @@
+{
+  "schema": "research_navigation_v1",
+  "updated": "2026-09-21",
+  "repository": "Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1",
+  "scope": "Curated latest-results and availability index, not a complete all-branch inventory or candidate promotion",
+  "latest_geometry_candidate": "ST063-G2R",
+  "residual_controls": ["ST061-D", "ST061-P"],
+  "bundled_main_viewer_candidates": ["ST054-Q2", "ST054-M3"],
+  "unchanged_python_api_candidate": "ST006",
+  "pde_validated": false,
+  "source_correspondence_verified": false,
+  "paper_exact": false,
+  "blowup_proved": false,
+  "validation_protocol": {
+    "points_per_seed": 4096,
+    "time_slices": 6,
+    "reported_space_step": 0.005,
+    "reported_time_step": 0.0025,
+    "norm": "Euclidean full-vector sampled max and fixed-time spatial volume L2 = sqrt(64 * mean(sum(R**2,axis=1))), each worst over six times",
+    "momentum_threshold": 0.001,
+    "comparison_rule": "Compare only rows within the same study and seed; no continuous supremum bound",
+    "organization_reran_validation": false
+  },
+  "studies": {
+    "ST061": {
+      "branch": "research/st061-quadratic-subspace",
+      "issue": 900,
+      "source_commit": "ad0e6dacf3851a12f4272bb4f6b282cf49506d8e",
+      "source_path": "experiments/root_st061/README.md",
+      "source_blob": "c6e07bf8ce2711033f57d22881a27d1c9b219fb5",
+      "local_snapshot": "docs/research_snapshots/ST061.md",
+      "candidates": {
+        "ST061-D": {"role": "lower_L2_within_ST061_pair", "raw_sha256": "728bd92b3cf321c46726c953ec72342cba12464a77cc0e2c8b1cd157d54b5b37", "pde_validated": false},
+        "ST061-P": {"role": "lower_peak_within_ST061_pair_and_ST063_parent", "raw_sha256": "d56e01b25dc0e6077687fe0b72c4608f4c332ae042230fb7e5a796c5ff189429", "pde_validated": false}
+      },
+      "paired_results": [
+        {"seed":9206291,"candidate":"ST060-Q","max":0.027559315226219006,"volume_L2":0.03374187106068435},
+        {"seed":9206291,"candidate":"ST061-D","max":0.026788020110924435,"volume_L2":0.03333465903335943},
+        {"seed":9206291,"candidate":"ST061-P","max":0.02580782220423295,"volume_L2":0.03347432641256566},
+        {"seed":9206292,"candidate":"ST060-Q","max":0.027992393733693038,"volume_L2":0.03457784543286563},
+        {"seed":9206292,"candidate":"ST061-D","max":0.027204469154934973,"volume_L2":0.03426968736612646},
+        {"seed":9206292,"candidate":"ST061-P","max":0.02620795221578385,"volume_L2":0.034440441141806846}
+      ],
+      "complete_bundle": "NS_ST061_method_volume_progress.zip",
+      "remote_availability": "Selected solver sources and result documentation; complete raw arrays, runtime and states were delivered separately",
+      "native_matlab_in_this_study": "not_run"
+    },
+    "ST063": {
+      "branch": "research/st063-axial-core",
+      "issue": 939,
+      "source_commit": "a3d04d3467361bab7c9fc7c8c6aedf31987ee069",
+      "source_path": "experiments/root_st063/README.md",
+      "source_blob": "f699535a5fba0d31930fbdfd4149590d6f9716c2",
+      "local_snapshot": "docs/research_snapshots/ST063.md",
+      "candidates": {
+        "ST063-G1R": {"role": "geometry_control_with_recorded_regressions", "raw_sha256": "5482fc02f1b85d9f49a9d14c41cc4b5f25d191ad9fa0964eaf6773e9dc58b64c", "pde_validated": false},
+        "ST063-G2R": {"role": "latest_geometry_comparison_not_universally_best", "raw_sha256": "b9505453786af0ae0b0fd6e6d784d14c6892827b72cf2a70ace2f9f87acd13a0", "pde_validated": false}
+      },
+      "paired_results": [
+        {"seed":9216391,"candidate":"ST061-P","max":0.026279255060335002,"volume_L2":0.034035600656015505},
+        {"seed":9216391,"candidate":"ST063-G1R","max":0.024546533709074312,"volume_L2":0.033767328775136926},
+        {"seed":9216391,"candidate":"ST063-G2R","max":0.02438535329193401,"volume_L2":0.03425749818472021},
+        {"seed":9216392,"candidate":"ST061-P","max":0.02566467314396125,"volume_L2":0.03358854497849373},
+        {"seed":9216392,"candidate":"ST063-G1R","max":0.026861392722101148,"volume_L2":0.033883206585681475},
+        {"seed":9216392,"candidate":"ST063-G2R","max":0.02250355909296729,"volume_L2":0.034206087967209475}
+      ],
+      "geometry": {
+        "window": "r<=0.35, abs(z)<=0.60",
+        "weight": "omega_z squared with cylindrical volume weights",
+        "aspect": "centered axial RMS / single-transverse RMS, using r^2/2",
+        "rows": [
+          {"time":0.25,"parent":1.48755304,"G2R":1.59680197},
+          {"time":0.5,"parent":1.65049839,"G2R":1.73146643},
+          {"time":0.75,"parent":1.75122740,"G2R":1.81256943}
+        ],
+        "target_10_to_20_percent_reached": false,
+        "axis_connected_at_high_thresholds_025_035": false,
+        "low_threshold_span_is_observation_limited": true,
+        "is_source_image_similarity_score": false
+      },
+      "complete_bundle": "NS_ST063_axial_core_visual_progress.zip",
+      "matlab_bundle": "NS_ST063_MATLAB_Comparison.zip",
+      "remote_availability": "Geometry audit, comparison UI source and study record; complete arrays, MAT, optimizer and dependencies are in the separately delivered bundles",
+      "native_matlab_in_this_study": "not_run",
+      "mat_roundtrip_and_reference_tests": "reported_passed_in_source_record",
+      "previews": "Python numerical renders, not MATLAB screenshots"
+    }
+  },
+  "bundles": [
+    {"filename":"NS_ST061_method_volume_progress.zip","bytes":35286603,"sha256":"d11f078d26dd78dc5e1136850f9bb1716afe4e1e0cc3acfff9d6324a906eba37","availability":"Previously delivered conversation attachment; not a GitHub release asset"},
+    {"filename":"NS_ST063_axial_core_visual_progress.zip","bytes":64668298,"sha256":"588009a4e42b8adad887b3198229080c7ad2efe57121a03c952245124b6d5196","availability":"Previously delivered conversation attachment; not a GitHub release asset"},
+    {"filename":"NS_ST063_MATLAB_Comparison.zip","bytes":1850963,"sha256":"4f78f0930a7e7d1ff1921eccbafd8346da40850eb7bed46d0e1b2009f587343e","availability":"Previously delivered conversation attachment; not a GitHub release asset","mat_sha256":"1f9402c4205b0548e789e64fb0c754d3f1c78830e3720b36167731c83d2f87c4"}
+  ]
+}
