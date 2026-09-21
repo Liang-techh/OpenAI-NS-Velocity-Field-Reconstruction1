@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "contract_id": "CR002-KOKUNO-RADIAL-FORCE-AUDIT-REGISTRATION-SCOPE-108",
+  "status": "governance_only_no_scientific_promotion",
+  "base": {
+    "pr": 1024,
+    "head": "931bf8ae11c7ed0f7118c2f868a657d2ee16863b",
+    "meaning": "A5 registration snapshot that consumes A3 #1022 radial force but predates/does not consume the dedicated A4 radial-force audit"
+  },
+  "post_freeze_evidence": {
+    "agent3_radial_force_pr": 1022,
+    "agent3_radial_force_head": "93200f28deae4372c2338e0620b785543af892d4",
+    "agent4_radial_force_audit_pr": 1023,
+    "agent4_radial_force_audit_head": "6865031eb5084d2bcbfe6832c23c73b22b2f8c21",
+    "agent4_audit_exists": true,
+    "agent5_1024_consumes_agent4_1023": false,
+    "agent5_1024_registered_radial_force_audit": false
+  },
+  "allowed_true": {
+    "a3_1022_radial_force_materialized_through_x2": true,
+    "a4_1023_independent_radial_force_audit_artifact_exists": true,
+    "a4_1023_uses_implementation_distinct_fd4_reference": true,
+    "a5_1024_registers_a3_1022_radial_force": true
+  },
+  "required_false": {
+    "a5_1024_current_repository_fact_no_dedicated_radial_force_audit_exists": false,
+    "a5_1024_consumes_or_registers_a4_1023": false,
+    "a4_1023_artifact_existence_means_a5_admission": false,
+    "a4_1023_scoped_operator_audit_means_complete_ns_defect": false,
+    "a4_1023_scoped_operator_audit_means_authorized_correction_target": false,
+    "a4_1023_scoped_operator_audit_means_cartesian_correction_velocity": false,
+    "a4_1023_scoped_operator_audit_means_pde_validated": false,
+    "a4_1023_scoped_operator_audit_means_paper_exact": false,
+    "a4_1023_scoped_operator_audit_means_openai_field_identified": false
+  },
+  "evidence_semantics": {
+    "snapshot_truth_rule": "A PR body may truthfully describe evidence available at its freeze time, but later repository evidence must not be erased by replaying the stale negative statement as a current fact.",
+    "registration_rule": "Existence of a sibling audit artifact is distinct from downstream A5 consumption/registration or scientific admission.",
+    "ci_rule": "queued/running is neither PASS nor FAIL; green CI alone cannot promote scoped operator consistency into complete-NS validity."
+  },
+  "promotion_requirements": {
+    "a5_registration_of_radial_force_audit": [
+      "consume exact A4 #1023 identity/head and exact A3 #1022 lineage",
+      "record exact-head CI status without converting queued/running to PASS",
+      "preserve scoped operator-consistency boundary",
+      "keep complete NS defect/correction/PDE states separate"
+    ]
+  },
+  "provenance_classes": {
+    "user_requirement": [
+      "maintain independent delivery/visual/PDE/paper-exact states",
+      "record real tests, commits and CI",
+      "avoid duplicate work and stale claim laundering"
+    ],
+    "public_source_fact": [],
+    "autonomous_governance": [
+      "snapshot-vs-current-evidence distinction",
+      "artifact-exists-vs-consumed/registered distinction"
+    ],
+    "pending_unknown": [
+      "scientific admission of A4 #1023 exact-head evidence",
+      "A3 correction-side migration from X2 to current X4 production identity",
+      "complete NS defect and correction authorization"
+    ]
+  },
+  "cr001_snapshot": {
+    "constraints_blob": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "momentum_max_l2_threshold": 0.001,
+    "divergence_max_l2_threshold": 0.00001,
+    "residual_defined_free_force_forbidden": true,
+    "candidate_collapse_forbidden": true,
+    "post_hoc_threshold_relaxation_forbidden": true
+  },
+  "canonical_delivery_independence": {
+    "candidate": "eq45_supported_velocity_candidate_v1",
+    "velocity_export_ready": true,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  }
+}
