@@ -1,0 +1,101 @@
+name: kokuno-agent5-current-i1-composite-mean-ingest
+
+on:
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_a5_current_i1_composite_mean_ingest.py"
+      - "tests/test_kokuno_a5_current_i1_composite_mean_ingest.py"
+      - ".github/workflows/kokuno-agent5-current-i1-composite-mean-ingest.yml"
+  workflow_dispatch:
+
+jobs:
+  current-i1-composite-mean-ingest:
+    runs-on: ubuntu-latest
+    env:
+      PARENT_A5_HEAD: ee6e1909e06edabbdf44e204fab1bc072c37d4b6
+      PARENT_A5_PATH: src/openai_ns_reconstruction/kokuno_a5_current_i1_routing_checkpoint.py
+      PARENT_A5_BLOB: 56b51c7ac8accb5c0f846bc89af8ad72b4eb6cc2
+      A4_LEADING_HEAD: ad9f8722b6ec89df975f9b2402e63066dc14422d
+      A4_LEADING_PATH: src/openai_ns_reconstruction/kokuno_a4_current_i1_leading_divergence_independent_audit.py
+      A4_LEADING_BLOB: cc8c8f9ed0e8f727035c14232bb7f80d2703ac76
+      A1_I2_HEAD: 9c2abbc69ba1ef8c8a9e8d1699a466a75d0293c3
+      A1_I2_PATH: src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_i2_heat_repair.py
+      A1_I2_BLOB: bfeff163d304c4cf1fb84eb8ff1cdfcf430870b4
+      A2_I1_HEAD: 109527f520abb29bbe10372b0517eda44bcad0b6
+      A2_I1_PATH: src/openai_ns_reconstruction/kokuno_current_i1_leading_oscillatory_identity.py
+      A2_I1_BLOB: 3a8db3e12f57050fd6579b36b9e20ce0e6b95af7
+      A3_I1_HEAD: e6ac8bed0ef775232e18e81e87f6a7572dcba8fb
+      A3_I1_PATH: src/openai_ns_reconstruction/kokuno_current_i1_nonlinear_mean_attribution.py
+      A3_I1_BLOB: 33f69761d5ba014bf0dab2c74c08e4e72166538b
+      A4_COMPOSITE_HEAD: 33626e55f301bbb5a28f75684de49d020bc6039d
+      A4_COMPOSITE_PATH: src/openai_ns_reconstruction/kokuno_a4_current_i1_composite_divergence_independent_audit.py
+      A4_COMPOSITE_BLOB: 22b9947684f318e892e17b0a455efac8da63fdb8
+      ARTIFACT_DIR: artifacts/kokuno_agent5/current_i1_composite_mean_ingest_107
+
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Authenticate exact parent and current A1-A4 sibling blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          git cat-file -e "${PARENT_A5_HEAD}^{commit}"
+          git cat-file -e "${A4_LEADING_HEAD}^{commit}"
+          git merge-base --is-ancestor "${PARENT_A5_HEAD}" HEAD
+          git merge-base --is-ancestor "${A4_LEADING_HEAD}" "${PARENT_A5_HEAD}"
+          test "$(git rev-parse "${PARENT_A5_HEAD}:${PARENT_A5_PATH}")" = "${PARENT_A5_BLOB}"
+          test "$(git rev-parse "${A4_LEADING_HEAD}:${A4_LEADING_PATH}")" = "${A4_LEADING_BLOB}"
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            test "${{ github.event.pull_request.base.sha }}" = "${PARENT_A5_HEAD}"
+          fi
+
+          git fetch --no-tags origin \
+            "+refs/pull/1061/head:refs/remotes/origin/a5-a1-i2-1061" \
+            "+refs/pull/1062/head:refs/remotes/origin/a5-a2-i1-1062" \
+            "+refs/pull/1063/head:refs/remotes/origin/a5-a3-i1-1063" \
+            "+refs/pull/1064/head:refs/remotes/origin/a5-a4-i1-composite-1064"
+          test "$(git rev-parse refs/remotes/origin/a5-a1-i2-1061)" = "${A1_I2_HEAD}"
+          test "$(git rev-parse refs/remotes/origin/a5-a2-i1-1062)" = "${A2_I1_HEAD}"
+          test "$(git rev-parse refs/remotes/origin/a5-a3-i1-1063)" = "${A3_I1_HEAD}"
+          test "$(git rev-parse refs/remotes/origin/a5-a4-i1-composite-1064)" = "${A4_COMPOSITE_HEAD}"
+          test "$(git rev-parse "${A1_I2_HEAD}:${A1_I2_PATH}")" = "${A1_I2_BLOB}"
+          test "$(git rev-parse "${A2_I1_HEAD}:${A2_I1_PATH}")" = "${A2_I1_BLOB}"
+          test "$(git rev-parse "${A3_I1_HEAD}:${A3_I1_PATH}")" = "${A3_I1_BLOB}"
+          test "$(git rev-parse "${A4_COMPOSITE_HEAD}:${A4_COMPOSITE_PATH}")" = "${A4_COMPOSITE_BLOB}"
+
+      - name: Install package
+        run: python -m pip install -e .
+
+      - name: Run focused parent and Agent-5 regressions
+        run: |
+          python -m pytest -q \
+            tests/test_kokuno_a5_current_i1_routing_checkpoint.py \
+            tests/test_kokuno_a5_current_i1_composite_mean_ingest.py
+
+      - name: Materialize deterministic A5 registration artifact
+        run: |
+          mkdir -p "${ARTIFACT_DIR}"
+          python -m openai_ns_reconstruction.kokuno_a5_current_i1_composite_mean_ingest \
+            --output "${ARTIFACT_DIR}/a5_current_i1_composite_mean_ingest.json"
+
+      - name: Upload registration artifact before enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-current-i1-composite-mean-ingest-107
+          path: artifacts/kokuno_agent5/current_i1_composite_mean_ingest_107
+          if-no-files-found: warn
+
+      - name: Enforce exact identity and truth firewall
+        run: |
+          python -m openai_ns_reconstruction.kokuno_a5_current_i1_composite_mean_ingest \
+            --output "${ARTIFACT_DIR}/a5_current_i1_composite_mean_ingest.json" \
+            --enforce-existing
