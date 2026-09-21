@@ -1,0 +1,216 @@
+name: kokuno-agent2-oscillatory-self-advection-energy-flux
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_oscillatory_self_advection_energy_flux.py'
+      - 'tests/test_constrained_kokuno_oscillatory_self_advection_energy_flux.py'
+      - '.github/workflows/kokuno-agent2-oscillatory-self-advection-energy-flux.yml'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Assert pinned A2 ancestry
+        if: github.event_name == 'pull_request'
+        run: |
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha }}"
+          git merge-base --is-ancestor 2162b1bfa9d00d6c142848e52f36f5b699722a0c HEAD
+          test "$(git rev-parse 2162b1bfa9d00d6c142848e52f36f5b699722a0c:src/openai_ns_reconstruction/kokuno_oscillatory_nonlinear_cancellation.py)" = "10e3f29ee1a159c8647dda2ebecefb5e9c6952f0"
+          test "$(git rev-parse 2162b1bfa9d00d6c142848e52f36f5b699722a0c:src/openai_ns_reconstruction/kokuno_public_z_pullback_velocity.py)" = "4a3abc1a11f7e054f651dd7bace8ada6d5a6b653"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+
+      - name: Focused regressions
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_oscillatory_self_advection_energy_flux.py
+          tests/test_constrained_kokuno_public_oscillatory_self_advection.py
+
+      - name: Materialize independent public-velocity energy-flux receipt
+        run: |
+          python - <<'PY'
+          from __future__ import annotations
+          import json
+          from pathlib import Path
+          import numpy as np
+
+          from openai_ns_reconstruction.kokuno_oscillatory_self_advection_energy_flux import (
+              KokunoOscillatorySelfAdvectionEnergyFlux,
+              public_contract,
+          )
+          from openai_ns_reconstruction.kokuno_public_z_pullback_velocity import velocity_osc
+
+          # Fresh support-interior probes frozen before Actions output.
+          radius=np.asarray([0.46,0.53,0.61,0.68,0.76,0.84,0.91,0.99,
+                             0.49,0.57,0.65,0.73,0.81,0.89,0.97,1.05],float)
+          theta=np.asarray([0.19,0.57,0.94,1.32,1.71,2.08,2.47,2.84,
+                            -2.91,-2.48,-2.06,-1.63,-1.21,-0.78,-0.36,0.43],float)
+          z=np.asarray([-0.84,-0.69,-0.53,-0.37,-0.20,-0.04,0.13,0.29,
+                        0.45,0.61,0.77,-0.74,-0.48,-0.22,0.35,0.71],float)
+          t=np.asarray([0.471,0.476,0.481,0.486,0.491,0.496,0.501,0.506,
+                        0.511,0.516,0.521,0.526,0.531,0.536,0.541,0.546],float)
+          x=radius*np.cos(theta); y=radius*np.sin(theta)
+
+          def u(xx,yy,zz,tt):
+              out=np.asarray(velocity_osc(xx,yy,zz,tt),float)
+              if not np.all(np.isfinite(out)):
+                  raise RuntimeError('public velocity became non-finite')
+              return out
+
+          def kinetic(uu):
+              return 0.5*np.sum(uu*uu,axis=-1)
+
+          def rms_scalar(value):
+              value=np.asarray(value,float)
+              return float(np.sqrt(np.mean(value*value)))
+
+          def relative_rms(reference,value):
+              return rms_scalar(np.asarray(value)-np.asarray(reference))/max(
+                  rms_scalar(reference),np.finfo(float).tiny)
+
+          u0=u(x,y,z,t)
+          speed=np.linalg.norm(u0,axis=-1)
+          if np.any(speed <= 1e-12):
+              raise RuntimeError('frozen probes contain zero oscillatory velocity')
+          direction=u0/speed[:,None]
+          K0=kinetic(u0)
+
+          def directional_power_fd4(h):
+              vals={}
+              for offset in (-2,-1,1,2):
+                  d=offset*h*direction
+                  vals[offset]=kinetic(u(x+d[:,0],y+d[:,1],z+d[:,2],t))
+              dK=(vals[-2]-8*vals[-1]+8*vals[1]-vals[2])/(12*h)
+              return speed*dK
+
+          def axis_shift(axis,offset,h):
+              xx=x.copy(); yy=y.copy(); zz=z.copy()
+              if axis==0: xx=xx+offset*h
+              elif axis==1: yy=yy+offset*h
+              else: zz=zz+offset*h
+              return xx,yy,zz
+
+          def divergence_energy_flux_fd4(h):
+              total=np.zeros_like(x)
+              for axis in range(3):
+                  vals={}
+                  for offset in (-2,-1,1,2):
+                      xx,yy,zz=axis_shift(axis,offset,h)
+                      uu=u(xx,yy,zz,t)
+                      vals[offset]=kinetic(uu)*uu[:,axis]
+                  total += (vals[-2]-8*vals[-1]+8*vals[1]-vals[2])/(12*h)
+              return total
+
+          def divergence_velocity_fd4(h):
+              total=np.zeros_like(x)
+              for axis in range(3):
+                  vals={}
+                  for offset in (-2,-1,1,2):
+                      xx,yy,zz=axis_shift(axis,offset,h)
+                      vals[offset]=u(xx,yy,zz,t)[:,axis]
+                  total += (vals[-2]-8*vals[-1]+8*vals[1]-vals[2])/(12*h)
+              return total
+
+          diagnostic=KokunoOscillatorySelfAdvectionEnergyFlux()
+          result=diagnostic.evaluate(x,y,z,t)
+          contract=public_contract()
+          production_power=np.asarray(result.self_advection_power_density,float)
+          steps=(0.008,0.004,0.002)
+          directional=[directional_power_fd4(h) for h in steps]
+          flux_div=[divergence_energy_flux_fd4(h) for h in steps]
+          div_u=[divergence_velocity_fd4(h) for h in steps]
+          product_rhs=[directional[i]+K0*div_u[i] for i in range(len(steps))]
+          power_errors=[relative_rms(production_power,v) for v in directional]
+          product_errors=[relative_rms(flux_div[i],product_rhs[i]) for i in range(len(steps))]
+          power_refinement=[
+              power_errors[0]/max(power_errors[1],np.finfo(float).tiny),
+              power_errors[1]/max(power_errors[2],np.finfo(float).tiny),
+          ]
+          product_refinement=[
+              product_errors[0]/max(product_errors[1],np.finfo(float).tiny),
+              product_errors[1]/max(product_errors[2],np.finfo(float).tiny),
+          ]
+
+          failed=[]
+          if not all(np.isfinite(power_errors+product_errors+power_refinement+product_refinement)):
+              failed.append('nonfinite_fd4_metrics')
+          if rms_scalar(production_power) <= 1e-12:
+              failed.append('self_advection_power_trivial')
+          if power_errors[-1] > 2e-3:
+              failed.append('finest_directional_power_relative_rms')
+          if product_errors[-1] > 5e-3:
+              failed.append('finest_conservative_product_rule_relative_rms')
+          if power_errors[-1] > 1e-9 and min(power_refinement) < 6.0:
+              failed.append('directional_power_refinement')
+          if product_errors[-1] > 1e-9 and min(product_refinement) < 6.0:
+              failed.append('conservative_product_rule_refinement')
+          if contract['forbidden_evaluate_inputs_present']:
+              failed.append('forbidden_inputs')
+          if contract['mean_projection_performed']:
+              failed.append('agent3_mean_lane_crossed')
+          if contract['correction_velocity_constructed']:
+              failed.append('agent3_correction_lane_crossed')
+          if contract['whole_domain_energy_balance_assessed']:
+              failed.append('local_identity_promoted_to_global_energy_balance')
+          if contract['complete_ns_residual']:
+              failed.append('local_identity_promoted_to_ns_residual')
+
+          summary=result.summary_payload()
+          receipt={
+              'schema':'kokuno-a2-oscillatory-self-advection-energy-flux-receipt-v1',
+              'parent_agent2_head':'2162b1bfa9d00d6c142848e52f36f5b699722a0c',
+              'energy_flux_sha256':diagnostic.energy_flux_sha256,
+              'sample_count':int(x.size),
+              'fd4_steps':list(steps),
+              'production_summary':summary,
+              'directional_power_relative_rms':power_errors,
+              'directional_power_refinement_ratios':power_refinement,
+              'conservative_product_rule_relative_rms':product_errors,
+              'conservative_product_rule_refinement_ratios':product_refinement,
+              'independent_divergence_rms':[rms_scalar(v) for v in div_u],
+              'independent_compressibility_remainder_rms':[
+                  rms_scalar(K0*v) for v in div_u
+              ],
+              'interpretation':(
+                  'local oscillatory quadratic kinetic-energy transport identity only; '
+                  'not a whole-domain energy balance or NS residual'
+              ),
+              'oscillatory_velocity_changed':False,
+              'mean_projection_performed':False,
+              'correction_velocity_constructed':False,
+              'pressure_included':False,
+              'forcing_included':False,
+              'complete_ns_residual':False,
+              'same_protocol_st006_comparison_valid':False,
+              'paper_exact':False,
+              'pde_validated':False,
+              'failed_guards':failed,
+          }
+          Path('artifacts').mkdir(exist_ok=True)
+          Path('artifacts/kokuno_agent2_oscillatory_self_advection_energy_flux_receipt.json').write_text(
+              json.dumps(receipt,indent=2,sort_keys=True)+'\n',encoding='utf-8'
+          )
+          print(json.dumps(receipt,indent=2,sort_keys=True))
+          if failed:
+              raise SystemExit('failed guards: '+', '.join(failed))
+          PY
+
+      - name: Upload receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent2-oscillatory-self-advection-energy-flux-v1
+          path: artifacts/kokuno_agent2_oscillatory_self_advection_energy_flux_receipt.json
+          if-no-files-found: warn
