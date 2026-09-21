@@ -1,0 +1,113 @@
+name: kokuno-agent5-rf40-power-law-radial-stress-ingest
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-rf40-power-law-radial-stress-ingest-104
+  pull_request:
+    branches:
+      - codex/kokuno-a5-rf40-axial-shutdown-radial-force-audit-reg-103
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  register:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out exact A5 event head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Verify exact parent and three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+          git merge-base --is-ancestor 2dab469f3d48268bfb7edac18ae454b8265a99c0 HEAD
+          test "$(git rev-list --count 2dab469f3d48268bfb7edac18ae454b8265a99c0..HEAD)" -eq 6
+          mapfile -t files < <(git diff --name-only 2dab469f3d48268bfb7edac18ae454b8265a99c0..HEAD)
+          test "${#files[@]}" -eq 3
+          printf '%s\n' "${files[@]}" | sort > /tmp/actual-files
+          printf '%s\n' \
+            .github/workflows/kokuno-agent5-rf40-power-law-radial-stress-ingest.yml \
+            src/openai_ns_reconstruction/kokuno_a5_rf40_power_law_radial_stress_ingest_contract.py \
+            tests/test_kokuno_a5_rf40_power_law_radial_stress_ingest_contract.py \
+            | sort > /tmp/expected-files
+          diff -u /tmp/expected-files /tmp/actual-files
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install package and test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e . pytest
+
+      - name: Run parent and current Agent-5 contract tests
+        run: |
+          pytest -q -W error \
+            tests/test_kokuno_a5_rf40_axial_shutdown_radial_force_audit_registration.py \
+            tests/test_kokuno_a5_rf40_power_law_radial_stress_ingest_contract.py
+
+      - name: Authenticate exact parent and X4 production/evidence blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          check_blob() {
+            local commit="$1" path="$2" expected="$3"
+            git fetch --no-tags origin "$commit" >/dev/null 2>&1 || true
+            actual="$(git rev-parse "${commit}:${path}")"
+            test "$actual" = "$expected" || { echo "blob mismatch for $commit:$path: $actual != $expected"; exit 1; }
+          }
+          check_blob 2dab469f3d48268bfb7edac18ae454b8265a99c0 src/openai_ns_reconstruction/kokuno_a5_rf40_axial_shutdown_radial_force_audit_registration.py 4cab62d7cab7b88cbfb87b474321e3e1c04b1673
+          check_blob 2dab469f3d48268bfb7edac18ae454b8265a99c0 tests/test_kokuno_a5_rf40_axial_shutdown_radial_force_audit_registration.py 4c2a1ea17d740710572aa1582a12f3963e912af7
+          check_blob 2dab469f3d48268bfb7edac18ae454b8265a99c0 .github/workflows/kokuno-agent5-rf40-axial-shutdown-radial-force-audit-registration.yml 25b8b7d037dd4afdf3364d5eb7c0a55c02d047a5
+          check_blob 9a5cdcdf78b7862d5ebe171efb9ca56d53664612 src/openai_ns_reconstruction/kokuno_current_rf40_power_law_nonlinear_radial_stress.py 44dc6d61bc965cef08b119aa5df3026175abd5de
+          check_blob 9a5cdcdf78b7862d5ebe171efb9ca56d53664612 tests/test_constrained_kokuno_current_rf40_power_law_nonlinear_radial_stress.py 40ee7a854e8f7649b4e5dba6fba191d066a67805
+          check_blob 9a5cdcdf78b7862d5ebe171efb9ca56d53664612 .github/workflows/kokuno-agent3-current-rf40-power-law-nonlinear-radial-stress.yml 0c604cc3e7ae84f58ad712a25145ebbd1dc17296
+          check_blob 8a34d11605d095334175df9618f8f5b18f5c210e src/openai_ns_reconstruction/kokuno_a4_current_rf40_power_law_nonlinear_mean_independent_audit.py 87ddbe38d7b442847fe06423b3dd38fcc139253e
+          check_blob 8a34d11605d095334175df9618f8f5b18f5c210e tests/test_constrained_kokuno_a4_current_rf40_power_law_nonlinear_mean_independent_audit.py ee8f0362ccd3f50dd9c91f03665f6c4122877cb7
+          check_blob 8a34d11605d095334175df9618f8f5b18f5c210e .github/workflows/kokuno-agent4-current-rf40-power-law-nonlinear-mean-independent-audit.yml fb868e992488704b15f3d9c936f4eb89715ead76
+          check_blob a4546cacfa224c82398ef7245ba41cca41159800 src/openai_ns_reconstruction/kokuno_a4_current_rf40_power_law_radial_stress_independent_audit.py 17f98a0c1054132d251dfe7310120e8d41f60244
+          check_blob a4546cacfa224c82398ef7245ba41cca41159800 tests/test_constrained_kokuno_a4_current_rf40_power_law_radial_stress_independent_audit.py 2d476a7dc71dfa90351b1c3de2be1c2bc50cb8d7
+          check_blob a4546cacfa224c82398ef7245ba41cca41159800 .github/workflows/kokuno-agent4-current-rf40-power-law-radial-stress-independent-audit.yml 016a80bdb311e547db4fb4cde85e2a9accb2b241
+
+      - name: Materialize frozen integration receipt
+        run: |
+          mkdir -p artifacts/kokuno-agent5
+          python -m openai_ns_reconstruction.kokuno_a5_rf40_power_law_radial_stress_ingest_contract \
+            --output artifacts/kokuno-agent5/rf40_power_law_radial_stress_ingest.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction import kokuno_a5_rf40_power_law_radial_stress_ingest_contract as c
+          p = Path('artifacts/kokuno-agent5/rf40_power_law_radial_stress_ingest.json')
+          receipt = json.loads(p.read_text())
+          c.enforce_registration_receipt(receipt)
+          r = receipt['registration']
+          assert r['agent3_power_law_stress']['pr'] == 1037
+          assert r['agent4_power_law_mean_audit']['pr'] == 1029
+          assert r['agent4_power_law_stress_audit']['pr'] == 1038
+          assert r['truth_boundary']['current_nonlinear_radial_stress_through_power_law_materialized'] is True
+          assert r['truth_boundary']['agent4_dedicated_power_law_radial_stress_audit_present'] is True
+          assert r['truth_boundary']['agent4_independent_power_law_radial_stress_audit_registered'] is True
+          assert r['truth_boundary']['agent4_independent_power_law_radial_stress_audit_admitted'] is False
+          assert r['truth_boundary']['current_nonlinear_radial_force_through_power_law_materialized'] is False
+          assert r['truth_boundary']['scoped_power_law_radial_stress_authorized_as_ns_correction_target'] is False
+          assert r['readiness']['correction_ready'] is False
+          assert r['readiness']['pde_validated'] is False
+          assert r['frozen_science']['residual_defined_free_forcing_forbidden'] is True
+          PY
+
+      - name: Upload registration receipt before any future scientific admission
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-rf40-power-law-radial-stress-ingest
+          path: artifacts/kokuno-agent5/rf40_power_law_radial_stress_ingest.json
+          if-no-files-found: error
