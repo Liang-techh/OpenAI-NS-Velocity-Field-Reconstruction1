@@ -1,0 +1,164 @@
+name: kokuno-agent5-current-rf40-power-law-composite-ingest
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a5-rf40-power-law-composite-ingest-100
+  pull_request:
+    branches:
+      - codex/kokuno-a5-rf40-lambda-turn-composite-ingest-099
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Check out exact A5 event head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: a5
+          fetch-depth: 0
+
+      - name: Verify exact A5 parent ancestry and strict three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd a5
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+          git merge-base --is-ancestor 28860ee1f4655670c62b24880f08aa3d50459623 HEAD
+          test "$(git rev-list --count 28860ee1f4655670c62b24880f08aa3d50459623..HEAD)" -eq 3
+          mapfile -t files < <(git diff --name-only 28860ee1f4655670c62b24880f08aa3d50459623..HEAD)
+          test "${#files[@]}" -eq 3
+          printf '%s\n' "${files[@]}" | sort > /tmp/actual-files
+          printf '%s\n' \
+            .github/workflows/kokuno-agent5-current-rf40-power-law-composite-ingest.yml \
+            src/openai_ns_reconstruction/kokuno_a5_current_rf40_power_law_composite_ingest_contract.py \
+            tests/test_kokuno_a5_current_rf40_power_law_composite_ingest_contract.py \
+            | sort > /tmp/expected-files
+          diff -u /tmp/expected-files /tmp/actual-files
+          test "$(git hash-object src/openai_ns_reconstruction/kokuno_a5_current_rf40_lambda_turn_composite_ingest_contract.py)" = \
+            "c71499e4e0ae38c9f6eb1032c2e63be7dde58894"
+          test "$(git hash-object tests/test_kokuno_a5_current_rf40_lambda_turn_composite_ingest_contract.py)" = \
+            "39d54fee64394ab08c90d344098d823e166735f4"
+          test "$(git hash-object .github/workflows/kokuno-agent5-current-rf40-lambda-turn-composite-ingest.yml)" = \
+            "5a9e60633cab21096d03a45f76c19bb1f2582303"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install A5 dependencies
+        shell: bash
+        run: python -m pip install -e './a5[dev]'
+
+      - name: Compile and run parent plus new A5 fail-closed tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            a5/src/openai_ns_reconstruction/kokuno_a5_current_rf40_power_law_composite_ingest_contract.py \
+            a5/tests/test_kokuno_a5_current_rf40_power_law_composite_ingest_contract.py
+          PYTHONPATH="$PWD/a5/src" python -m pytest -q -W error \
+            a5/tests/test_kokuno_a5_current_rf40_lambda_turn_composite_ingest_contract.py \
+            a5/tests/test_kokuno_a5_current_rf40_power_law_composite_ingest_contract.py
+
+      - name: Check out exact A1 power-law leading
+        uses: actions/checkout@v4
+        with:
+          ref: 2c76ebdc41d6c566f43a1305034ba2ff9dce410b
+          path: a1
+          fetch-depth: 1
+
+      - name: Check out exact A2 power-law composite
+        uses: actions/checkout@v4
+        with:
+          ref: e36d9da4b7f037e998f5b1658f8c0ea291a76b80
+          path: a2
+          fetch-depth: 1
+
+      - name: Check out exact A4 power-law independent audit
+        uses: actions/checkout@v4
+        with:
+          ref: 9b2be0ffecc14479dbd941eebd663d63f89f2a2f
+          path: a4
+          fetch-depth: 1
+
+      - name: Check out exact A3 axial-shutdown mean sibling
+        uses: actions/checkout@v4
+        with:
+          ref: 6aabf7b6dd28ae683a3776d518e9a977507911e9
+          path: a3
+          fetch-depth: 1
+
+      - name: Authenticate exact sibling heads and blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C a1 rev-parse HEAD)" = "2c76ebdc41d6c566f43a1305034ba2ff9dce410b"
+          test "$(git -C a1 hash-object src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_rf40_power_law.py)" = "36a0183352a2005bd0b5f477594e05a2e4fe3868"
+          test "$(git -C a1 hash-object tests/test_kokuno_pa16_current_cartesian_rf40_power_law.py)" = "9c88ab44c3a195b42f6f600b54563491869be64f"
+          test "$(git -C a1 hash-object .github/workflows/kokuno-agent1-current-cartesian-rf40-power-law.yml)" = "2f871a63034ca0284761e97cdd014766c9820d94"
+
+          test "$(git -C a2 rev-parse HEAD)" = "e36d9da4b7f037e998f5b1658f8c0ea291a76b80"
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_current_rf40_power_law_leading_oscillatory_identity.py)" = "4f1dc0566c041b9de20f18b4ae9c49d9fd93c58d"
+          test "$(git -C a2 hash-object tests/test_constrained_kokuno_current_rf40_power_law_leading_oscillatory_identity.py)" = "d4858abcce6e5767a7d64c96fdcea18e044eea16"
+          test "$(git -C a2 hash-object .github/workflows/kokuno-agent2-current-rf40-power-law-leading-oscillatory.yml)" = "f38b4642b886a03eeae229b798202f60ddc3895c"
+
+          test "$(git -C a4 rev-parse HEAD)" = "9b2be0ffecc14479dbd941eebd663d63f89f2a2f"
+          test "$(git -C a4 hash-object src/openai_ns_reconstruction/kokuno_a4_current_rf40_power_law_leading_oscillatory_divergence_independent_audit.py)" = "f5f7acf0c02f5f0712943ba841b1bc04478bcdd9"
+          test "$(git -C a4 hash-object tests/test_constrained_kokuno_a4_current_rf40_power_law_leading_oscillatory_divergence_independent_audit.py)" = "3336c8a3524ebc762d8e7a49b06510662b361fae"
+          test "$(git -C a4 hash-object .github/workflows/kokuno-agent4-current-rf40-power-law-leading-oscillatory-divergence-audit.yml)" = "78d5cfb380664f764387dc0c138d46d51766071c"
+
+          test "$(git -C a3 rev-parse HEAD)" = "6aabf7b6dd28ae683a3776d518e9a977507911e9"
+          test "$(git -C a3 hash-object src/openai_ns_reconstruction/kokuno_current_rf40_axial_shutdown_nonlinear_mean_attribution.py)" = "1ccef44607487d7c3cbdfa6dbce0067fdd302ea5"
+          test "$(git -C a3 hash-object tests/test_constrained_kokuno_current_rf40_axial_shutdown_nonlinear_mean_attribution.py)" = "6f173d8662ce59d235a8d87c92f390626cb3d047"
+          test "$(git -C a3 hash-object .github/workflows/kokuno-agent3-current-rf40-axial-shutdown-nonlinear-mean.yml)" = "a682c3ba00132d00a33481f1ecddd9ec32a5f824"
+
+      - name: Materialize checksum-bound A5 registration receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p receipts
+          PYTHONPATH="$PWD/a5/src" python -m \
+            openai_ns_reconstruction.kokuno_a5_current_rf40_power_law_composite_ingest_contract \
+            --output receipts/kokuno_a5_current_rf40_power_law_composite_ingest.json
+          cat receipts/kokuno_a5_current_rf40_power_law_composite_ingest.json
+
+      - name: Upload registration receipt before enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a5-current-rf40-power-law-composite-ingest
+          path: receipts/kokuno_a5_current_rf40_power_law_composite_ingest.json
+          if-no-files-found: error
+
+      - name: Enforce A5 frozen truth boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH="$PWD/a5/src" python - <<'PY'
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction import kokuno_a5_current_rf40_power_law_composite_ingest_contract as mod
+
+          receipt = json.loads(
+              Path("receipts/kokuno_a5_current_rf40_power_law_composite_ingest.json").read_text(
+                  encoding="utf-8"
+              )
+          )
+          mod.enforce_registration_receipt(receipt)
+          reg = receipt["registration"]
+          assert reg["readiness"]["pde_validated"] is False
+          assert reg["truth_boundary"]["heldout_normalized_ns_residual_assessed"] is False
+          assert reg["truth_boundary"]["current_leading_plus_oscillatory_velocity_through_rf40_power_law_materialized"] is True
+          assert reg["truth_boundary"]["agent4_1012_independent_power_law_composite_divergence_audit_registered"] is True
+          assert reg["truth_boundary"]["agent4_1012_independent_power_law_composite_divergence_audit_admitted"] is False
+          assert reg["agent3_axial_shutdown_mean_sibling"]["rf40_power_law_current_lineage_consumed"] is False
+          assert reg["frozen_science"]["residual_defined_free_forcing_forbidden"] is True
+          PY
