@@ -1,0 +1,243 @@
+name: kokuno-agent3-current-rf40-axial-shutdown-nonlinear-mean
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a3-rf40-axial-shutdown-nonlinear-mean-109
+  pull_request:
+    branches:
+      - codex/kokuno-a3-rf40-first-turn-radial-force-108
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Check out exact A3 event head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: a3
+          fetch-depth: 0
+
+      - name: Verify A3 parent and three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd a3
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+          git merge-base --is-ancestor 2c10faab7c229b801cb868355e0a1de0a729445c HEAD
+          test "$(git rev-list --count 2c10faab7c229b801cb868355e0a1de0a729445c..HEAD)" -eq 3
+          mapfile -t files < <(git diff --name-only 2c10faab7c229b801cb868355e0a1de0a729445c..HEAD)
+          test "${#files[@]}" -eq 3
+          printf '%s\n' "${files[@]}" | sort > /tmp/actual-files
+          printf '%s\n' \
+            .github/workflows/kokuno-agent3-current-rf40-axial-shutdown-nonlinear-mean.yml \
+            src/openai_ns_reconstruction/kokuno_current_rf40_axial_shutdown_nonlinear_mean_attribution.py \
+            tests/test_constrained_kokuno_current_rf40_axial_shutdown_nonlinear_mean_attribution.py \
+            | sort > /tmp/expected-files
+          diff -u /tmp/expected-files /tmp/actual-files
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install exact A3 head
+        shell: bash
+        run: python -m pip install -e './a3[dev]'
+
+      - name: Run focused A3 regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            a3/src/openai_ns_reconstruction/kokuno_current_rf40_axial_shutdown_nonlinear_mean_attribution.py \
+            a3/tests/test_constrained_kokuno_current_rf40_axial_shutdown_nonlinear_mean_attribution.py
+          python -m pytest -q -W error \
+            a3/tests/test_constrained_kokuno_current_rf40_first_turn_nonlinear_mean_attribution.py \
+            a3/tests/test_constrained_kokuno_current_rf40_axial_shutdown_nonlinear_mean_attribution.py
+
+      - name: Check out exact A2 RF40 axial-shutdown composite
+        uses: actions/checkout@v4
+        with:
+          ref: 93b99292fcf141f24b7c6d7e4fbf95775e6a07e5
+          path: a2
+          fetch-depth: 1
+
+      - name: Check out exact A1 RF40 axial-shutdown leading
+        uses: actions/checkout@v4
+        with:
+          ref: 2ac6460b483efb1c07f2fa65e7fed781a32f2718
+          path: a1
+          fetch-depth: 1
+
+      - name: Authenticate sibling heads and source blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C a2 rev-parse HEAD)" = "93b99292fcf141f24b7c6d7e4fbf95775e6a07e5"
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_current_rf40_axial_shutdown_leading_oscillatory_identity.py)" = \
+            "255e65ce0c37652858509c33e7c9fad40b73ca97"
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_current_rf40_first_turn_leading_oscillatory_identity.py)" = \
+            "c126dace161e5dae1745185c79152736817994b8"
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_oscillatory_batch_differentials.py)" = \
+            "12df3bf6c949baeebf609b366f2973e7f515a157"
+          test "$(git -C a1 rev-parse HEAD)" = "2ac6460b483efb1c07f2fa65e7fed781a32f2718"
+          test "$(git -C a1 hash-object src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_rf40_axial_shutdown.py)" = \
+            "057a0514c8a941c3e59922b8158f480434b4441e"
+
+      - name: Materialize real current-lineage RF40 axial-shutdown nonlinear mean receipts
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p receipts
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          import math
+          import numpy as np
+          import openai_ns_reconstruction
+
+          pkg = openai_ns_reconstruction
+          a1_pkg = str(Path('a1/src/openai_ns_reconstruction').resolve())
+          a2_pkg = str(Path('a2/src/openai_ns_reconstruction').resolve())
+          a3_pkg = str(Path('a3/src/openai_ns_reconstruction').resolve())
+
+          pkg.__path__.insert(0, a1_pkg)
+          from openai_ns_reconstruction.kokuno_pa16_current_cartesian_rf40_axial_shutdown import (
+              KokunoPA16CurrentCartesianRF40AxialShutdown,
+          )
+          leading = KokunoPA16CurrentCartesianRF40AxialShutdown()
+
+          pkg.__path__.insert(0, a2_pkg)
+          from openai_ns_reconstruction.kokuno_current_rf40_axial_shutdown_leading_oscillatory_identity import (
+              CurrentRF40AxialShutdownLeadingOscillatoryField,
+          )
+          from openai_ns_reconstruction.kokuno_oscillatory_batch_differentials import (
+              evaluate_oscillatory_batch_differentials,
+          )
+          field = CurrentRF40AxialShutdownLeadingOscillatoryField(leading)
+
+          pkg.__path__.insert(0, a3_pkg)
+          from openai_ns_reconstruction.kokuno_current_rf40_axial_shutdown_nonlinear_mean_attribution import (
+              ExactCurrentRF40AxialShutdownNonlinearBackend,
+              materialize_current_rf40_axial_shutdown_nonlinear_mean_attribution,
+              truth_boundary,
+          )
+
+          backend = ExactCurrentRF40AxialShutdownNonlinearBackend.bind(
+              field, evaluate_oscillatory_batch_differentials
+          )
+
+          inner = materialize_current_rf40_axial_shutdown_nonlinear_mean_attribution(
+              backend,
+              np.asarray([math.hypot(0.41, -0.17)], dtype=float),
+              np.asarray([-0.08], dtype=float),
+              np.asarray([0.39], dtype=float),
+          )
+
+          stage_fraction = 0.35
+          X_axial = field.X_1 * math.exp(stage_fraction * field.T_d)
+          eta_axial = 0.17
+          t_axial = 0.53
+          q_axial = (1.0 - t_axial) / (1.0 - eta_axial * eta_axial)
+          r_axial = math.sqrt(2.0 * q_axial * X_axial)
+          z_axial = (q_axial ** field.D) * eta_axial
+          axial_shutdown = materialize_current_rf40_axial_shutdown_nonlinear_mean_attribution(
+              backend,
+              np.asarray([r_axial], dtype=float),
+              np.asarray([z_axial], dtype=float),
+              np.asarray([t_axial], dtype=float),
+          )
+
+          receipt = {
+              "inner": inner.to_receipt(),
+              "axial_shutdown": axial_shutdown.to_receipt(),
+              "axial_shutdown_probe": {
+                  "stage_fraction": stage_fraction,
+                  "X_over_X1": X_axial / field.X_1,
+                  "X_over_X2": X_axial / field.X_2,
+                  "eta": eta_axial,
+                  "time": t_axial,
+              },
+              "a3_truth_boundary": truth_boundary(),
+          }
+          Path('receipts/kokuno_a3_current_rf40_axial_shutdown_nonlinear_mean.json').write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + '\n', encoding='utf-8'
+          )
+          PY
+
+      - name: Upload receipt before gate enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a3-current-rf40-axial-shutdown-nonlinear-mean
+          path: receipts/kokuno_a3_current_rf40_axial_shutdown_nonlinear_mean.json
+          if-no-files-found: error
+
+      - name: Enforce scoped scientific gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import json
+
+          receipt = json.loads(
+              Path('receipts/kokuno_a3_current_rf40_axial_shutdown_nonlinear_mean.json').read_text()
+          )
+          inner = receipt['inner']
+          axial = receipt['axial_shutdown']
+          expected_kind = 'exact-current-a2-pr999-through-rf40-axial-shutdown-nonlinear-attribution'
+          assert inner['backend_kind'] == expected_kind
+          assert axial['backend_kind'] == expected_kind
+
+          assert inner['pointwise_three_piece_closure_absolute_max'] <= 5e-13
+          assert inner['projected_three_piece_closure_absolute_max'] <= 1e-12
+          assert inner['quadratic_mean_rms'] > 1e-12
+          assert axial['pointwise_three_piece_closure_absolute_max'] <= 5e-13
+          assert axial['projected_three_piece_closure_absolute_max'] <= 1e-12
+
+          probe = receipt['axial_shutdown_probe']
+          assert 0.0 < probe['stage_fraction'] < 1.0
+          assert probe['X_over_X1'] > 1.0
+          assert probe['X_over_X2'] < 1.0
+
+          backend = inner['agent2_backend']
+          assert backend['agent2_composite_pr'] == 999
+          assert backend['agent2_composite_head'] == '93b99292fcf141f24b7c6d7e4fbf95775e6a07e5'
+          assert backend['agent1_leading_pr'] == 993
+          assert backend['agent1_leading_head'] == '2ac6460b483efb1c07f2fa65e7fed781a32f2718'
+
+          boundary = receipt['a3_truth_boundary']
+          assert boundary['current_leading_plus_oscillation_through_RF40_axial_shutdown_consumed'] is True
+          assert boundary['RF40_axial_shutdown_velocity_materialized'] is True
+          assert boundary['current_RF40_axial_shutdown_mixed_nonlinear_mean_materialized'] is True
+          assert boundary['current_RF40_axial_shutdown_quadratic_nonlinear_mean_materialized'] is True
+          for key in (
+              'velocity_after_RF40_axial_shutdown_materialized',
+              'full_post_XR_RF40_current_lineage_materialized',
+              'RF40_lambda_turn_current_lineage_materialized',
+              'RF40_power_law_current_lineage_materialized',
+              'outer_global_leading_velocity_materialized',
+              'radial_inverse_performed_in_this_increment',
+              'pressure_gradient_included',
+              'restricted_forcing_included',
+              'complete_ns_defect',
+              'scoped_nonlinear_mean_authorized_as_correction_target',
+              'mean_correction_velocity_materialized',
+              'real_candidate_finite_correction_cycle_run',
+              'heldout_normalized_ns_residual_assessed',
+              'residual_reduction_claimed',
+              'same_protocol_comparable_to_st006',
+              'pde_validated',
+              'blowup_proved',
+          ):
+              assert boundary[key] is False, key
+          assert boundary['final_normalized_momentum_gate'] == 1e-3
+          assert boundary['final_normalized_divergence_gate'] == 1e-5
+          PY
