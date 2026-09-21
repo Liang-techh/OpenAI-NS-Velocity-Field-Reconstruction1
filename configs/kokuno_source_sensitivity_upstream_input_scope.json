@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "contract_id": "CR002-KOKUNO-SOURCE-SENSITIVITY-UPSTREAM-INPUT-SCOPE-112",
+  "scope": "govern partial retirement of source-amplitude caller inputs after A2 #1052 directional sensitivities",
+  "active_integration_snapshot": {
+    "branch": "codex/cr001-constraints",
+    "head_at_audit": "6a293b3c870d70b8d8aece1b12d68685c9b8b010",
+    "snapshot_only": true
+  },
+  "exact_parent": {
+    "pr": 1052,
+    "head": "d58cee2bf38bdca8da13a796215a079a569ad7d7",
+    "module": "src/openai_ns_reconstruction/kokuno_source_zero_data_amplitude_sensitivity.py",
+    "module_git_blob": "eba3c00703bd5763b12e6f48a8c34eb918dec82e",
+    "parent_zero_data_ivp_pr": 1044,
+    "parent_zero_data_ivp_head": "b3ac194b410073820d8160a470824034e08e9b5a"
+  },
+  "four_way_provenance": {
+    "user_requirement": [
+      "deliver a computable save/load-capable 3D time-dependent velocity without coupling delivery readiness to PDE readiness",
+      "keep user requirements, public-source facts, autonomous design, and pending/unknown claims separate"
+    ],
+    "public_source_fact": [
+      "the corrected public Kokuno reconstruction used by #1052 contains normalized D_r and D_z operators and the constrained harmonic amplitude equation authenticated by that exact parent",
+      "this governance increment adds no new public-source numerical parameter, hidden OpenAI coefficient, or paper-exact field claim"
+    ],
+    "autonomous_design": [
+      "#1052 analytically differentiates the executable projected ODE and integrates state plus directional sensitivities on the repository fixed RK4 panel ladder (32,64,128)",
+      "this fail-closed upstream-input/evidence-transfer firewall and mechanics-only witness"
+    ],
+    "pending_unknown": [
+      "actual corrected-background provider bound to the same source realization identity",
+      "deterministic source harmonic forcing provider including value and full normalized D_r f_m and D_z f_m",
+      "source cutoff/support runtime and complete source-to-runtime parameter map",
+      "axis-safe/global Cartesian source velocity provider with identity-preserving save/load",
+      "visual correspondence, complete NS admission, paper exactness, and OpenAI-field identity"
+    ]
+  },
+  "parent_interface_truth": {
+    "source_zero_data_ivp_numerical_solver_materialized": true,
+    "source_amplitude_directional_sensitivity_solver_materialized": true,
+    "source_amplitude_state_t_m_generated_internally": true,
+    "source_amplitude_dr_t_m_generated_internally": true,
+    "source_amplitude_dz_t_m_generated_internally": true,
+    "caller_supplies_mode_state_t_m": false,
+    "caller_supplies_amplitude_dr_t_m": false,
+    "caller_supplies_amplitude_dz_t_m": false,
+    "caller_supplies_corrected_background": true,
+    "caller_supplies_mode_forcing_value": true,
+    "caller_supplies_full_normalized_dr_forcing": true,
+    "caller_supplies_full_normalized_dz_forcing": true,
+    "finest_directional_jet_feeds_complete_curl_path": true,
+    "caller_can_tune_integrator_resolution": false,
+    "source_exact_duhamel_frame_B_materialized": false,
+    "source_exact_duhamel_propagator_Vm_materialized": false,
+    "deterministic_corrected_background_provider_materialized": false,
+    "deterministic_source_forcing_provider_materialized": false,
+    "source_amplitude_mode_provider_complete": false,
+    "source_support_cutoff_runtime_materialized": false,
+    "self_contained_velocity_xyzt_provider": false,
+    "source_to_runtime_parameter_map_complete": false,
+    "complete_ns_residual_assessed": false,
+    "residual_reduction_claimed": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  },
+  "input_retirement": {
+    "retired_caller_inputs": [
+      "t_m",
+      "D_r t_m",
+      "D_z t_m"
+    ],
+    "still_caller_supplied_output_determining_inputs": [
+      "corrected_background_jet",
+      "forcing_m(v).value",
+      "forcing_m(v).D_r_value_full_normalized",
+      "forcing_m(v).D_z_value_full_normalized"
+    ],
+    "generated_directional_sensitivities_are_conditional_on_upstream_forcing_jets": true,
+    "generated_directional_sensitivities_are_conditional_on_corrected_background": true,
+    "retiring_amplitude_directional_inputs_does_not_make_source_amplitude_provider_complete": true,
+    "retiring_amplitude_directional_inputs_does_not_make_source_route_self_contained": true
+  },
+  "representation_boundary": {
+    "generated_amplitude_directional_jet_is_not_upstream_input_free": true,
+    "internal_sensitivity_integration_is_not_deterministic_source_forcing_materialization": true,
+    "fixed_rk4_refinement_evidence_is_not_exact_source_duhamel_propagator_evidence": true,
+    "complete_curl_consumption_is_not_unified_cartesian_velocity_delivery": true,
+    "source_route_incompleteness_does_not_downgrade_canonical_eq45_delivery": true
+  },
+  "future_promotion_requirements": [
+    "replace caller-supplied corrected background by a deterministic identity-bound provider on the same source realization",
+    "replace caller-supplied forcing value and full normalized D_r f_m/D_z f_m by a deterministic identity-bound source forcing provider without silently dropping unresolved auxiliary L contributions",
+    "replay #1052 sensitivity and the existing coefficient/complete-curl chain from only identity-bound source/runtime parameters",
+    "bind source support/cutoff, source-to-runtime parameters, Cartesian component/axis/global treatment, and serialization identity before claiming a self-contained velocity(x,y,z,t) source provider",
+    "keep visual correspondence and complete-NS/PDE admission as independent later gates"
+  ],
+  "forbidden_promotions": {
+    "generated_Dr_t_m_and_Dz_t_m_implies_no_output_determining_source_inputs_remain": false,
+    "generated_amplitude_directional_jet_implies_source_amplitude_mode_provider_complete": false,
+    "sensitivity_solver_implies_deterministic_source_forcing_provider": false,
+    "sensitivity_solver_implies_actual_corrected_background_provider": false,
+    "complete_curl_consumes_generated_jet_implies_self_contained_velocity_xyzt_provider": false,
+    "scoped_source_sensitivity_mechanics_implies_axis_safe_global_cartesian_runtime": false,
+    "scoped_source_sensitivity_mechanics_implies_visual_correspondence": false,
+    "scoped_source_sensitivity_mechanics_implies_complete_ns_residual": false,
+    "scoped_source_sensitivity_mechanics_implies_pde_validated": false,
+    "scoped_source_sensitivity_mechanics_implies_paper_exact": false,
+    "scoped_source_sensitivity_mechanics_implies_openai_field_identified": false,
+    "source_route_incompleteness_implies_eq45_velocity_export_not_ready": false
+  },
+  "canonical_cr001": {
+    "constraints_git_blob": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ]
+    ],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [
+      0.25,
+      0.75
+    ],
+    "forcing_mode": "restricted_two_parameter_family",
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "quadrature_orders_per_axis": [
+      24,
+      48,
+      96
+    ],
+    "momentum_max": 0.001,
+    "momentum_L2": 0.001,
+    "divergence_max": 1e-05,
+    "divergence_L2": 1e-05,
+    "residual_defined_free_force_forbidden": true,
+    "candidate_collapse_forbidden": true,
+    "post_hoc_threshold_relaxation_forbidden": true
+  },
+  "canonical_eq45_state_must_remain_independent": {
+    "candidate_family": "eq45_supported_velocity_candidate_v1",
+    "velocity_export_ready": true,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  }
+}
