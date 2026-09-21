@@ -1,0 +1,125 @@
+{
+  "cr001_binding": {
+    "candidate_collapse_forbidden": true,
+    "constraints_blob_sha1": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "divergence_L2": 1e-05,
+    "divergence_max": 1e-05,
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "forcing_mode": "restricted_two_parameter_family",
+    "held_out_points": 4096,
+    "momentum_L2": 0.001,
+    "momentum_max": 0.001,
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "post_hoc_threshold_relaxation_forbidden": true,
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "residual_defined_free_forcing_forbidden": true,
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "validation_seed": 914027
+  },
+  "exact_base": {
+    "head": "f989bd99888e6263f9acb7008a932aa1db08d0aa",
+    "pr": 973,
+    "role": "A5 registration of current partial leading+oscillatory velocity and nonlinear mean seam"
+  },
+  "future_promotion_requirements": [
+    "canonicalize the complete concrete oscillatory runtime realization payload/configuration that determines velocity_osc",
+    "hash that full runtime realization and bind the digest into the composite semantic identity",
+    "materialize direct composite save/load or an equivalent serialization that replays both leading and oscillatory realization digests",
+    "on reload, recompute and compare the bound realization digests before claiming identity-preserving delivery",
+    "keep global-domain completion, visual correspondence, PDE validation, paper exactness and OpenAI identity as separate gates"
+  ],
+  "machine_locked_state": {
+    "composite_semantic_sha_sufficient_for_saved_velocity_identity": false,
+    "direct_composite_save_load_available": false,
+    "full_oscillatory_runtime_realization_identity_bound_into_composite_semantic_sha": false,
+    "openai_field_identified": false,
+    "paper_exact": false,
+    "partial_composite_callable_through_current_Xh": true,
+    "partial_composite_semantic_sha_available": true,
+    "oscillatory_adapter_semantic_sha_available": true,
+    "pde_validated": false,
+    "velocity_export_ready_for_kokuno_route": false,
+    "visual_correspondence_verified": false
+  },
+  "mechanics_only_witness": {
+    "adapter_metadata": {
+      "support": [0.2, 1.2],
+      "time": [0.25, 0.75],
+      "wrapper": "fixed"
+    },
+    "classification": "autonomous_design",
+    "description": "Two toy runtimes share identical adapter metadata/support/time/wrapper identity but use different inherited amplitudes. An adapter-only hash is therefore identical while the returned velocity differs; adding the runtime payload to the hash separates them.",
+    "not_source_evidence": true,
+    "runtime_a": {
+      "amplitude": 1.0,
+      "velocity_at_probe": [1.0, 0.0, 0.0]
+    },
+    "runtime_b": {
+      "amplitude": 2.0,
+      "velocity_at_probe": [2.0, 0.0, 0.0]
+    }
+  },
+  "observed_upstream": {
+    "a4_partial_composite_audit": {
+      "head": "c45ee161014ec138deb14ed9085464855b2f88ee",
+      "pr": 972,
+      "records_upstream_composite_direct_save_load_available": false,
+      "scientific_scope": "scoped divergence only; not a serialization or complete runtime-identity certificate"
+    },
+    "oscillatory_batch_adapter": {
+      "adapter_semantic_binds_full_public_z_field_to_payload_digest": false,
+      "adapter_semantic_binds_public_z_wrapper_source_blob": true,
+      "adapter_semantic_binds_support_and_time_interval": true,
+      "public_z_velocity_source_blob_sha1": "4a3abc1a11f7e054f651dd7bace8ada6d5a6b653",
+      "source_blob_sha1": "599baa190ec742d0e532e5517078534124e68d6b"
+    },
+    "partial_composite": {
+      "composite_direct_save_load_available": false,
+      "head": "3a6405bbd3d10b8c3b38078f0c989c45e5d407b4",
+      "pr": 970,
+      "public_api": "velocity(x,y,z,t)",
+      "semantic_payload_binds_agent1_runtime_configuration_sha256": true,
+      "semantic_payload_binds_agent1_runtime_semantic_sha256": true,
+      "semantic_payload_binds_agent2_batch_adapter_sha256": true,
+      "semantic_payload_binds_agent2_differentials_sha256": true,
+      "semantic_payload_binds_full_oscillatory_runtime_payload_or_configuration_sha256": false,
+      "source_blob_sha1": "532435705bd5db341e82371180da8c04c3dd6c14"
+    },
+    "public_z_field": {
+      "runtime_exposes_to_payload": true,
+      "runtime_payload_digest_is_bound_by_pr970_composite_semantic_identity": false,
+      "source_blob_sha1": "4a3abc1a11f7e054f651dd7bace8ada6d5a6b653",
+      "to_payload_extends_inherited_runtime_realization": true
+    }
+  },
+  "provenance_classes": {
+    "autonomous_design": [
+      "current joined leading realization",
+      "concrete oscillatory background/modes/support/public-z pullback",
+      "batch adapter and composite implementation",
+      "this governance witness"
+    ],
+    "pending_unknown": [
+      "full oscillatory runtime realization digest bound into the composite semantic identity",
+      "direct identity-preserving composite save/load",
+      "velocity beyond current X_h and global compact-support completion",
+      "matched Cartesian pressure and preregistered restricted forcing",
+      "complete held-out NS residual and PDE validation",
+      "visual correspondence, paper exactness, OpenAI-field identity"
+    ],
+    "public_source_fact": [
+      "only the already-pinned structural Kokuno coordinate/complete-curl formulas represented by the upstream lineage"
+    ],
+    "user_requirement": [
+      "one explicit computable save/load 3-D time-varying velocity API",
+      "delivery identity must remain independent of visual/PDE/paper-exact claims"
+    ]
+  },
+  "schema": "cr002-kokuno-partial-composite-osc-runtime-identity-scope-v1",
+  "task_id": "CR002-KOKUNO-PARTIAL-COMPOSITE-OSC-RUNTIME-IDENTITY-098"
+}
