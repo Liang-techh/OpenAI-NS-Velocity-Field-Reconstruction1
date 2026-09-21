@@ -1,10 +1,9 @@
-"""Execute the generic identity-bound morphology diagnostic on frozen ST052-M.
+"""Run main's identity-bound morphology diagnostic on frozen ST052-M.
 
-This module is deliberately a delivery/diagnostic bridge.  The reusable
-morphology engine already lives on ``main``; the frozen ST052-M whole-child
-runtime and the explicit external-runtime acceptance live on the constrained
-integration lineage.  We bind those two already-governed assets without
-changing the candidate, fitting any public image, or promoting PDE/visual truth.
+This is delivery/diagnostic plumbing only.  It joins two already-governed assets:
+main's generic morphology wrapper and the constrained branch's authenticated
+ST052-M whole-child runtime.  It does not change the velocity field, fit public
+images, or promote PDE/visual truth.
 """
 from __future__ import annotations
 
@@ -17,7 +16,6 @@ from pathlib import Path
 import platform
 import re
 from typing import Any
-
 
 SCHEMA = "st052-identity-bound-morphology-execution/v1"
 TASK_ID = "CR-A9-102"
@@ -51,13 +49,7 @@ TRUTH_BOUNDARY = {
 
 
 def _canonical_bytes(value: Any) -> bytes:
-    return json.dumps(
-        value,
-        sort_keys=True,
-        separators=(",", ":"),
-        ensure_ascii=False,
-        allow_nan=False,
-    ).encode("utf-8")
+    return json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=False, allow_nan=False).encode()
 
 
 def _canonical_sha256(value: Any) -> str:
@@ -65,11 +57,7 @@ def _canonical_sha256(value: Any) -> str:
 
 
 def _sha256_file(path: Path) -> str:
-    h = hashlib.sha256()
-    with path.open("rb") as f:
-        for chunk in iter(lambda: f.read(1 << 20), b""):
-            h.update(chunk)
-    return h.hexdigest()
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 def _require_sha(value: Any, label: str) -> str:
@@ -84,19 +72,10 @@ def build_velocity_identity_payload(
     *,
     dependency_contract_sha256: str,
 ) -> dict[str, Any]:
-    """Bind the callable velocity identity to the accepted exact-source runtime.
-
-    The resolved Python/numerical-library versions are intentionally not part of
-    this frozen identity because A8-DELIVERY-01 explicitly records them as an
-    execution receipt rather than candidate identity.  The exact source runtime
-    identity and the acceptance-contract bytes *are* bound.
-    """
+    """Bind callable semantics to the accepted exact-source runtime contract."""
     if candidate_manifest.get("candidate_id") != CANDIDATE_ID:
         raise ValueError("unexpected ST052 whole-child candidate id")
-    whole_id = _require_sha(
-        candidate_manifest.get("whole_candidate_identity_sha256"),
-        "whole_candidate_identity_sha256",
-    )
+    whole_id = _require_sha(candidate_manifest.get("whole_candidate_identity_sha256"), "whole_candidate_identity_sha256")
     runtime = candidate_manifest.get("runtime")
     truth = candidate_manifest.get("truth_boundary")
     if not isinstance(runtime, dict) or not isinstance(truth, dict):
@@ -116,13 +95,12 @@ def build_velocity_identity_payload(
     dep_truth = dependency_contract.get("truth_boundary")
     if not all(isinstance(v, dict) for v in (required, policy, dep_truth)):
         raise ValueError("malformed runtime-dependency acceptance contract")
-    expected = {
+    for key, expected in {
         "source_head": SOURCE_HEAD,
         "source_tree": SOURCE_TREE,
         "source_runtime_identity_sha256": SOURCE_RUNTIME_IDENTITY_SHA256,
-    }
-    for key, value in expected.items():
-        if required.get(key) != value:
+    }.items():
+        if required.get(key) != expected:
             raise ValueError(f"runtime-dependency source identity drift: {key}")
     if policy.get("exact_source_checkout_dependency_explicitly_accepted") is not True:
         raise ValueError("exact source checkout is not explicitly accepted")
@@ -143,9 +121,7 @@ def build_velocity_identity_payload(
         },
         "runtime_dependency_acceptance": {
             "constrained_merge_commit": CONSTRAINED_RUNTIME_ACCEPTANCE_MERGE,
-            "contract_sha256": _require_sha(
-                dependency_contract_sha256, "dependency_contract_sha256"
-            ),
+            "contract_sha256": _require_sha(dependency_contract_sha256, "dependency_contract_sha256"),
         },
         "callable": "St052LinearTemporalWholeCandidate.velocity(x,y,z,t)->[...,3]",
         "resolved_runtime_versions_identity_bound": False,
@@ -153,7 +129,6 @@ def build_velocity_identity_payload(
 
 
 def validate_execution_receipt(receipt: dict[str, Any]) -> None:
-    """Fail closed on candidate/runtime identity drift or truth promotion."""
     if receipt.get("schema") != SCHEMA or receipt.get("task_id") != TASK_ID:
         raise ValueError("unexpected ST052 morphology execution schema/task")
     provenance = receipt.get("provenance")
@@ -163,7 +138,6 @@ def validate_execution_receipt(receipt: dict[str, Any]) -> None:
     truth = receipt.get("truth_boundary")
     if not all(isinstance(v, dict) for v in (provenance, identity, morphology, runtime, truth)):
         raise ValueError("malformed ST052 morphology execution receipt")
-
     if provenance.get("main_morphology_base") != MAIN_MORPHOLOGY_BASE:
         raise ValueError("generic morphology base drift")
     if provenance.get("constrained_runtime_acceptance_merge") != CONSTRAINED_RUNTIME_ACCEPTANCE_MERGE:
@@ -174,61 +148,46 @@ def validate_execution_receipt(receipt: dict[str, Any]) -> None:
     if identity.get("candidate_id") != CANDIDATE_ID:
         raise ValueError("candidate identity drift")
     candidate_sha = _require_sha(identity.get("candidate_sha256"), "candidate_sha256")
-    velocity_payload = identity.get("velocity_identity_payload")
-    if not isinstance(velocity_payload, dict):
-        raise ValueError("missing velocity identity payload")
+    payload = identity.get("velocity_identity_payload")
     velocity_sha = _require_sha(identity.get("velocity_identity_sha256"), "velocity_identity_sha256")
-    if _canonical_sha256(velocity_payload) != velocity_sha:
+    if not isinstance(payload, dict) or _canonical_sha256(payload) != velocity_sha:
         raise ValueError("velocity identity digest mismatch")
-    if velocity_payload.get("whole_candidate_identity_sha256") != candidate_sha:
+    if payload.get("whole_candidate_identity_sha256") != candidate_sha:
         raise ValueError("candidate/velocity identity linkage mismatch")
-    if velocity_payload.get("resolved_runtime_versions_identity_bound") is not False:
+    if payload.get("resolved_runtime_versions_identity_bound") is not False:
         raise ValueError("resolved runtime versions must remain execution-only")
 
-    if morphology.get("candidate_identity_bound") is not True:
-        raise ValueError("morphology receipt is not candidate-identity bound")
-    if morphology.get("cylindrical_morphology_diagnostic_ready") is not True:
-        raise ValueError("morphology diagnostic did not execute")
-    morph_identity = morphology.get("candidate_identity")
-    protocol = morphology.get("protocol")
-    if not isinstance(morph_identity, dict) or not isinstance(protocol, dict):
-        raise ValueError("malformed identity-bound morphology receipt")
-    if morph_identity != {
+    if morphology.get("candidate_identity_bound") is not True or morphology.get("cylindrical_morphology_diagnostic_ready") is not True:
+        raise ValueError("morphology receipt is not an executed identity-bound diagnostic")
+    expected_identity = {
         "candidate_id": CANDIDATE_ID,
         "candidate_sha256": candidate_sha,
         "velocity_identity_sha256": velocity_sha,
-    }:
+    }
+    if morphology.get("candidate_identity") != expected_identity:
         raise ValueError("morphology receipt consumed a different candidate identity")
+    protocol = morphology.get("protocol")
+    if not isinstance(protocol, dict):
+        raise ValueError("missing morphology protocol")
     for key in ("source_numeric_targets_used", "renderer_or_camera_used", "pixel_loss_used"):
         if protocol.get(key) is not False:
             raise ValueError(f"morphology protocol promoted forbidden source/render target: {key}")
-    for key in (
-        "visualization_ready",
-        "visual_correspondence_verified",
-        "source_correspondence_verified",
-        "pde_validated",
-        "paper_exact",
-        "openai_field_identified",
-        "blowup_proved",
-    ):
+    for key in ("visualization_ready", "visual_correspondence_verified", "source_correspondence_verified", "pde_validated", "paper_exact", "openai_field_identified", "blowup_proved"):
         if morphology.get(key) is not False:
             raise ValueError(f"morphology receipt promoted truth state: {key}")
-
     if runtime.get("resolved_versions_identity_bound") is not False:
         raise ValueError("execution runtime versions must not silently change candidate identity")
     if truth != TRUTH_BOUNDARY:
         raise ValueError("ST052 morphology execution truth boundary drift")
 
-    recorded = receipt.get("receipt_sha256")
-    if recorded is not None:
+    if receipt.get("receipt_sha256") is not None:
         unsigned = dict(receipt)
-        unsigned.pop("receipt_sha256", None)
+        recorded = unsigned.pop("receipt_sha256")
         if recorded != _canonical_sha256(unsigned):
             raise ValueError("execution receipt checksum mismatch")
 
 
 def _install_constrained_package_path(constrained_root: Path) -> None:
-    """Expose exact constrained ST052 modules without copying them into main."""
     import openai_ns_reconstruction as package
 
     constrained_pkg = (constrained_root / "src" / "openai_ns_reconstruction").resolve()
@@ -245,40 +204,32 @@ def _version(name: str) -> str:
         return "not-installed"
 
 
-def execute(
-    *,
-    constrained_root: str | Path,
-    source_root: str | Path,
-    bundle_dir: str | Path,
-) -> dict[str, Any]:
+def execute(*, constrained_root: str | Path, source_root: str | Path, bundle_dir: str | Path) -> dict[str, Any]:
     constrained_root = Path(constrained_root).resolve()
     source_root = Path(source_root).resolve()
     bundle_dir = Path(bundle_dir).resolve()
-    _install_constrained_package_path(constrained_root)
 
-    acceptance = importlib.import_module(
-        "openai_ns_reconstruction.constrained_st052_runtime_dependency_acceptance"
-    )
+    # Pin the diagnostic implementation to main before exposing constrained
+    # package modules.  This prevents an older constrained sibling from silently
+    # shadowing the already-merged #930/#834 morphology code.
+    morphology_mod = importlib.import_module("openai_ns_reconstruction.candidate_cylindrical_morphology")
+    _install_constrained_package_path(constrained_root)
+    acceptance = importlib.import_module("openai_ns_reconstruction.constrained_st052_runtime_dependency_acceptance")
     whole = importlib.import_module("openai_ns_reconstruction.st052_linear_temporal_capsule")
-    morphology_mod = importlib.import_module(
-        "openai_ns_reconstruction.candidate_cylindrical_morphology"
-    )
 
     acceptance_receipt = acceptance.audit(constrained_root)
     contract_path = constrained_root / DEPENDENCY_CONTRACT_REL
     dependency_contract = json.loads(contract_path.read_text(encoding="utf-8"))
     dependency_contract_sha = _sha256_file(contract_path)
-
     candidate = whole.load_bundle_runtime(bundle_dir, exact_source_root=source_root)
-    candidate_manifest = candidate.manifest
+
     velocity_payload = build_velocity_identity_payload(
-        candidate_manifest,
+        candidate.manifest,
         dependency_contract,
         dependency_contract_sha256=dependency_contract_sha,
     )
     velocity_sha = _canonical_sha256(velocity_payload)
     candidate_sha = str(candidate.identity_sha256)
-
     morphology = morphology_mod.fingerprint_identified_velocity_field(
         candidate,
         candidate_id=CANDIDATE_ID,
@@ -311,18 +262,14 @@ def execute(
             "scipy": _version("scipy"),
             "sympy": _version("sympy"),
             "resolved_versions_identity_bound": False,
-            "scope": "execution receipt only; A8-DELIVERY-01 explicitly keeps resolved dependency versions outside frozen candidate identity",
+            "scope": "execution receipt only; A8-DELIVERY-01 keeps resolved dependency versions outside frozen candidate identity",
         },
         "morphology_receipt": morphology,
-        "direct_contribution": (
-            "Executes the already-merged renderer-independent morphology fingerprint on the same "
-            "authenticated frozen ST052-M save/load velocity identity, closing the previously blocked "
-            "A9-VIS-02 diagnostic leg without changing the field."
-        ),
+        "direct_contribution": "executes the merged renderer-independent morphology fingerprint on the same authenticated frozen ST052-M save/load velocity identity",
         "remaining_limits": [
             "no official-public numerical morphology target is used",
             "no visual/source correspondence verdict is made",
-            "ST052 velocity_export_ready remains false until the broader same-identity delivery smoke/promotion is admitted",
+            "ST052 velocity_export_ready remains false pending the broader same-identity delivery smoke/promotion",
             "no compatible pressure or restricted forcing is rebuilt",
             "no fresh 4096-point complete-NS validation is performed",
         ],
@@ -340,30 +287,18 @@ def main() -> None:
     parser.add_argument("--bundle-dir", type=Path, required=True)
     parser.add_argument("--report", type=Path, required=True)
     args = parser.parse_args()
-    receipt = execute(
-        constrained_root=args.constrained_root,
-        source_root=args.source_root,
-        bundle_dir=args.bundle_dir,
-    )
+    receipt = execute(constrained_root=args.constrained_root, source_root=args.source_root, bundle_dir=args.bundle_dir)
     args.report.parent.mkdir(parents=True, exist_ok=True)
-    args.report.write_text(
-        json.dumps(receipt, indent=2, sort_keys=True, allow_nan=False) + "\n",
-        encoding="utf-8",
-    )
-    print(
-        json.dumps(
-            {
-                "candidate_id": receipt["candidate_identity"]["candidate_id"],
-                "candidate_sha256": receipt["candidate_identity"]["candidate_sha256"],
-                "velocity_identity_sha256": receipt["candidate_identity"]["velocity_identity_sha256"],
-                "morphology_measurement_sha256": receipt["morphology_receipt"]["measurement_sha256"],
-                "receipt_sha256": receipt["receipt_sha256"],
-                "visualization_ready": receipt["truth_boundary"]["visualization_ready"],
-                "pde_validated": receipt["truth_boundary"]["pde_validated"],
-            },
-            sort_keys=True,
-        )
-    )
+    args.report.write_text(json.dumps(receipt, indent=2, sort_keys=True, allow_nan=False) + "\n", encoding="utf-8")
+    print(json.dumps({
+        "candidate_id": receipt["candidate_identity"]["candidate_id"],
+        "candidate_sha256": receipt["candidate_identity"]["candidate_sha256"],
+        "velocity_identity_sha256": receipt["candidate_identity"]["velocity_identity_sha256"],
+        "morphology_measurement_sha256": receipt["morphology_receipt"]["measurement_sha256"],
+        "receipt_sha256": receipt["receipt_sha256"],
+        "visualization_ready": receipt["truth_boundary"]["visualization_ready"],
+        "pde_validated": receipt["truth_boundary"]["pde_validated"],
+    }, sort_keys=True))
 
 
 if __name__ == "__main__":
