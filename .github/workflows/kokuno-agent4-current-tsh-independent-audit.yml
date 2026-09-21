@@ -1,0 +1,78 @@
+name: kokuno-agent4-current-tsh-independent-audit
+
+on:
+  push:
+    branches:
+      - "agent-kokuno-4/current-tsh-independent-audit-092"
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_a4_current_tsh_independent_audit.py"
+      - "tests/test_constrained_kokuno_a4_current_tsh_independent_audit.py"
+      - ".github/workflows/kokuno-agent4-current-tsh-independent-audit.yml"
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_a4_current_tsh_independent_audit.py"
+      - "tests/test_constrained_kokuno_a4_current_tsh_independent_audit.py"
+      - ".github/workflows/kokuno-agent4-current-tsh-independent-audit.yml"
+  workflow_dispatch:
+
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+
+      - name: Assert exact Agent-1 parent ancestry
+        shell: bash
+        run: |
+          git merge-base --is-ancestor bf16b88db92d23923b3e049c00e000a5bfa09992 HEAD
+
+      - name: Pin Agent-1 current T_sh implementation blob
+        shell: bash
+        run: |
+          actual="$(git rev-parse HEAD:src/openai_ns_reconstruction/kokuno_pa16_current_tsh_certificate.py)"
+          expected="5fd610b417ccaa1c4673ea64985296b94dfe5946"
+          test "$actual" = "$expected" || {
+            echo "A1 #953 current-T_sh source blob drifted: $actual != $expected" >&2
+            exit 1
+          }
+
+      - name: Compile focused files
+        run: |
+          python -m py_compile src/openai_ns_reconstruction/kokuno_a4_current_tsh_independent_audit.py
+          python -m py_compile tests/test_constrained_kokuno_a4_current_tsh_independent_audit.py
+
+      - name: Run parent and Agent-4 focused regressions
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_pa16_current_tsh_certificate.py \
+            tests/test_constrained_kokuno_a4_current_tsh_independent_audit.py
+
+      - name: Materialize independent receipt before scientific enforcement
+        run: |
+          mkdir -p artifacts/kokuno_agent4_current_tsh
+          python -m openai_ns_reconstruction.kokuno_a4_current_tsh_independent_audit \
+            --output artifacts/kokuno_agent4_current_tsh/receipt.json
+          cat artifacts/kokuno_agent4_current_tsh/receipt.json
+
+      - name: Upload receipt even when scientific gate later fails
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent4-current-tsh-independent-audit
+          path: artifacts/kokuno_agent4_current_tsh/receipt.json
+
+      - name: Enforce frozen independent scientific gates
+        run: |
+          python -m openai_ns_reconstruction.kokuno_a4_current_tsh_independent_audit --enforce
