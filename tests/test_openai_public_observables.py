@@ -44,8 +44,10 @@ def test_public_observable_contract_is_qualitative_and_fail_closed() -> None:
     assert report["external_method_source_repo"] == EXPECTED_EXTERNAL_REPO
     assert report["external_method_source_commit"] == EXPECTED_EXTERNAL_COMMIT
     assert report["external_method_license"] == EXPECTED_EXTERNAL_LICENSE
+    assert report["external_method_candidate_scope"] == screening["candidate_scope"]
     assert report["external_method_classification"] == "screened_not_adopted"
     assert report["external_method_migration_scope"] == "none"
+    assert report["external_method_reason"] == screening["reason"]
     assert report["numeric_visual_target_defined"] is False
     assert report["pde_validated"] is False
     assert report["visual_correspondence_verified"] is False
