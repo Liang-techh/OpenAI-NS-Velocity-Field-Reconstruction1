@@ -1,0 +1,135 @@
+name: agent9-st052-identity-bound-morphology
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/st052_identity_bound_morphology_execution.py'
+      - 'src/openai_ns_reconstruction/candidate_cylindrical_morphology.py'
+      - 'src/openai_ns_reconstruction/st054_cylindrical_morphology.py'
+      - 'tests/test_st052_identity_bound_morphology_execution.py'
+      - '.github/workflows/agent9-st052-identity-bound-morphology.yml'
+  push:
+    branches: ['agent9/st052-identity-bound-morphology-102']
+    paths:
+      - 'src/openai_ns_reconstruction/st052_identity_bound_morphology_execution.py'
+      - 'src/openai_ns_reconstruction/candidate_cylindrical_morphology.py'
+      - 'src/openai_ns_reconstruction/st054_cylindrical_morphology.py'
+      - 'tests/test_st052_identity_bound_morphology_execution.py'
+      - '.github/workflows/agent9-st052-identity-bound-morphology.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  exact-source-st052-morphology:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 35
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - name: Checkout exact Agent-9 head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+
+      - name: Assert exact event-head checkout
+        shell: bash
+        run: test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+
+      - name: Checkout accepted constrained runtime lineage
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: 6a293b3c870d70b8d8aece1b12d68685c9b8b010
+          path: constrained-st052
+          persist-credentials: false
+
+      - name: Checkout exact ST052 source runtime
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: b3b8bfdbe1077f9ec967d158602951997d81e17d
+          path: source-st052
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install numerical runtime and focused tests
+        run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+
+      - name: Run bridge regressions
+        run: PYTHONPATH=src python -m pytest -q -W error tests/test_st052_identity_bound_morphology_execution.py
+
+      - name: Materialize exact parent while retaining expected scientific rejection
+        shell: bash
+        run: |
+          mkdir -p outputs
+          set +e
+          (
+            cd source-st052
+            python experiments/root_st052/replay_st052.py \
+              --out ../outputs/ST052-M-parent \
+              --seed 9175291 \
+              --validate
+          )
+          code=$?
+          set -e
+          test "$code" = 1
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report=json.loads(Path('outputs/ST052-M-parent/validation.json').read_text())
+          assert report['pde_validated'] is False
+          assert report['all_numeric_gates_pass'] is False
+          assert report['gates']['momentum_max'] is False
+          assert report['gates']['momentum_L2'] is False
+          print('Exact ST052 parent retained the expected momentum rejection.')
+          PY
+
+      - name: Rebuild authenticated frozen whole-child bundle
+        run: |
+          PYTHONPATH=constrained-st052/src python constrained-st052/scripts/verify_st052_linear_temporal_capsule.py \
+            --source-root source-st052 \
+            --parent-dir outputs/ST052-M-parent \
+            --out outputs \
+            --report outputs/ST052-M-linear-temporal-child-v1/capsule_receipt.json
+
+      - name: Execute identity-bound renderer-independent morphology
+        run: |
+          mkdir -p outputs/ST052-M-identity-bound-morphology
+          PYTHONPATH=src python -m openai_ns_reconstruction.st052_identity_bound_morphology_execution \
+            --constrained-root constrained-st052 \
+            --source-root source-st052 \
+            --bundle-dir outputs/ST052-M-linear-temporal-child-v1 \
+            --report outputs/ST052-M-identity-bound-morphology/receipt.json \
+            | tee outputs/ST052-M-identity-bound-morphology/summary.txt
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/ST052-M-identity-bound-morphology/receipt.json').read_text())
+          m=r['morphology_receipt']
+          assert r['task_id']=='CR-A9-102'
+          assert m['candidate_identity_bound'] is True
+          assert m['cylindrical_morphology_diagnostic_ready'] is True
+          assert m['protocol']['source_numeric_targets_used'] is False
+          assert m['protocol']['renderer_or_camera_used'] is False
+          assert m['protocol']['pixel_loss_used'] is False
+          assert r['truth_boundary']['velocity_export_ready'] is False
+          assert r['truth_boundary']['visualization_ready'] is False
+          assert r['truth_boundary']['pde_validated'] is False
+          print('measurement_sha256=',m['measurement_sha256'])
+          print('time_evolution_proxy=',json.dumps(m['measurements']['time_evolution_proxy'],sort_keys=True))
+          PY
+
+      - name: Upload candidate-bound diagnostic receipt
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ST052-M-identity-bound-morphology
+          path: outputs/ST052-M-identity-bound-morphology/
+          if-no-files-found: error
