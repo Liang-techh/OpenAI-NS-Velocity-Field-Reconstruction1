@@ -47,16 +47,23 @@ jobs:
           for i in "${!expected[@]}"; do test "${changed[$i]}" = "${expected[$i]}"; done
           echo "exact_head=$EXPECTED_HEAD"
 
-      - name: Fetch and verify pinned Agent-1 actual Xi110 bridge
+      - name: Fetch and verify pinned Agent-1 and Agent-4 actual Xi110 artifacts
         shell: bash
         run: |
           set -euo pipefail
           A1_HEAD=f430f8f97df3bfafce56bf094047c769ecec922d
-          git fetch --no-tags origin codex/kokuno-a1-actual-final-bridge-xi110-086
+          A4_HEAD=d090572fdc766626c417cb53b8acc8632b2bdb63
+          git fetch --no-tags origin \
+            codex/kokuno-a1-actual-final-bridge-xi110-086 \
+            codex/kokuno-a4-actual-final-bridge-xi110-independent-audit-088
           test "$(git rev-parse "$A1_HEAD")" = "$A1_HEAD"
+          test "$(git rev-parse "$A4_HEAD")" = "$A4_HEAD"
           test "$(git ls-tree "$A1_HEAD" -- src/openai_ns_reconstruction/kokuno_pa10_actual_final_bridge_xi110.py | awk '{print $3}')" = "0cbd49ad0726c1573f2e649c96a3b516d8df053e"
           test "$(git ls-tree "$A1_HEAD" -- tests/test_kokuno_pa10_actual_final_bridge_xi110.py | awk '{print $3}')" = "227d132a7ef1ea74323cfeb6c94f0deda490d3c1"
           test "$(git ls-tree "$A1_HEAD" -- .github/workflows/kokuno-agent1-actual-final-bridge-xi110.yml | awk '{print $3}')" = "99c03716ac33a029931a67bc90d9511401963f89"
+          test "$(git ls-tree "$A4_HEAD" -- src/openai_ns_reconstruction/kokuno_a4_actual_final_bridge_xi110_independent_audit.py | awk '{print $3}')" = "afe00af9274408051bb01ec9924ac287c538fe5f"
+          test "$(git ls-tree "$A4_HEAD" -- tests/test_constrained_kokuno_a4_actual_final_bridge_xi110_independent_audit.py | awk '{print $3}')" = "0a5de622f718321c74de8733718daf989928a97b"
+          test "$(git ls-tree "$A4_HEAD" -- .github/workflows/kokuno-agent4-actual-final-bridge-xi110-independent-audit.yml | awk '{print $3}')" = "2e96ff193b603cd283ac8e342434a0336a9df931"
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -91,17 +98,25 @@ jobs:
           path = Path("artifacts/kokuno_a5_actual_final_bridge_xi110_ingest_contract.json")
           contract = json.loads(path.read_text(encoding="utf-8"))
           a1 = contract["agent1_actual_final_bridge_xi110"]
-          audit = contract["independent_audit_status"]
+          a4 = contract["agent4_actual_final_bridge_audit"]
           seam = contract["actual_final_bridge_ingest_seam"]
           truth = contract["truth_boundary"]
           assert a1["source_coordinate_range"] == [100.0, 110.0]
           assert a1["candidate_side_actual_final_interpolation_materialized"] is True
           assert a1["G_i_registered"] is True
           assert a1["ell_i_registered"] is True
-          assert audit["actual_final_bridge_independent_a4_audit_registered"] is False
-          assert audit["actual_Xi_endpoint_derivative_independently_verified"] is False
+          assert a4["audited_agent1_head"] == a1["head"]
+          assert a4["saved_reloaded_public_values_only"] is True
+          assert a4["production_derivatives_used_as_reference"] is False
+          assert a4["endpoint_safe_independent_method_registered"] is True
+          assert a4["actual_final_bridge_independent_a4_audit_registered"] is True
+          assert a4["actual_final_bridge_independent_a4_audit_admitted"] is False
+          assert a4["actual_Xi_endpoint_derivative_independently_verified"] is False
+          assert seam["matching_independent_a4_audit_protocol_registered"] is True
           assert seam["queued_or_unresolved_ci_is_pass"] is False
           assert seam["profile_success_substitutes_for_cartesian_delivery"] is False
+          assert truth["actual_final_bridge_independent_a4_audit_registered"] is True
+          assert truth["actual_final_bridge_independent_a4_audit_admitted"] is False
           assert truth["actual_inner_to_outer_global_join_materialized"] is False
           assert truth["corrected_global_cartesian_leading_velocity_materialized"] is False
           assert truth["matched_cartesian_pressure_materialized"] is False
