@@ -1,0 +1,123 @@
+{
+  "schema": "cr002-kokuno-xi-endpoint-derivative-evidence-scope-v1",
+  "task_id": "CR002-KOKUNO-XI-ENDPOINT-DERIVATIVE-EVIDENCE-089",
+  "purpose": "Keep the implementation-distinct interior radial-derivative audit on 100<X<110 separate from the exact-Xi handoff replay that compares the handoff payload with the same production radial_derivatives(Xi) surface.",
+  "active_integration_reference": {
+    "branch": "codex/cr001-constraints",
+    "head": "7f6658cac1a8ffea178bec5accf2fa5a784b8249"
+  },
+  "audited_parent": {
+    "pr": 937,
+    "head": "44b9349ef07d947d0da7eff053ae2409348374b8",
+    "source_path": "src/openai_ns_reconstruction/kokuno_a5_reference_stress_xi110_ingest_contract.py",
+    "source_blob": "531106d200b4163018f0331537b7bf6706042bd0"
+  },
+  "registered_upstream_evidence": {
+    "agent1_reference_stress": {
+      "pr": 933,
+      "head": "15791891fbbcfdaa614930791a843983afde2b4d",
+      "source_blob": "d534da9efed25df9d281bd0c78fc18ec9b706c09",
+      "reference_range": [100.0, 110.0],
+      "Xi": 110.0,
+      "public_radial_derivatives_registered": true,
+      "Xi_handoff_registered": true
+    },
+    "agent4_independent_audit": {
+      "pr": 936,
+      "head": "5580526b783500be3701fbddabd6d7c7f90a5a61",
+      "source_blob": "43b73888c2ceeeb3c406cfc3c884eb0935855118",
+      "independent_operator": "nonuniform degree-six local polynomial interpolation derivative on seven Chebyshev-Lobatto nodes",
+      "independent_sample_x_range": [100.35, 109.65],
+      "physical_halfwidths": [0.24, 0.12, 0.06],
+      "Xi_handoff_abs_gate": 2e-12,
+      "Xi_direct_derivative_reference": "field.radial_derivatives(Xi, endpoint_eta)",
+      "Xi_handoff_derivative_payload": "field.handoff_at_Xi(endpoint_eta)",
+      "independent_endpoint_derivative_operator_applied_at_Xi": false
+    }
+  },
+  "canonical_constraints": {
+    "path": "configs/constraints.json",
+    "blob": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "momentum_max_gate": 0.001,
+    "momentum_l2_gate": 0.001,
+    "divergence_max_gate": 0.00001,
+    "divergence_l2_gate": 0.00001,
+    "residual_defined_pointwise_force_forbidden": true,
+    "collapsed_candidate_forbidden": true,
+    "post_hoc_threshold_relaxation_forbidden": true
+  },
+  "provenance_classes": {
+    "user_requirement": [
+      "Keep callable velocity delivery independent from visual correspondence, PDE validation, paper exactness, and exact OpenAI-field identity.",
+      "Keep user requirements, public-source facts, autonomous design, and pending/unknown information separate.",
+      "Do not promote a scoped numerical replay into a stronger mathematical or whole-candidate claim than the evidence supports."
+    ],
+    "public_source_fact": [],
+    "autonomous_design": [
+      "Agent 4 #936 uses an implementation-distinct local-polynomial radial derivative on interior X samples and separately performs an exact-Xi public handoff replay.",
+      "This CR002 increment classifies the endpoint replay according to the exact registered implementation: direct Xi derivatives come from the production radial_derivatives(Xi) surface rather than the independent local-polynomial operator.",
+      "The quadratic shared-bug example in mechanics_witness is logic-only and is not Kokuno/OpenAI candidate evidence."
+    ],
+    "pending_unknown": [
+      "An implementation-distinct radial derivative check at Xi=110 using only public scalar values and an endpoint-safe one-sided/asymmetric operator, or an equivalently independent endpoint method.",
+      "Independent verification of the actual candidate-side Xi derivative handoff after the 100<X<110 fixed-kappa F/U/E bridge exists.",
+      "The actual 100<X<110 candidate bridge, actual G_i and ell_i, corrected/global Cartesian leading velocity, matched Cartesian pressure/grad p, preregistered restricted forcing, real correction velocity, complete NS residual, visual correspondence, PDE validation, paper exactness, and exact OpenAI-field identity."
+    ]
+  },
+  "governed_distinctions": {
+    "interior_implementation_distinct_radial_derivative_audit_registered": true,
+    "Xi_public_handoff_replay_registered": true,
+    "Xi_handoff_replay_compares_public_values_to_public_values": true,
+    "Xi_handoff_replay_compares_derivatives_to_same_production_radial_derivative_surface": true,
+    "Xi_handoff_derivative_replay_is_independent_endpoint_derivative_validation": false,
+    "Xi_radial_derivatives_independently_verified": false,
+    "Xi_value_replay_implies_Xi_derivative_accuracy": false,
+    "interior_derivative_accuracy_implies_endpoint_derivative_accuracy": false,
+    "reference_Xi_handoff_implies_actual_candidate_Xi_handoff": false,
+    "actual_candidate_Xi_derivative_handoff_verified": false,
+    "actual_candidate_bridge_materialized": false,
+    "kokuno_global_cartesian_velocity_materialized": false,
+    "kokuno_velocity_export_ready": false,
+    "pde_validated": false
+  },
+  "mechanics_witness": {
+    "classification": "autonomous_mechanics_only",
+    "scalar_function": "f(x)=x^2",
+    "Xi": 1.0,
+    "backward_step": 0.1,
+    "production_derivative_at_Xi": 1.9,
+    "handoff_derivative_at_Xi": 1.9,
+    "production_handoff_replay_abs_error": 0.0,
+    "independent_three_point_backward_formula": "(3 f(Xi)-4 f(Xi-h)+f(Xi-2h))/(2h)",
+    "independent_endpoint_derivative": 2.0,
+    "production_vs_independent_abs_error": 0.1,
+    "interpretation": "A handoff that simply replays the production derivative can agree exactly even when that shared derivative is wrong. This proves only the evidence distinction and makes no claim that the real Kokuno Xi derivative is wrong."
+  },
+  "delivery_and_scientific_state": {
+    "canonical_eq45_velocity_delivery_remains_independent": true,
+    "canonical_eq45_velocity_export_ready": true,
+    "kokuno_velocity_export_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "non_changes": [
+    "No F/U/E, stress, pressure, forcing, correction, coefficient, optimizer, candidate byte, validation sample, or scientific threshold is modified.",
+    "No public-source fact is added by this evidence-semantics audit.",
+    "No residual-defined f=R shortcut, amplitude collapse, post-hoc threshold relaxation, or visual-to-PDE/exactness promotion is introduced."
+  ]
+}
