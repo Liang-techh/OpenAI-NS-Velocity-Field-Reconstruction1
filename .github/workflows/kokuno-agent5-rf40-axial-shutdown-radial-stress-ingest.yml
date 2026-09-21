@@ -1,0 +1,86 @@
+name: kokuno-agent5-rf40-axial-shutdown-radial-stress-ingest
+
+on:
+  push:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_a5_rf40_axial_shutdown_radial_stress_ingest_contract.py'
+      - 'tests/test_kokuno_a5_rf40_axial_shutdown_radial_stress_ingest_contract.py'
+      - '.github/workflows/kokuno-agent5-rf40-axial-shutdown-radial-stress-ingest.yml'
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_a5_rf40_axial_shutdown_radial_stress_ingest_contract.py'
+      - 'tests/test_kokuno_a5_rf40_axial_shutdown_radial_stress_ingest_contract.py'
+      - '.github/workflows/kokuno-agent5-rf40-axial-shutdown-radial-stress-ingest.yml'
+  workflow_dispatch:
+
+jobs:
+  register:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install package and test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e . pytest
+
+      - name: Run parent and current Agent-5 contract tests
+        run: |
+          pytest -q \
+            tests/test_kokuno_a5_current_rf40_power_law_composite_ingest_contract.py \
+            tests/test_kokuno_a5_rf40_axial_shutdown_radial_stress_ingest_contract.py
+
+      - name: Authenticate exact parent and sibling source/test/workflow blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          check_blob() {
+            local commit="$1" path="$2" expected="$3"
+            git fetch --no-tags origin "$commit" >/dev/null 2>&1 || true
+            actual="$(git rev-parse "${commit}:${path}")"
+            test "$actual" = "$expected" || { echo "blob mismatch for $commit:$path: $actual != $expected"; exit 1; }
+          }
+          check_blob df75e6994ca4ae1fa405d56ef162b5a89d5e6d58 src/openai_ns_reconstruction/kokuno_a5_current_rf40_power_law_composite_ingest_contract.py 3d7c80f5f8e7f46f3da39402ea163f13b9120a8e
+          check_blob df75e6994ca4ae1fa405d56ef162b5a89d5e6d58 tests/test_kokuno_a5_current_rf40_power_law_composite_ingest_contract.py ad2dae6c862b5170314f95f800fe5c356867ee15
+          check_blob df75e6994ca4ae1fa405d56ef162b5a89d5e6d58 .github/workflows/kokuno-agent5-current-rf40-power-law-composite-ingest.yml 7e4ab337ba958c5981033588c138d7f4a57afa4a
+          check_blob 2e7683f06bea810881afbe39d8f0cf64815ddd56 src/openai_ns_reconstruction/kokuno_current_rf40_axial_shutdown_nonlinear_radial_stress.py 9c6082e6dc5edacf7b6a64e87549cbec142b3d4a
+          check_blob 2e7683f06bea810881afbe39d8f0cf64815ddd56 tests/test_constrained_kokuno_current_rf40_axial_shutdown_nonlinear_radial_stress.py 46ff23d00f666c6d231f77dcf539e226f53c0658
+          check_blob 2e7683f06bea810881afbe39d8f0cf64815ddd56 .github/workflows/kokuno-agent3-current-rf40-axial-shutdown-nonlinear-radial-stress.yml a32c510dbc354bd9ded8108bd964b3bd19a30968
+          check_blob cc3109bd17d518f3414d972f2303a20f2dabc1b1 src/openai_ns_reconstruction/kokuno_a4_current_rf40_axial_shutdown_radial_stress_independent_audit.py c886a7e9d222313125f5e242ca9cc9828babdb23
+          check_blob cc3109bd17d518f3414d972f2303a20f2dabc1b1 tests/test_constrained_kokuno_a4_current_rf40_axial_shutdown_radial_stress_independent_audit.py 102f5072c97815e808dacf9b9faf03bbb351a6a6
+          check_blob cc3109bd17d518f3414d972f2303a20f2dabc1b1 .github/workflows/kokuno-agent4-current-rf40-axial-shutdown-radial-stress-independent-audit.yml 9e9ff1b12e3acd42753be5abd3b8cc97fe9771fe
+
+      - name: Materialize frozen integration receipt
+        run: |
+          mkdir -p artifacts/kokuno-agent5
+          python -m openai_ns_reconstruction.kokuno_a5_rf40_axial_shutdown_radial_stress_ingest_contract \
+            --output artifacts/kokuno-agent5/rf40_axial_shutdown_radial_stress_ingest.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction import kokuno_a5_rf40_axial_shutdown_radial_stress_ingest_contract as c
+          p = Path('artifacts/kokuno-agent5/rf40_axial_shutdown_radial_stress_ingest.json')
+          receipt = json.loads(p.read_text())
+          c.enforce_registration_receipt(receipt)
+          r = receipt['registration']
+          assert r['readiness']['pde_validated'] is False
+          assert r['readiness']['correction_ready'] is False
+          assert r['truth_boundary']['current_nonlinear_radial_stress_through_axial_shutdown_materialized'] is True
+          assert r['truth_boundary']['current_nonlinear_radial_force_through_axial_shutdown_materialized'] is False
+          assert r['truth_boundary']['agent4_1017_independent_axial_shutdown_radial_stress_audit_registered'] is True
+          assert r['truth_boundary']['agent4_1017_independent_axial_shutdown_radial_stress_audit_admitted'] is False
+          PY
+
+      - name: Upload registration receipt before any future scientific admission
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-rf40-axial-shutdown-radial-stress-ingest
+          path: artifacts/kokuno-agent5/rf40_axial_shutdown_radial_stress_ingest.json
