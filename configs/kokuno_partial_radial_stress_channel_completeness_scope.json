@@ -1,0 +1,126 @@
+{
+  "canonical_eq45_delivery": {
+    "openai_field_identified": false,
+    "paper_exact": false,
+    "pde_validated": false,
+    "velocity_export_ready": true,
+    "visual_correspondence_verified": false,
+    "visualization_ready": false
+  },
+  "cr001": {
+    "collapsed_candidate_allowed": false,
+    "constraints_blob": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "divergence_l2_gate": 1e-05,
+    "divergence_max_gate": 1e-05,
+    "evaluation_box": [[-2.0, 2.0], [-2.0, 2.0], [-2.0, 2.0]],
+    "forcing_mode": "restricted_two_parameter_family",
+    "held_out_points": 4096,
+    "momentum_l2_gate": 0.001,
+    "momentum_max_gate": 0.001,
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "post_hoc_threshold_relaxation_allowed": false,
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "residual_defined_pointwise_free_force_allowed": false,
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "validation_seed": 914027
+  },
+  "four_way_provenance": {
+    "autonomous_design": [
+      "the current inherited compact two-channel radial-stress operator realization",
+      "the current numerical radial-stress audit realization",
+      "the mechanics-only projection witness in this contract"
+    ],
+    "pending_unknown": [
+      "a complete radial cylindrical stress/correction representation for the current candidate",
+      "one bound three-component cylindrical-to-Cartesian correction convention",
+      "a complete NS defect on the same global candidate",
+      "outer/global completion beyond current X_h",
+      "matched pressure and preregistered restricted forcing",
+      "whole-domain held-out admission before PDE promotion"
+    ],
+    "public_source_fact": [
+      "only the already-pinned Kokuno structural formulas and component conventions registered upstream",
+      "no public source fact in this scope identifies a missing radial-stress numeric channel or a complete Cartesian correction vector"
+    ],
+    "user_requirement": [
+      "deliver an explicit computable save-load 3D time-dependent velocity(x,y,z,t)->[u,v,w]",
+      "keep velocity delivery, visual correspondence, PDE validation, paper exactness, and OpenAI-field identity independent",
+      "keep user requirements, public-source facts, autonomous design, and pending/unknown facts distinct"
+    ]
+  },
+  "governed_distinctions": {
+    "recorded_radial_mean_is_inverted_radial_stress": false,
+    "scoped_two_channel_stress_implies_pde_validation": false,
+    "scoped_two_channel_stress_is_authorized_correction_target": false,
+    "scoped_two_channel_stress_is_cartesian_correction_velocity": false,
+    "scoped_two_channel_stress_is_complete_ns_defect": false,
+    "theta_axial_a4_audit_is_full_three_component_stress_validation": false,
+    "theta_axial_two_channel_stress_is_full_three_component_cylindrical_stress": false
+  },
+  "mechanics_witness": {
+    "classification": "autonomous_design",
+    "fixed_axial_component": -1.0,
+    "fixed_theta_component": 2.0,
+    "full_vectors_equal": false,
+    "not_kokuno_or_openai_data": true,
+    "purpose": "show that two observed cylindrical components do not identify a generic three-component vector",
+    "radial_alternatives": [0.0, 3.0],
+    "same_observed_theta_axial": true,
+    "vector_a_radial_theta_axial": [0.0, 2.0, -1.0],
+    "vector_b_radial_theta_axial": [3.0, 2.0, -1.0]
+  },
+  "parent_a5": {
+    "head": "cb67fed42c459d9d753ad17cbc339744e51a9b84",
+    "pr": 978,
+    "source_blob": "faf868c4b5b536cfcb46494c494697acda8e61b1",
+    "source_path": "src/openai_ns_reconstruction/kokuno_a5_current_partial_radial_stress_ingest_contract.py"
+  },
+  "pending_requirements": [
+    "materialize_or_mathematically_eliminate_the_missing_radial_cylindrical_stress_channel",
+    "bind_all_required_correction_channels_to_one_cylindrical_and_cartesian_component_convention",
+    "derive_the_correction_target_from_a_complete_ns_defect_on_the_same_global_candidate",
+    "complete_velocity_beyond_current_xh_and_global_support_join",
+    "materialize_matched_pressure_and_preregistered_restricted_forcing",
+    "run_independent_whole_domain_heldout_validation_before_pde_promotion"
+  ],
+  "readiness": {
+    "kokuno_cartesian_correction_velocity_materialized": false,
+    "kokuno_complete_correction_target_materialized": false,
+    "kokuno_complete_ns_defect_materialized": false,
+    "kokuno_full_three_component_cylindrical_stress_materialized": false,
+    "kokuno_two_channel_radial_stress_materialized": true,
+    "kokuno_velocity_export_ready": false,
+    "kokuno_visual_correspondence_verified": false,
+    "openai_field_identified": false,
+    "paper_exact": false,
+    "pde_validated": false
+  },
+  "schema": "cr002-kokuno-partial-radial-stress-channel-completeness-v1",
+  "scope": "representation_and_correction_channel_completeness_governance",
+  "task_id": "CR002-KOKUNO-PARTIAL-RADIAL-STRESS-CHANNEL-COMPLETENESS-099",
+  "upstream_agent3": {
+    "candidate_residual_evidence": false,
+    "head": "0a777668050ff9e73d6c8db1f72e5fabfa9b04a6",
+    "materialized_stress_channels": {"axial": {"exponent": 1}, "theta": {"exponent": 2}},
+    "partial_domain_through_current_xh_only": true,
+    "pr": 976,
+    "radial_cylindrical_mean_recorded": true,
+    "radial_cylindrical_stress_inverted": false,
+    "source_blob": "9afa50c573186b86cd86fa7ffe44a5986a808b6d"
+  },
+  "upstream_agent4": {
+    "audited_stress_channels": ["theta", "axial"],
+    "candidate_residual_evidence": false,
+    "exact_cartesian_axis_evidence": false,
+    "head": "2b015feccb5d55735ced8763fcb05a563a4cf12e",
+    "pr": 977,
+    "radial_cylindrical_stress_independently_audited": false,
+    "scientific_admission": false,
+    "source_blob": "016215939f3cda805ae2dbbe421787ad0dfbee16"
+  }
+}
