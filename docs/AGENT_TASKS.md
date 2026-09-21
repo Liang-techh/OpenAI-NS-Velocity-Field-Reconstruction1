@@ -12,7 +12,7 @@ Read before claiming work:
 - open PRs and exact-head GitHub Actions
 - central coordination issue `#15`
 
-The integration branch is `codex/cr001-constraints`. At this snapshot its live head is `fbd59319ecbec67040c24c22320dc99e77427021`. The repository-wide `tests` push run for that head is `35515931387` and is **queued**, not PASS.
+The integration branch is `codex/cr001-constraints`. At this snapshot its live head is `ca37d25d19b97d893030194ebd6364160ae4355e`. The repository-wide `tests` push run for that head is `35519183024` and is **queued**, not PASS. A later auxiliary run `35522429400` on the same commit was cancelled in PR-branch context; it does not turn the live constrained head green.
 
 ## Unified delivery goal
 
@@ -35,7 +35,7 @@ Keep these states independent at all times:
 | canonical Eq45 delivery | **true** | **false** | **false** |
 | frozen ST052-M visualization candidate | **false** | **false** | **false** |
 
-Why ST052-M remains export-false: its exact-source whole-child callable/save-load path, checksum-bound `33^3 x 5` NPZ/MAT grid export, GNU Octave MAT load/render smoke, and delivery-identity reconciliation are already live, but the **standalone-package parent-runtime dependency is not yet closed or explicitly accepted**.
+Why ST052-M remains export-false: its exact-source whole-child callable/save-load path, checksum-bound `33^3 x 5` NPZ/MAT grid export, GNU Octave MAT load/render smoke, and delivery-identity reconciliation are already live, but the **standalone-package parent-runtime dependency is not yet closed or explicitly admitted on the constrained branch**. PR #872 implements the accepted-external-runtime option, but its exact-head Actions have not executed successfully yet.
 
 A green CI run, a stable render, visual resemblance, or optimizer convergence does not imply PDE validity. PDE validity does not imply exact OpenAI-field identity.
 
@@ -51,9 +51,10 @@ The following are already delivered and are **not claimable again** unless a con
 - ST054 continuous Python callable;
 - ST054 Python streamline/vorticity renderer;
 - ST054 deterministic NPZ/MAT handoff;
-- ST054 legacy VTK/ParaView handoff and independent read-back.
+- ST054 legacy VTK/ParaView handoff and independent read-back;
+- Agent-9 renderer-independent cylindrical morphology fingerprint, merged as PR #834 on `main@ab1821f6677ba02b636d8e4301efb2a995001399` after dedicated exact-head run `35509766227` succeeded.
 
-Do not open another exporter, another ST052 rematerialization, another Octave replay, or another ST054 render-format PR merely because an older task table still mentions it.
+Do not open another exporter, another ST052 rematerialization, another Octave replay, another ST054 render-format PR, or another cylindrical morphology-fingerprint implementation merely because an older task table still mentions it.
 
 ## Active shortest-chain queue
 
@@ -61,10 +62,10 @@ Claim only one bounded increment at a time. A task marked BLOCKED must not be by
 
 | ID | Deliverable | Dependency | State | Acceptance boundary |
 | --- | --- | --- | --- | --- |
-| A8-DELIVERY-01 | Close or explicitly accept the **ST052-M standalone parent-runtime dependency** while preserving the same frozen child identity. Provide one documented callable/load path that works from a normal installed package environment, or a fail-closed dependency contract if vendoring is intentionally rejected. | live ST052-M | **TODO** | No candidate-byte or scientific-state change; exact frozen child identity must replay. |
+| A8-DELIVERY-01 | Close or explicitly accept the **ST052-M standalone parent-runtime dependency** while preserving the same frozen child identity. Provide one documented callable/load path that works from a normal installed package environment, or a fail-closed dependency contract if vendoring is intentionally rejected. | live ST052-M | **IN_PROGRESS — PR #872**, exact head `2aa6edb50861db3935153b6743e6d86021965c36`; dedicated `35535163003` and repository `tests` `35535162986` are queued, not PASS | No candidate-byte or scientific-state change; exact frozen child identity must replay. |
 | A8-DELIVERY-02 | Run one end-to-end integration smoke on that same ST052-M identity: candidate artifact -> unified `velocity(x,y,z,t)` -> save/load -> existing `33^3 x 5` grid export replay -> fixed diagnostics -> Python/MATLAB report. | A8-DELIVERY-01 | **BLOCKED** | One identity end-to-end; no silent switch to ST054 or another Agent-7 child. |
-| A9-VIS-01 | Admit the official-public qualitative observable contract when its current exact-head CI resolves; six observables only, all numeric targets remain null. | PR #825 exact-head evidence | **IN_PROGRESS (sibling PR)** | No pixel target, hidden coefficient, camera, pressure, forcing, or PDE inference. |
-| A9-VIS-02 | Admit/reuse renderer-independent cylindrical morphology diagnostics when their exact-head CI resolves, then expose the same diagnostic interface for the selected constrained candidate instead of copying ST054 candidate identity. | PR #834 exact-head evidence; A8-DELIVERY-01 | **IN_PROGRESS (sibling PR)** | Diagnostic reuse is allowed; ST054 field replacement is not. |
+| A9-VIS-01 | Admit the official-public qualitative observable contract when its current exact-head CI resolves; six observables only, all numeric targets remain null. | replacement PR #906 exact-head evidence; old #825 is superseded | **IN_PROGRESS — PR #906**, exact head `d5242d5758ad3882ee881f743e1a7f2384182c4b`; dedicated `35538368006`, repository `tests` `35538368021`, and `research-publication` `35538368005` are queued | No pixel target, hidden coefficient, camera, pressure, forcing, or PDE inference. |
+| A9-VIS-02 | Reuse the renderer-independent cylindrical morphology diagnostics for the selected constrained candidate **with the constrained candidate identity bound into the receipt**, rather than copying ST054 identity metadata. | merged PR #834 diagnostic engine; candidate-identity wrapper PR #930; A8-DELIVERY-01 | **IN_PROGRESS — base diagnostic asset #834 delivered; PR #930 exact head `843b658dcc24d0bdefb1ddb818e08e2b11b66789` adds the generic identity-bound wrapper; dedicated `35549653044` and repository `tests` `35549653071` are queued, not PASS. Actual frozen-ST052 execution still waits on A8-DELIVERY-01.** | Diagnostic reuse is allowed; ST054 field/receipt identity replacement is not. No source numeric target or visual/PDE promotion. |
 | A7-MORPH-01 | Use already-preregistered Agent-7 morphology/capacity directions **only after** fixed diagnostics identify a concrete discrepancy in the frozen constrained candidate. | A8-DELIVERY-02 + discrepancy receipt | **BLOCKED** | No new basis growth merely because a direction is mathematically available. |
 | PDE-01 | If and only if the exact visualization candidate is selected for PDE work, rebuild compatible pressure + preregistered restricted forcing and run fresh independent 4096-point momentum/divergence validation. | selected frozen visualization candidate | **BLOCKED** | Keep `pde_validated=false` unless the original fixed gates pass. |
 
@@ -109,11 +110,17 @@ Current outer-reservoir, toroidal/swirl, vorticity-response, radial-shape, tempo
 
 ### Agent 9
 
-PR #825 (public observable contract) and PR #834 (renderer-independent cylindrical morphology fingerprint) are the preferred reusable visualization-side assets. Their exact-head CI status must be read literally. Queued/not-run is not PASS.
+PR #834's renderer-independent cylindrical morphology fingerprint is already merged on `main` and is the preferred reusable morphology measurement engine. PR #930 is the active identity-governance wrapper that requires a stable `candidate_id`, candidate SHA-256, and velocity-identity SHA-256 before those measurements are emitted for a non-ST054 candidate; its exact-head Actions are still queued, so it is not yet an admitted asset. The official-public observable contract is being replayed by replacement PR #906 because old #825 fell behind current `main`; #906 is open/mergeable but its exact-head workflows are also still queued. Do not reopen #825 semantics, implement another morphology fingerprint, or reuse the ST054-shaped receipt for ST052.
 
 ### Kokuno Agents 1–5
 
-The current Kokuno stack now includes a useful strict-inner callable/artifact seam (`u_inner + u_osc`) and independent derivative/divergence/transport audits, including PRs #857/#859/#860. It remains **strict-inner only** and lacks the global/outer join, matched pressure, restricted forcing, and complete candidate. It is a sibling research route, not a blocker for the constrained ST052 visualization delivery chain and not a replacement for its identity.
+The Kokuno stack continues to advance useful source-coordinate and strict-inner assets, but it is still not the shortest constrained visualization-delivery path. The newest fixed-`kappa` continuation chain is:
+
+- #925: candidate-side fixed-`kappa_0` `F/U/E` continuation from the activation endpoint through `X=100`, still driven by the repository-autonomous pressure/reference-stress seam;
+- #928: implementation-distinct save/reload public-values-only FD8 audit of the #925 derivative surfaces;
+- #929: Agent-5 typed registration of #925/#928 while keeping global/PDE readiness fail-closed.
+
+These are useful upstream scientific assets, but the lane still lacks the final `X=100 -> 110` bridge / Xi handoff, corrected/global Cartesian leading velocity, matched Cartesian pressure/gradient, preregistered restricted forcing in a complete candidate, a real correction velocity, complete `velocity/pressure/forcing` API, and same-protocol full NS admission. #926/#927 add local oscillatory-energy and five-moment correction diagnostics only. None of these PRs replaces frozen ST052-M or blocks delivery of a clearly labeled visualization candidate.
 
 ## Repository PDE benchmark — ST006
 
