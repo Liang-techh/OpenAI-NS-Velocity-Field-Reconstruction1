@@ -1,0 +1,126 @@
+name: agent7-st052m-regional-five-channel-capacity
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_regional_five_channel_capacity_localization.py'
+      - 'experiments/root_st052/test_agent7_st052m_regional_five_channel_capacity_localization.py'
+      - '.github/workflows/agent7-st052m-regional-five-channel-capacity.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  regional-five-channel-capacity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Verify exact PR head checkout
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+      - name: Focused parent and regional tests
+        run: |
+          python -m pytest -q -W error \
+            experiments/root_st052/test_agent7_st052m_joint_five_channel_capacity_preflight.py \
+            experiments/root_st052/test_agent7_st052m_regional_five_channel_capacity_localization.py
+      - name: Execute preregistered regional capacity localization
+        run: |
+          mkdir -p outputs/agent7-st052m-regional-five-channel-capacity
+          python experiments/root_st052/agent7_st052m_regional_five_channel_capacity_localization.py \
+            --out outputs/agent7-st052m-regional-five-channel-capacity/report.json
+      - name: Verify receipt completeness and fail-closed truth boundary
+        run: |
+          python - <<'PY'
+          import json, math
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-regional-five-channel-capacity/report.json').read_text())
+          assert r['task_id']=='CR003-ST052M-REGIONAL-FIVE-CHANNEL-CAPACITY-124'
+          assert r['prereg_issue']==1041
+          assert r['source_parent']=={'pr':1033,'head':'c692a445e4875bcc8965d649804a3b1a33a0ecec'}
+          p=r['frozen_protocol']
+          assert p['channels']==['amplitude','radial_shape','axial_turnover','temporal_curvature','toroidal_swirl']
+          assert p['regions']==['inner_core','outer_radial','midplane','axial_tip']
+          assert p['new_basis_dimension']==0
+          assert p['coefficient_selected'] is None
+          loc=r['regional_capacity_localization']
+          assert set(loc['regions'])==set(p['regions'])
+          assert isinstance(loc['all_regions_pass'], bool)
+          assert loc['all_region_selectivity_guards_pass'] is True
+          for name in p['regions']:
+              q=loc['regions'][name]
+              assert q['point_fraction'] >= 0.25
+              assert 0 <= q['normalized_column_rank'] <= 5
+              assert len(q['singular_values']) == 5
+              assert len(q['pairwise_cosines']) == 10
+              assert len(q['top_two_channels_by_raw_norm']) == 2
+              assert q['selectivity_guard_pass'] is True
+              if q['normalized_condition'] is not None:
+                  assert math.isfinite(q['normalized_condition'])
+              if q['max_abs_pairwise_cosine'] is not None:
+                  assert math.isfinite(q['max_abs_pairwise_cosine'])
+          assert r['mechanical_guards_pass'] is True
+          assert r['decision']['additional_basis_dimension_justified_by_this_audit'] is False
+          assert r['decision']['actual_velocity_changed'] is False
+          assert r['decision']['direct_visualization_fingerprint_improvement']==0.0
+          assert r['held_out_pde_residual']['evaluated'] is False
+          assert r['held_out_pde_residual']['st006_comparison_performed'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          assert r['paper_exact'] is False
+          assert r['openai_field_identified'] is False
+          print('all_regions_pass=', loc['all_regions_pass'])
+          print('failing_regions=', loc['failing_regions'])
+          for name in p['regions']:
+              q=loc['regions'][name]
+              print(name, 'rank=', q['normalized_column_rank'], 'condition=', q['normalized_condition'], 'max_abs_cosine=', q['max_abs_pairwise_cosine'], 'top_two=', q['top_two_channels_by_raw_norm'])
+          PY
+      - name: Publish compact regional receipt
+        if: ${{ always() && github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          if [ ! -f outputs/agent7-st052m-regional-five-channel-capacity/report.json ]; then exit 0; fi
+          python - <<'PY' > /tmp/agent7-regional-five-channel-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-regional-five-channel-capacity/report.json').read_text())
+          loc=r['regional_capacity_localization']
+          print('<!-- agent7-st052m-regional-five-channel-capacity-receipt -->')
+          print('**Agent 7 regional five-channel capacity receipt (issue #1041):**')
+          print()
+          print(f"- all four regional capacity gates pass: `{loc['all_regions_pass']}`")
+          print(f"- locally obstructed/redundant regions: `{loc['failing_regions']}`")
+          for name in r['frozen_protocol']['regions']:
+              q=loc['regions'][name]
+              print(f"- `{name}`: rank `{q['normalized_column_rank']}`, condition `{q['normalized_condition']}`, max |cos| `{q['max_abs_pairwise_cosine']}`, top-two raw-response channels `{q['top_two_channels_by_raw_norm']}`")
+          print('- basis dimension change: `0`; coefficient selected: `none`; candidate velocity unchanged.')
+          print('- direct visualization-fingerprint improvement this increment: `0.0`.')
+          print('- held-out complete-PDE residual: `not evaluated`; no ST006 improvement claim.')
+          print()
+          print('Truth boundary: this localizes target-free morphology sensitivity only. Regional PASS/FAIL does not establish visual/source correspondence, PDE validity, paper exactness, exact OpenAI-field identity, or blow-up; a FAIL routes to reparameterization before any basis growth.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-regional-five-channel-receipt.md || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-regional-five-channel-capacity
+          path: outputs/agent7-st052m-regional-five-channel-capacity/
+          if-no-files-found: warn
+
+# Region masks, channels, and gates were frozen in issue #1041 before execution.
