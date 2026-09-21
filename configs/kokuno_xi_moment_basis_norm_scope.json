@@ -1,0 +1,165 @@
+{
+  "delivery_state": {
+    "canonical_eq45_velocity_export_ready": true,
+    "kokuno_velocity_export_ready": false,
+    "openai_field_identified": false,
+    "paper_exact": false,
+    "pde_validated": false,
+    "visual_correspondence_verified": false
+  },
+  "frozen_cr001": {
+    "collapsed_candidate_forbidden": true,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "divergence_l2_gate": 1e-05,
+    "divergence_max_gate": 1e-05,
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "forcing_mode": "restricted_two_parameter_family",
+    "held_out_points": 4096,
+    "momentum_l2_gate": 0.001,
+    "momentum_max_gate": 0.001,
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "post_hoc_threshold_relaxation_forbidden": true,
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "residual_defined_pointwise_free_force_forbidden": true,
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "validation_seed": 914027
+  },
+  "mechanics_witness": {
+    "classification": "autonomous mechanics only",
+    "consistent_common_row_scale": {
+      "B": 0.1,
+      "Q": 0.1,
+      "d": 0.02,
+      "inverse_norm_nu": 10.0,
+      "q": 0.1,
+      "scale": 0.1,
+      "smallness_8_nu2_q_d": 1.6
+    },
+    "inconsistent_d_only_scale": {
+      "B": 1.0,
+      "Q": 1.0,
+      "d": 0.02,
+      "inverse_norm_nu": 1.0,
+      "q": 1.0,
+      "scale": 0.1,
+      "smallness_8_nu2_q_d": 0.16
+    },
+    "not_source_or_candidate_data": true,
+    "purpose": "show that scaling d alone can manufacture a smaller gain parameter, while a consistent scalar row rescaling of B,Q,d leaves it unchanged",
+    "scalar_original": {
+      "B": 1.0,
+      "Q": 1.0,
+      "d": 0.2,
+      "smallness_8_nu2_q_d": 1.6
+    }
+  },
+  "moment_coordinate_contract": {
+    "current_discrepancy_coordinate_surface_registered": true,
+    "current_gain_firewall_schema_explicitly_binds_moment_basis_id": false,
+    "current_gain_firewall_schema_explicitly_binds_outer_normalization_C": false,
+    "current_gain_firewall_schema_explicitly_binds_pa16_transform_identity": false,
+    "current_gain_firewall_schema_explicitly_binds_row_scale_or_pa15_normalization": false,
+    "current_gain_firewall_uses_euclidean_norms": true,
+    "current_xi_discrepancy_authorized_for_gain_stage_now": false,
+    "forbidden_promotions": [
+      "small current Xi discrepancy norm => source smallness condition passed",
+      "A4 Xi moment audit pass => gain-stage authorization",
+      "rescale discrepancy_d alone => same five-moment correction system",
+      "change PA.15 or PA.16 row normalization without transforming B and Q => same five-moment correction system",
+      "source-coordinate moment discrepancy => complete NS defect",
+      "local five-moment contraction => PDE validation"
+    ],
+    "future_gain_authorization_requires": [
+      "one checksum-bound moment_basis_id shared by discrepancy_d, matrix_B and bilinear_Q",
+      "exact row ordering and PA.16 transform identity",
+      "exact PA.15/source-coordinate scaling and current outer-normalization identity",
+      "one explicit vector/matrix/bilinear norm convention",
+      "proof or machine check that any row/basis transformation is applied consistently to B, Q and d",
+      "discrepancy_from_complete_ns_defect=true on the same complete candidate/physical contract",
+      "no residual-as-forcing shortcut and no held-out leakage"
+    ]
+  },
+  "pinned_inputs": {
+    "active_constrained_integration": {
+      "branch": "codex/cr001-constraints",
+      "head": "7f6658cac1a8ffea178bec5accf2fa5a784b8249"
+    },
+    "canonical_constraints": {
+      "blob": "6c559e42895a606e2ef025ade4cb448966d75814",
+      "path": "configs/constraints.json"
+    },
+    "current_xi_discrepancy": {
+      "agent1_pr": 947,
+      "candidate_side_actual_minus_ideal_materialized": true,
+      "head": "2797eed8e3b9b3374c676d8f517f05e3f0fc3e6b",
+      "pa16_rows": ["M", "J-4*eta*I", "I", "S-8*eta*M", "C_p"],
+      "raw_rows": ["M", "I", "J", "S", "C_p"],
+      "source_blob": "92dce65c9a8793e06497a7e7347c832861032238",
+      "source_normalization_C": 1000.0
+    },
+    "current_xi_row_transform": {
+      "agent3_pr": 949,
+      "authorized_for_gain_gated_ns_stage": false,
+      "discrepancy_from_complete_ns_defect": false,
+      "head": "87c1ef765d6bf3613c7c6c301669ffccf5260117",
+      "source_blob": "223058e2132bb22298c6a642b0f2a55562181e25"
+    },
+    "existing_gain_firewall": {
+      "agent3_pr": 927,
+      "basis_or_row_normalization_identity_field_present": false,
+      "head": "5029b6f88bfbbc4a498c3a9f9522f0ad2d79ecc1",
+      "norm_convention": "Euclidean vectors / spectral matrix inverse / slice-spectral bilinear upper bound",
+      "observed_system_fields": [
+        "source_candidate_id",
+        "source_candidate_sha256",
+        "fit_partition_id",
+        "fit_sample_ids",
+        "matrix_B",
+        "bilinear_Q",
+        "discrepancy_d",
+        "discrepancy_kind",
+        "discrepancy_from_complete_ns_defect",
+        "residual_as_forcing_shortcut_used"
+      ],
+      "source_blob": "6625db71ec8478db5d6ec09cabb7033a03e658a4",
+      "source_path": "src/openai_ns_reconstruction/kokuno_five_moment_correction_gain.py"
+    },
+    "parent_a5": {
+      "head": "b3fb36d91239a2ce2669971b7b07bfe892cfdf1c",
+      "pr": 951,
+      "source_blob": "52562076ed2b54ea069a55d245ede4b244c5d2b9",
+      "source_path": "src/openai_ns_reconstruction/kokuno_a5_current_xi_moment_discrepancy_ingest_contract.py"
+    }
+  },
+  "provenance_classes": {
+    "autonomous_design": [
+      "current outer normalization C=1000 is a repository realization, not a recovered hidden source value",
+      "current candidate-side actual-minus-ideal discrepancy is a repository realization on the pinned lineage",
+      "the mechanics witness below is logic-only and not Kokuno/OpenAI numerical evidence"
+    ],
+    "pending_unknown": [
+      "the current real complete-NS five-moment defect is not materialized",
+      "a current-lineage B/Q system bound to this exact Xi discrepancy is not materialized",
+      "the exact moment-coordinate/basis/row-normalization identity tying d, B and Q together is not yet bound",
+      "source T_sh admission and PA.16 repair remain unresolved",
+      "global Cartesian Kokuno velocity, matched pressure, restricted forcing, full residual and PDE admission remain unresolved"
+    ],
+    "public_source_fact": [
+      "the registered five prefix moments are M, I, J, S, C_p with the pinned formulas already carried by Agent 1",
+      "the registered PA.16 row operation is (M, J-4 eta I, I, S-8 eta M, C_p)",
+      "the local correction equation is represented as B c + Q(c,c) = d with a contraction test expressed in one fixed normed coordinate system"
+    ],
+    "user_requirement": [
+      "keep user requirements, public-source facts, autonomous design, and pending/unknown separate",
+      "keep velocity delivery independent from PDE validation",
+      "do not promote visual/source resemblance or scoped structural checks to exact OpenAI-field or PDE claims"
+    ]
+  },
+  "schema": "cr002-kokuno-xi-moment-basis-norm-scope-v1",
+  "scope": "representation/governance only; bind the five-moment coordinate system before any local gain-stage authorization",
+  "task_id": "CR002-KOKUNO-XI-MOMENT-BASIS-NORM-090"
+}
