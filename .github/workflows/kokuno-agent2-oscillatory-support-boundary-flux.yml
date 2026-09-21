@@ -1,0 +1,232 @@
+name: kokuno-agent2-oscillatory-support-boundary-flux
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_oscillatory_support_boundary_flux.py'
+      - 'tests/test_constrained_kokuno_oscillatory_support_boundary_flux.py'
+      - '.github/workflows/kokuno-agent2-oscillatory-support-boundary-flux.yml'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Assert pinned A2 ancestry
+        if: github.event_name == 'pull_request'
+        run: |
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha }}"
+          git merge-base --is-ancestor 22d89643356d99048b1039b6094040e9dbc589c3 HEAD
+          test "$(git rev-parse 22d89643356d99048b1039b6094040e9dbc589c3:src/openai_ns_reconstruction/kokuno_oscillatory_self_advection_energy_flux.py)" = "cce26ef1593856a029d79a3b06901532dcb76c5d"
+          test "$(git rev-parse 22d89643356d99048b1039b6094040e9dbc589c3:src/openai_ns_reconstruction/kokuno_public_z_pullback_velocity.py)" = "4a3abc1a11f7e054f651dd7bace8ada6d5a6b653"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install
+        run: python -m pip install -e '.[dev]'
+
+      - name: Focused regressions
+        run: >-
+          python -m pytest -q -W error
+          tests/test_constrained_kokuno_oscillatory_support_boundary_flux.py
+          tests/test_constrained_kokuno_oscillatory_self_advection_energy_flux.py
+
+      - name: Materialize independent public-velocity support receipt
+        run: |
+          mkdir -p artifacts
+          python - <<'PY'
+          from __future__ import annotations
+          import json
+          import math
+          from pathlib import Path
+          import numpy as np
+
+          from openai_ns_reconstruction.kokuno_oscillatory_support_boundary_flux import (
+              INWARD_COLLAR_FRACTIONS,
+              PARENT_AGENT2_HEAD,
+              public_contract,
+          )
+          from openai_ns_reconstruction.kokuno_public_z_pullback_velocity import (
+              default_field,
+              velocity_osc,
+          )
+
+          field = default_field()
+          r0=float(field.radial_inner); r1=float(field.radial_outer)
+          z0=float(field.axial_lower); z1=float(field.axial_upper)
+          rh=float(field.radial_halfwidth); zh=float(field.axial_halfwidth)
+
+          def u(x,y,z,t):
+              out=np.asarray(velocity_osc(x,y,z,t),float)
+              if out.ndim < 1 or out.shape[-1] != 3 or not np.all(np.isfinite(out)):
+                  raise RuntimeError('public velocity became invalid/non-finite')
+              return out
+
+          def speed_rms(value):
+              value=np.asarray(value,float)
+              return float(np.sqrt(np.mean(np.sum(value*value,axis=-1))))
+
+          def normal_flux(value,normal):
+              value=np.asarray(value,float); normal=np.asarray(normal,float)
+              return 0.5*np.sum(value*value,axis=-1)*np.sum(value*normal,axis=-1)
+
+          # Exact support-boundary probes use cardinal angles so hypot(x,y)
+          # represents the registered radial boundary without roundoff drift.
+          cardinal=np.asarray((0.0,0.5*math.pi,math.pi,-0.5*math.pi),float)
+          z_boundary_line=np.asarray((-1.31,-0.83,-0.19,0.37,1.09),float)
+          r_boundary_line=np.asarray((0.31,0.49,0.72,0.96,1.18),float)
+          times=np.asarray((0.337,0.503,0.667),float)
+          boundary_vel=[]; boundary_norm=[]; outside_vel=[]
+
+          tt,zz,th=np.meshgrid(times,z_boundary_line,cardinal,indexing='ij')
+          for radius,sign in ((r0,-1.0),(r1,1.0)):
+              xx=radius*np.cos(th); yy=radius*np.sin(th)
+              vv=u(xx,yy,zz,tt)
+              nn=np.stack((sign*np.cos(th),sign*np.sin(th),np.zeros_like(th)),axis=-1)
+              boundary_vel.append(vv.reshape((-1,3)))
+              boundary_norm.append(nn.reshape((-1,3)))
+              rr=radius+sign*1e-6*(r1-r0)
+              outside_vel.append(u(rr*np.cos(th),rr*np.sin(th),zz,tt).reshape((-1,3)))
+
+          tt2,rr,th2=np.meshgrid(times,r_boundary_line,cardinal,indexing='ij')
+          for axial,sign in ((z0,-1.0),(z1,1.0)):
+              xx=rr*np.cos(th2); yy=rr*np.sin(th2)
+              vv=u(xx,yy,np.full_like(xx,axial),tt2)
+              nn=np.zeros_like(vv); nn[...,2]=sign
+              boundary_vel.append(vv.reshape((-1,3)))
+              boundary_norm.append(nn.reshape((-1,3)))
+              zz_out=np.full_like(xx,axial+sign*1e-6*(z1-z0))
+              outside_vel.append(u(xx,yy,zz_out,tt2).reshape((-1,3)))
+
+          ub=np.concatenate(boundary_vel,axis=0)
+          nb=np.concatenate(boundary_norm,axis=0)
+          uo=np.concatenate(outside_vel,axis=0)
+          flux=normal_flux(ub,nb)
+
+          # Independent inward collars use non-cardinal, phase-shifted angles.
+          # Only public velocity values are sampled; no production derivative or
+          # envelope derivative is used to infer the decay order.
+          theta=0.173 + 2.0*math.pi*np.arange(12,dtype=float)/12.0
+          z_line=np.asarray((-1.17,-0.63,-0.07,0.58,1.21),float)
+          r_line=np.asarray((0.33,0.52,0.74,0.93,1.16),float)
+          collar_times=np.asarray((0.347,0.517,0.653),float)
+
+          collar={name:[] for name in ('radial_inner','radial_outer','axial_lower','axial_upper')}
+          for frac in INWARD_COLLAR_FRACTIONS:
+              ttr,zzr,thr=np.meshgrid(collar_times,z_line,theta,indexing='ij')
+              for name,radius in (
+                  ('radial_inner',r0+frac*rh),
+                  ('radial_outer',r1-frac*rh),
+              ):
+                  vv=u(radius*np.cos(thr),radius*np.sin(thr),zzr,ttr)
+                  collar[name].append(speed_rms(vv))
+
+              tta,rra,tha=np.meshgrid(collar_times,r_line,theta,indexing='ij')
+              for name,axial in (
+                  ('axial_lower',z0+frac*zh),
+                  ('axial_upper',z1-frac*zh),
+              ):
+                  vv=u(rra*np.cos(tha),rra*np.sin(tha),np.full_like(rra,axial),tta)
+                  collar[name].append(speed_rms(vv))
+
+          reductions={}
+          failed=[]
+          for name,values in collar.items():
+              arr=np.asarray(values,float)
+              if not np.all(np.isfinite(arr)) or np.any(arr <= np.finfo(float).tiny):
+                  failed.append(f'{name}_collar_nonfinite_or_trivial')
+                  reductions[name]=[float('nan'),float('nan')]
+                  continue
+              ratios=[float(arr[0]/arr[1]),float(arr[1]/arr[2])]
+              reductions[name]=ratios
+              if min(ratios) < 8.0:
+                  failed.append(f'{name}_collar_decay_ratio')
+
+          boundary_max=float(np.max(np.abs(ub)))
+          outside_max=float(np.max(np.abs(uo)))
+          flux_max=float(np.max(np.abs(flux)))
+          if boundary_max != 0.0:
+              failed.append('support_boundary_velocity_not_exact_zero')
+          if outside_max != 0.0:
+              failed.append('outside_support_velocity_not_exact_zero')
+          if flux_max != 0.0:
+              failed.append('support_boundary_energy_flux_not_exact_zero')
+
+          contract=public_contract()
+          if contract['forbidden_materialize_inputs_present']:
+              failed.append('forbidden_inputs')
+          if contract['whole_domain_energy_balance_assessed']:
+              failed.append('support_flux_promoted_to_whole_domain_energy_balance')
+          if contract['mean_projection_performed'] or contract['correction_velocity_constructed']:
+              failed.append('agent3_lane_crossed')
+          if contract['complete_ns_residual'] or contract['pde_validated'] or contract['paper_exact']:
+              failed.append('scientific_boundary_promoted')
+
+          receipt={
+              'schema':'kokuno-a2-oscillatory-support-boundary-flux-receipt-v1',
+              'parent_agent2_head':PARENT_AGENT2_HEAD,
+              'public_z_velocity_blob':'4a3abc1a11f7e054f651dd7bace8ada6d5a6b653',
+              'support':{'radial':[r0,r1],'axial':[z0,z1]},
+              'exact_boundary':{
+                  'sample_count':int(ub.shape[0]),
+                  'outside_sample_count':int(uo.shape[0]),
+                  'velocity_max_abs':boundary_max,
+                  'outside_velocity_max_abs':outside_max,
+                  'normal_kinetic_energy_flux_max_abs':flux_max,
+              },
+              'inward_collar':{
+                  'fractions':list(INWARD_COLLAR_FRACTIONS),
+                  'speed_rms_by_face':collar,
+                  'successive_reduction_ratios_by_face':reductions,
+                  'minimum_required_reduction_ratio':8.0,
+                  'sampling':'public velocity only; phase-shifted non-cardinal angles',
+              },
+              'truth_boundary':{
+                  'support_boundary_energy_flux_assessed':True,
+                  'whole_domain_energy_balance_assessed':False,
+                  'mean_projection_performed':False,
+                  'radial_inverse_performed':False,
+                  'correction_velocity_constructed':False,
+                  'pressure_included':False,
+                  'forcing_included':False,
+                  'complete_ns_residual':False,
+                  'same_protocol_st006_comparison_valid':False,
+                  'residual_reduction_claimed':False,
+                  'paper_exact':False,
+                  'pde_validated':False,
+              },
+              'failed_gates':failed,
+              'all_gates_passed':not failed,
+          }
+          Path('artifacts/kokuno_agent2_oscillatory_support_boundary_flux_receipt.json').write_text(
+              json.dumps(receipt,indent=2,sort_keys=True,allow_nan=False)+'\n',encoding='utf-8'
+          )
+          print(json.dumps(receipt,indent=2,sort_keys=True,allow_nan=False))
+          PY
+
+      - name: Upload support-boundary receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent2-oscillatory-support-boundary-flux-receipt
+          path: artifacts/kokuno_agent2_oscillatory_support_boundary_flux_receipt.json
+
+      - name: Enforce frozen support-boundary gates
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('artifacts/kokuno_agent2_oscillatory_support_boundary_flux_receipt.json')
+          data=json.loads(p.read_text(encoding='utf-8'))
+          if data['failed_gates']:
+              raise SystemExit('support-boundary gates failed: '+', '.join(data['failed_gates']))
+          if not data['all_gates_passed']:
+              raise SystemExit('support-boundary receipt did not admit its frozen gates')
+          PY
