@@ -1,0 +1,235 @@
+name: kokuno-agent2-source-zero-data-amplitude-ivp
+
+on:
+  push:
+    branches:
+      - codex/kokuno-a2-source-zero-data-ivp-093
+  pull_request:
+    branches:
+      - codex/kokuno-a2-source-projected-amplitude-ode-092
+  workflow_dispatch:
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out exact A2 head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: a2
+          fetch-depth: 0
+
+      - name: Verify exact parent ancestry and strict three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd a2
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+          git merge-base --is-ancestor eee26916e5103ac18ac57422be7f937ec5db6b56 HEAD
+          test "$(git rev-list --count eee26916e5103ac18ac57422be7f937ec5db6b56..HEAD)" -eq 3
+          mapfile -t files < <(git diff --name-only eee26916e5103ac18ac57422be7f937ec5db6b56..HEAD)
+          test "${#files[@]}" -eq 3
+          printf '%s\n' "${files[@]}" | sort > /tmp/actual-files
+          printf '%s\n' \
+            .github/workflows/kokuno-agent2-source-zero-data-amplitude-ivp.yml \
+            src/openai_ns_reconstruction/kokuno_source_zero_data_amplitude_ivp.py \
+            tests/test_constrained_kokuno_source_zero_data_amplitude_ivp.py \
+            | sort > /tmp/expected-files
+          diff -u /tmp/expected-files /tmp/actual-files
+          test "$(git hash-object src/openai_ns_reconstruction/kokuno_source_projected_amplitude_ode.py)" = \
+            "ee55f4cb00eee67a11bcf0361aadd1c0c3012441"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install A2 test dependencies
+        shell: bash
+        run: python -m pip install -e './a2[dev]'
+
+      - name: Compile and run focused zero-data IVP tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            a2/src/openai_ns_reconstruction/kokuno_source_zero_data_amplitude_ivp.py \
+            a2/tests/test_constrained_kokuno_source_zero_data_amplitude_ivp.py
+          PYTHONPATH="$PWD/a2/src" python -m pytest -q \
+            a2/tests/test_constrained_kokuno_source_projected_amplitude_ode.py \
+            a2/tests/test_constrained_kokuno_source_zero_data_amplitude_ivp.py
+
+      - name: Check out exact corrected Kokuno public source
+        uses: actions/checkout@v4
+        with:
+          repository: KokunoYumeto/yang-mills-interacting-workbench
+          ref: 143f6773feb424ad9ed3a8d116653200f20346b7
+          path: source
+          fetch-depth: 1
+
+      - name: Authenticate corrected source bytes and zero-data Duhamel statement
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C source rev-parse HEAD)" = "143f6773feb424ad9ed3a8d116653200f20346b7"
+          test "$(git -C source hash-object navier-stokes/navier_stokes_workbench.tex)" = \
+            "205a99807302e21a51c5eaf223390c0dfc42bcd0"
+          grep -F 'z_m(v)=\int_0^vV_m(v,w)g_m(w)\,dw' \
+            source/navier-stokes/navier_stokes_workbench.tex >/dev/null
+
+      - name: Materialize zero-data IVP receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p receipts
+          PYTHONPATH="$PWD/a2/src" python - <<'PY'
+          from __future__ import annotations
+
+          import json
+          from pathlib import Path
+          import numpy as np
+
+          from openai_ns_reconstruction.kokuno_source_phase_coefficient_jet import (
+              SourceBackgroundPhaseJet,
+          )
+          from openai_ns_reconstruction.kokuno_source_zero_data_amplitude_ivp import (
+              solve_source_zero_data_amplitude_ivp,
+              source_zero_data_amplitude_ivp_contract,
+          )
+
+          zero = np.asarray(0.0)
+          background = SourceBackgroundPhaseJet(
+              f=zero, g=zero,
+              f_r=zero, g_r=zero,
+              f_z=zero, g_z=zero,
+              f_rr=zero, g_rr=zero,
+              f_rz=zero, g_rz=zero,
+              f_zz=zero, g_zz=zero,
+          )
+          radius = np.asarray(1.1)
+          epsilon = 0.18
+          p = 1.3
+          p_z = -0.4
+          x_0 = 0.2
+          k = 2.5
+          m = 1
+          pulse_v = 0.8
+          n = np.array([x_0, p / float(radius), p_z])
+          seed = np.array([0.31 + 0.07j, -0.22 + 0.11j, 0.43 - 0.09j])
+          forcing = np.cross(n, seed)
+
+          result = solve_source_zero_data_amplitude_ivp(
+              pulse_v,
+              radius,
+              0.25,
+              -0.2,
+              background,
+              lambda _v: forcing,
+              epsilon=epsilon,
+              p=p,
+              p_z=p_z,
+              x_0=x_0,
+              k=k,
+              m=m,
+          )
+          gamma = (m * m) * epsilon * (k**2) * float(np.dot(n, n))
+          exact = -(1.0 - np.exp(-gamma * pulse_v)) / gamma * forcing
+          errors = [float(np.max(np.abs(state - exact))) for state in result.states]
+          contract = source_zero_data_amplitude_ivp_contract()
+
+          receipt = {
+              "schema": "kokuno-agent2-source-zero-data-amplitude-ivp-receipt-v1",
+              "head": "${{ github.event.pull_request.head.sha || github.sha }}",
+              "source_commit": contract["source_commit"],
+              "source_workbench_blob": contract["source_workbench_blob"],
+              "source_zero_data_duhamel_formula": contract[
+                  "source_zero_data_duhamel_formula"
+              ],
+              "integration_method": contract["integration_method"],
+              "panel_ladder": contract["panel_ladder"],
+              "analytic_errors": errors,
+              "coarse_medium_abs_max": result.coarse_medium_abs_max,
+              "medium_fine_abs_max": result.medium_fine_abs_max,
+              "endpoint_constraint_abs": float(abs(complex(result.endpoint.constraint))),
+              "endpoint_full_equation_residual_abs_max": float(
+                  np.max(np.abs(result.endpoint.full_equation_residual))
+              ),
+              "caller_can_tune_integrator_resolution": contract[
+                  "caller_can_tune_integrator_resolution"
+              ],
+              "caller_supplies_mode_state_t_m": contract[
+                  "caller_supplies_mode_state_t_m"
+              ],
+              "caller_supplies_mode_forcing_f_m": contract[
+                  "caller_supplies_mode_forcing_f_m"
+              ],
+              "source_zero_data_ivp_numerical_solver_materialized": contract[
+                  "source_zero_data_ivp_numerical_solver_materialized"
+              ],
+              "source_exact_duhamel_frame_B_materialized": contract[
+                  "source_exact_duhamel_frame_B_materialized"
+              ],
+              "source_exact_duhamel_propagator_Vm_materialized": contract[
+                  "source_exact_duhamel_propagator_Vm_materialized"
+              ],
+              "source_amplitude_directional_jet_materialized": contract[
+                  "source_amplitude_directional_jet_materialized"
+              ],
+              "self_contained_velocity_xyzt_provider": contract[
+                  "self_contained_velocity_xyzt_provider"
+              ],
+              "paper_exact": contract["paper_exact"],
+              "complete_ns_residual_assessed": contract[
+                  "complete_ns_residual_assessed"
+              ],
+              "residual_reduction_claimed": contract["residual_reduction_claimed"],
+              "pde_validated": contract["pde_validated"],
+          }
+          Path("receipts/kokuno_a2_source_zero_data_amplitude_ivp.json").write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+          )
+          PY
+
+      - name: Upload receipt before gate enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a2-source-zero-data-amplitude-ivp
+          path: receipts/kokuno_a2_source_zero_data_amplitude_ivp.json
+          if-no-files-found: error
+
+      - name: Enforce numerical IVP accuracy and truth boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          receipt = json.loads(
+              Path("receipts/kokuno_a2_source_zero_data_amplitude_ivp.json").read_text(
+                  encoding="utf-8"
+              )
+          )
+          errors = receipt["analytic_errors"]
+          assert receipt["panel_ladder"] == [32, 64, 128]
+          assert errors[2] < errors[1] < errors[0]
+          assert errors[2] <= 2.0e-10
+          assert receipt["medium_fine_abs_max"] < receipt["coarse_medium_abs_max"]
+          assert receipt["endpoint_constraint_abs"] <= 2.0e-13
+          assert receipt["endpoint_full_equation_residual_abs_max"] <= 3.0e-13
+          assert receipt["caller_can_tune_integrator_resolution"] is False
+          assert receipt["caller_supplies_mode_state_t_m"] is False
+          assert receipt["caller_supplies_mode_forcing_f_m"] is True
+          assert receipt["source_zero_data_ivp_numerical_solver_materialized"] is True
+          assert receipt["source_exact_duhamel_frame_B_materialized"] is False
+          assert receipt["source_exact_duhamel_propagator_Vm_materialized"] is False
+          assert receipt["source_amplitude_directional_jet_materialized"] is False
+          assert receipt["self_contained_velocity_xyzt_provider"] is False
+          assert receipt["paper_exact"] is False
+          assert receipt["complete_ns_residual_assessed"] is False
+          assert receipt["residual_reduction_claimed"] is False
+          assert receipt["pde_validated"] is False
+          PY
