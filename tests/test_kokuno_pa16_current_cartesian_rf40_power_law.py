@@ -167,7 +167,11 @@ def test_power_law_radial_derivatives_reuse_public_and_fd_replay(field):
 def test_power_law_slopes_hold_at_interior_and_endpoint(field):
     eta = 0.23
     for fraction in (0.12, 0.67, 1.0):
-        X = field.X_3 * math.exp(fraction * field.T_w)
+        X = (
+            field.X_4
+            if fraction == 1.0
+            else field.X_3 * math.exp(fraction * field.T_w)
+        )
         vals = field.similarity_profile_values(X, eta)
         deriv = field.similarity_radial_derivatives(X, eta)
         public = field.outer_base.profile_values(X, eta)
