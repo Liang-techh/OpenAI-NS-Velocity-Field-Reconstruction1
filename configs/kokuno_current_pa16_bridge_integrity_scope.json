@@ -1,0 +1,45 @@
+{
+  "schema": "cr002-current-pa16-upstream-bridge-integrity-scope-v1",
+  "task": "CR002-CURRENT-PA16-UPSTREAM-BRIDGE-INTEGRITY-093",
+  "parent_pr": 957,
+  "parent_exact_head": "bb8adedbb4fd32519a00b78765c0fa62f16bfe52",
+  "source_bridge_pr": 949,
+  "source_bridge_exact_head": "87c1ef765d6bf3613c7c6c301669ffccf5260117",
+  "classification": {
+    "user_requirement": [
+      "keep source, autonomous, pending, and delivery/PDE claims separate",
+      "do not promote correction machinery into PDE or OpenAI-field identity"
+    ],
+    "public_source_fact": [],
+    "autonomous_design": [
+      "replay the exact repository #949 checksum payload before #957 consumption",
+      "pin the validated bridge object across delegation to avoid a second unvalidated fetch",
+      "replay summary fields that #949 did not include in handoff_sha256"
+    ],
+    "pending_unknown": [
+      "complete global Cartesian Kokuno velocity",
+      "matched global pressure",
+      "preregistered restricted forcing",
+      "complete-NS-defect-derived five-moment discrepancy",
+      "gain-gated NS correction authorization",
+      "PDE validation",
+      "visual correspondence verification",
+      "paper exactness",
+      "OpenAI-field identity"
+    ]
+  },
+  "claims": {
+    "checksum_integrity_guard_available": true,
+    "parent_957_entrypoint_itself_modified": false,
+    "source_moment_receipt_promoted_to_complete_ns_defect": false,
+    "authorized_for_gain_gated_ns_stage": false,
+    "velocity_modified": false,
+    "pressure_modified": false,
+    "forcing_modified": false,
+    "scientific_threshold_modified": false,
+    "pde_validated": false,
+    "visual_correspondence_verified": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  }
+}
