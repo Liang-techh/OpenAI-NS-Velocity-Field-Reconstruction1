@@ -1,0 +1,137 @@
+{
+  "base": {
+    "a5_pr": 984,
+    "active_constrained_integration_branch": "codex/cr001-constraints",
+    "active_constrained_integration_head_at_claim": "7f6658cac1a8ffea178bec5accf2fa5a784b8249",
+    "head": "dae4797fbd270a4f676b113f5ca3f7801d71a47e"
+  },
+  "cr001_snapshot": {
+    "candidate_collapse_allowed": false,
+    "constraints_blob": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "divergence_l2_gate": 1e-05,
+    "divergence_max_gate": 1e-05,
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "forcing_mode": "restricted_two_parameter_family",
+    "held_out_points": 4096,
+    "momentum_l2_gate": 0.001,
+    "momentum_max_gate": 0.001,
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "post_hoc_threshold_relaxation_allowed": false,
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "residual_defined_pointwise_free_force_allowed": false,
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "validation_seed": 914027
+  },
+  "forbidden_promotions": [
+    "two scalar source stresses -> current complete three-component force receipt",
+    "current radial force -> complete NS defect",
+    "current radial force -> authorized correction target",
+    "current radial force -> Cartesian correction velocity",
+    "public corrected-reader formula -> independently verified original-paper exactness",
+    "scoped force/stress consistency -> same-protocol ST006 improvement",
+    "scoped force/stress consistency -> PDE validation",
+    "callable or visualizable velocity -> exact OpenAI field"
+  ],
+  "mechanics_only_witness": {
+    "classification": "autonomous_mechanics_only_not_kokuno_or_openai_data",
+    "derived_force": {"axial": 6.0, "radial": 2.0, "tangential": 8.0},
+    "interpretation": "Two scalar stress functions can produce three nonzero cylindrical force components under the R33 divergence structure; this is a representation witness only.",
+    "probe": {"r": 2.0, "z": 3.0},
+    "sigma_1": "r*z",
+    "sigma_2": "r^2"
+  },
+  "provenance": {
+    "autonomous_design": [
+      "This CR002 machine-readable scope contract and fail-closed auditor.",
+      "The mechanics-only polynomial witness used to demonstrate that two scalar stress functions can generate three nonzero force components.",
+      "Repository choice to treat A3 #982 as source-representation resolution for the radial-force channel while retaining all complete-NS/correction gates."
+    ],
+    "pending_unknown": [
+      "Independent verification that R32-R34 exactly match the original OpenAI paper, beyond the public corrected-reader provenance.",
+      "Current-lineage materialization and independent validation of the complete three-component div(T) force vector on one artifact.",
+      "A complete NS defect on the same global Cartesian candidate.",
+      "Authorization of any scoped stress/force receipt as an NS correction target.",
+      "A real Cartesian correction velocity and finite correction cycle.",
+      "Matched Cartesian pressure and preregistered restricted forcing for the same global candidate.",
+      "Post-X_R outer/global velocity completion and global compact-support join.",
+      "Same-protocol held-out momentum/divergence admission, visual correspondence, PDE validation, paper exactness and OpenAI-field identity."
+    ],
+    "public_source_fact": {
+      "blob": "205a99807302e21a51c5eaf223390c0dfc42bcd0",
+      "equations": ["R32", "R33", "R34"],
+      "force_components": {
+        "axial": "(partial_r + 1/r) sigma_1",
+        "radial": "partial_z sigma_1",
+        "tangential": "(partial_r + 2/r) sigma_2"
+      },
+      "head": "143f6773feb424ad9ed3a8d116653200f20346b7",
+      "independent_third_scalar_radial_stress_present": false,
+      "path": "navier-stokes/navier_stokes_workbench.tex",
+      "reader_states_full_tensor_to_force_map": true,
+      "repository": "KokunoYumeto/yang-mills-interacting-workbench",
+      "scalar_stresses": ["sigma_2", "sigma_1"],
+      "scope": "public corrected Kokuno reader only; not an independent re-verification of the original OpenAI paper",
+      "section": "Full symmetric tensor and all three force components",
+      "tensor_structure": "T = sigma_2(er⊗etheta+etheta⊗er) + sigma_1(er⊗ez+ez⊗er)"
+    },
+    "user_requirement": [
+      "Keep representation, delivery, PDE, visual, paper-exact and OpenAI-field states independent.",
+      "Prefer an explicit computable/save-load 3-D time-varying velocity delivery; unresolved PDE work must not block a truth-bounded callable field.",
+      "Do not introduce a redundant correction channel merely to satisfy a generic component-count intuition when the registered source representation supplies a different tensor-to-force map."
+    ]
+  },
+  "purpose": "Resolve the source-specific force-component representation after A3 #982 without promoting it to a complete NS correction object.",
+  "representation_resolution": {
+    "agent3_982_authorized_correction_target": false,
+    "agent3_982_cartesian_correction_velocity_materialized": false,
+    "agent3_982_complete_ns_defect_materialized": false,
+    "agent3_982_current_full_three_component_force_vector_materialized": false,
+    "agent3_982_current_radial_force_materialized": true,
+    "cr002_979_alternative_representation_requirement_satisfied_by_public_reader": true,
+    "cr002_979_must_not_be_used_to_require_an_independent_third_radial_moment_inverse": true,
+    "generic_three_vector_requires_three_observed_components": true,
+    "generic_vector_witness_from_cr002_979_remains_logically_valid": true,
+    "generic_vector_witness_is_not_the_registered_source_tensor_representation": true,
+    "source_specific_force_component_count": 3,
+    "source_specific_independent_third_radial_stress_channel_required": false,
+    "source_specific_radial_force_formula": "partial_z sigma_1",
+    "source_specific_radial_force_obtained_from_axial_stress_cross_derivative": true,
+    "source_specific_stress_scalar_channel_count": 2
+  },
+  "schema": "cr002-kokuno-symmetric-stress-force-component-scope-v1",
+  "task_id": "CR002-KOKUNO-SYMMETRIC-STRESS-FORCE-COMPONENT-SCOPE-100",
+  "truth_states": {
+    "blowup_proved": false,
+    "canonical_eq45_pde_validated": false,
+    "canonical_eq45_velocity_export_ready": true,
+    "canonical_eq45_visual_correspondence_verified": false,
+    "canonical_eq45_visualization_ready": false,
+    "kokuno_pde_validated": false,
+    "kokuno_velocity_export_ready": false,
+    "kokuno_visual_correspondence_verified": false,
+    "openai_field_identified": false,
+    "paper_exact": false
+  },
+  "upstream": {
+    "agent3_pr_982": {
+      "authorized_as_correction_target": false,
+      "candidate_residual_evidence": false,
+      "complete_ns_defect": false,
+      "head": "dd11348e8eecf298656d7da58aee4526c6102306",
+      "role": "current partial radial force from physical-z derivative of axial/e=1 stress"
+    },
+    "agent5_pr_984": {
+      "head": "dae4797fbd270a4f676b113f5ca3f7801d71a47e",
+      "records_agent3_982_as_sibling_only": true
+    },
+    "cr002_pr_979": {
+      "head": "cef54441091d470efd137796909596c4018d5dea",
+      "role": "generic channel-completeness governance; allowed either a missing radial stress channel or a mathematical representation proving it is not required"
+    }
+  }
+}
