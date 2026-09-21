@@ -1,0 +1,169 @@
+{
+  "schema": "st052m-unified-velocity-api-gate/v1",
+  "task_id": "CR002-ST052M-UNIFIED-VELOCITY-API-GATE-127",
+  "purpose": "Separate accepted external runtime, candidate-local callable/save-load/grid evidence, and repository-unified velocity-export readiness for the frozen ST052-M identity.",
+  "snapshot": {
+    "active_integration_branch": "codex/cr001-constraints",
+    "active_integration_head": "6a293b3c870d70b8d8aece1b12d68685c9b8b010",
+    "runtime_dependency_acceptance_pr": 872,
+    "runtime_dependency_acceptance_merge_head": "6a293b3c870d70b8d8aece1b12d68685c9b8b010",
+    "runtime_dependency_acceptance_exact_head": "148d47b785fe46f841f4d98848375926189d64f0",
+    "runtime_dependency_acceptance_dedicated_run": 35553703597,
+    "runtime_dependency_acceptance_dedicated_conclusion": "success",
+    "a8_delivery_smoke_pr": 1059,
+    "a8_delivery_smoke_exact_head": "e34198b5bad1f1e466e6f7d34aaa7558b6233f9a",
+    "a8_delivery_smoke_run": 35657044002,
+    "a8_delivery_smoke_status_at_snapshot": "queued",
+    "a8_delivery_smoke_conclusion_at_snapshot": null,
+    "note": "CI and PR states are snapshot evidence only. A later smoke result does not retroactively change this contract without an explicit contract/state update."
+  },
+  "source_classification": {
+    "user_requirement": [
+      "clear computable save-load-capable velocity(x,y,z,t)->[u,v,w] delivery",
+      "PDE failure or pending PDE evidence must not be used to prohibit callable velocity delivery",
+      "visual correspondence, PDE validation, and paper exactness remain independent states"
+    ],
+    "public_source_fact": [],
+    "autonomous_design": [
+      "accept authenticated exact-source checkout as an external visualization runtime dependency",
+      "ST052-M whole-child checksum-bound bundle and candidate-local loader",
+      "33^3 x 5 NPZ/MAT sampled-grid handoff",
+      "repository-unified velocity API readiness semantics"
+    ],
+    "pending_unknown": [
+      "successful exact-head A8-DELIVERY-02a integration smoke at this snapshot",
+      "registered repository-unified ST052 velocity entry point",
+      "ST052 visualization readiness and public visual correspondence",
+      "ST052 independent PDE acceptance",
+      "paper-exact or OpenAI-field identity"
+    ]
+  },
+  "pinned_repository_evidence": {
+    "runtime_acceptance_contract": "configs/st052m_runtime_dependency_acceptance.json",
+    "runtime_acceptance_contract_git_blob_sha1": "f2d7ea38add07285bd727ebac8541bd25a997488",
+    "whole_child_module": "src/openai_ns_reconstruction/st052_linear_temporal_capsule.py",
+    "whole_child_module_git_blob_sha1": "7cc3758086a6eecf09b9536f6fd73622d16424d2",
+    "delivery_readiness_contract": "configs/delivery_readiness_scope_contract.json",
+    "delivery_readiness_contract_git_blob_sha1": "0cb1f3e37dc76d6248db9020f0a3264b35269e85",
+    "velocity_delivery_contract": "configs/velocity_delivery_contract.json",
+    "velocity_delivery_contract_git_blob_sha1": "4bf60fd820fe66c1f380aebba5d56d4940060d82",
+    "project_status": "project_status.json",
+    "project_status_git_blob_sha1": "956f0532aa1c6c8af7ed4ccb1fc3cb303793da7e",
+    "canonical_constraints": "configs/constraints.json",
+    "canonical_constraints_git_blob_sha1": "6c559e42895a606e2ef025ade4cb448966d75814"
+  },
+  "current_st052_delivery_scope": {
+    "candidate_id": "ST052-M-linear-temporal-child-v1",
+    "versioned_whole_child_bundle_materialized": true,
+    "identity_preserving_save_load_with_authenticated_exact_source_runtime": true,
+    "external_runtime_dependency_accepted_for_visualization_delivery": true,
+    "sampled_grid_export_materialized": true,
+    "candidate_local_velocity_callable": true,
+    "candidate_local_loader": "openai_ns_reconstruction.st052_linear_temporal_capsule:load_bundle_runtime(bundle_dir, exact_source_root=...)",
+    "candidate_local_callable_shape": "loaded_candidate.velocity(x,y,z,t)->[u,v,w]",
+    "caller_must_supply_exact_source_root": true,
+    "repository_unified_st052_velocity_entrypoint_registered": false,
+    "standalone_package_parent_runtime_ready": false,
+    "velocity_export_ready": false,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  },
+  "readiness_semantics": {
+    "unqualified_velocity_export_ready_required_evidence": [
+      "versioned_candidate_artifact",
+      "unified_velocity_api",
+      "finite_velocity_output",
+      "reproducible_export"
+    ],
+    "sampled_grid_alone_is_sufficient": false,
+    "external_source_checkout_reconstruction_alone_is_sufficient": false,
+    "accepted_external_runtime_plus_candidate_local_loader_is_unified_api": false,
+    "accepted_external_runtime_dependency_implies_standalone_package_runtime": false,
+    "accepted_external_runtime_dependency_implies_velocity_export_ready": false,
+    "candidate_local_callable_implies_velocity_export_ready": false,
+    "a8_delivery_smoke_pass_alone_implies_unified_api_registration": false,
+    "pde_failure_or_pending_blocks_velocity_delivery": false,
+    "visual_correspondence_pending_blocks_velocity_delivery": false
+  },
+  "promotion_gate": {
+    "state": "blocked_on_repository_unified_st052_velocity_api_registration",
+    "already_available_or_accepted": [
+      "versioned ST052 whole-child identity",
+      "identity-preserving save/load with authenticated exact source runtime",
+      "accepted external exact-source runtime dependency",
+      "candidate-local velocity(x,y,z,t)",
+      "checksum-bound sampled NPZ/MAT grid export"
+    ],
+    "still_required_before_st052_velocity_export_ready_true": [
+      "register one repository-unified ST052 velocity(x,y,z,t)->[u,v,w] entry point with explicit deterministic resolution of the accepted external exact-source runtime dependency",
+      "bind save/load and exported artifacts to that same unified entry-point candidate identity",
+      "execute finite-output and reproducible-export replay through that unified entry point"
+    ],
+    "not_required_for_velocity_export_ready": [
+      "PDE acceptance",
+      "visual correspondence verification",
+      "paper exactness",
+      "OpenAI-field identity"
+    ],
+    "upgrade_requires_explicit_contract_update": true
+  },
+  "canonical_eq45_independence": {
+    "candidate_family": "eq45_supported_velocity_candidate_v1",
+    "velocity_api": "openai_ns_reconstruction.eq45_supported_delivery:velocity",
+    "velocity_export_ready": true,
+    "visualization_ready": false,
+    "pde_validated": false,
+    "st052_gate_must_not_downgrade_eq45_delivery": true
+  },
+  "cr001_nonmutation": {
+    "constraints_git_blob_sha1": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders": [24, 48, 96],
+    "momentum_max": 0.001,
+    "momentum_L2": 0.001,
+    "divergence_max": 0.00001,
+    "divergence_L2": 0.00001,
+    "residual_defined_free_forcing_forbidden": true,
+    "candidate_amplitude_collapse_forbidden": true,
+    "post_hoc_threshold_relaxation_forbidden": true,
+    "scientific_parameters_changed": false,
+    "thresholds_changed": false,
+    "forcing_contract_changed": false,
+    "validation_sample_changed": false
+  },
+  "forbidden_promotions": [
+    "runtime_dependency_accepted -> standalone_package_parent_runtime_ready",
+    "runtime_dependency_accepted -> velocity_export_ready",
+    "candidate_local_velocity_callable -> repository_unified_velocity_api_registered",
+    "sampled_grid_export_materialized -> velocity_export_ready",
+    "A8_DELIVERY_02a_smoke_pass -> repository_unified_velocity_api_registered",
+    "velocity_export_ready -> visualization_ready",
+    "velocity_export_ready -> visual_correspondence_verified",
+    "velocity_export_ready -> pde_validated",
+    "visual_similarity -> pde_validated",
+    "visual_similarity -> paper_exact",
+    "PDE_validation_failed_or_pending -> velocity_export_not_allowed"
+  ],
+  "mutation_scope": {
+    "velocity_changed": false,
+    "candidate_changed": false,
+    "pressure_changed": false,
+    "forcing_changed": false,
+    "optimizer_changed": false,
+    "validation_sample_changed": false,
+    "norm_definition_changed": false,
+    "threshold_changed": false,
+    "canonical_eq45_delivery_changed": false,
+    "st052_scientific_state_promoted": false
+  }
+}
