@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "contract_id": "CR002-KOKUNO-SOURCE-AMPLITUDE-INPUT-SCOPE-107",
+  "purpose": "Govern the remaining caller-supplied source-realization inputs after A2 #1021 derives D_r C_m and D_z C_m analytically.",
+  "exact_parent": {
+    "pr": 1021,
+    "head": "0f4006bfd159281d96a7dc90a3ab50f0566f13e1",
+    "module": "src/openai_ns_reconstruction/kokuno_source_phase_coefficient_jet.py",
+    "module_git_blob": "d3c9684d47cec5dfabf713db01ffab45ea9461c4"
+  },
+  "four_way_provenance": {
+    "user_requirements": [
+      "deliver an explicit computable 3D time-dependent velocity(x,y,z,t)->[u,v,w]",
+      "keep callable/save-load delivery independent from visual/PDE/paper-exact/OpenAI-field claims",
+      "keep domain, viscosity, support, forcing, nontriviality and fixed validation thresholds governed"
+    ],
+    "public_source_facts": [
+      "the corrected-source phase/phase-vector and complete-curl formulas already pinned by A2 #1016/#1018/#1021",
+      "the source chart used by #1021 is annular and requires R>0"
+    ],
+    "autonomous_design": [
+      "the repository adapter that accepts SourceBackgroundPhaseJet and SourceAmplitudeDirectionalJet",
+      "this fail-closed delivery-input scope contract and its mechanics-only witnesses"
+    ],
+    "pending_unknown": [
+      "a deterministic source background realization producing the required value/first/second R/Z jets",
+      "a source amplitude ODE/mode realization producing t_m, D_r t_m and D_z t_m",
+      "source support/cutoff runtime and a complete source-to-runtime parameter/phase/support map",
+      "a global axis-safe Cartesian source-shaped velocity provider with identity-preserving save/load",
+      "visual correspondence, complete NS validation, paper exactness and OpenAI-field identity"
+    ]
+  },
+  "parent_interface_truth": {
+    "source_phase_vector_jet_executable": true,
+    "source_coefficient_directional_jets_derived_analytically": true,
+    "source_complete_curl_consumes_derived_coefficient_jets": true,
+    "caller_supplies_coefficient_directional_jets": false,
+    "caller_supplies_background_phase_derivative_jet": true,
+    "caller_supplies_amplitude_directional_jet": true,
+    "source_amplitude_ode_materialized": false,
+    "source_support_cutoff_runtime_materialized": false,
+    "self_contained_velocity_xyzt_provider": false,
+    "source_to_runtime_parameter_map_complete": false,
+    "current_runtime_complete_curl_source_equivalence_verified": false,
+    "paper_exact": false,
+    "complete_ns_residual_assessed": false,
+    "residual_reduction_claimed": false,
+    "pde_validated": false
+  },
+  "remaining_caller_inputs": {
+    "background_phase_derivative_jet": {
+      "required": true,
+      "fields": [
+        "f",
+        "g",
+        "f_r",
+        "g_r",
+        "f_z",
+        "g_z",
+        "f_rr",
+        "g_rr",
+        "f_rz",
+        "g_rz",
+        "f_zz",
+        "g_zz"
+      ],
+      "meaning": "caller-supplied source background values plus ordinary first/second R/Z derivatives"
+    },
+    "amplitude_directional_jet": {
+      "required": true,
+      "fields": [
+        "t_m",
+        "dr_t_m",
+        "dz_t_m"
+      ],
+      "meaning": "caller-supplied transverse harmonic amplitude plus normalized D_r/D_z directional jets"
+    }
+  },
+  "forbidden_promotions": {
+    "no_caller_coefficient_jets_implies_no_caller_source_jets": false,
+    "directional_transversality_check_implies_source_amplitude_ode_solved": false,
+    "manufactured_transverse_amplitude_implies_source_amplitude_realization": false,
+    "analytic_phase_vector_jet_implies_background_realization_complete": false,
+    "annular_source_formula_implies_axis_safe_global_cartesian_runtime": false,
+    "source_formula_execution_implies_velocity_export_ready": false,
+    "source_formula_execution_implies_visual_correspondence_verified": false,
+    "source_formula_execution_implies_pde_validated": false,
+    "source_formula_execution_implies_paper_exact": false,
+    "source_formula_execution_implies_openai_field_identified": false
+  },
+  "promotion_requirements": {
+    "self_contained_source_harmonic": [
+      "materialize a deterministic source background provider that returns the required background value/first/second derivative jet from declared source variables",
+      "materialize the source amplitude ODE/mode realization that returns t_m, D_r t_m and D_z t_m without caller-supplied amplitude jets",
+      "bind source support/cutoff and all source phase/parameter choices to the same realization identity"
+    ],
+    "unified_velocity_delivery": [
+      "map the self-contained source realization to a truthful Cartesian component convention and physical (x,y,z,t) domain",
+      "supply an explicit axis/global-domain treatment instead of extrapolating the annular formula",
+      "if save/load is claimed, serialize and recompute the complete realization identity on load"
+    ],
+    "separate_science_gates": [
+      "visual correspondence remains a separate evidence gate",
+      "matched pressure and preregistered restricted forcing remain separate from velocity callability",
+      "PDE promotion requires the frozen complete candidate to pass the canonical held-out momentum/divergence protocol"
+    ]
+  },
+  "canonical_cr001": {
+    "constraints_git_blob": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ]
+    ],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [
+      0.25,
+      0.75
+    ],
+    "forcing_mode": "restricted_two_parameter_family",
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "quadrature_orders_per_axis": [
+      24,
+      48,
+      96
+    ],
+    "momentum_max": 0.001,
+    "momentum_L2": 0.001,
+    "divergence_max": 1e-05,
+    "divergence_L2": 1e-05,
+    "residual_defined_free_force_forbidden": true,
+    "candidate_collapse_forbidden": true,
+    "post_hoc_threshold_relaxation_forbidden": true
+  },
+  "canonical_eq45_state_must_remain_independent": {
+    "candidate_family": "eq45_supported_velocity_candidate_v1",
+    "velocity_export_ready": true,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  },
+  "mechanics_only_witness": {
+    "classification": "autonomous mechanics only; not Kokuno/OpenAI candidate data",
+    "statement": "holding phase vector and carrier fixed while changing only a caller-supplied transverse amplitude changes C_m, so phase/coefficient algebra is not a self-contained source harmonic until the amplitude realization is fixed by the source route"
+  }
+}
