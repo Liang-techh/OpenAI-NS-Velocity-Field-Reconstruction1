@@ -1,0 +1,142 @@
+name: kokuno-agent4-current-partial-leading-oscillatory-divergence-audit
+
+on:
+  push:
+    branches:
+      - agent-kokuno-4/current-partial-leading-oscillatory-divergence-095
+  pull_request:
+    branches:
+      - codex/kokuno-a2-current-partial-leading-oscillatory-080
+  workflow_dispatch:
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out exact A4 head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: a4
+          fetch-depth: 0
+
+      - name: Verify ancestry and exact three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd a4
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+          git merge-base --is-ancestor 3a6405bbd3d10b8c3b38078f0c989c45e5d407b4 HEAD
+          test "$(git rev-list --count 3a6405bbd3d10b8c3b38078f0c989c45e5d407b4..HEAD)" -eq 3
+          mapfile -t files < <(git diff --name-only 3a6405bbd3d10b8c3b38078f0c989c45e5d407b4..HEAD)
+          test "${#files[@]}" -eq 3
+          printf '%s\n' "${files[@]}" | sort > /tmp/actual-files
+          printf '%s\n' \
+            .github/workflows/kokuno-agent4-current-partial-leading-oscillatory-divergence-audit.yml \
+            src/openai_ns_reconstruction/kokuno_a4_current_partial_leading_oscillatory_divergence_independent_audit.py \
+            tests/test_constrained_kokuno_a4_current_partial_leading_oscillatory_divergence_independent_audit.py \
+            | sort > /tmp/expected-files
+          diff -u /tmp/expected-files /tmp/actual-files
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install A4 test dependencies
+        shell: bash
+        run: python -m pip install -e './a4[dev]'
+
+      - name: Run focused A2 composition and A4 independent regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH="$PWD/a4/src" python -m pytest -q \
+            a4/tests/test_constrained_kokuno_current_partial_leading_oscillatory_velocity.py \
+            a4/tests/test_constrained_kokuno_a4_current_partial_leading_oscillatory_divergence_independent_audit.py
+
+      - name: Check out exact Agent-1 Cartesian leading sibling
+        uses: actions/checkout@v4
+        with:
+          ref: 7dc09c59584a6b1bfaabcbb8df00283d9f9a40c1
+          path: a1
+          fetch-depth: 1
+
+      - name: Authenticate exact Agent-1 head and source blob
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C a1 rev-parse HEAD)" = "7dc09c59584a6b1bfaabcbb8df00283d9f9a40c1"
+          test "$(git -C a1 hash-object src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_leading_velocity.py)" = \
+            "ca8b80b0451be1a8f31deaf620f542d8c2e92c0c"
+
+      - name: Materialize real independent staged divergence receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p receipts
+          PYTHONPATH="$PWD/a1/src" python - <<'PY'
+          from pathlib import Path
+          import json
+          import openai_ns_reconstruction
+
+          from openai_ns_reconstruction.kokuno_pa16_current_cartesian_leading_velocity import (
+              KokunoPA16CurrentCartesianLeadingVelocity,
+          )
+          assert KokunoPA16CurrentCartesianLeadingVelocity.__module__ == (
+              "openai_ns_reconstruction.kokuno_pa16_current_cartesian_leading_velocity"
+          )
+
+          a4_pkg = str((Path("a4/src/openai_ns_reconstruction")).resolve())
+          openai_ns_reconstruction.__path__.insert(0, a4_pkg)
+
+          from openai_ns_reconstruction.kokuno_a4_current_partial_leading_oscillatory_divergence_independent_audit import (
+              materialize_receipt,
+          )
+
+          receipt = materialize_receipt()
+          Path("receipts/kokuno_a4_current_partial_leading_oscillatory_divergence.json").write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          PY
+
+      - name: Upload receipt before scientific gate enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a4-current-partial-leading-oscillatory-divergence-receipt
+          path: receipts/kokuno_a4_current_partial_leading_oscillatory_divergence.json
+          if-no-files-found: error
+
+      - name: Enforce frozen independent divergence gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH="$PWD/a1/src" python - <<'PY'
+          from pathlib import Path
+          import json
+          import openai_ns_reconstruction
+
+          from openai_ns_reconstruction.kokuno_pa16_current_cartesian_leading_velocity import (
+              KokunoPA16CurrentCartesianLeadingVelocity,
+          )
+          assert KokunoPA16CurrentCartesianLeadingVelocity.__module__ == (
+              "openai_ns_reconstruction.kokuno_pa16_current_cartesian_leading_velocity"
+          )
+
+          a4_pkg = str((Path("a4/src/openai_ns_reconstruction")).resolve())
+          openai_ns_reconstruction.__path__.insert(0, a4_pkg)
+
+          from openai_ns_reconstruction.kokuno_a4_current_partial_leading_oscillatory_divergence_independent_audit import (
+              enforce_receipt,
+          )
+
+          receipt = json.loads(
+              Path("receipts/kokuno_a4_current_partial_leading_oscillatory_divergence.json").read_text(
+                  encoding="utf-8"
+              )
+          )
+          enforce_receipt(receipt)
+          PY
