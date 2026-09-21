@@ -1,0 +1,187 @@
+{
+  "schema": "cr002-kokuno-rf40-axial-shutdown-independent-audit-scope-v1",
+  "task_id": "CR002-KOKUNO-RF40-AXIAL-SHUTDOWN-INDEPENDENT-AUDIT-SCOPE-102",
+  "purpose": "Govern the evidence boundary between A1 #993 leading-only RF40 axial-shutdown materialization and implementation-distinct Cartesian public-velocity validation on X_1 < X <= X_2.",
+  "exact_base": {
+    "pr": 996,
+    "head": "88fdafc03ab71e3f8ffe7f39add900e548627daf",
+    "branch": "codex/kokuno-a5-rf40-first-turn-composite-ingest-097",
+    "source_blob": "07cd42a7f393bf34b918090630a2a263c2610289"
+  },
+  "four_way_provenance": {
+    "user_requirements": [
+      "Deliver an explicit computable save/load 3-D time-dependent velocity(x,y,z,t)->[u,v,w].",
+      "Keep velocity delivery, visual correspondence, PDE validation, paper exactness and OpenAI-field identity as independent states.",
+      "Do not weaken preregistered PDE, forcing, nontriviality or validation gates to manufacture success."
+    ],
+    "public_source_facts": [
+      "No new public-source formula or numerical datum is asserted by this governance increment.",
+      "The RF40 axial-shutdown formulas consumed by A1 #993 retain the provenance and scope recorded by that upstream PR; this contract does not independently reverify the original OpenAI paper."
+    ],
+    "autonomous_repository_facts": [
+      "A1 #993 materializes a repository candidate-side leading-only Cartesian velocity through RF40 axial shutdown X_2 with deterministic configuration/save-load identity and focused production/source-coordinate checks.",
+      "A4 #995 independently audits the A2 #992 leading+oscillatory public Cartesian velocity only through the first RF40 turn X_1=e X_R.",
+      "A5 #996 registers the matched A2 #992 -> A3 #994 -> A4 #995 first-turn chain and records A1 #993 only as a non-consumed sibling."
+    ],
+    "pending_or_unknown": [
+      "Implementation-distinct Cartesian public-velocity validation on points strictly in X_1 < X <= X_2 for the exact A1 #993 leading-only field.",
+      "A leading+oscillatory composite materialized through the axial-shutdown domain on the exact A1 #993 identity.",
+      "Nonlinear mean attribution and independent composite validation through axial shutdown.",
+      "Remaining RF40 lambda turn and power-law continuation, cone/I1-I4 overlays, outer/global leading completion and compact-support join.",
+      "Matched Cartesian pressure, preregistered restricted forcing, complete NS defect, correction velocity and held-out full-PDE admission.",
+      "Visual correspondence, paper exactness, OpenAI-field identity and blow-up proof."
+    ]
+  },
+  "upstream_scope": {
+    "agent1_993": {
+      "pr": 993,
+      "head": "2ac6460b483efb1c07f2fa65e7fed781a32f2718",
+      "source_blob": "057a0514c8a941c3e59922b8158f480434b4441e",
+      "test_blob": "b1703748f567d7d7d505bf7f2e07aa287a8c0559",
+      "workflow_blob": "a5f485f89456c7171bf3789d11f677c4d800658a",
+      "materialized_domain": "leading-only through RF40 axial shutdown X_2",
+      "public_velocity_api": "velocity(x,y,z,t)->[...,3]",
+      "deterministic_save_load_identity": true,
+      "focused_production_and_source_coordinate_checks": true,
+      "implementation_distinct_axial_shutdown_cartesian_public_velocity_audit": false,
+      "consumed_by_agent2_992": false,
+      "consumed_by_agent3_994": false,
+      "covered_by_agent4_995": false
+    },
+    "agent2_992": {
+      "pr": 992,
+      "head": "2a2fad307a674ec1eb5a2bc426c0d01c3a0e7377",
+      "materialized_domain": "leading + frozen complete-curl oscillation through X_1=e X_R",
+      "fails_closed_after_X_1": true,
+      "axial_shutdown_composite_materialized": false
+    },
+    "agent4_995": {
+      "pr": 995,
+      "head": "70cd44ed0b5cabbcf5103df8959ff008377d17fa",
+      "source_blob": "3881a0bb98e6369cf8fde85556c9d7ac0c2db7fc",
+      "audited_agent2_pr": 992,
+      "audited_domain": "through RF40 first turn X_1=e X_R",
+      "strictly_post_xr_first_turn_probes": true,
+      "axial_shutdown_probes_X1_to_X2": false,
+      "uses_only_save_reloaded_public_cartesian_velocity_for_numerical_differentiation": true,
+      "uses_agent1_source_derivative_helpers": false,
+      "scoped_divergence_evidence_only": true,
+      "canonical_whole_domain_admission": false,
+      "momentum_or_full_ns_evidence": false
+    },
+    "agent5_996": {
+      "pr": 996,
+      "head": "88fdafc03ab71e3f8ffe7f39add900e548627daf",
+      "source_blob": "07cd42a7f393bf34b918090630a2a263c2610289",
+      "agent1_993_recorded_as_non_consumed_sibling": true,
+      "first_turn_composite_registered": true,
+      "first_turn_independent_audit_registered": true,
+      "leading_plus_oscillatory_velocity_through_axial_shutdown_materialized": false,
+      "independent_axial_shutdown_composite_audit_available": false,
+      "velocity_export_ready": false,
+      "pde_validated": false
+    }
+  },
+  "machine_locked_distinctions": {
+    "agent1_993_axial_shutdown_leading_only_callable_materialized": true,
+    "agent1_993_has_identity_preserving_save_load": true,
+    "agent1_993_has_focused_production_and_source_coordinate_checks": true,
+    "agent4_995_first_turn_cartesian_public_velocity_audit_exists": true,
+    "agent4_995_covers_axial_shutdown_X1_to_X2": false,
+    "axial_shutdown_leading_independent_cartesian_public_velocity_audit_available": false,
+    "first_turn_a4_995_audit_may_be_relabelled_as_axial_shutdown_audit": false,
+    "source_coordinate_handoff_or_derivative_replay_may_be_relabelled_as_independent_axial_shutdown_cartesian_validation": false,
+    "axial_shutdown_leading_materialization_implies_axial_shutdown_composite_materialization": false,
+    "axial_shutdown_leading_materialization_implies_global_project_domain_totality": false,
+    "axial_shutdown_leading_materialization_implies_pde_validation": false,
+    "first_turn_composite_save_load_identity_implies_axial_shutdown_composite_save_load_identity": false
+  },
+  "scope_logic_witness": {
+    "classification": "autonomous_mechanics_only",
+    "statement": "Evidence restricted to S_first={X <= X_1} contains no probes in S_shutdown={X_1 < X <= X_2}; therefore it cannot by itself validate S_shutdown.",
+    "not_a_public_source_fact": true,
+    "not_candidate_numerical_evidence": true
+  },
+  "future_promotion_requirements": {
+    "axial_shutdown_leading_independent_cartesian_public_velocity_audit_available": [
+      "Consume the exact serialized/reloaded A1 #993 public Cartesian velocity rather than source-coordinate derivative or primitive helpers.",
+      "Include probes strictly in X_1 < X <= X_2 and seam-near probes on both sides of X_1.",
+      "Reconstruct Cartesian derivatives with an implementation-distinct operator and bind the exact A1 #993 semantic/save-load identity.",
+      "Report only the actual axial-shutdown domain covered and preserve scoped divergence evidence as distinct from canonical whole-domain [24,48,96] admission and momentum/full-NS evidence."
+    ],
+    "axial_shutdown_composite_ready": [
+      "Materialize leading+oscillatory velocity on the exact A1 #993 axial-shutdown leading identity rather than inferring it from the A2 #992 first-turn sibling.",
+      "Bind the complete oscillatory runtime identity and deterministic save/load on the extended composite.",
+      "Carry matching nonlinear attribution and independent public-Cartesian validation to the same axial-shutdown composite domain before correction or PDE promotion."
+    ]
+  },
+  "cr001_snapshot": {
+    "constraints_blob_sha1": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [
+      [-2, 2],
+      [-2, 2],
+      [-2, 2]
+    ],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "momentum_max": 0.001,
+    "momentum_l2": 0.001,
+    "divergence_max": 0.00001,
+    "divergence_l2": 0.00001,
+    "residual_defined_free_forcing_forbidden": true,
+    "candidate_collapse_forbidden": true,
+    "post_hoc_threshold_relaxation_forbidden": true
+  },
+  "canonical_delivery_independence": {
+    "candidate_family": "eq45_supported_velocity_candidate_v1",
+    "velocity_api": "openai_ns_reconstruction.eq45_supported_delivery:velocity",
+    "velocity_export_ready": true,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  },
+  "kokuno_route_state": {
+    "velocity_export_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "complete_candidate_api_ready": false
+  },
+  "forbidden_promotions": [
+    "A4 #995 first-turn audit -> axial-shutdown audit",
+    "A1 #993 production/source-coordinate checks -> implementation-distinct axial-shutdown Cartesian audit",
+    "A1 #993 leading-only axial-shutdown callable -> leading+oscillatory axial-shutdown composite",
+    "first-turn composite save/load -> axial-shutdown composite save/load",
+    "scoped divergence evidence -> canonical whole-domain admission",
+    "scoped divergence evidence -> momentum/full-NS evidence",
+    "callable or save/load velocity -> visual correspondence",
+    "visual resemblance -> PDE validation",
+    "visual resemblance -> exact OpenAI field",
+    "queued or green CI -> scientific admission",
+    "Kokuno route incompleteness -> downgrade of canonical Eq45 velocity_export_ready",
+    "residual -> unrestricted pointwise forcing",
+    "failed fixed gate -> post-hoc threshold relaxation"
+  ],
+  "scientific_changes": {
+    "velocity_or_profile_bytes_changed": false,
+    "pressure_changed": false,
+    "forcing_changed": false,
+    "viscosity_changed": false,
+    "candidate_coefficients_changed": false,
+    "validation_samples_changed": false,
+    "derivative_or_quadrature_protocol_changed": false,
+    "scientific_thresholds_changed": false
+  }
+}
