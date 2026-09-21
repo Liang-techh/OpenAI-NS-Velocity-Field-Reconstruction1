@@ -1,0 +1,112 @@
+name: agent7-st052m-joint-five-channel-capacity-preflight
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_joint_five_channel_capacity_preflight.py'
+      - 'experiments/root_st052/test_agent7_st052m_joint_five_channel_capacity_preflight.py'
+      - '.github/workflows/agent7-st052m-joint-five-channel-capacity-preflight.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  joint-five-channel-capacity-preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+      - name: Verify exact PR head checkout
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+      - name: Focused frozen-protocol tests
+        run: python -m pytest -q -W error experiments/root_st052/test_agent7_st052m_joint_five_channel_capacity_preflight.py
+      - name: Execute preregistered joint five-channel capacity preflight
+        run: |
+          mkdir -p outputs/agent7-st052m-joint-five-channel-capacity-preflight
+          python experiments/root_st052/agent7_st052m_joint_five_channel_capacity_preflight.py \
+            --out outputs/agent7-st052m-joint-five-channel-capacity-preflight/report.json
+      - name: Verify frozen ancestry, receipt completeness and truth boundary
+        run: |
+          python - <<'PY'
+          import json, math
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-joint-five-channel-capacity-preflight/report.json').read_text())
+          assert r['task_id']=='CR003-ST052M-JOINT-FIVE-CHANNEL-CAPACITY-123'
+          assert r['prereg_issue']==1031
+          assert r['source_parent']=={'pr':862,'head':'f5dd27a47b03fc6239a2e6186cef78c4f3d3e024'}
+          assert r['frozen_protocol']['channels']==['amplitude','radial_shape','axial_turnover','temporal_curvature','toroidal_swirl']
+          assert r['frozen_protocol']['new_basis_dimension']==0
+          assert r['frozen_protocol']['coefficient_selected'] is None
+          j=r['joint_identifiability']
+          assert 1 <= j['normalized_column_rank'] <= 5
+          assert len(j['pairwise_cosines']) == 10
+          assert len(j['singular_values']) == 5
+          assert math.isfinite(j['normalized_condition'])
+          assert math.isfinite(j['max_abs_pairwise_cosine'])
+          assert isinstance(j['passes'], bool)
+          assert r['structural_guards']['all_pass'] is True
+          assert r['decision']['additional_basis_dimension_justified_by_capacity_only'] is False
+          assert r['decision']['actual_velocity_changed'] is False
+          assert r['decision']['direct_visualization_fingerprint_improvement']==0.0
+          assert r['held_out_pde_residual']['evaluated'] is False
+          assert r['held_out_pde_residual']['st006_comparison_performed'] is False
+          assert r['pressure_or_force_changed'] is False
+          assert r['visual_correspondence_verified'] is False
+          assert r['pde_validated'] is False
+          assert r['paper_exact'] is False
+          assert r['openai_field_identified'] is False
+          print('capacity_pass=', j['passes'])
+          print('rank=', j['normalized_column_rank'])
+          print('condition=', j['normalized_condition'])
+          print('max_abs_cosine=', j['max_abs_pairwise_cosine'])
+          print('pairwise_cosines=', j['pairwise_cosines'])
+          PY
+      - name: Publish compact receipt
+        if: ${{ always() && github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          if [ ! -f outputs/agent7-st052m-joint-five-channel-capacity-preflight/report.json ]; then exit 0; fi
+          python - <<'PY' > /tmp/agent7-joint-five-channel-receipt.md
+          import json
+          from pathlib import Path
+          r=json.loads(Path('outputs/agent7-st052m-joint-five-channel-capacity-preflight/report.json').read_text())
+          j=r['joint_identifiability']
+          print('<!-- agent7-st052m-joint-five-channel-capacity-preflight-receipt -->')
+          print('**Agent 7 joint five-channel capacity receipt (issue #1031):**')
+          print()
+          print(f"- joint capacity pass: `{j['passes']}`")
+          print(f"- rank / condition / max |cosine|: `{j['normalized_column_rank']}` / `{j['normalized_condition']:.6g}` / `{j['max_abs_pairwise_cosine']:.6g}`")
+          print(f"- pairwise cosines: `{j['pairwise_cosines']}`")
+          print(f"- structural guards: `{r['structural_guards']['all_pass']}`")
+          print('- basis dimension change: `0`; coefficient selected: `none`.')
+          print('- direct visualization-fingerprint improvement this increment: `0.0` because the candidate velocity is unchanged.')
+          print('- held-out complete-PDE residual: `not evaluated`; no ST006 comparison or PDE-improvement claim.')
+          print()
+          print('Truth boundary: this is a target-free joint capacity/reparameterization audit. PASS does not establish visual/source correspondence; FAIL does not authorize blind basis growth. Neither outcome establishes PDE validity, paper exactness, exact OpenAI-field identity, or blow-up.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-joint-five-channel-receipt.md || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-joint-five-channel-capacity-preflight
+          path: outputs/agent7-st052m-joint-five-channel-capacity-preflight/
+          if-no-files-found: warn
+
+# Five-channel family, common response cloud, and gates were frozen in issue #1031 before execution.
