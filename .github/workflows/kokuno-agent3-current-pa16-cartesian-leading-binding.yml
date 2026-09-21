@@ -1,0 +1,281 @@
+name: kokuno-agent3-current-pa16-cartesian-leading-binding
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_current_pa16_cartesian_leading_binding.py'
+      - 'tests/test_constrained_kokuno_current_pa16_cartesian_leading_binding.py'
+      - '.github/workflows/kokuno-agent3-current-pa16-cartesian-leading-binding.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  PARENT_CR002_HEAD: 6002a3bb0ba24a97cd9f609206a4aa0a276a2486
+  PARENT_CR002_SOURCE: src/openai_ns_reconstruction/kokuno_current_pa16_profile_semantic_integrity.py
+  PARENT_CR002_SOURCE_BLOB: a8e125839f767f665736cb8e5e81ac924887fcb9
+  UPSTREAM_A1_HEAD: 7dc09c59584a6b1bfaabcbb8df00283d9f9a40c1
+  UPSTREAM_A1_SOURCE: src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_leading_velocity.py
+  UPSTREAM_A1_SOURCE_BLOB: ca8b80b0451be1a8f31deaf620f542d8c2e92c0c
+
+jobs:
+  exact-current-pa16-cartesian-leading-binding:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout exact Agent-3 event head
+        uses: actions/checkout@v4
+        with:
+          path: current
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - name: Assert exact head and CR002 #964 ancestry
+        shell: bash
+        run: |
+          set -euo pipefail
+          expected='${{ github.event.pull_request.head.sha || github.sha }}'
+          test "$(git -C current rev-parse HEAD)" = "$expected"
+          git -C current merge-base --is-ancestor "$PARENT_CR002_HEAD" HEAD
+          test "$(git -C current rev-parse "$PARENT_CR002_HEAD:$PARENT_CR002_SOURCE")" = "$PARENT_CR002_SOURCE_BLOB"
+
+      - name: Checkout exact Agent-1 #965 Cartesian-leading artifact
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          path: upstream-a1
+          fetch-depth: 1
+          ref: ${{ env.UPSTREAM_A1_HEAD }}
+
+      - name: Authenticate exact Agent-1 source blob
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C upstream-a1 rev-parse HEAD)" = "$UPSTREAM_A1_HEAD"
+          test "$(git -C upstream-a1 hash-object "$UPSTREAM_A1_SOURCE")" = "$UPSTREAM_A1_SOURCE_BLOB"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install current Agent-3 branch
+        run: python -m pip install -e './current[dev]'
+
+      - name: Compile focused binding files
+        run: |
+          python -m py_compile current/src/openai_ns_reconstruction/kokuno_current_pa16_cartesian_leading_binding.py
+          python -m py_compile current/tests/test_constrained_kokuno_current_pa16_cartesian_leading_binding.py
+
+      - name: Run focused fail-closed regressions
+        working-directory: current
+        run: |
+          python -m pytest -q -W error tests/test_constrained_kokuno_current_pa16_cartesian_leading_binding.py
+          git diff --check
+
+      - name: Materialize exact cross-branch binding receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH="$GITHUB_WORKSPACE/current/src" python - <<'PY'
+          from dataclasses import asdict
+          import json
+          from pathlib import Path
+
+          import numpy as np
+          import openai_ns_reconstruction
+
+          # The A3 branch intentionally does not vendor Agent-1 #965.  Extend
+          # package search only to the separately authenticated exact worktree.
+          openai_ns_reconstruction.__path__.append(
+              str(Path("upstream-a1/src/openai_ns_reconstruction").resolve())
+          )
+
+          from openai_ns_reconstruction.kokuno_pa16_current_cartesian_leading_velocity import (
+              KokunoPA16CurrentCartesianLeadingVelocity,
+          )
+          from openai_ns_reconstruction.kokuno_current_xi_moment_discrepancy_bridge import (
+              UPSTREAM_AGENT1_HEAD as XI_HEAD,
+              UPSTREAM_AGENT1_PR as XI_PR,
+              UPSTREAM_AGENT1_SCHEMA as XI_SCHEMA,
+              UPSTREAM_AGENT1_SOURCE_BLOB as XI_BLOB,
+              UPSTREAM_AGENT1_SOURCE_PATH as XI_PATH,
+              UpstreamA1Identity,
+              materialize_current_xi_moment_bridge,
+          )
+          from openai_ns_reconstruction.kokuno_current_pa16_repair_receipt import (
+              UPSTREAM_AGENT1_HEAD as PA16_HEAD,
+              UPSTREAM_AGENT1_PARENT_HEAD,
+              UPSTREAM_AGENT1_PARENT_PR,
+              UPSTREAM_AGENT1_PR as PA16_PR,
+              UPSTREAM_JOIN_SOURCE_BLOB,
+              UPSTREAM_JOIN_SOURCE_PATH,
+              UPSTREAM_TSH_SOURCE_BLOB,
+              UPSTREAM_TSH_SOURCE_PATH,
+              UpstreamPA16Identity,
+          )
+          from openai_ns_reconstruction import kokuno_current_pa16_profile_application as app
+          from openai_ns_reconstruction.kokuno_current_pa16_cartesian_leading_binding import (
+              CartesianLeadingIdentity,
+              UPSTREAM_AGENT1_HEAD,
+              UPSTREAM_AGENT1_PR,
+              UPSTREAM_AGENT1_SCHEMA,
+              UPSTREAM_AGENT1_SOURCE_BLOB,
+              UPSTREAM_AGENT1_SOURCE_PATH,
+              materialize_semantic_verified_current_pa16_cartesian_leading_receipt,
+          )
+
+          field = KokunoPA16CurrentCartesianLeadingVelocity()
+          profile = field.joined
+          certificate = profile.certificate
+          xi_report = certificate.moments.report()
+          tsh_report = certificate.report()
+
+          class XiBackend:
+              def upstream_identity(self):
+                  return UpstreamA1Identity(
+                      pr_number=XI_PR,
+                      exact_head=XI_HEAD,
+                      source_path=XI_PATH,
+                      source_blob=XI_BLOB,
+                      report_schema=XI_SCHEMA,
+                  )
+              def current_xi_moment_report(self):
+                  return xi_report
+
+          xi_receipt = materialize_current_xi_moment_bridge(XiBackend())
+          solve_cache = {}
+
+          def solve_payload(eta: float):
+              key = repr(float(eta))
+              if key not in solve_cache:
+                  solved = certificate.solve_selected_at_eta(float(eta))
+                  raw = asdict(solved)
+                  repair = raw["repair"]
+                  solve_cache[key] = {
+                      "eta": raw["eta"],
+                      "incoming_scaled_discrepancy": raw["incoming_scaled_discrepancy"],
+                      "pre_repair_scaled_discrepancy": raw["pre_repair_scaled_discrepancy"],
+                      "repair_achieved_scaled_moments": repair["achieved_scaled_moments"],
+                      "repair_target_scaled_moments": repair["target_scaled_moments"],
+                      "repair_residual_scaled_moments": repair["residual_scaled_moments"],
+                      "exit_scaled_discrepancy": raw["exit_scaled_discrepancy"],
+                      "coefficients": repair["coefficients"],
+                      "max_abs_exit_discrepancy": raw["max_abs_exit_discrepancy"],
+                      "scaled_jacobian_condition": raw["scaled_jacobian_condition"],
+                  }
+              return solve_cache[key]
+
+          class Backend:
+              def current_xi_bridge_receipt(self):
+                  return xi_receipt
+              def upstream_identity(self):
+                  return UpstreamPA16Identity(
+                      pr_number=PA16_PR,
+                      exact_head=PA16_HEAD,
+                      parent_pr_number=UPSTREAM_AGENT1_PARENT_PR,
+                      parent_exact_head=UPSTREAM_AGENT1_PARENT_HEAD,
+                      tsh_source_path=UPSTREAM_TSH_SOURCE_PATH,
+                      tsh_source_blob=UPSTREAM_TSH_SOURCE_BLOB,
+                      join_source_path=UPSTREAM_JOIN_SOURCE_PATH,
+                      join_source_blob=UPSTREAM_JOIN_SOURCE_BLOB,
+                  )
+              def tsh_report(self):
+                  return tsh_report
+              def pa16_solve_at_eta(self, eta: float):
+                  return solve_payload(float(eta))
+              def joined_profile_identity(self):
+                  return app.JoinedProfileIdentity(
+                      pr_number=app.UPSTREAM_AGENT1_PR,
+                      exact_head=app.UPSTREAM_AGENT1_HEAD,
+                      source_path=app.UPSTREAM_AGENT1_SOURCE_PATH,
+                      source_blob=app.UPSTREAM_AGENT1_SOURCE_BLOB,
+                      report_schema=app.UPSTREAM_AGENT1_SCHEMA,
+                  )
+              def joined_profile_configuration(self):
+                  return profile.configuration()
+              def joined_profile_report(self):
+                  return profile.report()
+              def joined_profile_values(self, eta: float, X):
+                  values = profile.profile_values(np.asarray(X, dtype=float), float(eta))
+                  return {
+                      "F": np.asarray(values["F_current_joined"], dtype=float),
+                      "U": np.asarray(values["U_current_joined"], dtype=float),
+                      "E": np.asarray(values["E_current_joined"], dtype=float),
+                  }
+              def joined_profile_replay_with_coefficients(self, eta: float, X, coefficients):
+                  X_arr = np.asarray(X, dtype=float)
+                  join = profile._selected_join()
+                  data = profile._join_inputs(float(eta))
+                  scaled = join.profile_values_scaled(
+                      X_arr / profile.X_R,
+                      eta=float(eta),
+                      ell_i=float(data["ell_i"]),
+                      G_i=float(data["G_i"]),
+                      coefficients=np.asarray(coefficients, dtype=float),
+                  )
+                  E = np.asarray(scaled["E"], dtype=float)
+                  return {
+                      "F": E / np.sqrt(2.0 * X_arr),
+                      "U": np.asarray(scaled["U"], dtype=float),
+                      "E": E,
+                  }
+              def cartesian_leading_identity(self):
+                  return CartesianLeadingIdentity(
+                      pr_number=UPSTREAM_AGENT1_PR,
+                      exact_head=UPSTREAM_AGENT1_HEAD,
+                      source_path=UPSTREAM_AGENT1_SOURCE_PATH,
+                      source_blob=UPSTREAM_AGENT1_SOURCE_BLOB,
+                      report_schema=UPSTREAM_AGENT1_SCHEMA,
+                  )
+              def cartesian_leading_configuration(self):
+                  return field.configuration()
+              def cartesian_leading_report(self):
+                  return field.report()
+
+          receipt = materialize_semantic_verified_current_pa16_cartesian_leading_receipt(
+              Backend()
+          )
+          truth = receipt.to_dict()["truth_boundary"]
+          if truth["authenticated_joined_profile_bound_to_cartesian_leading_through_Xh"] is not True:
+              raise SystemExit("authenticated joined profile was not bound to #965")
+          required_false = (
+              "outer_global_leading_velocity_materialized",
+              "velocity_beyond_Xh_materialized",
+              "unified_global_cartesian_velocity_export_ready",
+              "current_real_ns_correction_velocity_materialized",
+              "matched_global_pressure_materialized",
+              "restricted_forcing_materialized",
+              "discrepancy_from_complete_ns_defect",
+              "authorized_for_gain_gated_ns_stage",
+              "real_candidate_finite_correction_cycle_run",
+              "heldout_normalized_ns_residual_assessed",
+              "residual_reduction_claimed",
+              "same_protocol_comparable_to_st006",
+              "pde_validated",
+          )
+          if any(truth[name] is not False for name in required_false):
+              raise SystemExit("binding receipt attempted forbidden scientific promotion")
+
+          out = Path("current/current_pa16_cartesian_leading_binding_receipt.json")
+          out.write_text(
+              json.dumps(receipt.to_dict(), indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          print(json.dumps({
+              "parent_receipt_sha256": receipt.parent_receipt_sha256,
+              "joined_configuration_sha256": receipt.joined_configuration_sha256,
+              "cartesian_configuration_sha256": receipt.cartesian_configuration_sha256,
+              "cartesian_reported_semantic_sha256": receipt.cartesian_reported_semantic_sha256,
+              "receipt_sha256": receipt.receipt_sha256,
+          }, indent=2, sort_keys=True))
+          PY
+
+      - name: Upload typed Cartesian-leading binding evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a3-current-pa16-cartesian-leading-binding
+          path: current/current_pa16_cartesian_leading_binding_receipt.json
+          if-no-files-found: warn
