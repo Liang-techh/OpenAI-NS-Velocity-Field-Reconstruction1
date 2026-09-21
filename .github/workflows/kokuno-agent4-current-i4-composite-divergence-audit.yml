@@ -1,0 +1,131 @@
+name: kokuno-agent4-current-i4-composite-divergence-audit
+
+on:
+  push:
+    branches:
+      - kokuno-agent4/current-i4-leading-oscillatory-divergence-111
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_a4_current_i4_composite_divergence_independent_audit.py'
+      - 'tests/test_constrained_kokuno_a4_current_i4_composite_divergence_independent_audit.py'
+      - '.github/workflows/kokuno-agent4-current-i4-composite-divergence-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  independent-current-i4-composite-divergence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Check out exact A4 head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: a4
+          fetch-depth: 0
+
+      - name: Authenticate exact A2 1080 base and strict three-file delta
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd a4
+          upstream=c40d8ddecd2971544a6e07dab093436b423cf326
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+          git cat-file -e "${upstream}^{commit}"
+          git merge-base --is-ancestor "$upstream" HEAD
+          test "$(git rev-list --count "${upstream}..HEAD")" -eq 3
+          test "$(git hash-object src/openai_ns_reconstruction/kokuno_current_i4_leading_oscillatory_identity.py)" = \
+            "2a0a5aa5966b02da856bdcf51940f3c186042802"
+          git diff --name-only "${upstream}...HEAD" | sort > /tmp/actual-files.txt
+          cat > /tmp/expected-files.txt <<'EOF'
+          .github/workflows/kokuno-agent4-current-i4-composite-divergence-audit.yml
+          src/openai_ns_reconstruction/kokuno_a4_current_i4_composite_divergence_independent_audit.py
+          tests/test_constrained_kokuno_a4_current_i4_composite_divergence_independent_audit.py
+          EOF
+          sort -o /tmp/expected-files.txt /tmp/expected-files.txt
+          diff -u /tmp/expected-files.txt /tmp/actual-files.txt
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install repository dependencies
+        run: python -m pip install -e './a4[dev]'
+
+      - name: Compile and run independent-validator software regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile a4/src/openai_ns_reconstruction/kokuno_a4_current_i4_composite_divergence_independent_audit.py
+          python -m py_compile a4/tests/test_constrained_kokuno_a4_current_i4_composite_divergence_independent_audit.py
+          python -m pytest -q -W error a4/tests/test_constrained_kokuno_a4_current_i4_composite_divergence_independent_audit.py
+
+      - name: Check out exact Agent-1 1079 current-I4 sibling
+        uses: actions/checkout@v4
+        with:
+          ref: b06742ca6e189499192ede3cce40f62cdc1e35ca
+          path: a1
+          fetch-depth: 1
+
+      - name: Authenticate exact Agent-1 1079 sibling
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C a1 rev-parse HEAD)" = "b06742ca6e189499192ede3cce40f62cdc1e35ca"
+          test "$(git -C a1 hash-object src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_i4_leading_preservation.py)" = \
+            "6f04ce0a856b44430402576dad88438da90d1ebb"
+
+      - name: Materialize exact save-reloaded candidate and independent receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p outputs/kokuno_agent4_current_i4_composite
+          PYTHONPATH="$PWD/a1/src" python - <<'PY'
+          from pathlib import Path
+          import json
+          import openai_ns_reconstruction
+
+          a4_pkg = str((Path("a4/src/openai_ns_reconstruction")).resolve())
+          openai_ns_reconstruction.__path__.insert(0, a4_pkg)
+
+          from openai_ns_reconstruction.kokuno_current_i4_leading_oscillatory_identity import default_field
+          from openai_ns_reconstruction.kokuno_a4_current_i4_composite_divergence_independent_audit import materialize_receipt
+
+          out = Path("outputs/kokuno_agent4_current_i4_composite")
+          field = default_field()
+          field.save_candidate(out / "K4_VAL_111_current_i4_composite_candidate.json")
+          receipt = materialize_receipt()
+          (out / "K4_VAL_111_current_i4_composite_divergence.json").write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+          )
+          PY
+
+      - name: Upload raw candidate and scientific receipt before gate enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a4-current-i4-composite-divergence-receipt
+          path: |
+            outputs/kokuno_agent4_current_i4_composite/K4_VAL_111_current_i4_composite_candidate.json
+            outputs/kokuno_agent4_current_i4_composite/K4_VAL_111_current_i4_composite_divergence.json
+          if-no-files-found: error
+
+      - name: Enforce preregistered scoped gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH="$PWD/a1/src" python - <<'PY'
+          from pathlib import Path
+          import json
+          import openai_ns_reconstruction
+
+          a4_pkg = str((Path("a4/src/openai_ns_reconstruction")).resolve())
+          openai_ns_reconstruction.__path__.insert(0, a4_pkg)
+          from openai_ns_reconstruction.kokuno_a4_current_i4_composite_divergence_independent_audit import enforce_preregistered_gates
+
+          path = Path("outputs/kokuno_agent4_current_i4_composite/K4_VAL_111_current_i4_composite_divergence.json")
+          enforce_preregistered_gates(json.loads(path.read_text(encoding="utf-8")))
+          PY
