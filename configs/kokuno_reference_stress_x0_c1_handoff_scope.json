@@ -1,0 +1,116 @@
+{
+  "schema": "cr002-kokuno-reference-stress-x0-c1-handoff-scope-v1",
+  "task_id": "CR002-KOKUNO-REFERENCE-STRESS-X0-C1-HANDOFF-087",
+  "purpose": "Keep the exact source stress-free value handoff at X0 separate from any claim that the natural-side and autonomous-pressure continuation-side radial derivatives form a C1/source-compatible splice.",
+  "active_integration_reference": {
+    "branch": "codex/cr001-constraints",
+    "head": "ca37d25d19b97d893030194ebd6364160ae4355e"
+  },
+  "audited_parent": {
+    "pr": 922,
+    "head": "8bb1139f2b2d9824fd3bbac693ffa4bf2e71dea2",
+    "source_path": "src/openai_ns_reconstruction/kokuno_a5_autonomous_reference_stress_ingest_contract.py",
+    "source_blob": "733f76ab40bd48d916301ea9ed2d4c8f9e1eff09"
+  },
+  "upstream_pins": {
+    "agent1_reference_stress": {
+      "pr": 918,
+      "head": "c5ccdb8fd790c62cfb760139e5ec108c26d88a81",
+      "source_blob": "44159b63c440ee9764261dad41fb3f9d3fec7b0d",
+      "registered_value_handoff": "n_s(X_0,eta)=-2*U_X(X_0,eta)",
+      "right_branch_ode": "D_X N_s+N_s=S_n; D_X=X*partial_X; n_s=N_s/L",
+      "pressure_provenance": "repository-autonomous admissible Pi0 seed plus source-determined C_p increment"
+    },
+    "agent4_reference_stress_audit": {
+      "pr": 921,
+      "head": "6e6e0e21be5c3a547a2a8db5088eaaf33d63c48b",
+      "source_blob": "4707b4de00d79f7ae9db6531ff625bece4ead2df",
+      "registered_reference_surface": "serialized/reloaded public values(X,eta) only",
+      "registered_derivative_audit": "centered FD6 radial derivative of right-branch public N_s/n_s values",
+      "exact_x0_check": "value composition only"
+    }
+  },
+  "canonical_constraints": {
+    "path": "configs/constraints.json",
+    "blob": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "momentum_max_gate": 0.001,
+    "momentum_l2_gate": 0.001,
+    "divergence_max_gate": 0.00001,
+    "divergence_l2_gate": 0.00001,
+    "residual_defined_pointwise_force_forbidden": true,
+    "collapsed_candidate_forbidden": true,
+    "post_hoc_threshold_relaxation_forbidden": true
+  },
+  "provenance_classes": {
+    "user_requirement": [
+      "Callable/save-load velocity delivery is governed independently from PDE validation.",
+      "User requirements, public-source facts, autonomous design, and pending/unknown claims remain separate.",
+      "A scoped Kokuno representation audit cannot promote visual correspondence, PDE validation, paper exactness, or exact OpenAI-field identity."
+    ],
+    "public_source_fact": [
+      "As registered by Agent 1 #918, the regular axial stress satisfies D_X N_s+N_s=S_n with n_s=N_s/L.",
+      "As registered by Agent 1 #918, the natural stress-free segment supplies the value relation n_s(X_0,eta)=-2*U_X(X_0,eta)."
+    ],
+    "autonomous_design": [
+      "Agent 1 #918 drives the X>=X0 continuation with the repository-autonomous admissible Pi0 seed plus the source-determined C_p increment.",
+      "Agent 4 #921 independently differentiates save/reloaded public right-branch N_s/n_s values with a frozen FD6 ladder.",
+      "The equal-value/different-slope witness in this CR002 increment is mechanics-only and is not Kokuno/OpenAI candidate evidence."
+    ],
+    "pending_unknown": [
+      "Whether the natural-segment left radial derivative at X0 equals the autonomous-pressure continuation right radial derivative.",
+      "Whether the X0 reference-stress splice is C1 in X under one common pressure/source realization.",
+      "The source-prepared Appendix-A Pi0/n_s identity and any source-prepared full reference-stress-pair identity.",
+      "The actual fixed-kappa continuation, X100-to-X110 bridge, corrected/global Cartesian leading velocity, matched Cartesian pressure gradient, preregistered restricted forcing, real correction velocity, and complete NS residual."
+    ]
+  },
+  "governed_distinctions": {
+    "x0_value_handoff_registered": true,
+    "right_branch_radial_derivative_audit_registered": true,
+    "x0_value_equality_implies_c1_splice": false,
+    "right_branch_derivative_consistency_implies_left_right_derivative_match": false,
+    "autonomous_pressure_ode_implies_source_prepared_stress_derivative": false,
+    "x0_c1_reference_stress_handoff_verified": false,
+    "source_stress_free_derivative_compatibility_verified": false,
+    "source_prepared_reference_stress_identity_verified": false,
+    "autonomous_reference_stress_authorized_as_actual_fixed_kappa_stress": false,
+    "autonomous_reference_stress_authorized_as_agent3_correction_target": false
+  },
+  "mechanics_witness": {
+    "classification": "autonomous_mechanics_only",
+    "x0": 1.0,
+    "common_value": 0.7,
+    "left_slope": -0.2,
+    "right_slope": 0.4,
+    "left_function": "s_left(x)=0.7-0.2*(x-1)",
+    "right_function": "s_right(x)=0.7+0.4*(x-1)",
+    "equal_value_at_x0": true,
+    "derivative_jump": 0.6,
+    "interpretation": "An exact value handoff can coexist with a nonzero derivative jump; this witness proves only the logical distinction and says nothing about the actual Kokuno derivative jump."
+  },
+  "delivery_and_scientific_state": {
+    "canonical_eq45_velocity_delivery_remains_independent": true,
+    "kokuno_velocity_export_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "non_changes": [
+    "No velocity, stress, pressure, forcing, candidate coefficient, optimizer, validation sample, source formula, artifact byte, or scientific threshold is modified.",
+    "No free f=R route, amplitude collapse, or post-hoc gate relaxation is introduced.",
+    "This scope does not require C1 compatibility merely to keep an autonomous reference-stress callable; it only blocks laundering a C0/value handoff into a C1/source-compatible claim."
+  ]
+}
