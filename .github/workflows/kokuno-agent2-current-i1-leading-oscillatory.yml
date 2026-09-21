@@ -1,0 +1,211 @@
+name: kokuno-agent2-current-i1-leading-oscillatory
+
+on:
+  push:
+    branches:
+      - kokuno-agent2/current-i1-leading-oscillatory-095
+  pull_request:
+    branches:
+      - codex/kokuno-a2-source-amplitude-sensitivity-094
+  workflow_dispatch:
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Check out exact A2 head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: a2
+          fetch-depth: 0
+
+      - name: Verify exact A2 parent and strict three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd a2
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+          git merge-base --is-ancestor d58cee2bf38bdca8da13a796215a079a569ad7d7 HEAD
+          test "$(git rev-list --count d58cee2bf38bdca8da13a796215a079a569ad7d7..HEAD)" -eq 3
+          mapfile -t files < <(git diff --name-only d58cee2bf38bdca8da13a796215a079a569ad7d7..HEAD)
+          test "${#files[@]}" -eq 3
+          printf '%s\n' "${files[@]}" | sort > /tmp/actual-files
+          printf '%s\n' \
+            .github/workflows/kokuno-agent2-current-i1-leading-oscillatory.yml \
+            src/openai_ns_reconstruction/kokuno_current_i1_leading_oscillatory_identity.py \
+            tests/test_constrained_kokuno_current_i1_leading_oscillatory_identity.py \
+            | sort > /tmp/expected-files
+          diff -u /tmp/expected-files /tmp/actual-files
+          test "$(git hash-object src/openai_ns_reconstruction/kokuno_source_zero_data_amplitude_sensitivity.py)" = \
+            "eba3c00703bd5763b12e6f48a8c34eb918dec82e"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install A2 test dependencies
+        run: python -m pip install -e './a2[dev]'
+
+      - name: Compile and run A2 focused contract tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            a2/src/openai_ns_reconstruction/kokuno_current_i1_leading_oscillatory_identity.py \
+            a2/tests/test_constrained_kokuno_current_i1_leading_oscillatory_identity.py
+          PYTHONPATH="$PWD/a2/src" python -m pytest -q \
+            a2/tests/test_constrained_kokuno_current_i1_leading_oscillatory_identity.py
+
+      - name: Check out exact Agent-1 current-I1 sibling
+        uses: actions/checkout@v4
+        with:
+          ref: ea59dc305b4265fcb0bb0f948c2a45f4477d1ae5
+          path: a1
+          fetch-depth: 1
+
+      - name: Authenticate and regression-test exact Agent-1 sibling
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C a1 rev-parse HEAD)" = "ea59dc305b4265fcb0bb0f948c2a45f4477d1ae5"
+          test "$(git -C a1 hash-object src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_i1_frozen_gate.py)" = \
+            "fe14dab8dccdbca828d722bdfe2f75f287aa9ea8"
+          test "$(git -C a1 hash-object tests/test_kokuno_pa16_current_cartesian_i1_frozen_gate.py)" = \
+            "fd671974c52214771d726c8c0c4fc83152c92f6f"
+          test "$(git -C a1 hash-object .github/workflows/kokuno-agent1-current-i1-frozen-gate.yml)" = \
+            "9ba955368a4aa7cbe369efa479b21b556c352d48"
+          PYTHONPATH="$PWD/a1/src" python -m pytest -q \
+            a1/tests/test_kokuno_pa16_current_cartesian_i1_frozen_gate.py
+
+      - name: Check out exact corrected Kokuno public source
+        uses: actions/checkout@v4
+        with:
+          repository: KokunoYumeto/yang-mills-interacting-workbench
+          ref: 143f6773feb424ad9ed3a8d116653200f20346b7
+          path: source
+          fetch-depth: 1
+
+      - name: Authenticate corrected-source provenance bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C source rev-parse HEAD)" = "143f6773feb424ad9ed3a8d116653200f20346b7"
+          test "$(git -C source hash-object navier-stokes/navier_stokes_workbench.tex)" = \
+            "205a99807302e21a51c5eaf223390c0dfc42bcd0"
+          python - <<'PY'
+          from pathlib import Path
+          text = Path("source/navier-stokes/navier_stokes_workbench.tex").read_text(encoding="utf-8")
+          assert r"C_m=\frac{i n_\Phi\times t_m}" in text
+          assert r"\widehat t_m=\psi t_m" in text
+          PY
+
+      - name: Materialize exact current-I1 composite candidate and receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p receipts
+          PYTHONPATH="$PWD/a1/src" python - <<'PY'
+          from pathlib import Path
+          import json
+          import openai_ns_reconstruction
+
+          from openai_ns_reconstruction.kokuno_pa16_current_cartesian_i1_frozen_gate import (
+              KokunoPA16CurrentCartesianI1FrozenGate,
+          )
+          assert KokunoPA16CurrentCartesianI1FrozenGate.__module__ == (
+              "openai_ns_reconstruction.kokuno_pa16_current_cartesian_i1_frozen_gate"
+          )
+
+          a2_pkg = str((Path("a2/src/openai_ns_reconstruction")).resolve())
+          openai_ns_reconstruction.__path__.insert(0, a2_pkg)
+
+          import openai_ns_reconstruction.kokuno_current_i1_leading_oscillatory_identity as mod
+
+          field = mod.default_field()
+          assert field._leading_identity["closure_tolerance"] == 5.0e-7
+          candidate_path = Path("receipts/kokuno_a2_current_i1_candidate.json")
+          saved = field.save_candidate(candidate_path)
+          loaded = mod.CurrentI1LeadingOscillatoryField.load_candidate(candidate_path)
+          assert loaded.semantic_sha256 == field.semantic_sha256 == saved["semantic_sha256"]
+          assert loaded.oscillatory_runtime_sha256 == field.oscillatory_runtime_sha256
+          assert loaded.X_I1_start == field.X_I1_start
+          assert loaded.X_I1_end == field.X_I1_end
+
+          receipt = mod.materialize_current_i1_composite_receipt()
+          Path("receipts/kokuno_a2_current_i1_composite_receipt.json").write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+          )
+          PY
+
+      - name: Upload candidate and raw receipt before gate enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent2-current-i1-leading-oscillatory
+          path: |
+            receipts/kokuno_a2_current_i1_candidate.json
+            receipts/kokuno_a2_current_i1_composite_receipt.json
+          if-no-files-found: error
+
+      - name: Enforce current-I1 composition, support, identity, and truth gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH="$PWD/a1/src" python - <<'PY'
+          from pathlib import Path
+          import copy
+          import json
+          import openai_ns_reconstruction
+
+          a2_pkg = str((Path("a2/src/openai_ns_reconstruction")).resolve())
+          openai_ns_reconstruction.__path__.insert(0, a2_pkg)
+          import openai_ns_reconstruction.kokuno_current_i1_leading_oscillatory_identity as mod
+
+          receipt_path = Path("receipts/kokuno_a2_current_i1_composite_receipt.json")
+          receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
+          mod.enforce_receipt(receipt)
+
+          candidate_path = Path("receipts/kokuno_a2_current_i1_candidate.json")
+          candidate = json.loads(candidate_path.read_text(encoding="utf-8"))
+
+          mutated_osc = copy.deepcopy(candidate)
+          osc = mutated_osc["configuration"]["oscillatory_runtime"]
+          osc["payload"]["mutation_probe"] = "forbidden"
+          osc["payload_sha256"] = mod._identity._sha256(osc["payload"])
+          mutated_osc["semantic_sha256"] = mod._identity._sha256(mutated_osc["configuration"])
+          p = Path("receipts/mutated_osc_candidate.json")
+          p.write_text(json.dumps(mutated_osc, indent=2, sort_keys=True) + "\n")
+          try:
+              mod.CurrentI1LeadingOscillatoryField.load_candidate(p)
+          except ValueError as exc:
+              assert "oscillatory runtime" in str(exc)
+          else:
+              raise AssertionError("rehash-consistent oscillatory runtime mutation was accepted")
+
+          mutated_source = copy.deepcopy(candidate)
+          mutated_source["configuration"]["source_provenance"]["corrected_release_date"] = "2099-01-01"
+          mutated_source["semantic_sha256"] = mod._identity._sha256(mutated_source["configuration"])
+          p = Path("receipts/mutated_source_candidate.json")
+          p.write_text(json.dumps(mutated_source, indent=2, sort_keys=True) + "\n")
+          try:
+              mod.CurrentI1LeadingOscillatoryField.load_candidate(p)
+          except ValueError as exc:
+              assert "provenance" in str(exc)
+          else:
+              raise AssertionError("rehash-consistent source provenance mutation was accepted")
+
+          mutated_a1 = copy.deepcopy(candidate)
+          mutated_a1["configuration"]["agent1_leading"]["semantic_sha256"] = "a" * 64
+          mutated_a1["semantic_sha256"] = mod._identity._sha256(mutated_a1["configuration"])
+          p = Path("receipts/mutated_a1_candidate.json")
+          p.write_text(json.dumps(mutated_a1, indent=2, sort_keys=True) + "\n")
+          try:
+              mod.CurrentI1LeadingOscillatoryField.load_candidate(p)
+          except ValueError as exc:
+              assert "semantic identity" in str(exc)
+          else:
+              raise AssertionError("rehash-consistent Agent-1 semantic mutation was accepted")
+          PY
