@@ -63,6 +63,23 @@ def test_current_tsh_ingest_contract_pins_exact_lineage_and_keeps_states_closed(
     }
 
 
+def test_current_tsh_ingest_does_not_launder_queued_ci_into_admission() -> None:
+    payload = build_contract(DUMMY_HEAD)
+    for section in (
+        "parent_a5",
+        "agent1_current_tsh",
+        "agent4_current_tsh_audit",
+        "agent3_current_xi_handoff",
+        "agent2_sibling_status",
+    ):
+        for run in payload[section]["observed_ci"].values():
+            assert run["status"] == "queued"
+            assert run["conclusion"] is None
+    assert payload["truth_boundary"]["upstream_ci_admitted_as_pass"] is False
+    assert payload["truth_boundary"]["agent4_current_tsh_independent_audit_admitted"] is False
+    assert payload["truth_boundary"]["scientific_admission"] is False
+
+
 def test_current_tsh_ingest_preserves_frozen_pde_gate_and_baseline() -> None:
     payload = build_contract(DUMMY_HEAD)
     assert payload["final_gate"]["normalized_momentum_sampled_max"] == pytest.approx(1.0e-3)
