@@ -1,0 +1,106 @@
+{
+  "canonical_cr001": {
+    "candidate_collapse_forbidden": true,
+    "constraints_git_blob_sha1": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "divergence_L2": 1e-05,
+    "divergence_max": 1e-05,
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "forcing_mode": "restricted_two_parameter_family",
+    "held_out_points": 4096,
+    "momentum_L2": 0.001,
+    "momentum_max": 0.001,
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "post_hoc_threshold_relaxation_forbidden": true,
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "residual_defined_free_forcing_forbidden": true,
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "validation_seed": 914027
+  },
+  "canonical_delivery": {
+    "candidate_family": "eq45_supported_velocity_candidate_v1",
+    "openai_field_identified": false,
+    "paper_exact": false,
+    "pde_validated": false,
+    "velocity_export_ready": true,
+    "visual_correspondence_verified": false,
+    "visualization_ready": false
+  },
+  "evidence_transfer": {
+    "a2_pr1108_composite_consumes_child_pr1107": false,
+    "a3_pr1109_correction_evidence_belongs_to_child_pr1107": false,
+    "a4_pr1110_divergence_audits_child_pr1107": false,
+    "fresh_implementation_distinct_a4_audit_required_for_child": true,
+    "fresh_matching_a2_composition_required_for_child": true,
+    "parent_finite_x_receipts_prove_new_logx_only_interval": false
+  },
+  "exact_stack": {
+    "base_head": "45da043dd2b4cd067f005a72c7e21fd0f2bcf309",
+    "base_pr": 1107,
+    "child_module": "src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_main_pulse_logx.py",
+    "parent_finite_x_head": "2a6c58ff6bf6d1ba6b875bca0e6abf9d1118e156",
+    "parent_finite_x_pr": 1100,
+    "parent_module": "src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_main_pulse.py"
+  },
+  "four_way_provenance": {
+    "autonomous_design": [
+      "overflow-safe log-X/log-F numerical chart used by exact A1 #1107",
+      "repository-autonomous A_principal realization inherited unchanged from #1094/#1100",
+      "this fail-closed representation-promotion and evidence-transfer firewall"
+    ],
+    "pending_unknown": [
+      "source-exact Amp(eta) root and c1/c2 M/J end closure",
+      "matching A2 leading-plus-oscillatory composite on exact #1107 identity",
+      "implementation-distinct A4 audit of that matching #1107 composite through xi=11",
+      "terminal/exterior/global leading velocity, matched pressure, preregistered restricted forcing, complete NS validation and visual correspondence"
+    ],
+    "public_source_facts": [
+      "pinned public reconstruction supplies the already-consumed main-pulse source-coordinate formulas and principal main-kernel endpoint xi=11",
+      "public-source structure does not publish the hidden source-exact Amp(eta) value for this repository realization"
+    ],
+    "user_requirements": [
+      "deliver explicit callable save-loadable Cartesian velocity(x,y,z,t)->[u,v,w]",
+      "keep velocity export, visual correspondence, PDE validation and paper exactness independent",
+      "do not transfer evidence across candidate or representation identities without a matching audit"
+    ]
+  },
+  "promotion_rule": {
+    "forbidden_implications": [
+      "logx_xi11_materialized -> source_exact_amplitude",
+      "logx_xi11_materialized -> terminal_or_global_velocity",
+      "logx_xi11_materialized -> visual_correspondence",
+      "logx_xi11_materialized -> pde_validated",
+      "old_finite_x_composite_or_divergence_receipt -> new_logx_only_interval"
+    ],
+    "statement": "Closing a numerical representation gap may promote only representation coverage on the exact new identity."
+  },
+  "representation_transition": {
+    "child_public_cartesian_velocity_finite_on_declared_xi11_domain": true,
+    "child_save_load_semantic_identity_present": true,
+    "child_schema": "kokuno-pa16-current-cartesian-main-pulse-logx-v1",
+    "new_representation_identity_required": true,
+    "parent_and_child_same_semantic_candidate_identity": false,
+    "parent_finite_x_gap_closed_by_child_logx_through_public_principal_xi11": true,
+    "parent_schema": "kokuno-pa16-current-cartesian-main-pulse-v1",
+    "source_exact_main_pulse_recovered": false
+  },
+  "schema": "cr002-kokuno-logx-representation-promotion-v1",
+  "scope": "representation_promotion_and_evidence_transfer_only",
+  "task_id": "CR002-KOKUNO-LOGX-REPRESENTATION-PROMOTION-131",
+  "truth_states": {
+    "blowup_proved": false,
+    "kokuno_velocity_export_ready": false,
+    "logx_leading_only_public_principal_xi11_materialized": true,
+    "openai_field_identified": false,
+    "outer_global_leading_velocity_materialized": false,
+    "paper_exact": false,
+    "pde_validated": false,
+    "source_exact_amplitude_root_materialized": false,
+    "source_pulse_end_MJ_corrections_materialized": false,
+    "visual_correspondence_verified": false
+  }
+}
