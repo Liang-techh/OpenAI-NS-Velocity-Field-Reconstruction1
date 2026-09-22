@@ -1,0 +1,112 @@
+name: kokuno-agent1-current-cartesian-postpulse-eta-flattening
+
+on:
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_postpulse_eta_flattening.py"
+      - "tests/test_kokuno_pa16_current_cartesian_postpulse_eta_flattening.py"
+      - ".github/workflows/kokuno-agent1-current-cartesian-postpulse-eta-flattening.yml"
+  workflow_dispatch:
+
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+
+      - name: Authenticate exact A1 #1133 parent
+        shell: bash
+        run: |
+          git merge-base --is-ancestor 3b4af71c4ab547bc11f9f3e320afa4b62c25b930 HEAD
+          test "$(git show -s --format=%H 3b4af71c4ab547bc11f9f3e320afa4b62c25b930)" = "3b4af71c4ab547bc11f9f3e320afa4b62c25b930"
+          echo "authenticated A1 #1133 parent 3b4af71c4ab547bc11f9f3e320afa4b62c25b930"
+
+      - name: Enforce minimal three-file increment
+        shell: bash
+        run: |
+          mapfile -t files < <(git diff --name-only 3b4af71c4ab547bc11f9f3e320afa4b62c25b930...HEAD | sort)
+          printf '%s\n' "${files[@]}"
+          test "${#files[@]}" -eq 3
+          expected=(
+            ".github/workflows/kokuno-agent1-current-cartesian-postpulse-eta-flattening.yml"
+            "src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_postpulse_eta_flattening.py"
+            "tests/test_kokuno_pa16_current_cartesian_postpulse_eta_flattening.py"
+          )
+          mapfile -t expected_sorted < <(printf '%s\n' "${expected[@]}" | sort)
+          test "$(printf '%s\n' "${files[@]}")" = "$(printf '%s\n' "${expected_sorted[@]}")"
+
+      - name: Compile focused files
+        run: |
+          python -m py_compile src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_postpulse_eta_flattening.py
+          python -m py_compile tests/test_kokuno_pa16_current_cartesian_postpulse_eta_flattening.py
+
+      - name: Run parent-facing and eta-flattening regressions
+        run: |
+          python -m pytest -q \
+            tests/test_kokuno_pa16_current_cartesian_pulse_end_compensated.py \
+            tests/test_kokuno_pa16_current_cartesian_postpulse_eta_flattening.py
+
+      - name: Emit deterministic scoped receipt
+        run: |
+          mkdir -p artifacts/kokuno_agent1_current_cartesian_postpulse_eta_flattening
+          python - <<'PY'
+          import copy
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction.kokuno_pa16_current_cartesian_postpulse_eta_flattening import (
+              KokunoPA16CurrentCartesianPostPulseEtaFlattening,
+          )
+
+          root = Path("artifacts/kokuno_agent1_current_cartesian_postpulse_eta_flattening")
+          candidate = KokunoPA16CurrentCartesianPostPulseEtaFlattening()
+          receipt = candidate.flattening_report(radial_samples=2001)
+          truth = candidate.truth_boundary
+          assert truth["source_postpulse_eta_flattening_formula_materialized"] is True
+          assert truth["repository_autonomous_T_f_materialized"] is True
+          assert truth["source_exact_T_f_recovered"] is False
+          assert truth["source_terminal_hold_after_eta_flattening_materialized"] is False
+          assert truth["source_relative_swirl_bumps_materialized"] is False
+          assert truth["source_exterior_heat_replacement_materialized"] is False
+          assert truth["heldout_ns_residual_assessed"] is False
+          assert truth["pde_validated"] is False
+          assert receipt["min_ell_on_deterministic_grid"] >= -candidate.lambda_value - 0.1 - 2e-14
+          assert receipt["max_ell_on_deterministic_grid"] <= -candidate.lambda_value + 2e-14
+          assert receipt["endpoint_E_relative_eta_spread"] < 2e-13
+
+          config = candidate.configuration()
+          mutated = copy.deepcopy(config)
+          mutated["bound_scope"]["T_f_role"] = "source_exact"
+          try:
+              candidate.from_configuration(mutated)
+          except ValueError:
+              pass
+          else:
+              raise SystemExit("T_f provenance mutation did not fail closed")
+
+          (root / "receipt.json").write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + "\n"
+          )
+          (root / "config.json").write_text(
+              json.dumps(config, indent=2, sort_keys=True) + "\n"
+          )
+          print(json.dumps(receipt, indent=2, sort_keys=True))
+          PY
+
+      - name: Upload scoped receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-current-cartesian-postpulse-eta-flattening
+          path: artifacts/kokuno_agent1_current_cartesian_postpulse_eta_flattening/
