@@ -32,12 +32,12 @@ AGENT3_EXACT_HEAD = "21b0ade966fda3b7344273c7bff2efe7e7b9a93e"
 AGENT3_SOURCE_BLOB = "fe08f93f48aeb2d4055b12889325a6ae5e05a5a6"
 AGENT3_PATH = "src/openai_ns_reconstruction/kokuno_current_i4_rf34_rf39_correction.py"
 
-AGENT4_PR = 1182
-AGENT4_EXACT_HEAD = "5e12ed7dc55e0740a40f9a210e23e98cd71707e2"
-AGENT4_SOURCE_BLOB = "9fbc39f4e9740a504e277a9cb758a144eb219c62"
-AGENT4_PATH = "src/openai_ns_reconstruction/kokuno_a4_relative_swirl_decimal_total_independent_audit.py"
-AGENT4_AUDITED_A1_PR = 1179
-AGENT4_AUDITED_A1_HEAD = "8c5c5b6d55a68de8285ed1dd0ebb55128f3078a4"
+AGENT4_PR = 1191
+AGENT4_EXACT_HEAD = "cb7bbc0ac7c01125e90b773fe729f3446bb49d63"
+AGENT4_SOURCE_BLOB = "6b8fdd6eee1bd57bf49240de67ab1ce3f86ec7b9"
+AGENT4_PATH = "src/openai_ns_reconstruction/kokuno_a4_postswirl_release1_independent_audit.py"
+AGENT4_AUDITED_A1_PR = 1188
+AGENT4_AUDITED_A1_HEAD = AGENT1_EXACT_HEAD
 
 LATEST_SELF_CONTAINED_A2_PR = 1117
 LATEST_SELF_CONTAINED_A2_HEAD = "27741d9c0a27262f7fabf61eebaa2fbd507e9f03"
@@ -111,12 +111,12 @@ def upstream_routes() -> dict[str, dict[str, Any]]:
             "path": AGENT4_PATH,
             "audits_agent1_pr": AGENT4_AUDITED_A1_PR,
             "audits_agent1_exact_head": AGENT4_AUDITED_A1_HEAD,
-            "delivery": "independent Decimal-total representation/divergence audit of A1 #1179",
+            "delivery": "implementation-distinct save/load FD4 divergence audit of exact A1 #1188 release1",
             "save_load_public_velocity_only_scientific_path": True,
             "scoped_only": True,
             "scoped_gate_passed": None,
             "canonical_absolute_fd_transfer_ready": False,
-            "audits_latest_agent1_release1": False,
+            "audits_latest_agent1_release1": True,
             "audits_agent2_1189": False,
             "audits_agent3_1190": False,
             "complete_ns_residual_assessed": False,
@@ -167,11 +167,11 @@ def fixed_validation_protocol() -> dict[str, Any]:
 
 def evidence_firewall() -> dict[str, bool]:
     return {
-        "agent4_1182_may_validate_agent1_1188": False,
-        "agent4_1182_may_validate_agent2_1189": False,
-        "agent4_1182_may_validate_agent3_1190": False,
-        "agent4_1182_may_validate_complete_ns": False,
-        "agent4_1182_may_set_pde_validated": False,
+        "agent4_1191_scoped_divergence_may_promote_agent1_1188_to_global_leading": False,
+        "agent4_1191_may_validate_agent2_1189": False,
+        "agent4_1191_may_validate_agent3_1190": False,
+        "agent4_1191_may_validate_complete_ns": False,
+        "agent4_1191_may_set_pde_validated": False,
         "agent2_1189_provider_family_creates_self_contained_candidate": False,
         "agent3_1190_unpinned_provider_creates_scientific_correction": False,
         "agent3_1190_mechanics_authorizes_cartesian_delta_u": False,
@@ -194,7 +194,7 @@ def remaining_blockers() -> dict[str, bool]:
         "preregistered_restricted_non_residual_defined_forcing": True,
         "complete_identity_bound_ns_defect": True,
         "real_finite_correction_cycle": True,
-        "matching_agent4_latest_global_composite_audit": True,
+        "matching_agent4_global_composite_audit": True,
         "agent4_heldout_canonical_complete_ns_gate": True,
     }
 
@@ -205,7 +205,7 @@ def shortest_closure() -> list[str]:
         "A2: provide and checksum-pin a same-identity raw auxiliary-T2 provider for A3; after global A1 exists, build the matching self-contained global leading+oscillatory candidate using the bounded complete-curl family.",
         "A3: consume that pinned provider through the already-executable #1190 RF30->RF39 chain, apply the correction as Cartesian delta-u, and recompute RF44-RF49/nonlinear remainder under one candidate identity.",
         "Integration: bind matched pressure and preregistered restricted non-residual-defined forcing to that same identity, form the complete NS defect, and run the real finite correction cycle.",
-        "A4: independently audit the matching global/corrected identity and enforce the unchanged held-out canonical [24,48,96] momentum <=1e-3 and divergence <=1e-5 gates before any pde_validated promotion.",
+        "A4: after #1191's scoped release1 audit, independently audit the matching global/corrected identity and enforce the unchanged held-out canonical [24,48,96] momentum <=1e-3 and divergence <=1e-5 gates before any pde_validated promotion.",
     ]
 
 
@@ -268,8 +268,10 @@ def validate_artifact(artifact: dict[str, Any]) -> None:
         raise KokunoA5RoutingError("A3 provider falsely pinned")
     if a3.get("repository_candidate_scientific_correction_materialized") or a3.get("correction_applied_to_candidate"):
         raise KokunoA5RoutingError("A3 scientific correction falsely promoted")
-    if a4.get("audits_agent1_exact_head") != AGENT4_AUDITED_A1_HEAD or a4.get("audits_latest_agent1_release1"):
-        raise KokunoA5RoutingError("A4 evidence transferred to latest A1 identity")
+    if a4.get("audits_agent1_exact_head") != AGENT1_EXACT_HEAD or not a4.get("audits_latest_agent1_release1"):
+        raise KokunoA5RoutingError("A4 matching release1 audit identity lost")
+    if a4.get("audits_agent2_1189") or a4.get("audits_agent3_1190"):
+        raise KokunoA5RoutingError("A4 scoped evidence transferred across lanes")
     if a4.get("scoped_gate_passed") is not None or a4.get("scientifically_admitted") or a4.get("pde_validated"):
         raise KokunoA5RoutingError("A4 scoped evidence over-promoted")
 
@@ -314,5 +316,5 @@ def dump_artifact(path: str | Path) -> Path:
 __all__ = [
     "SCHEMA_VERSION", "TASK", "PARENT_A5_EXACT_HEAD",
     "AGENT1_EXACT_HEAD", "AGENT2_EXACT_HEAD", "AGENT3_EXACT_HEAD", "AGENT4_EXACT_HEAD",
-    "KokunoA5RoutingError", "build_artifact", "validate_artifact", "dump_artifact",
+    "AGENT4_AUDITED_A1_HEAD", "KokunoA5RoutingError", "build_artifact", "validate_artifact", "dump_artifact",
 ]
