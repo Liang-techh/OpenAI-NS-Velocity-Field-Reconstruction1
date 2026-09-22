@@ -1,0 +1,124 @@
+name: kokuno-agent1-current-cartesian-postpulse-eta-independent-hold
+
+on:
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_postpulse_eta_independent_hold.py"
+      - "tests/test_kokuno_pa16_current_cartesian_postpulse_eta_independent_hold.py"
+      - ".github/workflows/kokuno-agent1-current-cartesian-postpulse-eta-independent-hold.yml"
+  workflow_dispatch:
+
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+
+      - name: Authenticate exact A1 #1140 parent
+        shell: bash
+        run: |
+          git merge-base --is-ancestor c5442c11165d7f0976889b826bf58dce38a3d3dd HEAD
+          test "$(git show -s --format=%H c5442c11165d7f0976889b826bf58dce38a3d3dd)" = "c5442c11165d7f0976889b826bf58dce38a3d3dd"
+          echo "authenticated A1 #1140 parent c5442c11165d7f0976889b826bf58dce38a3d3dd"
+
+      - name: Enforce minimal three-file increment
+        shell: bash
+        run: |
+          mapfile -t files < <(git diff --name-only c5442c11165d7f0976889b826bf58dce38a3d3dd...HEAD | sort)
+          printf '%s\n' "${files[@]}"
+          test "${#files[@]}" -eq 3
+          expected=(
+            ".github/workflows/kokuno-agent1-current-cartesian-postpulse-eta-independent-hold.yml"
+            "src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_postpulse_eta_independent_hold.py"
+            "tests/test_kokuno_pa16_current_cartesian_postpulse_eta_independent_hold.py"
+          )
+          mapfile -t expected_sorted < <(printf '%s\n' "${expected[@]}" | sort)
+          test "$(printf '%s\n' "${files[@]}")" = "$(printf '%s\n' "${expected_sorted[@]}")"
+
+      - name: Compile focused files
+        run: |
+          python -m py_compile src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_postpulse_eta_independent_hold.py
+          python -m py_compile tests/test_kokuno_pa16_current_cartesian_postpulse_eta_independent_hold.py
+
+      - name: Run parent-facing and hold regressions
+        run: |
+          python -m pytest -q \
+            tests/test_kokuno_pa16_current_cartesian_postpulse_eta_flattening.py \
+            tests/test_kokuno_pa16_current_cartesian_postpulse_eta_independent_hold.py
+
+      - name: Emit deterministic scoped receipt
+        run: |
+          mkdir -p artifacts/kokuno_agent1_current_cartesian_postpulse_eta_independent_hold
+          python - <<'PY'
+          import copy
+          import json
+          import math
+          from pathlib import Path
+          from openai_ns_reconstruction.kokuno_pa16_current_cartesian_postpulse_eta_independent_hold import (
+              KokunoPA16CurrentCartesianPostPulseEtaIndependentHold,
+          )
+
+          root = Path("artifacts/kokuno_agent1_current_cartesian_postpulse_eta_independent_hold")
+          candidate = KokunoPA16CurrentCartesianPostPulseEtaIndependentHold()
+          receipt = candidate.hold_report()
+          truth = candidate.truth_boundary
+          assert truth["source_postpulse_eta_flattening_formula_materialized"] is True
+          assert truth["repository_autonomous_T_f_materialized"] is True
+          assert truth["source_exact_T_f_recovered"] is False
+          assert truth["source_terminal_hold_after_eta_flattening_materialized"] is True
+          assert truth["current_cartesian_postpulse_eta_independent_hold_composed"] is True
+          assert truth["source_relative_swirl_bumps_materialized"] is False
+          assert truth["source_exterior_heat_replacement_materialized"] is False
+          assert truth["heldout_ns_residual_assessed"] is False
+          assert truth["pde_validated"] is False
+          assert abs(candidate.hold_length - 30.0 * math.log(1.0 / candidate.lambda_value)) == 0.0
+          assert receipt["start_E_relative_eta_spread"] < 3e-13
+          assert receipt["end_E_relative_eta_spread"] < 3e-13
+          assert receipt["max_abs_U_hold_endpoint"] == 0.0
+
+          config = candidate.configuration()
+          mutated = copy.deepcopy(config)
+          mutated["bound_scope"]["hold_length_role"] = "source_hidden_recovered"
+          try:
+              candidate.from_configuration(mutated)
+          except ValueError:
+              pass
+          else:
+              raise SystemExit("hold-length provenance mutation did not fail closed")
+
+          mutated = copy.deepcopy(config)
+          mutated["truth_boundary"]["source_relative_swirl_bumps_materialized"] = True
+          try:
+              candidate.from_configuration(mutated)
+          except ValueError:
+              pass
+          else:
+              raise SystemExit("relative-swirl truth promotion did not fail closed")
+
+          (root / "receipt.json").write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + "\n"
+          )
+          (root / "config.json").write_text(
+              json.dumps(config, indent=2, sort_keys=True) + "\n"
+          )
+          print(json.dumps(receipt, indent=2, sort_keys=True))
+          PY
+
+      - name: Upload scoped receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-current-cartesian-postpulse-eta-independent-hold
+          path: artifacts/kokuno_agent1_current_cartesian_postpulse_eta_independent_hold/
