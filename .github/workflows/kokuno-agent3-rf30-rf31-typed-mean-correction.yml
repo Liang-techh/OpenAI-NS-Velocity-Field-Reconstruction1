@@ -1,0 +1,222 @@
+name: kokuno-agent3-rf30-rf31-typed-mean-correction
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_rf30_rf31_typed_mean_correction.py'
+      - 'tests/test_constrained_kokuno_rf30_rf31_typed_mean_correction.py'
+      - '.github/workflows/kokuno-agent3-rf30-rf31-typed-mean-correction.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  rf30-rf31-typed-mean-correction:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact Agent-3 PR head
+        uses: actions/checkout@v4
+        with:
+          path: a3
+          fetch-depth: 0
+
+      - name: Verify one-increment Agent-3 stack
+        shell: bash
+        run: |
+          set -euo pipefail
+          parent=922f7aa10460ded44af212d313eceff33a2ac647
+          git -C a3 merge-base --is-ancestor "$parent" HEAD
+          test "$(git -C a3 rev-list --count "$parent"..HEAD)" -eq 3
+          git -C a3 diff --name-only "$parent"...HEAD | sort > /tmp/changed.txt
+          cat > /tmp/expected.txt <<'EOF'
+          .github/workflows/kokuno-agent3-rf30-rf31-typed-mean-correction.yml
+          src/openai_ns_reconstruction/kokuno_rf30_rf31_typed_mean_correction.py
+          tests/test_constrained_kokuno_rf30_rf31_typed_mean_correction.py
+          EOF
+          diff -u /tmp/expected.txt /tmp/changed.txt
+
+      - name: Authenticate exact Agent-3 parent
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C a3 hash-object src/openai_ns_reconstruction/kokuno_current_i4_nonlinear_radial_force.py)" = e28eac6f7fb7f3191a024b052bcf677cff8d74d2
+          git -C a3 merge-base --is-ancestor 922f7aa10460ded44af212d313eceff33a2ac647 HEAD
+
+      - name: Checkout corrected public Kokuno reader
+        uses: actions/checkout@v4
+        with:
+          repository: KokunoYumeto/yang-mills-interacting-workbench
+          ref: 143f6773feb424ad9ed3a8d116653200f20346b7
+          path: reader
+          fetch-depth: 1
+
+      - name: Authenticate corrected reader
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C reader rev-parse HEAD)" = 143f6773feb424ad9ed3a8d116653200f20346b7
+          test "$(git -C reader hash-object navier-stokes/navier_stokes_workbench.tex)" = 205a99807302e21a51c5eaf223390c0dfc42bcd0
+          grep -F '2RG' reader/navier-stokes/navier_stokes_workbench.tex >/dev/null
+          grep -F 'W^{z\theta}' reader/navier-stokes/navier_stokes_workbench.tex >/dev/null
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Agent-3 tree
+        run: python -m pip install -e 'a3[dev]'
+
+      - name: Run focused typed RF30/RF31 regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            a3/src/openai_ns_reconstruction/kokuno_rf30_rf31_typed_mean_correction.py \
+            a3/tests/test_constrained_kokuno_rf30_rf31_typed_mean_correction.py
+          python -m pytest -q -W error \
+            a3/tests/test_constrained_kokuno_rf30_rf31_typed_mean_correction.py
+
+      - name: Materialize mechanics-only RF30/RF31 receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python - <<'PY'
+          from __future__ import annotations
+          import json
+          from pathlib import Path
+          import sys
+          import numpy as np
+
+          sys.path.insert(0, str(Path('a3/src').resolve()))
+          from openai_ns_reconstruction.kokuno_rf30_rf31_typed_mean_correction import (
+              CandidateIdentity,
+              RF30PreMeanState,
+              RF31CorrectionBasis,
+              materialize_rf30_rf31_mean_correction_system,
+              truth_boundary,
+          )
+
+          class MechanicsBackend:
+              def __init__(self):
+                  R = np.array([1.0, 1.2, 1.5, 1.8, 2.0])
+                  self.R = R
+                  self.identity = CandidateIdentity(
+                      candidate_id='workflow-mechanics-fixture',
+                      candidate_sha256='f' * 64,
+                      evidence_kind='mechanics-only',
+                  )
+                  self.state = RF30PreMeanState(
+                      source_candidate_id=self.identity.candidate_id,
+                      source_candidate_sha256=self.identity.candidate_sha256,
+                      source_chart_id='workflow-fixed-q-fixture',
+                      source_chart_sha256='e' * 64,
+                      radius_R=tuple(R),
+                      base_V=tuple(0.8 + 0.15 * R),
+                      base_G=tuple(-0.25 + 0.10 * R),
+                      mean_W_rr=tuple(0.04 * R**2),
+                      mean_W_zr=tuple(0.03 * R),
+                      mean_W_thetatheta=tuple(0.02 + 0.01 * R),
+                      mean_W_ztheta=tuple(0.015 * R**2),
+                      mean_W_zz=tuple(0.05 - 0.01 * R),
+                      dR_mean_W_rr=tuple(0.08 * R),
+                      dZ_mean_W_zr=tuple(0.01 + 0.002 * R),
+                      actual_candidate_recomputed=False,
+                      oscillatory_covariance_recomputed=False,
+                      normalized_haar_mean_used=False,
+                      source_fixed_q_chart_used=False,
+                  )
+                  dv, gd = [], []
+                  for j in range(5):
+                      dv.append(tuple((R - 0.9) ** (j + 1)))
+                      gd.append(tuple((0.2 + 0.05 * j) * (2.1 - R) ** (5 - j)))
+                  self.basis = RF31CorrectionBasis(
+                      source_candidate_id=self.identity.candidate_id,
+                      source_candidate_sha256=self.identity.candidate_sha256,
+                      source_chart_id=self.state.source_chart_id,
+                      source_chart_sha256=self.state.source_chart_sha256,
+                      radius_R=tuple(R),
+                      delta_v_columns=tuple(dv),
+                      gamma_d_columns=tuple(gd),
+                      basis_selected_before_defect_evaluation=True,
+                      compact_support_verified=True,
+                      torus_independent_verified=True,
+                  )
+              def candidate_identity(self, candidate):
+                  return self.identity
+              def rf30_pre_mean_state(self, candidate):
+                  return self.state
+              def rf31_correction_basis(self, candidate, state):
+                  return self.basis
+
+          backend = MechanicsBackend()
+          receipt = materialize_rf30_rf31_mean_correction_system(backend, backend)
+          payload = receipt.to_dict()
+          payload['candidate_residual_evidence'] = False
+          payload['current_i4_candidate_evidence'] = False
+          payload['truth_boundary'] = truth_boundary()
+          Path('artifacts/rf30_rf31_typed_mean_correction_receipt.json').write_text(
+              json.dumps(payload, indent=2, sort_keys=True) + '\n',
+              encoding='utf-8',
+          )
+          PY
+
+      - name: Upload receipt before truth-boundary enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent3-rf30-rf31-typed-mean-correction-receipt
+          path: artifacts/
+          if-no-files-found: error
+
+      - name: Enforce fail-closed scientific boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          receipt = json.loads(
+              Path('artifacts/rf30_rf31_typed_mean_correction_receipt.json').read_text(
+                  encoding='utf-8'
+              )
+          )
+          assert receipt['linear_five_row_system_materialized'] is True
+          assert receipt['repository_candidate_defect_evidence'] is False
+          assert receipt['candidate_residual_evidence'] is False
+          assert receipt['current_i4_candidate_evidence'] is False
+          assert len(receipt['matrix_B']) == 5
+          assert all(len(row) == 5 for row in receipt['matrix_B'])
+          assert len(receipt['defect']['target_rows']) == 5
+          assert receipt['correction_coefficients_solved'] is False
+          assert receipt['correction_applied'] is False
+          assert receipt['nonlinear_remainder_recomputed'] is False
+          assert receipt['complete_ns_defect'] is False
+          assert receipt['heldout_ns_residual_assessed'] is False
+          assert receipt['pde_validated'] is False
+
+          boundary = receipt['truth_boundary']
+          assert boundary['rf30_rf31_formula_executor_materialized'] is True
+          for key in (
+              'current_i4_source_chart_backend_materialized',
+              'current_i4_rf30_defect_materialized',
+              'current_i4_rf31_five_row_system_materialized',
+              'correction_coefficients_solved',
+              'correction_applied',
+              'rf44_rf49_nonlinear_remainder_recomputed',
+              'cartesian_correction_velocity_materialized',
+              'complete_ns_defect',
+              'finite_correction_cycle_run',
+              'heldout_normalized_ns_residual_assessed',
+              'residual_reduction_claimed',
+              'same_protocol_comparable_to_st006',
+              'pde_validated',
+          ):
+              assert boundary[key] is False, key
+          assert boundary['final_normalized_momentum_gate'] == 1e-3
+          assert boundary['final_normalized_divergence_gate'] == 1e-5
+          assert boundary['residual_defined_free_forcing_allowed'] is False
+          assert boundary['finite_stage_small_residual_is_blowup_proof'] is False
+          PY
