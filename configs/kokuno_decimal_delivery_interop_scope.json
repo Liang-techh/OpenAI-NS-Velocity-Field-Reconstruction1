@@ -1,0 +1,112 @@
+{
+  "schema": "cr002-kokuno-decimal-delivery-interop-v1",
+  "role": "representation_delivery_governance_only",
+  "exact_parent": {
+    "pull_request": 1179,
+    "head": "8c5c5b6d55a68de8285ed1dd0ebb55128f3078a4",
+    "source_path": "src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_relative_swirl_decimal_composed.py",
+    "source_blob": "78247e3f9e21ddc19f68e109d8fe1a069ba0360f"
+  },
+  "active_integration_reference": {
+    "branch": "codex/cr001-constraints",
+    "head_at_audit": "6a293b3c870d70b8d8aece1b12d68685c9b8b010"
+  },
+  "canonical_constraints": {
+    "path": "configs/constraints.json",
+    "blob": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "momentum_max": 0.001,
+    "momentum_L2": 0.001,
+    "divergence_max": 1e-05,
+    "divergence_L2": 1e-05
+  },
+  "provenance": {
+    "user_requirements": [
+      "deliver a clear computable save-loadable 3D time-dependent velocity(x,y,z,t)->[u,v,w]",
+      "keep velocity delivery independent from visual correspondence, PDE validation, paper exactness and OpenAI-field identity",
+      "do not erase a mathematically nonzero correction merely because a downstream binary64 representation cannot resolve it"
+    ],
+    "public_source_facts": [
+      "inherit only the pinned Kokuno public relative-swirl structure already encoded by exact parent PR 1179",
+      "this governance increment adds no public-source coefficient, precision, export format, pressure, forcing, residual or threshold"
+    ],
+    "autonomous_design": [
+      "parent fixed 96-significant-digit Decimal composition",
+      "parent Decimal.from_float binary64 embedding",
+      "parent ROUND_HALF_EVEN rounding",
+      "parent decimal-string JSON stage export",
+      "this downstream interoperability and evidence-transfer firewall"
+    ],
+    "pending_unknown": [
+      "ordinary binary64 single-array total that retains the current sub-epsilon relative-swirl edit",
+      "MATLAB-native numeric representation that demonstrably retains the same edit",
+      "terminal exterior global Kokuno leading velocity",
+      "matched global pressure and preregistered restricted forcing",
+      "held-out complete Navier-Stokes residual",
+      "visual correspondence to OpenAI public visualization",
+      "paper-exact or exact OpenAI-field identity"
+    ]
+  },
+  "parent_required_truth": {
+    "precision_qualified_relative_swirl_total_materialized": true,
+    "precision_qualified_public_velocity_materialized": true,
+    "precision_qualified_decimal_json_export_materialized": true,
+    "current_cartesian_relative_swirl_composed": true,
+    "binary64_total_relative_swirl_sum_is_resolved": false,
+    "binary64_total_velocity_export_ready": false,
+    "outer_global_leading_velocity_materialized": false,
+    "unified_global_cartesian_velocity_export_ready": false,
+    "matched_global_pressure_materialized": false,
+    "restricted_forcing_materialized": false,
+    "heldout_ns_residual_assessed": false,
+    "same_protocol_comparable_to_st006": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "delivery_representation_identity": {
+    "required_fields": [
+      "parent_semantic_sha256",
+      "scalar_type",
+      "precision_digits",
+      "rounding",
+      "binary64_embedding",
+      "export_encoding"
+    ],
+    "parent_scalar_type": "decimal.Decimal in numpy object array",
+    "parent_precision_digits": 96,
+    "parent_rounding": "ROUND_HALF_EVEN",
+    "parent_binary64_embedding": "Decimal.from_float",
+    "parent_export_encoding": "exact decimal strings in JSON",
+    "rule": "changing scalar type, precision, rounding, embedding, or export encoding creates a new delivery-representation identity and requires correction-survival replay"
+  },
+  "promotion_rules": {
+    "decimal_stage_callable_is_delivery_surface": true,
+    "decimal_stage_callable_is_binary64_export": false,
+    "decimal_string_stage_export_is_global_export": false,
+    "downcast_that_erases_delta_may_inherit_parent_survival_evidence": false,
+    "binary64_or_matlab_numeric_promotion_requires_nonzero_delta_survival_replay": true,
+    "save_load_replay_required_after_representation_change": true,
+    "global_domain_support_replay_required_before_global_export": true
+  },
+  "forbidden_inferences": [
+    "precision-qualified stage composition implies binary64 total-velocity export readiness",
+    "decimal-string JSON export implies MATLAB-native numeric fidelity",
+    "successful save-load of configuration implies downstream numeric transport preserves the correction",
+    "binary64 base+delta equality implies the mathematical delta is zero",
+    "scoped Decimal divergence audit implies complete Navier-Stokes validation",
+    "callability or visual similarity implies paper-exact or exact OpenAI-field identity"
+  ]
+}
