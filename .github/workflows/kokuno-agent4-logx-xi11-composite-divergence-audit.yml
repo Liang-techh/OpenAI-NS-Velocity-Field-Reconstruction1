@@ -1,0 +1,161 @@
+name: kokuno-agent4-logx-xi11-composite-divergence-audit
+
+on:
+  push:
+    branches:
+      - kokuno-agent4/logx-xi11-composite-divergence-117
+  pull_request:
+    branches:
+      - codex/k2-osc-101-logx-composite
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Check out exact A4 event head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: a4
+          fetch-depth: 0
+
+      - name: Verify exact parent and three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd a4
+          parent=27741d9c0a27262f7fabf61eebaa2fbd507e9f03
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+          git merge-base --is-ancestor "$parent" HEAD
+          test "$(git rev-list --count "$parent"..HEAD)" -eq 3
+          mapfile -t files < <(git diff --name-only "$parent"..HEAD)
+          test "${#files[@]}" -eq 3
+          printf '%s\n' "${files[@]}" | sort > /tmp/actual-files
+          printf '%s\n' \
+            .github/workflows/kokuno-agent4-logx-xi11-composite-divergence-audit.yml \
+            src/openai_ns_reconstruction/kokuno_a4_logx_xi11_composite_divergence_independent_audit.py \
+            tests/test_constrained_kokuno_a4_logx_xi11_composite_divergence_independent_audit.py \
+            | sort > /tmp/expected-files
+          diff -u /tmp/expected-files /tmp/actual-files
+          test "$(git hash-object src/openai_ns_reconstruction/kokuno_current_main_pulse_logx_leading_oscillatory_identity.py)" = \
+            "5504c2cde2eb69bfcdb4e4a87cc48f541bb9f8d3"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install exact A4 head
+        shell: bash
+        run: python -m pip install -e './a4[dev]'
+
+      - name: Run focused A4 software regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            a4/src/openai_ns_reconstruction/kokuno_a4_logx_xi11_composite_divergence_independent_audit.py \
+            a4/tests/test_constrained_kokuno_a4_logx_xi11_composite_divergence_independent_audit.py
+          PYTHONPATH="$PWD/a4/src" python -m pytest -q -W error \
+            a4/tests/test_constrained_kokuno_a4_logx_xi11_composite_divergence_independent_audit.py
+
+      - name: Check out exact A1 xi11 leading
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: 45da043dd2b4cd067f005a72c7e21fd0f2bcf309
+          path: a1
+          fetch-depth: 1
+
+      - name: Authenticate exact A1 source
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C a1 rev-parse HEAD)" = "45da043dd2b4cd067f005a72c7e21fd0f2bcf309"
+          test "$(git -C a1 hash-object src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_main_pulse_logx.py)" = \
+            "477bda899694e4c75786d59850a2eddada669f07"
+
+      - name: Materialize save-reloaded candidate and independent report
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p receipts
+          PYTHONPATH="$PWD/a4/src" python - <<'PY'
+          from pathlib import Path
+          import json
+          import traceback
+          import openai_ns_reconstruction
+
+          a1pkg = str(Path('a1/src/openai_ns_reconstruction').resolve())
+          if a1pkg not in openai_ns_reconstruction.__path__:
+              openai_ns_reconstruction.__path__.insert(0, a1pkg)
+
+          out = Path('receipts')
+          try:
+              from openai_ns_reconstruction import (
+                  kokuno_a4_logx_xi11_composite_divergence_independent_audit as m,
+              )
+              field = m.default_field()
+              field.save_candidate(out / 'candidate.json')
+              report = m.materialize_receipt()
+          except Exception as exc:
+              report = {
+                  'schema': 'kokuno-a4-logx-xi11-composite-divergence-audit-v1',
+                  'task': 'K4-VAL-117',
+                  'upstream_head': '27741d9c0a27262f7fabf61eebaa2fbd507e9f03',
+                  'agent1_head': '45da043dd2b4cd067f005a72c7e21fd0f2bcf309',
+                  'audit_pass': False,
+                  'failures': ['materialization_or_audit_error'],
+                  'error': f'{type(exc).__name__}: {exc}',
+                  'traceback': traceback.format_exc(),
+                  'truth_boundary': {
+                      'leading_plus_oscillatory_ns_residual_assessed': False,
+                      'after_correction_ns_residual_assessed': False,
+                      'pde_validated': False,
+                  },
+              }
+          out.joinpath('independent_report.json').write_text(
+              json.dumps(report, indent=2, sort_keys=True) + '\n',
+              encoding='utf-8',
+          )
+          PY
+
+      - name: Upload raw candidate and scientific receipt before enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a4-logx-xi11-composite-divergence-audit
+          path: receipts/
+          if-no-files-found: error
+
+      - name: Enforce preregistered scoped scientific gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH="$PWD/a4/src" python - <<'PY'
+          from pathlib import Path
+          import json
+          import openai_ns_reconstruction
+
+          a1pkg = str(Path('a1/src/openai_ns_reconstruction').resolve())
+          if a1pkg not in openai_ns_reconstruction.__path__:
+              openai_ns_reconstruction.__path__.insert(0, a1pkg)
+
+          from openai_ns_reconstruction.kokuno_a4_logx_xi11_composite_divergence_independent_audit import (
+              enforce_preregistered_gates,
+          )
+          report = json.loads(
+              Path('receipts/independent_report.json').read_text(encoding='utf-8')
+          )
+          enforce_preregistered_gates(report)
+          boundary = report['truth_boundary']
+          assert boundary['leading_plus_oscillatory_ns_residual_assessed'] is False
+          assert boundary['after_correction_ns_residual_assessed'] is False
+          assert boundary['pde_validated'] is False
+          assert report['gates']['final_project_momentum_gate_unchanged'] == 1e-3
+          assert report['gates']['final_project_divergence_gate_unchanged'] == 1e-5
+          PY
