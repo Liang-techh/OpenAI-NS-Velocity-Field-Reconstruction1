@@ -65,6 +65,11 @@ jobs:
             'src/openai_ns_reconstruction/kokuno_current_i4_nonlinear_radial_force.py' \
             'e28eac6f7fb7f3191a024b052bcf677cff8d74d2'
           fetch_and_check \
+            'kokuno-agent4/current-i4-radial-stress-independent-audit-115' \
+            '3f3fd169ce79a2e44b90b50353415d057119e63f' \
+            'src/openai_ns_reconstruction/kokuno_a4_current_i4_radial_stress_independent_audit.py' \
+            '97387bcab05098ecc622372ec3aa08150d79b89d'
+          fetch_and_check \
             'kokuno-agent4/current-main-pulse-composite-divergence-114' \
             '71432cec314c2ab11b1bf38c83609ad7d64a6654' \
             'src/openai_ns_reconstruction/kokuno_a4_current_main_pulse_composite_divergence_independent_audit.py' \
@@ -113,6 +118,8 @@ jobs:
           truth = reg['truth_boundary']
           assert truth['matching_xi11_agent2_project_composite_materialized'] is True
           assert truth['current_i4_radial_force_materialized'] is True
+          assert truth['agent4_matching_current_i4_radial_stress_audit_present'] is True
+          assert truth['agent4_matching_current_i4_radial_stress_audit_admitted'] is False
           assert truth['agent4_matching_xi11_composite_audit_present'] is False
           assert truth['agent4_matching_current_i4_radial_force_audit_present'] is False
           assert truth['complete_identity_bound_ns_defect_materialized'] is False
