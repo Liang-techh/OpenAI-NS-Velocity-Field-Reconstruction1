@@ -1,0 +1,147 @@
+name: kokuno-agent2-current-i4-rf44-exact-backend-restack
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_current_i4_exact_backend_correction_firewall.py'
+      - 'tests/test_constrained_kokuno_current_i4_rf44_exact_backend_restack.py'
+      - '.github/workflows/kokuno-agent2-current-i4-rf44-exact-backend-restack.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout exact A2 restack head
+        uses: actions/checkout@v4
+        with:
+          path: a2
+          fetch-depth: 0
+
+      - name: Verify exact A2 parent and three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          parent=cab837f6358c8d29e3d470061879a58b3f7e1454
+          git -C a2 merge-base --is-ancestor "$parent" HEAD
+          test "$(git -C a2 rev-list --count "$parent"..HEAD)" -eq 1
+          git -C a2 diff --name-only "$parent"...HEAD | sort > /tmp/changed.txt
+          cat > /tmp/expected.txt <<'EOF'
+          .github/workflows/kokuno-agent2-current-i4-rf44-exact-backend-restack.yml
+          src/openai_ns_reconstruction/kokuno_current_i4_exact_backend_correction_firewall.py
+          tests/test_constrained_kokuno_current_i4_rf44_exact_backend_restack.py
+          EOF
+          diff -u /tmp/expected.txt /tmp/changed.txt
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_current_i4_rf44_prestate_provider.py)" = 0d8bb6471a4b7825b1b4b428d3b2c38d207729fd
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_current_i4_exact_backend_correction_firewall.py)" = 0152a85f7fbaf9c32c24c9d5c7d0d11166e3b157
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_current_i4_auxiliary_t2_provider.py)" = 96168ac6583ad5e71aa044bd558c6feeadf051f4
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_current_i4_rf34_rf39_pinned_provider.py)" = b99b3bee2b2dad6003c11acae7946c9be53347fb
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install restacked tree
+        run: python -m pip install -e 'a2[dev]'
+
+      - name: Compile and run focused contracts
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            a2/src/openai_ns_reconstruction/kokuno_current_i4_rf44_prestate_provider.py \
+            a2/src/openai_ns_reconstruction/kokuno_current_i4_exact_backend_correction_firewall.py \
+            a2/tests/test_constrained_kokuno_current_i4_rf44_exact_backend_restack.py
+          python -m pytest -q -W error \
+            a2/tests/test_constrained_kokuno_current_i4_rf44_prestate_provider.py \
+            a2/tests/test_constrained_kokuno_current_i4_rf44_exact_backend_restack.py
+
+      - name: Materialize topology and truth-boundary receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          import openai_ns_reconstruction.kokuno_current_i4_exact_backend_correction_firewall as fw
+          import openai_ns_reconstruction.kokuno_current_i4_rf44_prestate_provider as pre
+
+          receipt = {
+              'schema': 'kokuno-a2-current-i4-rf44-exact-backend-restack-v1',
+              'task': 'K2-OSC-114',
+              'parent_a2_prestate_head': 'cab837f6358c8d29e3d470061879a58b3f7e1454',
+              'parent_a2_prestate_blob': '0d8bb6471a4b7825b1b4b428d3b2c38d207729fd',
+              'imported_a3_firewall_head': '25f2793091cbf8dc2d8f966b941c32eaff63d876',
+              'imported_a3_firewall_blob': '0152a85f7fbaf9c32c24c9d5c7d0d11166e3b157',
+              'common_parent_a3_1210_head': 'e75940c33127b0725ddc703eaae97590158f2a56',
+              'same_lineage_materialized': True,
+              'rf44_prestate_materialized': pre.truth_boundary()['rf44_preupdate_state_materialized'],
+              'exact_backend_rebind_required': fw.truth_boundary()['exact_backend_rebind_required'],
+              'a2_truth_boundary': pre.truth_boundary(),
+              'a3_firewall_truth_boundary': fw.truth_boundary(),
+              'concrete_a2_1080_960_runtime_dependencies_restored': False,
+              'real_exact_backend_bind_executed': False,
+              'repository_candidate_scientific_correction_evidence': False,
+              'rf44_postupdate_state_materialized': False,
+              'rf44_correction_increment_materialized': False,
+              'cartesian_delta_u_materialized': False,
+              'finite_correction_cycle_run': False,
+              'heldout_ns_residual_assessed': False,
+              'pde_validated': False,
+          }
+          Path('artifacts/current_i4_rf44_exact_backend_restack_receipt.json').write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + '\n', encoding='utf-8'
+          )
+          PY
+
+      - name: Upload receipt before truth enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent2-current-i4-rf44-exact-backend-restack
+          path: artifacts/
+
+      - name: Enforce no cross-branch evidence laundering
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = json.loads(Path('artifacts/current_i4_rf44_exact_backend_restack_receipt.json').read_text())
+          assert p['same_lineage_materialized'] is True
+          assert p['rf44_prestate_materialized'] is True
+          assert p['exact_backend_rebind_required'] is True
+          assert p['parent_a2_prestate_blob'] == '0d8bb6471a4b7825b1b4b428d3b2c38d207729fd'
+          assert p['imported_a3_firewall_blob'] == '0152a85f7fbaf9c32c24c9d5c7d0d11166e3b157'
+          assert p['a2_truth_boundary']['raw_provider_blob_pin_relabelled_as_rf44_prestate_pin'] is False
+          assert p['a2_truth_boundary']['source_exact_rf44_prestate_claimed'] is False
+          assert p['a3_firewall_truth_boundary']['manual_ExactCurrentI4NonlinearBackend_dataclass_construction_is_sufficient'] is False
+          assert p['a3_firewall_truth_boundary']['zero_or_synthetic_backend_fixture_is_scientific_correction_evidence'] is False
+          assert p['a2_truth_boundary']['forbidden_scientific_controls_exposed'] is False
+          assert p['a3_firewall_truth_boundary']['forbidden_scientific_controls_exposed'] is False
+          for key in (
+              'concrete_a2_1080_960_runtime_dependencies_restored',
+              'real_exact_backend_bind_executed',
+              'repository_candidate_scientific_correction_evidence',
+              'rf44_postupdate_state_materialized',
+              'rf44_correction_increment_materialized',
+              'cartesian_delta_u_materialized',
+              'finite_correction_cycle_run',
+              'heldout_ns_residual_assessed',
+              'pde_validated',
+          ):
+              assert p[key] is False
+          assert p['a2_truth_boundary']['final_normalized_momentum_gate'] == 1.0e-3
+          assert p['a3_firewall_truth_boundary']['final_normalized_momentum_gate'] == 1.0e-3
+          assert p['a2_truth_boundary']['final_normalized_divergence_gate'] == 1.0e-5
+          assert p['a3_firewall_truth_boundary']['final_normalized_divergence_gate'] == 1.0e-5
+          assert p['a2_truth_boundary']['residual_defined_free_forcing_allowed'] is False
+          assert p['a3_firewall_truth_boundary']['residual_defined_free_forcing_allowed'] is False
+          PY
