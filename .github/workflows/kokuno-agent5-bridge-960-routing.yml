@@ -31,7 +31,7 @@ jobs:
           set -euo pipefail
           parent="9784da1596a71d7d60dc4759f7571cb33f17d904"
           git merge-base --is-ancestor "$parent" HEAD
-          test "$(git rev-list --count "$parent"..HEAD)" -eq 3
+          test "$(git rev-list --count "$parent"..HEAD)" -eq 4
           git diff --name-only "$parent"..HEAD | sort > /tmp/changed.txt
           cat > /tmp/expected.txt <<'EOF'
           .github/workflows/kokuno-agent5-bridge-960-routing.yml
@@ -89,11 +89,12 @@ jobs:
             exit 1
           fi
 
-          if git cat-file -e "$a2:src/openai_ns_reconstruction/kokuno_current_i4_composite_provider.py" 2>/dev/null; then
+          composite="src/openai_ns_reconstruction/kokuno_current_i4_leading_oscillatory_identity.py"
+          if git cat-file -e "$a2:$composite" 2>/dev/null; then
             echo "unexpected exact A2 #1080 composite runtime on A2 route" >&2
             exit 1
           fi
-          if git cat-file -e "$a3:src/openai_ns_reconstruction/kokuno_current_i4_composite_provider.py" 2>/dev/null; then
+          if git cat-file -e "$a3:$composite" 2>/dev/null; then
             echo "unexpected exact A2 #1080 composite runtime on A3 route" >&2
             exit 1
           fi
