@@ -1,0 +1,146 @@
+name: kokuno-agent4-postswirl-release2-independent-audit
+
+on:
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_a4_postswirl_release2_independent_audit.py"
+      - "tests/test_constrained_kokuno_a4_postswirl_release2_independent_audit.py"
+      - ".github/workflows/kokuno-agent4-postswirl-release2-independent-audit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  independent-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Assert exact A1 ancestry and minimal three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          parent=18e75e6e2df43206147db34788c68ee6a7fa0f37
+          git merge-base --is-ancestor "$parent" HEAD
+          test "$(git rev-list --count "$parent"..HEAD)" -eq 3
+          mapfile -t changed < <(git diff --name-only "$parent"...HEAD | sort)
+          printf '%s\n' "${changed[@]}"
+          test "${#changed[@]}" -eq 3
+          expected=(
+            ".github/workflows/kokuno-agent4-postswirl-release2-independent-audit.yml"
+            "src/openai_ns_reconstruction/kokuno_a4_postswirl_release2_independent_audit.py"
+            "tests/test_constrained_kokuno_a4_postswirl_release2_independent_audit.py"
+          )
+          mapfile -t expected_sorted < <(printf '%s\n' "${expected[@]}" | sort)
+          test "$(printf '%s\n' "${changed[@]}")" = "$(printf '%s\n' "${expected_sorted[@]}")"
+          test "$(git hash-object src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_postswirl_release2.py)" = 101d8da6b3deff2322e5c2efaea278fefa7d19e3
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+
+      - name: Compile independent validator and focused regression
+        run: |
+          python -m py_compile src/openai_ns_reconstruction/kokuno_a4_postswirl_release2_independent_audit.py
+          python -m py_compile tests/test_constrained_kokuno_a4_postswirl_release2_independent_audit.py
+
+      - name: Materialize save-reloaded candidate and raw independent report
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/kokuno_agent4_postswirl_release2_independent_audit
+          python - <<'PY'
+          import json
+          import traceback
+          from pathlib import Path
+          from openai_ns_reconstruction.kokuno_a4_postswirl_release2_independent_audit import (
+              TASK,
+              UPSTREAM_HEAD,
+              audit_loaded_release2,
+              default_candidate,
+          )
+          from openai_ns_reconstruction.kokuno_pa16_current_cartesian_postswirl_release2 import (
+              KokunoPA16CurrentCartesianPostSwirlRelease2,
+          )
+
+          root = Path("artifacts/kokuno_agent4_postswirl_release2_independent_audit")
+          candidate_path = root / "candidate.json"
+          report_path = root / "independent_report.json"
+          candidate = default_candidate()
+          candidate.save_configuration(candidate_path)
+          loaded = KokunoPA16CurrentCartesianPostSwirlRelease2.load_configuration(candidate_path)
+
+          cfg = loaded.configuration()
+          assert cfg["parent_exact_head"] == "e0cf691884fd371c477de5ae55a18cdabbd72e81"
+          assert cfg["source_commit"] == "143f6773feb424ad9ed3a8d116653200f20346b7"
+          assert cfg["source_blob"] == "205a99807302e21a51c5eaf223390c0dfc42bcd0"
+          assert loaded.truth_boundary["source_l_minus1_to_minus_h_transition_materialized"] is True
+          assert loaded.truth_boundary["current_cartesian_l_minus1_to_minus_h_composed"] is True
+          assert loaded.truth_boundary["heldout_ns_residual_assessed"] is False
+          assert loaded.truth_boundary["pde_validated"] is False
+
+          try:
+              report = audit_loaded_release2(loaded, candidate)
+          except Exception as exc:
+              report = {
+                  "schema": "kokuno-a4-postswirl-release2-independent-audit-exception-v1",
+                  "task": TASK,
+                  "upstream_head": UPSTREAM_HEAD,
+                  "candidate_semantic_sha256": loaded.semantic_sha256,
+                  "audit_exception_type": type(exc).__name__,
+                  "audit_exception": str(exc),
+                  "traceback": traceback.format_exc(),
+                  "pde_validated": False,
+              }
+          report_path.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
+          print(json.dumps(report, indent=2, sort_keys=True))
+          PY
+
+      - name: Upload raw candidate and scientific receipt before enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent4-postswirl-release2-independent-audit
+          path: artifacts/kokuno_agent4_postswirl_release2_independent_audit/
+
+      - name: Run focused implementation-distinct regressions
+        run: |
+          python -m pytest -q -W error tests/test_constrained_kokuno_a4_postswirl_release2_independent_audit.py
+
+      - name: Enforce preregistered K4-VAL-125 gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction.kokuno_a4_postswirl_release2_independent_audit import (
+              enforce_preregistered_gates,
+              public_api_has_no_scientific_tuning_knobs,
+          )
+
+          path = Path("artifacts/kokuno_agent4_postswirl_release2_independent_audit/independent_report.json")
+          report = json.loads(path.read_text())
+          if "audit_exception" in report:
+              raise AssertionError(
+                  f"K4-VAL-125 scientific audit raised {report.get('audit_exception_type')}: "
+                  f"{report['audit_exception']}"
+              )
+          enforce_preregistered_gates(report)
+          assert public_api_has_no_scientific_tuning_knobs() is True
+          assert report["truth_boundary"]["pde_validated"] is False
+          assert report["final_project_admission_ready"] is False
+          assert report["gates"]["final_project_momentum_gate_unchanged"] == 1.0e-3
+          assert report["gates"]["final_project_divergence_gate_unchanged"] == 1.0e-5
+          assert report["gates"]["final_project_quadrature_unchanged"] == [24, 48, 96]
+          PY
