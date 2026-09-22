@@ -1,0 +1,145 @@
+name: kokuno-agent4-relative-swirl-split-independent-audit
+
+on:
+  push:
+    branches:
+      - kokuno-agent4/relative-swirl-split-audit-121
+  pull_request:
+    branches:
+      - codex/kokuno-agent1-relative-swirl-split
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Check out exact A4 event head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Verify exact A1 #1171 parent and minimal three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          parent=657818dd83e119e6091bd2490d3804c04c3ef723
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+          git merge-base --is-ancestor "$parent" HEAD
+          test "$(git rev-list --count "$parent"..HEAD)" -eq 3
+          mapfile -t files < <(git diff --name-only "$parent"..HEAD)
+          test "${#files[@]}" -eq 3
+          printf '%s\n' "${files[@]}" | sort > /tmp/actual-files
+          printf '%s\n' \
+            .github/workflows/kokuno-agent4-relative-swirl-split-independent-audit.yml \
+            src/openai_ns_reconstruction/kokuno_a4_relative_swirl_split_independent_audit.py \
+            tests/test_constrained_kokuno_a4_relative_swirl_split_independent_audit.py \
+            | sort > /tmp/expected-files
+          diff -u /tmp/expected-files /tmp/actual-files
+          test "$(git rev-parse "$parent")" = "$parent"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install exact A4 head
+        run: python -m pip install -e '.[dev]'
+
+      - name: Materialize save-reloaded candidate and independent scientific receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p receipts
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          import traceback
+
+          from openai_ns_reconstruction import (
+              kokuno_a4_relative_swirl_split_independent_audit as m,
+          )
+          from openai_ns_reconstruction.kokuno_pa16_current_cartesian_relative_swirl_split import (
+              KokunoPA16CurrentCartesianRelativeSwirlSplit,
+          )
+
+          out = Path('receipts')
+          original = m.default_candidate()
+          original.save_configuration(out / 'candidate.json')
+          loaded = KokunoPA16CurrentCartesianRelativeSwirlSplit.load_configuration(
+              out / 'candidate.json'
+          )
+          try:
+              report = m.audit_loaded_split(loaded, original)
+          except Exception as exc:
+              report = {
+                  'schema': m.SCHEMA,
+                  'task': m.TASK,
+                  'upstream_pr': m.UPSTREAM_PR,
+                  'upstream_head': m.UPSTREAM_HEAD,
+                  'scoped_split_channel_gate_passed': False,
+                  'final_project_admission_ready': False,
+                  'failures': ['materialization_or_audit_error'],
+                  'error': f'{type(exc).__name__}: {exc}',
+                  'traceback': traceback.format_exc(),
+                  'truth_boundary': {
+                      'binary64_total_relative_swirl_sum_is_resolved': False,
+                      'current_cartesian_relative_swirl_composed': False,
+                      'leading_only_ns_residual_assessed': False,
+                      'leading_plus_oscillatory_ns_residual_assessed': False,
+                      'after_correction_ns_residual_assessed': False,
+                      'pde_validated': False,
+                  },
+                  'gates': {
+                      'final_project_momentum_gate_unchanged': 1e-3,
+                      'final_project_divergence_gate_unchanged': 1e-5,
+                  },
+              }
+          out.joinpath('independent_report.json').write_text(
+              json.dumps(report, indent=2, sort_keys=True) + '\n', encoding='utf-8'
+          )
+          print(json.dumps(report, indent=2, sort_keys=True))
+          PY
+
+      - name: Upload raw candidate and independent receipt before any enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a4-relative-swirl-split-independent-audit
+          path: receipts/
+          if-no-files-found: error
+
+      - name: Run upstream and A4 focused software regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            src/openai_ns_reconstruction/kokuno_a4_relative_swirl_split_independent_audit.py \
+            tests/test_constrained_kokuno_a4_relative_swirl_split_independent_audit.py
+          python -m pytest -q -W error \
+            tests/test_kokuno_pa16_current_cartesian_relative_swirl_split.py \
+            tests/test_constrained_kokuno_a4_relative_swirl_split_independent_audit.py
+
+      - name: Enforce preregistered scoped gates without truth promotion
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          from openai_ns_reconstruction.kokuno_a4_relative_swirl_split_independent_audit import (
+              enforce_preregistered_gates,
+          )
+
+          report = json.loads(Path('receipts/independent_report.json').read_text(encoding='utf-8'))
+          enforce_preregistered_gates(report)
+          assert report['truth_boundary']['binary64_total_relative_swirl_sum_is_resolved'] is False
+          assert report['truth_boundary']['current_cartesian_relative_swirl_composed'] is False
+          assert report['truth_boundary']['pde_validated'] is False
+          assert report['final_project_admission_ready'] is False
+          assert report['gates']['final_project_momentum_gate_unchanged'] == 1e-3
+          assert report['gates']['final_project_divergence_gate_unchanged'] == 1e-5
+          PY
