@@ -1,0 +1,147 @@
+{
+  "cr001_invariants": {
+    "constraints_blob_sha": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "derivative_steps": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "evaluation_box": [
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ]
+    ],
+    "forcing_family_change_this_increment": false,
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_parameter_bounds": {
+      "a": [
+        0.0,
+        10.0
+      ],
+      "c": [
+        0.0,
+        10.0
+      ]
+    },
+    "held_out_points": 4096,
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "quadrature_orders_per_axis": [
+      24,
+      48,
+      96
+    ],
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "support": "r < 2 and abs(z) < 2",
+    "threshold_relaxation_this_increment": false,
+    "thresholds": {
+      "divergence_L2": 1e-05,
+      "divergence_max": 1e-05,
+      "pde_residual_L2": 0.001,
+      "pde_residual_max": 0.001
+    },
+    "time_interval": [
+      0.25,
+      0.75
+    ],
+    "validation_seed": 914027
+  },
+  "evidence_transfer_firewall": {
+    "allowed_claim": "Exact #1133 materializes the current autonomous Cartesian leading candidate through the public source-coordinate pulse endpoint xi=13 with deterministic save/load identity and endpoint M/J closure.",
+    "forbidden_implications": [
+      "source-coordinate pulse endpoint xi=13 -> terminal/exterior/global leading completion",
+      "source-coordinate pulse endpoint xi=13 -> canonical physical support endpoint",
+      "source-coordinate pulse endpoint xi=13 -> canonical evaluation-box boundary",
+      "endpoint M/J algebraic closure -> held-out complete NS residual or PDE validation",
+      "stage-scoped callable/save-load velocity -> global project-domain coverage",
+      "stage-scoped callable/save-load velocity -> unqualified Kokuno velocity_export_ready",
+      "finite axis-regular xi13 output -> visual correspondence",
+      "finite axis-regular xi13 output -> paper exactness or exact OpenAI-field identity"
+    ]
+  },
+  "exact_parent": {
+    "candidate_module": "src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_pulse_end_compensated.py",
+    "candidate_module_blob_sha": "4b8fad0781d74c934b6cc6fe7805a11d16807a92",
+    "head_sha": "3b4af71c4ab547bc11f9f3e320afa4b62c25b930",
+    "pr": 1133
+  },
+  "four_way_provenance": {
+    "autonomous_design": [
+      "The executable current candidate retains the repository-autonomous A_principal amplitude proxy.",
+      "The executable pointwise C-infinity beta1/beta2 bump realization is repository-autonomous.",
+      "The overflow-safe log-X/log-F chart, fixed quadrature realization, semantic identity and this delivery-domain firewall are repository-autonomous."
+    ],
+    "pending_unknown": [
+      "source-exact Amp(eta) and hidden pointwise bump realization",
+      "terminal/exterior heat continuation and outer/global current leading velocity",
+      "a self-contained same-identity leading-plus-oscillatory composite through xi=13 and its independent audit",
+      "matched Cartesian pressure and preregistered restricted forcing for the Kokuno route",
+      "held-out complete NS residual and PDE validation",
+      "visual correspondence, paper exactness and exact OpenAI-field identity"
+    ],
+    "public_source_facts": [
+      "The pinned corrected Kokuno reconstruction has a source-coordinate axial-pulse endpoint at xi=13 after the two public pulse-end bump rows.",
+      "The public pulse-end construction supplies the already-pinned M/J two-row closure structure, centers, width and row slopes.",
+      "The source-coordinate pulse endpoint is a construction-stage coordinate statement; it is not a statement that the canonical project physical support ends there."
+    ],
+    "user_requirements": [
+      "Deliver an explicit computable save/loadable velocity(x,y,z,t)->[u,v,w] without making PDE validation a prerequisite for callable delivery.",
+      "Keep velocity_export_ready, visual_correspondence_verified, pde_validated and paper_exact as independent states.",
+      "Do not use residual-defined free forcing, amplitude collapse or post-hoc threshold relaxation."
+    ]
+  },
+  "future_extension_promotion_rule": {
+    "fresh_downstream_numerical_audit_required": true,
+    "fresh_finite_cartesian_domain_audit_required": true,
+    "fresh_save_load_audit_required": true,
+    "new_identity_required_for_terminal_or_exterior_extension": true,
+    "reuse_xi13_prefix_receipts_as_outer_domain_evidence": false,
+    "statement": "Any terminal/exterior/global continuation beyond exact #1133's xi=13 fail-closed domain must receive a new representation/candidate identity and fresh save/load, finite Cartesian output, canonical-domain/support coverage and downstream numerical audits before its evidence may be promoted."
+  },
+  "independent_delivery_states": {
+    "canonical_eq45_pde_validated": false,
+    "canonical_eq45_velocity_export_ready": true,
+    "canonical_eq45_visual_correspondence_verified": false,
+    "kokuno_global_velocity_export_ready": false,
+    "kokuno_openai_field_identified": false,
+    "kokuno_paper_exact": false,
+    "kokuno_pde_validated": false,
+    "kokuno_stage_callable_ready": true,
+    "kokuno_visual_correspondence_verified": false
+  },
+  "mechanics_witness": {
+    "classification": "autonomous_mechanics_only",
+    "endpoint": 13.0,
+    "outer_probe": 13.5,
+    "statement": "Two synthetic continuations can agree exactly on every xi<=13 prefix value and differ immediately outside xi=13; therefore prefix callability and endpoint closure do not identify a terminal/exterior continuation."
+  },
+  "schema": "cr002-kokuno-xi13-global-delivery-domain-scope-v1",
+  "stage_delivery_scope": {
+    "current_cartesian_pulse_endpoint_xi13_materialized": true,
+    "current_endpoint_MJ_closure_numerically_assessed": true,
+    "current_stage_save_load_identity_materialized": true,
+    "current_stage_velocity_callable_xyzt": true,
+    "global_project_domain_coverage_verified": false,
+    "hard_fail_closed_beyond_xi13": true,
+    "heldout_complete_ns_residual_assessed": false,
+    "matched_global_pressure_materialized": false,
+    "outer_global_leading_velocity_materialized": false,
+    "public_source_pulse_endpoint_xi": 13.0,
+    "restricted_forcing_materialized": false,
+    "terminal_exterior_tail_materialized": false,
+    "unified_global_kokuno_velocity_export_ready": false,
+    "xi13_is_canonical_evaluation_box_boundary": false,
+    "xi13_is_canonical_physical_support_endpoint": false
+  },
+  "task_id": "CR002-KOKUNO-XI13-GLOBAL-DELIVERY-DOMAIN-139"
+}
