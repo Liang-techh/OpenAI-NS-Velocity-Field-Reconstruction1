@@ -1,0 +1,118 @@
+name: kokuno-agent1-postswirl-lminus1-hold
+
+on:
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_postswirl_lminus1_hold.py"
+      - "tests/test_kokuno_pa16_current_cartesian_postswirl_lminus1_hold.py"
+      - ".github/workflows/kokuno-agent1-postswirl-lminus1-hold.yml"
+  workflow_dispatch:
+
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+
+      - name: Assert exact A1 ancestry and minimal three-file scope
+        shell: bash
+        run: |
+          git merge-base --is-ancestor f5b5b8b532e0802e181bfead5e748cd4008906bf HEAD
+          mapfile -t changed < <(git diff --name-only f5b5b8b532e0802e181bfead5e748cd4008906bf...HEAD | sort)
+          printf '%s\n' "${changed[@]}"
+          test "${#changed[@]}" -eq 3
+          expected=(
+            ".github/workflows/kokuno-agent1-postswirl-lminus1-hold.yml"
+            "src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_postswirl_lminus1_hold.py"
+            "tests/test_kokuno_pa16_current_cartesian_postswirl_lminus1_hold.py"
+          )
+          mapfile -t expected_sorted < <(printf '%s\n' "${expected[@]}" | sort)
+          test "$(printf '%s\n' "${changed[@]}")" = "$(printf '%s\n' "${expected_sorted[@]}")"
+
+      - name: Verify pinned corrected-source blob
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib, urllib.request
+          url = "https://raw.githubusercontent.com/KokunoYumeto/yang-mills-interacting-workbench/143f6773feb424ad9ed3a8d116653200f20346b7/navier-stokes/navier_stokes_workbench.tex"
+          data = urllib.request.urlopen(url, timeout=30).read()
+          digest = hashlib.sha1(b"blob %d\0" % len(data) + data).hexdigest()
+          expected = "205a99807302e21a51c5eaf223390c0dfc42bcd0"
+          if digest != expected:
+              raise SystemExit(f"corrected source blob drifted: {digest} != {expected}")
+          text = data.decode("utf-8")
+          if "A=\\tfrac12+h" not in text or "D=\\tfrac12-h" not in text:
+              raise SystemExit("public A/D-to-h coordinate relation missing from pinned source")
+          print("corrected 2026-09-09 source blob and A/D-to-h relation pinned")
+          PY
+
+      - name: Compile focused files
+        run: |
+          python -m py_compile src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_postswirl_lminus1_hold.py
+          python -m py_compile tests/test_kokuno_pa16_current_cartesian_postswirl_lminus1_hold.py
+
+      - name: Run exact parent and new focused regressions
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_pa16_current_cartesian_postswirl_release1.py \
+            tests/test_kokuno_pa16_current_cartesian_postswirl_lminus1_hold.py
+
+      - name: Emit deterministic l=-1 hold receipt
+        run: |
+          mkdir -p artifacts/kokuno_agent1_postswirl_lminus1_hold
+          python - <<'PY'
+          import json, math
+          from pathlib import Path
+          from openai_ns_reconstruction.kokuno_pa16_current_cartesian_postswirl_lminus1_hold import (
+              KokunoPA16CurrentCartesianPostSwirlLMinus1Hold,
+          )
+
+          root = Path("artifacts/kokuno_agent1_postswirl_lminus1_hold")
+          candidate = KokunoPA16CurrentCartesianPostSwirlLMinus1Hold()
+          receipt = candidate.hold_report()
+          config = candidate.configuration()
+          truth = receipt["truth_boundary"]
+          h = candidate.h_value
+
+          assert 0.0 < h < 0.01
+          assert abs(candidate.hold_length - 4.0 * math.log(1.0 / h)) <= 2e-14
+          assert receipt["parent_child_decimal_seam_exact"] is True
+          assert abs(receipt["E_ratio_end_min"] / (h**6) - 1.0) <= 1e-12
+          assert abs(receipt["F_ratio_end_min"] / (h**8) - 1.0) <= 1e-12
+          assert truth["source_l_minus1_hold_materialized"] is True
+          assert truth["current_h_bound_from_similarity_exponent"] is True
+          assert truth["source_exact_h_recovered"] is False
+          assert truth["end_to_end_96digit_arithmetic_materialized"] is False
+          assert truth["source_l_minus1_to_minus_h_transition_materialized"] is False
+          assert truth["source_terminal_multiplier_materialized"] is False
+          assert truth["source_exterior_heat_replacement_materialized"] is False
+          assert truth["outer_global_leading_velocity_materialized"] is False
+          assert truth["unified_global_cartesian_velocity_export_ready"] is False
+          assert truth["heldout_ns_residual_assessed"] is False
+          assert truth["pde_validated"] is False
+          assert truth["paper_exact"] is False
+          assert truth["openai_field_identified"] is False
+
+          (root / "receipt.json").write_text(json.dumps(receipt, indent=2, sort_keys=True) + "\n")
+          (root / "config.json").write_text(json.dumps(config, indent=2, sort_keys=True) + "\n")
+          print(json.dumps(receipt, indent=2, sort_keys=True))
+          PY
+
+      - name: Upload l=-1 hold receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-postswirl-lminus1-hold
+          path: artifacts/kokuno_agent1_postswirl_lminus1_hold/
