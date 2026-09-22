@@ -1,27 +1,25 @@
-"""Kokuno Agent-5 fail-closed routing for the newest A1/A2 seams.
+"""Kokuno Agent-5 fail-closed routing for the newest A1/A2/A3 seams.
 
-This module is integration/provenance glue only. It does not alter Agent-1--4
-mathematics or transfer scoped evidence across candidate identities.
+Integration/provenance glue only: no Agent-1--4 mathematics is changed and no
+scoped evidence is transferred across candidate identities.
 
 Fresh facts bound here:
+* A1 #1159 materializes only the current-minus-imported contribution to the late
+  relative-swirl angular target. The imported/base absolute target, total target
+  and Cartesian relative-swirl composition remain unavailable. The newest
+  bounded Cartesian leading therefore remains exact A1 #1148.
+* A2 #1158 adds conservative identity-bound outer-support execution certificates
+  to the bounded complete-curl multi-harmonic family. The source provider remains
+  external; this is not a self-contained project field.
+* A3 #1161 now delivers the current-I4 fixed-Q coordinate/observable preflight.
+  It uses the physical azimuthal theta mean, and correctly refuses to relabel it
+  as the source RF30 normalized Haar mean on the missing auxiliary T^2. Hence it
+  does not authorize an RF30 repository candidate state or materialize RF30 defect.
+* A4 #1152 remains a leading-only divergence audit of exact A1 #1148. It does not
+  audit A1 #1159 and is not complete-NS evidence.
 
-* A1 #1159 materializes only the current-minus-imported contribution to the
-  late relative-swirl angular target. The imported/base absolute target is not
-  materialized, so the total target and Cartesian relative-swirl composition
-  remain unavailable. The newest bounded Cartesian leading therefore remains
-  exact A1 #1148.
-* A2 #1158 adds identity-bound conservative outer-support execution
-  certificates to the bounded complete-curl multi-harmonic family. The source
-  input provider remains external; this is not a self-contained project field.
-* A3's newest delivered frontier remains #1150. Central coordination has a
-  newer claimed RF30 fixed-Q preflight, but a claim is not a delivery and is
-  recorded only as pending/not evidence.
-* A4 #1152 remains an implementation-distinct, leading-only divergence audit
-  of exact A1 #1148. It does not audit #1159 and is not complete-NS evidence.
-
-Project gates remain frozen: normalized momentum sampled-max and volume-L2
-<=1e-3; normalized divergence sampled-max and volume-L2 <=1e-5; canonical
-quadrature [24,48,96]; residual-defined/free forcing forbidden.
+Frozen gates: normalized momentum max/L2 <=1e-3; divergence max/L2 <=1e-5;
+canonical quadrature [24,48,96]; residual-defined/free forcing forbidden.
 """
 
 from __future__ import annotations
@@ -98,20 +96,31 @@ AGENT2_SUPPORT_CERTIFIED_MULTIHARMONIC = {
     "actions_status_at_registration": "queued",
 }
 
-AGENT3_DELIVERED_RF49 = copy.deepcopy(parent_a5.AGENT3_RF49_GAIN_FIREWALL)
-AGENT3_PENDING_RF30_PREFLIGHT_CLAIM = {
+AGENT3_CURRENT_I4_RF30_FIXEDQ_PREFLIGHT = {
     "task": "KOKUNO-A3-CURRENT-I4-RF30-FIXEDQ-PREFLIGHT-126",
-    "central_issue": 15,
-    "claim_comment_id": 5773639838,
-    "exact_base_head": "e0b48ccfa964db0caa9d657961d451a21e1d53bf",
-    "state": "claimed_not_delivered_at_registration",
-    "pr": None,
-    "head": None,
-    "materialized": False,
-    "candidate_evidence": False,
-    "may_promote_truth_state": False,
+    "pr": 1161,
+    "head": "cafab2098f00c3dc2ed5668e1b12bdb38a1f31e8",
+    "branch": "agent3/current-i4-rf30-fixedq-preflight-20260922",
+    "source_path": "src/openai_ns_reconstruction/kokuno_current_i4_rf30_fixedq_preflight.py",
+    "source_blob": "b2fac4318a40342d6c08170bf7093c31685c53ab",
+    "parent_pr": 1150,
+    "parent_head": "e0b48ccfa964db0caa9d657961d451a21e1d53bf",
+    "stage": "current-I4-fixedQ-coordinate-and-physical-azimuthal-covariance-preflight",
+    "fixed_q_coordinate_map_materialized": True,
+    "normalized_physical_azimuthal_mean_used": True,
+    "source_auxiliary_t2_provider_available": False,
+    "normalized_source_auxiliary_t2_haar_mean_used": False,
+    "rf30_repository_candidate_state_authorized": False,
+    "current_i4_rf30_defect_materialized": False,
+    "correction_applied": False,
+    "heldout_ns_residual_assessed": False,
+    "pde_validated": False,
+    "dedicated_run": 35707376709,
+    "repository_tests_run": 35707376668,
+    "actions_status_at_registration": "queued",
 }
 
+AGENT3_DELIVERED_RF49 = copy.deepcopy(parent_a5.AGENT3_RF49_GAIN_FIREWALL)
 LATEST_CARTESIAN_LEADING = copy.deepcopy(parent_a5.AGENT1_HOLD_PREFIX)
 AGENT4_HOLD_PREFIX_AUDIT = copy.deepcopy(parent_a5.AGENT4_HOLD_PREFIX_LEADING_AUDIT)
 LATEST_SELF_CONTAINED_PROJECT_COMPOSITE = copy.deepcopy(parent_a5.LATEST_SELF_CONTAINED_PROJECT_COMPOSITE)
@@ -145,8 +154,11 @@ def _truth_boundary() -> dict[str, Any]:
         "agent4_matching_xi11_composite_audit_scoped_gate_passed": None,
         "rf49_source_exponent_gain_firewall_materialized": True,
         "rf49_gains_are_raw_residual_contraction_factors": False,
-        "rf30_fixedq_preflight_claim_present": True,
-        "rf30_fixedq_preflight_delivered": False,
+        "current_i4_fixedq_coordinate_observable_preflight_materialized": True,
+        "current_i4_physical_azimuthal_covariance_materialized": True,
+        "current_i4_source_auxiliary_t2_provider_materialized": False,
+        "current_i4_source_auxiliary_t2_haar_mean_materialized": False,
+        "current_i4_rf30_repository_candidate_state_authorized": False,
         "current_i4_source_chart_backend_materialized": False,
         "current_i4_rf30_defect_materialized": False,
         "current_i4_source_specific_gain_evidence": False,
@@ -178,7 +190,8 @@ def build_identity_firewall() -> dict[str, bool]:
         "agent4_1152_not_evidence_for_agent1_1159": True,
         "agent2_1158_support_metadata_not_source_exact_support": True,
         "agent2_1158_provider_family_not_self_contained_project_candidate": True,
-        "agent3_pending_claim_not_delivery_or_candidate_evidence": True,
+        "agent3_1161_physical_theta_mean_not_source_auxiliary_t2_haar_mean": True,
+        "agent3_1161_preflight_not_rf30_defect_or_correction_evidence": True,
         "agent3_rf49_exponent_gain_not_raw_residual_contraction": True,
         "latest_self_contained_project_composite_stays_agent2_1117": True,
         "cross_identity_evidence_transfer_allowed": False,
@@ -213,7 +226,7 @@ def build_registration() -> dict[str, Any]:
             "latest_self_contained_project_composite": copy.deepcopy(LATEST_SELF_CONTAINED_PROJECT_COMPOSITE),
             "xi11_composite_validator": copy.deepcopy(AGENT4_XI11_COMPOSITE_AUDIT),
             "rf49_delivered": copy.deepcopy(AGENT3_DELIVERED_RF49),
-            "rf30_fixedq_preflight_pending_claim": copy.deepcopy(AGENT3_PENDING_RF30_PREFLIGHT_CLAIM),
+            "current_i4_rf30_fixedq_preflight": copy.deepcopy(AGENT3_CURRENT_I4_RF30_FIXEDQ_PREFLIGHT),
             "holdprefix_leading_validator": copy.deepcopy(AGENT4_HOLD_PREFIX_AUDIT),
             "current_i4_real_radial_force": copy.deepcopy(CURRENT_I4_REAL_RADIAL_FORCE),
             "current_i4_radial_force_validator": copy.deepcopy(AGENT4_CURRENT_I4_RADIAL_FORCE_AUDIT),
@@ -226,7 +239,8 @@ def build_registration() -> dict[str, Any]:
             "materialize the missing imported/base absolute angular target before adding A1 #1159 current correction into a total relative-swirl target",
             "compose the resulting two relative-swirl bumps into the exact A1 current Cartesian identity, then finish terminal/exterior/global leading",
             "make A2 consume that exact global identity into one self-contained leading-plus-oscillatory candidate; provider support certificates alone do not close this seam",
-            "deliver the claimed candidate-bound fixed-Q RF30 preflight and then the real source auxiliary-T2/Haar covariance backend before applying RF34-RF49 mechanics",
+            "supply the missing source auxiliary-T2 provider and normalized Haar covariance so A3 #1161 can authorize the real RF30 state; physical theta covariance cannot substitute",
+            "only after real RF30 state exists may RF31/RF34-RF49 mechanics become same-identity candidate correction evidence and produce Cartesian correction velocity",
             "bind matched pressure and preregistered non-residual-defined restricted forcing before constructing a complete NS defect",
             "only then run the real finite correction cycle and Agent-4 held-out whole-domain 1e-3 momentum gate",
         ],
@@ -242,12 +256,12 @@ def validate_registration(registration: Mapping[str, Any]) -> None:
     if registration.get("registration_sha256") != registration_sha256(registration):
         raise ValueError("routing registration digest mismatch")
 
-    frontiers = registration["frontiers"]
-    a1lead = frontiers["latest_cartesian_leading"]
-    a1corr = frontiers["current_angular_target_correction"]
-    a2 = frontiers["support_certified_multiharmonic"]
-    a3pending = frontiers["rf30_fixedq_preflight_pending_claim"]
-    a4 = frontiers["holdprefix_leading_validator"]
+    f = registration["frontiers"]
+    a1lead = f["latest_cartesian_leading"]
+    a1corr = f["current_angular_target_correction"]
+    a2 = f["support_certified_multiharmonic"]
+    a3 = f["current_i4_rf30_fixedq_preflight"]
+    a4 = f["holdprefix_leading_validator"]
     truth = registration["truth_boundary"]
     firewall = registration["identity_firewall"]
 
@@ -261,8 +275,12 @@ def validate_registration(registration: Mapping[str, Any]) -> None:
         raise ValueError("A2 provider-driven support family misclassified")
     if a2["source_exact_outer_support_geometry_recovered"]:
         raise ValueError("A2 provider support metadata laundered into source truth")
-    if a3pending["materialized"] or a3pending["candidate_evidence"] or a3pending["pr"] is not None:
-        raise ValueError("pending A3 claim laundered into delivery/evidence")
+    if a3["pr"] != 1161 or a3["head"] != "cafab2098f00c3dc2ed5668e1b12bdb38a1f31e8":
+        raise ValueError("A3 RF30 preflight identity drift")
+    if a3["source_auxiliary_t2_provider_available"] or a3["normalized_source_auxiliary_t2_haar_mean_used"]:
+        raise ValueError("physical theta mean laundered into source auxiliary-T2 Haar mean")
+    if a3["rf30_repository_candidate_state_authorized"] or a3["current_i4_rf30_defect_materialized"]:
+        raise ValueError("A3 preflight laundered into RF30 defect/correction evidence")
     if a4["pr"] != 1152 or a4["audited_agent1_pr"] != 1148:
         raise ValueError("A4 hold-prefix audit identity drift")
     if a4["scoped_gate_passed"] is not None or a4["scientifically_admitted"]:
@@ -273,7 +291,9 @@ def validate_registration(registration: Mapping[str, Any]) -> None:
         "current_relative_swirl_total_target_materialized",
         "current_cartesian_relative_swirl_composed",
         "terminal_global_leading_velocity_materialized",
-        "rf30_fixedq_preflight_delivered",
+        "current_i4_source_auxiliary_t2_provider_materialized",
+        "current_i4_source_auxiliary_t2_haar_mean_materialized",
+        "current_i4_rf30_repository_candidate_state_authorized",
         "current_i4_source_chart_backend_materialized",
         "current_i4_rf30_defect_materialized",
         "cartesian_correction_velocity_materialized",
