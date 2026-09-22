@@ -1,0 +1,129 @@
+name: kokuno-agent1-public-pulse-end-compensator
+
+on:
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_public_pulse_end_compensator.py"
+      - "tests/test_kokuno_public_pulse_end_compensator.py"
+      - ".github/workflows/kokuno-agent1-public-pulse-end-compensator.yml"
+  workflow_dispatch:
+
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+
+      - name: Authenticate exact A1 #1107 parent
+        shell: bash
+        run: |
+          git merge-base --is-ancestor 45da043dd2b4cd067f005a72c7e21fd0f2bcf309 HEAD
+          test "$(git show -s --format=%H 45da043dd2b4cd067f005a72c7e21fd0f2bcf309)" = "45da043dd2b4cd067f005a72c7e21fd0f2bcf309"
+          echo "authenticated A1 #1107 parent 45da043dd2b4cd067f005a72c7e21fd0f2bcf309"
+
+      - name: Enforce minimal three-file increment
+        shell: bash
+        run: |
+          mapfile -t files < <(git diff --name-only 45da043dd2b4cd067f005a72c7e21fd0f2bcf309...HEAD | sort)
+          printf '%s\n' "${files[@]}"
+          test "${#files[@]}" -eq 3
+          expected=(
+            ".github/workflows/kokuno-agent1-public-pulse-end-compensator.yml"
+            "src/openai_ns_reconstruction/kokuno_public_pulse_end_compensator.py"
+            "tests/test_kokuno_public_pulse_end_compensator.py"
+          )
+          mapfile -t expected_sorted < <(printf '%s\n' "${expected[@]}" | sort)
+          test "$(printf '%s\n' "${files[@]}")" = "$(printf '%s\n' "${expected_sorted[@]}")"
+
+      - name: Compile focused files
+        run: |
+          python -m py_compile src/openai_ns_reconstruction/kokuno_public_pulse_end_compensator.py
+          python -m py_compile tests/test_kokuno_public_pulse_end_compensator.py
+
+      - name: Run parent-facing and end-compensator regressions
+        run: |
+          python -m pytest -q \
+            tests/test_kokuno_pa16_current_cartesian_main_pulse_logx.py \
+            tests/test_kokuno_public_pulse_end_compensator.py
+
+      - name: Emit deterministic scoped receipt
+        run: |
+          mkdir -p artifacts/kokuno_agent1_public_pulse_end_compensator
+          python - <<'PY'
+          import copy
+          import json
+          import numpy as np
+          from pathlib import Path
+          from openai_ns_reconstruction.kokuno_public_pulse_end_compensator import (
+              KokunoPublicPulseEndCompensator,
+          )
+          from openai_ns_reconstruction.kokuno_source_main_axial_pulse_kernel import (
+              principal_amplitude,
+          )
+
+          root = Path("artifacts/kokuno_agent1_public_pulse_end_compensator")
+          comp = KokunoPublicPulseEndCompensator()
+          amp = principal_amplitude()
+          sol = comp.solve(amp, 0.0, 0.0)
+          truth = comp.truth_boundary
+          assert truth["public_end_compensation_linear_system_materialized"] is True
+          assert truth["repository_autonomous_bump_shape_materialized"] is True
+          assert truth["source_exact_bump_shape_recovered"] is False
+          assert truth["source_exact_amplitude_root_materialized"] is False
+          assert truth["current_lineage_J_entry_materialized"] is False
+          assert truth["current_cartesian_end_compensation_composed"] is False
+          assert truth["pde_validated"] is False
+          assert np.max(np.abs([sol.residual_row1, sol.residual_row2])) < 1e-18
+
+          config = comp.configuration()
+          mutated = copy.deepcopy(config)
+          mutated["truth_boundary"]["current_cartesian_end_compensation_composed"] = True
+          try:
+              KokunoPublicPulseEndCompensator.from_configuration(mutated)
+          except ValueError:
+              pass
+          else:
+              raise SystemExit("truth-boundary mutation did not fail closed")
+
+          receipt = {
+              "schema": config["schema"],
+              "parent_exact_head": config["parent_exact_head"],
+              "semantic_sha256": comp.semantic_sha256,
+              "lambda_value": comp.lambda_value,
+              "row_slopes": [comp.s1, comp.s2],
+              "bump_centers": [comp.y1, comp.y2],
+              "bump_width": comp.width,
+              "matrix_scaled": comp.matrix_scaled.tolist(),
+              "main_moments_scaled": comp.main_moments_scaled.tolist(),
+              "row_condition_number": comp.row_condition_number,
+              "autonomous_principal_amplitude_probe": amp,
+              "autonomous_probe_coefficients": [float(sol.c1), float(sol.c2)],
+              "autonomous_probe_closure_residual": [
+                  float(sol.residual_row1), float(sol.residual_row2)
+              ],
+              "truth_boundary": truth,
+              "note": "algebraic pulse-end component only; probe amplitude is not source-exact Amp(eta)",
+          }
+          (root / "receipt.json").write_text(json.dumps(receipt, indent=2, sort_keys=True) + "\n")
+          (root / "config.json").write_text(json.dumps(config, indent=2, sort_keys=True) + "\n")
+          print(json.dumps(receipt, indent=2, sort_keys=True))
+          PY
+
+      - name: Upload scoped receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-public-pulse-end-compensator
+          path: artifacts/kokuno_agent1_public_pulse_end_compensator/
