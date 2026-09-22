@@ -1,0 +1,134 @@
+name: kokuno-agent3-rf30-auxiliary-t2-haar-bridge
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_rf30_auxiliary_t2_haar_bridge.py'
+      - 'tests/test_constrained_kokuno_rf30_auxiliary_t2_haar_bridge.py'
+      - '.github/workflows/kokuno-agent3-rf30-auxiliary-t2-haar-bridge.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  rf30-auxiliary-t2-haar-bridge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout exact Agent-3 PR head
+        uses: actions/checkout@v4
+        with:
+          path: a3
+          fetch-depth: 0
+
+      - name: Verify one-increment Agent-3 stack
+        shell: bash
+        run: |
+          set -euo pipefail
+          parent=cafab2098f00c3dc2ed5668e1b12bdb38a1f31e8
+          git -C a3 merge-base --is-ancestor "$parent" HEAD
+          test "$(git -C a3 rev-list --count "$parent"..HEAD)" -eq 3
+          git -C a3 diff --name-only "$parent"...HEAD | sort > /tmp/changed.txt
+          cat > /tmp/expected.txt <<'EOF'
+          .github/workflows/kokuno-agent3-rf30-auxiliary-t2-haar-bridge.yml
+          src/openai_ns_reconstruction/kokuno_rf30_auxiliary_t2_haar_bridge.py
+          tests/test_constrained_kokuno_rf30_auxiliary_t2_haar_bridge.py
+          EOF
+          diff -u /tmp/expected.txt /tmp/changed.txt
+          test "$(git -C a3 hash-object src/openai_ns_reconstruction/kokuno_current_i4_rf30_fixedq_preflight.py)" = b2fac4318a40342d6c08170bf7093c31685c53ab
+
+      - name: Checkout corrected Kokuno reader
+        uses: actions/checkout@v4
+        with:
+          repository: KokunoYumeto/yang-mills-interacting-workbench
+          ref: 143f6773feb424ad9ed3a8d116653200f20346b7
+          path: kokuno
+          fetch-depth: 1
+
+      - name: Authenticate corrected-reader source blob
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C kokuno rev-parse HEAD)" = 143f6773feb424ad9ed3a8d116653200f20346b7
+          test "$(git -C kokuno hash-object navier-stokes/navier_stokes_workbench.tex)" = 205a99807302e21a51c5eaf223390c0dfc42bcd0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Agent-3 tree
+        run: python -m pip install -e a3
+
+      - name: Compile and run focused contract tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile a3/src/openai_ns_reconstruction/kokuno_rf30_auxiliary_t2_haar_bridge.py
+          python -m py_compile a3/tests/test_constrained_kokuno_rf30_auxiliary_t2_haar_bridge.py
+          python -m pytest -q -W error a3/tests/test_constrained_kokuno_rf30_auxiliary_t2_haar_bridge.py
+
+      - name: Materialize provenance and truth-boundary receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction.kokuno_rf30_auxiliary_t2_haar_bridge import (
+              source_provenance,
+              truth_boundary,
+          )
+
+          truth = truth_boundary()
+          payload = {
+              'schema': 'kokuno-a3-auxt2-haar-rf30-bridge-receipt-v1',
+              'source_provenance': source_provenance(),
+              'truth_boundary': truth,
+              'interpretation': {
+                  'normalized_auxiliary_t2_haar_operator_executable': True,
+                  'preaveraged_covariance_accepted': False,
+                  'repository_provider_blob_pinned': False,
+                  'rf30_repository_candidate_state_authorized': False,
+                  'rf30_defect_materialized': False,
+                  'heldout_ns_residual_assessed': False,
+              },
+          }
+          Path('artifacts/rf30_auxiliary_t2_haar_bridge_receipt.json').write_text(
+              json.dumps(payload, indent=2, sort_keys=True) + '\n', encoding='utf-8'
+          )
+          PY
+
+      - name: Upload receipt before enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent3-rf30-auxiliary-t2-haar-bridge
+          path: artifacts/
+
+      - name: Enforce provenance firewall
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = json.loads(Path('artifacts/rf30_auxiliary_t2_haar_bridge_receipt.json').read_text())
+          t = p['truth_boundary']
+          assert t['normalized_source_auxiliary_t2_haar_operator_executable'] is True
+          assert t['haar_measure_total_mass_one'] is True
+          assert t['covariance_formed_in_bridge_from_raw_wave_samples'] is True
+          assert t['covariance_derivatives_formed_in_bridge_from_raw_wave_derivatives'] is True
+          assert t['preaveraged_covariance_input_exposed'] is False
+          assert t['physical_theta_mean_promoted_to_source_auxiliary_haar'] is False
+          assert t['agent2_curl_or_jacobian_reimplemented'] is False
+          assert t['repository_provider_blob_pinned'] is False
+          assert t['rf30_repository_candidate_state_authorized'] is False
+          assert t['rf30_defect_materialized'] is False
+          assert t['heldout_ns_residual_assessed'] is False
+          assert t['residual_reduction_claimed'] is False
+          assert t['forbidden_scientific_controls_exposed'] is False
+          assert t['final_normalized_momentum_gate'] == 1.0e-3
+          assert t['final_normalized_divergence_gate'] == 1.0e-5
+          PY
