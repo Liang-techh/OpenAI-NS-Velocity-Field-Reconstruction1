@@ -1,28 +1,30 @@
-"""Fail-closed Kokuno Agent-5 routing checkpoint after A1/A2/A3 advances.
+"""Fail-closed Kokuno Agent-5 routing checkpoint after A1/A2/A3/A4 advances.
 
-This module is integration/provenance glue only.  It records the exact scientific
+This module is integration/provenance glue only. It records the exact scientific
 frontiers without transferring evidence between semantic candidate identities:
 
 * A1 #1124 materializes current-lineage pulse-entry M/J bookkeeping and can feed
-  the already-public #1116 two-row c1/c2 end solve.  It does not compose that
-  end correction into the Cartesian leading field and does not recover the
+  the already-public #1116 two-row c1/c2 end solve. It does not compose that end
+  correction into the Cartesian leading field and does not recover the
   source-exact amplitude or hidden bump realization.
 * A2 #1125 physicalizes the corrected-source localized complete-curl harmonic.
   It remains caller-dependent and is not a self-contained project-domain
   ``velocity(x,y,z,t)`` provider, so the latest self-contained project composite
   remains exact A2 #1117 / A1 #1107 through xi=11.
 * A3 #1126 materializes a typed RF30/RF31 formula executor and five-row mechanics
-  contract.  The exact current-I4 source fixed-Q covariance backend is absent,
-  so #1126 is not current-I4 candidate defect evidence and solves/applies no
-  correction.  The actual correction-side current-I4 frontier remains A3 #1118
+  contract. The exact current-I4 source fixed-Q covariance backend is absent, so
+  #1126 is not current-I4 candidate defect evidence and solves/applies no
+  correction. The actual correction-side current-I4 frontier remains A3 #1118
   radial force ``partial_z sigma_1`` on the older A2 #1080 / A1 #1079 identity.
-* A4 #1119 remains the delivered implementation-distinct current-I4 stress audit.
-  K4-VAL-116 has been preregistered for the #1118 radial force, but at this
-  checkpoint it is a claim only: there is no delivered exact head to register or
-  admit.  A pending claim is never treated as scientific evidence.
+* A4 #1119 remains the implementation-distinct current-I4 compact-stress audit.
+  A4 #1127 now delivers the matching implementation-distinct audit executable for
+  exact A3 #1118 radial force using centered five-point FD4 on JSON-round-tripped
+  public receipts. Its exact-head CI is still queued at registration time, so it
+  is registered as a scoped validator delivery, never as a passed scientific gate
+  or complete-NS admission.
 
 No pressure, forcing, residual, optimization sample, correction coefficient or
-scientific threshold is accepted by this module.  The final held-out full-NS
+scientific threshold is accepted by this module. The final held-out full-NS
 admission gate remains normalized momentum max/L2 <= 1e-3 and divergence
 max/L2 <= 1e-5, with canonical quadrature [24,48,96] and residual-defined/free
 forcing forbidden.
@@ -151,23 +153,31 @@ AGENT4_CURRENT_I4_STRESS_AUDIT = {
     "actions_status_at_registration": "queued",
 }
 
-AGENT4_RADIAL_FORCE_AUDIT_PENDING = {
+AGENT4_CURRENT_I4_RADIAL_FORCE_AUDIT = {
     "task": "K4-VAL-116",
-    "status": "claimed-pending-delivery",
-    "exact_base_pr": 1118,
-    "exact_base_head": "922f7aa10460ded44af212d313eceff33a2ac647",
-    "claimed_operator": "implementation-distinct centered five-point FD4 reconstruction of partial_z sigma_1",
+    "pr": 1127,
+    "head": "add922982c2f3a4cf5a72d84910817e63f05c487",
+    "branch": "kokuno-agent4/current-i4-radial-force-independent-audit-116",
+    "source_path": "src/openai_ns_reconstruction/kokuno_a4_current_i4_radial_force_independent_audit.py",
+    "source_blob": "c254b248e2703eaec1c4f757657ca40b9e211c7d",
+    "audited_agent3_pr": 1118,
+    "audited_agent3_head": "922f7aa10460ded44af212d313eceff33a2ac647",
+    "stage": "current-I4-radial-force-independent-FD4-audit",
+    "operator": "centered-five-point-FD4-from-JSON-roundtripped-public-force-and-stress-receipts",
     "seed": 9173881,
     "time": 0.39,
     "heldout_z_centers": [-0.137, -0.071, 0.061],
     "physical_z_steps": [0.02, 0.01, 0.005],
     "positive_radius_count": 169,
     "positive_radius_interval": [0.005, 0.44],
-    "delivered_pr": None,
-    "delivered_head": None,
-    "present": False,
-    "registered": False,
+    "present": True,
+    "registered": True,
+    "scoped_gate_passed": None,
     "scientifically_admitted": False,
+    "authorizes_complete_ns_correction": False,
+    "repository_tests_run": 35688548029,
+    "dedicated_run": 35688548012,
+    "actions_status_at_registration": "queued",
 }
 
 CORRECTED_SOURCE = {
@@ -214,8 +224,9 @@ def _truth_boundary() -> dict[str, Any]:
         "agent4_matching_current_i4_radial_stress_audit_registered": True,
         "agent4_matching_current_i4_radial_stress_audit_admitted": False,
         "agent4_current_i4_radial_force_audit_claimed": True,
-        "agent4_matching_current_i4_radial_force_audit_present": False,
-        "agent4_matching_current_i4_radial_force_audit_registered": False,
+        "agent4_matching_current_i4_radial_force_audit_present": True,
+        "agent4_matching_current_i4_radial_force_audit_registered": True,
+        "agent4_matching_current_i4_radial_force_audit_scoped_gate_passed": None,
         "agent4_matching_current_i4_radial_force_audit_admitted": False,
         "rf30_rf31_formula_executor_materialized": True,
         "current_i4_source_fixed_q_backend_materialized": False,
@@ -256,6 +267,17 @@ def registration_sha256(registration: Mapping[str, Any]) -> str:
     return hashlib.sha256(_canonical_bytes(_payload_without_digest(registration))).hexdigest()
 
 
+def build_identity_firewall() -> dict[str, bool]:
+    return {
+        "agent1_1124_not_consumed_by_agent2_1117": True,
+        "agent2_1125_not_a_replacement_for_agent2_1117_project_composite": True,
+        "agent3_1126_mechanics_not_current_i4_candidate_evidence": True,
+        "agent4_1119_stress_evidence_not_radial_force_evidence": True,
+        "agent4_1127_radial_force_validator_is_scoped_not_full_ns_evidence": True,
+        "cross_identity_evidence_transfer_allowed": False,
+    }
+
+
 def build_registration() -> dict[str, Any]:
     registration: dict[str, Any] = {
         "schema": SCHEMA,
@@ -270,22 +292,15 @@ def build_registration() -> dict[str, Any]:
             "current_i4_radial_force": copy.deepcopy(CURRENT_I4_RADIAL_FORCE),
             "rf30_rf31_typed_executor_sibling": copy.deepcopy(AGENT3_RF30_RF31_TYPED_EXECUTOR),
             "current_i4_stress_validator": copy.deepcopy(AGENT4_CURRENT_I4_STRESS_AUDIT),
-            "current_i4_radial_force_validator_pending": copy.deepcopy(AGENT4_RADIAL_FORCE_AUDIT_PENDING),
+            "current_i4_radial_force_validator": copy.deepcopy(AGENT4_CURRENT_I4_RADIAL_FORCE_AUDIT),
         },
-        "identity_firewall": {
-            "agent1_1124_not_consumed_by_agent2_1117": True,
-            "agent2_1125_not_a_replacement_for_agent2_1117_project_composite": True,
-            "agent3_1126_mechanics_not_current_i4_candidate_evidence": True,
-            "agent4_1119_stress_evidence_not_radial_force_evidence": True,
-            "agent4_pending_claim_not_evidence": True,
-            "cross_identity_evidence_transfer_allowed": False,
-        },
+        "identity_firewall": build_identity_firewall(),
         "core_state": copy.deepcopy(CORE_STATE),
         "frozen_gates": copy.deepcopy(FROZEN_GATES),
         "truth_boundary": _truth_boundary(),
         "shortest_next_closure": [
             "A1 compose exact #1124 M/J inputs through #1116 c1/c2 into the same Cartesian leading identity, then continue terminal/global leading",
-            "A4 deliver K4-VAL-116 on exact A3 #1118 radial force; only an exact delivered head may become registered scoped evidence",
+            "A4 #1127 exact-head CI must finish before its scoped numerical outcome can be recorded; regardless, it cannot authorize complete-NS correction or PDE admission",
             "A2 or source backend supply exact current-I4 fixed-Q covariance/derivative state before A3 #1126 can produce current-I4 RF30/RF31 candidate evidence",
             "global velocity + matched pressure/grad-p + preregistered non-residual-defined restricted forcing before complete NS defect",
             "only then real Cartesian correction/finite cycle and independent A4 held-out full-NS 1e-3 gate",
@@ -311,16 +326,23 @@ def validate_registration(registration: Mapping[str, Any]) -> None:
         ("i4-force", reg["frontiers"]["current_i4_radial_force"]),
         ("a3-rf31", reg["frontiers"]["rf30_rf31_typed_executor_sibling"]),
         ("a4-stress", reg["frontiers"]["current_i4_stress_validator"]),
+        ("a4-force", reg["frontiers"]["current_i4_radial_force_validator"]),
     ):
         head = upstream.get("head")
         if not isinstance(head, str) or not _HEX40.fullmatch(head):
             raise ValueError(f"{name} exact head is not frozen")
 
-    pending = reg["frontiers"]["current_i4_radial_force_validator_pending"]
-    if pending != AGENT4_RADIAL_FORCE_AUDIT_PENDING:
-        raise ValueError("pending A4 K4-VAL-116 claim drift")
-    if pending["delivered_head"] is not None or pending["registered"] or pending["present"]:
-        raise ValueError("a pending A4 claim cannot be promoted to delivered evidence")
+    force_audit = reg["frontiers"]["current_i4_radial_force_validator"]
+    if force_audit != AGENT4_CURRENT_I4_RADIAL_FORCE_AUDIT:
+        raise ValueError("delivered A4 K4-VAL-116 identity drift")
+    if force_audit["present"] is not True or force_audit["registered"] is not True:
+        raise ValueError("delivered A4 radial-force validator must remain registered")
+    if force_audit["scoped_gate_passed"] is not None:
+        raise ValueError("queued A4 radial-force CI cannot be promoted to a scoped PASS")
+    if force_audit["scientifically_admitted"] is not False:
+        raise ValueError("scoped A4 radial-force validator cannot become scientific admission")
+    if force_audit["authorizes_complete_ns_correction"] is not False:
+        raise ValueError("scoped A4 radial-force validator cannot authorize complete-NS correction")
 
     if reg["identity_firewall"] != build_identity_firewall():
         raise ValueError("identity firewall drift")
@@ -330,17 +352,6 @@ def validate_registration(registration: Mapping[str, Any]) -> None:
         raise ValueError("frozen project gates drift")
     if reg["truth_boundary"] != _truth_boundary():
         raise ValueError("scientific truth boundary drift")
-
-
-def build_identity_firewall() -> dict[str, bool]:
-    return {
-        "agent1_1124_not_consumed_by_agent2_1117": True,
-        "agent2_1125_not_a_replacement_for_agent2_1117_project_composite": True,
-        "agent3_1126_mechanics_not_current_i4_candidate_evidence": True,
-        "agent4_1119_stress_evidence_not_radial_force_evidence": True,
-        "agent4_pending_claim_not_evidence": True,
-        "cross_identity_evidence_transfer_allowed": False,
-    }
 
 
 def write_registration(path: str | Path) -> dict[str, Any]:
