@@ -1,0 +1,189 @@
+name: kokuno-agent2-current-i4-rf44-prestate-provider
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_current_i4_rf44_prestate_provider.py'
+      - 'tests/test_constrained_kokuno_current_i4_rf44_prestate_provider.py'
+      - '.github/workflows/kokuno-agent2-current-i4-rf44-prestate-provider.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout exact Agent-2 PR head
+        uses: actions/checkout@v4
+        with:
+          path: a2
+          fetch-depth: 0
+
+      - name: Verify exact A3 parent and one-increment A2 scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          parent=e75940c33127b0725ddc703eaae97590158f2a56
+          git -C a2 merge-base --is-ancestor "$parent" HEAD
+          test "$(git -C a2 rev-list --count "$parent"..HEAD)" -eq 3
+          git -C a2 diff --name-only "$parent"...HEAD | sort > /tmp/changed.txt
+          cat > /tmp/expected.txt <<'EOF'
+          .github/workflows/kokuno-agent2-current-i4-rf44-prestate-provider.yml
+          src/openai_ns_reconstruction/kokuno_current_i4_rf44_prestate_provider.py
+          tests/test_constrained_kokuno_current_i4_rf44_prestate_provider.py
+          EOF
+          diff -u /tmp/expected.txt /tmp/changed.txt
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_current_i4_auxiliary_t2_provider.py)" = 96168ac6583ad5e71aa044bd558c6feeadf051f4
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_current_i4_rf34_rf39_pinned_provider.py)" = b99b3bee2b2dad6003c11acae7946c9be53347fb
+
+      - name: Checkout corrected Kokuno reader
+        uses: actions/checkout@v4
+        with:
+          repository: KokunoYumeto/yang-mills-interacting-workbench
+          ref: 143f6773feb424ad9ed3a8d116653200f20346b7
+          path: kokuno
+          fetch-depth: 1
+
+      - name: Authenticate corrected-reader source blob and RF30/RF44 text
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C kokuno rev-parse HEAD)" = 143f6773feb424ad9ed3a8d116653200f20346b7
+          test "$(git -C kokuno hash-object navier-stokes/navier_stokes_workbench.tex)" = 205a99807302e21a51c5eaf223390c0dfc42bcd0
+          grep -F 'For physical velocity' kokuno/navier-stokes/navier_stokes_workbench.tex
+          grep -F 'tag{RF44}' kokuno/navier-stokes/navier_stokes_workbench.tex
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Agent-2 tree
+        run: python -m pip install -e 'a2[dev]'
+
+      - name: Compile and run focused parent-child contracts
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            a2/src/openai_ns_reconstruction/kokuno_current_i4_rf44_prestate_provider.py \
+            a2/tests/test_constrained_kokuno_current_i4_rf44_prestate_provider.py
+          python -m pytest -q -W error \
+            a2/tests/test_constrained_kokuno_current_i4_auxiliary_t2_provider.py \
+            a2/tests/test_constrained_kokuno_current_i4_rf30_pinned_provider.py \
+            a2/tests/test_constrained_kokuno_current_i4_rf34_rf39_pinned_provider.py \
+            a2/tests/test_constrained_kokuno_current_i4_rf44_prestate_provider.py
+
+      - name: Materialize RF44 pre-state contract receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python - <<'PY'
+          import json
+          import runpy
+          from pathlib import Path
+          import numpy as np
+
+          import openai_ns_reconstruction.kokuno_current_i4_rf44_prestate_provider as module
+
+          ns = runpy.run_path('a2/tests/test_constrained_kokuno_current_i4_rf44_prestate_provider.py')
+          provider = ns['_provider']()
+          typed = ns['_typed_receipt'](provider)
+          current, correction = ns['_handoff'](provider, typed)
+          module.materialize_current_i4_rf30_typed_defect = lambda *args, **kwargs: typed
+          pre = provider.rf44_pre_update_state(current=current, correction=correction)
+
+          R = np.asarray(pre.radius_R, dtype=float)
+          b = np.asarray(pre.base_b, dtype=float)
+          V = np.asarray(pre.base_V, dtype=float)
+          beta = np.asarray(pre.beta, dtype=float)
+          v = np.asarray(pre.v, dtype=float)
+          Wrr = np.asarray(pre.mean_W_rr, dtype=float)
+          Wtt = np.asarray(pre.mean_W_thetatheta, dtype=float)
+          rf44 = (
+              -np.asarray(pre.tstar_beta, dtype=float)
+              -np.asarray(pre.dR_rr_bundle, dtype=float)
+              -(2.0*b*beta + beta*beta + Wrr)/R
+              -np.asarray(pre.dZ_zr_bundle, dtype=float)
+              +(2.0*V*v + v*v + Wtt)/R
+              +np.asarray(pre.epsilon_laplacian_beta, dtype=float)
+          )
+          rf30 = (
+              -np.asarray(typed.state.dR_mean_W_rr, dtype=float)
+              -Wrr/R
+              -np.asarray(typed.state.dZ_mean_W_zr, dtype=float)
+              +Wtt/R
+          )
+          receipt = {
+              'schema': 'kokuno-a2-current-i4-rf44-prestate-ci-receipt-v1',
+              'task': 'K2-OSC-113',
+              'manufactured_contract_fixture': True,
+              'repository_candidate_scientific_evidence': False,
+              'raw_provider_semantic_sha256': provider.semantic_sha256,
+              'raw_provider_source_blob_sha1': provider.metadata.source_blob_sha1,
+              'rf44_prestate_semantic_sha256': provider.rf44_prestate_semantic_sha256,
+              'rf44_prestate_source_blob_sha1': provider.rf44_prestate_source_blob_sha1,
+              'normalized_leading_b': list(map(float, pre.base_b)),
+              'normalized_leading_b_rms': float(np.sqrt(np.mean(b*b))),
+              'rf44_vs_rf30_preupdate_max_abs': float(np.max(np.abs(rf44-rf30))),
+              'source_provenance': module.source_provenance(),
+              'truth_boundary': module.truth_boundary(),
+          }
+          Path('artifacts/current_i4_rf44_prestate_receipt.json').write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + '\n', encoding='utf-8'
+          )
+          PY
+
+      - name: Upload receipt before truth enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent2-current-i4-rf44-prestate-provider
+          path: artifacts/
+
+      - name: Enforce RF44 pre-state truth boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = json.loads(Path('artifacts/current_i4_rf44_prestate_receipt.json').read_text())
+          assert p['manufactured_contract_fixture'] is True
+          assert p['repository_candidate_scientific_evidence'] is False
+          assert p['raw_provider_source_blob_sha1'] == '96168ac6583ad5e71aa044bd558c6feeadf051f4'
+          assert p['normalized_leading_b_rms'] > 0.0
+          assert p['rf44_vs_rf30_preupdate_max_abs'] == 0.0
+          assert len(p['rf44_prestate_semantic_sha256']) == 64
+          assert len(p['rf44_prestate_source_blob_sha1']) == 40
+          assert p['rf44_prestate_source_blob_sha1'] != p['raw_provider_source_blob_sha1']
+          t = p['truth_boundary']
+          assert t['exact_a2_1198_raw_provider_delegated_unchanged'] is True
+          assert t['actual_complete_curl_wave_reused'] is True
+          assert t['normalized_source_auxiliary_t2_haar_state_reused'] is True
+          assert t['current_i4_leading_radial_background_recomputed'] is True
+          assert t['physical_to_normalized_velocity_scaling_Q_to_A_applied'] is True
+          assert t['rf30_preupdate_tuple_beta_gamma_v_zero'] is True
+          assert t['rf44_preupdate_state_materialized'] is True
+          assert t['rf44_preupdate_reduces_exactly_to_rf30_operator'] is True
+          assert t['raw_provider_blob_pin_relabelled_as_rf44_prestate_pin'] is False
+          assert t['source_exact_rf44_prestate_claimed'] is False
+          assert t['rf44_postupdate_state_materialized'] is False
+          assert t['rf44_correction_increment_materialized'] is False
+          assert t['agent3_mean_correction_solved_here'] is False
+          assert t['cartesian_correction_velocity_materialized'] is False
+          assert t['rf44_rf49_repository_remainder_recomputed'] is False
+          assert t['finite_correction_cycle_run'] is False
+          assert t['heldout_ns_residual_assessed'] is False
+          assert t['residual_reduction_claimed'] is False
+          assert t['forbidden_scientific_controls_exposed'] is False
+          assert t['final_normalized_momentum_gate'] == 1.0e-3
+          assert t['final_normalized_divergence_gate'] == 1.0e-5
+          assert t['residual_defined_free_forcing_allowed'] is False
+          assert t['paper_exact'] is False
+          assert t['pde_validated'] is False
+          PY
