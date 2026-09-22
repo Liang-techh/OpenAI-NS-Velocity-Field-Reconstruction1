@@ -1,0 +1,143 @@
+name: kokuno-agent3-current-i4-rf30-pinned-provider
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_current_i4_auxiliary_t2_provider.py'
+      - 'src/openai_ns_reconstruction/kokuno_current_i4_rf30_pinned_provider.py'
+      - 'tests/test_constrained_kokuno_current_i4_rf30_pinned_provider.py'
+      - '.github/workflows/kokuno-agent3-current-i4-rf30-pinned-provider.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  current-i4-rf30-pinned-provider:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout exact Agent-3 PR head
+        uses: actions/checkout@v4
+        with:
+          path: a3
+          fetch-depth: 0
+
+      - name: Verify one-increment stack and exact provider bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          parent=aa6b1a77bee404e1e852835fe048a7365b58f379
+          git -C a3 merge-base --is-ancestor "$parent" HEAD
+          test "$(git -C a3 rev-list --count "$parent"..HEAD)" -eq 4
+          git -C a3 diff --name-only "$parent"...HEAD | sort > /tmp/changed.txt
+          cat > /tmp/expected.txt <<'EOF'
+          .github/workflows/kokuno-agent3-current-i4-rf30-pinned-provider.yml
+          src/openai_ns_reconstruction/kokuno_current_i4_auxiliary_t2_provider.py
+          src/openai_ns_reconstruction/kokuno_current_i4_rf30_pinned_provider.py
+          tests/test_constrained_kokuno_current_i4_rf30_pinned_provider.py
+          EOF
+          diff -u /tmp/expected.txt /tmp/changed.txt
+          test "$(git -C a3 hash-object src/openai_ns_reconstruction/kokuno_current_i4_auxiliary_t2_provider.py)" = 96168ac6583ad5e71aa044bd558c6feeadf051f4
+          test "$(git -C a3 hash-object src/openai_ns_reconstruction/kokuno_rf30_auxiliary_t2_haar_bridge.py)" = 5b20d4945f3aeb177e327e8d6b5709a6726c885a
+          test "$(git -C a3 hash-object src/openai_ns_reconstruction/kokuno_current_i4_rf30_typed_defect.py)" = 9b9704bcd188fe2e03a77e3d39425ea34668b1ed
+
+      - name: Checkout corrected Kokuno reader
+        uses: actions/checkout@v4
+        with:
+          repository: KokunoYumeto/yang-mills-interacting-workbench
+          ref: 143f6773feb424ad9ed3a8d116653200f20346b7
+          path: kokuno
+          fetch-depth: 1
+
+      - name: Authenticate corrected-reader source blob
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C kokuno rev-parse HEAD)" = 143f6773feb424ad9ed3a8d116653200f20346b7
+          test "$(git -C kokuno hash-object navier-stokes/navier_stokes_workbench.tex)" = 205a99807302e21a51c5eaf223390c0dfc42bcd0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Agent-3 tree
+        run: python -m pip install -e a3
+
+      - name: Compile and run focused parent-child contracts
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile a3/src/openai_ns_reconstruction/kokuno_current_i4_auxiliary_t2_provider.py
+          python -m py_compile a3/src/openai_ns_reconstruction/kokuno_current_i4_rf30_pinned_provider.py
+          python -m py_compile a3/tests/test_constrained_kokuno_current_i4_rf30_pinned_provider.py
+          python -m pytest -q -W error \
+            a3/tests/test_constrained_kokuno_rf30_auxiliary_t2_haar_bridge.py \
+            a3/tests/test_constrained_kokuno_current_i4_rf30_typed_defect.py \
+            a3/tests/test_constrained_kokuno_current_i4_rf30_pinned_provider.py
+
+      - name: Materialize provenance and truth-boundary receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction.kokuno_current_i4_rf30_pinned_provider import (
+              source_provenance,
+              truth_boundary,
+          )
+
+          payload = {
+              'schema': 'kokuno-a3-current-i4-rf30-pinned-provider-ci-receipt-v1',
+              'source_provenance': source_provenance(),
+              'truth_boundary': truth_boundary(),
+              'interpretation': {
+                  'exact_a2_provider_blob_pinned': True,
+                  'repository_candidate_rf30_promotion_adapter_executable': True,
+                  'rf31_or_compact_correction_executed': False,
+                  'rf44_rf49_recomputed': False,
+                  'finite_correction_cycle_run': False,
+                  'heldout_ns_residual_assessed': False,
+              },
+          }
+          Path('artifacts/current_i4_rf30_pinned_provider_receipt.json').write_text(
+              json.dumps(payload, indent=2, sort_keys=True) + '\n', encoding='utf-8'
+          )
+          PY
+
+      - name: Upload receipt before enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent3-current-i4-rf30-pinned-provider
+          path: artifacts/
+
+      - name: Enforce scientific truth boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = json.loads(Path('artifacts/current_i4_rf30_pinned_provider_receipt.json').read_text())
+          t = p['truth_boundary']
+          assert t['exact_provider_blob_pin_enforced'] is True
+          assert t['parent_haar_and_rf30_operators_reused_without_formula_duplication'] is True
+          assert t['repository_candidate_rf30_promotion_adapter_executable'] is True
+          assert t['source_exact_auxiliary_mode_recovery_claimed'] is False
+          assert t['agent2_curl_or_jacobian_reimplemented'] is False
+          assert t['rf31_five_row_system_materialized'] is False
+          assert t['rf34_rf39_correction_materialized'] is False
+          assert t['rf44_rf49_remainder_recomputed'] is False
+          assert t['cartesian_correction_velocity_materialized'] is False
+          assert t['finite_correction_cycle_run'] is False
+          assert t['heldout_ns_residual_assessed'] is False
+          assert t['residual_reduction_claimed'] is False
+          assert t['forbidden_scientific_controls_exposed'] is False
+          assert t['final_normalized_momentum_gate'] == 1.0e-3
+          assert t['final_normalized_divergence_gate'] == 1.0e-5
+          assert t['residual_defined_free_forcing_allowed'] is False
+          assert t['pde_validated'] is False
+          PY
