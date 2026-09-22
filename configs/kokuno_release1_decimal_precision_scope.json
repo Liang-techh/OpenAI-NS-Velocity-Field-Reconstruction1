@@ -1,0 +1,106 @@
+{
+  "schema": "cr002-kokuno-release1-decimal-precision-scope-v1",
+  "task_id": "CR002-KOKUNO-RELEASE1-PRECISION-SCOPE",
+  "purpose": "Keep the precision of the public output representation separate from the arithmetic precision used to construct the current Kokuno post-relative-swirl release1 field.",
+  "pinned_lineage": {
+    "a1_pr": 1188,
+    "a1_exact_head": "f5b5b8b532e0802e181bfead5e748cd4008906bf",
+    "implementation_path": "src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_postswirl_release1.py",
+    "implementation_git_blob_sha1": "98be6d0d31a382ad7638318cec670d317bcc5cce",
+    "parent_pr": 1179,
+    "parent_exact_head": "8c5c5b6d55a68de8285ed1dd0ebb55128f3078a4",
+    "active_constrained_integration_head_at_audit": "6a293b3c870d70b8d8aece1b12d68685c9b8b010",
+    "canonical_constraints_path": "configs/constraints.json",
+    "canonical_constraints_git_blob_sha1": "6c559e42895a606e2ef025ade4cb448966d75814"
+  },
+  "canonical_source_classes": [
+    "user_requirement",
+    "public_source_fact",
+    "autonomous_design",
+    "pending_unknown"
+  ],
+  "source_classification": {
+    "user_requirement": [
+      "A clear computable save/load-capable 3-D time-dependent velocity(x,y,z,t)->[u,v,w] is a delivery requirement.",
+      "Callable velocity delivery is independent from visual correspondence, PDE validation, paper exactness and OpenAI-field identity."
+    ],
+    "public_source_fact": [
+      "For the first post-relative-swirl release interval the pinned reconstruction prescribes s=log(X/X_rel) in [0,1], ell(s)=-lambda-(1-lambda)*sigma(s), U=0 and D_logX log(E)=ell-1/2.",
+      "The pinned reconstruction prescribes the later ell=-1 hold and subsequent -1 to -h transition, but PR #1188 materializes only the first unit release interval."
+    ],
+    "autonomous_design": [
+      "PR #1188 evaluates the new release1 profile, fixed 96-point Gauss-Legendre sigma integral and Cartesian assembly with Python/NumPy binary64 arithmetic.",
+      "PR #1188 then embeds each already-computed binary64 Cartesian component into Decimal under the inherited fixed 96-significant-digit ROUND_HALF_EVEN context.",
+      "The 96-digit Decimal public representation is a representation/serialization choice inherited from PR #1179; it is not evidence that all newly introduced release1 arithmetic was evaluated at 96-digit precision."
+    ],
+    "pending_unknown": [
+      "An end-to-end multiprecision recomputation of the newly introduced release1 profile, quadrature and Cartesian assembly has not been materialized on this lineage.",
+      "Whether a future multiprecision release1 implementation changes any downstream numerical receipt remains unknown until it is implemented and replayed.",
+      "The ell=-1 hold, -1 to -h transition, terminal multiplier, exterior heat replacement, global leading field, matched pressure, restricted forcing, full held-out NS residual, visual correspondence and exact OpenAI-field identity remain separate pending gates."
+    ]
+  },
+  "representation_identity": {
+    "public_scalar_type": "decimal.Decimal in numpy object arrays",
+    "declared_decimal_significant_digits": 96,
+    "declared_rounding": "ROUND_HALF_EVEN",
+    "new_release1_internal_profile_arithmetic": "binary64",
+    "new_release1_sigma_quadrature_arithmetic": "binary64",
+    "new_release1_cartesian_assembly_arithmetic": "binary64",
+    "decimal_embedding_stage": "after binary64 Cartesian component assembly",
+    "sigma_quadrature_order": 96,
+    "semantic_rule": "Output scalar encoding and internal arithmetic precision are distinct parts of representation provenance and must not be conflated."
+  },
+  "machine_state": {
+    "release1_callable_velocity_materialized": true,
+    "release1_decimal_output_encoding_materialized": true,
+    "release1_internal_binary64_arithmetic_materialized": true,
+    "release1_end_to_end_96digit_arithmetic_materialized": false,
+    "parent_1179_sub_epsilon_survival_evidence_transfers_to_new_release1_arithmetic": false,
+    "binary64_to_decimal_embedding_recovers_discarded_sub_ulp_information": false,
+    "source_exact_numerical_precision_identified": false,
+    "unified_global_cartesian_velocity_export_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "forbidden_evidence_transfers": [
+    "Decimal-valued return objects must not be described as proof of 96-digit end-to-end numerical construction.",
+    "PR #1179 evidence that its pre-release sub-epsilon correction survives its precision-qualified representation must not be reused as evidence that the new PR #1188 release1 computations were performed at 96 digits.",
+    "A4 PR #1191 use of higher-precision arithmetic in an implementation-distinct divergence audit must not be described as increasing the arithmetic precision of the underlying A1 #1188 candidate evaluator.",
+    "A stable Decimal serialization or callable stage must not promote global velocity readiness, visual correspondence, PDE validation, paper exactness or OpenAI-field identity."
+  ],
+  "promotion_rule": {
+    "future_true_multiprecision_release1": "If profile evolution, quadrature or Cartesian assembly is recomputed in true multiprecision rather than binary64-before-Decimal embedding, treat that as a new numerical representation/candidate identity.",
+    "required_replay": [
+      "semantic identity and save/load",
+      "parent/child seam",
+      "finite Cartesian values on the claimed stage domain",
+      "precision-survival probes",
+      "implementation-distinct divergence audit",
+      "all downstream receipts that depend numerically on the changed release1 evaluator"
+    ],
+    "no_backward_promotion": "The current binary64-before-Decimal implementation remains a valid callable stage; lack of 96-digit internal arithmetic is not a reason to block delivery, but it limits precision claims."
+  },
+  "cr001_unchanged": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "residual_defined_free_force_forbidden": true,
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001,
+    "divergence_max": 0.00001,
+    "divergence_L2": 0.00001
+  },
+  "mechanics_witness_scope": "Any decimal-vs-binary64 collision witness in the regression is autonomous representation mechanics only; it is not Kokuno/OpenAI numerical evidence and is not PDE evidence."
+}
