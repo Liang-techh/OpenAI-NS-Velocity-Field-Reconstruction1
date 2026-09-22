@@ -1,0 +1,128 @@
+name: kokuno-agent5-xi11-pulse-i4-stress-routing
+
+on:
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_a5_xi11_pulse_i4_stress_routing.py"
+      - "tests/test_kokuno_a5_xi11_pulse_i4_stress_routing.py"
+      - ".github/workflows/kokuno-agent5-xi11-pulse-i4-stress-routing.yml"
+  workflow_dispatch:
+
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+
+      - name: Authenticate parent A5 and fresh A1-A4 heads
+        shell: bash
+        run: |
+          set -euo pipefail
+          PARENT=68535271cdbb79cead9431109b5311d6047cfd0e
+          git merge-base --is-ancestor "$PARENT" HEAD
+          test "$(git rev-parse "$PARENT")" = "$PARENT"
+          test "$(git rev-parse "$PARENT:src/openai_ns_reconstruction/kokuno_a5_current_i4_mean_audit_pulse_routing.py")" = "07f7818984d42d7249eee100bbd485c9791d40a1"
+
+          git fetch --no-tags origin pull/1107/head:refs/remotes/origin/a5-a1-1107
+          git fetch --no-tags origin pull/1108/head:refs/remotes/origin/a5-a2-1108
+          git fetch --no-tags origin pull/1109/head:refs/remotes/origin/a5-a3-1109
+          git fetch --no-tags origin pull/1110/head:refs/remotes/origin/a5-a4-1110
+
+          test "$(git rev-parse refs/remotes/origin/a5-a1-1107)" = "45da043dd2b4cd067f005a72c7e21fd0f2bcf309"
+          test "$(git rev-parse refs/remotes/origin/a5-a2-1108)" = "9f221dd57ef4b5e2d2e80e24c8cf531e991a5387"
+          test "$(git rev-parse refs/remotes/origin/a5-a3-1109)" = "49590ff311fef1dec4bd850b3013fd989485c87a"
+          test "$(git rev-parse refs/remotes/origin/a5-a4-1110)" = "8a9fb9ed1a67ec5ad7d9d856be71ee23467654bf"
+
+          test "$(git rev-parse 45da043dd2b4cd067f005a72c7e21fd0f2bcf309:src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_main_pulse_logx.py)" = "477bda899694e4c75786d59850a2eddada669f07"
+          test "$(git rev-parse 9f221dd57ef4b5e2d2e80e24c8cf531e991a5387:src/openai_ns_reconstruction/kokuno_current_main_pulse_leading_oscillatory_identity.py)" = "d8bde2336dc4a8f8dd7cf0ac6fecd184ea693390"
+          test "$(git rev-parse 49590ff311fef1dec4bd850b3013fd989485c87a:src/openai_ns_reconstruction/kokuno_current_i4_nonlinear_radial_stress.py)" = "b8d9928934d4df74b52e8cd0d2c27c468257cdc9"
+          test "$(git rev-parse 8a9fb9ed1a67ec5ad7d9d856be71ee23467654bf:src/openai_ns_reconstruction/kokuno_a4_current_main_pulse_composite_divergence_independent_audit.py)" = "6dce05c1306a855b0ccf52b3415d7b7774279d09"
+
+      - name: Enforce minimal three-file increment
+        shell: bash
+        run: |
+          set -euo pipefail
+          PARENT=68535271cdbb79cead9431109b5311d6047cfd0e
+          test "$(git rev-list --count "$PARENT"..HEAD)" -eq 3
+          mapfile -t files < <(git diff --name-only "$PARENT"...HEAD | sort)
+          printf '%s\n' "${files[@]}"
+          test "${#files[@]}" -eq 3
+          expected=(
+            ".github/workflows/kokuno-agent5-xi11-pulse-i4-stress-routing.yml"
+            "src/openai_ns_reconstruction/kokuno_a5_xi11_pulse_i4_stress_routing.py"
+            "tests/test_kokuno_a5_xi11_pulse_i4_stress_routing.py"
+          )
+          mapfile -t expected_sorted < <(printf '%s\n' "${expected[@]}" | sort)
+          test "$(printf '%s\n' "${files[@]}")" = "$(printf '%s\n' "${expected_sorted[@]}")"
+          test -z "$(git diff --diff-filter=D --name-only "$PARENT"...HEAD)"
+
+      - name: Compile focused files
+        run: |
+          python -m py_compile src/openai_ns_reconstruction/kokuno_a5_xi11_pulse_i4_stress_routing.py
+          python -m py_compile tests/test_kokuno_a5_xi11_pulse_i4_stress_routing.py
+
+      - name: Run parent and new A5 regressions
+        run: |
+          python -m pytest -q \
+            tests/test_kokuno_a5_current_i4_mean_audit_pulse_routing.py \
+            tests/test_kokuno_a5_xi11_pulse_i4_stress_routing.py
+
+      - name: Materialize deterministic registration artifact
+        run: |
+          mkdir -p artifacts/kokuno_agent5_xi11_pulse_i4_stress_routing
+          python -m openai_ns_reconstruction.kokuno_a5_xi11_pulse_i4_stress_routing \
+            --output artifacts/kokuno_agent5_xi11_pulse_i4_stress_routing/registration.json
+          cat artifacts/kokuno_agent5_xi11_pulse_i4_stress_routing/registration.json
+
+      - name: Upload routing artifact before final truth enforcement
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-xi11-pulse-i4-stress-routing
+          path: artifacts/kokuno_agent5_xi11_pulse_i4_stress_routing/registration.json
+
+      - name: Enforce frozen truth boundary and final gates
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction.kokuno_a5_xi11_pulse_i4_stress_routing import validate_registration
+
+          p = Path("artifacts/kokuno_agent5_xi11_pulse_i4_stress_routing/registration.json")
+          r = json.loads(p.read_text())
+          validate_registration(r)
+          t = r["truth_boundary"]
+          assert t["leading_frontier_stage"] == "current-main-pulse-leading-only-logX-through-xi11"
+          assert t["latest_self_contained_composite_frontier_stage"] == "current-main-pulse-finite-X-prefix"
+          assert t["correction_frontier_stage"] == "current-I4-compact-radial-stress"
+          assert t["matching_xi11_agent2_project_composite_materialized"] is False
+          assert t["agent4_matching_main_pulse_prefix_divergence_audit_registered"] is True
+          assert t["agent4_matching_main_pulse_prefix_divergence_audit_admitted"] is False
+          assert t["current_i4_compact_radial_stress_materialized"] is True
+          assert t["current_i4_radial_force_materialized"] is False
+          assert t["agent4_matching_current_i4_radial_stress_audit_present"] is False
+          assert t["matched_cartesian_pressure_materialized"] is False
+          assert t["preregistered_restricted_forcing_materialized"] is False
+          assert t["complete_identity_bound_ns_defect_materialized"] is False
+          assert t["finite_correction_cycle_admitted"] is False
+          assert t["pde_validated"] is False
+          g = r["final_gates"]
+          assert g["normalized_momentum_sampled_max"] == 1e-3
+          assert g["normalized_momentum_volume_l2"] == 1e-3
+          assert g["normalized_divergence_sampled_max"] == 1e-5
+          assert g["normalized_divergence_volume_l2"] == 1e-5
+          assert g["canonical_quadrature"] == [24, 48, 96]
+          assert g["residual_defined_free_forcing_allowed"] is False
+          PY
