@@ -24,11 +24,16 @@ and the normalized primitive carry is
 
     M/X = exp(log X_p-log X)(M_p/X_p) + Delta(M/X),
 
-with the same public/source-coordinate integral used by #1100.  No new
-physical parameter is introduced.  In particular A_principal remains the
-repository-autonomous principal-term approximation from #1094; this module
-does not recover source-exact Amp(eta), c1/c2 end compensators, pressure,
-forcing, or any independent PDE validation.
+with the same public/source-coordinate integral used by #1100.  ``log F`` is
+also retained because F itself can become subnormal at the far source
+endpoint even while the Cartesian product r F remains representable.  The
+velocity assembly therefore forms the tangential magnitude from
+``exp(log F + log r)`` rather than multiplying an underflowed F by r.
+
+No new physical parameter is introduced.  In particular A_principal remains
+the repository-autonomous principal-term approximation from #1094; this
+module does not recover source-exact Amp(eta), c1/c2 end compensators,
+pressure, forcing, or any independent PDE validation.
 """
 
 from __future__ import annotations
@@ -65,19 +70,20 @@ _SOURCE_FORMULAS = {
     "overflow_safe_coordinate": "log X=2 log hypot(x,y)-log(2q)",
     "pulse_coordinate": "y=log X-log X_p, xi=lambda*y",
     "pulse_E": "E=E_p exp[-(1/2+lambda)y]",
-    "pulse_F": "F=E exp[-(log 2+log X)/2]",
+    "pulse_F": "log F=log E-(log 2+log X)/2",
     "pulse_U": "U=E A_principal R_0(xi)",
     "primitive_carry": "M/X=exp(log X_p-log X)(M_p/X_p)+Delta(M/X)",
     "radial_profile": "v0=(2 eta U-2 D eta M/X-d M_eta/X)/L",
     "cartesian_velocity": (
-        "u1=(v0/(2q))x-q^(-A-1/2)Fy; "
-        "u2=(v0/(2q))y+q^(-A-1/2)Fx; u3=q^(-A)U"
+        "u_r=(v0/(2q))r; u_theta=q^(-A-1/2) exp(log F+log r); "
+        "u3=q^(-A)U"
     ),
 }
 
 _NUMERICAL_REALIZATION = {
     "parent": "consume exact #1100 current Cartesian main-pulse prefix identity",
     "coordinate_change": "evaluate active pulse in log X; no new source/physical parameter",
+    "swirl_scaling": "retain log F and evaluate rF before exponentiation to avoid endpoint F underflow",
     "primitive_quadrature": f"fixed {QUADRATURE_ORDER}-point Gauss-Legendre rule in xi, identical order to #1100",
     "source_endpoint": "materialize the public principal main-kernel through xi=11 inclusively",
     "new_residual_tuning_parameters": "none",
@@ -85,6 +91,7 @@ _NUMERICAL_REALIZATION = {
 
 _TRUTH_UPDATES = {
     "overflow_safe_logX_similarity_materialized": True,
+    "overflow_safe_logF_cartesian_swirl_materialized": True,
     "full_source_xi_11_current_cartesian_materialized": True,
     "source_exact_amplitude_root_materialized": False,
     "source_pulse_end_MJ_corrections_materialized": False,
@@ -143,8 +150,6 @@ class KokunoPA16CurrentCartesianMainPulseLogX:
             raise ValueError(
                 "this schema is specifically the overflow-safe continuation beyond finite float64 X"
             )
-        # The physical cylindrical radius at q=1 must itself remain representable;
-        # otherwise log-X would not cure the Cartesian representation problem.
         if not self.log_radius_q1_source_end < math.log(np.finfo(float).max):
             raise ValueError("public main-pulse endpoint has non-representable physical radius")
 
@@ -208,8 +213,6 @@ class KokunoPA16CurrentCartesianMainPulseLogX:
         xb, yb, zb, tb = np.broadcast_arrays(
             _finite(x, "x"), _finite(y, "y"), _finite(z, "z"), _finite(t, "t")
         )
-        # Reuse the exact current q/eta solver while setting the dummy radial
-        # coordinate to zero so the parent's finite-X arithmetic cannot overflow.
         base = self.parent.similarity_coordinates(
             np.zeros_like(xb), np.zeros_like(yb), zb, tb
         )
@@ -222,9 +225,7 @@ class KokunoPA16CurrentCartesianMainPulseLogX:
         nonaxis = radius > 0.0
         if np.any(nonaxis):
             log_X[nonaxis] = (
-                2.0 * np.log(radius[nonaxis])
-                - _LOG2
-                - np.log(q[nonaxis])
+                2.0 * np.log(radius[nonaxis]) - _LOG2 - np.log(q[nonaxis])
             )
         return {
             "q": q,
@@ -285,7 +286,9 @@ class KokunoPA16CurrentCartesianMainPulseLogX:
         xi = np.clip(xi, 0.0, MAIN_XI_MAX)
         decay = np.exp(-(0.5 + self.lambda_value) * y)
         E = E_entry * decay
-        F = E * np.exp(-0.5 * (_LOG2 + log_X))
+        log_E = np.log(E_entry) - (0.5 + self.lambda_value) * y
+        log_F = log_E - 0.5 * (_LOG2 + log_X)
+        F = np.exp(log_F)
         R0 = main_kernel_R0(xi)
         U = E * self.kernel.A_principal * R0
         norm_int = self._normalized_pulse_integral(xi)
@@ -314,6 +317,7 @@ class KokunoPA16CurrentCartesianMainPulseLogX:
             "E_entry": E_entry,
             "E_entry_eta": E_entry_eta,
             "F": F,
+            "log_F": log_F,
             "U": U,
             "E": E,
             "M_over_X": m_ratio,
@@ -330,6 +334,7 @@ class KokunoPA16CurrentCartesianMainPulseLogX:
         shape = log_arr.shape
         lf, ef = log_arr.reshape(-1), eta_arr.reshape(-1)
         F = np.empty_like(lf)
+        log_F = np.empty_like(lf)
         U = np.empty_like(lf)
         E = np.empty_like(lf)
         m_ratio = np.empty_like(lf)
@@ -345,6 +350,7 @@ class KokunoPA16CurrentCartesianMainPulseLogX:
             X = np.exp(lf[inherited])
             p = self.parent.similarity_profile_values(X, ef[inherited])
             F[inherited] = np.asarray(p["F_current_leading_with_main_pulse"], dtype=float)
+            log_F[inherited] = np.log(F[inherited])
             U[inherited] = np.asarray(p["U_current_leading_with_main_pulse"], dtype=float)
             E[inherited] = np.asarray(p["E_current_leading_with_main_pulse"], dtype=float)
             m_ratio[inherited] = np.asarray(
@@ -362,6 +368,7 @@ class KokunoPA16CurrentCartesianMainPulseLogX:
         if np.any(active):
             p = self._active_profile_logX(lf[active], ef[active])
             F[active] = p["F"]
+            log_F[active] = p["log_F"]
             U[active] = p["U"]
             E[active] = p["E"]
             m_ratio[active] = p["M_over_X"]
@@ -372,17 +379,18 @@ class KokunoPA16CurrentCartesianMainPulseLogX:
             xi[active] = p["xi"]
             region[active] = "current_cartesian_main_pulse_principal_logX_full"
 
-        arrays = (F, U, E, m_ratio, m_eta_ratio, v0)
+        arrays = (F, log_F, U, E, m_ratio, m_eta_ratio, v0)
         if any(np.any(~np.isfinite(arr)) for arr in arrays):
             raise RuntimeError("log-X current main-pulse candidate produced non-finite values")
-        if np.any(F <= 0.0) or np.any(E < 0.0):
-            raise RuntimeError("log-X current main-pulse candidate lost positive F/E")
+        if np.any(F < 0.0) or np.any(E <= 0.0):
+            raise RuntimeError("log-X current main-pulse candidate lost nonnegative F/positive E")
         return {
             "log_X": lf.reshape(shape),
             "eta": ef.reshape(shape),
             "region": region.reshape(shape),
             "xi_current_main_pulse_logX": xi.reshape(shape),
             "F_current_leading_with_main_pulse_logX": F.reshape(shape),
+            "log_F_current_leading_with_main_pulse_logX": log_F.reshape(shape),
             "U_current_leading_with_main_pulse_logX": U.reshape(shape),
             "E_current_leading_with_main_pulse_logX": E.reshape(shape),
             "M_over_X_current_leading_with_main_pulse_logX": m_ratio.reshape(shape),
@@ -402,10 +410,13 @@ class KokunoPA16CurrentCartesianMainPulseLogX:
         F_D = np.empty_like(lf)
         U_D = np.empty_like(lf)
         E_D = np.empty_like(lf)
+        log_F_D = np.empty_like(lf)
         inherited = lf <= self.log_X_p
         if np.any(inherited):
             X = np.exp(lf[inherited])
             d = self.parent.similarity_radial_derivatives(X, ef[inherited])
+            p = self.parent.similarity_profile_values(X, ef[inherited])
+            F0 = np.asarray(p["F_current_leading_with_main_pulse"], dtype=float)
             F_D[inherited] = X * np.asarray(
                 d["F_current_leading_with_main_pulse_X"], dtype=float
             )
@@ -415,6 +426,7 @@ class KokunoPA16CurrentCartesianMainPulseLogX:
             E_D[inherited] = X * np.asarray(
                 d["E_current_leading_with_main_pulse_X"], dtype=float
             )
+            log_F_D[inherited] = F_D[inherited] / F0
         active = ~inherited
         if np.any(active):
             p = self._active_profile_logX(lf[active], ef[active])
@@ -425,6 +437,7 @@ class KokunoPA16CurrentCartesianMainPulseLogX:
             a = 0.5 + self.lambda_value
             E_D[active] = -a * E
             F_D[active] = -(1.0 + self.lambda_value) * F
+            log_F_D[active] = -(1.0 + self.lambda_value)
             U_D[active] = (
                 -a * U
                 + E
@@ -436,6 +449,7 @@ class KokunoPA16CurrentCartesianMainPulseLogX:
             "log_X": lf.reshape(shape),
             "eta": ef.reshape(shape),
             "F_DlogX_current_leading_with_main_pulse": F_D.reshape(shape),
+            "log_F_DlogX_current_leading_with_main_pulse": log_F_D.reshape(shape),
             "U_DlogX_current_leading_with_main_pulse": U_D.reshape(shape),
             "E_DlogX_current_leading_with_main_pulse": E_D.reshape(shape),
         }
@@ -449,22 +463,23 @@ class KokunoPA16CurrentCartesianMainPulseLogX:
         radius = np.asarray(coords["radius"], dtype=float)
         log_X = np.asarray(coords["log_X"], dtype=float)
 
-        F = np.empty_like(radius)
         U = np.empty_like(radius)
         v0 = np.empty_like(radius)
+        log_F = np.empty_like(radius)
         axis = radius == 0.0
         if np.any(axis):
             p = self.parent.similarity_profile_values(
                 np.zeros(np.count_nonzero(axis), dtype=float), eta[axis]
             )
-            F[axis] = np.asarray(p["F_current_leading_with_main_pulse"], dtype=float)
+            F_axis = np.asarray(p["F_current_leading_with_main_pulse"], dtype=float)
             U[axis] = np.asarray(p["U_current_leading_with_main_pulse"], dtype=float)
             v0[axis] = np.asarray(p["v0_current_leading_with_main_pulse"], dtype=float)
+            log_F[axis] = np.log(F_axis)
         nonaxis = ~axis
         if np.any(nonaxis):
             p = self.similarity_profile_values_logX(log_X[nonaxis], eta[nonaxis])
-            F[nonaxis] = np.asarray(
-                p["F_current_leading_with_main_pulse_logX"], dtype=float
+            log_F[nonaxis] = np.asarray(
+                p["log_F_current_leading_with_main_pulse_logX"], dtype=float
             )
             U[nonaxis] = np.asarray(
                 p["U_current_leading_with_main_pulse_logX"], dtype=float
@@ -473,12 +488,22 @@ class KokunoPA16CurrentCartesianMainPulseLogX:
                 p["v0_current_leading_with_main_pulse_logX"], dtype=float
             )
 
-        radial = v0 / (2.0 * q)
-        swirl = q ** (-self.A - 0.5) * F
+        u1 = np.zeros_like(radius)
+        u2 = np.zeros_like(radius)
+        if np.any(nonaxis):
+            unit_x = xb[nonaxis] / radius[nonaxis]
+            unit_y = yb[nonaxis] / radius[nonaxis]
+            radial_radius = v0[nonaxis] * radius[nonaxis] / (2.0 * q[nonaxis])
+            log_swirl_radius = (
+                (-self.A - 0.5) * np.log(q[nonaxis])
+                + log_F[nonaxis]
+                + np.log(radius[nonaxis])
+            )
+            swirl_radius = np.exp(log_swirl_radius)
+            u1[nonaxis] = radial_radius * unit_x - swirl_radius * unit_y
+            u2[nonaxis] = radial_radius * unit_y + swirl_radius * unit_x
         axial = q ** (-self.A) * U
-        out = np.stack(
-            (radial * xb - swirl * yb, radial * yb + swirl * xb, axial), axis=-1
-        )
+        out = np.stack((u1, u2, axial), axis=-1)
         if np.any(~np.isfinite(out)):
             raise RuntimeError("overflow-safe current Cartesian velocity became non-finite")
         return out
@@ -583,7 +608,7 @@ class KokunoPA16CurrentCartesianMainPulseLogX:
             "truth_boundary": self.truth_boundary,
             "warning": (
                 "Full public principal main-kernel Cartesian materialization through xi=11 "
-                "via log-X numerics only; source-exact Amp(eta), c1/c2 M/J end closure, "
+                "via log-X/log-F numerics only; source-exact Amp(eta), c1/c2 M/J end closure, "
                 "global pressure/forcing and independent PDE validation remain absent."
             ),
         }
