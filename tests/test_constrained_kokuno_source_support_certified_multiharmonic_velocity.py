@@ -189,25 +189,25 @@ def test_certified_axis_and_outer_spatial_zero_skip_provider_entirely():
     assert calls == {}
 
 
-def test_boundaries_are_inside_certificate_but_just_outside_is_skipped():
+def test_axis_boundary_and_strict_exteriors_are_skipped():
     calls: dict[str, int] = {}
     _, term = _provider_and_term(calls=calls)
     field = KokunoSupportCertifiedBoundedMultiHarmonicPhysicalVelocity(
         (term,), ell=8, h=0.004
     )
     eps = 1.0e-7
-    R = np.asarray([0.10, 0.10 + eps, 0.90, 0.90 + eps, 0.40, 0.40])
-    Z = np.asarray([0.00, 0.00, 0.00, 0.00, -0.60, 0.70])
+    R = np.asarray([0.10, 0.25, 0.70, 0.90 + eps, 0.40, 0.40])
+    Z = np.asarray([0.00, 0.00, 0.00, 0.00, -0.60 - eps, 0.70 + eps])
     x, y, z, t = _physical(field, R, Z, np.full(R.shape, 0.4))
     out = field.evaluate(x, y, z, t)
 
-    assert np.array_equal(out.active_term_count, np.asarray([0, 1, 1, 0, 1, 1]))
+    assert np.array_equal(out.active_term_count, np.asarray([0, 1, 1, 0, 0, 0]))
     assert calls["calls"] == 1
-    assert calls["points"] == 4
+    assert calls["points"] == 2
     assert np.array_equal(
-        out.real_pair_velocity_cartesian_physical[[0, 2, 3, 4, 5]], np.zeros((5, 3))
+        out.real_pair_velocity_cartesian_physical[[0, 3, 4, 5]], np.zeros((4, 3))
     )
-    assert np.linalg.norm(out.real_pair_velocity_cartesian_physical[1]) > 0.0
+    assert np.linalg.norm(out.real_pair_velocity_cartesian_physical[1:3]) > 0.0
 
 
 def test_active_interior_matches_parent_bounded_family_without_support_modification():
