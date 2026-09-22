@@ -1,0 +1,108 @@
+{
+  "cr001_invariants": {
+    "constraints_blob_sha": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "forcing_family_change_this_increment": false,
+    "forcing_mode": "restricted_two_parameter_family",
+    "held_out_points": 4096,
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "support": "r < 2 and abs(z) < 2",
+    "threshold_relaxation_this_increment": false,
+    "thresholds": {"divergence_L2": 1e-05, "divergence_max": 1e-05, "pde_residual_L2": 0.001, "pde_residual_max": 0.001},
+    "time_interval": [0.25, 0.75],
+    "validation_seed": 914027
+  },
+  "evidence_transfer_firewall": {
+    "allowed_claim": "Exact #1140 materializes one bounded post-pulse eta-flattening Cartesian leading candidate using autonomous T_f=100 with deterministic save/load identity.",
+    "forbidden_implications": [
+      "public requirement that T_f be sufficiently large -> T_f=100 is a public/source-exact value",
+      "deterministic ell-window receipt at T_f=100 -> unique source T_f recovered",
+      "stage-scoped callable/save-load at T_f=100 -> terminal/exterior/global leading completion",
+      "stage-scoped callable/save-load at T_f=100 -> unqualified Kokuno velocity_export_ready",
+      "scoped divergence evidence on the T_f=100 identity -> evidence for a different numerical T_f identity",
+      "scoped divergence or ell-window evidence -> held-out complete NS residual or PDE validation",
+      "finite post-pulse Cartesian output -> visual correspondence",
+      "finite post-pulse Cartesian output -> paper exactness or exact OpenAI-field identity"
+    ]
+  },
+  "exact_parent": {
+    "candidate_module": "src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_postpulse_eta_flattening.py",
+    "candidate_module_blob_sha": "32cbfc00406aa8d47904e2492ad8916730541d28",
+    "head_sha": "c5442c11165d7f0976889b826bf58dce38a3d3dd",
+    "pr": 1140
+  },
+  "four_way_provenance": {
+    "autonomous_design": [
+      "Exact #1140 freezes T_f=100.0 as a repository-autonomous numerical realization.",
+      "Exact #1140 uses the actual #1133 endpoint state, overflow-safe log-X/log-F continuation and its semantic identity as repository implementation choices.",
+      "This CR002 evidence-transfer firewall and the synthetic T_f sensitivity witness are autonomous governance/mechanics."
+    ],
+    "pending_unknown": [
+      "Any unique source-exact numerical T_f value",
+      "terminal eta-independent hold, relative-swirl schedule, exterior heat and outer/global leading completion",
+      "a matching self-contained post-pulse leading-plus-oscillatory candidate and same-identity audits",
+      "matched pressure and preregistered restricted forcing for the Kokuno route",
+      "held-out complete NS residual/PDE validation and visual/paper/OpenAI exactness"
+    ],
+    "public_source_facts": [
+      "Immediately after the public pulse endpoint the pinned corrected reconstruction uses local y=log(X/X_end), sets U=0 and prescribes the eta-flattening formula through theta_f(y)=1-sigma(y/T_f).",
+      "The pinned source requires T_f to be fixed sufficiently large but does not supply a unique numerical T_f.",
+      "The public flat C-infinity step sigma and the stated ell-window are source-structure constraints; satisfying them numerically for one frozen realization does not identify a unique source T_f."
+    ],
+    "user_requirements": [
+      "Deliver explicit computable save/loadable velocity(x,y,z,t)->[u,v,w] without making PDE validation a prerequisite for callable delivery.",
+      "Keep velocity_export_ready, visual_correspondence_verified, pde_validated and paper_exact independent.",
+      "Do not use residual-defined free forcing, amplitude collapse or post-hoc threshold relaxation."
+    ]
+  },
+  "independent_delivery_states": {
+    "canonical_eq45_pde_validated": false,
+    "canonical_eq45_velocity_export_ready": true,
+    "canonical_eq45_visual_correspondence_verified": false,
+    "kokuno_global_velocity_export_ready": false,
+    "kokuno_openai_field_identified": false,
+    "kokuno_paper_exact": false,
+    "kokuno_pde_validated": false,
+    "kokuno_postpulse_stage_callable_ready": true,
+    "kokuno_visual_correspondence_verified": false
+  },
+  "mechanics_witness": {
+    "T_f_a": 100.0,
+    "T_f_b": 120.0,
+    "classification": "autonomous_mechanics_only",
+    "eta_probe": 0.5,
+    "statement": "Two positive autonomous T_f values under the same structural theta_f=1-sigma(y/T_f) law produce different flattening weights at a common interior y; therefore the public qualitative T_f requirement does not determine one numerical candidate.",
+    "y_probe": 50.0
+  },
+  "numeric_tf_change_promotion_rule": {
+    "fresh_downstream_numerical_audit_required": true,
+    "fresh_finite_cartesian_domain_audit_required": true,
+    "fresh_save_load_audit_required": true,
+    "numeric_T_f_change_requires_new_semantic_candidate_identity": true,
+    "reuse_old_ell_or_divergence_receipts_for_new_T_f": false,
+    "statement": "A different numerical T_f may still satisfy the same public qualitative 'fixed sufficiently large' requirement, but it is a different autonomous realization and cannot inherit exact #1140/#1143 numerical receipts without fresh identity-bound replay."
+  },
+  "schema": "cr002-kokuno-postpulse-tf-representation-scope-v1",
+  "task_id": "CR002-KOKUNO-POSTPULSE-TF-SCOPE-140",
+  "tf_representation_scope": {
+    "current_autonomous_T_f": 100.0,
+    "current_autonomous_T_f_materialized": true,
+    "deterministic_ell_window_receipt_materialized": true,
+    "heldout_complete_ns_residual_assessed": false,
+    "matched_global_pressure_materialized": false,
+    "postpulse_stage_hard_fail_closed_after_T_f": true,
+    "postpulse_stage_save_load_identity_materialized": true,
+    "postpulse_stage_velocity_callable_xyzt": true,
+    "restricted_forcing_materialized": false,
+    "source_exact_T_f_recovered": false,
+    "source_requires_fixed_sufficiently_large_T_f": true,
+    "source_supplies_unique_numeric_T_f": false,
+    "terminal_global_leading_materialized": false,
+    "unified_global_kokuno_velocity_export_ready": false
+  }
+}
