@@ -1,0 +1,96 @@
+name: Kokuno A5 Lminus1 AuxT2 RF49 Audit Routing
+
+on:
+  pull_request:
+    paths:
+      - src/openai_ns_reconstruction/kokuno_a5_lminus1_auxt2_rf49_audit_routing.py
+      - tests/test_kokuno_a5_lminus1_auxt2_rf49_audit_routing.py
+      - .github/workflows/kokuno-agent5-lminus1-auxt2-rf49-audit-routing.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-head-routing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Verify exact A5 parent and three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          parent="18f9df62154dd5230eede98eb3634a74560b9e97"
+          git merge-base --is-ancestor "$parent" HEAD
+          test "$(git rev-list --count "$parent"..HEAD)" -eq 3
+          git diff --name-only "$parent"..HEAD | sort > /tmp/changed.txt
+          cat > /tmp/expected.txt <<'EOF'
+          .github/workflows/kokuno-agent5-lminus1-auxt2-rf49-audit-routing.yml
+          src/openai_ns_reconstruction/kokuno_a5_lminus1_auxt2_rf49_audit_routing.py
+          tests/test_kokuno_a5_lminus1_auxt2_rf49_audit_routing.py
+          EOF
+          sort -o /tmp/expected.txt /tmp/expected.txt
+          diff -u /tmp/expected.txt /tmp/changed.txt
+
+      - name: Authenticate exact A1-A4 sibling identities and source blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git fetch --no-tags origin codex/kokuno-agent1-postswirl-lminus1-hold
+          a1="e0cf691884fd371c477de5ae55a18cdabbd72e81"
+          test "$(git rev-parse FETCH_HEAD)" = "$a1"
+          test "$(git rev-parse "$a1:src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_postswirl_lminus1_hold.py")" = "466c87d26524a6f8b2931da9d501a2795d55db08"
+
+          git fetch --no-tags origin kokuno-agent2/current-i4-aux-t2-provider-111
+          a2="5765c2b3bab7482df514efa87f9b6bba48e04b7f"
+          test "$(git rev-parse FETCH_HEAD)" = "$a2"
+          test "$(git rev-parse "$a2:src/openai_ns_reconstruction/kokuno_current_i4_auxiliary_t2_provider.py")" = "96168ac6583ad5e71aa044bd558c6feeadf051f4"
+
+          git fetch --no-tags origin agent3/current-i4-rf44-rf49-handoff-20260922
+          a3="aa6b1a77bee404e1e852835fe048a7365b58f379"
+          test "$(git rev-parse FETCH_HEAD)" = "$a3"
+          test "$(git rev-parse "$a3:src/openai_ns_reconstruction/kokuno_current_i4_rf44_rf49_handoff.py")" = "8f42375022a9fcd0aeb24eb07542fc6fd298b62d"
+
+          git fetch --no-tags origin codex/kokuno-agent4-lminus1-hold-independent-audit
+          a4="184a628da361c9d233df5011afb7a68e2e776680"
+          test "$(git rev-parse FETCH_HEAD)" = "$a4"
+          test "$(git rev-parse "$a4:src/openai_ns_reconstruction/kokuno_a4_lminus1_hold_independent_audit.py")" = "773a9bc7009deff6218c06d46c45ee5455467786"
+
+      - name: Compile and materialize deterministic routing artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile src/openai_ns_reconstruction/kokuno_a5_lminus1_auxt2_rf49_audit_routing.py tests/test_kokuno_a5_lminus1_auxt2_rf49_audit_routing.py
+          python src/openai_ns_reconstruction/kokuno_a5_lminus1_auxt2_rf49_audit_routing.py --output kokuno_a5_lminus1_auxt2_rf49_audit_routing.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path("kokuno_a5_lminus1_auxt2_rf49_audit_routing.json")
+          data = json.loads(p.read_text())
+          assert data["task"] == "KOKUNO-A5-LMINUS1-AUXT2-RF49-AUDIT-ROUTING-126"
+          assert data["core_states"]["pde_validated"] is False
+          assert data["remaining_blockers"]["agent3_checksum_pin_of_exact_agent2_1198_provider_blob"] is True
+          PY
+
+      - name: Upload routing artifact before regression enforcement
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a5-lminus1-auxt2-rf49-audit-routing
+          path: kokuno_a5_lminus1_auxt2_rf49_audit_routing.json
+
+      - name: Run focused fail-closed regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check pytest
+          pytest -q tests/test_kokuno_a5_lminus1_auxt2_rf49_audit_routing.py
