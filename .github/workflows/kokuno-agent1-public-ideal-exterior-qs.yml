@@ -1,0 +1,125 @@
+name: kokuno-agent1-public-ideal-exterior-qs
+
+on:
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_public_ideal_exterior_qs_schedule.py"
+      - "tests/test_kokuno_public_ideal_exterior_qs_schedule.py"
+      - ".github/workflows/kokuno-agent1-public-ideal-exterior-qs.yml"
+  workflow_dispatch:
+
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+
+      - name: Assert exact A1 ancestry and minimal three-file scope
+        shell: bash
+        run: |
+          git merge-base --is-ancestor fb81b8e90272caa9e8bbd075f05b94dbb1195310 HEAD
+          mapfile -t changed < <(git diff --name-only fb81b8e90272caa9e8bbd075f05b94dbb1195310...HEAD | sort)
+          printf '%s\n' "${changed[@]}"
+          test "${#changed[@]}" -eq 3
+          expected=(
+            ".github/workflows/kokuno-agent1-public-ideal-exterior-qs.yml"
+            "src/openai_ns_reconstruction/kokuno_public_ideal_exterior_qs_schedule.py"
+            "tests/test_kokuno_public_ideal_exterior_qs_schedule.py"
+          )
+          mapfile -t expected_sorted < <(printf '%s\n' "${expected[@]}" | sort)
+          test "$(printf '%s\n' "${changed[@]}")" = "$(printf '%s\n' "${expected_sorted[@]}")"
+
+      - name: Verify corrected-source ideal Qs assumptions and bridge ordering
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib, urllib.request
+          url = "https://raw.githubusercontent.com/KokunoYumeto/yang-mills-interacting-workbench/143f6773feb424ad9ed3a8d116653200f20346b7/navier-stokes/navier_stokes_workbench.tex"
+          data = urllib.request.urlopen(url, timeout=30).read()
+          digest = hashlib.sha1(b"blob %d\0" % len(data) + data).hexdigest()
+          expected = "205a99807302e21a51c5eaf223390c0dfc42bcd0"
+          if digest != expected:
+              raise SystemExit(f"corrected source blob drifted: {digest} != {expected}")
+          text = data.decode("utf-8")
+          required = (
+              "After the correction, $I=XH/(1-\\lambda)$ and $U=M=J=0$ at the start",
+              "Q_s=-1+(1-h)I/(XH)=(\\lambda-h)/(1-\\lambda)",
+              "Subsequently $Q_s'+(1+l)Q_s=-l-h$",
+              "The $l=-1$ hold gives $Q_s'=1-h$",
+              "Hold $l=-h$ before it until $Q_s$ reaches $Q_p$.",
+              "The intervening $l=-h$ solution is $Q_{\\rm in}e^{-(1-h)y}$",
+          )
+          missing = [item for item in required if item not in text]
+          if missing:
+              raise SystemExit(f"ideal exterior Qs source statements missing: {missing}")
+          print("corrected source ideal exterior Qs assumptions and bridge ordering pinned")
+          PY
+
+      - name: Compile focused files
+        run: |
+          python -m py_compile src/openai_ns_reconstruction/kokuno_public_ideal_exterior_qs_schedule.py
+          python -m py_compile tests/test_kokuno_public_ideal_exterior_qs_schedule.py
+
+      - name: Run parent and new focused regressions
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_public_terminal_multiplier_target.py \
+            tests/test_kokuno_public_ideal_exterior_qs_schedule.py
+
+      - name: Emit deterministic source-ideal Qs receipt
+        run: |
+          mkdir -p artifacts/kokuno_agent1_public_ideal_exterior_qs
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction.kokuno_public_ideal_exterior_qs_schedule import (
+              KokunoPublicIdealExteriorQsSchedule,
+          )
+
+          root = Path("artifacts/kokuno_agent1_public_ideal_exterior_qs")
+          q = KokunoPublicIdealExteriorQsSchedule()
+          receipt = q.schedule_report()
+          config = q.configuration()
+          truth = receipt["truth_boundary"]
+
+          assert receipt["q_in_source_ideal"] > receipt["q_p"] > 0.0
+          assert receipt["ideal_matching_length"] > 0.0
+          assert receipt["matching_end_relative_error_to_q_p"] < 5e-15
+          assert receipt["current_candidate_q_s_claimed"] is False
+          assert receipt["current_cartesian_bridge_composed"] is False
+          assert truth["public_source_ideal_exterior_qs_schedule_materialized"] is True
+          assert truth["public_source_ideal_qs_release2_endpoint_materialized"] is True
+          assert truth["public_source_ideal_l_minus_h_matching_length_materialized"] is True
+          assert truth["current_q_s_release2_endpoint_materialized"] is False
+          assert truth["current_l_minus_h_matching_bridge_materialized"] is False
+          assert truth["current_cartesian_terminal_multiplier_composed"] is False
+          assert truth["source_exterior_heat_replacement_materialized"] is False
+          assert truth["outer_global_leading_velocity_materialized"] is False
+          assert truth["heldout_ns_residual_assessed"] is False
+          assert truth["pde_validated"] is False
+          assert truth["paper_exact"] is False
+          assert truth["openai_field_identified"] is False
+
+          (root / "receipt.json").write_text(json.dumps(receipt, indent=2, sort_keys=True) + "\n")
+          (root / "config.json").write_text(json.dumps(config, indent=2, sort_keys=True) + "\n")
+          print(json.dumps(receipt, indent=2, sort_keys=True))
+          PY
+
+      - name: Upload source-ideal Qs receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-public-ideal-exterior-qs
+          path: artifacts/kokuno_agent1_public_ideal_exterior_qs/
