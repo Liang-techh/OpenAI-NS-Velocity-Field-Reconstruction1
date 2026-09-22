@@ -64,6 +64,31 @@ def _literal(path: Path, name: str) -> Any:
     raise AssertionError(f"missing literal assignment {name} in {path}")
 
 
+def _numeric_expression(path: Path, name: str) -> float:
+    """Evaluate only the tiny numeric AST needed for pinned engineering constants."""
+    tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
+    for node in tree.body:
+        if isinstance(node, ast.Assign) and any(
+            isinstance(target, ast.Name) and target.id == name for target in node.targets
+        ):
+            expr = node.value
+            if (
+                isinstance(expr, ast.BinOp)
+                and isinstance(expr.op, ast.Pow)
+                and isinstance(expr.left, ast.Constant)
+                and isinstance(expr.left.value, (int, float))
+                and isinstance(expr.right, ast.UnaryOp)
+                and isinstance(expr.right.op, ast.USub)
+                and isinstance(expr.right.operand, ast.Constant)
+                and isinstance(expr.right.operand.value, int)
+            ):
+                return float(expr.left.value) ** (-int(expr.right.operand.value))
+            if isinstance(expr, ast.Constant) and isinstance(expr.value, (int, float)):
+                return float(expr.value)
+            raise AssertionError(f"{name} must remain a simple numeric literal/power")
+    raise AssertionError(f"missing numeric assignment {name} in {path}")
+
+
 def _methods(path: Path, class_name: str) -> set[str]:
     tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
     for node in tree.body:
@@ -209,7 +234,7 @@ def audit(root: str | Path | None = None) -> dict[str, Any]:
     _eq(_literal(repo / SOURCE_MODULE, "_WITNESS_COUNT"), 65, "#1242 witness count")
     _eq(_literal(repo / SOURCE_MODULE, "_ROOT_EXPANSIONS"), 16, "#1242 root expansions")
     _eq(_literal(repo / SOURCE_MODULE, "_ROOT_BISECTIONS"), 96, "#1242 root bisections")
-    _eq(_literal(repo / SOURCE_MODULE, "_MARGIN_REL"), 2.0 ** -40, "#1242 sign margin")
+    _eq(_numeric_expression(repo / SOURCE_MODULE, "_MARGIN_REL"), 2.0 ** -40, "#1242 sign margin")
     numerical = _literal(repo / SOURCE_MODULE, "_NUMERICAL_REALIZATION")
     if "absence of such a pair does not establish a common bridge" not in numerical["promotion_policy"]:
         raise AssertionError("#1242 one-way promotion policy drifted")
