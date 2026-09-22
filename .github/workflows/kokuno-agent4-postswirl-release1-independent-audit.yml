@@ -1,0 +1,110 @@
+name: kokuno-agent4-postswirl-release1-independent-audit
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  independent-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out exact PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Authenticate exact parent and minimal scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE=f5b5b8b532e0802e181bfead5e748cd4008906bf
+          git cat-file -e "${BASE}^{commit}"
+          test "$(git merge-base "$BASE" HEAD)" = "$BASE"
+          test "$(git rev-list --count "${BASE}..HEAD")" = "3"
+          mapfile -t changed < <(git diff --name-only "$BASE"...HEAD | sort)
+          expected=(
+            ".github/workflows/kokuno-agent4-postswirl-release1-independent-audit.yml"
+            "src/openai_ns_reconstruction/kokuno_a4_postswirl_release1_independent_audit.py"
+            "tests/test_constrained_kokuno_a4_postswirl_release1_independent_audit.py"
+          )
+          mapfile -t sorted_expected < <(printf '%s\n' "${expected[@]}" | sort)
+          test "${#changed[@]}" -eq 3
+          diff -u <(printf '%s\n' "${sorted_expected[@]}") <(printf '%s\n' "${changed[@]}")
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install package and test dependencies
+        run: python -m pip install -e '.[dev]'
+
+      - name: Materialize raw candidate and independent scientific receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction.kokuno_a4_postswirl_release1_independent_audit import (
+              audit_loaded_release1,
+              default_candidate,
+          )
+          from openai_ns_reconstruction.kokuno_pa16_current_cartesian_postswirl_release1 import (
+              KokunoPA16CurrentCartesianPostSwirlRelease1,
+          )
+
+          original = default_candidate()
+          original.save_configuration("candidate.json")
+          loaded = KokunoPA16CurrentCartesianPostSwirlRelease1.load_configuration("candidate.json")
+          report = audit_loaded_release1(loaded, original)
+          Path("independent_report.json").write_text(
+              json.dumps(report, indent=2, sort_keys=True, allow_nan=False) + "\n"
+          )
+          print(json.dumps({
+              "task": report["task"],
+              "candidate_semantic_sha256": report["candidate_semantic_sha256"],
+              "scoped_release1_divergence_gate_passed": report["scoped_release1_divergence_gate_passed"],
+              "canonical_absolute_fd_transfer_ready": report["truth_boundary"]["canonical_absolute_fd_transfer_ready"],
+              "failures": report["failures"],
+              "finest": report["resolutions"][-1],
+          }, indent=2, sort_keys=True, allow_nan=False))
+          PY
+
+      - name: Upload raw evidence before enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a4-k4-val-123-raw-evidence
+          path: |
+            candidate.json
+            independent_report.json
+          if-no-files-found: warn
+
+      - name: Run parent and A4 focused regressions
+        run: |
+          python -m pytest -q \
+            tests/test_kokuno_pa16_current_cartesian_postswirl_release1.py \
+            tests/test_constrained_kokuno_a4_postswirl_release1_independent_audit.py
+
+      - name: Enforce preregistered scoped scientific gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from openai_ns_reconstruction.kokuno_a4_postswirl_release1_independent_audit import (
+              enforce_preregistered_gates,
+          )
+          report = json.loads(open("independent_report.json").read())
+          enforce_preregistered_gates(report)
+          assert report["final_project_admission_ready"] is False
+          assert report["truth_boundary"]["pde_validated"] is False
+          print("K4-VAL-123 scoped gate PASS; final PDE admission remains false")
+          PY
