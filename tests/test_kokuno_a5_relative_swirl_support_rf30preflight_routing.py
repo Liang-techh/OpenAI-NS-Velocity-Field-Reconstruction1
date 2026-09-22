@@ -41,9 +41,14 @@ def test_registration_binds_fresh_frontiers_without_promotion():
     assert f["support_certified_multiharmonic"]["source_provider_self_contained"] is False
     assert f["latest_self_contained_project_composite"]["pr"] == 1117
 
-    assert f["rf30_fixedq_preflight_pending_claim"]["materialized"] is False
-    assert f["rf30_fixedq_preflight_pending_claim"]["candidate_evidence"] is False
-    assert f["rf30_fixedq_preflight_pending_claim"]["pr"] is None
+    pre = f["current_i4_rf30_fixedq_preflight"]
+    assert pre["pr"] == 1161
+    assert pre["fixed_q_coordinate_map_materialized"] is True
+    assert pre["normalized_physical_azimuthal_mean_used"] is True
+    assert pre["source_auxiliary_t2_provider_available"] is False
+    assert pre["normalized_source_auxiliary_t2_haar_mean_used"] is False
+    assert pre["rf30_repository_candidate_state_authorized"] is False
+    assert pre["current_i4_rf30_defect_materialized"] is False
 
     assert f["holdprefix_leading_validator"]["pr"] == 1152
     assert f["holdprefix_leading_validator"]["audited_agent1_pr"] == 1148
@@ -95,10 +100,12 @@ def test_rejects_provider_family_laundered_as_self_contained():
         validate_registration(_rehash(reg))
 
 
-def test_rejects_pending_claim_laundered_as_delivery():
+def test_rejects_physical_theta_mean_laundered_as_source_haar():
     reg = build_registration()
-    reg["frontiers"]["rf30_fixedq_preflight_pending_claim"]["materialized"] = True
-    reg["frontiers"]["rf30_fixedq_preflight_pending_claim"]["pr"] = 9999
+    pre = reg["frontiers"]["current_i4_rf30_fixedq_preflight"]
+    pre["source_auxiliary_t2_provider_available"] = True
+    pre["normalized_source_auxiliary_t2_haar_mean_used"] = True
+    pre["rf30_repository_candidate_state_authorized"] = True
     with pytest.raises(ValueError):
         validate_registration(_rehash(reg))
 
