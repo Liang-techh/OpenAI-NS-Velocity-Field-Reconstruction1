@@ -1,0 +1,143 @@
+name: kokuno-agent3-current-i4-rf44-rf49-handoff
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_current_i4_rf44_rf49_handoff.py'
+      - 'tests/test_constrained_kokuno_current_i4_rf44_rf49_handoff.py'
+      - '.github/workflows/kokuno-agent3-current-i4-rf44-rf49-handoff.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  current-i4-rf44-rf49-handoff:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout exact Agent-3 PR head
+        uses: actions/checkout@v4
+        with:
+          path: a3
+          fetch-depth: 0
+
+      - name: Verify one-increment Agent-3 stack and pinned operators
+        shell: bash
+        run: |
+          set -euo pipefail
+          parent=21b0ade966fda3b7344273c7bff2efe7e7b9a93e
+          git -C a3 merge-base --is-ancestor "$parent" HEAD
+          test "$(git -C a3 rev-list --count "$parent"..HEAD)" -eq 3
+          git -C a3 diff --name-only "$parent"...HEAD | sort > /tmp/changed.txt
+          cat > /tmp/expected.txt <<'EOF'
+          .github/workflows/kokuno-agent3-current-i4-rf44-rf49-handoff.yml
+          src/openai_ns_reconstruction/kokuno_current_i4_rf44_rf49_handoff.py
+          tests/test_constrained_kokuno_current_i4_rf44_rf49_handoff.py
+          EOF
+          diff -u /tmp/expected.txt /tmp/changed.txt
+          test "$(git -C a3 hash-object src/openai_ns_reconstruction/kokuno_current_i4_rf34_rf39_correction.py)" = fe08f93f48aeb2d4055b12889325a6ae5e05a5a6
+          test "$(git -C a3 hash-object src/openai_ns_reconstruction/kokuno_rf44_rf49_postupdate_recompute.py)" = f6dac0be5cf88f39ca94a6066cdbf1f9270293fb
+
+      - name: Checkout corrected Kokuno reader
+        uses: actions/checkout@v4
+        with:
+          repository: KokunoYumeto/yang-mills-interacting-workbench
+          ref: 143f6773feb424ad9ed3a8d116653200f20346b7
+          path: kokuno
+          fetch-depth: 1
+
+      - name: Authenticate corrected-reader source blob
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C kokuno rev-parse HEAD)" = 143f6773feb424ad9ed3a8d116653200f20346b7
+          test "$(git -C kokuno hash-object navier-stokes/navier_stokes_workbench.tex)" = 205a99807302e21a51c5eaf223390c0dfc42bcd0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Agent-3 tree
+        run: python -m pip install -e a3
+
+      - name: Compile and run focused parent-child contracts
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile a3/src/openai_ns_reconstruction/kokuno_current_i4_rf44_rf49_handoff.py
+          python -m py_compile a3/tests/test_constrained_kokuno_current_i4_rf44_rf49_handoff.py
+          python -m pytest -q -W error \
+            a3/tests/test_constrained_kokuno_rf44_rf49_postupdate_recompute.py \
+            a3/tests/test_constrained_kokuno_current_i4_rf34_rf39_correction.py \
+            a3/tests/test_constrained_kokuno_current_i4_rf44_rf49_handoff.py
+
+      - name: Materialize provenance and truth-boundary receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction.kokuno_current_i4_rf44_rf49_handoff import (
+              source_provenance,
+              truth_boundary,
+          )
+
+          truth = truth_boundary()
+          payload = {
+              'schema': 'kokuno-a3-current-i4-rf44-rf49-handoff-receipt-v1',
+              'source_provenance': source_provenance(),
+              'truth_boundary': truth,
+              'interpretation': {
+                  'current_i4_rf34_rf39_consumed': True,
+                  'existing_rf44_rf49_operator_reused': True,
+                  'same_provider_required_for_raw_aux_t2_and_rf44_states': True,
+                  'repository_provider_blob_pinned_in_parent': False,
+                  'repository_candidate_rf44_rf49_evidence': False,
+                  'cartesian_correction_velocity_materialized': False,
+                  'finite_correction_cycle_run': False,
+                  'heldout_ns_residual_assessed': False,
+              },
+          }
+          Path('artifacts/current_i4_rf44_rf49_handoff_receipt.json').write_text(
+              json.dumps(payload, indent=2, sort_keys=True) + '\n', encoding='utf-8'
+          )
+          PY
+
+      - name: Upload receipt before enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent3-current-i4-rf44-rf49-handoff
+          path: artifacts/
+
+      - name: Enforce scientific truth boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = json.loads(Path('artifacts/current_i4_rf44_rf49_handoff_receipt.json').read_text())
+          t = p['truth_boundary']
+          assert t['current_i4_rf34_rf39_correction_consumed'] is True
+          assert t['existing_rf44_rf49_operator_reused_without_formula_duplication'] is True
+          assert t['same_provider_object_required_for_auxiliary_t2_and_rf44_states'] is True
+          assert t['caller_supplied_defect_allowed'] is False
+          assert t['caller_supplied_correction_allowed'] is False
+          assert t['agent2_curl_or_jacobian_reimplemented'] is False
+          assert t['repository_provider_blob_pinned_in_parent'] is False
+          assert t['rf44_rf49_operator_recompute_executable'] is True
+          assert t['current_i4_repository_candidate_rf44_rf49_remainder_recomputed'] is False
+          assert t['cartesian_correction_velocity_materialized'] is False
+          assert t['finite_correction_cycle_run'] is False
+          assert t['heldout_ns_residual_assessed'] is False
+          assert t['residual_reduction_claimed'] is False
+          assert t['forbidden_scientific_controls_exposed'] is False
+          assert t['final_normalized_momentum_gate'] == 1.0e-3
+          assert t['final_normalized_divergence_gate'] == 1.0e-5
+          assert t['residual_defined_free_forcing_allowed'] is False
+          assert t['pde_validated'] is False
+          PY
