@@ -67,10 +67,23 @@ def _method_source_requirements(tree: ast.AST) -> None:
     if "object" not in velocity_dump:
         raise GovernanceError("parent velocity no longer materializes an object/Decimal array")
 
-    export_dump = ast.dump(
-        methods["export_velocity_decimal_json"], include_attributes=False
-    )
-    if "values_row_major" not in export_dump or "str" not in export_dump:
+    export_method = methods["export_velocity_decimal_json"]
+    exact_string_export = False
+    for node in ast.walk(export_method):
+        if not isinstance(node, ast.Dict):
+            continue
+        for key, value in zip(node.keys, node.values):
+            if not (
+                isinstance(key, ast.Constant)
+                and key.value == "values_row_major"
+                and isinstance(value, ast.ListComp)
+                and isinstance(value.elt, ast.Call)
+                and isinstance(value.elt.func, ast.Name)
+                and value.elt.func.id == "str"
+            ):
+                continue
+            exact_string_export = True
+    if not exact_string_export:
         raise GovernanceError("parent export no longer preserves Decimal values as strings")
 
 
