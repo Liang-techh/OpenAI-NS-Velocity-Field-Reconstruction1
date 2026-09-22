@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "contract_id": "cr002-kokuno-cr001-h-namespace-scope-145",
+  "scope": "cross_lineage_parameter_namespace_and_evidence_transfer_firewall",
+  "exact_parent": {
+    "pr": 1196,
+    "head": "e0cf691884fd371c477de5ae55a18cdabbd72e81"
+  },
+  "pinned_files": {
+    "kokuno_a1_lminus1_hold": {
+      "path": "src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_postswirl_lminus1_hold.py",
+      "git_blob_sha1": "466c87d26524a6f8b2931da9d501a2795d55db08"
+    },
+    "canonical_cr001_constraints": {
+      "path": "configs/constraints.json",
+      "git_blob_sha1": "6c559e42895a606e2ef025ade4cb448966d75814"
+    },
+    "parent_project_status": {
+      "path": "project_status.json",
+      "git_blob_sha1": "f8e05e9d25ab6cc83a7221fc431ab42319d38ff0"
+    }
+  },
+  "provenance_classes": {
+    "user_requirement": [
+      "deliver one explicit callable/save-loadable velocity(x,y,z,t)->[u,v,w]",
+      "keep velocity delivery, visual correspondence, PDE validation, paper exactness, and OpenAI-field identity independent",
+      "do not use residual-defined free forcing, amplitude collapse, or post-hoc threshold relaxation"
+    ],
+    "public_source_fact": [
+      "Kokuno source relation A=1/2+h and D=1/2-h",
+      "Kokuno completed construction uses 0<h<1/100",
+      "after the first post-swirl release interval, the Kokuno schedule holds ell=-1 for 4*log(1/h)"
+    ],
+    "autonomous_design": [
+      "canonical CR001 structure.h=0.005 in compact_axisymmetric_window_v1",
+      "current Kokuno A1 numerical h_current=0.005 inherited from that lineage's autonomous A,D choice",
+      "cross-lineage namespace and evidence-transfer firewall in this contract"
+    ],
+    "pending_unknown": [
+      "a source-exact numerical Kokuno h",
+      "any public-source-authorized identity mapping between canonical CR001 h and Kokuno A1 h_current",
+      "terminal/exterior/global Kokuno leading completion",
+      "matched global pressure, preregistered restricted forcing, complete held-out NS residual, and visual correspondence"
+    ]
+  },
+  "parameter_namespaces": {
+    "canonical_cr001_h": {
+      "namespace": "canonical_cr001.compact_axisymmetric_window_v1.structure.h",
+      "symbol": "h",
+      "current_value": 0.005,
+      "classification": "autonomous_design",
+      "value_source": "configs/constraints.json#/structure/h",
+      "source_exact_numeric_value": false
+    },
+    "kokuno_a1_h_current": {
+      "namespace": "kokuno_a1.pa16_current_cartesian_postswirl_lminus1_hold.h_current",
+      "symbol": "h_current",
+      "current_value": 0.005,
+      "classification": "autonomous_design",
+      "value_source": "A_current-1/2 cross-checked with 1/2-D_current",
+      "public_relation_classification": "public_source_fact",
+      "source_exact_numeric_value": false
+    }
+  },
+  "identity_firewall": {
+    "same_numeric_value_observed": true,
+    "shared_parameter_identity": false,
+    "shared_source_provenance": false,
+    "automatic_value_synchronization": false,
+    "canonical_cr001_evidence_transfers_to_kokuno": false,
+    "kokuno_evidence_transfers_to_canonical_cr001": false,
+    "numeric_equality_can_promote_velocity_visual_pde_or_exactness_state": false
+  },
+  "canonical_cr001_freeze": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "residual_defined_free_force_allowed": false,
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "pde_residual_max": 0.001,
+    "pde_residual_L2": 0.001,
+    "divergence_max": 0.00001,
+    "divergence_L2": 0.00001
+  },
+  "independent_state_boundary": {
+    "canonical_eq45": {
+      "velocity_export_ready": true,
+      "visual_correspondence_verified": false,
+      "pde_validated": false,
+      "paper_exact": false,
+      "openai_field_identified": false
+    },
+    "kokuno_a1_lminus1_hold": {
+      "stage_callable_velocity_materialized": true,
+      "unified_global_cartesian_velocity_export_ready": false,
+      "pde_validated": false,
+      "paper_exact": false,
+      "openai_field_identified": false
+    }
+  },
+  "future_change_policy": {
+    "canonical_h_change": "new canonical lineage identity/replay only; does not force a Kokuno h_current change",
+    "kokuno_h_change": "new Kokuno lineage identity/replay only; does not force a canonical CR001 h change",
+    "same_value_after_change": "numeric equality alone remains insufficient for semantic identity or evidence transfer"
+  }
+}
