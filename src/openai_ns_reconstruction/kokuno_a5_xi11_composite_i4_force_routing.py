@@ -1,20 +1,22 @@
 """Fail-closed Agent-5 routing checkpoint for the xi=11 composite / I4 force seam.
 
-This module is integration/provenance glue only. It harvests four distinct facts
-without transferring evidence across candidate identities:
+Integration/provenance glue only.  The current frontiers are deliberately kept
+separate:
 
-* A1 #1116 materializes the public low-dimensional c1/c2 pulse-end compensator
-  algebra, but does not yet compose it into the current Cartesian field.
+* A1 #1116 materializes public low-dimensional c1/c2 pulse-end compensator
+  algebra, but does not compose it into the current Cartesian field.
 * A2 #1117 composes exact A1 #1107's overflow-safe log-X leading field through
   xi=11 with the frozen complete-curl oscillation and supplies deterministic
-  save/load for that exact project-domain candidate identity.
+  save/load for that project-domain candidate identity.
 * A3 #1118 advances the older exact current-I4 identity from compact axial
   stress to the source-required radial force (div T)_r = partial_z sigma_1.
-* The newest matching A4 evidence is still #1110 and audits only the older
-  finite-X A2 #1108 composite.  It is not evidence for A2 #1117 or A3 #1118.
+* A4 #1119 independently audits exact A3 #1109 current-I4 compact stress, but
+  not the newer #1118 radial force.  A4 #1110 remains finite-X A2 #1108
+  divergence evidence and does not audit A2 #1117.
 
-No pressure, forcing, residual, correction coefficient, optimization sample or
-scientific threshold is accepted by this module.
+No scoped evidence is transferred across candidate identities.  No pressure,
+forcing, residual, correction coefficient, optimization sample, or scientific
+threshold is accepted by this module.
 """
 from __future__ import annotations
 
@@ -113,6 +115,29 @@ AGENT3_CURRENT_I4_RADIAL_FORCE = {
     "actions_status_at_registration": "queued",
 }
 
+AGENT4_CURRENT_I4_STRESS_AUDIT = {
+    "pr": 1119,
+    "head": "3f3fd169ce79a2e44b90b50353415d057119e63f",
+    "source_path": "src/openai_ns_reconstruction/kokuno_a4_current_i4_radial_stress_independent_audit.py",
+    "source_blob": "97387bcab05098ecc622372ec3aa08150d79b89d",
+    "audited_agent3_pr": 1109,
+    "audited_agent3_head": "49590ff311fef1dec4bd850b3013fd989485c87a",
+    "audited_agent2_pr": 1080,
+    "audited_agent2_head": "c40d8ddecd2971544a6e07dab093436b423cf326",
+    "audited_agent1_pr": 1079,
+    "audited_agent1_head": "b06742ca6e189499192ede3cce40f62cdc1e35ca",
+    "audited_agent3_1118_radial_force": False,
+    "seed": 9173871,
+    "operator": "local-cubic interpolation plus order-8 Gauss-Legendre cell integration",
+    "implementation_distinct": True,
+    "registered": True,
+    "scientific_admission": False,
+    "complete_ns_residual_evidence": False,
+    "exact_head_tests_run": 35684778994,
+    "exact_head_dedicated_run": 35684779061,
+    "actions_status_at_registration": "queued",
+}
+
 AGENT4_FINITE_PREFIX_DIVERGENCE_AUDIT = {
     "pr": 1110,
     "head": "71432cec314c2ab11b1bf38c83609ad7d64a6654",
@@ -160,11 +185,15 @@ TRUTH_BOUNDARY = {
     "agent4_1110_finite_prefix_audit_transferred_to_xi11_identity": False,
     "current_i4_nonlinear_mean_attribution_preserved": True,
     "current_i4_compact_radial_stress_materialized": True,
+    "agent4_matching_current_i4_radial_stress_audit_present": True,
+    "agent4_matching_current_i4_radial_stress_audit_registered": True,
+    "agent4_matching_current_i4_radial_stress_audit_admitted": False,
     "current_i4_radial_force_materialized": True,
     "agent4_matching_current_i4_radial_force_audit_present": False,
     "agent4_matching_current_i4_radial_force_audit_registered": False,
     "source_i4_five_row_mean_correction_materialized": False,
     "current_i4_radial_force_authorized_as_complete_ns_correction_target": False,
+    "current_i4_stress_audit_authorized_as_complete_ns_correction_target": False,
     "current_i4_force_evidence_transferred_to_xi11_composite": False,
     "xi11_composite_evidence_transferred_to_current_i4_force": False,
     "source_positive_order_i3_correction_materialized": False,
@@ -189,31 +218,31 @@ TRUTH_BOUNDARY = {
 
 PIPELINE_POSITION = {
     "leading_frontier": (
-        "A1 #1116 exposes the public c1/c2 end-compensator algebra as a low-dimensional "
-        "sibling, but source-exact Amp, current-lineage J and Cartesian composition remain absent"
+        "A1 #1116 exposes the public c1/c2 end-compensator algebra as a low-dimensional sibling, "
+        "but source-exact Amp, current-lineage J and Cartesian composition remain absent"
     ),
     "latest_self_contained_composite_frontier": (
-        "A2 #1117 now consumes exact A1 #1107 and provides a save/loadable project-domain "
-        "leading+frozen-complete-curl candidate through the public principal xi=11 endpoint"
+        "A2 #1117 consumes exact A1 #1107 and provides a save/loadable project-domain leading+"
+        "frozen-complete-curl candidate through the public principal xi=11 endpoint"
     ),
     "correction_frontier": (
-        "A3 #1118 advances the distinct older current-I4 A2 #1080 identity through compact "
-        "stress to radial force partial_z sigma_1; the source five-row I4 correction remains absent"
+        "A3 #1118 advances the distinct older current-I4 A2 #1080 identity through compact stress "
+        "to radial force partial_z sigma_1; source five-row I4 correction remains absent"
     ),
     "validator_frontier": (
-        "A4 #1110 remains the newest matching scoped validator, but only for A2 #1108 / A1 #1100 "
-        "finite-X prefix; no A4 audit yet matches A2 #1117 or A3 #1118"
+        "A4 #1119 independently audits exact A3 #1109 current-I4 compact stress but not #1118 "
+        "radial force; A4 #1110 independently audits only A2 #1108 finite-X divergence, not #1117"
     ),
     "identity_firewall": (
-        "A1 #1116, A2 #1117, A3 #1118 and A4 #1110 retain distinct semantic scopes; scoped "
-        "divergence or radial-force evidence is never transferred across those identities"
+        "A1 #1116, A2 #1117, A3 #1118, A4 #1119 and A4 #1110 retain distinct semantic scopes; "
+        "no scoped divergence/stress/force evidence is transferred across those boundaries"
     ),
     "next_shortest_blocker": (
-        "obtain an implementation-distinct A4 audit for exact A2 #1117 and a separate A4 audit "
-        "for exact A3 #1118; in parallel A1 must supply current-lineage J and Cartesian pulse-end "
-        "composition before terminal/global leading completion. Global velocity, matched pressure "
-        "and preregistered restricted forcing remain mandatory before a complete NS defect, real "
-        "finite correction cycle, or final held-out 1e-3 PDE gate can be admitted"
+        "obtain an implementation-distinct A4 audit for exact A2 #1117 and a separate A4 radial-"
+        "force audit for exact A3 #1118; in parallel A1 must supply current-lineage J and Cartesian "
+        "pulse-end composition before terminal/global leading completion. Global velocity, matched "
+        "pressure and preregistered restricted forcing remain mandatory before a complete NS defect, "
+        "real finite correction cycle, or final held-out 1e-3 PDE gate can be admitted"
     ),
 }
 
@@ -249,6 +278,7 @@ def build_registration() -> dict[str, Any]:
         "agent1_pulse_end_algebra": copy.deepcopy(AGENT1_PULSE_END_ALGEBRA),
         "agent2_xi11_logx_composite": copy.deepcopy(AGENT2_XI11_LOGX_COMPOSITE),
         "agent3_current_i4_radial_force": copy.deepcopy(AGENT3_CURRENT_I4_RADIAL_FORCE),
+        "agent4_current_i4_stress_audit": copy.deepcopy(AGENT4_CURRENT_I4_STRESS_AUDIT),
         "agent4_finite_prefix_divergence_audit": copy.deepcopy(AGENT4_FINITE_PREFIX_DIVERGENCE_AUDIT),
         "final_gates": copy.deepcopy(FINAL_GATES),
         "st006_baseline": copy.deepcopy(ST006_BASELINE),
@@ -271,6 +301,7 @@ def validate_registration(registration: Mapping[str, Any]) -> None:
         "agent1_pulse_end_algebra": AGENT1_PULSE_END_ALGEBRA,
         "agent2_xi11_logx_composite": AGENT2_XI11_LOGX_COMPOSITE,
         "agent3_current_i4_radial_force": AGENT3_CURRENT_I4_RADIAL_FORCE,
+        "agent4_current_i4_stress_audit": AGENT4_CURRENT_I4_STRESS_AUDIT,
         "agent4_finite_prefix_divergence_audit": AGENT4_FINITE_PREFIX_DIVERGENCE_AUDIT,
     }
     for name, frozen in exact_blocks.items():
@@ -291,21 +322,24 @@ def validate_registration(registration: Mapping[str, Any]) -> None:
         raise ValueError("pipeline routing drifted")
 
     if AGENT2_XI11_LOGX_COMPOSITE["consumed_agent1_head"] != AGENT1_PULSE_END_ALGEBRA["parent_head"]:
-        raise ValueError("A2 xi11 composite is not bound to the expected A1 #1107 identity")
+        raise ValueError("A2 xi11 composite is not bound to expected A1 #1107")
     if AGENT2_XI11_LOGX_COMPOSITE["pulse_end_compensator_algebra_1116_consumed"]:
-        raise ValueError("A1 #1116 algebra was incorrectly promoted into the A2 #1117 field")
+        raise ValueError("A1 #1116 algebra was incorrectly promoted into A2 #1117 field")
     if AGENT4_FINITE_PREFIX_DIVERGENCE_AUDIT["audited_agent2_head"] == AGENT2_XI11_LOGX_COMPOSITE["head"]:
-        raise ValueError("finite-prefix A4 evidence was laundered onto the xi11 composite")
-    if AGENT4_FINITE_PREFIX_DIVERGENCE_AUDIT["audited_agent3_1118_radial_force"]:
-        raise ValueError("A4 #1110 was incorrectly relabelled as a radial-force audit")
+        raise ValueError("finite-prefix A4 evidence was laundered onto xi11 composite")
+    if AGENT4_CURRENT_I4_STRESS_AUDIT["audited_agent3_head"] != AGENT3_CURRENT_I4_RADIAL_FORCE["parent_head"]:
+        raise ValueError("A4 #1119 does not bind exact A3 #1109 stress parent")
+    if AGENT4_CURRENT_I4_STRESS_AUDIT["audited_agent3_1118_radial_force"]:
+        raise ValueError("A4 #1119 was incorrectly relabelled as #1118 radial-force audit")
     if AGENT3_CURRENT_I4_RADIAL_FORCE["authorized_as_complete_ns_correction_target"]:
-        raise ValueError("scoped current-I4 force was incorrectly authorized as a complete-NS target")
+        raise ValueError("scoped current-I4 force was incorrectly authorized as complete-NS target")
 
     truth = registration["truth_boundary"]
     forbidden_promotions = (
         "agent4_matching_xi11_composite_audit_present",
         "agent4_matching_current_i4_radial_force_audit_present",
         "current_i4_radial_force_authorized_as_complete_ns_correction_target",
+        "current_i4_stress_audit_authorized_as_complete_ns_correction_target",
         "global_leading_plus_oscillatory_velocity_materialized",
         "matched_cartesian_pressure_materialized",
         "preregistered_restricted_forcing_materialized",
@@ -317,6 +351,8 @@ def validate_registration(registration: Mapping[str, Any]) -> None:
     )
     if any(bool(truth[key]) for key in forbidden_promotions):
         raise ValueError("unsupported scientific-state promotion detected")
+    if truth["agent4_matching_current_i4_radial_stress_audit_admitted"]:
+        raise ValueError("scoped A4 stress audit cannot be scientific admission")
     if truth["agent4_1110_finite_prefix_audit_transferred_to_xi11_identity"]:
         raise ValueError("A4 finite-prefix evidence transfer is forbidden")
     if truth["current_i4_force_evidence_transferred_to_xi11_composite"]:
@@ -324,21 +360,20 @@ def validate_registration(registration: Mapping[str, Any]) -> None:
     if truth["xi11_composite_evidence_transferred_to_current_i4_force"]:
         raise ValueError("xi11 composite evidence transfer is forbidden")
 
-    payload = {
-        key: copy.deepcopy(registration[key])
-        for key in (
-            "parent_a5",
-            "agent1_pulse_end_algebra",
-            "agent2_xi11_logx_composite",
-            "agent3_current_i4_radial_force",
-            "agent4_finite_prefix_divergence_audit",
-            "final_gates",
-            "st006_baseline",
-            "readiness",
-            "truth_boundary",
-            "pipeline_position",
-        )
-    }
+    payload_keys = (
+        "parent_a5",
+        "agent1_pulse_end_algebra",
+        "agent2_xi11_logx_composite",
+        "agent3_current_i4_radial_force",
+        "agent4_current_i4_stress_audit",
+        "agent4_finite_prefix_divergence_audit",
+        "final_gates",
+        "st006_baseline",
+        "readiness",
+        "truth_boundary",
+        "pipeline_position",
+    )
+    payload = {key: copy.deepcopy(registration[key]) for key in payload_keys}
     digest = registration.get("digest")
     if not isinstance(digest, str) or _HEX64.fullmatch(digest) is None or digest != _sha256(payload):
         raise ValueError("registration digest mismatch")
