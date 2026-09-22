@@ -1,0 +1,111 @@
+name: agent7-st052-stable-tip-decision
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/st052_stable_tip_basis_growth_decision.py'
+      - 'tests/test_st052_stable_tip_basis_growth_decision.py'
+      - '.github/workflows/agent7-st052-stable-tip-decision.yml'
+  push:
+    branches: ['agent7/st052m-stable-tip-decision-146']
+    paths:
+      - 'src/openai_ns_reconstruction/st052_stable_tip_basis_growth_decision.py'
+      - 'tests/test_st052_stable_tip_basis_growth_decision.py'
+      - '.github/workflows/agent7-st052-stable-tip-decision.yml'
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  exact-tip-decision:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REPO: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+      SOURCE_RUN: '35726365645'
+      SOURCE_HEAD: cb7bd1e4374ddb84cd6273307024c940cf6319a5
+      SOURCE_ARTIFACT: ST052-M-stable-identity-bound-tip-taper-proxy
+      SOURCE_ARTIFACT_ID: '10702308370'
+      SOURCE_DIGEST: sha256:85868e2c371c54ee1c805e62bb1d9e6e5efaa4711c6377aed1f2a6a093e45d68
+      CONTROL_RUN: '35666562373'
+      CONTROL_HEAD: 849713ba95cde8002fc1002d8b6856ea3f1dc264
+    steps:
+      - name: Checkout exact Agent-7 head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+
+      - name: Run focused fail-closed regressions
+        run: PYTHONPATH=src python -m unittest -v tests.test_st052_stable_tip_basis_growth_decision
+
+      - name: Authenticate exact successful tip receipt source
+        shell: bash
+        run: |
+          mkdir -p inputs outputs
+          gh api "repos/$REPO/actions/runs/$SOURCE_RUN" > inputs/source_run.json
+          gh api "repos/$REPO/actions/runs/$SOURCE_RUN/artifacts" > inputs/source_artifacts.json
+          python - <<'PY'
+          import json, os
+          run=json.load(open('inputs/source_run.json'))
+          arts=json.load(open('inputs/source_artifacts.json'))['artifacts']
+          assert run['id']==int(os.environ['SOURCE_RUN'])
+          assert run['head_sha']==os.environ['SOURCE_HEAD']
+          assert run['status']=='completed' and run['conclusion']=='success'
+          matches=[a for a in arts if a['id']==int(os.environ['SOURCE_ARTIFACT_ID']) and a['name']==os.environ['SOURCE_ARTIFACT']]
+          assert len(matches)==1
+          assert matches[0]['digest']==os.environ['SOURCE_DIGEST']
+          assert matches[0]['expired'] is False
+          print('authenticated source run/artifact', run['id'], matches[0]['digest'])
+          PY
+
+      - name: Download exact tip receipt and snapshot existing-control CI
+        shell: bash
+        run: |
+          mkdir -p inputs/tip
+          gh run download "$SOURCE_RUN" --repo "$REPO" --name "$SOURCE_ARTIFACT" --dir inputs/tip
+          gh api "repos/$REPO/actions/runs/$CONTROL_RUN" > inputs/control_run.json
+          python - <<'PY'
+          import json, os
+          r=json.load(open('inputs/control_run.json'))
+          assert r['id']==int(os.environ['CONTROL_RUN'])
+          assert r['head_sha']==os.environ['CONTROL_HEAD']
+          print('control run', r['status'], r['conclusion'])
+          PY
+
+      - name: Materialize fail-closed basis-growth routing decision
+        run: |
+          PYTHONPATH=src python -m openai_ns_reconstruction.st052_stable_tip_basis_growth_decision \
+            --receipt inputs/tip/receipt.json \
+            --control-run inputs/control_run.json \
+            --out outputs/decision.json | tee outputs/summary.txt
+
+      - name: Assert no candidate promotion
+        run: |
+          python - <<'PY'
+          import json
+          d=json.load(open('outputs/decision.json'))
+          assert d['task_id']=='CR003-ST052M-STABLE-TIP-DECISION-146'
+          assert d['prereg_issue']==1239
+          assert d['routing']['new_tip_basis_authorized'] is False
+          assert d['routing']['axial_turnover_change_authorized'] is False
+          assert d['routing']['coefficient_selection_authorized'] is False
+          t=d['truth_boundary']
+          assert t['candidate_velocity_changed'] is False
+          assert t['basis_dimension_changed'] is False
+          assert t['direct_visualization_fingerprint_improvement']==0.0
+          assert t['visualization_ready'] is False and t['pde_validated'] is False
+          print('ratio=', d['tip_metrics']['worst_tip_to_central_ratio'])
+          print('classification=', d['routing']['classification'])
+          print('next=', d['routing']['next_minimal_action'])
+          PY
+
+      - name: Upload decision receipt
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ST052-M-stable-tip-basis-growth-decision
+          path: outputs/
+          if-no-files-found: error
