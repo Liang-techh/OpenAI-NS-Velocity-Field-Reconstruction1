@@ -6,7 +6,9 @@ We construct nontrivial, time-dependent Navier–Stokes candidates while balanci
 
 **Latest documented geometry experiment: ST063-G2R. Numerical controls: ST061-D/P. The original full `1e-3` momentum target remains unmet.** Repository organization and visualization do not change that scientific status.
 
-[Latest results](docs/RESEARCH_STATUS.md) · [Which version should I use?](docs/CURRENT_CHECKPOINT.md) · [Visualization](visualization/README.md) · [Repository map](docs/REPOSITORY_GUIDE.md) · [Experiment catalog](experiments/README.md)
+[**Research pause snapshot (2026-09-22)**](docs/FINAL_RESEARCH_SNAPSHOT_2026-09-22.md) · [Latest results](docs/RESEARCH_STATUS.md) · [Which version should I use?](docs/CURRENT_CHECKPOINT.md) · [Visualization](visualization/README.md) · [Repository map](docs/REPOSITORY_GUIDE.md) · [Experiment catalog](experiments/README.md)
+
+> **Research pause:** scheduled NS reconstruction agents were paused on 2026-09-22. Existing branches, PRs, commits, CI history, and research records remain preserved on GitHub. See the frozen snapshot above for the consolidated stop-state.
 
 ## What is new
 
