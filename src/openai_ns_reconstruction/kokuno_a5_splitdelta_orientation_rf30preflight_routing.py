@@ -15,8 +15,9 @@ Registered deliveries:
   operator executable from raw wave samples, but deliberately leaves the
   repository provider blob unpinned. Therefore RF30 repository candidate state
   and defect remain unauthorized/unmaterialized.
-* A4 #1160 remains an implementation-distinct audit of A1 #1154 algebra only;
-  it is not evidence for A1 #1171, A2 #1170, or the A3 bridge.
+* A4 #1174 independently audits exact A1 #1171's save/reloaded public split
+  Cartesian evaluator. It is scoped split/divergence evidence only; its exact
+  Actions are unresolved at registration and it is not complete-NS evidence.
 
 Frozen project gates remain unchanged: normalized momentum max/L2 <=1e-3,
 divergence max/L2 <=1e-5, canonical quadrature [24,48,96], and no
@@ -138,6 +139,34 @@ AGENT3_AUXILIARY_T2_HAAR_BRIDGE = {
     "actions_status_at_registration": "queued",
 }
 
+AGENT4_RELATIVE_SWIRL_SPLIT_AUDIT = {
+    "task": "K4-VAL-121",
+    "pr": 1174,
+    "head": "8c9149e9ce9d198b23e8fcaf214d5d21f4b592ec",
+    "branch": "kokuno-agent4/relative-swirl-split-audit-121",
+    "base_pr": 1171,
+    "base_head": "657818dd83e119e6091bd2490d3804c04c3ef723",
+    "source_path": "src/openai_ns_reconstruction/kokuno_a4_relative_swirl_split_independent_audit.py",
+    "source_blob": "307eb9f1f4f002c690bba55c18fe804ef0b6c24e",
+    "stage": "implementation-distinct-save-reload-split-cartesian-divergence-audit",
+    "exact_compare_ahead": 3,
+    "exact_compare_behind": 0,
+    "open_pr_mergeable_at_registration": True,
+    "audited_agent1_pr": 1171,
+    "audited_agent1_head": "657818dd83e119e6091bd2490d3804c04c3ef723",
+    "scientific_path_consumes_public_velocity_split_only_after_save_load": True,
+    "split_relative_swirl_cartesian_channel_independently_audited": True,
+    "canonical_absolute_fd_transfer_ready": False,
+    "scoped_gate_passed": None,
+    "complete_ns_residual_assessed": False,
+    "final_project_admission_ready": False,
+    "scientifically_admitted": False,
+    "pde_validated": False,
+    "dedicated_run": 35713472612,
+    "repository_tests_run": 35713472711,
+    "actions_status_at_registration": "queued",
+}
+
 _PARENT_REGISTRATION = parent_a5.build_registration()
 PARENT_FRONTIERS = copy.deepcopy(_PARENT_REGISTRATION["frontiers"])
 CORRECTED_SOURCE = copy.deepcopy(_PARENT_REGISTRATION["corrected_source"])
@@ -155,7 +184,10 @@ def _truth_boundary() -> dict[str, Any]:
             "current_cartesian_relative_swirl_composed": False,
             "terminal_global_leading_velocity_materialized": False,
             "agent1_1171_scientifically_admitted": False,
-            "agent4_matching_agent1_1171_split_audit_present": False,
+            "agent4_matching_agent1_1171_split_audit_present": True,
+            "agent4_matching_agent1_1171_split_audit_registered": True,
+            "agent4_matching_agent1_1171_split_scoped_gate_passed": None,
+            "agent4_matching_agent1_1171_split_canonical_fd_transfer_ready": False,
             "bounded_azimuthal_frame_orientation_materialized": True,
             "source_exact_frame_vectors_recovered": False,
             "source_exact_orientation_recovered": False,
@@ -195,14 +227,15 @@ def build_identity_firewall() -> dict[str, bool]:
         {
             "agent1_1171_split_delta_not_unified_float64_cartesian_composition": True,
             "agent1_1171_split_delta_not_terminal_or_global_leading": True,
-            "agent4_1160_evidence_bound_to_agent1_1154_algebra_only": True,
-            "agent4_1160_not_evidence_for_agent1_1171_split_representation": True,
+            "agent4_1174_evidence_bound_to_exact_agent1_1171_split_identity": True,
+            "agent4_1174_relative_fd_ladder_not_replacement_for_canonical_project_fd": True,
+            "agent4_1174_split_divergence_evidence_not_complete_ns_validation": True,
             "agent2_1170_orientation_is_repository_autonomous_not_source_exact": True,
             "agent2_1170_provider_family_not_self_contained_project_candidate": True,
             "agent2_1170_covariance_contract_not_independent_pde_validation": True,
             "agent3_1172_haar_operator_not_repository_candidate_without_pinned_provider": True,
             "agent3_1172_raw_wave_bridge_not_rf30_defect_or_correction": True,
-            "agent4_1160_not_evidence_for_agent3_1172_bridge": True,
+            "agent4_1174_not_evidence_for_agent2_1170_or_agent3_1172": True,
             "latest_self_contained_project_composite_stays_agent2_1117": True,
             "cross_identity_evidence_transfer_allowed": False,
         }
@@ -211,7 +244,7 @@ def build_identity_firewall() -> dict[str, bool]:
 
 
 SHORTEST_CLOSURE = [
-    "preserve Agent-1 #1171 base+delta without rounding away the sub-epsilon edit, integrate it with a representation that retains the total field, and obtain matching Agent-4 evidence",
+    "let exact Agent-4 #1174 finish its preregistered split-channel audit, but do not treat it as unified-field or full-NS admission; retain the A1 #1171 split with a representation that does not round away the delta",
     "finish terminal/exterior/global leading and matched pressure on the same semantic identity",
     "turn Agent-2 provider-driven orientation/support assets into an exact-identity self-contained leading-plus-oscillatory project candidate; autonomous orientation must remain provenance-labeled",
     "supply and checksum-pin an implementation-distinct same-identity Agent-2 raw auxiliary-T2 provider to Agent-3 #1172; only then authorize RF30 candidate covariance/defect and run RF31/RF34-RF49",
@@ -240,6 +273,7 @@ def build_registration() -> dict[str, Any]:
         AGENT2_AZIMUTHAL_FRAME_ORIENTATION
     )
     frontiers["auxiliary_t2_haar_rf30_bridge"] = copy.deepcopy(AGENT3_AUXILIARY_T2_HAAR_BRIDGE)
+    frontiers["relative_swirl_split_validator"] = copy.deepcopy(AGENT4_RELATIVE_SWIRL_SPLIT_AUDIT)
     registration: dict[str, Any] = {
         "schema": SCHEMA,
         "task": TASK,
@@ -290,6 +324,8 @@ def validate_registration(registration: Mapping[str, Any]) -> None:
         raise ValueError("Agent-2 #1170 identity drifted")
     if frontiers.get("auxiliary_t2_haar_rf30_bridge") != AGENT3_AUXILIARY_T2_HAAR_BRIDGE:
         raise ValueError("Agent-3 #1172 identity drifted")
+    if frontiers.get("relative_swirl_split_validator") != AGENT4_RELATIVE_SWIRL_SPLIT_AUDIT:
+        raise ValueError("Agent-4 #1174 identity drifted")
 
     a1 = frontiers["relative_swirl_split_delta"]
     if a1["relative_swirl_cartesian_delta_channel_materialized"] is not True:
@@ -323,8 +359,16 @@ def validate_registration(registration: Mapping[str, Any]) -> None:
     if a3["rf30_defect_materialized"] is not False:
         raise ValueError("A3 Haar mechanics was laundered into RF30 defect")
 
-    if frontiers["relative_swirl_compensator_validator"]["audited_agent1_pr"] != 1154:
-        raise ValueError("Agent-4 #1160 evidence transferred across Agent-1 identities")
+    a4 = frontiers["relative_swirl_split_validator"]
+    if a4["audited_agent1_pr"] != 1171 or a4["audited_agent1_head"] != AGENT1_RELATIVE_SWIRL_SPLIT["head"]:
+        raise ValueError("Agent-4 split audit is not bound to exact A1 #1171")
+    if a4["scientific_path_consumes_public_velocity_split_only_after_save_load"] is not True:
+        raise ValueError("Agent-4 implementation-distinct public path was weakened")
+    if a4["scoped_gate_passed"] is not None:
+        raise ValueError("queued Agent-4 audit was laundered into a gate conclusion")
+    if a4["complete_ns_residual_assessed"] is not False or a4["pde_validated"] is not False:
+        raise ValueError("scoped split audit was laundered into PDE validation")
+
     if frontiers["latest_self_contained_project_composite"]["pr"] != 1117:
         raise ValueError("provider-driven orientation was laundered into self-contained candidate")
 
@@ -356,12 +400,20 @@ def validate_registration(registration: Mapping[str, Any]) -> None:
     if gates["residual_defined_free_forcing_allowed"] is not False:
         raise ValueError("free-forcing prohibition was weakened")
 
+    truth = reg["truth_boundary"]
+    if truth["agent4_matching_agent1_1171_split_audit_present"] is not True:
+        raise ValueError("matching A4 #1174 audit delivery was dropped")
+    if truth["agent4_matching_agent1_1171_split_scoped_gate_passed"] is not None:
+        raise ValueError("unresolved A4 #1174 gate was pre-claimed")
+    if truth["current_i4_source_auxiliary_t2_haar_operator_executable"] is not True:
+        raise ValueError("A3 executable Haar operator truth was dropped")
+
     required_false_truth = (
         "binary64_total_relative_swirl_sum_is_resolved",
         "current_cartesian_relative_swirl_composed",
         "terminal_global_leading_velocity_materialized",
         "agent1_1171_scientifically_admitted",
-        "agent4_matching_agent1_1171_split_audit_present",
+        "agent4_matching_agent1_1171_split_canonical_fd_transfer_ready",
         "source_exact_frame_vectors_recovered",
         "source_exact_orientation_recovered",
         "oriented_source_provider_self_contained",
@@ -383,9 +435,6 @@ def validate_registration(registration: Mapping[str, Any]) -> None:
         "scientific_admission",
         "pde_validated",
     )
-    truth = reg["truth_boundary"]
-    if truth["current_i4_source_auxiliary_t2_haar_operator_executable"] is not True:
-        raise ValueError("A3 executable Haar operator truth was dropped")
     if any(truth[name] is not False for name in required_false_truth):
         raise ValueError("truth boundary was promoted")
 
