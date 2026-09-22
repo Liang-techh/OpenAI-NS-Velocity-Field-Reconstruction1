@@ -53,18 +53,22 @@ def test_new_upstream_frontiers_are_exact_and_non_promoting() -> None:
     assert a3["nonlinear_remainder_recomputed"] is False
 
 
-def test_radial_force_a4_claim_is_pending_not_evidence() -> None:
+def test_radial_force_a4_validator_is_delivered_registered_but_not_admitted() -> None:
     reg = routing.build_registration()
-    pending = reg["frontiers"]["current_i4_radial_force_validator_pending"]
-    assert pending["task"] == "K4-VAL-116"
-    assert pending["status"] == "claimed-pending-delivery"
-    assert pending["exact_base_pr"] == 1118
-    assert pending["exact_base_head"] == "922f7aa10460ded44af212d313eceff33a2ac647"
-    assert pending["delivered_pr"] is None
-    assert pending["delivered_head"] is None
-    assert pending["present"] is False
-    assert pending["registered"] is False
-    assert pending["scientifically_admitted"] is False
+    audit = reg["frontiers"]["current_i4_radial_force_validator"]
+    assert audit["task"] == "K4-VAL-116"
+    assert audit["pr"] == 1127
+    assert audit["head"] == "add922982c2f3a4cf5a72d84910817e63f05c487"
+    assert audit["audited_agent3_pr"] == 1118
+    assert audit["audited_agent3_head"] == "922f7aa10460ded44af212d313eceff33a2ac647"
+    assert audit["present"] is True
+    assert audit["registered"] is True
+    assert audit["scoped_gate_passed"] is None
+    assert audit["scientifically_admitted"] is False
+    assert audit["authorizes_complete_ns_correction"] is False
+    assert audit["repository_tests_run"] == 35688548029
+    assert audit["dedicated_run"] == 35688548012
+    assert audit["actions_status_at_registration"] == "queued"
 
     stress = reg["frontiers"]["current_i4_stress_validator"]
     assert stress["pr"] == 1119
@@ -82,14 +86,15 @@ def test_truth_boundary_keeps_only_real_narrow_advances_true() -> None:
     assert truth["rf30_rf31_formula_executor_materialized"] is True
     assert truth["agent4_matching_current_i4_radial_stress_audit_present"] is True
     assert truth["agent4_current_i4_radial_force_audit_claimed"] is True
+    assert truth["agent4_matching_current_i4_radial_force_audit_present"] is True
+    assert truth["agent4_matching_current_i4_radial_force_audit_registered"] is True
+    assert truth["agent4_matching_current_i4_radial_force_audit_scoped_gate_passed"] is None
 
     for key in (
         "current_cartesian_end_compensation_composed",
         "source_exact_main_pulse_amplitude_materialized",
         "terminal_global_leading_velocity_materialized",
         "matching_agent4_xi11_composite_audit_present",
-        "agent4_matching_current_i4_radial_force_audit_present",
-        "agent4_matching_current_i4_radial_force_audit_registered",
         "agent4_matching_current_i4_radial_force_audit_admitted",
         "current_i4_source_fixed_q_backend_materialized",
         "current_i4_rf30_defect_materialized",
@@ -163,16 +168,20 @@ def test_digest_and_truth_promotion_mutations_fail_closed() -> None:
         routing.validate_registration(promoted)
 
 
-def test_pending_a4_claim_cannot_be_rehashed_into_delivered_evidence() -> None:
+def test_queued_a4_validator_cannot_be_rehashed_into_scoped_pass_or_admission() -> None:
     reg = routing.build_registration()
     promoted = copy.deepcopy(reg)
-    pending = promoted["frontiers"]["current_i4_radial_force_validator_pending"]
-    pending["delivered_pr"] = 9999
-    pending["delivered_head"] = "a" * 40
-    pending["present"] = True
-    pending["registered"] = True
+    audit = promoted["frontiers"]["current_i4_radial_force_validator"]
+    audit["scoped_gate_passed"] = True
     _rehash(promoted)
-    with pytest.raises(ValueError, match="pending A4"):
+    with pytest.raises(ValueError, match="A4 K4-VAL-116 identity drift"):
+        routing.validate_registration(promoted)
+
+    promoted = copy.deepcopy(reg)
+    audit = promoted["frontiers"]["current_i4_radial_force_validator"]
+    audit["scientifically_admitted"] = True
+    _rehash(promoted)
+    with pytest.raises(ValueError, match="A4 K4-VAL-116 identity drift"):
         routing.validate_registration(promoted)
 
 
