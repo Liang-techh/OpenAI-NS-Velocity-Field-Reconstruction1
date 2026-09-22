@@ -180,6 +180,7 @@ def test_vectorized_cartesian_velocity_reaches_pre_pulse_bridge_and_axis_is_regu
     assert np.all(np.isfinite(values))
     assert values[0, 0] == 0.0
     assert values[0, 1] == 0.0
+    assert float(np.linalg.norm(values[1])) > 0.0
 
 
 def test_save_load_binds_parent_and_pre_pulse_source_scope(candidate, tmp_path):
