@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "contract_id": "cr002_kokuno_current_qs_eta_bridge_scope_v1",
+  "purpose": "Prevent an eta-resolved current release2-end Q_s state or any eta-wise implied matching-time diagnostic from being silently scalarized into one current l=-h Cartesian bridge length or promoted to unified Kokuno velocity delivery.",
+  "bindings": {
+    "active_constrained_integration_branch": "codex/cr001-constraints",
+    "active_constrained_integration_head_at_audit": "6a293b3c870d70b8d8aece1b12d68685c9b8b010",
+    "canonical_constraints_path": "configs/constraints.json",
+    "canonical_constraints_blob_sha1": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "project_status_path": "project_status.json",
+    "project_status_blob_sha1": "f8e05e9d25ab6cc83a7221fc431ab42319d38ff0",
+    "dependency_pr": 1225,
+    "dependency_exact_head": "8503f2ede2dd604392198b31ffdeb79321822a30",
+    "dependency_module_path": "src/openai_ns_reconstruction/kokuno_current_exterior_qs_release2_state.py",
+    "dependency_module_blob_sha1": "7c6b7e6a95813db9422fff9194ea373faddc0895",
+    "independent_audit_pr_observed": 1227,
+    "independent_audit_role": "external sibling diagnostic only; not ingested as candidate truth"
+  },
+  "source_classification": {
+    "user_requirement": [
+      "Deliver an explicit callable and save-loadable velocity(x,y,z,t)->[u,v,w] without treating PDE validation as a prerequisite for callability.",
+      "Keep velocity delivery, visual correspondence, PDE validation, paper exactness, and OpenAI-field identification as independent states."
+    ],
+    "public_source_fact": [
+      "After the published release schedule, the corrected reconstruction uses an l=-h matching stage and, for the source-ideal scalar schedule, Q_s(y)=Q_in*exp(-(1-h)y) until Q_p is reached.",
+      "The terminal target Q_p and the l=-h matching stage are construction ingredients; their source use does not by itself identify the current carried candidate's eta-resolved release2 endpoint."
+    ],
+    "autonomous_design": [
+      "PR #1225 materializes the current carried release2-end Q_s as a function of eta using the general radial identity and repository numerical realization.",
+      "This CR002 contract treats eta-wise implied T(eta)=log(Q_s(eta)/Q_p)/(1-h) as a representation diagnostic only unless a legal bridge construction is separately materialized.",
+      "Finite eta sampling, scalar summaries, or a convenient representative eta do not establish an eta-independent current bridge length."
+    ],
+    "pending_unknown": [
+      "Whether the exact current Q_s release2 endpoint is eta-independent on the full applicable eta interval.",
+      "Whether one scalar current l=-h matching length exists for this carried state under the intended construction, or whether an eta-dependent bridge geometry requires a new explicitly governed candidate design.",
+      "Current Cartesian matching bridge and terminal multiplier composition, exterior/global leading completion, matched pressure, restricted forcing, complete NS residual, visual correspondence, PDE validation, paper exactness, and OpenAI-field identity."
+    ]
+  },
+  "truth_state": {
+    "current_q_s_release2_endpoint_materialized": true,
+    "current_q_s_exposed_as_eta_resolved_state": true,
+    "current_q_s_proven_eta_independent": false,
+    "current_scalar_l_minus_h_matching_length_materialized": false,
+    "eta_dependent_cartesian_matching_bridge_materialized": false,
+    "current_cartesian_terminal_multiplier_composed": false,
+    "kokuno_unified_global_velocity_export_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "evidence_transfer": {
+    "eta_resolved_qs_endpoint_implies_one_scalar_matching_length": false,
+    "finite_eta_probe_agreement_proves_eta_independence": false,
+    "min_max_mean_or_rms_implied_time_may_define_current_bridge_identity": false,
+    "one_representative_eta_may_define_current_bridge_identity": false,
+    "source_ideal_t_match_may_replace_current_eta_resolved_matching_geometry": false,
+    "a4_eta_wise_implied_time_diagnostic_materializes_current_bridge": false,
+    "eta_wise_diagnostic_implies_cartesian_terminal_composition": false,
+    "matching_diagnostic_implies_kokuno_velocity_export_ready": false,
+    "matching_diagnostic_implies_visual_correspondence": false,
+    "matching_diagnostic_implies_pde_validation": false,
+    "matching_diagnostic_implies_paper_exactness": false,
+    "matching_diagnostic_implies_openai_field_identity": false
+  },
+  "promotion_prerequisites": [
+    "Establish the full-interval eta structure of the exact current release2-end Q_s: either prove/derive eta-independence on the applicable interval or explicitly retain its eta dependence with a bounded, declared representation.",
+    "If a single scalar bridge is claimed, derive that scalar from the exact current identity and prove that the same l=-h evolution reaches Q_p for the full applicable eta state; finite probe agreement or scalar summaries are insufficient.",
+    "If an eta-dependent matching boundary is used instead, define it as an explicit autonomous/source-supported construction with smooth coordinate/Cartesian semantics, axis regularity, domain coverage, and a new semantic identity; do not silently reinterpret the source scalar stage.",
+    "Compose the chosen bridge and terminal multiplier into the actual Cartesian velocity provider and create a new save-load identity.",
+    "Replay finite-value, axis, seam, save-load, and claimed project-domain coverage checks on that exact Cartesian identity; keep visual/PDE/paper/OpenAI gates separate."
+  ],
+  "mechanics_witness": {
+    "role": "autonomous_representation_mechanics_only",
+    "definition": "q(eta)=q0*exp(alpha*eta), T(eta)=log(q(eta)/q_p)/(1-h)",
+    "q0": 0.2,
+    "q_p": 0.01,
+    "h": 0.005,
+    "alpha": 0.1,
+    "eta_samples": [
+      -0.5,
+      0.0,
+      0.5
+    ],
+    "claim": "A positive eta-resolved endpoint can require different pointwise matching times; replacing those by one scalar leaves pointwise terminal mismatch away from the representative eta. This is logic only, not Kokuno/OpenAI numerical evidence."
+  },
+  "canonical_independence": {
+    "canonical_eq45_velocity_export_ready_expected": true,
+    "canonical_visual_correspondence_verified_expected": false,
+    "canonical_pde_validated_expected": false,
+    "canonical_paper_exact_expected": false,
+    "canonical_openai_field_identified_expected": false,
+    "kokuno_bridge_incompleteness_must_not_revoke_canonical_eq45_callability": true
+  },
+  "cr001_guardrails": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ]
+    ],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [
+      0.25,
+      0.75
+    ],
+    "forcing_mode": "restricted_two_parameter_family",
+    "residual_defined_free_force_forbidden": true,
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "quadrature_orders_per_axis": [
+      24,
+      48,
+      96
+    ],
+    "momentum_max_threshold": 0.001,
+    "momentum_l2_threshold": 0.001,
+    "divergence_max_threshold": 1e-05,
+    "divergence_l2_threshold": 1e-05
+  }
+}
