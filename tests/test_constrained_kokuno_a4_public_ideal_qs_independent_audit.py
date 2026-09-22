@@ -61,7 +61,7 @@ def test_reference_rk4_is_distinct_from_production_gl192_and_converges() -> None
     assert "quadrature" not in params
 
 
-def test_wrong_ode_sign_is_detectably_incompatible_with_public_schedule() -> None:
+def test_wrong_ode_sign_is_detectably_incompatible_with_positive_schedule() -> None:
     schedule = module.default_schedule()
     lam = schedule.lambda_value
     h = schedule.h_value
@@ -73,18 +73,22 @@ def test_wrong_ode_sign_is_detectably_incompatible_with_public_schedule() -> Non
         ell = -lam - (1.0 - lam) * sig
         return +ell + h - (1.0 + ell) * q
 
-    wrong = module._rk4_to(wrong_rhs, q0, 1.0, 2048, lam, h)
-    assert module._relative_difference(wrong, schedule.q_release1_end_source_ideal) > 1.0e-2
+    # The wrong sign drives the nominal positive source-ideal Q branch negative;
+    # the independent integrator therefore fails closed before comparison.
+    with pytest.raises(RuntimeError, match="independent RK4 source-ideal Q became invalid"):
+        module._rk4_to(wrong_rhs, q0, 1.0, 2048, lam, h)
 
 
 def test_public_value_corruption_is_caught_after_reference_is_formed(tmp_path, monkeypatch) -> None:
     original, loaded = _roundtrip(tmp_path)
-    actual = loaded.q_release2
+    actual = KokunoPublicIdealExteriorQsSchedule.q_release2
 
-    def corrupted(s):
-        return np.asarray(actual(s), dtype=float) * 1.001
+    def corrupted(self, s):
+        return np.asarray(actual(self, s), dtype=float) * 1.001
 
-    monkeypatch.setattr(loaded, "q_release2", corrupted)
+    # Patch the class rather than the frozen dataclass instance.  The A4
+    # reference is unaffected; only the later production comparison is changed.
+    monkeypatch.setattr(KokunoPublicIdealExteriorQsSchedule, "q_release2", corrupted)
     report = module.audit_loaded_public_ideal_schedule(loaded, original)
     assert report["fine_offgrid_release_relative_max_to_public"] > module.OFFGRID_PUBLIC_REL_GATE
     with pytest.raises(AssertionError):
