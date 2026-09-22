@@ -1,0 +1,30 @@
+name: agent7-st052m-temporal-sampling-alias-audit
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_temporal_sampling_alias_audit.py'
+      - 'experiments/root_st052/test_agent7_st052m_temporal_sampling_alias_audit.py'
+      - '.github/workflows/agent7-st052m-temporal-sampling-alias-audit.yml'
+  workflow_dispatch:
+
+jobs:
+  temporal-sampling-alias-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install numerical dependency
+        run: python -m pip install numpy
+      - name: Run focused regressions
+        working-directory: experiments/root_st052
+        run: python -m unittest -v test_agent7_st052m_temporal_sampling_alias_audit.py
+      - name: Emit deterministic audit receipt
+        working-directory: experiments/root_st052
+        run: python agent7_st052m_temporal_sampling_alias_audit.py --output temporal_sampling_alias_audit.json
+      - uses: actions/upload-artifact@v4
+        with:
+          name: agent7-st052m-temporal-sampling-alias-audit
+          path: experiments/root_st052/temporal_sampling_alias_audit.json
