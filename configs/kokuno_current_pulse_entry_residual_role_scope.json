@@ -1,0 +1,143 @@
+{
+  "cr001_invariants": {
+    "constraints_blob_sha": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "derivative_steps": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "evaluation_box": [
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ]
+    ],
+    "forcing_family_change_this_increment": false,
+    "forcing_mode": "restricted_two_parameter_family",
+    "forcing_parameter_bounds": {
+      "a": [
+        0.0,
+        10.0
+      ],
+      "c": [
+        0.0,
+        10.0
+      ]
+    },
+    "held_out_points": 4096,
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "quadrature_orders_per_axis": [
+      24,
+      48,
+      96
+    ],
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "support": "r < 2 and abs(z) < 2",
+    "threshold_relaxation_this_increment": false,
+    "thresholds": {
+      "divergence_L2": 1e-05,
+      "divergence_max": 1e-05,
+      "pde_residual_L2": 0.001,
+      "pde_residual_max": 0.001
+    },
+    "time_interval": [
+      0.25,
+      0.75
+    ],
+    "validation_seed": 914027
+  },
+  "evidence_transfer_firewall": {
+    "allowed_claim": "Exact #1124 provides current-lineage low-dimensional M/J pulse-entry bookkeeping inputs for the existing public c1/c2 algebra.",
+    "forbidden_implications": [
+      "construction closure residual -> a body-force field",
+      "construction closure residual -> held-out complete NS residual",
+      "M/J input readiness -> c1/c2 Cartesian velocity composition",
+      "2x2 algebraic closure -> global velocity export readiness",
+      "low-dimensional bookkeeping -> visual correspondence",
+      "low-dimensional bookkeeping -> PDE validation",
+      "low-dimensional bookkeeping -> paper exactness or OpenAI-field identity"
+    ]
+  },
+  "exact_parent": {
+    "candidate_module": "src/openai_ns_reconstruction/kokuno_current_pulse_entry_moments.py",
+    "head_sha": "4be97cbeb3b78b4d6a162447ae8fea73d0c2c477",
+    "parent_pr": 1116,
+    "pr": 1124
+  },
+  "four_way_provenance": {
+    "autonomous_design": [
+      "The current finite-N modulation and frozen PA.17 I1 repair family are repository-autonomous.",
+      "Use the already-frozen post-I1 construction closure residual to transport current-lineage M/J bookkeeping to pulse entry.",
+      "The current A_principal amplitude is a repository-autonomous proxy."
+    ],
+    "pending_unknown": [
+      "source-exact Amp(eta) root and hidden pointwise bump shapes",
+      "Cartesian composition of the pulse-end c1/c2 compensation",
+      "terminal/exterior/global current leading velocity",
+      "matched pressure and preregistered restricted forcing for the Kokuno route",
+      "held-out complete NS residual and PDE admission",
+      "visual correspondence, paper exactness, and exact OpenAI-field identity"
+    ],
+    "public_source_facts": [
+      "H=sqrt(2X)E; M(X,eta)=int_0^X U dx; J(X,eta)=int_0^X U H dx.",
+      "m_p=M(X_p)/(X_p E_p); j_p=J(X_p)/(X_p H_p E_p).",
+      "s1=1/2-lambda and s2=1/2-2lambda are the two pulse-end row slopes."
+    ],
+    "user_requirements": [
+      "Keep callable velocity delivery independent from PDE validation.",
+      "Do not use a residual-defined free force, amplitude collapse, or post-hoc threshold relaxation.",
+      "Keep source facts, autonomous design, and pending/unknown claims separate."
+    ]
+  },
+  "independent_delivery_states": {
+    "canonical_eq45_velocity_export_ready": true,
+    "kokuno_openai_field_identified": false,
+    "kokuno_paper_exact": false,
+    "kokuno_pde_validated": false,
+    "kokuno_pulse_entry_route_velocity_export_ready": false,
+    "kokuno_visual_correspondence_verified": false
+  },
+  "mechanics_witness": {
+    "classification": "autonomous_mechanics_only",
+    "residual_a": [
+      1e-07,
+      -2e-07,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "residual_b": [
+      1e-07,
+      -2e-07,
+      9e-07,
+      -1.1e-06,
+      1.3e-06
+    ],
+    "statement": "Two frozen five-row construction residuals can share identical M/J rows while differing in I/S/C_p rows; therefore transported pulse-entry M/J does not identify the full construction residual and cannot be promoted to a complete NS residual or force."
+  },
+  "role_separation": {
+    "construction_closure_residual_classification": "autonomous_current_candidate_bookkeeping",
+    "construction_closure_residual_is_forcing": false,
+    "construction_closure_residual_is_heldout_ns_residual": false,
+    "construction_closure_residual_is_public_source_data": false,
+    "construction_closure_residual_may_authorize_force_fitting": false,
+    "current_cartesian_end_compensation_composed": false,
+    "current_lineage_J_entry_materialized": true,
+    "current_lineage_M_entry_materialized": true,
+    "public_end_compensator_inputs_ready": true,
+    "residual_defined_free_forcing_allowed": false,
+    "unified_global_kokuno_velocity_export_ready": false
+  },
+  "schema": "cr002-kokuno-current-pulse-entry-residual-role-scope-v1",
+  "task_id": "CR002-KOKUNO-PULSE-ENTRY-RESIDUAL-ROLE-138"
+}
