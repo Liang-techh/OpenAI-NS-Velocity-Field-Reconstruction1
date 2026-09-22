@@ -1,0 +1,214 @@
+name: kokuno-agent2-source-shell-edge-localized-harmonic
+
+on:
+  push:
+    branches:
+      - kokuno-agent2/source-shell-edge-localized-harmonic-099
+  pull_request:
+    branches:
+      - kokuno-agent2/source-zero-data-localized-harmonic-098
+  workflow_dispatch:
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out exact A2 head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: a2
+          fetch-depth: 0
+
+      - name: Verify exact parent ancestry and strict three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd a2
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+          git merge-base --is-ancestor 4bc9408d10b2f3c636abd4f6ce33cefab391093d HEAD
+          test "$(git rev-list --count 4bc9408d10b2f3c636abd4f6ce33cefab391093d..HEAD)" -eq 3
+          mapfile -t files < <(git diff --name-only 4bc9408d10b2f3c636abd4f6ce33cefab391093d..HEAD)
+          test "${#files[@]}" -eq 3
+          printf '%s\n' "${files[@]}" | sort > /tmp/actual-files
+          printf '%s\n' \
+            .github/workflows/kokuno-agent2-source-shell-edge-localized-harmonic.yml \
+            src/openai_ns_reconstruction/kokuno_source_shell_edge_localized_harmonic.py \
+            tests/test_constrained_kokuno_source_shell_edge_localized_harmonic.py \
+            | sort > /tmp/expected-files
+          diff -u /tmp/expected-files /tmp/actual-files
+          test "$(git hash-object src/openai_ns_reconstruction/kokuno_source_zero_data_localized_harmonic.py)" = \
+            "8087e619bb1812df6dcb616e1a51f1ab4dd728d4"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install A2 test dependencies
+        shell: bash
+        run: python -m pip install -e './a2[dev]'
+
+      - name: Compile and run focused shell-edge tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            a2/src/openai_ns_reconstruction/kokuno_source_shell_edge_localized_harmonic.py \
+            a2/tests/test_constrained_kokuno_source_shell_edge_localized_harmonic.py
+          PYTHONPATH="$PWD/a2/src" python -m pytest -q \
+            a2/tests/test_constrained_kokuno_source_zero_data_localized_harmonic.py \
+            a2/tests/test_constrained_kokuno_source_shell_edge_localized_harmonic.py
+
+      - name: Check out exact corrected Kokuno public source
+        uses: actions/checkout@v4
+        with:
+          repository: KokunoYumeto/yang-mills-interacting-workbench
+          ref: 143f6773feb424ad9ed3a8d116653200f20346b7
+          path: source
+          fetch-depth: 1
+
+      - name: Authenticate corrected shell-edge source bytes and formulas
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C source rev-parse HEAD)" = "143f6773feb424ad9ed3a8d116653200f20346b7"
+          test "$(git -C source hash-object navier-stokes/navier_stokes_workbench.tex)" = \
+            "205a99807302e21a51c5eaf223390c0dfc42bcd0"
+          python - <<'PY'
+          from pathlib import Path
+          text = Path("source/navier-stokes/navier_stokes_workbench.tex").read_text(encoding="utf-8")
+          assert r"d_a=\log(X/X_a)" in text
+          assert r"d_b=\log(X_b/X)" in text
+          assert r"\zeta=\exp(-a_a/d_a^2-a_b/d_b^2)" in text
+          assert r"\sqrt\zeta" in text
+          assert "extended by zero" in text or "zero extension" in text
+          PY
+
+      - name: Materialize source shell-edge receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p receipts
+          PYTHONPATH="$PWD/a2/src" python - <<'PY'
+          from __future__ import annotations
+          import json
+          from pathlib import Path
+          import numpy as np
+
+          from openai_ns_reconstruction.kokuno_source_phase_coefficient_jet import SourceBackgroundPhaseJet
+          from openai_ns_reconstruction.kokuno_source_shell_edge_localized_harmonic import (
+              SourceShellCoordinateJet,
+              materialize_source_zero_data_shell_localized_harmonic,
+              source_shell_edge_jet,
+              source_shell_edge_localized_harmonic_contract,
+          )
+          from openai_ns_reconstruction.kokuno_source_zero_data_amplitude_sensitivity import SourceModeForcingDirectionalJet
+          from openai_ns_reconstruction.kokuno_source_zero_data_localized_harmonic import SourceLocalizationJet
+
+          def background():
+              return SourceBackgroundPhaseJet(
+                  f=0.0, g=0.0, f_r=0.0, g_r=0.0, f_z=0.0, g_z=0.0,
+                  f_rr=0.0, g_rr=0.0, f_rz=0.0, g_rz=0.0, f_zz=0.0, g_zz=0.0,
+              )
+
+          forcing_value = np.asarray((0.0+0.0j, 0.7+0.2j, -0.35+0.1j))
+          zero = np.zeros(3, dtype=np.complex128)
+          def forcing(_v):
+              return SourceModeForcingDirectionalJet(forcing_value, zero, zero)
+
+          xa, xb, aa, ab = 1.0, 4.0, 1.3, 0.7
+          x = 2.0
+          h = 2e-6
+          jet = source_shell_edge_jet(
+              SourceShellCoordinateJet(x=x, dr_x=0.23, dz_x=-0.17),
+              x_a=xa, x_b=xb, a_a=aa, a_b=ab,
+          )
+          plus = source_shell_edge_jet(
+              SourceShellCoordinateJet(x=x+h, dr_x=0.0, dz_x=0.0),
+              x_a=xa, x_b=xb, a_a=aa, a_b=ab,
+          )
+          minus = source_shell_edge_jet(
+              SourceShellCoordinateJet(x=x-h, dr_x=0.0, dz_x=0.0),
+              x_a=xa, x_b=xb, a_a=aa, a_b=ab,
+          )
+          fd_dx = float((plus.weight-minus.weight)/(2*h))
+
+          common = dict(
+              pulse_v=0.30, radius=1.22, theta=0.41, z_normalized=0.23,
+              background=background(), forcing_jet_m=forcing,
+              localization_without_shell_edge=SourceLocalizationJet(0.8, 0.04, -0.03, 0.75),
+              x_a=xa, x_b=xb, a_a=aa, a_b=ab,
+              epsilon=0.25, p=0.0, p_z=0.0, x_0=1.0, k=2.0, m=1,
+          )
+          inside = materialize_source_zero_data_shell_localized_harmonic(
+              shell_coordinate=SourceShellCoordinateJet(x=x, dr_x=0.23, dz_x=-0.17),
+              **common,
+          )
+          outside = materialize_source_zero_data_shell_localized_harmonic(
+              shell_coordinate=SourceShellCoordinateJet(x=4.2, dr_x=0.23, dz_x=-0.17),
+              **common,
+          )
+          contract = source_shell_edge_localized_harmonic_contract()
+          receipt = {
+              "schema": "kokuno-agent2-source-shell-edge-localized-harmonic-receipt-v1",
+              "head": "${{ github.event.pull_request.head.sha || github.sha }}",
+              "source_commit": contract["source_commit"],
+              "source_workbench_blob": contract["source_workbench_blob"],
+              "shell_weight": float(jet.weight),
+              "shell_dx": float(jet.dx_weight),
+              "shell_dx_fd": fd_dx,
+              "shell_dx_fd_abs_error": abs(float(jet.dx_weight)-fd_dx),
+              "inside_complex_velocity_abs_max": float(np.max(np.abs(inside.harmonic.complex_velocity_cylindrical))),
+              "outside_complex_velocity_abs_max": float(np.max(np.abs(outside.harmonic.complex_velocity_cylindrical))),
+              "source_sqrt_zeta_shell_edge_materialized": contract["source_sqrt_zeta_shell_edge_materialized"],
+              "source_shell_edge_consumed_before_complete_curl": contract["source_shell_edge_consumed_before_complete_curl"],
+              "caller_supplies_remaining_partition_jet": contract["caller_supplies_remaining_partition_jet"],
+              "caller_supplies_pulse_cutoff_value": contract["caller_supplies_pulse_cutoff_value"],
+              "concrete_source_chi_partition_bumps_reconstructed": contract["concrete_source_chi_partition_bumps_reconstructed"],
+              "self_contained_velocity_xyzt_provider": contract["self_contained_velocity_xyzt_provider"],
+              "complete_ns_residual_assessed": contract["complete_ns_residual_assessed"],
+              "residual_reduction_claimed": contract["residual_reduction_claimed"],
+              "paper_exact": contract["paper_exact"],
+              "pde_validated": contract["pde_validated"],
+          }
+          Path("receipts/kokuno_a2_source_shell_edge_localized_harmonic.json").write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+          )
+          PY
+
+      - name: Upload receipt before gate enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a2-source-shell-edge-localized-harmonic
+          path: receipts/kokuno_a2_source_shell_edge_localized_harmonic.json
+          if-no-files-found: error
+
+      - name: Enforce shell-edge mechanics and truth boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          import math
+          from pathlib import Path
+          r = json.loads(Path("receipts/kokuno_a2_source_shell_edge_localized_harmonic.json").read_text(encoding="utf-8"))
+          for key in ("shell_weight", "shell_dx", "shell_dx_fd", "shell_dx_fd_abs_error", "inside_complex_velocity_abs_max"):
+              assert math.isfinite(r[key])
+          assert 0.0 < r["shell_weight"] < 1.0
+          assert r["shell_dx_fd_abs_error"] <= 2e-9
+          assert r["inside_complex_velocity_abs_max"] > 1e-12
+          assert r["outside_complex_velocity_abs_max"] == 0.0
+          assert r["source_sqrt_zeta_shell_edge_materialized"] is True
+          assert r["source_shell_edge_consumed_before_complete_curl"] is True
+          assert r["caller_supplies_remaining_partition_jet"] is True
+          assert r["caller_supplies_pulse_cutoff_value"] is True
+          assert r["concrete_source_chi_partition_bumps_reconstructed"] is False
+          assert r["self_contained_velocity_xyzt_provider"] is False
+          assert r["complete_ns_residual_assessed"] is False
+          assert r["residual_reduction_claimed"] is False
+          assert r["paper_exact"] is False
+          assert r["pde_validated"] is False
+          PY
