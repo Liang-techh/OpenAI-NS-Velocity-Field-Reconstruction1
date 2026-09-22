@@ -1,0 +1,192 @@
+name: kokuno-agent5-absolute-swirl-pulsesupport-rf30preflight-routing
+
+on:
+  push:
+    branches:
+      - kokuno-agent5/absolute-swirl-pulsesupport-rf30preflight-routing-119
+  pull_request:
+    branches:
+      - kokuno-agent5/relative-swirl-support-rf30preflight-routing-118
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-head-routing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout exact event head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install project test dependencies
+        run: python -m pip install -e '.[dev]'
+
+      - name: Authenticate exact parent and fresh sibling deliveries
+        shell: bash
+        run: |
+          set -euo pipefail
+          fetch_commit_and_check() {
+            local expected_head="$1" path="$2" expected_blob="$3"
+            git fetch --no-tags --depth=1 origin "${expected_head}"
+            actual_blob="$(git rev-parse "${expected_head}:${path}")"
+            test "${actual_blob}" = "${expected_blob}"
+          }
+
+          parent='ab8501a3f2e89e2f2e6f47c2ff67b53ead8eaa8f'
+          git merge-base --is-ancestor "${parent}" HEAD
+          test "$(git rev-parse "${parent}:src/openai_ns_reconstruction/kokuno_a5_relative_swirl_support_rf30preflight_routing.py")" = \
+            'c9d0f0c9f8ac3007f11a9add94eb04afbbdfb1dd'
+
+          fetch_commit_and_check \
+            'bb246140c6c2451b22b59aad9ba90604bc2acb21' \
+            'src/openai_ns_reconstruction/kokuno_current_relative_swirl_absolute_target.py' \
+            '86b4804a77b2d17f1a881579dfbed7a17264fb49'
+          fetch_commit_and_check \
+            '0cbf74972af6589f7eb9a2edfe21c957d7512a5c' \
+            'src/openai_ns_reconstruction/kokuno_source_pulse_coordinate_support_multiharmonic_velocity.py' \
+            'd95265098a9a9eb95ee673fecb3e7b115f2866e6'
+          fetch_commit_and_check \
+            'cafab2098f00c3dc2ed5668e1b12bdb38a1f31e8' \
+            'src/openai_ns_reconstruction/kokuno_current_i4_rf30_fixedq_preflight.py' \
+            'b2fac4318a40342d6c08170bf7093c31685c53ab'
+          fetch_commit_and_check \
+            '47a241732b667b02f2294670d37f32650491f7e3' \
+            'src/openai_ns_reconstruction/kokuno_a4_relative_swirl_compensator_independent_audit.py' \
+            'c279371898a75cfcf7d2aa39861eba4cba432cc2'
+
+      - name: Authenticate corrected public source provenance
+        uses: actions/checkout@v4
+        with:
+          repository: KokunoYumeto/yang-mills-interacting-workbench
+          ref: 143f6773feb424ad9ed3a8d116653200f20346b7
+          path: corrected-source
+          fetch-depth: 1
+
+      - name: Verify corrected source bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C corrected-source rev-parse HEAD)" = '143f6773feb424ad9ed3a8d116653200f20346b7'
+          test "$(git -C corrected-source hash-object navier-stokes/navier_stokes_workbench.tex)" = '205a99807302e21a51c5eaf223390c0dfc42bcd0'
+
+      - name: Enforce minimal three-file Agent-5 delta
+        shell: bash
+        run: |
+          set -euo pipefail
+          parent='ab8501a3f2e89e2f2e6f47c2ff67b53ead8eaa8f'
+          git merge-base --is-ancestor "${parent}" HEAD
+          test "$(git rev-list --count "${parent}"..HEAD)" -eq 3
+          mapfile -t changed < <(git diff --name-only "${parent}..HEAD" | sort)
+          expected=(
+            '.github/workflows/kokuno-agent5-absolute-swirl-pulsesupport-rf30preflight-routing.yml'
+            'src/openai_ns_reconstruction/kokuno_a5_absolute_swirl_pulsesupport_rf30preflight_routing.py'
+            'tests/test_kokuno_a5_absolute_swirl_pulsesupport_rf30preflight_routing.py'
+          )
+          mapfile -t expected_sorted < <(printf '%s\n' "${expected[@]}" | sort)
+          test "${#changed[@]}" -eq 3
+          test "$(printf '%s\n' "${changed[@]}")" = "$(printf '%s\n' "${expected_sorted[@]}")"
+          test -z "$(git diff --diff-filter=D --name-only "${parent}..HEAD")"
+
+      - name: Run focused parent and new Agent-5 regressions
+        run: |
+          python -m py_compile \
+            src/openai_ns_reconstruction/kokuno_a5_absolute_swirl_pulsesupport_rf30preflight_routing.py \
+            tests/test_kokuno_a5_absolute_swirl_pulsesupport_rf30preflight_routing.py
+          pytest -q \
+            tests/test_kokuno_a5_relative_swirl_support_rf30preflight_routing.py \
+            tests/test_kokuno_a5_absolute_swirl_pulsesupport_rf30preflight_routing.py
+
+      - name: Materialize deterministic routing artifact
+        run: |
+          mkdir -p artifacts/kokuno/agent5
+          python -m openai_ns_reconstruction.kokuno_a5_absolute_swirl_pulsesupport_rf30preflight_routing \
+            --output artifacts/kokuno/agent5/absolute_swirl_pulsesupport_rf30preflight_routing.json
+
+      - name: Upload registration artifact before truth enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-absolute-swirl-pulsesupport-rf30preflight-routing-v119
+          path: artifacts/kokuno/agent5/absolute_swirl_pulsesupport_rf30preflight_routing.json
+          if-no-files-found: error
+
+      - name: Final fail-closed truth enforcement
+        run: |
+          python - <<'PY'
+          from openai_ns_reconstruction.kokuno_a5_absolute_swirl_pulsesupport_rf30preflight_routing import load_registration
+
+          reg = load_registration('artifacts/kokuno/agent5/absolute_swirl_pulsesupport_rf30preflight_routing.json')
+          truth = reg['truth_boundary']
+          state = reg['core_state']
+          f = reg['frontiers']
+          gates = reg['frozen_gates']
+
+          a1 = f['absolute_relative_swirl_target']
+          assert a1['pr'] == 1168
+          assert a1['head'] == 'bb246140c6c2451b22b59aad9ba90604bc2acb21'
+          assert a1['open_pr_mergeable_at_registration'] is False
+          assert a1['absolute_current_r_I_at_flattening_endpoint_materialized'] is True
+          assert a1['current_relative_swirl_total_target_materialized'] is True
+          assert a1['imported_base_absolute_angular_target_materialized'] is True
+          assert a1['current_cartesian_relative_swirl_composed'] is False
+          assert a1['scientifically_admitted'] is False
+
+          a2 = f['pulse_coordinate_support_multiharmonic']
+          assert a2['pr'] == 1164
+          assert a2['provider_certified_pulse_coordinate_support_materialized'] is True
+          assert a2['source_exact_pulse_coordinate_mapping_recovered'] is False
+          assert a2['source_pulse_coordinate_identified_with_chart_T'] is False
+          assert a2['source_pulse_coordinate_identified_with_physical_t'] is False
+          assert a2['physical_time_support_certificate_materialized'] is False
+          assert a2['source_provider_self_contained'] is False
+          assert a2['self_contained_velocity_xyzt_provider'] is False
+
+          a3 = f['current_i4_rf30_fixedq_preflight']
+          assert a3['pr'] == 1161
+          assert a3['source_auxiliary_t2_provider_available'] is False
+          assert a3['normalized_source_auxiliary_t2_haar_mean_used'] is False
+          assert a3['rf30_repository_candidate_state_authorized'] is False
+          assert a3['current_i4_rf30_defect_materialized'] is False
+
+          a4 = f['relative_swirl_compensator_validator']
+          assert a4['pr'] == 1160
+          assert a4['audited_agent1_pr'] == 1154
+          assert a4['scoped_gate_passed'] is None
+          assert a4['scientifically_admitted'] is False
+
+          assert f['latest_cartesian_leading']['pr'] == 1148
+          assert f['latest_self_contained_project_composite']['pr'] == 1117
+          assert truth['current_cartesian_relative_swirl_composed'] is False
+          assert truth['agent4_1160_audits_agent1_1168_absolute_target'] is False
+          assert truth['physical_time_support_certificate_materialized'] is False
+          assert truth['current_i4_source_auxiliary_t2_provider_materialized'] is False
+          assert truth['current_i4_rf30_defect_materialized'] is False
+          assert truth['complete_identity_bound_ns_defect_materialized'] is False
+          assert truth['heldout_complete_ns_residual_assessed'] is False
+          assert truth['canonical_whole_domain_admission_run'] is False
+          assert truth['pde_validated'] is False
+
+          assert state == {
+              'leading_ready': False,
+              'oscillatory_ready': True,
+              'correction_ready': False,
+              'velocity_export_ready': False,
+              'pde_validated': False,
+          }
+          assert gates['normalized_momentum_sampled_max'] == 1e-3
+          assert gates['normalized_momentum_volume_l2'] == 1e-3
+          assert gates['normalized_divergence_sampled_max'] == 1e-5
+          assert gates['normalized_divergence_volume_l2'] == 1e-5
+          assert gates['canonical_quadrature'] == [24, 48, 96]
+          assert gates['residual_defined_free_forcing_allowed'] is False
+          PY
