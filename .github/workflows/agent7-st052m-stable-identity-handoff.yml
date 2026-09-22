@@ -1,0 +1,133 @@
+name: agent7-st052m-stable-identity-handoff
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_stable_identity_handoff.py'
+      - 'experiments/root_st052/test_agent7_st052m_stable_identity_handoff.py'
+      - '.github/workflows/agent7-st052m-stable-identity-handoff.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  stable-identity-handoff:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out exact Agent-7 PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Verify exact Agent-7 parent and strict three-file delta
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE=f90de7bb4126934823370ee64d1f1c9625d6ece2
+          test "$(git rev-parse HEAD^3)" = "$BASE"
+          test "$(git rev-list --count "$BASE"..HEAD)" -eq 3
+          test -z "$(git diff --diff-filter=D --name-only "$BASE"..HEAD)"
+          actual="$(git diff --name-only "$BASE"..HEAD | sort)"
+          expected="$(printf '%s\n' \
+            '.github/workflows/agent7-st052m-stable-identity-handoff.yml' \
+            'experiments/root_st052/agent7_st052m_stable_identity_handoff.py' \
+            'experiments/root_st052/test_agent7_st052m_stable_identity_handoff.py' | sort)"
+          printf 'Changed paths:\n%s\n' "$actual"
+          test "$actual" = "$expected"
+
+      - name: Run focused handoff regressions
+        run: >-
+          python -m unittest
+          experiments/root_st052/test_agent7_st052m_stable_identity_handoff.py -v
+
+      - name: Read exact A9 stable-identity run state
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh api "/repos/$REPO/actions/runs/35681756248" > /tmp/stable-run.json
+          test "$(jq -r .id /tmp/stable-run.json)" = 35681756248
+          test "$(jq -r .head_sha /tmp/stable-run.json)" = e0bf8eabafa34553cbd6b96460bfda9c003abe50
+          echo "stable_run_status=$(jq -r .status /tmp/stable-run.json)"
+          echo "stable_run_conclusion=$(jq -r .conclusion /tmp/stable-run.json)"
+
+      - name: Download stable semantic identity only if exact upstream passed
+        if: ${{ hashFiles('/tmp/stable-run.json') != '' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          status="$(jq -r .status /tmp/stable-run.json)"
+          conclusion="$(jq -r .conclusion /tmp/stable-run.json)"
+          if [ "$status" = completed ] && [ "$conclusion" = success ]; then
+            mkdir -p /tmp/stable-artifact
+            gh run download 35681756248 --repo "$REPO" \
+              -n ST052-M-stable-semantic-identity -D /tmp/stable-artifact
+            receipt="$(find /tmp/stable-artifact -type f -name receipt.json -print -quit)"
+            test -n "$receipt" && test -f "$receipt"
+            echo "STABLE_RECEIPT=$receipt" >> "$GITHUB_ENV"
+          else
+            echo 'Exact #1112 run is not completed/success; handoff remains scientifically blocked.'
+          fi
+
+      - name: Emit fail-closed Agent-7 handoff receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/agent7_st052m_stable_identity_handoff
+          args=(
+            --stable-run-meta /tmp/stable-run.json
+            --out artifacts/agent7_st052m_stable_identity_handoff/receipt.json
+          )
+          if [ -n "${STABLE_RECEIPT:-}" ]; then
+            args+=(--stable-receipt "$STABLE_RECEIPT")
+          fi
+          python experiments/root_st052/agent7_st052m_stable_identity_handoff.py "${args[@]}"
+
+      - name: Enforce no premature basis/control promotion
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r=json.loads(Path('artifacts/agent7_st052m_stable_identity_handoff/receipt.json').read_text())
+          assert r['task_id']=='CR003-ST052M-STABLE-IDENTITY-HANDOFF-132'
+          assert r['prereg_issue']==1114
+          assert r['historical_failed_axial_evidence']['admitted_for_basis_routing'] is False
+          d=r['decision']
+          assert d['status'] in {
+              'blocked_stable_identity_ci',
+              'stable_identity_ready_fresh_axial_rerun_required',
+          }
+          assert d['fresh_axial_rerun_required'] is True
+          assert d['fresh_axial_measurement_admitted'] is False
+          assert d['handoff_to_existing_axial_router_authorized'] is False
+          assert d['existing_control_selection_authorized'] is False
+          assert d['targeted_basis_preflight_authorized'] is False
+          assert d['candidate_mutation_authorized'] is False
+          assert r['truth']['candidate_velocity_changed'] is False
+          assert r['truth']['basis_dimension_changed'] is False
+          assert r['truth']['direct_visualization_fingerprint_improvement']==0.0
+          assert r['truth']['visual_correspondence_verified'] is False
+          assert r['truth']['pde_validated'] is False
+          print('handoff_status=',d['status'])
+          PY
+
+      - name: Upload handoff receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: agent7-st052m-stable-identity-handoff
+          path: artifacts/agent7_st052m_stable_identity_handoff/receipt.json
+          if-no-files-found: error
+
+# Frozen by Issue #1114 before the stable-ID CI outcome or any fresh axial rerun is consumed.
