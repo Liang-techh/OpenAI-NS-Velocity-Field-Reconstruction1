@@ -1,0 +1,140 @@
+name: Kokuno A5 Bridge 960 Routing
+
+on:
+  pull_request:
+    paths:
+      - src/openai_ns_reconstruction/kokuno_a5_bridge_960_routing.py
+      - tests/test_kokuno_a5_bridge_960_routing.py
+      - .github/workflows/kokuno-agent5-bridge-960-routing.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-head-routing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Verify exact A5 parent and three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          parent="9784da1596a71d7d60dc4759f7571cb33f17d904"
+          git merge-base --is-ancestor "$parent" HEAD
+          test "$(git rev-list --count "$parent"..HEAD)" -eq 4
+          git diff --name-only "$parent"..HEAD | sort > /tmp/changed.txt
+          cat > /tmp/expected.txt <<'EOF'
+          .github/workflows/kokuno-agent5-bridge-960-routing.yml
+          src/openai_ns_reconstruction/kokuno_a5_bridge_960_routing.py
+          tests/test_kokuno_a5_bridge_960_routing.py
+          EOF
+          sort -o /tmp/expected.txt /tmp/expected.txt
+          diff -u /tmp/expected.txt /tmp/changed.txt
+
+      - name: Authenticate A1 bridge and matching A4 audit lineage
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin agent1/current-exterior-lminus-h-bridge-20260922
+          a1="6ae44fdac17483b1fd042dca6f5bdf06701ae068"
+          test "$(git rev-parse FETCH_HEAD)" = "$a1"
+          test "$(git rev-parse "$a1:src/openai_ns_reconstruction/kokuno_current_exterior_lminus_h_bridge.py")" = "0db8baa2514ddf82b7f0a35c4fcb2fec66d21623"
+
+          git fetch --no-tags origin kokuno-agent4/current-lminus-h-bridge-audit-129
+          a4="ae26fda9c373f7cfb08a43a0ad48977ab13bcc71"
+          test "$(git rev-parse FETCH_HEAD)" = "$a4"
+          test "$(git rev-parse "$a4:src/openai_ns_reconstruction/kokuno_a4_current_lminus_h_bridge_independent_audit.py")" = "5dd00173615d1ee5c6b3e26cfb729196399c5667"
+          git merge-base --is-ancestor "$a1" "$a4"
+
+      - name: Authenticate duplicate unified A2/A3 #960 routes
+        shell: bash
+        run: |
+          set -euo pipefail
+          common="107cac08050fddeab778416c1caf019be0f5795b"
+
+          git fetch --no-tags origin codex/kokuno-a2-rf44-firewall-a2-960-restack-115
+          a2="f90bdb9c232fb16df881dfbcac28be1cd5c29780"
+          test "$(git rev-parse FETCH_HEAD)" = "$a2"
+          git merge-base --is-ancestor "$common" "$a2"
+
+          git fetch --no-tags origin kokuno-agent3/current-i4-rf44-a2-960-restack-150
+          a3="20120093abbd981e2d2cb5d95093cea1eebb28ef"
+          test "$(git rev-parse FETCH_HEAD)" = "$a3"
+          git merge-base --is-ancestor "$common" "$a3"
+
+          for h in "$a2" "$a3"; do
+            test "$(git rev-parse "$h:src/openai_ns_reconstruction/kokuno_current_i4_rf44_prestate_provider.py")" = "0d8bb6471a4b7825b1b4b428d3b2c38d207729fd"
+            test "$(git rev-parse "$h:src/openai_ns_reconstruction/kokuno_current_i4_exact_backend_correction_firewall.py")" = "0152a85f7fbaf9c32c24c9d5c7d0d11166e3b157"
+            test "$(git rev-parse "$h:src/openai_ns_reconstruction/kokuno_oscillatory_batch_differentials.py")" = "12df3bf6c949baeebf609b366f2973e7f515a157"
+            test "$(git rev-parse "$h:src/openai_ns_reconstruction/kokuno_oscillatory_batch_axis_safety.py")" = "599baa190ec742d0e532e5517078534124e68d6b"
+            test "$(git rev-parse "$h:src/openai_ns_reconstruction/kokuno_public_oscillatory_vorticity_diagnostic.py")" = "4ae525bad1e4b83c9dcabc1a97d3931562d099a5"
+          done
+
+          if git merge-base --is-ancestor "$a2" "$a3"; then
+            echo "A2 #1234 unexpectedly became ancestor of A3 #1236" >&2
+            exit 1
+          fi
+          if git merge-base --is-ancestor "$a3" "$a2"; then
+            echo "A3 #1236 unexpectedly became ancestor of A2 #1234" >&2
+            exit 1
+          fi
+
+          composite="src/openai_ns_reconstruction/kokuno_current_i4_leading_oscillatory_identity.py"
+          if git cat-file -e "$a2:$composite" 2>/dev/null; then
+            echo "unexpected exact A2 #1080 composite runtime on A2 route" >&2
+            exit 1
+          fi
+          if git cat-file -e "$a3:$composite" 2>/dev/null; then
+            echo "unexpected exact A2 #1080 composite runtime on A3 route" >&2
+            exit 1
+          fi
+
+      - name: Compile and materialize deterministic routing artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            src/openai_ns_reconstruction/kokuno_a5_bridge_960_routing.py \
+            tests/test_kokuno_a5_bridge_960_routing.py
+          PYTHONPATH=src python src/openai_ns_reconstruction/kokuno_a5_bridge_960_routing.py \
+            --output kokuno_a5_bridge_960_routing.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path("kokuno_a5_bridge_960_routing.json").read_text())
+          assert data["task"] == "KOKUNO-A5-BRIDGE-960-ROUTING-130"
+          assert data["leading_route"]["agent1"]["current_l_minus_h_qs_transport_materialized"] is True
+          assert data["leading_route"]["agent1"]["full_eta_common_scalar_bridge_length_established"] is False
+          assert data["leading_route"]["agent4"]["matching_independent_audit_surface_present"] is True
+          assert data["leading_route"]["agent4"]["scoped_gate_passed"] is None
+          assert data["correction_routes"]["topology"]["old_1224_1226_unified_runtime_seam_structurally_closed"] is True
+          assert data["correction_routes"]["topology"]["logical_capability_count"] == 1
+          assert data["correction_routes"]["topology"]["silent_cross_branch_evidence_union_allowed"] is False
+          assert data["remaining_blockers"]["exact_a2_1080_runtime_on_one_unified_route"] is True
+          assert data["core_states"]["pde_validated"] is False
+          PY
+
+      - name: Upload routing artifact before regression enforcement
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a5-bridge-960-routing
+          path: kokuno_a5_bridge_960_routing.json
+
+      - name: Run parent and focused fail-closed regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check pytest
+          PYTHONPATH=src pytest -q \
+            tests/test_kokuno_a5_current_qs_rf44_960_routing.py \
+            tests/test_kokuno_a5_bridge_960_routing.py
