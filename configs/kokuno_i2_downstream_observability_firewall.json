@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "contract_id": "cr002-kokuno-i2-downstream-observability-firewall-v1",
+  "scope": "representation_evidence_lineage_only",
+  "target": {
+    "repository": "Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1",
+    "base_a5_pr": 1083,
+    "base_a5_head": "2886d888cafa80a30e9b21ffee5011e079d944a0",
+    "base_a5_source_path": "src/openai_ns_reconstruction/kokuno_a5_current_i4_routing_i2_stress_ingest.py",
+    "base_a5_source_blob": "505fc333463db23030a4eee72da30755317982fb",
+    "origin_i2_pr": 1061,
+    "origin_i2_head": "9c2abbc69ba1ef8c8a9e8d1699a466a75d0293c3",
+    "origin_i1_parent_pr": 1051,
+    "origin_i1_parent_head": "ea59dc305b4265fcb0bb0f948c2a45f4477d1ae5",
+    "prior_cr002_pr": 1066,
+    "prior_cr002_head": "66438e9b4871d676ab8cc2eccb2ee959d1c18b93",
+    "prior_cr002_contract_blob": "9c4acf91e3f0cc76979fa0c9119f00b1266a884e"
+  },
+  "downstream_lineage": {
+    "agent1_i4": {
+      "pr": 1079,
+      "head": "b06742ca6e189499192ede3cce40f62cdc1e35ca",
+      "source_blob": "6f04ce0a856b44430402576dad88438da90d1ebb",
+      "role": "current leading Cartesian velocity through reserved I4"
+    },
+    "agent2_i4_composite": {
+      "pr": 1080,
+      "head": "c40d8ddecd2971544a6e07dab093436b423cf326",
+      "source_blob": "2a0a5aa5966b02da856bdcf51940f3c186042802",
+      "role": "identity-bound current-I4 leading plus frozen complete-curl oscillation"
+    },
+    "agent4_i4_divergence_audit": {
+      "pr": 1082,
+      "head": "0ff663fcabaa52af984d273ba87356a72481c85c",
+      "source_blob": "518208d1feac5b0f09d08e9989b2eba9275fbd82",
+      "role": "implementation-distinct scoped divergence audit of save/reloaded public current-I4 composite"
+    },
+    "agent3_i2_stress": {
+      "pr": 1081,
+      "head": "cb9ee25d0c466d42ec7ca30ee89cc10517d4b5c4",
+      "source_blob": "876cdd2cbe4060b9d249cfc4960c26da0d577ca9",
+      "role": "current-I2 nonlinear mean to compact theta/axial stress"
+    }
+  },
+  "provenance_classes": {
+    "user_requirements": [
+      "deliver an explicit computable save/load velocity(x,y,z,t)->[u,v,w] without conflating delivery with PDE validity",
+      "keep visual correspondence, PDE validation, paper exactness and OpenAI-field identity as independent truth states",
+      "do not transfer validation or representation evidence across candidate identities or stages without an explicit audit"
+    ],
+    "public_source_facts": [
+      "this increment adds no public-source numerical datum or hidden parameter; corrected Kokuno provenance remains structural/formula provenance only",
+      "public-source interval roles do not state that the repository's high-precision I2 repair is observable at the repository public float64 API boundary"
+    ],
+    "autonomous_repository_design": [
+      "the finite-N current lineage, concrete I2 high-precision repair realization, later I3/I4 preservation adapters and frozen oscillatory runtime are repository realizations",
+      "the descendant-evidence firewall and mechanics witness in this contract are repository-autonomous governance"
+    ],
+    "pending_or_unknown": [
+      "whether exact #1061 differs nontrivially from exact #1051 in public float64 F/E/velocity on a preregistered strict-I2 probe protocol",
+      "whether the I2 repair itself changes renderer-independent morphology or any public visual observable",
+      "source positive-order I3 correction, source I4 mean correction, terminal/global completion and matched correction machinery on one identity",
+      "matched Cartesian pressure, preregistered restricted forcing, complete NS defect, held-out full-NS validation and visual correspondence"
+    ]
+  },
+  "representation_truth": {
+    "i2_high_precision_correction_receipt_nonzero": true,
+    "i2_decimal_retained_until_float64_api_boundary": true,
+    "i2_public_float64_delta_from_i1_parent_verified": false,
+    "i2_public_float64_delta_probe_protocol_executed": false,
+    "i2_public_float64_visual_effect_verified": false,
+    "downstream_i4_leading_materialized": true,
+    "downstream_i4_composite_materialized": true,
+    "downstream_i4_identity_preserving_save_load_available": true,
+    "downstream_i4_scoped_divergence_audit_present": true,
+    "downstream_i4_scoped_divergence_audit_admitted": false,
+    "downstream_i2_compact_stress_materialized": true,
+    "downstream_semantic_progress_implies_i2_public_delta": false,
+    "downstream_save_load_implies_i2_public_delta": false,
+    "downstream_scoped_divergence_implies_i2_public_delta": false,
+    "downstream_i2_stress_implies_i2_public_delta": false,
+    "descendant_public_difference_from_i1_parent_isolates_i2_repair": false,
+    "i2_public_delta_implies_visual_correspondence": false,
+    "i2_public_delta_implies_pde_validation": false
+  },
+  "forbidden_implications": [
+    "I4 descendant semantic identity -> I2 public float64 delta verified",
+    "I4 descendant save/load replay -> I2 public float64 delta verified",
+    "I4 scoped divergence audit -> I2 public float64 delta verified",
+    "I2 nonlinear mean or compact stress -> I2 public float64 delta verified",
+    "descendant public difference from I1 parent -> I2 repair isolated as the cause",
+    "CI green -> I2 public float64 delta verified",
+    "I2 public float64 delta -> visual_correspondence_verified",
+    "visual resemblance -> pde_validated",
+    "callable or save/load -> paper_exact or openai_field_identified"
+  ],
+  "promotion_requirements": {
+    "i2_public_float64_delta_from_i1_parent_verified": [
+      "consume exact #1061 and exact #1051 directly; do not substitute #1079, #1080 or any later descendant",
+      "save and reload exact #1061 while preserving its semantic identity before probing",
+      "compare only public F/E/velocity outputs on a preregistered strict-interior-I2 probe set",
+      "record componentwise public float64 absolute deltas together with local float64 ULP/spacing context",
+      "require an actually observed nonzero public-precision delta attributable to exact #1061 versus #1051 and retain zero/sub-ULP output as negative evidence",
+      "do not infer the I2 result from later I3/I4 stage changes, oscillatory composition, divergence audits, correction-side stress, CI status or visual resemblance",
+      "do not retune I2 coefficients, precision boundary, construction gates, forcing or scientific thresholds to manufacture observability"
+    ],
+    "visual_correspondence_verified": [
+      "first bind the selected public velocity identity and representation",
+      "run separately governed candidate-bound public-observable/visual comparison without inventing source numerical targets"
+    ],
+    "pde_validated": [
+      "materialize one globally complete identity-bound velocity plus matched pressure and preregistered restricted forcing",
+      "run the frozen held-out complete-NS validation protocol and satisfy the unchanged CR001 gates"
+    ]
+  },
+  "cr001_freeze": {
+    "constraints_blob_sha": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "momentum_max": 0.001,
+    "momentum_L2": 0.001,
+    "divergence_max": 1e-05,
+    "divergence_L2": 1e-05,
+    "residual_defined_free_force_forbidden": true,
+    "candidate_collapse_forbidden": true,
+    "posthoc_threshold_relaxation_forbidden": true
+  },
+  "independent_project_states": {
+    "canonical_eq45_velocity_export_ready": true,
+    "canonical_eq45_visualization_ready": false,
+    "canonical_eq45_visual_correspondence_verified": false,
+    "canonical_eq45_pde_validated": false,
+    "kokuno_current_route_velocity_export_ready": false,
+    "kokuno_current_route_visual_correspondence_verified": false,
+    "kokuno_current_route_pde_validated": false,
+    "kokuno_current_route_paper_exact": false,
+    "kokuno_current_route_openai_field_identified": false
+  },
+  "mechanics_witness": {
+    "classification": "autonomous_mechanics_only_not_kokuno_or_openai_candidate_data",
+    "purpose": "show that a sub-ULP I2 change can remain invisible while a later descendant changes in float64 for a different reason, so descendant difference cannot isolate I2 observability"
+  },
+  "truth_boundary": "This contract changes no velocity, profile, source formula, pressure, forcing, candidate coefficient, validation sample, threshold, or project truth-state byte. It governs only downstream representation-evidence transfer."
+}
