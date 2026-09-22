@@ -9,12 +9,14 @@ Registered deliveries:
   float64 relative resolution, so a unified ordinary-float64 Cartesian field
   is deliberately not claimed composed.
 * A2 #1170 adds one bounded repository-autonomous rigid-z azimuth to the
-  provider-driven complete-curl family, applying the same rotation to vector
-  potential and curl velocity. Source-exact frame orientation is not recovered.
-* A3 #1161 remains a fixed-Q/physical-theta RF30 preflight; source auxiliary
-  T^2 Haar covariance remains unavailable.
+  provider-driven complete-curl family. Source-exact frame orientation is not
+  recovered and the provider remains non-self-contained.
+* A3 #1172 makes the corrected-source normalized auxiliary-T^2 Haar covariance
+  operator executable from raw wave samples, but deliberately leaves the
+  repository provider blob unpinned. Therefore RF30 repository candidate state
+  and defect remain unauthorized/unmaterialized.
 * A4 #1160 remains an implementation-distinct audit of A1 #1154 algebra only;
-  it is not evidence for A1 #1171 or A2 #1170.
+  it is not evidence for A1 #1171, A2 #1170, or the A3 bridge.
 
 Frozen project gates remain unchanged: normalized momentum max/L2 <=1e-3,
 divergence max/L2 <=1e-5, canonical quadrature [24,48,96], and no
@@ -106,6 +108,36 @@ AGENT2_AZIMUTHAL_FRAME_ORIENTATION = {
     "actions_status_at_registration": "queued",
 }
 
+AGENT3_AUXILIARY_T2_HAAR_BRIDGE = {
+    "task": "KOKUNO-A3-AUXT2-HAAR-RF30-BRIDGE-127",
+    "pr": 1172,
+    "head": "9b0cecdf7eb9195bd468c3ddcd026c9d28d8e8d7",
+    "branch": "agent3/rf30-auxiliary-t2-haar-bridge-20260922",
+    "base_pr": 1161,
+    "base_head": "cafab2098f00c3dc2ed5668e1b12bdb38a1f31e8",
+    "source_path": "src/openai_ns_reconstruction/kokuno_rf30_auxiliary_t2_haar_bridge.py",
+    "source_blob": "5b20d4945f3aeb177e327e8d6b5709a6726c885a",
+    "stage": "normalized-auxiliary-t2-haar-covariance-operator-bridge",
+    "exact_compare_ahead": 3,
+    "exact_compare_behind": 0,
+    "open_pr_mergeable_at_registration": True,
+    "normalized_source_auxiliary_t2_haar_operator_executable": True,
+    "haar_measure_total_mass_one": True,
+    "covariance_formed_in_bridge_from_raw_wave_samples": True,
+    "preaveraged_covariance_input_exposed": False,
+    "repository_provider_blob_pinned": False,
+    "rf30_repository_candidate_state_authorized": False,
+    "rf30_defect_materialized": False,
+    "rf31_or_rf34_rf39_run_on_real_candidate": False,
+    "heldout_ns_residual_assessed": False,
+    "residual_reduction_claimed": False,
+    "scientifically_admitted": False,
+    "pde_validated": False,
+    "dedicated_run": 35712706101,
+    "repository_tests_run": 35712706063,
+    "actions_status_at_registration": "queued",
+}
+
 _PARENT_REGISTRATION = parent_a5.build_registration()
 PARENT_FRONTIERS = copy.deepcopy(_PARENT_REGISTRATION["frontiers"])
 CORRECTED_SOURCE = copy.deepcopy(_PARENT_REGISTRATION["corrected_source"])
@@ -131,10 +163,12 @@ def _truth_boundary() -> dict[str, Any]:
             "oriented_self_contained_velocity_xyzt_provider": False,
             "agent4_matching_agent2_1170_orientation_audit_present": False,
             "latest_self_contained_project_composite_is_agent2_1117": True,
-            "current_i4_source_auxiliary_t2_provider_materialized": False,
-            "current_i4_source_auxiliary_t2_haar_mean_materialized": False,
+            "current_i4_source_auxiliary_t2_haar_operator_executable": True,
+            "current_i4_source_auxiliary_t2_provider_blob_pinned": False,
+            "current_i4_source_auxiliary_t2_haar_mean_materialized_for_repository_candidate": False,
             "current_i4_rf30_repository_candidate_state_authorized": False,
             "current_i4_rf30_defect_materialized": False,
+            "agent4_matching_agent3_1172_bridge_audit_present": False,
             "matched_cartesian_pressure_gradient_materialized": False,
             "preregistered_restricted_forcing_materialized": False,
             "restricted_forcing_proved_not_residual_defined": False,
@@ -166,7 +200,9 @@ def build_identity_firewall() -> dict[str, bool]:
             "agent2_1170_orientation_is_repository_autonomous_not_source_exact": True,
             "agent2_1170_provider_family_not_self_contained_project_candidate": True,
             "agent2_1170_covariance_contract_not_independent_pde_validation": True,
-            "agent3_1161_physical_theta_mean_not_source_auxiliary_t2_haar_mean": True,
+            "agent3_1172_haar_operator_not_repository_candidate_without_pinned_provider": True,
+            "agent3_1172_raw_wave_bridge_not_rf30_defect_or_correction": True,
+            "agent4_1160_not_evidence_for_agent3_1172_bridge": True,
             "latest_self_contained_project_composite_stays_agent2_1117": True,
             "cross_identity_evidence_transfer_allowed": False,
         }
@@ -175,10 +211,10 @@ def build_identity_firewall() -> dict[str, bool]:
 
 
 SHORTEST_CLOSURE = [
-    "preserve Agent-1 #1171 base+delta without rounding away the sub-epsilon edit, then integrate it with a representation that retains the total field and obtain matching Agent-4 evidence",
+    "preserve Agent-1 #1171 base+delta without rounding away the sub-epsilon edit, integrate it with a representation that retains the total field, and obtain matching Agent-4 evidence",
     "finish terminal/exterior/global leading and matched pressure on the same semantic identity",
     "turn Agent-2 provider-driven orientation/support assets into an exact-identity self-contained leading-plus-oscillatory project candidate; autonomous orientation must remain provenance-labeled",
-    "materialize the source auxiliary-T2 RF30 Haar backend for the exact correction identity; never substitute physical theta averaging",
+    "supply and checksum-pin an implementation-distinct same-identity Agent-2 raw auxiliary-T2 provider to Agent-3 #1172; only then authorize RF30 candidate covariance/defect and run RF31/RF34-RF49",
     "bind preregistered non-residual-defined restricted forcing, complete NS defect, real Cartesian correction and finite cycle, then run Agent-4 held-out and canonical [24,48,96] admission",
 ]
 
@@ -203,6 +239,7 @@ def build_registration() -> dict[str, Any]:
     frontiers["azimuthal_frame_oriented_multiharmonic"] = copy.deepcopy(
         AGENT2_AZIMUTHAL_FRAME_ORIENTATION
     )
+    frontiers["auxiliary_t2_haar_rf30_bridge"] = copy.deepcopy(AGENT3_AUXILIARY_T2_HAAR_BRIDGE)
     registration: dict[str, Any] = {
         "schema": SCHEMA,
         "task": TASK,
@@ -251,6 +288,8 @@ def validate_registration(registration: Mapping[str, Any]) -> None:
         raise ValueError("Agent-1 #1171 identity drifted")
     if frontiers.get("azimuthal_frame_oriented_multiharmonic") != AGENT2_AZIMUTHAL_FRAME_ORIENTATION:
         raise ValueError("Agent-2 #1170 identity drifted")
+    if frontiers.get("auxiliary_t2_haar_rf30_bridge") != AGENT3_AUXILIARY_T2_HAAR_BRIDGE:
+        raise ValueError("Agent-3 #1172 identity drifted")
 
     a1 = frontiers["relative_swirl_split_delta"]
     if a1["relative_swirl_cartesian_delta_channel_materialized"] is not True:
@@ -272,12 +311,20 @@ def validate_registration(registration: Mapping[str, Any]) -> None:
     if a2["complete_ns_residual_assessed"] is not False:
         raise ValueError("A2 orientation covariance was laundered into NS validation")
 
+    a3 = frontiers["auxiliary_t2_haar_rf30_bridge"]
+    if a3["normalized_source_auxiliary_t2_haar_operator_executable"] is not True:
+        raise ValueError("A3 normalized-Haar operator delivery was dropped")
+    if a3["preaveraged_covariance_input_exposed"] is not False:
+        raise ValueError("pre-averaged covariance bypass was introduced")
+    if a3["repository_provider_blob_pinned"] is not False:
+        raise ValueError("unavailable A2 auxiliary-T2 provider was fabricated")
+    if a3["rf30_repository_candidate_state_authorized"] is not False:
+        raise ValueError("RF30 candidate state was authorized without pinned provider")
+    if a3["rf30_defect_materialized"] is not False:
+        raise ValueError("A3 Haar mechanics was laundered into RF30 defect")
+
     if frontiers["relative_swirl_compensator_validator"]["audited_agent1_pr"] != 1154:
         raise ValueError("Agent-4 #1160 evidence transferred across Agent-1 identities")
-    if frontiers["current_i4_rf30_fixedq_preflight"]["source_auxiliary_t2_provider_available"] is not False:
-        raise ValueError("missing source auxiliary-T2 provider was invented")
-    if frontiers["current_i4_rf30_fixedq_preflight"]["rf30_repository_candidate_state_authorized"] is not False:
-        raise ValueError("RF30 candidate state was authorized without source Haar backend")
     if frontiers["latest_self_contained_project_composite"]["pr"] != 1117:
         raise ValueError("provider-driven orientation was laundered into self-contained candidate")
 
@@ -320,10 +367,11 @@ def validate_registration(registration: Mapping[str, Any]) -> None:
         "oriented_source_provider_self_contained",
         "oriented_self_contained_velocity_xyzt_provider",
         "agent4_matching_agent2_1170_orientation_audit_present",
-        "current_i4_source_auxiliary_t2_provider_materialized",
-        "current_i4_source_auxiliary_t2_haar_mean_materialized",
+        "current_i4_source_auxiliary_t2_provider_blob_pinned",
+        "current_i4_source_auxiliary_t2_haar_mean_materialized_for_repository_candidate",
         "current_i4_rf30_repository_candidate_state_authorized",
         "current_i4_rf30_defect_materialized",
+        "agent4_matching_agent3_1172_bridge_audit_present",
         "matched_cartesian_pressure_gradient_materialized",
         "preregistered_restricted_forcing_materialized",
         "complete_identity_bound_ns_defect_materialized",
@@ -336,6 +384,8 @@ def validate_registration(registration: Mapping[str, Any]) -> None:
         "pde_validated",
     )
     truth = reg["truth_boundary"]
+    if truth["current_i4_source_auxiliary_t2_haar_operator_executable"] is not True:
+        raise ValueError("A3 executable Haar operator truth was dropped")
     if any(truth[name] is not False for name in required_false_truth):
         raise ValueError("truth boundary was promoted")
 
