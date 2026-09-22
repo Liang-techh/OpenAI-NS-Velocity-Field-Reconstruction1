@@ -1,0 +1,82 @@
+name: kokuno-agent1-current-bridge-common-scalar-refutation
+
+on:
+  push:
+    branches:
+      - agent1/current-bridge-scalar-refute-20260922
+  pull_request:
+    paths:
+      - src/openai_ns_reconstruction/kokuno_current_bridge_common_scalar_refutation.py
+      - tests/test_kokuno_current_bridge_common_scalar_refutation.py
+      - .github/workflows/kokuno-agent1-current-bridge-common-scalar-refutation.yml
+
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Verify exact ancestry and bounded delta
+        shell: bash
+        run: |
+          set -euo pipefail
+          git merge-base --is-ancestor 6ae44fdac17483b1fd042dca6f5bdf06701ae068 HEAD
+          changed="$(git diff --name-only 6ae44fdac17483b1fd042dca6f5bdf06701ae068...HEAD | sort)"
+          expected="$(printf '%s\n' \
+            '.github/workflows/kokuno-agent1-current-bridge-common-scalar-refutation.yml' \
+            'src/openai_ns_reconstruction/kokuno_current_bridge_common_scalar_refutation.py' \
+            'tests/test_kokuno_current_bridge_common_scalar_refutation.py' | sort)"
+          test "$changed" = "$expected"
+
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+
+      - name: Syntax compile
+        run: |
+          python -m py_compile \
+            src/openai_ns_reconstruction/kokuno_current_bridge_common_scalar_refutation.py \
+            tests/test_kokuno_current_bridge_common_scalar_refutation.py
+
+      - name: Focused regressions
+        run: |
+          pytest -q \
+            tests/test_kokuno_current_exterior_lminus_h_bridge.py \
+            tests/test_kokuno_current_bridge_common_scalar_refutation.py
+
+      - name: Emit deterministic one-way scalar-bridge witness
+        run: |
+          python - <<'PY'
+          import json
+          from openai_ns_reconstruction.kokuno_current_bridge_common_scalar_refutation import (
+              KokunoCurrentBridgeCommonScalarRefutation,
+          )
+          witness = KokunoCurrentBridgeCommonScalarRefutation()
+          report = witness.refutation_report()
+          print(json.dumps(report, indent=2, sort_keys=True, allow_nan=False))
+          truth = witness.truth_boundary
+          assert truth['current_common_scalar_bridge_witness_check_materialized'] is True
+          assert report['finite_witness_is_sufficient_only_for_refutation'] is True
+          assert report['absence_of_refutation_does_not_establish_common_scalar_bridge'] is True
+          assert report['full_eta_interval_target_totality_established'] is False
+          assert report['full_eta_interval_root_uniqueness_established'] is False
+          assert report['full_eta_interval_transversality_established'] is False
+          assert report['smooth_eta_target_time_map_established'] is False
+          assert report['full_eta_interval_common_scalar_bridge_length_established'] is False
+          assert report['current_l_minus_h_matching_bridge_materialized'] is False
+          assert report['eta_dependent_cartesian_matching_boundary_materialized'] is False
+          assert truth['current_cartesian_terminal_multiplier_composed'] is False
+          assert truth['pde_validated'] is False
+          assert truth['paper_exact'] is False
+          assert truth['openai_field_identified'] is False
+          if report['common_scalar_bridge_refuted_by_disjoint_unique_root_brackets']:
+              pair = report['disjoint_root_pair']
+              assert pair is not None
+              assert pair['earlier_root_bracket'][1] < pair['later_root_bracket'][0]
+              assert pair['disjoint_gap_lower_bound'] > 0.0
+          PY
