@@ -1,0 +1,175 @@
+name: kokuno-agent5-postpulse-multiharmonic-xi11-audit-routing
+
+on:
+  push:
+    branches:
+      - kokuno-agent5/postpulse-multiharmonic-xi11-audit-routing-116
+  pull_request:
+    branches:
+      - kokuno-agent5/xi13-axissafe-rf39-routing-115
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-head-routing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout exact event head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install project test dependencies
+        run: python -m pip install -e '.[dev]'
+
+      - name: Authenticate exact parent and fresh sibling heads
+        shell: bash
+        run: |
+          set -euo pipefail
+          fetch_and_check() {
+            local branch="$1" expected_head="$2" path="$3" expected_blob="$4"
+            git fetch --no-tags origin "${branch}:refs/remotes/origin/${branch}"
+            actual_head="$(git rev-parse "refs/remotes/origin/${branch}")"
+            test "${actual_head}" = "${expected_head}"
+            actual_blob="$(git rev-parse "${expected_head}:${path}")"
+            test "${actual_blob}" = "${expected_blob}"
+          }
+
+          fetch_and_check \
+            'kokuno-agent5/xi13-axissafe-rf39-routing-115' \
+            'a6976c654926c3c96364c66bb18eac461688bde7' \
+            'src/openai_ns_reconstruction/kokuno_a5_xi13_axissafe_rf39_routing.py' \
+            'a04996365234f33e81172a2d6a4f6bee8a7da993'
+          fetch_and_check \
+            'codex/kokuno-a1-postpulse-eta-flattening' \
+            'c5442c11165d7f0976889b826bf58dce38a3d3dd' \
+            'src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_postpulse_eta_flattening.py' \
+            '32cbfc00406aa8d47904e2492ad8916730541d28'
+          fetch_and_check \
+            'codex/k2-osc-104-bounded-multiharmonic' \
+            '4241b0b4fcdc36e750798133101baaf803ba8c44' \
+            'src/openai_ns_reconstruction/kokuno_source_bounded_multiharmonic_velocity.py' \
+            '06bc24722b4219419e91cd2d5b08cb1294665f24'
+          fetch_and_check \
+            'agent3/rf34-rf39-compact-mean-correction-20260922' \
+            'ecbc7e3702e366a5f355800dd662b11766273a41' \
+            'src/openai_ns_reconstruction/kokuno_rf34_rf39_compact_mean_correction.py' \
+            '392975eafd3787c91e2dc82ad9b735567513271d'
+          fetch_and_check \
+            'kokuno-agent4/logx-xi11-composite-divergence-117' \
+            '03269e7ba2053e0bc35813089577d274d9ddf8f9' \
+            'src/openai_ns_reconstruction/kokuno_a4_logx_xi11_composite_divergence_independent_audit.py' \
+            'bd605bfb650b7eadbebb8d860e9720b434540ba3'
+
+      - name: Authenticate corrected public source provenance
+        uses: actions/checkout@v4
+        with:
+          repository: KokunoYumeto/yang-mills-interacting-workbench
+          ref: 143f6773feb424ad9ed3a8d116653200f20346b7
+          path: corrected-source
+          fetch-depth: 1
+
+      - name: Verify corrected source bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C corrected-source rev-parse HEAD)" = '143f6773feb424ad9ed3a8d116653200f20346b7'
+          test "$(git -C corrected-source hash-object navier-stokes/navier_stokes_workbench.tex)" = '205a99807302e21a51c5eaf223390c0dfc42bcd0'
+
+      - name: Enforce minimal three-file Agent-5 delta
+        shell: bash
+        run: |
+          set -euo pipefail
+          parent='a6976c654926c3c96364c66bb18eac461688bde7'
+          git merge-base --is-ancestor "${parent}" HEAD
+          test "$(git rev-list --count "${parent}"..HEAD)" -eq 3
+          mapfile -t changed < <(git diff --name-only "${parent}..HEAD" | sort)
+          expected=(
+            '.github/workflows/kokuno-agent5-postpulse-multiharmonic-xi11-audit-routing.yml'
+            'src/openai_ns_reconstruction/kokuno_a5_postpulse_multiharmonic_xi11_audit_routing.py'
+            'tests/test_kokuno_a5_postpulse_multiharmonic_xi11_audit_routing.py'
+          )
+          mapfile -t expected_sorted < <(printf '%s\n' "${expected[@]}" | sort)
+          test "${#changed[@]}" -eq 3
+          test "$(printf '%s\n' "${changed[@]}")" = "$(printf '%s\n' "${expected_sorted[@]}")"
+          test -z "$(git diff --diff-filter=D --name-only "${parent}..HEAD")"
+
+      - name: Run focused parent and new Agent-5 regressions
+        run: |
+          python -m py_compile \
+            src/openai_ns_reconstruction/kokuno_a5_postpulse_multiharmonic_xi11_audit_routing.py \
+            tests/test_kokuno_a5_postpulse_multiharmonic_xi11_audit_routing.py
+          pytest -q \
+            tests/test_kokuno_a5_xi13_axissafe_rf39_routing.py \
+            tests/test_kokuno_a5_postpulse_multiharmonic_xi11_audit_routing.py
+
+      - name: Materialize deterministic routing artifact
+        run: |
+          mkdir -p artifacts/kokuno/agent5
+          python -m openai_ns_reconstruction.kokuno_a5_postpulse_multiharmonic_xi11_audit_routing \
+            --output artifacts/kokuno/agent5/postpulse_multiharmonic_xi11_audit_routing.json
+
+      - name: Upload registration artifact before truth enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-postpulse-multiharmonic-xi11-audit-routing-v116
+          path: artifacts/kokuno/agent5/postpulse_multiharmonic_xi11_audit_routing.json
+          if-no-files-found: error
+
+      - name: Final fail-closed truth enforcement
+        run: |
+          python - <<'PY'
+          from openai_ns_reconstruction.kokuno_a5_postpulse_multiharmonic_xi11_audit_routing import load_registration
+          reg = load_registration('artifacts/kokuno/agent5/postpulse_multiharmonic_xi11_audit_routing.json')
+          truth = reg['truth_boundary']
+          gates = reg['frozen_gates']
+          a1 = reg['frontiers']['leading']
+          a2 = reg['frontiers']['bounded_multiharmonic_sibling']
+          composite = reg['frontiers']['latest_self_contained_project_composite']
+          a4 = reg['frontiers']['xi11_composite_validator']
+          a3 = reg['frontiers']['rf34_rf39_mechanics_sibling']
+
+          assert a1['pr'] == 1140
+          assert a1['bounded_velocity_xyzt_materialized'] is True
+          assert a1['terminal_global_leading_velocity_materialized'] is False
+          assert truth['matching_postpulse_agent2_project_composite_materialized'] is False
+          assert a2['pr'] == 1141
+          assert a2['complete_curl_family_materialized'] is True
+          assert a2['self_contained_velocity_xyzt_provider'] is False
+          assert composite['pr'] == 1117
+          assert composite['matching_agent4_audit_present'] is True
+          assert a4['pr'] == 1136
+          assert a4['scoped_gate_passed'] is None
+          assert a4['scientifically_admitted'] is False
+          assert a4['complete_ns_momentum_residual_assessed'] is False
+          assert a3['pr'] == 1134
+          assert a3['current_i4_source_chart_backend_materialized'] is False
+          assert a3['current_i4_rf30_defect_materialized'] is False
+          assert a3['current_i4_rf34_rf39_correction_materialized'] is False
+          assert truth['complete_candidate_api_ready'] is False
+          assert truth['complete_identity_bound_ns_defect_materialized'] is False
+          assert truth['pde_validated'] is False
+          assert reg['core_state'] == {
+              'leading_ready': False,
+              'oscillatory_ready': True,
+              'correction_ready': False,
+              'velocity_export_ready': False,
+              'pde_validated': False,
+          }
+          assert gates['normalized_momentum_sampled_max'] == 1e-3
+          assert gates['normalized_momentum_volume_l2'] == 1e-3
+          assert gates['normalized_divergence_sampled_max'] == 1e-5
+          assert gates['normalized_divergence_volume_l2'] == 1e-5
+          assert gates['canonical_quadrature'] == [24, 48, 96]
+          assert gates['residual_defined_free_forcing_allowed'] is False
+          PY
