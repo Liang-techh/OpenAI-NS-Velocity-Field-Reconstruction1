@@ -1,0 +1,88 @@
+name: agent9-kokuno-external-migration-contract
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_external_migration_contract.py'
+      - 'tests/test_kokuno_external_migration_contract.py'
+      - '.github/workflows/agent9-kokuno-external-migration-contract.yml'
+  push:
+    branches: ['agent9/kokuno-external-migration-contract-111']
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_external_migration_contract.py'
+      - 'tests/test_kokuno_external_migration_contract.py'
+      - '.github/workflows/agent9-kokuno-external-migration-contract.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  exact-source-migration-contract:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    steps:
+      - name: Checkout exact Agent-9 head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+
+      - name: Assert exact event-head checkout
+        shell: bash
+        run: test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+
+      - name: Checkout pinned public Kokuno reader
+        uses: actions/checkout@v4
+        with:
+          repository: KokunoYumeto/yang-mills-interacting-workbench
+          ref: 143f6773feb424ad9ed3a8d116653200f20346b7
+          path: kokuno-source
+          persist-credentials: false
+
+      - name: Authenticate public source commit and blob
+        shell: bash
+        run: |
+          test "$(git -C kokuno-source rev-parse HEAD)" = "143f6773feb424ad9ed3a8d116653200f20346b7"
+          test "$(git -C kokuno-source hash-object navier-stokes/navier_stokes_workbench.tex)" = "205a99807302e21a51c5eaf223390c0dfc42bcd0"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install repository runtime and focused test dependency
+        run: python -m pip install -e . 'pytest>=8,<10'
+
+      - name: Emit checksum-bound migration contract
+        shell: bash
+        run: |
+          mkdir -p outputs
+          PYTHONPATH=src python - <<'PY'
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction.kokuno_external_migration_contract import migration_contract
+
+          contract = migration_contract()
+          assert contract['task_id'] == 'CR-A9-111'
+          assert contract['source']['repository'] == 'KokunoYumeto/yang-mills-interacting-workbench'
+          assert contract['source']['commit'] == '143f6773feb424ad9ed3a8d116653200f20346b7'
+          assert contract['source']['blob_sha1'] == '205a99807302e21a51c5eaf223390c0dfc42bcd0'
+          assert contract['license_screen']['github_license_field'] is None
+          assert contract['migration']['classification'] == 'reimplement_math_only'
+          assert contract['migration']['direct_code_or_text_migration_approved'] is False
+          assert contract['truth_boundary']['pde_validated'] is False
+          assert contract['truth_boundary']['openai_field_identified'] is False
+          out = Path('outputs/kokuno-external-migration-contract.json')
+          out.write_text(json.dumps(contract, indent=2, sort_keys=True, allow_nan=False) + '\n')
+          print('contract_sha256=', contract['contract_sha256'])
+          PY
+
+      - name: Upload migration contract
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: kokuno-external-migration-contract
+          path: outputs/kokuno-external-migration-contract.json
+          if-no-files-found: error
+
+      - name: Run focused migration-governance regressions
+        run: PYTHONPATH=src python -m pytest -q -W error tests/test_kokuno_external_migration_contract.py
