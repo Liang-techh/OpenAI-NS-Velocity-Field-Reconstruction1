@@ -1,0 +1,72 @@
+name: Kokuno A5 Decimal Total Oriented RF30 Routing
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_a5_decimal_total_oriented_rf30_audit_routing.py'
+      - 'tests/test_kokuno_a5_decimal_total_oriented_rf30_audit_routing.py'
+      - '.github/workflows/kokuno-agent5-decimal-total-oriented-rf30-audit-routing.yml'
+  workflow_dispatch:
+
+jobs:
+  routing-artifact:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out exact event head
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install focused test dependency
+        run: python -m pip install --upgrade pytest
+
+      - name: Enforce exact A5 ancestry and three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          parent='ae5b344ecdedbd532a2d6739e69d12460d76616b'
+          test "$(git merge-base "$parent" HEAD)" = "$parent"
+          test "$(git rev-list --count "$parent"..HEAD)" -eq 3
+          actual="$(git diff --name-only "$parent"..HEAD | sort)"
+          expected="$(printf '%s\n' \
+            '.github/workflows/kokuno-agent5-decimal-total-oriented-rf30-audit-routing.yml' \
+            'src/openai_ns_reconstruction/kokuno_a5_decimal_total_oriented_rf30_audit_routing.py' \
+            'tests/test_kokuno_a5_decimal_total_oriented_rf30_audit_routing.py' | sort)"
+          test "$actual" = "$expected"
+
+      - name: Materialize deterministic routing artifact before enforcement
+        run: |
+          PYTHONPATH=src python - <<'PY'
+          from openai_ns_reconstruction.kokuno_a5_decimal_total_oriented_rf30_audit_routing import dump_artifact
+          dump_artifact('artifacts/kokuno_a5_decimal_total_oriented_rf30_routing.json')
+          PY
+
+      - name: Run fail-closed routing regressions
+        run: |
+          PYTHONPATH=src pytest -q tests/test_kokuno_a5_decimal_total_oriented_rf30_audit_routing.py
+
+      - name: Revalidate emitted truth boundary
+        run: |
+          PYTHONPATH=src python - <<'PY'
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction.kokuno_a5_decimal_total_oriented_rf30_audit_routing import validate_artifact
+          path = Path('artifacts/kokuno_a5_decimal_total_oriented_rf30_routing.json')
+          validate_artifact(json.loads(path.read_text(encoding='utf-8')))
+          PY
+
+      - name: Upload routing artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a5-decimal-total-oriented-rf30-routing
+          path: artifacts/kokuno_a5_decimal_total_oriented_rf30_routing.json
+          if-no-files-found: warn
