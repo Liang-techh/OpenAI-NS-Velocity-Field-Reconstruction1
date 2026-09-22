@@ -1,0 +1,208 @@
+name: kokuno-agent4-current-i4-nonlinear-mean-independent-audit
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_a4_current_i4_nonlinear_mean_independent_audit.py'
+      - 'tests/test_constrained_kokuno_a4_current_i4_nonlinear_mean_independent_audit.py'
+      - '.github/workflows/kokuno-agent4-current-i4-nonlinear-mean-independent-audit.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  independent-current-i4-mean-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact Agent-4 PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          path: a4
+          fetch-depth: 0
+
+      - name: Verify one-increment Agent-4 stack
+        shell: bash
+        run: |
+          set -euo pipefail
+          parent=6c9a4e7b0dec4b3669fb1dc60297b18f10163e0b
+          git -C a4 merge-base --is-ancestor "$parent" HEAD
+          test "$(git -C a4 rev-list --count "$parent"..HEAD)" -eq 3
+          git -C a4 diff --name-only "$parent"...HEAD | sort > /tmp/changed.txt
+          cat > /tmp/expected.txt <<'EOF'
+          .github/workflows/kokuno-agent4-current-i4-nonlinear-mean-independent-audit.yml
+          src/openai_ns_reconstruction/kokuno_a4_current_i4_nonlinear_mean_independent_audit.py
+          tests/test_constrained_kokuno_a4_current_i4_nonlinear_mean_independent_audit.py
+          EOF
+          diff -u /tmp/expected.txt /tmp/changed.txt
+
+      - name: Checkout exact Agent-2 current-I4 composite
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: c40d8ddecd2971544a6e07dab093436b423cf326
+          path: a2
+          fetch-depth: 1
+
+      - name: Checkout exact Agent-1 current-I4 leading
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: b06742ca6e189499192ede3cce40f62cdc1e35ca
+          path: a1
+          fetch-depth: 1
+
+      - name: Authenticate exact source blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C a4 hash-object src/openai_ns_reconstruction/kokuno_current_i4_nonlinear_mean_attribution.py)" = 10d067570ddba834db3f19c9859c2efdad16b3e8
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_current_i4_leading_oscillatory_identity.py)" = 2a0a5aa5966b02da856bdcf51940f3c186042802
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_oscillatory_batch_differentials.py)" = 12df3bf6c949baeebf609b366f2973e7f515a157
+          test "$(git -C a1 hash-object src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_i4_leading_preservation.py)" = 6f04ce0a856b44430402576dad88438da90d1ebb
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Agent-4 tree
+        run: python -m pip install -e a4
+
+      - name: Run focused software and mutation tests
+        run: python -m pytest -q a4/tests/test_constrained_kokuno_a4_current_i4_nonlinear_mean_independent_audit.py
+
+      - name: Materialize exact candidate, public production receipts, and independent report
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python - <<'PY'
+          from __future__ import annotations
+
+          import importlib
+          import json
+          from pathlib import Path
+
+          import numpy as np
+          import openai_ns_reconstruction as pkg
+
+          root = Path.cwd()
+          for sibling in (
+              root / 'a1' / 'src' / 'openai_ns_reconstruction',
+              root / 'a2' / 'src' / 'openai_ns_reconstruction',
+          ):
+              text = str(sibling)
+              if text not in pkg.__path__:
+                  pkg.__path__.append(text)
+
+          field_mod = importlib.import_module(
+              'openai_ns_reconstruction.kokuno_current_i4_leading_oscillatory_identity'
+          )
+          diff_mod = importlib.import_module(
+              'openai_ns_reconstruction.kokuno_oscillatory_batch_differentials'
+          )
+          a3_mod = importlib.import_module(
+              'openai_ns_reconstruction.kokuno_current_i4_nonlinear_mean_attribution'
+          )
+          a4_mod = importlib.import_module(
+              'openai_ns_reconstruction.kokuno_a4_current_i4_nonlinear_mean_independent_audit'
+          )
+
+          original = field_mod.default_field()
+          candidate_path = Path('artifacts/current_i4_candidate.json')
+          original.save_candidate(candidate_path)
+          field = field_mod.CurrentI4LeadingOscillatoryField.load_candidate(candidate_path)
+
+          backend = a3_mod.ExactCurrentI4NonlinearBackend.bind(
+              field, diff_mod.evaluate_oscillatory_batch_differentials
+          )
+          specs = (
+              a4_mod.frozen_inner_ring_specs()
+              + a4_mod.frozen_axis_near_specs()
+              + a4_mod.frozen_i4_specs(field)
+          )
+          receipts = {}
+          for spec in specs:
+              witness = a3_mod.materialize_current_i4_nonlinear_mean_attribution(
+                  backend,
+                  np.asarray([spec.radius], dtype=float),
+                  np.asarray([spec.z], dtype=float),
+                  np.asarray([spec.t], dtype=float),
+              )
+              receipts[spec.label] = json.loads(
+                  json.dumps(witness.to_receipt(), sort_keys=True)
+              )
+
+          truth = json.loads(json.dumps(a3_mod.truth_boundary(), sort_keys=True))
+          Path('artifacts/public_production_receipts.json').write_text(
+              json.dumps(
+                  {
+                      'schema': 'kokuno-a4-current-i4-production-receipts-v1',
+                      'parent_agent3_pr': a4_mod.PARENT_AGENT3_PR,
+                      'parent_agent3_head': a4_mod.PARENT_AGENT3_HEAD,
+                      'candidate_semantic_sha256': field.semantic_sha256,
+                      'truth_boundary': truth,
+                      'receipts': receipts,
+                  },
+                  indent=2,
+                  sort_keys=True,
+              ) + '\n',
+              encoding='utf-8',
+          )
+
+          report = a4_mod.audit_current_i4_nonlinear_mean(field, receipts, truth)
+          Path('artifacts/independent_report.json').write_text(
+              json.dumps(report, indent=2, sort_keys=True) + '\n',
+              encoding='utf-8',
+          )
+
+          summary = {
+              'audit_pass': report['audit_pass'],
+              'inner': {
+                  piece: report['inner_production_vs_independent'][piece]
+                  for piece in a4_mod.SCIENTIFIC_PIECES
+              },
+              'i4': {
+                  piece: report['i4_production_vs_independent'][piece]
+                  for piece in a4_mod.SCIENTIFIC_PIECES
+              },
+              'axis_near': report['axis_near'],
+              'inner_spatial_resolution': report['inner_spatial_resolution'],
+              'inner_angular_resolution': report['inner_angular_resolution'],
+              'i4_spatial_resolution': report['i4_spatial_resolution'],
+              'i4_angular_resolution': report['i4_angular_resolution'],
+              'scientific_boundary': report['scientific_boundary'],
+          }
+          Path('artifacts/summary.json').write_text(
+              json.dumps(summary, indent=2, sort_keys=True) + '\n',
+              encoding='utf-8',
+          )
+          print(json.dumps(summary, indent=2, sort_keys=True))
+          PY
+
+      - name: Upload raw evidence before scientific gate enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent4-current-i4-nonlinear-mean-independent-audit
+          path: artifacts/
+
+      - name: Enforce preregistered scoped gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          report = json.loads(Path('artifacts/independent_report.json').read_text(encoding='utf-8'))
+          assert report['task'] == 'K4-VAL-113'
+          assert report['protocol']['seed'] == 9173851
+          assert report['protocol']['spatial_steps'] == [0.012, 0.006, 0.003]
+          assert report['protocol']['angular_orders'] == [20, 40, 80]
+          assert report['protocol']['i4_nontriviality_required'] is False
+          assert report['scientific_boundary']['pde_validated'] is False
+          assert report['scientific_boundary']['complete_ns_defect'] is False
+          assert report['audit_pass'] is True
+          PY
