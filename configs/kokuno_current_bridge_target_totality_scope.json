@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "contract_id": "cr002_kokuno_current_bridge_target_totality_scope_v1",
+  "purpose": "Prevent finite eta-wise Q_p first-hit diagnostics from being promoted to a full-eta matching-boundary existence, uniqueness, regularity, Cartesian bridge, or global velocity-delivery claim.",
+  "bindings": {
+    "active_constrained_integration_branch": "codex/cr001-constraints",
+    "active_constrained_integration_head_at_audit": "6a293b3c870d70b8d8aece1b12d68685c9b8b010",
+    "canonical_constraints_path": "configs/constraints.json",
+    "canonical_constraints_blob_sha1": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "project_status_path": "project_status.json",
+    "project_status_blob_sha1": "f8e05e9d25ab6cc83a7221fc431ab42319d38ff0",
+    "dependency_pr": 1233,
+    "dependency_exact_head": "6ae44fdac17483b1fd042dca6f5bdf06701ae068",
+    "dependency_module_path": "src/openai_ns_reconstruction/kokuno_current_exterior_lminus_h_bridge.py",
+    "dependency_module_blob_sha1": "0db8baa2514ddf82b7f0a35c4fcb2fec66d21623",
+    "independent_audit_pr_observed": 1237,
+    "independent_audit_exact_head_observed": "ae26fda9c373f7cfb08a43a0ad48977ab13bcc71",
+    "independent_audit_role": "implementation-distinct finite-probe scalar-transport audit only; not full-eta target-boundary evidence"
+  },
+  "source_classification": {
+    "user_requirement": [
+      "Deliver an explicit callable and save-loadable velocity(x,y,z,t)->[u,v,w] without treating PDE validation as a prerequisite for callability.",
+      "Keep velocity delivery, visual correspondence, PDE validation, paper exactness, and OpenAI-field identification as independent states."
+    ],
+    "public_source_fact": [
+      "The corrected reconstruction includes a post-release2 l=-h matching stage and states that the radial matching quantity is carried until the already-defined terminal target Q_p is reached.",
+      "The public matching-stage statement does not by itself certify this repository current candidate's full-eta target-hit existence, a unique smooth eta-dependent hit-time map, or a Cartesian terminal-boundary realization."
+    ],
+    "autonomous_design": [
+      "PR #1233 materializes the current carried inhomogeneous l=-h Q_s(y,eta) transport and a deterministic pointwise target-time diagnostic using fixed bracket expansion and bisection.",
+      "PR #1233's default target report and A4 #1237's held-out target-time checks are finite eta samples; they are diagnostics, not a continuum/full-eta certificate.",
+      "This CR002 contract requires target-totality and regularity evidence before a pointwise diagnostic may become an eta-dependent delivery representation."
+    ],
+    "pending_unknown": [
+      "Whether Q_s_entry(eta)>Q_p holds on the full applicable eta interval for the exact current #1233 identity.",
+      "Whether every applicable eta has a finite nonnegative first hit of Q_p and whether that hit is unique with a branch definition stable under eta variation.",
+      "Whether a uniformly transverse or otherwise explicitly regularized eta->T(eta) target-time map exists and is smooth enough for a Cartesian matching boundary, including endpoint/axis behavior.",
+      "Any current Cartesian matching bridge, terminal multiplier composition, exterior/global leading completion, matched pressure, restricted forcing, complete NS residual, visual correspondence, PDE validation, paper exactness, or OpenAI-field identity."
+    ]
+  },
+  "truth_state": {
+    "current_l_minus_h_q_s_transport_materialized": true,
+    "eta_resolved_pointwise_target_time_diagnostic_materialized": true,
+    "finite_probe_target_time_diagnostic_interface_materialized": true,
+    "full_eta_entry_above_qp_established": false,
+    "full_eta_target_hit_totality_established": false,
+    "full_eta_target_root_uniqueness_established": false,
+    "full_eta_target_transversality_established": false,
+    "smooth_eta_target_time_map_materialized": false,
+    "full_eta_common_scalar_bridge_length_established": false,
+    "eta_dependent_cartesian_matching_boundary_materialized": false,
+    "current_cartesian_terminal_multiplier_composed": false,
+    "kokuno_unified_global_velocity_export_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "evidence_transfer": {
+    "finite_pointwise_hits_imply_full_eta_entry_above_qp": false,
+    "finite_pointwise_hits_imply_full_eta_target_totality": false,
+    "a4_finite_heldout_target_hits_imply_full_eta_target_totality": false,
+    "sampled_bisection_convergence_proves_unique_first_root_on_full_eta_interval": false,
+    "finite_target_time_spread_defines_a_smooth_eta_target_time_map": false,
+    "finite_difference_or_probe_regularities_prove_continuum_target_transversality": false,
+    "full_eta_target_totality_alone_materializes_a_cartesian_bridge": false,
+    "pointwise_target_time_diagnostic_materializes_terminal_multiplier_composition": false,
+    "target_hit_diagnostic_implies_kokuno_velocity_export_ready": false,
+    "target_hit_diagnostic_implies_visual_correspondence": false,
+    "target_hit_diagnostic_implies_pde_validation": false,
+    "target_hit_diagnostic_implies_paper_exactness": false,
+    "target_hit_diagnostic_implies_openai_field_identity": false
+  },
+  "promotion_prerequisites": [
+    "Bind the exact applicable eta interval and establish a full-interval target-entry condition sufficient for a nonnegative hit, such as a certified positive margin Q_s_entry(eta)-Q_p>0, or document an alternative rigorous branch/existence argument.",
+    "Establish the target-root branch on the full eta interval: prove uniqueness of the intended first hit or explicitly define and justify branch selection if multiple roots can occur.",
+    "Establish target regularity needed by the chosen representation, including nondegenerate/transverse crossing D_y Q_s!=0 where an implicit eta->T(eta) map is used, or explicitly handle any degeneracy/singularity rather than sampling through it.",
+    "Establish continuity/smoothness and endpoint/axis semantics of eta->T(eta) before calling it an eta-dependent Cartesian boundary; finite eta samples or a smooth-looking plot are insufficient.",
+    "Compose either a separately justified common scalar bridge or an explicit eta-dependent boundary into the Cartesian velocity, create a new semantic/save-load identity, and replay finite-value, seam, axis, and claimed project-domain coverage checks.",
+    "Keep canonical Eq45 callability and visual/PDE/paper/OpenAI states independent throughout; no matching-boundary result alone promotes any of those scientific states."
+  ],
+  "mechanics_witness": {
+    "role": "autonomous_representation_mechanics_only",
+    "definition": "q_entry(eta)=q_p+margin-depth*exp(-((eta-center)/width)^2); q(y,eta)=q_entry(eta)*exp(-k*y)",
+    "q_p": 1.0,
+    "margin": 0.1,
+    "depth": 0.2,
+    "center": 0.25,
+    "width": 0.04,
+    "k": 0.995,
+    "finite_eta_samples": [-0.75, 0.0, 0.5, 0.75],
+    "hidden_eta_probe": 0.25,
+    "claim": "A finite set can show valid nonnegative target hits while an unsampled eta has q_entry<Q_p and therefore no nonnegative hit under a monotone decaying bridge. This is representation logic only, not Kokuno/OpenAI numerical evidence."
+  },
+  "canonical_independence": {
+    "canonical_eq45_velocity_export_ready_expected": true,
+    "canonical_visual_correspondence_verified_expected": false,
+    "canonical_pde_validated_expected": false,
+    "canonical_paper_exact_expected": false,
+    "canonical_openai_field_identified_expected": false,
+    "kokuno_target_totality_incompleteness_must_not_revoke_canonical_eq45_callability": true
+  },
+  "cr001_guardrails": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "residual_defined_free_force_forbidden": true,
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "momentum_max_threshold": 0.001,
+    "momentum_l2_threshold": 0.001,
+    "divergence_max_threshold": 1e-05,
+    "divergence_l2_threshold": 1e-05
+  }
+}
