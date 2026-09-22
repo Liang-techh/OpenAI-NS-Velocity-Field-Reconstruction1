@@ -49,18 +49,9 @@ def test_exact_parent_replay_through_flattening_endpoint() -> None:
         got = c.similarity_profile_values_logX(np.full(eta.shape, log_X), eta)
         ref = c.parent.similarity_profile_values_logX(np.full(eta.shape, log_X), eta)
         for child_key, parent_key in (
-            (
-                "F_current_leading_pre_relative_swirl",
-                "F_current_leading_postpulse_eta_flattening",
-            ),
-            (
-                "U_current_leading_pre_relative_swirl",
-                "U_current_leading_postpulse_eta_flattening",
-            ),
-            (
-                "E_current_leading_pre_relative_swirl",
-                "E_current_leading_postpulse_eta_flattening",
-            ),
+            ("F_current_leading_pre_relative_swirl", "F_current_leading_postpulse_eta_flattening"),
+            ("U_current_leading_pre_relative_swirl", "U_current_leading_postpulse_eta_flattening"),
+            ("E_current_leading_pre_relative_swirl", "E_current_leading_postpulse_eta_flattening"),
             (
                 "M_over_X_current_leading_pre_relative_swirl",
                 "M_over_X_current_leading_postpulse_eta_flattening",
@@ -69,30 +60,22 @@ def test_exact_parent_replay_through_flattening_endpoint() -> None:
                 "M_eta_over_X_current_leading_pre_relative_swirl",
                 "M_eta_over_X_current_leading_postpulse_eta_flattening",
             ),
-            (
-                "v0_current_leading_pre_relative_swirl",
-                "v0_current_leading_postpulse_eta_flattening",
-            ),
+            ("v0_current_leading_pre_relative_swirl", "v0_current_leading_postpulse_eta_flattening"),
         ):
-            np.testing.assert_allclose(
-                got[child_key], ref[parent_key], rtol=0.0, atol=0.0
-            )
+            np.testing.assert_allclose(got[child_key], ref[parent_key], rtol=0.0, atol=0.0)
 
 
 def test_unedited_baseline_is_executable_over_full_public_hold() -> None:
     c = _candidate()
     eta = np.array([-0.62, -0.15, 0.0, 0.41, 0.88])
     for frac in (0.0, 0.43, 0.91, 1.0):
-        log_X = np.full(
-            eta.shape, c.log_X_flatten_end + frac * c.hold_length
+        p = c.unedited_hold_profile_logX(
+            np.full(eta.shape, c.log_X_flatten_end + frac * c.hold_length), eta
         )
-        p = c.unedited_hold_profile_logX(log_X, eta)
         np.testing.assert_array_equal(p["U_unedited"], np.zeros(eta.shape))
         assert np.all(p["E_unedited"] > 0.0)
         assert np.all(p["F_unedited"] >= 0.0)
-        np.testing.assert_allclose(
-            p["ell_unedited"], -c.lambda_value, rtol=0.0, atol=0.0
-        )
+        np.testing.assert_allclose(p["ell_unedited"], -c.lambda_value, rtol=0.0, atol=0.0)
 
     truth = c.truth_boundary
     assert truth["source_unedited_eta_independent_hold_baseline_materialized"] is True
@@ -113,9 +96,7 @@ def test_unedited_baseline_preserves_eta_flattening_to_float_roundoff() -> None:
         E = np.asarray(p["E_unedited"], dtype=float)
         relative_spread = (np.max(E) - np.min(E)) / np.max(E)
         assert relative_spread < 3e-13
-        np.testing.assert_array_equal(
-            p["E_eta_unedited"], np.zeros_like(eta)
-        )
+        np.testing.assert_array_equal(p["E_eta_unedited"], np.zeros_like(eta))
 
 
 def test_current_primitives_obey_U_zero_identity_inside_candidate_prefix() -> None:
@@ -143,18 +124,9 @@ def test_analytic_logX_derivatives_match_centered_difference_inside_prefix() -> 
     pp = c.similarity_profile_values_logX(np.full(eta.shape, log_X + h), eta)
     d = c.similarity_log_radial_derivatives(np.full(eta.shape, log_X), eta)
     for value_key, deriv_key in (
-        (
-            "E_current_leading_pre_relative_swirl",
-            "E_DlogX_current_leading_pre_relative_swirl",
-        ),
-        (
-            "F_current_leading_pre_relative_swirl",
-            "F_DlogX_current_leading_pre_relative_swirl",
-        ),
-        (
-            "U_current_leading_pre_relative_swirl",
-            "U_DlogX_current_leading_pre_relative_swirl",
-        ),
+        ("E_current_leading_pre_relative_swirl", "E_DlogX_current_leading_pre_relative_swirl"),
+        ("F_current_leading_pre_relative_swirl", "F_DlogX_current_leading_pre_relative_swirl"),
+        ("U_current_leading_pre_relative_swirl", "U_DlogX_current_leading_pre_relative_swirl"),
     ):
         centered = (pp[value_key] - pm[value_key]) / (2.0 * h)
         np.testing.assert_allclose(centered, d[deriv_key], rtol=4e-7, atol=3e-300)
@@ -170,10 +142,7 @@ def test_analytic_logX_derivatives_match_centered_difference_inside_prefix() -> 
         atol=5e-8,
     )
     np.testing.assert_allclose(
-        d["ell_current_leading_pre_relative_swirl"],
-        -c.lambda_value,
-        rtol=0.0,
-        atol=0.0,
+        d["ell_current_leading_pre_relative_swirl"], -c.lambda_value, rtol=0.0, atol=0.0
     )
 
 
@@ -190,12 +159,12 @@ def test_cartesian_velocity_reaches_safe_pre_bump_endpoint_and_axis_is_regular()
     assert np.all(np.isfinite(v))
     np.testing.assert_array_equal(v[1, :2], np.zeros(2))
     assert abs(v[0, 2]) == 0.0
-    assert np.linalg.norm(v[0, :2]) > 0.0
+    # Do not use a Euclidean norm here: squaring the very small but representable
+    # endpoint swirl can underflow even when the Cartesian components are nonzero.
+    assert np.max(np.abs(v[0, :2])) > 0.0
 
     coords = c.similarity_coordinates_logX(radius, 0.0, 0.0, 0.0)
-    assert float(coords["log_X"]) == pytest.approx(
-        c.log_X_prefix_end, rel=0.0, abs=4e-12
-    )
+    assert float(coords["log_X"]) == pytest.approx(c.log_X_prefix_end, rel=0.0, abs=4e-12)
 
 
 def test_full_unedited_helper_does_not_promote_cartesian_candidate_into_bumps() -> None:
@@ -206,9 +175,7 @@ def test_full_unedited_helper_does_not_promote_cartesian_candidate_into_bumps() 
 
     with pytest.raises(ValueError):
         c.similarity_profile_values_logX(c.log_X_prefix_end + 1.0e-4, 0.0)
-    radius_beyond = math.exp(
-        0.5 * (math.log(2.0) + c.log_X_prefix_end + 1.0e-3)
-    )
+    radius_beyond = math.exp(0.5 * (math.log(2.0) + c.log_X_prefix_end + 1.0e-3))
     with pytest.raises(ValueError):
         c.velocity(radius_beyond, 0.0, 0.0, 0.0)
 
@@ -217,53 +184,33 @@ def test_configuration_semantic_identity_and_truth_guards(tmp_path) -> None:
     c = _candidate()
     path = tmp_path / "postpulse_hold_prefix.json"
     payload = c.save_configuration(path)
-    loaded = KokunoPA16CurrentCartesianPostPulseEtaIndependentHoldPrefix.load_configuration(
-        path
-    )
+    loaded = KokunoPA16CurrentCartesianPostPulseEtaIndependentHoldPrefix.load_configuration(path)
     assert loaded.configuration() == payload
     assert loaded.semantic_sha256 == c.semantic_sha256
 
-    mutated = copy.deepcopy(payload)
-    mutated["bound_scope"]["hold_length"] *= 0.99
-    with pytest.raises(ValueError):
-        KokunoPA16CurrentCartesianPostPulseEtaIndependentHoldPrefix.from_configuration(
-            mutated
-        )
+    mutations = []
+    m = copy.deepcopy(payload)
+    m["bound_scope"]["hold_length"] *= 0.99
+    mutations.append(m)
+    m = copy.deepcopy(payload)
+    m["bound_scope"]["pre_bump_guard_from_hold_end"] = 3.0
+    mutations.append(m)
+    m = copy.deepcopy(payload)
+    m["bound_scope"]["pre_bump_guard_role"] = "source_exact"
+    mutations.append(m)
+    m = copy.deepcopy(payload)
+    m["bound_scope"]["T_f_role"] = "source_exact"
+    mutations.append(m)
+    m = copy.deepcopy(payload)
+    m["truth_boundary"]["source_relative_swirl_bumps_materialized"] = True
+    mutations.append(m)
+    m = copy.deepcopy(payload)
+    m["truth_boundary"]["pde_validated"] = True
+    mutations.append(m)
 
-    mutated = copy.deepcopy(payload)
-    mutated["bound_scope"]["pre_bump_guard_from_hold_end"] = 3.0
-    with pytest.raises(ValueError):
-        KokunoPA16CurrentCartesianPostPulseEtaIndependentHoldPrefix.from_configuration(
-            mutated
-        )
-
-    mutated = copy.deepcopy(payload)
-    mutated["bound_scope"]["pre_bump_guard_role"] = "source_exact"
-    with pytest.raises(ValueError):
-        KokunoPA16CurrentCartesianPostPulseEtaIndependentHoldPrefix.from_configuration(
-            mutated
-        )
-
-    mutated = copy.deepcopy(payload)
-    mutated["bound_scope"]["T_f_role"] = "source_exact"
-    with pytest.raises(ValueError):
-        KokunoPA16CurrentCartesianPostPulseEtaIndependentHoldPrefix.from_configuration(
-            mutated
-        )
-
-    mutated = copy.deepcopy(payload)
-    mutated["truth_boundary"]["source_relative_swirl_bumps_materialized"] = True
-    with pytest.raises(ValueError):
-        KokunoPA16CurrentCartesianPostPulseEtaIndependentHoldPrefix.from_configuration(
-            mutated
-        )
-
-    mutated = copy.deepcopy(payload)
-    mutated["truth_boundary"]["pde_validated"] = True
-    with pytest.raises(ValueError):
-        KokunoPA16CurrentCartesianPostPulseEtaIndependentHoldPrefix.from_configuration(
-            mutated
-        )
+    for mutated in mutations:
+        with pytest.raises(ValueError):
+            KokunoPA16CurrentCartesianPostPulseEtaIndependentHoldPrefix.from_configuration(mutated)
 
 
 def test_deterministic_report_separates_unedited_baseline_from_candidate_scope() -> None:
@@ -285,11 +232,7 @@ def test_deterministic_report_separates_unedited_baseline_from_candidate_scope()
     assert report["unedited_full_end_E_relative_eta_spread"] < 3e-13
     assert report["ell_unedited"] == -c.lambda_value
     assert report["max_abs_U_prefix_endpoint"] == 0.0
-    assert report["truth_boundary"][
-        "source_unedited_eta_independent_hold_baseline_materialized"
-    ] is True
-    assert report["truth_boundary"][
-        "source_terminal_hold_after_eta_flattening_materialized"
-    ] is False
+    assert report["truth_boundary"]["source_unedited_eta_independent_hold_baseline_materialized"] is True
+    assert report["truth_boundary"]["source_terminal_hold_after_eta_flattening_materialized"] is False
     assert report["truth_boundary"]["source_relative_swirl_bumps_materialized"] is False
     assert report["truth_boundary"]["pde_validated"] is False
