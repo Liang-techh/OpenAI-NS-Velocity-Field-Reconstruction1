@@ -1,0 +1,133 @@
+{
+  "canonical_eq45_independent_state": {
+    "candidate_family": "eq45_supported_velocity_candidate_v1",
+    "openai_field_identified": false,
+    "paper_exact": false,
+    "pde_validated": false,
+    "velocity_export_ready": true,
+    "visual_correspondence_verified": false,
+    "visualization_ready": false
+  },
+  "cr001_lock": {
+    "candidate_collapse_forbidden": true,
+    "constraints_blob_sha": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "divergence_L2": 1e-05,
+    "divergence_max": 1e-05,
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "forcing_mode": "restricted_two_parameter_family",
+    "held_out_points": 4096,
+    "momentum_L2": 0.001,
+    "momentum_max": 0.001,
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "post_hoc_threshold_relaxation_forbidden": true,
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "residual_defined_free_forcing_forbidden": true,
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "validation_seed": 914027
+  },
+  "current_truth": {
+    "blowup_proved": false,
+    "current_cartesian_main_pulse_configuration_serializable": true,
+    "current_cartesian_main_pulse_finite_X_prefix_materialized": true,
+    "current_cartesian_main_pulse_velocity_callable_on_supported_prefix": true,
+    "float64_materialization_ceiling_is_physical_domain_boundary": false,
+    "float64_materialization_ceiling_is_public_source_support_endpoint": false,
+    "float64_materialization_ceiling_occurs_before_xi_11_for_frozen_default": true,
+    "full_source_xi_11_current_cartesian_materialized": false,
+    "openai_field_identified": false,
+    "paper_exact": false,
+    "pde_validated": false,
+    "source_coordinate_main_pulse_kernel_defined_through_xi_11": true,
+    "terminal_global_velocity_materialized": false,
+    "velocity_export_ready_for_kokuno_route": false,
+    "visual_correspondence_verified": false
+  },
+  "forbidden_implications": [
+    "source-coordinate kernel defined through xi=11 -> float64 Cartesian X can materialize xi=11",
+    "float64 Cartesian materialization ceiling -> public source pulse terminates there",
+    "float64 Cartesian materialization ceiling -> project physical support ends there",
+    "finite-X prefix callable -> terminal/global velocity materialized",
+    "finite-X prefix save/load identity -> Kokuno route velocity_export_ready",
+    "future high-range representation -> inheritance of finite-prefix numerical receipts without rerun",
+    "callable or visualizable velocity -> visual correspondence",
+    "visual resemblance -> PDE validation",
+    "visual resemblance -> paper exactness or exact OpenAI-field identity",
+    "CI success -> scientific admission"
+  ],
+  "mechanics_witness": {
+    "classification": "autonomous_mechanics_only",
+    "not_openai_numeric_evidence": true,
+    "not_pde_evidence": true,
+    "not_source_numeric_evidence": true,
+    "statement": "for positive X_p and lambda, xi=lambda*(log(X)-log(X_p)) can remain finite while reconstructing X=X_p*exp(xi/lambda) exceeds binary64 range; source-coordinate reachability and Cartesian-float64 materializability are therefore distinct representation properties"
+  },
+  "promotion_requirements": {
+    "full_source_xi_11_current_cartesian_materialized": [
+      "use one numerically safe representation that reaches the source-coordinate endpoint xi=11 without float64 X overflow",
+      "preserve the same intended source-coordinate formulas or explicitly record any new autonomous representation map",
+      "provide a deterministic semantic identity and save/load replay for the extended representation",
+      "run finite-output, axis/domain and Cartesian-component regressions across the newly closed prefix",
+      "do not transfer #1100 finite-prefix receipts as proof for the newly materialized interval"
+    ],
+    "velocity_export_ready_for_kokuno_route": [
+      "provide one unified Cartesian velocity(x,y,z,t)->[u,v,w] over the explicitly declared supported project domain",
+      "bind save/load and reproducible export to the same global candidate identity",
+      "retain truthful source/autonomous/pending classification for all joins and terminal/global pieces",
+      "do not require PDE validation or visual correspondence for callable delivery, and do not infer them from delivery"
+    ]
+  },
+  "provenance_classes": {
+    "autonomous_design": [
+      "the exact #1100 current Cartesian lineage uses IEEE-754 binary64 X materialization with a safety divisor of 4 before overflow/2X overflow",
+      "the exact #1100 lineage exposes a finite-X Cartesian prefix and fails closed beyond its computed xi_materializable_max",
+      "this CR002 representation/domain firewall"
+    ],
+    "pending_unknown": [
+      "a current-lineage representation that materializes the remaining source-coordinate interval from xi_materializable_max through xi=11 without unsafe float64 X",
+      "whether a future log-X, scaled-X, alternate-chart or higher-precision representation will be selected",
+      "source pulse-end M/J corrections and source-exact amplitude root",
+      "terminal/exterior/global leading velocity and matching self-contained oscillatory composite",
+      "matched Cartesian pressure and preregistered restricted forcing",
+      "visual correspondence, complete held-out Navier-Stokes validation, paper exactness and exact OpenAI-field identity"
+    ],
+    "public_source_fact": [
+      "the pinned corrected Kokuno reconstruction supplies the source-coordinate main-pulse variable xi=lambda*log(X/X_p)",
+      "the pinned corrected Kokuno reconstruction main-pulse kernel is represented through the source-coordinate endpoint xi=11 in the #1094 source-reference implementation",
+      "the public source-coordinate endpoint is not evidence for a project float64 Cartesian X endpoint or project physical support endpoint"
+    ],
+    "user_requirement": [
+      "deliver a clear computable save/loadable Cartesian velocity(x,y,z,t)->[u,v,w]",
+      "keep callable velocity delivery independent from visual correspondence, PDE validation, paper exactness and OpenAI-field identity",
+      "separate user requirements, public-source facts, autonomous design and pending/unknown information"
+    ]
+  },
+  "representation_contract": {
+    "ceiling_classification": "autonomous_numerical_representation_limit",
+    "current_numeric_coordinate": "finite float64 X",
+    "forbidden_shortcut": "do not relabel the binary64 finite-X ceiling as source support, source pulse termination, project physical support, or a completed global velocity",
+    "frozen_default_relation": "8 < xi_materializable_max < 11",
+    "future_representation_identity_rule": "a log-X, scaled-X, alternate-chart or higher-precision implementation that closes the missing source-coordinate prefix is a new representation/candidate identity and must receive fresh save/load, Cartesian finite-output and domain/axis audits",
+    "required_fail_closed_behavior": "reject current Cartesian evaluation beyond X_materializable_end rather than reinterpret the source xi-domain or emit inf/nan",
+    "source_coordinate": "xi=lambda*log(X/X_p)",
+    "source_endpoint_classification": "public_source_coordinate_domain"
+  },
+  "schema": "cr002-kokuno-main-pulse-float64-materialization-scope-v1",
+  "scope": {
+    "audited_candidate_blob_sha": "efcce36612ffc1cb3a74f5eb9c9ae6c86748f60d",
+    "audited_candidate_path": "src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_main_pulse.py",
+    "base_exact_head": "2a6c58ff6bf6d1ba6b875bca0e6abf9d1118e156",
+    "base_pr": 1100,
+    "candidate_bytes_changed": false,
+    "change_type": "governance_only",
+    "forcing_changed": false,
+    "pressure_changed": false,
+    "scientific_threshold_changed": false,
+    "source_formula_changed": false
+  },
+  "task_id": "CR002-KOKUNO-MAIN-PULSE-FLOAT64-MATERIALIZATION-SCOPE-130"
+}
