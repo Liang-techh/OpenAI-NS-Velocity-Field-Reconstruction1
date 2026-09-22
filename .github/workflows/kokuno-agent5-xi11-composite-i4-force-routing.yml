@@ -1,0 +1,127 @@
+name: kokuno-agent5-xi11-composite-i4-force-routing
+
+on:
+  push:
+    branches:
+      - kokuno-agent5/xi11-composite-i4-force-routing-113
+  pull_request:
+    branches:
+      - kokuno-agent5/xi11-pulse-i4-stress-routing-112
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-head-routing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout exact event head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install project test dependencies
+        run: python -m pip install -e '.[dev]'
+
+      - name: Authenticate exact sibling heads and source blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          fetch_and_check() {
+            local branch="$1" expected_head="$2" path="$3" expected_blob="$4"
+            git fetch --no-tags origin "${branch}:refs/remotes/origin/${branch}"
+            actual_head="$(git rev-parse "refs/remotes/origin/${branch}")"
+            test "${actual_head}" = "${expected_head}"
+            actual_blob="$(git rev-parse "${expected_head}:${path}")"
+            test "${actual_blob}" = "${expected_blob}"
+          }
+
+          fetch_and_check \
+            'kokuno-agent5/xi11-pulse-i4-stress-routing-112' \
+            'f35bbc55455bb7bd6773c4e273adad896e744132' \
+            'src/openai_ns_reconstruction/kokuno_a5_xi11_pulse_i4_stress_routing.py' \
+            '5572b3ffc7fa73d51c5a15d9dc76eb9eb6dc72af'
+          fetch_and_check \
+            'codex/kokuno-a1-public-pulse-end-compensator' \
+            'c144d00fd81a938e497ca5d841fed6d1fe448a8b' \
+            'src/openai_ns_reconstruction/kokuno_public_pulse_end_compensator.py' \
+            '3c4d7a2d51cbccad7322a9bf6825a69e2b45e486'
+          fetch_and_check \
+            'codex/k2-osc-101-logx-composite' \
+            '27741d9c0a27262f7fabf61eebaa2fbd507e9f03' \
+            'src/openai_ns_reconstruction/kokuno_current_main_pulse_logx_leading_oscillatory_identity.py' \
+            '5504c2cde2eb69bfcdb4e4a87cc48f541bb9f8d3'
+          fetch_and_check \
+            'agent3/current-i4-radial-force-20260921' \
+            '922f7aa10460ded44af212d313eceff33a2ac647' \
+            'src/openai_ns_reconstruction/kokuno_current_i4_nonlinear_radial_force.py' \
+            'e28eac6f7fb7f3191a024b052bcf677cff8d74d2'
+          fetch_and_check \
+            'kokuno-agent4/current-i4-radial-stress-independent-audit-115' \
+            '3f3fd169ce79a2e44b90b50353415d057119e63f' \
+            'src/openai_ns_reconstruction/kokuno_a4_current_i4_radial_stress_independent_audit.py' \
+            '97387bcab05098ecc622372ec3aa08150d79b89d'
+          fetch_and_check \
+            'kokuno-agent4/current-main-pulse-composite-divergence-114' \
+            '71432cec314c2ab11b1bf38c83609ad7d64a6654' \
+            'src/openai_ns_reconstruction/kokuno_a4_current_main_pulse_composite_divergence_independent_audit.py' \
+            '50fc8557f3e0d06621c5b801221712a2c77d091a'
+
+      - name: Enforce minimal three-file delta
+        shell: bash
+        run: |
+          set -euo pipefail
+          parent='f35bbc55455bb7bd6773c4e273adad896e744132'
+          mapfile -t changed < <(git diff --name-only "${parent}..HEAD" | sort)
+          expected=(
+            '.github/workflows/kokuno-agent5-xi11-composite-i4-force-routing.yml'
+            'src/openai_ns_reconstruction/kokuno_a5_xi11_composite_i4_force_routing.py'
+            'tests/test_kokuno_a5_xi11_composite_i4_force_routing.py'
+          )
+          mapfile -t expected_sorted < <(printf '%s\n' "${expected[@]}" | sort)
+          test "${#changed[@]}" -eq 3
+          test "$(printf '%s\n' "${changed[@]}")" = "$(printf '%s\n' "${expected_sorted[@]}")"
+          test -z "$(git diff --diff-filter=D --name-only "${parent}..HEAD")"
+
+      - name: Run focused parent and new Agent-5 regressions
+        run: |
+          pytest -q \
+            tests/test_kokuno_a5_xi11_pulse_i4_stress_routing.py \
+            tests/test_kokuno_a5_xi11_composite_i4_force_routing.py
+
+      - name: Materialize deterministic routing artifact
+        run: |
+          mkdir -p artifacts/kokuno/agent5
+          python -m openai_ns_reconstruction.kokuno_a5_xi11_composite_i4_force_routing \
+            --output artifacts/kokuno/agent5/xi11_composite_i4_force_routing.json
+
+      - name: Upload registration artifact before final enforcement
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-xi11-composite-i4-force-routing-v113
+          path: artifacts/kokuno/agent5/xi11_composite_i4_force_routing.json
+          if-no-files-found: error
+
+      - name: Final fail-closed truth enforcement
+        run: |
+          python - <<'PY'
+          from openai_ns_reconstruction.kokuno_a5_xi11_composite_i4_force_routing import load_registration
+          reg = load_registration('artifacts/kokuno/agent5/xi11_composite_i4_force_routing.json')
+          truth = reg['truth_boundary']
+          assert truth['matching_xi11_agent2_project_composite_materialized'] is True
+          assert truth['current_i4_radial_force_materialized'] is True
+          assert truth['agent4_matching_current_i4_radial_stress_audit_present'] is True
+          assert truth['agent4_matching_current_i4_radial_stress_audit_admitted'] is False
+          assert truth['agent4_matching_xi11_composite_audit_present'] is False
+          assert truth['agent4_matching_current_i4_radial_force_audit_present'] is False
+          assert truth['complete_identity_bound_ns_defect_materialized'] is False
+          assert truth['pde_validated'] is False
+          PY
