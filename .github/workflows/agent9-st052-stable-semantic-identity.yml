@@ -1,0 +1,172 @@
+name: agent9-st052-stable-semantic-identity
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/st052_stable_semantic_identity.py'
+      - 'tests/test_st052_stable_semantic_identity.py'
+      - '.github/workflows/agent9-st052-stable-semantic-identity.yml'
+  push:
+    branches: ['agent9/st052-stable-semantic-identity-105']
+    paths:
+      - 'src/openai_ns_reconstruction/st052_stable_semantic_identity.py'
+      - 'tests/test_st052_stable_semantic_identity.py'
+      - '.github/workflows/agent9-st052-stable-semantic-identity.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  exact-source-stable-semantic-identity:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 35
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - name: Checkout exact Agent-9 head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+
+      - name: Assert exact event-head checkout
+        shell: bash
+        run: test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+
+      - name: Checkout accepted constrained ST052 runtime lineage
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: 6a293b3c870d70b8d8aece1b12d68685c9b8b010
+          path: constrained-st052
+          persist-credentials: false
+
+      - name: Checkout exact ST052 source runtime
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: b3b8bfdbe1077f9ec967d158602951997d81e17d
+          path: source-st052
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install focused numerical/test runtime
+        run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+
+      - name: Run stable-identity regressions
+        run: PYTHONPATH=src python -m pytest -q -W error tests/test_st052_stable_semantic_identity.py
+
+      - name: Materialize exact parent while retaining expected momentum rejection
+        shell: bash
+        run: |
+          mkdir -p outputs
+          set +e
+          (
+            cd source-st052
+            python experiments/root_st052/replay_st052.py \
+              --out ../outputs/ST052-M-parent \
+              --seed 9175291 \
+              --validate
+          )
+          code=$?
+          set -e
+          test "$code" = 1
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report = json.loads(Path('outputs/ST052-M-parent/validation.json').read_text())
+          assert report['pde_validated'] is False
+          assert report['all_numeric_gates_pass'] is False
+          assert report['gates']['momentum_max'] is False
+          assert report['gates']['momentum_L2'] is False
+          print('Exact ST052 parent retained expected momentum rejection.')
+          PY
+
+      - name: Rebuild authenticated legacy whole-child bundle
+        run: |
+          PYTHONPATH=constrained-st052/src python constrained-st052/scripts/verify_st052_linear_temporal_capsule.py \
+            --source-root source-st052 \
+            --parent-dir outputs/ST052-M-parent \
+            --out outputs \
+            --report outputs/ST052-M-linear-temporal-child-v1/capsule_receipt.json
+
+      - name: Emit stable semantic/callable identity split
+        run: |
+          mkdir -p outputs/ST052-M-stable-semantic-identity
+          PYTHONPATH=src python -m openai_ns_reconstruction.st052_stable_semantic_identity \
+            --constrained-root constrained-st052 \
+            --bundle-dir outputs/ST052-M-linear-temporal-child-v1 \
+            --report outputs/ST052-M-stable-semantic-identity/receipt.json \
+            | tee outputs/ST052-M-stable-semantic-identity/summary.txt
+
+      - name: Exercise real-manifest materialization-drift firewall
+        run: |
+          PYTHONPATH=src python - <<'PY'
+          from copy import deepcopy
+          import hashlib
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction import st052_stable_semantic_identity as stable
+
+          manifest = json.loads(Path('outputs/ST052-M-linear-temporal-child-v1/whole_candidate_manifest.json').read_text())
+          contract_path = Path('constrained-st052/configs/st052m_runtime_dependency_acceptance.json')
+          contract = json.loads(contract_path.read_text())
+          contract_sha = hashlib.sha256(contract_path.read_bytes()).hexdigest()
+          first = stable.build_receipt(manifest, contract, dependency_contract_file_sha256=contract_sha)
+
+          volatile = deepcopy(manifest)
+          identity = volatile['identity_payload']
+          mapping = {
+              'parent_candidate_file_sha256': 'candidate',
+              'parent_validation_file_sha256': 'validation',
+              'parent_manifest_file_sha256': 'manifest',
+          }
+          filenames = {
+              'parent_candidate_file_sha256': 'parent_candidate.json',
+              'parent_validation_file_sha256': 'parent_validation.json',
+              'parent_manifest_file_sha256': 'parent_replay_manifest.json',
+          }
+          for key, label in mapping.items():
+              digest = hashlib.sha256(('synthetic-rematerialization-' + label).encode()).hexdigest()
+              identity[key] = digest
+              volatile['files'][filenames[key]] = digest
+          volatile['files']['temporal_transform_spec.json'] = hashlib.sha256(b'synthetic-temporal-file-bytes').hexdigest()
+          volatile['whole_candidate_identity_sha256'] = stable.canonical_sha256(identity)
+          second = stable.build_receipt(
+              volatile,
+              contract,
+              dependency_contract_file_sha256=hashlib.sha256(b'same-semantics-different-contract-file').hexdigest(),
+          )
+
+          assert first['stable_identity']['candidate_semantic_identity_sha256'] == second['stable_identity']['candidate_semantic_identity_sha256']
+          assert first['stable_identity']['velocity_semantic_identity_sha256'] == second['stable_identity']['velocity_semantic_identity_sha256']
+          assert first['materialization_evidence_sha256'] != second['materialization_evidence_sha256']
+
+          semantic = deepcopy(manifest)
+          semantic['identity_payload']['parent_replay_identity_sha256'] = hashlib.sha256(b'true-semantic-drift').hexdigest()
+          semantic['whole_candidate_identity_sha256'] = stable.canonical_sha256(semantic['identity_payload'])
+          third = stable.build_receipt(semantic, contract, dependency_contract_file_sha256=contract_sha)
+          assert first['stable_identity']['candidate_semantic_identity_sha256'] != third['stable_identity']['candidate_semantic_identity_sha256']
+          assert first['stable_identity']['velocity_semantic_identity_sha256'] != third['stable_identity']['velocity_semantic_identity_sha256']
+
+          receipt = json.loads(Path('outputs/ST052-M-stable-semantic-identity/receipt.json').read_text())
+          assert receipt['truth_boundary']['materialization_file_hashes_identity_bound'] is False
+          assert receipt['truth_boundary']['visualization_ready'] is False
+          assert receipt['truth_boundary']['pde_validated'] is False
+          print('stable_candidate=', receipt['stable_identity']['candidate_semantic_identity_sha256'])
+          print('stable_velocity=', receipt['stable_identity']['velocity_semantic_identity_sha256'])
+          print('legacy_materialization=', receipt['materialization_evidence']['legacy_whole_candidate_identity_sha256'])
+          PY
+
+      - name: Upload stable-identity receipt
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ST052-M-stable-semantic-identity
+          path: outputs/ST052-M-stable-semantic-identity/
+          if-no-files-found: error
