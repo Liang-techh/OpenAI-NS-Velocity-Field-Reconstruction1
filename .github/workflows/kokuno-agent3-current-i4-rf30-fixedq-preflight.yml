@@ -1,0 +1,217 @@
+name: kokuno-agent3-current-i4-rf30-fixedq-preflight
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_current_i4_rf30_fixedq_preflight.py'
+      - 'tests/test_constrained_kokuno_current_i4_rf30_fixedq_preflight.py'
+      - '.github/workflows/kokuno-agent3-current-i4-rf30-fixedq-preflight.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  current-i4-rf30-fixedq-preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout exact Agent-3 PR head
+        uses: actions/checkout@v4
+        with:
+          path: a3
+          fetch-depth: 0
+
+      - name: Verify one-increment Agent-3 stack
+        shell: bash
+        run: |
+          set -euo pipefail
+          parent=e0b48ccfa964db0caa9d657961d451a21e1d53bf
+          git -C a3 merge-base --is-ancestor "$parent" HEAD
+          test "$(git -C a3 rev-list --count "$parent"..HEAD)" -eq 3
+          git -C a3 diff --name-only "$parent"...HEAD | sort > /tmp/changed.txt
+          cat > /tmp/expected.txt <<'EOF'
+          .github/workflows/kokuno-agent3-current-i4-rf30-fixedq-preflight.yml
+          src/openai_ns_reconstruction/kokuno_current_i4_rf30_fixedq_preflight.py
+          tests/test_constrained_kokuno_current_i4_rf30_fixedq_preflight.py
+          EOF
+          diff -u /tmp/expected.txt /tmp/changed.txt
+
+      - name: Checkout exact Agent-2 current-I4 composite
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: c40d8ddecd2971544a6e07dab093436b423cf326
+          path: a2
+          fetch-depth: 1
+
+      - name: Checkout exact Agent-1 current-I4 leading
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: b06742ca6e189499192ede3cce40f62cdc1e35ca
+          path: a1
+          fetch-depth: 1
+
+      - name: Authenticate sibling source blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C a2 rev-parse HEAD)" = c40d8ddecd2971544a6e07dab093436b423cf326
+          test "$(git -C a1 rev-parse HEAD)" = b06742ca6e189499192ede3cce40f62cdc1e35ca
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_current_i4_leading_oscillatory_identity.py)" = 2a0a5aa5966b02da856bdcf51940f3c186042802
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_oscillatory_batch_differentials.py)" = 12df3bf6c949baeebf609b366f2973e7f515a157
+          test "$(git -C a1 hash-object src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_i4_leading_preservation.py)" = 6f04ce0a856b44430402576dad88438da90d1ebb
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Agent-3 tree
+        run: python -m pip install -e a3
+
+      - name: Compile and run focused contract tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile a3/src/openai_ns_reconstruction/kokuno_current_i4_rf30_fixedq_preflight.py
+          python -m py_compile a3/tests/test_constrained_kokuno_current_i4_rf30_fixedq_preflight.py
+          python -m pytest -q -W error a3/tests/test_constrained_kokuno_current_i4_rf30_fixedq_preflight.py
+
+      - name: Materialize exact current-I4 fixed-Q preflight receipts
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python - <<'PY'
+          from __future__ import annotations
+          import importlib
+          import json
+          from math import exp, log, sqrt
+          from pathlib import Path
+          import numpy as np
+          import openai_ns_reconstruction as pkg
+
+          root = Path.cwd()
+          for sibling in (
+              root / 'a1' / 'src' / 'openai_ns_reconstruction',
+              root / 'a2' / 'src' / 'openai_ns_reconstruction',
+          ):
+              text = str(sibling)
+              if text not in pkg.__path__:
+                  pkg.__path__.append(text)
+
+          a2_field_mod = importlib.import_module(
+              'openai_ns_reconstruction.kokuno_current_i4_leading_oscillatory_identity'
+          )
+          a2_diff_mod = importlib.import_module(
+              'openai_ns_reconstruction.kokuno_oscillatory_batch_differentials'
+          )
+          a2_axis_mod = importlib.import_module(
+              'openai_ns_reconstruction.kokuno_oscillatory_batch_axis_safety'
+          )
+          a3_mean_mod = importlib.import_module(
+              'openai_ns_reconstruction.kokuno_current_i4_nonlinear_mean_attribution'
+          )
+          preflight_mod = importlib.import_module(
+              'openai_ns_reconstruction.kokuno_current_i4_rf30_fixedq_preflight'
+          )
+
+          field = a2_field_mod.default_field()
+          backend = a3_mean_mod.ExactCurrentI4NonlinearBackend.bind(
+              field,
+              a2_diff_mod.evaluate_oscillatory_batch_differentials,
+          )
+
+          r0, r1, z0, z1 = a2_axis_mod._support()
+          t0, t1 = a2_axis_mod._time_interval()
+          control_radius = np.linspace(
+              r0 + 0.30 * (r1 - r0),
+              r0 + 0.70 * (r1 - r0),
+              5,
+          )
+          control_z = 0.0 if z0 < 0.0 < z1 else 0.5 * (z0 + z1)
+          control_t = 0.5 * (t0 + t1)
+          control = preflight_mod.materialize_current_i4_rf30_fixedq_preflight(
+              backend, control_radius, control_z, control_t
+          )
+
+          eta = 0.08
+          time = 0.55
+          q = (1.0 - time) / (1.0 - eta * eta)
+          log_mid = log(field.X_I4_start) + 0.57 * (
+              log(field.X_I4_end) - log(field.X_I4_start)
+          )
+          stage_X = np.exp(log_mid + np.asarray((-0.015, -0.0075, 0.0, 0.0075, 0.015)))
+          stage_radius = np.sqrt(2.0 * q * stage_X)
+          stage_z = (q ** field.D) * eta
+          stage = preflight_mod.materialize_current_i4_rf30_fixedq_preflight(
+              backend, stage_radius, stage_z, time
+          )
+
+          payload = {
+              'schema': 'kokuno-a3-current-i4-rf30-fixedq-preflight-receipt-v1',
+              'backend': backend.to_receipt(),
+              'source_provenance': preflight_mod.source_provenance(),
+              'truth_boundary': preflight_mod.truth_boundary(),
+              'control_inside_frozen_a2_support': control.to_dict(),
+              'strict_i4_stage': stage.to_dict(),
+              'interpretation': {
+                  'physical_theta_covariance_is_rf30_source_haar_covariance': False,
+                  'source_auxiliary_t2_provider_missing': True,
+                  'rf30_repository_candidate_state_authorized': False,
+                  'complete_ns_defect_materialized': False,
+                  'heldout_ns_residual_assessed': False,
+              },
+          }
+          Path('artifacts/current_i4_rf30_fixedq_preflight_receipt.json').write_text(
+              json.dumps(payload, indent=2, sort_keys=True) + '\n', encoding='utf-8'
+          )
+
+          gates = {
+              'control_map_closure_relative_max': control.fixed_q_map_closure_relative_max,
+              'control_q_relative_spread': control.q_relative_spread,
+              'control_covariance_trace_rms': control.finest_covariance_trace_rms,
+              'stage_map_closure_relative_max': stage.fixed_q_map_closure_relative_max,
+              'stage_q_relative_spread': stage.q_relative_spread,
+              'stage_all_strict_I4': stage.all_strict_I4,
+              'stage_oscillatory_interior_fraction': stage.finest_oscillatory_interior_fraction,
+              'stage_covariance_trace_rms': stage.finest_covariance_trace_rms,
+              'source_auxiliary_t2_provider_available': stage.source_auxiliary_t2_provider_available,
+              'source_auxiliary_t2_haar_mean_used': stage.normalized_source_auxiliary_t2_haar_mean_used,
+              'rf30_repository_candidate_state_authorized': stage.rf30_repository_candidate_state_authorized,
+              'forbidden_scientific_controls_exposed': preflight_mod.truth_boundary()[
+                  'forbidden_scientific_controls_exposed'
+              ],
+          }
+          Path('artifacts/gates.json').write_text(
+              json.dumps(gates, indent=2, sort_keys=True) + '\n', encoding='utf-8'
+          )
+          PY
+
+      - name: Upload preflight receipt before enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent3-current-i4-rf30-fixedq-preflight
+          path: artifacts/
+
+      - name: Enforce fixed-Q kinematic and provenance firewall gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          g = json.loads(Path('artifacts/gates.json').read_text(encoding='utf-8'))
+          assert g['control_map_closure_relative_max'] <= 5.0e-11
+          assert g['stage_map_closure_relative_max'] <= 5.0e-11
+          assert g['control_q_relative_spread'] <= 5.0e-13
+          assert g['stage_q_relative_spread'] <= 5.0e-13
+          assert g['control_covariance_trace_rms'] > 1.0e-14
+          assert g['stage_all_strict_I4'] is True
+          assert g['source_auxiliary_t2_provider_available'] is False
+          assert g['source_auxiliary_t2_haar_mean_used'] is False
+          assert g['rf30_repository_candidate_state_authorized'] is False
+          assert g['forbidden_scientific_controls_exposed'] is False
+          PY
