@@ -1,0 +1,123 @@
+{
+  "schema": "cr002-kokuno-relative-swirl-root-branch-scope-v1",
+  "task_id": "CR002-KOKUNO-RELATIVE-SWIRL-ROOT-BRANCH-SCOPE-141",
+  "exact_parent": {
+    "pr": 1154,
+    "head_sha": "d0e855e37c8f5d6d58f1a85b1dcb874651d20838",
+    "candidate_module": "src/openai_ns_reconstruction/kokuno_public_relative_swirl_compensator.py",
+    "candidate_module_blob_sha": "7715dbf9fadb5d9ed37213677703b45f21d29724"
+  },
+  "four_way_provenance": {
+    "user_requirements": [
+      "Deliver explicit computable save/loadable velocity(x,y,z,t)->[u,v,w] without making PDE validation a prerequisite for callable delivery.",
+      "Keep velocity_export_ready, visual_correspondence_verified, pde_validated and paper_exact independent.",
+      "Do not use residual-defined free forcing, amplitude collapse or post-hoc threshold relaxation."
+    ],
+    "public_source_facts": [
+      "The pinned corrected reconstruction supplies the late-hold relative edit E -> E*(1+c1*beta1+c2*beta2), its two bump locations/width, the angular endpoint condition and the exact pressure-neutrality condition.",
+      "The public algebra reduces, for a fixed pointwise bump realization, to one angular row and one quadratic pressure-neutrality equation for c1,c2.",
+      "This contract does not claim that the public source supplies the repository's numerical root-selection algorithm or its numeric L1 guard."
+    ],
+    "autonomous_design": [
+      "Exact #1154 freezes a repository-autonomous pointwise C-infinity bump realization and fixed 96-point Gauss-Legendre moment evaluation.",
+      "Exact #1154 selects among real quadratic roots by the solution closest to the zero-target linearized branch.",
+      "Exact #1154 applies the specific sufficient fail-closed guard |c1|+|c2|<1 before accepting the selected coefficient pair.",
+      "This CR002 branch/evidence-transfer firewall and its multi-root mechanics witness are autonomous governance/mechanics."
+    ],
+    "pending_unknown": [
+      "Any independently sourced proof that the exact #1154 root-selection algorithm or numeric L1<1 guard is source-mandated.",
+      "The current-lineage entering angular state I or r_I needed to determine the actual relative-swirl target.",
+      "Composition of the selected relative-swirl coefficients into the current Cartesian velocity identity and fresh save/load/downstream audits.",
+      "Complete terminal/exterior/global leading velocity, matched pressure, preregistered restricted forcing and held-out complete NS residual.",
+      "Visual correspondence, PDE validation, paper exactness and exact OpenAI-field identity."
+    ]
+  },
+  "root_branch_scope": {
+    "public_relative_swirl_two_row_algebra_materialized": true,
+    "repository_autonomous_pointwise_bump_materialized": true,
+    "repository_autonomous_quadrature_materialized": true,
+    "current_root_selection_rule": "real pressure-neutral root closest to zero-target linearized branch",
+    "current_root_selection_is_repository_autonomous": true,
+    "current_l1_guard_strict_upper_bound": 1.0,
+    "current_l1_guard_is_repository_autonomous": true,
+    "source_exact_numeric_coefficients_recovered": false,
+    "current_lineage_angular_entry_I_materialized": false,
+    "current_cartesian_relative_swirl_composed": false,
+    "complete_terminal_global_leading_materialized": false,
+    "unified_global_kokuno_velocity_export_ready": false,
+    "matched_global_pressure_materialized": false,
+    "restricted_forcing_materialized": false,
+    "heldout_complete_ns_residual_assessed": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  },
+  "evidence_transfer_firewall": {
+    "allowed_claim": "Exact #1154 provides executable deterministic low-dimensional relative-swirl algebra for one autonomous bump/quadrature/root-selection realization while keeping the entering current-lineage angular target external.",
+    "forbidden_implications": [
+      "public two-row equations -> unique numerical c1,c2 branch",
+      "repository root closest to the linearized branch -> source-exact branch recovery",
+      "specific |c1|+|c2|<1 guard -> public/source-exact numerical coefficient bound",
+      "exact row closure -> current-lineage entering I or r_I materialized",
+      "exact row closure -> relative-swirl correction composed into Cartesian velocity",
+      "low-dimensional save/load semantic identity -> terminal/exterior/global velocity completion",
+      "relative-swirl algebra closure -> held-out complete NS residual or PDE validation",
+      "relative-swirl algebra closure -> visual correspondence, paper exactness or exact OpenAI-field identity"
+    ]
+  },
+  "branch_rule_change_promotion": {
+    "change_root_selection_requires_new_semantic_candidate_identity": true,
+    "change_numeric_guard_requires_new_semantic_candidate_identity": true,
+    "change_pointwise_bump_requires_new_semantic_candidate_identity": true,
+    "fresh_save_load_replay_required": true,
+    "fresh_cartesian_composition_audit_required_if_composed": true,
+    "fresh_downstream_numerical_audit_required": true,
+    "reuse_old_coefficient_receipts_after_branch_rule_change": false,
+    "reuse_old_cartesian_or_divergence_receipts_after_branch_rule_change": false
+  },
+  "mechanics_witness": {
+    "classification": "autonomous_mechanics_only",
+    "angular_target": 0.0,
+    "angular_row": [1.0, 0.0],
+    "pressure_linear_row": [0.0, -1.0],
+    "pressure_quadratic_matrix": [[0.0, 0.0], [0.0, 1.0]],
+    "root_a": [0.0, 0.0],
+    "root_b": [0.0, 2.0],
+    "statement": "The same one-linear-row plus one-quadratic-row algebra can admit two exact real coefficient pairs. A separate branch/smallness rule is therefore candidate-selection data, not a consequence of row closure alone."
+  },
+  "independent_delivery_states": {
+    "canonical_eq45_velocity_export_ready": true,
+    "canonical_eq45_visual_correspondence_verified": false,
+    "canonical_eq45_pde_validated": false,
+    "kokuno_relative_swirl_algebra_callable_ready": true,
+    "kokuno_global_velocity_export_ready": false,
+    "kokuno_visual_correspondence_verified": false,
+    "kokuno_pde_validated": false,
+    "kokuno_paper_exact": false,
+    "kokuno_openai_field_identified": false
+  },
+  "cr001_invariants": {
+    "constraints_blob_sha": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "thresholds": {
+      "divergence_max": 1e-5,
+      "divergence_L2": 1e-5,
+      "pde_residual_max": 0.001,
+      "pde_residual_L2": 0.001
+    },
+    "forcing_family_change_this_increment": false,
+    "threshold_relaxation_this_increment": false,
+    "candidate_velocity_change_this_increment": false
+  }
+}
