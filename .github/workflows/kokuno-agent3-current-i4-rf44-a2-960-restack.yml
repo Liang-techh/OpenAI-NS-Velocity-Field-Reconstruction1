@@ -1,0 +1,158 @@
+name: kokuno-agent3-current-i4-rf44-a2-960-restack
+
+on:
+  push:
+    branches:
+      - kokuno-agent3/current-i4-rf44-a2-960-restack-150
+  pull_request:
+    branches:
+      - codex/kokuno-a2-rf44-exact-backend-restack-114
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout exact A3 restack head
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify exact parent and five-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          parent=107cac08050fddeab778416c1caf019be0f5795b
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+          git merge-base --is-ancestor "$parent" HEAD
+          test "$(git rev-list --count "$parent"..HEAD)" -eq 3
+          git diff --name-only "$parent"...HEAD | sort > /tmp/changed.txt
+          cat > /tmp/expected.txt <<'EOF'
+          .github/workflows/kokuno-agent3-current-i4-rf44-a2-960-restack.yml
+          src/openai_ns_reconstruction/kokuno_oscillatory_batch_axis_safety.py
+          src/openai_ns_reconstruction/kokuno_oscillatory_batch_differentials.py
+          src/openai_ns_reconstruction/kokuno_public_oscillatory_vorticity_diagnostic.py
+          tests/test_constrained_kokuno_current_i4_rf44_a2_960_restack.py
+          EOF
+          diff -u /tmp/expected.txt /tmp/changed.txt
+
+          test "$(git hash-object src/openai_ns_reconstruction/kokuno_current_i4_rf44_prestate_provider.py)" = \
+            0d8bb6471a4b7825b1b4b428d3b2c38d207729fd
+          test "$(git hash-object src/openai_ns_reconstruction/kokuno_current_i4_exact_backend_correction_firewall.py)" = \
+            0152a85f7fbaf9c32c24c9d5c7d0d11166e3b157
+          test "$(git hash-object src/openai_ns_reconstruction/kokuno_oscillatory_batch_differentials.py)" = \
+            12df3bf6c949baeebf609b366f2973e7f515a157
+          test "$(git hash-object src/openai_ns_reconstruction/kokuno_oscillatory_batch_axis_safety.py)" = \
+            599baa190ec742d0e532e5517078534124e68d6b
+          test "$(git hash-object src/openai_ns_reconstruction/kokuno_public_oscillatory_vorticity_diagnostic.py)" = \
+            4ae525bad1e4b83c9dcabc1a97d3931562d099a5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install exact restack
+        run: python -m pip install -e '.[dev]'
+
+      - name: Compile and run focused contracts
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            src/openai_ns_reconstruction/kokuno_oscillatory_batch_axis_safety.py \
+            src/openai_ns_reconstruction/kokuno_oscillatory_batch_differentials.py \
+            src/openai_ns_reconstruction/kokuno_public_oscillatory_vorticity_diagnostic.py \
+            tests/test_constrained_kokuno_current_i4_rf44_a2_960_restack.py
+          python -m pytest -q -W error \
+            tests/test_constrained_kokuno_current_i4_rf44_exact_backend_restack.py \
+            tests/test_constrained_kokuno_current_i4_rf44_a2_960_restack.py
+
+      - name: Materialize topology receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python - <<'PY'
+          import importlib.util
+          import json
+          from pathlib import Path
+          import openai_ns_reconstruction.kokuno_current_i4_exact_backend_correction_firewall as fw
+          import openai_ns_reconstruction.kokuno_current_i4_rf44_prestate_provider as pre
+          import openai_ns_reconstruction.kokuno_oscillatory_batch_differentials as diff
+
+          receipt = {
+              'schema': 'kokuno-a3-current-i4-rf44-a2-960-restack-v1',
+              'task': 'KOKUNO-A3-I4-RF44-A2-960-RESTACK-150',
+              'base_a2_1224_head': '107cac08050fddeab778416c1caf019be0f5795b',
+              'rf44_prestate_blob': '0d8bb6471a4b7825b1b4b428d3b2c38d207729fd',
+              'exact_backend_firewall_blob': '0152a85f7fbaf9c32c24c9d5c7d0d11166e3b157',
+              'a2_960_differential_blob': '12df3bf6c949baeebf609b366f2973e7f515a157',
+              'a2_960_axis_blob': '599baa190ec742d0e532e5517078534124e68d6b',
+              'a2_960_vorticity_blob': '4ae525bad1e4b83c9dcabc1a97d3931562d099a5',
+              'same_lineage_rf44_prestate_firewall_a2_960': True,
+              'rf44_prestate_materialized': pre.truth_boundary()['rf44_preupdate_state_materialized'],
+              'exact_backend_rebind_required': fw.truth_boundary()['exact_backend_rebind_required'],
+              'exact_a2_960_runtime_restored': True,
+              'a2_960_fixed_spatial_step': diff.public_contract()['fixed_spatial_step'],
+              'a2_1080_composite_runtime_restored': importlib.util.find_spec(
+                  'openai_ns_reconstruction.kokuno_current_i4_leading_oscillatory_identity'
+              ) is not None,
+              'real_exact_backend_bind_executed': False,
+              'repository_candidate_rf30_rf39_correction_executed': False,
+              'rf44_postupdate_state_materialized': False,
+              'rf44_correction_increment_materialized': False,
+              'cartesian_delta_u_materialized': False,
+              'finite_correction_cycle_run': False,
+              'heldout_ns_residual_assessed': False,
+              'final_normalized_momentum_gate': fw.truth_boundary()['final_normalized_momentum_gate'],
+              'final_normalized_divergence_gate': fw.truth_boundary()['final_normalized_divergence_gate'],
+              'residual_defined_free_forcing_allowed': fw.truth_boundary()['residual_defined_free_forcing_allowed'],
+              'pde_validated': False,
+          }
+          Path('artifacts/current_i4_rf44_a2_960_restack_receipt.json').write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + '\n', encoding='utf-8'
+          )
+          PY
+
+      - name: Enforce scientific boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = json.loads(Path('artifacts/current_i4_rf44_a2_960_restack_receipt.json').read_text())
+          assert p['same_lineage_rf44_prestate_firewall_a2_960'] is True
+          assert p['rf44_prestate_materialized'] is True
+          assert p['exact_backend_rebind_required'] is True
+          assert p['exact_a2_960_runtime_restored'] is True
+          assert p['a2_960_fixed_spatial_step'] == 1.0e-3
+          assert p['a2_1080_composite_runtime_restored'] is False
+          for key in (
+              'real_exact_backend_bind_executed',
+              'repository_candidate_rf30_rf39_correction_executed',
+              'rf44_postupdate_state_materialized',
+              'rf44_correction_increment_materialized',
+              'cartesian_delta_u_materialized',
+              'finite_correction_cycle_run',
+              'heldout_ns_residual_assessed',
+              'pde_validated',
+          ):
+              assert p[key] is False
+          assert p['final_normalized_momentum_gate'] == 1.0e-3
+          assert p['final_normalized_divergence_gate'] == 1.0e-5
+          assert p['residual_defined_free_forcing_allowed'] is False
+          PY
+
+      - name: Upload receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent3-current-i4-rf44-a2-960-restack
+          path: artifacts/
+          if-no-files-found: error
