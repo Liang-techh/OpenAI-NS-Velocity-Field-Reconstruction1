@@ -1,0 +1,122 @@
+name: agent7-st052m-one-direction-obstruction-reduction
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_one_direction_obstruction_reduction.py'
+      - 'experiments/root_st052/test_agent7_st052m_one_direction_obstruction_reduction.py'
+      - '.github/workflows/agent7-st052m-one-direction-obstruction-reduction.yml'
+  workflow_dispatch:
+
+jobs:
+  one-direction-obstruction-reduction:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Authenticate bounded three-file delta
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE=f20a883b0b2721d940e9012651b737d52583349b
+          git cat-file -e "${BASE}^{commit}"
+          mapfile -t changed < <(git diff --name-only "$BASE"...HEAD | sort)
+          printf '%s\n' "${changed[@]}"
+          expected=(
+            ".github/workflows/agent7-st052m-one-direction-obstruction-reduction.yml"
+            "experiments/root_st052/agent7_st052m_one_direction_obstruction_reduction.py"
+            "experiments/root_st052/test_agent7_st052m_one_direction_obstruction_reduction.py"
+          )
+          mapfile -t expected_sorted < <(printf '%s\n' "${expected[@]}" | sort)
+          test "${#changed[@]}" -eq 3
+          diff -u <(printf '%s\n' "${expected_sorted[@]}") <(printf '%s\n' "${changed[@]}")
+
+      - name: Install numerical test dependencies
+        run: python -m pip install --disable-pip-version-check numpy scipy
+
+      - name: Run focused obstruction-reduction regressions
+        run: python experiments/root_st052/test_agent7_st052m_one_direction_obstruction_reduction.py
+
+      - name: Execute exact frozen one-direction obstruction audit
+        run: |
+          mkdir -p outputs
+          python experiments/root_st052/agent7_st052m_one_direction_obstruction_reduction.py \
+            --out outputs/agent7_st052m_one_direction_obstruction_reduction.json
+
+      - name: Enforce truth boundary and preregistered protocol
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          p = Path('outputs/agent7_st052m_one_direction_obstruction_reduction.json')
+          r = json.loads(p.read_text())
+          assert r['task_id'] == 'CR003-ST052M-ONE-DIRECTION-OBSTRUCTION-REDUCTION-137'
+          assert r['prereg_issue'] == 1155
+          assert r['stack_base']['pr'] == 1147
+          assert r['stack_base']['head'] == 'f20a883b0b2721d940e9012651b737d52583349b'
+          expected = [
+              'poloidal_scalar_space_extension',
+              'compact_toroidal_envelope_extension',
+              'time_skewed_poloidal_extension',
+          ]
+          assert r['frozen_protocol']['probe_names'] == expected
+          assert r['frozen_protocol']['new_probe_formula_count'] == 0
+          assert r['frozen_protocol']['candidate_basis_dimension_added'] == 0
+          assert r['frozen_protocol']['scientific_pass_fail_threshold_on_obstruction_reduction'] is None
+          assert set(r['probe_obstruction_reduction']) == set(expected)
+          eligible = set(r['eligible_probe_archetypes'])
+          ranked = r['eligible_probe_archetypes_ranked_by_obstruction_reduction']
+          assert set(ranked) == eligible
+          assert len(ranked) == len(set(ranked))
+          for name in expected:
+              q = r['probe_obstruction_reduction'][name]
+              assert q['rank_gain'] in (0, 1)
+              assert q['left_nullity_after'] >= 2
+              assert q['left_nullity_after'] <= q['left_nullity_before']
+              assert q['left_null_trace_reduction'] >= -1e-9
+              assert q['left_null_trace_reduction'] <= 1.0 + 1e-9
+              assert q['one_added_direction_maximum_possible_nullity_reduction'] == 1
+              assert q['candidate_promotion_authorized'] is False
+              assert q['coefficient_selection_authorized'] is False
+              if q['parent_independent_preflight_eligible']:
+                  assert q['eligible_for_descriptive_obstruction_ranking'] is True
+              else:
+                  assert q['eligible_for_descriptive_obstruction_ranking'] is False
+              assert set(q['coordinate_obstruction_reduction']) == set(r['frozen_protocol']['defect_coordinate_order'])
+              for row in q['coordinate_obstruction_reduction'].values():
+                  assert row['unavoidable_residual_l2_after'] <= row['unavoidable_residual_l2_before'] + 1e-9
+                  assert row['absolute_obstruction_reduction_l2'] >= -1e-9
+          assert r['decision']['basis_candidate_promoted'] is None
+          assert r['decision']['candidate_mutation_authorized'] is False
+          assert r['decision']['coefficient_selection_authorized'] is False
+          assert r['decision']['one_direction_cannot_close_full_eight_coordinate_gap'] is True
+          assert r['candidate_velocity_changed'] is False
+          assert r['canonical_velocity_changed'] is False
+          assert r['saved_velocity_changed'] is False
+          assert r['basis_dimension_changed'] is False
+          assert r['new_probe_formula_added'] is False
+          assert r['coefficient_selected'] is False
+          assert r['pressure_or_force_changed'] is False
+          assert r['held_out_pde_residual_evaluated'] is False
+          assert r['public_image_numeric_target_used'] is False
+          assert r['direct_visualization_fingerprint_improvement'] == 0.0
+          assert r['closer_visualization_delivery_established'] is False
+          assert r['pde_validated'] is False
+          assert r['paper_exact'] is False
+          assert r['openai_field_identified'] is False
+          PY
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-one-direction-obstruction-reduction
+          path: outputs/agent7_st052m_one_direction_obstruction_reduction.json
+          if-no-files-found: warn
