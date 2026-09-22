@@ -19,7 +19,7 @@ from openai_ns_reconstruction.kokuno_a5_release1_scale_rf39_routing import (
 )
 
 
-def test_exact_sibling_routes_and_identity_firewall() -> None:
+def test_exact_sibling_routes_and_matching_release1_audit() -> None:
     artifact = build_artifact()
     assert artifact["parent_a5"] == {"pr": 1183, "exact_head": PARENT_A5_EXACT_HEAD}
     routes = artifact["upstream_routes"]
@@ -27,9 +27,12 @@ def test_exact_sibling_routes_and_identity_firewall() -> None:
     assert routes["agent2"]["exact_head"] == AGENT2_EXACT_HEAD
     assert routes["agent3"]["exact_head"] == AGENT3_EXACT_HEAD
     assert routes["agent4"]["exact_head"] == AGENT4_EXACT_HEAD
-    assert routes["agent4"]["audits_agent1_exact_head"] == AGENT4_AUDITED_A1_HEAD
-    assert routes["agent4"]["audits_agent1_exact_head"] != AGENT1_EXACT_HEAD
-    assert routes["agent4"]["audits_latest_agent1_release1"] is False
+    assert routes["agent4"]["audits_agent1_exact_head"] == AGENT4_AUDITED_A1_HEAD == AGENT1_EXACT_HEAD
+    assert routes["agent4"]["audits_latest_agent1_release1"] is True
+    assert routes["agent4"]["audits_agent2_1189"] is False
+    assert routes["agent4"]["audits_agent3_1190"] is False
+    assert routes["agent4"]["scoped_gate_passed"] is None
+    assert routes["agent4"]["pde_validated"] is False
 
 
 def test_fresh_positive_facts_remain_scoped() -> None:
@@ -119,7 +122,12 @@ def test_mutations_fail_closed() -> None:
         validate_artifact(bad)
 
     bad = copy.deepcopy(artifact)
-    bad["upstream_routes"]["agent4"]["audits_latest_agent1_release1"] = True
+    bad["upstream_routes"]["agent4"]["audits_latest_agent1_release1"] = False
+    with pytest.raises(KokunoA5RoutingError):
+        validate_artifact(bad)
+
+    bad = copy.deepcopy(artifact)
+    bad["upstream_routes"]["agent4"]["audits_agent2_1189"] = True
     with pytest.raises(KokunoA5RoutingError):
         validate_artifact(bad)
 
