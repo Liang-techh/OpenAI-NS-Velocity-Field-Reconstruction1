@@ -1,0 +1,104 @@
+name: kokuno-agent1-post-i4-pulse-entry-bridge
+
+on:
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_post_i4_pulse_entry_bridge.py"
+      - "tests/test_kokuno_pa16_current_cartesian_post_i4_pulse_entry_bridge.py"
+      - ".github/workflows/kokuno-agent1-post-i4-pulse-entry-bridge.yml"
+  workflow_dispatch:
+
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+
+      - name: Authenticate exact current-I4 parent
+        shell: bash
+        run: |
+          git merge-base --is-ancestor b06742ca6e189499192ede3cce40f62cdc1e35ca HEAD
+          test "$(git show -s --format=%H b06742ca6e189499192ede3cce40f62cdc1e35ca)" = "b06742ca6e189499192ede3cce40f62cdc1e35ca"
+          echo "authenticated #1079 current-I4 parent b06742ca6e189499192ede3cce40f62cdc1e35ca"
+
+      - name: Enforce minimal three-file increment
+        shell: bash
+        run: |
+          mapfile -t files < <(git diff --name-only b06742ca6e189499192ede3cce40f62cdc1e35ca...HEAD | sort)
+          printf '%s\n' "${files[@]}"
+          test "${#files[@]}" -eq 3
+          expected=(
+            ".github/workflows/kokuno-agent1-post-i4-pulse-entry-bridge.yml"
+            "src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_post_i4_pulse_entry_bridge.py"
+            "tests/test_kokuno_pa16_current_cartesian_post_i4_pulse_entry_bridge.py"
+          )
+          mapfile -t expected_sorted < <(printf '%s\n' "${expected[@]}" | sort)
+          test "$(printf '%s\n' "${files[@]}")" = "$(printf '%s\n' "${expected_sorted[@]}")"
+
+      - name: Compile focused files
+        run: |
+          python -m py_compile src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_post_i4_pulse_entry_bridge.py
+          python -m py_compile tests/test_kokuno_pa16_current_cartesian_post_i4_pulse_entry_bridge.py
+
+      - name: Run through-I4 parent and pulse-entry bridge regressions
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_pa16_current_cartesian_i4_leading_preservation.py \
+            tests/test_kokuno_pa16_current_cartesian_post_i4_pulse_entry_bridge.py
+
+      - name: Emit deterministic scoped receipt
+        run: |
+          mkdir -p artifacts/kokuno_agent1_post_i4_pulse_entry_bridge
+          python -m openai_ns_reconstruction.kokuno_pa16_current_cartesian_post_i4_pulse_entry_bridge \
+            --output artifacts/kokuno_agent1_post_i4_pulse_entry_bridge/receipt.json \
+            --config-output artifacts/kokuno_agent1_post_i4_pulse_entry_bridge/config.json
+          python - <<'PY'
+          import copy
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction.kokuno_pa16_current_cartesian_post_i4_pulse_entry_bridge import (
+              KokunoPA16CurrentCartesianPostI4PulseEntryBridge,
+          )
+
+          root = Path("artifacts/kokuno_agent1_post_i4_pulse_entry_bridge")
+          receipt = json.loads((root / "receipt.json").read_text())
+          config = json.loads((root / "config.json").read_text())
+          truth = receipt["truth_boundary"]
+          assert truth["source_post_I4_pre_pulse_constant_lambda_bridge_identified"] is True
+          assert truth["source_post_I4_pre_pulse_bridge_log_length_is_three"] is True
+          assert truth["current_leading_preserved_from_I4_exit_to_pulse_entry"] is True
+          assert truth["source_axial_pulse_materialized"] is False
+          assert truth["source_I4_mean_correction_materialized"] is False
+          assert truth["pde_validated"] is False
+          assert truth["paper_exact"] is False
+          assert abs(receipt["domain"]["post_I4_gap_log_length"] - 3.0) <= 4e-12
+
+          mutated = copy.deepcopy(config)
+          mutated["bound_source_scope"]["source_axial_pulse_materialized"] = True
+          try:
+              KokunoPA16CurrentCartesianPostI4PulseEntryBridge.from_configuration(mutated)
+          except ValueError:
+              pass
+          else:
+              raise SystemExit("pulse-scope mutation did not fail closed")
+          print(json.dumps(receipt, indent=2, sort_keys=True))
+          PY
+
+      - name: Upload scoped receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-post-i4-pulse-entry-bridge
+          path: artifacts/kokuno_agent1_post_i4_pulse_entry_bridge/
