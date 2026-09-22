@@ -1,0 +1,102 @@
+name: agent7-st052m-defect-space-projection
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_defect_space_projection.py'
+      - 'experiments/root_st052/test_agent7_st052m_defect_space_projection.py'
+      - '.github/workflows/agent7-st052m-defect-space-projection.yml'
+  workflow_dispatch:
+
+jobs:
+  defect-space-projection:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Authenticate bounded three-file delta
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE=ce93cda444a30add232251a895dd3953328fd9a1
+          git cat-file -e "${BASE}^{commit}"
+          mapfile -t changed < <(git diff --name-only "$BASE"...HEAD | sort)
+          printf '%s\n' "${changed[@]}"
+          expected=(
+            ".github/workflows/agent7-st052m-defect-space-projection.yml"
+            "experiments/root_st052/agent7_st052m_defect_space_projection.py"
+            "experiments/root_st052/test_agent7_st052m_defect_space_projection.py"
+          )
+          mapfile -t expected_sorted < <(printf '%s\n' "${expected[@]}" | sort)
+          test "${#changed[@]}" -eq 3
+          diff -u <(printf '%s\n' "${expected_sorted[@]}") <(printf '%s\n' "${changed[@]}")
+
+      - name: Install numerical test dependencies
+        run: python -m pip install --disable-pip-version-check numpy scipy
+
+      - name: Run focused projection regressions
+        run: python experiments/root_st052/test_agent7_st052m_defect_space_projection.py
+
+      - name: Execute exact frozen defect-space projection audit
+        run: |
+          mkdir -p outputs
+          python experiments/root_st052/agent7_st052m_defect_space_projection.py \
+            --out outputs/agent7_st052m_defect_space_projection.json
+
+      - name: Enforce truth boundary and protocol completeness
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('outputs/agent7_st052m_defect_space_projection.json')
+          r = json.loads(p.read_text())
+          assert r['task_id'] == 'CR003-ST052M-DEFECT-SPACE-PROJECTION-135'
+          assert r['prereg_issue'] == 1138
+          assert r['projection_status'] in {
+              'computed',
+              'blocked_structural_or_numeric_input',
+          }
+          if r['projection_status'] == 'computed':
+              a = r['defect_space_projection_audit']
+              assert a is not None
+              assert a['balanced_defect_space_dimension'] == 8
+              assert a['rank'] <= 5
+              assert a['left_nullity'] == 8 - a['rank']
+              assert len(a['coordinate_capacity']) == 8
+              assert abs(
+                  a['left_null_projector_trace'] - a['left_nullity']
+              ) <= 1e-8
+              assert a['projector_idempotence_error_l2'] <= 1e-8
+              assert a['left_null_projector_idempotence_error_l2'] <= 1e-8
+              assert a['projector_null_orthogonality_error_l2'] <= 1e-8
+          else:
+              assert r['defect_space_projection_audit'] is None
+              assert r['projection_error']
+          assert r['candidate_velocity_changed'] is False
+          assert r['basis_dimension_changed'] is False
+          assert r['new_spatial_basis_added'] is False
+          assert r['new_temporal_basis_added'] is False
+          assert r['coefficient_selected'] is False
+          assert r['held_out_pde_residual_evaluated'] is False
+          assert r['public_image_numeric_target_used'] is False
+          assert r['direct_visualization_fingerprint_improvement'] == 0.0
+          assert r['pde_validated'] is False
+          assert r['paper_exact'] is False
+          assert r['openai_field_identified'] is False
+          assert r['decision']['new_basis_dimension_justified_by_this_audit'] is False
+          assert r['decision']['candidate_mutation_authorized_by_this_audit'] is False
+          PY
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-defect-space-projection
+          path: outputs/agent7_st052m_defect_space_projection.json
+          if-no-files-found: warn
