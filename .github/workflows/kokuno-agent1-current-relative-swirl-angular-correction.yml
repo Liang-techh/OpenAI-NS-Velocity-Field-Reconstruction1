@@ -1,0 +1,118 @@
+name: kokuno-agent1-current-relative-swirl-angular-correction
+
+on:
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_current_relative_swirl_angular_correction.py"
+      - "tests/test_kokuno_current_relative_swirl_angular_correction.py"
+      - ".github/workflows/kokuno-agent1-current-relative-swirl-angular-correction.yml"
+  workflow_dispatch:
+
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+
+      - name: Authenticate exact A1 #1154 parent
+        shell: bash
+        run: |
+          git merge-base --is-ancestor d0e855e37c8f5d6d58f1a85b1dcb874651d20838 HEAD
+          test "$(git show -s --format=%H d0e855e37c8f5d6d58f1a85b1dcb874651d20838)" = "d0e855e37c8f5d6d58f1a85b1dcb874651d20838"
+          echo "authenticated A1 #1154 parent d0e855e37c8f5d6d58f1a85b1dcb874651d20838"
+
+      - name: Enforce minimal three-file increment
+        shell: bash
+        run: |
+          mapfile -t files < <(git diff --name-only d0e855e37c8f5d6d58f1a85b1dcb874651d20838...HEAD | sort)
+          printf '%s\n' "${files[@]}"
+          test "${#files[@]}" -eq 3
+          expected=(
+            ".github/workflows/kokuno-agent1-current-relative-swirl-angular-correction.yml"
+            "src/openai_ns_reconstruction/kokuno_current_relative_swirl_angular_correction.py"
+            "tests/test_kokuno_current_relative_swirl_angular_correction.py"
+          )
+          mapfile -t expected_sorted < <(printf '%s\n' "${expected[@]}" | sort)
+          test "$(printf '%s\n' "${files[@]}")" = "$(printf '%s\n' "${expected_sorted[@]}")"
+
+      - name: Compile focused files
+        run: |
+          python -m py_compile src/openai_ns_reconstruction/kokuno_current_relative_swirl_angular_correction.py
+          python -m py_compile tests/test_kokuno_current_relative_swirl_angular_correction.py
+
+      - name: Run parent-facing and angular-correction regressions
+        run: |
+          python -m pytest -q \
+            tests/test_kokuno_current_pulse_entry_moments.py \
+            tests/test_kokuno_pa16_current_cartesian_postpulse_eta_independent_hold_prefix.py \
+            tests/test_kokuno_public_relative_swirl_compensator.py \
+            tests/test_kokuno_current_relative_swirl_angular_correction.py
+
+      - name: Emit deterministic scoped receipt
+        run: |
+          mkdir -p artifacts/kokuno_agent1_current_relative_swirl_angular_correction
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          import numpy as np
+          from openai_ns_reconstruction.kokuno_current_relative_swirl_angular_correction import (
+              KokunoCurrentRelativeSwirlAngularCorrection,
+          )
+
+          root = Path("artifacts/kokuno_agent1_current_relative_swirl_angular_correction")
+          adapter = KokunoCurrentRelativeSwirlAngularCorrection()
+          eta = np.array([-1.0, -0.5, 0.0, 0.5, 1.0])
+          residual_I, residual_I_eta = adapter.post_i1_I_residual_with_eta(eta)
+          target, target_eta = adapter.correction_target_with_eta(eta)
+          log_xh = adapter.log_XH_first_bump_center(eta)
+
+          receipt = {
+              "schema": "kokuno-agent1-current-relative-swirl-angular-correction-receipt-v1",
+              "semantic_sha256": adapter.semantic_sha256(),
+              "eta": eta.tolist(),
+              "post_i1_I_residual_normalized": residual_I.tolist(),
+              "post_i1_I_residual_eta_normalized": residual_I_eta.tolist(),
+              "log_delta_I_scale": adapter.log_delta_I_scale,
+              "log_XH_first_bump_center": np.asarray(log_xh).tolist(),
+              "current_angular_target_correction": np.asarray(target).tolist(),
+              "current_angular_target_correction_eta": np.asarray(target_eta).tolist(),
+              "max_abs_current_target_correction": float(np.max(np.abs(target))),
+              "truth_boundary": adapter.truth_boundary,
+              "note": (
+                  "current-minus-imported angular correction only; imported/base absolute target "
+                  "is not materialized; this is not independent PDE validation"
+              ),
+          }
+
+          assert receipt["max_abs_current_target_correction"] > 0.0
+          assert receipt["truth_boundary"]["current_lineage_angular_target_correction_materialized"] is True
+          assert receipt["truth_boundary"]["imported_base_absolute_angular_target_materialized"] is False
+          assert receipt["truth_boundary"]["current_lineage_angular_entry_I_materialized"] is False
+          assert receipt["truth_boundary"]["current_relative_swirl_total_target_materialized"] is False
+          assert receipt["truth_boundary"]["current_cartesian_relative_swirl_composed"] is False
+          assert receipt["truth_boundary"]["heldout_ns_residual_assessed"] is False
+          assert receipt["truth_boundary"]["pde_validated"] is False
+
+          (root / "receipt.json").write_text(json.dumps(receipt, indent=2, sort_keys=True) + "\n")
+          (root / "config.json").write_text(json.dumps(adapter.configuration(), indent=2, sort_keys=True) + "\n")
+          print(json.dumps(receipt, indent=2, sort_keys=True))
+          PY
+
+      - name: Upload scoped receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-current-relative-swirl-angular-correction
+          path: artifacts/kokuno_agent1_current_relative_swirl_angular_correction/
