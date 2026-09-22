@@ -1,0 +1,143 @@
+name: kokuno-agent3-current-i4-rf30-typed-defect
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_current_i4_rf30_typed_defect.py'
+      - 'tests/test_constrained_kokuno_current_i4_rf30_typed_defect.py'
+      - '.github/workflows/kokuno-agent3-current-i4-rf30-typed-defect.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  current-i4-rf30-typed-defect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout exact Agent-3 PR head
+        uses: actions/checkout@v4
+        with:
+          path: a3
+          fetch-depth: 0
+
+      - name: Verify one-increment Agent-3 stack and pinned parents
+        shell: bash
+        run: |
+          set -euo pipefail
+          parent=9b0cecdf7eb9195bd468c3ddcd026c9d28d8e8d7
+          git -C a3 merge-base --is-ancestor "$parent" HEAD
+          test "$(git -C a3 rev-list --count "$parent"..HEAD)" -eq 3
+          git -C a3 diff --name-only "$parent"...HEAD | sort > /tmp/changed.txt
+          cat > /tmp/expected.txt <<'EOF'
+          .github/workflows/kokuno-agent3-current-i4-rf30-typed-defect.yml
+          src/openai_ns_reconstruction/kokuno_current_i4_rf30_typed_defect.py
+          tests/test_constrained_kokuno_current_i4_rf30_typed_defect.py
+          EOF
+          diff -u /tmp/expected.txt /tmp/changed.txt
+          test "$(git -C a3 hash-object src/openai_ns_reconstruction/kokuno_rf30_auxiliary_t2_haar_bridge.py)" = 5b20d4945f3aeb177e327e8d6b5709a6726c885a
+          test "$(git -C a3 hash-object src/openai_ns_reconstruction/kokuno_rf30_rf31_typed_mean_correction.py)" = fa31fdf12adceaa5b295db502cf0ccaaad778307
+          test "$(git -C a3 hash-object src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_i4_leading_preservation.py)" = 6f04ce0a856b44430402576dad88438da90d1ebb
+
+      - name: Checkout corrected Kokuno reader
+        uses: actions/checkout@v4
+        with:
+          repository: KokunoYumeto/yang-mills-interacting-workbench
+          ref: 143f6773feb424ad9ed3a8d116653200f20346b7
+          path: kokuno
+          fetch-depth: 1
+
+      - name: Authenticate corrected-reader source blob
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C kokuno rev-parse HEAD)" = 143f6773feb424ad9ed3a8d116653200f20346b7
+          test "$(git -C kokuno hash-object navier-stokes/navier_stokes_workbench.tex)" = 205a99807302e21a51c5eaf223390c0dfc42bcd0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Agent-3 tree
+        run: python -m pip install -e a3
+
+      - name: Compile and run focused parent/child contracts
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile a3/src/openai_ns_reconstruction/kokuno_current_i4_rf30_typed_defect.py
+          python -m py_compile a3/tests/test_constrained_kokuno_current_i4_rf30_typed_defect.py
+          python -m pytest -q -W error \
+            a3/tests/test_constrained_kokuno_rf30_auxiliary_t2_haar_bridge.py \
+            a3/tests/test_constrained_kokuno_current_i4_rf30_typed_defect.py
+
+      - name: Materialize provenance and truth-boundary receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction.kokuno_current_i4_rf30_typed_defect import (
+              source_provenance,
+              truth_boundary,
+          )
+
+          truth = truth_boundary()
+          payload = {
+              'schema': 'kokuno-a3-current-i4-rf30-typed-defect-receipt-v1',
+              'source_provenance': source_provenance(),
+              'truth_boundary': truth,
+              'interpretation': {
+                  'normalized_auxiliary_t2_haar_bridge_consumed': True,
+                  'typed_rf30_state_adapter_executable': True,
+                  'rf30_defect_operator_reused_from_1126': True,
+                  'repository_provider_blob_pinned_in_parent': False,
+                  'current_i4_repository_candidate_rf30_defect_materialized': False,
+                  'rf31_five_row_system_materialized': False,
+                  'correction_applied': False,
+                  'heldout_ns_residual_assessed': False,
+              },
+          }
+          Path('artifacts/current_i4_rf30_typed_defect_receipt.json').write_text(
+              json.dumps(payload, indent=2, sort_keys=True) + '\n', encoding='utf-8'
+          )
+          PY
+
+      - name: Upload receipt before enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent3-current-i4-rf30-typed-defect
+          path: artifacts/
+
+      - name: Enforce scientific truth boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = json.loads(Path('artifacts/current_i4_rf30_typed_defect_receipt.json').read_text())
+          t = p['truth_boundary']
+          assert t['normalized_auxiliary_t2_haar_bridge_consumed'] is True
+          assert t['physical_theta_mean_promoted_to_source_auxiliary_haar'] is False
+          assert t['source_i4_background_derived_from_exact_a1_schedule'] is True
+          assert t['caller_supplied_base_background_allowed'] is False
+          assert t['caller_supplied_rf30_defect_allowed'] is False
+          assert t['typed_rf30_state_adapter_executable'] is True
+          assert t['rf30_defect_operator_reused_from_1126'] is True
+          assert t['agent2_curl_or_jacobian_reimplemented'] is False
+          assert t['repository_provider_blob_pinned_in_parent'] is False
+          assert t['current_i4_repository_candidate_rf30_defect_materialized'] is False
+          assert t['rf31_five_row_system_materialized'] is False
+          assert t['correction_applied'] is False
+          assert t['finite_correction_cycle_run'] is False
+          assert t['heldout_ns_residual_assessed'] is False
+          assert t['residual_reduction_claimed'] is False
+          assert t['forbidden_scientific_controls_exposed'] is False
+          assert t['final_normalized_momentum_gate'] == 1.0e-3
+          assert t['final_normalized_divergence_gate'] == 1.0e-5
+          PY
