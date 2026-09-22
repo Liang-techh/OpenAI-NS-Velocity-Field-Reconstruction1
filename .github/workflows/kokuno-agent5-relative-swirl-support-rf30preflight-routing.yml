@@ -60,6 +60,10 @@ jobs:
             'src/openai_ns_reconstruction/kokuno_current_i4_rf30_fixedq_preflight.py' \
             'b2fac4318a40342d6c08170bf7093c31685c53ab'
           fetch_commit_and_check \
+            '47a241732b667b02f2294670d37f32650491f7e3' \
+            'src/openai_ns_reconstruction/kokuno_a4_relative_swirl_compensator_independent_audit.py' \
+            'c279371898a75cfcf7d2aa39861eba4cba432cc2'
+          fetch_commit_and_check \
             'caaf740af357fd6741da5118a1254c2b945caad0' \
             'src/openai_ns_reconstruction/kokuno_a4_postpulse_hold_prefix_leading_divergence_independent_audit.py' \
             '89da19c5d1fcd3335ba97b6e5e21f9c8bb472721'
@@ -85,7 +89,7 @@ jobs:
           set -euo pipefail
           parent='eb15089a312b9ea1a3c4632145d501d244ec1324'
           git merge-base --is-ancestor "${parent}" HEAD
-          test "$(git rev-list --count "${parent}"..HEAD)" -eq 7
+          test "$(git rev-list --count "${parent}"..HEAD)" -eq 10
           mapfile -t changed < <(git diff --name-only "${parent}..HEAD" | sort)
           expected=(
             '.github/workflows/kokuno-agent5-relative-swirl-support-rf30preflight-routing.yml'
@@ -134,6 +138,13 @@ jobs:
           assert f['current_angular_target_correction']['pr'] == 1159
           assert f['current_angular_target_correction']['imported_base_absolute_angular_target_materialized'] is False
           assert f['current_angular_target_correction']['current_cartesian_relative_swirl_composed'] is False
+
+          a4alg = f['relative_swirl_compensator_validator']
+          assert a4alg['pr'] == 1160
+          assert a4alg['audited_agent1_pr'] == 1154
+          assert a4alg['audits_agent1_1159_current_correction'] is False
+          assert a4alg['scoped_gate_passed'] is None
+
           assert f['support_certified_multiharmonic']['pr'] == 1158
           assert f['support_certified_multiharmonic']['source_provider_self_contained'] is False
           assert f['latest_self_contained_project_composite']['pr'] == 1117
@@ -158,6 +169,7 @@ jobs:
           }
           assert truth['current_relative_swirl_total_target_materialized'] is False
           assert truth['current_cartesian_relative_swirl_composed'] is False
+          assert truth['agent4_1160_audits_agent1_1159_current_correction'] is False
           assert truth['current_i4_fixedq_coordinate_observable_preflight_materialized'] is True
           assert truth['current_i4_source_auxiliary_t2_provider_materialized'] is False
           assert truth['current_i4_source_auxiliary_t2_haar_mean_materialized'] is False
