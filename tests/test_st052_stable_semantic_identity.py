@@ -235,3 +235,25 @@ def test_receipt_rejects_laundering_materialization_evidence_into_stable_identit
     receipt["receipt_sha256"] = None
     with pytest.raises(ValueError, match="leaked into stable candidate identity"):
         stable.validate_receipt(receipt)
+
+
+def test_callable_implementation_commit_is_identity_bound_and_rehashed_drift_fails_closed():
+    receipt = _receipt()
+    candidate_id = receipt["stable_identity"]["candidate_semantic_identity_sha256"]
+    payload = receipt["stable_identity"]["velocity_semantic_payload"]
+    assert payload["constrained_callable_runtime"] == {
+        "repository": stable.CONSTRAINED_RUNTIME_IMPLEMENTATION_REPOSITORY,
+        "commit": stable.CONSTRAINED_RUNTIME_IMPLEMENTATION_COMMIT,
+    }
+
+    changed = deepcopy(receipt)
+    changed_payload = changed["stable_identity"]["velocity_semantic_payload"]
+    changed_payload["constrained_callable_runtime"]["commit"] = "0" * 40
+    changed["stable_identity"]["velocity_semantic_identity_sha256"] = stable.canonical_sha256(
+        changed_payload
+    )
+    changed["receipt_sha256"] = None
+
+    assert changed["stable_identity"]["candidate_semantic_identity_sha256"] == candidate_id
+    with pytest.raises(ValueError, match="implementation commit drift"):
+        stable.validate_receipt(changed)
