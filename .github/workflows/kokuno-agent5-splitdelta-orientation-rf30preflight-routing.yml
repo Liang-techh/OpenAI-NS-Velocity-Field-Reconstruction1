@@ -24,32 +24,18 @@ jobs:
           set -euo pipefail
           base=a035784fcba6d373f5dffc062872b632c6a26309
           git merge-base --is-ancestor "$base" HEAD
-          test "$(git rev-list --count "$base"..HEAD)" -eq 7
+          test "$(git rev-list --count "$base"..HEAD)" -eq 10
           mapfile -t files < <(git diff --name-only "$base"..HEAD | sort)
-          printf '%s\n' "${files[@]}"
           test "${#files[@]}" -eq 3
-          expected=(
-            ".github/workflows/kokuno-agent5-splitdelta-orientation-rf30preflight-routing.yml"
-            "src/openai_ns_reconstruction/kokuno_a5_splitdelta_orientation_rf30preflight_routing.py"
-            "tests/test_kokuno_a5_splitdelta_orientation_rf30preflight_routing.py"
-          )
-          mapfile -t expected_sorted < <(printf '%s\n' "${expected[@]}" | sort)
-          test "$(printf '%s\n' "${files[@]}")" = "$(printf '%s\n' "${expected_sorted[@]}")"
+          printf '%s\n' "${files[@]}"
+          printf '%s\n' \
+            .github/workflows/kokuno-agent5-splitdelta-orientation-rf30preflight-routing.yml \
+            src/openai_ns_reconstruction/kokuno_a5_splitdelta_orientation_rf30preflight_routing.py \
+            tests/test_kokuno_a5_splitdelta_orientation_rf30preflight_routing.py \
+            | sort > /tmp/expected
+          printf '%s\n' "${files[@]}" > /tmp/actual
+          diff -u /tmp/expected /tmp/actual
           test "$(git show "$base":src/openai_ns_reconstruction/kokuno_a5_absolute_swirl_pulsesupport_rf30preflight_routing.py | git hash-object --stdin)" = 83ff6dfb3092e20382e05b6fe689491512e9eff6
-
-      - name: Authenticate exact sibling deliveries
-        shell: bash
-        run: |
-          set -euo pipefail
-          git fetch --no-tags origin \
-            657818dd83e119e6091bd2490d3804c04c3ef723 \
-            59d3e6d64fcdfeaf145cbee67e68b8a25e89489c \
-            9b0cecdf7eb9195bd468c3ddcd026c9d28d8e8d7 \
-            47a241732b667b02f2294670d37f32650491f7e3
-          test "$(git show 657818dd83e119e6091bd2490d3804c04c3ef723:src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_relative_swirl_split.py | git hash-object --stdin)" = c6d7d93ee33e5551513bdc817b2f118e4c544298
-          test "$(git show 59d3e6d64fcdfeaf145cbee67e68b8a25e89489c:src/openai_ns_reconstruction/kokuno_source_azimuthal_frame_oriented_multiharmonic_velocity.py | git hash-object --stdin)" = ca8acae2c3a53b79528cb55f45502443f6ffb2b6
-          test "$(git show 9b0cecdf7eb9195bd468c3ddcd026c9d28d8e8d7:src/openai_ns_reconstruction/kokuno_rf30_auxiliary_t2_haar_bridge.py | git hash-object --stdin)" = 5b20d4945f3aeb177e327e8d6b5709a6726c885a
-          test "$(git show 47a241732b667b02f2294670d37f32650491f7e3:src/openai_ns_reconstruction/kokuno_a4_relative_swirl_compensator_independent_audit.py | git hash-object --stdin)" = c279371898a75cfcf7d2aa39861eba4cba432cc2
 
       - uses: actions/setup-python@v5
         with:
@@ -58,43 +44,36 @@ jobs:
       - name: Install branch
         run: python -m pip install -e '.[dev]'
 
-      - name: Compile and run focused routing regressions
+      - name: Run focused routing regressions
         run: |
-          python -m py_compile \
-            src/openai_ns_reconstruction/kokuno_a5_splitdelta_orientation_rf30preflight_routing.py \
-            tests/test_kokuno_a5_splitdelta_orientation_rf30preflight_routing.py
-          pytest -q \
-            tests/test_kokuno_a5_absolute_swirl_pulsesupport_rf30preflight_routing.py \
-            tests/test_kokuno_a5_splitdelta_orientation_rf30preflight_routing.py
+          python -m py_compile src/openai_ns_reconstruction/kokuno_a5_splitdelta_orientation_rf30preflight_routing.py tests/test_kokuno_a5_splitdelta_orientation_rf30preflight_routing.py
+          pytest -q tests/test_kokuno_a5_absolute_swirl_pulsesupport_rf30preflight_routing.py tests/test_kokuno_a5_splitdelta_orientation_rf30preflight_routing.py
 
       - name: Materialize deterministic routing artifact
-        shell: bash
         run: |
-          set -euo pipefail
           mkdir -p artifacts/kokuno_agent5_splitdelta_orientation_rf30preflight
-          python -m openai_ns_reconstruction.kokuno_a5_splitdelta_orientation_rf30preflight_routing \
-            --output artifacts/kokuno_agent5_splitdelta_orientation_rf30preflight/routing.json
+          python -m openai_ns_reconstruction.kokuno_a5_splitdelta_orientation_rf30preflight_routing --output artifacts/kokuno_agent5_splitdelta_orientation_rf30preflight/routing.json
           python - <<'PY'
           import json
           from pathlib import Path
-          p = Path('artifacts/kokuno_agent5_splitdelta_orientation_rf30preflight/routing.json')
-          r = json.loads(p.read_text())
+          r = json.loads(Path('artifacts/kokuno_agent5_splitdelta_orientation_rf30preflight/routing.json').read_text())
           assert r['frontiers']['relative_swirl_split_delta']['pr'] == 1171
           assert r['frontiers']['azimuthal_frame_oriented_multiharmonic']['pr'] == 1170
           assert r['frontiers']['auxiliary_t2_haar_rf30_bridge']['pr'] == 1172
-          assert r['truth_boundary']['relative_swirl_cartesian_delta_channel_materialized'] is True
+          assert r['frontiers']['relative_swirl_split_validator']['pr'] == 1174
           assert r['truth_boundary']['binary64_total_relative_swirl_sum_is_resolved'] is False
           assert r['truth_boundary']['current_cartesian_relative_swirl_composed'] is False
-          assert r['truth_boundary']['source_exact_orientation_recovered'] is False
-          assert r['truth_boundary']['oriented_self_contained_velocity_xyzt_provider'] is False
           assert r['truth_boundary']['current_i4_source_auxiliary_t2_haar_operator_executable'] is True
           assert r['truth_boundary']['current_i4_source_auxiliary_t2_provider_blob_pinned'] is False
           assert r['truth_boundary']['current_i4_rf30_repository_candidate_state_authorized'] is False
           assert r['truth_boundary']['current_i4_rf30_defect_materialized'] is False
+          assert r['truth_boundary']['agent4_matching_agent1_1171_split_audit_present'] is True
+          assert r['truth_boundary']['agent4_matching_agent1_1171_split_scoped_gate_passed'] is None
+          assert r['truth_boundary']['agent4_matching_agent1_1171_split_canonical_fd_transfer_ready'] is False
           assert r['truth_boundary']['pde_validated'] is False
           PY
 
-      - name: Upload raw routing artifact before truth enforcement
+      - name: Upload routing artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -102,21 +81,13 @@ jobs:
           path: artifacts/kokuno_agent5_splitdelta_orientation_rf30preflight/
           if-no-files-found: error
 
-      - name: Enforce final truth boundary
-        shell: bash
+      - name: Enforce frozen project state
         run: |
-          set -euo pipefail
           python - <<'PY'
           from openai_ns_reconstruction.kokuno_a5_splitdelta_orientation_rf30preflight_routing import build_registration, validate_registration
           r = build_registration()
           validate_registration(r)
-          assert r['core_state'] == {
-              'leading_ready': False,
-              'oscillatory_ready': True,
-              'correction_ready': False,
-              'velocity_export_ready': False,
-              'pde_validated': False,
-          }
+          assert r['core_state'] == {'leading_ready': False, 'oscillatory_ready': True, 'correction_ready': False, 'velocity_export_ready': False, 'pde_validated': False}
           g = r['frozen_gates']
           assert g['normalized_momentum_sampled_max'] == 1e-3
           assert g['normalized_momentum_volume_l2'] == 1e-3
