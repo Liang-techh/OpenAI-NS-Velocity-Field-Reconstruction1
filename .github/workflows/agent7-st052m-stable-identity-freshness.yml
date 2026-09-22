@@ -1,0 +1,151 @@
+name: agent7-st052m-stable-identity-freshness
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_stable_identity_freshness.py'
+      - 'experiments/root_st052/test_agent7_st052m_stable_identity_freshness.py'
+      - '.github/workflows/agent7-st052m-stable-identity-freshness.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+  pull-requests: read
+
+jobs:
+  stable-identity-freshness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out exact Agent-7 head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Verify exact Agent-7 parent and strict three-file delta
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE=78c269db3daa90a2fe561bbcf953f111a765d80b
+          test "$(git rev-parse HEAD^3)" = "$BASE"
+          test "$(git rev-list --count "$BASE"..HEAD)" -eq 3
+          test -z "$(git diff --diff-filter=D --name-only "$BASE"..HEAD)"
+          actual="$(git diff --name-only "$BASE"..HEAD | sort)"
+          expected="$(printf '%s\n' \
+            '.github/workflows/agent7-st052m-stable-identity-freshness.yml' \
+            'experiments/root_st052/agent7_st052m_stable_identity_freshness.py' \
+            'experiments/root_st052/test_agent7_st052m_stable_identity_freshness.py' | sort)"
+          printf 'Changed paths:\n%s\n' "$actual"
+          test "$actual" = "$expected"
+
+      - name: Run focused freshness regressions
+        run: >-
+          python -m unittest
+          experiments/root_st052/test_agent7_st052m_stable_identity_freshness.py -v
+
+      - name: Authenticate current A9 stable-identity head and exact rollover
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh api "/repos/$REPO/pulls/1112" > /tmp/stable-pr.json
+          test "$(jq -r .number /tmp/stable-pr.json)" = 1112
+          test "$(jq -r .head.sha /tmp/stable-pr.json)" = 97630f3af72d3b3690968132a6a16a3592d3a8ba
+          gh api "/repos/$REPO/compare/e0bf8eabafa34553cbd6b96460bfda9c003abe50...97630f3af72d3b3690968132a6a16a3592d3a8ba" > /tmp/stable-compare.json
+          python experiments/root_st052/agent7_st052m_stable_identity_freshness.py --help >/dev/null
+
+      - name: Read current exact A9 stable-identity run state
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh api "/repos/$REPO/actions/runs/35685567737" > /tmp/stable-run.json
+          test "$(jq -r .id /tmp/stable-run.json)" = 35685567737
+          test "$(jq -r .head_sha /tmp/stable-run.json)" = 97630f3af72d3b3690968132a6a16a3592d3a8ba
+          echo "stable_run_status=$(jq -r .status /tmp/stable-run.json)"
+          echo "stable_run_conclusion=$(jq -r .conclusion /tmp/stable-run.json)"
+
+      - name: Download latest stable semantic identity only if exact current run passed
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          status="$(jq -r .status /tmp/stable-run.json)"
+          conclusion="$(jq -r .conclusion /tmp/stable-run.json)"
+          if [ "$status" = completed ] && [ "$conclusion" = success ]; then
+            mkdir -p /tmp/stable-artifact
+            gh run download 35685567737 --repo "$REPO" \
+              -n ST052-M-stable-semantic-identity -D /tmp/stable-artifact
+            receipt="$(find /tmp/stable-artifact -type f -name receipt.json -print -quit)"
+            test -n "$receipt" && test -f "$receipt"
+            echo "STABLE_RECEIPT=$receipt" >> "$GITHUB_ENV"
+          else
+            echo 'Current exact #1112 run is not completed/success; Agent-7 remains fail-closed.'
+          fi
+
+      - name: Emit Agent-7 freshness receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/agent7_st052m_stable_identity_freshness
+          args=(
+            --upstream-pr /tmp/stable-pr.json
+            --upstream-compare /tmp/stable-compare.json
+            --latest-run /tmp/stable-run.json
+            --out artifacts/agent7_st052m_stable_identity_freshness/receipt.json
+          )
+          if [ -n "${STABLE_RECEIPT:-}" ]; then
+            args+=(--stable-receipt "$STABLE_RECEIPT")
+          fi
+          python experiments/root_st052/agent7_st052m_stable_identity_freshness.py "${args[@]}"
+
+      - name: Enforce no premature morphology/basis promotion
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('artifacts/agent7_st052m_stable_identity_freshness/receipt.json')
+          r=json.loads(p.read_text())
+          assert r['task_id']=='CR003-ST052M-STABLE-IDENTITY-FRESHNESS-133'
+          assert r['prereg_issue']==1122
+          assert r['upstream_rollover']['latest_head']=='97630f3af72d3b3690968132a6a16a3592d3a8ba'
+          assert r['upstream_rollover']['old_pin_superseded_for_future_agent7_routing'] is True
+          assert r['historical_failed_axial_evidence']['admitted_for_basis_routing'] is False
+          d=r['decision']
+          assert d['status'] in {
+              'blocked_latest_stable_identity_ci',
+              'latest_stable_identity_ready_fresh_axial_rerun_required',
+          }
+          assert d['fresh_axial_rerun_required'] is True
+          assert d['fresh_axial_measurement_admitted'] is False
+          assert d['handoff_to_existing_axial_router_authorized'] is False
+          assert d['existing_control_selection_authorized'] is False
+          assert d['targeted_basis_preflight_authorized'] is False
+          assert d['candidate_mutation_authorized'] is False
+          assert r['truth']['candidate_velocity_changed'] is False
+          assert r['truth']['basis_dimension_changed'] is False
+          assert r['truth']['direct_visualization_fingerprint_improvement']==0.0
+          assert r['truth']['visual_correspondence_verified'] is False
+          assert r['truth']['pde_validated'] is False
+          print('freshness_status=', d['status'])
+          PY
+
+      - name: Upload freshness receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: agent7-st052m-stable-identity-freshness
+          path: artifacts/agent7_st052m_stable_identity_freshness/receipt.json
+          if-no-files-found: error
+
+# Protocol frozen in Issue #1122 before consuming the current #1112 CI result.
