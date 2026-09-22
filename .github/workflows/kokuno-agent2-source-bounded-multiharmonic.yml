@@ -1,0 +1,211 @@
+name: kokuno-agent2-source-bounded-multiharmonic
+
+on:
+  push:
+    branches: [codex/k2-osc-104-bounded-multiharmonic]
+  pull_request:
+    branches: [codex/k2-osc-103-axis-safe-physical-velocity]
+  workflow_dispatch:
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: "${{ github.event.pull_request.head.sha || github.sha }}"
+          fetch-depth: 0
+
+      - name: Verify exact A2 parent and minimal scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          base=1693c6b0e0e337e7fab3914bbcfcab8ad54bbf3a
+          git merge-base --is-ancestor "$base" HEAD
+          test "$(git rev-list --count "$base"..HEAD)" -eq 3
+          mapfile -t files < <(git diff --name-only "$base"..HEAD | sort)
+          test "${#files[@]}" -eq 3
+          expected=(
+            ".github/workflows/kokuno-agent2-source-bounded-multiharmonic.yml"
+            "src/openai_ns_reconstruction/kokuno_source_bounded_multiharmonic_velocity.py"
+            "tests/test_constrained_kokuno_source_bounded_multiharmonic_velocity.py"
+          )
+          mapfile -t expected_sorted < <(printf '%s\n' "${expected[@]}" | sort)
+          test "$(printf '%s\n' "${files[@]}")" = "$(printf '%s\n' "${expected_sorted[@]}")"
+          test "$(git show "$base":src/openai_ns_reconstruction/kokuno_source_axis_safe_physical_velocity.py | git hash-object --stdin)" = 9067cb68dc49e08a3da7aaa429366f11d2073cdd
+          test "$(git show "$base":src/openai_ns_reconstruction/kokuno_source_physicalized_localized_harmonic.py | git hash-object --stdin)" = b19805fc2e78d6a51b6ead6c141125a662d3ec4c
+          test "$(git show "$base":src/openai_ns_reconstruction/kokuno_source_zero_data_localized_harmonic.py | git hash-object --stdin)" = 8087e619bb1812df6dcb616e1a51f1ab4dd728d4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install branch
+        run: python -m pip install -e '.[dev]'
+
+      - name: Focused A2 regressions
+        run: |
+          python -m py_compile \
+            src/openai_ns_reconstruction/kokuno_source_bounded_multiharmonic_velocity.py \
+            tests/test_constrained_kokuno_source_bounded_multiharmonic_velocity.py
+          pytest -q \
+            tests/test_constrained_kokuno_source_physicalized_localized_harmonic.py \
+            tests/test_constrained_kokuno_source_axis_safe_physical_velocity.py \
+            tests/test_constrained_kokuno_source_bounded_multiharmonic_velocity.py
+
+      - uses: actions/checkout@v4
+        with:
+          repository: KokunoYumeto/yang-mills-interacting-workbench
+          ref: 143f6773feb424ad9ed3a8d116653200f20346b7
+          path: corrected-source
+          fetch-depth: 1
+
+      - name: Authenticate corrected 2026-09-09 source
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C corrected-source rev-parse HEAD)" = 143f6773feb424ad9ed3a8d116653200f20346b7
+          test "$(git -C corrected-source hash-object navier-stokes/navier_stokes_workbench.tex)" = 205a99807302e21a51c5eaf223390c0dfc42bcd0
+
+      - name: Materialize bounded-family receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p receipts
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          import numpy as np
+
+          from openai_ns_reconstruction.kokuno_source_axis_safe_physical_velocity import (
+              AxisSafeSourceHarmonicProvider,
+          )
+          from openai_ns_reconstruction.kokuno_source_bounded_multiharmonic_velocity import (
+              BoundedHarmonicTerm,
+              KokunoBoundedMultiHarmonicPhysicalVelocity,
+              bounded_multiharmonic_contract,
+          )
+          from openai_ns_reconstruction.kokuno_source_zero_data_localized_harmonic import (
+              SourceLocalizedZeroDataHarmonic,
+          )
+
+          def provider(label, digest, core, multiplier):
+              def evaluate(R, theta, Z, T, scaling):
+                  del scaling
+                  n = R.size
+                  one = np.ones(n)
+                  potential = multiplier * np.stack((
+                      (0.2 + 0.1j) * one,
+                      R + 1j*Z,
+                      T + 0.2j*R,
+                  ), axis=-1).astype(np.complex128)
+                  velocity = multiplier * np.stack((
+                      (1.0 + 0.5j)*R,
+                      (0.3 - 0.2j)*Z,
+                      (0.1 + 0.4j)*T,
+                  ), axis=-1).astype(np.complex128)
+                  real_cyl = 2.0*np.real(velocity)
+                  c = np.cos(theta); s = np.sin(theta)
+                  real_cart = np.stack((
+                      real_cyl[:,0]*c-real_cyl[:,1]*s,
+                      real_cyl[:,0]*s+real_cyl[:,1]*c,
+                      real_cyl[:,2],
+                  ), axis=-1)
+                  zeros = np.zeros((n,3), dtype=np.complex128)
+                  return SourceLocalizedZeroDataHarmonic(
+                      amplitude_sensitivity=None,
+                      phase_jet=None,
+                      coefficient_jet=None,
+                      complete_amplitude=None,
+                      localization_weight=np.ones(n),
+                      dr_localization_weight=np.zeros(n),
+                      dz_localization_weight=np.zeros(n),
+                      localized_coefficient=zeros.copy(),
+                      localized_dr_coefficient=zeros.copy(),
+                      localized_dz_coefficient=zeros.copy(),
+                      complex_vector_potential=potential,
+                      complex_velocity_cylindrical=velocity,
+                      real_pair_velocity_cylindrical=real_cyl,
+                      real_pair_velocity_chart_cartesian=real_cart,
+                  )
+              return AxisSafeSourceHarmonicProvider(
+                  provider_id=label,
+                  provider_semantic_sha256=digest,
+                  axis_zero_radius_chart=core,
+                  axis_zero_certified=True,
+                  evaluate_chart=evaluate,
+              )
+
+          p1 = provider("ci-m1", "1"*64, 0.08, 1.0)
+          p2 = provider("ci-m2", "2"*64, 0.16, 0.6)
+          field = KokunoBoundedMultiHarmonicPhysicalVelocity((
+              BoundedHarmonicTerm(p1, 0.25, 0.40),
+              BoundedHarmonicTerm(p2, 0.50, -0.70),
+          ), ell=8, h=0.004)
+          radial = field.scaling.radial_scale
+          x = np.asarray([0.0, 0.12*radial, 0.24*radial, 0.50*radial])
+          y = np.asarray([0.0, 0.00, 0.08*radial, -0.14*radial])
+          z = np.asarray([0.0, -0.01, 0.02, 0.03])
+          t = np.asarray([0.90, 0.83, 0.76, 0.69])
+          result = field.evaluate(x,y,z,t)
+          contract = bounded_multiharmonic_contract()
+
+          assert np.array_equal(result.real_pair_velocity_cartesian_physical[0], np.zeros(3))
+          assert np.array_equal(result.active_term_count, np.asarray([0,1,2,2], dtype=np.int16))
+          assert contract["finite_complete_curl_harmonic_family_materialized"] is True
+          assert contract["same_coefficient_applied_to_vector_potential_and_curl_velocity"] is True
+          assert contract["linearity_preserves_complete_curl_divergence_free_contract"] is True
+          assert contract["source_exact_amplitude_phase_recovered"] is False
+          assert contract["self_contained_velocity_xyzt_provider"] is False
+          assert contract["complete_ns_residual_assessed"] is False
+          assert contract["paper_exact"] is False
+          assert contract["pde_validated"] is False
+
+          receipt = {
+              "task": "K2-OSC-104",
+              "semantic_sha256": field.semantic_sha256,
+              "report": field.report(),
+              "contract": contract,
+              "probe_velocity": result.real_pair_velocity_cartesian_physical.tolist(),
+              "active_term_count": result.active_term_count.tolist(),
+              "complex_potential_norm": float(np.linalg.norm(result.complex_vector_potential_cylindrical_physical)),
+              "complex_velocity_norm": float(np.linalg.norm(result.complex_velocity_cylindrical_physical)),
+          }
+          Path("receipts/bounded_multiharmonic_receipt.json").write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + "\n"
+          )
+          PY
+
+      - name: Upload raw receipt before truth enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent2-source-bounded-multiharmonic
+          path: receipts
+          if-no-files-found: error
+
+      - name: Enforce scientific truth boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from openai_ns_reconstruction.kokuno_source_bounded_multiharmonic_velocity import (
+              bounded_multiharmonic_contract,
+              public_contract,
+          )
+          c = bounded_multiharmonic_contract()
+          p = public_contract()
+          assert c["finite_complete_curl_harmonic_family_materialized"] is True
+          assert c["bounded_term_count"] is True
+          assert c["bounded_amplitude_l1"] is True
+          assert c["autonomous_amplitude_phase_parameters"] is True
+          assert c["source_exact_amplitude_phase_recovered"] is False
+          assert c["project_domain_source_input_provider_materialized"] is False
+          assert c["self_contained_velocity_xyzt_provider"] is False
+          assert c["complete_ns_residual_assessed"] is False
+          assert c["residual_reduction_claimed"] is False
+          assert c["paper_exact"] is False
+          assert c["pde_validated"] is False
+          assert p["forbidden_velocity_inputs_present"] == []
+          PY
