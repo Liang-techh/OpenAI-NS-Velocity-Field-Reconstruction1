@@ -1,0 +1,104 @@
+name: kokuno-agent1-source-main-pulse-kernel
+
+on:
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_source_main_axial_pulse_kernel.py"
+      - "tests/test_kokuno_source_main_axial_pulse_kernel.py"
+      - ".github/workflows/kokuno-agent1-source-main-pulse-kernel.yml"
+  workflow_dispatch:
+
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+
+      - name: Authenticate exact post-I4 pulse-entry parent
+        shell: bash
+        run: |
+          git merge-base --is-ancestor bd85ed48323feb3b33b9c404a078630245dfe783 HEAD
+          test "$(git show -s --format=%H bd85ed48323feb3b33b9c404a078630245dfe783)" = "bd85ed48323feb3b33b9c404a078630245dfe783"
+          echo "authenticated #1088 parent bd85ed48323feb3b33b9c404a078630245dfe783"
+
+      - name: Enforce minimal three-file increment
+        shell: bash
+        run: |
+          mapfile -t files < <(git diff --name-only bd85ed48323feb3b33b9c404a078630245dfe783...HEAD | sort)
+          printf '%s\n' "${files[@]}"
+          test "${#files[@]}" -eq 3
+          expected=(
+            ".github/workflows/kokuno-agent1-source-main-pulse-kernel.yml"
+            "src/openai_ns_reconstruction/kokuno_source_main_axial_pulse_kernel.py"
+            "tests/test_kokuno_source_main_axial_pulse_kernel.py"
+          )
+          mapfile -t expected_sorted < <(printf '%s\n' "${expected[@]}" | sort)
+          test "$(printf '%s\n' "${files[@]}")" = "$(printf '%s\n' "${expected_sorted[@]}")"
+
+      - name: Compile focused files
+        run: |
+          python -m py_compile src/openai_ns_reconstruction/kokuno_source_main_axial_pulse_kernel.py
+          python -m py_compile tests/test_kokuno_source_main_axial_pulse_kernel.py
+
+      - name: Run source main-pulse kernel regressions
+        run: python -m pytest -q tests/test_kokuno_source_main_axial_pulse_kernel.py
+
+      - name: Emit deterministic scoped receipt
+        run: |
+          mkdir -p artifacts/kokuno_agent1_source_main_pulse_kernel
+          python - <<'PY'
+          import copy
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction.kokuno_source_main_axial_pulse_kernel import (
+              KokunoSourceMainAxialPulseKernel,
+          )
+
+          root = Path("artifacts/kokuno_agent1_source_main_pulse_kernel")
+          kernel = KokunoSourceMainAxialPulseKernel()
+          receipt = kernel.receipt()
+          config = kernel.to_configuration()
+          truth = receipt["truth_boundary"]
+          assert truth["source_main_pulse_kernel_formula_materialized"] is True
+          assert truth["repository_autonomous_principal_amplitude_materialized"] is True
+          assert truth["source_exact_amplitude_root_materialized"] is False
+          assert truth["source_pulse_end_MJ_corrections_materialized"] is False
+          assert truth["current_cartesian_pulse_velocity_composed"] is False
+          assert truth["pde_validated"] is False
+          assert truth["paper_exact"] is False
+          assert 0.2 < receipt["principal_amplitude_diagnostic"]["K_b"] < 0.25
+          assert 0.9 < receipt["principal_amplitude_diagnostic"]["A_principal"] < 1.2
+          assert receipt["principal_amplitude_diagnostic"]["principal_identity_error"] < 3e-15
+
+          mutated = copy.deepcopy(config)
+          mutated["truth_boundary"]["source_exact_amplitude_root_materialized"] = True
+          try:
+              KokunoSourceMainAxialPulseKernel.from_configuration(mutated)
+          except ValueError:
+              pass
+          else:
+              raise SystemExit("source-exact amplitude mutation did not fail closed")
+
+          (root / "receipt.json").write_text(json.dumps(receipt, indent=2, sort_keys=True) + "\n")
+          (root / "config.json").write_text(json.dumps(config, indent=2, sort_keys=True) + "\n")
+          print(json.dumps(receipt, indent=2, sort_keys=True))
+          PY
+
+      - name: Upload scoped receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-source-main-pulse-kernel
+          path: artifacts/kokuno_agent1_source_main_pulse_kernel/
