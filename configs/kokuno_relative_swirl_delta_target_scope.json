@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "scope_id": "cr002-kokuno-relative-swirl-delta-target-scope-142",
+  "purpose": "Govern the distinction between the current-minus-imported relative-swirl angular target correction and the missing absolute/total target.",
+  "active_integration_reference": {
+    "branch": "codex/cr001-constraints",
+    "head": "6a293b3c870d70b8d8aece1b12d68685c9b8b010"
+  },
+  "exact_dependency": {
+    "pr": 1159,
+    "head": "6ddf35b9dc726c720033ee44161e29efc77d755e",
+    "source_path": "src/openai_ns_reconstruction/kokuno_current_relative_swirl_angular_correction.py",
+    "source_blob": "37e6b0814fbad14084a8c8c4815122111252ac9b"
+  },
+  "canonical_cr001": {
+    "path": "configs/constraints.json",
+    "blob": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "free_residual_force_forbidden": true,
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "momentum_max": 0.001,
+    "momentum_L2": 0.001,
+    "divergence_max": 0.00001,
+    "divergence_L2": 0.00001
+  },
+  "provenance_classes": {
+    "user_requirement": [
+      "Deliver an explicit callable/save-loadable velocity(x,y,z,t)->[u,v,w] without making PDE validation a prerequisite for delivery.",
+      "Keep velocity_export_ready, visual_correspondence_verified, pde_validated and paper_exact independent.",
+      "Do not use residual-defined free forcing, amplitude collapse or post-hoc threshold relaxation."
+    ],
+    "public_source_fact": [
+      "H=sqrt(2X)E, I=int_0^X H dx and r_I=I/(XH).",
+      "D_logX r_I + (1+l)r_I = 1.",
+      "On the eta-independent hold l=-lambda, the fixed point is r_I=1/(1-lambda).",
+      "The two late relative-swirl bumps target I=XH/(1-lambda)."
+    ],
+    "autonomous_design": [
+      "Use the frozen repository current PA.17 I-row residual as current-minus-imported candidate bookkeeping.",
+      "Transport that difference with the log-domain ratio used by exact A1 #1159 to avoid binary64 cancellation.",
+      "Require any externally materialized base target and its eta derivative explicitly; never silently default the missing base target to zero.",
+      "This CR002 evidence-transfer firewall and its autonomous-only non-uniqueness witness."
+    ],
+    "pending_unknown": [
+      "Imported/base absolute angular target before the late relative-swirl bumps.",
+      "Current-lineage absolute entering I/r_I and total relative-swirl angular target.",
+      "Cartesian composition of the relative-swirl edit and terminal/exterior/global leading completion.",
+      "Matched Cartesian pressure, preregistered restricted forcing and held-out complete NS residual.",
+      "Visual correspondence, PDE validation, paper exactness and exact OpenAI-field identity."
+    ]
+  },
+  "materialization_state": {
+    "current_minus_imported_delta_target_materialized": true,
+    "imported_base_absolute_target_materialized": false,
+    "current_absolute_entering_I_materialized": false,
+    "current_total_relative_swirl_target_materialized": false,
+    "current_cartesian_relative_swirl_composed": false,
+    "terminal_exterior_global_leading_materialized": false,
+    "kokuno_velocity_export_ready": false,
+    "visual_correspondence_verified": false,
+    "heldout_complete_ns_residual_assessed": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  },
+  "evidence_transfer_rules": {
+    "delta_target_does_not_identify_base_target": true,
+    "delta_target_does_not_identify_total_target": true,
+    "delta_target_receipt_does_not_authorize_cartesian_composition": true,
+    "delta_target_receipt_does_not_authorize_global_velocity_export": true,
+    "delta_target_receipt_does_not_authorize_visual_or_pde_or_exactness_promotion": true,
+    "missing_base_target_must_not_default_to_zero": true,
+    "future_absolute_base_materialization_requires_new_total_target_identity_and_fresh_downstream_replay": true
+  },
+  "autonomous_mechanics_witness": {
+    "role": "autonomous_mechanics_only",
+    "statement": "The same nonzero delta added to two distinct finite base targets gives two distinct totals, so a delta receipt cannot identify the missing absolute base or total target.",
+    "not_source_evidence": true,
+    "not_openai_numerical_evidence": true,
+    "not_pde_evidence": true
+  },
+  "forbidden_promotions": [
+    "Treat current_minus_imported_delta_target_materialized as imported_base_absolute_target_materialized.",
+    "Set the missing base target to zero merely because the measured correction is small, stable or nonzero.",
+    "Treat a total formed with an unauthenticated caller base as source-exact or current-lineage absolute target evidence.",
+    "Transfer #1159 correction-only receipts to a future absolute-target or Cartesian-composed identity without fresh replay.",
+    "Infer velocity_export_ready, visual correspondence, PDE validation, paper exactness or exact OpenAI-field identity from this correction-only seam."
+  ]
+}
