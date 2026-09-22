@@ -1,0 +1,137 @@
+name: Kokuno A5 Current Qs RF44 960 Routing
+
+on:
+  pull_request:
+    paths:
+      - src/openai_ns_reconstruction/kokuno_a5_current_qs_rf44_960_routing.py
+      - tests/test_kokuno_a5_current_qs_rf44_960_routing.py
+      - .github/workflows/kokuno-agent5-current-qs-rf44-960-routing.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-head-routing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Verify exact A5 parent and three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          parent="01ed8bf5418166f1aaa0ef164381d9df2340743e"
+          git merge-base --is-ancestor "$parent" HEAD
+          test "$(git rev-list --count "$parent"..HEAD)" -eq 3
+          git diff --name-only "$parent"..HEAD | sort > /tmp/changed.txt
+          cat > /tmp/expected.txt <<'EOF'
+          .github/workflows/kokuno-agent5-current-qs-rf44-960-routing.yml
+          src/openai_ns_reconstruction/kokuno_a5_current_qs_rf44_960_routing.py
+          tests/test_kokuno_a5_current_qs_rf44_960_routing.py
+          EOF
+          sort -o /tmp/expected.txt /tmp/expected.txt
+          diff -u /tmp/expected.txt /tmp/changed.txt
+
+      - name: Authenticate actual current Qs and source-ideal A4 sibling audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          common="3978560078104bff7c9d5556bd9e658e4874c963"
+
+          git fetch --no-tags origin agent1/current-exterior-qs-release2-20260922
+          a1="8503f2ede2dd604392198b31ffdeb79321822a30"
+          test "$(git rev-parse FETCH_HEAD)" = "$a1"
+          test "$(git rev-parse "$a1:src/openai_ns_reconstruction/kokuno_current_exterior_qs_release2_state.py")" = "7c6b7e6a95813db9422fff9194ea373faddc0895"
+          git merge-base --is-ancestor "$common" "$a1"
+
+          git fetch --no-tags origin kokuno-agent4/public-ideal-qs-audit-127
+          a4="47d1f19bcea8cdbeaa4ae836eb191a76d22260ae"
+          test "$(git rev-parse FETCH_HEAD)" = "$a4"
+          test "$(git rev-parse "$a4:src/openai_ns_reconstruction/kokuno_a4_public_ideal_qs_independent_audit.py")" = "8dbab20ec11dbd0048a5b5f4c7754b8a204ba535"
+          git merge-base --is-ancestor "$common" "$a4"
+
+          if git merge-base --is-ancestor "$a1" "$a4"; then
+            echo "A1 #1225 unexpectedly became ancestor of A4 #1223" >&2
+            exit 1
+          fi
+          if git merge-base --is-ancestor "$a4" "$a1"; then
+            echo "A4 #1223 unexpectedly became ancestor of A1 #1225" >&2
+            exit 1
+          fi
+
+      - name: Authenticate RF44 restack and A2 960 parallel runtime lineage
+        shell: bash
+        run: |
+          set -euo pipefail
+          common="e75940c33127b0725ddc703eaae97590158f2a56"
+
+          git fetch --no-tags origin codex/kokuno-a2-rf44-exact-backend-restack-114
+          a2="107cac08050fddeab778416c1caf019be0f5795b"
+          test "$(git rev-parse FETCH_HEAD)" = "$a2"
+          test "$(git rev-parse "$a2:src/openai_ns_reconstruction/kokuno_current_i4_rf44_prestate_provider.py")" = "0d8bb6471a4b7825b1b4b428d3b2c38d207729fd"
+          test "$(git rev-parse "$a2:src/openai_ns_reconstruction/kokuno_current_i4_exact_backend_correction_firewall.py")" = "0152a85f7fbaf9c32c24c9d5c7d0d11166e3b157"
+          git merge-base --is-ancestor "$common" "$a2"
+
+          git fetch --no-tags origin kokuno-agent3/exact-a2-960-runtime-149
+          a3="571abc47c98001886cdcc6042832635e7bd93f31"
+          test "$(git rev-parse FETCH_HEAD)" = "$a3"
+          test "$(git rev-parse "$a3:src/openai_ns_reconstruction/kokuno_oscillatory_batch_differentials.py")" = "12df3bf6c949baeebf609b366f2973e7f515a157"
+          test "$(git rev-parse "$a3:src/openai_ns_reconstruction/kokuno_oscillatory_batch_axis_safety.py")" = "599baa190ec742d0e532e5517078534124e68d6b"
+          test "$(git rev-parse "$a3:src/openai_ns_reconstruction/kokuno_public_oscillatory_vorticity_diagnostic.py")" = "4ae525bad1e4b83c9dcabc1a97d3931562d099a5"
+          git merge-base --is-ancestor "$common" "$a3"
+
+          if git merge-base --is-ancestor "$a2" "$a3"; then
+            echo "A2 #1224 unexpectedly became ancestor of A3 #1226" >&2
+            exit 1
+          fi
+          if git merge-base --is-ancestor "$a3" "$a2"; then
+            echo "A3 #1226 unexpectedly became ancestor of A2 #1224" >&2
+            exit 1
+          fi
+
+      - name: Compile and materialize deterministic routing artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            src/openai_ns_reconstruction/kokuno_a5_current_qs_rf44_960_routing.py \
+            tests/test_kokuno_a5_current_qs_rf44_960_routing.py
+          python src/openai_ns_reconstruction/kokuno_a5_current_qs_rf44_960_routing.py \
+            --output kokuno_a5_current_qs_rf44_960_routing.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path("kokuno_a5_current_qs_rf44_960_routing.json").read_text())
+          assert data["task"] == "KOKUNO-A5-CURRENT-QS-RF44-960-ROUTING-129"
+          assert data["upstream_routes"]["agent1"]["current_q_s_release2_endpoint_materialized"] is True
+          assert data["upstream_routes"]["agent4"]["matching_audit_for_agent1_1225_present"] is False
+          assert data["branch_topology"]["a2_1224_and_a3_1226_are_diverged_descendants"] is True
+          assert data["branch_topology"]["silent_cross_branch_evidence_union_allowed"] is False
+          assert data["remaining_blockers"]["a2_a3_1224_1226_unified_runtime_lineage"] is True
+          assert data["remaining_blockers"]["exact_a2_1080_composite_runtime_in_unified_stack"] is True
+          assert data["core_states"]["pde_validated"] is False
+          PY
+
+      - name: Upload routing artifact before regression enforcement
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a5-current-qs-rf44-960-routing
+          path: kokuno_a5_current_qs_rf44_960_routing.json
+
+      - name: Run parent and focused fail-closed regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check pytest
+          PYTHONPATH=src pytest -q \
+            tests/test_kokuno_a5_terminal_rf44_backend_routing.py \
+            tests/test_kokuno_a5_current_qs_rf44_960_routing.py
