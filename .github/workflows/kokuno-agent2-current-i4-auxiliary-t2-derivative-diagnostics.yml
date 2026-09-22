@@ -1,0 +1,74 @@
+name: kokuno-agent2-current-i4-auxiliary-t2-derivative-diagnostics
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_current_i4_auxiliary_t2_derivative_diagnostics.py'
+      - 'tests/test_constrained_kokuno_current_i4_auxiliary_t2_derivative_diagnostics.py'
+      - '.github/workflows/kokuno-agent2-current-i4-auxiliary-t2-derivative-diagnostics.yml'
+  workflow_dispatch:
+
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Authenticate exact parent provider and bounded delta
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git merge-base HEAD 5765c2b3bab7482df514efa87f9b6bba48e04b7f)" = "5765c2b3bab7482df514efa87f9b6bba48e04b7f"
+          test "$(git hash-object src/openai_ns_reconstruction/kokuno_current_i4_auxiliary_t2_provider.py)" = "96168ac6583ad5e71aa044bd558c6feeadf051f4"
+          mapfile -t changed < <(git diff --name-only 5765c2b3bab7482df514efa87f9b6bba48e04b7f...HEAD | sort)
+          printf '%s\n' "${changed[@]}"
+          test "${#changed[@]}" -eq 3
+          test "${changed[0]}" = ".github/workflows/kokuno-agent2-current-i4-auxiliary-t2-derivative-diagnostics.yml"
+          test "${changed[1]}" = "src/openai_ns_reconstruction/kokuno_current_i4_auxiliary_t2_derivative_diagnostics.py"
+          test "${changed[2]}" = "tests/test_constrained_kokuno_current_i4_auxiliary_t2_derivative_diagnostics.py"
+
+      - name: Install package and test dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e '.[dev]'
+
+      - name: Compile exact parent and new diagnostic surfaces
+        run: |
+          python -m py_compile \
+            src/openai_ns_reconstruction/kokuno_current_i4_auxiliary_t2_provider.py \
+            src/openai_ns_reconstruction/kokuno_current_i4_auxiliary_t2_derivative_diagnostics.py \
+            tests/test_constrained_kokuno_current_i4_auxiliary_t2_provider.py \
+            tests/test_constrained_kokuno_current_i4_auxiliary_t2_derivative_diagnostics.py
+
+      - name: Run exact parent plus three-resolution derivative regressions
+        run: |
+          pytest -q \
+            tests/test_constrained_kokuno_current_i4_auxiliary_t2_provider.py \
+            tests/test_constrained_kokuno_current_i4_auxiliary_t2_derivative_diagnostics.py
+
+      - name: Enforce truth boundary without scientific promotion
+        run: |
+          python - <<'PY'
+          from openai_ns_reconstruction.kokuno_current_i4_auxiliary_t2_derivative_diagnostics import (
+              AUDIT_RELATIVE_STEPS,
+              truth_boundary,
+          )
+          t = truth_boundary()
+          assert AUDIT_RELATIVE_STEPS == (2.0**-10, 2.0**-11, 2.0**-12)
+          assert t['three_resolution_slow_derivative_diagnostic_materialized'] is True
+          assert t['production_private_fd4_helper_used_by_audit_operator'] is False
+          assert t['numerical_stability_observations_are_pde_acceptance_gates'] is False
+          assert t['source_exact_slow_derivatives_claimed'] is False
+          assert t['agent3_provider_pin_modified_here'] is False
+          assert t['heldout_ns_residual_assessed'] is False
+          assert t['residual_reduction_claimed'] is False
+          assert t['paper_exact'] is False
+          assert t['pde_validated'] is False
+          assert t['forbidden_scientific_controls_exposed'] is False
+          PY
