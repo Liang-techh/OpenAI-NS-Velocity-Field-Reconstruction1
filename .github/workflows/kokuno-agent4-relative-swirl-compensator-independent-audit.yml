@@ -1,0 +1,137 @@
+name: kokuno-agent4-relative-swirl-compensator-independent-audit
+
+on:
+  push:
+    branches:
+      - kokuno-agent4/relative-swirl-compensator-audit-120
+  pull_request:
+    branches:
+      - codex/kokuno-a1-relative-swirl-compensator
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Check out exact A4 event head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Verify exact A1 #1154 parent and three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          parent=d0e855e37c8f5d6d58f1a85b1dcb874651d20838
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+          git merge-base --is-ancestor "$parent" HEAD
+          test "$(git rev-list --count "$parent"..HEAD)" -eq 3
+          mapfile -t files < <(git diff --name-only "$parent"..HEAD)
+          test "${#files[@]}" -eq 3
+          printf '%s\n' "${files[@]}" | sort > /tmp/actual-files
+          printf '%s\n' \
+            .github/workflows/kokuno-agent4-relative-swirl-compensator-independent-audit.yml \
+            src/openai_ns_reconstruction/kokuno_a4_relative_swirl_compensator_independent_audit.py \
+            tests/test_constrained_kokuno_a4_relative_swirl_compensator_independent_audit.py \
+            | sort > /tmp/expected-files
+          diff -u /tmp/expected-files /tmp/actual-files
+          test "$(git hash-object src/openai_ns_reconstruction/kokuno_public_relative_swirl_compensator.py)" = \
+            "7715dbf9fadb5d9ed37213677703b45f21d29724"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install exact A4 head
+        run: python -m pip install -e '.[dev]'
+
+      - name: Run parent and A4 focused software regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            src/openai_ns_reconstruction/kokuno_a4_relative_swirl_compensator_independent_audit.py \
+            tests/test_constrained_kokuno_a4_relative_swirl_compensator_independent_audit.py
+          python -m pytest -q -W error \
+            tests/test_kokuno_public_relative_swirl_compensator.py \
+            tests/test_constrained_kokuno_a4_relative_swirl_compensator_independent_audit.py
+
+      - name: Materialize save-reloaded candidate and independent receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p receipts
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          import traceback
+          from openai_ns_reconstruction import (
+              kokuno_a4_relative_swirl_compensator_independent_audit as m,
+          )
+          from openai_ns_reconstruction.kokuno_public_relative_swirl_compensator import (
+              KokunoPublicRelativeSwirlCompensator,
+          )
+
+          out = Path('receipts')
+          original = m.default_compensator()
+          original.save_configuration(out / 'candidate.json')
+          loaded = KokunoPublicRelativeSwirlCompensator.load_configuration(
+              out / 'candidate.json'
+          )
+          try:
+              report = m.audit_loaded_compensator(loaded, original)
+          except Exception as exc:
+              report = {
+                  'schema': m.SCHEMA,
+                  'task': m.TASK,
+                  'upstream_pr': m.UPSTREAM_PR,
+                  'upstream_head': m.UPSTREAM_HEAD,
+                  'audit_pass': False,
+                  'failures': ['materialization_or_audit_error'],
+                  'error': f'{type(exc).__name__}: {exc}',
+                  'traceback': traceback.format_exc(),
+                  'truth_boundary': {
+                      'leading_only_ns_residual_assessed': False,
+                      'leading_plus_oscillatory_ns_residual_assessed': False,
+                      'after_correction_ns_residual_assessed': False,
+                      'pde_validated': False,
+                  },
+              }
+          out.joinpath('independent_report.json').write_text(
+              json.dumps(report, indent=2, sort_keys=True) + '\n', encoding='utf-8'
+          )
+          print(json.dumps(report, indent=2, sort_keys=True))
+          PY
+
+      - name: Upload raw candidate and independent receipt before enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a4-relative-swirl-compensator-independent-audit
+          path: receipts/
+          if-no-files-found: error
+
+      - name: Enforce preregistered scoped gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          from openai_ns_reconstruction.kokuno_a4_relative_swirl_compensator_independent_audit import (
+              enforce_preregistered_gates,
+          )
+          report = json.loads(Path('receipts/independent_report.json').read_text(encoding='utf-8'))
+          enforce_preregistered_gates(report)
+          assert report['truth_boundary']['leading_only_ns_residual_assessed'] is False
+          assert report['truth_boundary']['leading_plus_oscillatory_ns_residual_assessed'] is False
+          assert report['truth_boundary']['after_correction_ns_residual_assessed'] is False
+          assert report['truth_boundary']['pde_validated'] is False
+          assert report['gates']['final_project_momentum_gate_unchanged'] == 1e-3
+          assert report['gates']['final_project_divergence_gate_unchanged'] == 1e-5
+          PY
