@@ -1,0 +1,119 @@
+name: kokuno-agent1-public-relative-swirl-compensator
+
+on:
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_public_relative_swirl_compensator.py"
+      - "tests/test_kokuno_public_relative_swirl_compensator.py"
+      - ".github/workflows/kokuno-agent1-public-relative-swirl-compensator.yml"
+  workflow_dispatch:
+
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+
+      - name: Authenticate exact A1 #1148 parent
+        shell: bash
+        run: |
+          git merge-base --is-ancestor 5bafa4199ef127bf50bce30a58cc69ded99e1aa9 HEAD
+          test "$(git show -s --format=%H 5bafa4199ef127bf50bce30a58cc69ded99e1aa9)" = "5bafa4199ef127bf50bce30a58cc69ded99e1aa9"
+          echo "authenticated A1 #1148 parent 5bafa4199ef127bf50bce30a58cc69ded99e1aa9"
+
+      - name: Enforce minimal three-file increment
+        shell: bash
+        run: |
+          mapfile -t files < <(git diff --name-only 5bafa4199ef127bf50bce30a58cc69ded99e1aa9...HEAD | sort)
+          printf '%s\n' "${files[@]}"
+          test "${#files[@]}" -eq 3
+          expected=(
+            ".github/workflows/kokuno-agent1-public-relative-swirl-compensator.yml"
+            "src/openai_ns_reconstruction/kokuno_public_relative_swirl_compensator.py"
+            "tests/test_kokuno_public_relative_swirl_compensator.py"
+          )
+          mapfile -t expected_sorted < <(printf '%s\n' "${expected[@]}" | sort)
+          test "$(printf '%s\n' "${files[@]}")" = "$(printf '%s\n' "${expected_sorted[@]}")"
+
+      - name: Compile focused files
+        run: |
+          python -m py_compile src/openai_ns_reconstruction/kokuno_public_relative_swirl_compensator.py
+          python -m py_compile tests/test_kokuno_public_relative_swirl_compensator.py
+
+      - name: Run parent-facing and relative-swirl regressions
+        run: |
+          python -m pytest -q \
+            tests/test_kokuno_pa16_current_cartesian_postpulse_eta_independent_hold_prefix.py \
+            tests/test_kokuno_public_relative_swirl_compensator.py
+
+      - name: Emit deterministic scoped receipt
+        run: |
+          mkdir -p artifacts/kokuno_agent1_public_relative_swirl_compensator
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          import numpy as np
+          from openai_ns_reconstruction.kokuno_public_relative_swirl_compensator import (
+              KokunoPublicRelativeSwirlCompensator,
+          )
+
+          root = Path("artifacts/kokuno_agent1_public_relative_swirl_compensator")
+          comp = KokunoPublicRelativeSwirlCompensator()
+          targets = np.array([-2e-7, 0.0, 1e-7, 1e-4])
+          sol = comp.solve(targets)
+          r_star = 1.0 / (1.0 - comp.lambda_value)
+
+          receipt = {
+              "schema": "kokuno-agent1-public-relative-swirl-compensator-receipt-v1",
+              "semantic_sha256": comp.semantic_sha256(),
+              "hold_length": comp.hold_length,
+              "first_center": comp.y1,
+              "second_center": comp.y2,
+              "width": comp.width,
+              "angular_row_scaled": comp.angular_row_scaled.tolist(),
+              "pressure_linear_row_scaled": comp.pressure_linear_row_scaled.tolist(),
+              "pressure_quadratic_matrix_scaled": comp.pressure_quadratic_matrix_scaled.tolist(),
+              "linearized_condition_number": comp.linearized_condition_number,
+              "targets": targets.tolist(),
+              "c1": np.asarray(sol.c1).tolist(),
+              "c2": np.asarray(sol.c2).tolist(),
+              "max_abs_angular_residual": float(np.max(np.abs(sol.angular_residual))),
+              "max_abs_pressure_residual": float(np.max(np.abs(sol.pressure_residual))),
+              "fixed_point_target": float(comp.angular_target_from_rI(r_star)),
+              "truth_boundary": comp.truth_boundary,
+              "note": "source/algebra receipt only; not independent PDE validation",
+          }
+
+          assert receipt["truth_boundary"]["public_relative_swirl_two_bump_algebra_materialized"] is True
+          assert receipt["truth_boundary"]["source_exact_pointwise_bump_shape_recovered"] is False
+          assert receipt["truth_boundary"]["current_lineage_angular_entry_I_materialized"] is False
+          assert receipt["truth_boundary"]["current_cartesian_relative_swirl_composed"] is False
+          assert receipt["truth_boundary"]["heldout_ns_residual_assessed"] is False
+          assert receipt["truth_boundary"]["pde_validated"] is False
+          assert receipt["max_abs_angular_residual"] < 1e-14
+          assert receipt["max_abs_pressure_residual"] < 1e-14
+          assert abs(receipt["fixed_point_target"]) < 1e-13
+
+          (root / "receipt.json").write_text(json.dumps(receipt, indent=2, sort_keys=True) + "\n")
+          (root / "config.json").write_text(json.dumps(comp.configuration(), indent=2, sort_keys=True) + "\n")
+          print(json.dumps(receipt, indent=2, sort_keys=True))
+          PY
+
+      - name: Upload scoped receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-public-relative-swirl-compensator
+          path: artifacts/kokuno_agent1_public_relative_swirl_compensator/
