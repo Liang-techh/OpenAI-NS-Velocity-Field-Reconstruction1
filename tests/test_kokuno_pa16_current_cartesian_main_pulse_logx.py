@@ -22,6 +22,7 @@ def test_logX_path_crosses_float64_X_ceiling_but_physical_radius_stays_finite():
     assert c.log_radius_q1_source_end < math.log(np.finfo(float).max)
     assert math.isfinite(math.exp(c.log_radius_q1_source_end))
     assert c.truth_boundary["overflow_safe_logX_similarity_materialized"] is True
+    assert c.truth_boundary["overflow_safe_logF_cartesian_swirl_materialized"] is True
     assert c.truth_boundary["full_source_xi_11_current_cartesian_materialized"] is True
 
 
@@ -48,6 +49,12 @@ def test_parent_replay_on_representable_active_pulse_prefix():
         ("v0_current_leading_with_main_pulse_logX", "v0_current_leading_with_main_pulse"),
     ):
         np.testing.assert_allclose(got[child_key], ref[parent_key], rtol=8e-14, atol=0.0)
+    np.testing.assert_allclose(
+        got["log_F_current_leading_with_main_pulse_logX"],
+        np.log(ref["F_current_leading_with_main_pulse"]),
+        rtol=0.0,
+        atol=2e-13,
+    )
 
 
 def test_full_public_endpoint_xi_11_is_executable_without_forming_X():
@@ -56,10 +63,11 @@ def test_full_public_endpoint_xi_11_is_executable_without_forming_X():
     eta = np.array([-0.4, 0.0, 0.35])
     got = c.similarity_profile_values_logX(np.full(eta.shape, log_X), eta)
     assert np.all(np.isfinite(got["F_current_leading_with_main_pulse_logX"]))
+    assert np.all(np.isfinite(got["log_F_current_leading_with_main_pulse_logX"]))
     assert np.all(np.isfinite(got["U_current_leading_with_main_pulse_logX"]))
     assert np.all(np.isfinite(got["E_current_leading_with_main_pulse_logX"]))
     assert np.all(np.isfinite(got["M_over_X_current_leading_with_main_pulse_logX"]))
-    assert np.all(got["F_current_leading_with_main_pulse_logX"] > 0.0)
+    assert np.all(got["F_current_leading_with_main_pulse_logX"] >= 0.0)
     np.testing.assert_allclose(
         got["xi_current_main_pulse_logX"], MAIN_XI_MAX, rtol=0.0, atol=3e-13
     )
@@ -81,12 +89,21 @@ def test_log_radial_derivatives_match_independent_centered_logX_difference_beyon
     pp = c.similarity_profile_values_logX(np.full(eta.shape, log_X + h), eta)
     d = c.similarity_log_radial_derivatives(np.full(eta.shape, log_X), eta)
     for value_key, deriv_key in (
-        ("F_current_leading_with_main_pulse_logX", "F_DlogX_current_leading_with_main_pulse"),
         ("U_current_leading_with_main_pulse_logX", "U_DlogX_current_leading_with_main_pulse"),
         ("E_current_leading_with_main_pulse_logX", "E_DlogX_current_leading_with_main_pulse"),
     ):
         centered = (pp[value_key] - pm[value_key]) / (2.0 * h)
         np.testing.assert_allclose(centered, d[deriv_key], rtol=3e-6, atol=1e-300)
+    centered_log_F = (
+        pp["log_F_current_leading_with_main_pulse_logX"]
+        - pm["log_F_current_leading_with_main_pulse_logX"]
+    ) / (2.0 * h)
+    np.testing.assert_allclose(
+        centered_log_F,
+        d["log_F_DlogX_current_leading_with_main_pulse"],
+        rtol=2e-7,
+        atol=2e-8,
+    )
 
 
 def test_current_primitive_logX_identity_holds_beyond_float64_X():
@@ -109,8 +126,6 @@ def test_current_primitive_logX_identity_holds_beyond_float64_X():
     )
     np.testing.assert_allclose(centered, expected, rtol=4e-7, atol=3e-18)
 
-    # A_principal is eta independent, so U_eta is the entry-shape derivative times
-    # the same pulse factor.  This gives an implementation-distinct M_eta identity.
     E_entry, E_entry_eta, _, _ = c._pulse_entry_state(eta)
     ratio = E_entry_eta / E_entry
     U_eta = p0["U_current_leading_with_main_pulse_logX"] * ratio
