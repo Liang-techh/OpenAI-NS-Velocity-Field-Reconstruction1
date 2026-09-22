@@ -12,7 +12,7 @@ The public coordinate map fixes
 
     A = 1/2 + h,  D = 1/2 - h,
 
-with the completed construction choosing 0 < h < 1/100.  After the first
+with the completed construction choosing 0 < h < 1/100. After the first
 post-relative-swirl unit transition (A1 #1188), the public outer schedule says
 to hold
 
@@ -20,9 +20,9 @@ to hold
 
 for 4 log(1/h), before a later one-unit transition from -1 to -h.
 
-This increment materializes ONLY that constant-l hold.  It does not invent a
+This increment materializes ONLY that constant-l hold. It does not invent a
 new h: the current candidate value is bound from its already frozen similarity
-exponent by h_current = A - 1/2 and cross-checked against D.  This is a
+exponent by h_current = A - 1/2 and cross-checked against D. This is a
 repository candidate binding of a public parameter relation, not recovery of a
 hidden/source-exact numerical h.
 
@@ -34,10 +34,18 @@ and l=-1 give
     U = 0.
 
 Physical M and M_eta remain constant, hence M/X, M_eta/X and v0 decay as
-exp(-s).  The exact #1188 current primitive history is therefore carried rather
-than reset.  The public velocity keeps #1188's Decimal output encoding, while
-all new profile/Cartesian arithmetic remains binary64 before Decimal embedding;
-this module does NOT claim end-to-end 96-digit evaluation.
+exp(-s). The exact #1188 current primitive history is therefore carried rather
+than reset.
+
+At these very large X values scalar binary64 F can underflow even while the
+physical Cartesian combination rF is representable. Consequently log_F is an
+explicit first-class profile coordinate with analytic D_logX log_F=-2, and the
+Cartesian field is assembled from log_F rather than scalar F. This continues
+the overflow/underflow-safe chart already used by the parent lineage.
+
+The public velocity keeps #1188's Decimal output encoding, while all new
+profile/Cartesian arithmetic remains binary64 before Decimal embedding; this
+module does NOT claim end-to-end 96-digit evaluation.
 """
 
 from __future__ import annotations
@@ -75,7 +83,7 @@ _SOURCE_FORMULAS = {
     "slope": "l=D_logX log(H)=-1",
     "E_ode": "D_logX log(E)=l-1/2=-3/2",
     "postpulse_U": "U=0 permanently after the pulse endpoint",
-    "swirl_relation": "F=E/sqrt(2X)",
+    "swirl_relation": "F=E/sqrt(2X); D_logX log(F)=-2 on this hold",
     "primitive_transport": "U=0 => M,M_eta constant => D_logX(M/X)=-(M/X)",
     "cartesian_velocity": "u_r=(v0/(2q))r; u_theta=q^(-A-1/2) r F; u3=q^(-A)U",
 }
@@ -84,6 +92,10 @@ _NUMERICAL_REALIZATION = {
     "parent": "consume exact A1 #1188 first-release endpoint",
     "h_binding": "h_current=A_current-1/2, cross-checked with 1/2-D_current; no caller h knob",
     "profile_arithmetic": "binary64 NumPy/Python arithmetic",
+    "swirl_scale_representation": (
+        "keep log_F as the underflow-safe scale coordinate and assemble Cartesian rF from log_F; "
+        "scalar binary64 F may legitimately underflow to zero at sufficiently large X"
+    ),
     "public_velocity_encoding": (
         "fixed 96-significant-decimal-digit object-array encoding inherited from #1188; "
         "Decimal encoding is not an end-to-end 96-digit arithmetic claim"
@@ -97,6 +109,7 @@ _TRUTH_UPDATES = {
     "current_cartesian_l_minus1_hold_composed": True,
     "current_h_bound_from_similarity_exponent": True,
     "source_exact_h_recovered": False,
+    "overflow_safe_log_F_materialized": True,
     "decimal_output_encoding_materialized": True,
     "end_to_end_96digit_arithmetic_materialized": False,
     "source_l_minus1_to_minus_h_transition_materialized": False,
@@ -264,6 +277,7 @@ class KokunoPA16CurrentCartesianPostSwirlLMinus1Hold:
 
         DlogX_E = -1.5 * E
         DlogX_F = -2.0 * F
+        DlogX_log_F = np.full_like(E, -2.0)
         DlogX_U = np.zeros_like(E)
         DlogX_M_ratio = -M_ratio
         DlogX_M_eta_ratio = -M_eta_ratio
@@ -271,7 +285,8 @@ class KokunoPA16CurrentCartesianPostSwirlLMinus1Hold:
 
         arrays = (
             E, F, log_F, M_ratio, M_eta_ratio, v0,
-            DlogX_E, DlogX_F, DlogX_M_ratio, DlogX_M_eta_ratio, DlogX_v0,
+            DlogX_E, DlogX_F, DlogX_log_F,
+            DlogX_M_ratio, DlogX_M_eta_ratio, DlogX_v0,
         )
         if any(np.any(~np.isfinite(a)) for a in arrays):
             raise RuntimeError("l=-1 hold profile became non-finite")
@@ -293,6 +308,7 @@ class KokunoPA16CurrentCartesianPostSwirlLMinus1Hold:
             "v0": v0,
             "DlogX_E": DlogX_E,
             "DlogX_F": DlogX_F,
+            "DlogX_log_F": DlogX_log_F,
             "DlogX_U": DlogX_U,
             "DlogX_M_over_X": DlogX_M_ratio,
             "DlogX_M_eta_over_X": DlogX_M_eta_ratio,
@@ -359,8 +375,10 @@ class KokunoPA16CurrentCartesianPostSwirlLMinus1Hold:
         eta = np.asarray([-0.5, 0.0, 0.5], dtype=float)
         p0 = self.profile_logX(self.log_X_hold_start, eta)
         p1 = self.profile_logX(self.log_X_hold_end, eta)
-        e_ratio = np.asarray(p1["E"], dtype=float) / np.asarray(p0["E"], dtype=float)
-        f_ratio = np.asarray(p1["F"], dtype=float) / np.asarray(p0["F"], dtype=float)
+        e_ratio = np.exp(np.log(np.asarray(p1["E"], dtype=float)) - np.log(np.asarray(p0["E"], dtype=float)))
+        f_ratio = np.exp(
+            np.asarray(p1["log_F"], dtype=float) - np.asarray(p0["log_F"], dtype=float)
+        )
         m0 = np.asarray(p0["M_over_X"], dtype=float)
         m1 = np.asarray(p1["M_over_X"], dtype=float)
         nz = np.abs(m0) > 0.0
