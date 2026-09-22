@@ -1,0 +1,124 @@
+name: kokuno-agent5-post-i4-routing-i2-force-audit-ingest
+
+on:
+  push:
+    branches:
+      - 'kokuno-agent5/post-i4-routing-i2-force-audit-110'
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_a5_post_i4_routing_i2_force_audit_ingest.py'
+      - 'tests/test_kokuno_a5_post_i4_routing_i2_force_audit_ingest.py'
+      - '.github/workflows/kokuno-agent5-post-i4-routing-i2-force-audit-ingest.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-routing-checkpoint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact head
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install package and test runner
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e . pytest
+
+      - name: Enforce bounded three-file delta
+        shell: bash
+        run: |
+          set -euo pipefail
+          base=2886d888cafa80a30e9b21ffee5011e079d944a0
+          mapfile -t changed < <(git diff --name-only "$base" HEAD | sort)
+          expected=(
+            .github/workflows/kokuno-agent5-post-i4-routing-i2-force-audit-ingest.yml
+            src/openai_ns_reconstruction/kokuno_a5_post_i4_routing_i2_force_audit_ingest.py
+            tests/test_kokuno_a5_post_i4_routing_i2_force_audit_ingest.py
+          )
+          mapfile -t expected_sorted < <(printf '%s\n' "${expected[@]}" | sort)
+          printf 'changed files:\n%s\n' "${changed[*]}"
+          test "${#changed[@]}" -eq 3
+          diff -u <(printf '%s\n' "${expected_sorted[@]}") <(printf '%s\n' "${changed[@]}")
+          test -z "$(git diff --diff-filter=D --name-only "$base" HEAD)"
+
+      - name: Authenticate exact upstream heads and source blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          check_blob () {
+            local commit="$1" path="$2" expected="$3"
+            git cat-file -e "${commit}^{commit}" 2>/dev/null || git fetch --no-tags origin "$commit"
+            actual="$(git rev-parse "${commit}:${path}")"
+            printf '%s %s\n' "$commit" "$actual"
+            test "$actual" = "$expected"
+          }
+          check_blob \
+            2886d888cafa80a30e9b21ffee5011e079d944a0 \
+            src/openai_ns_reconstruction/kokuno_a5_current_i4_routing_i2_stress_ingest.py \
+            505fc333463db23030a4eee72da30755317982fb
+          check_blob \
+            bd85ed48323feb3b33b9c404a078630245dfe783 \
+            src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_post_i4_pulse_entry_bridge.py \
+            6826085ee248a47f445d91031219bc2e5b655fd3
+          check_blob \
+            4bc9408d10b2f3c636abd4f6ce33cefab391093d \
+            src/openai_ns_reconstruction/kokuno_source_zero_data_localized_harmonic.py \
+            8087e619bb1812df6dcb616e1a51f1ab4dd728d4
+          check_blob \
+            5e8512392df683375fabd132f35577e1b94773ff \
+            src/openai_ns_reconstruction/kokuno_current_i2_nonlinear_radial_force.py \
+            9259ecdf4aa3912fb521acdf7e62060272395e38
+          check_blob \
+            a01bc1f088b6b0d6556d81cf417c2b73bd7c99e8 \
+            src/openai_ns_reconstruction/kokuno_a4_current_i2_radial_force_independent_audit.py \
+            6c217186fb57a6fbe5c0e20ebc3734897d7f58ac
+
+      - name: Run focused parent and new A5 regressions
+        run: |
+          python -m pytest -q \
+            tests/test_kokuno_a5_current_i4_routing_i2_stress_ingest.py \
+            tests/test_kokuno_a5_post_i4_routing_i2_force_audit_ingest.py
+
+      - name: Materialize raw routing artifact
+        run: |
+          python -m openai_ns_reconstruction.kokuno_a5_post_i4_routing_i2_force_audit_ingest \
+            --output artifacts/kokuno_agent5/post_i4_routing_i2_force_audit_ingest.json
+
+      - name: Upload routing artifact before final enforcement
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-post-i4-routing-i2-force-audit-ingest-v110
+          path: artifacts/kokuno_agent5/post_i4_routing_i2_force_audit_ingest.json
+          if-no-files-found: error
+
+      - name: Enforce frozen truth boundary
+        run: |
+          python - <<'PY'
+          from openai_ns_reconstruction.kokuno_a5_post_i4_routing_i2_force_audit_ingest import load_registration
+          r = load_registration('artifacts/kokuno_agent5/post_i4_routing_i2_force_audit_ingest.json')
+          t = r['truth_boundary']
+          assert t['leading_frontier_stage'] == 'post-I4/pre-pulse-leading-only'
+          assert t['latest_self_contained_composite_frontier_stage'] == 'current-I4'
+          assert t['correction_frontier_stage'] == 'current-I2-radial-force'
+          assert t['matching_post_i4_agent2_project_cartesian_composite_materialized'] is False
+          assert t['agent4_matching_current_i2_radial_force_audit_registered'] is True
+          assert t['agent4_matching_current_i2_radial_force_audit_admitted'] is False
+          assert t['current_i2_radial_force_consumed_by_post_i4_candidate'] is False
+          assert t['complete_identity_bound_ns_defect_materialized'] is False
+          assert t['pde_validated'] is False
+          assert r['final_gates']['normalized_momentum_sampled_max'] == 1e-3
+          assert r['final_gates']['normalized_momentum_volume_l2'] == 1e-3
+          assert r['final_gates']['normalized_divergence_sampled_max'] == 1e-5
+          assert r['final_gates']['normalized_divergence_volume_l2'] == 1e-5
+          assert r['final_gates']['canonical_quadrature'] == [24, 48, 96]
+          assert r['final_gates']['residual_defined_free_forcing_allowed'] is False
+          PY
