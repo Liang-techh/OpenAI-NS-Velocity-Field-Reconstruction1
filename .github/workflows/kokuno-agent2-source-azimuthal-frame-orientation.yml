@@ -1,0 +1,193 @@
+name: kokuno-agent2-source-azimuthal-frame-orientation
+
+on:
+  push:
+    branches: [kokuno-agent2-azimuthal-frame-orientation-108]
+  pull_request:
+    branches: [kokuno-agent2-pulse-coordinate-support-107]
+  workflow_dispatch:
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: "${{ github.event.pull_request.head.sha || github.sha }}"
+          fetch-depth: 0
+
+      - name: Verify exact A2 parent and minimal scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          base=0cbf74972af6589f7eb9a2edfe21c957d7512a5c
+          git merge-base --is-ancestor "$base" HEAD
+          test "$(git rev-list --count "$base"..HEAD)" -eq 3
+          mapfile -t files < <(git diff --name-only "$base"..HEAD | sort)
+          test "${#files[@]}" -eq 3
+          expected=(
+            ".github/workflows/kokuno-agent2-source-azimuthal-frame-orientation.yml"
+            "src/openai_ns_reconstruction/kokuno_source_azimuthal_frame_oriented_multiharmonic_velocity.py"
+            "tests/test_constrained_kokuno_source_azimuthal_frame_oriented_multiharmonic_velocity.py"
+          )
+          mapfile -t expected_sorted < <(printf '%s\n' "${expected[@]}" | sort)
+          test "$(printf '%s\n' "${files[@]}")" = "$(printf '%s\n' "${expected_sorted[@]}")"
+          test "$(git show "$base":src/openai_ns_reconstruction/kokuno_source_pulse_coordinate_support_multiharmonic_velocity.py | git hash-object --stdin)" = d95265098a9a9eb95ee673fecb3e7b115f2866e6
+          test "$(git show "$base":src/openai_ns_reconstruction/kokuno_source_support_certified_multiharmonic_velocity.py | git hash-object --stdin)" = 5b2bdab4e7fff24ecec8f8cb0fbd8d118a862381
+          test "$(git show "$base":src/openai_ns_reconstruction/kokuno_corrected_oscillation_source_ledger.py | git hash-object --stdin)" = "$(git show "$base":src/openai_ns_reconstruction/kokuno_corrected_oscillation_source_ledger.py | git hash-object --stdin)"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install branch
+        run: python -m pip install -e '.[dev]'
+
+      - name: Focused A2 regressions
+        run: |
+          python -m py_compile \
+            src/openai_ns_reconstruction/kokuno_source_azimuthal_frame_oriented_multiharmonic_velocity.py \
+            tests/test_constrained_kokuno_source_azimuthal_frame_oriented_multiharmonic_velocity.py
+          pytest -q \
+            tests/test_constrained_kokuno_source_pulse_coordinate_support_multiharmonic_velocity.py \
+            tests/test_constrained_kokuno_source_azimuthal_frame_oriented_multiharmonic_velocity.py
+
+      - uses: actions/checkout@v4
+        with:
+          repository: KokunoYumeto/yang-mills-interacting-workbench
+          ref: 143f6773feb424ad9ed3a8d116653200f20346b7
+          path: corrected-source
+          fetch-depth: 1
+
+      - name: Authenticate corrected 2026-09-09 source
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C corrected-source rev-parse HEAD)" = 143f6773feb424ad9ed3a8d116653200f20346b7
+          test "$(git -C corrected-source hash-object navier-stokes/navier_stokes_workbench.tex)" = 205a99807302e21a51c5eaf223390c0dfc42bcd0
+
+      - name: Materialize azimuthal-frame receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p receipts
+          python - <<'PY'
+          import json
+          import math
+          import runpy
+          from pathlib import Path
+          import numpy as np
+
+          from openai_ns_reconstruction.kokuno_source_azimuthal_frame_oriented_multiharmonic_velocity import (
+              KokunoAzimuthalFrameOrientedBoundedMultiHarmonicPhysicalVelocity,
+              azimuthal_frame_orientation_contract,
+              public_contract,
+          )
+          from openai_ns_reconstruction.kokuno_source_pulse_coordinate_support_multiharmonic_velocity import (
+              KokunoPulseCoordinateSupportBoundedMultiHarmonicPhysicalVelocity,
+          )
+
+          ns = runpy.run_path(
+              "tests/test_constrained_kokuno_source_pulse_coordinate_support_multiharmonic_velocity.py"
+          )
+          _, term = ns["_term"]()
+          parent = KokunoPulseCoordinateSupportBoundedMultiHarmonicPhysicalVelocity(
+              (term,), ell=8, h=0.004
+          )
+          alpha = 0.63
+          field = KokunoAzimuthalFrameOrientedBoundedMultiHarmonicPhysicalVelocity(
+              parent, frame_azimuth=alpha
+          )
+          R = np.asarray([0.31, 0.48, 0.68])
+          Z = np.asarray([-0.19, 0.08, 0.28])
+          T = np.asarray([0.31, 0.52, 0.68])
+          theta = np.asarray([-0.4, 0.8, 1.7])
+          x, y, z, t = ns["_physical"](parent, R, Z, T, theta)
+          out = field.evaluate(x, y, z, t)
+
+          c = math.cos(alpha)
+          s = math.sin(alpha)
+          xp = c * x + s * y
+          yp = -s * x + c * y
+          raw = parent.evaluate(xp, yp, z, t)
+          raw_v = raw.real_pair_velocity_cartesian_physical
+          manual = np.stack(
+              (c * raw_v[..., 0] - s * raw_v[..., 1],
+               s * raw_v[..., 0] + c * raw_v[..., 1],
+               raw_v[..., 2]),
+              axis=-1,
+          )
+          covariance_max_abs = float(np.max(np.abs(out.real_pair_velocity_cartesian_physical - manual)))
+          real_pair_max_abs = float(np.max(np.abs(
+              out.real_pair_velocity_cartesian_physical - 2.0 * np.real(out.complex_velocity_cartesian_physical)
+          )))
+          contract = azimuthal_frame_orientation_contract()
+          public = public_contract()
+
+          assert covariance_max_abs <= 3e-14
+          assert real_pair_max_abs <= 3e-14
+          assert np.linalg.norm(out.real_pair_velocity_cartesian_physical) > 0.0
+          assert contract["bounded_azimuthal_frame_orientation_materialized"] is True
+          assert contract["same_rigid_rotation_applied_to_vector_potential_and_complete_curl"] is True
+          assert contract["source_exact_orientation_recovered"] is False
+          assert contract["independent_scale_parameter_materialized"] is False
+          assert contract["complete_ns_residual_assessed"] is False
+          assert contract["paper_exact"] is False
+          assert contract["pde_validated"] is False
+          assert public["forbidden_velocity_inputs_present"] == []
+
+          receipt = {
+              "task": "K2-OSC-108",
+              "parent_semantic_sha256": parent.semantic_sha256,
+              "field_semantic_sha256": field.semantic_sha256,
+              "frame_azimuth_radians": alpha,
+              "active_term_count": out.active_term_count.tolist(),
+              "rigid_rotation_covariance_max_abs": covariance_max_abs,
+              "real_pair_complex_closure_max_abs": real_pair_max_abs,
+              "contract": contract,
+              "public_contract": public,
+          }
+          Path("receipts/azimuthal_frame_orientation.json").write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + "\n"
+          )
+          PY
+
+      - name: Upload raw receipt before truth enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent2-source-azimuthal-frame-orientation
+          path: receipts
+          if-no-files-found: error
+
+      - name: Enforce scientific truth boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from openai_ns_reconstruction.kokuno_source_azimuthal_frame_oriented_multiharmonic_velocity import (
+              azimuthal_frame_orientation_contract,
+              public_contract,
+          )
+          c = azimuthal_frame_orientation_contract()
+          p = public_contract()
+          assert c["parent_complete_curl_and_support_contract_inherited"] is True
+          assert c["bounded_azimuthal_frame_orientation_materialized"] is True
+          assert c["same_rigid_rotation_applied_to_vector_potential_and_complete_curl"] is True
+          assert c["rigid_rotation_preserves_divergence_free_contract_by_covariance"] is True
+          assert c["axis_and_radial_support_invariant_under_orientation"] is True
+          assert c["pulse_coordinate_provider_evaluated_in_rotated_parent_frame"] is True
+          assert c["independent_cartesian_component_fit_used"] is False
+          assert c["independent_scale_parameter_materialized"] is False
+          assert c["source_exact_frame_vectors_recovered"] is False
+          assert c["source_exact_orientation_recovered"] is False
+          assert c["source_exact_orientation_claimed"] is False
+          assert c["self_contained_velocity_xyzt_provider"] is False
+          assert c["complete_ns_residual_assessed"] is False
+          assert c["oscillation_before_after_ns_residual_compared"] is False
+          assert c["residual_reduction_claimed"] is False
+          assert c["paper_exact"] is False
+          assert c["pde_validated"] is False
+          assert p["forbidden_velocity_inputs_present"] == []
+          PY
