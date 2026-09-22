@@ -1,0 +1,121 @@
+name: kokuno-agent1-current-relative-swirl-absolute-target
+
+on:
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_current_relative_swirl_absolute_target.py"
+      - "tests/test_kokuno_current_relative_swirl_absolute_target.py"
+      - ".github/workflows/kokuno-agent1-current-relative-swirl-absolute-target.yml"
+  workflow_dispatch:
+
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+
+      - name: Assert exact A1 ancestry and three-file scope
+        shell: bash
+        run: |
+          git merge-base --is-ancestor 6ddf35b9dc726c720033ee44161e29efc77d755e HEAD
+          mapfile -t changed < <(git diff --name-only 6ddf35b9dc726c720033ee44161e29efc77d755e...HEAD)
+          printf '%s\n' "${changed[@]}"
+          test "${#changed[@]}" -eq 3
+          printf '%s\n' "${changed[@]}" | grep -qx 'src/openai_ns_reconstruction/kokuno_current_relative_swirl_absolute_target.py'
+          printf '%s\n' "${changed[@]}" | grep -qx 'tests/test_kokuno_current_relative_swirl_absolute_target.py'
+          printf '%s\n' "${changed[@]}" | grep -qx '.github/workflows/kokuno-agent1-current-relative-swirl-absolute-target.yml'
+
+      - name: Verify pinned corrected-source blob
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib, urllib.request
+          url = "https://raw.githubusercontent.com/KokunoYumeto/yang-mills-interacting-workbench/143f6773feb424ad9ed3a8d116653200f20346b7/navier-stokes/navier_stokes_workbench.tex"
+          data = urllib.request.urlopen(url, timeout=30).read()
+          digest = hashlib.sha1(b"blob %d\0" % len(data) + data).hexdigest()
+          expected = "205a99807302e21a51c5eaf223390c0dfc42bcd0"
+          if digest != expected:
+              raise SystemExit(f"corrected source blob drifted: {digest} != {expected}")
+          print("corrected 2026-09-09 source blob pinned")
+          PY
+
+      - name: Compile focused files
+        run: |
+          python -m py_compile src/openai_ns_reconstruction/kokuno_current_relative_swirl_absolute_target.py
+          python -m py_compile tests/test_kokuno_current_relative_swirl_absolute_target.py
+
+      - name: Run parent and new focused regressions
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_current_relative_swirl_angular_correction.py \
+            tests/test_kokuno_current_relative_swirl_absolute_target.py
+
+      - name: Emit deterministic scoped receipt
+        run: |
+          mkdir -p artifacts/kokuno_agent1_absolute_relative_swirl_target
+          python - <<'PY'
+          import json
+          import numpy as np
+          from openai_ns_reconstruction.kokuno_current_relative_swirl_absolute_target import KokunoCurrentRelativeSwirlAbsoluteTarget
+
+          obj = KokunoCurrentRelativeSwirlAbsoluteTarget()
+          eta = np.array([-0.2, 0.0, 0.2])
+          d = obj.decomposition_with_eta(eta)
+          solution, c1_eta, c2_eta = obj.solve_current_target(eta)
+          receipt = {
+              "schema": "kokuno-agent1-current-relative-swirl-absolute-target-receipt-v1",
+              "semantic_sha256": obj.semantic_sha256(),
+              "eta": eta.tolist(),
+              "absolute_r_I_flatten_end": d["absolute_r_I_flatten_end"].tolist(),
+              "total_target_current": d["total_target_current"].tolist(),
+              "imported_base_target": d["imported_base_target"].tolist(),
+              "current_PA17_correction_target": d["current_PA17_correction_target"].tolist(),
+              "c1": np.asarray(solution.c1).tolist(),
+              "c2": np.asarray(solution.c2).tolist(),
+              "angular_residual": np.asarray(solution.angular_residual).tolist(),
+              "pressure_residual": np.asarray(solution.pressure_residual).tolist(),
+              "truth_boundary": obj.truth_boundary,
+              "heldout_ns_residual_assessed": False,
+              "pde_validated": False,
+          }
+          with open("artifacts/kokuno_agent1_absolute_relative_swirl_target/receipt.json", "w") as f:
+              json.dump(receipt, f, indent=2, sort_keys=True)
+          print(json.dumps(receipt, indent=2, sort_keys=True))
+          PY
+
+      - name: Upload scoped receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-current-relative-swirl-absolute-target
+          path: artifacts/kokuno_agent1_absolute_relative_swirl_target/receipt.json
+
+      - name: Enforce truth boundary
+        run: |
+          python - <<'PY'
+          from openai_ns_reconstruction.kokuno_current_relative_swirl_absolute_target import KokunoCurrentRelativeSwirlAbsoluteTarget
+          truth = KokunoCurrentRelativeSwirlAbsoluteTarget().truth_boundary
+          required_false = [
+              "current_cartesian_relative_swirl_composed",
+              "heldout_ns_residual_assessed",
+              "same_protocol_comparable_to_st006",
+              "pde_validated",
+              "paper_exact",
+              "openai_field_identified",
+          ]
+          bad = [k for k in required_false if truth[k] is not False]
+          if bad:
+              raise SystemExit(f"truth boundary promoted unexpectedly: {bad}")
+          PY
