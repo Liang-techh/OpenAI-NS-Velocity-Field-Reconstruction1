@@ -1,0 +1,180 @@
+name: kokuno-agent5-holdprefix-multiharmonic-rf49-audit-routing
+
+on:
+  push:
+    branches:
+      - kokuno-agent5/holdprefix-multiharmonic-rf49-audit-routing-117
+  pull_request:
+    branches:
+      - kokuno-agent5/postpulse-multiharmonic-xi11-audit-routing-116
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-head-routing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout exact event head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install project test dependencies
+        run: python -m pip install -e '.[dev]'
+
+      - name: Authenticate exact parent and fresh sibling commits
+        shell: bash
+        run: |
+          set -euo pipefail
+          fetch_commit_and_check() {
+            local expected_head="$1" path="$2" expected_blob="$3"
+            git fetch --no-tags --depth=1 origin "${expected_head}"
+            actual_blob="$(git rev-parse "${expected_head}:${path}")"
+            test "${actual_blob}" = "${expected_blob}"
+          }
+
+          parent='69be0e10c53cb6e2a369be09246aabffc8969773'
+          git merge-base --is-ancestor "${parent}" HEAD
+          test "$(git rev-parse "${parent}:src/openai_ns_reconstruction/kokuno_a5_postpulse_multiharmonic_xi11_audit_routing.py")" = \
+            '2f61417d9088c8ef1ffb763345a1ab1146b6c756'
+
+          fetch_commit_and_check \
+            '5bafa4199ef127bf50bce30a58cc69ded99e1aa9' \
+            'src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_postpulse_eta_independent_hold_prefix.py' \
+            'b2fd8154fc5242b273879e060ad9a19d8d4c35b8'
+          fetch_commit_and_check \
+            'db7a9a4efb4faed2fa46d321fdf5a66b8686de1f' \
+            'src/openai_ns_reconstruction/kokuno_source_bounded_multiharmonic_diagnostics.py' \
+            '1a6d07535471d164ae53e22cac560091fe5b7f85'
+          fetch_commit_and_check \
+            'e0b48ccfa964db0caa9d657961d451a21e1d53bf' \
+            'src/openai_ns_reconstruction/kokuno_rf49_source_exponent_gain_firewall.py' \
+            'baa5cab26ebdeaf8ae6644f452f4f53f6a204881'
+          fetch_commit_and_check \
+            '70897e18df4b58b2e023a8bfc82dfdd552db62b9' \
+            'src/openai_ns_reconstruction/kokuno_a4_postpulse_eta_flattening_leading_divergence_independent_audit.py' \
+            '5b90b13eab506e6fe63fe360352d570a5c2ac3c1'
+          fetch_commit_and_check \
+            'caaf740af357fd6741da5118a1254c2b945caad0' \
+            'src/openai_ns_reconstruction/kokuno_a4_postpulse_hold_prefix_leading_divergence_independent_audit.py' \
+            '89da19c5d1fcd3335ba97b6e5e21f9c8bb472721'
+
+      - name: Authenticate corrected public source provenance
+        uses: actions/checkout@v4
+        with:
+          repository: KokunoYumeto/yang-mills-interacting-workbench
+          ref: 143f6773feb424ad9ed3a8d116653200f20346b7
+          path: corrected-source
+          fetch-depth: 1
+
+      - name: Verify corrected source bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C corrected-source rev-parse HEAD)" = '143f6773feb424ad9ed3a8d116653200f20346b7'
+          test "$(git -C corrected-source hash-object navier-stokes/navier_stokes_workbench.tex)" = '205a99807302e21a51c5eaf223390c0dfc42bcd0'
+
+      - name: Enforce minimal three-file Agent-5 delta
+        shell: bash
+        run: |
+          set -euo pipefail
+          parent='69be0e10c53cb6e2a369be09246aabffc8969773'
+          git merge-base --is-ancestor "${parent}" HEAD
+          test "$(git rev-list --count "${parent}"..HEAD)" -eq 6
+          mapfile -t changed < <(git diff --name-only "${parent}..HEAD" | sort)
+          expected=(
+            '.github/workflows/kokuno-agent5-holdprefix-multiharmonic-rf49-audit-routing.yml'
+            'src/openai_ns_reconstruction/kokuno_a5_holdprefix_multiharmonic_rf49_audit_routing.py'
+            'tests/test_kokuno_a5_holdprefix_multiharmonic_rf49_audit_routing.py'
+          )
+          mapfile -t expected_sorted < <(printf '%s\n' "${expected[@]}" | sort)
+          test "${#changed[@]}" -eq 3
+          test "$(printf '%s\n' "${changed[@]}")" = "$(printf '%s\n' "${expected_sorted[@]}")"
+          test -z "$(git diff --diff-filter=D --name-only "${parent}..HEAD")"
+
+      - name: Run focused parent and new Agent-5 regressions
+        run: |
+          python -m py_compile \
+            src/openai_ns_reconstruction/kokuno_a5_holdprefix_multiharmonic_rf49_audit_routing.py \
+            tests/test_kokuno_a5_holdprefix_multiharmonic_rf49_audit_routing.py
+          pytest -q \
+            tests/test_kokuno_a5_postpulse_multiharmonic_xi11_audit_routing.py \
+            tests/test_kokuno_a5_holdprefix_multiharmonic_rf49_audit_routing.py
+
+      - name: Materialize deterministic routing artifact
+        run: |
+          mkdir -p artifacts/kokuno/agent5
+          python -m openai_ns_reconstruction.kokuno_a5_holdprefix_multiharmonic_rf49_audit_routing \
+            --output artifacts/kokuno/agent5/holdprefix_multiharmonic_rf49_audit_routing.json
+
+      - name: Upload registration artifact before truth enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-holdprefix-multiharmonic-rf49-audit-routing-v117
+          path: artifacts/kokuno/agent5/holdprefix_multiharmonic_rf49_audit_routing.json
+          if-no-files-found: error
+
+      - name: Final fail-closed truth enforcement
+        run: |
+          python - <<'PY'
+          from openai_ns_reconstruction.kokuno_a5_holdprefix_multiharmonic_rf49_audit_routing import load_registration
+          reg = load_registration('artifacts/kokuno/agent5/holdprefix_multiharmonic_rf49_audit_routing.json')
+          truth = reg['truth_boundary']
+          gates = reg['frozen_gates']
+          a1 = reg['frontiers']['leading']
+          a2diag = reg['frontiers']['bounded_multiharmonic_diagnostic']
+          a3 = reg['frontiers']['rf49_gain_firewall']
+          a4_parent = reg['frontiers']['postpulse_parent_leading_validator']
+          a4 = reg['frontiers']['holdprefix_leading_validator']
+          composite = reg['frontiers']['latest_self_contained_project_composite']
+
+          assert a1['pr'] == 1148
+          assert a1['bounded_velocity_xyzt_materialized'] is True
+          assert a1['relative_swirl_bumps_materialized'] is False
+          assert a1['terminal_global_leading_velocity_materialized'] is False
+          assert a4_parent['pr'] == 1143
+          assert a4_parent['audited_agent1_pr'] == 1140
+          assert a4['pr'] == 1152
+          assert a4['audited_agent1_pr'] == 1148
+          assert a4['audited_agent1_head'] == a1['head']
+          assert a4['scoped_gate_passed'] is None
+          assert a4['scientifically_admitted'] is False
+          assert a4['complete_ns_momentum_residual_assessed'] is False
+          assert a2diag['pr'] == 1149
+          assert a2diag['source_provider_self_contained'] is False
+          assert a2diag['complete_ns_residual_assessed'] is False
+          assert a3['pr'] == 1150
+          assert a3['gain_role'] == 'asymptotic-class-exponent-gain-not-raw-residual-contraction'
+          assert a3['current_i4_source_chart_backend_materialized'] is False
+          assert composite['pr'] == 1117
+          assert truth['matching_latest_holdprefix_agent2_project_composite_materialized'] is False
+          assert truth['matching_latest_holdprefix_agent4_audit_present'] is True
+          assert truth['matching_latest_holdprefix_agent4_audit_scoped_gate_passed'] is None
+          assert truth['matching_latest_holdprefix_agent4_audit_scientifically_admitted'] is False
+          assert truth['complete_candidate_api_ready'] is False
+          assert truth['complete_identity_bound_ns_defect_materialized'] is False
+          assert truth['pde_validated'] is False
+          assert reg['core_state'] == {
+              'leading_ready': False,
+              'oscillatory_ready': True,
+              'correction_ready': False,
+              'velocity_export_ready': False,
+              'pde_validated': False,
+          }
+          assert gates['normalized_momentum_sampled_max'] == 1e-3
+          assert gates['normalized_momentum_volume_l2'] == 1e-3
+          assert gates['normalized_divergence_sampled_max'] == 1e-5
+          assert gates['normalized_divergence_volume_l2'] == 1e-5
+          assert gates['canonical_quadrature'] == [24, 48, 96]
+          assert gates['residual_defined_free_forcing_allowed'] is False
+          PY
