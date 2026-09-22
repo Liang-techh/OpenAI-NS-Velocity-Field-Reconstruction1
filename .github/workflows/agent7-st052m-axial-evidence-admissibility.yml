@@ -1,0 +1,131 @@
+name: agent7-st052m-axial-evidence-admissibility
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_axial_evidence_admissibility.py'
+      - 'experiments/root_st052/test_agent7_st052m_axial_evidence_admissibility.py'
+      - '.github/workflows/agent7-st052m-axial-evidence-admissibility.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  axial-evidence-admissibility:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out exact PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Verify exact Agent-7 parent and strict three-file delta
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE=cd7ef4531712bd369674aaf391e53759d97ec559
+          test "$(git rev-parse HEAD^3)" = "$BASE"
+          test "$(git rev-list --count "$BASE"..HEAD)" -eq 3
+          test -z "$(git diff --diff-filter=D --name-only "$BASE"..HEAD)"
+          actual="$(git diff --name-only "$BASE"..HEAD | sort)"
+          expected="$(printf '%s\n' \
+            '.github/workflows/agent7-st052m-axial-evidence-admissibility.yml' \
+            'experiments/root_st052/agent7_st052m_axial_evidence_admissibility.py' \
+            'experiments/root_st052/test_agent7_st052m_axial_evidence_admissibility.py' | sort)"
+          printf 'Changed paths:\n%s\n' "$actual"
+          test "$actual" = "$expected"
+
+      - name: Run focused admissibility regressions
+        run: >-
+          python -m unittest
+          experiments/root_st052/test_agent7_st052m_axial_evidence_admissibility.py -v
+
+      - name: Authenticate exact failed A9 run and artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh api "/repos/$REPO/actions/runs/35674391631" > /tmp/a9-run.json
+          test "$(jq -r .id /tmp/a9-run.json)" = 35674391631
+          test "$(jq -r .head_sha /tmp/a9-run.json)" = fe646b09b6f310068ca85f32b237891a71965f91
+          test "$(jq -r .status /tmp/a9-run.json)" = completed
+          test "$(jq -r .conclusion /tmp/a9-run.json)" = failure
+
+          gh api "/repos/$REPO/actions/artifacts/10673062099" > /tmp/a9-artifact.json
+          test "$(jq -r .name /tmp/a9-artifact.json)" = ST052-M-identity-bound-axial-vorticity-aspect
+          test "$(jq -r .workflow_run.id /tmp/a9-artifact.json)" = 35674391631
+          test "$(jq -r .workflow_run.head_sha /tmp/a9-artifact.json)" = fe646b09b6f310068ca85f32b237891a71965f91
+          test "$(jq -r .digest /tmp/a9-artifact.json)" = sha256:d360434a480a4bd735d71c4256304dcb9145db29e22dace5d6ed5b37d0b7de85
+
+      - name: Download failed-run measurement artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/a9-artifact
+          gh run download 35674391631 --repo "$REPO" \
+            -n ST052-M-identity-bound-axial-vorticity-aspect -D /tmp/a9-artifact
+          RECEIPT="$(find /tmp/a9-artifact -type f -name receipt.json -print -quit)"
+          test -n "$RECEIPT" && test -f "$RECEIPT"
+          echo "A9_RECEIPT=$RECEIPT" >> "$GITHUB_ENV"
+
+      - name: Classify evidence admissibility
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/agent7_st052m_axial_evidence_admissibility
+          python experiments/root_st052/agent7_st052m_axial_evidence_admissibility.py \
+            --run-meta /tmp/a9-run.json \
+            --axial-receipt "$A9_RECEIPT" \
+            --out artifacts/agent7_st052m_axial_evidence_admissibility/receipt.json
+
+      - name: Enforce no basis/control promotion from identity-drifted evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('artifacts/agent7_st052m_axial_evidence_admissibility/receipt.json')
+          r=json.loads(p.read_text())
+          assert r['task_id']=='CR003-ST052M-AXIAL-EVIDENCE-ADMISSIBILITY-131'
+          assert r['prereg_issue']==1105
+          assert r['identity_admissibility']['same_identity_gate_passed'] is False
+          d=r['decision']
+          assert d['status']=='blocked_identity_admissibility'
+          assert d['action']=='repair_semantic_identity_before_basis_decision'
+          assert d['measurement_observed'] is True
+          assert d['measurement_admitted_for_basis_routing'] is False
+          assert d['axial_proxy_no_deficit_conclusion_admitted'] is False
+          assert d['existing_control_selection_authorized'] is False
+          assert d['targeted_basis_preflight_authorized'] is False
+          assert d['candidate_mutation_authorized'] is False
+          assert d['recommended_existing_control'] is None
+          assert d['hash_replacement_alone_is_sufficient'] is False
+          assert r['truth']['candidate_velocity_changed'] is False
+          assert r['truth']['basis_dimension_changed'] is False
+          assert r['truth']['direct_visualization_fingerprint_improvement']==0.0
+          assert r['truth']['visual_correspondence_verified'] is False
+          assert r['truth']['pde_validated'] is False
+          print('descriptive_aspect=',r['descriptive_unadmitted_measurement']['full_aspect_ratio'])
+          print('routing_status=',d['status'])
+          print('next_action=',d['action'])
+          PY
+
+      - name: Upload admissibility receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: agent7-st052m-axial-evidence-admissibility
+          path: artifacts/agent7_st052m_axial_evidence_admissibility/receipt.json
+          if-no-files-found: error
+
+# Frozen after observing the exact A9 identity failure; no scientific threshold is retuned here.
