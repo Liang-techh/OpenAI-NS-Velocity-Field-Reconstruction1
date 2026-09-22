@@ -1,0 +1,226 @@
+name: agent7-st052-streamline-inward-control-sensitivity
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/st052_streamline_inward_control_sensitivity.py'
+      - 'tests/test_st052_streamline_inward_control_sensitivity.py'
+      - '.github/workflows/agent7-st052-streamline-inward-control-sensitivity.yml'
+  push:
+    branches: ['agent7/st052m-stable-streamline-control-sensitivity-145']
+    paths:
+      - 'src/openai_ns_reconstruction/st052_streamline_inward_control_sensitivity.py'
+      - 'tests/test_st052_streamline_inward_control_sensitivity.py'
+      - '.github/workflows/agent7-st052-streamline-inward-control-sensitivity.yml'
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  exact-source-streamline-control-sensitivity:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 45
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - name: Checkout exact Agent-7 head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+
+      - name: Assert exact event-head checkout
+        shell: bash
+        run: test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+
+      - name: Checkout accepted constrained ST052 runtime lineage
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: 6a293b3c870d70b8d8aece1b12d68685c9b8b010
+          path: constrained-st052
+          persist-credentials: false
+
+      - name: Checkout exact ST052 source runtime
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: b3b8bfdbe1077f9ec967d158602951997d81e17d
+          path: source-st052
+          persist-credentials: false
+
+      - name: Checkout exact five-control lineage from PR 1078
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: 849713ba95cde8002fc1002d8b6856ea3f1dc264
+          path: agent7-control-lineage
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install focused numerical/test runtime
+        run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+
+      - name: Run focused routing regressions
+        run: |
+          PYTHONPATH=src python -W error -m py_compile src/openai_ns_reconstruction/st052_streamline_inward_control_sensitivity.py
+          PYTHONPATH=src python -m pytest -q -W error tests/test_st052_streamline_inward_control_sensitivity.py
+
+      - name: Download exact successful source streamline receipt
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p upstream-streamline
+          gh run download 35739391629 \
+            --repo Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1 \
+            --name ST052-M-stable-identity-bound-streamline-trajectory \
+            --dir upstream-streamline
+          test -f upstream-streamline/receipt.json
+
+      - name: Materialize exact ST052 parent while retaining expected momentum rejection
+        shell: bash
+        run: |
+          mkdir -p outputs
+          set +e
+          (
+            cd source-st052
+            python experiments/root_st052/replay_st052.py \
+              --out ../outputs/ST052-M-parent \
+              --seed 9175291 \
+              --validate
+          )
+          code=$?
+          set -e
+          test "$code" = 1
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          report = json.loads(Path('outputs/ST052-M-parent/validation.json').read_text())
+          assert report['pde_validated'] is False
+          assert report['all_numeric_gates_pass'] is False
+          assert report['gates']['momentum_max'] is False
+          assert report['gates']['momentum_L2'] is False
+          print('Exact ST052 parent retained expected momentum rejection.')
+          PY
+
+      - name: Rebuild authenticated stable whole-child bundle
+        run: |
+          PYTHONPATH=constrained-st052/src python constrained-st052/scripts/verify_st052_linear_temporal_capsule.py \
+            --source-root source-st052 \
+            --parent-dir outputs/ST052-M-parent \
+            --out outputs \
+            --report outputs/ST052-M-linear-temporal-child-v1/capsule_receipt.json
+
+      - name: Export exact PR-1078 baseline probes and five tangent grids
+        env:
+          CONTROL_OUT: ${{ github.workspace }}/outputs/agent7-control-transfer
+        working-directory: agent7-control-lineage
+        run: |
+          mkdir -p "$CONTROL_OUT"
+          PYTHONPATH=experiments/root_st052:src python - <<'PY'
+          import json, os
+          from pathlib import Path
+          import numpy as np
+          import agent7_st052m_defect_coordinate_controllability as defect
+
+          channels = ('amplitude','radial_shape','axial_turnover','temporal_curvature','toroidal_swirl')
+          base, tangents, build_meta = defect.parent._build_field_and_tangents()
+          assert tuple(tangents) == channels
+
+          radii=(0.6,0.9,1.2); zs=(-0.3,0.3); naz=8
+          seeds=[]
+          for r in radii:
+              for z in zs:
+                  for i in range(naz):
+                      th=2*np.pi*i/naz
+                      seeds.append((r*np.cos(th),r*np.sin(th),z))
+          seeds=np.asarray(seeds,dtype=np.float64)
+          times=(0.25,0.50,0.75)
+          baseline=np.stack([np.asarray(base(seeds,t),dtype=np.float64) for t in times],axis=0)
+
+          axis=np.linspace(-2.0,2.0,33,dtype=np.float64)
+          xx,yy,zz=np.meshgrid(axis,axis,axis,indexing='ij')
+          pts=np.column_stack((xx.ravel(),yy.ravel(),zz.ravel()))
+          payload={'seed_points':seeds,'baseline_seed_velocity':baseline,'axis':axis}
+          for channel in channels:
+              values=np.asarray(tangents[channel](pts,0.50),dtype=np.float64)
+              assert values.shape==(33**3,3) and np.isfinite(values).all()
+              payload[f'tangent_{channel}']=values.reshape(33,33,33,3)
+
+          out=Path(os.environ['CONTROL_OUT'])
+          np.savez_compressed(out/'controls.npz',**payload)
+          meta={
+              'source_control_pr':1078,
+              'source_control_head':'849713ba95cde8002fc1002d8b6856ea3f1dc264',
+              'channels':list(channels),
+              'times':list(times),
+              'time_for_tangent_grids':0.5,
+              'grid_resolution':33,
+              'control_build_metadata':build_meta,
+          }
+          (out/'metadata.json').write_text(json.dumps(meta,indent=2,sort_keys=True)+'\n')
+          print(json.dumps(meta,indent=2,sort_keys=True))
+          PY
+
+      - name: Execute stable streamline control-sensitivity audit
+        run: |
+          mkdir -p outputs/ST052-M-streamline-inward-control-sensitivity
+          PYTHONPATH=src python -m openai_ns_reconstruction.st052_streamline_inward_control_sensitivity \
+            --constrained-root constrained-st052 \
+            --source-root source-st052 \
+            --bundle-dir outputs/ST052-M-linear-temporal-child-v1 \
+            --source-receipt upstream-streamline/receipt.json \
+            --control-bundle outputs/agent7-control-transfer/controls.npz \
+            --control-metadata outputs/agent7-control-transfer/metadata.json \
+            --report outputs/ST052-M-streamline-inward-control-sensitivity/receipt.json \
+            | tee outputs/ST052-M-streamline-inward-control-sensitivity/summary.txt
+
+      - name: Assert fail-closed truth and routing completeness
+        run: |
+          PYTHONPATH=src python - <<'PY'
+          import json, math
+          from pathlib import Path
+          from openai_ns_reconstruction import st052_streamline_inward_control_sensitivity as subject
+
+          r=json.loads(Path('outputs/ST052-M-streamline-inward-control-sensitivity/receipt.json').read_text())
+          subject.validate_receipt(r)
+          assert r['task_id']=='CR003-ST052M-STABLE-STREAMLINE-CONTROL-SENSITIVITY-145'
+          assert r['source_streamline_receipt']['measurement_sha256']=='e9324a890621efa2b2569d3caeb3e3e03356e1be0b10b15f8fbcca8436e7daef'
+          assert r['decision']['new_basis_added'] is False
+          assert r['decision']['new_basis_authorized_in_this_increment'] is False
+          assert r['decision']['candidate_mutation_authorized'] is False
+          assert r['decision']['actual_velocity_changed'] is False
+          assert r['decision']['direct_visualization_fingerprint_improvement']==0.0
+          assert r['truth_boundary']['pde_validated'] is False
+          assert r['truth_boundary']['visual_correspondence_verified'] is False
+          a=r['trajectory_control_sensitivity']
+          if r['baseline_transfer']['passes']:
+              assert isinstance(a,dict)
+              assert len(a['fine_signed_displacement_jacobian_3x5'])==3
+              assert all(len(row)==5 for row in a['fine_signed_displacement_jacobian_3x5'])
+              assert 0 <= a['upper_lower_rank'] <= 2
+              if a['upper_lower_condition'] is not None:
+                  assert math.isfinite(a['upper_lower_condition'])
+              assert set(a['channels'])==set(subject.CHANNELS)
+          else:
+              assert a is None
+          print('baseline_transfer=',r['baseline_transfer'])
+          print('audit=',a)
+          print('decision=',r['decision'])
+          PY
+
+      - name: Upload streamline control-sensitivity receipt
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ST052-M-streamline-inward-control-sensitivity
+          path: |
+            outputs/ST052-M-streamline-inward-control-sensitivity/
+            outputs/agent7-control-transfer/metadata.json
+          if-no-files-found: error
