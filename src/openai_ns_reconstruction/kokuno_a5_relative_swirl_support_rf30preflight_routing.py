@@ -1,4 +1,4 @@
-"""Kokuno Agent-5 fail-closed routing for the newest A1/A2/A3 seams.
+"""Kokuno Agent-5 fail-closed routing for the newest A1/A2/A3/A4 seams.
 
 Integration/provenance glue only: no Agent-1--4 mathematics is changed and no
 scoped evidence is transferred across candidate identities.
@@ -11,12 +11,14 @@ Fresh facts bound here:
 * A2 #1158 adds conservative identity-bound outer-support execution certificates
   to the bounded complete-curl multi-harmonic family. The source provider remains
   external; this is not a self-contained project field.
-* A3 #1161 now delivers the current-I4 fixed-Q coordinate/observable preflight.
-  It uses the physical azimuthal theta mean, and correctly refuses to relabel it
-  as the source RF30 normalized Haar mean on the missing auxiliary T^2. Hence it
+* A3 #1161 delivers the current-I4 fixed-Q coordinate/observable preflight. It
+  uses the physical azimuthal theta mean and correctly refuses to relabel it as
+  the source RF30 normalized Haar mean on the missing auxiliary T^2. Hence it
   does not authorize an RF30 repository candidate state or materialize RF30 defect.
-* A4 #1152 remains a leading-only divergence audit of exact A1 #1148. It does not
-  audit A1 #1159 and is not complete-NS evidence.
+* A4 #1160 independently audits exact A1 #1154 relative-swirl compensator
+  algebra, while A4 #1152 remains the leading-only divergence audit for A1 #1148.
+  Neither audit consumes the new A1 #1159 current correction, and neither is
+  complete-NS evidence.
 
 Frozen gates: normalized momentum max/L2 <=1e-3; divergence max/L2 <=1e-5;
 canonical quadrature [24,48,96]; residual-defined/free forcing forbidden.
@@ -120,6 +122,32 @@ AGENT3_CURRENT_I4_RF30_FIXEDQ_PREFLIGHT = {
     "actions_status_at_registration": "queued",
 }
 
+AGENT4_RELATIVE_SWIRL_COMPENSATOR_AUDIT = {
+    "task": "K4-VAL-120",
+    "pr": 1160,
+    "head": "47a241732b667b02f2294670d37f32650491f7e3",
+    "branch": "kokuno-agent4/relative-swirl-compensator-audit-120",
+    "source_path": "src/openai_ns_reconstruction/kokuno_a4_relative_swirl_compensator_independent_audit.py",
+    "source_blob": "c279371898a75cfcf7d2aa39861eba4cba432cc2",
+    "audited_agent1_pr": 1154,
+    "audited_agent1_head": "d0e855e37c8f5d6d58f1a85b1dcb874651d20838",
+    "stage": "relative-swirl-compensator-algebra-independent-audit",
+    "implementation_distinct": True,
+    "save_load_roundtrip": True,
+    "independent_quadrature": "composite-Simpson-2049-4097-8193",
+    "independent_branch_solver": "32-step-continuation-plus-Newton",
+    "present": True,
+    "registered": True,
+    "scoped_gate_passed": None,
+    "scientifically_admitted": False,
+    "audits_agent1_1159_current_correction": False,
+    "complete_ns_momentum_residual_assessed": False,
+    "pde_validated": False,
+    "dedicated_run": 35707182477,
+    "repository_tests_run": 35707182582,
+    "actions_status_at_registration": "queued",
+}
+
 AGENT3_DELIVERED_RF49 = copy.deepcopy(parent_a5.AGENT3_RF49_GAIN_FIREWALL)
 LATEST_CARTESIAN_LEADING = copy.deepcopy(parent_a5.AGENT1_HOLD_PREFIX)
 AGENT4_HOLD_PREFIX_AUDIT = copy.deepcopy(parent_a5.AGENT4_HOLD_PREFIX_LEADING_AUDIT)
@@ -144,6 +172,10 @@ def _truth_boundary() -> dict[str, Any]:
         "matching_latest_cartesian_leading_agent4_audit_present": True,
         "matching_latest_cartesian_leading_agent4_audit_scoped_gate_passed": None,
         "agent4_1152_audits_agent1_1159": False,
+        "agent4_relative_swirl_compensator_audit_present": True,
+        "agent4_relative_swirl_compensator_audit_scoped_gate_passed": None,
+        "agent4_1160_audits_agent1_1154_only": True,
+        "agent4_1160_audits_agent1_1159_current_correction": False,
         "support_certified_bounded_multiharmonic_materialized": True,
         "support_certified_multiharmonic_source_provider_self_contained": False,
         "support_certified_multiharmonic_complete_ns_residual_assessed": False,
@@ -188,6 +220,8 @@ def build_identity_firewall() -> dict[str, bool]:
         "agent1_1159_not_cartesian_relative_swirl_composition": True,
         "agent4_1152_evidence_bound_to_agent1_1148_only": True,
         "agent4_1152_not_evidence_for_agent1_1159": True,
+        "agent4_1160_evidence_bound_to_agent1_1154_algebra_only": True,
+        "agent4_1160_not_evidence_for_agent1_1159_current_correction": True,
         "agent2_1158_support_metadata_not_source_exact_support": True,
         "agent2_1158_provider_family_not_self_contained_project_candidate": True,
         "agent3_1161_physical_theta_mean_not_source_auxiliary_t2_haar_mean": True,
@@ -222,6 +256,7 @@ def build_registration() -> dict[str, Any]:
         "frontiers": {
             "latest_cartesian_leading": copy.deepcopy(LATEST_CARTESIAN_LEADING),
             "current_angular_target_correction": copy.deepcopy(AGENT1_CURRENT_ANGULAR_CORRECTION),
+            "relative_swirl_compensator_validator": copy.deepcopy(AGENT4_RELATIVE_SWIRL_COMPENSATOR_AUDIT),
             "support_certified_multiharmonic": copy.deepcopy(AGENT2_SUPPORT_CERTIFIED_MULTIHARMONIC),
             "latest_self_contained_project_composite": copy.deepcopy(LATEST_SELF_CONTAINED_PROJECT_COMPOSITE),
             "xi11_composite_validator": copy.deepcopy(AGENT4_XI11_COMPOSITE_AUDIT),
@@ -236,7 +271,7 @@ def build_registration() -> dict[str, Any]:
         "core_state": copy.deepcopy(CORE_STATE),
         "frozen_gates": copy.deepcopy(FROZEN_GATES),
         "shortest_closure": [
-            "materialize the missing imported/base absolute angular target before adding A1 #1159 current correction into a total relative-swirl target",
+            "materialize the missing imported/base absolute angular target before adding A1 #1159 current correction into a total relative-swirl target; A4 #1160 validates only #1154 algebra, not that missing base or #1159 correction",
             "compose the resulting two relative-swirl bumps into the exact A1 current Cartesian identity, then finish terminal/exterior/global leading",
             "make A2 consume that exact global identity into one self-contained leading-plus-oscillatory candidate; provider support certificates alone do not close this seam",
             "supply the missing source auxiliary-T2 provider and normalized Haar covariance so A3 #1161 can authorize the real RF30 state; physical theta covariance cannot substitute",
@@ -261,7 +296,8 @@ def validate_registration(registration: Mapping[str, Any]) -> None:
     a1corr = f["current_angular_target_correction"]
     a2 = f["support_certified_multiharmonic"]
     a3 = f["current_i4_rf30_fixedq_preflight"]
-    a4 = f["holdprefix_leading_validator"]
+    a4lead = f["holdprefix_leading_validator"]
+    a4alg = f["relative_swirl_compensator_validator"]
     truth = registration["truth_boundary"]
     firewall = registration["identity_firewall"]
 
@@ -281,16 +317,23 @@ def validate_registration(registration: Mapping[str, Any]) -> None:
         raise ValueError("physical theta mean laundered into source auxiliary-T2 Haar mean")
     if a3["rf30_repository_candidate_state_authorized"] or a3["current_i4_rf30_defect_materialized"]:
         raise ValueError("A3 preflight laundered into RF30 defect/correction evidence")
-    if a4["pr"] != 1152 or a4["audited_agent1_pr"] != 1148:
+    if a4lead["pr"] != 1152 or a4lead["audited_agent1_pr"] != 1148:
         raise ValueError("A4 hold-prefix audit identity drift")
-    if a4["scoped_gate_passed"] is not None or a4["scientifically_admitted"]:
-        raise ValueError("unresolved A4 audit promoted to PASS/admission")
+    if a4lead["scoped_gate_passed"] is not None or a4lead["scientifically_admitted"]:
+        raise ValueError("unresolved A4 hold-prefix audit promoted to PASS/admission")
+    if a4alg["pr"] != 1160 or a4alg["audited_agent1_pr"] != 1154:
+        raise ValueError("A4 compensator audit identity drift")
+    if a4alg["audits_agent1_1159_current_correction"]:
+        raise ValueError("A4 #1160 algebra evidence transferred to A1 #1159 correction")
+    if a4alg["scoped_gate_passed"] is not None or a4alg["scientifically_admitted"]:
+        raise ValueError("unresolved A4 compensator audit promoted to PASS/admission")
 
     required_false = (
         "imported_base_absolute_angular_target_materialized",
         "current_relative_swirl_total_target_materialized",
         "current_cartesian_relative_swirl_composed",
         "terminal_global_leading_velocity_materialized",
+        "agent4_1160_audits_agent1_1159_current_correction",
         "current_i4_source_auxiliary_t2_provider_materialized",
         "current_i4_source_auxiliary_t2_haar_mean_materialized",
         "current_i4_rf30_repository_candidate_state_authorized",
