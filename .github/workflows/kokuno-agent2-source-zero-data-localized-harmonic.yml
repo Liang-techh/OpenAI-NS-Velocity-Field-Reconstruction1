@@ -1,0 +1,225 @@
+name: kokuno-agent2-source-zero-data-localized-harmonic
+
+on:
+  push:
+    branches:
+      - kokuno-agent2/source-zero-data-localized-harmonic-098
+  pull_request:
+    branches:
+      - kokuno-agent2/current-i4-leading-oscillatory-097
+  workflow_dispatch:
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out exact A2 head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: a2
+          fetch-depth: 0
+
+      - name: Verify exact parent ancestry and strict three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd a2
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+          git merge-base --is-ancestor c40d8ddecd2971544a6e07dab093436b423cf326 HEAD
+          test "$(git rev-list --count c40d8ddecd2971544a6e07dab093436b423cf326..HEAD)" -eq 3
+          mapfile -t files < <(git diff --name-only c40d8ddecd2971544a6e07dab093436b423cf326..HEAD)
+          test "${#files[@]}" -eq 3
+          printf '%s\n' "${files[@]}" | sort > /tmp/actual-files
+          printf '%s\n' \
+            .github/workflows/kokuno-agent2-source-zero-data-localized-harmonic.yml \
+            src/openai_ns_reconstruction/kokuno_source_zero_data_localized_harmonic.py \
+            tests/test_constrained_kokuno_source_zero_data_localized_harmonic.py \
+            | sort > /tmp/expected-files
+          diff -u /tmp/expected-files /tmp/actual-files
+          test "$(git hash-object src/openai_ns_reconstruction/kokuno_source_zero_data_amplitude_sensitivity.py)" = \
+            "eba3c00703bd5763b12e6f48a8c34eb918dec82e"
+          test "$(git hash-object src/openai_ns_reconstruction/kokuno_source_phase_coefficient_jet.py)" = \
+            "d3c9684d47cec5dfabf713db01ffab45ea9461c4"
+          test "$(git hash-object src/openai_ns_reconstruction/kokuno_source_normalized_complete_curl_reference.py)" = \
+            "42809fc1b10937b4246c65121ac1dbfdc2986822"
+          test "$(git hash-object src/openai_ns_reconstruction/kokuno_source_support_localized_curl.py)" = \
+            "831d498c957493ea8fca197ed45738385935e655"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install A2 test dependencies
+        shell: bash
+        run: python -m pip install -e './a2[dev]'
+
+      - name: Compile and run focused source-localized harmonic tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            a2/src/openai_ns_reconstruction/kokuno_source_zero_data_localized_harmonic.py \
+            a2/tests/test_constrained_kokuno_source_zero_data_localized_harmonic.py
+          PYTHONPATH="$PWD/a2/src" python -m pytest -q \
+            a2/tests/test_constrained_kokuno_source_normalized_complete_curl_reference.py \
+            a2/tests/test_constrained_kokuno_source_phase_coefficient_jet.py \
+            a2/tests/test_constrained_kokuno_source_zero_data_amplitude_sensitivity.py \
+            a2/tests/test_constrained_kokuno_source_support_localized_curl.py \
+            a2/tests/test_constrained_kokuno_source_zero_data_localized_harmonic.py
+
+      - name: Check out exact corrected Kokuno public source
+        uses: actions/checkout@v4
+        with:
+          repository: KokunoYumeto/yang-mills-interacting-workbench
+          ref: 143f6773feb424ad9ed3a8d116653200f20346b7
+          path: source
+          fetch-depth: 1
+
+      - name: Authenticate corrected source bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C source rev-parse HEAD)" = "143f6773feb424ad9ed3a8d116653200f20346b7"
+          test "$(git -C source hash-object navier-stokes/navier_stokes_workbench.tex)" = \
+            "205a99807302e21a51c5eaf223390c0dfc42bcd0"
+          PYTHONPATH="$PWD/a2/src" python - <<'PY'
+          from openai_ns_reconstruction.kokuno_corrected_oscillation_source_ledger import (
+              default_kokuno_corrected_oscillation_source_ledger,
+          )
+          ledger = default_kokuno_corrected_oscillation_source_ledger()
+          assert ledger.harmonic_vector_potential == "A_m = C_m exp(i k m Phi)"
+          assert ledger.complete_amplitude == "a_m = t_m + r_m"
+          assert ledger.exact_curl_divergence_identity == "div_*(curl_* A) = 0"
+          assert "conjugate harmonic pairs" in ledger.real_wave_pairing
+          assert ledger.cutoff_definition == "hat t_m = psi t_m; hat pi_m = psi pi_m"
+          assert "sqrt(zeta) edge weight" in ledger.source_wave_support
+          PY
+
+      - name: Materialize source-localized harmonic receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p receipts
+          PYTHONPATH="$PWD/a2/src" python - <<'PY'
+          from __future__ import annotations
+          import json
+          from pathlib import Path
+          import numpy as np
+
+          from openai_ns_reconstruction.kokuno_source_phase_coefficient_jet import SourceBackgroundPhaseJet
+          from openai_ns_reconstruction.kokuno_source_zero_data_amplitude_sensitivity import SourceModeForcingDirectionalJet
+          from openai_ns_reconstruction.kokuno_source_zero_data_localized_harmonic import (
+              SourceLocalizationJet,
+              materialize_source_zero_data_localized_harmonic,
+              source_zero_data_localized_harmonic_contract,
+          )
+
+          epsilon = 0.25
+          R = 1.22
+          Z = 0.23
+          theta = 0.41
+          pulse_v = 0.30
+          background = SourceBackgroundPhaseJet(
+              f=0.0, g=0.0, f_r=0.0, g_r=0.0, f_z=0.0, g_z=0.0,
+              f_rr=0.0, g_rr=0.0, f_rz=0.0, g_rz=0.0, f_zz=0.0, g_zz=0.0,
+          )
+          forcing_value = np.asarray((0.0+0.0j, 0.7+0.2j, -0.35+0.1j))
+          zero = np.zeros(3, dtype=np.complex128)
+          def forcing(_v):
+              return SourceModeForcingDirectionalJet(forcing_value, zero, zero)
+
+          eta = np.exp(-0.7*(R-1.05)**2 - 0.4*Z**2)
+          dr_eta = -1.4*(R-1.05)*eta
+          dz_eta = epsilon*(-0.8*Z)*eta
+          localized = materialize_source_zero_data_localized_harmonic(
+              pulse_v, R, theta, Z, background, forcing,
+              SourceLocalizationJet(eta, dr_eta, dz_eta, 0.8),
+              epsilon=epsilon, p=0.0, p_z=0.0, x_0=1.0, k=2.0, m=1,
+          )
+          unlocalized = materialize_source_zero_data_localized_harmonic(
+              pulse_v, R, theta, Z, background, forcing,
+              SourceLocalizationJet(1.0, 0.0, 0.0, 1.0),
+              epsilon=epsilon, p=0.0, p_z=0.0, x_0=1.0, k=2.0, m=1,
+          )
+          zero_cutoff = materialize_source_zero_data_localized_harmonic(
+              pulse_v, R, theta, Z, background, forcing,
+              SourceLocalizationJet(eta, dr_eta, dz_eta, 0.0),
+              epsilon=epsilon, p=0.0, p_z=0.0, x_0=1.0, k=2.0, m=1,
+          )
+          naive = 0.8*eta*unlocalized.complex_velocity_cylindrical
+          contract = source_zero_data_localized_harmonic_contract()
+          receipt = {
+              "schema": "kokuno-agent2-source-zero-data-localized-harmonic-receipt-v1",
+              "head": "${{ github.event.pull_request.head.sha || github.sha }}",
+              "source_commit": contract["source_commit"],
+              "source_workbench_blob": contract["source_workbench_blob"],
+              "panel_ladder": list(localized.amplitude_sensitivity.panels),
+              "localization_weight": float(localized.localization_weight),
+              "complex_velocity_abs_max": float(np.max(np.abs(localized.complex_velocity_cylindrical))),
+              "real_pair_velocity_abs_max": float(np.max(np.abs(localized.real_pair_velocity_cylindrical))),
+              "support_gradient_vs_naive_abs_max": float(np.max(np.abs(localized.complex_velocity_cylindrical-naive))),
+              "zero_cutoff_velocity_abs_max": float(np.max(np.abs(zero_cutoff.complex_velocity_cylindrical))),
+              "t_medium_fine_abs_max": localized.amplitude_sensitivity.t_medium_fine_abs_max,
+              "dr_medium_fine_abs_max": localized.amplitude_sensitivity.dr_medium_fine_abs_max,
+              "dz_medium_fine_abs_max": localized.amplitude_sensitivity.dz_medium_fine_abs_max,
+              "potential_level_product_rule_localization_executable": contract["potential_level_product_rule_localization_executable"],
+              "cutoff_gradient_complete_curl_terms_retained": contract["cutoff_gradient_complete_curl_terms_retained"],
+              "caller_supplies_source_partition_jet": contract["caller_supplies_source_partition_jet"],
+              "caller_supplies_pulse_cutoff_value": contract["caller_supplies_pulse_cutoff_value"],
+              "source_physical_Q_scaling_applied": contract["source_physical_Q_scaling_applied"],
+              "project_domain_coordinate_map_applied": contract["project_domain_coordinate_map_applied"],
+              "self_contained_velocity_xyzt_provider": contract["self_contained_velocity_xyzt_provider"],
+              "complete_ns_residual_assessed": contract["complete_ns_residual_assessed"],
+              "residual_reduction_claimed": contract["residual_reduction_claimed"],
+              "paper_exact": contract["paper_exact"],
+              "pde_validated": contract["pde_validated"],
+          }
+          Path("receipts/kokuno_a2_source_zero_data_localized_harmonic.json").write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+          )
+          PY
+
+      - name: Upload receipt before gate enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a2-source-zero-data-localized-harmonic
+          path: receipts/kokuno_a2_source_zero_data_localized_harmonic.json
+          if-no-files-found: error
+
+      - name: Enforce localized-curl mechanics and truth boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          import math
+          from pathlib import Path
+          r = json.loads(Path("receipts/kokuno_a2_source_zero_data_localized_harmonic.json").read_text(encoding="utf-8"))
+          assert r["panel_ladder"] == [32, 64, 128]
+          for key in (
+              "localization_weight", "complex_velocity_abs_max", "real_pair_velocity_abs_max",
+              "support_gradient_vs_naive_abs_max", "t_medium_fine_abs_max",
+              "dr_medium_fine_abs_max", "dz_medium_fine_abs_max",
+          ):
+              assert math.isfinite(r[key])
+          assert 0.0 < r["localization_weight"] < 1.0
+          assert r["complex_velocity_abs_max"] > 1e-10
+          assert r["real_pair_velocity_abs_max"] > 1e-10
+          assert r["support_gradient_vs_naive_abs_max"] > 1e-8
+          assert r["zero_cutoff_velocity_abs_max"] == 0.0
+          assert r["potential_level_product_rule_localization_executable"] is True
+          assert r["cutoff_gradient_complete_curl_terms_retained"] is True
+          assert r["caller_supplies_source_partition_jet"] is True
+          assert r["caller_supplies_pulse_cutoff_value"] is True
+          assert r["source_physical_Q_scaling_applied"] is False
+          assert r["project_domain_coordinate_map_applied"] is False
+          assert r["self_contained_velocity_xyzt_provider"] is False
+          assert r["complete_ns_residual_assessed"] is False
+          assert r["residual_reduction_claimed"] is False
+          assert r["paper_exact"] is False
+          assert r["pde_validated"] is False
+          PY
