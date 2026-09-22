@@ -234,7 +234,9 @@ class KokunoPA16CurrentCartesianMainPulse:
 
     @property
     def lambda_value(self) -> float:
-        return float(self.outer_schedule.outer_schedule.lambda_outer)
+        # #1088 exposes the exact current RF40 power-law object as ``current``;
+        # bind the pulse coordinate to that already-frozen autonomous source choice.
+        return float(self.current.lambda_outer)
 
     @property
     def log_X_materializable_end(self) -> float:
@@ -312,7 +314,6 @@ class KokunoPA16CurrentCartesianMainPulse:
                 continue
             z = 0.5 * upper * (_GL_NODES + 1.0)
             exponent = ((0.5 - lam) * z - upper) / lam
-            # z<=upper and lam>0 imply exponent<=-(0.5+lam)z/lam<=0
             integrand = np.exp(exponent) * main_kernel_R0(z)
             out_flat[i] = 0.5 * upper * float(np.dot(_GL_WEIGHTS, integrand))
         return out
