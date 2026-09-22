@@ -1,0 +1,218 @@
+name: kokuno-agent3-current-i2-nonlinear-radial-force
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_current_i2_nonlinear_radial_force.py'
+      - 'tests/test_constrained_kokuno_current_i2_nonlinear_radial_force.py'
+      - '.github/workflows/kokuno-agent3-current-i2-nonlinear-radial-force.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  current-i2-nonlinear-radial-force:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact Agent-3 PR head
+        uses: actions/checkout@v4
+        with:
+          path: a3
+          fetch-depth: 0
+
+      - name: Verify one-increment Agent-3 stack
+        shell: bash
+        run: |
+          set -euo pipefail
+          parent=cb9ee25d0c466d42ec7ca30ee89cc10517d4b5c4
+          git -C a3 merge-base --is-ancestor "$parent" HEAD
+          test "$(git -C a3 rev-list --count "$parent"..HEAD)" -eq 3
+          git -C a3 diff --name-only "$parent"...HEAD | sort > /tmp/changed.txt
+          cat > /tmp/expected.txt <<'EOF'
+          .github/workflows/kokuno-agent3-current-i2-nonlinear-radial-force.yml
+          src/openai_ns_reconstruction/kokuno_current_i2_nonlinear_radial_force.py
+          tests/test_constrained_kokuno_current_i2_nonlinear_radial_force.py
+          EOF
+          diff -u /tmp/expected.txt /tmp/changed.txt
+
+      - name: Authenticate inherited Agent-3 stress source
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C a3 hash-object src/openai_ns_reconstruction/kokuno_current_i2_nonlinear_radial_stress.py)" = 876cdd2cbe4060b9d249cfc4960c26da0d577ca9
+          git -C a3 merge-base --is-ancestor cb9ee25d0c466d42ec7ca30ee89cc10517d4b5c4 HEAD
+
+      - name: Checkout exact Agent-2 current-I2 composite
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: 48d69e37e78e7f7f0e4e9936f28ff7974719288d
+          path: a2
+          fetch-depth: 1
+
+      - name: Checkout exact Agent-1 current-I2 leading
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: 9c2abbc69ba1ef8c8a9e8d1699a466a75d0293c3
+          path: a1
+          fetch-depth: 1
+
+      - name: Authenticate sibling source blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C a2 rev-parse HEAD)" = 48d69e37e78e7f7f0e4e9936f28ff7974719288d
+          test "$(git -C a1 rev-parse HEAD)" = 9c2abbc69ba1ef8c8a9e8d1699a466a75d0293c3
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_current_i2_leading_oscillatory_identity.py)" = be68248aca97173a15474324f63efff2c9ffce56
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_oscillatory_batch_differentials.py)" = 12df3bf6c949baeebf609b366f2973e7f515a157
+          test "$(git -C a1 hash-object src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_i2_heat_repair.py)" = bfeff163d304c4cf1fb84eb8ff1cdfcf430870b4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Agent-3 tree
+        run: python -m pip install -e 'a3[dev]'
+
+      - name: Run focused Agent-3 regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            a3/src/openai_ns_reconstruction/kokuno_current_i2_nonlinear_radial_force.py \
+            a3/tests/test_constrained_kokuno_current_i2_nonlinear_radial_force.py
+          python -m pytest -q -W error \
+            a3/tests/test_constrained_kokuno_current_i2_nonlinear_radial_stress.py \
+            a3/tests/test_constrained_kokuno_current_i2_nonlinear_radial_force.py
+
+      - name: Materialize exact current-I2 radial-force receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          python - <<'PY'
+          from __future__ import annotations
+          import importlib
+          import json
+          from pathlib import Path
+          import numpy as np
+          import openai_ns_reconstruction as pkg
+
+          root = Path.cwd()
+          for sibling in (
+              root / 'a1' / 'src' / 'openai_ns_reconstruction',
+              root / 'a2' / 'src' / 'openai_ns_reconstruction',
+          ):
+              text = str(sibling)
+              if text not in pkg.__path__:
+                  pkg.__path__.append(text)
+
+          a2_field_mod = importlib.import_module(
+              'openai_ns_reconstruction.kokuno_current_i2_leading_oscillatory_identity'
+          )
+          a2_diff_mod = importlib.import_module(
+              'openai_ns_reconstruction.kokuno_oscillatory_batch_differentials'
+          )
+          a3_mean_mod = importlib.import_module(
+              'openai_ns_reconstruction.kokuno_current_i2_nonlinear_mean_attribution'
+          )
+          a3_force_mod = importlib.import_module(
+              'openai_ns_reconstruction.kokuno_current_i2_nonlinear_radial_force'
+          )
+          geometry_mod = importlib.import_module(
+              'openai_ns_reconstruction.kokuno_strict_inner_transport_radial_stress'
+          )
+
+          field = a2_field_mod.default_field()
+          backend = a3_mean_mod.ExactCurrentI2NonlinearBackend.bind(
+              field,
+              a2_diff_mod.evaluate_oscillatory_batch_differentials,
+          )
+          radii = np.linspace(0.02, 0.44, 22)
+          geometry = geometry_mod.StrictInnerTransportRadialGeometry(
+              time=0.39,
+              axial_z=-0.08,
+              radii=tuple(float(v) for v in radii),
+              bump_center=0.30,
+              bump_halfwidth=0.10,
+          )
+          witness = a3_force_mod.materialize_current_i2_nonlinear_radial_force(
+              backend, geometry
+          )
+          receipt = witness.to_receipt()
+          receipt['a3_truth_boundary'] = a3_force_mod.truth_boundary()
+          receipt['candidate_residual_evidence'] = False
+          Path('artifacts/current_i2_nonlinear_radial_force_receipt.json').write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + '\n', encoding='utf-8'
+          )
+          PY
+
+      - name: Upload receipt before scientific gate enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent3-current-i2-nonlinear-radial-force-receipt
+          path: artifacts/
+          if-no-files-found: error
+
+      - name: Enforce scoped radial-force gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          import math
+          from pathlib import Path
+
+          receipt = json.loads(
+              Path('artifacts/current_i2_nonlinear_radial_force_receipt.json').read_text(
+                  encoding='utf-8'
+              )
+          )
+          assert receipt['backend_kind'] == (
+              'exact-current-a3-pr1081-i2-axial-stress-to-radial-force'
+          )
+          assert receipt['parent_agent3_1081_source_blob'] == (
+              '876cdd2cbe4060b9d249cfc4960c26da0d577ca9'
+          )
+          assert receipt['z_derivative_step_ladder'] == [0.02, 0.01, 0.005]
+          assert max(receipt['piece_closure_relative_max_levels']) <= 5e-10
+          assert receipt['aggregate_derivative_stability_preflight_passed'] is True
+          for piece in ('quadratic', 'mixed', 'aggregate'):
+              report = receipt[piece]
+              assert math.isfinite(float(report['finest_radial_force_rms']))
+              assert math.isfinite(float(report['finest_radial_force_max_abs']))
+          assert receipt['candidate_residual_evidence'] is False
+
+          boundary = receipt['a3_truth_boundary']
+          assert boundary['current_I2_axial_e1_stress_consumed'] is True
+          assert boundary['current_I2_radial_force_from_dz_sigma1_materialized'] is True
+          assert boundary['quadratic_mixed_aggregate_radial_force_attribution_materialized'] is True
+          assert boundary['independent_third_radial_moment_inverse_introduced'] is False
+          assert boundary['recorded_radial_mean_equated_to_radial_force'] is False
+          assert boundary['agent2_curl_or_jacobian_reimplemented_by_agent3'] is False
+          assert boundary['public_float64_I2_delta_verified'] is False
+          for key in (
+              'current_I3_overlay_consumed',
+              'current_I4_overlay_consumed',
+              'newer_current_I4_velocity_identity_consumed',
+              'outer_global_velocity_consumed',
+              'matched_global_pressure_materialized',
+              'restricted_forcing_materialized',
+              'complete_ns_defect',
+              'scoped_current_I2_radial_force_authorized_as_complete_ns_defect',
+              'scoped_current_I2_radial_force_authorized_as_correction_target',
+              'current_real_ns_correction_velocity_materialized',
+              'real_candidate_finite_correction_cycle_run',
+              'heldout_normalized_ns_residual_assessed',
+              'residual_reduction_claimed',
+              'same_protocol_comparable_to_st006',
+              'pde_validated',
+              'blowup_proof_claimed',
+          ):
+              assert boundary[key] is False, key
+          assert boundary['final_normalized_momentum_gate'] == 1e-3
+          assert boundary['final_normalized_divergence_gate'] == 1e-5
+          PY
