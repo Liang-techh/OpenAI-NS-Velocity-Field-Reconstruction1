@@ -1,0 +1,127 @@
+{
+  "active_integration_reference": "codex/cr001-constraints@6a293b3c870d70b8d8aece1b12d68685c9b8b010",
+  "audited_lineage": {
+    "a1_pr": 1204,
+    "exact_head": "18e75e6e2df43206147db34788c68ee6a7fa0f37",
+    "implementation_blob_sha1": "101d8da6b3deff2322e5c2efaea278fefa7d19e3",
+    "implementation_path": "src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_postswirl_release2.py",
+    "source_blob": "205a99807302e21a51c5eaf223390c0dfc42bcd0",
+    "source_commit": "143f6773feb424ad9ed3a8d116653200f20346b7"
+  },
+  "audited_stage_contract": {
+    "outer_global_leading_velocity_materialized": false,
+    "source_exterior_heat_replacement_materialized": false,
+    "source_terminal_multiplier_materialized": false,
+    "stage_callable_save_load_materialized": true,
+    "stage_coordinate_guard": "0<=log(X/X_release2_start)<=1",
+    "unified_global_cartesian_velocity_export_ready": false
+  },
+  "canonical_contract": {
+    "constraints_blob_sha1": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "constraints_path": "configs/constraints.json",
+    "derivative_steps": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "divergence_l2": 1e-05,
+    "divergence_max": 1e-05,
+    "evaluation_box": [
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ]
+    ],
+    "forcing_mode": "restricted_two_parameter_family",
+    "held_out_points": 4096,
+    "momentum_l2": 0.001,
+    "momentum_max": 0.001,
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "project_status_blob_sha1": "f8e05e9d25ab6cc83a7221fc431ab42319d38ff0",
+    "project_status_path": "project_status.json",
+    "quadrature_orders_per_axis": [
+      24,
+      48,
+      96
+    ],
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [
+      0.25,
+      0.75
+    ],
+    "validation_seed": 914027
+  },
+  "canonical_probe_witness": {
+    "evidence_role": "autonomous_representation_mechanics_only",
+    "expected_release2_stage_result": "reject_outside_release2_source_chart",
+    "inside_declared_support": true,
+    "inside_evaluation_box": true,
+    "inside_time_interval": true,
+    "point": [
+      0.5,
+      0.0,
+      0.0,
+      0.5
+    ]
+  },
+  "independent_states": {
+    "canonical_eq45_paper_exact": false,
+    "canonical_eq45_pde_validated": false,
+    "canonical_eq45_velocity_export_ready": true,
+    "canonical_eq45_visual_correspondence_verified": false,
+    "kokuno_openai_field_identified": false,
+    "kokuno_paper_exact": false,
+    "kokuno_pde_validated": false,
+    "kokuno_release2_stage_callable": true,
+    "kokuno_velocity_export_ready": false,
+    "kokuno_visual_correspondence_verified": false
+  },
+  "promotion_rule": "A future Kokuno project-domain export promotion requires one exact semantic identity whose public velocity evaluator covers the declared canonical box/time/support semantics (including any necessary stage dispatch, terminal/exterior/global continuation), survives save/load, and is audited independently. PDE and visual gates remain separate.",
+  "provenance_classes": {
+    "autonomous_design": [
+      "current-lineage numerical h realization",
+      "binary64 profile/Cartesian arithmetic before inherited Decimal output encoding",
+      "this CR002 project-domain evidence firewall"
+    ],
+    "pending_unknown": [
+      "terminal multiplier",
+      "exterior heat replacement and global leading completion",
+      "one Kokuno evaluator covering the canonical project box/time/support contract",
+      "matched global pressure and preregistered restricted forcing",
+      "held-out complete NS residual",
+      "visual correspondence",
+      "paper-exact or OpenAI-field identity"
+    ],
+    "public_source_fact": [
+      "release2 is a one-unit source-coordinate transition with 0<=log(X/X_release2_start)<=1",
+      "ell varies from -1 to -h using the public flat step and post-pulse U=0"
+    ],
+    "user_requirement": [
+      "deliver one explicit computable save/load 3D time-dependent velocity(x,y,z,t)->[u,v,w]",
+      "keep velocity delivery, visual correspondence, PDE validation and paper exactness independent"
+    ]
+  },
+  "schema": "cr002-kokuno-release2-project-domain-scope-v1",
+  "task_id": "CR002-KOKUNO-RELEASE2-PROJECT-DOMAIN-SCOPE-146",
+  "transfer_firewall": {
+    "project_domain_rejection_downgrades_canonical_eq45_export": false,
+    "stage_callable_implies_project_domain_coverage": false,
+    "stage_receipt_transferable_to_global_export": false,
+    "stage_receipt_transferable_to_openai_field_identity": false,
+    "stage_receipt_transferable_to_paper_exactness": false,
+    "stage_receipt_transferable_to_pde_validation": false,
+    "stage_receipt_transferable_to_visual_correspondence": false,
+    "stage_save_load_implies_project_domain_coverage": false
+  }
+}
