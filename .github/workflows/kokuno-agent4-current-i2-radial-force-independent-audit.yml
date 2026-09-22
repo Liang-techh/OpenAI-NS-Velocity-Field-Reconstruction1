@@ -1,0 +1,249 @@
+name: kokuno-agent4-current-i2-radial-force-independent-audit
+
+on:
+  push:
+    branches:
+      - kokuno-agent4/current-i2-radial-force-independent-audit-112
+  pull_request:
+    branches:
+      - agent3/current-i2-radial-force-20260921
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Check out exact A4 event head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: a4
+          fetch-depth: 0
+
+      - name: Verify exact parent and three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd a4
+          parent=5e8512392df683375fabd132f35577e1b94773ff
+          test "$(git rev-parse HEAD)" = "${{ github.event.pull_request.head.sha || github.sha }}"
+          git merge-base --is-ancestor "$parent" HEAD
+          test "$(git rev-list --count "$parent"..HEAD)" -eq 3
+          mapfile -t files < <(git diff --name-only "$parent"..HEAD)
+          test "${#files[@]}" -eq 3
+          printf '%s\n' "${files[@]}" | sort > /tmp/actual-files
+          printf '%s\n' \
+            .github/workflows/kokuno-agent4-current-i2-radial-force-independent-audit.yml \
+            src/openai_ns_reconstruction/kokuno_a4_current_i2_radial_force_independent_audit.py \
+            tests/test_constrained_kokuno_a4_current_i2_radial_force_independent_audit.py \
+            | sort > /tmp/expected-files
+          diff -u /tmp/expected-files /tmp/actual-files
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install exact A4 head
+        shell: bash
+        run: python -m pip install -e './a4[dev]'
+
+      - name: Authenticate exact A3 force and stress sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C a4 hash-object src/openai_ns_reconstruction/kokuno_current_i2_nonlinear_radial_force.py)" = \
+            "9259ecdf4aa3912fb521acdf7e62060272395e38"
+          test "$(git -C a4 hash-object src/openai_ns_reconstruction/kokuno_current_i2_nonlinear_radial_stress.py)" = \
+            "876cdd2cbe4060b9d249cfc4960c26da0d577ca9"
+
+      - name: Run focused A4 software regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            a4/src/openai_ns_reconstruction/kokuno_a4_current_i2_radial_force_independent_audit.py \
+            a4/tests/test_constrained_kokuno_a4_current_i2_radial_force_independent_audit.py
+          python -m pytest -q -W error \
+            a4/tests/test_constrained_kokuno_current_i2_nonlinear_radial_force.py \
+            a4/tests/test_constrained_kokuno_a4_current_i2_radial_force_independent_audit.py
+
+      - name: Check out exact A2 current-I2 composite
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: 48d69e37e78e7f7f0e4e9936f28ff7974719288d
+          path: a2
+          fetch-depth: 1
+
+      - name: Check out exact A1 current-I2 leading
+        uses: actions/checkout@v4
+        with:
+          repository: Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1
+          ref: 9c2abbc69ba1ef8c8a9e8d1699a466a75d0293c3
+          path: a1
+          fetch-depth: 1
+
+      - name: Authenticate sibling heads and source blobs
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C a2 rev-parse HEAD)" = "48d69e37e78e7f7f0e4e9936f28ff7974719288d"
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_current_i2_leading_oscillatory_identity.py)" = \
+            "be68248aca97173a15474324f63efff2c9ffce56"
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_oscillatory_batch_differentials.py)" = \
+            "12df3bf6c949baeebf609b366f2973e7f515a157"
+          test "$(git -C a1 rev-parse HEAD)" = "9c2abbc69ba1ef8c8a9e8d1699a466a75d0293c3"
+          test "$(git -C a1 hash-object src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_i2_heat_repair.py)" = \
+            "bfeff163d304c4cf1fb84eb8ff1cdfcf430870b4"
+
+      - name: Materialize public receipts and independent FD4 report
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p receipts
+          python - <<'PY'
+          from pathlib import Path
+          import importlib
+          import json
+          import traceback
+          import openai_ns_reconstruction
+
+          out = Path('receipts')
+          cases = []
+          try:
+              pkg = openai_ns_reconstruction
+              for sibling in (
+                  Path('a1/src/openai_ns_reconstruction').resolve(),
+                  Path('a2/src/openai_ns_reconstruction').resolve(),
+                  Path('a4/src/openai_ns_reconstruction').resolve(),
+              ):
+                  text = str(sibling)
+                  if text not in pkg.__path__:
+                      pkg.__path__.append(text)
+
+              a2_field_mod = importlib.import_module(
+                  'openai_ns_reconstruction.kokuno_current_i2_leading_oscillatory_identity'
+              )
+              a2_diff_mod = importlib.import_module(
+                  'openai_ns_reconstruction.kokuno_oscillatory_batch_differentials'
+              )
+              a3_mean_mod = importlib.import_module(
+                  'openai_ns_reconstruction.kokuno_current_i2_nonlinear_mean_attribution'
+              )
+              a3_force_mod = importlib.import_module(
+                  'openai_ns_reconstruction.kokuno_current_i2_nonlinear_radial_force'
+              )
+              a3_stress_mod = importlib.import_module(
+                  'openai_ns_reconstruction.kokuno_current_i2_nonlinear_radial_stress'
+              )
+              geometry_mod = importlib.import_module(
+                  'openai_ns_reconstruction.kokuno_strict_inner_transport_radial_stress'
+              )
+              a4_mod = importlib.import_module(
+                  'openai_ns_reconstruction.kokuno_a4_current_i2_radial_force_independent_audit'
+              )
+
+              field = a2_field_mod.default_field()
+              backend = a3_mean_mod.ExactCurrentI2NonlinearBackend.bind(
+                  field,
+                  a2_diff_mod.evaluate_oscillatory_batch_differentials,
+              )
+              radii = a4_mod.frozen_radial_grid()
+
+              def roundtrip(value):
+                  return json.loads(json.dumps(value, sort_keys=True))
+
+              for center in a4_mod.FROZEN_Z_CENTERS:
+                  geometry = geometry_mod.StrictInnerTransportRadialGeometry(
+                      time=a4_mod.FROZEN_TIME,
+                      axial_z=float(center),
+                      radii=tuple(float(v) for v in radii),
+                      bump_center=a4_mod.FROZEN_BUMP_CENTER,
+                      bump_halfwidth=a4_mod.FROZEN_BUMP_HALFWIDTH,
+                  )
+                  force_receipt = roundtrip(
+                      a3_force_mod.materialize_current_i2_nonlinear_radial_force(
+                          backend, geometry
+                      ).to_receipt()
+                  )
+                  stress_receipts = []
+                  for offset in a4_mod.required_z_offsets():
+                      shifted = geometry_mod.StrictInnerTransportRadialGeometry(
+                          time=a4_mod.FROZEN_TIME,
+                          axial_z=float(center + offset),
+                          radii=tuple(float(v) for v in radii),
+                          bump_center=a4_mod.FROZEN_BUMP_CENTER,
+                          bump_halfwidth=a4_mod.FROZEN_BUMP_HALFWIDTH,
+                      )
+                      stress_receipts.append(
+                          roundtrip(
+                              a3_stress_mod.materialize_current_i2_nonlinear_radial_stress(
+                                  backend, shifted
+                              ).to_receipt()
+                          )
+                      )
+                  cases.append(
+                      {
+                          'force_receipt': force_receipt,
+                          'stress_receipts': stress_receipts,
+                      }
+                  )
+
+              out.joinpath('public_receipts.json').write_text(
+                  json.dumps({'cases': cases}, indent=2, sort_keys=True) + '\n',
+                  encoding='utf-8',
+              )
+              report = a4_mod.audit_serialized_cases(roundtrip(cases))
+          except Exception as exc:
+              report = {
+                  'schema': 'kokuno-a4-current-i2-radial-force-independent-audit-v1',
+                  'task': 'K4-VAL-112',
+                  'parent_agent3_head': '5e8512392df683375fabd132f35577e1b94773ff',
+                  'audit_pass': False,
+                  'failures': ['materialization_or_audit_error'],
+                  'error': f'{type(exc).__name__}: {exc}',
+                  'traceback': traceback.format_exc(),
+                  'truth_boundary': {'pde_validated': False},
+              }
+              out.joinpath('public_receipts_partial.json').write_text(
+                  json.dumps({'cases': cases}, indent=2, sort_keys=True) + '\n',
+                  encoding='utf-8',
+              )
+          out.joinpath('independent_report.json').write_text(
+              json.dumps(report, indent=2, sort_keys=True) + '\n',
+              encoding='utf-8',
+          )
+          PY
+
+      - name: Upload real receipts before scientific enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a4-current-i2-radial-force-independent-audit
+          path: receipts/
+          if-no-files-found: error
+
+      - name: Enforce preregistered scoped scientific gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          from openai_ns_reconstruction.kokuno_a4_current_i2_radial_force_independent_audit import (
+              enforce_scientific_gates,
+          )
+
+          report = json.loads(Path('receipts/independent_report.json').read_text())
+          enforce_scientific_gates(report)
+          boundary = report['truth_boundary']
+          assert boundary['pde_validated'] is False
+          assert boundary['complete_ns_defect'] is False
+          assert boundary['cartesian_correction_velocity_materialized'] is False
+          assert boundary['final_normalized_momentum_gate'] == 1e-3
+          assert boundary['final_normalized_divergence_gate'] == 1e-5
+          PY
