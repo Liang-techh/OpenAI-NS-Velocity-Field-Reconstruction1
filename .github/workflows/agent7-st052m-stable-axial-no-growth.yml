@@ -1,0 +1,136 @@
+name: agent7-st052m-stable-axial-no-growth
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_stable_axial_no_growth.py'
+      - 'experiments/root_st052/test_agent7_st052m_stable_axial_no_growth.py'
+      - '.github/workflows/agent7-st052m-stable-axial-no-growth.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  stable-axial-no-growth:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out exact PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Verify exact Agent-7 parent and strict three-file delta
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE=16a52f0733b50c9a2d0ef05222479b410f71f694
+          test "$(git rev-parse HEAD^3)" = "$BASE"
+          test "$(git rev-list --count "$BASE"..HEAD)" -eq 3
+          test -z "$(git diff --diff-filter=D --name-only "$BASE"..HEAD)"
+          actual="$(git diff --name-only "$BASE"..HEAD | sort)"
+          expected="$(printf '%s\n' \
+            '.github/workflows/agent7-st052m-stable-axial-no-growth.yml' \
+            'experiments/root_st052/agent7_st052m_stable_axial_no_growth.py' \
+            'experiments/root_st052/test_agent7_st052m_stable_axial_no_growth.py' | sort)"
+          printf 'Changed paths:\n%s\n' "$actual"
+          test "$actual" = "$expected"
+
+      - name: Run focused fail-closed tests
+        run: >-
+          python -m unittest
+          experiments/root_st052/test_agent7_st052m_stable_axial_no_growth.py -v
+
+      - name: Authenticate merged A9 stable axial source
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh api "/repos/$REPO/actions/runs/35708397160" > /tmp/a9-run.json
+          test "$(jq -r .head_sha /tmp/a9-run.json)" = 8fec2517677adb37754df8c0164330d6f346db57
+          test "$(jq -r .status /tmp/a9-run.json)" = completed
+          test "$(jq -r .conclusion /tmp/a9-run.json)" = success
+          gh api "/repos/$REPO/pulls/1163" > /tmp/a9-pr.json
+          test "$(jq -r .head.sha /tmp/a9-pr.json)" = 8fec2517677adb37754df8c0164330d6f346db57
+          test "$(jq -r .merge_commit_sha /tmp/a9-pr.json)" = b0093e04039946923de10e421e001cd363213dcc
+          test "$(jq -r .merged_at /tmp/a9-pr.json)" != null
+
+      - name: Download exact stable-ID-bound axial receipt
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/a9
+          gh run download 35708397160 --repo "$REPO" \
+            -n ST052-M-stable-identity-bound-axial-vorticity-aspect -D /tmp/a9
+          AXIAL_RECEIPT="$(find /tmp/a9 -type f -name receipt.json -print -quit)"
+          test -n "$AXIAL_RECEIPT" && test -f "$AXIAL_RECEIPT"
+          echo "AXIAL_RECEIPT=$AXIAL_RECEIPT" >> "$GITHUB_ENV"
+
+      - name: Execute preregistered stable axial no-growth decision
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/agent7_st052m_stable_axial_no_growth
+          python experiments/root_st052/agent7_st052m_stable_axial_no_growth.py \
+            --axial-receipt "$AXIAL_RECEIPT" \
+            --out artifacts/agent7_st052m_stable_axial_no_growth/receipt.json
+
+      - name: Enforce result and truth boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('artifacts/agent7_st052m_stable_axial_no_growth/receipt.json')
+          r=json.loads(p.read_text())
+          assert r['task_id']=='CR003-ST052M-STABLE-AXIAL-NO-GROWTH-140'
+          assert r['prereg_issue']==1186
+          assert r['stack_base_pr']==1178
+          assert r['stack_base_head']=='16a52f0733b50c9a2d0ef05222479b410f71f694'
+          assert r['upstream']['pr']==1163
+          assert r['upstream']['run']==35708397160
+          assert r['upstream']['measurement_sha256']=='ee0439ef09569aec9d0288b41663e73c1dc4d3473adf2debc140f121560e2a3b'
+          m=r['measurement']
+          assert m['axially_elongated_proxy'] is True
+          assert m['full_aspect_ratio']==1.0813103938217585
+          assert m['full_axial_rms']==1.0237804347017856
+          assert m['full_radial_rms']==0.9467960731269397
+          d=r['decision']
+          assert d['status']=='no_candidate_side_axial_extent_deficit_established'
+          assert d['axial_specific_basis_growth_authorized'] is False
+          assert d['axial_turnover_adjustment_authorized'] is False
+          assert d['candidate_mutation_authorized'] is False
+          assert d['coefficient_selected'] is None
+          t=r['truth']
+          assert t['candidate_velocity_changed'] is False
+          assert t['basis_dimension_changed'] is False
+          assert t['pressure_or_force_changed'] is False
+          assert t['free_residual_force_used'] is False
+          assert t['held_out_pde_residual_evaluated'] is False
+          assert t['public_openai_numeric_target_used'] is False
+          assert t['visual_correspondence_verified'] is False
+          assert t['pde_validated'] is False
+          assert t['direct_visualization_fingerprint_improvement']==0.0
+          print('aspect=',m['full_aspect_ratio'])
+          print('decision=',d['status'])
+          print('action=',d['action'])
+          PY
+
+      - name: Upload stable axial no-growth receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: agent7-st052m-stable-axial-no-growth
+          path: artifacts/agent7_st052m_stable_axial_no_growth/receipt.json
+          if-no-files-found: error
+
+# Exact source identities and no-growth interpretation were frozen in Issue #1186.
