@@ -1,0 +1,204 @@
+name: kokuno-agent2-current-i4-exact-external-runtime-rebind
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_a2_exact_current_i4_runtime_rebind_contract.py'
+      - 'tests/test_constrained_kokuno_a2_exact_current_i4_runtime_rebind_contract.py'
+      - '.github/workflows/kokuno-agent2-current-i4-exact-external-runtime-rebind.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Check out exact A2 K2-OSC-116 head
+        uses: actions/checkout@v4
+        with:
+          path: a2
+          fetch-depth: 0
+
+      - name: Verify exact parent and strict three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          parent=f90bdb9c232fb16df881dfbcac28be1cd5c29780
+          git -C a2 merge-base --is-ancestor "$parent" HEAD
+          test "$(git -C a2 rev-list --count "$parent"..HEAD)" -eq 3
+          git -C a2 diff --name-only "$parent"...HEAD | sort > /tmp/changed.txt
+          cat > /tmp/expected.txt <<'EOF'
+          .github/workflows/kokuno-agent2-current-i4-exact-external-runtime-rebind.yml
+          src/openai_ns_reconstruction/kokuno_a2_exact_current_i4_runtime_rebind_contract.py
+          tests/test_constrained_kokuno_a2_exact_current_i4_runtime_rebind_contract.py
+          EOF
+          diff -u /tmp/expected.txt /tmp/changed.txt
+
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_current_i4_rf44_prestate_provider.py)" = \
+            0d8bb6471a4b7825b1b4b428d3b2c38d207729fd
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_current_i4_exact_backend_correction_firewall.py)" = \
+            0152a85f7fbaf9c32c24c9d5c7d0d11166e3b157
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_oscillatory_batch_differentials.py)" = \
+            12df3bf6c949baeebf609b366f2973e7f515a157
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_oscillatory_batch_axis_safety.py)" = \
+            599baa190ec742d0e532e5517078534124e68d6b
+          test "$(git -C a2 hash-object src/openai_ns_reconstruction/kokuno_public_oscillatory_vorticity_diagnostic.py)" = \
+            4ae525bad1e4b83c9dcabc1a97d3931562d099a5
+
+      - name: Check out exact A2 #1080 runtime snapshot
+        uses: actions/checkout@v4
+        with:
+          ref: c40d8ddecd2971544a6e07dab093436b423cf326
+          path: a2_1080
+          fetch-depth: 1
+
+      - name: Check out exact A1 #1079 leading snapshot
+        uses: actions/checkout@v4
+        with:
+          ref: b06742ca6e189499192ede3cce40f62cdc1e35ca
+          path: a1_1079
+          fetch-depth: 1
+
+      - name: Authenticate exact external runtime snapshots
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C a2_1080 rev-parse HEAD)" = c40d8ddecd2971544a6e07dab093436b423cf326
+          test "$(git -C a1_1079 rev-parse HEAD)" = b06742ca6e189499192ede3cce40f62cdc1e35ca
+
+          test "$(git -C a2_1080 hash-object src/openai_ns_reconstruction/kokuno_current_i4_leading_oscillatory_identity.py)" = \
+            2a0a5aa5966b02da856bdcf51940f3c186042802
+          test "$(git -C a2_1080 hash-object src/openai_ns_reconstruction/kokuno_current_partial_composite_identity_save_load.py)" = \
+            cb4aca9f35a3948b1f2b9e861105fca55b2d2d83
+          test "$(git -C a2_1080 hash-object src/openai_ns_reconstruction/kokuno_current_partial_leading_oscillatory_velocity.py)" = \
+            532435705bd5db341e82371180da8c04c3dd6c14
+          test "$(git -C a2_1080 hash-object src/openai_ns_reconstruction/kokuno_current_i2_leading_oscillatory_identity.py)" = \
+            be68248aca97173a15474324f63efff2c9ffce56
+          test "$(git -C a2_1080 hash-object src/openai_ns_reconstruction/kokuno_current_i1_leading_oscillatory_identity.py)" = \
+            3a8db3e12f57050fd6579b36b9e20ce0e6b95af7
+          test "$(git -C a2_1080 hash-object src/openai_ns_reconstruction/kokuno_source_zero_data_amplitude_sensitivity.py)" = \
+            eba3c00703bd5763b12e6f48a8c34eb918dec82e
+          test "$(git -C a1_1079 hash-object src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_i4_leading_preservation.py)" = \
+            6f04ce0a856b44430402576dad88438da90d1ebb
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install current A2 tree
+        run: python -m pip install -e 'a2[dev]'
+
+      - name: Compile and run focused fail-closed tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            a2/src/openai_ns_reconstruction/kokuno_a2_exact_current_i4_runtime_rebind_contract.py \
+            a2/tests/test_constrained_kokuno_a2_exact_current_i4_runtime_rebind_contract.py
+          python -m pytest -q -W error \
+            a2/tests/test_constrained_kokuno_a2_exact_current_i4_runtime_rebind_contract.py
+
+      - name: Execute real exact backend bind on pinned #1080/#1079 plus local #960
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          PYTHONPATH="$PWD/a2/src" python - <<'PY'
+          from pathlib import Path
+          import inspect
+          import json
+
+          import openai_ns_reconstruction
+
+          from openai_ns_reconstruction.kokuno_oscillatory_batch_differentials import (
+              evaluate_oscillatory_batch_differentials,
+          )
+          from openai_ns_reconstruction.kokuno_a2_exact_current_i4_runtime_rebind_contract import (
+              bind_exact_current_i4_runtime,
+              enforce_receipt,
+          )
+
+          current_root = Path("a2/src/openai_ns_reconstruction").resolve()
+          a2_1080_root = Path("a2_1080/src/openai_ns_reconstruction").resolve()
+          a1_1079_root = Path("a1_1079/src/openai_ns_reconstruction").resolve()
+
+          openai_ns_reconstruction.__path__.insert(0, str(a1_1079_root))
+          openai_ns_reconstruction.__path__.insert(0, str(a2_1080_root))
+
+          import openai_ns_reconstruction.kokuno_current_i4_leading_oscillatory_identity as composite_mod
+
+          field = composite_mod.default_field()
+          backend, receipt_obj = bind_exact_current_i4_runtime(
+              field,
+              evaluate_oscillatory_batch_differentials,
+          )
+          receipt = receipt_obj.to_dict()
+          enforce_receipt(receipt)
+
+          composite_source = Path(inspect.getsourcefile(type(field))).resolve()
+          leading_source = Path(inspect.getsourcefile(type(field.leading_backend))).resolve()
+          differential_source = Path(
+              inspect.getsourcefile(evaluate_oscillatory_batch_differentials)
+          ).resolve()
+          assert composite_source.is_relative_to(a2_1080_root)
+          assert leading_source.is_relative_to(a1_1079_root)
+          assert differential_source.is_relative_to(current_root)
+
+          assert backend.composite_source_blob == "2a0a5aa5966b02da856bdcf51940f3c186042802"
+          assert backend.differential_source_blob == "12df3bf6c949baeebf609b366f2973e7f515a157"
+          assert receipt["leading_source_blob"] == "6f04ce0a856b44430402576dad88438da90d1ebb"
+          assert receipt["exact_backend_rebind_executed"] is True
+          assert receipt["rf30_rf39_correction_executed_here"] is False
+          assert receipt["rf44_postupdate_state_materialized"] is False
+          assert receipt["cartesian_delta_u_materialized"] is False
+          assert receipt["heldout_ns_residual_assessed"] is False
+          assert receipt["pde_validated"] is False
+
+          Path("artifacts/kokuno_a2_exact_current_i4_runtime_rebind_receipt.json").write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          PY
+
+      - name: Upload raw rebind receipt before truth enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent2-current-i4-exact-external-runtime-rebind
+          path: artifacts/kokuno_a2_exact_current_i4_runtime_rebind_receipt.json
+          if-no-files-found: error
+
+      - name: Enforce no correction or PDE truth promotion
+        shell: bash
+        run: |
+          set -euo pipefail
+          PYTHONPATH="$PWD/a2/src" python - <<'PY'
+          import json
+          from pathlib import Path
+
+          from openai_ns_reconstruction.kokuno_a2_exact_current_i4_runtime_rebind_contract import (
+              enforce_receipt,
+          )
+
+          receipt = json.loads(
+              Path("artifacts/kokuno_a2_exact_current_i4_runtime_rebind_receipt.json").read_text(
+                  encoding="utf-8"
+              )
+          )
+          enforce_receipt(receipt)
+          assert receipt["exact_backend_rebind_executed"] is True
+          assert receipt["exact_external_a2_1080_runtime_authenticated"] is True
+          assert receipt["exact_external_a1_1079_runtime_authenticated"] is True
+          assert receipt["local_exact_a2_960_runtime_authenticated"] is True
+          assert receipt["rf30_rf39_correction_executed_here"] is False
+          assert receipt["rf44_postupdate_state_materialized"] is False
+          assert receipt["cartesian_delta_u_materialized"] is False
+          assert receipt["heldout_ns_residual_assessed"] is False
+          assert receipt["residual_reduction_claimed"] is False
+          assert receipt["paper_exact"] is False
+          assert receipt["pde_validated"] is False
+          PY
