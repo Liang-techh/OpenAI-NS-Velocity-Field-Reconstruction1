@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "scope_id": "cr002-kokuno-relative-swirl-split-delivery-scope-143",
+  "role": "representation_and_delivery_contract_only",
+  "active_integration_reference": {
+    "branch": "codex/cr001-constraints",
+    "head": "6a293b3c870d70b8d8aece1b12d68685c9b8b010"
+  },
+  "exact_dependency": {
+    "pr": 1171,
+    "head": "657818dd83e119e6091bd2490d3804c04c3ef723",
+    "source_path": "src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_relative_swirl_split.py",
+    "source_blob": "c6d7d93ee33e5551513bdc817b2f118e4c544298"
+  },
+  "canonical_cr001": {
+    "path": "configs/constraints.json",
+    "blob": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "free_residual_force_forbidden": true,
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "momentum_max": 0.001,
+    "momentum_L2": 0.001,
+    "divergence_max": 0.00001,
+    "divergence_L2": 0.00001
+  },
+  "canonical_eq45_delivery_reference": {
+    "project_status_path": "project_status.json",
+    "project_status_blob_on_exact_dependency": "f8e05e9d25ab6cc83a7221fc431ab42319d38ff0",
+    "velocity_export_ready": true,
+    "visualization_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  },
+  "provenance_classes": {
+    "user_requirement": [
+      "highest-priority delivery surface is one explicit callable and serializable velocity(x,y,z,t)->[u,v,w]",
+      "callable velocity delivery is independent from PDE validation, visual correspondence, paper exactness, and OpenAI-field identity",
+      "no residual-defined free force, amplitude-collapse shortcut, or post-hoc threshold relaxation is allowed"
+    ],
+    "public_source_fact": [
+      "the already-pinned corrected Kokuno construction uses the late relative edit E=E_unedited*(1+c1*beta1+c2*beta2)",
+      "the public construction does not by itself specify repository binary64 storage, summation, serialization, or export encoding"
+    ],
+    "autonomous_design": [
+      "exact A1 #1171 preserves the current sub-epsilon correction as separate binary64 base and delta profile/Cartesian channels",
+      "exact A1 #1171 deliberately avoids forming ordinary binary64 1+edit or base+delta when that operation erases the correction",
+      "the split representation, semantic hash, serialization contract, and this governance firewall are repository-autonomous mechanics"
+    ],
+    "pending_unknown": [
+      "a single public total-velocity representation that retains the nonzero relative-swirl delta",
+      "proof that the correction survives the exact public evaluate-save-load-export round trip of a future composed delivery identity",
+      "terminal/exterior/global Kokuno leading completion, matched pressure, restricted forcing, held-out complete NS residual, visual correspondence, PDE validation, paper exactness, and OpenAI-field identity"
+    ]
+  },
+  "materialization_state": {
+    "relative_swirl_profile_delta_channel_materialized": true,
+    "relative_swirl_cartesian_delta_channel_materialized": true,
+    "split_channel_semantic_identity_materialized": true,
+    "split_configuration_save_load_materialized": true,
+    "binary64_total_relative_swirl_sum_is_resolved": false,
+    "single_array_total_velocity_materialized": false,
+    "current_cartesian_relative_swirl_composed": false,
+    "kokuno_unified_global_cartesian_velocity_export_ready": false,
+    "visual_correspondence_verified": false,
+    "heldout_complete_ns_residual_assessed": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false
+  },
+  "evidence_transfer_rules": {
+    "split_channels_do_not_imply_single_array_total": true,
+    "split_configuration_save_load_does_not_imply_composed_velocity_roundtrip": true,
+    "nonzero_split_delta_does_not_imply_nonzero_binary64_total_minus_base": true,
+    "binary64_total_equals_base_does_not_imply_mathematical_delta_is_zero": true,
+    "single_array_api_name_cannot_discard_delta_and_inherit_split_identity": true,
+    "future_composition_requires_new_delivery_representation_identity": true,
+    "future_composition_requires_exact_evaluate_save_load_export_survival_evidence": true,
+    "future_composition_evidence_does_not_promote_visual_pde_paper_or_openai_truth": true
+  },
+  "future_promotion_requirements": [
+    "name and serialize the exact total-velocity representation used to retain the split correction",
+    "bind a new semantic/delivery identity to the exact #1171 base+delta parent identity",
+    "provide one single public velocity(x,y,z,t)->[u,v,w] surface rather than silently returning only the base channel",
+    "demonstrate on preregistered nonzero-delta probes that the chosen total representation retains the correction before and after save/load",
+    "demonstrate that the same correction survives any deterministic grid/export handoff claimed by that delivery identity",
+    "record negative evidence if the chosen representation collapses the delta; do not change precision, thresholds, forcing, or candidate coefficients merely to manufacture a visible difference",
+    "keep visual correspondence, PDE validation, paper exactness, and OpenAI-field identity behind independent gates"
+  ],
+  "autonomous_mechanics_witness": {
+    "role": "autonomous_mechanics_only",
+    "description": "a synthetic base 1.0 and nonzero delta 2^-60 remain separately representable while ordinary binary64 addition rounds base+delta back to base",
+    "not_source_evidence": true,
+    "not_openai_numerical_evidence": true,
+    "not_pde_evidence": true
+  },
+  "forbidden_promotions": [
+    "split base+delta channel existence -> single-array total velocity composed",
+    "split configuration save/load -> total velocity correction survives save/load",
+    "semantic hash changes -> publicly observable total velocity changes",
+    "binary64 base+delta equals base -> correction is mathematically zero",
+    "candidate-local split API -> Kokuno unified global velocity_export_ready",
+    "callable or serializable split field -> visual correspondence",
+    "row closure or representation success -> PDE validation",
+    "green CI -> paper exactness or OpenAI-field identity"
+  ]
+}
