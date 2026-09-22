@@ -1,0 +1,171 @@
+name: agent7-st052m-axial-proxy-control-router
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_axial_proxy_control_router.py'
+      - 'experiments/root_st052/test_agent7_st052m_axial_proxy_control_router.py'
+      - '.github/workflows/agent7-st052m-axial-proxy-control-router.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  axial-proxy-control-router:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out exact PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Verify exact Agent-7 parent and strict three-file delta
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE=88db8fde63a637f184d8cd7544e5997eef16a49d
+          test "$(git rev-parse HEAD^3)" = "$BASE"
+          test "$(git rev-list --count "$BASE"..HEAD)" -eq 3
+          test -z "$(git diff --diff-filter=D --name-only "$BASE"..HEAD)"
+          actual="$(git diff --name-only "$BASE"..HEAD | sort)"
+          expected="$(printf '%s\n' \
+            '.github/workflows/agent7-st052m-axial-proxy-control-router.yml' \
+            'experiments/root_st052/agent7_st052m_axial_proxy_control_router.py' \
+            'experiments/root_st052/test_agent7_st052m_axial_proxy_control_router.py' | sort)"
+          printf 'Changed paths:\n%s\n' "$actual"
+          test "$actual" = "$expected"
+
+      - name: Run focused fail-closed router tests
+        run: >-
+          python -m unittest
+          experiments/root_st052/test_agent7_st052m_axial_proxy_control_router.py -v
+
+      - name: Inspect exact upstream run status
+        id: upstream
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          A9_RUN=35674391631
+          A7_RUN=35666562373
+          gh api "/repos/$REPO/actions/runs/$A9_RUN" > /tmp/a9-run.json
+          gh api "/repos/$REPO/actions/runs/$A7_RUN" > /tmp/a7-run.json
+          test "$(jq -r .head_sha /tmp/a9-run.json)" = fe646b09b6f310068ca85f32b237891a71965f91
+          test "$(jq -r .head_sha /tmp/a7-run.json)" = 849713ba95cde8002fc1002d8b6856ea3f1dc264
+          a9_status="$(jq -r .status /tmp/a9-run.json)"
+          a9_conclusion="$(jq -r '.conclusion // "null"' /tmp/a9-run.json)"
+          a7_status="$(jq -r .status /tmp/a7-run.json)"
+          a7_conclusion="$(jq -r '.conclusion // "null"' /tmp/a7-run.json)"
+          echo "a9_status=$a9_status" >> "$GITHUB_OUTPUT"
+          echo "a9_conclusion=$a9_conclusion" >> "$GITHUB_OUTPUT"
+          echo "a7_status=$a7_status" >> "$GITHUB_OUTPUT"
+          echo "a7_conclusion=$a7_conclusion" >> "$GITHUB_OUTPUT"
+          if [ "$a9_status" = completed ] && [ "$a9_conclusion" = success ] \
+             && [ "$a7_status" = completed ] && [ "$a7_conclusion" = success ]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          fi
+          printf 'A9 %s/%s; A7 %s/%s\n' "$a9_status" "$a9_conclusion" "$a7_status" "$a7_conclusion"
+
+      - name: Emit fail-closed blocked receipt while upstream is unresolved
+        if: steps.upstream.outputs.ready != 'true'
+        env:
+          A9_STATUS: ${{ steps.upstream.outputs.a9_status }}
+          A9_CONCLUSION: ${{ steps.upstream.outputs.a9_conclusion }}
+          A7_STATUS: ${{ steps.upstream.outputs.a7_status }}
+          A7_CONCLUSION: ${{ steps.upstream.outputs.a7_conclusion }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/agent7_st052m_axial_proxy_control_router
+          PYTHONPATH=experiments/root_st052 python - <<'PY'
+          import json, os
+          from pathlib import Path
+          import agent7_st052m_axial_proxy_control_router as r
+          report=r.blocked_report({
+              'a9': {'run':r.A9_SOURCE_RUN,'status':os.environ['A9_STATUS'],'conclusion':os.environ['A9_CONCLUSION']},
+              'a7': {'run':r.A7_SOURCE_RUN,'status':os.environ['A7_STATUS'],'conclusion':os.environ['A7_CONCLUSION']},
+          })
+          out=Path('artifacts/agent7_st052m_axial_proxy_control_router/receipt.json')
+          out.write_text(json.dumps(report,indent=2,sort_keys=True)+'\n',encoding='utf-8')
+          assert report['decision']['status']=='blocked_upstream'
+          assert report['decision']['candidate_mutation_authorized_by_this_router'] is False
+          assert report['decision']['basis_growth_authorized_for_candidate_promotion'] is False
+          assert report['truth']['direct_visualization_fingerprint_improvement']==0.0
+          print(json.dumps(report['decision'],sort_keys=True))
+          PY
+
+      - name: Download exact successful upstream artifacts
+        if: steps.upstream.outputs.ready == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/a9 /tmp/a7
+          gh run download 35674391631 --repo "$REPO" \
+            -n ST052-M-identity-bound-axial-vorticity-aspect -D /tmp/a9
+          gh run download 35666562373 --repo "$REPO" \
+            -n agent7-st052m-defect-coordinate-controllability -D /tmp/a7
+          A9_RECEIPT="$(find /tmp/a9 -type f -name receipt.json -print -quit)"
+          A7_RECEIPT="$(find /tmp/a7 -type f -name report.json -print -quit)"
+          test -n "$A9_RECEIPT" && test -f "$A9_RECEIPT"
+          test -n "$A7_RECEIPT" && test -f "$A7_RECEIPT"
+          echo "A9_RECEIPT=$A9_RECEIPT" >> "$GITHUB_ENV"
+          echo "A7_RECEIPT=$A7_RECEIPT" >> "$GITHUB_ENV"
+
+      - name: Route axial proxy to minimum existing control
+        if: steps.upstream.outputs.ready == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/agent7_st052m_axial_proxy_control_router
+          PYTHONPATH=experiments/root_st052 python \
+            experiments/root_st052/agent7_st052m_axial_proxy_control_router.py \
+            --axial-receipt "$A9_RECEIPT" \
+            --controllability-receipt "$A7_RECEIPT" \
+            --out artifacts/agent7_st052m_axial_proxy_control_router/receipt.json
+
+      - name: Enforce router truth boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('artifacts/agent7_st052m_axial_proxy_control_router/receipt.json')
+          r=json.loads(p.read_text())
+          assert r['task_id']=='CR003-ST052M-AXIAL-PROXY-CONTROL-ROUTER-130'
+          assert r['prereg_issue']==1097
+          d=r['decision']
+          assert d['candidate_mutation_authorized_by_this_router'] is False
+          assert d['basis_growth_authorized_for_candidate_promotion'] is False
+          assert d['coefficient_magnitude_selected'] is None
+          assert r['truth']['candidate_velocity_changed'] is False
+          assert r['truth']['basis_dimension_changed'] is False
+          assert r['truth']['direct_visualization_fingerprint_improvement']==0.0
+          assert r['truth']['visual_correspondence_verified'] is False
+          assert r['truth']['pde_validated'] is False
+          print('router_status=',d['status'])
+          print('router_action=',d['action'])
+          print('recommended_control=',d.get('recommended_existing_control'))
+          print('recommended_direction=',d.get('recommended_control_direction_to_increase_axial_aspect'))
+          PY
+
+      - name: Upload axial-proxy routing receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: agent7-st052m-axial-proxy-control-router
+          path: artifacts/agent7_st052m_axial_proxy_control_router/receipt.json
+          if-no-files-found: error
+
+# Decision rules were frozen in Issue #1097 before implementation.
