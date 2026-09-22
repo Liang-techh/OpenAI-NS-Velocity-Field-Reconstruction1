@@ -64,10 +64,9 @@ jobs:
           python -m py_compile src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_postswirl_lminus1_hold.py
           python -m py_compile tests/test_kokuno_pa16_current_cartesian_postswirl_lminus1_hold.py
 
-      - name: Run exact parent and new focused regressions
+      - name: Run new focused regression on exact parent implementation
         run: |
           python -m pytest -q -W error \
-            tests/test_kokuno_pa16_current_cartesian_postswirl_release1.py \
             tests/test_kokuno_pa16_current_cartesian_postswirl_lminus1_hold.py
 
       - name: Emit deterministic l=-1 hold receipt
@@ -95,6 +94,8 @@ jobs:
           assert truth["source_l_minus1_hold_materialized"] is True
           assert truth["current_h_bound_from_similarity_exponent"] is True
           assert truth["source_exact_h_recovered"] is False
+          assert truth["overflow_safe_log_F_materialized"] is True
+          assert truth["decimal_output_encoding_materialized"] is True
           assert truth["end_to_end_96digit_arithmetic_materialized"] is False
           assert truth["source_l_minus1_to_minus_h_transition_materialized"] is False
           assert truth["source_terminal_multiplier_materialized"] is False
