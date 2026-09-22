@@ -1,0 +1,83 @@
+name: agent7-st052m-minimum-existing-control-subset
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_minimum_existing_control_subset.py'
+      - 'experiments/root_st052/test_agent7_st052m_minimum_existing_control_subset.py'
+      - '.github/workflows/agent7-st052m-minimum-existing-control-subset.yml'
+  workflow_dispatch:
+
+jobs:
+  minimum-existing-control-subset:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Authenticate bounded three-file delta
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE=216481c9c86b0982e3ab8c5b3d54a9b3641e8c01
+          git cat-file -e "${BASE}^{commit}"
+          mapfile -t changed < <(git diff --name-only "$BASE"...HEAD | sort)
+          printf '%s\n' "${changed[@]}"
+          expected=(
+            ".github/workflows/agent7-st052m-minimum-existing-control-subset.yml"
+            "experiments/root_st052/agent7_st052m_minimum_existing_control_subset.py"
+            "experiments/root_st052/test_agent7_st052m_minimum_existing_control_subset.py"
+          )
+          mapfile -t expected_sorted < <(printf '%s\n' "${expected[@]}" | sort)
+          test "${#changed[@]}" -eq 3
+          diff -u <(printf '%s\n' "${expected_sorted[@]}") <(printf '%s\n' "${changed[@]}")
+
+      - name: Install numerical test dependencies
+        run: python -m pip install --disable-pip-version-check numpy scipy
+
+      - name: Run focused subset-selection regressions
+        run: python experiments/root_st052/test_agent7_st052m_minimum_existing_control_subset.py
+
+      - name: Execute exact frozen 31-subset audit
+        run: |
+          mkdir -p outputs
+          python experiments/root_st052/agent7_st052m_minimum_existing_control_subset.py \
+            --out outputs/agent7_st052m_minimum_existing_control_subset.json
+
+      - name: Enforce truth boundary and protocol completeness
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('outputs/agent7_st052m_minimum_existing_control_subset.json')
+          r = json.loads(p.read_text())
+          assert r['task_id'] == 'CR003-ST052M-MINIMUM-EXISTING-CONTROL-SUBSET-134'
+          assert r['prereg_issue'] == 1130
+          a = r['minimum_existing_control_subset_audit']
+          assert a['all_nonempty_subsets_evaluated'] == 31
+          assert len(a['leave_one_out_four_channel_audit']) == 5
+          assert r['candidate_velocity_changed'] is False
+          assert r['basis_dimension_changed'] is False
+          assert r['new_spatial_basis_added'] is False
+          assert r['new_temporal_basis_added'] is False
+          assert r['coefficient_selected'] is False
+          assert r['held_out_pde_residual_evaluated'] is False
+          assert r['public_image_numeric_target_used'] is False
+          assert r['direct_visualization_fingerprint_improvement'] == 0.0
+          assert r['pde_validated'] is False
+          assert r['paper_exact'] is False
+          assert r['openai_field_identified'] is False
+          assert r['decision']['new_basis_dimension_justified_by_this_audit'] is False
+          assert r['decision']['candidate_mutation_authorized_by_this_audit'] is False
+          PY
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: agent7-st052m-minimum-existing-control-subset
+          path: outputs/agent7_st052m_minimum_existing_control_subset.json
