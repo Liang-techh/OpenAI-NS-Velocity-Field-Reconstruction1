@@ -24,7 +24,7 @@ jobs:
           set -euo pipefail
           base=a035784fcba6d373f5dffc062872b632c6a26309
           git merge-base --is-ancestor "$base" HEAD
-          test "$(git rev-list --count "$base"..HEAD)" -eq 4
+          test "$(git rev-list --count "$base"..HEAD)" -eq 7
           mapfile -t files < <(git diff --name-only "$base"..HEAD | sort)
           printf '%s\n' "${files[@]}"
           test "${#files[@]}" -eq 3
@@ -44,12 +44,12 @@ jobs:
           git fetch --no-tags origin \
             657818dd83e119e6091bd2490d3804c04c3ef723 \
             59d3e6d64fcdfeaf145cbee67e68b8a25e89489c \
-            cafab2098f00c3dc2ed5668e1b12bdb38a1f31e8 \
+            9b0cecdf7eb9195bd468c3ddcd026c9d28d8e8d7 \
             47a241732b667b02f2294670d37f32650491f7e3
           test "$(git show 657818dd83e119e6091bd2490d3804c04c3ef723:src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_relative_swirl_split.py | git hash-object --stdin)" = c6d7d93ee33e5551513bdc817b2f118e4c544298
           test "$(git show 59d3e6d64fcdfeaf145cbee67e68b8a25e89489c:src/openai_ns_reconstruction/kokuno_source_azimuthal_frame_oriented_multiharmonic_velocity.py | git hash-object --stdin)" = ca8acae2c3a53b79528cb55f45502443f6ffb2b6
-          test "$(git show cafab2098f00c3dc2ed5668e1b12bdb38a1f31e8:src/openai_ns_reconstruction/kokuno_current_i4_rf30_fixedq_preflight.py | git hash-object --stdin)" = b2fac4318a40342d6c08170bf7093c31685c53ab
-          test "$(git show 47a241732b667b02f2294670d37f32650491f7e3:src/openai_ns_reconstruction/kokuno_agent4_relative_swirl_compensator_independent_audit.py | git hash-object --stdin)" = c279371898a75cfcf7d2aa39861eba4cba432cc2
+          test "$(git show 9b0cecdf7eb9195bd468c3ddcd026c9d28d8e8d7:src/openai_ns_reconstruction/kokuno_rf30_auxiliary_t2_haar_bridge.py | git hash-object --stdin)" = 5b20d4945f3aeb177e327e8d6b5709a6726c885a
+          test "$(git show 47a241732b667b02f2294670d37f32650491f7e3:src/openai_ns_reconstruction/kokuno_a4_relative_swirl_compensator_independent_audit.py | git hash-object --stdin)" = c279371898a75cfcf7d2aa39861eba4cba432cc2
 
       - uses: actions/setup-python@v5
         with:
@@ -81,11 +81,15 @@ jobs:
           r = json.loads(p.read_text())
           assert r['frontiers']['relative_swirl_split_delta']['pr'] == 1171
           assert r['frontiers']['azimuthal_frame_oriented_multiharmonic']['pr'] == 1170
+          assert r['frontiers']['auxiliary_t2_haar_rf30_bridge']['pr'] == 1172
           assert r['truth_boundary']['relative_swirl_cartesian_delta_channel_materialized'] is True
           assert r['truth_boundary']['binary64_total_relative_swirl_sum_is_resolved'] is False
           assert r['truth_boundary']['current_cartesian_relative_swirl_composed'] is False
           assert r['truth_boundary']['source_exact_orientation_recovered'] is False
           assert r['truth_boundary']['oriented_self_contained_velocity_xyzt_provider'] is False
+          assert r['truth_boundary']['current_i4_source_auxiliary_t2_haar_operator_executable'] is True
+          assert r['truth_boundary']['current_i4_source_auxiliary_t2_provider_blob_pinned'] is False
+          assert r['truth_boundary']['current_i4_rf30_repository_candidate_state_authorized'] is False
           assert r['truth_boundary']['current_i4_rf30_defect_materialized'] is False
           assert r['truth_boundary']['pde_validated'] is False
           PY
