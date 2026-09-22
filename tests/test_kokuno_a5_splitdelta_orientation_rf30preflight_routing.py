@@ -8,6 +8,7 @@ import pytest
 from openai_ns_reconstruction.kokuno_a5_splitdelta_orientation_rf30preflight_routing import (
     AGENT1_RELATIVE_SWIRL_SPLIT,
     AGENT2_AZIMUTHAL_FRAME_ORIENTATION,
+    AGENT3_AUXILIARY_T2_HAAR_BRIDGE,
     FROZEN_GATES,
     TASK,
     build_registration,
@@ -23,7 +24,7 @@ def _rehash(reg):
     return reg
 
 
-def test_registration_harvests_split_delta_and_orientation_without_promotion():
+def test_registration_harvests_split_delta_orientation_and_haar_bridge_without_promotion():
     reg = build_registration()
     frontiers = reg["frontiers"]
     truth = reg["truth_boundary"]
@@ -51,26 +52,33 @@ def test_registration_harvests_split_delta_and_orientation_without_promotion():
     assert a2["self_contained_velocity_xyzt_provider"] is False
     assert a2["complete_ns_residual_assessed"] is False
 
+    a3 = frontiers["auxiliary_t2_haar_rf30_bridge"]
+    assert a3 == AGENT3_AUXILIARY_T2_HAAR_BRIDGE
+    assert a3["pr"] == 1172
+    assert a3["normalized_source_auxiliary_t2_haar_operator_executable"] is True
+    assert a3["haar_measure_total_mass_one"] is True
+    assert a3["covariance_formed_in_bridge_from_raw_wave_samples"] is True
+    assert a3["preaveraged_covariance_input_exposed"] is False
+    assert a3["repository_provider_blob_pinned"] is False
+    assert a3["rf30_repository_candidate_state_authorized"] is False
+    assert a3["rf30_defect_materialized"] is False
+
     assert frontiers["latest_self_contained_project_composite"]["pr"] == 1117
     assert truth["relative_swirl_cartesian_delta_channel_materialized"] is True
     assert truth["current_cartesian_relative_swirl_composed"] is False
+    assert truth["current_i4_source_auxiliary_t2_haar_operator_executable"] is True
+    assert truth["current_i4_source_auxiliary_t2_provider_blob_pinned"] is False
+    assert truth["current_i4_rf30_repository_candidate_state_authorized"] is False
     assert truth["agent4_matching_agent1_1171_split_audit_present"] is False
     assert truth["agent4_matching_agent2_1170_orientation_audit_present"] is False
+    assert truth["agent4_matching_agent3_1172_bridge_audit_present"] is False
     assert truth["pde_validated"] is False
 
 
-def test_a3_a4_remain_scoped_and_identity_bound():
+def test_a4_remains_scoped_and_all_new_identities_are_firewalled():
     reg = build_registration()
     frontiers = reg["frontiers"]
     firewall = reg["identity_firewall"]
-
-    a3 = frontiers["current_i4_rf30_fixedq_preflight"]
-    assert a3["pr"] == 1161
-    assert a3["normalized_physical_azimuthal_mean_used"] is True
-    assert a3["source_auxiliary_t2_provider_available"] is False
-    assert a3["normalized_source_auxiliary_t2_haar_mean_used"] is False
-    assert a3["rf30_repository_candidate_state_authorized"] is False
-    assert a3["current_i4_rf30_defect_materialized"] is False
 
     a4 = frontiers["relative_swirl_compensator_validator"]
     assert a4["pr"] == 1160
@@ -82,7 +90,9 @@ def test_a3_a4_remain_scoped_and_identity_bound():
     assert firewall["agent4_1160_not_evidence_for_agent1_1171_split_representation"] is True
     assert firewall["agent2_1170_orientation_is_repository_autonomous_not_source_exact"] is True
     assert firewall["agent2_1170_provider_family_not_self_contained_project_candidate"] is True
-    assert firewall["agent3_1161_physical_theta_mean_not_source_auxiliary_t2_haar_mean"] is True
+    assert firewall["agent3_1172_haar_operator_not_repository_candidate_without_pinned_provider"] is True
+    assert firewall["agent3_1172_raw_wave_bridge_not_rf30_defect_or_correction"] is True
+    assert firewall["agent4_1160_not_evidence_for_agent3_1172_bridge"] is True
     assert firewall["cross_identity_evidence_transfer_allowed"] is False
 
 
@@ -138,17 +148,24 @@ def test_rejects_autonomous_orientation_laundered_into_source_exact_or_self_cont
         validate_registration(_rehash(reg))
 
 
-def test_rejects_a4_transfer_or_rf30_theta_substitution():
+def test_rejects_unpinned_haar_bridge_promoted_to_rf30_candidate_or_defect():
     reg = build_registration()
-    reg["frontiers"]["relative_swirl_compensator_validator"]["audited_agent1_pr"] = 1171
+    a3 = reg["frontiers"]["auxiliary_t2_haar_rf30_bridge"]
+    a3["repository_provider_blob_pinned"] = True
+    a3["rf30_repository_candidate_state_authorized"] = True
     with pytest.raises(ValueError):
         validate_registration(_rehash(reg))
 
     reg = build_registration()
-    pre = reg["frontiers"]["current_i4_rf30_fixedq_preflight"]
-    pre["source_auxiliary_t2_provider_available"] = True
-    pre["normalized_source_auxiliary_t2_haar_mean_used"] = True
-    pre["rf30_repository_candidate_state_authorized"] = True
+    a3 = reg["frontiers"]["auxiliary_t2_haar_rf30_bridge"]
+    a3["rf30_defect_materialized"] = True
+    with pytest.raises(ValueError):
+        validate_registration(_rehash(reg))
+
+
+def test_rejects_a4_cross_identity_transfer():
+    reg = build_registration()
+    reg["frontiers"]["relative_swirl_compensator_validator"]["audited_agent1_pr"] = 1171
     with pytest.raises(ValueError):
         validate_registration(_rehash(reg))
 
