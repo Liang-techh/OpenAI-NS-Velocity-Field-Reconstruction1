@@ -9,7 +9,7 @@ fixed.  This module adds a *new* identity schema that separates those roles:
 * semantic candidate identity: parent replay semantics + temporal-transform
   semantics + exact source-runtime semantics;
 * semantic callable identity: semantic candidate identity + normalized accepted
-  runtime-dependency semantics;
+  runtime-dependency semantics + the exact constrained callable implementation;
 * materialization evidence: legacy whole-child/file/contract checksums, still
   authenticated and retained, but not folded into either semantic digest.
 
@@ -24,6 +24,7 @@ import importlib
 import json
 from pathlib import Path
 import re
+import subprocess
 from typing import Any
 
 from . import st052_identity_bound_morphology_execution as bridge
@@ -42,6 +43,10 @@ DEPENDENCY_DECISION = (
 )
 SOURCE_RECIPE_PATH = "experiments/root_st052/recipe.json"
 SOURCE_RECIPE_GIT_BLOB_SHA1 = "e30c769052379f72afeee46ca264482884cc5ac7"
+CONSTRAINED_RUNTIME_IMPLEMENTATION_REPOSITORY = (
+    "Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1"
+)
+CONSTRAINED_RUNTIME_IMPLEMENTATION_COMMIT = bridge.CONSTRAINED_RUNTIME_ACCEPTANCE_MERGE
 _SHA256 = re.compile(r"^[0-9a-f]{64}$")
 _SHA1 = re.compile(r"^[0-9a-f]{40}$")
 
@@ -53,6 +58,7 @@ TRUTH_BOUNDARY = {
     "scientific_threshold_changed": False,
     "legacy_materialization_identity_relabelled_stable": False,
     "materialization_file_hashes_identity_bound": False,
+    "constrained_callable_implementation_identity_bound": True,
     "stable_semantic_identity_ready": True,
     "velocity_export_ready": False,
     "visualization_ready": False,
@@ -104,6 +110,31 @@ def _require_sha1(value: Any, label: str) -> str:
 def _require_false(mapping: dict[str, Any], key: str, label: str) -> None:
     if mapping.get(key) is not False:
         raise ValueError(f"{label}.{key} must be exactly false")
+
+
+def _authenticate_constrained_runtime_checkout(constrained_root: Path) -> str:
+    """Bind callable execution to the exact clean constrained implementation commit."""
+    try:
+        head = subprocess.run(
+            ["git", "-C", str(constrained_root), "rev-parse", "HEAD"],
+            check=True,
+            capture_output=True,
+            text=True,
+        ).stdout.strip()
+        status = subprocess.run(
+            ["git", "-C", str(constrained_root), "status", "--porcelain"],
+            check=True,
+            capture_output=True,
+            text=True,
+        ).stdout.strip()
+    except (OSError, subprocess.CalledProcessError) as exc:
+        raise ValueError("unable to authenticate constrained callable runtime checkout") from exc
+    _require_sha1(head, "constrained callable runtime HEAD")
+    if head != CONSTRAINED_RUNTIME_IMPLEMENTATION_COMMIT:
+        raise ValueError("constrained callable runtime implementation commit drift")
+    if status:
+        raise ValueError("constrained callable runtime worktree must be clean")
+    return head
 
 
 def candidate_semantic_payload(candidate_manifest: dict[str, Any]) -> dict[str, Any]:
@@ -273,6 +304,10 @@ def velocity_semantic_payload(
             "source_tree": bridge.SOURCE_TREE,
             "source_runtime_identity_sha256": bridge.SOURCE_RUNTIME_IDENTITY_SHA256,
         },
+        "constrained_callable_runtime": {
+            "repository": CONSTRAINED_RUNTIME_IMPLEMENTATION_REPOSITORY,
+            "commit": CONSTRAINED_RUNTIME_IMPLEMENTATION_COMMIT,
+        },
         "callable": "St052LinearTemporalWholeCandidate.velocity(x,y,z,t)->[...,3]",
         "resolved_runtime_versions_identity_bound": False,
     }
@@ -358,12 +393,12 @@ def build_receipt(
             ),
             "difference_from_legacy": (
                 "legacy whole_candidate_identity_sha256 binds regenerated parent candidate/validation/manifest file SHA-256 values; "
-                "the new semantic identity excludes those raw file hashes while retaining and authenticating them as separate evidence"
+                "the new candidate semantic identity excludes those raw file hashes while the callable identity additionally binds the exact constrained implementation commit"
             ),
             "legacy_identity_reused_as_stable_identity": False,
         },
         "direct_contribution": (
-            "makes repeated exact-source rematerializations of the same frozen ST052 [u,v,w] addressable by one semantic/callable identity without discarding byte-level evidence"
+            "makes repeated exact-source rematerializations of the same frozen ST052 [u,v,w] addressable by one semantic candidate identity while binding callable identity to the exact implementation commit and retaining byte-level evidence separately"
         ),
         "remaining_limits": [
             "this schema does not itself rerun or admit the failed #1095 axial-aspect receipt",
@@ -422,6 +457,19 @@ def validate_receipt(receipt: dict[str, Any]) -> None:
     if velocity_payload.get("runtime_acceptance_semantics_sha256") != acceptance_id:
         raise ValueError("velocity/runtime-acceptance semantic linkage mismatch")
 
+    constrained_runtime = _require_dict(
+        velocity_payload.get("constrained_callable_runtime"),
+        "constrained_callable_runtime",
+    )
+    if constrained_runtime.get("repository") != CONSTRAINED_RUNTIME_IMPLEMENTATION_REPOSITORY:
+        raise ValueError("constrained callable runtime implementation repository drift")
+    implementation_commit = _require_sha1(
+        constrained_runtime.get("commit"),
+        "constrained callable runtime implementation commit",
+    )
+    if implementation_commit != CONSTRAINED_RUNTIME_IMPLEMENTATION_COMMIT:
+        raise ValueError("constrained callable runtime implementation commit drift")
+
     if evidence.get("included_in_stable_candidate_identity") is not False:
         raise ValueError("materialization evidence leaked into stable candidate identity")
     if evidence.get("included_in_stable_velocity_identity") is not False:
@@ -445,6 +493,7 @@ def execute(*, constrained_root: str | Path, bundle_dir: str | Path) -> dict[str
     """Verify the real bundle/acceptance contract, then emit the stable identity split."""
     constrained_root = Path(constrained_root).resolve()
     bundle_dir = Path(bundle_dir).resolve()
+    _authenticate_constrained_runtime_checkout(constrained_root)
     bridge._install_constrained_package_path(constrained_root)
     acceptance_mod = importlib.import_module(
         "openai_ns_reconstruction.constrained_st052_runtime_dependency_acceptance"
