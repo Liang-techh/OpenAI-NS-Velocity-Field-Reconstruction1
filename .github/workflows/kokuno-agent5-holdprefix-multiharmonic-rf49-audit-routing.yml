@@ -63,6 +63,10 @@ jobs:
             '70897e18df4b58b2e023a8bfc82dfdd552db62b9' \
             'src/openai_ns_reconstruction/kokuno_a4_postpulse_eta_flattening_leading_divergence_independent_audit.py' \
             '5b90b13eab506e6fe63fe360352d570a5c2ac3c1'
+          fetch_commit_and_check \
+            'caaf740af357fd6741da5118a1254c2b945caad0' \
+            'src/openai_ns_reconstruction/kokuno_a4_postpulse_hold_prefix_leading_divergence_independent_audit.py' \
+            '89da19c5d1fcd3335ba97b6e5e21f9c8bb472721'
 
       - name: Authenticate corrected public source provenance
         uses: actions/checkout@v4
@@ -85,7 +89,7 @@ jobs:
           set -euo pipefail
           parent='69be0e10c53cb6e2a369be09246aabffc8969773'
           git merge-base --is-ancestor "${parent}" HEAD
-          test "$(git rev-list --count "${parent}"..HEAD)" -eq 3
+          test "$(git rev-list --count "${parent}"..HEAD)" -eq 6
           mapfile -t changed < <(git diff --name-only "${parent}..HEAD" | sort)
           expected=(
             '.github/workflows/kokuno-agent5-holdprefix-multiharmonic-rf49-audit-routing.yml'
@@ -130,18 +134,22 @@ jobs:
           a1 = reg['frontiers']['leading']
           a2diag = reg['frontiers']['bounded_multiharmonic_diagnostic']
           a3 = reg['frontiers']['rf49_gain_firewall']
-          a4 = reg['frontiers']['postpulse_leading_validator']
+          a4_parent = reg['frontiers']['postpulse_parent_leading_validator']
+          a4 = reg['frontiers']['holdprefix_leading_validator']
           composite = reg['frontiers']['latest_self_contained_project_composite']
 
           assert a1['pr'] == 1148
           assert a1['bounded_velocity_xyzt_materialized'] is True
           assert a1['relative_swirl_bumps_materialized'] is False
           assert a1['terminal_global_leading_velocity_materialized'] is False
-          assert a4['pr'] == 1143
-          assert a4['audited_agent1_pr'] == 1140
-          assert a4['does_not_audit_agent1_pr'] == 1148
+          assert a4_parent['pr'] == 1143
+          assert a4_parent['audited_agent1_pr'] == 1140
+          assert a4['pr'] == 1152
+          assert a4['audited_agent1_pr'] == 1148
+          assert a4['audited_agent1_head'] == a1['head']
           assert a4['scoped_gate_passed'] is None
           assert a4['scientifically_admitted'] is False
+          assert a4['complete_ns_momentum_residual_assessed'] is False
           assert a2diag['pr'] == 1149
           assert a2diag['source_provider_self_contained'] is False
           assert a2diag['complete_ns_residual_assessed'] is False
@@ -150,7 +158,9 @@ jobs:
           assert a3['current_i4_source_chart_backend_materialized'] is False
           assert composite['pr'] == 1117
           assert truth['matching_latest_holdprefix_agent2_project_composite_materialized'] is False
-          assert truth['matching_latest_holdprefix_agent4_audit_present'] is False
+          assert truth['matching_latest_holdprefix_agent4_audit_present'] is True
+          assert truth['matching_latest_holdprefix_agent4_audit_scoped_gate_passed'] is None
+          assert truth['matching_latest_holdprefix_agent4_audit_scientifically_admitted'] is False
           assert truth['complete_candidate_api_ready'] is False
           assert truth['complete_identity_bound_ns_defect_materialized'] is False
           assert truth['pde_validated'] is False
