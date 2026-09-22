@@ -1,0 +1,124 @@
+name: Kokuno A5 Terminal RF44 Backend Routing
+
+on:
+  pull_request:
+    paths:
+      - src/openai_ns_reconstruction/kokuno_a5_terminal_rf44_backend_routing.py
+      - tests/test_kokuno_a5_terminal_rf44_backend_routing.py
+      - .github/workflows/kokuno-agent5-terminal-rf44-backend-routing.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-head-routing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Verify exact A5 parent and three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          parent="78b055f96458f9c029ca8ef9243f75f00c3341cd"
+          git merge-base --is-ancestor "$parent" HEAD
+          test "$(git rev-list --count "$parent"..HEAD)" -eq 3
+          git diff --name-only "$parent"..HEAD | sort > /tmp/changed.txt
+          cat > /tmp/expected.txt <<'EOF'
+          .github/workflows/kokuno-agent5-terminal-rf44-backend-routing.yml
+          src/openai_ns_reconstruction/kokuno_a5_terminal_rf44_backend_routing.py
+          tests/test_kokuno_a5_terminal_rf44_backend_routing.py
+          EOF
+          sort -o /tmp/expected.txt /tmp/expected.txt
+          diff -u /tmp/expected.txt /tmp/changed.txt
+
+      - name: Authenticate exact A1 terminal target and A4 matching audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin codex/kokuno-a1-terminal-multiplier-target
+          a1="fb81b8e90272caa9e8bbd075f05b94dbb1195310"
+          test "$(git rev-parse FETCH_HEAD)" = "$a1"
+          test "$(git rev-parse "$a1:src/openai_ns_reconstruction/kokuno_public_terminal_multiplier_target.py")" = "fd3236607fba9c3060a1dc3058d2cec7272969d6"
+
+          git fetch --no-tags origin codex/kokuno-a4-terminal-target-independent-audit
+          a4="7cb6ca4c5f771bc7c1ae216730852eaa96d83bea"
+          test "$(git rev-parse FETCH_HEAD)" = "$a4"
+          test "$(git rev-parse "$a4:src/openai_ns_reconstruction/kokuno_a4_terminal_target_independent_audit.py")" = "8a82b1c1b6bf8d155c746254f5f58123654f10fe"
+          git merge-base --is-ancestor "$a1" "$a4"
+
+      - name: Authenticate A2 RF44 pre-state, A3 firewall, and sibling topology
+        shell: bash
+        run: |
+          set -euo pipefail
+          common="e75940c33127b0725ddc703eaae97590158f2a56"
+
+          git fetch --no-tags origin kokuno-agent2/current-i4-rf44-prestate-113
+          a2="cab837f6358c8d29e3d470061879a58b3f7e1454"
+          test "$(git rev-parse FETCH_HEAD)" = "$a2"
+          test "$(git rev-parse "$a2:src/openai_ns_reconstruction/kokuno_current_i4_rf44_prestate_provider.py")" = "0d8bb6471a4b7825b1b4b428d3b2c38d207729fd"
+          test "$(git rev-parse "$common:src/openai_ns_reconstruction/kokuno_current_i4_rf34_rf39_pinned_provider.py")" = "b99b3bee2b2dad6003c11acae7946c9be53347fb"
+          git merge-base --is-ancestor "$common" "$a2"
+
+          git fetch --no-tags origin agent3/current-i4-exact-backend-firewall-20260922
+          a3="25f2793091cbf8dc2d8f966b941c32eaff63d876"
+          test "$(git rev-parse FETCH_HEAD)" = "$a3"
+          test "$(git rev-parse "$a3:src/openai_ns_reconstruction/kokuno_current_i4_exact_backend_correction_firewall.py")" = "0152a85f7fbaf9c32c24c9d5c7d0d11166e3b157"
+          git merge-base --is-ancestor "$common" "$a3"
+
+          if git merge-base --is-ancestor "$a2" "$a3"; then
+            echo "A2 #1215 unexpectedly became ancestor of A3 #1214" >&2
+            exit 1
+          fi
+          if git merge-base --is-ancestor "$a3" "$a2"; then
+            echo "A3 #1214 unexpectedly became ancestor of A2 #1215" >&2
+            exit 1
+          fi
+
+      - name: Compile and materialize deterministic routing artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            src/openai_ns_reconstruction/kokuno_a5_terminal_rf44_backend_routing.py \
+            tests/test_kokuno_a5_terminal_rf44_backend_routing.py
+          python src/openai_ns_reconstruction/kokuno_a5_terminal_rf44_backend_routing.py \
+            --output kokuno_a5_terminal_rf44_backend_routing.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path("kokuno_a5_terminal_rf44_backend_routing.json")
+          data = json.loads(p.read_text())
+          assert data["task"] == "KOKUNO-A5-TERMINAL-RF44-BACKEND-ROUTING-128"
+          assert data["core_states"]["pde_validated"] is False
+          assert data["remaining_blockers"]["a1_terminal_qp_target_algebra"] is False
+          assert data["remaining_blockers"]["agent3_checksum_pin_of_exact_agent2_1198_provider_blob"] is False
+          assert data["remaining_blockers"]["agent3_real_exact_backend_rebind"] is True
+          assert data["remaining_blockers"]["a2_1215_a3_1214_unified_same_identity_stack"] is True
+          assert data["upstream_routes"]["agent4"]["matching_terminal_target_audit_present"] is True
+          assert data["upstream_routes"]["agent4"]["scoped_gate_passed"] is None
+          PY
+
+      - name: Upload routing artifact before regression enforcement
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a5-terminal-rf44-backend-routing
+          path: kokuno_a5_terminal_rf44_backend_routing.json
+
+      - name: Run parent and focused fail-closed regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check pytest
+          pytest -q \
+            tests/test_kokuno_a5_release2_auxt2_derivative_rf49_routing.py \
+            tests/test_kokuno_a5_terminal_rf44_backend_routing.py
