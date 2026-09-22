@@ -1,0 +1,149 @@
+{
+  "bindings": {
+    "canonical_constraints_blob_sha1": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "dependency_exact_head": "7e987ff0a3bea743fe3f0fe9d02d5b3c8c593ea3",
+    "dependency_module": "src/openai_ns_reconstruction/kokuno_current_bridge_common_scalar_refutation.py",
+    "dependency_module_blob_sha1": "409031a36425befefa7038ebda8ca848cdde239a",
+    "dependency_pr": 1242,
+    "project_status_blob_sha1": "f8e05e9d25ab6cc83a7221fc431ab42319d38ff0"
+  },
+  "canonical_independence": {
+    "canonical_eq45_velocity_export_ready_expected": true,
+    "canonical_openai_field_identified_expected": false,
+    "canonical_paper_exact_expected": false,
+    "canonical_pde_validated_expected": false,
+    "canonical_visual_correspondence_verified_expected": false
+  },
+  "contract_id": "CR002-kokuno-common-scalar-refutation-routing-v1",
+  "cr001_guardrails": {
+    "derivative_steps": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "divergence_l2_threshold": 1e-05,
+    "divergence_max_threshold": 1e-05,
+    "evaluation_box": [
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ]
+    ],
+    "forcing_mode": "restricted_two_parameter_family",
+    "held_out_points": 4096,
+    "momentum_l2_threshold": 0.001,
+    "momentum_max_threshold": 0.001,
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "quadrature_orders_per_axis": [
+      24,
+      48,
+      96
+    ],
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [
+      0.25,
+      0.75
+    ],
+    "validation_seed": 914027
+  },
+  "dependency_evidence_semantics": {
+    "negative_refutation": {
+      "does_not_mean": [
+        "a common scalar bridge exists",
+        "full-eta target totality or root uniqueness is established",
+        "terminal Cartesian composition is authorized"
+      ],
+      "meaning": "The bounded sufficient witness did not refute a common scalar bridge.",
+      "required_next_representation_route": [
+        "establish the full-eta continuum prerequisites governed by CR002 before any scalar bridge promotion",
+        "or revise/materialize a different explicitly identified representation"
+      ]
+    },
+    "positive_refutation": {
+      "does_not_mean": [
+        "the public source formula is invalid",
+        "Navier-Stokes validation has failed or passed",
+        "an eta-dependent Cartesian bridge is valid",
+        "paper exactness or OpenAI-field identity has been determined"
+      ],
+      "meaning": "A certified pair of disjoint unique Q_s=Q_p root brackets refutes one common scalar bridge length for the exact dependency candidate identity.",
+      "required_next_representation_route": [
+        "revise the autonomous upstream current state and create a new candidate/semantic/save-load identity before retesting scalar compatibility",
+        "or explicitly materialize an eta-dependent autonomous bridge as a new representation after the separately governed continuum gates are established"
+      ]
+    }
+  },
+  "evidence_transfer": {
+    "either_outcome_to_current_matching_bridge_materialized": false,
+    "either_outcome_to_kokuno_global_velocity_export_ready": false,
+    "either_outcome_to_openai_field_identified": false,
+    "either_outcome_to_paper_exact": false,
+    "either_outcome_to_pde_validated": false,
+    "either_outcome_to_visual_correspondence_verified": false,
+    "negative_refutation_to_common_scalar_bridge_established": false,
+    "positive_refutation_to_eta_dependent_cartesian_bridge_valid": false,
+    "positive_refutation_to_pde_invalid": false,
+    "positive_refutation_to_public_source_invalid": false
+  },
+  "identity_policy": {
+    "eta_dependent_bridge_requires_new_representation_identity": true,
+    "positive_refutation_forbids_in_place_mean_min_max_or_representative_eta_repair": true,
+    "prior_refutation_receipt_transfers_to_revised_candidate": false,
+    "save_load_and_downstream_audits_must_bind_the_new_identity": true,
+    "source_scalar_stage_label_transfers_to_eta_dependent_autonomous_design": false,
+    "upstream_current_state_revision_requires_new_candidate_identity": true
+  },
+  "mechanics_witness": {
+    "curve_a": "2*exp(-y)",
+    "curve_b": "2*exp(-2*y)",
+    "interpretation": "Both curves have unique positive target roots, but the roots differ; this illustrates why a positive disjoint-root witness forbids one common scalar length only for the represented identity.",
+    "role": "autonomous_representation_mechanics_only",
+    "target": 1.0
+  },
+  "schema_version": 1,
+  "source_classification": {
+    "autonomous_design": [
+      "The current carried repository candidate and its numerical realization are autonomous candidate design unless separately source-authenticated.",
+      "The dependency's 65-point Chebyshev-Lobatto witness grid, 16 bracket expansions, 96 bisections, and 2^-40 relative engineering margin are repository numerical mechanics.",
+      "This outcome-conditioned routing contract and any future eta-dependent bridge representation are repository governance/design, not source facts."
+    ],
+    "pending_unknown": [
+      "Whether the exact current candidate can satisfy a valid common scalar bridge after continuum analysis or candidate revision.",
+      "Whether a future eta-dependent matching surface can be defined with full-interval existence, uniqueness or branch semantics, transversality, smoothness, axis regularity, and project-domain coverage.",
+      "Terminal Cartesian composition, outer/global Kokuno velocity delivery, matched pressure, restricted forcing, held-out complete NS validation, visual correspondence, paper exactness, and exact OpenAI-field identity."
+    ],
+    "public_source_fact": [
+      "The corrected-source construction represented by the dependency records a scalar l=-h matching stage whose target instruction is to hold until Q_s reaches the pre-existing terminal Q_p.",
+      "The source-side scalar-stage statement does not by itself establish that this repository's autonomous carried current candidate admits one common scalar matching length."
+    ],
+    "user_requirement": [
+      "Deliver an explicit computable save-loadable 3D time-varying velocity API without making PDE validation a prerequisite for callable delivery.",
+      "Keep velocity delivery, visual correspondence, PDE validation, paper exactness, and OpenAI-field identity as independent states."
+    ]
+  },
+  "truth_state": {
+    "blowup_proved": false,
+    "common_scalar_bridge_established": false,
+    "current_cartesian_terminal_multiplier_composed": false,
+    "current_common_scalar_bridge_witness_check_materialized": true,
+    "current_l_minus_h_matching_bridge_materialized": false,
+    "eta_dependent_cartesian_matching_boundary_materialized": false,
+    "kokuno_unified_global_velocity_export_ready": false,
+    "openai_field_identified": false,
+    "outer_global_leading_velocity_materialized": false,
+    "paper_exact": false,
+    "pde_validated": false,
+    "visual_correspondence_verified": false
+  }
+}
