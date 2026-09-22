@@ -1,0 +1,107 @@
+name: kokuno-agent1-current-relative-swirl-split
+
+on:
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_relative_swirl_split.py"
+      - "tests/test_kokuno_pa16_current_cartesian_relative_swirl_split.py"
+      - ".github/workflows/kokuno-agent1-current-relative-swirl-split.yml"
+  workflow_dispatch:
+
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+
+      - name: Assert exact A1 ancestry and minimal three-file scope
+        shell: bash
+        run: |
+          git merge-base --is-ancestor bb246140c6c2451b22b59aad9ba90604bc2acb21 HEAD
+          mapfile -t changed < <(git diff --name-only bb246140c6c2451b22b59aad9ba90604bc2acb21...HEAD | sort)
+          printf '%s\n' "${changed[@]}"
+          test "${#changed[@]}" -eq 3
+          expected=(
+            ".github/workflows/kokuno-agent1-current-relative-swirl-split.yml"
+            "src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_relative_swirl_split.py"
+            "tests/test_kokuno_pa16_current_cartesian_relative_swirl_split.py"
+          )
+          mapfile -t expected_sorted < <(printf '%s\n' "${expected[@]}" | sort)
+          test "$(printf '%s\n' "${changed[@]}")" = "$(printf '%s\n' "${expected_sorted[@]}")"
+
+      - name: Verify pinned corrected-source blob
+        shell: bash
+        run: |
+          python - <<'PY'
+          import hashlib, urllib.request
+          url = "https://raw.githubusercontent.com/KokunoYumeto/yang-mills-interacting-workbench/143f6773feb424ad9ed3a8d116653200f20346b7/navier-stokes/navier_stokes_workbench.tex"
+          data = urllib.request.urlopen(url, timeout=30).read()
+          digest = hashlib.sha1(b"blob %d\0" % len(data) + data).hexdigest()
+          expected = "205a99807302e21a51c5eaf223390c0dfc42bcd0"
+          if digest != expected:
+              raise SystemExit(f"corrected source blob drifted: {digest} != {expected}")
+          print("corrected 2026-09-09 source blob pinned")
+          PY
+
+      - name: Compile focused files
+        run: |
+          python -m py_compile src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_relative_swirl_split.py
+          python -m py_compile tests/test_kokuno_pa16_current_cartesian_relative_swirl_split.py
+
+      - name: Run parent and new focused regressions
+        run: |
+          python -m pytest -q -W error \
+            tests/test_kokuno_current_relative_swirl_absolute_target.py \
+            tests/test_kokuno_pa16_current_cartesian_relative_swirl_split.py
+
+      - name: Emit deterministic scoped receipt
+        run: |
+          mkdir -p artifacts/kokuno_agent1_current_relative_swirl_split
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction.kokuno_pa16_current_cartesian_relative_swirl_split import (
+              KokunoPA16CurrentCartesianRelativeSwirlSplit,
+          )
+
+          root = Path("artifacts/kokuno_agent1_current_relative_swirl_split")
+          candidate = KokunoPA16CurrentCartesianRelativeSwirlSplit()
+          receipt = candidate.representation_report()
+          config = candidate.configuration()
+          truth = receipt["truth_boundary"]
+          assert receipt["max_abs_relative_edit"] > 0.0
+          assert receipt["edit_is_below_float64_relative_epsilon"] is True
+          assert receipt["max_abs_rounded_1_plus_edit_minus_1"] == 0.0
+          assert receipt["max_abs_angular_residual"] <= 2e-14
+          assert receipt["max_abs_pressure_residual"] <= 2e-14
+          assert truth["relative_swirl_profile_delta_channel_materialized"] is True
+          assert truth["relative_swirl_cartesian_delta_channel_materialized"] is True
+          assert truth["binary64_total_relative_swirl_sum_is_resolved"] is False
+          assert truth["current_cartesian_relative_swirl_composed"] is False
+          assert truth["heldout_ns_residual_assessed"] is False
+          assert truth["pde_validated"] is False
+          assert truth["paper_exact"] is False
+          assert truth["openai_field_identified"] is False
+          (root / "receipt.json").write_text(json.dumps(receipt, indent=2, sort_keys=True) + "\n")
+          (root / "config.json").write_text(json.dumps(config, indent=2, sort_keys=True) + "\n")
+          print(json.dumps(receipt, indent=2, sort_keys=True))
+          PY
+
+      - name: Upload scoped receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-current-relative-swirl-split
+          path: artifacts/kokuno_agent1_current_relative_swirl_split/
