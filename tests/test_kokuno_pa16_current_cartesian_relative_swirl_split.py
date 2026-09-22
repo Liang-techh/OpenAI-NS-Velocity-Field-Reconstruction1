@@ -43,7 +43,7 @@ def test_split_profile_preserves_nonzero_sub_epsilon_edit_instead_of_rounding_it
     assert np.max(np.abs(edit)) < np.finfo(float).eps
     np.testing.assert_array_equal(1.0 + edit, np.ones_like(edit))
     assert np.max(np.abs(p["delta_E"])) > 0.0
-    assert np.max(np.abs(p["delta_F"])) > 0.0
+    assert np.max(np.abs(p["delta_log_F_first_order"])) > 0.0
     np.testing.assert_array_equal(p["delta_U"], np.zeros_like(edit))
     np.testing.assert_array_equal(p["delta_v0"], np.zeros_like(edit))
 
@@ -56,18 +56,26 @@ def test_split_delta_logX_derivatives_match_centered_difference():
     pm = c.split_profile_logX(np.full(eta.shape, log_X - h), eta)
     p0 = c.split_profile_logX(np.full(eta.shape, log_X), eta)
     pp = c.split_profile_logX(np.full(eta.shape, log_X + h), eta)
-    for value_key, deriv_key in (
-        ("delta_E", "delta_E_DlogX"),
-        ("delta_F", "delta_F_DlogX"),
-    ):
-        centered = (pp[value_key] - pm[value_key]) / (2.0 * h)
-        scale = np.maximum(np.abs(centered), np.abs(p0[deriv_key]))
-        np.testing.assert_allclose(
-            centered / np.maximum(scale, 1e-300),
-            p0[deriv_key] / np.maximum(scale, 1e-300),
-            rtol=2e-6,
-            atol=2e-7,
-        )
+
+    centered_E = (pp["delta_E"] - pm["delta_E"]) / (2.0 * h)
+    scale_E = np.maximum(np.abs(centered_E), np.abs(p0["delta_E_DlogX"]))
+    np.testing.assert_allclose(
+        centered_E / np.maximum(scale_E, 1e-300),
+        p0["delta_E_DlogX"] / np.maximum(scale_E, 1e-300),
+        rtol=2e-6,
+        atol=2e-7,
+    )
+
+    centered_edit = (pp["relative_edit"] - pm["relative_edit"]) / (2.0 * h)
+    scale_edit = np.maximum(
+        np.abs(centered_edit), np.abs(p0["relative_edit_DlogX"])
+    )
+    np.testing.assert_allclose(
+        centered_edit / np.maximum(scale_edit, 1e-300),
+        p0["relative_edit_DlogX"] / np.maximum(scale_edit, 1e-300),
+        rtol=2e-6,
+        atol=2e-7,
+    )
 
 
 def test_eta_jet_keeps_the_small_correction_executable():
