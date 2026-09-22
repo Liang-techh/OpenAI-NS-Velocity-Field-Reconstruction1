@@ -35,7 +35,7 @@ jobs:
           set -euo pipefail
           parent='9f4bc6b415e2e0334ccdc1b681b83539972cee52'
           test "$(git merge-base "$parent" HEAD)" = "$parent"
-          test "$(git rev-list --count "$parent"..HEAD)" -eq 3
+          test "$(git rev-list --count "$parent"..HEAD)" -eq 6
           actual="$(git diff --name-only "$parent"..HEAD | sort)"
           expected="$(printf '%s\n' \
             '.github/workflows/kokuno-agent5-release1-scale-rf39-routing.yml' \
@@ -62,9 +62,9 @@ jobs:
           check_blob 21b0ade966fda3b7344273c7bff2efe7e7b9a93e \
             src/openai_ns_reconstruction/kokuno_current_i4_rf34_rf39_correction.py \
             fe08f93f48aeb2d4055b12889325a6ae5e05a5a6
-          check_blob 5e12ed7dc55e0740a40f9a210e23e98cd71707e2 \
-            src/openai_ns_reconstruction/kokuno_a4_relative_swirl_decimal_total_independent_audit.py \
-            9fbc39f4e9740a504e277a9cb758a144eb219c62
+          check_blob cb7bbc0ac7c01125e90b773fe729f3446bb49d63 \
+            src/openai_ns_reconstruction/kokuno_a4_postswirl_release1_independent_audit.py \
+            6b8fdd6eee1bd57bf49240de67ab1ce3f86ec7b9
 
       - name: Compile routing files
         run: |
@@ -94,7 +94,8 @@ jobs:
           payload = json.loads(p.read_text(encoding='utf-8'))
           validate_artifact(payload)
           assert payload['core_states']['pde_validated'] is False
-          assert payload['upstream_routes']['agent4']['audits_latest_agent1_release1'] is False
+          assert payload['upstream_routes']['agent4']['audits_latest_agent1_release1'] is True
+          assert payload['upstream_routes']['agent4']['scoped_gate_passed'] is None
           assert payload['upstream_routes']['agent3']['repository_candidate_scientific_correction_materialized'] is False
           PY
 
