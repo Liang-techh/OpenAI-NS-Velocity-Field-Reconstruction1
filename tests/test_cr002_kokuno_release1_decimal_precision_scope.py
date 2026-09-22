@@ -86,14 +86,14 @@ def test_binary64_before_decimal_implementation_mechanics_are_pinned() -> None:
         1,
     )
     with pytest.raises(GovernanceError):
-        audit_payload(mutated_text=mutated_text)  # type: ignore[call-arg]
+        audit_payload(contract, mutated_text, impl_bytes, constraints, constraints_bytes)
 
 
 def test_source_classification_cannot_launder_autonomous_precision_as_public_fact() -> None:
     contract, text, impl_bytes, constraints, constraints_bytes = _inputs()
     mutated = copy.deepcopy(contract)
-    autonomous = mutated["source_classification"]["autonomous_design"].pop()
-    mutated["source_classification"]["public_source_fact"].append(autonomous)
+    autonomous_items = list(mutated["source_classification"]["autonomous_design"])
+    mutated["source_classification"]["public_source_fact"].extend(autonomous_items)
     mutated["source_classification"]["autonomous_design"] = []
     with pytest.raises(GovernanceError):
         audit_payload(mutated, text, impl_bytes, constraints, constraints_bytes)
