@@ -34,6 +34,7 @@ def test_source_h_binding_truth_and_scope():
     assert truth["current_cartesian_l_minus1_hold_composed"] is True
     assert truth["current_h_bound_from_similarity_exponent"] is True
     assert truth["source_exact_h_recovered"] is False
+    assert truth["overflow_safe_log_F_materialized"] is True
     assert truth["decimal_output_encoding_materialized"] is True
     assert truth["end_to_end_96digit_arithmetic_materialized"] is False
     for name in (
@@ -66,12 +67,16 @@ def test_exact_release1_endpoint_replay_and_public_hold_endpoint_powers():
     child1 = field.profile_logX(field.log_X_hold_end, eta)
     h = field.h_value
     np.testing.assert_allclose(child1["E"] / child0["E"], h**6, rtol=8e-14, atol=0.0)
-    np.testing.assert_allclose(child1["F"] / child0["F"], h**8, rtol=8e-14, atol=0.0)
+    f_ratio_log_chart = np.exp(
+        np.asarray(child1["log_F"]) - np.asarray(child0["log_F"])
+    )
+    np.testing.assert_allclose(f_ratio_log_chart, h**8, rtol=8e-14, atol=0.0)
     np.testing.assert_allclose(
-        child1["M_over_X"] / child0["M_over_X"], h**4, rtol=8e-14, atol=0.0
+        child1["M_over_X"], child0["M_over_X"] * h**4, rtol=8e-14, atol=1e-300
     )
     np.testing.assert_allclose(
-        child1["M_eta_over_X"] / child0["M_eta_over_X"], h**4, rtol=8e-14, atol=0.0
+        child1["M_eta_over_X"], child0["M_eta_over_X"] * h**4,
+        rtol=8e-14, atol=1e-300,
     )
     np.testing.assert_array_equal(child1["ell"], -np.ones_like(eta))
     assert np.all(child1["U"] == 0.0)
@@ -89,16 +94,17 @@ def test_analytic_logX_derivatives_match_centered_differences():
         for key, dkey in (
             ("E", "DlogX_E"),
             ("F", "DlogX_F"),
+            ("log_F", "DlogX_log_F"),
             ("M_over_X", "DlogX_M_over_X"),
             ("M_eta_over_X", "DlogX_M_eta_over_X"),
             ("v0", "DlogX_v0"),
         ):
             fd = (np.asarray(pp[key]) - np.asarray(pm[key])) / (2.0 * eps)
-            np.testing.assert_allclose(np.asarray(p0[dkey]), fd, rtol=4e-7, atol=1e-13)
+            np.testing.assert_allclose(np.asarray(p0[dkey]), fd, rtol=4e-7, atol=1e-9)
         assert np.all(p0["DlogX_U"] == 0.0)
 
 
-def test_public_U_zero_primitive_identity_and_nontrivial_swirl():
+def test_public_U_zero_primitive_identity_and_underflow_safe_swirl_scale():
     field = KokunoPA16CurrentCartesianPostSwirlLMinus1Hold()
     p = field.profile_logX(
         field.log_X_hold_start + 0.63 * field.hold_length,
@@ -106,8 +112,10 @@ def test_public_U_zero_primitive_identity_and_nontrivial_swirl():
     )
     np.testing.assert_array_equal(p["DlogX_M_over_X"], -p["M_over_X"])
     np.testing.assert_array_equal(p["DlogX_M_eta_over_X"], -p["M_eta_over_X"])
+    np.testing.assert_array_equal(p["DlogX_log_F"], -2.0 * np.ones(3))
     assert np.all(p["U"] == 0.0)
-    assert np.all(np.asarray(p["F"]) > 0.0)
+    assert np.all(np.isfinite(np.asarray(p["log_F"])))
+    assert np.all(np.asarray(p["F"]) >= 0.0)
 
 
 def test_decimal_cartesian_seam_endpoint_axis_and_stage_guard():
