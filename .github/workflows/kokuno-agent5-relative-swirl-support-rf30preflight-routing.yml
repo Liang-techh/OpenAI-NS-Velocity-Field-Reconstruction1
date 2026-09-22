@@ -56,9 +56,9 @@ jobs:
             'src/openai_ns_reconstruction/kokuno_source_support_certified_multiharmonic_velocity.py' \
             '5b2bdab4e7fff24ecec8f8cb0fbd8d118a862381'
           fetch_commit_and_check \
-            'e0b48ccfa964db0caa9d657961d451a21e1d53bf' \
-            'src/openai_ns_reconstruction/kokuno_rf49_source_exponent_gain_firewall.py' \
-            'baa5cab26ebdeaf8ae6644f452f4f53f6a204881'
+            'cafab2098f00c3dc2ed5668e1b12bdb38a1f31e8' \
+            'src/openai_ns_reconstruction/kokuno_current_i4_rf30_fixedq_preflight.py' \
+            'b2fac4318a40342d6c08170bf7093c31685c53ab'
           fetch_commit_and_check \
             'caaf740af357fd6741da5118a1254c2b945caad0' \
             'src/openai_ns_reconstruction/kokuno_a4_postpulse_hold_prefix_leading_divergence_independent_audit.py' \
@@ -85,7 +85,7 @@ jobs:
           set -euo pipefail
           parent='eb15089a312b9ea1a3c4632145d501d244ec1324'
           git merge-base --is-ancestor "${parent}" HEAD
-          test "$(git rev-list --count "${parent}"..HEAD)" -eq 4
+          test "$(git rev-list --count "${parent}"..HEAD)" -eq 7
           mapfile -t changed < <(git diff --name-only "${parent}..HEAD" | sort)
           expected=(
             '.github/workflows/kokuno-agent5-relative-swirl-support-rf30preflight-routing.yml'
@@ -137,11 +137,18 @@ jobs:
           assert f['support_certified_multiharmonic']['pr'] == 1158
           assert f['support_certified_multiharmonic']['source_provider_self_contained'] is False
           assert f['latest_self_contained_project_composite']['pr'] == 1117
-          assert f['rf30_fixedq_preflight_pending_claim']['materialized'] is False
-          assert f['rf30_fixedq_preflight_pending_claim']['candidate_evidence'] is False
+
+          pre = f['current_i4_rf30_fixedq_preflight']
+          assert pre['pr'] == 1161
+          assert pre['fixed_q_coordinate_map_materialized'] is True
+          assert pre['normalized_physical_azimuthal_mean_used'] is True
+          assert pre['source_auxiliary_t2_provider_available'] is False
+          assert pre['normalized_source_auxiliary_t2_haar_mean_used'] is False
+          assert pre['rf30_repository_candidate_state_authorized'] is False
+          assert pre['current_i4_rf30_defect_materialized'] is False
+
           assert f['holdprefix_leading_validator']['audited_agent1_pr'] == 1148
           assert f['holdprefix_leading_validator']['scoped_gate_passed'] is None
-
           assert state == {
               'leading_ready': False,
               'oscillatory_ready': True,
@@ -151,6 +158,10 @@ jobs:
           }
           assert truth['current_relative_swirl_total_target_materialized'] is False
           assert truth['current_cartesian_relative_swirl_composed'] is False
+          assert truth['current_i4_fixedq_coordinate_observable_preflight_materialized'] is True
+          assert truth['current_i4_source_auxiliary_t2_provider_materialized'] is False
+          assert truth['current_i4_source_auxiliary_t2_haar_mean_materialized'] is False
+          assert truth['current_i4_rf30_repository_candidate_state_authorized'] is False
           assert truth['current_i4_rf30_defect_materialized'] is False
           assert truth['complete_identity_bound_ns_defect_materialized'] is False
           assert truth['heldout_complete_ns_residual_assessed'] is False
