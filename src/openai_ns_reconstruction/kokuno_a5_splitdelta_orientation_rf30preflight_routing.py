@@ -1,20 +1,19 @@
 """Kokuno Agent-5 fail-closed routing for split-delta/orientation integration.
 
-Integration/provenance glue only.  No Agent-1--4 mathematics is copied or
+Integration/provenance glue only. No Agent-1--4 mathematics is copied or
 changed and scoped evidence is never transferred across semantic identities.
 
-This increment registers:
-* A1 #1171: an executable base+delta representation for the mathematically
-  nonzero late relative-swirl edit.  The edit is below ordinary float64
-  relative resolution for the current lineage, so the total ordinary-float64
-  Cartesian field is deliberately *not* claimed composed.
-* A2 #1170: one bounded repository-autonomous rigid-z azimuth for the existing
-  provider-driven complete-curl family.  The same rotation is applied to the
-  vector potential and curl velocity, but source-exact frame orientation is not
-  recovered and the provider remains non-self-contained.
-* A3 #1161: unchanged fixed-Q/physical-theta RF30 preflight; source auxiliary
-  T^2 Haar covariance remains missing.
-* A4 #1160: unchanged implementation-distinct audit of A1 #1154 algebra only;
+Registered deliveries:
+* A1 #1171 preserves the mathematically nonzero late relative-swirl correction
+  as representable base+delta channels. The correction is below ordinary
+  float64 relative resolution, so a unified ordinary-float64 Cartesian field
+  is deliberately not claimed composed.
+* A2 #1170 adds one bounded repository-autonomous rigid-z azimuth to the
+  provider-driven complete-curl family, applying the same rotation to vector
+  potential and curl velocity. Source-exact frame orientation is not recovered.
+* A3 #1161 remains a fixed-Q/physical-theta RF30 preflight; source auxiliary
+  T^2 Haar covariance remains unavailable.
+* A4 #1160 remains an implementation-distinct audit of A1 #1154 algebra only;
   it is not evidence for A1 #1171 or A2 #1170.
 
 Frozen project gates remain unchanged: normalized momentum max/L2 <=1e-3,
@@ -277,8 +276,11 @@ def validate_registration(registration: Mapping[str, Any]) -> None:
         raise ValueError("Agent-4 #1160 evidence transferred across Agent-1 identities")
     if frontiers["current_i4_rf30_fixedq_preflight"]["source_auxiliary_t2_provider_available"] is not False:
         raise ValueError("missing source auxiliary-T2 provider was invented")
+    if frontiers["current_i4_rf30_fixedq_preflight"]["rf30_repository_candidate_state_authorized"] is not False:
+        raise ValueError("RF30 candidate state was authorized without source Haar backend")
+    if frontiers["latest_self_contained_project_composite"]["pr"] != 1117:
+        raise ValueError("provider-driven orientation was laundered into self-contained candidate")
 
-    core = reg["core_state"]
     expected_core = {
         "leading_ready": False,
         "oscillatory_ready": True,
@@ -286,39 +288,81 @@ def validate_registration(registration: Mapping[str, Any]) -> None:
         "velocity_export_ready": False,
         "pde_validated": False,
     }
-    for key, expected in expected_core.items():
-        if core.get(key) is not expected:
-            raise ValueError(f"core state drifted: {key}")
+    if reg["core_state"] != expected_core:
+        raise ValueError("core state no longer matches frozen Agent-5 readiness")
 
     gates = reg["frozen_gates"]
-    if float(gates["momentum_sampled_max"]) != 1e-3:
+    if gates["st006_momentum_sampled_max"] != 0.1082289305112118:
+        raise ValueError("ST006 sampled-max baseline changed")
+    if gates["st006_momentum_volume_l2"] != 0.10758432876230622:
+        raise ValueError("ST006 volume-L2 baseline changed")
+    if gates["normalized_momentum_sampled_max"] != 1e-3:
         raise ValueError("momentum sampled-max gate changed")
-    if float(gates["momentum_volume_l2"]) != 1e-3:
+    if gates["normalized_momentum_volume_l2"] != 1e-3:
         raise ValueError("momentum volume-L2 gate changed")
-    if float(gates["divergence_sampled_max"]) != 1e-5:
+    if gates["normalized_divergence_sampled_max"] != 1e-5:
         raise ValueError("divergence sampled-max gate changed")
-    if float(gates["divergence_volume_l2"]) != 1e-5:
+    if gates["normalized_divergence_volume_l2"] != 1e-5:
         raise ValueError("divergence volume-L2 gate changed")
-    if list(gates["canonical_quadrature_orders"]) != [24, 48, 96]:
+    if gates["canonical_quadrature"] != [24, 48, 96]:
         raise ValueError("canonical quadrature changed")
-    if gates["residual_defined_free_forcing_forbidden"] is not True:
+    if gates["residual_defined_free_forcing_allowed"] is not False:
         raise ValueError("free-forcing prohibition was weakened")
+
+    required_false_truth = (
+        "binary64_total_relative_swirl_sum_is_resolved",
+        "current_cartesian_relative_swirl_composed",
+        "terminal_global_leading_velocity_materialized",
+        "agent1_1171_scientifically_admitted",
+        "agent4_matching_agent1_1171_split_audit_present",
+        "source_exact_frame_vectors_recovered",
+        "source_exact_orientation_recovered",
+        "oriented_source_provider_self_contained",
+        "oriented_self_contained_velocity_xyzt_provider",
+        "agent4_matching_agent2_1170_orientation_audit_present",
+        "current_i4_source_auxiliary_t2_provider_materialized",
+        "current_i4_source_auxiliary_t2_haar_mean_materialized",
+        "current_i4_rf30_repository_candidate_state_authorized",
+        "current_i4_rf30_defect_materialized",
+        "matched_cartesian_pressure_gradient_materialized",
+        "preregistered_restricted_forcing_materialized",
+        "complete_identity_bound_ns_defect_materialized",
+        "cartesian_correction_velocity_materialized",
+        "finite_correction_cycle_run",
+        "heldout_complete_ns_residual_assessed",
+        "canonical_whole_domain_admission_run",
+        "same_protocol_comparable_to_st006",
+        "scientific_admission",
+        "pde_validated",
+    )
+    truth = reg["truth_boundary"]
+    if any(truth[name] is not False for name in required_false_truth):
+        raise ValueError("truth boundary was promoted")
 
 
 def write_registration(path: str | Path) -> dict[str, Any]:
     registration = build_registration()
     validate_registration(registration)
-    Path(path).write_text(json.dumps(registration, indent=2, sort_keys=True) + "\n")
+    destination = Path(path)
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_text(json.dumps(registration, indent=2, sort_keys=True) + "\n")
     return registration
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--output", type=Path, required=True)
-    args = parser.parse_args()
-    registration = write_registration(args.output)
-    print(json.dumps(registration, indent=2, sort_keys=True))
+def load_registration(path: str | Path) -> dict[str, Any]:
+    payload = json.loads(Path(path).read_text())
+    if not isinstance(payload, dict):
+        raise ValueError("registration must decode to a JSON object")
+    validate_registration(payload)
+    return payload
+
+
+def _main(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", required=True, help="Path for deterministic routing JSON")
+    args = parser.parse_args(argv)
+    write_registration(args.output)
 
 
 if __name__ == "__main__":
-    main()
+    _main()
