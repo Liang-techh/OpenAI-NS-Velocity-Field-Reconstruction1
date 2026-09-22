@@ -1,0 +1,153 @@
+name: kokuno-agent2-source-axis-safe-physical-velocity
+
+on:
+  push:
+    branches: [codex/k2-osc-103-axis-safe-physical-velocity]
+  pull_request:
+    branches: [codex/k2-osc-102-physical-scaling]
+  workflow_dispatch:
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: "${{ github.event.pull_request.head.sha || github.sha }}"
+          fetch-depth: 0
+
+      - name: Verify exact A2 stack and scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          base=bab607c1a4f93a586dc8a1a9fa3c0d8b5badeb58
+          git merge-base --is-ancestor "$base" HEAD
+          test "$(git rev-list --count "$base"..HEAD)" -eq 3
+          mapfile -t files < <(git diff --name-only "$base"..HEAD | sort)
+          test "${#files[@]}" -eq 3
+          expected=(
+            ".github/workflows/kokuno-agent2-source-axis-safe-physical-velocity.yml"
+            "src/openai_ns_reconstruction/kokuno_source_axis_safe_physical_velocity.py"
+            "tests/test_constrained_kokuno_source_axis_safe_physical_velocity.py"
+          )
+          mapfile -t expected_sorted < <(printf '%s\n' "${expected[@]}" | sort)
+          test "$(printf '%s\n' "${files[@]}")" = "$(printf '%s\n' "${expected_sorted[@]}")"
+          test "$(git show "$base":src/openai_ns_reconstruction/kokuno_source_physicalized_localized_harmonic.py | git hash-object --stdin)" = b19805fc2e78d6a51b6ead6c141125a662d3ec4c
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install branch
+        run: python -m pip install -e '.[dev]'
+
+      - name: Focused A2 regressions
+        run: |
+          python -m py_compile \
+            src/openai_ns_reconstruction/kokuno_source_axis_safe_physical_velocity.py \
+            tests/test_constrained_kokuno_source_axis_safe_physical_velocity.py
+          pytest -q \
+            tests/test_constrained_kokuno_source_physicalized_localized_harmonic.py \
+            tests/test_constrained_kokuno_source_axis_safe_physical_velocity.py
+
+      - uses: actions/checkout@v4
+        with:
+          repository: KokunoYumeto/yang-mills-interacting-workbench
+          ref: 143f6773feb424ad9ed3a8d116653200f20346b7
+          path: corrected-source
+          fetch-depth: 1
+
+      - name: Authenticate corrected 2026-09-09 source
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C corrected-source rev-parse HEAD)" = 143f6773feb424ad9ed3a8d116653200f20346b7
+          test "$(git -C corrected-source hash-object navier-stokes/navier_stokes_workbench.tex)" = 205a99807302e21a51c5eaf223390c0dfc42bcd0
+
+      - name: Materialize axis-safe provider receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p receipts
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          import numpy as np
+          from openai_ns_reconstruction.kokuno_source_axis_safe_physical_velocity import (
+              AxisSafeSourceHarmonicProvider,
+              KokunoProviderDrivenAxisSafePhysicalVelocity,
+              source_axis_safe_physical_velocity_contract,
+          )
+          from openai_ns_reconstruction.kokuno_source_zero_data_localized_harmonic import (
+              SourceLocalizedZeroDataHarmonic,
+          )
+
+          calls = {"count": 0}
+
+          def evaluator(R, theta, Z, T, scaling):
+              calls["count"] += 1
+              n = R.size
+              cart = np.stack((R*np.cos(theta), R*np.sin(theta), Z + 0.25*T), axis=-1)
+              zeros_c = np.zeros((n, 3), dtype=np.complex128)
+              return SourceLocalizedZeroDataHarmonic(
+                  amplitude_sensitivity=None,
+                  phase_jet=None,
+                  coefficient_jet=None,
+                  complete_amplitude=None,
+                  localization_weight=np.ones(n),
+                  dr_localization_weight=np.zeros(n),
+                  dz_localization_weight=np.zeros(n),
+                  localized_coefficient=zeros_c.copy(),
+                  localized_dr_coefficient=zeros_c.copy(),
+                  localized_dz_coefficient=zeros_c.copy(),
+                  complex_vector_potential=zeros_c.copy(),
+                  complex_velocity_cylindrical=0.5*cart.astype(np.complex128),
+                  real_pair_velocity_cylindrical=cart.copy(),
+                  real_pair_velocity_chart_cartesian=cart.copy(),
+              )
+
+          provider = AxisSafeSourceHarmonicProvider(
+              provider_id="ci-manufactured-provider",
+              provider_semantic_sha256="4"*64,
+              axis_zero_radius_chart=0.25,
+              axis_zero_certified=True,
+              evaluate_chart=evaluator,
+          )
+          field = KokunoProviderDrivenAxisSafePhysicalVelocity(provider, ell=8, h=0.004)
+          core = field.axis_zero_radius_physical
+          velocity = field.velocity(
+              np.asarray([0.0, 2.0*core, -3.0*core]),
+              np.asarray([0.0, 0.0, 4.0*core]),
+              np.asarray([0.0, -0.01, 0.02]),
+              np.asarray([0.9, 0.8, 0.7]),
+          )
+          assert np.array_equal(velocity[0], np.zeros(3))
+          assert calls["count"] == 1
+          contract = source_axis_safe_physical_velocity_contract()
+          assert contract["provider_driven_velocity_xyzt_materialized"] is True
+          assert contract["axis_core_skips_singular_cylindrical_evaluation"] is True
+          assert contract["source_exact_axis_support_radius_recovered"] is False
+          assert contract["self_contained_velocity_xyzt_provider"] is False
+          assert contract["complete_ns_residual_assessed"] is False
+          assert contract["paper_exact"] is False
+          assert contract["pde_validated"] is False
+          receipt = {
+              "contract": contract,
+              "field": field.report(),
+              "axis_probe_velocity": velocity[0].tolist(),
+              "off_axis_probe_velocity": velocity[1:].tolist(),
+              "provider_call_count": calls["count"],
+          }
+          Path("receipts/axis_safe_physical_velocity_receipt.json").write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + "\n"
+          )
+          PY
+
+      - name: Upload raw receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent2-source-axis-safe-physical-velocity
+          path: receipts
+          if-no-files-found: error
