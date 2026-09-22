@@ -1,0 +1,76 @@
+name: kokuno-agent2-current-main-pulse-logx-leading-oscillatory
+on:
+  push:
+    branches: [codex/k2-osc-101-logx-composite]
+  pull_request:
+    branches: [codex/k2-osc-100-main-pulse-composite]
+  workflow_dispatch:
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with: {ref: "${{ github.event.pull_request.head.sha || github.sha }}", path: a2, fetch-depth: 0}
+      - name: Verify exact three-file stack
+        shell: bash
+        run: |
+          set -euo pipefail; cd a2
+          git merge-base --is-ancestor 9f221dd57ef4b5e2d2e80e24c8cf531e991a5387 HEAD
+          test "$(git rev-list --count 9f221dd57ef4b5e2d2e80e24c8cf531e991a5387..HEAD)" -eq 3
+          mapfile -t f < <(git diff --name-only 9f221dd57ef4b5e2d2e80e24c8cf531e991a5387..HEAD)
+          test "${#f[@]}" -eq 3
+          test "$(git hash-object src/openai_ns_reconstruction/kokuno_current_main_pulse_leading_oscillatory_identity.py)" = d8bde2336dc4a8f8dd7cf0ac6fecd184ea693390
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: python -m pip install -e './a2[dev]'
+      - name: Branch-local focused tests
+        run: |
+          python -m py_compile \
+            a2/src/openai_ns_reconstruction/kokuno_current_main_pulse_logx_leading_oscillatory_identity.py \
+            a2/tests/test_constrained_kokuno_current_main_pulse_logx_leading_oscillatory_identity.py
+          PYTHONPATH="$PWD/a2/src" pytest -q a2/tests/test_constrained_kokuno_current_main_pulse_logx_leading_oscillatory_identity.py
+      - uses: actions/checkout@v4
+        with: {ref: 45da043dd2b4cd067f005a72c7e21fd0f2bcf309, path: a1, fetch-depth: 1}
+      - name: Authenticate exact A1 #1107
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C a1 rev-parse HEAD)" = 45da043dd2b4cd067f005a72c7e21fd0f2bcf309
+          test "$(git -C a1 hash-object src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_main_pulse_logx.py)" = 477bda899694e4c75786d59850a2eddada669f07
+          test "$(git -C a1 hash-object tests/test_kokuno_pa16_current_cartesian_main_pulse_logx.py)" = 765f205ccfbcd19135d266cfe960a1feb27b47dd
+          test "$(git -C a1 hash-object .github/workflows/kokuno-agent1-current-cartesian-main-pulse-logx.yml)" = d1a7ab538bf0d8d01aebd38a831ba928a3ec2bad
+          PYTHONPATH="$PWD/a1/src" pytest -q a1/tests/test_kokuno_pa16_current_cartesian_main_pulse_logx.py
+      - uses: actions/checkout@v4
+        with: {repository: KokunoYumeto/yang-mills-interacting-workbench, ref: 143f6773feb424ad9ed3a8d116653200f20346b7, path: source, fetch-depth: 1}
+      - name: Authenticate corrected source
+        run: test "$(git -C source hash-object navier-stokes/navier_stokes_workbench.tex)" = 205a99807302e21a51c5eaf223390c0dfc42bcd0
+      - name: Exact sibling tests and materialize receipt
+        shell: bash
+        run: |
+          set -euo pipefail; mkdir -p receipts
+          PYTHONPATH="$PWD/a1/src" python - <<'PY'
+          from pathlib import Path
+          import json
+          import pytest
+          import openai_ns_reconstruction
+          openai_ns_reconstruction.__path__.insert(0, str(Path('a2/src/openai_ns_reconstruction').resolve()))
+          rc = pytest.main(['-q', 'a2/tests/test_constrained_kokuno_current_main_pulse_logx_leading_oscillatory_identity.py'])
+          assert rc == 0
+          from openai_ns_reconstruction import kokuno_current_main_pulse_logx_leading_oscillatory_identity as m
+          field = m.default_field()
+          field.save_candidate('receipts/candidate.json')
+          receipt = m.materialize_receipt()
+          Path('receipts/receipt.json').write_text(json.dumps(receipt, indent=2, sort_keys=True) + '\n')
+          m.enforce_receipt(receipt)
+          assert 0.0 < field.finite_xi_max < m.SOURCE_MAIN_XI_END == 11.0
+          assert receipt['checks']['xi_11_endpoint_velocity_finite'] is True
+          assert receipt['checks']['post_xi_11_boundary_fail_closed'] is True
+          PY
+      - name: Upload raw evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent2-current-main-pulse-logx-leading-oscillatory
+          path: receipts
+          if-no-files-found: error
