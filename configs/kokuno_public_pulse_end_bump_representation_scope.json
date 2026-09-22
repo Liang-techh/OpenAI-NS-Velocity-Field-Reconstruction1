@@ -1,0 +1,144 @@
+{
+  "canonical_cr001": {
+    "candidate_collapse_forbidden": true,
+    "constraints_git_blob_sha1": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "derivative_steps": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "divergence_L2": 1e-05,
+    "divergence_max": 1e-05,
+    "evaluation_box": [
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ]
+    ],
+    "forcing_mode": "restricted_two_parameter_family",
+    "held_out_points": 4096,
+    "momentum_L2": 0.001,
+    "momentum_max": 0.001,
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "post_hoc_threshold_relaxation_forbidden": true,
+    "quadrature_orders_per_axis": [
+      24,
+      48,
+      96
+    ],
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "residual_defined_free_forcing_forbidden": true,
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [
+      0.25,
+      0.75
+    ],
+    "validation_seed": 914027
+  },
+  "canonical_delivery": {
+    "candidate_family": "eq45_supported_velocity_candidate_v1",
+    "openai_field_identified": false,
+    "paper_exact": false,
+    "pde_validated": false,
+    "velocity_export_ready": true,
+    "visual_correspondence_verified": false,
+    "visualization_ready": false
+  },
+  "evidence_transfer": {
+    "a2_pr1117_receipts_cover_pr1116_end_compensation": false,
+    "coefficient_receipts_transfer_across_pointwise_bump_replacement": false,
+    "fresh_save_load_and_numerical_replay_required_if_pointwise_bump_changes": true,
+    "fresh_semantic_identity_required_if_pointwise_bump_changes": true,
+    "row_closure_under_autonomous_bump_proves_source_exact_bump": false,
+    "row_closure_under_autonomous_bump_proves_source_exact_cartesian_end_compensation": false,
+    "same_public_algebra_implies_same_numerical_c1_c2_across_bump_realizations": false,
+    "same_public_centers_width_imply_same_pointwise_bump_identity": false
+  },
+  "exact_stack": {
+    "base_head": "c144d00fd81a938e497ca5d841fed6d1fe448a8b",
+    "base_pr": 1116,
+    "current_a2_consumes_base_pr1116": false,
+    "current_a2_head": "27741d9c0a27262f7fabf61eebaa2fbd507e9f03",
+    "current_a2_pr": 1117,
+    "parent_a1_head": "45da043dd2b4cd067f005a72c7e21fd0f2bcf309",
+    "parent_a1_pr": 1107,
+    "source_module": "src/openai_ns_reconstruction/kokuno_public_pulse_end_compensator.py",
+    "source_module_git_blob_sha1": "3c4d7a2d51cbccad7322a9bf6825a69e2b45e486"
+  },
+  "four_way_provenance": {
+    "autonomous_design": [
+      "current lineage freezes lambda=0.05 as a repository schedule value",
+      "pointwise bump is the repository-autonomous standard C-infinity realization exp(1-1/(1-z^2)) with peak one",
+      "fixed 96-point Gauss-Legendre quadrature is a repository numerical realization",
+      "this fail-closed pointwise-bump and coefficient-receipt evidence-transfer firewall"
+    ],
+    "pending_unknown": [
+      "source-exact pointwise bump shape",
+      "source-exact Amp(eta) root",
+      "current-lineage normalized pulse-entry J and any unresolved entry data required by the public algebra",
+      "Cartesian composition of the c1/c2 end compensation on the current leading identity",
+      "terminal/exterior/global velocity, matched pressure, preregistered restricted forcing, visual correspondence and complete NS validation"
+    ],
+    "public_source_facts": [
+      "pinned corrected public reconstruction gives the two-row c1/c2 pulse-end algebra",
+      "public row slopes are s1=1/2-lambda and s2=1/2-2lambda",
+      "public end bumps are non-negative C-infinity bumps of identical full width 0.3 centered at 13/lambda-3 and 13/lambda-1",
+      "public RHS uses normalized pulse-entry M and J ratios and source-prescribed first-bump-center exponential row scaling"
+    ],
+    "user_requirements": [
+      "deliver explicit callable save-loadable Cartesian velocity(x,y,z,t)->[u,v,w]",
+      "keep velocity export, visual correspondence, PDE validation, paper exactness and OpenAI-field identity independent",
+      "do not transfer evidence across autonomous representation/candidate identities without a matching replay or audit"
+    ]
+  },
+  "promotion_rule": {
+    "forbidden_implications": [
+      "two_row_algebra_closes -> source_exact_pointwise_bump",
+      "two_row_algebra_closes -> source_exact_amplitude",
+      "two_row_algebra_closes -> current_cartesian_end_compensation_composed",
+      "two_row_algebra_closes -> terminal_or_global_velocity",
+      "two_row_algebra_closes -> visual_correspondence_verified",
+      "two_row_algebra_closes -> pde_validated",
+      "same_centers_width -> transferable_c1_c2_receipt"
+    ],
+    "statement": "Exact closure of the public two-row algebra is conditional on the supplied Amp/M/J inputs and the frozen autonomous pointwise bump realization; it may not promote source-exact bump, Cartesian end-compensation, global velocity, visual, PDE, paper-exact or OpenAI-field states."
+  },
+  "schema": "cr002-kokuno-pulse-end-bump-representation-v1",
+  "scope": "public_end_compensator_pointwise_bump_and_evidence_transfer_only",
+  "source_vs_realization": {
+    "caller_supplies_amplitude": true,
+    "caller_supplies_normalized_J_entry": true,
+    "caller_supplies_normalized_M_entry": true,
+    "current_cartesian_end_compensation_composed": false,
+    "current_lineage_J_entry_materialized": false,
+    "public_bump_centers_and_width_materialized": true,
+    "public_two_row_end_compensation_algebra_materialized": true,
+    "repository_autonomous_pointwise_bump_materialized": true,
+    "source_exact_amplitude_root_materialized": false,
+    "source_exact_pointwise_bump_recovered": false
+  },
+  "task_id": "CR002-KOKUNO-PULSE-END-BUMP-REPRESENTATION-137",
+  "truth_states": {
+    "blowup_proved": false,
+    "current_cartesian_end_compensation_composed": false,
+    "current_lineage_J_entry_materialized": false,
+    "kokuno_velocity_export_ready": false,
+    "openai_field_identified": false,
+    "paper_exact": false,
+    "pde_validated": false,
+    "public_end_compensator_algebra_ready": true,
+    "source_exact_amplitude_root_materialized": false,
+    "source_exact_bump_shape_recovered": false,
+    "visual_correspondence_verified": false
+  }
+}
