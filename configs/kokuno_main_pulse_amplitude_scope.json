@@ -1,0 +1,156 @@
+{
+  "canonical_eq45_independent_state": {
+    "candidate_family": "eq45_supported_velocity_candidate_v1",
+    "openai_field_identified": false,
+    "paper_exact": false,
+    "pde_validated": false,
+    "velocity_export_ready": true,
+    "visual_correspondence_verified": false,
+    "visualization_ready": false
+  },
+  "cr001_lock": {
+    "candidate_collapse_forbidden": true,
+    "constraints_blob_sha": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "derivative_steps": [
+      0.02,
+      0.01,
+      0.005
+    ],
+    "divergence_L2": 1e-05,
+    "divergence_max": 1e-05,
+    "evaluation_box": [
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ],
+      [
+        -2,
+        2
+      ]
+    ],
+    "forcing_mode": "restricted_two_parameter_family",
+    "held_out_points": 4096,
+    "momentum_L2": 0.001,
+    "momentum_max": 0.001,
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "post_hoc_threshold_relaxation_forbidden": true,
+    "quadrature_orders_per_axis": [
+      24,
+      48,
+      96
+    ],
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "residual_defined_free_forcing_forbidden": true,
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [
+      0.25,
+      0.75
+    ],
+    "validation_seed": 914027
+  },
+  "current_truth": {
+    "blowup_proved": false,
+    "current_cartesian_pulse_velocity_composed": false,
+    "openai_field_identified": false,
+    "paper_exact": false,
+    "pde_validated": false,
+    "repository_autonomous_principal_amplitude_materialized": true,
+    "source_exact_amplitude_root_materialized": false,
+    "source_hidden_parameters_recovered": false,
+    "source_main_pulse_kernel_formula_materialized": true,
+    "source_pulse_end_MJ_corrections_materialized": false,
+    "terminal_global_velocity_materialized": false,
+    "velocity_export_ready_for_kokuno_route": false,
+    "visual_correspondence_verified": false
+  },
+  "forbidden_implications": [
+    "public main pulse shape/formulas -> source-exact executable amplitude",
+    "repository-autonomous principal amplitude -> recovered hidden/source Amp(eta)",
+    "nonzero low-dimensional U profile -> current Cartesian pulse velocity",
+    "low-dimensional F/E/U save-load identity -> global velocity_export_ready",
+    "later source-exact amplitude implementation -> inheritance of proxy-candidate numerical evidence without a new identity",
+    "callable or visualizable velocity -> visual correspondence",
+    "visual resemblance -> PDE validation",
+    "visual resemblance -> paper exactness or exact OpenAI-field identity",
+    "CI success -> scientific admission"
+  ],
+  "mechanics_witness": {
+    "classification": "autonomous_mechanics_only",
+    "not_openai_numeric_evidence": true,
+    "not_pde_evidence": true,
+    "not_source_numeric_evidence": true,
+    "statement": "holding the same E and R0 fixed while changing amplitude changes U=E*A*R0, so the public pulse shape alone does not determine executable U until an amplitude realization is fixed"
+  },
+  "promotion_requirements": {
+    "current_cartesian_pulse_velocity_composed": [
+      "consume the exact current Cartesian pulse-entry identity rather than only the low-dimensional kernel",
+      "state whether the amplitude is autonomous proxy or source-root realization",
+      "rebuild primitive/history and axis-safe Cartesian u/v/w consistently",
+      "save/reload the composed candidate under the same semantic identity"
+    ],
+    "evidence_transfer_after_amplitude_replacement": [
+      "treat any proxy-to-source-root amplitude replacement as a new candidate identity",
+      "rerun candidate-local save/load, representation and downstream numerical evidence on that new identity",
+      "do not transfer proxy-specific numerical receipts merely because R_0 and E formulas are shared"
+    ],
+    "source_exact_amplitude_root_materialized": [
+      "implement the full pinned-source Amp(eta) root with all required source inputs rather than identifying A_principal with it",
+      "bind the exact public-source provenance and deterministic realization into a new semantic candidate identity",
+      "retain c1/c2 and M/J closure as separate pending state until actually materialized"
+    ],
+    "velocity_export_ready_for_kokuno_route": [
+      "provide one global or explicitly supported-domain unified Cartesian velocity(x,y,z,t)->[u,v,w] surface",
+      "bind save/load and reproducible export to the same candidate identity",
+      "verify finite outputs and preserve support/axis/domain guards",
+      "do not require PDE validation or visual correspondence for this delivery state"
+    ]
+  },
+  "provenance_classes": {
+    "autonomous_design": [
+      "replace the unresolved full source amplitude root by the positive principal-term proxy A_principal=sqrt((1-exp(-26))/(4*K_b)) for this executable kernel only",
+      "evaluate the principal proxy with the fixed repository 96-point Gauss-Legendre realization",
+      "stop the executable proxy kernel at xi=11 before the unmaterialized c1/c2 and M/J end-closure region",
+      "this CR002 evidence-transfer and candidate-identity firewall"
+    ],
+    "pending_unknown": [
+      "the full source Amp(eta) root realization",
+      "the source c1/c2 end compensators and M/J closure",
+      "composition of the pulse into the current Cartesian #1088 lineage",
+      "terminal/exterior/global leading completion",
+      "matched Cartesian pressure and preregistered restricted forcing",
+      "visual correspondence to the public OpenAI velocity-field visualization",
+      "complete held-out Navier-Stokes validation, paper exactness and OpenAI-field identity"
+    ],
+    "public_source_fact": [
+      "pinned corrected Kokuno reconstruction supplies the pulse coordinate y=log(X/X_p), xi=lambda*y",
+      "pinned corrected Kokuno reconstruction supplies E=E_p exp[-(1/2+lambda)y], F=E/sqrt(2X), and U=E R_b",
+      "pinned corrected Kokuno reconstruction supplies R_b=Amp(eta) R_0(lambda y)+c1(eta) beta1(y)+c2(eta) beta2(y)",
+      "pinned corrected Kokuno reconstruction supplies R_0(xi)=phi(xi)[1-sigma(xi-10)] and phi(xi)=int_0^xi sigma(v/0.02)dv",
+      "exact PR #1094 records the source principal spin term and K_b integral as structural/formula provenance"
+    ],
+    "user_requirement": [
+      "deliver a clear computable save/loadable Cartesian velocity(x,y,z,t)->[u,v,w]",
+      "keep callable delivery independent from visual correspondence, PDE validation, paper exactness and OpenAI-field identity",
+      "separate user requirements, public-source facts, autonomous design and pending/unknown information"
+    ]
+  },
+  "schema": "cr002-kokuno-main-pulse-amplitude-scope-v1",
+  "scope": {
+    "audited_source_path": "src/openai_ns_reconstruction/kokuno_source_main_axial_pulse_kernel.py",
+    "base_exact_head": "dc33914d3dd60c1dc4c8dfaab0760ef071385d54",
+    "base_pr": 1094,
+    "candidate_bytes_changed": false,
+    "change_type": "governance_only",
+    "forcing_changed": false,
+    "pressure_changed": false,
+    "scientific_threshold_changed": false,
+    "source_formula_changed": false
+  },
+  "task_id": "CR002-KOKUNO-MAIN-PULSE-AMPLITUDE-SCOPE-129"
+}
