@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import copy
 import json
+from decimal import Decimal
 
 import pytest
 
@@ -41,7 +42,7 @@ def test_exact_a1_release1_precision_scope_passes() -> None:
 def test_decimal_embedding_does_not_recover_sub_ulp_distinction() -> None:
     witness = mechanics_only_precision_witness()
     assert witness["scope"] == "autonomous_representation_mechanics_only"
-    assert witness["exact_delta"] == "1E-30"
+    assert Decimal(witness["exact_delta"]) == Decimal("1e-30")
     assert witness["binary64_values_equal"] is True
     assert witness["decimal_embeddings_equal"] is True
     assert witness["embedding_error_nonzero"] is True
