@@ -1,6 +1,6 @@
 # Current checkpoint and candidate selection
 
-Updated 2026-09-21. This page separates latest documented research from what the `main` checkout can currently execute. It is not the integration branch's task queue.
+Updated 2026-09-22. This page separates latest documented research from what the `main` checkout can currently execute. Scheduled NS reconstruction agents were paused on 2026-09-22; the consolidated stop-state is recorded in [FINAL_RESEARCH_SNAPSHOT_2026-09-22.md](FINAL_RESEARCH_SNAPSHOT_2026-09-22.md).
 
 ## Four distinct entry points
 
@@ -25,4 +25,4 @@ A working continuation needs the actual frozen candidate, compatible runtime, re
 
 The main ST006 API and its original failure reports remain unchanged. See [results](RESEARCH_STATUS.md) for current paired comparisons and [repository guide](REPOSITORY_GUIDE.md) for runnable commands.
 
-For multi-agent routing use [the live integration task file](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/codex/cr001-constraints/docs/AGENT_TASKS.md). This organization change does not close, duplicate, unblock or reassign those tasks.
+The historical multi-agent routing state remains preserved in its GitHub branches and pull requests, but the scheduled NS agents are paused. Do not treat the existence of an open PR as automatic scientific admission; resume from the exact lineage documented in the final pause snapshot.
