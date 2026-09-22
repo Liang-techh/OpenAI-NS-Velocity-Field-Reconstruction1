@@ -1,0 +1,123 @@
+name: kokuno-agent5-splitdelta-orientation-rf30preflight-routing
+
+on:
+  push:
+    branches: [kokuno-agent5/splitdelta-orientation-rf30preflight-routing-120]
+  pull_request:
+    branches: [kokuno-agent5/absolute-swirl-pulsesupport-rf30preflight-routing-119]
+  workflow_dispatch:
+
+jobs:
+  exact-head:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Verify exact A5 ancestry and minimal three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          base=a035784fcba6d373f5dffc062872b632c6a26309
+          git merge-base --is-ancestor "$base" HEAD
+          test "$(git rev-list --count "$base"..HEAD)" -eq 4
+          mapfile -t files < <(git diff --name-only "$base"..HEAD | sort)
+          printf '%s\n' "${files[@]}"
+          test "${#files[@]}" -eq 3
+          expected=(
+            ".github/workflows/kokuno-agent5-splitdelta-orientation-rf30preflight-routing.yml"
+            "src/openai_ns_reconstruction/kokuno_a5_splitdelta_orientation_rf30preflight_routing.py"
+            "tests/test_kokuno_a5_splitdelta_orientation_rf30preflight_routing.py"
+          )
+          mapfile -t expected_sorted < <(printf '%s\n' "${expected[@]}" | sort)
+          test "$(printf '%s\n' "${files[@]}")" = "$(printf '%s\n' "${expected_sorted[@]}")"
+          test "$(git show "$base":src/openai_ns_reconstruction/kokuno_a5_absolute_swirl_pulsesupport_rf30preflight_routing.py | git hash-object --stdin)" = 83ff6dfb3092e20382e05b6fe689491512e9eff6
+
+      - name: Authenticate exact sibling deliveries
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin \
+            657818dd83e119e6091bd2490d3804c04c3ef723 \
+            59d3e6d64fcdfeaf145cbee67e68b8a25e89489c \
+            cafab2098f00c3dc2ed5668e1b12bdb38a1f31e8 \
+            47a241732b667b02f2294670d37f32650491f7e3
+          test "$(git show 657818dd83e119e6091bd2490d3804c04c3ef723:src/openai_ns_reconstruction/kokuno_pa16_current_cartesian_relative_swirl_split.py | git hash-object --stdin)" = c6d7d93ee33e5551513bdc817b2f118e4c544298
+          test "$(git show 59d3e6d64fcdfeaf145cbee67e68b8a25e89489c:src/openai_ns_reconstruction/kokuno_source_azimuthal_frame_oriented_multiharmonic_velocity.py | git hash-object --stdin)" = ca8acae2c3a53b79528cb55f45502443f6ffb2b6
+          test "$(git show cafab2098f00c3dc2ed5668e1b12bdb38a1f31e8:src/openai_ns_reconstruction/kokuno_current_i4_rf30_fixedq_preflight.py | git hash-object --stdin)" = b2fac4318a40342d6c08170bf7093c31685c53ab
+          test "$(git show 47a241732b667b02f2294670d37f32650491f7e3:src/openai_ns_reconstruction/kokuno_agent4_relative_swirl_compensator_independent_audit.py | git hash-object --stdin)" = c279371898a75cfcf7d2aa39861eba4cba432cc2
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install branch
+        run: python -m pip install -e '.[dev]'
+
+      - name: Compile and run focused routing regressions
+        run: |
+          python -m py_compile \
+            src/openai_ns_reconstruction/kokuno_a5_splitdelta_orientation_rf30preflight_routing.py \
+            tests/test_kokuno_a5_splitdelta_orientation_rf30preflight_routing.py
+          pytest -q \
+            tests/test_kokuno_a5_absolute_swirl_pulsesupport_rf30preflight_routing.py \
+            tests/test_kokuno_a5_splitdelta_orientation_rf30preflight_routing.py
+
+      - name: Materialize deterministic routing artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/kokuno_agent5_splitdelta_orientation_rf30preflight
+          python -m openai_ns_reconstruction.kokuno_a5_splitdelta_orientation_rf30preflight_routing \
+            --output artifacts/kokuno_agent5_splitdelta_orientation_rf30preflight/routing.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('artifacts/kokuno_agent5_splitdelta_orientation_rf30preflight/routing.json')
+          r = json.loads(p.read_text())
+          assert r['frontiers']['relative_swirl_split_delta']['pr'] == 1171
+          assert r['frontiers']['azimuthal_frame_oriented_multiharmonic']['pr'] == 1170
+          assert r['truth_boundary']['relative_swirl_cartesian_delta_channel_materialized'] is True
+          assert r['truth_boundary']['binary64_total_relative_swirl_sum_is_resolved'] is False
+          assert r['truth_boundary']['current_cartesian_relative_swirl_composed'] is False
+          assert r['truth_boundary']['source_exact_orientation_recovered'] is False
+          assert r['truth_boundary']['oriented_self_contained_velocity_xyzt_provider'] is False
+          assert r['truth_boundary']['current_i4_rf30_defect_materialized'] is False
+          assert r['truth_boundary']['pde_validated'] is False
+          PY
+
+      - name: Upload raw routing artifact before truth enforcement
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent5-splitdelta-orientation-rf30preflight-routing
+          path: artifacts/kokuno_agent5_splitdelta_orientation_rf30preflight/
+          if-no-files-found: error
+
+      - name: Enforce final truth boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from openai_ns_reconstruction.kokuno_a5_splitdelta_orientation_rf30preflight_routing import build_registration, validate_registration
+          r = build_registration()
+          validate_registration(r)
+          assert r['core_state'] == {
+              'leading_ready': False,
+              'oscillatory_ready': True,
+              'correction_ready': False,
+              'velocity_export_ready': False,
+              'pde_validated': False,
+          }
+          g = r['frozen_gates']
+          assert g['normalized_momentum_sampled_max'] == 1e-3
+          assert g['normalized_momentum_volume_l2'] == 1e-3
+          assert g['normalized_divergence_sampled_max'] == 1e-5
+          assert g['normalized_divergence_volume_l2'] == 1e-5
+          assert g['canonical_quadrature'] == [24, 48, 96]
+          assert g['residual_defined_free_forcing_allowed'] is False
+          PY
