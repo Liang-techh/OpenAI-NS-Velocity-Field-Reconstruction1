@@ -1,23 +1,23 @@
 """Kokuno Agent-5 fail-closed routing for the newest A1/A2 seams.
 
-This module is integration/provenance glue only.  It does not alter Agent-1--4
+This module is integration/provenance glue only. It does not alter Agent-1--4
 mathematics or transfer scoped evidence across candidate identities.
 
 Fresh facts bound here:
 
 * A1 #1159 materializes only the current-minus-imported contribution to the
-  late relative-swirl angular target.  The imported/base absolute target is not
+  late relative-swirl angular target. The imported/base absolute target is not
   materialized, so the total target and Cartesian relative-swirl composition
-  remain unavailable.  The newest bounded Cartesian leading therefore remains
+  remain unavailable. The newest bounded Cartesian leading therefore remains
   exact A1 #1148.
 * A2 #1158 adds identity-bound conservative outer-support execution
-  certificates to the bounded complete-curl multi-harmonic family.  The source
+  certificates to the bounded complete-curl multi-harmonic family. The source
   input provider remains external; this is not a self-contained project field.
-* A3's newest delivered frontier remains #1150.  Central coordination has a
+* A3's newest delivered frontier remains #1150. Central coordination has a
   newer claimed RF30 fixed-Q preflight, but a claim is not a delivery and is
   recorded only as pending/not evidence.
 * A4 #1152 remains an implementation-distinct, leading-only divergence audit
-  of exact A1 #1148.  It does not audit #1159 and is not complete-NS evidence.
+  of exact A1 #1148. It does not audit #1159 and is not complete-NS evidence.
 
 Project gates remain frozen: normalized momentum sampled-max and volume-L2
 <=1e-3; normalized divergence sampled-max and volume-L2 <=1e-5; canonical
@@ -222,6 +222,14 @@ def build_registration() -> dict[str, Any]:
         "truth_boundary": _truth_boundary(),
         "core_state": copy.deepcopy(CORE_STATE),
         "frozen_gates": copy.deepcopy(FROZEN_GATES),
+        "shortest_closure": [
+            "materialize the missing imported/base absolute angular target before adding A1 #1159 current correction into a total relative-swirl target",
+            "compose the resulting two relative-swirl bumps into the exact A1 current Cartesian identity, then finish terminal/exterior/global leading",
+            "make A2 consume that exact global identity into one self-contained leading-plus-oscillatory candidate; provider support certificates alone do not close this seam",
+            "deliver the claimed candidate-bound fixed-Q RF30 preflight and then the real source auxiliary-T2/Haar covariance backend before applying RF34-RF49 mechanics",
+            "bind matched pressure and preregistered non-residual-defined restricted forcing before constructing a complete NS defect",
+            "only then run the real finite correction cycle and Agent-4 held-out whole-domain 1e-3 momentum gate",
+        ],
     }
     registration["registration_sha256"] = registration_sha256(registration)
     validate_registration(registration)
@@ -242,8 +250,6 @@ def validate_registration(registration: Mapping[str, Any]) -> None:
     a4 = frontiers["holdprefix_leading_validator"]
     truth = registration["truth_boundary"]
     firewall = registration["identity_firewall"]
-    state = registration["core_state"]
-    gates = registration["frozen_gates"]
 
     if a1lead["pr"] != 1148 or a1corr["pr"] != 1159:
         raise ValueError("A1 frontier identity drift")
@@ -293,15 +299,21 @@ def validate_registration(registration: Mapping[str, Any]) -> None:
         "velocity_export_ready": False,
         "pde_validated": False,
     }
-    if state != expected_state:
-        raise ValueError(f"core state drift: {state!r}")
-    if gates["momentum_sampled_max"] != 1.0e-3 or gates["momentum_volume_l2"] != 1.0e-3:
-        raise ValueError("momentum gate drift")
-    if gates["divergence_sampled_max"] != 1.0e-5 or gates["divergence_volume_l2"] != 1.0e-5:
-        raise ValueError("divergence gate drift")
-    if gates["canonical_quadrature_orders"] != [24, 48, 96]:
+    if registration["core_state"] != expected_state:
+        raise ValueError("core state drift")
+    if registration["frozen_gates"] != FROZEN_GATES:
+        raise ValueError("frozen project gates changed")
+    if FROZEN_GATES["normalized_momentum_sampled_max"] != 1.0e-3:
+        raise ValueError("momentum max gate drift")
+    if FROZEN_GATES["normalized_momentum_volume_l2"] != 1.0e-3:
+        raise ValueError("momentum L2 gate drift")
+    if FROZEN_GATES["normalized_divergence_sampled_max"] != 1.0e-5:
+        raise ValueError("divergence max gate drift")
+    if FROZEN_GATES["normalized_divergence_volume_l2"] != 1.0e-5:
+        raise ValueError("divergence L2 gate drift")
+    if FROZEN_GATES["canonical_quadrature"] != [24, 48, 96]:
         raise ValueError("canonical quadrature drift")
-    if gates["residual_defined_or_free_forcing_allowed"]:
+    if FROZEN_GATES["residual_defined_free_forcing_allowed"]:
         raise ValueError("residual-defined/free forcing unexpectedly allowed")
 
 
