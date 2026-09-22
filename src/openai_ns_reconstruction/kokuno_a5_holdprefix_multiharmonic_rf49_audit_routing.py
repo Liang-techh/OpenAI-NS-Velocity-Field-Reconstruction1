@@ -1,6 +1,6 @@
-"""Fail-closed Kokuno Agent-5 routing after hold-prefix/A2-diagnostic/RF49 advances.
+"""Fail-closed Kokuno Agent-5 routing after hold-prefix/A2-diagnostic/RF49/A4-prefix advances.
 
-This module is integration/provenance glue only.  It does not rewrite Agent-1--4
+This module is integration/provenance glue only. It does not rewrite Agent-1--4
 mathematics, and it never transfers evidence between different candidate
 identities.
 
@@ -8,21 +8,23 @@ Fresh frontiers frozen here:
 
 * Agent 1 #1148 exposes the full *unedited* eta-independent exponential hold as
   a low-dimensional helper, while the unified Cartesian leading candidate is
-  extended only through a conservative pre-relative-swirl prefix.  The two
+  extended only through a conservative pre-relative-swirl prefix. The two
   public relative-swirl bumps, the complete terminal hold, exterior heat, and
   global leading field remain unmaterialized.
 * Agent 2 #1149 adds an implementation-distinct three-resolution Cartesian
   divergence/vorticity diagnostic for the provider-driven bounded
-  multi-harmonic complete-curl family of #1141.  The source provider remains
+  multi-harmonic complete-curl family of #1141. The source provider remains
   external, so this does not create a self-contained project candidate or a
   complete Navier--Stokes residual.
 * Agent 3 #1150 adds a source-exponent-gain handoff firewall on the RF44--RF49
-  mechanics route.  Its 0.39999/0.17/0.89996 numbers are asymptotic
-  class-exponent gains, not multiplicative raw residual contractions.  The
+  mechanics route. Its 0.39999/0.17/0.89996 numbers are asymptotic
+  class-exponent gains, not multiplicative raw residual contractions. The
   real same-identity current-I4 fixed-Q RF30 backend is still missing.
-* Agent 4 #1143 independently audits exact Agent-1 #1140 leading-only
-  divergence after save/load.  It does not consume newer Agent-1 #1148, so its
-  evidence may not be transferred to the hold-prefix identity.
+* Agent 4 #1152 independently audits exact Agent-1 #1148 pre-relative-swirl
+  prefix divergence after save/load. Its exact-head CI is still unresolved at
+  registration, so this records presence/registration only, never PASS or
+  scientific admission. Older Agent-4 #1143 remains bound only to Agent-1
+  #1140 and is retained as parent-stage evidence, not transferred forward.
 
 The project gates remain frozen: normalized momentum sampled-max and volume-L2
 <= 1e-3; normalized divergence sampled-max and volume-L2 <= 1e-5; canonical
@@ -127,7 +129,7 @@ AGENT3_RF49_GAIN_FIREWALL = {
     "actions_status_at_registration": "queued",
 }
 
-AGENT4_POSTPULSE_LEADING_AUDIT = {
+AGENT4_POSTPULSE_PARENT_LEADING_AUDIT = {
     "task": "K4-VAL-118",
     "pr": 1143,
     "head": "70897e18df4b58b2e023a8bfc82dfdd552db62b9",
@@ -136,7 +138,6 @@ AGENT4_POSTPULSE_LEADING_AUDIT = {
     "source_blob": "5b90b13eab506e6fe63fe360352d570a5c2ac3c1",
     "audited_agent1_pr": 1140,
     "audited_agent1_head": "c5442c11165d7f0976889b826bf58dce38a3d3dd",
-    "does_not_audit_agent1_pr": 1148,
     "stage": "postpulse-eta-flattening-leading-only-independent-divergence-audit",
     "fd_steps": [0.02, 0.01, 0.005],
     "seed": 9173901,
@@ -147,11 +148,38 @@ AGENT4_POSTPULSE_LEADING_AUDIT = {
     "registered": True,
     "scoped_gate_passed": None,
     "scientifically_admitted": False,
-    "leading_only_ns_residual_assessed": False,
     "complete_ns_momentum_residual_assessed": False,
     "pde_validated": False,
     "repository_tests_run": 35696887163,
     "dedicated_run": 35696886910,
+    "actions_status_at_registration": "queued",
+}
+
+AGENT4_HOLD_PREFIX_LEADING_AUDIT = {
+    "task": "K4-VAL-119",
+    "pr": 1152,
+    "head": "caaf740af357fd6741da5118a1254c2b945caad0",
+    "branch": "kokuno-agent4/postpulse-hold-prefix-divergence-119",
+    "source_path": "src/openai_ns_reconstruction/kokuno_a4_postpulse_hold_prefix_leading_divergence_independent_audit.py",
+    "source_blob": "89da19c5d1fcd3335ba97b6e5e21f9c8bb472721",
+    "audited_agent1_pr": 1148,
+    "audited_agent1_head": "5bafa4199ef127bf50bce30a58cc69ded99e1aa9",
+    "stage": "pre-relative-swirl-hold-prefix-leading-only-independent-divergence-audit",
+    "fd_steps": [0.02, 0.01, 0.005],
+    "seed": 9173911,
+    "save_load_roundtrip": True,
+    "implementation_distinct": True,
+    "binary64_fd_representability_firewall": True,
+    "unedited_full_hold_helper_excluded_from_scientific_derivatives": True,
+    "present": True,
+    "registered": True,
+    "scoped_gate_passed": None,
+    "scientifically_admitted": False,
+    "leading_only_ns_residual_assessed": False,
+    "complete_ns_momentum_residual_assessed": False,
+    "pde_validated": False,
+    "repository_tests_run": 35701896410,
+    "dedicated_run": 35701896363,
     "actions_status_at_registration": "queued",
 }
 
@@ -173,10 +201,12 @@ def _truth_boundary() -> dict[str, Any]:
         "source_terminal_hold_after_eta_flattening_materialized": False,
         "terminal_global_leading_velocity_materialized": False,
         "matching_latest_holdprefix_agent2_project_composite_materialized": False,
-        "matching_latest_holdprefix_agent4_audit_present": False,
-        "agent4_1143_exact_agent1_1140_leading_audit_present": True,
+        "matching_latest_holdprefix_agent4_audit_present": True,
+        "matching_latest_holdprefix_agent4_audit_registered": True,
+        "matching_latest_holdprefix_agent4_audit_scoped_gate_passed": None,
+        "matching_latest_holdprefix_agent4_audit_scientifically_admitted": False,
+        "agent4_1143_parent_stage_leading_audit_present": True,
         "agent4_1143_scoped_gate_passed": None,
-        "agent4_1143_scientifically_admitted": False,
         "bounded_multiharmonic_complete_curl_family_materialized": True,
         "bounded_multiharmonic_three_resolution_diagnostic_materialized": True,
         "bounded_multiharmonic_source_provider_self_contained": False,
@@ -213,6 +243,8 @@ def build_identity_firewall() -> dict[str, bool]:
     return {
         "agent1_1148_hold_prefix_not_consumed_by_xi11_agent2_1117": True,
         "agent4_1143_audit_of_agent1_1140_not_evidence_for_agent1_1148": True,
+        "agent4_1152_audit_matches_agent1_1148_only": True,
+        "agent4_1152_scoped_divergence_not_full_ns_evidence": True,
         "agent2_1149_provider_diagnostic_not_self_contained_or_full_ns_evidence": True,
         "agent3_1150_source_exponent_gain_not_raw_residual_contraction": True,
         "agent3_1150_mechanics_not_current_i4_candidate_gain_evidence": True,
@@ -246,7 +278,8 @@ def build_registration() -> dict[str, Any]:
             "bounded_multiharmonic_family": copy.deepcopy(AGENT2_BOUNDED_MULTIHARMONIC),
             "bounded_multiharmonic_diagnostic": copy.deepcopy(AGENT2_MULTIHARMONIC_DIAGNOSTIC),
             "rf49_gain_firewall": copy.deepcopy(AGENT3_RF49_GAIN_FIREWALL),
-            "postpulse_leading_validator": copy.deepcopy(AGENT4_POSTPULSE_LEADING_AUDIT),
+            "postpulse_parent_leading_validator": copy.deepcopy(AGENT4_POSTPULSE_PARENT_LEADING_AUDIT),
+            "holdprefix_leading_validator": copy.deepcopy(AGENT4_HOLD_PREFIX_LEADING_AUDIT),
             "latest_self_contained_project_composite": copy.deepcopy(LATEST_SELF_CONTAINED_PROJECT_COMPOSITE),
             "xi11_composite_validator": copy.deepcopy(AGENT4_XI11_COMPOSITE_DIVERGENCE_AUDIT),
             "current_i4_real_radial_force": copy.deepcopy(CURRENT_I4_REAL_RADIAL_FORCE),
@@ -289,7 +322,8 @@ def validate_registration(registration: Mapping[str, Any]) -> None:
         "bounded_multiharmonic_family": AGENT2_BOUNDED_MULTIHARMONIC,
         "bounded_multiharmonic_diagnostic": AGENT2_MULTIHARMONIC_DIAGNOSTIC,
         "rf49_gain_firewall": AGENT3_RF49_GAIN_FIREWALL,
-        "postpulse_leading_validator": AGENT4_POSTPULSE_LEADING_AUDIT,
+        "postpulse_parent_leading_validator": AGENT4_POSTPULSE_PARENT_LEADING_AUDIT,
+        "holdprefix_leading_validator": AGENT4_HOLD_PREFIX_LEADING_AUDIT,
         "latest_self_contained_project_composite": LATEST_SELF_CONTAINED_PROJECT_COMPOSITE,
         "xi11_composite_validator": AGENT4_XI11_COMPOSITE_DIVERGENCE_AUDIT,
         "current_i4_real_radial_force": CURRENT_I4_REAL_RADIAL_FORCE,
