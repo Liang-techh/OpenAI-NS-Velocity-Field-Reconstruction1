@@ -1,0 +1,118 @@
+name: agent7-st052m-public-observable-coverage
+
+on:
+  pull_request:
+    paths:
+      - experiments/root_st052/agent7_st052m_public_observable_coverage.py
+      - experiments/root_st052/test_agent7_st052m_public_observable_coverage.py
+      - .github/workflows/agent7-st052m-public-observable-coverage.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out exact PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Verify exact parent and strict three-file delta
+        shell: bash
+        run: |
+          set -euo pipefail
+          BASE=849713ba95cde8002fc1002d8b6856ea3f1dc264
+          test "$(git rev-parse HEAD^3)" = "$BASE"
+          test "$(git rev-list --count "$BASE"..HEAD)" -eq 3
+          test -z "$(git diff --diff-filter=D --name-only "$BASE"..HEAD)"
+
+          actual="$(git diff --name-only "$BASE"..HEAD | sort)"
+          expected="$(printf '%s\n' \
+            '.github/workflows/agent7-st052m-public-observable-coverage.yml' \
+            'experiments/root_st052/agent7_st052m_public_observable_coverage.py' \
+            'experiments/root_st052/test_agent7_st052m_public_observable_coverage.py' | sort)"
+          printf 'Changed paths:\n%s\n' "$actual"
+          test "$actual" = "$expected"
+
+      - name: Run focused fail-closed unit tests
+        run: >-
+          python -m unittest
+          experiments/root_st052/test_agent7_st052m_public_observable_coverage.py -v
+
+      - name: Authenticate exact successful A9 receipt artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          REPO="${{ github.repository }}"
+          RUN=35655112496
+          ARTIFACT=10664106855
+          HEAD=751d954a33d420fb3c9b3381aef7d4ba274e422a
+          DIGEST=sha256:754d3109e1bfc3ff9e5855f73e40fb499ab6e8394522c4afc3190efb17b491a1
+
+          gh api "/repos/$REPO/actions/runs/$RUN" > /tmp/a9_run.json
+          test "$(jq -r .status /tmp/a9_run.json)" = completed
+          test "$(jq -r .conclusion /tmp/a9_run.json)" = success
+          test "$(jq -r .head_sha /tmp/a9_run.json)" = "$HEAD"
+
+          gh api "/repos/$REPO/actions/artifacts/$ARTIFACT" > /tmp/a9_artifact.json
+          test "$(jq -r .name /tmp/a9_artifact.json)" = ST052-M-identity-bound-morphology
+          test "$(jq -r .expired /tmp/a9_artifact.json)" = false
+          test "$(jq -r .workflow_run.id /tmp/a9_artifact.json)" = "$RUN"
+          test "$(jq -r .workflow_run.head_sha /tmp/a9_artifact.json)" = "$HEAD"
+          test "$(jq -r .digest /tmp/a9_artifact.json)" = "$DIGEST"
+
+          curl --fail --silent --show-error --location \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/$REPO/actions/artifacts/$ARTIFACT/zip" \
+            -o /tmp/a9_morphology.zip
+          echo "754d3109e1bfc3ff9e5855f73e40fb499ab6e8394522c4afc3190efb17b491a1  /tmp/a9_morphology.zip" | sha256sum -c -
+          mkdir -p /tmp/a9_morphology
+          unzip -q /tmp/a9_morphology.zip -d /tmp/a9_morphology
+          test -f /tmp/a9_morphology/receipt.json
+
+      - name: Materialize frozen public-observable coverage receipt
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT=artifacts/agent7_st052m_public_observable_coverage/receipt.json
+          python experiments/root_st052/agent7_st052m_public_observable_coverage.py \
+            --receipt /tmp/a9_morphology/receipt.json \
+            --output "$OUT"
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          p = Path("artifacts/agent7_st052m_public_observable_coverage/receipt.json")
+          report = json.loads(p.read_text())
+          assert report["coverage_summary"]["public_observable_count"] == 6
+          assert report["coverage_summary"]["covered_by_candidate_bound_proxy_count"] == 5
+          assert report["coverage_summary"]["unresolved_or_unmeasured"] == ["axial_stretching_elongation"]
+          assert report["coverage_summary"]["visual_correspondence_established"] is False
+          assert report["routing"]["only_uncovered_public_label_is_axial_stretching"] is True
+          assert report["routing"]["next_existing_agent7_coordinate"] == "axial_vorticity_aspect_t050"
+          assert report["routing"]["candidate_mutation_authorized"] is False
+          assert report["routing"]["basis_growth_authorized"] is False
+          assert report["truth"]["candidate_velocity_changed"] is False
+          assert report["truth"]["basis_dimension_changed"] is False
+          assert report["truth"]["direct_visualization_fingerprint_improvement"] == 0.0
+          assert report["truth"]["pde_validated"] is False
+          assert report["truth"]["openai_field_identified"] is False
+          PY
+
+      - name: Upload routing receipt
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: agent7-st052m-public-observable-coverage
+          path: artifacts/agent7_st052m_public_observable_coverage/receipt.json
+          if-no-files-found: error
