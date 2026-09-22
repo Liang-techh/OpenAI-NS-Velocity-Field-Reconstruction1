@@ -1,0 +1,151 @@
+name: agent7-st052m-offgrid-temporal-morphology
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/root_st052/agent7_st052m_offgrid_temporal_morphology.py'
+      - 'experiments/root_st052/test_agent7_st052m_offgrid_temporal_morphology.py'
+      - '.github/workflows/agent7-st052m-offgrid-temporal-morphology.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  offgrid-temporal-morphology:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install 'numpy>=1.24,<3' 'scipy>=1.10,<2' 'sympy>=1.12,<2' 'pytest>=8,<10'
+
+      - name: Verify exact PR head checkout
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          EXPECTED_HEAD: ${{ github.event.pull_request.head.sha }}
+        run: test "$(git rev-parse HEAD)" = "$EXPECTED_HEAD"
+
+      - name: Verify exact three-file delta from Agent-7 parent
+        run: |
+          test "$(git rev-list --count 3fc6286c4b338126ce60eb167ed082a6af953335..HEAD)" = "3"
+          git diff --name-only 3fc6286c4b338126ce60eb167ed082a6af953335...HEAD | sort > /tmp/changed.txt
+          cat > /tmp/expected.txt <<'EOF'
+          .github/workflows/agent7-st052m-offgrid-temporal-morphology.yml
+          experiments/root_st052/agent7_st052m_offgrid_temporal_morphology.py
+          experiments/root_st052/test_agent7_st052m_offgrid_temporal_morphology.py
+          EOF
+          diff -u /tmp/expected.txt /tmp/changed.txt
+
+      - name: Focused off-grid temporal morphology tests
+        run: |
+          python -m pytest -q -W error \
+            experiments/root_st052/test_agent7_st052m_offgrid_temporal_morphology.py
+
+      - name: Execute preregistered off-grid temporal morphology audit
+        run: |
+          mkdir -p outputs/agent7-st052m-offgrid-temporal-morphology
+          python experiments/root_st052/agent7_st052m_offgrid_temporal_morphology.py \
+            --output outputs/agent7-st052m-offgrid-temporal-morphology/report.json
+
+      - name: Verify receipt completeness and fail-closed truth boundary
+        run: |
+          python - <<'PY'
+          import json, math
+          from pathlib import Path
+
+          r=json.loads(Path('outputs/agent7-st052m-offgrid-temporal-morphology/report.json').read_text())
+          assert r['task_id']=='CR003-ST052M-OFFGRID-TEMPORAL-MORPHOLOGY-139'
+          assert r['preregistered_issue']==1177
+          assert r['stack_base_pr']==1167
+          assert r['stack_base_head']=='3fc6286c4b338126ce60eb167ed082a6af953335'
+          p=r['frozen_protocol']
+          assert p['coordinate_name']=='core_width_skew_0375_to_0625'
+          assert p['time_left']==0.375 and p['time_right']==0.625
+          assert p['support_radius_scale']==2.0
+          assert p['epsilons']==[0.001,0.0005]
+          assert p['primary_epsilon']==0.0005
+          assert p['probe_name']=='time_skewed_poloidal_extension'
+          assert p['public_openai_numeric_target'] is None
+
+          assert math.isfinite(r['baseline_coordinate'])
+          assert len(r['fine_derivative_by_direction'])==6
+          assert len(r['coarse_derivative_by_direction'])==6
+          for value in r['fine_derivative_by_direction'].values():
+              assert math.isfinite(value)
+          for value in r['coarse_derivative_by_direction'].values():
+              assert math.isfinite(value)
+          assert 0 <= r['nine_coordinate_existing_rank'] <= 5
+          assert 0 <= r['nine_coordinate_augmented_rank'] <= 6
+          assert r['nine_coordinate_rank_gain_from_time_skewed_probe'] in (-5,-4,-3,-2,-1,0,1,2,3,4,5,6)
+
+          d=r['decision']
+          assert d['new_basis_addition_authorized'] is False
+          assert d['coefficient_selection_authorized'] is False
+          assert d['candidate_mutation_authorized'] is False
+          assert d['actual_velocity_changed'] is False
+          assert d['direct_visualization_fingerprint_improvement']==0.0
+          assert r['held_out_pde_residual']['evaluated'] is False
+          t=r['truth']
+          assert t['candidate_velocity_changed'] is False
+          assert t['basis_dimension_changed'] is False
+          assert t['pressure_or_force_changed'] is False
+          assert t['free_residual_force_used'] is False
+          assert t['pde_validated'] is False
+          assert t['paper_exact'] is False
+          assert t['openai_field_identified'] is False
+
+          print('baseline_coordinate=', r['baseline_coordinate'])
+          print('existing_five_new_coordinate_row_l2=', r['existing_five_new_coordinate_row_l2'])
+          print('time_skewed_probe_fine=', r['time_skewed_probe_gate']['fine_derivative'])
+          print('time_skewed_probe_relative_drift=', r['time_skewed_probe_gate']['relative_derivative_drift'])
+          print('alias_lifted=', r['temporal_sampling_alias_lifted_for_this_coordinate'])
+          print('rank_9x5=', r['nine_coordinate_existing_rank'])
+          print('rank_9x6=', r['nine_coordinate_augmented_rank'])
+          print('rank_gain=', r['nine_coordinate_rank_gain_from_time_skewed_probe'])
+          PY
+
+      - name: Publish compact off-grid temporal receipt
+        if: ${{ always() && github.event_name == 'pull_request' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          if [ ! -f outputs/agent7-st052m-offgrid-temporal-morphology/report.json ]; then exit 0; fi
+          python - <<'PY' > /tmp/agent7-offgrid-temporal-receipt.md
+          import json
+          from pathlib import Path
+
+          r=json.loads(Path('outputs/agent7-st052m-offgrid-temporal-morphology/report.json').read_text())
+          g=r['time_skewed_probe_gate']
+          print('<!-- agent7-st052m-offgrid-temporal-morphology-receipt -->')
+          print('**Agent 7 off-grid temporal morphology receipt (issue #1177):**')
+          print()
+          print(f"- baseline `{r['frozen_protocol']['coordinate_name']}`: `{r['baseline_coordinate']}`")
+          print(f"- time-skewed probe fine derivative: `{g['fine_derivative']}`; relative coarse/fine drift: `{g['relative_derivative_drift']}`; stable nonzero response: `{g['stable_nonzero_response']}`")
+          print(f"- parent time-grid alias detected by source execution: `{r['parent_alias_detected_by_source_execution']}`; alias lifted for this coordinate: `{r['temporal_sampling_alias_lifted_for_this_coordinate']}`")
+          print(f"- nine-coordinate existing rank: `{r['nine_coordinate_existing_rank']}/5`; augmented rank: `{r['nine_coordinate_augmented_rank']}/6`; rank gain: `{r['nine_coordinate_rank_gain_from_time_skewed_probe']}`")
+          print(f"- probe/existing-row response ratio: `{r['time_skewed_probe_to_existing_row_response_ratio']}`")
+          print('- candidate velocity unchanged; basis dimension change `0`; coefficient selected `none`; held-out complete-PDE residual not evaluated; direct visualization-fingerprint improvement `0.0`.')
+          print()
+          print('Truth boundary: this is candidate-side renderer-independent capacity evidence only. It does not establish visual/source correspondence, PDE validity, paper exactness, exact OpenAI-field identity, or blow-up.')
+          PY
+          gh pr comment "$PR_NUMBER" --body-file /tmp/agent7-offgrid-temporal-receipt.md || true
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: agent7-st052m-offgrid-temporal-morphology
+          path: outputs/agent7-st052m-offgrid-temporal-morphology/
+          if-no-files-found: warn
+
+# Coordinate, times, epsilons and response/stability gates were frozen in issue #1177 before execution.
