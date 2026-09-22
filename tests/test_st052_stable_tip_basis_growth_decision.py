@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import copy
 import unittest
 
 from openai_ns_reconstruction.st052_stable_tip_basis_growth_decision import (
@@ -100,7 +99,7 @@ class TipDecisionTests(unittest.TestCase):
 
     def test_control_run_identity_drift_fails_closed(self):
         with self.assertRaises(ValueError):
-            make_decision(source_receipt(False), {"id": CONTROL_RUN, "head_sha": "0" * 40, "status": "queued", "conclusion": None})
+            make_decision(source_receipt(tapered=False), {"id": CONTROL_RUN, "head_sha": "0" * 40, "status": "queued", "conclusion": None})
 
 
 if __name__ == "__main__":
