@@ -23,7 +23,7 @@ jobs:
           set -euo pipefail
           base=db7a9a4efb4faed2fa46d321fdf5a66b8686de1f
           git merge-base --is-ancestor "$base" HEAD
-          test "$(git rev-list --count "$base"..HEAD)" -eq 3
+          test "$(git rev-list --count "$base"..HEAD)" -eq 5
           mapfile -t files < <(git diff --name-only "$base"..HEAD | sort)
           test "${#files[@]}" -eq 3
           expected=(
