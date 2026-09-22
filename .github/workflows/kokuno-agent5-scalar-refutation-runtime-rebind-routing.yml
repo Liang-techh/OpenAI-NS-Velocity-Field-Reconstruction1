@@ -1,0 +1,121 @@
+name: Kokuno A5 Scalar Refutation Runtime Rebind Routing
+
+on:
+  pull_request:
+    paths:
+      - src/openai_ns_reconstruction/kokuno_a5_scalar_refutation_runtime_rebind_routing.py
+      - tests/test_kokuno_a5_scalar_refutation_runtime_rebind_routing.py
+      - .github/workflows/kokuno-agent5-scalar-refutation-runtime-rebind-routing.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  exact-head-routing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Verify exact A5 parent and three-file scope
+        shell: bash
+        run: |
+          set -euo pipefail
+          parent="8ed2641571bbce4340252e1809550959f57acbec"
+          git merge-base --is-ancestor "$parent" HEAD
+          test "$(git rev-list --count "$parent"..HEAD)" -eq 3
+          git diff --name-only "$parent"..HEAD | sort > /tmp/changed.txt
+          cat > /tmp/expected.txt <<'EOF'
+          .github/workflows/kokuno-agent5-scalar-refutation-runtime-rebind-routing.yml
+          src/openai_ns_reconstruction/kokuno_a5_scalar_refutation_runtime_rebind_routing.py
+          tests/test_kokuno_a5_scalar_refutation_runtime_rebind_routing.py
+          EOF
+          sort -o /tmp/expected.txt /tmp/expected.txt
+          diff -u /tmp/expected.txt /tmp/changed.txt
+
+      - name: Authenticate A1 refutation and matching A4 audit lineage
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin agent1/current-bridge-scalar-refute-20260922
+          a1="7e987ff0a3bea743fe3f0fe9d02d5b3c8c593ea3"
+          test "$(git rev-parse FETCH_HEAD)" = "$a1"
+          test "$(git rev-parse "$a1:src/openai_ns_reconstruction/kokuno_current_bridge_common_scalar_refutation.py")" = "409031a36425befefa7038ebda8ca848cdde239a"
+
+          git fetch --no-tags origin kokuno-agent4/current-common-scalar-refutation-audit-130
+          a4="d38aa3dacc205deacf785308b616c24ffb4eb135"
+          test "$(git rev-parse FETCH_HEAD)" = "$a4"
+          test "$(git rev-parse "$a4:src/openai_ns_reconstruction/kokuno_a4_common_scalar_refutation_independent_audit.py")" = "359d141d5406ec12e18315fc618ef8bb96cd696c"
+          git merge-base --is-ancestor "$a1" "$a4"
+
+      - name: Authenticate selected A2 runtime-rebind route and reject sibling union
+        shell: bash
+        run: |
+          set -euo pipefail
+          selected_parent="f90bdb9c232fb16df881dfbcac28be1cd5c29780"
+          git fetch --no-tags origin codex/kokuno-a2-exact-i4-runtime-rebind-116
+          selected="3afc18d93334b6d371856cce28f90c6bff40bbc0"
+          test "$(git rev-parse FETCH_HEAD)" = "$selected"
+          git merge-base --is-ancestor "$selected_parent" "$selected"
+          test "$(git rev-parse "$selected:src/openai_ns_reconstruction/kokuno_a2_exact_current_i4_runtime_rebind_contract.py")" = "4faeea46ac15b96fb030957e4f8be73c23612ff9"
+
+          git fetch --no-tags origin kokuno-agent3/current-i4-rf44-a2-960-restack-150
+          duplicate="20120093abbd981e2d2cb5d95093cea1eebb28ef"
+          test "$(git rev-parse FETCH_HEAD)" = "$duplicate"
+          if git merge-base --is-ancestor "$duplicate" "$selected"; then
+            echo "duplicate A3 #1236 unexpectedly became ancestry of selected A2 #1243" >&2
+            exit 1
+          fi
+          if git merge-base --is-ancestor "$selected" "$duplicate"; then
+            echo "selected A2 #1243 unexpectedly became ancestry of duplicate A3 #1236" >&2
+            exit 1
+          fi
+
+      - name: Compile and materialize deterministic routing artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            src/openai_ns_reconstruction/kokuno_a5_scalar_refutation_runtime_rebind_routing.py \
+            tests/test_kokuno_a5_scalar_refutation_runtime_rebind_routing.py
+          PYTHONPATH=src python src/openai_ns_reconstruction/kokuno_a5_scalar_refutation_runtime_rebind_routing.py \
+            --output kokuno_a5_scalar_refutation_runtime_rebind_routing.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path("kokuno_a5_scalar_refutation_runtime_rebind_routing.json").read_text())
+          assert data["task"] == "KOKUNO-A5-SCALAR-REFUTATION-RUNTIME-REBIND-ROUTING-131"
+          assert data["leading_route"]["agent1"]["actual_refutation_result_ingested"] is False
+          assert data["leading_route"]["agent1"]["common_scalar_bridge_refuted"] is None
+          assert data["leading_route"]["agent4"]["matching_independent_audit_surface_present"] is True
+          assert data["leading_route"]["agent4"]["scoped_gate_passed"] is None
+          assert data["correction_route"]["selected_route"]["agent2_pr"] == 1243
+          assert data["correction_route"]["selected_route"]["runtime_rebind_contract_surface_present"] is True
+          assert data["correction_route"]["selected_route"]["exact_backend_rebind_promoted"] is False
+          assert data["correction_route"]["selected_route"]["rf30_to_rf39_candidate_execution_recorded"] is False
+          assert data["correction_route"]["duplicate_nonselected_route"]["evidence_unioned_into_selected_route"] is False
+          assert data["core_states"]["pde_validated"] is False
+          PY
+
+      - name: Upload routing artifact before regression enforcement
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-a5-scalar-refutation-runtime-rebind-routing
+          path: kokuno_a5_scalar_refutation_runtime_rebind_routing.json
+
+      - name: Run parent and focused fail-closed regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check pytest
+          PYTHONPATH=src pytest -q \
+            tests/test_kokuno_a5_bridge_960_routing.py \
+            tests/test_kokuno_a5_scalar_refutation_runtime_rebind_routing.py
