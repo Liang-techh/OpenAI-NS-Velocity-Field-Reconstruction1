@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "contract_id": "cr002_kokuno_source_ideal_qs_evidence_scope_v1",
+  "purpose": "Prevent source-ideal exterior Q_s / T_match evidence from being promoted to the carried current Kokuno candidate or to a unified Cartesian delivery without the missing current-state bridge.",
+  "bindings": {
+    "active_constrained_integration_branch": "codex/cr001-constraints",
+    "active_constrained_integration_head_at_audit": "6a293b3c870d70b8d8aece1b12d68685c9b8b010",
+    "canonical_constraints_path": "configs/constraints.json",
+    "canonical_constraints_blob_sha1": "6c559e42895a606e2ef025ade4cb448966d75814",
+    "project_status_path": "project_status.json",
+    "dependency_pr": 1217,
+    "dependency_exact_head": "3978560078104bff7c9d5556bd9e658e4874c963",
+    "dependency_module_path": "src/openai_ns_reconstruction/kokuno_public_ideal_exterior_qs_schedule.py",
+    "dependency_module_blob_sha1": "b27ccf9a777502128970aa7d60c7faf9b2ade096"
+  },
+  "source_classification": {
+    "user_requirement": [
+      "Deliver an explicit callable and save-loadable velocity(x,y,z,t)->[u,v,w] without treating PDE validation as a prerequisite for callability.",
+      "Keep delivery, visual correspondence, PDE validation, paper exactness, and OpenAI-field identification as independent states."
+    ],
+    "public_source_fact": [
+      "The corrected public reconstruction's ideal post-correction state uses I=XH/(1-lambda) with U=M=J=0.",
+      "Under that ideal state, Q_s=(lambda-h)/(1-lambda) and Q_s'+(1+l)Q_s=-l-h through the published release/hold schedule.",
+      "Before the terminal multiplier interval, the source holds l=-h until the ideal Q_s reaches Q_p."
+    ],
+    "autonomous_design": [
+      "The repository's current A1 candidate deliberately carries its actual post-pulse M/M_eta history rather than resetting M=0.",
+      "PR #1217's executable quadrature, current autonomous lambda/h realization, and evidence-transfer firewall are repository mechanics, not hidden source parameters.",
+      "This CR002 contract treats source-ideal and current-candidate state identities as non-interchangeable even if a scalar happens to agree numerically."
+    ],
+    "pending_unknown": [
+      "Current-candidate Q_s entry and release2 endpoint derived from the carried M/M_eta history and required angular primitive identity.",
+      "Whether the difference from the source-ideal state can instead be proven irrelevant under an explicit independent remainder bound.",
+      "Current-candidate l=-h matching length, Cartesian terminal bridge composition, exterior/global leading field, matched global pressure, restricted forcing, complete held-out NS residual, visual correspondence, PDE validation, paper exactness, and OpenAI-field identity."
+    ]
+  },
+  "truth_state": {
+    "source_ideal_qs_schedule_materialized": true,
+    "source_ideal_release2_endpoint_materialized": true,
+    "source_ideal_t_match_materialized": true,
+    "current_candidate_qs_release2_endpoint_materialized": false,
+    "current_candidate_t_match_materialized": false,
+    "current_cartesian_matching_bridge_composed": false,
+    "kokuno_unified_global_velocity_export_ready": false,
+    "visual_correspondence_verified": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "openai_field_identified": false,
+    "blowup_proved": false
+  },
+  "evidence_transfer": {
+    "source_ideal_schedule_implies_current_candidate_schedule": false,
+    "source_ideal_release2_endpoint_implies_current_candidate_endpoint": false,
+    "source_ideal_t_match_may_be_used_as_current_cartesian_bridge_length": false,
+    "numerical_scalar_equality_implies_shared_state_identity": false,
+    "source_ideal_evidence_implies_kokuno_velocity_export_ready": false,
+    "source_ideal_evidence_implies_visual_correspondence": false,
+    "source_ideal_evidence_implies_pde_validation": false,
+    "source_ideal_evidence_implies_paper_exactness": false,
+    "source_ideal_evidence_implies_openai_field_identity": false
+  },
+  "promotion_prerequisites": [
+    "Materialize the current-candidate Q_s entry/transport from the carried current state and required angular primitive identity, or establish an explicitly scoped independent remainder bound that justifies replacing it by the ideal state.",
+    "Compute the matching endpoint/length on that exact current-candidate identity rather than copying the source-ideal T_match.",
+    "Compose the resulting bridge into the actual Cartesian velocity provider and create a new semantic/save-load identity.",
+    "Replay finite/axis/domain and save-load checks on that exact Cartesian identity.",
+    "Before any Kokuno global velocity_export_ready promotion, demonstrate coverage of the claimed project delivery domain/support; keep visual/PDE/paper/OpenAI gates separate."
+  ],
+  "canonical_independence": {
+    "canonical_eq45_velocity_export_ready_expected": true,
+    "canonical_visual_correspondence_verified_expected": false,
+    "canonical_pde_validated_expected": false,
+    "canonical_paper_exact_expected": false,
+    "canonical_openai_field_identified_expected": false,
+    "kokuno_incompleteness_must_not_revoke_canonical_eq45_callability": true
+  },
+  "cr001_guardrails": {
+    "nu": 0.01,
+    "physical_domain": "R^3",
+    "evaluation_box": [[-2, 2], [-2, 2], [-2, 2]],
+    "support": "r < 2 and abs(z) < 2",
+    "time_interval": [0.25, 0.75],
+    "forcing_mode": "restricted_two_parameter_family",
+    "residual_defined_free_force_forbidden": true,
+    "reference_energy": 1.0,
+    "reference_energy_abs_tolerance": 0.001,
+    "validation_seed": 914027,
+    "held_out_points": 4096,
+    "derivative_steps": [0.02, 0.01, 0.005],
+    "quadrature_orders_per_axis": [24, 48, 96],
+    "momentum_max_threshold": 0.001,
+    "momentum_l2_threshold": 0.001,
+    "divergence_max_threshold": 0.00001,
+    "divergence_l2_threshold": 0.00001
+  }
+}
