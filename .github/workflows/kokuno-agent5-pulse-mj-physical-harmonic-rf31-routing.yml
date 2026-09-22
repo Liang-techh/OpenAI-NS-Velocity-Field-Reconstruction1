@@ -74,6 +74,11 @@ jobs:
             '3f3fd169ce79a2e44b90b50353415d057119e63f' \
             'src/openai_ns_reconstruction/kokuno_a4_current_i4_radial_stress_independent_audit.py' \
             '97387bcab05098ecc622372ec3aa08150d79b89d'
+          fetch_and_check \
+            'kokuno-agent4/current-i4-radial-force-independent-audit-116' \
+            'add922982c2f3a4cf5a72d84910817e63f05c487' \
+            'src/openai_ns_reconstruction/kokuno_a4_current_i4_radial_force_independent_audit.py' \
+            'c254b248e2703eaec1c4f757657ca40b9e211c7d'
 
       - name: Authenticate corrected public source provenance
         uses: actions/checkout@v4
@@ -96,7 +101,7 @@ jobs:
           set -euo pipefail
           parent='337ad149f6227fd054e496f4f38e48216b2ff2f4'
           git merge-base --is-ancestor "${parent}" HEAD
-          test "$(git rev-list --count "${parent}"..HEAD)" -eq 3
+          test "$(git rev-list --count "${parent}"..HEAD)" -eq 6
           mapfile -t changed < <(git diff --name-only "${parent}..HEAD" | sort)
           expected=(
             '.github/workflows/kokuno-agent5-pulse-mj-physical-harmonic-rf31-routing.yml'
@@ -137,7 +142,7 @@ jobs:
           from openai_ns_reconstruction.kokuno_a5_pulse_mj_physical_harmonic_rf31_routing import load_registration
           reg = load_registration('artifacts/kokuno/agent5/pulse_mj_physical_harmonic_rf31_routing.json')
           truth = reg['truth_boundary']
-          pending = reg['frontiers']['current_i4_radial_force_validator_pending']
+          audit = reg['frontiers']['current_i4_radial_force_validator']
           gates = reg['frozen_gates']
 
           assert truth['current_lineage_J_entry_materialized'] is True
@@ -148,11 +153,15 @@ jobs:
           assert truth['current_i4_source_fixed_q_backend_materialized'] is False
           assert truth['current_i4_rf30_defect_materialized'] is False
           assert truth['correction_coefficients_solved'] is False
-          assert truth['agent4_current_i4_radial_force_audit_claimed'] is True
-          assert truth['agent4_matching_current_i4_radial_force_audit_present'] is False
-          assert pending['status'] == 'claimed-pending-delivery'
-          assert pending['delivered_head'] is None
-          assert pending['registered'] is False
+          assert truth['agent4_matching_current_i4_radial_force_audit_present'] is True
+          assert truth['agent4_matching_current_i4_radial_force_audit_registered'] is True
+          assert truth['agent4_matching_current_i4_radial_force_audit_scoped_gate_passed'] is None
+          assert truth['agent4_matching_current_i4_radial_force_audit_admitted'] is False
+          assert audit['pr'] == 1127
+          assert audit['head'] == 'add922982c2f3a4cf5a72d84910817e63f05c487'
+          assert audit['scoped_gate_passed'] is None
+          assert audit['scientifically_admitted'] is False
+          assert audit['authorizes_complete_ns_correction'] is False
           assert truth['complete_identity_bound_ns_defect_materialized'] is False
           assert truth['pde_validated'] is False
           assert gates['normalized_momentum_sampled_max'] == 1e-3
