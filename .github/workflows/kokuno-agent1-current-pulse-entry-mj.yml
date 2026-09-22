@@ -1,0 +1,131 @@
+name: kokuno-agent1-current-pulse-entry-mj
+
+on:
+  pull_request:
+    paths:
+      - "src/openai_ns_reconstruction/kokuno_current_pulse_entry_moments.py"
+      - "tests/test_kokuno_current_pulse_entry_moments.py"
+      - ".github/workflows/kokuno-agent1-current-pulse-entry-mj.yml"
+  workflow_dispatch:
+
+jobs:
+  focused:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout exact PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package
+        run: python -m pip install -e '.[dev]'
+
+      - name: Authenticate exact A1 #1116 parent
+        shell: bash
+        run: |
+          git merge-base --is-ancestor c144d00fd81a938e497ca5d841fed6d1fe448a8b HEAD
+          test "$(git show -s --format=%H c144d00fd81a938e497ca5d841fed6d1fe448a8b)" = "c144d00fd81a938e497ca5d841fed6d1fe448a8b"
+          echo "authenticated A1 #1116 parent c144d00fd81a938e497ca5d841fed6d1fe448a8b"
+
+      - name: Enforce minimal three-file increment
+        shell: bash
+        run: |
+          mapfile -t files < <(git diff --name-only c144d00fd81a938e497ca5d841fed6d1fe448a8b...HEAD | sort)
+          printf '%s\n' "${files[@]}"
+          test "${#files[@]}" -eq 3
+          expected=(
+            ".github/workflows/kokuno-agent1-current-pulse-entry-mj.yml"
+            "src/openai_ns_reconstruction/kokuno_current_pulse_entry_moments.py"
+            "tests/test_kokuno_current_pulse_entry_moments.py"
+          )
+          mapfile -t expected_sorted < <(printf '%s\n' "${expected[@]}" | sort)
+          test "$(printf '%s\n' "${files[@]}")" = "$(printf '%s\n' "${expected_sorted[@]}")"
+
+      - name: Compile focused files
+        run: |
+          python -m py_compile src/openai_ns_reconstruction/kokuno_current_pulse_entry_moments.py
+          python -m py_compile tests/test_kokuno_current_pulse_entry_moments.py
+
+      - name: Run parent-facing and current-entry regressions
+        run: |
+          python -m pytest -q \
+            tests/test_kokuno_pa16_current_cartesian_main_pulse_logx.py \
+            tests/test_kokuno_public_pulse_end_compensator.py \
+            tests/test_kokuno_current_pulse_entry_moments.py
+
+      - name: Emit deterministic scoped receipt
+        run: |
+          mkdir -p artifacts/kokuno_agent1_current_pulse_entry_mj
+          python - <<'PY'
+          import copy
+          import json
+          import numpy as np
+          from pathlib import Path
+          from openai_ns_reconstruction.kokuno_current_pulse_entry_moments import (
+              KokunoCurrentPulseEntryMoments,
+          )
+
+          root = Path("artifacts/kokuno_agent1_current_pulse_entry_mj")
+          candidate = KokunoCurrentPulseEntryMoments()
+          eta = np.asarray([-0.83, -0.61, -0.37, 0.19, 0.73], dtype=float)
+          entry = candidate.entry_ratios(eta)
+          inputs = candidate.compensator_inputs(eta)
+          solution = candidate.compensator.solve(
+              inputs["amplitude"],
+              inputs["m_entry_ratio"],
+              inputs["j_entry_ratio"],
+          )
+          truth = candidate.truth_boundary
+          assert truth["current_lineage_J_entry_materialized"] is True
+          assert truth["current_J_assumed_zero"] is False
+          assert truth["source_exact_amplitude_root_materialized"] is False
+          assert truth["current_cartesian_end_compensation_composed"] is False
+          assert truth["pde_validated"] is False
+          assert np.max(np.abs(solution.residual_row1)) < 2e-15
+          assert np.max(np.abs(solution.residual_row2)) < 2e-15
+
+          config = candidate.configuration()
+          mutated = copy.deepcopy(config)
+          mutated["binding"]["J_policy"] = "assume_zero"
+          try:
+              candidate.from_configuration(mutated)
+          except ValueError:
+              pass
+          else:
+              raise SystemExit("J-policy mutation did not fail closed")
+
+          receipt = candidate.report(eta)
+          receipt["entry_m_ratio"] = np.asarray(entry["m_entry_ratio"], dtype=float).tolist()
+          receipt["entry_j_ratio"] = np.asarray(entry["j_entry_ratio"], dtype=float).tolist()
+          receipt["entry_j_ratio_eta"] = np.asarray(entry["j_entry_ratio_eta"], dtype=float).tolist()
+          receipt["M_physical_at_pulse_entry"] = np.asarray(
+              entry["M_physical_at_pulse_entry"], dtype=float
+          ).tolist()
+          receipt["J_physical_at_pulse_entry"] = np.asarray(
+              entry["J_physical_at_pulse_entry"], dtype=float
+          ).tolist()
+          receipt["note"] = (
+              "current autonomous-candidate bookkeeping only; J comes from the frozen I1 "
+              "closure residual and is not assumed zero; no PDE validation"
+          )
+          (root / "receipt.json").write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + "\n"
+          )
+          (root / "config.json").write_text(
+              json.dumps(config, indent=2, sort_keys=True) + "\n"
+          )
+          print(json.dumps(receipt, indent=2, sort_keys=True))
+          PY
+
+      - name: Upload scoped receipt
+        uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-agent1-current-pulse-entry-mj
+          path: artifacts/kokuno_agent1_current_pulse_entry_mj/
