@@ -1,31 +1,10 @@
-"""Agent-5 routing checkpoint for the post-I4 leading / current-I2 force split.
+"""Fail-closed Agent-5 routing checkpoint after current I4.
 
-This module is integration/provenance glue only.  It harvests the newest
-Kokuno Agent-1--4 deliveries without pretending that they already belong to
-one complete candidate identity:
-
-* Agent 1 PR #1088 advances the *leading-only* current lineage from the I4
-  exit to the pulse-entry seam.
-* The latest self-contained project-domain leading+oscillatory Cartesian
-  composite remains Agent 2 PR #1080 through current I4, with Agent 4 PR
-  #1082 providing its separate scoped divergence audit (recorded by the
-  parent A5 checkpoint).
-* Agent 2 PR #1089 adds an executable corrected-source localized harmonic
-  adapter, but still requires caller-supplied source background/forcing/
-  partition/cutoff data and is not a matching post-I4 project-domain
-  ``velocity(x,y,z,t)`` candidate.
-* Agent 3 PR #1090 advances the older exact current-I2 correction lineage
-  from compact stress to ``(div T)_r = partial_z sigma_1``.
-* Agent 4 PR #1092 independently audits that exact current-I2 radial force
-  from JSON-round-tripped public receipts using a centered five-point FD4
-  reconstruction rather than Agent 3's production centered-FD2 helper.
-
-The stage/identity firewall is deliberate: current-I2 correction evidence may
-not be transplanted onto current-I4 or post-I4 candidate identities, and the
-source-localized harmonic adapter is not silently promoted to a self-contained
-project-domain composite.  Global velocity, matched pressure, preregistered
-restricted forcing, a complete NS defect, a real correction velocity/cycle,
-and full held-out PDE admission remain absent.
+Integration only: preserve the latest self-contained current-I4 composite,
+register newer post-I4 leading-only/source-harmonic siblings, and advance the
+older current-I2 correction route from stress to radial force plus matching
+implementation-distinct A4 audit.  No evidence is transferred across candidate
+identities and no full-NS/PDE state is promoted.
 """
 from __future__ import annotations
 
@@ -52,7 +31,6 @@ PARENT_A5 = {
     "task": "KOKUNO-A5-CURRENT-I4-ROUTING-I2-STRESS-INGEST-109",
     "schema": "kokuno-a5-current-i4-routing-i2-stress-ingest-v1",
 }
-
 AGENT1_POST_I4_LEADING = {
     "pr": 1088,
     "head": "bd85ed48323feb3b33b9c404a078630245dfe783",
@@ -70,7 +48,6 @@ AGENT1_POST_I4_LEADING = {
     "source_i4_mean_correction_materialized": False,
     "outer_global_leading_velocity_materialized": False,
 }
-
 AGENT2_SOURCE_LOCALIZED_HARMONIC = {
     "pr": 1089,
     "head": "4bc9408d10b2f3c636abd4f6ce33cefab391093d",
@@ -91,7 +68,6 @@ AGENT2_SOURCE_LOCALIZED_HARMONIC = {
     "self_contained_velocity_xyzt_provider": False,
     "consumed_by_agent1_1088_identity": False,
 }
-
 AGENT3_CURRENT_I2_RADIAL_FORCE = {
     "pr": 1090,
     "head": "5e8512392df683375fabd132f35577e1b94773ff",
@@ -110,7 +86,6 @@ AGENT3_CURRENT_I2_RADIAL_FORCE = {
     "consumed_by_current_i4_candidate": False,
     "consumed_by_post_i4_candidate": False,
 }
-
 AGENT4_CURRENT_I2_RADIAL_FORCE_AUDIT = {
     "pr": 1092,
     "head": "a01bc1f088b6b0d6556d81cf417c2b73bd7c99e8",
@@ -181,39 +156,13 @@ TRUTH_BOUNDARY = {
     "openai_field_identified": False,
     "blowup_proved": False,
 }
-
 PIPELINE_POSITION = {
-    "leading_frontier": (
-        "A1 #1088 extends exact current leading-only velocity from I4 exit to "
-        "pulse entry; no matching A2 project-domain composite exists yet"
-    ),
-    "latest_self_contained_composite_frontier": (
-        "parent A5 #1083 preserves A1 #1079 -> A2 #1080 current-I4 "
-        "leading+frozen-complete-curl Cartesian candidate plus A4 #1082 "
-        "scoped public-velocity divergence audit"
-    ),
-    "source_oscillatory_frontier": (
-        "A2 #1089 localizes zero-data source harmonics at potential level and "
-        "retains complete-curl support-gradient terms, but still depends on "
-        "caller source data and is not a self-contained project velocity"
-    ),
-    "correction_frontier": (
-        "A1 #1061 -> A2 #1071 -> A3 #1073 -> A3 #1081 -> A3 #1090 "
-        "current-I2 mean -> compact stress -> radial force, with matching "
-        "implementation-distinct A4 #1092 force audit registered"
-    ),
-    "stage_firewall": (
-        "current-I2 force/audit evidence is not consumed by current-I4 or "
-        "post-I4 identities; A2 #1089 source-chart output is not promoted to "
-        "the missing post-I4 project-domain composite"
-    ),
-    "next_shortest_blocker": (
-        "materialize the source-role-correct axial pulse and subsequent "
-        "terminal/global leading velocity, then build a matching self-contained "
-        "A2 composite on that exact identity; only after matched Cartesian "
-        "pressure and preregistered restricted forcing exist may the complete "
-        "NS defect authorize a real correction velocity/finite cycle"
-    ),
+    "leading_frontier": "A1 #1088 extends exact current leading-only velocity from I4 exit to pulse entry; no matching A2 project-domain composite exists yet",
+    "latest_self_contained_composite_frontier": "parent A5 #1083 preserves A1 #1079 -> A2 #1080 current-I4 Cartesian composite plus A4 #1082 scoped divergence audit",
+    "source_oscillatory_frontier": "A2 #1089 localizes zero-data source harmonics at potential level but still requires caller source data and is not a self-contained project velocity",
+    "correction_frontier": "A1 #1061 -> A2 #1071 -> A3 #1073 -> A3 #1081 -> A3 #1090 current-I2 mean -> stress -> radial force, with matching A4 #1092 independent audit registered",
+    "stage_firewall": "current-I2 force/audit evidence is not consumed by current-I4 or post-I4 identities; A2 #1089 source-chart output is not promoted to the missing post-I4 project-domain composite",
+    "next_shortest_blocker": "materialize source-role-correct axial pulse and terminal/global leading velocity, then a matching self-contained A2 composite; matched pressure plus preregistered restricted forcing must exist before a complete NS defect can authorize a real finite correction cycle",
 }
 
 
@@ -222,36 +171,29 @@ def _canonical_json(payload: Mapping[str, Any]) -> str:
 
 
 def _sha256(payload: Mapping[str, Any]) -> str:
-    return hashlib.sha256(_canonical_json(payload).encode("utf-8")).hexdigest()
+    return hashlib.sha256(_canonical_json(payload).encode()).hexdigest()
 
 
-def _require_hex40(value: Any, label: str) -> None:
+def _hex40(value: Any, label: str) -> None:
     if not isinstance(value, str) or _HEX40.fullmatch(value) is None:
-        raise ValueError(f"{label} is not an exact 40-hex git identity")
+        raise ValueError(f"{label} is not an exact git identity")
 
 
-def _require_hex64(value: Any, label: str) -> None:
-    if not isinstance(value, str) or _HEX64.fullmatch(value) is None:
-        raise ValueError(f"{label} is not a 64-hex digest")
-
-
-def _validate_parent_contract() -> None:
-    if parent_a5.SCHEMA != PARENT_A5["schema"] or parent_a5.TASK != PARENT_A5["task"]:
+def _validate_parent() -> None:
+    if (parent_a5.SCHEMA, parent_a5.TASK) != (PARENT_A5["schema"], PARENT_A5["task"]):
         raise ValueError("parent A5 schema/task drifted")
     if parent_a5.AGENT1_CURRENT_I4_LEADING["head"] != AGENT1_POST_I4_LEADING["parent_agent1_head"]:
-        raise ValueError("A1 #1088 is detached from exact parent current-I4 leading")
+        raise ValueError("A1 #1088 detached from exact current-I4 parent")
     if parent_a5.AGENT2_CURRENT_I4_COMPOSITE["head"] != AGENT2_SOURCE_LOCALIZED_HARMONIC["parent_agent2_head"]:
-        raise ValueError("A2 #1089 is detached from exact parent current-I4 composite")
+        raise ValueError("A2 #1089 detached from exact current-I4 A2 parent")
     if parent_a5.AGENT3_CURRENT_I2_STRESS["head"] != AGENT3_CURRENT_I2_RADIAL_FORCE["parent_agent3_head"]:
-        raise ValueError("A3 #1090 is detached from exact parent current-I2 stress")
-    if parent_a5.FINAL_GATES != FINAL_GATES or parent_a5.ST006_BASELINE != ST006_BASELINE:
-        raise ValueError("fixed project gates or ST006 baseline drifted")
-    if parent_a5.READINESS != READINESS:
-        raise ValueError("core readiness drifted")
+        raise ValueError("A3 #1090 detached from exact current-I2 stress")
+    if parent_a5.FINAL_GATES != FINAL_GATES or parent_a5.ST006_BASELINE != ST006_BASELINE or parent_a5.READINESS != READINESS:
+        raise ValueError("frozen parent science/readiness drifted")
 
 
 def build_registration() -> dict[str, Any]:
-    _validate_parent_contract()
+    _validate_parent()
     payload = {
         "parent_a5": copy.deepcopy(PARENT_A5),
         "agent1_post_i4_leading": copy.deepcopy(AGENT1_POST_I4_LEADING),
@@ -264,17 +206,15 @@ def build_registration() -> dict[str, Any]:
         "truth_boundary": copy.deepcopy(TRUTH_BOUNDARY),
         "pipeline_position": copy.deepcopy(PIPELINE_POSITION),
     }
-    registration = {"schema": SCHEMA, "task": TASK, **payload}
-    registration["digest"] = _sha256(payload)
-    validate_registration(registration)
-    return registration
+    out = {"schema": SCHEMA, "task": TASK, **payload, "digest": _sha256(payload)}
+    validate_registration(out)
+    return out
 
 
 def validate_registration(registration: Mapping[str, Any]) -> None:
-    _validate_parent_contract()
+    _validate_parent()
     if registration.get("schema") != SCHEMA or registration.get("task") != TASK:
-        raise ValueError("unexpected A5 post-I4/I2-force routing identity")
-
+        raise ValueError("A5 registration identity drifted")
     expected = {
         "parent_a5": PARENT_A5,
         "agent1_post_i4_leading": AGENT1_POST_I4_LEADING,
@@ -282,72 +222,48 @@ def validate_registration(registration: Mapping[str, Any]) -> None:
         "agent3_current_i2_radial_force": AGENT3_CURRENT_I2_RADIAL_FORCE,
         "agent4_current_i2_radial_force_audit": AGENT4_CURRENT_I2_RADIAL_FORCE_AUDIT,
     }
-    for name, block_expected in expected.items():
+    for name, frozen in expected.items():
         block = registration.get(name)
         if not isinstance(block, Mapping):
             raise ValueError(f"missing {name}")
-        _require_hex40(block.get("head"), f"{name}.head")
-        _require_hex40(block.get("source_blob"), f"{name}.source_blob")
-        if dict(block) != block_expected:
-            raise ValueError(f"{name} identity/truth drifted")
-
-    if registration.get("final_gates") != FINAL_GATES:
-        raise ValueError("fixed project gates drifted")
-    if registration.get("st006_baseline") != ST006_BASELINE:
-        raise ValueError("ST006 baseline drifted")
-    if registration.get("readiness") != READINESS:
-        raise ValueError("core readiness drifted")
-    if registration.get("truth_boundary") != TRUTH_BOUNDARY:
-        raise ValueError("truth boundary drifted")
+        _hex40(block.get("head"), f"{name}.head")
+        _hex40(block.get("source_blob"), f"{name}.source_blob")
+        if dict(block) != frozen:
+            raise ValueError(f"{name} drifted")
+    if registration.get("final_gates") != FINAL_GATES or registration.get("st006_baseline") != ST006_BASELINE:
+        raise ValueError("fixed gates/ST006 drifted")
+    if registration.get("readiness") != READINESS or registration.get("truth_boundary") != TRUTH_BOUNDARY:
+        raise ValueError("readiness/truth boundary drifted")
     if registration.get("pipeline_position") != PIPELINE_POSITION:
         raise ValueError("pipeline position drifted")
 
-    a1 = registration["agent1_post_i4_leading"]
-    a2 = registration["agent2_source_localized_harmonic"]
-    a3 = registration["agent3_current_i2_radial_force"]
-    a4 = registration["agent4_current_i2_radial_force_audit"]
+    a1, a2 = registration["agent1_post_i4_leading"], registration["agent2_source_localized_harmonic"]
+    a3, a4 = registration["agent3_current_i2_radial_force"], registration["agent4_current_i2_radial_force_audit"]
     if a1["parent_agent1_head"] != parent_a5.AGENT1_CURRENT_I4_LEADING["head"]:
-        raise ValueError("post-I4 leading detached from parent I4 leading identity")
+        raise ValueError("post-I4 leading lineage mismatch")
     if a2["parent_agent2_head"] != parent_a5.AGENT2_CURRENT_I4_COMPOSITE["head"]:
-        raise ValueError("source harmonic adapter detached from parent A2 lineage")
+        raise ValueError("source-harmonic lineage mismatch")
     if a3["parent_agent3_head"] != parent_a5.AGENT3_CURRENT_I2_STRESS["head"]:
-        raise ValueError("current-I2 force detached from parent current-I2 stress")
+        raise ValueError("current-I2 force lineage mismatch")
     if a4["audited_agent3_head"] != a3["head"] or a4["stress_agent3_head"] != a3["parent_agent3_head"]:
-        raise ValueError("A4 force audit detached from exact A3 force/stress identity")
-
+        raise ValueError("A4 independent audit lineage mismatch")
     if a1["matching_agent2_project_cartesian_composite_materialized"] is not False:
-        raise ValueError("missing post-I4 A2 project composite was invented")
+        raise ValueError("post-I4 matching composite invented")
     if a2["self_contained_velocity_xyzt_provider"] is not False or a2["consumed_by_agent1_1088_identity"] is not False:
-        raise ValueError("source-localized harmonic was promoted to post-I4 project velocity")
-    if a3["candidate_stage"] != "current-I2" or a3["radial_force_materialized"] is not True:
-        raise ValueError("current-I2 correction frontier drifted")
-    if a3["authorized_as_complete_ns_correction_target"] is not False:
-        raise ValueError("scoped current-I2 force was authorized as complete NS correction")
-    if a3["consumed_by_current_i4_candidate"] is not False or a3["consumed_by_post_i4_candidate"] is not False:
-        raise ValueError("current-I2 correction evidence was transplanted forward")
-    if a4["implementation_distinct"] is not True or a4["registered"] is not True:
-        raise ValueError("matching A4 independent force audit was lost")
-    if a4["scientific_admission"] is not False or a4["complete_ns_residual_evidence"] is not False:
-        raise ValueError("scoped A4 force audit was promoted beyond its evidence")
-    if a4["applies_to_current_i4_or_post_i4_identity"] is not False:
-        raise ValueError("current-I2 A4 audit was transferred to a newer identity")
+        raise ValueError("source adapter laundered into project candidate")
+    if a3["authorized_as_complete_ns_correction_target"] is not False or a3["consumed_by_current_i4_candidate"] is not False or a3["consumed_by_post_i4_candidate"] is not False:
+        raise ValueError("current-I2 force evidence transplanted/promoted")
+    if a4["implementation_distinct"] is not True or a4["registered"] is not True or a4["scientific_admission"] is not False or a4["complete_ns_residual_evidence"] is not False or a4["applies_to_current_i4_or_post_i4_identity"] is not False:
+        raise ValueError("A4 scoped evidence was promoted or transferred")
 
-    if registration["readiness"] != {
-        "leading_ready": False,
-        "oscillatory_ready": True,
-        "correction_ready": False,
-        "velocity_export_ready": False,
-        "pde_validated": False,
-    }:
-        raise ValueError("core readiness was promoted")
-    if FINAL_GATES["normalized_momentum_sampled_max"] != 1.0e-3 or FINAL_GATES["normalized_momentum_volume_l2"] != 1.0e-3:
-        raise ValueError("fixed momentum gate drifted")
-    if FINAL_GATES["normalized_divergence_sampled_max"] != 1.0e-5 or FINAL_GATES["normalized_divergence_volume_l2"] != 1.0e-5:
-        raise ValueError("fixed divergence gate drifted")
-    if FINAL_GATES["canonical_quadrature"] != [24, 48, 96]:
-        raise ValueError("canonical quadrature drifted")
-    if FINAL_GATES["residual_defined_free_forcing_forbidden"] is not True:
-        raise ValueError("free residual-defined forcing was enabled")
+    if registration["readiness"] != {"leading_ready": False, "oscillatory_ready": True, "correction_ready": False, "velocity_export_ready": False, "pde_validated": False}:
+        raise ValueError("core readiness promoted")
+    if FINAL_GATES["normalized_momentum_sampled_max"] != 1e-3 or FINAL_GATES["normalized_momentum_volume_l2"] != 1e-3:
+        raise ValueError("momentum gate drifted")
+    if FINAL_GATES["normalized_divergence_sampled_max"] != 1e-5 or FINAL_GATES["normalized_divergence_volume_l2"] != 1e-5:
+        raise ValueError("divergence gate drifted")
+    if FINAL_GATES["canonical_quadrature"] != [24, 48, 96] or FINAL_GATES["residual_defined_free_forcing_allowed"] is not False:
+        raise ValueError("canonical quadrature/free-forcing rule drifted")
 
     for key in (
         "matching_post_i4_agent2_project_cartesian_composite_materialized",
@@ -356,52 +272,46 @@ def validate_registration(registration: Mapping[str, Any]) -> None:
         "current_i2_radial_force_consumed_by_current_i4_candidate",
         "current_i2_radial_force_consumed_by_post_i4_candidate",
         "current_i2_radial_force_authorized_as_complete_ns_correction_target",
-        "source_positive_order_i3_correction_materialized",
-        "source_i4_mean_correction_materialized",
-        "source_axial_pulse_materialized",
-        "terminal_global_leading_completion_materialized",
-        "global_leading_plus_oscillatory_velocity_materialized",
-        "matched_cartesian_pressure_materialized",
-        "preregistered_restricted_forcing_materialized",
-        "complete_identity_bound_ns_defect_materialized",
-        "current_cartesian_correction_velocity_materialized",
-        "finite_correction_cycle_admitted",
-        "heldout_normalized_full_ns_residual_assessed",
-        "pde_validated",
+        "source_positive_order_i3_correction_materialized", "source_i4_mean_correction_materialized",
+        "source_axial_pulse_materialized", "terminal_global_leading_completion_materialized",
+        "global_leading_plus_oscillatory_velocity_materialized", "matched_cartesian_pressure_materialized",
+        "preregistered_restricted_forcing_materialized", "complete_identity_bound_ns_defect_materialized",
+        "current_cartesian_correction_velocity_materialized", "finite_correction_cycle_admitted",
+        "heldout_normalized_full_ns_residual_assessed", "pde_validated",
     ):
         if registration["truth_boundary"][key] is not False:
-            raise ValueError(f"truth state was promoted at {key}")
+            raise ValueError(f"truth state promoted at {key}")
 
     digest = registration.get("digest")
-    _require_hex64(digest, "digest")
+    if not isinstance(digest, str) or _HEX64.fullmatch(digest) is None:
+        raise ValueError("invalid registration digest")
     payload = {k: copy.deepcopy(v) for k, v in registration.items() if k not in {"schema", "task", "digest"}}
     if digest != _sha256(payload):
         raise ValueError("registration digest mismatch")
 
 
 def save_registration(path: str | Path) -> Path:
-    registration = build_registration()
-    destination = Path(path)
-    destination.parent.mkdir(parents=True, exist_ok=True)
-    destination.write_text(json.dumps(registration, indent=2, sort_keys=True) + "\n", encoding="utf-8")
-    return destination
+    dst = Path(path)
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    dst.write_text(json.dumps(build_registration(), indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    return dst
 
 
 def load_registration(path: str | Path) -> dict[str, Any]:
-    payload = json.loads(Path(path).read_text(encoding="utf-8"))
-    if not isinstance(payload, dict):
+    obj = json.loads(Path(path).read_text(encoding="utf-8"))
+    if not isinstance(obj, dict):
         raise ValueError("registration must be a JSON object")
-    validate_registration(payload)
-    return payload
+    validate_registration(obj)
+    return obj
 
 
 def _main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--output", required=True, help="JSON routing artifact path")
+    parser.add_argument("--output", required=True)
     args = parser.parse_args()
     path = save_registration(args.output)
-    loaded = load_registration(path)
-    print(json.dumps({"path": str(path), "schema": loaded["schema"], "task": loaded["task"], "digest": loaded["digest"]}, sort_keys=True))
+    receipt = load_registration(path)
+    print(json.dumps({"path": str(path), "schema": receipt["schema"], "task": receipt["task"], "digest": receipt["digest"]}, sort_keys=True))
 
 
 if __name__ == "__main__":
