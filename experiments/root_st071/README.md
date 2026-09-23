@@ -1,66 +1,78 @@
 # ST071 — joint axis-data feasibility and exact local seam signs
 
-Task #1253. Manual bounded continuation; paused schedules remain paused. **No new accepted NS candidate or residual improvement was found.** Old ST068/ST070 arrays, global fixed-force benchmark, main, defaults and visualization are unchanged.
+Task #1253. Manual bounded continuation; paused schedules remain paused. **No new accepted NS candidate or full-residual improvement was found.** Old ST068/ST070 arrays, the global fixed-force benchmark, main, defaults and visualization remain unchanged.
 
-## Actual progress and its strict boundary
+## Exact local sign result, not a solved core
 
-The local design ST071-FP passes an exact sign check on its entire polynomial seam X=1/4, eta in [-1/2,1/2], and a fresh numerical necessary moment-bound check. However it badly fails both leading profile equations and complete local momentum. It is NOT adopted; no annular matching, realizable stress, waves, global energy or temporal scale recursion is claimed.
+The unconverged local design ST071-FP satisfies three necessary polynomial seam signs over X=1/4, eta in [-1/2,1/2]. Set
 
-At the seam define a=-F_X/(2F), b=U_X/(sqrt(2)F), v=a+b^2/a. The polynomial G=F_X^2/4+U_X^2/2+F_X*F equals F^2*a*(v-2). A=-F_X/2-F/20 equals F*(a-1/20).
+```
+a=-F_X/(2F), b=U_X/(sqrt(2)F), v=a+b^2/a
+G=F_X^2/4+U_X^2/2+F_X*F = F^2*a*(v-2)
+A=-F_X/2-F/20 = F*(a-1/20).
+```
 
-Exact Python Fraction arithmetic treats every stored IEEE coefficient as its exact binary rational. Forty-eight rational subintervals and the full Bernstein coefficient lists establish positive lower bounds for the represented trace: F>=0.11796076, A>=6.595076e-6, G>=0.02774301. Thus a>1/20 and v>2 hold for this frozen polynomial seam, not just sampled points. The exact fractions, input hash and recomputation are in the complete archive. This is a narrow algebraic property, NOT an enclosure of an unknown exact PDE solution, full stress-cone certificate, or Lean result. The autonomous stronger target v>=2.12 is still slightly missed (dense calibration min about 2.11955).
+Stored IEEE coefficients are interpreted as exact binary rationals. Python Fraction arithmetic and 48 rational Bernstein subintervals give the following conservative decimal bounds, deliberately rounded down:
 
-## What the joint trials found
+- F >= 0.11796076;
+- A >= 0.000006595076;
+- G >= 0.02774300.
 
-The dynamics-oriented RN trial had min v about 2.1199 on its 43 training seam points. All-real polynomial root checks found U_X zeros at eta=-.344536745,.001128606,.342799760 with v about1.50797,1.75386,.90079. An exact rational witness at eta=3429/10000 has F>0,A>0,G<0. Coarse sign counts are not acceptance.
+Thus a>1/20 and v>2 hold for this stored polynomial seam, not merely sampled points. Full fraction coefficients and the exact input identity are delivered and recomputed in tests. **This is not a leading-equation solution, complete stress-cone certificate, global field, NS proof or Lean result.** The extra autonomous v>=2.12 target is still slightly missed: dense training calibration gives a minimum about 2.11955.
 
-A fresh-profile feasibility trial followed by separately registered pressure feedback produced FP. Its F/U are unchanged by that pressure feedback. Heat amplitude is .12644687485625336, chosen from a calibrated common necessary angular-moment interval [.006776185079129671,.24611756463337703]. Axis pressure is nonquadratic: minus the inner pressure integral, heat tail and half the monotonicity upper bound. This is not residual-cancelling pressure or an arbitrary force. It changes autonomous inner/outer data, so old fixed-data amplitude bounds cannot be transplanted.
+## Joint data and the grid trap
 
-Pressure Chebyshev levels32/64 failed the fixed1e-8 calibration;96 passed at1.593e-11. Final axis pressure lies approximately[-.231723,-.054739]. All derivatives are retained by an independent NumPy evaluator. This constructs necessary data only, not all five matched moments.
+The dynamics-oriented RN trial appeared acceptable on 43 training seam points (minimum v about 2.1199). Its U_X roots at eta approximately -0.344536745, 0.001128606 and 0.342799760 have v approximately 1.508, 1.754 and 0.901. An exact rational witness at eta=3429/10000 has F>0, A>0 and G<0. The coarse grid did not establish feasibility.
 
-## Frozen independent checks
+After a fresh-profile trial, separately registered heat/pressure feedback produced FP. Its heat amplitude is 0.12644687485625336, chosen inside a calibrated necessary angular-moment interval. Axis pressure is a nonquadratic function: minus the core pressure integral, heat tail and half the monotonicity upper bound. This is not pressure chosen to cancel momentum or a residual-defined force. It changes autonomous inner/outer data; the old fixed-data amplitude bounds no longer apply unchanged.
 
-All four retained local trial arrays frozen2026-09-23T14:53:41.683974+00:00 before new seeds9237191/9237192. No subsequent parameter tuning. Detailed checks were preregistered for RN and FP.
+Pressure interpolation degrees 32 and 64 failed the fixed 1e-8 calibration; degree 96 passed at 1.59e-11. All pressure derivatives are retained. On 101 fresh axial samples plus endpoints, with 24/40/64-order radial quadrature, FP passes the necessary moment inequalities; the smallest sampled pressure-bound margin is about 0.01677380. This numerical statement does not establish an exact continuous moment bound or the existence of a complete five-moment match.
 
-Independent4096 local points X[0,.25],eta[-.5,.5]:
+## Independent equations: both new designs fail
 
-|Field|Leading angular defect max|Leading axial defect max|
+Arrays frozen at 2026-09-23T14:53:41.683974+00:00, before new seeds 9237191/9237192. No subsequent parameter tuning. On 4096 new local points, X in [0,.25] and eta in [-.5,.5]:
+
+| Field | Leading angular defect maximum | Leading axial defect maximum |
 |---|---:|---:|
-|Original ST068-I|1.37e-13|1.23e-12|
-|ST071-RN|.1796644115|1.3660761122|
-|ST071-FP|9.2443788536|38.1497266533|
+| Original ST068-I | 1.37e-13 | 1.23e-12 |
+| ST071-RN | 0.1796644 | 1.3660761 |
+| ST071-FP | 9.2443789 | 38.1497267 |
 
-New designs fail the1e-7 leading target. The original leading core remains unchanged. Representation pressure/divergence identities pass numerically but do not excuse momentum failures.
+Both new designs fail the registered 1e-7 leading target. No annular matching or wave realization was promoted after this failure. Exact representation identities do not replace momentum equations.
 
-New101randometa+2endpoints at24/40/64radialquadrature: all103FP necessary samples pass, smallest pressure-bound margin .0167737956. This moment assertion is numerical, not an all-continuum certificate. RN still fails seam samples. No full finite stress-cone or five-moment solve was attempted after failing the leading gate.
+Same SMALL physical region, nu=.01, unforced local operator, 96-order quadrature:
 
-Same SMALL physical region,nu=.01,unforced operator,96-order quadrature:
-
-|k|Original ST068 local L2|RN local L2|FP local L2|
+| k | Original ST068 local L2 | RN local L2 | FP local L2 |
 |---|---:|---:|---:|
-|0|.08181741524|1.85403714667|10.84374479041|
-|3|.38718270607|8.83020049375|50.76818390749|
-|6|1.83255701444|42.06229815942|237.68475643573|
+| 0 | 0.08181742 | 1.85403715 | 10.84374479 |
+| 3 | 0.38718271 | 8.83020049 | 50.76818391 |
+| 6 | 1.83255701 | 42.06229816 | 237.68475644 |
 
-Both complete momentum gates remain FAILED.12/20/32 and additional48/64/96quadrature levels are retained. Twelve fresh physical points at k=.4,3,5.5 have separate spatial/time FD refinement; finest relative operator discrepancies <=7.54e-7 spatial,<=2.85e-9 temporal. These are derivative-consistency errors, not small NS residuals. No global support/energy/effective-volume benchmark or new winding result.
+Physical residuals worsen. Original 0.001 absolute momentum gates are unchanged and remain FAILED. Six quadrature orders and separate Cartesian space/time derivative refinements are recorded. Finest relative operator differences are below 7.54e-7 spatial and 2.85e-9 temporal; these are derivative-consistency errors, not PDE residuals. No global energy/effective-volume admission or new particle-winding result.
 
-## Execution and source-informed next step
+## Execution and next dependency
 
-Actual attempts include a seven-parameter axis search, three bounded L-BFGS collocation stages, Jacobian-scaled least squares, removal of two anchor-null directions, critical-point and Bernstein guards, a fresh monotone-profile start and pressure feedback. Complete registrations, arrays, checkpoints and rejected endpoints are retained. Main fits hit their budgets; one critical-point solve returned xtol success despite an optimality indicator about3.41e8 and failed constraints, and is explicitly rejected. Snapshot arrays are not full optimizer-state restart files.
+Actual registered work includes the seven-parameter axis search, bounded L-BFGS collocation, Jacobian-scaled least squares, anchor-nullspace removal, critical-point/Bernstein guards, a fresh-profile start and pressure feedback. All trial arrays, snapshots, budgets and failed endpoints are retained. Most fits hit their budgets. One critical-point solve reported xtol success with an optimality indicator about 3.41e8 and failed constraints; it is explicitly rejected. Snapshots do not contain full optimizer-internal restart state.
 
-Appendix B.1-B.3 uses nonconstant logarithmic axis data and Y=Lambda X with a normalized scalar comparison. The implemented scalar helper gives logarithmic shear about3.326/3.389 at arguments3.96/4, but does NOT implement the complete nonlinear large-parameter construction. Next work should maintain actual leading solutions, with source-informed normalized variables and axial resolution, rather than accepting large equation errors to satisfy seam penalties.
+The source Appendix B.1-B.3 uses nonconstant logarithmic axis data and Y=Lambda X normalization. The supplied scalar comparison helper is implemented, but the complete nonlinear large-parameter construction is not. Next work should maintain actual leading solutions rather than accepting large equation defects in exchange for seam penalties.
 
 Source: https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf
 
-## Tests, replay and publication
+## Verification and delivery
 
-Primary22focusedtests passed2.76s. Clean-directory22tests passed3.54s (6.02s process wall time); compile and file checks passed. Clean replay recomputed every exact seam fraction, the entire103point necessary-check dictionary, and k6/n96 full local row identically. Scientific full replay exits1; resume verifies/skips saved reports without optimization. Not every fit and all initial audits were rerun in the clean smoke.
+Primary 22 focused tests passed in 2.76s. Clean-directory 22 tests passed in 3.54s, with warnings as errors; compile and file checks passed. Clean replay reproduced every exact seam fraction, the entire 103-point necessary-check dictionary and the k6/n96 physical row identically. Full scientific replay exits 1; resume verifies and skips saved evidence without optimization. Not every fit or all earlier audits were rerun in the clean smoke.
 
-Failures include a saved test-collection bracket error and tool transport timeouts while actual fitting processes continued. No duplicate fit was started in response; numerical tests, candidate arrays and gates were not loosened.
+The test-collection syntax failure and tool transport timeouts are retained. Running fit processes were checked rather than duplicated. No field or acceptance tolerance was changed to hide a failure.
 
-Two actual check modules are committed on this branch and their Gitblob IDs match executed local bytes: exact_seam_certificate.py c09d7540a3aaf70662156d51d5ce2ec5967592bf; bernstein_guard.py e3a624ca0b53562f56999edaa124b559e5f666b6. Complete actual optimizer/evaluator sources, dependencies, original reference, trial arrays, exact certificate, logs and reports are delivered in the conversation archive NS_ST071_Coupled_Axis_Design.zip; NOT claimed all uploaded here. No PR or merge.
+Two actual check modules are on this branch, verified against local Git blob identities:
 
-From the COMPLETE bundle:
+- exact_seam_certificate.py: c09d7540a3aaf70662156d51d5ce2ec5967592bf
+- bernstein_guard.py: e3a624ca0b53562f56999edaa124b559e5f666b6
+
+Complete optimizer/evaluator sources, dependencies, original reference, frozen arrays, exact certificate, logs and evidence are supplied in the conversation archive **NS_ST071_Coupled_Axis_Design.zip**, not claimed all committed here. No PR or merge. No native MATLAB, cloud CI, Lean, third-party full solver or full historical test run.
+
+From the COMPLETE offline package:
+
 ```bash
 python -m pip install -r requirements.txt
 python verify_delivery.py
@@ -70,9 +82,9 @@ python replay.py --part necessary --out outputs/necessary.json
 python replay.py --part full --k 6 --out outputs/k6.json
 ```
 
-First two exit0 only for their narrow properties; last exits1. Add--resume for identity-checked completed reports. PyTorch is only needed for fitting and one adjoint test; the recorded22test runs included it. No native MATLAB/cloud CI/Lean/third-party full solver/full legacy suite run.
+The first two exit 0 for their narrow properties only; the last exits 1. Add --resume for identity-checked saved reports. PyTorch is needed for fitting and one adjoint test; the recorded 22-test runs included it.
 
-FP NPZ SHA256 f4cac6a7c82c07d11f57fc743830bb69419e4c636c50bf6cfd266825687952fa.
-RN NPZ SHA256 e7cb4696af2fde236c7a3a92388adc15189243175c923e084e18712b73d0e10b.
+FP NPZ SHA256: f4cac6a7c82c07d11f57fc743830bb69419e4c636c50bf6cfd266825687952fa.
+RN NPZ SHA256: e7cb4696af2fde236c7a3a92388adc15189243175c923e084e18712b73d0e10b.
 
-`pde_validated=false`, `leading_profile_solved=false`, `global_field_ready=false`, `stress_realization_ready=false`, `source_correspondence_verified=false`, `scale_recursion_validated=false`, `blowup_proved=false`.
+pde_validated=false; leading_profile_solved=false; global_field_ready=false; stress_realization_ready=false; source_correspondence_verified=false; scale_recursion_validated=false; blowup_proved=false.
