@@ -1,0 +1,117 @@
+{
+  "heat_amplitude": 0.2619686847761696,
+  "fit": "One amplitude matched to midplane swirl at k0 only, then frozen",
+  "rows": [
+    {
+      "k": 0,
+      "eta": -0.4,
+      "velocity_jump": [
+        0.05175787242653367,
+        0.0024464709576672017,
+        0.2531608826113038
+      ],
+      "inner_rtheta_stress": -0.003880995737217017,
+      "outer_rtheta_stress": -0.13314309003680527,
+      "rtheta_stress_jump": -0.12926209429958826
+    },
+    {
+      "k": 0,
+      "eta": 0.0,
+      "velocity_jump": [
+        0.1001140987210682,
+        0.0,
+        -0.003254990290617212
+      ],
+      "inner_rtheta_stress": -0.0023557824049801647,
+      "outer_rtheta_stress": -0.15850680537217693,
+      "rtheta_stress_jump": -0.15615102296719677
+    },
+    {
+      "k": 0,
+      "eta": 0.4,
+      "velocity_jump": [
+        0.05129246695257092,
+        0.00247543871011896,
+        -0.2586945824646586
+      ],
+      "inner_rtheta_stress": -0.003904553793330701,
+      "outer_rtheta_stress": -0.13314309003680527,
+      "rtheta_stress_jump": -0.12923853624347456
+    },
+    {
+      "k": 3,
+      "eta": -0.4,
+      "velocity_jump": [
+        0.14651446180762973,
+        0.007050442473008289,
+        0.7218311461061582
+      ],
+      "inner_rtheta_stress": -0.0314606650842731,
+      "outer_rtheta_stress": -1.0762770233401406,
+      "rtheta_stress_jump": -1.0448163582558676
+    },
+    {
+      "k": 3,
+      "eta": 0.0,
+      "velocity_jump": [
+        0.2826796874727873,
+        0.00023699032008472898,
+        -0.009296083966166947
+      ],
+      "inner_rtheta_stress": -0.019651710692419045,
+      "outer_rtheta_stress": -1.2813074461317384,
+      "rtheta_stress_jump": -1.2616557354393194
+    },
+    {
+      "k": 3,
+      "eta": 0.4,
+      "velocity_jump": [
+        0.14520021541617295,
+        0.0071331051870096585,
+        -0.7376447792544223
+      ],
+      "inner_rtheta_stress": -0.031650515073867,
+      "outer_rtheta_stress": -1.0762770233401406,
+      "rtheta_stress_jump": -1.0446265082662736
+    },
+    {
+      "k": 6,
+      "eta": -0.4,
+      "velocity_jump": [
+        0.41473721382566053,
+        0.020314477740498216,
+        2.058237637087918
+      ],
+      "inner_rtheta_stress": -0.2550256471953287,
+      "outer_rtheta_stress": -8.700205400432578,
+      "rtheta_stress_jump": -8.44517975323725
+    },
+    {
+      "k": 6,
+      "eta": 0.0,
+      "velocity_jump": [
+        0.798198310317671,
+        0.0013393966959878156,
+        -0.02654956825066737
+      ],
+      "inner_rtheta_stress": -0.16365504968733433,
+      "outer_rtheta_stress": -10.35759169869596,
+      "rtheta_stress_jump": -10.193936649008627
+    },
+    {
+      "k": 6,
+      "eta": 0.4,
+      "velocity_jump": [
+        0.41102582916462255,
+        0.020550372404795736,
+        -2.103428224402564
+      ],
+      "inner_rtheta_stress": -0.2565557046806191,
+      "outer_rtheta_stress": -8.700205400432578,
+      "rtheta_stress_jump": -8.44364969575196
+    }
+  ],
+  "source": "OpenAI Navier-Stokes PDF Appendix A heat exterior; existing shipped evaluator reused",
+  "scope": "Direct interface compatibility screen, not moment repair, wave realization or finite total energy. Pure swirl exterior carries no axial/radial flow.",
+  "global_field_ready": false
+}

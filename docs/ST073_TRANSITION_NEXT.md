@@ -109,3 +109,9 @@ The failure quantifies the missing transition dynamics. Do not repeat simple
 cutoff sweeps or present compactness as matching. Next solve a stress/flux-driven
 transition correction or a decaying exterior with evolving interface data.
 Artifact: experiments/root_st073/compact_control/report.json.
+
+## Updated source priority
+
+Read docs/ST073_PAPER_ROUTE.md before new construction. Official PDF was reopened;
+actual heat-exterior direct-join screen rejects value-only matching.
+Evidence: experiments/root_st073/heat_join/screen.json.
