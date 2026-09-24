@@ -501,3 +501,27 @@ Next evolve phase/amplitude against J(t) along the actual trajectory and
 re-evaluate stress-direction compatibility there before constructing a
 supported vector-potential wave. Do not treat longer residence as PDE progress
 or as a substitute for reducing the remaining full residual and global energy.
+
+
+## Evolving phase along the corrected wide trajectory
+
+`evolving_pulse.py` evaluates the actual Cartesian velocity gradient at25 saved
+particle positions, using fourth-order spatial differences, then integrates
+the Kelvin wavevector and pressure-projected viscous amplitude with a smooth
+interpolated J(t). It compares27 initial wavevectors with a fixed-start J on the
+SAME observed residence time. In both models the sampled peak gain is1.0;
+the best evolving final gain is0.97759. The evolving gradient trace is at most
+1.22e-7 and wavevector/amplitude orthogonality errors stay below5.23e-11.
+This rules out gain for this explicitly sampled local family and horizon only;
+it is not an impossibility statement for all waves or a global pulse.
+
+At the seven late points passing the approximate direction test, a mode-one
+azimuthal wave has minimum local damping nu/r^2 larger than the reduced
+inviscid growth rate: the ratios range about1.30--12.1. This dimensional
+comparison explains the observed damping but is not a spectral bound for the
+changing, inhomogeneous field. The positive-direction region still occurs
+only in narrow inner/outer collars. The next constructive step should change
+mean swirl/shear/pressure in the wide transition to create an interior cone
+margin with growth that overcomes viscosity, while retaining the full residual
+and volume scores. Then re-solve transported phase and stress tails.
+Artifact: experiments/root_st073/evolving_pulse/report.json.
