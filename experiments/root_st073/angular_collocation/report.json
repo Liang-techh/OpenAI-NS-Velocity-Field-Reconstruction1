@@ -1,0 +1,222 @@
+{
+  "amplitudes": [
+    [
+      -0.016424157038889314,
+      3.306490739724086e-05,
+      -0.001110376637487106
+    ],
+    [
+      0.17527596345598648,
+      -2.543048265941147e-05,
+      -0.04208348291144951
+    ],
+    [
+      -0.006403536871243369,
+      1.044759403275912e-07,
+      -0.005226897006895934
+    ],
+    [
+      0.04977132454639914,
+      -3.6805900855004164e-06,
+      -0.008474599267844688
+    ]
+  ],
+  "bounds": [
+    -4,
+    4
+  ],
+  "rows": [
+    {
+      "split": "training",
+      "k": 1.0,
+      "eta": -0.3,
+      "order": 12,
+      "before": {
+        "momentum_max": 541.4354773003901,
+        "theta_max": 59.405592717614915,
+        "terminal_rtheta": -0.06622690577534403,
+        "divergence_max": 1.1144181630839967e-06
+      },
+      "after": {
+        "momentum_max": 542.062081681288,
+        "theta_max": 52.28659839474464,
+        "terminal_rtheta": -0.06647095343829423,
+        "divergence_max": 1.1144182554545523e-06
+      }
+    },
+    {
+      "split": "training",
+      "k": 1.0,
+      "eta": 0,
+      "order": 12,
+      "before": {
+        "momentum_max": 119.94447393768559,
+        "theta_max": 69.39658682841126,
+        "terminal_rtheta": -0.07232253443452195,
+        "divergence_max": 1.2865686613849903e-06
+      },
+      "after": {
+        "momentum_max": 113.05899101372238,
+        "theta_max": 61.59928620069895,
+        "terminal_rtheta": -0.0724858106055623,
+        "divergence_max": 1.286568753755546e-06
+      }
+    },
+    {
+      "split": "training",
+      "k": 1.0,
+      "eta": 0.3,
+      "order": 12,
+      "before": {
+        "momentum_max": 556.7675608249936,
+        "theta_max": 59.38092514982917,
+        "terminal_rtheta": -0.06622073765574941,
+        "divergence_max": 1.1227967160465369e-06
+      },
+      "after": {
+        "momentum_max": 557.3756679016367,
+        "theta_max": 52.25451393450237,
+        "terminal_rtheta": -0.06646459641412497,
+        "divergence_max": 1.12279643893487e-06
+      }
+    },
+    {
+      "split": "training",
+      "k": 4.0,
+      "eta": -0.3,
+      "order": 12,
+      "before": {
+        "momentum_max": 12334.403588146932,
+        "theta_max": 1356.5766242052744,
+        "terminal_rtheta": -0.5352048755329073,
+        "divergence_max": 8.898921365130263e-06
+      },
+      "after": {
+        "momentum_max": 12348.762099874644,
+        "theta_max": 1193.8860277968126,
+        "terminal_rtheta": -0.5371508973405247,
+        "divergence_max": 8.898922928324282e-06
+      }
+    },
+    {
+      "split": "training",
+      "k": 4.0,
+      "eta": 0,
+      "order": 12,
+      "before": {
+        "momentum_max": 2715.9821803044433,
+        "theta_max": 1583.889081086306,
+        "terminal_rtheta": -0.5844854872976375,
+        "divergence_max": 1.0249647630189429e-05
+      },
+      "after": {
+        "momentum_max": 2557.309008641299,
+        "theta_max": 1406.3616445847492,
+        "terminal_rtheta": -0.5857810273068751,
+        "divergence_max": 1.024964711859866e-05
+      }
+    },
+    {
+      "split": "training",
+      "k": 4.0,
+      "eta": 0.3,
+      "order": 12,
+      "before": {
+        "momentum_max": 12684.738163668851,
+        "theta_max": 1356.0142124901417,
+        "terminal_rtheta": -0.5351540608418559,
+        "divergence_max": 8.96608572986679e-06
+      },
+      "after": {
+        "momentum_max": 12698.671668890938,
+        "theta_max": 1193.154743965208,
+        "terminal_rtheta": -0.5370986432082451,
+        "divergence_max": 8.96608572986679e-06
+      }
+    },
+    {
+      "split": "holdout",
+      "k": 2.5,
+      "eta": -0.2,
+      "order": 18,
+      "before": {
+        "momentum_max": 1911.4925806246777,
+        "theta_max": 317.2081840887173,
+        "terminal_rtheta": -0.1979606347004339,
+        "divergence_max": 0.00010558700190443915
+      },
+      "after": {
+        "momentum_max": 1918.653384619051,
+        "theta_max": 275.2573392830278,
+        "terminal_rtheta": -0.19854477108485233,
+        "divergence_max": 0.00010558700097362816
+      }
+    },
+    {
+      "split": "holdout",
+      "k": 2.5,
+      "eta": 0.2,
+      "order": 18,
+      "before": {
+        "momentum_max": 1992.3109429108076,
+        "theta_max": 317.118130342537,
+        "terminal_rtheta": -0.1979493771732601,
+        "divergence_max": 0.00011017518660594305
+      },
+      "after": {
+        "momentum_max": 1999.1749706201483,
+        "theta_max": 275.1344931273448,
+        "terminal_rtheta": -0.198533335748372,
+        "divergence_max": 0.00011017518676226246
+      }
+    },
+    {
+      "split": "holdout",
+      "k": 5.5,
+      "eta": -0.2,
+      "order": 18,
+      "before": {
+        "momentum_max": 43526.90920955157,
+        "theta_max": 7242.017603714784,
+        "terminal_rtheta": -1.5998384133474568,
+        "divergence_max": 0.0008412830441102415
+      },
+      "after": {
+        "momentum_max": 43691.082058820706,
+        "theta_max": 6284.3130574093775,
+        "terminal_rtheta": -1.6044867057385093,
+        "divergence_max": 0.0008412830441102415
+      }
+    },
+    {
+      "split": "holdout",
+      "k": 5.5,
+      "eta": 0.2,
+      "order": 18,
+      "before": {
+        "momentum_max": 45373.40070958713,
+        "theta_max": 7239.965441261949,
+        "terminal_rtheta": -1.5997453391204803,
+        "divergence_max": 0.0008779643557659256
+      },
+      "after": {
+        "momentum_max": 45530.74847595911,
+        "theta_max": 6281.513377292248,
+        "terminal_rtheta": -1.6043923542119607,
+        "divergence_max": 0.0008779643610523635
+      }
+    }
+  ],
+  "refined_holdout": {
+    "momentum_max": 45530.74800558012,
+    "theta_max": 6281.513286552547,
+    "terminal_rtheta": -1.6043577482114793,
+    "divergence_max": 1.7854515022008854e-06
+  },
+  "fit_cost": 10.974651905234415,
+  "basis": "sqrt(nu) q^-A 64 y^3(1-y)^3 P_j(2y-1) (eta/.3)^m; j=0..3,m=0..2",
+  "objective": "Per slice normalize theta pointwise residual by baseline theta max; append 3 times r^2-weighted average theta residual; coefficient regularization .001. Soft moment penalty, not exact constraint.",
+  "scope": "Same fixed core, poloidal field, pressure and heat exterior. Pure axisymmetric swirl preserves divergence and interface jets. No force. Full momentum evaluated on disjoint scale/axial holdouts; samples do not certify supremum or physical-volume L2.",
+  "pde_validated": false,
+  "global_field_ready": false
+}

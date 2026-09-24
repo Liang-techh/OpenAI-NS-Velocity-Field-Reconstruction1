@@ -210,3 +210,20 @@ Next implementation tasks:
 - Only then evaluate actual correction-stress compatibility and realizability;
   retain the separate axial closure, finite-energy and scale-recursion work.
 Full momentum max and physical-volume L2 gates remain1e-3; none has passed.
+
+
+## Angular PDE collocation: component gain, no full-field gain
+
+`angular_collocation.py` adds 12 endpoint-preserving swirl modes (four radial
+Legendre modes, three axial polynomial modes). It trains at k=1,4 and
+eta=-.3,0,.3, using normalized pointwise theta residual plus a soft moment
+penalty, bounded coefficients and mild regularization. Base field evaluations
+are cached without changing numerical differentiation or the fitted fields.
+Disjoint holdouts k=2.5,5.5, eta=+/-.2 use18 radial nodes. Theta maxima fall
+about13%, but full momentum maxima rise about0.35--0.38%; terminal angular
+stress magnitudes also rise about0.3%. Candidate is NOT promoted to baseline.
+At late eta=.2, full max45530.7485 agrees with spatial-step-halved45530.7480.
+The coarse divergence estimate8.78e-4 drops to1.79e-6 on refinement; stencils
+near the C2 join affect coarse finite-difference errors. No supremum or volume
+L2 certificate is claimed. Axial/poloidal correction is now the priority.
+Artifact: experiments/root_st073/angular_collocation/report.json.
