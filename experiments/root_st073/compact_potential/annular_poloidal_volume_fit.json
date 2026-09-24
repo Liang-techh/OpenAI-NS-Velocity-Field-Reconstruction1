@@ -1,0 +1,36 @@
+{
+  "tau": 0.0078125,
+  "order": 8,
+  "radial_windows_fraction_of_support": [
+    [
+      0.12,
+      0.36
+    ],
+    [
+      0.28,
+      0.55
+    ]
+  ],
+  "temporal_power": 2.0,
+  "reference_tau": 0.0078125,
+  "linear_amplitudes": [
+    -0.007224418406260068,
+    -0.0063908805242989235
+  ],
+  "amplitudes": [
+    -0.007221029159382142,
+    -0.006390410470852821
+  ],
+  "optimizer_success": true,
+  "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+  "baseline": {
+    "max": 266159.892129595,
+    "physical_volume_l2": 188.3449278054121
+  },
+  "candidate": {
+    "max": 159842.4655311664,
+    "physical_volume_l2": 123.5860429342059
+  },
+  "scope": "Two compact solenoidal axial-collar modes fitted to full-support Gauss8 physical-volume residual at one time. No local cone, held-out time, or global supremum certificate.",
+  "accepted": false
+}

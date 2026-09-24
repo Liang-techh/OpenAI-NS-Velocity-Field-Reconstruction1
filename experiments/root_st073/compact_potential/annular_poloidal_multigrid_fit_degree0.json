@@ -1,0 +1,67 @@
+{
+  "windows": [
+    [
+      0.12,
+      0.36
+    ],
+    [
+      0.28,
+      0.55
+    ],
+    [
+      0.12,
+      0.65
+    ],
+    [
+      0.45,
+      0.8
+    ]
+  ],
+  "reference_tau": 0.0078125,
+  "temporal_power": 2.0,
+  "amplitudes": [
+    -0.006464157626720745,
+    -0.010601531745490717,
+    0.007580827533247,
+    0.008795854895947917
+  ],
+  "optimizer_success": true,
+  "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+  "rows": [
+    {
+      "k": 6.0,
+      "order": 8,
+      "baseline_max": 266159.892129595,
+      "baseline_l2": 188.3449278054121,
+      "candidate_max": 117159.1877401968,
+      "candidate_l2": 109.45175035070143
+    },
+    {
+      "k": 6.0,
+      "order": 10,
+      "baseline_max": 386307.98423060635,
+      "baseline_l2": 387.63471609214895,
+      "candidate_max": 379257.28144454263,
+      "candidate_l2": 405.98447500251797
+    },
+    {
+      "k": 5.5,
+      "order": 6,
+      "baseline_max": 88740.44144242188,
+      "baseline_l2": 158.0215412858507,
+      "candidate_max": 89219.81215160526,
+      "candidate_l2": 150.33921625505428
+    },
+    {
+      "k": 6.0,
+      "order": 6,
+      "held_out": true,
+      "baseline_max": 91543.61885943754,
+      "baseline_l2": 190.12848139543794,
+      "candidate_max": 109488.44599025568,
+      "candidate_l2": 171.63196090713654
+    }
+  ],
+  "scope": "Four compact solenoidal modes fit jointly on Gauss8/Gauss10 at k6 and Gauss6 at k5.5, with k6 Gauss6 held out. Finite grids only, no local cone or continuum certificate.",
+  "accepted": false
+}

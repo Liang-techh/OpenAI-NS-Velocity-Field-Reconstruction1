@@ -1,0 +1,33 @@
+{
+  "tau": 0.0078125,
+  "radii": [
+    0.005,
+    0.0065,
+    0.008,
+    0.0095,
+    0.011
+  ],
+  "heights": [
+    0.00285,
+    0.0031,
+    0.00335,
+    0.0036,
+    0.00385
+  ],
+  "baseline": {
+    "max": 734372.0856361001,
+    "physical_patch_l2": 349.51419082584255,
+    "rms": 373244.5248754146,
+    "max_radial": 732606.757997726
+  },
+  "candidate": {
+    "max": 700964.0538548267,
+    "physical_patch_l2": 288.6577916389126,
+    "rms": 312462.26202564046,
+    "max_radial": 699707.5795967375
+  },
+  "pointwise_improved_count": 36,
+  "total_points": 50,
+  "scope": "Off-Gauss tensor patch with rectangle physical-volume weights. Sampled diagnostic, not an integral/supremum certificate.",
+  "accepted": false
+}

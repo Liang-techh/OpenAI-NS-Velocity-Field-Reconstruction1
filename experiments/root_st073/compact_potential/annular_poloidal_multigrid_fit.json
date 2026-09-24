@@ -1,0 +1,113 @@
+{
+  "windows": [
+    [
+      0.12,
+      0.36
+    ],
+    [
+      0.28,
+      0.55
+    ],
+    [
+      0.12,
+      0.65
+    ],
+    [
+      0.45,
+      0.8
+    ]
+  ],
+  "mode_specs": [
+    [
+      0.12,
+      0.36,
+      0
+    ],
+    [
+      0.12,
+      0.36,
+      1
+    ],
+    [
+      0.28,
+      0.55,
+      0
+    ],
+    [
+      0.28,
+      0.55,
+      1
+    ],
+    [
+      0.12,
+      0.65,
+      0
+    ],
+    [
+      0.12,
+      0.65,
+      1
+    ],
+    [
+      0.45,
+      0.8,
+      0
+    ],
+    [
+      0.45,
+      0.8,
+      1
+    ]
+  ],
+  "reference_tau": 0.0078125,
+  "temporal_power": 2.0,
+  "amplitudes": [
+    -0.0025684860707334543,
+    0.007311115520471016,
+    -0.006730505668509508,
+    0.007117679133434574,
+    0.00801716507852713,
+    0.0018250680295330503,
+    0.009458628192600875,
+    0.00119727477093676
+  ],
+  "optimizer_success": true,
+  "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+  "rows": [
+    {
+      "k": 6.0,
+      "order": 8,
+      "baseline_max": 266159.892129595,
+      "baseline_l2": 188.3449278054121,
+      "candidate_max": 79419.18150070136,
+      "candidate_l2": 59.98310743717219
+    },
+    {
+      "k": 6.0,
+      "order": 10,
+      "baseline_max": 386307.98423060635,
+      "baseline_l2": 387.63471609214895,
+      "candidate_max": 334043.5836080225,
+      "candidate_l2": 354.0697311795668
+    },
+    {
+      "k": 5.5,
+      "order": 6,
+      "baseline_max": 88740.44144242188,
+      "baseline_l2": 158.0215412858507,
+      "candidate_max": 106815.66587545341,
+      "candidate_l2": 151.76057658607655
+    },
+    {
+      "k": 6.0,
+      "order": 6,
+      "held_out": true,
+      "baseline_max": 91543.61885943754,
+      "baseline_l2": 190.12848139543794,
+      "candidate_max": 133929.2428680008,
+      "candidate_l2": 197.43294089223522
+    }
+  ],
+  "scope": "Four compact solenoidal modes fit jointly on Gauss8/Gauss10 at k6 and Gauss6 at k5.5, with k6 Gauss6 held out. Finite grids only, no local cone or continuum certificate.",
+  "accepted": false
+}

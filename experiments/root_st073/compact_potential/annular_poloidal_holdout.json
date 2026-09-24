@@ -1,0 +1,45 @@
+{
+  "rows": [
+    {
+      "k": 6.0,
+      "tau": 0.0078125,
+      "order": 6,
+      "current": {
+        "max": 91543.61885943754,
+        "physical_volume_l2": 190.1284813954379
+      },
+      "candidate": {
+        "max": 112768.56134053641,
+        "physical_volume_l2": 194.6030719133627
+      }
+    },
+    {
+      "k": 6.0,
+      "tau": 0.0078125,
+      "order": 10,
+      "current": {
+        "max": 386307.98423060635,
+        "physical_volume_l2": 387.63471609214895
+      },
+      "candidate": {
+        "max": 490478.0485388816,
+        "physical_volume_l2": 496.8673644186298
+      }
+    },
+    {
+      "k": 5.5,
+      "tau": 0.011048543456039806,
+      "order": 6,
+      "current": {
+        "max": 88740.44144242188,
+        "physical_volume_l2": 158.0215412858507
+      },
+      "candidate": {
+        "max": 66840.04087787442,
+        "physical_volume_l2": 140.60744853561508
+      }
+    }
+  ],
+  "scope": "Held-out Gauss6/Gauss10 spatial grids and earlier time for Gauss8-trained annular mode. No continuum or full-time certificate.",
+  "accepted": false
+}
