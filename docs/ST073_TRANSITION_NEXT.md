@@ -796,3 +796,34 @@ stress, together with non-axisymmetric realizability/moment constraints from
 the paper. Do not promote this finite-slab screen to an accepted NS solution.
 Artifacts: `experiments/root_st073/compact_potential/radial_swirl_fit.json`
 and `radial_swirl_direct.json`.
+
+## Late radial-peak incremental joint repair
+
+After the radial-swirl correction, the largest k6/Gauss8 point is at
+(r,z)=(0.005689,0.003433), inside the axial cutoff collar. Its residual is
+mostly radial (+272322), with angular -29815 and axial -39970. This explains
+why the radial-collar swirl modes cannot change the total maximum there.
+`radial_repair_refit.py` reuses the six compact streamfunction/swirl/pressure
+modes as an *increment* with a steeper (tau_ref/tau)^2 weight. The fit uses
+full Cartesian momentum at k6/Gauss8 and retains nonlinear self-transport;
+the fitted strength1 overfits the independent k6/Gauss6 grid (max94315 ->
+107841; sampled L2 191.48 ->218.15). It is rejected.
+
+Strength.1 is the conservative screen: at k6/Gauss8, total max276850 ->266160
+and sampled L2 194.37 ->188.34; independent k6/Gauss6 max94315 ->91544,
+L2 191.48 ->190.13. At k5.5/Gauss6 max91715 ->88740 and L2 161.13 ->
+158.02. At k4 and k=.4 both sampled measures also decrease slightly.
+`IncrementalRadialRepairField` exposes the combined compact field with this
+increment; analytic divergence freedom follows from its streamfunction and
+swirl construction. `radial_repair_direct.py` independently checks six late
+peak-neighborhood points using fourth-order Cartesian derivatives and a
+one-sided time stencil at the registered endpoint: the worst of these norms
+falls276850 ->266160, with finite-difference divergence around1e-6.
+
+The candidate remains massively above1e-3, the quadrature is not converged,
+and no critical-time extension or non-axisymmetric stress is supplied. More
+small slow-mode fits will not substitute for the paper's realizable oscillatory
+stress and exact moment correction cycle in Sections7-9. Preserve this
+candidate as a numerical benchmark, not an accepted Navier-Stokes solution.
+Artifacts: `experiments/root_st073/compact_potential/radial_repair_refit.json`
+and `radial_repair_direct.json`.

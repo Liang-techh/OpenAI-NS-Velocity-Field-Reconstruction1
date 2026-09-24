@@ -1,0 +1,325 @@
+{
+  "reference_tau": 0.011048543456039806,
+  "training_k": 6.0,
+  "temporal_power": 2.0,
+  "mode_names": [
+    "poloidal_even",
+    "poloidal_odd",
+    "swirl_even",
+    "swirl_odd",
+    "pressure_even",
+    "pressure_odd"
+  ],
+  "increment_amplitudes": [
+    -1.8594345687431908e-05,
+    -0.0030891481789584296,
+    0.12924125577329237,
+    7.862869143342497e-05,
+    -20.41238294206486,
+    -0.22387829682414467
+  ],
+  "rows": [
+    {
+      "k": 6.0,
+      "order": 8,
+      "strength": 0.0,
+      "metrics": {
+        "max": 276849.7434032758,
+        "physical_volume_l2": 194.374170480065,
+        "max_radial": 272321.94460350287,
+        "max_angular": 29814.745557225353,
+        "max_axial": 59281.91234918906
+      }
+    },
+    {
+      "k": 6.0,
+      "order": 8,
+      "strength": 0.03,
+      "metrics": {
+        "max": 273641.02371576667,
+        "physical_volume_l2": 192.5187127362091,
+        "max_radial": 269250.2208620429,
+        "max_angular": 29069.43925325871,
+        "max_axial": 58443.82835266441
+      }
+    },
+    {
+      "k": 6.0,
+      "order": 8,
+      "strength": 0.1,
+      "metrics": {
+        "max": 266159.89213189797,
+        "physical_volume_l2": 188.34492780492582,
+        "max_radial": 262085.12828941346,
+        "max_angular": 27330.391210671703,
+        "max_axial": 56488.5434240652
+      }
+    },
+    {
+      "k": 6.0,
+      "order": 8,
+      "strength": 0.3,
+      "metrics": {
+        "max": 244834.31390983632,
+        "physical_volume_l2": 177.73665202970076,
+        "max_radial": 241630.89129646737,
+        "max_angular": 22361.682517580106,
+        "max_axial": 50903.90040203146
+      }
+    },
+    {
+      "k": 6.0,
+      "order": 8,
+      "strength": 1.0,
+      "metrics": {
+        "max": 170993.21883980613,
+        "physical_volume_l2": 160.21785890735092,
+        "max_radial": 170244.7159910998,
+        "max_angular": 9626.717512290605,
+        "max_axial": 31379.645521159913
+      }
+    },
+    {
+      "k": 6.0,
+      "order": 6,
+      "strength": 0.0,
+      "metrics": {
+        "max": 94314.98130718521,
+        "physical_volume_l2": 191.48204324921696,
+        "max_radial": 90162.74300303486,
+        "max_angular": 59006.89455512571,
+        "max_axial": 79989.21347059983
+      }
+    },
+    {
+      "k": 6.0,
+      "order": 6,
+      "strength": 0.03,
+      "metrics": {
+        "max": 93393.72109231306,
+        "physical_volume_l2": 190.97865963920722,
+        "max_radial": 87589.86327608992,
+        "max_angular": 59006.89455512571,
+        "max_axial": 78360.59656161992
+      }
+    },
+    {
+      "k": 6.0,
+      "order": 6,
+      "strength": 0.1,
+      "metrics": {
+        "max": 91543.61885982602,
+        "physical_volume_l2": 190.12848139565037,
+        "max_radial": 81586.49948372404,
+        "max_angular": 59006.89455512571,
+        "max_axial": 74560.57391175153
+      }
+    },
+    {
+      "k": 6.0,
+      "order": 6,
+      "strength": 0.3,
+      "metrics": {
+        "max": 88746.05204067143,
+        "physical_volume_l2": 190.2337841638822,
+        "max_radial": 65505.020482616936,
+        "max_angular": 59006.89455512571,
+        "max_axial": 63704.01026049546
+      }
+    },
+    {
+      "k": 6.0,
+      "order": 6,
+      "strength": 1.0,
+      "metrics": {
+        "max": 107841.46156642183,
+        "physical_volume_l2": 218.15373209037168,
+        "max_radial": 99101.2015432468,
+        "max_angular": 59006.89455512571,
+        "max_axial": 37195.41741377601
+      }
+    },
+    {
+      "k": 5.5,
+      "order": 6,
+      "strength": 0.0,
+      "metrics": {
+        "max": 91715.26363662891,
+        "physical_volume_l2": 161.13384020800154,
+        "max_radial": 91173.2020532608,
+        "max_angular": 38487.94214236828,
+        "max_axial": 43603.945389863045
+      }
+    },
+    {
+      "k": 5.5,
+      "order": 6,
+      "strength": 0.03,
+      "metrics": {
+        "max": 90821.90736569068,
+        "physical_volume_l2": 160.18018131990857,
+        "max_radial": 90258.55196000656,
+        "max_angular": 38487.94214236828,
+        "max_axial": 42904.918667666505
+      }
+    },
+    {
+      "k": 5.5,
+      "order": 6,
+      "strength": 0.1,
+      "metrics": {
+        "max": 88740.44144242578,
+        "physical_volume_l2": 158.02154128608004,
+        "max_radial": 88124.37310005676,
+        "max_angular": 38487.94214236828,
+        "max_axial": 41273.873893942655
+      }
+    },
+    {
+      "k": 5.5,
+      "order": 6,
+      "strength": 0.3,
+      "metrics": {
+        "max": 82819.29826020545,
+        "physical_volume_l2": 152.39778737887855,
+        "max_radial": 82026.75540202107,
+        "max_angular": 38487.94214236828,
+        "max_axial": 36613.8815712568
+      }
+    },
+    {
+      "k": 5.5,
+      "order": 6,
+      "strength": 1.0,
+      "metrics": {
+        "max": 62535.50750843228,
+        "physical_volume_l2": 140.15592246288287,
+        "max_radial": 60685.515646806016,
+        "max_angular": 38487.94214236828,
+        "max_axial": 20305.49046798305
+      }
+    },
+    {
+      "k": 4.0,
+      "order": 6,
+      "strength": 0.0,
+      "metrics": {
+        "max": 31922.869002264844,
+        "physical_volume_l2": 115.55033257679678,
+        "max_radial": 31841.32418451446,
+        "max_angular": 10295.150569459933,
+        "max_axial": 7733.999845535448
+      }
+    },
+    {
+      "k": 4.0,
+      "order": 6,
+      "strength": 0.03,
+      "metrics": {
+        "max": 31882.350607418637,
+        "physical_volume_l2": 115.41562448306705,
+        "max_radial": 31800.222777913044,
+        "max_angular": 10295.150569459933,
+        "max_axial": 7679.693016981372
+      }
+    },
+    {
+      "k": 4.0,
+      "order": 6,
+      "strength": 0.1,
+      "metrics": {
+        "max": 31787.82648830018,
+        "physical_volume_l2": 115.1022478442533,
+        "max_radial": 31704.319539879758,
+        "max_angular": 10295.150569459933,
+        "max_axial": 7552.977247851952
+      }
+    },
+    {
+      "k": 4.0,
+      "order": 6,
+      "strength": 0.3,
+      "metrics": {
+        "max": 31517.904481500158,
+        "physical_volume_l2": 114.21423985382815,
+        "max_radial": 31430.31062806757,
+        "max_angular": 10295.150569459933,
+        "max_axial": 7190.933459600005
+      }
+    },
+    {
+      "k": 4.0,
+      "order": 6,
+      "strength": 1.0,
+      "metrics": {
+        "max": 30574.96451216373,
+        "physical_volume_l2": 111.19529064751721,
+        "max_radial": 30471.283400025757,
+        "max_angular": 10295.150569459933,
+        "max_axial": 5923.794975426163
+      }
+    },
+    {
+      "k": 0.4,
+      "order": 6,
+      "strength": 0.0,
+      "metrics": {
+        "max": 932.3416526498693,
+        "physical_volume_l2": 22.1737355905296,
+        "max_radial": 930.6008139943541,
+        "max_angular": 360.1643443306135,
+        "max_axial": 160.79081496112286
+      }
+    },
+    {
+      "k": 0.4,
+      "order": 6,
+      "strength": 0.03,
+      "metrics": {
+        "max": 932.3179382310536,
+        "physical_volume_l2": 22.173150897166757,
+        "max_radial": 930.5767373778807,
+        "max_angular": 360.1643443306135,
+        "max_axial": 160.67911624280936
+      }
+    },
+    {
+      "k": 0.4,
+      "order": 6,
+      "strength": 0.1,
+      "metrics": {
+        "max": 932.2626058182859,
+        "physical_volume_l2": 22.171787139148122,
+        "max_radial": 930.5205586067091,
+        "max_angular": 360.1643443306135,
+        "max_axial": 160.41848590228585
+      }
+    },
+    {
+      "k": 0.4,
+      "order": 6,
+      "strength": 0.3,
+      "metrics": {
+        "max": 932.1045227101266,
+        "physical_volume_l2": 22.167894750266598,
+        "max_radial": 930.3600478365594,
+        "max_angular": 360.1643443306135,
+        "max_axial": 159.673827803538
+      }
+    },
+    {
+      "k": 0.4,
+      "order": 6,
+      "strength": 1.0,
+      "metrics": {
+        "max": 931.5513427531267,
+        "physical_volume_l2": 22.154318826507062,
+        "max_radial": 929.798260195009,
+        "max_angular": 360.1643443306135,
+        "max_axial": 157.06752465664493
+      }
+    }
+  ],
+  "scope": "Incremental six-mode solenoidal velocity/pressure fit on top of axial-collar plus radial-swirl candidate. Full nonlinear physical momentum; Gauss8 training and Gauss6 time/grid holdouts. Not a global norm certificate.",
+  "accepted": false
+}
