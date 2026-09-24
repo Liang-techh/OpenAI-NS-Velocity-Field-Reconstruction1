@@ -1,0 +1,99 @@
+{
+  "rows": [
+    {
+      "k": 0.4,
+      "step_factor": 0.002,
+      "regions": [
+        "core",
+        "radial_collar",
+        "axial_collar",
+        "corner"
+      ],
+      "momentum_norms": [
+        3.607087325983893e-10,
+        541.3502743765522,
+        208.5883078929278,
+        1039.9673660128722
+      ],
+      "divergence": [
+        5.19126075460008e-10,
+        9.713145895395847e-05,
+        1.1034022527667275e-05,
+        5.819178173283035e-05
+      ],
+      "core_velocity_replay_error": 0.0
+    },
+    {
+      "k": 0.4,
+      "step_factor": 0.001,
+      "regions": [
+        "core",
+        "radial_collar",
+        "axial_collar",
+        "corner"
+      ],
+      "momentum_norms": [
+        2.989429965217037e-10,
+        541.3521989557559,
+        208.58835415584372,
+        1039.9666517638232
+      ],
+      "divergence": [
+        3.197619946604391e-11,
+        6.08189749473631e-06,
+        6.899326621123691e-07,
+        3.6304963657585176e-06
+      ],
+      "core_velocity_replay_error": 0.0
+    },
+    {
+      "k": 5.5,
+      "step_factor": 0.002,
+      "regions": [
+        "core",
+        "radial_collar",
+        "axial_collar",
+        "corner"
+      ],
+      "momentum_norms": [
+        6.919889091188623e-08,
+        110406.25120525424,
+        40445.53387107133,
+        211093.62846301883
+      ],
+      "divergence": [
+        1.737430466164369e-08,
+        0.003344545468806359,
+        0.00035237868610238365,
+        0.0020434006773939473
+      ],
+      "core_velocity_replay_error": 0.0
+    },
+    {
+      "k": 5.5,
+      "step_factor": 0.001,
+      "regions": [
+        "core",
+        "radial_collar",
+        "axial_collar",
+        "corner"
+      ],
+      "momentum_norms": [
+        6.414914111030379e-08,
+        110406.64458395632,
+        40445.542221188014,
+        211093.47705589756
+      ],
+      "divergence": [
+        1.1112319953099359e-09,
+        0.00020941996287149323,
+        2.2033084405848058e-05,
+        0.00012749293591696187
+      ],
+      "core_velocity_replay_error": 0.0
+    }
+  ],
+  "scope": "Streamfunction C4 taper: preserves only X<=1/64 and |eta|<=.3; NOT the entire frozen ST073 domain. Compact support X<3/64, |eta|<.5, finite energy at each registered time by bounded compact velocity. No force added; pressure tapered explicitly; transition momentum NOT assumed small.",
+  "global_field_ready": false,
+  "pde_validated": false
+}

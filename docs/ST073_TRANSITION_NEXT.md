@@ -92,3 +92,20 @@ matching datum; it does not prove a uniform bound or an exterior solution.
 Artifact: radial_continuation/independent_fd.json under experiments/root_st073.
 The next unresolved construction is still dynamical outer decay/axial closure,
 not further repetition of these local residual checks.
+
+## Compact solenoidal localization control rejected
+
+compact_control.py constructs velocity by tapering the actual poloidal
+streamfunction (degree9 C4 cutoff) and swirl, not multiplying velocity alone.
+It is bounded and compactly supported at every registered time, so finite
+energy follows; analytic solenoidality follows from the streamfunction.
+Only X<=1/64, |eta|<=.3 is preserved (NOT the full frozen axial domain).
+Pressure is explicitly tapered. No residual-canceling force is added.
+Independent FD at radial/axial/corner points gives late k5.5 momentum norms
+1.104e5,4.045e4,2.111e5, stable after halving steps. Divergence FD defects
+shrink about16x, consistent with fourth-order truncation; they are not blanket
+numerical divergence acceptance. This localization is rejected as an NS field.
+The failure quantifies the missing transition dynamics. Do not repeat simple
+cutoff sweeps or present compactness as matching. Next solve a stress/flux-driven
+transition correction or a decaying exterior with evolving interface data.
+Artifact: experiments/root_st073/compact_control/report.json.
