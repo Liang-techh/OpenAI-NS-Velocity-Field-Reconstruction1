@@ -525,3 +525,24 @@ mean swirl/shear/pressure in the wide transition to create an interior cone
 margin with growth that overcomes viscosity, while retaining the full residual
 and volume scores. Then re-solve transported phase and stress tails.
 Artifact: experiments/root_st073/evolving_pulse/report.json.
+
+
+## Interior cone/viscosity fit on width6: rejected
+
+`cone_fit.py` uses the exact nonlinear momentum residual of the24-mode wide
+field and radial-prefix stress from it. At interior radial Gauss nodes, soft
+penalties favor the approximate stress direction and inviscid growth exceeding
+the mode-one local viscosity rate nu/r^2. It keeps the existing residual and
+moment terms, training k=1,4,5.5 and eta=-.3,0,.3. The diagnostic geometry is
+in PHYSICAL cylindrical coordinates and must not be equated with the paper's
+normalized leading-cone theorem.
+
+This fit creates three interior passing nodes at late eta=0, whereas the prior
+had zero, but creates none at eta=+/-.3. On held-out late physical-volume nodes,
+maximum momentum grows4261.34 ->6218.60 and L2 grows4.89297 ->5.39810;
+angular terminal mismatch grows from about.307 to1.60--1.63 at eta=+/-.2.
+It is rejected as a full-field candidate. The simple cone penalty cannot
+replace a radial/axial profile satisfying BOTH stress direction and moment
+identities. The current poloidal/pressure basis has axial modes1 and eta only;
+add an even eta^2 mode before assessing whether the side failures are structural.
+Artifact: experiments/root_st073/cone_fit/report.json.

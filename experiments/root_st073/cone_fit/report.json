@@ -1,0 +1,332 @@
+{
+  "amplitudes": [
+    0.052591534812205916,
+    -1.5302813271201228,
+    0.04519388216866986,
+    0.777531966747167,
+    -0.022200666059295094,
+    -0.7548605934623783,
+    7.999999698300919,
+    -0.18809406200113843,
+    -7.998989201168817,
+    0.5330828395134215,
+    -1.5529896503038756,
+    -0.3912044482850657,
+    0.35758021057969175,
+    0.01768799989508478,
+    0.7195425436942491,
+    0.9055764882596002,
+    0.020473115111144247,
+    -3.615323196040169,
+    0.454970073942306,
+    -0.007056484260501358,
+    0.7183878670915707,
+    0.3960970110291095,
+    0.006541631099167245,
+    -1.7860825711964956
+  ],
+  "bounds": [
+    -8,
+    8
+  ],
+  "fit_nfev": 32,
+  "fit_success": true,
+  "fit_cost": 59.72796137982897,
+  "prior_objective_cost": 108.7901262421101,
+  "holdouts": [
+    {
+      "k": 2.5,
+      "eta": -0.2,
+      "prior": {
+        "momentum_max": 174.3807566464466,
+        "angular_terminal": 0.03786783433877773,
+        "divergence_max": 3.107798907109327e-09
+      },
+      "cone_fit": {
+        "momentum_max": 195.48278818978036,
+        "angular_terminal": 0.20072041779367375,
+        "divergence_max": 4.7296313532285694e-09
+      }
+    },
+    {
+      "k": 2.5,
+      "eta": 0.2,
+      "prior": {
+        "momentum_max": 177.7291465953975,
+        "angular_terminal": 0.037884183756620934,
+        "divergence_max": 2.2690578305173403e-09
+      },
+      "cone_fit": {
+        "momentum_max": 197.59058180536715,
+        "angular_terminal": 0.2040595789579657,
+        "divergence_max": 4.17714507428002e-09
+      }
+    },
+    {
+      "k": 5.5,
+      "eta": -0.2,
+      "prior": {
+        "momentum_max": 3918.917026004878,
+        "angular_terminal": 0.3068043968978529,
+        "divergence_max": 2.9232729126249524e-08
+      },
+      "cone_fit": {
+        "momentum_max": 4419.611657049524,
+        "angular_terminal": 1.601265803951836,
+        "divergence_max": 4.816281456987426e-08
+      }
+    },
+    {
+      "k": 5.5,
+      "eta": 0.2,
+      "prior": {
+        "momentum_max": 3995.1212278405765,
+        "angular_terminal": 0.30690627684075544,
+        "divergence_max": 2.4302986290081208e-08
+      },
+      "cone_fit": {
+        "momentum_max": 4467.510102089292,
+        "angular_terminal": 1.6277692193354367,
+        "divergence_max": 4.385691136643555e-08
+      }
+    }
+  ],
+  "volume": [
+    {
+      "k": 2.5,
+      "field": "prior",
+      "momentum_max": 189.19974839203235,
+      "physical_volume_L2": 1.0284997171925627,
+      "divergence_max": 4.545515332188277e-09
+    },
+    {
+      "k": 2.5,
+      "field": "cone_fit",
+      "momentum_max": 273.38428772644585,
+      "physical_volume_L2": 1.1230751232079996,
+      "divergence_max": 8.125745187825828e-09
+    },
+    {
+      "k": 5.5,
+      "field": "prior",
+      "momentum_max": 4261.339558197848,
+      "physical_volume_L2": 4.892972443779785,
+      "divergence_max": 4.507861040004002e-08
+    },
+    {
+      "k": 5.5,
+      "field": "cone_fit",
+      "momentum_max": 6218.6031832036,
+      "physical_volume_L2": 5.398102173601759,
+      "divergence_max": 8.572377278859289e-08
+    }
+  ],
+  "cone_training": [
+    {
+      "k": 1.0,
+      "eta": -0.3,
+      "field": "prior",
+      "interior_nodes": 10,
+      "direction_pass": 0,
+      "growth_pass": 8,
+      "joint_pass": 0,
+      "all_nodes_joint_pass": 0,
+      "residual_max": 41.38966627999985
+    },
+    {
+      "k": 1.0,
+      "eta": -0.3,
+      "field": "cone_fit",
+      "interior_nodes": 10,
+      "direction_pass": 0,
+      "growth_pass": 6,
+      "joint_pass": 0,
+      "all_nodes_joint_pass": 0,
+      "residual_max": 52.47616158224467
+    },
+    {
+      "k": 1.0,
+      "eta": 0,
+      "field": "prior",
+      "interior_nodes": 10,
+      "direction_pass": 0,
+      "growth_pass": 5,
+      "joint_pass": 0,
+      "all_nodes_joint_pass": 0,
+      "residual_max": 23.158678655715804
+    },
+    {
+      "k": 1.0,
+      "eta": 0,
+      "field": "cone_fit",
+      "interior_nodes": 10,
+      "direction_pass": 4,
+      "growth_pass": 5,
+      "joint_pass": 4,
+      "all_nodes_joint_pass": 5,
+      "residual_max": 16.28268040751622
+    },
+    {
+      "k": 1.0,
+      "eta": 0.3,
+      "field": "prior",
+      "interior_nodes": 10,
+      "direction_pass": 0,
+      "growth_pass": 8,
+      "joint_pass": 0,
+      "all_nodes_joint_pass": 0,
+      "residual_max": 41.94259612487495
+    },
+    {
+      "k": 1.0,
+      "eta": 0.3,
+      "field": "cone_fit",
+      "interior_nodes": 10,
+      "direction_pass": 0,
+      "growth_pass": 7,
+      "joint_pass": 0,
+      "all_nodes_joint_pass": 0,
+      "residual_max": 52.652053845361216
+    },
+    {
+      "k": 4.0,
+      "eta": -0.3,
+      "field": "prior",
+      "interior_nodes": 10,
+      "direction_pass": 0,
+      "growth_pass": 8,
+      "joint_pass": 0,
+      "all_nodes_joint_pass": 0,
+      "residual_max": 934.2235709826724
+    },
+    {
+      "k": 4.0,
+      "eta": -0.3,
+      "field": "cone_fit",
+      "interior_nodes": 10,
+      "direction_pass": 0,
+      "growth_pass": 6,
+      "joint_pass": 0,
+      "all_nodes_joint_pass": 0,
+      "residual_max": 1188.7287178648055
+    },
+    {
+      "k": 4.0,
+      "eta": 0,
+      "field": "prior",
+      "interior_nodes": 10,
+      "direction_pass": 0,
+      "growth_pass": 5,
+      "joint_pass": 0,
+      "all_nodes_joint_pass": 0,
+      "residual_max": 507.73016271778135
+    },
+    {
+      "k": 4.0,
+      "eta": 0,
+      "field": "cone_fit",
+      "interior_nodes": 10,
+      "direction_pass": 3,
+      "growth_pass": 5,
+      "joint_pass": 3,
+      "all_nodes_joint_pass": 4,
+      "residual_max": 347.90552086371616
+    },
+    {
+      "k": 4.0,
+      "eta": 0.3,
+      "field": "prior",
+      "interior_nodes": 10,
+      "direction_pass": 0,
+      "growth_pass": 8,
+      "joint_pass": 0,
+      "all_nodes_joint_pass": 0,
+      "residual_max": 946.8600246401825
+    },
+    {
+      "k": 4.0,
+      "eta": 0.3,
+      "field": "cone_fit",
+      "interior_nodes": 10,
+      "direction_pass": 0,
+      "growth_pass": 6,
+      "joint_pass": 0,
+      "all_nodes_joint_pass": 0,
+      "residual_max": 1192.743892413144
+    },
+    {
+      "k": 5.5,
+      "eta": -0.3,
+      "field": "prior",
+      "interior_nodes": 10,
+      "direction_pass": 0,
+      "growth_pass": 8,
+      "joint_pass": 0,
+      "all_nodes_joint_pass": 0,
+      "residual_max": 4438.881856985823
+    },
+    {
+      "k": 5.5,
+      "eta": -0.3,
+      "field": "cone_fit",
+      "interior_nodes": 10,
+      "direction_pass": 0,
+      "growth_pass": 6,
+      "joint_pass": 0,
+      "all_nodes_joint_pass": 0,
+      "residual_max": 5658.255001244712
+    },
+    {
+      "k": 5.5,
+      "eta": 0,
+      "field": "prior",
+      "interior_nodes": 10,
+      "direction_pass": 0,
+      "growth_pass": 5,
+      "joint_pass": 0,
+      "all_nodes_joint_pass": 0,
+      "residual_max": 2377.4716704721836
+    },
+    {
+      "k": 5.5,
+      "eta": 0,
+      "field": "cone_fit",
+      "interior_nodes": 10,
+      "direction_pass": 3,
+      "growth_pass": 5,
+      "joint_pass": 3,
+      "all_nodes_joint_pass": 4,
+      "residual_max": 1624.0079601393252
+    },
+    {
+      "k": 5.5,
+      "eta": 0.3,
+      "field": "prior",
+      "interior_nodes": 10,
+      "direction_pass": 0,
+      "growth_pass": 8,
+      "joint_pass": 0,
+      "all_nodes_joint_pass": 0,
+      "residual_max": 4499.290022997544
+    },
+    {
+      "k": 5.5,
+      "eta": 0.3,
+      "field": "cone_fit",
+      "interior_nodes": 10,
+      "direction_pass": 0,
+      "growth_pass": 6,
+      "joint_pass": 0,
+      "all_nodes_joint_pass": 0,
+      "residual_max": 5677.4356444602
+    }
+  ],
+  "interior_y": [
+    0.1222977958224985,
+    0.8777022041775016
+  ],
+  "objective": "Full momentum and radial theta/axial moments, plus soft penalty for interior approximate direction and growth rate exceeding nu/r\u00b2 for azimuthal mode1; no hard cone guarantee. Approximate physical frozen tangential formula, not direct normalized paper cone.",
+  "limitations": "Exploratory bounded fit. Fitting cone diagnostics can worsen full momentum and physical L2. Training k1,4,5.5 eta=-.3,0,.3; holdout k2.5,5.5 eta=+/-.2. Finite grids only; no supported wave, global closure or proof.",
+  "pde_validated": false,
+  "global_field_ready": false
+}
