@@ -1,0 +1,140 @@
+{
+  "tau": 0.0078125,
+  "radius": 0.0056890761915166545,
+  "base_axial_support_halfwidth": 0.004308738412821101,
+  "rows": [
+    {
+      "z": 0.0,
+      "axial_symmetric_support_halfwidth_ceiling": 0.004308738412821101,
+      "velocity": [
+        -1.9022187094538465,
+        2.145627557235186,
+        0.01821098056024554
+      ],
+      "residual_norm": 3880.267880482852,
+      "target": [
+        -2.3266927245067723,
+        -0.15787060355715887
+      ],
+      "lambda_squared": -294409.6389812068,
+      "target_dot_N": 2.3295977900661424,
+      "target_dot_K": 0.10675344612327678,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.0015,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0028087384128211014,
+      "velocity": [
+        -1.6472395858762154,
+        2.193296756508202,
+        0.7471990180829748
+      ],
+      "residual_norm": 4010.2148609400692,
+      "target": [
+        -2.374548780328335,
+        -9.918688781546681
+      ],
+      "lambda_squared": -41817.82882860122,
+      "target_dot_N": 8.68890312843148,
+      "target_dot_K": 5.340583440044019,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.0025,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0018087384128211014,
+      "velocity": [
+        -1.1731934623757911,
+        2.2513638814937793,
+        1.1631039796553801
+      ],
+      "residual_norm": 377496.0558281243,
+      "target": [
+        -11.546942081636155,
+        -38.99717046611418
+      ],
+      "lambda_squared": 61702.287931308856,
+      "target_dot_N": 39.58098859642199,
+      "target_dot_K": 9.351818942309553,
+      "cone_ratio": 0.1492655755619103,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.00275,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0015587384128211016,
+      "velocity": [
+        1.097456269314239,
+        2.2067495358118583,
+        1.194054085898998
+      ],
+      "residual_norm": 332936.1206141816,
+      "target": [
+        -66.66826256430417,
+        -168.10601226525773
+      ],
+      "lambda_squared": 66768.40228369944,
+      "target_dot_N": 180.00893997363585,
+      "target_dot_K": 17.351372356040148,
+      "cone_ratio": 0.07038583123952219,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.003,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0013087384128211014,
+      "velocity": [
+        5.094722488650086,
+        1.9142774958929665,
+        0.9984954572542883
+      ],
+      "residual_norm": 516394.79409075057,
+      "target": [
+        -84.15940577931993,
+        -154.94138171896307
+      ],
+      "lambda_squared": 47073.8850343653,
+      "target_dot_N": 176.09795220179487,
+      "target_dot_K": -8.896548793999807,
+      "cone_ratio": 0.037672164722175695,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.00325,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0010587384128211016,
+      "velocity": [
+        6.426938532930988,
+        1.310247031265865,
+        0.5937003206615726
+      ],
+      "residual_norm": 688423.126366762,
+      "target": [
+        -18.438291651241084,
+        29.26394386758873
+      ],
+      "lambda_squared": 16704.547714742483,
+      "target_dot_N": -18.613847817843,
+      "target_dot_K": -29.152593008440817,
+      "cone_ratio": 1.0310491674250186,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.003432627453438968,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0008761109593821335,
+      "velocity": [
+        4.852861708113783,
+        0.7987441281317218,
+        0.30203510878774764
+      ],
+      "residual_norm": 266159.892129595,
+      "target": [
+        45.59504511935532,
+        138.95833409946135
+      ],
+      "lambda_squared": 3919.8512179384275,
+      "target_dot_N": -145.01950437784083,
+      "target_dot_K": -18.912168176572816,
+      "cone_ratio": 0.06730547945684394,
+      "strict_local_pass": true
+    }
+  ],
+  "scope": "Fixed-radius coarse axial screen of the physical local stress-cone analogue. Uses the full corrected baseline residual primitive, not the paper normalized leading stress. Local cone passing does not imply a realizable supported wave or global Navier--Stokes solution.",
+  "accepted": false
+}
