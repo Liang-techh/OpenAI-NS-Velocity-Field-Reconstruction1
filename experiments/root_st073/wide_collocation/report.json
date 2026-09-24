@@ -1,0 +1,156 @@
+{
+  "amplitudes": [
+    0.002507777504740463,
+    -0.08376525328937423,
+    -0.001828958139909437,
+    0.5718740980506878,
+    -0.0074212379991915635,
+    -0.38908076413508097,
+    3.9999999999999996,
+    -0.05572420871401698,
+    -1.0729655414148858,
+    0.05358522837727728,
+    -3.9999999999999996,
+    -0.13953806098036534,
+    -0.30794547414331086,
+    0.0042750850341278165,
+    0.23515844324189034,
+    1.1611183384946173,
+    -0.010408686418236498,
+    -1.4001865802283309,
+    -0.2590967391037482,
+    0.0025125828158789076,
+    0.27030859434744775,
+    0.34311597055662424,
+    -0.001590453364811957,
+    -0.35332862394965436
+  ],
+  "coefficient_order": "12 WidePoloidalModes followed by12 WideAngularModes",
+  "bounds": [
+    -4,
+    4
+  ],
+  "fit_nfev": 11,
+  "fit_success": true,
+  "fit_cost": 6.571380607385205,
+  "initial_cost": 8.446938949676454,
+  "holdouts": [
+    {
+      "k": 2.5,
+      "eta": -0.2,
+      "order": 18,
+      "baseline": {
+        "momentum_max": 177.8604599302333,
+        "theta_max": 53.529257236196464,
+        "terminal_rtheta": 0.0657303862898066,
+        "divergence_max": 1.2838370366807794e-09,
+        "terminal_rz": 0.5441268145691968
+      },
+      "joint": {
+        "momentum_max": 174.3807566464466,
+        "theta_max": 41.79076840786395,
+        "terminal_rtheta": 0.03786783433877773,
+        "divergence_max": 3.107798907109327e-09,
+        "terminal_rz": 0.535631650799927
+      }
+    },
+    {
+      "k": 2.5,
+      "eta": 0.2,
+      "order": 18,
+      "baseline": {
+        "momentum_max": 181.83475460217852,
+        "theta_max": 53.501933498356564,
+        "terminal_rtheta": 0.06567492106058896,
+        "divergence_max": 1.27403154692729e-09,
+        "terminal_rz": -0.552205070368632
+      },
+      "joint": {
+        "momentum_max": 177.7291465953975,
+        "theta_max": 41.42689397006226,
+        "terminal_rtheta": 0.037884183756620934,
+        "divergence_max": 2.2690578305173403e-09,
+        "terminal_rz": -0.5425098033039081
+      }
+    },
+    {
+      "k": 5.5,
+      "eta": -0.2,
+      "order": 18,
+      "baseline": {
+        "momentum_max": 3997.002245929846,
+        "theta_max": 1217.5953515571543,
+        "terminal_rtheta": 0.5289141123096155,
+        "divergence_max": 1.0196117727900855e-08,
+        "terminal_rz": 4.27885988970588
+      },
+      "joint": {
+        "momentum_max": 3918.917026004878,
+        "theta_max": 953.3483621241329,
+        "terminal_rtheta": 0.3068043968978529,
+        "divergence_max": 2.9232729126249524e-08,
+        "terminal_rz": 4.210545084384424
+      }
+    },
+    {
+      "k": 5.5,
+      "eta": 0.2,
+      "order": 18,
+      "baseline": {
+        "momentum_max": 4087.5397847075524,
+        "theta_max": 1216.9811350160364,
+        "terminal_rtheta": 0.5284696475535613,
+        "divergence_max": 1.017326667351881e-08,
+        "terminal_rz": -4.343632084129946
+      },
+      "joint": {
+        "momentum_max": 3995.1212278405765,
+        "theta_max": 945.0049294178148,
+        "terminal_rtheta": 0.30690627684075544,
+        "divergence_max": 2.4302986290081208e-08,
+        "terminal_rz": -4.265597220143427
+      }
+    }
+  ],
+  "volume_audit": [
+    {
+      "k": 2.5,
+      "field": "baseline",
+      "volume": 0.0002542952911468825,
+      "momentum_sampled_max": 205.326226541466,
+      "momentum_volume_L2": 1.2179895304103379,
+      "divergence_sampled_max": 1.5111609741325083e-09
+    },
+    {
+      "k": 2.5,
+      "field": "joint",
+      "volume": 0.0002542952911468825,
+      "momentum_sampled_max": 189.19974839203235,
+      "momentum_volume_L2": 1.0284997171925627,
+      "divergence_sampled_max": 4.545515332188277e-09
+    },
+    {
+      "k": 5.5,
+      "field": "baseline",
+      "volume": 1.1355827525395317e-05,
+      "momentum_sampled_max": 4629.00205876477,
+      "momentum_volume_L2": 5.786332838348959,
+      "divergence_sampled_max": 1.1931035714951577e-08
+    },
+    {
+      "k": 5.5,
+      "field": "joint",
+      "volume": 1.1355827525395317e-05,
+      "momentum_sampled_max": 4261.339558197848,
+      "momentum_volume_L2": 4.892972443779785,
+      "divergence_sampled_max": 4.507861040004002e-08
+    }
+  ],
+  "surrogate_full_fd_max_difference": 9.534561129953545e-06,
+  "optimizer_jacobian_directional_error": 9.072053004655078e-12,
+  "objective": "Full Cartesian residual normalized per training slice by baseline max, plus weight3 normalized radial theta and axial moment averages, regularization .001.",
+  "volume_domain": "eta in[-.4,.4], ri<r<6ri, all azimuths; 12x8 Gauss quadrature with physical Jacobian. No continuum maximum/integral certificate.",
+  "scope": "Width ratio6;24 fixed-scale coefficients, unforced axisymmetric compact corrections. Frozen core and interface jets unchanged. Does not construct global finite energy, axial closure or oscillatory stress realization.",
+  "pde_validated": false,
+  "global_field_ready": false
+}

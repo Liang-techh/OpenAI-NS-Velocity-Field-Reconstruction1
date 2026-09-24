@@ -439,3 +439,34 @@ then recompute actual moments and transport residence with the new background.
 The fixed heat amplitude, original core and original ratio2 implementation
 remain available for matched comparisons. Larger width alone does not solve
 axial closure, finite global energy, pulse realization or recursive control.
+
+
+## Width-aware coupled correction basis
+
+`wide_modes.py` generalizes the existing24 swirl, streamfunction and pressure
+modes using y=(r-ri)/((ratio-1)*ri). Streamfunction radial derivatives divide
+by the ACTUAL width, and y_z=-(1+(ratio-1)*y)*q_z/(2*q*(ratio-1)) uses physical
+q_z. Endpoint zeros and analytic divergence are preserved. Original narrow
+modules remain unchanged. Nonzero-coefficient ratio2 compatibility differs
+by at most3.1e-16 in velocity and zero in pressure on the recorded four points.
+
+`wide_collocation.py` fits the generalized basis on WidthField(6), starting
+from zero coefficients rather than transferring the narrow-layer optimum.
+Full nonlinear momentum and actual tangential moments enter the objective;
+training k=1,4 / eta=-.3,0,.3 and holdouts k=2.5,5.5 / eta=+/-.2 stay distinct.
+All residual, moment and volume quadrature radii now cover ri<r<6ri; using
+old ri<r<2ri sample helpers would incorrectly omit most of the new transition.
+Artifacts: wide_collocation/report.json and wide_collocation/compatibility.json.
+
+
+Wide coupled outcome: at late k5.5 on MATCHED12x8 volume nodes, sampled max
+4629.00 ->4261.34 (7.94%) and physical-volume L2 5.78633 ->4.89297 (15.44%).
+At k2.5, max205.326 ->189.200 and L2 1.21799 ->1.02850. Earlier16x6 width
+screen maxima differ due to node placement; compare paired values, not maxima
+from different grids. Disjoint axial slice checks show about2% full maximum
+reduction and42% angular terminal-stress reduction, with modest axial-moment
+improvement. Neither moment is zero, and neither1e-3 global gate is passed.
+This is a useful wide-background candidate, not an accepted global NS field.
+Next recompute the directional screen and actual transport residence for THIS
+corrected wider field; earlier narrow-field cone or trajectory results do not
+transfer. Keep explicit stress tails, axial closure and finite-energy tasks.
