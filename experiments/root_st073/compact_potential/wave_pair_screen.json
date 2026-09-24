@@ -1,0 +1,1814 @@
+{
+  "rows": [
+    {
+      "source": "annular_pressure_scale_cone_source.json",
+      "z": 0.003432627453438968,
+      "cone_pass": true,
+      "cone_ratio": 0.7675807755582305,
+      "unconstrained_selected_modes": [
+        1,
+        4
+      ],
+      "positive_distinct_mode_pair_count": 82,
+      "lowest_weight_pairs": [
+        {
+          "indices": [
+            3,
+            12
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            294.47143763286505,
+            230.3886806890382
+          ],
+          "weight_sum": 524.8601183219032,
+          "peak_normal_norms": [
+            336.96550226781955,
+            994.3361732310209
+          ],
+          "matrix_condition": 35.29200510490419
+        },
+        {
+          "indices": [
+            3,
+            15
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            303.7534148708144,
+            277.0955952694386
+          ],
+          "weight_sum": 580.8490101402531,
+          "peak_normal_norms": [
+            336.96550226781955,
+            1406.203701741473
+          ],
+          "matrix_condition": 42.17092418861993
+        },
+        {
+          "indices": [
+            3,
+            10
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            326.38611408564265,
+            329.0441609798629
+          ],
+          "weight_sum": 655.4302750655056,
+          "peak_normal_norms": [
+            336.96550226781955,
+            994.3361732310209
+          ],
+          "matrix_condition": 50.04107114971939
+        },
+        {
+          "indices": [
+            3,
+            9
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            274.2962431100152,
+            1034.285415923659
+          ],
+          "weight_sum": 1308.5816590336742,
+          "peak_normal_norms": [
+            336.96550226781955,
+            1406.203701741473
+          ],
+          "matrix_condition": 157.37278864179837
+        },
+        {
+          "indices": [
+            1,
+            12
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            8.409932345531288,
+            1695.5220885119688
+          ],
+          "weight_sum": 1703.9320208575002,
+          "peak_normal_norms": [
+            154.2756340193453,
+            994.3361732310209
+          ],
+          "matrix_condition": 389.12381924009594
+        }
+      ]
+    },
+    {
+      "source": "annular_pressure_scale_cone_t00081_z0034.json",
+      "z": 0.0034,
+      "cone_pass": true,
+      "cone_ratio": 0.07411875308659505,
+      "unconstrained_selected_modes": [
+        1,
+        1
+      ],
+      "positive_distinct_mode_pair_count": 94,
+      "lowest_weight_pairs": [
+        {
+          "indices": [
+            6,
+            16
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            259.8273170916408,
+            2264.927152643249
+          ],
+          "weight_sum": 2524.75446973489,
+          "peak_normal_norms": [
+            317.9632832143593,
+            994.3361732310209
+          ],
+          "matrix_condition": 13.231410540388854
+        },
+        {
+          "indices": [
+            1,
+            16
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            26.490130985432305,
+            2731.0127023462082
+          ],
+          "weight_sum": 2757.5028333316404,
+          "peak_normal_norms": [
+            167.66016775676167,
+            994.3361732310209
+          ],
+          "matrix_condition": 141.23392721523877
+        },
+        {
+          "indices": [
+            3,
+            16
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            322.0176535046189,
+            3334.4252997859244
+          ],
+          "weight_sum": 3656.4429532905433,
+          "peak_normal_norms": [
+            308.0258817149586,
+            994.3361732310209
+          ],
+          "matrix_condition": 13.489759601217965
+        },
+        {
+          "indices": [
+            6,
+            14
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            447.9921341483787,
+            4107.100158179726
+          ],
+          "weight_sum": 4555.092292328105,
+          "peak_normal_norms": [
+            317.9632832143593,
+            994.3361732310209
+          ],
+          "matrix_condition": 24.060715791538676
+        },
+        {
+          "indices": [
+            2,
+            16
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            2628.341457309982,
+            2070.2144148792427
+          ],
+          "weight_sum": 4698.555872189225,
+          "peak_normal_norms": [
+            288.2528117983144,
+            994.3361732310209
+          ],
+          "matrix_condition": 1.3453625089694774
+        }
+      ]
+    },
+    {
+      "source": "annular_pressure_scale_cone_t00087_z0034.json",
+      "z": 0.0034,
+      "cone_pass": true,
+      "cone_ratio": 0.1258664556801742,
+      "unconstrained_selected_modes": [
+        1,
+        1
+      ],
+      "positive_distinct_mode_pair_count": 78,
+      "lowest_weight_pairs": [
+        {
+          "indices": [
+            6,
+            14
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            573.6151054931644,
+            3758.4518515840123
+          ],
+          "weight_sum": 4332.066957077177,
+          "peak_normal_norms": [
+            355.6420991524424,
+            994.3361732310209
+          ],
+          "matrix_condition": 10.93544727138606
+        },
+        {
+          "indices": [
+            3,
+            14
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            92.65873086766574,
+            4329.314343609951
+          ],
+          "weight_sum": 4421.973074477616,
+          "peak_normal_norms": [
+            215.95708572946884,
+            994.3361732310209
+          ],
+          "matrix_condition": 73.0463570040202
+        },
+        {
+          "indices": [
+            4,
+            12
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            668.0653169458916,
+            3777.4632112957
+          ],
+          "weight_sum": 4445.528528241592,
+          "peak_normal_norms": [
+            169.01685309031953,
+            994.3361732310209
+          ],
+          "matrix_condition": 15.680864242578693
+        },
+        {
+          "indices": [
+            6,
+            16
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            325.9180846974021,
+            4155.521642481123
+          ],
+          "weight_sum": 4481.439727178526,
+          "peak_normal_norms": [
+            355.6420991524424,
+            994.3361732310209
+          ],
+          "matrix_condition": 12.084500042305512
+        },
+        {
+          "indices": [
+            3,
+            16
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            49.40660463370202,
+            4492.069420863052
+          ],
+          "weight_sum": 4541.476025496754,
+          "peak_normal_norms": [
+            215.95708572946884,
+            994.3361732310209
+          ],
+          "matrix_condition": 75.7897227439328
+        }
+      ]
+    },
+    {
+      "source": "annular_pressure_scale_cone_t0084_z0034.json",
+      "z": 0.0034,
+      "cone_pass": true,
+      "cone_ratio": 0.1382389489135133,
+      "unconstrained_selected_modes": [
+        1,
+        1
+      ],
+      "positive_distinct_mode_pair_count": 86,
+      "lowest_weight_pairs": [
+        {
+          "indices": [
+            6,
+            16
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            126.80406353471795,
+            3348.531013094328
+          ],
+          "weight_sum": 3475.335076629046,
+          "peak_normal_norms": [
+            252.9973961936745,
+            994.3361732310209
+          ],
+          "matrix_condition": 26.652869001229472
+        },
+        {
+          "indices": [
+            6,
+            14
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            229.3484544465409,
+            4297.704370751336
+          ],
+          "weight_sum": 4527.052825197877,
+          "peak_normal_norms": [
+            252.9973961936745,
+            994.3361732310209
+          ],
+          "matrix_condition": 34.227039951082716
+        },
+        {
+          "indices": [
+            1,
+            16
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            42.66256610364769,
+            4641.828741949236
+          ],
+          "weight_sum": 4684.491308052884,
+          "peak_normal_norms": [
+            167.31051569773902,
+            994.3361732310209
+          ],
+          "matrix_condition": 90.400082330163
+        },
+        {
+          "indices": [
+            3,
+            16
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            211.74969833543875,
+            4928.95287661824
+          ],
+          "weight_sum": 5140.702574953679,
+          "peak_normal_norms": [
+            258.96761084165666,
+            994.3361732310209
+          ],
+          "matrix_condition": 19.358325735158495
+        },
+        {
+          "indices": [
+            4,
+            12
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            288.2715866817178,
+            4915.640014403315
+          ],
+          "weight_sum": 5203.911601085033,
+          "peak_normal_norms": [
+            212.1379099433676,
+            994.3361732310209
+          ],
+          "matrix_condition": 37.54742373712922
+        }
+      ]
+    },
+    {
+      "source": "annular_pressure_scale_cone_z00031.json",
+      "z": 0.0031,
+      "cone_pass": true,
+      "cone_ratio": 0.31453329326700574,
+      "unconstrained_selected_modes": [
+        1,
+        1
+      ],
+      "positive_distinct_mode_pair_count": 49,
+      "lowest_weight_pairs": [
+        {
+          "indices": [
+            6,
+            16
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            1841.3933444537695,
+            15811.877760745663
+          ],
+          "weight_sum": 17653.271105199434,
+          "peak_normal_norms": [
+            351.55092543536824,
+            994.3361732310209
+          ],
+          "matrix_condition": 6.05931754184999
+        },
+        {
+          "indices": [
+            0,
+            12
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            10008.177340683196,
+            18780.25598768889
+          ],
+          "weight_sum": 28788.433328372088,
+          "peak_normal_norms": [
+            282.9544507371415,
+            994.3361732310209
+          ],
+          "matrix_condition": 8.704097234797906
+        },
+        {
+          "indices": [
+            0,
+            9
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            7254.7034059970165,
+            24163.423787235675
+          ],
+          "weight_sum": 31418.127193232693,
+          "peak_normal_norms": [
+            282.9544507371415,
+            1406.203701741473
+          ],
+          "matrix_condition": 10.062301288874842
+        },
+        {
+          "indices": [
+            7,
+            16
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            2984.349374640795,
+            35342.303073109826
+          ],
+          "weight_sum": 38326.65244775062,
+          "peak_normal_norms": [
+            280.8515106067722,
+            994.3361732310209
+          ],
+          "matrix_condition": 55.5492456795519
+        },
+        {
+          "indices": [
+            16,
+            21
+          ],
+          "modes": [
+            4,
+            16
+          ],
+          "weights": [
+            15156.721672979895,
+            50032.5220804524
+          ],
+          "weight_sum": 65189.243753432296,
+          "peak_normal_norms": [
+            994.3361732310209,
+            3977.3446929240836
+          ],
+          "matrix_condition": 13.30830071317107
+        }
+      ]
+    },
+    {
+      "source": "annular_pressure_scale_cone_z00032.json",
+      "z": 0.0032,
+      "cone_pass": true,
+      "cone_ratio": 0.04439262617506084,
+      "unconstrained_selected_modes": [
+        1,
+        1
+      ],
+      "positive_distinct_mode_pair_count": 79,
+      "lowest_weight_pairs": [
+        {
+          "indices": [
+            4,
+            12
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            987.4983358389899,
+            3532.41027653432
+          ],
+          "weight_sum": 4519.90861237331,
+          "peak_normal_norms": [
+            166.9896441892941,
+            994.3361732310209
+          ],
+          "matrix_condition": 11.507334206976429
+        },
+        {
+          "indices": [
+            3,
+            14
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            172.15318920181147,
+            5220.428348089062
+          ],
+          "weight_sum": 5392.581537290873,
+          "peak_normal_norms": [
+            250.94910493203375,
+            994.3361732310209
+          ],
+          "matrix_condition": 42.988127349535496
+        },
+        {
+          "indices": [
+            3,
+            16
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            84.86321725457,
+            5597.320365823532
+          ],
+          "weight_sum": 5682.183583078102,
+          "peak_normal_norms": [
+            250.94910493203375,
+            994.3361732310209
+          ],
+          "matrix_condition": 46.08775316520509
+        },
+        {
+          "indices": [
+            6,
+            14
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            786.4488383124249,
+            5059.5175277251155
+          ],
+          "weight_sum": 5845.966366037541,
+          "peak_normal_norms": [
+            359.18939103347896,
+            994.3361732310209
+          ],
+          "matrix_condition": 9.245852892487727
+        },
+        {
+          "indices": [
+            6,
+            16
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            393.83656944475507,
+            5510.922137107365
+          ],
+          "weight_sum": 5904.75870655212,
+          "peak_normal_norms": [
+            359.18939103347896,
+            994.3361732310209
+          ],
+          "matrix_condition": 10.055833886140384
+        }
+      ]
+    },
+    {
+      "source": "annular_pressure_scale_cone_z00033.json",
+      "z": 0.0033,
+      "cone_pass": true,
+      "cone_ratio": 0.1476628076409895,
+      "unconstrained_selected_modes": [
+        1,
+        1
+      ],
+      "positive_distinct_mode_pair_count": 92,
+      "lowest_weight_pairs": [
+        {
+          "indices": [
+            6,
+            16
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            232.12508839753752,
+            3653.333949089796
+          ],
+          "weight_sum": 3885.4590374873337,
+          "peak_normal_norms": [
+            297.00147594570194,
+            994.3361732310209
+          ],
+          "matrix_condition": 16.194199336745818
+        },
+        {
+          "indices": [
+            1,
+            16
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            32.65274508046398,
+            4306.926456788794
+          ],
+          "weight_sum": 4339.579201869258,
+          "peak_normal_norms": [
+            153.688555321389,
+            994.3361732310209
+          ],
+          "matrix_condition": 126.48272195301212
+        },
+        {
+          "indices": [
+            3,
+            16
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            311.52129161825656,
+            4976.794674915657
+          ],
+          "weight_sum": 5288.3159665339135,
+          "peak_normal_norms": [
+            289.7969281004157,
+            994.3361732310209
+          ],
+          "matrix_condition": 15.28566862193955
+        },
+        {
+          "indices": [
+            4,
+            12
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            256.6661004231771,
+            6022.166013533115
+          ],
+          "weight_sum": 6278.832113956292,
+          "peak_normal_norms": [
+            235.3654642641523,
+            994.3361732310209
+          ],
+          "matrix_condition": 48.872730397307954
+        },
+        {
+          "indices": [
+            6,
+            14
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            457.78656018751514,
+            5951.066980954719
+          ],
+          "weight_sum": 6408.8535411422345,
+          "peak_normal_norms": [
+            297.00147594570194,
+            994.3361732310209
+          ],
+          "matrix_condition": 26.429740160557497
+        }
+      ]
+    },
+    {
+      "source": "annular_pressure_scale_cone_z000335.json",
+      "z": 0.00335,
+      "cone_pass": true,
+      "cone_ratio": 0.058491963489487174,
+      "unconstrained_selected_modes": [
+        1,
+        1
+      ],
+      "positive_distinct_mode_pair_count": 96,
+      "lowest_weight_pairs": [
+        {
+          "indices": [
+            1,
+            13
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            15.931794181993029,
+            553.6664365381257
+          ],
+          "weight_sum": 569.5982307201187,
+          "peak_normal_norms": [
+            158.06343004215432,
+            684.9859301213995
+          ],
+          "matrix_condition": 34.91670105241043
+        },
+        {
+          "indices": [
+            6,
+            13
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            211.37313201684628,
+            509.1435695049385
+          ],
+          "weight_sum": 720.5167015217849,
+          "peak_normal_norms": [
+            327.82675953502354,
+            684.9859301213995
+          ],
+          "matrix_condition": 2.7275663483166803
+        },
+        {
+          "indices": [
+            3,
+            13
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            217.77105895181958,
+            654.3337982884693
+          ],
+          "weight_sum": 872.1048572402889,
+          "peak_normal_norms": [
+            312.8853997209776,
+            684.9859301213995
+          ],
+          "matrix_condition": 2.5132114490670587
+        },
+        {
+          "indices": [
+            0,
+            13
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            1530.7066100004618,
+            692.7470484035737
+          ],
+          "weight_sum": 2223.453658404035,
+          "peak_normal_norms": [
+            375.05011666617344,
+            684.9859301213995
+          ],
+          "matrix_condition": 2.8095888567994285
+        },
+        {
+          "indices": [
+            6,
+            16
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            308.53241935230324,
+            2238.5730883256083
+          ],
+          "weight_sum": 2547.1055076779116,
+          "peak_normal_norms": [
+            327.82675953502354,
+            994.3361732310209
+          ],
+          "matrix_condition": 11.909417993866404
+        }
+      ]
+    },
+    {
+      "source": "annular_pressure_scale_cone_z000338.json",
+      "z": 0.00338,
+      "cone_pass": true,
+      "cone_ratio": 0.07886029112205468,
+      "unconstrained_selected_modes": [
+        1,
+        1
+      ],
+      "positive_distinct_mode_pair_count": 88,
+      "lowest_weight_pairs": [
+        {
+          "indices": [
+            1,
+            13
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            16.21462760118379,
+            281.8438186440555
+          ],
+          "weight_sum": 298.0584462452393,
+          "peak_normal_norms": [
+            157.5537304635054,
+            673.7550064635491
+          ],
+          "matrix_condition": 36.0655440242993
+        },
+        {
+          "indices": [
+            6,
+            13
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            263.37037514288124,
+            260.3412047543576
+          ],
+          "weight_sum": 523.7115798972388,
+          "peak_normal_norms": [
+            339.97928914306704,
+            673.7550064635491
+          ],
+          "matrix_condition": 2.263156952086221
+        },
+        {
+          "indices": [
+            3,
+            13
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            263.9443707820937,
+            400.78091145352914
+          ],
+          "weight_sum": 664.7252822356229,
+          "peak_normal_norms": [
+            327.22566670904286,
+            673.7550064635491
+          ],
+          "matrix_condition": 2.187021755856819
+        },
+        {
+          "indices": [
+            1,
+            16
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            20.227001194204092,
+            1369.995684744469
+          ],
+          "weight_sum": 1390.222685938673,
+          "peak_normal_norms": [
+            157.5537304635054,
+            994.3361732310209
+          ],
+          "matrix_condition": 175.30680123171337
+        },
+        {
+          "indices": [
+            6,
+            16
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            322.4548155001929,
+            1242.0269470241963
+          ],
+          "weight_sum": 1564.481762524389,
+          "peak_normal_norms": [
+            339.97928914306704,
+            994.3361732310209
+          ],
+          "matrix_condition": 10.725749048178042
+        }
+      ]
+    },
+    {
+      "source": "annular_pressure_scale_cone_z00034.json",
+      "z": 0.0034,
+      "cone_pass": true,
+      "cone_ratio": 0.2375864217478914,
+      "unconstrained_selected_modes": [
+        1,
+        1
+      ],
+      "positive_distinct_mode_pair_count": 88,
+      "lowest_weight_pairs": [
+        {
+          "indices": [
+            1,
+            13
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            16.22436405328922,
+            111.56129363716309
+          ],
+          "weight_sum": 127.78565769045231,
+          "peak_normal_norms": [
+            156.4878210715248,
+            674.2576947433843
+          ],
+          "matrix_condition": 36.91785201687668
+        },
+        {
+          "indices": [
+            6,
+            13
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            291.44512795132397,
+            105.99749830533491
+          ],
+          "weight_sum": 397.44262625665885,
+          "peak_normal_norms": [
+            344.8256746447271,
+            674.2576947433843
+          ],
+          "matrix_condition": 2.076705502353914
+        },
+        {
+          "indices": [
+            3,
+            13
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            287.9548126186918,
+            243.28639014590323
+          ],
+          "weight_sum": 531.2412027645951,
+          "peak_normal_norms": [
+            334.510263606787,
+            674.2576947433843
+          ],
+          "matrix_condition": 2.0510816366076843
+        },
+        {
+          "indices": [
+            1,
+            16
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            17.768054507812135,
+            553.4437728550156
+          ],
+          "weight_sum": 571.2118273628278,
+          "peak_normal_norms": [
+            156.4878210715248,
+            994.3361732310209
+          ],
+          "matrix_condition": 183.14332428629723
+        },
+        {
+          "indices": [
+            6,
+            16
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            317.66771223679007,
+            523.3589550895713
+          ],
+          "weight_sum": 841.0266673263613,
+          "peak_normal_norms": [
+            344.8256746447271,
+            994.3361732310209
+          ],
+          "matrix_condition": 10.188289179689443
+        }
+      ]
+    },
+    {
+      "source": "annular_pressure_scale_cone_z000342.json",
+      "z": 0.00342,
+      "cone_pass": true,
+      "cone_ratio": 0.5003258757834858,
+      "unconstrained_selected_modes": [
+        1,
+        1
+      ],
+      "positive_distinct_mode_pair_count": 84,
+      "lowest_weight_pairs": [
+        {
+          "indices": [
+            3,
+            13
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            306.46371953073594,
+            86.82272541277807
+          ],
+          "weight_sum": 393.286444943514,
+          "peak_normal_norms": [
+            338.6779029218195,
+            675.9824953105494
+          ],
+          "matrix_condition": 1.9491026549620631
+        },
+        {
+          "indices": [
+            1,
+            12
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            13.423733767766372,
+            589.6781528489875
+          ],
+          "weight_sum": 603.1018866167539,
+          "peak_normal_norms": [
+            155.15104486034684,
+            994.3361732310209
+          ],
+          "matrix_condition": 384.5076633947881
+        },
+        {
+          "indices": [
+            6,
+            12
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            269.0071635036476,
+            496.52667121182793
+          ],
+          "weight_sum": 765.5338347154755,
+          "peak_normal_norms": [
+            353.1218563625638,
+            994.3361732310209
+          ],
+          "matrix_condition": 20.48647401918433
+        },
+        {
+          "indices": [
+            3,
+            16
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            331.82511054964533,
+            496.6487895673507
+          ],
+          "weight_sum": 828.473900116996,
+          "peak_normal_norms": [
+            338.6779029218195,
+            994.3361732310209
+          ],
+          "matrix_condition": 11.16110535742254
+        },
+        {
+          "indices": [
+            1,
+            15
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            14.301024070912824,
+            888.952028525157
+          ],
+          "weight_sum": 903.2530525960698,
+          "peak_normal_norms": [
+            155.15104486034684,
+            1406.203701741473
+          ],
+          "matrix_condition": 579.6447181975116
+        }
+      ]
+    },
+    {
+      "source": "annular_pressure_scale_cone_z00035.json",
+      "z": 0.0035,
+      "cone_pass": false,
+      "cone_ratio": 9.749882982486682,
+      "unconstrained_selected_modes": [
+        4,
+        4
+      ],
+      "positive_distinct_mode_pair_count": 26,
+      "lowest_weight_pairs": [
+        {
+          "indices": [
+            3,
+            10
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            919.8276386153383,
+            16609.65761696385
+          ],
+          "weight_sum": 17529.485255579188,
+          "peak_normal_norms": [
+            355.48054702136267,
+            994.3361732310209
+          ],
+          "matrix_condition": 50.86880134958671
+        },
+        {
+          "indices": [
+            0,
+            10
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            4176.894737895916,
+            13777.092495238798
+          ],
+          "weight_sum": 17953.987233134714,
+          "peak_normal_norms": [
+            386.9994276635008,
+            994.3361732310209
+          ],
+          "matrix_condition": 9.245900534446667
+        },
+        {
+          "indices": [
+            15,
+            19
+          ],
+          "modes": [
+            4,
+            16
+          ],
+          "weights": [
+            10776.094042706056,
+            15392.290065577523
+          ],
+          "weight_sum": 26168.38410828358,
+          "peak_normal_norms": [
+            1406.203701741473,
+            3977.3446929240836
+          ],
+          "matrix_condition": 6.705845018921562
+        },
+        {
+          "indices": [
+            8,
+            15
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            4069.066200138344,
+            27725.08836150981
+          ],
+          "weight_sum": 31794.154561648153,
+          "peak_normal_norms": [
+            351.55092543536824,
+            1406.203701741473
+          ],
+          "matrix_condition": 38.3918417483463
+        },
+        {
+          "indices": [
+            6,
+            10
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            1548.9510524912598,
+            31808.384128951297
+          ],
+          "weight_sum": 33357.335181442555,
+          "peak_normal_norms": [
+            360.8135226527044,
+            994.3361732310209
+          ],
+          "matrix_condition": 77.31124714517527
+        }
+      ]
+    },
+    {
+      "source": "annular_pressure_scale_cone_z00036.json",
+      "z": 0.0036,
+      "cone_pass": false,
+      "cone_ratio": 1.6626499687731202,
+      "unconstrained_selected_modes": [
+        4,
+        4
+      ],
+      "positive_distinct_mode_pair_count": 26,
+      "lowest_weight_pairs": [
+        {
+          "indices": [
+            3,
+            10
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            1891.1357130566564,
+            35273.182328565614
+          ],
+          "weight_sum": 37164.31804162227,
+          "peak_normal_norms": [
+            356.7985790811359,
+            994.3361732310209
+          ],
+          "matrix_condition": 41.16383084622876
+        },
+        {
+          "indices": [
+            0,
+            10
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            7998.498651882393,
+            30316.680137551193
+          ],
+          "weight_sum": 38315.17878943359,
+          "peak_normal_norms": [
+            385.33479060103133,
+            994.3361732310209
+          ],
+          "matrix_condition": 7.905021264565217
+        },
+        {
+          "indices": [
+            6,
+            10
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            3337.556029548518,
+            60462.43724974458
+          ],
+          "weight_sum": 63799.9932792931,
+          "peak_normal_norms": [
+            363.7204240903105,
+            994.3361732310209
+          ],
+          "matrix_condition": 62.824424408107156
+        },
+        {
+          "indices": [
+            15,
+            19
+          ],
+          "modes": [
+            4,
+            16
+          ],
+          "weights": [
+            21740.06893590435,
+            84290.08923263049
+          ],
+          "weight_sum": 106030.15816853484,
+          "peak_normal_norms": [
+            1406.203701741473,
+            3977.3446929240836
+          ],
+          "matrix_condition": 6.78173111488076
+        },
+        {
+          "indices": [
+            12,
+            19
+          ],
+          "modes": [
+            4,
+            16
+          ],
+          "weights": [
+            13454.077511737141,
+            120721.39149190797
+          ],
+          "weight_sum": 134175.46900364512,
+          "peak_normal_norms": [
+            994.3361732310209,
+            3977.3446929240836
+          ],
+          "matrix_condition": 15.389993681431609
+        }
+      ]
+    },
+    {
+      "source": "annular_pressure_scale_cone_z00037.json",
+      "z": 0.0037,
+      "cone_pass": false,
+      "cone_ratio": 1.3103890618765905,
+      "unconstrained_selected_modes": [
+        1,
+        4
+      ],
+      "positive_distinct_mode_pair_count": 25,
+      "lowest_weight_pairs": [
+        {
+          "indices": [
+            3,
+            10
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            2622.0387938926096,
+            45004.67112533094
+          ],
+          "weight_sum": 47626.70991922355,
+          "peak_normal_norms": [
+            342.24680503468636,
+            994.3361732310209
+          ],
+          "matrix_condition": 35.353736734724244
+        },
+        {
+          "indices": [
+            0,
+            10
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            10544.04077776076,
+            38403.45358451461
+          ],
+          "weight_sum": 48947.49436227537,
+          "peak_normal_norms": [
+            371.47069324974245,
+            994.3361732310209
+          ],
+          "matrix_condition": 6.922268172846047
+        },
+        {
+          "indices": [
+            6,
+            10
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            5049.981359138446,
+            78908.94283279315
+          ],
+          "weight_sum": 83958.9241919316,
+          "peak_normal_norms": [
+            352.03248019049187,
+            994.3361732310209
+          ],
+          "matrix_condition": 57.23748465928603
+        },
+        {
+          "indices": [
+            15,
+            19
+          ],
+          "modes": [
+            4,
+            16
+          ],
+          "weights": [
+            31490.394874052803,
+            158608.36946334454
+          ],
+          "weight_sum": 190098.76433739736,
+          "peak_normal_norms": [
+            1406.203701741473,
+            3977.3446929240836
+          ],
+          "matrix_condition": 6.827363183789781
+        },
+        {
+          "indices": [
+            12,
+            19
+          ],
+          "modes": [
+            4,
+            16
+          ],
+          "weights": [
+            18995.548420171825,
+            210498.60986868374
+          ],
+          "weight_sum": 229494.15828885557,
+          "peak_normal_norms": [
+            994.3361732310209,
+            3977.3446929240836
+          ],
+          "matrix_condition": 15.808602718119822
+        }
+      ]
+    },
+    {
+      "source": "annular_pressure_scale_cone_z00038.json",
+      "z": 0.0038,
+      "cone_pass": false,
+      "cone_ratio": 1.1993241419823901,
+      "unconstrained_selected_modes": [
+        1,
+        4
+      ],
+      "positive_distinct_mode_pair_count": 26,
+      "lowest_weight_pairs": [
+        {
+          "indices": [
+            0,
+            10
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            6487.007961393863,
+            32530.720535239903
+          ],
+          "weight_sum": 39017.72849663377,
+          "peak_normal_norms": [
+            351.55092543536824,
+            994.3361732310209
+          ],
+          "matrix_condition": 7.169305677363224
+        },
+        {
+          "indices": [
+            3,
+            10
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            3033.604607042853,
+            51001.57914243395
+          ],
+          "weight_sum": 54035.1837494768,
+          "peak_normal_norms": [
+            321.7181418141738,
+            994.3361732310209
+          ],
+          "matrix_condition": 35.84076368341421
+        },
+        {
+          "indices": [
+            6,
+            10
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            7447.861176591486,
+            107604.77433976594
+          ],
+          "weight_sum": 115052.63551635742,
+          "peak_normal_norms": [
+            333.7545572999944,
+            994.3361732310209
+          ],
+          "matrix_condition": 72.01537434223187
+        },
+        {
+          "indices": [
+            15,
+            19
+          ],
+          "modes": [
+            4,
+            16
+          ],
+          "weights": [
+            37341.01210896768,
+            213227.23664133393
+          ],
+          "weight_sum": 250568.2487503016,
+          "peak_normal_norms": [
+            1406.203701741473,
+            3977.3446929240836
+          ],
+          "matrix_condition": 6.81003225727878
+        },
+        {
+          "indices": [
+            10,
+            21
+          ],
+          "modes": [
+            4,
+            16
+          ],
+          "weights": [
+            28498.286412130037,
+            242420.15898777102
+          ],
+          "weight_sum": 270918.4453999011,
+          "peak_normal_norms": [
+            994.3361732310209,
+            3977.3446929240836
+          ],
+          "matrix_condition": 13.280171330643133
+        }
+      ]
+    },
+    {
+      "source": "annular_pressure_scale_cone_z003.json",
+      "z": 0.003,
+      "cone_pass": true,
+      "cone_ratio": 0.6494536815189506,
+      "unconstrained_selected_modes": [
+        1,
+        4
+      ],
+      "positive_distinct_mode_pair_count": 35,
+      "lowest_weight_pairs": [
+        {
+          "indices": [
+            6,
+            16
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            2090.594459412,
+            21966.908646274696
+          ],
+          "weight_sum": 24057.503105686697,
+          "peak_normal_norms": [
+            351.55092543536824,
+            994.3361732310209
+          ],
+          "matrix_condition": 6.116058567626303
+        },
+        {
+          "indices": [
+            3,
+            16
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "weights": [
+            1705.9536982422665,
+            26780.92088708842
+          ],
+          "weight_sum": 28486.874585330686,
+          "peak_normal_norms": [
+            283.9576908196092,
+            994.3361732310209
+          ],
+          "matrix_condition": 17.35561215643728
+        },
+        {
+          "indices": [
+            16,
+            21
+          ],
+          "modes": [
+            4,
+            16
+          ],
+          "weights": [
+            21279.09664493661,
+            51239.94685314984
+          ],
+          "weight_sum": 72519.04349808645,
+          "peak_normal_norms": [
+            994.3361732310209,
+            3977.3446929240836
+          ],
+          "matrix_condition": 10.856757056317445
+        },
+        {
+          "indices": [
+            16,
+            18
+          ],
+          "modes": [
+            4,
+            16
+          ],
+          "weights": [
+            19753.712570099317,
+            62911.95143045062
+          ],
+          "weight_sum": 82665.66400054994,
+          "peak_normal_norms": [
+            994.3361732310209,
+            5624.814806965892
+          ],
+          "matrix_condition": 13.236100678583188
+        },
+        {
+          "indices": [
+            16,
+            24
+          ],
+          "modes": [
+            4,
+            16
+          ],
+          "weights": [
+            23525.66133375475,
+            93065.53540162058
+          ],
+          "weight_sum": 116591.19673537533,
+          "peak_normal_norms": [
+            994.3361732310209,
+            5624.814806965892
+          ],
+          "matrix_condition": 19.638223324666374
+        }
+      ]
+    }
+  ],
+  "scope": "Local frozen Kelvin covariance at one point per source. Distinct angular modes avoid same-m cross terms in the angular mean; weights are local and do not solve a supported wave amplitude equation.",
+  "accepted": false
+}

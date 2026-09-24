@@ -1,0 +1,52 @@
+{
+  "source_name": "annular_pressure_scale_cone_t0084_z0034.json",
+  "rows": [
+    {
+      "step_fraction": 1.0,
+      "hs": 4.5825756949558395e-06,
+      "ht": 8.4e-07,
+      "baseline": {
+        "max": 457363.4098108478,
+        "rms": 457363.40980665316,
+        "max_fd_divergence": 1.435624426449067e-06
+      },
+      "wave": {
+        "max": 2698954225.026369,
+        "rms": 1689254776.8966215,
+        "max_fd_divergence": 18.427779525663937
+      }
+    },
+    {
+      "step_fraction": 0.5,
+      "hs": 2.2912878474779198e-06,
+      "ht": 4.2e-07,
+      "baseline": {
+        "max": 457363.4100947814,
+        "rms": 457363.4100808688,
+        "max_fd_divergence": 9.042742021847516e-08
+      },
+      "wave": {
+        "max": 2702454642.196437,
+        "rms": 1691387491.191979,
+        "max_fd_divergence": 1.1887517713057605
+      }
+    },
+    {
+      "step_fraction": 0.25,
+      "hs": 1.1456439237389599e-06,
+      "ht": 2.1e-07,
+      "baseline": {
+        "max": 457363.410177203,
+        "rms": 457363.4100754411,
+        "max_fd_divergence": 6.969230526010506e-09
+      },
+      "wave": {
+        "max": 2702678216.072266,
+        "rms": 1691523701.1790473,
+        "max_fd_divergence": 0.07488504883258429
+      }
+    }
+  ],
+  "scope": "Fourth-order Cartesian/time finite-difference refinement at 16 angles on one ring; not a global error bound or analytic derivative certificate.",
+  "accepted": false
+}

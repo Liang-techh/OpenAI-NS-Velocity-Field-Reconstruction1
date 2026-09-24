@@ -5,6 +5,8 @@ polarizations and has no amplitude/pressure PDE solve, so full momentum is the
 decisive rejection or continuation test.
 """
 import json
+import argparse
+import itertools
 
 import numpy as np
 from scipy.optimize import nnls
@@ -24,23 +26,65 @@ def bump(value, center, halfwidth):
 
 
 class LocalizedCurlWave:
-    def __init__(self, source):
+    def __init__(self, source, radial_halfwidth=.0025,
+                 axial_halfwidth=.00075, carrier_multiplier=1,
+                 pulse_indices=None, time_halfwidth=None):
         self.radius, _, self.zcenter = source['point']
         self.tau0 = source['tau']
         self.nu = .01
-        self.radial_halfwidth = .0025
-        self.axial_halfwidth = .00075
+        self.radial_halfwidth = radial_halfwidth
+        self.axial_halfwidth = axial_halfwidth
+        if not 0 < radial_halfwidth < self.radius or axial_halfwidth <= 0:
+            raise ValueError('The wave support must remain off the axis')
+        self.time_halfwidth = time_halfwidth
+        if time_halfwidth is not None and (time_halfwidth <= 0 or
+                                             self.tau0-time_halfwidth <= .5/64):
+            raise ValueError('Time pulse must be compact inside the registered slab')
+        if carrier_multiplier < 1 or int(carrier_multiplier) != carrier_multiplier:
+            raise ValueError('carrier_multiplier must be a positive integer')
+        self.carrier_multiplier = int(carrier_multiplier)
         self.target = np.array(source['local_tangential_stress_primitive'])
+        if pulse_indices is None:
+            selected = [item['index'] for item in source['covariance_nnls']['selected']]
+            pulses = source['kelvin_pulses']
+            if len(selected) == 2 and pulses[selected[0]]['mode'] != pulses[selected[1]]['mode']:
+                pulse_indices = selected
+            else:
+                pairs = []
+                for i, j in itertools.combinations(range(len(pulses)), 2):
+                    if pulses[i]['mode'] == pulses[j]['mode']:
+                        continue
+                    matrix = np.array([pulses[i]['mean_radial_tangential_covariance'],
+                                       pulses[j]['mean_radial_tangential_covariance']]).T
+                    if np.linalg.cond(matrix) > 1e8:
+                        continue
+                    weights = np.linalg.solve(matrix, self.target)
+                    if np.min(weights) > 0:
+                        pairs.append((float(sum(weights)), i, j))
+                if not pairs:
+                    raise ValueError('No positive distinct-angular-mode pulse pair')
+                _, i, j = min(pairs)
+                pulse_indices = (i, j)
+        self.pulse_indices = list(pulse_indices)
+        if len(self.pulse_indices) != 2:
+            raise ValueError('Two pulse indices are required')
+        if (source['kelvin_pulses'][self.pulse_indices[0]]['mode'] ==
+                source['kelvin_pulses'][self.pulse_indices[1]]['mode']):
+            raise ValueError('The two pulses must have distinct angular modes')
         self.waves = []
         columns = []
-        for angular_mode, item in zip((1, 2), source['covariance_nnls']['selected']):
-            pulse = source['kelvin_pulses'][item['index']]
+        for index in self.pulse_indices:
+            pulse = source['kelvin_pulses'][index]
+            angular_mode = self.carrier_multiplier*pulse['mode']
             nold = np.array(pulse['peak_wavevector'])
-            normal = np.array([nold[0], angular_mode/self.radius, nold[2]])
+            normal = self.carrier_multiplier*np.array(
+                [nold[0], pulse['mode']/self.radius, nold[2]])
             amplitude = np.array(pulse['peak_amplitude'])
             amplitude -= normal*np.dot(normal, amplitude)/np.dot(normal, normal)
             columns.append(.5*amplitude[0]*amplitude[1:])
             potential = np.cross(normal, amplitude)/np.dot(normal, normal)
+            # tau is time-to-critical; the physical transport operator is
+            # -d_tau + u·grad, so the frozen phase has d_tau Phi = u·normal.
             omega = float(np.dot(source['velocity'], normal))
             self.waves.append({'m': angular_mode, 'normal': normal,
                                'amplitude': amplitude, 'potential': potential,
@@ -64,7 +108,10 @@ class LocalizedCurlWave:
             bz, bz_z = bump(z, self.zcenter, self.axial_halfwidth)
             if br == 0 or bz == 0:
                 continue
-            time_cut = float(cutoff((t-.012)/.008)[0])
+            if self.time_halfwidth is None:
+                time_cut = float(cutoff((t-.012)/.008)[0])
+            else:
+                time_cut = bump(t, self.tau0, self.time_halfwidth)[0]
             envelope = br*bz*time_cut
             er = br_r*bz*time_cut
             ez = br*bz_z*time_cut
@@ -109,9 +156,23 @@ def cylindrical_residual(residual, points):
 
 
 def run():
-    source = json.loads((ROOT/'compact_potential'/'radial_peak_cone.json').read_text())
-    base = current_field()
-    wave = LocalizedCurlWave(source)
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--source-name', default='radial_peak_cone.json')
+    parser.add_argument('--output-name', default='curl_wave_prototype.json')
+    parser.add_argument('--radial-halfwidth', type=float, default=.0025)
+    parser.add_argument('--axial-halfwidth', type=float, default=.00075)
+    parser.add_argument('--carrier-multiplier', type=int, default=1)
+    parser.add_argument('--time-halfwidth', type=float)
+    args = parser.parse_args()
+    source = json.loads((ROOT/'compact_potential'/args.source_name).read_text())
+    if source.get('field_id') == 'annular-pressure-scale':
+        from annular_pressure_scale_screen import load_candidate
+        base = load_candidate()
+    else:
+        base = current_field()
+    wave = LocalizedCurlWave(source, args.radial_halfwidth,
+                             args.axial_halfwidth, args.carrier_multiplier,
+                             time_halfwidth=args.time_halfwidth)
     perturbed = WavePerturbedField(base, wave)
     angles = np.arange(16)*2*np.pi/16
     r, _, z = source['point']
@@ -132,6 +193,10 @@ def run():
     new, new_div = operator(perturbed)
     report = {
         'point': source['point'], 'tau': source['tau'],
+        'source_name': args.source_name,
+        'field_id': source.get('field_id', 'current'),
+        'selected_pulse_indices': wave.pulse_indices,
+        'carrier_multiplier': wave.carrier_multiplier,
         'target_stress': wave.target.tolist(),
         'periodicized_wavevectors': [x['normal'].tolist() for x in wave.waves],
         'transverse_amplitudes': [x['amplitude'].tolist() for x in wave.waves],
@@ -147,7 +212,8 @@ def run():
         'baseline_max_fd_divergence': float(np.max(np.abs(old_div))),
         'wave_max_fd_divergence': float(np.max(np.abs(new_div))),
         'support': {'radial_halfwidth': wave.radial_halfwidth,
-                    'axial_halfwidth': wave.axial_halfwidth},
+                    'axial_halfwidth': wave.axial_halfwidth,
+                    'time_halfwidth': wave.time_halfwidth},
         'localization': {
             'carrier_magnitudes': [float(np.linalg.norm(x['normal'])) for x in wave.waves],
             'inverse_axial_halfwidth': 1/wave.axial_halfwidth,
@@ -155,10 +221,10 @@ def run():
             'axial_cutoff_diffusion_scale': base.nu/wave.axial_halfwidth**2,
             'physical_analogue_growth_rate': float(np.sqrt(source['cone']['lambda_squared'])),
             'note': 'Dimensional scale comparison only; the paper uses normalized chart estimates and an evolving amplitude equation.'},
-        'scope': 'Two integer angular harmonics from projected frozen Kelvin peak vectors. Exact analytic curl of a C4 compact vector potential; 16-angle local sample at one late point. No amplitude/pressure equation or stress moment repair. Full physical momentum including nonlinear wave terms is evaluated.',
+        'scope': 'Two distinct integer angular harmonics from projected frozen Kelvin peak vectors. Phase time sign cancels frozen background transport under the backward-time tau convention. Exact analytic curl of a compact spatial vector potential; 16-angle local sample at one late point. Optional time bump vanishes smoothly inside the registered slab. No evolving amplitude/pressure equation or stress moment repair. Full physical momentum including nonlinear wave terms is evaluated.',
         'accepted': False,
     }
-    out = ROOT/'compact_potential'/'curl_wave_prototype.json'
+    out = ROOT/'compact_potential'/args.output_name
     out.write_bytes((json.dumps(report, indent=2)+'\n').encode())
     print(json.dumps(report), flush=True)
 

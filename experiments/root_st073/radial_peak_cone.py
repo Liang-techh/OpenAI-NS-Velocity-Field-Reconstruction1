@@ -40,9 +40,17 @@ def operator(field, points, tau):
     return velocity, gradient, part + np.einsum('nij,nj->ni', gradient, velocity)
 
 
+def inner_similarity_exponent(field):
+    """Locate the compact core through optional experimental field wrappers."""
+    node = field
+    while not hasattr(node, 'inner'):
+        node = node.base
+    return node.inner.h
+
+
 def stress_primitive(field, radius, z, tau, order=12):
     q = float(coordinates(0., z/np.sqrt(field.nu), tau,
-                          field.base.base.inner.h)['q'])
+                          inner_similarity_exponent(field))['q'])
     ri = np.sqrt(field.nu)*np.sqrt(2*q*3/64)
     edges = sorted(set(np.clip([0., ri, radius], 0., radius)))
     g, w = leggauss(order)
@@ -60,9 +68,9 @@ def stress_primitive(field, radius, z, tau, order=12):
 
 def run(radius=.0056890761915166545,
         z=.003432627453438968,
-        output_name='radial_peak_cone.json'):
-    field = current_field()
-    tau = .5/64
+        output_name='radial_peak_cone.json', field=None,
+        field_id='current', tau=.5/64):
+    field = field or current_field()
     point = np.array([[radius, 0., z]])
     velocity, gradient, residual = operator(field, point, tau)
     u = velocity[0]
@@ -99,6 +107,7 @@ def run(radius=.0056890761915166545,
     weights, error = nnls(matrix, target)
     selected = np.flatnonzero(weights > 1e-8)
     report = {'tau': tau, 'point': point[0].tolist(),
+              'field_id': field_id,
               'velocity': u.tolist(), 'gradient': J.tolist(),
               'residual': residual[0].tolist(),
               'local_tangential_stress_primitive': target.tolist(),
@@ -124,5 +133,14 @@ if __name__ == '__main__':
     parser.add_argument('--radius', type=float, default=.0056890761915166545)
     parser.add_argument('--z', type=float, default=.003432627453438968)
     parser.add_argument('--output-name', default='radial_peak_cone.json')
+    parser.add_argument('--tau', type=float, default=.5/64)
+    parser.add_argument('--field', choices=('current', 'annular-pressure-scale'),
+                        default='current')
     args = parser.parse_args()
-    run(args.radius, args.z, args.output_name)
+    if args.field == 'annular-pressure-scale':
+        from annular_pressure_scale_screen import load_candidate
+        selected_field = load_candidate()
+    else:
+        selected_field = current_field()
+    run(args.radius, args.z, args.output_name,
+        field=selected_field, field_id=args.field, tau=args.tau)

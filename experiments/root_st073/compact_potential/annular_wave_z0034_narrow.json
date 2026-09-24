@@ -1,0 +1,86 @@
+{
+  "point": [
+    0.0056890761915166545,
+    0.0,
+    0.0034
+  ],
+  "tau": 0.0078125,
+  "source_name": "annular_pressure_scale_cone_z00034.json",
+  "field_id": "annular-pressure-scale",
+  "selected_pulse_indices": [
+    1,
+    13
+  ],
+  "carrier_multiplier": 1,
+  "target_stress": [
+    35.57609958731318,
+    30.860222944678632
+  ],
+  "periodicized_wavevectors": [
+    [
+      -19.3113680466362,
+      175.77546271768412,
+      -127.41581365789017
+    ],
+    [
+      -3.612323498414194,
+      703.1018508707365,
+      178.70085526877654
+    ]
+  ],
+  "transverse_amplitudes": [
+    [
+      -5.572739240289361,
+      -1.5375567832043906,
+      -1.2765098134679935
+    ],
+    [
+      0.8331967923541953,
+      -0.15188161897367103,
+      0.614423605305715
+    ]
+  ],
+  "positive_weights": [
+    8.367418002174768,
+    4.292549898740878
+  ],
+  "ideal_covariance_relative_error": 0.0,
+  "sampled_exact_curl_covariance": [
+    35.576099587313124,
+    30.860222944678686
+  ],
+  "sampled_covariance_relative_error": 1.6544390750938069e-15,
+  "baseline_mean_residual_cylindrical": [
+    246005.97886834084,
+    -20655.087842552763,
+    -379.47065134415436
+  ],
+  "wave_mean_residual_cylindrical": [
+    611835865.2391976,
+    374565540.3871969,
+    -5207.830526418984
+  ],
+  "baseline_max_residual": 246871.8661437145,
+  "wave_max_residual": 1976850986.5859864,
+  "wave_max_velocity": 18.620457860056053,
+  "baseline_max_fd_divergence": 2.3513507585448679e-07,
+  "wave_max_fd_divergence": 2.8665716452710512,
+  "support": {
+    "radial_halfwidth": 0.0007,
+    "axial_halfwidth": 5e-05,
+    "time_halfwidth": null
+  },
+  "localization": {
+    "carrier_magnitudes": [
+      217.95580239936442,
+      725.464855973537
+    ],
+    "inverse_axial_halfwidth": 20000.0,
+    "inverse_radial_halfwidth": 1428.5714285714287,
+    "axial_cutoff_diffusion_scale": 4000000.0,
+    "physical_analogue_growth_rate": 73.2692471829315,
+    "note": "Dimensional scale comparison only; the paper uses normalized chart estimates and an evolving amplitude equation."
+  },
+  "scope": "Two distinct integer angular harmonics from projected frozen Kelvin peak vectors. Phase time sign cancels frozen background transport under the backward-time tau convention. Exact analytic curl of a compact spatial vector potential; 16-angle local sample at one late point. Optional time bump vanishes smoothly inside the registered slab. No evolving amplitude/pressure equation or stress moment repair. Full physical momentum including nonlinear wave terms is evaluated.",
+  "accepted": false
+}
