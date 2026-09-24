@@ -581,3 +581,31 @@ nearly fixed, then compute the FULL viscous residual and pulse compatibility.
 High radial frequency can greatly increase viscosity; test this cost explicitly
 before claiming any stress cone progress. Do not replace the width6 best
 full-momentum candidate with either cone-penalized field.
+
+
+## Radial shear loop and coupled mean repair: rejected as full-field candidates
+
+`radial_shear_loop.py` adds a compact two/four-cycle axisymmetric swirl loop
+with quartic endpoint zeros, keeping exact divergence freedom and C2 interface
+jets. At k5.5, a two-cycle amplitude-.3 creates one approximate direction+mode1
+growth passing node at y=.729 on BOTH eta=+/-.3 slices; the existing width6
+mean field had none there. The late side sampled maximum grows only about0.2%,
+and angular terminal stress falls about22%. A four-cycle -.3 loop creates
+passing nodes too, but its momentum maximum grows markedly from viscosity.
+These are finite-node diagnostics, not a wave or a strict paper cone certificate.
+
+The two-cycle candidate fails the actual physical-volume gate comparison:
+late max4261.34 ->4294.04 and L2 4.89297 ->5.90882; early L2
+1.02850 ->1.23678. `loop_repair_fit.py` refits all24 mean coefficients in the
+presence of the same loop. It recovers part of the L2 cost (late5.45039) but
+remains worse than the width6 baseline, and the two side passing nodes disappear
+on direct re-evaluation. Thus shear orientation, moment compatibility and full
+PDE residual must be solved together. Neither raw nor refitted loop replaces
+the accepted best sampled baseline; no supported non-axisymmetric pulse exists.
+Artifacts: radial_shear_loop/report.json, candidate_audit.json, and
+loop_repair_fit/report.json.
+
+Next work should follow the paper's linked moment-preserving profile continuation
+and oscillatory stress program. A sinusoidal shear loop by itself is too weak a
+substitute. Preserve failed coefficient sets and full-volume metrics for
+comparison; do not count approximate cone passes as an NS residual reduction.

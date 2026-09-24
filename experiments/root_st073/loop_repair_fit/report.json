@@ -1,0 +1,235 @@
+{
+  "amplitudes": [
+    0.004770927175780034,
+    0.010870835275262324,
+    0.002785709597425676,
+    0.7923857096658613,
+    -0.005419262979958178,
+    -0.26557143630358415,
+    7.999999999999999,
+    -0.03712099217465277,
+    -1.0553354034228202,
+    0.05738128087394608,
+    1.3338601604237998,
+    -0.09937596713929223,
+    -0.2816284690006814,
+    0.0043789459252836635,
+    0.238029026915612,
+    0.16685595560080652,
+    -0.01029452242783741,
+    -1.4607342767214326,
+    -0.238630295394177,
+    0.0026212963582884314,
+    0.26557606070086687,
+    -0.9761919498496732,
+    -0.0010856263973233488,
+    -0.35699250753277034
+  ],
+  "coefficient_order": "12 WidePoloidalModes followed by12 WideAngularModes",
+  "bounds": [
+    -8,
+    8
+  ],
+  "fit_nfev": 8,
+  "fit_success": true,
+  "fit_cost": 7.0500119929048015,
+  "initial_cost": 7.763833527617287,
+  "holdouts": [
+    {
+      "k": 2.5,
+      "eta": -0.2,
+      "order": 18,
+      "prior": {
+        "momentum_max": 174.3807566464466,
+        "theta_max": 41.79076840786395,
+        "terminal_rtheta": 0.03786783433877773,
+        "divergence_max": 3.107798907109327e-09,
+        "terminal_rz": 0.535631650799927
+      },
+      "raw_loop": {
+        "momentum_max": 176.58434064215555,
+        "theta_max": 85.2843640909657,
+        "terminal_rtheta": 0.030512217481282106,
+        "divergence_max": 3.107798907109327e-09,
+        "terminal_rz": 0.5356316507999269
+      },
+      "repaired_loop": {
+        "momentum_max": 175.19766186915368,
+        "theta_max": 69.24772015620758,
+        "terminal_rtheta": 0.032984121103587186,
+        "divergence_max": 2.690769829172268e-09,
+        "terminal_rz": 0.5327670183544677
+      }
+    },
+    {
+      "k": 2.5,
+      "eta": 0.2,
+      "order": 18,
+      "prior": {
+        "momentum_max": 177.7291465953975,
+        "theta_max": 41.42689397006226,
+        "terminal_rtheta": 0.037884183756620934,
+        "divergence_max": 2.2690578305173403e-09,
+        "terminal_rz": -0.5425098033039081
+      },
+      "raw_loop": {
+        "momentum_max": 179.8747898852259,
+        "theta_max": 85.71454253196461,
+        "terminal_rtheta": 0.03054008625602882,
+        "divergence_max": 2.2690578305173403e-09,
+        "terminal_rz": -0.542509803303908
+      },
+      "repaired_loop": {
+        "momentum_max": 178.5374792410188,
+        "theta_max": 69.20930061561776,
+        "terminal_rtheta": 0.03296157472653669,
+        "divergence_max": 2.172136248645984e-09,
+        "terminal_rz": -0.5411746783395982
+      }
+    },
+    {
+      "k": 5.5,
+      "eta": -0.2,
+      "order": 18,
+      "prior": {
+        "momentum_max": 3918.917026004878,
+        "theta_max": 953.3483621241329,
+        "terminal_rtheta": 0.3068043968978529,
+        "divergence_max": 2.9232729126249524e-08,
+        "terminal_rz": 4.210545084384424
+      },
+      "raw_loop": {
+        "momentum_max": 3970.0688496666453,
+        "theta_max": 1951.6760295274116,
+        "terminal_rtheta": 0.24787194882347083,
+        "divergence_max": 2.923448949587737e-08,
+        "terminal_rz": 4.210545084384424
+      },
+      "repaired_loop": {
+        "momentum_max": 3939.0233577145614,
+        "theta_max": 1581.8983405264964,
+        "terminal_rtheta": 0.26785663551934236,
+        "divergence_max": 2.1271570949110696e-08,
+        "terminal_rz": 4.187474527134793
+      }
+    },
+    {
+      "k": 5.5,
+      "eta": 0.2,
+      "order": 18,
+      "prior": {
+        "momentum_max": 3995.1212278405765,
+        "theta_max": 945.0049294178148,
+        "terminal_rtheta": 0.30690627684075544,
+        "divergence_max": 2.4302986290081208e-08,
+        "terminal_rz": -4.265597220143427
+      },
+      "raw_loop": {
+        "momentum_max": 4044.914553469738,
+        "theta_max": 1961.4703259839694,
+        "terminal_rtheta": 0.2480648095786161,
+        "divergence_max": 2.4301225920453362e-08,
+        "terminal_rz": -4.265597220143425
+      },
+      "repaired_loop": {
+        "momentum_max": 4014.9536778750557,
+        "theta_max": 1580.965402267613,
+        "terminal_rtheta": 0.26764329085073696,
+        "divergence_max": 1.743831035128096e-08,
+        "terminal_rz": -4.254891201617787
+      }
+    }
+  ],
+  "volume_audit": [
+    {
+      "k": 2.5,
+      "field": "prior",
+      "volume": 0.0002542952911468825,
+      "momentum_sampled_max": 189.19974839203235,
+      "momentum_volume_L2": 1.0284997171925627,
+      "divergence_sampled_max": 4.545515332188277e-09
+    },
+    {
+      "k": 2.5,
+      "field": "raw_loop",
+      "volume": 0.0002542952911468825,
+      "momentum_sampled_max": 190.61665631549477,
+      "momentum_volume_L2": 1.2367803827695094,
+      "divergence_sampled_max": 4.545437533309826e-09
+    },
+    {
+      "k": 2.5,
+      "field": "repaired_loop",
+      "volume": 0.0002542952911468825,
+      "momentum_sampled_max": 192.81229543286514,
+      "momentum_volume_L2": 1.1409863893610999,
+      "divergence_sampled_max": 3.929758685128348e-09
+    },
+    {
+      "k": 5.5,
+      "field": "prior",
+      "volume": 1.1355827525395317e-05,
+      "momentum_sampled_max": 4261.339558197848,
+      "momentum_volume_L2": 4.892972443779785,
+      "divergence_sampled_max": 4.507861040004002e-08
+    },
+    {
+      "k": 5.5,
+      "field": "raw_loop",
+      "volume": 1.1355827525395317e-05,
+      "momentum_sampled_max": 4294.041921750812,
+      "momentum_volume_L2": 5.908819559285717,
+      "divergence_sampled_max": 4.5079930677260904e-08
+    },
+    {
+      "k": 5.5,
+      "field": "repaired_loop",
+      "volume": 1.1355827525395317e-05,
+      "momentum_sampled_max": 4344.789672176016,
+      "momentum_volume_L2": 5.450387466714708,
+      "divergence_sampled_max": 3.371174228661289e-08
+    }
+  ],
+  "surrogate_full_fd_max_difference": 3.438780773024064e-06,
+  "optimizer_jacobian_directional_error": 7.830197211108891e-12,
+  "objective": "Full Cartesian residual normalized per training slice by baseline max, plus weight3 normalized radial theta and axial moment averages, regularization .001.",
+  "volume_domain": "eta in[-.4,.4], ri<r<6ri, all azimuths; 12x8 Gauss quadrature with physical Jacobian. No continuum maximum/integral certificate.",
+  "scope": "Width ratio6, fixed two-cycle swirl loop of amplitude -.3, and24 refitted mean coefficients. Unforced finite slab; not globally closed or PDE admitted.",
+  "pde_validated": false,
+  "global_field_ready": false,
+  "late_cone_slices": [
+    {
+      "eta": -0.3,
+      "max_momentum": 4440.850363812974,
+      "rms_momentum": 2168.1747699466623,
+      "middle_direction": 0,
+      "middle_joint": 0,
+      "all_joint": 0,
+      "middle_joint_y": [],
+      "tangential_moment": 0.19150130525057915,
+      "axial_moment": 4.268496647142817
+    },
+    {
+      "eta": 0,
+      "max_momentum": 2284.2099499970027,
+      "rms_momentum": 1297.2525227263227,
+      "middle_direction": 0,
+      "middle_joint": 0,
+      "all_joint": 0,
+      "middle_joint_y": [],
+      "tangential_moment": 0.3704832518927144,
+      "axial_moment": -0.05420176690963593
+    },
+    {
+      "eta": 0.3,
+      "max_momentum": 4503.176107023336,
+      "rms_momentum": 2196.6580858569314,
+      "middle_direction": 0,
+      "middle_joint": 0,
+      "all_joint": 0,
+      "middle_joint_y": [],
+      "tangential_moment": 0.19171991989197812,
+      "axial_moment": -4.301731170647513
+    }
+  ]
+}

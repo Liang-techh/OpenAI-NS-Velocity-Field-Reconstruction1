@@ -1,0 +1,123 @@
+{
+  "slices": [
+    {
+      "eta": -0.3,
+      "k": 5.5,
+      "field": "prior",
+      "max_momentum": 4438.881856811858,
+      "rms_momentum": 2085.252311926277,
+      "middle_direction": 0,
+      "middle_joint": 0,
+      "all_joint": 0,
+      "middle_joint_y": [],
+      "tangential_moment": 0.22608608640290295,
+      "axial_moment": 4.295904477762378
+    },
+    {
+      "eta": -0.3,
+      "k": 5.5,
+      "field": "modulated",
+      "max_momentum": 4449.507513826201,
+      "rms_momentum": 2220.538396286807,
+      "middle_direction": 1,
+      "middle_joint": 1,
+      "all_joint": 1,
+      "middle_joint_y": [
+        0.7290083888286136
+      ],
+      "tangential_moment": 0.1753127308235683,
+      "axial_moment": 4.2959044777623765
+    },
+    {
+      "eta": 0,
+      "k": 5.5,
+      "field": "prior",
+      "max_momentum": 2377.4716702862806,
+      "rms_momentum": 1254.59249213414,
+      "middle_direction": 0,
+      "middle_joint": 0,
+      "all_joint": 0,
+      "middle_joint_y": [],
+      "tangential_moment": 0.3995896460562672,
+      "axial_moment": -0.04750387432403944
+    },
+    {
+      "eta": 0,
+      "k": 5.5,
+      "field": "modulated",
+      "max_momentum": 2419.6219224715824,
+      "rms_momentum": 1492.9092021599151,
+      "middle_direction": 0,
+      "middle_joint": 0,
+      "all_joint": 0,
+      "middle_joint_y": [],
+      "tangential_moment": 0.33029105307360535,
+      "axial_moment": -0.04750387432403943
+    },
+    {
+      "eta": 0.3,
+      "k": 5.5,
+      "field": "prior",
+      "max_momentum": 4499.2900230747955,
+      "rms_momentum": 2114.685391160404,
+      "middle_direction": 0,
+      "middle_joint": 0,
+      "all_joint": 0,
+      "middle_joint_y": [],
+      "tangential_moment": 0.22672771959906204,
+      "axial_moment": -4.317971504834312
+    },
+    {
+      "eta": 0.3,
+      "k": 5.5,
+      "field": "modulated",
+      "max_momentum": 4509.4427123491805,
+      "rms_momentum": 2248.228233432713,
+      "middle_direction": 1,
+      "middle_joint": 1,
+      "all_joint": 1,
+      "middle_joint_y": [
+        0.7290083888286136
+      ],
+      "tangential_moment": 0.1760519765439764,
+      "axial_moment": -4.317971504834311
+    }
+  ],
+  "volume": [
+    {
+      "k": 2.5,
+      "field": "prior",
+      "volume": 0.0002542952911468825,
+      "momentum_max": 189.19974839203235,
+      "physical_volume_L2": 1.0284997171925627,
+      "divergence_max": 4.545515332188277e-09
+    },
+    {
+      "k": 2.5,
+      "field": "modulated",
+      "volume": 0.0002542952911468825,
+      "momentum_max": 190.61665631549477,
+      "physical_volume_L2": 1.2367803827695094,
+      "divergence_max": 4.545437533309826e-09
+    },
+    {
+      "k": 5.5,
+      "field": "prior",
+      "volume": 1.1355827525395317e-05,
+      "momentum_max": 4261.339558197848,
+      "physical_volume_L2": 4.892972443779785,
+      "divergence_max": 4.507861040004002e-08
+    },
+    {
+      "k": 5.5,
+      "field": "modulated",
+      "volume": 1.1355827525395317e-05,
+      "momentum_max": 4294.041921750812,
+      "physical_volume_L2": 5.908819559285717,
+      "divergence_max": 4.5079930677260904e-08
+    }
+  ],
+  "scope": "Unfitted two-cycle amplitude -.3 mean swirl loop on corrected width6 field, exact axisymmetric solenoidality, full unforced Cartesian FD residual. Approximate directional screen at finite nodes; no PDE acceptance or globally supported waves.",
+  "pde_validated": false,
+  "global_field_ready": false
+}
