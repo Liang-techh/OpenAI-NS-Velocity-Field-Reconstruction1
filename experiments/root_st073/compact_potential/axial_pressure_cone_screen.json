@@ -1,0 +1,370 @@
+{
+  "tau": 0.0078125,
+  "radius": 0.0056890761915166545,
+  "heights": [
+    0.0025,
+    0.0025777189544532474,
+    0.002655437908906495,
+    0.002733156863359742,
+    0.002810875817812989,
+    0.0028885947722662366,
+    0.002966313726719484,
+    0.0030440326811727314,
+    0.003121751635625979,
+    0.003199470590079226,
+    0.0032771895445324736,
+    0.0033549084989857206,
+    0.003432627453438968
+  ],
+  "target_cone_ratio": 0.8,
+  "mode_degrees": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "linear_feasible": true,
+  "linear_solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+  "scope": "Independent compact pressure correction only; velocity unchanged. Local cone constrained at five axial points; weighted residual sampled on radial quadrature at one time/radius. No global NS or pressure-Poisson certificate.",
+  "accepted": false,
+  "amplitudes": [
+    -135.08865708184183,
+    -26.64135025110264,
+    -87.92047629769223,
+    -19.939790490301284
+  ],
+  "optimizer_success": true,
+  "optimizer_message": "Optimization terminated successfully",
+  "baseline": {
+    "pass_count": 3,
+    "max_center_residual": 737607.7863296429,
+    "sample_residual_rms": 183876.0428088738
+  },
+  "candidate": {
+    "pass_count": 13,
+    "max_center_residual": 745529.1569719042,
+    "sample_residual_rms": 187159.6857727931
+  },
+  "rows": [
+    {
+      "z": 0.0025,
+      "target": [
+        -11.546942081636148,
+        31.331225983432912
+      ],
+      "target_dot_N": -21.45526469370978,
+      "lambda_squared": 61702.287931308856,
+      "center_residual_norm": 377376.0385812799,
+      "cone_ratio": 0.7533913930088595,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.0025777189544532474,
+      "target": [
+        -25.755711325687397,
+        89.09908176588148
+      ],
+      "target_dot_N": -65.59021857622405,
+      "lambda_squared": 65242.99705407899,
+      "center_residual_norm": 517593.23291380523,
+      "cone_ratio": 0.6683526531434121,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.002655437908906495,
+      "target": [
+        -44.13541546536515,
+        152.50748221414503
+      ],
+      "target_dot_N": -113.8819255851403,
+      "lambda_squared": 67262.87698596851,
+      "center_residual_norm": 516204.0462232245,
+      "cone_ratio": 0.6804214979981579,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.002733156863359742,
+      "target": [
+        -62.92820737721847,
+        204.7594129298399
+      ],
+      "target_dot_N": -153.1306658696524,
+      "lambda_squared": 67131.71768500593,
+      "center_residual_norm": 379095.0770717059,
+      "cone_ratio": 0.7099299415966697,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.002810875817812989,
+      "target": [
+        -78.25402211501664,
+        235.3596091722369
+      ],
+      "target_dot_N": -175.2395790871358,
+      "lambda_squared": 64381.685205931564,
+      "center_residual_norm": 160538.01578172302,
+      "cone_ratio": 0.7441159478450744,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.0028885947722662366,
+      "target": [
+        -86.93937143141056,
+        241.74614119933926
+      ],
+      "target_dot_N": -178.70181858594495,
+      "lambda_squared": 58900.79505539565,
+      "center_residual_norm": 180677.81067849696,
+      "cone_ratio": 0.7756099153267477,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.002966313726719484,
+      "target": [
+        -87.00551469932083,
+        227.80066625764601
+      ],
+      "target_dot_N": -167.37349277201736,
+      "lambda_squared": 51037.41003675504,
+      "center_residual_norm": 428735.54379271285,
+      "cone_ratio": 0.7940253382812404,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.0030440326811727314,
+      "target": [
+        -77.86948455784552,
+        200.74182756394367
+      ],
+      "target_dot_N": -147.7400082983808,
+      "lambda_squared": 41574.248264761394,
+      "center_residual_norm": 628707.3468439723,
+      "cone_ratio": 0.7824266052323925,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.003121751635625979,
+      "target": [
+        -60.31209822550937,
+        167.71460773034798
+      ],
+      "target_dot_N": -125.85889150463595,
+      "lambda_squared": 31570.68992528385,
+      "center_residual_norm": 738864.6824619686,
+      "cone_ratio": 0.7185009340436675,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.003199470590079226,
+      "target": [
+        -36.26768456104975,
+        133.10323540821926
+      ],
+      "target_dot_N": -104.95657669238561,
+      "lambda_squared": 22120.22658661968,
+      "center_residual_norm": 745529.1569719042,
+      "cone_ratio": 0.5841805350492283,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.0032771895445324736,
+      "target": [
+        -8.49021407481137,
+        97.24588109510371
+      ],
+      "target_dot_N": -84.33488965898509,
+      "lambda_squared": 14102.977699574123,
+      "center_residual_norm": 653963.7696556926,
+      "cone_ratio": 0.3742264507738291,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.0033549084989857206,
+      "target": [
+        19.850862193402445,
+        56.83230058557576
+      ],
+      "target_dot_N": -59.85670723313255,
+      "lambda_squared": 8014.4251695065095,
+      "center_residual_norm": 484856.3341511998,
+      "cone_ratio": 0.06287497494558612,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.003432627453438968,
+      "target": [
+        45.595045119355476,
+        6.844176293550197
+      ],
+      "target_dot_N": -25.870466611662813,
+      "lambda_squared": 3919.8512179384275,
+      "center_residual_norm": 270384.94874357537,
+      "cone_ratio": 0.7613458846718638,
+      "strict_local_pass": true
+    }
+  ],
+  "holdout": {
+    "heights": [
+      0.0025388594772266238,
+      0.002616578431679871,
+      0.0026942973861331185,
+      0.0027720163405863655,
+      0.002849735295039613,
+      0.0029274542494928603,
+      0.0030051732039461077,
+      0.003082892158399355,
+      0.0031606111128526025,
+      0.00323833006730585,
+      0.003316049021759097,
+      0.0033937679762123443
+    ],
+    "pass_count": 12,
+    "max_cone_ratio": 0.7933144834260805,
+    "rows": [
+      {
+        "z": 0.0025388594772266238,
+        "target": [
+          -17.930372482866662,
+          58.34796492548861
+        ],
+        "target_dot_N": -42.09253443712749,
+        "lambda_squared": 63623.15852153725,
+        "center_residual_norm": 463379.72479688906,
+        "cone_ratio": 0.68329427650196,
+        "strict_local_pass": true
+      },
+      {
+        "z": 0.002616578431679871,
+        "target": [
+          -34.643922983433264,
+          121.2483642212686
+        ],
+        "target_dot_N": -90.1201789834658,
+        "lambda_squared": 66483.61833486758,
+        "center_residual_norm": 535419.5066798187,
+        "cone_ratio": 0.6706369160067898,
+        "strict_local_pass": true
+      },
+      {
+        "z": 0.0026942973861331185,
+        "target": [
+          -53.7313205264358,
+          180.86985028717163
+        ],
+        "target_dot_N": -135.29579671184854,
+        "lambda_squared": 67501.78433185778,
+        "center_residual_norm": 462422.9431851744,
+        "cone_ratio": 0.6940922436632109,
+        "strict_local_pass": true
+      },
+      {
+        "z": 0.0027720163405863655,
+        "target": [
+          -71.2466442790445,
+          223.1060042106485
+        ],
+        "target_dot_N": -166.57224654916672,
+        "lambda_squared": 66101.19318426448,
+        "center_residual_norm": 273832.51887342316,
+        "cone_ratio": 0.7268873566559902,
+        "strict_local_pass": true
+      },
+      {
+        "z": 0.002849735295039613,
+        "target": [
+          -83.58205461387016,
+          241.45602073787597
+        ],
+        "target_dot_N": -179.158514725371,
+        "lambda_squared": 61972.00192090637,
+        "center_residual_norm": 97671.79403158797,
+        "cone_ratio": 0.7607234113759826,
+        "strict_local_pass": true
+      },
+      {
+        "z": 0.0029274542494928603,
+        "target": [
+          -88.1196224588306,
+          236.90061408157592
+        ],
+        "target_dot_N": -174.5058331017616,
+        "lambda_squared": 55226.90437547434,
+        "center_residual_norm": 305919.4035160245,
+        "cone_ratio": 0.7873367419324685,
+        "strict_local_pass": true
+      },
+      {
+        "z": 0.0030051732039461077,
+        "target": [
+          -83.56920621704116,
+          215.42504889784962
+        ],
+        "target_dot_N": -158.17292651433777,
+        "lambda_squared": 46443.471824881795,
+        "center_residual_norm": 538249.5088375628,
+        "cone_ratio": 0.7933144834260805,
+        "strict_local_pass": true
+      },
+      {
+        "z": 0.003082892158399355,
+        "target": [
+          -70.04615922117965,
+          184.61250789521787
+        ],
+        "target_dot_N": -136.79209566669715,
+        "lambda_squared": 36569.38251381807,
+        "center_residual_norm": 696351.0332269097,
+        "cone_ratio": 0.758399569979907,
+        "strict_local_pass": true
+      },
+      {
+        "z": 0.0031606111128526025,
+        "target": [
+          -48.94333720359092,
+          150.48730697344408
+        ],
+        "target_dot_N": -115.2349216385358,
+        "lambda_squared": 26713.764433303117,
+        "center_residual_norm": 755209.9821429049,
+        "cone_ratio": 0.6607335384058012,
+        "strict_local_pass": true
+      },
+      {
+        "z": 0.00323833006730585,
+        "target": [
+          -22.65223789685335,
+          115.46781442182295
+        ],
+        "target_dot_N": -94.80505384549507,
+        "lambda_squared": 17891.264349371882,
+        "center_residual_norm": 711048.011307471,
+        "cone_ratio": 0.48880126392258905,
+        "strict_local_pass": true
+      },
+      {
+        "z": 0.003316049021759097,
+        "target": [
+          5.812521481909263,
+          77.91363384502479
+        ],
+        "target_dot_N": -72.92614184559264,
+        "lambda_squared": 10803.846897549713,
+        "center_residual_norm": 577317.1939117424,
+        "cone_ratio": 0.23685914610365097,
+        "strict_local_pass": true
+      },
+      {
+        "z": 0.0033937679762123443,
+        "target": [
+          33.23346549071647,
+          33.33840650671654
+        ],
+        "target_dot_N": -44.389814527463926,
+        "lambda_squared": 5729.135272328715,
+        "center_residual_norm": 380914.1124295834,
+        "cone_ratio": 0.19539550050122562,
+        "strict_local_pass": true
+      }
+    ]
+  }
+}
