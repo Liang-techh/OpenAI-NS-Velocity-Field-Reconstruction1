@@ -29,3 +29,17 @@ then derive moment constraints and test a realizable correction stress. Preserve
 the local recurrence as a boundary-data provider, not a replacement for the
 paper's outer correction mechanism. Source-inspired modifications and autonomous
 choices must be labeled separately. Full momentum max/L2 gates stay1e-3.
+
+
+Revisited Section7, pp73--75 on2026-09-24 after the small gains from background
+collocation. Equations(7.1),(7.5),(7.6) require more than positive covariance:
+the phase-dependent amplitude equation retains shear, cylindrical connection
+and viscosity, and the prescribed stress direction must lie strictly inside
+the realizable cone. Compact vector-potential curls enforce incompressibility;
+their extra terms still belong in the residual. Thus a static PSD completion
+or a generic sinusoidal perturbation is not the paper's pulse construction.
+Next extract the actual local angular velocity and tangential radial shear,
+screen the frozen tangential growth operator, and then integrate constrained
+phase/amplitude dynamics before constructing any non-axisymmetric candidate.
+This local screen will be a diagnostic approximation: the paper's leading
+normalized background is not identical to the corrected physical ST073 field.

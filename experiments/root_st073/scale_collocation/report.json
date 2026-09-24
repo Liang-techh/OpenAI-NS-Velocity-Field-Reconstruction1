@@ -1,0 +1,253 @@
+{
+  "fixed_amplitudes": [
+    0.0014828085546480206,
+    0.08341942033568331,
+    0.001601462422791731,
+    0.12212573287365704,
+    6.411219907201077e-05,
+    0.004394327571704963,
+    3.9999999999999996,
+    -0.17996443404045542,
+    1.4130791478557738,
+    0.6737082795725133,
+    -3.9999999999999996,
+    -1.4217924466882987,
+    -0.02584645357976666,
+    0.0055684332170100066,
+    0.18297952287725197,
+    0.16037644837734089,
+    -0.004168187388335524,
+    -0.1551683298726663,
+    -0.013690963574736077,
+    0.0017311495914287868,
+    0.06308487766335633,
+    0.047920761283505066,
+    -0.0008121201933681017,
+    -0.03516085759312509
+  ],
+  "scale_amplitudes": [
+    [
+      0.0014828260217722802,
+      0.08342124536742183,
+      0.0016014374809711688,
+      0.12213109634398901,
+      6.410540250765385e-05,
+      0.004395244787072578,
+      3.9999999999999996,
+      -0.1800043758560285,
+      1.413328136125073,
+      0.6737486285749521,
+      -3.9999999999999996,
+      -1.4218833695097426,
+      -0.02584142406838178,
+      0.0055683854280212846,
+      0.18297945964761264,
+      0.16037565579808252,
+      -0.004168230478636445,
+      -0.15517387136626318,
+      -0.013689485976842214,
+      0.001731108725113588,
+      0.06308348305485241,
+      0.04792063069228143,
+      -0.0008121281787866128,
+      -0.035161784998277
+    ],
+    [
+      -1.5307739590179888e-06,
+      -0.00010576347370829688,
+      7.648928789471189e-06,
+      0.00023318709837407081,
+      1.8643688654280218e-06,
+      0.00013668212400841509,
+      -0.007081927991829432,
+      0.0067831324688792305,
+      -0.021191455932963295,
+      -0.004985802083881767,
+      0.220488247182588,
+      0.019380349036496766,
+      -0.000815006006753911,
+      -2.821488148200266e-05,
+      -0.0017642557827182396,
+      0.00021231080241869153,
+      4.123558353779001e-05,
+      0.0022958884928393273,
+      -0.0002546051779873661,
+      -4.223478909969895e-06,
+      -0.00035027518233765674,
+      1.998947258925872e-05,
+      8.051280354121928e-06,
+      0.00044396133488442747
+    ]
+  ],
+  "fits": {
+    "fixed": {
+      "cost": 12.316006538514193,
+      "nfev": 3,
+      "success": true
+    },
+    "scale": {
+      "cost": 12.31578233446319,
+      "nfev": 4,
+      "success": true
+    }
+  },
+  "holdouts": [
+    {
+      "k": 2.5,
+      "eta": -0.2,
+      "baseline": {
+        "momentum_max": 1911.492561724033,
+        "theta_max": 317.20818411012954,
+        "terminal_rtheta": -0.19795887958028846,
+        "divergence_max": 2.226477775479907e-07,
+        "terminal_rz": 0.2201041377184595
+      },
+      "matched_fixed": {
+        "momentum_max": 1741.0537821617686,
+        "theta_max": 288.6785900127989,
+        "terminal_rtheta": -0.16482040254611194,
+        "divergence_max": 3.666903793941856e-07,
+        "terminal_rz": 0.20751661510243588
+      },
+      "scale_dependent": {
+        "momentum_max": 1740.8866840486758,
+        "theta_max": 288.7970310331091,
+        "terminal_rtheta": -0.1647509318645502,
+        "divergence_max": 3.6668088654323583e-07,
+        "terminal_rz": 0.2075241524986913
+      }
+    },
+    {
+      "k": 2.5,
+      "eta": 0.2,
+      "baseline": {
+        "momentum_max": 1992.3109231624971,
+        "theta_max": 317.1181303537334,
+        "terminal_rtheta": -0.19794762238573632,
+        "divergence_max": 2.2380805830835016e-07,
+        "terminal_rz": -0.22847007408763234
+      },
+      "matched_fixed": {
+        "momentum_max": 1810.4332479562138,
+        "theta_max": 292.41581517525526,
+        "terminal_rtheta": -0.1640867046234791,
+        "divergence_max": 3.6981025886007046e-07,
+        "terminal_rz": -0.23946385409496565
+      },
+      "scale_dependent": {
+        "momentum_max": 1810.2606404142077,
+        "theta_max": 292.5390040355396,
+        "terminal_rtheta": -0.16401635254326327,
+        "divergence_max": 3.6979392348257534e-07,
+        "terminal_rz": -0.23946949897681363
+      }
+    },
+    {
+      "k": 5.5,
+      "eta": -0.2,
+      "baseline": {
+        "momentum_max": 43526.90877830576,
+        "theta_max": 7242.0176040350825,
+        "terminal_rtheta": -1.5998242443353448,
+        "divergence_max": 1.7761179833541973e-06,
+        "terminal_rz": 1.7657346488240926
+      },
+      "matched_fixed": {
+        "momentum_max": 39630.1484653105,
+        "theta_max": 6591.1784978543255,
+        "terminal_rtheta": -1.3368273784724147,
+        "divergence_max": 2.928410026470374e-06,
+        "terminal_rz": 1.6639339197222625
+      },
+      "scale_dependent": {
+        "momentum_max": 39649.34724244476,
+        "theta_max": 6577.625046466292,
+        "terminal_rtheta": -1.3392905105997523,
+        "divergence_max": 2.92915819954942e-06,
+        "terminal_rz": 1.6636330446638359
+      }
+    },
+    {
+      "k": 5.5,
+      "eta": 0.2,
+      "baseline": {
+        "momentum_max": 45373.40025890224,
+        "theta_max": 7239.965441112534,
+        "terminal_rtheta": -1.5997311755348922,
+        "divergence_max": 1.7854585507848242e-06,
+        "terminal_rz": -1.8331950808075663
+      },
+      "matched_fixed": {
+        "momentum_max": 41214.96934498486,
+        "theta_max": 6676.464665884642,
+        "terminal_rtheta": -1.3309277642440542,
+        "divergence_max": 2.9535024168581003e-06,
+        "terminal_rz": -1.9220140271642616
+      },
+      "scale_dependent": {
+        "momentum_max": 41234.76572274155,
+        "theta_max": 6662.361625917589,
+        "terminal_rtheta": -1.333419749942828,
+        "divergence_max": 2.954336878246977e-06,
+        "terminal_rz": -1.9217606500300946
+      }
+    }
+  ],
+  "volume_audit": [
+    {
+      "k": 2.5,
+      "field": "baseline",
+      "volume": 2.1796739241161353e-05,
+      "momentum_sampled_max": 2989.5054077443187,
+      "momentum_volume_L2": 5.485468948654772,
+      "divergence_sampled_max": 2.2543016342524425e-07
+    },
+    {
+      "k": 2.5,
+      "field": "matched_fixed",
+      "volume": 2.1796739241161353e-05,
+      "momentum_sampled_max": 2600.4435767126056,
+      "momentum_volume_L2": 5.133038884049107,
+      "divergence_sampled_max": 3.7910655947825944e-07
+    },
+    {
+      "k": 2.5,
+      "field": "scale_dependent",
+      "volume": 2.1796739241161353e-05,
+      "momentum_sampled_max": 2600.2412108966046,
+      "momentum_volume_L2": 5.1333925698869125,
+      "divergence_sampled_max": 3.7910702843646504e-07
+    },
+    {
+      "k": 5.5,
+      "field": "baseline",
+      "volume": 9.733566450338843e-07,
+      "momentum_sampled_max": 68136.50493283947,
+      "momentum_volume_L2": 26.39808660769519,
+      "divergence_sampled_max": 1.796323601865879e-06
+    },
+    {
+      "k": 5.5,
+      "field": "matched_fixed",
+      "volume": 9.733566450338843e-07,
+      "momentum_sampled_max": 59244.12160870271,
+      "momentum_volume_L2": 24.704374882285283,
+      "divergence_sampled_max": 3.031479366200074e-06
+    },
+    {
+      "k": 5.5,
+      "field": "scale_dependent",
+      "volume": 9.733566450338843e-07,
+      "momentum_sampled_max": 59266.69889884589,
+      "momentum_volume_L2": 24.6954402974665,
+      "divergence_sampled_max": 3.0315286778659356e-06
+    }
+  ],
+  "surrogate_full_fd_max_difference": 6.47455635771621e-07,
+  "scale": "a(k)=a0+((k-3)/3)*a1, k=-log2(2tau). s_t=1/(3 ln(2) tau) for increasing physical time. Amplitude is spatially constant at fixed time, preserving divergence.",
+  "bounds": "Each intercept and slope in[-4,4]; effective amplitudes need not stay in[-4,4]. Training k=1,3,5, eta=-.3,0,.3; held-out k=2.5,5.5, eta=+/-.2.",
+  "derivative": "Scale-mode jets use product rule with analytic s_t; independent full-field FD includes variable amplitudes at every time stencil. This is time dependence, NOT a proved scale recursion.",
+  "scope": "Same unforced frozen core and interface jets; finite annular/axial slab only. Volume quadrature12x8 on eta in[-.4,.4], ri<r<2ri, all azimuths. No whole-space energy, axial closure, continuum max or converged quadrature certificate.",
+  "pde_validated": false,
+  "global_field_ready": false
+}

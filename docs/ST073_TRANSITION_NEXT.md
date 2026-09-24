@@ -303,3 +303,33 @@ space and physical time, then test a cross-scale solve. Inspect actual moment
 transport and outer matching freedoms before imposing a radial stress inverse.
 If gains stay small, advance the paper-inspired stress realization route rather
 than equating increasingly complex Hermite bubbles with dynamical matching.
+
+
+## Explicit log-time amplitude comparison
+
+`scale_collocation.py` extends24 joint coefficients to a0+s*a1, where
+s=(k-3)/3 and k=-log2(2*tau). The amplitude depends only on time, so it
+preserves the spatial divergence-free streamfunction/swirl construction and
+all endpoint jets. The optimizer explicitly includes s_t*delta_u in momentum,
+s_t=1/(3*ln(2)*tau), for increasing physical time. Product-rule jets are
+compared against full-field FD with varying amplitudes at every time stencil.
+
+A24-coefficient constant model and48-coefficient varying model are fitted on
+IDENTICAL k=1,3,5 and eta=-.3,0,.3 data, with the same pointwise/moment objective,
+bounds and regularizer. Initializing the varying model from the fitted constant
+model avoids attributing extra training data to amplitude variation. Intercepts
+and slopes are individually bounded[-4,4]; effective coefficients can exceed
+that interval, which is reported explicitly. Holdouts remain k=2.5,5.5 and
+eta=+/-.2, with a separate physical-volume subdomain audit. This is a finite
+log-time ansatz, NOT a closed scale-recursion law or singularity construction.
+Artifact: experiments/root_st073/scale_collocation/report.json.
+
+
+Matched-data outcome: at k5.5, varying coefficients slightly worsen subdomain
+max59244.12 ->59266.70 while slightly reducing L2 24.7044 ->24.6954.
+At k2.5, max2600.444 ->2600.241 while L2 5.133039 ->5.133393 worsens.
+No consistent improvement on both gates; do not promote this variant or
+continue increasing temporal polynomial degree without a new mechanism.
+The next route is the actual shear/phase/amplitude dynamics of paper Section7,
+with the approximation limits recorded in ST073_PAPER_ROUTE.md. Global energy,
+axial closure, recursive scale control and the1e-3 gates remain unfulfilled.
