@@ -1,0 +1,237 @@
+{
+  "rows": [
+    {
+      "k": 0,
+      "X": 0.015625,
+      "radius_ratio_to_frozen": 1.0,
+      "residual_max_by_order": {
+        "8": 1.3682252197789955e-09,
+        "10": 2.630597698674804e-12
+      },
+      "velocity_order_difference": 7.150923899805918e-14,
+      "pressure_order_difference": 1.2068471222370647e-13
+    },
+    {
+      "k": 0,
+      "X": 0.0234375,
+      "radius_ratio_to_frozen": 1.224744871391589,
+      "residual_max_by_order": {
+        "8": 3.508185315956677e-08,
+        "10": 1.5227966176582017e-10
+      },
+      "velocity_order_difference": 2.7906026836301787e-12,
+      "pressure_order_difference": 4.731538078006636e-12
+    },
+    {
+      "k": 0,
+      "X": 0.03125,
+      "radius_ratio_to_frozen": 1.4142135623730951,
+      "residual_max_by_order": {
+        "8": 3.5065978856087876e-07,
+        "10": 2.7145997106310886e-09
+      },
+      "velocity_order_difference": 3.7726347966387516e-11,
+      "pressure_order_difference": 6.424124773807272e-11
+    },
+    {
+      "k": 0,
+      "X": 0.046875,
+      "radius_ratio_to_frozen": 1.7320508075688772,
+      "residual_max_by_order": {
+        "8": 9.06360335479699e-06,
+        "10": 1.5780904381380684e-07
+      },
+      "velocity_order_difference": 1.4940643136669157e-09,
+      "pressure_order_difference": 2.5638550935069837e-09
+    },
+    {
+      "k": 0,
+      "X": 0.0625,
+      "radius_ratio_to_frozen": 2.0,
+      "residual_max_by_order": {
+        "8": 9.1350096186846e-05,
+        "10": 2.826599134217594e-06
+      },
+      "velocity_order_difference": 2.0492469640724626e-08,
+      "pressure_order_difference": 3.540083800060434e-08
+    },
+    {
+      "k": 0,
+      "X": 0.09375,
+      "radius_ratio_to_frozen": 2.449489742783178,
+      "residual_max_by_order": {
+        "8": 0.0023878929526190565,
+        "10": 0.00016613241647793416
+      },
+      "velocity_order_difference": 8.348446851998707e-07,
+      "pressure_order_difference": 1.457393794694617e-06
+    },
+    {
+      "k": 0,
+      "X": 0.125,
+      "radius_ratio_to_frozen": 2.8284271247461903,
+      "residual_max_by_order": {
+        "8": 0.02438978058682461,
+        "10": 0.0030153291388912706
+      },
+      "velocity_order_difference": 1.1780590399276018e-05,
+      "pressure_order_difference": 2.0694771849211202e-05
+    },
+    {
+      "k": 3,
+      "X": 0.015625,
+      "radius_ratio_to_frozen": 1.0,
+      "residual_max_by_order": {
+        "8": 2.701377758582441e-08,
+        "10": 5.018574698467623e-11
+      },
+      "velocity_order_difference": 1.7658802697681806e-13,
+      "pressure_order_difference": 8.519296379461139e-13
+    },
+    {
+      "k": 3,
+      "X": 0.0234375,
+      "radius_ratio_to_frozen": 1.224744871391589,
+      "residual_max_by_order": {
+        "8": 6.926759139568698e-07,
+        "10": 2.9053173960712842e-09
+      },
+      "velocity_order_difference": 6.891283475111726e-12,
+      "pressure_order_difference": 3.339079013287005e-11
+    },
+    {
+      "k": 3,
+      "X": 0.03125,
+      "radius_ratio_to_frozen": 1.4142135623730951,
+      "residual_max_by_order": {
+        "8": 6.933453012653511e-06,
+        "10": 5.1791985115761965e-08
+      },
+      "velocity_order_difference": 9.313931298242209e-11,
+      "pressure_order_difference": 4.5322137709469246e-10
+    },
+    {
+      "k": 3,
+      "X": 0.046875,
+      "radius_ratio_to_frozen": 1.7320508075688772,
+      "residual_max_by_order": {
+        "8": 0.00017920956708338123,
+        "10": 3.010868656005579e-06
+      },
+      "velocity_order_difference": 3.68660891949733e-09,
+      "pressure_order_difference": 1.8077870506116867e-08
+    },
+    {
+      "k": 3,
+      "X": 0.0625,
+      "radius_ratio_to_frozen": 2.0,
+      "residual_max_by_order": {
+        "8": 0.001806186348532379,
+        "10": 5.3929128255196805e-05
+      },
+      "velocity_order_difference": 5.053922590338671e-08,
+      "pressure_order_difference": 2.494834794863898e-07
+    },
+    {
+      "k": 3,
+      "X": 0.09375,
+      "radius_ratio_to_frozen": 2.449489742783178,
+      "residual_max_by_order": {
+        "8": 0.04720588358568022,
+        "10": 0.0031695483600324916
+      },
+      "velocity_order_difference": 2.0626588011300726e-06,
+      "pressure_order_difference": 1.0261209757361778e-05
+    },
+    {
+      "k": 3,
+      "X": 0.125,
+      "radius_ratio_to_frozen": 2.8284271247461903,
+      "residual_max_by_order": {
+        "8": 0.4821095057142807,
+        "10": 0.05752226422775736
+      },
+      "velocity_order_difference": 2.9108054264740863e-05,
+      "pressure_order_difference": 0.00014558809519465976
+    },
+    {
+      "k": 6,
+      "X": 0.015625,
+      "radius_ratio_to_frozen": 1.0,
+      "residual_max_by_order": {
+        "8": 5.336024474601905e-07,
+        "10": 9.584799854486992e-10
+      },
+      "velocity_order_difference": 4.366808801185467e-13,
+      "pressure_order_difference": 6.0176308380732735e-12
+    },
+    {
+      "k": 6,
+      "X": 0.0234375,
+      "radius_ratio_to_frozen": 1.224744871391589,
+      "residual_max_by_order": {
+        "8": 1.3683063181993294e-05,
+        "10": 5.546561470087867e-08
+      },
+      "velocity_order_difference": 1.702682193726451e-11,
+      "pressure_order_difference": 2.357729567137312e-10
+    },
+    {
+      "k": 6,
+      "X": 0.03125,
+      "radius_ratio_to_frozen": 1.4142135623730951,
+      "residual_max_by_order": {
+        "8": 0.00013716123339089058,
+        "10": 9.887589937045205e-07
+      },
+      "velocity_order_difference": 2.3006397379935184e-10,
+      "pressure_order_difference": 3.1992744009556873e-09
+    },
+    {
+      "k": 6,
+      "X": 0.046875,
+      "radius_ratio_to_frozen": 1.7320508075688772,
+      "residual_max_by_order": {
+        "8": 0.0035451932530606136,
+        "10": 5.748077652221856e-05
+      },
+      "velocity_order_difference": 9.108527980003214e-09,
+      "pressure_order_difference": 1.275410010936895e-07
+    },
+    {
+      "k": 6,
+      "X": 0.0625,
+      "radius_ratio_to_frozen": 2.0,
+      "residual_max_by_order": {
+        "8": 0.035730148890129064,
+        "10": 0.0010295650864155246
+      },
+      "velocity_order_difference": 1.2512006083969648e-07,
+      "pressure_order_difference": 1.7592288088508212e-06
+    },
+    {
+      "k": 6,
+      "X": 0.09375,
+      "radius_ratio_to_frozen": 2.449489742783178,
+      "residual_max_by_order": {
+        "8": 0.9336996014283127,
+        "10": 0.060507982198710536
+      },
+      "velocity_order_difference": 5.105113313436635e-06,
+      "pressure_order_difference": 7.229001100395038e-05
+    },
+    {
+      "k": 6,
+      "X": 0.125,
+      "radius_ratio_to_frozen": 2.8284271247461903,
+      "residual_max_by_order": {
+        "8": 9.534589289200207,
+        "10": 1.0980226192913582
+      },
+      "velocity_order_difference": 7.197008475464393e-05,
+      "pressure_order_difference": 0.0010248342305407832
+    }
+  ],
+  "scope": "Explicit autonomous extension beyond frozen Xmax; same axis data, nu=.01, unforced. Boundary samples at 25 eta nodes only. No whole-annulus L2, finite-total-energy or exterior matching acceptance.",
+  "global_field_ready": false
+}

@@ -62,3 +62,21 @@ Next use these stresses together with mass/velocity traces to build a transition
 check volume momentum-rate plus boundary flux before selecting an exterior.
 Artifacts: `experiments/root_st073/moving_interface/stress_flux.json` and
 `stress_k0.npz`, `stress_k3.npz`, `stress_k6.npz`.
+
+## Radial continuation constructed
+
+An explicitly separate order10 continuation keeps ST073-V axis data and nu,
+extends Xmax from1/64 to3/64 (radius factor sqrt3), and preserves solenoidality
+through the same full recurrence. Frozen model unchanged. At the original
+interface k6, order8/10 velocity difference4.37e-13 and pressure6.02e-12.
+The new annulus X in[1/64,3/64], |eta|<=.5 has k6 sampled boundary max5.748e-5;
+12x18 volume quadrature max5.463e-5 and physical L2=4.668e-9, volume1.780e-7.
+Orders8x12 and12x18 were evaluated at k0/3/6. This is a finite local extension,
+NOT decay to an exterior or proof across all points/times. Tiny volume explains
+part of L2. Independent FD and separate directional convergence remain pending.
+At X=1/16 (twice original radius), order10 boundary max1.0296e-3 fails the gate;
+recorded wider-radius failures must remain. Next use the new outer boundary
+for a dynamical transition, or assess higher-order radial continuation with
+independent derivatives; do not mask outer errors by cutting the field off.
+Reproduce: radial_continuation.py then annulus_check.py in experiments/root_st073.
+Artifacts and explicit new model: experiments/root_st073/radial_continuation/.

@@ -1,0 +1,20 @@
+{
+  "id": "ST073-V-order10-radial-extension",
+  "parameters": {
+    "order": 10,
+    "jet_extra": 3,
+    "axis_terms": 120,
+    "h": 0.005,
+    "nu": 0.01,
+    "axis_swirl": 4,
+    "axial_slope": 4.0,
+    "axial_bias": 0.02,
+    "pressure": 1.0,
+    "X_max": 0.046875,
+    "eta_max": 0.5,
+    "k_max": 6.0
+  },
+  "scope": "Explicit autonomous radial extension; small finite domain only, no global energy or exterior matching",
+  "pde_validated": false,
+  "global_field_ready": false
+}

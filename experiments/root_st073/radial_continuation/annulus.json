@@ -1,0 +1,69 @@
+{
+  "rows": [
+    {
+      "k": 0,
+      "radial_order": 8,
+      "axial_order": 12,
+      "volume": 8.923706102917462e-05,
+      "momentum_max": 1.3468948930557716e-07,
+      "momentum_volume_L2": 3.1384889654061143e-10,
+      "divergence_max": 1.7763568394002505e-15
+    },
+    {
+      "k": 3,
+      "radial_order": 8,
+      "axial_order": 12,
+      "volume": 3.9849761643252745e-06,
+      "momentum_max": 2.5760208755003182e-06,
+      "momentum_volume_L2": 1.2673614566665175e-09,
+      "divergence_max": 1.4210854715202004e-14
+    },
+    {
+      "k": 6,
+      "radial_order": 8,
+      "axial_order": 12,
+      "volume": 1.7795336205714862e-07,
+      "momentum_max": 4.9301787125405295e-05,
+      "momentum_volume_L2": 5.121363300935172e-09,
+      "divergence_max": 1.1368683772161603e-13
+    },
+    {
+      "k": 0,
+      "radial_order": 12,
+      "axial_order": 18,
+      "volume": 8.923706102926865e-05,
+      "momentum_max": 1.498905666403527e-07,
+      "momentum_volume_L2": 2.865088694886501e-10,
+      "divergence_max": 1.7763568394002505e-15
+    },
+    {
+      "k": 3,
+      "radial_order": 12,
+      "axial_order": 18,
+      "volume": 3.984976164329472e-06,
+      "momentum_max": 2.8605799354784384e-06,
+      "momentum_volume_L2": 1.1560640834424823e-09,
+      "divergence_max": 1.4210854715202004e-14
+    },
+    {
+      "k": 6,
+      "radial_order": 12,
+      "axial_order": 18,
+      "volume": 1.7795336205733608e-07,
+      "momentum_max": 5.462704677835586e-05,
+      "momentum_volume_L2": 4.667977117167233e-09,
+      "divergence_max": 1.1368683772161603e-13
+    }
+  ],
+  "annulus_X": [
+    0.015625,
+    0.046875
+  ],
+  "eta": [
+    -0.5,
+    0.5
+  ],
+  "scope": "Full local unforced momentum integrated with physical volume Jacobian; quadrature nodes only, no continuum bound, no independent FD repeat, no exterior or global admission",
+  "pde_validated": false,
+  "global_field_ready": false
+}
