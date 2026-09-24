@@ -130,3 +130,18 @@ residual, axial caps or finite-global-energy acceptance is supplied by this step
 Next construct compatible poloidal streamfunction transport and derive the full
 transition residual stress; do not interpret endpoint matching as NS acceptance.
 Artifact: experiments/root_st073/swirl_bridge/coefficients.json.
+
+## Poloidal streamfunction bridge constructed
+
+poloidal_bridge.py builds a septic psi(r,z,t) matching corrected inner radial
+jets through order3, and zero jets at outer radius2ri. Combined u_r=-psi_z/r,
+u_z=psi_r/r is solenoidal when moving endpoints are differentiated consistently.
+This is an autonomous interpolation, not a paper-derived dynamic solution.
+Its zero outer streamfunction forces return transport: at k6,eta=.4 core axial
+flux5.22367e-5 is balanced by annular flux-5.22367e-5. Sampled annular axial
+velocity ranges -2.3740 to2.1197; return flow cannot be ignored in stress fitting.
+Endpoint residuals are recorded; full z/time derivatives, pressure joining,
+complete momentum and axial closure remain pending. No arbitrary force added.
+Next evaluate the combined swirl/streamfunction bridge and integrate its actual
+stress defect, then test the paper-inspired moment/covariance correction.
+Artifact: experiments/root_st073/poloidal_bridge/coefficients.json.
