@@ -10,13 +10,13 @@ from numpy.polynomial.legendre import leggauss
 
 from compact_potential import CompactPotentialField
 from joined_field import ROOT, coordinates
-from radial_peak_cone import current_field, operator
+from radial_peak_cone import current_field, inner_similarity_exponent, operator
 
 
 def evaluate_height(field, radii, z, tau, r_support, z_support,
                     quadrature_order=8):
     q = float(coordinates(0., z/np.sqrt(field.nu), tau,
-                          field.base.base.inner.h)['q'])
+                          inner_similarity_exponent(field))['q'])
     inner_radius = np.sqrt(field.nu)*np.sqrt(2*q*3/64)
     edges = sorted(set([0., inner_radius]+list(radii)))
     nodes, weights = leggauss(quadrature_order)
