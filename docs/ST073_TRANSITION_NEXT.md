@@ -115,3 +115,18 @@ Artifact: experiments/root_st073/compact_control/report.json.
 Read docs/ST073_PAPER_ROUTE.md before new construction. Official PDF was reopened;
 actual heat-exterior direct-join screen rejects value-only matching.
 Evidence: experiments/root_st073/heat_join/screen.json.
+
+## C2 radial swirl component constructed
+
+swirl_bridge.py uses actual corrected coefficient jets at X=3/64 and the frozen
+heat-exterior amplitude to build an autonomous quintic on r in[ri,2ri]. Values,
+first and second physical radial derivatives match at both ends. At nine k/eta
+probes endpoint absolute errors are <=4.22e-15,3.09e-12,3.05e-9 respectively;
+101 radial samples per bridge retain positive swirl. This removes the tangential
+viscous traction jump at those interfaces without fitting force. The polynomial
+is OUR interpolation, not a formula claimed from the paper. It is only a swirl
+component, not the complete transition: no poloidal velocity, pressure, dynamic
+residual, axial caps or finite-global-energy acceptance is supplied by this step.
+Next construct compatible poloidal streamfunction transport and derive the full
+transition residual stress; do not interpret endpoint matching as NS acceptance.
+Artifact: experiments/root_st073/swirl_bridge/coefficients.json.
