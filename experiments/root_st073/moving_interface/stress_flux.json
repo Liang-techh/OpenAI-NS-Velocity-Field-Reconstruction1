@@ -1,0 +1,73 @@
+{
+  "rows": [
+    {
+      "order": 12,
+      "k": 0,
+      "axial_stress_integral": 7.503511077602127e-07,
+      "axial_relative_advective_flux": 9.916793348698338e-07,
+      "axial_net_outward_momentum_flux": 2.413282271096261e-07,
+      "axial_torque_stress": -1.543184467890493e-07,
+      "axial_angular_momentum_outward_flux": 8.29514533711491e-08,
+      "gradient_trace_max": 8.881784197001252e-16,
+      "vorticity_replay_error": 1.7763568394002505e-15
+    },
+    {
+      "order": 12,
+      "k": 3,
+      "axial_stress_integral": 7.659884371840844e-07,
+      "axial_relative_advective_flux": 1.0123728714006379e-06,
+      "axial_net_outward_momentum_flux": 2.4638443421654837e-07,
+      "axial_torque_stress": -5.567687666846343e-08,
+      "axial_angular_momentum_outward_flux": 2.9942101106451667e-08,
+      "gradient_trace_max": 3.552713678800501e-15,
+      "vorticity_replay_error": 1.4210854715202004e-14
+    },
+    {
+      "order": 12,
+      "k": 6,
+      "axial_stress_integral": 7.819542779791508e-07,
+      "axial_relative_advective_flux": 1.033501162551105e-06,
+      "axial_net_outward_momentum_flux": 2.5154688457196776e-07,
+      "axial_torque_stress": -2.008799729573533e-08,
+      "axial_angular_momentum_outward_flux": 1.0807894913400539e-08,
+      "gradient_trace_max": 5.684341886080802e-14,
+      "vorticity_replay_error": 1.1368683772161603e-13
+    },
+    {
+      "order": 24,
+      "k": 0,
+      "axial_stress_integral": 7.50351107760175e-07,
+      "axial_relative_advective_flux": 9.916793348697948e-07,
+      "axial_net_outward_momentum_flux": 2.413282271096257e-07,
+      "axial_torque_stress": -1.543184467890543e-07,
+      "axial_angular_momentum_outward_flux": 8.295145337112246e-08,
+      "gradient_trace_max": 1.7763568394002505e-15,
+      "vorticity_replay_error": 1.7763568394002505e-15
+    },
+    {
+      "order": 24,
+      "k": 3,
+      "axial_stress_integral": 7.659884371840406e-07,
+      "axial_relative_advective_flux": 1.0123728714005972e-06,
+      "axial_net_outward_momentum_flux": 2.463844342165547e-07,
+      "axial_torque_stress": -5.5676876668465316e-08,
+      "axial_angular_momentum_outward_flux": 2.9942101106442124e-08,
+      "gradient_trace_max": 1.4210854715202004e-14,
+      "vorticity_replay_error": 1.4210854715202004e-14
+    },
+    {
+      "order": 24,
+      "k": 6,
+      "axial_stress_integral": 7.819542779791031e-07,
+      "axial_relative_advective_flux": 1.0335011625510637e-06,
+      "axial_net_outward_momentum_flux": 2.51546884571961e-07,
+      "axial_torque_stress": -2.0087997295736038e-08,
+      "axial_angular_momentum_outward_flux": 1.0807894913397114e-08,
+      "gradient_trace_max": 5.684341886080802e-14,
+      "vorticity_replay_error": 1.1368683772161603e-13
+    }
+  ],
+  "definition": "sigma=-p I+nu(grad u+grad u transpose); outward moving momentum flux=u((u-b) dot n)-sigma n",
+  "scope": "Axisymmetric ring-integrated axial momentum and torque; Cartesian transverse totals cancel by symmetry. Inner boundary data only, no matched exterior or global acceptance.",
+  "global_field_ready": false
+}

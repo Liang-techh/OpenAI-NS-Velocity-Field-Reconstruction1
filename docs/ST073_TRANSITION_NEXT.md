@@ -47,3 +47,18 @@ b_z=-(.5-h)z/tau. Treating this interface as a material no-through-flow surface
 would contradict the frozen kernel. The transition must transport the measured
 side/cap flow and match momentum stress; a closed impermeable shell is unsuitable.
 Report: `experiments/root_st073/moving_interface/mass_flux.json`.
+
+## Stress and moving momentum interface data
+
+`interface_stress.py` constructs the physical Cartesian gradient directly from
+frozen radial coefficient jets, sigma=-pI+nu(grad u+grad u^T), and moving flux
+u((u-b).n)-sigma n. Both side and caps are included, orders12/24, k0/3/6.
+Portable nodewise arrays include geometry, gradients, stress and oriented flux.
+At k6/order24, total axial momentum outward flux=2.515468846e-7 and angular
+momentum outward flux=1.080789491e-8. These are integrated fluxes, NOT residual
+norms or admission thresholds. Gradient trace max5.68e-14, curl/archived-evaluator
+vorticity replay difference1.14e-13; same-model algebra consistency only.
+Next use these stresses together with mass/velocity traces to build a transition;
+check volume momentum-rate plus boundary flux before selecting an exterior.
+Artifacts: `experiments/root_st073/moving_interface/stress_flux.json` and
+`stress_k0.npz`, `stress_k3.npz`, `stress_k6.npz`.
