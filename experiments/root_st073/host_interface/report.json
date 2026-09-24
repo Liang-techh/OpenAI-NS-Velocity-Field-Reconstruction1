@@ -1,0 +1,149 @@
+{
+  "model_sha256": "9066b03217fdfa1a83679afdded4a60d55bf1775867b8bc888360af9cc47b574",
+  "numpy_version": "2.4.6",
+  "host_longdouble_epsilon": 2.220446049250313e-16,
+  "output_dtype": "float64",
+  "original_npz_issue": "Host NumPy cannot load archived <f16 arrays; originals preserved byte-for-byte. Values regenerated from model, not reinterpreted.",
+  "rows": [
+    {
+      "k": 0,
+      "tau": 0.5,
+      "pressure_gradient_reference_max_difference": 8.604228440844963e-16,
+      "fields": {
+        "velocity": [
+          17,
+          3
+        ],
+        "pressure": [
+          17
+        ],
+        "residual": [
+          17,
+          3
+        ],
+        "residual_cylindrical": [
+          17,
+          3
+        ],
+        "divergence": [
+          17
+        ],
+        "vorticity": [
+          17,
+          3
+        ],
+        "time_derivative": [
+          17,
+          3
+        ],
+        "advection": [
+          17,
+          3
+        ],
+        "pressure_gradient": [
+          17,
+          3
+        ],
+        "viscous_term": [
+          17,
+          3
+        ]
+      },
+      "maximum_momentum_residual": 1.3588133657435437e-09
+    },
+    {
+      "k": 3,
+      "tau": 0.0625,
+      "pressure_gradient_reference_max_difference": 2.353672812205332e-14,
+      "fields": {
+        "velocity": [
+          17,
+          3
+        ],
+        "pressure": [
+          17
+        ],
+        "residual": [
+          17,
+          3
+        ],
+        "residual_cylindrical": [
+          17,
+          3
+        ],
+        "divergence": [
+          17
+        ],
+        "vorticity": [
+          17,
+          3
+        ],
+        "time_derivative": [
+          17,
+          3
+        ],
+        "advection": [
+          17,
+          3
+        ],
+        "pressure_gradient": [
+          17,
+          3
+        ],
+        "viscous_term": [
+          17,
+          3
+        ]
+      },
+      "maximum_momentum_residual": 2.686729310530906e-08
+    },
+    {
+      "k": 6,
+      "tau": 0.0078125,
+      "pressure_gradient_reference_max_difference": 2.7000623958883807e-13,
+      "fields": {
+        "velocity": [
+          17,
+          3
+        ],
+        "pressure": [
+          17
+        ],
+        "residual": [
+          17,
+          3
+        ],
+        "residual_cylindrical": [
+          17,
+          3
+        ],
+        "divergence": [
+          17
+        ],
+        "vorticity": [
+          17,
+          3
+        ],
+        "time_derivative": [
+          17,
+          3
+        ],
+        "advection": [
+          17,
+          3
+        ],
+        "pressure_gradient": [
+          17,
+          3
+        ],
+        "viscous_term": [
+          17,
+          3
+        ]
+      },
+      "maximum_momentum_residual": 5.315031681111601e-07
+    }
+  ],
+  "global_field_ready": false,
+  "scope": "17 interface nodes at three registered scales only; not exterior matching or finite-total-energy validation"
+}

@@ -1,0 +1,19 @@
+{
+  "sigma": 0.04,
+  "pressure": 0.02,
+  "g_peak": 0.02,
+  "Lambda": 256,
+  "eta0": -0.011123318946115835,
+  "curvature_width": 0.0011792154260838823,
+  "axis_curvature": -719139.5251326677,
+  "sampled_full_max_k0": 978.3241110692671,
+  "sampled_point_count": 114,
+  "seam_positive_a_fraction": 1.0,
+  "seam_v_gt_2_fraction": 0.9210526315789473,
+  "pressure_bound_violation_fraction": 1.0,
+  "peak_needed": 0.019992585569339482,
+  "peak_cap": 0.0015566644009958803,
+  "seconds": 1.9633702289999064,
+  "scope": "Changed autonomous axis regularization and pressure. Diagnostic sample maxima and necessary inequalities only; not comparable peak certificates or corrected full solutions",
+  "pde_validated": false
+}

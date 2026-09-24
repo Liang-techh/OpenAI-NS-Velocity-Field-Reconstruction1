@@ -1,0 +1,85 @@
+{
+  "test_count": 18,
+  "pytest_reported_seconds": 6.39,
+  "warnings_as_errors": true,
+  "initial_payload_integrity_files": 166,
+  "compileall_returncode": 0,
+  "replay": {
+    "command": [
+      "python",
+      "replay.py",
+      "--candidate",
+      "ST073-V",
+      "--k",
+      "6",
+      "--order",
+      "18",
+      "--out",
+      "outputs/V_k6.json"
+    ],
+    "returncode": 0,
+    "wall_seconds": 7.08845439300012,
+    "stdout": "LOCAL sampled momentum: PASS | original global candidate: NOT CONSTRUCTED\n",
+    "stderr": ""
+  },
+  "entire_replay_report_matches_primary": true,
+  "resume": {
+    "command": [
+      "python",
+      "replay.py",
+      "--candidate",
+      "ST073-V",
+      "--k",
+      "6",
+      "--order",
+      "18",
+      "--out",
+      "outputs/V_k6.json",
+      "--resume"
+    ],
+    "returncode": 0,
+    "wall_seconds": 1.3329111599998669,
+    "stdout": "Verified existing LOCAL report; no computation or fitting. Global field remains unconstructed.\n",
+    "stderr": ""
+  },
+  "minimal_published_evaluator": {
+    "command": [
+      "python",
+      "-c",
+      "from full_radial import FullRadialField; import numpy as np; f=FullRadialField.load('data/ST073-V.json'); p=f.from_similarity([.005,.01],[-.2,.3],.03125); d=f.evaluate(p,.03125); assert np.max(np.linalg.norm(d['residual'],axis=1))<1e-5; print('Minimal standalone evaluator, physical-coordinate inversion and complete residual: PASS')"
+    ],
+    "returncode": 0,
+    "wall_seconds": 1.9073194460002014,
+    "stdout": "Minimal standalone evaluator, physical-coordinate inversion and complete residual: PASS\n",
+    "stderr": "",
+    "scope": "Only the four byte-matched published files copied to a separate directory; not a cloud execution"
+  },
+  "scope": "Finite local unforced momentum only; other holdouts and derivative/extra-quadrature audits executed in the primary directory and copied byte-identically, not all rerun in the clean smoke test. Tests imply neither a continuum bound nor original global NS acceptance.",
+  "pde_validated": false,
+  "global_field_ready": false,
+  "native_matlab_run": false,
+  "cloud_ci_run": false,
+  "lean_run": false,
+  "tested_code_sha256": {
+    "audit_phase2.py": "306f2c1e76f61b62244e90e289f4ebb02e65bdd54b07a960911111abeb91f8fc",
+    "replay.py": "39e75a10c346e0a1bf41abee7f644a63bf8d30dfb30fc95a5f642e5ae395e17e",
+    "render_results.py": "cc824b7250ddfb6615b99bf5e2aa5264886f14f175b94639dec1a18395a6eb04",
+    "audit.py": "7b7f86d09bbe0dce65add3caa27c7141f13b6b80c1593f0f9a5ae33997a79fa6",
+    "full_radial.py": "d45518365431b03f42161ef0d202be5dcc6803a856de21b54a24d2d602db8643",
+    "interface_audit.py": "fc670569eda954a55474dbb69dd0b46fe09a86c631e503caab901ee7959d5ac4",
+    "extra_checks.py": "e70f28d48f944cf44cde2270e5805d49b50990a46f5e7523a4fdeff82f840901",
+    "axis_controls.py": "bf6c7b2e01fc9fd8d10ba09f5c216a04d9e86888320b7554b7890e771512099b",
+    "verify_delivery.py": "f9519e1f04bd5da77d9dd0f3f868edd8634f3cea2303c28b5ad3c353439cddd9",
+    "calibrate_full.py": "195f7d2738131ce8cc737834dcb798c2b2f7f3a1705955a6d943523138c3f075",
+    "run_audits.py": "354e25d56804059b6e23e8edcb6522c4d9a90c97640d37c661e7301e83f4a393",
+    "upstream/source_coordinates.py": "bd70081908ab5d491272750111723c78953b09d9988631a2eb06258e6b095c29",
+    "upstream/source_comparison.py": "fa0549b79b9077bc61054369f448382b7fe474fadd1819429fc908568a43016a",
+    "upstream/general_core.py": "b824bab3eb1fd1d70400812c1460ffc7cd7bf70606b5b99017c066ecd6fdbea0",
+    "upstream/normalized_core.py": "fa7dfd2e0908ff6cbd8a2543a9a8636ab4329afd2bc92eb6d656b85e17afa5cf",
+    "upstream/core_series.py": "8851c27ada5d983dea9f87360563f6dcf4185e1115699b9d15d8ba82debc85c4",
+    "upstream/anisotropic_fd.py": "1c0da50505e533e1bc46c515398df2812e9aea640364e0d4998bff3b6c35a542",
+    "upstream/local_field.py": "c85040cb4be7106d5d42d09e4467d17464e17277516c0d152ea3dbcb4b9aa029",
+    "upstream/heat_exterior.py": "2a855001b39d3f3a0fcef8d394a423b2db61d35fcd4d49199d36b5d066b2954b",
+    "tests/test_full_radial.py": "bed743dbd487aacab782969aecfce1823d592e8b870a637350e19381d302f7a0"
+  }
+}

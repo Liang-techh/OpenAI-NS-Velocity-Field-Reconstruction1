@@ -1,0 +1,10 @@
+{
+ "id":"ST073-phase2", "design_reason":"Full-momentum calibration with unchanged ST068 axis traces yields outward radial pressure. Register new swirl-strength controls before their computations; do not refit or relabel the frozen F field.",
+ "axis_swirl_trials":[2,3,4],"axis_slope":4,"axis_bias":0.02,"pressure":1,
+ "calibration_orders":[6,8,10],
+ "target":"First registered amplitude with radially inward pressure at 5 eta x 3 radius x 3 scale calibration points and complete sampled residual <1e-5; choose radial order independently",
+ "comparison_domain":{"X_max":0.015625,"eta_max":0.5,"nu":0.01,"force":0},
+ "holdout_seeds":[9237395,9237396],
+ "guards":"No global amplitude/energy preservation claimed. Axis swirl explicitly changes; compare with separately constructed leading field with those SAME axis traces. Existing F holdouts remain separate.",
+ "pde_validated":false
+}

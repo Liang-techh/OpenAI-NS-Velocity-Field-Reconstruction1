@@ -1,0 +1,96 @@
+{
+  "history": [
+    {
+      "radial_order": 1,
+      "F_coefficient_max": 2.995,
+      "U_coefficient_max": 16.969902019999996
+    },
+    {
+      "radial_order": 2,
+      "F_coefficient_max": 8.444187516666664,
+      "U_coefficient_max": 54.86708947992499
+    },
+    {
+      "radial_order": 3,
+      "F_coefficient_max": 20.5440659773656,
+      "U_coefficient_max": 208.65742189144672
+    },
+    {
+      "radial_order": 4,
+      "F_coefficient_max": 48.85820878286801,
+      "U_coefficient_max": 675.9720771962078
+    },
+    {
+      "radial_order": 5,
+      "F_coefficient_max": 109.75998937321157,
+      "U_coefficient_max": 1982.4975650981205
+    },
+    {
+      "radial_order": 6,
+      "F_coefficient_max": 234.44128806425744,
+      "U_coefficient_max": 5822.431489667891
+    },
+    {
+      "radial_order": 7,
+      "F_coefficient_max": 479.3891706750042,
+      "U_coefficient_max": 18699.541022936784
+    },
+    {
+      "radial_order": 8,
+      "F_coefficient_max": 985.071068244734,
+      "U_coefficient_max": 55963.27169309338
+    },
+    {
+      "radial_order": 9,
+      "F_coefficient_max": 2286.3799501178987,
+      "U_coefficient_max": 158616.39928610146
+    },
+    {
+      "radial_order": 10,
+      "F_coefficient_max": 5018.276347246982,
+      "U_coefficient_max": 467228.4507902408
+    },
+    {
+      "radial_order": 11,
+      "F_coefficient_max": 10464.337959148925,
+      "U_coefficient_max": 1418233.8501410629
+    },
+    {
+      "radial_order": 12,
+      "F_coefficient_max": 20746.163105353284,
+      "U_coefficient_max": 4115608.0947825024
+    },
+    {
+      "radial_order": 13,
+      "F_coefficient_max": 44760.181069906575,
+      "U_coefficient_max": 11503028.665259095
+    },
+    {
+      "radial_order": 14,
+      "F_coefficient_max": 90266.88356460801,
+      "U_coefficient_max": 34178087.77983992
+    },
+    {
+      "radial_order": 15,
+      "F_coefficient_max": 164309.36193584304,
+      "U_coefficient_max": 100761092.02775618
+    },
+    {
+      "radial_order": 16,
+      "F_coefficient_max": 269450.03163454967,
+      "U_coefficient_max": 287481425.947674
+    },
+    {
+      "radial_order": 17,
+      "F_coefficient_max": 347262.3766540041,
+      "U_coefficient_max": 799729518.543843
+    },
+    {
+      "radial_order": 18,
+      "F_coefficient_max": 429481.71093988925,
+      "U_coefficient_max": 2384340452.359658
+    }
+  ],
+  "source": "unchanged inherited general_core.py",
+  "scope": "Same axis data as V, leading-only comparison; not a new full solution"
+}

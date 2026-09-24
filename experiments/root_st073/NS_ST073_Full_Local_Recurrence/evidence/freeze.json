@@ -1,0 +1,14 @@
+{
+  "id": "ST073-F",
+  "frozen_utc": "2026-09-23T19:44:57.514363+00:00",
+  "model_sha256": "653eaf03d9ce29d530eb26ec13c817ccbfce7a3f973e03de9444aaed58cce176",
+  "source_sha256": "d45518365431b03f42161ef0d202be5dcc6803a856de21b54a24d2d602db8643",
+  "selected_order": 8,
+  "selection": "First preregistered order reaching <1e-5 deterministic sampled full residual on calibration; order10 confirms reduction. Order12 scan interrupted and not used.",
+  "independent_seeds": [
+    9237391,
+    9237392
+  ],
+  "scope": "Local full unforced field using ST068 axis traces, not ST072 sharp field or global candidate",
+  "pde_validated": false
+}

@@ -1,0 +1,17 @@
+{
+  "events": [
+    {
+      "event": "container StreamingExecNotEnabledContainerError",
+      "effect": "first refactor/calibration command not executed; retried without session"
+    },
+    {
+      "event": "60-second calibration tool limit during order12",
+      "effect": "orders2..10 saved; no running process found. Order12 retry reported k0,k3 before time limit; excluded from selection.",
+      "partial_order12": {
+        "k0_max": 4.266587793211308e-15,
+        "k3_max": 7.957639700850487e-14
+      },
+      "k6": "not completed"
+    }
+  ]
+}

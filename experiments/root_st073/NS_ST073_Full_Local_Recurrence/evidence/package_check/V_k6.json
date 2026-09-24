@@ -1,0 +1,49 @@
+{
+  "payload": {
+    "identity": {
+      "candidate": "ST073-V",
+      "k": 6.0,
+      "quadrature_order": 18,
+      "model_sha256": "9066b03217fdfa1a83679afdded4a60d55bf1775867b8bc888360af9cc47b574",
+      "code_sha256": {
+        "full_radial.py": "d45518365431b03f42161ef0d202be5dcc6803a856de21b54a24d2d602db8643",
+        "audit.py": "7b7f86d09bbe0dce65add3caa27c7141f13b6b80c1593f0f9a5ae33997a79fa6",
+        "audit_phase2.py": "306f2c1e76f61b62244e90e289f4ebb02e65bdd54b07a960911111abeb91f8fc",
+        "upstream/source_coordinates.py": "bd70081908ab5d491272750111723c78953b09d9988631a2eb06258e6b095c29",
+        "upstream/local_field.py": "c85040cb4be7106d5d42d09e4467d17464e17277516c0d152ea3dbcb4b9aa029",
+        "upstream/core_series.py": "8851c27ada5d983dea9f87360563f6dcf4185e1115699b9d15d8ba82debc85c4",
+        "upstream/general_core.py": "b824bab3eb1fd1d70400812c1460ffc7cd7bf70606b5b99017c066ecd6fdbea0",
+        "replay.py": "39e75a10c346e0a1bf41abee7f644a63bf8d30dfb30fc95a5f642e5ae395e17e"
+      }
+    },
+    "report": {
+      "id": "ST073-V",
+      "k": 6.0,
+      "quadrature_order": 18,
+      "points": 324,
+      "volume": 8.897668102866801e-08,
+      "scope": "Same local physical region and same axis traces; no global energy normalization",
+      "full": {
+        "L2": 2.6189323818778844e-11,
+        "max": 4.793330535098726e-07,
+        "energy": 1.0136757983224271e-07,
+        "energy_effective_volume": 6.522852893278577e-08,
+        "enstrophy_effective_volume": 8.635149490984032e-08
+      },
+      "leading-only same-axis": {
+        "L2": 0.21353240931223047,
+        "max": 916.3925677280796,
+        "energy": 9.818000393360576e-08,
+        "energy_effective_volume": 6.539233727831221e-08,
+        "enstrophy_effective_volume": 8.643449963331899e-08
+      }
+    },
+    "local_sampled_momentum_pass": true,
+    "pde_validated": false,
+    "global_field_ready": false,
+    "original_global_benchmark": "NOT EVALUATED / NOT CONSTRUCTED",
+    "scope": "Finite small local source-coordinate domain, unforced; no global energy or matching",
+    "optimizer_executed": false
+  },
+  "payload_sha256": "4e9421b9a520ce013baae2213c8f70bc639dabd3620e6b2321284b3308f59e59"
+}

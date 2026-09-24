@@ -1,0 +1,22 @@
+{
+  "id": "ST073-V",
+  "k": 6,
+  "quadrature_order": 12,
+  "points": 144,
+  "volume": 8.897668102857428e-08,
+  "scope": "Same local physical region and same axis traces; no global energy normalization",
+  "full": {
+    "L2": 2.637262355792755e-11,
+    "max": 4.70140978780093e-07,
+    "energy": 1.0136757983215297e-07,
+    "energy_effective_volume": 6.522852893268384e-08,
+    "enstrophy_effective_volume": 8.635149490983971e-08
+  },
+  "leading-only same-axis": {
+    "L2": 0.2135324093122308,
+    "max": 915.1507586623837,
+    "energy": 9.818000393351478e-08,
+    "energy_effective_volume": 6.539233727820613e-08,
+    "enstrophy_effective_volume": 8.643449963331836e-08
+  }
+}

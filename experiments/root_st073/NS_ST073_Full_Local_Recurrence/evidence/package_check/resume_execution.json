@@ -1,0 +1,19 @@
+{
+  "command": [
+    "python",
+    "replay.py",
+    "--candidate",
+    "ST073-V",
+    "--k",
+    "6",
+    "--order",
+    "18",
+    "--out",
+    "outputs/V_k6.json",
+    "--resume"
+  ],
+  "returncode": 0,
+  "wall_seconds": 1.3329111599998669,
+  "stdout": "Verified existing LOCAL report; no computation or fitting. Global field remains unconstructed.\n",
+  "stderr": ""
+}

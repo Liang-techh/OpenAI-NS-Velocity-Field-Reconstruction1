@@ -1,0 +1,27 @@
+{
+  "id": "ST072-N",
+  "schema": "source_normalized_local_recurrence_v1",
+  "h": 0.005,
+  "nu": 0.01,
+  "X_max": 0.015625,
+  "eta_max": 0.5,
+  "tau_range": [
+    0.0078125,
+    0.5
+  ],
+  "parameters": {
+    "lam": 256,
+    "sigma": 0.12,
+    "pressure": 4.0,
+    "g_peak": 0.02,
+    "bias": 0.05,
+    "h": 0.005,
+    "order": 26,
+    "jet_degree": 32,
+    "Y_max": 4.0,
+    "eta_max": 0.5
+  },
+  "pde_validated": false,
+  "leading_validated": false,
+  "global_field_ready": false
+}

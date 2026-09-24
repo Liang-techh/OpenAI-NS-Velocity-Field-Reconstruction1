@@ -1,0 +1,19 @@
+{
+  "id": "ST073", "registered_before_numerical_trials": true,
+  "protocol": "Manual bounded local full-momentum radial correction and axis-smoothing control",
+  "input_zip_sha256": "bdc40184959fdb67a269622df499e1c857500dde2cc6d51052cf3714cfe3e205",
+  "comparison_domain": {"X_max": 0.015625, "eta_max": 0.5, "nu": 0.01, "force": 0, "k_range": [0,6]},
+  "full_axis_data": {"F_axis": 1, "U_axis": "4 eta + .02", "Pi_axis": "-1+eta^2/2"},
+  "same_axis_parent": "ST068-I, not the sharp ST072-N field",
+  "radial_calibration_orders": [2,4,6,8,10,12],
+  "max_registered_order": 12,
+  "leading_control_sigmas": [0.008,0.04,0.12,0.25],
+  "leading_control_pressure": [4,0.02],
+  "leading_control_g_peak": 0.02,
+  "leading_control_lambda": 256,
+  "holdout_seeds": [9237391,9237392],
+  "full_radial_selection": "First order with deterministic full-vector sampled defect <1e-5 at k=0,3,6 on X=[.003,.009,.015625], eta=[-.5,-.25,0,.25,.5]; confirm with next order",
+  "scope": "Local solver test only. Same-domain reference. No global energy/nontriviality/volume or finite-time recursion admission.",
+  "scientific_absolute_gate": 0.001,
+  "no_default_or_schedule_change": true
+}

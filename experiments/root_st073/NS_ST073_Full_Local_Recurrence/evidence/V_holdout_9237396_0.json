@@ -1,0 +1,20 @@
+{
+  "seed": 9237396,
+  "index": 0,
+  "k": 0.0,
+  "points": 512,
+  "sampling": "32 independent eta sites x16 radial points, repeated at8log times. 4096clustered spacetime points per seed, not IID whole-space samples.",
+  "full_sampled_max": 1.2109616827830644e-09,
+  "divergence_max": 8.673617379884035e-19,
+  "direction_fractions": {
+    "radial_inflow": 1.0,
+    "positive_swirl": 1.0,
+    "bipolar_outflow": 1.0,
+    "inward_radial_pressure": 1.0,
+    "pressure_toward_midplane": 1.0
+  },
+  "model_sha256": "9066b03217fdfa1a83679afdded4a60d55bf1775867b8bc888360af9cc47b574",
+  "data_sha256": "f160bebe13aba3c5ebc4d75b5606a95ff3c91baab183de2b3df98b4ea69148bd",
+  "seconds": 11.77137489200004,
+  "global_pde_validated": false
+}

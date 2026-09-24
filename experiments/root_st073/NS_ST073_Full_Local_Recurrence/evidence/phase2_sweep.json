@@ -1,0 +1,83 @@
+[
+  {
+    "axis_swirl": 2,
+    "order": 6,
+    "results": [
+      {
+        "k": 0,
+        "max": 5.145132449564469e-07,
+        "radial_pressure_inward_fraction": 0.4,
+        "radial_grad_min": -0.5675339345652481,
+        "positive_swirl_fraction": 1.0
+      },
+      {
+        "k": 3,
+        "max": 1.0563369150662738e-05,
+        "radial_pressure_inward_fraction": 0.4,
+        "radial_grad_min": -12.715168804680644,
+        "positive_swirl_fraction": 1.0
+      },
+      {
+        "k": 6,
+        "max": 0.0002169696857980906,
+        "radial_pressure_inward_fraction": 0.4,
+        "radial_grad_min": -284.81820243467376,
+        "positive_swirl_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "axis_swirl": 3,
+    "order": 6,
+    "results": [
+      {
+        "k": 0,
+        "max": 5.09730012339082e-07,
+        "radial_pressure_inward_fraction": 0.4,
+        "radial_grad_min": -0.31371831793132865,
+        "positive_swirl_fraction": 1.0
+      },
+      {
+        "k": 3,
+        "max": 1.0462303115463753e-05,
+        "radial_pressure_inward_fraction": 0.4,
+        "radial_grad_min": -6.855194438423652,
+        "positive_swirl_fraction": 1.0
+      },
+      {
+        "k": 6,
+        "max": 0.00021483316482963718,
+        "radial_pressure_inward_fraction": 0.4,
+        "radial_grad_min": -149.5239934639667,
+        "positive_swirl_fraction": 1.0
+      }
+    ]
+  },
+  {
+    "axis_swirl": 4,
+    "order": 6,
+    "results": [
+      {
+        "k": 0,
+        "max": 5.030148554613019e-07,
+        "radial_pressure_inward_fraction": 1.0,
+        "radial_grad_min": 0.041623761299760594,
+        "positive_swirl_fraction": 1.0
+      },
+      {
+        "k": 3,
+        "max": 1.0320420954799658e-05,
+        "radial_pressure_inward_fraction": 1.0,
+        "radial_grad_min": 1.3019530759132913,
+        "positive_swirl_fraction": 1.0
+      },
+      {
+        "k": 6,
+        "max": 0.00021183391166214153,
+        "radial_pressure_inward_fraction": 1.0,
+        "radial_grad_min": 33.37372262387948,
+        "positive_swirl_fraction": 1.0
+      }
+    ]
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "seed": 9237391,
+  "index": 0,
+  "k": 0.0,
+  "points": 512,
+  "sampling": "64 independent axial sites, eight new radial points per site; same spatial sites at eight registered/new log-times; 4096 clustered spacetime points per seed",
+  "full_sampled_max": 1.1534852794111603e-09,
+  "divergence_max": 8.673617379884035e-19,
+  "sampled_local_momentum_pass": true,
+  "model_sha256": "653eaf03d9ce29d530eb26ec13c817ccbfce7a3f973e03de9444aaed58cce176",
+  "data_sha256": "8ef2ae2cf8a53922a7e9e8fe79d9d8d94a0ffe57bc966a272286d432f041a789",
+  "seconds": 23.008075405,
+  "pde_validated": false,
+  "scope": "Unforced local domain only, not global NS acceptance"
+}

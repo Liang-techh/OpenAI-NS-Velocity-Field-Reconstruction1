@@ -1,0 +1,15 @@
+{
+  "id": "ST073-V",
+  "frozen_utc": "2026-09-23T19:48:32.992875+00:00",
+  "model_sha256": "9066b03217fdfa1a83679afdded4a60d55bf1775867b8bc888360af9cc47b574",
+  "source_sha256": "d45518365431b03f42161ef0d202be5dcc6803a856de21b54a24d2d602db8643",
+  "axis_swirl": 4,
+  "selected_order": 8,
+  "independent_seeds": [
+    9237395,
+    9237396
+  ],
+  "selection": "first amplitude in predeclared [2,3,4] with calibration inward radial pressure; first order meeting full residual1e-5 confirmed at10",
+  "scope": "Explicitly altered axis swirl, local unforced only; not global fixed-energy or source exactness",
+  "pde_validated": false
+}

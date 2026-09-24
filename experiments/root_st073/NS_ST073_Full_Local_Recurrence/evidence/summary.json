@@ -1,0 +1,38 @@
+{
+  "ST073-F": [
+    {
+      "seed": 9237391,
+      "spacetime_points": 4096,
+      "sampled_max": 4.4891615248423877e-07,
+      "divergence_max": 5.551115123125783e-17
+    },
+    {
+      "seed": 9237392,
+      "spacetime_points": 4096,
+      "sampled_max": 5.06857337674115e-07,
+      "divergence_max": 5.551115123125783e-17
+    }
+  ],
+  "ST073-V": [
+    {
+      "seed": 9237395,
+      "spacetime_points": 4096,
+      "sampled_max": 4.869245701385685e-07,
+      "divergence_max": 5.551115123125783e-17
+    },
+    {
+      "seed": 9237396,
+      "spacetime_points": 4096,
+      "sampled_max": 4.7230327800985914e-07,
+      "divergence_max": 5.551115123125783e-17
+    }
+  ],
+  "environment": {
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "longdouble_bits": 128
+  },
+  "global_pde_validated": false
+}

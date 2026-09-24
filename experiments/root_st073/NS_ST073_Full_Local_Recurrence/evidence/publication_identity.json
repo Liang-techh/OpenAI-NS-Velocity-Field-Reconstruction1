@@ -1,0 +1,28 @@
+{
+  "repository": "Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1",
+  "branch": "research/st073-full-local-recurrence",
+  "issue": 1255,
+  "code_and_model_head": "d4663212aa498abb1750278717b7c5e5af9f1dd7",
+  "published_files": {
+    "full_radial.py": {
+      "sha256": "d45518365431b03f42161ef0d202be5dcc6803a856de21b54a24d2d602db8643",
+      "git_blob": "79f9256d2f1e15062f69c9170a2f9d8f2cf2c1b3"
+    },
+    "upstream/source_coordinates.py": {
+      "sha256": "bd70081908ab5d491272750111723c78953b09d9988631a2eb06258e6b095c29",
+      "git_blob": "cbb531cc61d9671fd1def796dae70b1dcece2445"
+    },
+    "data/ST073-F.json": {
+      "sha256": "653eaf03d9ce29d530eb26ec13c817ccbfce7a3f973e03de9444aaed58cce176",
+      "git_blob": "1f9c055ae68f2e464b409ea3d352b37471690672"
+    },
+    "data/ST073-V.json": {
+      "sha256": "9066b03217fdfa1a83679afdded4a60d55bf1775867b8bc888360af9cc47b574",
+      "git_blob": "05ea9b2330a008e7aca06a9820b7cae47c6ffd1d"
+    }
+  },
+  "no_merge_or_default_change": true,
+  "result_commit": "858086aff1ad6f203e1bef0f96dff564056edcd6",
+  "result_readme_git_blob": "5a851a509bf70aa10f4e99bde987c0046114d388",
+  "source_and_model_git_blobs_verified": true
+}

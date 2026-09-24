@@ -1,0 +1,38 @@
+{
+  "k": 3,
+  "quadrature_order": 12,
+  "point_count": 144,
+  "region_volume": 1.992488082162637e-06,
+  "X_max": 0.015625,
+  "eta_max": 0.5,
+  "nu": 0.01,
+  "force": 0,
+  "model_sha256": "653eaf03d9ce29d530eb26ec13c817ccbfce7a3f973e03de9444aaed58cce176",
+  "scope": "Identical source-coordinate physical region and ST068 axis traces; no global normalization, force or matching",
+  "ST073-F": {
+    "full_local_L2": 6.44122945631421e-12,
+    "sampled_max": 2.422686702732229e-08,
+    "component_L2": [
+      1.1004942370868915e-12,
+      1.2442019975898243e-14,
+      6.3465104222058384e-12
+    ],
+    "local_energy": 2.4408185895952323e-07,
+    "local_velocity_L2": 0.0006986871387960755,
+    "divergence_max": 6.938893903907228e-18
+  },
+  "ST068-I restricted": {
+    "full_local_L2": 0.044799778667196095,
+    "sampled_max": 40.80604013305882,
+    "component_L2": [
+      0.004915934846364305,
+      0.0014139430283746062,
+      0.044506791822468736
+    ],
+    "local_energy": 2.3536380008191413e-07,
+    "local_velocity_L2": 0.0006860959117818939,
+    "divergence_max": 2.842170943040401e-14
+  },
+  "relative_velocity_L2_change": 0.02145987917990426,
+  "seconds": 4.490053018000026
+}
