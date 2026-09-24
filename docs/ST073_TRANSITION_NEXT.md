@@ -636,3 +636,30 @@ slab but worsens the full NS momentum gate. Next solve the cutoff-induced
 momentum and pressure balance together with the mean/pulse stress construction,
 then audit physical-volume norms and critical-time scaling. Report:
 `experiments/root_st073/compact_potential/report.json`.
+
+## Weighted residual moments at the compact closure
+
+`compact_moment_audit.py` integrates the *full physical* unforced momentum
+residual at k=5.5 on two fixed-z slices. The radial pieces are split at the
+inner interface, width6 outer interface, radial cutoff plateau, and support
+edge. These are diagnostics analogous to the weighted radial primitives in
+paper Section 8, not that section's normalized auxiliary-mean defects.
+
+At z=0, the 12-node-per-piece moments are integral r^2 R_theta dr =
++0.00143895 and integral r R_z dr = +0.000913628. The outer radial cutoff
+alone contributes +0.00158829 to the angular moment; the width6 transition
+contributes -0.000149333. The inner core is below 2e-6 pointwise in the
+sampled residual, so the outer cutoff dominates this slice's angular defect.
+
+At z=0.00394501, inside the axial cutoff collar, the total axial moment is
+-0.525289. The width6 transition contributes -0.553372 and the core adds
++0.0264002. This is a distinct axial closure problem, not just a radial
+edge-layer defect. Six-versus-twelve-node moment changes are <=2.4e-5 for
+these four totals; this is limited quadrature evidence, not a norm bound.
+
+Section 8 requires the relevant weighted source moments to be repaired before
+a compact radial stress primitive can cancel the mean residual. A direct
+primitive of the current defects would leak beyond its annulus. Next construct
+moment-preserving velocity and pressure corrections, and an actual realizable
+non-axisymmetric stress if needed, while keeping full momentum max/L2 as the
+acceptance gates. Artifact: `experiments/root_st073/compact_potential/moment_audit.json`.

@@ -1,0 +1,199 @@
+{
+  "tau": 0.011048543456039806,
+  "rows": [
+    {
+      "z": 0.0,
+      "order_per_piece": 6,
+      "angular_moment": 0.0014627025847371061,
+      "axial_moment": 0.0009147453769743759,
+      "pieces": [
+        {
+          "interval": [
+            0.0,
+            0.0032183861623548715
+          ],
+          "angular_moment": -1.059598748595205e-15,
+          "axial_moment": 2.0093951047462275e-13,
+          "max_momentum": 9.729822949556096e-07,
+          "max_divergence": 2.5636381906224415e-10
+        },
+        {
+          "interval": [
+            0.0032183861623548715,
+            0.01931031697412923
+          ],
+          "angular_moment": -0.00015049694302794,
+          "axial_moment": 0.0009147453767734328,
+          "max_momentum": 2379.6320460355696,
+          "max_divergence": 8.797860440168392e-09
+        },
+        {
+          "interval": [
+            0.01931031697412923,
+            0.02317106856712923
+          ],
+          "angular_moment": 3.5731797275285424e-15,
+          "axial_moment": 1.0100551769903085e-18,
+          "max_momentum": 7.625015514308601e-08,
+          "max_divergence": 1.7603801601654363e-12
+        },
+        {
+          "interval": [
+            0.02317106856712923,
+            0.028518238236466743
+          ],
+          "angular_moment": 0.0016131995277625325,
+          "axial_moment": 2.628021117264538e-18,
+          "max_momentum": 75440.28218892223,
+          "max_divergence": 4.224912384397047e-11
+        }
+      ]
+    },
+    {
+      "z": 0.0,
+      "order_per_piece": 12,
+      "angular_moment": 0.001438952794758511,
+      "axial_moment": 0.0009136284683357783,
+      "pieces": [
+        {
+          "interval": [
+            0.0,
+            0.0032183861623548715
+          ],
+          "angular_moment": 1.9689244517377494e-15,
+          "axial_moment": 1.9914569552679709e-13,
+          "max_momentum": 1.684120585286286e-06,
+          "max_divergence": 2.6142288334085606e-10
+        },
+        {
+          "interval": [
+            0.0032183861623548715,
+            0.01931031697412923
+          ],
+          "angular_moment": -0.0001493326432871005,
+          "axial_moment": 0.0009136284681366324,
+          "max_momentum": 2355.02548011993,
+          "max_divergence": 1.8674143120733788e-08
+        },
+        {
+          "interval": [
+            0.01931031697412923,
+            0.02317106856712923
+          ],
+          "angular_moment": 2.6192112607947513e-14,
+          "axial_moment": -8.896654472036164e-19,
+          "max_momentum": 1.1432742941290864e-07,
+          "max_divergence": 1.7603801601654363e-12
+        },
+        {
+          "interval": [
+            0.02317106856712923,
+            0.028518238236466743
+          ],
+          "angular_moment": 0.0015882854380174505,
+          "axial_moment": 1.057937726839555e-18,
+          "max_momentum": 97623.11526794493,
+          "max_divergence": 8.449824768794095e-11
+        }
+      ]
+    },
+    {
+      "z": 0.003945014637827957,
+      "order_per_piece": 6,
+      "angular_moment": 0.00046179473144577365,
+      "axial_moment": -0.5253046898667013,
+      "pieces": [
+        {
+          "interval": [
+            0.0,
+            0.0034284896651135877
+          ],
+          "angular_moment": -1.651259944844619e-05,
+          "axial_moment": 0.02640017067780115,
+          "max_momentum": 148750.92062183443,
+          "max_divergence": 3.350691486048163e-06
+        },
+        {
+          "interval": [
+            0.0034284896651135877,
+            0.020570937990681527
+          ],
+          "angular_moment": 0.0003170573652030949,
+          "axial_moment": -0.5533871343048897,
+          "max_momentum": 321965.43544608983,
+          "max_divergence": 3.627203568612458e-06
+        },
+        {
+          "interval": [
+            0.020570937990681527,
+            0.02317106856712923
+          ],
+          "angular_moment": -3.978313401018888e-05,
+          "axial_moment": 0.0008799938342139028,
+          "max_momentum": 38.05643953224709,
+          "max_divergence": 6.601425600620386e-13
+        },
+        {
+          "interval": [
+            0.02317106856712923,
+            0.028518238236466743
+          ],
+          "angular_moment": 0.0002010330997013138,
+          "axial_moment": 0.0008022799261733237,
+          "max_momentum": 38580.6796567429,
+          "max_divergence": 1.408304128132349e-11
+        }
+      ]
+    },
+    {
+      "z": 0.003945014637827957,
+      "order_per_piece": 12,
+      "angular_moment": 0.0004645579106828315,
+      "axial_moment": -0.5252891120178084,
+      "pieces": [
+        {
+          "interval": [
+            0.0,
+            0.0034284896651135877
+          ],
+          "angular_moment": -1.651259944807946e-05,
+          "axial_moment": 0.026400170678705863,
+          "max_momentum": 153416.55800596593,
+          "max_divergence": 3.387627884876565e-06
+        },
+        {
+          "interval": [
+            0.0034284896651135877,
+            0.020570937990681527
+          ],
+          "angular_moment": 0.0003177095213471806,
+          "axial_moment": -0.5533715565423596,
+          "max_momentum": 342636.11832794355,
+          "max_divergence": 3.6923831885360414e-06
+        },
+        {
+          "interval": [
+            0.020570937990681527,
+            0.02317106856712923
+          ],
+          "angular_moment": -3.978313401588967e-05,
+          "axial_moment": 0.0008799938342139058,
+          "max_momentum": 38.199896908301056,
+          "max_divergence": 8.801900800827182e-13
+        },
+        {
+          "interval": [
+            0.02317106856712923,
+            0.028518238236466743
+          ],
+          "angular_moment": 0.00020314412279962002,
+          "axial_moment": 0.0008022800116315274,
+          "max_momentum": 50352.16935685851,
+          "max_divergence": 5.633216512529396e-11
+        }
+      ]
+    }
+  ],
+  "scope": "Physical r^2 R_theta and r R_z moments of full unforced Cartesian NS residual at fixed z; not the paper normalized mean defects. Six and twelve Gauss nodes per piece are a limited quadrature check, not a certificate.",
+  "pde_validated": false
+}
