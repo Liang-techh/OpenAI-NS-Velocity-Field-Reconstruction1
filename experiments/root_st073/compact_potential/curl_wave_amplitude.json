@@ -106,6 +106,18 @@
       -37490.31108748399
     ]
   },
+  "mean_linear_cylindrical": [
+    -1.9901199266314507e-06,
+    -1.1552561772987247e-05,
+    8.197501301765442e-06
+  ],
+  "mean_quadratic_cylindrical": [
+    11564628.68155222,
+    3140499.488747253,
+    -19215.369707256963
+  ],
+  "max_linear_norm": 16386387.626862327,
+  "max_quadratic_norm": 42776926.49993319,
   "scope": "Exact affine residual identity for base+amplitude*wave, retaining quadratic self-transport. Sixteen angles at one physical point; angular covariance fraction is amplitude squared. No global PDE gate.",
   "accepted": false
 }

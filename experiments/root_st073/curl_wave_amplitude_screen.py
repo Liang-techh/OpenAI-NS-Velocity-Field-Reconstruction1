@@ -26,6 +26,8 @@ def run():
     linear = (wpart + np.einsum('nij,nj->ni', grad, w)
               + np.einsum('nij,nj->ni', wgrad, u))
     quadratic = np.einsum('nij,nj->ni', wgrad, w)
+    linear_cyl = cylindrical_residual(linear, points)
+    quadratic_cyl = cylindrical_residual(quadratic, points)
     def metrics(amplitude):
         cart = baseline + amplitude*linear + amplitude**2*quadratic
         cyl = cylindrical_residual(cart, points)
@@ -40,6 +42,10 @@ def run():
     best = min((metrics(x) for x in candidates), key=lambda row: row['rms_momentum'])
     report = {'tau': tau, 'point': source['point'], 'rows': rows,
               'best_sampled_rms': best,
+              'mean_linear_cylindrical': linear_cyl.mean(axis=0).tolist(),
+              'mean_quadratic_cylindrical': quadratic_cyl.mean(axis=0).tolist(),
+              'max_linear_norm': float(np.max(np.linalg.norm(linear, axis=1))),
+              'max_quadratic_norm': float(np.max(np.linalg.norm(quadratic, axis=1))),
               'scope': 'Exact affine residual identity for base+amplitude*wave, retaining quadratic self-transport. Sixteen angles at one physical point; angular covariance fraction is amplitude squared. No global PDE gate.',
               'accepted': False}
     out = ROOT/'compact_potential'/'curl_wave_amplitude.json'

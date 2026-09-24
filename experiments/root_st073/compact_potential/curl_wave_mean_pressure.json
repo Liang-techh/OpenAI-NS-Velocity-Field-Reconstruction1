@@ -1,0 +1,35 @@
+{
+  "tau": 0.0078125,
+  "point": [
+    0.0056890761915166545,
+    0.0,
+    0.003432627453438968
+  ],
+  "local_radial_pressure_gradient": -11564628.68155222,
+  "rows": [
+    {
+      "amplitude": 0.1,
+      "covariance_fraction": 0.010000000000000002,
+      "mean_residual_cylindrical": [
+        262085.128415844,
+        4074.6036762095646,
+        -37682.46478363598
+      ],
+      "max_momentum": 1945096.9997489993,
+      "rms_momentum": 1075129.8283743847
+    },
+    {
+      "amplitude": 1.0,
+      "covariance_fraction": 1.0,
+      "mean_residual_cylindrical": [
+        262085.14107416885,
+        3113169.097525427,
+        -56705.68078779019
+      ],
+      "max_momentum": 31457954.47645187,
+      "rms_momentum": 19400204.013309807
+    }
+  ],
+  "scope": "Compact pressure bubble whose radial derivative cancels wave quadratic mean radial residual at one point. No exact global pressure reconstruction or amplitude equation. Full nonlinear physical momentum at 16 angles.",
+  "accepted": false
+}

@@ -872,3 +872,28 @@ equation before any wave is added to the benchmark; preserve exact radial
 moments and re-evaluate the complete residual. Artifacts:
 `experiments/root_st073/compact_potential/radial_peak_cone.json`,
 `curl_wave_prototype.json`, and `curl_wave_amplitude.json`.
+
+## Separate the explicit wave's nonzero and mean errors
+
+`curl_wave_amplitude_screen.py` now keeps the exact affine expansion of full
+momentum for base + a*wave. At the late 16-angle sample, angular means of the
+LINEAR wave residual are below1.2e-5 in all cylindrical components (as
+expected from distinct nonzero harmonics). Its pointwise linear maximum is
+1.6386e7. The QUADRATIC wave residual has angular mean
+(1.15646e7,3.14050e6,-1.92154e4) in (r,theta,z). Thus the enormous radial
+mean in the target-amplitude wave is quadratic self-interaction, not merely
+a poor mean of the linear phase equation. The nonzero harmonic linear error is
+also enormous, so both the paper's amplitude-pressure equation and its mean
+correction cycle are independently needed.
+
+`curl_wave_mean_pressure.py` adds a compact axisymmetric pressure bubble with
+radial derivative -a^2*1.15646e7 at the selected point. This cancels the
+wave-induced mean radial residual LOCALLY: at a=1, its angular mean falls
+1.18267e7 ->2.62085e5, back near the original background value. The full
+16-angle maximum is still3.14580e7 and RMS1.94002e7 (versus baseline
+2.66160e5); at a=.1 the maximum is1.94510e6. The azimuthal mean and nonzero
+harmonics remain. This pressure is a local proxy, not the exact compact radial
+primitive, and no wave amplitude or harmonic pressure equation was solved.
+Do not add either wave to the candidate field. Artifacts:
+`experiments/root_st073/compact_potential/curl_wave_amplitude.json` and
+`curl_wave_mean_pressure.json`.
