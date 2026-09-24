@@ -1,0 +1,57 @@
+name: st073-complete-data-sync
+on:
+  push:
+    branches: [sync/st073-complete-data-20260924]
+    paths:
+      - .github/workflows/st073-complete-sync.yml
+      - .sync/st073/**
+permissions:
+  contents: write
+concurrency:
+  group: st073-complete-data-sync
+  cancel-in-progress: false
+jobs:
+  restore-exact-snapshot:
+    if: github.repository == 'Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1'
+    runs-on: ubuntu-latest
+    container: python:3.13-trixie
+    timeout-minutes: 25
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+      MPLBACKEND: Agg
+      PYTEST_DISABLE_PLUGIN_AUTOLOAD: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: sync/st073-complete-data-20260924
+      - name: Record isolated staging head
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git rev-parse HEAD > /tmp/st073-staging-head
+      - name: Install matching numerical and archive libraries
+        run: python -m pip install numpy==2.3.5 scipy==1.17.0 matplotlib==3.10.8 Pillow==12.3.0 pytest==9.0.2
+      - name: Restore and verify all original bytes without fitting
+        run: python .sync/st073/restore.py /tmp/st073-exact
+      - name: Verify original payload and run focused software tests
+        run: |
+          cd /tmp/st073-exact
+          python verify_delivery.py
+          python -m pytest -q -W error tests
+      - name: Publish complete snapshot only to isolated branch
+        run: |
+          test "$(git ls-remote origin refs/heads/sync/st073-complete-data-20260924 | cut -f1)" = "$(cat /tmp/st073-staging-head)"
+          python .sync/st073/publish.py /tmp/st073-exact
+          git rm -r .sync/st073 .github/workflows/st073-complete-sync.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git diff --cached --stat
+          git commit -m 'Sync complete byte-verified ST073 data, source, snapshots and original evidence'
+          git push origin HEAD:sync/st073-complete-data-20260924
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: st073-sync-transport-receipt
+          path: /tmp/st073_transport_receipt.json
+          if-no-files-found: warn
