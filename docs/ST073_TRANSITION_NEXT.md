@@ -145,3 +145,19 @@ complete momentum and axial closure remain pending. No arbitrary force added.
 Next evaluate the combined swirl/streamfunction bridge and integrate its actual
 stress defect, then test the paper-inspired moment/covariance correction.
 Artifact: experiments/root_st073/poloidal_bridge/coefficients.json.
+
+## Callable full radial joining field
+
+joined_field.py now evaluates all velocity components and pressure across the
+inner field, Hermite transition and heat swirl exterior inside |eta|<=.5.
+Poloidal psi_z analytically differentiates coefficient jets AND moving endpoints;
+pressure matches value and first two radial derivatives. No forcing is fitted.
+Independent Cartesian FD at four transition points, two times and two steps:
+early momentum norms38.88--62.31, late7851.6--12562.9, stable under refinement.
+Divergence errors decrease about16x on step halving (late finest<=1.054e-6).
+This is a callable divergence-structured background with a large dynamic defect,
+NOT a completed transition, axial closure, finite-energy global field or theorem.
+Next compute actual integrated tangential residual stresses of THIS background
+and test realizability/correction following paper Sections4,7-9; do not transfer
+leading-only cone values or call smooth endpoint joins a momentum solution.
+Artifact: experiments/root_st073/joined_field/report.json.

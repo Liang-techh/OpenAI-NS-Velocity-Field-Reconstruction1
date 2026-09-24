@@ -1,0 +1,55 @@
+{
+  "rows": [
+    {
+      "k": 0.4,
+      "step_factor": 0.002,
+      "residual_norms": [
+        62.313467462847086,
+        38.87549694078457
+      ],
+      "divergence": [
+        -2.4880431048757146e-07,
+        -4.931433554844489e-07
+      ]
+    },
+    {
+      "k": 0.4,
+      "step_factor": 0.001,
+      "residual_norms": [
+        62.31347192823468,
+        38.87549907312846
+      ],
+      "divergence": [
+        -1.5573434541948927e-08,
+        -3.089012423629356e-08
+      ]
+    },
+    {
+      "k": 5.5,
+      "step_factor": 0.002,
+      "residual_norms": [
+        12562.888663601916,
+        7851.635267777486
+      ],
+      "divergence": [
+        -8.629726281128569e-06,
+        -1.683313575995271e-05
+      ]
+    },
+    {
+      "k": 5.5,
+      "step_factor": 0.001,
+      "residual_norms": [
+        12562.889568148106,
+        7851.6357006469925
+      ],
+      "divergence": [
+        -5.402413023603003e-07,
+        -1.0538005312810128e-06
+      ]
+    }
+  ],
+  "scope": "C2 radial joining with analytic moving-interface psi_z and pressure interpolation. Only axial slab |eta|<=.5; no axial closure or finite global energy claim. Unforced full Cartesian momentum FD.",
+  "pde_validated": false,
+  "global_field_ready": false
+}
