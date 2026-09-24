@@ -160,7 +160,7 @@ def run():
               'scope': 'One time and one radius. Complete nonlinear momentum recombination for the poloidal velocity; pressure changes residual linearly. No global NS or pressure-Poisson certificate.',
               'accepted': False}
     out = ROOT/'compact_potential'/'transition_poloidal_pressure_screen.json'
-    out.write_text(json.dumps(report, indent=2)+'\n')
+    out.write_bytes((json.dumps(report, indent=2)+'\n').encode())
     print(json.dumps({'feasible': len(results),
                       'best': {k: results[0][k] for k in
                                ('poloidal_amplitude', 'pressure_amplitudes',

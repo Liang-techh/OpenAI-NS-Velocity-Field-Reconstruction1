@@ -61,7 +61,7 @@ def run():
               'scope': 'Twelve unfitted axial midpoints plus coarse Gauss6 physical-volume screen at two times. No global supremum or spacetime L2 certificate.',
               'accepted': False}
     out = ROOT/'compact_potential'/'transition_poloidal_pressure_audit.json'
-    out.write_text(json.dumps(report, indent=2)+'\n')
+    out.write_bytes((json.dumps(report, indent=2)+'\n').encode())
     print(json.dumps({key: report[key] for key in
                       ('midpoint_pass_count', 'midpoint_max_cone_ratio',
                        'full_support_gauss6')}), flush=True)

@@ -69,7 +69,7 @@ def run():
               'scope': 'Local cone constraints on 13 axial points, objective Gauss6 physical-volume residual at one time. Full nonlinear velocity recombination, linear pressure. No spacetime/global certificate.',
               'accepted': False}
     out = ROOT/'compact_potential'/'transition_global_constrained_screen.json'
-    out.write_text(json.dumps(report, indent=2)+'\n')
+    out.write_bytes((json.dumps(report, indent=2)+'\n').encode())
     print(json.dumps({'baseline_gauss6_l2': report['baseline_gauss6_l2'],
                       'feasible': len(rows),
                       'best': {k: rows[0][k] for k in

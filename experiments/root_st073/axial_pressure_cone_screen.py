@@ -203,7 +203,7 @@ def run():
                              'max_cone_ratio': max(row['cone_ratio'] for row in holdout_rows),
                              'rows': holdout_rows}
     out = ROOT/'compact_potential'/'axial_pressure_cone_screen.json'
-    out.write_text(json.dumps(report, indent=2)+'\n')
+    out.write_bytes((json.dumps(report, indent=2)+'\n').encode())
     print(json.dumps({key: report.get(key) for key in
                       ('linear_feasible', 'amplitudes', 'baseline',
                        'candidate', 'optimizer_success')})
