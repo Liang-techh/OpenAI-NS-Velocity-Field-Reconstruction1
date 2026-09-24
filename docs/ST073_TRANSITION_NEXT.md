@@ -897,3 +897,38 @@ primitive, and no wave amplitude or harmonic pressure equation was solved.
 Do not add either wave to the candidate field. Artifacts:
 `experiments/root_st073/compact_potential/curl_wave_amplitude.json` and
 `curl_wave_mean_pressure.json`.
+
+## Harmonic pressure and local amplitude time slope: local gain, spatial failure
+
+`curl_wave_harmonic_pressure.py` Fourier-decomposes the exact-curl wave's FULL
+linear momentum residual at the selected k6 point. For integer angular modes
+m=1,2, only14.9% and11.1% of the respective harmonic norms lie along the
+local phase normal. Compact pressure harmonics remove those projected parts.
+At target wave amplitude, full local maximum changes42781680 ->42719654;
+with the earlier local mean-pressure proxy it changes31457954 ->31342811.
+Pressure alone cannot cancel the mostly transverse linear error.
+
+`curl_wave_taylor_amplitude.py` adds an exact-curl time-slope vector potential
+whose local Fourier curl amplitudes replay the transverse targets to relative
+errors below3.2e-16. At the registered endpoint, its added velocity vanishes
+but its physical-time derivative cancels the targeted local linear harmonic.
+With wave amplitude.1 and both pressure corrections, the 16-angle maximum
+falls1963009 ->571391 and RMS1066886 ->299568. Yet the unperturbed field's
+local maximum and RMS are both266160. A dense amplitude scan over[-.3,.3]
+finds its best maximum at ZERO amplitude. Best RMS occurs at amplitude-.0205,
+266160 ->266094, but the maximum worsens to278588 and covariance is only
+0.00042025 of the stress target. The polynomial residual reconstruction agrees
+with direct full-field evaluation at that amplitude within3.9e-6.
+
+The local Taylor correction is especially fragile in space.
+`curl_wave_taylor_neighbor.py` evaluates complete momentum at eight angles on
+five meridional positions. At amplitude.1 the center maximum is571391; moving
+radially by +/-0.0005 gives about3.58e6/3.61e6, and moving axially by
++/-0.0002 gives about1.29e7/1.35e7. Each exceeds its no-wave baseline by
+large factors. These are sample maxima, not global norms, but they reject the
+local Taylor wave decisively. Exact curl and a single-point amplitude derivative
+are insufficient. A supported solution of the coupled phase/amplitude/pressure
+PDE across the whole patch, followed by the paper's mean moment correction,
+is required before revisiting the full-field acceptance gates. Artifacts:
+`experiments/root_st073/compact_potential/curl_wave_harmonic_pressure.json`,
+`curl_wave_taylor_amplitude.json`, and `curl_wave_taylor_neighbor.json`.

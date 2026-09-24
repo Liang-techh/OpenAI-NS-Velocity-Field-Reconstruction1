@@ -1,0 +1,115 @@
+{
+  "tau": 0.0078125,
+  "point": [
+    0.0056890761915166545,
+    0.0,
+    0.003432627453438968
+  ],
+  "mode_rows": [
+    {
+      "m": 1,
+      "transverse_target_magnitude": 10470465.705358125,
+      "curl_replay_relative_error": 3.1498043329608605e-16,
+      "potential_time_slope": [
+        [
+          -9035.490693246335,
+          8469.567696468215
+        ],
+        [
+          1.8189894035458565e-11,
+          -2.7426949600339867e-12
+        ],
+        [
+          55967.52741714589,
+          -895.4353630542532
+        ]
+      ]
+    },
+    {
+      "m": 2,
+      "transverse_target_magnitude": 9266089.10049147,
+      "curl_replay_relative_error": 2.7382154641897543e-16,
+      "potential_time_slope": [
+        [
+          -4321.023785086727,
+          -2836.6285196838458
+        ],
+        [
+          8.839151632855646e-12,
+          1.1248779685502086e-12
+        ],
+        [
+          25613.073931420968,
+          338.33158253614533
+        ]
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "amplitude": 0.1,
+      "field": "pressure_only",
+      "mean_cylindrical": [
+        262085.12841582915,
+        4074.60367620728,
+        -37682.46478363134
+      ],
+      "max_momentum": 1963009.703432079,
+      "rms_momentum": 1066885.770603631
+    },
+    {
+      "amplitude": 0.1,
+      "field": "taylor_amplitude",
+      "mean_cylindrical": [
+        262085.12841583084,
+        4074.603676208115,
+        -37682.46478363137
+      ],
+      "max_momentum": 571391.0768508014,
+      "rms_momentum": 299567.9173299342
+    },
+    {
+      "amplitude": 1.0,
+      "field": "pressure_only",
+      "mean_cylindrical": [
+        262085.14107406046,
+        3113169.0975253964,
+        -56705.680787786405
+      ],
+      "max_momentum": 31342811.429066427,
+      "rms_momentum": 19357577.035046533
+    },
+    {
+      "amplitude": 1.0,
+      "field": "taylor_amplitude",
+      "mean_cylindrical": [
+        262085.1410740653,
+        3113169.097525399,
+        -56705.68078778536
+      ],
+      "max_momentum": 31665516.210394435,
+      "rms_momentum": 14349956.263037251
+    }
+  ],
+  "baseline": {
+    "amplitude": 0.0,
+    "covariance_fraction": 0.0,
+    "max_momentum": 266159.89213373535,
+    "rms_momentum": 266159.8921307165
+  },
+  "best_local_rms": {
+    "amplitude": -0.020499999999999963,
+    "covariance_fraction": 0.0004202499999999985,
+    "max_momentum": 278588.10568744206,
+    "rms_momentum": 266093.8517921051
+  },
+  "best_local_max": {
+    "amplitude": 0.0,
+    "covariance_fraction": 0.0,
+    "max_momentum": 266159.89213373535,
+    "rms_momentum": 266159.8921307165
+  },
+  "best_polynomial_direct_max_difference": 3.825814928859472e-06,
+  "scope": "Exact-curl time-slope vector potential cancels the selected-point transverse linear Fourier residual at the registered endpoint; compact taper limits it to a 1e-4 tau interval. Pressure harmonics and local mean pressure proxy are retained. This is a local Taylor step, not a solved supported pulse amplitude PDE; full momentum sampled at 16 angles.",
+  "accepted": false
+}

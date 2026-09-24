@@ -1,0 +1,53 @@
+{
+  "tau": 0.0078125,
+  "amplitude": 0.1,
+  "rows": [
+    {
+      "position": "center",
+      "r": 0.0056890761915166545,
+      "z": 0.003432627453438968,
+      "baseline_max": 266159.8921307868,
+      "candidate_max": 571391.0768508014,
+      "baseline_rms": 266159.8921300305,
+      "candidate_rms": 299426.62522853195
+    },
+    {
+      "position": "radial_in",
+      "r": 0.005189076191516654,
+      "z": 0.003432627453438968,
+      "baseline_max": 244473.08285667558,
+      "candidate_max": 3577130.427993002,
+      "baseline_rms": 244473.0828536436,
+      "candidate_rms": 2332915.5147859235
+    },
+    {
+      "position": "radial_out",
+      "r": 0.006189076191516655,
+      "z": 0.003432627453438968,
+      "baseline_max": 278955.92755187734,
+      "candidate_max": 3614116.4540785733,
+      "baseline_rms": 278955.9275509054,
+      "candidate_rms": 2196496.4141344777
+    },
+    {
+      "position": "axial_down",
+      "r": 0.0056890761915166545,
+      "z": 0.003232627453438968,
+      "baseline_max": 709767.405258516,
+      "candidate_max": 13469700.906118834,
+      "baseline_rms": 709767.405254976,
+      "candidate_rms": 7086951.374606242
+    },
+    {
+      "position": "axial_up",
+      "r": 0.0056890761915166545,
+      "z": 0.003632627453438968,
+      "baseline_max": 262252.55248459603,
+      "candidate_max": 12916764.700427145,
+      "baseline_rms": 262252.55248323287,
+      "candidate_rms": 6933993.251736664
+    }
+  ],
+  "scope": "Eight angular points at center and four nearby meridional positions, with complete physical momentum and endpoint one-sided time differences. Diagnostic only.",
+  "accepted": false
+}

@@ -1,0 +1,65 @@
+{
+  "tau": 0.0078125,
+  "point": [
+    0.0056890761915166545,
+    0.0,
+    0.003432627453438968
+  ],
+  "harmonic_projections": [
+    {
+      "m": 1,
+      "linear_harmonic_magnitude": 10588587.461571172,
+      "longitudinal_fraction": 0.1489520003560193,
+      "pressure_coefficient": [
+        -4843.10224643749,
+        -4475.255644422739
+      ]
+    },
+    {
+      "m": 2,
+      "linear_harmonic_magnitude": 9323622.445994062,
+      "longitudinal_fraction": 0.11092040866941144,
+      "pressure_coefficient": [
+        2397.766956420632,
+        -597.4363394523126
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "amplitude": 1.0,
+      "with_mean_pressure": false,
+      "mean_residual_cylindrical": [
+        11826713.809840782,
+        3113169.097525416,
+        -56705.68078778757
+      ],
+      "max_momentum": 42719654.172823936,
+      "rms_momentum": 22682994.9423941
+    },
+    {
+      "amplitude": 1.0,
+      "with_mean_pressure": true,
+      "mean_residual_cylindrical": [
+        262085.14107406046,
+        3113169.0975253964,
+        -56705.680787786405
+      ],
+      "max_momentum": 31342811.429066427,
+      "rms_momentum": 19357577.035046533
+    },
+    {
+      "amplitude": 0.1,
+      "with_mean_pressure": true,
+      "mean_residual_cylindrical": [
+        262085.12841582915,
+        4074.60367620728,
+        -37682.46478363134
+      ],
+      "max_momentum": 1963009.703432079,
+      "rms_momentum": 1066885.770603631
+    }
+  ],
+  "scope": "Local pressure harmonic chosen from phase-normal projection of the full linear wave residual. Compact pressure follows each integer angular phase and envelope. Full physical nonlinear momentum sampled at 16 angles. Transverse amplitude equation, global pressure primitive, and support moment conditions remain unsolved.",
+  "accepted": false
+}
