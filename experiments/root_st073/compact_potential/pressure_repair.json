@@ -1,0 +1,53 @@
+{
+  "tau": 0.011048543456039806,
+  "rows": [
+    {
+      "strength": 0.0,
+      "sampled_max": 189000.80758914104,
+      "sampled_physical_volume_l2": 209.05090869658827,
+      "sampled_max_radial": 186965.95850133055,
+      "sampled_max_angular": 51653.026783062654,
+      "sampled_max_axial": 16518.368432396437
+    },
+    {
+      "strength": 0.25,
+      "sampled_max": 189000.96928881537,
+      "sampled_physical_volume_l2": 209.0621850149286,
+      "sampled_max_radial": 186966.3228275069,
+      "sampled_max_angular": 51653.026783062654,
+      "sampled_max_axial": 16518.368432396437
+    },
+    {
+      "strength": 0.5,
+      "sampled_max": 189001.13101715114,
+      "sampled_physical_volume_l2": 209.0743472680206,
+      "sampled_max_radial": 186966.68715368328,
+      "sampled_max_angular": 51653.026783062654,
+      "sampled_max_axial": 16518.368432396437
+    },
+    {
+      "strength": 1.0,
+      "sampled_max": 189001.4545598066,
+      "sampled_physical_volume_l2": 209.10132894884066,
+      "sampled_max_radial": 186967.41580603598,
+      "sampled_max_angular": 51653.026783062654,
+      "sampled_max_axial": 16518.368432396437
+    },
+    {
+      "strength": -3.0545928099133564,
+      "sampled_max": 188998.83419702935,
+      "sampled_physical_volume_l2": 208.9847155627616,
+      "sampled_max_radial": 186961.5070288555,
+      "sampled_max_angular": 51653.026783062654,
+      "sampled_max_axial": 16518.368432396437
+    }
+  ],
+  "collar_z": 0.003945014637827957,
+  "repaired_axial_flux_integral": 6.776263578034403e-20,
+  "repaired_direct_axial_moment": -3.762251583189213e-09,
+  "repaired_direct_angular_moment": 0.00046455791068282997,
+  "max_divergence_baseline": 3.1036437917464355e-06,
+  "max_divergence_repaired": 3.1036437917464355e-06,
+  "scope": "Pressure-only radial beta bubble, normalized to cancel the physical axial weighted flux at strength one. Five-by-five cylindrical Gauss grid over compact support; this is a sampled candidate screen, not a full-domain gate.",
+  "accepted": false
+}

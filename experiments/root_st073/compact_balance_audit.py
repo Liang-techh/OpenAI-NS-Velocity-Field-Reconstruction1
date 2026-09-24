@@ -19,7 +19,10 @@ from joined_field import ROOT, coordinates
 
 def radial_integrals(field, tau, z, order=12):
     rflat, rsupp, _, _ = field.support(tau)
-    q = float(coordinates(0., z / np.sqrt(field.nu), tau, field.base.inner.h)['q'])
+    source = field
+    while not hasattr(source, 'inner'):
+        source = source.base
+    q = float(coordinates(0., z / np.sqrt(field.nu), tau, source.inner.h)['q'])
     ri = np.sqrt(field.nu) * np.sqrt(2 * q * 3 / 64)
     boundaries = sorted(set(np.clip([0., ri, 6 * ri, rflat, rsupp], 0., rsupp)))
     nodes, weights = leggauss(order)

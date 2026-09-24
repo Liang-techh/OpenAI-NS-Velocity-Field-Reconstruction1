@@ -695,3 +695,29 @@ but may create a large radial pressure-gradient error. The next candidate must
 reconstruct pressure jointly with radial momentum and velocity/stress fluxes;
 it is admissible only if full pointwise and physical-volume L2 momentum improve.
 Artifact: `experiments/root_st073/compact_potential/balance_audit.json`.
+
+## Pressure-only axial-moment repair: constructed and rejected
+
+`pressure_moment_repair.py` adds a compact pressure bubble outside the preserved
+inner core. At each fixed (z,tau), it subtracts the full integrated axial flux
+H=int r(uz^2+p)dr times a radial beta bubble normalized to int r b dr=1.
+At strength1 this makes H exactly zero up to quadrature; velocity and analytic
+divergence are unchanged. This is an actual correction candidate, not a fitted
+force, and it directly tests whether the large axial moment could be the only
+remaining obstruction.
+
+At k=5.5, axial collar z=0.00394501, the repaired H is 6.78e-20 and direct
+int r Rz dr is -3.76e-9, down from -0.525289. Yet on the 5x5 physical-volume
+sample grid over the compact support, full momentum maximum moves
+189000.81 -> 189001.45 and sampled L2 moves 209.05091 -> 209.10133.
+A least-squares strength -3.05459 lowers that grid L2 only to 208.98472 and
+moves opposite to the moment correction. Neither is an accepted field. These
+coarse grid numbers are candidate screens, not full-domain maxima or certified
+volume norms. The baseline worst residual and the angular component remain
+orders above1e-3.
+
+Thus cancelling one weighted pressure/kinetic flux identity is insufficient.
+The next correction must jointly handle radial and angular momentum, the
+axial pressure profile and velocity/stress covariance, with the full physical
+residual retained after each step as in the paper's Sections8-9. Artifact:
+`experiments/root_st073/compact_potential/pressure_repair.json`.

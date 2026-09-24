@@ -19,7 +19,10 @@ def weighted_moments(field, tau, z, order):
     q = tau if z == 0 else None
     if q is None:
         from joined_field import coordinates
-        q = float(coordinates(0., z / np.sqrt(field.nu), tau, field.base.inner.h)['q'])
+        source = field
+        while not hasattr(source, 'inner'):
+            source = source.base
+        q = float(coordinates(0., z / np.sqrt(field.nu), tau, source.inner.h)['q'])
     ri = np.sqrt(field.nu) * np.sqrt(2 * q * 3 / 64)
     boundaries = [0., ri, 6 * ri, rflat, rsupp]
     boundaries = sorted(set(np.clip(boundaries, 0., rsupp)))
