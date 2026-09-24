@@ -1,0 +1,29 @@
+{
+  "tau": 0.00781625,
+  "time_step": 2.5e-06,
+  "interval_index": 1,
+  "heldout_spatial_nodes": 16,
+  "angles_per_node": 8,
+  "temporal_fd_step": 3.125e-07,
+  "baseline": {
+    "max_momentum": 727060.8595064825,
+    "rms_momentum": 479734.0872249413,
+    "max_fd_divergence": 7.143755283323117e-06,
+    "max_speed": 6.630266741923771
+  },
+  "evolved_second_interval": {
+    "max_momentum": 1887897.4559724175,
+    "rms_momentum": 613528.8857080668,
+    "max_fd_divergence": 0.0003218720285076415,
+    "max_speed": 12.171206660349974
+  },
+  "hermite_second_interval": {
+    "max_momentum": 1748645.5945887195,
+    "rms_momentum": 611780.0938885661,
+    "max_fd_divergence": 0.0001876146561698988,
+    "max_speed": 10.9352580343002
+  },
+  "scope": "Direct finite-difference full momentum at the midpoint of one linear and Hermite potential-coefficient interval. The temporal derivative stencil stays within the interval. This is a spatially held-out sample, not an inter-node/global bound or a matched pulse.",
+  "accepted": false,
+  "interface_coefficient_max_mismatch": 2.086239451374479e-11
+}

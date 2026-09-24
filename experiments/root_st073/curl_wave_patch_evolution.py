@@ -87,9 +87,9 @@ class FrozenPotentialField:
         return velocity, pressure
 
 
-def sample_residual(field, wave, tau, grid, angles):
+def sample_residual(field, wave, tau, grid, angles, time_step=None):
     hs = .0005*np.sqrt(field.nu*tau)
-    ht = .0001*tau
+    ht = min(.0001*tau, time_step/8) if time_step is not None else .0001*tau
     nodes = []
     points_blocks = []
     for xi, eta in grid:
@@ -154,7 +154,8 @@ def metrics(rows, wave, tau, angles, harmonic_fits, mean_fit):
     return {'frozen': stats(before), 'projected_derivative_and_pressure': stats(after)}
 
 
-def run(dt=1e-5, output_name='curl_wave_patch_evolution.json'):
+def run(dt=1e-5, output_name='curl_wave_patch_evolution.json',
+        stage_count=2):
     source = json.loads((ROOT/'compact_potential'/'radial_peak_cone.json').read_text())
     base = current_field()
     wave = LocalizedCurlWave(source)
@@ -167,7 +168,7 @@ def run(dt=1e-5, output_name='curl_wave_patch_evolution.json'):
     harmonic_potentials = [np.zeros(27, complex) for _ in wave.waves]
     mean_potential = np.zeros(18)
     stages = []
-    for stage in range(2):
+    for stage in range(stage_count):
         tau = wave.tau0+stage*dt
         frozen = FrozenPotentialField(base, wave, amplitude,
                                       harmonic_potentials, mean_potential)
@@ -194,9 +195,10 @@ def run(dt=1e-5, output_name='curl_wave_patch_evolution.json'):
                                                        harmonic_fit)]
         mean_potential = mean_potential+dt*mean_fit[:18]
     report = {'amplitude': amplitude, 'time_step': dt,
+              'stage_count': stage_count,
               'train_nodes': len(train_grid), 'heldout_nodes': len(test_grid),
               'stages': stages,
-              'scope': 'Two explicit-Euler coefficient steps from the full frozen-field residual, with instantaneous projected pressure. No continuous-in-time trajectory validation, endpoint matching, or global residual bound.',
+              'scope': 'Explicit-Euler coefficient steps from the full frozen-field residual, with instantaneous projected pressure. The separate trajectory screen directly evaluates interval interiors; no global residual bound or pulse endpoint matching.',
               'accepted': False}
     out = ROOT/'compact_potential'/output_name
     out.write_bytes((json.dumps(report, indent=2)+'\n').encode())
@@ -207,7 +209,10 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--time-step', type=float, default=1e-5)
     parser.add_argument('--output-name', default='curl_wave_patch_evolution.json')
+    parser.add_argument('--stages', type=int, default=2)
     args = parser.parse_args()
     if args.time_step <= 0:
         parser.error('--time-step must be positive')
-    run(args.time_step, args.output_name)
+    if args.stages < 2:
+        parser.error('--stages must be at least 2')
+    run(args.time_step, args.output_name, args.stages)
