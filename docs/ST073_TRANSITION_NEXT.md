@@ -370,3 +370,36 @@ Next integrate rays/amplitudes at points that actually satisfy the directional
 screen, compare with full local velocity-gradient evolution, and construct a
 supported vector-potential field only after checking its own full residual.
 Keep compact moment tails and global axial/energy closure as separate failures.
+
+
+## Full-gradient rays and actual collar residence
+
+`affine_pulse.py` uses the full physical Cartesian velocity gradient J at the
+two late poloidal/pressure points passing the previous directional screen.
+It solves n_dot=-J^T*n and the incompressible projected amplitude equation,
+retaining viscosity through an integrated scalar damping factor. The45 initial
+wavevectors per point include angular-like modes1,4,16,64,256 and axial/radial
+ratios-1,0,1. None of these sampled frozen-affine evolutions amplifies above its
+initial norm over0.1*tau. Transversality relative errors stay below1.84e-9.
+This is not a no-growth theorem for the changing background or other phases.
+The average covariance fits algebraically with nonnegative weights, again
+showing why an algebraic fit alone is not a dynamical construction.
+
+The points sit only1.788e-5 physical length from the moving inner interface.
+The dimensional cutoff rate nu/distance^2 is3.128e7, about3.57--3.59e5 times
+the reduced inviscid growth rate; this is a scaling warning, not an operator
+bound. A0.1*tau frozen horizon also predicts radial travel about30 times that
+distance, making that local approximation unsuitable for a supported pulse.
+
+`ray_residence.py` therefore integrates particles in the ACTUAL time-dependent
+candidate. Both cross the moving inner interface in about3.84e-5 time units,
+only0.00348*tau, far shorter than the assumed0.1*tau pulse interval. The event
+uses q(z,tau), not a fixed cylindrical boundary. The y=.02 outer probe was
+explicitly defined and is not claimed to be a cone boundary; neither path
+reached it. Artifacts: affine_pulse/report.json and affine_pulse/residence.json.
+
+Next redesign the transition to admit an interior region with appropriate
+stress direction and transport residence BEFORE adding localized oscillations.
+Do not attach the earlier short-time1.50-gain wave to this narrow collar: it
+came from a different point that fails the direction screen. Preserve the
+core, moment accounting, full residual gates and global-closure requirements.
