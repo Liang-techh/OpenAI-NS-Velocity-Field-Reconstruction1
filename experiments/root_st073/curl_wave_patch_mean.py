@@ -55,8 +55,9 @@ def fit_mean(rows, wave, amplitude, regularization=1e-4):
 
 class MeanPatchField(PatchTaylorField):
     """Callable exact-curl mean update at the registered endpoint."""
-    def __init__(self, base, wave, coefficients, amplitude, mean_coefficients):
-        super().__init__(base, wave, coefficients, amplitude)
+    def __init__(self, base, wave, coefficients, amplitude, mean_coefficients,
+                 temporal_cutoff=True):
+        super().__init__(base, wave, coefficients, amplitude, temporal_cutoff)
         self.mean_coefficients = mean_coefficients
 
     def fields(self, points, tau):
@@ -68,9 +69,10 @@ class MeanPatchField(PatchTaylorField):
             if r == 0 or abs(r-self.wave.radius) >= self.wave.radial_halfwidth or abs(z-self.wave.zcenter) >= self.wave.axial_halfwidth:
                 continue
             dt = t-self.wave.tau0
-            if dt < 0 or dt >= .0001:
+            if dt < 0 or (self.temporal_cutoff and dt >= .0001):
                 continue
-            taper = float(cutoff((dt-.00005)/.00005)[0])
+            taper = (float(cutoff((dt-.00005)/.00005)[0])
+                     if self.temporal_cutoff else 1.)
             xi = (r-self.wave.radius)/self.wave.radial_halfwidth
             eta = (z-self.wave.zcenter)/self.wave.axial_halfwidth
             br, brr = bump(r, self.wave.radius, self.wave.radial_halfwidth)
@@ -165,16 +167,39 @@ def run():
     probe_amplitude = .005
     probe_mean = fit_mean(train, wave, probe_amplitude)
     probe_field = MeanPatchField(base, wave, harmonics, probe_amplitude, probe_mean)
+    continued_field = MeanPatchField(base, wave, harmonics, probe_amplitude,
+                                     probe_mean, temporal_cutoff=False)
+    mean_only_field = MeanPatchField(base, wave, harmonics, 0.,
+                                     fit_mean(train, wave, 0.),
+                                     temporal_cutoff=False)
+    harmonic_only_field = PatchTaylorField(base, wave, harmonics,
+                                            probe_amplitude,
+                                            temporal_cutoff=False)
     time_probe = []
     for offset in (0., .00001, .00005, .00009, .00011):
         t = wave.tau0+offset
         probe_u, probe_j, probe_part = kinematics(probe_field, point, t, hs, ht)
         probe_residual = probe_part+np.einsum('nij,nj->ni', probe_j, probe_u)
+        continued_u, continued_j, continued_part = kinematics(continued_field,
+                                                              point, t, hs, ht)
+        continued_residual = (continued_part
+                              +np.einsum('nij,nj->ni', continued_j, continued_u))
+        mean_u, mean_j, mean_part = kinematics(mean_only_field, point, t, hs, ht)
+        mean_residual = mean_part+np.einsum('nij,nj->ni', mean_j, mean_u)
+        harmonic_u, harmonic_j, harmonic_part = kinematics(harmonic_only_field,
+                                                            point, t, hs, ht)
+        harmonic_residual = (harmonic_part
+                             +np.einsum('nij,nj->ni', harmonic_j, harmonic_u))
         base_u, base_j, base_part = kinematics(base, point, t, hs, ht)
         base_residual = base_part+np.einsum('nij,nj->ni', base_j, base_u)
         time_probe.append({'offset': offset,
                            'baseline_norm': float(np.linalg.norm(base_residual)),
-                           'corrected_norm': float(np.linalg.norm(probe_residual))})
+                           'corrected_norm': float(np.linalg.norm(probe_residual)),
+                           'continued_norm': float(np.linalg.norm(continued_residual)),
+                           'mean_only_norm': float(np.linalg.norm(mean_residual)),
+                           'harmonic_only_norm': float(np.linalg.norm(harmonic_residual)),
+                           'continued_speed': float(np.linalg.norm(continued_u)),
+                           'baseline_speed': float(np.linalg.norm(base_u))})
     report = {'tau': wave.tau0, 'amplitude': amplitude,
               'train_nodes': len(train), 'heldout_nodes': len(test),
               'mean_coefficient_norm': float(np.linalg.norm(mean_coefficients)),

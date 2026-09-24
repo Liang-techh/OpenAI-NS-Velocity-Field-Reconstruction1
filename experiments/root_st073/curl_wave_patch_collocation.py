@@ -101,10 +101,12 @@ def fit_mode(rows, wave, mode_index, regularization=1e-4):
 
 class PatchTaylorField:
     """Real callable velocity/pressure realizing the collocated endpoint jet."""
-    def __init__(self, base, wave, coefficients, amplitude):
+    def __init__(self, base, wave, coefficients, amplitude,
+                 temporal_cutoff=True):
         self.base, self.wave = base, wave
         self.coefficients = coefficients
         self.amplitude = amplitude
+        self.temporal_cutoff = temporal_cutoff
         self.nu = base.nu
 
     def fields(self, points, tau):
@@ -118,9 +120,10 @@ class PatchTaylorField:
             if r == 0 or abs(r-self.wave.radius) >= self.wave.radial_halfwidth or abs(z-self.wave.zcenter) >= self.wave.axial_halfwidth:
                 continue
             dt = t-self.wave.tau0
-            if dt < 0 or dt >= .0001:
+            if dt < 0 or (self.temporal_cutoff and dt >= .0001):
                 continue
-            taper = float(cutoff((dt-.00005)/.00005)[0])
+            taper = (float(cutoff((dt-.00005)/.00005)[0])
+                     if self.temporal_cutoff else 1.)
             theta = np.arctan2(y, x)
             xi = (r-self.wave.radius)/self.wave.radial_halfwidth
             eta = (z-self.wave.zcenter)/self.wave.axial_halfwidth
