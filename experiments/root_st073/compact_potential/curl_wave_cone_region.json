@@ -1,0 +1,1094 @@
+{
+  "tau": 0.0078125,
+  "radii": [
+    0.003,
+    0.004,
+    0.0056890761915166545,
+    0.0075,
+    0.0095,
+    0.012,
+    0.016
+  ],
+  "heights": [
+    0.0,
+    0.0015,
+    0.0025,
+    0.00275,
+    0.003,
+    0.00325,
+    0.003432627453438968,
+    0.0036
+  ],
+  "r_support": 0.0239808843023963,
+  "z_support": 0.004308738412821101,
+  "quadrature_order_per_radial_segment": 8,
+  "reference_target_relative_difference": 1.0313498292268503e-08,
+  "passing_count": 11,
+  "total_count": 56,
+  "passing_by_axial_room": [
+    {
+      "r": 0.016,
+      "z": 0.0,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0079808843023963,
+      "axial_symmetric_support_halfwidth_ceiling": 0.004308738412821101,
+      "residual_norm": 500.1000427487792,
+      "target": [
+        0.5204571624771707,
+        -0.06750745031994462
+      ],
+      "lambda_squared": 185.47695455835074,
+      "target_dot_N": -0.5205152678617501,
+      "target_dot_K": 0.06705795810564508,
+      "cone_ratio": 0.05938606529494825,
+      "strict_local_pass": true
+    },
+    {
+      "r": 0.003,
+      "z": 0.0015,
+      "radial_symmetric_support_halfwidth_ceiling": 0.003,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0028087384128211014,
+      "residual_norm": 2910.4606417125165,
+      "target": [
+        -0.09194469607895718,
+        -0.382356049160675
+      ],
+      "lambda_squared": 6124.5825781872545,
+      "target_dot_N": -0.3627137098473362,
+      "target_dot_K": 0.15194979485209836,
+      "cone_ratio": 0.20486996324200818,
+      "strict_local_pass": true
+    },
+    {
+      "r": 0.003,
+      "z": 0.0025,
+      "radial_symmetric_support_halfwidth_ceiling": 0.003,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0018087384128211014,
+      "residual_norm": 219240.02659693215,
+      "target": [
+        -2.8799454780203395,
+        -15.869190377494064
+      ],
+      "lambda_squared": 16692.099473643477,
+      "target_dot_N": -15.512818030715477,
+      "target_dot_K": 4.413362203516582,
+      "cone_ratio": 0.39640848023601105,
+      "strict_local_pass": true
+    },
+    {
+      "r": 0.003,
+      "z": 0.00275,
+      "radial_symmetric_support_halfwidth_ceiling": 0.003,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0015587384128211016,
+      "residual_norm": 173966.41894840208,
+      "target": [
+        -19.539389653889423,
+        -88.94217327719886
+      ],
+      "lambda_squared": 16308.184115234273,
+      "target_dot_N": -86.8448358231705,
+      "target_dot_K": 27.3947517996486,
+      "cone_ratio": 0.49515566420316176,
+      "strict_local_pass": true
+    },
+    {
+      "r": 0.003,
+      "z": 0.003,
+      "radial_symmetric_support_halfwidth_ceiling": 0.003,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0013087384128211014,
+      "residual_norm": 328389.0123858097,
+      "target": [
+        -24.259006113525434,
+        -75.90556864446434
+      ],
+      "lambda_squared": 12651.480711051774,
+      "target_dot_N": -73.81054159630816,
+      "target_dot_K": 30.035956420850244,
+      "cone_ratio": 0.7681391382455747,
+      "strict_local_pass": true
+    },
+    {
+      "r": 0.0095,
+      "z": 0.003432627453438968,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0095,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0008761109593821335,
+      "residual_norm": 166081.7127166884,
+      "target": [
+        76.06322117215001,
+        144.8725086238299
+      ],
+      "lambda_squared": 10368.099526115368,
+      "target_dot_N": -119.5496599084807,
+      "target_dot_K": -111.72079567301549,
+      "cone_ratio": 0.744757439781846,
+      "strict_local_pass": true
+    },
+    {
+      "r": 0.0075,
+      "z": 0.003432627453438968,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0075,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0008761109593821335,
+      "residual_norm": 270454.3310944787,
+      "target": [
+        63.55755534953452,
+        151.8404498666915
+      ],
+      "lambda_squared": 7828.721402205091,
+      "target_dot_N": -150.25833433982643,
+      "target_dot_K": -67.21248410190871,
+      "cone_ratio": 0.2459173253205613,
+      "strict_local_pass": true
+    },
+    {
+      "r": 0.0056890761915166545,
+      "z": 0.003432627453438968,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0056890761915166545,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0008761109593821335,
+      "residual_norm": 266159.892129595,
+      "target": [
+        45.59504508569022,
+        138.9583356068022
+      ],
+      "lambda_squared": 3919.8512179384275,
+      "target_dot_N": -145.01950572271372,
+      "target_dot_K": -18.9121688581348,
+      "cone_ratio": 0.06730548125824415,
+      "strict_local_pass": true
+    },
+    {
+      "r": 0.0095,
+      "z": 0.0036,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0095,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0007087384128211015,
+      "residual_norm": 207928.12766745334,
+      "target": [
+        149.04383592841845,
+        148.07559600288178
+      ],
+      "lambda_squared": 2612.6729598921493,
+      "target_dot_N": -183.85241165208592,
+      "target_dot_K": -101.67958442862518,
+      "cone_ratio": 0.42429571779655684,
+      "strict_local_pass": true
+    },
+    {
+      "r": 0.0075,
+      "z": 0.0036,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0075,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0007087384128211015,
+      "residual_norm": 202352.39618508643,
+      "target": [
+        120.20846070095685,
+        166.75109002633928
+      ],
+      "lambda_squared": 1164.8637635439115,
+      "target_dot_N": -199.1132975130574,
+      "target_dot_K": -51.08712951950311,
+      "cone_ratio": 0.10095486328927426,
+      "strict_local_pass": true
+    },
+    {
+      "r": 0.0056890761915166545,
+      "z": 0.0036,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0056890761915166545,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0007087384128211015,
+      "residual_norm": 200593.85709212863,
+      "target": [
+        80.30613069860759,
+        153.82874468876682
+      ],
+      "lambda_squared": 281.07874367859756,
+      "target_dot_N": -173.49851775196186,
+      "target_dot_K": 3.2590885498603273,
+      "cone_ratio": 0.004965037146643863,
+      "strict_local_pass": true
+    }
+  ],
+  "rows": [
+    {
+      "r": 0.003,
+      "z": 0.0,
+      "radial_symmetric_support_halfwidth_ceiling": 0.003,
+      "axial_symmetric_support_halfwidth_ceiling": 0.004308738412821101,
+      "residual_norm": 1168.77656569529,
+      "target": [
+        -0.16556768092886123,
+        -0.007853454655715507
+      ],
+      "lambda_squared": -1016073.3932785013,
+      "target_dot_N": 0.16466218457631396,
+      "target_dot_K": 0.01899206910124555,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.004,
+      "z": 0.0,
+      "radial_symmetric_support_halfwidth_ceiling": 0.004,
+      "axial_symmetric_support_halfwidth_ceiling": 0.004308738412821101,
+      "residual_norm": 3374.3643829688745,
+      "target": [
+        -1.577053280637403,
+        -0.07707377078679163
+      ],
+      "lambda_squared": -732610.9127242791,
+      "target_dot_N": 1.5778127016425052,
+      "target_dot_K": 0.05953565862630867,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.0056890761915166545,
+      "z": 0.0,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0056890761915166545,
+      "axial_symmetric_support_halfwidth_ceiling": 0.004308738412821101,
+      "residual_norm": 3880.267880482852,
+      "target": [
+        -2.326692416420493,
+        -0.1578705720625508
+      ],
+      "lambda_squared": -294409.6389812068,
+      "target_dot_N": 2.329597481362696,
+      "target_dot_K": 0.10675342139983933,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.0075,
+      "z": 0.0,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0075,
+      "axial_symmetric_support_halfwidth_ceiling": 0.004308738412821101,
+      "residual_norm": 2860.167157105805,
+      "target": [
+        -1.820110668770317,
+        -0.15923311348161176
+      ],
+      "lambda_squared": -76024.29483763513,
+      "target_dot_N": 1.8230465241967109,
+      "target_dot_K": 0.12107601585314055,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.0095,
+      "z": 0.0,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0095,
+      "axial_symmetric_support_halfwidth_ceiling": 0.004308738412821101,
+      "residual_norm": 1836.8753699634592,
+      "target": [
+        -2.1117852223979514,
+        -0.10453422374620319
+      ],
+      "lambda_squared": 28689.024458931537,
+      "target_dot_N": 2.1125391725088365,
+      "target_dot_K": 0.08799132961984382,
+      "cone_ratio": 0.02046634269329691,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.012,
+      "z": 0.0,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0119808843023963,
+      "axial_symmetric_support_halfwidth_ceiling": 0.004308738412821101,
+      "residual_norm": 439.9068908235066,
+      "target": [
+        -2.275868707285001,
+        -0.044471733617191755
+      ],
+      "lambda_squared": 30943.56432830938,
+      "target_dot_N": 2.275352809058364,
+      "target_dot_K": 0.0657700707026448,
+      "cone_ratio": 0.03256557026331109,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.016,
+      "z": 0.0,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0079808843023963,
+      "axial_symmetric_support_halfwidth_ceiling": 0.004308738412821101,
+      "residual_norm": 500.1000427487792,
+      "target": [
+        0.5204571624771707,
+        -0.06750745031994462
+      ],
+      "lambda_squared": 185.47695455835074,
+      "target_dot_N": -0.5205152678617501,
+      "target_dot_K": 0.06705795810564508,
+      "cone_ratio": 0.05938606529494825,
+      "strict_local_pass": true
+    },
+    {
+      "r": 0.003,
+      "z": 0.0015,
+      "radial_symmetric_support_halfwidth_ceiling": 0.003,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0028087384128211014,
+      "residual_norm": 2910.4606417125165,
+      "target": [
+        -0.09194469607895718,
+        -0.382356049160675
+      ],
+      "lambda_squared": 6124.5825781872545,
+      "target_dot_N": -0.3627137098473362,
+      "target_dot_K": 0.15194979485209836,
+      "cone_ratio": 0.20486996324200818,
+      "strict_local_pass": true
+    },
+    {
+      "r": 0.004,
+      "z": 0.0015,
+      "radial_symmetric_support_halfwidth_ceiling": 0.004,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0028087384128211014,
+      "residual_norm": 6112.461696602097,
+      "target": [
+        -1.1820972796948899,
+        -4.65670932566632
+      ],
+      "lambda_squared": -631718.0401531355,
+      "target_dot_N": 2.7734594913338886,
+      "target_dot_K": 3.9230368558477373,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.0056890761915166545,
+      "z": 0.0015,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0056890761915166545,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0028087384128211014,
+      "residual_norm": 4010.2148609400692,
+      "target": [
+        -2.374548409396563,
+        -9.918685480440868
+      ],
+      "lambda_squared": -41817.82882860122,
+      "target_dot_N": 8.688900533356783,
+      "target_dot_K": 5.340581366284803,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.0075,
+      "z": 0.0015,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0075,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0028087384128211014,
+      "residual_norm": 1825.4390280261289,
+      "target": [
+        -2.597335140355354,
+        -10.252110976725849
+      ],
+      "lambda_squared": 35095.01242834895,
+      "target_dot_N": 8.26473084692174,
+      "target_dot_K": 6.598950927107101,
+      "cone_ratio": 0.3338364635491384,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.0095,
+      "z": 0.0015,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0095,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0028087384128211014,
+      "residual_norm": 2144.973065889207,
+      "target": [
+        -2.7377043919653423,
+        -7.0264251524670716
+      ],
+      "lambda_squared": 48381.06453271136,
+      "target_dot_N": 4.656042635434205,
+      "target_dot_K": 5.931858287082315,
+      "cone_ratio": 0.8325478413740726,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.012,
+      "z": 0.0015,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0119808843023963,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0028087384128211014,
+      "residual_norm": 1000.2727666352113,
+      "target": [
+        -2.1278263931767665,
+        -3.766512863863435
+      ],
+      "lambda_squared": 33446.12615408822,
+      "target_dot_N": 1.0221072909362336,
+      "target_dot_K": 4.203517693428134,
+      "cone_ratio": 5.115839967734169,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.016,
+      "z": 0.0015,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0079808843023963,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0028087384128211014,
+      "residual_norm": 708.9348416727076,
+      "target": [
+        0.34426441759568843,
+        -5.521360185646883
+      ],
+      "lambda_squared": 452.1273562164825,
+      "target_dot_N": -1.2423217730482603,
+      "target_dot_K": 5.390785926103847,
+      "cone_ratio": 3.141086478495802,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.003,
+      "z": 0.0025,
+      "radial_symmetric_support_halfwidth_ceiling": 0.003,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0018087384128211014,
+      "residual_norm": 219240.02659693215,
+      "target": [
+        -2.8799454780203395,
+        -15.869190377494064
+      ],
+      "lambda_squared": 16692.099473643477,
+      "target_dot_N": -15.512818030715477,
+      "target_dot_K": 4.413362203516582,
+      "cone_ratio": 0.39640848023601105,
+      "strict_local_pass": true
+    },
+    {
+      "r": 0.004,
+      "z": 0.0025,
+      "radial_symmetric_support_halfwidth_ceiling": 0.004,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0018087384128211014,
+      "residual_norm": 290676.9053532599,
+      "target": [
+        -5.5703480660427145,
+        -26.28506650818114
+      ],
+      "lambda_squared": -412426.54321572365,
+      "target_dot_N": 20.98706328536792,
+      "target_dot_K": 16.777266570342544,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.0056890761915166545,
+      "z": 0.0025,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0056890761915166545,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0018087384128211014,
+      "residual_norm": 377496.0558281243,
+      "target": [
+        -11.546941829654982,
+        -38.997162486323376
+      ],
+      "lambda_squared": 61702.287931308856,
+      "target_dot_N": 39.58098154578158,
+      "target_dot_K": 9.351815196775467,
+      "cone_ratio": 0.1492655423679314,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.0075,
+      "z": 0.0025,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0075,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0018087384128211014,
+      "residual_norm": 394454.16232049686,
+      "target": [
+        -17.48388354274038,
+        -40.322604388378
+      ],
+      "lambda_squared": 96055.83218569716,
+      "target_dot_N": 41.46920175049922,
+      "target_dot_K": 14.556919817534924,
+      "cone_ratio": 0.2692470919429714,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.0095,
+      "z": 0.0025,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0095,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0018087384128211014,
+      "residual_norm": 330216.6574445694,
+      "target": [
+        -21.032167999839047,
+        -31.40431712384456
+      ],
+      "lambda_squared": 75446.95691915207,
+      "target_dot_N": 32.255186904860814,
+      "target_dot_K": 19.702440014397848,
+      "cone_ratio": 0.5041210925848997,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.012,
+      "z": 0.0025,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0119808843023963,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0018087384128211014,
+      "residual_norm": 191676.45323714585,
+      "target": [
+        -19.985003992726796,
+        -17.07525224786755
+      ],
+      "lambda_squared": 36665.20610354447,
+      "target_dot_N": 13.789003665822742,
+      "target_dot_K": 22.379186799826723,
+      "cone_ratio": 2.18694632312568,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.016,
+      "z": 0.0025,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0079808843023963,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0018087384128211014,
+      "residual_norm": 42195.746503264236,
+      "target": [
+        -13.740631322532474,
+        -9.798427892336132
+      ],
+      "lambda_squared": 816.5153631011892,
+      "target_dot_N": 6.043762094962477,
+      "target_dot_K": 15.757127848772628,
+      "cone_ratio": 2.9648420204510657,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.003,
+      "z": 0.00275,
+      "radial_symmetric_support_halfwidth_ceiling": 0.003,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0015587384128211016,
+      "residual_norm": 173966.41894840208,
+      "target": [
+        -19.539389653889423,
+        -88.94217327719886
+      ],
+      "lambda_squared": 16308.184115234273,
+      "target_dot_N": -86.8448358231705,
+      "target_dot_K": 27.3947517996486,
+      "cone_ratio": 0.49515566420316176,
+      "strict_local_pass": true
+    },
+    {
+      "r": 0.004,
+      "z": 0.00275,
+      "radial_symmetric_support_halfwidth_ceiling": 0.004,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0015587384128211016,
+      "residual_norm": 239621.0524154419,
+      "target": [
+        -34.44724487853537,
+        -124.6693637462417
+      ],
+      "lambda_squared": -351191.791587494,
+      "target_dot_N": 109.89047496533179,
+      "target_dot_K": 68.2139754633044,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.0056890761915166545,
+      "z": 0.00275,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0056890761915166545,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0015587384128211016,
+      "residual_norm": 332936.1206141816,
+      "target": [
+        -66.6682624242282,
+        -168.1060038331371
+      ],
+      "lambda_squared": 66768.40228369944,
+      "target_dot_N": 180.00893240593217,
+      "target_dot_K": 17.351368634462407,
+      "cone_ratio": 0.07038581910201422,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.0075,
+      "z": 0.00275,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0075,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0015587384128211016,
+      "residual_norm": 357072.32279239316,
+      "target": [
+        -101.3840025408054,
+        -173.89935258121284
+      ],
+      "lambda_squared": 98304.51579834854,
+      "target_dot_N": 197.33515603980572,
+      "target_dot_K": 39.73080656247163,
+      "cone_ratio": 0.16128542756322817,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.0095,
+      "z": 0.00275,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0095,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0015587384128211016,
+      "residual_norm": 284055.7615786233,
+      "target": [
+        -125.83304007614187,
+        -139.56983156740858
+      ],
+      "lambda_squared": 77848.18123592586,
+      "target_dot_N": 173.99861033812297,
+      "target_dot_K": 70.98010607882166,
+      "cone_ratio": 0.34877064946828484,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.012,
+      "z": 0.00275,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0119808843023963,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0015587384128211016,
+      "residual_norm": 124129.67801265224,
+      "target": [
+        -127.17018384913264,
+        -75.53441508327964
+      ],
+      "lambda_squared": 35902.96233080775,
+      "target_dot_N": 98.54068215909393,
+      "target_dot_K": 110.30610808933389,
+      "cone_ratio": 1.5356244980521796,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.016,
+      "z": 0.00275,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0079808843023963,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0015587384128211016,
+      "residual_norm": 6104.9538982592585,
+      "target": [
+        -95.52628682178927,
+        -24.20757926876546
+      ],
+      "lambda_squared": 817.6853657308707,
+      "target_dot_N": 55.043924545191125,
+      "target_dot_K": 81.74010483646092,
+      "cone_ratio": 1.9463852258532477,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.003,
+      "z": 0.003,
+      "radial_symmetric_support_halfwidth_ceiling": 0.003,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0013087384128211014,
+      "residual_norm": 328389.0123858097,
+      "target": [
+        -24.259006113525434,
+        -75.90556864446434
+      ],
+      "lambda_squared": 12651.480711051774,
+      "target_dot_N": -73.81054159630816,
+      "target_dot_K": 30.035956420850244,
+      "cone_ratio": 0.7681391382455747,
+      "strict_local_pass": true
+    },
+    {
+      "r": 0.004,
+      "z": 0.003,
+      "radial_symmetric_support_halfwidth_ceiling": 0.004,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0013087384128211014,
+      "residual_norm": 423178.2089705172,
+      "target": [
+        -42.544630430231685,
+        -111.14940750948881
+      ],
+      "lambda_squared": -334220.44713742187,
+      "target_dot_N": 99.25913698982208,
+      "target_dot_K": 65.66475532727686,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.0056890761915166545,
+      "z": 0.003,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0056890761915166545,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0013087384128211014,
+      "residual_norm": 516394.79409075057,
+      "target": [
+        -84.15940576443747,
+        -154.94137472427633
+      ],
+      "lambda_squared": 47073.8850343653,
+      "target_dot_N": 176.09794588823726,
+      "target_dot_K": -8.896551804789498,
+      "cone_ratio": 0.03767217882191591,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.0075,
+      "z": 0.003,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0075,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0013087384128211014,
+      "residual_norm": 516287.2730756114,
+      "target": [
+        -131.7753809406956,
+        -157.71032171692764
+      ],
+      "lambda_squared": 71315.97878907823,
+      "target_dot_N": 205.3770010673199,
+      "target_dot_K": 7.588414242538033,
+      "cone_ratio": 0.028524505517445807,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.0095,
+      "z": 0.003,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0095,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0013087384128211014,
+      "residual_norm": 431921.9343521481,
+      "target": [
+        -165.83533425763608,
+        -115.63168774826528
+      ],
+      "lambda_squared": 60589.98193524553,
+      "target_dot_N": 199.1541917379603,
+      "target_dot_K": 34.7800691927712,
+      "cone_ratio": 0.14938473677310404,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.012,
+      "z": 0.003,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0119808843023963,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0013087384128211014,
+      "residual_norm": 280984.3966328897,
+      "target": [
+        -166.7043190119779,
+        -43.24517188131882
+      ],
+      "lambda_squared": 27787.586554654237,
+      "target_dot_N": 145.2284922368498,
+      "target_dot_K": 92.56975699926711,
+      "cone_ratio": 0.9001054981438881,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.016,
+      "z": 0.003,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0079808843023963,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0013087384128211014,
+      "residual_norm": 88821.92028595424,
+      "target": [
+        -121.6715013015264,
+        -4.174089574394687
+      ],
+      "lambda_squared": 559.0419380522211,
+      "target_dot_N": 76.7533526827999,
+      "target_dot_K": 94.50026510381939,
+      "cone_ratio": 1.7811364388149518,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.003,
+      "z": 0.00325,
+      "radial_symmetric_support_halfwidth_ceiling": 0.003,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0010587384128211016,
+      "residual_norm": 362913.0369782678,
+      "target": [
+        -4.165865027063538,
+        29.2089355567197
+      ],
+      "lambda_squared": 6005.68796614146,
+      "target_dot_N": 29.413458247853843,
+      "target_dot_K": 2.3162084712033817,
+      "cone_ratio": 0.18740212972453676,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.004,
+      "z": 0.00325,
+      "radial_symmetric_support_halfwidth_ceiling": 0.004,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0010587384128211016,
+      "residual_norm": 508856.3725085627,
+      "target": [
+        -7.356681538273103,
+        29.66709629952441
+      ],
+      "lambda_squared": -230827.1558237692,
+      "target_dot_N": 13.385157782990419,
+      "target_dot_K": -27.47899046954371,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.0056890761915166545,
+      "z": 0.00325,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0056890761915166545,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0010587384128211016,
+      "residual_norm": 688423.126366762,
+      "target": [
+        -18.43829169581223,
+        29.263947631501768
+      ],
+      "lambda_squared": 16704.547714742483,
+      "target_dot_N": -18.613851203748457,
+      "target_dot_K": -29.152594653029574,
+      "cone_ratio": 1.031049038039322,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.0075,
+      "z": 0.00325,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0075,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0010587384128211016,
+      "residual_norm": 704206.2232055459,
+      "target": [
+        -35.29454233430679,
+        36.745347673378426
+      ],
+      "lambda_squared": 27974.490689157923,
+      "target_dot_N": -1.7969324448573838,
+      "target_dot_K": -50.91852637316059,
+      "cone_ratio": 18.9917575816545,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.0095,
+      "z": 0.00325,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0095,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0010587384128211016,
+      "residual_norm": 544846.5387420178,
+      "target": [
+        -47.8311097705327,
+        53.06036436821567
+      ],
+      "lambda_squared": 28330.35121763513,
+      "target_dot_N": 24.182506920939417,
+      "target_dot_K": -67.21922111857053,
+      "cone_ratio": 2.2999004407339623,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.012,
+      "z": 0.00325,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0119808843023963,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0010587384128211016,
+      "residual_norm": 255467.6959565623,
+      "target": [
+        -45.98693700715726,
+        69.24590085298549
+      ],
+      "lambda_squared": 13516.94265908558,
+      "target_dot_N": 66.29105705832664,
+      "target_dot_K": -50.152656104452014,
+      "cone_ratio": 1.113150873773296,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.016,
+      "z": 0.00325,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0079808843023963,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0010587384128211016,
+      "residual_norm": 35812.795849153736,
+      "target": [
+        -26.76290896763516,
+        46.12995661792263
+      ],
+      "lambda_squared": 201.20238879251497,
+      "target_dot_N": 53.233575981521156,
+      "target_dot_K": -3.2268532970936055,
+      "cone_ratio": 0.09453373997386277,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.003,
+      "z": 0.003432627453438968,
+      "radial_symmetric_support_halfwidth_ceiling": 0.003,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0008761109593821335,
+      "residual_norm": 100457.04828456868,
+      "target": [
+        14.588897362831537,
+        83.43621941433058
+      ],
+      "lambda_squared": 2205.6794549433307,
+      "target_dot_N": 82.53456090947576,
+      "target_dot_K": -19.039036002371155,
+      "cone_ratio": 0.6542020610124399,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.004,
+      "z": 0.003432627453438968,
+      "radial_symmetric_support_halfwidth_ceiling": 0.004,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0008761109593821335,
+      "residual_norm": 165648.41480935275,
+      "target": [
+        25.516608850611043,
+        108.05298083051886
+      ],
+      "lambda_squared": -16243.21878845527,
+      "target_dot_N": 83.79079208175062,
+      "target_dot_K": -72.83987339300087,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.0056890761915166545,
+      "z": 0.003432627453438968,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0056890761915166545,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0008761109593821335,
+      "residual_norm": 266159.892129595,
+      "target": [
+        45.59504508569022,
+        138.9583356068022
+      ],
+      "lambda_squared": 3919.8512179384275,
+      "target_dot_N": -145.01950572271372,
+      "target_dot_K": -18.9121688581348,
+      "cone_ratio": 0.06730548125824415,
+      "strict_local_pass": true
+    },
+    {
+      "r": 0.0075,
+      "z": 0.003432627453438968,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0075,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0008761109593821335,
+      "residual_norm": 270454.3310944787,
+      "target": [
+        63.55755534953452,
+        151.8404498666915
+      ],
+      "lambda_squared": 7828.721402205091,
+      "target_dot_N": -150.25833433982643,
+      "target_dot_K": -67.21248410190871,
+      "cone_ratio": 0.2459173253205613,
+      "strict_local_pass": true
+    },
+    {
+      "r": 0.0095,
+      "z": 0.003432627453438968,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0095,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0008761109593821335,
+      "residual_norm": 166081.7127166884,
+      "target": [
+        76.06322117215001,
+        144.8725086238299
+      ],
+      "lambda_squared": 10368.099526115368,
+      "target_dot_N": -119.5496599084807,
+      "target_dot_K": -111.72079567301549,
+      "cone_ratio": 0.744757439781846,
+      "strict_local_pass": true
+    },
+    {
+      "r": 0.012,
+      "z": 0.003432627453438968,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0119808843023963,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0008761109593821335,
+      "residual_norm": 15083.99901297047,
+      "target": [
+        79.34534321414803,
+        117.36504261907983
+      ],
+      "lambda_squared": 5191.325705388029,
+      "target_dot_N": -33.01006176593143,
+      "target_dot_K": -137.7699986969542,
+      "cone_ratio": 6.360622096613413,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.016,
+      "z": 0.003432627453438968,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0079808843023963,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0008761109593821335,
+      "residual_norm": 54094.65375320717,
+      "target": [
+        66.4299247189168,
+        67.29643893724013
+      ],
+      "lambda_squared": 53.59686918175858,
+      "target_dot_N": 30.9692357698561,
+      "target_dot_K": -89.34568835498278,
+      "cone_ratio": 4.945878778670067,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.003,
+      "z": 0.0036,
+      "radial_symmetric_support_halfwidth_ceiling": 0.003,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0007087384128211015,
+      "residual_norm": 182027.05409501705,
+      "target": [
+        24.221055240242595,
+        81.49182155086058
+      ],
+      "lambda_squared": 551.3609315100246,
+      "target_dot_N": 80.29089349023721,
+      "target_dot_K": -27.94546330207414,
+      "cone_ratio": 1.1553778801762626,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.004,
+      "z": 0.0036,
+      "radial_symmetric_support_halfwidth_ceiling": 0.004,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0007087384128211015,
+      "residual_norm": 199367.2758735971,
+      "target": [
+        42.46324564284419,
+        112.57353879386552
+      ],
+      "lambda_squared": -110.14272329265248,
+      "target_dot_N": 103.25096697736811,
+      "target_dot_K": -61.767035588061965,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.0056890761915166545,
+      "z": 0.0036,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0056890761915166545,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0007087384128211015,
+      "residual_norm": 200593.85709212863,
+      "target": [
+        80.30613069860759,
+        153.82874468876682
+      ],
+      "lambda_squared": 281.07874367859756,
+      "target_dot_N": -173.49851775196186,
+      "target_dot_K": 3.2590885498603273,
+      "cone_ratio": 0.004965037146643863,
+      "strict_local_pass": true
+    },
+    {
+      "r": 0.0075,
+      "z": 0.0036,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0075,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0007087384128211015,
+      "residual_norm": 202352.39618508643,
+      "target": [
+        120.20846070095685,
+        166.75109002633928
+      ],
+      "lambda_squared": 1164.8637635439115,
+      "target_dot_N": -199.1132975130574,
+      "target_dot_K": -51.08712951950311,
+      "cone_ratio": 0.10095486328927426,
+      "strict_local_pass": true
+    },
+    {
+      "r": 0.0095,
+      "z": 0.0036,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0095,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0007087384128211015,
+      "residual_norm": 207928.12766745334,
+      "target": [
+        149.04383592841845,
+        148.07559600288178
+      ],
+      "lambda_squared": 2612.6729598921493,
+      "target_dot_N": -183.85241165208592,
+      "target_dot_K": -101.67958442862518,
+      "cone_ratio": 0.42429571779655684,
+      "strict_local_pass": true
+    },
+    {
+      "r": 0.012,
+      "z": 0.0036,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0119808843023963,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0007087384128211015,
+      "residual_norm": 201225.15891501546,
+      "target": [
+        152.5838625321051,
+        103.46242931719107
+      ],
+      "lambda_squared": 1377.350743916297,
+      "target_dot_N": -103.1200141366456,
+      "target_dot_K": -152.81548373737888,
+      "cone_ratio": 2.337272848262677,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.016,
+      "z": 0.0036,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0079808843023963,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0007087384128211015,
+      "residual_norm": 91893.79079103876,
+      "target": [
+        117.61413487291887,
+        59.246465492415986
+      ],
+      "lambda_squared": 8.152790288078604,
+      "target_dot_N": 23.011737752373907,
+      "target_dot_K": -129.6676070607658,
+      "cone_ratio": 11.99243679756962,
+      "strict_local_pass": false
+    }
+  ],
+  "scope": "Coarse physical local cone screen at one time. Support ceilings are geometric only; cone passing at a point does not establish a supported positive covariance through a patch, exact pressure/mean correction, or a global NS solution.",
+  "accepted": false
+}

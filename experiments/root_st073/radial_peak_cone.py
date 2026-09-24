@@ -1,8 +1,9 @@
-"""Local stress-cone and Kelvin covariance screen at the current radial peak.
+"""Local stress-cone and Kelvin covariance screen at a candidate point.
 
 The cone is evaluated from the physical corrected field, unlike the paper's
 normalized leading background. Passing it would not establish a supported wave.
 """
+import argparse
 import json
 
 import numpy as np
@@ -57,11 +58,11 @@ def stress_primitive(field, radius, z, tau, order=12):
     return np.array([-theta_integral/radius**2, -axial_integral/radius])
 
 
-def run():
+def run(radius=.0056890761915166545,
+        z=.003432627453438968,
+        output_name='radial_peak_cone.json'):
     field = current_field()
     tau = .5/64
-    radius = .0056890761915166545
-    z = .003432627453438968
     point = np.array([[radius, 0., z]])
     velocity, gradient, residual = operator(field, point, tau)
     u = velocity[0]
@@ -111,7 +112,7 @@ def run():
               },
               'scope': 'Physical local analogue of paper Section 7 cone, not its normalized leading theorem. Primitive integrates current full residual only from axis to selected radius; nonzero total radial moments prevent global compact stress. Frozen Cartesian Kelvin rays omit spatial support, exact curl, phase periodicity, amplitude PDE and nonlinear full-field momentum.',
               'pde_validated': False, 'global_field_ready': False}
-    out = ROOT/'compact_potential'/'radial_peak_cone.json'
+    out = ROOT/'compact_potential'/output_name
     out.write_bytes((json.dumps(report, indent=2)+'\n').encode())
     print(json.dumps({key: report[key] for key in
                       ('point', 'residual', 'local_tangential_stress_primitive',
@@ -119,4 +120,9 @@ def run():
 
 
 if __name__ == '__main__':
-    run()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--radius', type=float, default=.0056890761915166545)
+    parser.add_argument('--z', type=float, default=.003432627453438968)
+    parser.add_argument('--output-name', default='radial_peak_cone.json')
+    args = parser.parse_args()
+    run(args.radius, args.z, args.output_name)

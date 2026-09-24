@@ -1,0 +1,329 @@
+{
+  "tau": 0.0078125,
+  "candidate_point": [
+    0.003,
+    0.0,
+    0.0025
+  ],
+  "candidate_local_cone": {
+    "F": 475.54064784458654,
+    "shear": [
+      -26.590587449270686,
+      271.4440458684059
+    ],
+    "lambda_squared": 16692.099473643477,
+    "target_dot_N": -15.5128297657425,
+    "target_dot_K": 4.413364067010406,
+    "c": -1.3933623247223714,
+    "ratio": 0.3964083477429603,
+    "strict_pass": true
+  },
+  "candidate_covariance_nnls": {
+    "relative_error": 0.0,
+    "selected": [
+      {
+        "index": 1,
+        "weight": 182.8682103181615
+      },
+      {
+        "index": 3,
+        "weight": 126.22043661600839
+      }
+    ],
+    "achieved": [
+      -2.8799461885529674,
+      -15.86920223829555
+    ]
+  },
+  "radial_profile_z": 0.0025,
+  "radial_profile": [
+    {
+      "r": 0.0015,
+      "z": 0.0025,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0015,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0018087384128211014,
+      "residual_norm": 110517.93522051944,
+      "target": [
+        -0.726388868826825,
+        -7.846621861986795
+      ],
+      "lambda_squared": 3339.694802422158,
+      "target_dot_N": -7.804795113924087,
+      "target_dot_K": 1.0873309815467067,
+      "cone_ratio": 0.1803049382906215,
+      "strict_local_pass": true
+    },
+    {
+      "r": 0.002,
+      "z": 0.0025,
+      "radial_symmetric_support_halfwidth_ceiling": 0.002,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0018087384128211014,
+      "residual_norm": 146797.42243253786,
+      "target": [
+        -1.2860848498774367,
+        -10.433464980146448
+      ],
+      "lambda_squared": 6420.779483423621,
+      "target_dot_N": -10.338288771032772,
+      "target_dot_K": 1.9055159458173745,
+      "cone_ratio": 0.25703029064641947,
+      "strict_local_pass": true
+    },
+    {
+      "r": 0.0025,
+      "z": 0.0025,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0025,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0018087384128211014,
+      "residual_norm": 183013.57613703926,
+      "target": [
+        -1.998756428989638,
+        -13.004392661006934
+      ],
+      "lambda_squared": 10976.592154773904,
+      "target_dot_N": -12.828449831561146,
+      "target_dot_K": 2.92235019516779,
+      "cone_ratio": 0.3486645753913482,
+      "strict_local_pass": true
+    },
+    {
+      "r": 0.00275,
+      "z": 0.0025,
+      "radial_symmetric_support_halfwidth_ceiling": 0.00275,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0018087384128211014,
+      "residual_norm": 201125.00845677272,
+      "target": [
+        -2.4108076240737786,
+        -14.285945590452013
+      ],
+      "lambda_squared": 13926.964928751828,
+      "target_dot_N": -14.059436465731993,
+      "target_dot_K": 3.4974964016697814,
+      "cone_ratio": 0.4014914257835458,
+      "strict_local_pass": true
+    },
+    {
+      "r": 0.003,
+      "z": 0.0025,
+      "radial_symmetric_support_halfwidth_ceiling": 0.003,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0018087384128211014,
+      "residual_norm": 219240.02659693215,
+      "target": [
+        -2.8799455850671425,
+        -15.869192196026255
+      ],
+      "lambda_squared": 16692.099473643477,
+      "target_dot_N": -15.512819830148228,
+      "target_dot_K": 4.413362487347734,
+      "cone_ratio": 0.39640845974774575,
+      "strict_local_pass": true
+    },
+    {
+      "r": 0.00325,
+      "z": 0.0025,
+      "radial_symmetric_support_halfwidth_ceiling": 0.00325,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0018087384128211014,
+      "residual_norm": 237484.7372160718,
+      "target": [
+        -3.4440871482550754,
+        -18.169249834711938
+      ],
+      "lambda_squared": 7734.771029837926,
+      "target_dot_N": -17.246042677747866,
+      "target_dot_K": 6.675132043507069,
+      "cone_ratio": 0.19886791767014203,
+      "strict_local_pass": true
+    },
+    {
+      "r": 0.0035,
+      "z": 0.0025,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0035,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0018087384128211014,
+      "residual_norm": 255643.66092610217,
+      "target": [
+        -4.089019458628529,
+        -20.821249898718037
+      ],
+      "lambda_squared": -103273.51005478506,
+      "target_dot_N": -17.166740982371095,
+      "target_dot_K": 12.471869608125692,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.00375,
+      "z": 0.0025,
+      "radial_symmetric_support_halfwidth_ceiling": 0.00375,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0018087384128211014,
+      "residual_norm": 273457.4595956869,
+      "target": [
+        -4.801492559424705,
+        -23.577935460904524
+      ],
+      "lambda_squared": -742900.894440676,
+      "target_dot_N": -1.0240888398664478,
+      "target_dot_K": 24.040062675559955,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.004,
+      "z": 0.0025,
+      "radial_symmetric_support_halfwidth_ceiling": 0.004,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0018087384128211014,
+      "residual_norm": 290676.9053532599,
+      "target": [
+        -5.570348126507343,
+        -26.285067871604387
+      ],
+      "lambda_squared": -412426.54321572365,
+      "target_dot_N": 20.98706419742073,
+      "target_dot_K": 16.777267585595514,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.0045,
+      "z": 0.0025,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0045,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0018087384128211014,
+      "residual_norm": 322456.0295916963,
+      "target": [
+        -7.238638339784721,
+        -31.20626197734906
+      ],
+      "lambda_squared": -68660.97616215004,
+      "target_dot_N": 30.597146787074855,
+      "target_dot_K": 9.489113768068009,
+      "strict_local_pass": false
+    }
+  ],
+  "axial_profile_r": 0.0015,
+  "axial_profile": [
+    {
+      "r": 0.0015,
+      "z": 0.0008,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0015,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0035087384128211015,
+      "residual_norm": 5.259674471834663e-07,
+      "target": [
+        2.359263485154316e-10,
+        -1.465403434625607e-11
+      ],
+      "lambda_squared": -3970.0846603949108,
+      "target_dot_N": -3.5753543205367584e-11,
+      "target_dot_K": -2.336614362591912e-10,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.0015,
+      "z": 0.0012,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0015,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0031087384128211017,
+      "residual_norm": 3.593458747762931e-07,
+      "target": [
+        4.827627307148847e-11,
+        1.1019626143590477e-10
+      ],
+      "lambda_squared": 332.23528266786406,
+      "target_dot_N": 1.0681460482018292e-10,
+      "target_dot_K": -5.5357517766165727e-11,
+      "cone_ratio": 0.14117541776414894,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.0015,
+      "z": 0.0015,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0015,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0028087384128211014,
+      "residual_norm": 5.00811584033951e-07,
+      "target": [
+        4.5950411591092466e-11,
+        3.054613128055015e-10
+      ],
+      "lambda_squared": 1659.2447642767995,
+      "target_dot_N": 3.023904620938702e-10,
+      "target_dot_K": -6.307188264914009e-11,
+      "cone_ratio": 0.14852171403859854,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.0015,
+      "z": 0.002,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0015,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0023087384128211014,
+      "residual_norm": 2.8540854379937487e-07,
+      "target": [
+        -7.803463441169538e-11,
+        -1.9261347788967396e-10
+      ],
+      "lambda_squared": 2778.9464422180577,
+      "target_dot_N": -1.885675576956101e-10,
+      "target_dot_K": 8.735921369400958e-11,
+      "cone_ratio": 0.5019651265604899,
+      "strict_local_pass": true
+    },
+    {
+      "r": 0.0015,
+      "z": 0.0025,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0015,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0018087384128211014,
+      "residual_norm": 110517.93522051944,
+      "target": [
+        -0.726388868826825,
+        -7.846621861986795
+      ],
+      "lambda_squared": 3339.694802422158,
+      "target_dot_N": -7.804795113924087,
+      "target_dot_K": 1.0873309815467067,
+      "cone_ratio": 0.1803049382906215,
+      "strict_local_pass": true
+    },
+    {
+      "r": 0.0015,
+      "z": 0.003,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0015,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0013087384128211014,
+      "residual_norm": 173953.69797179563,
+      "target": [
+        -6.190228837229778,
+        -35.41886527457596
+      ],
+      "lambda_squared": 2803.904281147464,
+      "target_dot_N": -35.15154083755881,
+      "target_dot_K": 7.562018721298491,
+      "cone_ratio": 0.37186581590287754,
+      "strict_local_pass": true
+    },
+    {
+      "r": 0.0015,
+      "z": 0.0035,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0015,
+      "axial_symmetric_support_halfwidth_ceiling": 0.0008087384128211013,
+      "residual_norm": 68413.869576412,
+      "target": [
+        4.97851119866102,
+        43.77887084141694
+      ],
+      "lambda_squared": 316.52150856110944,
+      "target_dot_N": 43.642340717368114,
+      "target_dot_K": -6.059802192630749,
+      "cone_ratio": 0.40752202076730765,
+      "strict_local_pass": false
+    },
+    {
+      "r": 0.0015,
+      "z": 0.004,
+      "radial_symmetric_support_halfwidth_ceiling": 0.0015,
+      "axial_symmetric_support_halfwidth_ceiling": 0.00030873841282110133,
+      "residual_norm": 12451.934382987849,
+      "target": [
+        2.2978444717247206,
+        -2.3783993491045443
+      ],
+      "lambda_squared": 0.13598883551212068,
+      "target_dot_N": -2.4117368270095407,
+      "target_dot_K": -2.2628296792517846,
+      "cone_ratio": 4.5985679775077175,
+      "strict_local_pass": false
+    }
+  ],
+  "scope": "Physical local cone line screens only. A passing center with exact positive covariance does not imply a uniformly passing spatial envelope. Cone signs near tiny target values are sensitive to numerical error; no global support or NS acceptance follows.",
+  "accepted": false
+}
