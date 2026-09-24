@@ -80,3 +80,15 @@ for a dynamical transition, or assess higher-order radial continuation with
 independent derivatives; do not mask outer errors by cutting the field off.
 Reproduce: radial_continuation.py then annulus_check.py in experiments/root_st073.
 Artifacts and explicit new model: experiments/root_st073/radial_continuation/.
+
+## Independent annulus derivative check
+
+annulus_fd.py reuses the independent Cartesian/time operator, not recurrence
+residual assembly, at six off-calibration points (X=.026,.044; eta=-.22,.37;
+k=.4,2.7,5.5; nonzero azimuth). Spatial and temporal steps varied separately.
+All FD momentum maxima remain below1.031e-5, with finest late value1.021e-5,
+well below1e-3 at these points. This supports using the extended boundary as a
+matching datum; it does not prove a uniform bound or an exterior solution.
+Artifact: radial_continuation/independent_fd.json under experiments/root_st073.
+The next unresolved construction is still dynamical outer decay/axial closure,
+not further repetition of these local residual checks.

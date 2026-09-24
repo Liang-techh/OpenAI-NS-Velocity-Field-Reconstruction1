@@ -1,0 +1,78 @@
+{
+  "rows": [
+    {
+      "k": 0.4,
+      "space_factor": 0.002,
+      "time_factor": 0.0005,
+      "maximum_momentum_residual": 6.921640932490382e-08,
+      "reference_difference": 7.867400992262299e-10,
+      "divergence_max": 7.954552572186913e-10
+    },
+    {
+      "k": 0.4,
+      "space_factor": 0.001,
+      "time_factor": 0.0005,
+      "maximum_momentum_residual": 6.811918030348367e-08,
+      "reference_difference": 1.1893691043749183e-09,
+      "divergence_max": 4.7776005374089436e-11
+    },
+    {
+      "k": 0.4,
+      "space_factor": 0.001,
+      "time_factor": 0.00025,
+      "maximum_momentum_residual": 6.811921237174036e-08,
+      "reference_difference": 1.1894078777702637e-09,
+      "divergence_max": 4.7776005374089436e-11
+    },
+    {
+      "k": 2.7,
+      "space_factor": 0.002,
+      "time_factor": 0.0005,
+      "maximum_momentum_residual": 6.606227556323376e-07,
+      "reference_difference": 5.261553545030162e-09,
+      "divergence_max": 3.874031762052255e-09
+    },
+    {
+      "k": 2.7,
+      "space_factor": 0.001,
+      "time_factor": 0.0005,
+      "maximum_momentum_residual": 6.52749171128936e-07,
+      "reference_difference": 7.057457666133064e-09,
+      "divergence_max": 2.363087503454153e-10
+    },
+    {
+      "k": 2.7,
+      "space_factor": 0.001,
+      "time_factor": 0.00025,
+      "maximum_momentum_residual": 6.527424364495202e-07,
+      "reference_difference": 7.0619364898020586e-09,
+      "divergence_max": 2.363087503454153e-10
+    },
+    {
+      "k": 5.5,
+      "space_factor": 0.002,
+      "time_factor": 0.0005,
+      "maximum_momentum_residual": 1.0304563424476008e-05,
+      "reference_difference": 1.3518278115626614e-07,
+      "divergence_max": 2.659143660821428e-08
+    },
+    {
+      "k": 5.5,
+      "space_factor": 0.001,
+      "time_factor": 0.0005,
+      "maximum_momentum_residual": 1.0206803027666519e-05,
+      "reference_difference": 1.7680933540177322e-07,
+      "divergence_max": 1.6754313492128858e-09
+    },
+    {
+      "k": 5.5,
+      "space_factor": 0.001,
+      "time_factor": 0.00025,
+      "maximum_momentum_residual": 1.0206657057922687e-05,
+      "reference_difference": 1.7675448205983787e-07,
+      "divergence_max": 1.6754313492128858e-09
+    }
+  ],
+  "scope": "Six off-calibration physical points inside new annulus, independent Cartesian/time FD, separate spatial and time step variations. Not a uniform bound or global/exterior validation.",
+  "global_field_ready": false
+}
