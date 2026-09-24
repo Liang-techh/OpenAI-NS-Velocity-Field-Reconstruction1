@@ -1,0 +1,190 @@
+{
+  "midpoint_heights": [
+    0.0025388594772266238,
+    0.002616578431679871,
+    0.0026942973861331185,
+    0.0027720163405863655,
+    0.002849735295039613,
+    0.0029274542494928603,
+    0.0030051732039461077,
+    0.003082892158399355,
+    0.0031606111128526025,
+    0.00323833006730585,
+    0.003316049021759097,
+    0.0033937679762123443
+  ],
+  "midpoint_pass_count": 12,
+  "midpoint_max_cone_ratio": 0.7993639173228184,
+  "midpoint_rows": [
+    {
+      "z": 0.0025388594772266238,
+      "target": [
+        -17.80301701702623,
+        58.64336902702406
+      ],
+      "target_dot_N": -42.42465179984373,
+      "lambda_squared": 63770.640053360476,
+      "center_residual_norm": 218622.56363727365,
+      "cone_ratio": 0.6794005695626059,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.002616578431679871,
+      "target": [
+        -34.24048909286651,
+        123.70132969171073
+      ],
+      "target_dot_N": -92.57714353560395,
+      "lambda_squared": 67117.21881674112,
+      "center_residual_norm": 226598.02435635545,
+      "cone_ratio": 0.6626405334150555,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.0026942973861331185,
+      "target": [
+        -52.83438020390474,
+        187.38200559742066
+      ],
+      "target_dot_N": -141.9503676956745,
+      "lambda_squared": 69275.86034713517,
+      "center_residual_norm": 192179.5616157202,
+      "cone_ratio": 0.6835934619429223,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.0027720163405863655,
+      "target": [
+        -69.65651245157832,
+        235.3719082409058
+      ],
+      "target_dot_N": -179.56008235839911,
+      "lambda_squared": 69893.11322275588,
+      "center_residual_norm": 150534.1302226991,
+      "cone_ratio": 0.7160458848886546,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.002849735295039613,
+      "target": [
+        -81.18927126463764,
+        260.8510203744603
+      ],
+      "target_dot_N": -200.42917643477148,
+      "lambda_squared": 68650.23938912182,
+      "center_residual_norm": 123901.2811078967,
+      "cone_ratio": 0.7523385645851969,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.0029274542494928603,
+      "target": [
+        -84.95769311559874,
+        264.52931545118906
+      ],
+      "target_dot_N": -205.5913174481921,
+      "lambda_squared": 65324.081686359146,
+      "center_residual_norm": 110925.43093786496,
+      "cone_ratio": 0.7844407884546359,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.0030051732039461077,
+      "target": [
+        -79.82809789377457,
+        252.0532885537126
+      ],
+      "target_dot_N": -199.85069589474304,
+      "lambda_squared": 59857.898141530386,
+      "center_residual_norm": 100112.0068114564,
+      "cone_ratio": 0.7993639173228184,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.003082892158399355,
+      "target": [
+        -66.03978177422327,
+        230.32630091142755
+      ],
+      "target_dot_N": -188.6084893803784,
+      "lambda_squared": 52440.18799986159,
+      "center_residual_norm": 86225.3015359607,
+      "cone_ratio": 0.7791925377719819,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.0031606111128526025,
+      "target": [
+        -45.03973063166588,
+        204.1198630780691
+      ],
+      "target_dot_N": -174.9459139698389,
+      "lambda_squared": 43561.06850460379,
+      "center_residual_norm": 85399.3940082568,
+      "cone_ratio": 0.7061438504262992,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.00323833006730585,
+      "target": [
+        -19.188287526546034,
+        174.00639053177392
+      ],
+      "target_dot_N": -157.87244564103747,
+      "lambda_squared": 33994.75100287257,
+      "center_residual_norm": 139606.39355626435,
+      "cone_ratio": 0.5659480725857178,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.003316049021759097,
+      "target": [
+        8.604470745834488,
+        136.17891169390623
+      ],
+      "target_dot_N": -132.28027785733516,
+      "lambda_squared": 24672.883791042386,
+      "center_residual_norm": 246015.38394701853,
+      "cone_ratio": 0.32903237534750707,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.0033937679762123443,
+      "target": [
+        35.26438016661733,
+        84.2024805784539
+      ],
+      "target_dot_N": -90.71343308146353,
+      "lambda_squared": 16470.317335432926,
+      "center_residual_norm": 375946.29949115036,
+      "cone_ratio": 0.16234796916813524,
+      "strict_local_pass": true
+    }
+  ],
+  "full_support_gauss6": {
+    "6.0": {
+      "tau": 0.0078125,
+      "current": {
+        "max": 91543.61885943754,
+        "physical_volume_l2": 190.1284813954379
+      },
+      "candidate": {
+        "max": 434828.4635464325,
+        "physical_volume_l2": 370.7133585987292
+      }
+    },
+    "5.5": {
+      "tau": 0.011048543456039806,
+      "current": {
+        "max": 88740.44144242188,
+        "physical_volume_l2": 158.0215412858507
+      },
+      "candidate": {
+        "max": 220935.127622241,
+        "physical_volume_l2": 246.96739293720512
+      }
+    }
+  },
+  "scope": "Twelve unfitted axial midpoints plus coarse Gauss6 physical-volume screen at two times. No global supremum or spacetime L2 certificate.",
+  "accepted": false
+}

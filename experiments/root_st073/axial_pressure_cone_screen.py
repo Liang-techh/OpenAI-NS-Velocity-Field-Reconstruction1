@@ -155,7 +155,7 @@ def run():
               'mode_degrees': list(range(len(modes))),
               'linear_feasible': bool(feasibility.success),
               'linear_solver_message': feasibility.message,
-              'scope': 'Independent compact pressure correction only; velocity unchanged. Local cone constrained at five axial points; weighted residual sampled on radial quadrature at one time/radius. No global NS or pressure-Poisson certificate.',
+              'scope': 'Independent compact pressure correction only; velocity unchanged. Local cone constrained at thirteen axial points; residual sampled on radial quadrature at one time/radius. No global NS or pressure-Poisson certificate.',
               'accepted': False}
     if feasibility.success:
         base_norm = np.linalg.norm(residual0)

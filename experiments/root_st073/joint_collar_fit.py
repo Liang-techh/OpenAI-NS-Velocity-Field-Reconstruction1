@@ -62,6 +62,42 @@ class CollarMode:
         return velocity, pressure
 
 
+class TransitionPoloidalMode:
+    """Compact solenoidal axial-shape bubble in the existing collar."""
+
+    def __init__(self, base, temporal_power=2., reference_tau=None):
+        self.base = base
+        self.nu = base.nu
+        self.temporal_power = temporal_power
+        self.reference_tau = reference_tau
+
+    def fields(self, points, tau):
+        pts = np.asarray(points, float)
+        ts = np.broadcast_to(tau, (len(pts),))
+        velocity = np.zeros_like(pts)
+        for i, (point, t) in enumerate(zip(pts, ts)):
+            x, ycart, z = point
+            r = np.hypot(x, ycart)
+            _, radius, zflat, zsupp = self.base.support(t)
+            if r >= radius or abs(z) <= zflat or abs(z) >= zsupp:
+                continue
+            y = r/radius
+            s = (abs(z)-zflat)/(zsupp-zflat)
+            bubble = 1024*s**5*(1-s)**5
+            bubble_prime = 5120*s**4*(1-s)**4*(1-2*s)
+            axial = bubble*(1+4*s)
+            axial_z = ((bubble_prime*(1+4*s)+4*bubble)
+                       * np.sign(z)/(zsupp-zflat))
+            radial = (1-y*y)**5
+            ur = -15*radius*y*radial*axial_z
+            uz = 30*(1-y*y)**4*(1-6*y*y)*axial
+            velocity[i] = [ur*x/r if r else 0.,
+                           ur*ycart/r if r else 0., uz]
+        if self.reference_tau is not None:
+            velocity *= ((self.reference_tau/ts)**self.temporal_power)[:, None]
+        return velocity, np.zeros(len(pts))
+
+
 def kinematics(field, points, tau, hs, ht):
     u, p = field.fields(points, tau)
     grad = np.zeros((len(points), 3, 3))

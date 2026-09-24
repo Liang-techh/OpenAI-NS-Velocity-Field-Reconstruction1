@@ -25,7 +25,7 @@
   ],
   "linear_feasible": true,
   "linear_solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
-  "scope": "Independent compact pressure correction only; velocity unchanged. Local cone constrained at five axial points; weighted residual sampled on radial quadrature at one time/radius. No global NS or pressure-Poisson certificate.",
+  "scope": "Independent compact pressure correction only; velocity unchanged. Local cone constrained at thirteen axial points; residual sampled on radial quadrature at one time/radius. No global NS or pressure-Poisson certificate.",
   "accepted": false,
   "amplitudes": [
     -135.08865708184183,
