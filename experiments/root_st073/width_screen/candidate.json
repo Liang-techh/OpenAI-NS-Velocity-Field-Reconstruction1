@@ -1,0 +1,8 @@
+{
+  "radius_ratio": 6.0,
+  "status": "Exploratory best among ratios2,3,4,6 on stated finite quadrature; not PDE accepted",
+  "field_class": "width_field.WidthField",
+  "frozen_core": "radial_continuation/candidate.json",
+  "pde_validated": false,
+  "global_field_ready": false
+}

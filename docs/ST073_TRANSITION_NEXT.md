@@ -403,3 +403,39 @@ stress direction and transport residence BEFORE adding localized oscillations.
 Do not attach the earlier short-time1.50-gain wave to this narrow collar: it
 came from a different point that fails the direction screen. Preserve the
 core, moment accounting, full residual gates and global-closure requirements.
+
+
+## Variable-width transition construction
+
+`width_field.py` generalizes the radial join to ro=ratio*ri while preserving
+the same ST073 inner velocity/pressure jets and fixed heat amplitude. It
+rebuilds all Hermite polynomials using width=(ratio-1)*ri. For
+Y=(r-ri)/width, Y_z=-(1+(ratio-1)*Y)*ri_z/width; width_z/width=ri_z/ri.
+These terms are retained in analytic psi_z, so changing width does not replace
+the solenoidal streamfunction construction with a velocity cutoff.
+The ratio2 evaluator is compared directly with the original JoinedField.
+
+`width_screen.py` compares ratios2,3,4,6 at k=2.5,5.5 using16 radial and6 axial
+Gauss nodes over eta in[-.4,.4]. It records physical-volume L2 on each ACTUAL
+annulus, full sampled maxima, divergence, velocity magnitude and the same
+approximate stress-direction screen. Larger annuli have larger volumes;
+no volume-normalized score or smaller evaluation region hides that cost.
+No fitting is performed, so this is an exploratory geometry comparison.
+Artifact: experiments/root_st073/width_screen/report.json.
+
+
+Width comparison result: at late k5.5, ratio2 -> ratio6 lowers sampled max
+66741.68 ->4514.92 (93.2%) and physical-volume L2 26.3981 ->5.7862 (78.1%),
+INCLUDING the larger volume. At k2.5 max2928.42 ->200.61 and L2 5.48547 ->1.21796.
+Ratio6 is an exploratory candidate, not accepted by either1e-3 gate.
+The directional screen passes14/96 nodes instead of4/96; some new passes are
+near the OUTER edge, where compact-stress moment tails are still unresolved.
+No continuous interval of admissibility or pulse residence is certified.
+
+Use `WidthField(6)` / width_screen/candidate.json for the next bounded trial.
+Do NOT blindly reuse old AngularModes or PoloidalModes: their normalized
+radius and derivative formulas assume width=ri. Generalize them to width=5ri,
+then recompute actual moments and transport residence with the new background.
+The fixed heat amplitude, original core and original ratio2 implementation
+remain available for matched comparisons. Larger width alone does not solve
+axial closure, finite global energy, pulse realization or recursive control.
