@@ -1,0 +1,78 @@
+{
+  "point": [
+    0.0056890761915166545,
+    0.0,
+    0.003432627453438968
+  ],
+  "tau": 0.0078125,
+  "target_stress": [
+    45.595045119370404,
+    138.9583340988551
+  ],
+  "periodicized_wavevectors": [
+    [
+      -18.394220984284157,
+      175.77546271768412,
+      -161.1549592408498
+    ],
+    [
+      1.721269364967025,
+      351.55092543536824,
+      227.0748576935776
+    ]
+  ],
+  "transverse_amplitudes": [
+    [
+      -5.772542494237331,
+      -1.4570769913506179,
+      -0.9303899848697135
+    ],
+    [
+      -3.4686148299273034,
+      0.3940841566331482,
+      -0.5838172964840975
+    ]
+  ],
+  "positive_weights": [
+    23.162139359912064,
+    75.81065280675942
+  ],
+  "ideal_covariance_relative_error": 0.0,
+  "sampled_exact_curl_covariance": [
+    45.59504511937073,
+    138.95833409885506
+  ],
+  "sampled_covariance_relative_error": 2.243341542885898e-15,
+  "baseline_mean_residual_cylindrical": [
+    262085.1282883161,
+    -27330.39121006503,
+    -37490.31108748399
+  ],
+  "wave_mean_residual_cylindrical": [
+    11826713.809840875,
+    3113169.09752542,
+    -56705.68078779019
+  ],
+  "baseline_max_residual": 266159.89213373535,
+  "wave_max_residual": 42781680.25689007,
+  "wave_max_velocity": 52.94974902873969,
+  "baseline_max_fd_divergence": 1.00585566542577e-06,
+  "wave_max_fd_divergence": 0.0002016302355514199,
+  "support": {
+    "radial_halfwidth": 0.0025,
+    "axial_halfwidth": 0.00075
+  },
+  "localization": {
+    "carrier_magnitudes": [
+      239.17834673555757,
+      418.5140462866798
+    ],
+    "inverse_axial_halfwidth": 1333.3333333333333,
+    "inverse_radial_halfwidth": 400.0,
+    "axial_cutoff_diffusion_scale": 17777.777777777777,
+    "physical_analogue_growth_rate": 62.60871519156441,
+    "note": "Dimensional scale comparison only; the paper uses normalized chart estimates and an evolving amplitude equation."
+  },
+  "scope": "Two integer angular harmonics from projected frozen Kelvin peak vectors. Exact analytic curl of a C4 compact vector potential; 16-angle local sample at one late point. No amplitude/pressure equation or stress moment repair. Full physical momentum including nonlinear wave terms is evaluated.",
+  "accepted": false
+}

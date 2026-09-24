@@ -1,0 +1,830 @@
+{
+  "tau": 0.0078125,
+  "point": [
+    0.0056890761915166545,
+    0.0,
+    0.003432627453438968
+  ],
+  "velocity": [
+    4.852861708113783,
+    0.7987441281317218,
+    0.30203510878774764
+  ],
+  "gradient": [
+    [
+      523.009623381759,
+      -140.39961871571518,
+      -12482.062445866903
+    ],
+    [
+      74.03138881153822,
+      853.0140122489831,
+      -2669.375334453887
+    ],
+    [
+      -138.5472990452943,
+      -2.0934566115783664e-12,
+      -1376.0236346249053
+    ]
+  ],
+  "residual": [
+    262085.12828709462,
+    -27330.391210236397,
+    -37490.31108793631
+  ],
+  "local_tangential_stress_primitive": [
+    45.595045119370404,
+    138.9583340988551
+  ],
+  "cone": {
+    "F": 140.39961871538657,
+    "shear": [
+      -66.36822990384834,
+      -138.5472990452943
+    ],
+    "lambda_squared": 3919.8512179384275,
+    "target_dot_N": -145.0195043773006,
+    "target_dot_K": -18.91216817629729,
+    "c": -0.5161019710492671,
+    "ratio": 0.0673054794561141,
+    "strict_pass": true
+  },
+  "kelvin_pulses": [
+    {
+      "mode": 1,
+      "axial_ratio": -1,
+      "radial_ratio": -1,
+      "peak_gain": 1.0144390243699897,
+      "final_gain": 1.6412808788877224e-18,
+      "transverse_relative_error": 1.9789183673743468e-09,
+      "mean_radial_tangential_covariance": [
+        0.02609861818536914,
+        0.005873945718202166
+      ],
+      "initial_wavevector": [
+        -248.58404330775522,
+        175.77546271768412,
+        -175.77546271768412
+      ],
+      "peak_time": 2.604166666666667e-05,
+      "peak_wavevector": [
+        -246.31900926026833,
+        171.0191896234397,
+        -251.80342592110526
+      ],
+      "peak_amplitude": [
+        -0.2058167748358501,
+        -0.9036774816181287,
+        -0.4124233244825297
+      ]
+    },
+    {
+      "mode": 1,
+      "axial_ratio": -1,
+      "radial_ratio": 0,
+      "peak_gain": 6.068332757814132,
+      "final_gain": 6.068332757814132,
+      "transverse_relative_error": 1.4868785923022474e-09,
+      "mean_radial_tangential_covariance": [
+        2.5727283919551724,
+        1.3279528859332137
+      ],
+      "initial_wavevector": [
+        0.0,
+        175.77546271768412,
+        -175.77546271768412
+      ],
+      "peak_time": 0.00078125,
+      "peak_wavevector": [
+        -18.394220984284157,
+        89.36196355484361,
+        -161.1549592408498
+      ],
+      "peak_amplitude": [
+        -5.717420947644218,
+        -1.983819350616439,
+        -0.4474605581712263
+      ]
+    },
+    {
+      "mode": 1,
+      "axial_ratio": -1,
+      "radial_ratio": 1,
+      "peak_gain": 1.2718950597933052,
+      "final_gain": 3.799605048749994e-15,
+      "transverse_relative_error": 4.977581387183008e-09,
+      "mean_radial_tangential_covariance": [
+        -0.01440148440017727,
+        0.022980850685932964
+      ],
+      "initial_wavevector": [
+        248.58404330775522,
+        175.77546271768412,
+        -175.77546271768412
+      ],
+      "peak_time": 7.161458333333333e-05,
+      "peak_wavevector": [
+        238.02872246533144,
+        167.72933430955803,
+        68.95826371462239
+      ],
+      "peak_amplitude": [
+        0.18489214713704144,
+        -0.693961667961841,
+        1.049737653155916
+      ]
+    },
+    {
+      "mode": 1,
+      "axial_ratio": 0,
+      "radial_ratio": -1,
+      "peak_gain": 1.437077976699095,
+      "final_gain": 4.567153758655033e-06,
+      "transverse_relative_error": 1.883833919186636e-09,
+      "mean_radial_tangential_covariance": [
+        0.12757892802129076,
+        0.037820650024459994
+      ],
+      "initial_wavevector": [
+        -175.77546271768412,
+        175.77546271768412,
+        0.0
+      ],
+      "peak_time": 0.00014322916666666667,
+      "peak_wavevector": [
+        -167.2894187280967,
+        152.32355348188247,
+        -268.9213932442437
+      ],
+      "peak_amplitude": [
+        -0.5666591196243004,
+        -1.2688520369300909,
+        -0.3662035794998954
+      ]
+    },
+    {
+      "mode": 1,
+      "axial_ratio": 0,
+      "radial_ratio": 0,
+      "peak_gain": 3.561853335446684,
+      "final_gain": 1.9970973833165815,
+      "transverse_relative_error": 1.782263398909757e-09,
+      "mean_radial_tangential_covariance": [
+        -0.7789716326181482,
+        0.544105079435823
+      ],
+      "initial_wavevector": [
+        0.0,
+        175.77546271768412,
+        0.0
+      ],
+      "peak_time": 0.00042317708333333335,
+      "peak_wavevector": [
+        1.721269364967025,
+        122.5002561486668,
+        227.0748576935776
+      ],
+      "peak_amplitude": [
+        -3.466972971141851,
+        0.7294163174254742,
+        -0.367218513256043
+      ]
+    },
+    {
+      "mode": 1,
+      "axial_ratio": 0,
+      "radial_ratio": 1,
+      "peak_gain": 1.0871209742321604,
+      "final_gain": 6.222181891660881e-12,
+      "transverse_relative_error": 2.1522377260282915e-09,
+      "mean_radial_tangential_covariance": [
+        -0.05438934475743075,
+        0.0198608847503518
+      ],
+      "initial_wavevector": [
+        175.77546271768412,
+        175.77546271768412,
+        0.0
+      ],
+      "peak_time": 5.8593750000000005e-05,
+      "peak_wavevector": [
+        170.37200789859764,
+        168.59354307842588,
+        159.80697222081466
+      ],
+      "peak_amplitude": [
+        -0.38124783447273114,
+        0.8763797340085617,
+        -0.5181125969752294
+      ]
+    },
+    {
+      "mode": 1,
+      "axial_ratio": 1,
+      "radial_ratio": -1,
+      "peak_gain": 1.7427306213084561,
+      "final_gain": 2.5985035209276958e-08,
+      "transverse_relative_error": 5.652494438217285e-09,
+      "mean_radial_tangential_covariance": [
+        0.10957096689316816,
+        0.06024459208259164
+      ],
+      "initial_wavevector": [
+        -248.58404330775522,
+        175.77546271768412,
+        175.77546271768412
+      ],
+      "peak_time": 0.00016276041666666668,
+      "peak_wavevector": [
+        -230.85654480012983,
+        147.89832048584805,
+        -245.80108896722066
+      ],
+      "peak_amplitude": [
+        -0.3586061996125719,
+        -1.5890158050700756,
+        -0.6193063727131229
+      ]
+    },
+    {
+      "mode": 1,
+      "axial_ratio": 1,
+      "radial_ratio": 0,
+      "peak_gain": 1.3164009889535575,
+      "final_gain": 0.039005942074073485,
+      "transverse_relative_error": 1.4204408283798862e-09,
+      "mean_radial_tangential_covariance": [
+        -0.1460941195510308,
+        0.06312293685590097
+      ],
+      "initial_wavevector": [
+        0.0,
+        175.77546271768412,
+        175.77546271768412
+      ],
+      "peak_time": 0.00018229166666666667,
+      "peak_wavevector": [
+        3.8431368090088456,
+        150.50151044357673,
+        320.20735283436136
+      ],
+      "peak_amplitude": [
+        -1.1803298642846205,
+        0.5328311012968588,
+        -0.23627101533309128
+      ]
+    },
+    {
+      "mode": 1,
+      "axial_ratio": 1,
+      "radial_ratio": 1,
+      "peak_gain": 1.0000000000000002,
+      "final_gain": 4.550634368004034e-28,
+      "transverse_relative_error": 6.683023844610885e-10,
+      "mean_radial_tangential_covariance": [
+        -0.031583035108718543,
+        0.002596842643693434
+      ],
+      "initial_wavevector": [
+        248.58404330775522,
+        175.77546271768412,
+        175.77546271768412
+      ],
+      "peak_time": 0.0,
+      "peak_wavevector": [
+        248.58404330775522,
+        175.77546271768412,
+        175.77546271768412
+      ],
+      "peak_amplitude": [
+        -0.4999999999999999,
+        0.8535533905932738,
+        -0.14644660940672619
+      ]
+    },
+    {
+      "mode": 4,
+      "axial_ratio": -1,
+      "radial_ratio": -1,
+      "peak_gain": 1.0000000000000002,
+      "final_gain": 4.383718880409775e-283,
+      "transverse_relative_error": 6.526674601354331e-10,
+      "mean_radial_tangential_covariance": [
+        0.005908506955179797,
+        0.0008417033181098836
+      ],
+      "initial_wavevector": [
+        -994.3361732310209,
+        703.1018508707365,
+        -703.1018508707365
+      ],
+      "peak_time": 0.0,
+      "peak_wavevector": [
+        -994.3361732310209,
+        703.1018508707365,
+        -703.1018508707365
+      ],
+      "peak_amplitude": [
+        -0.4999999999999999,
+        -0.8535533905932738,
+        -0.14644660940672619
+      ]
+    },
+    {
+      "mode": 4,
+      "axial_ratio": -1,
+      "radial_ratio": 0,
+      "peak_gain": 1.0,
+      "final_gain": 0.07862674901345314,
+      "transverse_relative_error": 1.8466631659618426e-09,
+      "mean_radial_tangential_covariance": [
+        -0.002714721334966027,
+        -0.00342311811830589
+      ],
+      "initial_wavevector": [
+        0.0,
+        703.1018508707365,
+        -703.1018508707365
+      ],
+      "peak_time": 0.0,
+      "peak_wavevector": [
+        0.0,
+        703.1018508707365,
+        -703.1018508707365
+      ],
+      "peak_amplitude": [
+        -0.7071067811865475,
+        0.5000000000000001,
+        0.4999999999999999
+      ]
+    },
+    {
+      "mode": 4,
+      "axial_ratio": -1,
+      "radial_ratio": 1,
+      "peak_gain": 1.0000000000000002,
+      "final_gain": 6.588159083450206e-230,
+      "transverse_relative_error": 1.5408527767069883e-09,
+      "mean_radial_tangential_covariance": [
+        -0.007701220997691878,
+        -0.001717786182967129
+      ],
+      "initial_wavevector": [
+        994.3361732310209,
+        703.1018508707365,
+        -703.1018508707365
+      ],
+      "peak_time": 0.0,
+      "peak_wavevector": [
+        994.3361732310209,
+        703.1018508707365,
+        -703.1018508707365
+      ],
+      "peak_amplitude": [
+        -0.4999999999999999,
+        0.8535533905932738,
+        0.14644660940672619
+      ]
+    },
+    {
+      "mode": 4,
+      "axial_ratio": 0,
+      "radial_ratio": -1,
+      "peak_gain": 1.0,
+      "final_gain": 3.558830897184689e-87,
+      "transverse_relative_error": 2.701954261137413e-10,
+      "mean_radial_tangential_covariance": [
+        0.014025832741805192,
+        -1.793152337819041e-05
+      ],
+      "initial_wavevector": [
+        -703.1018508707365,
+        703.1018508707365,
+        0.0
+      ],
+      "peak_time": 0.0,
+      "peak_wavevector": [
+        -703.1018508707365,
+        703.1018508707365,
+        0.0
+      ],
+      "peak_amplitude": [
+        -0.7071067811865476,
+        -0.7071067811865475,
+        0.0
+      ]
+    },
+    {
+      "mode": 4,
+      "axial_ratio": 0,
+      "radial_ratio": 0,
+      "peak_gain": 1.1795912937533968,
+      "final_gain": 4.045748823944744e-05,
+      "transverse_relative_error": 1.6625829072988227e-09,
+      "mean_radial_tangential_covariance": [
+        -0.03634008611892994,
+        0.08491537310938209
+      ],
+      "initial_wavevector": [
+        0.0,
+        703.1018508707365,
+        0.0
+      ],
+      "peak_time": 0.00013020833333333333,
+      "peak_wavevector": [
+        -4.015399081545899,
+        629.1460568859269,
+        249.44786431301992
+      ],
+      "peak_amplitude": [
+        1.0322361692306024,
+        -0.20471241257463096,
+        0.5329323966215762
+      ]
+    },
+    {
+      "mode": 4,
+      "axial_ratio": 0,
+      "radial_ratio": 1,
+      "peak_gain": 1.0,
+      "final_gain": 5.442796605518342e-178,
+      "transverse_relative_error": 3.80143051898734e-11,
+      "mean_radial_tangential_covariance": [
+        -0.012852742314144863,
+        2.4452137815622533e-05
+      ],
+      "initial_wavevector": [
+        703.1018508707365,
+        703.1018508707365,
+        0.0
+      ],
+      "peak_time": 0.0,
+      "peak_wavevector": [
+        703.1018508707365,
+        703.1018508707365,
+        0.0
+      ],
+      "peak_amplitude": [
+        -0.7071067811865476,
+        0.7071067811865475,
+        0.0
+      ]
+    },
+    {
+      "mode": 4,
+      "axial_ratio": 1,
+      "radial_ratio": -1,
+      "peak_gain": 1.0000000000000002,
+      "final_gain": 1.127867968040801e-124,
+      "transverse_relative_error": 1.8767330165450066e-09,
+      "mean_radial_tangential_covariance": [
+        0.007228861630830927,
+        -0.0015587889294155785
+      ],
+      "initial_wavevector": [
+        -994.3361732310209,
+        703.1018508707365,
+        703.1018508707365
+      ],
+      "peak_time": 0.0,
+      "peak_wavevector": [
+        -994.3361732310209,
+        703.1018508707365,
+        703.1018508707365
+      ],
+      "peak_amplitude": [
+        -0.4999999999999999,
+        -0.8535533905932738,
+        0.14644660940672619
+      ]
+    },
+    {
+      "mode": 4,
+      "axial_ratio": 1,
+      "radial_ratio": 0,
+      "peak_gain": 1.0,
+      "final_gain": 9.225857991548464e-26,
+      "transverse_relative_error": 1.1519877068284686e-09,
+      "mean_radial_tangential_covariance": [
+        -0.013139992729996821,
+        0.01076784529570018
+      ],
+      "initial_wavevector": [
+        0.0,
+        703.1018508707365,
+        703.1018508707365
+      ],
+      "peak_time": 0.0,
+      "peak_wavevector": [
+        0.0,
+        703.1018508707365,
+        703.1018508707365
+      ],
+      "peak_amplitude": [
+        -0.7071067811865475,
+        0.5000000000000001,
+        -0.4999999999999999
+      ]
+    },
+    {
+      "mode": 4,
+      "axial_ratio": 1,
+      "radial_ratio": 1,
+      "peak_gain": 1.0000000000000002,
+      "final_gain": 0.0,
+      "transverse_relative_error": 7.889283911012315e-10,
+      "mean_radial_tangential_covariance": [
+        -0.005509850955250217,
+        0.0007898025893461798
+      ],
+      "initial_wavevector": [
+        994.3361732310209,
+        703.1018508707365,
+        703.1018508707365
+      ],
+      "peak_time": 0.0,
+      "peak_wavevector": [
+        994.3361732310209,
+        703.1018508707365,
+        703.1018508707365
+      ],
+      "peak_amplitude": [
+        -0.4999999999999999,
+        0.8535533905932738,
+        -0.14644660940672619
+      ]
+    },
+    {
+      "mode": 16,
+      "axial_ratio": -1,
+      "radial_ratio": -1,
+      "peak_gain": 1.0000000000000002,
+      "final_gain": 0.0,
+      "transverse_relative_error": 1.020124107622271e-09,
+      "mean_radial_tangential_covariance": [
+        0.0009155960725064855,
+        0.00015679826175640777
+      ],
+      "initial_wavevector": [
+        -3977.3446929240836,
+        2812.407403482946,
+        -2812.407403482946
+      ],
+      "peak_time": 0.0,
+      "peak_wavevector": [
+        -3977.3446929240836,
+        2812.407403482946,
+        -2812.407403482946
+      ],
+      "peak_amplitude": [
+        -0.4999999999999999,
+        -0.8535533905932738,
+        -0.14644660940672619
+      ]
+    },
+    {
+      "mode": 16,
+      "axial_ratio": -1,
+      "radial_ratio": 0,
+      "peak_gain": 1.0,
+      "final_gain": 4.961182797404075e-32,
+      "transverse_relative_error": 1.878976219143267e-09,
+      "mean_radial_tangential_covariance": [
+        -0.0009425706684518376,
+        -0.0009436596011862423
+      ],
+      "initial_wavevector": [
+        0.0,
+        2812.407403482946,
+        -2812.407403482946
+      ],
+      "peak_time": 0.0,
+      "peak_wavevector": [
+        0.0,
+        2812.407403482946,
+        -2812.407403482946
+      ],
+      "peak_amplitude": [
+        -0.7071067811865475,
+        0.5000000000000001,
+        0.4999999999999999
+      ]
+    },
+    {
+      "mode": 16,
+      "axial_ratio": -1,
+      "radial_ratio": 1,
+      "peak_gain": 1.0000000000000002,
+      "final_gain": 0.0,
+      "transverse_relative_error": 1.2401084378551457e-09,
+      "mean_radial_tangential_covariance": [
+        -0.0009224582867969604,
+        -0.0001587408614287762
+      ],
+      "initial_wavevector": [
+        3977.3446929240836,
+        2812.407403482946,
+        -2812.407403482946
+      ],
+      "peak_time": 0.0,
+      "peak_wavevector": [
+        3977.3446929240836,
+        2812.407403482946,
+        -2812.407403482946
+      ],
+      "peak_amplitude": [
+        -0.4999999999999999,
+        0.8535533905932738,
+        0.14644660940672619
+      ]
+    },
+    {
+      "mode": 16,
+      "axial_ratio": 0,
+      "radial_ratio": -1,
+      "peak_gain": 1.0,
+      "final_gain": 0.0,
+      "transverse_relative_error": 3.148469449494713e-10,
+      "mean_radial_tangential_covariance": [
+        0.001346425711678943,
+        2.636927166625203e-07
+      ],
+      "initial_wavevector": [
+        -2812.407403482946,
+        2812.407403482946,
+        0.0
+      ],
+      "peak_time": 0.0,
+      "peak_wavevector": [
+        -2812.407403482946,
+        2812.407403482946,
+        0.0
+      ],
+      "peak_amplitude": [
+        -0.7071067811865476,
+        -0.7071067811865475,
+        0.0
+      ]
+    },
+    {
+      "mode": 16,
+      "axial_ratio": 0,
+      "radial_ratio": 0,
+      "peak_gain": 1.0,
+      "final_gain": 3.255320097630593e-80,
+      "transverse_relative_error": 2.440314262858826e-10,
+      "mean_radial_tangential_covariance": [
+        1.5773875538600802e-06,
+        3.4114517975768864e-06
+      ],
+      "initial_wavevector": [
+        0.0,
+        2812.407403482946,
+        0.0
+      ],
+      "peak_time": 0.0,
+      "peak_wavevector": [
+        0.0,
+        2812.407403482946,
+        0.0
+      ],
+      "peak_amplitude": [
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "mode": 16,
+      "axial_ratio": 0,
+      "radial_ratio": 1,
+      "peak_gain": 1.0,
+      "final_gain": 0.0,
+      "transverse_relative_error": 7.21682320751353e-11,
+      "mean_radial_tangential_covariance": [
+        -0.0013443684876433262,
+        2.941948967690032e-07
+      ],
+      "initial_wavevector": [
+        2812.407403482946,
+        2812.407403482946,
+        0.0
+      ],
+      "peak_time": 0.0,
+      "peak_wavevector": [
+        2812.407403482946,
+        2812.407403482946,
+        0.0
+      ],
+      "peak_amplitude": [
+        -0.7071067811865476,
+        0.7071067811865475,
+        0.0
+      ]
+    },
+    {
+      "mode": 16,
+      "axial_ratio": 1,
+      "radial_ratio": -1,
+      "peak_gain": 1.0000000000000002,
+      "final_gain": 0.0,
+      "transverse_relative_error": 2.0157835333339312e-09,
+      "mean_radial_tangential_covariance": [
+        0.0009210037865667808,
+        -0.00015832957240207956
+      ],
+      "initial_wavevector": [
+        -3977.3446929240836,
+        2812.407403482946,
+        2812.407403482946
+      ],
+      "peak_time": 0.0,
+      "peak_wavevector": [
+        -3977.3446929240836,
+        2812.407403482946,
+        2812.407403482946
+      ],
+      "peak_amplitude": [
+        -0.4999999999999999,
+        -0.8535533905932738,
+        0.14644660940672619
+      ]
+    },
+    {
+      "mode": 16,
+      "axial_ratio": 1,
+      "radial_ratio": 0,
+      "peak_gain": 1.0,
+      "final_gain": 0.0,
+      "transverse_relative_error": 9.600231382511527e-10,
+      "mean_radial_tangential_covariance": [
+        -0.0009598958200523402,
+        0.0009518438791675522
+      ],
+      "initial_wavevector": [
+        0.0,
+        2812.407403482946,
+        2812.407403482946
+      ],
+      "peak_time": 0.0,
+      "peak_wavevector": [
+        0.0,
+        2812.407403482946,
+        2812.407403482946
+      ],
+      "peak_amplitude": [
+        -0.7071067811865475,
+        0.5000000000000001,
+        -0.4999999999999999
+      ]
+    },
+    {
+      "mode": 16,
+      "axial_ratio": 1,
+      "radial_ratio": 1,
+      "peak_gain": 1.0000000000000002,
+      "final_gain": 0.0,
+      "transverse_relative_error": 7.673609009811574e-10,
+      "mean_radial_tangential_covariance": [
+        -0.0009142631536230417,
+        0.00015656556403435533
+      ],
+      "initial_wavevector": [
+        3977.3446929240836,
+        2812.407403482946,
+        2812.407403482946
+      ],
+      "peak_time": 0.0,
+      "peak_wavevector": [
+        3977.3446929240836,
+        2812.407403482946,
+        2812.407403482946
+      ],
+      "peak_amplitude": [
+        -0.4999999999999999,
+        0.8535533905932738,
+        -0.14644660940672619
+      ]
+    }
+  ],
+  "covariance_nnls": {
+    "relative_error": 0.0,
+    "selected": [
+      {
+        "index": 1,
+        "weight": 54.658265118595544
+      },
+      {
+        "index": 4,
+        "weight": 121.9888137477723
+      }
+    ],
+    "achieved": [
+      45.595045119370425,
+      138.95833409885512
+    ]
+  },
+  "scope": "Physical local analogue of paper Section 7 cone, not its normalized leading theorem. Primitive integrates current full residual only from axis to selected radius; nonzero total radial moments prevent global compact stress. Frozen Cartesian Kelvin rays omit spatial support, exact curl, phase periodicity, amplitude PDE and nonlinear full-field momentum.",
+  "pde_validated": false,
+  "global_field_ready": false
+}

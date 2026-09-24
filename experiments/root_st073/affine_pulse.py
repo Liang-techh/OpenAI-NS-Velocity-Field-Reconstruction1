@@ -22,7 +22,7 @@ def affine_pulse(J,nu,n0,duration):
  gains=np.linalg.svd(M,compute_uv=False)[:,0];index=int(np.argmax(gains));_,_,vh=np.linalg.svd(M[index],full_matrices=False);seed=vh[0]
  raw=undamped@seed;amp=M@seed;constraint=np.abs(np.sum(normals*raw,axis=1))/(np.linalg.norm(normals,axis=1)*np.linalg.norm(raw,axis=1))
  cov=np.trapezoid(.5*amp[:,0,None]*amp[:,1:],times,axis=0)/duration
- return dict(peak_gain=float(gains.max()),final_gain=float(gains[-1]),transverse_relative_error=float(constraint.max()),mean_radial_tangential_covariance=cov.tolist(),initial_wavevector=np.asarray(n0).tolist(),peak_time=float(times[index]))
+ return dict(peak_gain=float(gains.max()),final_gain=float(gains[-1]),transverse_relative_error=float(constraint.max()),mean_radial_tangential_covariance=cov.tolist(),initial_wavevector=np.asarray(n0).tolist(),peak_time=float(times[index]),peak_wavevector=normals[index].tolist(),peak_amplitude=amp[index].tolist())
 
 def run():
  screen=json.loads((ROOT/'frozen_pulse/report.json').read_text());base=CachedBase();a=json.loads((ROOT/'poloidal_collocation/report.json').read_text())['amplitudes'];f=PoloidalModes(base,np.array(a).ravel())

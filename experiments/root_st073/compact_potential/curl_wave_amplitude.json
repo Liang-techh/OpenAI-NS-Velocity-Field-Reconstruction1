@@ -1,0 +1,111 @@
+{
+  "tau": 0.0078125,
+  "point": [
+    0.0056890761915166545,
+    0.0,
+    0.003432627453438968
+  ],
+  "rows": [
+    {
+      "amplitude": 0.0,
+      "covariance_fraction": 0.0,
+      "max_momentum": 266159.89213373535,
+      "rms_momentum": 266159.8921307165,
+      "mean_cylindrical": [
+        262085.1282883161,
+        -27330.39121006503,
+        -37490.31108748399
+      ]
+    },
+    {
+      "amplitude": 0.001,
+      "covariance_fraction": 1e-06,
+      "max_momentum": 281523.59193538636,
+      "rms_momentum": 266357.9830123047,
+      "mean_cylindrical": [
+        262096.69291699564,
+        -27327.250710587847,
+        -37490.330302845505
+      ]
+    },
+    {
+      "amplitude": 0.003,
+      "covariance_fraction": 9e-06,
+      "max_momentum": 312665.6970018316,
+      "rms_momentum": 267939.86576654366,
+      "mean_cylindrical": [
+        262189.2099464441,
+        -27302.12671470096,
+        -37490.48402578677
+      ]
+    },
+    {
+      "amplitude": 0.01,
+      "covariance_fraction": 0.0001,
+      "max_momentum": 424806.92210433725,
+      "rms_momentum": 285406.68475105317,
+      "mean_cylindrical": [
+        263241.59115645144,
+        -27016.341261305828,
+        -37492.232624372744
+      ]
+    },
+    {
+      "amplitude": 0.03,
+      "covariance_fraction": 0.0009,
+      "max_momentum": 761091.0941448385,
+      "rms_momentum": 409762.5055841148,
+      "mean_cylindrical": [
+        272493.2941016534,
+        -24503.941670539083,
+        -37507.6049199746
+      ]
+    },
+    {
+      "amplitude": 0.1,
+      "covariance_fraction": 0.010000000000000002,
+      "max_momentum": 2059473.8543388105,
+      "rms_momentum": 1109007.013177686,
+      "mean_cylindrical": [
+        377731.41510363924,
+        4074.6036762522126,
+        -37682.46478373681
+      ]
+    },
+    {
+      "amplitude": 0.3,
+      "covariance_fraction": 0.09,
+      "max_momentum": 6766325.677569705,
+      "rms_momentum": 3771634.708637966,
+      "mean_cylindrical": [
+        1302901.7096274188,
+        255314.56277372202,
+        -39219.694358677916
+      ]
+    },
+    {
+      "amplitude": 1.0,
+      "covariance_fraction": 1.0,
+      "max_momentum": 42781680.25689401,
+      "rms_momentum": 22719383.50058975,
+      "mean_cylindrical": [
+        11826713.809838546,
+        3113169.0975256357,
+        -56705.68078654361
+      ]
+    }
+  ],
+  "best_sampled_rms": {
+    "amplitude": 0.0,
+    "covariance_fraction": 0.0,
+    "max_momentum": 266159.89213373535,
+    "rms_momentum": 266159.8921307165,
+    "mean_cylindrical": [
+      262085.1282883161,
+      -27330.39121006503,
+      -37490.31108748399
+    ]
+  },
+  "scope": "Exact affine residual identity for base+amplitude*wave, retaining quadratic self-transport. Sixteen angles at one physical point; angular covariance fraction is amplitude squared. No global PDE gate.",
+  "accepted": false
+}

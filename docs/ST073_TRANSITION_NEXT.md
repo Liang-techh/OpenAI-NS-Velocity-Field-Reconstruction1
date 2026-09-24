@@ -827,3 +827,48 @@ stress and exact moment correction cycle in Sections7-9. Preserve this
 candidate as a numerical benchmark, not an accepted Navier-Stokes solution.
 Artifacts: `experiments/root_st073/compact_potential/radial_repair_refit.json`
 and `radial_repair_direct.json`.
+
+## Exact-curl two-harmonic wave: local covariance passes, full momentum fails
+
+At the current k6 radial peak (r,z)=(0.00568908,0.00343263),
+`radial_peak_cone.py` computes the actual corrected velocity gradient and the
+physical local stress primitive needed for the tangential residual:
+(sigma_rtheta,sigma_rz)=(45.5950,138.9583). This primitive is integrated only
+from the axis to this radius; nonzero global weighted moments prevent its
+unmodified compact extension. The physical analogue of paper Eq(7.1) gives
+lambda^2=3919.85, target dot N=-145.02, and cone ratio0.0673<1. Frozen
+Cartesian Kelvin rays give two positive time-averaged covariance weights.
+These facts are LOCAL diagnostics, not the paper's normalized leading-cone
+hypotheses or supported amplitude solution.
+
+`curl_wave_prototype.py` periodicizes the two selected modes to distinct
+integer angular harmonics m=1,2, projects their polarizations transverse to
+the corrected normals, solves positive covariance weights23.1621 and75.8107,
+and defines an actual compact C4 vector potential. Its analytic curl is
+exactly solenoidal. At the selected point, 16-angle sampled covariance of the
+exact velocity matches the target within2.3e-15 relative error; different m
+values remove cross terms under angular averaging. This completes a concrete
+local stress realization, but not the wave amplitude/pressure PDE of paper
+Section7 or its mean correction cycle in Sections8-9.
+
+The decisive full momentum test rejects this frozen wave. At target amplitude,
+the local 16-angle maximum rises266160 ->42781680 and the angular-mean radial
+residual rises262085 ->11826714. `curl_wave_amplitude_screen.py` retains exact
+linear and quadratic residual terms: among 0 and101 positive amplitudes from
+1e-5 to1, zero has the lowest sampled momentum RMS. At amplitude0.001 the
+covariance is only1e-6 of target, yet maximum residual already rises to281524.
+The finite-difference divergence of the target-amplitude wave is ~2e-4 while
+analytic divergence is zero; this reflects differentiation of a steep compact
+wave, not a certified numerical divergence bound.
+
+The axial support halfwidth is0.00075, so its inverse scale is1333, versus
+carrier magnitudes239 and419. The dimensional cutoff diffusion scale
+nu/h_z^2 is17778, versus the local physical analogue growth rate62.6. These
+are only scale diagnostics; the paper's normalized estimates cannot be
+replaced by this comparison. They explain why freezing a locally favorable
+covariance into a narrow compact pulse has a large omitted curl/viscous cost.
+Next derive evolving periodic phases and solve the coupled amplitude-pressure
+equation before any wave is added to the benchmark; preserve exact radial
+moments and re-evaluate the complete residual. Artifacts:
+`experiments/root_st073/compact_potential/radial_peak_cone.json`,
+`curl_wave_prototype.json`, and `curl_wave_amplitude.json`.
