@@ -546,3 +546,38 @@ replace a radial/axial profile satisfying BOTH stress direction and moment
 identities. The current poloidal/pressure basis has axial modes1 and eta only;
 add an even eta^2 mode before assessing whether the side failures are structural.
 Artifact: experiments/root_st073/cone_fit/report.json.
+
+
+## Even axial mode extension for the wide background
+
+`even_modes.py` adds eta^2 terms to both streamfunction and pressure radial
+bubbles, giving30 coefficients in all (18 poloidal/pressure plus12 swirl).
+The physical z derivative of eta^m includes m*(eta/.3)^(m-1)*eta_z/.3;
+this is required for exact streamfunction divergence cancellation. With the
+new six coefficients zero, the extended evaluator agrees exactly with the
+old24-mode evaluator at three nonzero-coefficient sample points.
+
+`even_cone_fit.py` repeats the bounded full-momentum/moment and approximate
+interior direction/growth fit with that expanded parity basis. It starts from
+the previously accepted width6 fit, with all new eta^2 coefficients zero.
+The aim is to check whether a symmetric axial correction can supply interior
+pulse conditions at BOTH eta=+.3 and eta=-.3 without sacrificing full momentum
+and physical-volume L2. Fitting penalties remain diagnostics, not acceptance.
+Artifacts: even_cone_fit/report.json and even_cone_fit/compatibility.json.
+
+
+Even-mode result: the new eta^2 terms leave the former field EXACTLY unchanged
+when set to zero. The cone-penalized fit increases late midplane interior
+passing nodes from0 to4/10, but STILL gives0/10 at eta=+/-.3. Its held-out
+late slice maxima improve about5%, yet the late matched-volume maximum grows
+4261.34 ->4965.24 and physical-volume L2 grows4.89297 ->5.70224.
+Angular terminal mismatch at eta=+/-.2 grows about.307 ->1.72--1.85.
+Therefore it is rejected. A low-degree axial polynomial did not solve the
+side stress orientation and made the user's actual gates worse.
+
+Next use the paper's radial shear modulation idea as a separate controlled
+candidate: alter local shear while keeping mean velocities and radial moments
+nearly fixed, then compute the FULL viscous residual and pulse compatibility.
+High radial frequency can greatly increase viscosity; test this cost explicitly
+before claiming any stress cone progress. Do not replace the width6 best
+full-momentum candidate with either cone-penalized field.
