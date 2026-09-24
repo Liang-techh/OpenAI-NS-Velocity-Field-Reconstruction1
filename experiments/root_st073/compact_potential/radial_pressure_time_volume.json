@@ -1,0 +1,78 @@
+{
+  "rows": [
+    {
+      "tau": 0.00825,
+      "order": 6,
+      "before": {
+        "max": 102813.31333552588,
+        "physical_volume_l2": 183.80597734530858
+      },
+      "after": {
+        "max": 102112.9093382938,
+        "physical_volume_l2": 193.0163628062062
+      }
+    },
+    {
+      "tau": 0.00825,
+      "order": 8,
+      "before": {
+        "max": 169404.12590075438,
+        "physical_volume_l2": 126.25128748710885
+      },
+      "after": {
+        "max": 170233.97978942387,
+        "physical_volume_l2": 131.74877868028202
+      }
+    },
+    {
+      "tau": 0.0084,
+      "order": 6,
+      "before": {
+        "max": 103245.60611217152,
+        "physical_volume_l2": 182.2090842482701
+      },
+      "after": {
+        "max": 102562.94637173325,
+        "physical_volume_l2": 191.54187135834212
+      }
+    },
+    {
+      "tau": 0.0084,
+      "order": 8,
+      "before": {
+        "max": 171076.85058819634,
+        "physical_volume_l2": 129.66165678394972
+      },
+      "after": {
+        "max": 171867.42636960145,
+        "physical_volume_l2": 135.02272685219546
+      }
+    },
+    {
+      "tau": 0.00855,
+      "order": 6,
+      "before": {
+        "max": 103544.01555092729,
+        "physical_volume_l2": 180.87296825893154
+      },
+      "after": {
+        "max": 102877.48793034966,
+        "physical_volume_l2": 190.31655047355434
+      }
+    },
+    {
+      "tau": 0.00855,
+      "order": 8,
+      "before": {
+        "max": 172398.54870648662,
+        "physical_volume_l2": 132.97351003207527
+      },
+      "after": {
+        "max": 173153.32671338334,
+        "physical_volume_l2": 138.2093612836224
+      }
+    }
+  ],
+  "scope": "Three time slices, Gauss6/8 spatial quadrature. These orders disagree and do not establish convergence, a spacetime bound, or momentum accuracy.",
+  "accepted": false
+}

@@ -134,11 +134,15 @@ if __name__ == '__main__':
     parser.add_argument('--z', type=float, default=.003432627453438968)
     parser.add_argument('--output-name', default='radial_peak_cone.json')
     parser.add_argument('--tau', type=float, default=.5/64)
-    parser.add_argument('--field', choices=('current', 'annular-pressure-scale'),
+    parser.add_argument('--field', choices=('current', 'annular-pressure-scale',
+                                            'radial-pressure-time'),
                         default='current')
     args = parser.parse_args()
     if args.field == 'annular-pressure-scale':
         from annular_pressure_scale_screen import load_candidate
+        selected_field = load_candidate()
+    elif args.field == 'radial-pressure-time':
+        from radial_pressure_time_validate import load_candidate
         selected_field = load_candidate()
     else:
         selected_field = current_field()

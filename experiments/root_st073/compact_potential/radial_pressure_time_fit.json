@@ -1,0 +1,596 @@
+{
+  "times": [
+    0.00825,
+    0.0084,
+    0.00855
+  ],
+  "radii": [
+    0.0075,
+    0.00825,
+    0.009,
+    0.01,
+    0.011,
+    0.012,
+    0.013
+  ],
+  "heights": [
+    0.00355,
+    0.003625,
+    0.0037
+  ],
+  "mode_degrees": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      0
+    ],
+    [
+      3,
+      1
+    ],
+    [
+      3,
+      2
+    ],
+    [
+      3,
+      3
+    ]
+  ],
+  "constant_fit": {
+    "feasible": true,
+    "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "amplitudes": [
+      -6.528948337967322,
+      0.0,
+      0.0,
+      -19.991036976421505,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -21.679015870766705,
+      0.0,
+      0.0,
+      0.0,
+      -0.0685778748894025,
+      -57.96570688548425
+    ],
+    "maximum_constraint_violation": 8.881784197001252e-15
+  },
+  "affine_time_fit": {
+    "feasible": true,
+    "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "amplitudes": [
+      -6.525302074448832,
+      0.0,
+      0.0,
+      -7.703827712754899,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -21.678414567786415,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -1.947500691558418,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      -0.06829669302450196,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "maximum_constraint_violation": 2.842170943040401e-14
+  },
+  "baseline_pass_count": 58,
+  "total_count": 63,
+  "rows": [
+    {
+      "tau": 0.00825,
+      "r": 0.0075,
+      "z": 0.00355,
+      "baseline_pass": true,
+      "baseline_ratio": 0.013877985355098604
+    },
+    {
+      "tau": 0.00825,
+      "r": 0.00825,
+      "z": 0.00355,
+      "baseline_pass": true,
+      "baseline_ratio": 0.43209539755055604
+    },
+    {
+      "tau": 0.00825,
+      "r": 0.009,
+      "z": 0.00355,
+      "baseline_pass": true,
+      "baseline_ratio": 0.20820895985107213
+    },
+    {
+      "tau": 0.00825,
+      "r": 0.01,
+      "z": 0.00355,
+      "baseline_pass": true,
+      "baseline_ratio": 0.45926660145270337
+    },
+    {
+      "tau": 0.00825,
+      "r": 0.011,
+      "z": 0.00355,
+      "baseline_pass": true,
+      "baseline_ratio": 0.22206303376198858
+    },
+    {
+      "tau": 0.00825,
+      "r": 0.012,
+      "z": 0.00355,
+      "baseline_pass": true,
+      "baseline_ratio": 0.2667103806451247
+    },
+    {
+      "tau": 0.00825,
+      "r": 0.013,
+      "z": 0.00355,
+      "baseline_pass": false,
+      "baseline_ratio": 1.0687353231709897
+    },
+    {
+      "tau": 0.00825,
+      "r": 0.0075,
+      "z": 0.003625,
+      "baseline_pass": true,
+      "baseline_ratio": 0.02195618815177322
+    },
+    {
+      "tau": 0.00825,
+      "r": 0.00825,
+      "z": 0.003625,
+      "baseline_pass": true,
+      "baseline_ratio": 0.6582426614853433
+    },
+    {
+      "tau": 0.00825,
+      "r": 0.009,
+      "z": 0.003625,
+      "baseline_pass": true,
+      "baseline_ratio": 0.4174948156156123
+    },
+    {
+      "tau": 0.00825,
+      "r": 0.01,
+      "z": 0.003625,
+      "baseline_pass": true,
+      "baseline_ratio": 0.3956928485794772
+    },
+    {
+      "tau": 0.00825,
+      "r": 0.011,
+      "z": 0.003625,
+      "baseline_pass": true,
+      "baseline_ratio": 0.07201080848590657
+    },
+    {
+      "tau": 0.00825,
+      "r": 0.012,
+      "z": 0.003625,
+      "baseline_pass": true,
+      "baseline_ratio": 0.5223708303945354
+    },
+    {
+      "tau": 0.00825,
+      "r": 0.013,
+      "z": 0.003625,
+      "baseline_pass": true,
+      "baseline_ratio": 0.9529668596417638
+    },
+    {
+      "tau": 0.00825,
+      "r": 0.0075,
+      "z": 0.0037,
+      "baseline_pass": true,
+      "baseline_ratio": 0.05349080183713256
+    },
+    {
+      "tau": 0.00825,
+      "r": 0.00825,
+      "z": 0.0037,
+      "baseline_pass": false,
+      "baseline_ratio": 1.129783704526339
+    },
+    {
+      "tau": 0.00825,
+      "r": 0.009,
+      "z": 0.0037,
+      "baseline_pass": true,
+      "baseline_ratio": 0.8435568006758873
+    },
+    {
+      "tau": 0.00825,
+      "r": 0.01,
+      "z": 0.0037,
+      "baseline_pass": true,
+      "baseline_ratio": 0.256251082154387
+    },
+    {
+      "tau": 0.00825,
+      "r": 0.011,
+      "z": 0.0037,
+      "baseline_pass": true,
+      "baseline_ratio": 0.1329410995928107
+    },
+    {
+      "tau": 0.00825,
+      "r": 0.012,
+      "z": 0.0037,
+      "baseline_pass": true,
+      "baseline_ratio": 0.8826717592596388
+    },
+    {
+      "tau": 0.00825,
+      "r": 0.013,
+      "z": 0.0037,
+      "baseline_pass": true,
+      "baseline_ratio": 0.720096410307577
+    },
+    {
+      "tau": 0.0084,
+      "r": 0.0075,
+      "z": 0.00355,
+      "baseline_pass": true,
+      "baseline_ratio": 0.011445529308931274
+    },
+    {
+      "tau": 0.0084,
+      "r": 0.00825,
+      "z": 0.00355,
+      "baseline_pass": true,
+      "baseline_ratio": 0.3750034439634377
+    },
+    {
+      "tau": 0.0084,
+      "r": 0.009,
+      "z": 0.00355,
+      "baseline_pass": true,
+      "baseline_ratio": 0.23279399013875712
+    },
+    {
+      "tau": 0.0084,
+      "r": 0.01,
+      "z": 0.00355,
+      "baseline_pass": true,
+      "baseline_ratio": 0.37004009753982947
+    },
+    {
+      "tau": 0.0084,
+      "r": 0.011,
+      "z": 0.00355,
+      "baseline_pass": true,
+      "baseline_ratio": 0.29760733385911164
+    },
+    {
+      "tau": 0.0084,
+      "r": 0.012,
+      "z": 0.00355,
+      "baseline_pass": true,
+      "baseline_ratio": 0.2567741861147852
+    },
+    {
+      "tau": 0.0084,
+      "r": 0.013,
+      "z": 0.00355,
+      "baseline_pass": true,
+      "baseline_ratio": 0.7859491963597518
+    },
+    {
+      "tau": 0.0084,
+      "r": 0.0075,
+      "z": 0.003625,
+      "baseline_pass": true,
+      "baseline_ratio": 0.002638856257373919
+    },
+    {
+      "tau": 0.0084,
+      "r": 0.00825,
+      "z": 0.003625,
+      "baseline_pass": true,
+      "baseline_ratio": 0.4990224899091912
+    },
+    {
+      "tau": 0.0084,
+      "r": 0.009,
+      "z": 0.003625,
+      "baseline_pass": true,
+      "baseline_ratio": 0.3954482712327337
+    },
+    {
+      "tau": 0.0084,
+      "r": 0.01,
+      "z": 0.003625,
+      "baseline_pass": true,
+      "baseline_ratio": 0.32691507488024635
+    },
+    {
+      "tau": 0.0084,
+      "r": 0.011,
+      "z": 0.003625,
+      "baseline_pass": true,
+      "baseline_ratio": 0.1862362104850112
+    },
+    {
+      "tau": 0.0084,
+      "r": 0.012,
+      "z": 0.003625,
+      "baseline_pass": true,
+      "baseline_ratio": 0.47372517953103105
+    },
+    {
+      "tau": 0.0084,
+      "r": 0.013,
+      "z": 0.003625,
+      "baseline_pass": true,
+      "baseline_ratio": 0.7217716563148293
+    },
+    {
+      "tau": 0.0084,
+      "r": 0.0075,
+      "z": 0.0037,
+      "baseline_pass": true,
+      "baseline_ratio": 0.012070037680516447
+    },
+    {
+      "tau": 0.0084,
+      "r": 0.00825,
+      "z": 0.0037,
+      "baseline_pass": true,
+      "baseline_ratio": 0.7915545413462208
+    },
+    {
+      "tau": 0.0084,
+      "r": 0.009,
+      "z": 0.0037,
+      "baseline_pass": true,
+      "baseline_ratio": 0.7340410278001649
+    },
+    {
+      "tau": 0.0084,
+      "r": 0.01,
+      "z": 0.0037,
+      "baseline_pass": true,
+      "baseline_ratio": 0.23168851705645083
+    },
+    {
+      "tau": 0.0084,
+      "r": 0.011,
+      "z": 0.0037,
+      "baseline_pass": true,
+      "baseline_ratio": 0.02620847494262601
+    },
+    {
+      "tau": 0.0084,
+      "r": 0.012,
+      "z": 0.0037,
+      "baseline_pass": true,
+      "baseline_ratio": 0.7923517340920623
+    },
+    {
+      "tau": 0.0084,
+      "r": 0.013,
+      "z": 0.0037,
+      "baseline_pass": true,
+      "baseline_ratio": 0.5480398189744049
+    },
+    {
+      "tau": 0.00855,
+      "r": 0.0075,
+      "z": 0.00355,
+      "baseline_pass": true,
+      "baseline_ratio": 0.03485276560450742
+    },
+    {
+      "tau": 0.00855,
+      "r": 0.00825,
+      "z": 0.00355,
+      "baseline_pass": true,
+      "baseline_ratio": 0.3792699840744602
+    },
+    {
+      "tau": 0.00855,
+      "r": 0.009,
+      "z": 0.00355,
+      "baseline_pass": true,
+      "baseline_ratio": 0.28725487602918903
+    },
+    {
+      "tau": 0.00855,
+      "r": 0.01,
+      "z": 0.00355,
+      "baseline_pass": true,
+      "baseline_ratio": 0.2908952934812218
+    },
+    {
+      "tau": 0.00855,
+      "r": 0.011,
+      "z": 0.00355,
+      "baseline_pass": true,
+      "baseline_ratio": 0.34132063534387236
+    },
+    {
+      "tau": 0.00855,
+      "r": 0.012,
+      "z": 0.00355,
+      "baseline_pass": true,
+      "baseline_ratio": 0.24563388601352343
+    },
+    {
+      "tau": 0.00855,
+      "r": 0.013,
+      "z": 0.00355,
+      "baseline_pass": true,
+      "baseline_ratio": 0.5084328935854339
+    },
+    {
+      "tau": 0.00855,
+      "r": 0.0075,
+      "z": 0.003625,
+      "baseline_pass": true,
+      "baseline_ratio": 0.010846679150638238
+    },
+    {
+      "tau": 0.00855,
+      "r": 0.00825,
+      "z": 0.003625,
+      "baseline_pass": true,
+      "baseline_ratio": 0.3964149967805058
+    },
+    {
+      "tau": 0.00855,
+      "r": 0.009,
+      "z": 0.003625,
+      "baseline_pass": true,
+      "baseline_ratio": 0.3847382034710062
+    },
+    {
+      "tau": 0.00855,
+      "r": 0.01,
+      "z": 0.003625,
+      "baseline_pass": true,
+      "baseline_ratio": 0.25740339636237985
+    },
+    {
+      "tau": 0.00855,
+      "r": 0.011,
+      "z": 0.003625,
+      "baseline_pass": true,
+      "baseline_ratio": 0.25890502506639634
+    },
+    {
+      "tau": 0.00855,
+      "r": 0.012,
+      "z": 0.003625,
+      "baseline_pass": true,
+      "baseline_ratio": 0.4162329209458634
+    },
+    {
+      "tau": 0.00855,
+      "r": 0.013,
+      "z": 0.003625,
+      "baseline_pass": true,
+      "baseline_ratio": 0.4848891240960735
+    },
+    {
+      "tau": 0.00855,
+      "r": 0.0075,
+      "z": 0.0037,
+      "baseline_pass": true,
+      "baseline_ratio": 0.009431375715621339
+    },
+    {
+      "tau": 0.00855,
+      "r": 0.00825,
+      "z": 0.0037,
+      "baseline_pass": true,
+      "baseline_ratio": 0.5696143634727701
+    },
+    {
+      "tau": 0.00855,
+      "r": 0.009,
+      "z": 0.0037,
+      "baseline_pass": true,
+      "baseline_ratio": 0.6445416388086774
+    },
+    {
+      "tau": 0.00855,
+      "r": 0.01,
+      "z": 0.0037,
+      "baseline_pass": true,
+      "baseline_ratio": 0.19266629905559204
+    },
+    {
+      "tau": 0.00855,
+      "r": 0.011,
+      "z": 0.0037,
+      "baseline_pass": true,
+      "baseline_ratio": 0.14540785323957447
+    },
+    {
+      "tau": 0.00855,
+      "r": 0.012,
+      "z": 0.0037,
+      "baseline_pass": true,
+      "baseline_ratio": 0.6760858950427154
+    },
+    {
+      "tau": 0.00855,
+      "r": 0.013,
+      "z": 0.0037,
+      "baseline_pass": true,
+      "baseline_ratio": 0.3614163114182033
+    }
+  ],
+  "scope": "Linear pressure correction at three sampled times on fixed 7x3 spatial grid. Affine-time amplitudes are not yet checked at intermediate times or for full momentum/pressure-Poisson consistency.",
+  "accepted": false
+}
