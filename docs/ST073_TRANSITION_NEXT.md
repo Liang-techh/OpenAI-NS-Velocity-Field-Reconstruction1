@@ -470,3 +470,34 @@ This is a useful wide-background candidate, not an accepted global NS field.
 Next recompute the directional screen and actual transport residence for THIS
 corrected wider field; earlier narrow-field cone or trajectory results do not
 transfer. Keep explicit stress tails, axial closure and finite-energy tasks.
+
+
+## Corrected wide-background pulse geometry
+
+`wide_pulse_screen.py` recomputes full residual prefix stresses, local shear and
+the diagnostic direction conditions on the fitted Width6 field. It uses20
+radial nodes at k=2.5,5.5 and eta=-.3,0,.3; the selected late passing point
+maximizes physical distance to either radial interface. No old narrow-field
+stress direction or trajectory is transferred. Actual particle transport uses
+the changing background and moving boundaries, stopping at a radial boundary,
+|eta|=.48 probe, or0.1*tau. The initial directional condition is NOT asserted
+along the trajectory. A separate frozen full-gradient amplitude calculation
+uses the observed residence duration, with27 explicitly recorded initial
+wavevectors. This remains preparatory geometry/dynamics, not a supported
+non-axisymmetric field or a full momentum cancellation.
+Artifact: experiments/root_st073/wide_pulse_screen/report.json.
+
+
+Wide pulse screen result:14/120 nodes pass the approximate direction test.
+The selected point lies at eta=0,y=.956117 (near the outer boundary), with
+physical distance7.0616e-4 to that boundary. Its actual particle reaches the
+moving outer interface after0.0718045*tau, about20 times the previously tested
+narrow-collar residence, although these are different selected positions.
+All27 sampled frozen-affine perturbations have peak gain<=1 up to rounding.
+This does not certify absence of growth along the changing trajectory.
+The target radial stress remains nonzero near the outer boundary, so moment
+tails and compact support are still unresolved even where direction passes.
+Next evolve phase/amplitude against J(t) along the actual trajectory and
+re-evaluate stress-direction compatibility there before constructing a
+supported vector-potential wave. Do not treat longer residence as PDE progress
+or as a substitute for reducing the remaining full residual and global energy.
