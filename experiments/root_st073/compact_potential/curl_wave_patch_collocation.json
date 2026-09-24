@@ -1,0 +1,124 @@
+{
+  "tau": 0.0078125,
+  "center": [
+    0.0056890761915166545,
+    0.003432627453438968
+  ],
+  "train_nodes": 25,
+  "heldout_nodes": 16,
+  "coefficient_norms": [
+    803995.2202802805,
+    402269.4637712296
+  ],
+  "train": [
+    {
+      "amplitude": 0.1,
+      "baseline": {
+        "max": 761490.9977166554,
+        "rms": 434507.33751869685
+      },
+      "before": {
+        "max": 13488959.059761139,
+        "rms": 2828288.5393972304
+      },
+      "after": {
+        "max": 1795847.5557726687,
+        "rms": 530886.3629240292
+      },
+      "harmonic_before": {
+        "max": 83041075.7189725,
+        "rms": 16075362.753053246
+      },
+      "harmonic_after": {
+        "max": 5014376.935498975,
+        "rms": 1322600.0357685992
+      }
+    },
+    {
+      "amplitude": 1.0,
+      "baseline": {
+        "max": 761490.9977166554,
+        "rms": 434507.33751869685
+      },
+      "before": {
+        "max": 147639394.11378208,
+        "rms": 34235944.38896138
+      },
+      "after": {
+        "max": 144720908.137247,
+        "rms": 19615315.692673072
+      },
+      "harmonic_before": {
+        "max": 83041075.7189725,
+        "rms": 16075362.753053246
+      },
+      "harmonic_after": {
+        "max": 5014376.935498975,
+        "rms": 1322600.0357685992
+      }
+    }
+  ],
+  "heldout": [
+    {
+      "amplitude": 0.1,
+      "baseline": {
+        "max": 728780.816094849,
+        "rms": 480124.5762941708
+      },
+      "before": {
+        "max": 10215703.922777455,
+        "rms": 3395339.4074163954
+      },
+      "after": {
+        "max": 3226316.2842053785,
+        "rms": 978797.5445617962
+      },
+      "harmonic_before": {
+        "max": 54791079.140418254,
+        "rms": 19323650.947799902
+      },
+      "harmonic_after": {
+        "max": 15374722.393628942,
+        "rms": 4682087.974948582
+      }
+    },
+    {
+      "amplitude": 1.0,
+      "baseline": {
+        "max": 728780.816094849,
+        "rms": 480124.5762941708
+      },
+      "before": {
+        "max": 209288768.43308693,
+        "rms": 42398708.98452062
+      },
+      "after": {
+        "max": 144939602.63435736,
+        "rms": 26783707.645046126
+      },
+      "harmonic_before": {
+        "max": 54791079.140418254,
+        "rms": 19323650.947799902
+      },
+      "harmonic_after": {
+        "max": 15374722.393628942,
+        "rms": 4682087.974948582
+      }
+    }
+  ],
+  "direct_endpoint_replay": {
+    "predicted": [
+      -863174.5025531022,
+      -410189.45117489854,
+      46951.717647094636
+    ],
+    "direct": [
+      -863174.5025461344,
+      -410189.45117577584,
+      46951.71672892741
+    ],
+    "max_absolute_difference": 0.0009181672285194509
+  },
+  "scope": "Patch collocation of one endpoint Taylor slope and harmonic pressure. Exact-curl basis preserves divergence when integrated in time, but no amplitude PDE or mean pressure/flux correction is solved.",
+  "accepted": false
+}
