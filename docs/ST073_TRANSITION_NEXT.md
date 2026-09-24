@@ -763,3 +763,36 @@ non-axisymmetric pulse/covariance and iterative mean repair; these six slow
 axisymmetric modes do not implement that program. Artifacts:
 `experiments/root_st073/compact_potential/joint_collar_fit.json`,
 `joint_collar_scale.json`, and `joint_collar_direct.json`.
+
+## Radial-collar angular correction added to the joint field
+
+The remaining angular peak at k6/Gauss8 lies at r=0.02154 and |z|=0.002264,
+inside the radial cutoff collar but below the axial cutoff onset. Thus the
+previous axial-collar modes are exactly zero there. `radial_swirl_fit.py` adds
+two C4 compact pure-swirl radial bubbles, with the same (tau_ref/tau)^1.5 time
+weight and the existing smooth axial taper. Their velocity is analytically
+solenoidal. Fitting their linearized FULL momentum response at k6/Gauss8 and
+retaining the quadratic self-transport gives coefficients7.12829 and6.07674.
+`RadialSwirlRepairedField` exposes the complete sum as a callable field.
+
+At fitted k6/Gauss8, angular max drops179634 ->29815 and sampled physical-
+volume L2 drops342.08 ->194.37. Total maximum remains276850 because a radial
+peak outside these bubbles dominates. On an independent k6/Gauss6 grid, total
+max falls127480 ->94315 and L2 262.11 ->191.48. The same coefficients also
+lower sampled L2 at k5.5/Gauss6 from215.33 to161.13, at k4 from125.12 to
+115.55, and at k=.4 from22.29 to22.17; total maxima at these earlier grids
+are unchanged because other components control them. These are finite samples
+with strong grid-order dependence, not converged maximum or volume norms.
+
+`radial_swirl_direct.py` independently evaluates the full fourth-order
+Cartesian momentum at six physical collar points at k5.5. At the midplane
+collar center, the norm falls111121 ->8486; the largest post-correction norm
+among these six points is11773, versus111927 before. Sampled divergence stays
+around1e-10. This establishes a real local angular improvement, while leaving
+large radial/axial errors elsewhere and the 1e-3 target far unmet.
+
+The next work is a coupled correction for the *radial* maximum and interface
+stress, together with non-axisymmetric realizability/moment constraints from
+the paper. Do not promote this finite-slab screen to an accepted NS solution.
+Artifacts: `experiments/root_st073/compact_potential/radial_swirl_fit.json`
+and `radial_swirl_direct.json`.
