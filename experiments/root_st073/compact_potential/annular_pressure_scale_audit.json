@@ -1,0 +1,180 @@
+{
+  "velocity_scale": 0.48,
+  "midpoint_pass_count": 12,
+  "midpoint_min_lambda_squared": 236.40498034167257,
+  "midpoint_max_cone_ratio": 0.7964671744928306,
+  "midpoint_rows": [
+    {
+      "z": 0.0025388594772266238,
+      "target": [
+        -17.949887608156683,
+        55.510095692722906
+      ],
+      "target_dot_N": -39.53193251260518,
+      "lambda_squared": 62664.12419980744,
+      "center_residual_norm": 497083.59033984307,
+      "cone_ratio": 0.698559788407841,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.002616578431679871,
+      "target": [
+        -34.691168543665576,
+        106.33676059153098
+      ],
+      "target_dot_N": -76.45748884537238,
+      "lambda_squared": 63077.58812572755,
+      "center_residual_norm": 536504.4642945417,
+      "cone_ratio": 0.7042616079226248,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.0026942973861331185,
+      "target": [
+        -53.81059359925896,
+        146.59368171868815
+      ],
+      "target_dot_N": -103.06828490437289,
+      "lambda_squared": 59488.77743596507,
+      "center_residual_norm": 417231.23263972945,
+      "cone_ratio": 0.7408786802896752,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.0027720163405863655,
+      "target": [
+        -71.35012930182772,
+        167.4031493245587
+      ],
+      "target_dot_N": -112.66744921951855,
+      "lambda_squared": 51479.40520489262,
+      "center_residual_norm": 192730.6368327464,
+      "cone_ratio": 0.7779415675596748,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.002849735295039613,
+      "target": [
+        -83.69090279358221,
+        168.6267245551072
+      ],
+      "target_dot_N": -106.52150798999683,
+      "lambda_squared": 39728.05310375106,
+      "center_residual_norm": 131966.5249654042,
+      "cone_ratio": 0.7964671744928306,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.0029274542494928603,
+      "target": [
+        -88.2080352045874,
+        156.00817277174858
+      ],
+      "target_dot_N": -91.32048833056928,
+      "lambda_squared": 26099.399330596178,
+      "center_residual_norm": 375058.5940270581,
+      "cone_ratio": 0.7656790998827382,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.0030051732039461077,
+      "target": [
+        -83.6097004274711,
+        137.20028349548468
+      ],
+      "target_dot_N": -75.30712204154975,
+      "lambda_squared": 13337.530649024437,
+      "center_residual_norm": 566539.2913999736,
+      "cone_ratio": 0.6368725704381872,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.003082892158399355,
+      "target": [
+        -70.0154792465768,
+        118.27838704063211
+      ],
+      "target_dot_N": -64.69632355236828,
+      "lambda_squared": 4205.726512214465,
+      "center_residual_norm": 666015.1449422616,
+      "cone_ratio": 0.3820127063089724,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.0031606111128526025,
+      "target": [
+        -48.82872208854595,
+        101.61089505144047
+      ],
+      "target_dot_N": -61.35827582651303,
+      "lambda_squared": 236.40498034167257,
+      "center_residual_norm": 666916.1133611304,
+      "cone_ratio": 0.08343362003796898,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.00323833006730585,
+      "target": [
+        -22.456681440254684,
+        85.39668515273985
+      ],
+      "target_dot_N": -62.13233653375786,
+      "lambda_squared": 798.8629275180311,
+      "center_residual_norm": 581826.6090507852,
+      "cone_ratio": 0.11895727029247528,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.003316049021759097,
+      "target": [
+        6.068476846967479,
+        64.75270384418002
+      ],
+      "target_dot_N": -59.72704986930529,
+      "lambda_squared": 3394.0189841851293,
+      "center_residual_norm": 436020.57633850793,
+      "cone_ratio": 0.13254356260838795,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.0033937679762123443,
+      "target": [
+        33.515466712991916,
+        33.91700427256421
+      ],
+      "target_dot_N": -45.11874372236564,
+      "lambda_squared": 5296.696944235193,
+      "center_residual_norm": 261145.21572229755,
+      "cone_ratio": 0.1799229511570947,
+      "strict_local_pass": true
+    }
+  ],
+  "volume_holdouts": [
+    {
+      "k": 6.0,
+      "order": 7,
+      "baseline": {
+        "max": 767092.592854884,
+        "physical_volume_l2": 662.424177506573
+      },
+      "candidate": {
+        "max": 669342.596508796,
+        "physical_volume_l2": 599.8072349782224
+      }
+    },
+    {
+      "k": 5.75,
+      "order": 7,
+      "baseline": {
+        "max": 552753.1281993934,
+        "physical_volume_l2": 535.6996692265288
+      },
+      "candidate": {
+        "max": 496725.53403778066,
+        "physical_volume_l2": 496.6309061757024
+      }
+    }
+  ],
+  "scope": "Twelve off-fit axial midpoints and Gauss7 at two times. No radial-time cone patch or continuum certificate.",
+  "accepted": false
+}

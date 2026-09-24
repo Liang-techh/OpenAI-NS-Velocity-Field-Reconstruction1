@@ -1,0 +1,151 @@
+{
+  "mode_specs": [
+    [
+      0.12,
+      0.36,
+      0
+    ],
+    [
+      0.12,
+      0.36,
+      1
+    ],
+    [
+      0.12,
+      0.36,
+      2
+    ],
+    [
+      0.28,
+      0.55,
+      0
+    ],
+    [
+      0.28,
+      0.55,
+      1
+    ],
+    [
+      0.28,
+      0.55,
+      2
+    ],
+    [
+      0.12,
+      0.65,
+      0
+    ],
+    [
+      0.12,
+      0.65,
+      1
+    ],
+    [
+      0.12,
+      0.65,
+      2
+    ],
+    [
+      0.45,
+      0.8,
+      0
+    ],
+    [
+      0.45,
+      0.8,
+      1
+    ],
+    [
+      0.45,
+      0.8,
+      2
+    ]
+  ],
+  "reference_tau": 0.0078125,
+  "temporal_power": 2.0,
+  "peak_weight": 0.3,
+  "amplitudes": [
+    0.00023528469834893553,
+    0.0068576510397598345,
+    0.00012160991255330635,
+    -0.0023714884052124237,
+    -0.007452640286046108,
+    0.005187613528810123,
+    0.008489781184164548,
+    0.013072210195892792,
+    0.0034474705615472243,
+    0.008257256579299453,
+    0.0008764285228928086,
+    -0.0002930169512803597
+  ],
+  "optimizer_success": true,
+  "optimizer_message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+  "objective": 0.34152085999142523,
+  "rows": [
+    {
+      "k": 6.0,
+      "order": 6,
+      "held_out": false,
+      "baseline_max": 91543.61885943754,
+      "baseline_l2": 190.12848139543794,
+      "candidate_max": 99938.85841848301,
+      "candidate_l2": 173.17042644079032
+    },
+    {
+      "k": 6.0,
+      "order": 8,
+      "held_out": false,
+      "baseline_max": 266159.892129595,
+      "baseline_l2": 188.3449278054121,
+      "candidate_max": 149459.04084961995,
+      "candidate_l2": 82.27350120374207
+    },
+    {
+      "k": 6.0,
+      "order": 10,
+      "held_out": false,
+      "baseline_max": 386307.98423060635,
+      "baseline_l2": 387.63471609214895,
+      "candidate_max": 372308.83445954387,
+      "candidate_l2": 344.03638977023945
+    },
+    {
+      "k": 5.5,
+      "order": 6,
+      "held_out": false,
+      "baseline_max": 88740.44144242188,
+      "baseline_l2": 158.0215412858507,
+      "candidate_max": 93441.41051615374,
+      "candidate_l2": 149.95734056409324
+    },
+    {
+      "k": 6.0,
+      "order": "off_gauss_patch",
+      "held_out": false,
+      "baseline_max": 734372.0856361001,
+      "baseline_l2": 349.51419082584255,
+      "candidate_max": 634278.4120818608,
+      "candidate_l2": 279.50194740979856
+    },
+    {
+      "k": 6.0,
+      "order": 7,
+      "held_out": true,
+      "baseline_max": 767092.592854884,
+      "baseline_l2": 662.4241775065728,
+      "candidate_max": 550025.8804754411,
+      "candidate_l2": 524.984239721478
+    },
+    {
+      "k": 5.75,
+      "order": 7,
+      "held_out": true,
+      "baseline_max": 552753.1281993934,
+      "baseline_l2": 535.699669226529,
+      "candidate_max": 423503.0915005154,
+      "candidate_l2": 443.2419264405631
+    }
+  ],
+  "scope": "Twelve compact solenoidal modes fit to Gauss6/8/10 k6, Gauss6 k5.5, and off-Gauss hotspot patch, with quartic sampled-peak penalty. Gauss7 k6 and k5.75 held out. No continuum, cone, or PDE certificate.",
+  "accepted": false
+}

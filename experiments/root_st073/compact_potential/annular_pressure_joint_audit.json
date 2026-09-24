@@ -1,0 +1,178 @@
+{
+  "midpoint_pass_count": 12,
+  "midpoint_max_cone_ratio": 0.796747749284459,
+  "midpoint_rows": [
+    {
+      "z": 0.0025388594772266238,
+      "target": [
+        -17.9466350872959,
+        55.577589674419606
+      ],
+      "target_dot_N": -39.60515921172456,
+      "lambda_squared": 62824.53218498761,
+      "center_residual_norm": 491460.9575998588,
+      "cone_ratio": 0.6988314284173792,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.002616578431679871,
+      "target": [
+        -34.68329428358256,
+        106.90140661863535
+      ],
+      "target_dot_N": -77.04541620720705,
+      "lambda_squared": 63652.88706429495,
+      "center_residual_norm": 536284.2126856243,
+      "cone_ratio": 0.7050249581071228,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.0026942973861331185,
+      "target": [
+        -53.79738142049699,
+        148.69830644373585
+      ],
+      "target_dot_N": -105.23992763379752,
+      "lambda_squared": 60869.128054166795,
+      "center_residual_norm": 424633.34423202835,
+      "cone_ratio": 0.7420751199427511,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.0027720163405863655,
+      "target": [
+        -71.33288179812152,
+        172.53403548513793
+      ],
+      "target_dot_N": -117.932531084349,
+      "lambda_squared": 54075.643845488274,
+      "center_residual_norm": 205758.14676062478,
+      "cone_ratio": 0.77892270413565,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.002849735295039613,
+      "target": [
+        -83.6727614303168,
+        178.22962115179416
+      ],
+      "target_dot_N": -116.29660384626865,
+      "lambda_squared": 43832.80958482491,
+      "center_residual_norm": 121212.71132618567,
+      "cone_ratio": 0.796747749284459,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.0029274542494928603,
+      "target": [
+        -88.19329974701184,
+        170.88199534165008
+      ],
+      "target_dot_N": -106.2810728290158,
+      "lambda_squared": 31703.77099028475,
+      "center_residual_norm": 363261.2519458079,
+      "cone_ratio": 0.77076777143023,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.0030051732039461077,
+      "target": [
+        -83.60295139238363,
+        156.99939848410358
+      ],
+      "target_dot_N": -94.90389065781264,
+      "lambda_squared": 19955.539633624034,
+      "center_residual_norm": 561897.9024629187,
+      "cone_ratio": 0.6746153585275052,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.003082892158399355,
+      "target": [
+        -70.02059257563833,
+        141.30383020190538
+      ],
+      "target_dot_N": -87.03776116199819,
+      "lambda_squared": 10850.57815490223,
+      "center_residual_norm": 671263.146732752,
+      "cone_ratio": 0.5116713953276425,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.0031606111128526025,
+      "target": [
+        -48.84782460772129,
+        124.9757114144971
+      ],
+      "target_dot_N": -83.51323002496656,
+      "lambda_squared": 5708.859546680418,
+      "center_residual_norm": 681876.5836407908,
+      "cone_ratio": 0.3464865186065356,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.00323833006730585,
+      "target": [
+        -22.489274183021493,
+        105.54273257685533
+      ],
+      "target_dot_N": -80.75843005609705,
+      "lambda_squared": 4251.531412478543,
+      "center_residual_norm": 603615.4019274795,
+      "cone_ratio": 0.24842877076582814,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.003316049021759097,
+      "target": [
+        6.0258176194779525,
+        78.2019837762177
+      ],
+      "target_dot_N": -71.85064688503023,
+      "lambda_squared": 4798.930947042576,
+      "center_residual_norm": 459777.21862384083,
+      "cone_ratio": 0.16334155318652654,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.0033937679762123443,
+      "target": [
+        33.46846650930161,
+        38.07802276597307
+      ],
+      "target_dot_N": -48.83250434699087,
+      "lambda_squared": 5369.725236253671,
+      "center_residual_norm": 281214.1139411872,
+      "cone_ratio": 0.14805496823285455,
+      "strict_local_pass": true
+    }
+  ],
+  "volume_holdouts": [
+    {
+      "k": 6.0,
+      "order": 7,
+      "baseline": {
+        "max": 767092.592854884,
+        "physical_volume_l2": 662.424177506573
+      },
+      "candidate": {
+        "max": 687269.732497456,
+        "physical_volume_l2": 611.6055296618152
+      }
+    },
+    {
+      "k": 5.75,
+      "order": 7,
+      "baseline": {
+        "max": 552753.1281993934,
+        "physical_volume_l2": 535.6996692265288
+      },
+      "candidate": {
+        "max": 507620.874174346,
+        "physical_volume_l2": 504.8275596906995
+      }
+    }
+  ],
+  "scope": "Twelve unfitted axial midpoints and two independent Gauss7 spacetime samples. No radial cone patch, continuum, or exact-curl wave certificate.",
+  "accepted": false
+}

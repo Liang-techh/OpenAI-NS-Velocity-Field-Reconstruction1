@@ -1,0 +1,332 @@
+{
+  "tau": 0.0078125,
+  "radius": 0.0056890761915166545,
+  "heights": [
+    0.0025,
+    0.0025777189544532474,
+    0.002655437908906495,
+    0.002733156863359742,
+    0.002810875817812989,
+    0.0028885947722662366,
+    0.002966313726719484,
+    0.0030440326811727314,
+    0.003121751635625979,
+    0.003199470590079226,
+    0.0032771895445324736,
+    0.0033549084989857206,
+    0.003432627453438968
+  ],
+  "baseline_pass_count": 3,
+  "candidate_pass_count": 1,
+  "baseline_rows": [
+    {
+      "z": 0.0025,
+      "target": [
+        -11.546942081636155,
+        -38.997170466114184
+      ],
+      "target_dot_N": 39.580988596421996,
+      "lambda_squared": 61702.287931308856,
+      "center_residual_norm": 377496.0558281243,
+      "cone_ratio": 0.14926557556191034,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.0025777189544532474,
+      "target": [
+        -25.75571132568739,
+        -76.64461714637935
+      ],
+      "target_dot_N": 79.55451825009285,
+      "lambda_squared": 65242.99705407899,
+      "center_residual_norm": 517554.2090952843,
+      "cone_ratio": 0.12143631459474752,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.002655437908906495,
+      "target": [
+        -44.13541546536512,
+        -121.2368781729789
+      ],
+      "target_dot_N": 127.75737532791076,
+      "lambda_squared": 67262.87698596851,
+      "center_residual_norm": 515662.2019307526,
+      "cone_ratio": 0.09874659239244384,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.002733156863359742,
+      "target": [
+        -62.92820737721858,
+        -161.13241763286382
+      ],
+      "target_dot_N": 172.0518231139064,
+      "lambda_squared": 67131.71768500593,
+      "center_residual_norm": 377098.4868182574,
+      "cone_ratio": 0.07566857640835888,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.002810875817812989,
+      "target": [
+        -78.25402211501654,
+        -186.14747987521628
+      ],
+      "target_dot_N": 201.47050656748715,
+      "lambda_squared": 64381.685205931564,
+      "center_residual_norm": 151100.32838037823,
+      "cone_ratio": 0.05004735036876394,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.0028885947722662366,
+      "target": [
+        -86.93937143141088,
+        -189.81185681622276
+      ],
+      "target_dot_N": 208.69998780686302,
+      "lambda_squared": 58900.79505539565,
+      "center_residual_norm": 166404.87648924632,
+      "cone_ratio": 0.02013436356673232,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.002966313726719484,
+      "target": [
+        -87.00551469932064,
+        -170.20218670484974
+      ],
+      "target_dot_N": 191.10011835323004,
+      "lambda_squared": 51037.41003675504,
+      "center_residual_norm": 419929.861163863,
+      "cone_ratio": 0.017311979975407173,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.0030440326811727314,
+      "target": [
+        -77.86948455784588,
+        -129.7130129680206
+      ],
+      "target_dot_N": 150.59361212863965,
+      "lambda_squared": 41574.248264761394,
+      "center_residual_norm": 620698.8315738314,
+      "cone_ratio": 0.07113293281727866,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.003121751635625979,
+      "target": [
+        -60.31209822550922,
+        -74.13218275531075
+      ],
+      "target_dot_N": 92.79539570337748,
+      "lambda_squared": 31570.68992528385,
+      "center_residual_norm": 730902.1352721403,
+      "cone_ratio": 0.17645604702943793,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.003199470590079226,
+      "target": [
+        -36.26768456104975,
+        -11.34599014059215
+      ],
+      "target_dot_N": 25.719691857522893,
+      "lambda_squared": 22120.22658661968,
+      "center_residual_norm": 737607.7863296429,
+      "cone_ratio": 0.7448633547287814,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.0032771895445324736,
+      "target": [
+        -8.490214074811139,
+        50.072220784849826
+      ],
+      "target_dot_N": -41.667606288776014,
+      "lambda_squared": 14102.977699574123,
+      "center_residual_norm": 646415.8873937153,
+      "cone_ratio": 0.4474015475239622,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.0033549084989857206,
+      "target": [
+        19.850862193402467,
+        102.20852977037819
+      ],
+      "target_dot_N": -100.85679806102408,
+      "lambda_squared": 8014.4251695065095,
+      "center_residual_norm": 478311.7619398211,
+      "cone_ratio": 0.1504215599042237,
+      "strict_local_pass": true
+    },
+    {
+      "z": 0.003432627453438968,
+      "target": [
+        45.59504511935532,
+        138.95833409946138
+      ],
+      "target_dot_N": -145.01950437784086,
+      "lambda_squared": 3919.8512179384275,
+      "center_residual_norm": 266159.892129595,
+      "cone_ratio": 0.06730547945684395,
+      "strict_local_pass": true
+    }
+  ],
+  "candidate_rows": [
+    {
+      "z": 0.0025,
+      "target": [
+        -11.567932322008502,
+        -46.20431979641132
+      ],
+      "target_dot_N": 45.82669558899907,
+      "lambda_squared": 60882.90221650744,
+      "center_residual_norm": 458443.0961268858,
+      "cone_ratio": 0.17732551476725777,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.0025777189544532474,
+      "target": [
+        -25.82274823449055,
+        -89.03156552854169
+      ],
+      "target_dot_N": 90.27601223820308,
+      "lambda_squared": 61176.35211101921,
+      "center_residual_norm": 560355.7345949342,
+      "cone_ratio": 0.1489817914545348,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.002655437908906495,
+      "target": [
+        -44.26760676760708,
+        -133.65847033813566
+      ],
+      "target_dot_N": 138.22099275762707,
+      "lambda_squared": 55616.357227954395,
+      "center_residual_norm": 471128.83633381146,
+      "cone_ratio": 0.11864139937235271,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.002733156863359742,
+      "target": [
+        -63.12220368188216,
+        -166.33864285733983
+      ],
+      "target_dot_N": 175.58739812308534,
+      "lambda_squared": 42458.06702599945,
+      "center_residual_norm": 242123.4466767831,
+      "cone_ratio": 0.0862637343130142,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.002810875817812989,
+      "target": [
+        -78.48125544445404,
+        -178.26541353995478
+      ],
+      "target_dot_N": 192.92842599061444,
+      "lambda_squared": 21351.12426160283,
+      "center_residual_norm": 89821.49344346029,
+      "cone_ratio": 0.050732858613813964,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.0028885947722662366,
+      "target": [
+        -87.15206273587795,
+        -166.91665073704192
+      ],
+      "target_dot_N": 187.07635726805367,
+      "lambda_squared": -5765.029263823109,
+      "center_residual_norm": 342557.9311671148,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.002966313726719484,
+      "target": [
+        -87.14670312594158,
+        -135.26138515759268
+      ],
+      "target_dot_N": 160.44194551321795,
+      "lambda_squared": -33554.21372782612,
+      "center_residual_norm": 536939.0656490127,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.0030440326811727314,
+      "target": [
+        -77.88470017578301,
+        -89.88353022292057
+      ],
+      "target_dot_N": 118.92112594302739,
+      "lambda_squared": -53300.152640096785,
+      "center_residual_norm": 626169.7100442846,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.003121751635625979,
+      "target": [
+        -60.162220719447916,
+        -38.82646105085084
+      ],
+      "target_dot_N": 69.04316268827088,
+      "lambda_squared": -56514.639610590195,
+      "center_residual_norm": 609314.5970908232,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.003199470590079226,
+      "target": [
+        -35.941490173734024,
+        10.304657760670512
+      ],
+      "target_dot_N": 15.709635783444925,
+      "lambda_squared": -41794.17169669889,
+      "center_residual_norm": 508648.31572873954,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.0032771895445324736,
+      "target": [
+        -8.012410991545302,
+        51.68472692445679
+      ],
+      "target_dot_N": -36.74884111136986,
+      "lambda_squared": -18378.698540419933,
+      "center_residual_norm": 359514.8043638105,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.0033549084989857206,
+      "target": [
+        20.42133837244875,
+        81.94446051556261
+      ],
+      "target_dot_N": -81.25590216138818,
+      "lambda_squared": -32.704393917435254,
+      "center_residual_norm": 200558.58192098406,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.003432627453438968,
+      "target": [
+        46.17882949154511,
+        100.20780779990947
+      ],
+      "target_dot_N": -110.25836174348207,
+      "lambda_squared": 7002.689636406997,
+      "center_residual_norm": 69455.14262144538,
+      "cone_ratio": 0.029168373889667032,
+      "strict_local_pass": true
+    }
+  ],
+  "scope": "Thirteen axial points at one radius/time. Local physical-field cone analogue only; no uniform wave or paper normalized-cone proof.",
+  "accepted": false
+}

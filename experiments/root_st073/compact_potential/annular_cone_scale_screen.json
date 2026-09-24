@@ -1,0 +1,529 @@
+{
+  "tau": 0.0078125,
+  "radius": 0.0056890761915166545,
+  "heights": [
+    0.0025,
+    0.0025777189544532474,
+    0.002655437908906495,
+    0.002733156863359742,
+    0.002810875817812989,
+    0.0028885947722662366,
+    0.002966313726719484,
+    0.0030440326811727314,
+    0.003121751635625979,
+    0.003199470590079226,
+    0.0032771895445324736,
+    0.0033549084989857206,
+    0.003432627453438968
+  ],
+  "largest_grid_scale_with_all_positive_lambda_squared": 0.48,
+  "rows": [
+    {
+      "scale": 0.0,
+      "positive_count": 13,
+      "minimum_lambda_squared": 3919.8512179384275
+    },
+    {
+      "scale": 0.01,
+      "positive_count": 13,
+      "minimum_lambda_squared": 3956.0422737272443
+    },
+    {
+      "scale": 0.02,
+      "positive_count": 13,
+      "minimum_lambda_squared": 3992.1101229451024
+    },
+    {
+      "scale": 0.03,
+      "positive_count": 13,
+      "minimum_lambda_squared": 4028.055270796927
+    },
+    {
+      "scale": 0.04,
+      "positive_count": 13,
+      "minimum_lambda_squared": 4063.878220262846
+    },
+    {
+      "scale": 0.05,
+      "positive_count": 13,
+      "minimum_lambda_squared": 4099.579472106831
+    },
+    {
+      "scale": 0.06,
+      "positive_count": 13,
+      "minimum_lambda_squared": 4135.159524885308
+    },
+    {
+      "scale": 0.07,
+      "positive_count": 13,
+      "minimum_lambda_squared": 4170.618874955809
+    },
+    {
+      "scale": 0.08,
+      "positive_count": 13,
+      "minimum_lambda_squared": 4205.95801648558
+    },
+    {
+      "scale": 0.09,
+      "positive_count": 13,
+      "minimum_lambda_squared": 4241.177441460183
+    },
+    {
+      "scale": 0.1,
+      "positive_count": 13,
+      "minimum_lambda_squared": 4276.277639692151
+    },
+    {
+      "scale": 0.11,
+      "positive_count": 13,
+      "minimum_lambda_squared": 4311.259098829538
+    },
+    {
+      "scale": 0.12,
+      "positive_count": 13,
+      "minimum_lambda_squared": 4346.122304364566
+    },
+    {
+      "scale": 0.13,
+      "positive_count": 13,
+      "minimum_lambda_squared": 4380.867739642162
+    },
+    {
+      "scale": 0.14,
+      "positive_count": 13,
+      "minimum_lambda_squared": 4415.495885868556
+    },
+    {
+      "scale": 0.15,
+      "positive_count": 13,
+      "minimum_lambda_squared": 4450.007222119885
+    },
+    {
+      "scale": 0.16,
+      "positive_count": 13,
+      "minimum_lambda_squared": 4484.402225350684
+    },
+    {
+      "scale": 0.17,
+      "positive_count": 13,
+      "minimum_lambda_squared": 4518.681370402502
+    },
+    {
+      "scale": 0.18,
+      "positive_count": 13,
+      "minimum_lambda_squared": 4552.845130012407
+    },
+    {
+      "scale": 0.19,
+      "positive_count": 13,
+      "minimum_lambda_squared": 4586.893974821506
+    },
+    {
+      "scale": 0.2,
+      "positive_count": 13,
+      "minimum_lambda_squared": 4620.8283733834905
+    },
+    {
+      "scale": 0.21,
+      "positive_count": 13,
+      "minimum_lambda_squared": 4654.648792173133
+    },
+    {
+      "scale": 0.22,
+      "positive_count": 13,
+      "minimum_lambda_squared": 4688.355695594756
+    },
+    {
+      "scale": 0.23,
+      "positive_count": 13,
+      "minimum_lambda_squared": 4721.949545990747
+    },
+    {
+      "scale": 0.24,
+      "positive_count": 13,
+      "minimum_lambda_squared": 4755.430803649998
+    },
+    {
+      "scale": 0.25,
+      "positive_count": 13,
+      "minimum_lambda_squared": 4788.799926816372
+    },
+    {
+      "scale": 0.26,
+      "positive_count": 13,
+      "minimum_lambda_squared": 4822.057371697146
+    },
+    {
+      "scale": 0.27,
+      "positive_count": 13,
+      "minimum_lambda_squared": 4855.20359247142
+    },
+    {
+      "scale": 0.28,
+      "positive_count": 13,
+      "minimum_lambda_squared": 4888.239041298546
+    },
+    {
+      "scale": 0.29,
+      "positive_count": 13,
+      "minimum_lambda_squared": 4921.164168326507
+    },
+    {
+      "scale": 0.3,
+      "positive_count": 13,
+      "minimum_lambda_squared": 4953.979421700303
+    },
+    {
+      "scale": 0.31,
+      "positive_count": 13,
+      "minimum_lambda_squared": 4986.685247570318
+    },
+    {
+      "scale": 0.32,
+      "positive_count": 13,
+      "minimum_lambda_squared": 5019.2820901006735
+    },
+    {
+      "scale": 0.33,
+      "positive_count": 13,
+      "minimum_lambda_squared": 5051.770391477538
+    },
+    {
+      "scale": 0.34,
+      "positive_count": 13,
+      "minimum_lambda_squared": 5084.150591917476
+    },
+    {
+      "scale": 0.35000000000000003,
+      "positive_count": 13,
+      "minimum_lambda_squared": 5116.423129675685
+    },
+    {
+      "scale": 0.36,
+      "positive_count": 13,
+      "minimum_lambda_squared": 5148.588441054369
+    },
+    {
+      "scale": 0.37,
+      "positive_count": 13,
+      "minimum_lambda_squared": 5180.646960410903
+    },
+    {
+      "scale": 0.38,
+      "positive_count": 13,
+      "minimum_lambda_squared": 4976.185397265192
+    },
+    {
+      "scale": 0.39,
+      "positive_count": 13,
+      "minimum_lambda_squared": 4693.293616997297
+    },
+    {
+      "scale": 0.4,
+      "positive_count": 13,
+      "minimum_lambda_squared": 4407.905301758521
+    },
+    {
+      "scale": 0.41000000000000003,
+      "positive_count": 13,
+      "minimum_lambda_squared": 4057.8510857131
+    },
+    {
+      "scale": 0.42,
+      "positive_count": 13,
+      "minimum_lambda_squared": 3508.2208088983543
+    },
+    {
+      "scale": 0.43,
+      "positive_count": 13,
+      "minimum_lambda_squared": 2952.411782335438
+    },
+    {
+      "scale": 0.44,
+      "positive_count": 13,
+      "minimum_lambda_squared": 2390.3462193461755
+    },
+    {
+      "scale": 0.45,
+      "positive_count": 13,
+      "minimum_lambda_squared": 1821.9454870375212
+    },
+    {
+      "scale": 0.46,
+      "positive_count": 13,
+      "minimum_lambda_squared": 1247.1301082890911
+    },
+    {
+      "scale": 0.47000000000000003,
+      "positive_count": 13,
+      "minimum_lambda_squared": 665.8197644691869
+    },
+    {
+      "scale": 0.48,
+      "positive_count": 13,
+      "minimum_lambda_squared": 77.93329891960116
+    },
+    {
+      "scale": 0.49,
+      "positive_count": 12,
+      "minimum_lambda_squared": -516.6112787461138
+    },
+    {
+      "scale": 0.5,
+      "positive_count": 11,
+      "minimum_lambda_squared": -1117.8967874865639
+    },
+    {
+      "scale": 0.51,
+      "positive_count": 11,
+      "minimum_lambda_squared": -1726.0068687705411
+    },
+    {
+      "scale": 0.52,
+      "positive_count": 11,
+      "minimum_lambda_squared": -2341.0259795608085
+    },
+    {
+      "scale": 0.53,
+      "positive_count": 11,
+      "minimum_lambda_squared": -2963.039384291106
+    },
+    {
+      "scale": 0.54,
+      "positive_count": 11,
+      "minimum_lambda_squared": -3592.1331457835486
+    },
+    {
+      "scale": 0.55,
+      "positive_count": 10,
+      "minimum_lambda_squared": -4360.679347922152
+    },
+    {
+      "scale": 0.56,
+      "positive_count": 10,
+      "minimum_lambda_squared": -5246.822943973494
+    },
+    {
+      "scale": 0.5700000000000001,
+      "positive_count": 9,
+      "minimum_lambda_squared": -6143.424088621824
+    },
+    {
+      "scale": 0.58,
+      "positive_count": 9,
+      "minimum_lambda_squared": -7050.612509190788
+    },
+    {
+      "scale": 0.59,
+      "positive_count": 9,
+      "minimum_lambda_squared": -7968.518947158572
+    },
+    {
+      "scale": 0.6,
+      "positive_count": 9,
+      "minimum_lambda_squared": -8897.275126656647
+    },
+    {
+      "scale": 0.61,
+      "positive_count": 9,
+      "minimum_lambda_squared": -9837.013720301748
+    },
+    {
+      "scale": 0.62,
+      "positive_count": 9,
+      "minimum_lambda_squared": -10787.868312229144
+    },
+    {
+      "scale": 0.63,
+      "positive_count": 9,
+      "minimum_lambda_squared": -11749.973358190433
+    },
+    {
+      "scale": 0.64,
+      "positive_count": 9,
+      "minimum_lambda_squared": -12723.464142572777
+    },
+    {
+      "scale": 0.65,
+      "positive_count": 9,
+      "minimum_lambda_squared": -13708.476732192425
+    },
+    {
+      "scale": 0.66,
+      "positive_count": 9,
+      "minimum_lambda_squared": -14705.147926709109
+    },
+    {
+      "scale": 0.67,
+      "positive_count": 9,
+      "minimum_lambda_squared": -15713.61520550176
+    },
+    {
+      "scale": 0.68,
+      "positive_count": 9,
+      "minimum_lambda_squared": -16734.016670841287
+    },
+    {
+      "scale": 0.6900000000000001,
+      "positive_count": 9,
+      "minimum_lambda_squared": -17766.490987189212
+    },
+    {
+      "scale": 0.7000000000000001,
+      "positive_count": 8,
+      "minimum_lambda_squared": -18811.177316445912
+    },
+    {
+      "scale": 0.71,
+      "positive_count": 8,
+      "minimum_lambda_squared": -19868.215248964785
+    },
+    {
+      "scale": 0.72,
+      "positive_count": 8,
+      "minimum_lambda_squared": -20937.744730144044
+    },
+    {
+      "scale": 0.73,
+      "positive_count": 8,
+      "minimum_lambda_squared": -22019.90598240015
+    },
+    {
+      "scale": 0.74,
+      "positive_count": 8,
+      "minimum_lambda_squared": -23114.83942232103
+    },
+    {
+      "scale": 0.75,
+      "positive_count": 8,
+      "minimum_lambda_squared": -24222.685572791328
+    },
+    {
+      "scale": 0.76,
+      "positive_count": 8,
+      "minimum_lambda_squared": -25343.584969874217
+    },
+    {
+      "scale": 0.77,
+      "positive_count": 8,
+      "minimum_lambda_squared": -26477.67806422958
+    },
+    {
+      "scale": 0.78,
+      "positive_count": 8,
+      "minimum_lambda_squared": -27625.105116838884
+    },
+    {
+      "scale": 0.79,
+      "positive_count": 8,
+      "minimum_lambda_squared": -28786.00608880524
+    },
+    {
+      "scale": 0.8,
+      "positive_count": 8,
+      "minimum_lambda_squared": -29960.520524984557
+    },
+    {
+      "scale": 0.81,
+      "positive_count": 8,
+      "minimum_lambda_squared": -31148.78743120366
+    },
+    {
+      "scale": 0.8200000000000001,
+      "positive_count": 8,
+      "minimum_lambda_squared": -32350.945144809462
+    },
+    {
+      "scale": 0.8300000000000001,
+      "positive_count": 8,
+      "minimum_lambda_squared": -33567.13119829051
+    },
+    {
+      "scale": 0.84,
+      "positive_count": 8,
+      "minimum_lambda_squared": -34797.482175705
+    },
+    {
+      "scale": 0.85,
+      "positive_count": 8,
+      "minimum_lambda_squared": -36042.133561642644
+    },
+    {
+      "scale": 0.86,
+      "positive_count": 8,
+      "minimum_lambda_squared": -37301.21958244364
+    },
+    {
+      "scale": 0.87,
+      "positive_count": 8,
+      "minimum_lambda_squared": -38574.873039391416
+    },
+    {
+      "scale": 0.88,
+      "positive_count": 8,
+      "minimum_lambda_squared": -39863.22513359083
+    },
+    {
+      "scale": 0.89,
+      "positive_count": 8,
+      "minimum_lambda_squared": -41166.40528223942
+    },
+    {
+      "scale": 0.9,
+      "positive_count": 8,
+      "minimum_lambda_squared": -42484.54092599366
+    },
+    {
+      "scale": 0.91,
+      "positive_count": 8,
+      "minimum_lambda_squared": -43817.75732713006
+    },
+    {
+      "scale": 0.92,
+      "positive_count": 8,
+      "minimum_lambda_squared": -45166.17735819532
+    },
+    {
+      "scale": 0.93,
+      "positive_count": 8,
+      "minimum_lambda_squared": -46529.92128083911
+    },
+    {
+      "scale": 0.9400000000000001,
+      "positive_count": 7,
+      "minimum_lambda_squared": -47909.10651451946
+    },
+    {
+      "scale": 0.9500000000000001,
+      "positive_count": 7,
+      "minimum_lambda_squared": -49303.84739477041
+    },
+    {
+      "scale": 0.96,
+      "positive_count": 7,
+      "minimum_lambda_squared": -50714.25492071947
+    },
+    {
+      "scale": 0.97,
+      "positive_count": 7,
+      "minimum_lambda_squared": -52140.43649154497
+    },
+    {
+      "scale": 0.98,
+      "positive_count": 7,
+      "minimum_lambda_squared": -53582.49563156291
+    },
+    {
+      "scale": 0.99,
+      "positive_count": 7,
+      "minimum_lambda_squared": -55040.5317036357
+    },
+    {
+      "scale": 1.0,
+      "positive_count": 6,
+      "minimum_lambda_squared": -56514.63961060017
+    }
+  ],
+  "scope": "Positive lambda-squared only at thirteen centerline points, no stress target or cone-ratio condition. Not a wave certificate.",
+  "accepted": false
+}

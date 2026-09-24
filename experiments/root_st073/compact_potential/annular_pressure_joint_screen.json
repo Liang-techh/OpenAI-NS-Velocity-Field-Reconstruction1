@@ -1,0 +1,51 @@
+{
+  "tau": 0.0078125,
+  "velocity_scale": 0.4,
+  "radius": 0.0056890761915166545,
+  "heights": [
+    0.0025,
+    0.0025777189544532474,
+    0.002655437908906495,
+    0.002733156863359742,
+    0.002810875817812989,
+    0.0028885947722662366,
+    0.002966313726719484,
+    0.0030440326811727314,
+    0.003121751635625979,
+    0.003199470590079226,
+    0.0032771895445324736,
+    0.0033549084989857206,
+    0.003432627453438968
+  ],
+  "linear_feasible": true,
+  "pressure_amplitudes": [
+    -117.63476734846175,
+    6.890949883530391,
+    -79.09146477376474,
+    3.87065950432748
+  ],
+  "local_cone_pass_count": 13,
+  "local_max_cone_ratio": 0.7915685028735311,
+  "volume_rows": [
+    {
+      "order": 6,
+      "scaled_velocity_l2": 175.77474078792787,
+      "joint_l2": 194.02116300861994,
+      "joint_max": 99458.76529948159
+    },
+    {
+      "order": 8,
+      "scaled_velocity_l2": 128.28504028517497,
+      "joint_l2": 130.86205217471428,
+      "joint_max": 189650.77328139835
+    },
+    {
+      "order": 10,
+      "scaled_velocity_l2": 361.4579943362132,
+      "joint_l2": 370.2008791831271,
+      "joint_max": 333259.04564586765
+    }
+  ],
+  "scope": "Scaled solenoidal annular velocity plus four compact pressure modes. Local cone constrained at 13 axial points; pressure fit to Gauss6/8/10 relative volume residual at one time. No radial-time wave or continuum certificate.",
+  "accepted": false
+}
