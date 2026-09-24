@@ -1,0 +1,287 @@
+{
+  "amplitudes": [
+    2.948467741157177,
+    1.259615198884959
+  ],
+  "bounds": [
+    -4,
+    4
+  ],
+  "training_matrix": [
+    [
+      0.07594114998508697,
+      0.033797151103976075
+    ],
+    [
+      0.08803637775426515,
+      0.025154652101480934
+    ],
+    [
+      0.07598596380754458,
+      0.034017388029868395
+    ]
+  ],
+  "training_baseline": [
+    -0.2667006374974769,
+    -0.2912545243815542,
+    -0.2666754756537427
+  ],
+  "linear_fit_defect": [
+    -0.0002192013304893048,
+    3.0775849127473442e-06,
+    0.00021550640232875784
+  ],
+  "rows": [
+    {
+      "split": "training",
+      "before": {
+        "k": 3.0,
+        "eta": -0.3,
+        "order": 12,
+        "step": 0.001,
+        "terminal_rtheta": -0.26670063750911976,
+        "terminal_rz": 0.3853314978414975,
+        "momentum_max": 4351.01213673767,
+        "component_max": [
+          671.0028351135269,
+          478.15728204931065,
+          4333.2195076623375
+        ],
+        "divergence_max": 4.4521822317733495e-06
+      },
+      "after": {
+        "k": 3.0,
+        "eta": -0.3,
+        "order": 12,
+        "step": 0.001,
+        "terminal_rtheta": -0.0002192013390821347,
+        "terminal_rz": 0.3853314978414975,
+        "momentum_max": 5566.071364930893,
+        "component_max": [
+          873.5686055080344,
+          4409.691513056495,
+          4333.2195076623375
+        ],
+        "divergence_max": 4.452181308067793e-06
+      }
+    },
+    {
+      "split": "training",
+      "before": {
+        "k": 3.0,
+        "eta": 0,
+        "order": 12,
+        "step": 0.001,
+        "terminal_rtheta": -0.29125452434017,
+        "terminal_rz": -0.0071336152949998954,
+        "momentum_max": 959.9974384565904,
+        "component_max": [
+          781.143416791763,
+          558.3765621500104,
+          74.55082616358901
+        ],
+        "divergence_max": 5.1319056950660524e-06
+      },
+      "after": {
+        "k": 3.0,
+        "eta": 0,
+        "order": 12,
+        "step": 0.001,
+        "terminal_rtheta": 3.0775738670604097e-06,
+        "terminal_rz": -0.007133615294999909,
+        "momentum_max": 4796.077359044189,
+        "component_max": [
+          924.3454368239874,
+          4795.786788038752,
+          74.55082616358901
+        ],
+        "divergence_max": 5.1319056950660524e-06
+      }
+    },
+    {
+      "split": "training",
+      "before": {
+        "k": 3.0,
+        "eta": 0.3,
+        "order": 12,
+        "step": 0.001,
+        "terminal_rtheta": -0.2666754756536898,
+        "terminal_rz": -0.39469235503307604,
+        "momentum_max": 4474.470878602052,
+        "component_max": [
+          682.0067027074526,
+          477.95894300740036,
+          4456.602230161851
+        ],
+        "divergence_max": 4.485740205950606e-06
+      },
+      "after": {
+        "k": 3.0,
+        "eta": 0.3,
+        "order": 12,
+        "step": 0.001,
+        "terminal_rtheta": 0.00021550630072670964,
+        "terminal_rz": -0.39469235503307426,
+        "momentum_max": 5663.255306873367,
+        "component_max": [
+          884.5566142718524,
+          4409.516511471078,
+          4456.602230161851
+        ],
+        "divergence_max": 4.485739275139622e-06
+      }
+    },
+    {
+      "split": "holdout",
+      "before": {
+        "k": 0.7,
+        "eta": -0.2,
+        "order": 12,
+        "step": 0.001,
+        "terminal_rtheta": -0.056504176682688,
+        "terminal_rz": 0.06310864001307998,
+        "momentum_max": 293.62926721805053,
+        "component_max": [
+          64.17641317851768,
+          47.42305713119953,
+          291.3228715623645
+        ],
+        "divergence_max": 9.823797544328272e-07
+      },
+      "after": {
+        "k": 0.7,
+        "eta": -0.2,
+        "order": 12,
+        "step": 0.001,
+        "terminal_rtheta": 0.0003108171515114362,
+        "terminal_rz": 0.06310864001308007,
+        "momentum_max": 470.3501209250964,
+        "component_max": [
+          76.56466499819835,
+          420.1882177308517,
+          291.3228715623646
+        ],
+        "divergence_max": 9.823797952890345e-07
+      }
+    },
+    {
+      "split": "holdout",
+      "before": {
+        "k": 0.7,
+        "eta": 0.2,
+        "order": 12,
+        "step": 0.001,
+        "terminal_rtheta": -0.05650100855744112,
+        "terminal_rz": -0.0654997747326929,
+        "momentum_max": 305.95688869360634,
+        "component_max": [
+          64.20248066865591,
+          47.41002602186569,
+          303.7801898987168
+        ],
+        "divergence_max": 9.876528164198817e-07
+      },
+      "after": {
+        "k": 0.7,
+        "eta": 0.2,
+        "order": 12,
+        "step": 0.001,
+        "terminal_rtheta": 0.00037131046270760787,
+        "terminal_rz": -0.06549977473269271,
+        "momentum_max": 474.855342201277,
+        "component_max": [
+          76.5898248518905,
+          420.1757149252077,
+          303.7801898987168
+        ],
+        "divergence_max": 9.87652857276089e-07
+      }
+    },
+    {
+      "split": "holdout",
+      "before": {
+        "k": 5.5,
+        "eta": -0.2,
+        "order": 12,
+        "step": 0.001,
+        "terminal_rtheta": -1.5998242441283914,
+        "terminal_rz": 1.765734925281795,
+        "momentum_max": 43611.32569022136,
+        "component_max": [
+          9400.074104934007,
+          7073.176504575123,
+          43266.90922242969
+        ],
+        "divergence_max": 2.7239392920819228e-05
+      },
+      "after": {
+        "k": 5.5,
+        "eta": -0.2,
+        "order": 12,
+        "step": 0.001,
+        "terminal_rtheta": -0.012278191214539175,
+        "terminal_rz": 1.765734925281795,
+        "momentum_max": 70172.60021603626,
+        "component_max": [
+          11282.288541152675,
+          62813.13856841672,
+          43266.90922242969
+        ],
+        "divergence_max": 2.7239407017987105e-05
+      }
+    },
+    {
+      "split": "holdout",
+      "before": {
+        "k": 5.5,
+        "eta": 0.2,
+        "order": 12,
+        "step": 0.001,
+        "terminal_rtheta": -1.5997311743363472,
+        "terminal_rz": -1.8331953715740024,
+        "momentum_max": 45452.27276639485,
+        "component_max": [
+          9403.98103754967,
+          7071.237900029079,
+          45127.15359020664
+        ],
+        "divergence_max": 2.7386935641970922e-05
+      },
+      "after": {
+        "k": 5.5,
+        "eta": 0.2,
+        "order": 12,
+        "step": 0.001,
+        "terminal_rtheta": -0.010548808101893778,
+        "terminal_rz": -1.833195371573994,
+        "momentum_max": 70841.96744562966,
+        "component_max": [
+          11286.05818606402,
+          62811.27097931631,
+          45127.15359020664
+        ],
+        "divergence_max": 2.7386935641970922e-05
+      }
+    }
+  ],
+  "refined_holdout": {
+    "k": 5.5,
+    "eta": 0.2,
+    "order": 12,
+    "step": 0.0005,
+    "terminal_rtheta": -0.010549054398389341,
+    "terminal_rz": -1.83319507245259,
+    "momentum_max": 70841.96759489964,
+    "component_max": [
+      11286.058206389303,
+      62811.27111373397,
+      45127.15318088128
+    ],
+    "divergence_max": 1.7115982586801692e-06
+  },
+  "correction": "delta u_theta=sqrt(nu) q^(-A) 64 y^3(1-y)^3 (a0+a1 eta^2), y=(r-ri)/ri, supported on 0<y<1",
+  "invariants": "Axisymmetric pure swirl is solenoidal. Cubic endpoint zeros preserve velocity and first/second spatial jets at both moving interfaces. Core and pressure unchanged.",
+  "limitations": "Unforced full momentum finite differences. Fit only angular radial moment, not full pointwise PDE. Axial slab only, no global finite energy or continuum certificate.",
+  "pde_validated": false,
+  "global_field_ready": false
+}

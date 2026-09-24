@@ -177,3 +177,36 @@ is NOT a wave realization. No arbitrary forcing or post-hoc stress cancellation
 has been counted as a solution. Next solve these measured moment defects with
 boundary-jet-preserving background corrections before wave/cone admission.
 Artifact: experiments/root_st073/transition_stress/moments.json.
+
+
+## Boundary-preserving swirl moment repair: rejected as a PDE improvement
+
+Implemented `swirl_moment_repair.py`: an axisymmetric pure-swirl bubble with
+cubic zeros at both interfaces, preserving velocity and first/second jets.
+Pressure, poloidal velocity and frozen core stay fixed. This is an autonomous
+basis choice inspired by the moment-repair route, not a formula from the paper.
+Two bounded coefficients fit at k=3, eta=-.3,0,.3 are approximately
+[2.94846774, 1.25961520]. Independent holdouts use k=.7,5.5 and eta=+/-.2;
+training quadrature uses 8 points, reporting uses 12. No force is introduced.
+At late holdouts terminal angular stress magnitude falls from about1.60 to
+.0105--.0123 (over99% reduction), but full sampled momentum grows from
+4.36e4--4.55e4 to7.02e4--7.08e4. Axial moment remains unchanged.
+Thus integral compatibility alone is not a residual reduction. Do not promote
+this optional candidate to the default JoinedField or count it as PDE progress.
+The final held-out point is also evaluated with half the spatial FD step.
+Artifact: experiments/root_st073/swirl_moment_repair/report.json.
+
+Next implementation tasks:
+- Replace moment-only fitting with a constrained angular PDE collocation solve:
+  use multiple radial cubic-endpoint bubble modes and axial modes, preserve
+  interface jets, and minimize the full theta residual while bounding moment
+  defects. Freeze core data and retain all rejected baselines.
+- Include multiple training scales and disjoint scale/axial holdouts; one frozen
+  two-parameter fit does not remove scale-dependent moment defects exactly.
+- Couple poloidal streamfunction modes to axial moment and axial PDE repair;
+  swirl alone cannot change the current axial residual at fixed poloidal field.
+- Recompute radial pressure compatibility after velocity corrections. Angular
+  residual reduction alone does not control centrifugal/radial momentum.
+- Only then evaluate actual correction-stress compatibility and realizability;
+  retain the separate axial closure, finite-energy and scale-recursion work.
+Full momentum max and physical-volume L2 gates remain1e-3; none has passed.
