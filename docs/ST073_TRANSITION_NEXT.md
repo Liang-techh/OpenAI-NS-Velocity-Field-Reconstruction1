@@ -663,3 +663,35 @@ primitive of the current defects would leak beyond its annulus. Next construct
 moment-preserving velocity and pressure corrections, and an actual realizable
 non-axisymmetric stress if needed, while keeping full momentum max/L2 as the
 acceptance gates. Artifact: `experiments/root_st073/compact_potential/moment_audit.json`.
+
+## Conservative balance of the two weighted defects
+
+`compact_balance_audit.py` evaluates the exact axisymmetric conservative
+identities behind the preceding residual moments. For the compact field,
+Mtheta=int r^2 utheta dr and Fz=int r uz dr (the latter is analytically zero
+because uz=r^-1 d_r(chi psi)). The angular balance is
+int r^2 Rtheta dr = d_t Mtheta + d_z int r^2 uz utheta dr
+                   - nu d_zz Mtheta.
+The axial balance is
+int r Rz dr = d_t Fz + d_z int r(uz^2+p)dr - nu d_zz Fz.
+All derivatives use physical time t=T-tau and physical z.
+
+At k=5.5, z=0, angular time, axial transport and axial viscosity contribute
++0.00107881, -0.000052400 and +0.000411138. Their sum 0.00143755 differs
+from direct integrated angular residual by 1.40e-6. The axial kinetic and
+pressure flux derivatives contribute +0.000728821 and +0.000184808; their sum
+agrees with the direct axial moment to 2.23e-10.
+
+In the axial cutoff collar z=0.00394501, the axial kinetic-flux derivative is
+-0.0867909 and the axial pressure-flux derivative is -0.438498. Their sum is
+-0.525289109, within 3.28e-9 of the independently integrated axial residual.
+The pressure term supplies ~83.5 percent of this signed moment. Fz is ~1e-18
+numerically, so its time/viscous contributions vanish at this resolution.
+This identifies the main scalar closure defect as a pressure/kinetic axial flux
+imbalance, not merely a large pointwise derivative of the radial cutoff.
+
+A moment-only pressure adjustment could cancel the integrated axial defect,
+but may create a large radial pressure-gradient error. The next candidate must
+reconstruct pressure jointly with radial momentum and velocity/stress fluxes;
+it is admissible only if full pointwise and physical-volume L2 momentum improve.
+Artifact: `experiments/root_st073/compact_potential/balance_audit.json`.

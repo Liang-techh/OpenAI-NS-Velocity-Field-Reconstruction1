@@ -1,0 +1,43 @@
+{
+  "tau": 0.011048543456039806,
+  "rows": [
+    {
+      "z": 0.0,
+      "order_per_piece": 12,
+      "angular_time": 0.0010788136256449892,
+      "angular_axial_transport": -5.239966336777247e-05,
+      "angular_axial_viscosity": 0.00041113817936428023,
+      "angular_sum": 0.001437552141641497,
+      "axial_time": 4.617648884696583e-14,
+      "axial_kinetic_flux": 0.0007288205680284577,
+      "axial_pressure_flux": 0.00018480767437426966,
+      "axial_axial_viscosity": 3.3325174103227703e-12,
+      "axial_sum": 0.0009136282457814214,
+      "axial_velocity_integral": 1.0746730518288936e-19,
+      "angular_direct": 0.001438952794758511,
+      "axial_direct": 0.0009136284683357783,
+      "angular_balance_difference": -1.4006531170139558e-06,
+      "axial_balance_difference": -2.2255435699631426e-10
+    },
+    {
+      "z": 0.003945014637827957,
+      "order_per_piece": 12,
+      "angular_time": 0.0028195077026687836,
+      "angular_axial_transport": 9.517482106465181e-05,
+      "angular_axial_viscosity": -0.00244996022937924,
+      "angular_sum": 0.0004647222943541954,
+      "axial_time": 2.3823546461717924e-13,
+      "axial_kinetic_flux": -0.08679088826450575,
+      "axial_pressure_flux": -0.43849821999105165,
+      "axial_axial_viscosity": -4.865651108941906e-10,
+      "axial_sum": -0.5252891087418843,
+      "axial_velocity_integral": 1.153658874160357e-18,
+      "angular_direct": 0.0004645579106828315,
+      "axial_direct": -0.5252891120178084,
+      "angular_balance_difference": 1.6438367136391947e-07,
+      "axial_balance_difference": 3.2759240875535056e-09
+    }
+  ],
+  "scope": "Full physical conservative identities with 12 Gauss nodes per radial piece and fourth-order finite differences. Compare with separate residual moment audit; numerical quadrature and derivative errors remain.",
+  "pde_validated": false
+}
