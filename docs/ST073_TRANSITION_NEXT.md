@@ -274,3 +274,32 @@ which must not be reported as whole-transition maxima.
 Next combine poloidal, pressure and angular modes in one full-momentum solve,
 with actual moment penalties and scale-dependent modes; preserve disjoint
 holdouts and volume metrics before considering any candidate promotion.
+
+
+## Joint full-momentum and moment fit: tradeoff, not a new accepted baseline
+
+`joint_collocation.py` composes the12 poloidal/pressure and12 swirl modes,
+retaining nonlinear cross interactions in the affine-jet momentum evaluator.
+It uses an analytic optimizer Jacobian, bounded coefficients, six training
+slices at k=1,4 / eta=-.3,0,.3, and soft weight3 penalties on normalized
+r-squared angular and r-weighted axial residual moments. Core and interface
+jets stay fixed; no external force is fitted. Source files include direct
+full-field FD holdouts and the physical-volume audit for reproducibility.
+
+At disjoint k=2.5,5.5 / eta=+/-.2, angular terminal stress magnitude improves
+about16--17% against the original JoinedField; full maxima improve about9%.
+Against the previous poloidal/pressure candidate, the additional slice maximum
+improvement is only about0.07--0.10%. Axial moment changes are mixed by parity.
+On the volume subdomain at k5.5, joint max59244.28 is below prior59387.68,
+but L2 24.7024 is ABOVE prior24.6533. Thus the joint candidate does not dominate
+the previous candidate on the user's two gates. Preserve both, promote neither.
+Original baseline on the same quadrature: max68136.50, L2 26.3981.
+All remain far above1e-3 and no finite-energy whole-space field exists yet.
+Artifact: experiments/root_st073/joint_collocation/report.json.
+
+Next avoid endless fixed-coefficient tuning: introduce explicit scale-dependent
+streamfunction/swirl/pressure amplitudes, differentiating those amplitudes in
+space and physical time, then test a cross-scale solve. Inspect actual moment
+transport and outer matching freedoms before imposing a radial stress inverse.
+If gains stay small, advance the paper-inspired stress realization route rather
+than equating increasingly complex Hermite bubbles with dynamical matching.
