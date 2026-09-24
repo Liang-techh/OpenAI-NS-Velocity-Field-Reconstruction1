@@ -5,6 +5,7 @@ potential, solve for its time derivative and pressure, then advance the
 potential coefficients. This is an exploratory semi-discrete ODE, not a
 certified solution or a completed pulse with temporal endpoint matching.
 """
+import argparse
 import json
 
 import numpy as np
@@ -153,12 +154,11 @@ def metrics(rows, wave, tau, angles, harmonic_fits, mean_fit):
     return {'frozen': stats(before), 'projected_derivative_and_pressure': stats(after)}
 
 
-def run():
+def run(dt=1e-5, output_name='curl_wave_patch_evolution.json'):
     source = json.loads((ROOT/'compact_potential'/'radial_peak_cone.json').read_text())
     base = current_field()
     wave = LocalizedCurlWave(source)
     amplitude = .005
-    dt = 1e-5
     angles = np.arange(8)*2*np.pi/8
     train_axis = np.linspace(-.6, .6, 5)
     test_axis = np.array([-.45, -.15, .15, .45])
@@ -198,10 +198,16 @@ def run():
               'stages': stages,
               'scope': 'Two explicit-Euler coefficient steps from the full frozen-field residual, with instantaneous projected pressure. No continuous-in-time trajectory validation, endpoint matching, or global residual bound.',
               'accepted': False}
-    out = ROOT/'compact_potential'/'curl_wave_patch_evolution.json'
+    out = ROOT/'compact_potential'/output_name
     out.write_bytes((json.dumps(report, indent=2)+'\n').encode())
     print(json.dumps(report), flush=True)
 
 
 if __name__ == '__main__':
-    run()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--time-step', type=float, default=1e-5)
+    parser.add_argument('--output-name', default='curl_wave_patch_evolution.json')
+    args = parser.parse_args()
+    if args.time_step <= 0:
+        parser.error('--time-step must be positive')
+    run(args.time_step, args.output_name)
