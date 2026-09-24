@@ -161,3 +161,19 @@ Next compute actual integrated tangential residual stresses of THIS background
 and test realizability/correction following paper Sections4,7-9; do not transfer
 leading-only cone values or call smooth endpoint joins a momentum solution.
 Artifact: experiments/root_st073/joined_field/report.json.
+
+## Actual transition residual moment targets
+
+transition_stress.py integrates the full FD tangential residual at fixed physical
+z,t. With zero inner stress, the radial inverses give nonzero terminal stresses:
+at late k5.5 rtheta is about-1.52 to-1.66 and rz ranges-2.24 to2.19 across three
+axial locations. Thus this restricted inverse cannot vanish at both interfaces
+without moment repair. Orders8/12 quadrature are recorded, not a continuum bound.
+The sampled maximum reaches6.05e4 on the denser radial nodes; previous four-point
+checks were not maxima over the whole transition. Both records are retained.
+The pointwise PSD trace lower bound2*sqrt(T_rtheta²+T_rz²) is3.32--5.42, only an
+algebraic bound. PSD completion also contributes diagonal/radial momentum and
+is NOT a wave realization. No arbitrary forcing or post-hoc stress cancellation
+has been counted as a solution. Next solve these measured moment defects with
+boundary-jet-preserving background corrections before wave/cone admission.
+Artifact: experiments/root_st073/transition_stress/moments.json.
