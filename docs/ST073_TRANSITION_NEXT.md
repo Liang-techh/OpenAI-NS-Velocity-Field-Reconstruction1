@@ -721,3 +721,45 @@ The next correction must jointly handle radial and angular momentum, the
 axial pressure profile and velocity/stress covariance, with the full physical
 residual retained after each step as in the paper's Sections8-9. Artifact:
 `experiments/root_st073/compact_potential/pressure_repair.json`.
+
+## Joint axial-collar velocity/pressure candidate and scale screen
+
+`joint_collar_fit.py` adds six compact axisymmetric modes in the axial collar:
+two streamfunction modes (hence exactly solenoidal velocity), two regular
+swirl modes, and two pressure modes, each with even/odd axial parity. All vanish
+on the preserved z plateau and outside the compact support. A linearized full
+Cartesian momentum fit at k=5.5/Gauss5 supplies coefficients; the subsequent
+screen retains the exact quadratic velocity term. Strength1 overfits: training
+L2 falls209.05 ->141.29, while independent Gauss6 L2 rises314.77 ->1432.30.
+At strength.1, training L2 is197.95 and independent Gauss6 L2 is215.36,
+with independent max181939 ->91679. This is a bounded candidate, not a new
+accepted NS field. Another independent Gauss8 late grid gives max321680 ->
+210291 and L2 383.97 ->288.38. The strong grid-order dependence prevents any
+claim of converged physical-volume L2.
+
+The constant coefficient set fails at earlier k=.4 (Gauss6 max946 ->2436,
+L2 22.56 ->58.82). `joint_collar_scale.py` therefore tests the SAME fitted
+coefficients with amplitude multiplier (tau_ref/tau)^1.5 and strength.1. Full
+time derivatives of that multiplier are included; k6 uses fourth-order forward
+time differences at the registered lower-tau endpoint. On independent Gauss6
+samples, baseline -> candidate (max; L2) is:
+  k=.4: 946.16 ->932.34; 22.56 ->22.29
+  k=4: 38740 ->31923; 144.97 ->125.12
+  k=5.5: 181939 ->91715; 314.77 ->215.33
+  k=6: 304685 ->127480; 407.60 ->262.11.
+This is genuine sampled improvement across the registered finite window, but
+still misses both1e-3 momentum gates by many orders and establishes nothing
+as tau tends to zero. The angular maximum remains unchanged at these grid
+nodes; axial maxima sometimes increase. The sampled quadrature is not a norm
+certificate. `ScaledJointCollarField` is a callable full velocity/pressure
+candidate. An independent fourth-order Cartesian check at three late collar
+points found momentum norms124396 ->122894, 95717 ->95622, and55512 ->55501;
+divergence remained at the ~3e-6 finite-difference level.
+
+Next fit across several times and radial/axial quadrature orders, target the
+remaining angular channel and interface/cap stresses, then evaluate full
+physical-volume gates. Paper Sections7-9 still require a realizable
+non-axisymmetric pulse/covariance and iterative mean repair; these six slow
+axisymmetric modes do not implement that program. Artifacts:
+`experiments/root_st073/compact_potential/joint_collar_fit.json`,
+`joint_collar_scale.json`, and `joint_collar_direct.json`.

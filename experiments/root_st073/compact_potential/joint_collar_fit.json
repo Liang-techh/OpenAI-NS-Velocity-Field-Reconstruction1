@@ -1,0 +1,125 @@
+{
+  "tau": 0.011048543456039806,
+  "mode_names": [
+    "poloidal_even",
+    "poloidal_odd",
+    "swirl_even",
+    "swirl_odd",
+    "pressure_even",
+    "pressure_odd"
+  ],
+  "linear_fit_amplitudes": [
+    -0.001124039039390626,
+    -0.0911766290913382,
+    -0.38429098105680537,
+    -0.0004157938495792782,
+    52.561253692254105,
+    0.6804490842987743
+  ],
+  "rows": [
+    {
+      "strength": 0.0,
+      "train": {
+        "max": 189000.807589141,
+        "physical_volume_l2": 209.05090869658827,
+        "max_radial": 186965.95850133052,
+        "max_angular": 51653.026783062654,
+        "max_axial": 16518.368432396437
+      },
+      "holdout": {
+        "max": 181939.09871077753,
+        "physical_volume_l2": 314.7650964795365,
+        "max_radial": 181588.77426235183,
+        "max_angular": 75683.95461548302,
+        "max_axial": 30201.94861062038
+      }
+    },
+    {
+      "strength": 0.01,
+      "train": {
+        "max": 187790.27719249565,
+        "physical_volume_l2": 207.914066750695,
+        "max_radial": 185788.25800363338,
+        "max_angular": 51653.026783062654,
+        "max_axial": 16009.69855516646
+      },
+      "holdout": {
+        "max": 172903.10804164546,
+        "physical_volume_l2": 302.16647731675454,
+        "max_radial": 172543.08185604858,
+        "max_angular": 75683.95461548302,
+        "max_axial": 31540.89771812523
+      }
+    },
+    {
+      "strength": 0.03,
+      "train": {
+        "max": 185371.41009574078,
+        "physical_volume_l2": 205.65775515012507,
+        "max_radial": 183434.46876867017,
+        "max_angular": 51653.026783062654,
+        "max_axial": 15433.276520117966
+      },
+      "holdout": {
+        "max": 154835.22537388996,
+        "physical_volume_l2": 278.2608037794307,
+        "max_radial": 154452.0508057919,
+        "max_angular": 75683.95461548302,
+        "max_axial": 34220.12499127874
+      }
+    },
+    {
+      "strength": 0.1,
+      "train": {
+        "max": 176928.80756587093,
+        "physical_volume_l2": 197.9518450795579,
+        "max_radial": 175213.12993082506,
+        "max_angular": 51653.026783062654,
+        "max_axial": 13418.849269044013
+      },
+      "holdout": {
+        "max": 91679.41332357317,
+        "physical_volume_l2": 215.35500001302324,
+        "max_radial": 91137.15663456707,
+        "max_angular": 75683.95461548302,
+        "max_axial": 43611.37555782596
+      }
+    },
+    {
+      "strength": 0.3,
+      "train": {
+        "max": 153020.0714921924,
+        "physical_volume_l2": 177.81813136474463,
+        "max_radial": 151868.64883292027,
+        "max_angular": 51653.026783062654,
+        "max_axial": 7689.484593939343
+      },
+      "holdout": {
+        "max": 158534.38135499408,
+        "physical_volume_l2": 327.6628817465821,
+        "max_radial": 139008.21953800446,
+        "max_angular": 75683.95461548302,
+        "max_axial": 70907.99497080433
+      }
+    },
+    {
+      "strength": 1.0,
+      "train": {
+        "max": 73018.58784873637,
+        "physical_volume_l2": 141.28718116816745,
+        "max_radial": 71855.31344286742,
+        "max_angular": 51653.026783062654,
+        "max_axial": 52111.91277522684
+      },
+      "holdout": {
+        "max": 752046.5441611992,
+        "physical_volume_l2": 1432.302510989129,
+        "max_radial": 750284.5862290189,
+        "max_angular": 75683.95461548302,
+        "max_axial": 192009.72398132275
+      }
+    }
+  ],
+  "scope": "Axisymmetric compact poloidal/swirl/pressure correction in axial cutoff collar, training Gauss5 and held-out Gauss6. Full nonlinear Cartesian momentum at each sampled point; no nonaxisymmetric stress or critical-time proof.",
+  "accepted": false
+}

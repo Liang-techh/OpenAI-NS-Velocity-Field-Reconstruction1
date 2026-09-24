@@ -1,0 +1,42 @@
+{
+  "tau": 0.011048543456039806,
+  "points": [
+    [
+      0.0028518238236466746,
+      0.0,
+      0.003945014637827957
+    ],
+    [
+      0.014259119118233372,
+      0.0,
+      0.003945014637827957
+    ],
+    [
+      0.02566641441282007,
+      0.0,
+      0.003945014637827957
+    ]
+  ],
+  "baseline_momentum_norms": [
+    124396.2202017194,
+    95716.63533464144,
+    55512.17730805617
+  ],
+  "candidate_momentum_norms": [
+    122893.93251694847,
+    95622.27400876932,
+    55500.63102542009
+  ],
+  "baseline_divergence": [
+    3.1701506486569997e-06,
+    -1.3290077731653582e-06,
+    2.816608256264698e-11
+  ],
+  "candidate_divergence": [
+    3.1701242733106483e-06,
+    -1.3289726439325023e-06,
+    2.8205881698177624e-11
+  ],
+  "scope": "Independent fourth-order Cartesian momentum and divergence spot check of the callable candidate at three collar points. Not a full-domain gate.",
+  "accepted": false
+}

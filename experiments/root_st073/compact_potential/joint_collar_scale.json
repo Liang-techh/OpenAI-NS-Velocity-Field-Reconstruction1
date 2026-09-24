@@ -1,0 +1,85 @@
+{
+  "reference_tau": 0.011048543456039806,
+  "strength": 0.1,
+  "temporal_power": 1.5,
+  "rows": [
+    {
+      "k": 0.4,
+      "tau": 0.3789291416275995,
+      "amplitude_factor": 0.004978752450465869,
+      "baseline": {
+        "max": 946.1636165939871,
+        "physical_volume_l2": 22.5649199423516,
+        "max_radial": 944.4313369692292,
+        "max_angular": 370.98975273923037,
+        "max_axial": 154.05456760963372
+      },
+      "candidate": {
+        "max": 932.341652649128,
+        "physical_volume_l2": 22.28947208868789,
+        "max_radial": 930.6008139936118,
+        "max_angular": 370.98975273923037,
+        "max_axial": 160.7908149626813
+      }
+    },
+    {
+      "k": 4.0,
+      "tau": 0.03125,
+      "amplitude_factor": 0.21022410381342865,
+      "baseline": {
+        "max": 38740.030737561436,
+        "physical_volume_l2": 144.97018318543488,
+        "max_radial": 38666.53009679701,
+        "max_angular": 15837.75967577445,
+        "max_axial": 6394.333215120208
+      },
+      "candidate": {
+        "max": 31922.869002233525,
+        "physical_volume_l2": 125.11667466871087,
+        "max_radial": 31841.324184483045,
+        "max_angular": 15837.75967577445,
+        "max_axial": 7733.999845635237
+      }
+    },
+    {
+      "k": 5.5,
+      "tau": 0.011048543456039806,
+      "amplitude_factor": 1.0,
+      "baseline": {
+        "max": 181939.09871077753,
+        "physical_volume_l2": 314.7650964795365,
+        "max_radial": 181588.77426235183,
+        "max_angular": 75683.95461548302,
+        "max_axial": 30201.94861062038
+      },
+      "candidate": {
+        "max": 91715.26363656759,
+        "physical_volume_l2": 215.32767603855555,
+        "max_radial": 91173.20205319923,
+        "max_angular": 75683.95461548302,
+        "max_axial": 43603.94539079174
+      }
+    },
+    {
+      "k": 6.0,
+      "tau": 0.0078125,
+      "amplitude_factor": 1.6817928305074292,
+      "baseline": {
+        "max": 304684.58537348657,
+        "physical_volume_l2": 407.60219909843494,
+        "max_radial": 304095.0254884248,
+        "max_angular": 127479.7395807268,
+        "max_axial": 50673.91759555425
+      },
+      "candidate": {
+        "max": 127479.77125945175,
+        "physical_volume_l2": 262.1121018719025,
+        "max_radial": 90162.74300275854,
+        "max_angular": 127479.7395807268,
+        "max_axial": 79989.21347086682
+      }
+    }
+  ],
+  "scope": "The same six fitted coefficients multiplied by (reference_tau/tau)^1.5. Time derivative of the multiplier is included by fourth-order physical-time finite differences. Independent Gauss6 grid at four registered times; sampled screen only.",
+  "accepted": false
+}
