@@ -1,0 +1,9 @@
+# Direct residual between time nodes
+
+Run `python experiments/root_st073/curl_wave_patch_trajectory.py` from the repository root. It reads the coefficients produced by `curl_wave_patch_evolution.py` and writes `experiments/root_st073/compact_potential/curl_wave_patch_trajectory.json`.
+
+The first evolution step had only reported the residual after an **instantaneous** derivative/pressure projection at its time nodes. This check constructs a callable field on the first interval: the compact vector-potential coefficients vary linearly in time, while the fitted pressure is held constant. Taking a curl at each time keeps the velocity exactly divergence-free. The full momentum operator is evaluated by finite differences at the interval midpoint on the same 16 held-out spatial nodes and eight angles per node.
+
+At `tau=0.0078175`, the direct sampled full-momentum maximum is `2,457,367` for this field, against `726,486` for the original field at the same time and points. Its RMS is `896,173` versus `479,603`. The stage-zero projected endpoint maximum was only `345,468`. Thus reducing the residual at temporal nodes does not control the interpolated field between nodes. The finite-difference divergence maximum is `2.23e-4` for the evolved exact-curl field; this measures numerical differentiation error, not an analytic divergence defect.
+
+This trajectory is rejected. A subsequent solver must collocate or otherwise control the full nonlinear operator **inside each time element**, including pressure and phase evolution, and must validate across the full support and time domain. It also needs smooth pressure and potential matching at temporal interfaces. The current two-node explicit Euler experiment supplies neither an accepted Navier--Stokes field nor evidence for the critical-time continuation.

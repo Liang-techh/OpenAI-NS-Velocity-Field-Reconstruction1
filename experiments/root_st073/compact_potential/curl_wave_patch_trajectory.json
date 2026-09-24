@@ -1,0 +1,20 @@
+{
+  "tau": 0.0078175,
+  "time_step": 1e-05,
+  "heldout_spatial_nodes": 16,
+  "angles_per_node": 8,
+  "baseline": {
+    "max_momentum": 726485.985649594,
+    "rms_momentum": 479603.3506213162,
+    "max_fd_divergence": 7.13921190254041e-06,
+    "max_speed": 6.627696884336575
+  },
+  "evolved_first_interval": {
+    "max_momentum": 2457367.2151024654,
+    "rms_momentum": 896172.9301682498,
+    "max_fd_divergence": 0.00022263414030021522,
+    "max_speed": 11.646998598505586
+  },
+  "scope": "Direct finite-difference full momentum at the midpoint of the first piecewise-linear potential-coefficient interval. This is a spatially held-out sample, not an inter-node/global bound or a matched pulse.",
+  "accepted": false
+}
