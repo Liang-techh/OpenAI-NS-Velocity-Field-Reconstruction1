@@ -333,3 +333,40 @@ continue increasing temporal polynomial degree without a new mechanism.
 The next route is the actual shear/phase/amplitude dynamics of paper Section7,
 with the approximation limits recorded in ST073_PAPER_ROUTE.md. Global energy,
 axial closure, recursive scale control and the1e-3 gates remain unfulfilled.
+
+
+## Frozen phase/amplitude implementation
+
+`frozen_pulse.py` extracts physical angular velocity F=u_theta/r and radial
+tangential shear g=(d_r u_theta-F,d_r u_z) from the actual JoinedField and
+poloidal/pressure candidate. It implements a frozen cylindrical local amplitude
+ODE with the pressure projection needed to preserve n dot a=0, and viscosity.
+The frozen phase has constant tangential wavevector and n_r_dot=-g dot n_tan.
+This is an autonomous physical-coordinate approximation inspired by paper
+Section7, not substitution of full ST073 into the leading normalized theorem.
+Radial strain, axial gradients and background variation along trajectories are
+omitted; angular mode1 is not a high-frequency justification.
+
+Viscous damping is factored exactly as exp(-nu*(|n0|^2*t+(n0 dot n_dot)*t^2+
+|n_dot|^2*t^3/3)) before integrating the undamped matrix ODE, avoiding relative
+transversality errors once damped solutions fall below absolute solver tolerance.
+Each sampled time uses the matrix singular value for optimal amplification;
+the covariance uses the initial seed that maximizes the sampled peak gain.
+Nonnegative covariance fitting is recorded separately and is NOT PDE admission.
+Artifact: experiments/root_st073/frozen_pulse/report.json.
+
+
+Screen result:156/192 sampled points have positive inviscid frozen growth
+parameter, but only8/192 pass the diagnostic stress-direction inequalities.
+The late candidate point with largest growth rate has the WRONG target-dot-N
+sign. Its45 phase choices (angular modes1,2,4; five axial ratios; three radial
+ratios) achieve peak optimal gain1.49859 over0.1*tau with viscosity retained.
+The initial restricted radial-direction family missed this transient growth;
+no absence-of-growth claim is retained. Nonnegative time-averaged covariance
+fits the two-component target algebraically, but this cannot certify compact
+pulse construction, mean cancellation, or full residual reduction.
+
+Next integrate rays/amplitudes at points that actually satisfy the directional
+screen, compare with full local velocity-gradient evolution, and construct a
+supported vector-potential field only after checking its own full residual.
+Keep compact moment tails and global axial/energy closure as separate failures.
