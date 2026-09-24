@@ -1,0 +1,93 @@
+{
+  "rows": [
+    {
+      "order": 12,
+      "k": 0,
+      "tau": 0.5,
+      "volume": 4.46185305145873e-05,
+      "side_fluid_flux": -0.00033091056889711026,
+      "lower_cap_fluid_flux": 0.00016383873803170698,
+      "upper_cap_fluid_flux": 0.00016707183086543892,
+      "net_fluid_flux": 3.561604136614882e-17,
+      "boundary_volume_rate": -0.0001334094062387476,
+      "analytic_volume_rate": -0.00013340940623861604,
+      "relative_outward_flux": 0.00013340940623878322,
+      "reynolds_mass_defect": 1.6718397499726478e-16
+    },
+    {
+      "order": 12,
+      "k": 3,
+      "tau": 0.0625,
+      "volume": 1.9924880821626373e-06,
+      "side_fluid_flux": -0.00011817931416336292,
+      "lower_cap_fluid_flux": 5.8512155520621295e-05,
+      "upper_cap_fluid_flux": 5.9667158642754386e-05,
+      "net_fluid_flux": 1.2752928053860746e-17,
+      "boundary_volume_rate": -4.7660314925377295e-05,
+      "analytic_volume_rate": -4.766031492533029e-05,
+      "relative_outward_flux": 4.766031492539005e-05,
+      "reynolds_mass_defect": 5.97598684946854e-17
+    },
+    {
+      "order": 12,
+      "k": 6,
+      "tau": 0.0078125,
+      "volume": 8.897668102857432e-08,
+      "side_fluid_flux": -4.220609379496882e-05,
+      "lower_cap_fluid_flux": 2.089673786530671e-05,
+      "upper_cap_fluid_flux": 2.1309355929666652e-05,
+      "net_fluid_flux": 4.546872860861084e-18,
+      "boundary_volume_rate": -1.7026577681644778e-05,
+      "analytic_volume_rate": -1.7026577681627983e-05,
+      "relative_outward_flux": 1.7026577681649325e-05,
+      "reynolds_mass_defect": 2.134184213901935e-17
+    },
+    {
+      "order": 24,
+      "k": 0,
+      "tau": 0.5,
+      "volume": 4.4618530514634405e-05,
+      "side_fluid_flux": -0.000330910568897146,
+      "lower_cap_fluid_flux": 0.00016383873803170704,
+      "upper_cap_fluid_flux": 0.00016707183086543898,
+      "net_fluid_flux": 0.0,
+      "boundary_volume_rate": -0.00013340940623875682,
+      "analytic_volume_rate": -0.00013340940623875688,
+      "relative_outward_flux": 0.00013340940623875682,
+      "reynolds_mass_defect": -5.421010862427522e-20
+    },
+    {
+      "order": 24,
+      "k": 3,
+      "tau": 0.0625,
+      "volume": 1.992488082164741e-06,
+      "side_fluid_flux": -0.00011817931416337567,
+      "lower_cap_fluid_flux": 5.85121555206213e-05,
+      "upper_cap_fluid_flux": 5.966715864275439e-05,
+      "net_fluid_flux": 2.710505431213761e-20,
+      "boundary_volume_rate": -4.766031492538058e-05,
+      "analytic_volume_rate": -4.766031492538061e-05,
+      "relative_outward_flux": 4.766031492538061e-05,
+      "reynolds_mass_defect": 0.0
+    },
+    {
+      "order": 24,
+      "k": 6,
+      "tau": 0.0078125,
+      "volume": 8.897668102866825e-08,
+      "side_fluid_flux": -4.220609379497336e-05,
+      "lower_cap_fluid_flux": 2.089673786530671e-05,
+      "upper_cap_fluid_flux": 2.1309355929666652e-05,
+      "net_fluid_flux": 6.776263578034403e-21,
+      "boundary_volume_rate": -1.702657768164595e-05,
+      "analytic_volume_rate": -1.7026577681645957e-05,
+      "relative_outward_flux": 1.7026577681645957e-05,
+      "reynolds_mass_defect": 0.0
+    }
+  ],
+  "geometry": "X<=1/64, |eta|<=.5; side r(eta,tau), z(eta,tau), flat caps at eta=+/- .5",
+  "normal_convention": "outward oriented area: side 2*pi*r*(z_eta,0,-r_eta); caps +/-ez",
+  "boundary_motion": "at fixed similarity labels: b_r=-r/(2*tau), b_z=-(.5-h)*z/tau; physical t=1-tau",
+  "scope": "Moving-domain incompressibility/Reynolds mass budget only. No stress matching, exterior construction, full-energy claim or scale-recursion acceptance.",
+  "global_field_ready": false
+}

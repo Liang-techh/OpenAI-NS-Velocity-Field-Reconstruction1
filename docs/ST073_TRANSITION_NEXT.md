@@ -34,3 +34,16 @@ Next construction tasks:
 
 Local scope remains X<=1/64, |eta|<=.5, tau in[.5/64,.5], nu=.01 unforced.
 No global finite-energy field, exterior match or scale-recursion acceptance yet.
+
+## Moving interface mass budget completed
+
+`experiments/root_st073/moving_interface.py` integrates the curved side and both
+flat caps at k=0,3,6 using orders12 and24. Side inflow balances cap outflow;
+net fluid flux at order24 is below2.8e-20. The relative outward flux is NOT zero:
+it equals minus the shrinking domain volume rate. At k6 it is1.702657768e-5.
+Order12/24 results agree; this is numerical integral consistency, not a rigorous
+uniform bound or momentum acceptance. Interface labels move at b_r=-r/(2tau),
+b_z=-(.5-h)z/tau. Treating this interface as a material no-through-flow surface
+would contradict the frozen kernel. The transition must transport the measured
+side/cap flow and match momentum stress; a closed impermeable shell is unsuitable.
+Report: `experiments/root_st073/moving_interface/mass_flux.json`.
