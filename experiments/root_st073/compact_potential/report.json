@@ -1,0 +1,102 @@
+{
+  "rows": [
+    {
+      "k": 0.4,
+      "tau": 0.3789291416275995,
+      "support": {
+        "rflat": 0.1356977201956368,
+        "rsupp": 0.16701257870232222,
+        "zflat": 0.015966158630656115,
+        "zsupp": 0.02943101746835738
+      },
+      "plateau_velocity_max_difference": 0.0,
+      "plateau_pressure_max_difference": 0.0,
+      "sampled_kinetic_energy": 6.640286086698656e-05,
+      "collar_points": [
+        [
+          0.056543917731997226,
+          0.0,
+          0.022698588049506748
+        ],
+        [
+          0.009423986288666204,
+          0.0,
+          0.022698588049506748
+        ],
+        [
+          0.15135514944897951,
+          0.0,
+          0.0
+        ],
+        [
+          0.15135514944897951,
+          0.0,
+          0.022698588049506748
+        ]
+      ],
+      "collar_momentum_norms": [
+        1674.0611655049372,
+        342.8322363380656,
+        544.8516640646899,
+        280.02597848653085
+      ],
+      "collar_divergence": [
+        2.5366867495435486e-09,
+        8.902951975642281e-08,
+        -1.8035626244833023e-12,
+        0.0
+      ]
+    },
+    {
+      "k": 5.5,
+      "tau": 0.011048543456039806,
+      "support": {
+        "rflat": 0.02317106856712923,
+        "rsupp": 0.028518238236466743,
+        "zflat": 0.002774918394502969,
+        "zsupp": 0.005115110881152945
+      },
+      "plateau_velocity_max_difference": 0.0,
+      "plateau_pressure_max_difference": 0.0,
+      "sampled_kinetic_energy": 1.1771585420417336e-05,
+      "collar_points": [
+        [
+          0.009655158487064615,
+          0.0,
+          0.003945014637827957
+        ],
+        [
+          0.0016091930811774357,
+          0.0,
+          0.003945014637827957
+        ],
+        [
+          0.025844653401797986,
+          0.0,
+          0.0
+        ],
+        [
+          0.025844653401797986,
+          0.0,
+          0.003945014637827957
+        ]
+      ],
+      "collar_momentum_norms": [
+        321742.7200805661,
+        66466.85166486772,
+        111120.85150166824,
+        57258.43769578363
+      ],
+      "collar_divergence": [
+        7.638643495511133e-08,
+        2.8421329716366017e-06,
+        -1.1266433025058792e-10,
+        4.224912384397047e-11
+      ]
+    }
+  ],
+  "construction": "V=curl(chi*A), A_theta=psi/r, A_z=-integral_0^r u_theta ds; chi compactly supported in registered eta slab. Therefore div V=0 identically and V has finite spatial energy for each registered time if smooth.",
+  "limitations": "Only tau in[.5/64,.5]; no continuation to critical tau=0. Kinetic energy uses6x6 axisymmetric Gauss quadrature, not a uniform bound or convergence certificate. Collar residuals are four samples, not global max or L2. C2 radial joins; cutoff-induced momentum defect expected. The pressure is chi times background pressure.",
+  "pde_validated": false,
+  "global_field_ready": false
+}

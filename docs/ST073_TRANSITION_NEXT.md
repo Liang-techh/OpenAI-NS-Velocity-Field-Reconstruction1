@@ -609,3 +609,30 @@ Next work should follow the paper's linked moment-preserving profile continuatio
 and oscillatory stress program. A sinusoidal shear loop by itself is too weak a
 substitute. Preserve failed coefficient sets and full-volume metrics for
 comparison; do not count approximate cone passes as an NS residual reduction.
+
+## Spatially compact solenoidal closure: finite-slab construction only
+
+`compact_potential.py` puts the current width6 field into an axisymmetric
+vector potential: A_theta=psi/r and A_z=-integral_0^r u_theta(s,z,t)ds.
+The new velocity is curl(chi A), where chi is a smooth physical-r/physical-z
+cutoff. On the cutoff plateau it replays the entire width6 velocity and pressure;
+outside the finite support it vanishes. Thus it is nonzero, spatially compact
+and divergence-free by construction for every registered time, and its spatial
+kinetic energy is finite at each such time. This is only defined for
+tau in [.5/64,.5]; neither uniform energy control nor continuation to tau=0
+is established. The radial joins inherited from the width6 field are C2.
+
+`compact_potential_audit.py` checks two times. Four plateau samples match the
+width6 field exactly. A coarse 6x6 physical cylindrical quadrature gives
+kinetic-energy estimates 6.64e-5 at k=.4 and 1.18e-5 at k=5.5; these are
+neither convergence checks nor uniform bounds. Finite differences at four
+cutoff-collar points give momentum-residual norms 343--1674 at k=.4 and
+5.73e4--3.22e5 at k=5.5. Sampled divergence is <=2.85e-6, consistent with
+the curl identity and numerical differentiation. These collar defects exceed
+the 1e-3 target by many orders and are not global max/L2 measurements.
+The pressure is explicitly tapered with chi; no cancelling force was added.
+The outer closure therefore solves the energy/support property on the finite
+slab but worsens the full NS momentum gate. Next solve the cutoff-induced
+momentum and pressure balance together with the mean/pulse stress construction,
+then audit physical-volume norms and critical-time scaling. Report:
+`experiments/root_st073/compact_potential/report.json`.
