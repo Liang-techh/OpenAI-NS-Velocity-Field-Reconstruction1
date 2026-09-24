@@ -1,0 +1,233 @@
+{
+  "amplitudes": [
+    [
+      [
+        0.0014860761549352738,
+        0.08353833997207626
+      ],
+      [
+        0.0016148380801591109,
+        0.12235715855033581
+      ],
+      [
+        6.56600622620887e-05,
+        0.004431893952944921
+      ]
+    ],
+    [
+      [
+        3.9999999999999996,
+        0.05433403501596609
+      ],
+      [
+        1.4176401043377214,
+        0.7036845172022125
+      ],
+      [
+        -3.9999999999999996,
+        -1.1951374740762928
+      ]
+    ]
+  ],
+  "bounds": [
+    -4,
+    4
+  ],
+  "fit_nfev": 10,
+  "fit_success": true,
+  "fit_cost": 8.272920613954172,
+  "rows": [
+    {
+      "split": "training",
+      "k": 1.0,
+      "eta": -0.3,
+      "order": 12,
+      "before": {
+        "momentum_max": 541.4354773003901,
+        "theta_max": 59.405592717614915,
+        "terminal_rtheta": -0.06622690577534403,
+        "divergence_max": 1.1144181630839967e-06
+      },
+      "after": {
+        "momentum_max": 475.2052255610889,
+        "theta_max": 59.37761397864371,
+        "terminal_rtheta": -0.0665251707922402,
+        "divergence_max": 2.088466599659e-06
+      }
+    },
+    {
+      "split": "training",
+      "k": 1.0,
+      "eta": 0,
+      "order": 12,
+      "before": {
+        "momentum_max": 119.94447393768559,
+        "theta_max": 69.39658682841126,
+        "terminal_rtheta": -0.07232253443452195,
+        "divergence_max": 1.2865686613849903e-06
+      },
+      "after": {
+        "momentum_max": 84.83371548540401,
+        "theta_max": 69.39025899442375,
+        "terminal_rtheta": -0.07268711952217763,
+        "divergence_max": 1.7762555799549773e-06
+      }
+    },
+    {
+      "split": "training",
+      "k": 1.0,
+      "eta": 0.3,
+      "order": 12,
+      "before": {
+        "momentum_max": 556.7675608249936,
+        "theta_max": 59.38092514982917,
+        "terminal_rtheta": -0.06622073765574941,
+        "divergence_max": 1.1227967160465369e-06
+      },
+      "after": {
+        "momentum_max": 488.1202166350835,
+        "theta_max": 59.352278226948194,
+        "terminal_rtheta": -0.06651884149912402,
+        "divergence_max": 2.1104226011203764e-06
+      }
+    },
+    {
+      "split": "training",
+      "k": 4.0,
+      "eta": -0.3,
+      "order": 12,
+      "before": {
+        "momentum_max": 12334.403588146932,
+        "theta_max": 1356.5766242052744,
+        "terminal_rtheta": -0.5352048755329073,
+        "divergence_max": 8.898921365130263e-06
+      },
+      "after": {
+        "momentum_max": 10820.40620553046,
+        "theta_max": 1355.9442334293942,
+        "terminal_rtheta": -0.53761708902642,
+        "divergence_max": 1.6691435206439564e-05
+      }
+    },
+    {
+      "split": "training",
+      "k": 4.0,
+      "eta": 0,
+      "order": 12,
+      "before": {
+        "momentum_max": 2715.9821803044433,
+        "theta_max": 1583.889081086306,
+        "terminal_rtheta": -0.5844854872976375,
+        "divergence_max": 1.0249647630189429e-05
+      },
+      "after": {
+        "momentum_max": 1915.999645670778,
+        "theta_max": 1583.744544843973,
+        "terminal_rtheta": -0.5874267113460694,
+        "divergence_max": 1.416714124502505e-05
+      }
+    },
+    {
+      "split": "training",
+      "k": 4.0,
+      "eta": 0.3,
+      "order": 12,
+      "before": {
+        "momentum_max": 12684.738163668851,
+        "theta_max": 1356.0142124901417,
+        "terminal_rtheta": -0.5351540608418559,
+        "divergence_max": 8.96608572986679e-06
+      },
+      "after": {
+        "momentum_max": 11115.46505539391,
+        "theta_max": 1355.3668225704755,
+        "terminal_rtheta": -0.5375651100298573,
+        "divergence_max": 1.6867228524120037e-05
+      }
+    },
+    {
+      "split": "holdout",
+      "k": 2.5,
+      "eta": -0.2,
+      "order": 18,
+      "before": {
+        "momentum_max": 1911.4925806246777,
+        "theta_max": 317.2081840887173,
+        "terminal_rtheta": -0.1979606347004339,
+        "divergence_max": 0.00010558700190443915
+      },
+      "after": {
+        "momentum_max": 1742.388438120541,
+        "theta_max": 317.09825636740504,
+        "terminal_rtheta": -0.19890877478291039,
+        "divergence_max": 0.00016626136932489793
+      }
+    },
+    {
+      "split": "holdout",
+      "k": 2.5,
+      "eta": 0.2,
+      "order": 18,
+      "before": {
+        "momentum_max": 1992.3109429108076,
+        "theta_max": 317.118130342537,
+        "terminal_rtheta": -0.1979493771732601,
+        "divergence_max": 0.00011017518660594305
+      },
+      "after": {
+        "momentum_max": 1812.3870412517942,
+        "theta_max": 317.0059430219288,
+        "terminal_rtheta": -0.19889712040854374,
+        "divergence_max": 0.00017372334305635478
+      }
+    },
+    {
+      "split": "holdout",
+      "k": 5.5,
+      "eta": -0.2,
+      "order": 18,
+      "before": {
+        "momentum_max": 43526.90920955157,
+        "theta_max": 7242.017603714784,
+        "terminal_rtheta": -1.5998384133474568,
+        "divergence_max": 0.0008412830441102415
+      },
+      "after": {
+        "momentum_max": 39660.81396345429,
+        "theta_max": 7239.520773366138,
+        "terminal_rtheta": -1.6074959887268943,
+        "divergence_max": 0.0013279999920051133
+      }
+    },
+    {
+      "split": "holdout",
+      "k": 5.5,
+      "eta": 0.2,
+      "order": 18,
+      "before": {
+        "momentum_max": 45373.40070958713,
+        "theta_max": 7239.965441261949,
+        "terminal_rtheta": -1.5997453391204803,
+        "divergence_max": 0.0008779643557659256
+      },
+      "after": {
+        "momentum_max": 41259.85853922134,
+        "theta_max": 7237.417915486425,
+        "terminal_rtheta": -1.6074000058061775,
+        "divergence_max": 0.0013876832084379065
+      }
+    }
+  ],
+  "refined_holdout": {
+    "momentum_max": 41259.85733540327,
+    "theta_max": 7237.41791528494,
+    "terminal_rtheta": -1.607385842244025,
+    "divergence_max": 2.9552294336099294e-06
+  },
+  "surrogate_full_fd_max_difference": 2.490014594513923e-08,
+  "streamfunction": "nu^1.5 (3/32) q^(1-A) 256 y^4(1-y)^4 P_j(2y-1)(eta/.3)^m, j=0..2,m=0..1; ur=-psi_z/r, uz=psi_r/r, physical z derivatives include moving ri",
+  "pressure": "nu q^(-2A) 64 y^3(1-y)^3 P_j(2y-1)(eta/.3)^m",
+  "scope": "Autonomous compact bubble basis. Full nonlinear unforced momentum objective, each training slice normalized by its baseline full maximum. No global axial closure, finite-energy proof, physical-volume L2 or supremum certificate. Frozen core and original swirl retained.",
+  "pde_validated": false,
+  "global_field_ready": false
+}

@@ -227,3 +227,50 @@ The coarse divergence estimate8.78e-4 drops to1.79e-6 on refinement; stencils
 near the C2 join affect coarse finite-difference errors. No supremum or volume
 L2 certificate is claimed. Axial/poloidal correction is now the priority.
 Artifact: experiments/root_st073/angular_collocation/report.json.
+
+
+## Coupled poloidal / pressure collocation
+
+`poloidal_collocation.py` fits six streamfunction and six pressure bubbles to
+FULL nonlinear momentum at k=1,4 and eta=-.3,0,.3. Quartic streamfunction
+endpoint zeros preserve velocity and all spatial jets through order2; physical
+psi_z includes moving-interface and source-to-physical derivative factors.
+The compact correction adds zero net axial flux through each annular slice.
+It is analytically divergence-free; finite-difference divergence is separately
+reported. Pressure bubbles have cubic endpoint zeros. Frozen core, original
+swirl and heat exterior are retained, and no force is fitted.
+
+`affine_momentum.py` precomputes affine velocity/derivative jets; evaluating
+advection retains the exact quadratic coefficient interactions. The resulting
+surrogate differs from a fresh full-field Cartesian FD evaluation by at most
+2.50e-8 at the checked training slice. This is a discretization consistency
+check, not independent proof of the PDE. The bounded nonlinear fit converges
+in10 evaluations. These are autonomous basis/optimizer choices, not a direct
+implementation of the paper's oscillatory stress realization.
+
+At disjoint k=2.5,5.5 and eta=+/-.2 holdouts, full sampled maxima decrease
+about8.8--9.1%. Late eta=.2 falls45373.40 ->41259.86; halving spatial FD step
+gives41259.8573, divergence2.96e-6. Training decreases12--29%.
+Angular moment compatibility slightly worsens; this is an improvement candidate,
+NOT an accepted NS solution. Finite global energy, axial closure, scale
+recursion, non-axisymmetric stress realization and global gates remain open.
+Artifacts: experiments/root_st073/poloidal_collocation/report.json;
+physical-volume subdomain audit: poloidal_collocation/volume_audit.json.
+
+Derivative convention: q_z and eta_z from source_coordinates must be divided
+by sqrt(nu). For y=r/ri-1, y_z=-(1+y)q_z/(2q). For increasing physical time,
+q_t=-q_tau and eta_t=-eta_tau; the full FD evaluator already implements this
+minus sign. Do not confuse remaining time tau with physical time t.
+
+
+Physical-volume audit over eta in[-.4,.4], ri<r<2ri, all azimuths, uses
+12 radial by8 axial Gauss nodes and the exact coordinate volume Jacobian.
+At k2.5, sampled maximum2989.51 ->2606.71 and volume L2 5.48547 ->5.12251.
+At k5.5, sampled maximum68136.50 ->59387.68 and volume L2 26.3981 ->24.6533.
+These are approximately12.8% maximum and6.6% L2 improvements on this subdomain;
+BOTH remain far above1e-3. Quadrature convergence and continuum bounds are
+not established. These denser axial checks exceed the earlier slice maxima,
+which must not be reported as whole-transition maxima.
+Next combine poloidal, pressure and angular modes in one full-momentum solve,
+with actual moment penalties and scale-dependent modes; preserve disjoint
+holdouts and volume metrics before considering any candidate promotion.

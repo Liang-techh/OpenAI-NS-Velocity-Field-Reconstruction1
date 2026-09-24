@@ -1,0 +1,43 @@
+{
+  "rows": [
+    {
+      "k": 2.5,
+      "field": "baseline",
+      "volume": 2.1796739241161353e-05,
+      "momentum_sampled_max": 2989.5054077443187,
+      "momentum_volume_L2": 5.485468948654772,
+      "divergence_sampled_max": 2.2543016342524425e-07
+    },
+    {
+      "k": 2.5,
+      "field": "poloidal_pressure_candidate",
+      "volume": 2.1796739241161353e-05,
+      "momentum_sampled_max": 2606.7091275161856,
+      "momentum_volume_L2": 5.122507355414076,
+      "divergence_sampled_max": 3.793783882599655e-07
+    },
+    {
+      "k": 5.5,
+      "field": "baseline",
+      "volume": 9.733566450338843e-07,
+      "momentum_sampled_max": 68136.50493283947,
+      "momentum_volume_L2": 26.39808660769519,
+      "divergence_sampled_max": 1.796323601865879e-06
+    },
+    {
+      "k": 5.5,
+      "field": "poloidal_pressure_candidate",
+      "volume": 9.733566450338843e-07,
+      "momentum_sampled_max": 59387.67665830942,
+      "momentum_volume_L2": 24.65334883197071,
+      "divergence_sampled_max": 3.0336085785620526e-06
+    }
+  ],
+  "domain": "At each specified tau, eta in [-.4,.4], ri(z,t)<r<2ri(z,t), all azimuths. X_inner=3/64. Physical-volume weight=2pi r ri z_eta dy deta.",
+  "quadrature": {
+    "radial": 12,
+    "axial": 8
+  },
+  "limitations": "Finite quadrature on a subdomain; no continuum supremum, no convergence-certified integral, excludes core, axial ends and exterior. Not a global gate pass.",
+  "pde_validated": false
+}
