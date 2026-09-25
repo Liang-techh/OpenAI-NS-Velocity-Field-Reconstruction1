@@ -1,0 +1,50 @@
+{
+  "tau": 0.011048543456039806,
+  "X": 2.975,
+  "eta": 0.2,
+  "rows": [
+    {
+      "spatial_factor": 0.001,
+      "residual": [
+        -4920573.6939012995,
+        2.11445906406244,
+        -10308770.246058173
+      ],
+      "residual_norm": 11422906.349223575,
+      "divergence": 4.212692538016398
+    },
+    {
+      "spatial_factor": 0.0005,
+      "residual": [
+        -4921295.834855751,
+        2.113131232327559,
+        -10310154.88715654
+      ],
+      "residual_norm": 11424467.011258377,
+      "divergence": 0.2712859551492386
+    },
+    {
+      "spatial_factor": 0.00025,
+      "residual": [
+        -4921370.351760572,
+        2.113048175321848,
+        -10310241.272626815
+      ],
+      "residual_norm": 11424577.070463914,
+      "divergence": 0.01713714089169116
+    },
+    {
+      "spatial_factor": 0.000125,
+      "residual": [
+        -4921389.823284427,
+        2.1130435086000734,
+        -10310246.658284998
+      ],
+      "residual_norm": 11424590.318580747,
+      "divergence": 0.0010808911119113418
+    }
+  ],
+  "slice_filename": "wide_taper_five_moment_slice.json",
+  "scope": "Fourth-order FD refinement at the largest sampled lifted return hotspot. Divergence convergence is a local numerical check of the streamfunction lift. The large complete momentum persists under refinement; no full-domain or volume-L2 acceptance.",
+  "accepted": false
+}

@@ -21,16 +21,20 @@ from radial_moment_step import RadialMomentStep, septic_step
 
 
 class CoupledMomentPhysicalLift:
-    def __init__(self, base=None, quadrature_order=24):
+    def __init__(self, base=None, quadrature_order=24,
+                 slice_filename='coupled_five_moment_slice.json'):
         self.base = base if base is not None else RadialMomentStep(
             make_field(16, 2.), -.5)
         self.compact = self.base.compact
         self.heat = self.base.heat
         self.nu = self.base.nu
         self.A = .5+self.heat.h
-        data = json.loads((ROOT/'coupled_five_moment_slice.json').read_text())
+        data = json.loads((ROOT/slice_filename).read_text())
+        self.width = float(data.get('taper_width', .02))
+        self.degree = int(data.get('u_degree', 11))
         chosen = sorted((row for row in data['rows']
-                         if row['variant'] == 'maximum_slack'
+                         if row.get('variant') in ('maximum_slack',
+                                                   'curvature_optimized')
                          and row.get('five_moments_restored')),
                         key=lambda row: row['eta'])
         if len(chosen) != 2 or [row['eta'] for row in chosen] != [.2, .3]:
@@ -45,14 +49,16 @@ class CoupledMomentPhysicalLift:
 
     def primitive_basis(self, X):
         X = float(np.clip(X, 1., 3.))
-        total = np.zeros(12)
-        for lo, hi in ((1., 1.02), (1.02, 2.98), (2.98, 3.)):
+        total = np.zeros(self.degree+1)
+        for lo, hi in ((1., 1.+self.width),
+                       (1.+self.width, 3.-self.width),
+                       (3.-self.width, 3.)):
             end = min(X, hi)
             if end <= lo:
                 continue
             nodes = (lo+end)/2+(end-lo)*self.nodes/2
             weights = (end-lo)*self.weights/2
-            total += correction_modes(nodes)@weights
+            total += correction_modes(nodes, self.width, self.degree)@weights
         return total
 
     def coefficients(self, eta):
@@ -92,7 +98,8 @@ class CoupledMomentPhysicalLift:
             eco, _, uco, uco_d = self.coefficients(eta)
             e_delta = sum(eco[j]*bump(np.array([X]), *interval)[0][0]
                           for j, interval in enumerate(INTERVALS))
-            basis = correction_modes(np.array([X]))[:, 0]
+            basis = correction_modes(np.array([X]), self.width,
+                                     self.degree)[:, 0]
             primitive = self.primitive_basis(X)
             G = float(uco@primitive)
             G_x = float(uco@basis)

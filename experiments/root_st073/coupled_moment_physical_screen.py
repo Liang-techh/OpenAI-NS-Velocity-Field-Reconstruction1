@@ -8,10 +8,12 @@ from joined_field import independent_fd
 from radial_continuation import ROOT
 
 
-def run():
+def run(slice_filename='coupled_five_moment_slice.json',
+        output_name='coupled_moment_physical_screen.json',
+        sample_X=(1.005, 1.01, 1.1, 2., 2.99)):
     tau = .5*2**(-5.5)
-    lift = CoupledMomentPhysicalLift()
-    X, eta = np.meshgrid([1.005, 1.01, 1.1, 2., 2.99],
+    lift = CoupledMomentPhysicalLift(slice_filename=slice_filename)
+    X, eta = np.meshgrid(sample_X,
                          [.2, .25, .3], indexing='ij')
     points = lift.compact.joined.inner.from_similarity(
         X.ravel(), eta.ravel(), tau)
@@ -33,11 +35,13 @@ def run():
                           ('field', 'max_full_momentum',
                            'max_divergence')}), flush=True)
     report = dict(tau=tau, rows=rows,
+                  slice_filename=slice_filename,
+                  taper_width=lift.width, u_degree=lift.degree,
                   spatial_step=.001*np.sqrt(lift.nu*tau),
                   time_step=.00025*tau,
-                  scope='Fifteen physical finite-difference nodes in the fitted/interpolated axial band. No volume-L2, continuous cone, time-uniform or PDE acceptance. Pressure is inherited unchanged from the base field.',
+                  scope=f'{len(points)} physical finite-difference nodes in the fitted/interpolated axial band. No volume-L2, continuous cone, time-uniform or PDE acceptance. Pressure is inherited unchanged from the base field.',
                   accepted=False)
-    (ROOT/'coupled_moment_physical_screen.json').write_bytes(
+    (ROOT/output_name).write_bytes(
         (json.dumps(report, indent=2)+'\n').encode())
 
 

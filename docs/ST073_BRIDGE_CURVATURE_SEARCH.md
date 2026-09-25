@@ -372,3 +372,51 @@ identity and under-resolution at the original spacing. The converged
 large momentum is a genuine obstruction for this narrow-taper field;
 pressure and time interpolation are also unfinished. No spatial
 volume-L2 or `1e-3` gate is claimed.
+
+`taper_width_capacity.py` optimizes the five azimuthal correction
+coefficients for each width against the **actual twelve-mode smooth U
+basis**, imposing exact sampled `I,Cp` and a positive-swirl floor.
+At `eta=.3`, the best tested `S` slack is `+0.00756` for width `.02`,
+then `-0.02966`, `-0.09848`, and `-0.15606` for widths `.05`, `.10`,
+and `.20`. At `eta=.2`, width `.05` remains feasible, but `.10` and
+`.20` fail. Therefore a wider transition that might reduce the
+physical curvature is incompatible with exact five-moment matching
+in this tested finite basis; this is numerical evidence about the
+chosen modes and supports, not a general no-go theorem. The next
+mean-profile design needs more radial freedom or a leading profile
+whose moment defects are small before the stress/wave stage, as in
+the paper's [Appendix A/C construction](https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf).
+
+## Wider modal repair and a lower physical residual
+
+The twelve-mode width failure was a basis limitation. With fixed
+azimuthal coefficients from the width screen, increasing the smooth
+meridional Legendre basis to degree 19 makes width `.05` feasible at
+both fitted axial slices (`S` slacks `+0.1168` and `+0.0160`). Degree 19
+also barely permits width `.10`; degree 31 permits width `.20` at these
+same slices. The corresponding raw-basis conditioning rises with degree,
+so none of these slice facts alone is a stable physical construction.
+
+`wide_taper_five_moment_slice.py` constructs a width-`.05`, degree-19
+two-slice repair with all five radial moments below `3e-13` in the
+piecewise quadrature. Its first physical lift has a sampled complete
+momentum maximum `1.1423e7` on 18 points, still dominated by the
+return region. Rather than changing those moments, the constrained
+optimization in `wide_taper_curvature_optimize.py` minimizes a radial
+second-derivative proxy over the same exact `M,J,S` manifold while
+holding `E,I,Cp` fixed. That proxy falls by factors about `452` at
+`eta=.2` and `2.18` at `eta=.3`; five-moment defects remain below
+`5e-13`.
+
+The optimized physical lift reduces the **same 18-point** complete
+momentum maximum from `1.1423e7` to `1.3716e6` (about `8.3` times).
+At the new hotspot `X=1.01,eta=.3`, spatial FD refinement stabilizes
+the norm at `1.371617e6`, while its divergence estimate falls from
+`0.0209` to about `5.4e-6` as the step factor goes from `.001` to
+`.000125`. Thus the reduction is not a coarse-stencil artifact, but
+the remaining residual is still around nine orders of magnitude above
+the `1e-3` maximum target. The pressure is still inherited rather than
+reconstructed for the new mean profile; the coefficient interpolation
+has not been five-moment-matched over a continuous `eta`/time range;
+and no nonaxisymmetric stress correction or spatial-volume L2 gate
+has been run for this diagnostic candidate.

@@ -8,11 +8,13 @@ from joined_field import independent_fd
 from radial_continuation import ROOT
 
 
-def run():
+def run(slice_filename='coupled_five_moment_slice.json',
+        output_name='coupled_moment_fd_refinement.json', X=2.99,
+        eta=.2):
     tau = .5*2**(-5.5)
-    field = CoupledMomentPhysicalLift()
+    field = CoupledMomentPhysicalLift(slice_filename=slice_filename)
     point = field.compact.joined.inner.from_similarity(
-        np.array([2.99]), np.array([.2]), tau)
+        np.array([X]), np.array([eta]), tau)
     rows = []
     for factor in (.001, .0005, .00025, .000125):
         residual, divergence = independent_fd(
@@ -23,10 +25,11 @@ def run():
                    divergence=float(divergence[0]))
         rows.append(row)
         print(json.dumps(row), flush=True)
-    report = dict(tau=tau, X=2.99, eta=.2, rows=rows,
+    report = dict(tau=tau, X=X, eta=eta, rows=rows,
+                  slice_filename=slice_filename,
                   scope='Fourth-order FD refinement at the largest sampled lifted return hotspot. Divergence convergence is a local numerical check of the streamfunction lift. The large complete momentum persists under refinement; no full-domain or volume-L2 acceptance.',
                   accepted=False)
-    (ROOT/'coupled_moment_fd_refinement.json').write_bytes(
+    (ROOT/output_name).write_bytes(
         (json.dumps(report, indent=2)+'\n').encode())
 
 

@@ -1,0 +1,151 @@
+{
+  "tau": 0.011048543456039806,
+  "rows": [
+    {
+      "width": 0.05,
+      "eta": 0.2,
+      "degree": 11,
+      "S_slack": 0.06264052680401022,
+      "max_abs_U": 5.038973149155917,
+      "condition": 10.490967630661974
+    },
+    {
+      "width": 0.05,
+      "eta": 0.2,
+      "degree": 19,
+      "S_slack": 0.11680336202916175,
+      "max_abs_U": 5.038973149155917,
+      "condition": 39.7213421452929
+    },
+    {
+      "width": 0.05,
+      "eta": 0.2,
+      "degree": 31,
+      "S_slack": 0.1559244193805731,
+      "max_abs_U": 5.038973149155917,
+      "condition": 231.13553833357054
+    },
+    {
+      "width": 0.05,
+      "eta": 0.3,
+      "degree": 11,
+      "S_slack": -0.02966466988820171,
+      "max_abs_U": 4.62223203486017,
+      "condition": 10.490967630661974
+    },
+    {
+      "width": 0.05,
+      "eta": 0.3,
+      "degree": 19,
+      "S_slack": 0.01603502498752385,
+      "max_abs_U": 4.62223203486017,
+      "condition": 39.7213421452929
+    },
+    {
+      "width": 0.05,
+      "eta": 0.3,
+      "degree": 31,
+      "S_slack": 0.05067543112835171,
+      "max_abs_U": 4.62223203486017,
+      "condition": 231.13553833357054
+    },
+    {
+      "width": 0.1,
+      "eta": 0.2,
+      "degree": 11,
+      "S_slack": -0.00832838725020224,
+      "max_abs_U": 5.038973149155917,
+      "condition": 21.23902349433359
+    },
+    {
+      "width": 0.1,
+      "eta": 0.2,
+      "degree": 19,
+      "S_slack": 0.10444533636466158,
+      "max_abs_U": 5.038973149155917,
+      "condition": 121.27641933667758
+    },
+    {
+      "width": 0.1,
+      "eta": 0.2,
+      "degree": 31,
+      "S_slack": 0.146909819549089,
+      "max_abs_U": 5.038973149155917,
+      "condition": 1019.8594440537604
+    },
+    {
+      "width": 0.1,
+      "eta": 0.3,
+      "degree": 11,
+      "S_slack": -0.09847555115718842,
+      "max_abs_U": 4.62223203486017,
+      "condition": 21.23902349433359
+    },
+    {
+      "width": 0.1,
+      "eta": 0.3,
+      "degree": 19,
+      "S_slack": 0.002734515333752352,
+      "max_abs_U": 4.62223203486017,
+      "condition": 121.27641933667758
+    },
+    {
+      "width": 0.1,
+      "eta": 0.3,
+      "degree": 31,
+      "S_slack": 0.041437556082295934,
+      "max_abs_U": 4.62223203486017,
+      "condition": 1019.8594440537604
+    },
+    {
+      "width": 0.2,
+      "eta": 0.2,
+      "degree": 11,
+      "S_slack": -0.06488899295249029,
+      "max_abs_U": 5.038973149155917,
+      "condition": 58.241788184814126
+    },
+    {
+      "width": 0.2,
+      "eta": 0.2,
+      "degree": 19,
+      "S_slack": 0.08341737184113684,
+      "max_abs_U": 5.038973149155917,
+      "condition": 497.47671361471106
+    },
+    {
+      "width": 0.2,
+      "eta": 0.2,
+      "degree": 31,
+      "S_slack": 0.1372415896407575,
+      "max_abs_U": 5.038973149155917,
+      "condition": 5844.439896905865
+    },
+    {
+      "width": 0.2,
+      "eta": 0.3,
+      "degree": 11,
+      "S_slack": -0.15605945905432095,
+      "max_abs_U": 4.62223203486017,
+      "condition": 58.241788184814126
+    },
+    {
+      "width": 0.2,
+      "eta": 0.3,
+      "degree": 19,
+      "S_slack": -0.019014438261670152,
+      "max_abs_U": 4.62223203486017,
+      "condition": 497.47671361471106
+    },
+    {
+      "width": 0.2,
+      "eta": 0.3,
+      "degree": 31,
+      "S_slack": 0.031657053623743936,
+      "max_abs_U": 4.62223203486017,
+      "condition": 5844.439896905865
+    }
+  ],
+  "scope": "Finite-basis lower S moment at fixed E coefficients from width optimization. Higher polynomial degree may reduce L2 cost but can worsen derivatives. No exact physical field, pressure, cone or momentum acceptance.",
+  "accepted": false
+}

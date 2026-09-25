@@ -1,0 +1,242 @@
+{
+  "tau": 0.011048543456039806,
+  "rows": [
+    {
+      "field": "before",
+      "max_full_momentum": 9763.706548834058,
+      "max_divergence": 1.9958617099025133e-06,
+      "nodes": [
+        {
+          "X": 1.01,
+          "eta": 0.2,
+          "residual_norm": 7912.917654127479,
+          "divergence": 2.0252119270480762e-07
+        },
+        {
+          "X": 1.01,
+          "eta": 0.25,
+          "residual_norm": 8209.348966415148,
+          "divergence": 2.316845382210886e-07
+        },
+        {
+          "X": 1.01,
+          "eta": 0.3,
+          "residual_norm": 8648.264447992487,
+          "divergence": 2.460888310906739e-07
+        },
+        {
+          "X": 1.025,
+          "eta": 0.2,
+          "residual_norm": 9097.785703505802,
+          "divergence": 2.0247890120117518e-07
+        },
+        {
+          "X": 1.025,
+          "eta": 0.25,
+          "residual_norm": 9365.859147934701,
+          "divergence": 2.3347438116161356e-07
+        },
+        {
+          "X": 1.025,
+          "eta": 0.3,
+          "residual_norm": 9763.706548834058,
+          "divergence": 2.474047136047375e-07
+        },
+        {
+          "X": 1.1,
+          "eta": 0.2,
+          "residual_norm": 4818.503197514981,
+          "divergence": 6.23794846887904e-08
+        },
+        {
+          "X": 1.1,
+          "eta": 0.25,
+          "residual_norm": 5104.470548710325,
+          "divergence": 8.206893653550651e-08
+        },
+        {
+          "X": 1.1,
+          "eta": 0.3,
+          "residual_norm": 5593.83579843387,
+          "divergence": 9.414952728548087e-08
+        },
+        {
+          "X": 2.0,
+          "eta": 0.2,
+          "residual_norm": 2141.684631340888,
+          "divergence": -6.458017764998658e-08
+        },
+        {
+          "X": 2.0,
+          "eta": 0.25,
+          "residual_norm": 2396.1162391396697,
+          "divergence": -5.5941455912034144e-08
+        },
+        {
+          "X": 2.0,
+          "eta": 0.3,
+          "residual_norm": 2701.7037418952723,
+          "divergence": -3.881200427713338e-08
+        },
+        {
+          "X": 2.975,
+          "eta": 0.2,
+          "residual_norm": 2526.3350815006506,
+          "divergence": 1.3451337821379639e-06
+        },
+        {
+          "X": 2.975,
+          "eta": 0.25,
+          "residual_norm": 2791.661923090104,
+          "divergence": 1.6804130780201376e-06
+        },
+        {
+          "X": 2.975,
+          "eta": 0.3,
+          "residual_norm": 3093.6613539572813,
+          "divergence": 1.8602969333869623e-06
+        },
+        {
+          "X": 2.99,
+          "eta": 0.2,
+          "residual_norm": 1088.5321198362808,
+          "divergence": 1.416082586191969e-06
+        },
+        {
+          "X": 2.99,
+          "eta": 0.25,
+          "residual_norm": 1204.9229423621941,
+          "divergence": 1.7868178665558787e-06
+        },
+        {
+          "X": 2.99,
+          "eta": 0.3,
+          "residual_norm": 1337.830008294922,
+          "divergence": 1.9958617099025133e-06
+        }
+      ]
+    },
+    {
+      "field": "lifted",
+      "max_full_momentum": 11422906.349223575,
+      "max_divergence": 13.125396750469008,
+      "nodes": [
+        {
+          "X": 1.01,
+          "eta": 0.2,
+          "residual_norm": 37922.65412063392,
+          "divergence": 0.5267138232509296
+        },
+        {
+          "X": 1.01,
+          "eta": 0.25,
+          "residual_norm": 646451.5278268505,
+          "divergence": 0.2675600646876575
+        },
+        {
+          "X": 1.01,
+          "eta": 0.3,
+          "residual_norm": 1589850.820914905,
+          "divergence": 0.08976891309566781
+        },
+        {
+          "X": 1.025,
+          "eta": 0.2,
+          "residual_norm": 1199976.3523373986,
+          "divergence": -0.27650926889646144
+        },
+        {
+          "X": 1.025,
+          "eta": 0.25,
+          "residual_norm": 200562.97954998177,
+          "divergence": -0.1590942719335544
+        },
+        {
+          "X": 1.025,
+          "eta": 0.3,
+          "residual_norm": 1003816.2482112075,
+          "divergence": -0.12206811704345455
+        },
+        {
+          "X": 1.1,
+          "eta": 0.2,
+          "residual_norm": 313278.92823274195,
+          "divergence": -0.015024551255237384
+        },
+        {
+          "X": 1.1,
+          "eta": 0.25,
+          "residual_norm": 302561.4193319432,
+          "divergence": -0.00024854579777411345
+        },
+        {
+          "X": 1.1,
+          "eta": 0.3,
+          "residual_norm": 289369.39714873093,
+          "divergence": 0.008814425445848428
+        },
+        {
+          "X": 2.0,
+          "eta": 0.2,
+          "residual_norm": 25023.447577259394,
+          "divergence": 0.0025714940043997103
+        },
+        {
+          "X": 2.0,
+          "eta": 0.25,
+          "residual_norm": 58869.813368594645,
+          "divergence": 3.856095599275022e-05
+        },
+        {
+          "X": 2.0,
+          "eta": 0.3,
+          "residual_norm": 12060.062538171904,
+          "divergence": -0.0011940125420579761
+        },
+        {
+          "X": 2.975,
+          "eta": 0.2,
+          "residual_norm": 11422906.349223575,
+          "divergence": 4.212692538016398
+        },
+        {
+          "X": 2.975,
+          "eta": 0.25,
+          "residual_norm": 8498552.44526418,
+          "divergence": 2.990610984308205
+        },
+        {
+          "X": 2.975,
+          "eta": 0.3,
+          "residual_norm": 4804920.089465904,
+          "divergence": 1.087191423798373
+        },
+        {
+          "X": 2.99,
+          "eta": 0.2,
+          "residual_norm": 8252896.581031244,
+          "divergence": -13.125396750469008
+        },
+        {
+          "X": 2.99,
+          "eta": 0.25,
+          "residual_norm": 5626267.012816911,
+          "divergence": -9.177851415879559
+        },
+        {
+          "X": 2.99,
+          "eta": 0.3,
+          "residual_norm": 3433563.642227555,
+          "divergence": -3.5311501408777985
+        }
+      ]
+    }
+  ],
+  "slice_filename": "wide_taper_five_moment_slice.json",
+  "taper_width": 0.05,
+  "u_degree": 19,
+  "spatial_step": 1.0511205190671434e-05,
+  "time_step": 2.7621358640099516e-06,
+  "scope": "18 physical finite-difference nodes in the fitted/interpolated axial band. No volume-L2, continuous cone, time-uniform or PDE acceptance. Pressure is inherited unchanged from the base field.",
+  "accepted": false
+}

@@ -1,0 +1,176 @@
+{
+  "tau": 0.011048543456039806,
+  "widths": [
+    0.02,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "quadrature_per_piece": 96,
+  "relative_swirl_floor_training": 0.11,
+  "upper_e_coefficient": 3.0,
+  "rows": [
+    {
+      "width": 0.02,
+      "eta": 0.2,
+      "coefficients": [
+        -1.2126543085990817,
+        -0.41967395806286434,
+        1.5263629939765453,
+        -0.16183036268181542,
+        -0.14181797704397522
+      ],
+      "I_Cp_defect": [
+        4.440892098500626e-16,
+        8.881784197001252e-16
+      ],
+      "finite_basis_S_slack": 0.09942135118853068,
+      "min_relative_E": 0.11000733921163268,
+      "original_basis_condition": 6.337801319694487,
+      "optimizer_success": true,
+      "feasible": true
+    },
+    {
+      "width": 0.02,
+      "eta": 0.3,
+      "coefficients": [
+        -1.2089949221267138,
+        -0.43657901550405964,
+        1.5251631935135415,
+        -0.16184667404766045,
+        -0.13826624149835692
+      ],
+      "I_Cp_defect": [
+        4.440892098500626e-16,
+        0.0
+      ],
+      "finite_basis_S_slack": 0.007556852272643688,
+      "min_relative_E": 0.11000736142577847,
+      "original_basis_condition": 6.337801319694487,
+      "optimizer_success": true,
+      "feasible": true
+    },
+    {
+      "width": 0.05,
+      "eta": 0.2,
+      "coefficients": [
+        -1.2126718866304198,
+        -0.41994226091213543,
+        1.5264236571494298,
+        -0.16183036268181542,
+        -0.1417777408151573
+      ],
+      "I_Cp_defect": [
+        7.993605777301127e-15,
+        4.618527782440651e-14
+      ],
+      "finite_basis_S_slack": 0.06264052680401022,
+      "min_relative_E": 0.11000733910524935,
+      "original_basis_condition": 10.490967630661974,
+      "optimizer_success": true,
+      "feasible": true
+    },
+    {
+      "width": 0.05,
+      "eta": 0.3,
+      "coefficients": [
+        -1.2090064162287166,
+        -0.4125148803710748,
+        1.5202576701541792,
+        -0.16184667404766045,
+        -0.14179011924458151
+      ],
+      "I_Cp_defect": [
+        7.993605777301127e-15,
+        2.4868995751603507e-13
+      ],
+      "finite_basis_S_slack": -0.02966466988820171,
+      "min_relative_E": 0.11000736135579346,
+      "original_basis_condition": 10.490967630661974,
+      "optimizer_success": true,
+      "feasible": false
+    },
+    {
+      "width": 0.1,
+      "eta": 0.2,
+      "coefficients": [
+        -1.212708731098484,
+        -0.4200224190782081,
+        1.5264513212885824,
+        -0.16183036268181542,
+        -0.14176362087463495
+      ],
+      "I_Cp_defect": [
+        -1.127986593019159e-13,
+        6.989964163039986e-13
+      ],
+      "finite_basis_S_slack": -0.00832838725020224,
+      "min_relative_E": 0.11000733888227482,
+      "original_basis_condition": 21.23902349433359,
+      "optimizer_success": true,
+      "feasible": false
+    },
+    {
+      "width": 0.1,
+      "eta": 0.3,
+      "coefficients": [
+        -1.2090410108209058,
+        -0.41259687941230766,
+        1.5202853490525612,
+        -0.1618466740476604,
+        -0.14177599672696972
+      ],
+      "I_Cp_defect": [
+        1.7319479184152442e-14,
+        1.1315393066979595e-12
+      ],
+      "finite_basis_S_slack": -0.09847555115718842,
+      "min_relative_E": 0.11000736114516292,
+      "original_basis_condition": 21.23902349433359,
+      "optimizer_success": true,
+      "feasible": false
+    },
+    {
+      "width": 0.2,
+      "eta": 0.2,
+      "coefficients": [
+        -1.2128679850806998,
+        -0.419706818019637,
+        1.5264343440290582,
+        -0.16183036268181542,
+        -0.1417990124162717
+      ],
+      "I_Cp_defect": [
+        1.1546319456101628e-14,
+        5.053735208093713e-13
+      ],
+      "finite_basis_S_slack": -0.06488899295249029,
+      "min_relative_E": 0.11000733791866081,
+      "original_basis_condition": 58.241788184814126,
+      "optimizer_success": true,
+      "feasible": false
+    },
+    {
+      "width": 0.2,
+      "eta": 0.3,
+      "coefficients": [
+        -1.2092170074995523,
+        -0.4122704675077438,
+        1.5202699619715763,
+        -0.16184667404766045,
+        -0.14181139429194123
+      ],
+      "I_Cp_defect": [
+        1.1102230246251565e-14,
+        6.741274205523951e-13
+      ],
+      "finite_basis_S_slack": -0.15605945905432095,
+      "min_relative_E": 0.11000736007378671,
+      "original_basis_condition": 58.241788184814126,
+      "optimizer_success": true,
+      "feasible": false
+    }
+  ],
+  "scope": "Fixed-slice finite-basis S capacity jointly optimized with positive E and exact I/Cp for each taper width. A positive slack permits an exact U moment correction in this basis, but says nothing about physical momentum, eta/time continuity, pressure or full-domain gates.",
+  "accepted": false
+}

@@ -20,23 +20,24 @@ from radial_continuation import ROOT
 from radial_moment_step import RadialMomentStep, septic_step
 
 
-def correction_modes(X):
-    up = septic_step((X-1.)/.02)[0]
-    down = septic_step((X-2.98)/.02)[0]
+def correction_modes(X, width=.02, degree=11):
+    up = septic_step((X-1.)/width)[0]
+    down = septic_step((X-(3.-width))/width)[0]
     window = up*(1-down)
     argument = np.clip(X-2., -1., 1.)
-    return np.array([window*legval(argument, [0.]*degree+[1.])
-                     for degree in range(12)])
+    return np.array([window*legval(argument, [0.]*order+[1.])
+                     for order in range(degree+1)])
 
 
-def construct(base, changed, X, weights, eta, tau, e_coeff):
+def construct(base, changed, X, weights, eta, tau, e_coeff,
+              width=.02, degree=11):
     U0, E0 = profile(base, X, eta, tau)
     U, _ = profile(changed, X, eta, tau)
     eb = np.array([bump(X, *interval)[0] for interval in INTERVALS])
     E = E0+np.asarray(e_coeff)@eb
     target = moment_vector(U0, E0, X, weights)
     current = moment_vector(U, E, X, weights)
-    B = correction_modes(X)
+    B = correction_modes(X, width, degree)
     H = np.sqrt(2*X)*E
     # Orthonormalize in the quadrature L2 norm before the KKT solve.
     orth, factor = np.linalg.qr((B*np.sqrt(weights)).T)
@@ -54,6 +55,7 @@ def construct(base, changed, X, weights, eta, tau, e_coeff):
     min_data = moment_vector(U+minimum@Q, E, X, weights)
     gap = float(target[3]-min_data[3])
     result = dict(eta=eta, e_coefficients=list(e_coeff),
+                  taper_width=width, u_degree=degree,
                   minimum_S=float(min_data[3]), target_S=float(target[3]),
                   S_slack=gap,
                   original_basis_condition=float(np.linalg.cond(factor)),
