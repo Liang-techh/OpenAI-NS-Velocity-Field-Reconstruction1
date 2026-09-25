@@ -2,6 +2,18 @@
 
 Snapshot date: **2026-09-20**.
 
+This integration-branch snapshot predates the 2026-09-22 `main` research
+consolidation. On `main`, ST006 is the historical runnable API baseline,
+while ST061-D/P are newer residual-oriented controls and ST063-G2R is the
+latest documented geometry experiment. The paired ST061/ST063 samples
+report full-vector maxima about `0.0225`–`0.0272` and volume L2 about
+`0.033`–`0.034`; their seeds and candidate artifacts differ from the
+ST006 protocol below. None meets both `1e-3` momentum gates. See
+`main:docs/FINAL_RESEARCH_SNAPSHOT_2026-09-22.md` and
+`main:docs/RESEARCH_STATUS.md` for the original study records and
+candidate availability. Do not rank them against ST073 annulus screens
+without a shared complete-field validation protocol.
+
 Machine-readable authority: [`project_status.json`](../project_status.json).
 Active integration branch at snapshot: `codex/cr001-constraints@9491103442e53190b7d90d6f0fc5f3165aacc697`.
 
