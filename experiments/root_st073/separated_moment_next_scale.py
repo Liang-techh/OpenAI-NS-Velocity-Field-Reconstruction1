@@ -99,7 +99,7 @@ def run():
                   scope="One 12-dimensional new-knot fit, four sampled physical moment equalities at k=21, 15 momentum grid points at k=21, direct FD checks at k=19,20,21,22. Earlier coefficients fixed. No uniform cone, full-domain or iterative residual-improvement claim.",
                   accepted=False, scale_recursion_established=False)
     output = ROOT / "separated_moment_next_scale.json"
-    output.write_text(json.dumps(report, indent=2) + "\n")
+    output.write_bytes((json.dumps(report, indent=2) + "\n").encode())
     print(json.dumps(report, indent=2))
     return report
 
