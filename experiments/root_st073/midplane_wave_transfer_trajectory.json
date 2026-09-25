@@ -1,0 +1,82 @@
+{
+  "source": "Direct full nonlinear residual of k11-to-k19 linear slope continuation",
+  "k": 19,
+  "angle_count": 8,
+  "heldout_nodes": 9,
+  "trajectory": [
+    {
+      "fraction": -0.5,
+      "tau": 9.534226327900427e-07,
+      "frozen": {
+        "max": 1484583974229.3687,
+        "rms": 573288833950.1885
+      },
+      "corrected": {
+        "max": 77893727440778.58,
+        "rms": 36362151848789.91
+      },
+      "max_ratio": 52.46838763783124,
+      "rms_ratio": 63.42728079708127
+    },
+    {
+      "fraction": -0.2,
+      "tau": 9.535736429597671e-07,
+      "frozen": {
+        "max": 9698999772729.56,
+        "rms": 3427638200915.9194
+      },
+      "corrected": {
+        "max": 31714577507940.14,
+        "rms": 14987584282478.512
+      },
+      "max_ratio": 3.2698812507565203,
+      "rms_ratio": 4.372568924711363
+    },
+    {
+      "fraction": 0.0,
+      "tau": 9.5367431640625e-07,
+      "frozen": {
+        "max": 14445477901069.738,
+        "rms": 5096321956951.08
+      },
+      "corrected": {
+        "max": 5842786818140.481,
+        "rms": 1942087828001.2983
+      },
+      "max_ratio": 0.40447168713662307,
+      "rms_ratio": 0.381076361424224
+    },
+    {
+      "fraction": 0.2,
+      "tau": 9.53774989852733e-07,
+      "frozen": {
+        "max": 13856639668023.45,
+        "rms": 4899740415465.324
+      },
+      "corrected": {
+        "max": 27255899008505.69,
+        "rms": 12879760903861.77
+      },
+      "max_ratio": 1.9669919736314794,
+      "rms_ratio": 2.6286618905786643
+    },
+    {
+      "fraction": 0.5,
+      "tau": 9.539260000224573e-07,
+      "frozen": {
+        "max": 5371493014612.344,
+        "rms": 1914180725278.613
+      },
+      "corrected": {
+        "max": 66837025468078.41,
+        "rms": 33292872445725.12
+      },
+      "max_ratio": 12.44291396940446,
+      "rms_ratio": 17.392752944411388
+    }
+  ],
+  "scope": "Interior-time direct finite-difference check of a compact exact-curl correction with transferred coefficients and fixed spatial shape. No evolved amplitude inverse, time endpoint cutoff, moment closure, or uniform-in-scale estimate.",
+  "accepted": false,
+  "scale_recursion_established": false,
+  "temporal_profile": "linear"
+}

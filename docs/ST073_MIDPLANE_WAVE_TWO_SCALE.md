@@ -77,3 +77,25 @@ inverse over an entire pulse with boundary/cutoff control, followed by
 direct residual and moment tests at interior times and more dyadic
 scales. The sampled transfer is a candidate template for that solve,
 not a completed scale recursion.
+
+## Interior-time rejection of the constant template
+
+`midplane_wave_transfer_trajectory.py` inserts that transferred slope
+into a callable compact exact-curl potential, with its harmonic and
+mean pressure, and directly samples the **full nonlinear** momentum
+at nine held-out radial/axial nodes × eight angles on `k=19`.
+The center result agrees with the projection: corrected/frozen maximum
+`0.404` at pulse fraction `0`. Away from the center, the same ratio is
+`52.5, 3.27, 1.97, 12.4` at fractions `-0.5, -0.2, +0.2, +0.5`.
+The matching RMS ratios are `63.4, 4.37, 2.63, 17.4`.
+
+As a minimal temporal-shape control, a second diagnostic integrates
+the wave's normalized bump `(1-f²)^5` into the potential coefficient
+and multiplies pressure by that bump. The direct maximum ratios at
+the same nonzero fractions improve only to `34.2, 2.97, 1.92, 9.20`.
+Both continuations fail even the criterion of improving the frozen
+wave at all five times. They also leave a nonzero potential at the
+support endpoints, so neither is a completed pulse. This rejects
+constant or envelope-weighted transfer as a scale-recursion update;
+the coefficients must be solved as a time-dependent supported inverse
+with pressure and mean flow recomputed from the evolving state.

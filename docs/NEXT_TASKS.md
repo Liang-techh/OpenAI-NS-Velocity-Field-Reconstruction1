@@ -97,6 +97,17 @@ derivative, pressure and mean into the full velocity field, and check
 nonlinear momentum plus radial moments at interior times on at least
 two adjacent dyadic scales. Require absolute residual improvement and
 non-growing scale behavior before marking recursion established.
+Direct `k=19` interior-time testing now rejects the constant transferred
+slope: its corrected/frozen momentum maximum ratios are `52.5, 3.27,
+0.404, 1.97, 12.4` at pulse fractions `-0.5, -0.2, 0, +0.2, +0.5`.
+Integrating the pulse bump into the slope still gives `34.2, 2.97,
+0.406, 1.92, 9.20`. Next integrate the supported potential-amplitude
+coefficient ODE from `fit_slope` over a short pulse interval with a
+stiff/adaptive solver, recomputing pressure algebraically at each state;
+directly check full residual on held-out nodes at interior times before
+attempting `k=11→19` transfer. The paper's Proposition 7.2 supplies
+the transverse pulse inverse and Section 9 the full correction cycle;
+the current collocation ODE is only an exploratory numerical proxy.
 Use those directions as a conditioning prototype, not as the paper's five
 leading-profile moments or a recursive correction.
 The next Stage-1 inputs are therefore the actual coefficient-family
