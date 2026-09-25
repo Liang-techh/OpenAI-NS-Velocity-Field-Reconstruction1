@@ -32,3 +32,15 @@ but no fixed finite-order extrapolation here proves the requested
 critical-time field. A sampled failure rules out that particular
 unchanged field at that point; sampled success does not prove a domain
 maximum, spatial-volume L2, finite energy, or inner/outer matching.
+
+The physical error budget tightens with the scale. With
+`q=tau/(1-eta**2)`, the normalization used in
+`core_dyadic_transfer.py` gives
+`R_r=sqrt(nu)*q**(-3/2)*Rtilde_r` and
+`R_theta,z=sqrt(nu)*q**(-A-1)*Rtilde_theta,z`, where `A=.505`.
+Therefore an absolute `1e-3` momentum bound requires, componentwise,
+`|Rtilde_r|<1e-3*q**(3/2)/sqrt(nu)` and
+`|Rtilde_theta,z|<1e-3*q**(A+1)/sqrt(nu)` at every sampled point.
+As `q` tends to zero, a merely small nonzero similarity-normalized
+defect is insufficient. The current experiment does not prove a
+uniform asymptotic estimate for any truncation order.
