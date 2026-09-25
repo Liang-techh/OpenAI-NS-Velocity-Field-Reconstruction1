@@ -30,6 +30,11 @@ See `ST073_WAVE_ON_MOMENT_CLOSED_BRIDGE.md` before reusing that frozen
 wave ansatz. The next wave implementation needs a transported spatial
 amplitude, its pressure and mean corrections, and a wider admissible
 support or a quantitative cutoff budget.
+A first spatial potential/pressure/mean Taylor step on the late bridge
+does reduce direct held-out midpoint momentum by about `2.14x` but leaves
+an error of `4.86e9`; see `ST073_SPATIAL_WAVE_SLOPE.md`. Continue with
+stable multi-stage amplitude transport, wider supported cone geometry,
+and coupled radial moment repair rather than accepting the local fit.
 Use those directions as a conditioning prototype, not as the paper's five
 leading-profile moments or a recursive correction.
 The next Stage-1 inputs are therefore the actual coefficient-family

@@ -87,7 +87,8 @@ class FrozenPotentialField:
         return velocity, pressure
 
 
-def sample_residual(field, wave, tau, grid, angles, time_step=None):
+def sample_residual(field, wave, tau, grid, angles, time_step=None,
+                    time_min=.5/64):
     hs = .0005*np.sqrt(field.nu*tau)
     ht = min(.0001*tau, time_step/8) if time_step is not None else .0001*tau
     nodes = []
@@ -100,7 +101,8 @@ def sample_residual(field, wave, tau, grid, angles, time_step=None):
                                               r*np.sin(angles),
                                               np.full(len(angles), z))))
     points = np.vstack(points_blocks)
-    u, grad, part = kinematics(field, points, tau, hs, ht)
+    u, grad, part = kinematics(field, points, tau, hs, ht,
+                               time_min=time_min)
     residual = cylindrical_residual(part+np.einsum('nij,nj->ni', grad, u),
                                     points).reshape(len(nodes), len(angles), 3)
     return [{'r': r, 'z': z, 'residual': residual[i]}

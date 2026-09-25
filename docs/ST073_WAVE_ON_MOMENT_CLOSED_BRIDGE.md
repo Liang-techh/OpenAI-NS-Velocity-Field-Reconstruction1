@@ -55,3 +55,7 @@ redesign that opens a wider cone patch. The current frozen exact-curl
 prototype and scalar time slope do not reduce the full momentum, let
 alone achieve a scale-recursive, finite-energy field with the requested
 global `1e-3` gates.
+
+A first spatially varying amplitude/pressure/mean Taylor step on this
+background does produce direct midpoint improvement, but remains far
+from acceptance; see `ST073_SPATIAL_WAVE_SLOPE.md`.
