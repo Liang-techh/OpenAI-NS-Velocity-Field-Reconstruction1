@@ -1,0 +1,234 @@
+{
+  "source": "local_poloidal_10pct_source.json",
+  "times": [
+    0.00828,
+    0.00834,
+    0.0084,
+    0.008459999999999999,
+    0.00852
+  ],
+  "modes": [
+    {
+      "m": 1,
+      "rows": [
+        {
+          "tau": 0.00828,
+          "center": [
+            0.01051954520596007,
+            0.003601935212316547
+          ],
+          "normal": [
+            -129.12421754723493,
+            95.06114384426324,
+            -289.72314430273923
+          ],
+          "amplitude": [
+            -0.8069355432753973,
+            -1.1855481905414633,
+            -0.029354390943886755
+          ],
+          "amplitude_norm_ratio": 0.9584537828577984,
+          "relative_transversality_error": 9.422017931861257e-12,
+          "backward_shear_rate": -317.5155250555196,
+          "backward_viscous_rate": 1096.4918497083122
+        },
+        {
+          "tau": 0.00834,
+          "center": [
+            0.010389561619536443,
+            0.003613217163066851
+          ],
+          "normal": [
+            -124.362111798205,
+            96.25045181113403,
+            -245.33857047658228
+          ],
+          "amplitude": [
+            -0.8016903065339589,
+            -1.246746414843532,
+            -0.08274282413432145
+          ],
+          "amplitude_norm_ratio": 0.9919662522864762,
+          "relative_transversality_error": 8.271412897244672e-12,
+          "backward_shear_rate": -487.76213745718513,
+          "backward_viscous_rate": 849.210984882496
+        },
+        {
+          "tau": 0.0084,
+          "center": [
+            0.01025,
+            0.003625
+          ],
+          "normal": [
+            -119.60589982127895,
+            97.5609756097561,
+            -200.68785295427557
+          ],
+          "amplitude": [
+            -0.7660974611197989,
+            -1.275219794941398,
+            -0.16334775942216112
+          ],
+          "amplitude_norm_ratio": 1.0,
+          "relative_transversality_error": 7.415846529062595e-17,
+          "backward_shear_rate": -744.5478368137068,
+          "backward_viscous_rate": 640.9932955738218
+        },
+        {
+          "tau": 0.008459999999999999,
+          "center": [
+            0.010100629595964415,
+            0.003637192386615396
+          ],
+          "normal": [
+            -114.83794062402714,
+            99.00372947044193,
+            -156.11425494533484
+          ],
+          "amplitude": [
+            -0.6991375779036056,
+            -1.2546824177590883,
+            -0.2814010738655081
+          ],
+          "amplitude_norm_ratio": 0.9779772942347917,
+          "relative_transversality_error": 3.9210350329052016e-11,
+          "backward_shear_rate": -1131.2626187402166,
+          "backward_viscous_rate": 473.6115165296104
+        },
+        {
+          "tau": 0.00852,
+          "center": [
+            0.009941203695526675,
+            0.003649616272407507
+          ],
+          "normal": [
+            -110.09684535611741,
+            100.59144049628297,
+            -111.9946906106621
+          ],
+          "amplitude": [
+            -0.6052156651117234,
+            -1.1570315079115148,
+            -0.4442632978842299
+          ],
+          "amplitude_norm_ratio": 0.9216082384738457,
+          "relative_transversality_error": 1.8334218519405216e-11,
+          "backward_shear_rate": -1694.0796265362644,
+          "backward_viscous_rate": 347.82763983464
+        }
+      ]
+    },
+    {
+      "m": 4,
+      "rows": [
+        {
+          "tau": 0.00828,
+          "center": [
+            0.010519545205960146,
+            0.0036019352123165442
+          ],
+          "normal": [
+            613.7038669834113,
+            380.2445753770502,
+            1003.5905037017458
+          ],
+          "amplitude": [
+            -0.11792875685690107,
+            -0.09523339040698803,
+            0.10819683323824998
+          ],
+          "amplitude_norm_ratio": 0.18623411359095726,
+          "relative_transversality_error": 6.94322783078947e-10,
+          "backward_shear_rate": 3375.7984733660664,
+          "backward_viscous_rate": 15284.122725743897
+        },
+        {
+          "tau": 0.00834,
+          "center": [
+            0.010389561619537604,
+            0.0036132171630671984
+          ],
+          "normal": [
+            582.7109550467496,
+            385.0018072444931,
+            699.0017532611754
+          ],
+          "amplitude": [
+            -0.2966381249856368,
+            -0.17824056863317914,
+            0.34546011521032965
+          ],
+          "amplitude_norm_ratio": 0.48898524384975833,
+          "relative_transversality_error": 1.0784982601014663e-10,
+          "backward_shear_rate": 4023.816168874241,
+          "backward_viscous_rate": 9763.81899775218
+        },
+        {
+          "tau": 0.0084,
+          "center": [
+            0.01025,
+            0.003625
+          ],
+          "normal": [
+            551.8882194626713,
+            390.2439024390244,
+            390.2439024390244
+          ],
+          "amplitude": [
+            -0.5,
+            -0.14644660940672624,
+            0.8535533905932737
+          ],
+          "amplitude_norm_ratio": 1.0,
+          "relative_transversality_error": 1.9692312558609095e-17,
+          "backward_shear_rate": 4103.959102231159,
+          "backward_viscous_rate": 6091.612135633552
+        },
+        {
+          "tau": 0.008459999999999999,
+          "center": [
+            0.010100629595963617,
+            0.0036371923866157885
+          ],
+          "normal": [
+            521.4637428139531,
+            396.01491788179897,
+            78.95168022538489
+          ],
+          "amplitude": [
+            -0.4779904303955053,
+            0.31700640348814324,
+            1.5669763225046358
+          ],
+          "amplitude_norm_ratio": 1.668646968861994,
+          "relative_transversality_error": 4.3869356624634614e-10,
+          "backward_shear_rate": 2513.373736881136,
+          "backward_viscous_rate": 4349.8561806487605
+        },
+        {
+          "tau": 0.00852,
+          "center": [
+            0.009941203695526762,
+            0.0036496162724075163
+          ],
+          "normal": [
+            492.0651145486471,
+            402.3657619851284,
+            -233.17802185961958
+          ],
+          "amplitude": [
+            -0.21728752708015903,
+            1.3588432048001073,
+            1.8862513968579246
+          ],
+          "amplitude_norm_ratio": 2.334868959236152,
+          "relative_transversality_error": 1.048459973290121e-10,
+          "backward_shear_rate": 291.9412615328183,
+          "backward_viscous_rate": 4583.982732520115
+        }
+      ]
+    }
+  ],
+  "scope": "Unforced physical-coordinate projected Kelvin amplitude along a single moving center per harmonic, with viscosity and local velocity gradient. No spatially supported amplitude, pulse cutoff, pressure field, exact-curl momentum acceptance, or normalized-chart theorem.",
+  "accepted": false
+}
