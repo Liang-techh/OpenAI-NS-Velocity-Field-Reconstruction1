@@ -1,0 +1,108 @@
+{
+  "tau": 0.011048543456039806,
+  "moment_rows": [
+    {
+      "eta": 0.2,
+      "x_out": 1.5,
+      "delta_moments": [
+        0.9799959036379536,
+        0.0,
+        1.6622410403922558,
+        2.063317506372745,
+        0.0
+      ],
+      "analytic_delta_M": 0.9799959036379546
+    },
+    {
+      "eta": 0.3,
+      "x_out": 1.5,
+      "delta_moments": [
+        0.9543891407651205,
+        0.0,
+        1.5981307699208,
+        1.6523700199607316,
+        0.0
+      ],
+      "analytic_delta_M": 0.9543891407651217
+    }
+  ],
+  "physical_cone_rows": [
+    {
+      "amplitude": -2.0,
+      "X": 1.0,
+      "eta": 0.2,
+      "order": 32,
+      "lambda_squared": 12875.60542300424,
+      "target_dot_N": 3.1320639649302664,
+      "target_dot_K": 1.0752119776279818,
+      "ratio": 1.9450699300848562,
+      "strict_pass": false,
+      "residual_norm": 8315.38797035328
+    },
+    {
+      "amplitude": -1.0,
+      "X": 1.0,
+      "eta": 0.2,
+      "order": 32,
+      "lambda_squared": 10899.566427305015,
+      "target_dot_N": -0.7412036603073721,
+      "target_dot_K": 1.6094508792431697,
+      "ratio": 4.649646100745639,
+      "strict_pass": false,
+      "residual_norm": 6668.003405388059
+    },
+    {
+      "amplitude": 0.0,
+      "X": 1.0,
+      "eta": 0.2,
+      "order": 32,
+      "lambda_squared": 5782.753190060092,
+      "target_dot_N": 4.833090552784811,
+      "target_dot_K": 1.1855368715002856,
+      "ratio": 0.21547791484393827,
+      "strict_pass": false,
+      "residual_norm": 5145.341462049619
+    },
+    {
+      "amplitude": 1.0,
+      "X": 1.0,
+      "eta": 0.2,
+      "order": 32,
+      "lambda_squared": 12663.782444241857,
+      "target_dot_N": 8.07676987946441,
+      "target_dot_K": -0.1054200535210127,
+      "ratio": 0.059329900136659564,
+      "strict_pass": false,
+      "residual_norm": 3865.3919689144877
+    },
+    {
+      "amplitude": 2.0,
+      "X": 1.0,
+      "eta": 0.2,
+      "order": 32,
+      "lambda_squared": 13073.226241961593,
+      "target_dot_N": 10.737642256306252,
+      "target_dot_K": -0.29738353979163085,
+      "ratio": 0.22200741792529413,
+      "strict_pass": false,
+      "residual_norm": 3183.705037279292
+    }
+  ],
+  "selected_amplitude": -1.0,
+  "residual_rows": [
+    {
+      "field": "base",
+      "sampled_full_max": 6110.716644921151,
+      "sampled_angular_max": 3016.376063745642,
+      "divergence_max": 7.307052669602854e-07
+    },
+    {
+      "field": "selected",
+      "sampled_full_max": 12546.29788533877,
+      "sampled_angular_max": 3023.9141237837607,
+      "divergence_max": 7.983814498402353e-07
+    }
+  ],
+  "scope": "Two-stage solenoidal streamfunction step changes M at the old radial exit and restores its physical streamfunction by X=3. Finite samples only; other moments, continuous cone, full momentum and volume-L2 gates remain open.",
+  "accepted": false
+}

@@ -1,0 +1,57 @@
+{
+  "tau": 0.011048543456039806,
+  "x_out": 3.5,
+  "quadrature_per_piece": 64,
+  "rows": [
+    {
+      "eta": 0.2,
+      "base": [
+        2.095545958979983e-14,
+        2.849973863817559,
+        -0.11509885345973295,
+        2.4729129204058324,
+        5.707030996389296
+      ],
+      "changed": [
+        2.070565940925917e-14,
+        2.849973863817559,
+        -0.7659413409842706,
+        2.590441141241844,
+        5.707030996389296
+      ],
+      "delta": [
+        -2.498001805406602e-16,
+        0.0,
+        -0.6508424875245377,
+        0.11752822083601178,
+        0.0
+      ]
+    },
+    {
+      "eta": 0.3,
+      "base": [
+        1.9761969838327786e-14,
+        2.8247241334485746,
+        -0.21443070534102449,
+        1.9928242870427346,
+        5.5638525483248324
+      ],
+      "changed": [
+        1.9810542095655137e-14,
+        2.8247241334485746,
+        -0.8379122218357844,
+        2.256555588869796,
+        5.5638525483248324
+      ],
+      "delta": [
+        4.85722573273506e-17,
+        0.0,
+        -0.6234815164947599,
+        0.2637313018270615,
+        0.0
+      ]
+    }
+  ],
+  "scope": "Five normalized radial moment differences at X=3.5, after exact physical field restoration at X>=3. The M step can control the old X=1.5 exit yet leaves nonlinear J and S moment defects that a later correction must remove. Finite axial/time slices, no global matching or PDE acceptance.",
+  "accepted": false
+}

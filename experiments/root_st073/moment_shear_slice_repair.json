@@ -1,0 +1,111 @@
+{
+  "tau": 0.011048543456039806,
+  "x_out": 3.5,
+  "u_interval": [
+    1.76,
+    2.98
+  ],
+  "e_intervals": [
+    [
+      1.76,
+      2.1
+    ],
+    [
+      2.12,
+      2.48
+    ],
+    [
+      2.5,
+      2.98
+    ]
+  ],
+  "quadrature_per_piece": 64,
+  "rows": [
+    {
+      "eta": 0.2,
+      "initial_delta": [
+        -8.049116928532385e-16,
+        0.0,
+        -0.6508424875245377,
+        0.11752822083601222,
+        0.0
+      ],
+      "initial_jacobian_singular_values": [
+        0.6023142277296673,
+        0.1376424647550151,
+        0.0378011151074255,
+        0.005295712375176456
+      ],
+      "linear_coefficients": [
+        3.107525094760384,
+        -1.7847886674758364,
+        3.7446816618746284,
+        -1.512156966287674
+      ],
+      "starts_tried": 15,
+      "coefficients": [
+        0.19118187154797192,
+        -0.19723960900080764,
+        1.9184739171952092,
+        -1.1881990281923638
+      ],
+      "final_delta": [
+        -4.440892098500626e-16,
+        0.005328903650328787,
+        -0.024385251313024964,
+        0.02086587456048461,
+        0.11677263616452294
+      ],
+      "max_abs_four_moment_defect": 0.11677263616452294,
+      "min_corrected_E": -1.027758580681866,
+      "max_abs_corrected_U": 5.041276267534424,
+      "optimizer_success": true,
+      "moment_repaired": false,
+      "positive_swirl": false
+    },
+    {
+      "eta": 0.3,
+      "initial_delta": [
+        -8.673617379884035e-16,
+        0.0,
+        -0.6234815164947601,
+        0.26373130182706017,
+        0.0
+      ],
+      "initial_jacobian_singular_values": [
+        0.6002314486851618,
+        0.13451088019606158,
+        0.03684089710994144,
+        0.00529240461498261
+      ],
+      "linear_coefficients": [
+        7.205538222370799,
+        -1.7528471351680404,
+        3.677686135044397,
+        -1.4851092320689594
+      ],
+      "starts_tried": 15,
+      "coefficients": [
+        0.1453615234569865,
+        -0.2724266088043654,
+        2.118099374300597,
+        -1.2785606233988225
+      ],
+      "final_delta": [
+        -5.412337245047638e-16,
+        0.006206761488490198,
+        -0.027433989273071335,
+        0.0336686916030855,
+        0.14008477671133512
+      ],
+      "max_abs_four_moment_defect": 0.14008477671133512,
+      "min_corrected_E": -1.117839138028975,
+      "max_abs_corrected_U": 4.631317052014499,
+      "optimizer_success": true,
+      "moment_repaired": false,
+      "positive_swirl": false
+    }
+  ],
+  "scope": "Fixed-eta normalized nonlinear moment feasibility only. M is preserved by the derivative U bump. A slice solve does not define a smooth eta/time coefficient field, physical solenoidal correction, continuous stress cone, or PDE-valid solution.",
+  "accepted": false
+}

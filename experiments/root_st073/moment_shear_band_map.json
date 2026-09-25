@@ -1,0 +1,168 @@
+{
+  "tau": 0.011048543456039806,
+  "shear": 2.0,
+  "moment": -0.5,
+  "rows": [
+    {
+      "X": 0.975,
+      "eta": 0.2,
+      "order": 64,
+      "lambda_squared": -1911.0025366748948,
+      "target_dot_N": 3.765917744653491,
+      "target_dot_K": 0.8284711063661427,
+      "ratio": null,
+      "strict_pass": false,
+      "residual_norm": 5152.778122675532
+    },
+    {
+      "X": 0.985,
+      "eta": 0.2,
+      "order": 64,
+      "lambda_squared": -14965.678284133417,
+      "target_dot_N": -2.1707910881531265,
+      "target_dot_K": 2.8052010793854434,
+      "ratio": null,
+      "strict_pass": false,
+      "residual_norm": 4859.89046923926
+    },
+    {
+      "X": 0.995,
+      "eta": 0.2,
+      "order": 64,
+      "lambda_squared": 321.2422796023591,
+      "target_dot_N": -3.018996493377714,
+      "target_dot_K": 1.2165763393154774,
+      "ratio": 0.20594418951756216,
+      "strict_pass": true,
+      "residual_norm": 5561.041691466952
+    },
+    {
+      "X": 1.0,
+      "eta": 0.2,
+      "order": 64,
+      "lambda_squared": 823.160456681224,
+      "target_dot_N": -2.720413593870837,
+      "target_dot_K": 1.5343450829588328,
+      "ratio": 0.3240739444903011,
+      "strict_pass": true,
+      "residual_norm": 6306.302055806812
+    },
+    {
+      "X": 1.005,
+      "eta": 0.2,
+      "order": 64,
+      "lambda_squared": 1663.173886340658,
+      "target_dot_N": -2.365662372347721,
+      "target_dot_K": 1.860958773687783,
+      "ratio": 0.4938625571376569,
+      "strict_pass": true,
+      "residual_norm": 7136.124024795091
+    },
+    {
+      "X": 1.015,
+      "eta": 0.2,
+      "order": 64,
+      "lambda_squared": 5021.005193572669,
+      "target_dot_N": -1.5586848712488028,
+      "target_dot_K": 2.4107718996094576,
+      "ratio": 1.2307260385057577,
+      "strict_pass": false,
+      "residual_norm": 8535.213196693827
+    },
+    {
+      "X": 1.025,
+      "eta": 0.2,
+      "order": 64,
+      "lambda_squared": 10712.440317649825,
+      "target_dot_N": -0.7334876126059086,
+      "target_dot_K": 2.787973079985089,
+      "ratio": 3.7961629438657156,
+      "strict_pass": false,
+      "residual_norm": 9097.786772929156
+    },
+    {
+      "X": 0.975,
+      "eta": 0.3,
+      "order": 64,
+      "lambda_squared": -608.1888095437754,
+      "target_dot_N": -3.5482968184925836,
+      "target_dot_K": 1.4203253895032684,
+      "ratio": null,
+      "strict_pass": false,
+      "residual_norm": 6210.03721875874
+    },
+    {
+      "X": 0.985,
+      "eta": 0.3,
+      "order": 64,
+      "lambda_squared": -458.35612020469006,
+      "target_dot_N": -3.571125284173161,
+      "target_dot_K": 0.21061078144538575,
+      "ratio": null,
+      "strict_pass": false,
+      "residual_norm": 5966.383959815066
+    },
+    {
+      "X": 0.995,
+      "eta": 0.3,
+      "order": 64,
+      "lambda_squared": 466.7879543180808,
+      "target_dot_N": -3.298670939374433,
+      "target_dot_K": 0.5172639300805111,
+      "ratio": 0.7143588986147886,
+      "strict_pass": true,
+      "residual_norm": 6546.420079977824
+    },
+    {
+      "X": 1.0,
+      "eta": 0.3,
+      "order": 64,
+      "lambda_squared": 1792.3916263539354,
+      "target_dot_N": -3.1125704929923477,
+      "target_dot_K": 0.8582070420260343,
+      "ratio": 0.6888066007313979,
+      "strict_pass": true,
+      "residual_norm": 7192.438222372374
+    },
+    {
+      "X": 1.005,
+      "eta": 0.3,
+      "order": 64,
+      "lambda_squared": 3453.484128289516,
+      "target_dot_N": -2.8730085756508563,
+      "target_dot_K": 1.2482051701850736,
+      "ratio": 0.8357570753052409,
+      "strict_pass": true,
+      "residual_norm": 7935.437267229587
+    },
+    {
+      "X": 1.015,
+      "eta": 0.3,
+      "order": 64,
+      "lambda_squared": 7569.676265453833,
+      "target_dot_N": -2.234930726875499,
+      "target_dot_K": 2.0220779235408575,
+      "ratio": 1.3994600377900677,
+      "strict_pass": false,
+      "residual_norm": 9229.372749419863
+    },
+    {
+      "X": 1.025,
+      "eta": 0.3,
+      "order": 64,
+      "lambda_squared": 12733.896734100546,
+      "target_dot_N": -1.4779426502597413,
+      "target_dot_K": 2.645113519680081,
+      "ratio": 2.690828368606123,
+      "strict_pass": false,
+      "residual_norm": 9763.7073777035
+    }
+  ],
+  "pass_count": 6,
+  "outer_match": {
+    "max_velocity_difference": 0.0,
+    "max_pressure_difference": 0.0
+  },
+  "scope": "Finite radial sample of physical full-residual cone at two axial slices, not a continuous or all-time certificate. Outer field equality applies to the added step only. No supported wave or PDE acceptance.",
+  "accepted": false
+}

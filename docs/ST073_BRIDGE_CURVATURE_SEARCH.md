@@ -223,3 +223,48 @@ interval. Only after that should the existing Kelvin/curl-wave modules be
 coupled to the extended candidate. A zero-error pointwise NNLS fit or a
 positive normalized snapshot cone is insufficient for a supported wave
 or the requested complete-momentum threshold.
+
+## Two-stage radial moment control and physical-cone window
+
+`radial_moment_step.py` adds a solenoidal streamfunction step that rises
+across the old bridge, stays constant past its `X=1.5` exit, and falls to
+zero on `1.75<X<3`. Its perturbation is exactly absent for `X>=3`, so the
+same physical velocity and pressure are recovered there. At the old exit
+an amplitude `+1` changes normalized `M` by `0.9799959036379546` at
+`eta=.2` and `0.9543891407651217` at `eta=.3`, agreeing with the
+streamfunction prediction to roundoff. It also changes nonlinear `J` and
+`S`; this is a control direction, not a repaired mean profile.
+
+Combining shear amplitude `+2` at 16 radial cycles with moment-step
+amplitude `-.5` produces a first strict **physical full-residual** cone
+pass at `X=1`, `eta=.2`: `lambda_squared=823.16`, target projection
+`N=-2.7204`, ratio `0.3241` (Gauss order 64). The holdout passes at
+`eta=.3` and a second sampled time, but fails at `X=.95` and `1.05`.
+The denser `moment_shear_band_map.json` finds passes at `X=.995,1,1.005`
+for both `eta=.2,.3`, and failures at `.985,1.015` for both. At `eta=.2`
+the sampled passing span corresponds to physical radii about
+`0.01513364`–`0.01520950`, only `7.59e-5` wide for `nu=.01` and
+`tau=.5*2^-5.5`. These finite samples neither certify a continuous
+space-time cone nor give a viable wave-support width. The local full
+residual is still thousands, and no nonaxisymmetric correction is present.
+
+The exact outer-field equality is weaker than moment restoration.
+Piecewise Gauss-64 evaluation after the return step, at `X=3.5`, gives
+`delta[M,I,J,S,Cp]` relative to the same shear background of approximately
+`[0,0,-.65084249,+.11752822,0]` at `eta=.2` and
+`[0,0,-.62348152,+.26373130,0]` at `eta=.3`. A fixed-slice diagnostic
+with one derivative `U` bump and three separate `E` bumps on `1.76<X<2.98`
+has a full-rank initial four-row Jacobian, but a deterministic 15-start
+nonlinear solve leaves maximum moment defects `0.11677` and `0.14008`;
+its best corrected swirl also becomes negative. Thus that particular
+compensation basis fails even before it is lifted to a divergence-free
+three-dimensional field. This is a numerical failure of the tested
+basis/search, not an impossibility result.
+
+The next construction must broaden the strict physical cone while
+preserving positive swirl, then solve the five outgoing moments with
+smooth `eta`/time-dependent coefficients in a solenoidal representation.
+Only a supported wave with controlled remainder and independently checked
+complete momentum may be promoted toward the `1e-3` gates. This follows
+the distinction between [Appendix C's shear-loop and five-moment repair,
+and Sections 7–9's oscillatory/mean residual corrections](https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf).

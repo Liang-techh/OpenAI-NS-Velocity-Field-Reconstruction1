@@ -1,0 +1,107 @@
+{
+  "coefficients": {
+    "shear": 2.0,
+    "moment": -0.5
+  },
+  "rows": [
+    {
+      "k": 5.5,
+      "X": 0.95,
+      "eta": 0.2,
+      "order": 64,
+      "lambda_squared": 4922.445704961662,
+      "target_dot_N": 4.514605300210673,
+      "target_dot_K": 0.9465313551832732,
+      "ratio": 0.18834191111621731,
+      "strict_pass": false,
+      "residual_norm": 4350.27827741396
+    },
+    {
+      "k": 5.5,
+      "X": 1.0,
+      "eta": 0.2,
+      "order": 64,
+      "lambda_squared": 823.160456681224,
+      "target_dot_N": -2.720413593870837,
+      "target_dot_K": 1.5343450829588328,
+      "ratio": 0.3240739444903011,
+      "strict_pass": true,
+      "residual_norm": 6306.302055806812
+    },
+    {
+      "k": 5.5,
+      "X": 1.05,
+      "eta": 0.2,
+      "order": 64,
+      "lambda_squared": 27231.60676473509,
+      "target_dot_N": 0.8454646232008861,
+      "target_dot_K": 3.183656324795846,
+      "ratio": 5.592944255190405,
+      "strict_pass": false,
+      "residual_norm": 7046.232594972557
+    },
+    {
+      "k": 5.5,
+      "X": 0.95,
+      "eta": 0.3,
+      "order": 64,
+      "lambda_squared": -4489.3828346312575,
+      "target_dot_N": 3.801625675628983,
+      "target_dot_K": 2.238753810446727,
+      "ratio": null,
+      "strict_pass": false,
+      "residual_norm": 5524.413285097047
+    },
+    {
+      "k": 5.5,
+      "X": 1.0,
+      "eta": 0.3,
+      "order": 64,
+      "lambda_squared": 1792.3916263539354,
+      "target_dot_N": -3.1125704929923477,
+      "target_dot_K": 0.8582070420260343,
+      "ratio": 0.6888066007313979,
+      "strict_pass": true,
+      "residual_norm": 7192.438222372374
+    },
+    {
+      "k": 5.5,
+      "X": 1.05,
+      "eta": 0.3,
+      "order": 64,
+      "lambda_squared": 26361.680097341312,
+      "target_dot_N": 0.11667176313398453,
+      "target_dot_K": 3.4159926238809013,
+      "ratio": 52.14429083157418,
+      "strict_pass": false,
+      "residual_norm": 7827.460370192341
+    },
+    {
+      "k": 5.25,
+      "X": 1.0,
+      "eta": 0.2,
+      "order": 64,
+      "lambda_squared": 590.9259203105128,
+      "target_dot_N": -2.30750811303572,
+      "target_dot_K": 1.2965558674897633,
+      "ratio": 0.32602462547390504,
+      "strict_pass": true,
+      "residual_norm": 4858.3748630558075
+    },
+    {
+      "k": 5.25,
+      "X": 1.0,
+      "eta": 0.3,
+      "order": 64,
+      "lambda_squared": 1267.7189866666718,
+      "target_dot_N": -2.6296651788855163,
+      "target_dot_K": 0.7239126735531424,
+      "ratio": 0.6884911543977714,
+      "strict_pass": true,
+      "residual_norm": 5542.493348398153
+    }
+  ],
+  "pass_count": 4,
+  "scope": "Eight physical full-residual cone nodes near one discovery point. A finite pass set is not an open-region or all-time certificate; no wave or full momentum acceptance.",
+  "accepted": false
+}
