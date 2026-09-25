@@ -3,15 +3,19 @@ import json
 
 import numpy as np
 from numpy.polynomial.chebyshev import chebder, chebfit, chebval
+from numpy.polynomial.legendre import leggauss
 
 from joined_field import JoinedField, ROOT, coordinates
-from paper_moment_bridge import bump, null_bump, even_bump, slice_data
+from heat_exterior import profile as heat_profile
+from paper_moment_bridge import (bump, null_bump, even_bump,
+                                 radial_boundaries, slice_data)
 
 
 class MomentMatchedJoinedField:
     def __init__(self, base=None, null_amplitude=0.,
                  meridional_null_amplitude=0.,
-                 meridional_even_amplitude=0., patch=None):
+                 meridional_even_amplitude=0., patch=None,
+                 pressure_correction=False, pressure_datum='inner'):
         self.base = base if base is not None else JoinedField()
         self.nu = self.base.nu
         self.inner = self.base.inner
@@ -19,6 +23,10 @@ class MomentMatchedJoinedField:
         self.null_amplitude = float(null_amplitude)
         self.meridional_null_amplitude = float(meridional_null_amplitude)
         self.meridional_even_amplitude = float(meridional_even_amplitude)
+        self.pressure_correction = bool(pressure_correction)
+        if pressure_datum not in ('inner', 'outer'):
+            raise ValueError('pressure datum must be inner or outer')
+        self.pressure_datum = pressure_datum
         report = json.loads((ROOT/'paper_moment_coefficients.json').read_text())
         self.patch_start, self.patch_end = (
             tuple(map(float, patch)) if patch is not None
@@ -49,6 +57,36 @@ class MomentMatchedJoinedField:
                 [row['meridional_amplitude'] for row in training], fit_degree)
         self.meridional_derivative = chebder(self.meridional_coefficients)
 
+    def centrifugal_pressure_increment(self, X, eta, q):
+        """Integrate delta(E^2)/(2X) from the inner edge of the heat patch."""
+        X, eta, q = np.broadcast_arrays(np.asarray(X, float),
+                                         np.asarray(eta, float),
+                                         np.asarray(q, float))
+        result = np.zeros_like(X)
+        upper = np.minimum(X, self.patch_end)
+        g, w = leggauss(24)
+        boundaries = radial_boundaries(self.patch_start, self.patch_end)
+        for lo, hi in zip(boundaries[:-1], boundaries[1:]):
+            if hi <= self.patch_start:
+                continue
+            stop = np.minimum(upper, hi)
+            active = stop > lo
+            if not np.any(active):
+                continue
+            nodes = (lo+stop[active, None])/2+(stop[active, None]-lo)/2*g
+            weights = (stop[active, None]-lo)/2*w
+            e0 = heat_profile(nodes, eta[active, None], c=self.c,
+                              h=self.inner.h)['E']
+            b, _ = bump(nodes, self.patch_start, self.patch_end)
+            null, _ = null_bump(nodes, self.patch_start, self.patch_end)
+            aE = chebval(eta[active]/self.eta_scale,
+                          self.swirl_coefficients)
+            de = aE[:, None]*b+self.null_amplitude*null
+            result[active] += np.sum(weights*(e0*de+de*de/2)/nodes,
+                                     axis=1)
+        A = .5+self.inner.h
+        return self.nu*q**(-2*A)*result
+
     def fields(self, points, tau):
         pts = np.asarray(points, float)
         velocity, pressure = self.base.fields(pts, tau)
@@ -57,6 +95,14 @@ class MomentMatchedJoinedField:
         source_radius = radius/np.sqrt(self.nu)
         co = coordinates(source_radius, source[:, 2], tau, self.inner.h)
         X = np.asarray(co['X'])
+        if self.pressure_correction:
+            eta_all, q_all = np.asarray(co['eta']), np.asarray(co['q'])
+            increment = self.centrifugal_pressure_increment(
+                X, eta_all, q_all)
+            if self.pressure_datum == 'outer':
+                increment -= self.centrifugal_pressure_increment(
+                    np.full_like(X, self.patch_end), eta_all, q_all)
+            pressure += increment
         active = (X > self.patch_start) & (X < self.patch_end)
         if not np.any(active):
             return velocity, pressure
