@@ -1,0 +1,227 @@
+{
+  "source": "delayed_remote_moment_repair_near5wide.json",
+  "rows": [
+    {
+      "eta": 0.2,
+      "target_Cp": 5.707046563836623,
+      "Cp_min": 5.661716617336264,
+      "target_minus_Cp_min": 0.04532994650035871,
+      "E_min_relative_to_target": -0.17185308895391987,
+      "E_KKT_condition": 81.47114465140943,
+      "E_coefficients": [
+        -0.22876051370247125,
+        -1.1213779969524516,
+        -0.17543998872702313,
+        0.2887829930053856
+      ],
+      "U_scenarios": [
+        {
+          "label": "near_positive_fit",
+          "S_min": 2.4604093353543184,
+          "target_minus_S_min": 0.012494131899649652,
+          "optimistic_continuum_S_min": 2.3941096673627418,
+          "target_minus_continuum_S_min": 0.07879379989122626,
+          "KKT_condition": 1394.720524989543,
+          "coefficients": [
+            0.011108353590693782,
+            0.008003053105904151,
+            -0.0019456218525216013,
+            -0.008680097241127022
+          ]
+        },
+        {
+          "label": "minimum_Cp_E",
+          "S_min": 3.286796980316561,
+          "target_minus_S_min": -0.813893513062593,
+          "optimistic_continuum_S_min": 2.4743628297709446,
+          "target_minus_continuum_S_min": -0.0014593625169765367,
+          "KKT_condition": 3711.5241214250345,
+          "coefficients": [
+            0.07299372095043058,
+            -0.05728089255284549,
+            -0.008116135175452004,
+            0.16873547707998277
+          ]
+        }
+      ]
+    },
+    {
+      "eta": 0.225,
+      "target_Cp": 5.676800960522291,
+      "Cp_min": 5.6321565887257545,
+      "target_minus_Cp_min": 0.044644371796536575,
+      "E_min_relative_to_target": -0.17265262543583848,
+      "E_KKT_condition": 81.47114465140949,
+      "E_coefficients": [
+        -0.230527197481256,
+        -1.1211124446424257,
+        -0.17585469888413202,
+        0.2877458240474086
+      ],
+      "U_scenarios": [
+        {
+          "label": "near_positive_fit",
+          "S_min": 2.316879640685862,
+          "target_minus_S_min": -0.014461215068748423,
+          "optimistic_continuum_S_min": 2.256271108922129,
+          "target_minus_continuum_S_min": 0.0461473166949844,
+          "KKT_condition": 1403.5858877062242,
+          "coefficients": [
+            0.010287383716748467,
+            0.007473683412141853,
+            -0.004589965088547093,
+            -0.010364642822481337
+          ]
+        },
+        {
+          "label": "minimum_Cp_E",
+          "S_min": 3.0624802627743115,
+          "target_minus_S_min": -0.7600618371571981,
+          "optimistic_continuum_S_min": 2.3335937162075613,
+          "target_minus_continuum_S_min": -0.03117529059044788,
+          "KKT_condition": 3663.430499771572,
+          "coefficients": [
+            0.06957726568219118,
+            -0.05352652260647825,
+            -0.008510932988082136,
+            0.1574885912508262
+          ]
+        }
+      ]
+    },
+    {
+      "eta": 0.25,
+      "target_Cp": 5.642837209431846,
+      "Cp_min": 5.598403540217411,
+      "target_minus_Cp_min": 0.04443366921443559,
+      "E_min_relative_to_target": -0.17284946617200053,
+      "E_KKT_condition": 81.47114465140926,
+      "E_coefficients": [
+        -0.23177613227276364,
+        -1.1207768822588626,
+        -0.17602594528950546,
+        0.2873344855374436
+      ],
+      "U_scenarios": [
+        {
+          "label": "near_positive_fit",
+          "S_min": 2.2059829344725905,
+          "target_minus_S_min": -0.038163060522279135,
+          "optimistic_continuum_S_min": 2.1584608288672547,
+          "target_minus_continuum_S_min": 0.009359045083056738,
+          "KKT_condition": 1404.9544461583064,
+          "coefficients": [
+            0.012273512657693584,
+            0.0021097290923315177,
+            0.018639989052085144,
+            0.010296664721384397
+          ]
+        },
+        {
+          "label": "minimum_Cp_E",
+          "S_min": 3.180648749679118,
+          "target_minus_S_min": -1.0128288757288066,
+          "optimistic_continuum_S_min": 2.2353377043441642,
+          "target_minus_continuum_S_min": -0.06751783039385284,
+          "KKT_condition": 3656.5252982534357,
+          "coefficients": [
+            0.07843213338117466,
+            -0.07035448874318109,
+            -0.003604842689889793,
+            0.19447471667331329
+          ]
+        }
+      ]
+    },
+    {
+      "eta": 0.275,
+      "target_Cp": 5.60517542490223,
+      "Cp_min": 5.560437348437135,
+      "target_minus_Cp_min": 0.04473807646509442,
+      "E_min_relative_to_target": -0.17247917168402319,
+      "E_KKT_condition": 81.47114465140972,
+      "E_coefficients": [
+        -0.23110367975207416,
+        -1.120129925607002,
+        -0.17582853517685187,
+        0.28765295294790333
+      ],
+      "U_scenarios": [
+        {
+          "label": "near_positive_fit",
+          "S_min": 2.1485760220039953,
+          "target_minus_S_min": -0.08282264527639782,
+          "optimistic_continuum_S_min": 2.0847056459140636,
+          "target_minus_continuum_S_min": -0.018952269186466086,
+          "KKT_condition": 1423.2168754626011,
+          "coefficients": [
+            0.012360769994736015,
+            -0.0017577400960466158,
+            0.03393544093878972,
+            0.025277957529403153
+          ]
+        },
+        {
+          "label": "minimum_Cp_E",
+          "S_min": 3.3150350337173595,
+          "target_minus_S_min": -1.249281656989762,
+          "optimistic_continuum_S_min": 2.160464421493816,
+          "target_minus_continuum_S_min": -0.0947110447662185,
+          "KKT_condition": 3681.508252776978,
+          "coefficients": [
+            0.08369344355385647,
+            -0.0845075576193792,
+            0.0006581382114760688,
+            0.22425518993471796
+          ]
+        }
+      ]
+    },
+    {
+      "eta": 0.3,
+      "target_Cp": 5.56386811577693,
+      "Cp_min": 5.518597085543445,
+      "target_minus_Cp_min": 0.045271030233484666,
+      "E_min_relative_to_target": -0.17189293079182447,
+      "E_KKT_condition": 81.47114465140939,
+      "E_coefficients": [
+        -0.22707090882561995,
+        -1.1190803119331427,
+        -0.17533377467903244,
+        0.2883942859586439
+      ],
+      "U_scenarios": [
+        {
+          "label": "near_positive_fit",
+          "S_min": 2.039460563935757,
+          "target_minus_S_min": -0.04664573005123729,
+          "optimistic_continuum_S_min": 2.012608114615686,
+          "target_minus_continuum_S_min": -0.019793280731166485,
+          "KKT_condition": 1400.264603000619,
+          "coefficients": [
+            0.007204909465174144,
+            -0.0017237726064100415,
+            0.017937197566114928,
+            0.013397075022755115
+          ]
+        },
+        {
+          "label": "minimum_Cp_E",
+          "S_min": 2.9176062888182486,
+          "target_minus_S_min": -0.924791454933729,
+          "optimistic_continuum_S_min": 2.087057962093431,
+          "target_minus_continuum_S_min": -0.09424312820891134,
+          "KKT_condition": 3732.3777642503705,
+          "coefficients": [
+            0.0693222232716817,
+            -0.07230617711479947,
+            -0.0016983128060409946,
+            0.19064177491956447
+          ]
+        }
+      ]
+    }
+  ],
+  "scope": "Independent fixed-eta quadratic lower bounds for I/Cp and J/S. Negative target-minus-minimum would rule out that staged radial subproblem. Positive margin does not construct a positive global field or prove PDE matching.",
+  "accepted": false
+}

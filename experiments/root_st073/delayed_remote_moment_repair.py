@@ -1,7 +1,7 @@
 """Repair outgoing moments away from the fifteen-node stress cone.
 
 Twenty-four compact exact-solenoidal velocity modes are supported at
-X>=1.1. Five axial collocation slices constrain the J/S/I/Cp moments;
+X>=1.1. Five axial collocation slices constrain the I/J/S/Cp moments;
 interlaced slices and remote momentum nodes check interpolation cost.
 This is a mean-field experiment, not a completed Navier--Stokes field.
 """
@@ -199,6 +199,7 @@ def run(near=False, near4=False, near5=False, near5wide=False):
     old_local, _ = mean.fields(cone_points, tau)
     new_local, _ = patched.fields(cone_points, tau)
     report = dict(source='delayed_axial_split_pressure_fit_tuned.json',
+                  moment_order=['M', 'I', 'J', 'S', 'Cp'],
                   tau=tau, radial_intervals=radial_intervals,
                   axial_intervals=axial_intervals,
                   floor_weight=floor_weight,

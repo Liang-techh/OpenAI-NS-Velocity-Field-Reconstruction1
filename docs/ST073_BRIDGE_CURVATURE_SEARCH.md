@@ -1258,8 +1258,9 @@ and poloidal perturbations away from the sampled inner cone. Its radial
 supports begin at `X=1.04` or farther out, so the sampled velocity at
 `X<=1.03` is unchanged. The five training slices are
 `eta=.2,.225,.25,.275,.3`; four interlaced slices check interpolation.
-The fit targets the outgoing `J,S,I,Cp` moments while penalizing any
-drop of relative swirl energy below `.11` of the starting profile.
+The fit targets the outgoing `[I,J,S,Cp]` moments (in the code's
+`[M,I,J,S,Cp]` order) while penalizing any drop of `E/E_target`
+below `.11`.
 
 The first 24-mode remote fit barely changes the largest training
 moment defect (`.04437` to `.04398`) and increases sampled remote
@@ -1268,14 +1269,14 @@ lowers the defect to `.03188`, but still misses the moment target and
 the swirl floor. An analytic Jacobian audit in
 `delayed_remote_moment_rank.py` explains part of this failure: the
 four-support, 32-mode matrix for 20 moment constraints has rank 19.
-Its left null direction is concentrated in the `J` condition at
+Its left null direction is concentrated in the `I` condition at
 `eta=.225`, so amplitude tuning alone cannot close all five slices.
 
 Adding a fifth axial support around `eta=.225` raises the local
 Jacobian rank to 20. This removes the linear reachability obstruction,
 but a bounded nonlinear fit still leaves maximum training defect
-`.03194` and minimum relative swirl energy `.10879`, below the `.11`
-floor. The dominant remaining defects are coupled `S` and `I`
+`.03194` and minimum `E/E_target` `.10879`, below the `.11`
+floor. The dominant remaining defects are coupled `J` and `S`
 conditions. The sampled remote momentum maximum remains about
 `1.34e5`, while its RMS rises relative to the unpatched mean. These
 are exploratory fits (`accepted:false`): full rank at one linearization
@@ -1286,8 +1287,48 @@ Widening the mode-amplitude bounds and strengthening the swirl-floor
 penalty (`delayed_remote_moment_repair_near5wide.json`) does not change
 the conclusion: the optimizer reaches its evaluation limit with
 training defect `.03192`, holdout defect `.02919`, and minimum relative
-swirl energy `.10882`. The local cone samples remain unchanged; sampled
+`E/E_target` `.10882`. The local cone samples remain unchanged; sampled
 remote momentum RMS is `6.68e4` versus `6.04e4` before correction.
 The next repair should explicitly preserve positive swirl energy and
-separate the `S/I` coupling, rather than extend this generic bounded
+separate the `J/S` coupling, rather than extend this generic bounded
 least-squares search.
+
+`delayed_remote_moment_feasibility.py` removes both the swirl-floor
+penalty and coefficient regularization from the same forty-mode fit.
+Even after 1000 evaluations, its largest training defect is `.02822`
+and the minimum `E/E_target` falls to `-.07831`; sampled remote
+momentum RMS rises to `6.79e4`. This is a diagnostic only, not an
+accepted negative-swirl velocity field.
+
+`delayed_remote_slice_bounds.py` then separates the paired nonlinear
+moment constraints at each eta. For fixed `E`, it minimizes the U
+energy `integral U^2` subject to the exact J moment, first within the
+four available radial poloidal modes. With the near-positive E from
+the preceding bounded fit, the target S lies below that four-mode
+minimum by `.0145,.0382,.0828,.0466` at eta `.225,.25,.275,.3`.
+An even more permissive bound lets U vary arbitrarily on the entire
+`X=1.04..2.5` union of those supports, while preserving its mass and
+holding U fixed outside. The target remains below this optimistic
+minimum by `.01895` at eta `.275` and `.01979` at eta `.3`. These
+inequalities are conditional on that fixed E profile and support;
+they are not a general impossibility result. They show that adding
+more U modes inside the same support cannot finish this fit without
+redistributing E, extending the support, or changing the coupled
+background. The accompanying Cp minimization at fixed I has positive
+target slack, but its unconstrained minimizer has negative E, so it
+cannot be used as a positive-swirl construction.
+
+The constructive next step follows the paper's Appendix A and the
+repository's earlier fixed-slice prototype
+(`azimuthal_capacity_optimize.py` and
+`coupled_five_moment_slice.py`): use ordered radial E bumps to impose
+`I` and `Cp` exactly with a hard positive-E bound, choosing the E
+redistribution to create enough `S` slack. Then solve `J` (and `M` if
+the new U basis changes mass) with a U KKT minimum and spend a null
+direction on the remaining quadratic `S` equality. The existing
+remote curl modes preserve `M` automatically, so they cannot repair
+its small nonzero defect. This fixed-slice algebra must be lifted to
+smooth eta-dependent coefficients and audited against continuum
+positivity, outer matching, pressure, and complete momentum; the
+current sampled soft-floor least-squares fit supplies none of those
+proofs.

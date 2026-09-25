@@ -87,6 +87,6 @@
   "nonlinear_actual_scaled_l2": 51.24367211798846,
   "linear_solution_max_abs_coefficient": 0.0620309446935655,
   "linear_solution_min_relative_E": 0.08331915432878587,
-  "scope": "Linearized rank and one unconstrained Newton step for five-eta J/S/I/Cp moments. A full-rank Jacobian is local reachability only; it does not prove a bounded, positive-swirl nonlinear solution or PDE acceptance.",
+  "scope": "Linearized rank and one unconstrained Newton step for five-eta I/J/S/Cp moments. A full-rank Jacobian is local reachability only; it does not prove a bounded, positive-swirl nonlinear solution or PDE acceptance.",
   "accepted": false
 }

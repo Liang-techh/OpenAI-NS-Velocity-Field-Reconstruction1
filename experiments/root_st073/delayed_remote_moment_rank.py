@@ -56,6 +56,7 @@ def run(near5=False):
         defects(row, step)[2]/row['E0'])) for row in rows)
     report = dict(source=('proposed-near5' if near5 else
                           'delayed_remote_moment_repair_near4.json'),
+                  moment_order=['I', 'J', 'S', 'Cp'],
                   axial_intervals=axial_intervals,
                   matrix_shape=matrix.shape,
                   rank=int(np.linalg.matrix_rank(matrix)),
@@ -71,7 +72,7 @@ def run(near5=False):
                       np.max(np.abs(step))),
                   linear_solution_min_relative_E=relative_floor,
                   scope='Linearized rank and one unconstrained Newton '
-                        'step for five-eta J/S/I/Cp moments. A full-rank '
+                        'step for five-eta I/J/S/Cp moments. A full-rank '
                         'Jacobian is local reachability only; it does '
                         'not prove a bounded, positive-swirl nonlinear '
                         'solution or PDE acceptance.', accepted=False)
