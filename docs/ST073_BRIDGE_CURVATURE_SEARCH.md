@@ -589,3 +589,36 @@ entrance and return nodes at several times in one objective, and must
 restore a finite positive cone region before invoking oscillatory
 stress cancellation. No volume-L2 or `1e-3` claim follows from these
 local screens.
+
+## Two-time entrance/return objective
+
+`delayed_multitime_momentum_screen.py` reuses the three projected
+fixed-M/J/S directions, but fits all three Cartesian residual components
+at ten `eta=.3` nodes at each of two times (`k=5.5` and `5.25`). The
+nodes include the entrance, middle, and far return at `X=2.975`; the
+far return is normalized by its own baseline residual in the surrogate
+so it is not silently sacrificed to the much larger entrance. The
+candidate criterion requires lower sampled overall maximum, lower
+middle/return maximum, and no far-return increase at either time.
+
+The first larger surrogate step is infeasible on the exact S manifold
+or raises the entrance maximum. A small step, `0.025` times the
+linearized fit, produces the experimental
+`delayed005_wide04_multitime_tangent.json`. On the 20 fit nodes, its
+overall maximum changes from `9.565792e5` to `9.553478e5`, its RMS
+from `5.208011e5` to `5.197927e5`, and its middle/return maximum
+from `6.288559e5` to `6.255864e5`. The `k=5.25` maximum changes from
+`7.372641e5` to `7.363150e5`. Its reference-time two-slice physical
+five-moment defects remain below `1.8e-13` by independent quadrature.
+
+`delayed_multitime_holdout.py` uses unseen `eta=.29,.31`, different
+spatial nodes, and two other nearby times (`k=5.4,5.15`). The entrance
+maxima improve by about `0.043%` at both times; far-return maxima
+improve by about `2.4%`. The middle maxima **worsen by about `2.8%`**
+at both times. The small fit-point gain does not survive as an
+all-region improvement. The three fixed-E, single-slice U directions
+are therefore insufficient for promoting a corrected field. The next
+constructive route must give the correction a coupled time/axial shape
+and optimize the physical stress cone and complete momentum jointly,
+then measure a spatial volume norm rather than extrapolating from
+these selected points.

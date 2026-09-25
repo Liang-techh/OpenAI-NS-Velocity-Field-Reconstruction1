@@ -1,15 +1,15 @@
 """Materialize the screened fixed-moment momentum-tangent profile."""
 
+import argparse
 import copy
 import json
 
 from radial_continuation import ROOT
 
 
-def run():
+def run(screen_name='delayed_momentum_tangent_screen.json',
+        output_name='delayed005_wide04_momentum_tangent.json'):
     source_name = 'delayed005_wide04_reoptimized_E.json'
-    screen_name = 'delayed_momentum_tangent_screen.json'
-    output_name = 'delayed005_wide04_momentum_tangent.json'
     source = json.loads((ROOT/source_name).read_text())
     screen = json.loads((ROOT/screen_name).read_text())
     if screen['slice_filename'] != source_name:
@@ -25,9 +25,13 @@ def run():
                   'optimizer_success', 'final_delta'):
         row.pop(stale, None)
     original_row = next(row for row in source['rows'] if row['eta'] == .3)
+    defect = screen.get('selected_slice_moment_defect',
+                        screen['selected'].get('slice_moment_defect'))
+    if defect is None:
+        raise ValueError('Momentum screen lacks a slice-moment check')
     row['max_abs_five_moment_defect'] = (
         original_row['max_abs_five_moment_defect']
-        + max(abs(value) for value in screen['selected_slice_moment_defect']))
+        + max(abs(value) for value in defect))
     row['moment_defect_method'] = 'coefficient quadrature; physical check is separate'
     row['five_moments_restored'] = True
     row['momentum_tangent_screen'] = screen_name
@@ -44,4 +48,10 @@ def run():
 
 
 if __name__ == '__main__':
-    run()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--screen-name',
+                        default='delayed_momentum_tangent_screen.json')
+    parser.add_argument('--output-name',
+                        default='delayed005_wide04_momentum_tangent.json')
+    args = parser.parse_args()
+    run(args.screen_name, args.output_name)
