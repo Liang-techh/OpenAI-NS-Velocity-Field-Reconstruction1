@@ -53,4 +53,3 @@ class MomentMatchedJoinedField:
         velocity[active, 1] += delta_radial*sa+delta_theta*ca
         velocity[active, 2] += delta_axial
         return velocity, pressure
-
