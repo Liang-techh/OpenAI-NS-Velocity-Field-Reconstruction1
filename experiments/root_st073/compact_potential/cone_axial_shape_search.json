@@ -1,0 +1,279 @@
+{
+  "tau": 0.0078125,
+  "radius": 0.0056890761915166545,
+  "heights": [
+    0.0025,
+    0.00275,
+    0.003,
+    0.00325,
+    0.003432627453438968
+  ],
+  "mode_ids": [
+    {
+      "radial_degree": 0,
+      "axial_degree": 0,
+      "parity": "odd",
+      "temporal_power": 2.0
+    },
+    {
+      "radial_degree": 0,
+      "axial_degree": 1,
+      "parity": "odd",
+      "temporal_power": 2.0
+    },
+    {
+      "radial_degree": 0,
+      "axial_degree": 2,
+      "parity": "odd",
+      "temporal_power": 2.0
+    },
+    {
+      "radial_degree": 1,
+      "axial_degree": 0,
+      "parity": "odd",
+      "temporal_power": 2.0
+    },
+    {
+      "radial_degree": 1,
+      "axial_degree": 1,
+      "parity": "odd",
+      "temporal_power": 2.0
+    },
+    {
+      "radial_degree": 1,
+      "axial_degree": 2,
+      "parity": "odd",
+      "temporal_power": 2.0
+    }
+  ],
+  "amplitude_scales": [
+    0.024370929249130032,
+    0.055279825372541655,
+    0.04023858394808499,
+    0.027481777557824234,
+    0.06229505236622288,
+    0.04535248697376487
+  ],
+  "normalized_coordinates": [
+    2.3600018962632037,
+    3.5039649231274392,
+    -3.205712131218728,
+    0.8545857781763138,
+    2.5546879592161122,
+    -3.7159085528162756
+  ],
+  "amplitudes": [
+    0.05751543924164325,
+    0.19369856906199617,
+    -0.12899331670543923,
+    0.02348553625992158,
+    0.15914442019872677,
+    -0.16852569423730163
+  ],
+  "optimizer_success": false,
+  "optimizer_message": "Maximum number of iterations has been exceeded.",
+  "initial_rows": [
+    {
+      "z": 0.0025,
+      "target": [
+        -11.546942081636155,
+        -38.997170466114184
+      ],
+      "target_dot_N": 39.580988596421996,
+      "lambda_squared": 61702.287931308856,
+      "center_residual_norm": 377496.0558281243,
+      "cone_ratio": 0.14926557556191034,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.00275,
+      "target": [
+        -66.66826256430416,
+        -168.10601226525773
+      ],
+      "target_dot_N": 180.00893997363582,
+      "lambda_squared": 66768.40228369944,
+      "center_residual_norm": 332936.1206141816,
+      "cone_ratio": 0.07038583123952226,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.003,
+      "target": [
+        -84.15940577931993,
+        -154.94138171896307
+      ],
+      "target_dot_N": 176.09795220179487,
+      "lambda_squared": 47073.8850343653,
+      "center_residual_norm": 516394.79409075057,
+      "cone_ratio": 0.037672164722175695,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.00325,
+      "target": [
+        -18.438291651241087,
+        29.263943867588736
+      ],
+      "target_dot_N": -18.613847817843002,
+      "lambda_squared": 16704.547714742483,
+      "center_residual_norm": 688423.126366762,
+      "cone_ratio": 1.0310491674250184,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.003432627453438968,
+      "target": [
+        45.59504511935532,
+        138.95833409946138
+      ],
+      "target_dot_N": -145.01950437784086,
+      "lambda_squared": 3919.8512179384275,
+      "center_residual_norm": 266159.892129595,
+      "cone_ratio": 0.06730547945684395,
+      "strict_local_pass": true
+    }
+  ],
+  "optimized_rows": [
+    {
+      "z": 0.0025,
+      "target": [
+        -11.484764775848518,
+        -34.92333782326286
+      ],
+      "target_dot_N": 36.01904821157842,
+      "lambda_squared": 62033.80902369743,
+      "center_residual_norm": 312400.908433962,
+      "cone_ratio": 0.12957379143524986,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.00275,
+      "target": [
+        -65.92757271778842,
+        -115.33036728106201
+      ],
+      "target_dot_N": 132.6242862200636,
+      "lambda_squared": 72519.98646764444,
+      "center_residual_norm": 47050.83748418929,
+      "cone_ratio": 0.04486922873039331,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.003,
+      "target": [
+        -81.531786027555,
+        -50.41340903546202
+      ],
+      "target_dot_N": 80.25475593110579,
+      "lambda_squared": 50131.203678056394,
+      "center_residual_norm": 387547.0948053393,
+      "cone_ratio": 0.5119779863703443,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.00325,
+      "target": [
+        -13.831919107342262,
+        -28.53235647314711
+      ],
+      "target_dot_N": 31.696745337783817,
+      "lambda_squared": 10280.889110858288,
+      "center_residual_norm": 382222.1535485252,
+      "cone_ratio": 0.012921276925204889,
+      "strict_local_pass": false
+    },
+    {
+      "z": 0.003432627453438968,
+      "target": [
+        49.16776420057352,
+        -87.94575053801955
+      ],
+      "target_dot_N": 53.82413763684837,
+      "lambda_squared": 681.4156723827076,
+      "center_residual_norm": 330543.6257660981,
+      "cone_ratio": 0.30828671613701375,
+      "strict_local_pass": false
+    }
+  ],
+  "initial_max_sample_residual": 688423.126366762,
+  "optimized_max_sample_residual": 459777.9573752168,
+  "optimized_max_sample_speed": 3.7232834358340856,
+  "all_five_local_cones_pass": false,
+  "best_by_pass_count": {
+    "pass_count": 3,
+    "normalized_coordinates": [
+      2.921292184051863,
+      0.8005736008071249,
+      0.1614537080386622,
+      0.5425239428402424,
+      0.5971499758077758,
+      -1.9513228940421992
+    ],
+    "max_sample_residual": 1357114.7855443277,
+    "rows": [
+      {
+        "z": 0.0025,
+        "target": [
+          -11.0839327332569,
+          33.3677954620375
+        ],
+        "target_dot_N": -23.48117731182088,
+        "lambda_squared": 62288.00869901828,
+        "center_residual_norm": 328595.94772035076,
+        "cone_ratio": 0.7087923707002508,
+        "strict_local_pass": true
+      },
+      {
+        "z": 0.00275,
+        "target": [
+          -63.63170154479756,
+          -151.3678203650937
+        ],
+        "target_dot_N": 163.97023098477442,
+        "lambda_squared": 77791.16662428755,
+        "center_residual_norm": 1357114.7855443277,
+        "cone_ratio": 0.043583664358843574,
+        "strict_local_pass": false
+      },
+      {
+        "z": 0.003,
+        "target": [
+          -82.85191907779912,
+          -262.13100737299357
+        ],
+        "target_dot_N": 273.30189288934355,
+        "lambda_squared": 58295.92860801922,
+        "center_residual_norm": 907728.4856975902,
+        "cone_ratio": 0.09688215834529167,
+        "strict_local_pass": false
+      },
+      {
+        "z": 0.00325,
+        "target": [
+          -16.929542719606864,
+          92.28322170838348
+        ],
+        "target_dot_N": -75.77550103642474,
+        "lambda_squared": 15236.606638485344,
+        "center_residual_norm": 1016079.8664694425,
+        "cone_ratio": 0.45054975545759657,
+        "strict_local_pass": true
+      },
+      {
+        "z": 0.003432627453438968,
+        "target": [
+          47.78046808470478,
+          139.09570940826646
+        ],
+        "target_dot_N": -146.0354569902217,
+        "lambda_squared": 3733.5674530692095,
+        "center_residual_norm": 659026.0711245347,
+        "cone_ratio": 0.05978295712397615,
+        "strict_local_pass": true
+      }
+    ]
+  },
+  "scope": "Fixed radius, five positive heights, one registered time; physical-field analog of the paper local cone. Six exact-solenoidal radial/axial shapes optimized with soft feasibility penalties. Not the normalized paper cone, no supported nonaxisymmetric wave, full-volume momentum gate or force extension.",
+  "accepted": false
+}

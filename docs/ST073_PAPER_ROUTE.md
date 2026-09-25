@@ -47,3 +47,8 @@ normalized background is not identical to the corrected physical ST073 field.
 For the critical-time force requirement and the new selected-collar residual
 trend, see `ST073_FORCING_REGULARITY.md`. The current finite-slab residual
 cannot yet serve as the paper's smooth compact force.
+
+For the small axial-anisotropy exponent and the bounded axial-shape cone
+search, see `ST073_SCALE_AND_CONE_ROUTE.md`. Local shape fitting has not
+established the wave-admissible stress direction; prioritize the mean radial
+moment and heat-exterior construction before another supported pulse trial.
