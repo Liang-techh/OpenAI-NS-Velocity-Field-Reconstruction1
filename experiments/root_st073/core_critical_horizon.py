@@ -44,23 +44,24 @@ def run():
     source = ROOT / "NS_ST073_Full_Local_Recurrence/data/ST073-V.json"
     baseline = FullRadialField.load(source)
     orders = (8, 10, 12, 14)
-    ks = (6, 8, 10, 12, 14, 15, 16, 18)
+    ks = (6, 8, 10, 12, 14, 15, 16, 18, 20, 21, 22)
     x_nodes = np.array([0.001, 0.004, 0.008, 0.012, 1.0 / 64.0])
     eta_nodes = np.array([-0.3, -0.15, 0.0, 0.15, 0.3])
     rows = {}
     for order in orders:
-        field = FullRadialField(replace(baseline.p, order=order, k_max=max(ks)))
-        rows[str(order)] = [sampled_row(field, k, x_nodes, eta_nodes) for k in ks]
+        order_ks = ks if order <= 10 else tuple(k for k in ks if k <= 18)
+        field = FullRadialField(replace(baseline.p, order=order, k_max=max(order_ks)))
+        rows[str(order)] = [sampled_row(field, k, x_nodes, eta_nodes) for k in order_ks]
     peak8 = np.array([r["sampled_momentum_max"] for r in rows["8"]])
     peak10 = np.array([r["sampled_momentum_max"] for r in rows["10"]])
     report = dict(
         source=str(source.relative_to(ROOT)),
-        modification="k_max is extended to 18 for diagnosis; orders 8, 10, 12 and 14 compare radial truncations with all other parameters fixed.",
+        modification="k_max is extended to 22 for orders 8 and 10, and to 18 for orders 12 and 14; all other parameters are fixed.",
         viscosity=baseline.nu,
         target_momentum_max=1e-3,
         x_nodes=x_nodes.tolist(),
         eta_nodes=eta_nodes.tolist(),
-        k_values=list(ks),
+        k_values_by_radial_order={str(order): [row["k"] for row in rows[str(order)]] for order in orders},
         rows_by_radial_order=rows,
         relative_order_8_to_10_peak_difference=(np.abs(peak8 - peak10) / np.maximum(peak10, 1e-300)).tolist(),
         arithmetic_note="On this Windows host np.longdouble has float64 precision. eps times the sum of PDE-term norms is only a roundoff scale indicator, not an error bound. Residuals comparable to it are unresolved.",
@@ -70,7 +71,7 @@ def run():
         scale_recursion_established=False,
     )
     output = ROOT / "core_critical_horizon.json"
-    output.write_text(json.dumps(report, indent=2) + "\n")
+    output.write_bytes((json.dumps(report, indent=2) + "\n").encode())
     print(json.dumps(dict(output=str(output), first_sampled_failure_k_by_order=report["first_sampled_failure_k_by_order"], rows_by_radial_order=rows), indent=2))
     return report
 
