@@ -37,7 +37,7 @@ def run():
     report = {'rows': rows, 'scope': 'Selected worst points from the earlier registered eight-point collar screen. Finite-difference decomposition of the physical momentum operator; not a global maximum or proof of asymptotic behavior.',
               'accepted': False}
     path = ROOT/'compact_potential'/'collar_residual_terms.json'
-    path.write_text(json.dumps(report, indent=2)+'\n')
+    path.write_bytes((json.dumps(report, indent=2)+'\n').encode())
 
 
 if __name__ == '__main__':

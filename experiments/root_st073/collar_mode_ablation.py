@@ -35,8 +35,8 @@ def run():
                           'corrected': cases['0.1']['residual_norm']}), flush=True)
     report = {'rows': rows, 'scope': 'Same selected collar points for baseline and robust local-poloidal strength 0.1. The points were selected using corrected-field residual, so this is an ablation, not a fair maximum comparison.',
               'accepted': False}
-    (ROOT/'compact_potential'/'collar_mode_ablation.json').write_text(
-        json.dumps(report, indent=2)+'\n')
+    (ROOT/'compact_potential'/'collar_mode_ablation.json').write_bytes(
+        (json.dumps(report, indent=2)+'\n').encode())
 
 
 if __name__ == '__main__':
