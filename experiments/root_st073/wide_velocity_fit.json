@@ -1,0 +1,122 @@
+{
+  "join_X": 0.09375,
+  "outer_ratio": 4.0,
+  "mode_ids": [
+    {
+      "kind": "poloidal",
+      "radial_degree": 0,
+      "axial_degree": 0
+    },
+    {
+      "kind": "poloidal",
+      "radial_degree": 0,
+      "axial_degree": 1
+    },
+    {
+      "kind": "poloidal",
+      "radial_degree": 1,
+      "axial_degree": 0
+    },
+    {
+      "kind": "poloidal",
+      "radial_degree": 1,
+      "axial_degree": 1
+    },
+    {
+      "kind": "swirl",
+      "radial_degree": 0,
+      "axial_degree": 0
+    },
+    {
+      "kind": "swirl",
+      "radial_degree": 0,
+      "axial_degree": 1
+    },
+    {
+      "kind": "swirl",
+      "radial_degree": 1,
+      "axial_degree": 0
+    },
+    {
+      "kind": "swirl",
+      "radial_degree": 1,
+      "axial_degree": 1
+    }
+  ],
+  "amplitudes": [
+    -0.00037070898421855646,
+    -0.12616070320088202,
+    0.004697870672758837,
+    1.0195732440029566,
+    -0.21023887474472974,
+    0.00047268869682609165,
+    -1.9999999999999978,
+    -0.01995531373351157
+  ],
+  "optimizer_success": true,
+  "optimizer_message": "`ftol` termination condition is satisfied.",
+  "rows": [
+    {
+      "name": "train",
+      "k": 5.5,
+      "point_count": 15,
+      "baseline_max": 5942.899175364445,
+      "corrected_max": 5803.260303963856,
+      "baseline_rms": 2316.0464712274693,
+      "corrected_rms": 1925.1213727391976,
+      "baseline_component_max": [
+        4580.335903117362,
+        1225.5927915117388,
+        5537.308535868826
+      ],
+      "corrected_component_max": [
+        3839.6893763077437,
+        1301.7812197427363,
+        5396.231144371146
+      ],
+      "divergence_max": null
+    },
+    {
+      "name": "space_holdout",
+      "k": 5.5,
+      "point_count": 6,
+      "baseline_max": 3902.2639891434314,
+      "corrected_max": 3853.8384530727753,
+      "baseline_rms": 1648.3440668510475,
+      "corrected_rms": 1801.467996595229,
+      "baseline_component_max": [
+        3304.703130746016,
+        1519.8597747873137,
+        2225.5507490369973
+      ],
+      "corrected_component_max": [
+        2962.4672322007723,
+        2986.1618310411823,
+        1988.4972540768554
+      ],
+      "divergence_max": 5.284090320856194e-08
+    },
+    {
+      "name": "time_holdout",
+      "k": 5.25,
+      "point_count": 6,
+      "baseline_max": 3023.9594786293965,
+      "corrected_max": 2972.328971336167,
+      "baseline_rms": 1272.5353470749344,
+      "corrected_rms": 1387.9997094159455,
+      "baseline_component_max": [
+        2563.164322614231,
+        1171.5317408711157,
+        1714.0648765463534
+      ],
+      "corrected_component_max": [
+        2286.157906186567,
+        2301.689901893583,
+        1526.549273119139
+      ],
+      "divergence_max": 4.4829249645772506e-08
+    }
+  ],
+  "scope": "Eight endpoint-preserving solenoidal velocity modes on the pressure-corrected wide bridge. Fit at one late time; independent spatial/time point checks. No axial closure, exterior moment match, finite global energy or complete-domain acceptance.",
+  "accepted": false
+}
