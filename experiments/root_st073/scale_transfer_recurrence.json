@@ -1,0 +1,412 @@
+{
+  "schema": "st073_scale_transfer_recurrence_v1",
+  "experiment": "sequential k-scale correction with C2 quintic amplitude interpolation",
+  "status": "bounded research screen; no PDE acceptance claim",
+  "source": {
+    "fixed_scale_report": "wide_collocation\\report.json",
+    "width_ratio": 6.0,
+    "mode_family": "CachedWidth(6.) + WideJointModes"
+  },
+  "scale_protocol": {
+    "knots": [
+      1.0,
+      3.0,
+      5.0
+    ],
+    "bands": [
+      [
+        1.0,
+        3.0
+      ],
+      [
+        3.0,
+        5.0
+      ]
+    ],
+    "k_definition": "k = -log2(2 tau)",
+    "interpolation": "piecewise quintic smoothstep with zero first and second derivatives at knots; C2 across k=3 and completed earlier bands stay fixed",
+    "sequential_rule": "stage n fits only the right knot a_(n+1) from the current left-knot state; previous knots are frozen",
+    "active_coefficients_per_stage": 24,
+    "increment_cap": 0.35,
+    "global_amplitude_envelope": [
+      -4.0,
+      4.0
+    ]
+  },
+  "initial_amplitudes": [
+    0.002507777504740463,
+    -0.08376525328937423,
+    -0.001828958139909437,
+    0.5718740980506878,
+    -0.0074212379991915635,
+    -0.38908076413508097,
+    3.9999999999999996,
+    -0.05572420871401698,
+    -1.0729655414148858,
+    0.05358522837727728,
+    -3.9999999999999996,
+    -0.13953806098036534,
+    -0.30794547414331086,
+    0.0042750850341278165,
+    0.23515844324189034,
+    1.1611183384946173,
+    -0.010408686418236498,
+    -1.4001865802283309,
+    -0.2590967391037482,
+    0.0025125828158789076,
+    0.27030859434744775,
+    0.34311597055662424,
+    -0.001590453364811957,
+    -0.35332862394965436
+  ],
+  "final_knot_amplitudes": [
+    [
+      0.0025077775046615978,
+      -0.08376525331161784,
+      -0.0018289581402839677,
+      0.5718740980969447,
+      -0.00742123799953136,
+      -0.38908076410781645,
+      3.9999999998771827,
+      -0.05572420871382972,
+      -1.072965541418356,
+      0.05358522837736818,
+      -3.9999999998746043,
+      -0.13953806098043317,
+      -0.30794547415795975,
+      0.00427508503432678,
+      0.23515844322424653,
+      1.1611183385176491,
+      -0.010408686418441195,
+      -1.4001865802397988,
+      -0.2590967390900281,
+      0.0025125828157330026,
+      0.2703085943642375,
+      0.3431159705390551,
+      -0.0015904533647646572,
+      -0.35332862393012077
+    ],
+    [
+      0.0025077775046745236,
+      -0.08376525331196755,
+      -0.0018289581402804406,
+      0.571874098097158,
+      -0.007421237999526568,
+      -0.38908076410795034,
+      3.9999999998761715,
+      -0.05572420871382049,
+      -1.0729655414187471,
+      0.05358522837736848,
+      -3.9999999998736016,
+      -0.1395380609804438,
+      -0.3079454741578347,
+      0.004275085034331276,
+      0.23515844322418875,
+      1.1611183385180028,
+      -0.01040868641844802,
+      -1.4001865802392766,
+      -0.25909673909019576,
+      0.0025125828157325347,
+      0.270308594364205,
+      0.3431159705390147,
+      -0.0015904533647562277,
+      -0.35332862392994563
+    ],
+    [
+      0.002507777504740463,
+      -0.08376525328937423,
+      -0.001828958139909437,
+      0.5718740980506878,
+      -0.0074212379991915635,
+      -0.38908076413508097,
+      3.9999999999999996,
+      -0.05572420871401698,
+      -1.0729655414148858,
+      0.05358522837727728,
+      -3.9999999999999996,
+      -0.13953806098036534,
+      -0.30794547414331086,
+      0.0042750850341278165,
+      0.23515844324189034,
+      1.1611183384946173,
+      -0.010408686418236498,
+      -1.4001865802283309,
+      -0.2590967391037482,
+      0.0025125828158789076,
+      0.27030859434744775,
+      0.34311597055662424,
+      -0.001590453364811957,
+      -0.35332862394965436
+    ]
+  ],
+  "stages": [
+    {
+      "stage": 1,
+      "band": [
+        5.0,
+        1.0
+      ],
+      "training_k": [
+        1.5,
+        2.5
+      ],
+      "training_points": 24,
+      "right_knot": 1.0,
+      "success": true,
+      "message": "`ftol` termination condition is satisfied.",
+      "nfev": 2,
+      "initial_normalized_loss": 24.0,
+      "final_normalized_loss": 23.9999999990022,
+      "increment_max_abs": 1.253953840369955e-10,
+      "increment_l2": 1.911714064017767e-10,
+      "increment": [
+        -7.886531050127219e-14,
+        -2.224361514539049e-11,
+        -3.745307804900249e-13,
+        4.6256872039346915e-11,
+        -3.3979662225430477e-13,
+        2.7264543445732506e-11,
+        -1.2281684414672034e-10,
+        1.872570075830139e-13,
+        -3.4703438399715387e-12,
+        9.089893640617785e-14,
+        1.253953840369955e-10,
+        -6.784564448570195e-14,
+        -1.4648903842313926e-11,
+        1.989628509921443e-13,
+        -1.764379971623247e-11,
+        2.3031707047301422e-11,
+        -2.04696607922481e-13,
+        -1.1467882250253448e-11,
+        1.3720105866591621e-11,
+        -1.4590506773627793e-13,
+        1.6789730313424408e-11,
+        -1.7569113631827282e-11,
+        4.7299794413590777e-14,
+        1.9533584783494743e-11
+      ],
+      "coefficient_norm_before": 6.124047583498204,
+      "coefficient_norm_after": 6.124047583344681,
+      "full_cartesian_components": 3,
+      "fd_jet": "affine_momentum.jets fourth-order Cartesian space and centered tau finite difference; interpolation varies inside every stencil"
+    },
+    {
+      "stage": 2,
+      "band": [
+        1.0,
+        3.0
+      ],
+      "training_k": [
+        3.5,
+        4.5
+      ],
+      "training_points": 24,
+      "right_knot": 3.0,
+      "success": true,
+      "message": "`ftol` termination condition is satisfied.",
+      "nfev": 2,
+      "initial_normalized_loss": 24.0,
+      "final_normalized_loss": 23.999999999007724,
+      "increment_max_abs": 1.2639799451112735e-10,
+      "increment_l2": 1.9257514895338554e-10,
+      "increment": [
+        -6.593943723201089e-14,
+        -2.2593317487844366e-11,
+        -3.710035615031867e-13,
+        4.647016827615124e-11,
+        -3.350044377681976e-13,
+        2.7130655032271713e-11,
+        -1.2382816466244304e-10,
+        1.9649054421497033e-13,
+        -3.861430162200273e-12,
+        9.120374723432527e-14,
+        1.2639799451112735e-10,
+        -7.845433828424428e-14,
+        -1.4523833571708908e-11,
+        2.0345971662767746e-13,
+        -1.7701577084384598e-11,
+        2.3385626121901443e-11,
+        -2.115215623916628e-13,
+        -1.0945626757348111e-11,
+        1.3552431861242718e-11,
+        -1.463727154844993e-13,
+        1.675724710393579e-11,
+        -1.7609545823629853e-11,
+        5.5729380451224876e-14,
+        1.9708712636775903e-11
+      ],
+      "coefficient_norm_before": 6.124047583498204,
+      "coefficient_norm_after": 6.124047583343399,
+      "full_cartesian_components": 3,
+      "fd_jet": "affine_momentum.jets fourth-order Cartesian space and centered tau finite difference; interpolation varies inside every stencil"
+    }
+  ],
+  "holdouts": [
+    {
+      "k": 2.25,
+      "baseline": {
+        "k": 2.25,
+        "eta_holdout": [
+          -0.23,
+          0.17
+        ],
+        "points": 80,
+        "peak": 139.8245058374556,
+        "volume_l2_sample_rms": 63.347236510900466,
+        "divergence_max": 4.455213011012038e-09
+      },
+      "sequential_scale": {
+        "k": 2.25,
+        "eta_holdout": [
+          -0.23,
+          0.17
+        ],
+        "points": 80,
+        "peak": 139.82450582813365,
+        "volume_l2_sample_rms": 63.34723650955939,
+        "divergence_max": 4.4548331482041625e-09
+      },
+      "peak_improved": true,
+      "sample_rms_improved": true
+    },
+    {
+      "k": 4.25,
+      "baseline": {
+        "k": 4.25,
+        "eta_holdout": [
+          -0.23,
+          0.17
+        ],
+        "points": 80,
+        "peak": 1115.4877104129016,
+        "volume_l2_sample_rms": 504.4696728544158,
+        "divergence_max": 1.1214983941520984e-08
+      },
+      "sequential_scale": {
+        "k": 4.25,
+        "eta_holdout": [
+          -0.23,
+          0.17
+        ],
+        "points": 80,
+        "peak": 1115.4877103280505,
+        "volume_l2_sample_rms": 504.4696728389788,
+        "divergence_max": 1.1215217532445365e-08
+      },
+      "peak_improved": true,
+      "sample_rms_improved": true
+    }
+  ],
+  "volume_audit": [
+    {
+      "k": 2.25,
+      "baseline": {
+        "k": 2.25,
+        "volume": 0.000329494533501366,
+        "momentum_peak": 149.5889451020687,
+        "momentum_volume_L2": 0.9023485080379289,
+        "divergence_max": 4.445339207848065e-09,
+        "quadrature": {
+          "radial_order": 8,
+          "eta_order": 6,
+          "eta_half_width": 0.4
+        }
+      },
+      "sequential_scale": {
+        "k": 2.25,
+        "volume": 0.000329494533501366,
+        "momentum_peak": 149.5889450865532,
+        "momentum_volume_L2": 0.9023485080007854,
+        "divergence_max": 4.445785073414754e-09,
+        "quadrature": {
+          "radial_order": 8,
+          "eta_order": 6,
+          "eta_half_width": 0.4
+        }
+      },
+      "volume_l2_improved": true,
+      "volume_peak_improved": true
+    },
+    {
+      "k": 4.25,
+      "baseline": {
+        "k": 4.25,
+        "volume": 4.147329365281874e-05,
+        "momentum_peak": 1192.4198821134435,
+        "momentum_volume_L2": 2.5520260291819437,
+        "divergence_max": 9.660453770266031e-09,
+        "quadrature": {
+          "radial_order": 8,
+          "eta_order": 6,
+          "eta_half_width": 0.4
+        }
+      },
+      "sequential_scale": {
+        "k": 4.25,
+        "volume": 4.147329365281874e-05,
+        "momentum_peak": 1192.41988218441,
+        "momentum_volume_L2": 2.5520260292533923,
+        "divergence_max": 9.656030641735924e-09,
+        "quadrature": {
+          "radial_order": 8,
+          "eta_order": 6,
+          "eta_half_width": 0.4
+        }
+      },
+      "volume_l2_improved": false,
+      "volume_peak_improved": false
+    }
+  ],
+  "product_rule_fd_jets": [
+    {
+      "k": 2.25,
+      "points": 16,
+      "max_linear_jet_difference": 2.8189120805819595e-12,
+      "rms_linear_jet_difference": 8.112988461681563e-13,
+      "interpretation": "Independent Cartesian FD time jets include the product-rule contribution from d a(k(tau))/dt; frozen comparison holds amplitudes at the central k."
+    },
+    {
+      "k": 4.25,
+      "points": 16,
+      "max_linear_jet_difference": 7.144338805688095e-10,
+      "rms_linear_jet_difference": 3.7056300159847053e-10,
+      "interpretation": "Independent Cartesian FD time jets include the product-rule contribution from d a(k(tau))/dt; frozen comparison holds amplitudes at the central k."
+    }
+  ],
+  "interface_checks": [
+    {
+      "side": "inner",
+      "velocity_difference_max": 0.0,
+      "pressure_difference_max": 0.0
+    },
+    {
+      "side": "outer",
+      "velocity_difference_max": 0.0,
+      "pressure_difference_max": 0.0
+    },
+    {
+      "side": "inner",
+      "velocity_difference_max": 0.0,
+      "pressure_difference_max": 0.0
+    },
+    {
+      "side": "outer",
+      "velocity_difference_max": 0.0,
+      "pressure_difference_max": 0.0
+    }
+  ],
+  "aggregate": {
+    "baseline_peak_max": 1115.4877104129016,
+    "sequential_peak_max": 1115.4877103280505,
+    "baseline_volume_L2_max": 2.5520260291819437,
+    "sequential_volume_L2_max": 2.5520260292533923,
+    "peak_max_improved": true,
+    "volume_L2_max_improved": false,
+    "peak_relative_change": -7.606637542068029e-11,
+    "volume_L2_relative_change": 2.7996716056577498e-11
+  },
+  "runtime_seconds": 62.70741510391235,
+  "scope": "Full Cartesian momentum is evaluated only on finite training/holdout point sets in the registered width-six annulus and eta slab. Divergence/interface checks are finite-difference diagnostics. No whole-space closure, continuum supremum, energy, or theorem transfer is asserted.",
+  "pde_validated": false,
+  "global_field_ready": false
+}
