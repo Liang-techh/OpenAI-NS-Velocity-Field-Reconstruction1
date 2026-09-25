@@ -71,6 +71,13 @@ even an optimistic failure-bracket half-width is short by factors `5.91`
 and `6.57`. See `ST073_CONE_SUPPORT_SCALE_GAP.md`. Search a different
 radial–axial cone region or redesign the moment-matched mean profile
 instead of simply widening this wave's cutoff.
+A two-scale coarse search found a second cone-positive point at
+`(y,eta)=(0.35,0)`. Its refined radial band nearly accommodates the
+chosen pulse time scale, but at nearby `y=0.325` the best-centered
+sampled axial half-width falls short by factors `5.11` and `4.97` at
+`k=11,19`; see `ST073_MIDPLANE_CONE_CANDIDATE.md`. Focus the mean-profile
+redesign on widening this axial cone or obtain a joint space–time
+carrier/cutoff balance, then check a connected 3D cone on both scales.
 Use those directions as a conditioning prototype, not as the paper's five
 leading-profile moments or a recursive correction.
 The next Stage-1 inputs are therefore the actual coefficient-family

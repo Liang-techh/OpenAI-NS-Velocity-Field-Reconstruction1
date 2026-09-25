@@ -4,6 +4,7 @@ This tests a sampled physical cone analogue at two dyadic scales. A passing
 node sequence is not a continuous cone or an admissible paper profile.
 """
 
+import argparse
 import json
 
 import numpy as np
@@ -18,7 +19,9 @@ Y_NODES = np.arange(0.035, 0.0651, 0.0025)
 CENTER_Y = 0.05
 
 
-def run():
+def run(y_nodes=Y_NODES, center_y=CENTER_Y, eta=-0.2,
+        output_name="moment_bridge_cone_support.json"):
+    y_nodes = np.asarray(y_nodes, float)
     inner, fields = build_fields()
     fitted = json.loads((ROOT / "separated_moment_three_knots.json").read_text())
     field = SeparatedMomentModes(
@@ -27,8 +30,7 @@ def run():
     slices = []
     for k in (11.0, 19.0):
         tau = 0.5 * 2.0**-k
-        eta = -0.2
-        X = inner.p.X_max * (1.0 + 15.0 * Y_NODES)**2
+        X = inner.p.X_max * (1.0 + 15.0 * y_nodes)**2
         points = inner.from_similarity(X, np.full(len(X), eta), tau)
         velocity, gradient, residual = operator(field, points, tau)
         rows = []
@@ -40,7 +42,7 @@ def run():
             N = shear / magnitude
             K = np.array([-N[1], N[0]])
             lam2 = float(-2.0 * F * N[0] * (2.0 * F * N[0] + magnitude))
-            row = dict(y=float(Y_NODES[i]), radius=float(r),
+            row = dict(y=float(y_nodes[i]), radius=float(r),
                        momentum_norm=float(np.linalg.norm(residual[i])),
                        lambda_squared=lam2, cone_pass=False)
             if lam2 > 0:
@@ -54,7 +56,7 @@ def run():
                     row.update(cone_ratio=float(ratio),
                                cone_pass=bool(dot_n < 0 and ratio < 1))
             rows.append(row)
-        center = int(np.argmin(np.abs(Y_NODES - CENTER_Y)))
+        center = int(np.argmin(np.abs(y_nodes - center_y)))
         if not rows[center]["cone_pass"]:
             halfwidth = 0.0
             failure_bound = 0.0
@@ -117,11 +119,11 @@ def run():
                                      / failure_band_bound)
                                if failure_band_bound else None)))
     report = dict(source="Three-knot moment-closed radial cone support at two scales",
-                  y_nodes=Y_NODES.tolist(), center_y=CENTER_Y,
-                  eta=-0.2, slices=slices,
-                  scope="13 radial nodes at one axial similarity coordinate on each of two scales; physical full-residual cone analogue with Gauss12 stress primitive. Passing samples do not certify an interval, nor the paper's normalized cone, global wave support, momentum gate, or scale recursion.",
+                  y_nodes=y_nodes.tolist(), center_y=center_y,
+                  eta=eta, slices=slices,
+                  scope="Radial nodes at one axial similarity coordinate on each of two scales; physical full-residual cone analogue with Gauss12 stress primitive. Passing samples do not certify an interval, nor the paper's normalized cone, global wave support, momentum gate, or scale recursion.",
                   accepted=False, scale_recursion_established=False)
-    output = ROOT / "moment_bridge_cone_support.json"
+    output = ROOT / output_name
     output.write_bytes((json.dumps(report, indent=2) + "\n").encode())
     print(json.dumps(dict(output=str(output), summary=[
         {key: row[key] for key in (
@@ -139,4 +141,11 @@ def run():
 
 
 if __name__ == "__main__":
-    run()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--midplane", action="store_true")
+    args = parser.parse_args()
+    if args.midplane:
+        run(y_nodes=np.arange(0.25, 0.4501, 0.01), center_y=0.35,
+            eta=0.0, output_name="moment_bridge_midplane_cone_support.json")
+    else:
+        run()
