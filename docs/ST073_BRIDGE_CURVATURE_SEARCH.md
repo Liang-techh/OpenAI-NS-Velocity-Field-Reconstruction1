@@ -79,3 +79,34 @@ problem. Internal sign-changing swirl has removed one simple fifth-moment
 impossibility but does not cure the radial-viscous defect. Any downstream
 restoration must also account for the remaining four moments and its own
 physical momentum cost.
+
+## Pressure projection and angular velocity screen
+
+`balanced_bridge_pressure_screen.py` fits six additional smooth pressure
+modes to the balanced four-velocity-mode candidate, using complete physical
+momentum on eight bridge points. The direct maximum rises from `6111` to
+`6310` on training points, from `8425` to `8454` on disjoint spatial
+points, and from `6495` to `6518` at a different time. The analytic
+pressure-gradient prediction agrees with finite differences to below
+`8e-7`, so the failure is not a gradient implementation error. The
+pressure modes cannot affect the large axisymmetric angular momentum
+component: its spatial holdout maximum is `4745`.
+
+`angular_bridge_mode_screen.py` then treats the two swirl and two poloidal
+amplitudes as a quadratic physical residual response. Its deterministic
+search enforces the necessary downstream fifth-moment capacity on three
+axial slices. It reduces the eight-point angular maximum from `3016` to
+`2067`, with a disjoint spatial reduction from `4745` to `3721`.
+However, its complete momentum maximum **increases** from `6111` to
+`7634` on training points and from `8425` to `9962` on holdout points.
+Both sampled relaxed-cone margins at `X=1` become negative. Thus the
+existing four-mode family trades angular transport against meridional
+viscosity/cone geometry; angular-only optimization is not an acceptable
+mean-field correction.
+
+The next mean-flow construction needs additional radial/axial degrees of
+freedom that directly control the pressure-independent angular transport
+while keeping poloidal curvature low. Optimize complete momentum,
+five outgoing moments, and a *continuous* relaxed cone together. These
+screens are diagnostic only; no full-domain maximum or volume-L2 target
+has been met.

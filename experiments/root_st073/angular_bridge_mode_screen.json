@@ -1,0 +1,79 @@
+{
+  "tau": 0.011048543456039806,
+  "downstream_cp_capacity": [
+    0.022462556170847272,
+    0.022465973334731233,
+    0.02249118101651707
+  ],
+  "optimizer_message": "Optimization terminated successfully.",
+  "rows": [
+    {
+      "label": "prior",
+      "coefficients": [
+        -0.27311627313724157,
+        1.0,
+        -2.75,
+        4.5
+      ],
+      "delta_cp": [
+        -0.01692904687085064,
+        -0.012672623600786276,
+        0.014542088016407172
+      ],
+      "train_angular_max": 3016.376063745642,
+      "holdout_angular_max": 4744.5971938148705,
+      "train_full_max": 6110.716644921151,
+      "holdout_full_max": 8424.644786907349,
+      "surrogate_fd_discrepancy": 5.302722711052985e-07,
+      "cones": [
+        {
+          "eta": 0.2,
+          "Pc": 13.591224939337435,
+          "margin": 1.5722906432085013,
+          "relaxed_pass": true
+        },
+        {
+          "eta": 0.3,
+          "Pc": 4.607566830287147,
+          "margin": 1.0159742849718454,
+          "relaxed_pass": true
+        }
+      ]
+    },
+    {
+      "label": "optimized",
+      "coefficients": [
+        -0.18130966598830367,
+        0.7500183614625808,
+        -3.835718766652477,
+        5.096482979508305
+      ],
+      "delta_cp": [
+        0.0021333643207662335,
+        0.004508533267536015,
+        0.019644548529313285
+      ],
+      "train_angular_max": 2066.778192377651,
+      "holdout_angular_max": 3721.0876678654445,
+      "train_full_max": 7634.476128330523,
+      "holdout_full_max": 9962.113207109365,
+      "surrogate_fd_discrepancy": 6.163160851312646e-07,
+      "cones": [
+        {
+          "eta": 0.2,
+          "Pc": 24.720066945014135,
+          "margin": -1.8720937988923012,
+          "relaxed_pass": false
+        },
+        {
+          "eta": 0.3,
+          "Pc": 12.42210152887461,
+          "margin": -1.4366972442708343,
+          "relaxed_pass": false
+        }
+      ]
+    }
+  ],
+  "scope": "Four-mode angular-momentum screen at eight train and eight holdout physical points, with necessary Cp capacity and two snapshot cone checks. No continuous/global acceptance.",
+  "accepted": false
+}

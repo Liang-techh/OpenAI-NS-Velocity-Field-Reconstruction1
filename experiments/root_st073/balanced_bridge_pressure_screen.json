@@ -1,0 +1,78 @@
+{
+  "bridge_coefficients": {
+    "symmetric": -0.27311627313724157,
+    "outer": 1.0,
+    "minimum": -2.75,
+    "moment": 4.5
+  },
+  "pressure_amplitudes": [
+    4.287180583731587,
+    -38.70050209582797,
+    16.49654641534266,
+    -94.89889587065846,
+    172.85852541533137,
+    -57.40595026418439
+  ],
+  "ridge": 0.003,
+  "rows": [
+    {
+      "name": "train",
+      "k": 5.5,
+      "X": [
+        0.5859375,
+        0.75,
+        1.0,
+        1.25
+      ],
+      "eta": [
+        0.2,
+        0.3
+      ],
+      "before_max": 6110.716644921151,
+      "after_max": 6309.765452300601,
+      "after_angular_max": 3016.376063745642,
+      "after_divergence_max": 7.307052669602854e-07,
+      "analytic_fd_gradient_discrepancy": 5.937026420508929e-07
+    },
+    {
+      "name": "space_holdout",
+      "k": 5.5,
+      "X": [
+        0.68,
+        0.9,
+        1.1,
+        1.34
+      ],
+      "eta": [
+        0.25,
+        0.35
+      ],
+      "before_max": 8424.644786907349,
+      "after_max": 8453.955365747724,
+      "after_angular_max": 4744.597193814871,
+      "after_divergence_max": 1.90635528696248e-07,
+      "analytic_fd_gradient_discrepancy": 7.510098393962635e-07
+    },
+    {
+      "name": "time_holdout",
+      "k": 5.25,
+      "X": [
+        0.68,
+        0.9,
+        1.1,
+        1.34
+      ],
+      "eta": [
+        0.25,
+        0.35
+      ],
+      "before_max": 6495.044807603117,
+      "after_max": 6517.631397579262,
+      "after_angular_max": 3656.8935768338947,
+      "after_divergence_max": 1.663994400047386e-07,
+      "analytic_fd_gradient_discrepancy": 5.780554626248897e-07
+    }
+  ],
+  "scope": "Six pressure modes fitted to physical complete momentum on eight points, with disjoint space/time holdouts. This is not a five-moment match or global PDE acceptance.",
+  "accepted": false
+}
