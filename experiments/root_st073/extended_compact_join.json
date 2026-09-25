@@ -1,0 +1,52 @@
+{
+  "k": 5.5,
+  "tau": 0.011048543456039806,
+  "rows": [
+    {
+      "eta": 0.3,
+      "X": 0.03,
+      "new_residual_norm": 6.40761284623971e-07,
+      "new_divergence": -1.3955627764516976e-09,
+      "old_residual_norm": 18341.911291493132
+    },
+    {
+      "eta": 0.48,
+      "X": 0.03,
+      "new_residual_norm": 1.932382905027882e-06,
+      "new_divergence": -5.96983795730921e-10,
+      "old_residual_norm": 121.38063664585125
+    },
+    {
+      "eta": 0.65,
+      "X": 0.03,
+      "new_residual_norm": 1.0026141710235492e-05,
+      "new_divergence": 2.469215942824121e-10
+    },
+    {
+      "eta": 0.75,
+      "X": 0.03,
+      "new_residual_norm": 3143.738821418714,
+      "new_divergence": 5.186894327380287e-07
+    },
+    {
+      "eta": 0.85,
+      "X": 0.03,
+      "new_residual_norm": 749.7362175141177,
+      "new_divergence": 8.834604159346782e-10
+    },
+    {
+      "eta": 0.9,
+      "X": 0.03,
+      "new_residual_norm": 371.6305697888139,
+      "new_divergence": -7.922569267293511e-10
+    }
+  ],
+  "eta_flat": 0.7,
+  "eta_outer": 0.94,
+  "scope": "Inner X=.03 sample comparison and pure-exterior analytic-form bound; radial bridge and full-volume gates not evaluated.",
+  "accepted": false,
+  "pure_exterior_spatial_time_bound": 0.00046228516220463844,
+  "axial_energy_factor_at_tau_min": 11.34234179826461,
+  "outer_attachment_radius_at_tau_min": 0.04487238491360862,
+  "compact_axial_height_at_tau_min": 0.0246838099165284
+}

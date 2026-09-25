@@ -17,9 +17,12 @@ from radial_continuation import ROOT
 
 
 class HeatedInteriorJoin:
-    def __init__(self, compact=None, heat_age=32768.):
+    def __init__(self, compact=None, heat_age=32768., ramp_fraction=1.):
         self.compact = compact if compact is not None else load_compact_candidate()
         self.nu = self.compact.nu
+        if not 0 < ramp_fraction <= 1:
+            raise ValueError('Ramp fraction must lie in (0,1]')
+        self.ramp_fraction = float(ramp_fraction)
         self.heat = AxiallyHeatedExterior(
             nu=self.nu, h=self.compact.joined.inner.h,
             amplitude=self.compact.joined.c, heat_age=heat_age)
@@ -34,7 +37,7 @@ class HeatedInteriorJoin:
         ts = np.broadcast_to(np.asarray(tau, float), (len(pts),))
         velocity, pressure = self.compact.fields(pts, ts)
         r = np.hypot(pts[:, 0], pts[:, 1])
-        ramp = smooth_ramp(r/self.attachment_radius(ts))
+        ramp = smooth_ramp(r/(self.ramp_fraction*self.attachment_radius(ts)))
         active = ramp > 0
         if not np.any(active):
             return velocity, pressure

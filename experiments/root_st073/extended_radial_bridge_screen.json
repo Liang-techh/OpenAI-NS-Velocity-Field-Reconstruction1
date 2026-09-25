@@ -1,0 +1,25 @@
+{
+  "tau": 0.011048543456039806,
+  "rows": [
+    {
+      "eta": 0.3,
+      "X": 0.5859375,
+      "residual_norm": 2952.981316297617,
+      "divergence": -1.0005109629673825e-08
+    },
+    {
+      "eta": 0.65,
+      "X": 0.5859375,
+      "residual_norm": 6599.91108667611,
+      "divergence": -1.3942127452537534e-09
+    },
+    {
+      "eta": 0.8,
+      "X": 0.5859375,
+      "residual_norm": 4981.961108477217,
+      "divergence": 1.3750309335591737e-08
+    }
+  ],
+  "scope": "Three sampled radial-bridge points; no full-volume acceptance.",
+  "accepted": false
+}
