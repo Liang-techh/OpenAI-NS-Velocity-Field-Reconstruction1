@@ -60,3 +60,33 @@ slowly and does not approach the `1e-3` gate. The next correction should
 evolve the azimuthal field by its parabolic equation on the collar, with
 matching conditions at the inner and outer radial edges, rather than
 re-fitting pressure or only widening the ramp.
+
+## Moving the heat attachment inward
+
+`heated_interior_join.py` tests a second full-space candidate. It adds a
+purely azimuthal correction `(G-chi) B(r,tau) K` to the existing compact
+candidate, with a smooth radial factor `B` rising from zero at the axis to
+one at the **old** outer radial join radius `r1`. Pressure receives the
+corresponding smooth correction. The swirl correction is axisymmetric and
+has no radial or axial velocity, so its analytic divergence is zero. The
+singular `K` is suppressed to all orders near the axis by the flat factor.
+Outside `r1`, the field equals the pure heat exterior exactly, removing the
+previous extra annulus `[r1,2*r1]`.
+
+At `k=5.5`, the old candidate's sampled complete residuals at `r/r1=1`
+were about `1311`, `103`, and `1027` for `eta=.2725,.345,.4175`. The inward
+attachment gave values near `1.5e-7`, `1.9e-7`, and `2.4e-7`. At `r/r1=1.25`,
+the old values were about `978`, `86`, and `785`, while the new values were
+about `1e-7`. Finite-difference divergence was unchanged at the shown
+precision relative to the compact candidate. Inside `r1`, complete
+residuals still reach roughly `4.3e4`, so this is a real outer-domain
+improvement rather than global PDE acceptance.
+
+The closer outer edge increases the pressure-gradient bound. With heat age
+`2048` the pure-outer worst-time bound would be `3.07e-3`; the inward
+candidate therefore uses age `32768`, yielding `7.67e-4` for all `r>=r1`,
+all `z`, and the registered time interval by the same formula above. The
+axial energy factor grows to about `45.37`; finite energy is preserved,
+but a total energy budget has not been accepted. The central remaining
+problem is now the coupled inner radial/axial transition, not the pure
+outer heat region.
