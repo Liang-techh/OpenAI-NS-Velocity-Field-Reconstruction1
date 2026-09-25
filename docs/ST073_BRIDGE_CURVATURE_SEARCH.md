@@ -781,3 +781,41 @@ maximum (`7.73588e5` to `1.38712e6`), especially near
 rules out the tested six-mode fit; it does not show that all matched
 pressure corrections are ineffective. The present dominant momentum
 error still calls for a dynamically coupled velocity/stress correction.
+
+## Similarity-scaled exact-curl velocity screen
+
+`delayed_similarity_curl_screen.py` adds three compact poloidal
+streamfunction modes in the physical similarity coordinates. Their curl is
+analytically divergence-free and the modes follow the changing similarity
+scale. The unconstrained two-time full-momentum fit lowers the 12-node
+training maximum from `848798.65` to `121859.83` and a separate space/time
+holdout maximum from `773588.41` to `391616.60`. These are local screens,
+not the volume-L2 or global maximum gates. More importantly, independent
+physical-velocity integration finds third/fourth outgoing moment defects
+`(-.009736,+.013798)` at `eta=.2` and `(-.040835,+.054180)` at `eta=.3`.
+The unconstrained correction therefore cannot be accepted as a matched
+mean field. See `delayed_similarity_curl_screen.json` and
+`delayed_similarity_curl_moments.json`.
+
+`delayed_similarity_curl_constrained.py` tests six modes, using two axial
+supports, while enforcing the third and fourth moments at both reference
+slices. Compact streamfunction support preserves the first moment, and the
+swirl profile is unchanged so the second and fifth moments stay fixed.
+Independent order-64 integration in
+`delayed_similarity_curl_constrained_moments.json` confirms all five
+reference-slice defects below `1.8e-13`. Yet the constrained peak-focused
+fit changes the training maximum from `848798.65` to `859415.44` and the
+holdout maximum only from `773588.41` to `764132.93`. The RMS-focused fit
+also raises the training maximum (`883449.49`). The strong unconstrained
+momentum reduction is therefore mostly incompatible with exact two-slice
+moment closure within these six modes. This is a limitation of the tested
+basis and fit, not a general obstruction theorem.
+
+At the intervening `eta=.25`, the constrained patch alters the fourth
+moment by only `5.6e-5`, while the full field's fourth-moment defect is
+`-.01170`; the baseline already has essentially that defect. A viable
+next mean-flow solve must impose moment and cone conditions across an axial
+interval, not only at `eta=.2,.3`, while coupling velocity and pressure
+or stress corrections. Neither curl candidate has passed a continuous
+strict cone, global momentum maximum, or volume-L2 test; both remain
+experimental (`accepted:false`).

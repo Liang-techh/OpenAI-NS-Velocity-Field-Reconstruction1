@@ -1,0 +1,66 @@
+{
+  "tau": 0.011048543456039806,
+  "source_screen": "delayed_similarity_curl_constrained.json",
+  "quadrature_order": 64,
+  "rows": [
+    {
+      "eta": 0.2,
+      "patch_delta": [
+        1.5265566588595902e-16,
+        0.0,
+        5.551115123125783e-17,
+        4.618527782440651e-14,
+        0.0
+      ],
+      "total_defect": [
+        4.6379566853715914e-14,
+        4.440892098500626e-16,
+        1.9192980538207394e-14,
+        1.7630341631047486e-13,
+        8.881784197001252e-16
+      ],
+      "max_abs_total_defect": 1.7630341631047486e-13,
+      "min_relative_E": 0.11000733909863097
+    },
+    {
+      "eta": 0.25,
+      "patch_delta": [
+        -1.249000902703301e-16,
+        0.0,
+        -8.437226359236938e-08,
+        5.553265562108223e-05,
+        0.0
+      ],
+      "total_defect": [
+        2.851885394505871e-14,
+        -2.6645352591003757e-15,
+        -0.0007750148185012018,
+        -0.011700889820406957,
+        -1.846323353404955e-05
+      ],
+      "max_abs_total_defect": 0.011700889820406957,
+      "min_relative_E": 0.11005023004742148
+    },
+    {
+      "eta": 0.3,
+      "patch_delta": [
+        -1.3877787807814457e-17,
+        0.0,
+        -1.1102230246251565e-16,
+        8.881784197001252e-16,
+        0.0
+      ],
+      "total_defect": [
+        5.6371574075342323e-14,
+        -7.105427357601002e-15,
+        -1.0116907311896739e-13,
+        7.016609515630989e-14,
+        1.7763568394002505e-15
+      ],
+      "max_abs_total_defect": 1.0116907311896739e-13,
+      "min_relative_E": 0.11000736130183783
+    }
+  ],
+  "scope": "Actual physical velocity five moments at two reference slices and one intervening slice after the fitted exact-curl modes. No continuous eta/time moment identity.",
+  "accepted": false
+}

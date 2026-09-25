@@ -1,0 +1,47 @@
+{
+  "tau": 0.011048543456039806,
+  "source_screen": "delayed_similarity_curl_screen.json",
+  "quadrature_order": 48,
+  "rows": [
+    {
+      "eta": 0.2,
+      "patch_delta": [
+        2.7755575615628914e-17,
+        0.0,
+        -0.009735695812296163,
+        0.013798242338121547,
+        0.0
+      ],
+      "total_defect": [
+        3.6251557311572924e-13,
+        4.440892098500626e-16,
+        -0.009735695812156414,
+        0.013798242338411981,
+        8.881784197001252e-16
+      ],
+      "max_abs_total_defect": 0.013798242338411981,
+      "min_relative_E": 0.11001545660124946
+    },
+    {
+      "eta": 0.3,
+      "patch_delta": [
+        -4.163336342344337e-17,
+        0.0,
+        -0.04083534990048873,
+        0.05418041891554104,
+        0.0
+      ],
+      "total_defect": [
+        3.504696532985463e-13,
+        -6.217248937900877e-15,
+        -0.040835349900479934,
+        0.05418041891560632,
+        0.0
+      ],
+      "max_abs_total_defect": 0.05418041891560632,
+      "min_relative_E": 0.11001583476771346
+    }
+  ],
+  "scope": "Actual physical velocity five moments at two reference slices after the fitted exact-curl mode. No continuous eta/time moment identity.",
+  "accepted": false
+}

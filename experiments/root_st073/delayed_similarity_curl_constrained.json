@@ -1,0 +1,108 @@
+{
+  "base_slice": "delayed005_rise146_degree31.json",
+  "radial_intervals": [
+    [
+      1.005,
+      1.06
+    ],
+    [
+      1.005,
+      1.12
+    ],
+    [
+      1.015,
+      1.18
+    ]
+  ],
+  "eta_intervals": [
+    [
+      0.15,
+      0.275
+    ],
+    [
+      0.225,
+      0.38
+    ]
+  ],
+  "selected_objective": "peak",
+  "candidate_train_metrics": [
+    {
+      "name": "rms",
+      "metrics": {
+        "max": 883449.4923690899,
+        "rms": 443556.86984512914
+      },
+      "success": true
+    },
+    {
+      "name": "peak",
+      "metrics": {
+        "max": 859415.4446939079,
+        "rms": 446164.2290529897
+      },
+      "success": true
+    }
+  ],
+  "coefficients": [
+    2.869650633442868e-06,
+    -5.639737918581121e-07,
+    -3.5832732900163287e-07,
+    0.00015586676381506426,
+    -0.00024657925405086826,
+    -0.0014171937543478836
+  ],
+  "optimizer_success": true,
+  "optimizer_message": "Optimization terminated successfully",
+  "objective": 0.5965310364612885,
+  "moment_constraint_residual": [
+    6.907495979962237e-21,
+    4.667301042950792e-14,
+    -1.0721928272272868e-19,
+    4.141245723079945e-16
+  ],
+  "max_abs_moment_constraint": 4.667301042950792e-14,
+  "train_before": {
+    "max": 848798.6507360048,
+    "rms": 450009.8724060784
+  },
+  "train_after": {
+    "max": 859415.4446939079,
+    "rms": 446164.2290529897
+  },
+  "holdout": {
+    "tau": 0.011841535675862483,
+    "X": [
+      1.0125,
+      1.0125,
+      1.0125,
+      1.0175,
+      1.0175,
+      1.0175,
+      1.025,
+      1.025,
+      1.025
+    ],
+    "eta": [
+      0.22,
+      0.28,
+      0.32,
+      0.22,
+      0.28,
+      0.32,
+      0.22,
+      0.28,
+      0.32
+    ],
+    "before": {
+      "max": 773588.4135229393,
+      "rms": 480770.72341209237
+    },
+    "after": {
+      "max": 764132.9254838761,
+      "rms": 476557.6423212342
+    },
+    "max_abs_divergence": 0.0658359449615773
+  },
+  "scope": "Six compact exact-curl similarity modes. Four equalities enforce J and S at two reference slices; M is exact by compact streamfunction, and H/Cp are unchanged because E is unchanged. Local full-momentum train and disjoint space/time holdout only; no global cone or PDE acceptance.",
+  "accepted": false
+}
