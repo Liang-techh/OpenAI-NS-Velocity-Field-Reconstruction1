@@ -1,0 +1,92 @@
+{
+  "source": "AdaptiveOrderCore -> JoinedField ratio16 + shared 24 compact modes",
+  "coefficient_order": "12 poloidal/pressure modes, then 12 swirl modes",
+  "train_scales": [
+    11.0,
+    19.0
+  ],
+  "train_eta": [
+    -0.2,
+    0.0,
+    0.2
+  ],
+  "amplitudes": [
+    0.3260449479579066,
+    -1.3241961192944165,
+    -0.10102049262660828,
+    -9.176840402844348,
+    -0.3635560858541771,
+    9.999999999999998,
+    9.999999999999998,
+    -0.25270418204735806,
+    -9.999999999999998,
+    0.21787265672386866,
+    4.928301984344242,
+    -0.6197241486073171,
+    -0.9445130418506409,
+    -0.00763747483473356,
+    0.6322190975720114,
+    1.5003520294187453,
+    0.013796867187313067,
+    -3.433240576161319,
+    -0.21862878461136603,
+    -0.018723346429089887,
+    1.180045072331316,
+    -1.9970334061917643,
+    0.015319936741802702,
+    -1.1771770018103827
+  ],
+  "fit_nfev": 50,
+  "fit_success": true,
+  "initial_cost": 3.7808617400448963,
+  "final_cost": 1.4648826155264365,
+  "training": [
+    {
+      "k": 11.0,
+      "baseline_max": 728820.2186879861,
+      "fitted_predicted_max": 390888.07868218137,
+      "fitted_direct_max": 390888.0788193812,
+      "surrogate_direct_component_difference": 0.0019072756404057145,
+      "divergence_max": 2.1839520520927636e-06
+    },
+    {
+      "k": 19.0,
+      "baseline_max": 2906105180.8286247,
+      "fitted_predicted_max": 1580636176.067903,
+      "fitted_direct_max": 1580636176.613419,
+      "surrogate_direct_component_difference": 6.859524458646774,
+      "divergence_max": 0.0005751461585532525
+    }
+  ],
+  "holdouts": [
+    {
+      "k": 10.5,
+      "baseline_max": 377673.9005489592,
+      "fitted_max": 285031.60202735796,
+      "divergence_max": 2.879143607970036e-07
+    },
+    {
+      "k": 11.5,
+      "baseline_max": 1064839.4513070788,
+      "fitted_max": 805437.839625674,
+      "divergence_max": 4.768615937678078e-07
+    },
+    {
+      "k": 18.5,
+      "baseline_max": 1509802359.7301779,
+      "fitted_max": 1159848318.9612896,
+      "divergence_max": 0.00016472203924422502
+    },
+    {
+      "k": 19.5,
+      "baseline_max": 4258138043.2369623,
+      "fitted_max": 3278316488.388388,
+      "divergence_max": 0.0003798180605372181
+    }
+  ],
+  "scope": "24 shared axisymmetric endpoint-preserving modes; two scale slices, 15 train points each and 12 points on each of four time holdouts. Full Cartesian FD momentum. No moment/stress cone constraint, spatial-volume L2 or whole-field acceptance.",
+  "accepted": false,
+  "pde_validated": false,
+  "baseline_growth_exponent_per_k": 1.4951545395684007,
+  "fitted_growth_exponent_per_k": 1.4976827657836114
+}

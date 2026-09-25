@@ -32,3 +32,6 @@ impossibility. A viable correction must address the dominant viscous
 and advective vectors over radial and axial space and across scales,
 while maintaining the paper-inspired radial moment and stress
 conditions. No volume L2 or whole-field PDE gate is claimed.
+
+The larger shared 24-mode fit at two scales is reported in
+`ST073_ADAPTIVE_MULTISCALE_FIT.md`.
