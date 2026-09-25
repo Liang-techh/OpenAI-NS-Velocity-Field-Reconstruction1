@@ -24,4 +24,6 @@ The Appendix-C construction does **not** require the unmodulated joined shear to
 
 The next implementation should compute the normalized profile variables and all five target moment differences on the same slices, including a pressure profile consistent with `Cp`; test the relaxed cone `(4.21)` and its boundary collars; then construct a shear loop and five-moment restoration on reserved intervals. Only after that should the oscillatory stress and full physical momentum gates be assessed. The current heat exterior still lacks axial localization and finite total energy.
 
+The first normalized snapshot screen is now in `ST073_NORMALIZED_RELAXED_CONE.md`: the baseline and both remote mean variants fail the relaxed gate at every sampled point. A shear loop is therefore premature for these specific inputs.
+
 Reproduce the five-moment audit with `python experiments/root_st073/remote_five_moment_audit.py` and the two-shape screen with `python experiments/root_st073/remote_two_shape_screen.py`. Both JSON reports are marked `accepted: false`.
