@@ -45,3 +45,37 @@ preserving the core and pure heat exterior. A pressure/mean correction
 must be part of that solve. Only then does the paper's nonaxisymmetric
 oscillatory-stress stage have a viable background. No maximum or volume
 L2 gate below `1e-3` has been demonstrated.
+
+## Fifth-moment obstruction and internal balancing experiment
+
+`bridge_swirl_moment_balance.py` compares the three-mode candidate with
+the unmodified extended field at the old radial exit `X=1.5`, at
+`tau=.5*2^-5.5`. The fifth moment is the nonnegative integral
+`Cp(X)=integral_0^X E^2/(2x) dx`. The outer-swirl-1 candidate adds
+`0.5294`, `0.5242`, and `0.4902` to `Cp` at `eta=.2,.3,.65`.
+The **entire** unmodified downstream `Cp` tail, from `X=1.5` through
+the attached heat exterior to infinity, is only about `0.02246`,
+`0.02247`, and `0.02249`. Thus a correction restricted to `X>1.5`
+cannot restore the unmodified outgoing fifth-moment target while keeping
+the same exterior: even deleting all downstream swirl leaves a positive
+defect greater than `0.46`. This is a necessary obstruction for that
+specific downstream-only repair, not an obstruction to a redesigned
+bridge or a different mean/exterior target.
+
+The experiment next adds the existing symmetric bridge-swirl bubble with
+amplitude `-0.2731162731` alongside outer-swirl amplitude `1`. This
+single coefficient, chosen between the small `Cp`-neutral roots at
+`eta=.2` and `.65`, reduces the three sampled fifth-moment changes to
+`-0.01693`, `-0.01267`, and `+0.01454`. The positive change is now below
+the downstream capacity on these slices. The sampled relaxed cone at
+`X=1`, `eta=.2,.3` remains positive. The eight-point complete momentum
+maximum is about `6111` versus `6062` for the prior three-mode candidate
+and `3947` for the unmodified field. The other outgoing moments still
+move substantially (for example `I` by `0.5231` and `S` by `3.026`
+at `eta=.2`), and no continuous cone or PDE gate is met.
+
+Next solve the bridge modes as a *coupled five-moment and momentum*
+problem. Internal sign-changing swirl has removed one simple fifth-moment
+impossibility but does not cure the radial-viscous defect. Any downstream
+restoration must also account for the remaining four moments and its own
+physical momentum cost.
