@@ -11,7 +11,7 @@ from numpy.polynomial.legendre import leggauss
 
 from joined_field import JoinedField, ROOT
 from moment_matched_joined_field import MomentMatchedJoinedField
-from paper_moment_bridge import XI, XB
+from paper_moment_bridge import radial_boundaries
 
 
 def profile(field, X, eta, tau):
@@ -24,7 +24,9 @@ def profile(field, X, eta, tau):
 
 def moment_data(field, X, eta, tau, order=20):
     g, w = leggauss(order)
-    edges = sorted(set((0., XI, XB, 4., X)))
+    edges = sorted(set(radial_boundaries(
+        getattr(field, 'patch_start', 4.),
+        getattr(field, 'patch_end', 4.))+[X]))
     nodes, weights = [], []
     for lo, hi in zip(edges[:-1], edges[1:]):
         if lo >= X:
@@ -46,14 +48,15 @@ def moment_data(field, X, eta, tau, order=20):
     return values, pi_axis
 
 
-def cone_point(field, X, eta, tau):
+def cone_point(field, X, eta, tau, order=20, eta_step=.001,
+               radial_step_fraction=.001):
     h = field.inner.h
     D, A = .5-h, .5+h
     d, L = 1-eta**2, 1-2*h*eta**2
-    he, hx = .001, .001*X
-    m, pi_axis = moment_data(field, X, eta, tau)
-    mp, pi_axis_p = moment_data(field, X, eta+he, tau)
-    mm, pi_axis_m = moment_data(field, X, eta-he, tau)
+    he, hx = eta_step, radial_step_fraction*X
+    m, pi_axis = moment_data(field, X, eta, tau, order)
+    mp, pi_axis_p = moment_data(field, X, eta+he, tau, order)
+    mm, pi_axis_m = moment_data(field, X, eta-he, tau, order)
     me = (mp-mm)/(2*he)
     pi = pi_axis+m[4]
     pi_eta = (pi_axis_p+mp[4]-pi_axis_m-mm[4])/(2*he)

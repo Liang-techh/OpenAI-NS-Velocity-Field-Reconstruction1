@@ -11,7 +11,7 @@ from paper_moment_bridge import bump, null_bump, even_bump, slice_data
 class MomentMatchedJoinedField:
     def __init__(self, base=None, null_amplitude=0.,
                  meridional_null_amplitude=0.,
-                 meridional_even_amplitude=0.):
+                 meridional_even_amplitude=0., patch=None):
         self.base = base if base is not None else JoinedField()
         self.nu = self.base.nu
         self.inner = self.base.inner
@@ -20,13 +20,16 @@ class MomentMatchedJoinedField:
         self.meridional_null_amplitude = float(meridional_null_amplitude)
         self.meridional_even_amplitude = float(meridional_even_amplitude)
         report = json.loads((ROOT/'paper_moment_coefficients.json').read_text())
-        self.patch_start = report['patch_start']
-        self.patch_end = report['patch_end']
+        self.patch_start, self.patch_end = (
+            tuple(map(float, patch)) if patch is not None
+            else (report['patch_start'], report['patch_end']))
+        if self.patch_start < 4. or self.patch_end <= self.patch_start:
+            raise ValueError('remote patch must lie in the heat exterior')
         self.eta_scale = report['eta_chebyshev_scale']
         self.swirl_coefficients = np.array(report['swirl_chebyshev_coefficients'])
         self.meridional_coefficients = np.array(report['meridional_chebyshev_coefficients'])
         if (self.null_amplitude or self.meridional_null_amplitude
-                or self.meridional_even_amplitude):
+                or self.meridional_even_amplitude or patch is not None):
             training = [slice_data(self.base, float(eta), tau, 32,
                                    self.patch_start, self.patch_end,
                                    self.null_amplitude,

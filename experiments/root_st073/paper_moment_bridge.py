@@ -19,6 +19,16 @@ XB = 4*XI
 PATCHES = ((XI, XB), (1., 4.), (4., 16.))
 
 
+def radial_boundaries(start, end):
+    """Resolve the long heat interval before a remote correction patch."""
+    boundaries = {0., XI, XB, float(start), float(end)}
+    edge = 4.
+    while edge < end:
+        boundaries.add(edge)
+        edge *= 4.
+    return sorted(boundaries)
+
+
 def bump(X, start, end):
     y = (X-start)/(end-start)
     inside = (y > 0) & (y < 1)
@@ -68,7 +78,7 @@ def slice_data(field, eta, tau, order, patch_start, patch_end,
                meridional_even_amplitude=0.):
     g, w = leggauss(order)
     xs, ws = [], []
-    boundaries = sorted(set((0., XI, XB, patch_start, patch_end)))
+    boundaries = radial_boundaries(patch_start, patch_end)
     for lo, hi in zip(boundaries[:-1], boundaries[1:]):
         xs.append((lo+hi)/2+(hi-lo)/2*g)
         ws.append((hi-lo)/2*w)

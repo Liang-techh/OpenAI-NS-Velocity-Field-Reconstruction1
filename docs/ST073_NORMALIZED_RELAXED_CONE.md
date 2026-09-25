@@ -17,3 +17,5 @@ This diagnostic uses a fixed-time snapshot of fields built from finite-window co
 The next constructive step is to choose a pressure datum and a joined `U,E` profile that satisfy all five outgoing moment conditions **and** have a positive relaxed-cone margin on a radial interval. Only then does the paper's high-frequency periodic shear loop and five-moment restoration apply. The current simple remote-bump family is not such an input. Physical finite energy, forcing, complete momentum and volume-L2 acceptance remain open.
 
 Run `python experiments/root_st073/normalized_relaxed_cone.py`; results are in `experiments/root_st073/normalized_relaxed_cone.json` with `accepted: false`.
+
+The later `ST073_REMOTE_PATCH_GEOMETRY.md` screen moves and widens the two-moment patch. Large width narrows one sampled cone gap but does not produce a full relaxed-cone pass.
