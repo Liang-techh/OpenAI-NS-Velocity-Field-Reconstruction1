@@ -1,0 +1,36 @@
+{
+  "tau": 0.011048543456039806,
+  "quadrature_per_piece": 48,
+  "target_field": "make_field(16, 2.)",
+  "physical_field": "CoupledMomentPhysicalLift delayed005_wide04_reoptimized_E.json",
+  "rows": [
+    {
+      "eta": 0.2,
+      "five_moment_defect": [
+        1.3877787807814457e-15,
+        4.440892098500626e-16,
+        -9.131584377541913e-15,
+        1.1812772982011666e-13,
+        8.881784197001252e-16
+      ],
+      "max_abs_defect": 1.1812772982011666e-13,
+      "min_E": 0.02006723898800646,
+      "min_relative_E": 0.11001545660124946
+    },
+    {
+      "eta": 0.3,
+      "five_moment_defect": [
+        1.7416623698807143e-14,
+        -6.217248937900877e-15,
+        -1.8687829062002947e-13,
+        3.1530333899354446e-14,
+        0.0
+      ],
+      "max_abs_defect": 1.8687829062002947e-13,
+      "min_E": 0.020069255087039845,
+      "min_relative_E": 0.11001583476771346
+    }
+  ],
+  "scope": "Independent piecewise Gauss48 moments of actual physical velocity at two fixed axial slices and one time; no continuous eta/time identity.",
+  "accepted": false
+}

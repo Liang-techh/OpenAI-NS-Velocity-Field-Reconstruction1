@@ -1,4 +1,5 @@
 """Nearby-time same-node comparison for the delayed wide-taper lift."""
+import argparse
 import json
 
 import numpy as np
@@ -8,14 +9,15 @@ from joined_field import independent_fd
 from radial_continuation import ROOT
 
 
-def run():
+def run(slice_filename='delayed005_wide04_curvature_optimize.json',
+        output_name='delayed_wide04_time_holdout.json'):
     tau = .5*2**(-5.25)
     xs = (1.005, 1.01, 1.0125, 1.015, 1.0175,
           1.02, 1.025, 2.6, 2.975)
     X, eta = np.meshgrid(xs, (.2, .3), indexing='ij')
     fields = (
         ('original', 'wide_taper_curvature_optimize.json'),
-        ('delayed_wide04', 'delayed005_wide04_curvature_optimize.json'))
+        ('delayed_wide04', slice_filename))
     rows = []
     for name, filename in fields:
         field = CoupledMomentPhysicalLift(slice_filename=filename)
@@ -42,9 +44,15 @@ def run():
                   scope='Eighteen same physical similarity nodes at one '
                         'nearby time. No uniform-time or volume L2 '
                         'admission.', accepted=False)
-    (ROOT/'delayed_wide04_time_holdout.json').write_text(
+    (ROOT/output_name).write_text(
         json.dumps(report, indent=2)+'\n')
 
 
 if __name__ == '__main__':
-    run()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--slice-filename',
+                        default='delayed005_wide04_curvature_optimize.json')
+    parser.add_argument('--output-name',
+                        default='delayed_wide04_time_holdout.json')
+    arguments = parser.parse_args()
+    run(arguments.slice_filename, arguments.output_name)

@@ -1,4 +1,5 @@
 """Independently integrate five moments of the actual lifted velocity."""
+import argparse
 import json
 
 import numpy as np
@@ -11,12 +12,13 @@ from moment_shear_slice_repair import moment_vector
 from radial_continuation import ROOT
 
 
-def run():
+def run(slice_filename='delayed005_wide04_curvature_optimize.json',
+        output_name='delayed_wide04_independent_moments.json'):
     tau = .5*2**(-5.5)
     X, weights = grid(order=48)
     target = make_field(16, 2.)
     lift = CoupledMomentPhysicalLift(
-        slice_filename='delayed005_wide04_curvature_optimize.json')
+        slice_filename=slice_filename)
     rows = []
     for eta in (.2, .3):
         U0, E0 = profile(target, X, eta, tau)
@@ -31,16 +33,21 @@ def run():
         print(json.dumps(row), flush=True)
     report = dict(tau=tau, quadrature_per_piece=48,
                   target_field='make_field(16, 2.)',
-                  physical_field='CoupledMomentPhysicalLift '
-                                 'delayed005_wide04_curvature_optimize.json',
+                  physical_field='CoupledMomentPhysicalLift '+slice_filename,
                   rows=rows,
                   scope='Independent piecewise Gauss48 moments of actual '
                         'physical velocity at two fixed axial slices and '
                         'one time; no continuous eta/time identity.',
                   accepted=False)
-    (ROOT/'delayed_wide04_independent_moments.json').write_text(
+    (ROOT/output_name).write_text(
         json.dumps(report, indent=2)+'\n')
 
 
 if __name__ == '__main__':
-    run()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--slice-filename',
+                        default='delayed005_wide04_curvature_optimize.json')
+    parser.add_argument('--output-name',
+                        default='delayed_wide04_independent_moments.json')
+    arguments = parser.parse_args()
+    run(arguments.slice_filename, arguments.output_name)

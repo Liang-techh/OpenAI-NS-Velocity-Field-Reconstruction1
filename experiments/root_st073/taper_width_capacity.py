@@ -30,14 +30,15 @@ def grid(width, order=96):
     return X, weights
 
 
-def optimize_slice(base, changed, X, weights, eta, tau, width, prior):
+def optimize_slice(base, changed, X, weights, eta, tau, width, prior,
+                   degree=11, start_X=1.):
     U0, E0 = profile(base, X, eta, tau)
     U, _ = profile(changed, X, eta, tau)
     target = moment_vector(U0, E0, X, weights)
     eb = np.array([bump(X, *interval)[0] for interval in INTERVALS])
     lower = np.array([np.max((RELATIVE_SWIRL_FLOOR-1)*E0[b > 1e-10]
                              /b[b > 1e-10])+1e-5 for b in eb])
-    B = correction_modes(X, width)
+    B = correction_modes(X, width, degree, start_X)
     orth, factor = np.linalg.qr((B*np.sqrt(weights)).T)
     Q = orth.T/np.sqrt(weights)
     linear_u = Q@(weights*U)
@@ -75,7 +76,8 @@ def optimize_slice(base, changed, X, weights, eta, tau, width, prior):
     fit = max(eligible, key=lambda f: metrics(f.x)[1]) if eligible else min(
         fits, key=lambda f: np.linalg.norm(metrics(f.x)[0]))
     defects, slack, min_ratio = metrics(fit.x)
-    return dict(width=width, eta=eta, coefficients=fit.x.tolist(),
+    return dict(width=width, degree=degree, start_X=start_X,
+                eta=eta, coefficients=fit.x.tolist(),
                 I_Cp_defect=defects.tolist(), finite_basis_S_slack=slack,
                 min_relative_E=min_ratio,
                 original_basis_condition=float(np.linalg.cond(factor)),

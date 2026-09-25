@@ -544,3 +544,48 @@ Its time-independent local amplitudes are therefore rejected as a
 dynamic correction. The code remains a reusable exact-curl mean basis,
 not an accepted lift or a substitute for the paper's time-dependent
 mean/wave equations.
+
+## Reallocating swirl capacity and screening a momentum tangent
+
+`delayed_wide04_component_decomposition.py` isolates the entrance
+hotspot at `X=1.015, eta=.3`: the stepped baseline is about `9.2e3`,
+the E-only correction about `2.5e4`, and the U-only correction about
+`1.04e6` in complete momentum norm. The U return therefore dominates
+the present defect. `radial_step_cone_amplitude.py` shows that weakening
+the radial step from `-.5` to `-.45` already loses the sampled strict
+cone at `eta=.2`; that simple amplitude reduction does not preserve
+the wave-admission precondition.
+
+`delayed_e_capacity_optimize.py` reallocates the five E bump
+coefficients while retaining the same fixed-slice I/Cp constraints.
+For `start_X=1.005`, width `.4`, and degree 31, the two S slacks are
+`+.11558` and `+.00938`. With the reoptimized E and re-solved U,
+the same 20-node entrance maximum falls from `1.035288e6` to
+`9.565792e5`. A separate 24-node middle/return maximum is
+`6.288559e5`; the 18-node nearby-time maximum is `7.372641e5`.
+Independent integration of the actual physical lift gives fixed-slice
+five-moment defects below `1.9e-13`. This improves sampled momentum
+without providing a continuous stress cone or a global PDE bound.
+
+`delayed_momentum_tangent_screen.py` then varies only the `eta=.3` U
+profile in three projected directions tangent to the M/J/S constraints,
+repairs the quadratic S term exactly, and selects by the full Cartesian
+residual. The materialized experimental candidate is
+`delayed005_wide04_momentum_tangent.json`. Its entrance maximum is
+`9.481077e5` on the same 20 nodes, down about `0.9%` from the
+reoptimized-E field. On disjoint spatial nodes the maximum changes
+from `9.766330e5` to `9.528168e5`; on disjoint nearby-time nodes,
+from `8.650167e5` to `8.573629e5`. Independent physical five-moment
+integration remains below `2.4e-13` at the two reference slices.
+
+The same tangent worsens the 24-node middle/return maximum from
+`6.288559e5` to `7.571412e5`. On the 18-node `k=5.25` screen the
+overall maximum improves only from `7.372641e5` to `7.307352e5`,
+while the far return point `X=2.975, eta=.3` worsens from about
+`1.03e5` to `1.91e5`. This makes the candidate a useful diagnostic,
+not a promoted field: fixed-time slice moments do not control the
+dynamic far-return residual. A subsequent correction must include
+entrance and return nodes at several times in one objective, and must
+restore a finite positive cone region before invoking oscillatory
+stress cancellation. No volume-L2 or `1e-3` claim follows from these
+local screens.

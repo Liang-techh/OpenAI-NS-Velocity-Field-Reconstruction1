@@ -1,0 +1,127 @@
+{
+  "tau": 0.011048543456039806,
+  "rows": [
+    {
+      "amplitude": -0.5,
+      "X": 1.0,
+      "eta": 0.2,
+      "order": 24,
+      "lambda_squared": 823.160456681224,
+      "target_dot_N": -2.6803593173689775,
+      "target_dot_K": 1.6737278371437285,
+      "ratio": 0.35879619386876244,
+      "strict_pass": true,
+      "residual_norm": 6306.302055806812
+    },
+    {
+      "amplitude": -0.5,
+      "X": 1.0,
+      "eta": 0.3,
+      "order": 24,
+      "lambda_squared": 1792.3916263539354,
+      "target_dot_N": -3.0986081639968583,
+      "target_dot_K": 0.9987068146768161,
+      "ratio": 0.8051851840452299,
+      "strict_pass": true,
+      "residual_norm": 7192.438222372374
+    },
+    {
+      "amplitude": -0.45,
+      "X": 1.0,
+      "eta": 0.2,
+      "order": 24,
+      "lambda_squared": -1522.0333061099266,
+      "target_dot_N": -2.6391707460222156,
+      "target_dot_K": 2.038734362595123,
+      "ratio": null,
+      "strict_pass": false,
+      "residual_norm": 6235.240354009131
+    },
+    {
+      "amplitude": -0.45,
+      "X": 1.0,
+      "eta": 0.3,
+      "order": 24,
+      "lambda_squared": 1683.6718963304006,
+      "target_dot_N": -3.296074205296396,
+      "target_dot_K": 1.0733528642241719,
+      "ratio": 0.6715383724708665,
+      "strict_pass": true,
+      "residual_norm": 7116.314489730023
+    },
+    {
+      "amplitude": -0.4,
+      "X": 1.0,
+      "eta": 0.2,
+      "order": 24,
+      "lambda_squared": -8615.453992333216,
+      "target_dot_N": -2.186107744371411,
+      "target_dot_K": 2.7453413785277423,
+      "ratio": null,
+      "strict_pass": false,
+      "residual_norm": 6164.66869983719
+    },
+    {
+      "amplitude": -0.4,
+      "X": 1.0,
+      "eta": 0.3,
+      "order": 24,
+      "lambda_squared": 1499.7435855412996,
+      "target_dot_N": -3.4816132571118743,
+      "target_dot_K": 1.1806085235137664,
+      "ratio": 0.545351973560194,
+      "strict_pass": true,
+      "residual_norm": 7040.863266900479
+    },
+    {
+      "amplitude": -0.35,
+      "X": 1.0,
+      "eta": 0.2,
+      "order": 24,
+      "lambda_squared": -27477.04813291987,
+      "target_dot_N": 0.014658096607180714,
+      "target_dot_K": 3.683352267195417,
+      "ratio": null,
+      "strict_pass": false,
+      "residual_norm": 6094.602039291252
+    },
+    {
+      "amplitude": -0.35,
+      "X": 1.0,
+      "eta": 0.3,
+      "order": 24,
+      "lambda_squared": 1152.2662463486608,
+      "target_dot_N": -3.644718610815391,
+      "target_dot_K": 1.3455652126098057,
+      "ratio": 0.4115296692604449,
+      "strict_pass": true,
+      "residual_norm": 6966.102885016321
+    },
+    {
+      "amplitude": -0.3,
+      "X": 1.0,
+      "eta": 0.2,
+      "order": 24,
+      "lambda_squared": -15668.693597005544,
+      "target_dot_N": 3.076390508274538,
+      "target_dot_K": 2.325978560984201,
+      "ratio": null,
+      "strict_pass": false,
+      "residual_norm": 6025.056155616064
+    },
+    {
+      "amplitude": -0.3,
+      "X": 1.0,
+      "eta": 0.3,
+      "order": 24,
+      "lambda_squared": 376.32098774376806,
+      "target_dot_N": -3.7556463908882436,
+      "target_dot_K": 1.626772318438218,
+      "ratio": 0.20360080946019923,
+      "strict_pass": true,
+      "residual_norm": 6892.052417433291
+    }
+  ],
+  "scope": "Ten physical cone samples at X=1 with Gauss24 stress integration, before five-moment repair. No continuous cone or full PDE admission.",
+  "accepted": false
+}

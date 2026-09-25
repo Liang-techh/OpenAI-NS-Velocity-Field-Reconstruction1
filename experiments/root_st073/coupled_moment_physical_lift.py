@@ -35,7 +35,8 @@ class CoupledMomentPhysicalLift:
         self.start_X = float(data.get('start_X', 1.))
         chosen = sorted((row for row in data['rows']
                          if row.get('variant') in ('maximum_slack',
-                                                   'curvature_optimized')
+                                                   'curvature_optimized',
+                                                   'momentum_tangent')
                          and row.get('five_moments_restored')),
                         key=lambda row: row['eta'])
         if len(chosen) != 2 or [row['eta'] for row in chosen] != [.2, .3]:

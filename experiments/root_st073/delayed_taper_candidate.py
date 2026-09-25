@@ -11,17 +11,20 @@ from wide_taper_curvature_optimize import optimize_slice
 
 
 def run(start_X=1.01, width=.05, degree=31,
+        e_source='wide_taper_five_moment_slice.json',
         output_name='delayed_taper_curvature_optimize.json'):
     tau = .5*2**(-5.5)
     X, weights = grid(order=64)
     base = make_field(16, 2.)
     changed = RadialMomentStep(base, -.5)
-    source = json.loads((ROOT/'wide_taper_five_moment_slice.json').read_text())
+    source = json.loads((ROOT/e_source).read_text())
     rows = []
     for prior in source['rows']:
         eta = prior['eta']
+        e_coefficients = prior.get('e_coefficients',
+                                   prior.get('coefficients'))
         raw = construct(base, changed, X, weights, eta, tau,
-                        prior['e_coefficients'], width=width,
+                        e_coefficients, width=width,
                         degree=degree, start_X=start_X)
         if not raw.get('five_moments_restored'):
             raise ValueError(f'Delayed five-moment repair failed at eta={eta}')
@@ -54,8 +57,11 @@ if __name__ == '__main__':
     parser.add_argument('--start-X', type=float, default=1.01)
     parser.add_argument('--width', type=float, default=.05)
     parser.add_argument('--degree', type=int, default=31)
+    parser.add_argument('--e-source',
+                        default='wide_taper_five_moment_slice.json')
     parser.add_argument('--output-name',
                         default='delayed_taper_curvature_optimize.json')
     arguments = parser.parse_args()
     run(arguments.start_X, arguments.width, arguments.degree,
+        arguments.e_source,
         arguments.output_name)
