@@ -1118,6 +1118,47 @@ needs a continuous strict cone, supported wave stress, verified
 cross-scale matching, and full maximum/volume-L2 momentum gates below
 `1e-3`.
 
+## Broader pressure shapes and the next shear boundary
+
+`delayed_plateau_pressure_screen.py` introduces twelve additional C5
+compact pressure modes. Each rises inside the transition, remains on a
+radial plateau, and falls before `X=3`; the six existing pressure modes
+remain available. A constrained linear program reproduces the old
+six-mode, 21-node component-residual minimum `3.71e8`. The twelve
+plateau modes alone give `4.53e8`; all eighteen together lower the
+sampled minimum to `2.01e8`, but only with large mutually canceling
+coefficients (some above `1e8`). Capping each coefficient at `1e3`
+still leaves a minimum `3.14e8`; a cap of `1e2` makes the sampled cone
+constraints infeasible. This improves the pressure basis algebra but
+does not approach the PDE residual target.
+
+`delayed_plateau_cone_span.py` directly integrates the physical stress
+primitive beyond the fitted radii at `eta=.25`. Both the old pressure
+and the capped plateau candidate pass the robust sampled cone only at
+`X=1.008,.012,.016,.02`; neither passes at the additional radii up to
+`X=1.2`. At `X=1.03`, the underlying ten-mode velocity has
+`lambda_squared≈-17704`. Pressure cannot alter this sign. The wider
+plateau fit also has a center residual as large as `1.11e9` on the
+extended radial screen, much worse than its fitted-node report.
+
+`delayed_outer_shear_screen.py` tries shifted exact-solenoidal velocity
+modes. A toroidal bump supported on `X in (1.02,1.06)`, with coefficient
+`-0.0105`, changes `lambda_squared` at `X=1.03` to about
+`70983,442,66345` at `eta=.2,.25,.3`, while keeping the four tested
+inner radii positive. This is an actual shear-sign repair, not yet a
+stress-cone repair. `delayed_shifted_swirl_cone_fit.py` recomputes its
+full physical primitive on five radii and three axial slices. The
+unpressurized 15-node maximum residual is `279527`, and the outgoing
+moment maximum defect remains about `.02349`. The six-mode and
+eighteen-mode pressure cone linear programs are both infeasible.
+`delayed_shifted_cone_geometry.py` locates the pointwise obstruction:
+at `X=1.03,eta=.2` and `.3`, even arbitrary axial stress cannot enter
+the robust cone. The `.25` layer can. The next velocity construction
+needs separate axial controls that change the tangential stress target
+at those two layers, while retaining the positive shear, closing
+moments, and avoiding a new momentum hotspot. No candidate here meets
+the continuous cone or final `1e-3` momentum gates.
+
 ## Frozen Kelvin pair and supported exact-curl wave test
 
 `delayed_outer_kelvin_pair.py` feeds the pressure-opened ten-mode

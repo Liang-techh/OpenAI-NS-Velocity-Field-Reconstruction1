@@ -1,0 +1,255 @@
+{
+  "source": "delayed_outer_admission_search.json",
+  "tau": 0.011048543456039806,
+  "X": [
+    1.016,
+    1.02,
+    1.03,
+    1.04
+  ],
+  "eta": [
+    0.2,
+    0.25,
+    0.3
+  ],
+  "original_lambda_squared": [
+    [
+      12064.30220493821,
+      5043.324362905267,
+      8393.593763340874
+    ],
+    [
+      19642.468392686784,
+      13626.553506870378,
+      16211.628946901303
+    ],
+    [
+      65317.77520463202,
+      -17704.332412026084,
+      61153.51839932056
+    ],
+    [
+      272170.74188471347,
+      224952.59148889498,
+      256248.52183804955
+    ]
+  ],
+  "axial_interval": [
+    0.14,
+    0.36
+  ],
+  "rows": [
+    {
+      "kind": "swirl",
+      "radial_interval": [
+        1.02,
+        1.06
+      ],
+      "amplitude_bound": 0.1,
+      "valid_amplitude_count": 180,
+      "selected": {
+        "amplitude": -0.01050000000000001,
+        "positive_count": 12,
+        "all_X103": true,
+        "all_inner_and_X103": true,
+        "min_lambda_squared": 442.39473186539254,
+        "lambda_X103": [
+          70982.89752029098,
+          442.39473186539254,
+          66344.61587008108
+        ]
+      }
+    },
+    {
+      "kind": "swirl",
+      "radial_interval": [
+        1.02,
+        1.08
+      ],
+      "amplitude_bound": 0.1,
+      "valid_amplitude_count": 124,
+      "selected": {
+        "amplitude": -0.038500000000000006,
+        "positive_count": 12,
+        "all_X103": true,
+        "all_inner_and_X103": true,
+        "min_lambda_squared": 109.71914027706407,
+        "lambda_X103": [
+          70884.66607504345,
+          109.71914027706407,
+          66254.72824975918
+        ]
+      }
+    },
+    {
+      "kind": "swirl",
+      "radial_interval": [
+        1.02,
+        1.12
+      ],
+      "amplitude_bound": 0.1,
+      "valid_amplitude_count": 0,
+      "selected": {
+        "amplitude": -0.1,
+        "positive_count": 11,
+        "all_X103": false,
+        "all_inner_and_X103": false,
+        "min_lambda_squared": -11801.405294890019,
+        "lambda_X103": [
+          67156.59486414041,
+          -11801.405294890019,
+          62837.57040745637
+        ]
+      }
+    },
+    {
+      "kind": "swirl",
+      "radial_interval": [
+        1.025,
+        1.09
+      ],
+      "amplitude_bound": 0.1,
+      "valid_amplitude_count": 0,
+      "selected": {
+        "amplitude": -0.1,
+        "positive_count": 11,
+        "all_X103": false,
+        "all_inner_and_X103": false,
+        "min_lambda_squared": -13978.92146139861,
+        "lambda_X103": [
+          66480.92457986154,
+          -13978.92146139861,
+          62218.74350574796
+        ]
+      }
+    },
+    {
+      "kind": "swirl",
+      "radial_interval": [
+        1.015,
+        1.08
+      ],
+      "amplitude_bound": 0.1,
+      "valid_amplitude_count": 162,
+      "selected": {
+        "amplitude": -0.019500000000000003,
+        "positive_count": 12,
+        "all_X103": true,
+        "all_inner_and_X103": true,
+        "min_lambda_squared": 229.64048970326107,
+        "lambda_X103": [
+          70899.9516899052,
+          229.64048970326107,
+          66267.9769619783
+        ]
+      }
+    },
+    {
+      "kind": "poloidal",
+      "radial_interval": [
+        1.02,
+        1.06
+      ],
+      "amplitude_bound": 0.03,
+      "valid_amplitude_count": 0,
+      "selected": {
+        "amplitude": 0.03,
+        "positive_count": 11,
+        "all_X103": false,
+        "all_inner_and_X103": false,
+        "min_lambda_squared": -17600.306662040737,
+        "lambda_X103": [
+          66368.95059049205,
+          -17600.306662040737,
+          61373.97170977509
+        ]
+      }
+    },
+    {
+      "kind": "poloidal",
+      "radial_interval": [
+        1.02,
+        1.08
+      ],
+      "amplitude_bound": 0.03,
+      "valid_amplitude_count": 0,
+      "selected": {
+        "amplitude": 0.03,
+        "positive_count": 11,
+        "all_X103": false,
+        "all_inner_and_X103": false,
+        "min_lambda_squared": -17600.769284251914,
+        "lambda_X103": [
+          66326.89984761886,
+          -17600.769284251914,
+          61350.46061639551
+        ]
+      }
+    },
+    {
+      "kind": "poloidal",
+      "radial_interval": [
+        1.02,
+        1.12
+      ],
+      "amplitude_bound": 0.03,
+      "valid_amplitude_count": 0,
+      "selected": {
+        "amplitude": 0.03,
+        "positive_count": 11,
+        "all_X103": false,
+        "all_inner_and_X103": false,
+        "min_lambda_squared": -17612.37643496617,
+        "lambda_X103": [
+          65921.39932910603,
+          -17612.37643496617,
+          61236.562847405396
+        ]
+      }
+    },
+    {
+      "kind": "poloidal",
+      "radial_interval": [
+        1.025,
+        1.09
+      ],
+      "amplitude_bound": 0.03,
+      "valid_amplitude_count": 0,
+      "selected": {
+        "amplitude": 0.03,
+        "positive_count": 11,
+        "all_X103": false,
+        "all_inner_and_X103": false,
+        "min_lambda_squared": -17608.419950939373,
+        "lambda_X103": [
+          66010.40499251377,
+          -17608.419950939373,
+          61254.26802392017
+        ]
+      }
+    },
+    {
+      "kind": "poloidal",
+      "radial_interval": [
+        1.015,
+        1.08
+      ],
+      "amplitude_bound": 0.03,
+      "valid_amplitude_count": 0,
+      "selected": {
+        "amplitude": 0.03,
+        "positive_count": 11,
+        "all_X103": false,
+        "all_inner_and_X103": false,
+        "min_lambda_squared": -17600.821659559904,
+        "lambda_X103": [
+          66322.74299251389,
+          -17600.821659559904,
+          61348.46932274554
+        ]
+      }
+    }
+  ],
+  "scope": "Necessary local shear-sign screen for shifted solenoidal velocity modes. No pressure/stress primitive, outgoing moment audit, independent momentum, continuous cone, wave, or PDE gate.",
+  "accepted": false
+}

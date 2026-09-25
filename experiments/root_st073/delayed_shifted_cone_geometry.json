@@ -1,0 +1,226 @@
+{
+  "source": "delayed_shifted_swirl_cone_fit.json",
+  "rows": [
+    {
+      "X": 1.008,
+      "eta": 0.2,
+      "lambda_squared": 5513.684642083174,
+      "target": [
+        -1.0002677825051582,
+        -2.210838067000531
+      ],
+      "free_axial": true,
+      "free_theta": true,
+      "axial_interval": [
+        -Infinity,
+        -2.87434108173007
+      ]
+    },
+    {
+      "X": 1.012,
+      "eta": 0.2,
+      "lambda_squared": 9063.6614664934,
+      "target": [
+        -1.1163351168894118,
+        0.6987538988546917
+      ],
+      "free_axial": true,
+      "free_theta": false,
+      "axial_interval": [
+        -Infinity,
+        -19.93116303474931
+      ]
+    },
+    {
+      "X": 1.016,
+      "eta": 0.2,
+      "lambda_squared": 12064.30220493821,
+      "target": [
+        -1.302484638167846,
+        5.475585769223116
+      ],
+      "free_axial": true,
+      "free_theta": false,
+      "axial_interval": [
+        -Infinity,
+        -63.15215252811306
+      ]
+    },
+    {
+      "X": 1.02,
+      "eta": 0.2,
+      "lambda_squared": 19642.18172639051,
+      "target": [
+        -1.8047131199652857,
+        10.589785164013666
+      ],
+      "free_axial": true,
+      "free_theta": false,
+      "axial_interval": [
+        -Infinity,
+        -1178.8406618592394
+      ]
+    },
+    {
+      "X": 1.03,
+      "eta": 0.2,
+      "lambda_squared": 70982.89752029981,
+      "target": [
+        -5.427005880343601,
+        15.157298870548304
+      ],
+      "free_axial": false,
+      "free_theta": false,
+      "axial_interval": null
+    },
+    {
+      "X": 1.008,
+      "eta": 0.25,
+      "lambda_squared": 5202.4742316876645,
+      "target": [
+        -0.9274176542853696,
+        -3.1461154770038813
+      ],
+      "free_axial": true,
+      "free_theta": true,
+      "axial_interval": [
+        -Infinity,
+        -2.0160559147992734
+      ]
+    },
+    {
+      "X": 1.012,
+      "eta": 0.25,
+      "lambda_squared": 4758.0103602914505,
+      "target": [
+        -0.8397088592786116,
+        -2.441456396973152
+      ],
+      "free_axial": true,
+      "free_theta": true,
+      "axial_interval": [
+        -Infinity,
+        -4.1794974703644
+      ]
+    },
+    {
+      "X": 1.016,
+      "eta": 0.25,
+      "lambda_squared": 5043.324362905267,
+      "target": [
+        -0.8750708395104071,
+        -2.085775853732045
+      ],
+      "free_axial": true,
+      "free_theta": true,
+      "axial_interval": [
+        -Infinity,
+        -4.855846768054915
+      ]
+    },
+    {
+      "X": 1.02,
+      "eta": 0.25,
+      "lambda_squared": 13625.892796550579,
+      "target": [
+        -1.5126233594280851,
+        0.0668027274632102
+      ],
+      "free_axial": true,
+      "free_theta": false,
+      "axial_interval": [
+        -Infinity,
+        -40.79903740017727
+      ]
+    },
+    {
+      "X": 1.03,
+      "eta": 0.25,
+      "lambda_squared": 442.3947318633285,
+      "target": [
+        -0.5296077606782457,
+        17.701276579545315
+      ],
+      "free_axial": true,
+      "free_theta": false,
+      "axial_interval": [
+        -Infinity,
+        -81.64781229361228
+      ]
+    },
+    {
+      "X": 1.008,
+      "eta": 0.3,
+      "lambda_squared": 5336.918209046863,
+      "target": [
+        -0.8284475871602046,
+        -2.115672475127162
+      ],
+      "free_axial": true,
+      "free_theta": true,
+      "axial_interval": [
+        -Infinity,
+        -4.958664156974009
+      ]
+    },
+    {
+      "X": 1.012,
+      "eta": 0.3,
+      "lambda_squared": 6665.704782662557,
+      "target": [
+        -0.8835054001896724,
+        2.27637312010942
+      ],
+      "free_axial": true,
+      "free_theta": false,
+      "axial_interval": [
+        -Infinity,
+        -24.167192038149082
+      ]
+    },
+    {
+      "X": 1.016,
+      "eta": 0.3,
+      "lambda_squared": 8393.593763340874,
+      "target": [
+        -0.9757027229647429,
+        8.959693878363845
+      ],
+      "free_axial": true,
+      "free_theta": false,
+      "axial_interval": [
+        -Infinity,
+        -63.06342499166013
+      ]
+    },
+    {
+      "X": 1.02,
+      "eta": 0.3,
+      "lambda_squared": 16211.394397543121,
+      "target": [
+        -1.4743113177267904,
+        16.010488604963808
+      ],
+      "free_axial": true,
+      "free_theta": false,
+      "axial_interval": [
+        -Infinity,
+        -539.8111793779711
+      ]
+    },
+    {
+      "X": 1.03,
+      "eta": 0.3,
+      "lambda_squared": 66344.61587008426,
+      "target": [
+        -4.622505089436099,
+        31.2978616127769
+      ],
+      "free_axial": false,
+      "free_theta": false,
+      "axial_interval": null
+    }
+  ],
+  "scope": "Pointwise one-stress-component necessary cone conditions on fifteen sampled nodes. No realizable pressure, continuous cone, wave, or PDE acceptance.",
+  "accepted": false
+}

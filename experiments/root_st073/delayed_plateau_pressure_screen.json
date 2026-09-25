@@ -1,0 +1,311 @@
+{
+  "source": "delayed_outer_admission_search.json",
+  "radial_shapes": [
+    [
+      [
+        1.0,
+        1.012
+      ],
+      [
+        1.12,
+        1.2
+      ]
+    ],
+    [
+      [
+        1.0,
+        1.02
+      ],
+      [
+        1.12,
+        1.2
+      ]
+    ],
+    [
+      [
+        1.005,
+        1.04
+      ],
+      [
+        1.12,
+        1.2
+      ]
+    ],
+    [
+      [
+        1.0,
+        1.012
+      ],
+      [
+        2.5,
+        3.0
+      ]
+    ],
+    [
+      [
+        1.0,
+        1.02
+      ],
+      [
+        2.5,
+        3.0
+      ]
+    ],
+    [
+      [
+        1.005,
+        1.04
+      ],
+      [
+        2.5,
+        3.0
+      ]
+    ]
+  ],
+  "axial_intervals": [
+    [
+      0.14,
+      0.36
+    ],
+    [
+      0.2,
+      0.4
+    ]
+  ],
+  "shape": "C5 beta(6,6) rise, plateau, C5 fall",
+  "training_before": {
+    "max": 230237.3352269471,
+    "rms": 147837.5525695709
+  },
+  "nearby_before": {
+    "max": 556318.442651761,
+    "rms": 252377.723846306
+  },
+  "searches": {
+    "existing_six": {
+      "active_count": 6,
+      "feasible": true,
+      "coefficient_limit": null,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "coefficients": [
+        -527.9516996525447,
+        -304.68272026143205,
+        1101.6481441082658,
+        13746.371672826928,
+        -2791249.3592988104,
+        -7346547.007164247,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "optimized_component_max": 370662330.64324635,
+      "actual_component_max": 370662330.6432464,
+      "min_cone_slack": 0.0,
+      "train_max": 396808623.24005514,
+      "nearby_max": 419091429.3373013
+    },
+    "plateau_twelve": {
+      "active_count": 12,
+      "feasible": true,
+      "coefficient_limit": null,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "coefficients": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        133.9916979344328,
+        -490.7186061402807,
+        -419.80977301552446,
+        457.565481427532,
+        -750.3117341180086,
+        817.7939159959323
+      ],
+      "optimized_component_max": 453011347.4885856,
+      "actual_component_max": 453011347.4885857,
+      "min_cone_slack": -7.327471962526033e-15,
+      "train_max": 489885885.2702083,
+      "nearby_max": 469896545.1611768
+    },
+    "combined_eighteen": {
+      "active_count": 18,
+      "feasible": true,
+      "coefficient_limit": null,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "coefficients": [
+        7654.765003280977,
+        -13616.434906343931,
+        174481.38018624714,
+        -301761.98418496444,
+        -60464345.77773465,
+        101011506.07523686,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        113.91642910834356,
+        -390.294417974692,
+        -386.6090721780403,
+        674.470380131913,
+        -24099.95974246698,
+        41968.5326398218
+      ],
+      "optimized_component_max": 200725700.34614664,
+      "actual_component_max": 200725700.34615347,
+      "min_cone_slack": -2.3092638912203256e-13,
+      "train_max": 219639860.8341272,
+      "nearby_max": 225607634.44163728
+    },
+    "combined_cap_1e2": {
+      "active_count": 18,
+      "feasible": false,
+      "coefficient_limit": 100.0,
+      "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+    },
+    "combined_cap_5e2": {
+      "active_count": 18,
+      "feasible": true,
+      "coefficient_limit": 500.0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "coefficients": [
+        -499.99999999999994,
+        -97.28342825846588,
+        500.0,
+        -500.00000000000006,
+        -500.0,
+        -499.99999999999994,
+        -406.5351976145499,
+        -500.0,
+        -500.0,
+        -110.47352090017812,
+        -498.796872590876,
+        346.6070798440928,
+        500.0,
+        -61.24635260453731,
+        208.5260506750317,
+        500.00000000000006,
+        500.0,
+        500.00000000000006
+      ],
+      "optimized_component_max": 375918022.87436795,
+      "actual_component_max": 375918022.8743682,
+      "min_cone_slack": -3.552713678800501e-15,
+      "train_max": 407540492.2459956,
+      "nearby_max": 413121716.91791284
+    },
+    "combined_cap_1e3": {
+      "active_count": 18,
+      "feasible": true,
+      "coefficient_limit": 1000.0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "coefficients": [
+        -912.1986782603324,
+        1000.0,
+        1000.0,
+        -1000.0000000000001,
+        1000.0,
+        999.9999999999999,
+        -1000.0,
+        -1000.0,
+        -943.5222194156171,
+        -1000.0000000000001,
+        -389.58267901243426,
+        -1000.0000000000001,
+        982.5118732826771,
+        812.1601687010908,
+        1000.0,
+        936.2803292133368,
+        1000.0,
+        320.05212650344424
+      ],
+      "optimized_component_max": 314462599.490163,
+      "actual_component_max": 314462599.4901636,
+      "min_cone_slack": 1.0658141036401503e-14,
+      "train_max": 341099529.8653033,
+      "nearby_max": 265095541.62418443
+    },
+    "combined_cap_1e4": {
+      "active_count": 18,
+      "feasible": true,
+      "coefficient_limit": 10000.0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "coefficients": [
+        -596.1149469076812,
+        1011.0406947805321,
+        7444.529882713256,
+        -5143.373490170306,
+        -10000.0,
+        10000.0,
+        -10000.0,
+        -9916.812870111782,
+        -9956.12554647762,
+        -10000.0,
+        -10000.0,
+        -10000.0,
+        9986.160835517836,
+        10000.000000000002,
+        10000.0,
+        9658.815448716823,
+        9695.799559493378,
+        9620.7144262238
+      ],
+      "optimized_component_max": 309959305.68850034,
+      "actual_component_max": 309959305.6885046,
+      "min_cone_slack": -1.468158927764307e-12,
+      "train_max": 332099559.07047755,
+      "nearby_max": 339843628.3411823
+    },
+    "combined_cap_1e5": {
+      "active_count": 18,
+      "feasible": true,
+      "coefficient_limit": 100000.0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "coefficients": [
+        -583.1609431559918,
+        997.8499236336178,
+        7708.644912993413,
+        -5408.79114566986,
+        -100000.0,
+        100000.0,
+        -100000.0,
+        -99917.01557168167,
+        -99956.64206640521,
+        -100000.0,
+        -100000.0,
+        -100000.0,
+        99986.31038029282,
+        100000.0,
+        100000.0,
+        99659.49971507014,
+        99658.31594126674,
+        99658.58613788185
+      ],
+      "optimized_component_max": 309774747.99376047,
+      "actual_component_max": 309774747.9937986,
+      "min_cone_slack": -4.4181769354167955e-11,
+      "train_max": 331900369.7405988,
+      "nearby_max": 339670815.03593814
+    }
+  },
+  "scope": "Twelve new smooth compact radial plateau pressure modes plus six existing modes, constrained sampled strict cone and full Cartesian component minmax on training and nearby-time nodes. No continuous cone, pressure-Poisson compatibility, moment closure, wave, volume L2, or PDE acceptance.",
+  "accepted": false
+}
