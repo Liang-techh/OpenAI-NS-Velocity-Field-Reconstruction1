@@ -5,6 +5,7 @@ optimizes the remaining 34 mean coefficients to restore all twelve
 sampled physical moments. Then directly rechecks the midplane cone.
 """
 
+import argparse
 import json
 
 import numpy as np
@@ -17,14 +18,15 @@ from radial_continuation import ROOT
 from separated_moment_modes import RADIAL_WINDOWS_THREE, SeparatedMomentModes
 
 
-def run():
+def run(all_knots=False):
     inner, fields = build_fields()
     base = fields["two_sided_cone"]
     old = json.loads((ROOT / "separated_moment_three_knots.json").read_text())
     amplitudes = np.asarray(old["constrained_l4"]["amplitudes"], float)
     shape = (3, 2, 3, 2)
-    fixed_indices = [int(np.ravel_multi_index(index, shape))
-                     for index in ((0, 1, 0, 1), (2, 1, 0, 1))]
+    knot_indices = range(3) if all_knots else (0, 2)
+    fixed_indices = [int(np.ravel_multi_index((index, 1, 0, 1), shape))
+                     for index in knot_indices]
     free_indices = np.array([i for i in range(len(amplitudes))
                              if i not in fixed_indices])
     fixed_delta = np.zeros_like(amplitudes)
@@ -85,6 +87,7 @@ def run():
                                 passing_eta=[row["eta"] for row in rows
                                              if row["cone_pass"]]))
     report = dict(source="Moment-repaired first-window odd-poloidal axial-cone change",
+                  all_knots=all_knots,
                   fixed_indices=fixed_indices,
                   fixed_delta=fixed_delta[fixed_indices].tolist(),
                   optimizer_success=bool(solved.success),
@@ -101,7 +104,9 @@ def run():
                   cone_scales=cone_scales,
                   scope="SLSQP restores twelve sampled physical outer moments at three scale knots while holding the two selected odd-poloidal coefficients at half baseline. Cone rows are a sampled physical analogue at five eta values on k=11,19, not a continuous support, full leading-profile construction, or momentum improvement.",
                   accepted=False, scale_recursion_established=False)
-    (ROOT / "midplane_axial_cone_moment_repair.json").write_bytes(
+    output_name = ("midplane_axial_cone_all_knots_repair.json" if all_knots
+                   else "midplane_axial_cone_moment_repair.json")
+    (ROOT / output_name).write_bytes(
         (json.dumps(report, indent=2) + "\n").encode())
     print(json.dumps(dict(optimizer_success=report["optimizer_success"],
                           normalized_moment_max=report["normalized_moment_max"],
@@ -111,4 +116,6 @@ def run():
 
 
 if __name__ == "__main__":
-    run()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--all-knots", action="store_true")
+    run(all_knots=parser.parse_args().all_knots)

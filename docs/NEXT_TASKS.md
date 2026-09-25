@@ -160,6 +160,14 @@ units. Its cone margin is narrow, the negative side remains closed, and no
 full-momentum gain has been shown; see `ST073_AXIAL_CONE_MOMENT_REPAIR.md`.
 Next optimize a wider connected cone with moment constraints, then test the
 supported correction's complete residual on adjacent scales and pulse times.
+The integer-scale holdout found the two-knot cone fails at `k=12..16`.
+Adding the same coefficient change at the middle `k=15` knot repairs this
+single-point cone at all nine integer scales `k=11..19`, with normalized
+moment defect `1.50e-14`; however its weakest cone margin is `0.001819`
+and mean-only local momentum still grows `3655×` over the interval.
+Do not infer continuous cone support or recursive contraction from this
+discrete result. The next gate is a wider connected space-time cone and
+absolute full-residual decrease after a supported wave/mean correction.
 Use those directions as a conditioning prototype, not as the paper's five
 leading-profile moments or a recursive correction.
 The next Stage-1 inputs are therefore the actual coefficient-family

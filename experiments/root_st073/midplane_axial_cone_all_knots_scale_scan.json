@@ -1,0 +1,239 @@
+{
+  "source": "Mean-only integer-scale holdout between moment knots",
+  "all_knots": true,
+  "y": 0.325,
+  "eta_nodes": [
+    -0.05,
+    -0.0125,
+    0.025,
+    0.05
+  ],
+  "scales": [
+    {
+      "k": 11,
+      "original_momentum_norm": [
+        456162.08456185507,
+        461912.0110387276,
+        459187.72109184775,
+        452708.7619006932
+      ],
+      "repaired_momentum_norm": [
+        444473.3052530747,
+        449452.85208434425,
+        446909.9804378379,
+        441088.3871513695
+      ],
+      "repaired_to_original_max": 0.9730269864029607,
+      "cone_at_positive_edge": {
+        "eta": 0.05,
+        "momentum_norm": 441088.3871513695,
+        "lambda_squared": 25537406.98380755,
+        "cone_pass": true,
+        "target_dot_N": -51.01389359896304,
+        "target_dot_K": 84.682105074819,
+        "cone_ratio": 0.992033921679994
+      }
+    },
+    {
+      "k": 12,
+      "original_momentum_norm": [
+        1279291.382484181,
+        1295286.4474234893,
+        1287632.2374422897,
+        1269519.7583628865
+      ],
+      "repaired_momentum_norm": [
+        1246939.7105806351,
+        1260742.5372266117,
+        1253605.2094247707,
+        1237364.1948584144
+      ],
+      "repaired_to_original_max": 0.9733310649041451,
+      "cone_at_positive_edge": {
+        "eta": 0.05,
+        "momentum_norm": 1237364.1948584144,
+        "lambda_squared": 102622511.1253423,
+        "cone_pass": true,
+        "target_dot_N": -100.82690563385871,
+        "target_dot_K": 168.42253726745741,
+        "cone_ratio": 0.9981813124070084
+      }
+    },
+    {
+      "k": 13,
+      "original_momentum_norm": [
+        3544313.657538811,
+        3587589.0662642578,
+        3566221.929101449,
+        3516445.5256673116
+      ],
+      "repaired_momentum_norm": [
+        3461044.371484373,
+        3498398.4423926994,
+        3478426.051425318,
+        3433703.852221324
+      ],
+      "repaired_to_original_max": 0.9751391192736485,
+      "cone_at_positive_edge": {
+        "eta": 0.05,
+        "momentum_norm": 3433703.852221324,
+        "lambda_squared": 404996432.36474854,
+        "cone_pass": true,
+        "target_dot_N": -201.45444008859374,
+        "target_dot_K": 335.3274807096568,
+        "cone_ratio": 0.9860575809815743
+      }
+    },
+    {
+      "k": 14,
+      "original_momentum_norm": [
+        9814914.580751447,
+        9931525.121769065,
+        9871933.649682608,
+        9735444.400882274
+      ],
+      "repaired_momentum_norm": [
+        9602474.625283936,
+        9703197.152918128,
+        9647343.089295624,
+        9524411.658187438
+      ],
+      "repaired_to_original_max": 0.9770097778486749,
+      "cone_at_positive_edge": {
+        "eta": 0.05,
+        "momentum_norm": 9524411.658187438,
+        "lambda_squared": 1597710425.39506,
+        "cone_pass": true,
+        "target_dot_N": -402.216717445181,
+        "target_dot_K": 667.5736330809498,
+        "cone_ratio": 0.9745191918746448
+      }
+    },
+    {
+      "k": 15,
+      "original_momentum_norm": [
+        27514197.62795538,
+        27837525.969664384,
+        27670222.211258896,
+        27289341.067818813
+      ],
+      "repaired_momentum_norm": [
+        26928415.634247094,
+        27206569.974888954,
+        27049901.5454272,
+        26707580.648861118
+      ],
+      "repaired_to_original_max": 0.9773343365548,
+      "cone_at_positive_edge": {
+        "eta": 0.05,
+        "momentum_norm": 26707580.648861118,
+        "lambda_squared": 6419948746.415956,
+        "cone_pass": true,
+        "target_dot_N": -794.0955671745776,
+        "target_dot_K": 1327.5996027702133,
+        "cone_ratio": 0.9814858864273261
+      }
+    },
+    {
+      "k": 16,
+      "original_momentum_norm": [
+        77139622.19681323,
+        78035668.393226,
+        77566002.5238169,
+        76503400.35738678
+      ],
+      "repaired_momentum_norm": [
+        75521855.56797825,
+        76289496.27937862,
+        75850100.41811697,
+        74897154.64074562
+      ],
+      "repaired_to_original_max": 0.9776234105531292,
+      "cone_at_positive_edge": {
+        "eta": 0.05,
+        "momentum_norm": 74897154.64074562,
+        "lambda_squared": 25798149920.82009,
+        "cone_pass": true,
+        "target_dot_N": -1568.8815756189767,
+        "target_dot_K": 2640.636837185305,
+        "cone_ratio": 0.987999695069366
+      }
+    },
+    {
+      "k": 17,
+      "original_momentum_norm": [
+        213581978.50259086,
+        215980713.27522305,
+        214671879.88219425,
+        211766968.97098514
+      ],
+      "repaired_momentum_norm": [
+        209462730.80566916,
+        211518274.39190102,
+        210290254.69801122,
+        207678364.08646426
+      ],
+      "repaired_to_original_max": 0.9793387158711918,
+      "cone_at_positive_edge": {
+        "eta": 0.05,
+        "momentum_norm": 207678364.08646426,
+        "lambda_squared": 101771328864.78806,
+        "cone_pass": true,
+        "target_dot_N": -3133.9315199646617,
+        "target_dot_K": 5258.60613332829,
+        "cone_ratio": 0.9762389991316082
+      }
+    },
+    {
+      "k": 18,
+      "original_momentum_norm": [
+        591055795.5215578,
+        597439932.8002263,
+        593796634.0011443,
+        585878427.2965777
+      ],
+      "repaired_momentum_norm": [
+        580683550.5991392,
+        586158363.6887935,
+        582728875.3769065,
+        575586800.4657733
+      ],
+      "repaired_to_original_max": 0.9811168144409839,
+      "cone_at_positive_edge": {
+        "eta": 0.05,
+        "momentum_norm": 575586800.4657733,
+        "lambda_squared": 401322927811.31384,
+        "cone_pass": true,
+        "target_dot_N": -6255.510312580516,
+        "target_dot_K": 10471.130560985504,
+        "cone_ratio": 0.9650647985878656
+      }
+    },
+    {
+      "k": 19,
+      "original_momentum_norm": [
+        1656347050.378956,
+        1673952058.9781473,
+        1663734434.9995704,
+        1641699218.9873812
+      ],
+      "repaired_momentum_norm": [
+        1627835473.932995,
+        1642859287.5159874,
+        1633249130.4106977,
+        1613417715.012503
+      ],
+      "repaired_to_original_max": 0.9814255305010705,
+      "cone_at_positive_edge": {
+        "eta": 0.05,
+        "momentum_norm": 1613417715.012503,
+        "lambda_squared": 1612564118083.5798,
+        "cone_pass": true,
+        "target_dot_N": -12344.940526357821,
+        "target_dot_K": 20825.407356287273,
+        "cone_ratio": 0.9724206715396363
+      }
+    }
+  ],
+  "scope": "Physical mean-field momentum on four local axial nodes and one cone row per scale; no wave, interior-time budget, spatial maximum, or recursive contraction claim."
+}
