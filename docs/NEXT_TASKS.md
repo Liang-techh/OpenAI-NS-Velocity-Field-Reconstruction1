@@ -117,6 +117,16 @@ scheme by further step-size tuning alone. Build a supported pulse
 inverse with stable time integration, pressure recovery, and a
 continuum-in-time residual budget, then couple the mean/stress/moment
 operations before claiming recursive contraction.
+Implicit midpoint integration in the transferred two-harmonic-plus-mean
+template space also fails: even with nine training nodes and solved
+three-coordinate midpoint equations, the held-out midpoint maxima
+are `12.8` and `315.6` times the frozen wave. See
+`ST073_MIDPLANE_IMPLICIT_TEMPLATE.md`. Do not keep tuning the integrator
+inside this fixed three-template space. Implement the paper's
+spatially varying transverse amplitude along moving pulse paths,
+including normal pressure recovery, supported time cutoff errors,
+mean flow and moment restoration, before reattempting a dyadic
+recursive residual cycle.
 Use those directions as a conditioning prototype, not as the paper's five
 leading-profile moments or a recursive correction.
 The next Stage-1 inputs are therefore the actual coefficient-family

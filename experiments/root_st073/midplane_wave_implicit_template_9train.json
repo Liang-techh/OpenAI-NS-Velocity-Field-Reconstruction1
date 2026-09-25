@@ -1,0 +1,78 @@
+{
+  "source": "Three-template implicit-midpoint midplane pulse trial",
+  "k": 19,
+  "pulse_fractions": [
+    -0.1,
+    0.0,
+    0.1
+  ],
+  "train_nodes": 9,
+  "heldout_nodes": 9,
+  "intervals": [
+    {
+      "midpoint_fraction": -0.05,
+      "q_left": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "q_right": [
+        -1.207110855835399,
+        -2.4335270065079238,
+        4.986205872127648
+      ],
+      "implicit_success": true,
+      "implicit_message": "The solution converged.",
+      "evaluations": 63,
+      "fixed_point_defect": 2.9848454672933715e-11,
+      "train_projection_relative": 0.19059428409449944,
+      "frozen": {
+        "max_momentum": 11704139907573.158,
+        "rms_momentum": 4720531487259.946,
+        "max_fd_divergence": 56.13762604445219,
+        "max_speed": 608.8453929106854
+      },
+      "corrected": {
+        "max_momentum": 149324464218316.4,
+        "rms_momentum": 67361913712451.984,
+        "max_fd_divergence": 1113.04467985034,
+        "max_speed": 2045.4581857100093
+      },
+      "max_ratio": 12.758260358943255
+    },
+    {
+      "midpoint_fraction": 0.05,
+      "q_left": [
+        -1.207110855835399,
+        -2.4335270065079238,
+        4.986205872127648
+      ],
+      "q_right": [
+        25.709514116689807,
+        99.90816469663697,
+        -647.0809642449993
+      ],
+      "implicit_success": true,
+      "implicit_message": "The solution converged.",
+      "evaluations": 60,
+      "fixed_point_defect": 8.156758795485627e-08,
+      "train_projection_relative": 0.2322613862941704,
+      "frozen": {
+        "max_momentum": 12728008241893.85,
+        "rms_momentum": 5143540205228.411,
+        "max_fd_divergence": 56.14196290820837,
+        "max_speed": 608.8964803474394
+      },
+      "corrected": {
+        "max_momentum": 4016920909762804.0,
+        "rms_momentum": 2021216670898151.8,
+        "max_fd_divergence": 24904.838306427002,
+        "max_speed": 54617.40832678182
+      },
+      "max_ratio": 315.59697585213934
+    }
+  ],
+  "scope": "Low-rank transferred potential space, full frozen-state nonlinear residual for each implicit RHS, algebraic harmonic/mean pressure fit, direct midpoint full-momentum holdouts. No full amplitude inverse, support closure, moment restoration, or scale recursion.",
+  "accepted": false,
+  "scale_recursion_established": false
+}
