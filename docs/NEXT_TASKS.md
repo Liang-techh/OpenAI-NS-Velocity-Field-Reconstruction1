@@ -78,6 +78,14 @@ sampled axial half-width falls short by factors `5.11` and `4.97` at
 `k=11,19`; see `ST073_MIDPLANE_CONE_CANDIDATE.md`. Focus the mean-profile
 redesign on widening this axial cone or obtain a joint space–time
 carrier/cutoff balance, then check a connected 3D cone on both scales.
+The midplane wave trial now uses a pair with **positive actual exact-curl
+covariance weights** and matches the center stress at both scales to
+`~5.6e-15`; nevertheless its multiplier-`0.1` momentum rises by factors
+`5,241` and `5,125` over the background, dominated by the axial-cutoff
+viscous term. See `ST073_MIDPLANE_WAVE_TWO_SCALE.md`. Next require a
+spatially supported amplitude/pressure solve and mean correction on a
+wider axial cone, with complete interior-time residual and cross-scale
+checks. Do not treat center stress matching as residual improvement.
 Use those directions as a conditioning prototype, not as the paper's five
 leading-profile moments or a recursive correction.
 The next Stage-1 inputs are therefore the actual coefficient-family

@@ -1,0 +1,412 @@
+{
+  "source": "Positive covariance pairs for actual center exact-curl fields",
+  "scales": [
+    {
+      "k": 11,
+      "tau": 0.000244140625,
+      "support": {
+        "radial_halfwidth": 0.0001450234632612008,
+        "axial_halfwidth": 4.0317224003357496e-05,
+        "time_halfwidth": 1.2191089135026794e-07,
+        "min_tau": 4.76837158203125e-07
+      },
+      "source_ideal_nnls_indices": [
+        3,
+        7
+      ],
+      "ideal_selected_indices": [
+        0,
+        10
+      ],
+      "ideal_pair_unconstrained_physical_weights": [
+        327.18740875649667,
+        -33.729067475768815
+      ],
+      "ideal_pair_physical_matrix_condition": 3.1861406616345183,
+      "positive_pair_count": 15,
+      "selected": {
+        "indices": [
+          0,
+          16
+        ],
+        "modes": [
+          1,
+          4
+        ],
+        "positive_weights": [
+          374.8875134269264,
+          23.85005233521467
+        ],
+        "carrier_viscous_cost": 8591385.883754916,
+        "matrix_condition": 1.966305853932118
+      },
+      "top_pairs": [
+        {
+          "indices": [
+            0,
+            16
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "positive_weights": [
+            374.8875134269264,
+            23.85005233521467
+          ],
+          "carrier_viscous_cost": 8591385.883754916,
+          "matrix_condition": 1.966305853932118
+        },
+        {
+          "indices": [
+            3,
+            16
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "positive_weights": [
+            374.8875134269287,
+            101.49179854809441
+          ],
+          "carrier_viscous_cost": 15178056.311586678,
+          "matrix_condition": 2.4142135623730945
+        },
+        {
+          "indices": [
+            0,
+            14
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "positive_weights": [
+            490.0457530488925,
+            115.1582396219657
+          ],
+          "carrier_viscous_cost": 21434297.023503374,
+          "matrix_condition": 11.865469301586574
+        },
+        {
+          "indices": [
+            0,
+            17
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "positive_weights": [
+            422.5876180973557,
+            67.45813495153716
+          ],
+          "carrier_viscous_cost": 22810377.34452882,
+          "matrix_condition": 5.82842712474616
+        },
+        {
+          "indices": [
+            6,
+            16
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "positive_weights": [
+            530.1710058526869,
+            211.2938090486792
+          ],
+          "carrier_viscous_cost": 33724171.57925164,
+          "matrix_condition": 3.1861406616345183
+        },
+        {
+          "indices": [
+            7,
+            12
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "positive_weights": [
+            101.49179854809518,
+            374.8875134269261
+          ],
+          "carrier_viscous_cost": 46319538.463241905,
+          "matrix_condition": 2.4142135623731193
+        },
+        {
+          "indices": [
+            7,
+            9
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "positive_weights": [
+            23.85005233521546,
+            374.88751342692535
+          ],
+          "carrier_viscous_cost": 91278781.50526997,
+          "matrix_condition": 1.9663058539321374
+        },
+        {
+          "indices": [
+            8,
+            12
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "positive_weights": [
+            490.04575304889767,
+            721.4021884994714
+          ],
+          "carrier_viscous_cost": 95092940.36889796,
+          "matrix_condition": 11.865469301586796
+        },
+        {
+          "indices": [
+            8,
+            9
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "positive_weights": [
+            67.45813495153936,
+            422.58761809735626
+          ],
+          "carrier_viscous_cost": 103713316.63027087,
+          "matrix_condition": 5.828427124746219
+        },
+        {
+          "indices": [
+            5,
+            9
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "positive_weights": [
+            115.15823962196889,
+            490.0457530488952
+          ],
+          "carrier_viscous_cost": 119955606.6653441,
+          "matrix_condition": 11.865469301586705
+        }
+      ]
+    },
+    {
+      "k": 19,
+      "tau": 9.5367431640625e-07,
+      "support": {
+        "radial_halfwidth": 9.06396645382505e-06,
+        "axial_halfwidth": 2.5906684656401065e-06,
+        "time_halfwidth": 5.033672324146548e-10,
+        "min_tau": 4.76837158203125e-07
+      },
+      "source_ideal_nnls_indices": [
+        3,
+        7
+      ],
+      "ideal_selected_indices": [
+        0,
+        10
+      ],
+      "ideal_pair_unconstrained_physical_weights": [
+        79485.98413178365,
+        -8701.762914932502
+      ],
+      "ideal_pair_physical_matrix_condition": 3.1861406616345183,
+      "positive_pair_count": 15,
+      "selected": {
+        "indices": [
+          0,
+          16
+        ],
+        "modes": [
+          1,
+          4
+        ],
+        "positive_weights": [
+          91792.1352626365,
+          6153.0755654263685
+        ],
+        "carrier_viscous_cost": 548273110762.7846,
+        "matrix_condition": 1.966305853932118
+      },
+      "top_pairs": [
+        {
+          "indices": [
+            0,
+            16
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "positive_weights": [
+            91792.1352626365,
+            6153.0755654263685
+          ],
+          "carrier_viscous_cost": 548273110762.7846,
+          "matrix_condition": 1.966305853932118
+        },
+        {
+          "indices": [
+            3,
+            16
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "positive_weights": [
+            91792.13526263706,
+            25163.849237911294
+          ],
+          "carrier_viscous_cost": 961140324057.4375,
+          "matrix_condition": 2.4142135623730945
+        },
+        {
+          "indices": [
+            0,
+            14
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "positive_weights": [
+            121501.81222335402,
+            29709.676960717417
+          ],
+          "carrier_viscous_cost": 1396488905543.244,
+          "matrix_condition": 11.865469301586574
+        },
+        {
+          "indices": [
+            0,
+            17
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "positive_weights": [
+            104098.28639348922,
+            17403.525829864884
+          ],
+          "carrier_viscous_cost": 1487372744143.3457,
+          "matrix_condition": 5.82842712474616
+        },
+        {
+          "indices": [
+            6,
+            16
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "positive_weights": [
+            129813.6826076066,
+            52049.143196744946
+          ],
+          "carrier_viscous_cost": 2123652250515.3782,
+          "matrix_condition": 3.1861406616345183
+        },
+        {
+          "indices": [
+            7,
+            12
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "positive_weights": [
+            25163.849237911487,
+            91792.13526263642
+          ],
+          "carrier_viscous_cost": 2904021238354.9087,
+          "matrix_condition": 2.4142135623731193
+        },
+        {
+          "indices": [
+            7,
+            9
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "positive_weights": [
+            6153.07556542657,
+            91792.13526263625
+          ],
+          "carrier_viscous_cost": 5722167005625.302,
+          "matrix_condition": 1.9663058539321374
+        },
+        {
+          "indices": [
+            8,
+            12
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "positive_weights": [
+            121501.8122233553,
+            177706.8906122259
+          ],
+          "carrier_viscous_cost": 5999794461240.998,
+          "matrix_condition": 11.865469301586796
+        },
+        {
+          "indices": [
+            8,
+            9
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "positive_weights": [
+            17403.525829865415,
+            104098.28639348935
+          ],
+          "carrier_viscous_cost": 6543411424356.42,
+          "matrix_condition": 5.828427124746219
+        },
+        {
+          "indices": [
+            5,
+            9
+          ],
+          "modes": [
+            1,
+            4
+          ],
+          "positive_weights": [
+            29709.676960718192,
+            121501.81222335469
+          ],
+          "carrier_viscous_cost": 7616140714565.012,
+          "matrix_condition": 11.865469301586705
+        }
+      ]
+    }
+  ],
+  "scope": "Actual exact-curl angular covariance at one point/time per scale, 16 angles, fixed proposed support. Positive two-mode pairs ranked by weighted carrier viscous cost. No open-cone, transported amplitude, full residual, or scale recursion claim.",
+  "accepted": false,
+  "scale_recursion_established": false
+}

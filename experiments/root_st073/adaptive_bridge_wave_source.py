@@ -8,7 +8,8 @@ from radial_continuation import ROOT
 from separated_moment_modes import SeparatedMomentModes, RADIAL_WINDOWS_THREE
 
 
-def run(k=11.0, eta=-0.2, y=0.05):
+def run(k=11.0, eta=-0.2, y=0.05,
+        output_name="adaptive_bridge_wave_source.json"):
     inner, fields = build_fields()
     report = json.loads((ROOT / "separated_moment_three_knots.json").read_text())
     field = SeparatedMomentModes(
@@ -19,7 +20,7 @@ def run(k=11.0, eta=-0.2, y=0.05):
     point = inner.from_similarity([X], [eta], tau)[0]
     cone_run(radius=float(point[0]), z=float(point[2]),
              tau=tau, field=field, field_id="three_knot_moment_closed",
-             output_name="adaptive_bridge_wave_source.json")
+             output_name=output_name)
 
 
 if __name__ == "__main__":
