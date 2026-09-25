@@ -99,11 +99,12 @@ class TransitionPoloidalMode:
 
 
 def kinematics(field, points, tau, hs, ht, time_min=.5/64,
-               time_max=.5):
+               time_max=.5, return_terms=False, return_viscosity_axes=False):
     u, p = field.fields(points, tau)
     grad = np.zeros((len(points), 3, 3))
     gp = np.zeros((len(points), 3))
     lap = np.zeros_like(u)
+    lap_axes = [] if return_viscosity_axes else None
     for axis in range(3):
         step = np.zeros(3)
         step[axis] = hs
@@ -113,7 +114,10 @@ def kinematics(field, points, tau, hs, ht, time_min=.5/64,
         up2, pp2 = field.fields(points + 2*step, tau)
         grad[:, :, axis] = (um2 - 8*um1 + 8*up1 - up2) / (12*hs)
         gp[:, axis] = (pm2 - 8*pm1 + 8*pp1 - pp2) / (12*hs)
-        lap += (-up2 + 16*up1 - 30*u + 16*um1 - um2) / (12*hs*hs)
+        lap_axis = (-up2 + 16*up1 - 30*u + 16*um1 - um2) / (12*hs*hs)
+        lap += lap_axis
+        if return_viscosity_axes:
+            lap_axes.append(-field.nu*lap_axis)
     if tau - 2*ht < time_min:
         utau = (-25*u + 48*field.fields(points, tau+ht)[0]
                 - 36*field.fields(points, tau+2*ht)[0]
@@ -129,7 +133,15 @@ def kinematics(field, points, tau, hs, ht, time_min=.5/64,
                 - 8*field.fields(points, tau-ht)[0]
                 + 8*field.fields(points, tau+ht)[0]
                 - field.fields(points, tau+2*ht)[0]) / (12*ht)
-    return u, grad, -utau + gp - field.nu*lap
+    part = -utau + gp - field.nu*lap
+    if return_terms:
+        terms = {'time': -utau, 'pressure': gp,
+                 'viscosity': -field.nu*lap,
+                 'convection': np.einsum('nij,nj->ni', grad, u)}
+        if return_viscosity_axes:
+            return u, grad, part, terms, np.stack(lap_axes, axis=0)
+        return u, grad, part, terms
+    return u, grad, part
 
 
 def nodes(base, tau, order):
