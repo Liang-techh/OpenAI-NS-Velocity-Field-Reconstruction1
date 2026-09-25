@@ -1,0 +1,195 @@
+{
+  "intervals": [
+    [
+      1.0,
+      1.12
+    ],
+    [
+      1.0,
+      1.5
+    ],
+    [
+      1.0,
+      3.0
+    ],
+    [
+      2.0,
+      3.0
+    ]
+  ],
+  "axial_support": [
+    0.1,
+    0.4
+  ],
+  "selected_ridge": 10.0,
+  "selected_amplitudes": [
+    -0.0034760335219432,
+    -0.000652955861021797,
+    -0.03422867204493742,
+    0.0123932790731812,
+    -0.02619372451354482,
+    0.056543094372139516,
+    -0.001782728081685015,
+    -0.0003435015965441302
+  ],
+  "trials": [
+    {
+      "ridge": 0.001,
+      "rows": [
+        {
+          "name": "train",
+          "before_max": 285727.52526720235,
+          "after_max": 204159.99164830887,
+          "before_rms": 112103.6681305139,
+          "after_rms": 79883.24671156674
+        },
+        {
+          "name": "space_holdout",
+          "before_max": 171833.09611789265,
+          "after_max": 193367.77760974312,
+          "before_rms": 77601.99400653687,
+          "after_rms": 104499.0865833747
+        },
+        {
+          "name": "time_holdout",
+          "before_max": 132412.30967613703,
+          "after_max": 149007.07851713087,
+          "before_rms": 59800.876787038425,
+          "after_rms": 80535.97713204318
+        }
+      ]
+    },
+    {
+      "ridge": 0.01,
+      "rows": [
+        {
+          "name": "train",
+          "before_max": 285727.52526720235,
+          "after_max": 204150.3347318736,
+          "before_rms": 112103.6681305139,
+          "after_rms": 79883.2473956056
+        },
+        {
+          "name": "space_holdout",
+          "before_max": 171833.09611789265,
+          "after_max": 193366.93763519137,
+          "before_rms": 77601.99400653687,
+          "after_rms": 104491.6378092249
+        },
+        {
+          "name": "time_holdout",
+          "before_max": 132412.30967613703,
+          "after_max": 149006.4321118462,
+          "before_rms": 59800.876787038425,
+          "after_rms": 80530.23066284212
+        }
+      ]
+    },
+    {
+      "ridge": 0.1,
+      "rows": [
+        {
+          "name": "train",
+          "before_max": 285727.52526720235,
+          "after_max": 203192.54581839085,
+          "before_rms": 112103.6681305139,
+          "after_rms": 79889.80353044208
+        },
+        {
+          "name": "space_holdout",
+          "before_max": 171833.09611789265,
+          "after_max": 193280.72783124776,
+          "before_rms": 77601.99400653687,
+          "after_rms": 103770.99643487365
+        },
+        {
+          "name": "time_holdout",
+          "before_max": 132412.30967613703,
+          "after_max": 148940.08521716343,
+          "before_rms": 59800.876787038425,
+          "after_rms": 79974.28857695713
+        }
+      ]
+    },
+    {
+      "ridge": 1.0,
+      "rows": [
+        {
+          "name": "train",
+          "before_max": 285727.52526720235,
+          "after_max": 205207.83697227904,
+          "before_rms": 112103.6681305139,
+          "after_rms": 89448.84446640853
+        },
+        {
+          "name": "space_holdout",
+          "before_max": 171833.09611789265,
+          "after_max": 184429.1322613859,
+          "before_rms": 77601.99400653687,
+          "after_rms": 85173.3897503121
+        },
+        {
+          "name": "time_holdout",
+          "before_max": 132412.30967613703,
+          "after_max": 142122.8117528403,
+          "before_rms": 59800.876787038425,
+          "after_rms": 65634.31169909114
+        }
+      ]
+    },
+    {
+      "ridge": 10.0,
+      "rows": [
+        {
+          "name": "train",
+          "before_max": 285727.52526720235,
+          "after_max": 284035.2770011664,
+          "before_rms": 112103.6681305139,
+          "after_rms": 111536.98332806383
+        },
+        {
+          "name": "space_holdout",
+          "before_max": 171833.09611789265,
+          "after_max": 171811.65019290202,
+          "before_rms": 77601.99400653687,
+          "after_rms": 77679.55203373691
+        },
+        {
+          "name": "time_holdout",
+          "before_max": 132412.30967613703,
+          "after_max": 132395.7032383896,
+          "before_rms": 59800.876787038425,
+          "after_rms": 59860.60348782828
+        }
+      ]
+    }
+  ],
+  "verification": [
+    {
+      "name": "train",
+      "direct_angular_max": 9019.564177535958,
+      "angular_model_fd_discrepancy": 5.277241325529758e-05,
+      "direct_full_max": 672321.7353101232,
+      "baseline_full_max": 672318.2452876854,
+      "divergence_max": 0.061763242118786366
+    },
+    {
+      "name": "space_holdout",
+      "direct_angular_max": 24914.757355017602,
+      "angular_model_fd_discrepancy": 7.146849020500667e-05,
+      "direct_full_max": 832213.2697116085,
+      "baseline_full_max": 832193.7979740913,
+      "divergence_max": 0.13960778124692297
+    },
+    {
+      "name": "time_holdout",
+      "direct_angular_max": 19199.68133468182,
+      "angular_model_fd_discrepancy": 5.507396417669952e-05,
+      "direct_full_max": 641264.7268370303,
+      "baseline_full_max": 641249.720754397,
+      "divergence_max": 0.11737461583152253
+    }
+  ],
+  "scope": "Sampled angular-equation fit only. Swirl correction changes E/I/Cp moments and radial momentum; no five-moment or global PDE admission.",
+  "accepted": false
+}

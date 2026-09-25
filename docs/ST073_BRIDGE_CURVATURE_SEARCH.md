@@ -441,3 +441,26 @@ the momentum gate for this velocity. The next constructive step must change
 the velocity/stress design, including its azimuthal equation, before another
 pressure fit is useful. These are sampled obstructions for this candidate,
 not a global impossibility claim.
+
+## Compact swirl transport response
+
+`curvature_swirl_transport_screen.py` tests eight compact axisymmetric
+swirl modes against the **pressure-independent angular equation** while
+holding the meridional velocity fixed. The operator is evaluated in
+physical cylindrical coordinates with fourth-order differences; one
+direct Cartesian residual check per split agrees with the angular
+response model within `7.2e-5` absolute units. The modes preserve
+analytic divergence, but change the swirl-dependent `S` and `Cp`
+moments and the radial centrifugal term.
+
+Weak regularization (`ridge=.1`) reduces the 30-point training angular
+maximum from `2.85728e5` to `2.03193e5`, but raises the spatial
+holdout maximum from `1.71833e5` to `1.93281e5` and the nearby-time
+holdout maximum from `1.32412e5` to `1.48940e5`. Selecting the best
+ridge by the worse of the two holdout maxima chooses `ridge=10`, with
+only marginal changes (`1.71812e5` spatial, `1.32396e5` temporal).
+At directly re-evaluated sample nodes, the full residual is slightly
+worse. Thus this fixed-scale compact swirl basis does not provide a
+robust angular correction; its coefficients are a diagnostic, not a
+promoted field. A dynamically evolved swirl/stress correction with
+simultaneous moment and radial-momentum accounting is needed.
