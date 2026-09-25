@@ -1,0 +1,71 @@
+{
+  "tau": 0.011048543456039806,
+  "X": 1.0,
+  "eta": 0.2,
+  "rows": [
+    {
+      "field": "balanced",
+      "point": [
+        0.015171617865853857,
+        0.0,
+        0.0021940257698591994
+      ],
+      "cone": {
+        "F": 90.12256082826508,
+        "shear": [
+          -73.6590204448715,
+          -134.5217189024747
+        ],
+        "lambda_squared": 5782.753190060092,
+        "target_dot_N": 4.8330381414698635,
+        "target_dot_K": 1.1855082254797744,
+        "c": -0.8784410671665535,
+        "ratio": 0.21547504493901246,
+        "strict_pass": false
+      },
+      "covariance_relative_error": 0.0,
+      "selected_pulse_count": 2,
+      "selected_modes": [
+        1,
+        1
+      ],
+      "target": [
+        -1.2813640914572757,
+        -4.808512607314922
+      ]
+    },
+    {
+      "field": "shear_N16",
+      "point": [
+        0.015171617865853857,
+        0.0,
+        0.0021940257698591994
+      ],
+      "cone": {
+        "F": 90.12256082826508,
+        "shear": [
+          -18.39965855119398,
+          -134.5217189024747
+        ],
+        "lambda_squared": 2719.809336455516,
+        "target_dot_N": 4.857236368924837,
+        "target_dot_K": -0.02889785864716733,
+        "c": -2.1350757158534526,
+        "ratio": 0.012702514671195618,
+        "strict_pass": false
+      },
+      "covariance_relative_error": 0.0,
+      "selected_pulse_count": 2,
+      "selected_modes": [
+        1,
+        1
+      ],
+      "target": [
+        -0.6868673344496502,
+        -4.808512607314922
+      ]
+    }
+  ],
+  "scope": "Balanced and high-frequency extended mean fields at one physical bridge point. Kelvin pulses are frozen local ODEs; covariance fit is not a supported exact-curl wave or complete momentum reduction.",
+  "accepted": false
+}

@@ -1,0 +1,91 @@
+{
+  "tau": 0.011048543456039806,
+  "rows": [
+    {
+      "field": "balanced",
+      "X": 1.0,
+      "eta": 0.2,
+      "order": 16,
+      "lambda_squared": 5782.753190060092,
+      "target_dot_N": 4.833148836472043,
+      "target_dot_K": 1.1855687227586753,
+      "ratio": 0.21548110543593904,
+      "strict_pass": false,
+      "residual_norm": 5145.341462049619
+    },
+    {
+      "field": "balanced",
+      "X": 1.0,
+      "eta": 0.2,
+      "order": 32,
+      "lambda_squared": 5782.753190060092,
+      "target_dot_N": 4.833090552784811,
+      "target_dot_K": 1.1855368715002856,
+      "ratio": 0.21547791484393827,
+      "strict_pass": false,
+      "residual_norm": 5145.341462049619
+    },
+    {
+      "field": "balanced",
+      "X": 1.0,
+      "eta": 0.2,
+      "order": 64,
+      "lambda_squared": 5782.753190060092,
+      "target_dot_N": 4.8330381414698635,
+      "target_dot_K": 1.1855082254797744,
+      "ratio": 0.21547504493901246,
+      "strict_pass": false,
+      "residual_norm": 5145.341462049619
+    },
+    {
+      "field": "shear_N16",
+      "X": 1.0,
+      "eta": 0.2,
+      "order": 16,
+      "lambda_squared": 2719.809336455516,
+      "target_dot_N": 3.3472715345563078,
+      "target_dot_K": 11.011534879302921,
+      "ratio": 7.023768604476044,
+      "strict_pass": false,
+      "residual_norm": 5619.715748918475
+    },
+    {
+      "field": "shear_N16",
+      "X": 1.0,
+      "eta": 0.2,
+      "order": 32,
+      "lambda_squared": 2719.809336455516,
+      "target_dot_N": 4.857295568682477,
+      "target_dot_K": -0.028889924350103586,
+      "ratio": 0.012698872251144595,
+      "strict_pass": false,
+      "residual_norm": 5619.715748918475
+    },
+    {
+      "field": "shear_N16",
+      "X": 1.0,
+      "eta": 0.2,
+      "order": 64,
+      "lambda_squared": 2719.809336455516,
+      "target_dot_N": 4.857236368924837,
+      "target_dot_K": -0.02889785864716733,
+      "ratio": 0.012702514671195618,
+      "strict_pass": false,
+      "residual_norm": 5619.715748918475
+    },
+    {
+      "field": "shear_N16",
+      "X": 1.0,
+      "eta": 0.2,
+      "order": 96,
+      "lambda_squared": 2719.809336455516,
+      "target_dot_N": 4.857367534852806,
+      "target_dot_K": -0.028880028803762215,
+      "ratio": 0.012694334478424324,
+      "strict_pass": false,
+      "residual_norm": 5619.715748918475
+    }
+  ],
+  "scope": "Single-point Gauss-order convergence of the physical full-residual radial stress primitive. No spatially continuous stress cone or wave acceptance.",
+  "accepted": false
+}

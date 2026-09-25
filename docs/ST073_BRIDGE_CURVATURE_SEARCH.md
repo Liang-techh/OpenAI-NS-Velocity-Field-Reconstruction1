@@ -172,3 +172,54 @@ localized nonaxisymmetric pulse, with an explicit residual budget.
 Do not promote a stronger sampled cone or small moment perturbation to
 `pde_validated`; the full momentum maximum is worse and no volume-L2
 gate has been checked.
+
+## Physical stress and wave preflight
+
+The existing `radial_peak_cone.py` Kelvin/covariance source generator now
+resolves the extended field's `compact.joined.inner` and its actual
+`join_X=.09375`, rather than assuming the older `3/64` bridge edge. It
+also accepts an explicit stress quadrature order. This lets
+`extended_wave_source_screen.py` generate candidate-specific sources for
+the balanced and `N=16` shear backgrounds at `X=1`, `eta=.2`,
+`tau=.5*2^-5.5`. The physical target is the radial primitive of the
+**complete finite-time residual**. It is distinct from the paper's
+normalized leading-order target used by `extended_relaxed_cone_screen.py`.
+
+This distinction is decisive. The normalized snapshot cone at this point
+passes, but the complete-residual target has positive projection onto the
+local shear direction: about `+4.833` for the balanced field and `+4.857`
+for the modulated field. The existing strict physical-wave cone requires
+that projection to be negative. The `N=16` source's nonnegative covariance
+fit has zero local error, but its two selected pulses both use angular
+mode `1`; this is not the separated two-mode construction used by the
+compact curl-wave prototype. No wave has been added to the candidate.
+
+High-frequency stress integration must resolve the carrier. At the same
+modulated point, Gauss order `16` gives a spurious transverse target and
+ratio; orders `32`, `64`, and `96` agree on the positive shear projection
+near `+4.857` and ratio near `0.0127`. The balanced field's sign is stable
+from order `16` through `64`. `extended_physical_cone_map.py` therefore
+uses order `64`; none of its ten sampled nodes (`X=.75,.9,1,1.1,1.25`,
+`eta=.2,.3`) passes the strict physical cone. This finite map is not a
+continuous impossibility result and does not rule out a differently
+constructed paper leading profile.
+
+`radial_flux_closure_screen.py` tests an even narrower ansatz: only
+`Q_{r theta}` and `Q_{r z}` carry the correction and both vanish at the
+bridge edges. Cylindrical divergence then requires the weighted bridge
+integrals of the complete residual to vanish. At `eta=.2`, the balanced
+field gives approximately `-3.95758e-4` and `+0.0996378` for those two
+integrals; at `eta=.3`, `-3.73997e-4` and `+0.143986`. Gauss orders
+`16` and `32` agree to the displayed precision. These force nonzero
+outer-edge fluxes in that restricted model. The denser quadrature also
+finds a local complete-residual maximum around `6.7e4`, well above the
+earlier eight-point maximum. The paper uses more stress components,
+mean corrections, and exact five-moment restoration, so this restricted
+closure failure cannot be generalized to its full construction.
+
+The next gate is a mean-profile solve that restores all five outgoing
+moments and produces the appropriate strict stress direction on a radial
+interval. Only after that should the existing Kelvin/curl-wave modules be
+coupled to the extended candidate. A zero-error pointwise NNLS fit or a
+positive normalized snapshot cone is insufficient for a supported wave
+or the requested complete-momentum threshold.

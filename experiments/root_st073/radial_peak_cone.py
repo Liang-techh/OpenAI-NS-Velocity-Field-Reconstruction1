@@ -40,18 +40,29 @@ def operator(field, points, tau):
     return velocity, gradient, part + np.einsum('nij,nj->ni', gradient, velocity)
 
 
-def inner_similarity_exponent(field):
-    """Locate the compact core through optional experimental field wrappers."""
+def inner_and_join_X(field):
+    """Locate the radial core and bridge through experimental wrappers."""
     node = field
-    while not hasattr(node, 'inner'):
+    while True:
+        if hasattr(node, 'compact') and hasattr(node.compact, 'joined'):
+            radial = node.compact.joined
+            return radial.inner, radial.join_X
+        if hasattr(node, 'inner'):
+            return node.inner, getattr(node, 'join_X', 3/64)
+        if not hasattr(node, 'base'):
+            raise TypeError('Cannot locate a radial inner field')
         node = node.base
-    return node.inner.h
+
+
+def inner_similarity_exponent(field):
+    return inner_and_join_X(field)[0].h
 
 
 def stress_primitive(field, radius, z, tau, order=12):
+    inner, join_X = inner_and_join_X(field)
     q = float(coordinates(0., z/np.sqrt(field.nu), tau,
-                          inner_similarity_exponent(field))['q'])
-    ri = np.sqrt(field.nu)*np.sqrt(2*q*3/64)
+                          inner.h)['q'])
+    ri = np.sqrt(2*field.nu*q*join_X)
     edges = sorted(set(np.clip([0., ri, radius], 0., radius)))
     g, w = leggauss(order)
     theta_integral = 0.
@@ -69,13 +80,14 @@ def stress_primitive(field, radius, z, tau, order=12):
 def run(radius=.0056890761915166545,
         z=.003432627453438968,
         output_name='radial_peak_cone.json', field=None,
-        field_id='current', tau=.5/64):
+        field_id='current', tau=.5/64, stress_order=12):
     field = field or current_field()
     point = np.array([[radius, 0., z]])
     velocity, gradient, residual = operator(field, point, tau)
     u = velocity[0]
     J = gradient[0]
-    target = stress_primitive(field, radius, z, tau)
+    target = stress_primitive(field, radius, z, tau,
+                              order=stress_order)
     F = u[1]/radius
     shear = np.array([J[1, 0]-F, J[2, 0]])
     shear_norm = np.linalg.norm(shear)
@@ -108,6 +120,7 @@ def run(radius=.0056890761915166545,
     selected = np.flatnonzero(weights > 1e-8)
     report = {'tau': tau, 'point': point[0].tolist(),
               'field_id': field_id,
+              'stress_order': stress_order,
               'velocity': u.tolist(), 'gradient': J.tolist(),
               'residual': residual[0].tolist(),
               'local_tangential_stress_primitive': target.tolist(),
@@ -134,6 +147,7 @@ if __name__ == '__main__':
     parser.add_argument('--z', type=float, default=.003432627453438968)
     parser.add_argument('--output-name', default='radial_peak_cone.json')
     parser.add_argument('--tau', type=float, default=.5/64)
+    parser.add_argument('--stress-order', type=int, default=12)
     parser.add_argument('--field', choices=('current', 'annular-pressure-scale',
                                             'radial-pressure-time',
                                             'local-poloidal-10pct'),
@@ -151,4 +165,5 @@ if __name__ == '__main__':
     else:
         selected_field = current_field()
     run(args.radius, args.z, args.output_name,
-        field=selected_field, field_id=args.field, tau=args.tau)
+        field=selected_field, field_id=args.field, tau=args.tau,
+        stress_order=args.stress_order)

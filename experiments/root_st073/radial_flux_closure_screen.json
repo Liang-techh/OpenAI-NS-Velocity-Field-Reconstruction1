@@ -1,0 +1,68 @@
+{
+  "tau": 0.011048543456039806,
+  "rows": [
+    {
+      "field": "balanced",
+      "eta": 0.2,
+      "order": 16,
+      "ri": 0.004645340292979379,
+      "ro": 0.018581361171917516,
+      "theta_weighted_integral": -0.00039575840126702266,
+      "axial_weighted_integral": 0.09963786742186703,
+      "theta_cancellation_ratio": 0.07407084866004703,
+      "axial_cancellation_ratio": 0.06397384313096277,
+      "required_outer_Q_rtheta": 1.14623876811759,
+      "required_outer_Q_rz": -5.362248034468663,
+      "residual_max": 66540.47497602257,
+      "divergence_max": 8.935018360300973e-06
+    },
+    {
+      "field": "balanced",
+      "eta": 0.3,
+      "order": 16,
+      "ri": 0.004771253087194185,
+      "ro": 0.01908501234877674,
+      "theta_weighted_integral": -0.0003739971730604074,
+      "axial_weighted_integral": 0.1439860168763874,
+      "theta_cancellation_ratio": 0.06345712183537658,
+      "axial_cancellation_ratio": 0.09538012718127463,
+      "required_outer_Q_rtheta": 1.0267942522291529,
+      "required_outer_Q_rz": -7.544455001917577,
+      "residual_max": 62826.824874549944,
+      "divergence_max": 1.128916358528187e-05
+    },
+    {
+      "field": "balanced",
+      "eta": 0.2,
+      "order": 32,
+      "ri": 0.004645340292979379,
+      "ro": 0.018581361171917516,
+      "theta_weighted_integral": -0.0003957578896489042,
+      "axial_weighted_integral": 0.09963781816807772,
+      "theta_cancellation_ratio": 0.07444225516932093,
+      "axial_cancellation_ratio": 0.06653863842329266,
+      "required_outer_Q_rtheta": 1.1462372863132366,
+      "required_outer_Q_rz": -5.362245383759231,
+      "residual_max": 67434.5637380798,
+      "divergence_max": 2.1923181293459493e-05
+    },
+    {
+      "field": "balanced",
+      "eta": 0.3,
+      "order": 32,
+      "ri": 0.004771253087194185,
+      "ro": 0.01908501234877674,
+      "theta_weighted_integral": -0.0003739969746886919,
+      "axial_weighted_integral": 0.14398599727105865,
+      "theta_cancellation_ratio": 0.06450512766970104,
+      "axial_cancellation_ratio": 0.09994227616803615,
+      "required_outer_Q_rtheta": 1.0267937076075568,
+      "required_outer_Q_rz": -7.544453974654488,
+      "residual_max": 63742.65537256735,
+      "divergence_max": 1.061425136850147e-05
+    }
+  ],
+  "restricted_ansatz": "Only radial-tangential Q_rtheta and Q_rz fluxes, zero at both bridge edges. Their divergence in cylindrical coordinates is ((d/dr+2/r)Q_rtheta,(d/dr+1/r)Q_rz).",
+  "scope": "Gauss16/Gauss32 weighted physical-residual diagnostic at two axial slices of the balanced mean. Nonzero closure integrals obstruct only this radial-flux-only supported stress ansatz. They do not rule out the paper\u2019s other stress components, axial derivatives, mean corrections, or waves.",
+  "accepted": false
+}

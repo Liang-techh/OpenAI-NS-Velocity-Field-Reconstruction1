@@ -1,0 +1,117 @@
+{
+  "tau": 0.011048543456039806,
+  "rows": [
+    {
+      "X": 0.75,
+      "eta": 0.2,
+      "order": 64,
+      "lambda_squared": 23111.231863991015,
+      "target_dot_N": 8.045268918289864,
+      "target_dot_K": 0.16410037979307746,
+      "ratio": 0.08914862300901101,
+      "strict_pass": false,
+      "residual_norm": 9953.700133578564
+    },
+    {
+      "X": 0.9,
+      "eta": 0.2,
+      "order": 64,
+      "lambda_squared": -18772.2906355531,
+      "target_dot_N": 6.474737921034729,
+      "target_dot_K": -0.8210021480741714,
+      "ratio": null,
+      "strict_pass": false,
+      "residual_norm": 5726.061692778878
+    },
+    {
+      "X": 1.0,
+      "eta": 0.2,
+      "order": 64,
+      "lambda_squared": 2719.809336455516,
+      "target_dot_N": 4.857236368924837,
+      "target_dot_K": -0.02889785864716733,
+      "ratio": 0.012702514671195618,
+      "strict_pass": false,
+      "residual_norm": 5619.715748918475
+    },
+    {
+      "X": 1.1,
+      "eta": 0.2,
+      "order": 64,
+      "lambda_squared": 31709.65979541435,
+      "target_dot_N": 1.7838056423447746,
+      "target_dot_K": 3.7805669497686507,
+      "ratio": 2.8998128813421227,
+      "strict_pass": false,
+      "residual_norm": 4756.276899624555
+    },
+    {
+      "X": 1.25,
+      "eta": 0.2,
+      "order": 64,
+      "lambda_squared": 54633.83968813735,
+      "target_dot_N": 5.095921209262843,
+      "target_dot_K": 4.989920666685728,
+      "ratio": 2.5898388437433684,
+      "strict_pass": false,
+      "residual_norm": 5520.699292039331
+    },
+    {
+      "X": 0.75,
+      "eta": 0.3,
+      "order": 64,
+      "lambda_squared": 19062.275384113946,
+      "target_dot_N": 7.175492635380742,
+      "target_dot_K": 0.22067357048883046,
+      "ratio": 0.13151778431994016,
+      "strict_pass": false,
+      "residual_norm": 9899.907903318188
+    },
+    {
+      "X": 0.9,
+      "eta": 0.3,
+      "order": 64,
+      "lambda_squared": -18838.17004796489,
+      "target_dot_N": 6.26393235906769,
+      "target_dot_K": -0.9683354507439214,
+      "ratio": null,
+      "strict_pass": false,
+      "residual_norm": 6423.383302386089
+    },
+    {
+      "X": 1.0,
+      "eta": 0.3,
+      "order": 64,
+      "lambda_squared": 960.502072075626,
+      "target_dot_N": 5.267252893684639,
+      "target_dot_K": 0.5509133548568745,
+      "ratio": 0.09689824472248892,
+      "strict_pass": false,
+      "residual_norm": 6463.824623116714
+    },
+    {
+      "X": 1.1,
+      "eta": 0.3,
+      "order": 64,
+      "lambda_squared": 30666.6275303453,
+      "target_dot_N": 0.5757177509183007,
+      "target_dot_K": 4.6982602163332325,
+      "ratio": 12.869729924713175,
+      "strict_pass": false,
+      "residual_norm": 5440.011896413108
+    },
+    {
+      "X": 1.25,
+      "eta": 0.3,
+      "order": 64,
+      "lambda_squared": 49128.83987891742,
+      "target_dot_N": 4.420847639282119,
+      "target_dot_K": 6.843017746715167,
+      "ratio": 4.180930182229352,
+      "strict_pass": false,
+      "residual_norm": 6243.542584734895
+    }
+  ],
+  "scope": "Ten-node Gauss64 physical full-residual cone map for extended N16 shear candidate. Not the normalized leading-profile theorem, a continuous cone, or a supported wave.",
+  "accepted": false
+}
