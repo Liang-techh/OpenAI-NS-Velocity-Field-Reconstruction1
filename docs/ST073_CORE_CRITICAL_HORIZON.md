@@ -28,6 +28,20 @@ at `k=18`, the twelfth- and fourteenth-order residuals are only about
 `2.2` and `0.9` times `eps * sum(term norms)`. Their reported small
 values cannot establish further convergence or a critical-time bound.
 
+An independent `mpmath` recurrence in
+`experiments/root_st073/core_critical_horizon_mp.py` now checks one
+point, `X=1/64, eta=.3`, without float64 coefficient generation. At
+`k=6`, order 8 gives `1.9259140117e-7`, agreeing with the production
+evaluator. At `k=18`, order 10 gives `1.040742654105e-4` at both
+30 and 50 decimal precision; order 12 gives `1.5813815677e-7` at
+40 decimal precision. The order-12 result is about 658 times smaller
+than order 10 at this point. These values are recorded in
+`core_critical_horizon_mp_smoke.json`. The independent evaluator is
+computationally expensive and only these selected cases have been run;
+the order-12 number has no second-precision comparison yet. This is
+evidence that radial refinement can extend the local low-residual
+window, not a uniform series remainder or whole-field acceptance.
+
 The result separates two requirements: normalized profile transfer
 can look stable while an absolute physical momentum error grows; and
 a scale-recursive construction needs an order-uniform or otherwise

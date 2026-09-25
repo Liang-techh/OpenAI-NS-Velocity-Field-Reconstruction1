@@ -1,0 +1,15 @@
+{
+  "schema": "st073_core_critical_horizon_mp_smoke_v1",
+  "point": {"X": "0.015625", "eta": "0.3"},
+  "source": "NS_ST073_Full_Local_Recurrence/data/ST073-V.json",
+  "method": "Independent mpmath axis jets, radial recurrence and complete cylindrical momentum; one case per CLI invocation",
+  "rows": [
+    {"order": 8, "k": 6, "dps": 30, "momentum_norm_rounded": "0.0000001925914011712"},
+    {"order": 10, "k": 18, "dps": 30, "momentum_norm_rounded": "0.000104074265410546"},
+    {"order": 10, "k": 18, "dps": 50, "momentum_norm_rounded": "0.000104074265410546"},
+    {"order": 12, "k": 18, "dps": 40, "momentum_norm_rounded": "0.000000158138156766287"}
+  ],
+  "scope": "Single X/eta point and selected times; order 12 has one precision run. No uniform truncation bound, matched field, spatial-volume L2 or critical-time acceptance.",
+  "pde_validated": false,
+  "scale_recursion_established": false
+}
