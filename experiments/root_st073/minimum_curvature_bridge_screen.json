@@ -1,0 +1,178 @@
+{
+  "tau": 0.011048543456039806,
+  "X": [
+    0.5859375,
+    0.5859375,
+    0.75,
+    0.75,
+    1.0,
+    1.0,
+    1.25,
+    1.25
+  ],
+  "eta": [
+    0.2,
+    0.3,
+    0.2,
+    0.3,
+    0.2,
+    0.3,
+    0.2,
+    0.3
+  ],
+  "shape": {
+    "y0": 0.7553287745703013,
+    "coefficients": [
+      252.54433956322802,
+      777.0649509002533,
+      1776.5492104634095,
+      2332.121143920424,
+      1334.5751759600205
+    ],
+    "old_third_derivative_l2": 300.4518562835006,
+    "minimum_third_derivative_l2": 35.36775138984695,
+    "old_second_at_reference": 3.5319502138953864,
+    "minimum_second_at_reference": 3.531950214852261
+  },
+  "rows": [
+    {
+      "name": "baseline",
+      "complete_residual_norms": [
+        2379.469868430876,
+        2952.981316297617,
+        2091.612386600666,
+        2105.6568603726555,
+        2610.124438235789,
+        3946.7043328250147,
+        1843.3718024363038,
+        2367.321476541284
+      ],
+      "sampled_max": 3946.7043328250147,
+      "divergence_max": 1.1806861266450142e-08
+    },
+    {
+      "name": "minimum_curvature",
+      "complete_residual_norms": [
+        2739.7603975285415,
+        3380.068978075946,
+        4776.306443120624,
+        4548.010556530424,
+        4448.662380602496,
+        5447.126748401961,
+        5272.9711641485455,
+        5972.299294771875
+      ],
+      "sampled_max": 5972.299294771875,
+      "divergence_max": 7.335894167681545e-07
+    }
+  ],
+  "cone_rows": [
+    {
+      "curvature_weight": 0.0,
+      "points": [
+        {
+          "eta": 0.2,
+          "Pc": -0.3375280989038607,
+          "vs": 2.0393779781635395,
+          "upper": null,
+          "margin": null,
+          "relaxed_pass": false
+        },
+        {
+          "eta": 0.3,
+          "Pc": 0.1972679612671986,
+          "vs": 1.318839356240827,
+          "upper": null,
+          "margin": null,
+          "relaxed_pass": false
+        }
+      ]
+    },
+    {
+      "curvature_weight": 0.3,
+      "points": [
+        {
+          "eta": 0.2,
+          "Pc": 3.0246735858603913,
+          "vs": 2.0394583811234788,
+          "upper": 2.1516395438530065,
+          "margin": 0.11218116272952772,
+          "relaxed_pass": true
+        },
+        {
+          "eta": 0.3,
+          "Pc": 0.8024942225680561,
+          "vs": 1.3188654059826965,
+          "upper": null,
+          "margin": null,
+          "relaxed_pass": false
+        }
+      ]
+    },
+    {
+      "curvature_weight": 0.6,
+      "points": [
+        {
+          "eta": 0.2,
+          "Pc": 6.39620435627065,
+          "vs": 2.0395387884046245,
+          "upper": 2.5193136668126925,
+          "margin": 0.479774878408068,
+          "relaxed_pass": true
+        },
+        {
+          "eta": 0.3,
+          "Pc": 1.4122931298940478,
+          "vs": 1.318891460251107,
+          "upper": null,
+          "margin": null,
+          "relaxed_pass": false
+        }
+      ]
+    },
+    {
+      "curvature_weight": 0.9,
+      "points": [
+        {
+          "eta": 0.2,
+          "Pc": 9.777065658068546,
+          "vs": 2.039619200007182,
+          "upper": 2.6907824847396853,
+          "margin": 0.6511632847325033,
+          "relaxed_pass": true
+        },
+        {
+          "eta": 0.3,
+          "Pc": 2.0266669559822414,
+          "vs": 1.3189175190459916,
+          "upper": 2.0000266862686136,
+          "margin": 0.6811091672226219,
+          "relaxed_pass": true
+        }
+      ]
+    },
+    {
+      "curvature_weight": 1.0,
+      "points": [
+        {
+          "eta": 0.2,
+          "Pc": 10.90609312663148,
+          "vs": 2.039646004835043,
+          "upper": 2.729062728628378,
+          "margin": 0.6894167237933351,
+          "relaxed_pass": true
+        },
+        {
+          "eta": 0.3,
+          "Pc": 2.232475272776867,
+          "vs": 1.3189262063168843,
+          "upper": 2.001610189367341,
+          "margin": 0.6826839830504565,
+          "relaxed_pass": true
+        }
+      ]
+    }
+  ],
+  "scope": "The variational shape minimizes integral |phi_yyy|^2 in the chosen finite-dimensional polynomial family at fixed local curvature. It reduces sampled momentum cost but fails the relaxed cone; no global acceptance.",
+  "accepted": false
+}

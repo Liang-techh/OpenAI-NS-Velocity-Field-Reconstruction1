@@ -38,3 +38,7 @@ the five outgoing radial moments, and only then apply the paper's
 nonaxisymmetric oscillatory stress mechanism. No current result proves a
 continuous cone, complete residual maximum, volume L2, or smooth forcing
 gate below `1e-3`.
+
+The follow-up minimum-curvature and three-mode screens reduce the sampled
+momentum penalty but still fail the full bridge requirements; see
+[`ST073_BRIDGE_CURVATURE_SEARCH.md`](ST073_BRIDGE_CURVATURE_SEARCH.md).
