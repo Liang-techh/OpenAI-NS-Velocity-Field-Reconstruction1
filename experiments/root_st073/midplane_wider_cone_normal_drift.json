@@ -1,0 +1,42 @@
+{
+  "source": "Local frozen-normal transport-size diagnostic",
+  "scales": [
+    {
+      "k": 11,
+      "interval": 2.3894534704652513e-08,
+      "modes": [
+        {
+          "angular_mode": 1,
+          "normal_norm": 1232.3757841406782,
+          "relative_first_order_normal_change": 0.00024982101597948987,
+          "angular_first_order_change_radians": 0.00019409390225818193
+        },
+        {
+          "angular_mode": 4,
+          "normal_norm": 3485.6850957438496,
+          "relative_first_order_normal_change": 0.00016535720622668426,
+          "angular_first_order_change_radians": 0.0001092773981207331
+        }
+      ]
+    },
+    {
+      "k": 19,
+      "interval": 9.865997755327235e-11,
+      "modes": [
+        {
+          "angular_mode": 1,
+          "normal_norm": 19718.01254625085,
+          "relative_first_order_normal_change": 0.0002642990132647149,
+          "angular_first_order_change_radians": 0.00020511058039397381
+        },
+        {
+          "angular_mode": 4,
+          "normal_norm": 55770.961531901594,
+          "relative_first_order_normal_change": 0.0001741314617847466,
+          "angular_first_order_change_radians": 0.00011347072985547994
+        }
+      ]
+    }
+  ],
+  "scope": "First-order Kelvin normal drift J^T n over one tenth of the pulse half-width at the source point only. It is not a transported phase solve or a full error budget."
+}

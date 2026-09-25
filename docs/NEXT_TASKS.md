@@ -189,6 +189,15 @@ the residual to `1.21e10/4.52e13`; the mean derivative changes by about
 `14.7x`. See `ST073_WIDER_CONE_SECOND_SLOPE.md`. Solve the potential
 state and derivative in one nonlinear interval problem, including normal
 pressure, rather than independently fitting more time derivatives.
+The paper-faithful interval requirements and a local phase-normal drift
+estimate are recorded in `ST073_SECTION7_INTERVAL_GATE.md`. The measured
+drift is only `~2e-4` over the first `0.1` pulse half-width at both scales,
+so prioritize the direct state/derivative interval solve here while still
+retaining moving-normal pressure and endpoint support in the final design.
+The physical widened support fails the stress cone at its inner/lower
+corner on both scales (`1.422/1.476` cone ratios); see the same report.
+Repair the mean or support geometry for a connected strict cone before
+claiming that any interval solver yields a paper-admissible wave.
 Use those directions as a conditioning prototype, not as the paper's five
 leading-profile moments or a recursive correction.
 The next Stage-1 inputs are therefore the actual coefficient-family

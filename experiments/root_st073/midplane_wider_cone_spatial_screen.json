@@ -1,0 +1,168 @@
+{
+  "source": "Wider-wave physical rectangular support cone screen",
+  "offsets": [
+    -0.8,
+    0.0,
+    0.8
+  ],
+  "scales": [
+    {
+      "k": 11,
+      "rows": [
+        {
+          "radial_offset": -0.8,
+          "axial_offset": -0.8,
+          "cone_pass": false,
+          "cone_ratio": 1.4216627958174175,
+          "lambda_squared": 29811633.064626884,
+          "target_dot_N": -25.499035987959147
+        },
+        {
+          "radial_offset": -0.8,
+          "axial_offset": 0.0,
+          "cone_pass": true,
+          "cone_ratio": 0.27948976194274994,
+          "lambda_squared": 26916205.311612703,
+          "target_dot_N": -39.099370811979185
+        },
+        {
+          "radial_offset": -0.8,
+          "axial_offset": 0.8,
+          "cone_pass": true,
+          "cone_ratio": 0.35983743292759135,
+          "lambda_squared": 27384477.48425523,
+          "target_dot_N": -37.69666669773748
+        },
+        {
+          "radial_offset": 0.0,
+          "axial_offset": -0.8,
+          "cone_pass": true,
+          "cone_ratio": 0.6034667226836076,
+          "lambda_squared": 22954416.82319653,
+          "target_dot_N": -62.20039682467337
+        },
+        {
+          "radial_offset": 0.0,
+          "axial_offset": 0.0,
+          "cone_pass": true,
+          "cone_ratio": 0.14306352481634307,
+          "lambda_squared": 20688107.44630337,
+          "target_dot_N": -75.12154058135312
+        },
+        {
+          "radial_offset": 0.0,
+          "axial_offset": 0.8,
+          "cone_pass": true,
+          "cone_ratio": 0.2087237685212159,
+          "lambda_squared": 21218107.37061641,
+          "target_dot_N": -73.17132016398598
+        },
+        {
+          "radial_offset": 0.8,
+          "axial_offset": -0.8,
+          "cone_pass": true,
+          "cone_ratio": 0.32040987104174473,
+          "lambda_squared": 13286230.727220759,
+          "target_dot_N": -96.44439955205505
+        },
+        {
+          "radial_offset": 0.8,
+          "axial_offset": 0.0,
+          "cone_pass": true,
+          "cone_ratio": 0.0756772734279029,
+          "lambda_squared": 11775871.671356374,
+          "target_dot_N": -106.8551707838858
+        },
+        {
+          "radial_offset": 0.8,
+          "axial_offset": 0.8,
+          "cone_pass": true,
+          "cone_ratio": 0.13270231899923585,
+          "lambda_squared": 12198370.467840495,
+          "target_dot_N": -104.66657535908
+        }
+      ],
+      "passing": 8
+    },
+    {
+      "k": 19,
+      "rows": [
+        {
+          "radial_offset": -0.8,
+          "axial_offset": -0.8,
+          "cone_pass": false,
+          "cone_ratio": 1.4762721911080068,
+          "lambda_squared": 1811467292248.1116,
+          "target_dot_N": -5859.09218492159
+        },
+        {
+          "radial_offset": -0.8,
+          "axial_offset": 0.0,
+          "cone_pass": true,
+          "cone_ratio": 0.2769040015083165,
+          "lambda_squared": 1605888956768.6936,
+          "target_dot_N": -9369.064306499962
+        },
+        {
+          "radial_offset": -0.8,
+          "axial_offset": 0.8,
+          "cone_pass": true,
+          "cone_ratio": 0.35457132382247253,
+          "lambda_squared": 1639149054042.8137,
+          "target_dot_N": -9010.424317923655
+        },
+        {
+          "radial_offset": 0.0,
+          "axial_offset": -0.8,
+          "cone_pass": true,
+          "cone_ratio": 0.5881204012798619,
+          "lambda_squared": 1435240445123.811,
+          "target_dot_N": -15126.022841217286
+        },
+        {
+          "radial_offset": 0.0,
+          "axial_offset": 0.0,
+          "cone_pass": true,
+          "cone_ratio": 0.13898660181203254,
+          "lambda_squared": 1284289477391.5276,
+          "target_dot_N": -18338.910300156556
+        },
+        {
+          "radial_offset": 0.0,
+          "axial_offset": 0.8,
+          "cone_pass": true,
+          "cone_ratio": 0.20098838966435456,
+          "lambda_squared": 1320338230138.944,
+          "target_dot_N": -17855.44345077344
+        },
+        {
+          "radial_offset": 0.8,
+          "axial_offset": -0.8,
+          "cone_pass": true,
+          "cone_ratio": 0.3257042360902686,
+          "lambda_squared": 924452311297.7931,
+          "target_dot_N": -23220.38392719454
+        },
+        {
+          "radial_offset": 0.8,
+          "axial_offset": 0.0,
+          "cone_pass": true,
+          "cone_ratio": 0.07750334649611335,
+          "lambda_squared": 823353327277.6683,
+          "target_dot_N": -25766.858151812547
+        },
+        {
+          "radial_offset": 0.8,
+          "axial_offset": 0.8,
+          "cone_pass": true,
+          "cone_ratio": 0.13400950219723096,
+          "lambda_squared": 851663514769.8346,
+          "target_dot_N": -25237.411853344387
+        }
+      ],
+      "passing": 8
+    }
+  ],
+  "scope": "Nine physical radial-axial samples per scale at pulse center; no continuous spatial or temporal cone proof.",
+  "full_support_cone_established": false
+}
