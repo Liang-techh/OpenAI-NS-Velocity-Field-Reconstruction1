@@ -118,7 +118,7 @@ def ridge_solve(matrix, target, regularization=1e-4):
     return np.linalg.lstsq(augmented, rhs, rcond=None)[0]/scale
 
 
-def fit_slope(rows, wave, tau, angles):
+def fit_slope(rows, wave, tau, angles, regularization=1e-4):
     harmonic_fits = []
     for mode in wave.waves:
         m = mode['m']
@@ -128,12 +128,12 @@ def fit_slope(rows, wave, tau, angles):
         target = -np.concatenate([2*np.mean(row['residual']
                                             *np.exp(-1j*m*angles)[:, None],
                                             axis=0) for row in rows])
-        harmonic_fits.append(ridge_solve(matrix, target))
+        harmonic_fits.append(ridge_solve(matrix, target, regularization))
     mean_matrix = np.vstack([mean_basis(wave, row['r'], row['z'])
                              for row in rows])
     mean_target = -np.concatenate([row['residual'].mean(axis=0)
                                    for row in rows])
-    mean_fit = ridge_solve(mean_matrix, mean_target)
+    mean_fit = ridge_solve(mean_matrix, mean_target, regularization)
     return harmonic_fits, mean_fit
 
 

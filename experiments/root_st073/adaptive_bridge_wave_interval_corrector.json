@@ -1,0 +1,97 @@
+{
+  "source": "Damped trapezoid endpoint coefficient solve",
+  "tau0": 0.000244140625,
+  "time_step": 1e-08,
+  "damping": 0.25,
+  "iterations": 4,
+  "history": [
+    {
+      "iteration": 1,
+      "coefficient_norm": 0.04535405581448985,
+      "fixed_point_defect": 0.09534753681996731,
+      "relative_fixed_point_defect": 2.102293501819641,
+      "projected_train": {
+        "frozen": {
+          "max": 146488771700.7258,
+          "rms": 50107445718.03762
+        },
+        "projected_derivative_and_pressure": {
+          "max": 1968760123.6125438,
+          "rms": 1030773201.9643583
+        }
+      }
+    },
+    {
+      "iteration": 2,
+      "coefficient_norm": 0.04243851954932176,
+      "fixed_point_defect": 0.44352318202692637,
+      "relative_fixed_point_defect": 10.450957920703777,
+      "projected_train": {
+        "frozen": {
+          "max": 368599437634.9205,
+          "rms": 135156851427.08894
+        },
+        "projected_derivative_and_pressure": {
+          "max": 8165427834.832699,
+          "rms": 4298504615.606052
+        }
+      }
+    },
+    {
+      "iteration": 3,
+      "coefficient_norm": 0.10685726580506028,
+      "fixed_point_defect": 1.4850430213674426,
+      "relative_fixed_point_defect": 13.897445439757057,
+      "projected_train": {
+        "frozen": {
+          "max": 935011804611.2515,
+          "rms": 357569846932.2317
+        },
+        "projected_derivative_and_pressure": {
+          "max": 25444342004.38704,
+          "rms": 13282610120.454224
+        }
+      }
+    },
+    {
+      "iteration": 4,
+      "coefficient_norm": 0.4682346545108728,
+      "fixed_point_defect": 4.37079297651252,
+      "relative_fixed_point_defect": 9.334620866706967,
+      "projected_train": {
+        "frozen": {
+          "max": 2439582315465.3013,
+          "rms": 938351847168.9839
+        },
+        "projected_derivative_and_pressure": {
+          "max": 75610367574.6694,
+          "rms": 38206115896.69695
+        }
+      }
+    }
+  ],
+  "final_relative_fixed_point_defect": 7.800931928784482,
+  "endpoint_projected_holdout": {
+    "frozen": {
+      "max": 2751190397133.388,
+      "rms": 823152657696.6139
+    },
+    "projected_derivative_and_pressure": {
+      "max": 910018252629.3452,
+      "rms": 313325106938.04895
+    }
+  },
+  "direct_frozen_midpoint": {
+    "maximum": 10389909781.844456,
+    "rms": 3394478632.4402204,
+    "fd_divergence_max": 59.50905616390446
+  },
+  "direct_corrected_midpoint": {
+    "maximum": 592677081420.9854,
+    "rms": 186330715055.77917,
+    "fd_divergence_max": 20680.119527075098
+  },
+  "scope": "One supported local patch interval and sampled collocation. Nonzero fixed-point defect, no full pulse, dyadic recursion, continuum residual, or PDE acceptance.",
+  "accepted": false,
+  "scale_recursion_established": false
+}

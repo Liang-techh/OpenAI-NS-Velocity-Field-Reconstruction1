@@ -28,7 +28,7 @@ def encode(harmonic, mean, tau):
         mean_slope_coefficients=mean.tolist())
 
 
-def run(dt=None, output_name=None):
+def run(dt=None, output_name=None, ridge=1e-4):
     inner, fields = build_fields()
     fitted = json.loads((ROOT / "separated_moment_three_knots.json").read_text())
     base = SeparatedMomentModes(
@@ -48,6 +48,8 @@ def run(dt=None, output_name=None):
     dt = reference_dt if dt is None else float(dt)
     if dt <= 0 or dt >= wave.time_halfwidth / 2:
         raise ValueError("Time step must be positive and below half the wave time half-width")
+    if ridge <= 0:
+        raise ValueError("Ridge regularization must be positive")
     amplitude = float(previous["wave_amplitude"])
     frozen0 = FrozenPotentialField(
         base, wave, amplitude,
@@ -58,7 +60,7 @@ def run(dt=None, output_name=None):
     train_grid = [(x, y) for x in train_axis for y in train_axis]
     holdout_grid = [(x, y) for x in holdout_axis for y in holdout_axis]
     time_min = 0.5 * 2.0**-20
-    if dt == reference_dt:
+    if dt == reference_dt and ridge == 1e-4:
         stage0 = previous["stage"]
         projected_train0 = previous["projected_train"]
         projected_holdout0 = previous["projected_holdout"]
@@ -67,7 +69,8 @@ def run(dt=None, output_name=None):
                                  time_step=dt, time_min=time_min)
         holdout0 = sample_residual(frozen0, wave, tau0, holdout_grid, angles,
                                    time_step=dt, time_min=time_min)
-        harmonic0, mean0 = fit_slope(train0, wave, tau0, angles)
+        harmonic0, mean0 = fit_slope(train0, wave, tau0, angles,
+                                    regularization=ridge)
         stage0 = encode(harmonic0, mean0, tau0)
         projected_train0 = metrics(train0, wave, tau0, angles,
                                    harmonic0, mean0)
@@ -86,7 +89,8 @@ def run(dt=None, output_name=None):
     holdout_rows = sample_residual(
         frozen1, wave, tau1, holdout_grid, angles,
         time_step=dt, time_min=time_min)
-    harmonic1, mean1 = fit_slope(train_rows, wave, tau1, angles)
+    harmonic1, mean1 = fit_slope(train_rows, wave, tau1, angles,
+                                regularization=ridge)
     stage1 = encode(harmonic1, mean1, tau1)
     projected_train1 = metrics(train_rows, wave, tau1, angles,
                                harmonic1, mean1)
@@ -128,7 +132,7 @@ def run(dt=None, output_name=None):
     )
     report = dict(
         source="Two spatial wave/mean slope stages on moment-closed late bridge",
-        tau0=tau0, time_step=dt,
+        tau0=tau0, time_step=dt, ridge_regularization=ridge,
         projected_stage0_train=projected_train0,
         projected_stage0_holdout=projected_holdout0,
         projected_stage1_train=projected_train1,
@@ -151,5 +155,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--time-step", type=float)
     parser.add_argument("--output-name")
+    parser.add_argument("--ridge", type=float, default=1e-4)
     args = parser.parse_args()
-    run(args.time_step, args.output_name)
+    run(args.time_step, args.output_name, args.ridge)

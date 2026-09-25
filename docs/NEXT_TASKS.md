@@ -51,6 +51,13 @@ but unstable at `dt=1e-8` on direct interior-time momentum; see
 `ST073_WAVE_STEP_HORIZON.md`. Implement a supported amplitude inverse
 or stable interval solve over an appreciable part of the pulse, with
 full residual checks between collocation nodes, before scale transfer.
+At `dt=1e-8`, a four-update damped trapezoid coefficient correction
+has relative fixed-point defect `7.80` and direct midpoint momentum
+`5.93e11`; stronger ridge regularization also leaves the explicit
+second-interval error near `3.27e11`. See
+`ST073_INTERVAL_CORRECTOR_LIMIT.md`. Stop tuning this physical-time
+Taylor fit and implement the pulse-coordinate transverse-amplitude ODE,
+normal pressure identity, and support/cutoff controls of Proposition 7.2.
 Use those directions as a conditioning prototype, not as the paper's five
 leading-profile moments or a recursive correction.
 The next Stage-1 inputs are therefore the actual coefficient-family
