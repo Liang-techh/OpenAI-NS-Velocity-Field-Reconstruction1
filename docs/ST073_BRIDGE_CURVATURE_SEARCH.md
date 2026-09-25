@@ -420,3 +420,24 @@ reconstructed for the new mean profile; the coefficient interpolation
 has not been five-moment-matched over a continuous `eta`/time range;
 and no nonaxisymmetric stress correction or spatial-volume L2 gate
 has been run for this diagnostic candidate.
+
+## Pressure-only diagnostic on the curvature-optimized lift
+
+`curvature_pressure_screen.py` keeps that velocity fixed and fits 18 compact,
+axisymmetric pressure modes on 30 physical nodes at the same late time.
+The sampled complete-momentum maximum changes from `1.371562e6` to
+`1.371590e6`, so this pressure fit does not improve the controlling peak.
+At ten disjoint spatial nodes, it worsens the maximum from `8.32194e5` to
+`3.26524e7`; at ten nodes at a nearby time, from `6.41250e5` to
+`2.51566e7`. The pressure derivative agrees with a direct finite-difference
+residual to about `1.5` in absolute residual units on one training node,
+far smaller than these changes. The fit is therefore rejected, and its
+coefficients are saved only to reproduce the diagnostic.
+
+The pressure-independent azimuthal residual alone reaches `2.85728e5` on
+the training nodes, `1.71833e5` on the spatial holdout, and `1.32412e5`
+on the time holdout. Thus an axisymmetric pressure correction cannot meet
+the momentum gate for this velocity. The next constructive step must change
+the velocity/stress design, including its azimuthal equation, before another
+pressure fit is useful. These are sampled obstructions for this candidate,
+not a global impossibility claim.
