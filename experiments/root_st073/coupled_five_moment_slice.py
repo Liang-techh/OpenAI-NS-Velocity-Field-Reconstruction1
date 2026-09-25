@@ -1,7 +1,7 @@
 """Construct fixed-eta E/U profiles that restore all five outgoing moments.
 
 The E coefficients come from the positive-swirl I/Cp solve. A C3 radial
-window times six Legendre modes supplies U corrections after X=1. The
+window times twelve Legendre modes supplies U corrections after X=1. The
 constrained quadratic solve enforces M/J and then S exactly when its
 finite-dimensional kinetic minimum lies below the target. No physical
 eta/time-dependent solenoidal field is asserted by this slice result.
