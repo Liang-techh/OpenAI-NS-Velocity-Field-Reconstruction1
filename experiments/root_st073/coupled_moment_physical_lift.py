@@ -23,13 +23,14 @@ from radial_moment_step import RadialMomentStep, septic_step
 class CoupledMomentPhysicalLift:
     def __init__(self, base=None, quadrature_order=24,
                  slice_filename='coupled_five_moment_slice.json'):
+        data = json.loads((ROOT/slice_filename).read_text())
+        self.rise_end = data.get('rise_end')
         self.base = base if base is not None else RadialMomentStep(
-            make_field(16, 2.), -.5)
+            make_field(16, 2.), -.5, rise_end=self.rise_end)
         self.compact = self.base.compact
         self.heat = self.base.heat
         self.nu = self.base.nu
         self.A = .5+self.heat.h
-        data = json.loads((ROOT/slice_filename).read_text())
         self.width = float(data.get('taper_width', .02))
         self.degree = int(data.get('u_degree', 11))
         self.start_X = float(data.get('start_X', 1.))

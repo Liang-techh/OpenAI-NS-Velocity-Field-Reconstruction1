@@ -1,5 +1,6 @@
-"""Independent space/time screen for the multi-time momentum tangent."""
+"""Independent space/time screen for a delayed physical lift candidate."""
 
+import argparse
 import json
 
 import numpy as np
@@ -9,9 +10,10 @@ from delayed_momentum_tangent_screen import nodes, residual
 from radial_continuation import ROOT
 
 
-def run():
+def run(candidate_name='delayed005_wide04_multitime_tangent.json',
+        output_name='delayed_multitime_holdout.json'):
     names = ('delayed005_wide04_reoptimized_E.json',
-             'delayed005_wide04_multitime_tangent.json')
+             candidate_name)
     xs = (1.01125, 1.01625, 1.0225, 1.07, 2.975)
     etas = (.29, .31)
     times = (.5*2**(-5.4), .5*2**(-5.15))
@@ -46,9 +48,15 @@ def run():
                         'nodes in entrance/middle/far return; local full '
                         'Cartesian finite-difference momentum only.',
                   accepted=False)
-    (ROOT/'delayed_multitime_holdout.json').write_bytes(
+    (ROOT/output_name).write_bytes(
         (json.dumps(report, indent=2)+'\n').encode())
 
 
 if __name__ == '__main__':
-    run()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--candidate-name',
+                        default='delayed005_wide04_multitime_tangent.json')
+    parser.add_argument('--output-name',
+                        default='delayed_multitime_holdout.json')
+    args = parser.parse_args()
+    run(args.candidate_name, args.output_name)

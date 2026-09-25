@@ -1,0 +1,52 @@
+{
+  "slice_filename": "delayed005_rise146_degree31.json",
+  "tau": 0.011048543456039806,
+  "rows": [
+    {
+      "X": 1.005,
+      "eta": 0.2,
+      "order": 64,
+      "lambda_squared": 3313.5848505179633,
+      "target_dot_N": -2.3185568733706416,
+      "target_dot_K": 1.6014455488354367,
+      "ratio": 0.7843929975540181,
+      "strict_pass": true,
+      "residual_norm": 7036.669887313761
+    },
+    {
+      "X": 1.005,
+      "eta": 0.3,
+      "order": 64,
+      "lambda_squared": 3703.2275795070195,
+      "target_dot_N": -2.6826144559388605,
+      "target_dot_K": 1.139944709065147,
+      "ratio": 0.9891578112325449,
+      "strict_pass": true,
+      "residual_norm": 7883.7442400324435
+    },
+    {
+      "X": 1.005,
+      "eta": 0.3,
+      "order": 96,
+      "lambda_squared": 3703.2275795070195,
+      "target_dot_N": -2.682733904170657,
+      "target_dot_K": 1.1399634154156062,
+      "ratio": 0.9891300003971709,
+      "strict_pass": true,
+      "residual_norm": 7883.7442400324435
+    },
+    {
+      "X": 1.005,
+      "eta": 0.3,
+      "order": 128,
+      "lambda_squared": 3703.2275795070195,
+      "target_dot_N": -2.6827339064961753,
+      "target_dot_K": 1.1399634156336693,
+      "ratio": 0.9891299997289572,
+      "strict_pass": true,
+      "residual_norm": 7883.7442400324435
+    }
+  ],
+  "scope": "Two fixed-slice onset points with piecewise Gauss64 and eta=.3 order escalation to 128 for the physical residual primitive. Passing here does not imply a continuous cone or wave admission.",
+  "accepted": false
+}

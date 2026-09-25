@@ -1,0 +1,263 @@
+{
+  "tau": 0.011048543456039806,
+  "amplitude": -0.5,
+  "restore_start": 1.75,
+  "restore_end": 3.0,
+  "E_source": "delayed_e_capacity_optimize.json",
+  "width": 0.4,
+  "start_X": 1.005,
+  "quadrature_order": 48,
+  "rows": [
+    {
+      "rise_end": 1.458,
+      "cone_at_X1": [
+        {
+          "X": 1.0,
+          "eta": 0.2,
+          "order": 24,
+          "lambda_squared": 2080.4630043964817,
+          "target_dot_N": -2.597602623636086,
+          "target_dot_K": 1.4010617540161083,
+          "ratio": 0.6997740625659179,
+          "strict_pass": true,
+          "residual_norm": 6190.842798582924
+        },
+        {
+          "X": 1.0,
+          "eta": 0.3,
+          "order": 24,
+          "lambda_squared": 1885.037269832468,
+          "target_dot_N": -2.8737736144961974,
+          "target_dot_K": 0.926214146271293,
+          "ratio": 1.0032256409479468,
+          "strict_pass": false,
+          "residual_norm": 7087.88797487019
+        }
+      ],
+      "capacity": [
+        {
+          "eta": 0.2,
+          "start_X": 1.005,
+          "width": 0.4,
+          "degree": 19,
+          "S_slack": 0.05052333428445621,
+          "basis_condition": 3118.1223971110294,
+          "max_abs_minimum_U": 5.024834459006356
+        },
+        {
+          "eta": 0.2,
+          "start_X": 1.005,
+          "width": 0.4,
+          "degree": 27,
+          "S_slack": 0.10994708663282093,
+          "basis_condition": 24478.93878186608,
+          "max_abs_minimum_U": 5.024834459006356
+        },
+        {
+          "eta": 0.2,
+          "start_X": 1.005,
+          "width": 0.4,
+          "degree": 31,
+          "S_slack": 0.12309051212261934,
+          "basis_condition": 60357.95066605328,
+          "max_abs_minimum_U": 5.024834459006356
+        },
+        {
+          "eta": 0.3,
+          "start_X": 1.005,
+          "width": 0.4,
+          "degree": 19,
+          "S_slack": -0.0557466522578034,
+          "basis_condition": 3118.1223971110294,
+          "max_abs_minimum_U": 4.597699196232704
+        },
+        {
+          "eta": 0.3,
+          "start_X": 1.005,
+          "width": 0.4,
+          "degree": 27,
+          "S_slack": 0.00044883803180550963,
+          "basis_condition": 24478.93878186608,
+          "max_abs_minimum_U": 4.597699196232704
+        },
+        {
+          "eta": 0.3,
+          "start_X": 1.005,
+          "width": 0.4,
+          "degree": 31,
+          "S_slack": 0.013454232514542586,
+          "basis_condition": 60357.95066605328,
+          "max_abs_minimum_U": 4.597699196232704
+        }
+      ]
+    },
+    {
+      "rise_end": 1.46,
+      "cone_at_X1": [
+        {
+          "X": 1.0,
+          "eta": 0.2,
+          "order": 24,
+          "lambda_squared": 2044.7419526708532,
+          "target_dot_N": -2.6035051922134773,
+          "target_dot_K": 1.4103816143366672,
+          "ratio": 0.6869165132996367,
+          "strict_pass": true,
+          "residual_norm": 6197.397673730729
+        },
+        {
+          "X": 1.0,
+          "eta": 0.3,
+          "order": 24,
+          "lambda_squared": 1881.729119678279,
+          "target_dot_N": -2.884373972711577,
+          "target_dot_K": 0.929031275101249,
+          "ratio": 0.9932894835665342,
+          "strict_pass": true,
+          "residual_norm": 7093.876349961623
+        }
+      ],
+      "capacity": [
+        {
+          "eta": 0.2,
+          "start_X": 1.005,
+          "width": 0.4,
+          "degree": 19,
+          "S_slack": 0.050140983349081125,
+          "basis_condition": 3118.1223971110294,
+          "max_abs_minimum_U": 5.024677688489137
+        },
+        {
+          "eta": 0.2,
+          "start_X": 1.005,
+          "width": 0.4,
+          "degree": 27,
+          "S_slack": 0.10951572919187713,
+          "basis_condition": 24478.93878186608,
+          "max_abs_minimum_U": 5.024677688489137
+        },
+        {
+          "eta": 0.2,
+          "start_X": 1.005,
+          "width": 0.4,
+          "degree": 31,
+          "S_slack": 0.12265688932673058,
+          "basis_condition": 60357.95066605328,
+          "max_abs_minimum_U": 5.024677688489137
+        },
+        {
+          "eta": 0.3,
+          "start_X": 1.005,
+          "width": 0.4,
+          "degree": 19,
+          "S_slack": -0.05598247811342594,
+          "basis_condition": 3118.1223971110294,
+          "max_abs_minimum_U": 4.597546522044302
+        },
+        {
+          "eta": 0.3,
+          "start_X": 1.005,
+          "width": 0.4,
+          "degree": 27,
+          "S_slack": 0.00017557022715886106,
+          "basis_condition": 24478.93878186608,
+          "max_abs_minimum_U": 4.597546522044302
+        },
+        {
+          "eta": 0.3,
+          "start_X": 1.005,
+          "width": 0.4,
+          "degree": 31,
+          "S_slack": 0.013180096124545848,
+          "basis_condition": 60357.95066605328,
+          "max_abs_minimum_U": 4.597546522044302
+        }
+      ]
+    },
+    {
+      "rise_end": 1.462,
+      "cone_at_X1": [
+        {
+          "X": 1.0,
+          "eta": 0.2,
+          "order": 24,
+          "lambda_squared": 2007.4309215343646,
+          "target_dot_N": -2.609290928833934,
+          "target_dot_K": 1.419979527962446,
+          "ratio": 0.6739180863750651,
+          "strict_pass": true,
+          "residual_norm": 6203.840985572719
+        },
+        {
+          "X": 1.0,
+          "eta": 0.3,
+          "order": 24,
+          "lambda_squared": 1878.3323690050506,
+          "target_dot_N": -2.8949973634541593,
+          "target_dot_K": 0.9319036003625006,
+          "ratio": 0.9834026460371701,
+          "strict_pass": true,
+          "residual_norm": 7099.758087580591
+        }
+      ],
+      "capacity": [
+        {
+          "eta": 0.2,
+          "start_X": 1.005,
+          "width": 0.4,
+          "degree": 19,
+          "S_slack": 0.04976805394644046,
+          "basis_condition": 3118.1223971110294,
+          "max_abs_minimum_U": 5.024521971857385
+        },
+        {
+          "eta": 0.2,
+          "start_X": 1.005,
+          "width": 0.4,
+          "degree": 27,
+          "S_slack": 0.1090927198102376,
+          "basis_condition": 24478.93878186608,
+          "max_abs_minimum_U": 5.024521971857385
+        },
+        {
+          "eta": 0.2,
+          "start_X": 1.005,
+          "width": 0.4,
+          "degree": 31,
+          "S_slack": 0.12223133063078873,
+          "basis_condition": 60357.95066605328,
+          "max_abs_minimum_U": 5.024521971857385
+        },
+        {
+          "eta": 0.3,
+          "start_X": 1.005,
+          "width": 0.4,
+          "degree": 19,
+          "S_slack": -0.056208441910869045,
+          "basis_condition": 3118.1223971110294,
+          "max_abs_minimum_U": 4.597394874203909
+        },
+        {
+          "eta": 0.3,
+          "start_X": 1.005,
+          "width": 0.4,
+          "degree": 27,
+          "S_slack": -8.889490885422013e-05,
+          "basis_condition": 24478.93878186608,
+          "max_abs_minimum_U": 4.597394874203909
+        },
+        {
+          "eta": 0.3,
+          "start_X": 1.005,
+          "width": 0.4,
+          "degree": 31,
+          "S_slack": 0.01291448572506404,
+          "basis_condition": 60357.95066605328,
+          "max_abs_minimum_U": 4.597394874203909
+        }
+      ]
+    }
+  ],
+  "scope": "One-point physical cone at X=1 and fixed-slice finite-basis five-moment capacity for alternate rise ends. No corrected physical lift or continuous cone claim.",
+  "accepted": false
+}

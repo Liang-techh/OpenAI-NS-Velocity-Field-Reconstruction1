@@ -21,7 +21,7 @@ def septic_step(x):
 
 class RadialMomentStep:
     def __init__(self, base=None, amplitude=0., restore_start=1.75,
-                 restore_end=3.):
+                 restore_end=3., rise_end=None):
         self.base = base if base is not None else make_field(16, 0.)
         self.compact = self.base.compact
         self.heat = self.base.heat
@@ -29,11 +29,13 @@ class RadialMomentStep:
         self.amplitude = float(amplitude)
         radial = self.compact.joined
         self.rise_start = radial.join_X
-        self.rise_end = radial.join_X*radial.outer_ratio**2
+        self.rise_end = (radial.join_X*radial.outer_ratio**2
+                         if rise_end is None else float(rise_end))
         self.restore_start = float(restore_start)
         self.restore_end = float(restore_end)
-        if not self.rise_start < self.restore_start < self.restore_end:
-            raise ValueError('Restoration must follow the rise start')
+        if not (self.rise_start < self.rise_end < self.restore_end
+                and self.rise_start < self.restore_start < self.restore_end):
+            raise ValueError('Rise and restoration must have positive width')
 
     def attachment_radius(self, tau):
         return self.base.attachment_radius(tau)

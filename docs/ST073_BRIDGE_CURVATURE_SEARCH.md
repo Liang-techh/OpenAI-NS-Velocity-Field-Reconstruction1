@@ -702,3 +702,53 @@ momentum performance. This field is not promoted. The next structural
 degree of freedom should change the entrance rise of the radial mean
 step and co-design its five-moment return, rather than further lowering
 the swirl floor or moving only the far restoration.
+
+## Changing the entrance rise of the radial mean step
+
+`RadialMomentStep` now accepts an optional `rise_end`; the default
+retains the original end `X=1.5`. `radial_rise_capacity.py` varies it
+while leaving the step amplitude `-.5`, outer restoration, E profile,
+and delayed U support fixed. Moving the rise end to `1.3` gives much
+more degree-27 S slack at `eta=.3` (`+.0560`) but fails the sampled
+strict cone at `X=1`. The original `1.5` passes that point but has
+degree-27 slack `-.00356`. Fine scans find a narrow crossover: at
+`rise_end=1.46`, degree-27 slack is `+.000176` and both `X=1` cone
+rows pass at Gauss24. A Gauss64 repeat gives cone ratios `.611` and
+`.839` there; these are necessary pointwise conditions only.
+
+The degree-27 physical lift at `rise_end=1.46` is exactly repaired at
+the two reference slices but raises the 20-node entrance momentum
+maximum to `1.018855e6`. Retaining degree 31 at the same rise end
+gives a larger S slack (`+.01318` at `eta=.3`) and a better physical
+candidate, `delayed005_rise146_degree31.json`. Its independent
+piecewise physical-velocity integration finds five-moment defects
+below `3.7e-13` at both slices and minimum relative swirl above `.11`.
+
+Against the previous rise-`1.5`, degree-31 reoptimized-E field,
+the new lift improves complete Cartesian momentum on three separate
+local screens:
+
+| Screen | Previous max | New max |
+| --- | ---: | ---: |
+| 20 entrance nodes, `k=5.5` | `9.565792e5` | `8.595515e5` |
+| 24 middle/return nodes, `k=5.5` | `6.288559e5` | `5.727185e5` |
+| 18 nodes, `k=5.25` | `7.372641e5` | `6.624820e5` |
+
+At disjoint `eta=.29,.31` spatial nodes and two other nearby times,
+the entrance maximum is about `10.5%` lower, the middle maximum about
+`21.5%` lower, and the far-return maximum about `9.8%` lower at **both**
+times. This is the first rise-shape change here that improves all three
+sampled regions and the nearby-time holdout together. The screens are
+still sparse and do not establish a spatial volume norm or a global
+maximum.
+
+The cone remains the next obstruction. At `X=1.005`, Gauss64 gives
+strict ratios `.784` and `.989` at `eta=.2,.3`; the latter converges
+to `.989130` at orders 96 and 128. Gauss24 had incorrectly reported
+`1.119` for that sensitive node, so the higher-order result is used.
+At `X=1.01`, both slices fail, and the `eta=.3` target-normal
+projection is positive. The new rise shape therefore gives a real
+sampled momentum improvement and a tiny positive onset cone margin,
+but no certified cone region spanning the return, supported wave,
+volume-L2 gate, or `1e-3` PDE acceptance. The field remains an
+experimental candidate, not a promoted solution.

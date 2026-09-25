@@ -12,11 +12,12 @@ from wide_taper_curvature_optimize import optimize_slice
 
 def run(start_X=1.01, width=.05, degree=31,
         e_source='wide_taper_five_moment_slice.json',
-        output_name='delayed_taper_curvature_optimize.json'):
+        output_name='delayed_taper_curvature_optimize.json',
+        rise_end=None):
     tau = .5*2**(-5.5)
     X, weights = grid(order=64)
     base = make_field(16, 2.)
-    changed = RadialMomentStep(base, -.5)
+    changed = RadialMomentStep(base, -.5, rise_end=rise_end)
     source = json.loads((ROOT/e_source).read_text())
     rows = []
     for prior in source['rows']:
@@ -42,9 +43,10 @@ def run(start_X=1.01, width=.05, degree=31,
                                   'optimizer_success'])), flush=True)
     report = dict(tau=tau, taper_width=width, u_degree=degree,
                   start_X=start_X, quadrature_per_piece=64,
+                  rise_end=rise_end,
                   rows=rows,
                   scope='Two fixed-eta exact five-moment slices with U '
-                        'correction delayed until X=1.01 and radial '
+                        'correction delayed after X=1 and radial '
                         'curvature proxy optimized. A physical lift and '
                         'continuous cone/momentum checks are separate.',
                   accepted=False)
@@ -57,6 +59,7 @@ if __name__ == '__main__':
     parser.add_argument('--start-X', type=float, default=1.01)
     parser.add_argument('--width', type=float, default=.05)
     parser.add_argument('--degree', type=int, default=31)
+    parser.add_argument('--rise-end', type=float)
     parser.add_argument('--e-source',
                         default='wide_taper_five_moment_slice.json')
     parser.add_argument('--output-name',
@@ -64,4 +67,4 @@ if __name__ == '__main__':
     arguments = parser.parse_args()
     run(arguments.start_X, arguments.width, arguments.degree,
         arguments.e_source,
-        arguments.output_name)
+        arguments.output_name, arguments.rise_end)

@@ -1,0 +1,98 @@
+{
+  "tau": 0.011048543456039806,
+  "amplitude": -0.5,
+  "restore_start": 1.75,
+  "restore_end": 3.0,
+  "E_source": "delayed_e_capacity_optimize.json",
+  "width": 0.4,
+  "start_X": 1.005,
+  "quadrature_order": 48,
+  "cone_order": 64,
+  "rows": [
+    {
+      "rise_end": 1.46,
+      "cone_at_X1": [
+        {
+          "X": 1.0,
+          "eta": 0.2,
+          "order": 64,
+          "lambda_squared": 2044.7419526708532,
+          "target_dot_N": -2.6320740184628804,
+          "target_dot_K": 1.2681996189551485,
+          "ratio": 0.6109635305141697,
+          "strict_pass": true,
+          "residual_norm": 6197.397673730729
+        },
+        {
+          "X": 1.0,
+          "eta": 0.3,
+          "order": 64,
+          "lambda_squared": 1881.729119678279,
+          "target_dot_N": -2.8959428168815404,
+          "target_dot_K": 0.7883142002034416,
+          "ratio": 0.8394724321757049,
+          "strict_pass": true,
+          "residual_norm": 7093.876349961623
+        }
+      ],
+      "capacity": [
+        {
+          "eta": 0.2,
+          "start_X": 1.005,
+          "width": 0.4,
+          "degree": 19,
+          "S_slack": 0.050140983349081125,
+          "basis_condition": 3118.1223971110294,
+          "max_abs_minimum_U": 5.024677688489137
+        },
+        {
+          "eta": 0.2,
+          "start_X": 1.005,
+          "width": 0.4,
+          "degree": 27,
+          "S_slack": 0.10951572919187713,
+          "basis_condition": 24478.93878186608,
+          "max_abs_minimum_U": 5.024677688489137
+        },
+        {
+          "eta": 0.2,
+          "start_X": 1.005,
+          "width": 0.4,
+          "degree": 31,
+          "S_slack": 0.12265688932673058,
+          "basis_condition": 60357.95066605328,
+          "max_abs_minimum_U": 5.024677688489137
+        },
+        {
+          "eta": 0.3,
+          "start_X": 1.005,
+          "width": 0.4,
+          "degree": 19,
+          "S_slack": -0.05598247811342594,
+          "basis_condition": 3118.1223971110294,
+          "max_abs_minimum_U": 4.597546522044302
+        },
+        {
+          "eta": 0.3,
+          "start_X": 1.005,
+          "width": 0.4,
+          "degree": 27,
+          "S_slack": 0.00017557022715886106,
+          "basis_condition": 24478.93878186608,
+          "max_abs_minimum_U": 4.597546522044302
+        },
+        {
+          "eta": 0.3,
+          "start_X": 1.005,
+          "width": 0.4,
+          "degree": 31,
+          "S_slack": 0.013180096124545848,
+          "basis_condition": 60357.95066605328,
+          "max_abs_minimum_U": 4.597546522044302
+        }
+      ]
+    }
+  ],
+  "scope": "One-point physical cone at X=1 and fixed-slice finite-basis five-moment capacity for alternate rise ends. No corrected physical lift or continuous cone claim.",
+  "accepted": false
+}
