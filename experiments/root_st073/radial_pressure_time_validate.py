@@ -1,5 +1,6 @@
 """Direct physical-residual check of the three-time pressure refit."""
 import json
+import sys
 
 import numpy as np
 
@@ -19,7 +20,12 @@ def load_candidate():
 
 
 def run():
-    field = load_candidate()
+    optimized = '--volume-constrained' in sys.argv
+    if optimized:
+        from radial_pressure_volume_constrained import load_candidate as load_optimized
+        field = load_optimized()
+    else:
+        field = load_candidate()
     times = [.00825, .008325, .0084, .008475, .00855]
     radii = [.0075, .00825, .009, .010, .011, .012, .013]
     heights = [.00355, .003625, .0037]
@@ -42,7 +48,9 @@ def run():
               'rows': rows,
               'scope': 'Physical finite-difference residual and radial primitive on 5 sampled times, 7 radii and 3 heights. No continuum or full momentum certificate.',
               'accepted': False}
-    path = ROOT/'compact_potential'/'radial_pressure_time_validate.json'
+    path = ROOT/'compact_potential'/(
+        'radial_pressure_volume_cone_validate.json' if optimized else
+        'radial_pressure_time_validate.json')
     path.write_bytes((json.dumps(report, indent=2)+'\n').encode())
     print(json.dumps({'pass_count': report['pass_count'],
                       'total_count': report['total_count'],

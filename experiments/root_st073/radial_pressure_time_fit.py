@@ -68,6 +68,8 @@ def run():
     affine = solve(A, b)
     report = {'times': source['times'], 'radii': source['radii'],
               'heights': source['heights'], 'mode_degrees': degrees,
+              'constant_cone_matrix': A[:, :len(degrees)].tolist(),
+              'cone_rhs': b.tolist(),
               'constant_fit': constant, 'affine_time_fit': affine,
               'baseline_pass_count': source['passing_count'],
               'total_count': len(rows), 'rows': diagnostics,
