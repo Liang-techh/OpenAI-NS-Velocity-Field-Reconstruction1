@@ -35,6 +35,11 @@ does reduce direct held-out midpoint momentum by about `2.14x` but leaves
 an error of `4.86e9`; see `ST073_SPATIAL_WAVE_SLOPE.md`. Continue with
 stable multi-stage amplitude transport, wider supported cone geometry,
 and coupled radial moment repair rather than accepting the local fit.
+Two `1e-10` time steps retain the local factor-of-two held-out momentum
+gain but cannot span the pulse window; see
+`ST073_TWO_STAGE_WAVE_EVOLUTION.md`. Next establish a stable supported
+amplitude inverse or longer-step evolution with uniform residual and
+moment control, then test its transfer between actual dyadic scales.
 Use those directions as a conditioning prototype, not as the paper's five
 leading-profile moments or a recursive correction.
 The next Stage-1 inputs are therefore the actual coefficient-family

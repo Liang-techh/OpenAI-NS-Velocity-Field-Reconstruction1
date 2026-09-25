@@ -42,3 +42,7 @@ volume-L2 residual. The next construction needs an evolving,
 spatially supported wave/mean system with stable holdouts and a
 controlled cutoff budget; simply fitting more endpoint coefficients
 is not a scale-recursive solution.
+
+A second local coefficient stage retains a similar direct midpoint
+reduction over one more very short interval; see
+`ST073_TWO_STAGE_WAVE_EVOLUTION.md`.
