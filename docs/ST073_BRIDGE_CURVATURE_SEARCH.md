@@ -464,3 +464,83 @@ worse. Thus this fixed-scale compact swirl basis does not provide a
 robust angular correction; its coefficients are a diagnostic, not a
 promoted field. A dynamically evolved swirl/stress correction with
 simultaneous moment and radial-momentum accounting is needed.
+
+## Physical stress cone after the moment-preserving lift
+
+`curvature_physical_cone_screen.py` applies the complete-residual stress
+primitive to the current lifted field. The radial integral is now split
+at the narrow correction edges `X=1`, `1+width`, `3-width`, and `3`;
+otherwise a low-order Gauss panel can miss the new support just outside
+`X=1`. At the reference time and `eta=.2,.3`, the strict physical cone
+still passes exactly at `X=1`. It fails at every sampled `X=1.005`,
+`1.01`, and `1.025` at both slices. The sensitive failures at
+`X=1.005` and `1.01` persist with Gauss order 24 after order 12.
+For example, at `X=1.005,eta=.3`, the cone ratio is `1.34` at order 24
+(it must be below `1`), and at `X=1.01,eta=.3` the target projection
+has the wrong positive sign (`+49.25`).
+
+This links the momentum hotspot to a loss of the local positive-stress
+representation needed by the paper's wave mechanism. A wave cannot be
+attached across this sampled return region using this background and
+the same strict local cone. The corrective mean profile must first
+restore a cone margin over a finite region while controlling curvature;
+the current two-slice moment repair alone does not do that. This is a
+sampled physical analogue, not the paper's normalized continuous cone
+or a theorem that no alternative field can work.
+
+## Delaying and widening the moment-preserving U return
+
+The narrow return starts its U correction immediately at `X=1`, where
+the strict physical stress cone is positive. `delayed_taper_capacity_screen.py`
+tests a later start while retaining the existing five E-bump coefficients.
+At `eta=.3`, degree-19 modes cease to have positive `S` slack by
+`start_X=1.01`; degree-31 modes remain feasible there, but lose slack
+by `start_X=1.02` for width `.05`. With `start_X=1.005`, degree 31,
+and width `.4`, the two fixed-slice slacks are `+0.11302` and
+`+0.00704`. The exact M/J/S repair followed by radial-curvature
+optimization leaves all five fixed-slice defects below `7e-13`.
+
+The width-`.4` delayed physical lift is constructed from the same
+streamfunction formula, with its primitive now beginning at `X=1.005`.
+On the **same 20 dense physical nodes** at the reference time, the
+complete-momentum maximum falls from `1.371562e6` for the previous
+curvature lift to `1.035288e6` (about `24.5%`). A separate 24-node
+middle/return screen peaks at `6.73344e5`; it does not reveal a larger
+sampled return hotspot. At `X=1.015,eta=.3`, spatial FD refinement
+stabilizes the new residual norm near `1.035321e6`, while the divergence
+estimate decreases from `1.10e-2` to `2.98e-6` between step factors
+`.001` and `.000125`. Analytic solenoidality follows from the
+streamfunction and axisymmetric swirl construction, not from the FD
+number alone.
+
+At Gauss order 24, the strict physical cone now passes at `X=1.005`
+for both fitted slices (ratios `.541` and `.934`, below `1`). It still
+fails at `X=1.01` and beyond. Starting instead at `X=1.01` creates a
+new `1.866e6` residual spike near `X=1.015` that a coarser sampling
+missed. Widening the `X=1.005` taper from `.05` through `.1` and `.2`
+to `.4` reduced the dense sampled maximum from `1.166e6` to
+`1.035e6`; width `.6` rose to `1.043e6`, so `.4` is the best in this
+small scan. These values are local, one-time finite-difference
+diagnostics. The candidate is still far above `1e-3`, has no volume-L2
+gate or continuous cone, and is not a promoted PDE solution.
+
+An independent piecewise Gauss48 integration of the **actual lifted
+velocity** (rather than its coefficient algebra) gives five-moment
+defects below `4.8e-14` at `eta=.2` and `2.5e-13` at `eta=.3` at the
+reference time. The sampled minimum swirl profile remains positive
+(`E>0.0174`, relative to the baseline `E` above `.109`).
+
+At a nearby time `k=5.25`, the same 18 similarity nodes give a full
+momentum maximum of `1.057105e6` for the previous lift and
+`7.97930e5` for the delayed width-`.4` lift (again about `24.5%`
+lower). This is a time holdout, not a uniform-time bound.
+
+`curvature_mean_patch_screen.py` separately fits twelve compact
+axisymmetric vector-potential/pressure mean modes to the **previous**
+curvature lift. It improves same-time train maximum `1.234e6` to
+`1.088e6` and disjoint spatial maximum `1.328e6` to `1.083e6`, but
+the nearby-time maximum worsens from `1.178e6` to `2.144e6`.
+Its time-independent local amplitudes are therefore rejected as a
+dynamic correction. The code remains a reusable exact-curl mean basis,
+not an accepted lift or a substitute for the paper's time-dependent
+mean/wave equations.

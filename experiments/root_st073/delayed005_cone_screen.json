@@ -1,0 +1,118 @@
+{
+  "tau": 0.011048543456039806,
+  "start_X": 1.005,
+  "rows": [
+    {
+      "X": 1.0,
+      "eta": 0.2,
+      "order": 12,
+      "lambda_squared": 823.160456681224,
+      "target_dot_N": -2.717426639415421,
+      "target_dot_K": 1.5451747762215495,
+      "ratio": 0.32672005017588057,
+      "strict_pass": true,
+      "residual_norm": 6306.302055806812
+    },
+    {
+      "X": 1.005,
+      "eta": 0.2,
+      "order": 24,
+      "lambda_squared": 1654.6446042562939,
+      "target_dot_N": -2.3133458797547237,
+      "target_dot_K": 1.9966366751102615,
+      "ratio": 0.5399202024421311,
+      "strict_pass": true,
+      "residual_norm": 7155.338318665006
+    },
+    {
+      "X": 1.01,
+      "eta": 0.2,
+      "order": 24,
+      "lambda_squared": 8150.7481358909035,
+      "target_dot_N": -0.9007352674092001,
+      "target_dot_K": 1.4797620018575925,
+      "ratio": 3.9022247519295843,
+      "strict_pass": false,
+      "residual_norm": 101670.12065112163
+    },
+    {
+      "X": 1.015,
+      "eta": 0.2,
+      "order": 24,
+      "lambda_squared": 18176.891168056514,
+      "target_dot_N": 3.531806999794337,
+      "target_dot_K": 1.2897002963344484,
+      "ratio": 1.761826012272562,
+      "strict_pass": false,
+      "residual_norm": 125819.00634857948
+    },
+    {
+      "X": 1.025,
+      "eta": 0.2,
+      "order": 12,
+      "lambda_squared": 81190.2535156484,
+      "target_dot_N": 9.958794782764762,
+      "target_dot_K": 2.0998817404264227,
+      "ratio": 0.8823756544136031,
+      "strict_pass": false,
+      "residual_norm": 99233.17427018752
+    },
+    {
+      "X": 1.0,
+      "eta": 0.3,
+      "order": 12,
+      "lambda_squared": 1792.3916263539354,
+      "target_dot_N": -3.1119817896644997,
+      "target_dot_K": 0.8653210163256421,
+      "ratio": 0.6946477401519389,
+      "strict_pass": true,
+      "residual_norm": 7192.438222372374
+    },
+    {
+      "X": 1.005,
+      "eta": 0.3,
+      "order": 24,
+      "lambda_squared": 3438.865069834388,
+      "target_dot_N": -2.850597950337483,
+      "target_dot_K": 1.3913370679648096,
+      "ratio": 0.9297047861037564,
+      "strict_pass": true,
+      "residual_norm": 8239.321733752511
+    },
+    {
+      "X": 1.01,
+      "eta": 0.3,
+      "order": 24,
+      "lambda_squared": 7697.307026757222,
+      "target_dot_N": 15.192835969584777,
+      "target_dot_K": 0.683565213416522,
+      "ratio": 0.8714091195030329,
+      "strict_pass": false,
+      "residual_norm": 1074196.9305833015
+    },
+    {
+      "X": 1.015,
+      "eta": 0.3,
+      "order": 24,
+      "lambda_squared": 16076.968576360585,
+      "target_dot_N": 54.329248584370134,
+      "target_dot_K": 0.6551986094547919,
+      "ratio": 0.4807983433762603,
+      "strict_pass": false,
+      "residual_norm": 858303.4429667079
+    },
+    {
+      "X": 1.025,
+      "eta": 0.3,
+      "order": 12,
+      "lambda_squared": 75589.53899856903,
+      "target_dot_N": 62.99134777678621,
+      "target_dot_K": 0.8806268448316252,
+      "ratio": 0.29732743655470606,
+      "strict_pass": false,
+      "residual_norm": 264379.6122788496
+    }
+  ],
+  "scope": "Ten sampled physical full-residual cone nodes near delayed U start. Order 24 on sensitive nodes, with quadrature split at U/E support edges. No continuous cone or wave admission.",
+  "accepted": false
+}

@@ -32,6 +32,7 @@ class CoupledMomentPhysicalLift:
         data = json.loads((ROOT/slice_filename).read_text())
         self.width = float(data.get('taper_width', .02))
         self.degree = int(data.get('u_degree', 11))
+        self.start_X = float(data.get('start_X', 1.))
         chosen = sorted((row for row in data['rows']
                          if row.get('variant') in ('maximum_slack',
                                                    'curvature_optimized')
@@ -48,17 +49,18 @@ class CoupledMomentPhysicalLift:
         return self.base.attachment_radius(tau)
 
     def primitive_basis(self, X):
-        X = float(np.clip(X, 1., 3.))
+        X = float(np.clip(X, self.start_X, 3.))
         total = np.zeros(self.degree+1)
-        for lo, hi in ((1., 1.+self.width),
-                       (1.+self.width, 3.-self.width),
+        for lo, hi in ((self.start_X, self.start_X+self.width),
+                       (self.start_X+self.width, 3.-self.width),
                        (3.-self.width, 3.)):
             end = min(X, hi)
             if end <= lo:
                 continue
             nodes = (lo+end)/2+(end-lo)*self.nodes/2
             weights = (end-lo)*self.weights/2
-            total += correction_modes(nodes, self.width, self.degree)@weights
+            total += correction_modes(nodes, self.width, self.degree,
+                                      self.start_X)@weights
         return total
 
     def coefficients(self, eta):
@@ -99,7 +101,7 @@ class CoupledMomentPhysicalLift:
             e_delta = sum(eco[j]*bump(np.array([X]), *interval)[0][0]
                           for j, interval in enumerate(INTERVALS))
             basis = correction_modes(np.array([X]), self.width,
-                                     self.degree)[:, 0]
+                                     self.degree, self.start_X)[:, 0]
             primitive = self.primitive_basis(X)
             G = float(uco@primitive)
             G_x = float(uco@basis)

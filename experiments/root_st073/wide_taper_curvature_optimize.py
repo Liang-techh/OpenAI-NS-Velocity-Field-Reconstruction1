@@ -17,16 +17,17 @@ from taper_width_capacity import grid
 
 def optimize_slice(base, changed, X, weights, eta, tau, row):
     width, degree = row['taper_width'], row['u_degree']
+    start_X = row.get('start_X', 1.)
     U0, E0 = profile(base, X, eta, tau)
     U, _ = profile(changed, X, eta, tau)
     eb = np.array([bump(X, *interval)[0] for interval in INTERVALS])
     E = E0+np.asarray(row['e_coefficients'])@eb
     target = moment_vector(U0, E0, X, weights)
     H = np.sqrt(2*X)*E
-    B = correction_modes(X, width, degree)
+    B = correction_modes(X, width, degree, start_X)
     dense_X = np.linspace(1., 3., 2001)
     dx = dense_X[1]-dense_X[0]
-    dense_B = correction_modes(dense_X, width, degree)
+    dense_B = correction_modes(dense_X, width, degree, start_X)
     Bxx = np.gradient(np.gradient(dense_B, dx, axis=1), dx, axis=1)
     stiffness = (Bxx*dx)@Bxx.T
     stiffness += np.eye(len(B))*1e-7
@@ -56,6 +57,7 @@ def optimize_slice(base, changed, X, weights, eta, tau, row):
     final = moment_vector(U+selected@B, E, X, weights)-target
     return dict(variant='curvature_optimized', eta=eta,
                 taper_width=width, u_degree=degree,
+                start_X=start_X,
                 e_coefficients=row['e_coefficients'],
                 u_coefficients=selected.tolist(),
                 original_curvature_proxy=float(start@stiffness@start),

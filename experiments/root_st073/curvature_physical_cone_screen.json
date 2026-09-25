@@ -1,0 +1,143 @@
+{
+  "tau": 0.011048543456039806,
+  "quadrature_order": 12,
+  "rows": [
+    {
+      "X": 1.0,
+      "eta": 0.2,
+      "order": 12,
+      "lambda_squared": 814.1416895670669,
+      "target_dot_N": -2.7166212176996503,
+      "target_dot_K": 1.5465903753806212,
+      "ratio": 0.3247326196941747,
+      "strict_pass": true,
+      "residual_norm": 6337.137902894724
+    },
+    {
+      "X": 1.005,
+      "eta": 0.2,
+      "order": 12,
+      "lambda_squared": 5382.516573046388,
+      "target_dot_N": -0.861324384923355,
+      "target_dot_K": 1.0084965202095197,
+      "ratio": 3.840107425169382,
+      "strict_pass": false,
+      "residual_norm": 123640.1500889652
+    },
+    {
+      "X": 1.01,
+      "eta": 0.2,
+      "order": 12,
+      "lambda_squared": 9445.60808139441,
+      "target_dot_N": 4.614604346727139,
+      "target_dot_K": 0.8115641946429428,
+      "ratio": 1.3965722941506598,
+      "strict_pass": false,
+      "residual_norm": 155584.16072262128
+    },
+    {
+      "X": 1.025,
+      "eta": 0.2,
+      "order": 12,
+      "lambda_squared": 83402.0791292005,
+      "target_dot_N": 14.828743547925475,
+      "target_dot_K": 1.7119003439523817,
+      "ratio": 0.677099331281606,
+      "strict_pass": false,
+      "residual_norm": 110006.72950569523
+    },
+    {
+      "X": 1.0,
+      "eta": 0.3,
+      "order": 12,
+      "lambda_squared": 1789.8505234612235,
+      "target_dot_N": -3.1115986589327496,
+      "target_dot_K": 0.8666977017543187,
+      "ratio": 0.6922892403940925,
+      "strict_pass": true,
+      "residual_norm": 7276.670734659882
+    },
+    {
+      "X": 1.005,
+      "eta": 0.3,
+      "order": 12,
+      "lambda_squared": 4370.534317067465,
+      "target_dot_N": 8.103707010989352,
+      "target_dot_K": 0.5267150458645985,
+      "ratio": 1.069794690138969,
+      "strict_pass": false,
+      "residual_norm": 779023.4058976761
+    },
+    {
+      "X": 1.01,
+      "eta": 0.3,
+      "order": 12,
+      "lambda_squared": 7715.032582895527,
+      "target_dot_N": 49.24764657111297,
+      "target_dot_K": 0.4710219129936248,
+      "ratio": 0.5025494442455084,
+      "strict_pass": false,
+      "residual_norm": 1371613.7750364675
+    },
+    {
+      "X": 1.025,
+      "eta": 0.3,
+      "order": 12,
+      "lambda_squared": 75683.57517316601,
+      "target_dot_N": 97.52048383044814,
+      "target_dot_K": 0.7629494912108772,
+      "ratio": 0.2517716876675108,
+      "strict_pass": false,
+      "residual_norm": 865826.8527697934
+    }
+  ],
+  "refinement_order": 24,
+  "refinement": [
+    {
+      "X": 1.005,
+      "eta": 0.2,
+      "order": 24,
+      "lambda_squared": 5382.516573046388,
+      "target_dot_N": -0.8447860919658418,
+      "target_dot_K": 1.1405900332657635,
+      "ratio": 4.428111311246904,
+      "strict_pass": false,
+      "residual_norm": 123640.1500889652
+    },
+    {
+      "X": 1.01,
+      "eta": 0.2,
+      "order": 24,
+      "lambda_squared": 9445.60808139441,
+      "target_dot_N": 4.62361487884376,
+      "target_dot_K": 0.9437250732596691,
+      "ratio": 1.6208351851153777,
+      "strict_pass": false,
+      "residual_norm": 155584.16072262128
+    },
+    {
+      "X": 1.005,
+      "eta": 0.3,
+      "order": 24,
+      "lambda_squared": 4370.534317067465,
+      "target_dot_N": 8.10687411541375,
+      "target_dot_K": 0.6600650632031478,
+      "ratio": 1.3401140533168099,
+      "strict_pass": false,
+      "residual_norm": 779023.4058976761
+    },
+    {
+      "X": 1.01,
+      "eta": 0.3,
+      "order": 24,
+      "lambda_squared": 7715.032582895527,
+      "target_dot_N": 49.24893989579921,
+      "target_dot_K": 0.6037451238995584,
+      "ratio": 0.6441394767969668,
+      "strict_pass": false,
+      "residual_norm": 1371613.7750364675
+    }
+  ],
+  "scope": "Eight sampled physical stress-cone nodes on the curvature-optimized physical lift. The target is an axis-to-radius primitive of complete physical momentum residual; no continuous cone, wave, mean closure, or PDE acceptance.",
+  "accepted": false
+}

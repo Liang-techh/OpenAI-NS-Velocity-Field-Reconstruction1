@@ -63,7 +63,17 @@ def stress_primitive(field, radius, z, tau, order=12):
     q = float(coordinates(0., z/np.sqrt(field.nu), tau,
                           inner.h)['q'])
     ri = np.sqrt(2*field.nu*q*join_X)
-    edges = sorted(set(np.clip([0., ri, radius], 0., radius)))
+    cuts = [0., ri, radius]
+    # The coupled physical lift has narrow C4 radial pieces and a first
+    # azimuthal bump beginning at X=1.005.
+    # Resolve those pieces separately instead of asking one Gauss panel to
+    # see a small active interval beside the evaluation radius.
+    if hasattr(field, 'width'):
+        start_X = getattr(field, 'start_X', 1.)
+        cuts.extend(np.sqrt(2*field.nu*q*np.array(
+            [1., 1.005, start_X, start_X+field.width,
+             3.-field.width, 3.])))
+    edges = sorted(set(np.clip(cuts, 0., radius)))
     g, w = leggauss(order)
     theta_integral = 0.
     axial_integral = 0.
