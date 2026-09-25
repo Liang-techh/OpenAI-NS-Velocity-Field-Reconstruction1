@@ -39,13 +39,14 @@ def run():
                   heat_amplitude=field.c, rows=rows,
                   scope='C2 radial join from the wider local recurrence to the '
                         'old pure-swirl heat exterior. Fourth-order Cartesian '
-                        'finite differences at bridge midpoints with several '
+                        'finite differences at three radial fractions with several '
                         'outer radius ratios. Ratios are different physical '
                         'points, not identical-domain holdouts. Axial '
                         'closure, five radial moments, finite total energy, '
                         'and global residual remain open.',
                   pde_validated=False, global_field_ready=False)
-    (ROOT / 'wide_join_screen.json').write_text(json.dumps(report, indent=2)+'\n')
+    (ROOT / 'wide_join_screen.json').write_bytes(
+        (json.dumps(report, indent=2)+'\n').encode())
 
 
 if __name__ == '__main__':

@@ -48,7 +48,7 @@ def run():
                  parameters=asdict(wide.p), pde_validated=False,
                  global_field_ready=False,
                  scope='Sampled wider local radial recurrence only; no outer or axial join')
-    model_path.write_text(json.dumps(model, indent=2) + '\n')
+    model_path.write_bytes((json.dumps(model, indent=2) + '\n').encode())
     gx, wx = leggauss(12)
     ge, we = leggauss(16)
     X = (gx + 1) * wide.p.X_max / 2
@@ -79,8 +79,8 @@ def run():
                         'Nine eta samples at three times. No off-grid or complete '
                         'annulus certificate, outer match, finite energy, or force '
                         'acceptance.', accepted=False)
-    (ROOT / 'high_order_interface_screen.json').write_text(
-        json.dumps(report, indent=2) + '\n')
+    (ROOT / 'high_order_interface_screen.json').write_bytes(
+        (json.dumps(report, indent=2) + '\n').encode())
 
 
 if __name__ == '__main__':

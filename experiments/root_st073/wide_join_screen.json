@@ -289,7 +289,7 @@
       "divergence_max": 2.3856671305111377e-08
     }
   ],
-  "scope": "C2 radial join from the wider local recurrence to the old pure-swirl heat exterior. Fourth-order Cartesian finite differences at bridge midpoints with several outer radius ratios. Ratios are different physical points, not identical-domain holdouts. Axial closure, five radial moments, finite total energy, and global residual remain open.",
+  "scope": "C2 radial join from the wider local recurrence to the old pure-swirl heat exterior. Fourth-order Cartesian finite differences at three radial fractions with several outer radius ratios. Ratios are different physical points, not identical-domain holdouts. Axial closure, five radial moments, finite total energy, and global residual remain open.",
   "pde_validated": false,
   "global_field_ready": false
 }
