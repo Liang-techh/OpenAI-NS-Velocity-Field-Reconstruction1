@@ -142,3 +142,33 @@ Next test a compact high-frequency radial modulation whose field amplitude
 falls as `1/N` while its slope remains order one, and include its growing
 viscous cost in the physical residual. A sampled cone alone will not
 establish the paper's all-phase admissible cone or moment restoration.
+
+## High-frequency shear scale separation
+
+`high_frequency_shear_screen.py` adds
+`2 B(y) sin(2 pi N (y-y0))/(2 pi N)` to normalized swirl, for
+`B(y)=64 y^3(1-y)^3`, `N=8,16,32`, and `y0` corresponding to `X=1`.
+At that reference point the added swirl value is zero and its slope is
+independent of `N`. The maximum *field* modulation falls from `0.0393`
+to `0.0195` to `0.00942`; the added fifth moment relative to the same
+balanced reference falls from about `3.20e-4` to `8.26e-5` to `2.07e-5`.
+Thus the experiment reproduces the paper's local shear versus cumulative
+moment separation numerically, with positive swirl across the sampled
+radial bridge.
+
+At `N=16`, `X=1`, the sampled relaxed-cone margins at `eta=.2,.3`
+increase from about `1.57,1.02` to `21.65,10.42`. This is only a
+two-point snapshot; a sine perturbation does not implement the paper's
+all-phase admissible shear loop. The eight-point complete physical
+momentum maximum simultaneously rises from about `6111` to `9954`,
+and its angular maximum from `3016` to `9509`. The change is not a
+momentum correction. This outcome is consistent with the paper's
+[Section 2 and Appendix C](https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf):
+the mean annular residual is subsequently canceled by nonaxisymmetric
+oscillatory momentum flux, followed by higher-order and mean corrections.
+
+The next indispensable implementation is a realizable stress target and
+localized nonaxisymmetric pulse, with an explicit residual budget.
+Do not promote a stronger sampled cone or small moment perturbation to
+`pde_validated`; the full momentum maximum is worse and no volume-L2
+gate has been checked.

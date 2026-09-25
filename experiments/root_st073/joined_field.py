@@ -9,15 +9,19 @@ from heat_exterior import physical
 from local_field import independent_fd
 
 class JoinedField:
- def __init__(self,inner=None,join_X=3/64,heat_amplitude=None,outer_ratio=2.,swirl_bubble_amplitude=0.,outer_swirl_bubble_amplitude=0.,slope_swirl_bubble_amplitude=0.):
+ def __init__(self,inner=None,join_X=3/64,heat_amplitude=None,outer_ratio=2.,swirl_bubble_amplitude=0.,outer_swirl_bubble_amplitude=0.,slope_swirl_bubble_amplitude=0.,shear_swirl_amplitude=0.,shear_swirl_cycles=16):
   self.inner=inner if inner is not None else FullRadialField.load(ROOT/'radial_continuation/candidate.json')
   self.nu=self.inner.nu;self.join_X=float(join_X);self.outer_ratio=float(outer_ratio)
   self.swirl_bubble_amplitude=float(swirl_bubble_amplitude)
   self.outer_swirl_bubble_amplitude=float(outer_swirl_bubble_amplitude)
   self.slope_swirl_bubble_amplitude=float(slope_swirl_bubble_amplitude)
+  self.shear_swirl_amplitude=float(shear_swirl_amplitude)
+  self.shear_swirl_cycles=int(shear_swirl_cycles)
   if self.join_X<=0 or self.join_X>self.inner.p.X_max:raise ValueError('Join must be inside the inner field')
   if self.outer_ratio<=1:raise ValueError('Outer radius must exceed inner radius')
   if self.slope_swirl_bubble_amplitude and not self.join_X<1<self.join_X*self.outer_ratio**2:raise ValueError('Slope reference X=1 must lie inside the bridge')
+  if self.shear_swirl_amplitude and not self.join_X<1<self.join_X*self.outer_ratio**2:raise ValueError('Shear reference X=1 must lie inside the bridge')
+  if self.shear_swirl_cycles<1 or self.shear_swirl_cycles!=shear_swirl_cycles:raise ValueError('Shear cycles must be a positive integer')
   self.c=(float(heat_amplitude) if heat_amplitude is not None else
           json.loads((ROOT/'heat_join/screen.json').read_text())['heat_amplitude'])
  def fields(self,points,tau):
@@ -50,6 +54,10 @@ class JoinedField:
    if self.slope_swirl_bubble_amplitude:
     y0=(np.sqrt(1/self.join_X)-1)/(self.outer_ratio-1)
     uth+=np.sqrt(self.nu)*q**(-self.inner.A)*self.slope_swirl_bubble_amplitude*64*y**3*(1-y)**3*(y-y0)
+   if self.shear_swirl_amplitude:
+    y0=(np.sqrt(1/self.join_X)-1)/(self.outer_ratio-1)
+    phase=2*np.pi*self.shear_swirl_cycles*(y-y0)
+    uth+=np.sqrt(self.nu)*q**(-self.inner.A)*self.shear_swirl_amplitude*64*y**3*(1-y)**3*np.sin(phase)/(2*np.pi*self.shear_swirl_cycles)
    outpoint=np.array([[ro,0,z]]);outer=physical(outpoint,t,c=self.c)
    pressure_left=[self.nu*val(3),2*sn*rho*val(3,1),2*val(3,1)+4*rho*rho*val(3,2)]
    pressure_right=[float(outer['pressure'][0]),rs[0]**2/ro,2*rs[0]*rs[1]/ro-rs[0]**2/ro**2]

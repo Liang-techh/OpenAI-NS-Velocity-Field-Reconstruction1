@@ -1,0 +1,127 @@
+{
+  "tau": 0.011048543456039806,
+  "rows": [
+    {
+      "cycles": 8,
+      "amplitude": 2.0,
+      "probes": {
+        "0.2": {
+          "cp_delta_from_unmodified": -0.016609064791408872,
+          "cp_delta_from_reference": 0.0003199820794414802,
+          "max_modulation_E": 0.039313146011781264,
+          "min_E": 0.21271668944064467
+        },
+        "0.3": {
+          "cp_delta_from_unmodified": -0.012352618715607966,
+          "cp_delta_from_reference": 0.0003200048851782491,
+          "max_modulation_E": 0.03931314601178104,
+          "min_E": 0.21274171094236854
+        },
+        "0.65": {
+          "cp_delta_from_unmodified": 0.014862214497482356,
+          "cp_delta_from_reference": 0.0003201264810755776,
+          "max_modulation_E": 0.03931314601178082,
+          "min_E": 0.2129299044765796
+        }
+      },
+      "downstream_cp_capacity": {
+        "0.2": 0.022462556170847272,
+        "0.3": 0.022465973334731233,
+        "0.65": 0.02249118101651707
+      }
+    },
+    {
+      "cycles": 16,
+      "amplitude": 2.0,
+      "probes": {
+        "0.2": {
+          "cp_delta_from_unmodified": -0.01684644520820123,
+          "cp_delta_from_reference": 8.260166264911209e-05,
+          "max_modulation_E": 0.01952181161323807,
+          "min_E": 0.21271668944064873
+        },
+        "0.3": {
+          "cp_delta_from_unmodified": -0.012590019026024614,
+          "cp_delta_from_reference": 8.260457476160746e-05,
+          "max_modulation_E": 0.01952181161323807,
+          "min_E": 0.2127417109423726
+        },
+        "0.65": {
+          "cp_delta_from_unmodified": 0.014624710718165495,
+          "cp_delta_from_reference": 8.262270175871117e-05,
+          "max_modulation_E": 0.01952181161323807,
+          "min_E": 0.21292990447658366
+        }
+      },
+      "downstream_cp_capacity": {
+        "0.2": 0.022462556170847272,
+        "0.3": 0.022465973334731233,
+        "0.65": 0.02249118101651707
+      }
+    },
+    {
+      "cycles": 32,
+      "amplitude": 2.0,
+      "probes": {
+        "0.2": {
+          "cp_delta_from_unmodified": -0.01690830460780319,
+          "cp_delta_from_reference": 2.074226304715868e-05,
+          "max_modulation_E": 0.009418415314939477,
+          "min_E": 0.21271668944066408
+        },
+        "0.3": {
+          "cp_delta_from_unmodified": -0.012651881162173487,
+          "cp_delta_from_reference": 2.0742438612730932e-05,
+          "max_modulation_E": 0.009418415314939699,
+          "min_E": 0.21274171094238797
+        },
+        "0.65": {
+          "cp_delta_from_unmodified": 0.014562831554317503,
+          "cp_delta_from_reference": 2.074353791071807e-05,
+          "max_modulation_E": 0.009418415314939699,
+          "min_E": 0.212929904476599
+        }
+      },
+      "downstream_cp_capacity": {
+        "0.2": 0.022462556170847272,
+        "0.3": 0.022465973334731233,
+        "0.65": 0.02249118101651707
+      }
+    }
+  ],
+  "cones": [
+    {
+      "field": "reference",
+      "eta": 0.2,
+      "Pc": 13.591072858601105,
+      "margin": 1.5722870819696775,
+      "relaxed_pass": true
+    },
+    {
+      "field": "reference",
+      "eta": 0.3,
+      "Pc": 4.607318991778942,
+      "margin": 1.0159432481465285,
+      "relaxed_pass": true
+    },
+    {
+      "field": "modulated",
+      "eta": 0.2,
+      "Pc": 53.49993188733417,
+      "margin": 21.653978744084196,
+      "relaxed_pass": true
+    },
+    {
+      "field": "modulated",
+      "eta": 0.3,
+      "Pc": 23.508186926858595,
+      "margin": 10.416198585252609,
+      "relaxed_pass": true
+    }
+  ],
+  "modulated_eight_point_full_max": 9953.69741977769,
+  "modulated_eight_point_angular_max": 9508.576561466592,
+  "modulated_divergence_max": 7.307052669602854e-07,
+  "scope": "Compact sinusoidal shear experiment only. No all-phase admissible cone, exact five-moment restoration, wave stress, or global PDE acceptance.",
+  "accepted": false
+}
