@@ -1,0 +1,113 @@
+{
+  "point": [
+    0.01547493122963214,
+    0.0,
+    0.002774918394502969
+  ],
+  "tau": 0.011048543456039806,
+  "velocity": [
+    -0.4282001595367029,
+    1.3551392267811813,
+    -0.9404066505466308
+  ],
+  "gradient": [
+    [
+      233.45835762189682,
+      -87.56996762535091,
+      -197.7351945310321
+    ],
+    [
+      55.271137672229074,
+      -27.670569464096214,
+      -54.38009318551117
+    ],
+    [
+      226.08980052853167,
+      3.6289538162653673e-12,
+      -205.78545771985546
+    ]
+  ],
+  "local_tangential_stress_primitive": [
+    -0.8750706617173327,
+    -3286.569535257197
+  ],
+  "cone": {
+    "lambda_squared": 5043.324362908122,
+    "margin": 1918.2797881064112
+  },
+  "kelvin_pulses": [
+    {
+      "mode": 1,
+      "axial_ratio": 1,
+      "radial_ratio": -1,
+      "peak_gain": 1.0,
+      "final_gain": 0.938613580403353,
+      "transverse_relative_error": 1.7923821187579983e-10,
+      "mean_radial_tangential_covariance": [
+        0.16039496837519246,
+        -0.037753945120516545
+      ],
+      "initial_wavevector": [
+        -91.3873891513709,
+        64.62064258386829,
+        64.62064258386829
+      ],
+      "peak_time": 0.0,
+      "peak_wavevector": [
+        -91.3873891513709,
+        64.62064258386829,
+        64.62064258386829
+      ],
+      "peak_amplitude": [
+        -0.5,
+        -0.8535533905932737,
+        0.14644660940672624
+      ]
+    },
+    {
+      "mode": 2,
+      "axial_ratio": -1,
+      "radial_ratio": 0,
+      "peak_gain": 1.0000000000000002,
+      "final_gain": 0.7723613699412051,
+      "transverse_relative_error": 3.5738621201083224e-09,
+      "mean_radial_tangential_covariance": [
+        -0.11653125552250958,
+        -0.10423489271681621
+      ],
+      "initial_wavevector": [
+        0.0,
+        129.24128516773658,
+        -129.24128516773658
+      ],
+      "peak_time": 0.0,
+      "peak_wavevector": [
+        0.0,
+        129.24128516773658,
+        -129.24128516773658
+      ],
+      "peak_amplitude": [
+        -0.7071067811865476,
+        0.49999999999999994,
+        0.5000000000000001
+      ]
+    }
+  ],
+  "covariance_nnls": {
+    "selected": [
+      {
+        "index": 0,
+        "weight": 18131.074030596563
+      },
+      {
+        "index": 1,
+        "weight": 24963.329394881635
+      }
+    ],
+    "relative_error": 0.0
+  },
+  "source_mean": "delayed_outer_admission_search.json",
+  "source_pressure": "delayed_outer_pressure_fit.json",
+  "scope": "One-point frozen Kelvin two-mode covariance only. No supported phase/amplitude solution, exact-curl physical wave, or PDE acceptance.",
+  "accepted": false
+}

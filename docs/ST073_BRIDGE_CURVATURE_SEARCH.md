@@ -1117,3 +1117,51 @@ the very cancellation the wave is meant to supply. A candidate still
 needs a continuous strict cone, supported wave stress, verified
 cross-scale matching, and full maximum/volume-L2 momentum gates below
 `1e-3`.
+
+## Frozen Kelvin pair and supported exact-curl wave test
+
+`delayed_outer_kelvin_pair.py` feeds the pressure-opened ten-mode
+velocity gradient and tangential stress into the existing frozen
+Cartesian Kelvin pulse integrator. Each of the twelve sampled cone
+nodes has a positive two-pulse covariance representation using
+**distinct integer angular modes**; the tested pairs use modes
+`1,2,4,8`, and the lowest-weight pair is `1,2` at each node. This is
+local algebra, not the paper's supported phase/amplitude solution. A
+two-pulse source at `X=1.016,eta=.25` is saved as
+`delayed_outer_kelvin_source.json`.
+
+`delayed_outer_wave_scale.py` places an exact-curl prototype inside the
+sampled `X=1.012..1.02,eta=.2..3` window. Its radial and axial
+halfwidths are `2.435e-5` and `4.647e-4`; the local angular covariance
+is exactly representable, but the carrier changes by at most `.00223`
+radians radially and `.0601` axially across those halfwidths. On a
+five-by-five envelope grid, the curl cutoff/remainder norm exceeds the
+carrier by up to `2658` for mode `1` and `1548` for mode `2`.
+Frequency multipliers this large would incur viscous damping exponents
+over the `.1*tau` pulse of about `1.30e6` and `8.84e5`, respectively.
+The radial diffusion time across the envelope is `5.93e-8`, while the
+chosen pulse lasts `1.10e-3`, a factor of `18640` longer. These are
+physical scale diagnostics for this support and frozen pair, not a
+general impossibility theorem.
+
+`delayed_outer_wave_residual.py` inserts that spatially exact-curl
+two-mode wave into the ten-mode mean plus compact pressure and computes
+complete nonlinear Cartesian momentum on sixteen angles at the center.
+The angular covariance matches its target to relative error
+`3.4e-11`, yet the maximum momentum residual rises from `4.03e8`
+without the wave to `1.39e12` at full covariance. An amplitude scan on
+this ring finds its best maximum and RMS at zero wave amplitude. Thus
+**matching the local covariance is not a physical momentum
+cancellation** for this narrow cutoff. The check is one ring, not a
+whole-support bound.
+
+Using only the second, wider radial pressure basis to open the same
+twelve sampled cone nodes is linearly feasible, but its pressure
+coefficient is about `-38980`; training and nearby-time momentum maxima
+become `2.63e9` and `3.73e9`. The third radial basis alone is
+infeasible. The current narrow wave region is therefore not repaired
+by simply switching to an existing wider pressure mode. A credible
+next attempt needs a mean/stress cone open over a physically much wider
+radial-axial-time region, with a transported phase, damped amplitude,
+moment closure and exact-curl remainder budget solved together before
+the full PDE gates can be tested.

@@ -1,0 +1,53 @@
+{
+  "source": "delayed_outer_kelvin_source.json",
+  "tau": 0.011048543456039806,
+  "pulse_duration": 0.0011048543456039807,
+  "sampled_window": {
+    "X": [
+      1.012,
+      1.02
+    ],
+    "eta": [
+      0.2,
+      0.3
+    ]
+  },
+  "radial_ceiling": 3.0432539187543947e-05,
+  "axial_ceiling": 0.0005808926246437694,
+  "radial_halfwidth": 2.4346031350035158e-05,
+  "axial_halfwidth": 0.0004647140997150155,
+  "radial_diffusion_time": 5.927292424968947e-08,
+  "pulse_to_radial_diffusion_time": 18640.118731948154,
+  "time_halfwidth": 0.0005524271728019904,
+  "covariance_fit_relative_error": 0.0,
+  "modes": [
+    {
+      "angular_mode": 1,
+      "normal_norm": 129.24128516773658,
+      "radial_phase_across_halfwidth": 0.002224920241277139,
+      "axial_phase_across_halfwidth": 0.030030123741368146,
+      "carrier_remainder_grid_max": 2657.981612784839,
+      "carrier_remainder_grid_rms": 664.4532366385863,
+      "integer_multiplier_for_remainder_at_most_carrier": 2658,
+      "damping_exponent_over_pulse_at_multiplier_one": 0.1845472440944882,
+      "damping_exponent_over_pulse_at_minimum_multiplier": 1303819.6358267716,
+      "largest_pulse_duration_at_minimum_multiplier": 8.473981486736668e-10,
+      "both_lenient_conditions_feasible": false
+    },
+    {
+      "angular_mode": 2,
+      "normal_norm": 182.7747783027418,
+      "radial_phase_across_halfwidth": 0.0,
+      "axial_phase_across_halfwidth": 0.06006024748273629,
+      "carrier_remainder_grid_max": 1547.51142711483,
+      "carrier_remainder_grid_rms": 384.2203972414181,
+      "integer_multiplier_for_remainder_at_most_carrier": 1548,
+      "damping_exponent_over_pulse_at_multiplier_one": 0.3690944881889764,
+      "damping_exponent_over_pulse_at_minimum_multiplier": 884462.5984251967,
+      "largest_pulse_duration_at_minimum_multiplier": 1.2491815341555379e-09,
+      "both_lenient_conditions_feasible": false
+    }
+  ],
+  "scope": "One local two-harmonic exact-curl prototype inside a sampled cone window. Carrier/remainder and viscous-duration conditions are lenient necessary diagnostics, not paper asymptotic certificates or full momentum acceptance.",
+  "accepted": false
+}

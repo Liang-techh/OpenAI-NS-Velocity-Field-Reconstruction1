@@ -1,0 +1,136 @@
+{
+  "source": "delayed_outer_kelvin_source.json",
+  "scale_source": "delayed_outer_wave_scale.json",
+  "tau": 0.011048543456039806,
+  "point": [
+    0.01547493122963214,
+    0.0,
+    0.002774918394502969
+  ],
+  "spatial_step": 1.2173015675017578e-06,
+  "temporal_step": 1.1048543456039805e-06,
+  "angular_samples": 16,
+  "target_covariance": [
+    -0.8750706617173327,
+    -3286.569535257197
+  ],
+  "exact_curl_covariance": [
+    -0.8750706043399745,
+    -3286.569535352285
+  ],
+  "covariance_relative_error": 3.379150992546009e-11,
+  "samples": [
+    {
+      "amplitude": 0.0,
+      "covariance_fraction": 0.0,
+      "maximum": 402865461.29358244,
+      "rms": 402865459.549793,
+      "mean_cylindrical": [
+        -380272669.0832913,
+        15843.64340560456,
+        133016071.94438787
+      ]
+    },
+    {
+      "amplitude": 0.001,
+      "covariance_fraction": 1e-06,
+      "maximum": 426845483.9104361,
+      "rms": 404421043.8516427,
+      "mean_cylindrical": [
+        -380272466.6659107,
+        15681.933390222024,
+        133016068.67092766
+      ]
+    },
+    {
+      "amplitude": 0.003,
+      "covariance_fraction": 9e-06,
+      "maximum": 480507582.3604771,
+      "rms": 416956880.2812873,
+      "mean_cylindrical": [
+        -380270847.3268876,
+        14388.084905001335,
+        133016042.50920409
+      ]
+    },
+    {
+      "amplitude": 0.01,
+      "covariance_fraction": 0.0001,
+      "maximum": 758236121.1835649,
+      "rms": 551094478.5370848,
+      "mean_cylindrical": [
+        -380252427.34555364,
+        -329.8835647329688,
+        133015744.98773856
+      ]
+    },
+    {
+      "amplitude": 0.03,
+      "covariance_fraction": 0.0009,
+      "maximum": 2209071009.1072392,
+      "rms": 1423330982.1153328,
+      "mean_cylindrical": [
+        -380090493.4438613,
+        -129719.78294899315,
+        133013129.59412482
+      ]
+    },
+    {
+      "amplitude": 0.1,
+      "covariance_fraction": 0.010000000000000002,
+      "maximum": 16383864470.054722,
+      "rms": 8773350470.40072,
+      "mean_cylindrical": [
+        -378248495.31265265,
+        -1601534.307949543,
+        132983380.17316797
+      ]
+    },
+    {
+      "amplitude": 0.3,
+      "covariance_fraction": 0.09,
+      "maximum": 130738016976.22925,
+      "rms": 68478144034.30049,
+      "mean_cylindrical": [
+        -362055105.14961934,
+        -14540574.754997253,
+        132721848.59921336
+      ]
+    },
+    {
+      "amplitude": 1.0,
+      "covariance_fraction": 1.0,
+      "maximum": 1390876331602.7778,
+      "rms": 734027255400.1144,
+      "mean_cylindrical": [
+        -177855292.05054665,
+        -161722204.0352173,
+        129746933.75950623
+      ]
+    }
+  ],
+  "best_rms": {
+    "amplitude": 0.0,
+    "covariance_fraction": 0.0,
+    "maximum": 402865461.29358244,
+    "rms": 402865459.549793,
+    "mean_cylindrical": [
+      -380272669.0832913,
+      15843.64340560456,
+      133016071.94438787
+    ]
+  },
+  "best_max": {
+    "amplitude": 0.0,
+    "covariance_fraction": 0.0,
+    "maximum": 402865461.29358244,
+    "rms": 402865459.549793,
+    "mean_cylindrical": [
+      -380272669.0832913,
+      15843.64340560456,
+      133016071.94438787
+    ]
+  },
+  "scope": "Exact-curl nonaxisymmetric two-mode wave on a ten-mode mean plus compact pressure, evaluated with complete nonlinear Cartesian momentum on one angular ring. No phase/amplitude evolution, continuous cone, moment closure, volume L2, or PDE acceptance.",
+  "accepted": false
+}

@@ -58,6 +58,56 @@
   ],
   "minmax_actual_component_residual": 370662330.6432464,
   "minmax_cone_slack": 3.552713678800501e-15,
+  "wider_pressure_support": [
+    {
+      "active_pressure_indices": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "name": "second_and_third_radial",
+      "feasible": true,
+      "coefficients": [
+        0.0,
+        0.0,
+        -38979.895984272836,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "min_cone_slack": 0.0,
+      "train_max": 2625481385.0786552,
+      "nearby_max": 3731563890.7398553
+    },
+    {
+      "active_pressure_indices": [
+        2,
+        3
+      ],
+      "name": "second_radial_only",
+      "feasible": true,
+      "coefficients": [
+        0.0,
+        0.0,
+        -38979.895984272836,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "min_cone_slack": 0.0,
+      "train_max": 2625481385.0786552,
+      "nearby_max": 3731563890.7398553
+    },
+    {
+      "active_pressure_indices": [
+        4,
+        5
+      ],
+      "name": "third_radial_only",
+      "feasible": false
+    }
+  ],
   "training": {
     "before": {
       "max": 230237.3352269471,

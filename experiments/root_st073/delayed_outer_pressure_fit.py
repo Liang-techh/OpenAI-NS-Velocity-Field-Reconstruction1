@@ -116,6 +116,26 @@ def run():
         if minmax.success else None)
     minmax_cone_slack = (float(np.min(b-A@minmax_coefficients))
                          if minmax.success else None)
+    wider_support = []
+    for name, active in (('second_and_third_radial', (2, 3, 4, 5)),
+                         ('second_radial_only', (2, 3)),
+                         ('third_radial_only', (4, 5))):
+        restricted = linprog(
+            np.zeros(len(active)),
+            A_ub=A[:, active]*coefficient_scale, b_ub=b,
+            bounds=[(None, None)]*len(active), method='highs')
+        item = dict(active_pressure_indices=active, name=name,
+                    feasible=bool(restricted.success))
+        if restricted.success:
+            trial = np.zeros(6)
+            trial[list(active)] = coefficient_scale*restricted.x
+            item.update(coefficients=trial.tolist(),
+                        min_cone_slack=float(np.min(b-A@trial)),
+                        train_max=stats(train_residual+
+                                        train_gradient@trial)['max'],
+                        nearby_max=stats(nearby_residual+
+                                         nearby_gradient@trial)['max'])
+        wider_support.append(item)
     report = dict(source='delayed_outer_admission_search.json',
                   pressure_coefficients=coefficients.tolist(),
                   lp_coefficients=(coefficient_scale*lp.x).tolist(),
@@ -133,6 +153,7 @@ def run():
                       if minmax.success else None),
                   minmax_actual_component_residual=minmax_actual_max,
                   minmax_cone_slack=minmax_cone_slack,
+                  wider_pressure_support=wider_support,
                   training=dict(before=stats(train_residual),
                                 after=stats(train_after)),
                   nearby=dict(before=stats(nearby_residual),
@@ -152,6 +173,7 @@ def run():
                           coefficients=report['pressure_coefficients'],
                           minmax_component_residual=(
                               report['minmax_component_residual']),
+                          wider_pressure_support=wider_support,
                           training=report['training'],
                           nearby=report['nearby'])), flush=True)
 
