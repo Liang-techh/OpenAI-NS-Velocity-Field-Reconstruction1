@@ -1,0 +1,383 @@
+{
+  "rows": [
+    {
+      "eta": 0.0,
+      "tau": 0.0084,
+      "baseline": [
+        {
+          "X": 6.0,
+          "radius": 0.03174901573277509,
+          "stress_target": [
+            -0.06838887163413192,
+            -0.009441199328252868
+          ],
+          "center_residual_norm": 9.813977875836476e-08,
+          "F": 3.725806451323719,
+          "shear": [
+            -7.4808808984174995,
+            0.0
+          ],
+          "lambda_squared": 0.21809377491482385,
+          "target_dot_N": 0.06838887163413192,
+          "target_dot_K": 0.009441199328252868,
+          "cone_ratio": 0.008651931599779296,
+          "strict_local_pass": false
+        },
+        {
+          "X": 10.0,
+          "radius": 0.04098780306383839,
+          "stress_target": [
+            -0.04103332299822544,
+            -0.007313121553309505
+          ],
+          "center_residual_norm": 3.2641791095953174e-08,
+          "F": 2.230807193768458,
+          "shear": [
+            -4.480610974953024,
+            0.0
+          ],
+          "lambda_squared": 0.08475544772980717,
+          "target_dot_N": 0.04103332299822544,
+          "target_dot_K": 0.007313121553309505,
+          "cone_ratio": 0.011629415365967358,
+          "strict_local_pass": false
+        },
+        {
+          "X": 14.0,
+          "radius": 0.04849742261192856,
+          "stress_target": [
+            -0.029309516328319737,
+            -0.006180715796126372
+          ],
+          "center_residual_norm": 5.829492671458237e-08,
+          "F": 1.5911048449579146,
+          "shear": [
+            -3.1963074027062315,
+            0.0
+          ],
+          "lambda_squared": 0.04486187824726847,
+          "target_dot_N": 0.029309516328319737,
+          "target_dot_K": 0.006180715796126372,
+          "cone_ratio": 0.014035893195198074,
+          "strict_local_pass": false
+        }
+      ],
+      "moment_patched": [
+        {
+          "X": 6.0,
+          "radius": 0.03174901573277509,
+          "stress_target": [
+            -0.06424236641494292,
+            -0.09801975636016613
+          ],
+          "center_residual_norm": 533.4622145907484,
+          "F": 3.7956646761329145,
+          "shear": [
+            -5.87414172780894,
+            157.91156445903226
+          ],
+          "lambda_squared": 44.51291096477683,
+          "target_dot_N": -0.09556391293467514,
+          "target_dot_K": 0.06784167468534326,
+          "cone_ratio": 16.784081819945833,
+          "strict_local_pass": false
+        },
+        {
+          "X": 10.0,
+          "radius": 0.04098780306383839,
+          "stress_target": [
+            -0.3274611709316321,
+            -3.494426843542798
+          ],
+          "center_residual_norm": 2618.3534609307594,
+          "F": 3.25328925219655,
+          "shear": [
+            -5.503093033386163,
+            -396.3095808417366
+          ],
+          "lambda_squared": 35.798145410141785,
+          "target_dot_N": 3.4986366368270283,
+          "target_dot_K": -0.27891121668383734,
+          "cone_ratio": 5.279761594781826,
+          "strict_local_pass": false
+        },
+        {
+          "X": 14.0,
+          "radius": 0.04849742261192856,
+          "stress_target": [
+            -0.04189327550719196,
+            5.029831125547241
+          ],
+          "center_residual_norm": 2585.326700152037,
+          "F": 1.6368377882583982,
+          "shear": [
+            -5.803085170834815,
+            241.2138990802577
+          ],
+          "lambda_squared": 18.9912190268613,
+          "target_dot_N": 5.029383745353101,
+          "target_dot_K": -0.07909070763722385,
+          "cone_ratio": 0.8704032391778418,
+          "strict_local_pass": false
+        }
+      ],
+      "baseline_sample_max_residual": 20328.102955048762,
+      "patched_sample_max_residual": 20328.102955048762
+    },
+    {
+      "eta": 0.2,
+      "tau": 0.0084,
+      "baseline": [
+        {
+          "X": 6.0,
+          "radius": 0.0324037034920393,
+          "stress_target": [
+            -0.06584217579021488,
+            -0.42641774835119184
+          ],
+          "center_residual_norm": 9.237405876448935e-08,
+          "F": 3.5761985937935514,
+          "shear": [
+            -7.18070020127014,
+            0.0
+          ],
+          "lambda_squared": 0.20243439546679395,
+          "target_dot_N": 0.06584217579021488,
+          "target_dot_K": 0.42641774835119184,
+          "cone_ratio": 0.4074005654562498,
+          "strict_local_pass": false
+        },
+        {
+          "X": 10.0,
+          "radius": 0.04183300132670378,
+          "stress_target": [
+            -0.03950530524959656,
+            -0.3303017675782863
+          ],
+          "center_residual_norm": 4.977826693670273e-08,
+          "F": 2.141201708633728,
+          "shear": [
+            -4.300734573875811,
+            0.0
+          ],
+          "lambda_squared": 0.07850140770208647,
+          "target_dot_N": 0.03950530524959656,
+          "target_dot_K": 0.3303017675782863,
+          "cone_ratio": 0.5470243028597047,
+          "strict_local_pass": false
+        },
+        {
+          "X": 14.0,
+          "radius": 0.049497474683058325,
+          "stress_target": [
+            -0.028218075006519933,
+            -0.27915594421313833
+          ],
+          "center_residual_norm": 1.0524096952973106e-08,
+          "F": 1.527183856286184,
+          "shear": [
+            -3.0679557838166316,
+            0.0
+          ],
+          "lambda_squared": 0.04150296608461226,
+          "target_dot_N": 0.028218075006519933,
+          "target_dot_K": 0.27915594421313833,
+          "cone_ratio": 0.6598386397214618,
+          "strict_local_pass": false
+        }
+      ],
+      "moment_patched": [
+        {
+          "X": 6.0,
+          "radius": 0.0324037034920393,
+          "stress_target": [
+            -0.05345115774474884,
+            0.3306080066260041
+          ],
+          "center_residual_norm": 976.659184558512,
+          "F": 3.6405878911380287,
+          "shear": [
+            -5.699746362349697,
+            149.0374939356943
+          ],
+          "lambda_squared": 41.423428917775375,
+          "target_dot_N": 0.3324091781963051,
+          "target_dot_K": 0.04077767232605449,
+          "cone_ratio": 2.837450570471633,
+          "strict_local_pass": false
+        },
+        {
+          "X": 10.0,
+          "radius": 0.04183300132670378,
+          "stress_target": [
+            -0.26216784357707373,
+            -6.237270931583174
+          ],
+          "center_residual_norm": 4613.952799131681,
+          "F": 3.0836376418304403,
+          "shear": [
+            -5.243170507076309,
+            -374.038386318491
+          ],
+          "lambda_squared": 32.32860353067795,
+          "target_dot_N": 6.240332857820979,
+          "target_dot_K": -0.17471827545549212,
+          "cone_ratio": 1.8416011416536793,
+          "strict_local_pass": false
+        },
+        {
+          "X": 14.0,
+          "radius": 0.049497474683058325,
+          "stress_target": [
+            -0.06210381860242283,
+            6.921336553652811
+          ],
+          "center_residual_norm": 5603.675160224512,
+          "F": 1.5693365461470536,
+          "shear": [
+            -5.470659105887826,
+            227.65853244846198
+          ],
+          "lambda_squared": 17.164925239104086,
+          "target_dot_N": 6.9208310001067925,
+          "target_dot_K": -0.1041865690786433,
+          "cone_ratio": 0.8271761415930192,
+          "strict_local_pass": false
+        }
+      ],
+      "baseline_sample_max_residual": 68725.15702220207,
+      "patched_sample_max_residual": 68725.15702220207
+    },
+    {
+      "eta": 0.35,
+      "tau": 0.0084,
+      "baseline": [
+        {
+          "X": 6.0,
+          "radius": 0.033892741829452934,
+          "stress_target": [
+            -0.06049403191076267,
+            -0.5332225464277406
+          ],
+          "center_residual_norm": 6.309170491411938e-08,
+          "F": 3.2676976151436343,
+          "shear": [
+            -6.56166769088291,
+            0.0
+          ],
+          "lambda_squared": 0.17170091366466408,
+          "target_dot_N": 0.06049403191076267,
+          "target_dot_K": 0.5332225464277406,
+          "cone_ratio": 0.5588695139642493,
+          "strict_local_pass": false
+        },
+        {
+          "X": 10.0,
+          "radius": 0.04375534155425957,
+          "stress_target": [
+            -0.036296418995235974,
+            -0.41303240842739003
+          ],
+          "center_residual_norm": 1.3124601196684296e-08,
+          "F": 1.9564352385920962,
+          "shear": [
+            -3.9298088977647074,
+            0.0
+          ],
+          "lambda_squared": 0.06627784581962619,
+          "target_dot_N": 0.036296418995235974,
+          "target_dot_K": 0.41303240842739003,
+          "cone_ratio": 0.7487021324062008,
+          "strict_local_pass": false
+        },
+        {
+          "X": 14.0,
+          "radius": 0.05177201831435471,
+          "stress_target": [
+            -0.02592601376282623,
+            -0.3490760973231751
+          ],
+          "center_residual_norm": 7.149593583726263e-09,
+          "F": 1.3953811023200187,
+          "shear": [
+            -2.803286852420485,
+            0.0
+          ],
+          "lambda_squared": 0.034953313652101574,
+          "target_dot_N": 0.02592601376282623,
+          "target_dot_K": 0.3490760973231751,
+          "cone_ratio": 0.9019982792493612,
+          "strict_local_pass": false
+        }
+      ],
+      "moment_patched": [
+        {
+          "X": 6.0,
+          "radius": 0.033892741829452934,
+          "stress_target": [
+            -0.035336974934548106,
+            1.6439527730634884
+          ],
+          "center_residual_norm": 676.2914764775107,
+          "F": 3.321510392107875,
+          "shear": [
+            -5.323973820706687,
+            131.83223298006456
+          ],
+          "lambda_squared": 35.295414553172336,
+          "target_dot_N": 1.6440397478137494,
+          "target_dot_K": -0.031027882124978447,
+          "cone_ratio": 0.4182855934986555,
+          "strict_local_pass": false
+        },
+        {
+          "X": 10.0,
+          "radius": 0.04375534155425957,
+          "stress_target": [
+            -0.15611222837579986,
+            -10.66244169572423
+          ],
+          "center_residual_norm": 4382.94391734744,
+          "F": 2.744067605581276,
+          "shear": [
+            -4.717441264756664,
+            -330.85845975067286
+          ],
+          "lambda_squared": 25.88383356083526,
+          "target_dot_N": 10.66358369674311,
+          "target_dot_K": -0.004084742532814584,
+          "cone_ratio": 0.02490754278016592,
+          "strict_local_pass": false
+        },
+        {
+          "X": 14.0,
+          "radius": 0.05177201831435471,
+          "stress_target": [
+            -0.09190890827686542,
+            10.20478704001407
+          ],
+          "center_residual_norm": 8540.57081775066,
+          "F": 1.430609834290649,
+          "shear": [
+            -4.811324574748578,
+            201.37706222173284
+          ],
+          "lambda_squared": 13.76158599984682,
+          "target_dot_N": 10.204070942213715,
+          "target_dot_K": -0.15186173227475308,
+          "cone_ratio": 0.8078434115813895,
+          "strict_local_pass": false
+        }
+      ],
+      "baseline_sample_max_residual": 99450.39816346104,
+      "patched_sample_max_residual": 99450.39816346104
+    }
+  ],
+  "radius_X": [
+    6.0,
+    10.0,
+    14.0
+  ],
+  "scope": "Physical full-residual radial stress primitives and paper-inspired local cone analog in the remote patch at one registered time. Piecewise eight-node radial quadrature, three eta slices. This is not the paper normalized leading stress cone, no wave or force realization, and no continuum certificate.",
+  "accepted": false
+}

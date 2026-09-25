@@ -27,3 +27,5 @@ python experiments/root_st073/moment_matched_joined_screen.py
 ```
 
 The scripts write `paper_moment_bridge.json`, `paper_moment_coefficients.json`, and `moment_matched_joined_screen.json` beside them. All retain `accepted: false`. The next step is to evaluate the resulting stress cone and transport equation on this moment-corrected mean field, then realize the required stress without losing the radial identities or the heat exterior.
+
+The subsequent stress-target screen is in `ST073_REMOTE_STRESS_TARGET.md`: the current moment-corrected mean does not yet have an admissible sampled stress cone.
