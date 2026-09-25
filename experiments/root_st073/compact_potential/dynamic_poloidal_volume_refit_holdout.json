@@ -1,0 +1,87 @@
+{
+  "volume_order10": {
+    "tau": 0.0084,
+    "order": 10,
+    "point_count": 100,
+    "baseline": {
+      "max": 265578.5236918068,
+      "physical_volume_l2": 311.28394401768344,
+      "worst_point": [
+        0.00704465820187546,
+        0.0,
+        0.00303437302512751
+      ],
+      "worst_residual": [
+        263510.20106567914,
+        31903.603419014173,
+        8745.64288815912
+      ]
+    },
+    "refit": {
+      "max": 375156.3870227566,
+      "physical_volume_l2": 395.853657051066,
+      "worst_point": [
+        0.00704465820187546,
+        0.0,
+        0.00303437302512751
+      ],
+      "worst_residual": [
+        373647.1003344467,
+        32085.810522833115,
+        10032.940681631278
+      ]
+    }
+  },
+  "collar_holdout": [
+    {
+      "tau": 0.0084,
+      "point_count": 16,
+      "baseline": {
+        "max": 591394.5520235732,
+        "radial_max": 591380.1333003179,
+        "angular_max": 38719.85000610746,
+        "axial_max": 62788.664425175346
+      },
+      "refit": {
+        "max": 794428.6059958652,
+        "radial_max": 794417.1707918117,
+        "angular_max": 38821.87625971256,
+        "axial_max": 58566.43686193994
+      }
+    },
+    {
+      "tau": 0.012,
+      "point_count": 16,
+      "baseline": {
+        "max": 313271.9596079722,
+        "radial_max": 313256.3434725367,
+        "angular_max": 22435.912575192186,
+        "axial_max": 51252.38968207337
+      },
+      "refit": {
+        "max": 432817.1233824176,
+        "radial_max": 432805.20633442805,
+        "angular_max": 22495.823745795224,
+        "axial_max": 48772.04738220167
+      }
+    },
+    {
+      "tau": 0.024,
+      "point_count": 16,
+      "baseline": {
+        "max": 95933.9013094635,
+        "radial_max": 95907.57224558169,
+        "angular_max": 7817.163342631969,
+        "axial_max": 34223.17235503457
+      },
+      "refit": {
+        "max": 138632.00937581278,
+        "radial_max": 138613.27938976377,
+        "angular_max": 7838.428663055518,
+        "axial_max": 33340.66013877136
+      }
+    }
+  ],
+  "scope": "Gauss10 whole-support volume is disjoint from Gauss6/8 fitting; relative collar points are also disjoint. Finite sampled checks, not continuum max or converged L2 proof. Other times were not fit.",
+  "accepted": false
+}

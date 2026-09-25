@@ -1,0 +1,125 @@
+{
+  "tau": 0.0084,
+  "train_orders": [
+    6,
+    8
+  ],
+  "mode_ids": [
+    {
+      "radial_degree": 0,
+      "axial_degree": 0,
+      "parity": "odd"
+    },
+    {
+      "radial_degree": 0,
+      "axial_degree": 1,
+      "parity": "odd"
+    },
+    {
+      "radial_degree": 0,
+      "axial_degree": 2,
+      "parity": "odd"
+    },
+    {
+      "radial_degree": 1,
+      "axial_degree": 0,
+      "parity": "odd"
+    },
+    {
+      "radial_degree": 1,
+      "axial_degree": 1,
+      "parity": "odd"
+    },
+    {
+      "radial_degree": 1,
+      "axial_degree": 2,
+      "parity": "odd"
+    }
+  ],
+  "reference_tau": 0.0084,
+  "temporal_power": 0.5,
+  "amplitudes": [
+    0.004168482828574424,
+    -0.000503556872358217,
+    -0.003979516083480162,
+    0.007178187884887495,
+    0.00030912762399964023,
+    -0.01282088711481603
+  ],
+  "normalized_coordinates": [
+    0.19384878617981385,
+    -0.011710042774007591,
+    -0.09333279292926684,
+    0.26529506096583017,
+    0.006378504983872602,
+    -0.2660741950712056
+  ],
+  "optimizer_success": true,
+  "optimizer_message": "`ftol` termination condition is satisfied.",
+  "rows": [
+    {
+      "order": 6,
+      "baseline": {
+        "max": 97091.81744963152,
+        "physical_volume_l2": 158.4479931762284,
+        "worst_point": [
+          0.009466332500539392,
+          0.0,
+          0.004164587124870288
+        ],
+        "worst_residual": [
+          -92184.019313421,
+          -28491.412083426247,
+          -10824.37233227817
+        ]
+      },
+      "refit": {
+        "max": 61814.0420640091,
+        "physical_volume_l2": 141.33581258908927,
+        "worst_point": [
+          0.0042122214497022055,
+          0.0,
+          0.0029530875334556643
+        ],
+        "worst_residual": [
+          37181.10840253116,
+          31009.70250956642,
+          38430.96830055813
+        ]
+      }
+    },
+    {
+      "order": 8,
+      "baseline": {
+        "max": 176096.48176279783,
+        "physical_volume_l2": 128.12701615433613,
+        "worst_point": [
+          0.005899108417712827,
+          0.0,
+          0.003558064799027551
+        ],
+        "worst_residual": [
+          175980.58226347156,
+          -760.6333073160123,
+          -6342.475259447732
+        ]
+      },
+      "refit": {
+        "max": 65443.99741499805,
+        "physical_volume_l2": 46.436971322463755,
+        "worst_point": [
+          0.002528068343890359,
+          0.0,
+          -0.003558064799027551
+        ],
+        "worst_residual": [
+          -47137.88418545854,
+          -52.2074801421017,
+          45397.51035631345
+        ]
+      }
+    }
+  ],
+  "scope": "Full nonlinear physical momentum refit on whole-support Gauss6 and Gauss8 at one registered time. Objective combines volume L2, point residual and fourth-power peak penalty. Gauss10 and off-grid holdouts are not fitted; this is not an acceptance certificate.",
+  "accepted": false
+}

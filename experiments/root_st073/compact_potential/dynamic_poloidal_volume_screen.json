@@ -1,0 +1,206 @@
+{
+  "rows": [
+    {
+      "tau": 0.0084,
+      "order": 6,
+      "point_count": 36,
+      "robust_base": {
+        "max": 94067.91217955442,
+        "physical_volume_l2": 159.6071890571634,
+        "worst_point": [
+          0.009466332500539392,
+          0.0,
+          0.004164587124870288
+        ],
+        "worst_residual": [
+          -92183.9715209634,
+          -15287.91876138748,
+          -10824.37233227817
+        ],
+        "zone_max": {
+          "interior": 4568.660380897236,
+          "axial_collar": 94067.91217955442,
+          "radial_collar": 54154.67905291718,
+          "corner": 52880.919329783515
+        },
+        "max_speed": 3.0467771441049285
+      },
+      "dense_swirl": {
+        "max": 97091.81744963457,
+        "physical_volume_l2": 158.4479931759927,
+        "worst_point": [
+          0.009466332500539392,
+          0.0,
+          0.004164587124870288
+        ],
+        "worst_residual": [
+          -92184.01931342266,
+          -28491.412083431303,
+          -10824.37233227817
+        ],
+        "zone_max": {
+          "interior": 4568.660380897236,
+          "axial_collar": 97091.81744963457,
+          "radial_collar": 54154.67905291718,
+          "corner": 52895.76588968463
+        },
+        "max_speed": 2.9965530441215815
+      },
+      "dynamic_poloidal": {
+        "max": 252006.7728879033,
+        "physical_volume_l2": 318.54158396410173,
+        "worst_point": [
+          0.0042122214497022055,
+          0.0,
+          0.0029530875334556643
+        ],
+        "worst_residual": [
+          249505.60411282332,
+          30769.359868678235,
+          17538.91647001397
+        ],
+        "zone_max": {
+          "interior": 4568.660380897236,
+          "axial_collar": 252006.7728879033,
+          "radial_collar": 54154.67905291718,
+          "corner": 52938.56448559405
+        },
+        "max_speed": 3.0630487914836353
+      },
+      "poloidal_strength_screen": [
+        {
+          "factor": 0.0,
+          "max": 97091.81744963457,
+          "physical_volume_l2": 158.4479931759927
+        },
+        {
+          "factor": 0.1,
+          "max": 106837.20463762982,
+          "physical_volume_l2": 164.13343773916898
+        },
+        {
+          "factor": 0.25,
+          "max": 121604.30994817357,
+          "physical_volume_l2": 179.18799882521412
+        },
+        {
+          "factor": 0.5,
+          "max": 146480.3653277035,
+          "physical_volume_l2": 217.1853821266031
+        },
+        {
+          "factor": 0.75,
+          "max": 197180.98189366408,
+          "physical_volume_l2": 265.12171377416706
+        },
+        {
+          "factor": 1.0,
+          "max": 252006.7728879033,
+          "physical_volume_l2": 318.54158396410173
+        }
+      ]
+    },
+    {
+      "tau": 0.0084,
+      "order": 8,
+      "point_count": 64,
+      "robust_base": {
+        "max": 177827.16144836711,
+        "physical_volume_l2": 129.4451905366592,
+        "worst_point": [
+          0.005899108417712827,
+          0.0,
+          0.003558064799027551
+        ],
+        "worst_residual": [
+          176001.44581128858,
+          -24612.261755128646,
+          -6342.475259447732
+        ],
+        "zone_max": {
+          "interior": 3938.9348982387464,
+          "axial_collar": 177827.16144836711,
+          "radial_collar": 12211.578411515447,
+          "corner": 7824.002050226848
+        },
+        "max_speed": 4.573609963485777
+      },
+      "dense_swirl": {
+        "max": 176096.4817627972,
+        "physical_volume_l2": 128.12701615426806,
+        "worst_point": [
+          0.005899108417712827,
+          0.0,
+          0.003558064799027551
+        ],
+        "worst_residual": [
+          175980.58226347133,
+          -760.6333072236278,
+          -6342.475259447732
+        ],
+        "zone_max": {
+          "interior": 3938.9348982387464,
+          "axial_collar": 176096.4817627972,
+          "radial_collar": 12211.578411515447,
+          "corner": 7809.998021187765
+        },
+        "max_speed": 4.5870452830387904
+      },
+      "dynamic_poloidal": {
+        "max": 290955.12299137056,
+        "physical_volume_l2": 146.86836181248503,
+        "worst_point": [
+          0.005899108417712827,
+          0.0,
+          -0.004288838092396756
+        ],
+        "worst_residual": [
+          -290611.8358632559,
+          -13248.38327684897,
+          4911.699467728757
+        ],
+        "zone_max": {
+          "interior": 3938.9348982387464,
+          "axial_collar": 290955.12299137056,
+          "radial_collar": 12211.578411515447,
+          "corner": 7796.374912702667
+        },
+        "max_speed": 3.9751709244817404
+      },
+      "poloidal_strength_screen": [
+        {
+          "factor": 0.0,
+          "max": 176096.4817627972,
+          "physical_volume_l2": 128.12701615426806
+        },
+        {
+          "factor": 0.1,
+          "max": 158892.36603211294,
+          "physical_volume_l2": 119.9013821829037
+        },
+        {
+          "factor": 0.25,
+          "max": 133131.7518407652,
+          "physical_volume_l2": 111.28107545365685
+        },
+        {
+          "factor": 0.5,
+          "max": 180956.02081015075,
+          "physical_volume_l2": 109.10483542458977
+        },
+        {
+          "factor": 0.75,
+          "max": 235934.0333213401,
+          "physical_volume_l2": 122.347966862727
+        },
+        {
+          "factor": 1.0,
+          "max": 290955.12299137056,
+          "physical_volume_l2": 146.86836181248503
+        }
+      ]
+    }
+  ],
+  "scope": "Whole compact-support cylindrical quadrature at one registered time, Gauss orders 6 and 8. Exact additive finite-difference kinematics and full nonlinear Cartesian momentum. These sparse orders are diagnostics, not certified continuum max or converged physical-volume L2.",
+  "accepted": false
+}
