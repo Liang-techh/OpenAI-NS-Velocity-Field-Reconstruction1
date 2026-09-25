@@ -5,8 +5,9 @@ for `|eta|<=0.5`; the pure-swirl heat exterior continued without axial decay.
 `axial_compact_join.py` now supplies a Cartesian `fields(points, tau)` for
 every spatial point and `tau in [0.5/64, 0.5]` (`t=1-tau`), with physical
 viscosity `nu=0.01`. It uses the previous pressure-corrected ratio-4 radial
-join as its base, leaves that field unchanged for `|eta|<=0.3`, then uses a
-smooth cutoff to zero by `|eta|=0.45`.
+join as its base, leaves that field unchanged for `|eta|<=0.2`, then uses a
+smooth cutoff to zero by `|eta|=0.49`. The wider cutoff was selected by the
+[axial-width screen](ST073_AXIAL_WIDTH_SCREEN.md), not by a full-domain gate.
 
 The meridional velocity is localized at the streamfunction level. If
 `u_r=-psi_z/r`, `u_z=psi_r/r`, and `chi=chi(eta(z,tau))`, the new field uses
@@ -23,7 +24,7 @@ radius 1 the meridional flow is zero and the pure heat swirl obeys
 `|u_theta| <= sqrt(nu)*c*(r^2/(2nu))^(-1/2-h)` with `h=0.005>0`.
 Thus the exterior energy integrand is bounded by a constant times
 `r^(-1-4h)`, which is integrable. Explicit upper bounds on the energy
-beyond physical radius 1 are `1.291e-4` at `k=0.4` and `2.244e-5` at
+beyond physical radius 1 are `1.440e-4` at `k=0.4` and `2.502e-5` at
 `k=5.5`. These are tail bounds, not total-energy normalization.
 
 The unforced full-momentum diagnostic shows why kinematic closure is not
@@ -32,12 +33,12 @@ bridge, and heat-exterior radial point are:
 
 | Scale | Inner | Bridge | Exterior |
 | ---: | ---: | ---: | ---: |
-| `k=0.4` | 225.27 | 494.34 | 0.961 |
-| `k=5.5` | 43663.79 | **94692.88** | 190.76 |
+| `k=0.4` | 68.67 | 161.67 | 1.712 |
+| `k=5.5` | 13310.39 | **31101.22** | 338.41 |
 
 The nonzero finite-difference divergence at the steep axial collar is
 truncation error: for one late inner point it decreases
-`6.23e-5 → 3.89e-6 → 2.43e-7` under successive spatial-step halvings,
+`6.58e-7 → 4.11e-8 → 2.59e-9` under successive spatial-step halvings,
 the expected fourth-order factor of about 16. The complete momentum
 residual remains huge. The next task is a dynamically matched axial
 return-flow and pressure transition, with its actual time derivative and

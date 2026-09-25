@@ -16,7 +16,7 @@ from wide_pressure_fit import load_pressure_candidate
 
 
 class AxiallyCompactField:
-    def __init__(self, base, eta_flat=.3, eta_outer=.45):
+    def __init__(self, base, eta_flat=.2, eta_outer=.49):
         if not 0 < eta_flat < eta_outer < base.base.inner.p.eta_max:
             raise ValueError('Axial cutoff must lie inside the registered slab')
         self.base = base

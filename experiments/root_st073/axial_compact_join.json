@@ -14,16 +14,16 @@
         0.375
       ],
       "complete_residual_norms": [
-        225.2700654313857,
-        494.3437363545976,
-        0.9609146967395481
+        68.67153604793529,
+        161.66707127531447,
+        1.7121268415123183
       ],
       "finite_difference_divergence": [
-        -1.9532919139919613e-06,
-        1.3334823805166707e-06,
-        -4.696777667925267e-15
+        -2.0601586214752388e-08,
+        1.0857821308718485e-09,
+        -2.3483888339626334e-15
       ],
-      "exterior_energy_tail_bound_r_ge_1": 0.0001291014030456958
+      "exterior_energy_tail_bound_r_ge_1": 0.00014397821358468952
     },
     {
       "k": 5.5,
@@ -39,30 +39,30 @@
         0.375
       ],
       "complete_residual_norms": [
-        43663.79315703083,
-        94692.8821239409,
-        190.76296163406766
+        13310.38575583611,
+        31101.217207463847,
+        338.4118332096926
       ],
       "finite_difference_divergence": [
-        -6.225759466360614e-05,
-        4.2148393049501465e-05,
-        -3.300712800310193e-13
+        -6.584085667782347e-07,
+        3.7912400330242235e-08,
+        1.1002376001033977e-13
       ],
-      "exterior_energy_tail_bound_r_ge_1": 2.2437824047406526e-05
+      "exterior_energy_tail_bound_r_ge_1": 2.5023413741907306e-05
     }
   ],
   "divergence_refinement": [
     {
       "space_step_factor": 0.001,
-      "divergence": -6.225759466360614e-05
+      "divergence": -6.584085667782347e-07
     },
     {
       "space_step_factor": 0.0005,
-      "divergence": -3.891405640388257e-06
+      "divergence": -4.110302143089939e-08
     },
     {
       "space_step_factor": 0.00025,
-      "divergence": -2.432561814202927e-07
+      "divergence": -2.58955878962297e-09
     }
   ],
   "tau_window": [
@@ -74,8 +74,8 @@
   "global_velocity_callable": true,
   "finite_energy_each_registered_time": true,
   "solenoidal_by_construction": true,
-  "eta_flat": 0.3,
-  "eta_outer": 0.45,
+  "eta_flat": 0.2,
+  "eta_outer": 0.49,
   "axis_velocity": [
     0.0,
     0.0,
