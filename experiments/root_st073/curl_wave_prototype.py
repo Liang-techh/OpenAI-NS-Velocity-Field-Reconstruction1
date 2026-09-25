@@ -28,17 +28,20 @@ def bump(value, center, halfwidth):
 class LocalizedCurlWave:
     def __init__(self, source, radial_halfwidth=.0025,
                  axial_halfwidth=.00075, carrier_multiplier=1,
-                 pulse_indices=None, time_halfwidth=None):
+                 pulse_indices=None, time_halfwidth=None,
+                 min_tau=.5/64, max_tau=.5, time_slope_rates=None):
         self.radius, _, self.zcenter = source['point']
         self.tau0 = source['tau']
-        self.nu = .01
+        self.nu = float(source.get('nu', .01))
+        self.min_tau, self.max_tau = float(min_tau), float(max_tau)
         self.radial_halfwidth = radial_halfwidth
         self.axial_halfwidth = axial_halfwidth
         if not 0 < radial_halfwidth < self.radius or axial_halfwidth <= 0:
             raise ValueError('The wave support must remain off the axis')
         self.time_halfwidth = time_halfwidth
         if time_halfwidth is not None and (time_halfwidth <= 0 or
-                                             self.tau0-time_halfwidth <= .5/64):
+                                             self.tau0-time_halfwidth <= self.min_tau or
+                                             self.tau0+time_halfwidth >= self.max_tau):
             raise ValueError('Time pulse must be compact inside the registered slab')
         if carrier_multiplier < 1 or int(carrier_multiplier) != carrier_multiplier:
             raise ValueError('carrier_multiplier must be a positive integer')
@@ -93,6 +96,9 @@ class LocalizedCurlWave:
         weights, error = nnls(matrix, self.target)
         self.weights = weights
         self.covariance_error = float(error/np.linalg.norm(self.target))
+        self.time_slope_rates = np.zeros(len(self.waves)) if time_slope_rates is None else np.asarray(time_slope_rates, float)
+        if self.time_slope_rates.shape != (len(self.waves),):
+            raise ValueError('One time slope rate is required per wave')
 
     def fields(self, points, tau):
         pts = np.asarray(points, float)
@@ -102,7 +108,7 @@ class LocalizedCurlWave:
         for i, (point, t) in enumerate(zip(pts, ts)):
             x, ycart, z = point
             r = np.hypot(x, ycart)
-            if r == 0 or t < .5/64 or t > .5:
+            if r == 0 or t < self.min_tau or t > self.max_tau:
                 continue
             br, br_r = bump(r, self.radius, self.radial_halfwidth)
             bz, bz_z = bump(z, self.zcenter, self.axial_halfwidth)
@@ -117,14 +123,14 @@ class LocalizedCurlWave:
             ez = br*bz_z*time_cut
             theta = np.arctan2(ycart, x)
             wr = wt = wz = 0.
-            for weight, wave in zip(self.weights, self.waves):
+            for weight, wave, rate in zip(self.weights, self.waves, self.time_slope_rates):
                 m = wave['m']
                 kr, _, kz = wave['normal']
                 cr, ct, cz = wave['potential']
                 phase = (m*theta + kr*(r-self.radius) + kz*(z-self.zcenter)
                          + wave['omega']*(t-self.tau0))
                 sn, cs = np.sin(phase), np.cos(phase)
-                factor = np.sqrt(weight)
+                factor = np.sqrt(weight)*(1.0+rate*(t-self.tau0))
                 wr += factor*((-m*cz/r+kz*ct)*envelope*sn -ct*ez*cs)
                 wt += factor*((-kz*cr+kr*cz)*envelope*sn
                               +(cr*ez-cz*er)*cs)

@@ -1,0 +1,36 @@
+{
+  "source": "First local time-slope fit for two compact exact-curl bridge modes",
+  "k": 11.0,
+  "amplitude_scale": 0.1,
+  "pulse_indices": [
+    7,
+    12
+  ],
+  "fitted_time_slope_rates": [
+    188744352.40320426,
+    193898873.57540736
+  ],
+  "rate_times_halfwidth": [
+    1843.2065664375416,
+    1893.5436872598375
+  ],
+  "slope_matrix_singular_values": [
+    70.72647426224307,
+    21.876821890329502
+  ],
+  "training": {
+    "before_max": 4248383730.839227,
+    "after_max": 490002234.8676126,
+    "before_rms": 2041003125.3379774,
+    "after_rms": 279803373.00258106
+  },
+  "holdout": {
+    "before_max": 16207326960.974493,
+    "after_max": 10781918777.80903,
+    "before_rms": 10406079388.639208,
+    "after_rms": 6919009797.8434
+  },
+  "scope": "Local first Taylor slope of each wave amplitude at one time, fitted on three radii and 16 angles, tested on two radial/phase holdouts. Does not solve the transported amplitude PDE or preserve smallness throughout the pulse window; no global momentum or scale-recursion acceptance.",
+  "accepted": false,
+  "scale_recursion_established": false
+}

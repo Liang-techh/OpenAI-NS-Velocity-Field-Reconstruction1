@@ -1,0 +1,36 @@
+{
+  "source": "Stencil refinement at one wave-perturbed bridge point",
+  "point": [
+    0.0005039128936408478,
+    0.0,
+    -0.00033242031834369965
+  ],
+  "rows": [
+    {
+      "h_factor": 1.0,
+      "momentum_norm": 4248383730.839227,
+      "fd_divergence": 0.433994587372581,
+      "viscosity_norm": 4230243779.856321
+    },
+    {
+      "h_factor": 0.5,
+      "momentum_norm": 4248541099.0066648,
+      "fd_divergence": 0.02736653016108903,
+      "viscosity_norm": 4230398977.8200636
+    },
+    {
+      "h_factor": 0.25,
+      "momentum_norm": 4248551063.104541,
+      "fd_divergence": 0.0017141978023573756,
+      "viscosity_norm": 4230408805.6082606
+    },
+    {
+      "h_factor": 0.125,
+      "momentum_norm": 4248551687.9350123,
+      "fd_divergence": 0.00010712710718507878,
+      "viscosity_norm": 4230409421.908885
+    }
+  ],
+  "scope": "One point and one amplitude scale. The wave is an exact analytic curl, while finite-difference divergence and momentum depend on stencil resolution; no full-support bound or PDE acceptance.",
+  "accepted": false
+}

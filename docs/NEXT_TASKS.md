@@ -23,6 +23,13 @@ The three-knot extension closes these sampled physical moments also at
 little change in the momentum growth. The next necessary advance is a
 genuine residual-canceling update across scales, coupled to the radial
 moments and nonaxisymmetric stress realization.
+The first exact-curl wave on the moment-closed bridge matches its local
+stress covariance but creates a much larger viscous cutoff residual;
+one time slope per wave does not cure the spatial/temporal holdouts.
+See `ST073_WAVE_ON_MOMENT_CLOSED_BRIDGE.md` before reusing that frozen
+wave ansatz. The next wave implementation needs a transported spatial
+amplitude, its pressure and mean corrections, and a wider admissible
+support or a quantitative cutoff budget.
 Use those directions as a conditioning prototype, not as the paper's five
 leading-profile moments or a recursive correction.
 The next Stage-1 inputs are therefore the actual coefficient-family
