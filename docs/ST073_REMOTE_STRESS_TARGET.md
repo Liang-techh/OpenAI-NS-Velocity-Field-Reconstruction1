@@ -17,3 +17,7 @@ The patched local `lambda²` remains positive at these samples; the main obstruc
 A concrete next shape degree of freedom is a **moment-null swirl bump** in `X∈[4,16]`: start with `B(y)(2y-1)` and subtract its weighted projection onto `B` so its integral against `√(2X)` is zero. Its coefficient then changes the local stress without changing the angular moment `I_2`. For each coefficient, re-solve the quadratic meridional amplitude to keep `I_1=0`, construct the streamfunction field, and search for a strict cone over an axial/radial region. Only after that succeeds should supported phase/amplitude waves be built. The full-volume momentum and smooth compact-force gates remain separate requirements.
 
 Reproduce with `python experiments/root_st073/remote_moment_stress_screen.py`. Results are in `experiments/root_st073/remote_moment_stress_screen.json`, marked `accepted: false`.
+
+The first moment-null swirl-shape trial is documented in
+`ST073_REMOTE_NULL_SHAPE.md`; its five screened amplitudes did not fix the
+stress-cone orientation.

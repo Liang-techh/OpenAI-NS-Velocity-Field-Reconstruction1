@@ -5,6 +5,7 @@ velocity: eta/tau dependence of coefficients must be differentiated in a
 streamfunction before claiming incompressibility or momentum improvement.
 """
 import json
+from functools import lru_cache
 
 import numpy as np
 from numpy.polynomial.legendre import leggauss
@@ -29,7 +30,25 @@ def bump(X, start, end):
     return b, db
 
 
-def slice_data(field, eta, tau, order, patch_start, patch_end):
+@lru_cache(maxsize=None)
+def null_projection(start, end):
+    """Project an odd patch mode off the weighted angular moment."""
+    g, w = leggauss(64)
+    X = (start+end)/2+(end-start)/2*g
+    b, _ = bump(X, start, end)
+    weight = (end-start)/2*w*np.sqrt(2*X)
+    return float(np.dot(weight, b*(2*(X-start)/(end-start)-1))
+                 /np.dot(weight, b))
+
+
+def null_bump(X, start, end):
+    b, db = bump(X, start, end)
+    factor = 2*(X-start)/(end-start)-1-null_projection(start, end)
+    return b*factor, db*factor+b*2/(end-start)
+
+
+def slice_data(field, eta, tau, order, patch_start, patch_end,
+               null_amplitude=0.):
     g, w = leggauss(order)
     xs, ws = [], []
     boundaries = sorted(set((0., XI, XB, patch_start, patch_end)))
@@ -55,7 +74,8 @@ def slice_data(field, eta, tau, order, patch_start, patch_end):
                       - power_integral + tail_angular_difference)
     swirl_response = float(weights@(np.sqrt(2*X)*b))
     aE = -angular_moment/swirl_response
-    adjusted_E = E+aE*b
+    null, _ = null_bump(X, patch_start, patch_end)
+    adjusted_E = E+aE*b+null_amplitude*null
     kinetic_baseline = float(weights@(U**2-E**2/2)
                              -tail_swirl_square)
     swirl_linear_response = float(-(weights@(E*b)))
@@ -77,6 +97,7 @@ def slice_data(field, eta, tau, order, patch_start, patch_end):
             'baseline_angular_moment': angular_moment,
             'swirl_bump_response': swirl_response,
             'swirl_amplitude': aE,
+            'null_amplitude': null_amplitude,
             'corrected_angular_moment': angular_moment+aE*swirl_response,
             'kinetic_moment_baseline': kinetic_baseline,
             'kinetic_swirl_linear_response': swirl_linear_response,
