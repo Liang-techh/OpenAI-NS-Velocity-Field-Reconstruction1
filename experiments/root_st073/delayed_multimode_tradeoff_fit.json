@@ -1,0 +1,290 @@
+{
+  "source": "delayed_multimode_cone_fit.json",
+  "response_cache": "delayed_multimode_cone_model.npz",
+  "nearby_response_cache": "delayed_multimode_holdout_model.npz",
+  "previous": {
+    "cone_max": 0.9511280457722862,
+    "cone_mean": 0.49553902611100137,
+    "cone_pass_count": 3,
+    "moment_scaled_max": 2.170430136410495,
+    "moment_raw_max": 0.02170342976222614,
+    "min_relative_E": 0.11073455707151472,
+    "train_max": 207309.8719721337,
+    "nearby_max": 759459.6841198534,
+    "nearby_rms": 365893.54681406246
+  },
+  "searches": [
+    {
+      "moment_weight": 0.05,
+      "coefficients": [
+        0.011647115405590047,
+        -0.028576399882301817,
+        -0.002315369779426635,
+        0.0040183645129921565,
+        0.0001946571048910828,
+        0.02330061935901627,
+        -0.005240288898719376,
+        -0.0039563191279248676
+      ],
+      "metrics": {
+        "cone_max": 0.9794043440670381,
+        "cone_mean": 0.40664980768718606,
+        "cone_pass_count": 6,
+        "moment_scaled_max": 0.6056967817404724,
+        "moment_raw_max": 0.006056967817404724,
+        "min_relative_E": 0.11073455707151472,
+        "train_max": 559319.5391865557,
+        "nearby_max": 628507.7125581546,
+        "nearby_rms": 366192.26102673187
+      },
+      "pressure_admission": [
+        {
+          "X": 1.008,
+          "eta": 0.2,
+          "free_axial_080": true
+        },
+        {
+          "X": 1.012,
+          "eta": 0.2,
+          "free_axial_080": true
+        },
+        {
+          "X": 1.016,
+          "eta": 0.2,
+          "free_axial_080": true
+        },
+        {
+          "X": 1.02,
+          "eta": 0.2,
+          "free_axial_080": false
+        },
+        {
+          "X": 1.008,
+          "eta": 0.25,
+          "free_axial_080": true
+        },
+        {
+          "X": 1.012,
+          "eta": 0.25,
+          "free_axial_080": true
+        },
+        {
+          "X": 1.016,
+          "eta": 0.25,
+          "free_axial_080": true
+        },
+        {
+          "X": 1.02,
+          "eta": 0.25,
+          "free_axial_080": false
+        },
+        {
+          "X": 1.008,
+          "eta": 0.3,
+          "free_axial_080": true
+        },
+        {
+          "X": 1.012,
+          "eta": 0.3,
+          "free_axial_080": true
+        },
+        {
+          "X": 1.016,
+          "eta": 0.3,
+          "free_axial_080": true
+        },
+        {
+          "X": 1.02,
+          "eta": 0.3,
+          "free_axial_080": false
+        }
+      ],
+      "objective": 1.1306770723270254,
+      "previous_objective": 1.1906972162633576,
+      "optimizer_success": false,
+      "optimizer_message": "Maximum number of iterations has been exceeded."
+    },
+    {
+      "moment_weight": 0.15,
+      "coefficients": [
+        0.014196334269807917,
+        -0.021190800636536528,
+        -0.002183066060982658,
+        0.0023388983076179206,
+        -0.0036996823769419596,
+        0.021479247299352855,
+        -0.004642353379203229,
+        -0.0035217264116017225
+      ],
+      "metrics": {
+        "cone_max": 0.9810429416140933,
+        "cone_mean": 0.41603378507730815,
+        "cone_pass_count": 5,
+        "moment_scaled_max": 0.5261522528233531,
+        "moment_raw_max": 0.005261522528233531,
+        "min_relative_E": 0.11073455707151472,
+        "train_max": 580249.0621521224,
+        "nearby_max": 643234.2676642445,
+        "nearby_rms": 363051.01491120196
+      },
+      "pressure_admission": [
+        {
+          "X": 1.008,
+          "eta": 0.2,
+          "free_axial_080": true
+        },
+        {
+          "X": 1.012,
+          "eta": 0.2,
+          "free_axial_080": true
+        },
+        {
+          "X": 1.016,
+          "eta": 0.2,
+          "free_axial_080": true
+        },
+        {
+          "X": 1.02,
+          "eta": 0.2,
+          "free_axial_080": false
+        },
+        {
+          "X": 1.008,
+          "eta": 0.25,
+          "free_axial_080": true
+        },
+        {
+          "X": 1.012,
+          "eta": 0.25,
+          "free_axial_080": true
+        },
+        {
+          "X": 1.016,
+          "eta": 0.25,
+          "free_axial_080": true
+        },
+        {
+          "X": 1.02,
+          "eta": 0.25,
+          "free_axial_080": false
+        },
+        {
+          "X": 1.008,
+          "eta": 0.3,
+          "free_axial_080": true
+        },
+        {
+          "X": 1.012,
+          "eta": 0.3,
+          "free_axial_080": true
+        },
+        {
+          "X": 1.016,
+          "eta": 0.3,
+          "free_axial_080": false
+        },
+        {
+          "X": 1.02,
+          "eta": 0.3,
+          "free_axial_080": false
+        }
+      ],
+      "objective": 1.1840228135193747,
+      "previous_objective": 1.407740229904407,
+      "optimizer_success": false,
+      "optimizer_message": "Maximum number of iterations has been exceeded."
+    },
+    {
+      "moment_weight": 0.4,
+      "coefficients": [
+        0.004772749000757365,
+        -0.014898160628369954,
+        -0.004597535856562333,
+        0.0036816514092980514,
+        0.01001941106497631,
+        -0.008051454041544764,
+        -0.003598937521544613,
+        -0.0016999255146705958
+      ],
+      "metrics": {
+        "cone_max": 0.9823848900624225,
+        "cone_mean": 0.5675632981535788,
+        "cone_pass_count": 4,
+        "moment_scaled_max": 0.41297189910745047,
+        "moment_raw_max": 0.004129718991074505,
+        "min_relative_E": 0.11073455707151472,
+        "train_max": 642473.575205364,
+        "nearby_max": 674246.1338529018,
+        "nearby_rms": 407386.59893170116
+      },
+      "pressure_admission": [
+        {
+          "X": 1.008,
+          "eta": 0.2,
+          "free_axial_080": true
+        },
+        {
+          "X": 1.012,
+          "eta": 0.2,
+          "free_axial_080": true
+        },
+        {
+          "X": 1.016,
+          "eta": 0.2,
+          "free_axial_080": true
+        },
+        {
+          "X": 1.02,
+          "eta": 0.2,
+          "free_axial_080": false
+        },
+        {
+          "X": 1.008,
+          "eta": 0.25,
+          "free_axial_080": true
+        },
+        {
+          "X": 1.012,
+          "eta": 0.25,
+          "free_axial_080": true
+        },
+        {
+          "X": 1.016,
+          "eta": 0.25,
+          "free_axial_080": true
+        },
+        {
+          "X": 1.02,
+          "eta": 0.25,
+          "free_axial_080": false
+        },
+        {
+          "X": 1.008,
+          "eta": 0.3,
+          "free_axial_080": true
+        },
+        {
+          "X": 1.012,
+          "eta": 0.3,
+          "free_axial_080": true
+        },
+        {
+          "X": 1.016,
+          "eta": 0.3,
+          "free_axial_080": true
+        },
+        {
+          "X": 1.02,
+          "eta": 0.3,
+          "free_axial_080": false
+        }
+      ],
+      "objective": 1.311663024255516,
+      "previous_objective": 1.9503477640070308,
+      "optimizer_success": false,
+      "optimizer_message": "Maximum number of iterations has been exceeded."
+    }
+  ],
+  "scope": "Three weighted numerical searches in the existing eight-mode response; the separate disjoint holdout is excluded from fitting. Sampled scores do not establish continuous cone, exact moments, or PDE acceptance.",
+  "accepted": false
+}

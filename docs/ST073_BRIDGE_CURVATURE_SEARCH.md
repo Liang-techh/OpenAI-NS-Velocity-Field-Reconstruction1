@@ -1024,3 +1024,48 @@ even the near-boundary free-axial test. The six pressure modes are
 linearly infeasible across all twelve points. The next mean correction
 must change tangential target or shear at those two radii, while
 restoring moments and maintaining the improved nearby-time momentum.
+
+## Disjoint momentum and eight-mode tradeoff
+
+`delayed_multimode_disjoint_holdout.py` checks the selected eight-mode
+velocity at nine points excluded from both its cone fit and nearby-time
+objective: `X=1.011,1.017,1.023`, `eta=.215,.265,.315`, and
+`tau=.5*2^-5.35`. Its full Cartesian momentum maximum drops from
+`745020` to `466919`, and RMS from `415572` to `276076`. This establishes
+that the local momentum gain extends to one additional sampled window;
+it does not imply a uniform or volume-integrated bound. The sampled
+fourth-order finite-difference divergence is at most `.1162` here;
+analytic toroidal and curl perturbations are solenoidal.
+
+`delayed_multimode_moment_feasibility.py` uses the frozen eight-mode
+response for twelve bounded local least-squares starts on the outgoing
+moments at `eta=.2,.25,.3`. The best scaled L2 defect is `.04869`, with
+largest raw moment defect `.000294`. This is a numerical feasibility
+screen, not a proof of exact closure or global infeasibility. Crucially,
+its training momentum maximum rises to `2208277` and none of the twelve
+cone nodes pass. Moment repair in this family cannot be chosen in
+isolation from momentum and cone geometry.
+
+`delayed_multimode_tradeoff_fit.py` therefore runs three joint cached
+searches with stronger moment penalties. At weight `.05`, a second
+Pareto candidate has six of twelve cone nodes passing (versus three for
+the earlier selection), a largest raw moment defect `.00606` (versus
+`.02170`), and nearby-time maximum `628508` (versus `759460`). Its
+training maximum `559320` is worse than the earlier candidate's
+`207310`, but below the base `868264`. The passing points form the
+`X=1.008,.012,.016` rows at `eta=.2,.25`; no `eta=.3` row passes.
+On the same disjoint nine-point check, this candidate lowers the base
+maximum `745020` to `579141` and RMS `415572` to `339029`, but is worse
+than the previous candidate there. Both candidates remain available;
+neither is promoted to a PDE solution.
+
+For the second candidate, even freely changing axial stress cannot
+enter the `.8`/`.1` cone at `X=1.02` for any of the three sampled eta
+values; it can at the other nine points. More radial velocity control
+near this outer part of the transition is required before a pressure or
+oscillatory correction can close this window. Any new search must also
+repair the moments across an interval, retain independent space-time
+momentum improvement, and verify a continuous strict cone rather than
+only the twelve fit nodes. The two disjoint momentum reports and three
+moment/tradeoff reports are reproducible JSON artifacts in
+`experiments/root_st073/`.
