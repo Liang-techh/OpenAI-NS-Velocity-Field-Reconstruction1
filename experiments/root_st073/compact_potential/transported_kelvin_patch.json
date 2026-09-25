@@ -1,0 +1,170 @@
+{
+  "source": "local_poloidal_10pct_source.json",
+  "registered_times": [
+    0.0084,
+    0.00846
+  ],
+  "patch": {
+    "radial_halfwidth": 0.00275,
+    "axial_halfwidth": 7.5e-05,
+    "time_halfwidth": 0.00015,
+    "node_axis": [
+      -0.6,
+      0.0,
+      0.6
+    ],
+    "holdout_axis": [
+      -0.45,
+      0.45
+    ],
+    "angles_per_node": 1,
+    "mode_count": 2,
+    "angular_modes": [
+      1,
+      4
+    ]
+  },
+  "rows": [
+    {
+      "tau": 0.0084,
+      "base": {
+        "max_momentum": 113866.41660385224,
+        "rms_momentum": 81441.23958946939,
+        "max_fd_divergence": 3.4896287388619385e-06,
+        "max_speed": 3.8091051870407013,
+        "points": 4,
+        "spatial_step": 4.5825756949558395e-06,
+        "temporal_step": 8.4e-07
+      },
+      "frozen": {
+        "max_momentum": 14486482735.672962,
+        "rms_momentum": 14083667924.098614,
+        "max_fd_divergence": 92.81750511447899,
+        "max_speed": 545.4573956809749,
+        "points": 4,
+        "spatial_step": 4.5825756949558395e-06,
+        "temporal_step": 8.4e-07
+      },
+      "transported_kelvin_patch": {
+        "max_momentum": 14475768141.104591,
+        "rms_momentum": 14058509635.044823,
+        "max_fd_divergence": 92.82113184017362,
+        "max_speed": 544.8583247890634,
+        "points": 4,
+        "spatial_step": 4.5825756949558395e-06,
+        "temporal_step": 8.4e-07
+      },
+      "patch_diagnostics": {
+        "tau": 0.0084,
+        "mode_amplitude_norm_ratios_at_center": [
+          1.0,
+          1.0
+        ],
+        "max_node_transversality_error": 8.383139762575616e-17,
+        "source_kelvin_rhs_max_abs_difference": 0.0,
+        "modes": [
+          {
+            "m": 1,
+            "center": [
+              0.01025,
+              0.003625
+            ],
+            "center_normal": [
+              -119.60589982127895,
+              97.5609756097561,
+              -200.68785295427557
+            ]
+          },
+          {
+            "m": 4,
+            "center": [
+              0.01025,
+              0.003625
+            ],
+            "center_normal": [
+              551.8882194626713,
+              390.2439024390244,
+              390.2439024390244
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "tau": 0.00846,
+      "base": {
+        "max_momentum": 123300.66441014894,
+        "rms_momentum": 83102.68450787188,
+        "max_fd_divergence": 3.285962634436146e-06,
+        "max_speed": 3.9474142471666713,
+        "points": 4,
+        "spatial_step": 4.5989129150267684e-06,
+        "temporal_step": 8.460000000000001e-07
+      },
+      "frozen": {
+        "max_momentum": 6035897346.662589,
+        "rms_momentum": 5894988100.987535,
+        "max_fd_divergence": 39.43445163080469,
+        "max_speed": 228.28877932922933,
+        "points": 4,
+        "spatial_step": 4.5989129150267684e-06,
+        "temporal_step": 8.460000000000001e-07
+      },
+      "transported_kelvin_patch": {
+        "max_momentum": 13099228221.21725,
+        "rms_momentum": 7606122978.782695,
+        "max_fd_divergence": 56.08332541552954,
+        "max_speed": 332.048817245209,
+        "points": 4,
+        "spatial_step": 4.5989129150267684e-06,
+        "temporal_step": 8.460000000000001e-07
+      },
+      "patch_diagnostics": {
+        "tau": 0.00846,
+        "mode_amplitude_norm_ratios_at_center": [
+          0.9784718796004871,
+          1.667701480740762
+        ],
+        "max_node_transversality_error": 2.3746738368250608e-05,
+        "source_kelvin_rhs_max_abs_difference": 0.0,
+        "modes": [
+          {
+            "m": 1,
+            "center": [
+              0.010101276897881682,
+              0.003637256921574301
+            ],
+            "center_normal": [
+              -114.86134950772286,
+              98.99738519292625,
+              -156.5770737794575
+            ]
+          },
+          {
+            "m": 4,
+            "center": [
+              0.010101276897881682,
+              0.003637256921574301
+            ],
+            "center_normal": [
+              521.3084690128971,
+              395.989540771705,
+              82.05723635400423
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "construction": {
+    "phase": "transported local cylindrical phase kinematics with backward-time center and wavevector signs, using cached physical jets",
+    "amplitude": "same projected Kelvin physical-coordinate RHS algebra as kelvin_amplitude_transport.derivative, integrated by bounded fixed-step RK4 on cached jets; no solve_ivp trajectory is claimed",
+    "velocity": "analytic cylindrical curl of an interpolated vector potential over the moving 3 by 3 patch",
+    "pressure": "interpolated p_proj = 2*n dot (J*a)/|n|^2, with the sign chosen to match the -2*n*(n dot J*a)/|n|^2 amplitude projection; experimental proxy, not a pressure PDE",
+    "divergence": "analytic curl identity; max_fd_divergence is an independent finite-difference diagnostic",
+    "coefficient_table": "nine times at the initial 3 by 3 node locations; node motion is evolved against these cached jets to bound runtime"
+  },
+  "scope": "Finite 3 by 3 moving patch in the registered tau neighborhood. Complete Cartesian finite-difference momentum is evaluated on disjoint spatial holdouts at two times. No global moment closure, finite-energy extension, critical-time continuation, normalized-chart estimate, or PDE acceptance is claimed.",
+  "paper_status": "Sections 7--9 are only an experimental physical-coordinate analogue here; this is not a paper-equivalent construction.",
+  "accepted": false
+}
