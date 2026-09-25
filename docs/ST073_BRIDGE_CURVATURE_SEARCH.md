@@ -752,3 +752,32 @@ sampled momentum improvement and a tiny positive onset cone margin,
 but no certified cone region spanning the return, supported wave,
 volume-L2 gate, or `1e-3` PDE acceptance. The field remains an
 experimental candidate, not a promoted solution.
+
+## Delaying the return onset and testing a dynamic pressure patch
+
+With the improved `rise_end=1.46` step, moving the U correction start
+directly from `X=1.005` to `1.01` loses fixed-slice feasibility at
+`eta=.3`: even after E reoptimization under the same `.11` relative
+swirl floor, the degree-31 S slack is `-.002443`. An intermediate
+`start_X=1.008` is feasible (S slack `+.003822`) but its 20-node
+complete-momentum maximum increases from `8.595515e5` to
+`1.162895e6`. At `X=1.01,eta=.3`, the sampled cone target-normal
+projection becomes negative, but the strict ratio is `2.31` and still
+fails. Moving the onset alone trades one cone defect for a much larger
+momentum peak; this candidate is rejected.
+
+`delayed_similarity_pressure_screen.py` tests a different mechanism:
+six compact pressure-only modes in the physical similarity coordinates,
+scaled by `q^(-2A)`. Because they leave velocity untouched, they also
+leave analytic solenoidality and all five moments untouched. Their
+pressure gradients are computed analytically; comparison with the
+independent finite-difference full residual differs by at most `11.1`
+against residuals of order `1e6`. A two-time fit on the retained
+rise-`1.46` velocity lowers training RMS from `3.92766e5` to
+`3.83769e5`, but its maximum barely changes (`8.48799e5` to
+`8.48321e5`). On disjoint space/time nodes it creates a severe new
+maximum (`7.73588e5` to `1.38712e6`), especially near
+`X=1.07,eta=.22`. The pressure patch is rejected. This result only
+rules out the tested six-mode fit; it does not show that all matched
+pressure corrections are ineffective. The present dominant momentum
+error still calls for a dynamically coupled velocity/stress correction.

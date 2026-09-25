@@ -11,12 +11,12 @@ from taper_width_capacity import optimize_slice
 
 
 def run(degree=31, output_name='delayed_e_capacity_optimize.json',
-        relative_swirl_floor=.11):
+        relative_swirl_floor=.11, start_X=1.005, rise_end=None):
     tau = .5*2**(-5.5)
-    width, start_X = .4, 1.005
+    width = .4
     X, weights = grid(order=64)
     base = make_field(16, 2.)
-    changed = RadialMomentStep(base, -.5)
+    changed = RadialMomentStep(base, -.5, rise_end=rise_end)
     old = json.loads((ROOT/'delayed005_wide04_curvature_optimize.json').read_text())
     rows = []
     for prior in old['rows']:
@@ -33,6 +33,7 @@ def run(degree=31, output_name='delayed_e_capacity_optimize.json',
               flush=True)
     report = dict(tau=tau, width=width, degree=degree,
                   start_X=start_X, quadrature_per_piece=64,
+                  rise_end=rise_end,
                   relative_swirl_floor=relative_swirl_floor,
                   rows=rows,
                   scope='Fixed-slice E redistribution maximizing S slack '
@@ -47,7 +48,10 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--degree', type=int, default=31)
     parser.add_argument('--relative-swirl-floor', type=float, default=.11)
+    parser.add_argument('--start-X', type=float, default=1.005)
+    parser.add_argument('--rise-end', type=float)
     parser.add_argument('--output-name',
                         default='delayed_e_capacity_optimize.json')
     args = parser.parse_args()
-    run(args.degree, args.output_name, args.relative_swirl_floor)
+    run(args.degree, args.output_name, args.relative_swirl_floor,
+        args.start_X, args.rise_end)
