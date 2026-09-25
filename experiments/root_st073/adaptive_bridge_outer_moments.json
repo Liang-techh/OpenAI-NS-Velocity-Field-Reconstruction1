@@ -1,0 +1,266 @@
+{
+  "source": "Physical full-residual radial stress primitive of adaptive bridge",
+  "rows": [
+    {
+      "k": 11.0,
+      "eta": -0.2,
+      "tau": 0.000244140625,
+      "hotspot_radius": 0.0004933412944735572,
+      "outer_radius": 0.004510548978043952,
+      "z": -0.00033242031834369965,
+      "fields": {
+        "unmodified": {
+          "local_stress": [
+            -3.6290102786442158,
+            54.41572961943921
+          ],
+          "outer_stress": [
+            65.18601895936416,
+            195.77034627633552
+          ],
+          "outer_to_local_norm": 3.7834715918299375
+        },
+        "shared_24_mode": {
+          "local_stress": [
+            -2.1501950275762436,
+            35.71358172121695
+          ],
+          "outer_stress": [
+            -7.183563822066625,
+            199.63825744454405
+          ],
+          "outer_to_local_norm": 5.583488620710599
+        },
+        "two_sided_cone": {
+          "local_stress": [
+            1.2612235347159462,
+            18.103477596122875
+          ],
+          "outer_stress": [
+            -2.664260131238582,
+            211.30473611567106
+          ],
+          "outer_to_local_norm": 11.644754958727017
+        }
+      }
+    },
+    {
+      "k": 11.0,
+      "eta": 0.2,
+      "tau": 0.000244140625,
+      "hotspot_radius": 0.0004933412944735572,
+      "outer_radius": 0.004510548978043952,
+      "z": 0.00033242031834369965,
+      "fields": {
+        "unmodified": {
+          "local_stress": [
+            -3.618364660573099,
+            -55.92532063719311
+          ],
+          "outer_stress": [
+            65.15368457588275,
+            -198.4942247310018
+          ],
+          "outer_to_local_norm": 3.7277902464523303
+        },
+        "shared_24_mode": {
+          "local_stress": [
+            -2.3806572083147683,
+            -35.972664759494094
+          ],
+          "outer_stress": [
+            -8.183033123466243,
+            -199.12344145136484
+          ],
+          "outer_to_local_norm": 5.527989642276532
+        },
+        "two_sided_cone": {
+          "local_stress": [
+            1.0842850765826102,
+            -18.374664787803656
+          ],
+          "outer_stress": [
+            -3.5273150792804513,
+            -210.57975225645131
+          ],
+          "outer_to_local_norm": 11.44203513447953
+        }
+      }
+    },
+    {
+      "k": 15.0,
+      "eta": -0.2,
+      "tau": 1.52587890625e-05,
+      "hotspot_radius": 0.0001233353236183893,
+      "outer_radius": 0.001127637244510988,
+      "z": -8.426518326485341e-05,
+      "fields": {
+        "unmodified": {
+          "local_stress": [
+            -58.023550125644284,
+            868.5591670421942
+          ],
+          "outer_stress": [
+            1046.6534718584485,
+            3079.4778228077007
+          ],
+          "outer_to_local_norm": 3.7363636135247775
+        },
+        "shared_24_mode": {
+          "local_stress": [
+            -34.07385597291902,
+            564.6935091545517
+          ],
+          "outer_stress": [
+            -97.85696503051362,
+            3142.9029233930423
+          ],
+          "outer_to_local_norm": 5.558266810728753
+        },
+        "two_sided_cone": {
+          "local_stress": [
+            21.268830017133382,
+            278.57682548936725
+          ],
+          "outer_stress": [
+            -26.85092033025584,
+            3332.624576452526
+          ],
+          "outer_to_local_norm": 11.928708270494022
+        }
+      }
+    },
+    {
+      "k": 15.0,
+      "eta": 0.2,
+      "tau": 1.52587890625e-05,
+      "hotspot_radius": 0.0001233353236183893,
+      "outer_radius": 0.001127637244510988,
+      "z": 8.426518326485341e-05,
+      "fields": {
+        "unmodified": {
+          "local_stress": [
+            -57.85239964944817,
+            -892.947658997961
+          ],
+          "outer_stress": [
+            1046.139405094517,
+            -3123.013029084387
+          ],
+          "outer_to_local_norm": 3.6807101701271403
+        },
+        "shared_24_mode": {
+          "local_stress": [
+            -37.818703183831005,
+            -568.7909688080896
+          ],
+          "outer_stress": [
+            -114.01839406434154,
+            -3133.7253761573297
+          ],
+          "outer_to_local_norm": 5.500949412736396
+        },
+        "two_sided_cone": {
+          "local_stress": [
+            18.393423358938854,
+            -282.87039257472196
+          ],
+          "outer_stress": [
+            -40.81002273318046,
+            -3320.054689789051
+          ],
+          "outer_to_local_norm": 11.713167567934102
+        }
+      }
+    },
+    {
+      "k": 19.0,
+      "eta": -0.2,
+      "tau": 9.5367431640625e-07,
+      "hotspot_radius": 3.0833830904597325e-05,
+      "outer_radius": 0.000281909311127747,
+      "z": -2.1360370346910557e-05,
+      "fields": {
+        "unmodified": {
+          "local_stress": [
+            -927.9768479121959,
+            13868.570796676448
+          ],
+          "outer_stress": [
+            16803.250664791838,
+            48459.44986077634
+          ],
+          "outer_to_local_norm": 3.690041254167686
+        },
+        "shared_24_mode": {
+          "local_stress": [
+            -540.0899962068657,
+            8931.68551376881
+          ],
+          "outer_stress": [
+            -1298.0190162219956,
+            49499.02206823854
+          ],
+          "outer_to_local_norm": 5.5337548514248835
+        },
+        "two_sided_cone": {
+          "local_stress": [
+            357.7230117802998,
+            4283.258751882197
+          ],
+          "outer_stress": [
+            -182.55355066935982,
+            52584.051449252256
+          ],
+          "outer_to_local_norm": 12.234127518477699
+        }
+      }
+    },
+    {
+      "k": 19.0,
+      "eta": 0.2,
+      "tau": 9.5367431640625e-07,
+      "hotspot_radius": 3.0833830904597325e-05,
+      "outer_radius": 0.000281909311127747,
+      "z": 2.1360370346910557e-05,
+      "fields": {
+        "unmodified": {
+          "local_stress": [
+            -925.2246475712667,
+            -14262.628427764397
+          ],
+          "outer_stress": [
+            16795.079018024342,
+            -49155.45066435135
+          ],
+          "outer_to_local_norm": 3.634430142904644
+        },
+        "shared_24_mode": {
+          "local_stress": [
+            -600.938164590382,
+            -8996.497754085172
+          ],
+          "outer_stress": [
+            -1559.3680215643396,
+            -49337.166179066786
+          ],
+          "outer_to_local_norm": 5.474580175774948
+        },
+        "two_sided_cone": {
+          "local_stress": [
+            310.99754117980774,
+            -4351.248369897105
+          ],
+          "outer_stress": [
+            -408.3433877906267,
+            -52367.43257902749
+          ],
+          "outer_to_local_norm": 12.004778659356964
+        }
+      }
+    }
+  ],
+  "scope": "Axis-to-outer-edge weighted radial integrals of full tangential Cartesian residual at six time/axial slices. Nonzero outer primitive obstructs a compact stress lift of this physical residual. This is not the paper's leading normalized moment system, and no continuum or PDE acceptance is claimed.",
+  "accepted": false,
+  "paper_radial_moments_satisfied": false
+}

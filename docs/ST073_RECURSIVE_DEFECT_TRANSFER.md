@@ -37,3 +37,7 @@ registered `k <= 6` interval. They are neither continuum bounds nor
 spatial-volume L2 estimates. The cone-aware fit had not met its optimizer
 termination condition and failed off-scale holdouts; it remains a diagnostic
 candidate. No scale recursion or PDE acceptance is claimed.
+
+The separate outer-moment audit and attempted coupled repair are in
+`ST073_OUTER_MOMENT_REPAIR.md`. They show that the current mean modes also
+leave a large residual-stress tail at the bridge's outer edge.
