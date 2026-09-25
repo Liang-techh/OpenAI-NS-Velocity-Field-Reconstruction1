@@ -1,0 +1,55 @@
+{
+  "rows": [
+    {
+      "eta": 0.0,
+      "delta_S": 3.581650048296002,
+      "delta_Cp": 0.0016707780344930182,
+      "heat_Cp_tail_at_16": 0.002064104532660847,
+      "heat_S_tail_at_16": 3.3375091050301338,
+      "Cp_only_min_R": 82.63618037697051,
+      "S_and_Cp_positivity_min_R": 9711.477021121967,
+      "at_R_64": {
+        "available_Cp_after_repair": -0.00011581495189102748,
+        "base_E2_mass": 0.09183972751053826,
+        "mass_gap": -7.269964137944594
+      },
+      "physical_radius_at_tau_0084": 1.2773128589145615,
+      "physical_radius_at_tau_0128": 4.98611884877128
+    },
+    {
+      "eta": 0.2,
+      "delta_S": 3.463421445097023,
+      "delta_Cp": 0.001595681728726637,
+      "heat_Cp_tail_at_16": 0.0020641498153667593,
+      "heat_S_tail_at_16": 3.3375105970575603,
+      "Cp_only_min_R": 69.50051001157446,
+      "S_and_Cp_positivity_min_R": 7887.624403506494,
+      "at_R_64": {
+        "available_Cp_after_repair": -4.067645347168307e-05,
+        "base_E2_mass": 0.09184191675405007,
+        "mass_gap": -7.023891392992471
+      },
+      "physical_radius_at_tau_0084": 1.174876278853921,
+      "physical_radius_at_tau_0128": 4.586247384956171
+    },
+    {
+      "eta": 0.35,
+      "delta_S": 3.2468637898090664,
+      "delta_Cp": 0.0014430196098851418,
+      "heat_Cp_tail_at_16": 0.00206424393642933,
+      "heat_S_tail_at_16": 3.337513692560735,
+      "Cp_only_min_R": 52.555848837980676,
+      "S_and_Cp_positivity_min_R": 5582.1862137460585,
+      "at_R_64": {
+        "available_Cp_after_repair": 0.00011207339808796913,
+        "base_E2_mass": 0.09184646552590614,
+        "mass_gap": -6.571228650188779
+      },
+      "physical_radius_at_tau_0084": 1.033792169378996,
+      "physical_radius_at_tau_0128": 4.035511414042339
+    }
+  ],
+  "derivation": "On [16,R] the base has U=0 and E>=0. Restoring delta S>0 requires integral E_new^2 >= integral E_base^2 + 2 delta S (with any added U increasing this lower bound). Restoring delta Cp>0 requires integral E_new^2/(2X) = integral E_base^2/(2X) - delta Cp. Since X<=R and E_new^2>=0, the latter is at least integral E_new^2/(2R). Root of the resulting necessary inequality gives the listed lower radius.",
+  "scope": "Necessary positivity bound for repairing the current two-moment patch back to the unchanged heat exterior using corrections confined to [16,R]. It assumes the registered heat tail and unchanged inner patch. Other inner/exterior profiles or pressure data are outside this bound. Not a five-moment solution or full PDE acceptance.",
+  "accepted": false
+}

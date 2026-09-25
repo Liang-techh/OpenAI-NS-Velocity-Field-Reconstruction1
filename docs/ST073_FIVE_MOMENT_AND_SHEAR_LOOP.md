@@ -29,3 +29,5 @@ The first normalized snapshot screen is now in `ST073_NORMALIZED_RELAXED_CONE.md
 Reproduce the five-moment audit with `python experiments/root_st073/remote_five_moment_audit.py` and the two-shape screen with `python experiments/root_st073/remote_two_shape_screen.py`. Both JSON reports are marked `accepted: false`.
 
 `ST073_CENTRIFUGAL_PRESSURE.md` implements the missing radial pressure increment and shows why preserving either the inner or outer datum alone creates an axial residual in the other quiet region.
+
+`ST073_FIVE_MOMENT_REPAIR_BOUND.md` gives a necessary radius bound for trying to restore the current field to the unchanged heat exterior on a later correction interval. In particular, `[16,64]` is infeasible even for its `S` and `Cp` targets.
