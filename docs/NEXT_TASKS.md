@@ -86,6 +86,17 @@ viscous term. See `ST073_MIDPLANE_WAVE_TWO_SCALE.md`. Next require a
 spatially supported amplitude/pressure solve and mean correction on a
 wider axial cone, with complete interior-time residual and cross-scale
 checks. Do not treat center stress matching as residual improvement.
+The new one-time cross-scale projection does show a reusable candidate:
+after `tau^1.5` normalization, the wave-induced defects at `k=11,19`
+have `0.999939` cosine similarity. A curl-potential/pressure/mean slope
+fitted only at `k=11` and transferred by `tau^-1` lowers the `k=19`
+held-out momentum max from `1.44e13` to `5.84e12`. This is not an
+evolved correction; see the same report. Next solve the supported
+moving-normal amplitude equation throughout a pulse, insert its
+derivative, pressure and mean into the full velocity field, and check
+nonlinear momentum plus radial moments at interior times on at least
+two adjacent dyadic scales. Require absolute residual improvement and
+non-growing scale behavior before marking recursion established.
 Use those directions as a conditioning prototype, not as the paper's five
 leading-profile moments or a recursive correction.
 The next Stage-1 inputs are therefore the actual coefficient-family

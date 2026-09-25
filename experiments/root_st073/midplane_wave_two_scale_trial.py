@@ -71,12 +71,14 @@ def run():
         hs = 0.0005 * np.sqrt(base.nu * tau)
         ht = min(0.0001 * tau, time_halfwidth / 8)
         cases = []
+        residual_arrays = []
         for amplitude in (0.0, 0.1, 1.0):
             field = WavePerturbedField(base, ScaledWave(wave, amplitude))
             velocity, gradient, linear, terms = kinematics(
                 field, points, tau, hs, ht, time_min=0.5 * 2.0**-20,
                 return_terms=True)
             residual = linear + np.einsum("nij,nj->ni", gradient, velocity)
+            residual_arrays.append(residual.copy())
             norms = np.linalg.norm(residual, axis=1)
             peak = int(np.argmax(norms))
             cases.append(dict(amplitude=amplitude,
@@ -114,15 +116,38 @@ def run():
                 covariance - target) / np.linalg.norm(target)),
             wave_speed_center_max=float(np.max(np.linalg.norm(
                 wave_velocity, axis=1))),
+            normalized_background_vectors=(
+                tau**1.5 * residual_arrays[0]).tolist(),
+            normalized_wave_increment_vectors=(
+                tau**1.5 * (residual_arrays[1]
+                            - residual_arrays[0])).tolist(),
             cases=cases))
+    def transfer(key):
+        first = np.asarray(scales[0][key])
+        last = np.asarray(scales[1][key])
+        dot = float(np.sum(first * first))
+        amplitude = float(np.sum(first * last) / dot)
+        return dict(relative_drift=float(np.linalg.norm(last - first)
+                                         / np.linalg.norm(first)),
+                    best_scalar=amplitude,
+                    shape_error_after_scalar=float(np.linalg.norm(
+                        last - amplitude * first) / np.linalg.norm(last)),
+                    cosine_similarity=float(np.sum(first * last)
+                                            / (np.linalg.norm(first)
+                                               * np.linalg.norm(last))))
+    transfer_metrics = dict(
+        background=transfer("normalized_background_vectors"),
+        wave_increment=transfer("normalized_wave_increment_vectors"))
     report = dict(source="Two-scale support-adapted midplane exact-curl wave trial",
                   spatial_nodes=[list(pair) for pair in spatial_nodes],
                   angles_per_node=len(angles), scales=scales,
+                  normalized_transfer=transfer_metrics,
                   scope="Five radial/axial patch nodes and sixteen angles at the source time on k=11,19. Exact-curl wave plus full Cartesian FD momentum, with frozen Kelvin amplitudes and no pressure/mean wave correction. No interior-time or full-support residual bound, moment closure after wave, or scale-recursive acceptance.",
                   accepted=False, scale_recursion_established=False)
     output = ROOT / "midplane_wave_two_scale_trial.json"
     output.write_bytes((json.dumps(report, indent=2) + "\n").encode())
-    print(json.dumps(dict(output=str(output), summary=[
+    print(json.dumps(dict(output=str(output),
+                          normalized_transfer=transfer_metrics, summary=[
         {key: item[key] for key in (
             "k", "radial_halfwidth", "axial_halfwidth", "time_halfwidth",
             "covariance_relative_error", "wave_speed_center_max", "cases")}

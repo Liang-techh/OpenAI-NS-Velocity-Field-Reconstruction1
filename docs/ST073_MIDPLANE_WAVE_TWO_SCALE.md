@@ -46,3 +46,34 @@ should widen the **axial** cone or redesign the mean profile, then solve
 the spatially supported moving-normal amplitude equation and test the
 complete residual on interior times and adjacent scales. More center
 covariance fitting alone will not address the viscous peak.
+
+## Cross-scale shape and one-step transfer
+
+The paired wave was also sampled at the same five dimensionless spatial
+nodes and 16 angles at `k=11` and `k=19`. After multiplying by
+`tau^1.5`, the wave-induced momentum increments have cosine similarity
+`0.999939`. Their relative shape error is `1.10%` after optimizing one
+scalar multiplier (`0.9081`); the raw normalized drift is `9.25%`.
+Thus the defect has a nearly reusable *sampled shape*, while its
+unscaled magnitude still diverges under refinement.
+
+`midplane_wave_scale_transfer_slope.py` fits an instantaneous compact
+curl-potential, pressure and mean-flow time slope at `k=11`, then
+multiplies its coefficients by `tau_11/tau_19 = 256` and evaluates at
+`k=19` without refitting. Each scale uses 16 radial/axial training
+nodes and nine disjoint held-out nodes, all with 16 angles. On the
+`k=19` held-out nodes, the frozen-wave momentum max/RMS is
+`1.44e13 / 5.05e12`; the transferred linear projection gives
+`5.84e12 / 1.92e12` (about `60% / 62%` lower). An independent
+`k=19` fit gives `6.62e12 / 2.11e12` on the same holdout. The
+`tau`-normalized fitted coefficient vectors differ by `6.88%`.
+
+This is a **single-time finite-grid projection**, not an evolved
+velocity field. The projected derivative and pressure have not been
+inserted into a complete nonlinear residual or continued through the
+wave's time support. No support, radial-moment, or uniform-in-scale
+estimate follows. The next decisive step is a moving-normal amplitude
+inverse over an entire pulse with boundary/cutoff control, followed by
+direct residual and moment tests at interior times and more dyadic
+scales. The sampled transfer is a candidate template for that solve,
+not a completed scale recursion.
