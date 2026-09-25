@@ -174,6 +174,14 @@ are `2.17e9/8.07e12` and grow `3715×` across eight halvings; see
 `ST073_WIDER_CONE_WAVE_SCREEN.md`. Continue with transported spatial
 amplitude, normal pressure, and mean/stress repair rather than additional
 width-only tuning.
+The wider-cone compact time-slope/pressure projection lowers held-out
+full momentum at pulse center to `18.6%/18.3%` of frozen at `k=11/19`,
+and direct exact-curl replay matches that center result. A linear-in-time
+realization fails at just `+0.1` pulse half-width: its held-out maxima
+are `3.083×/3.074×` the same-time frozen wave. See
+`ST073_WIDER_CONE_SLOPE_REPLAY.md`. Use the fitted slope only as an
+initial condition or diagnostic for a nonlinear moving-normal pulse
+amplitude solve; require direct residual reduction throughout the pulse.
 Use those directions as a conditioning prototype, not as the paper's five
 leading-profile moments or a recursive correction.
 The next Stage-1 inputs are therefore the actual coefficient-family

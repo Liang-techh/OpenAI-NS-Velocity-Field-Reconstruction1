@@ -1,0 +1,146 @@
+{
+  "source": "Wider-cone instantaneous full-momentum slope projection",
+  "train_axis": [
+    -0.6,
+    -0.3,
+    0.0,
+    0.3,
+    0.6
+  ],
+  "held_axis": [
+    -0.45,
+    -0.15,
+    0.15,
+    0.45
+  ],
+  "angles_per_node": 16,
+  "scales": [
+    {
+      "k": 11,
+      "tau": 0.000244140625,
+      "weights": [
+        374.0126458709506,
+        22.8708500803866
+      ],
+      "train": {
+        "frozen": {
+          "max": 2335828994.4189787,
+          "rms": 600866791.9119053
+        },
+        "projected_derivative_and_pressure": {
+          "max": 50335831.58162572,
+          "rms": 18824733.179962326
+        }
+      },
+      "heldout": {
+        "frozen": {
+          "max": 1947256698.1628635,
+          "rms": 722379656.6650846
+        },
+        "projected_derivative_and_pressure": {
+          "max": 361267342.7127049,
+          "rms": 155436515.08286574
+        }
+      },
+      "direct_replay": [
+        {
+          "time_offset_fraction": 0.0,
+          "frozen": {
+            "max": 1947256698.1628635,
+            "rms": 722379656.6650846
+          },
+          "corrected": {
+            "max": 361267342.7602732,
+            "rms": 155436515.12884554
+          }
+        },
+        {
+          "time_offset_fraction": 0.1,
+          "frozen": {
+            "max": 1977021152.4547243,
+            "rms": 736154418.9343352
+          },
+          "corrected": {
+            "max": 6095536703.544958,
+            "rms": 1908380018.3065608
+          }
+        }
+      ],
+      "harmonic_potential_slope_norms": [
+        1295368.0468174359,
+        83895.1471630921
+      ],
+      "harmonic_pressure_norms": [
+        668.4659032224305,
+        195.94110390529522
+      ],
+      "mean_potential_slope_norm": 1289.4720481713507,
+      "mean_pressure_norm": 244.42042302208367
+    },
+    {
+      "k": 19,
+      "tau": 9.5367431640625e-07,
+      "weights": [
+        91647.85684372054,
+        5992.060467616705
+      ],
+      "train": {
+        "frozen": {
+          "max": 8675943388296.516,
+          "rms": 2232431794182.4146
+        },
+        "projected_derivative_and_pressure": {
+          "max": 191564851609.37988,
+          "rms": 71324838570.00954
+        }
+      },
+      "heldout": {
+        "frozen": {
+          "max": 7294143832145.879,
+          "rms": 2684878934825.193
+        },
+        "projected_derivative_and_pressure": {
+          "max": 1336155000283.796,
+          "rms": 574403012980.6743
+        }
+      },
+      "direct_replay": [
+        {
+          "time_offset_fraction": 0.0,
+          "frozen": {
+            "max": 7294143832145.879,
+            "rms": 2684878934825.193
+          },
+          "corrected": {
+            "max": 1336155000416.6892,
+            "rms": 574403013138.443
+          }
+        },
+        {
+          "time_offset_fraction": 0.1,
+          "frozen": {
+            "max": 7404755942385.931,
+            "rms": 2736152495660.9453
+          },
+          "corrected": {
+            "max": 22763186058113.637,
+            "rms": 7085098940282.144
+          }
+        }
+      ],
+      "harmonic_potential_slope_norms": [
+        308059365.1429269,
+        20723417.819003996
+      ],
+      "harmonic_pressure_norms": [
+        160456.3529978748,
+        48534.3769827267
+      ],
+      "mean_potential_slope_norm": 298851.3863708216,
+      "mean_pressure_norm": 55442.21960793505
+    }
+  ],
+  "scope": "Exact-curl linear-in-tau potential and pressure directly evaluated at pulse center and one interior time. No solved amplitude trajectory, endpoint cutoff, uniform space-time residual, or recursive acceptance.",
+  "accepted": false,
+  "scale_recursion_established": false
+}
