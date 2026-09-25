@@ -876,3 +876,33 @@ The next solve must include interleaved eta nodes and the swirl floor
 directly, with axial regularity and complete momentum in the objective.
 This candidate is rejected (`accepted:false`); no continuous cone,
 volume-L2 gate, or `1e-3` PDE gate is established.
+
+## Joint axial-interval moment/floor fit
+
+`delayed_axial_interval_fit.py` replaces the three isolated slice solves
+with one least-squares fit of the same compact physical modes. Seven eta
+positions share all coefficients; each contributes the second through
+fifth moments and a positive-swirl-floor penalty. Analytic moment
+Jacobians make this a reproducible finite-dimensional screen. The fit
+reaches the 200-evaluation limit rather than satisfying all conditions.
+For example, at `eta=.2625` it cuts the fourth-moment defect from
+`-.025999` to `+.000118`, but at `eta=.2875` the defect remains
+`-.013222`; the third-moment defect there is `-.004158`. The sampled
+relative swirl dips to `.1100066` at `eta=.2375`, below the `.11005`
+fit margin (though above the older `.11` floor).
+
+Five interleaved eta holdouts in `delayed_axial_interval_fit.json` show
+partial generalization, not closure: at `eta=.26875` the fourth-moment
+defect falls from `-.027034` to `+.007599`, while at `eta=.29375` it
+stays near `-.006957`. On the independent full-momentum space/time
+holdout the maximum increases from `684006.34` to `684699.04` and RMS
+from `305561.19` to `370825.54`. This candidate remains rejected.
+
+The [OpenAI paper's physical description](https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf)
+explicitly assigns cancellation of the annular singular momentum
+residual to nonaxisymmetric oscillatory momentum flux, followed by mean
+and higher-order corrections; matching the radial moments is needed to
+keep the exterior unchanged. Our mean-only interval fit is not that
+mechanism. The next constructive stage must jointly seek an interval of
+strict *physical* stress-cone feasibility and a supported wave/mean
+correction, rather than infer PDE improvement from moment fitting alone.
