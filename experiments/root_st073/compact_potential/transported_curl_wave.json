@@ -1,0 +1,71 @@
+{
+  "source": "local_poloidal_10pct_source.json",
+  "rows": [
+    {
+      "tau": 0.0084,
+      "base": {
+        "max_residual": 54626.390516333835,
+        "mean_residual_cylindrical": [
+          -37265.38495100413,
+          -24645.332104065914,
+          31431.53240086696
+        ],
+        "max_fd_divergence": 9.377358765050303e-07
+      },
+      "frozen": {
+        "max_residual": 977808109.7729391,
+        "mean_residual_cylindrical": [
+          81988586.06661305,
+          166142836.64582145,
+          28814.25314778043
+        ],
+        "max_fd_divergence": 0.50840518894762
+      },
+      "transported": {
+        "max_residual": 987191303.8339262,
+        "mean_residual_cylindrical": [
+          81988586.06661806,
+          166142836.64582056,
+          28814.253147961106
+        ],
+        "max_fd_divergence": 0.5084051889101033
+      }
+    },
+    {
+      "tau": 0.008459999999999999,
+      "base": {
+        "max_residual": 38231.79724697629,
+        "mean_residual_cylindrical": [
+          -11280.519850382296,
+          -23156.731154015524,
+          28252.18566323425
+        ],
+        "max_fd_divergence": 9.994304264182574e-07
+      },
+      "frozen": {
+        "max_residual": 370992303.3424534,
+        "mean_residual_cylindrical": [
+          14335074.124604253,
+          29039603.217297684,
+          27794.420307195513
+        ],
+        "max_fd_divergence": 0.2156506216344667
+      },
+      "transported": {
+        "max_residual": 24589751518.82586,
+        "mean_residual_cylindrical": [
+          -29040962.166372538,
+          -30284579.469341993,
+          1939882.2698907582
+        ],
+        "max_fd_divergence": 11.632937851150928
+      }
+    }
+  ],
+  "selected_pulse_indices": [
+    3,
+    17
+  ],
+  "scope": "Two compact exact-curl harmonic waves on a 16-angle ring at two times. Transported phase/center and time-varying spatially constant potentials; no amplitude or pressure evolution equation, global stress closure, or full-domain momentum certificate.",
+  "accepted": false
+}

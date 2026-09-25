@@ -1,0 +1,44 @@
+{
+  "rows": [
+    {
+      "tau": 0.0084,
+      "frozen": {
+        "max_wave_speed": 21.991288612995447,
+        "max_fd_divergence": [
+          13.120273659996087,
+          3.2941136128687276,
+          0.824408574047311
+        ]
+      },
+      "transported": {
+        "max_wave_speed": 21.991288612995447,
+        "max_fd_divergence": [
+          13.120273660051566,
+          3.294113613049035,
+          0.8244085760169355
+        ]
+      }
+    },
+    {
+      "tau": 0.008459999999999999,
+      "frozen": {
+        "max_wave_speed": 9.199663926350437,
+        "max_fd_divergence": [
+          5.487347647831541,
+          1.37771107129646,
+          0.3447958831508231
+        ]
+      },
+      "transported": {
+        "max_wave_speed": 591.7655936172304,
+        "max_fd_divergence": [
+          390.94254691876995,
+          98.05104701716482,
+          24.532511634810362
+        ]
+      }
+    }
+  ],
+  "scope": "16-angle ring speed and second-order finite-difference divergence at three spacings. Exact incompressibility follows from the spatial curl formula, not this sample.",
+  "accepted": false
+}
