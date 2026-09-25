@@ -842,3 +842,37 @@ This result in `delayed_midband_moment_patch.json` rules out promoting
 the three-slice fit as interval closure. The next construction needs
 axially varying correction coefficients (or a coupled mean/stress solve),
 with physical curl derivatives and momentum included in the fit.
+
+## Three interior axial collocation slices
+
+`delayed_axial_lagrange_patch.py` tests axial Lagrange profiles over
+`eta=.2` to `.3`, with the curl derivative included in the physical
+velocity. Each profile isolates one interior slice (`.225,.25,.275`)
+while vanishing at the two reference endpoints. Twenty compact poloidal
+radial modes and five swirl modes supply the finite-dimensional freedom.
+At `.225`, the original three- and seven-mode poloidal bases have
+negative fixed-slice S capacity (`-.01987` and `-.01337` with the small
+two-mode swirl repair). Twenty modes reduce the capacity gap to about
+`-.00496` under a generic E optimization. Optimizing E for the actual
+twenty-mode U basis changes it to a positive `+.00526`; the other two
+interior slices have positive capacity too. Thus the earlier optimizer
+singularity was not a general impossibility of this compact construction.
+
+The resulting *physical* field satisfies the second through fifth
+outgoing moments at all three fitted slices to numerical precision.
+The first-moment differences there are between roughly `2e-8` and
+`2.3e-7` on the order-48 quadrature; each added streamfunction is
+analytically compact and has zero radial mass. Nevertheless, the
+interpolated field overshoots between nodes: at `eta=.2625` the fourth
+moment defect is `+.031916` versus the base `-.025999`, and the sampled
+relative swirl minimum falls to `.108897`, below the `.11` floor. On
+fifteen independent space/time momentum nodes the maximum barely changes
+(`684006.34` to `683102.24`) while RMS rises from `305561.19` to
+`333164.21`. The full record is
+`delayed_axial_lagrange_patch.json`.
+
+Three exact collocation slices therefore do not imply interval matching.
+The next solve must include interleaved eta nodes and the swirl floor
+directly, with axial regularity and complete momentum in the objective.
+This candidate is rejected (`accepted:false`); no continuous cone,
+volume-L2 gate, or `1e-3` PDE gate is established.

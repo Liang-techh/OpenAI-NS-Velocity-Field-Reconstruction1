@@ -21,11 +21,13 @@ ETA_INTERVAL = (.15, .38)
 
 
 class SimilarityCurlMode:
-    def __init__(self, base, radial_interval, eta_interval=ETA_INTERVAL):
+    def __init__(self, base, radial_interval, eta_interval=ETA_INTERVAL,
+                 eta_shape=None):
         self.base = base
         self.nu = base.nu
         self.radial_interval = radial_interval
         self.eta_interval = eta_interval
+        self.eta_shape = eta_shape
 
     def fields(self, points, tau):
         pts = np.asarray(points, float)
@@ -36,7 +38,8 @@ class SimilarityCurlMode:
                          self.base.heat.h)
         q, X, eta = (np.asarray(co[key]) for key in ('q', 'X', 'eta'))
         bx, bxd = bump(X, *self.radial_interval)
-        be, bed = bump(eta, *self.eta_interval)
+        be, bed = (self.eta_shape(eta) if self.eta_shape is not None
+                   else bump(eta, *self.eta_interval))
         phi = bx*be
         phi_x = bxd*be
         phi_eta = bx*bed

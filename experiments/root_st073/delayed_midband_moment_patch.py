@@ -29,10 +29,11 @@ SWIRL_INTERVALS = ((1.005, 1.75), (1.8, 2.98))
 
 
 class SimilaritySwirlMode:
-    def __init__(self, base, radial_interval):
+    def __init__(self, base, radial_interval, eta_shape=None):
         self.base = base
         self.nu = base.nu
         self.radial_interval = radial_interval
+        self.eta_shape = eta_shape
 
     def fields(self, points, tau):
         pts = np.asarray(points, float)
@@ -42,7 +43,8 @@ class SimilaritySwirlMode:
         co = coordinates(radius/sn, pts[:, 2]/sn, ts, self.base.heat.h)
         q, X, eta = (np.asarray(co[key]) for key in ('q', 'X', 'eta'))
         bx, _ = bump(X, *self.radial_interval)
-        be, _ = bump(eta, *ETA_INTERVAL)
+        be, _ = (self.eta_shape(eta) if self.eta_shape is not None
+                 else bump(eta, *ETA_INTERVAL))
         ut = sn*q**(-self.base.A)*bx*be
         ca = np.divide(pts[:, 0], radius, out=np.ones_like(radius),
                        where=radius > 0)
