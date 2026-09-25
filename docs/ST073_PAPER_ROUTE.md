@@ -52,3 +52,7 @@ For the small axial-anisotropy exponent and the bounded axial-shape cone
 search, see `ST073_SCALE_AND_CONE_ROUTE.md`. Local shape fitting has not
 established the wave-admissible stress direction; prioritize the mean radial
 moment and heat-exterior construction before another supported pulse trial.
+
+The first remote heat-patch mean with both Appendix-A-style radial moments
+approximately closed is in `ST073_REMOTE_MOMENT_MEAN.md`. It is a solenoidal
+intermediate field, not yet a finite-energy or momentum-accepted solution.

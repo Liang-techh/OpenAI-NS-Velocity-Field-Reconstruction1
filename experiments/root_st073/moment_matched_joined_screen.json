@@ -1,0 +1,146 @@
+{
+  "rows": [
+    {
+      "tau": 0.0084,
+      "eta": 0.0,
+      "X": [
+        5.0,
+        10.0,
+        15.0
+      ],
+      "baseline_residual_norms": [
+        3.3221396976453835e-08,
+        3.264179109607781e-08,
+        3.11768012913829e-08
+      ],
+      "corrected_residual_norms": [
+        135.03696038075643,
+        2618.3534609307594,
+        1570.9520411144458
+      ],
+      "baseline_divergence_max": 5.047302627606748e-13,
+      "corrected_divergence_max": 1.7429269832947014e-12,
+      "correction_speed_max": 0.0419725645356201
+    },
+    {
+      "tau": 0.0084,
+      "eta": 0.3,
+      "X": [
+        5.0,
+        10.0,
+        15.0
+      ],
+      "baseline_residual_norms": [
+        1.8846972193847273e-09,
+        6.404740712122675e-09,
+        8.661232233269279e-09
+      ],
+      "corrected_residual_norms": [
+        477.03606075832585,
+        4778.452799448553,
+        6794.262510643646
+      ],
+      "baseline_divergence_max": 7.570953941410122e-13,
+      "corrected_divergence_max": 1.6260386814792582e-08,
+      "correction_speed_max": 0.061663069211496495
+    },
+    {
+      "tau": 0.032,
+      "eta": 0.0,
+      "X": [
+        5.0,
+        10.0,
+        15.0
+      ],
+      "baseline_residual_norms": [
+        6.690968952201339e-09,
+        2.0377599943040895e-09,
+        5.563719413801842e-10
+      ],
+      "corrected_residual_norms": [
+        17.778717733273194,
+        353.1146400459581,
+        210.60288680253169
+      ],
+      "baseline_divergence_max": 6.464932690748106e-14,
+      "corrected_divergence_max": 9.338484846521666e-13,
+      "correction_speed_max": 0.021361641104809873
+    },
+    {
+      "tau": 0.032,
+      "eta": 0.3,
+      "X": [
+        5.0,
+        10.0,
+        15.0
+      ],
+      "baseline_residual_norms": [
+        9.645705023523545e-10,
+        1.872785142723313e-09,
+        1.0889037275374073e-09
+      ],
+      "corrected_residual_norms": [
+        64.10666020155341,
+        649.6505015401315,
+        921.4452183749531
+      ],
+      "baseline_divergence_max": 1.939479807224432e-13,
+      "corrected_divergence_max": 4.320320101669495e-09,
+      "correction_speed_max": 0.031534435166687094
+    }
+  ],
+  "moment_holdout": [
+    {
+      "tau": 0.012,
+      "eta": -0.35,
+      "angular_moment": -5.480949040181926e-06,
+      "kinetic_moment": -0.0007534011351735259
+    },
+    {
+      "tau": 0.012,
+      "eta": -0.15,
+      "angular_moment": -1.1451900103209844e-05,
+      "kinetic_moment": -2.204386257398383e-05
+    },
+    {
+      "tau": 0.012,
+      "eta": 0.15,
+      "angular_moment": -1.1445307429247542e-05,
+      "kinetic_moment": -2.6037461938077655e-05
+    },
+    {
+      "tau": 0.012,
+      "eta": 0.35,
+      "angular_moment": -5.4716075525984564e-06,
+      "kinetic_moment": -0.0007774085402938447
+    },
+    {
+      "tau": 0.064,
+      "eta": -0.35,
+      "angular_moment": 3.6170996600137784e-06,
+      "kinetic_moment": 0.0002196525072490907
+    },
+    {
+      "tau": 0.064,
+      "eta": -0.15,
+      "angular_moment": 8.32027173880423e-06,
+      "kinetic_moment": 0.000171196588840683
+    },
+    {
+      "tau": 0.064,
+      "eta": 0.15,
+      "angular_moment": 8.316719049106247e-06,
+      "kinetic_moment": 0.00018531219562456513
+    },
+    {
+      "tau": 0.064,
+      "eta": 0.35,
+      "angular_moment": 3.609088029543628e-06,
+      "kinetic_moment": 0.00022338610016614524
+    }
+  ],
+  "moment_holdout_max_angular": 1.1451900103209844e-05,
+  "moment_holdout_max_kinetic": 0.0007774085402938447,
+  "scope": "Physical full-momentum and divergence finite differences at selected remote-patch points. The correction realizes slice moment coefficients through a smooth eta polynomial and a streamfunction. Large residual is expected before stress realization. Joined heat exterior is not finite-energy in z, and no critical-time forcing or global field is claimed.",
+  "accepted": false
+}
