@@ -1250,3 +1250,44 @@ radial diffusion times across that width. This is a scale warning for
 the current pulse design, not a continuum exclusion. A wider
 mean/stress construction, moment repair, transported wave dynamics,
 and full spatial-volume momentum audit remain necessary.
+
+## Remote outgoing-moment repair screen
+
+`delayed_remote_moment_repair.py` tests exact-solenoidal compact swirl
+and poloidal perturbations away from the sampled inner cone. Its radial
+supports begin at `X=1.04` or farther out, so the sampled velocity at
+`X<=1.03` is unchanged. The five training slices are
+`eta=.2,.225,.25,.275,.3`; four interlaced slices check interpolation.
+The fit targets the outgoing `J,S,I,Cp` moments while penalizing any
+drop of relative swirl energy below `.11` of the starting profile.
+
+The first 24-mode remote fit barely changes the largest training
+moment defect (`.04437` to `.04398`) and increases sampled remote
+momentum RMS. Adding nearer radial supports and a fourth axial support
+lowers the defect to `.03188`, but still misses the moment target and
+the swirl floor. An analytic Jacobian audit in
+`delayed_remote_moment_rank.py` explains part of this failure: the
+four-support, 32-mode matrix for 20 moment constraints has rank 19.
+Its left null direction is concentrated in the `J` condition at
+`eta=.225`, so amplitude tuning alone cannot close all five slices.
+
+Adding a fifth axial support around `eta=.225` raises the local
+Jacobian rank to 20. This removes the linear reachability obstruction,
+but a bounded nonlinear fit still leaves maximum training defect
+`.03194` and minimum relative swirl energy `.10879`, below the `.11`
+floor. The dominant remaining defects are coupled `S` and `I`
+conditions. The sampled remote momentum maximum remains about
+`1.34e5`, while its RMS rises relative to the unpatched mean. These
+are exploratory fits (`accepted:false`): full rank at one linearization
+does not establish a positive-energy nonlinear solution, continuous
+moment closure, or the final momentum gate.
+
+Widening the mode-amplitude bounds and strengthening the swirl-floor
+penalty (`delayed_remote_moment_repair_near5wide.json`) does not change
+the conclusion: the optimizer reaches its evaluation limit with
+training defect `.03192`, holdout defect `.02919`, and minimum relative
+swirl energy `.10882`. The local cone samples remain unchanged; sampled
+remote momentum RMS is `6.68e4` versus `6.04e4` before correction.
+The next repair should explicitly preserve positive swirl energy and
+separate the `S/I` coupling, rather than extend this generic bounded
+least-squares search.
