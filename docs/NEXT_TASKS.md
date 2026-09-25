@@ -12,6 +12,11 @@ reusable subroutine, not a substitute for that construction.
 
 The current executable parameter-selection chain already contains the actual
 outgoing pressure/sigma-side work and the theorem-faithful Lambda/C algebra.
+The ST073 exploratory bridge now has separated smooth directions that close
+two **physical** tangential outer moments on two sampled scales, but raise
+complete momentum about fourfold; see `ST073_SEPARATED_MOMENT_CONSTRUCTION.md`.
+Use those directions as a conditioning prototype, not as the paper's five
+leading-profile moments or a recursive correction.
 The next Stage-1 inputs are therefore the actual coefficient-family
 `remainderBound/remainderLip`, the certified complex compact-set `realPartSup`,
 and the resulting coefficient-space fixed point `phi/u/average/pressure`.

@@ -1,0 +1,104 @@
+{
+  "source": "Independent direct FD and radial integration of separated exact-moment field",
+  "rows": [
+    {
+      "k": 11.0,
+      "direct_momentum_max": 1373207.7750612567,
+      "direct_divergence_max": 4.170436636030672e-06,
+      "edges": [
+        {
+          "eta": -0.2,
+          "fitted_outer_stress": [
+            1.892535626167215e-09,
+            -2.2106190487814983e-07
+          ],
+          "original_outer_stress": [
+            -2.664260131238582,
+            211.30473611567106
+          ],
+          "norm_ratio": 1.0461310023117222e-09
+        },
+        {
+          "eta": 0.2,
+          "fitted_outer_stress": [
+            -4.560786291945977e-09,
+            1.3861337927770907e-07
+          ],
+          "original_outer_stress": [
+            -3.5273150792804513,
+            -210.57975225645131
+          ],
+          "norm_ratio": 6.585103110524566e-10
+        }
+      ],
+      "hotspot_field_difference_max": 0.0
+    },
+    {
+      "k": 15.0,
+      "direct_momentum_max": 85509606.44856536,
+      "direct_divergence_max": 6.718843064845714e-05,
+      "edges": [
+        {
+          "eta": -0.2,
+          "fitted_outer_stress": [
+            0.6876052380028408,
+            -1.2090999499677273
+          ],
+          "original_outer_stress": [
+            -26.85092033025584,
+            3332.624576452526
+          ],
+          "norm_ratio": 0.00041735823023367365
+        },
+        {
+          "eta": 0.2,
+          "fitted_outer_stress": [
+            0.6854764188145213,
+            1.220510969771776
+          ],
+          "original_outer_stress": [
+            -40.81002273318046,
+            -3320.054689789051
+          ],
+          "norm_ratio": 0.0004215968467640709
+        }
+      ],
+      "hotspot_field_difference_max": 0.0
+    },
+    {
+      "k": 19.0,
+      "direct_momentum_max": 5324368896.92835,
+      "direct_divergence_max": 0.001086029525140475,
+      "edges": [
+        {
+          "eta": -0.2,
+          "fitted_outer_stress": [
+            -2.4288504976083755e-06,
+            -4.70456793866858e-05
+          ],
+          "original_outer_stress": [
+            -182.55355066935982,
+            52584.051449252256
+          ],
+          "norm_ratio": 8.958619622442084e-10
+        },
+        {
+          "eta": 0.2,
+          "fitted_outer_stress": [
+            -2.9456773532149002e-06,
+            4.2638556742957435e-05
+          ],
+          "original_outer_stress": [
+            -408.3433877906267,
+            -52367.43257902749
+          ],
+          "norm_ratio": 8.161348572887581e-10
+        }
+      ],
+      "hotspot_field_difference_max": 0.0
+    }
+  ],
+  "scope": "Three finite scale slices, two axial sides. Exact field equality at sampled y=.05 hotspots preserves their previously reported local physical cone analogue, but no open support cone, full-space closure, global energy, or PDE acceptance is claimed.",
+  "accepted": false,
+  "scale_recursion_established": false
+}

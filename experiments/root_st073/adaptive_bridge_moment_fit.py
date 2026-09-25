@@ -17,7 +17,8 @@ from radial_continuation import ROOT
 from wide_modes import WideJointModes
 
 
-def moment_slices(inner, base, zero, orders=(11.0, 19.0), n=12):
+def moment_slices(inner, base, zero, orders=(11.0, 19.0), n=12,
+                  unit_fields=None):
     nodes, weights = leggauss(n)
     output = []
     for k in orders:
@@ -45,10 +46,10 @@ def moment_slices(inner, base, zero, orders=(11.0, 19.0), n=12):
         args = (points, tau, 0.0005 * np.sqrt(inner.nu * tau), 0.0001 * tau)
         baseline = jets(zero, *args)
         changes = []
-        for j in range(24):
-            unit = np.zeros(24)
-            unit[j] = 1.0
-            sample = jets(WideJointModes(base, unit), *args)
+        fields = unit_fields if unit_fields is not None else [
+            WideJointModes(base, np.eye(24)[j]) for j in range(24)]
+        for field in fields:
+            sample = jets(field, *args)
             changes.append(tuple(x - y for x, y in zip(sample, baseline)))
         modes = tuple(np.stack([change[i] for change in changes])
                       for i in range(3))

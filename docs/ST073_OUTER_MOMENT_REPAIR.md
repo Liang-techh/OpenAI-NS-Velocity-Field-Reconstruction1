@@ -55,3 +55,7 @@ moment-correcting directions with explicit control of their effect on
 the local cone, then couple them to the scale-dependent residual update.
 Further fixed-profile peak fitting alone cannot enforce this exterior
 condition or the measured interscale contraction gate.
+
+The follow-up separated-bump construction closes the sampled two-component
+outer moments at two scales, but exposes a fourfold momentum cost; see
+`ST073_SEPARATED_MOMENT_CONSTRUCTION.md`.
