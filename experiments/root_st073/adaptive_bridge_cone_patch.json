@@ -1,0 +1,604 @@
+{
+  "source": "Selected two-sided grid-aware mean correction",
+  "y_nodes": [
+    0.02,
+    0.025,
+    0.03,
+    0.035,
+    0.04,
+    0.045,
+    0.05,
+    0.055,
+    0.06,
+    0.08,
+    0.1,
+    0.12,
+    0.16,
+    0.2
+  ],
+  "slices": [
+    {
+      "k": 11.0,
+      "eta": -0.2,
+      "rows": [
+        {
+          "y": 0.02,
+          "radius": 0.0003664821044660711,
+          "momentum_norm": 47177.07402479134,
+          "lambda_squared": 4465181.780267081,
+          "cone_pass": false,
+          "target_dot_N": 2.038110968699247,
+          "target_dot_K": 1.6291798128614614,
+          "cone_ratio": 1.4030249400827743
+        },
+        {
+          "y": 0.025,
+          "radius": 0.00038762530280065207,
+          "momentum_norm": 78938.26735924193,
+          "lambda_squared": 4621112.18533946,
+          "cone_pass": false,
+          "target_dot_N": 1.2518050719018665,
+          "target_dot_K": 2.030491490499958,
+          "cone_ratio": 3.0728830789559876
+        },
+        {
+          "y": 0.03,
+          "radius": 0.0004087685011352331,
+          "momentum_norm": 127627.13130486927,
+          "lambda_squared": 5038039.620359602,
+          "cone_pass": false,
+          "target_dot_N": -0.5227374176556803,
+          "target_dot_K": 2.265113105247186,
+          "cone_ratio": 8.164652103434822
+        },
+        {
+          "y": 0.035,
+          "radius": 0.0004299116994698141,
+          "momentum_norm": 183685.09767504132,
+          "lambda_squared": 5790060.480498787,
+          "cone_pass": false,
+          "target_dot_N": -3.357743146570384,
+          "target_dot_K": 2.251281390081683,
+          "cone_ratio": 1.1566471590253025
+        },
+        {
+          "y": 0.04,
+          "radius": 0.0004510548978043952,
+          "momentum_norm": 243035.8449512748,
+          "lambda_squared": 6747941.526836276,
+          "cone_pass": true,
+          "target_dot_N": -7.268805029582883,
+          "target_dot_K": 1.884292096897877,
+          "cone_ratio": 0.3803212871324835
+        },
+        {
+          "y": 0.045,
+          "radius": 0.00047219809613897613,
+          "momentum_norm": 303383.00986749504,
+          "lambda_squared": 7474368.820290887,
+          "cone_pass": true,
+          "target_dot_N": -12.223249247193708,
+          "target_dot_K": 1.0230324820922183,
+          "cone_ratio": 0.09730285448328248
+        },
+        {
+          "y": 0.05,
+          "radius": 0.0004933412944735572,
+          "momentum_norm": 363192.67791340523,
+          "lambda_squared": 7044706.441615796,
+          "cone_pass": true,
+          "target_dot_N": -18.13970302710775,
+          "target_dot_K": -0.5270293788605911,
+          "cone_ratio": 0.024228361293504592
+        },
+        {
+          "y": 0.055,
+          "radius": 0.0005144844928081382,
+          "momentum_norm": 421364.46705372614,
+          "lambda_squared": 3733002.768788987,
+          "cone_pass": true,
+          "target_dot_N": -24.875812936452686,
+          "target_dot_K": -3.0368533375708835,
+          "cone_ratio": 0.054531627123673224
+        },
+        {
+          "y": 0.06,
+          "radius": 0.0005356276911427192,
+          "momentum_norm": 477085.7908436668,
+          "lambda_squared": -5527740.148833623,
+          "cone_pass": false
+        },
+        {
+          "y": 0.08,
+          "radius": 0.0006202004844810434,
+          "momentum_norm": 665490.4264213567,
+          "lambda_squared": -260637295.2834835,
+          "cone_pass": false
+        },
+        {
+          "y": 0.1,
+          "radius": 0.0007047732778193675,
+          "momentum_norm": 787525.039645384,
+          "lambda_squared": -838317172.0080513,
+          "cone_pass": false
+        },
+        {
+          "y": 0.12,
+          "radius": 0.0007893460711576915,
+          "momentum_norm": 840680.5885196755,
+          "lambda_squared": -591450360.44934,
+          "cone_pass": false
+        },
+        {
+          "y": 0.16,
+          "radius": 0.0009584916578343396,
+          "momentum_norm": 766921.4451456749,
+          "lambda_squared": -184607717.74045506,
+          "cone_pass": false
+        },
+        {
+          "y": 0.2,
+          "radius": 0.001127637244510988,
+          "momentum_norm": 527375.1973802876,
+          "lambda_squared": 6938748.1189368265,
+          "cone_pass": false,
+          "target_dot_N": 262.15225679309657,
+          "target_dot_K": -182.2930551266653,
+          "cone_ratio": 0.10199178852412451
+        }
+      ],
+      "passing_count": 4,
+      "passing_y": [
+        0.04,
+        0.045,
+        0.05,
+        0.055
+      ],
+      "sampled_passing_radius_span": [
+        0.0004510548978043952,
+        0.0005144844928081382
+      ],
+      "sampled_passing_radius_width": 6.342959500374299e-05,
+      "sampled_span_diffusion_time": 4.0233135223388577e-07,
+      "tenth_tau_to_diffusion_time": 60.681481481481626
+    },
+    {
+      "k": 11.0,
+      "eta": 0.2,
+      "rows": [
+        {
+          "y": 0.02,
+          "radius": 0.0003664821044660711,
+          "momentum_norm": 46600.31093248412,
+          "lambda_squared": 4618894.516532348,
+          "cone_pass": false,
+          "target_dot_N": 1.892003435474431,
+          "target_dot_K": -1.57946340244422,
+          "cone_ratio": 1.4658655721845406
+        },
+        {
+          "y": 0.025,
+          "radius": 0.00038762530280065207,
+          "momentum_norm": 79599.92160912996,
+          "lambda_squared": 4818776.188317555,
+          "cone_pass": false,
+          "target_dot_N": 1.0632782859997274,
+          "target_dot_K": -1.9593838347257408,
+          "cone_ratio": 3.464586509399048
+        },
+        {
+          "y": 0.03,
+          "radius": 0.0004087685011352331,
+          "momentum_norm": 128471.49454712131,
+          "lambda_squared": 5281068.571041835,
+          "cone_pass": false,
+          "target_dot_N": -0.7459099704936003,
+          "target_dot_K": -2.1686473800024206,
+          "cone_ratio": 5.410589022317927
+        },
+        {
+          "y": 0.035,
+          "radius": 0.0004299116994698141,
+          "momentum_norm": 184321.68659334767,
+          "lambda_squared": 6068748.036997655,
+          "cone_pass": false,
+          "target_dot_N": -3.605625961772479,
+          "target_dot_K": -2.12502624870763,
+          "cone_ratio": 1.0035229934780572
+        },
+        {
+          "y": 0.04,
+          "radius": 0.0004510548978043952,
+          "momentum_norm": 243317.68714623773,
+          "lambda_squared": 7045842.065809367,
+          "cone_pass": true,
+          "target_dot_N": -7.530068164321676,
+          "target_dot_K": -1.7240157049352707,
+          "cone_ratio": 0.3325096033005423
+        },
+        {
+          "y": 0.045,
+          "radius": 0.00047219809613897613,
+          "momentum_norm": 303254.5905821302,
+          "lambda_squared": 7777795.485628668,
+          "cone_pass": true,
+          "target_dot_N": -12.485706034795129,
+          "target_dot_K": -0.8260034466668095,
+          "cone_ratio": 0.07657983933774506
+        },
+        {
+          "y": 0.05,
+          "radius": 0.0004933412944735572,
+          "momentum_norm": 362642.49210339034,
+          "lambda_squared": 7364140.093301826,
+          "cone_pass": true,
+          "target_dot_N": -18.39094604297115,
+          "target_dot_K": 0.7596603425052105,
+          "cone_ratio": 0.03466030558116339
+        },
+        {
+          "y": 0.055,
+          "radius": 0.0005144844928081382,
+          "momentum_norm": 420405.694138602,
+          "lambda_squared": 4150876.8342353245,
+          "cone_pass": true,
+          "target_dot_N": -25.104621228621223,
+          "target_dot_K": 3.2958014881589053,
+          "cone_ratio": 0.06135650283958978
+        },
+        {
+          "y": 0.06,
+          "radius": 0.0005356276911427192,
+          "momentum_norm": 475746.47230263,
+          "lambda_squared": -4753788.829357278,
+          "cone_pass": false
+        },
+        {
+          "y": 0.08,
+          "radius": 0.0006202004844810434,
+          "momentum_norm": 663041.8133892802,
+          "lambda_squared": -242209632.40157473,
+          "cone_pass": false
+        },
+        {
+          "y": 0.1,
+          "radius": 0.0007047732778193675,
+          "momentum_norm": 784687.6149492745,
+          "lambda_squared": -822729020.502838,
+          "cone_pass": false
+        },
+        {
+          "y": 0.12,
+          "radius": 0.0007893460711576915,
+          "momentum_norm": 838071.0617022857,
+          "lambda_squared": -609684018.7938898,
+          "cone_pass": false
+        },
+        {
+          "y": 0.16,
+          "radius": 0.0009584916578343396,
+          "momentum_norm": 765881.8765100254,
+          "lambda_squared": -192151121.43362823,
+          "cone_pass": false
+        },
+        {
+          "y": 0.2,
+          "radius": 0.001127637244510988,
+          "momentum_norm": 527874.1105930855,
+          "lambda_squared": 5112635.73837834,
+          "cone_pass": false,
+          "target_dot_N": 261.4492746006818,
+          "target_dot_K": 182.71599404675408,
+          "cone_ratio": 0.08786555171147724
+        }
+      ],
+      "passing_count": 4,
+      "passing_y": [
+        0.04,
+        0.045,
+        0.05,
+        0.055
+      ],
+      "sampled_passing_radius_span": [
+        0.0004510548978043952,
+        0.0005144844928081382
+      ],
+      "sampled_passing_radius_width": 6.342959500374299e-05,
+      "sampled_span_diffusion_time": 4.0233135223388577e-07,
+      "tenth_tau_to_diffusion_time": 60.681481481481626
+    },
+    {
+      "k": 19.0,
+      "eta": -0.2,
+      "rows": [
+        {
+          "y": 0.02,
+          "radius": 2.2905131529129444e-05,
+          "momentum_norm": 197338017.39425123,
+          "lambda_squared": 319945666447.57794,
+          "cone_pass": false,
+          "target_dot_N": 636.4763103750108,
+          "target_dot_K": 440.5201106004278,
+          "cone_ratio": 1.1121145944368593
+        },
+        {
+          "y": 0.025,
+          "radius": 2.4226581425040754e-05,
+          "momentum_norm": 304858439.1989865,
+          "lambda_squared": 334731048755.82874,
+          "cone_pass": false,
+          "target_dot_N": 478.02161685653925,
+          "target_dot_K": 549.6805531530291,
+          "cone_ratio": 1.9994551873029927
+        },
+        {
+          "y": 0.03,
+          "radius": 2.5548031320952068e-05,
+          "momentum_norm": 496547404.34225005,
+          "lambda_squared": 364304411982.8837,
+          "cone_pass": false,
+          "target_dot_N": 66.22832384491194,
+          "target_dot_K": 615.2523733516836,
+          "cone_ratio": 16.129391932004708
+        },
+        {
+          "y": 0.035,
+          "radius": 2.686948121686338e-05,
+          "momentum_norm": 724394111.9520019,
+          "lambda_squared": 413304397157.85785,
+          "cone_pass": false,
+          "target_dot_N": -618.7952072520723,
+          "target_dot_K": 616.1820905102735,
+          "cone_ratio": 1.5911124307943438
+        },
+        {
+          "y": 0.04,
+          "radius": 2.81909311127747e-05,
+          "momentum_norm": 968186995.039769,
+          "lambda_squared": 471635359955.6088,
+          "cone_pass": true,
+          "target_dot_N": -1581.8739550698185,
+          "target_dot_K": 525.5495735783894,
+          "cone_ratio": 0.45316693862710383
+        },
+        {
+          "y": 0.045,
+          "radius": 2.9512381008686008e-05,
+          "momentum_norm": 1217331352.0808685,
+          "lambda_squared": 506885124206.69305,
+          "cone_pass": true,
+          "target_dot_N": -2815.0014366183227,
+          "target_dot_K": 307.07518058434977,
+          "cone_ratio": 0.11769942383419592
+        },
+        {
+          "y": 0.05,
+          "radius": 3.0833830904597325e-05,
+          "momentum_norm": 1465016914.7922487,
+          "lambda_squared": 451397266207.8857,
+          "cone_pass": true,
+          "target_dot_N": -4297.2438141226885,
+          "target_dot_K": -89.25744068087651,
+          "cone_ratio": 0.015796514797438155
+        },
+        {
+          "y": 0.055,
+          "radius": 3.215528080050864e-05,
+          "momentum_norm": 1706446389.793239,
+          "lambda_squared": 179703252376.62808,
+          "cone_pass": true,
+          "target_dot_N": -5991.512452009273,
+          "target_dot_K": -733.0856629532664,
+          "cone_ratio": 0.0435666515396804
+        },
+        {
+          "y": 0.06,
+          "radius": 3.347673069641995e-05,
+          "momentum_norm": 1938108422.108338,
+          "lambda_squared": -530010407614.3862,
+          "cone_pass": false
+        },
+        {
+          "y": 0.08,
+          "radius": 3.876253028006521e-05,
+          "momentum_norm": 2724171760.1772604,
+          "lambda_squared": -18957810021018.887,
+          "cone_pass": false
+        },
+        {
+          "y": 0.1,
+          "radius": 4.4048329863710466e-05,
+          "momentum_norm": 3236900103.4983387,
+          "lambda_squared": -58024561860089.945,
+          "cone_pass": false
+        },
+        {
+          "y": 0.12,
+          "radius": 4.933412944735572e-05,
+          "momentum_norm": 3464422681.9277596,
+          "lambda_squared": -40702435577666.99,
+          "cone_pass": false
+        },
+        {
+          "y": 0.16,
+          "radius": 5.990572861464623e-05,
+          "momentum_norm": 3169559843.1245613,
+          "lambda_squared": -12747370115044.754,
+          "cone_pass": false
+        },
+        {
+          "y": 0.2,
+          "radius": 7.047732778193675e-05,
+          "momentum_norm": 2172184758.2321696,
+          "lambda_squared": 479486237987.1507,
+          "cone_pass": false,
+          "target_dot_N": 67424.32961500598,
+          "target_dot_K": -45628.743461246304,
+          "cone_ratio": 0.09923094359816552
+        }
+      ],
+      "passing_count": 4,
+      "passing_y": [
+        0.04,
+        0.045,
+        0.05,
+        0.055
+      ],
+      "sampled_passing_radius_span": [
+        2.81909311127747e-05,
+        3.215528080050864e-05
+      ],
+      "sampled_passing_radius_width": 3.964349687733937e-06,
+      "sampled_span_diffusion_time": 1.5716068446636163e-09,
+      "tenth_tau_to_diffusion_time": 60.681481481481626
+    },
+    {
+      "k": 19.0,
+      "eta": 0.2,
+      "rows": [
+        {
+          "y": 0.02,
+          "radius": 2.2905131529129444e-05,
+          "momentum_norm": 192529026.87569675,
+          "lambda_squared": 330506237197.1344,
+          "cone_pass": false,
+          "target_dot_N": 598.8199791154541,
+          "target_dot_K": -427.32541663640546,
+          "cone_ratio": 1.1496096847554436
+        },
+        {
+          "y": 0.025,
+          "radius": 2.4226581425040754e-05,
+          "momentum_norm": 305953330.1095011,
+          "lambda_squared": 348033352914.992,
+          "cone_pass": false,
+          "target_dot_N": 429.5577886835777,
+          "target_dot_K": -530.9206434246925,
+          "cone_ratio": 2.137994832725905
+        },
+        {
+          "y": 0.03,
+          "radius": 2.5548031320952068e-05,
+          "momentum_norm": 498923259.9387303,
+          "lambda_squared": 380528215022.3274,
+          "cone_pass": false,
+          "target_dot_N": 9.050288230244531,
+          "target_dot_K": -589.9262610153665,
+          "cone_ratio": 112.05957639455151
+        },
+        {
+          "y": 0.035,
+          "radius": 2.686948121686338e-05,
+          "momentum_norm": 726043995.0754722,
+          "lambda_squared": 431844944156.3969,
+          "cone_pass": false,
+          "target_dot_N": -682.0278466761231,
+          "target_dot_K": -583.1657857323514,
+          "cone_ratio": 1.351608803107681
+        },
+        {
+          "y": 0.04,
+          "radius": 2.81909311127747e-05,
+          "momentum_norm": 968368890.5803667,
+          "lambda_squared": 491449992614.89935,
+          "cone_pass": true,
+          "target_dot_N": -1648.137314506715,
+          "target_dot_K": -483.773080327989,
+          "cone_ratio": 0.39711750205054963
+        },
+        {
+          "y": 0.045,
+          "radius": 2.9512381008686008e-05,
+          "momentum_norm": 1215764125.335756,
+          "lambda_squared": 527221120146.52704,
+          "cone_pass": true,
+          "target_dot_N": -2881.050384505302,
+          "target_dot_K": -255.86597511866538,
+          "cone_ratio": 0.09559510589448297
+        },
+        {
+          "y": 0.05,
+          "radius": 3.0833830904597325e-05,
+          "momentum_norm": 1461630633.8301044,
+          "lambda_squared": 473402556531.796,
+          "cone_pass": true,
+          "target_dot_N": -4359.784057052961,
+          "target_dot_K": 149.54873125145724,
+          "cone_ratio": 0.0263332524449756
+        },
+        {
+          "y": 0.055,
+          "radius": 3.215528080050864e-05,
+          "momentum_norm": 1701285634.5508595,
+          "lambda_squared": 209979076956.57755,
+          "cone_pass": true,
+          "target_dot_N": -6047.582726799168,
+          "target_dot_K": 799.9725694041487,
+          "cone_ratio": 0.0505768059075085
+        },
+        {
+          "y": 0.06,
+          "radius": 3.347673069641995e-05,
+          "momentum_norm": 1931285412.6811872,
+          "lambda_squared": -471812407696.70154,
+          "cone_pass": false
+        },
+        {
+          "y": 0.08,
+          "radius": 3.876253028006521e-05,
+          "momentum_norm": 2712423095.1594987,
+          "lambda_squared": -17619959252158.656,
+          "cone_pass": false
+        },
+        {
+          "y": 0.1,
+          "radius": 4.4048329863710466e-05,
+          "momentum_norm": 3223287356.718779,
+          "lambda_squared": -57024739331035.734,
+          "cone_pass": false
+        },
+        {
+          "y": 0.12,
+          "radius": 4.933412944735572e-05,
+          "momentum_norm": 3451622298.3358507,
+          "lambda_squared": -41960094045586.79,
+          "cone_pass": false
+        },
+        {
+          "y": 0.16,
+          "radius": 5.990572861464623e-05,
+          "momentum_norm": 3163548343.6246014,
+          "lambda_squared": -13267779189527.201,
+          "cone_pass": false
+        },
+        {
+          "y": 0.2,
+          "radius": 7.047732778193675e-05,
+          "momentum_norm": 2174158011.317685,
+          "lambda_squared": 353037787324.9495,
+          "cone_pass": false,
+          "target_dot_N": 67235.37947993336,
+          "target_dot_K": 45712.006252034334,
+          "cone_ratio": 0.08542365039363584
+        }
+      ],
+      "passing_count": 4,
+      "passing_y": [
+        0.04,
+        0.045,
+        0.05,
+        0.055
+      ],
+      "sampled_passing_radius_span": [
+        2.81909311127747e-05,
+        3.215528080050864e-05
+      ],
+      "sampled_passing_radius_width": 3.964349687733937e-06,
+      "sampled_span_diffusion_time": 1.5716068446636163e-09,
+      "tenth_tau_to_diffusion_time": 60.681481481481626
+    }
+  ],
+  "scope": "Fourteen radial nodes at each of eta=\u00b1.2 and k=11,19. A passing set of nodes is not a certified continuous support interval; no wave amplitude/phase solve or full momentum acceptance.",
+  "accepted": false,
+  "pde_validated": false
+}

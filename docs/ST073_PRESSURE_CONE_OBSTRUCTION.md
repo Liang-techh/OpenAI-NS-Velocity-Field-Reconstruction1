@@ -49,3 +49,8 @@ are relevant structural requirements; neither experiment here
 implements their full coupled construction. Full-domain momentum max,
 spatial-volume L2, finite energy, and the critical-time limit remain
 unproved.
+
+A later joint mean-mode search opens sampled physical cone passes at
+two axial hotspots on both scales; see `ST073_BRIDGE_CONE_CO_DESIGN.md`.
+Its holdout momentum still regresses, so the accepted-state conclusion
+above is unchanged.

@@ -13,7 +13,7 @@ from radial_peak_cone import operator, stress_primitive
 from wide_modes import WideJointModes
 
 
-def run():
+def run(coefficients=None, output_name="adaptive_bridge_cone_overlap.json"):
     inner = AdaptiveRadialAdapter()
     tau0 = 0.5*2.0**(-6)
     point = inner.from_similarity([1.0/64.0], [0.0], tau0)
@@ -22,7 +22,8 @@ def run():
     joined = JoinedField(inner=inner, join_X=1.0/64.0,
                          heat_amplitude=heat_amplitude, outer_ratio=16.0)
     base = CachedAdaptiveBridge(joined)
-    coefficients = json.loads((ROOT/"adaptive_join_multiscale_fit.json").read_text())["amplitudes"]
+    if coefficients is None:
+        coefficients = json.loads((ROOT/"adaptive_join_multiscale_fit.json").read_text())["amplitudes"]
     field = WideJointModes(base, coefficients)
     scales = []
     for k in (11.0, 19.0):
@@ -69,7 +70,7 @@ def run():
         scope="15 bridge nodes at each of two times. Lambda condition evaluated everywhere; radial stress primitive and cone ratio only where lambda squared is positive. This physical full-residual analogue is not the paper's normalized leading cone, and grid passes are not an open-patch certificate.",
         accepted=False, pde_validated=False,
     )
-    output = ROOT/"adaptive_bridge_cone_overlap.json"
+    output = ROOT/output_name
     output.write_bytes((json.dumps(report, indent=2)+"\n").encode())
     print(json.dumps(dict(output=str(output), counts=[
         {key: scale[key] for key in ("k", "positive_lambda_count", "cone_pass_count",
