@@ -1,0 +1,351 @@
+{
+  "source": "delayed_axial_split_amplitude_lp.json",
+  "response_cache": "delayed_axial_split_swirl_response.npz",
+  "split_amplitudes": [
+    0.038149999999999996,
+    0.03275
+  ],
+  "tau": 0.011048543456039806,
+  "X": [
+    1.008,
+    1.012,
+    1.016,
+    1.02,
+    1.03,
+    1.008,
+    1.012,
+    1.016,
+    1.02,
+    1.03,
+    1.008,
+    1.012,
+    1.016,
+    1.02,
+    1.03
+  ],
+  "eta": [
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.2,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.3,
+    0.3,
+    0.3,
+    0.3,
+    0.3
+  ],
+  "pointwise": [
+    {
+      "X": 1.008,
+      "eta": 0.2,
+      "lambda_squared": 5513.684642083174,
+      "target": [
+        -1.0002677825051582,
+        -2.210838067000531
+      ],
+      "free_axial": true,
+      "residual_norm": 50854.47168122026
+    },
+    {
+      "X": 1.012,
+      "eta": 0.2,
+      "lambda_squared": 9063.6614664934,
+      "target": [
+        -1.1163351168894118,
+        0.6987538988546917
+      ],
+      "free_axial": true,
+      "residual_norm": 141265.51446941856
+    },
+    {
+      "X": 1.016,
+      "eta": 0.2,
+      "lambda_squared": 12064.30220493821,
+      "target": [
+        -1.302484638167846,
+        5.475585769223116
+      ],
+      "free_axial": true,
+      "residual_norm": 176805.72184301892
+    },
+    {
+      "X": 1.02,
+      "eta": 0.2,
+      "lambda_squared": 19645.49495886384,
+      "target": [
+        -1.8047131199652857,
+        10.589785164013666
+      ],
+      "free_axial": true,
+      "residual_norm": 162762.25206058088
+    },
+    {
+      "X": 1.03,
+      "eta": 0.2,
+      "lambda_squared": 4186.435874298356,
+      "target": [
+        -1.3620198829973074,
+        15.157298850199027
+      ],
+      "free_axial": true,
+      "residual_norm": 71949.82505097709
+    },
+    {
+      "X": 1.008,
+      "eta": 0.25,
+      "lambda_squared": 5202.4742316876645,
+      "target": [
+        -0.9274176542853696,
+        -3.1461154770038813
+      ],
+      "free_axial": true,
+      "residual_norm": 18967.709943880713
+    },
+    {
+      "X": 1.012,
+      "eta": 0.25,
+      "lambda_squared": 4758.0103602914505,
+      "target": [
+        -0.8397088592786116,
+        -2.441456396973152
+      ],
+      "free_axial": true,
+      "residual_norm": 27996.05519723659
+    },
+    {
+      "X": 1.016,
+      "eta": 0.25,
+      "lambda_squared": 5043.324362905267,
+      "target": [
+        -0.8750708395104071,
+        -2.085775853732045
+      ],
+      "free_axial": true,
+      "residual_norm": 49722.85521646913
+    },
+    {
+      "X": 1.02,
+      "eta": 0.25,
+      "lambda_squared": 13625.892796550579,
+      "target": [
+        -1.5126233594280851,
+        0.0668027274632102
+      ],
+      "free_axial": true,
+      "residual_norm": 160520.86489773678
+    },
+    {
+      "X": 1.03,
+      "eta": 0.25,
+      "lambda_squared": 442.3947318633285,
+      "target": [
+        -0.5296077606782457,
+        17.701276579545315
+      ],
+      "free_axial": true,
+      "residual_norm": 279526.55677377153
+    },
+    {
+      "X": 1.008,
+      "eta": 0.3,
+      "lambda_squared": 5336.918209046863,
+      "target": [
+        -0.8284475871602046,
+        -2.115672475127162
+      ],
+      "free_axial": true,
+      "residual_norm": 81510.56059276161
+    },
+    {
+      "X": 1.012,
+      "eta": 0.3,
+      "lambda_squared": 6665.704782662557,
+      "target": [
+        -0.8835054001896724,
+        2.27637312010942
+      ],
+      "free_axial": true,
+      "residual_norm": 202551.2120542348
+    },
+    {
+      "X": 1.016,
+      "eta": 0.3,
+      "lambda_squared": 8393.593763340874,
+      "target": [
+        -0.9757027229647429,
+        8.959693878363845
+      ],
+      "free_axial": true,
+      "residual_norm": 230237.33522693292
+    },
+    {
+      "X": 1.02,
+      "eta": 0.3,
+      "lambda_squared": 16213.721560186794,
+      "target": [
+        -1.4743113177267904,
+        16.010488604963808
+      ],
+      "free_axial": true,
+      "residual_norm": 227849.99181869617
+    },
+    {
+      "X": 1.03,
+      "eta": 0.3,
+      "lambda_squared": 14438.498007095106,
+      "target": [
+        -1.0001950451609103,
+        31.297861591436376
+      ],
+      "free_axial": true,
+      "residual_norm": 164570.6741784147
+    }
+  ],
+  "free_axial_count": 15,
+  "train_before": {
+    "max": 279526.55677377153,
+    "rms": 157621.48642221667
+  },
+  "nearby_before": {
+    "max": 556318.4426518457,
+    "rms": 252131.78444246488
+  },
+  "moments": [
+    {
+      "eta": 0.2,
+      "defect": [
+        5.131483626907851e-09,
+        0.003233778575681079,
+        0.001971561283408335,
+        -0.0058391915386457605,
+        0.0026943121691900274
+      ],
+      "min_relative_E": 0.11075542719639482
+    },
+    {
+      "eta": 0.25,
+      "defect": [
+        -1.6719813339394207e-08,
+        0.004485546466811208,
+        -0.022432214739704,
+        0.004736176255680569,
+        0.0036308851361992467
+      ],
+      "min_relative_E": 0.11090145803868073
+    },
+    {
+      "eta": 0.3,
+      "defect": [
+        -4.073382603442255e-08,
+        0.0030845598514872563,
+        -0.023702868657807796,
+        0.01632311978832135,
+        0.0025520704826949014
+      ],
+      "min_relative_E": 0.11073455707151472
+    }
+  ],
+  "pressure_fits": {
+    "old_six": {
+      "active_count": 6,
+      "feasible": true,
+      "coefficient_limit": null,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "coefficients": [
+        -375.95608336559565,
+        -63.26526377522621,
+        -2621.7228112087632,
+        4530.7787005807795,
+        -20552.7441609492,
+        -575953.4450024981,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "optimized_component_max": 520408230.8744362,
+      "actual_component_max": 520408230.87443644,
+      "min_cone_slack": -8.526512829121202e-14,
+      "train_max": 568431923.7571056,
+      "nearby_max": 369470460.5630649
+    },
+    "all_eighteen": {
+      "active_count": 18,
+      "feasible": true,
+      "coefficient_limit": null,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "coefficients": [
+        -1468.4632667785552,
+        1269.3218618248727,
+        -11446.510614632125,
+        5911.90639553915,
+        364619.69205482496,
+        104350.9105614595,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -23.816545897158523,
+        64.47676853615266,
+        78.38234101480434,
+        -370.6869154132743,
+        2288.779449044369,
+        -1543.1405715115889
+      ],
+      "optimized_component_max": 332950405.14392227,
+      "actual_component_max": 332950405.1439224,
+      "min_cone_slack": -4.405364961712621e-13,
+      "train_max": 369490891.02470493,
+      "nearby_max": 365255928.2770498
+    },
+    "all_cap_1e3": {
+      "active_count": 18,
+      "feasible": true,
+      "coefficient_limit": 1000.0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "coefficients": [
+        -176.43269508154674,
+        867.8604681789844,
+        -1000.0,
+        1000.0,
+        -1000.0,
+        1000.0,
+        -999.9999999999999,
+        -935.1630167565235,
+        -978.1977578548428,
+        -1000.0,
+        -1000.0000000000001,
+        -1000.0000000000001,
+        992.7840655837967,
+        1000.0,
+        1000.0000000000001,
+        551.7160877418189,
+        580.6582670475148,
+        568.5109944759952
+      ],
+      "optimized_component_max": 441530131.51680326,
+      "actual_component_max": 441530131.5168038,
+      "min_cone_slack": -5.002664948960955e-13,
+      "train_max": 514879235.99687386,
+      "nearby_max": 473503061.6805093
+    }
+  },
+  "scope": "Two axial-split solenoidal swirl corrections with updated physical stress at formerly blocked nodes; sampled pressure cone LP on 15 nodes, full center/nearby momentum and three-slice moments. No continuous cone, supported wave, volume L2, or PDE acceptance.",
+  "accepted": false
+}

@@ -1206,3 +1206,47 @@ next attempt needs a mean/stress cone open over a physically much wider
 radial-axial-time region, with a transported phase, damped amplitude,
 moment closure and exact-curl remainder budget solved together before
 the full PDE gates can be tested.
+
+## Axial-split outer swirl and fifteen-node cone
+
+The shifted outer swirl in the preceding section fixes `lambda_squared`
+at `X=1.03`, but free axial stress still fails at `eta=.2,.3`.
+`delayed_axial_split_swirl_response.py` adds two more exact-solenoidal
+swirl bumps on the same radial support `(1.02,1.06)`, with disjoint
+axial supports `(.16,.24)` and `(.26,.34)`. Their full quadratic
+Cartesian stress response is cached at the two blocked nodes. The
+smallest sampled amplitudes entering the pointwise free-axial `.8`
+cone with `.2` stress margin are `.02925` and `.0305`; their local
+momentum norms are `80013` and `164973`. The modes vanish at the
+earlier `X<=1.02` nodes and at `eta=.25` at this sampled time.
+
+`delayed_axial_split_pressure_fit.py` combines both into one physical
+velocity field. All fifteen sampled nodes now pass the pointwise
+free-axial necessary condition, and the six-/eighteen-mode pressure
+cone linear programs become feasible. The initial minimal-amplitude
+choice is expensive: pressure-constrained component minmax is
+`3.43e9` for six modes and `2.31e9` for eighteen; a `|coefficient|<=1000`
+pressure bound is infeasible.
+
+`delayed_axial_split_amplitude_lp.py` then searches an `11x11` grid over
+the two pointwise-admissible amplitude intervals. Jointly increasing
+the split amplitudes to approximately `(.03815,.03275)` lowers the
+smallest possible maximum absolute pressure coefficient from `2859`
+to `315` while preserving all fifteen sampled cone inequalities.
+Re-evaluation with full center and nearby-time momentum confirms
+pressure-cone feasibility even under the `1000` coefficient cap.
+The tuned mean before pressure has maximum center residual `279527`
+and nearby-time maximum `556318`; after pressure, the best sampled
+eighteen-mode component minmax is still `3.33e8` (or `4.42e8` under
+the coefficient cap). The largest outgoing moment defect is `.02370`.
+Thus the added axial controls genuinely enlarge the sampled
+pressure-admissible cone, but do not yet produce a low-residual mean
+or exact moments.
+
+Even if a continuous cone were later proved across the entire
+`X=1.008..1.03` span, its optimistic radial halfwidth at `eta=.25`
+would be only about `8.34e-5`; the `.1*tau` pulse lasts roughly `1588`
+radial diffusion times across that width. This is a scale warning for
+the current pulse design, not a continuum exclusion. A wider
+mean/stress construction, moment repair, transported wave dynamics,
+and full spatial-volume momentum audit remain necessary.

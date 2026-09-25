@@ -1,0 +1,1061 @@
+{
+  "source": "delayed_axial_split_swirl_response.json",
+  "X": 1.03,
+  "etas": [
+    0.2,
+    0.3
+  ],
+  "amplitude_intervals": [
+    [
+      0.029249999999999998,
+      0.040374999999999994
+    ],
+    [
+      0.0305,
+      0.04175000000000001
+    ]
+  ],
+  "grid_shape": [
+    11,
+    11
+  ],
+  "original_amplitudes": [
+    0.029249999999999998,
+    0.0305
+  ],
+  "original_nearest_grid": {
+    "amplitudes": [
+      0.029249999999999998,
+      0.0305
+    ],
+    "pressure": {
+      "feasible": true,
+      "max_abs_coefficient": 2858.7787500887484,
+      "coefficients": [
+        2855.2187152948004,
+        2662.5760717502562,
+        -2858.7787500887484,
+        -2858.7787500887484,
+        -2858.7787500887484,
+        -2858.7787500887484,
+        29.1028453633898,
+        -3.957321380803478,
+        0.0,
+        0.0,
+        -2858.7787500887484,
+        -2858.7787500887484,
+        0.0,
+        0.0,
+        -102.01441214062761,
+        -48.14585305262121,
+        -2858.7787500887484,
+        -2858.7787500887484
+      ],
+      "min_cone_slack": -7.398526236102043e-13
+    }
+  },
+  "feasible_count": 121,
+  "best": {
+    "amplitudes": [
+      0.038149999999999996,
+      0.03275
+    ],
+    "pressure": {
+      "feasible": true,
+      "max_abs_coefficient": 315.06865724850195,
+      "coefficients": [
+        -68.57296946398611,
+        0.0,
+        -315.06865724850195,
+        -315.06865724850195,
+        -315.06865724850195,
+        -315.06865724850195,
+        -5.784104152100678,
+        0.0,
+        0.0,
+        0.0,
+        -315.06865724850195,
+        -315.06865724850195,
+        0.0,
+        0.0,
+        16.935718316057454,
+        0.0,
+        -315.06865724850195,
+        -315.06865724850195
+      ],
+      "min_cone_slack": -3.552713678800501e-14
+    }
+  },
+  "trials": [
+    {
+      "amplitudes": [
+        0.029249999999999998,
+        0.0305
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 2858.7787500887484
+    },
+    {
+      "amplitudes": [
+        0.029249999999999998,
+        0.031625
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 2858.7787500887484
+    },
+    {
+      "amplitudes": [
+        0.029249999999999998,
+        0.03275
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 2858.7787500887484
+    },
+    {
+      "amplitudes": [
+        0.029249999999999998,
+        0.033875
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 2858.7787500887484
+    },
+    {
+      "amplitudes": [
+        0.029249999999999998,
+        0.035
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 2858.7787500887484
+    },
+    {
+      "amplitudes": [
+        0.029249999999999998,
+        0.036125000000000004
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 2858.7787500887484
+    },
+    {
+      "amplitudes": [
+        0.029249999999999998,
+        0.037250000000000005
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 2858.7787500887484
+    },
+    {
+      "amplitudes": [
+        0.029249999999999998,
+        0.038375000000000006
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 2858.7787500887484
+    },
+    {
+      "amplitudes": [
+        0.029249999999999998,
+        0.03950000000000001
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 2858.7787500887484
+    },
+    {
+      "amplitudes": [
+        0.029249999999999998,
+        0.04062500000000001
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 2858.7787500887484
+    },
+    {
+      "amplitudes": [
+        0.029249999999999998,
+        0.04175000000000001
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 2858.7787500887484
+    },
+    {
+      "amplitudes": [
+        0.030362499999999997,
+        0.0305
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 597.4373000639001
+    },
+    {
+      "amplitudes": [
+        0.030362499999999997,
+        0.031625
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 472.91390682966886
+    },
+    {
+      "amplitudes": [
+        0.030362499999999997,
+        0.03275
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 472.9139068296688
+    },
+    {
+      "amplitudes": [
+        0.030362499999999997,
+        0.033875
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 472.9139068296688
+    },
+    {
+      "amplitudes": [
+        0.030362499999999997,
+        0.035
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 472.9139068296688
+    },
+    {
+      "amplitudes": [
+        0.030362499999999997,
+        0.036125000000000004
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 472.9139068296688
+    },
+    {
+      "amplitudes": [
+        0.030362499999999997,
+        0.037250000000000005
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 472.9139068296688
+    },
+    {
+      "amplitudes": [
+        0.030362499999999997,
+        0.038375000000000006
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 472.9139068296688
+    },
+    {
+      "amplitudes": [
+        0.030362499999999997,
+        0.03950000000000001
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 472.9139068296688
+    },
+    {
+      "amplitudes": [
+        0.030362499999999997,
+        0.04062500000000001
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 472.9139068296688
+    },
+    {
+      "amplitudes": [
+        0.030362499999999997,
+        0.04175000000000001
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 472.9139068296688
+    },
+    {
+      "amplitudes": [
+        0.031474999999999996,
+        0.0305
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 587.7124333448542
+    },
+    {
+      "amplitudes": [
+        0.031474999999999996,
+        0.031625
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 383.6252969559343
+    },
+    {
+      "amplitudes": [
+        0.031474999999999996,
+        0.03275
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 383.6252969559343
+    },
+    {
+      "amplitudes": [
+        0.031474999999999996,
+        0.033875
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 383.6252969559343
+    },
+    {
+      "amplitudes": [
+        0.031474999999999996,
+        0.035
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 383.6252969559343
+    },
+    {
+      "amplitudes": [
+        0.031474999999999996,
+        0.036125000000000004
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 383.6252969559343
+    },
+    {
+      "amplitudes": [
+        0.031474999999999996,
+        0.037250000000000005
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 383.6252969559343
+    },
+    {
+      "amplitudes": [
+        0.031474999999999996,
+        0.038375000000000006
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 383.6252969559343
+    },
+    {
+      "amplitudes": [
+        0.031474999999999996,
+        0.03950000000000001
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 383.6252969559343
+    },
+    {
+      "amplitudes": [
+        0.031474999999999996,
+        0.04062500000000001
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 383.6252969559343
+    },
+    {
+      "amplitudes": [
+        0.031474999999999996,
+        0.04175000000000001
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 383.6252969559343
+    },
+    {
+      "amplitudes": [
+        0.0325875,
+        0.0305
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 584.3041730646678
+    },
+    {
+      "amplitudes": [
+        0.0325875,
+        0.031625
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 352.33244417989476
+    },
+    {
+      "amplitudes": [
+        0.0325875,
+        0.03275
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 352.3324441798948
+    },
+    {
+      "amplitudes": [
+        0.0325875,
+        0.033875
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 352.33244417989476
+    },
+    {
+      "amplitudes": [
+        0.0325875,
+        0.035
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 352.33244417989476
+    },
+    {
+      "amplitudes": [
+        0.0325875,
+        0.036125000000000004
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 352.33244417989476
+    },
+    {
+      "amplitudes": [
+        0.0325875,
+        0.037250000000000005
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 352.33244417989476
+    },
+    {
+      "amplitudes": [
+        0.0325875,
+        0.038375000000000006
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 352.33244417989476
+    },
+    {
+      "amplitudes": [
+        0.0325875,
+        0.03950000000000001
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 352.33244417989476
+    },
+    {
+      "amplitudes": [
+        0.0325875,
+        0.04062500000000001
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 352.33244417989476
+    },
+    {
+      "amplitudes": [
+        0.0325875,
+        0.04175000000000001
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 352.33244417989476
+    },
+    {
+      "amplitudes": [
+        0.033699999999999994,
+        0.0305
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 582.5813896190857
+    },
+    {
+      "amplitudes": [
+        0.033699999999999994,
+        0.031625
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 336.51475295454935
+    },
+    {
+      "amplitudes": [
+        0.033699999999999994,
+        0.03275
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 336.51475295454935
+    },
+    {
+      "amplitudes": [
+        0.033699999999999994,
+        0.033875
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 336.51475295454935
+    },
+    {
+      "amplitudes": [
+        0.033699999999999994,
+        0.035
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 336.51475295454935
+    },
+    {
+      "amplitudes": [
+        0.033699999999999994,
+        0.036125000000000004
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 336.51475295454935
+    },
+    {
+      "amplitudes": [
+        0.033699999999999994,
+        0.037250000000000005
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 336.51475295454935
+    },
+    {
+      "amplitudes": [
+        0.033699999999999994,
+        0.038375000000000006
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 336.51475295454935
+    },
+    {
+      "amplitudes": [
+        0.033699999999999994,
+        0.03950000000000001
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 336.51475295454935
+    },
+    {
+      "amplitudes": [
+        0.033699999999999994,
+        0.04062500000000001
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 336.51475295454935
+    },
+    {
+      "amplitudes": [
+        0.033699999999999994,
+        0.04175000000000001
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 336.51475295454935
+    },
+    {
+      "amplitudes": [
+        0.034812499999999996,
+        0.0305
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 581.5576793107634
+    },
+    {
+      "amplitudes": [
+        0.034812499999999996,
+        0.031625
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 327.1155834868075
+    },
+    {
+      "amplitudes": [
+        0.034812499999999996,
+        0.03275
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 327.11558348680757
+    },
+    {
+      "amplitudes": [
+        0.034812499999999996,
+        0.033875
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 327.11558348680757
+    },
+    {
+      "amplitudes": [
+        0.034812499999999996,
+        0.035
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 327.11558348680757
+    },
+    {
+      "amplitudes": [
+        0.034812499999999996,
+        0.036125000000000004
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 327.11558348680757
+    },
+    {
+      "amplitudes": [
+        0.034812499999999996,
+        0.037250000000000005
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 327.11558348680757
+    },
+    {
+      "amplitudes": [
+        0.034812499999999996,
+        0.038375000000000006
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 327.11558348680757
+    },
+    {
+      "amplitudes": [
+        0.034812499999999996,
+        0.03950000000000001
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 327.11558348680757
+    },
+    {
+      "amplitudes": [
+        0.034812499999999996,
+        0.04062500000000001
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 327.11558348680757
+    },
+    {
+      "amplitudes": [
+        0.034812499999999996,
+        0.04175000000000001
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 327.1155834868075
+    },
+    {
+      "amplitudes": [
+        0.035925,
+        0.0305
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 580.900296184208
+    },
+    {
+      "amplitudes": [
+        0.035925,
+        0.031625
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 321.079837473997
+    },
+    {
+      "amplitudes": [
+        0.035925,
+        0.03275
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 321.079837473997
+    },
+    {
+      "amplitudes": [
+        0.035925,
+        0.033875
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 321.079837473997
+    },
+    {
+      "amplitudes": [
+        0.035925,
+        0.035
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 321.079837473997
+    },
+    {
+      "amplitudes": [
+        0.035925,
+        0.036125000000000004
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 321.079837473997
+    },
+    {
+      "amplitudes": [
+        0.035925,
+        0.037250000000000005
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 321.079837473997
+    },
+    {
+      "amplitudes": [
+        0.035925,
+        0.038375000000000006
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 321.079837473997
+    },
+    {
+      "amplitudes": [
+        0.035925,
+        0.03950000000000001
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 321.079837473997
+    },
+    {
+      "amplitudes": [
+        0.035925,
+        0.04062500000000001
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 321.079837473997
+    },
+    {
+      "amplitudes": [
+        0.035925,
+        0.04175000000000001
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 321.079837473997
+    },
+    {
+      "amplitudes": [
+        0.037037499999999994,
+        0.0305
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 580.4755474303402
+    },
+    {
+      "amplitudes": [
+        0.037037499999999994,
+        0.031625
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 317.1800178801523
+    },
+    {
+      "amplitudes": [
+        0.037037499999999994,
+        0.03275
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 317.1800178801525
+    },
+    {
+      "amplitudes": [
+        0.037037499999999994,
+        0.033875
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 317.1800178801525
+    },
+    {
+      "amplitudes": [
+        0.037037499999999994,
+        0.035
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 317.1800178801525
+    },
+    {
+      "amplitudes": [
+        0.037037499999999994,
+        0.036125000000000004
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 317.1800178801525
+    },
+    {
+      "amplitudes": [
+        0.037037499999999994,
+        0.037250000000000005
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 317.1800178801525
+    },
+    {
+      "amplitudes": [
+        0.037037499999999994,
+        0.038375000000000006
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 317.1800178801525
+    },
+    {
+      "amplitudes": [
+        0.037037499999999994,
+        0.03950000000000001
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 317.1800178801525
+    },
+    {
+      "amplitudes": [
+        0.037037499999999994,
+        0.04062500000000001
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 317.1800178801525
+    },
+    {
+      "amplitudes": [
+        0.037037499999999994,
+        0.04175000000000001
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 317.1800178801525
+    },
+    {
+      "amplitudes": [
+        0.038149999999999996,
+        0.0305
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 580.2455886397659
+    },
+    {
+      "amplitudes": [
+        0.038149999999999996,
+        0.031625
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 315.068657248502
+    },
+    {
+      "amplitudes": [
+        0.038149999999999996,
+        0.03275
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 315.06865724850195
+    },
+    {
+      "amplitudes": [
+        0.038149999999999996,
+        0.033875
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 315.06865724850195
+    },
+    {
+      "amplitudes": [
+        0.038149999999999996,
+        0.035
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 315.06865724850195
+    },
+    {
+      "amplitudes": [
+        0.038149999999999996,
+        0.036125000000000004
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 315.06865724850195
+    },
+    {
+      "amplitudes": [
+        0.038149999999999996,
+        0.037250000000000005
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 315.06865724850195
+    },
+    {
+      "amplitudes": [
+        0.038149999999999996,
+        0.038375000000000006
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 315.06865724850195
+    },
+    {
+      "amplitudes": [
+        0.038149999999999996,
+        0.03950000000000001
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 315.06865724850195
+    },
+    {
+      "amplitudes": [
+        0.038149999999999996,
+        0.04062500000000001
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 315.06865724850195
+    },
+    {
+      "amplitudes": [
+        0.038149999999999996,
+        0.04175000000000001
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 315.06865724850195
+    },
+    {
+      "amplitudes": [
+        0.03926249999999999,
+        0.0305
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 580.3116165524916
+    },
+    {
+      "amplitudes": [
+        0.03926249999999999,
+        0.031625
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 315.6748908052706
+    },
+    {
+      "amplitudes": [
+        0.03926249999999999,
+        0.03275
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 315.6748908052707
+    },
+    {
+      "amplitudes": [
+        0.03926249999999999,
+        0.033875
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 315.6748908052707
+    },
+    {
+      "amplitudes": [
+        0.03926249999999999,
+        0.035
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 315.6748908052707
+    },
+    {
+      "amplitudes": [
+        0.03926249999999999,
+        0.036125000000000004
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 315.6748908052707
+    },
+    {
+      "amplitudes": [
+        0.03926249999999999,
+        0.037250000000000005
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 315.6748908052707
+    },
+    {
+      "amplitudes": [
+        0.03926249999999999,
+        0.038375000000000006
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 315.6748908052707
+    },
+    {
+      "amplitudes": [
+        0.03926249999999999,
+        0.03950000000000001
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 315.6748908052707
+    },
+    {
+      "amplitudes": [
+        0.03926249999999999,
+        0.04062500000000001
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 315.6748908052707
+    },
+    {
+      "amplitudes": [
+        0.03926249999999999,
+        0.04175000000000001
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 315.6748908052707
+    },
+    {
+      "amplitudes": [
+        0.040374999999999994,
+        0.0305
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 583.6110681998895
+    },
+    {
+      "amplitudes": [
+        0.040374999999999994,
+        0.031625
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 345.9687199602519
+    },
+    {
+      "amplitudes": [
+        0.040374999999999994,
+        0.03275
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 345.96871996025203
+    },
+    {
+      "amplitudes": [
+        0.040374999999999994,
+        0.033875
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 345.96871996025203
+    },
+    {
+      "amplitudes": [
+        0.040374999999999994,
+        0.035
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 345.96871996025203
+    },
+    {
+      "amplitudes": [
+        0.040374999999999994,
+        0.036125000000000004
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 345.96871996025203
+    },
+    {
+      "amplitudes": [
+        0.040374999999999994,
+        0.037250000000000005
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 345.96871996025203
+    },
+    {
+      "amplitudes": [
+        0.040374999999999994,
+        0.038375000000000006
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 345.96871996025203
+    },
+    {
+      "amplitudes": [
+        0.040374999999999994,
+        0.03950000000000001
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 345.96871996025203
+    },
+    {
+      "amplitudes": [
+        0.040374999999999994,
+        0.04062500000000001
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 345.96871996025203
+    },
+    {
+      "amplitudes": [
+        0.040374999999999994,
+        0.04175000000000001
+      ],
+      "feasible": true,
+      "max_abs_pressure_coefficient": 345.96871996025203
+    }
+  ],
+  "scope": "Finite two-amplitude grid minimizing the sampled pressure coefficient infinity norm under 15-node cone inequalities. No momentum objective, continuous cone, exact moments, wave, or PDE acceptance.",
+  "accepted": false
+}

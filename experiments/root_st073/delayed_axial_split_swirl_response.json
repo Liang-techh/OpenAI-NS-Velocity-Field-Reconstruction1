@@ -1,0 +1,87 @@
+{
+  "radial": [
+    1.02,
+    1.06
+  ],
+  "axial_intervals": [
+    [
+      0.16,
+      0.24
+    ],
+    [
+      0.26,
+      0.34
+    ]
+  ],
+  "X": 1.03,
+  "etas": [
+    0.2,
+    0.3
+  ],
+  "tau": 0.011048543456039806,
+  "response_cache": "delayed_axial_split_swirl_response.npz",
+  "rows": [
+    {
+      "X": 1.03,
+      "eta": 0.2,
+      "baseline": {
+        "X": 1.03,
+        "eta": 0.2,
+        "lambda_squared": 70982.89752029981,
+        "target_dot_N": 15.936087057565544,
+        "target_dot_K": 2.2884996288889576,
+        "margin": -33.1593660346736,
+        "ratio": 1.080772144058502,
+        "cone_violation": 0.9707254520184905,
+        "strict_pass": false,
+        "residual_norm": 128121.39071437414
+      },
+      "feasible_count": 90,
+      "selected": {
+        "amplitude": 0.029249999999999998,
+        "lambda_squared": 20040.962207619275,
+        "residual_norm": 80013.37110385751,
+        "target": [
+          -2.3103390278180016,
+          15.157298850199027
+        ]
+      },
+      "amplitude_range": [
+        0.029249999999999998,
+        0.040374999999999994
+      ]
+    },
+    {
+      "X": 1.03,
+      "eta": 0.3,
+      "baseline": {
+        "X": 1.03,
+        "eta": 0.3,
+        "lambda_squared": 66344.61587008426,
+        "target_dot_N": 31.601114595973527,
+        "target_dot_K": 1.514347975215215,
+        "margin": -55.27542818192003,
+        "ratio": 0.7491607143807192,
+        "cone_violation": 0.982230255152083,
+        "strict_pass": false,
+        "residual_norm": 185895.8124163518
+      },
+      "feasible_count": 91,
+      "selected": {
+        "amplitude": 0.0305,
+        "lambda_squared": 18033.345873919392,
+        "residual_norm": 164973.0011709287,
+        "target": [
+          -1.249056040564065,
+          31.297861591436376
+        ]
+      },
+      "amplitude_range": [
+        0.0305,
+        0.04175000000000001
+      ]
+    }
+  ],
+  "scope": "Exact quadratic full-physical stress and momentum response at two formerly blocked nodes. Pointwise free-axial stress admission with .8 cone ratio and .2 stress margin only; no fitted pressure across all nodes, moment closure, continuous cone, wave or PDE gate.",
+  "accepted": false
+}
