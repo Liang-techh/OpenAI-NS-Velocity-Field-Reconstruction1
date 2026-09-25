@@ -622,3 +622,49 @@ constructive route must give the correction a coupled time/axial shape
 and optimize the physical stress cone and complete momentum jointly,
 then measure a spatial volume norm rather than extrapolating from
 these selected points.
+
+## Axial support width is not a free cure
+
+`CoupledMomentPhysicalLift` now accepts explicit `axial_rise_start` and
+`axial_fall_end` in a slice artifact; absent those keys, the previous
+`(.1,.4)` support is unchanged. The same septic interpolation and
+streamfunction formula preserve analytic divergence freedom, and the
+profiles at `eta=.2,.3` stay exactly fixed when the end changes.
+`delayed_axial_support_screen.py` compares fall ends `.4`, `.45`, and
+`.5` on three radial nodes, six axial coordinates, and two times.
+
+Widening the fall end does **not** improve the complete-momentum maximum:
+at the reference time it is `9.566187e5`, `9.572940e5`, and
+`9.574215e5`, respectively. More importantly, the residual at
+`X=1.015,eta=.4` rises from about `1.02e4` to `2.20e5` and `5.44e5`.
+The same ordering persists at the nearby time. The wider taper simply
+moves a large correction into an axial region that previously matched
+the base field. No widened-support candidate is retained. This screen
+also shows why checking only the two fitted `eta` slices would miss an
+important spatial hotspot.
+
+The cone diagnosis remains more fundamental. The strict physical cone
+uses a radial primitive of the complete tangential/axial residual.
+At `X=1.01`, the reoptimized-E field still fails the sampled cone at
+both reference slices; at `eta=.3` its target projection along the
+local shear normal is positive (`+4.44`), violating the required
+negative sign. The component decomposition attributes the large
+entrance residual chiefly to the U streamfunction return, whose radial
+curvature is amplified by the onset. A useful next experiment is a
+broad, endpoint-flat U return basis with five-moment projection,
+screened jointly for cone margin and full momentum across entrance,
+middle, and far return. It must be judged on off-slice and nearby-time
+points before any wave or PDE claim.
+
+The obvious lower-degree alternative also has a measured capacity
+barrier. `delayed_e_capacity_optimize.py` now accepts a U degree and
+reoptimizes the five E bumps under the same I/Cp equalities and E floor
+for each degree. At width `.4`, start `X=1.005`, the `eta=.3` finite-basis
+S slack is `-.17371`, `-.05876`, `-.01882`, and `-.00356` for degrees
+11, 19, 23, and 27; it becomes `+.00938` only at degree 31. Direct
+five-moment construction also fails for degree 11 and for degree 19
+at `eta=.3`. These are multistart finite-basis numerical results, not
+a proof of global infeasibility, but they explain why simply dropping
+the high-degree modes cannot retain the current five-moment repair.
+The radial step/return basis or the baseline moments must change to
+obtain both low curvature and sufficient S capacity.

@@ -33,6 +33,10 @@ class CoupledMomentPhysicalLift:
         self.width = float(data.get('taper_width', .02))
         self.degree = int(data.get('u_degree', 11))
         self.start_X = float(data.get('start_X', 1.))
+        self.axial_rise_start = float(data.get('axial_rise_start', .1))
+        self.axial_fall_end = float(data.get('axial_fall_end', .4))
+        if not (self.axial_rise_start < .2 < .3 < self.axial_fall_end):
+            raise ValueError('Axial support must contain both fitted slices')
         chosen = sorted((row for row in data['rows']
                          if row.get('variant') in ('maximum_slack',
                                                    'curvature_optimized',
@@ -66,10 +70,13 @@ class CoupledMomentPhysicalLift:
 
     def coefficients(self, eta):
         eta = float(eta)
-        rise, rise_d = septic_step((eta-.1)/.1)
-        fall, fall_d = septic_step((eta-.3)/.1)
+        rise_width = .2-self.axial_rise_start
+        fall_width = self.axial_fall_end-.3
+        rise, rise_d = septic_step((eta-self.axial_rise_start)/rise_width)
+        fall, fall_d = septic_step((eta-.3)/fall_width)
         rho = float(rise*(1-fall))
-        rho_d = float(rise_d*(1-fall)/.1-rise*fall_d/.1)
+        rho_d = float(rise_d*(1-fall)/rise_width
+                      -rise*fall_d/fall_width)
         blend, blend_d = septic_step((eta-.2)/.1)
         blend = float(blend)
         blend_d = float(blend_d)/.1
@@ -96,7 +103,8 @@ class CoupledMomentPhysicalLift:
         co = coordinates(r/sn, pts[:, 2]/sn, ts, self.heat.h)
         for i, (radius, X, eta, q) in enumerate(zip(
                 r, co['X'], co['eta'], co['q'])):
-            if not (radius > 0 and 1. < X < 3. and .1 < eta < .4):
+            if not (radius > 0 and 1. < X < 3. and
+                    self.axial_rise_start < eta < self.axial_fall_end):
                 continue
             eco, _, uco, uco_d = self.coefficients(eta)
             e_delta = sum(eco[j]*bump(np.array([X]), *interval)[0][0]

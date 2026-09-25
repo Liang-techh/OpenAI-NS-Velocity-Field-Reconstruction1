@@ -1,4 +1,6 @@
-"""Reoptimize swirl E for the delayed, wide, degree-31 U repair basis."""
+"""Reoptimize swirl E for a delayed, wide U repair basis."""
+
+import argparse
 import json
 
 from delayed_taper_capacity_screen import grid
@@ -8,9 +10,9 @@ from radial_moment_step import RadialMomentStep
 from taper_width_capacity import optimize_slice
 
 
-def run():
+def run(degree=31, output_name='delayed_e_capacity_optimize.json'):
     tau = .5*2**(-5.5)
-    width, degree, start_X = .4, 31, 1.005
+    width, start_X = .4, 1.005
     X, weights = grid(order=64)
     base = make_field(16, 2.)
     changed = RadialMomentStep(base, -.5)
@@ -34,9 +36,14 @@ def run():
                         'for delayed U support, with I/Cp equalities and '
                         'positive E floor. No selected physical lift or '
                         'PDE admission.', accepted=False)
-    (ROOT/'delayed_e_capacity_optimize.json').write_text(
-        json.dumps(report, indent=2)+'\n')
+    (ROOT/output_name).write_bytes(
+        (json.dumps(report, indent=2)+'\n').encode())
 
 
 if __name__ == '__main__':
-    run()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--degree', type=int, default=31)
+    parser.add_argument('--output-name',
+                        default='delayed_e_capacity_optimize.json')
+    args = parser.parse_args()
+    run(args.degree, args.output_name)
