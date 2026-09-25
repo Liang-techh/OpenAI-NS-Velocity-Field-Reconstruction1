@@ -906,3 +906,36 @@ keep the exterior unchanged. Our mean-only interval fit is not that
 mechanism. The next constructive stage must jointly seek an interval of
 strict *physical* stress-cone feasibility and a supported wave/mean
 correction, rather than infer PDE improvement from moment fitting alone.
+
+## Pressure-only physical cone window is geometrically blocked
+
+`delayed_pressure_cone_window.py` applies the six compact similarity
+pressure modes to the retained rise-`1.46` physical field. Since pressure
+does not change velocity or shear, the two strict-cone inequalities at
+each point are linear in the six coefficients. At `tau=.5*2^-5.5`, the
+eight-point window `X=1.008,.012,.016,.02` and `eta=.2,.3` is linearly
+infeasible for cone ratio at most `.8` with stress margin `.1`. The
+two-eta radial prefix through `X=1.012` is feasible, but adding
+`X=1.016` makes the system infeasible. Individual-node checks show that
+the last two radii fail at both eta values; this is not merely conflict
+between six pressure basis functions.
+
+`delayed_pressure_cone_geometry.py` removes even the finite-basis
+restriction and lets the *axial* stress component vary arbitrarily while
+holding tangential stress and shear fixed. At `X=1.02` it still cannot
+enter the cone at either eta, even with ratio bound `.999` and zero
+stress margin. At `X=1.016`, arbitrary axial stress could reach the
+near-boundary `.999` cone but not the more robust `.8` cone. Letting
+both stress components vary does make the pointwise wedge accessible:
+the smallest two-component stress shifts at `X=1.02` have norms about
+`5.30` (`eta=.2`) and `58.26` (`eta=.3`) under the `.8`/`.1` margins.
+These are necessary target changes, not realized wave covariances or
+mean-flow corrections. The raw geometry and quadrature results are in
+`delayed_pressure_cone_window.json` and
+`delayed_pressure_cone_geometry.json`.
+
+Pressure-only tuning therefore cannot provide a supported physical-cone
+window through `X=1.02` on this fixed velocity. The next candidate must
+change the tangential stress target and/or the underlying shear, while
+preserving the moment and exterior conditions, then verify a continuous
+space-time cone before invoking the paper's oscillatory realization.
