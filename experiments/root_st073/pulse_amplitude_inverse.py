@@ -25,37 +25,45 @@ def complex_spline(times, values):
 
 def solve_mode(times, source, normal, k_matrix, viscosity):
     """Solve the physical-time transverse principal equation with zero data."""
+    times = np.asarray(times, float)
+    time_origin = float(times[0])
+    time_scale = float(times[-1] - times[0])
+    if time_scale <= 0:
+        raise ValueError("Pulse times must be strictly increasing")
+    scaled_times = (times - time_origin) / time_scale
     normal = np.asarray(normal, float)
     k_matrix = np.asarray(k_matrix, float)
     source = np.asarray(source, complex)
     n2 = float(np.dot(normal, normal))
     projection = np.eye(3) - np.outer(normal, normal) / n2
-    real_spline, imag_spline = complex_spline(times, source)
+    real_spline, imag_spline = complex_spline(scaled_times, source)
 
-    def forcing(t):
-        return real_spline(t) + 1j * imag_spline(t)
+    def forcing(s):
+        return real_spline(s) + 1j * imag_spline(s)
 
-    def rhs(t, amplitude):
-        return -projection @ (k_matrix @ amplitude + forcing(t)) \
-               - viscosity * n2 * amplitude
+    def rhs(s, amplitude):
+        physical_rhs = (-projection @ (k_matrix @ amplitude + forcing(s))
+                        - viscosity * n2 * amplitude)
+        return time_scale * physical_rhs
 
-    solved = solve_ivp(rhs, (float(times[0]), float(times[-1])),
+    solved = solve_ivp(rhs, (0., 1.),
                        np.zeros(3, complex), method="BDF", dense_output=True,
                        rtol=1e-8, atol=1e-7)
     if not solved.success:
         raise RuntimeError(solved.message)
-    sample_times = np.linspace(times[0], times[-1], 65)
-    amplitudes = solved.sol(sample_times).T
+    sample_scaled_times = np.linspace(0., 1., 65)
+    amplitudes = solved.sol(sample_scaled_times).T
     pressure = np.asarray([
-        1j * np.dot(normal, k_matrix @ a + forcing(t)) / n2
-        for t, a in zip(sample_times, amplitudes)])
+        1j * np.dot(normal, k_matrix @ a + forcing(s)) / n2
+        for s, a in zip(sample_scaled_times, amplitudes)])
     # Independent centered finite difference checks the integrated path.
     derivative = (amplitudes[2:] - amplitudes[:-2]) / (
-        sample_times[2:] - sample_times[:-2])[:, None]
+        time_scale * (sample_scaled_times[2:]
+                      - sample_scaled_times[:-2])[:, None])
     residual = np.asarray([
         da + k_matrix @ a + viscosity * n2 * a
-        + 1j * normal * p + forcing(t)
-        for t, a, p, da in zip(sample_times[1:-1], amplitudes[1:-1],
+        + 1j * normal * p + forcing(s)
+        for s, a, p, da in zip(sample_scaled_times[1:-1], amplitudes[1:-1],
                                pressure[1:-1], derivative)])
     scale = max(float(np.max(np.linalg.norm(source, axis=1))), 1.0)
     return dict(success=True, solver_steps=len(solved.t),
@@ -71,6 +79,8 @@ def solve_mode(times, source, normal, k_matrix, viscosity):
                     np.linalg.norm(residual, axis=1)) / scale),
                 endpoint_amplitude=[[float(x.real), float(x.imag)]
                                     for x in amplitudes[-1]],
+                midpoint_amplitude=[[float(x.real), float(x.imag)]
+                                     for x in amplitudes[len(amplitudes)//2]],
                 normal=normal.tolist())
 
 

@@ -127,6 +127,20 @@ spatially varying transverse amplitude along moving pulse paths,
 including normal pressure recovery, supported time cutoff errors,
 mean flow and moment restoration, before reattempting a dyadic
 recursive residual cycle.
+The first **spatial** frozen-principal inverse now solves equation
+`(7.13)`-inspired paths at five nodes on both `k=11,19`. The
+amplitude/background map has only `4.23%` relative L2 drift across
+eight halvings, and midpoint complex amplitudes have `0.978%` shape
+error after one scale factor. However mode-1 amplitudes reach
+`23.4×` and `22.4×` background speed near the axial support edges,
+and the endpoint amplitudes remain nonzero; see
+`ST073_SPATIAL_PULSE_INVERSE_TWO_SCALE.md`. The next implementation
+must move from independent frozen-normal paths to a supported
+two-dimensional amplitude with the phase normal transported along
+pulse paths, quantify spatial derivatives and endpoint cutoff errors,
+then build its exact-curl velocity and normal pressure and measure
+the complete momentum on the two scales. The similar normalized
+inverse map alone is not a residual contraction.
 Use those directions as a conditioning prototype, not as the paper's five
 leading-profile moments or a recursive correction.
 The next Stage-1 inputs are therefore the actual coefficient-family
