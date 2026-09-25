@@ -1407,3 +1407,43 @@ value-only gaps are `-.03415` and `-.01019`, respectively. Pinning U_X
 as well is even more restrictive and can become ill-conditioned.
 These are fixed-slice necessary-condition screens, not a continuous
 stress-cone proof or full momentum test.
+
+## Physical U lifts and the momentum cost of narrow closure
+
+`delayed_remote_u_physical.py` makes the eta `.3`, positive-E floor
+`.05` slice into a real axisymmetric exact-curl U plus swirl E field.
+For the protected `X=1.03..3.5` support, width `.002`, degree `63`,
+it constrains the streamfunction to return to zero outside the patch,
+then solves J and S. The fixed-slice defects are at numerical precision
+for `I,J,S,Cp` (at most `5.3e-14`), and the exterior streamfunction
+increment is `-1.43e-15`. The separate M defect is `-1.327e-9`:
+forcing exact target M instead would leave a tiny nonzero exterior
+streamfunction trace. The sampled velocity at `X<=1.03` is unchanged.
+
+This algebraic closure fails the physical momentum screen. At four
+center radial nodes, the sampled maximum rises from `4.54e5` to
+`6.27e6`; space/time holdouts also worsen. A finite-difference step
+sweep at the narrow entrance `X=1.031` moves the residual norm toward
+`1.64e7` as the step is refined, while the finite-difference
+divergence falls sharply toward zero. Thus the large momentum is not
+explained away by the coarse derivative step, and the analytic curl
+construction is consistent with solenoidality.
+
+The same script's `--smooth` variant uses `X=1.01..3.5`, width `.02`,
+degree `11`. It closes fixed-slice `I,J,S,Cp` to at most `6.5e-14`,
+restores the exterior streamfunction to `2.5e-15`, and leaves a similar
+`-1.327e-9` M defect. Its sampled center momentum maximum rises from
+`4.54e5` to `4.90e6`; the entrance residual remains about `4.903e6`
+under a fourfold finite-difference refinement. Its maximum sampled
+velocity change in the old cone is `.877`, requiring a new cone audit.
+Both physical variants are rejected (`accepted:false`). Moment closure
+and analytic divergence do not compensate for the U-curvature cost.
+A viable next design must co-optimize the mean profile's momentum and
+stress geometry with the E/U moment constraints, rather than bolt an
+exact moment patch onto the present mean.
+
+`delayed_remote_u_positivity_audit.py` samples nine eta slices across
+the axial support on an independent Gauss-48 radial grid. Their
+minimum E stays positive (`.00958` at eta `.3`); the minimum sampled
+`E/E_target` is `.05046`. This supports sampled positive swirl for
+both U variants, but is not a continuum lower bound.

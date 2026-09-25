@@ -1,0 +1,52 @@
+{
+  "source": "delayed_remote_u_physical.json",
+  "eta_rows": [
+    {
+      "eta": 0.26,
+      "min_E": 0.020463301201707324,
+      "min_relative_E": 0.110879467268417
+    },
+    {
+      "eta": 0.27,
+      "min_E": 0.020288043198861603,
+      "min_relative_E": 0.11007321527389548
+    },
+    {
+      "eta": 0.28,
+      "min_E": 0.017878957032014333,
+      "min_relative_E": 0.09676024924985473
+    },
+    {
+      "eta": 0.29,
+      "min_E": 0.01257852081815294,
+      "min_relative_E": 0.06733187499443626
+    },
+    {
+      "eta": 0.3,
+      "min_E": 0.009577275656224439,
+      "min_relative_E": 0.050455981471205405
+    },
+    {
+      "eta": 0.31,
+      "min_E": 0.013022056888132441,
+      "min_relative_E": 0.06907402646860858
+    },
+    {
+      "eta": 0.32,
+      "min_E": 0.02325484827595006,
+      "min_relative_E": 0.12519209707447235
+    },
+    {
+      "eta": 0.33,
+      "min_E": 0.04058796795424008,
+      "min_relative_E": 0.22067722437677556
+    },
+    {
+      "eta": 0.34,
+      "min_E": 0.042934657201629076,
+      "min_relative_E": 0.36721645534947495
+    }
+  ],
+  "scope": "Nine eta slices on an independent Gauss-48 grid. Positive samples do not certify continuum positivity or PDE acceptance.",
+  "accepted": false
+}

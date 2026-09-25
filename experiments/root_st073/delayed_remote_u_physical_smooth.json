@@ -1,0 +1,138 @@
+{
+  "source": "delayed_remote_swirl_floor_capacity.json",
+  "start": 1.01,
+  "end": 3.5,
+  "width": 0.02,
+  "degree": 11,
+  "protected_inner_cone": false,
+  "axial_interval": [
+    0.26,
+    0.34
+  ],
+  "slice": {
+    "moment_defect": [
+      -1.327040671794677e-09,
+      6.439293542825908e-14,
+      -1.27675647831893e-15,
+      -1.7763568394002505e-15,
+      1.687538997430238e-14
+    ],
+    "S_slack_before_completion": 0.008665682892270654,
+    "selected_null_index": 0,
+    "selected_null_sign": -1.0,
+    "u_coefficients": [
+      0.003171945410664254,
+      -0.02736822166948208,
+      0.08067415755584856,
+      -0.11861913008459939,
+      0.030689932377111758,
+      -0.23920082208817492,
+      0.10507941406704306,
+      -0.3126644718392426,
+      0.1300246440941215,
+      -0.2673689662714409,
+      0.09932864582729264,
+      -0.3297253253193988
+    ],
+    "e_coefficients": [
+      -0.10543036813560287,
+      -0.03848467135544803,
+      -0.00036678044697837183,
+      -0.010946831800675145,
+      0.025669030652514843
+    ],
+    "min_relative_E": 0.049999999999999024,
+    "exterior_streamfunction_increment": 2.503771692271626e-15,
+    "quadrature_mass_increment": 2.8520209197774316e-15,
+    "max_abs_u_coefficient": 0.3297253253193988
+  },
+  "screens": [
+    {
+      "name": "center",
+      "X": [
+        1.015,
+        1.02,
+        1.03,
+        1.04,
+        1.3,
+        2.0
+      ],
+      "eta": [
+        0.3,
+        0.3,
+        0.3,
+        0.3,
+        0.3,
+        0.3
+      ],
+      "before": {
+        "max": 453680.8577208915,
+        "rms": 244516.2440487468
+      },
+      "after": {
+        "max": 4899106.758269585,
+        "rms": 2151399.7801299673
+      },
+      "max_abs_fd_divergence": 10.817437345464668
+    },
+    {
+      "name": "space_holdout",
+      "X": [
+        1.034,
+        1.034,
+        1.1,
+        1.1,
+        2.4,
+        2.4
+      ],
+      "eta": [
+        0.28,
+        0.32,
+        0.28,
+        0.32,
+        0.28,
+        0.32
+      ],
+      "before": {
+        "max": 554599.2773438635,
+        "rms": 372050.8441481561
+      },
+      "after": {
+        "max": 1094993.084762071,
+        "rms": 567615.5011561196
+      },
+      "max_abs_fd_divergence": 0.04175205739034027
+    },
+    {
+      "name": "time_holdout",
+      "X": [
+        1.035,
+        1.035,
+        1.5,
+        1.5,
+        3.2,
+        3.2
+      ],
+      "eta": [
+        0.29,
+        0.31,
+        0.29,
+        0.31,
+        0.29,
+        0.31
+      ],
+      "before": {
+        "max": 414815.4827754794,
+        "rms": 249488.5745907692
+      },
+      "after": {
+        "max": 814824.1263946083,
+        "rms": 478079.70874630776
+      },
+      "max_abs_fd_divergence": 0.01094241541750307
+    }
+  ],
+  "max_abs_local_velocity_change": 0.8769668028366299,
+  "scope": "Exact-curl U plus swirl E lift. Fixed-slice J/S and exterior streamfunction are solved; M defect is explicit. Sampled full Cartesian momentum and FD divergence do not prove a continuous or global PDE gate. The smooth variant enters the old stress cone.",
+  "accepted": false
+}
