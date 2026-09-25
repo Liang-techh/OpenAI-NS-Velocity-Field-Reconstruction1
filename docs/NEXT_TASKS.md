@@ -168,6 +168,12 @@ and mean-only local momentum still grows `3655×` over the interval.
 Do not infer continuous cone support or recursive contraction from this
 discrete result. The next gate is a wider connected space-time cone and
 absolute full-residual decrease after a supported wave/mean correction.
+The widened-support frozen exact-curl wave reduces its midpoint full
+momentum peak by about `21%` at both `k=11,19`, but its remaining maxima
+are `2.17e9/8.07e12` and grow `3715×` across eight halvings; see
+`ST073_WIDER_CONE_WAVE_SCREEN.md`. Continue with transported spatial
+amplitude, normal pressure, and mean/stress repair rather than additional
+width-only tuning.
 Use those directions as a conditioning prototype, not as the paper's five
 leading-profile moments or a recursive correction.
 The next Stage-1 inputs are therefore the actual coefficient-family

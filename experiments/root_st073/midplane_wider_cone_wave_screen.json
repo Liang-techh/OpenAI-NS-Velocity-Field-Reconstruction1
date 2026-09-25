@@ -1,0 +1,255 @@
+{
+  "source": "Wider axial support frozen-wave screen",
+  "mean": "all-three-knot moment-repaired axial-cone mean",
+  "scales": [
+    {
+      "k": 11,
+      "target_stress": [
+        75.76690720614182,
+        17.736254261595466
+      ],
+      "spatial_nodes": [
+        [
+          -0.5,
+          -0.7
+        ],
+        [
+          -0.5,
+          -0.5
+        ],
+        [
+          -0.5,
+          -0.35714285714285715
+        ],
+        [
+          -0.5,
+          0.0
+        ],
+        [
+          -0.5,
+          0.35714285714285715
+        ],
+        [
+          -0.5,
+          0.5
+        ],
+        [
+          -0.5,
+          0.7
+        ],
+        [
+          0.0,
+          -0.7
+        ],
+        [
+          0.0,
+          -0.5
+        ],
+        [
+          0.0,
+          -0.35714285714285715
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.35714285714285715
+        ],
+        [
+          0.0,
+          0.5
+        ],
+        [
+          0.0,
+          0.7
+        ],
+        [
+          0.5,
+          -0.7
+        ],
+        [
+          0.5,
+          -0.5
+        ],
+        [
+          0.5,
+          -0.35714285714285715
+        ],
+        [
+          0.5,
+          0.0
+        ],
+        [
+          0.5,
+          0.35714285714285715
+        ],
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.7
+        ]
+      ],
+      "cases": [
+        {
+          "width_factor": 1.0,
+          "positive_weights": true,
+          "weights": [
+            374.0126458709506,
+            22.8708500803866
+          ],
+          "axial_halfwidth": 4.0317224003357496e-05,
+          "time_halfwidth": 1.2191089135026794e-07,
+          "momentum_max": 2760682176.367946,
+          "momentum_rms": 835264371.6831273,
+          "peak_spatial_node": 12,
+          "max_fd_divergence": 1.0426306763133653
+        },
+        {
+          "width_factor": 1.4,
+          "positive_weights": true,
+          "weights": [
+            374.0126458709506,
+            22.8708500803866
+          ],
+          "axial_halfwidth": 5.644411360470049e-05,
+          "time_halfwidth": 2.389453470465251e-07,
+          "momentum_max": 2172888697.473277,
+          "momentum_rms": 556650901.3698242,
+          "peak_spatial_node": 9,
+          "max_fd_divergence": 0.10035145849906257
+        }
+      ]
+    },
+    {
+      "k": 19,
+      "target_stress": [
+        18497.32808990815,
+        4414.636121021895
+      ],
+      "spatial_nodes": [
+        [
+          -0.5,
+          -0.7
+        ],
+        [
+          -0.5,
+          -0.5
+        ],
+        [
+          -0.5,
+          -0.35714285714285715
+        ],
+        [
+          -0.5,
+          0.0
+        ],
+        [
+          -0.5,
+          0.35714285714285715
+        ],
+        [
+          -0.5,
+          0.5
+        ],
+        [
+          -0.5,
+          0.7
+        ],
+        [
+          0.0,
+          -0.7
+        ],
+        [
+          0.0,
+          -0.5
+        ],
+        [
+          0.0,
+          -0.35714285714285715
+        ],
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.35714285714285715
+        ],
+        [
+          0.0,
+          0.5
+        ],
+        [
+          0.0,
+          0.7
+        ],
+        [
+          0.5,
+          -0.7
+        ],
+        [
+          0.5,
+          -0.5
+        ],
+        [
+          0.5,
+          -0.35714285714285715
+        ],
+        [
+          0.5,
+          0.0
+        ],
+        [
+          0.5,
+          0.35714285714285715
+        ],
+        [
+          0.5,
+          0.5
+        ],
+        [
+          0.5,
+          0.7
+        ]
+      ],
+      "cases": [
+        {
+          "width_factor": 1.0,
+          "positive_weights": true,
+          "weights": [
+            91647.85684372054,
+            5992.060467616705
+          ],
+          "axial_halfwidth": 2.5906684656401065e-06,
+          "time_halfwidth": 5.033672324146548e-10,
+          "momentum_max": 10202059231068.463,
+          "momentum_rms": 3095920336800.2666,
+          "peak_spatial_node": 12,
+          "max_fd_divergence": 229.9113414832973
+        },
+        {
+          "width_factor": 1.4,
+          "positive_weights": true,
+          "weights": [
+            91647.85684372054,
+            5992.060467616705
+          ],
+          "axial_halfwidth": 3.6269358518961487e-06,
+          "time_halfwidth": 9.865997755327234e-10,
+          "momentum_max": 8072905555544.082,
+          "momentum_rms": 2064506768593.1265,
+          "peak_spatial_node": 9,
+          "max_fd_divergence": 22.06039689667523
+        }
+      ]
+    }
+  ],
+  "scope": "Midpoint full Cartesian momentum on a common 21-node radial-axial grid and 16 angles. Cone support between nodes and across time is unproved; no pulse inverse, pressure, mean correction, or recursive acceptance.",
+  "accepted": false,
+  "scale_recursion_established": false
+}
