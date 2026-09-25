@@ -1,0 +1,141 @@
+{
+  "source": "delayed_multimode_cone_fit.json",
+  "tau": 0.011048543456039806,
+  "rows": [
+    {
+      "X": 1.008,
+      "eta": 0.2,
+      "lambda_squared": 5668.169894726226,
+      "target": [
+        -1.0200715644272653,
+        -2.2098060082304416
+      ],
+      "free_axial_080": true,
+      "free_axial_0999": true
+    },
+    {
+      "X": 1.012,
+      "eta": 0.2,
+      "lambda_squared": 14796.76190514076,
+      "target": [
+        -1.502117859876621,
+        0.6667416084841746
+      ],
+      "free_axial_080": true,
+      "free_axial_0999": true
+    },
+    {
+      "X": 1.016,
+      "eta": 0.2,
+      "lambda_squared": 32849.308431621415,
+      "target": [
+        -2.5714647048334576,
+        5.414913645523058
+      ],
+      "free_axial_080": false,
+      "free_axial_0999": false
+    },
+    {
+      "X": 1.02,
+      "eta": 0.2,
+      "lambda_squared": 60761.32719620112,
+      "target": [
+        -4.251575418816581,
+        9.82955081226474
+      ],
+      "free_axial_080": false,
+      "free_axial_0999": false
+    },
+    {
+      "X": 1.008,
+      "eta": 0.25,
+      "lambda_squared": 2306.494577257714,
+      "target": [
+        -0.9328110315967113,
+        -3.9392420880834
+      ],
+      "free_axial_080": true,
+      "free_axial_0999": true
+    },
+    {
+      "X": 1.012,
+      "eta": 0.25,
+      "lambda_squared": 7984.440262665768,
+      "target": [
+        -1.0674172668524409,
+        -8.493836233156378
+      ],
+      "free_axial_080": true,
+      "free_axial_0999": true
+    },
+    {
+      "X": 1.016,
+      "eta": 0.25,
+      "lambda_squared": 12309.134887230965,
+      "target": [
+        -1.3974614966592334,
+        -14.382251822286802
+      ],
+      "free_axial_080": true,
+      "free_axial_0999": true
+    },
+    {
+      "X": 1.02,
+      "eta": 0.25,
+      "lambda_squared": 24502.656998198003,
+      "target": [
+        -2.37218241068832,
+        -15.291291812859306
+      ],
+      "free_axial_080": false,
+      "free_axial_0999": true
+    },
+    {
+      "X": 1.008,
+      "eta": 0.3,
+      "lambda_squared": 4559.83264011427,
+      "target": [
+        -0.8127872138005552,
+        -2.944769098757634
+      ],
+      "free_axial_080": true,
+      "free_axial_0999": true
+    },
+    {
+      "X": 1.012,
+      "eta": 0.3,
+      "lambda_squared": 2351.3174933247565,
+      "target": [
+        -0.696505831934056,
+        -4.323262746913228
+      ],
+      "free_axial_080": true,
+      "free_axial_0999": true
+    },
+    {
+      "X": 1.016,
+      "eta": 0.3,
+      "lambda_squared": 449.73016423920774,
+      "target": [
+        -0.3934980732466174,
+        -5.670426069800633
+      ],
+      "free_axial_080": true,
+      "free_axial_0999": true
+    },
+    {
+      "X": 1.02,
+      "eta": 0.3,
+      "lambda_squared": 4239.154365354509,
+      "target": [
+        -0.549934601207037,
+        -3.11742744487642
+      ],
+      "free_axial_080": true,
+      "free_axial_0999": true
+    }
+  ],
+  "pressure_linear_feasible": false,
+  "scope": "Pointwise free-axial geometry and six compact pressure-mode linear feasibility for the selected eight-mode mean field. No wave or continuous cone acceptance.",
+  "accepted": false
+}

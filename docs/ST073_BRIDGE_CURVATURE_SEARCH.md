@@ -988,3 +988,39 @@ for fourth-order truncation, while the residual norm stabilizes near
 finite-difference artifact. The local eight-node momentum
 reduction does not generalize and cannot justify a PDE claim. See
 `delayed_coupled_cone_holdout.json`.
+
+## Eight-mode joint cone, moment, and momentum screen
+
+`delayed_multimode_cone_fit.py` uses two overlapping axial bands and two
+radial shapes each for swirl and poloidal velocity (eight exact-curl or
+axisymmetric-toroidal modes total). The full physical stress primitive
+and Cartesian momentum include every quadratic cross-advection term.
+Its 12-node training grid is `X=1.008,.012,.016,.02` and
+`eta=.2,.25,.3`. The frozen quadratic response and three-slice moment
+bases are saved in `delayed_multimode_cone_model.npz`, so optimization
+weights can change without recomputing the expensive physical stencil.
+
+A first search, preserved as
+`delayed_multimode_cone_fit_unregularized.json`, lowers the sampled
+maximum residual from `868264` to `345583` but raises the independent
+nearby-time maximum from `759460` to `1010482`. Its moment defects and
+physical cone remain unacceptable. Adding a precomputed nine-node
+nearby-time full-momentum response to the objective improves the
+selected local candidate: training maximum `207310`, nearby-time
+maximum essentially unchanged from the base (`759460`), and nearby-time
+RMS `365894` versus `422178` for the base. The quadratic response
+agrees with direct finite differences on that holdout to `2.1e-7` in
+Cartesian residual components. The optimizer reaches its iteration
+limit; these are sampled improvements, not a converged solution.
+
+Only three of twelve training cone points pass. The worst margin is
+`-19.46`, and the outgoing third/fourth moment defects at `eta=.3`
+are about `(-.02170,+.02087)`; the field cannot be promoted.
+`delayed_multimode_pressure_admission.py` tests whether compact pressure
+could finish its cone window without changing velocity. Arbitrary axial
+stress can enter the `.8`/`.1` cone at nine of twelve points and the
+near-boundary `.999` cone at ten, but `X=1.016,.02` at `eta=.2` fail
+even the near-boundary free-axial test. The six pressure modes are
+linearly infeasible across all twelve points. The next mean correction
+must change tangential target or shear at those two radii, while
+restoring moments and maintaining the improved nearby-time momentum.

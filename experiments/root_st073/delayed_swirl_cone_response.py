@@ -27,7 +27,8 @@ XS = (1.008, 1.012, 1.016, 1.02)
 ETAS = (.2, .3)
 
 
-def blocks(base, tau, order=48):
+def blocks(base, tau, order=48, xs=XS, etas=ETAS,
+           extra_radial_edges=()):
     inner = base.compact.joined.inner
     joined = base.compact.joined
     g, w = leggauss(order)
@@ -37,8 +38,9 @@ def blocks(base, tau, order=48):
     radial_edges += [edge for interval in E_INTERVALS for edge in interval]
     radial_edges += [edge for interval in RADIAL_INTERVALS
                      for edge in interval]
-    for eta in ETAS:
-        for X in XS:
+    radial_edges += list(extra_radial_edges)
+    for eta in etas:
+        for X in xs:
             point = inner.from_similarity(np.array([X]),
                                           np.array([eta]), tau)[0]
             radius, _, z = point
