@@ -1,0 +1,21 @@
+{
+  "id": "ST073-V-wide14",
+  "parent": "ST073-V",
+  "parameters": {
+    "order": 14,
+    "jet_extra": 3,
+    "axis_terms": 120,
+    "h": 0.005,
+    "nu": 0.01,
+    "axis_swirl": 4,
+    "axial_slope": 4.0,
+    "axial_bias": 0.02,
+    "pressure": 1.0,
+    "X_max": 0.09375,
+    "eta_max": 0.5,
+    "k_max": 6.0
+  },
+  "pde_validated": false,
+  "global_field_ready": false,
+  "scope": "Sampled wider local radial recurrence only; no outer or axial join"
+}

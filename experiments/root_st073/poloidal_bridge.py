@@ -10,13 +10,14 @@ def septic(left,width):
     a[4:]=np.linalg.solve(matrix,rhs)
     return a
 
-def coefficients(f,eta,tau):
-    X=3/64;q=tau/(1-eta*eta);rho=np.sqrt(2*q*X);r=np.sqrt(f.nu)*rho
+def coefficients(f,eta,tau,X=3/64,outer_ratio=2.):
+    q=tau/(1-eta*eta);rho=np.sqrt(2*q*X);r=np.sqrt(f.nu)*rho
     c=f.coefficients(float(eta),float(q))[2,:,0]
     C=np.polynomial.polynomial.polyval(X,c);Cs=np.polynomial.polynomial.polyval(X,np.polynomial.polynomial.polyder(c))/(2*q);Css=np.polynomial.polynomial.polyval(X,np.polynomial.polynomial.polyder(c,2))/(2*q)**2
     psi=f.nu**1.5*q*np.polynomial.polynomial.polyval(X,np.r_[0,c/np.arange(1,len(c)+1)])
     left=np.array([psi,r*np.sqrt(f.nu)*C,np.sqrt(f.nu)*C+r*2*rho*Cs,6*rho*Cs+4*rho**3*Css],float)
-    return r,2*r,left,septic(left,r)
+    width=(outer_ratio-1)*r
+    return r,outer_ratio*r,left,septic(left,width)
 
 def run():
     f=FullRadialField.load(ROOT/'radial_continuation/candidate.json');rows=[]

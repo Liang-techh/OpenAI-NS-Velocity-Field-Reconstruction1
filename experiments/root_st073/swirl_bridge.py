@@ -9,8 +9,8 @@ def quintic(left,right,width):
     a[3:]=np.linalg.solve([[1,1,1],[3,4,5],[6,12,20]],np.array([right[0]-sum(a[:3]),width*right[1]-a[1]-2*a[2],width**2*right[2]-2*a[2]]))
     return a
 
-def traces(f,eta,tau,c):
-    q=tau/(1-eta**2);X=3/64;rho=np.sqrt(2*q*X);ri=np.sqrt(f.nu)*rho;ro=2*ri
+def traces(f,eta,tau,c,X=3/64,outer_ratio=2.):
+    q=tau/(1-eta**2);rho=np.sqrt(2*q*X);ri=np.sqrt(f.nu)*rho;ro=outer_ratio*ri
     b=f.coefficients(float(eta),float(q))[1,:,0];B=np.polynomial.polynomial.polyval(X,b);Bs=np.polynomial.polynomial.polyval(X,np.polynomial.polynomial.polyder(b))/(2*q);Bss=np.polynomial.polynomial.polyval(X,np.polynomial.polynomial.polyder(b,2))/(2*q)**2
     left=np.array([np.sqrt(f.nu)*rho*B,B+2*rho**2*Bs,(6*rho*Bs+4*rho**3*Bss)/np.sqrt(f.nu)],float)
     rr=ro/np.sqrt(f.nu);s=rr**2/2;A=.5+f.h;Z=2*tau/s
