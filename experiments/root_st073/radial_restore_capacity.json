@@ -1,0 +1,413 @@
+{
+  "tau": 0.011048543456039806,
+  "step_amplitude": -0.5,
+  "restore_end": 3.0,
+  "width": 0.4,
+  "start_X": 1.005,
+  "quadrature_order": 48,
+  "E_source": "delayed_e_capacity_optimize.json",
+  "rows": [
+    {
+      "restore_start": 1.55,
+      "eta": 0.2,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 19,
+      "S_slack": 0.04439418981186716,
+      "basis_condition": 3118.1223971110294,
+      "max_abs_minimum_U": 5.021752795912807
+    },
+    {
+      "restore_start": 1.55,
+      "eta": 0.2,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 23,
+      "S_slack": 0.08721078274497973,
+      "basis_condition": 9178.634011532698,
+      "max_abs_minimum_U": 5.021752795912807
+    },
+    {
+      "restore_start": 1.55,
+      "eta": 0.2,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 27,
+      "S_slack": 0.10251809301604231,
+      "basis_condition": 24478.93878186608,
+      "max_abs_minimum_U": 5.021752795912807
+    },
+    {
+      "restore_start": 1.55,
+      "eta": 0.2,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 31,
+      "S_slack": 0.11556979057218886,
+      "basis_condition": 60357.95066605328,
+      "max_abs_minimum_U": 5.021752795912807
+    },
+    {
+      "restore_start": 1.55,
+      "eta": 0.3,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 19,
+      "S_slack": -0.05872675548458384,
+      "basis_condition": 3118.1223971110294,
+      "max_abs_minimum_U": 4.594698055328888
+    },
+    {
+      "restore_start": 1.55,
+      "eta": 0.3,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 23,
+      "S_slack": -0.018852493839987883,
+      "basis_condition": 9178.634011532698,
+      "max_abs_minimum_U": 4.594698055328888
+    },
+    {
+      "restore_start": 1.55,
+      "eta": 0.3,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 27,
+      "S_slack": -0.00357319324798433,
+      "basis_condition": 24478.93878186608,
+      "max_abs_minimum_U": 4.594698055328888
+    },
+    {
+      "restore_start": 1.55,
+      "eta": 0.3,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 31,
+      "S_slack": 0.009370273668401152,
+      "basis_condition": 60357.95066605328,
+      "max_abs_minimum_U": 4.594698055328888
+    },
+    {
+      "restore_start": 1.75,
+      "eta": 0.2,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 19,
+      "S_slack": 0.04434933708837141,
+      "basis_condition": 3118.1223971110294,
+      "max_abs_minimum_U": 5.021752795912807
+    },
+    {
+      "restore_start": 1.75,
+      "eta": 0.2,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 23,
+      "S_slack": 0.08724795529451512,
+      "basis_condition": 9178.634011532698,
+      "max_abs_minimum_U": 5.021752795912807
+    },
+    {
+      "restore_start": 1.75,
+      "eta": 0.2,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 27,
+      "S_slack": 0.102536731433716,
+      "basis_condition": 24478.93878186608,
+      "max_abs_minimum_U": 5.021752795912807
+    },
+    {
+      "restore_start": 1.75,
+      "eta": 0.2,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 31,
+      "S_slack": 0.11557971350170249,
+      "basis_condition": 60357.95066605328,
+      "max_abs_minimum_U": 5.021752795912807
+    },
+    {
+      "restore_start": 1.75,
+      "eta": 0.3,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 19,
+      "S_slack": -0.05876011569772821,
+      "basis_condition": 3118.1223971110294,
+      "max_abs_minimum_U": 4.594698055328888
+    },
+    {
+      "restore_start": 1.75,
+      "eta": 0.3,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 23,
+      "S_slack": -0.018817958914145283,
+      "basis_condition": 9178.634011532698,
+      "max_abs_minimum_U": 4.594698055328888
+    },
+    {
+      "restore_start": 1.75,
+      "eta": 0.3,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 27,
+      "S_slack": -0.0035564418082560945,
+      "basis_condition": 24478.93878186608,
+      "max_abs_minimum_U": 4.594698055328888
+    },
+    {
+      "restore_start": 1.75,
+      "eta": 0.3,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 31,
+      "S_slack": 0.009378831245598906,
+      "basis_condition": 60357.95066605328,
+      "max_abs_minimum_U": 4.594698055328888
+    },
+    {
+      "restore_start": 2.0,
+      "eta": 0.2,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 19,
+      "S_slack": 0.04433936993443055,
+      "basis_condition": 3118.1223971110294,
+      "max_abs_minimum_U": 5.021752795912807
+    },
+    {
+      "restore_start": 2.0,
+      "eta": 0.2,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 23,
+      "S_slack": 0.08736559117348452,
+      "basis_condition": 9178.634011532698,
+      "max_abs_minimum_U": 5.021752795912807
+    },
+    {
+      "restore_start": 2.0,
+      "eta": 0.2,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 27,
+      "S_slack": 0.10257041380287646,
+      "basis_condition": 24478.93878186608,
+      "max_abs_minimum_U": 5.021752795912807
+    },
+    {
+      "restore_start": 2.0,
+      "eta": 0.2,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 31,
+      "S_slack": 0.11558145164069433,
+      "basis_condition": 60357.95066605328,
+      "max_abs_minimum_U": 5.021752795912807
+    },
+    {
+      "restore_start": 2.0,
+      "eta": 0.3,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 19,
+      "S_slack": -0.05875871062830784,
+      "basis_condition": 3118.1223971110294,
+      "max_abs_minimum_U": 4.594698055328888
+    },
+    {
+      "restore_start": 2.0,
+      "eta": 0.3,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 23,
+      "S_slack": -0.018710258723738438,
+      "basis_condition": 9178.634011532698,
+      "max_abs_minimum_U": 4.594698055328888
+    },
+    {
+      "restore_start": 2.0,
+      "eta": 0.3,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 27,
+      "S_slack": -0.003524417267173119,
+      "basis_condition": 24478.93878186608,
+      "max_abs_minimum_U": 4.594698055328888
+    },
+    {
+      "restore_start": 2.0,
+      "eta": 0.3,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 31,
+      "S_slack": 0.00938251126053169,
+      "basis_condition": 60357.95066605328,
+      "max_abs_minimum_U": 4.594698055328888
+    },
+    {
+      "restore_start": 2.2,
+      "eta": 0.2,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 19,
+      "S_slack": 0.044398405447930944,
+      "basis_condition": 3118.1223971110294,
+      "max_abs_minimum_U": 5.021752795912807
+    },
+    {
+      "restore_start": 2.2,
+      "eta": 0.2,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 23,
+      "S_slack": 0.08734908686269671,
+      "basis_condition": 9178.634011532698,
+      "max_abs_minimum_U": 5.021752795912807
+    },
+    {
+      "restore_start": 2.2,
+      "eta": 0.2,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 27,
+      "S_slack": 0.10260900659938965,
+      "basis_condition": 24478.93878186608,
+      "max_abs_minimum_U": 5.021752795912807
+    },
+    {
+      "restore_start": 2.2,
+      "eta": 0.2,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 31,
+      "S_slack": 0.11558075772571108,
+      "basis_condition": 60357.95066605328,
+      "max_abs_minimum_U": 5.021752795912807
+    },
+    {
+      "restore_start": 2.2,
+      "eta": 0.3,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 19,
+      "S_slack": -0.058739149628226794,
+      "basis_condition": 3118.1223971110294,
+      "max_abs_minimum_U": 4.594698055328888
+    },
+    {
+      "restore_start": 2.2,
+      "eta": 0.3,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 23,
+      "S_slack": -0.018722458780919826,
+      "basis_condition": 9178.634011532698,
+      "max_abs_minimum_U": 4.594698055328888
+    },
+    {
+      "restore_start": 2.2,
+      "eta": 0.3,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 27,
+      "S_slack": -0.0034876659899518714,
+      "basis_condition": 24478.93878186608,
+      "max_abs_minimum_U": 4.594698055328888
+    },
+    {
+      "restore_start": 2.2,
+      "eta": 0.3,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 31,
+      "S_slack": 0.009382772522913196,
+      "basis_condition": 60357.95066605328,
+      "max_abs_minimum_U": 4.594698055328888
+    },
+    {
+      "restore_start": 2.4,
+      "eta": 0.2,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 19,
+      "S_slack": 0.04452933155998018,
+      "basis_condition": 3118.1223971110294,
+      "max_abs_minimum_U": 5.021752795912807
+    },
+    {
+      "restore_start": 2.4,
+      "eta": 0.2,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 23,
+      "S_slack": 0.08706973853403221,
+      "basis_condition": 9178.634011532698,
+      "max_abs_minimum_U": 5.021752795912807
+    },
+    {
+      "restore_start": 2.4,
+      "eta": 0.2,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 27,
+      "S_slack": 0.10267820585850451,
+      "basis_condition": 24478.93878186608,
+      "max_abs_minimum_U": 5.021752795912807
+    },
+    {
+      "restore_start": 2.4,
+      "eta": 0.2,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 31,
+      "S_slack": 0.11555893495266378,
+      "basis_condition": 60357.95066605328,
+      "max_abs_minimum_U": 5.021752795912807
+    },
+    {
+      "restore_start": 2.4,
+      "eta": 0.3,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 19,
+      "S_slack": -0.05867822680793777,
+      "basis_condition": 3118.1223971110294,
+      "max_abs_minimum_U": 4.594698055328888
+    },
+    {
+      "restore_start": 2.4,
+      "eta": 0.3,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 23,
+      "S_slack": -0.01897977171984211,
+      "basis_condition": 9178.634011532698,
+      "max_abs_minimum_U": 4.594698055328888
+    },
+    {
+      "restore_start": 2.4,
+      "eta": 0.3,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 27,
+      "S_slack": -0.003421141315848031,
+      "basis_condition": 24478.93878186608,
+      "max_abs_minimum_U": 4.594698055328888
+    },
+    {
+      "restore_start": 2.4,
+      "eta": 0.3,
+      "start_X": 1.005,
+      "width": 0.4,
+      "degree": 31,
+      "S_slack": 0.009360597485945643,
+      "basis_condition": 60357.95066605328,
+      "max_abs_minimum_U": 4.594698055328888
+    }
+  ],
+  "scope": "Finite-basis fixed-slice M/J/S capacity as the outer radial streamfunction restoration starts at different X. Entrance step and E profile fixed. No physical complete-momentum or cone acceptance.",
+  "accepted": false
+}

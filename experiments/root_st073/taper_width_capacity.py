@@ -31,12 +31,13 @@ def grid(width, order=96):
 
 
 def optimize_slice(base, changed, X, weights, eta, tau, width, prior,
-                   degree=11, start_X=1.):
+                   degree=11, start_X=1.,
+                   relative_swirl_floor=RELATIVE_SWIRL_FLOOR):
     U0, E0 = profile(base, X, eta, tau)
     U, _ = profile(changed, X, eta, tau)
     target = moment_vector(U0, E0, X, weights)
     eb = np.array([bump(X, *interval)[0] for interval in INTERVALS])
-    lower = np.array([np.max((RELATIVE_SWIRL_FLOOR-1)*E0[b > 1e-10]
+    lower = np.array([np.max((relative_swirl_floor-1)*E0[b > 1e-10]
                              /b[b > 1e-10])+1e-5 for b in eb])
     B = correction_modes(X, width, degree, start_X)
     orth, factor = np.linalg.qr((B*np.sqrt(weights)).T)
@@ -83,7 +84,8 @@ def optimize_slice(base, changed, X, weights, eta, tau, width, prior,
                 original_basis_condition=float(np.linalg.cond(factor)),
                 optimizer_success=bool(fit.success),
                 feasible=bool(np.max(np.abs(defects)) < 1e-7
-                              and slack > 0 and min_ratio > .10))
+                              and slack > 0
+                              and min_ratio > relative_swirl_floor-1e-4))
 
 
 def run():

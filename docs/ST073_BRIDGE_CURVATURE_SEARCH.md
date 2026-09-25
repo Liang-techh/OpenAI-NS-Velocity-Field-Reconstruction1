@@ -668,3 +668,37 @@ a proof of global infeasibility, but they explain why simply dropping
 the high-degree modes cannot retain the current five-moment repair.
 The radial step/return basis or the baseline moments must change to
 obtain both low curvature and sufficient S capacity.
+
+## Alternate radial basis and swirl-floor capacity
+
+`delayed_bump_basis_capacity.py` checks overlapping compact C4 radial U
+bumps of widths `.3`, `.5`, `.8` and counts 16, 24, 32, both alone and
+combined with the first twelve global tapered Legendre modes. With the
+reoptimized E profile fixed, every tested basis has negative S slack
+at `eta=.3`. The best hybrid in this grid still has slack `-.03210`
+(width `.5`, 32 local bumps) and an original-basis condition above
+`3e5`; the pure local basis is further from feasibility. Hence a
+localized smooth return cannot simply replace the global degree-31
+space under the present moment debt.
+
+`radial_restore_capacity.py` moves the outer streamfunction restoration
+start from `X=1.55` through `2.4`, keeping its entrance rise and final
+zero trace at `X=3`. The degree-27 `eta=.3` S slack remains near
+`-.0035` throughout; degree 31 remains near `+.0094`. This shows that
+the outer restoration location, by itself, does not remove the
+capacity bottleneck for the fixed E profile.
+
+The positive swirl floor was then varied in the E optimizer. At a
+relative E floor of `.05`, degree 27 becomes only barely feasible:
+`eta=.3` S slack is `+.000223`; at `.01` it is `+.00256`. Degree 19
+remains infeasible even at `.01` (`-.05304`). The exact five-moment
+degree-27, floor-`.05` candidate was physically lifted and screened.
+Its 20-node complete-momentum maximum is `1.010374e6`, **worse** than
+the degree-31 floor-`.11` value `9.565792e5`. The sampled cone at
+`X=1.01` still fails both slices: the `eta=.2` ratio is `1.410`, and
+the `eta=.3` target-normal projection is positive (`+3.329`). The
+weaker swirl therefore buys too little smoothness and loses physical
+momentum performance. This field is not promoted. The next structural
+degree of freedom should change the entrance rise of the radial mean
+step and co-design its five-moment return, rather than further lowering
+the swirl floor or moving only the far restoration.

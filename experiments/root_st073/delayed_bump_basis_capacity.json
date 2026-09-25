@@ -1,0 +1,280 @@
+{
+  "tau": 0.011048543456039806,
+  "start_X": 1.005,
+  "end_X": 3.0,
+  "quadrature_order": 48,
+  "rows": [
+    {
+      "kind": "local",
+      "support_width": 0.3,
+      "count": 16,
+      "0.2": {
+        "S_slack": -0.018100764194249663,
+        "basis_condition": 1.4188362042266423,
+        "max_abs_minimum_U": 5.021752795912807
+      },
+      "0.3": {
+        "S_slack": -0.12883870502777794,
+        "basis_condition": 1.4188362042266423,
+        "max_abs_minimum_U": 4.594698055328888
+      }
+    },
+    {
+      "kind": "hybrid_degree11",
+      "support_width": 0.3,
+      "count": 16,
+      "0.2": {
+        "S_slack": 0.021071814692667612,
+        "basis_condition": 616.2631797611657,
+        "max_abs_minimum_U": 5.021752795912807
+      },
+      "0.3": {
+        "S_slack": -0.08592195237476785,
+        "basis_condition": 616.2631797611657,
+        "max_abs_minimum_U": 4.594698055328888
+      }
+    },
+    {
+      "kind": "local",
+      "support_width": 0.3,
+      "count": 24,
+      "0.2": {
+        "S_slack": -0.013523318857541433,
+        "basis_condition": 4.167800505430316,
+        "max_abs_minimum_U": 5.021752795912807
+      },
+      "0.3": {
+        "S_slack": -0.12576050683817774,
+        "basis_condition": 4.167800505430316,
+        "max_abs_minimum_U": 4.594698055328888
+      }
+    },
+    {
+      "kind": "hybrid_degree11",
+      "support_width": 0.3,
+      "count": 24,
+      "0.2": {
+        "S_slack": 0.041345853193779813,
+        "basis_condition": 3122.3172525060977,
+        "max_abs_minimum_U": 5.021752795912807
+      },
+      "0.3": {
+        "S_slack": -0.06562107546600515,
+        "basis_condition": 3122.3172525060977,
+        "max_abs_minimum_U": 4.594698055328888
+      }
+    },
+    {
+      "kind": "local",
+      "support_width": 0.3,
+      "count": 32,
+      "0.2": {
+        "S_slack": -0.008715743026949774,
+        "basis_condition": 37.21283985959924,
+        "max_abs_minimum_U": 5.021752795912807
+      },
+      "0.3": {
+        "S_slack": -0.12003440384117647,
+        "basis_condition": 37.21283985959924,
+        "max_abs_minimum_U": 4.594698055328888
+      }
+    },
+    {
+      "kind": "hybrid_degree11",
+      "support_width": 0.3,
+      "count": 32,
+      "0.2": {
+        "S_slack": 0.05361745216675384,
+        "basis_condition": 13247.664584688944,
+        "max_abs_minimum_U": 5.021752795912807
+      },
+      "0.3": {
+        "S_slack": -0.0528669996518869,
+        "basis_condition": 13247.664584688944,
+        "max_abs_minimum_U": 4.594698055328888
+      }
+    },
+    {
+      "kind": "local",
+      "support_width": 0.5,
+      "count": 16,
+      "0.2": {
+        "S_slack": -0.15131452600398054,
+        "basis_condition": 12.387963728581575,
+        "max_abs_minimum_U": 5.021752795912807
+      },
+      "0.3": {
+        "S_slack": -0.25923822680467845,
+        "basis_condition": 12.387963728581575,
+        "max_abs_minimum_U": 4.594698055328888
+      }
+    },
+    {
+      "kind": "hybrid_degree11",
+      "support_width": 0.5,
+      "count": 16,
+      "0.2": {
+        "S_slack": 0.0254180614947499,
+        "basis_condition": 5638.042255278892,
+        "max_abs_minimum_U": 5.021752795912807
+      },
+      "0.3": {
+        "S_slack": -0.08077151068297228,
+        "basis_condition": 5638.042255278892,
+        "max_abs_minimum_U": 4.594698055328888
+      }
+    },
+    {
+      "kind": "local",
+      "support_width": 0.5,
+      "count": 24,
+      "0.2": {
+        "S_slack": -0.03094422410282771,
+        "basis_condition": 227.42306004680324,
+        "max_abs_minimum_U": 5.021752795912807
+      },
+      "0.3": {
+        "S_slack": -0.1449567037090822,
+        "basis_condition": 227.42306004680324,
+        "max_abs_minimum_U": 4.594698055328888
+      }
+    },
+    {
+      "kind": "hybrid_degree11",
+      "support_width": 0.5,
+      "count": 24,
+      "0.2": {
+        "S_slack": 0.03779352144229309,
+        "basis_condition": 62565.58579486625,
+        "max_abs_minimum_U": 5.021752795912807
+      },
+      "0.3": {
+        "S_slack": -0.06876283960267182,
+        "basis_condition": 62565.58579486625,
+        "max_abs_minimum_U": 4.594698055328888
+      }
+    },
+    {
+      "kind": "local",
+      "support_width": 0.5,
+      "count": 32,
+      "0.2": {
+        "S_slack": -0.014353805305828082,
+        "basis_condition": 2515.4060963931843,
+        "max_abs_minimum_U": 5.021752795912807
+      },
+      "0.3": {
+        "S_slack": -0.125820666746844,
+        "basis_condition": 2515.4060963931843,
+        "max_abs_minimum_U": 4.594698055328888
+      }
+    },
+    {
+      "kind": "hybrid_degree11",
+      "support_width": 0.5,
+      "count": 32,
+      "0.2": {
+        "S_slack": 0.07497629870057398,
+        "basis_condition": 336921.68771989335,
+        "max_abs_minimum_U": 5.021752795912807
+      },
+      "0.3": {
+        "S_slack": -0.03209899936475935,
+        "basis_condition": 336921.68771989335,
+        "max_abs_minimum_U": 4.594698055328888
+      }
+    },
+    {
+      "kind": "local",
+      "support_width": 0.8,
+      "count": 16,
+      "0.2": {
+        "S_slack": -0.1015432436415491,
+        "basis_condition": 1051.3358759181504,
+        "max_abs_minimum_U": 5.021752795912807
+      },
+      "0.3": {
+        "S_slack": -0.21411618757639683,
+        "basis_condition": 1051.3358759181504,
+        "max_abs_minimum_U": 4.594698055328888
+      }
+    },
+    {
+      "kind": "hybrid_degree11",
+      "support_width": 0.8,
+      "count": 16,
+      "0.2": {
+        "S_slack": 0.03425201297822689,
+        "basis_condition": 126711.85427433038,
+        "max_abs_minimum_U": 5.021752795912807
+      },
+      "0.3": {
+        "S_slack": -0.07169068715623927,
+        "basis_condition": 126711.85427433038,
+        "max_abs_minimum_U": 4.594698055328888
+      }
+    },
+    {
+      "kind": "local",
+      "support_width": 0.8,
+      "count": 24,
+      "0.2": {
+        "S_slack": -0.03636234090582846,
+        "basis_condition": 17404.179724861908,
+        "max_abs_minimum_U": 5.021752795912807
+      },
+      "0.3": {
+        "S_slack": -0.14745746998461495,
+        "basis_condition": 17404.179724861908,
+        "max_abs_minimum_U": 4.594698055328888
+      }
+    },
+    {
+      "kind": "hybrid_degree11",
+      "support_width": 0.8,
+      "count": 24,
+      "0.2": {
+        "S_slack": 0.0543726825920845,
+        "basis_condition": 285257.36401627946,
+        "max_abs_minimum_U": 5.021752795912807
+      },
+      "0.3": {
+        "S_slack": -0.05212127709642189,
+        "basis_condition": 285257.36401627946,
+        "max_abs_minimum_U": 4.594698055328888
+      }
+    },
+    {
+      "kind": "local",
+      "support_width": 0.8,
+      "count": 32,
+      "0.2": {
+        "S_slack": -0.022453301458170483,
+        "basis_condition": 110880.01419330761,
+        "max_abs_minimum_U": 5.021752795912807
+      },
+      "0.3": {
+        "S_slack": -0.13096664242008638,
+        "basis_condition": 110880.01419330761,
+        "max_abs_minimum_U": 4.594698055328888
+      }
+    },
+    {
+      "kind": "hybrid_degree11",
+      "support_width": 0.8,
+      "count": 32,
+      "0.2": {
+        "S_slack": 0.07012830466554032,
+        "basis_condition": 635914.3681063625,
+        "max_abs_minimum_U": 5.021752795912807
+      },
+      "0.3": {
+        "S_slack": -0.03653366883141951,
+        "basis_condition": 635914.3681063625,
+        "max_abs_minimum_U": 4.594698055328888
+      }
+    }
+  ],
+  "scope": "Finite-basis fixed-eta M/J/S capacity with E fixed to the reoptimized five-bump profile. Each U mode is compact C4 and endpoint-flat. No physical lift, stress cone, or momentum claim.",
+  "accepted": false
+}

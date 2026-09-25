@@ -1,0 +1,56 @@
+{
+  "tau": 0.011048543456039806,
+  "width": 0.4,
+  "degree": 27,
+  "start_X": 1.005,
+  "quadrature_per_piece": 64,
+  "relative_swirl_floor": 0.01,
+  "rows": [
+    {
+      "width": 0.4,
+      "degree": 27,
+      "start_X": 1.005,
+      "eta": 0.2,
+      "coefficients": [
+        -1.3489294949500004,
+        -0.6260007169693881,
+        1.5936905898156937,
+        -0.17998670269334613,
+        -0.08403327556293064
+      ],
+      "I_Cp_defect": [
+        -7.149836278586008e-14,
+        3.552713678800501e-13
+      ],
+      "finite_basis_S_slack": 0.10959088355441393,
+      "min_relative_E": 0.010007339098630608,
+      "original_basis_condition": 24478.93878186321,
+      "optimizer_success": true,
+      "feasible": true
+    },
+    {
+      "width": 0.4,
+      "degree": 27,
+      "start_X": 1.005,
+      "eta": 0.3,
+      "coefficients": [
+        -1.3448608147313268,
+        -0.6255370782903443,
+        1.5888597060128906,
+        -0.1800048459061353,
+        -0.08306458694489456
+      ],
+      "I_Cp_defect": [
+        6.927791673660977e-14,
+        1.5223378113660146e-12
+      ],
+      "finite_basis_S_slack": 0.0025603480407605517,
+      "min_relative_E": 0.01000736130183783,
+      "original_basis_condition": 24478.93878186321,
+      "optimizer_success": true,
+      "feasible": true
+    }
+  ],
+  "scope": "Fixed-slice E redistribution maximizing S slack for delayed U support, with I/Cp equalities and positive E floor. No selected physical lift or PDE admission.",
+  "accepted": false
+}
