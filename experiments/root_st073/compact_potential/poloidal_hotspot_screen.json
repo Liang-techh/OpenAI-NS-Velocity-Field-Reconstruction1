@@ -1,0 +1,367 @@
+{
+  "tau": 0.0084,
+  "relative_strengths": [
+    -1.0,
+    -0.5,
+    -0.2,
+    -0.1,
+    -0.05,
+    -0.02,
+    0.0,
+    0.02,
+    0.05,
+    0.1,
+    0.2,
+    0.5,
+    1.0
+  ],
+  "baseline": {
+    "relative_strength": 0.0,
+    "amplitude": 0.0,
+    "metrics": [
+      {
+        "order": 6,
+        "max": 94068.01230565087,
+        "physical_volume_l2": 159.90037279039004
+      },
+      {
+        "order": 8,
+        "max": 177827.21222853503,
+        "physical_volume_l2": 129.66165672574692
+      },
+      {
+        "order": 10,
+        "max": 269256.835989142,
+        "physical_volume_l2": 314.4423130928605
+      }
+    ],
+    "worst_l2_ratio": 1.0,
+    "worst_max_ratio": 1.0
+  },
+  "best": {
+    "relative_strength": 0.0,
+    "amplitude": 0.0,
+    "metrics": [
+      {
+        "order": 6,
+        "max": 94068.01230565087,
+        "physical_volume_l2": 159.90037279039004
+      },
+      {
+        "order": 8,
+        "max": 177827.21222853503,
+        "physical_volume_l2": 129.66165672574692
+      },
+      {
+        "order": 10,
+        "max": 269256.835989142,
+        "physical_volume_l2": 314.4423130928605
+      }
+    ],
+    "worst_l2_ratio": 1.0,
+    "worst_max_ratio": 1.0
+  },
+  "rows": [
+    {
+      "relative_strength": -1.0,
+      "amplitude": -0.010965364687723573,
+      "metrics": [
+        {
+          "order": 6,
+          "max": 474351.3338299899,
+          "physical_volume_l2": 381.46276817408614
+        },
+        {
+          "order": 8,
+          "max": 587426.3887365434,
+          "physical_volume_l2": 400.36245921160116
+        },
+        {
+          "order": 10,
+          "max": 1117487.34288744,
+          "physical_volume_l2": 852.2014837789507
+        }
+      ],
+      "worst_l2_ratio": 3.0877475216780965,
+      "worst_max_ratio": 5.042642256420832
+    },
+    {
+      "relative_strength": -0.5,
+      "amplitude": -0.005482682343861786,
+      "metrics": [
+        {
+          "order": 6,
+          "max": 282881.78708439175,
+          "physical_volume_l2": 235.644494461686
+        },
+        {
+          "order": 8,
+          "max": 329312.3018343688,
+          "physical_volume_l2": 229.46779017179807
+        },
+        {
+          "order": 10,
+          "max": 663787.8297457846,
+          "physical_volume_l2": 507.3820157465596
+        }
+      ],
+      "worst_l2_ratio": 1.7697428520225953,
+      "worst_max_ratio": 3.0072048951692203
+    },
+    {
+      "relative_strength": -0.2,
+      "amplitude": -0.002193072937544715,
+      "metrics": [
+        {
+          "order": 6,
+          "max": 168290.59587234582,
+          "physical_volume_l2": 174.21022824023976
+        },
+        {
+          "order": 8,
+          "max": 209627.71834277076,
+          "physical_volume_l2": 150.1229384512539
+        },
+        {
+          "order": 10,
+          "max": 392494.3646692468,
+          "physical_volume_l2": 353.65144173887745
+        }
+      ],
+      "worst_l2_ratio": 1.157805184988385,
+      "worst_max_ratio": 1.7890310611170024
+    },
+    {
+      "relative_strength": -0.1,
+      "amplitude": -0.0010965364687723575,
+      "metrics": [
+        {
+          "order": 6,
+          "max": 130256.2444109386,
+          "physical_volume_l2": 163.5792376367901
+        },
+        {
+          "order": 8,
+          "max": 191336.70514951684,
+          "physical_volume_l2": 135.05252614599848
+        },
+        {
+          "order": 10,
+          "max": 310862.360160016,
+          "physical_volume_l2": 325.21795923692554
+        }
+      ],
+      "worst_l2_ratio": 1.0415764348257097,
+      "worst_max_ratio": 1.3847028465712974
+    },
+    {
+      "relative_strength": -0.05,
+      "amplitude": -0.0005482682343861787,
+      "metrics": [
+        {
+          "order": 6,
+          "max": 111315.0621783574,
+          "physical_volume_l2": 160.8198473798264
+        },
+        {
+          "order": 8,
+          "max": 182304.63595676373,
+          "physical_volume_l2": 131.02226845332336
+        },
+        {
+          "order": 10,
+          "max": 288142.0661734695,
+          "physical_volume_l2": 317.4415085350524
+        }
+      ],
+      "worst_l2_ratio": 1.010493555010286,
+      "worst_max_ratio": 1.1833465962549148
+    },
+    {
+      "relative_strength": -0.02,
+      "amplitude": -0.00021930729375447148,
+      "metrics": [
+        {
+          "order": 6,
+          "max": 99991.05790831028,
+          "physical_volume_l2": 160.04392181910305
+        },
+        {
+          "order": 8,
+          "max": 176924.50807612043,
+          "physical_volume_l2": 129.87648771376334
+        },
+        {
+          "order": 10,
+          "max": 276805.19220209547,
+          "physical_volume_l2": 315.05512140114473
+        }
+      ],
+      "worst_l2_ratio": 1.001948873554124,
+      "worst_max_ratio": 1.062965565631534
+    },
+    {
+      "relative_strength": 0.0,
+      "amplitude": 0.0,
+      "metrics": [
+        {
+          "order": 6,
+          "max": 94068.01230565087,
+          "physical_volume_l2": 159.90037279039004
+        },
+        {
+          "order": 8,
+          "max": 177827.21222853503,
+          "physical_volume_l2": 129.66165672574692
+        },
+        {
+          "order": 10,
+          "max": 269256.835989142,
+          "physical_volume_l2": 314.4423130928605
+        }
+      ],
+      "worst_l2_ratio": 1.0,
+      "worst_max_ratio": 1.0
+    },
+    {
+      "relative_strength": 0.02,
+      "amplitude": 0.00021930729375447148,
+      "metrics": [
+        {
+          "order": 6,
+          "max": 101597.75111305669,
+          "physical_volume_l2": 160.05699437318447
+        },
+        {
+          "order": 8,
+          "max": 181394.12833780222,
+          "physical_volume_l2": 129.8892360707961
+        },
+        {
+          "order": 10,
+          "max": 269050.8890596236,
+          "physical_volume_l2": 314.61818388032833
+        }
+      ],
+      "worst_l2_ratio": 1.0017551784451633,
+      "worst_max_ratio": 1.0800456884635743
+    },
+    {
+      "relative_strength": 0.05,
+      "amplitude": 0.0005482682343861787,
+      "metrics": [
+        {
+          "order": 6,
+          "max": 112926.5453097653,
+          "physical_volume_l2": 160.85236909110395
+        },
+        {
+          "order": 8,
+          "max": 186769.99492949902,
+          "physical_volume_l2": 131.0538583514155
+        },
+        {
+          "order": 10,
+          "max": 280374.1416448816,
+          "physical_volume_l2": 316.35627320788586
+        }
+      ],
+      "worst_l2_ratio": 1.010737188316306,
+      "worst_max_ratio": 1.2004776389112832
+    },
+    {
+      "relative_strength": 0.1,
+      "amplitude": 0.0010965364687723575,
+      "metrics": [
+        {
+          "order": 6,
+          "max": 131873.05520723847,
+          "physical_volume_l2": 163.64317759526784
+        },
+        {
+          "order": 8,
+          "max": 195794.75020721758,
+          "physical_volume_l2": 135.1138138098983
+        },
+        {
+          "order": 10,
+          "max": 303696.3946789818,
+          "physical_volume_l2": 323.09608702025906
+        }
+      ],
+      "worst_l2_ratio": 1.0420491085940964,
+      "worst_max_ratio": 1.4018905255353904
+    },
+    {
+      "relative_strength": 0.2,
+      "amplitude": 0.002193072937544715,
+      "metrics": [
+        {
+          "order": 6,
+          "max": 169913.05984621885,
+          "physical_volume_l2": 174.33028481805607
+        },
+        {
+          "order": 8,
+          "max": 214070.8571765437,
+          "physical_volume_l2": 150.23319192985016
+        },
+        {
+          "order": 10,
+          "max": 383000.1654597735,
+          "physical_volume_l2": 349.7399927205127
+        }
+      ],
+      "worst_l2_ratio": 1.1586555017387676,
+      "worst_max_ratio": 1.8062788367859643
+    },
+    {
+      "relative_strength": 0.5,
+      "amplitude": 0.005482682343861786,
+      "metrics": [
+        {
+          "order": 6,
+          "max": 284509.41199047817,
+          "physical_volume_l2": 235.866336782432
+        },
+        {
+          "order": 8,
+          "max": 328999.0092588211,
+          "physical_volume_l2": 229.64809525829665
+        },
+        {
+          "order": 10,
+          "max": 654264.4166971276,
+          "physical_volume_l2": 500.5579885199774
+        }
+      ],
+      "worst_l2_ratio": 1.7711334334099667,
+      "worst_max_ratio": 3.024507534676451
+    },
+    {
+      "relative_strength": 1.0,
+      "amplitude": 0.010965364687723573,
+      "metrics": [
+        {
+          "order": 6,
+          "max": 475980.53982710495,
+          "physical_volume_l2": 381.73678282285124
+        },
+        {
+          "order": 8,
+          "max": 587112.9873734497,
+          "physical_volume_l2": 400.56910535985475
+        },
+        {
+          "order": 10,
+          "max": 1107972.2618736236,
+          "physical_volume_l2": 844.0917441356314
+        }
+      ],
+      "worst_l2_ratio": 3.089341255349807,
+      "worst_max_ratio": 5.059961703884241
+    }
+  ],
+  "scope": "One existing exact-solenoidal axial-collar mode, full quadratic momentum recombination at one time on Gauss6/8/10. No cone, time holdout, or continuum validation for nonzero amplitudes.",
+  "accepted": false
+}
