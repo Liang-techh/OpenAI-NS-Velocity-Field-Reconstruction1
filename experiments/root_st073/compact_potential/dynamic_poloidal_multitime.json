@@ -1,0 +1,107 @@
+{
+  "times": [
+    0.0084,
+    0.012,
+    0.024
+  ],
+  "mode_ids": [
+    {
+      "radial_degree": 0,
+      "axial_degree": 0,
+      "parity": "odd"
+    },
+    {
+      "radial_degree": 0,
+      "axial_degree": 1,
+      "parity": "odd"
+    },
+    {
+      "radial_degree": 0,
+      "axial_degree": 2,
+      "parity": "odd"
+    },
+    {
+      "radial_degree": 1,
+      "axial_degree": 0,
+      "parity": "odd"
+    },
+    {
+      "radial_degree": 1,
+      "axial_degree": 1,
+      "parity": "odd"
+    },
+    {
+      "radial_degree": 1,
+      "axial_degree": 2,
+      "parity": "odd"
+    }
+  ],
+  "reference_tau": 0.0084,
+  "temporal_power": 0.5,
+  "amplitude_scales": [
+    0.020849356569847453,
+    0.04298695912563437,
+    0.03272769749396396,
+    0.02384791404693131,
+    0.04912795328643927,
+    0.03741342010487523
+  ],
+  "amplitudes": [
+    0.004021828939684258,
+    -0.0028505157545572674,
+    -0.0031344835983787454,
+    -0.0009092490534446851,
+    -0.026189563364388335,
+    -0.0010678014370056274
+  ],
+  "optimizer_success": true,
+  "optimizer_message": "`ftol` termination condition is satisfied.",
+  "normalized_coordinates": [
+    0.19289942719386685,
+    -0.06631117465709321,
+    -0.09577464467082797,
+    -0.038126984676954793,
+    -0.5330888346129699,
+    -0.028540599442991994
+  ],
+  "rows": [
+    {
+      "tau": 0.0084,
+      "point_count": 30,
+      "baseline_max": 510555.5252883739,
+      "corrected_max": 428874.31549821934,
+      "baseline_radial_max": 510023.97001912224,
+      "corrected_radial_max": 428526.5588926421,
+      "baseline_angular_max": 48490.98927345129,
+      "corrected_angular_max": 48631.418810072784,
+      "baseline_axial_max": 59643.827067803264,
+      "corrected_axial_max": 54643.79497115698
+    },
+    {
+      "tau": 0.012,
+      "point_count": 30,
+      "baseline_max": 263327.5849576955,
+      "corrected_max": 179281.39747669475,
+      "baseline_radial_max": 263189.46315539244,
+      "corrected_radial_max": 179061.60755658566,
+      "baseline_angular_max": 28090.650803645163,
+      "corrected_angular_max": 28172.915088364607,
+      "baseline_axial_max": 48364.845921590466,
+      "corrected_axial_max": 45421.64375213952
+    },
+    {
+      "tau": 0.024,
+      "point_count": 30,
+      "baseline_max": 103761.31038369634,
+      "corrected_max": 84805.96101933504,
+      "baseline_radial_max": 103397.4626160208,
+      "corrected_radial_max": 84724.88408768193,
+      "baseline_angular_max": 9792.371702430739,
+      "corrected_angular_max": 9821.470074424611,
+      "baseline_axial_max": 32353.481786593056,
+      "corrected_axial_max": 31304.03953881252
+    }
+  ],
+  "scope": "Full nonlinear Cartesian momentum at 30 moving collar points at each of three registered times. Fit is local and requires independent points, broad spatial checks, critical-time forcing and exterior matching before acceptance.",
+  "accepted": false
+}

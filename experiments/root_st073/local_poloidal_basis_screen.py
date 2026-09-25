@@ -15,13 +15,14 @@ class LocalPoloidalMode:
     """Axisymmetric u=curl of a compact azimuthal vector potential."""
 
     def __init__(self, base, radial_degree, axial_degree, parity,
-                 reference_tau=.5/64):
+                 reference_tau=.5/64, temporal_power=2.):
         self.base = base
         self.nu = base.nu
         self.radial_degree = radial_degree
         self.axial_degree = axial_degree
         self.parity = parity
         self.reference_tau = reference_tau
+        self.temporal_power = temporal_power
 
     def fields(self, points, tau):
         points = np.asarray(points)
@@ -47,7 +48,7 @@ class LocalPoloidalMode:
         sign = np.sign(points[inside, 2])
         radial_parity = sign if self.parity == 'even' else np.ones(len(sign))
         axial_parity = np.ones(len(sign)) if self.parity == 'even' else sign
-        factor = (self.reference_tau/tau)**2
+        factor = (self.reference_tau/tau)**self.temporal_power
         velocity[inside, 0] = (-15*points[inside, 0]*f*gs*radial_parity
                                /(zsupport-zflat)*factor)
         velocity[inside, 1] = (-15*points[inside, 1]*f*gs*radial_parity

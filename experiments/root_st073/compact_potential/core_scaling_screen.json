@@ -1,0 +1,77 @@
+{
+  "rows": [
+    {
+      "tau": 0.128,
+      "inner_matching_radius": 0.010954451150103323,
+      "midplane_swirl_peak_radius_grid": 0.0239355058222117,
+      "midplane_swirl_peak_abs": 0.5240258770455181,
+      "midplane_swirl_peak_radius_refined": 0.023621882738074175,
+      "midplane_swirl_peak_abs_refined": 0.5240948861874832,
+      "midplane_peak_angular_speed_abs": 22.186838026366868,
+      "axial_flat_half_length": 0.009330032613222202,
+      "axial_support_half_length": 0.017198398135218985,
+      "axial_support_to_swirl_peak_radius": 0.7280705914054132,
+      "radial_flat_support": 0.07886758328857241,
+      "peak_on_radial_grid_boundary": false
+    },
+    {
+      "tau": 0.064,
+      "inner_matching_radius": 0.007745966692414834,
+      "midplane_swirl_peak_radius_grid": 0.01692495847801598,
+      "midplane_swirl_peak_abs": 0.7432429743796067,
+      "midplane_swirl_peak_radius_refined": 0.016696722926934998,
+      "midplane_swirl_peak_abs_refined": 0.7433466364846916,
+      "midplane_peak_angular_speed_abs": 44.52051098515456,
+      "axial_flat_half_length": 0.006620233597767457,
+      "axial_support_half_length": 0.012203324241461184,
+      "axial_support_to_swirl_peak_radius": 0.7308814007912232,
+      "radial_flat_support": 0.05576780295914437,
+      "peak_on_radial_grid_boundary": false
+    },
+    {
+      "tau": 0.032,
+      "inner_matching_radius": 0.005477225575051661,
+      "midplane_swirl_peak_radius_grid": 0.01196775291110585,
+      "midplane_swirl_peak_abs": 1.054170291152291,
+      "midplane_swirl_peak_radius_refined": 0.011801823875466421,
+      "midplane_swirl_peak_abs_refined": 1.0543256963187677,
+      "midplane_peak_angular_speed_abs": 89.33582702504951,
+      "axial_flat_half_length": 0.004697464061047144,
+      "axial_support_half_length": 0.008659011227171942,
+      "axial_support_to_swirl_peak_radius": 0.733701105739449,
+      "radial_flat_support": 0.039433791644286204,
+      "peak_on_radial_grid_boundary": false
+    },
+    {
+      "tau": 0.016,
+      "inner_matching_radius": 0.003872983346207417,
+      "midplane_swirl_peak_radius_grid": 0.008228486199965048,
+      "midplane_swirl_peak_abs": 1.4951985619467476,
+      "midplane_swirl_peak_radius_refined": 0.008341960893889373,
+      "midplane_swirl_peak_abs_refined": 1.4954095032215629,
+      "midplane_peak_angular_speed_abs": 179.26354753316758,
+      "axial_flat_half_length": 0.0033331404819719503,
+      "axial_support_half_length": 0.006144102537040518,
+      "axial_support_to_swirl_peak_radius": 0.7365297698220064,
+      "radial_flat_support": 0.027883901479572187,
+      "peak_on_radial_grid_boundary": false
+    },
+    {
+      "tau": 0.0084,
+      "inner_matching_radius": 0.0028062430400804562,
+      "midplane_swirl_peak_radius_grid": 0.005962104678725711,
+      "midplane_swirl_peak_abs": 2.069212083346635,
+      "midplane_swirl_peak_radius_refined": 0.006042192109680527,
+      "midplane_swirl_peak_abs_refined": 2.069489044499578,
+      "midplane_peak_angular_speed_abs": 342.5063299764892,
+      "axial_flat_half_length": 0.002422883171320174,
+      "axial_support_half_length": 0.004466191185273401,
+      "axial_support_to_swirl_peak_radius": 0.7391673591638822,
+      "radial_flat_support": 0.020203806074705486,
+      "peak_on_radial_grid_boundary": false
+    }
+  ],
+  "radial_grid_count": 120,
+  "scope": "Current unaccepted finite-slab candidate. Midplane radial grid measures peak absolute azimuthal velocity, not vorticity-defined vortex-core radius or Lagrangian winding. Axial extent is mathematical support, not a measured coherent-vortex length.",
+  "accepted": false
+}

@@ -1,0 +1,45 @@
+{
+  "rows": [
+    {
+      "tau": 0.0084,
+      "point_count": 16,
+      "baseline_full_max": 591394.5520235732,
+      "corrected_full_max": 314770.26173390757,
+      "baseline_radial_max": 591380.1333003179,
+      "corrected_radial_max": 312374.65700847795,
+      "baseline_angular_max": 38719.85000610746,
+      "corrected_angular_max": 38700.299055660544,
+      "baseline_axial_max": 62788.664425175346,
+      "corrected_axial_max": 59760.60504345071,
+      "correction_speed_max": 1.481832168199834
+    },
+    {
+      "tau": 0.012,
+      "point_count": 16,
+      "baseline_full_max": 313271.9596079722,
+      "corrected_full_max": 132680.83003405153,
+      "baseline_radial_max": 313256.3434725367,
+      "corrected_radial_max": 130651.5669596346,
+      "baseline_angular_max": 22435.912575192186,
+      "corrected_angular_max": 22424.462173792253,
+      "baseline_axial_max": 51252.38968207337,
+      "corrected_axial_max": 49466.63696584041,
+      "correction_speed_max": 1.242001408365646
+    },
+    {
+      "tau": 0.024,
+      "point_count": 16,
+      "baseline_full_max": 95933.9013094635,
+      "corrected_full_max": 64788.98320886631,
+      "baseline_radial_max": 95907.57224558169,
+      "corrected_radial_max": 63641.59840989862,
+      "baseline_angular_max": 7817.163342631969,
+      "corrected_angular_max": 7813.114372954199,
+      "baseline_axial_max": 34223.17235503457,
+      "corrected_axial_max": 33585.04654993367,
+      "correction_speed_max": 0.8812747994625597
+    }
+  ],
+  "scope": "Sixteen relative axial-collar points per time, disjoint from poloidal training coordinates, at three registered times. Full nonlinear physical momentum. This is not a global max or volume L2 certificate.",
+  "accepted": false
+}
