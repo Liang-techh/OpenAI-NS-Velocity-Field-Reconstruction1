@@ -819,3 +819,26 @@ interval, not only at `eta=.2,.3`, while coupling velocity and pressure
 or stress corrections. Neither curl candidate has passed a continuous
 strict cone, global momentum maximum, or volume-L2 test; both remain
 experimental (`accepted:false`).
+
+## A third slice does not close the axial interval
+
+`delayed_midband_moment_patch.py` adds three compact physical
+streamfunction-curl modes and two axisymmetric swirl modes, all supported
+between `eta=.2` and `.3`. Fitting the previously unconstrained middle
+slice at `eta=.25` drives its second through fifth outgoing moment
+defects from approximately `(0,-.000775,-.011756,-.0000185)` to
+roundoff; the first moment remains near `1.2e-8` on the order-48
+quadrature and is unchanged by the compact curl. The swirl stays above
+the `.11` relative floor in the sampled rows. The endpoint slices are
+unchanged because the axial bump vanishes there.
+
+The interval is still open: at `eta=.225` the fourth-moment defect grows
+from `+.027638` to `+.028585`, and at `eta=.275` it changes from
+`-.024703` to `-.024002`. On nine disjoint space/time momentum nodes,
+the maximum is essentially unchanged (`684006.34` to `684001.36`) and
+RMS rises (`310962.23` to `311412.87`). The defects change sign along
+the axial band, whereas the one-bump patch has a fixed axial profile.
+This result in `delayed_midband_moment_patch.json` rules out promoting
+the three-slice fit as interval closure. The next construction needs
+axially varying correction coefficients (or a coupled mean/stress solve),
+with physical curl derivatives and momentum included in the fit.
