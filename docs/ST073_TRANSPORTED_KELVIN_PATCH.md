@@ -8,16 +8,17 @@ The resulting velocity is divergence-free by construction. A scalar
 pressure proxy comes from the local Kelvin projection; this is not the
 coupled pressure PDE of the OpenAI paper's Section 7.
 
-Complete Cartesian finite-difference momentum was evaluated at 16
-interlaced patch locations and eight angles at each of two times:
+Complete Cartesian finite-difference momentum was evaluated at four
+interlaced radial/axial holdout locations, one angle per location, at
+each of two times:
 
 | Remaining time | Mean without wave | Frozen wave | Transported-amplitude wave |
 | ---: | ---: | ---: | ---: |
 | `.0084` | `1.14e5` | `1.45e10` | `1.45e10` |
 | `.00846` | `1.23e5` | `6.04e9` | `1.31e10` |
 
-These are sampled full-momentum maxima, not volume L2 or continuous
-suprema. The transported amplitudes and pressure proxy fail to offset
+These are maxima over a sparse holdout sample, not volume L2 or
+continuous suprema. The transported amplitudes and pressure proxy fail to offset
 the narrow envelope's curl/viscosity cost; at the second time they
 worsen the frozen wave. This packet is rejected (`accepted:false`).
 
