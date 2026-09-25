@@ -1,0 +1,46 @@
+{
+  "strength": 0.1,
+  "rows": [
+    {
+      "tau": 0.0084,
+      "order": 6,
+      "max": 94067.91217955442,
+      "physical_volume_l2": 159.6071890571634,
+      "baseline": {
+        "order": 6,
+        "physical_volume_l2": 159.90037279039004,
+        "max": 94068.01230565087
+      },
+      "max_ratio": 0.9999989355988927,
+      "l2_ratio": 0.9981664599768572
+    },
+    {
+      "tau": 0.0084,
+      "order": 8,
+      "max": 177827.16144836711,
+      "physical_volume_l2": 129.4451905366592,
+      "baseline": {
+        "order": 8,
+        "physical_volume_l2": 129.66165672574692,
+        "max": 177827.21222853503
+      },
+      "max_ratio": 0.9999997144409605,
+      "l2_ratio": 0.998330530439345
+    },
+    {
+      "tau": 0.0084,
+      "order": 10,
+      "max": 269256.83368360216,
+      "physical_volume_l2": 314.09542421610166,
+      "baseline": {
+        "order": 10,
+        "physical_volume_l2": 314.4423130928605,
+        "max": 269256.835989142
+      },
+      "max_ratio": 0.9999999914373953,
+      "l2_ratio": 0.9988968123489907
+    }
+  ],
+  "scope": "Gauss6/8/10 full physical finite-difference momentum at one time. Not a converged spatial or spacetime bound.",
+  "accepted": false
+}

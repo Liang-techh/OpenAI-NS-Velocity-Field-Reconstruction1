@@ -135,7 +135,8 @@ if __name__ == '__main__':
     parser.add_argument('--output-name', default='radial_peak_cone.json')
     parser.add_argument('--tau', type=float, default=.5/64)
     parser.add_argument('--field', choices=('current', 'annular-pressure-scale',
-                                            'radial-pressure-time'),
+                                            'radial-pressure-time',
+                                            'local-poloidal-10pct'),
                         default='current')
     args = parser.parse_args()
     if args.field == 'annular-pressure-scale':
@@ -144,6 +145,9 @@ if __name__ == '__main__':
     elif args.field == 'radial-pressure-time':
         from radial_pressure_time_validate import load_candidate
         selected_field = load_candidate()
+    elif args.field == 'local-poloidal-10pct':
+        from local_poloidal_basis_screen import load_robust_candidate
+        selected_field = load_robust_candidate(.1)
     else:
         selected_field = current_field()
     run(args.radius, args.z, args.output_name,

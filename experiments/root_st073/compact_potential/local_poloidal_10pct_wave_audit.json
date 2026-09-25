@@ -1,0 +1,382 @@
+{
+  "tau": 0.0084,
+  "nu": 0.01,
+  "time_step": 0.00015,
+  "source_name": "local_poloidal_10pct_source.json",
+  "field_id": "local-poloidal-10pct",
+  "selected_pulse_indices": [
+    3,
+    17
+  ],
+  "radius": 0.01025,
+  "zcenter": 0.003625,
+  "radial_halfwidth": 0.00275,
+  "axial_halfwidth": 7.5e-05,
+  "grid_normalized_axis": [
+    -0.6,
+    -0.3,
+    0.0,
+    0.29999999999999993,
+    0.6
+  ],
+  "modes": [
+    {
+      "m": 1,
+      "normal_norm": 253.17845397541666,
+      "radial_phase_radians_per_halfwidth": 0.3289162245085171,
+      "axial_phase_radians_per_halfwidth": 0.015051588971570667,
+      "center_remainder_over_carrier": 0.13649054656022064,
+      "grid_max_remainder_over_carrier": 410.3532233672275,
+      "grid_rms_remainder_over_carrier": 101.63927037838715,
+      "viscous_damping_exponent_per_time_step": 0.09614899433607327,
+      "integer_multiplier_for_remainder_at_most_carrier": 411,
+      "integer_multiplier_for_damping_at_most_one": 3,
+      "both_lenient_conditions_feasible": false,
+      "largest_time_step_at_minimum_multiplier": 9.235552239589308e-09,
+      "multiplier_screen": [
+        {
+          "multiplier": 1,
+          "grid_max_remainder_over_carrier": 410.3532233672275,
+          "damping_exponent_per_time_step": 0.09614899433607327
+        },
+        {
+          "multiplier": 2,
+          "grid_max_remainder_over_carrier": 205.17661168361374,
+          "damping_exponent_per_time_step": 0.38459597734429307
+        },
+        {
+          "multiplier": 4,
+          "grid_max_remainder_over_carrier": 102.58830584180687,
+          "damping_exponent_per_time_step": 1.5383839093771723
+        },
+        {
+          "multiplier": 8,
+          "grid_max_remainder_over_carrier": 51.294152920903436,
+          "damping_exponent_per_time_step": 6.153535637508689
+        },
+        {
+          "multiplier": 16,
+          "grid_max_remainder_over_carrier": 25.647076460451718,
+          "damping_exponent_per_time_step": 24.614142550034757
+        },
+        {
+          "multiplier": 32,
+          "grid_max_remainder_over_carrier": 12.823538230225859,
+          "damping_exponent_per_time_step": 98.45657020013903
+        },
+        {
+          "multiplier": 64,
+          "grid_max_remainder_over_carrier": 6.4117691151129295,
+          "damping_exponent_per_time_step": 393.8262808005561
+        }
+      ],
+      "samples": [
+        {
+          "xi": -0.6,
+          "eta": -0.6,
+          "remainder_over_carrier": 390.4649981921241
+        },
+        {
+          "xi": -0.6,
+          "eta": -0.3,
+          "remainder_over_carrier": 141.97049952934245
+        },
+        {
+          "xi": -0.6,
+          "eta": 0.0,
+          "remainder_over_carrier": 9.183904294589933
+        },
+        {
+          "xi": -0.6,
+          "eta": 0.29999999999999993,
+          "remainder_over_carrier": 127.92768847488118
+        },
+        {
+          "xi": -0.6,
+          "eta": 0.6,
+          "remainder_over_carrier": 376.41032761535234
+        },
+        {
+          "xi": -0.3,
+          "eta": -0.6,
+          "remainder_over_carrier": 392.3468966436399
+        },
+        {
+          "xi": -0.3,
+          "eta": -0.3,
+          "remainder_over_carrier": 139.61239378197342
+        },
+        {
+          "xi": -0.3,
+          "eta": 0.0,
+          "remainder_over_carrier": 3.3315228219298416
+        },
+        {
+          "xi": -0.3,
+          "eta": 0.29999999999999993,
+          "remainder_over_carrier": 134.58717057047434
+        },
+        {
+          "xi": -0.3,
+          "eta": 0.6,
+          "remainder_over_carrier": 387.3211126761561
+        },
+        {
+          "xi": 0.0,
+          "eta": -0.6,
+          "remainder_over_carrier": 395.0537262295448
+        },
+        {
+          "xi": 0.0,
+          "eta": -0.3,
+          "remainder_over_carrier": 138.92005040154598
+        },
+        {
+          "xi": 0.0,
+          "eta": 0.0,
+          "remainder_over_carrier": 0.13649054656022064
+        },
+        {
+          "xi": 0.0,
+          "eta": 0.29999999999999993,
+          "remainder_over_carrier": 138.92005040154598
+        },
+        {
+          "xi": 0.0,
+          "eta": 0.6,
+          "remainder_over_carrier": 395.0537262295448
+        },
+        {
+          "xi": 0.29999999999999993,
+          "eta": -0.6,
+          "remainder_over_carrier": 396.7811075310524
+        },
+        {
+          "xi": 0.29999999999999993,
+          "eta": -0.3,
+          "remainder_over_carrier": 137.87132702304203
+        },
+        {
+          "xi": 0.29999999999999993,
+          "eta": 0.0,
+          "remainder_over_carrier": 3.2710709301407723
+        },
+        {
+          "xi": 0.29999999999999993,
+          "eta": 0.29999999999999993,
+          "remainder_over_carrier": 143.01942636457977
+        },
+        {
+          "xi": 0.29999999999999993,
+          "eta": 0.6,
+          "remainder_over_carrier": 401.9296728800578
+        },
+        {
+          "xi": 0.6,
+          "eta": -0.6,
+          "remainder_over_carrier": 395.5824324396799
+        },
+        {
+          "xi": 0.6,
+          "eta": -0.3,
+          "remainder_over_carrier": 134.43437380913244
+        },
+        {
+          "xi": 0.6,
+          "eta": 0.0,
+          "remainder_over_carrier": 9.505926693432869
+        },
+        {
+          "xi": 0.6,
+          "eta": 0.29999999999999993,
+          "remainder_over_carrier": 149.19360181047543
+        },
+        {
+          "xi": 0.6,
+          "eta": 0.6,
+          "remainder_over_carrier": 410.3532233672275
+        }
+      ]
+    },
+    {
+      "m": 4,
+      "normal_norm": 780.4878048780488,
+      "radial_phase_radians_per_halfwidth": 1.517692603522346,
+      "axial_phase_radians_per_halfwidth": 0.029268292682926828,
+      "center_remainder_over_carrier": 0.10669417382415923,
+      "grid_max_remainder_over_carrier": 164.48847991945385,
+      "grid_rms_remainder_over_carrier": 40.75203597986301,
+      "viscous_damping_exponent_per_time_step": 0.9137418203450327,
+      "integer_multiplier_for_remainder_at_most_carrier": 165,
+      "integer_multiplier_for_damping_at_most_one": 1,
+      "both_lenient_conditions_feasible": false,
+      "largest_time_step_at_minimum_multiplier": 6.029757805325987e-09,
+      "multiplier_screen": [
+        {
+          "multiplier": 1,
+          "grid_max_remainder_over_carrier": 164.48847991945385,
+          "damping_exponent_per_time_step": 0.9137418203450327
+        },
+        {
+          "multiplier": 2,
+          "grid_max_remainder_over_carrier": 82.24423995972693,
+          "damping_exponent_per_time_step": 3.654967281380131
+        },
+        {
+          "multiplier": 4,
+          "grid_max_remainder_over_carrier": 41.12211997986346,
+          "damping_exponent_per_time_step": 14.619869125520523
+        },
+        {
+          "multiplier": 8,
+          "grid_max_remainder_over_carrier": 20.56105998993173,
+          "damping_exponent_per_time_step": 58.47947650208209
+        },
+        {
+          "multiplier": 16,
+          "grid_max_remainder_over_carrier": 10.280529994965866,
+          "damping_exponent_per_time_step": 233.91790600832837
+        },
+        {
+          "multiplier": 32,
+          "grid_max_remainder_over_carrier": 5.140264997482933,
+          "damping_exponent_per_time_step": 935.6716240333135
+        },
+        {
+          "multiplier": 64,
+          "grid_max_remainder_over_carrier": 2.5701324987414664,
+          "damping_exponent_per_time_step": 3742.686496133254
+        }
+      ],
+      "samples": [
+        {
+          "xi": -0.6,
+          "eta": -0.6,
+          "remainder_over_carrier": 150.90194413598678
+        },
+        {
+          "xi": -0.6,
+          "eta": -0.3,
+          "remainder_over_carrier": 52.978807105829
+        },
+        {
+          "xi": -0.6,
+          "eta": 0.0,
+          "remainder_over_carrier": 3.7288947789121782
+        },
+        {
+          "xi": -0.6,
+          "eta": 0.29999999999999993,
+          "remainder_over_carrier": 53.594288573034056
+        },
+        {
+          "xi": -0.6,
+          "eta": 0.6,
+          "remainder_over_carrier": 151.5187414614855
+        },
+        {
+          "xi": -0.3,
+          "eta": -0.6,
+          "remainder_over_carrier": 154.92892535429507
+        },
+        {
+          "xi": -0.3,
+          "eta": -0.3,
+          "remainder_over_carrier": 54.42436377002663
+        },
+        {
+          "xi": -0.3,
+          "eta": 0.0,
+          "remainder_over_carrier": 1.4137143945890227
+        },
+        {
+          "xi": -0.3,
+          "eta": 0.29999999999999993,
+          "remainder_over_carrier": 54.64680393018587
+        },
+        {
+          "xi": -0.3,
+          "eta": 0.6,
+          "remainder_over_carrier": 155.15143063462494
+        },
+        {
+          "xi": 0.0,
+          "eta": -0.6,
+          "remainder_over_carrier": 158.4295734477235
+        },
+        {
+          "xi": 0.0,
+          "eta": -0.3,
+          "remainder_over_carrier": 55.711587887713264
+        },
+        {
+          "xi": 0.0,
+          "eta": 0.0,
+          "remainder_over_carrier": 0.10669417382415923
+        },
+        {
+          "xi": 0.0,
+          "eta": 0.29999999999999993,
+          "remainder_over_carrier": 55.711587887713264
+        },
+        {
+          "xi": 0.0,
+          "eta": 0.6,
+          "remainder_over_carrier": 158.4295734477235
+        },
+        {
+          "xi": 0.29999999999999993,
+          "eta": -0.6,
+          "remainder_over_carrier": 161.5541634912681
+        },
+        {
+          "xi": 0.29999999999999993,
+          "eta": -0.3,
+          "remainder_over_carrier": 56.89741793677788
+        },
+        {
+          "xi": 0.29999999999999993,
+          "eta": 0.0,
+          "remainder_over_carrier": 1.2563507469337372
+        },
+        {
+          "xi": 0.29999999999999993,
+          "eta": 0.29999999999999993,
+          "remainder_over_carrier": 56.665774444517126
+        },
+        {
+          "xi": 0.29999999999999993,
+          "eta": 0.6,
+          "remainder_over_carrier": 161.32247071533072
+        },
+        {
+          "xi": 0.6,
+          "eta": -0.6,
+          "remainder_over_carrier": 164.48847991945385
+        },
+        {
+          "xi": 0.6,
+          "eta": -0.3,
+          "remainder_over_carrier": 58.16862426415152
+        },
+        {
+          "xi": 0.6,
+          "eta": 0.0,
+          "remainder_over_carrier": 3.8245351370974543
+        },
+        {
+          "xi": 0.6,
+          "eta": 0.29999999999999993,
+          "remainder_over_carrier": 57.50026104538959
+        },
+        {
+          "xi": 0.6,
+          "eta": 0.6,
+          "remainder_over_carrier": 163.818842155525
+        }
+      ]
+    }
+  ],
+  "interpretation": "Scale all integer angular modes and radial/axial wavevectors by one positive integer while scaling vector potentials inversely. Then the curl envelope remainder falls as 1/L but the physical viscous damping exponent grows as L^2. Thresholds remainder/carrier <= 1 and damping exponent <= 1 are deliberately lenient diagnostics, not the paper normalized hypotheses.",
+  "accepted": false
+}

@@ -1,0 +1,132 @@
+{
+  "rows": [
+    {
+      "strength": 0.0,
+      "tau": 0.0084,
+      "cone_ratio": 0.7745850653744737,
+      "strict_local_pass": true
+    },
+    {
+      "strength": 0.0,
+      "tau": 0.008475,
+      "cone_ratio": 0.7919031948130686,
+      "strict_local_pass": true
+    },
+    {
+      "strength": 0.0,
+      "tau": 0.00855,
+      "cone_ratio": 0.7947891737864926,
+      "strict_local_pass": true
+    },
+    {
+      "strength": 0.1,
+      "tau": 0.0084,
+      "cone_ratio": 0.7777859734808675,
+      "strict_local_pass": true
+    },
+    {
+      "strength": 0.1,
+      "tau": 0.008475,
+      "cone_ratio": 0.7950833687754228,
+      "strict_local_pass": true
+    },
+    {
+      "strength": 0.1,
+      "tau": 0.00855,
+      "cone_ratio": 0.7979257234678311,
+      "strict_local_pass": true
+    },
+    {
+      "strength": 0.2,
+      "tau": 0.0084,
+      "cone_ratio": 0.780997934770116,
+      "strict_local_pass": true
+    },
+    {
+      "strength": 0.2,
+      "tau": 0.008475,
+      "cone_ratio": 0.798274280366922,
+      "strict_local_pass": true
+    },
+    {
+      "strength": 0.2,
+      "tau": 0.00855,
+      "cone_ratio": 0.8010725463010514,
+      "strict_local_pass": true
+    },
+    {
+      "strength": 0.3,
+      "tau": 0.0084,
+      "cone_ratio": 0.7842210087415237,
+      "strict_local_pass": true
+    },
+    {
+      "strength": 0.3,
+      "tau": 0.008475,
+      "cone_ratio": 0.8014759864743458,
+      "strict_local_pass": true
+    },
+    {
+      "strength": 0.3,
+      "tau": 0.00855,
+      "cone_ratio": 0.8042296970687808,
+      "strict_local_pass": true
+    },
+    {
+      "strength": 0.5,
+      "tau": 0.0084,
+      "cone_ratio": 0.7907007327947401,
+      "strict_local_pass": true
+    },
+    {
+      "strength": 0.5,
+      "tau": 0.008475,
+      "cone_ratio": 0.8079120100364762,
+      "strict_local_pass": true
+    },
+    {
+      "strength": 0.5,
+      "tau": 0.00855,
+      "cone_ratio": 0.8105752020150334,
+      "strict_local_pass": true
+    },
+    {
+      "strength": 0.75,
+      "tau": 0.0084,
+      "cone_ratio": 0.798863957026989,
+      "strict_local_pass": true
+    },
+    {
+      "strength": 0.75,
+      "tau": 0.008475,
+      "cone_ratio": 0.8160187738977842,
+      "strict_local_pass": true
+    },
+    {
+      "strength": 0.75,
+      "tau": 0.00855,
+      "cone_ratio": 0.8185661571006803,
+      "strict_local_pass": true
+    },
+    {
+      "strength": 1.0,
+      "tau": 0.0084,
+      "cone_ratio": 0.8070986821078313,
+      "strict_local_pass": true
+    },
+    {
+      "strength": 1.0,
+      "tau": 0.008475,
+      "cone_ratio": 0.8241949645720235,
+      "strict_local_pass": true
+    },
+    {
+      "strength": 1.0,
+      "tau": 0.00855,
+      "cone_ratio": 0.8266235548293689,
+      "strict_local_pass": true
+    }
+  ],
+  "scope": "One previously failed spatial edge at three times. Passing here does not verify the entire spacetime grid or global momentum.",
+  "accepted": false
+}

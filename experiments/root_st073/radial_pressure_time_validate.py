@@ -21,7 +21,15 @@ def load_candidate():
 
 def run():
     optimized = '--volume-constrained' in sys.argv
-    if optimized:
+    poloidal = '--local-poloidal' in sys.argv
+    poloidal_10pct = '--local-poloidal-10pct' in sys.argv
+    if poloidal:
+        from local_poloidal_basis_screen import load_robust_candidate
+        field = load_robust_candidate()
+    elif poloidal_10pct:
+        from local_poloidal_basis_screen import load_robust_candidate
+        field = load_robust_candidate(.1)
+    elif optimized:
         from radial_pressure_volume_constrained import load_candidate as load_optimized
         field = load_optimized()
     else:
@@ -49,6 +57,8 @@ def run():
               'scope': 'Physical finite-difference residual and radial primitive on 5 sampled times, 7 radii and 3 heights. No continuum or full momentum certificate.',
               'accepted': False}
     path = ROOT/'compact_potential'/(
+        'local_poloidal_cone_validate.json' if poloidal else
+        'local_poloidal_10pct_cone_validate.json' if poloidal_10pct else
         'radial_pressure_volume_cone_validate.json' if optimized else
         'radial_pressure_time_validate.json')
     path.write_bytes((json.dumps(report, indent=2)+'\n').encode())

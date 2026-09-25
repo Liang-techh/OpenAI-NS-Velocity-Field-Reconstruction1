@@ -1,0 +1,261 @@
+{
+  "tau": 0.0084,
+  "modes": [
+    {
+      "parity": "even",
+      "radial_degree": 0,
+      "axial_degree": 0
+    },
+    {
+      "parity": "even",
+      "radial_degree": 0,
+      "axial_degree": 1
+    },
+    {
+      "parity": "even",
+      "radial_degree": 1,
+      "axial_degree": 0
+    },
+    {
+      "parity": "even",
+      "radial_degree": 1,
+      "axial_degree": 1
+    },
+    {
+      "parity": "odd",
+      "radial_degree": 0,
+      "axial_degree": 0
+    },
+    {
+      "parity": "odd",
+      "radial_degree": 0,
+      "axial_degree": 1
+    },
+    {
+      "parity": "odd",
+      "radial_degree": 1,
+      "axial_degree": 0
+    },
+    {
+      "parity": "odd",
+      "radial_degree": 1,
+      "axial_degree": 1
+    }
+  ],
+  "scales": [
+    0.00976473172761011,
+    0.024785885475699557,
+    0.011635707654834598,
+    0.02793401161258087,
+    0.00976473172761011,
+    0.024785885475699557,
+    0.011635707654834598,
+    0.02793401161258087
+  ],
+  "optimizer_success": true,
+  "optimizer_message": "`ftol` termination condition is satisfied.",
+  "relative_amplitudes": [
+    0.02003495845051643,
+    -0.00015950528423420377,
+    0.01763858749014486,
+    -0.002902067408623698,
+    0.9666527302035309,
+    0.0039895894469630004,
+    1.1453186195674214,
+    -0.10662181813037078
+  ],
+  "robust_optimizer_success": true,
+  "robust_optimizer_message": "Optimization terminated successfully",
+  "robust_relative_amplitudes": [
+    -0.0567859862201156,
+    -0.01218541033047361,
+    -0.06074118691182737,
+    -0.0018413352388067133,
+    0.3079134620873364,
+    -0.024507942903834196,
+    0.3519755768604204,
+    -0.009703054674142135
+  ],
+  "rows": [
+    {
+      "strength": 0.0,
+      "amplitudes": [
+        0.0,
+        -0.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "metrics": [
+        {
+          "order": 6,
+          "physical_volume_l2": 159.90037279039004,
+          "max": 94068.01230565087
+        },
+        {
+          "order": 8,
+          "physical_volume_l2": 129.66165672574692,
+          "max": 177827.21222853503
+        },
+        {
+          "order": 10,
+          "physical_volume_l2": 314.4423130928605,
+          "max": 269256.835989142
+        }
+      ],
+      "worst_l2_ratio": 1.0,
+      "worst_max_ratio": 1.0
+    },
+    {
+      "strength": 0.25,
+      "amplitudes": [
+        4.8908998610777023e-05,
+        -9.883699269494703e-07,
+        5.130936186988708e-05,
+        -2.0266596173246714e-05,
+        0.0023597761460498385,
+        2.4721376781871114e-05,
+        0.00333164815723131,
+        -0.0007445937764520657
+      ],
+      "metrics": [
+        {
+          "order": 6,
+          "physical_volume_l2": 158.89907647267665,
+          "max": 94648.14623501926
+        },
+        {
+          "order": 8,
+          "physical_volume_l2": 119.56213855052385,
+          "max": 161171.07989156825
+        },
+        {
+          "order": 10,
+          "physical_volume_l2": 316.00870477191586,
+          "max": 285717.86124392616
+        }
+      ],
+      "worst_l2_ratio": 1.0049814914018673,
+      "worst_max_ratio": 1.0611350318899535
+    },
+    {
+      "strength": 0.5,
+      "amplitudes": [
+        9.781799722155405e-05,
+        -1.9767398538989405e-06,
+        0.00010261872373977416,
+        -4.053319234649343e-05,
+        0.004719552292099677,
+        4.944275356374223e-05,
+        0.00666329631446262,
+        -0.0014891875529041314
+      ],
+      "metrics": [
+        {
+          "order": 6,
+          "physical_volume_l2": 159.3466959643375,
+          "max": 95229.97979090802
+        },
+        {
+          "order": 8,
+          "physical_volume_l2": 110.00500178193812,
+          "max": 144557.47573236152
+        },
+        {
+          "order": 10,
+          "physical_volume_l2": 318.5301352586333,
+          "max": 302214.9361899598
+        }
+      ],
+      "worst_l2_ratio": 1.013000229280738,
+      "worst_max_ratio": 1.1224039496703693
+    },
+    {
+      "strength": 0.75,
+      "amplitudes": [
+        0.00014672699583233106,
+        -2.9651097808484108e-06,
+        0.00015392808560966124,
+        -6.079978851974014e-05,
+        0.007079328438149516,
+        7.416413034561335e-05,
+        0.00999494447169393,
+        -0.0022337813293561975
+      ],
+      "metrics": [
+        {
+          "order": 6,
+          "physical_volume_l2": 161.2310454768445,
+          "max": 95813.48170472984
+        },
+        {
+          "order": 8,
+          "physical_volume_l2": 101.14374807912797,
+          "max": 128003.21235559293
+        },
+        {
+          "order": 10,
+          "physical_volume_l2": 321.9841368820324,
+          "max": 318742.07687101426
+        }
+      ],
+      "worst_l2_ratio": 1.0239847611951152,
+      "worst_max_ratio": 1.1837845293698237
+    },
+    {
+      "strength": 1.0,
+      "amplitudes": [
+        0.0001956359944431081,
+        -3.953479707797881e-06,
+        0.00020523744747954833,
+        -8.106638469298686e-05,
+        0.009439104584199354,
+        9.888550712748446e-05,
+        0.01332659262892524,
+        -0.002978375105808263
+      ],
+      "metrics": [
+        {
+          "order": 6,
+          "physical_volume_l2": 164.5026438057182,
+          "max": 101902.7985796035
+        },
+        {
+          "order": 8,
+          "physical_volume_l2": 93.17673167883964,
+          "max": 111535.00492016684
+        },
+        {
+          "order": 10,
+          "physical_volume_l2": 326.34106841129795,
+          "max": 335294.4699500095
+        }
+      ],
+      "worst_l2_ratio": 1.0378408211076973,
+      "worst_max_ratio": 1.245258894609942
+    }
+  ],
+  "scope": "Eight compact exact-solenoidal poloidal streamfunctions, full nonlinear physical momentum at one time on Gauss6/8/10. No cone or time holdout validation yet; numerical derivatives are finite-difference approximations.",
+  "accepted": false,
+  "robust_metrics": [
+    {
+      "order": 6,
+      "l2_ratio": 0.986742231837518,
+      "max_ratio": 0.9999999999999942
+    },
+    {
+      "order": 8,
+      "l2_ratio": 0.9890435982901891,
+      "max_ratio": 0.9999999999998996
+    },
+    {
+      "order": 10,
+      "l2_ratio": 0.9909302344548735,
+      "max_ratio": 0.9999999999999135
+    }
+  ],
+  "robust_speed_coordinates_norm": 0.47587636013470413
+}
