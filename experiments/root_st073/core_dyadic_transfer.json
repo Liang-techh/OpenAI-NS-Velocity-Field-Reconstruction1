@@ -1,0 +1,160 @@
+{
+  "source": "NS_ST073_Full_Local_Recurrence\\data\\ST073-V.json",
+  "source_model": "ST073-V local full-momentum radial recurrence",
+  "X_nodes": [
+    0.001,
+    0.002329545454545455,
+    0.003659090909090909,
+    0.0049886363636363635,
+    0.006318181818181818,
+    0.007647727272727273,
+    0.008977272727272726,
+    0.010306818181818181,
+    0.011636363636363636,
+    0.01296590909090909,
+    0.014295454545454545,
+    0.015625
+  ],
+  "eta_nodes": [
+    -0.3,
+    -0.15,
+    0.0,
+    0.15,
+    0.3
+  ],
+  "k_definition": "tau=0.5*2**(-k)",
+  "dyadic_scaling": {
+    "h": 0.005,
+    "radial_length_ratio": 0.7071067811865476,
+    "axial_length_ratio": 0.7095616781001912,
+    "axial_to_radial_aspect_growth": 1.0034717485095028,
+    "angular_axial_speed_growth": 1.4191233562003824,
+    "six_step_aspect_growth": 1.0210121257071934
+  },
+  "velocity_normalization": "radial q**(1/2), angular/axial q**A, divided by sqrt(nu); q=tau/(1-eta**2)",
+  "residual_normalization": "radial q**(3/2), angular/axial q**(A+1), divided by sqrt(nu)",
+  "scales": [
+    {
+      "k": 0,
+      "tau": 0.5,
+      "physical_residual_max": 5.277085042872089e-10,
+      "normalized_residual_max": 2.144117191029577e-09,
+      "divergence_max": 1.7763568394002505e-15,
+      "peak_azimuthal": 0.09994041882198502,
+      "min_radial_speed": -0.05238280406907863
+    },
+    {
+      "k": 1,
+      "tau": 0.25,
+      "physical_residual_max": 1.4215566041022758e-09,
+      "normalized_residual_max": 2.036452069366143e-09,
+      "divergence_max": 3.552713678800501e-15,
+      "peak_azimuthal": 0.14182012120715842,
+      "min_radial_speed": -0.07406785032761383
+    },
+    {
+      "k": 2,
+      "tau": 0.125,
+      "physical_residual_max": 3.829487408146695e-09,
+      "normalized_residual_max": 1.9342349573343038e-09,
+      "divergence_max": 7.105427357601002e-15,
+      "peak_azimuthal": 0.20124945137738626,
+      "min_radial_speed": -0.10473003873346054
+    },
+    {
+      "k": 3,
+      "tau": 0.0625,
+      "physical_residual_max": 1.031628054335637e-08,
+      "normalized_residual_max": 1.8371867704026792e-09,
+      "divergence_max": 1.4210854715202004e-14,
+      "peak_azimuthal": 0.28558258649501667,
+      "min_radial_speed": -0.14808576402381435
+    },
+    {
+      "k": 4,
+      "tau": 0.03125,
+      "physical_residual_max": 2.7791433930882892e-08,
+      "normalized_residual_max": 1.7450418695319976e-09,
+      "divergence_max": 2.842170943040401e-14,
+      "peak_azimuthal": 0.4052554868659362,
+      "min_radial_speed": -0.2093899701991543
+    },
+    {
+      "k": 5,
+      "tau": 0.015625,
+      "physical_residual_max": 7.486938949817389e-08,
+      "normalized_residual_max": 1.6575520327433318e-09,
+      "divergence_max": 5.684341886080802e-14,
+      "peak_azimuthal": 0.5750773287864439,
+      "min_radial_speed": -0.29607310246680923
+    },
+    {
+      "k": 6,
+      "tau": 0.0078125,
+      "physical_residual_max": 2.0169903095505928e-07,
+      "normalized_residual_max": 1.5744831876738915e-09,
+      "divergence_max": 1.1368683772161603e-13,
+      "peak_azimuthal": 0.8160631193403785,
+      "min_radial_speed": -0.4186417575733281
+    }
+  ],
+  "transfers": [
+    {
+      "from_k": 0,
+      "to_k": 1,
+      "relative_profile_rms": 0.00015862522710694262,
+      "max_abs_profile_change": 0.0003831611230666887,
+      "peak_azimuthal_growth": 1.4190466968101263,
+      "normalized_residual_max_before": 2.144117191029577e-09,
+      "normalized_residual_max_after": 2.036452069366143e-09
+    },
+    {
+      "from_k": 1,
+      "to_k": 2,
+      "relative_profile_rms": 0.00015749620400125913,
+      "max_abs_profile_change": 0.0003803595140741134,
+      "peak_azimuthal_growth": 1.4190472386031787,
+      "normalized_residual_max_before": 2.036452069366143e-09,
+      "normalized_residual_max_after": 1.9342349573343038e-09
+    },
+    {
+      "from_k": 2,
+      "to_k": 3,
+      "relative_profile_rms": 0.00015637544697022344,
+      "max_abs_profile_change": 0.0003775794563061208,
+      "peak_azimuthal_growth": 1.4190477764805804,
+      "normalized_residual_max_before": 1.9342349573343038e-09,
+      "normalized_residual_max_after": 1.8371867704026792e-09
+    },
+    {
+      "from_k": 3,
+      "to_k": 4,
+      "relative_profile_rms": 0.00015526289230382312,
+      "max_abs_profile_change": 0.0003748207692426675,
+      "peak_azimuthal_growth": 1.4190483104718565,
+      "normalized_residual_max_before": 1.8371867704026792e-09,
+      "normalized_residual_max_after": 1.7450418695319976e-09
+    },
+    {
+      "from_k": 4,
+      "to_k": 5,
+      "relative_profile_rms": 0.00015415847682651143,
+      "max_abs_profile_change": 0.00037208327407545205,
+      "peak_azimuthal_growth": 1.4190488406062889,
+      "normalized_residual_max_before": 1.7450418695319976e-09,
+      "normalized_residual_max_after": 1.6575520327433318e-09
+    },
+    {
+      "from_k": 5,
+      "to_k": 6,
+      "relative_profile_rms": 0.00015306213789195228,
+      "max_abs_profile_change": 0.0003693667936879308,
+      "peak_azimuthal_growth": 1.4190493669129236,
+      "normalized_residual_max_before": 1.6575520327433318e-09,
+      "normalized_residual_max_after": 1.5744831876738915e-09
+    }
+  ],
+  "scope": "Finite inner-core similarity grid X<=1/64, |eta|<=.3, registered k=0..6; no outer matching, recursive fixed point, global energy, or complete-field PDE acceptance.",
+  "scale_recursion_established": false,
+  "pde_validated": false
+}
