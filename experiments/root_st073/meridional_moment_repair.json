@@ -1,0 +1,93 @@
+{
+  "tau": 0.011048543456039806,
+  "x_out": 3.5,
+  "quadrature_per_piece": 96,
+  "u_intervals": [
+    [
+      1.025,
+      1.25
+    ],
+    [
+      1.26,
+      1.49
+    ],
+    [
+      1.6,
+      2.15
+    ],
+    [
+      2.2,
+      2.98
+    ]
+  ],
+  "rows": [
+    {
+      "eta": 0.2,
+      "initial_delta": [
+        -8.326672684688674e-17,
+        0.0,
+        -0.6508424875245369,
+        0.11752822083601044,
+        0.0
+      ],
+      "J_response": [
+        0.25642479289731174,
+        0.37882183191612145,
+        0.00011971421784756602,
+        0.00013576557614811396
+      ],
+      "constrained_min_coefficients": [
+        0.7939491077402512,
+        1.180662847196797,
+        0.01694590626280948,
+        -0.06363406185862529
+      ],
+      "constrained_min_S": 57.89745480560675,
+      "target_S": 2.472912920245229,
+      "S_above_minimum": -55.42454188536152,
+      "fixed_basis_feasible": false,
+      "min_solution_delta": [
+        -4.0245584642661925e-16,
+        0.0,
+        1.1102230246251565e-16,
+        55.42454188536152,
+        0.0
+      ]
+    },
+    {
+      "eta": 0.3,
+      "initial_delta": [
+        -4.163336342344337e-17,
+        0.0,
+        -0.623481516494759,
+        0.26373130182705884,
+        0.0
+      ],
+      "J_response": [
+        0.25364979913620356,
+        0.3783589739476133,
+        0.000121858008046658,
+        0.00013786614228958243
+      ],
+      "constrained_min_coefficients": [
+        0.759730901091532,
+        1.1385548808904093,
+        0.01651096502648878,
+        -0.06196209297372838
+      ],
+      "constrained_min_S": 53.36782267694764,
+      "target_S": 1.9928242868821218,
+      "S_above_minimum": -51.37499839006552,
+      "fixed_basis_feasible": false,
+      "min_solution_delta": [
+        -6.245004513516506e-17,
+        0.0,
+        8.326672684688674e-17,
+        51.37499839006552,
+        0.0
+      ]
+    }
+  ],
+  "scope": "Exact finite-dimensional J/S feasibility on two normalized eta slices. Every added U basis has zero M integral and E is unchanged. This is not a smooth eta/time coefficient field, a physical solenoidal lift, a continuous cone, or PDE acceptance.",
+  "accepted": false
+}

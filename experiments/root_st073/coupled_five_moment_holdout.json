@@ -1,0 +1,91 @@
+{
+  "tau": 0.011048543456039806,
+  "rows": [
+    {
+      "order": 128,
+      "eta": 0.2,
+      "variant": "minimum_norm",
+      "delta": [
+        -3.426078865054194e-16,
+        2.398081733190338e-14,
+        -2.275957200481571e-15,
+        7.549516567451064e-15,
+        4.085620730620576e-14
+      ],
+      "max_abs_defect": 4.085620730620576e-14,
+      "min_relative_E": 0.9999998744518677
+    },
+    {
+      "order": 128,
+      "eta": 0.2,
+      "variant": "maximum_slack",
+      "delta": [
+        1.551710149261254e-15,
+        8.881784197001252e-16,
+        -2.1371793224034263e-15,
+        1.2434497875801753e-14,
+        0.0
+      ],
+      "max_abs_defect": 1.2434497875801753e-14,
+      "min_relative_E": 0.10976174687521593
+    },
+    {
+      "order": 128,
+      "eta": 0.3,
+      "variant": "maximum_slack",
+      "delta": [
+        8.387388006347862e-16,
+        1.3322676295501878e-15,
+        -5.828670879282072e-16,
+        5.329070518200751e-15,
+        0.0
+      ],
+      "max_abs_defect": 5.329070518200751e-15,
+      "min_relative_E": 0.10976176452626983
+    },
+    {
+      "order": 160,
+      "eta": 0.2,
+      "variant": "minimum_norm",
+      "delta": [
+        -1.986258379993444e-16,
+        2.4868995751603507e-14,
+        -2.275957200481571e-15,
+        5.329070518200751e-15,
+        4.085620730620576e-14
+      ],
+      "max_abs_defect": 4.085620730620576e-14,
+      "min_relative_E": 0.9999998744369372
+    },
+    {
+      "order": 160,
+      "eta": 0.2,
+      "variant": "maximum_slack",
+      "delta": [
+        1.659263004771816e-15,
+        8.881784197001252e-16,
+        -1.6653345369377348e-15,
+        9.325873406851315e-15,
+        0.0
+      ],
+      "max_abs_defect": 9.325873406851315e-15,
+      "min_relative_E": 0.1096529407683598
+    },
+    {
+      "order": 160,
+      "eta": 0.3,
+      "variant": "maximum_slack",
+      "delta": [
+        3.7470027081099033e-16,
+        8.881784197001252e-16,
+        -5.828670879282072e-16,
+        4.440892098500626e-15,
+        0.0
+      ],
+      "max_abs_defect": 4.440892098500626e-15,
+      "min_relative_E": 0.10965296982406497
+    }
+  ],
+  "scope": "Independent Gauss128/160 quadrature of fixed-slice coefficients fitted at Gauss96. This only tests radial integration, not eta/time smoothness, solenoidal lifting, cone width, or full NS residual.",
+  "accepted": false
+}

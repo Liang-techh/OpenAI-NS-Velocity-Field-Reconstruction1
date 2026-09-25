@@ -1,0 +1,362 @@
+{
+  "tau": 0.011048543456039806,
+  "intervals": [
+    [
+      1.005,
+      1.4
+    ],
+    [
+      1.45,
+      2.15
+    ],
+    [
+      2.2,
+      2.98
+    ]
+  ],
+  "quadrature_per_piece": 96,
+  "rows": [
+    {
+      "eta": 0.2,
+      "outer": -0.14,
+      "inner_coefficients": [
+        -0.05242257827414469,
+        0.21133582543621404
+      ],
+      "I_Cp_defect": [
+        -6.705747068735946e-14,
+        2.993161274389422e-13
+      ],
+      "min_E": 0.021580998318627486,
+      "required_U2": 4.0858039634702985,
+      "minimum_U2": 4.008588602266124,
+      "energy_slack": 0.07721536120417483,
+      "candidate_feasible_by_projection": true
+    },
+    {
+      "eta": 0.2,
+      "outer": -0.1,
+      "inner_coefficients": [
+        -0.03102613100394267,
+        0.1479934984466649
+      ],
+      "I_Cp_defect": [
+        -4.440892098500626e-16,
+        0.0
+      ],
+      "min_E": 0.021580998318627486,
+      "required_U2": 4.084464389694582,
+      "minimum_U2": 4.013777105094732,
+      "energy_slack": 0.07068728459984985,
+      "candidate_feasible_by_projection": true
+    },
+    {
+      "eta": 0.2,
+      "outer": -0.05,
+      "inner_coefficients": [
+        -0.011854947266923627,
+        0.0723093862214056
+      ],
+      "I_Cp_defect": [
+        0.0,
+        -4.440892098500626e-15
+      ],
+      "min_E": 0.021580998318627486,
+      "required_U2": 4.0834824285004485,
+      "minimum_U2": 4.017177290200159,
+      "energy_slack": 0.06630513830028928,
+      "candidate_feasible_by_projection": true
+    },
+    {
+      "eta": 0.2,
+      "outer": 0.0,
+      "inner_coefficients": [
+        -8.418484714011848e-14,
+        6.509849860025908e-14
+      ],
+      "I_Cp_defect": [
+        1.2434497875801753e-14,
+        -7.993605777301127e-15
+      ],
+      "min_E": 0.021580998318627486,
+      "required_U2": 4.083208423964291,
+      "minimum_U2": 4.017091365436437,
+      "energy_slack": 0.06611705852785388,
+      "candidate_feasible_by_projection": true
+    },
+    {
+      "eta": 0.2,
+      "outer": 0.05,
+      "inner_coefficients": [
+        0.0053869788581106595,
+        -0.0693259368317098
+      ],
+      "I_Cp_defect": [
+        3.368860745922575e-12,
+        -5.74473801862041e-12
+      ],
+      "min_E": 0.021580998318627486,
+      "required_U2": 4.083590425478693,
+      "minimum_U2": 4.013755020128797,
+      "energy_slack": 0.06983540534989618,
+      "candidate_feasible_by_projection": true
+    },
+    {
+      "eta": 0.2,
+      "outer": 0.1,
+      "inner_coefficients": [
+        0.004920972322096015,
+        -0.13595209461825236
+      ],
+      "I_Cp_defect": [
+        1.4921397450962104e-13,
+        -2.0250467969162855e-13
+      ],
+      "min_E": 0.021580998318627486,
+      "required_U2": 4.084586325653998,
+      "minimum_U2": 4.007661486571268,
+      "energy_slack": 0.07692483908272951,
+      "candidate_feasible_by_projection": true
+    },
+    {
+      "eta": 0.2,
+      "outer": 0.2,
+      "inner_coefficients": [
+        -0.12789999220383963,
+        -0.19398812732396048
+      ],
+      "I_Cp_defect": [
+        0.007052958062965242,
+        -0.013768906681367099
+      ],
+      "min_E": 9.997661190586093e-07,
+      "required_U2": 4.072068573983514,
+      "minimum_U2": 4.015986487123511,
+      "energy_slack": 0.05608208686000271,
+      "candidate_feasible_by_projection": false
+    },
+    {
+      "eta": 0.2,
+      "outer": 0.4,
+      "inner_coefficients": [
+        -0.6658876780828126,
+        -0.19398812732396048
+      ],
+      "I_Cp_defect": [
+        0.016474268723199348,
+        -0.05475441128811731
+      ],
+      "min_E": 9.997661190586093e-07,
+      "required_U2": 4.035388294504708,
+      "minimum_U2": 4.040613157339013,
+      "energy_slack": -0.005224862834305455,
+      "candidate_feasible_by_projection": false
+    },
+    {
+      "eta": 0.2,
+      "outer": 0.8,
+      "inner_coefficients": [
+        -1.0254086479339906,
+        -0.19398812732396048
+      ],
+      "I_Cp_defect": [
+        0.1973997423945577,
+        -0.046713334478584834
+      ],
+      "min_E": 9.673875348559235e-07,
+      "required_U2": 4.082649965042976,
+      "minimum_U2": 3.9192954173756482,
+      "energy_slack": 0.16335454766732793,
+      "candidate_feasible_by_projection": false
+    },
+    {
+      "eta": 0.2,
+      "outer": 1.2,
+      "inner_coefficients": [
+        -1.0254086479339906,
+        -0.19398812732396048
+      ],
+      "I_Cp_defect": [
+        0.4596593304468888,
+        -0.00690949598305135
+      ],
+      "min_E": 9.673875348559235e-07,
+      "required_U2": 4.185609389479886,
+      "minimum_U2": 3.860235494448502,
+      "energy_slack": 0.32537389503138403,
+      "candidate_feasible_by_projection": false
+    },
+    {
+      "eta": 0.3,
+      "outer": -0.14,
+      "inner_coefficients": [
+        -0.05254672410517772,
+        0.21139308960009684
+      ],
+      "I_Cp_defect": [
+        -6.88338275267597e-14,
+        2.184918912462308e-13
+      ],
+      "min_E": 0.021580968111062405,
+      "required_U2": 3.560514774546626,
+      "minimum_U2": 3.570639145117756,
+      "energy_slack": -0.010124370571130026,
+      "candidate_feasible_by_projection": false
+    },
+    {
+      "eta": 0.3,
+      "outer": -0.1,
+      "inner_coefficients": [
+        -0.031096495360159144,
+        0.1480259550824829
+      ],
+      "I_Cp_defect": [
+        -8.881784197001252e-16,
+        0.0
+      ],
+      "min_E": 0.021580968111062405,
+      "required_U2": 3.5591743670689167,
+      "minimum_U2": 3.574616580697554,
+      "energy_slack": -0.01544221362863718,
+      "candidate_feasible_by_projection": false
+    },
+    {
+      "eta": 0.3,
+      "outer": -0.05,
+      "inner_coefficients": [
+        -0.011880775664794788,
+        0.07232129996507668
+      ],
+      "I_Cp_defect": [
+        0.0,
+        1.7763568394002505e-15
+      ],
+      "min_E": 0.021580968111062405,
+      "required_U2": 3.558191852668588,
+      "minimum_U2": 3.5772240801560633,
+      "energy_slack": -0.01903222748747524,
+      "candidate_feasible_by_projection": false
+    },
+    {
+      "eta": 0.3,
+      "outer": 0.0,
+      "inner_coefficients": [
+        -2.648023798631806e-13,
+        1.3082069839687474e-13
+      ],
+      "I_Cp_defect": [
+        4.440892098500626e-15,
+        -3.019806626980426e-14
+      ],
+      "min_E": 0.021580968111062405,
+      "required_U2": 3.557917617231201,
+      "minimum_U2": 3.5771589566447863,
+      "energy_slack": -0.0192413394135853,
+      "candidate_feasible_by_projection": false
+    },
+    {
+      "eta": 0.3,
+      "outer": 0.05,
+      "inner_coefficients": [
+        0.005398444659376856,
+        -0.06933122561473838
+      ],
+      "I_Cp_defect": [
+        4.440892098500626e-14,
+        -7.105427357601002e-14
+      ],
+      "min_E": 0.021580968111062405,
+      "required_U2": 3.5582995591811106,
+      "minimum_U2": 3.574602286954109,
+      "energy_slack": -0.01630272777299835,
+      "candidate_feasible_by_projection": false
+    },
+    {
+      "eta": 0.3,
+      "outer": 0.1,
+      "inner_coefficients": [
+        0.004932268028460037,
+        -0.1359573049356242
+      ],
+      "I_Cp_defect": [
+        1.509903313490213e-13,
+        -2.646771690706373e-13
+      ],
+      "min_E": 0.021580968111062405,
+      "required_U2": 3.559295471145686,
+      "minimum_U2": 3.5699340117606453,
+      "energy_slack": -0.010638540614959169,
+      "candidate_feasible_by_projection": false
+    },
+    {
+      "eta": 0.3,
+      "outer": 0.2,
+      "inner_coefficients": [
+        -0.12796492443170512,
+        -0.19400902734746533
+      ],
+      "I_Cp_defect": [
+        0.007028018014716864,
+        -0.013747822372752516
+      ],
+      "min_E": 9.99766119086365e-07,
+      "required_U2": 3.5468023664178028,
+      "minimum_U2": 3.576218384138827,
+      "energy_slack": -0.02941601772102409,
+      "candidate_feasible_by_projection": false
+    },
+    {
+      "eta": 0.3,
+      "outer": 0.4,
+      "inner_coefficients": [
+        -0.6662873200895506,
+        -0.19400902734746533
+      ],
+      "I_Cp_defect": [
+        0.016373607574592164,
+        -0.054630532575890456
+      ],
+      "min_E": 9.99766119086365e-07,
+      "required_U2": 3.5102430150648507,
+      "minimum_U2": 3.594775843224553,
+      "energy_slack": -0.08453282815970242,
+      "candidate_feasible_by_projection": false
+    },
+    {
+      "eta": 0.3,
+      "outer": 0.8,
+      "inner_coefficients": [
+        -1.0239388715097801,
+        -0.19400902734746533
+      ],
+      "I_Cp_defect": [
+        0.19772199814159475,
+        -0.04642729503626786
+      ],
+      "min_E": 9.673875348559235e-07,
+      "required_U2": 3.557695312519933,
+      "minimum_U2": 3.501435606751469,
+      "energy_slack": 0.05625970576846395,
+      "candidate_feasible_by_projection": false
+    },
+    {
+      "eta": 0.3,
+      "outer": 1.2,
+      "inner_coefficients": [
+        -1.0239388715097801,
+        -0.19400902734746533
+      ],
+      "I_Cp_defect": [
+        0.4599815861939258,
+        -0.0066228148672689
+      ],
+      "min_E": 9.673875348559235e-07,
+      "required_U2": 3.6606563928492903,
+      "minimum_U2": 3.4565760090332334,
+      "energy_slack": 0.20408038381605698,
+      "candidate_feasible_by_projection": false
+    }
+  ],
+  "scope": "Fixed-eta E redistribution with I/Cp restoration and variational U feasibility; no smooth eta/time lift, solenoidal 3D field, continuous cone or full NS acceptance.",
+  "accepted": false
+}

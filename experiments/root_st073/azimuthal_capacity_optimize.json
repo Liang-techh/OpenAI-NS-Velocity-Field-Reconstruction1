@@ -1,0 +1,90 @@
+{
+  "tau": 0.011048543456039806,
+  "intervals": [
+    [
+      1.005,
+      1.18
+    ],
+    [
+      1.2,
+      1.4
+    ],
+    [
+      1.45,
+      1.75
+    ],
+    [
+      1.8,
+      2.3
+    ],
+    [
+      2.35,
+      2.98
+    ]
+  ],
+  "relative_swirl_floor": 0.11,
+  "slack_reserve": 0.01,
+  "quadrature_per_piece": 96,
+  "rows": [
+    {
+      "eta": 0.2,
+      "starts_tried": 10,
+      "maximum_slack_found": 0.17895232545415007,
+      "maximum_slack_coefficients": [
+        -1.109011685379785,
+        -0.4589394042475114,
+        1.5,
+        -0.16183036268181542,
+        -0.14181797704397522
+      ],
+      "coefficients": [
+        7.347784454543368e-09,
+        -1.463316913229797e-08,
+        8.42638416862572e-09,
+        -2.2822541851572986e-08,
+        1.4714785772598336e-08
+      ],
+      "I_Cp_defect": [
+        2.398081733190338e-14,
+        4.1744385725905886e-14
+      ],
+      "energy_slack": 0.0661170584216011,
+      "min_E": 0.021580998318627486,
+      "min_relative_E": 0.9999998744932234,
+      "optimizer_success": true,
+      "minimum_norm_with_reserve": true,
+      "fixed_slice_feasible": true
+    },
+    {
+      "eta": 0.3,
+      "starts_tried": 10,
+      "maximum_slack_found": 0.07499767636978705,
+      "maximum_slack_coefficients": [
+        -1.1259804447339066,
+        -0.445221268756391,
+        1.5,
+        -0.16184667404766034,
+        -0.14183034422056232
+      ],
+      "coefficients": [
+        -0.306260341349084,
+        0.056867263301416254,
+        0.7150402744719632,
+        -0.11514414104589091,
+        -0.14183034422056204
+      ],
+      "I_Cp_defect": [
+        4.440892098500626e-16,
+        5.329070518200751e-15
+      ],
+      "energy_slack": 0.010000000000010889,
+      "min_E": 0.01751760569775901,
+      "min_relative_E": 0.11006274660463607,
+      "optimizer_success": true,
+      "minimum_norm_with_reserve": true,
+      "fixed_slice_feasible": true
+    }
+  ],
+  "scope": "Bounded five-E-bump fixed-slice optimization with I/Cp equalities and variational M/J/S capacity. Positive slack is not an actual smooth U correction, eta/time lift, continuous cone, or full NS validation.",
+  "accepted": false
+}

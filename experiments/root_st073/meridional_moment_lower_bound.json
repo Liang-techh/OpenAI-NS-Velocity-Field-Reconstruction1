@@ -1,0 +1,344 @@
+{
+  "tau": 0.011048543456039806,
+  "quadrature_per_piece": 96,
+  "rows": [
+    {
+      "eta": 0.2,
+      "support_start": 0.1,
+      "support_end": 3.0,
+      "gram_condition": 10.093162928232353,
+      "required_M_J": [
+        -0.10983427481140001,
+        -0.16186096354110435
+      ],
+      "target_U2": 4.083208423964288,
+      "min_total_U2": 0.13134927123958973,
+      "energy_slack": 3.951859152724698,
+      "U_only_possible_by_bound": true
+    },
+    {
+      "eta": 0.2,
+      "support_start": 0.3,
+      "support_end": 3.0,
+      "gram_condition": 9.29905895071031,
+      "required_M_J": [
+        0.48058317409164936,
+        0.7155714892776338
+      ],
+      "target_U2": 4.083208423964288,
+      "min_total_U2": 2.9149385456941603,
+      "energy_slack": 1.1682698782701273,
+      "U_only_possible_by_bound": true
+    },
+    {
+      "eta": 0.2,
+      "support_start": 0.5,
+      "support_end": 3.0,
+      "gram_condition": 8.562273768490593,
+      "required_M_J": [
+        0.3760078366661956,
+        0.5401280156584316
+      ],
+      "target_U2": 4.083208423964288,
+      "min_total_U2": 3.378060823892051,
+      "energy_slack": 0.7051476000722365,
+      "U_only_possible_by_bound": true
+    },
+    {
+      "eta": 0.2,
+      "support_start": 0.75,
+      "support_end": 3.0,
+      "gram_condition": 7.623542084537242,
+      "required_M_J": [
+        0.14261898038343485,
+        0.17496404994270207
+      ],
+      "target_U2": 4.083208423964288,
+      "min_total_U2": 3.6275287465252126,
+      "energy_slack": 0.455679677439075,
+      "U_only_possible_by_bound": true
+    },
+    {
+      "eta": 0.2,
+      "support_start": 0.95,
+      "support_end": 3.0,
+      "gram_condition": 7.504670865692809,
+      "required_M_J": [
+        0.2809735066223861,
+        0.4186214467751831
+      ],
+      "target_U2": 4.083208423964288,
+      "min_total_U2": 3.851150812382769,
+      "energy_slack": 0.2320576115815185,
+      "U_only_possible_by_bound": true
+    },
+    {
+      "eta": 0.2,
+      "support_start": 0.975,
+      "support_end": 3.0,
+      "gram_condition": 7.6745052286452005,
+      "required_M_J": [
+        0.3055601490921092,
+        0.4667863606515541
+      ],
+      "target_U2": 4.083208423964288,
+      "min_total_U2": 3.924912099215259,
+      "energy_slack": 0.15829632474902855,
+      "U_only_possible_by_bound": true
+    },
+    {
+      "eta": 0.2,
+      "support_start": 0.99,
+      "support_end": 3.0,
+      "gram_condition": 7.81976018565204,
+      "required_M_J": [
+        0.32042864154226897,
+        0.4964418936683911
+      ],
+      "target_U2": 4.083208423964288,
+      "min_total_U2": 3.9776482179938117,
+      "energy_slack": 0.10556020597047588,
+      "U_only_possible_by_bound": true
+    },
+    {
+      "eta": 0.2,
+      "support_start": 1.0,
+      "support_end": 3.0,
+      "gram_condition": 7.940315125670066,
+      "required_M_J": [
+        0.3303243441782935,
+        0.5164227540507758
+      ],
+      "target_U2": 4.083208423964288,
+      "min_total_U2": 4.017091365436407,
+      "energy_slack": 0.06611705852788052,
+      "U_only_possible_by_bound": true
+    },
+    {
+      "eta": 0.2,
+      "support_start": 1.005,
+      "support_end": 3.0,
+      "gram_condition": 8.008787381313608,
+      "required_M_J": [
+        0.33525516825786217,
+        0.5264473915921395
+      ],
+      "target_U2": 4.083208423964288,
+      "min_total_U2": 4.038257853010088,
+      "energy_slack": 0.04495057095419952,
+      "U_only_possible_by_bound": true
+    },
+    {
+      "eta": 0.2,
+      "support_start": 1.01,
+      "support_end": 3.0,
+      "gram_condition": 8.083189026086144,
+      "required_M_J": [
+        0.3401692270128575,
+        0.5364786278590332
+      ],
+      "target_U2": 4.083208423964288,
+      "min_total_U2": 4.060462855399587,
+      "energy_slack": 0.02274556856470067,
+      "U_only_possible_by_bound": true
+    },
+    {
+      "eta": 0.2,
+      "support_start": 1.025,
+      "support_end": 3.0,
+      "gram_condition": 8.345302374461793,
+      "required_M_J": [
+        0.3547699308389503,
+        0.5664707705914916
+      ],
+      "target_U2": 4.083208423964288,
+      "min_total_U2": 4.133898974158506,
+      "energy_slack": -0.05069055019421853,
+      "U_only_possible_by_bound": false
+    },
+    {
+      "eta": 0.2,
+      "support_start": 1.05,
+      "support_end": 3.0,
+      "gram_condition": 8.931982225795403,
+      "required_M_J": [
+        0.3783876020463553,
+        0.6152115414578081
+      ],
+      "target_U2": 4.083208423964288,
+      "min_total_U2": 4.282897503312003,
+      "energy_slack": -0.1996890793477153,
+      "U_only_possible_by_bound": false
+    },
+    {
+      "eta": 0.3,
+      "support_start": 0.1,
+      "support_end": 3.0,
+      "gram_condition": 10.159663347177577,
+      "required_M_J": [
+        -0.1583515471063914,
+        -0.2807292909089064
+      ],
+      "target_U2": 3.5579176172312263,
+      "min_total_U2": 0.2814156469039474,
+      "energy_slack": 3.276501970327279,
+      "U_only_possible_by_bound": true
+    },
+    {
+      "eta": 0.3,
+      "support_start": 0.3,
+      "support_end": 3.0,
+      "gram_condition": 9.365370227598566,
+      "required_M_J": [
+        0.34307922282286907,
+        0.47237316818157205
+      ],
+      "target_U2": 3.5579176172312263,
+      "min_total_U2": 2.5366311156202443,
+      "energy_slack": 1.021286501610982,
+      "U_only_possible_by_bound": true
+    },
+    {
+      "eta": 0.3,
+      "support_start": 0.5,
+      "support_end": 3.0,
+      "gram_condition": 8.625493078327347,
+      "required_M_J": [
+        0.24443734638252307,
+        0.31073610409734076
+      ],
+      "target_U2": 3.5579176172312263,
+      "min_total_U2": 2.944030704746101,
+      "energy_slack": 0.6138869124851252,
+      "U_only_possible_by_bound": true
+    },
+    {
+      "eta": 0.3,
+      "support_start": 0.75,
+      "support_end": 3.0,
+      "gram_condition": 7.673956887126435,
+      "required_M_J": [
+        0.07203661024404648,
+        0.045221606187447555
+      ],
+      "target_U2": 3.5579176172312263,
+      "min_total_U2": 3.161533424275809,
+      "energy_slack": 0.39638419295541727,
+      "U_only_possible_by_bound": true
+    },
+    {
+      "eta": 0.3,
+      "support_start": 0.95,
+      "support_end": 3.0,
+      "gram_condition": 7.544751030496441,
+      "required_M_J": [
+        0.24784361987397488,
+        0.3493423671599942
+      ],
+      "target_U2": 3.5579176172312263,
+      "min_total_U2": 3.4121344999182384,
+      "energy_slack": 0.145783117312988,
+      "U_only_possible_by_bound": true
+    },
+    {
+      "eta": 0.3,
+      "support_start": 0.975,
+      "support_end": 3.0,
+      "gram_condition": 7.713986817631426,
+      "required_M_J": [
+        0.27556651168455,
+        0.4033075138218073
+      ],
+      "target_U2": 3.5579176172312263,
+      "min_total_U2": 3.4862778581037825,
+      "energy_slack": 0.0716397591274438,
+      "U_only_possible_by_bound": true
+    },
+    {
+      "eta": 0.3,
+      "support_start": 0.99,
+      "support_end": 3.0,
+      "gram_condition": 7.859054656040281,
+      "required_M_J": [
+        0.2921545497518665,
+        0.43620566221384405
+      ],
+      "target_U2": 3.5579176172312263,
+      "min_total_U2": 3.538472089901286,
+      "energy_slack": 0.019445527329940315,
+      "U_only_possible_by_bound": true
+    },
+    {
+      "eta": 0.3,
+      "support_start": 1.0,
+      "support_end": 3.0,
+      "gram_condition": 7.9795796786030735,
+      "required_M_J": [
+        0.3031306405479878,
+        0.45825156624306596
+      ],
+      "target_U2": 3.5579176172312263,
+      "min_total_U2": 3.577158956644737,
+      "energy_slack": -0.019241339413510694,
+      "U_only_possible_by_bound": false
+    },
+    {
+      "eta": 0.3,
+      "support_start": 1.005,
+      "support_end": 3.0,
+      "gram_condition": 8.048069012256054,
+      "required_M_J": [
+        0.30858219609777515,
+        0.4692791997087533
+      ],
+      "target_U2": 3.5579176172312263,
+      "min_total_U2": 3.5978149831486808,
+      "energy_slack": -0.03989736591745441,
+      "U_only_possible_by_bound": false
+    },
+    {
+      "eta": 0.3,
+      "support_start": 1.01,
+      "support_end": 3.0,
+      "gram_condition": 8.1225102779482,
+      "required_M_J": [
+        0.31400416845864937,
+        0.4802932586909243
+      ],
+      "target_U2": 3.5579176172312263,
+      "min_total_U2": 3.619415251805605,
+      "energy_slack": -0.06149763457437851,
+      "U_only_possible_by_bound": false
+    },
+    {
+      "eta": 0.3,
+      "support_start": 1.025,
+      "support_end": 3.0,
+      "gram_condition": 8.384883185548283,
+      "required_M_J": [
+        0.33005295827585734,
+        0.513108044561587
+      ],
+      "target_U2": 3.5579176172312263,
+      "min_total_U2": 3.6904266438829074,
+      "energy_slack": -0.13250902665168107,
+      "U_only_possible_by_bound": false
+    },
+    {
+      "eta": 0.3,
+      "support_start": 1.05,
+      "support_end": 3.0,
+      "gram_condition": 8.972480163899354,
+      "required_M_J": [
+        0.3558400097206882,
+        0.5661065505231926
+      ],
+      "target_U2": 3.5579176172312263,
+      "min_total_U2": 3.833062169038028,
+      "energy_slack": -0.27514455180680164,
+      "U_only_possible_by_bound": false
+    }
+  ],
+  "scope": "Finite-quadrature projection bound with E fixed, prescribed outgoing M/J/S and U change supported on indicated X interval. Negative slack rules out U-only repair within numerical accuracy, not E/profile redesign. Positive slack is necessary but not a smooth physical construction.",
+  "accepted": false
+}

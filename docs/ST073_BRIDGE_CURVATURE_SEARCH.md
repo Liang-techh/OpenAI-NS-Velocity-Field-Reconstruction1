@@ -301,3 +301,47 @@ whose moment defects [Proposition C.2](https://cdn.openai.com/pdf/32d9f210-8b73-
 repairs. The current evidence favors redesigning the leading mean
 profile for a broader strict cone and small outgoing defects before
 attempting a wave, rather than tuning this single step further.
+
+## Constructive five-moment slice repair after the cone point
+
+The failed four/five-bump solves hid a useful structure. With `E` fixed,
+any downstream `U` correction preserving outgoing `M` and `J` has a
+minimum possible `integral U^2`: project onto the span of `1` and
+`H=sqrt(2X)E` on its support. `meridional_moment_lower_bound.py`
+evaluates this shape-independent bound by piecewise Gauss quadrature.
+At `eta=.3`, a correction restricted to `1<=X<=3` needs at least
+`3.57715896` of total normalized `U^2`, versus the baseline budget
+`3.55791762`; a `U`-only repair there cannot also match `S`.
+At `eta=.2` the corresponding slack is positive `0.06611706`.
+The bound is numerical, assumes unchanged `E` and fixed radial support,
+and says nothing against joint `U,E` reconstruction.
+
+The joint route is now executable at fixed axial slices. Five compact
+azimuthal bumps on `1.005<X<2.98` restore outgoing `I` and `Cp` while
+keeping sampled `E` positive. A constrained quadratic solve with a
+12-dimensional smooth meridional basis supported on `1<X<3` then
+restores `M` and `J`, and uses a null direction to set `S` exactly.
+`coupled_five_moment_slice.json` records successful `eta=.2` and
+`eta=.3` solutions. At `eta=.2`, the smaller azimuthal correction
+suffices; at `eta=.3`, only the larger tested positive-swirl correction
+works in this finite basis, with `S` slack about `0.00588` before the
+last null-direction adjustment. The maximum five-moment defect is
+below `5e-13` on the construction quadrature. Independent Gauss-128
+and Gauss-160 rules in `coupled_five_moment_holdout.json` keep the
+maximum below `5e-14`. The smallest sampled ratio `E_corrected/E_base`
+is about `0.10965` on the finer rule at `eta=.3`.
+
+This result closes **two fixed normalized radial slices only**. The
+coefficients are not yet functions of `eta` and time; the `U` profiles
+have not been lifted through a physical streamfunction, and no new
+three-dimensional field or pressure has been evaluated. The smooth
+`U` basis uses a narrow `0.02`-wide `X` entrance/exit, so its derivative
+and viscous cost must be measured before it is accepted as a mean
+correction. The local physical cone remains a narrow finite sample,
+and complete momentum is still orders of magnitude above `1e-3`.
+The next necessary construction is a smooth parameter-dependent
+five-moment branch followed by a solenoidal physical lift and complete
+residual check. [Appendix A, Lemmas A.1–A.2](https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf)
+motivates independent bump moments and small-discrepancy nonlinear
+repair; our order-one correction is a numerical experiment outside
+that lemma's smallness guarantee.
