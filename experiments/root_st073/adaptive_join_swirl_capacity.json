@@ -1,0 +1,38 @@
+{
+  "source": "AdaptiveOrderCore -> JoinedField with endpoint-preserving swirl bubble",
+  "ratio": 16.0,
+  "training_k": 11.0,
+  "training_eta": 0.0,
+  "amplitude": -2.345167749150114,
+  "train_baseline_max": 734932.0962908319,
+  "train_fitted_predicted_max": 677837.5148911838,
+  "train_fitted_direct_max": 677837.514631764,
+  "predicted_direct_vector_max_difference": 0.0006620182830374688,
+  "train_divergence_max": 2.2665517462883145e-08,
+  "holdouts": [
+    {
+      "eta": -0.2,
+      "k": 11.0,
+      "baseline_max": 587330.1782709536,
+      "fitted_max": 569331.3487573175,
+      "divergence_max": 2.1446339815156534e-08
+    },
+    {
+      "eta": 0.2,
+      "k": 11.0,
+      "baseline_max": 587167.1481442457,
+      "fitted_max": 569907.127574031,
+      "divergence_max": 2.983051672345027e-08
+    },
+    {
+      "eta": 0.0,
+      "k": 11.5,
+      "baseline_max": 1233864.6372870419,
+      "fitted_max": 1137894.0755124914,
+      "divergence_max": 6.538493835250847e-08
+    }
+  ],
+  "scope": "One endpoint-preserving axisymmetric swirl-bubble coefficient; three train locations and nine holdout locations. Pressure and poloidal bridge unchanged. This is a bounded capacity screen, not complete-field acceptance.",
+  "accepted": false,
+  "pde_validated": false
+}

@@ -56,3 +56,6 @@ not a claim that our direct bridge implements those sections. The
 current heat exterior remains axially unlocalized, so this experiment
 also does not establish finite total energy, volume L2 acceptance, or
 critical-time regular forcing.
+
+The first endpoint-preserving swirl/poloidal correction screen for
+this width choice is in `ST073_ADAPTIVE_JOIN_MODES.md`.

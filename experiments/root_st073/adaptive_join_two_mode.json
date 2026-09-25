@@ -1,0 +1,58 @@
+{
+  "source": "AdaptiveOrderCore -> wide JoinedField + swirl and poloidal bubbles",
+  "ratio": 16.0,
+  "training_k": 11.0,
+  "training_eta": [
+    -0.2,
+    0.0,
+    0.2
+  ],
+  "amplitudes": [
+    -2.345173917379664,
+    -0.23145170525160755
+  ],
+  "least_squares_amplitudes": [
+    -1.5126023102805783,
+    -0.20484768460552055
+  ],
+  "fit_nfev": 11,
+  "fit_success": true,
+  "peak_fit_success": true,
+  "training_baseline_max": 734932.0962908319,
+  "training_fitted_direct_max": 677829.894897313,
+  "predicted_direct_vector_max_difference": 0.0008345608366653323,
+  "training_divergence_max": 3.0091541702859104e-08,
+  "holdouts": [
+    {
+      "eta": -0.25,
+      "k": 11.0,
+      "baseline_max": 520316.9430019648,
+      "fitted_max": 524721.3517047453,
+      "divergence_max": 9.276163837057538e-08
+    },
+    {
+      "eta": 0.25,
+      "k": 11.0,
+      "baseline_max": 520338.5617384452,
+      "fitted_max": 523060.90779903985,
+      "divergence_max": 5.9460489865159616e-08
+    },
+    {
+      "eta": 0.0,
+      "k": 10.5,
+      "baseline_max": 437756.07486343215,
+      "fitted_max": 403785.27544053586,
+      "divergence_max": 2.5218696464435197e-08
+    },
+    {
+      "eta": 0.0,
+      "k": 11.5,
+      "baseline_max": 1233864.6372870419,
+      "fitted_max": 1137881.2214303059,
+      "divergence_max": 6.544132702401839e-08
+    }
+  ],
+  "scope": "Two endpoint-preserving axisymmetric modes at one scale; nine train and twelve holdout locations. Pressure and heat exterior unchanged. No volume L2 or continuum/domain acceptance.",
+  "accepted": false,
+  "pde_validated": false
+}
