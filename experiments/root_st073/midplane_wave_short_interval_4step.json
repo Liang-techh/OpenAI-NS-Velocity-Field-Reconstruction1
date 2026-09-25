@@ -1,0 +1,148 @@
+{
+  "source": "Explicit time-dependent compact potential and pressure fit",
+  "k": 19,
+  "pulse_fractions": [
+    -0.1,
+    -0.05,
+    0.0,
+    0.05000000000000002,
+    0.1
+  ],
+  "time_step": 2.516836162073464e-11,
+  "steps": 4,
+  "train_nodes": 4,
+  "heldout_nodes": 9,
+  "stages": [
+    {
+      "start_fraction": -0.1,
+      "midpoint_fraction": -0.07500000000000001,
+      "start_train": {
+        "frozen": {
+          "max": 9793373130802.236,
+          "rms": 6247290991248.591
+        },
+        "projected_derivative_and_pressure": {
+          "max": 1336851960202.9644,
+          "rms": 1315573818350.6262
+        }
+      },
+      "heldout_midpoint_frozen": {
+        "max_momentum": 11267686584385.477,
+        "rms_momentum": 4542729347714.959,
+        "max_fd_divergence": 55.262707594782114,
+        "max_speed": 601.1785531165034
+      },
+      "heldout_midpoint_evolved": {
+        "max_momentum": 12482925587607.234,
+        "rms_momentum": 4733035749343.223,
+        "max_fd_divergence": 19.102965764701366,
+        "max_speed": 537.5839032779832
+      },
+      "midpoint_max_ratio": 1.1078516866901331,
+      "slope_norms": [
+        776757589.0452833,
+        246560640.49976185
+      ],
+      "mean_slope_norm": 1818034.5450615832
+    },
+    {
+      "start_fraction": -0.05,
+      "midpoint_fraction": -0.025,
+      "start_train": {
+        "frozen": {
+          "max": 24858885806373.22,
+          "rms": 15666452275083.809
+        },
+        "projected_derivative_and_pressure": {
+          "max": 5001676332745.566,
+          "rms": 4971694667771.84
+        }
+      },
+      "heldout_midpoint_frozen": {
+        "max_momentum": 12073361880110.795,
+        "rms_momentum": 4871567654312.193,
+        "max_fd_divergence": 56.66832801327109,
+        "max_speed": 613.5018210670233
+      },
+      "heldout_midpoint_evolved": {
+        "max_momentum": 11564027351016.592,
+        "rms_momentum": 5922190271574.643,
+        "max_fd_divergence": 214.39974223077297,
+        "max_speed": 556.4578886203716
+      },
+      "midpoint_max_ratio": 0.9578133634896456,
+      "slope_norms": [
+        1885889928.3091261,
+        929492329.1094855
+      ],
+      "mean_slope_norm": 1923235.2086742609
+    },
+    {
+      "start_fraction": 0.0,
+      "midpoint_fraction": 0.02500000000000001,
+      "start_train": {
+        "frozen": {
+          "max": 63911790987802.64,
+          "rms": 39870540390686.31
+        },
+        "projected_derivative_and_pressure": {
+          "max": 18635251650468.57,
+          "rms": 18474929040843.254
+        }
+      },
+      "heldout_midpoint_frozen": {
+        "max_momentum": 12589158187975.318,
+        "rms_momentum": 5084686188046.541,
+        "max_fd_divergence": 56.67048283666372,
+        "max_speed": 613.5275943947372
+      },
+      "heldout_midpoint_evolved": {
+        "max_momentum": 32891447990797.49,
+        "rms_momentum": 15901618694634.564,
+        "max_fd_divergence": 766.9271555840969,
+        "max_speed": 923.805795319222
+      },
+      "midpoint_max_ratio": 2.6126804905997716,
+      "slope_norms": [
+        4482332845.280961,
+        3445140899.6483607
+      ],
+      "mean_slope_norm": 7654195.910668467
+    },
+    {
+      "start_fraction": 0.05000000000000002,
+      "midpoint_fraction": 0.07500000000000001,
+      "start_train": {
+        "frozen": {
+          "max": 170790673026548.2,
+          "rms": 107930441914531.42
+        },
+        "projected_derivative_and_pressure": {
+          "max": 69503340811730.06,
+          "rms": 68432307275617.625
+        }
+      },
+      "heldout_midpoint_frozen": {
+        "max_momentum": 12784336383675.29,
+        "rms_momentum": 5169237447761.729,
+        "max_fd_divergence": 55.269078340381384,
+        "max_speed": 601.2540469629639
+      },
+      "heldout_midpoint_evolved": {
+        "max_momentum": 86780622545976.67,
+        "rms_momentum": 44152334509792.2,
+        "max_fd_divergence": 2295.8859769701958,
+        "max_speed": 2028.240409569313
+      },
+      "midpoint_max_ratio": 6.788042800312225,
+      "slope_norms": [
+        10594123131.274994,
+        12732741500.623964
+      ],
+      "mean_slope_norm": 20674245.7890249
+    }
+  ],
+  "scope": "A provisional physical-time collocation ODE. Pressure is recomputed at stage starts and held fixed within each interval. Full nonlinear momentum is evaluated directly at held-out interior midpoints. No stiff convergence, pulse endpoint support, coupled stress/moment correction, or uniform scale recursion.",
+  "accepted": false,
+  "scale_recursion_established": false
+}

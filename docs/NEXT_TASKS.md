@@ -108,6 +108,15 @@ directly check full residual on held-out nodes at interior times before
 attempting `k=11→19` transfer. The paper's Proposition 7.2 supplies
 the transverse pulse inverse and Section 9 the full correction cycle;
 the current collocation ODE is only an exploratory numerical proxy.
+An actual two-step `k=19` explicit potential-coefficient march improves
+the first held-out midpoint (`0.778` of frozen-wave maximum) but fails
+at the second (`1.960`). Four half-size steps give midpoint ratios
+`1.108, 0.958, 2.613, 6.788`, with growing coefficient slopes; see
+`ST073_MIDPLANE_PULSE_MARCH.md`. Do not extend this explicit Euler
+scheme by further step-size tuning alone. Build a supported pulse
+inverse with stable time integration, pressure recovery, and a
+continuum-in-time residual budget, then couple the mean/stress/moment
+operations before claiming recursive contraction.
 Use those directions as a conditioning prototype, not as the paper's five
 leading-profile moments or a recursive correction.
 The next Stage-1 inputs are therefore the actual coefficient-family
