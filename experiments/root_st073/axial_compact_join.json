@@ -1,0 +1,94 @@
+{
+  "rows": [
+    {
+      "k": 0.4,
+      "tau": 0.3789291416275995,
+      "X": [
+        0.03,
+        0.5859375,
+        2.0
+      ],
+      "eta": [
+        0.375,
+        0.375,
+        0.375
+      ],
+      "complete_residual_norms": [
+        225.2700654313857,
+        494.3437363545976,
+        0.9609146967395481
+      ],
+      "finite_difference_divergence": [
+        -1.9532919139919613e-06,
+        1.3334823805166707e-06,
+        -4.696777667925267e-15
+      ],
+      "exterior_energy_tail_bound_r_ge_1": 0.0001291014030456958
+    },
+    {
+      "k": 5.5,
+      "tau": 0.011048543456039806,
+      "X": [
+        0.03,
+        0.5859375,
+        2.0
+      ],
+      "eta": [
+        0.375,
+        0.375,
+        0.375
+      ],
+      "complete_residual_norms": [
+        43663.79315703083,
+        94692.8821239409,
+        190.76296163406766
+      ],
+      "finite_difference_divergence": [
+        -6.225759466360614e-05,
+        4.2148393049501465e-05,
+        -3.300712800310193e-13
+      ],
+      "exterior_energy_tail_bound_r_ge_1": 2.2437824047406526e-05
+    }
+  ],
+  "divergence_refinement": [
+    {
+      "space_step_factor": 0.001,
+      "divergence": -6.225759466360614e-05
+    },
+    {
+      "space_step_factor": 0.0005,
+      "divergence": -3.891405640388257e-06
+    },
+    {
+      "space_step_factor": 0.00025,
+      "divergence": -2.432561814202927e-07
+    }
+  ],
+  "tau_window": [
+    0.0078125,
+    0.5
+  ],
+  "viscosity": 0.01,
+  "forcing": "zero for the reported residual diagnostic",
+  "global_velocity_callable": true,
+  "finite_energy_each_registered_time": true,
+  "solenoidal_by_construction": true,
+  "eta_flat": 0.3,
+  "eta_outer": 0.45,
+  "axis_velocity": [
+    0.0,
+    0.0,
+    0.019460811965786588
+  ],
+  "axis_pressure": -0.946808005919256,
+  "outside_velocity": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "outside_pressure": 0.0,
+  "scope": "Globally callable, axisymmetric, solenoidal and finite-energy at each registered positive time. The heat radial tail decays slowly but is integrable for h>0. Sampled unforced residual in the axial collar is diagnostic only; no global PDE acceptance, critical-time extension, five-moment restoration or nonaxisymmetric stress correction.",
+  "pde_validated": false,
+  "accepted": false
+}

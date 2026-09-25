@@ -25,8 +25,10 @@ def basis_and_gradient(points, tau, field):
     By = 1024*yy**3*(1-yy)**3*(1-2*yy)
     B *= active
     By *= active
-    yr = np.asarray(co['X_r'])/(sn*2*(ratio-1)*np.sqrt(X*field.join_X))
-    yz = np.asarray(co['X_z'])/(sn*2*(ratio-1)*np.sqrt(X*field.join_X))
+    safe_X = np.maximum(X, 1e-300)
+    safe_r = np.maximum(r, 1e-300)
+    yr = np.asarray(co['X_r'])/(sn*2*(ratio-1)*np.sqrt(safe_X*field.join_X))
+    yz = np.asarray(co['X_z'])/(sn*2*(ratio-1)*np.sqrt(safe_X*field.join_X))
     ez = np.asarray(co['eta_z'])/sn
     qz = np.asarray(co['q_z'])/sn
     scale = field.nu*q**(-1-2*field.inner.h)
@@ -43,8 +45,8 @@ def basis_and_gradient(points, tau, field):
             val = scale*shape
             gr = scale*sy*yr
             gz = scale*(sy*yz+se*ez-(1+2*field.inner.h)*qz/q*shape)
-            grad = np.column_stack((gr*points[:, 0]/r,
-                                    gr*points[:, 1]/r, gz))
+            grad = np.column_stack((gr*points[:, 0]/safe_r,
+                                    gr*points[:, 1]/safe_r, gz))
             values.append(val)
             gradients.append(grad)
     return np.stack(values, axis=1), np.stack(gradients, axis=-1)
