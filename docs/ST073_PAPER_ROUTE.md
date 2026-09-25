@@ -43,3 +43,7 @@ screen the frozen tangential growth operator, and then integrate constrained
 phase/amplitude dynamics before constructing any non-axisymmetric candidate.
 This local screen will be a diagnostic approximation: the paper's leading
 normalized background is not identical to the corrected physical ST073 field.
+
+For the critical-time force requirement and the new selected-collar residual
+trend, see `ST073_FORCING_REGULARITY.md`. The current finite-slab residual
+cannot yet serve as the paper's smooth compact force.

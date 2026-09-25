@@ -98,7 +98,8 @@ class TransitionPoloidalMode:
         return velocity, np.zeros(len(pts))
 
 
-def kinematics(field, points, tau, hs, ht):
+def kinematics(field, points, tau, hs, ht, time_min=.5/64,
+               time_max=.5):
     u, p = field.fields(points, tau)
     grad = np.zeros((len(points), 3, 3))
     gp = np.zeros((len(points), 3))
@@ -113,12 +114,12 @@ def kinematics(field, points, tau, hs, ht):
         grad[:, :, axis] = (um2 - 8*um1 + 8*up1 - up2) / (12*hs)
         gp[:, axis] = (pm2 - 8*pm1 + 8*pp1 - pp2) / (12*hs)
         lap += (-up2 + 16*up1 - 30*u + 16*um1 - um2) / (12*hs*hs)
-    if tau - 2*ht < .5/64:
+    if tau - 2*ht < time_min:
         utau = (-25*u + 48*field.fields(points, tau+ht)[0]
                 - 36*field.fields(points, tau+2*ht)[0]
                 + 16*field.fields(points, tau+3*ht)[0]
                 - 3*field.fields(points, tau+4*ht)[0]) / (12*ht)
-    elif tau + 2*ht > .5:
+    elif tau + 2*ht > time_max:
         utau = (25*u - 48*field.fields(points, tau-ht)[0]
                 + 36*field.fields(points, tau-2*ht)[0]
                 - 16*field.fields(points, tau-3*ht)[0]

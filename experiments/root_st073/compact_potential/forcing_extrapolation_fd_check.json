@@ -1,0 +1,39 @@
+{
+  "tau": 0.000525,
+  "point": [
+    0.0018649667145881985,
+    0.0,
+    0.0007954615989478511
+  ],
+  "rows": [
+    {
+      "factor": 1.0,
+      "residual": [
+        364382736.03491485,
+        4068015.2638908587,
+        546655.9196485258
+      ],
+      "norm": 364405853.2751253
+    },
+    {
+      "factor": 0.5,
+      "residual": [
+        364382738.4295209,
+        4068015.2686990155,
+        546655.9344485146
+      ],
+      "norm": 364405855.6696554
+    },
+    {
+      "factor": 0.25,
+      "residual": [
+        364382738.596911,
+        4068015.26974708,
+        546655.9400861352
+      ],
+      "norm": 364405855.837055
+    }
+  ],
+  "scope": "One extrapolated point, three finite-difference spacings. Stability does not validate out-of-domain model formulas or an asymptotic force limit.",
+  "accepted": false
+}

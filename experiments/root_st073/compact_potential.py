@@ -13,8 +13,10 @@ from joined_field import ROOT,coordinates
 from compact_control import cutoff
 
 class CompactPotentialField:
- def __init__(self,quadrature_order=32):
+ def __init__(self,quadrature_order=32,experimental_time_extension=False):
   self.base=CachedWidth(6.);self.nu=self.base.nu;self.ratio=6.
+  self.experimental_time_extension=bool(experimental_time_extension)
+  self.base.experimental_time_extension=self.experimental_time_extension
   self.a=np.asarray(json.loads((ROOT/'wide_collocation/report.json').read_text())['amplitudes'])
   self.field=WideJointModes(self.base,self.a)
   self.nodes,self.weights=leggauss(quadrature_order)
@@ -44,7 +46,8 @@ class CompactPotentialField:
  def fields(self,points,tau):
   pts=np.asarray(points,float);ts=np.broadcast_to(tau,(len(pts),));out=np.zeros((len(pts),3));pressure=np.zeros(len(pts));sn=np.sqrt(self.nu)
   for i,(x,t) in enumerate(zip(pts,ts)):
-   if not .5/64<=t<=.5:raise ValueError('Registered finite time slab only')
+   if t<=0 or (not self.experimental_time_extension and not .5/64<=t<=.5):
+    raise ValueError('Registered finite time slab only')
    r=np.hypot(x[0],x[1]);z=x[2];rflat,rsupp,zflat,zsupp=self.support(t)
    if r>=rsupp or abs(z)>=zsupp:continue
    fr,frp=cutoff((r-rflat)/(rsupp-rflat));fz,fzp=cutoff((abs(z)-zflat)/(zsupp-zflat))

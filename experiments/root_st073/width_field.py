@@ -12,13 +12,15 @@ class WidthField:
  def __init__(self,ratio=2.):
   if ratio<=1:raise ValueError("Outer/inner radius ratio must exceed1")
   self.ratio=float(ratio)
+  self.experimental_time_extension=False
   self.inner=FullRadialField.load(ROOT/'radial_continuation/candidate.json');self.nu=self.inner.nu
   self.c=json.loads((ROOT/'heat_join/screen.json').read_text())['heat_amplitude']
  def fields(self,points,tau):
   pts=np.asarray(points,float);ts=np.broadcast_to(tau,(len(pts),));uv=[];pv=[];sn=np.sqrt(self.nu)
   for point,t in zip(pts,ts):
    r=np.hypot(*point[:2]);z=point[2];coord=coordinates(r/sn,z/sn,t,self.inner.h);e=float(coord['eta']);q=float(coord['q'])
-   if abs(e)>.5 or not .5/64<=t<=.5:raise ValueError('Only registered axial/time slab supported')
+   if abs(e)>.5 or t<=0 or (not self.experimental_time_extension and not .5/64<=t<=.5):
+    raise ValueError('Only registered axial/time slab supported')
    ri,_,L,_=coefficients(self.inner,e,t);ro=self.ratio*ri;width=ro-ri;a=septic(L,width)
    if r<=ri:
     d=self.inner.evaluate(point[None,:],t);uv.append(d['velocity'][0]);pv.append(d['pressure'][0]);continue
