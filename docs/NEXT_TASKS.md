@@ -153,6 +153,13 @@ control spatial derivatives of the amplitude and curl/cutoff
 remainders on a wider axial cone, not just match pointwise inverse
 values or add pressure degrees of freedom. Require direct complete
 momentum reduction at both scales before extending the recursion.
+An axial mean-geometry change now opens the `eta=+0.05` cone sample at
+`y=0.325` on both `k=11,19`, while a 34-variable compensation keeps the
+twelve sampled outer moments at `k=11,15,19` below `2.41e-15` in normalized
+units. Its cone margin is narrow, the negative side remains closed, and no
+full-momentum gain has been shown; see `ST073_AXIAL_CONE_MOMENT_REPAIR.md`.
+Next optimize a wider connected cone with moment constraints, then test the
+supported correction's complete residual on adjacent scales and pulse times.
 Use those directions as a conditioning prototype, not as the paper's five
 leading-profile moments or a recursive correction.
 The next Stage-1 inputs are therefore the actual coefficient-family

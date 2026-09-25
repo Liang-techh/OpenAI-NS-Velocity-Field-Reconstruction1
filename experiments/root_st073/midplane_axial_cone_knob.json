@@ -1,0 +1,450 @@
+{
+  "source": "First-window odd-poloidal axial cone sensitivity",
+  "adjusted_flat_indices": [
+    7,
+    31
+  ],
+  "baseline_coefficients": [
+    -0.21549217575148885,
+    -0.1379148838577298
+  ],
+  "y": 0.325,
+  "eta_nodes": [
+    -0.075,
+    -0.05,
+    -0.0125,
+    0.025,
+    0.05
+  ],
+  "baseline_max_absolute_sampled_moment": 2.6362558443631734e-06,
+  "cases": [
+    {
+      "multiplier": 0.5,
+      "coefficient_deltas": [
+        0.10774608787574443,
+        0.0689574419288649
+      ],
+      "max_absolute_sampled_moment": 242.99481831337906,
+      "max_absolute_sampled_moment_drift": 242.99481799322322,
+      "moments": [
+        [
+          0.021472379353885344,
+          -1.423337790173719,
+          0.021535716988582358,
+          1.4225889735160024
+        ],
+        [
+          3.633923029155993e-07,
+          3.932832209926591e-07,
+          -1.2036890950639642e-07,
+          -4.149824611451425e-07
+        ],
+        [
+          3.5513859694874546,
+          -242.99481831337906,
+          3.561681494213416,
+          242.86052433160978
+        ]
+      ],
+      "scales": [
+        {
+          "k": 11,
+          "rows": [
+            {
+              "eta": -0.075,
+              "momentum_norm": 437385.99290770723,
+              "lambda_squared": 28954431.352277365,
+              "cone_pass": false,
+              "target_dot_N": -29.642875756847758,
+              "target_dot_K": -117.17649508624277,
+              "cone_ratio": 2.5101383000236157
+            },
+            {
+              "eta": -0.05,
+              "momentum_norm": 444490.74288857274,
+              "lambda_squared": 24263326.803728327,
+              "cone_pass": true,
+              "target_dot_N": -54.95212587564331,
+              "target_dot_K": -82.49963328282179,
+              "cone_ratio": 0.8660881033178115
+            },
+            {
+              "eta": -0.0125,
+              "momentum_norm": 449470.4383520937,
+              "lambda_squared": 20690170.053452667,
+              "cone_pass": true,
+              "target_dot_N": -75.11898036230302,
+              "target_dot_K": -20.296379566827692,
+              "cone_ratio": 0.14307351765336962
+            },
+            {
+              "eta": 0.025,
+              "momentum_norm": 446927.5329235263,
+              "lambda_squared": 22048834.43518243,
+              "cone_pass": true,
+              "target_dot_N": -69.0237789399675,
+              "target_dot_K": 45.07816718169678,
+              "cone_ratio": 0.3591437848455811
+            },
+            {
+              "eta": 0.05,
+              "momentum_norm": 441105.8122216691,
+              "lambda_squared": 25539358.53796922,
+              "cone_pass": true,
+              "target_dot_N": -51.011740895192546,
+              "target_dot_K": 84.68130604156613,
+              "cone_ratio": 0.9921014739719529
+            }
+          ],
+          "passing_eta": [
+            -0.05,
+            -0.0125,
+            0.025,
+            0.05
+          ]
+        },
+        {
+          "k": 19,
+          "rows": [
+            {
+              "eta": -0.075,
+              "momentum_norm": 1606085591.7944672,
+              "lambda_squared": 1841967326303.1482,
+              "cone_pass": false,
+              "target_dot_N": -7022.060010656389,
+              "target_dot_K": -28879.536058421658,
+              "cone_ratio": 2.526821686507272
+            },
+            {
+              "eta": -0.05,
+              "momentum_norm": 1627923516.2130935,
+              "lambda_squared": 1525465521043.3042,
+              "cone_pass": true,
+              "target_dot_N": -13319.041066698319,
+              "target_dot_K": -20353.041950817522,
+              "cone_ratio": 0.8483228780027728
+            },
+            {
+              "eta": -0.0125,
+              "momentum_norm": 1642948503.3213193,
+              "lambda_squared": 1284457038754.4324,
+              "cone_pass": true,
+              "target_dot_N": -18338.107547816115,
+              "target_dot_K": -5032.285156885226,
+              "cone_ratio": 0.13899970370273732
+            },
+            {
+              "eta": 0.025,
+              "momentum_norm": 1633338191.381277,
+              "lambda_squared": 1376713058918.87,
+              "cone_pass": true,
+              "target_dot_N": -16823.70192767395,
+              "target_dot_K": 11076.388489185725,
+              "cone_ratio": 0.34733342380359356
+            },
+            {
+              "eta": 0.05,
+              "momentum_norm": 1613505913.3152559,
+              "lambda_squared": 1612721481068.6216,
+              "cone_pass": true,
+              "target_dot_N": -12344.271698837072,
+              "target_dot_K": 20825.15177129834,
+              "cone_ratio": 0.9725054084013464
+            }
+          ],
+          "passing_eta": [
+            -0.05,
+            -0.0125,
+            0.025,
+            0.05
+          ]
+        }
+      ]
+    },
+    {
+      "multiplier": 1.0,
+      "coefficient_deltas": [
+        -0.0,
+        -0.0
+      ],
+      "max_absolute_sampled_moment": 2.6362558443631734e-06,
+      "max_absolute_sampled_moment_drift": 0.0,
+      "moments": [
+        [
+          5.375457412526428e-09,
+          2.8063292854920576e-08,
+          -2.412432920095852e-09,
+          2.554536243662964e-08
+        ],
+        [
+          3.633923029155993e-07,
+          3.932832209926591e-07,
+          -1.2036890950639642e-07,
+          -4.149824611451425e-07
+        ],
+        [
+          1.3107774066156703e-06,
+          -3.2015584831885306e-07,
+          -8.723352493689161e-07,
+          -2.6362558443631734e-06
+        ]
+      ],
+      "scales": [
+        {
+          "k": 11,
+          "rows": [
+            {
+              "eta": -0.075,
+              "momentum_norm": 447967.3358684339,
+              "lambda_squared": 29757258.54268855,
+              "cone_pass": false,
+              "target_dot_N": -27.15900606203891,
+              "target_dot_K": -118.85509432964545,
+              "cone_ratio": 2.8330995939476193
+            },
+            {
+              "eta": -0.05,
+              "momentum_norm": 456162.08456185507,
+              "lambda_squared": 24650451.405213412,
+              "cone_pass": true,
+              "target_dot_N": -53.72320208463242,
+              "target_dot_K": -84.00024619248083,
+              "cone_ratio": 0.9116047870974099
+            },
+            {
+              "eta": -0.0125,
+              "momentum_norm": 461912.0110387276,
+              "lambda_squared": 20708187.25036403,
+              "cone_pass": true,
+              "target_dot_N": -75.0575498230123,
+              "target_dot_K": -20.759111564210098,
+              "cone_ratio": 0.14653682694152145
+            },
+            {
+              "eta": 0.025,
+              "momentum_norm": 459187.72109184775,
+              "lambda_squared": 22183705.355624467,
+              "cone_pass": true,
+              "target_dot_N": -68.67880318042914,
+              "target_dot_K": 45.93871304388321,
+              "cone_ratio": 0.3693033350375017
+            },
+            {
+              "eta": 0.05,
+              "momentum_norm": 452708.7619006932,
+              "lambda_squared": 25991924.872956444,
+              "cone_pass": false,
+              "target_dot_N": -49.74322571747281,
+              "target_dot_K": 86.10528547782671,
+              "cone_ratio": 1.0469538213491114
+            }
+          ],
+          "passing_eta": [
+            -0.05,
+            -0.0125,
+            0.025
+          ]
+        },
+        {
+          "k": 19,
+          "rows": [
+            {
+              "eta": -0.075,
+              "momentum_norm": 1630875492.739916,
+              "lambda_squared": 1877538549929.9866,
+              "cone_pass": false,
+              "target_dot_N": -6619.547447709249,
+              "target_dot_K": -29152.755264665648,
+              "cone_ratio": 2.7418421739088803
+            },
+            {
+              "eta": -0.05,
+              "momentum_norm": 1656347050.378956,
+              "lambda_squared": 1542568940004.0515,
+              "cone_pass": true,
+              "target_dot_N": -13120.223188981783,
+              "target_dot_K": -20597.086918143905,
+              "cone_ratio": 0.8778940335103316
+            },
+            {
+              "eta": -0.0125,
+              "momentum_norm": 1673952058.978147,
+              "lambda_squared": 1285240404183.7146,
+              "cone_pass": true,
+              "target_dot_N": -18328.630566492513,
+              "target_dot_K": -5107.496275690893,
+              "cone_ratio": 0.14120418322594022
+            },
+            {
+              "eta": 0.025,
+              "momentum_norm": 1663734434.9995704,
+              "lambda_squared": 1382708999093.9385,
+              "cone_pass": true,
+              "target_dot_N": -16768.420931258945,
+              "target_dot_K": 11216.216963178442,
+              "cone_ratio": 0.35385981729238736
+            },
+            {
+              "eta": 0.05,
+              "momentum_norm": 1641699218.9873812,
+              "lambda_squared": 1632824435310.2036,
+              "cone_pass": false,
+              "target_dot_N": -12139.37661713955,
+              "target_dot_K": 21056.6865327781,
+              "cone_ratio": 1.0082178473251702
+            }
+          ],
+          "passing_eta": [
+            -0.05,
+            -0.0125,
+            0.025
+          ]
+        }
+      ]
+    },
+    {
+      "multiplier": 1.5,
+      "coefficient_deltas": [
+        -0.10774608787574443,
+        -0.0689574419288649
+      ],
+      "max_absolute_sampled_moment": 244.77068057860484,
+      "max_absolute_sampled_moment_drift": 244.77068089876067,
+      "moments": [
+        [
+          -0.02147236860296519,
+          1.4398107062730714,
+          -0.021535721813450863,
+          -1.439061782398118
+        ],
+        [
+          3.633923029155993e-07,
+          3.932832209926591e-07,
+          -1.2036890950639642e-07,
+          -4.149824611451425e-07
+        ],
+        [
+          -3.551383347929913,
+          244.77068057860484,
+          -3.561683238883915,
+          -244.63639250966528
+        ]
+      ],
+      "scales": [
+        {
+          "k": 11,
+          "rows": [
+            {
+              "eta": -0.075,
+              "momentum_norm": 459359.93661510217,
+              "lambda_squared": 30591415.947331168,
+              "cone_pass": false,
+              "target_dot_N": -24.643558557802752,
+              "target_dot_K": -120.49356139010023,
+              "cone_ratio": 3.2284038307905014
+            },
+            {
+              "eta": -0.05,
+              "momentum_norm": 468500.5376333214,
+              "lambda_squared": 25058407.944576103,
+              "cone_pass": true,
+              "target_dot_N": -52.46810984800891,
+              "target_dot_K": -85.49063708900222,
+              "cone_ratio": 0.9605066662833539
+            },
+            {
+              "eta": -0.0125,
+              "momentum_norm": 474916.8874390642,
+              "lambda_squared": 20727926.59147505,
+              "cone_pass": true,
+              "target_dot_N": -74.99372777156748,
+              "target_dot_K": -21.224578832571584,
+              "cone_ratio": 0.15004155079350573
+            },
+            {
+              "eta": 0.025,
+              "momentum_norm": 472035.6819135116,
+              "lambda_squared": 22324720.36552085,
+              "cone_pass": true,
+              "target_dot_N": -68.32510895255042,
+              "target_dot_K": 46.80168027478875,
+              "cone_ratio": 0.3797566426168529
+            },
+            {
+              "eta": 0.05,
+              "momentum_norm": 464988.174432803,
+              "lambda_squared": 26462735.38298623,
+              "cone_pass": false,
+              "target_dot_N": -48.450901791080724,
+              "target_dot_K": 87.5180821909994,
+              "cone_ratio": 1.106036359565878
+            }
+          ],
+          "passing_eta": [
+            -0.05,
+            -0.0125,
+            0.025
+          ]
+        },
+        {
+          "k": 19,
+          "rows": [
+            {
+              "eta": -0.075,
+              "momentum_norm": 1657312192.1592548,
+              "lambda_squared": 1914063421397.5173,
+              "cone_pass": false,
+              "target_dot_N": -6213.54001824505,
+              "target_dot_K": -29421.73022429046,
+              "cone_ratio": 2.9877724589580064
+            },
+            {
+              "eta": -0.05,
+              "momentum_norm": 1686108710.3958573,
+              "lambda_squared": 1560294169504.853,
+              "cone_pass": true,
+              "target_dot_N": -12918.56946874538,
+              "target_dot_K": -20840.077483525703,
+              "cone_ratio": 0.9089187676766383
+            },
+            {
+              "eta": -0.0125,
+              "momentum_norm": 1706066977.812953,
+              "lambda_squared": 1286074537497.9534,
+              "cone_pass": true,
+              "target_dot_N": -18318.89715711706,
+              "target_dot_K": -5183.005351205465,
+              "cone_ratio": 0.14342634426953083
+            },
+            {
+              "eta": 0.025,
+              "momentum_norm": 1695296250.6232445,
+              "lambda_squared": 1388886567766.4753,
+              "cone_pass": true,
+              "target_dot_N": -16712.202636459788,
+              "target_dot_K": 11356.318089468672,
+              "cone_ratio": 0.3605126849647048
+            },
+            {
+              "eta": 0.05,
+              "momentum_norm": 1671252277.2598982,
+              "lambda_squared": 1653472637585.6738,
+              "cone_pass": false,
+              "target_dot_N": -11931.89809868523,
+              "target_dot_K": 21287.062267993046,
+              "cone_ratio": 1.045744046646257
+            }
+          ],
+          "passing_eta": [
+            -0.05,
+            -0.0125,
+            0.025
+          ]
+        }
+      ]
+    }
+  ],
+  "scope": "Two-scale physical cone analogue at five eta nodes plus exact sampled physical outer-moment values at three knot scales. Candidate coefficient perturbations are not moment-preserving or full residual improvements; passing nodes do not certify continuous support.",
+  "accepted": false,
+  "scale_recursion_established": false
+}

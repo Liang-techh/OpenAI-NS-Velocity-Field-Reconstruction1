@@ -1,0 +1,174 @@
+{
+  "source": "Moment-repaired first-window odd-poloidal axial-cone change",
+  "fixed_indices": [
+    7,
+    31
+  ],
+  "fixed_delta": [
+    0.10774608787574443,
+    0.0689574419288649
+  ],
+  "optimizer_success": true,
+  "optimizer_message": "Optimization terminated successfully",
+  "optimizer_iterations": 19,
+  "weighted_coefficient_distance": 0.00010887092763331651,
+  "max_relative_other_coefficient_change": 0.007986463028758191,
+  "normalized_moment_max": 2.410309216944685e-15,
+  "max_absolute_moment": 1.8903492392224984e-11,
+  "baseline_max_absolute_moment": 2.6362558443631734e-06,
+  "amplitudes": [
+    -0.04016816232415084,
+    0.0006494600022862497,
+    0.003725656178032721,
+    0.00043908789172248996,
+    0.003799734166703279,
+    0.0008788999909048841,
+    -0.003277329493043361,
+    -0.10774608787574443,
+    -4.820369488250778e-05,
+    -1.4004531553814472,
+    0.00508360569983915,
+    -1.4517482570693547,
+    -0.04845694484160725,
+    0.0005260492904443875,
+    0.003222234299598165,
+    0.0004474652354991328,
+    0.0036576892412278545,
+    0.000879232483560786,
+    -0.0031018133245007537,
+    -0.1747148592372537,
+    0.0004021892143879493,
+    -1.40339969418371,
+    0.005014939144965376,
+    -1.4057485258450608,
+    -0.05666889245120952,
+    0.00040270848439157795,
+    0.002721059852970868,
+    0.00045557514392271804,
+    0.0035766599179337315,
+    0.0008802696916394995,
+    -0.002952320059669185,
+    -0.0689574419288649,
+    0.0008262545627525506,
+    -1.3885092148913785,
+    0.00496281658576179,
+    -1.3535203206815798
+  ],
+  "cone_scales": [
+    {
+      "k": 11,
+      "rows": [
+        {
+          "eta": -0.075,
+          "momentum_norm": 437368.7723195268,
+          "lambda_squared": 28952581.79890052,
+          "cone_pass": false,
+          "target_dot_N": -29.644548151722937,
+          "target_dot_K": -117.17748795909952,
+          "cone_ratio": 2.509947351187368
+        },
+        {
+          "eta": -0.05,
+          "momentum_norm": 444473.3045224622,
+          "lambda_squared": 24261370.866307892,
+          "cone_pass": true,
+          "target_dot_N": -54.954243882514085,
+          "target_dot_K": -82.50045995324601,
+          "cone_ratio": 0.8660309161692182
+        },
+        {
+          "eta": -0.0125,
+          "momentum_norm": 449452.85140903527,
+          "lambda_squared": 20688107.360737916,
+          "cone_pass": true,
+          "target_dot_N": -75.12154067060742,
+          "target_dot_K": -20.296627391354072,
+          "cone_ratio": 0.14306352435485029
+        },
+        {
+          "eta": 0.025,
+          "momentum_norm": 446909.9797809432,
+          "lambda_squared": 22046799.68481865,
+          "cone_pass": true,
+          "target_dot_N": -69.02625438810618,
+          "target_dot_K": 45.078626769628784,
+          "cone_ratio": 0.3591187561112853
+        },
+        {
+          "eta": 0.05,
+          "momentum_norm": 441088.3862126856,
+          "lambda_squared": 25537406.906145494,
+          "cone_pass": true,
+          "target_dot_N": -51.01389366212097,
+          "target_dot_K": 84.68210511319198,
+          "cone_ratio": 0.9920339195261106
+        }
+      ],
+      "passing_eta": [
+        -0.05,
+        -0.0125,
+        0.025,
+        0.05
+      ]
+    },
+    {
+      "k": 19,
+      "rows": [
+        {
+          "eta": -0.075,
+          "momentum_norm": 1605999171.7809129,
+          "lambda_squared": 1841816463630.0222,
+          "cone_pass": false,
+          "target_dot_N": -7022.604091059979,
+          "target_dot_K": -28879.833372322035,
+          "cone_ratio": 2.526559817604139
+        },
+        {
+          "eta": -0.05,
+          "momentum_norm": 1627835458.037515,
+          "lambda_squared": 1525306161404.4702,
+          "cone_pass": true,
+          "target_dot_N": -13319.716629052336,
+          "target_dot_K": -20353.285048200803,
+          "cone_ratio": 0.848248472098244
+        },
+        {
+          "eta": -0.0125,
+          "momentum_norm": 1642859271.4175098,
+          "lambda_squared": 1284289447706.7434,
+          "cone_pass": true,
+          "target_dot_N": -18338.91043882313,
+          "target_dot_K": -5032.348122494997,
+          "cone_ratio": 0.13898659941898237
+        },
+        {
+          "eta": 0.025,
+          "momentum_norm": 1633249114.8746986,
+          "lambda_squared": 1376548438103.1086,
+          "cone_pass": true,
+          "target_dot_N": -16824.472148333574,
+          "target_dot_K": 11076.541785576514,
+          "cone_ratio": 0.3473024660896778
+        },
+        {
+          "eta": 0.05,
+          "momentum_norm": 1613417698.8934476,
+          "lambda_squared": 1612564090514.8828,
+          "cone_pass": true,
+          "target_dot_N": -12344.940644992568,
+          "target_dot_K": 20825.407405115286,
+          "cone_ratio": 0.9724206567968628
+        }
+      ],
+      "passing_eta": [
+        -0.05,
+        -0.0125,
+        0.025,
+        0.05
+      ]
+    }
+  ],
+  "scope": "SLSQP restores twelve sampled physical outer moments at three scale knots while holding the two selected odd-poloidal coefficients at half baseline. Cone rows are a sampled physical analogue at five eta values on k=11,19, not a continuous support, full leading-profile construction, or momentum improvement.",
+  "accepted": false,
+  "scale_recursion_established": false
+}
