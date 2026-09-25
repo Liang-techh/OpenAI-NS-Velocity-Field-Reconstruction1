@@ -1,0 +1,138 @@
+{
+  "source": "Five-scale direct physical outer-moment transfer of three-window correction",
+  "rows": [
+    {
+      "k": 11.0,
+      "eta": -0.2,
+      "fitted_outer_stress": [
+        -2.2179496593128647e-09,
+        -1.806717381671644e-07
+      ],
+      "original_outer_stress": [
+        -2.664260131238582,
+        211.30473611567106
+      ],
+      "norm_ratio": 8.550257518243401e-10
+    },
+    {
+      "k": 11.0,
+      "eta": 0.2,
+      "fitted_outer_stress": [
+        2.3118853621512248e-08,
+        1.7088693278455006e-07
+      ],
+      "original_outer_stress": [
+        -3.5273150792804513,
+        -210.57975225645131
+      ],
+      "norm_ratio": 8.187847986595157e-10
+    },
+    {
+      "k": 13.0,
+      "eta": -0.2,
+      "fitted_outer_stress": [
+        1.5439303963324076,
+        -3.3345102491846474
+      ],
+      "original_outer_stress": [
+        -8.674098977080728,
+        839.1197467401315
+      ],
+      "norm_ratio": 0.004378877932145922
+    },
+    {
+      "k": 13.0,
+      "eta": 0.2,
+      "fitted_outer_stress": [
+        1.5420772322572711,
+        3.410332357134255
+      ],
+      "original_outer_stress": [
+        -12.145014575176054,
+        -836.0985206447332
+      ],
+      "norm_ratio": 0.0044760045372810725
+    },
+    {
+      "k": 15.0,
+      "eta": -0.2,
+      "fitted_outer_stress": [
+        0.43881946133772487,
+        -0.6299361423832001
+      ],
+      "original_outer_stress": [
+        -26.85092033025584,
+        3332.624576452526
+      ],
+      "norm_ratio": 0.0002303551727239195
+    },
+    {
+      "k": 15.0,
+      "eta": 0.2,
+      "fitted_outer_stress": [
+        0.44033692657094026,
+        0.630032590534567
+      ],
+      "original_outer_stress": [
+        -40.81002273318046,
+        -3320.054689789051
+      ],
+      "norm_ratio": 0.0002315026918930881
+    },
+    {
+      "k": 17.0,
+      "eta": -0.2,
+      "fitted_outer_stress": [
+        -22.49556173534384,
+        49.47420030146602
+      ],
+      "original_outer_stress": [
+        -76.35775651262198,
+        13237.214573312793
+      ],
+      "norm_ratio": 0.004105658259844842
+    },
+    {
+      "k": 17.0,
+      "eta": 0.2,
+      "fitted_outer_stress": [
+        -22.45976882130531,
+        -50.685205204967396
+      ],
+      "original_outer_stress": [
+        -132.49859672332087,
+        -13184.996843878913
+      ],
+      "norm_ratio": 0.004204455815685123
+    },
+    {
+      "k": 19.0,
+      "eta": -0.2,
+      "fitted_outer_stress": [
+        4.01232422132131e-06,
+        -4.444124442118287e-05
+      ],
+      "original_outer_stress": [
+        -182.55355066935982,
+        52584.051449252256
+      ],
+      "norm_ratio": 8.485791913511161e-10
+    },
+    {
+      "k": 19.0,
+      "eta": 0.2,
+      "fitted_outer_stress": [
+        1.2151948793383584e-05,
+        5.0447312198963825e-05
+      ],
+      "original_outer_stress": [
+        -408.3433877906267,
+        -52367.43257902749
+      ],
+      "norm_ratio": 9.908582500449985e-10
+    }
+  ],
+  "scope": "Two axial sides on five sampled scale slices only; no uniform-in-scale or paper-profile moment theorem.",
+  "accepted": false,
+  "scale_recursion_established": false
+}

@@ -47,3 +47,42 @@ finite total energy, or the required full-domain max and volume-L2
 below `1e-3`. The next coupled step must retain these separated moment
 directions while adding momentum-canceling wave/mean corrections across
 each scale, rather than treating moment closure as the final correction.
+
+## Constrained momentum recovery and a third radial window
+
+`separated_moment_constrained.py` minimizes complete Cartesian momentum
+over the original 16 directions while enforcing the eight sampled outer
+moment equalities. An L4 residual objective reduces the two-scale peak
+by about `2%–3%` compared with the moment-only coefficients and also
+improves `k=13,17` holdouts; the remaining peak is still about four
+times the pre-repair field.
+
+`separated_moment_three_window.py` adds one independent flat bump on
+`y in (.40,.60)`, leaving all three windows disjoint and the `y=.05`
+cone neighborhood untouched. The resulting 24 amplitudes allow an
+exact sampled moment solve followed by constrained L4 momentum
+minimization. This substantially reduces the cost of moment closure:
+
+| Field | `k=11` peak | `k=15` peak | `k=19` peak |
+| --- | ---: | ---: | ---: |
+| Pre-repair cone-aware | `3.264e5` | `2.069e7` | `1.312e9` |
+| Two windows, exact sampled moments | `1.373e6` | `8.551e7` | `5.324e9` |
+| Three windows, exact sampled moments + L4 momentum | `4.897e5` | `3.033e7` | `1.878e9` |
+
+The three-window constrained optimizer reports a largest normalized
+training-moment residual `5.35e-14`. Independent direct radial
+integration gives outer-stress norms below `1.0e-9` of the original at
+`k=11,19`. Time holdout momentum peaks are `3.862e6` at `k=13` and
+`2.382e8` at `k=17`; both are about `64%` below the corresponding
+two-window constrained peaks. The off-knot outer-stress ratios to the
+original are about `0.45%` at `k=13`, `0.023%` at `k=15`, and `0.42%`
+at `k=17` (`separated_moment_three_window_transfer.py`). Thus endpoint
+closure does **not** imply exact closure throughout the scale interval.
+
+The three-window absolute peak still grows with exponent about `1.488`
+per halving from `k=11` to `k=19`, and is `43%–50%` larger than the
+pre-repair candidate. The next scale-recursive step needs moment closure
+at additional scale stages, a controlled interstage transfer, and
+nonaxisymmetric wave/mean corrections to cancel the large remaining
+momentum. None of these finite-grid numbers is a continuum acceptance
+or a proof of the paper's recursive mechanism.

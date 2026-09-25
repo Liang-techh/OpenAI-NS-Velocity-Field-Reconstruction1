@@ -13,8 +13,11 @@ reusable subroutine, not a substitute for that construction.
 The current executable parameter-selection chain already contains the actual
 outgoing pressure/sigma-side work and the theorem-faithful Lambda/C algebra.
 The ST073 exploratory bridge now has separated smooth directions that close
-two **physical** tangential outer moments on two sampled scales, but raise
-complete momentum about fourfold; see `ST073_SEPARATED_MOMENT_CONSTRUCTION.md`.
+two **physical** tangential outer moments on two sampled scales. A third
+radial window and constrained optimization reduce the moment-closure
+momentum cost to about `1.43–1.50` times the pre-repair peak, but the
+absolute residual still grows under dyadic refinement; see
+`ST073_SEPARATED_MOMENT_CONSTRUCTION.md`.
 Use those directions as a conditioning prototype, not as the paper's five
 leading-profile moments or a recursive correction.
 The next Stage-1 inputs are therefore the actual coefficient-family

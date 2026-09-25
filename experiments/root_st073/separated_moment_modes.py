@@ -10,6 +10,7 @@ from width_field import coordinates
 
 
 RADIAL_WINDOWS = ((0.12, 0.38), (0.62, 0.88))
+RADIAL_WINDOWS_THREE = ((0.12, 0.38), (0.40, 0.60), (0.62, 0.88))
 
 
 def scale_weight(k):
@@ -36,15 +37,16 @@ def flat_bump(y, lo, hi):
 
 
 class SeparatedMomentModes:
-    """16 modes: two time knots × swirl/poloidal × two radii × even/odd eta."""
+    """Two time knots × swirl/poloidal × radial windows × even/odd eta."""
 
-    def __init__(self, base, amplitudes):
+    def __init__(self, base, amplitudes, windows=RADIAL_WINDOWS):
         self.base = base
         self.inner = base.inner
         self.nu = base.nu
         self.join_X = base.join_X
         self.ratio = base.ratio
-        self.a = np.asarray(amplitudes, float).reshape(2, 2, 2, 2)
+        self.windows = tuple(windows)
+        self.a = np.asarray(amplitudes, float).reshape(2, 2, len(self.windows), 2)
 
     def fields(self, points, tau):
         points = np.asarray(points, float)
@@ -73,7 +75,7 @@ class SeparatedMomentModes:
         psi_r = np.zeros_like(radius)
         psi_z = np.zeros_like(radius)
         swirl = np.zeros_like(radius)
-        for radial_index, (lo, hi) in enumerate(RADIAL_WINDOWS):
+        for radial_index, (lo, hi) in enumerate(self.windows):
             bump, bump_y = flat_bump(y, lo, hi)
             for parity in (0, 1):
                 axial = np.ones_like(eta) if parity == 0 else eta / 0.3
