@@ -1,0 +1,183 @@
+{
+  "source": "Fixed-coefficient adaptive core plus ratio-16 bridge",
+  "scales": [
+    11.0,
+    13.0,
+    15.0,
+    17.0,
+    19.0
+  ],
+  "results": {
+    "unmodified": {
+      "rows": [
+        {
+          "k": 11.0,
+          "tau": 0.000244140625,
+          "maximum": 728820.2186879861,
+          "normalized_maximum": 2.7802284953612753,
+          "normalized_vector_l2": 5.376584042985498,
+          "transfer_drift_to_k11": 0.0,
+          "hotspot_index": 6
+        },
+        {
+          "k": 13.0,
+          "tau": 6.103515625e-05,
+          "maximum": 5789914.2352357665,
+          "normalized_maximum": 2.7608462501696427,
+          "normalized_vector_l2": 5.353802628320022,
+          "transfer_drift_to_k11": 0.005885032677609397,
+          "hotspot_index": 6
+        },
+        {
+          "k": 15.0,
+          "tau": 1.52587890625e-05,
+          "maximum": 46004983.51536088,
+          "normalized_maximum": 2.7421107003307865,
+          "normalized_vector_l2": 5.331981624890437,
+          "transfer_drift_to_k11": 0.01164113307383069,
+          "hotspot_index": 6
+        },
+        {
+          "k": 17.0,
+          "tau": 3.814697265625e-06,
+          "maximum": 365610048.87323534,
+          "normalized_maximum": 2.7240071361752998,
+          "normalized_vector_l2": 5.311105177973601,
+          "transfer_drift_to_k11": 0.017273101847937417,
+          "hotspot_index": 6
+        },
+        {
+          "k": 19.0,
+          "tau": 9.5367431640625e-07,
+          "maximum": 2906105180.8286247,
+          "normalized_maximum": 2.7065213591126955,
+          "normalized_vector_l2": 5.291158002973979,
+          "transfer_drift_to_k11": 0.022785690762820773,
+          "hotspot_index": 6
+        }
+      ],
+      "normalized_two_halving_ratios": [
+        0.9957628459848595,
+        0.9959242047298946,
+        0.9960846738819612,
+        0.9962442515575952
+      ],
+      "maximum_growth_exponent_per_halving": 1.4951545395684007
+    },
+    "shared_24_mode": {
+      "rows": [
+        {
+          "k": 11.0,
+          "tau": 0.000244140625,
+          "maximum": 390888.0788193813,
+          "normalized_maximum": 1.4911196854377033,
+          "normalized_vector_l2": 3.3422695712724644,
+          "transfer_drift_to_k11": 0.0,
+          "hotspot_index": 0
+        },
+        {
+          "k": 13.0,
+          "tau": 6.103515625e-05,
+          "maximum": 3116537.763526873,
+          "normalized_maximum": 1.486081010592877,
+          "normalized_vector_l2": 3.3269841765654737,
+          "transfer_drift_to_k11": 0.0239056953821691,
+          "hotspot_index": 0
+        },
+        {
+          "k": 15.0,
+          "tau": 1.52587890625e-05,
+          "maximum": 24850913.543642264,
+          "normalized_maximum": 1.481229874112741,
+          "normalized_vector_l2": 3.314129091840953,
+          "transfer_drift_to_k11": 0.04782980845725789,
+          "hotspot_index": 0
+        },
+        {
+          "k": 17.0,
+          "tau": 3.814697265625e-06,
+          "maximum": 198181097.61666986,
+          "normalized_maximum": 1.4765642405798276,
+          "normalized_vector_l2": 3.3037265529971522,
+          "transfer_drift_to_k11": 0.07178010164189327,
+          "hotspot_index": 0
+        },
+        {
+          "k": 19.0,
+          "tau": 9.5367431640625e-07,
+          "maximum": 1580636176.6134188,
+          "normalized_maximum": 1.4720821535339754,
+          "normalized_vector_l2": 3.295796931344589,
+          "transfer_drift_to_k11": 0.09576433968027324,
+          "hotspot_index": 0
+        }
+      ],
+      "normalized_two_halving_ratios": [
+        0.9954266421720223,
+        0.9961361148588956,
+        0.9968611546033584,
+        0.9975997947997938
+      ],
+      "maximum_growth_exponent_per_halving": 1.4976827657836111
+    },
+    "two_sided_cone": {
+      "rows": [
+        {
+          "k": 11.0,
+          "tau": 0.000244140625,
+          "maximum": 326362.0792622735,
+          "normalized_maximum": 1.2449725313654842,
+          "normalized_vector_l2": 3.2382831698919725,
+          "transfer_drift_to_k11": 0.0,
+          "hotspot_index": 0
+        },
+        {
+          "k": 13.0,
+          "tau": 6.103515625e-05,
+          "maximum": 2598341.96833907,
+          "normalized_maximum": 1.2389860002227164,
+          "normalized_vector_l2": 3.225431302112094,
+          "transfer_drift_to_k11": 0.02888939413090543,
+          "hotspot_index": 0
+        },
+        {
+          "k": 15.0,
+          "tau": 1.52587890625e-05,
+          "maximum": 20689833.735052317,
+          "normalized_maximum": 1.2332101902396868,
+          "normalized_vector_l2": 3.2158480335469033,
+          "transfer_drift_to_k11": 0.05786577516473756,
+          "hotspot_index": 0
+        },
+        {
+          "k": 17.0,
+          "tau": 3.814697265625e-06,
+          "maximum": 164771536.79155385,
+          "normalized_maximum": 1.2276436149444718,
+          "normalized_vector_l2": 3.209577529476051,
+          "transfer_drift_to_k11": 0.08693735185493487,
+          "hotspot_index": 0
+        },
+        {
+          "k": 19.0,
+          "tau": 9.5367431640625e-07,
+          "maximum": 1312418391.4026434,
+          "normalized_maximum": 1.2222848752538147,
+          "normalized_vector_l2": 3.2066586458722206,
+          "transfer_drift_to_k11": 0.11611240021217999,
+          "hotspot_index": 0
+        }
+      ],
+      "normalized_two_halving_ratios": [
+        0.996031271168819,
+        0.9970288412098824,
+        0.9980501242579126,
+        0.9990905707754295
+      ],
+      "maximum_growth_exponent_per_halving": 1.4966833323229887
+    }
+  },
+  "scope": "Same 15 similarity-grid points on five scales; complete Cartesian finite-difference momentum, multiplied by tau^1.5. This is not a continuum, volume-L2, recursive-fixed-point, or global-PDE certificate.",
+  "accepted": false,
+  "scale_recursion_established": false
+}

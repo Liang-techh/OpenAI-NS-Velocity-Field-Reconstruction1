@@ -50,3 +50,7 @@ phase/amplitude, quadratic mean correction, finite total energy, and
 the requested full-domain momentum max and spatial-volume L2 below
 `1e-3`. The [OpenAI paper's Sections 7–9 and Appendix A](https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf)
 remain the structural route for the next coupled construction.
+
+The five-scale transfer of this selected candidate is in
+`ST073_RECURSIVE_DEFECT_TRANSFER.md`; it shows that the local cone gains
+do not yield a contracting normalized momentum defect.
