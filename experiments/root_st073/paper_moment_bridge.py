@@ -48,7 +48,7 @@ def null_bump(X, start, end):
 
 
 def slice_data(field, eta, tau, order, patch_start, patch_end,
-               null_amplitude=0.):
+               null_amplitude=0., meridional_null_amplitude=0.):
     g, w = leggauss(order)
     xs, ws = [], []
     boundaries = sorted(set((0., XI, XB, patch_start, patch_end)))
@@ -74,15 +74,16 @@ def slice_data(field, eta, tau, order, patch_start, patch_end,
                       - power_integral + tail_angular_difference)
     swirl_response = float(weights@(np.sqrt(2*X)*b))
     aE = -angular_moment/swirl_response
-    null, _ = null_bump(X, patch_start, patch_end)
+    null, null_x = null_bump(X, patch_start, patch_end)
     adjusted_E = E+aE*b+null_amplitude*null
+    adjusted_U = U+meridional_null_amplitude*null_x
     kinetic_baseline = float(weights@(U**2-E**2/2)
                              -tail_swirl_square)
     swirl_linear_response = float(-(weights@(E*b)))
     swirl_quadratic_response = float(-.5*(weights@(b**2)))
-    kinetic_moment = float(weights@(U**2-adjusted_E**2/2)
+    kinetic_moment = float(weights@(adjusted_U**2-adjusted_E**2/2)
                            -tail_swirl_square)
-    linear_U = float(2*weights@(U*db))
+    linear_U = float(2*weights@(adjusted_U*db))
     quadratic_U = float(weights@(db**2))
     discriminant = linear_U**2-4*quadratic_U*kinetic_moment
     roots = []
@@ -98,6 +99,7 @@ def slice_data(field, eta, tau, order, patch_start, patch_end,
             'swirl_bump_response': swirl_response,
             'swirl_amplitude': aE,
             'null_amplitude': null_amplitude,
+            'meridional_null_amplitude': meridional_null_amplitude,
             'corrected_angular_moment': angular_moment+aE*swirl_response,
             'kinetic_moment_baseline': kinetic_baseline,
             'kinetic_swirl_linear_response': swirl_linear_response,

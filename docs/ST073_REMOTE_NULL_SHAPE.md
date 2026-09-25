@@ -29,3 +29,6 @@ remain open.
 Run `python experiments/root_st073/remote_null_shape_screen.py`; the report
 is `experiments/root_st073/remote_null_shape_screen.json` with
 `accepted: false`.
+
+The follow-up meridional-shape screen in `ST073_REMOTE_MERIDIONAL_SHAPE.md`
+can reverse the stress projection but still misses the full cone.

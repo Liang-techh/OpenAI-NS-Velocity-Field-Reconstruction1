@@ -9,22 +9,25 @@ from paper_moment_bridge import bump, null_bump, slice_data
 
 
 class MomentMatchedJoinedField:
-    def __init__(self, base=None, null_amplitude=0.):
+    def __init__(self, base=None, null_amplitude=0.,
+                 meridional_null_amplitude=0.):
         self.base = base if base is not None else JoinedField()
         self.nu = self.base.nu
         self.inner = self.base.inner
         self.c = self.base.c
         self.null_amplitude = float(null_amplitude)
+        self.meridional_null_amplitude = float(meridional_null_amplitude)
         report = json.loads((ROOT/'paper_moment_coefficients.json').read_text())
         self.patch_start = report['patch_start']
         self.patch_end = report['patch_end']
         self.eta_scale = report['eta_chebyshev_scale']
         self.swirl_coefficients = np.array(report['swirl_chebyshev_coefficients'])
         self.meridional_coefficients = np.array(report['meridional_chebyshev_coefficients'])
-        if self.null_amplitude:
+        if self.null_amplitude or self.meridional_null_amplitude:
             training = [slice_data(self.base, float(eta), tau, 32,
                                    self.patch_start, self.patch_end,
-                                   self.null_amplitude)
+                                   self.null_amplitude,
+                                   self.meridional_null_amplitude)
                         for tau in (.5/64, .032, .128)
                         for eta in np.linspace(-.4, .4, 9)]
             if any(row['meridional_amplitude'] is None for row in training):
@@ -52,17 +55,20 @@ class MomentMatchedJoinedField:
         q = np.asarray(co['q'])[active]
         eta = np.asarray(co['eta'])[active]
         b, bx = bump(X[active], self.patch_start, self.patch_end)
-        null, _ = null_bump(X[active], self.patch_start, self.patch_end)
+        null, null_x = null_bump(X[active], self.patch_start, self.patch_end)
         aE = chebval(eta/self.eta_scale, self.swirl_coefficients)
         aU = chebval(eta/self.eta_scale, self.meridional_coefficients)
         aU_eta = (chebval(eta/self.eta_scale,
                            self.meridional_derivative)/self.eta_scale)
         A = .5+self.inner.h
         delta_theta = np.sqrt(self.nu)*q**(-A)*(aE*b+self.null_amplitude*null)
-        delta_axial = np.sqrt(self.nu)*q**(-A)*aU*bx
-        bracket = ((1-A)*np.asarray(co['q_z'])[active]/q*aU*b
+        delta_axial = np.sqrt(self.nu)*q**(-A)*(
+            aU*bx+self.meridional_null_amplitude*null_x)
+        streamfunction_shape = aU*b+self.meridional_null_amplitude*null
+        axial_shape = aU*bx+self.meridional_null_amplitude*null_x
+        bracket = ((1-A)*np.asarray(co['q_z'])[active]/q*streamfunction_shape
                    + aU_eta*np.asarray(co['eta_z'])[active]*b
-                   + aU*bx*np.asarray(co['X_z'])[active])
+                   + axial_shape*np.asarray(co['X_z'])[active])
         delta_radial = (-self.nu*q**(1-A)/radius[active])*bracket
         ca = pts[active, 0]/radius[active]
         sa = pts[active, 1]/radius[active]
