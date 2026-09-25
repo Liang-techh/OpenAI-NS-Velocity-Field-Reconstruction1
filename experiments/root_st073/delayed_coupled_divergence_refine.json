@@ -1,0 +1,30 @@
+{
+  "source": "delayed_coupled_cone_response.json",
+  "X": 1.025,
+  "eta": 0.22,
+  "tau": 0.011841535675862483,
+  "rows": [
+    {
+      "h_factor": 1.0,
+      "divergence": 0.2316443151929093,
+      "residual_norm": 2012315.5488141302
+    },
+    {
+      "h_factor": 0.5,
+      "divergence": 0.014518789827832279,
+      "residual_norm": 2012357.1769824
+    },
+    {
+      "h_factor": 0.25,
+      "divergence": 0.0009080641491436836,
+      "residual_norm": 2012359.7915711375
+    },
+    {
+      "h_factor": 0.125,
+      "divergence": 5.678315335444495e-05,
+      "residual_norm": 2012359.95516149
+    }
+  ],
+  "scope": "Fourth-order spatial finite-difference convergence at one holdout node only.",
+  "accepted": false
+}

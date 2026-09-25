@@ -939,3 +939,52 @@ window through `X=1.02` on this fixed velocity. The next candidate must
 change the tangential stress target and/or the underlying shear, while
 preserving the moment and exterior conditions, then verify a continuous
 space-time cone before invoking the paper's oscillatory realization.
+
+## Compact solenoidal velocity response of the physical cone
+
+`delayed_swirl_cone_response.py` tests one axisymmetric toroidal mode at
+a time over three compact radial supports, with a common axial envelope.
+Its full Cartesian momentum and radial stress primitive are quadratic
+in the mode amplitude; the scan also enforces the sampled `.11` relative
+swirl floor. The best short support `(1.005,1.04)` opens only one of eight
+nodes, `X=1.008,eta=.2`, at amplitude `.11`. Its cone ratio is `.999715`
+and `lambda_squared` becomes negative at the other three radii on both
+eta slices. Wider supports open no nodes. This is not a robust wave
+window and the selected amplitudes create outgoing moment defects.
+
+`delayed_coupled_cone_response.py` adds a compact poloidal streamfunction
+mode and retains its full quadratic cross-advection with the swirl mode.
+Among 6561 sampled amplitude pairs, the best eight-node choice
+`(swirl,poloidal)=(.125,-.0325)` opens two nonadjacent points on the
+`eta=.3` slice, while all four `eta=.2` points fail. Its sampled maximum
+momentum residual falls from `868264` to `670805`, but the outgoing
+third/fourth moments shift by roughly `(-.00775,+.01439)` at `.2` and
+`(-.00631,+.02304)` at `.3`. Even allowing each eta slice to choose its
+own pair within the scanned box opens at most two of four radii per
+slice. The best pair with positive `lambda_squared` at all eight nodes
+still has a negative minimum cone margin (`-56.90`). See
+`delayed_swirl_cone_response.json` and
+`delayed_coupled_cone_response.json`.
+
+The two-mode screen confirms that changing tangential and meridional
+velocity can improve local momentum and alter the cone, but a single
+radial shape per component does not supply a contiguous strict region.
+The next construction needs multiple radial and axial controls optimized
+against the cone *and* outgoing moments, followed by an independent
+space-time and wave-support check. Neither screened field is promoted.
+
+`delayed_coupled_cone_holdout.py` performs that disjoint space/time
+momentum check on the two-mode point with two sampled cone passes. The
+complete Cartesian maximum rises from `759459.69` to `2012315.55`, and
+RMS from `422178.21` to `1203253.64`. The largest new errors occur at
+intermediate `eta=.22,.28`, where the common axial envelope changes
+rapidly. Finite-difference divergence reaches `.545` on this stencil;
+the toroidal plus streamfunction formula is analytically solenoidal.
+`delayed_coupled_divergence_refine.json` halves the spatial step at the
+worst residual node (`X=1.025,eta=.22`): divergence falls approximately
+by sixteen each time (`.23164,.01452,.000908,.0000568`), as expected
+for fourth-order truncation, while the residual norm stabilizes near
+`2012359.96`. The large momentum defect is therefore real, not a
+finite-difference artifact. The local eight-node momentum
+reduction does not generalize and cannot justify a PDE claim. See
+`delayed_coupled_cone_holdout.json`.
