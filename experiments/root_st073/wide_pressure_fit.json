@@ -1,0 +1,54 @@
+{
+  "join_X": 0.09375,
+  "outer_ratio": 4.0,
+  "pressure_mode_count": 6,
+  "pressure_amplitudes": [
+    10.953871923888512,
+    0.014775881793764266,
+    2.182859435595908,
+    -8.75611646900797,
+    0.14577534692275104,
+    32.626560230889815
+  ],
+  "ridge": 0.001,
+  "rows": [
+    {
+      "name": "train",
+      "k": 5.5,
+      "point_count": 15,
+      "baseline_max": 7303.663478492968,
+      "corrected_max": 5942.899175364446,
+      "baseline_rms": 2569.5505047983975,
+      "corrected_rms": 2316.0464712274693,
+      "corrected_angular_max": 1225.592791511739,
+      "divergence_max": 3.271509285696084e-08,
+      "analytic_gradient_fd_discrepancy": 2.991176436466921e-07
+    },
+    {
+      "name": "space_holdout",
+      "k": 5.5,
+      "point_count": 6,
+      "baseline_max": 7006.9593160891345,
+      "corrected_max": 3902.2639891434314,
+      "baseline_rms": 2061.1365573787098,
+      "corrected_rms": 1648.3440668510475,
+      "corrected_angular_max": 1519.8597747873137,
+      "divergence_max": 1.2917695357828052e-08,
+      "analytic_gradient_fd_discrepancy": 2.8582587131519723e-07
+    },
+    {
+      "name": "time_holdout",
+      "k": 5.25,
+      "point_count": 6,
+      "baseline_max": 5414.918872419657,
+      "corrected_max": 3023.9594786293965,
+      "baseline_rms": 1592.090390108806,
+      "corrected_rms": 1272.5353470749344,
+      "corrected_angular_max": 1171.5317408711157,
+      "divergence_max": 1.1103793440270238e-08,
+      "analytic_gradient_fd_discrepancy": 2.199296664722244e-07
+    }
+  ],
+  "scope": "Six smooth pressure modes supported in the radial bridge, fitted at one late time and checked at disjoint space/time points. No velocity correction, axial closure, five-moment match or full-domain acceptance.",
+  "accepted": false
+}
