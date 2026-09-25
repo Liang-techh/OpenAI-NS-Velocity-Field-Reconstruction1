@@ -268,3 +268,36 @@ Only a supported wave with controlled remainder and independently checked
 complete momentum may be promoted toward the `1e-3` gates. This follows
 the distinction between [Appendix C's shear-loop and five-moment repair,
 and Sections 7–9's oscillatory/mean residual corrections](https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf).
+
+## Return-geometry and bounded-repair follow-up
+
+The default streamfunction return is not the only smooth solenoidal
+geometry. `RadialMomentStep` now also permits its falling transition to
+overlap the original rise after the tested `X=1` cone point. All six
+geometries in `moment_step_return_screen.json` leave that pointwise field
+and its inner radial stress primitive unchanged, so both sampled axial
+cone points still pass. Returning over `1.05<X<1.3` reduces the outgoing
+`J` defect to about `+0.0136` at `eta=.2`, but raises `S` to `+0.8736`;
+the default return over `1.75<X<3` gives `J=-0.6508`, `S=+0.1175`.
+The same tradeoff appears at `eta=.3`. These are alternatives in the
+tested return family, not an optimum or a general lower bound.
+
+The separate bounded slice solve in `moment_shear_bridge_repair.py`
+allows two meridional derivative bumps, including one inside the active
+bridge after the cone point, and three azimuthal bumps. It constrains
+the sampled swirl to remain positive. Twenty-one deterministic starts
+per axial slice did not repair the four nontrivial outgoing moments:
+the best maximum defects were `0.2304` and `0.2757` at `eta=.2,.3`.
+The optimizer also hit its evaluation limit. This is a failed numerical
+search for this five-mode basis, not evidence that all positive-swirl
+repairs are impossible.
+
+`moment_step_amplitude_refine.json` shows that, with the same 16-cycle
+shear, reducing the streamfunction amplitude from `-.50` to `-.45`
+already makes `lambda_squared` negative at `X=1,eta=.2`; tested amplitudes
+through `-.25` also fail. Hence the observed cone pass relies on an
+order-one mean change and is not the small `O(N^-1)` profile modulation
+whose moment defects [Proposition C.2](https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf)
+repairs. The current evidence favors redesigning the leading mean
+profile for a broader strict cone and small outgoing defects before
+attempting a wave, rather than tuning this single step further.

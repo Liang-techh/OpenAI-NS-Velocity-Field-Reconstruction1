@@ -1,0 +1,103 @@
+{
+  "tau": 0.011048543456039806,
+  "x_out": 3.5,
+  "quadrature_per_piece": 64,
+  "u_intervals": [
+    [
+      1.08,
+      1.45
+    ],
+    [
+      1.76,
+      2.98
+    ]
+  ],
+  "e_intervals": [
+    [
+      1.08,
+      1.45
+    ],
+    [
+      1.76,
+      2.2
+    ],
+    [
+      2.25,
+      2.98
+    ]
+  ],
+  "rows": [
+    {
+      "eta": 0.2,
+      "starts_tried": 21,
+      "lower_e_bounds": [
+        -0.7545520889309789,
+        -0.18527617220117554,
+        -0.1610186321019732
+      ],
+      "coefficients": [
+        0.04972164652915437,
+        -0.1299482349228655,
+        -0.7545520867160618,
+        -0.1852761721976493,
+        0.7368116619368487
+      ],
+      "initial_delta": [
+        0.0,
+        -0.650842487524537,
+        0.11752822083601222,
+        0.0
+      ],
+      "final_delta": [
+        2.220446049250313e-16,
+        0.23038356643135405,
+        -0.20310767983834543,
+        0.18465048512916926,
+        -0.012234379128844175
+      ],
+      "max_abs_four_moment_defect": 0.23038356643135405,
+      "min_corrected_E": 9.285842444861636e-06,
+      "max_abs_corrected_U": 5.012747258675424,
+      "moment_repaired": false,
+      "positive_swirl": true,
+      "optimizer_success": false
+    },
+    {
+      "eta": 0.3,
+      "starts_tried": 21,
+      "lower_e_bounds": [
+        -0.7538915610936824,
+        -0.18529518017373053,
+        -0.16103281622761847
+      ],
+      "coefficients": [
+        0.043241920815717004,
+        -0.09481196558524271,
+        -0.7538913920673054,
+        -0.18529517992317837,
+        0.7660304313949123
+      ],
+      "initial_delta": [
+        0.0,
+        -0.6234815164947591,
+        0.2637313018270593,
+        0.0
+      ],
+      "final_delta": [
+        -9.71445146547012e-17,
+        0.24853713213227557,
+        -0.21529470035010764,
+        0.2757075168682448,
+        -0.009992877829329672
+      ],
+      "max_abs_four_moment_defect": 0.2757075168682448,
+      "min_corrected_E": 9.440706637109386e-06,
+      "max_abs_corrected_U": 4.621857640751107,
+      "moment_repaired": false,
+      "positive_swirl": true,
+      "optimizer_success": false
+    }
+  ],
+  "scope": "Fixed-slice bounded nonlinear profile solve. Positive swirl is sampled on Gauss nodes only. No eta/time coefficient field, solenoidal lift, continuous cone or PDE acceptance.",
+  "accepted": false
+}

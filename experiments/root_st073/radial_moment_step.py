@@ -32,8 +32,8 @@ class RadialMomentStep:
         self.rise_end = radial.join_X*radial.outer_ratio**2
         self.restore_start = float(restore_start)
         self.restore_end = float(restore_end)
-        if not self.rise_end < self.restore_start < self.restore_end:
-            raise ValueError('Restoration must follow the old radial bridge')
+        if not self.rise_start < self.restore_start < self.restore_end:
+            raise ValueError('Restoration must follow the rise start')
 
     def attachment_radius(self, tau):
         return self.base.attachment_radius(tau)

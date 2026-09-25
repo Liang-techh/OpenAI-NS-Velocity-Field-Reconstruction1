@@ -1,0 +1,80 @@
+{
+  "tau": 0.011048543456039806,
+  "shear": 2.0,
+  "rows": [
+    {
+      "moment": -0.5,
+      "X": 1.0,
+      "eta": 0.2,
+      "order": 64,
+      "lambda_squared": 823.160456681224,
+      "target_dot_N": -2.720413593870837,
+      "target_dot_K": 1.5343450829588328,
+      "ratio": 0.3240739444903011,
+      "strict_pass": true,
+      "residual_norm": 6306.302055806812
+    },
+    {
+      "moment": -0.45,
+      "X": 1.0,
+      "eta": 0.2,
+      "order": 64,
+      "lambda_squared": -1522.0333061099266,
+      "target_dot_N": -2.6950210666208605,
+      "target_dot_K": 1.9048962560169216,
+      "ratio": null,
+      "strict_pass": false,
+      "residual_norm": 6235.240354009131
+    },
+    {
+      "moment": -0.4,
+      "X": 1.0,
+      "eta": 0.2,
+      "order": 64,
+      "lambda_squared": -8615.453992333216,
+      "target_dot_N": -2.273895520060786,
+      "target_dot_K": 2.629906533546459,
+      "ratio": null,
+      "strict_pass": false,
+      "residual_norm": 6164.66869983719
+    },
+    {
+      "moment": -0.35,
+      "X": 1.0,
+      "eta": 0.2,
+      "order": 64,
+      "lambda_squared": -27477.04813291987,
+      "target_dot_N": -0.1265034379281338,
+      "target_dot_K": 3.6501059429752885,
+      "ratio": null,
+      "strict_pass": false,
+      "residual_norm": 6094.602039291252
+    },
+    {
+      "moment": -0.3,
+      "X": 1.0,
+      "eta": 0.2,
+      "order": 64,
+      "lambda_squared": -15668.693597005544,
+      "target_dot_N": 2.965447210382249,
+      "target_dot_K": 2.4193781404809593,
+      "ratio": null,
+      "strict_pass": false,
+      "residual_norm": 6025.056155616064
+    },
+    {
+      "moment": -0.25,
+      "X": 1.0,
+      "eta": 0.2,
+      "order": 64,
+      "lambda_squared": -3608.5639982511834,
+      "target_dot_N": 3.8188344410823554,
+      "target_dot_K": 1.1942330987191154,
+      "ratio": null,
+      "strict_pass": false,
+      "residual_norm": 5956.0477049607025
+    }
+  ],
+  "scope": "One-point finite-amplitude physical cone refinement. Smaller M-step may reduce nonlinear outgoing moment defects but must pass neighboring eta, radius and time independently.",
+  "accepted": false
+}
