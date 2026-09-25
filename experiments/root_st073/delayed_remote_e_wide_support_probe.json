@@ -1,0 +1,81 @@
+{
+  "source": "delayed_remote_positive_e.json",
+  "U_support": [
+    1.03,
+    3.5
+  ],
+  "rows": [
+    {
+      "eta": 0.275,
+      "feasible": true,
+      "coefficients": [
+        -0.001620941714199518,
+        -0.000868240110041313,
+        -0.04895608265765565,
+        -4.358539740921089e-05,
+        0.008034870999489081
+      ],
+      "selected_start": 5,
+      "starts_tried": 6,
+      "optimizer_success": true,
+      "optimizer_message": "Optimization terminated successfully",
+      "I_Cp_defect": [
+        -4.8405723873656825e-14,
+        5.24913446042774e-13
+      ],
+      "I_defect": -4.8405723873656825e-14,
+      "Cp_defect": 5.24913446042774e-13,
+      "positivity": {
+        "floor": 0.11,
+        "min_relative_E": 0.10999999999999997,
+        "min_E": 0.019977687838229563,
+        "sampled_points": 1440
+      },
+      "optimistic_continuum_S_slack": {
+        "S_min": 2.0554634706539447,
+        "S_slack": 0.010299359036436861,
+        "target_S": 2.0657628296903816,
+        "required_M": 0.35509795830465946,
+        "required_J": 0.557854358148919,
+        "gram_condition": 5.65096173189946
+      }
+    },
+    {
+      "eta": 0.3,
+      "feasible": true,
+      "coefficients": [
+        -0.00028644451558583727,
+        -0.002263699701782296,
+        -0.11796406103361617,
+        -0.0001481045747216479,
+        0.019978240818448626
+      ],
+      "selected_start": 0,
+      "starts_tried": 6,
+      "optimizer_success": true,
+      "optimizer_message": "Optimization terminated successfully",
+      "I_Cp_defect": [
+        4.440892098500626e-15,
+        4.796163466380676e-14
+      ],
+      "I_defect": 4.440892098500626e-15,
+      "Cp_defect": 4.796163466380676e-14,
+      "positivity": {
+        "floor": 0.11,
+        "min_relative_E": 0.10999999999999999,
+        "min_E": 0.01997827195969664,
+        "sampled_points": 1440
+      },
+      "optimistic_continuum_S_slack": {
+        "S_min": 1.9946903339416648,
+        "S_slack": -0.0018660470925024875,
+        "target_S": 1.9928242868491624,
+        "required_M": 0.346842863386493,
+        "required_J": 0.5397674304920866,
+        "gram_condition": 5.63253802348447
+      }
+    }
+  ],
+  "scope": "Independent fixed-eta I/Cp-positive E fits maximizing optimistic S slack for arbitrary U on X=1.03..3.5. No smooth U mode, eta lift, pressure, or full momentum acceptance.",
+  "accepted": false
+}

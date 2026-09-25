@@ -1,0 +1,335 @@
+{
+  "source": "delayed_remote_swirl_floor_capacity.json",
+  "eta": 0.3,
+  "relative_E_floor": 0.05,
+  "E_min_relative_to_target": 0.049999999999999024,
+  "results": [
+    {
+      "width": 0.002,
+      "degree": 11,
+      "S_min": 2.021233895737635,
+      "target_minus_S_min": -0.028409608888472437,
+      "M_J_defect": [
+        -4.163336342344337e-17,
+        1.1102230246251565e-16
+      ],
+      "polynomial_condition": 4.854343123689935,
+      "constraint_condition": 10.846984962247895,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "width": 0.002,
+      "degree": 19,
+      "S_min": 1.999302006224024,
+      "target_minus_S_min": -0.006477719374861746,
+      "M_J_defect": [
+        2.7755575615628914e-17,
+        0.0
+      ],
+      "polynomial_condition": 6.440500867911525,
+      "constraint_condition": 6.935847302022176,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "width": 0.002,
+      "degree": 31,
+      "S_min": 1.9961407913651419,
+      "target_minus_S_min": -0.0033165045159795348,
+      "M_J_defect": [
+        1.0408340855860843e-16,
+        -5.551115123125783e-17
+      ],
+      "polynomial_condition": 8.869642519419498,
+      "constraint_condition": 5.771674548347254,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "width": 0.002,
+      "degree": 47,
+      "S_min": 1.992741305885482,
+      "target_minus_S_min": 8.298096368042351e-05,
+      "M_J_defect": [
+        1.942890293094024e-16,
+        -2.7755575615628914e-17
+      ],
+      "polynomial_condition": 13.589097668066268,
+      "constraint_condition": 5.55991183795914,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "width": 0.002,
+      "degree": 63,
+      "S_min": 1.9922016470811186,
+      "target_minus_S_min": 0.0006226397680437756,
+      "M_J_defect": [
+        0.0,
+        5.551115123125783e-17
+      ],
+      "polynomial_condition": 21.51240200389347,
+      "constraint_condition": 5.549371191896365,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "width": 0.005,
+      "degree": 11,
+      "S_min": 2.0241018028467277,
+      "target_minus_S_min": -0.03127751599756534,
+      "M_J_defect": [
+        -3.885780586188048e-16,
+        -1.6653345369377348e-16
+      ],
+      "polynomial_condition": 4.969464423144894,
+      "constraint_condition": 10.835888340501901,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "width": 0.005,
+      "degree": 19,
+      "S_min": 2.0008985708287796,
+      "target_minus_S_min": -0.008074283979617292,
+      "M_J_defect": [
+        -6.245004513516506e-17,
+        -5.551115123125783e-17
+      ],
+      "polynomial_condition": 7.015888944177028,
+      "constraint_condition": 6.927863202971593,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "width": 0.005,
+      "degree": 31,
+      "S_min": 1.9986152741339158,
+      "target_minus_S_min": -0.005790987284753468,
+      "M_J_defect": [
+        -6.245004513516506e-17,
+        1.6653345369377348e-16
+      ],
+      "polynomial_condition": 11.648188538742058,
+      "constraint_condition": 5.7754340660298205,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "width": 0.005,
+      "degree": 47,
+      "S_min": 1.9947362504026134,
+      "target_minus_S_min": -0.0019119635534510238,
+      "M_J_defect": [
+        5.551115123125783e-17,
+        1.6653345369377348e-16
+      ],
+      "polynomial_condition": 24.475249492115715,
+      "constraint_condition": 5.563344302702814,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "width": 0.005,
+      "degree": 63,
+      "S_min": 1.9936982917888173,
+      "target_minus_S_min": -0.0008740049396549487,
+      "M_J_defect": [
+        -6.938893903907228e-18,
+        -5.551115123125783e-17
+      ],
+      "polynomial_condition": 52.27120770098201,
+      "constraint_condition": 5.551606665234611,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "width": 0.01,
+      "degree": 11,
+      "S_min": 2.028227151809869,
+      "target_minus_S_min": -0.03540286496070655,
+      "M_J_defect": [
+        -1.3877787807814457e-17,
+        2.498001805406602e-16
+      ],
+      "polynomial_condition": 5.2325873545136075,
+      "constraint_condition": 10.801108182058359,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "width": 0.01,
+      "degree": 19,
+      "S_min": 2.0033495297934962,
+      "target_minus_S_min": -0.010525242944333879,
+      "M_J_defect": [
+        -1.457167719820518e-16,
+        1.3877787807814457e-16
+      ],
+      "polynomial_condition": 8.395899171033724,
+      "constraint_condition": 6.912304320725554,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "width": 0.01,
+      "degree": 31,
+      "S_min": 2.002063625334255,
+      "target_minus_S_min": -0.00923933848509284,
+      "M_J_defect": [
+        6.245004513516506e-17,
+        0.0
+      ],
+      "polynomial_condition": 18.232223452982865,
+      "constraint_condition": 5.781517235693847,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "width": 0.01,
+      "degree": 47,
+      "S_min": 1.9968191031387863,
+      "target_minus_S_min": -0.003994816289623948,
+      "M_J_defect": [
+        1.6653345369377348e-16,
+        -1.1102230246251565e-16
+      ],
+      "polynomial_condition": 53.15846687061749,
+      "constraint_condition": 5.567004256218725,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "width": 0.01,
+      "degree": 63,
+      "S_min": 1.9949806728373678,
+      "target_minus_S_min": -0.002156385988205445,
+      "M_J_defect": [
+        -4.163336342344337e-17,
+        5.551115123125783e-17
+      ],
+      "polynomial_condition": 143.50858164802327,
+      "constraint_condition": 5.55357097185201,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "width": 0.02,
+      "degree": 11,
+      "S_min": 2.033694118636651,
+      "target_minus_S_min": -0.040869831787488486,
+      "M_J_defect": [
+        -3.469446951953614e-17,
+        1.1102230246251565e-16
+      ],
+      "polynomial_condition": 5.943116830196878,
+      "constraint_condition": 10.660237580011273,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "width": 0.02,
+      "degree": 19,
+      "S_min": 2.0077083519148653,
+      "target_minus_S_min": -0.014884065065702945,
+      "M_J_defect": [
+        5.551115123125783e-17,
+        -2.220446049250313e-16
+      ],
+      "polynomial_condition": 12.121526325263508,
+      "constraint_condition": 6.879864848429117,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "width": 0.02,
+      "degree": 31,
+      "S_min": 2.006640555370965,
+      "target_minus_S_min": -0.013816268521802844,
+      "M_J_defect": [
+        4.163336342344337e-17,
+        -5.551115123125783e-16
+      ],
+      "polynomial_condition": 37.90569110377329,
+      "constraint_condition": 5.791748069727339,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "width": 0.02,
+      "degree": 47,
+      "S_min": 1.9989067579921591,
+      "target_minus_S_min": -0.006082471142996759,
+      "M_J_defect": [
+        -3.469446951953614e-16,
+        5.551115123125783e-17
+      ],
+      "polynomial_condition": 153.6939020344039,
+      "constraint_condition": 5.570462170465933,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "width": 0.02,
+      "degree": 63,
+      "S_min": 1.9966146800700137,
+      "target_minus_S_min": -0.0037903932208513957,
+      "M_J_defect": [
+        -2.983724378680108e-16,
+        2.7755575615628914e-17
+      ],
+      "polynomial_condition": 525.2651833718811,
+      "constraint_condition": 5.5563336819783915,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "width": 0.04,
+      "degree": 11,
+      "S_min": 2.03439557240414,
+      "target_minus_S_min": -0.04157128555497769,
+      "M_J_defect": [
+        -1.734723475976807e-16,
+        8.326672684688674e-17
+      ],
+      "polynomial_condition": 7.837702252995931,
+      "constraint_condition": 10.0990914162608,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "width": 0.04,
+      "degree": 19,
+      "S_min": 2.0146103116838807,
+      "target_minus_S_min": -0.021786024834718365,
+      "M_J_defect": [
+        -2.8449465006019636e-16,
+        -1.3877787807814457e-16
+      ],
+      "polynomial_condition": 22.941131132646788,
+      "constraint_condition": 6.833210245036989,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "width": 0.04,
+      "degree": 31,
+      "S_min": 2.010951396626259,
+      "target_minus_S_min": -0.01812710977709653,
+      "M_J_defect": [
+        -1.6653345369377348e-16,
+        -1.6653345369377348e-16
+      ],
+      "polynomial_condition": 105.05448368624464,
+      "constraint_condition": 5.801264299816627,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "width": 0.04,
+      "degree": 47,
+      "S_min": 2.0013833293956265,
+      "target_minus_S_min": -0.008559042546464113,
+      "M_J_defect": [
+        -1.942890293094024e-16,
+        -3.885780586188048e-16
+      ],
+      "polynomial_condition": 592.0569032598845,
+      "constraint_condition": 5.5745227186452855,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "width": 0.04,
+      "degree": 63,
+      "S_min": 1.9984977479686505,
+      "target_minus_S_min": -0.005673461119488188,
+      "M_J_defect": [
+        -4.996003610813204e-16,
+        -3.885780586188048e-16
+      ],
+      "polynomial_condition": 2518.7868555698533,
+      "constraint_condition": 5.5595301009847224,
+      "max_abs_U": 4.625310932097059
+    }
+  ],
+  "scope": "Fixed-slice tapered-polynomial U basis capacity under exact linear M/J. A positive S gap is needed before quadratic completion. No eta/time lift or complete momentum check.",
+  "accepted": false
+}

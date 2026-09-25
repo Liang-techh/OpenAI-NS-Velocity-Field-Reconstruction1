@@ -1,0 +1,256 @@
+{
+  "source_mean": "delayed_remote_moment_repair.current_mean",
+  "source_target": "high_frequency_shear_screen.make_field(16, 2.)",
+  "tau": 0.011048543456039806,
+  "moment_order": [
+    "M",
+    "I",
+    "J",
+    "S",
+    "Cp"
+  ],
+  "source_radial_intervals": [
+    [
+      1.005,
+      1.18
+    ],
+    [
+      1.2,
+      1.4
+    ],
+    [
+      1.45,
+      1.75
+    ],
+    [
+      1.8,
+      2.3
+    ],
+    [
+      2.35,
+      2.98
+    ]
+  ],
+  "radial_intervals": [
+    [
+      1.04,
+      1.18
+    ],
+    [
+      1.2,
+      1.4
+    ],
+    [
+      1.45,
+      1.75
+    ],
+    [
+      1.8,
+      2.3
+    ],
+    [
+      2.35,
+      2.98
+    ]
+  ],
+  "mode_family": "SimilaritySwirlMode",
+  "mode_eta_interval": [
+    0.15,
+    0.35
+  ],
+  "inner_cone_cutoff": 1.03,
+  "u_correction_support": [
+    1.04,
+    2.98
+  ],
+  "training_etas": [
+    0.2,
+    0.225,
+    0.25,
+    0.275,
+    0.3
+  ],
+  "relative_E_floor": 0.11,
+  "quadrature_order": 96,
+  "quadrature_points": 1440,
+  "starts_per_eta": 6,
+  "rows": [
+    {
+      "eta": 0.2,
+      "feasible": true,
+      "coefficients": [
+        -0.0003476742181123154,
+        -0.002242396952059909,
+        -0.12427340648305547,
+        -0.00014810120010535206,
+        0.021139914739873446
+      ],
+      "selected_start": 0,
+      "starts_tried": 6,
+      "optimizer_success": true,
+      "optimizer_message": "Optimization terminated successfully",
+      "I_Cp_defect": [
+        -8.260059303211165e-14,
+        1.8030021919912542e-13
+      ],
+      "I_defect": -8.260059303211165e-14,
+      "Cp_defect": 1.8030021919912542e-13,
+      "positivity": {
+        "floor": 0.11,
+        "min_relative_E": 0.11,
+        "min_E": 0.019976258617307126,
+        "sampled_points": 1440
+      },
+      "optimistic_continuum_S_slack": {
+        "S_min": 2.39635609492543,
+        "S_slack": 0.07655682528682473,
+        "target_S": 2.472912920212255,
+        "required_M": 0.37903037337381,
+        "required_J": 0.6088472884905198,
+        "gram_condition": 5.1509141459226475
+      }
+    },
+    {
+      "eta": 0.225,
+      "feasible": true,
+      "coefficients": [
+        0.0008202924651836552,
+        -0.0006579972417749373,
+        -0.05205678187902843,
+        -5.167906168255352e-05,
+        0.00864146143842055
+      ],
+      "selected_start": 2,
+      "starts_tried": 6,
+      "optimizer_success": true,
+      "optimizer_message": "Optimization terminated successfully",
+      "I_Cp_defect": [
+        -4.085620730620576e-14,
+        2.682298827494378e-13
+      ],
+      "I_defect": -4.085620730620576e-14,
+      "Cp_defect": 2.682298827494378e-13,
+      "positivity": {
+        "floor": 0.11,
+        "min_relative_E": 0.10999999999999997,
+        "min_E": 0.0199766821739977,
+        "sampled_points": 1440
+      },
+      "optimistic_continuum_S_slack": {
+        "S_min": 2.2600117082231614,
+        "S_slack": 0.042416170353559046,
+        "target_S": 2.3024278785767205,
+        "required_M": 0.3726428438496086,
+        "required_J": 0.5954357077545278,
+        "gram_condition": 5.175884421725883
+      }
+    },
+    {
+      "eta": 0.25,
+      "feasible": true,
+      "coefficients": [
+        -0.00036172535426553317,
+        -0.0005586671473822237,
+        -0.03986234102733028,
+        -3.427845143792072e-05,
+        0.006558854730314234
+      ],
+      "selected_start": 4,
+      "starts_tried": 6,
+      "optimizer_success": true,
+      "optimizer_message": "Optimization terminated successfully",
+      "I_Cp_defect": [
+        4.3520742565306136e-14,
+        8.5087492607272e-13
+      ],
+      "I_defect": 4.3520742565306136e-14,
+      "Cp_defect": 8.5087492607272e-13,
+      "positivity": {
+        "floor": 0.11,
+        "min_relative_E": 0.10999999999999975,
+        "min_E": 0.01997715826591421,
+        "sampled_points": 1440
+      },
+      "optimistic_continuum_S_slack": {
+        "S_min": 2.163569984786045,
+        "S_slack": 0.004259342125371379,
+        "target_S": 2.1678293269114164,
+        "required_M": 0.3689519573234051,
+        "required_J": 0.5873458414489978,
+        "gram_condition": 5.18910598216404
+      }
+    },
+    {
+      "eta": 0.275,
+      "feasible": true,
+      "coefficients": [
+        -0.0016209417141995598,
+        -0.0008682401100412679,
+        -0.0489560826548348,
+        -4.358539740921815e-05,
+        0.008034870998300282
+      ],
+      "selected_start": 5,
+      "starts_tried": 6,
+      "optimizer_success": true,
+      "optimizer_message": "Optimization terminated successfully",
+      "I_Cp_defect": [
+        -1.0613732115416497e-13,
+        7.043254868221993e-13
+      ],
+      "I_defect": -1.0613732115416497e-13,
+      "Cp_defect": 7.043254868221993e-13,
+      "positivity": {
+        "floor": 0.11,
+        "min_relative_E": 0.11,
+        "min_E": 0.019977687838229556,
+        "sampled_points": 1440
+      },
+      "optimistic_continuum_S_slack": {
+        "S_min": 2.0881921733345203,
+        "S_slack": -0.022429343644138733,
+        "target_S": 2.0657628296903816,
+        "required_M": 0.36358416859881576,
+        "required_J": 0.5754665328255301,
+        "gram_condition": 5.184129920014172
+      }
+    },
+    {
+      "eta": 0.3,
+      "feasible": true,
+      "coefficients": [
+        -0.0002864445155857543,
+        -0.002263699701782305,
+        -0.11796406097345079,
+        -0.00014810457472163295,
+        0.019978240798022996
+      ],
+      "selected_start": 1,
+      "starts_tried": 6,
+      "optimizer_success": true,
+      "optimizer_message": "Optimization terminated successfully",
+      "I_Cp_defect": [
+        2.3092638912203256e-13,
+        1.3180567748349858e-12
+      ],
+      "I_defect": 2.3092638912203256e-13,
+      "Cp_defect": 1.3180567748349858e-12,
+      "positivity": {
+        "floor": 0.11,
+        "min_relative_E": 0.11,
+        "min_E": 0.019978271959696644,
+        "sampled_points": 1440
+      },
+      "optimistic_continuum_S_slack": {
+        "S_min": 2.0156501480888354,
+        "S_slack": -0.022825861239673007,
+        "target_S": 1.9928242868491624,
+        "required_M": 0.3518704020793793,
+        "required_J": 0.5502114614327028,
+        "gram_condition": 5.165775642897689
+      }
+    }
+  ],
+  "scope": "Fixed-slice E-stage capacity only. Each row uses independent coefficients on five disjoint radial SimilaritySwirlMode supports, all above X=1.03, and therefore leaves the sampled inner-cone velocity unchanged. I and Cp are solved on the displayed Gauss grid with a hard sampled E/E_target >= 0.11. The reported S slack is optimistic: it uses the quadrature minimum over an arbitrary U correction on X=1.04..2.98 preserving target M and J, without endpoint smoothness, eta/time compatibility, pressure, momentum, or PDE checks. Independent slice coefficients are not a global physical field or a solenoidal eta/time lift.",
+  "accepted": false
+}

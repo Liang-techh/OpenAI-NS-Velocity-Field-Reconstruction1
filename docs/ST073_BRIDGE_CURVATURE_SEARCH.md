@@ -1332,3 +1332,54 @@ smooth eta-dependent coefficients and audited against continuum
 positivity, outer matching, pressure, and complete momentum; the
 current sampled soft-floor least-squares fit supplies none of those
 proofs.
+
+## Positive-E block repair and support-capacity follow-up
+
+`delayed_remote_positive_e.py` ports the Appendix-A-style first block
+to the current delayed mean. Five ordered, disjoint exact-solenoidal
+swirl supports begin at `X=1.04`; each of the five eta slices solves
+`I` and `Cp` to at most `1.32e-12` on its Gauss-96 grid under a hard
+sampled `E/E_target>=.11` bound. The optimistic `S` slack for an
+arbitrary U correction on `X=1.04..2.98` is positive at eta
+`.2,.225,.25` but negative at `.275,.3` (`-.02243,-.02283`). Thus
+positive E and the first two moment equalities can be achieved on
+these slices, but the current protected radial region still lacks
+enough capacity for the second block.
+
+`delayed_remote_positive_lift.py` converts the independent E
+coefficients to pure radial amplitudes and interpolates them through
+five compact axial bumps (matrix condition `1.34`). The resulting
+physical axisymmetric swirl addition is analytically divergence-free;
+its actual Cartesian profile agrees with the interpolated formula to
+`4.5e-16`, and the sampled velocity at `X<=1.03` is unchanged. At the
+reference time, the largest training `I/Cp` defect on an independent
+Gauss-48 grid is `3.55e-11`; four interlaced eta slices reach
+`6.28e-5`. The smallest sampled ratio on those nine slices is
+`E/E_target=.109956`, slightly below the original `.11` floor.
+On eight nearby-time remote nodes the full Cartesian momentum maximum
+changes from `456561` to `456921` while RMS changes from `196608`
+to `196387`. This is a real solenoidal E lift, but it neither closes
+`J/S` nor meets the full momentum gate.
+
+`delayed_remote_support_capacity.py` keeps that positive E fixed and
+widens the *optimistic arbitrary-U* region. Extending the outer end
+from `X=2.98` to `3.5` while retaining start `1.04` leaves negative
+`S` slack at eta `.275,.3` (`-.01897,-.01943`). Starting immediately
+beyond the protected `X=1.03` cone edge instead makes eta `.275`
+positive (`+.01030`) and eta `.3` only slightly negative (`-.00187`).
+Moving the first E bump onset down toward `1.03` does not remove that
+last deficit. With this wider U region, an independent eta `.3` E
+optimization finds positive optimistic slack at a lower sampled
+relative E floor: `+.000291` at `.08` and `+.002215` at `.05`.
+The paper requires positive E, not the exploratory `.11` ratio floor.
+
+`delayed_remote_u_basis_capacity.py` replaces the arbitrary-U bound
+with endpoint-flat tapered Legendre bases on `X=1.03..3.5`, enforcing
+`M/J` by weighted QR/KKT. For the eta `.3`, `.05`-floor E profile,
+width `.005` and degree `31` still have `S` gap `-.00579`. Only a
+width `.002` onset with degree `47` or `63` makes the finite-basis gap
+slightly positive (`+.000083` and `+.000623`). The corresponding U
+field, eta/time interpolation, curvature cost, pressure and complete
+momentum are not yet constructed. In particular, the narrow,
+high-degree design may repeat the large curvature residual already
+seen earlier in ST073. All of these reports remain `accepted:false`.

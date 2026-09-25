@@ -1,0 +1,251 @@
+{
+  "source": "delayed_remote_positive_e.json",
+  "U_support": [
+    1.03,
+    3.5
+  ],
+  "rows": [
+    {
+      "first_E_start": 1.04,
+      "radial_intervals": [
+        [
+          1.04,
+          1.18
+        ],
+        [
+          1.2,
+          1.4
+        ],
+        [
+          1.45,
+          1.75
+        ],
+        [
+          1.8,
+          2.3
+        ],
+        [
+          2.35,
+          2.98
+        ]
+      ],
+      "result": {
+        "eta": 0.3,
+        "feasible": true,
+        "coefficients": [
+          -0.00028644451558570966,
+          -0.0022636997017823537,
+          -0.11796406103320374,
+          -0.0001481045747216274,
+          0.01997824082184825
+        ],
+        "selected_start": 1,
+        "starts_tried": 6,
+        "optimizer_success": true,
+        "optimizer_message": "Optimization terminated successfully",
+        "I_Cp_defect": [
+          4.574118861455645e-13,
+          6.217248937900877e-14
+        ],
+        "I_defect": 4.574118861455645e-13,
+        "Cp_defect": 6.217248937900877e-14,
+        "positivity": {
+          "floor": 0.11,
+          "min_relative_E": 0.10999999999999999,
+          "min_E": 0.019978271959696644,
+          "sampled_points": 1440
+        },
+        "optimistic_continuum_S_slack": {
+          "S_min": 1.9946903339416253,
+          "S_slack": -0.0018660470924629635,
+          "target_S": 1.9928242868491624,
+          "required_M": 0.346842863386493,
+          "required_J": 0.5397674304920866,
+          "gram_condition": 5.632538023487769
+        }
+      }
+    },
+    {
+      "first_E_start": 1.035,
+      "radial_intervals": [
+        [
+          1.035,
+          1.18
+        ],
+        [
+          1.2,
+          1.4
+        ],
+        [
+          1.45,
+          1.75
+        ],
+        [
+          1.8,
+          2.3
+        ],
+        [
+          2.35,
+          2.98
+        ]
+      ],
+      "result": {
+        "eta": 0.3,
+        "feasible": true,
+        "coefficients": [
+          -0.004964858180049035,
+          -0.0022636997017823576,
+          -0.11685012695454242,
+          -0.00014810457472163414,
+          0.020262837991016403
+        ],
+        "selected_start": 1,
+        "starts_tried": 6,
+        "optimizer_success": true,
+        "optimizer_message": "Optimization terminated successfully",
+        "I_Cp_defect": [
+          -6.52811138479592e-13,
+          8.36664071357518e-13
+        ],
+        "I_defect": -6.52811138479592e-13,
+        "Cp_defect": 8.36664071357518e-13,
+        "positivity": {
+          "floor": 0.11,
+          "min_relative_E": 0.10999999999999999,
+          "min_E": 0.019978271959696644,
+          "sampled_points": 1440
+        },
+        "optimistic_continuum_S_slack": {
+          "S_min": 1.9946528767843605,
+          "S_slack": -0.0018285899351981882,
+          "target_S": 1.9928242868491624,
+          "required_M": 0.3468428633864934,
+          "required_J": 0.5397674304920874,
+          "gram_condition": 5.631757988005961
+        }
+      }
+    },
+    {
+      "first_E_start": 1.031,
+      "radial_intervals": [
+        [
+          1.031,
+          1.18
+        ],
+        [
+          1.2,
+          1.4
+        ],
+        [
+          1.45,
+          1.75
+        ],
+        [
+          1.8,
+          2.3
+        ],
+        [
+          2.35,
+          2.98
+        ]
+      ],
+      "result": {
+        "eta": 0.3,
+        "feasible": true,
+        "coefficients": [
+          -0.005013868087774152,
+          -0.002263699701782348,
+          -0.11683067147143823,
+          -0.0001481045747216279,
+          0.020282762746489824
+        ],
+        "selected_start": 1,
+        "starts_tried": 6,
+        "optimizer_success": true,
+        "optimizer_message": "Optimization terminated successfully",
+        "I_Cp_defect": [
+          4.627409566637652e-13,
+          1.1439738045737613e-12
+        ],
+        "I_defect": 4.627409566637652e-13,
+        "Cp_defect": 1.1439738045737613e-12,
+        "positivity": {
+          "floor": 0.11,
+          "min_relative_E": 0.10999999999999999,
+          "min_E": 0.019978271959696644,
+          "sampled_points": 1440
+        },
+        "optimistic_continuum_S_slack": {
+          "S_min": 1.9946518809665956,
+          "S_slack": -0.0018275941174332733,
+          "target_S": 1.9928242868491624,
+          "required_M": 0.3468428633864933,
+          "required_J": 0.5397674304920871,
+          "gram_condition": 5.631737311949217
+        }
+      }
+    },
+    {
+      "first_E_start": 1.0301,
+      "radial_intervals": [
+        [
+          1.0301,
+          1.18
+        ],
+        [
+          1.2,
+          1.4
+        ],
+        [
+          1.45,
+          1.75
+        ],
+        [
+          1.8,
+          2.3
+        ],
+        [
+          2.35,
+          2.98
+        ]
+      ],
+      "result": {
+        "eta": 0.3,
+        "feasible": true,
+        "coefficients": [
+          -0.0018591523845953883,
+          -0.002263699701782283,
+          -0.11758540278611805,
+          -0.00014810457472163685,
+          0.020082312059947323
+        ],
+        "selected_start": 1,
+        "starts_tried": 6,
+        "optimizer_success": true,
+        "optimizer_message": "Optimization terminated successfully",
+        "I_Cp_defect": [
+          4.671818487622659e-13,
+          1.3766765505351941e-12
+        ],
+        "I_defect": 4.671818487622659e-13,
+        "Cp_defect": 1.3766765505351941e-12,
+        "positivity": {
+          "floor": 0.11,
+          "min_relative_E": 0.11,
+          "min_E": 0.019978271959696644,
+          "sampled_points": 1440
+        },
+        "optimistic_continuum_S_slack": {
+          "S_min": 1.9946774308675785,
+          "S_slack": -0.0018531440184164083,
+          "target_S": 1.9928242868491621,
+          "required_M": 0.3468428633864934,
+          "required_J": 0.5397674304920872,
+          "gram_condition": 5.632269343827444
+        }
+      }
+    }
+  ],
+  "scope": "Fixed eta=.3 optimistic S capacity as first E support approaches the protected cone edge. No smooth U repair, full momentum, or PDE gate.",
+  "accepted": false
+}

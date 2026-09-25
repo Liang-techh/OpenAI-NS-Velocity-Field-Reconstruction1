@@ -1,0 +1,201 @@
+{
+  "source": "delayed_remote_positive_e.json",
+  "U_support": [
+    1.03,
+    3.5
+  ],
+  "rows": [
+    {
+      "relative_E_floor": 0.11,
+      "result": {
+        "eta": 0.3,
+        "feasible": true,
+        "coefficients": [
+          -0.00028644451558570966,
+          -0.0022636997017823537,
+          -0.11796406103320374,
+          -0.0001481045747216274,
+          0.01997824082184825
+        ],
+        "selected_start": 1,
+        "starts_tried": 6,
+        "optimizer_success": true,
+        "optimizer_message": "Optimization terminated successfully",
+        "I_Cp_defect": [
+          4.574118861455645e-13,
+          6.217248937900877e-14
+        ],
+        "I_defect": 4.574118861455645e-13,
+        "Cp_defect": 6.217248937900877e-14,
+        "positivity": {
+          "floor": 0.11,
+          "min_relative_E": 0.10999999999999999,
+          "min_E": 0.019978271959696644,
+          "sampled_points": 1440
+        },
+        "optimistic_continuum_S_slack": {
+          "S_min": 1.9946903339416253,
+          "S_slack": -0.0018660470924629635,
+          "target_S": 1.9928242868491624,
+          "required_M": 0.346842863386493,
+          "required_J": 0.5397674304920866,
+          "gram_condition": 5.632538023487769
+        }
+      }
+    },
+    {
+      "relative_E_floor": 0.1,
+      "result": {
+        "eta": 0.3,
+        "feasible": true,
+        "coefficients": [
+          -0.07762894704523504,
+          -0.028915431142417257,
+          -0.09609988319147296,
+          -0.007811730330712004,
+          0.03424810109284243
+        ],
+        "selected_start": 0,
+        "starts_tried": 6,
+        "optimizer_success": true,
+        "optimizer_message": "Optimization terminated successfully",
+        "I_Cp_defect": [
+          -5.595524044110789e-14,
+          8.881784197001252e-15
+        ],
+        "I_defect": -5.595524044110789e-14,
+        "Cp_defect": 8.881784197001252e-15,
+        "positivity": {
+          "floor": 0.1,
+          "min_relative_E": 0.1,
+          "min_E": 0.018162065417906045,
+          "sampled_points": 1440
+        },
+        "optimistic_continuum_S_slack": {
+          "S_min": 1.993948916129731,
+          "S_slack": -0.0011246292805686675,
+          "target_S": 1.9928242868491624,
+          "required_M": 0.346842863386493,
+          "required_J": 0.5397674304920866,
+          "gram_condition": 5.616934234050326
+        }
+      }
+    },
+    {
+      "relative_E_floor": 0.08,
+      "result": {
+        "eta": 0.3,
+        "feasible": true,
+        "coefficients": [
+          -0.22968112059992746,
+          -0.08221889402368718,
+          -0.055128487390582695,
+          -0.02313898184269282,
+          0.06342748142168107
+        ],
+        "selected_start": 1,
+        "starts_tried": 6,
+        "optimizer_success": true,
+        "optimizer_message": "Optimization terminated successfully",
+        "I_Cp_defect": [
+          2.433608869978343e-13,
+          9.272582701669307e-13
+        ],
+        "I_defect": 2.433608869978343e-13,
+        "Cp_defect": 9.272582701669307e-13,
+        "positivity": {
+          "floor": 0.08,
+          "min_relative_E": 0.08,
+          "min_E": 0.014529652334324832,
+          "sampled_points": 1440
+        },
+        "optimistic_continuum_S_slack": {
+          "S_min": 1.992532868554246,
+          "S_slack": 0.00029141829491630133,
+          "target_S": 1.9928242868491624,
+          "required_M": 0.346842863386493,
+          "required_J": 0.5397674304920866,
+          "gram_condition": 5.587174085693912
+        }
+      }
+    },
+    {
+      "relative_E_floor": 0.05,
+      "result": {
+        "eta": 0.3,
+        "feasible": true,
+        "coefficients": [
+          -0.4442827035837751,
+          -0.1621740883455917,
+          -0.001545609784797748,
+          -0.04612985911066399,
+          0.10816908390195555
+        ],
+        "selected_start": 5,
+        "starts_tried": 6,
+        "optimizer_success": true,
+        "optimizer_message": "Optimization terminated successfully",
+        "I_Cp_defect": [
+          5.240252676230739e-14,
+          7.105427357601002e-15
+        ],
+        "I_defect": 5.240252676230739e-14,
+        "Cp_defect": 7.105427357601002e-15,
+        "positivity": {
+          "floor": 0.05,
+          "min_relative_E": 0.049999999999999864,
+          "min_E": 0.009081032708953026,
+          "sampled_points": 1440
+        },
+        "optimistic_continuum_S_slack": {
+          "S_min": 1.9906090551715039,
+          "S_slack": 0.002215231677658469,
+          "target_S": 1.9928242868491624,
+          "required_M": 0.346842863386493,
+          "required_J": 0.5397674304920866,
+          "gram_condition": 5.5467937242312955
+        }
+      }
+    },
+    {
+      "relative_E_floor": 0.01,
+      "result": {
+        "eta": 0.3,
+        "feasible": true,
+        "coefficients": [
+          -0.7304181475622356,
+          -0.26878101410813143,
+          0.06111693705393014,
+          -0.07678436213462561,
+          0.17106475583880656
+        ],
+        "selected_start": 5,
+        "starts_tried": 6,
+        "optimizer_success": true,
+        "optimizer_message": "Optimization terminated successfully",
+        "I_Cp_defect": [
+          -6.661338147750939e-14,
+          5.1514348342607263e-14
+        ],
+        "I_defect": -6.661338147750939e-14,
+        "Cp_defect": 5.1514348342607263e-14,
+        "positivity": {
+          "floor": 0.01,
+          "min_relative_E": 0.009999999999999974,
+          "min_E": 0.0018162065417905993,
+          "sampled_points": 1440
+        },
+        "optimistic_continuum_S_slack": {
+          "S_min": 1.988212168307502,
+          "S_slack": 0.004612118541660326,
+          "target_S": 1.9928242868491624,
+          "required_M": 0.346842863386493,
+          "required_J": 0.5397674304920866,
+          "gram_condition": 5.49655339260655
+        }
+      }
+    }
+  ],
+  "scope": "Fixed eta=.3 I/Cp-positive E optimization versus sampled relative floor. Positive optimistic S slack is necessary, not sufficient, for a smooth divergence-free J/S correction or NS acceptance.",
+  "accepted": false
+}
