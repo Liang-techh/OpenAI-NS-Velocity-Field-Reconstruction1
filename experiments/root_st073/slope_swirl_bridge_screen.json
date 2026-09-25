@@ -1,0 +1,191 @@
+{
+  "tau": 0.011048543456039806,
+  "cp_capacity": [
+    0.022462556170847272,
+    0.022465973334731233,
+    0.02249118101651707
+  ],
+  "rows": [
+    {
+      "amplitude": -4.0,
+      "cp_delta": [
+        3.0446632053010303,
+        3.0012120836890523,
+        2.721208743119514
+      ],
+      "cp_capacity_pass": false,
+      "sampled_full_max": 6091.688152784794,
+      "sampled_angular_max": 1877.0736643704033,
+      "cones": [
+        {
+          "eta": 0.2,
+          "Pc": 6.969737586721688,
+          "margin": -0.49999664941557764,
+          "relaxed_pass": false
+        },
+        {
+          "eta": 0.3,
+          "Pc": 2.943207645727127,
+          "margin": -0.20583165270118098,
+          "relaxed_pass": false
+        }
+      ]
+    },
+    {
+      "amplitude": -2.0,
+      "cp_delta": [
+        1.3573279023375804,
+        1.3377305531666237,
+        1.2113362386904516
+      ],
+      "cp_capacity_pass": false,
+      "sampled_full_max": 6100.941222312828,
+      "sampled_angular_max": 2274.301897590979,
+      "cones": [
+        {
+          "eta": 0.2,
+          "Pc": 8.707640024198994,
+          "margin": 0.1926806977675075,
+          "relaxed_pass": true
+        },
+        {
+          "eta": 0.3,
+          "Pc": 3.257471146962273,
+          "margin": 0.3496254805688501,
+          "relaxed_pass": true
+        }
+      ]
+    },
+    {
+      "amplitude": -1.0,
+      "cp_delta": [
+        0.6310646335139876,
+        0.6233941705635417,
+        0.5738043691340521
+      ],
+      "cp_capacity_pass": false,
+      "sampled_full_max": 6105.763791714546,
+      "sampled_angular_max": 2645.338980668311,
+      "cones": [
+        {
+          "eta": 0.2,
+          "Pc": 10.45474460000987,
+          "margin": 0.7024766938643259,
+          "relaxed_pass": true
+        },
+        {
+          "eta": 0.3,
+          "Pc": 3.6977550095446166,
+          "margin": 0.6432232204469939,
+          "relaxed_pass": true
+        }
+      ]
+    },
+    {
+      "amplitude": 0.0,
+      "cp_delta": [
+        -0.01692904687085064,
+        -0.012672623600786276,
+        0.014542088016407172
+      ],
+      "cp_capacity_pass": true,
+      "sampled_full_max": 6110.716644921151,
+      "sampled_angular_max": 3016.3760637456426,
+      "cones": [
+        {
+          "eta": 0.2,
+          "Pc": 13.665653567102245,
+          "margin": 1.5815242746866724,
+          "relaxed_pass": true
+        },
+        {
+          "eta": 0.3,
+          "Pc": 4.632822203565174,
+          "margin": 1.0194878793991917,
+          "relaxed_pass": true
+        }
+      ],
+      "direct_full_max": 6110.716644921151,
+      "surrogate_fd_discrepancy": 1.016845989170083e-12,
+      "divergence_max": 7.307052669602854e-07
+    },
+    {
+      "amplitude": 1.0,
+      "cp_delta": [
+        -0.5866531388169341,
+        -0.5704698293263593,
+        -0.4664506046624831
+      ],
+      "cp_capacity_pass": true,
+      "sampled_full_max": 6255.369589549076,
+      "sampled_angular_max": 3387.4131468229743,
+      "cones": [
+        {
+          "eta": 0.2,
+          "Pc": 20.976249355908628,
+          "margin": 3.762004060662102,
+          "relaxed_pass": true
+        },
+        {
+          "eta": 0.3,
+          "Pc": 7.0742006696471655,
+          "margin": 1.8221919734673078,
+          "relaxed_pass": true
+        }
+      ]
+    },
+    {
+      "amplitude": 2.0,
+      "cp_delta": [
+        -1.0781076423242633,
+        -1.0499974466131778,
+        -0.8691737089026189
+      ],
+      "cp_capacity_pass": true,
+      "sampled_full_max": 6463.824642206228,
+      "sampled_angular_max": 3758.450229900306,
+      "cones": [
+        {
+          "eta": 0.2,
+          "Pc": 50.853242112237396,
+          "margin": 14.912822761846474,
+          "relaxed_pass": true
+        },
+        {
+          "eta": 0.3,
+          "Pc": 20.689434002979002,
+          "margin": 7.241004943532045,
+          "relaxed_pass": true
+        }
+      ]
+    },
+    {
+      "amplitude": 4.0,
+      "cp_delta": [
+        -1.8262078840226574,
+        -1.7742439158705512,
+        -1.4398111520666266
+      ],
+      "cp_capacity_pass": true,
+      "sampled_full_max": 6921.6905965217675,
+      "sampled_angular_max": 4512.498081293985,
+      "cones": [
+        {
+          "eta": 0.2,
+          "Pc": null,
+          "margin": null,
+          "relaxed_pass": false
+        },
+        {
+          "eta": 0.3,
+          "Pc": null,
+          "margin": null,
+          "relaxed_pass": false
+        }
+      ]
+    }
+  ],
+  "selected_amplitude": 0.0,
+  "scope": "Seven-point slope-mode screen at eight physical momentum points and two snapshot cone points. Cp capacity is a one-sided necessary screen for downstream deletion, not a fifth-moment match. No continuous cone or global PDE acceptance.",
+  "accepted": false
+}

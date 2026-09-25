@@ -110,3 +110,35 @@ while keeping poloidal curvature low. Optimize complete momentum,
 five outgoing moments, and a *continuous* relaxed cone together. These
 screens are diagnostic only; no full-domain maximum or volume-L2 target
 has been met.
+
+## Value-zero local shear mode
+
+The [OpenAI paper, Appendix B.8 and C](https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf)
+separates local shear control from cumulative-moment restoration. In
+particular, Appendix C uses rapid radial variation to make an order-one
+change in shear with a small profile/moment change, then restores all five
+moments on a reserved interval. This is a more relevant mechanism than
+fitting the mean's complete momentum with a handful of low-order bubbles;
+the paper's nonaxisymmetric pulses cancel the leading annular residual.
+
+`slope_swirl_bridge_screen.py` tests a low-frequency precursor. It adds
+`64y^3(1-y)^3(y-y0)` to normalized swirl, where `y0` maps to `X=1`.
+The mode leaves swirl *value* at `X=1` unchanged while changing its radial
+slope and vanishes to order three at both bridge endpoints. The seven
+amplitude samples show the expected shear/moment conflict. At amplitude
+`-2`, the sampled angular maximum falls from `3016` to `2274` and both
+reference cones pass, but the outgoing fifth moment grows by about
+`1.34`, compared with only `0.0225` of downstream deletion capacity.
+At amplitude `+1`, the fifth-moment change is negative and the cones
+still pass, but the eight-point complete momentum maximum increases from
+`6111` to `6255` and angular maximum from `3016` to `3387`.
+The best of the seven under the one-sided fifth-moment capacity and two
+reference-cone checks is the original zero-amplitude candidate.
+
+This rules out **this low-order value-zero shape**, not shear modulation
+in general. Its fifth-moment first variation is roughly `-0.61` per unit
+amplitude at `eta=.2`; the allowed exterior capacity is about `0.022`.
+Next test a compact high-frequency radial modulation whose field amplitude
+falls as `1/N` while its slope remains order one, and include its growing
+viscous cost in the physical residual. A sampled cone alone will not
+establish the paper's all-phase admissible cone or moment restoration.

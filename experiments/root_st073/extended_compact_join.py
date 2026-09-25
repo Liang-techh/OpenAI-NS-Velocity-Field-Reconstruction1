@@ -17,7 +17,8 @@ from wide_pressure_fit import PressureBubbleField
 def load_extended_compact_candidate(eta_max=.97, eta_flat=.7,
                                     eta_outer=.94,
                                     swirl_bubble_amplitude=0.,
-                                    outer_swirl_bubble_amplitude=0.):
+                                    outer_swirl_bubble_amplitude=0.,
+                                    slope_swirl_bubble_amplitude=0.):
     source = FullRadialField.load(
         ROOT/'NS_ST073_Full_Local_Recurrence/data/ST073-V-wide14.json')
     params = asdict(source.p)
@@ -27,17 +28,20 @@ def load_extended_compact_candidate(eta_max=.97, eta_flat=.7,
     radial = JoinedField(inner=inner, join_X=fit['join_X'],
                          outer_ratio=fit['outer_ratio'],
                          swirl_bubble_amplitude=swirl_bubble_amplitude,
-                         outer_swirl_bubble_amplitude=outer_swirl_bubble_amplitude)
+                         outer_swirl_bubble_amplitude=outer_swirl_bubble_amplitude,
+                         slope_swirl_bubble_amplitude=slope_swirl_bubble_amplitude)
     pressure = PressureBubbleField(radial, fit['pressure_amplitudes'])
     return AxiallyCompactField(pressure, eta_flat=eta_flat,
                                eta_outer=eta_outer)
 
 
 def load_extended_heated_candidate(swirl_bubble_amplitude=0.,
-                                   outer_swirl_bubble_amplitude=0.):
+                                   outer_swirl_bubble_amplitude=0.,
+                                   slope_swirl_bubble_amplitude=0.):
     return HeatedInteriorJoin(compact=load_extended_compact_candidate(
         swirl_bubble_amplitude=swirl_bubble_amplitude,
-        outer_swirl_bubble_amplitude=outer_swirl_bubble_amplitude),
+        outer_swirl_bubble_amplitude=outer_swirl_bubble_amplitude,
+        slope_swirl_bubble_amplitude=slope_swirl_bubble_amplitude),
                               heat_age=2048.)
 
 
