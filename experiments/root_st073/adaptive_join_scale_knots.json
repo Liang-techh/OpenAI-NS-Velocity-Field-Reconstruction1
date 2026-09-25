@@ -1,0 +1,152 @@
+{
+  "source": "AdaptiveOrderCore -> JoinedField ratio16 + C2 two-knot 24-mode bridge",
+  "knot_scales": [
+    11.0,
+    19.0
+  ],
+  "left_amplitudes": [
+    0.30114373395534255,
+    -1.0299557862466893,
+    -0.11903225857589239,
+    -8.535397229773942,
+    -0.3008243332328503,
+    9.999999999999998,
+    9.999999999999998,
+    -0.24745920228595472,
+    -9.999999999999998,
+    0.2178221672660007,
+    4.055119884702499,
+    -0.6019527226715264,
+    -0.953239306048575,
+    -0.00713298088213474,
+    0.6404302993766744,
+    1.5354899669221893,
+    0.013050061848848118,
+    -3.4817600880347017,
+    -0.18357869127986304,
+    -0.01764459542565768,
+    1.202991270619764,
+    -2.0645444054050652,
+    0.014594477869586986,
+    -1.2559800512816515
+  ],
+  "right_amplitudes": [
+    0.32360300591435104,
+    -1.5889494435604625,
+    -0.10142920294784437,
+    -9.760199203015116,
+    -0.3651455722389347,
+    9.999999999999998,
+    9.999999999978089,
+    -0.24932396724978953,
+    -9.999999999999998,
+    0.2134015016369353,
+    5.661375547496409,
+    -0.612369791334947,
+    -0.9377265737411096,
+    -0.0075297174148326205,
+    0.6267426915913558,
+    1.4698322589667219,
+    0.013787776844065043,
+    -3.395822990234585,
+    -0.2486467903068576,
+    -0.019240894453188488,
+    1.1639523349102132,
+    -1.944431347674842,
+    0.016487247798542402,
+    -1.107008697083459
+  ],
+  "coefficient_max_difference": 1.6062556627939095,
+  "coefficient_relative_l2_difference": 0.10368459766025237,
+  "training": [
+    {
+      "k": 11.0,
+      "baseline_max": 728820.2186879861,
+      "shared_max": 390888.0788193812,
+      "knot_max": 392348.6358579894,
+      "knot_divergence_max": 2.1435164114791405e-06,
+      "fit_nfev": 35,
+      "fit_success": true
+    },
+    {
+      "k": 19.0,
+      "baseline_max": 2906105180.8286247,
+      "shared_max": 1580636176.613419,
+      "knot_max": 1574881980.8413134,
+      "knot_divergence_max": 0.000584563490065193,
+      "fit_nfev": 31,
+      "fit_success": true
+    }
+  ],
+  "holdouts": [
+    {
+      "k": 10.5,
+      "baseline_max": 377673.9005489592,
+      "shared_max": 285031.60202735796,
+      "dynamic_max": 283228.2478240888,
+      "frozen_same_coefficients_max": 283228.2478240888,
+      "time_switch_residual_difference_max": 0.0,
+      "divergence_max": 3.125734053810447e-07
+    },
+    {
+      "k": 11.5,
+      "baseline_max": 1064839.4513070788,
+      "shared_max": 805437.839625674,
+      "dynamic_max": 800378.5181447344,
+      "frozen_same_coefficients_max": 800447.5583006757,
+      "time_switch_residual_difference_max": 73.53878076508259,
+      "divergence_max": 4.7210555820242917e-07
+    },
+    {
+      "k": 14.0,
+      "baseline_max": 14215926.251281403,
+      "shared_max": 10812916.670575164,
+      "dynamic_max": 10769498.894254185,
+      "frozen_same_coefficients_max": 10784414.601232829,
+      "time_switch_residual_difference_max": 15963.411461734182,
+      "divergence_max": 2.0400136477860542e-05
+    },
+    {
+      "k": 15.0,
+      "baseline_max": 40086735.31587314,
+      "shared_max": 30558492.779973272,
+      "dynamic_max": 30524865.019101568,
+      "frozen_same_coefficients_max": 30572814.060153596,
+      "time_switch_residual_difference_max": 51544.16503292996,
+      "divergence_max": 2.2120263395208895e-05
+    },
+    {
+      "k": 17.0,
+      "baseline_max": 318787562.9978946,
+      "shared_max": 244090758.29991502,
+      "dynamic_max": 245491378.78747922,
+      "frozen_same_coefficients_max": 245706746.6847154,
+      "time_switch_residual_difference_max": 233504.8018439934,
+      "divergence_max": 4.6513717393281695e-05
+    },
+    {
+      "k": 18.5,
+      "baseline_max": 1509802359.7301779,
+      "shared_max": 1159848318.9612896,
+      "dynamic_max": 1169350120.9685528,
+      "frozen_same_coefficients_max": 1169450445.3147974,
+      "time_switch_residual_difference_max": 109016.47219919223,
+      "divergence_max": 0.00016286045229207957
+    },
+    {
+      "k": 19.5,
+      "baseline_max": 4258138043.2369623,
+      "shared_max": 3278316488.388388,
+      "dynamic_max": 3305379967.3070846,
+      "frozen_same_coefficients_max": 3305379967.3070846,
+      "time_switch_residual_difference_max": 0.0,
+      "divergence_max": 0.00038789742666267557
+    }
+  ],
+  "scope": "Independent coefficients fitted at k=11 and 19, C2 quintic interpolation in k, full Cartesian momentum sampled on knot and off-knot grids. No radial moment, stress-cone, volume-L2 or whole-field acceptance.",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "knot_growth_exponent_per_k": 1.4963524893469302,
+  "max_time_switch_to_dynamic_ratio": 0.0016885960020027978
+}

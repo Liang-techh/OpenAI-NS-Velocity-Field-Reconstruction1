@@ -45,3 +45,6 @@ The paper's [Appendix A and Sections 7–9](https://cdn.openai.com/pdf/32d9f210-
 motivate solving those coupled conditions, rather than extrapolating
 this fixed profile. The field also lacks axial localization and has
 no full-domain momentum max or volume-L2 acceptance.
+
+Allowing these coefficients to vary between independently fitted
+scale knots is tested in `ST073_SCALE_KNOT_TRANSFER.md`.
