@@ -49,3 +49,14 @@ space/time holdouts; `axial_angular_balance.json` shows why pressure alone
 cannot cancel the large angular viscous curvature from the axial cutoff.
 Next work must solve the velocity matching through the radial ramp and axial
 collar, including a coupled poloidal and possibly nonaxisymmetric correction.
+
+`heated_ramp_width_screen.py` samples three fractions of the outer radial
+ramp at `k=5.5`, `eta=.345`. The maximum of these three sampled angular
+residual magnitudes is about `141`, `86`, `54`, and `34` for outer ratios
+`1.5`, `2`, `4`, and `8`, respectively. Meridional transport at these points
+is numerically zero: the old poloidal streamfunction has compact radial
+support ending at `r1`. Widening the static ramp improves selected points
+slowly and does not approach the `1e-3` gate. The next correction should
+evolve the azimuthal field by its parabolic equation on the collar, with
+matching conditions at the inner and outer radial edges, rather than
+re-fitting pressure or only widening the ramp.
