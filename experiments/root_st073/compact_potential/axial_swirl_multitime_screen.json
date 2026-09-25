@@ -1,0 +1,87 @@
+{
+  "mode_ids": [
+    {
+      "radial_degree": 0,
+      "axial_degree": 0
+    },
+    {
+      "radial_degree": 0,
+      "axial_degree": 1
+    },
+    {
+      "radial_degree": 0,
+      "axial_degree": 2
+    },
+    {
+      "radial_degree": 1,
+      "axial_degree": 0
+    },
+    {
+      "radial_degree": 1,
+      "axial_degree": 1
+    },
+    {
+      "radial_degree": 1,
+      "axial_degree": 2
+    }
+  ],
+  "reference_tau": 0.0084,
+  "temporal_power": 0.5,
+  "amplitudes": [
+    -19.138309576365216,
+    0.9098212562644932,
+    17.210453467638978,
+    -1.5099783746617332,
+    -5.4995504753830975,
+    -4.6364906272722735
+  ],
+  "rows": [
+    {
+      "tau": 0.0084,
+      "baseline_sample_max": 484843.63902718003,
+      "corrected_sample_max": 482325.07590492425,
+      "baseline_angular_max": 51460.631627733936,
+      "corrected_angular_max": 229.7988270957744,
+      "baseline_radial_max": 482101.6843040055,
+      "corrected_radial_max": 482321.83580028266
+    },
+    {
+      "tau": 0.01,
+      "baseline_sample_max": 326577.8749702235,
+      "corrected_sample_max": 324330.7216213296,
+      "baseline_angular_max": 39663.36886290158,
+      "corrected_angular_max": 143.0285283148171,
+      "baseline_radial_max": 324139.9110654727,
+      "corrected_radial_max": 324310.30402370304
+    },
+    {
+      "tau": 0.012,
+      "baseline_sample_max": 217407.5221705749,
+      "corrected_sample_max": 215428.51216428846,
+      "baseline_angular_max": 30210.36574452839,
+      "corrected_angular_max": 79.47036245360539,
+      "baseline_radial_max": 215241.35658699388,
+      "corrected_radial_max": 215371.58629149926
+    },
+    {
+      "tau": 0.016,
+      "baseline_sample_max": 116194.93581212392,
+      "corrected_sample_max": 114604.36811615039,
+      "baseline_angular_max": 19661.129426767995,
+      "corrected_angular_max": 58.28288066405071,
+      "baseline_radial_max": 114358.65710024629,
+      "corrected_radial_max": 114443.69618752605
+    },
+    {
+      "tau": 0.024,
+      "baseline_sample_max": 50062.658421806475,
+      "corrected_sample_max": 48944.969007142536,
+      "baseline_angular_max": 10731.508864862693,
+      "corrected_angular_max": 60.748055530786274,
+      "baseline_radial_max": 48477.39692615687,
+      "corrected_radial_max": 48523.84127750645
+    }
+  ],
+  "scope": "Eight moving axial-collar points at each of five registered times. Least-squares fit of azimuthal momentum with full-operator check at the same points; no spatial holdout or global acceptance.",
+  "accepted": false
+}

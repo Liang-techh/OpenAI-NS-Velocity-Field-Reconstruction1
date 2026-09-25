@@ -1,0 +1,63 @@
+{
+  "mode_ids": [
+    {
+      "radial_degree": 0,
+      "axial_degree": 0
+    }
+  ],
+  "reference_tau": 0.0084,
+  "temporal_power": 0.5,
+  "low_order": true,
+  "amplitudes": [
+    -1.138640289569715
+  ],
+  "rows": [
+    {
+      "tau": 0.0084,
+      "baseline_sample_max": 484843.63902718003,
+      "corrected_sample_max": 484564.06161423656,
+      "baseline_angular_max": 51460.631627733936,
+      "corrected_angular_max": 51251.09291481684,
+      "baseline_radial_max": 482101.6843040055,
+      "corrected_radial_max": 482165.1827348083
+    },
+    {
+      "tau": 0.01,
+      "baseline_sample_max": 326577.8749702235,
+      "corrected_sample_max": 326324.30372417223,
+      "baseline_angular_max": 39663.36886290158,
+      "corrected_angular_max": 39444.44854961799,
+      "baseline_radial_max": 324139.9110654727,
+      "corrected_radial_max": 324188.8346381529
+    },
+    {
+      "tau": 0.012,
+      "baseline_sample_max": 217407.5221705749,
+      "corrected_sample_max": 217181.16299367594,
+      "baseline_angular_max": 30210.36574452839,
+      "corrected_angular_max": 30000.17234299277,
+      "baseline_radial_max": 215241.35658699388,
+      "corrected_radial_max": 215278.59944017918
+    },
+    {
+      "tau": 0.016,
+      "baseline_sample_max": 116194.93581212392,
+      "corrected_sample_max": 116010.15007408026,
+      "baseline_angular_max": 19661.129426767995,
+      "corrected_angular_max": 19484.30562537853,
+      "baseline_radial_max": 114358.65710024629,
+      "corrected_radial_max": 114382.86598488563
+    },
+    {
+      "tau": 0.024,
+      "baseline_sample_max": 50062.658421806475,
+      "corrected_sample_max": 49931.07414990028,
+      "baseline_angular_max": 10731.508864862693,
+      "corrected_angular_max": 10610.20257588443,
+      "baseline_radial_max": 48477.39692615687,
+      "corrected_radial_max": 48490.58106073659
+    }
+  ],
+  "scope": "Eight moving axial-collar points at each of five registered times. Least-squares fit of azimuthal momentum with full-operator check at the same points; no spatial holdout or global acceptance.",
+  "accepted": false
+}

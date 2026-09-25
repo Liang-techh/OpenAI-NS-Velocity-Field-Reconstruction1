@@ -1,0 +1,33 @@
+{
+  "rows": [
+    {
+      "tau": 0.0084,
+      "point_count": 12,
+      "baseline_angular_max": 37395.94087634866,
+      "corrected_angular_max": 614740.4422375862,
+      "baseline_full_max": 399154.78951641574,
+      "corrected_full_max": 731620.6714161121,
+      "correction_speed_max": 5.150986523385582
+    },
+    {
+      "tau": 0.012,
+      "point_count": 12,
+      "baseline_angular_max": 21568.05239472687,
+      "corrected_angular_max": 360914.571015615,
+      "baseline_full_max": 263326.9776524357,
+      "corrected_full_max": 445922.5736124398,
+      "correction_speed_max": 4.309624521332446
+    },
+    {
+      "tau": 0.024,
+      "point_count": 12,
+      "baseline_angular_max": 7469.506686558422,
+      "corrected_angular_max": 128262.52573096214,
+      "baseline_full_max": 103760.4590924326,
+      "corrected_full_max": 164661.77084586344,
+      "correction_speed_max": 3.0473647234020023
+    }
+  ],
+  "scope": "Twelve relative axial-collar points per time, disjoint from the fitting coordinates, at three registered times. This is a local holdout, not a full-volume error certificate.",
+  "accepted": false
+}
