@@ -47,8 +47,25 @@ def null_bump(X, start, end):
     return b*factor, db*factor+b*2/(end-start)
 
 
+@lru_cache(maxsize=None)
+def even_projection(start, end):
+    """Make the even streamfunction mode independent of the base bump."""
+    g, w = leggauss(64)
+    X = (start+end)/2+(end-start)/2*g
+    b, _ = bump(X, start, end)
+    return float(np.dot(w, b*b*g*g)/np.dot(w, b*b))
+
+
+def even_bump(X, start, end):
+    b, db = bump(X, start, end)
+    s = 2*(X-start)/(end-start)-1
+    factor = s*s-even_projection(start, end)
+    return b*factor, db*factor+b*4*s/(end-start)
+
+
 def slice_data(field, eta, tau, order, patch_start, patch_end,
-               null_amplitude=0., meridional_null_amplitude=0.):
+               null_amplitude=0., meridional_null_amplitude=0.,
+               meridional_even_amplitude=0.):
     g, w = leggauss(order)
     xs, ws = [], []
     boundaries = sorted(set((0., XI, XB, patch_start, patch_end)))
@@ -75,8 +92,10 @@ def slice_data(field, eta, tau, order, patch_start, patch_end,
     swirl_response = float(weights@(np.sqrt(2*X)*b))
     aE = -angular_moment/swirl_response
     null, null_x = null_bump(X, patch_start, patch_end)
+    _, even_x = even_bump(X, patch_start, patch_end)
     adjusted_E = E+aE*b+null_amplitude*null
-    adjusted_U = U+meridional_null_amplitude*null_x
+    adjusted_U = (U+meridional_null_amplitude*null_x
+                  +meridional_even_amplitude*even_x)
     kinetic_baseline = float(weights@(U**2-E**2/2)
                              -tail_swirl_square)
     swirl_linear_response = float(-(weights@(E*b)))
@@ -100,6 +119,7 @@ def slice_data(field, eta, tau, order, patch_start, patch_end,
             'swirl_amplitude': aE,
             'null_amplitude': null_amplitude,
             'meridional_null_amplitude': meridional_null_amplitude,
+            'meridional_even_amplitude': meridional_even_amplitude,
             'corrected_angular_moment': angular_moment+aE*swirl_response,
             'kinetic_moment_baseline': kinetic_baseline,
             'kinetic_swirl_linear_response': swirl_linear_response,

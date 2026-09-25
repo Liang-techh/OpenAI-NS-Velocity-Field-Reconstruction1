@@ -1,0 +1,88 @@
+{
+  "patch_X": [
+    4.0,
+    16.0
+  ],
+  "rows": [
+    {
+      "variant": "two_moment",
+      "eta": 0.0,
+      "tau": 0.0084,
+      "patch_end_moment_difference": {
+        "M": 1.7763568394002505e-15,
+        "I": 0.7408536169975379,
+        "J": -0.03394827163646599,
+        "S": 3.581650048296002,
+        "Cp": 0.0016707780344930182
+      },
+      "physical_outer_pressure_increment_required": 0.0020863956957195167
+    },
+    {
+      "variant": "two_shape",
+      "eta": 0.0,
+      "tau": 0.0084,
+      "patch_end_moment_difference": {
+        "M": 1.5265566588595902e-15,
+        "I": 0.7408537144381055,
+        "J": -0.23707910479445388,
+        "S": 3.5818907836683493,
+        "Cp": 0.0016707782847303248
+      },
+      "physical_outer_pressure_increment_required": 0.0020863960082050945
+    },
+    {
+      "variant": "two_moment",
+      "eta": 0.2,
+      "tau": 0.0084,
+      "patch_end_moment_difference": {
+        "M": -5.273559366969494e-16,
+        "I": 0.7114525768770932,
+        "J": -0.031975311165234555,
+        "S": 3.463421445097023,
+        "Cp": 0.001595681728726637
+      },
+      "physical_outer_pressure_increment_required": 0.0019121331846763392
+    },
+    {
+      "variant": "two_shape",
+      "eta": 0.2,
+      "tau": 0.0084,
+      "patch_end_moment_difference": {
+        "M": 2.220446049250313e-16,
+        "I": 0.711452469538151,
+        "J": -0.22614236607622062,
+        "S": 3.4633966855827705,
+        "Cp": 0.0015956814557284817
+      },
+      "physical_outer_pressure_increment_required": 0.001912132857537899
+    },
+    {
+      "variant": "two_moment",
+      "eta": 0.35,
+      "tau": 0.0084,
+      "patch_end_moment_difference": {
+        "M": 5.551115123125783e-17,
+        "I": 0.6507840545749559,
+        "J": -0.028145599796983015,
+        "S": 3.2468637898090664,
+        "Cp": 0.0014430196098851418
+      },
+      "physical_outer_pressure_increment_required": 0.0015791731469807046
+    },
+    {
+      "variant": "two_shape",
+      "eta": 0.35,
+      "tau": 0.0084,
+      "patch_end_moment_difference": {
+        "M": 1.2212453270876722e-15,
+        "I": 0.6507842335956013,
+        "J": -0.20368902883804646,
+        "S": 3.2460851418500285,
+        "Cp": 0.0014430200560422574
+      },
+      "physical_outer_pressure_increment_required": 0.0015791736352341777
+    }
+  ],
+  "scope": "Appendix-A/Section-4 five cumulative moment differences across the remote patch, relative to the unmodified joined field. This does not impose the correct exterior target or certify a normalized cone. Nonzero Cp difference means the current unchanged physical pressure cannot obey the radial centrifugal pressure relation after the patch.",
+  "accepted": false
+}
