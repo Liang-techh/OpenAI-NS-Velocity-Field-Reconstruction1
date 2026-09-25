@@ -65,6 +65,12 @@ pulse half-width. See `ST073_LOCAL_PULSE_INVERSE.md`. Before repeating
 the inverse across scales, open an admissible stress-cone support and
 establish carrier/cutoff/viscosity balance, then use a moving phase and
 complete wave–mean–moment residual cycle.
+The same moment-closed bridge's sampled cone band at `k=11,19` cannot
+contain the diffusion-balanced width around the existing source patch:
+even an optimistic failure-bracket half-width is short by factors `5.91`
+and `6.57`. See `ST073_CONE_SUPPORT_SCALE_GAP.md`. Search a different
+radial–axial cone region or redesign the moment-matched mean profile
+instead of simply widening this wave's cutoff.
 Use those directions as a conditioning prototype, not as the paper's five
 leading-profile moments or a recursive correction.
 The next Stage-1 inputs are therefore the actual coefficient-family

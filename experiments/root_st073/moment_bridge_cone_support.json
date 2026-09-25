@@ -1,0 +1,317 @@
+{
+  "source": "Three-knot moment-closed radial cone support at two scales",
+  "y_nodes": [
+    0.035,
+    0.037500000000000006,
+    0.04000000000000001,
+    0.04250000000000001,
+    0.04500000000000001,
+    0.047500000000000014,
+    0.05000000000000002,
+    0.05250000000000002,
+    0.05500000000000002,
+    0.05750000000000002,
+    0.060000000000000026,
+    0.06250000000000003,
+    0.06500000000000003
+  ],
+  "center_y": 0.05,
+  "eta": -0.2,
+  "slices": [
+    {
+      "k": 11.0,
+      "tau": 0.000244140625,
+      "rows": [
+        {
+          "y": 0.035,
+          "radius": 0.0004299116994698141,
+          "momentum_norm": 183685.09767504132,
+          "lambda_squared": 5790060.480498787,
+          "cone_pass": false,
+          "target_dot_N": -3.357743146570384,
+          "target_dot_K": 2.251281390081683,
+          "cone_ratio": 1.1566471590253025
+        },
+        {
+          "y": 0.037500000000000006,
+          "radius": 0.0004404832986371046,
+          "momentum_norm": 213116.48463959285,
+          "lambda_squared": 6261763.096877125,
+          "cone_pass": true,
+          "target_dot_N": -5.1797198012401395,
+          "target_dot_K": 2.1197219355300705,
+          "cone_ratio": 0.6567109313336537
+        },
+        {
+          "y": 0.04000000000000001,
+          "radius": 0.0004510548978043952,
+          "momentum_norm": 243035.8449512748,
+          "lambda_squared": 6747941.526836276,
+          "cone_pass": true,
+          "target_dot_N": -7.268805029582883,
+          "target_dot_K": 1.884292096897877,
+          "cone_ratio": 0.3803212871324834
+        },
+        {
+          "y": 0.04250000000000001,
+          "radius": 0.00046162649697168573,
+          "momentum_norm": 273193.35472845804,
+          "lambda_squared": 7183617.908651359,
+          "cone_pass": true,
+          "target_dot_N": -9.619474803722325,
+          "target_dot_K": 1.5261174911098392,
+          "cone_ratio": 0.2091600672663948
+        },
+        {
+          "y": 0.04500000000000001,
+          "radius": 0.00047219809613897624,
+          "momentum_norm": 303383.00983268674,
+          "lambda_squared": 7474368.820286074,
+          "cone_pass": true,
+          "target_dot_N": -12.223249246912447,
+          "target_dot_K": 1.0230324824868289,
+          "cone_ratio": 0.09730285452316861
+        },
+        {
+          "y": 0.047500000000000014,
+          "radius": 0.0004827696953062668,
+          "momentum_norm": 333431.79973030835,
+          "lambda_squared": 7488187.323808976,
+          "cone_pass": true,
+          "target_dot_N": -15.068443557082782,
+          "target_dot_K": 0.3489254119647656,
+          "cone_ratio": 0.02318914818412004
+        },
+        {
+          "y": 0.05000000000000002,
+          "radius": 0.0004933412944735573,
+          "momentum_norm": 363192.6779445044,
+          "lambda_squared": 7044706.441618689,
+          "cone_pass": true,
+          "target_dot_N": -18.139703025801705,
+          "target_dot_K": -0.5270293826769603,
+          "cone_ratio": 0.024228361470727485
+        },
+        {
+          "y": 0.05250000000000002,
+          "radius": 0.0005039128936408479,
+          "momentum_norm": 392539.6990336504,
+          "lambda_squared": 5900997.30995486,
+          "cone_pass": true,
+          "target_dot_N": -21.417258722949885,
+          "target_dot_K": -1.641266406563815,
+          "cone_ratio": 0.050168686747926
+        },
+        {
+          "y": 0.05500000000000002,
+          "radius": 0.0005144844928081383,
+          "momentum_norm": 421364.46712379105,
+          "lambda_squared": 3733002.768764075,
+          "cone_pass": true,
+          "target_dot_N": -24.87581293114897,
+          "target_dot_K": -3.036853343915556,
+          "cone_ratio": 0.05453162724896583
+        },
+        {
+          "y": 0.05750000000000002,
+          "radius": 0.0005250560919754289,
+          "momentum_norm": 449573.4363032727,
+          "lambda_squared": 111581.4726110804,
+          "cone_pass": true,
+          "target_dot_N": -28.482929142296083,
+          "target_dot_K": -4.764625026014525,
+          "cone_ratio": 0.011090933525467039
+        },
+        {
+          "y": 0.060000000000000026,
+          "radius": 0.0005356276911427193,
+          "momentum_norm": 477085.79088976164,
+          "lambda_squared": -5527740.148844677,
+          "cone_pass": false
+        },
+        {
+          "y": 0.06250000000000003,
+          "radius": 0.0005461992903100099,
+          "momentum_norm": 503831.73530946195,
+          "lambda_squared": -13921590.504480686,
+          "cone_pass": false
+        },
+        {
+          "y": 0.06500000000000003,
+          "radius": 0.0005567708894773004,
+          "momentum_norm": 529751.092372454,
+          "lambda_squared": -26020756.09726804,
+          "cone_pass": false
+        }
+      ],
+      "passing_y": [
+        0.037500000000000006,
+        0.04000000000000001,
+        0.04250000000000001,
+        0.04500000000000001,
+        0.047500000000000014,
+        0.05000000000000002,
+        0.05250000000000002,
+        0.05500000000000002,
+        0.05750000000000002
+      ],
+      "sampled_symmetric_cone_halfwidth": 3.171479750187158e-05,
+      "best_center_sampled_band_halfwidth": 4.228639666916214e-05,
+      "failure_bracket_band_halfwidth": 5.285799583645262e-05,
+      "nearest_sampled_failure_halfwidth": 4.228639666916203e-05,
+      "current_wave_radial_halfwidth": 1.9874606434506165e-05,
+      "diffusion_equal_halfwidth": 0.0003125,
+      "pulse_to_diffusion_at_sampled_halfwidth": 97.09037037037011,
+      "required_width_to_sampled_width": 9.8534445941696,
+      "required_width_to_failure_bound": 7.390083445627212,
+      "required_width_to_failure_band_bound": 5.912066756501761
+    },
+    {
+      "k": 19.0,
+      "tau": 9.5367431640625e-07,
+      "rows": [
+        {
+          "y": 0.035,
+          "radius": 2.686948121686338e-05,
+          "momentum_norm": 724394111.9520019,
+          "lambda_squared": 413304397157.85785,
+          "cone_pass": false,
+          "target_dot_N": -618.7952072520723,
+          "target_dot_K": 616.1820905102735,
+          "cone_ratio": 1.5911124307943438
+        },
+        {
+          "y": 0.037500000000000006,
+          "radius": 2.7530206164819038e-05,
+          "momentum_norm": 845082729.8901098,
+          "lambda_squared": 442689460941.13184,
+          "cone_pass": true,
+          "target_dot_N": -1065.7886466967525,
+          "target_dot_K": 584.3138854835394,
+          "cone_ratio": 0.816739582979642
+        },
+        {
+          "y": 0.04000000000000001,
+          "radius": 2.81909311127747e-05,
+          "momentum_norm": 968186995.039769,
+          "lambda_squared": 471635359955.6088,
+          "cone_pass": true,
+          "target_dot_N": -1581.8739550698185,
+          "target_dot_K": 525.5495735783894,
+          "cone_ratio": 0.45316693862710383
+        },
+        {
+          "y": 0.04250000000000001,
+          "radius": 2.8851656060730358e-05,
+          "momentum_norm": 1092575661.0854595,
+          "lambda_squared": 495343511481.41034,
+          "cone_pass": true,
+          "target_dot_N": -2165.6676298241177,
+          "target_dot_K": 435.0364338952523,
+          "cone_ratio": 0.2462615417215051
+        },
+        {
+          "y": 0.04500000000000001,
+          "radius": 2.9512381008686015e-05,
+          "momentum_norm": 1217331351.8129618,
+          "lambda_squared": 506885124206.71063,
+          "cone_pass": true,
+          "target_dot_N": -2815.0014379684003,
+          "target_dot_K": 307.07518045017014,
+          "cone_ratio": 0.1176994237262681
+        },
+        {
+          "y": 0.047500000000000014,
+          "radius": 3.0173105956641675e-05,
+          "momentum_norm": 1341692471.5212576,
+          "lambda_squared": 496615074171.82654,
+          "cone_pass": true,
+          "target_dot_N": -3526.857075269566,
+          "target_dot_K": 134.9520671796943,
+          "cone_ratio": 0.035371648840391935
+        },
+        {
+          "y": 0.05000000000000002,
+          "radius": 3.083383090459733e-05,
+          "momentum_norm": 1465016914.5909648,
+          "lambda_squared": 451397266207.7811,
+          "cone_pass": true,
+          "target_dot_N": -4297.243812007184,
+          "target_dot_K": -89.25744049897921,
+          "cone_ratio": 0.015796514773015982
+        },
+        {
+          "y": 0.05250000000000002,
+          "radius": 3.149455585255299e-05,
+          "momentum_norm": 1586757814.6415026,
+          "lambda_squared": 353586601648.1703,
+          "cone_pass": true,
+          "target_dot_N": -5121.002535758511,
+          "target_dot_K": -374.91642627794016,
+          "cone_ratio": 0.04245878721178891
+        },
+        {
+          "y": 0.05500000000000002,
+          "radius": 3.2155280800508645e-05,
+          "momentum_norm": 1706446390.1130214,
+          "lambda_squared": 179703252370.99112,
+          "cone_pass": true,
+          "target_dot_N": -5991.512450826022,
+          "target_dot_K": -733.0856624729059,
+          "cone_ratio": 0.04356665151885935
+        },
+        {
+          "y": 0.05750000000000002,
+          "radius": 3.2816005748464305e-05,
+          "momentum_norm": 1823679213.5807512,
+          "lambda_squared": -101268438450.79765,
+          "cone_pass": false
+        },
+        {
+          "y": 0.060000000000000026,
+          "radius": 3.347673069641996e-05,
+          "momentum_norm": 1938108421.550393,
+          "lambda_squared": -530010407605.6813,
+          "cone_pass": false
+        },
+        {
+          "y": 0.06250000000000003,
+          "radius": 3.413745564437562e-05,
+          "momentum_norm": 2049433954.2543461,
+          "lambda_squared": -1159431651149.1775,
+          "cone_pass": false
+        },
+        {
+          "y": 0.06500000000000003,
+          "radius": 3.479818059233127e-05,
+          "momentum_norm": 2157397263.2761745,
+          "lambda_squared": -2057526106570.3123,
+          "cone_pass": false
+        }
+      ],
+      "passing_y": [
+        0.037500000000000006,
+        0.04000000000000001,
+        0.04250000000000001,
+        0.04500000000000001,
+        0.047500000000000014,
+        0.05000000000000002,
+        0.05250000000000002,
+        0.05500000000000002
+      ],
+      "sampled_symmetric_cone_halfwidth": 1.3214498959113134e-06,
+      "best_center_sampled_band_halfwidth": 2.3125373178448036e-06,
+      "failure_bracket_band_halfwidth": 2.973262265800462e-06,
+      "nearest_sampled_failure_halfwidth": 1.9821748438669735e-06,
+      "current_wave_radial_halfwidth": 1.2421629021566353e-06,
+      "diffusion_equal_halfwidth": 1.953125e-05,
+      "pulse_to_diffusion_at_sampled_halfwidth": 218.4533333333335,
+      "required_width_to_sampled_width": 14.780166891254424,
+      "required_width_to_failure_bound": 9.8534445941696,
+      "required_width_to_failure_band_bound": 6.568963062779729
+    }
+  ],
+  "scope": "13 radial nodes at one axial similarity coordinate on each of two scales; physical full-residual cone analogue with Gauss12 stress primitive. Passing samples do not certify an interval, nor the paper's normalized cone, global wave support, momentum gate, or scale recursion.",
+  "accepted": false,
+  "scale_recursion_established": false
+}
