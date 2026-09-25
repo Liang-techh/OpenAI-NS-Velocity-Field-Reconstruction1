@@ -1,0 +1,105 @@
+{
+  "source": "AdaptiveOrderCore -> JoinedField -> radial heat exterior",
+  "heat_amplitude": 0.08807351600357666,
+  "join_X": 0.015625,
+  "outer_X": 0.0625,
+  "rows": [
+    {
+      "k": 6.5,
+      "tau": 0.005524271728019903,
+      "X": [
+        0.0244140625,
+        0.0478515625,
+        0.0244140625,
+        0.0478515625
+      ],
+      "eta": [
+        0.0,
+        0.0,
+        0.25,
+        0.25
+      ],
+      "active_orders": [
+        8,
+        8
+      ],
+      "core_momentum_max": 2.45040730727186e-08,
+      "bridge_momentum_norms": [
+        58181.07389626567,
+        30343.394881187287,
+        99880.00921031756,
+        46544.680664999825
+      ],
+      "bridge_momentum_max": 99880.00921031756,
+      "bridge_divergence_max": 1.767148830822407e-06,
+      "spatial_step": 3.7162722343835037e-06,
+      "remaining_time_step": 5.524271728019903e-07
+    },
+    {
+      "k": 11.0,
+      "tau": 0.000244140625,
+      "X": [
+        0.0244140625,
+        0.0478515625,
+        0.0244140625,
+        0.0478515625
+      ],
+      "eta": [
+        0.0,
+        0.0,
+        0.25,
+        0.25
+      ],
+      "active_orders": [
+        8,
+        10
+      ],
+      "core_momentum_max": 1.0793871355820705e-06,
+      "bridge_momentum_norms": [
+        6299744.931423781,
+        3275445.2395912353,
+        10897389.698590636,
+        5054729.703391969
+      ],
+      "bridge_momentum_max": 10897389.698590636,
+      "bridge_divergence_max": 3.994079088442959e-05,
+      "spatial_step": 7.8125e-07,
+      "remaining_time_step": 2.44140625e-08
+    },
+    {
+      "k": 19.0,
+      "tau": 9.5367431640625e-07,
+      "X": [
+        0.0244140625,
+        0.0478515625,
+        0.0244140625,
+        0.0478515625
+      ],
+      "eta": [
+        0.0,
+        0.0,
+        0.25,
+        0.25
+      ],
+      "active_orders": [
+        10,
+        12
+      ],
+      "core_momentum_max": 7.173388663926309e-07,
+      "bridge_momentum_norms": [
+        26089618012.315617,
+        13490630673.877775,
+        45732675639.82705,
+        21043513091.18211
+      ],
+      "bridge_momentum_max": 45732675639.82705,
+      "bridge_divergence_max": 0.01019317377358675,
+      "spatial_step": 4.8828125e-08,
+      "remaining_time_step": 9.5367431640625e-11
+    }
+  ],
+  "scope": "Four bridge locations at three times, one finite-difference resolution. The heat exterior is axially unlocalized and the join has no momentum acceptance. No whole-space finite energy or critical-time force claim.",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false
+}

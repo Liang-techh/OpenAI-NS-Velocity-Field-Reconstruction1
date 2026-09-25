@@ -28,7 +28,7 @@ class JoinedField:
   pts=np.asarray(points,float);ts=np.broadcast_to(tau,(len(pts),));uv=[];pv=[];sn=np.sqrt(self.nu)
   for point,t in zip(pts,ts):
    r=np.hypot(*point[:2]);z=point[2];coord=coordinates(r/sn,z/sn,t,self.inner.h);e=float(coord['eta']);q=float(coord['q'])
-   if abs(e)>self.inner.p.eta_max or not .5/64<=t<=.5:raise ValueError('Only registered axial/time slab supported')
+   if abs(e)>self.inner.p.eta_max or not .5*2**(-self.inner.p.k_max)<=t<=.5:raise ValueError('Only registered axial/time slab supported')
    ri,ro,L,a=coefficients(self.inner,e,t,self.join_X,self.outer_ratio);w=ro-ri
    if r<=ri:
     d=self.inner.evaluate(point[None,:],t);uv.append(d['velocity'][0]);pv.append(d['pressure'][0]);continue

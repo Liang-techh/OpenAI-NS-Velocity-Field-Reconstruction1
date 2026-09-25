@@ -41,3 +41,7 @@ in radial order. It does not establish a uniform tail estimate as
 matching, finite total energy, or the nonaxisymmetric stress correction
 required by the full construction. The source ST073-V time registration
 ends at `k=6`; both switches are exploratory extrapolations.
+
+The direct attachment to the existing heat bridge is audited in
+`ST073_ADAPTIVE_CORE_JOIN.md`; its transition residual remains far above
+the momentum target despite the low-residual core.
