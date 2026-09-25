@@ -161,7 +161,12 @@ def solve_coefficients(mean, base, target_field, e_source, e_row):
                   min_relative_E=float(np.min(E_new/E0)),
                   exterior_streamfunction_increment=float(mass_basis@cb),
                   quadrature_mass_increment=float(weights@(cb@B)),
-                  max_abs_u_coefficient=float(np.max(np.abs(cb))))
+                  max_abs_u_coefficient=float(np.max(np.abs(cb))),
+                  null_options=[dict(index=idx,sign=sgn,
+                                     max_abs_corrected_U=peak,
+                                     coefficients=np.linalg.solve(
+                                         factor,candidate).tolist())
+                                for peak,candidate,idx,sgn in options])
     return field, report
 
 

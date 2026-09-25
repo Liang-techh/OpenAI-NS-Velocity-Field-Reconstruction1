@@ -1447,3 +1447,25 @@ the axial support on an independent Gauss-48 radial grid. Their
 minimum E stays positive (`.00958` at eta `.3`); the minimum sampled
 `E/E_target` is `.05046`. This supports sampled positive swirl for
 both U variants, but is not a continuum lower bound.
+
+## Momentum selection across the smooth U null directions
+
+`delayed_remote_null_momentum_screen.py` enumerates the 24 canonical
+quadratic roots in the smooth physical U basis that preserve the
+fixed-slice linear moment constraints and spend the available S slack.
+It evaluates complete Cartesian momentum at `X=1.015,1.03`,
+`eta=.3`, plus space/time holdouts. The originally selected root
+(`index=0`, negative sign) is also the best of these 24 by training
+maximum, yet it raises the two-node maximum from `2.28e5` to
+`4.90e6`; the next best root reaches `5.48e6`. Space and time
+holdout maxima increase from `6.25e5` to `1.10e6` and from
+`4.15e5` to `1.89e6`, respectively. The independent Gauss-48
+moment defects are at most `7.5e-8`, while the corrected field changes
+the old cone velocity by as much as `.877`.
+
+This rejects an inexpensive discrete null-root choice as a rescue for
+the current smooth U patch. The 24 roots are not the full continuous
+moment manifold, so this is not an impossibility result. The next
+construction should put full momentum and the cone stress into the
+mean-profile optimization alongside the Appendix A moments, rather
+than selecting a moment-closed U root after the mean is fixed.
