@@ -1,0 +1,75 @@
+{
+  "tau": 0.011048543456039806,
+  "X": [
+    1.0,
+    1.25,
+    1.0,
+    1.25
+  ],
+  "eta": [
+    0.2,
+    0.2,
+    0.3,
+    0.3
+  ],
+  "rows": [
+    {
+      "amplitude": 0.0,
+      "complete_residual_norms": [
+        2610.124438235789,
+        1843.3718024363038,
+        3946.7043328250147,
+        2367.321476541284
+      ],
+      "divergence_max": 9.278920742872288e-09,
+      "cone_X1": [
+        {
+          "eta": 0.2,
+          "a": 7.1584736310008426,
+          "vs": 13.620550326264953,
+          "Pc": 7.812849925473266,
+          "upper": 3.365613494489555,
+          "relaxed_pass": false
+        },
+        {
+          "eta": 0.3,
+          "a": 7.091714632085286,
+          "vs": 18.58525734288964,
+          "Pc": 5.03055503614491,
+          "upper": 4.087161758369131,
+          "relaxed_pass": false
+        }
+      ]
+    },
+    {
+      "amplitude": 0.76,
+      "complete_residual_norms": [
+        3205.9222288876085,
+        1683.500889332809,
+        4419.466359136726,
+        2292.6732529893748
+      ],
+      "divergence_max": 9.282217661166214e-09,
+      "cone_X1": [
+        {
+          "eta": 0.2,
+          "a": 2.0318789022025237,
+          "vs": 5.827483276436348,
+          "Pc": 4.176937630825133,
+          "upper": 2.8814117288899186,
+          "relaxed_pass": false
+        },
+        {
+          "eta": 0.3,
+          "a": 1.9758828046218646,
+          "vs": 8.741237310046504,
+          "Pc": 2.2803726419074075,
+          "upper": 2.1925848537539467,
+          "relaxed_pass": false
+        }
+      ]
+    }
+  ],
+  "scope": "Four momentum points and two cone points per variant; outer-biased swirl-only mode preserves radial C2 but does not solve bridge momentum or relaxed cone.",
+  "accepted": false
+}

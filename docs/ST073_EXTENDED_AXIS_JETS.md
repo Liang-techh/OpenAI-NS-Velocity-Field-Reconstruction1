@@ -53,3 +53,7 @@ Following the paper's actual mechanism, the next work should derive the
 radial moment/stress mismatch for this extended background and realize a
 dynamical, solenoidal correction in the bridge rather than regard the
 wider low-residual core as a complete solution.
+
+The first five-moment/relaxed-cone screen of this extended field and the
+failed bridge swirl-only shapes are documented in
+[`ST073_EXTENDED_CONE_PATCH.md`](ST073_EXTENDED_CONE_PATCH.md).
