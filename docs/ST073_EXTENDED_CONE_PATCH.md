@@ -57,3 +57,7 @@ residual actually needs cancellation can the paper's shear loop and
 nonaxisymmetric amplitude dynamics be tested. Reproducible reports are
 `extended_relaxed_cone_screen.json`, `swirl_bridge_cone_screen.json`,
 and `outer_swirl_bubble_screen.json` under `experiments/root_st073`.
+
+The subsequent solenoidal poloidal trial opens the cone at two isolated
+bridge points but makes complete momentum much worse; see
+[`ST073_COUPLED_BRIDGE_FAILURE.md`](ST073_COUPLED_BRIDGE_FAILURE.md).
