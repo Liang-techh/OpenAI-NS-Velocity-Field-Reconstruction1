@@ -1,0 +1,83 @@
+{
+  "source": "delayed_outer_admission_search.json",
+  "pressure_coefficients": [
+    -482.4378434890078,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "lp_coefficients": [
+    -482.4378434890078,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "lp_feasible": true,
+  "optimizer_success": true,
+  "optimizer_message": "Optimization terminated successfully",
+  "min_cone_inequality_slack": 3.552713678800501e-15,
+  "cone_inequality_slacks": [
+    0.1951773330437634,
+    7.8748361030184295,
+    28.685364115725424,
+    173.55087210708112,
+    100.4592868938684,
+    852.4341569162552,
+    3.552713678800501e-15,
+    1863.7832840569654,
+    4.479253454550179,
+    22.00269177425905,
+    236.4887414340615,
+    712.9588950664867,
+    1267.4970852463691,
+    3937.764537633969,
+    897.0139816765356,
+    11982.825266366868,
+    0.1642247916242665,
+    11.348587581261462,
+    68.82402425511613,
+    312.48167056735565,
+    351.3168755047404,
+    1906.116954836167,
+    156.14674651919876,
+    6051.416209909684
+  ],
+  "minmax_lp_success": true,
+  "minmax_component_residual": 370662330.64324623,
+  "minmax_pressure_coefficients": [
+    -527.9516996525447,
+    -304.6827202614324,
+    1101.6481441082638,
+    13746.371672826937,
+    -2791249.3592988076,
+    -7346547.007164254
+  ],
+  "minmax_actual_component_residual": 370662330.6432464,
+  "minmax_cone_slack": 3.552713678800501e-15,
+  "training": {
+    "before": {
+      "max": 230237.3352269471,
+      "rms": 147837.5525695709
+    },
+    "after": {
+      "max": 552033042.5727344,
+      "rms": 220852229.50711063
+    }
+  },
+  "nearby": {
+    "before": {
+      "max": 556318.442651761,
+      "rms": 252377.723846306
+    },
+    "after": {
+      "max": 206347899.6301289,
+      "rms": 130888546.31561701
+    }
+  },
+  "scope": "Six compact pressure modes satisfying twelve sampled strict .8/.1 cone inequalities, with full Cartesian momentum cost at cone centers and nearby-time points. No continuous cone, moment closure, wave, volume L2, or PDE gate.",
+  "accepted": false
+}

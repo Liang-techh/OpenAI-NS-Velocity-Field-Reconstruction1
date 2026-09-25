@@ -1069,3 +1069,51 @@ momentum improvement, and verify a continuous strict cone rather than
 only the twelve fit nodes. The two disjoint momentum reports and three
 moment/tradeoff reports are reproducible JSON artifacts in
 `experiments/root_st073/`.
+
+## Outer radial control and the pressure-cost obstruction
+
+`delayed_outer_radial_extension.py` adds a compact swirl mode and an
+exact-curl poloidal mode on `X in (1.01,1.05)`, with the broad axial
+support `eta in (.14,.36)`. Its ten-mode response includes every
+quadratic cross-advection term with the original eight modes; the
+physical stress integrals split at the new radial edges. The response
+and nearby-time momentum are cached separately. Fitting only the two
+new amplitudes against either prior incumbent drives them almost to
+zero and barely changes the cone. The original coefficients must be
+readjusted jointly with the new pair.
+
+`delayed_outer_admission_search.py` does that ten-dimensional search,
+prioritizing the pointwise necessary condition that *arbitrary axial
+stress* can enter the `.8` cone with `.1` stress margin at `X=1.02`.
+The selected mean passes this necessary condition at all twelve sampled
+`(X,eta)` nodes, compared with nine for the previous cone/moment
+candidate. Its nearby-time maximum residual is `556318`, below the
+uncorrected base `759460`, and its training maximum is `230237`, below
+the base `868264`. But no sampled node is already in the cone, the
+largest raw outgoing moment defect is `.02351`, and the search has no
+independent space-time or interval-wide acceptance. It is a geometry
+probe, not a promoted mean field.
+
+`delayed_outer_pressure_fit.py` shows that the six previously defined
+compact pressure modes can indeed satisfy all 24 strict sampled cone
+inequalities for that mean. A feasible pressure coefficient is about
+`-482.44` on the first basis mode. The price is decisive: full
+Cartesian momentum maximum at the twelve training centers rises from
+`230237` to `552033043`, and at the nine nearby-time nodes from
+`556318` to `206347900`. A separate linear program minimizes the
+largest *component* residual over all six pressure coefficients subject
+to those same cone inequalities. Its optimum is `370662331` on the
+combined 21-node set; direct evaluation of the returned coefficients
+matches this value. Thus **pressure alone cannot retain even the
+sampled low-momentum property while entering this cone**. This lower
+bound applies to this six-mode pressure family and finite node set,
+not to a pressure-plus-wave construction.
+
+The next constructive route must couple moment-preserving mean
+velocity changes, pressure, and the nonaxisymmetric oscillatory
+momentum flux described in the OpenAI construction. Optimizing the
+mean-pressure pair as if it were the final Navier--Stokes field loses
+the very cancellation the wave is meant to supply. A candidate still
+needs a continuous strict cone, supported wave stress, verified
+cross-scale matching, and full maximum/volume-L2 momentum gates below
+`1e-3`.

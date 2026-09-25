@@ -1,0 +1,277 @@
+{
+  "response_cache": "delayed_outer_radial_extension_model.npz",
+  "nearby_response_cache": "delayed_outer_radial_extension_nearby.npz",
+  "incumbent_coefficients": [
+    0.011647115405590047,
+    -0.028576399882301817,
+    -0.002315369779426635,
+    0.0040183645129921565,
+    0.0001946571048910828,
+    0.02330061935901627,
+    -0.005240288898719376,
+    -0.0039563191279248676,
+    0.0014960629416256755,
+    2.7477120762009477e-07
+  ],
+  "incumbent_metrics": {
+    "cone_pass_count": 6,
+    "cone_max": 0.9793729462825965,
+    "cone_mean": 0.4063739303595728,
+    "outer_cone_max": 0.9793729462825965,
+    "min_margin": -47.480021126637105,
+    "moment_scaled_max": 0.6047136492451699,
+    "moment_raw_max": 0.006047136492451699,
+    "min_relative_E": 0.11073455707151472,
+    "train_max": 559196.1894997782,
+    "nearby_max": 628491.0068952303,
+    "nearby_rms": 366244.1793164952
+  },
+  "incumbent_outer_gaps": [
+    0.4604703511341865,
+    0.5113554891365858,
+    0.7238030713358099
+  ],
+  "coefficients": [
+    -0.001882712182046442,
+    0.10646965465846253,
+    0.0009745807512184235,
+    0.004080099369604784,
+    -0.0005942204473068369,
+    0.10453148661258442,
+    -0.00355415215519847,
+    -0.025135352215890396,
+    -0.029754110789852208,
+    -7.391923310909654e-05
+  ],
+  "selected_metrics": {
+    "cone_pass_count": 0,
+    "cone_max": 0.9657536926739155,
+    "cone_mean": 0.5875746602099216,
+    "outer_cone_max": 0.9657536926739155,
+    "min_margin": -28.20022852327579,
+    "moment_scaled_max": 4.709313102355228,
+    "moment_raw_max": 0.023509133629053686,
+    "min_relative_E": 0.11073455707151472,
+    "train_max": 230237.33522694712,
+    "nearby_max": 556318.442651761,
+    "nearby_rms": 252377.723846306
+  },
+  "selected_outer_gaps": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "pressure_admission": [
+    {
+      "X": 1.008,
+      "eta": 0.2,
+      "free_axial_080": true
+    },
+    {
+      "X": 1.012,
+      "eta": 0.2,
+      "free_axial_080": true
+    },
+    {
+      "X": 1.016,
+      "eta": 0.2,
+      "free_axial_080": true
+    },
+    {
+      "X": 1.02,
+      "eta": 0.2,
+      "free_axial_080": true
+    },
+    {
+      "X": 1.008,
+      "eta": 0.25,
+      "free_axial_080": true
+    },
+    {
+      "X": 1.012,
+      "eta": 0.25,
+      "free_axial_080": true
+    },
+    {
+      "X": 1.016,
+      "eta": 0.25,
+      "free_axial_080": true
+    },
+    {
+      "X": 1.02,
+      "eta": 0.25,
+      "free_axial_080": true
+    },
+    {
+      "X": 1.008,
+      "eta": 0.3,
+      "free_axial_080": true
+    },
+    {
+      "X": 1.012,
+      "eta": 0.3,
+      "free_axial_080": true
+    },
+    {
+      "X": 1.016,
+      "eta": 0.3,
+      "free_axial_080": true
+    },
+    {
+      "X": 1.02,
+      "eta": 0.3,
+      "free_axial_080": true
+    }
+  ],
+  "cone_rows": [
+    {
+      "X": 1.008,
+      "eta": 0.2,
+      "lambda_squared": 5513.6846420846905,
+      "target_dot_N": -1.8710226405429886,
+      "target_dot_K": 1.545062076849837,
+      "margin": -0.5591209546206348,
+      "ratio": 1.298831741799967,
+      "cone_violation": 0.10547131136062318,
+      "strict_pass": false,
+      "residual_norm": 50854.47168136134
+    },
+    {
+      "X": 1.012,
+      "eta": 0.2,
+      "lambda_squared": 9063.661466496826,
+      "target_dot_N": 0.827886163358535,
+      "target_dot_K": 1.0243000850435975,
+      "margin": -5.342406734040677,
+      "ratio": 5.453069238852619,
+      "cone_violation": 0.8423311462141263,
+      "strict_pass": false,
+      "residual_norm": 141265.51446994333
+    },
+    {
+      "X": 1.016,
+      "eta": 0.2,
+      "lambda_squared": 12064.302204935286,
+      "target_dot_N": 5.558168484239302,
+      "target_dot_K": 0.8867071642154097,
+      "margin": -12.764574941892604,
+      "ratio": 1.2965433628159582,
+      "cone_violation": 0.9273497362452878,
+      "strict_pass": false,
+      "residual_norm": 176805.7218428855
+    },
+    {
+      "X": 1.02,
+      "eta": 0.2,
+      "lambda_squared": 19642.468392680235,
+      "target_dot_N": 10.698236784427385,
+      "target_dot_K": 0.9747730401318997,
+      "margin": -20.48833857882878,
+      "ratio": 0.9151135828898558,
+      "cone_violation": 0.9534631308822897,
+      "strict_pass": false,
+      "residual_norm": 162759.6446295421
+    },
+    {
+      "X": 1.008,
+      "eta": 0.25,
+      "lambda_squared": 5202.4742316846205,
+      "target_dot_N": -2.851756921427994,
+      "target_dot_K": 1.6202072337485713,
+      "margin": -0.07096139880595853,
+      "ratio": 1.0248833967133584,
+      "cone_violation": 0.010474818532003365,
+      "strict_pass": false,
+      "residual_norm": 18967.709943988968
+    },
+    {
+      "X": 1.012,
+      "eta": 0.25,
+      "lambda_squared": 4758.010360286056,
+      "target_dot_N": -2.307401019484889,
+      "target_dot_K": 1.158140448204318,
+      "margin": -1.1070748245093367,
+      "ratio": 1.4797929857708407,
+      "cone_violation": 0.16469727830395514,
+      "strict_pass": false,
+      "residual_norm": 27996.05519709433
+    },
+    {
+      "X": 1.016,
+      "eta": 0.25,
+      "lambda_squared": 5043.324362908122,
+      "target_dot_N": -1.9409703673938867,
+      "target_dot_K": 1.1612389578147462,
+      "margin": -1.3885071218912743,
+      "ratio": 1.7153675013367684,
+      "cone_violation": 0.2214366746407576,
+      "strict_pass": false,
+      "residual_norm": 49722.85521648015
+    },
+    {
+      "X": 1.02,
+      "eta": 0.25,
+      "lambda_squared": 13626.553506870388,
+      "target_dot_N": 0.4323704100246659,
+      "target_dot_K": 1.4510718597828496,
+      "margin": -4.418770603012739,
+      "ratio": 9.21987282330596,
+      "cone_violation": 0.815456295668981,
+      "strict_pass": false,
+      "residual_norm": 160521.42260591892
+    },
+    {
+      "X": 1.008,
+      "eta": 0.3,
+      "lambda_squared": 5336.918209045351,
+      "target_dot_N": -1.9675178499117765,
+      "target_dot_K": 1.1361794043668763,
+      "margin": -1.2947017228840378,
+      "ratio": 1.6580381077315727,
+      "cone_violation": 0.20782605028661544,
+      "strict_pass": false,
+      "residual_norm": 81510.56059263958
+    },
+    {
+      "X": 1.012,
+      "eta": 0.3,
+      "lambda_squared": 6665.704782662558,
+      "target_dot_N": 2.3271943102771884,
+      "target_dot_K": 0.7396044611819642,
+      "margin": -8.027825503526573,
+      "ratio": 2.44957250371173,
+      "cone_violation": 0.8892313548141392,
+      "strict_pass": false,
+      "residual_norm": 202551.21205419896
+    },
+    {
+      "X": 1.016,
+      "eta": 0.3,
+      "lambda_squared": 8393.593763335639,
+      "target_dot_N": 8.990396131045575,
+      "target_dot_K": 0.6343715494307519,
+      "margin": -18.013009176791613,
+      "ratio": 1.0035834811092708,
+      "cone_violation": 0.9474044328963634,
+      "strict_pass": false,
+      "residual_norm": 230237.33522694712
+    },
+    {
+      "X": 1.02,
+      "eta": 0.3,
+      "lambda_squared": 16211.628946894863,
+      "target_dot_N": 16.061316558368606,
+      "target_dot_K": 0.7390601442687023,
+      "margin": -28.20022852327579,
+      "ratio": 0.7557856120196019,
+      "cone_violation": 0.9657536926739155,
+      "strict_pass": false,
+      "residual_norm": 227848.5840065254
+    }
+  ],
+  "objective": 1.0575919458650214,
+  "optimizer_success": false,
+  "optimizer_message": "Maximum number of iterations has been exceeded.",
+  "scope": "Sampled ten-mode pointwise necessary admission search with nearby-time momentum and moments. No pressure realization, independent holdout, continuous cone, wave, or PDE acceptance.",
+  "accepted": false
+}

@@ -41,7 +41,7 @@ def signature():
                            xs=XS, etas=ETAS, order=48), sort_keys=True)
 
 
-def save_cache(path, cone_rows, moments):
+def save_cache(path, cone_rows, moments, cache_signature=None):
     cone_keys = ('u0', 'g0', 'R0', 'U', 'G', 'L', 'Q',
                  'T0', 'Tlin', 'Tquad')
     moment_keys = ('U', 'E', 'E0', 'Bu', 'Be', 'target')
@@ -55,13 +55,13 @@ def save_cache(path, cone_rows, moments):
                   moment_eta=np.array([row['eta'] for row in moments]),
                   moment_X=moments[0]['X'],
                   moment_weights=moments[0]['weights'],
-                  signature=np.array(signature()))
+                  signature=np.array(cache_signature or signature()))
     np.savez_compressed(path, **arrays)
 
 
-def load_cache(path):
+def load_cache(path, cache_signature=None):
     with np.load(path, allow_pickle=False) as data:
-        if str(data['signature']) != signature():
+        if str(data['signature']) != (cache_signature or signature()):
             raise ValueError('Cached response belongs to different modes')
         cone_keys = ('u0', 'g0', 'R0', 'U', 'G', 'L', 'Q',
                      'T0', 'Tlin', 'Tquad')
@@ -133,12 +133,13 @@ def make_modes(base):
     return modes, kinds
 
 
-def precompute(base, modes, tau):
+def precompute(base, modes, tau, extra_radial_edges=()):
     edges = [edge for interval in (*SWIRL_INTERVALS,
                                    *POLOIDAL_INTERVALS)
              for edge in interval]
-    points, blocks_data = blocks(base, tau, order=48, xs=XS,
-                                 etas=ETAS, extra_radial_edges=edges)
+    points, blocks_data = blocks(
+        base, tau, order=48, xs=XS, etas=ETAS,
+        extra_radial_edges=(*edges, *extra_radial_edges))
     hs, ht = .0005*np.sqrt(base.nu*tau), .0001*tau
     u0, g0, p0 = kinematics(base, points, tau, hs, ht)
     R0 = p0+np.einsum('pab,pb->pa', g0, u0)
