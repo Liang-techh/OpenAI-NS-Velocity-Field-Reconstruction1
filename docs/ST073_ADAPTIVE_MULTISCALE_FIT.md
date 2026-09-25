@@ -48,3 +48,5 @@ no full-domain momentum max or volume-L2 acceptance.
 
 Allowing these coefficients to vary between independently fitted
 scale knots is tested in `ST073_SCALE_KNOT_TRANSFER.md`.
+The remaining pressure capacity and sampled stress-cone geometry are
+audited in `ST073_PRESSURE_CONE_OBSTRUCTION.md`.

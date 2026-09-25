@@ -1,0 +1,421 @@
+{
+  "source": "Shared 24-mode adaptive bridge, physical local Section-7 cone analogue",
+  "scales": [
+    {
+      "k": 11.0,
+      "tau": 0.000244140625,
+      "rows": [
+        {
+          "index": 0,
+          "eta": -0.2,
+          "radius": 0.00048027512363772447,
+          "z": -0.00033242031834369965,
+          "momentum_norm": 390888.0788194109,
+          "lambda_squared": -17427401.887534566,
+          "cone_pass": false
+        },
+        {
+          "index": 1,
+          "eta": -0.2,
+          "radius": 0.0012577328025209023,
+          "z": -0.00033242031834369965,
+          "momentum_norm": 305339.4523025993,
+          "lambda_squared": 36547340.28970352,
+          "cone_pass": false,
+          "target": [
+            -101.02295460029897,
+            283.72437658251715
+          ],
+          "target_dot_N": 233.69313334714488,
+          "target_dot_K": -189.98073231174163,
+          "cone_ratio": 0.30470699536282014
+        },
+        {
+          "index": 2,
+          "eta": -0.2,
+          "radius": 0.002396229144585849,
+          "z": -0.00033242031834369965,
+          "momentum_norm": 155662.09569557747,
+          "lambda_squared": 113766.67254488578,
+          "cone_pass": false,
+          "target": [
+            138.16600572910053,
+            106.50545208825469
+          ],
+          "target_dot_N": -108.20354829566642,
+          "target_dot_K": 136.8402301952344,
+          "cone_ratio": 5.75391060754489
+        },
+        {
+          "index": 3,
+          "eta": -0.2,
+          "radius": 0.0035347254866507963,
+          "z": -0.00033242031834369965,
+          "momentum_norm": 182577.4853541909,
+          "lambda_squared": 16495278.487718875,
+          "cone_pass": false,
+          "target": [
+            -87.2759370955143,
+            212.3445367185565
+          ],
+          "target_dot_N": 82.16381062730223,
+          "target_dot_K": -214.3744380594836,
+          "cone_ratio": 5.304258910516133
+        },
+        {
+          "index": 4,
+          "eta": -0.2,
+          "radius": 0.0043121831655339735,
+          "z": -0.00033242031834369965,
+          "momentum_norm": 35186.85210869771,
+          "lambda_squared": -36427.10828791655,
+          "cone_pass": false
+        },
+        {
+          "index": 5,
+          "eta": 0.0,
+          "radius": 0.00047057159562581145,
+          "z": 0.0,
+          "momentum_norm": 164172.59479515383,
+          "lambda_squared": -1050451046.2572215,
+          "cone_pass": false
+        },
+        {
+          "index": 6,
+          "eta": 0.0,
+          "radius": 0.0012323214395747561,
+          "z": 0.0,
+          "momentum_norm": 303244.94834899064,
+          "lambda_squared": -9256968.441068275,
+          "cone_pass": false
+        },
+        {
+          "index": 7,
+          "eta": 0.0,
+          "radius": 0.0023478154844084587,
+          "z": 0.0,
+          "momentum_norm": 134240.6537614145,
+          "lambda_squared": -52994751.912553936,
+          "cone_pass": false
+        },
+        {
+          "index": 8,
+          "eta": 0.0,
+          "radius": 0.003463309529242161,
+          "z": 0.0,
+          "momentum_norm": 140575.50486055762,
+          "lambda_squared": 23548282.06308154,
+          "cone_pass": false,
+          "target": [
+            -141.7550809875332,
+            0.4787227099845983
+          ],
+          "target_dot_N": 141.7495587761718,
+          "target_dot_K": 1.339682042788727,
+          "cone_ratio": 0.01772126317349582
+        },
+        {
+          "index": 9,
+          "eta": 0.0,
+          "radius": 0.004225059373191105,
+          "z": 0.0,
+          "momentum_norm": 44919.8802967513,
+          "lambda_squared": 24901.25956099846,
+          "cone_pass": false,
+          "target": [
+            -5.892487267504515,
+            -0.27623908543440245
+          ],
+          "target_dot_N": 5.887864125398054,
+          "target_dot_K": 0.36162172345569027,
+          "cone_ratio": 0.06707839461764463
+        },
+        {
+          "index": 10,
+          "eta": 0.2,
+          "radius": 0.00048027512363772447,
+          "z": 0.00033242031834369965,
+          "momentum_norm": 390708.3273722776,
+          "lambda_squared": -16825879.750623103,
+          "cone_pass": false
+        },
+        {
+          "index": 11,
+          "eta": 0.2,
+          "radius": 0.0012577328025209023,
+          "z": 0.00033242031834369965,
+          "momentum_norm": 304203.5344771549,
+          "lambda_squared": 35932082.21199914,
+          "cone_pass": false,
+          "target": [
+            -101.34745712749437,
+            -282.485154679807
+          ],
+          "target_dot_N": 233.20114252985937,
+          "target_dot_K": 188.9084349716868,
+          "cone_ratio": 0.3016208596184325
+        },
+        {
+          "index": 12,
+          "eta": 0.2,
+          "radius": 0.002396229144585849,
+          "z": 0.00033242031834369965,
+          "momentum_norm": 154903.88236884383,
+          "lambda_squared": 245895.5289489129,
+          "cone_pass": false,
+          "target": [
+            136.17697633501993,
+            -105.8769445597222
+          ],
+          "target_dot_N": -113.40822836145777,
+          "target_dot_K": -129.9718046845796,
+          "cone_ratio": 1.671512159143245
+        },
+        {
+          "index": 13,
+          "eta": 0.2,
+          "radius": 0.0035347254866507963,
+          "z": 0.00033242031834369965,
+          "momentum_norm": 183565.22564749932,
+          "lambda_squared": 16372476.778796744,
+          "cone_pass": false,
+          "target": [
+            -87.53372287532994,
+            -210.37786762882882
+          ],
+          "target_dot_N": 76.4842649019246,
+          "target_dot_K": 214.64192752321318,
+          "cone_ratio": 5.718704915368204
+        },
+        {
+          "index": 14,
+          "eta": 0.2,
+          "radius": 0.0043121831655339735,
+          "z": 0.00033242031834369965,
+          "momentum_norm": 35014.58626271562,
+          "lambda_squared": -36285.583675479225,
+          "cone_pass": false
+        }
+      ],
+      "positive_lambda_count": 8,
+      "cone_pass_count": 0,
+      "top_five_positive_lambda_count": 2,
+      "top_five_cone_pass_count": 0,
+      "peak": {
+        "index": 0,
+        "eta": -0.2,
+        "radius": 0.00048027512363772447,
+        "z": -0.00033242031834369965,
+        "momentum_norm": 390888.0788194109,
+        "lambda_squared": -17427401.887534566,
+        "cone_pass": false
+      }
+    },
+    {
+      "k": 19.0,
+      "tau": 9.5367431640625e-07,
+      "rows": [
+        {
+          "index": 0,
+          "eta": -0.2,
+          "radius": 3.001719522735778e-05,
+          "z": -2.1360370346910557e-05,
+          "momentum_norm": 1580636176.6157048,
+          "lambda_squared": -1473005169112.2346,
+          "cone_pass": false
+        },
+        {
+          "index": 1,
+          "eta": -0.2,
+          "radius": 7.860830015755639e-05,
+          "z": -2.1360370346910557e-05,
+          "momentum_norm": 1206454786.7453494,
+          "lambda_squared": 2529062145287.575,
+          "cone_pass": false,
+          "target": [
+            -27100.188588663797,
+            71566.46749079468
+          ],
+          "target_dot_N": 60211.36837725605,
+          "target_dot_K": -47231.03438196633,
+          "cone_ratio": 0.2943220289665958
+        },
+        {
+          "index": 2,
+          "eta": -0.2,
+          "radius": 0.00014976432153661557,
+          "z": -2.1360370346910557e-05,
+          "momentum_norm": 695892733.4615391,
+          "lambda_squared": -8308887209.6097975,
+          "cone_pass": false
+        },
+        {
+          "index": 3,
+          "eta": -0.2,
+          "radius": 0.00022092034291567477,
+          "z": -2.1360370346910557e-05,
+          "momentum_norm": 797456104.4830053,
+          "lambda_squared": 1136851590238.6926,
+          "cone_pass": false,
+          "target": [
+            -22655.652393324806,
+            52126.10822553154
+          ],
+          "target_dot_N": 21484.685118275156,
+          "target_dot_K": -52619.55957128068,
+          "cone_ratio": 4.979249028647246
+        },
+        {
+          "index": 4,
+          "eta": -0.2,
+          "radius": 0.00026951144784587334,
+          "z": -2.1360370346910557e-05,
+          "momentum_norm": 143068206.52504817,
+          "lambda_squared": -2543828712.523834,
+          "cone_pass": false
+        },
+        {
+          "index": 5,
+          "eta": 0.0,
+          "radius": 2.9410724726613216e-05,
+          "z": 0.0,
+          "momentum_norm": 686161131.7106318,
+          "lambda_squared": -72564144227567.39,
+          "cone_pass": false
+        },
+        {
+          "index": 6,
+          "eta": 0.0,
+          "radius": 7.702008997342226e-05,
+          "z": 0.0,
+          "momentum_norm": 1033049117.8567713,
+          "lambda_squared": -548553712975.2714,
+          "cone_pass": false
+        },
+        {
+          "index": 7,
+          "eta": 0.0,
+          "radius": 0.00014673846777552867,
+          "z": 0.0,
+          "momentum_norm": 599185226.6530937,
+          "lambda_squared": -3649934249095.6504,
+          "cone_pass": false
+        },
+        {
+          "index": 8,
+          "eta": 0.0,
+          "radius": 0.00021645684557763505,
+          "z": 0.0,
+          "momentum_norm": 640044224.6307096,
+          "lambda_squared": 1622375951829.4673,
+          "cone_pass": false,
+          "target": [
+            -36408.99318602835,
+            143.40008267906555
+          ],
+          "target_dot_N": 36407.82780934077,
+          "target_dot_K": 324.6884804920299,
+          "cone_ratio": 0.016719652467343932
+        },
+        {
+          "index": 9,
+          "eta": 0.0,
+          "radius": 0.0002640662108244441,
+          "z": 0.0,
+          "momentum_norm": 190330610.44377816,
+          "lambda_squared": 1702457001.9537044,
+          "cone_pass": false,
+          "target": [
+            -900.6175149115071,
+            -48.14750138643103
+          ],
+          "target_dot_N": 899.8205414157029,
+          "target_dot_K": 61.26241344810249,
+          "cone_ratio": 0.0739061542252723
+        },
+        {
+          "index": 10,
+          "eta": 0.2,
+          "radius": 3.001719522735778e-05,
+          "z": 2.1360370346910557e-05,
+          "momentum_norm": 1579141319.1640418,
+          "lambda_squared": -1424050647529.351,
+          "cone_pass": false
+        },
+        {
+          "index": 11,
+          "eta": 0.2,
+          "radius": 7.860830015755639e-05,
+          "z": 2.1360370346910557e-05,
+          "momentum_norm": 1204460172.7036233,
+          "lambda_squared": 2486116152074.695,
+          "cone_pass": false,
+          "target": [
+            -27190.450601713324,
+            -71208.2237171552
+          ],
+          "target_dot_N": 60070.7929335824,
+          "target_dot_K": 46919.415652875556,
+          "cone_ratio": 0.29110429279641836
+        },
+        {
+          "index": 12,
+          "eta": 0.2,
+          "radius": 0.00014976432153661557,
+          "z": 2.1360370346910557e-05,
+          "momentum_norm": 691238079.5587019,
+          "lambda_squared": 7773726044.061692,
+          "cone_pass": false,
+          "target": [
+            34241.838428758056,
+            -24162.95562354903
+          ],
+          "target_dot_N": -24821.399898926404,
+          "target_dot_K": -33767.588461486965,
+          "cone_ratio": 3.937553166193078
+        },
+        {
+          "index": 13,
+          "eta": 0.2,
+          "radius": 0.00022092034291567477,
+          "z": 2.1360370346910557e-05,
+          "momentum_norm": 802224366.3572046,
+          "lambda_squared": 1128345011338.1533,
+          "cone_pass": false,
+          "target": [
+            -22731.75318149376,
+            -51603.804586628285
+          ],
+          "target_dot_N": 20101.199930541432,
+          "target_dot_K": 52684.21976143969,
+          "cone_ratio": 5.3407922755232695
+        },
+        {
+          "index": 14,
+          "eta": 0.2,
+          "radius": 0.00026951144784587334,
+          "z": 2.1360370346910557e-05,
+          "momentum_norm": 141560592.88811097,
+          "lambda_squared": -2534648615.5223866,
+          "cone_pass": false
+        }
+      ],
+      "positive_lambda_count": 7,
+      "cone_pass_count": 0,
+      "top_five_positive_lambda_count": 2,
+      "top_five_cone_pass_count": 0,
+      "peak": {
+        "index": 0,
+        "eta": -0.2,
+        "radius": 3.001719522735778e-05,
+        "z": -2.1360370346910557e-05,
+        "momentum_norm": 1580636176.6157048,
+        "lambda_squared": -1473005169112.2346,
+        "cone_pass": false
+      }
+    }
+  ],
+  "scope": "15 bridge nodes at each of two times. Lambda condition evaluated everywhere; radial stress primitive and cone ratio only where lambda squared is positive. This physical full-residual analogue is not the paper's normalized leading cone, and grid passes are not an open-patch certificate.",
+  "accepted": false,
+  "pde_validated": false
+}
