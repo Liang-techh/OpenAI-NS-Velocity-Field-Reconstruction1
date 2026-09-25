@@ -1,0 +1,117 @@
+{
+  "source": "Frozen-background transverse amplitude inverse for actual late-bridge Fourier residual",
+  "tau0": 0.000244140625,
+  "physical_time_interval": [
+    0.4997509765625,
+    0.4997607421875
+  ],
+  "source_time_samples": 17,
+  "radial_axial_point": [
+    0.0004933412944735572,
+    -0.00033242031834369965
+  ],
+  "background_speed": 11.077383710324325,
+  "radial_halfwidth": 1.9874606434506165e-05,
+  "axial_halfwidth": 0.0001,
+  "pulse_time_halfwidth": 9.765625e-06,
+  "radial_diffusion_time": 3.9499998092651384e-08,
+  "pulse_to_radial_diffusion_time": 247.2310245963482,
+  "local_k_matrix": [
+    [
+      0.0,
+      -32332.21231875456,
+      0.0
+    ],
+    [
+      31801.006825052766,
+      0.0,
+      0.0
+    ],
+    [
+      -5369.963778219831,
+      0.0,
+      0.0
+    ]
+  ],
+  "modes": [
+    {
+      "success": true,
+      "solver_steps": 134,
+      "source_max": 359986011.18898165,
+      "amplitude_max": 1324.6107840751736,
+      "final_amplitude_norm": 1308.9222138979223,
+      "pressure_max": 77358.1104530908,
+      "transverse_constraint_max": 0.0,
+      "centered_equation_defect_max": 111376.0732678988,
+      "centered_equation_defect_relative": 0.0003093900035171916,
+      "endpoint_amplitude": [
+        [
+          -35.834920183842364,
+          -798.4791726239395
+        ],
+        [
+          -210.02681988152662,
+          702.2114002483693
+        ],
+        [
+          210.02681988152662,
+          -702.2114002483693
+        ]
+      ],
+      "normal": [
+        0.0,
+        2026.9943165148918,
+        2026.9943165148918
+      ],
+      "angular_mode": 1,
+      "carrier_omega": 2817.1371247895718,
+      "carrier_norm_times_radial_halfwidth": 0.0569726035127447,
+      "carrier_norm_times_axial_halfwidth": 0.2866602853268542,
+      "radial_phase_change_halfwidth": 0.0,
+      "axial_phase_change_halfwidth": 0.20269943165148918,
+      "viscous_damping_over_pulse_halfwidth": 0.8024816326530612,
+      "amplitude_to_background_speed": 119.57794536273146
+    },
+    {
+      "success": true,
+      "solver_steps": 188,
+      "source_max": 509339451.73902106,
+      "amplitude_max": 337.90105026676457,
+      "final_amplitude_norm": 131.56645339240978,
+      "pressure_max": 18731.423849690615,
+      "transverse_constraint_max": 0.0,
+      "centered_equation_defect_max": 368094.4702476454,
+      "centered_equation_defect_relative": 0.0007226898858725207,
+      "endpoint_amplitude": [
+        [
+          6.805134848753668,
+          -92.78156618034801
+        ],
+        [
+          6.805134848753668,
+          -92.78156618034801
+        ],
+        [
+          0.038322915494431564,
+          -0.5219417929670357
+        ]
+      ],
+      "normal": [
+        -8107.977266059567,
+        8107.977266059567,
+        0.0
+      ],
+      "angular_mode": 4,
+      "carrier_omega": 96822.75653177929,
+      "carrier_norm_times_radial_halfwidth": 0.2278904140509788,
+      "carrier_norm_times_axial_halfwidth": 1.146641141307417,
+      "radial_phase_change_halfwidth": 0.16114285714285717,
+      "axial_phase_change_halfwidth": 0.0,
+      "viscous_damping_over_pulse_halfwidth": 12.839706122448979,
+      "amplitude_to_background_speed": 30.503687432244003
+    }
+  ],
+  "scope": "Single spatial point, two nonzero angular modes, frozen physical background and phase normals, cubic-interpolated source, physical-time principal ODE and pressure identity. Not the paper's moving phase/support inverse, exact curl reconstruction, full residual reduction, or dyadic recursion.",
+  "accepted": false,
+  "scale_recursion_established": false
+}

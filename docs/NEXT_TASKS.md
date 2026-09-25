@@ -58,6 +58,13 @@ second-interval error near `3.27e11`. See
 `ST073_INTERVAL_CORRECTOR_LIMIT.md`. Stop tuning this physical-time
 Taylor fit and implement the pulse-coordinate transverse-amplitude ODE,
 normal pressure identity, and support/cutoff controls of Proposition 7.2.
+The first actual-source local transverse inverse now solves its frozen
+principal ODE, but needs amplitudes `30–120` times the local background
+speed; its narrow radial support spans about `247` diffusion times per
+pulse half-width. See `ST073_LOCAL_PULSE_INVERSE.md`. Before repeating
+the inverse across scales, open an admissible stress-cone support and
+establish carrier/cutoff/viscosity balance, then use a moving phase and
+complete wave–mean–moment residual cycle.
 Use those directions as a conditioning prototype, not as the paper's five
 leading-profile moments or a recursive correction.
 The next Stage-1 inputs are therefore the actual coefficient-family
