@@ -1,0 +1,122 @@
+{
+  "source": "Second pulse-time slope on wider-cone exact-curl field",
+  "train_axis": [
+    -0.6,
+    -0.3,
+    0.0,
+    0.3,
+    0.6
+  ],
+  "held_axis": [
+    -0.45,
+    -0.15,
+    0.15,
+    0.45
+  ],
+  "angles_per_node": 16,
+  "scales": [
+    {
+      "k": 11,
+      "horizon": 2.3894534704652513e-08,
+      "linear_at_horizon": {
+        "max": 6095536703.544958,
+        "rms": 1908380018.3065608
+      },
+      "second_slope_projection": {
+        "frozen": {
+          "max": 6095536703.544958,
+          "rms": 1908380018.3065608
+        },
+        "projected_derivative_and_pressure": {
+          "max": 440212585.1005793,
+          "rms": 194460770.69061583
+        }
+      },
+      "quadratic_direct": [
+        {
+          "time_offset_fraction": 0.05,
+          "corrected": {
+            "max": 2810222026.606192,
+            "rms": 923034522.7766078
+          }
+        },
+        {
+          "time_offset_fraction": 0.1,
+          "corrected": {
+            "max": 12124711809.108255,
+            "rms": 4045880146.118562
+          }
+        }
+      ],
+      "prior_linear_at_horizon": {
+        "time_offset_fraction": 0.1,
+        "frozen": {
+          "max": 1977021152.4547243,
+          "rms": 736154418.9343352
+        },
+        "corrected": {
+          "max": 6095536703.544958,
+          "rms": 1908380018.3065608
+        }
+      },
+      "relative_delta_h_norms": [
+        3.1509173117053306,
+        3.428666941519692
+      ],
+      "relative_delta_mean_norm": 14.747274914052161
+    },
+    {
+      "k": 19,
+      "horizon": 9.865997755327235e-11,
+      "linear_at_horizon": {
+        "max": 22763186058113.637,
+        "rms": 7085098940282.144
+      },
+      "second_slope_projection": {
+        "frozen": {
+          "max": 22763186058113.637,
+          "rms": 7085098940282.144
+        },
+        "projected_derivative_and_pressure": {
+          "max": 1641211695126.336,
+          "rms": 722060576216.134
+        }
+      },
+      "quadratic_direct": [
+        {
+          "time_offset_fraction": 0.05,
+          "corrected": {
+            "max": 10480254172791.213,
+            "rms": 3423913051737.9434
+          }
+        },
+        {
+          "time_offset_fraction": 0.1,
+          "corrected": {
+            "max": 45219153606575.055,
+            "rms": 14996771858109.053
+          }
+        }
+      ],
+      "prior_linear_at_horizon": {
+        "time_offset_fraction": 0.1,
+        "frozen": {
+          "max": 7404755942385.931,
+          "rms": 2736152495660.9453
+        },
+        "corrected": {
+          "max": 22763186058113.637,
+          "rms": 7085098940282.144
+        }
+      },
+      "relative_delta_h_norms": [
+        3.146256895848673,
+        3.429691456219317
+      ],
+      "relative_delta_mean_norm": 14.846134376287344
+    }
+  ],
+  "scope": "Two instantaneous full-momentum derivative/pressure fits followed by quadratic-in-tau exact-curl direct replay on held-out nodes. No nonlinear interval solve, support endpoint control, or scale recursion.",
+  "accepted": false,
+  "scale_recursion_established": false
+}

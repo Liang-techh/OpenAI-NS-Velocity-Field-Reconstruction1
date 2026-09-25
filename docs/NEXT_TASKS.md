@@ -182,6 +182,13 @@ are `3.083×/3.074×` the same-time frozen wave. See
 `ST073_WIDER_CONE_SLOPE_REPLAY.md`. Use the fitted slope only as an
 initial condition or diagnostic for a nonlinear moving-normal pulse
 amplitude solve; require direct residual reduction throughout the pulse.
+Refitting at `+0.1` pulse half-width again lowers the held-out residual
+algebraically to about `7.2%` of the linearly advanced field at both
+scales. But a direct quadratic-in-time exact-curl realization worsens
+the residual to `1.21e10/4.52e13`; the mean derivative changes by about
+`14.7x`. See `ST073_WIDER_CONE_SECOND_SLOPE.md`. Solve the potential
+state and derivative in one nonlinear interval problem, including normal
+pressure, rather than independently fitting more time derivatives.
 Use those directions as a conditioning prototype, not as the paper's five
 leading-profile moments or a recursive correction.
 The next Stage-1 inputs are therefore the actual coefficient-family

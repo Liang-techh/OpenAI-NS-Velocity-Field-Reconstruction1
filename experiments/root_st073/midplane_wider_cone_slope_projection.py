@@ -66,13 +66,44 @@ def row_stats(rows):
                 rms=float(np.sqrt(np.mean(values**2))))
 
 
-def run():
+def build_case(k, angles):
     inner, fields = build_fields()
     repair = json.loads((ROOT / "midplane_axial_cone_all_knots_repair.json").read_text())
     mean = SeparatedMomentModes(
         fields["two_sided_cone"], repair["amplitudes"],
         windows=RADIAL_WINDOWS_THREE, knots=(11., 15., 19.))
     pairs = json.loads((ROOT / "midplane_physical_covariance_pairs.json").read_text())
+    source = json.loads((ROOT / "compact_potential" /
+                         f"midplane_wave_source_k{k}.json").read_text())
+    source["nu"] = mean.nu
+    tau = float(source["tau"])
+    point = np.asarray(source["point"], float)
+    source["velocity"] = mean.fields(point[None, :], tau)[0][0].tolist()
+    target = stress_primitive(mean, float(point[0]), float(point[2]), tau)
+    source["local_tangential_stress_primitive"] = target.tolist()
+    selected = next(row["selected"]["indices"] for row in pairs["scales"]
+                    if row["k"] == k)
+    args = support(inner, source, mean.nu)
+    args["axial_halfwidth"] *= 1.4
+    args["time_halfwidth"] *= 1.4**2
+    wave = LocalizedCurlWave(source, pulse_indices=selected, **args)
+    center_points = np.array([
+        (point[0] * np.cos(a), point[0] * np.sin(a), point[2])
+        for a in angles])
+    columns = []
+    for j in range(2):
+        wave.weights = np.eye(2)[j]
+        values, _ = wave.fields(center_points, tau)
+        cyl = cylindrical_residual(values, center_points)
+        columns.append(np.mean(cyl[:, 0, None] * cyl[:, 1:], axis=0))
+    weights = np.linalg.solve(np.column_stack(columns), target)
+    if np.any(weights <= 0):
+        raise ValueError(f"k={k}: covariance weights are not positive")
+    wave.weights = weights
+    return mean, wave, args, weights
+
+
+def run():
     angles = np.arange(16) * 2 * np.pi / 16
     train_axis = (-.6, -.3, 0., .3, .6)
     held_axis = (-.45, -.15, .15, .45)
@@ -80,33 +111,8 @@ def run():
     held_grid = [(x, y) for x in held_axis for y in held_axis]
     scales = []
     for k in (11, 19):
-        source = json.loads((ROOT / "compact_potential" /
-                             f"midplane_wave_source_k{k}.json").read_text())
-        source["nu"] = mean.nu
-        tau = float(source["tau"])
-        point = np.asarray(source["point"], float)
-        source["velocity"] = mean.fields(point[None, :], tau)[0][0].tolist()
-        target = stress_primitive(mean, float(point[0]), float(point[2]), tau)
-        source["local_tangential_stress_primitive"] = target.tolist()
-        selected = next(row["selected"]["indices"] for row in pairs["scales"]
-                        if row["k"] == k)
-        args = support(inner, source, mean.nu)
-        args["axial_halfwidth"] *= 1.4
-        args["time_halfwidth"] *= 1.4**2
-        wave = LocalizedCurlWave(source, pulse_indices=selected, **args)
-        center_points = np.array([
-            (point[0] * np.cos(a), point[0] * np.sin(a), point[2])
-            for a in angles])
-        columns = []
-        for j in range(2):
-            wave.weights = np.eye(2)[j]
-            values, _ = wave.fields(center_points, tau)
-            cyl = cylindrical_residual(values, center_points)
-            columns.append(np.mean(cyl[:, 0, None] * cyl[:, 1:], axis=0))
-        weights = np.linalg.solve(np.column_stack(columns), target)
-        if np.any(weights <= 0):
-            raise ValueError(f"k={k}: covariance weights are not positive")
-        wave.weights = weights
+        mean, wave, args, weights = build_case(k, angles)
+        tau = wave.tau0
         frozen = WavePerturbedField(mean, ScaledWave(wave, .1))
         train = sample_residual(frozen, wave, tau, train_grid, angles,
                                 time_step=args["time_halfwidth"],
