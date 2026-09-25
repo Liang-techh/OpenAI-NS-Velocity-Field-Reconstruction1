@@ -1383,3 +1383,27 @@ field, eta/time interpolation, curvature cost, pressure and complete
 momentum are not yet constructed. In particular, the narrow,
 high-degree design may repeat the large curvature residual already
 seen earlier in ST073. All of these reports remain `accepted:false`.
+
+## Smooth U onset versus preserving the inner stress cone
+
+`delayed_remote_u_start_capacity.py` varies the onset of a tapered
+Legendre U correction after the eta `.3`, relative-E-floor `.05`
+fixed-slice solve. At `X=1.01`, taper width `.02`, degree `11`, its
+finite-basis `S` slack after exact linear `M/J` projection is
+`+.008666`; with onset `X=1.03`, width `.005`, degree `31`, it is
+`-.005791`. Thus a broad, lower-curvature U repair is algebraically
+available only by entering the previously protected cone region.
+
+`delayed_remote_smooth_slice.py` spends that positive slack in a null
+direction, yielding all five fixed-eta moments within `5.3e-14` of
+the target. But the normalized U correction at cone radial nodes is
+`0` at `X=1.008`, then `.1854,.6530,.9452` at
+`X=1.016,1.02,1.03`. Exact slice algebra alone therefore invalidates
+reuse of the old stress-cone calculation. `delayed_remote_cone_null_capacity.py`
+pins those three nontrivial cone-node U values to zero in the KKT
+minimum. Across the tested onsets `1.01,1.02`, widths `.005..04`,
+and degrees `11,19,31`, every resulting `S` gap is negative; the best
+value-only gaps are `-.03415` and `-.01019`, respectively. Pinning U_X
+as well is even more restrictive and can become ill-conditioned.
+These are fixed-slice necessary-condition screens, not a continuous
+stress-cone proof or full momentum test.

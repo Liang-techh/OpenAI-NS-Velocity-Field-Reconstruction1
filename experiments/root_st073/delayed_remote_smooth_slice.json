@@ -1,0 +1,49 @@
+{
+  "source": "delayed_remote_swirl_floor_capacity.json",
+  "eta": 0.3,
+  "start": 1.01,
+  "end": 3.5,
+  "width": 0.02,
+  "degree": 11,
+  "coefficients": [
+    0.0031720195876286006,
+    -0.027365805376414868,
+    0.08067600197769287,
+    -0.11861173160291294,
+    0.030691040354379077,
+    -0.2391908031024253,
+    0.10508148115416212,
+    -0.3126536158978105,
+    0.13002479885895457,
+    -0.2673562643956702,
+    0.09932602066340317,
+    -0.32971630336859153
+  ],
+  "selected_null_index": 0,
+  "selected_null_sign": -1.0,
+  "S_slack_before_completion": 0.00866568254390776,
+  "moment_defect": [
+    -3.0531133177191805e-16,
+    5.240252676230739e-14,
+    -7.494005416219807e-16,
+    -1.1102230246251565e-15,
+    7.105427357601002e-15
+  ],
+  "max_abs_corrected_U": 4.625310932097059,
+  "cone_X": [
+    1.008,
+    1.016,
+    1.02,
+    1.03
+  ],
+  "cone_delta_U": [
+    0.0,
+    0.1854351568605372,
+    0.6530013209325485,
+    0.9452008677713726
+  ],
+  "max_abs_cone_delta_U": 0.9452008677713726,
+  "min_relative_E": 0.049999999999999024,
+  "scope": "Exact fixed-eta five-moment algebra with a smooth radial U basis entering the current stress cone. No eta/time-dependent physical lift, cone re-audit, momentum or volume L2 acceptance.",
+  "accepted": false
+}

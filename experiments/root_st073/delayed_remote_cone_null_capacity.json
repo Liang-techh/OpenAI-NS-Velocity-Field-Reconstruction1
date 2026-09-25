@@ -1,0 +1,733 @@
+{
+  "source": "delayed_remote_swirl_floor_capacity.json",
+  "eta": 0.3,
+  "cone_X": [
+    1.016,
+    1.02,
+    1.03
+  ],
+  "rows": [
+    {
+      "start": 1.01,
+      "width": 0.005,
+      "degree": 11,
+      "pin_gradient": false,
+      "S_min": 2.0365487892667753,
+      "S_slack": -0.04372450241761294,
+      "linear_constraint_error": 1.1449174941446927e-16,
+      "cone_delta_U": [
+        3.0357660829594124e-18,
+        -4.83554168928535e-17,
+        4.423544863740858e-17
+      ],
+      "kkt_condition": 29725.37107710002
+    },
+    {
+      "start": 1.01,
+      "width": 0.005,
+      "degree": 11,
+      "pin_gradient": true,
+      "S_min": 9.478725251043656,
+      "S_slack": -7.485900964194494,
+      "linear_constraint_error": 6.291543259401289e-06,
+      "cone_delta_U": [
+        0.0,
+        -1.8934438461570835e-09,
+        -2.1783058690161283e-09
+      ],
+      "kkt_condition": 9.833423775161009e+17
+    },
+    {
+      "start": 1.01,
+      "width": 0.005,
+      "degree": 19,
+      "pin_gradient": false,
+      "S_min": 2.0334500501576906,
+      "S_slack": -0.040625763308528295,
+      "linear_constraint_error": 2.636779683484747e-16,
+      "cone_delta_U": [
+        3.469446951953614e-18,
+        -2.5847379792054426e-16,
+        1.734723475976807e-16
+      ],
+      "kkt_condition": 172.5541458664924
+    },
+    {
+      "start": 1.01,
+      "width": 0.005,
+      "degree": 19,
+      "pin_gradient": true,
+      "S_min": 2.0355308727101944,
+      "S_slack": -0.04270658586103204,
+      "linear_constraint_error": 2.653433028854124e-13,
+      "cone_delta_U": [
+        -5.637851296924623e-18,
+        4.899509617461995e-16,
+        -2.6944592390609756e-15
+      ],
+      "kkt_condition": 2196854859715271.5
+    },
+    {
+      "start": 1.01,
+      "width": 0.005,
+      "degree": 31,
+      "pin_gradient": false,
+      "S_min": 2.0270199671906317,
+      "S_slack": -0.03419568034146936,
+      "linear_constraint_error": 3.469446951953614e-16,
+      "cone_delta_U": [
+        5.898059818321144e-17,
+        -1.942890293094024e-16,
+        -9.974659986866641e-18
+      ],
+      "kkt_condition": 302.22904374996574
+    },
+    {
+      "start": 1.01,
+      "width": 0.005,
+      "degree": 31,
+      "pin_gradient": true,
+      "S_min": 2.0344994995668904,
+      "S_slack": -0.041675212717728005,
+      "linear_constraint_error": 3.352873534367973e-14,
+      "cone_delta_U": [
+        1.734723475976807e-18,
+        -1.2663481374630692e-16,
+        -8.370691292891586e-15
+      ],
+      "kkt_condition": 64628586066.318596
+    },
+    {
+      "start": 1.01,
+      "width": 0.01,
+      "degree": 11,
+      "pin_gradient": false,
+      "S_min": 2.036554310334866,
+      "S_slack": -0.04373002348570365,
+      "linear_constraint_error": 6.245004513516506e-17,
+      "cone_delta_U": [
+        -2.417770844642675e-17,
+        5.5294310796760726e-18,
+        2.5587171270657905e-17
+      ],
+      "kkt_condition": 35576.07355311865
+    },
+    {
+      "start": 1.01,
+      "width": 0.01,
+      "degree": 11,
+      "pin_gradient": true,
+      "S_min": 12.62877060173555,
+      "S_slack": -10.635946314886388,
+      "linear_constraint_error": 6.256316046976407e-06,
+      "cone_delta_U": [
+        7.38150429668849e-10,
+        -9.768448272495789e-10,
+        -1.406518790325606e-09
+      ],
+      "kkt_condition": 2.264694037182588e+20
+    },
+    {
+      "start": 1.01,
+      "width": 0.01,
+      "degree": 19,
+      "pin_gradient": false,
+      "S_min": 2.033449098463927,
+      "S_slack": -0.0406248116147645,
+      "linear_constraint_error": 4.163336342344337e-16,
+      "cone_delta_U": [
+        -2.445960101127298e-16,
+        5.204170427930421e-18,
+        2.498001805406602e-16
+      ],
+      "kkt_condition": 189.75858654460436
+    },
+    {
+      "start": 1.01,
+      "width": 0.01,
+      "degree": 19,
+      "pin_gradient": true,
+      "S_min": 2.035533950959545,
+      "S_slack": -0.04270966411038257,
+      "linear_constraint_error": 4.561271499392561e-12,
+      "cone_delta_U": [
+        -1.0283440765590512e-14,
+        8.15124877318052e-15,
+        -1.9267877224282692e-13
+      ],
+      "kkt_condition": 3545794729805923.0
+    },
+    {
+      "start": 1.01,
+      "width": 0.01,
+      "degree": 31,
+      "pin_gradient": false,
+      "S_min": 2.0270270277952442,
+      "S_slack": -0.03420274094608189,
+      "linear_constraint_error": 3.400058012914542e-16,
+      "cone_delta_U": [
+        3.226585665316861e-16,
+        -5.551115123125783e-17,
+        -1.3574211199518516e-16
+      ],
+      "kkt_condition": 666.6703573204156
+    },
+    {
+      "start": 1.01,
+      "width": 0.01,
+      "degree": 31,
+      "pin_gradient": true,
+      "S_min": 2.0344953769614493,
+      "S_slack": -0.04167109011228698,
+      "linear_constraint_error": 6.990727441369415e-13,
+      "cone_delta_U": [
+        -1.1157914869830421e-13,
+        -1.4005289983298752e-13,
+        -1.09687215907317e-13
+      ],
+      "kkt_condition": 78549232174.69533
+    },
+    {
+      "start": 1.01,
+      "width": 0.02,
+      "degree": 11,
+      "pin_gradient": false,
+      "S_min": 2.0365654866610843,
+      "S_slack": -0.04374119981192193,
+      "linear_constraint_error": 1.3183898417423734e-16,
+      "cone_delta_U": [
+        3.581932927348985e-17,
+        4.0766001685454967e-17,
+        -8.673617379884035e-18
+      ],
+      "kkt_condition": 499070.02081031265
+    },
+    {
+      "start": 1.01,
+      "width": 0.02,
+      "degree": 11,
+      "pin_gradient": true,
+      "S_min": 2.043103664224741,
+      "S_slack": -0.05027937737557853,
+      "linear_constraint_error": 1.0810038721803528e-08,
+      "cone_delta_U": [
+        -2.7411130656962435e-11,
+        -4.064800666198076e-11,
+        5.0494906866926925e-11
+      ],
+      "kkt_condition": 8.386961431205325e+20
+    },
+    {
+      "start": 1.01,
+      "width": 0.02,
+      "degree": 19,
+      "pin_gradient": false,
+      "S_min": 2.033445413300206,
+      "S_slack": -0.040621126451043654,
+      "linear_constraint_error": 1.3010426069826053e-16,
+      "cone_delta_U": [
+        -3.469446951953614e-17,
+        1.3660947373317356e-16,
+        -1.0408340855860843e-17
+      ],
+      "kkt_condition": 1840.1069968804613
+    },
+    {
+      "start": 1.01,
+      "width": 0.02,
+      "degree": 19,
+      "pin_gradient": true,
+      "S_min": 2.035538637157226,
+      "S_slack": -0.04271435030806359,
+      "linear_constraint_error": 5.02028973947688e-13,
+      "cone_delta_U": [
+        2.4077202905037343e-14,
+        3.860410255351887e-15,
+        5.278156384180832e-14
+      ],
+      "kkt_condition": 1.875076509815468e+16
+    },
+    {
+      "start": 1.01,
+      "width": 0.02,
+      "degree": 31,
+      "pin_gradient": false,
+      "S_min": 2.027022227988759,
+      "S_slack": -0.03419794113959673,
+      "linear_constraint_error": 1.5959455978986625e-16,
+      "cone_delta_U": [
+        1.5785983631388945e-16,
+        1.4051260155412137e-16,
+        4.7271214720367993e-17
+      ],
+      "kkt_condition": 2372.191581658764
+    },
+    {
+      "start": 1.01,
+      "width": 0.02,
+      "degree": 31,
+      "pin_gradient": true,
+      "S_min": 2.0344855381018676,
+      "S_slack": -0.041661251252705256,
+      "linear_constraint_error": 5.582964646144717e-13,
+      "cone_delta_U": [
+        -9.191866018332107e-15,
+        9.266025446930115e-15,
+        5.583172812961834e-13
+      ],
+      "kkt_condition": 453917697660.06024
+    },
+    {
+      "start": 1.01,
+      "width": 0.04,
+      "degree": 11,
+      "pin_gradient": false,
+      "S_min": 2.0365879149513146,
+      "S_slack": -0.043763628102152285,
+      "linear_constraint_error": 7.632783294297951e-17,
+      "cone_delta_U": [
+        3.8948692497120865e-18,
+        5.3939058081153846e-18,
+        -3.2526065174565133e-18
+      ],
+      "kkt_condition": 46354863.28789462
+    },
+    {
+      "start": 1.01,
+      "width": 0.04,
+      "degree": 11,
+      "pin_gradient": true,
+      "S_min": 2.0395040071322152,
+      "S_slack": -0.046679720283052895,
+      "linear_constraint_error": 3.78636122455589e-09,
+      "cone_delta_U": [
+        1.3066609426404252e-12,
+        1.2845079166989848e-11,
+        5.597471271212573e-11
+      ],
+      "kkt_condition": 3.5172646285228775e+21
+    },
+    {
+      "start": 1.01,
+      "width": 0.04,
+      "degree": 19,
+      "pin_gradient": false,
+      "S_min": 2.033435274718724,
+      "S_slack": -0.04061098786956174,
+      "linear_constraint_error": 6.245004513516506e-17,
+      "cone_delta_U": [
+        1.2603850255143989e-17,
+        6.667843360785852e-18,
+        2.949029909160572e-17
+      ],
+      "kkt_condition": 161745.9528753546
+    },
+    {
+      "start": 1.01,
+      "width": 0.04,
+      "degree": 19,
+      "pin_gradient": true,
+      "S_min": 2.035542776116926,
+      "S_slack": -0.04271848926776345,
+      "linear_constraint_error": 7.616129948928574e-13,
+      "cone_delta_U": [
+        -2.8848451405494302e-15,
+        4.6316168131679825e-15,
+        6.875880073642371e-14
+      ],
+      "kkt_condition": 4.713982618450847e+17
+    },
+    {
+      "start": 1.01,
+      "width": 0.04,
+      "degree": 31,
+      "pin_gradient": false,
+      "S_min": 2.026975468930771,
+      "S_slack": -0.0341511820816085,
+      "linear_constraint_error": 5.204170427930421e-17,
+      "cone_delta_U": [
+        -5.041540102057596e-18,
+        2.5153490401663703e-17,
+        3.122502256758253e-17
+      ],
+      "kkt_condition": 16223.054546614423
+    },
+    {
+      "start": 1.01,
+      "width": 0.04,
+      "degree": 31,
+      "pin_gradient": true,
+      "S_min": 2.034467115008979,
+      "S_slack": -0.04164282815981668,
+      "linear_constraint_error": 8.188866251757076e-13,
+      "cone_delta_U": [
+        8.486321454587165e-16,
+        1.9285788244172153e-15,
+        -7.888026169744489e-14
+      ],
+      "kkt_condition": 10872946655133.066
+    },
+    {
+      "start": 1.02,
+      "width": 0.005,
+      "degree": 11,
+      "pin_gradient": false,
+      "S_min": 2.0359935250751855,
+      "S_slack": -0.04316923822602314,
+      "linear_constraint_error": 4.85722573273506e-17,
+      "cone_delta_U": [
+        0.0,
+        0.0,
+        6.938893903907228e-18
+      ],
+      "kkt_condition": 42.95635369538972
+    },
+    {
+      "start": 1.02,
+      "width": 0.005,
+      "degree": 11,
+      "pin_gradient": true,
+      "S_min": 2.0365469044880316,
+      "S_slack": -0.0437226176388692,
+      "linear_constraint_error": 1.1102230246251565e-16,
+      "cone_delta_U": [
+        0.0,
+        0.0,
+        -3.0357660829594124e-18
+      ],
+      "kkt_condition": 43106508726877.22
+    },
+    {
+      "start": 1.02,
+      "width": 0.005,
+      "degree": 19,
+      "pin_gradient": false,
+      "S_min": 2.0291714971164923,
+      "S_slack": -0.0363472102673299,
+      "linear_constraint_error": 4.5102810375396984e-17,
+      "cone_delta_U": [
+        0.0,
+        0.0,
+        6.7220534694101275e-18
+      ],
+      "kkt_condition": 88.51048543523507
+    },
+    {
+      "start": 1.02,
+      "width": 0.005,
+      "degree": 19,
+      "pin_gradient": true,
+      "S_min": 2.0337258766228756,
+      "S_slack": -0.040901589773713276,
+      "linear_constraint_error": 2.7755575615628914e-17,
+      "cone_delta_U": [
+        0.0,
+        0.0,
+        6.071532165918825e-18
+      ],
+      "kkt_condition": 362182712360.15234
+    },
+    {
+      "start": 1.02,
+      "width": 0.005,
+      "degree": 31,
+      "pin_gradient": false,
+      "S_min": 2.0104763604902063,
+      "S_slack": -0.01765207364104393,
+      "linear_constraint_error": 1.249000902703301e-16,
+      "cone_delta_U": [
+        0.0,
+        0.0,
+        -5.551115123125783e-17
+      ],
+      "kkt_condition": 246.7417051623329
+    },
+    {
+      "start": 1.02,
+      "width": 0.005,
+      "degree": 31,
+      "pin_gradient": true,
+      "S_min": 2.0263978755655105,
+      "S_slack": -0.03357358871634819,
+      "linear_constraint_error": 1.6653345369377348e-15,
+      "cone_delta_U": [
+        0.0,
+        0.0,
+        5.204170427930421e-18
+      ],
+      "kkt_condition": 2007089868.0097902
+    },
+    {
+      "start": 1.02,
+      "width": 0.01,
+      "degree": 11,
+      "pin_gradient": false,
+      "S_min": 2.0361445466395884,
+      "S_slack": -0.043320259790426086,
+      "linear_constraint_error": 1.0408340855860843e-17,
+      "cone_delta_U": [
+        0.0,
+        0.0,
+        1.3877787807814457e-17
+      ],
+      "kkt_condition": 46.95744742541846
+    },
+    {
+      "start": 1.02,
+      "width": 0.01,
+      "degree": 11,
+      "pin_gradient": true,
+      "S_min": 2.036552278801043,
+      "S_slack": -0.04372799195188071,
+      "linear_constraint_error": 4.440892098500626e-16,
+      "cone_delta_U": [
+        0.0,
+        0.0,
+        9.107298248878237e-18
+      ],
+      "kkt_condition": 1.0939090282022276e+16
+    },
+    {
+      "start": 1.02,
+      "width": 0.01,
+      "degree": 19,
+      "pin_gradient": false,
+      "S_min": 2.0274761692134886,
+      "S_slack": -0.03465188236432626,
+      "linear_constraint_error": 1.3877787807814457e-17,
+      "cone_delta_U": [
+        0.0,
+        0.0,
+        -1.5178830414797062e-18
+      ],
+      "kkt_condition": 123.24884991313941
+    },
+    {
+      "start": 1.02,
+      "width": 0.01,
+      "degree": 19,
+      "pin_gradient": true,
+      "S_min": 2.03372158082684,
+      "S_slack": -0.040897293977677496,
+      "linear_constraint_error": 4.440892098500626e-16,
+      "cone_delta_U": [
+        0.0,
+        0.0,
+        -2.6020852139652106e-18
+      ],
+      "kkt_condition": 91669358609339.44
+    },
+    {
+      "start": 1.02,
+      "width": 0.01,
+      "degree": 31,
+      "pin_gradient": false,
+      "S_min": 2.011937757080628,
+      "S_slack": -0.0191134702314657,
+      "linear_constraint_error": 2.0816681711721685e-17,
+      "cone_delta_U": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "kkt_condition": 599.0120067308899
+    },
+    {
+      "start": 1.02,
+      "width": 0.01,
+      "degree": 31,
+      "pin_gradient": true,
+      "S_min": 2.0263749064004224,
+      "S_slack": -0.03355061955126004,
+      "linear_constraint_error": 2.0469737016526324e-16,
+      "cone_delta_U": [
+        0.0,
+        0.0,
+        4.7704895589362195e-17
+      ],
+      "kkt_condition": 489833934777.8502
+    },
+    {
+      "start": 1.02,
+      "width": 0.02,
+      "degree": 11,
+      "pin_gradient": false,
+      "S_min": 2.0362230525210228,
+      "S_slack": -0.043398765671860406,
+      "linear_constraint_error": 2.7755575615628914e-17,
+      "cone_delta_U": [
+        0.0,
+        0.0,
+        1.5612511283791264e-17
+      ],
+      "kkt_condition": 56.13160391985793
+    },
+    {
+      "start": 1.02,
+      "width": 0.02,
+      "degree": 11,
+      "pin_gradient": true,
+      "S_min": 2.0365632745629396,
+      "S_slack": -0.043738987713777266,
+      "linear_constraint_error": 8.881784197001252e-16,
+      "cone_delta_U": [
+        0.0,
+        0.0,
+        -4.2500725161431774e-17
+      ],
+      "kkt_condition": 1.125162875648289e+19
+    },
+    {
+      "start": 1.02,
+      "width": 0.02,
+      "degree": 19,
+      "pin_gradient": false,
+      "S_min": 2.0261021170794336,
+      "S_slack": -0.0332778302302712,
+      "linear_constraint_error": 8.326672684688674e-17,
+      "cone_delta_U": [
+        0.0,
+        0.0,
+        6.071532165918825e-18
+      ],
+      "kkt_condition": 234.3573130409881
+    },
+    {
+      "start": 1.02,
+      "width": 0.02,
+      "degree": 19,
+      "pin_gradient": true,
+      "S_min": 2.0337169815809464,
+      "S_slack": -0.04089269473178403,
+      "linear_constraint_error": 5.585809592645319e-16,
+      "cone_delta_U": [
+        0.0,
+        0.0,
+        -5.607493636095029e-16
+      ],
+      "kkt_condition": 3.957711730830497e+16
+    },
+    {
+      "start": 1.02,
+      "width": 0.02,
+      "degree": 31,
+      "pin_gradient": false,
+      "S_min": 2.003017106230745,
+      "S_slack": -0.010192819381582563,
+      "linear_constraint_error": 1.734723475976807e-17,
+      "cone_delta_U": [
+        0.0,
+        0.0,
+        7.37257477290143e-18
+      ],
+      "kkt_condition": 2292.6432252388927
+    },
+    {
+      "start": 1.02,
+      "width": 0.02,
+      "degree": 31,
+      "pin_gradient": true,
+      "S_min": 2.0263559308409906,
+      "S_slack": -0.033531643991828286,
+      "linear_constraint_error": 2.6645352591003757e-15,
+      "cone_delta_U": [
+        0.0,
+        0.0,
+        1.5959455978986625e-16
+      ],
+      "kkt_condition": 190836430678311.78
+    },
+    {
+      "start": 1.02,
+      "width": 0.04,
+      "degree": 11,
+      "pin_gradient": false,
+      "S_min": 2.0358547311754096,
+      "S_slack": -0.04303044432624725,
+      "linear_constraint_error": 1.3877787807814457e-17,
+      "cone_delta_U": [
+        0.0,
+        0.0,
+        -3.469446951953614e-18
+      ],
+      "kkt_condition": 91.49621401016869
+    },
+    {
+      "start": 1.02,
+      "width": 0.04,
+      "degree": 11,
+      "pin_gradient": true,
+      "S_min": 2.0365850065784423,
+      "S_slack": -0.04376071972927997,
+      "linear_constraint_error": 4.440892098500626e-16,
+      "cone_delta_U": [
+        0.0,
+        0.0,
+        -3.821812658011403e-18
+      ],
+      "kkt_condition": 6.139586087063669e+20
+    },
+    {
+      "start": 1.02,
+      "width": 0.04,
+      "degree": 19,
+      "pin_gradient": false,
+      "S_min": 2.0280657053725504,
+      "S_slack": -0.035241418523388024,
+      "linear_constraint_error": 1.0408340855860843e-17,
+      "cone_delta_U": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "kkt_condition": 787.387732696993
+    },
+    {
+      "start": 1.02,
+      "width": 0.04,
+      "degree": 19,
+      "pin_gradient": true,
+      "S_min": 2.033687802215735,
+      "S_slack": -0.040863515366572845,
+      "linear_constraint_error": 5.551115123125783e-16,
+      "cone_delta_U": [
+        0.0,
+        0.0,
+        -5.637851296924623e-18
+      ],
+      "kkt_condition": 2.1295916929652283e+18
+    },
+    {
+      "start": 1.02,
+      "width": 0.04,
+      "degree": 31,
+      "pin_gradient": false,
+      "S_min": 2.0058499266716643,
+      "S_slack": -0.013025639822501933,
+      "linear_constraint_error": 2.0816681711721685e-17,
+      "cone_delta_U": [
+        0.0,
+        0.0,
+        -1.474514954580286e-17
+      ],
+      "kkt_condition": 16763.6381001113
+    },
+    {
+      "start": 1.02,
+      "width": 0.04,
+      "degree": 31,
+      "pin_gradient": true,
+      "S_min": 2.025868513394423,
+      "S_slack": -0.033044226545260624,
+      "linear_constraint_error": 8.881784197001252e-16,
+      "cone_delta_U": [
+        0.0,
+        0.0,
+        -5.854691731421724e-18
+      ],
+      "kkt_condition": 8870057344339569.0
+    }
+  ],
+  "scope": "Fixed-slice quadratic S capacity with sampled cone U values and optionally U_X pinned. No full cone stress primitive or PDE residual is certified.",
+  "accepted": false
+}

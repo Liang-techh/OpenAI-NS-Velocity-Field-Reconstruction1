@@ -1,0 +1,910 @@
+{
+  "source": "delayed_remote_swirl_floor_capacity.json",
+  "eta": 0.3,
+  "relative_E_floor": 0.05,
+  "end": 3.5,
+  "rows": [
+    {
+      "start": 1.0,
+      "width": 0.005,
+      "degree": 11,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9318902719190785,
+      "target_minus_S_min": 0.06093401493008388,
+      "M_J_defect": [
+        -6.938893903907228e-18,
+        1.942890293094024e-16
+      ],
+      "polynomial_condition": 4.9668173792456605,
+      "constraint_condition": 10.152726807572952,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.0,
+      "width": 0.005,
+      "degree": 19,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9241830507657087,
+      "target_minus_S_min": 0.06864123608345363,
+      "M_J_defect": [
+        8.326672684688674e-17,
+        1.6653345369377348e-16
+      ],
+      "polynomial_condition": 7.001925329524998,
+      "constraint_condition": 6.720069010327878,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.0,
+      "width": 0.005,
+      "degree": 31,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9152325848022511,
+      "target_minus_S_min": 0.07759170204691124,
+      "M_J_defect": [
+        9.020562075079397e-17,
+        3.3306690738754696e-16
+      ],
+      "polynomial_condition": 11.582949391924462,
+      "constraint_condition": 5.651454351923604,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.0,
+      "width": 0.01,
+      "degree": 11,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9366724580463504,
+      "target_minus_S_min": 0.056151828802812,
+      "M_J_defect": [
+        4.163336342344337e-17,
+        0.0
+      ],
+      "polynomial_condition": 5.225392708681046,
+      "constraint_condition": 10.197514581647805,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.0,
+      "width": 0.01,
+      "degree": 19,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9288655193913673,
+      "target_minus_S_min": 0.06395876745779505,
+      "M_J_defect": [
+        5.551115123125783e-17,
+        -1.1102230246251565e-16
+      ],
+      "polynomial_condition": 8.358517351237538,
+      "constraint_condition": 6.732602334661009,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.0,
+      "width": 0.01,
+      "degree": 31,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9197257601594564,
+      "target_minus_S_min": 0.07309852668970596,
+      "M_J_defect": [
+        2.636779683484747e-16,
+        -5.551115123125783e-17
+      ],
+      "polynomial_condition": 18.048227828661933,
+      "constraint_condition": 5.645864292846266,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.0,
+      "width": 0.02,
+      "degree": 11,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9479784988620785,
+      "target_minus_S_min": 0.04484578798708383,
+      "M_J_defect": [
+        -1.5959455978986625e-16,
+        5.551115123125783e-17
+      ],
+      "polynomial_condition": 5.92388842299176,
+      "constraint_condition": 10.292768065295189,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.0,
+      "width": 0.02,
+      "degree": 19,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9363945214061826,
+      "target_minus_S_min": 0.05642976544297973,
+      "M_J_defect": [
+        -2.0816681711721685e-16,
+        -2.7755575615628914e-17
+      ],
+      "polynomial_condition": 12.018578399764168,
+      "constraint_condition": 6.748756516012749,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.0,
+      "width": 0.02,
+      "degree": 31,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9267404060687339,
+      "target_minus_S_min": 0.06608388078042848,
+      "M_J_defect": [
+        -2.914335439641036e-16,
+        -1.1102230246251565e-16
+      ],
+      "polynomial_condition": 37.333107486265874,
+      "constraint_condition": 5.637955390920601,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.0,
+      "width": 0.04,
+      "degree": 11,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9757517495469696,
+      "target_minus_S_min": 0.017072537302192714,
+      "M_J_defect": [
+        8.326672684688674e-17,
+        2.498001805406602e-16
+      ],
+      "polynomial_condition": 7.785934377862402,
+      "constraint_condition": 10.497733254891884,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.0,
+      "width": 0.04,
+      "degree": 19,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9461395346956838,
+      "target_minus_S_min": 0.04668475215347856,
+      "M_J_defect": [
+        1.3877787807814457e-16,
+        1.6653345369377348e-16
+      ],
+      "polynomial_condition": 22.630176029346583,
+      "constraint_condition": 6.729375274015504,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.0,
+      "width": 0.04,
+      "degree": 31,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9356748120271199,
+      "target_minus_S_min": 0.05714947482204247,
+      "M_J_defect": [
+        2.1510571102112408e-16,
+        0.0
+      ],
+      "polynomial_condition": 102.94490014860065,
+      "constraint_condition": 5.636708735589185,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.01,
+      "width": 0.005,
+      "degree": 11,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9631979870649547,
+      "target_minus_S_min": 0.02962629978420761,
+      "M_J_defect": [
+        9.020562075079397e-17,
+        1.6653345369377348e-16
+      ],
+      "polynomial_condition": 4.967691053654287,
+      "constraint_condition": 10.45767761130269,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.01,
+      "width": 0.005,
+      "degree": 19,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9521340742646085,
+      "target_minus_S_min": 0.04069021258455385,
+      "M_J_defect": [
+        1.3877787807814457e-16,
+        -5.551115123125783e-17
+      ],
+      "polynomial_condition": 7.006533587927764,
+      "constraint_condition": 6.802128360856868,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.01,
+      "width": 0.005,
+      "degree": 31,
+      "protected_cone_unchanged": false,
+      "S_min": 1.94493454591544,
+      "target_minus_S_min": 0.04788974093372245,
+      "M_J_defect": [
+        -4.163336342344337e-17,
+        0.0
+      ],
+      "polynomial_condition": 11.604483059502584,
+      "constraint_condition": 5.6792092134268755,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.01,
+      "width": 0.01,
+      "degree": 11,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9699254127699195,
+      "target_minus_S_min": 0.022898874079242848,
+      "M_J_defect": [
+        -1.249000902703301e-16,
+        5.551115123125783e-17
+      ],
+      "polynomial_condition": 5.2277673884641365,
+      "constraint_condition": 10.50539861906431,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.01,
+      "width": 0.01,
+      "degree": 19,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9562614457982654,
+      "target_minus_S_min": 0.03656284105089691,
+      "M_J_defect": [
+        -8.326672684688674e-17,
+        1.6653345369377348e-16
+      ],
+      "polynomial_condition": 8.370857059540976,
+      "constraint_condition": 6.809810638206418,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.01,
+      "width": 0.01,
+      "degree": 31,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9499875624564051,
+      "target_minus_S_min": 0.04283672439275721,
+      "M_J_defect": [
+        -4.163336342344337e-17,
+        -5.551115123125783e-17
+      ],
+      "polynomial_condition": 18.1089283466325,
+      "constraint_condition": 5.678846724864008,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.01,
+      "width": 0.02,
+      "degree": 11,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9841586043052546,
+      "target_minus_S_min": 0.00866568254390776,
+      "M_J_defect": [
+        4.85722573273506e-17,
+        1.1102230246251565e-16
+      ],
+      "polynomial_condition": 5.930236086728119,
+      "constraint_condition": 10.598076514032954,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.01,
+      "width": 0.02,
+      "degree": 19,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9629469098639993,
+      "target_minus_S_min": 0.029877376985163018,
+      "M_J_defect": [
+        1.0408340855860843e-16,
+        -1.6653345369377348e-16
+      ],
+      "polynomial_condition": 12.05254688305708,
+      "constraint_condition": 6.8078696558311265,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.01,
+      "width": 0.02,
+      "degree": 31,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9577439316136473,
+      "target_minus_S_min": 0.035080355235515004,
+      "M_J_defect": [
+        2.7755575615628914e-17,
+        -8.326672684688674e-17
+      ],
+      "polynomial_condition": 37.5218809266327,
+      "constraint_condition": 5.680592653980541,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.01,
+      "width": 0.04,
+      "degree": 11,
+      "protected_cone_unchanged": false,
+      "S_min": 2.0111338733997597,
+      "target_minus_S_min": -0.018309586550597334,
+      "M_J_defect": [
+        -3.3306690738754696e-16,
+        0.0
+      ],
+      "polynomial_condition": 7.803018816730704,
+      "constraint_condition": 10.732189307500098,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.01,
+      "width": 0.04,
+      "degree": 19,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9728681879703895,
+      "target_minus_S_min": 0.01995609887877281,
+      "M_J_defect": [
+        -1.8041124150158794e-16,
+        -3.608224830031759e-16
+      ],
+      "polynomial_condition": 22.732717008043362,
+      "constraint_condition": 6.749420444439807,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.01,
+      "width": 0.04,
+      "degree": 31,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9666986480695907,
+      "target_minus_S_min": 0.026125638779571636,
+      "M_J_defect": [
+        -5.273559366969494e-16,
+        0.0
+      ],
+      "polynomial_condition": 103.63947478744643,
+      "constraint_condition": 5.688355953421012,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.02,
+      "width": 0.005,
+      "degree": 11,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9972321322814928,
+      "target_minus_S_min": -0.004407845432330415,
+      "M_J_defect": [
+        2.983724378680108e-16,
+        -8.326672684688674e-17
+      ],
+      "polynomial_condition": 4.9685733977421735,
+      "constraint_condition": 10.727445926579685,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.02,
+      "width": 0.005,
+      "degree": 19,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9789692340399965,
+      "target_minus_S_min": 0.01385505280916588,
+      "M_J_defect": [
+        2.498001805406602e-16,
+        0.0
+      ],
+      "polynomial_condition": 7.011187923049919,
+      "constraint_condition": 6.878560907339362,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.02,
+      "width": 0.005,
+      "degree": 31,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9744675613390705,
+      "target_minus_S_min": 0.01835672551009182,
+      "M_J_defect": [
+        2.7755575615628914e-16,
+        0.0
+      ],
+      "polynomial_condition": 11.626227553554154,
+      "constraint_condition": 5.7241933345816385,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.02,
+      "width": 0.01,
+      "degree": 11,
+      "protected_cone_unchanged": false,
+      "S_min": 2.0039755084016955,
+      "target_minus_S_min": -0.01115122155253312,
+      "M_J_defect": [
+        -4.163336342344337e-17,
+        0.0
+      ],
+      "polynomial_condition": 5.230165509031517,
+      "constraint_condition": 10.756968717313889,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.02,
+      "width": 0.01,
+      "degree": 19,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9823050385657708,
+      "target_minus_S_min": 0.010519248283391569,
+      "M_J_defect": [
+        8.326672684688674e-17,
+        1.1102230246251565e-16
+      ],
+      "polynomial_condition": 8.383317147064018,
+      "constraint_condition": 6.872909370382907,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.02,
+      "width": 0.01,
+      "degree": 31,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9792328512885027,
+      "target_minus_S_min": 0.01359143556065967,
+      "M_J_defect": [
+        -3.469446951953614e-17,
+        0.0
+      ],
+      "polynomial_condition": 18.17025714871747,
+      "constraint_condition": 5.728156189731513,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.02,
+      "width": 0.02,
+      "degree": 11,
+      "protected_cone_unchanged": false,
+      "S_min": 2.0162329807283714,
+      "target_minus_S_min": -0.023408693879209075,
+      "M_J_defect": [
+        3.469446951953614e-17,
+        1.1102230246251565e-16
+      ],
+      "polynomial_condition": 5.936645306936855,
+      "constraint_condition": 10.78842694022195,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.02,
+      "width": 0.02,
+      "degree": 19,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9878747041383107,
+      "target_minus_S_min": 0.004949582710851663,
+      "M_J_defect": [
+        1.942890293094024e-16,
+        5.551115123125783e-17
+      ],
+      "polynomial_condition": 12.086861219480472,
+      "constraint_condition": 6.844768068929671,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.02,
+      "width": 0.02,
+      "degree": 31,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9860382526879654,
+      "target_minus_S_min": 0.006786034161196941,
+      "M_J_defect": [
+        -7.632783294297951e-17,
+        -8.326672684688674e-17
+      ],
+      "polynomial_condition": 37.71273140966903,
+      "constraint_condition": 5.735395704889832,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.02,
+      "width": 0.04,
+      "degree": 11,
+      "protected_cone_unchanged": false,
+      "S_min": 2.0320932623087358,
+      "target_minus_S_min": -0.03926897545957342,
+      "M_J_defect": [
+        2.220446049250313e-16,
+        0.0
+      ],
+      "polynomial_condition": 7.820273987265482,
+      "constraint_condition": 10.656379709878928,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.02,
+      "width": 0.04,
+      "degree": 19,
+      "protected_cone_unchanged": false,
+      "S_min": 1.997371635642557,
+      "target_minus_S_min": -0.00454734879339469,
+      "M_J_defect": [
+        4.85722573273506e-17,
+        8.326672684688674e-17
+      ],
+      "polynomial_condition": 22.83636310607571,
+      "constraint_condition": 6.7760232907306355,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.02,
+      "width": 0.04,
+      "degree": 31,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9931720400233521,
+      "target_minus_S_min": -0.0003477531741897799,
+      "M_J_defect": [
+        1.6653345369377348e-16,
+        -3.3306690738754696e-16
+      ],
+      "polynomial_condition": 104.34262053205947,
+      "constraint_condition": 5.746897439266097,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.025,
+      "width": 0.005,
+      "degree": 11,
+      "protected_cone_unchanged": false,
+      "S_min": 2.012215051293968,
+      "target_minus_S_min": -0.019390764444805697,
+      "M_J_defect": [
+        -1.457167719820518e-16,
+        -2.498001805406602e-16
+      ],
+      "polynomial_condition": 4.969017850643592,
+      "constraint_condition": 10.813335361015774,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.025,
+      "width": 0.005,
+      "degree": 19,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9907530524407357,
+      "target_minus_S_min": 0.0020712344084266032,
+      "M_J_defect": [
+        0.0,
+        -1.6653345369377348e-16
+      ],
+      "polynomial_condition": 7.013532717438042,
+      "constraint_condition": 6.906431334258485,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.025,
+      "width": 0.005,
+      "degree": 31,
+      "protected_cone_unchanged": false,
+      "S_min": 1.987514992716819,
+      "target_minus_S_min": 0.0053092941323433784,
+      "M_J_defect": [
+        1.8041124150158794e-16,
+        -1.942890293094024e-16
+      ],
+      "polynomial_condition": 11.637181332835317,
+      "constraint_condition": 5.7496234619424715,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.025,
+      "width": 0.01,
+      "degree": 11,
+      "protected_cone_unchanged": false,
+      "S_min": 2.0179398267197133,
+      "target_minus_S_min": -0.02511553987055093,
+      "M_J_defect": [
+        1.3877787807814457e-16,
+        1.6653345369377348e-16
+      ],
+      "polynomial_condition": 5.2313734445068905,
+      "constraint_condition": 10.818381597851372,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.025,
+      "width": 0.01,
+      "degree": 19,
+      "protected_cone_unchanged": false,
+      "S_min": 1.993622426205246,
+      "target_minus_S_min": -0.0007981393560836381,
+      "M_J_defect": [
+        1.5959455978986625e-16,
+        -2.7755575615628914e-17
+      ],
+      "polynomial_condition": 8.389592807007046,
+      "constraint_condition": 6.8939160087678495,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.025,
+      "width": 0.01,
+      "degree": 31,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9917046396871663,
+      "target_minus_S_min": 0.0011196471619960846,
+      "M_J_defect": [
+        1.5265566588595902e-16,
+        5.551115123125783e-17
+      ],
+      "polynomial_condition": 18.201160024095135,
+      "constraint_condition": 5.754754209819513,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.025,
+      "width": 0.02,
+      "degree": 11,
+      "protected_cone_unchanged": false,
+      "S_min": 2.02726112378257,
+      "target_minus_S_min": -0.03443683693340782,
+      "M_J_defect": [
+        1.3183898417423734e-16,
+        -1.6653345369377348e-16
+      ],
+      "polynomial_condition": 5.939873257740619,
+      "constraint_condition": 10.779721115528083,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.025,
+      "width": 0.02,
+      "degree": 19,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9986266337414904,
+      "target_minus_S_min": -0.0058023468923280586,
+      "M_J_defect": [
+        0.0,
+        -1.6653345369377348e-16
+      ],
+      "polynomial_condition": 12.104149643448284,
+      "constraint_condition": 6.859958778906038,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.025,
+      "width": 0.02,
+      "degree": 31,
+      "protected_cone_unchanged": false,
+      "S_min": 1.9974914630406604,
+      "target_minus_S_min": -0.004667176191498035,
+      "M_J_defect": [
+        1.249000902703301e-16,
+        0.0
+      ],
+      "polynomial_condition": 37.80894564417896,
+      "constraint_condition": 5.763921132911108,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.025,
+      "width": 0.04,
+      "degree": 11,
+      "protected_cone_unchanged": false,
+      "S_min": 2.0352771554090623,
+      "target_minus_S_min": -0.04245286855989994,
+      "M_J_defect": [
+        8.326672684688674e-17,
+        -8.326672684688674e-17
+      ],
+      "polynomial_condition": 7.828966352318172,
+      "constraint_condition": 10.436457871475465,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.025,
+      "width": 0.04,
+      "degree": 19,
+      "protected_cone_unchanged": false,
+      "S_min": 2.007199806561566,
+      "target_minus_S_min": -0.014375519712403584,
+      "M_J_defect": [
+        -1.3183898417423734e-16,
+        -5.551115123125783e-17
+      ],
+      "polynomial_condition": 22.888605826071046,
+      "constraint_condition": 6.80165495143029,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.025,
+      "width": 0.04,
+      "degree": 31,
+      "protected_cone_unchanged": false,
+      "S_min": 2.0033259596264745,
+      "target_minus_S_min": -0.010501672777312177,
+      "M_J_defect": [
+        -6.245004513516506e-17,
+        5.551115123125783e-17
+      ],
+      "polynomial_condition": 104.69745313553517,
+      "constraint_condition": 5.776412302640411,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.03,
+      "width": 0.005,
+      "degree": 11,
+      "protected_cone_unchanged": true,
+      "S_min": 2.0241018028467277,
+      "target_minus_S_min": -0.03127751599756534,
+      "M_J_defect": [
+        -3.885780586188048e-16,
+        -1.6653345369377348e-16
+      ],
+      "polynomial_condition": 4.969464423144894,
+      "constraint_condition": 10.835888340501901,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.03,
+      "width": 0.005,
+      "degree": 19,
+      "protected_cone_unchanged": true,
+      "S_min": 2.0008985708287796,
+      "target_minus_S_min": -0.008074283979617292,
+      "M_J_defect": [
+        -6.245004513516506e-17,
+        -5.551115123125783e-17
+      ],
+      "polynomial_condition": 7.015888944177028,
+      "constraint_condition": 6.927863202971593,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.03,
+      "width": 0.005,
+      "degree": 31,
+      "protected_cone_unchanged": true,
+      "S_min": 1.9986152741339158,
+      "target_minus_S_min": -0.005790987284753468,
+      "M_J_defect": [
+        -6.245004513516506e-17,
+        1.6653345369377348e-16
+      ],
+      "polynomial_condition": 11.648188538742058,
+      "constraint_condition": 5.7754340660298205,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.03,
+      "width": 0.01,
+      "degree": 11,
+      "protected_cone_unchanged": true,
+      "S_min": 2.028227151809869,
+      "target_minus_S_min": -0.03540286496070655,
+      "M_J_defect": [
+        -1.3877787807814457e-17,
+        2.498001805406602e-16
+      ],
+      "polynomial_condition": 5.2325873545136075,
+      "constraint_condition": 10.801108182058359,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.03,
+      "width": 0.01,
+      "degree": 19,
+      "protected_cone_unchanged": true,
+      "S_min": 2.0033495297934962,
+      "target_minus_S_min": -0.010525242944333879,
+      "M_J_defect": [
+        -1.457167719820518e-16,
+        1.3877787807814457e-16
+      ],
+      "polynomial_condition": 8.395899171033724,
+      "constraint_condition": 6.912304320725554,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.03,
+      "width": 0.01,
+      "degree": 31,
+      "protected_cone_unchanged": true,
+      "S_min": 2.002063625334255,
+      "target_minus_S_min": -0.00923933848509284,
+      "M_J_defect": [
+        6.245004513516506e-17,
+        0.0
+      ],
+      "polynomial_condition": 18.232223452982865,
+      "constraint_condition": 5.781517235693847,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.03,
+      "width": 0.02,
+      "degree": 11,
+      "protected_cone_unchanged": true,
+      "S_min": 2.033694118636651,
+      "target_minus_S_min": -0.040869831787488486,
+      "M_J_defect": [
+        -3.469446951953614e-17,
+        1.1102230246251565e-16
+      ],
+      "polynomial_condition": 5.943116830196878,
+      "constraint_condition": 10.660237580011273,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.03,
+      "width": 0.02,
+      "degree": 19,
+      "protected_cone_unchanged": true,
+      "S_min": 2.0077083519148653,
+      "target_minus_S_min": -0.014884065065702945,
+      "M_J_defect": [
+        5.551115123125783e-17,
+        -2.220446049250313e-16
+      ],
+      "polynomial_condition": 12.121526325263508,
+      "constraint_condition": 6.879864848429117,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.03,
+      "width": 0.02,
+      "degree": 31,
+      "protected_cone_unchanged": true,
+      "S_min": 2.006640555370965,
+      "target_minus_S_min": -0.013816268521802844,
+      "M_J_defect": [
+        4.163336342344337e-17,
+        -5.551115123125783e-16
+      ],
+      "polynomial_condition": 37.90569110377329,
+      "constraint_condition": 5.791748069727339,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.03,
+      "width": 0.04,
+      "degree": 11,
+      "protected_cone_unchanged": true,
+      "S_min": 2.03439557240414,
+      "target_minus_S_min": -0.04157128555497769,
+      "M_J_defect": [
+        -1.734723475976807e-16,
+        8.326672684688674e-17
+      ],
+      "polynomial_condition": 7.837702252995931,
+      "constraint_condition": 10.0990914162608,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.03,
+      "width": 0.04,
+      "degree": 19,
+      "protected_cone_unchanged": true,
+      "S_min": 2.0146103116838807,
+      "target_minus_S_min": -0.021786024834718365,
+      "M_J_defect": [
+        -2.8449465006019636e-16,
+        -1.3877787807814457e-16
+      ],
+      "polynomial_condition": 22.941131132646788,
+      "constraint_condition": 6.833210245036989,
+      "max_abs_U": 4.625310932097059
+    },
+    {
+      "start": 1.03,
+      "width": 0.04,
+      "degree": 31,
+      "protected_cone_unchanged": true,
+      "S_min": 2.010951396626259,
+      "target_minus_S_min": -0.01812710977709653,
+      "M_J_defect": [
+        -1.6653345369377348e-16,
+        -1.6653345369377348e-16
+      ],
+      "polynomial_condition": 105.05448368624464,
+      "constraint_condition": 5.801264299816627,
+      "max_abs_U": 4.625310932097059
+    }
+  ],
+  "scope": "Fixed-slice M/J KKT and S capacity for tapered polynomial U corrections at varied onset. Any start below 1.03 perturbs the existing sampled inner stress cone and requires full cone and momentum re-evaluation.",
+  "accepted": false
+}
