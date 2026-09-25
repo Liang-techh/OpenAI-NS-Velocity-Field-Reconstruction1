@@ -141,6 +141,18 @@ pulse paths, quantify spatial derivatives and endpoint cutoff errors,
 then build its exact-curl velocity and normal pressure and measure
 the complete momentum on the two scales. The similar normalized
 inverse map alone is not a residual contraction.
+The five-node inverse was reconstructed into a compact **exact-curl**
+field and screened with full nonlinear momentum at `k=11,19`.
+Sparse normal-pressure interpolation made the held-out maxima
+`15.57×/15.16×` the frozen wave even after physical-coefficient
+regularization. Fitting compact pressure gradients to the full
+momentum reduced those factors to `3.663×/3.666×`, but the peak is
+then viscosity-dominated (`1.82e10/6.73e13`); see
+`ST073_INVERSE_CURL_RECONSTRUCTION.md`. The next wave design must
+control spatial derivatives of the amplitude and curl/cutoff
+remainders on a wider axial cone, not just match pointwise inverse
+values or add pressure degrees of freedom. Require direct complete
+momentum reduction at both scales before extending the recursion.
 Use those directions as a conditioning prototype, not as the paper's five
 leading-profile moments or a recursive correction.
 The next Stage-1 inputs are therefore the actual coefficient-family

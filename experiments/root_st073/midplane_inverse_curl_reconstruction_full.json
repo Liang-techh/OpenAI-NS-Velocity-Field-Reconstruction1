@@ -1,0 +1,120 @@
+{
+  "source": "Exact-curl midpoint reconstruction from five-node principal inverse",
+  "full_polynomial": true,
+  "heldout_grid": [
+    [
+      -0.3,
+      -0.3
+    ],
+    [
+      -0.3,
+      0.0
+    ],
+    [
+      -0.3,
+      0.3
+    ],
+    [
+      0.0,
+      -0.3
+    ],
+    [
+      0.0,
+      0.3
+    ],
+    [
+      0.3,
+      -0.3
+    ],
+    [
+      0.3,
+      0.0
+    ],
+    [
+      0.3,
+      0.3
+    ]
+  ],
+  "heldout_angles": 16,
+  "scales": [
+    {
+      "k": 11,
+      "mode_fits": [
+        {
+          "angular_mode": 1,
+          "amplitude_relative_error": 0.013711757827068221,
+          "derivative_relative_error": 0.013589213578299038,
+          "pressure_relative_error": 1.5427060194605676e-08,
+          "max_target_amplitude": 169.72222497845098
+        },
+        {
+          "angular_mode": 4,
+          "amplitude_relative_error": 0.0026304587961177013,
+          "derivative_relative_error": 0.002612622228137259,
+          "pressure_relative_error": 1.5476637815686832e-08,
+          "max_target_amplitude": 42.68031696597718
+        }
+      ],
+      "train_frozen": {
+        "max": 3897712401.3841834,
+        "rms": 1688332079.1219897
+      },
+      "train_reconstructed": {
+        "max": 1.282260348757166e+32,
+        "rms": 3.941958271279615e+31
+      },
+      "heldout_frozen": {
+        "max": 5931872747.502562,
+        "rms": 2704489265.322317
+      },
+      "heldout_reconstructed": {
+        "max": 3.0329021245782023e+53,
+        "rms": 1.3224696889276318e+53
+      },
+      "heldout_max_ratio": 5.112891415034342e+43,
+      "heldout_rms_ratio": 4.889905483762465e+43
+    },
+    {
+      "k": 19,
+      "mode_fits": [
+        {
+          "angular_mode": 1,
+          "amplitude_relative_error": 0.013186402990903304,
+          "derivative_relative_error": 0.013065189057779751,
+          "pressure_relative_error": 1.5427439707811675e-08,
+          "max_target_amplitude": 2589.4873930621616
+        },
+        {
+          "angular_mode": 4,
+          "amplitude_relative_error": 0.002494450804036412,
+          "derivative_relative_error": 0.0024766675874207567,
+          "pressure_relative_error": 1.5479194350962478e-08,
+          "max_target_amplitude": 668.288305557665
+        }
+      ],
+      "train_frozen": {
+        "max": 14445477901069.738,
+        "rms": 6264029246327.765
+      },
+      "train_reconstructed": {
+        "max": 5.710390306542559e+37,
+        "rms": 1.4938384869155546e+37
+      },
+      "heldout_frozen": {
+        "max": 21953593868604.63,
+        "rms": 10001654393584.166
+      },
+      "heldout_reconstructed": {
+        "max": 1.7589462051046704e+59,
+        "rms": 7.967754850109464e+58
+      },
+      "heldout_max_ratio": 8.012110525648843e+45,
+      "heldout_rms_ratio": 7.966436887901863e+45
+    }
+  ],
+  "scope": "Compact spatial exact-curl polynomial reconstruction of inverse midpoint amplitudes and their frozen-principal physical-time derivatives; pressure either five-node normal-value interpolation or separate full-momentum gradient projection. Direct full Cartesian momentum at center time only. No time endpoint cutoff, moving normal, full mean/stress/moment cycle, uniform spatial residual, or scale recursion.",
+  "accepted": false,
+  "scale_recursion_established": false,
+  "pressure_method": "five-node normal-pressure value interpolation",
+  "pressure_training_nodes": 5
+}
