@@ -46,6 +46,11 @@ the `k=22` holdout still grows with roughly the same `2^1.49` per-step
 rate. See `ST073_NEXT_SCALE_TRANSFER.md`. Further moment-only scale knots
 are therefore insufficient: couple the wave-amplitude inverse, stress
 update, compact mean correction, and moment repair in one residual cycle.
+The late-wave explicit coefficient march is locally effective at `dt=1e-9`
+but unstable at `dt=1e-8` on direct interior-time momentum; see
+`ST073_WAVE_STEP_HORIZON.md`. Implement a supported amplitude inverse
+or stable interval solve over an appreciable part of the pulse, with
+full residual checks between collocation nodes, before scale transfer.
 Use those directions as a conditioning prototype, not as the paper's five
 leading-profile moments or a recursive correction.
 The next Stage-1 inputs are therefore the actual coefficient-family

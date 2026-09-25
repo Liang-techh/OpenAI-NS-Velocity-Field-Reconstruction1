@@ -1,5 +1,6 @@
 """Two spatial wave/mean slope stages and actual interval midpoint checks."""
 
+import argparse
 import json
 
 import numpy as np
@@ -27,7 +28,7 @@ def encode(harmonic, mean, tau):
         mean_slope_coefficients=mean.tolist())
 
 
-def run():
+def run(dt=None, output_name=None):
     inner, fields = build_fields()
     fitted = json.loads((ROOT / "separated_moment_three_knots.json").read_text())
     base = SeparatedMomentModes(
@@ -43,9 +44,35 @@ def run():
         axial_halfwidth=1.0e-4, time_halfwidth=0.04 * tau0,
         min_tau=0.5 * 2.0**-20)
     previous = json.loads((ROOT / "adaptive_bridge_wave_spatial_slope.json").read_text())
-    dt = float(previous["time_step"])
+    reference_dt = float(previous["time_step"])
+    dt = reference_dt if dt is None else float(dt)
+    if dt <= 0 or dt >= wave.time_halfwidth / 2:
+        raise ValueError("Time step must be positive and below half the wave time half-width")
     amplitude = float(previous["wave_amplitude"])
-    stage0 = previous["stage"]
+    frozen0 = FrozenPotentialField(
+        base, wave, amplitude,
+        [np.zeros(27, complex) for _ in wave.waves], np.zeros(18))
+    angles = np.arange(16) * 2.0 * np.pi / 16.0
+    train_axis = (-0.6, -0.2, 0.2, 0.6)
+    holdout_axis = (-0.45, 0.0, 0.45)
+    train_grid = [(x, y) for x in train_axis for y in train_axis]
+    holdout_grid = [(x, y) for x in holdout_axis for y in holdout_axis]
+    time_min = 0.5 * 2.0**-20
+    if dt == reference_dt:
+        stage0 = previous["stage"]
+        projected_train0 = previous["projected_train"]
+        projected_holdout0 = previous["projected_holdout"]
+    else:
+        train0 = sample_residual(frozen0, wave, tau0, train_grid, angles,
+                                 time_step=dt, time_min=time_min)
+        holdout0 = sample_residual(frozen0, wave, tau0, holdout_grid, angles,
+                                   time_step=dt, time_min=time_min)
+        harmonic0, mean0 = fit_slope(train0, wave, tau0, angles)
+        stage0 = encode(harmonic0, mean0, tau0)
+        projected_train0 = metrics(train0, wave, tau0, angles,
+                                   harmonic0, mean0)
+        projected_holdout0 = metrics(holdout0, wave, tau0, angles,
+                                     harmonic0, mean0)
     first_slopes = complex_rows(stage0["harmonic_slope_coefficients"])
     first_mean = np.asarray(stage0["mean_slope_coefficients"])
     initial_harmonic = [dt * row[:27] for row in first_slopes]
@@ -53,12 +80,6 @@ def run():
     tau1 = tau0 + dt
     frozen1 = FrozenPotentialField(base, wave, amplitude,
                                    initial_harmonic, initial_mean)
-    angles = np.arange(16) * 2.0 * np.pi / 16.0
-    train_axis = (-0.6, -0.2, 0.2, 0.6)
-    holdout_axis = (-0.45, 0.0, 0.45)
-    train_grid = [(x, y) for x in train_axis for y in train_axis]
-    holdout_grid = [(x, y) for x in holdout_axis for y in holdout_axis]
-    time_min = 0.5 * 2.0**-20
     train_rows = sample_residual(
         frozen1, wave, tau1, train_grid, angles,
         time_step=dt, time_min=time_min)
@@ -76,9 +97,6 @@ def run():
                                              stage0, stage1, dt)
     interval1_linear = FirstIntervalField(base, wave, amplitude, stage1,
                                            initial_harmonic, initial_mean)
-    frozen0 = FrozenPotentialField(
-        base, wave, amplitude,
-        [np.zeros(27, complex) for _ in wave.waves], np.zeros(18))
     shifted_angles = (np.arange(16) + 0.5) * 2.0 * np.pi / 16.0
     points = []
     for xi, eta in holdout_grid:
@@ -111,8 +129,8 @@ def run():
     report = dict(
         source="Two spatial wave/mean slope stages on moment-closed late bridge",
         tau0=tau0, time_step=dt,
-        projected_stage0_train=previous["projected_train"],
-        projected_stage0_holdout=previous["projected_holdout"],
+        projected_stage0_train=projected_train0,
+        projected_stage0_holdout=projected_holdout0,
         projected_stage1_train=projected_train1,
         projected_stage1_holdout=projected_holdout1,
         midpoint_direct=midpoint_results,
@@ -120,7 +138,7 @@ def run():
         scope="Two local coefficient-derivative stages and direct full Cartesian momentum at two interval midpoints, with shifted angular and off-grid radial/axial nodes. No pulse endpoint match, global support/energy proof, dyadic recursion, or full-domain 1e-3 gate.",
         accepted=False, scale_recursion_established=False,
     )
-    output = ROOT / "adaptive_bridge_wave_two_stage.json"
+    output = ROOT / (output_name or "adaptive_bridge_wave_two_stage.json")
     output.write_bytes((json.dumps(report, indent=2) + "\n").encode())
     print(json.dumps(dict(output=str(output),
                           projected_stage1_train=projected_train1,
@@ -130,4 +148,8 @@ def run():
 
 
 if __name__ == "__main__":
-    run()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--time-step", type=float)
+    parser.add_argument("--output-name")
+    args = parser.parse_args()
+    run(args.time_step, args.output_name)
