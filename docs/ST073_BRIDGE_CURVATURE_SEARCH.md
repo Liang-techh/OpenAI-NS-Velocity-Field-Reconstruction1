@@ -1469,3 +1469,19 @@ moment manifold, so this is not an impossibility result. The next
 construction should put full momentum and the cone stress into the
 mean-profile optimization alongside the Appendix A moments, rather
 than selecting a moment-closed U root after the mean is fixed.
+
+## Same-protocol historical baseline continuation
+
+`st006_low_degree_joint.py` retrieves the pinned ST006 candidate and
+historical validator, retains all 1,946 coefficients in its 9x9x8
+basis, and varies only 18 low-degree coefficients. The baseline replay
+agrees with its published six-time, 4,096-point seed-9172801 metrics
+within `1.8e-12`. The bounded joint momentum/harmonic training loss
+falls from `.000388487` to `.000318923` on a separate 256-point sample.
+Independent validation finds a peak change `.108228931 -> .107050605`
+but a volume-L2 regression `.107584329 -> .111025572`. The candidate
+is rejected; it is neither a Pareto improvement nor close to the
+`1e-3` target. This is a historical runnable API baseline experiment,
+not a ranking against the newer ST061/ST063 studies, whose candidate
+artifacts and paired seeds differ. The small training subset and eight
+function-evaluation budget also do not establish a local optimum.
