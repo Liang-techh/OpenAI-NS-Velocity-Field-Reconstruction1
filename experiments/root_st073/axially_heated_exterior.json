@@ -1,0 +1,67 @@
+{
+  "rows": [
+    {
+      "k": 3.0,
+      "tau": 0.0625,
+      "X": 2.0,
+      "eta": [
+        0.2725,
+        0.345,
+        0.4175
+      ],
+      "direct_angular_residual": [
+        -2.398722245139373e-10,
+        2.7689160859989403e-11,
+        -3.3750948954039406e-10
+      ],
+      "direct_axial_residual": [
+        8.962133436994183e-07,
+        1.1061883223653646e-06,
+        1.2949025821514433e-06
+      ],
+      "analytic_axial_residual": [
+        8.962133351022363e-07,
+        1.1061883127745261e-06,
+        1.2949025798716528e-06
+      ],
+      "direct_max": 1.2949026261364721e-06,
+      "analytic_direct_vector_discrepancy": 3.375095351383419e-10,
+      "finite_difference_divergence_max": 1.3877787807814454e-13,
+      "axial_energy_factor": 11.34249320151152
+    },
+    {
+      "k": 5.5,
+      "tau": 0.011048543456039806,
+      "X": 2.0,
+      "eta": [
+        0.2725,
+        0.345,
+        0.4175
+      ],
+      "direct_angular_residual": [
+        -5.342777678607469e-10,
+        1.0200291184619958e-08,
+        -1.095629521830066e-08
+      ],
+      "direct_axial_residual": [
+        2.1875912803798847e-06,
+        2.7001264453660016e-06,
+        3.160767569905151e-06
+      ],
+      "analytic_axial_residual": [
+        2.1875911230721843e-06,
+        2.7001265703292555e-06,
+        3.1607676821839994e-06
+      ],
+      "direct_max": 3.160786558970786e-06,
+      "analytic_direct_vector_discrepancy": 1.0956295880273247e-08,
+      "finite_difference_divergence_max": 8.801900800827182e-13,
+      "axial_energy_factor": 11.342350757135593
+    }
+  ],
+  "heat_age": 2048.0,
+  "radial_heat_amplitude": 0.2619686847761696,
+  "scope": "Exterior r>0 target only. Radial OpenAI-inspired heat swirl multiplied by an axial Gaussian solving the one-dimensional heat equation, so angular viscous/time residual cancels analytically. Axial pressure gradient remains; singular axis requires inner matching before a global field.",
+  "accepted": false,
+  "pde_validated": false
+}

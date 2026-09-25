@@ -1,0 +1,52 @@
+{
+  "time_interval": [
+    0.0078125,
+    0.5
+  ],
+  "rows": [
+    {
+      "heat_age": 1.0,
+      "worst_time_tau": 0.0078125,
+      "exterior_axial_spatial_supremum": 0.01882321735532253,
+      "direct_peak_evaluation": 0.018823217355322528,
+      "pressure_at_r2": -0.005656869949537603,
+      "r2": 0.035124278818148925,
+      "axial_energy_factor_at_tau_min": 0.20520041529087865,
+      "below_1e_3": false
+    },
+    {
+      "heat_age": 512.0,
+      "worst_time_tau": 0.0078125,
+      "exterior_axial_spatial_supremum": 0.0015141470003748004,
+      "direct_peak_evaluation": 0.0015141470003748002,
+      "pressure_at_r2": -0.005656869949537603,
+      "r2": 0.035124278818148925,
+      "axial_energy_factor_at_tau_min": 5.669128100501264,
+      "below_1e_3": false
+    },
+    {
+      "heat_age": 1024.0,
+      "worst_time_tau": 0.0078125,
+      "exterior_axial_spatial_supremum": 0.0010714352581670515,
+      "direct_peak_evaluation": 0.0010714352581670515,
+      "pressure_at_r2": -0.005656869949537603,
+      "r2": 0.035124278818148925,
+      "axial_energy_factor_at_tau_min": 8.019283468607284,
+      "below_1e_3": false
+    },
+    {
+      "heat_age": 2048.0,
+      "worst_time_tau": 0.0078125,
+      "exterior_axial_spatial_supremum": 0.0007578922007151863,
+      "direct_peak_evaluation": 0.0007578922007151865,
+      "pressure_at_r2": -0.005656869949537603,
+      "r2": 0.035124278818148925,
+      "axial_energy_factor_at_tau_min": 11.34234179826461,
+      "below_1e_3": true
+    }
+  ],
+  "spatial_scope": "Only the pure exterior r>=r2(tau), all z; radial ramp and inner field excluded.",
+  "derivation": "Pure swirl has zero radial and angular momentum residual analytically. Axial residual is 2*G*G_z*p_K. Pressure magnitude decreases with radius; Gaussian derivative peaks at |z|=sqrt(nu*age). At r2 proportional to sqrt(tau), |p_K| proportional to tau^(-1-2h), and the bound decreases with tau for heat_age>=1.",
+  "pressure_evaluation": "Positive quadrature numerical estimate, not an interval-certified bound.",
+  "global_pde_validated": false
+}

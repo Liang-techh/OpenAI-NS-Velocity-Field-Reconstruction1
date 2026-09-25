@@ -1,0 +1,90 @@
+{
+  "rows": [
+    {
+      "k": 3.0,
+      "tau": 0.0625,
+      "r1": 0.049673231473200234,
+      "r2": 0.09934646294640047,
+      "X": [
+        2.0,
+        2.0,
+        2.0,
+        8.0,
+        8.0,
+        8.0
+      ],
+      "eta": [
+        0.2725,
+        0.345,
+        0.4175,
+        0.2725,
+        0.345,
+        0.4175
+      ],
+      "residual_norms": [
+        93.95295037156743,
+        7.202401915262197,
+        69.87621499113999,
+        2.214599543409579e-07,
+        2.733278651019576e-07,
+        3.199237076653061e-07
+      ],
+      "angular_residuals": [
+        93.95235225652294,
+        -7.181443936010167,
+        -69.8757606964611,
+        -4.196258473619825e-10,
+        -1.2274649103128504e-09,
+        3.4735130153033464e-10
+      ],
+      "divergence_max": 4.625929269271485e-14,
+      "far_heat_velocity_difference": 6.938893903907228e-18,
+      "far_heat_pressure_difference": 0.0
+    },
+    {
+      "k": 5.5,
+      "tau": 0.011048543456039806,
+      "r1": 0.020885021139941035,
+      "r2": 0.04177004227988207,
+      "X": [
+        2.0,
+        2.0,
+        2.0,
+        8.0,
+        8.0,
+        8.0
+      ],
+      "eta": [
+        0.2725,
+        0.345,
+        0.4175,
+        0.2725,
+        0.345,
+        0.4175
+      ],
+      "residual_norms": [
+        1253.0457472365122,
+        96.35106264547527,
+        932.28772476048,
+        5.405687308927404e-07,
+        6.672636341493707e-07,
+        7.809127091540982e-07
+      ],
+      "angular_residuals": [
+        1253.0374872099471,
+        -96.06249156219977,
+        -932.2814532845746,
+        1.531551488929972e-09,
+        -1.1355308989109691e-08,
+        -1.5374092476524992e-09
+      ],
+      "divergence_max": 4.400950400413591e-13,
+      "far_heat_velocity_difference": 1.3877787807814457e-17,
+      "far_heat_pressure_difference": 4.336808689942018e-19
+    }
+  ],
+  "heat_age": 2048.0,
+  "scope": "Full-space finite-energy solenoidal candidate. The outer radial region equals an axial/radial heat swirl with exact angular heat evolution; an annular ramp preserves the compact inner candidate. Radial ramp, axial collar and axial pressure remain unmatched dynamically; no whole-domain acceptance.",
+  "pde_validated": false,
+  "accepted": false
+}

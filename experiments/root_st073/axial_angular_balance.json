@@ -1,0 +1,106 @@
+{
+  "k": 5.5,
+  "tau": 0.011048543456039806,
+  "rows": [
+    {
+      "X": 0.03,
+      "eta": 0.2725,
+      "angular_time": 31.919654059260314,
+      "angular_transport": -307.91593483141986,
+      "angular_pressure": -8.801900800827182e-13,
+      "angular_viscosity": 6566.5635913198685,
+      "angular_residual": 6290.567310547708,
+      "complete_residual_norm": 14918.931073292966
+    },
+    {
+      "X": 0.03,
+      "eta": 0.345,
+      "angular_time": -48.274202738012065,
+      "angular_transport": -101.79306856706751,
+      "angular_pressure": -4.400950400413591e-13,
+      "angular_viscosity": -894.6806937188665,
+      "angular_residual": -1044.7479650239466,
+      "complete_residual_norm": 7589.991488318636
+    },
+    {
+      "X": 0.03,
+      "eta": 0.4175,
+      "angular_time": -44.90897043470745,
+      "angular_transport": -3.015537213117282,
+      "angular_pressure": 0.0,
+      "angular_viscosity": -5102.315921698282,
+      "angular_residual": -5150.240429346107,
+      "complete_residual_norm": 15807.356313134598
+    },
+    {
+      "X": 0.5859375,
+      "eta": 0.2725,
+      "angular_time": -142.45537838806626,
+      "angular_transport": 343.3536970057709,
+      "angular_pressure": 4.224912384397047e-11,
+      "angular_viscosity": 11558.145602531342,
+      "angular_residual": 11759.043921149088,
+      "complete_residual_norm": 23735.481600892588
+    },
+    {
+      "X": 0.5859375,
+      "eta": 0.345,
+      "angular_time": -173.3020102042381,
+      "angular_transport": 228.52194068751123,
+      "angular_pressure": 1.408304128132349e-11,
+      "angular_viscosity": -101.00580759744655,
+      "angular_residual": -45.78587711415929,
+      "complete_residual_norm": 18239.54330763026
+    },
+    {
+      "X": 0.5859375,
+      "eta": 0.4175,
+      "angular_time": -81.88928834848002,
+      "angular_transport": 13.179228799056874,
+      "angular_pressure": -2.6405702402481546e-12,
+      "angular_viscosity": -7362.156431709221,
+      "angular_residual": -7430.866491258646,
+      "complete_residual_norm": 33111.74843026541
+    },
+    {
+      "X": 2.0,
+      "eta": 0.2725,
+      "angular_time": -7.227606554187164,
+      "angular_transport": 1.41777653786855e-13,
+      "angular_pressure": -1.3752970001292471e-14,
+      "angular_viscosity": 1260.2651523228817,
+      "angular_residual": 1253.0375457686948,
+      "complete_residual_norm": 1253.0458057948938
+    },
+    {
+      "X": 2.0,
+      "eta": 0.345,
+      "angular_time": -15.783743964431967,
+      "angular_transport": 0.0,
+      "angular_pressure": -2.7505940002584942e-14,
+      "angular_viscosity": -80.10256514839658,
+      "angular_residual": -95.88630911282857,
+      "complete_residual_norm": 96.17541115753319
+    },
+    {
+      "X": 2.0,
+      "eta": 0.4175,
+      "angular_time": -9.36870751057168,
+      "angular_transport": -4.3595361293019514e-16,
+      "angular_pressure": -3.4382425003231178e-15,
+      "angular_viscosity": -917.4379066766035,
+      "angular_residual": -926.8066141871751,
+      "complete_residual_norm": 926.812927279872
+    }
+  ],
+  "maximum_absolute_angular_residual": 11759.043921149088,
+  "maximum_absolute_by_term": {
+    "time": 173.3020102042381,
+    "pressure": 4.224912384397047e-11,
+    "viscosity": 11558.145602531342,
+    "convection": 343.3536970057709
+  },
+  "equation": "For prescribed axisymmetric meridional flow, u_theta obeys u_theta,t + u_r u_theta,r + u_z u_theta,z + (u_r/r)u_theta = nu*(u_theta,rr+u_theta,r/r+u_theta,zz-u_theta/r^2). Axisymmetric pressure has no azimuthal gradient.",
+  "scope": "Fourth-order Cartesian/time term balance on nine positive axial-collar points of the finite-energy field. This defines a pressure-independent target for a dynamically evolved swirl correction; no full-domain or continuum bound.",
+  "accepted": false
+}

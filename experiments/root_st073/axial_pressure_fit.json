@@ -1,0 +1,58 @@
+{
+  "mode_count": 6,
+  "amplitudes": [
+    -51.66155711698674,
+    -24.718326026953026,
+    47.50883603812802,
+    29.24910984893892,
+    -15.57424851247152,
+    -10.880935766905845
+  ],
+  "ridge": 0.001,
+  "eta_flat": 0.2,
+  "eta_outer": 0.49,
+  "rows": [
+    {
+      "name": "train",
+      "k": 5.5,
+      "point_count": 9,
+      "baseline_max": 33111.74843026541,
+      "corrected_max": 32868.208317910416,
+      "baseline_vector_rms": 9670.373341987737,
+      "corrected_vector_rms": 9309.417779480405,
+      "baseline_angular_max": 11759.043921149088,
+      "corrected_angular_max": 11759.043921149005,
+      "divergence_max": 1.7526497586572987e-05,
+      "pressure_gradient_fd_discrepancy": 0.00012383368683479537
+    },
+    {
+      "name": "space_holdout",
+      "k": 5.5,
+      "point_count": 6,
+      "baseline_max": 73759.47955938948,
+      "corrected_max": 74532.72772353017,
+      "baseline_vector_rms": 24160.309193139186,
+      "corrected_vector_rms": 24727.13940181382,
+      "baseline_angular_max": 5552.100474295863,
+      "corrected_angular_max": 5552.100474295858,
+      "divergence_max": 6.008651780575747e-07,
+      "pressure_gradient_fd_discrepancy": 0.00011654874651890996
+    },
+    {
+      "name": "time_holdout",
+      "k": 5.25,
+      "point_count": 6,
+      "baseline_max": 57013.671415655925,
+      "corrected_max": 57608.8069119052,
+      "baseline_vector_rms": 18670.64167217644,
+      "corrected_vector_rms": 19106.673691700842,
+      "baseline_angular_max": 4286.038176294348,
+      "corrected_angular_max": 4286.03817629433,
+      "divergence_max": 5.072691919849603e-07,
+      "pressure_gradient_fd_discrepancy": 9.01046514627556e-05
+    }
+  ],
+  "scope": "Six compact axial-pressure modes on the full-space finite-energy field, fitted at one late time and checked at disjoint space/time points. Velocity and spatial divergence unchanged. Angular residual and dynamical return flow remain.",
+  "accepted": false,
+  "pde_validated": false
+}
