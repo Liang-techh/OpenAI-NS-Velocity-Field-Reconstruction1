@@ -86,3 +86,29 @@ at additional scale stages, a controlled interstage transfer, and
 nonaxisymmetric wave/mean corrections to cancel the large remaining
 momentum. None of these finite-grid numbers is a continuum acceptance
 or a proof of the paper's recursive mechanism.
+
+## Three-knot scale transfer
+
+`separated_moment_modes.py` now supports any finite increasing list of
+scale knots, using flat-ended smooth partitions between adjacent knots.
+`separated_moment_three_knots.py` takes the three radial windows above
+and puts independent coefficient groups at `k=11,15,19` (36 amplitudes).
+It enforces twelve sampled physical tangential outer-moment equalities
+at those scales, then minimizes an L4 objective for complete momentum.
+
+The selected constrained field has a largest normalized quadrature
+moment defect `2.21e-13` at the knots. Independent radial integration
+finds outer-stress norm ratios below `1.0e-9` there. The off-knot
+ratios at `k=13,17` are about `0.0074%`, versus `0.42%–0.45%` for the
+two-knot three-window candidate: roughly sixtyfold better interstage
+moment transfer. A moment-only three-knot solution slightly lowers
+some momentum peaks but has about `0.088%` outer-moment error at
+`k=13`, so the constrained field is retained as the transfer candidate.
+
+The full sampled momentum maxima remain approximately `4.894e5`,
+`3.032e7`, `1.879e9` at `k=11,15,19`. Holdouts are `3.852e6` at
+`k=13` and `2.387e8` at `k=17`. These are nearly the same as the
+two-knot three-window result and still grow close to `tau**(-1.49)`.
+Adding a finite scale knot repairs this sampled moment-transfer error;
+it does not supply the [paper's Section 5/9 recursive residual-improvement mechanism](https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf),
+a uniform interval bound, or the target PDE residual.

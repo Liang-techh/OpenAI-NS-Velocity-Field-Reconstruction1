@@ -18,6 +18,11 @@ radial window and constrained optimization reduce the moment-closure
 momentum cost to about `1.43–1.50` times the pre-repair peak, but the
 absolute residual still grows under dyadic refinement; see
 `ST073_SEPARATED_MOMENT_CONSTRUCTION.md`.
+The three-knot extension closes these sampled physical moments also at
+`k=15` and reduces off-knot moment leakage by roughly sixtyfold, with
+little change in the momentum growth. The next necessary advance is a
+genuine residual-canceling update across scales, coupled to the radial
+moments and nonaxisymmetric stress realization.
 Use those directions as a conditioning prototype, not as the paper's five
 leading-profile moments or a recursive correction.
 The next Stage-1 inputs are therefore the actual coefficient-family

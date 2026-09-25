@@ -13,15 +13,35 @@ RADIAL_WINDOWS = ((0.12, 0.38), (0.62, 0.88))
 RADIAL_WINDOWS_THREE = ((0.12, 0.38), (0.40, 0.60), (0.62, 0.88))
 
 
-def scale_weight(k):
-    if k <= 11.0:
+def flat_transition(s):
+    if s <= 0.0:
         return 0.0
-    if k >= 19.0:
+    if s >= 1.0:
         return 1.0
-    s = (k - 11.0) / 8.0
     left = np.exp(-1.0 / s)
     right = np.exp(-1.0 / (1.0 - s))
     return float(left / (left + right))
+
+
+def scale_partition(k, knots):
+    """C-infinity partition with flat jets at each adjacent scale knot."""
+    weights = np.zeros(len(knots))
+    if k <= knots[0]:
+        weights[0] = 1.0
+    elif k >= knots[-1]:
+        weights[-1] = 1.0
+    else:
+        left_index = int(np.searchsorted(knots, k, side="right") - 1)
+        s = (k - knots[left_index]) / (knots[left_index + 1] - knots[left_index])
+        right = flat_transition(s)
+        weights[left_index] = 1.0 - right
+        weights[left_index + 1] = right
+    return weights
+
+
+def scale_weight(k):
+    """Backward-compatible right-knot weight for the two-knot model."""
+    return float(scale_partition(k, (11.0, 19.0))[1])
 
 
 def flat_bump(y, lo, hi):
@@ -37,16 +57,21 @@ def flat_bump(y, lo, hi):
 
 
 class SeparatedMomentModes:
-    """Two time knots × swirl/poloidal × radial windows × even/odd eta."""
+    """Scale knots × swirl/poloidal × radial windows × even/odd eta."""
 
-    def __init__(self, base, amplitudes, windows=RADIAL_WINDOWS):
+    def __init__(self, base, amplitudes, windows=RADIAL_WINDOWS,
+                 knots=(11.0, 19.0)):
         self.base = base
         self.inner = base.inner
         self.nu = base.nu
         self.join_X = base.join_X
         self.ratio = base.ratio
         self.windows = tuple(windows)
-        self.a = np.asarray(amplitudes, float).reshape(2, 2, len(self.windows), 2)
+        self.knots = tuple(float(k) for k in knots)
+        if len(self.knots) < 2 or any(b <= a for a, b in zip(self.knots, self.knots[1:])):
+            raise ValueError("Need increasing scale knots")
+        self.a = np.asarray(amplitudes, float).reshape(
+            len(self.knots), 2, len(self.windows), 2)
 
     def fields(self, points, tau):
         points = np.asarray(points, float)
@@ -68,8 +93,7 @@ class SeparatedMomentModes:
         yz = -(1.0 + (self.ratio - 1.0) * y) * qz / (
             2.0 * q * (self.ratio - 1.0))
         k = -np.log2(2.0 * float(times[0]))
-        right = scale_weight(k)
-        time_weights = (1.0 - right, right)
+        time_weights = scale_partition(k, self.knots)
         psi_scale = self.nu**1.5 * (2.0 * self.join_X) * q**(1.0 - self.inner.A)
         swirl_scale = sn * q**(-self.inner.A)
         psi_r = np.zeros_like(radius)

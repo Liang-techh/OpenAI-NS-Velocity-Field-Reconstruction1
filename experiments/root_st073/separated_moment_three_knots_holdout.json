@@ -1,0 +1,47 @@
+{
+  "source": "Off-knot comparison for three-knot separated moment field",
+  "rows": [
+    {
+      "candidate": "exact",
+      "k": 13.0,
+      "momentum_max": 3803947.924400083,
+      "divergence_max": 1.656291341589622e-05,
+      "outer_moment_ratios": [
+        0.0008732369576879565,
+        0.0008879242445613042
+      ]
+    },
+    {
+      "candidate": "exact",
+      "k": 17.0,
+      "momentum_max": 238628043.3063456,
+      "divergence_max": 0.000266675809143635,
+      "outer_moment_ratios": [
+        7.06552213359179e-05,
+        7.021145395873182e-05
+      ]
+    },
+    {
+      "candidate": "constrained_l4",
+      "k": 13.0,
+      "momentum_max": 3852248.3062999346,
+      "divergence_max": 1.656291341589622e-05,
+      "outer_moment_ratios": [
+        7.382184803865209e-05,
+        7.440498387085137e-05
+      ]
+    },
+    {
+      "candidate": "constrained_l4",
+      "k": 17.0,
+      "momentum_max": 238709612.6535544,
+      "divergence_max": 0.000266675809143635,
+      "outer_moment_ratios": [
+        7.286385113870942e-05,
+        7.349551125168453e-05
+      ]
+    }
+  ],
+  "scope": "Two time holdouts and two axial slices only; no continuous scale or PDE acceptance.",
+  "accepted": false
+}
