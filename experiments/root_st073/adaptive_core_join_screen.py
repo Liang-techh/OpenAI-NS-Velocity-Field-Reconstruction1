@@ -18,11 +18,11 @@ from heat_exterior import physical
 class AdaptiveRadialAdapter:
     """Expose the scheduled core's coefficient jets to JoinedField."""
 
-    def __init__(self):
-        self.core = AdaptiveOrderCore()
+    def __init__(self, k_max=20):
+        self.core = AdaptiveOrderCore(k_max=k_max)
         self.fields_by_order = self.core.fields
         base = self.fields_by_order[12]
-        self.p = replace(base.p, X_max=1.0/64.0, k_max=20)
+        self.p = replace(base.p, X_max=1.0/64.0, k_max=k_max)
         self.nu, self.h, self.A, self.D = base.nu, base.h, base.A, base.D
 
     def active(self, tau):

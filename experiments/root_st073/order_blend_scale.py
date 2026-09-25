@@ -20,17 +20,18 @@ TRANSFERS = ((8, 10, 10.0, 12.0), (10, 12, 18.0, 20.0))
 class AdaptiveOrderCore:
     """Callable local C2 order schedule; physical time is t=0.5-tau."""
 
-    def __init__(self):
+    def __init__(self, k_max=20):
         source = ROOT / "NS_ST073_Full_Local_Recurrence/data/ST073-V.json"
         base = FullRadialField.load(source)
-        self.fields = {order: FullRadialField(replace(base.p, order=order, k_max=20))
+        self.k_max = int(k_max)
+        self.fields = {order: FullRadialField(replace(base.p, order=order, k_max=self.k_max))
                        for order in (8, 10, 12)}
         self.nu = base.nu
         self.h = base.h
 
     def evaluate_similarity(self, X, eta, tau, angle=0.0):
-        if not (0.5*2.0**(-20) <= tau <= 0.5*2.0**(-6)):
-            raise ValueError("Outside exploratory k=6..20 time window")
+        if not (0.5*2.0**(-self.k_max) <= tau <= 0.5*2.0**(-6)):
+            raise ValueError(f"Outside exploratory k=6..{self.k_max} time window")
         X, eta, angle = np.broadcast_arrays(np.asarray(X, float),
                                              np.asarray(eta, float),
                                              np.asarray(angle, float))

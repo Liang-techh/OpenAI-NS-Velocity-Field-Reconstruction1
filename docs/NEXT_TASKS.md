@@ -40,6 +40,12 @@ gain but cannot span the pulse window; see
 `ST073_TWO_STAGE_WAVE_EVOLUTION.md`. Next establish a stable supported
 amplitude inverse or longer-step evolution with uniform residual and
 moment control, then test its transfer between actual dyadic scales.
+The first actual new-knot trial at `k=21` closes four sampled physical
+moments to `8.53e-14`, yet lowers the full momentum peak by only `0.198%`;
+the `k=22` holdout still grows with roughly the same `2^1.49` per-step
+rate. See `ST073_NEXT_SCALE_TRANSFER.md`. Further moment-only scale knots
+are therefore insufficient: couple the wave-amplitude inverse, stress
+update, compact mean correction, and moment repair in one residual cycle.
 Use those directions as a conditioning prototype, not as the paper's five
 leading-profile moments or a recursive correction.
 The next Stage-1 inputs are therefore the actual coefficient-family

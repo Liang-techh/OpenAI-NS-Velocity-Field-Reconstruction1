@@ -1,0 +1,102 @@
+{
+  "source": "One-knot physical moment and momentum transfer",
+  "fixed_knots": [
+    11.0,
+    15.0,
+    19.0
+  ],
+  "new_knot": 21.0,
+  "fixed_coefficient_count": 36,
+  "original_at_new_scale": {
+    "coefficients": [
+      -0.05665229241321764,
+      0.0004027161458303791,
+      0.0027303955859604503,
+      0.00045559995723001904,
+      0.003578213841425709,
+      0.0008802819070891424,
+      -0.0029530474319246405,
+      -0.1379148838577298,
+      0.0008280849850516297,
+      -1.3961839341712792,
+      0.004963861427469007,
+      -1.3560145555695653
+    ],
+    "normalized_moment_max": 0.4265757899757595,
+    "momentum_grid_max": 14830007984.958263
+  },
+  "fitted_at_new_scale": {
+    "coefficients": [
+      -0.06069636462344674,
+      0.0003412338668516411,
+      0.0024934719829462202,
+      0.0004596148442764196,
+      0.003562045533485939,
+      0.0008809165909906663,
+      -0.002889043319563249,
+      -0.12110052646206358,
+      0.0010324761859041276,
+      -1.3929981646871556,
+      0.004945838901389721,
+      -1.3312967827984254
+    ],
+    "normalized_moment_max": 8.527382528740073e-14,
+    "momentum_grid_max": 14800597532.47309
+  },
+  "optimizer_success": true,
+  "optimizer_message": "Optimization terminated successfully",
+  "optimizer_iterations": 11,
+  "transfer": [
+    {
+      "k": 19.0,
+      "tau": 9.5367431640625e-07,
+      "frozen": {
+        "momentum_max": 1879376925.3210933,
+        "divergence_max": 0.001086029525140475
+      },
+      "new_knot": {
+        "momentum_max": 1879376925.3210933,
+        "divergence_max": 0.001086029525140475
+      }
+    },
+    {
+      "k": 20.0,
+      "tau": 4.76837158203125e-07,
+      "frozen": {
+        "momentum_max": 5279310531.761978,
+        "divergence_max": 0.0025577147462172434
+      },
+      "new_knot": {
+        "momentum_max": 5274037834.585046,
+        "divergence_max": 0.0025577147462172434
+      }
+    },
+    {
+      "k": 21.0,
+      "tau": 2.384185791015625e-07,
+      "frozen": {
+        "momentum_max": 14830007984.599844,
+        "divergence_max": 0.0043159938431927
+      },
+      "new_knot": {
+        "momentum_max": 14800597532.35104,
+        "divergence_max": 0.0043159938431927
+      }
+    },
+    {
+      "k": 22.0,
+      "tau": 1.1920928955078125e-07,
+      "frozen": {
+        "momentum_max": 41658860864.679695,
+        "divergence_max": 0.014406770205823705
+      },
+      "new_knot": {
+        "momentum_max": 41576279154.849594,
+        "divergence_max": 0.014406770205823705
+      }
+    }
+  ],
+  "scope": "One 12-dimensional new-knot fit, four sampled physical moment equalities at k=21, 15 momentum grid points at k=21, direct FD checks at k=19,20,21,22. Earlier coefficients fixed. No uniform cone, full-domain or iterative residual-improvement claim.",
+  "accepted": false,
+  "scale_recursion_established": false
+}

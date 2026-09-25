@@ -20,8 +20,8 @@ from wide_modes import WideJointModes
 SCALES = (11.0, 13.0, 15.0, 17.0, 19.0)
 
 
-def build_fields():
-    inner = AdaptiveRadialAdapter()
+def build_fields(k_max=20):
+    inner = AdaptiveRadialAdapter(k_max=k_max)
     tau0 = 0.5 * 2.0**-6
     point = inner.from_similarity([1.0 / 64.0], [0.0], tau0)
     amplitude = float(inner.evaluate(point, tau0)["velocity"][0, 1]
