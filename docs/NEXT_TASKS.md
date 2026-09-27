@@ -207,6 +207,15 @@ potential-state/derivative interval solve with pressure, and check its
 actual field at interior times on both scales.
 Use those directions as a conditioning prototype, not as the paper's five
 leading-profile moments or a recursive correction.
+The support-corner obstruction now has a jointly moment-constrained
+candidate repair: all nine near-edge training nodes and sixteen independent
+spatial nodes pass at each of `k=11,15,19`, with held-out maximum cone ratios
+`0.815/0.794/0.782`. Direct normalized sampled moment error is `1.60e-10`,
+but local mean momentum grows by `9–11%`; see `ST073_CONNECTED_CONE_REPAIR.md`.
+Use `midplane_connected_cone_edge_repair.json` as a candidate, not an accepted
+replacement. Check intermediate scales and time support, then rebuild the
+stress-matched wave and its coupled interval solve on this mean. Require an
+absolute full-momentum improvement that repays the mean's residual cost.
 The next Stage-1 inputs are therefore the actual coefficient-family
 `remainderBound/remainderLip`, the certified complex compact-set `realPartSup`,
 and the resulting coefficient-space fixed point `phi/u/average/pressure`.

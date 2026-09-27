@@ -1,0 +1,375 @@
+{
+  "offsets": [
+    -0.95,
+    -0.3,
+    0.3,
+    0.95
+  ],
+  "scales": [
+    {
+      "k": 11,
+      "rows": [
+        {
+          "radial_offset": -0.95,
+          "axial_offset": -0.95,
+          "eta": -0.95,
+          "momentum_norm": 485289.9426307749,
+          "lambda_squared": 23469500.500048578,
+          "cone_pass": false,
+          "target_dot_N": -21.742426933595965,
+          "target_dot_K": -78.96880399502875,
+          "cone_ratio": 1.6788122550087956
+        },
+        {
+          "radial_offset": -0.95,
+          "axial_offset": -0.3,
+          "eta": -0.3,
+          "momentum_norm": 493521.0389590804,
+          "lambda_squared": 20033952.349422272,
+          "cone_pass": true,
+          "target_dot_N": -36.92675754517189,
+          "target_dot_K": -40.96794228971368,
+          "cone_ratio": 0.47167129587034795
+        },
+        {
+          "radial_offset": -0.95,
+          "axial_offset": 0.3,
+          "eta": 0.3,
+          "momentum_norm": 495860.3975757067,
+          "lambda_squared": 18992185.27365362,
+          "cone_pass": true,
+          "target_dot_N": -41.93171481789592,
+          "target_dot_K": -3.596745003474514,
+          "cone_ratio": 0.03547133630650967
+        },
+        {
+          "radial_offset": -0.95,
+          "axial_offset": 0.95,
+          "eta": 0.95,
+          "momentum_norm": 492680.5504291169,
+          "lambda_squared": 20300171.206839953,
+          "cone_pass": true,
+          "target_dot_N": -37.00912901596907,
+          "target_dot_K": 36.91271725839008,
+          "cone_ratio": 0.4276728005190344
+        },
+        {
+          "radial_offset": -0.3,
+          "axial_offset": -0.95,
+          "eta": -0.95,
+          "momentum_norm": 433058.96137104474,
+          "lambda_squared": 19113328.38538185,
+          "cone_pass": true,
+          "target_dot_N": -52.35373460939392,
+          "target_dot_K": -78.12883125800202,
+          "cone_ratio": 0.7193571259059317
+        },
+        {
+          "radial_offset": -0.3,
+          "axial_offset": -0.3,
+          "eta": -0.3,
+          "momentum_norm": 437526.6117109951,
+          "lambda_squared": 16190618.306322852,
+          "cone_pass": true,
+          "target_dot_N": -67.2934877620658,
+          "target_dot_K": -40.155707410714385,
+          "cone_ratio": 0.26344062682772545
+        },
+        {
+          "radial_offset": -0.3,
+          "axial_offset": 0.3,
+          "eta": 0.3,
+          "momentum_norm": 438620.0231363721,
+          "lambda_squared": 15376436.709879452,
+          "cone_pass": true,
+          "target_dot_N": -72.0324354383144,
+          "target_dot_K": -2.651774098439449,
+          "cone_ratio": 0.015828734049690502
+        },
+        {
+          "radial_offset": -0.3,
+          "axial_offset": 0.95,
+          "eta": 0.95,
+          "momentum_norm": 436515.0451164865,
+          "lambda_squared": 16641542.97747643,
+          "cone_pass": true,
+          "target_dot_N": -66.75037863509084,
+          "target_dot_K": 37.90079728761199,
+          "cone_ratio": 0.2550644749613146
+        },
+        {
+          "radial_offset": 0.3,
+          "axial_offset": -0.95,
+          "eta": -0.95,
+          "momentum_norm": 395108.1463030107,
+          "lambda_squared": 18158273.83510584,
+          "cone_pass": true,
+          "target_dot_N": -74.0930578736224,
+          "target_dot_K": -75.65536871172355,
+          "cone_ratio": 0.5442473366320755
+        },
+        {
+          "radial_offset": 0.3,
+          "axial_offset": -0.3,
+          "eta": -0.3,
+          "momentum_norm": 395647.6322597156,
+          "lambda_squared": 15990812.841682265,
+          "cone_pass": true,
+          "target_dot_N": -87.50323110262907,
+          "target_dot_K": -38.063960573778346,
+          "cone_ratio": 0.21707007691041305
+        },
+        {
+          "radial_offset": 0.3,
+          "axial_offset": 0.3,
+          "eta": 0.3,
+          "momentum_norm": 395523.2317490033,
+          "lambda_squared": 15431542.538451152,
+          "cone_pass": true,
+          "target_dot_N": -91.52164038263793,
+          "target_dot_K": -1.1966549368268278,
+          "cone_ratio": 0.006413496984638467
+        },
+        {
+          "radial_offset": 0.3,
+          "axial_offset": 0.95,
+          "eta": 0.95,
+          "momentum_norm": 394726.82962019515,
+          "lambda_squared": 16439802.998358794,
+          "cone_pass": true,
+          "target_dot_N": -86.33632234159118,
+          "target_dot_K": 38.58066437962225,
+          "cone_ratio": 0.22718775661454604
+        },
+        {
+          "radial_offset": 0.95,
+          "axial_offset": -0.95,
+          "eta": -0.95,
+          "momentum_norm": 479962.65756847285,
+          "lambda_squared": 10971902.268305756,
+          "cone_pass": true,
+          "target_dot_N": -100.11237954090734,
+          "target_dot_K": -67.26926401314095,
+          "cone_ratio": 0.3172963862814036
+        },
+        {
+          "radial_offset": 0.95,
+          "axial_offset": -0.3,
+          "eta": -0.3,
+          "momentum_norm": 478928.26300671225,
+          "lambda_squared": 9433308.304572042,
+          "cone_pass": true,
+          "target_dot_N": -110.75526484321068,
+          "target_dot_K": -32.87793767140343,
+          "cone_ratio": 0.13016648504233905
+        },
+        {
+          "radial_offset": 0.95,
+          "axial_offset": 0.3,
+          "eta": 0.3,
+          "momentum_norm": 478292.9844816215,
+          "lambda_squared": 9059567.194860468,
+          "cone_pass": true,
+          "target_dot_N": -113.69559497393641,
+          "target_dot_K": 0.5302880538883116,
+          "cone_ratio": 0.0020084193199354215
+        },
+        {
+          "radial_offset": 0.95,
+          "axial_offset": 0.95,
+          "eta": 0.95,
+          "momentum_norm": 477927.5227550069,
+          "lambda_squared": 9807009.089054307,
+          "cone_pass": true,
+          "target_dot_N": -109.10569726714436,
+          "target_dot_K": 36.49068662036135,
+          "cone_ratio": 0.15034672133924906
+        }
+      ],
+      "passing": 15
+    },
+    {
+      "k": 19,
+      "rows": [
+        {
+          "radial_offset": -0.95,
+          "axial_offset": -0.95,
+          "eta": -0.95,
+          "momentum_norm": 1923447661.859635,
+          "lambda_squared": 1418511135244.3835,
+          "cone_pass": false,
+          "target_dot_N": -4809.666282638739,
+          "target_dot_K": -19805.93706114707,
+          "cone_ratio": 1.8073898324288733
+        },
+        {
+          "radial_offset": -0.95,
+          "axial_offset": -0.3,
+          "eta": -0.3,
+          "momentum_norm": 1954795390.162928,
+          "lambda_squared": 1171640338338.5828,
+          "cone_pass": true,
+          "target_dot_N": -8741.048982323182,
+          "target_dot_K": -10308.729939330442,
+          "cone_ratio": 0.4679266607258638
+        },
+        {
+          "radial_offset": -0.95,
+          "axial_offset": 0.3,
+          "eta": 0.3,
+          "momentum_norm": 1963706511.9228725,
+          "lambda_squared": 1095819067237.8542,
+          "cone_pass": true,
+          "target_dot_N": -10044.41575074608,
+          "target_dot_K": -938.8640399708003,
+          "cone_ratio": 0.035822057110757526
+        },
+        {
+          "radial_offset": -0.95,
+          "axial_offset": 0.95,
+          "eta": 0.95,
+          "momentum_norm": 1951615911.2586555,
+          "lambda_squared": 1188454640834.5068,
+          "cone_pass": true,
+          "target_dot_N": -8778.996570012365,
+          "target_dot_K": 9219.680890681871,
+          "cone_ratio": 0.4205439894806065
+        },
+        {
+          "radial_offset": -0.3,
+          "axial_offset": -0.95,
+          "eta": -0.95,
+          "momentum_norm": 1612888190.7639017,
+          "lambda_squared": 1130336792787.535,
+          "cone_pass": true,
+          "target_dot_N": -12749.08202993347,
+          "target_dot_K": -19514.781058834244,
+          "cone_ratio": 0.6900012379615811
+        },
+        {
+          "radial_offset": -0.3,
+          "axial_offset": -0.3,
+          "eta": -0.3,
+          "momentum_norm": 1626281019.6095088,
+          "lambda_squared": 929451536748.6351,
+          "cone_pass": true,
+          "target_dot_N": -16537.771269177872,
+          "target_dot_K": -10047.605520477277,
+          "cone_ratio": 0.24706727403326056
+        },
+        {
+          "radial_offset": -0.3,
+          "axial_offset": 0.3,
+          "eta": 0.3,
+          "momentum_norm": 1628923709.288432,
+          "lambda_squared": 873440189794.5608,
+          "cone_pass": true,
+          "target_dot_N": -17741.29484007076,
+          "target_dot_K": -687.327682966493,
+          "cone_ratio": 0.015262967294742772
+        },
+        {
+          "radial_offset": -0.3,
+          "axial_offset": 0.95,
+          "eta": 0.95,
+          "momentum_norm": 1621219076.38633,
+          "lambda_squared": 960461397289.0984,
+          "cone_pass": true,
+          "target_dot_N": -16404.374676893396,
+          "target_dot_K": 9432.883709351547,
+          "cone_ratio": 0.2386313876483606
+        },
+        {
+          "radial_offset": 0.3,
+          "axial_offset": -0.95,
+          "eta": -0.95,
+          "momentum_norm": 1424722932.9517014,
+          "lambda_squared": 1183334641147.0386,
+          "cone_pass": true,
+          "target_dot_N": -17981.07124116029,
+          "target_dot_K": -18389.582909191227,
+          "cone_ratio": 0.533263056809707
+        },
+        {
+          "radial_offset": 0.3,
+          "axial_offset": -0.3,
+          "eta": -0.3,
+          "momentum_norm": 1424631820.9078,
+          "lambda_squared": 1042148148882.7081,
+          "cone_pass": true,
+          "target_dot_N": -21239.28547426485,
+          "target_dot_K": -9250.367632785923,
+          "cone_ratio": 0.21275637546669207
+        },
+        {
+          "radial_offset": 0.3,
+          "axial_offset": 0.3,
+          "eta": 0.3,
+          "momentum_norm": 1423180537.1668394,
+          "lambda_squared": 1006194487285.7537,
+          "cone_pass": true,
+          "target_dot_N": -22211.859620403648,
+          "target_dot_K": -297.0970702983238,
+          "cone_ratio": 0.006425862611141293
+        },
+        {
+          "radial_offset": 0.3,
+          "axial_offset": 0.95,
+          "eta": 0.95,
+          "momentum_norm": 1420023271.6859217,
+          "lambda_squared": 1072705219668.0223,
+          "cone_pass": true,
+          "target_dot_N": -20948.165827628087,
+          "target_dot_K": 9361.49737197046,
+          "cone_ratio": 0.22256701016449
+        },
+        {
+          "radial_offset": 0.95,
+          "axial_offset": -0.95,
+          "eta": -0.95,
+          "momentum_norm": 1928202721.8361237,
+          "lambda_squared": 769210640997.2656,
+          "cone_pass": true,
+          "target_dot_N": -24164.513837267063,
+          "target_dot_K": -16268.379429717994,
+          "cone_ratio": 0.3227615788623903
+        },
+        {
+          "radial_offset": 0.95,
+          "axial_offset": -0.3,
+          "eta": -0.3,
+          "momentum_norm": 1925092115.2323143,
+          "lambda_squared": 665318104641.6243,
+          "cone_pass": true,
+          "target_dot_N": -26776.440654505353,
+          "target_dot_K": -7963.413742544717,
+          "cone_ratio": 0.13284296388779687
+        },
+        {
+          "radial_offset": 0.95,
+          "axial_offset": 0.3,
+          "eta": 0.3,
+          "momentum_norm": 1922845976.8625221,
+          "lambda_squared": 640079652189.6946,
+          "cone_pass": true,
+          "target_dot_N": -27499.921335244147,
+          "target_dot_K": 108.97800016676868,
+          "cone_ratio": 0.0017400244570839067
+        },
+        {
+          "radial_offset": 0.95,
+          "axial_offset": 0.95,
+          "eta": 0.95,
+          "momentum_norm": 1921155696.1018448,
+          "lambda_squared": 690506840491.0483,
+          "cone_pass": true,
+          "target_dot_N": -26378.469095088967,
+          "target_dot_K": 8797.608129290722,
+          "cone_ratio": 0.15259365816731935
+        }
+      ],
+      "passing": 15
+    }
+  ],
+  "scope": "Independent 4x4 physical support nodes at k=11,19, including points beyond the training offsets. No continuous spatial, temporal, or interscale cone certificate."
+}
