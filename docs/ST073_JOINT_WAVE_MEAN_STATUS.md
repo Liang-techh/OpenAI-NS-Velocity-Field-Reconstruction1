@@ -29,3 +29,27 @@ after rotating into cylindrical components, with physical volume weights.
 An analytic field with squared modal L2 values 9, 2 and 8 passed its
 mode-0/1/2 and Parseval check. This diagnostic will identify which harmonic
 needs further correction; it does not certify angular or spatial convergence.
+
+## Frozen co-designed wave and harmonic correction budget
+
+The immutable `full_wave_frozen_cache.json` now retains the final locked
+co-designed wave's actual Cartesian finite-difference residuals, grids,
+weights and source coefficient snapshots. Its 9072-point patch residual
+has volume L2 10035593.96 versus mean-only 121456.39. Its squared L2 is
+66.2142% mode 0, 0.2213% mode 1 and 33.5645% mode 2, after rotating the
+residual into cylindrical components. This is a different, reproducible
+candidate from the earlier preliminary replay with missing provenance.
+
+`python experiments/root_st073/full_wave_harmonic_budget.py` reproduces
+the cached instantaneous linear correction screen. The 180-column fit has
+rank 179: training L2 falls to 6682427.32 but holdout predicted L2 rises to
+111750601.43, with 98.5198% of its squared residual in mode 2. This is
+spatially unstable fitting, not an accepted time derivative.
+
+Truncating the normalized SVD at relative threshold 0.05 retains rank 160
+and predicts holdout L2 8296492.66. The same holdout was used for this
+screen, so it is not independent validation of the truncation choice.
+Even this screened value remains far worse than mean-only and cannot
+justify advancing a recursive trajectory. Actual corrected-field replay
+and a denser spatial fit remain necessary. This analysis uses saved jets
+and does not repeat their expensive assembly.
