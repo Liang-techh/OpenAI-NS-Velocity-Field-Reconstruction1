@@ -1,0 +1,1993 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "wave_integrated": false,
+  "inputs": {
+    "frozen_cache": {
+      "path": "full_wave_frozen_cache.json",
+      "sha256": "c03b9efa4bd65db79ee420df66808a34e7f634174851b47cca81f742b1435574",
+      "training_source": "immutable holdout_points/holdout_weights/holdout_residual",
+      "holdout_is_reused_as_training": true,
+      "point_count": 9072,
+      "point_shape": [
+        9072,
+        3
+      ],
+      "weight_shape": [
+        9072
+      ],
+      "quadrature_source": {
+        "radial_breaks": [
+          0.01,
+          0.055,
+          0.1,
+          0.12,
+          0.25,
+          0.38,
+          0.4,
+          0.56,
+          0.58,
+          0.6,
+          0.62,
+          0.72,
+          0.75,
+          0.88,
+          0.92,
+          0.93,
+          0.935,
+          0.96,
+          0.99
+        ],
+        "fit_order": 6,
+        "holdout_order": 9,
+        "fit_angles": 8,
+        "holdout_angles": 12
+      }
+    },
+    "mean": {
+      "path": "broad_meridional_constrained.json",
+      "sha256": "44d63c87eecdcfe796a25c829e90f18df0f0a722a8fc64b56a71d99ee4b0e34d",
+      "k": 11.0003,
+      "tau": 0.00024408986266228504,
+      "physical_time": "t=-tau",
+      "nu": 0.01,
+      "coefficients": [
+        -0.15188331850628525,
+        -21473.770867124906,
+        0.15628630103247954,
+        4.576967150824257,
+        -4055.8664975441716,
+        -5.477185580676799,
+        -268.4774960992659,
+        4196.913741580097,
+        119.04196579513302,
+        297.0154572848461,
+        -26127.068152539825,
+        -100.29754741542806,
+        131.82530222144135,
+        -21432.726561939657,
+        -37.37793733778612,
+        -3193.3720477294014,
+        0.4731683452560595,
+        1598.726525002178,
+        1490.6915949958977,
+        -0.910553684805867,
+        -787.7380791355715,
+        9393.29335057231,
+        2.330618631310612,
+        -3939.543397467479,
+        -1220.5536810921342,
+        -6051.568741015242,
+        -0.6628983533197372,
+        314.36525682275595,
+        -208.95220642261194,
+        -3.0647424182989114,
+        981.7015935023593,
+        -1743.2899935195271,
+        2.0920175882433503,
+        930.8387534384874,
+        -4321.4711798468525,
+        -0.7477812279093696,
+        -487.64061500119624,
+        73.32750378248402,
+        -0.6961624625527165,
+        -809.0696354972442,
+        31.053123422776277,
+        -0.04332905482894675,
+        -28.0254853203312,
+        -0.7955837945568461
+      ]
+    },
+    "wave": {
+      "path": "wave_stress_growth_codesign.json",
+      "sha256": "57899169ea21f322f2265a92825caea5663c48d8e63d073e21fbd63d277211d9",
+      "mode": 1,
+      "degree": 2,
+      "center": [
+        0.0016227128870842616,
+        -2.036013852023506e-05
+      ],
+      "widths": [
+        0.0011600670852347063,
+        0.00045150643182473267
+      ],
+      "carrier": [
+        -871.4212739359624,
+        -616.1878920703391
+      ],
+      "coefficients_original": [
+        [
+          -82.15595974483635,
+          81.29257957328485
+        ],
+        [
+          -0.362415360330668,
+          0.06994251510432199
+        ],
+        [
+          81.99009341567046,
+          -81.25143737713822
+        ],
+        [
+          938.6807627557765,
+          939.715201780506
+        ],
+        [
+          0.02721531317876355,
+          5.986488497543159
+        ],
+        [
+          -929.1026180258331,
+          -950.8118248133765
+        ],
+        [
+          98.8479131500121,
+          -102.65470218922924
+        ],
+        [
+          -1.1158250990752412,
+          -4.708934752600909
+        ],
+        [
+          -130.3366291703036,
+          134.85066267570022
+        ],
+        [
+          56.26359941276264,
+          -55.56659996354919
+        ],
+        [
+          0.35618187278110486,
+          0.08778618899247473
+        ],
+        [
+          -55.24385760923843,
+          54.90779295313052
+        ],
+        [
+          -42.98646284265163,
+          38.30146187824901
+        ],
+        [
+          -0.5923913089888674,
+          -0.5936446492113409
+        ],
+        [
+          35.019732223437785,
+          -28.89192247301922
+        ],
+        [
+          -17.595561988362853,
+          22.431814564233754
+        ],
+        [
+          0.6774277379307498,
+          0.7872392241169753
+        ],
+        [
+          35.540148792686516,
+          -45.130694018011944
+        ],
+        [
+          -55.68437959408232,
+          54.13364968047096
+        ],
+        [
+          2392.339327047038,
+          2419.6951069125757
+        ],
+        [
+          55.47478309837667,
+          -44.76709388159124
+        ],
+        [
+          1.795570255243487,
+          2.147194107397381
+        ],
+        [
+          84.29225455086899,
+          -85.66718799766014
+        ],
+        [
+          -3.391417754333725,
+          -5.0753678519289975
+        ],
+        [
+          55.22169931787298,
+          -56.742397608292194
+        ],
+        [
+          -2446.491966956347,
+          -2360.7483721072813
+        ],
+        [
+          -57.66160887367854,
+          28.562586258375564
+        ]
+      ],
+      "coefficient_layout": "packed [[Re(c_j), Im(c_j)]], j=0..26",
+      "coefficient_difference_from_frozen": 0.0
+    }
+  },
+  "timesteps": {
+    "hspace": 7.811687760373635e-07,
+    "htime": 2.4408986266228506e-08,
+    "source": "full_wave_frozen_cache.json"
+  },
+  "grouped_backend_replacements": 1,
+  "scope": "Complete instantaneous Cartesian momentum projection as a cached quadratic function of the 27 complex mode-1 potential coefficients. The frozen order-9 holdout is reused as training; no independent validation, optimizer, finite-time evolution, PDE, cone, moment, or scale-recursion acceptance is claimed.",
+  "arrays": {
+    "points": {
+      "shape": [
+        9072,
+        3
+      ],
+      "dtype": "float64"
+    },
+    "weights": {
+      "shape": [
+        9072
+      ],
+      "dtype": "float64"
+    },
+    "mean_velocity": {
+      "shape": [
+        9072,
+        3
+      ],
+      "dtype": "float64"
+    },
+    "mean_gradient": {
+      "shape": [
+        9072,
+        3,
+        3
+      ],
+      "dtype": "float64"
+    },
+    "R0": {
+      "shape": [
+        9072,
+        3
+      ],
+      "dtype": "float64"
+    },
+    "A": {
+      "shape": [
+        9072,
+        3,
+        54
+      ],
+      "dtype": "float64"
+    },
+    "B": {
+      "shape": [
+        9072,
+        3,
+        3,
+        54
+      ],
+      "dtype": "float64"
+    },
+    "L": {
+      "shape": [
+        9072,
+        3,
+        54
+      ],
+      "dtype": "float64"
+    },
+    "tangent_design": {
+      "shape": [
+        27216,
+        180
+      ],
+      "dtype": "float64"
+    },
+    "tangent_U": {
+      "shape": [
+        27216,
+        180
+      ],
+      "dtype": "float64"
+    },
+    "tangent_s": {
+      "shape": [
+        180
+      ],
+      "dtype": "float64"
+    },
+    "tangent_Vh": {
+      "shape": [
+        180,
+        180
+      ],
+      "dtype": "float64"
+    },
+    "tangent_scales": {
+      "shape": [
+        180
+      ],
+      "dtype": "float64"
+    }
+  },
+  "mean_snapshot": {
+    "R0_metric": {
+      "point_count": 9072,
+      "momentum_max": 5313983356.581518,
+      "momentum_volume_L2": 121456.3873872696,
+      "momentum_volume_RMS": 831009643.9242779,
+      "physical_volume": 2.13613448359038e-08
+    },
+    "mean_velocity_shape": [
+      9072,
+      3
+    ],
+    "mean_gradient_shape": [
+      9072,
+      3,
+      3
+    ],
+    "mean_jet_definition": "affine_momentum.jets(mean, points, tau, hspace, htime)"
+  },
+  "wave_snapshot": {
+    "velocity_complex_shape": [
+      9072,
+      3,
+      27
+    ],
+    "gradient_complex_shape": [
+      9072,
+      3,
+      3,
+      27
+    ],
+    "diffusion_complex_shape": [
+      9072,
+      3,
+      27
+    ],
+    "real_coefficient_layout": "[Re(c_0..c_26), Im(c_0..c_26)]",
+    "gradient_layout": "B[n, velocity_component, spatial_derivative, coefficient]",
+    "linear_definition": "Jmean*V + Jwave*Umean - nu*lap(V)"
+  },
+  "tangent_snapshot": {
+    "layout": [
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 0
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 1
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 2
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 3
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 4
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 5
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 6
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 7
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 8
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 9
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 10
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 11
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 12
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 13
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 14
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 15
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 16
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 17
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 18
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 19
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 20
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 21
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 22
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 23
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 24
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 25
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 26
+      },
+      {
+        "mode": 0,
+        "kind": "pressure",
+        "component": "real",
+        "index": 0
+      },
+      {
+        "mode": 0,
+        "kind": "pressure",
+        "component": "real",
+        "index": 1
+      },
+      {
+        "mode": 0,
+        "kind": "pressure",
+        "component": "real",
+        "index": 2
+      },
+      {
+        "mode": 0,
+        "kind": "pressure",
+        "component": "real",
+        "index": 3
+      },
+      {
+        "mode": 0,
+        "kind": "pressure",
+        "component": "real",
+        "index": 4
+      },
+      {
+        "mode": 0,
+        "kind": "pressure",
+        "component": "real",
+        "index": 5
+      },
+      {
+        "mode": 0,
+        "kind": "pressure",
+        "component": "real",
+        "index": 6
+      },
+      {
+        "mode": 0,
+        "kind": "pressure",
+        "component": "real",
+        "index": 7
+      },
+      {
+        "mode": 0,
+        "kind": "pressure",
+        "component": "real",
+        "index": 8
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 0
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 0
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 1
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 1
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 2
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 2
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 3
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 3
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 4
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 4
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 5
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 5
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 6
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 6
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 7
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 7
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 8
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 8
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 9
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 9
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 10
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 10
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 11
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 11
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 12
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 12
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 13
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 13
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 14
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 14
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 15
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 15
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 16
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 16
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 17
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 17
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 18
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 18
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 19
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 19
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 20
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 20
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 21
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 21
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 22
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 22
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 23
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 23
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 24
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 24
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 25
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 25
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 26
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 26
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "real",
+        "index": 0
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 0
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "real",
+        "index": 1
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 1
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "real",
+        "index": 2
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 2
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "real",
+        "index": 3
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 3
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "real",
+        "index": 4
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 4
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "real",
+        "index": 5
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 5
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "real",
+        "index": 6
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 6
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "real",
+        "index": 7
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 7
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "real",
+        "index": 8
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 8
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 0
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 0
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 1
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 1
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 2
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 2
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 3
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 3
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 4
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 4
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 5
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 5
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 6
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 6
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 7
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 7
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 8
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 8
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 9
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 9
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 10
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 10
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 11
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 11
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 12
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 12
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 13
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 13
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 14
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 14
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 15
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 15
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 16
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 16
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 17
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 17
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 18
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 18
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 19
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 19
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 20
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 20
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 21
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 21
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 22
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 22
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 23
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 23
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 24
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 24
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 25
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 25
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 26
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 26
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "real",
+        "index": 0
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 0
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "real",
+        "index": 1
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 1
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "real",
+        "index": 2
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 2
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "real",
+        "index": 3
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 3
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "real",
+        "index": 4
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 4
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "real",
+        "index": 5
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 5
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "real",
+        "index": 6
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 6
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "real",
+        "index": 7
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 7
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "real",
+        "index": 8
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 8
+      }
+    ],
+    "column_count": 180,
+    "rank": 179,
+    "singular_values": [
+      1.7465141871038221,
+      1.7465141871038197,
+      1.6646949156129884,
+      1.6646949156129867,
+      1.6196419825945585,
+      1.619641982594555,
+      1.5998146441473076,
+      1.5603340622622335,
+      1.5603340622622333,
+      1.4523223365548055,
+      1.4523223365548037,
+      1.4252314355323055,
+      1.4252314355323026,
+      1.422606997509493,
+      1.415495471050279,
+      1.4154954710502776,
+      1.3933400679951897,
+      1.3933400679951886,
+      1.3892667861204457,
+      1.389266786120445,
+      1.3776614404945589,
+      1.3776614404945577,
+      1.3607553507938817,
+      1.3469445668365088,
+      1.3436402341886302,
+      1.3358870150874544,
+      1.3301433410231291,
+      1.3301433410231274,
+      1.3272488906352986,
+      1.3272488906352973,
+      1.3189549507026503,
+      1.295154753241445,
+      1.2951547532414445,
+      1.2841586229604363,
+      1.2836531530207176,
+      1.267321552707551,
+      1.2673215527075485,
+      1.2619734009561294,
+      1.2619734009561292,
+      1.254912646304855,
+      1.2549126463048539,
+      1.2534641722589495,
+      1.2534641722589428,
+      1.2294679721266186,
+      1.2136107365170565,
+      1.2136107365170563,
+      1.1871502393075108,
+      1.1871502393075102,
+      1.1742262961881529,
+      1.1727480079667494,
+      1.1725684231022218,
+      1.1725684231022213,
+      1.1725120856007962,
+      1.1725120856007953,
+      1.1700197108606414,
+      1.1700197108606396,
+      1.1490138996312667,
+      1.1490138996312658,
+      1.1397914110004872,
+      1.1372673537657925,
+      1.1372673537657916,
+      1.1243924120398203,
+      1.1243924120398192,
+      1.1005374816197446,
+      1.0988592018583192,
+      1.0988592018583174,
+      1.082253499148961,
+      1.0822534991489607,
+      1.0712503940545823,
+      1.0712503940545786,
+      1.0436189438987633,
+      1.043618943898759,
+      1.015996145651056,
+      1.013839625650353,
+      1.0138396256503526,
+      1.0032875519138031,
+      1.003287551913803,
+      0.9998447524203353,
+      0.9998447524203339,
+      0.974377336560225,
+      0.9743773365602156,
+      0.9703695041088558,
+      0.968914640269969,
+      0.964120836871587,
+      0.9641208368715862,
+      0.9624307407173637,
+      0.9624307407173612,
+      0.9471183868741203,
+      0.9463842743361586,
+      0.9400814684029015,
+      0.9400814684029015,
+      0.9380456546715651,
+      0.9380456546715646,
+      0.9186026267441276,
+      0.9186026267441261,
+      0.9163557963805423,
+      0.9109375784772893,
+      0.9050846558220649,
+      0.905084655822064,
+      0.8955969372664498,
+      0.8955969372664478,
+      0.8948054162417626,
+      0.8917487323993314,
+      0.8817014204130655,
+      0.881701420413064,
+      0.8796362366100892,
+      0.879636236610088,
+      0.8634833640281486,
+      0.8634833640281435,
+      0.8530530597430667,
+      0.8530530597430663,
+      0.8377762718034064,
+      0.7873025180038731,
+      0.7873025180038726,
+      0.7761803589276709,
+      0.7761803589276701,
+      0.7679126210160958,
+      0.7679126210160953,
+      0.7610818603036884,
+      0.760779668523423,
+      0.7427643947353575,
+      0.742764394735357,
+      0.7405170225785499,
+      0.7405170225785497,
+      0.7383067898165979,
+      0.7383067898165975,
+      0.7294043818098374,
+      0.7294043818098366,
+      0.6875631891232477,
+      0.6875631891232472,
+      0.6871208508644016,
+      0.6871208508644009,
+      0.6781100117802839,
+      0.6772624334821188,
+      0.6746431124979912,
+      0.674611558690038,
+      0.6722047372166917,
+      0.6722047372166894,
+      0.6694825925743181,
+      0.6694825925743174,
+      0.6591591635654395,
+      0.6591591635654386,
+      0.6514090356622327,
+      0.6514090356622325,
+      0.6482675039343614,
+      0.6482675039343608,
+      0.6081143286277391,
+      0.6081143286277381,
+      0.604014010021592,
+      0.6040140100215914,
+      0.5858648952933532,
+      0.5830120553992,
+      0.5830120553991986,
+      0.5723026366827784,
+      0.572302636682776,
+      0.5694746942929637,
+      0.5375842758647953,
+      0.5375842758647952,
+      0.4718894573923381,
+      0.4718894573923373,
+      0.09737355497969098,
+      0.09737355497969097,
+      0.09681185917129817,
+      0.09681185917129813,
+      0.0944379890621138,
+      0.08697375097340798,
+      0.08021842361645799,
+      0.08021842361645792,
+      0.07315791196752154,
+      0.07315791196752146,
+      0.07068036160442574,
+      0.07068036160442566,
+      0.07043062790633135,
+      0.06856023731823987,
+      0.06856023731823985,
+      0.0029990078157936854,
+      0.002999007815793662,
+      0.001963060894627309,
+      0.001963060894627078,
+      7.477556497571166e-16
+    ],
+    "singular_value_threshold": 1.746514187103822e-10,
+    "weighted_normalization": "rows multiplied by sqrt(weights repeated over 3 Cartesian components); columns divided by tangent_scales",
+    "design_definition": "full_wave_tangent._basis_columns(mode 0, 1, 2 velocity and pressure-gradient response)"
+  },
+  "elapsed_assembly_seconds": 48.44560239999555,
+  "final_coefficient_vector": {
+    "x": [
+      -82.15595974483635,
+      -0.362415360330668,
+      81.99009341567046,
+      938.6807627557765,
+      0.02721531317876355,
+      -929.1026180258331,
+      98.8479131500121,
+      -1.1158250990752412,
+      -130.3366291703036,
+      56.26359941276264,
+      0.35618187278110486,
+      -55.24385760923843,
+      -42.98646284265163,
+      -0.5923913089888674,
+      35.019732223437785,
+      -17.595561988362853,
+      0.6774277379307498,
+      35.540148792686516,
+      -55.68437959408232,
+      2392.339327047038,
+      55.47478309837667,
+      1.795570255243487,
+      84.29225455086899,
+      -3.391417754333725,
+      55.22169931787298,
+      -2446.491966956347,
+      -57.66160887367854,
+      81.29257957328485,
+      0.06994251510432199,
+      -81.25143737713822,
+      939.715201780506,
+      5.986488497543159,
+      -950.8118248133765,
+      -102.65470218922924,
+      -4.708934752600909,
+      134.85066267570022,
+      -55.56659996354919,
+      0.08778618899247473,
+      54.90779295313052,
+      38.30146187824901,
+      -0.5936446492113409,
+      -28.89192247301922,
+      22.431814564233754,
+      0.7872392241169753,
+      -45.130694018011944,
+      54.13364968047096,
+      2419.6951069125757,
+      -44.76709388159124,
+      2.147194107397381,
+      -85.66718799766014,
+      -5.0753678519289975,
+      -56.742397608292194,
+      -2360.7483721072813,
+      28.562586258375564
+    ],
+    "layout": "[Re(c_0..c_26), Im(c_0..c_26)]",
+    "complex_packed": [
+      [
+        -82.15595974483635,
+        81.29257957328485
+      ],
+      [
+        -0.362415360330668,
+        0.06994251510432199
+      ],
+      [
+        81.99009341567046,
+        -81.25143737713822
+      ],
+      [
+        938.6807627557765,
+        939.715201780506
+      ],
+      [
+        0.02721531317876355,
+        5.986488497543159
+      ],
+      [
+        -929.1026180258331,
+        -950.8118248133765
+      ],
+      [
+        98.8479131500121,
+        -102.65470218922924
+      ],
+      [
+        -1.1158250990752412,
+        -4.708934752600909
+      ],
+      [
+        -130.3366291703036,
+        134.85066267570022
+      ],
+      [
+        56.26359941276264,
+        -55.56659996354919
+      ],
+      [
+        0.35618187278110486,
+        0.08778618899247473
+      ],
+      [
+        -55.24385760923843,
+        54.90779295313052
+      ],
+      [
+        -42.98646284265163,
+        38.30146187824901
+      ],
+      [
+        -0.5923913089888674,
+        -0.5936446492113409
+      ],
+      [
+        35.019732223437785,
+        -28.89192247301922
+      ],
+      [
+        -17.595561988362853,
+        22.431814564233754
+      ],
+      [
+        0.6774277379307498,
+        0.7872392241169753
+      ],
+      [
+        35.540148792686516,
+        -45.130694018011944
+      ],
+      [
+        -55.68437959408232,
+        54.13364968047096
+      ],
+      [
+        2392.339327047038,
+        2419.6951069125757
+      ],
+      [
+        55.47478309837667,
+        -44.76709388159124
+      ],
+      [
+        1.795570255243487,
+        2.147194107397381
+      ],
+      [
+        84.29225455086899,
+        -85.66718799766014
+      ],
+      [
+        -3.391417754333725,
+        -5.0753678519289975
+      ],
+      [
+        55.22169931787298,
+        -56.742397608292194
+      ],
+      [
+        -2446.491966956347,
+        -2360.7483721072813
+      ],
+      [
+        -57.66160887367854,
+        28.562586258375564
+      ]
+    ],
+    "l2_norm": 5177.661041578984
+  },
+  "frozen_final_replay": {
+    "predicted_metric": {
+      "point_count": 9072,
+      "momentum_max": 867681986541.6583,
+      "momentum_volume_L2": 10035593.964457229,
+      "momentum_volume_RMS": 68663950462.98202,
+      "physical_volume": 2.13613448359038e-08
+    },
+    "immutable_target_metric": {
+      "point_count": 9072,
+      "momentum_max": 867681986540.7333,
+      "momentum_volume_L2": 10035593.964457046,
+      "momentum_volume_RMS": 68663950462.98077,
+      "physical_volume": 2.13613448359038e-08
+    },
+    "difference_max_abs": 98.0046102579255,
+    "difference_volume_L2": 0.0013837483470534283,
+    "difference_relative_to_target_L2": 1.3788405070534287e-10,
+    "comparison": "quadratic cached reconstruction versus immutable frozen FD residual"
+  },
+  "directional_derivative_checks": {
+    "active_point_rule": "64 points with largest predicted residual norm",
+    "direction_one": {
+      "step": 0.05177661041578984,
+      "direction_norm": 1.0,
+      "active_point_count": 64,
+      "active_indices": [
+        5484,
+        4375,
+        4369,
+        3264,
+        3281,
+        5424,
+        3270,
+        3269,
+        3275,
+        3287,
+        5478,
+        3324,
+        3330,
+        4336,
+        5442,
+        5472,
+        5436,
+        4342,
+        3282,
+        4290,
+        3276,
+        4284,
+        3312,
+        4339,
+        4333,
+        3318,
+        4289,
+        4360,
+        4295,
+        4366,
+        4302,
+        4296,
+        4301,
+        4307,
+        4348,
+        4354,
+        4314,
+        4308,
+        4373,
+        4379,
+        4313,
+        4319,
+        4326,
+        4320,
+        4325,
+        4331,
+        4374,
+        4368,
+        4351,
+        4345,
+        4363,
+        4357,
+        4337,
+        4343,
+        4338,
+        4332,
+        4361,
+        4367,
+        4349,
+        4355,
+        4350,
+        4344,
+        4362,
+        4356
+      ],
+      "finite_difference_max_abs": 0.15194595347136566,
+      "finite_difference_l2": 0.4316788687542879,
+      "analytic_l2": 1461823767.938548,
+      "relative_l2_error": 2.9530158027396006e-10
+    },
+    "direction_two": {
+      "step": 0.05177661041578984,
+      "direction_norm": 1.0,
+      "active_point_count": 64,
+      "active_indices": [
+        5484,
+        4375,
+        4369,
+        3264,
+        3281,
+        5424,
+        3270,
+        3269,
+        3275,
+        3287,
+        5478,
+        3324,
+        3330,
+        4336,
+        5442,
+        5472,
+        5436,
+        4342,
+        3282,
+        4290,
+        3276,
+        4284,
+        3312,
+        4339,
+        4333,
+        3318,
+        4289,
+        4360,
+        4295,
+        4366,
+        4302,
+        4296,
+        4301,
+        4307,
+        4348,
+        4354,
+        4314,
+        4308,
+        4373,
+        4379,
+        4313,
+        4319,
+        4326,
+        4320,
+        4325,
+        4331,
+        4374,
+        4368,
+        4351,
+        4345,
+        4363,
+        4357,
+        4337,
+        4343,
+        4338,
+        4332,
+        4361,
+        4367,
+        4349,
+        4355,
+        4350,
+        4344,
+        4362,
+        4356
+      ],
+      "finite_difference_max_abs": 0.1498896112577974,
+      "finite_difference_l2": 0.34892371025797486,
+      "analytic_l2": 74422274093.96097,
+      "relative_l2_error": 4.6884311787818434e-12
+    }
+  },
+  "elapsed_seconds": 48.54350619998877,
+  "cache_path": "wave_momentum_projection.npz"
+}

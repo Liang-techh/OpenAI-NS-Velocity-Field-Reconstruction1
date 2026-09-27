@@ -12,3 +12,6 @@ dist/
 
 # Local wheel build used for isolated API smoke verification
 /artifacts/visual/package_check/
+
+# Rebuildable physical momentum cache (regenerate with its adjacent Python script)
+/experiments/root_st073/wave_momentum_projection.npz
