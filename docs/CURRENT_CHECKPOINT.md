@@ -2,6 +2,13 @@
 
 ## ST073 research update - 2026-09-27
 
+The old growing-wave joint 45-control mean fit has completed spatial replay:
+annulus volume L2 worsens from 193257.9992 to 193600.2673, despite a small
+patch improvement. Do not extend this candidate as a successful recursive
+step. See [joint mean/wave spatial result](ST073_JOINT_WAVE_MEAN_STATUS.md).
+Full harmonic tangent work on the locked co-designed candidate remains in
+progress; no completed full-field result is claimed yet.
+
 Joint polarization/growth fitting now matches the required radial flux at
 five nodes with relative error 4.69e-11. Higher-quadrature growth lambda is
 997.36, positive but below the imposed 1000 floor. Wave RMS is 4.347 times
