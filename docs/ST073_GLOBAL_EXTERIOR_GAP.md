@@ -97,3 +97,12 @@ nonzero; compact spatial support and bounded fixed-time ingredients provide
 the finite-energy rationale. These two numerical rules do not certify an
 integration error or a uniform bound at the critical time. Full-domain
 momentum and time evolution remain unresolved.
+
+The streamfunction reconstruction has now also been checked at k0+1e-3,
+where slope contributions are nonzero, using five-point spatial derivatives.
+Maximum sampled meridional-velocity discrepancy across reference and shifted
+times is 3.66e-9. The actual geometric endpoint k0+1e-6 separately preserves
+the whole wave support in the plateau and gives zero sampled velocity and
+pressure differences. A generic BroadShearSlope adapter was corrected to
+include its time multiplier; its concrete zero meridional base makes this
+fix numerically neutral for the present candidate.

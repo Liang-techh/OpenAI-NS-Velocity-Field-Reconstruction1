@@ -1,0 +1,5738 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "constraints_maintained": false,
+  "wave_integrated": false,
+  "scope": "Bounded actual endpoint acceleration projection. The balanced 264-control affine candidate is replayed at delta_k=1e-6; a separate degree-2 mode 0..4 correction has zero velocity and pressure at t0. A ridge linearized endpoint fit is followed by one actual finite-difference replay. Endpoint moments, cones, shape, trajectory, and recursion are diagnostic only.",
+  "sources": {
+    "balanced": {
+      "path": "balanced_refined_tangent.json",
+      "sha256": "8396633295fb37307aa3d946852e5a4479e5f46e78474942997bc3b5ea601909"
+    },
+    "frozen_geometry": {
+      "path": "full_wave_frozen_cache.json",
+      "sha256": "c03b9efa4bd65db79ee420df66808a34e7f634174851b47cca81f742b1435574"
+    },
+    "refined_cache": {
+      "path": "refined_wave_momentum_cache.npz",
+      "sha256": "0045761921a3fea916b351dddd84c52f2ecf7f27c43b7139935d025c62ba2da0"
+    }
+  },
+  "inputs": {
+    "point_count": 44400,
+    "delta_k": 1e-06,
+    "k0": 11.0003,
+    "tau0": 0.00024408986266228504,
+    "tau1": 0.0002440896934721437,
+    "physical_time_increment": 1.6919014133491908e-10,
+    "hspace": 7.811687760373635e-07,
+    "htime": 2.4408986266228506e-08,
+    "viscosity": 0.01,
+    "degree": 2,
+    "modes": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "acceleration_control_count": 324,
+    "ridge": 1e-06,
+    "base_control_count": 264,
+    "initial_wave_coefficients": [
+      [
+        -46.533798491396134,
+        51.934790409029404
+      ],
+      [
+        -0.21318572250976625,
+        -0.03903562857263393
+      ],
+      [
+        46.27915055938291,
+        -51.88497563669014
+      ],
+      [
+        600.2307936813752,
+        531.5180227125076
+      ],
+      [
+        0.199140388159038,
+        2.644314594712002
+      ],
+      [
+        -594.471957118667,
+        -537.4707777111536
+      ],
+      [
+        56.35907056702356,
+        -65.41157277973319
+      ],
+      [
+        0.35141723483575127,
+        -1.0426933241643344
+      ],
+      [
+        -73.08029903859625,
+        83.20785372604246
+      ],
+      [
+        31.83248572961167,
+        -35.53105948004622
+      ],
+      [
+        0.15520724653241208,
+        0.02382513657067081
+      ],
+      [
+        -31.16245736253507,
+        35.22856532212158
+      ],
+      [
+        -24.589330801038184,
+        24.563724395133637
+      ],
+      [
+        -0.35966384824894826,
+        -0.4996017476708478
+      ],
+      [
+        19.548486010588068,
+        -19.174346707020057
+      ],
+      [
+        -9.575336709644041,
+        14.77094209673753
+      ],
+      [
+        -0.32723360781959987,
+        1.4134344512988013
+      ],
+      [
+        19.093327514646035,
+        -26.95948833121403
+      ],
+      [
+        -31.48174383838735,
+        34.84991600144496
+      ],
+      [
+        1530.627452253894,
+        1368.7371137451873
+      ],
+      [
+        32.60563340659708,
+        -31.58260434666682
+      ],
+      [
+        0.7060052213514819,
+        0.800005757914512
+      ],
+      [
+        48.53129312948707,
+        -53.03105910646532
+      ],
+      [
+        -0.359877744015608,
+        -0.37668977242141466
+      ],
+      [
+        31.81480557118144,
+        -35.92762954341032
+      ],
+      [
+        -1563.1822167913988,
+        -1332.8439081105334
+      ],
+      [
+        -32.79025464618999,
+        19.471391821830974
+      ]
+    ],
+    "base_tangent_coefficients": [
+      80929.1247879853,
+      8760679.13567474,
+      1402265.182983512,
+      -17605535.894024186,
+      -13647146.756063525,
+      -207471026.59749588,
+      -54281884.70809625,
+      141378528.4606832,
+      1021890.5359161809,
+      119923248.74739185,
+      9946813.36082732,
+      -155284800.71987376,
+      99973631.02822457,
+      1818602175.2430646,
+      58684048.28838475,
+      -1269237281.6210763,
+      -110393.37243043227,
+      79414.01758844314,
+      -127526.53641381001,
+      8127252.81326197,
+      -585441.9366827281,
+      2986427.6917809136,
+      834528.9110556035,
+      -90314820.42668778,
+      2433918.98611267,
+      -104670541.09056479,
+      3285648.7214306896,
+      323601330.8273145,
+      -810738.7869897935,
+      237304596.6801197,
+      -20330357.937523667,
+      -409040717.15640193,
+      -26184716.63586737,
+      35508841.1159951,
+      380632039.175453,
+      -192330276.74515218,
+      8223141.112454168,
+      -3087468.451060011,
+      -43707819.11431466,
+      -13452091.238090198,
+      -426479591.52431643,
+      167015935.14674547,
+      4338492020.369498,
+      467036235.46629417,
+      408481131.9305995,
+      -132289453.20748366,
+      -2342172602.318881,
+      658592093.764142,
+      1003186.5975786922,
+      -471059.9669088626,
+      2197301.4993640035,
+      -1048288.4776614091,
+      433863.8940476942,
+      -1196548.7852869295,
+      -33757918.769575335,
+      -7100863.920254766,
+      -78581769.23598158,
+      581354.708946322,
+      84183530.07305554,
+      3290529.4366759933,
+      161795722.66890416,
+      -40119781.4220017,
+      -34360202.22833374,
+      194759601.7875276,
+      31151335.17970974,
+      71595853.29064076,
+      -528365.8233868829,
+      131850.52562463406,
+      -30849275.04971924,
+      -71765738.42923547,
+      833357165.3789821,
+      -340437020.09598756,
+      -461024.1865585018,
+      -160813.5538835805,
+      -837254986.3008598,
+      338559066.2537326,
+      -56142217.73511795,
+      -81680208.35274601,
+      1410675.4918858104,
+      -1682548.4871071475,
+      66642157.67689061,
+      88238265.11426267,
+      -19994116.991888463,
+      -49748774.0757294,
+      -17821.13207497436,
+      101752.91187153276,
+      19458827.07803317,
+      49559068.81330478,
+      13272452.765490957,
+      37103828.593403466,
+      -1265982.1376132797,
+      452311.26022218727,
+      -11288324.847487293,
+      -33484831.3421015,
+      8812423.449200226,
+      18076823.486309644,
+      5493335.575940045,
+      -1899651.1460578756,
+      -9105366.194759138,
+      -27901136.992355596,
+      20381600.17691075,
+      49543332.269100234,
+      2145252069.3522205,
+      -865156320.3668492,
+      -26164951.04872998,
+      -48119585.17392032,
+      -66302.39437935827,
+      -669874.9204354298,
+      -84682133.96453544,
+      -37584918.446653485,
+      13113156.885748584,
+      -7949918.189918763,
+      -19650056.72106717,
+      -50149708.81473628,
+      -2095671891.0386057,
+      886661714.443464,
+      6465268.209861856,
+      60186140.84597272,
+      13143.321033024302,
+      -21265.734530431087,
+      -146930.52178919205,
+      93955.24123251525,
+      25605.136900640908,
+      -189413.38775034685,
+      -129604.94190697602,
+      5643.977082167927,
+      1090005.8486837617,
+      -2079409.9234518276,
+      99025.87178483588,
+      341977.9094069201,
+      200538.49108875,
+      -10740.332079089014,
+      -1520688.128418922,
+      5290028.98567857,
+      -848245.097529528,
+      29325.58527225186,
+      18907043.03443203,
+      -34931133.05262167,
+      -905866291.1935173,
+      -463648197.680243,
+      -20095825.68074602,
+      40302622.48138203,
+      904537061.3830091,
+      470004723.74511516,
+      -90314287.13095516,
+      -52328448.46552535,
+      -1427955796.401765,
+      1069342570.6754942,
+      15911684.261934962,
+      38878210.48451198,
+      1410278340.2806492,
+      -1113468105.1676595,
+      -183623418.50339562,
+      415247864.9291446,
+      15359226582.391098,
+      4320433500.09057,
+      202387573.5969218,
+      -407383376.59601545,
+      -15233108722.855186,
+      -4289091408.2966137,
+      89821475.76896042,
+      982821.9364527687,
+      466571856.334291,
+      -4160119933.4555397,
+      335314393.4462608,
+      48224791.513774395,
+      -695514102.2411461,
+      4263903029.030966,
+      -3340199.8792700097,
+      2461132.51130025,
+      -194120552.83372796,
+      92687159.30295183,
+      5973293.798606409,
+      -945004.7514322707,
+      200668656.8156306,
+      -100650681.56646746,
+      48012823.146210685,
+      19479638.967331998,
+      616322656.9120805,
+      -1754126013.0916424,
+      -71090669.14497456,
+      -17709013.585336924,
+      -613234205.8414307,
+      1859971756.1087704,
+      -34837569.90694304,
+      -21547050.539657116,
+      -475768476.4916693,
+      1135101014.7100759,
+      60941024.21254746,
+      -79675911.35823983,
+      193676331.78229642,
+      -1369337266.2167182,
+      -14794163.596676026,
+      -1682392.1987503953,
+      18731532.793277383,
+      692189358.6385394,
+      57692264.10560094,
+      158703338.2358391,
+      562645699.4507489,
+      -660965721.0827082,
+      166113244.5100842,
+      344475894.54459536,
+      144155967.8552188,
+      -167025384.8126619,
+      -2126344103.6349485,
+      -4542055943.72139,
+      -225006592.4001042,
+      133206325.025333,
+      -3073957187.5422444,
+      -873898431.0208344,
+      -919519304.4963,
+      2695584483.2051487,
+      39485739042.117455,
+      11125569460.074451,
+      481372500.7371533,
+      -1958715677.7931552,
+      -166379772.1874114,
+      91075693.63984266,
+      -104301644.38562676,
+      10784420.264410496,
+      1966229585.2464252,
+      -7867213.606899738,
+      1447139066.7999709,
+      330505626.9461326,
+      3075472091.1470194,
+      522046207.6751585,
+      993400821.4919424,
+      -2583873259.500305,
+      -39372725884.839226,
+      -9083195325.302858,
+      -1425983055.3290596,
+      1674851099.3368523,
+      -816513.5362237472,
+      -1617372.5073899126,
+      456583.18478135765,
+      -136739.9821064925,
+      -1957128.6376227303,
+      -3695438.630274566,
+      4175261.7321859375,
+      -936260.8556179535,
+      8188321.410256513,
+      280811.56471978687,
+      129991.09248038568,
+      2085246.8286350626,
+      22809726.35705792,
+      16331611.131315723,
+      -12946449.284820244,
+      11535916.758418329,
+      8282953.688753903,
+      73104349.05061327,
+      -17325075.72579688,
+      -2958950.3591940776,
+      3419645.2017907277,
+      -79812918.31969997,
+      -44821407.35499528,
+      31705269.331341714,
+      -61985878.82538104,
+      -146403045.59829453,
+      35136306.513476305,
+      -5570062.6459424235,
+      -147283403.97886014,
+      134565641.22084886,
+      116218100.02783693,
+      -153655705.54994315
+    ],
+    "acceleration_layout": "mode0 [27 velocity acceleration, 9 pressure slope] real; modes1..4 each interleaved velocity [Re,-Im] then pressure [Re,-Im]"
+  },
+  "source_constraints": {
+    "reference_assembled_feasible": true,
+    "reference_constraints_scope": "Frozen-grid assembled replay only (moments, cones, endpoint geometry, and all 44400 peak values); no independent trajectory validation.",
+    "reference_selected_moment_error": 3.026798367500305e-09,
+    "reference_selected_cone_min_margin": -3.456079866737127e-11,
+    "reference_selected_endpoint_margin": [
+      1.3610760671192539e-17,
+      6.431182355323001e-17,
+      0.015111153684756774
+    ],
+    "new_acceleration_constraints_enforced": false,
+    "new_acceleration_initial_state_unchanged": true
+  },
+  "base_endpoint": {
+    "method": "actual MixedAffineField plus affine_momentum.jets five-point FD",
+    "metric": {
+      "point_count": 44400,
+      "momentum_max": 113894588673.38148,
+      "momentum_volume_L2": 1899236.080152343,
+      "momentum_volume_RMS": 12994652094.03196,
+      "physical_volume": 2.13613448359038e-08
+    },
+    "max_residual": {
+      "index": 20484,
+      "point": [
+        0.0009176819979186611,
+        0.00021486914856208564,
+        -5.491235501718044e-05
+      ],
+      "weight": 1.30307326342901e-12,
+      "vector": [
+        51933573803.28444,
+        101314447675.18362,
+        3203737406.5371704
+      ],
+      "norm": 113894588673.38148
+    },
+    "mean_loader_status": "completed",
+    "reference_affine_candidate_metric": {
+      "point_count": 44400,
+      "momentum_max": 113930727617.31053,
+      "momentum_volume_L2": 1898919.6797158362,
+      "momentum_volume_RMS": 12992487269.112207,
+      "physical_volume": 2.13613448359038e-08
+    }
+  },
+  "acceleration_design": {
+    "shape": [
+      133200,
+      324
+    ],
+    "layout": [
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 0,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 1,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 2,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 3,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 4,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 5,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 6,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 7,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 8,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 9,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 10,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 11,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 12,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 13,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 14,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 15,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 16,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 17,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 18,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 19,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 20,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 21,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 22,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 23,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 24,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 25,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 26,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "pressure",
+        "component": "real",
+        "index": 0,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 0,
+        "kind": "pressure",
+        "component": "real",
+        "index": 1,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 0,
+        "kind": "pressure",
+        "component": "real",
+        "index": 2,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 0,
+        "kind": "pressure",
+        "component": "real",
+        "index": 3,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 0,
+        "kind": "pressure",
+        "component": "real",
+        "index": 4,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 0,
+        "kind": "pressure",
+        "component": "real",
+        "index": 5,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 0,
+        "kind": "pressure",
+        "component": "real",
+        "index": 6,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 0,
+        "kind": "pressure",
+        "component": "real",
+        "index": 7,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 0,
+        "kind": "pressure",
+        "component": "real",
+        "index": 8,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 0,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 0,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 1,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 1,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 2,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 2,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 3,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 3,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 4,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 4,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 5,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 5,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 6,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 6,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 7,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 7,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 8,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 8,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 9,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 9,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 10,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 10,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 11,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 11,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 12,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 12,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 13,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 13,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 14,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 14,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 15,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 15,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 16,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 16,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 17,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 17,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 18,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 18,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 19,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 19,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 20,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 20,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 21,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 21,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 22,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 22,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 23,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 23,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 24,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 24,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 25,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 25,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 26,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 26,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "real",
+        "index": 0,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 0,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "real",
+        "index": 1,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 1,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "real",
+        "index": 2,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 2,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "real",
+        "index": 3,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 3,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "real",
+        "index": 4,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 4,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "real",
+        "index": 5,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 5,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "real",
+        "index": 6,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 6,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "real",
+        "index": 7,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 7,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "real",
+        "index": 8,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 8,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 0,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 0,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 1,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 1,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 2,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 2,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 3,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 3,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 4,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 4,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 5,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 5,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 6,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 6,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 7,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 7,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 8,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 8,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 9,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 9,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 10,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 10,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 11,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 11,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 12,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 12,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 13,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 13,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 14,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 14,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 15,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 15,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 16,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 16,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 17,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 17,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 18,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 18,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 19,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 19,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 20,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 20,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 21,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 21,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 22,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 22,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 23,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 23,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 24,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 24,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 25,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 25,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 26,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 26,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "real",
+        "index": 0,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 0,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "real",
+        "index": 1,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 1,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "real",
+        "index": 2,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 2,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "real",
+        "index": 3,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 3,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "real",
+        "index": 4,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 4,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "real",
+        "index": 5,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 5,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "real",
+        "index": 6,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 6,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "real",
+        "index": 7,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 7,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "real",
+        "index": 8,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 8,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 0,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 0,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 1,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 1,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 2,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 2,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 3,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 3,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 4,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 4,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 5,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 5,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 6,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 6,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 7,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 7,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 8,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 8,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 9,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 9,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 10,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 10,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 11,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 11,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 12,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 12,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 13,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 13,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 14,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 14,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 15,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 15,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 16,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 16,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 17,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 17,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 18,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 18,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 19,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 19,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 20,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 20,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 21,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 21,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 22,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 22,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 23,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 23,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 24,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 24,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 25,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 25,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 26,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 26,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "real",
+        "index": 0,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 0,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "real",
+        "index": 1,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 1,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "real",
+        "index": 2,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 2,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "real",
+        "index": 3,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 3,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "real",
+        "index": 4,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 4,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "real",
+        "index": 5,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 5,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "real",
+        "index": 6,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 6,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "real",
+        "index": 7,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 7,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "real",
+        "index": 8,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 8,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 0,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 0,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 1,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 1,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 2,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 2,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 3,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 3,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 4,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 4,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 5,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 5,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 6,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 6,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 7,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 7,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 8,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 8,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 9,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 9,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 10,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 10,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 11,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 11,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 12,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 12,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 13,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 13,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 14,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 14,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 15,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 15,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 16,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 16,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 17,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 17,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 18,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 18,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 19,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 19,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 20,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 20,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 21,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 21,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 22,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 22,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 23,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 23,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 24,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 24,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 25,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 25,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 26,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 26,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "real",
+        "index": 0,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 0,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "real",
+        "index": 1,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 1,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "real",
+        "index": 2,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 2,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "real",
+        "index": 3,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 3,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "real",
+        "index": 4,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 4,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "real",
+        "index": 5,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 5,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "real",
+        "index": 6,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 6,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "real",
+        "index": 7,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 7,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "real",
+        "index": 8,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 8,
+        "coefficient_units": "pressure slope"
+      }
+    ],
+    "response_definition": "dt*V + 0.5*dt^2*(-nu*lapV + (gradV)u_endpoint + (gradU_endpoint)V) for velocity acceleration; dt*gradP for pressure slope"
+  },
+  "ridge_fit": {
+    "ridge": 1e-06,
+    "column_count": 324,
+    "singular_values": [
+      2.2780927811967158,
+      2.200165172934933,
+      2.166617267058682,
+      2.1085229681018864,
+      2.0104489046569025,
+      2.0090045189047285,
+      1.9884606968810519,
+      1.9570113997532075,
+      1.9428471108863252,
+      1.9313950965992597,
+      1.913515298917263,
+      1.9079491202928354,
+      1.9043234460902294,
+      1.8949036169493838,
+      1.8948076484436955,
+      1.8656914052178215,
+      1.8602984991589506,
+      1.8594149073398127,
+      1.85821424715184,
+      1.8543904023828737,
+      1.8521044704598701,
+      1.842643444315308,
+      1.83964902063802,
+      1.8306288445351324,
+      1.825789214222916,
+      1.819952698434837,
+      1.8152163316614145,
+      1.8148299688054437,
+      1.8143218212826822,
+      1.8130513483843786,
+      1.8122465913907178,
+      1.8116342154409677,
+      1.7847140681730584,
+      1.777479902697386,
+      1.7697538633604137,
+      1.7660619956527985,
+      1.7565539034209998,
+      1.747606402354364,
+      1.7217003960210022,
+      1.7206728066717638,
+      1.7202676343619299,
+      1.6780580949640662,
+      1.6767600389795008,
+      1.67580763269794,
+      1.6666169942404707,
+      1.6540490985667262,
+      1.623947073862187,
+      1.608655943749302,
+      1.601037389282164,
+      1.598689220536891,
+      1.5651525802722672,
+      1.5523189136495144,
+      1.549766975467531,
+      1.5383158520842695,
+      1.5312519674362821,
+      1.5235650130419378,
+      1.505607335381508,
+      1.4795737752814822,
+      1.4768828021084894,
+      1.4681500177141176,
+      1.4556735582882492,
+      1.4468815594106477,
+      1.4295296553847905,
+      1.42203593434324,
+      1.4206757414228166,
+      1.3945892036103928,
+      1.3829067990032817,
+      1.3720276633593518,
+      1.3664755015013237,
+      1.3664512345958506,
+      1.3621579985554475,
+      1.356200486729539,
+      1.3516504392135398,
+      1.350477951694175,
+      1.3474204272956551,
+      1.3465691871499692,
+      1.3460462611514268,
+      1.3429435964104781,
+      1.3422262701158563,
+      1.3408014587907118,
+      1.34037182411746,
+      1.3396793482976643,
+      1.3392476379418592,
+      1.3344335641036078,
+      1.3219851255914847,
+      1.3176682782000015,
+      1.3171273273078208,
+      1.3038383240743505,
+      1.3027166683301843,
+      1.3018170464084422,
+      1.2987491692311288,
+      1.2849584102410452,
+      1.2837806740445215,
+      1.283272041174302,
+      1.2706791318506514,
+      1.262039395162542,
+      1.25452680156739,
+      1.2412629469968326,
+      1.2323916296464485,
+      1.2295268636524248,
+      1.2294844174654604,
+      1.2049642963340428,
+      1.1865209242553711,
+      1.1744933018978552,
+      1.173134659705019,
+      1.1641901682078948,
+      1.1424524928497748,
+      1.1327822773623053,
+      1.120720786124633,
+      1.0956303429589997,
+      1.0793386527292819,
+      1.0700736488204,
+      1.0700442137765847,
+      1.0668174292825143,
+      1.0658234140967824,
+      1.0655606565864306,
+      1.0646953676600133,
+      1.0629483342612154,
+      1.0205496846675328,
+      0.9728226268594352,
+      0.9724361305762887,
+      0.9714813741793785,
+      0.9547069945015211,
+      0.9546801186630122,
+      0.9535007848685078,
+      0.9529879790390182,
+      0.9522049519123494,
+      0.9484764867497673,
+      0.946979286867746,
+      0.9462392844627315,
+      0.9458084095345073,
+      0.9457781229847255,
+      0.9457320074244825,
+      0.9439406563984648,
+      0.9414823611654818,
+      0.9359272850276619,
+      0.9317913392434476,
+      0.9173700623149705,
+      0.914328328011392,
+      0.9092560343296175,
+      0.9066697329912177,
+      0.8937694638659021,
+      0.8918210196649449,
+      0.8863172753623783,
+      0.8850358509860574,
+      0.8741432531727074,
+      0.8473428918628609,
+      0.8407011933270222,
+      0.8392336740535715,
+      0.838410343254664,
+      0.8324896225604966,
+      0.8320325466322899,
+      0.8189050057497361,
+      0.8025775009056552,
+      0.7588201178960788,
+      0.7583556996591009,
+      0.6990675148767206,
+      0.687746706716095,
+      0.6756701498258229,
+      0.6756015486684961,
+      0.6715827892580936,
+      0.6709294852754347,
+      0.6299297668115069,
+      0.5860031312976366,
+      0.5598499766111187,
+      0.5282238171853901,
+      0.5055035283391766,
+      0.5016336546541847,
+      0.4840744130387433,
+      0.4549943177938342,
+      0.4430879467597111,
+      0.410518944621585,
+      0.3495444370799603,
+      0.3451643628788279,
+      0.251278018125245,
+      0.21346107594426209,
+      0.08401407532723217,
+      0.07312748866182982,
+      0.07050122470462362,
+      1.31197482961343e-14,
+      1.2730528432646246e-14,
+      1.2442323903075724e-14,
+      1.2115410918347484e-14,
+      1.188157926098505e-14,
+      1.1384572951500246e-14,
+      1.1201107474553572e-14,
+      1.0854306268178467e-14,
+      1.063577665726374e-14,
+      1.054251392628251e-14,
+      1.0418888755379007e-14,
+      1.0166486973651898e-14,
+      1.0155128176444717e-14,
+      1.007001196509952e-14,
+      1.0061742065258025e-14,
+      1.0040338580239648e-14,
+      9.87189254287293e-15,
+      9.824116407777135e-15,
+      9.656984636792077e-15,
+      9.520609242772523e-15,
+      9.504719063854649e-15,
+      9.463041429071097e-15,
+      9.336855273070372e-15,
+      9.264741389938412e-15,
+      9.24958398358461e-15,
+      9.172251907592514e-15,
+      9.076745415142425e-15,
+      9.044391857989714e-15,
+      9.028702498660065e-15,
+      8.938560093126442e-15,
+      8.779443133126245e-15,
+      8.69187510181919e-15,
+      8.574739941024742e-15,
+      8.559215412854575e-15,
+      8.529861507952189e-15,
+      8.511236373764764e-15,
+      8.41926992147561e-15,
+      8.385591591876761e-15,
+      8.260567590424177e-15,
+      8.233787422116454e-15,
+      8.224989979699887e-15,
+      8.140890915902845e-15,
+      8.133274214469593e-15,
+      8.058297018719434e-15,
+      8.012777674684616e-15,
+      7.9624280307943e-15,
+      7.862064793726727e-15,
+      7.828636416139177e-15,
+      7.791237518482817e-15,
+      7.75426646977346e-15,
+      7.694560198003162e-15,
+      7.614649412767827e-15,
+      7.541737255181955e-15,
+      7.487647274049355e-15,
+      7.433723934018162e-15,
+      7.39377191144762e-15,
+      7.337889799587882e-15,
+      7.277234516963424e-15,
+      7.217357026128478e-15,
+      7.210903810286364e-15,
+      7.175822871870771e-15,
+      7.152357872945053e-15,
+      7.121973123795466e-15,
+      7.111216921251223e-15,
+      7.031055998807012e-15,
+      7.027482239508654e-15,
+      7.014192003309234e-15,
+      6.995751833539471e-15,
+      6.967394841270204e-15,
+      6.9447394341864645e-15,
+      6.923931107034872e-15,
+      6.908181148101864e-15,
+      6.8306743537761945e-15,
+      6.822792930318796e-15,
+      6.7841755157951455e-15,
+      6.673434688829522e-15,
+      6.624512648090051e-15,
+      6.565157604861473e-15,
+      6.539575033504255e-15,
+      6.5050386008925495e-15,
+      6.4666120370815065e-15,
+      6.418905445109836e-15,
+      6.3987319676143854e-15,
+      6.355843569007568e-15,
+      6.352026135613629e-15,
+      6.3099690180162346e-15,
+      6.3001097097197585e-15,
+      6.263090445714851e-15,
+      6.239436532958776e-15,
+      6.16664188758271e-15,
+      6.143737467246231e-15,
+      6.131428755294777e-15,
+      6.11634219981031e-15,
+      6.103862702606397e-15,
+      6.0356060252633646e-15,
+      6.0029250128315705e-15,
+      5.9952350504463455e-15,
+      5.9439976667915686e-15,
+      5.911655674354266e-15,
+      5.836976275988421e-15,
+      5.824049759333347e-15,
+      5.736890358072879e-15,
+      5.691927071374659e-15,
+      5.6718403248160394e-15,
+      5.594616868994006e-15,
+      5.57552247283875e-15,
+      5.451586212269786e-15,
+      5.382406320238772e-15,
+      5.355919571310585e-15,
+      5.3124504169589725e-15,
+      5.296051194940303e-15,
+      5.263695518146346e-15,
+      5.251045197589155e-15,
+      5.135290394790216e-15,
+      5.0455573390397665e-15,
+      5.01477392880643e-15,
+      4.955076664388015e-15,
+      4.932638067602819e-15,
+      4.91209994566179e-15,
+      4.9005194665044e-15,
+      4.775928378588953e-15,
+      4.754623023663498e-15,
+      4.724999806846972e-15,
+      4.665279069206495e-15,
+      4.626046668988727e-15,
+      4.5982879710410735e-15,
+      4.529978838560892e-15,
+      4.458902908275023e-15,
+      4.416493492717836e-15,
+      4.323592915784665e-15,
+      4.175879126185681e-15,
+      3.799149368030494e-15,
+      3.663782152990753e-15,
+      3.607638206360431e-15,
+      3.547045806378068e-15,
+      3.4410606851935626e-15,
+      3.3472654234248373e-15,
+      3.2013048373912663e-15,
+      3.0103925572097788e-15,
+      3.003887748692705e-15,
+      2.813867068343485e-15,
+      2.6837849858469415e-15,
+      2.477897582158386e-15,
+      2.3734162786437735e-15,
+      1.620260185740989e-15
+    ],
+    "rank_rcond_1e-10": 179,
+    "condition_number": 1406004295634088.0,
+    "column_scales_min": 9.420806416750813e-14,
+    "column_scales_max": 3.85896570295299e-11,
+    "linearized_endpoint_metric": {
+      "point_count": 44400,
+      "momentum_max": 112515648536.17967,
+      "momentum_volume_L2": 1808424.815144425,
+      "momentum_volume_RMS": 12373317649.44718,
+      "physical_volume": 2.13613448359038e-08
+    },
+    "linearized_correction_metric": {
+      "point_count": 44400,
+      "momentum_max": 13404387504.06631,
+      "momentum_volume_L2": 580252.5991684627,
+      "momentum_volume_RMS": 3970112368.677796,
+      "physical_volume": 2.13613448359038e-08
+    },
+    "coefficient_norm": 1.9628307135537288e+18,
+    "coefficient_max_abs": 1.8563546321416735e+18,
+    "coefficients": [
+      8282361016187679.0,
+      -7260054113136315.0,
+      -2.02054782730802e+16,
+      821720502381985.1,
+      3.177680724589578e+17,
+      -4.565061380824809e+16,
+      -1.0940794760317698e+17,
+      -1.508896189643312e+17,
+      -4.090009428563245e+16,
+      801147548120770.5,
+      1255752855607966.8,
+      1031616634162128.4,
+      -154404253552020.03,
+      -5015978006640.359,
+      307741380030217.1,
+      -3759605988999596.0,
+      -3314125940644802.5,
+      4528537049110997.0,
+      -6.3444115581175304e+16,
+      -4925306611399389.0,
+      4.0203605329866835e+17,
+      1.9966409562947224e+16,
+      -2.5480857915698035e+17,
+      8.985874616944312e+16,
+      -7.129162989331e+16,
+      -5.6929209976381704e+16,
+      -1.8563546321416735e+18,
+      2466833720976759.0,
+      2558267557708023.0,
+      7614415948042708.0,
+      -5398003978439924.0,
+      1.9105658981885052e+16,
+      6.611837735737757e+16,
+      2.2997485520300764e+16,
+      3.443489885661847e+16,
+      -6.604326367328234e+16,
+      -125273590695307.02,
+      125273590691822.06,
+      1589359341720664.8,
+      -1589359341816560.5,
+      224513833387656.2,
+      -224513833369846.0,
+      -501808236668429.0,
+      501808236742466.9,
+      -1128709289446593.0,
+      1128709289494043.5,
+      179125219773678.4,
+      -179125219767958.06,
+      1966771772085480.8,
+      -1966771772073721.5,
+      -1.160337286980088e+16,
+      1.1603372870033714e+16,
+      -5901378624285223.0,
+      5901378624449097.0,
+      29115963416623.07,
+      -29115963416044.86,
+      -45900626460754.67,
+      45900626460520.89,
+      -43318986191705.34,
+      43318986190251.984,
+      -103798365056823.66,
+      103798365050686.38,
+      1310665343082645.8,
+      -1310665343025050.2,
+      -1027748987197119.4,
+      1027748987191062.8,
+      16373116922703.465,
+      -16373116921381.697,
+      -5873222403913765.0,
+      5873222403329450.0,
+      2793551492320642.0,
+      -2793551492248428.0,
+      -176588216610990.28,
+      176588216646332.44,
+      -403480429268363.9,
+      403480429261871.25,
+      3641945203624499.0,
+      -3641945203244014.0,
+      3790095282384391.0,
+      -3790095281275476.0,
+      1573541080294654.5,
+      -1573541080294945.8,
+      -4.749665457387995e+16,
+      4.749665457361958e+16,
+      -3300603134547072.0,
+      3300603134648049.0,
+      1.401551055924758e+16,
+      -1.4015510558375254e+16,
+      3.6167452673351416e+16,
+      -3.6167452672223944e+16,
+      108777511691.70848,
+      -108777511690.84322,
+      -29805426522488.21,
+      29805426520359.125,
+      -18174090552678.844,
+      18174090553774.875,
+      68844174407139.164,
+      -68844174397737.305,
+      -262978338532410.22,
+      262978338543540.2,
+      24106553176974.633,
+      -24106553178052.477,
+      -242024653263993.2,
+      242024653259607.0,
+      1157139526042558.5,
+      -1157139525976881.2,
+      32304060334824.492,
+      -32304060335486.105,
+      5290430132740.602,
+      -5290430132798.574,
+      -212691928651604.4,
+      212691928637914.4,
+      26934801070112.44,
+      -26934801071769.83,
+      27103894851009.438,
+      -27103894850653.125,
+      84480632029027.14,
+      -84480632037755.66,
+      119075712079451.4,
+      -119075712081047.19,
+      -173062865056262.66,
+      173062865055079.22,
+      2568768694170405.0,
+      -2568768694172567.5,
+      -655876669135008.2,
+      655876669122524.1,
+      -1429275737764.926,
+      1429275737898.8997,
+      8361509709273.267,
+      -8361509708241.175,
+      -9048229985356.44,
+      9048229986166.785,
+      -2044144787343.273,
+      2044144787240.738,
+      11680653406406.805,
+      -11680653406988.447,
+      -49285044681020.72,
+      49285044679886.34,
+      34381834585019.246,
+      -34381834584852.35,
+      -131066824692143.39,
+      131066824680042.4,
+      221316576947148.47,
+      -221316576951536.6,
+      11417008283630.453,
+      -11417008283699.414,
+      -26762420748952.234,
+      26762420749698.273,
+      -72411772198419.36,
+      72411772197067.3,
+      -624078429255739.6,
+      624078429276803.8,
+      109557272024195.73,
+      -109557272032098.97,
+      6606015123846182.0,
+      -6606015123895319.0,
+      990807424189119.5,
+      -990807424189210.5,
+      -998081021786188.2,
+      998081021861753.4,
+      -7493588707463520.0,
+      7493588707868670.0,
+      179339859424.6911,
+      -179339859414.02655,
+      -126991121942.91338,
+      126991121931.99178,
+      -5479317086533.067,
+      5479317087355.441,
+      5931806608626.334,
+      -5931806609120.726,
+      -8206193590790.069,
+      8206193590171.41,
+      32941082198554.055,
+      -32941082194172.07,
+      -23382294165468.54,
+      23382294164560.688,
+      27019740260778.234,
+      -27019740261644.45,
+      -61185110570578.59,
+      61185110573984.1,
+      15546648459277.922,
+      -15546648458420.723,
+      17756596714011.254,
+      -17756596715536.586,
+      -70639836683328.58,
+      70639836679832.88,
+      74532478947806.77,
+      -74532478936519.19,
+      56120547588437.125,
+      -56120547589179.5,
+      -345507343918942.06,
+      345507343947348.9,
+      -396768663636842.44,
+      396768663643665.7,
+      -397989113334262.06,
+      397989113303390.2,
+      1967016911154065.8,
+      -1967016911170054.8,
+      -5759745329613.604,
+      5759745329305.095,
+      -8971292415689.035,
+      8971292414515.535,
+      53509098942620.0,
+      -53509098945485.29,
+      -19229333467041.824,
+      19229333466531.367,
+      -42200774121186.21,
+      42200774116892.12,
+      62597334484699.84,
+      -62597334488558.086,
+      127594147143301.94,
+      -127594147148766.86,
+      276018463361662.84,
+      -276018463359565.06,
+      -874933004269541.6,
+      874933004314844.4,
+      -1176466038156.3857,
+      1176466038126.5034,
+      13439059301238.605,
+      -13439059301709.244,
+      51088463745905.82,
+      -51088463743630.6,
+      12508635449366.748,
+      -12508635448263.049,
+      -220397904861024.7,
+      220397904855257.4,
+      -486286986815640.2,
+      486286986798194.1,
+      94559814234709.25,
+      -94559814234805.52,
+      -471082083257394.44,
+      471082083248798.56,
+      -189206712499384.66,
+      189206712507001.16,
+      -1367319651731.5269,
+      1367319651693.586,
+      8237653401622.891,
+      -8237653401585.812,
+      1074415158395.374,
+      -1074415158265.3964,
+      -13626685625022.646,
+      13626685624463.588,
+      109653302341425.72,
+      -109653302329251.08,
+      86832252895441.45,
+      -86832252892919.16,
+      56642204936008.0,
+      -56642204934598.21,
+      -443596937076676.9,
+      443596937049860.1,
+      -287824697772389.06,
+      287824697776724.56,
+      1542233511.2586594,
+      -1542233511.2845836,
+      -60933099539.652435,
+      60933099540.0544,
+      -7625446543.058524,
+      7625446541.83472,
+      18146225155.022488,
+      -18146225156.053406,
+      -799699824911.6538,
+      799699824892.4843,
+      -35858792440.848465,
+      35858792445.926506,
+      -64024652293.20547,
+      64024652294.77103,
+      2580514245454.2563,
+      -2580514245438.3115,
+      155704315476.14542,
+      -155704315475.75473,
+      -4542008566.620493,
+      4542008566.506001,
+      31895516487.9975,
+      -31895516486.944176,
+      28615945004.880245,
+      -28615945003.494427,
+      -26839960404.53463,
+      26839960401.94735,
+      524130966124.18536,
+      -524130966137.9914,
+      169400229495.90796,
+      -169400229483.96365,
+      153823532950.8745,
+      -153823532939.35413,
+      -2088403567941.1543,
+      2088403568047.4036,
+      -829078380219.4047,
+      829078380251.8329,
+      36289088848.01601,
+      -36289088847.79483,
+      9528653645.446321,
+      -9528653645.16339,
+      -376005599909.2955,
+      376005599912.6363,
+      19669664258.763676,
+      -19669664260.09286,
+      88133624781.36206,
+      -88133624784.07713,
+      -95159036022.88188,
+      95159036023.77151,
+      -803575170356.7737,
+      803575170429.371,
+      -774521847347.3811,
+      774521847387.5665,
+      8359534888031.07,
+      -8359534887527.775,
+      -1980285915.4720635,
+      1980285915.5480645,
+      3466709838.393253,
+      -3466709838.3981557,
+      4303246610.699693,
+      -4303246610.447471,
+      11767486178.632895,
+      -11767486177.129526,
+      12978596150.742655,
+      -12978596150.02554,
+      -230862160628.01724,
+      230862160637.04987,
+      -4793745323.278562,
+      4793745322.970832,
+      -85701002872.42175,
+      85701002871.75679,
+      694502538274.5497,
+      -694502538263.0844
+    ],
+    "layout": [
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 0,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 1,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 2,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 3,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 4,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 5,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 6,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 7,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 8,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 9,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 10,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 11,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 12,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 13,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 14,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 15,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 16,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 17,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 18,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 19,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 20,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 21,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 22,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 23,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 24,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 25,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 26,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 0,
+        "kind": "pressure",
+        "component": "real",
+        "index": 0,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 0,
+        "kind": "pressure",
+        "component": "real",
+        "index": 1,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 0,
+        "kind": "pressure",
+        "component": "real",
+        "index": 2,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 0,
+        "kind": "pressure",
+        "component": "real",
+        "index": 3,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 0,
+        "kind": "pressure",
+        "component": "real",
+        "index": 4,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 0,
+        "kind": "pressure",
+        "component": "real",
+        "index": 5,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 0,
+        "kind": "pressure",
+        "component": "real",
+        "index": 6,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 0,
+        "kind": "pressure",
+        "component": "real",
+        "index": 7,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 0,
+        "kind": "pressure",
+        "component": "real",
+        "index": 8,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 0,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 0,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 1,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 1,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 2,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 2,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 3,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 3,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 4,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 4,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 5,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 5,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 6,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 6,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 7,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 7,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 8,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 8,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 9,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 9,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 10,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 10,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 11,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 11,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 12,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 12,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 13,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 13,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 14,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 14,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 15,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 15,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 16,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 16,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 17,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 17,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 18,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 18,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 19,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 19,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 20,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 20,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 21,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 21,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 22,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 22,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 23,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 23,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 24,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 24,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 25,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 25,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 26,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 26,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "real",
+        "index": 0,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 0,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "real",
+        "index": 1,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 1,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "real",
+        "index": 2,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 2,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "real",
+        "index": 3,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 3,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "real",
+        "index": 4,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 4,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "real",
+        "index": 5,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 5,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "real",
+        "index": 6,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 6,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "real",
+        "index": 7,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 7,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "real",
+        "index": 8,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 1,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 8,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 0,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 0,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 1,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 1,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 2,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 2,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 3,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 3,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 4,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 4,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 5,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 5,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 6,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 6,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 7,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 7,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 8,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 8,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 9,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 9,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 10,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 10,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 11,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 11,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 12,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 12,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 13,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 13,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 14,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 14,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 15,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 15,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 16,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 16,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 17,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 17,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 18,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 18,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 19,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 19,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 20,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 20,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 21,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 21,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 22,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 22,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 23,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 23,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 24,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 24,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 25,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 25,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 26,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 26,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "real",
+        "index": 0,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 0,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "real",
+        "index": 1,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 1,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "real",
+        "index": 2,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 2,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "real",
+        "index": 3,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 3,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "real",
+        "index": 4,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 4,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "real",
+        "index": 5,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 5,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "real",
+        "index": 6,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 6,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "real",
+        "index": 7,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 7,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "real",
+        "index": 8,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 2,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 8,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 0,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 0,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 1,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 1,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 2,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 2,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 3,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 3,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 4,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 4,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 5,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 5,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 6,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 6,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 7,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 7,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 8,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 8,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 9,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 9,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 10,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 10,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 11,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 11,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 12,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 12,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 13,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 13,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 14,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 14,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 15,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 15,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 16,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 16,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 17,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 17,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 18,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 18,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 19,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 19,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 20,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 20,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 21,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 21,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 22,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 22,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 23,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 23,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 24,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 24,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 25,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 25,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "real",
+        "index": 26,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 26,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "real",
+        "index": 0,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 0,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "real",
+        "index": 1,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 1,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "real",
+        "index": 2,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 2,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "real",
+        "index": 3,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 3,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "real",
+        "index": 4,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 4,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "real",
+        "index": 5,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 5,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "real",
+        "index": 6,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 6,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "real",
+        "index": 7,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 7,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "real",
+        "index": 8,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 3,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 8,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 0,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 0,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 1,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 1,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 2,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 2,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 3,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 3,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 4,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 4,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 5,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 5,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 6,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 6,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 7,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 7,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 8,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 8,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 9,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 9,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 10,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 10,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 11,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 11,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 12,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 12,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 13,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 13,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 14,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 14,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 15,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 15,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 16,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 16,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 17,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 17,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 18,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 18,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 19,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 19,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 20,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 20,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 21,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 21,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 22,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 22,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 23,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 23,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 24,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 24,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 25,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 25,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "real",
+        "index": 26,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 26,
+        "coefficient_units": "velocity acceleration"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "real",
+        "index": 0,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 0,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "real",
+        "index": 1,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 1,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "real",
+        "index": 2,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 2,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "real",
+        "index": 3,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 3,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "real",
+        "index": 4,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 4,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "real",
+        "index": 5,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 5,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "real",
+        "index": 6,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 6,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "real",
+        "index": 7,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 7,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "real",
+        "index": 8,
+        "coefficient_units": "pressure slope"
+      },
+      {
+        "mode": 4,
+        "kind": "pressure",
+        "component": "imag",
+        "index": 8,
+        "coefficient_units": "pressure slope"
+      }
+    ]
+  },
+  "initial_invariance_check": {
+    "sample_count": 8,
+    "velocity_max_abs": 0.0,
+    "pressure_max_abs": 0.0,
+    "statement": "correction is exactly zero at tau0 by its delta^2 and delta factors"
+  },
+  "corrected_endpoint": {
+    "method": "actual AccelerationCorrectionField plus affine_momentum.jets five-point FD",
+    "metric": {
+      "point_count": 44400,
+      "momentum_max": 112370182380.35437,
+      "momentum_volume_L2": 1808430.0936056376,
+      "momentum_volume_RMS": 12373353764.897894,
+      "physical_volume": 2.13613448359038e-08
+    },
+    "max_residual": {
+      "index": 20490,
+      "point": [
+        -0.0009176819979186611,
+        -0.00021486914856208553,
+        -5.491235501718044e-05
+      ],
+      "weight": 1.30307326342901e-12,
+      "vector": [
+        -57212403013.53717,
+        -95481721025.67007,
+        15396096245.04924
+      ],
+      "norm": 112370182380.35437
+    },
+    "linear_prediction_metric": {
+      "point_count": 44400,
+      "momentum_max": 112515648536.17967,
+      "momentum_volume_L2": 1808424.815144425,
+      "momentum_volume_RMS": 12373317649.44718,
+      "physical_volume": 2.13613448359038e-08
+    },
+    "nonlinear_mismatch_metric": {
+      "point_count": 44400,
+      "momentum_max": 663951236.9399117,
+      "momentum_volume_L2": 13997.880477161803,
+      "momentum_volume_RMS": 95774079.24978405,
+      "physical_volume": 2.13613448359038e-08
+    },
+    "nonlinear_mismatch_relative_to_linear_correction": 0.024123770401410727,
+    "quadratic_convection_scope": "difference between actual endpoint replay and linearized response; includes q\u00b7grad(q) and FD roundoff/truncation"
+  },
+  "elapsed_seconds": 326.9880753000034
+}

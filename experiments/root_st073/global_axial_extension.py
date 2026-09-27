@@ -234,12 +234,17 @@ def _streamfunction(node, points, tau, trace=None):
         # The dynamic wrapper changes only broad/swirl amplitudes and scalar
         # pressure around its lower fixed mean.
         return _streamfunction(node.base, points, tau, trace)
+    if name == "BroadShearSlope":
+        # BroadShearSlope.fields multiplies its lower field by (k-k0).  Keep
+        # the same factor in the streamfunction traversal so a nonzero
+        # meridional lower base remains divergence-preserving as well.
+        k = -math.log2(2.0 * float(tau))
+        return (k - node.k0) * _streamfunction(node.base, points, tau, trace)
     if name in {
         "OuterPressure",
         "PressureBubbleField",
         "SwirlValue",
         "OuterSwirlSlope",
-        "BroadShearSlope",
         "BroadAnnularShear",
     }:
         return _streamfunction(node.base, points, tau, trace)
