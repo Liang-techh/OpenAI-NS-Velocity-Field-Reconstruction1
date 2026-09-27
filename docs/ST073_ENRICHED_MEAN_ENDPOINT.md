@@ -83,3 +83,28 @@ The solver accepts `--refined-cache` and `--output`, binding the frozen
 wave coefficients and cache hash while preserving the previous candidate.
 The new cache must supply actual frozen-wave residual (without tangent),
 the 264-column design, points, weights and packed wave coefficients.
+
+## Actual endpoint momentum
+
+The full-field replay now accepts `--momentum-delta-k`; it evaluates the
+actual time-dependent field at tau0 * 2**(-delta_k), on the same fixed
+independent spatial grid. At delta_k=1e-6 the current 264-control candidate
+has L2 1,929,275.5049 and maximum 1.1817806803e11. Relative to its reference
+values 1,928,935.1626 and 1.1824402833e11, L2 increases about 0.0176% while
+the peak decreases about 0.0558%. The favorable endpoint geometry therefore
+does not bring the endpoint close to momentum acceptance.
+
+A new mode-3 residual has L2 4,060.1747 (squared-energy share 4.429e-6),
+and mode 4 has L2 3.4231. These nonzero higher modes appear in the actual
+finite-time nonlinear field even though the reference-time fit primarily
+controls modes 0 through 2. A multi-time solve must account for them;
+reference-time affine cancellation alone cannot certify recursion.
+
+Report: `enriched_mean_endpoint_momentum_replay.json`. The time derivative
+uses the existing frozen finite-difference stencil, which is wider than the
+short candidate increment; this is a derivative of the defined affine-time
+field, not an NS integrator or a derivative inferred from two endpoints.
+
+```powershell
+python experiments/root_st073/enriched_shape_replay.py --source experiments/root_st073/enriched_mean_endpoint_tangent.json --mode momentum --momentum-delta-k 0.000001 --output experiments/root_st073/enriched_mean_endpoint_momentum_replay.json
+```

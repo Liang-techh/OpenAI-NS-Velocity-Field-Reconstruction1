@@ -64,7 +64,7 @@ def build_field(candidate):
     return field,snapshot
 
 
-def run(source,output,mode,delta_k=1e-6):
+def run(source,output,mode,delta_k=1e-6,momentum_delta_k=0.0):
     started = time.perf_counter()
     raw = Path(source).read_bytes()
     candidate = json.loads(raw)
@@ -83,7 +83,11 @@ def run(source,output,mode,delta_k=1e-6):
         dense = json.loads((ROOT/'full_wave_dense_tangent.json').read_text())
         data = dense['new_frozen_cache']
         points,weights = np.array(data['points']),np.array(data['weights'])
-        residual = momentum(jets(field,points,tau,snapshot['timesteps']['hspace'],snapshot['timesteps']['htime']))
+        evaluation_tau = tau * 2.0**(-momentum_delta_k)
+        report.update(reference_tau=tau,evaluation_tau=evaluation_tau,
+                      momentum_delta_k=momentum_delta_k,physical_time_increment=tau-evaluation_tau,
+                      spatial_domain='Fixed reference-time independent quadrature points')
+        residual = momentum(jets(field,points,evaluation_tau,snapshot['timesteps']['hspace'],snapshot['timesteps']['htime']))
         report['momentum'] = budget(points,weights,residual,12)
     else:
         dynamic,dynamic_report = load_dynamic()
@@ -113,5 +117,6 @@ if __name__=='__main__':
     parser.add_argument('--source',type=Path,default=ROOT/'enriched_shape_tangent.json')
     parser.add_argument('--mode',choices=['momentum','shape'],default='momentum')
     parser.add_argument('--output',type=Path)
+    parser.add_argument('--momentum-delta-k',type=float,default=0.0)
     args = parser.parse_args()
-    run(args.source,args.output or ROOT/f'enriched_shape_{args.mode}_replay.json',args.mode)
+    run(args.source,args.output or ROOT/f'enriched_shape_{args.mode}_replay.json',args.mode,momentum_delta_k=args.momentum_delta_k)
