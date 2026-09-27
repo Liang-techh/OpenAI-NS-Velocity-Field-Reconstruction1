@@ -2,6 +2,14 @@
 
 ## ST073 research update â€” 2026-09-27
 
+Latest constructive trial: adding an independent quadratic axial factor
+closes four sampled moments at k=11 to 4.20e-4 under 96-point split
+replay, with coefficient increments below 22.6. However, the sampled
+full momentum peak increases 12.88x and only 3/9 cone nodes pass.
+The candidate is rejected. Next reduce momentum cost inside the
+moment-feasible family; see [the axial-shape trial](ST073_QUADRATIC_AXIAL_TRIAL.md).
+
+
 On `codex/st073-transition-next`, scale recursion remains unestablished.
 The connected-cone candidate's previously reported small outer moments
 fail radial quadrature refinement. Split integration gives maxima about

@@ -57,21 +57,24 @@ def flat_bump(y, lo, hi):
 
 
 class SeparatedMomentModes:
-    """Scale knots × swirl/poloidal × radial windows × even/odd eta."""
+    """Scale knots × swirl/poloidal × radial windows × configurable eta powers."""
 
     def __init__(self, base, amplitudes, windows=RADIAL_WINDOWS,
-                 knots=(11.0, 19.0)):
+                 knots=(11.0, 19.0), axial_powers=(0, 1)):
         self.base = base
         self.inner = base.inner
         self.nu = base.nu
         self.join_X = base.join_X
         self.ratio = base.ratio
+        self.axial_powers = tuple(axial_powers)
+        if not self.axial_powers or any(int(v) != v or v < 0 for v in self.axial_powers):
+            raise ValueError("Axial powers must be nonnegative integers")
         self.windows = tuple(windows)
         self.knots = tuple(float(k) for k in knots)
         if len(self.knots) < 2 or any(b <= a for a, b in zip(self.knots, self.knots[1:])):
             raise ValueError("Need increasing scale knots")
         self.a = np.asarray(amplitudes, float).reshape(
-            len(self.knots), 2, len(self.windows), 2)
+            len(self.knots), 2, len(self.windows), len(self.axial_powers))
 
     def fields(self, points, tau):
         points = np.asarray(points, float)
@@ -101,9 +104,10 @@ class SeparatedMomentModes:
         swirl = np.zeros_like(radius)
         for radial_index, (lo, hi) in enumerate(self.windows):
             bump, bump_y = flat_bump(y, lo, hi)
-            for parity in (0, 1):
-                axial = np.ones_like(eta) if parity == 0 else eta / 0.3
-                axial_z = np.zeros_like(eta) if parity == 0 else etaz / 0.3
+            for parity, power in enumerate(self.axial_powers):
+                axial = (eta / 0.3)**power
+                axial_z = (np.zeros_like(eta) if power == 0 else
+                           power * (eta / 0.3)**(power - 1) * etaz / 0.3)
                 for time_index, time_weight in enumerate(time_weights):
                     angular_amp = self.a[time_index, 0, radial_index, parity] * time_weight
                     poloidal_amp = self.a[time_index, 1, radial_index, parity] * time_weight

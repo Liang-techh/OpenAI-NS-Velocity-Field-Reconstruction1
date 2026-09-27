@@ -1,5 +1,10 @@
 # Next constructive tasks and acceptance criteria
 
+Latest trial: quadratic axial factors close sampled moments at k=11,
+but increase sampled momentum 12.88x and leave only 3/9 cone nodes passing.
+Next minimize full momentum cost subject to resolved moments; see
+ST073_QUADRATIC_AXIAL_TRIAL.md. Do not promote this candidate.
+
 **Numerical correction:** the 12-point whole-bridge moment quadrature is
 under-resolved for the separated compact modes. The connected-cone
 candidate's small-moment claim fails refined integration, with refined sampled
