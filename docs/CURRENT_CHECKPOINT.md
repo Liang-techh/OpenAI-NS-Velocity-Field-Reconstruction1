@@ -2,6 +2,15 @@
 
 ## ST073 research update - 2026-09-27
 
+Joint moment/cone correction now passes independent actual-field cone
+replay at all 27/27 locations (81/81 inequalities, minimum margin 9.9759e-5).
+Order-96 integral moment maximum is 2.1219e-7. Independent full momentum
+L2 is 2.8472e6 and maximum 2.1019e11: restoring cones costs 6.98% in L2
+against the moment-only candidate, retaining about 61.4% reduction versus
+the old dense tangent baseline. No recursive step is accepted. The next
+construction varies wave shape with both moments and cones in the inner
+solve. See [joint moment/cone result](ST073_MOMENT_CONE_WAVE.md).
+
 Moment-constrained wave correction now restores actual order-96 integrated
 moments to max 2.54e-8, versus 583600.74 for the earlier candidate, while
 independent full momentum L2 changes only from 2.6453e6 to 2.6614e6.

@@ -46,10 +46,10 @@ python experiments/root_st073/wave_dynamics_mean_compatibility.py --candidate ex
 python experiments/root_st073/cached_wave_growth.py experiments/root_st073/wave_dynamics_moment_codesign.json experiments/root_st073/wave_dynamics_moment_growth.json
 ```
 
-The next inner solve must include the remaining cone inequalities as well
-as moments. Its needed affine mean-control rows and quadratic wave-force
-forms are being assembled separately; no completed cone-constrained solve
-is claimed here.
+The subsequent fixed-wave inner solve now includes the cone inequalities
+as well as moments and passes independent sampled compatibility replay.
+See `ST073_MOMENT_CONE_WAVE.md` for its residual cost and scope. The
+moment-only results above remain the preserved earlier candidate.
 
 ## Derivative precision work
 
