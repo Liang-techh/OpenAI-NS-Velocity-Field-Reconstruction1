@@ -18,7 +18,9 @@ from wide_modes import WideJointModes
 
 
 def moment_slices(inner, base, zero, orders=(11.0, 19.0), n=12,
-                  unit_fields=None):
+                  unit_fields=None, radial_breaks=None,
+                  unit_fields_are_deltas=False):
+    """Cache jets for moment panels; optional breaks are bridge fractions."""
     nodes, weights = leggauss(n)
     output = []
     for k in orders:
@@ -33,7 +35,14 @@ def moment_slices(inner, base, zero, orders=(11.0, 19.0), n=12,
             z = float(ends[0, 2])
             start = len(points)
             radial_weights = []
-            for lo, hi in ((0.0, ri), (ri, ro)):
+            edges = [0., ri, ro]
+            if radial_breaks is not None:
+                fractions = np.asarray(radial_breaks, float)
+                if np.any(~np.isfinite(fractions)) or np.any((fractions <= 0) | (fractions >= 1)):
+                    raise ValueError('Radial bridge breaks must lie strictly between 0 and 1')
+                edges.extend(ri + (ro - ri) * fractions)
+            edges = sorted(set(edges))
+            for lo, hi in zip(edges[:-1], edges[1:]):
                 rr = 0.5 * (lo + hi) + 0.5 * (hi - lo) * nodes
                 ww = 0.5 * (hi - lo) * weights
                 points.extend((float(r), 0.0, z) for r in rr)
@@ -50,7 +59,8 @@ def moment_slices(inner, base, zero, orders=(11.0, 19.0), n=12,
             WideJointModes(base, np.eye(24)[j]) for j in range(24)]
         for field in fields:
             sample = jets(field, *args)
-            changes.append(tuple(x - y for x, y in zip(sample, baseline)))
+            changes.append(sample if unit_fields_are_deltas else
+                           tuple(x - y for x, y in zip(sample, baseline)))
         modes = tuple(np.stack([change[i] for change in changes])
                       for i in range(3))
         output.append(dict(k=k, tau=tau, panels=panels,

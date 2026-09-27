@@ -1,0 +1,341 @@
+{
+  "scales": [
+    {
+      "k": 12,
+      "rows": [
+        {
+          "radial_offset": -0.95,
+          "axial_offset": -0.95,
+          "eta": -0.95,
+          "momentum_norm": 1458491.3547067258,
+          "lambda_squared": 47930464.5550259,
+          "cone_pass": true,
+          "target_dot_N": -65.54040614445569,
+          "target_dot_K": -159.29921164095364,
+          "cone_ratio": 0.8254470415235653
+        },
+        {
+          "radial_offset": -0.95,
+          "axial_offset": 0.95,
+          "eta": 0.95,
+          "momentum_norm": 1469276.5850370626,
+          "lambda_squared": 40848677.6466643,
+          "cone_pass": true,
+          "target_dot_N": -92.83777239087931,
+          "target_dot_K": 78.7103456726606,
+          "cone_ratio": 0.2638827970291654
+        },
+        {
+          "radial_offset": 0.95,
+          "axial_offset": -0.95,
+          "eta": -0.95,
+          "momentum_norm": 1349073.5120276648,
+          "lambda_squared": 44248859.95252382,
+          "cone_pass": true,
+          "target_dot_N": -196.72317967510074,
+          "target_dot_K": -141.44193040199698,
+          "cone_ratio": 0.34026563259880965
+        },
+        {
+          "radial_offset": 0.95,
+          "axial_offset": 0.95,
+          "eta": 0.95,
+          "momentum_norm": 1336355.6535455685,
+          "lambda_squared": 39422241.934802644,
+          "cone_pass": true,
+          "target_dot_N": -216.45431403576805,
+          "target_dot_K": 69.26780536061285,
+          "cone_ratio": 0.14387332014119203
+        }
+      ],
+      "moments": [
+        0.38396535331082937,
+        -0.8313821871289968,
+        0.4052816308458649,
+        0.8560771011948881
+      ],
+      "moment_max": 0.8560771011948881
+    },
+    {
+      "k": 13,
+      "rows": [
+        {
+          "radial_offset": -0.95,
+          "axial_offset": -0.95,
+          "eta": -0.95,
+          "momentum_norm": 4147535.5087833647,
+          "lambda_squared": 175291405.71265593,
+          "cone_pass": true,
+          "target_dot_N": -130.82831253481135,
+          "target_dot_K": -323.13869575932176,
+          "cone_ratio": 0.8040885127324287
+        },
+        {
+          "radial_offset": -0.95,
+          "axial_offset": 0.95,
+          "eta": 0.95,
+          "momentum_norm": 4189596.758513786,
+          "lambda_squared": 131831208.57355505,
+          "cone_pass": true,
+          "target_dot_N": -191.96776243090957,
+          "target_dot_K": 156.75537241085294,
+          "cone_ratio": 0.22889467354050078
+        },
+        {
+          "radial_offset": 0.95,
+          "axial_offset": -0.95,
+          "eta": -0.95,
+          "momentum_norm": 3787244.5270624897,
+          "lambda_squared": 178166066.16758367,
+          "cone_pass": true,
+          "target_dot_N": -391.82313172091006,
+          "target_dot_K": -273.8903193746351,
+          "cone_ratio": 0.3310845632540041
+        },
+        {
+          "radial_offset": 0.95,
+          "axial_offset": 0.95,
+          "eta": 0.95,
+          "momentum_norm": 3763607.210034402,
+          "lambda_squared": 159104843.85277784,
+          "cone_pass": true,
+          "target_dot_N": -429.51137250267595,
+          "target_dot_K": 140.07476689066027,
+          "cone_ratio": 0.14695338538243397
+        }
+      ],
+      "moments": [
+        0.029487164293868766,
+        -0.0211599497207795,
+        0.11423573340744039,
+        0.02584293485205521
+      ],
+      "moment_max": 0.11423573340744039
+    },
+    {
+      "k": 14,
+      "rows": [
+        {
+          "radial_offset": -0.95,
+          "axial_offset": -0.95,
+          "eta": -0.95,
+          "momentum_norm": 11802674.11452754,
+          "lambda_squared": 636210557.0201943,
+          "cone_pass": true,
+          "target_dot_N": -260.4192665464875,
+          "target_dot_K": -655.2697887116777,
+          "cone_ratio": 0.7823356536548375
+        },
+        {
+          "radial_offset": -0.95,
+          "axial_offset": 0.95,
+          "eta": 0.95,
+          "momentum_norm": 11944017.277957011,
+          "lambda_squared": 400878453.0789767,
+          "cone_pass": true,
+          "target_dot_N": -395.7866740256115,
+          "target_dot_K": 312.1991860372023,
+          "cone_ratio": 0.1933053141266512
+        },
+        {
+          "radial_offset": 0.95,
+          "axial_offset": -0.95,
+          "eta": -0.95,
+          "momentum_norm": 10634698.852105293,
+          "lambda_squared": 717381200.6244308,
+          "cone_pass": true,
+          "target_dot_N": -779.8556002458969,
+          "target_dot_K": -529.7264519689758,
+          "cone_ratio": 0.3219921937097919
+        },
+        {
+          "radial_offset": 0.95,
+          "axial_offset": 0.95,
+          "eta": 0.95,
+          "momentum_norm": 10599996.770251753,
+          "lambda_squared": 642115518.9396294,
+          "cone_pass": true,
+          "target_dot_N": -851.5097820796349,
+          "target_dot_K": 283.16927204870467,
+          "cone_ratio": 0.15018298344229106
+        }
+      ],
+      "moments": [
+        -1.4624641339286413,
+        3.2686168335752006,
+        -1.365482972628456,
+        -3.3469275610411318
+      ],
+      "moment_max": 3.3469275610411318
+    },
+    {
+      "k": 16,
+      "rows": [
+        {
+          "radial_offset": -0.95,
+          "axial_offset": -0.95,
+          "eta": -0.95,
+          "momentum_norm": 93531479.67364678,
+          "lambda_squared": 10175073190.855515,
+          "cone_pass": true,
+          "target_dot_N": -1001.9746335048393,
+          "target_dot_K": -2605.857906473178,
+          "cone_ratio": 0.8051134180091964
+        },
+        {
+          "radial_offset": -0.95,
+          "axial_offset": 0.95,
+          "eta": 0.95,
+          "momentum_norm": 94666401.96248418,
+          "lambda_squared": 6221662173.236643,
+          "cone_pass": true,
+          "target_dot_N": -1548.2557495188114,
+          "target_dot_K": 1236.531252056146,
+          "cone_ratio": 0.19197636500291615
+        },
+        {
+          "radial_offset": 0.95,
+          "axial_offset": -0.95,
+          "eta": -0.95,
+          "momentum_norm": 84680769.35327502,
+          "lambda_squared": 11674136977.584871,
+          "cone_pass": true,
+          "target_dot_N": -3074.6099755055834,
+          "target_dot_K": -2084.3189968507445,
+          "cone_ratio": 0.3225797847709138
+        },
+        {
+          "radial_offset": 0.95,
+          "axial_offset": 0.95,
+          "eta": 0.95,
+          "momentum_norm": 84433343.42104413,
+          "lambda_squared": 10462587956.130363,
+          "cone_pass": true,
+          "target_dot_N": -3356.52577781575,
+          "target_dot_K": 1120.2652365338422,
+          "cone_ratio": 0.15141667062145067
+        }
+      ],
+      "moments": [
+        5.995871867086947,
+        -13.051645472940464,
+        5.996969821076135,
+        13.363445376446634
+      ],
+      "moment_max": 13.363445376446634
+    },
+    {
+      "k": 17,
+      "rows": [
+        {
+          "radial_offset": -0.95,
+          "axial_offset": -0.95,
+          "eta": -0.95,
+          "momentum_norm": 264332991.99733937,
+          "lambda_squared": 38653418386.75609,
+          "cone_pass": true,
+          "target_dot_N": -1995.2848461658884,
+          "target_dot_K": -5209.082299285468,
+          "cone_ratio": 0.787245785920653
+        },
+        {
+          "radial_offset": -0.95,
+          "axial_offset": 0.95,
+          "eta": 0.95,
+          "momentum_norm": 267501187.6460587,
+          "lambda_squared": 22469986178.731194,
+          "cone_pass": true,
+          "target_dot_N": -3096.1605614095547,
+          "target_dot_K": 2471.0562830798044,
+          "cone_ratio": 0.18215893200663916
+        },
+        {
+          "radial_offset": 0.95,
+          "axial_offset": -0.95,
+          "eta": -0.95,
+          "momentum_norm": 238807384.3245331,
+          "lambda_squared": 47083552357.86119,
+          "cone_pass": true,
+          "target_dot_N": -6104.676367295678,
+          "target_dot_K": -4134.080723812986,
+          "cone_ratio": 0.3228165264868447
+        },
+        {
+          "radial_offset": 0.95,
+          "axial_offset": 0.95,
+          "eta": 0.95,
+          "momentum_norm": 238164878.41868946,
+          "lambda_squared": 42222123703.11576,
+          "cone_pass": true,
+          "target_dot_N": -6664.922639943724,
+          "target_dot_K": 2223.154749969745,
+          "cone_ratio": 0.15165041226329876
+        }
+      ],
+      "moments": [
+        0.654004334443641,
+        -0.7194558921332931,
+        0.6943815453965951,
+        0.7250031996596935
+      ],
+      "moment_max": 0.7250031996596935
+    },
+    {
+      "k": 18,
+      "rows": [
+        {
+          "radial_offset": -0.95,
+          "axial_offset": -0.95,
+          "eta": -0.95,
+          "momentum_norm": 747045020.6367166,
+          "lambda_squared": 146370453112.87347,
+          "cone_pass": true,
+          "target_dot_N": -3969.1931105025365,
+          "target_dot_K": -10412.308448383152,
+          "cone_ratio": 0.769311476496899
+        },
+        {
+          "radial_offset": -0.95,
+          "axial_offset": 0.95,
+          "eta": 0.95,
+          "momentum_norm": 755881786.9871173,
+          "lambda_squared": 80126978573.3849,
+          "cone_pass": true,
+          "target_dot_N": -6187.636334729318,
+          "target_dot_K": 4937.8530764160005,
+          "cone_ratio": 0.17185095453801147
+        },
+        {
+          "radial_offset": 0.95,
+          "axial_offset": -0.95,
+          "eta": -0.95,
+          "momentum_norm": 673468856.6584045,
+          "lambda_squared": 189891476455.26724,
+          "cone_pass": true,
+          "target_dot_N": -12116.332560725456,
+          "target_dot_K": -8198.848292318471,
+          "cone_ratio": 0.3231397638636092
+        },
+        {
+          "radial_offset": 0.95,
+          "axial_offset": 0.95,
+          "eta": 0.95,
+          "momentum_norm": 671815357.530893,
+          "lambda_squared": 170384217493.41342,
+          "cone_pass": true,
+          "target_dot_N": -13229.600589610127,
+          "target_dot_K": 4411.2924703266,
+          "cone_ratio": 0.15191662037603285
+        }
+      ],
+      "moments": [
+        -22.418259958090857,
+        50.06863257444681,
+        -22.335427749599944,
+        -51.29730160339915
+      ],
+      "moment_max": 51.29730160339915
+    }
+  ],
+  "scope": "Four physical support corners and direct outer moments at six integer holdout scales. No continuous scale/time/space certificate or residual contraction."
+}

@@ -21,7 +21,7 @@ ETA_NODES = (-.075, -.05, -.0125, .025, .05)
 Y = .325
 
 
-def cone_row(field, r, z, tau, eta):
+def cone_row(field, r, z, tau, eta, stress_order=12):
     velocity, gradient, residual = operator(field, np.array([[r, 0., z]]), tau)
     F = velocity[0, 1] / r
     shear = np.array([gradient[0, 1, 0] - F, gradient[0, 2, 0]])
@@ -36,7 +36,7 @@ def cone_row(field, r, z, tau, eta):
     row["lambda_squared"] = lam2
     if lam2 <= 0 or abs(2 * F * N[0]) <= 1e-14:
         return row
-    target = stress_primitive(field, float(r), float(z), tau, order=12)
+    target = stress_primitive(field, float(r), float(z), tau, order=stress_order)
     dot_n, dot_k = float(target @ N), float(target @ K)
     row.update(target_dot_N=dot_n, target_dot_K=dot_k)
     if abs(dot_n) <= 1e-14:

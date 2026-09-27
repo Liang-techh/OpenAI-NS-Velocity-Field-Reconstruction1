@@ -16,7 +16,7 @@ from radial_continuation import ROOT
 from separated_moment_modes import RADIAL_WINDOWS_THREE, SeparatedMomentModes
 
 
-def cone_cache(inner, field, amplitudes, make_field, k, support, offsets):
+def cone_cache(inner, field, make_delta, k, support, offsets, order=12):
     if k in (11, 19):
         source = json.loads((ROOT / 'compact_potential' /
                              f'midplane_wave_source_k{k}.json').read_text())
@@ -32,7 +32,7 @@ def cone_cache(inner, field, amplitudes, make_field, k, support, offsets):
                for x in offsets for z in offsets]
     points = list(centers)
     panels = []
-    g, w = leggauss(12)
+    g, w = leggauss(order)
     for r, _, z in centers:
         q = float(coordinates(0., z / np.sqrt(inner.nu), tau, inner.h)['q'])
         ri = np.sqrt(2 * inner.nu * q * inner.p.X_max)
@@ -54,10 +54,7 @@ def cone_cache(inner, field, amplitudes, make_field, k, support, offsets):
     indices = np.array([offset + j for j in (0, 1, 6, 7)])
     changes = []
     for index in indices:
-        a = amplitudes.copy()
-        a[index] += 1
-        sample = jets(make_field(a), *args)
-        changes.append(tuple(x - y for x, y in zip(sample, baseline)))
+        changes.append(jets(make_delta(index), *args))
     modes = tuple(np.stack([change[i] for change in changes]) for i in range(3))
     return dict(k=k, tau=tau, centers=centers, baseline=baseline,
                 modes=modes, indices=indices, panels=panels)
@@ -84,7 +81,17 @@ def cached_cones(cache, delta):
     return np.array(rows)
 
 
-def run(edge=False):
+class ZeroBackground:
+    """Metadata-compatible zero field for exact affine basis jets."""
+    def __init__(self, base):
+        for name in ('inner', 'nu', 'join_X', 'ratio'):
+            setattr(self, name, getattr(base, name))
+
+    def fields(self, points, tau):
+        return np.zeros_like(np.asarray(points, float)), np.zeros(len(points))
+
+
+def run(edge=False, resolved=False):
     inner, fields = build_fields()
     a = np.array(json.loads((ROOT / 'midplane_axial_cone_all_knots_repair.json')
                             .read_text())['amplitudes'])
@@ -92,9 +99,16 @@ def run(edge=False):
         return SeparatedMomentModes(fields['two_sided_cone'], amplitudes,
                                     windows=RADIAL_WINDOWS_THREE, knots=(11., 15., 19.))
     current = make_field(a)
-    units = [make_field(a + row) for row in np.eye(len(a))]
+    zero = ZeroBackground(fields['two_sided_cone'])
+    def make_delta(index):
+        return SeparatedMomentModes(zero, np.eye(len(a))[index],
+                                    windows=RADIAL_WINDOWS_THREE, knots=(11., 15., 19.))
+    units = [make_delta(i) for i in range(len(a))]
+    breaks = sorted({v for lo, hi in RADIAL_WINDOWS_THREE for v in (lo, (lo + hi) / 2, hi)}) if resolved else None
     moments = moment_slices(inner, fields['two_sided_cone'], current,
-                            orders=(11., 15., 19.), unit_fields=units)
+                            orders=(11., 15., 19.), unit_fields=units,
+                            unit_fields_are_deltas=True, radial_breaks=breaks,
+                            n=24 if resolved else 12)
     def moment_values(delta):
         return np.concatenate([outer_moments(s, delta) for s in moments])
     m0 = moment_values(np.zeros_like(a))
@@ -102,8 +116,9 @@ def run(edge=False):
         moment_values(row) - m0 for row in np.eye(len(a))])), axis=0), 1e-8)
     supports = json.loads((ROOT / 'midplane_physical_covariance_pairs.json').read_text())
     offsets = (-.99, 0., .99) if edge else (-.8, 0., .8)
-    caches = [cone_cache(inner, current, a, make_field, k,
-                         next((s['support'] for s in supports['scales'] if s['k'] == k), None), offsets)
+    caches = [cone_cache(inner, current, make_delta, k,
+                         next((s['support'] for s in supports['scales'] if s['k'] == k), None), offsets,
+                         order=48 if resolved else 12)
               for k in ((11, 15, 19) if edge else (11, 19))]
     base_cones = [cached_cones(c, np.zeros_like(a)) for c in caches]
     scale = np.maximum(np.abs(a), .02)
@@ -126,7 +141,8 @@ def run(edge=False):
     results = []
     for cache, baseline in zip(caches, base_cones):
         predicted = cached_cones(cache, delta)
-        rows = [cone_row(repaired, float(r), float(z), cache['tau'], float(i))
+        rows = [cone_row(repaired, float(r), float(z), cache['tau'], float(i),
+                         stress_order=96 if resolved else 12)
                 for i, (r, _, z) in enumerate(cache['centers'])]
         results.append(dict(k=cache['k'], baseline_cone_ratios=baseline[:, 2].tolist(),
                             predicted_cone_ratios=predicted[:, 2].tolist(), direct_rows=rows,
@@ -135,10 +151,14 @@ def run(edge=False):
         print(f"k={cache['k']}: {sum(r['cone_pass'] for r in rows)}/9 pass; "
               f"max ratio={max(r.get('cone_ratio', float('inf')) for r in rows):.6g}", flush=True)
     direct_slices = moment_slices(inner, fields['two_sided_cone'], repaired,
-                                  orders=(11., 15., 19.), unit_fields=[repaired])
+                                  orders=(11., 15., 19.), unit_fields=[repaired],
+                                  radial_breaks=breaks, n=48 if resolved else 12)
     direct_moments = np.concatenate([outer_moments(s, np.zeros(1)) for s in direct_slices])
     report = dict(optimizer_success=bool(fit.success), message=str(fit.message),
                   training_offsets=offsets,
+                  resolved_quadrature=resolved, radial_breaks=breaks,
+                  fit_gauss_order=24 if resolved else 12,
+                  direct_gauss_order=48 if resolved else 12,
                   iterations=int(fit.nit), objective=float(fit.fun),
                   normalized_moment_max=float(max(abs(moment_values(delta) / mscale))),
                   direct_normalized_moment_max=float(max(abs(direct_moments / mscale))),
@@ -147,7 +167,8 @@ def run(edge=False):
                   amplitudes=(a + delta).tolist(), scales=results,
                   scope='Joint constrained mean repair on 12 sampled outer moments and nine physical support nodes per reported scale. Direct cone replay; no continuous cone, wave residual gain, pulse dynamics, or scale recursion.',
                   accepted=False, scale_recursion_established=False)
-    name = 'midplane_connected_cone_edge_repair.json' if edge else 'midplane_connected_cone_repair.json'
+    name = ('midplane_connected_cone_resolved_repair.json' if resolved else
+            ('midplane_connected_cone_edge_repair.json' if edge else 'midplane_connected_cone_repair.json'))
     (ROOT / name).write_bytes((json.dumps(report, indent=2) + '\n').encode())
     print(json.dumps({k: report[k] for k in ('optimizer_success', 'normalized_moment_max', 'minimum_constraint')}))
 
@@ -155,4 +176,6 @@ def run(edge=False):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--edge', action='store_true')
-    run(edge=parser.parse_args().edge)
+    parser.add_argument('--resolved', action='store_true')
+    args = parser.parse_args()
+    run(edge=args.edge or args.resolved, resolved=args.resolved)

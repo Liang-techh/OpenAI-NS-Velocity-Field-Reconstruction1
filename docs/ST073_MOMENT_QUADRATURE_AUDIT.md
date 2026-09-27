@@ -1,0 +1,65 @@
+# Radial quadrature invalidates the earlier small-moment candidate
+
+The candidate in `midplane_connected_cone_edge_repair.json` was fitted to
+12-point Gauss quadrature on just two radial panels: the inner core and
+the whole transition layer. That second panel does not adequately resolve
+the separated compact bumps. Re-evaluating the identical field yields:
+
+| Radial rule | k=11 max moment | k=15 max moment | k=19 max moment |
+| --- | ---: | ---: | ---: |
+| Original two panels, 12 points | `4.72e-8` | `2.83e-7` | `7.69e-6` |
+| Original two panels, 48 points | `223.98` | `3543.39` | `55935.51` |
+| Original two panels, 96 points | `212.09` | `3353.96` | `52951.33` |
+| Split at bump edges/midpoints, 24 points/panel | `213.181790` | `3372.199231` | `53239.824212` |
+| Same split, 48 points/panel | `213.181840` | `3372.200029` | `53239.835131` |
+
+Thus the earlier small cached and directly replayed moments were both
+artifacts of the same under-resolved quadrature. Direct replay alone did
+not provide an independent numerical integration check. The candidate's
+moment-closure claim is withdrawn; earlier reports using only the same
+12-point rule also require a refinement check before acceptance.
+
+The intermediate-scale screen still finds all four tested support corners
+passing at `k=12,13,14,16,17,18`, but its original coarse moment values are
+not reliable physical integrals. Independently increasing radial stress
+quadrature from 12 to 96 points leaves the tested near-edge cone ratios
+below one: `0.950 -> 0.9131` at k=11 and `0.950 -> 0.8938` at k=19.
+This distinguishes the moment integration failure from the sampled
+geometric improvement.
+
+The moment cache now accepts explicit bridge-fraction panel breaks.
+The corrected fitting route splits at every separated bump edge and
+midpoint, fits with 24 points/panel, and replays with 48 points/panel.
+It also builds the affine correction jets directly on a zero background,
+avoiding repeated base evaluations and subtractive cancellation. Stress
+constraints use 48-point integrals with a 96-point direct replay. These
+are improved numerical rules, not certified error bounds; candidate
+acceptance still depends on the independent replay and convergence.
+
+Reproduce the audits:
+
+```text
+python experiments/root_st073/midplane_connected_moment_quadrature.py
+python experiments/root_st073/midplane_connected_moment_quadrature.py --split
+python experiments/root_st073/midplane_connected_cone_quadrature.py
+python experiments/root_st073/midplane_connected_cone_interscale.py
+```
+
+The corrected constrained solve is
+`python experiments/root_st073/midplane_connected_cone_repair.py --resolved`.
+Its separate output must be assessed before replacing any mean field.
+
+## Resolved joint solve outcome
+
+The corrected SLSQP run reached its 300-iteration limit, rather than
+establishing feasibility or infeasibility. Its normalized moment maximum
+is 42.919704 (independent-order replay 42.919720); the direct absolute
+moment maximum is 52266.8043. Each of k=11,15,19 passes only 8 of 9
+sampled cone nodes, with maximum ratios 3.53104, 3.86884, 4.30800.
+The candidate is rejected and does not establish scale recursion.
+
+The next constructive diagnostic separates moment-only feasibility from
+joint cone optimization, checks the resolved moment Jacobian and scaling,
+and independently replays any resulting candidate. A failed bounded
+optimizer is not evidence that the profile family is mathematically
+infeasible. No field has been promoted on the basis of this run.

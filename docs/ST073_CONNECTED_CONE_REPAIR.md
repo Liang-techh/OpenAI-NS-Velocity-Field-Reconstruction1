@@ -1,5 +1,13 @@
 # Joint moment and support-cone mean repair
 
+**Moment-closure claim superseded by quadrature audit.** The small moment
+values below used 12 Gauss points over the entire bridge and do not survive
+radial refinement. Splitting at the correction supports and using 48 points
+per panel gives maxima about `213,3372,53240` at `k=11,15,19` for this same
+candidate. It is not moment closed. See `ST073_MOMENT_QUADRATURE_AUDIT.md`.
+The recorded cone samples remain useful diagnostics; they do not rescue
+the failed moment condition.
+
 The widened wave's inner/lower support corner failed the physical stress
 cone on both tested scales. A joint constrained mean solve now removes
 this sampled obstruction at `k=11,15,19` while retaining small sampled
