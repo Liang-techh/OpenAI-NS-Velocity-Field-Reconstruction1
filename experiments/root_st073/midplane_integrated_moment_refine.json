@@ -1,0 +1,213 @@
+{
+  "k": 17,
+  "initial_moments": [
+    -0.00044921306329115385,
+    -0.0010426824269135066,
+    -0.000520188973837321,
+    0.0013542780360887938
+  ],
+  "value_jacobian": [
+    [
+      10.33578836504034,
+      7.6565415018876575
+    ],
+    [
+      -790.5726256826556,
+      357.31006859010995
+    ],
+    [
+      -14.17435475428874,
+      2.6388579562990335
+    ],
+    [
+      844.273522781305,
+      426.79251231118724
+    ]
+  ],
+  "value_delta": [
+    -1.4535101584872861e-06,
+    -2.9784471497858524e-07
+  ],
+  "slope_delta": [
+    -2.102803431684257e-07,
+    -1.3226090939623652e-08,
+    -9.345793029707812e-08,
+    -5.675236987664504e-07,
+    -3.5695776110963313e-08,
+    -2.5223275500731134e-07
+  ],
+  "coefficient_values": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -0.0008355437261498099,
+    -1.822880479491195e-05,
+    -0.0001613246981036764,
+    -0.0009827644657755426,
+    3.589308750240871e-05,
+    -4.657590642281149e-05
+  ],
+  "coefficient_slopes": [
+    -0.00020312801129247597,
+    0.002408250247506943,
+    -9.027911612998945e-05,
+    -0.0005482203355519779,
+    0.006499604610810726,
+    -0.0002436534824675459,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "replay": [
+    {
+      "order": 48,
+      "z_step_factor": 0.002,
+      "moments": [
+        3.7233902446587295e-05,
+        -2.102963306887151e-06,
+        3.8967346426943536e-05,
+        2.5232416037714595e-06
+      ],
+      "absolute_max": 3.8967346426943536e-05
+    },
+    {
+      "order": 96,
+      "z_step_factor": 0.002,
+      "moments": [
+        1.507828528701793e-09,
+        8.990201218935095e-10,
+        1.4870238373987373e-09,
+        1.1119818201522481e-09
+      ],
+      "absolute_max": 1.507828528701793e-09
+    },
+    {
+      "order": 96,
+      "z_step_factor": 0.001,
+      "moments": [
+        5.789013914636597e-05,
+        -7.966837812475077e-05,
+        6.063839452963292e-05,
+        6.808470901397288e-05
+      ],
+      "absolute_max": 7.966837812475077e-05
+    }
+  ],
+  "cone": {
+    "k": 17,
+    "tau": 3.814697265625e-06,
+    "order": 96,
+    "rows": [
+      {
+        "index": 0,
+        "radial_offset": -0.99,
+        "axial_offset": -0.99,
+        "momentum_norm": 267140563.60372782,
+        "lambda_squared": 42530175344.65501,
+        "target_dot_N": -1882.8633090416245,
+        "target_dot_K": -5377.255166602868,
+        "cone_ratio": 0.8964383640884038,
+        "cone_pass": true
+      },
+      {
+        "index": 1,
+        "radial_offset": -0.99,
+        "axial_offset": 0.0,
+        "momentum_norm": 272016908.67876244,
+        "lambda_squared": 19109178167.981335,
+        "target_dot_N": -3337.465343934671,
+        "target_dot_K": -1489.5656262702753,
+        "cone_ratio": 0.09275652799462475,
+        "cone_pass": true
+      },
+      {
+        "index": 2,
+        "radial_offset": -0.99,
+        "axial_offset": 0.99,
+        "momentum_norm": 270583557.22495145,
+        "lambda_squared": 25631263404.03715,
+        "target_dot_N": -3026.5563861399883,
+        "target_dot_K": 2642.372558959793,
+        "cone_ratio": 0.2111801090388729,
+        "cone_pass": true
+      },
+      {
+        "index": 3,
+        "radial_offset": 0.0,
+        "axial_offset": -0.99,
+        "momentum_norm": 157407055.41320157,
+        "lambda_squared": 40862985373.27462,
+        "target_dot_N": -4299.682608820086,
+        "target_dot_K": -5190.731764015219,
+        "cone_ratio": 0.447716169984271,
+        "cone_pass": true
+      },
+      {
+        "index": 4,
+        "radial_offset": 0.0,
+        "axial_offset": 0.0,
+        "momentum_norm": 157616929.9170977,
+        "lambda_squared": 25629731079.452106,
+        "target_dot_N": -5590.1185969795315,
+        "target_dot_K": -1355.7544676707666,
+        "cone_ratio": 0.07057419099866911,
+        "cone_pass": true
+      },
+      {
+        "index": 5,
+        "radial_offset": 0.0,
+        "axial_offset": 0.99,
+        "momentum_norm": 156943586.83633482,
+        "lambda_squared": 31285162477.031223,
+        "target_dot_N": -5252.756382743637,
+        "target_dot_K": 2690.5075322463827,
+        "cone_ratio": 0.16581405840960117,
+        "cone_pass": true
+      },
+      {
+        "index": 6,
+        "radial_offset": 0.99,
+        "axial_offset": -0.99,
+        "momentum_norm": 241651462.1951669,
+        "lambda_squared": 44559751012.09154,
+        "target_dot_N": -6195.133499381816,
+        "target_dot_K": -4157.134022395381,
+        "cone_ratio": 0.31354102646563353,
+        "cone_pass": true
+      },
+      {
+        "index": 7,
+        "radial_offset": 0.99,
+        "axial_offset": 0.0,
+        "momentum_norm": 241129410.71606052,
+        "lambda_squared": 36400666352.75161,
+        "target_dot_N": -7038.390183867154,
+        "target_dot_K": -980.0493341633209,
+        "cone_ratio": 0.05897539493251823,
+        "cone_pass": true
+      },
+      {
+        "index": 8,
+        "radial_offset": 0.99,
+        "axial_offset": 0.99,
+        "momentum_norm": 240728292.28476834,
+        "lambda_squared": 39616596070.68017,
+        "target_dot_N": -6764.165210872605,
+        "target_dot_K": 2313.222702964119,
+        "cone_ratio": 0.1518256410991251,
+        "cone_pass": true
+      }
+    ],
+    "pass_count": 9,
+    "max_ratio": 0.8964383640884038
+  },
+  "scope": "Refined local affine coefficient trajectory using integrated moment identities. No full momentum improvement, continuous DAE evolution, or recursion established.",
+  "accepted": false,
+  "scale_recursion_established": false
+}

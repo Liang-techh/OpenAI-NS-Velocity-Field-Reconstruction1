@@ -3,15 +3,14 @@
 ## Current ST073 continuation
 
 1. Integrate the coupled outer-coefficient value/derivative constraints
-   along one trajectory. Local experiments establish a rank-two slope
-   response for angular moments; axial moments require value constraints.
-   See ST073_OUTER_MOMENT_DAE.md. Two local affine trajectories are not
-   an interval solution or recursive update.
-2. Stabilize integrated moment evaluation before using absolute gates:
-   derive integration-by-parts formulas or independently verify spatial
-   derivatives. Local k=17 replay differs between 3.66e-4 and 2.14e-3 at
-   orders 96/128. Earlier k=19 knot replay also fails. Avoid hiding this
-   discrepancy behind tiny cached training moments.
+   on one interval using the integrated conservation-moment formulation.
+   Local value/slope corrections at k=13 and 17 now pass altered-order
+   and axial-step checks; they are not one integrated trajectory.
+   See ST073_INTEGRATED_MOMENT_BALANCE.md and ST073_OUTER_MOMENT_DAE.md.
+2. Verify the integrated trajectory at held-out times, track quadrature
+   and derivative-step sensitivity, and compare physical residuals.
+   The integrated helper assumes axisymmetry and regular-axis boundary
+   terms; do not apply it to nonaxisymmetric fields unchanged.
 3. Locate outer residual concentrations, screen their stress realizability,
    and couple mean/pressure restoration with the paper's pulse dynamics.
 4. Establish improvement across time intervals and scales on one callable

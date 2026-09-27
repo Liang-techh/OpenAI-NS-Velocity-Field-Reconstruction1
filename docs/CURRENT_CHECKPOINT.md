@@ -2,22 +2,23 @@
 
 ## ST073 research update - 2026-09-27
 
-A local value/slope correction now reduces the interpolated field's
-moment defects from 0.239/3.541 at k=13/17 to 7.1e-5/2.14e-3 in
-128-point direct replay, preserving all nine sampled inner cone nodes.
-The coefficient-slope moment response has rank two: angular transport
-can be repaired with slopes, while axial moments need coefficient-value
-constraints. See [local moment dynamics](ST073_OUTER_MOMENT_DAE.md).
+Integrated conservation identities now stabilize the local axisymmetric
+moment evaluation. A tiny additional value/slope correction at k=17
+reduces independent radial-order/axial-step moment maxima below 8e-5,
+while keeping 9/9 inner cone nodes passing. The k=13 local trajectory
+also has stable moment maxima about 3.3e-5. See
+[the integrated balance](ST073_INTEGRATED_MOMENT_BALANCE.md).
 
-This is not yet one integrated trajectory. The finer local replay fails
-the absolute 1e-3 moment gate, and full momentum remains very large.
-Next stabilize moment evaluation and integrate the coupled value/derivative
-constraints. Scale recursion and full momentum max/volume-L2 acceptance
-remain unestablished; no candidate is accepted.
+These remain separate local affine trajectories. Next integrate the
+coupled outer-coefficient algebraic and angular-transport constraints
+on one interval, with held-out time checks. Full momentum still remains
+very large; finite energy, full momentum max/volume-L2 acceptance and
+scale recursion are not established. No candidate is accepted.
 
-The [scale-transfer report](ST073_OUTER_AXIAL_SCALE_TRANSFER.md) records
-all knot/intermediate checks. Earlier 12-point-only closures remain
-withdrawn under the [quadrature correction](ST073_MOMENT_QUADRATURE_AUDIT.md).
+See [local moment dynamics](ST073_OUTER_MOMENT_DAE.md) and
+[scale transfer](ST073_OUTER_AXIAL_SCALE_TRANSFER.md) for the preceding
+results. Earlier 12-point-only closures remain withdrawn under the
+[quadrature correction](ST073_MOMENT_QUADRATURE_AUDIT.md).
 The integration snapshot below is historical, not current ST073 acceptance.
 
 Snapshot date: **2026-09-20**.
