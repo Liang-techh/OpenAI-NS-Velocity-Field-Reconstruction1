@@ -1,0 +1,34 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "tau": 0.00024408986266228504,
+  "bounds": {
+    "radius": 0.010138451744687358,
+    "z_lower": -0.0009142369351569102,
+    "z_upper": 0.0009142369351569102,
+    "mean_radius": 0.010138451744687358,
+    "mean_z_halfwidth": 0.0009142369351569102
+  },
+  "scope": "Whole bounding-cylinder kinetic energy quadrature at one time. No certified integration error, uniform terminal energy bound, or NS acceptance.",
+  "source_hashes": {
+    "global_axial_extension.py": "0db263743ae24c9ead526c87a2fe4c3a0cc70795c250a3be2f1e356fb72e1652",
+    "enriched_mean_endpoint_tangent.json": "ea78f641a3b4ca760e373716186c6eb93b27494f0c8982708c953468582b40c5"
+  },
+  "rows": [
+    {
+      "order": 6,
+      "points": 5760,
+      "kinetic_energy": 0.02504758531380717,
+      "sampled_speed_max": 8410.285515590014
+    },
+    {
+      "order": 10,
+      "points": 16000,
+      "kinetic_energy": 0.025003014139399028,
+      "sampled_speed_max": 8802.599399065031
+    }
+  ],
+  "relative_energy_difference": 0.001782632052265528
+}

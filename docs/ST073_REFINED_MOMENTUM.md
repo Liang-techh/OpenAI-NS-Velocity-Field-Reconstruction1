@@ -60,3 +60,23 @@ The next solve includes the old independent-grid peak locations alongside
 the refined-grid constraints. Once used in fitting, that grid is no longer
 an independent validation set; a separate disjoint peak search is required.
 Report: `balanced_refined_momentum_replay.json`.
+
+## Two-grid peak constraints
+
+The next solve incorporates both sampled grids into its constraints. It
+retains the original 44,400-point L2 objective and separately caps the
+maximum on each grid at 1.000001 times that grid's old-candidate maximum.
+One cutting-plane round was sufficient for the sampled problem.
+
+The selected refined-grid L2 is 1,899,102.6823 (seed 1,927,978.0993).
+Its refined-grid maximum is 1.13557912376e11; its former holdout maximum is
+1.18244146576e11, at that grid's allowed cap. The assembled moment error is
+3.32e-9, all 81 cone rows pass, and direct endpoint geometry remains feasible.
+The report also replays both old and balanced controls against the new cache
+and checks consistency with their previously recorded actual residuals.
+
+`dual_grid_peak_tangent.py` and its JSON are reproducible; the generated
+`dual_grid_peak_cache.npz` is ignored. Both spatial grids are now used in
+fitting, so neither is an independent validation grid. A new shifted-grid
+comparison against the old candidate is pending. No trajectory or recursion
+is accepted from this fit.

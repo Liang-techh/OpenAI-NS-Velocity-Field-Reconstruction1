@@ -81,3 +81,19 @@ The sampled full momentum maximum in the new cutoff collars is
 1.564028779e9, including pressure and cutoff derivatives. This is not a
 spatial supremum or L2 integral, and no compensating force is declared.
 The new transition requires dynamical correction before acceptance.
+
+## Whole-support kinetic energy
+
+`global_support_energy.py` builds a bounding cylinder from the union of the
+moving mean support and the fixed compact wave support. This union matters
+away from the reference time, when the wave may extend outside the shrinking
+mean support. It then integrates one-half of |u|^2 with cylindrical volume
+weights over the entire bounding cylinder at the reference time.
+
+The order-6 panel rule (5,760 points) gives 0.0250475853; order 10
+(16,000 points) gives 0.0250030141, a relative difference of about 0.1783%.
+The finite positive sampled energy confirms that the constructed field is
+nonzero; compact spatial support and bounded fixed-time ingredients provide
+the finite-energy rationale. These two numerical rules do not certify an
+integration error or a uniform bound at the critical time. Full-domain
+momentum and time evolution remain unresolved.
