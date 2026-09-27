@@ -11,8 +11,14 @@ energy proxy falls to 1.44% of its initial value; initial center covariance
 is not retained. This is numerical integration progress, not successful
 scale recursion or recursive amplification. See
 [the full spatial evolution and decay audit](ST073_SPATIAL_FOURIER_EVOLUTION.md).
-The next blocker is obtaining a wave/mean geometry whose strain production
-can support the required stress despite localization-induced diffusion.
+The initial-time energy screen now finds no positive growth direction
+in any retained mode at support multipliers 1, 2, 4 or 8. At multiplier
+8 the best combined amplitude rate is still -2.63e5, while the largest
+strain-only rate is 1.42e4. See [the energy budget](ST073_WAVE_ENERGY_BUDGET.md).
+The next blocker is co-designing the supported wave and background shear
+so a growth phase is possible while preserving mean moment/cone constraints.
+The paper requires growth followed by decay; decay at a pulse tail alone
+is not a failure criterion.
 
 A moving-normal principal amplitude/pressure inverse is implemented and
 passes manufactured checks, but its current center-path spatial wave is

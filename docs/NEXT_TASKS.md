@@ -8,16 +8,21 @@ Time integration succeeds, but the oscillatory energy proxy decays to
 1.44% and the wave remains rejected. Immediate priorities superseding
 the earlier spatial-solve request below:
 
-- [ ] Assemble the retained-space linear energy budget on the current
+- [x] Assemble the retained-space linear energy budget on the current
   background: velocity mass M, gradient Gram K, and strain form S from
   sym(grad U). Remove gauge nulls consistently and report eigenvalues of
   the mass-normalized production-minus-dissipation form -nu K - S.
   Record support, time, quadrature and amplitude-versus-energy growth
-  conventions. This finite matrix diagnostic is not a continuum theorem.
-- [ ] If all retained directions decay, construct a wider admissible
-  support or revise coupled mean shear; quantify cutoff diffusion and
-  stress production before another time sweep. Do not hide failure by
-  shrinking wave amplitude or merely increasing polynomial degree.
+  conventions. Completed in `fourier_patch_energy_budget.py` and its JSON;
+  see ST073_WAVE_ENERGY_BUDGET.md. All tested modes at support multipliers
+  1, 2, 4 and 8 decay. This finite matrix diagnostic is not a continuum theorem.
+- [ ] Co-design the coupled mean shear and supported wave space. Widening
+  the current patch up to 8 times alone has failed the energy gate. Seek
+  positive growth while preserving the current mean moment/cone constraints;
+  record production, dissipation and the support-wide stress-cone evidence
+  before another time sweep. Do not hide failure by shrinking amplitude.
+  A changed approximation space must demonstrate a resolved growth mode,
+  not merely more polynomial coefficients.
 - [ ] Recompute the evolving mean stress target and compare the complete
   wave covariance against it over time. The existing covariance report
   measures only retention against the initial reference.
