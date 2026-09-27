@@ -89,21 +89,29 @@ def _joined_streamfunction(joined, points, tau):
     radius = np.hypot(points[:, 0], points[:, 1])
     coord = coordinates(radius / sn, points[:, 2] / sn, tau, inner.h)
     result = np.zeros(len(points), dtype=float)
-    for index, (r, X, eta, q) in enumerate(
-        zip(radius, coord["X"], coord["eta"], coord["q"])
-    ):
+    # The moving bridge depends on eta and q, not on radius or angle.
+    # Tensor quadratures and Cartesian FD stencils repeat these pairs many
+    # times. Reuse each Hermite solve without rounding either coordinate.
+    pairs, inverse = np.unique(
+        np.column_stack((coord["eta"], coord["q"])), axis=0, return_inverse=True
+    )
+    for group, (eta, q) in enumerate(pairs):
+        indices = np.flatnonzero(inverse == group)
+        radii = radius[indices]
         ri, ro, _, bridge = coefficients(
             inner, float(eta), tau, joined.join_X, joined.outer_ratio
         )
-        if r <= ri:
+        core = indices[radii <= ri]
+        annulus = indices[(radii > ri) & (radii < ro)]
+        if len(core):
             c = inner.coefficients(float(eta), float(q))[2, :, 0]
             primitive = np.r_[0.0, c / np.arange(1, len(c) + 1)]
-            result[index] = joined.nu**1.5 * q * np.polynomial.polynomial.polyval(
-                X, primitive
+            result[core] = joined.nu**1.5 * q * np.polynomial.polynomial.polyval(
+                np.asarray(coord["X"])[core], primitive
             )
-        elif r < ro:
-            y = (r - ri) / (ro - ri)
-            result[index] = np.polynomial.polynomial.polyval(y, bridge)
+        if len(annulus):
+            y = (radius[annulus] - ri) / (ro - ri)
+            result[annulus] = np.polynomial.polynomial.polyval(y, bridge)
     return result
 
 

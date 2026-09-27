@@ -26,3 +26,23 @@ resolution. No whole-space maximum, complete volume L2, trajectory, forcing
 closure, or scale recursion is accepted. This is a first dynamical correction
 of the newly constructed exterior, and it uses the enriched-mean candidate
 as its base rather than the acceleration diagnostic.
+
+## Endpoint replay
+
+At k0+1e-6, on the same independent order-13 collar grid, the parent has
+L2 219,972.9103 and maximum 4.601350451e9; the corrected field has L2
+202,431.7356 and maximum 4.592260413e9. Thus the sampled improvement
+persists at the geometric endpoint. The boxes are strictly disjoint from
+the frozen wave support, and reference wave probes have zero velocity and
+pressure changes. This still does not measure the remainder of space or
+establish a continuous-time NS trajectory.
+
+## Evaluation cost
+
+The global streamfunction helper now groups identical (eta,q) coordinate
+pairs and reuses their Hermite solves. It does not round coordinates.
+Against the scalar implementation at commit 08f7b6ee, 96 points at each of
+two times have zero maximum numerical difference. The helper alone was
+294--430 times faster in that small benchmark; this is not an end-to-end
+momentum speedup. This removes repeated coefficient construction before
+whole-support residual integration.

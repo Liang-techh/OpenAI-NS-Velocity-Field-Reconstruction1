@@ -1,0 +1,24 @@
+{
+  "status": "completed",
+  "reference_commit": "08f7b6ee",
+  "current_source_sha256": "a9262692528ab17420851f822d2477ac2bbfcdfb0a2d4637b683ff92ae927dea",
+  "scope": "Numerical equivalence and timing for the joined streamfunction helper; no PDE acceptance.",
+  "rows": [
+    {
+      "delta_k": 0.0,
+      "point_count": 96,
+      "max_abs_difference": 0.0,
+      "scalar_seconds": 0.6569557999901008,
+      "grouped_seconds": 0.002237599983345717,
+      "speedup": 293.59841119045933
+    },
+    {
+      "delta_k": 0.001,
+      "point_count": 96,
+      "max_abs_difference": 0.0,
+      "scalar_seconds": 0.5633494000067003,
+      "grouped_seconds": 0.0013111000007484108,
+      "speedup": 429.6769122760472
+    }
+  ]
+}
