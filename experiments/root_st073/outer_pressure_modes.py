@@ -23,10 +23,10 @@ class OuterPressure:
         return u,p
 
 
-def outer_cache(field,units,k=11,order=48):
+def outer_cache(field,units,k=11,order=48,locations=None):
     inner=field.inner;tau=.5*2.**-k;centers=[]
-    for eta in (-.2,0.,.2):
-        for y in (.5,.75):centers.append(inner.from_similarity([inner.p.X_max*(1+15*y)**2],[eta],tau)[0])
+    locations=[(eta,y) for eta in (-.2,0.,.2) for y in (.5,.75)] if locations is None else locations
+    for eta,y in locations:centers.append(inner.from_similarity([inner.p.X_max*(1+15*y)**2],[eta],tau)[0])
     points=list(centers);panels=[];g,w=leggauss(order)
     for R,_,z in centers:
         q=float(coordinates(0.,z/np.sqrt(inner.nu),tau,inner.h)['q']);ri=np.sqrt(2*inner.nu*q*inner.p.X_max)

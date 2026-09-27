@@ -10,10 +10,10 @@ from separated_moment_modes import SeparatedMomentModes,RADIAL_WINDOWS_THREE
 from radial_continuation import ROOT
 
 
-def integral_state(field,inner,R,z,tau,order):
+def integral_state(field,inner,R,z,tau,order,radial_breaks=RADIAL_BREAKS):
     q=float(coordinates(0.,z/np.sqrt(inner.nu),tau,inner.h)['q'])
     ri=np.sqrt(2*inner.nu*q*inner.p.X_max)
-    edges=sorted(set(np.clip([0.,ri,R,*[ri*(1+15*f) for f in RADIAL_BREAKS]],0.,R)))
+    edges=sorted(set(np.clip([0.,ri,R,*[ri*(1+15*f) for f in radial_breaks]],0.,R)))
     g,w=leggauss(order);r=np.concatenate([(a+b)/2+(b-a)*g/2 for a,b in zip(edges[:-1],edges[1:])])
     weights=np.concatenate([(b-a)*w/2 for a,b in zip(edges[:-1],edges[1:])])
     points=np.column_stack((r,np.zeros_like(r),np.full_like(r,z)))
@@ -22,10 +22,10 @@ def integral_state(field,inner,R,z,tau,order):
         weights@(r*r*u[:,2]*u[:,1]),weights@(r*u[:,2]**2),weights@(r*p)])
 
 
-def balance(field,inner,R,z,tau,hz,ht,hr,order):
-    center=integral_state(field,inner,R,z,tau,order)
-    zm2,zm,zp,zp2=[integral_state(field,inner,R,z+j*hz,tau,order) for j in (-2,-1,1,2)]
-    tm2,tm,tp,tp2=[integral_state(field,inner,R,z,tau+j*ht,order) for j in (-2,-1,1,2)]
+def balance(field,inner,R,z,tau,hz,ht,hr,order,radial_breaks=RADIAL_BREAKS):
+    center=integral_state(field,inner,R,z,tau,order,radial_breaks)
+    zm2,zm,zp,zp2=[integral_state(field,inner,R,z+j*hz,tau,order,radial_breaks) for j in (-2,-1,1,2)]
+    tm2,tm,tp,tp2=[integral_state(field,inner,R,z,tau+j*ht,order,radial_breaks) for j in (-2,-1,1,2)]
     dz=(zm2-8*zm+8*zp-zp2)/(12*hz)
     dzz=(-zp2+16*zp-30*center+16*zm-zm2)/(12*hz*hz)
     dtau=(tm2-8*tm+8*tp-tp2)/(12*ht)
@@ -37,14 +37,14 @@ def balance(field,inner,R,z,tau,hz,ht,hr,order):
     return np.array([-theta/(R*R),-axial/R])
 
 
-def evaluate(field,inner,k,order,zfactor=.002):
+def evaluate(field,inner,k,order,zfactor=.002,radial_breaks=RADIAL_BREAKS):
     tau=.5*2.**-k;out=[]
     for eta in (-.2,.2):
         pt=inner.from_similarity([inner.p.X_max*16**2],[eta],tau)[0];R,z=float(pt[0]),float(pt[2])
         zp=inner.from_similarity([inner.p.X_max],[eta+.01],tau)[0,2]
         zm=inner.from_similarity([inner.p.X_max],[eta-.01],tau)[0,2]
         hz=zfactor*abs(zp-zm)/.02
-        out.extend(balance(field,inner,R,z,tau,hz,1e-4*tau,5e-4*np.sqrt(inner.nu*tau),order))
+        out.extend(balance(field,inner,R,z,tau,hz,1e-4*tau,5e-4*np.sqrt(inner.nu*tau),order,radial_breaks))
     return np.array(out)
 
 

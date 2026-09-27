@@ -2,17 +2,17 @@
 
 ## Current ST073 continuation
 
-1. Screen finite spatial neighborhoods and nearby times for the combined
-   pressure/swirl-time-slope field. All 9 inner and 6 outer nodes pass at
-   k=11, but farther nodes have small normal-stress margins and slopes
-   reach magnitude 11.125. See ST073_OUTER_SLOPE_PRESSURE_REPAIR.md.
-2. Integrate state-dependent slope and pressure controls while maintaining
-   moment constraints and cone margins on actual pulse supports. Existing
-   old-profile DAE results do not transfer to this new local trajectory.
-3. Build the full supported nonaxisymmetric pulse only after spatial/time
-   admissibility, with complete curl and amplitude/pressure evolution.
-   Held-out full momentum remains 1.42e6; pointwise moment/cone compatibility
-   does not satisfy either full momentum or volume-L2 acceptance.
+1. Integrate state-dependent pressure/swirl-slope controls using the new
+   spatially constrained seed. It passes 8/8 independent neighborhood points,
+   6/6 outer centers and 9/9 inner nodes at k=11, but has no verified time
+   interval. See ST073_OUTER_PATCH_AND_TIME_GATE.md.
+2. Track moment constraints and shear geometry throughout evolution. The
+   preceding fixed-slope field drifted to moment error about 2.49 within
+   delta k=+/-0.001; do not infer temporal validity from instantaneous cone
+   positivity or transport the old-profile DAE unchanged.
+3. Check held-out times and finite pulse-support margins before constructing
+   the full nonaxisymmetric pulse. Full sampled momentum remains 1.42e6;
+   spatial moment/cone compatibility does not satisfy max or volume-L2 gates.
 4. Establish improvement across time intervals and scales on one callable
    field before claiming recursion. Full momentum maximum and spatial-volume
    L2 must both meet 1e-3; no current candidate does so.

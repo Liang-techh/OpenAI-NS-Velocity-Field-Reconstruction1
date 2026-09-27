@@ -1,0 +1,377 @@
+{
+  "spatial": {
+    "radial_halfwidth": 0.005,
+    "eta_halfwidth": 0.005,
+    "rows": [
+      {
+        "eta": -0.20500000000000002,
+        "radial_fraction": 0.745,
+        "lambda_squared": 17192449.45868299,
+        "target_dot_N": 1.6935789766626514,
+        "cone_ratio": 0.8081526803183197,
+        "cone_pass": false,
+        "momentum_norm": 153721.17769035677
+      },
+      {
+        "eta": -0.20500000000000002,
+        "radial_fraction": 0.75,
+        "lambda_squared": 15927351.87600636,
+        "target_dot_N": 0.4090783507272597,
+        "cone_ratio": 5.450485346597513,
+        "cone_pass": false,
+        "momentum_norm": 164837.52147806739
+      },
+      {
+        "eta": -0.20500000000000002,
+        "radial_fraction": 0.755,
+        "lambda_squared": 14670308.308410013,
+        "target_dot_N": -0.9556730946464748,
+        "cone_ratio": 3.225842463232298,
+        "cone_pass": false,
+        "momentum_norm": 175495.78799030397
+      },
+      {
+        "eta": -0.2,
+        "radial_fraction": 0.745,
+        "lambda_squared": 17567481.571957666,
+        "target_dot_N": 1.1251915069065623,
+        "cone_ratio": 0.8104751286218125,
+        "cone_pass": false,
+        "momentum_norm": 153752.66688114562
+      },
+      {
+        "eta": -0.2,
+        "radial_fraction": 0.75,
+        "lambda_squared": 16314731.532863252,
+        "target_dot_N": -0.1011495448463406,
+        "cone_ratio": 0.9499551774540524,
+        "cone_pass": true,
+        "momentum_norm": 165454.56192353705
+      },
+      {
+        "eta": -0.2,
+        "radial_fraction": 0.755,
+        "lambda_squared": 15065152.553584812,
+        "target_dot_N": -1.4197364384277167,
+        "cone_ratio": 0.5000719105429425,
+        "cone_pass": true,
+        "momentum_norm": 176725.62794723245
+      },
+      {
+        "eta": -0.195,
+        "radial_fraction": 0.745,
+        "lambda_squared": 17934665.994667113,
+        "target_dot_N": 0.6064516374334902,
+        "cone_ratio": 4.973138791507404,
+        "cone_pass": false,
+        "momentum_norm": 153814.14735370097
+      },
+      {
+        "eta": -0.195,
+        "radial_fraction": 0.75,
+        "lambda_squared": 16695070.374323241,
+        "target_dot_N": -0.5650960600303111,
+        "cone_ratio": 3.971397473948156,
+        "cone_pass": false,
+        "momentum_norm": 166081.95859807488
+      },
+      {
+        "eta": -0.195,
+        "radial_fraction": 0.755,
+        "lambda_squared": 15453825.872124394,
+        "target_dot_N": -1.840800811107624,
+        "cone_ratio": 0.8062136167045357,
+        "cone_pass": true,
+        "momentum_norm": 177948.0578798331
+      },
+      {
+        "eta": 0.195,
+        "radial_fraction": 0.745,
+        "lambda_squared": 18144347.35807754,
+        "target_dot_N": 0.1630162952994078,
+        "cone_ratio": 18.638427598698097,
+        "cone_pass": false,
+        "momentum_norm": 145444.91041232433
+      },
+      {
+        "eta": 0.195,
+        "radial_fraction": 0.75,
+        "lambda_squared": 16957804.586414453,
+        "target_dot_N": -0.6165732827323721,
+        "cone_ratio": 3.864765071068728,
+        "cone_pass": false,
+        "momentum_norm": 157138.66655860483
+      },
+      {
+        "eta": 0.195,
+        "radial_fraction": 0.755,
+        "lambda_squared": 15760559.141313521,
+        "target_dot_N": -1.5240007780237528,
+        "cone_ratio": 1.1309559495066075,
+        "cone_pass": false,
+        "momentum_norm": 168757.6822622057
+      },
+      {
+        "eta": 0.2,
+        "radial_fraction": 0.745,
+        "lambda_squared": 17784118.483142816,
+        "target_dot_N": 0.6995519108550255,
+        "cone_ratio": 1.1549925261397753,
+        "cone_pass": false,
+        "momentum_norm": 144814.73662628225
+      },
+      {
+        "eta": 0.2,
+        "radial_fraction": 0.75,
+        "lambda_squared": 16584156.790071212,
+        "target_dot_N": -0.12431328127772137,
+        "cone_ratio": 0.9499650345467155,
+        "cone_pass": true,
+        "momentum_norm": 155977.76842573605
+      },
+      {
+        "eta": 0.2,
+        "radial_fraction": 0.755,
+        "lambda_squared": 15378115.077698147,
+        "target_dot_N": -1.0644088119441335,
+        "cone_ratio": 0.5420190520336324,
+        "cone_pass": true,
+        "momentum_norm": 167036.19613794715
+      },
+      {
+        "eta": 0.20500000000000002,
+        "radial_fraction": 0.745,
+        "lambda_squared": 17416139.24078643,
+        "target_dot_N": 1.288162693395897,
+        "cone_ratio": 1.2407651140828944,
+        "cone_pass": false,
+        "momentum_norm": 144189.4148444665
+      },
+      {
+        "eta": 0.20500000000000002,
+        "radial_fraction": 0.75,
+        "lambda_squared": 16203454.949555993,
+        "target_dot_N": 0.4167746797482686,
+        "cone_ratio": 5.574315945740252,
+        "cone_pass": false,
+        "momentum_norm": 154803.15357507078
+      },
+      {
+        "eta": 0.20500000000000002,
+        "radial_fraction": 0.755,
+        "lambda_squared": 14989379.179286882,
+        "target_dot_N": -0.559126628490549,
+        "cone_ratio": 5.4633698592554545,
+        "cone_pass": false,
+        "momentum_norm": 165284.76223835925
+      }
+    ],
+    "pass_count": 5
+  },
+  "times": [
+    {
+      "k": 10.999,
+      "cone": [
+        {
+          "eta": -0.2,
+          "radial_fraction": 0.5,
+          "lambda_squared": 6272408.769341395,
+          "target_dot_N": -108.3478272767374,
+          "cone_ratio": 0.34276523366039663,
+          "cone_pass": true,
+          "momentum_norm": 286330.24319785595
+        },
+        {
+          "eta": -0.2,
+          "radial_fraction": 0.75,
+          "lambda_squared": 16315938.771597913,
+          "target_dot_N": 1.6290555251681378,
+          "cone_ratio": 0.14133060114668566,
+          "cone_pass": false,
+          "momentum_norm": 163745.7395732739
+        },
+        {
+          "eta": 0.0,
+          "radial_fraction": 0.5,
+          "lambda_squared": -386547.2936532827,
+          "target_dot_N": -124.4759453255838,
+          "cone_ratio": 0.0,
+          "cone_pass": false,
+          "momentum_norm": 251491.88504902902
+        },
+        {
+          "eta": 0.0,
+          "radial_fraction": 0.75,
+          "lambda_squared": 24650643.600307256,
+          "target_dot_N": 0.7107127336414518,
+          "cone_ratio": 2.141602829392744,
+          "cone_pass": false,
+          "momentum_norm": 178320.93367484986
+        },
+        {
+          "eta": 0.2,
+          "radial_fraction": 0.5,
+          "lambda_squared": 4263507.926757656,
+          "target_dot_N": -109.12010772164591,
+          "cone_ratio": 0.26954822317504545,
+          "cone_pass": true,
+          "momentum_norm": 275770.1832180127
+        },
+        {
+          "eta": 0.2,
+          "radial_fraction": 0.75,
+          "lambda_squared": 16584440.162189364,
+          "target_dot_N": 1.6032157268034088,
+          "cone_ratio": 0.22581026132217663,
+          "cone_pass": false,
+          "momentum_norm": 154689.9431207443
+        }
+      ],
+      "pass_count": 2,
+      "moments": [
+        -2.4745400330330685,
+        0.0014804509965541883,
+        -2.4833595376610336,
+        -0.0014916824951516812
+      ],
+      "moment_max": 2.4833595376610336
+    },
+    {
+      "k": 11.0,
+      "cone": [
+        {
+          "eta": -0.2,
+          "radial_fraction": 0.5,
+          "lambda_squared": 6278398.283761704,
+          "target_dot_N": -108.23784978282276,
+          "cone_ratio": 0.34206373761995684,
+          "cone_pass": true,
+          "momentum_norm": 286378.74564024573
+        },
+        {
+          "eta": -0.2,
+          "radial_fraction": 0.75,
+          "lambda_squared": 16314731.532863252,
+          "target_dot_N": -0.1011495448463406,
+          "cone_ratio": 0.9499551774540524,
+          "cone_pass": true,
+          "momentum_norm": 165454.56192353705
+        },
+        {
+          "eta": 0.0,
+          "radial_fraction": 0.5,
+          "lambda_squared": 148223.77966390623,
+          "target_dot_N": -124.0457442513786,
+          "cone_ratio": 0.004928046233414778,
+          "cone_pass": true,
+          "momentum_norm": 256387.87272623985
+        },
+        {
+          "eta": 0.0,
+          "radial_fraction": 0.75,
+          "lambda_squared": 24557615.909397908,
+          "target_dot_N": -2.854088090671585,
+          "cone_ratio": 0.5096665640373829,
+          "cone_pass": true,
+          "momentum_norm": 180056.65059324348
+        },
+        {
+          "eta": 0.2,
+          "radial_fraction": 0.5,
+          "lambda_squared": 4272830.804454998,
+          "target_dot_N": -109.02555225195857,
+          "cone_ratio": 0.26819575485025204,
+          "cone_pass": true,
+          "momentum_norm": 275859.71527335374
+        },
+        {
+          "eta": 0.2,
+          "radial_fraction": 0.75,
+          "lambda_squared": 16584156.790071212,
+          "target_dot_N": -0.12431328127772137,
+          "cone_ratio": 0.9499650345467155,
+          "cone_pass": true,
+          "momentum_norm": 155977.76842573605
+        }
+      ],
+      "pass_count": 6,
+      "moments": [
+        -7.662945691322418e-07,
+        -2.201052121817073e-05,
+        4.4284051732290655e-06,
+        2.3411293092592595e-05
+      ],
+      "moment_max": 2.3411293092592595e-05
+    },
+    {
+      "k": 11.001,
+      "cone": [
+        {
+          "eta": -0.2,
+          "radial_fraction": 0.5,
+          "lambda_squared": 6284395.271363546,
+          "target_dot_N": -108.12777913217494,
+          "cone_ratio": 0.34135877920834257,
+          "cone_pass": true,
+          "momentum_norm": 286430.7211747916
+        },
+        {
+          "eta": -0.2,
+          "radial_fraction": 0.75,
+          "lambda_squared": 16313477.45280929,
+          "target_dot_N": -1.833744930316079,
+          "cone_ratio": 0.021015037294673328,
+          "cone_pass": true,
+          "momentum_norm": 167264.3859428107
+        },
+        {
+          "eta": 0.0,
+          "radial_fraction": 0.5,
+          "lambda_squared": 681363.5005460369,
+          "target_dot_N": -123.61429589328293,
+          "cone_ratio": 0.01039892045364283,
+          "cone_pass": true,
+          "momentum_norm": 261296.64881432487
+        },
+        {
+          "eta": 0.0,
+          "radial_fraction": 0.75,
+          "lambda_squared": 24463923.95152998,
+          "target_dot_N": -6.423811873666806,
+          "cone_ratio": 0.21583383018715754,
+          "cone_pass": true,
+          "momentum_norm": 182362.97225270254
+        },
+        {
+          "eta": 0.2,
+          "radial_fraction": 0.5,
+          "lambda_squared": 4282183.557164886,
+          "target_dot_N": -108.93049737357185,
+          "cone_ratio": 0.2668426686196568,
+          "cone_pass": true,
+          "momentum_norm": 275951.7503769554
+        },
+        {
+          "eta": 0.2,
+          "radial_fraction": 0.75,
+          "lambda_squared": 16583829.085117957,
+          "target_dot_N": -1.8542280330846272,
+          "cone_ratio": 0.06833325129933283,
+          "cone_pass": true,
+          "momentum_norm": 157378.67352295277
+        }
+      ],
+      "pass_count": 6,
+      "moments": [
+        2.477953557062625,
+        -0.0015265974114615822,
+        2.4867957479628005,
+        0.0015411676634415367
+      ],
+      "moment_max": 2.4867957479628005
+    }
+  ],
+  "scope": "Finite spatial and time samples of one local affine swirl trajectory; not a continuum or interval certificate.",
+  "accepted": false,
+  "scale_recursion_established": false
+}

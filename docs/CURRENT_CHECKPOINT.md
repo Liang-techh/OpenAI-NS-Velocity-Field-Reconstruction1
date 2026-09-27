@@ -2,22 +2,21 @@
 
 ## ST073 research update - 2026-09-27
 
-A combined compact-pressure/swirl-time-slope correction now passes all
-9 inner and 6 outer sampled cone nodes at k=11. Independent moment
-replay stays below 4.8e-5; held-out full momentum remains 1.42e6.
-See [the combined repair](ST073_OUTER_SLOPE_PRESSURE_REPAIR.md).
+A spatially constrained pressure/swirl-slope repair now passes 8/8
+independent neighborhood points, all six original outer nodes and all
+nine inner nodes. Moment replay remains below 4.8e-5 and full sampled
+momentum remains 1.42e6. See
+[the spatial and time gate](ST073_OUTER_PATCH_AND_TIME_GATE.md).
 
-Pressure alone was insufficient even with farther compensation and
-relaxed bounds: tangential stress had to change. The new time slopes
-supply that change without altering velocity or shear at the test time.
-This is instantaneous sampled compatibility, not a continuous support
-or time-interval result. Next test neighborhoods and nearby times, then
-integrate state-dependent slope/pressure controls with margins.
+The prior point-fit field failed the wider spatial screen and developed
+moment errors about 2.49 at k=11+/-0.001. The new spatial candidate has
+not yet been tested over time. Next integrate state-dependent controls
+with spatial margins, moment constraints and changing shear geometry.
+Finite samples are not a continuous-support or time-interval certificate.
 
-The full momentum target, spatial-volume L2, finite-energy closure and
-scale recursion remain unresolved; no field is accepted. Earlier short
-DAE paths belong to older profiles. The snapshot below is historical,
-not current ST073 acceptance.
+Full momentum max/volume-L2, finite energy and recursive contraction
+remain unestablished; no candidate is accepted. The snapshot below is
+historical, not current ST073 acceptance.
 
 Snapshot date: **2026-09-20**.
 
