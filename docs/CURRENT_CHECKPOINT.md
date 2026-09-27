@@ -2,12 +2,19 @@
 
 ## ST073 research update - 2026-09-27
 
+Global-scope audit confirms a separate required gap: the current base is
+registered only on abs(eta)<=0.5, and its radial heat exterior has no axial
+localization. The candidate is not yet a globally defined finite-energy
+field. A divergence-preserving axial exterior/pressure construction is
+being investigated alongside local residual correction. See
+[global exterior gap](ST073_GLOBAL_EXTERIOR_GAP.md).
+
 Degree-3 mean enrichment with direct endpoint geometry now reduces
 independent actual momentum L2 to 1.92894e6 and maximum to 1.18244e11
 (about 27% and 30% below the prior 236-control candidate). All three
 actual sampled forward geometric signs pass. Enlarged-mean independent
 replay gives moment maximum 2.1084e-7 and 27/27 cones passing, minimum
-margin 9.94824e-5. Higher-quadrature refitting is next.
+margin 9.94824e-5. Higher-quadrature refitting now lowers same-grid L2 from 1.92798e6 to 1.89886e6, but increases the peak from 1.13931e11 to 1.15611e11. A peak-capped solve is required before treating this as a joint improvement. See [refined momentum](ST073_REFINED_MOMENTUM.md).
 No NS step or scale recursion is accepted. See
 [enriched mean endpoint](ST073_ENRICHED_MEAN_ENDPOINT.md).
 
