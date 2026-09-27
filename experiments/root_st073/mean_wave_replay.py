@@ -70,7 +70,11 @@ def load_saved_field(path=None):
                       initial['pressure'],initial['k'])
     wave,_=load_saved_wave()
     if report.get('wave_report'):
-        wave=codesigned_wave(root/report['wave_report'])
+        if 'wave_snapshot' not in report:
+            raise ValueError('Codesigned replay lacks immutable wave coefficients; source report may have changed')
+        snapshot=report['wave_snapshot'];raw=np.asarray(snapshot['coefficients'])
+        wave=ExactCurlWave(snapshot['center'],snapshot['widths'],snapshot['degree'],
+                          snapshot['carrier'],raw[...,0]+1j*raw[...,1])
         mean,_=load_constrained_mean();install_in_field(mean)
     raw=np.asarray(report['pressure_coefficients']);pressure=raw[...,0]+1j*raw[...,1]
     raw=np.asarray(report['physical_time_rate']);rate=raw[0]+1j*raw[1]
@@ -117,6 +121,8 @@ def run(fit_order=6,holdout_order=9,output_name='mean_wave_replay.json',wave_rep
     result=dict(status='fit_complete',accepted=False,pde_validated=False,scale_recursion_established=False,
         amplitude=amplitude,physical_time_rate=pack(field.rate),pressure_coefficients=pack(pressure),
         wave_report=wave_report,
+        wave_snapshot=dict(center=list(wave.center),widths=list(wave.widths),degree=wave.degree,
+                           carrier=list(wave.carrier),coefficients=pack(wave.coefficients)),
         mean_report=('broad_meridional_constrained.json' if wave_report else 'meridional_constrained_evolution.json:initial_fit'),
         k=initial['k'],tau=tau,rank=int(rank),column_count=C.shape[-1],
         fit_order=fit_order,holdout_order=holdout_order,

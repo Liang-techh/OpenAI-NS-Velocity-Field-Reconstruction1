@@ -2,6 +2,13 @@
 
 ## ST073 research update - 2026-09-27
 
+Joint polarization/growth fitting now matches the required radial flux at
+five nodes with relative error 4.69e-11. Higher-quadrature growth lambda is
+997.36, positive but below the imposed 1000 floor. Wave RMS is 4.347 times
+mean RMS, so this remains a large nonlinear candidate requiring complete
+residual correction. See [stress and growth co-design](ST073_STRESS_GROWTH_CODESIGN.md).
+No accepted physical trajectory or scale recursion follows from this fit.
+
 The actual physical mean-plus-wave replay is now available in
 `mean_wave_replay.py/.json`. The old scalar-amplitude wave candidate fails
 to improve the complete residual: independent patch volume L2 increases

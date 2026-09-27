@@ -1,0 +1,150 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "amplitude": 1.0,
+  "physical_time_rate": [
+    81931.93002379715,
+    -737322.7483686814
+  ],
+  "pressure_coefficients": [
+    [
+      [
+        -15304.555214264305,
+        14702.56509443525
+      ],
+      [
+        -1184379.7207739993,
+        647933.3963444429
+      ],
+      [
+        -133936.92164601194,
+        -96338.52187954691
+      ],
+      [
+        181917.9879295479,
+        325305.83197230916
+      ],
+      [
+        2334000.0181585704,
+        -5564264.296322584
+      ],
+      [
+        1110129.4938228775,
+        844494.664677249
+      ],
+      [
+        -795223.9183469055,
+        -779686.4837197273
+      ],
+      [
+        2427669.8889010767,
+        3515942.47209594
+      ],
+      [
+        -4430707.451338296,
+        -2254646.640472423
+      ]
+    ],
+    [
+      [
+        -940491.7042078807,
+        -5784450.63083447
+      ],
+      [
+        5992679.656878807,
+        -473148.15467556124
+      ],
+      [
+        -7849339.751943134,
+        -14492967.699792318
+      ],
+      [
+        18343472.19201915,
+        -43937390.12090155
+      ],
+      [
+        -6496397.885333087,
+        7668023.203811956
+      ],
+      [
+        19945684.667621568,
+        129736898.0025333
+      ],
+      [
+        -11155729.489290213,
+        205244015.2381683
+      ],
+      [
+        -32767351.172860302,
+        26351150.14035325
+      ],
+      [
+        183544266.59207302,
+        -239212120.0310582
+      ]
+    ]
+  ],
+  "wave_report": "wave_stress_growth_codesign.json",
+  "mean_report": "broad_meridional_constrained.json",
+  "k": 11.0003,
+  "tau": 0.00024408986266228504,
+  "rank": 38,
+  "column_count": 38,
+  "fit_order": 6,
+  "holdout_order": 9,
+  "velocity_pressure_normalized_inner_product_max": 0.03466239391184932,
+  "fit_points": 2688,
+  "frozen_fit": {
+    "sampled_max": 568181678160.9955,
+    "volume_L2": 11062532.649349945,
+    "volume_RMS": 75690307571.26389
+  },
+  "fitted_fit": {
+    "sampled_max": 538605298432.7786,
+    "volume_L2": 10571976.625312898,
+    "volume_RMS": 72333902892.76723
+  },
+  "scope": "Actual physical mean plus exact-curl mode1 wave; local affine physical-time coefficient, fitted zero-mean mode1/2 pressures. Independent Cartesian full-momentum holdout on fixed patch. Not time integration, whole-support or recursion acceptance.",
+  "holdout_geometry": {
+    "z_order": 9,
+    "panel_order": 9,
+    "radial_breaks": [
+      0.01,
+      0.055,
+      0.1,
+      0.12,
+      0.25,
+      0.38,
+      0.4,
+      0.56,
+      0.58,
+      0.6,
+      0.62,
+      0.72,
+      0.75,
+      0.88,
+      0.92,
+      0.93,
+      0.935,
+      0.96,
+      0.99
+    ],
+    "point_count": 756
+  },
+  "holdout_points": 9072,
+  "mean_holdout": {
+    "sampled_max": 5313983356.581518,
+    "volume_L2": 121456.38738726958,
+    "volume_RMS": 831009643.9242808
+  },
+  "wave_holdout": {
+    "sampled_max": 959579254335.5583,
+    "volume_L2": 11288423.081637288,
+    "volume_RMS": 77235859285.25056
+  },
+  "elapsed_seconds": 119.97117960001924,
+  "reconstructible_from_current_sources": false,
+  "source_identity_note": "Pre-final codesign candidate. The source coefficients changed during replay and this run did not save an immutable coefficient snapshot. Preserve as a preliminary diagnostic only; do not compare these metrics to the final codesign candidate."
+}
