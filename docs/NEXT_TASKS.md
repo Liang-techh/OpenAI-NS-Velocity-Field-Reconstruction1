@@ -2,22 +2,26 @@
 
 ## Current ST073 continuation
 
-1. Complete `outer_feedback_evolution.py` and inspect its JSON replay.
-   Preserve any live process before restarting; partial node/stage output
-   does not establish trajectory success. The runner integrates actual
-   swirl values with state-dependent pressure and slopes on [11,11.001].
-2. Compare independent integrated moments and direct cones at held-out
-   times. If drift remains, quantify integration/interpolation error and
-   refine the step or solve a collocation problem; do not accept node-only
-   closure. Check the updated spatial holdouts throughout the interval.
-3. Build the paper's moving-normal transverse pulse inverse and full curl
-   correction on a time-compatible background. Keep endpoint support and
-   coupled mean corrections explicit. Full sampled momentum is still
-   1.42e6; moment/cone compatibility does not meet either residual gate.
-4. Establish interval and interscale contraction on one callable field,
-   with declared domain/forcing and finite-energy evidence. Both full
-   momentum maximum and spatial-volume L2 must meet 1e-3. See
-   ST073_STATE_DEPENDENT_EVOLUTION.md and ST073_SECTION7_INTERVAL_GATE.md.
+1. Use the completed state-dependent trajectory in
+   `outer_feedback_evolution.json` as the current short-time mean-field
+   candidate. At k=11.0005 it reduces matched fixed-slope moment drift
+   from 1.658 to 4.99e-4; three time samples pass 6/6 outer cone checks.
+   Preserve its state/pressure coupling when constructing wave corrections.
+2. Extend the existing frozen principal amplitude inverse to the paper's
+   moving-normal path equation (7.13), on this current background. Recover
+   the normal pressure, reconstruct the full curl and evaluate complete
+   momentum including coefficient and cutoff derivatives. Do not reuse
+   amplitudes or DAE states from an older background without rebuilding.
+3. Before using a supported pulse, replay the eight spatial neighborhood
+   holdouts and inner support along the trajectory. The worst moment
+   sample is 9.87e-4, close to 1e-3; bound interpolation/time-stencil error
+   or improve time integration if the required margin is absent. Finite
+   samples do not certify an entire interval or support.
+4. Couple wave and mean/stress corrections, demonstrate decreasing full
+   momentum across time intervals and scales, and declare domain/forcing
+   and finite-energy bounds. Both full momentum max and spatial-volume
+   L2 must meet 1e-3. Current sampled full momentum is still 1.42e6.
+   See ST073_STATE_DEPENDENT_EVOLUTION.md and ST073_SECTION7_INTERVAL_GATE.md.
 
 The frozen-inner/outer-repair seed preserves 9/9 sampled inner cone nodes
 at k=11,13,15,17,19. This geometry success does not imply continuum cone

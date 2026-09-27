@@ -73,7 +73,8 @@ def solve_control(inner, base, current, k, state, reference, order=48):
         [(eta, y) for eta in (-.2, 0., .2) for y in (.5, .75)] +
         [(eta+de, .75+dy) for eta in (-.2, .2)
          for de in (-.005, 0., .005) for dy in (-.005, 0., .005)]))
-    cache = outer_cache(field, units, k, order=order, locations=locations)
+    cache = outer_cache(field, units, k, order=order, locations=locations,
+                        radial_breaks=P_BREAKS)
     residual = momentum(cache['baseline'])
     A, b, lambdas = [], [], []
     for i, (sl, r, w, R) in enumerate(cache['panels']):

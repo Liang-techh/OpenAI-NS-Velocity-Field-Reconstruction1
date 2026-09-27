@@ -30,6 +30,39 @@ integrated moment identities, outer cones and full-vector sampled momentum.
 Neither the interpolant nor a finite number of samples certifies an ODE
 solution or a continuous interval bound.
 
+The moment locations and six cone replay locations coincide spatially with
+training locations; independence here is in time, quadrature and the moment
+identity, not a new spatial support certificate. The momentum grid has
+additional spatial holdouts. Replaying the eight spatial neighborhood
+holdouts over time remains outstanding.
+
+`outer_feedback_fixed_comparison.py` uses exactly the feedback run's initial
+state and control but keeps its slopes fixed. It evaluates the same
+order-96 integrated moments at k=11.0005, providing a matched comparator.
+
+## Completed first trajectory
+
+All five state solves completed without loss of constrained feasibility.
+The reconstructed trajectory produced these independent time replays:
+
+| k | Integrated moment max | Outer cone samples | Sampled full momentum max |
+| --- | ---: | ---: | ---: |
+| 11.00035 | 0.00098697034 | 6/6 | 1422537 |
+| 11.00050 | 0.00049910112 | 6/6 | 1422759.2 |
+| 11.00065 | 0.00095690791 | 6/6 | 1422981.5 |
+
+At the shared midpoint k=11.0005, the matched fixed-slope comparator has
+moment max 1.6580147; feedback has 0.00049910112, a
+factor 3322.0 smaller. This is evidence that state-dependent controls
+suppress the observed short-time moment drift. The worst replay is close
+to 1e-3 and has no established numerical-error margin. These are moment
+values, not the full momentum residual required by the goal.
+
+The 18/18 cone sample passes and the three moment samples do not establish
+continuous time/support validity. Full sampled momentum is still about
+1.42e6, spatial-volume L2 and finite energy are not certified, and no
+recursive contraction or nonaxisymmetric correction is established.
+
 ## Integration cost
 
 `grouped_outer_cache.py` shares radial quadrature among equal physical-z
@@ -39,6 +72,10 @@ instead of 118.62 seconds (2.53 times faster in this run). Independent panel
 layouts change quadrature rounding/truncation: the largest cone-output
 difference is 1.8e-4, approximately 1.3e-6 relative in the affected ratio.
 The benchmark is saved in `grouped_outer_cache_check.json`.
+The cache accepts explicit additional radial cuts. The feedback caller
+passes P_BREAKS, including the remote support at .93 to .99. These extra
+cuts are beyond all current cone targets (y <= .755) and do not change
+their quadrature; a direct node/weight equality check confirms this.
 
 ## Relation to the target
 
@@ -60,4 +97,5 @@ Run from the repository root:
 
 ```powershell
 python experiments/root_st073/outer_feedback_evolution.py
+python experiments/root_st073/outer_feedback_fixed_comparison.py
 ```

@@ -36,7 +36,7 @@ def _group_indices_by_z(centers):
     return tuple(groups.values())
 
 
-def _group_quadrature(centers, group, inner, tau, order, points):
+def _group_quadrature(centers, group, inner, tau, order, points, radial_breaks):
     """Append one group's radial nodes and return its per-center panels."""
 
     radii = np.asarray([float(centers[index][0]) for index in group], dtype=float)
@@ -50,7 +50,7 @@ def _group_quadrature(centers, group, inner, tau, order, points):
     # that lie inside or outside a support cut.
     cuts = [0.0, max_radius, ri]
     cuts.extend(radii.tolist())
-    cuts.extend(ri * (1.0 + 15.0 * float(b)) for b in BREAKS)
+    cuts.extend(ri * (1.0 + 15.0 * float(b)) for b in radial_breaks)
     edges = sorted(set(float(x) for x in np.clip(cuts, 0.0, max_radius)))
 
     g, w = leggauss(order)
@@ -90,7 +90,7 @@ def _group_quadrature(centers, group, inner, tau, order, points):
     return panels
 
 
-def outer_cache(field, units, k=11, order=48, locations=None):
+def outer_cache(field, units, k=11, order=48, locations=None, radial_breaks=None):
     """Build a grouped replacement for ``outer_pressure_modes.outer_cache``.
 
     The returned ``baseline``, ``modes``, ``indices``, ``centers`` and
@@ -103,6 +103,7 @@ def outer_cache(field, units, k=11, order=48, locations=None):
     tau = 0.5 * 2.0 ** (-k)
     locations = _default_locations() if locations is None else list(locations)
     units = list(units)
+    radial_breaks = BREAKS if radial_breaks is None else radial_breaks
 
     centers = [
         np.asarray(inner.from_similarity(
@@ -115,7 +116,7 @@ def outer_cache(field, units, k=11, order=48, locations=None):
     panels_by_center = {}
     for group in groups:
         panels_by_center.update(
-            _group_quadrature(centers, group, inner, tau, order, points)
+            _group_quadrature(centers, group, inner, tau, order, points, radial_breaks)
         )
     panels = [panels_by_center[index] for index in range(len(centers))]
 

@@ -2,26 +2,26 @@
 
 ## ST073 research update - 2026-09-27
 
-A state-dependent pressure/swirl-slope evolution runner is now implemented
-in `experiments/root_st073/outer_feedback_evolution.py`. It rebuilds the
-changed velocity, advection and shear at each midpoint stage and saves one
-callable short trajectory for independent time replay. A completed replay
-is not yet recorded in this checkpoint. See
-[the evolution diagnostic](ST073_STATE_DEPENDENT_EVOLUTION.md).
+State-dependent pressure/swirl-slope integration now completes the short
+interval k in [11,11.001]. Three direct time replays have integrated moment
+maxima 9.87e-4, 4.99e-4 and 9.57e-4, with 6/6 outer cone samples passing
+each time. At k=11.0005, the matched fixed-slope comparator is 1.658,
+so feedback reduces that moment drift by about 3,322 times. See
+[the completed trajectory diagnostic](ST073_STATE_DEPENDENT_EVOLUTION.md).
 
-The spatial seed passes 8/8 independent neighborhood points, all six outer
-centers and nine inner nodes. Moment replay remains below 4.8e-5; full
-sampled momentum remains 1.42e6. The preceding fixed-slope candidate drifted
-to moment error about 2.49 at delta k=+/-0.001. The new feedback trajectory
-must address this drift before any interval or recursion claim.
+This is sampled short-time compatibility, not scale recursion. The worst
+moment replay is close to 1e-3 without a verified error margin, spatial
+neighborhood holdouts have not been replayed along this trajectory, and
+full sampled momentum remains 1.42e6. Full momentum max/volume-L2, finite
+energy, forcing/domain requirements and recursive contraction remain
+unestablished. No candidate is accepted.
 
-Shared radial integration reduces the 22-node benchmark from 4,870 to
-2,062 points and from 118.62 to 46.80 seconds. This is a computational
-speedup, not a reduction in physical residual.
+The preceding spatial seed passes eight neighborhood holdouts and nine
+inner nodes at k=11. Shared radial integration makes the 22-node benchmark
+2.53 times faster. The code and all completed trajectory/comparator
+artifacts are in experiments/root_st073.
 
-Full momentum max/volume-L2, finite energy and recursive contraction
-remain unestablished; no candidate is accepted. The snapshot below is
-historical, not current ST073 acceptance.
+The snapshot below is historical, not current ST073 acceptance.
 
 Snapshot date: **2026-09-20**.
 
