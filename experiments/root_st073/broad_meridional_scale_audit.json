@@ -1,0 +1,111 @@
+{
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "source": "broad_meridional_momentum.json",
+  "status": "completed",
+  "nu": 0.01,
+  "k0": 11.0003,
+  "physical_time": "t=-tau, tau=0.5*2**(-k)",
+  "forcing": "zero",
+  "domain": {
+    "eta": [
+      -0.5,
+      0.5
+    ],
+    "radial_fraction": [
+      0.01,
+      0.99
+    ],
+    "theta": [
+      0.0,
+      6.283185307179586
+    ]
+  },
+  "quadrature": {
+    "eta_order": 4,
+    "radial_order_per_interval": 4,
+    "radial_breaks": [
+      0.01,
+      0.1,
+      0.12,
+      0.38,
+      0.4,
+      0.58,
+      0.6,
+      0.72,
+      0.88,
+      0.92,
+      0.93,
+      0.99
+    ],
+    "angle": 0.4487989505128276
+  },
+  "scope": "Off-time replay of the saved affine-k callable without refitting. Not numerical time integration, not constraint preservation, and not a recursion claim.",
+  "requested_delta_k": [
+    0.1,
+    1.0
+  ],
+  "rows": [
+    {
+      "k": 11.100299999999999,
+      "delta_k": 0.1,
+      "tau": 0.00022774389476360035,
+      "elapsed_physical_time": 1.6345967898684697e-05,
+      "physical_volume": 1.1260319831263999e-07,
+      "reference_dynamic": {
+        "point_count": 176,
+        "momentum_max": 1974896672.1677186,
+        "momentum_volume_L2": 66870.31099619601,
+        "momentum_volume_RMS": 199277368.64463803,
+        "divergence_max": 0.08177517792137223,
+        "divergence_volume_L2": 5.258770166210654e-06,
+        "velocity_sample_max": 1022.9087352419322,
+        "sampled_domain_kinetic_energy": 0.002741963411096886
+      },
+      "corrected": {
+        "point_count": 176,
+        "momentum_max": 1525457883243.5466,
+        "momentum_volume_L2": 36905732.00017053,
+        "momentum_volume_RMS": 109981201692.2811,
+        "divergence_max": 4.021762374293758,
+        "divergence_volume_L2": 7.214377792627124e-05,
+        "velocity_sample_max": 32224.02211864418,
+        "sampled_domain_kinetic_energy": 0.36654567939210997
+      },
+      "max_ratio_to_reference": 772.4241499526902,
+      "L2_ratio_to_reference": 551.9001100842786
+    },
+    {
+      "k": 12.0003,
+      "delta_k": 1.0,
+      "tau": 0.00012204493133114252,
+      "elapsed_physical_time": 0.00012204493133114252,
+      "physical_volume": 4.4311338308268086e-08,
+      "reference_dynamic": {
+        "point_count": 176,
+        "momentum_max": 323212524883.7157,
+        "momentum_volume_L2": 6540032.847257585,
+        "momentum_volume_RMS": 31068658116.63837,
+        "divergence_max": 1.4644817791919067,
+        "divergence_volume_L2": 6.11711717994806e-05,
+        "velocity_sample_max": 11465.95378614303,
+        "sampled_domain_kinetic_energy": 0.11392023930850309
+      },
+      "corrected": {
+        "point_count": 176,
+        "momentum_max": 382489122805394.75,
+        "momentum_volume_L2": 5955432985.744851,
+        "momentum_volume_RMS": 28291495729756.87,
+        "divergence_max": 73.30525952996686,
+        "divergence_volume_L2": 0.0008374559986625143,
+        "velocity_sample_max": 441666.89947241254,
+        "sampled_domain_kinetic_energy": 28.89298205346792
+      },
+      "max_ratio_to_reference": 1183.3982081697031,
+      "L2_ratio_to_reference": 910.6120909227737
+    }
+  ],
+  "elapsed_seconds": 143.950786100002,
+  "all_sampled_times_improve_both_metrics": false
+}

@@ -1,0 +1,253 @@
+{
+  "scope": "Focused comparison of all 44 instantaneous columns at four off-axis points; not PDE or continuum acceptance.",
+  "k": 11.0003,
+  "tau": 0.00024408986266228504,
+  "points": [
+    [
+      0.0005351448813819367,
+      0.00017142162470829746,
+      -0.0002809249982880443
+    ],
+    [
+      0.0009609634113983169,
+      0.0008428301610916779,
+      0.00018023821603572386
+    ],
+    [
+      0.0009203702223143665,
+      0.0023673317602826583,
+      0.00038481236599244127
+    ],
+    [
+      0.0034413136442447093,
+      0.001748069972655692,
+      -0.0004933104682726448
+    ]
+  ],
+  "fast_seconds": 17.00155809998978,
+  "fd_seconds": 11.183720300003188,
+  "maximum_absolute_difference": 4.480131610762328e-05,
+  "maximum_scaled_difference": 8.673726316732341e-10,
+  "rows": [
+    {
+      "mode": "meridional_poloidal_window_0.01_0.12_eta^0",
+      "absolute_difference": 1.7077582015190274e-08,
+      "scaled_difference": 2.5055770842911397e-12
+    },
+    {
+      "mode": "meridional_poloidal_window_0.01_0.12_eta^1",
+      "absolute_difference": 2.735396265052259e-08,
+      "scaled_difference": 2.582559200189949e-12
+    },
+    {
+      "mode": "meridional_poloidal_window_0.01_0.12_eta^2",
+      "absolute_difference": 3.0235241865739226e-08,
+      "scaled_difference": 2.5808567191580298e-12
+    },
+    {
+      "mode": "meridional_poloidal_window_0.12_0.38_eta^0",
+      "absolute_difference": 6.923528417246416e-09,
+      "scaled_difference": 2.6056528426566633e-12
+    },
+    {
+      "mode": "meridional_poloidal_window_0.12_0.38_eta^1",
+      "absolute_difference": 8.966253517428413e-09,
+      "scaled_difference": 2.5815667700853618e-12
+    },
+    {
+      "mode": "meridional_poloidal_window_0.12_0.38_eta^2",
+      "absolute_difference": 6.588379619643092e-09,
+      "scaled_difference": 2.5791102077439765e-12
+    },
+    {
+      "mode": "meridional_poloidal_window_0.40_0.60_eta^0",
+      "absolute_difference": 1.3103090168442577e-08,
+      "scaled_difference": 2.349504600638705e-12
+    },
+    {
+      "mode": "meridional_poloidal_window_0.40_0.60_eta^1",
+      "absolute_difference": 9.74341674009338e-09,
+      "scaled_difference": 2.278805543196755e-12
+    },
+    {
+      "mode": "meridional_poloidal_window_0.40_0.60_eta^2",
+      "absolute_difference": 8.858023647917435e-09,
+      "scaled_difference": 2.653234737113776e-12
+    },
+    {
+      "mode": "meridional_poloidal_window_0.62_0.88_eta^0",
+      "absolute_difference": 1.6853391571203247e-08,
+      "scaled_difference": 8.265804086868016e-12
+    },
+    {
+      "mode": "meridional_poloidal_window_0.62_0.88_eta^1",
+      "absolute_difference": 1.6653530110488646e-08,
+      "scaled_difference": 8.449428975918341e-12
+    },
+    {
+      "mode": "meridional_poloidal_window_0.62_0.88_eta^2",
+      "absolute_difference": 1.6429112292826176e-08,
+      "scaled_difference": 8.623000433851913e-12
+    },
+    {
+      "mode": "meridional_poloidal_window_0.72_0.99_eta^0",
+      "absolute_difference": 6.168193067423999e-09,
+      "scaled_difference": 2.7708197861641982e-12
+    },
+    {
+      "mode": "meridional_poloidal_window_0.72_0.99_eta^1",
+      "absolute_difference": 6.015397957526147e-09,
+      "scaled_difference": 2.7953612603886233e-12
+    },
+    {
+      "mode": "meridional_poloidal_window_0.72_0.99_eta^2",
+      "absolute_difference": 5.850324669154361e-09,
+      "scaled_difference": 2.8123981482513783e-12
+    },
+    {
+      "mode": "existing_outer_swirl_slope_0",
+      "absolute_difference": 7.932248990982771e-08,
+      "scaled_difference": 2.5660677634058727e-12
+    },
+    {
+      "mode": "existing_outer_swirl_slope_1",
+      "absolute_difference": 6.063055479899049e-08,
+      "scaled_difference": 2.55833106080986e-12
+    },
+    {
+      "mode": "existing_outer_swirl_slope_2",
+      "absolute_difference": 4.633693606592715e-08,
+      "scaled_difference": 2.550268658518639e-12
+    },
+    {
+      "mode": "existing_outer_swirl_slope_3",
+      "absolute_difference": 3.768036549445242e-08,
+      "scaled_difference": 2.945429261066214e-12
+    },
+    {
+      "mode": "existing_outer_swirl_slope_4",
+      "absolute_difference": 3.701643436215818e-08,
+      "scaled_difference": 2.9933074714824517e-12
+    },
+    {
+      "mode": "existing_outer_swirl_slope_5",
+      "absolute_difference": 3.633977030403912e-08,
+      "scaled_difference": 3.0399201897117286e-12
+    },
+    {
+      "mode": "existing_outer_swirl_slope_6",
+      "absolute_difference": 0.0,
+      "scaled_difference": 0.0
+    },
+    {
+      "mode": "existing_outer_swirl_slope_7",
+      "absolute_difference": 0.0,
+      "scaled_difference": 0.0
+    },
+    {
+      "mode": "existing_outer_swirl_slope_8",
+      "absolute_difference": 0.0,
+      "scaled_difference": 0.0
+    },
+    {
+      "mode": "existing_broad_shear_slope",
+      "absolute_difference": 6.224436219781637e-07,
+      "scaled_difference": 2.5803847256423743e-12
+    },
+    {
+      "mode": "pressure_window_0.01_0.12_eta^0",
+      "absolute_difference": 4.480131610762328e-05,
+      "scaled_difference": 8.673726316732341e-10
+    },
+    {
+      "mode": "pressure_window_0.01_0.12_eta^1",
+      "absolute_difference": 2.5389650545548648e-05,
+      "scaled_difference": 3.136202345159193e-10
+    },
+    {
+      "mode": "pressure_window_0.01_0.12_eta^2",
+      "absolute_difference": 1.4386609109351411e-05,
+      "scaled_difference": 1.5368075181105117e-10
+    },
+    {
+      "mode": "pressure_window_0.12_0.38_eta^0",
+      "absolute_difference": 7.704293238930404e-07,
+      "scaled_difference": 2.0763911255426136e-11
+    },
+    {
+      "mode": "pressure_window_0.12_0.38_eta^1",
+      "absolute_difference": 2.8239992388989776e-07,
+      "scaled_difference": 3.4178056932378876e-12
+    },
+    {
+      "mode": "pressure_window_0.12_0.38_eta^2",
+      "absolute_difference": 1.0310577636118978e-07,
+      "scaled_difference": 1.664474393591599e-12
+    },
+    {
+      "mode": "pressure_window_0.40_0.72_eta^0",
+      "absolute_difference": 2.1381129045039415e-07,
+      "scaled_difference": 2.6619252674182195e-12
+    },
+    {
+      "mode": "pressure_window_0.40_0.72_eta^1",
+      "absolute_difference": 4.6540662879124284e-07,
+      "scaled_difference": 7.557727122220888e-12
+    },
+    {
+      "mode": "pressure_window_0.40_0.72_eta^2",
+      "absolute_difference": 7.705384632572532e-07,
+      "scaled_difference": 9.418927446576982e-12
+    },
+    {
+      "mode": "pressure_window_0.58_0.92_eta^0",
+      "absolute_difference": 1.8441351130604744e-06,
+      "scaled_difference": 1.8052101706914548e-11
+    },
+    {
+      "mode": "pressure_window_0.58_0.92_eta^1",
+      "absolute_difference": 1.7848651623353362e-06,
+      "scaled_difference": 1.8074392303105214e-11
+    },
+    {
+      "mode": "pressure_window_0.58_0.92_eta^2",
+      "absolute_difference": 2.559754648245871e-06,
+      "scaled_difference": 2.144999564592858e-11
+    },
+    {
+      "mode": "pressure_window_0.72_0.93_eta^0",
+      "absolute_difference": 3.29710564983543e-06,
+      "scaled_difference": 2.348005637029228e-10
+    },
+    {
+      "mode": "pressure_window_0.72_0.93_eta^1",
+      "absolute_difference": 6.4403939177282155e-06,
+      "scaled_difference": 1.0804384190620687e-10
+    },
+    {
+      "mode": "pressure_window_0.72_0.93_eta^2",
+      "absolute_difference": 8.378381608054042e-06,
+      "scaled_difference": 6.526956168590153e-11
+    },
+    {
+      "mode": "pressure_window_0.93_0.99_eta^0",
+      "absolute_difference": 0.0,
+      "scaled_difference": 0.0
+    },
+    {
+      "mode": "pressure_window_0.93_0.99_eta^1",
+      "absolute_difference": 0.0,
+      "scaled_difference": 0.0
+    },
+    {
+      "mode": "pressure_window_0.93_0.99_eta^2",
+      "absolute_difference": 0.0,
+      "scaled_difference": 0.0
+    },
+    {
+      "mode": "compact_centrifugal_pressure_primitive",
+      "absolute_difference": 0.0,
+      "scaled_difference": 0.0
+    }
+  ]
+}

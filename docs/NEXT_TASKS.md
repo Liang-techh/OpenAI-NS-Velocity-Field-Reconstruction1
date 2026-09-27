@@ -62,6 +62,24 @@ the earlier spatial-solve request below:
   source-vector updates can reuse the control matrices where unchanged.
   Only then evolve the spatially corrected mean/wave system through time
   and scales. Keep full max/volume-L2 gates; never hide residual as forcing.
+- [x] Replay the unconstrained meridional candidate away from its fitted
+  time. Four nearby times through delta k=0.001 preserve the local residual
+  benefit. Direct fixed-slope extrapolation to delta k=0.1 and 1 fails:
+  momentum maxima 1.52546e12 and 3.82489e14. Records are
+  `broad_meridional_time_audit.json` and `broad_meridional_scale_audit.json`.
+  This rejects that extrapolation; it does not reject all recursive routes.
+- [ ] After obtaining a compatible spatial correction, construct a
+  state-dependent time integrator. Recompute pressure and constrained slopes
+  after changing the velocity state, including all quadratic interactions.
+  Start from a short step with full midpoint/endpoint residuals; reject a
+  step when either full maximum or volume L2 grows unacceptably. The frozen
+  affine-k slope is only a local predictor, not the trajectory.
+  Cache velocity/gradient/Laplacian basis arrays and nonlinear contractions
+  to avoid evaluating every Cartesian stencil during each optimization.
+  Retain explicit k dependence; do not reuse a frozen operator across scales
+  without an independent interpolation/error check. Track the actual wave
+  covariance and growth, core geometry and support simultaneously. Local
+  annular energy is not a global finite-energy check.
 - [ ] Build enough compatible growing wave directions to realize both
   evolving stress components on the same revised mean. Currently only
   mode 1 grows; the saved coarse-grid eigenvector has not had a separate

@@ -12,6 +12,16 @@ The next solve must retain the new full-vector objective while reinstating
 moment/cone compatibility. No scale recursion or PDE acceptance is established.
 See [the meridional correction record](ST073_MERIDIONAL_MOMENTUM.md).
 
+Off-time replay of that unconstrained affine-k candidate preserves its local
+benefit through delta k=0.001, but direct extension to delta k=0.1 and 1
+fails badly (momentum maxima 1.52546e12 and 3.82489e14). These are callable
+evaluations, not time integration. The combined broad-amplitude slope crosses
+zero at delta k=0.034086. Do not use frozen initial slopes as a recursive
+trajectory; the next evolution needs state-dependent updates and full nonlinear
+terms. Full records are `broad_meridional_time_audit.json` and
+`broad_meridional_scale_audit.json`. A separate constrained 44-direction solve
+is in progress; no compatibility result is claimed until its replay completes.
+
 A new broad annular r^-2 swirl direction admits positive instantaneous
 wave energy growth: at amplitude 44.8774 the mode-1 rate is 1.0217e4
 on the refined split quadrature, with all 22 sampled centrifugal growth

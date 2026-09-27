@@ -1,0 +1,171 @@
+{
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "source": "broad_meridional_momentum.json",
+  "status": "completed",
+  "nu": 0.01,
+  "k0": 11.0003,
+  "physical_time": "t=-tau, tau=0.5*2**(-k)",
+  "forcing": "zero",
+  "domain": {
+    "eta": [
+      -0.5,
+      0.5
+    ],
+    "radial_fraction": [
+      0.01,
+      0.99
+    ],
+    "theta": [
+      0.0,
+      6.283185307179586
+    ]
+  },
+  "quadrature": {
+    "eta_order": 4,
+    "radial_order_per_interval": 4,
+    "radial_breaks": [
+      0.01,
+      0.1,
+      0.12,
+      0.38,
+      0.4,
+      0.58,
+      0.6,
+      0.72,
+      0.88,
+      0.92,
+      0.93,
+      0.99
+    ],
+    "angle": 0.4487989505128276
+  },
+  "scope": "Off-time replay of the saved affine-k callable without refitting. Not numerical time integration, not constraint preservation, and not a recursion claim.",
+  "rows": [
+    {
+      "k": 11.0003,
+      "delta_k": 0.0,
+      "tau": 0.00024408986266228504,
+      "elapsed_physical_time": 0.0,
+      "physical_volume": 1.2489777753192372e-07,
+      "reference_dynamic": {
+        "point_count": 176,
+        "momentum_max": 7010092678.530285,
+        "momentum_volume_L2": 237497.46479817582,
+        "momentum_volume_RMS": 672019109.5022163,
+        "divergence_max": 0.15480941972782603,
+        "divergence_volume_L2": 2.5140642325855264e-06,
+        "velocity_sample_max": 1995.1829241555126,
+        "sampled_domain_kinetic_energy": 0.0065491423328636195
+      },
+      "corrected": {
+        "point_count": 176,
+        "momentum_max": 4385103872.027939,
+        "momentum_volume_L2": 186820.69990689587,
+        "momentum_volume_RMS": 528624928.6690376,
+        "divergence_max": 0.15480941972782603,
+        "divergence_volume_L2": 2.5140642325855264e-06,
+        "velocity_sample_max": 1995.1829241555126,
+        "sampled_domain_kinetic_energy": 0.0065491423328636195
+      },
+      "max_ratio_to_reference": 0.6255414975408438,
+      "L2_ratio_to_reference": 0.7866218701140881
+    },
+    {
+      "k": 11.000309999999999,
+      "delta_k": 1e-05,
+      "tau": 0.00024408817076614772,
+      "elapsed_physical_time": 1.6918961373232639e-09,
+      "physical_volume": 1.2489648327912146e-07,
+      "reference_dynamic": {
+        "point_count": 176,
+        "momentum_max": 7009467251.210379,
+        "momentum_volume_L2": 237474.9984231758,
+        "momentum_volume_RMS": 671959020.5946923,
+        "divergence_max": 0.154802644130541,
+        "divergence_volume_L2": 2.513940924983472e-06,
+        "velocity_sample_max": 1995.0891608902452,
+        "sampled_domain_kinetic_energy": 0.006548537859367956
+      },
+      "corrected": {
+        "point_count": 176,
+        "momentum_max": 4381144631.202617,
+        "momentum_volume_L2": 186772.48339549746,
+        "momentum_volume_RMS": 528491234.2344023,
+        "divergence_max": 0.15482293154127547,
+        "divergence_volume_L2": 2.5157525058186685e-06,
+        "velocity_sample_max": 1994.6074583270251,
+        "sampled_domain_kinetic_energy": 0.006545470570075129
+      },
+      "max_ratio_to_reference": 0.6250324702560085,
+      "L2_ratio_to_reference": 0.7864932503870262
+    },
+    {
+      "k": 11.000399999999999,
+      "delta_k": 0.0001,
+      "tau": 0.00024407294422862933,
+      "elapsed_physical_time": 1.6918433655714517e-08,
+      "physical_volume": 1.2488483560741009e-07,
+      "reference_dynamic": {
+        "point_count": 176,
+        "momentum_max": 7003839365.511422,
+        "momentum_volume_L2": 237272.84460205398,
+        "momentum_volume_RMS": 671418314.8398771,
+        "divergence_max": 0.1547416629618965,
+        "divergence_volume_L2": 2.512828159537147e-06,
+        "velocity_sample_max": 1994.245260867006,
+        "sampled_domain_kinetic_energy": 0.006543099677627386
+      },
+      "corrected": {
+        "point_count": 176,
+        "momentum_max": 4345743491.06973,
+        "momentum_volume_L2": 186363.31776352646,
+        "momentum_volume_RMS": 527358050.47819746,
+        "divergence_max": 0.1549445363052655,
+        "divergence_volume_L2": 2.5317620060091468e-06,
+        "velocity_sample_max": 1989.4357006552673,
+        "sampled_domain_kinetic_energy": 0.00651279399546477
+      },
+      "max_ratio_to_reference": 0.6204801772680865,
+      "L2_ratio_to_reference": 0.7854388818749517
+    },
+    {
+      "k": 11.001299999999999,
+      "delta_k": 0.001,
+      "tau": 0.00024392073108548697,
+      "elapsed_physical_time": 1.6913157679807273e-07,
+      "physical_volume": 1.2476841861709305e-07,
+      "reference_dynamic": {
+        "point_count": 176,
+        "momentum_max": 6947655692.942306,
+        "momentum_volume_L2": 235255.62184463485,
+        "momentum_volume_RMS": 666020619.9934423,
+        "divergence_max": 0.15413138321673614,
+        "divergence_volume_L2": 2.50228198700683e-06,
+        "velocity_sample_max": 1985.8032271545487,
+        "sampled_domain_kinetic_energy": 0.006488923686362118
+      },
+      "corrected": {
+        "point_count": 176,
+        "momentum_max": 4018051789.4572444,
+        "momentum_volume_L2": 184723.72823063543,
+        "momentum_volume_RMS": 522962261.38611925,
+        "divergence_max": 0.1561613909107109,
+        "divergence_volume_L2": 2.7674334519503014e-06,
+        "velocity_sample_max": 1938.479846579858,
+        "sampled_domain_kinetic_energy": 0.006222575702619712
+      },
+      "max_ratio_to_reference": 0.5783320255117039,
+      "L2_ratio_to_reference": 0.785204310027621
+    }
+  ],
+  "elapsed_seconds": 304.65789999999106,
+  "all_sampled_times_improve_both_metrics": true,
+  "requested_delta_k": [
+    0.0,
+    1e-05,
+    0.0001,
+    0.001
+  ]
+}

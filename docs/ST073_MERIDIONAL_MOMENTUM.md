@@ -42,6 +42,44 @@ is used in the table above.
 
 ## Construction and source
 
+### Off-time replay: local benefit does not extend across one scale
+
+`broad_meridional_time_audit.py` replays the saved callable with zero forcing
+and no refit. `broad_meridional_time_audit.json` covers delta k in
+{0, 1e-5, 1e-4, 1e-3}; `broad_meridional_scale_audit.json` covers {0.1,1}.
+The same similarity annulus and 176-node quadrature are used at each time.
+These are evaluations of an explicit affine-k field, not NS time integration.
+
+| Delta k | Corrected momentum max | Corrected volume L2 | Both below the dynamic reference? |
+| --- | ---: | ---: | --- |
+| 0 | 4.38510e9 | 186820.70 | yes |
+| 1e-5 | 4.38114e9 | 186772.48 | yes |
+| 1e-4 | 4.34574e9 | 186363.32 | yes |
+| 1e-3 | 4.01805e9 | 184723.73 | yes |
+| 0.1 | 1.52546e12 | 3.69057e7 | no |
+| 1 | 3.82489e14 | 5.95543e9 | no |
+
+At delta k=1, remaining time has halved. The large residual rejects naive
+fixed-slope continuation across that scale. The combined broad-amplitude
+slope is -1316.5884 with initial amplitude 44.8774, so that coefficient
+crosses zero already at delta k=0.034086. Sampled peak speed and local
+kinetic energy decrease over the short tested interval and then grow sharply
+under extrapolation. This is not evidence of the requested recursive vortex
+growth. Pulse decay by itself is not a contradiction of the paper's mechanism.
+
+The next evolution must update slopes and pressure from the changed state,
+retaining nonlinear interactions and rechecking compatibility. The pressure
+primitive in this saved candidate has a fixed amplitude parameter; this audit
+does not silently reconstruct a different pressure away from the initial time.
+The small-domain kinetic-energy values in the JSON are not global finite-energy
+evidence. The unchanged 1e-3 gates remain unmet at every tested time.
+
+Regenerate the larger-step record with:
+
+```text
+python experiments/root_st073/broad_meridional_time_audit.py --delta-k 0.1 1 --output experiments/root_st073/broad_meridional_scale_audit.json
+```
+
 The broad-shear field has a positive instantaneous wave-growth direction but
 its full momentum residual is large. The previous compact centrifugal-pressure
 primitive transfers error between radial and axial equations. A coupled
@@ -76,6 +114,19 @@ of a residual. Full radial, azimuthal and axial components enter the fit.
 No unrestricted residual-dependent force is introduced.
 
 ## Scope and acceptance
+
+`instantaneous_control_columns.py` supplies a limited initial-time assembly
+operator: analytic physical-time slope derivatives, analytic compact bump
+pressure gradients, and the required finite differences of the centrifugal
+primitive. It rejects velocity slopes away from their registered k0 and
+requires zero-background direction types. It does not replace the nonlinear
+jets of an evolved state. A four-point off-axis comparison of the 44 columns
+against full Cartesian FD gives maximum absolute difference 4.48013e-5 and
+maximum column-scaled difference 8.67373e-10. This is derivative consistency
+evidence, not the 1e-3 PDE gate. The measured cold analytic-path runtime was
+17.00 s versus 11.18 s for the subsequent FD path; that small ordered test
+does not establish a speedup. Tangential moment assembly can request only
+the axial pressure derivative to avoid unnecessary primitive evaluations.
 
 The comparison must keep the instantaneous nonzero broad-shear velocity,
 viscosity and spatial domain fixed. Report both integral volume L2 and volume
