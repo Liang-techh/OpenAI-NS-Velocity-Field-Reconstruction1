@@ -11,20 +11,24 @@ from global_axial_extension import build_candidate
 ROOT = Path(__file__).resolve().parent
 
 
-def support_bounds(localized, geometry, tau):
-    """Bounding cylinder includes both the moving mean and fixed wave support."""
+def support_bounds(localized, geometry, tau, extra_boxes=()):
+    """Bound the moving mean, fixed wave, and any added (r0,r1,z0,z1) boxes."""
     if not localized.tau_min <= tau <= localized.tau_max:
         raise ValueError('Time outside registered field domain')
     eta = localized.eta_outer
-    q = tau / (1.0 - eta * eta)
     # Obtain physical z from the same coordinate map as the actual inner field.
     point = localized.inner.from_similarity([localized.join_X], [eta], tau)[0]
     zmean = abs(float(point[2]))
     rmean = localized.radial_radii(tau)[1]
     center, width = np.asarray(geometry['center']), np.asarray(geometry['widths'])
-    return dict(radius=max(rmean, float(center[0]+width[0])),
-                z_lower=min(-zmean, float(center[1]-width[1])),
-                z_upper=max(zmean, float(center[1]+width[1])),
+    extra_boxes = np.asarray(extra_boxes, dtype=float).reshape(-1,4)
+    if len(extra_boxes) and (not np.isfinite(extra_boxes).all() or
+            np.any(extra_boxes[:,0]<0) or np.any(extra_boxes[:,1]<=extra_boxes[:,0]) or
+            np.any(extra_boxes[:,3]<=extra_boxes[:,2])):
+        raise ValueError('Invalid additional support boxes')
+    return dict(radius=max([rmean, float(center[0]+width[0])] + extra_boxes[:,1].tolist()),
+                z_lower=min([-zmean, float(center[1]-width[1])] + extra_boxes[:,2].tolist()),
+                z_upper=max([zmean, float(center[1]+width[1])] + extra_boxes[:,3].tolist()),
                 mean_radius=rmean, mean_z_halfwidth=zmean)
 
 

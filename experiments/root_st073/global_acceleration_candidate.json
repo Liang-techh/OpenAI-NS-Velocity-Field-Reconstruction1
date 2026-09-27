@@ -38,7 +38,16 @@
         -44.52200965976209,
         -17.233972310473533,
         0.0
-      ]
+      ],
+      "support_bounds": {
+        "radius": 0.0105,
+        "z_lower": -0.001,
+        "z_upper": 0.001,
+        "mean_radius": 0.010138451744687358,
+        "mean_z_halfwidth": 0.0009142369351569102
+      },
+      "outside_velocity_max": 0.0,
+      "outside_pressure_max": 0.0
     },
     {
       "delta_k": 1e-06,
@@ -68,7 +77,16 @@
         -44.52204082868152,
         -17.233939953252516,
         0.0
-      ]
+      ],
+      "support_bounds": {
+        "radius": 0.0105,
+        "z_lower": -0.001,
+        "z_upper": 0.001,
+        "mean_radius": 0.010138448230968346,
+        "mean_z_halfwidth": 0.0009142366214750907
+      },
+      "outside_velocity_max": 0.0,
+      "outside_pressure_max": 0.0
     }
   ]
 }

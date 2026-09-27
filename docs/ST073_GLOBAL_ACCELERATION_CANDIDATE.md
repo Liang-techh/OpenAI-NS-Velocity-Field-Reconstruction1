@@ -37,3 +37,13 @@ candidate fails relative axial elongation: endpoint aspect changes by
 increase pass. The unified callable is therefore a diagnostic assembly,
 not the selected goal-consistent field. Constrained acceleration fitting
 must repair the aspect direction before adoption.
+
+## Full candidate support bounds
+
+The unified support helper now accepts additional collar boxes. At reference
+and the checked endpoint the complete bounding cylinder has radius 0.0105
+and z in [-0.001,0.001]. The earlier mean-plus-wave bounds alone omitted
+small parts of the added collar support. Assembly probes beyond the corrected
+union bounds return exactly zero velocity and pressure. Full-domain residual
+integration must use these enlarged bounds; the older narrower domain is
+not sufficient for the combined field.

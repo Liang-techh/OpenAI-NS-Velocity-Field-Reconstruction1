@@ -7,6 +7,7 @@ from global_axial_extension import build_candidate
 from global_collar_tangent import CollarCorrection, BOXES
 from enriched_shape_replay import build_field
 from endpoint_acceleration_projection import AccelerationCorrectionField, _unpack_acceleration_control
+from global_support_energy import support_bounds
 
 ROOT=Path(__file__).resolve().parent
 
@@ -58,11 +59,20 @@ def run():
         iu,ip=full.fields(inner_points,t);ru,rp=inner.fields(inner_points,t)
         ou,op=full.fields(outer_points,t);eu,ep=outer.fields(outer_points,t)
         au,ap=full.fields(axes,t)
+        bounds=support_bounds(localized,g,t,extra_boxes=BOXES)
+        outside=np.array([[bounds['radius']*1.01,0.,0.],
+                          [0.,0.,bounds['z_lower']-1e-5],
+                          [0.,0.,bounds['z_upper']+1e-5]])
+        zu,zp=full.fields(outside,t)
+        if np.any(zu!=0.) or np.any(zp!=0.):
+            raise ValueError('Field is not zero beyond the union support bounds')
         if not np.isfinite(au).all() or not np.isfinite(ap).all():
             raise ValueError('Nonfinite field on the symmetry axis')
         row=dict(delta_k=dk,tau=t,inner_velocity_error=float(np.max(abs(iu-ru))),
                  inner_pressure_error=float(np.max(abs(ip-rp))),outer_velocity_error=float(np.max(abs(ou-eu))),
-                 outer_pressure_error=float(np.max(abs(op-ep))),axis_velocity=au.tolist(),axis_pressure=ap.tolist())
+                 outer_pressure_error=float(np.max(abs(op-ep))),axis_velocity=au.tolist(),axis_pressure=ap.tolist(),
+                 support_bounds=bounds,outside_velocity_max=float(np.max(abs(zu))),
+                 outside_pressure_max=float(np.max(abs(zp))))
         report['rows'].append(row)
         print(json.dumps(row),flush=True)
     report['status']='completed'
