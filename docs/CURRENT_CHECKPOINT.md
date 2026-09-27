@@ -2,6 +2,15 @@
 
 ## ST073 research update â€” 2026-09-27
 
+Latest result: freezing the inner radial window and repairing moments
+with outer quadratic-axial modes gives independent sampled moment errors
+below 3.1e-5 and 9/9 inner cone nodes passing at k=11. Direct cone values
+are unchanged. Held-out full momentum remains 5.42x the initializer,
+so this is a diagnostic seed, not an accepted field. Extend across scales
+and locate outer residual/cone support next. See
+[the separated repair](ST073_OUTER_AXIAL_REPAIR.md).
+
+
 The newest constrained trial reduces the preceding candidate's sampled
 momentum peak by 36%, with independent sampled moments below 3.1e-5.
 However, held-out momentum remains 7.42x the baseline and only 3/9 cone

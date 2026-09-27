@@ -16,7 +16,7 @@ from radial_continuation import ROOT
 from separated_moment_modes import RADIAL_WINDOWS_THREE, SeparatedMomentModes
 
 
-def cone_cache(inner, field, make_delta, k, support, offsets, order=12):
+def cone_cache(inner, field, make_delta, k, support, offsets, order=12, mode_indices=None):
     if k in (11, 19):
         source = json.loads((ROOT / 'compact_potential' /
                              f'midplane_wave_source_k{k}.json').read_text())
@@ -51,7 +51,7 @@ def cone_cache(inner, field, make_delta, k, support, offsets, order=12):
     args = (points, tau, .0005 * np.sqrt(inner.nu * tau), .0001 * tau)
     baseline = jets(field, *args)
     offset = {11: 0, 15: 12, 19: 24}[k]
-    indices = np.array([offset + j for j in (0, 1, 6, 7)])
+    indices = np.array([offset + j for j in (0, 1, 6, 7)] if mode_indices is None else mode_indices, dtype=int)
     changes = []
     for index in indices:
         changes.append(jets(make_delta(index), *args))

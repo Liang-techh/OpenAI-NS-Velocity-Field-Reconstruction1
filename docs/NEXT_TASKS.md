@@ -1,5 +1,10 @@
 # Next constructive tasks and acceptance criteria
 
+Newest constructive seed: frozen inner window + outer quadratic axial
+repair passes four refined sampled moments and 9/9 inner cone nodes at
+k=11. Extend to k=15/19 and intermediate scales, then locate outer residual
+and stress-cone support. Full momentum still fails; see ST073_OUTER_AXIAL_REPAIR.md.
+
 Current priority: the enriched moment-constrained momentum fit lowers
 its predecessor peak by 36%, but still passes only 3/9 cone nodes and
 exceeds held-out baseline momentum 7.42x. Add physical cone constraints
