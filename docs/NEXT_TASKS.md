@@ -10,8 +10,10 @@ moment-constrained candidate. Earlier 12-point-only closures are not
 acceptance evidence.
 
 The resolved moment-only diagnostic leaves the axial moment as the
-immediate obstacle. Analyze its signed quadratic form and attainable
-extrema before another joint cone solve; see the quadrature audit.
+immediate obstacle. The signed quadratic analysis now finds a positive box lower bound
+for the old +/-40 search, with unrestricted negative directions requiring
+very large coefficients. Add and measure independent even axial-shape
+modes before another joint cone solve; see ST073_AXIAL_QUADRATIC_RANGE.md.
 
 The next priority is **actual profile data**, not more tests of the toy exponent.
 Preserve the existing numerical regression suite while implementing these dependencies.

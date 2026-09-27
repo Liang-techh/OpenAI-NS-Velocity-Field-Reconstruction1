@@ -12,8 +12,10 @@ A resolved joint solve reached its iteration limit with large remaining
 moment defects and one failed cone node on each tested scale. It is a
 rejected candidate, not evidence of mathematical infeasibility. The moment-only diagnostic finds full initial row rank, but leaves
 large axial defects (about 204/3215/50689); its final Jacobian becomes
-poorly conditioned. Next analyze axial-moment quadratic extrema before
-attempting joint restoration. See
+poorly conditioned. The axial quadratic diagnostic gives positive numerical lower bounds
+inside the old +/-40 coefficient box, while unbounded negative directions
+exist. Next measure additional even axial-shape modes; see
+[the range diagnosis](ST073_AXIAL_QUADRATIC_RANGE.md). See
 [the numerical correction](ST073_MOMENT_QUADRATURE_AUDIT.md).
 No complete-field momentum gate or recursive contraction is established.
 
