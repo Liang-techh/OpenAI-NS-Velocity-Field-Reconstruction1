@@ -1,5 +1,24 @@
 # Current checkpoint — constrained velocity-field integration
 
+## ST073 research update — 2026-09-27
+
+On `codex/st073-transition-next`, scale recursion remains unestablished.
+The connected-cone candidate's previously reported small outer moments
+fail radial quadrature refinement. Split integration gives maxima about
+213, 3372, and 53240 at k=11,15,19. Refined checks preserve the sampled
+geometric improvement, but do not repair moment closure.
+
+A resolved joint solve reached its iteration limit with large remaining
+moment defects and one failed cone node on each tested scale. It is a
+rejected candidate, not evidence of mathematical infeasibility. The next
+experiment isolates resolved moment feasibility and Jacobian conditioning
+before attempting joint restoration. See
+[the numerical correction](ST073_MOMENT_QUADRATURE_AUDIT.md).
+No complete-field momentum gate or recursive contraction is established.
+
+The integration snapshot below is historical and must not be read as a
+current ST073 acceptance report.
+
 Snapshot date: **2026-09-20**.
 
 This integration-branch snapshot predates the 2026-09-22 `main` research
