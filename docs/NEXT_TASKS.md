@@ -1,5 +1,10 @@
 # Next constructive tasks and acceptance criteria
 
+Current priority: the enriched moment-constrained momentum fit lowers
+its predecessor peak by 36%, but still passes only 3/9 cone nodes and
+exceeds held-out baseline momentum 7.42x. Add physical cone constraints
+and component-wise residual diagnostics; see ST073_QUADRATIC_AXIAL_COST.md.
+
 Latest trial: quadratic axial factors close sampled moments at k=11,
 but increase sampled momentum 12.88x and leave only 3/9 cone nodes passing.
 Next minimize full momentum cost subject to resolved moments; see

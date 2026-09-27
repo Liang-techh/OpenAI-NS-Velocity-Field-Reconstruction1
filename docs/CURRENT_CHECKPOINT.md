@@ -2,6 +2,14 @@
 
 ## ST073 research update â€” 2026-09-27
 
+The newest constrained trial reduces the preceding candidate's sampled
+momentum peak by 36%, with independent sampled moments below 3.1e-5.
+However, held-out momentum remains 7.42x the baseline and only 3/9 cone
+nodes pass. It remains rejected. Next include physical cone inequalities
+in the enriched-family solve and inspect residual components; see
+[the constrained-cost result](ST073_QUADRATIC_AXIAL_COST.md).
+
+
 Latest constructive trial: adding an independent quadratic axial factor
 closes four sampled moments at k=11 to 4.20e-4 under 96-point split
 replay, with coefficient increments below 22.6. However, the sampled
