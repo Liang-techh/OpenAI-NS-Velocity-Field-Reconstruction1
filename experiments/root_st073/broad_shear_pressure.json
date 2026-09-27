@@ -1,0 +1,178 @@
+{
+  "accepted": false,
+  "source": "fourier_shear_feasibility.json",
+  "k": 11.0003,
+  "datum": "inner",
+  "quadrature_order": 16,
+  "scope": "Three diagnostic points only. Radial pressure repair changes axial balance and the outer pressure trace; no volume-L2, global forcing, energy or recursion acceptance.",
+  "labels": [
+    "wave_center",
+    "sampled_centrifugal_peak",
+    "outer_eta_0.2"
+  ],
+  "points": [
+    [
+      0.0016227128870842616,
+      0.0,
+      -2.036013852023506e-05
+    ],
+    [
+      0.0005882737718083841,
+      0.0,
+      0.0
+    ],
+    [
+      0.004510080031277023,
+      0.0,
+      0.0003323861032979941
+    ]
+  ],
+  "pressure_increments": [
+    2026524.334794788,
+    757703.9680995578,
+    1969696.1770141486
+  ],
+  "momentum_before": [
+    [
+      -58086797.19912671,
+      -3526717.7232433613,
+      -2125.1859884092282
+    ],
+    [
+      -7315142922.965071,
+      1548542959.3873732,
+      101.27868519900358
+    ],
+    [
+      7.455446336758339,
+      73.6191518588006,
+      13.630533353267372
+    ]
+  ],
+  "momentum_after": [
+    [
+      -291643.82323945314,
+      -3526717.7233427,
+      31352046.468142565
+    ],
+    [
+      42728.67158603668,
+      1548542959.3873856,
+      -5271.8483932602285
+    ],
+    [
+      7.4553245097382295,
+      73.61912702095039,
+      -465556205.78627944
+    ]
+  ],
+  "momentum_reference_without_broad": [
+    [
+      -291643.8232299044,
+      -233542.6576952643,
+      -2125.1859884118885
+    ],
+    [
+      42737.09735137371,
+      220054.80070029508,
+      101.27868518066089
+    ],
+    [
+      7.455446336758339,
+      73.6191518588006,
+      13.630533353267372
+    ]
+  ],
+  "norms_before": [
+    58193760.41525698,
+    7477252254.703875,
+    75.24064486688005
+  ],
+  "norms_after": [
+    31551126.949133594,
+    1548542959.9858618,
+    465556205.78628534
+  ],
+  "radial_difference_from_reference": [
+    -9.548733942210674e-06,
+    -8.425765337029588,
+    -0.00012182702010932189
+  ],
+  "outer_pressure_continuation_requires_matching": true,
+  "compact_trial": {
+    "cutoff_window": [
+      0.72,
+      0.93
+    ],
+    "labels": [
+      "wave_center",
+      "sampled_centrifugal_peak",
+      "outer_eta_0.2",
+      "cutoff_midpoint_eta_0"
+    ],
+    "points": [
+      [
+        0.0016227128870842616,
+        0.0,
+        -2.036013852023506e-05
+      ],
+      [
+        0.0005882737718083841,
+        0.0,
+        0.0
+      ],
+      [
+        0.004510080031277023,
+        0.0,
+        0.0003323861032979941
+      ],
+      [
+        0.0036939726281395016,
+        0.0,
+        0.0
+      ]
+    ],
+    "pressure_increments": [
+      2026524.334794788,
+      757703.9680995578,
+      0.0,
+      1024782.198155888
+    ],
+    "momentum": [
+      [
+        -291643.82323945314,
+        -3526717.7233427,
+        31352046.468142565
+      ],
+      [
+        42728.67158603668,
+        1548542959.3873856,
+        -5271.8483932602285
+      ],
+      [
+        7.455446336758339,
+        73.6191518588006,
+        13.630533353267372
+      ],
+      [
+        -4713426782.544836,
+        6669506.5804611435,
+        114429.36324174795
+      ]
+    ],
+    "norms": [
+      31551126.949133594,
+      1548542959.9858618,
+      75.24064486688005,
+      4713431502.612834
+    ],
+    "remainder": "Radial cutoff derivative times the full centrifugal pressure integral is retained in the reported momentum."
+  },
+  "compact_radial_increment_budget": {
+    "eta": 0.2,
+    "full_pressure_integral": 1969696.1770141486,
+    "annulus_width": 0.004228200029322209,
+    "supremum_lower_bound": 465847444.14986813,
+    "scope": "For this pure swirl velocity increment and any pressure increment zero at both radial boundaries, integral(delta R_r)=-integral(g). This bounds the added radial residual, not the full residual of a future meridional/wave-corrected field."
+  }
+}

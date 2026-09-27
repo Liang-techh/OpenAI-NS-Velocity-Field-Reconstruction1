@@ -10,13 +10,21 @@ by changing the mean, not by changing viscosity or numerical time steps.
 Its added local swirl RMS is about 50 times the old mean velocity RMS.
 It is not an accepted low-residual replacement, and modes 2 through 8
 still decay. The mean compatibility result is recorded in
-`fourier_shear_feasibility.json`: the independent moment maximum is
-1.45e-5 and 6/6 outer cone samples pass, but full sampled momentum is
-7.48e9. At the actual wave center and four neighboring points, 0/5 stress
-cones pass because T dot N has the wrong sign. The next concrete control
-is the broad-shear amplitude time slope, which can affect this region
-where the existing outer slopes vanish. Radial pressure balance also
-remains unrepaired. See [the co-design record](ST073_SHEAR_CODESIGN.md).
+`broad_shear_dynamic_control.json`: adding da/dk=-227.669 fixes the wave
+region's stress sign. Independent replay gives moment maximum 1.45e-5,
+6/6 outer cone passes and 5/5 wave-region cone passes. The instantaneous
+growth matrix is preserved, but full sampled momentum remains 7.46e9.
+The earlier 18-control seed and its 0/5 local cone result are historical;
+see [the original co-design record](ST073_SHEAR_CODESIGN.md).
+
+Radial pressure primitives are now implemented. At the old centrifugal
+peak an inner-datum repair lowers the norm from 7.48e9 to 1.55e9, but
+creates exterior axial imbalance. A compact primitive restores exterior
+pressure while retaining a 4.71e9 collar defect. The numerical radial
+integral budget shows that pure swirl plus compact pressure cannot remove
+this added radial imbalance. The next construction needs a divergence-free
+meridional time correction and/or actual wave stresses, coupled to the
+pressure source. See [dynamic and pressure matching](ST073_BROAD_DYNAMIC_MATCHING.md).
 
 Full spatial potential evolution now includes the angular mean and modes
 1 through 8, cutoff derivatives, nonlinear transport and viscosity.

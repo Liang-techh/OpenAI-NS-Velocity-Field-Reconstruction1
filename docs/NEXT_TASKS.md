@@ -25,7 +25,7 @@ the earlier spatial-solve request below:
   moment maximum is 1.45e-5, and 6/6 outer cones pass, but full sampled
   momentum is 7.48e9. `broad_shear_wave_cone.json` finds 0/5 cone passes
   near the actual growing-wave center: T dot N has the wrong sign.
-- [ ] Add a broad-shear amplitude time-slope control. It must vanish as
+- [x] Add a broad-shear amplitude time-slope control. It must vanish as
   an instantaneous velocity increment at k0 while contributing the
   correct physical-time derivative (dk/dt=1/(tau*log(2))). Jointly solve
   the four integral moments, existing 22 outer constraints, and the five
@@ -33,10 +33,29 @@ the earlier spatial-solve request below:
   at y=.40 and cannot affect the failed samples at y<=.395. Reuse the
   saved linear control problem where valid; do not repeat the nine-value
   optimization or equate positive lambda-squared with stress admissibility.
-- [ ] Repair the new radial centrifugal pressure balance, explicitly
-  choosing its inner/outer datum and checking induced axial imbalance.
-  Keep the original full momentum max/volume-L2 gates; do not absorb the
-  large residual into an arbitrary manufactured force.
+  Completed in `broad_shear_dynamic_control.json`: da/dk=-227.669,
+  moment replay 1.45e-5, outer 6/6 and wave 5/5 passes. Full momentum is
+  still 7.46e9; this is instantaneous compatibility, not time evolution.
+- [x] Implement and assess inner-datum and compact radial pressure
+  primitives. `broad_shear_pressure.json` records improvement at the
+  previous centrifugal peak but also the new axial/collar defects.
+  The numerical added-radial-integral budget is about 4.66e8 even when
+  distributed across the full annulus. More cutoff tuning alone is insufficient.
+- [ ] Add exact-divergence-free meridional velocity time-slope directions
+  from compact axisymmetric streamfunctions, initially zero in velocity,
+  to share radial and axial balance. Preserve the low-residual inner core.
+  Combine their actual Cartesian jets with the compact pressure source
+  and existing 19 controls. Fit the COMPLETE vector momentum on spatial
+  nodes while maintaining the moment/cone constraints, then replay on
+  independent spatial nodes. Record any boundary/cutoff remainder.
+  Possible starting point: existing SeparatedMomentModes poloidal basis;
+  do not fit only center values or reinterpret moment residuals as full momentum.
+- [ ] Include the pressure primitive's axial source in the saved linear
+  control problem (H/T/physical-node metadata are available). The pressure
+  increment at the reference time depends on fixed velocity values, so
+  source-vector updates can reuse the control matrices where unchanged.
+  Only then evolve the spatially corrected mean/wave system through time
+  and scales. Keep full max/volume-L2 gates; never hide residual as forcing.
 - [ ] Build enough compatible growing wave directions to realize both
   evolving stress components on the same revised mean. Currently only
   mode 1 grows; the saved coarse-grid eigenvector has not had a separate
