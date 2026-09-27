@@ -260,13 +260,10 @@ def _acceleration_design(points, center, widths, carrier, dt, base_velocity, bas
                         )
                     else:
                         response = dt * tensor_column
-                    # Physical fields use Re(V c): the real coefficient column
-                    # is Re(response), while the interleaved imaginary column
-                    # already carries the -Im(response) sign above.  Taking
-                    # the real part here is essential; assigning a complex
-                    # response to the real design would silently discard the
-                    # imaginary contribution.
-                    design[:, cursor] = np.real(response).reshape(-1)
+                    # Re(V*c) gives Re(V) for a real control and -Im(V)
+                    # for an imaginary control. The sign was applied above;
+                    # select the matching component rather than duplicating Re.
+                    design[:, cursor] = getattr(response, component).reshape(-1)
                     layout.append({
                         "mode": mode,
                         "kind": kind,

@@ -1,0 +1,26 @@
+{
+  "status": "completed",
+  "scope": "Central control perturbations cancel quadratic convection; compares corrected imaginary columns with actual finite-difference momentum.",
+  "rows": [
+    {
+      "column": 37,
+      "relative_error": 1.5872052534126918e-11,
+      "expected_norm": 60527216820.969894
+    },
+    {
+      "column": 91,
+      "relative_error": 1.3171889447825278e-12,
+      "expected_norm": 721506166.8832853
+    },
+    {
+      "column": 109,
+      "relative_error": 1.5884189404822617e-11,
+      "expected_norm": 86971402792.28735
+    },
+    {
+      "column": 253,
+      "relative_error": 1.5895907875335773e-11,
+      "expected_norm": 94291301252.07771
+    }
+  ]
+}

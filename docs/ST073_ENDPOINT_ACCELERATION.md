@@ -1,4 +1,23 @@
 # Endpoint acceleration correction
+## Corrected complex-column packing
+
+The original acceleration momentum design and shape response incorrectly
+used the real component for imaginary control columns. Both must use the
+negative imaginary component of the complex basis. The momentum helper is
+now fixed, and the shape helper is being regenerated with the same fix.
+The old physical candidate and its actual FD replay remain reproducible,
+but its linear prediction, design rank/condition, and attribution of all
+actual-minus-linear difference to nonlinear convection are invalidated.
+Those figures below describe the historical flawed design, not the corrected
+Jacobian. No acceptance was based on them.
+
+`acceleration_column_check.py` compares four imaginary velocity/pressure
+columns against actual Cartesian momentum differences for positive/negative
+control perturbations. The central control difference cancels quadratic
+convection. Relative errors are 1.3e-12 to 1.6e-11. This specifically checks
+the repaired complex packing without replaying the expensive mean field.
+New constrained caches must use the corrected source; old designs cannot
+be silently reused.
 
 The new diagnostic adds compact curl velocity acceleration and pressure
 slope terms: delta-u = (t-t0)^2 V a / 2 and delta-p = (t-t0) P b.
