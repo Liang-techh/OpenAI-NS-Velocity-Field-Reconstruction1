@@ -2,17 +2,22 @@
 
 ## ST073 research update - 2026-09-27
 
-A spatially constrained pressure/swirl-slope repair now passes 8/8
-independent neighborhood points, all six original outer nodes and all
-nine inner nodes. Moment replay remains below 4.8e-5 and full sampled
-momentum remains 1.42e6. See
-[the spatial and time gate](ST073_OUTER_PATCH_AND_TIME_GATE.md).
+A state-dependent pressure/swirl-slope evolution runner is now implemented
+in `experiments/root_st073/outer_feedback_evolution.py`. It rebuilds the
+changed velocity, advection and shear at each midpoint stage and saves one
+callable short trajectory for independent time replay. A completed replay
+is not yet recorded in this checkpoint. See
+[the evolution diagnostic](ST073_STATE_DEPENDENT_EVOLUTION.md).
 
-The prior point-fit field failed the wider spatial screen and developed
-moment errors about 2.49 at k=11+/-0.001. The new spatial candidate has
-not yet been tested over time. Next integrate state-dependent controls
-with spatial margins, moment constraints and changing shear geometry.
-Finite samples are not a continuous-support or time-interval certificate.
+The spatial seed passes 8/8 independent neighborhood points, all six outer
+centers and nine inner nodes. Moment replay remains below 4.8e-5; full
+sampled momentum remains 1.42e6. The preceding fixed-slope candidate drifted
+to moment error about 2.49 at delta k=+/-0.001. The new feedback trajectory
+must address this drift before any interval or recursion claim.
+
+Shared radial integration reduces the 22-node benchmark from 4,870 to
+2,062 points and from 118.62 to 46.80 seconds. This is a computational
+speedup, not a reduction in physical residual.
 
 Full momentum max/volume-L2, finite energy and recursive contraction
 remain unestablished; no candidate is accepted. The snapshot below is

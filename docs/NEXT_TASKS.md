@@ -2,20 +2,22 @@
 
 ## Current ST073 continuation
 
-1. Integrate state-dependent pressure/swirl-slope controls using the new
-   spatially constrained seed. It passes 8/8 independent neighborhood points,
-   6/6 outer centers and 9/9 inner nodes at k=11, but has no verified time
-   interval. See ST073_OUTER_PATCH_AND_TIME_GATE.md.
-2. Track moment constraints and shear geometry throughout evolution. The
-   preceding fixed-slope field drifted to moment error about 2.49 within
-   delta k=+/-0.001; do not infer temporal validity from instantaneous cone
-   positivity or transport the old-profile DAE unchanged.
-3. Check held-out times and finite pulse-support margins before constructing
-   the full nonaxisymmetric pulse. Full sampled momentum remains 1.42e6;
-   spatial moment/cone compatibility does not satisfy max or volume-L2 gates.
-4. Establish improvement across time intervals and scales on one callable
-   field before claiming recursion. Full momentum maximum and spatial-volume
-   L2 must both meet 1e-3; no current candidate does so.
+1. Complete `outer_feedback_evolution.py` and inspect its JSON replay.
+   Preserve any live process before restarting; partial node/stage output
+   does not establish trajectory success. The runner integrates actual
+   swirl values with state-dependent pressure and slopes on [11,11.001].
+2. Compare independent integrated moments and direct cones at held-out
+   times. If drift remains, quantify integration/interpolation error and
+   refine the step or solve a collocation problem; do not accept node-only
+   closure. Check the updated spatial holdouts throughout the interval.
+3. Build the paper's moving-normal transverse pulse inverse and full curl
+   correction on a time-compatible background. Keep endpoint support and
+   coupled mean corrections explicit. Full sampled momentum is still
+   1.42e6; moment/cone compatibility does not meet either residual gate.
+4. Establish interval and interscale contraction on one callable field,
+   with declared domain/forcing and finite-energy evidence. Both full
+   momentum maximum and spatial-volume L2 must meet 1e-3. See
+   ST073_STATE_DEPENDENT_EVOLUTION.md and ST073_SECTION7_INTERVAL_GATE.md.
 
 The frozen-inner/outer-repair seed preserves 9/9 sampled inner cone nodes
 at k=11,13,15,17,19. This geometry success does not imply continuum cone
