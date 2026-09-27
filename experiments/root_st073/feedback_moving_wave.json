@@ -1,0 +1,207 @@
+{
+  "accepted": false,
+  "scale_recursion_established": false,
+  "pressure_time_convention": "physical t=-tau",
+  "initial_k": 11.0003,
+  "source_indices": [
+    0,
+    16
+  ],
+  "covariance_target": [
+    89.15155202137127,
+    20.15555695460312
+  ],
+  "weights": [
+    437.19927748593113,
+    23.44949328660308
+  ],
+  "source_sample_k": [
+    11.00036,
+    11.00042,
+    11.00048,
+    11.00054,
+    11.0006,
+    11.00066,
+    11.000720000000001,
+    11.00078,
+    11.00084
+  ],
+  "widths": [
+    0.0001450083856543383,
+    5.643830397809158e-05
+  ],
+  "replay": [
+    {
+      "k": 11.00045,
+      "cases": {
+        "mean": {
+          "center": {
+            "max": 373831.9784835107,
+            "sample_rms": 373831.97685732564,
+            "angular_mean_max": 373831.97685732564,
+            "oscillatory_max": 0.0023486786121403114
+          },
+          "spatial_holdout": {
+            "max": 449804.55003504414,
+            "sample_rms": 409489.4023990436,
+            "angular_mean_max": 449804.5485393398,
+            "oscillatory_max": 0.002085490545634289
+          },
+          "sampled_divergence": 4.0410031942883506e-07
+        },
+        "moving_homogeneous": {
+          "center": {
+            "max": 1353954625.4906943,
+            "sample_rms": 884187454.2140961,
+            "angular_mean_max": 20485339.303826123,
+            "oscillatory_max": 1333614136.257846
+          },
+          "spatial_holdout": {
+            "max": 5912896668.929836,
+            "sample_rms": 3007367706.4570336,
+            "angular_mean_max": 43752167.58317301,
+            "oscillatory_max": 5869238489.850451
+          },
+          "sampled_divergence": 0.6288500155787915
+        },
+        "forced_correction": {
+          "center": {
+            "max": 1199897356.3809698,
+            "sample_rms": 782336409.4668947,
+            "angular_mean_max": 905304.6065844138,
+            "oscillatory_max": 1199122346.7050278
+          },
+          "spatial_holdout": {
+            "max": 8864188884.01735,
+            "sample_rms": 4424933240.741196,
+            "angular_mean_max": 1362301.8897857873,
+            "oscillatory_max": 8864364991.92782
+          },
+          "sampled_divergence": 0.1322585386224091
+        }
+      }
+    },
+    {
+      "k": 11.0006,
+      "cases": {
+        "mean": {
+          "center": {
+            "max": 374029.88380783575,
+            "sample_rms": 374029.8830193868,
+            "angular_mean_max": 374029.88301938685,
+            "oscillatory_max": 0.0010105487540797203
+          },
+          "spatial_holdout": {
+            "max": 450092.4333955383,
+            "sample_rms": 409605.75834350835,
+            "angular_mean_max": 450092.43255533563,
+            "oscillatory_max": 0.0022591051478704632
+          },
+          "sampled_divergence": 4.2046485759783536e-07
+        },
+        "moving_homogeneous": {
+          "center": {
+            "max": 1353205728.25227,
+            "sample_rms": 883856223.5867589,
+            "angular_mean_max": 20507266.54754311,
+            "oscillatory_max": 1332841262.336281
+          },
+          "spatial_holdout": {
+            "max": 5912104957.265815,
+            "sample_rms": 3007546946.004595,
+            "angular_mean_max": 43784238.00239378,
+            "oscillatory_max": 5868413330.729221
+          },
+          "sampled_divergence": 0.6284692531917244
+        },
+        "forced_correction": {
+          "center": {
+            "max": 3193074428.3583245,
+            "sample_rms": 2075147305.4440248,
+            "angular_mean_max": 60124880.39297133,
+            "oscillatory_max": 3248730899.525208
+          },
+          "spatial_holdout": {
+            "max": 11781756023.759245,
+            "sample_rms": 7344517670.064184,
+            "angular_mean_max": 73760469.81875893,
+            "oscillatory_max": 11797417976.643885
+          },
+          "sampled_divergence": 0.9627624675631523
+        }
+      }
+    },
+    {
+      "k": 11.00075,
+      "cases": {
+        "mean": {
+          "center": {
+            "max": 374228.3131537051,
+            "sample_rms": 374228.3121503472,
+            "angular_mean_max": 374228.3121503473,
+            "oscillatory_max": 0.0013403242938928375
+          },
+          "spatial_holdout": {
+            "max": 450380.4110117057,
+            "sample_rms": 409722.69723609067,
+            "angular_mean_max": 450380.41063440253,
+            "oscillatory_max": 0.003644457622737055
+          },
+          "sampled_divergence": 4.004295988124795e-07
+        },
+        "moving_homogeneous": {
+          "center": {
+            "max": 1352459118.5044837,
+            "sample_rms": 883526393.528479,
+            "angular_mean_max": 20529180.91074051,
+            "oscillatory_max": 1332070710.446405
+          },
+          "spatial_holdout": {
+            "max": 5911315527.022553,
+            "sample_rms": 3007727040.991746,
+            "angular_mean_max": 43816269.85135268,
+            "oscillatory_max": 5867590502.477927
+          },
+          "sampled_divergence": 0.6280894572846591
+        },
+        "forced_correction": {
+          "center": {
+            "max": 5179177311.744108,
+            "sample_rms": 3425552304.549874,
+            "angular_mean_max": 241149232.97808444,
+            "oscillatory_max": 5406195661.80812
+          },
+          "spatial_holdout": {
+            "max": 19143876047.970802,
+            "sample_rms": 11232038405.17346,
+            "angular_mean_max": 325976199.2588105,
+            "oscillatory_max": 18819020533.53172
+          },
+          "sampled_divergence": 1.921873333863914
+        }
+      }
+    }
+  ],
+  "scope": "Moving center/normal principal harmonic inverse with full compact spatial curl and nonlinear momentum replay. No temporal cutoff, support-wide source inversion, mean repair, volume L2, finite-energy or recursive acceptance.",
+  "initial_carrier_geometry": [
+    {
+      "mode": 1,
+      "radial_phase_halfwidth": 0.1263633921583008,
+      "axial_phase_halfwidth": 0.03477659956028529,
+      "viscous_damping_over_interval": 0.0015415053612701794
+    },
+    {
+      "mode": 4,
+      "radial_phase_halfwidth": 0.0,
+      "axial_phase_halfwidth": 0.13910639824114115,
+      "viscous_damping_over_interval": 0.012332684017545786
+    }
+  ],
+  "rejected": true,
+  "rejection_reason": "The forced center-path principal correction increases full nonlinear momentum maximum at every spatial holdout time, relative to the uncorrected moving wave; both are far worse than the mean background.",
+  "holdout_worsening_factors": [
+    1.4991279875725718,
+    1.9928191581375412,
+    3.238513654102525
+  ]
+}

@@ -2,6 +2,18 @@
 
 ## ST073 research update - 2026-09-27
 
+A moving-normal principal amplitude/pressure inverse is implemented and
+passes manufactured checks, but its current center-path spatial wave is
+rejected. Full momentum on spatial holdouts grows from 5.91e9 for the
+moving wave to 8.86e9-1.91e10 after its forced correction. The background
+alone is about 4.50e5 on the same local grid. This trial does not replace
+the feedback mean trajectory. See [the rejected wave experiment](ST073_MOVING_NORMAL_WAVE.md).
+
+The next missing operator is a spatially dependent supported correction
+that retains amplitude/cutoff transport and viscosity, together with mean
+and cross-harmonic effects. Do not repeat center-only inverse sweeps or
+interpret a principal ODE check as a full-field residual reduction.
+
 State-dependent pressure/swirl-slope integration now completes the short
 interval k in [11,11.001]. Three direct time replays have integrated moment
 maxima 9.87e-4, 4.99e-4 and 9.57e-4, with 6/6 outer cone samples passing

@@ -1,0 +1,124 @@
+{
+  "equation": "7.13",
+  "paper_url": "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+  "method": "normalized physical-time solve with dense non-extrapolating output",
+  "rotating_normal": {
+    "metadata": {
+      "success": true,
+      "equation": "7.13",
+      "paper_url": "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+      "time_interval": [
+        0.0,
+        0.08
+      ],
+      "normalized_interval": [
+        0.0,
+        1.0
+      ],
+      "time_scale": 0.08,
+      "viscosity": 0.07,
+      "solver_method": "DOP853",
+      "solver_steps": 4,
+      "solver_times": [
+        0.0,
+        0.002034462909725881,
+        0.02237909200698469,
+        0.08
+      ],
+      "normal_input": "callable",
+      "normal_dot_input": "callable",
+      "matrix_input": "callable",
+      "source_input": "callable",
+      "initial_amplitude": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.7,
+          -0.2
+        ],
+        [
+          -0.35,
+          0.25
+        ]
+      ],
+      "initial_transversality": 0.0,
+      "extrapolation": false
+    },
+    "checks": {
+      "amplitude_error_max": 1.9251656017715293e-14,
+      "pressure_error_max": 1.1130005288821845e-14,
+      "source_longitudinal_component_max": 0.49997160169829474,
+      "transverse_constraint_max": 2.66120286760547e-14,
+      "finite_difference_defect_max": 1.1651183980077604e-09,
+      "independent_check_count": 13,
+      "finite_difference_half_step": 4e-05,
+      "excluded_from_solver_nodes": true
+    },
+    "source_longitudinal_nonzero": true
+  },
+  "fixed_normal": {
+    "metadata": {
+      "success": true,
+      "equation": "7.13",
+      "paper_url": "https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf",
+      "time_interval": [
+        -0.03,
+        0.03
+      ],
+      "normalized_interval": [
+        0.0,
+        1.0
+      ],
+      "time_scale": 0.06,
+      "viscosity": 0.11,
+      "solver_method": "DOP853",
+      "solver_steps": 4,
+      "solver_times": [
+        -0.03,
+        -0.026944700756608448,
+        0.003608291677307071,
+        0.03
+      ],
+      "normal_input": "callable",
+      "normal_dot_input": "callable",
+      "matrix_input": "callable",
+      "source_input": "callable",
+      "initial_amplitude": [
+        [
+          -0.4524540397370951,
+          0.15611537916966026
+        ],
+        [
+          0.2564841424693271,
+          0.4009453166062712
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "initial_transversality": 0.0,
+      "extrapolation": false
+    },
+    "checks": {
+      "amplitude_error_max": 2.0014830212433605e-16,
+      "pressure_error_max": 6.206335383118183e-17,
+      "source_longitudinal_component_max": 0.29001045672901554,
+      "transverse_constraint_max": 0.0,
+      "finite_difference_defect_max": 1.0496462732469255e-11,
+      "independent_check_count": 13,
+      "finite_difference_half_step": 3e-05,
+      "excluded_from_solver_nodes": true
+    }
+  },
+  "extrapolation_rejected": {
+    "rotating": true,
+    "fixed": true
+  },
+  "scope": "Manufactured complex amplitudes on two tiny physical intervals; moving-normal and fixed-normal pressure identities checked with finite differences at query times excluded from solve nodes. No spatial field, curl reconstruction, full residual, or scale recursion.",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false
+}

@@ -7,11 +7,16 @@
    candidate. At k=11.0005 it reduces matched fixed-slope moment drift
    from 1.658 to 4.99e-4; three time samples pass 6/6 outer cone checks.
    Preserve its state/pressure coupling when constructing wave corrections.
-2. Extend the existing frozen principal amplitude inverse to the paper's
-   moving-normal path equation (7.13), on this current background. Recover
-   the normal pressure, reconstruct the full curl and evaluate complete
-   momentum including coefficient and cutoff derivatives. Do not reuse
-   amplitudes or DAE states from an older background without rebuilding.
+2. Replace the rejected center-only moving-normal wave correction with a
+   spatially dependent potential/pressure solve. The reusable local solver
+   is `moving_normal_inverse.py`; its actual field trial and rejection are
+   in `feedback_moving_wave.json` and ST073_MOVING_NORMAL_WAVE.md. Retain
+   spatial coefficient/cutoff derivatives in transport and viscosity.
+   Existing `curl_wave_patch_evolution.py` supplies a full-potential basis
+   starting point, but must be rebuilt on the current background and its
+   evolving state. Couple the mean and cross-harmonic residual rather than
+   canceling only modes 1 and 4 at the center. First require lower full
+   momentum on spatial holdouts before extending time/scale sweeps.
 3. Before using a supported pulse, replay the eight spatial neighborhood
    holdouts and inner support along the trajectory. The worst moment
    sample is 9.87e-4, close to 1e-3; bound interpolation/time-stencil error
