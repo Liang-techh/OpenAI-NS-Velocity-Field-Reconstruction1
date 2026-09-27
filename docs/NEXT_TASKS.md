@@ -9,6 +9,10 @@ refined quadrature, and independent-order replay before accepting a
 moment-constrained candidate. Earlier 12-point-only closures are not
 acceptance evidence.
 
+The resolved moment-only diagnostic leaves the axial moment as the
+immediate obstacle. Analyze its signed quadratic form and attainable
+extrema before another joint cone solve; see the quadrature audit.
+
 The next priority is **actual profile data**, not more tests of the toy exponent.
 Preserve the existing numerical regression suite while implementing these dependencies.
 
@@ -24,7 +28,7 @@ outgoing pressure/sigma-side work and the theorem-faithful Lambda/C algebra.
 The ST073 exploratory bridge now has separated smooth directions that close
 two **physical** tangential outer moments on two sampled scales. A third
 radial window and constrained optimization reduce the moment-closure
-momentum cost to about `1.43â€“1.50` times the pre-repair peak, but the
+momentum cost to about `1.43Ã¢â‚¬â€œ1.50` times the pre-repair peak, but the
 absolute residual still grows under dyadic refinement; see
 `ST073_SEPARATED_MOMENT_CONSTRUCTION.md`.
 The three-knot extension closes these sampled physical moments also at
@@ -68,24 +72,24 @@ second-interval error near `3.27e11`. See
 Taylor fit and implement the pulse-coordinate transverse-amplitude ODE,
 normal pressure identity, and support/cutoff controls of Proposition 7.2.
 The first actual-source local transverse inverse now solves its frozen
-principal ODE, but needs amplitudes `30â€“120` times the local background
+principal ODE, but needs amplitudes `30Ã¢â‚¬â€œ120` times the local background
 speed; its narrow radial support spans about `247` diffusion times per
 pulse half-width. See `ST073_LOCAL_PULSE_INVERSE.md`. Before repeating
 the inverse across scales, open an admissible stress-cone support and
 establish carrier/cutoff/viscosity balance, then use a moving phase and
-complete waveâ€“meanâ€“moment residual cycle.
+complete waveÃ¢â‚¬â€œmeanÃ¢â‚¬â€œmoment residual cycle.
 The same moment-closed bridge's sampled cone band at `k=11,19` cannot
 contain the diffusion-balanced width around the existing source patch:
 even an optimistic failure-bracket half-width is short by factors `5.91`
 and `6.57`. See `ST073_CONE_SUPPORT_SCALE_GAP.md`. Search a different
-radialâ€“axial cone region or redesign the moment-matched mean profile
+radialÃ¢â‚¬â€œaxial cone region or redesign the moment-matched mean profile
 instead of simply widening this wave's cutoff.
 A two-scale coarse search found a second cone-positive point at
 `(y,eta)=(0.35,0)`. Its refined radial band nearly accommodates the
 chosen pulse time scale, but at nearby `y=0.325` the best-centered
 sampled axial half-width falls short by factors `5.11` and `4.97` at
 `k=11,19`; see `ST073_MIDPLANE_CONE_CANDIDATE.md`. Focus the mean-profile
-redesign on widening this axial cone or obtain a joint spaceâ€“time
+redesign on widening this axial cone or obtain a joint spaceÃ¢â‚¬â€œtime
 carrier/cutoff balance, then check a connected 3D cone on both scales.
 The midplane wave trial now uses a pair with **positive actual exact-curl
 covariance weights** and matches the center stress at both scales to
@@ -114,7 +118,7 @@ Integrating the pulse bump into the slope still gives `34.2, 2.97,
 coefficient ODE from `fit_slope` over a short pulse interval with a
 stiff/adaptive solver, recomputing pressure algebraically at each state;
 directly check full residual on held-out nodes at interior times before
-attempting `k=11â†’19` transfer. The paper's Proposition 7.2 supplies
+attempting `k=11Ã¢â€ â€™19` transfer. The paper's Proposition 7.2 supplies
 the transverse pulse inverse and Section 9 the full correction cycle;
 the current collocation ODE is only an exploratory numerical proxy.
 An actual two-step `k=19` explicit potential-coefficient march improves
@@ -141,7 +145,7 @@ The first **spatial** frozen-principal inverse now solves equation
 amplitude/background map has only `4.23%` relative L2 drift across
 eight halvings, and midpoint complex amplitudes have `0.978%` shape
 error after one scale factor. However mode-1 amplitudes reach
-`23.4Ã—` and `22.4Ã—` background speed near the axial support edges,
+`23.4Ãƒâ€”` and `22.4Ãƒâ€”` background speed near the axial support edges,
 and the endpoint amplitudes remain nonzero; see
 `ST073_SPATIAL_PULSE_INVERSE_TWO_SCALE.md`. The next implementation
 must move from independent frozen-normal paths to a supported
@@ -153,9 +157,9 @@ inverse map alone is not a residual contraction.
 The five-node inverse was reconstructed into a compact **exact-curl**
 field and screened with full nonlinear momentum at `k=11,19`.
 Sparse normal-pressure interpolation made the held-out maxima
-`15.57Ã—/15.16Ã—` the frozen wave even after physical-coefficient
+`15.57Ãƒâ€”/15.16Ãƒâ€”` the frozen wave even after physical-coefficient
 regularization. Fitting compact pressure gradients to the full
-momentum reduced those factors to `3.663Ã—/3.666Ã—`, but the peak is
+momentum reduced those factors to `3.663Ãƒâ€”/3.666Ãƒâ€”`, but the peak is
 then viscosity-dominated (`1.82e10/6.73e13`); see
 `ST073_INVERSE_CURL_RECONSTRUCTION.md`. The next wave design must
 control spatial derivatives of the amplitude and curl/cutoff
@@ -173,13 +177,13 @@ The integer-scale holdout found the two-knot cone fails at `k=12..16`.
 Adding the same coefficient change at the middle `k=15` knot repairs this
 single-point cone at all nine integer scales `k=11..19`, with normalized
 moment defect `1.50e-14`; however its weakest cone margin is `0.001819`
-and mean-only local momentum still grows `3655Ã—` over the interval.
+and mean-only local momentum still grows `3655Ãƒâ€”` over the interval.
 Do not infer continuous cone support or recursive contraction from this
 discrete result. The next gate is a wider connected space-time cone and
 absolute full-residual decrease after a supported wave/mean correction.
 The widened-support frozen exact-curl wave reduces its midpoint full
 momentum peak by about `21%` at both `k=11,19`, but its remaining maxima
-are `2.17e9/8.07e12` and grow `3715Ã—` across eight halvings; see
+are `2.17e9/8.07e12` and grow `3715Ãƒâ€”` across eight halvings; see
 `ST073_WIDER_CONE_WAVE_SCREEN.md`. Continue with transported spatial
 amplitude, normal pressure, and mean/stress repair rather than additional
 width-only tuning.
@@ -187,7 +191,7 @@ The wider-cone compact time-slope/pressure projection lowers held-out
 full momentum at pulse center to `18.6%/18.3%` of frozen at `k=11/19`,
 and direct exact-curl replay matches that center result. A linear-in-time
 realization fails at just `+0.1` pulse half-width: its held-out maxima
-are `3.083Ã—/3.074Ã—` the same-time frozen wave. See
+are `3.083Ãƒâ€”/3.074Ãƒâ€”` the same-time frozen wave. See
 `ST073_WIDER_CONE_SLOPE_REPLAY.md`. Use the fitted slope only as an
 initial condition or diagnostic for a nonlinear moving-normal pulse
 amplitude solve; require direct residual reduction throughout the pulse.
@@ -220,7 +224,7 @@ The support-corner obstruction now has a jointly moment-constrained
 candidate repair: all nine near-edge training nodes and sixteen independent
 spatial nodes pass at each of `k=11,15,19`, with held-out maximum cone ratios
 `0.815/0.794/0.782`. Direct normalized sampled moment error is `1.60e-10`,
-but local mean momentum grows by `9â€“11%`; see `ST073_CONNECTED_CONE_REPAIR.md`.
+but local mean momentum grows by `9Ã¢â‚¬â€œ11%`; see `ST073_CONNECTED_CONE_REPAIR.md`.
 Use `midplane_connected_cone_edge_repair.json` as a candidate, not an accepted
 replacement. Check intermediate scales and time support, then rebuild the
 stress-matched wave and its coupled interval solve on this mean. Require an

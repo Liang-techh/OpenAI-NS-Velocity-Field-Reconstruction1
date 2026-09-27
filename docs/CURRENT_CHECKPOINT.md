@@ -1,6 +1,6 @@
-# Current checkpoint — constrained velocity-field integration
+# Current checkpoint â€” constrained velocity-field integration
 
-## ST073 research update — 2026-09-27
+## ST073 research update â€” 2026-09-27
 
 On `codex/st073-transition-next`, scale recursion remains unestablished.
 The connected-cone candidate's previously reported small outer moments
@@ -10,9 +10,10 @@ geometric improvement, but do not repair moment closure.
 
 A resolved joint solve reached its iteration limit with large remaining
 moment defects and one failed cone node on each tested scale. It is a
-rejected candidate, not evidence of mathematical infeasibility. The next
-experiment isolates resolved moment feasibility and Jacobian conditioning
-before attempting joint restoration. See
+rejected candidate, not evidence of mathematical infeasibility. The moment-only diagnostic finds full initial row rank, but leaves
+large axial defects (about 204/3215/50689); its final Jacobian becomes
+poorly conditioned. Next analyze axial-moment quadratic extrema before
+attempting joint restoration. See
 [the numerical correction](ST073_MOMENT_QUADRATURE_AUDIT.md).
 No complete-field momentum gate or recursive contraction is established.
 
@@ -25,8 +26,8 @@ This integration-branch snapshot predates the 2026-09-22 `main` research
 consolidation. On `main`, ST006 is the historical runnable API baseline,
 while ST061-D/P are newer residual-oriented controls and ST063-G2R is the
 latest documented geometry experiment. The paired ST061/ST063 samples
-report full-vector maxima about `0.0225`–`0.0272` and volume L2 about
-`0.033`–`0.034`; their seeds and candidate artifacts differ from the
+report full-vector maxima about `0.0225`â€“`0.0272` and volume L2 about
+`0.033`â€“`0.034`; their seeds and candidate artifacts differ from the
 ST006 protocol below. None meets both `1e-3` momentum gates. See
 `main:docs/FINAL_RESEARCH_SNAPSHOT_2026-09-22.md` and
 `main:docs/RESEARCH_STATUS.md` for the original study records and
@@ -108,10 +109,10 @@ The frozen ST052-M child is no longer awaiting materialization. The following de
 
 Key merged integration PRs:
 
-- #665 — ST052 grid export materialization;
-- #680 — GNU Octave consumer/load/render smoke;
-- #706 — live ST052-M grid delivery identity reconciliation;
-- #777 — machine-state synchronization removing stale rematerialization routing.
+- #665 â€” ST052 grid export materialization;
+- #680 â€” GNU Octave consumer/load/render smoke;
+- #706 â€” live ST052-M grid delivery identity reconciliation;
+- #777 â€” machine-state synchronization removing stale rematerialization routing.
 
 The #706 repaired exact head `62ed0677675cbba3ff409a6ba124bc157bc5b504` completed repository `tests` workflow run `35475995041` with conclusion `success` before merge.
 
@@ -145,7 +146,7 @@ Runner backlog is not scientific evidence. A queued workflow is neither PASS nor
 
 ## Active sibling delivery assets
 
-### Agent 9 — source-observable and delivery diagnostics
+### Agent 9 â€” source-observable and delivery diagnostics
 
 `main` already contains ST054 delivery plumbing for:
 
@@ -161,13 +162,13 @@ Current open Agent-9 work includes:
 
 At this snapshot their current exact-head workflows are queued. These are useful sibling assets and reusable diagnostics, but they do not silently replace the constrained Eq45/ST052 candidate identity.
 
-### Agent 7 — morphology/capacity lane
+### Agent 7 â€” morphology/capacity lane
 
 Open Agent-7 work studies outer-reservoir morphology, temporal curvature, representation equivalence, and a compact toroidal swirl preflight. These are candidate-capacity or morphology experiments. They should not be promoted into canonical delivery merely because a local capacity gate passes.
 
 New basis growth is not the shortest constrained-delivery path while the frozen ST052 runtime/diagnostic chain is still incomplete.
 
-### Kokuno Agents 1–5
+### Kokuno Agents 1â€“5
 
 The Kokuno lanes are advancing an executable **strict-inner** PA.10 contraction-center stack: velocity, time derivative, spatial derivatives, self-advection, oscillatory composition, cylindrical mean projections, and independent derivative/advection audits.
 
@@ -183,7 +184,7 @@ They remain inner-only and do not yet provide all of:
 
 These lanes are valuable upstream scientific work but are not blockers for exporting a clearly labeled constrained visualization candidate.
 
-## Next integration task — shortest delivery chain
+## Next integration task â€” shortest delivery chain
 
 The next constrained integration task is **not** another basis experiment.
 
@@ -209,7 +210,7 @@ Do not duplicate:
 - ST052 GNU Octave MAT consumer smoke;
 - ST054 Python render / NPZ-MAT / VTK plumbing;
 - Agent-9 public-observable contract work;
-- Kokuno strict-inner derivative/advection subterms already owned by Agents 1–5.
+- Kokuno strict-inner derivative/advection subterms already owned by Agents 1â€“5.
 
 New work should close a currently open seam in the shortest `[u,v,w]` delivery chain or provide a genuinely independent validator for a selected candidate.
 
