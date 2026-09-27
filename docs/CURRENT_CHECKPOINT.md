@@ -2,6 +2,13 @@
 
 ## ST073 research update - 2026-09-27
 
+The actual physical mean-plus-wave replay is now available in
+`mean_wave_replay.py/.json`. The old scalar-amplitude wave candidate fails
+to improve the complete residual: independent patch volume L2 increases
+from 120498.06 to 120955.20 after fitting oscillatory time/pressure controls.
+This rejects a conclusion based on its small angular-mean improvement.
+See [physical mean-wave replay](ST073_PHYSICAL_MEAN_WAVE_REPLAY.md).
+
 The constrained short step retains a positive mode-1 instantaneous energy
 rate on the fixed patch: split moderate/higher quadrature gives 13161 and
 14501, versus initial 19027 and 20438. The 9.24% endpoint sensitivity is
