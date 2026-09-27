@@ -1,0 +1,104 @@
+{
+  "k": 13.05,
+  "sampled_peak": {
+    "point": [
+      0.0010040937530550475,
+      0.0,
+      0.0
+    ],
+    "eta": 0.0,
+    "radial_fraction": 0.42650000000000005,
+    "norm": 134589810.36532372,
+    "terms": {
+      "time": [
+        339412.4202863905,
+        123617.55658458317,
+        2302754.270012776
+      ],
+      "advection": [
+        -623070.1774016456,
+        -147027.8067669177,
+        -2818916.8713666606
+      ],
+      "pressure": [
+        -1397592.1524332066,
+        4.9354260753543674e-08,
+        14908.675397069615
+      ],
+      "viscous": [
+        1337298.6483345851,
+        343016.0043180537,
+        -134087737.46585666
+      ],
+      "sum": [
+        -343951.26121387654,
+        319605.75413576857,
+        -134588991.39181346
+      ]
+    }
+  },
+  "component_peaks": [
+    85608547.28123106,
+    32751875.266891688,
+    134588991.39181346
+  ],
+  "outer_cones": [
+    {
+      "eta": -0.2,
+      "radial_fraction": 0.5,
+      "lambda_squared": 175664356.95796525,
+      "target_dot_N": 1923.8400691322468,
+      "cone_ratio": 1.8766556093196491,
+      "cone_pass": false,
+      "momentum_norm": 40153651.92305299
+    },
+    {
+      "eta": -0.2,
+      "radial_fraction": 0.75,
+      "lambda_squared": 790157517.6944048,
+      "target_dot_N": 2901.297952724306,
+      "cone_ratio": 0.34526439107642304,
+      "cone_pass": false,
+      "momentum_norm": 40221368.830547936
+    },
+    {
+      "eta": 0.0,
+      "radial_fraction": 0.5,
+      "lambda_squared": -222657609.33684102,
+      "target_dot_N": 4523.8615966841535,
+      "cone_ratio": 0.0,
+      "cone_pass": false,
+      "momentum_norm": 13620218.214124275
+    },
+    {
+      "eta": 0.0,
+      "radial_fraction": 0.75,
+      "lambda_squared": 735068647.9695351,
+      "target_dot_N": 5487.6936698057025,
+      "cone_ratio": 0.3111340337122397,
+      "cone_pass": false,
+      "momentum_norm": 19367413.593741473
+    },
+    {
+      "eta": 0.2,
+      "radial_fraction": 0.5,
+      "lambda_squared": -71707166.10043815,
+      "target_dot_N": 2509.178950817814,
+      "cone_ratio": 0.0,
+      "cone_pass": false,
+      "momentum_norm": 33679456.4669655
+    },
+    {
+      "eta": 0.2,
+      "radial_fraction": 0.75,
+      "lambda_squared": 207341211.90101287,
+      "target_dot_N": 3722.8171609609253,
+      "cone_ratio": 4.215064585401787,
+      "cone_pass": false,
+      "momentum_norm": 29083167.57266357
+    }
+  ],
+  "scope": "Mid-interval diagnostic on an axisymmetric grid and six outer-window stress nodes; not a domain supremum or whole-support cone certificate.",
+  "accepted": false,
+  "scale_recursion_established": false
+}

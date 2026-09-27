@@ -2,16 +2,17 @@
 
 ## Current ST073 continuation
 
-1. Extend the integrated outer-coefficient continuation beyond k=[13,13.1]
-   with overlapping segments, physical error checks, and adaptive moment-map
-   resolution. The first interval passes two held-out moment/cone screens;
-   it is not a full dyadic step. See ST073_OUTER_DAE_INTERVAL.md.
-2. Verify new trajectories at held-out times and segment overlaps. Separate
-   solver tolerances, map-interpolation error, integrated-moment quadrature,
-   and physical derivative error. Endpoint stencils require interval padding
-   or justified one-sided treatment. No interval supremum is established.
-3. Locate outer residual concentrations, screen their stress realizability,
-   and couple mean/pressure restoration with the paper's pulse dynamics.
+1. Reshape/broaden outer compact streamfunction modes while preserving
+   the inner support gap. The sampled 1.35e8 peak is dominated by axial
+   viscous curvature near y=0.4265. Refit moments and compare full residual
+   cost; do not assume pressure fitting alone resolves the profile defect.
+2. Repair outer mean/pressure stress geometry before adding pulse corrections
+   there: 0/6 outer cone nodes pass, all with positive target_dot_N. Inner
+   9/9 passes do not establish outer realizability. See
+   ST073_OUTER_RESIDUAL_SOURCE.md.
+3. Maintain and extend the integrated coefficient path after profile changes,
+   with independent time checks, segment overlap, and separate map/derivative
+   error accounting. SavedOuterDAEField reconstructs the existing short path.
 4. Establish improvement across time intervals and scales on one callable
    field before claiming recursion. Full momentum maximum and spatial-volume
    L2 must both meet 1e-3; no current candidate does so.

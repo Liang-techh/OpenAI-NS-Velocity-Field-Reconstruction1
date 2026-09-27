@@ -2,22 +2,22 @@
 
 ## ST073 research update - 2026-09-27
 
-One integrated coefficient trajectory now covers k in [13,13.1]. Its two
-held-out time samples have independently evaluated moment errors below
-1.4e-4 and 9/9 inner cone nodes passing. See
-[the short-interval result](ST073_OUTER_DAE_INTERVAL.md).
+The short integrated coefficient field preserves sampled moments and
+inner cone geometry, but its outer residual is now localized: at k=13.05
+the 1.35e8 sampled peak is dominated by axial viscous curvature near an
+outer-bump edge. All six sampled outer stress-cone nodes fail, each with
+the wrong normal stress sign. See
+[the residual diagnosis](ST073_OUTER_RESIDUAL_SOURCE.md).
 
-The path integrates angular transport and algebraically projects axial
-moments, using interpolated numerical moment maps. Independent replay
-uses integrated conservation identities. This is not a uniform interval
-bound, full dyadic step, or scale recursion: sampled full momentum is
-still about 1.3e8, and volume-L2/finite-energy acceptance is absent.
-No candidate is accepted.
+Next reshape/broaden the outer streamfunction modes to reduce curvature,
+restore moments, and repair outer mean/pressure stress direction before
+attempting pulse corrections there. The inner 9/9 cone result cannot be
+extended to outer supports. The existing short path and its independent
+checks remain in [the interval report](ST073_OUTER_DAE_INTERVAL.md).
 
-Next extend continuation with overlap and independent time checks, while
-addressing outer stress and full residual reduction. Earlier local
-results are in [integrated moments](ST073_INTEGRATED_MOMENT_BALANCE.md)
-and [scale transfer](ST073_OUTER_AXIAL_SCALE_TRANSFER.md).
+A reusable evaluator now reconstructs the saved experimental path without
+rebuilding moment maps. No candidate is accepted: full momentum remains
+large, and volume L2, finite energy and scale recursion are unestablished.
 Earlier 12-point-only closures remain withdrawn. The snapshot below is
 historical, not current ST073 acceptance.
 
