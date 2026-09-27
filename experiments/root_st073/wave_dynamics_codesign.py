@@ -117,7 +117,7 @@ class MomentProjectedMomentum(ProjectedMomentum):
 
 
 def run(maxiter=80,rcond=1e-6,method='retracted',moment_report_path=None,
-        seed_path=None,output_path=None):
+        seed_path=None,output_path=None,projection_cache_path=None):
     started = time.perf_counter()
     source_path = ROOT/'wave_stress_growth_codesign.json'
     raw = source_path.read_bytes()
@@ -129,11 +129,14 @@ def run(maxiter=80,rcond=1e-6,method='retracted',moment_report_path=None,
     variable_scale = float(np.linalg.norm(initial_white))
     transform = real_matrix(decode(problem['whitening']))*variable_scale
     x0 = np.r_[initial_white.real,initial_white.imag]/variable_scale
-    cache_path = ROOT/'wave_momentum_projection.npz'
+    cache_path = Path(projection_cache_path) if projection_cache_path else ROOT/'wave_momentum_projection.npz'
     with np.load(cache_path,allow_pickle=False) as loaded:
         cache = {key:loaded[key] for key in loaded.files}
     moment_raw = Path(moment_report_path).read_bytes() if moment_report_path else None
-    objective = (MomentProjectedMomentum(cache,transform,rcond,json.loads(moment_raw))
+    moment_report = json.loads(moment_raw) if moment_raw else None
+    if moment_report and moment_report.get('status','completed') != 'completed':
+        raise ValueError('Moment assembly is unfinished; wait for its completed immutable report')
+    objective = (MomentProjectedMomentum(cache,transform,rcond,moment_report)
                  if moment_raw else ProjectedMomentum(cache,transform,rcond))
     objective.normalization = objective.evaluate(x0)[0]
     objective.last_x = None
@@ -189,7 +192,7 @@ def run(maxiter=80,rcond=1e-6,method='retracted',moment_report_path=None,
     report = dict(status='optimizing',accepted=False,pde_validated=False,
         scale_recursion_established=False,constraints_maintained=False,
         source_sha256=hashlib.sha256(raw).hexdigest(),source=source_path.name,
-        projection_source='wave_momentum_projection.json',
+        projection_source=cache_path.with_suffix('.json').name,
         projection_cache_sha256=hashlib.sha256(cache_path.read_bytes()).hexdigest(),
         seed_source=str(seed_path) if seed_path else source_path.name,
         seed_sha256=hashlib.sha256(seed_raw).hexdigest(),
@@ -303,5 +306,6 @@ if __name__ == '__main__':
     parser.add_argument('--moment-report',type=Path)
     parser.add_argument('--seed',type=Path)
     parser.add_argument('--output',type=Path)
+    parser.add_argument('--projection-cache',type=Path)
     args = parser.parse_args()
-    run(args.maxiter,args.rcond,args.method,args.moment_report,args.seed,args.output)
+    run(args.maxiter,args.rcond,args.method,args.moment_report,args.seed,args.output,args.projection_cache)

@@ -2,6 +2,13 @@
 
 ## ST073 research update - 2026-09-27
 
+Moment-constrained wave correction now restores actual order-96 integrated
+moments to max 2.54e-8, versus 583600.74 for the earlier candidate, while
+independent full momentum L2 changes only from 2.6453e6 to 2.6614e6.
+Cone replay improves to 12/27 locations passing but remains a failure.
+Higher-grid wave growth is +997.0958. No recursive step is accepted.
+See [moment-constrained wave result](ST073_MOMENT_CONSTRAINED_WAVE.md).
+
 Momentum-aware wave-shape optimization now reduces independent actual
 patch volume L2 from 7.3766e6 to 2.6453e6 and maximum from 5.6409e11 to
 2.0098e11, about 64% for both. Five-node flux constraints remain matched.

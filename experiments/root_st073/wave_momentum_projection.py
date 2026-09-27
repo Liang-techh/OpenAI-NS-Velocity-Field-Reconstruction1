@@ -111,10 +111,11 @@ def _real_complex_columns(value):
 
 
 def _assemble_wave_columns(points, mean_u, mean_grad, center, widths, carrier,
-                           degree, nu, hspace):
+                           degree, nu, hspace, jet_function=None):
     """Build A, B and L for the complete 27-complex-coefficient mode."""
 
-    velocity, wave_grad, wave_diffusion, _, _ = basis_jets(
+    evaluate_jets = basis_jets if jet_function is None else jet_function
+    velocity, wave_grad, wave_diffusion, _, _ = evaluate_jets(
         points, center, widths, 1, degree, carrier, nu, hspace
     )
     # L_complex[n, component, q] is the coefficient of c_q in the linear

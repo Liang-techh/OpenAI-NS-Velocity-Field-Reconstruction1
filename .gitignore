@@ -15,3 +15,4 @@ dist/
 
 # Rebuildable physical momentum cache (regenerate with its adjacent Python script)
 /experiments/root_st073/wave_momentum_projection.npz
+/experiments/root_st073/wave_momentum_projection_analytic.npz

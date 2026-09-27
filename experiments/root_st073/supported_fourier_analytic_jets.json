@@ -1,0 +1,863 @@
+{
+  "source": "Analytic cylindrical polynomial/carrier derivatives for the supported Fourier potential basis",
+  "function": "basis_jets(points, center, widths, mode, degree, carrier, nu, h=None)",
+  "return_contract": [
+    "V",
+    "J",
+    "-nu*lapV",
+    "P",
+    "gradP"
+  ],
+  "shapes_degree2": {
+    "velocity": [
+      "N",
+      3,
+      27
+    ],
+    "gradient": [
+      "N",
+      3,
+      3,
+      27
+    ],
+    "viscous_laplacian": [
+      "N",
+      3,
+      27
+    ],
+    "pressure": [
+      "N",
+      9
+    ],
+    "pressure_gradient": [
+      "N",
+      3,
+      9
+    ]
+  },
+  "derivative_method": "q=xi^a eta^b (1-xi^2)^5 (1-eta^2)^5 exp(i(m theta+kr(r-r0)+kz(z-z0))); polynomial derivatives through total order 3, cylindrical connection terms, and Cartesian rotation R J_cyl R^T",
+  "normal_cases": [
+    {
+      "case": {
+        "name": "normal_mode2_carrier",
+        "center": [
+          0.004,
+          -0.001
+        ],
+        "widths": [
+          0.0008,
+          0.0012
+        ],
+        "mode": 2,
+        "degree": 2,
+        "carrier": [
+          130.0,
+          -90.0
+        ]
+      },
+      "point_count": 4,
+      "reference": {
+        "velocity_max_abs_error": 2.7294091343678512e-12,
+        "pressure_max_abs_error": 2.7760454096670026e-16,
+        "pressure_gradient_max_abs_error": 2.7294091343678512e-12,
+        "velocity_scale": 1849.9951121745798,
+        "pressure_scale": 0.8487109458613519,
+        "pressure_gradient_scale": 1631.6966869546673
+      },
+      "finite_difference": [
+        {
+          "h": 1.6e-07,
+          "gradient_max_abs_error": 6.172340363782986e-06,
+          "viscous_laplacian_max_abs_error": 3.6954728653901885,
+          "gradient_scale": 11090622.910421383,
+          "viscous_laplacian_scale": 780308157.6807406,
+          "gradient_relative_error": 5.565368522252346e-13,
+          "viscous_laplacian_relative_error": 4.735914688338006e-09
+        },
+        {
+          "h": 8e-08,
+          "gradient_max_abs_error": 3.7355224033336727e-05,
+          "viscous_laplacian_max_abs_error": 6.757964614240236,
+          "gradient_scale": 11090622.910421383,
+          "viscous_laplacian_scale": 780308157.6807406,
+          "gradient_relative_error": 3.368180879924754e-12,
+          "viscous_laplacian_relative_error": 8.66063560622831e-09
+        },
+        {
+          "h": 4e-08,
+          "gradient_max_abs_error": 8.990697029562286e-05,
+          "viscous_laplacian_max_abs_error": 59.028627661154104,
+          "gradient_scale": 11090622.910421383,
+          "viscous_laplacian_scale": 780308157.6807406,
+          "gradient_relative_error": 8.106575349445985e-12,
+          "viscous_laplacian_relative_error": 7.564784127927237e-08
+        }
+      ],
+      "divergence_max_abs": 1.1641532182693481e-10,
+      "divergence_scale": 11090622.910421383
+    },
+    {
+      "case": {
+        "name": "simple_mode0",
+        "center": [
+          0.005,
+          0.002
+        ],
+        "widths": [
+          0.001,
+          0.001
+        ],
+        "mode": 0,
+        "degree": 2,
+        "carrier": [
+          0.0,
+          0.0
+        ]
+      },
+      "point_count": 4,
+      "reference": {
+        "velocity_max_abs_error": 9.094947017729282e-13,
+        "pressure_max_abs_error": 3.3306690738754696e-16,
+        "pressure_gradient_max_abs_error": 9.094947017729282e-13,
+        "velocity_scale": 1692.048121403868,
+        "pressure_scale": 0.8487109458613513,
+        "pressure_gradient_scale": 1692.048121403868
+      },
+      "finite_difference": [
+        {
+          "h": 2.0000000000000002e-07,
+          "gradient_max_abs_error": 1.7229467630386353e-05,
+          "viscous_laplacian_max_abs_error": 2.3173967599868774,
+          "gradient_scale": 7880083.2642978355,
+          "viscous_laplacian_scale": 471902631.03979117,
+          "gradient_relative_error": 2.1864575604737098e-12,
+          "viscous_laplacian_relative_error": 4.910751938129103e-09
+        },
+        {
+          "h": 1.0000000000000001e-07,
+          "gradient_max_abs_error": 2.5956891477108002e-05,
+          "viscous_laplacian_max_abs_error": 6.228403091430664,
+          "gradient_scale": 7880083.2642978355,
+          "viscous_laplacian_scale": 471902631.03979117,
+          "gradient_relative_error": 3.2939869550250144e-12,
+          "viscous_laplacian_relative_error": 1.3198491980659207e-08
+        },
+        {
+          "h": 5.0000000000000004e-08,
+          "gradient_max_abs_error": 5.059223622083664e-05,
+          "viscous_laplacian_max_abs_error": 14.845998290926218,
+          "gradient_scale": 7880083.2642978355,
+          "viscous_laplacian_scale": 471902631.03979117,
+          "gradient_relative_error": 6.420266705816937e-12,
+          "viscous_laplacian_relative_error": 3.14598760727706e-08
+        }
+      ],
+      "divergence_max_abs": 0.0,
+      "divergence_scale": 7880083.2642978355
+    }
+  ],
+  "saved_candidate": {
+    "source": "fourier_patch_evolution.json",
+    "center": [
+      0.0016227128870842616,
+      -2.036013852023506e-05
+    ],
+    "widths": [
+      0.0001450083856543383,
+      5.643830397809158e-05
+    ],
+    "degree": 2,
+    "train_point_count": 49,
+    "held_point_count": 40,
+    "fd_point_count": 16,
+    "reference_values": [
+      {
+        "mode": 0,
+        "values": {
+          "velocity_max_abs_error": 5.093170329928398e-11,
+          "pressure_max_abs_error": 7.771561172376096e-16,
+          "pressure_gradient_max_abs_error": 5.093170329928398e-11,
+          "velocity_scale": 26206.794041349633,
+          "pressure_scale": 0.7715654158772219,
+          "pressure_gradient_scale": 26206.794041349633
+        }
+      },
+      {
+        "mode": 1,
+        "values": {
+          "velocity_max_abs_error": 5.093792016879743e-11,
+          "pressure_max_abs_error": 7.773497006583637e-16,
+          "pressure_gradient_max_abs_error": 5.093792016879743e-11,
+          "velocity_scale": 26207.20142387588,
+          "pressure_scale": 0.7715654158772219,
+          "pressure_gradient_scale": 26207.20142387588
+        }
+      },
+      {
+        "mode": 2,
+        "values": {
+          "velocity_max_abs_error": 5.0956566226466225e-11,
+          "pressure_max_abs_error": 7.782704976483341e-16,
+          "pressure_gradient_max_abs_error": 5.0956566226466225e-11,
+          "velocity_scale": 26208.423533460606,
+          "pressure_scale": 0.771565415877222,
+          "pressure_gradient_scale": 26208.423533460606
+        }
+      },
+      {
+        "mode": 3,
+        "values": {
+          "velocity_max_abs_error": 5.09322108272808e-11,
+          "pressure_max_abs_error": 7.782704976483341e-16,
+          "pressure_gradient_max_abs_error": 5.09322108272808e-11,
+          "velocity_scale": 26216.976705425077,
+          "pressure_scale": 0.7715654158772219,
+          "pressure_gradient_scale": 26216.976705425077
+        }
+      },
+      {
+        "mode": 4,
+        "values": {
+          "velocity_max_abs_error": 5.0939823140435495e-11,
+          "pressure_max_abs_error": 7.773497006583637e-16,
+          "pressure_gradient_max_abs_error": 5.0939823140435495e-11,
+          "velocity_scale": 26213.311402031057,
+          "pressure_scale": 0.7715654158772219,
+          "pressure_gradient_scale": 26213.311402031057
+        }
+      },
+      {
+        "mode": 5,
+        "values": {
+          "velocity_max_abs_error": 5.0956566226466225e-11,
+          "pressure_max_abs_error": 7.771604733948439e-16,
+          "pressure_gradient_max_abs_error": 5.0956566226466225e-11,
+          "velocity_scale": 26210.460256139497,
+          "pressure_scale": 0.7715654158772219,
+          "pressure_gradient_scale": 26210.460256139497
+        }
+      },
+      {
+        "mode": 6,
+        "values": {
+          "velocity_max_abs_error": 5.099307751399916e-11,
+          "pressure_max_abs_error": 7.774348620928471e-16,
+          "pressure_gradient_max_abs_error": 5.099307751399916e-11,
+          "velocity_scale": 26208.423533460606,
+          "pressure_scale": 0.771565415877222,
+          "pressure_gradient_scale": 26208.423533460606
+        }
+      },
+      {
+        "mode": 7,
+        "values": {
+          "velocity_max_abs_error": 5.0933733380927744e-11,
+          "pressure_max_abs_error": 7.786725208595149e-16,
+          "pressure_gradient_max_abs_error": 5.0933733380927744e-11,
+          "velocity_scale": 26239.771533728446,
+          "pressure_scale": 0.7715654158772218,
+          "pressure_gradient_scale": 26239.771533728446
+        }
+      },
+      {
+        "mode": 8,
+        "values": {
+          "velocity_max_abs_error": 5.096417490175335e-11,
+          "pressure_max_abs_error": 7.779301618879932e-16,
+          "pressure_gradient_max_abs_error": 5.096417490175335e-11,
+          "velocity_scale": 26232.853768933524,
+          "pressure_scale": 0.7715654158772219,
+          "pressure_gradient_scale": 26232.853768933524
+        }
+      }
+    ],
+    "finite_difference": [
+      {
+        "mode": 0,
+        "carrier": [
+          0.0,
+          0.0
+        ],
+        "finite_difference": [
+          {
+            "h": 1.1287660795618318e-08,
+            "gradient_max_abs_error": 0.0008942484855651855,
+            "viscous_laplacian_max_abs_error": 5908.46728515625,
+            "gradient_scale": 1963429684.4523096,
+            "viscous_laplacian_scale": 1729654280856.8525,
+            "gradient_relative_error": 4.554522592005286e-13,
+            "viscous_laplacian_relative_error": 3.4159816505233966e-09
+          },
+          {
+            "h": 5.643830397809159e-09,
+            "gradient_max_abs_error": 0.0026705265045166016,
+            "viscous_laplacian_max_abs_error": 45023.779724121094,
+            "gradient_scale": 1963429684.4523096,
+            "viscous_laplacian_scale": 1729654280856.8525,
+            "gradient_relative_error": 1.3601335080464232e-12,
+            "viscous_laplacian_relative_error": 2.6030508074605976e-08
+          },
+          {
+            "h": 2.8219151989045794e-09,
+            "gradient_max_abs_error": 0.006880998611450195,
+            "viscous_laplacian_max_abs_error": 223601.55834960938,
+            "gradient_scale": 1963429684.4523096,
+            "viscous_laplacian_scale": 1729654280856.8525,
+            "gradient_relative_error": 3.5045811245181518e-12,
+            "viscous_laplacian_relative_error": 1.2927528976417154e-07
+          }
+        ]
+      },
+      {
+        "mode": 1,
+        "carrier": [
+          -871.4212739359624,
+          -616.1878920703391
+        ],
+        "finite_difference": [
+          {
+            "h": 1.1287660795618318e-08,
+            "gradient_max_abs_error": 0.000928873465700902,
+            "viscous_laplacian_max_abs_error": 4353.822676902422,
+            "gradient_scale": 1963917495.9383497,
+            "viscous_laplacian_scale": 1730597544009.3838,
+            "gradient_relative_error": 4.729696983819022e-13,
+            "viscous_laplacian_relative_error": 2.5157915495567203e-09
+          },
+          {
+            "h": 5.643830397809159e-09,
+            "gradient_max_abs_error": 0.002635886465704777,
+            "viscous_laplacian_max_abs_error": 44038.740553921016,
+            "gradient_scale": 1963917495.9383497,
+            "viscous_laplacian_scale": 1730597544009.3838,
+            "gradient_relative_error": 1.3421574333729146e-12,
+            "viscous_laplacian_relative_error": 2.544712992709657e-08
+          },
+          {
+            "h": 2.8219151989045794e-09,
+            "gradient_max_abs_error": 0.006830648584704127,
+            "viscous_laplacian_max_abs_error": 189290.94136653762,
+            "gradient_scale": 1963917495.9383497,
+            "viscous_laplacian_scale": 1730597544009.3838,
+            "gradient_relative_error": 3.4780730854686327e-12,
+            "viscous_laplacian_relative_error": 1.0937894949740622e-07
+          }
+        ]
+      },
+      {
+        "mode": 2,
+        "carrier": [
+          -1742.8425478719248,
+          -1232.3757841406782
+        ],
+        "finite_difference": [
+          {
+            "h": 1.1287660795618318e-08,
+            "gradient_max_abs_error": 0.0009374576106977502,
+            "viscous_laplacian_max_abs_error": 5092.379287718849,
+            "gradient_scale": 1965380465.94251,
+            "viscous_laplacian_scale": 1733427005486.4832,
+            "gradient_relative_error": 4.769853099400715e-13,
+            "viscous_laplacian_relative_error": 2.9377523666130272e-09
+          },
+          {
+            "h": 5.643830397809159e-09,
+            "gradient_max_abs_error": 0.0028208239463430305,
+            "viscous_laplacian_max_abs_error": 42470.7475600311,
+            "gradient_scale": 1965380465.94251,
+            "viscous_laplacian_scale": 1733427005486.4832,
+            "gradient_relative_error": 1.4352559187517353e-12,
+            "viscous_laplacian_relative_error": 2.450103028602105e-08
+          },
+          {
+            "h": 2.8219151989045794e-09,
+            "gradient_max_abs_error": 0.007395674781048479,
+            "viscous_laplacian_max_abs_error": 200486.8204218043,
+            "gradient_scale": 1965380465.94251,
+            "viscous_laplacian_scale": 1733427005486.4832,
+            "gradient_relative_error": 3.762973586644375e-12,
+            "viscous_laplacian_relative_error": 1.1565922290770936e-07
+          }
+        ]
+      },
+      {
+        "mode": 3,
+        "carrier": [
+          871.4212739359624,
+          3080.9394603516957
+        ],
+        "finite_difference": [
+          {
+            "h": 1.1287660795618318e-08,
+            "gradient_max_abs_error": 0.0008852855005637756,
+            "viscous_laplacian_max_abs_error": 6209.8620322576735,
+            "gradient_scale": 1975601869.1876285,
+            "viscous_laplacian_scale": 1747479375225.8616,
+            "gradient_relative_error": 4.481092645087478e-13,
+            "viscous_laplacian_relative_error": 3.5536110584738942e-09
+          },
+          {
+            "h": 5.643830397809159e-09,
+            "gradient_max_abs_error": 0.0026267004273841784,
+            "viscous_laplacian_max_abs_error": 44538.153806792776,
+            "gradient_scale": 1975601869.1876285,
+            "viscous_laplacian_scale": 1747479375225.8616,
+            "gradient_relative_error": 1.3295697216890581e-12,
+            "viscous_laplacian_relative_error": 2.548708410423226e-08
+          },
+          {
+            "h": 2.8219151989045794e-09,
+            "gradient_max_abs_error": 0.007051995686261558,
+            "viscous_laplacian_max_abs_error": 199248.91709411226,
+            "gradient_scale": 1975601869.1876285,
+            "viscous_laplacian_scale": 1747479375225.8616,
+            "gradient_relative_error": 3.5695429308139668e-12,
+            "viscous_laplacian_relative_error": 1.1402075464745291e-07
+          }
+        ]
+      },
+      {
+        "mode": 4,
+        "carrier": [
+          0.0,
+          2464.7515682813564
+        ],
+        "finite_difference": [
+          {
+            "h": 1.1287660795618318e-08,
+            "gradient_max_abs_error": 0.0009965021565444276,
+            "viscous_laplacian_max_abs_error": 5199.578944606184,
+            "gradient_scale": 1971225406.713736,
+            "viscous_laplacian_scale": 1741848381193.3542,
+            "gradient_relative_error": 5.055242049693919e-13,
+            "viscous_laplacian_relative_error": 2.9850927329529744e-09
+          },
+          {
+            "h": 5.643830397809159e-09,
+            "gradient_max_abs_error": 0.0024424485332699376,
+            "viscous_laplacian_max_abs_error": 45947.55493446732,
+            "gradient_scale": 1971225406.713736,
+            "viscous_laplacian_scale": 1741848381193.3542,
+            "gradient_relative_error": 1.2390508588978598e-12,
+            "viscous_laplacian_relative_error": 2.6378619075322896e-08
+          },
+          {
+            "h": 2.8219151989045794e-09,
+            "gradient_max_abs_error": 0.006263070576106969,
+            "viscous_laplacian_max_abs_error": 190100.67795074938,
+            "gradient_scale": 1971225406.713736,
+            "viscous_laplacian_scale": 1741848381193.3542,
+            "gradient_relative_error": 3.177247287284229e-12,
+            "viscous_laplacian_relative_error": 1.0913732791169223e-07
+          }
+        ]
+      },
+      {
+        "mode": 5,
+        "carrier": [
+          -871.4212739359624,
+          1848.5636762110173
+        ],
+        "finite_difference": [
+          {
+            "h": 1.1287660795618318e-08,
+            "gradient_max_abs_error": 0.0009946091339033433,
+            "viscous_laplacian_max_abs_error": 5152.811363192957,
+            "gradient_scale": 1967817204.555334,
+            "viscous_laplacian_scale": 1738111528797.538,
+            "gradient_relative_error": 5.054377670857361e-13,
+            "viscous_laplacian_relative_error": 2.964603408826003e-09
+          },
+          {
+            "h": 5.643830397809159e-09,
+            "gradient_max_abs_error": 0.002357968684132433,
+            "viscous_laplacian_max_abs_error": 42166.99660037549,
+            "gradient_scale": 1967817204.555334,
+            "viscous_laplacian_scale": 1738111528797.538,
+            "gradient_relative_error": 1.1982661187603863e-12,
+            "viscous_laplacian_relative_error": 2.4260236412762017e-08
+          },
+          {
+            "h": 2.8219151989045794e-09,
+            "gradient_max_abs_error": 0.005972268779603017,
+            "viscous_laplacian_max_abs_error": 204836.19305580202,
+            "gradient_scale": 1967817204.555334,
+            "viscous_laplacian_scale": 1738111528797.538,
+            "gradient_relative_error": 3.03497132039384e-12,
+            "viscous_laplacian_relative_error": 1.1784985581305706e-07
+          }
+        ]
+      },
+      {
+        "mode": 6,
+        "carrier": [
+          -1742.8425478719248,
+          1232.3757841406782
+        ],
+        "finite_difference": [
+          {
+            "h": 1.1287660795618318e-08,
+            "gradient_max_abs_error": 0.000937135985818354,
+            "viscous_laplacian_max_abs_error": 4531.434389871321,
+            "gradient_scale": 1965380465.94251,
+            "viscous_laplacian_scale": 1736237194774.4766,
+            "gradient_relative_error": 4.768216648418477e-13,
+            "viscous_laplacian_relative_error": 2.609916665481826e-09
+          },
+          {
+            "h": 5.643830397809159e-09,
+            "gradient_max_abs_error": 0.0028208834091928846,
+            "viscous_laplacian_max_abs_error": 43378.664217584505,
+            "gradient_scale": 1965380465.94251,
+            "viscous_laplacian_scale": 1736237194774.4766,
+            "gradient_relative_error": 1.4352861738859877e-12,
+            "viscous_laplacian_relative_error": 2.4984296125057412e-08
+          },
+          {
+            "h": 2.8219151989045794e-09,
+            "gradient_max_abs_error": 0.005616299622244722,
+            "viscous_laplacian_max_abs_error": 196555.7435359361,
+            "gradient_scale": 1965380465.94251,
+            "viscous_laplacian_scale": 1736237194774.4766,
+            "gradient_relative_error": 2.8576144515364316e-12,
+            "viscous_laplacian_relative_error": 1.132078866456188e-07
+          }
+        ]
+      },
+      {
+        "mode": 7,
+        "carrier": [
+          871.4212739359624,
+          5545.691028633052
+        ],
+        "finite_difference": [
+          {
+            "h": 1.1287660795618318e-08,
+            "gradient_max_abs_error": 0.000986923109122894,
+            "viscous_laplacian_max_abs_error": 4376.0834855989715,
+            "gradient_scale": 2002696297.9777412,
+            "viscous_laplacian_scale": 1788466887150.258,
+            "gradient_relative_error": 4.927971905273194e-13,
+            "viscous_laplacian_relative_error": 2.446835061381438e-09
+          },
+          {
+            "h": 5.643830397809159e-09,
+            "gradient_max_abs_error": 0.002903324752393732,
+            "viscous_laplacian_max_abs_error": 48904.17924061235,
+            "gradient_scale": 2002696297.9777412,
+            "viscous_laplacian_scale": 1788466887150.258,
+            "gradient_relative_error": 1.4497079538846788e-12,
+            "viscous_laplacian_relative_error": 2.734419048626404e-08
+          },
+          {
+            "h": 2.8219151989045794e-09,
+            "gradient_max_abs_error": 0.006939060154441997,
+            "viscous_laplacian_max_abs_error": 195383.90489333734,
+            "gradient_scale": 2002696297.9777412,
+            "viscous_laplacian_scale": 1788466887150.258,
+            "gradient_relative_error": 3.4648589311563806e-12,
+            "viscous_laplacian_relative_error": 1.0924658784410704e-07
+          }
+        ]
+      },
+      {
+        "mode": 8,
+        "carrier": [
+          0.0,
+          4929.503136562713
+        ],
+        "finite_difference": [
+          {
+            "h": 1.1287660795618318e-08,
+            "gradient_max_abs_error": 0.0008665143371885866,
+            "viscous_laplacian_max_abs_error": 5730.355241548798,
+            "gradient_scale": 1994495847.0298991,
+            "viscous_laplacian_scale": 1778272885523.682,
+            "gradient_relative_error": 4.3445281597299655e-13,
+            "viscous_laplacian_relative_error": 3.2224273834447357e-09
+          },
+          {
+            "h": 5.643830397809159e-09,
+            "gradient_max_abs_error": 0.0028466747655477923,
+            "viscous_laplacian_max_abs_error": 46328.3194564504,
+            "gradient_scale": 1994495847.0298991,
+            "viscous_laplacian_scale": 1778272885523.682,
+            "gradient_relative_error": 1.4272653261158274e-12,
+            "viscous_laplacian_relative_error": 2.6052424143444788e-08
+          },
+          {
+            "h": 2.8219151989045794e-09,
+            "gradient_max_abs_error": 0.0063628603523811,
+            "viscous_laplacian_max_abs_error": 206992.51528033908,
+            "gradient_scale": 1994495847.0298991,
+            "viscous_laplacian_scale": 1778272885523.682,
+            "gradient_relative_error": 3.190209877777557e-12,
+            "viscous_laplacian_relative_error": 1.1640087242255963e-07
+          }
+        ]
+      }
+    ],
+    "divergence": [
+      {
+        "mode": 0,
+        "divergence_max_abs": 0.0,
+        "gradient_scale": 1963429684.4523096,
+        "viscous_laplacian_scale": 1729654280856.8525
+      },
+      {
+        "mode": 1,
+        "divergence_max_abs": 9.313225746154785e-10,
+        "gradient_scale": 1963917495.9383497,
+        "viscous_laplacian_scale": 1730597544009.3838
+      },
+      {
+        "mode": 2,
+        "divergence_max_abs": 4.692851652099372e-10,
+        "gradient_scale": 1965380465.94251,
+        "viscous_laplacian_scale": 1733427005486.4832
+      },
+      {
+        "mode": 3,
+        "divergence_max_abs": 1.862645149230957e-09,
+        "gradient_scale": 1975601869.1876285,
+        "viscous_laplacian_scale": 1747479375225.8616
+      },
+      {
+        "mode": 4,
+        "divergence_max_abs": 3.725290298461914e-09,
+        "gradient_scale": 1971225406.713736,
+        "viscous_laplacian_scale": 1741848381193.3542
+      },
+      {
+        "mode": 5,
+        "divergence_max_abs": 3.732559164492739e-09,
+        "gradient_scale": 1967817204.555334,
+        "viscous_laplacian_scale": 1738111528797.538
+      },
+      {
+        "mode": 6,
+        "divergence_max_abs": 7.465118328985478e-09,
+        "gradient_scale": 1965380465.94251,
+        "viscous_laplacian_scale": 1736237194774.4766
+      },
+      {
+        "mode": 7,
+        "divergence_max_abs": 1.8662795822463695e-09,
+        "gradient_scale": 2002696297.9777412,
+        "viscous_laplacian_scale": 1788466887150.258
+      },
+      {
+        "mode": 8,
+        "divergence_max_abs": 7.450580596923828e-09,
+        "gradient_scale": 1994495847.0298991,
+        "viscous_laplacian_scale": 1778272885523.682
+      }
+    ]
+  },
+  "support_and_axis_reference_checks": [
+    {
+      "name": "interior",
+      "point": [
+        0.0016227128870842616,
+        0.0,
+        -2.036013852023506e-05
+      ],
+      "velocity_max_abs_error": 0.0,
+      "pressure_max_abs_error": 0.0,
+      "pressure_gradient_max_abs_error": 0.0,
+      "velocity_scale": 17718.462985496222,
+      "pressure_scale": 1.0,
+      "pressure_gradient_scale": 17718.462985496222
+    },
+    {
+      "name": "radial_inner_near_boundary",
+      "point": [
+        0.001477704646438309,
+        0.0,
+        -2.036013852023506e-05
+      ],
+      "velocity_max_abs_error": 1.759814634823948e-28,
+      "pressure_max_abs_error": 6.379708334113167e-39,
+      "pressure_gradient_max_abs_error": 1.759814634823948e-28,
+      "velocity_scale": 1.1033811751611089e-18,
+      "pressure_scale": 3.199991995777005e-29,
+      "pressure_gradient_scale": 1.103381153505956e-18
+    },
+    {
+      "name": "radial_outer_near_boundary",
+      "point": [
+        0.001767721272724099,
+        0.0,
+        -2.036013852023506e-05
+      ],
+      "velocity_max_abs_error": 2.1382117680737565e-50,
+      "pressure_max_abs_error": 0.0,
+      "pressure_gradient_max_abs_error": 2.1382117680737565e-50,
+      "velocity_scale": 1.1033946297271538e-34,
+      "pressure_scale": 3.2000368503524627e-49,
+      "pressure_gradient_scale": 1.1033946297271538e-34
+    },
+    {
+      "name": "axial_lower_near_boundary",
+      "point": [
+        0.0016227128870842616,
+        0.0,
+        -7.679838606002266e-05
+      ],
+      "velocity_max_abs_error": 3.4836579941136943e-28,
+      "pressure_max_abs_error": 4.9152827059138224e-39,
+      "pressure_gradient_max_abs_error": 3.4836579941136943e-28,
+      "velocity_scale": 2.834945573501533e-18,
+      "pressure_scale": 3.199992000959617e-29,
+      "pressure_gradient_scale": 2.834945573501533e-18
+    },
+    {
+      "name": "axial_upper_near_boundary",
+      "point": [
+        0.0016227128870842616,
+        0.0,
+        3.60781654522127e-05
+      ],
+      "velocity_max_abs_error": 0.0,
+      "pressure_max_abs_error": 0.0,
+      "pressure_gradient_max_abs_error": 0.0,
+      "velocity_scale": 2.8349550150896346e-34,
+      "pressure_scale": 3.200001323046155e-49,
+      "pressure_gradient_scale": 2.8349550150896346e-34
+    },
+    {
+      "name": "radial_inner_boundary",
+      "point": [
+        0.0014777045014299234,
+        0.0,
+        -2.036013852023506e-05
+      ],
+      "velocity_max_abs_error": 0.0,
+      "pressure_max_abs_error": 0.0,
+      "pressure_gradient_max_abs_error": 0.0,
+      "velocity_scale": 0.0,
+      "pressure_scale": 0.0,
+      "pressure_gradient_scale": 0.0
+    },
+    {
+      "name": "radial_outer_boundary",
+      "point": [
+        0.0017677212727385998,
+        0.0,
+        -2.036013852023506e-05
+      ],
+      "velocity_max_abs_error": 0.0,
+      "pressure_max_abs_error": 0.0,
+      "pressure_gradient_max_abs_error": 0.0,
+      "velocity_scale": 0.0,
+      "pressure_scale": 0.0,
+      "pressure_gradient_scale": 0.0
+    },
+    {
+      "name": "axial_lower_boundary",
+      "point": [
+        0.0016227128870842616,
+        0.0,
+        -7.679844249832664e-05
+      ],
+      "velocity_max_abs_error": 0.0,
+      "pressure_max_abs_error": 0.0,
+      "pressure_gradient_max_abs_error": 0.0,
+      "velocity_scale": 0.0,
+      "pressure_scale": 0.0,
+      "pressure_gradient_scale": 0.0
+    },
+    {
+      "name": "axial_upper_boundary",
+      "point": [
+        0.0016227128870842616,
+        0.0,
+        3.6078165457856525e-05
+      ],
+      "velocity_max_abs_error": 0.0,
+      "pressure_max_abs_error": 0.0,
+      "pressure_gradient_max_abs_error": 0.0,
+      "velocity_scale": 0.0,
+      "pressure_scale": 0.0,
+      "pressure_gradient_scale": 0.0
+    },
+    {
+      "name": "radial_exterior_low",
+      "point": [
+        0.0014677045014299234,
+        0.0,
+        -2.036013852023506e-05
+      ],
+      "velocity_max_abs_error": 0.0,
+      "pressure_max_abs_error": 0.0,
+      "pressure_gradient_max_abs_error": 0.0,
+      "velocity_scale": 0.0,
+      "pressure_scale": 0.0,
+      "pressure_gradient_scale": 0.0
+    },
+    {
+      "name": "radial_exterior_high",
+      "point": [
+        0.0017777212727385998,
+        0.0,
+        -2.036013852023506e-05
+      ],
+      "velocity_max_abs_error": 0.0,
+      "pressure_max_abs_error": 0.0,
+      "pressure_gradient_max_abs_error": 0.0,
+      "velocity_scale": 0.0,
+      "pressure_scale": 0.0,
+      "pressure_gradient_scale": 0.0
+    },
+    {
+      "name": "axial_exterior_low",
+      "point": [
+        0.0016227128870842616,
+        0.0,
+        -8.679844249832664e-05
+      ],
+      "velocity_max_abs_error": 0.0,
+      "pressure_max_abs_error": 0.0,
+      "pressure_gradient_max_abs_error": 0.0,
+      "velocity_scale": 0.0,
+      "pressure_scale": 0.0,
+      "pressure_gradient_scale": 0.0
+    },
+    {
+      "name": "axial_exterior_high",
+      "point": [
+        0.0016227128870842616,
+        0.0,
+        4.6078165457856524e-05
+      ],
+      "velocity_max_abs_error": 0.0,
+      "pressure_max_abs_error": 0.0,
+      "pressure_gradient_max_abs_error": 0.0,
+      "velocity_scale": 0.0,
+      "pressure_scale": 0.0,
+      "pressure_gradient_scale": 0.0
+    },
+    {
+      "name": "axis",
+      "point": [
+        0.0,
+        0.0,
+        -2.036013852023506e-05
+      ],
+      "velocity_max_abs_error": 0.0,
+      "pressure_max_abs_error": 0.0,
+      "pressure_gradient_max_abs_error": 0.0,
+      "velocity_scale": 0.0,
+      "pressure_scale": 0.0,
+      "pressure_gradient_scale": 0.0
+    }
+  ],
+  "divergence_summary": {
+    "max_abs_over_cases": 7.465118328985478e-09,
+    "cases_are_sampled": true
+  },
+  "scope": "Analytic basis-jet diagnostic only. Finite-difference comparisons are local and step-dependent; support-boundary behavior is checked by exact basis replay. This does not change the default backend, certify global accuracy, validate NS, or establish scale recursion.",
+  "accepted": false,
+  "scale_recursion_established": false,
+  "pde_validated": false
+}
