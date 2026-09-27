@@ -2,6 +2,28 @@
 
 ## Current ST073 continuation
 
+Immediate update, 2026-09-27:
+
+- [x] Replay the constrained 44-direction candidate independently:
+  `broad_meridional_constrained_replay.json` records maximum 4.50644e9,
+  volume L2 188297.75, moment maximum 1.47389e-5 and 27/27 sampled cones.
+  SLSQP status 8 does not establish optimality; neither momentum metric
+  satisfies the requested 1e-3 gate.
+- [x] Implement equivalent grouped evaluation to make repeated full-field
+  replay practical; `grouped_joined_field.py` is opt-in and benchmarked.
+- [ ] Integrate coefficient states with newly fitted derivatives at every
+  changed scale. Preserve the original basis knots, complete quadratic
+  advection, physical-volume weights, and independent spatial holdouts.
+  Compare refreshed and frozen slopes at delta k 0.001 and 0.01 first.
+- [ ] Rebuild moment and cone constraints using each evolved state, including
+  its changed shear direction and growth discriminant. Initial H matrices
+  cannot be reused after velocity changes. Reject inadmissible states or
+  reduce the step; do not silently remove constraints to claim recursion.
+- [ ] Couple the resulting mean to actual nonaxisymmetric velocity waves and
+  their momentum contributions. Demonstrate repeated scale transfer and
+  vortex diagnostics before claiming recursive amplification. Retain the
+  original domain, forcing, global-energy and full-residual acceptance gates.
+
 Latest completed experiment: spatial Fourier evolution with weak viscous
 Galerkin projection and implicit BDF; see ST073_SPATIAL_FOURIER_EVOLUTION.md.
 Time integration succeeds, but the oscillatory energy proxy decays to

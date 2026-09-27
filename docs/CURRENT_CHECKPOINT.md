@@ -2,6 +2,22 @@
 
 ## ST073 research update - 2026-09-27
 
+The constrained 44-direction replay is now complete. On the independent
+176-point spatial holdout, momentum maximum decreases from 7.01009e9 to
+4.50644e9 and physical-volume L2 from 237497.46 to 188297.75. All 27 sampled
+stress cones pass at radial quadrature order 64; the four integrated moments
+have maximum absolute value 1.47389e-5 at order 96. The selected solver point
+is feasible and improves the objective, but SLSQP returned status 8, not
+convergence. See `broad_meridional_constrained_replay.json`. This supersedes
+the pending compatibility statement below, not the full PDE/recursion gates.
+
+An opt-in grouped evaluator preserves the original fields and tested Cartesian
+jets while reducing the cold 2000-point field benchmark from 5.2885 s to
+0.1337 s (39.54 times). The full constrained replay took 121.88 s. This is
+computational acceleration, not a reduction of the governing equations.
+The next experiment evolves the velocity coefficients and recomputes their
+slopes at each state; frozen initial slopes are already rejected below.
+
 The first full-vector meridional/pressure correction now reduces both metrics
 on the same independent spatial holdout: maximum 7.01009e9 -> 4.38510e9,
 physical-volume L2 237497.46 -> 186820.70. Its 44 directions preserve the

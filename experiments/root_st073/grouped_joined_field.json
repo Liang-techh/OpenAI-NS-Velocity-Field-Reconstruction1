@@ -1,0 +1,154 @@
+{
+  "accepted": false,
+  "pde_validated": false,
+  "scope": "Mathematically equivalent grouped JoinedField evaluator and finite correctness/performance checks; no PDE, recursion, or global acceptance claim.",
+  "wrapper": "GroupedJoinedField",
+  "parameters": {
+    "join_X": 0.015625,
+    "outer_ratio": 16.0,
+    "swirl_bubble_amplitude": 0.13,
+    "outer_swirl_bubble_amplitude": -0.07,
+    "slope_swirl_bubble_amplitude": 0.05,
+    "shear_swirl_amplitude": 0.03,
+    "shear_swirl_cycles": 16,
+    "heat_amplitude": 0.08807351600357666
+  },
+  "correctness": [
+    {
+      "point_count": 7,
+      "old_seconds": 0.05524490002426319,
+      "grouped_seconds": 0.0026024999970104545,
+      "speedup": 21.22762731516778,
+      "velocity_max_abs_diff": 0.0,
+      "velocity_relative_max_diff": 0.0,
+      "pressure_max_abs_diff": 0.0,
+      "pressure_relative_max_diff": 0.0,
+      "k": 6.4,
+      "eta": -0.2,
+      "tau_mode": "scalar"
+    },
+    {
+      "point_count": 7,
+      "old_seconds": 0.007030799984931946,
+      "grouped_seconds": 0.0024695000029169023,
+      "speedup": 2.8470540500616996,
+      "velocity_max_abs_diff": 0.0,
+      "velocity_relative_max_diff": 0.0,
+      "pressure_max_abs_diff": 0.0,
+      "pressure_relative_max_diff": 0.0,
+      "k": 6.4,
+      "eta": -0.2,
+      "tau_mode": "vector"
+    },
+    {
+      "point_count": 7,
+      "old_seconds": 0.0077191999880596995,
+      "grouped_seconds": 0.003150200005620718,
+      "speedup": 2.450384094434252,
+      "velocity_max_abs_diff": 0.0,
+      "velocity_relative_max_diff": 0.0,
+      "pressure_max_abs_diff": 0.0,
+      "pressure_relative_max_diff": 0.0,
+      "k": 11.0,
+      "eta": 0.0,
+      "tau_mode": "scalar"
+    },
+    {
+      "point_count": 7,
+      "old_seconds": 0.007618099974934012,
+      "grouped_seconds": 0.0030710000137332827,
+      "speedup": 2.4806577469444604,
+      "velocity_max_abs_diff": 0.0,
+      "velocity_relative_max_diff": 0.0,
+      "pressure_max_abs_diff": 0.0,
+      "pressure_relative_max_diff": 0.0,
+      "k": 11.0,
+      "eta": 0.0,
+      "tau_mode": "vector"
+    },
+    {
+      "point_count": 7,
+      "old_seconds": 0.9407355000148527,
+      "grouped_seconds": 0.0032430999854113907,
+      "speedup": 290.072925363576,
+      "velocity_max_abs_diff": 0.0,
+      "velocity_relative_max_diff": 0.0,
+      "pressure_max_abs_diff": 0.0,
+      "pressure_relative_max_diff": 0.0,
+      "k": 19.0,
+      "eta": 0.2,
+      "tau_mode": "scalar"
+    },
+    {
+      "point_count": 7,
+      "old_seconds": 0.007883500016760081,
+      "grouped_seconds": 0.003166299982694909,
+      "speedup": 2.489814629013849,
+      "velocity_max_abs_diff": 0.0,
+      "velocity_relative_max_diff": 0.0,
+      "pressure_max_abs_diff": 0.0,
+      "pressure_relative_max_diff": 0.0,
+      "k": 19.0,
+      "eta": 0.2,
+      "tau_mode": "vector"
+    }
+  ],
+  "domain_errors": [
+    {
+      "case": "time_above_registered",
+      "old": "ValueError:Only registered axial/time slab supported",
+      "grouped": "ValueError:Only registered axial/time slab supported",
+      "same_error_type": true
+    },
+    {
+      "case": "eta_outside_registered",
+      "old": "ValueError:Only registered axial/time slab supported",
+      "grouped": "ValueError:Only registered axial/time slab supported",
+      "same_error_type": true
+    }
+  ],
+  "full_jets": {
+    "point_count": 3,
+    "k": 11.0,
+    "velocity_pressure_points": [
+      [
+        0.0010521898831527827,
+        0.0003370453601385634,
+        0.0
+      ],
+      [
+        0.0011272430993528656,
+        0.002059504926867006,
+        0.0
+      ],
+      [
+        -0.0018436943555439973,
+        0.0030813094426148935,
+        0.0
+      ]
+    ],
+    "field_jet_max_abs_diff": 0.0,
+    "momentum_max_abs_diff": 0.0,
+    "momentum_relative_max_diff": 0.0,
+    "old_momentum_max_abs": 696607.962870141
+  },
+  "benchmark": {
+    "point_count": 2000,
+    "old_seconds": 5.288545399991563,
+    "grouped_seconds": 0.13373760000104085,
+    "speedup": 39.54419250794394,
+    "velocity_max_abs_diff": 0.0,
+    "velocity_relative_max_diff": 0.0,
+    "pressure_max_abs_diff": 0.0,
+    "pressure_relative_max_diff": 0.0,
+    "group_count": 4,
+    "points_per_group": 500,
+    "cold_instances": true
+  },
+  "install_helper_test": {
+    "replacement_count": 1,
+    "wrapped_type": "GroupedJoinedField",
+    "cache_cleared": true
+  },
+  "install_helper": "install_in_field(root)"
+}

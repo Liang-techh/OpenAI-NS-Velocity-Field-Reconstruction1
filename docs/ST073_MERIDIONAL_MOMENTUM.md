@@ -115,6 +115,23 @@ No unrestricted residual-dependent force is introduced.
 
 ## Scope and acceptance
 
+The subsequent constrained candidate now has an independent full-field replay
+in `broad_meridional_constrained_replay.json`: 176 holdout points, maximum
+4.506443466e9, physical-volume L2 188297.7491, versus raw 7.010092679e9
+and 237497.4648 on that same domain. The order-96 four-moment replay has
+maximum 1.473890225e-5; all 27 order-64 sampled stress cones pass. The
+constrained result sacrifices a little of the unconstrained error reduction
+to preserve these finite compatibility checks. Solver status is 8 (line
+search failure), so feasibility and observed improvement do not certify an
+optimal solution. All PDE and recursion acceptance flags remain false.
+
+The replay reads saved assembled matrices, hashes those matrix objects, and
+uses the opt-in equivalent `GroupedJoinedField` backend. It completed in
+121.88 seconds. The separate cold field benchmark measures 39.54 times
+speedup with zero field differences and zero differences in the tested
+Cartesian jets. No physical approximation or reduced residual replaces the
+original full-field evaluation.
+
 `instantaneous_control_columns.py` supplies a limited initial-time assembly
 operator: analytic physical-time slope derivatives, analytic compact bump
 pressure gradients, and the required finite differences of the centrifugal
