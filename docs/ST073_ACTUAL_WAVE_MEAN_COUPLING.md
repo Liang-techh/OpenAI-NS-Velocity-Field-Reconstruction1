@@ -76,3 +76,22 @@ Cartesian averaging differs by at most 5.34e-8. It rejects mode zero; sums of
 waves in the same harmonic require their cross products and cannot be
 treated as independent energies. This operator makes full mean co-design
 with a scalar wave energy practical on the existing radial constraint grids.
+
+## Actual covariance direction
+
+`broad_wave_covariance.py/.json` reconstructs the saved growing mode and its
+complete cylindrical covariance at the wave center and four neighboring
+locations. A common nonnegative squared-amplitude fit leaves 99.25% relative
+flux-pair mismatch against the raw dynamic-control target and 99.12% against
+the saved 44-direction constrained candidate. Their aggregate direction
+cosines are only 0.122 and 0.132. Angular 8/16 differences are 3.44e-15.
+
+The raw target includes both the saved source and `unit_target @ control`;
+the pre-control source alone is not the implemented mean. A fresh one-node
+grouped Cartesian replay differs relatively by 4.37e-4, so saved/direct
+integration agreement is not an absolute final-gate certificate. The other
+target is reconstructed from the saved H/A/b matrices and selected controls.
+These finite-node results motivate changing wave polarization with a growth
+constraint; scaling the dominant growth eigenvector alone does not reproduce
+the required stress. Full tensor-force and complete momentum replay remain
+necessary after any improved covariance fit.
