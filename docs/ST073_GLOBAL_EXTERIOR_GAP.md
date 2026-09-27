@@ -35,3 +35,49 @@ generally destroy divergence freedom and is not an acceptable substitute.
 The immediate code investigation is locating an analytic streamfunction
 or vector-potential representation through the current mean wrappers.
 No global closure or finite-energy certificate is claimed by this audit.
+
+## Paper alignment and terminal-time limitation
+
+Reference: OpenAI, Section 10.1, equations (10.1)--(10.5),
+https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf
+
+The paper localizes a vector potential before taking its curl, with a
+separate axisymmetric swirl term and explicit pressure cutoff. Its spatial
+cutoff is fixed in physical coordinates. Its smooth force extension across
+the terminal time additionally uses local residual flatness and compatible
+limits of derivatives (Section 10.2).
+
+Our registered slab only reaches k=20. A cutoff tied to eta can supply a
+spatially global construction on that finite time interval, but its physical
+support shrinks with tau. It does not establish agreement on a fixed
+neighborhood through the critical time, or the paper's terminal force
+regularity. Those are separate missing requirements after implementing the
+finite-interval extension.
+
+## Implemented finite-interval prototype
+
+`global_axial_extension.py` reconstructs the current mean's analytic Stokes
+streamfunction through the wrapper chain, applies axial and radial cutoffs
+to it, and adds the compact curl wave corrections. The pressure extension is
+explicit. Unknown wrappers raise rather than silently discarding components.
+The implementation introduces no numerical radial primitive at field calls.
+
+At the reference time the full wave support has eta range
+[-0.278382, 0.255987], contained in the chosen plateau |eta| <= 0.30.
+The axial cutoff ends at |eta|=0.49. The mean radial support ends at
+r=0.01013845; the compact wave is inside that support at this time.
+Eleven plateau probes agree exactly in velocity and pressure. Off-support
+probes return zero. This is a spatially localized prototype, not a completed
+critical-time construction.
+
+Finite-difference divergence decreases by about four when halving the
+central-difference spacing; the finest full-field sampled error is 8.068.
+This supports the expected truncation trend but does not meet a 1e-3
+numerical divergence tolerance. Analytic incompressibility depends on the
+streamfunction adapters matching all meridional velocity contributions.
+Additional checks at nonzero time offset will exercise the slope wrappers.
+
+The sampled full momentum maximum in the new cutoff collars is
+1.564028779e9, including pressure and cutoff derivatives. This is not a
+spatial supremum or L2 integral, and no compensating force is declared.
+The new transition requires dynamical correction before acceptance.

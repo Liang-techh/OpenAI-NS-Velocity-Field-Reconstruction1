@@ -1,0 +1,336 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "global_field_ready": true,
+  "scope": "Bounded instantaneous global-localization prototype for the frozen enriched mean/wave candidate. The mean is localized through an axisymmetric streamfunction and the pressure is explicitly tapered. The compact Fourier wave corrections remain exact curls and are added after mean localization. No PDE, forcing, finite-time, or scale-recursion acceptance is claimed.",
+  "sources": {
+    "candidate": {
+      "path": "enriched_mean_endpoint_tangent.json",
+      "sha256": "ea78f641a3b4ca760e373716186c6eb93b27494f0c8982708c953468582b40c5"
+    },
+    "frozen_cache": {
+      "path": "full_wave_frozen_cache.json",
+      "sha256": "c03b9efa4bd65db79ee420df66808a34e7f634174851b47cca81f742b1435574"
+    },
+    "mean_source": {
+      "path": "broad_shear_dynamic_control.json",
+      "coefficients": [
+        -0.15188331850628525,
+        -21473.770867124906,
+        0.15628630103247954,
+        4.576967150824257,
+        -4055.8664975441716,
+        -5.477185580676799,
+        -268.4774960992659,
+        4196.913741580097,
+        119.04196579513302,
+        297.0154572848461,
+        -26127.068152539825,
+        -100.29754741542806,
+        131.82530222144135,
+        -21432.726561939657,
+        -37.37793733778612,
+        -3193.3720477294014,
+        0.4731683452560595,
+        1598.726525002178,
+        1490.6915949958977,
+        -0.910553684805867,
+        -787.7380791355715,
+        9393.29335057231,
+        2.330618631310612,
+        -3939.543397467479,
+        -1220.5536810921342,
+        -6051.568741015242,
+        -0.6628983533197372,
+        314.36525682275595,
+        -208.95220642261194,
+        -3.0647424182989114,
+        981.7015935023593,
+        -1743.2899935195271,
+        2.0920175882433503,
+        930.8387534384874,
+        -4321.4711798468525,
+        -0.7477812279093696,
+        -487.64061500119624,
+        73.32750378248402,
+        -0.6961624625527165,
+        -809.0696354972442,
+        31.053123422776277,
+        -0.04332905482894675,
+        -28.0254853203312,
+        -0.7955837945568461
+      ]
+    }
+  },
+  "inputs": {
+    "k": 11.0003,
+    "tau": 0.00024408986266228504,
+    "physical_time": "t=-tau",
+    "nu": 0.01,
+    "eta_flat": 0.3,
+    "eta_outer": 0.49,
+    "registered_tau_interval": [
+      4.76837158203125e-07,
+      0.5
+    ],
+    "join_X": 0.015625,
+    "join_ratio": 16.0,
+    "radial_cutoff_ratio": 2.0,
+    "wave_center": [
+      0.0016227128870842616,
+      -2.036013852023506e-05
+    ],
+    "wave_widths": [
+      0.0011600670852347063,
+      0.00045150643182473267
+    ],
+    "wave_mode": 1,
+    "wave_degree": 2,
+    "tangent_control_count": 264
+  },
+  "streamfunction": {
+    "construction": "JoinedField coefficient primitive + poloidal_bridge.septic, WidePoloidalModes polynomial bubble, SeparatedMomentModes flat_bump psi; MeridionalSlope contributes (k-k0) times its explicit unit psi. Pure swirl and pressure wrappers contribute zero.",
+    "radial_formula": "u_r=-(chi*rho*psi)_z/r; u_z=(chi*rho*psi)_r/r",
+    "wave_handling": "LocalPotentialField and Mode2TangentCorrection are added after mean localization; supported_fourier_basis supplies exact compact curls.",
+    "numerical_radial_integral_added": false,
+    "wrapper_trace": [
+      "BroadAnnularShear",
+      "BroadCentrifugalPressure",
+      "BroadShearSlope",
+      "CachedAdaptiveBridge",
+      "CompactPressureDirection",
+      "CorrectedField",
+      "DynamicControlledMean",
+      "GroupedJoinedField",
+      "MeridionalSlope",
+      "OuterPressure",
+      "OuterSwirlSlope",
+      "SeparatedMomentModes",
+      "WideJointModes",
+      "ZeroBackground"
+    ],
+    "unknown_wrapper_count": 0,
+    "reference_values": [
+      -8.019492373006446e-08,
+      1.9848383342277833e-07,
+      3.5552256564769547e-06
+    ]
+  },
+  "support": {
+    "eta_interval": [
+      -0.49,
+      0.49
+    ],
+    "z_halfwidth_at_reference": 0.0009142369351569102,
+    "radial_interval": [
+      0.0,
+      0.010138451744687358
+    ],
+    "radial_plateau_end": 0.005069225872343679,
+    "radial_tail_energy_bound_beyond_r2": 0.0,
+    "axial_tail_energy_bound_beyond_zcap": 0.0,
+    "finite_spatial_support_at_each_registered_tau": true,
+    "support_reason": "chi and rho are flat C-infinity cutoffs; exact-curl wave basis is compact in (r,z).",
+    "wave_full_support_eta_range": [
+      -0.278382058867128,
+      0.25598679548275033
+    ],
+    "wave_full_support_radial_range": [
+      0.0004626458018495553,
+      0.002782779972318968
+    ],
+    "wave_full_support_inside_eta_flat": true,
+    "wave_full_support_inside_radial_plateau": true
+  },
+  "plateau_check": {
+    "point_count": 11,
+    "mean_velocity_max_abs_difference": 0.0,
+    "mean_pressure_max_abs_difference": 0.0,
+    "full_velocity_max_abs_difference": 0.0,
+    "full_pressure_max_abs_difference": 0.0,
+    "wave_patch_inside_eta_flat": true,
+    "wave_patch_inside_radial_plateau": true,
+    "full_support_probe_points": [
+      [
+        0.0004626458018495553,
+        0.0,
+        -0.00047186657034496774
+      ],
+      [
+        0.0004626458018495553,
+        0.0,
+        0.0004311462933044976
+      ],
+      [
+        0.002782779972318968,
+        0.0,
+        -0.00047186657034496774
+      ],
+      [
+        0.002782779972318968,
+        0.0,
+        0.0004311462933044976
+      ]
+    ],
+    "full_support_eta_range": [
+      -0.278382058867128,
+      0.25598679548275033
+    ],
+    "full_support_radial_range": [
+      0.0004626458018495553,
+      0.002782779972318968
+    ],
+    "full_support_plateau_containment": true
+  },
+  "off_support_check": {
+    "point_count": 3,
+    "points": [
+      [
+        0.0020295360140746605,
+        0.0,
+        0.0012187911332761025
+      ],
+      [
+        0.0020295360140746605,
+        0.0,
+        -0.0012187911332761025
+      ],
+      [
+        0.011152296919156096,
+        0.0,
+        0.0
+      ]
+    ],
+    "velocity_max_abs": 0.0,
+    "pressure_max_abs": 0.0,
+    "mean_and_wave_zero_outside_cutoffs": true
+  },
+  "divergence_check": {
+    "points": [
+      [
+        0.0017332578934117905,
+        0.0,
+        0.0006081319769679877
+      ],
+      [
+        0.0017332578934117905,
+        0.0,
+        -0.0006081319769679877
+      ],
+      [
+        0.007603838808515518,
+        0.0,
+        0.0
+      ],
+      [
+        0.0016227128870842616,
+        0.0,
+        -2.036013852023506e-05
+      ]
+    ],
+    "rows": [
+      {
+        "space_step": 3.124675104149454e-06,
+        "mean_max_abs": 4.178319267270126,
+        "full_max_abs": 129.0579236385529,
+        "mean_values": [
+          -3.749227475164844,
+          -4.178319267270126,
+          0.0,
+          0.05175147216550613
+        ],
+        "full_values": [
+          -3.749227475164844,
+          -4.178319267270126,
+          0.0,
+          -129.0579236385529
+        ]
+      },
+      {
+        "space_step": 1.562337552074727e-06,
+        "mean_max_abs": 1.0454955228251492,
+        "full_max_abs": 32.27063496899791,
+        "mean_values": [
+          -0.938115067850049,
+          -1.0454955228251492,
+          0.0,
+          0.01293948582633675
+        ],
+        "full_values": [
+          -0.938115067850049,
+          -1.0454955228251492,
+          0.0,
+          -32.27063496899791
+        ]
+      },
+      {
+        "space_step": 7.811687760373635e-07,
+        "mean_max_abs": 0.26143114057595085,
+        "full_max_abs": 8.068037503166124,
+        "mean_values": [
+          -0.23457928894367797,
+          -0.26143114057595085,
+          0.0,
+          0.0032350284395761264
+        ],
+        "full_values": [
+          -0.23457928894367797,
+          -0.26143114057595085,
+          0.0,
+          -8.068037503166124
+        ]
+      }
+    ],
+    "analytic_mean_divergence_zero": true,
+    "wave_basis_divergence_identity": "supported_fourier_basis exact curl"
+  },
+  "cutoff_residual_samples": {
+    "points": [
+      [
+        0.0017020254633084066,
+        0.0,
+        0.0005119562960404342
+      ],
+      [
+        0.0017890751369069547,
+        0.0,
+        0.0007530205458689799
+      ],
+      [
+        0.007603838808515518,
+        0.0,
+        0.0
+      ],
+      [
+        0.007603838808515518,
+        0.0,
+        0.0
+      ]
+    ],
+    "space_step": 7.811687760373635e-07,
+    "time_step": 2.4408986266228506e-08,
+    "momentum_norms": [
+      145522713.42062533,
+      1564028779.0824537,
+      1124.7114951691658,
+      1124.7114951691658
+    ],
+    "momentum_max": 1564028779.0824537,
+    "divergence": [
+      6.874063274153741e-08,
+      -6.898264473420568e-06,
+      2.9609025675203295e-12,
+      2.9609025675203295e-12
+    ],
+    "cutoff_pressure_gradient_included": true,
+    "forcing": "none"
+  },
+  "limitations": {
+    "cutoff_geometry": "This bounded prototype uses a similarity eta cutoff and a tau-dependent radial cutoff. It is therefore not the paper's fixed spatial c(r^2,z) terminal localization through a critical-time neighborhood.",
+    "pressure": "Pressure is extended as chi*rho*p_local and its cutoff-gradient terms are included in the diagnostic residual; no pressure Poisson or Navier--Stokes closure is asserted.",
+    "acceptance": "Finite support, plateau equality, and finite-difference divergence convergence are construction evidence only; PDE, finite-time, and scale-recursion acceptance remain unverified."
+  },
+  "elapsed_seconds": 35.17031750001479
+}
