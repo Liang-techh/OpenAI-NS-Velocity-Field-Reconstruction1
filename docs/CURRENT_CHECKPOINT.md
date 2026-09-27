@@ -2,6 +2,15 @@
 
 ## ST073 research update - 2026-09-27
 
+The constrained short step retains a positive mode-1 instantaneous energy
+rate on the fixed patch: split moderate/higher quadrature gives 13161 and
+14501, versus initial 19027 and 20438. The 9.24% endpoint sensitivity is
+not convergence evidence. The two unconstrained delta-k=0.01 paths instead
+lose growth in all eight tested modes. See
+[the evolved growth screen](ST073_EVOLVED_WAVE_GROWTH.md). Joint stress and
+growth co-design is now the next construction; energy positivity alone is
+not covariance matching or actual wave integration.
+
 The first dynamically constrained state step is complete at delta k=0.0001.
 Recomputed endpoint compatibility passes 27/27 sampled cones, with integrated
 moment maximum 8.88285e-8; endpoint momentum maximum/L2 are 4.43477e9 and

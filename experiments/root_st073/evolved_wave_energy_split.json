@@ -1,0 +1,918 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "wave_integrated": false,
+  "source_growth_report": "broad_shear_growth.json",
+  "source_constrained_report": "meridional_constrained_evolution.json",
+  "unsplit_reference_report": "evolved_wave_energy.json",
+  "center": [
+    0.0016227128870842616,
+    -2.036013852023506e-05
+  ],
+  "widths": [
+    0.0011600670852347063,
+    0.00045150643182473267
+  ],
+  "width_factor": 8,
+  "degree": 2,
+  "mode": 1,
+  "carrier": [
+    -871.4212739359624,
+    -616.1878920703391
+  ],
+  "viscosity": 0.01,
+  "velocity_state_count": 25,
+  "pressure_direction_count": 19,
+  "pressure_coefficients_zero": true,
+  "grouped_backend_replacements": 1,
+  "radial_breaks": [
+    0.01,
+    0.1,
+    0.12,
+    0.38,
+    0.4,
+    0.58,
+    0.6,
+    0.62,
+    0.72,
+    0.88,
+    0.92,
+    0.93,
+    0.99
+  ],
+  "quadrature_definitions": {
+    "moderate": {
+      "z_order": 12,
+      "panel_order": 6
+    },
+    "higher": {
+      "z_order": 16,
+      "panel_order": 9
+    },
+    "weighting": "actual physical cylindrical volume weights from patch_nodes",
+    "same_physical_patch": true
+  },
+  "rows": {
+    "initial": {
+      "endpoint": "initial",
+      "k": 11.0003,
+      "tau": 0.00024408986266228504,
+      "physical_time": -0.00024408986266228504,
+      "support": {
+        "radial_halfwidth": 0.0011600670852347063,
+        "minimum_stencil_radius": 0.0004687814921846712,
+        "eta_abs_max_including_fd_stencil": 0.27469236282910936,
+        "eta_max_registered": 0.5,
+        "tau": 0.00024408986266228504,
+        "tau_min_registered": 4.76837158203125e-07,
+        "radial_off_axis_supported": true,
+        "axial_slab_supported": true,
+        "time_slab_supported": true,
+        "radial_support_condition": true,
+        "supported": true
+      },
+      "configurations": {
+        "moderate": {
+          "rank": 27,
+          "full_dimension": 27,
+          "svd_cutoff": 2.3283958589440988e-11,
+          "singular_max": 0.23283958589440987,
+          "singular_min_retained": 3.583166853406496e-05,
+          "mass_whitened_identity_error": 3.6742038689380395e-11,
+          "background_divergence_max_abs": 7.904425274318783e-07,
+          "background_divergence_rms": 2.4828392417313865e-11,
+          "background_strain_norm_max": 8280809.181171494,
+          "background_strain_norm_rms": 186.45791153459663,
+          "divergence_to_strain_rms_ratio": 1.331581599995935e-13,
+          "divergence_matrix_term_to_strain_matrix_ratio": 7.553125578997925e-14,
+          "diffusion_only": {
+            "lambda_min": -4036792.787020423,
+            "lambda_max": -267490.9760744959,
+            "energy_rate_2lambda_min": -8073585.574040846,
+            "energy_rate_2lambda_max": -534981.9521489918,
+            "positive_growth_direction_count": 0,
+            "dimension": 27
+          },
+          "strain_only": {
+            "lambda_min": -930655.3670514753,
+            "lambda_max": 956759.1872342817,
+            "energy_rate_2lambda_min": -1861310.7341029507,
+            "energy_rate_2lambda_max": 1913518.3744685634,
+            "positive_growth_direction_count": 15,
+            "dimension": 27
+          },
+          "combined": {
+            "lambda_min": -3983946.326716004,
+            "lambda_max": 9513.307913589277,
+            "energy_rate_2lambda_min": -7967892.653432008,
+            "energy_rate_2lambda_max": 19026.615827178553,
+            "positive_growth_direction_count": 1,
+            "dimension": 27
+          },
+          "combined_with_divergence_energy_term": {
+            "lambda_min": -3983946.3267159867,
+            "lambda_max": 9513.307913581433,
+            "energy_rate_2lambda_min": -7967892.653431973,
+            "energy_rate_2lambda_max": 19026.615827162866,
+            "positive_growth_direction_count": 1,
+            "dimension": 27
+          },
+          "geometry": {
+            "z_order": 12,
+            "panel_order": 6,
+            "radial_breaks": [
+              0.01,
+              0.1,
+              0.12,
+              0.38,
+              0.4,
+              0.58,
+              0.6,
+              0.62,
+              0.72,
+              0.88,
+              0.92,
+              0.93,
+              0.99
+            ],
+            "point_count": 450
+          },
+          "weight_sum": 2.13613448359038e-08,
+          "point_count": 450
+        },
+        "higher": {
+          "rank": 27,
+          "full_dimension": 27,
+          "svd_cutoff": 2.3283933862318006e-11,
+          "singular_max": 0.23283933862318004,
+          "singular_min_retained": 3.580517794657111e-05,
+          "mass_whitened_identity_error": 3.974306827023662e-12,
+          "background_divergence_max_abs": 3.89038905268535e-06,
+          "background_divergence_rms": 6.51772383519852e-11,
+          "background_strain_norm_max": 8457583.143251043,
+          "background_strain_norm_rms": 186.74788890774835,
+          "divergence_to_strain_rms_ratio": 3.4901191511825937e-13,
+          "divergence_matrix_term_to_strain_matrix_ratio": 1.3718476760676435e-13,
+          "diffusion_only": {
+            "lambda_min": -4023092.309792707,
+            "lambda_max": -267534.1832602772,
+            "energy_rate_2lambda_min": -8046184.619585414,
+            "energy_rate_2lambda_max": -535068.3665205544,
+            "positive_growth_direction_count": 0,
+            "dimension": 27
+          },
+          "strain_only": {
+            "lambda_min": -931354.7100465215,
+            "lambda_max": 957619.6994516758,
+            "energy_rate_2lambda_min": -1862709.420093043,
+            "energy_rate_2lambda_max": 1915239.3989033515,
+            "positive_growth_direction_count": 15,
+            "dimension": 27
+          },
+          "combined": {
+            "lambda_min": -3970454.985067838,
+            "lambda_max": 10218.954232660008,
+            "energy_rate_2lambda_min": -7940909.970135676,
+            "energy_rate_2lambda_max": 20437.908465320015,
+            "positive_growth_direction_count": 1,
+            "dimension": 27
+          },
+          "combined_with_divergence_energy_term": {
+            "lambda_min": -3970454.9850678635,
+            "lambda_max": 10218.954232571932,
+            "energy_rate_2lambda_min": -7940909.970135727,
+            "energy_rate_2lambda_max": 20437.908465143864,
+            "positive_growth_direction_count": 1,
+            "dimension": 27
+          },
+          "geometry": {
+            "z_order": 16,
+            "panel_order": 9,
+            "radial_breaks": [
+              0.01,
+              0.1,
+              0.12,
+              0.38,
+              0.4,
+              0.58,
+              0.6,
+              0.62,
+              0.72,
+              0.88,
+              0.92,
+              0.93,
+              0.99
+            ],
+            "point_count": 900
+          },
+          "weight_sum": 2.13613448359038e-08,
+          "point_count": 900,
+          "dominant_coefficients": {
+            "basis_layout": {
+              "degree": 2,
+              "polynomial_count": 9,
+              "polynomial_order": "a-major then b: j = a * (degree + 1) + b",
+              "component_order": [
+                "radial",
+                "theta",
+                "axial"
+              ],
+              "component_blocks": {
+                "radial": [
+                  0,
+                  9
+                ],
+                "theta": [
+                  9,
+                  18
+                ],
+                "axial": [
+                  18,
+                  27
+                ]
+              },
+              "pressure_block": [
+                0,
+                9
+              ]
+            },
+            "operator": "combined = -nu K - S in the mass-whitened basis",
+            "operator_with_divergence": "combined + 0.5 V^* W div(U) V",
+            "rank": 27,
+            "full_dimension": 27,
+            "svd_cutoff": 2.3283933862318006e-11,
+            "singular_max": 0.23283933862318004,
+            "singular_min_retained": 3.580517794657111e-05,
+            "mass_whitened_identity_error": 3.974306827023662e-12,
+            "combined_lambda_max": 10218.954244404747,
+            "combined_energy_rate_2lambda_max": 20437.908488809495,
+            "combined_with_divergence_lambda_max": 10218.954244317798,
+            "combined_with_divergence_energy_rate_2lambda_max": 20437.908488635596,
+            "potential_coefficients_combined": [
+              [
+                -154.20653263719305,
+                201.15180892705433
+              ],
+              [
+                -0.5833549098085529,
+                -0.0692803629529245
+              ],
+              [
+                153.41472727499232,
+                -201.04834854347237
+              ],
+              [
+                2322.9740799184933,
+                1759.0874971004635
+              ],
+              [
+                4.131901160112285,
+                7.28934729576342
+              ],
+              [
+                -2303.1808137026255,
+                -1779.6984676746383
+              ],
+              [
+                186.81508933822136,
+                -253.94409967723837
+              ],
+              [
+                -2.514942202627097,
+                -3.9643040736989423
+              ],
+              [
+                -243.35310552929212,
+                319.493470511435
+              ],
+              [
+                105.53992900296826,
+                -137.60798049291074
+              ],
+              [
+                0.3543942037787115,
+                0.019974696780653233
+              ],
+              [
+                -103.72899350779267,
+                136.68833523907463
+              ],
+              [
+                -82.29376367973012,
+                95.188362998302
+              ],
+              [
+                -1.4848787798393288,
+                -1.551200783317345
+              ],
+              [
+                65.29195324830539,
+                -76.57892044289865
+              ],
+              [
+                -31.1542264062825,
+                57.11785240783823
+              ],
+              [
+                3.2320321635879536,
+                4.07586986693559
+              ],
+              [
+                67.41301205583095,
+                -102.88674266739142
+              ],
+              [
+                -105.76831098786097,
+                136.1117873176968
+              ],
+              [
+                5927.328346103803,
+                4532.170987968189
+              ],
+              [
+                109.55926846713771,
+                -125.14952193535422
+              ],
+              [
+                4.399253899438035,
+                3.3907584911279867
+              ],
+              [
+                161.58885020858216,
+                -204.32437455671717
+              ],
+              [
+                2.1043994631028635,
+                4.431164011756048
+              ],
+              [
+                103.32618848723234,
+                -138.274224459035
+              ],
+              [
+                -6035.190165576966,
+                -4398.152365991903
+              ],
+              [
+                -147.50979173982796,
+                91.63498050265247
+              ]
+            ],
+            "potential_coefficients_with_divergence": [
+              [
+                -154.20653263716997,
+                201.15180892704055
+              ],
+              [
+                -0.5833549098084923,
+                -0.06928036295289022
+              ],
+              [
+                153.4147272749687,
+                -201.04834854345822
+              ],
+              [
+                2322.9740799183414,
+                1759.0874971001995
+              ],
+              [
+                4.1319011601131,
+                7.289347295763892
+              ],
+              [
+                -2303.180813702472,
+                -1779.6984676743757
+              ],
+              [
+                186.81508933818654,
+                -253.94409967721106
+              ],
+              [
+                -2.514942202629096,
+                -3.964304073699015
+              ],
+              [
+                -243.35310552925654,
+                319.4934705114081
+              ],
+              [
+                105.53992900295277,
+                -137.60798049290185
+              ],
+              [
+                0.354394203778771,
+                0.01997469678066235
+              ],
+              [
+                -103.72899350777679,
+                136.68833523906542
+              ],
+              [
+                -82.2937636797189,
+                95.18836299829724
+              ],
+              [
+                -1.4848787798395628,
+                -1.5512007833172232
+              ],
+              [
+                65.29195324829354,
+                -76.57892044289268
+              ],
+              [
+                -31.154226406276212,
+                57.117852407832146
+              ],
+              [
+                3.232032163588377,
+                4.075869866935176
+              ],
+              [
+                67.41301205582297,
+                -102.88674266738695
+              ],
+              [
+                -105.76831098784557,
+                136.11178731768763
+              ],
+              [
+                5927.328346103414,
+                4532.170987967514
+              ],
+              [
+                109.55926846712313,
+                -125.14952193534349
+              ],
+              [
+                4.399253899437735,
+                3.390758491127193
+              ],
+              [
+                161.58885020854757,
+                -204.32437455668278
+              ],
+              [
+                2.1043994631002327,
+                4.431164011754337
+              ],
+              [
+                103.32618848721646,
+                -138.2742244590254
+              ],
+              [
+                -6035.19016557656,
+                -4398.152365991245
+              ],
+              [
+                -147.50979173981597,
+                91.63498050265028
+              ]
+            ],
+            "coefficient_convention": "u = -curl(A); coefficients are radial, theta, axial blocks with a-major then b polynomial order"
+          }
+        }
+      },
+      "status": "completed",
+      "moderate_to_higher_relative_rate_change": 0.06905269394547922,
+      "unsplit_reference": {
+        "row": "initial",
+        "mode1_combined_energy_rate_2lambda": 20000.000107331285,
+        "mode1_with_divergence_energy_rate_2lambda": 20000.0001075882
+      }
+    },
+    "constrained_endpoint": {
+      "endpoint": "constrained_endpoint",
+      "k": 11.000399999999999,
+      "tau": 0.00024407294422862933,
+      "physical_time": -0.00024407294422862933,
+      "support": {
+        "radial_halfwidth": 0.0011600670852347063,
+        "minimum_stencil_radius": 0.00046878073855096964,
+        "eta_abs_max_including_fd_stencil": 0.27470105368202924,
+        "eta_max_registered": 0.5,
+        "tau": 0.00024407294422862933,
+        "tau_min_registered": 4.76837158203125e-07,
+        "radial_off_axis_supported": true,
+        "axial_slab_supported": true,
+        "time_slab_supported": true,
+        "radial_support_condition": true,
+        "supported": true
+      },
+      "configurations": {
+        "moderate": {
+          "rank": 27,
+          "full_dimension": 27,
+          "svd_cutoff": 2.3283958576849745e-11,
+          "singular_max": 0.23283958576849745,
+          "singular_min_retained": 3.583162286237475e-05,
+          "mass_whitened_identity_error": 5.101393401341812e-11,
+          "background_divergence_max_abs": 0.0019048965987167321,
+          "background_divergence_rms": 1.4821773168726722e-08,
+          "background_strain_norm_max": 8253208.659541508,
+          "background_strain_norm_rms": 185.86717396764683,
+          "divergence_to_strain_rms_ratio": 7.974389910994552e-11,
+          "divergence_matrix_term_to_strain_matrix_ratio": 1.277722116534961e-12,
+          "diffusion_only": {
+            "lambda_min": -4036792.722629886,
+            "lambda_max": -267490.9904658306,
+            "energy_rate_2lambda_min": -8073585.445259772,
+            "energy_rate_2lambda_max": -534981.9809316612,
+            "positive_growth_direction_count": 0,
+            "dimension": 27
+          },
+          "strain_only": {
+            "lambda_min": -927653.0955730698,
+            "lambda_max": 953430.4163513496,
+            "energy_rate_2lambda_min": -1855306.1911461395,
+            "energy_rate_2lambda_max": 1906860.8327026991,
+            "positive_growth_direction_count": 15,
+            "dimension": 27
+          },
+          "combined": {
+            "lambda_min": -3984081.8183435593,
+            "lambda_max": 6580.578665691136,
+            "energy_rate_2lambda_min": -7968163.636687119,
+            "energy_rate_2lambda_max": 13161.157331382272,
+            "positive_growth_direction_count": 1,
+            "dimension": 27
+          },
+          "combined_with_divergence_energy_term": {
+            "lambda_min": -3984081.8183436883,
+            "lambda_max": 6580.578666435663,
+            "energy_rate_2lambda_min": -7968163.636687377,
+            "energy_rate_2lambda_max": 13161.157332871326,
+            "positive_growth_direction_count": 1,
+            "dimension": 27
+          },
+          "geometry": {
+            "z_order": 12,
+            "panel_order": 6,
+            "radial_breaks": [
+              0.01,
+              0.1,
+              0.12,
+              0.38,
+              0.4,
+              0.58,
+              0.6,
+              0.62,
+              0.72,
+              0.88,
+              0.92,
+              0.93,
+              0.99
+            ],
+            "point_count": 450
+          },
+          "weight_sum": 2.13613448359038e-08,
+          "point_count": 450
+        },
+        "higher": {
+          "rank": 27,
+          "full_dimension": 27,
+          "svd_cutoff": 2.3283933862318765e-11,
+          "singular_max": 0.23283933862318765,
+          "singular_min_retained": 3.580517794243285e-05,
+          "mass_whitened_identity_error": 4.7768362221754364e-11,
+          "background_divergence_max_abs": 0.006160971450299257,
+          "background_divergence_rms": 2.9371657251235494e-08,
+          "background_strain_norm_max": 8429489.619730327,
+          "background_strain_norm_rms": 186.1560577916282,
+          "divergence_to_strain_rms_ratio": 1.5777975532825447e-10,
+          "divergence_matrix_term_to_strain_matrix_ratio": 3.274045586733369e-13,
+          "diffusion_only": {
+            "lambda_min": -4023092.3097838773,
+            "lambda_max": -267534.1832662628,
+            "energy_rate_2lambda_min": -8046184.619567755,
+            "energy_rate_2lambda_max": -535068.3665325256,
+            "positive_growth_direction_count": 0,
+            "dimension": 27
+          },
+          "strain_only": {
+            "lambda_min": -928433.2769567296,
+            "lambda_max": 954203.4026444936,
+            "energy_rate_2lambda_min": -1856866.5539134592,
+            "energy_rate_2lambda_max": 1908406.8052889872,
+            "positive_growth_direction_count": 15,
+            "dimension": 27
+          },
+          "combined": {
+            "lambda_min": -3970589.0888597984,
+            "lambda_max": 7250.407507281581,
+            "energy_rate_2lambda_min": -7941178.177719597,
+            "energy_rate_2lambda_max": 14500.815014563163,
+            "positive_growth_direction_count": 1,
+            "dimension": 27
+          },
+          "combined_with_divergence_energy_term": {
+            "lambda_min": -3970589.08885972,
+            "lambda_max": 7250.407507210037,
+            "energy_rate_2lambda_min": -7941178.17771944,
+            "energy_rate_2lambda_max": 14500.815014420074,
+            "positive_growth_direction_count": 1,
+            "dimension": 27
+          },
+          "geometry": {
+            "z_order": 16,
+            "panel_order": 9,
+            "radial_breaks": [
+              0.01,
+              0.1,
+              0.12,
+              0.38,
+              0.4,
+              0.58,
+              0.6,
+              0.62,
+              0.72,
+              0.88,
+              0.92,
+              0.93,
+              0.99
+            ],
+            "point_count": 900
+          },
+          "weight_sum": 2.13613448359038e-08,
+          "point_count": 900,
+          "dominant_coefficients": {
+            "basis_layout": {
+              "degree": 2,
+              "polynomial_count": 9,
+              "polynomial_order": "a-major then b: j = a * (degree + 1) + b",
+              "component_order": [
+                "radial",
+                "theta",
+                "axial"
+              ],
+              "component_blocks": {
+                "radial": [
+                  0,
+                  9
+                ],
+                "theta": [
+                  9,
+                  18
+                ],
+                "axial": [
+                  18,
+                  27
+                ]
+              },
+              "pressure_block": [
+                0,
+                9
+              ]
+            },
+            "operator": "combined = -nu K - S in the mass-whitened basis",
+            "operator_with_divergence": "combined + 0.5 V^* W div(U) V",
+            "rank": 27,
+            "full_dimension": 27,
+            "svd_cutoff": 2.3283933862318765e-11,
+            "singular_max": 0.23283933862318765,
+            "singular_min_retained": 3.580517794243285e-05,
+            "mass_whitened_identity_error": 4.7768362221754364e-11,
+            "combined_lambda_max": 7250.407509792229,
+            "combined_energy_rate_2lambda_max": 14500.815019584457,
+            "combined_with_divergence_lambda_max": 7250.407509719261,
+            "combined_with_divergence_energy_rate_2lambda_max": 14500.815019438522,
+            "potential_coefficients_combined": [
+              [
+                -153.72599142900643,
+                201.04248749100677
+              ],
+              [
+                -0.5851852588725507,
+                -0.06733281393491572
+              ],
+              [
+                152.92687144292037,
+                -200.93716182488865
+              ],
+              [
+                2321.7157468462474,
+                1753.5420223004173
+              ],
+              [
+                4.153902924667537,
+                7.312142154144263
+              ],
+              [
+                -2301.9158542924674,
+                -1774.1841582565564
+              ],
+              [
+                186.16375897874556,
+                -253.75135437452053
+              ],
+              [
+                -2.5235619405634466,
+                -3.977319434834789
+              ],
+              [
+                -242.66989142963388,
+                319.38688074264354
+              ],
+              [
+                105.21338333742514,
+                -137.53492665724394
+              ],
+              [
+                0.35601028478906915,
+                0.019466853749336523
+              ],
+              [
+                -103.39827380261184,
+                136.61442333698344
+              ],
+              [
+                -82.0675952776361,
+                95.16002264084466
+              ],
+              [
+                -1.488430975438023,
+                -1.550706263745854
+              ],
+              [
+                65.05141633667515,
+                -76.51540962051928
+              ],
+              [
+                -31.009260516841582,
+                57.04755635900779
+              ],
+              [
+                3.2368445010840143,
+                4.075001352213535
+              ],
+              [
+                67.29540584585749,
+                -102.93996881447823
+              ],
+              [
+                -105.44635903919647,
+                136.0300101302622
+              ],
+              [
+                5924.127077457169,
+                4517.986440118099
+              ],
+              [
+                109.2612136490318,
+                -125.02874768621112
+              ],
+              [
+                4.397176442428788,
+                3.382729312611324
+              ],
+              [
+                161.04747079955285,
+                -204.16066012765265
+              ],
+              [
+                2.1077256940924123,
+                4.420065172813551
+              ],
+              [
+                102.99582294402592,
+                -138.2006227535166
+              ],
+              [
+                -6031.667083929552,
+                -4384.032638638711
+              ],
+              [
+                -147.31417817064442,
+                91.49393456299468
+              ]
+            ],
+            "potential_coefficients_with_divergence": [
+              [
+                -153.72599142899173,
+                201.04248749099398
+              ],
+              [
+                -0.5851852588727418,
+                -0.06733281393520901
+              ],
+              [
+                152.92687144290525,
+                -200.93716182487557
+              ],
+              [
+                2321.715746846088,
+                1753.5420223002357
+              ],
+              [
+                4.153902924669016,
+                7.312142154145292
+              ],
+              [
+                -2301.9158542923087,
+                -1774.1841582563745
+              ],
+              [
+                186.16375897873695,
+                -253.75135437451388
+              ],
+              [
+                -2.523561940562814,
+                -3.977319434829348
+              ],
+              [
+                -242.66989142962314,
+                319.38688074263496
+              ],
+              [
+                105.21338333741441,
+                -137.5349266572345
+              ],
+              [
+                0.3560102847891595,
+                0.01946685374927578
+              ],
+              [
+                -103.39827380260091,
+                136.61442333697389
+              ],
+              [
+                -82.06759527762924,
+                95.16002264083802
+              ],
+              [
+                -1.4884309754379412,
+                -1.5507062637455418
+              ],
+              [
+                65.05141633666771,
+                -76.51540962051233
+              ],
+              [
+                -31.00926051683628,
+                57.047556359003096
+              ],
+              [
+                3.23684450108402,
+                4.075001352212585
+              ],
+              [
+                67.29540584585234,
+                -102.93996881447441
+              ],
+              [
+                -105.44635903918609,
+                136.03001013025218
+              ],
+              [
+                5924.127077456759,
+                4517.986440117631
+              ],
+              [
+                109.26121364902471,
+                -125.0287476862002
+              ],
+              [
+                4.397176442428746,
+                3.382729312610947
+              ],
+              [
+                161.04747079956596,
+                -204.16066012766726
+              ],
+              [
+                2.107725694092842,
+                4.42006517282661
+              ],
+              [
+                102.995822944016,
+                -138.20062275350813
+              ],
+              [
+                -6031.667083929141,
+                -4384.032638638243
+              ],
+              [
+                -147.31417817063544,
+                91.49393456297041
+              ]
+            ],
+            "coefficient_convention": "u = -curl(A); coefficients are radial, theta, axial blocks with a-major then b polynomial order"
+          }
+        }
+      },
+      "status": "completed",
+      "moderate_to_higher_relative_rate_change": 0.09238499228046651,
+      "unsplit_reference": {
+        "row": "constrained_delta_0.0001",
+        "mode1_combined_energy_rate_2lambda": 13955.511530705538,
+        "mode1_with_divergence_energy_rate_2lambda": 13955.511563889915
+      }
+    }
+  },
+  "scope": "Mode-1 diffusion/strain energy screen only. Radial cutoff panels are split at all saved constrained breaks and 0.62. No wave integration, nonlinear wave transfer, moment/cone refit, PDE, or acceptance claim.",
+  "elapsed_seconds": 94.4287195999932,
+  "matrix_cache": {
+    "saved": false,
+    "note": "Only spectra and higher-order dominant coefficients were retained; full complex M, G, and whitening matrices were not saved in this bounded run."
+  }
+}
