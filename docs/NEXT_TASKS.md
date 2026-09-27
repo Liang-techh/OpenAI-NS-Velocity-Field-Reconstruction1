@@ -23,6 +23,9 @@ Immediate update, 2026-09-27:
   its changed shear direction and growth discriminant. Initial H matrices
   cannot be reused after velocity changes. Reject inadmissible states or
   reduce the step; do not silently remove constraints to claim recursion.
+  One step at delta k=0.0001 now passes independent initial/endpoint replay:
+  27/27 cones and endpoint moments 8.88285e-8. Interior constraints, repeated
+  steps and target amplification remain open; see ST073_STATE_EVOLUTION.md.
 - [ ] Couple the resulting mean to actual nonaxisymmetric velocity waves and
   their momentum contributions. Demonstrate repeated scale transfer and
   vortex diagnostics before claiming recursive amplification. Retain the

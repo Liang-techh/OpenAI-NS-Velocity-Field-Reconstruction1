@@ -2,6 +2,15 @@
 
 ## ST073 research update - 2026-09-27
 
+The first dynamically constrained state step is complete at delta k=0.0001.
+Recomputed endpoint compatibility passes 27/27 sampled cones, with integrated
+moment maximum 8.88285e-8; endpoint momentum maximum/L2 are 4.43477e9 and
+188215.12. This is initial/endpoint local-tangent compatibility, not a
+continuous-time or recursive certificate. Fixed-cylinder spin does not
+increase. See `meridional_constrained_evolution.json` and the
+[state evolution record](ST073_STATE_EVOLUTION.md). Next investigate actual
+wave growth/coupling rather than extending mean relaxation alone.
+
 State-dependent unconstrained evolution now improves on frozen slopes over
 delta k=0.01: the independent endpoint maximum is 2.27427e9 versus
 6.00640e10, and volume L2 is 84464.34 versus 1473368.61. This uses a

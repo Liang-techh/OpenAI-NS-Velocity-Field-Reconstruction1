@@ -4,6 +4,7 @@ Sampling boundaries are fixed at k0, so geometric shrinkage is not imposed by
 rescaling the diagnostic domain. Finite-grid enstrophy moments describe this
 cylinder only, not a globally identified vortex core or global finite energy.
 """
+import argparse
 import json
 from pathlib import Path
 import numpy as np
@@ -62,9 +63,9 @@ def observe(field, points, weights, k):
         cylinder_kinetic_energy=float(.5*(weights @ np.sum(u*u, axis=1))))
 
 
-def run():
+def run(input_name='meridional_state_evolution.json', output_name='vortex_state_observables.json'):
     root = Path(__file__).resolve().parent
-    evolution = json.loads((root/'meridional_state_evolution.json').read_text())
+    evolution = json.loads((root/input_name).read_text())
     dynamic, source = load_saved_field(); install_in_field(dynamic)
     base, values, pressures, _, _ = value_and_pressure_modes(dynamic, source)
     points, weights, domain = fixed_cylinder(base.inner, source['k'])
@@ -83,12 +84,22 @@ def run():
                 run[label+'_slope'], [], run['endpoint_k'])
             rows.append(dict(path=label, delta_k=run['delta_k'],
                              **observe(field, points, weights, run['endpoint_k'])))
+    endpoint = evolution.get('endpoint_fit', {})
+    if endpoint.get('status') == 'fit_complete':
+        field = StatefulMean(dynamic, values, [], endpoint['state'],
+                             endpoint['slope'], [], endpoint['k'])
+        rows.append(dict(path='constrained', delta_k=evolution['delta_k'],
+                         **observe(field, points, weights, endpoint['k'])))
     report = dict(accepted=False, scale_recursion_established=False,
-        source_status=evolution['status'], domain=domain, rows=rows,
+        source_report=input_name, source_status=evolution['status'], domain=domain, rows=rows,
         scope='Fixed physical cylinder, sampled vorticity/enstrophy shape and swirl diagnostics. Not identified core radii, global energy, grid convergence, PDE or scale recursion proof.')
-    root.joinpath('vortex_state_observables.json').write_text(json.dumps(report, indent=2)+'\n')
+    root.joinpath(output_name).write_text(json.dumps(report, indent=2)+'\n')
     print(json.dumps(report), flush=True)
 
 
 if __name__ == '__main__':
-    run()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--input', default='meridional_state_evolution.json')
+    parser.add_argument('--output', default='vortex_state_observables.json')
+    args = parser.parse_args()
+    run(args.input, args.output)

@@ -1,0 +1,48 @@
+{
+  "accepted": false,
+  "scale_recursion_established": false,
+  "source_report": "meridional_constrained_evolution.json",
+  "source_status": "initial_replay_started",
+  "domain": {
+    "radius": 0.004418957910297721,
+    "axial_half_length": 0.0009389701836394787,
+    "reference_k": 11.0003,
+    "radial_order_per_panel": 6,
+    "axial_order": 12,
+    "angles": 3
+  },
+  "rows": [
+    {
+      "path": "initial",
+      "k": 11.0003,
+      "tau": 0.00024408986266228504,
+      "point_count": 1944,
+      "sampled_vorticity_max": 16543435.920269286,
+      "cylinder_enstrophy": 181012.77365329018,
+      "enstrophy_radial_rms": 0.0005595125314838565,
+      "enstrophy_axial_rms": 0.0005224019522557847,
+      "enstrophy_aspect_ratio": 0.9336733725522598,
+      "enstrophy_weighted_angular_speed": 2125176.5678207832,
+      "sampled_swirl_max": 2027.2511450147354,
+      "sampled_circulation_max": 7.889640814155016,
+      "cylinder_kinetic_energy": 0.006562627317107906
+    },
+    {
+      "path": "constrained",
+      "delta_k": 0.0001,
+      "k": 11.000399999999999,
+      "tau": 0.00024407294422862933,
+      "point_count": 1944,
+      "sampled_vorticity_max": 16489691.370907377,
+      "cylinder_enstrophy": 179966.00315811866,
+      "enstrophy_radial_rms": 0.0005595358416779712,
+      "enstrophy_axial_rms": 0.0005226134997168972,
+      "enstrophy_aspect_ratio": 0.9340125525286298,
+      "enstrophy_weighted_angular_speed": 2118206.4502884285,
+      "sampled_swirl_max": 2020.6576054663026,
+      "sampled_circulation_max": 7.8635058026683815,
+      "cylinder_kinetic_energy": 0.006519571647262911
+    }
+  ],
+  "scope": "Fixed physical cylinder, sampled vorticity/enstrophy shape and swirl diagnostics. Not identified core radii, global energy, grid convergence, PDE or scale recursion proof."
+}
