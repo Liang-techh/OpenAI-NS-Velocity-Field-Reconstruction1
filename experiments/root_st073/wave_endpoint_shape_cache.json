@@ -1,0 +1,1381 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "wave_integrated": false,
+  "source": "shape_direction_margin_tangent.json",
+  "source_sha256": "c524232c750c15c807bd4290798bd32f39b7da4d896e73c293342688e91220ec",
+  "geometry_source": "full_wave_frozen_cache.json",
+  "geometry_sha256": "c03b9efa4bd65db79ee420df66808a34e7f634174851b47cca81f742b1435574",
+  "shape_rows_source": "wave_shape_tangent_rows.json",
+  "shape_rows_sha256": "940c3ef0ae5fbc53d6dcea54e273dbb698bb282f013835027ef277e53b64c218",
+  "mean_source": "broad_meridional_constrained.json",
+  "mean_source_sha256": "44d63c87eecdcfe796a25c829e90f18df0f0a722a8fc64b56a71d99ee4b0e34d",
+  "cache_path": "wave_endpoint_shape_cache.npz",
+  "cache_sha256": "8e580f48d8e03315908ac67c3bb467d7b9c48a1eb0caabf365175cb6e761a53b",
+  "reference_k": 11.0003,
+  "endpoint_k": 11.000300999999999,
+  "physical_time_reference": -0.00024408986266228504,
+  "physical_time_endpoint": -0.0002440896934721437,
+  "tau_reference": 0.00024408986266228504,
+  "tau_endpoint": 0.0002440896934721437,
+  "dtau": 1.6919014133491908e-10,
+  "finite_difference_hspace": 7.811685053049433e-07,
+  "point_count": 7776,
+  "domain": {
+    "radius": 0.004418957910297721,
+    "axial_half_length": 0.0009389701836394787,
+    "reference_k": 11.0003,
+    "radial_order_per_panel": 6,
+    "axial_order": 12,
+    "angles": 12
+  },
+  "control_count": 180,
+  "pressure_column_count": 45,
+  "precision_convention": {
+    "mean_offset": "double precision mean.fields with centered five-point spatial FD",
+    "initial_wave_offset": "double precision supported_fourier_analytic_jets",
+    "tangent_velocity_gradient": "double precision supported_fourier_analytic_jets, multiplied by tau_reference-tau_endpoint",
+    "pressure_columns": "exact zero velocity and gradient"
+  },
+  "control_layout": [
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 0,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 1,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 2,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 3,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 4,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 5,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 6,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 7,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 8,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 9,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 10,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 11,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 12,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 13,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 14,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 15,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 16,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 17,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 18,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 19,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 20,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 21,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 22,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 23,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 24,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 25,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 26,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 0,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 1,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 2,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 3,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 4,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 5,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 6,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 7,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 8,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 0,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 0,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 1,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 1,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 2,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 2,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 3,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 3,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 4,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 4,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 5,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 5,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 6,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 6,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 7,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 7,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 8,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 8,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 9,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 9,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 10,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 10,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 11,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 11,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 12,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 12,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 13,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 13,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 14,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 14,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 15,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 15,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 16,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 16,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 17,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 17,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 18,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 18,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 19,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 19,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 20,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 20,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 21,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 21,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 22,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 22,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 23,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 23,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 24,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 24,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 25,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 25,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 26,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 26,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "real",
+      "index": 0,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 0,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "real",
+      "index": 1,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 1,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "real",
+      "index": 2,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 2,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "real",
+      "index": 3,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 3,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "real",
+      "index": 4,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 4,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "real",
+      "index": 5,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 5,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "real",
+      "index": 6,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 6,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "real",
+      "index": 7,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 7,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "real",
+      "index": 8,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 8,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 0,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 0,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 1,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 1,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 2,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 2,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 3,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 3,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 4,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 4,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 5,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 5,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 6,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 6,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 7,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 7,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 8,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 8,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 9,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 9,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 10,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 10,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 11,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 11,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 12,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 12,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 13,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 13,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 14,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 14,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 15,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 15,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 16,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 16,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 17,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 17,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 18,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 18,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 19,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 19,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 20,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 20,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 21,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 21,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 22,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 22,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 23,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 23,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 24,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 24,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 25,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 25,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 26,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 26,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 0,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 0,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 1,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 1,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 2,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 2,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 3,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 3,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 4,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 4,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 5,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 5,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 6,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 6,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 7,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 7,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 8,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 8,
+      "precision": "zero_velocity_pressure"
+    }
+  ],
+  "reference_observables": [
+    0.001135818922406801,
+    0.20859563089383382,
+    728003.8958324688
+  ],
+  "zero_control_endpoint_observables": [
+    0.0011358202655298605,
+    0.2085938754475625,
+    727975.5190514398
+  ],
+  "zero_control_detail": {
+    "energy": 3197957.1809119126,
+    "zmean": -9.32397200581389e-05,
+    "radius_squared": 1.290087675588323e-06,
+    "axial_squared": 5.6133527175781965e-08,
+    "radial_rms": 0.0011358202655298605,
+    "axial_rms": 0.0002369251509987531,
+    "spin": 727975.5190514398
+  },
+  "candidate_comparisons": {
+    "original_wave_moment_cone": {
+      "control_source": "wave_moment_cone_tangent.json",
+      "endpoint_observables": [
+        0.001135823961316829,
+        0.2085927289922167,
+        735689.6361257615
+      ],
+      "endpoint_jacobian_max_abs": 9.908059484380311e-05,
+      "saved_fd_endpoint_observables": [
+        0.0011358239611519057,
+        0.20859272898471348,
+        735689.6364117042
+      ],
+      "analytic_minus_saved_fd": [
+        1.649234134676325e-13,
+        7.503220267324195e-12,
+        -0.00028594268951565027
+      ]
+    },
+    "shape_direction_margin": {
+      "control_source": "shape_direction_margin_tangent.json",
+      "endpoint_observables": [
+        0.0011358088118600253,
+        0.20859728347223067,
+        735706.2693047178
+      ],
+      "endpoint_jacobian_max_abs": 9.907260375011996e-05,
+      "saved_fd_endpoint_observables": [
+        0.0011358088116951294,
+        0.208597283464765,
+        735706.2695914463
+      ],
+      "analytic_minus_saved_fd": [
+        1.6489587473245138e-13,
+        7.46566697351625e-12,
+        -0.0002867284929379821
+      ]
+    }
+  },
+  "directional_gradient_check": {
+    "control_source": "shape_direction_margin_tangent.json",
+    "step": 1000.0,
+    "analytic": [
+      4.439083659685875e-18,
+      5.711680836915267e-14,
+      9.38749622476762e-07
+    ],
+    "finite_difference": [
+      4.43915737502465e-18,
+      5.711681128062196e-14,
+      9.387496975250542e-07
+    ],
+    "max_abs_error": 7.504829216148384e-14,
+    "relative_error": 7.994494417345033e-08
+  },
+  "scope": "Fixed physical cylinder endpoint oracle. Mean endpoint velocity and Jacobian use the same five-point spatial stencil as saved observables; wave offset and all tangent velocity/J columns use analytic supported Fourier jets. Endpoint shape only; no PDE, trajectory, or scale-recursion claim.",
+  "elapsed_seconds": 75.12273050000658
+}
