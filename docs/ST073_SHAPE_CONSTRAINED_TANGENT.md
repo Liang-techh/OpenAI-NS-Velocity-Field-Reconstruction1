@@ -60,9 +60,24 @@ A separate candidate `shape_direction_margin_tangent.json` increases the
 explicit fractional direction floor to 10 per k. Its assembled rates are
 [-0.01135819, +2.08595631, +7.7038227e9], while training L2 is 2,869,199.24
 (about 0.0145% above the earlier cone-compatible candidate). All assembled
-moments and cones still pass. Its actual interval and compatibility replays
-are pending; the larger margin is an experimental response to observed
-curvature, not a proven recursive exponent.
+moments and cones still pass. The larger margin is an experimental response
+to observed curvature, not a proven recursive exponent.
+
+The larger-margin actual-field shape replay is now complete. Both the
+central derivative signs and all three forward-interval signs pass:
+
+| Fixed-cylinder observable | k0 | k0 + 1e-6 |
+|---|---:|---:|
+| Enstrophy radial RMS | 0.0011358189224 | 0.0011358088117 |
+| Axial/radial RMS ratio | 0.2085956309 | 0.2085972835 |
+| Weighted angular speed | 728003.8958 | 735706.2696 |
+
+The physical time increment is only about 1.692e-10. Radial contraction is
+about 0.000890%, aspect increases about 0.000792%, and weighted spin rises
+about 1.06%. Peak sampled swirl still decreases (6569.41 to 6560.49).
+This establishes a favorable sampled change of this affine candidate over
+one very short increment, not continuous monotonicity, an accepted NS step,
+or scale recursion. Its independent momentum/compatibility replay is pending.
 
 ## Reproduction
 

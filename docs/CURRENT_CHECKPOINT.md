@@ -2,6 +2,14 @@
 
 ## ST073 research update - 2026-09-27
 
+Larger shape-direction margin now gives all three requested sampled forward
+changes over delta-k=1e-6: radial RMS decreases, aspect increases, and
+weighted angular speed increases. Peak swirl still decreases. This is an
+affine candidate increment over physical delta-t about 1.692e-10, not an
+accepted NS step or scale recursion. Independent momentum/compatibility
+replay is pending. See the updated
+[shape-constrained result](ST073_SHAPE_CONSTRAINED_TANGENT.md).
+
 Shape-constrained tangent now preserves independent moments and 27/27
 cones while giving all three requested central derivative signs. However,
 the forward delta-k=1e-6 interval still expands radius and lowers aspect:
