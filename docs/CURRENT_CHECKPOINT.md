@@ -14,7 +14,7 @@ independent actual momentum L2 to 1.92894e6 and maximum to 1.18244e11
 (about 27% and 30% below the prior 236-control candidate). All three
 actual sampled forward geometric signs pass. Enlarged-mean independent
 replay gives moment maximum 2.1084e-7 and 27/27 cones passing, minimum
-margin 9.94824e-5. Higher-quadrature refitting now lowers same-grid L2 from 1.92798e6 to 1.89886e6, but increases the peak from 1.13931e11 to 1.15611e11. A peak-capped solve is required before treating this as a joint improvement. See [refined momentum](ST073_REFINED_MOMENTUM.md).
+margin 9.94824e-5. Higher-quadrature refitting now lowers same-grid L2 from 1.92798e6 to 1.89886e6, but increases the peak from 1.13931e11 to 1.15611e11. The peak-capped solve improves independent L2 to 1.89999e6 but worsens its maximum to 1.20729e11. It is not a joint improvement; peak constraints must cover both grids before a separate disjoint check. See [refined momentum](ST073_REFINED_MOMENTUM.md).
 No NS step or scale recursion is accepted. See
 [enriched mean endpoint](ST073_ENRICHED_MEAN_ENDPOINT.md).
 

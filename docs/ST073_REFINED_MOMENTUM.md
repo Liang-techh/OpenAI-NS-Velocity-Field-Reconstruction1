@@ -32,3 +32,31 @@ python enriched_mean_endpoint_tangent.py --refined-cache refined_wave_momentum_c
 The refined report records the exact NPZ SHA256 and all source hashes.
 Finite-difference error and continuum quadrature convergence are not yet
 controlled at the final 1e-3 tolerance.
+
+## Peak-capped refined solve
+
+`balanced_refined_tangent.py` minimizes the same weighted L2 objective while
+retaining the four moments, 81 cone rows and direct endpoint geometry.
+A cutting-plane pool starts from the 20 largest seed residual locations;
+all 44,400 sampled norms are then checked. One round suffices for this
+candidate. The peak cap is 1.000001 times the seed maximum, a numerical
+allowance, not a claim of strictly reducing the maximum.
+
+Selected sampled L2 is 1,898,919.6797, compared with seed 1,927,978.0993.
+The sampled peak is 1.13930727617e11, at the allowed cap. Assembled moment
+error is approximately 3.03e-9 and all 81 cone inequalities pass. Independent
+actual-field replay is required before adopting this as the next reference
+candidate. The report distinguishes assembled feasibility from independent
+constraint/trajectory validation.
+
+Independent full-field replay on the 18,720-point order-13 grid is now
+complete: L2 1,899,994.1916 and maximum 1.20728532873e11. Compared with the
+old candidate on this exact grid (L2 1,928,935.1626, max 1.18244028332e11),
+L2 improves about 1.50% but the peak worsens about 2.10%. Thus the refined-
+grid peak cap does NOT establish a peak cap on another grid, much less a
+continuum supremum. This candidate is not accepted as improving both goals.
+
+The next solve includes the old independent-grid peak locations alongside
+the refined-grid constraints. Once used in fitting, that grid is no longer
+an independent validation set; a separate disjoint peak search is required.
+Report: `balanced_refined_momentum_replay.json`.

@@ -1,0 +1,98 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "source": "balanced_refined_tangent.json",
+  "source_sha256": "8396633295fb37307aa3d946852e5a4479e5f46e78474942997bc3b5ea601909",
+  "mode": "momentum",
+  "tangent_control_count": 264,
+  "scope": "Sampled actual Cartesian field. No full-domain, time-evolution or scale-recursion acceptance.",
+  "reference_tau": 0.00024408986266228504,
+  "evaluation_tau": 0.00024408986266228504,
+  "momentum_delta_k": 0.0,
+  "physical_time_increment": 0.0,
+  "spatial_domain": "Fixed reference-time independent quadrature points",
+  "momentum": {
+    "point_count": 18720,
+    "angles": 12,
+    "physical_volume": 2.1361344835903807e-08,
+    "momentum_max": 120728532872.7449,
+    "momentum_volume_L2": 1899994.1915686377,
+    "modes": [
+      {
+        "mode": 0,
+        "volume_L2": 1506581.1038872846,
+        "squared_L2_fraction": 0.6287536012307855,
+        "cylindrical_component_squared_L2": [
+          809271049919.9845,
+          1280465361589.4954,
+          180050211080.74942
+        ]
+      },
+      {
+        "mode": 1,
+        "volume_L2": 222838.25837993724,
+        "squared_L2_fraction": 0.013755455126948488,
+        "cylindrical_component_squared_L2": [
+          28019112553.339954,
+          12493402476.291733,
+          9144374368.171982
+        ]
+      },
+      {
+        "mode": 2,
+        "volume_L2": 1136016.908327746,
+        "squared_L2_fraction": 0.35749094364226675,
+        "cylindrical_component_squared_L2": [
+          620158280181.2998,
+          575227479989.4365,
+          95148655835.79427
+        ]
+      },
+      {
+        "mode": 3,
+        "volume_L2": 0.0011231428613873598,
+        "squared_L2_fraction": 3.4943423817168745e-19,
+        "cylindrical_component_squared_L2": [
+          5.991821282303262e-08,
+          3.615727828816546e-07,
+          8.39958891380699e-07
+        ]
+      },
+      {
+        "mode": 4,
+        "volume_L2": 0.0008317608298005322,
+        "squared_L2_fraction": 1.9164274457899462e-19,
+        "cylindrical_component_squared_L2": [
+          5.438748957175116e-08,
+          6.366471627547883e-07,
+          7.91425663930399e-10
+        ]
+      },
+      {
+        "mode": 5,
+        "volume_L2": 0.0011361394334271522,
+        "squared_L2_fraction": 3.5756806216963534e-19,
+        "cylindrical_component_squared_L2": [
+          6.113874672994026e-08,
+          3.7674957921609975e-07,
+          8.529244862421305e-07
+        ]
+      },
+      {
+        "mode": 6,
+        "volume_L2": 0.00020208165577404922,
+        "squared_L2_fraction": 1.1312256311513615e-20,
+        "cylindrical_component_squared_L2": [
+          7.076560779680178e-09,
+          3.3259409177613685e-08,
+          5.010256430874528e-10
+        ]
+      }
+    ],
+    "parseval_relative_error": 6.762939548930335e-16,
+    "scope": "Sampled cylindrical Fourier budget; angular aliasing and spatial accuracy unverified"
+  },
+  "elapsed_seconds": 98.38995370001066
+}
