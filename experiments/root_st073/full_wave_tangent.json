@@ -131865,7 +131865,7 @@
       714,
       1080
     ],
-    "epsilon": 1e-06,
+    "epsilon": 1.0,
     "rows": [
       {
         "index": 0,
@@ -131875,8 +131875,8 @@
           "component": "real",
           "index": 0
         },
-        "max_abs_error": 2.0877977766750746,
-        "relative_l2_error": 0.0004537853441779796,
+        "max_abs_error": 3.0472647267743014e-06,
+        "relative_l2_error": 4.2925212853710427e-10,
         "predicted_norm": 7280.068045575921
       },
       {
@@ -131887,8 +131887,8 @@
           "component": "real",
           "index": 0
         },
-        "max_abs_error": 61.55405235579293,
-        "relative_l2_error": 0.013711184672522919,
+        "max_abs_error": 6.139982176023295e-05,
+        "relative_l2_error": 1.256633433285774e-08,
         "predicted_norm": 7285.315221180901
       },
       {
@@ -131899,8 +131899,8 @@
           "component": "real",
           "index": 0
         },
-        "max_abs_error": 1054.1314271319497,
-        "relative_l2_error": 0.2749218338226747,
+        "max_abs_error": 0.001672357697316329,
+        "relative_l2_error": 4.137997434561314e-07,
         "predicted_norm": 7228.208871224423
       },
       {
@@ -131911,8 +131911,8 @@
           "component": "imag",
           "index": 13
         },
-        "max_abs_error": 20.542838321582238,
-        "relative_l2_error": 0.16084742232960314,
+        "max_abs_error": 0.00031141761389053,
+        "relative_l2_error": 3.7400114872434233e-06,
         "predicted_norm": 161.99797943141476
       },
       {
@@ -131923,8 +131923,8 @@
           "component": "real",
           "index": 0
         },
-        "max_abs_error": 51.80799638676856,
-        "relative_l2_error": 0.011580657095226201,
+        "max_abs_error": 6.209212305030576e-05,
+        "relative_l2_error": 1.436859337768183e-08,
         "predicted_norm": 7229.3660358879715
       },
       {
@@ -131935,8 +131935,8 @@
           "component": "real",
           "index": 0
         },
-        "max_abs_error": 4.152615383663942,
-        "relative_l2_error": 0.000685908183782956,
+        "max_abs_error": 3.889599611284211e-06,
+        "relative_l2_error": 7.176787140448357e-10,
         "predicted_norm": 7316.307363257378
       },
       {
@@ -131947,13 +131947,13 @@
           "component": "real",
           "index": 0
         },
-        "max_abs_error": 62.059360996705436,
-        "relative_l2_error": 0.015302959159974403,
+        "max_abs_error": 6.336454359967547e-05,
+        "relative_l2_error": 1.675352043862022e-08,
         "predicted_norm": 7328.750477684542
       }
     ],
-    "max_relative_l2_error": 0.2749218338226747,
-    "max_abs_error": 1054.1314271319497,
-    "note": "Finite-difference check at cached fit points selected at each sampled column maximum; complete Cartesian jets."
+    "max_relative_l2_error": 3.7400114872434233e-06,
+    "max_abs_error": 0.001672357697316329,
+    "note": "Finite-difference check at cached fit points selected at each sampled column maximum; unit perturbations avoid cancellation in complete Cartesian jets."
   }
 }

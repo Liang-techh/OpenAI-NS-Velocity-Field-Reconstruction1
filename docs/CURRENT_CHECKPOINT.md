@@ -2,6 +2,13 @@
 
 ## ST073 research update - 2026-09-27
 
+Denser harmonic fitting now improves the new order-13 independent physical
+replay: frozen-wave patch L2 9.9155e6 becomes 7.3766e6, with maximum
+5.6409e11. The earlier severe fitting instability is reduced, but the
+absolute residual remains unacceptable. The next construction optimizes
+wave shape against full momentum while retaining local flux/growth targets.
+See the denser correction in [joint wave/mean status](ST073_JOINT_WAVE_MEAN_STATUS.md).
+
 The old growing-wave joint 45-control mean fit has completed spatial replay:
 annulus volume L2 worsens from 193257.9992 to 193600.2673, despite a small
 patch improvement. Do not extend this candidate as a successful recursive

@@ -57,8 +57,30 @@ failure of this fit. Restricted38 actual holdout L2 is 9758240.27, also
 much worse than mean-only. A denser spatial fit is the next bounded
 correction. This analysis uses saved jets without repeating their assembly.
 
-The small individual-column finite-difference check in the tangent report
-uses near-zero sampled responses and has relative error 1.0. Its small
-absolute errors are not positive validation; the full fitted-field replay
-is the relevant evidence here. The velocity dimension and interleaved
-complex coefficient decoding were corrected before the completed replay.
+The initial individual-column check sampled near-zero responses and was
+uninformative. The report now checks unit perturbations at column maxima,
+with maximum relative difference 3.74e-6 and absolute difference 0.00167.
+This checks implementation consistency, not the requested absolute PDE
+gate. The velocity dimension and interleaved complex coefficient decoding
+were corrected before the completed replay.
+
+## Denser spatial correction
+
+`full_wave_dense_tangent.py/.json` reuses the previous 9072-point order-9
+holdout as training and clearly relabels it. A new order-13, 12-angle grid
+with angle shift 0.47 contains 18720 independent points. Training chooses
+the rank-179 fit over the prespecified rank-165 SVD truncation.
+
+The selected fit has training L2 7454759.29 and new-grid actual full-field
+L2 7376639.77, down from frozen-wave 9915464.37 on that same new grid.
+Its sampled maximum is 5.64090e11. The earlier order-6 fit's spatial
+instability is reduced; no convergence certificate follows from two grids.
+The fitted mode-1 energy rate is positive, +1294.90, while the truncated
+alternative is negative. Mode 0 still carries 64.48% of residual squared
+L2 and mode 2 carries 35.26%, making wave-shape optimization the next step.
+
+Actual and predicted corrected residuals differ by L2 0.001701 and maximum
+70.70: small relative to these enormous residuals, but already above the
+final absolute tolerance. Do not present relative implementation agreement
+as the requested 1e-3 physical accuracy. Mean compatibility, finite-time
+evolution and scale recursion remain unestablished.
