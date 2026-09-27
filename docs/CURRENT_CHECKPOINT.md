@@ -2,6 +2,24 @@
 
 ## ST073 research update - 2026-09-27
 
+State-dependent unconstrained evolution now improves on frozen slopes over
+delta k=0.01: the independent endpoint maximum is 2.27427e9 versus
+6.00640e10, and volume L2 is 84464.34 versus 1473368.61. This uses a
+165-point fit and two explicit Euler steps, with the full quadratic
+nonlinearity. It is not a matched or converged trajectory. A coarse
+44-point fit gave misleadingly poor evolution because its axial sampling
+aliased basis directions; the dense unregularized matrix is full rank.
+See [state evolution and its limitations](ST073_STATE_EVOLUTION.md).
+
+Important target check: on a fixed physical cylinder, that refreshed
+delta-k=0.01 path broadens the enstrophy radial RMS from 0.0005595 to
+0.0016775, lowers the axial/radial ratio from 0.9337 to 0.3904, and lowers
+weighted angular speed from 2.125e6 to 0.968e6. The residual improvement is
+not evidence of the requested vortex amplification. The diagnostic is
+`vortex_state_observables.json`; it describes the sampled cylinder, not an
+identified global core. Do not extend this unconstrained mean-relaxation
+path as if it were successful scale recursion.
+
 The constrained 44-direction replay is now complete. On the independent
 176-point spatial holdout, momentum maximum decreases from 7.01009e9 to
 4.50644e9 and physical-volume L2 from 237497.46 to 188297.75. All 27 sampled

@@ -15,6 +15,10 @@ Immediate update, 2026-09-27:
   changed scale. Preserve the original basis knots, complete quadratic
   advection, physical-volume weights, and independent spatial holdouts.
   Compare refreshed and frozen slopes at delta k 0.001 and 0.01 first.
+  The unconstrained dense-grid comparison is now completed in
+  `meridional_state_evolution.json`; refreshed endpoint residuals improve,
+  but fixed-cylinder vorticity diagnostics show broadening and weaker spin.
+  This task remains open for a matched, target-preserving trajectory.
 - [ ] Rebuild moment and cone constraints using each evolved state, including
   its changed shear direction and growth discriminant. Initial H matrices
   cannot be reused after velocity changes. Reject inadmissible states or
