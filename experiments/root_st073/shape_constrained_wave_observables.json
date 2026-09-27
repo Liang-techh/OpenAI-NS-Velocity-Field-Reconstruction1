@@ -1,0 +1,93 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "source": "shape_constrained_wave_tangent.json",
+  "source_sha256": "61812f35535fe84dfe5bc676d8294008ee1e61e7c894d24689bc77b9dbb28c60",
+  "domain": {
+    "radius": 0.004418957910297721,
+    "axial_half_length": 0.0009389701836394787,
+    "reference_k": 11.0003,
+    "radial_order_per_panel": 6,
+    "axial_order": 12,
+    "angles": 12
+  },
+  "delta_k": 1e-06,
+  "rows": [
+    {
+      "k": 11.000299,
+      "tau": 0.00024409003185254366,
+      "point_count": 7776,
+      "sampled_vorticity_max": 65181388.49720128,
+      "cylinder_enstrophy": 3198034.551780695,
+      "enstrophy_radial_rms": 0.0011358201784790068,
+      "enstrophy_axial_rms": 0.00023692663281559595,
+      "enstrophy_aspect_ratio": 0.20859519605723842,
+      "enstrophy_weighted_angular_speed": 720310.7088076976,
+      "sampled_swirl_max": 6578.441953701061,
+      "sampled_circulation_max": 41.79529210000521,
+      "cylinder_kinetic_energy": 0.027305419699568532
+    },
+    {
+      "k": 11.0003,
+      "tau": 0.00024408986266228504,
+      "point_count": 7776,
+      "sampled_vorticity_max": 65194955.29375587,
+      "cylinder_enstrophy": 3197968.762588459,
+      "enstrophy_radial_rms": 0.001135818922406801,
+      "enstrophy_axial_rms": 0.00023692686470060112,
+      "enstrophy_aspect_ratio": 0.20859563089383382,
+      "enstrophy_weighted_angular_speed": 728003.8958324688,
+      "sampled_swirl_max": 6569.412559776973,
+      "sampled_circulation_max": 41.73792499709553,
+      "cylinder_kinetic_energy": 0.027303820263000482
+    },
+    {
+      "k": 11.000300999999999,
+      "tau": 0.0002440896934721437,
+      "point_count": 7776,
+      "sampled_vorticity_max": 65348636.181040995,
+      "cylinder_enstrophy": 3197947.345504198,
+      "enstrophy_radial_rms": 0.001135820155874561,
+      "enstrophy_axial_rms": 0.00023692663275463397,
+      "enstrophy_aspect_ratio": 0.20859520015490898,
+      "enstrophy_weighted_angular_speed": 735693.7932420808,
+      "sampled_swirl_max": 6560.383172111744,
+      "sampled_circulation_max": 41.68055793395073,
+      "cylinder_kinetic_energy": 0.027302275595895834
+    }
+  ],
+  "scope": "Fixed physical cylinder and affine tangent extension around one reference time. Sampled enstrophy shape, not an identified global core, resolved trajectory, or scale recursion.",
+  "derivative_per_k": {
+    "enstrophy_radial_rms": -1.1302222937929762e-05,
+    "enstrophy_aspect_ratio": 0.0020488352819869604,
+    "enstrophy_weighted_angular_speed": 7691542217.1916,
+    "cylinder_enstrophy": -43603138.24843615,
+    "cylinder_kinetic_energy": -1.5720518363494806
+  },
+  "sampled_direction_flags": {
+    "radial_contraction": true,
+    "relative_axial_elongation": true,
+    "angular_speed_magnitude_increase": true
+  },
+  "elapsed_seconds": 244.85912129998906,
+  "one_sided_rates_per_k": {
+    "backward": {
+      "enstrophy_radial_rms": -0.0012560722068217702,
+      "enstrophy_aspect_ratio": 0.4348365957231015,
+      "enstrophy_weighted_angular_speed": 7693187030.528704
+    },
+    "forward": {
+      "enstrophy_radial_rms": 0.0012334677609289937,
+      "enstrophy_aspect_ratio": -0.4307389251560609,
+      "enstrophy_weighted_angular_speed": 7689897415.367203
+    }
+  },
+  "forward_interval_direction_flags": {
+    "radial_contraction": false,
+    "relative_axial_elongation": false,
+    "angular_speed_magnitude_increase": true
+  },
+  "interval_scope": "One-sided changes expose curvature or sign reversal hidden by a central derivative. Even all passing signs are only an affine candidate diagnostic, not an NS time step."
+}

@@ -2,6 +2,19 @@
 
 ## ST073 research update - 2026-09-27
 
+Shape-constrained tangent now preserves independent moments and 27/27
+cones while giving all three requested central derivative signs. However,
+the forward delta-k=1e-6 interval still expands radius and lowers aspect:
+curvature overwhelms the small direction margin. A stronger-margin
+candidate is generated and under actual-field replay. No geometric step
+or scale recursion is accepted. See
+[shape-constrained tangent](ST073_SHAPE_CONSTRAINED_TANGENT.md).
+
+Separately, spatial degree-3 mode-2 enrichment reduces independent-grid
+L2 from 2.8472e6 to 2.6329e6; degree 4 is slightly worse on that grid.
+This remains to be combined with shape constraints. See
+[higher harmonic tangent](ST073_HIGHER_HARMONIC_TANGENT.md).
+
 Target-direction check now rejects advancing the cone-compatible tangent
 as successful recursion: fixed-cylinder radial RMS increases and axial/
 radial aspect decreases, although weighted angular speed increases.

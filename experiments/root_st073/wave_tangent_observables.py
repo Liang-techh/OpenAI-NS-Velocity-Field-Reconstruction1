@@ -17,6 +17,22 @@ from vortex_state_observables import fixed_cylinder, observe
 ROOT = Path(__file__).resolve().parent
 
 
+def summarize_intervals(result):
+    left, center, right = result['rows']
+    keys = ('enstrophy_radial_rms','enstrophy_aspect_ratio',
+            'enstrophy_weighted_angular_speed')
+    result['one_sided_rates_per_k'] = {
+        'backward': {key:(center[key]-left[key])/(center['k']-left['k']) for key in keys},
+        'forward': {key:(right[key]-center[key])/(right['k']-center['k']) for key in keys}}
+    result['forward_interval_direction_flags'] = dict(
+        radial_contraction=right[keys[0]]<center[keys[0]],
+        relative_axial_elongation=right[keys[1]]>center[keys[1]],
+        angular_speed_magnitude_increase=abs(right[keys[2]])>abs(center[keys[2]]))
+    result['interval_scope'] = ('One-sided changes expose curvature or sign reversal hidden by a central derivative. '
+        'Even all passing signs are only an affine candidate diagnostic, not an NS time step.')
+    return result
+
+
 def run(candidate_path, output_path, delta_k=1e-6):
     started = time.perf_counter()
     raw = Path(candidate_path).read_bytes()
@@ -75,6 +91,7 @@ def run(candidate_path, output_path, delta_k=1e-6):
             center['enstrophy_weighted_angular_speed']*
             slopes['enstrophy_weighted_angular_speed']>0))
     result.update(status='completed', elapsed_seconds=time.perf_counter()-started)
+    summarize_intervals(result)
     save()
     print(json.dumps(result['sampled_direction_flags']),flush=True)
 
@@ -84,5 +101,14 @@ if __name__ == '__main__':
     parser.add_argument('--candidate',type=Path,default=ROOT/'wave_moment_cone_tangent.json')
     parser.add_argument('--output',type=Path,default=ROOT/'wave_tangent_observables.json')
     parser.add_argument('--delta-k',type=float,default=1e-6)
+    parser.add_argument('--summarize-existing',action='store_true')
     args = parser.parse_args()
-    run(args.candidate,args.output,args.delta_k)
+    if args.summarize_existing:
+        result = json.loads(args.output.read_text())
+        if result['status'] != 'completed' or len(result['rows']) != 3:
+            raise ValueError('Only a completed three-point report can be summarized')
+        summarize_intervals(result)
+        args.output.write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
+        print(json.dumps(result['forward_interval_direction_flags']),flush=True)
+    else:
+        run(args.candidate,args.output,args.delta_k)
