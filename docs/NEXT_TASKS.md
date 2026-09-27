@@ -198,6 +198,13 @@ The physical widened support fails the stress cone at its inner/lower
 corner on both scales (`1.422/1.476` cone ratios); see the same report.
 Repair the mean or support geometry for a connected strict cone before
 claiming that any interval solver yields a paper-admissible wave.
+A two-scale direct interval screen of scalar damping factors `0,0.1,0.2`
+for the second slope selects `0` on both scales: `0.1` improves the
+`+0.05` selection-grid RMS by only about `1%` but worsens the `+0.1`
+RMS by about `8%`; see `ST073_WIDER_CONE_INTERVAL_DAMPING.md`. Stop tuning
+this one-parameter time interpolation. Build a coupled nonlinear
+potential-state/derivative interval solve with pressure, and check its
+actual field at interior times on both scales.
 Use those directions as a conditioning prototype, not as the paper's five
 leading-profile moments or a recursive correction.
 The next Stage-1 inputs are therefore the actual coefficient-family

@@ -1,0 +1,198 @@
+{
+  "source": "One damped second-slope interval correction on widened-cone exact-curl fields",
+  "alphas": [
+    0.0,
+    0.1,
+    0.2
+  ],
+  "fractions": [
+    0.05,
+    0.1
+  ],
+  "train_axis": [
+    -0.6,
+    -0.3,
+    0.0,
+    0.3,
+    0.6
+  ],
+  "selection_axis": [
+    -0.5,
+    0.5
+  ],
+  "verification_axis": [
+    -0.45,
+    -0.15,
+    0.15,
+    0.45
+  ],
+  "angles_per_node": 16,
+  "alpha_selection": {
+    "rule": "Minimize mean over k=11,19 and fractions +0.05,+0.1 of 2x2 selection RMS normalized by the alpha=0 trajectory",
+    "common_alpha": 0.0,
+    "common_objectives": {
+      "0.0": 1.0,
+      "0.1": 1.03606140535454,
+      "0.2": 1.0745272391015495
+    },
+    "common_training_improves_both_scales": false,
+    "common_verification_improves_both_scales": false
+  },
+  "scales": [
+    {
+      "k": 11,
+      "tau": 0.000244140625,
+      "horizon": 2.3894534704652513e-08,
+      "pulse_time_halfwidth": 2.389453470465251e-07,
+      "second_fit_time_fraction": 0.1,
+      "first_slope_potential_norms": [
+        1295368.0468174359,
+        83895.1471630921
+      ],
+      "first_slope_pressure_norms": [
+        668.4659032224305,
+        195.94110390529522,
+        244.42042302208367
+      ],
+      "second_slope_relative_potential_norms": [
+        3.1509173117053306,
+        3.428666941519692
+      ],
+      "second_slope_relative_mean_potential_norm": 14.747274914052161,
+      "selection_alpha_sweep_2x2": {
+        "0.0": {
+          "0.05": {
+            "max": 670261882.8630065,
+            "rms": 339778687.7915348
+          },
+          "0.1": {
+            "max": 1446114128.4463606,
+            "rms": 710855723.4720291
+          }
+        },
+        "0.1": {
+          "0.05": {
+            "max": 670780632.676885,
+            "rms": 336379838.255299
+          },
+          "0.1": {
+            "max": 1592915436.694712,
+            "rms": 770415766.7235303
+          }
+        },
+        "0.2": {
+          "0.05": {
+            "max": 672563885.5565491,
+            "rms": 333336587.17237276
+          },
+          "0.1": {
+            "max": 1743256379.4359467,
+            "rms": 832788900.766387
+          }
+        }
+      },
+      "best_train_alpha": 0.0,
+      "best_train_objective": 1.0,
+      "train_objectives": {
+        "0.0": 1.0,
+        "0.1": 1.0368916371372348,
+        "0.2": 1.0762852188667935
+      },
+      "verification_4x4": {
+        "0.0": {
+          "0.05": {
+            "max": 2932981920.483807,
+            "rms": 924632759.9196016
+          },
+          "0.1": {
+            "max": 6095536703.544958,
+            "rms": 1908380018.3065608
+          }
+        }
+      },
+      "verification_relative_rms_to_alpha0": {
+        "0.05": 1.0,
+        "0.1": 1.0
+      }
+    },
+    {
+      "k": 19,
+      "tau": 9.5367431640625e-07,
+      "horizon": 9.865997755327235e-11,
+      "pulse_time_halfwidth": 9.865997755327234e-10,
+      "second_fit_time_fraction": 0.1,
+      "first_slope_potential_norms": [
+        308059365.1429269,
+        20723417.819003996
+      ],
+      "first_slope_pressure_norms": [
+        160456.3529978748,
+        48534.3769827267,
+        55442.21960793505
+      ],
+      "second_slope_relative_potential_norms": [
+        3.146256895848673,
+        3.429691456219317
+      ],
+      "second_slope_relative_mean_potential_norm": 14.846134376287344,
+      "selection_alpha_sweep_2x2": {
+        "0.0": {
+          "0.05": {
+            "max": 2543513240820.676,
+            "rms": 1289115272312.713
+          },
+          "0.1": {
+            "max": 5481123225508.51,
+            "rms": 2694090355614.499
+          }
+        },
+        "0.1": {
+          "0.05": {
+            "max": 2542171865849.599,
+            "rms": 1275018686641.0537
+          },
+          "0.1": {
+            "max": 6023600431635.868,
+            "rms": 2913382393766.2417
+          }
+        },
+        "0.2": {
+          "0.05": {
+            "max": 2545775823710.183,
+            "rms": 1262151488558.7336
+          },
+          "0.1": {
+            "max": 6579874113703.398,
+            "rms": 3142535224759.2515
+          }
+        }
+      },
+      "best_train_alpha": 0.0,
+      "best_train_objective": 1.0,
+      "train_objectives": {
+        "0.0": 1.0,
+        "0.1": 1.0352311735718454,
+        "0.2": 1.0727692593363052
+      },
+      "verification_4x4": {
+        "0.0": {
+          "0.05": {
+            "max": 10954211344317.906,
+            "rms": 3434472377856.436
+          },
+          "0.1": {
+            "max": 22763186058113.637,
+            "rms": 7085098940282.144
+          }
+        }
+      },
+      "verification_relative_rms_to_alpha0": {
+        "0.05": 1.0,
+        "0.1": 1.0
+      }
+    }
+  ],
+  "scope": "At k=11 and k=19, fit the initial exact-curl potential/pressure slope on a 5 x 5 pulse-centre grid, fit one residual slope at +0.1 pulse half-width from the linear trajectory, and apply a single scalar alpha to that second slope and pressure in the quadratic replay. The 2 x 2 grid selects alpha; the 4 x 4 grid is independent verification at +0.05 and +0.1. All values are direct finite-difference full Cartesian momentum residual norms from sample_residual. This is an interval screen only: no endpoint control, uniform space-time bound, nonlinear interval solve, or scale recursion is established.",
+  "accepted": false,
+  "scale_recursion_established": false
+}
