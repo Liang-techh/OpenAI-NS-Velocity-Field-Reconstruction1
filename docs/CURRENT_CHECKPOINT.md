@@ -2,6 +2,14 @@
 
 ## ST073 research update - 2026-09-27
 
+Degree-3 mode-2 enrichment now combines with shape constraints: independent
+actual-field momentum L2 is 2.63329e6 and max 1.68320e11, while all three
+sampled forward geometric directions remain favorable over delta-k=1e-6.
+Moments/cones pass the assembled solve. Mean harmonic now contributes
+80.33% of squared residual and is the next enrichment target. This remains
+an affine candidate, not a momentum-accepted trajectory or recursion. See
+[enriched shape tangent](ST073_ENRICHED_SHAPE_TANGENT.md).
+
 Larger shape-direction margin now gives all three requested sampled forward
 changes over delta-k=1e-6: radial RMS decreases, aspect increases, and
 weighted angular speed increases. Peak swirl still decreases. This is an
