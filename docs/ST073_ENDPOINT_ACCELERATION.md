@@ -74,3 +74,11 @@ difference observation gives -7.44786e-7. The difference exceeds the chosen
 agreement is insufficient to accept a newly constrained candidate near the
 boundary. A componentwise analytic-versus-FD and step-refinement comparison
 is required before claiming the shape gate is resolved.
+
+After fixing the shape helper, the acceleration-only gradient error versus
+five-point FD decreases from 1.50e-9 at h to 9.41e-11 at h/2 and 5.74e-12
+at h/4. The analytic-versus-actual fractional aspect discrepancy is now
+3.58e-11, far below the chosen 1e-6 margin. The previous persistent error
+was a complex-column packing bug, not an alternative derivative convention
+or a compact-support crossing effect. The repaired oracle still confirms
+that the old unconstrained acceleration fails relative elongation.

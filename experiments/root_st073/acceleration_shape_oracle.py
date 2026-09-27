@@ -111,9 +111,15 @@ def _analytic_acceleration_response(points, geometry, dt, nu):
         else:
             components = (("real", 1.0), ("imag", -1.0))
         for index in range(velocity_count):
-            for _component, sign in components:
-                velocity_blocks.append(factor * sign * values[:, :, index].real)
-                gradient_blocks.append(factor * sign * gradients[:, :, :, index].real)
+            for component, sign in components:
+                # The packed nonzero-harmonic columns are real and negative
+                # imaginary parts of the complex basis response.  Selecting
+                # ``.real`` for both branches silently duplicated the real
+                # response in every imaginary control column.
+                source_values = values[:, :, index].real if component == "real" else values[:, :, index].imag
+                source_gradients = gradients[:, :, :, index].real if component == "real" else gradients[:, :, :, index].imag
+                velocity_blocks.append(factor * sign * source_values)
+                gradient_blocks.append(factor * sign * source_gradients)
         # Pressure-slope columns have no velocity or gradient response.
         for _index in range(q):
             for _component, _sign in components:

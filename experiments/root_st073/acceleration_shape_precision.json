@@ -1,0 +1,212 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "constraints_maintained": false,
+  "scope": "Basis-only precision diagnostic for the frozen acceleration shape oracle. Parent u,J come from the enriched endpoint cache; only the acceleration correction is evaluated by analytic or centered-FD basis derivatives. No mean replay or adoption decision.",
+  "sources": {
+    "oracle": {
+      "path": "acceleration_shape_oracle.json",
+      "sha256": "3e58111cd49196ea177a8410a96af3b783946b75350ef37b205a39fcad333bb5"
+    },
+    "acceleration_projection": {
+      "path": "endpoint_acceleration_projection.json",
+      "sha256": "ef25b18deb09dc9dc97049e425d2b7322c8ea3bccd81c6ddd2ae481922af23ba"
+    },
+    "actual_shape_replay": {
+      "path": "endpoint_acceleration_shape.json",
+      "sha256": "26696993d9660680d68fd736ceafbfda6d3293b307d4bf27ea56d7a41cac5cba"
+    },
+    "frozen_geometry": {
+      "path": "full_wave_frozen_cache.json",
+      "sha256": "c03b9efa4bd65db79ee420df66808a34e7f634174851b47cca81f742b1435574"
+    }
+  },
+  "inputs": {
+    "point_count": 7776,
+    "tau0": 0.00024408986266228504,
+    "tau_endpoint": 0.0002440896934721437,
+    "physical_time_increment": 1.6919014133491908e-10,
+    "standard_fd_step": 7.811685053049433e-07,
+    "acceleration_control_count": 324,
+    "acceleration_control_norm": 1.9628307135537288e+18,
+    "same_packed_control_as_actual_replay": true,
+    "same_tau_as_actual_replay": true,
+    "same_geometry_source": "wave_stress_growth_codesign.json"
+  },
+  "parent_comparison": {
+    "reference_cache": [
+      0.001135818922406801,
+      0.20859563089383382,
+      728003.8958324688
+    ],
+    "reference_actual_row": [
+      0.001135818922406801,
+      0.20859563089383382,
+      728003.8958324688
+    ],
+    "reference_difference": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "parent_cache_reconstruction": [
+      0.0011358177865878785,
+      0.20859583948946472,
+      739732.8784813273
+    ],
+    "parent_actual_row": [
+      0.0011358177864229024,
+      0.20859583948199137,
+      739732.8787674641
+    ],
+    "parent_difference": [
+      1.649761056932153e-13,
+      7.473355267961779e-12,
+      -0.00028613675385713577
+    ],
+    "parent_raw_fractional_difference": [
+      1.452487429456306e-10,
+      3.582696225639233e-11,
+      -3.8681091792742013e-10
+    ],
+    "parent_reconstruction_method": "cached velocity_offset/gradient_offset plus balanced 264 response",
+    "mean_replay_performed": false
+  },
+  "acceleration_response": {
+    "analytic_velocity_max_abs": 0.7737041270666101,
+    "analytic_gradient_max_abs": 11034.13649736779,
+    "standard_fd_vs_analytic": {
+      "max_abs_error": 1.659459485381376e-05,
+      "max_relative_to_analytic": 1.5039323519128503e-09,
+      "weighted_L2_error": 8.187839360205158e-10,
+      "weighted_relative_error": 1.4517088119613236e-09
+    },
+    "boundary_distance_normalized_threshold": 0.003460276311670262,
+    "points_near_compact_support_boundary": 24,
+    "near_boundary_fraction": 0.0030864197530864196,
+    "top_one_percent_gradient_error_near_boundary_fraction": 0.02564102564102564
+  },
+  "shape_metrics": {
+    "reference": [
+      0.001135818922406801,
+      0.20859563089383382,
+      728003.8958324688
+    ],
+    "parent_cache": [
+      0.0011358177865878785,
+      0.20859583948946472,
+      739732.8784813273
+    ],
+    "analytic_corrected": [
+      0.0011358172600888258,
+      0.20859547554217348,
+      738932.434106635
+    ],
+    "analytic_raw_fractional_change": [
+      -1.4635413641362511e-06,
+      -7.447503079318365e-07,
+      0.015011648064973007
+    ],
+    "frozen_actual_corrected": [
+      0.0011358172599238508,
+      0.2085954755347,
+      738932.4343927604
+    ],
+    "frozen_actual_raw_fractional_change": [
+      -1.4636866117793714e-06,
+      -7.447861354621555e-07,
+      0.015011648458000225
+    ],
+    "fd_step_rows": [
+      {
+        "step_factor": 1.0,
+        "step": 7.811685053049433e-07,
+        "gradient_error_vs_analytic": {
+          "max_abs_error": 1.659459485381376e-05,
+          "max_relative_to_analytic": 1.5039323519128503e-09,
+          "weighted_L2_error": 8.187839360205158e-10,
+          "weighted_relative_error": 1.4517088119613236e-09
+        },
+        "corrected_observables": [
+          0.0011358172600888265,
+          0.20859547554217334,
+          738932.434107015
+        ],
+        "raw_fractional_change_vs_reference": [
+          -1.4635413635635177e-06,
+          -7.447503085971327e-07,
+          0.015011648065494956
+        ],
+        "difference_vs_frozen_actual_corrected": [
+          1.649756720123463e-13,
+          7.473327512386163e-12,
+          -0.0002857453655451536
+        ]
+      },
+      {
+        "step_factor": 0.5,
+        "step": 3.9058425265247166e-07,
+        "gradient_error_vs_analytic": {
+          "max_abs_error": 1.0378653314546682e-06,
+          "max_relative_to_analytic": 9.405949724314653e-11,
+          "weighted_L2_error": 5.12137349889213e-11,
+          "weighted_relative_error": 9.080225821016368e-11
+        },
+        "corrected_observables": [
+          0.0011358172600888258,
+          0.2085954755421735,
+          738932.4341066589
+        ],
+        "raw_fractional_change_vs_reference": [
+          -1.4635413641362511e-06,
+          -7.447503077987773e-07,
+          0.01501164806500579
+        ],
+        "difference_vs_frozen_actual_corrected": [
+          1.6497502149104282e-13,
+          7.473494045839857e-12,
+          -0.0002861014800146222
+        ]
+      },
+      {
+        "step_factor": 0.25,
+        "step": 1.9529212632623583e-07,
+        "gradient_error_vs_analytic": {
+          "max_abs_error": 6.330719770630822e-08,
+          "max_relative_to_analytic": 5.7373948311596695e-12,
+          "weighted_L2_error": 3.147268001787025e-12,
+          "weighted_relative_error": 5.580124976564819e-12
+        },
+        "corrected_observables": [
+          0.0011358172600888258,
+          0.2085954755421735,
+          738932.4341066366
+        ],
+        "raw_fractional_change_vs_reference": [
+          -1.4635413641362511e-06,
+          -7.447503077987773e-07,
+          0.015011648064975087
+        ],
+        "difference_vs_frozen_actual_corrected": [
+          1.6497502149104282e-13,
+          7.473494045839857e-12,
+          -0.000286123831756413
+        ]
+      }
+    ]
+  },
+  "diagnosis": {
+    "layout_or_index_mismatch_indicated": false,
+    "parent_cache_mismatch_indicated": false,
+    "imaginary_packing_branch_fixed_in_oracle": true,
+    "fd_step_convergence_in_observables": {
+      "radial_range": 6.505213034913027e-19,
+      "aspect_range": 1.6653345369377348e-16,
+      "spin_range": 3.784662112593651e-07
+    },
+    "conclusion": "The prior analytic-versus-FD discrepancy was caused by the packed nonzero-harmonic branch selecting the real basis response for both real and imaginary controls. After selecting the imaginary response with its packed negative sign, the pointwise gradient error decreases from 1.5e-9 at h to 5.7e-12 at h/4, and the radial/aspect observables are stable to 1e-18/2e-16. The parent cache agrees with the actual parent endpoint to numerical precision; corrected analytic and frozen actual aspect changes differ by only 3.6e-11 fractionally. The analytic oracle is therefore consistent with the independent FD replay for this endpoint, while this diagnostic still makes no trajectory or PDE claim."
+  },
+  "elapsed_seconds": 8.009655300003942
+}
