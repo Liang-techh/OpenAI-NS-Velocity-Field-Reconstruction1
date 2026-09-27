@@ -1,6 +1,16 @@
 # Current checkpoint - constrained velocity-field integration
 
 ## ST073 research update - 2026-09-27
+A globally localized diagnostic now combines the balanced compact wave,
+inner acceleration correction and exterior collar tangent through one
+callable field. Sampled assembly checks at reference and endpoint preserve
+the constituent inner/outer values exactly and return finite axis values.
+This does not establish whole-domain momentum or recursion. See
+[unified global candidate](ST073_GLOBAL_ACCELERATION_CANDIDATE.md).
+
+The inner acceleration diagnostic reduces sampled endpoint L2 by 4.78%; its
+actual shape replay fails relative axial elongation, so constrained acceleration fitting is required before adoption. Independently, exterior collar
+L2 falls 7.97% on a separate replay grid. These percentages must not be added.
 
 Global-scope audit confirms a separate required gap: the current base is
 registered only on abs(eta)<=0.5, and its radial heat exterior has no axial

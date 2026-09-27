@@ -1,0 +1,343 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "constraints_maintained": false,
+  "source": {
+    "projection": {
+      "path": "endpoint_acceleration_projection.json",
+      "sha256": "ef25b18deb09dc9dc97049e425d2b7322c8ea3bccd81c6ddd2ae481922af23ba"
+    },
+    "frozen_geometry": {
+      "path": "full_wave_frozen_cache.json",
+      "sha256": "c03b9efa4bd65db79ee420df66808a34e7f634174851b47cca81f742b1435574"
+    },
+    "mean_loader_status": "completed"
+  },
+  "scope": "Fixed physical-cylinder shape diagnostic for the frozen endpoint acceleration projection. The balanced affine field and its zero-at-reference degree-2 mode-0..4 correction are compared at t0 and k0+delta_k. No full momentum replay, endpoint constraint solve, PDE, trajectory, or recursion acceptance.",
+  "inputs": {
+    "reference_k": 11.0003,
+    "endpoint_k": 11.000300999999999,
+    "delta_k": 1e-06,
+    "reference_tau": 0.00024408986266228504,
+    "endpoint_tau": 0.0002440896934721437,
+    "point_count": 7776,
+    "geometry": {
+      "source_report": "wave_stress_growth_codesign.json",
+      "source_sha256": "57899169ea21f322f2265a92825caea5663c48d8e63d073e21fbd63d277211d9",
+      "selected_trial_index": 0,
+      "center": [
+        0.0016227128870842616,
+        -2.036013852023506e-05
+      ],
+      "widths": [
+        0.0011600670852347063,
+        0.00045150643182473267
+      ],
+      "degree": 2,
+      "mode": 1,
+      "carrier": [
+        -871.4212739359624,
+        -616.1878920703391
+      ],
+      "coefficients_original": [
+        [
+          -82.15595974483635,
+          81.29257957328485
+        ],
+        [
+          -0.362415360330668,
+          0.06994251510432199
+        ],
+        [
+          81.99009341567046,
+          -81.25143737713822
+        ],
+        [
+          938.6807627557765,
+          939.715201780506
+        ],
+        [
+          0.02721531317876355,
+          5.986488497543159
+        ],
+        [
+          -929.1026180258331,
+          -950.8118248133765
+        ],
+        [
+          98.8479131500121,
+          -102.65470218922924
+        ],
+        [
+          -1.1158250990752412,
+          -4.708934752600909
+        ],
+        [
+          -130.3366291703036,
+          134.85066267570022
+        ],
+        [
+          56.26359941276264,
+          -55.56659996354919
+        ],
+        [
+          0.35618187278110486,
+          0.08778618899247473
+        ],
+        [
+          -55.24385760923843,
+          54.90779295313052
+        ],
+        [
+          -42.98646284265163,
+          38.30146187824901
+        ],
+        [
+          -0.5923913089888674,
+          -0.5936446492113409
+        ],
+        [
+          35.019732223437785,
+          -28.89192247301922
+        ],
+        [
+          -17.595561988362853,
+          22.431814564233754
+        ],
+        [
+          0.6774277379307498,
+          0.7872392241169753
+        ],
+        [
+          35.540148792686516,
+          -45.130694018011944
+        ],
+        [
+          -55.68437959408232,
+          54.13364968047096
+        ],
+        [
+          2392.339327047038,
+          2419.6951069125757
+        ],
+        [
+          55.47478309837667,
+          -44.76709388159124
+        ],
+        [
+          1.795570255243487,
+          2.147194107397381
+        ],
+        [
+          84.29225455086899,
+          -85.66718799766014
+        ],
+        [
+          -3.391417754333725,
+          -5.0753678519289975
+        ],
+        [
+          55.22169931787298,
+          -56.742397608292194
+        ],
+        [
+          -2446.491966956347,
+          -2360.7483721072813
+        ],
+        [
+          -57.66160887367854,
+          28.562586258375564
+        ]
+      ]
+    },
+    "domain": {
+      "radius": 0.004418957910297721,
+      "axial_half_length": 0.0009389701836394787,
+      "reference_k": 11.0003,
+      "radial_order_per_panel": 6,
+      "axial_order": 12,
+      "angles": 12
+    },
+    "observable_method": "batched five-point Cartesian velocity FD, equivalent to vortex_state_observables.observe"
+  },
+  "rows": {
+    "balanced_reference": {
+      "k": 11.0003,
+      "tau": 0.00024408986266228504,
+      "point_count": 7776,
+      "sampled_vorticity_max": 65194955.29375587,
+      "cylinder_enstrophy": 3197968.762588459,
+      "enstrophy_radial_rms": 0.001135818922406801,
+      "enstrophy_axial_rms": 0.00023692686470060112,
+      "enstrophy_aspect_ratio": 0.20859563089383382,
+      "enstrophy_weighted_angular_speed": 728003.8958324688,
+      "sampled_swirl_max": 6569.412559776973,
+      "sampled_circulation_max": 41.73792499709553,
+      "cylinder_kinetic_energy": 0.027303820263000482
+    },
+    "corrected_reference": {
+      "k": 11.0003,
+      "tau": 0.00024408986266228504,
+      "point_count": 7776,
+      "sampled_vorticity_max": 65194955.29375587,
+      "cylinder_enstrophy": 3197968.762588459,
+      "enstrophy_radial_rms": 0.001135818922406801,
+      "enstrophy_axial_rms": 0.00023692686470060112,
+      "enstrophy_aspect_ratio": 0.20859563089383382,
+      "enstrophy_weighted_angular_speed": 728003.8958324688,
+      "sampled_swirl_max": 6569.412559776973,
+      "sampled_circulation_max": 41.73792499709553,
+      "cylinder_kinetic_energy": 0.027303820263000482,
+      "identity_from_balanced": true
+    },
+    "balanced_endpoint": {
+      "k": 11.000300999999999,
+      "tau": 0.0002440896934721437,
+      "point_count": 7776,
+      "sampled_vorticity_max": 65411958.65278107,
+      "cylinder_enstrophy": 3197899.4907972766,
+      "enstrophy_radial_rms": 0.0011358177864229024,
+      "enstrophy_axial_rms": 0.0002369268646574625,
+      "enstrophy_aspect_ratio": 0.20859583948199137,
+      "enstrophy_weighted_angular_speed": 739732.8787674641,
+      "sampled_swirl_max": 6557.996712666241,
+      "sampled_circulation_max": 41.66539586817412,
+      "cylinder_kinetic_energy": 0.027302273224869347
+    },
+    "corrected_endpoint": {
+      "k": 11.000300999999999,
+      "tau": 0.0002440896934721437,
+      "point_count": 7776,
+      "sampled_vorticity_max": 65407297.703622796,
+      "cylinder_enstrophy": 3197915.3264292786,
+      "enstrophy_radial_rms": 0.0011358172599238508,
+      "enstrophy_axial_rms": 0.0002369263414543356,
+      "enstrophy_aspect_ratio": 0.2085954755347,
+      "enstrophy_weighted_angular_speed": 738932.4343927604,
+      "sampled_swirl_max": 6557.443572153042,
+      "sampled_circulation_max": 41.66188156045746,
+      "cylinder_kinetic_energy": 0.027301751938766067
+    }
+  },
+  "correction_endpoint_delta": {
+    "sampled_vorticity_max": {
+      "absolute": -4660.949158273637,
+      "relative_to_reference": -7.125530643432997e-05
+    },
+    "cylinder_enstrophy": {
+      "absolute": 15.83563200198114,
+      "relative_to_reference": 4.951885463427469e-06
+    },
+    "enstrophy_radial_rms": {
+      "absolute": -5.264990516045537e-10,
+      "relative_to_reference": -4.6354182677724044e-07
+    },
+    "enstrophy_axial_rms": {
+      "absolute": -5.232031269006027e-10,
+      "relative_to_reference": -2.208289581922357e-06
+    },
+    "enstrophy_aspect_ratio": {
+      "absolute": -3.6394729135968973e-07,
+      "relative_to_reference": -1.7447485638423305e-06
+    },
+    "enstrophy_weighted_angular_speed": {
+      "absolute": -800.4443747036858,
+      "relative_to_reference": -0.0010820721880543942
+    },
+    "sampled_swirl_max": {
+      "absolute": -0.5531405131996507,
+      "relative_to_reference": -8.434595768114743e-05
+    },
+    "sampled_circulation_max": {
+      "absolute": -0.0035143077166637227,
+      "relative_to_reference": -8.43459576811103e-05
+    },
+    "cylinder_kinetic_energy": {
+      "absolute": -5.212861032798111e-07,
+      "relative_to_reference": -1.909313920442995e-05
+    }
+  },
+  "balanced_endpoint_from_reference": {
+    "sampled_vorticity_max": {
+      "absolute": 217003.3590252027,
+      "relative_to_reference": 0.003328529915350467
+    },
+    "cylinder_enstrophy": {
+      "absolute": -69.2717911824584,
+      "relative_to_reference": -2.1661184434581317e-05
+    },
+    "enstrophy_radial_rms": {
+      "absolute": -1.1359838985279536e-09,
+      "relative_to_reference": -1.0001452486112865e-06
+    },
+    "enstrophy_axial_rms": {
+      "absolute": -4.313861550961362e-14,
+      "relative_to_reference": -1.8207566104471467e-10
+    },
+    "enstrophy_aspect_ratio": {
+      "absolute": 2.08588157551981e-07,
+      "relative_to_reference": 9.999641730662296e-07
+    },
+    "enstrophy_weighted_angular_speed": {
+      "absolute": 11728.982934995322,
+      "relative_to_reference": 0.016111154077799665
+    },
+    "sampled_swirl_max": {
+      "absolute": -11.415847110731193,
+      "relative_to_reference": -0.0017377272331209404
+    },
+    "sampled_circulation_max": {
+      "absolute": -0.07252912892140984,
+      "relative_to_reference": -0.001737727233120885
+    },
+    "cylinder_kinetic_energy": {
+      "absolute": -1.5470381311347148e-06,
+      "relative_to_reference": -5.666013459776222e-05
+    }
+  },
+  "corrected_endpoint_from_reference": {
+    "sampled_vorticity_max": {
+      "absolute": 212342.40986692905,
+      "relative_to_reference": 0.003257037433497043
+    },
+    "cylinder_enstrophy": {
+      "absolute": -53.43615918047726,
+      "relative_to_reference": -1.670940623485817e-05
+    },
+    "enstrophy_radial_rms": {
+      "absolute": -1.6624829501325072e-09,
+      "relative_to_reference": -1.4636866117793714e-06
+    },
+    "enstrophy_axial_rms": {
+      "absolute": -5.232462655161123e-10,
+      "relative_to_reference": -2.2084716571813257e-06
+    },
+    "enstrophy_aspect_ratio": {
+      "absolute": -1.5535913380770872e-07,
+      "relative_to_reference": -7.447861354621555e-07
+    },
+    "enstrophy_weighted_angular_speed": {
+      "absolute": 10928.538560291636,
+      "relative_to_reference": 0.015011648458000225
+    },
+    "sampled_swirl_max": {
+      "absolute": -11.968987623930843,
+      "relative_to_reference": -0.0018219266205344216
+    },
+    "sampled_circulation_max": {
+      "absolute": -0.07604343663807356,
+      "relative_to_reference": -0.001821926620534329
+    },
+    "cylinder_kinetic_energy": {
+      "absolute": -2.068324234414526e-06,
+      "relative_to_reference": -7.575219198235496e-05
+    }
+  },
+  "reference_correction_identity": {
+    "velocity_max_abs": 0.0,
+    "pressure_max_abs": 0.0,
+    "statement": "AccelerationCorrectionField carries 0.5*(tau0-tau)^2 velocity and (tau0-tau) pressure factors."
+  },
+  "elapsed_seconds": 133.41780900000595
+}

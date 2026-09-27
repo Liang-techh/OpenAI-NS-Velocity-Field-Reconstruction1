@@ -23,3 +23,17 @@ spatial acceptance, continuous-time residual bound, or recursion is claimed.
 Files: endpoint_acceleration_projection.py and its JSON. The source is the
 balanced candidate, not the newer dual-grid candidate. Do not combine their
 reported improvements as if they came from the same field.
+
+## Actual shape gate
+
+The frozen 7,776-point shape replay rejects the full acceleration correction
+as satisfying all three requested forward directions. Relative to reference,
+radial RMS changes by -1.46369e-6 and weighted angular speed by +0.01501165,
+but the axial/radial aspect changes by -7.44786e-7. Thus contraction and
+weighted-spin increase pass, while relative axial elongation fails. Peak
+swirl also falls. The balanced parent had positive aspect change of 1e-6.
+
+The momentum improvement cannot be accepted at the expense of this goal.
+A cached nonlinear endpoint observable/Jacobian for the acceleration controls
+is being constructed so the next fit can enforce shape directly, without
+repeating the expensive mean-field derivative evaluation at each iteration.

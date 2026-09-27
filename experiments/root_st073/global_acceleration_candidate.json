@@ -1,0 +1,74 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "scope": "Assembly and support checks only. Constituent momentum metrics cover different spatial domains; no whole-domain or interval acceptance.",
+  "source_hashes": {
+    "balanced": "8396633295fb37307aa3d946852e5a4479e5f46e78474942997bc3b5ea601909",
+    "acceleration": "ef25b18deb09dc9dc97049e425d2b7322c8ea3bccd81c6ddd2ae481922af23ba",
+    "collar": "35d0383f7ef02ef62e75f8c4147891bec03a07006d2f5080c64eda4f73918686"
+  },
+  "rows": [
+    {
+      "delta_k": 0.0,
+      "tau": 0.00024408986266228504,
+      "inner_velocity_error": 0.0,
+      "inner_pressure_error": 0.0,
+      "outer_velocity_error": 0.0,
+      "outer_pressure_error": 0.0,
+      "axis_velocity": [
+        [
+          0.0,
+          0.0,
+          0.1334496304374982
+        ],
+        [
+          0.0,
+          0.0,
+          4.885625867955355
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "axis_pressure": [
+        -44.52200965976209,
+        -17.233972310473533,
+        0.0
+      ]
+    },
+    {
+      "delta_k": 1e-06,
+      "tau": 0.00024408969347214357,
+      "inner_velocity_error": 0.0,
+      "inner_pressure_error": 0.0,
+      "outer_velocity_error": 0.0,
+      "outer_pressure_error": 0.0,
+      "axis_velocity": [
+        [
+          0.0,
+          0.0,
+          0.1334496771501251
+        ],
+        [
+          0.0,
+          0.0,
+          4.885616888697892
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "axis_pressure": [
+        -44.52204082868152,
+        -17.233939953252516,
+        0.0
+      ]
+    }
+  ]
+}
