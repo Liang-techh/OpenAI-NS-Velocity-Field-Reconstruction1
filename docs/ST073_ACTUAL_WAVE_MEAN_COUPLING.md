@@ -37,3 +37,33 @@ covariance must point toward the required mean stress, and the evolved mean
 must support the intended wave growth. Then reconstruct the physical sum
 of mean and waves and replay the complete three-dimensional momentum.
 Neither compatibility nor energy growth alone is a PDE or recursion gate.
+
+## First actual-wave mean-force amplitude fit
+
+`broad_wave_mean_fit.py/.json` fits a nonnegative squared amplitude e to
+the complete three-component angular-mean residual R + e f_wave of the
+constrained initial mean. Since the unit wave is fixed, its force scales
+exactly as amplitude squared. The least-squares optimum is
+max(0, -integral(R.f_wave)/integral(|f_wave|^2)). No wave phase or mean
+coefficient is secretly refitted in this scalar experiment.
+
+The physical patch has radial bounds [0.000462646, 0.002782780], axial
+bounds [-0.000471867, 0.000431146], and full angular extent. Quadrature
+weights include the actual cylindrical volume element; their sum matches
+the cylinder-shell volume 2.13613e-8. Radial panels split all recorded mean
+basis boundaries, including the meridional onset at y=0.62. The fit uses
+336 meridional points, with a separate 756-point holdout.
+
+The selected squared amplitude is 10294.63 (amplitude 101.462 in the saved
+wave normalization). On the holdout, mean residual volume L2 decreases
+from 120497.756 to 120203.445, about 0.244%. Its sampled maximum stays
+approximately 5.30846e9. Therefore simply scaling this growing wave provides
+little correction of the current mean imbalance. The earlier four-cutoff
+quadrature result is preserved as `broad_wave_mean_fit_coarse.json` and is
+superseded by the all-boundary split result.
+
+This is an angular-mean calculation only. The physical oscillatory residual,
+pressure harmonics, wave evolution, and revised mean compatibility are not
+solved. The small L2 improvement cannot be used as a complete NS residual
+claim. Next use actual stress-direction evidence to choose a joint wave
+polarization/mean correction rather than increasing this amplitude blindly.

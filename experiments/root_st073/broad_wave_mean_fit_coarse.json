@@ -1,0 +1,87 @@
+{
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "wave_integrated": false,
+  "oscillatory_residual_fitted": false,
+  "mean_source": "meridional_constrained_evolution.json:initial_fit",
+  "wave_source": "broad_shear_growth.json:selected_candidate",
+  "physical_domain": {
+    "radial_bounds": [
+      0.0004626458018495553,
+      0.002782779972318968
+    ],
+    "axial_bounds": [
+      -0.00047186657034496774,
+      0.0004311462933044976
+    ],
+    "angular_bounds": [
+      0.0,
+      6.283185307179586
+    ]
+  },
+  "k": 11.0003,
+  "tau": 0.00024408986266228504,
+  "rows": [
+    {
+      "label": "fit",
+      "geometry": {
+        "z_order": 6,
+        "panel_order": 6,
+        "radial_bounds": [
+          0.0004626458018495553,
+          0.002782779972318968
+        ],
+        "point_count": 72,
+        "panels_per_z_max": 5
+      },
+      "domain_volume": 2.13613448359038e-08,
+      "base": {
+        "sampled_max": 5196383898.483176,
+        "volume_L2": 121954.6487155571,
+        "volume_RMS": 834418768.6142882
+      },
+      "with_wave_mean": {
+        "sampled_max": 5196383933.570041,
+        "volume_L2": 121632.09244146312,
+        "volume_RMS": 832211825.1982478
+      },
+      "energy_fit": 16556.603919303165,
+      "amplitude_fit": 128.67246760400286,
+      "residual_force_inner_product": -4745.564490716454,
+      "unit_force_squared_norm": 0.28662668466590857,
+      "unconstrained_energy_optimum": 16556.603919303165
+    },
+    {
+      "label": "holdout",
+      "geometry": {
+        "z_order": 9,
+        "panel_order": 9,
+        "radial_bounds": [
+          0.0004626458018495553,
+          0.002782779972318968
+        ],
+        "point_count": 162,
+        "panels_per_z_max": 5
+      },
+      "domain_volume": 2.13613448359038e-08,
+      "base": {
+        "sampled_max": 5271405871.614111,
+        "volume_L2": 121355.99072331715,
+        "volume_RMS": 830322725.7822433
+      },
+      "with_wave_mean": {
+        "sampled_max": 5271405838.130339,
+        "volume_L2": 121027.53832723688,
+        "volume_RMS": 828075440.854836
+      },
+      "energy_fit": 16556.603919303165,
+      "amplitude_fit": 128.67246760400286,
+      "residual_force_inner_product": -6405.238474680813,
+      "unit_force_squared_norm": 0.48331385605441557,
+      "unconstrained_energy_optimum": 13252.751590799948
+    }
+  ],
+  "elapsed_seconds": 69.34426539999549,
+  "scope": "Nonnegative scalar energy fit of the complete exact-curl wave mean force on its fixed physical patch. Independent spatial holdout; no oscillatory residual, joint mean refit, PDE or recursion acceptance."
+}
