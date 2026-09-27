@@ -1,0 +1,448 @@
+{
+  "k": 11,
+  "windows": [
+    [
+      0.12,
+      0.38
+    ],
+    [
+      0.4,
+      0.72
+    ],
+    [
+      0.58,
+      0.92
+    ]
+  ],
+  "outer_cones": [
+    {
+      "eta": -0.2,
+      "radial_fraction": 0.5,
+      "lambda_squared": 18233583.07630784,
+      "target_dot_N": -79.45879852830524,
+      "cone_ratio": 1.1075010904316698,
+      "cone_pass": false,
+      "momentum_norm": 2861218.1099973526
+    },
+    {
+      "eta": -0.2,
+      "radial_fraction": 0.75,
+      "lambda_squared": 151251.9971368136,
+      "target_dot_N": -262.05847721401676,
+      "cone_ratio": 12.573220994183368,
+      "cone_pass": false,
+      "momentum_norm": 4860466.23808769
+    },
+    {
+      "eta": 0.0,
+      "radial_fraction": 0.5,
+      "lambda_squared": 148223.71977144326,
+      "target_dot_N": 21.14221306864933,
+      "cone_ratio": 0.9872337377550653,
+      "cone_pass": false,
+      "momentum_norm": 3465318.698112455
+    },
+    {
+      "eta": 0.0,
+      "radial_fraction": 0.75,
+      "lambda_squared": 5889110.056946313,
+      "target_dot_N": 12.623861811418154,
+      "cone_ratio": 4.0775369179305025,
+      "cone_pass": false,
+      "momentum_norm": 1965285.351478224
+    },
+    {
+      "eta": 0.2,
+      "radial_fraction": 0.5,
+      "lambda_squared": 282177.8954178459,
+      "target_dot_N": -44.168757953506024,
+      "cone_ratio": 0.9713959149148275,
+      "cone_pass": true,
+      "momentum_norm": 5156700.393533873
+    },
+    {
+      "eta": 0.2,
+      "radial_fraction": 0.75,
+      "lambda_squared": 755097.1463244983,
+      "target_dot_N": -75.66675540892994,
+      "cone_ratio": 0.9500008129138386,
+      "cone_pass": true,
+      "momentum_norm": 4254254.4822648065
+    }
+  ],
+  "fit_order": 48,
+  "stages": [
+    {
+      "label": "previous",
+      "success": false,
+      "moment_max": 5.5990767577895895e-11,
+      "correction_norm": 37.50334422592231,
+      "momentum_peak": 5245066.78761922,
+      "objective": 12.868942366220045,
+      "minimum_cone_constraint": -5.446323416961029
+    },
+    {
+      "label": "joint_pressure",
+      "success": false,
+      "moment_max": 85.89854995310372,
+      "correction_norm": 56.113349584028306,
+      "momentum_peak": 11436180.42471602,
+      "objective": 35.27934339930194,
+      "minimum_cone_constraint": -11.623221148366046
+    }
+  ],
+  "optimizer_message": "Positive directional derivative for linesearch",
+  "correction": [
+    -0.2475395644301357,
+    0.3218368515917863,
+    -0.011869294167918827,
+    -0.6230509387056116,
+    0.01420520261019194,
+    -0.032779168895206046,
+    3.502966807836934,
+    8.084320843834261,
+    -11.016937757934853,
+    -2.4202505454744445,
+    -39.9999999999984,
+    3.294294420714541
+  ],
+  "pressure_coefficients": [
+    24.700364030446543,
+    0.7763150857282891,
+    11.060808633685243,
+    -15.606302761536273,
+    1.2433215303976466,
+    -18.822564673273053
+  ],
+  "amplitudes": [
+    -0.12050448524080024,
+    0.03265449933840082,
+    0.0,
+    -0.23947013087285343,
+    0.32045365549409993,
+    -0.011869294167918827,
+    -0.6185267289778601,
+    0.014744974907721977,
+    -0.032779168895206046,
+    0.022948226592363792,
+    -0.23836836858184762,
+    0.0,
+    3.5108362686396215,
+    6.676937140522103,
+    -11.016937757934853,
+    -2.4107460816673583,
+    -41.477377145546214,
+    3.294294420714541,
+    -0.13943440318667102,
+    0.0032544073258496697,
+    0.0,
+    0.008112934240458138,
+    0.0002913211230674837,
+    0.0,
+    0.00447091149507957,
+    0.0008510867665376563,
+    0.0,
+    -0.0008247119740108829,
+    -0.09490936910835478,
+    0.0,
+    0.0010866344414032544,
+    -1.3918837113537657,
+    0.0,
+    0.005400770543185982,
+    -1.4115887874684838,
+    0.0,
+    -0.14646627566876752,
+    0.002377591836994234,
+    0.0,
+    0.007562483690645784,
+    0.00034245528563825125,
+    0.0,
+    0.004379306495845444,
+    0.0008602130907427113,
+    0.0,
+    -0.0013289720346279321,
+    -0.07233372274861224,
+    0.0,
+    0.0013184804844418897,
+    -1.3862685232947234,
+    0.0,
+    0.0052428899483261595,
+    -1.361460882062968,
+    0.0
+  ],
+  "minimum_cone_constraint": -11.623221148366046,
+  "gradient_directional_error": 7.051437905802871e-11,
+  "replay": [
+    {
+      "order": 96,
+      "moments": [
+        -0.11752502518556861,
+        85.89853973121537,
+        -0.2938915287635031,
+        -79.21388909576108
+      ],
+      "absolute_max": 85.89853973121537,
+      "momentum_peak": 11474994.18079923
+    },
+    {
+      "order": 128,
+      "moments": [
+        -0.1175252570570995,
+        85.89857786909553,
+        -0.2938916186341975,
+        -79.21392617126567
+      ],
+      "absolute_max": 85.89857786909553,
+      "momentum_peak": 11481394.156272702
+    }
+  ],
+  "heldout_momentum_peaks": {
+    "baseline": 1422018.5863017004,
+    "candidate": 18718165.132119138
+  },
+  "heldout_components": {
+    "baseline": [
+      784690.1483729412,
+      775327.9977080198,
+      1218341.7928385441
+    ],
+    "candidate": [
+      14485136.214700943,
+      1834099.266792105,
+      14322428.020093227
+    ]
+  },
+  "cone": {
+    "k": 11,
+    "tau": 0.000244140625,
+    "order": 96,
+    "rows": [
+      {
+        "index": 0,
+        "radial_offset": -0.99,
+        "axial_offset": -0.99,
+        "momentum_norm": 521509.9684713547,
+        "lambda_squared": 12728272.489736853,
+        "target_dot_N": -31.54045883289265,
+        "target_dot_K": -82.81444537377767,
+        "cone_ratio": 0.913105372753982,
+        "cone_pass": true
+      },
+      {
+        "index": 1,
+        "radial_offset": -0.99,
+        "axial_offset": 0.0,
+        "momentum_norm": 530005.7723448721,
+        "lambda_squared": 8718046.47522146,
+        "target_dot_N": -51.58386373290035,
+        "target_dot_K": -21.805824849925816,
+        "cone_ratio": 0.12042764266071188,
+        "cone_pass": true
+      },
+      {
+        "index": 2,
+        "radial_offset": -0.99,
+        "axial_offset": 0.99,
+        "momentum_norm": 524842.8194103374,
+        "lambda_squared": 11088235.119740551,
+        "target_dot_N": -45.396514183646545,
+        "target_dot_K": 42.06196928853381,
+        "cone_ratio": 0.2985795971940075,
+        "cone_pass": true
+      },
+      {
+        "index": 3,
+        "radial_offset": 0.0,
+        "axial_offset": -0.99,
+        "momentum_norm": 365682.5071088398,
+        "lambda_squared": 13086015.920479285,
+        "target_dot_N": -64.701848415498,
+        "target_dot_K": -88.56462864336333,
+        "cone_ratio": 0.5932471804027805,
+        "cone_pass": true
+      },
+      {
+        "index": 4,
+        "radial_offset": 0.0,
+        "axial_offset": 0.0,
+        "momentum_norm": 373519.1939297802,
+        "lambda_squared": 8972652.891337201,
+        "target_dot_N": -87.58372399536682,
+        "target_dot_K": -26.075002472540476,
+        "cone_ratio": 0.10510735121559465,
+        "cone_pass": true
+      },
+      {
+        "index": 5,
+        "radial_offset": 0.0,
+        "axial_offset": 0.99,
+        "momentum_norm": 376613.02524261706,
+        "lambda_squared": 10312386.91541077,
+        "target_dot_N": -83.11409602493514,
+        "target_dot_K": 40.54113680103818,
+        "cone_ratio": 0.18514216847516804,
+        "cone_pass": true
+      },
+      {
+        "index": 6,
+        "radial_offset": 0.99,
+        "axial_offset": -0.99,
+        "momentum_norm": 481063.1872748013,
+        "lambda_squared": 10356667.63391962,
+        "target_dot_N": -101.06348792371746,
+        "target_dot_K": -67.18436400847337,
+        "cone_ratio": 0.3073719541836642,
+        "cone_pass": true
+      },
+      {
+        "index": 7,
+        "radial_offset": 0.99,
+        "axial_offset": 0.0,
+        "momentum_norm": 478088.9022905062,
+        "lambda_squared": 8388965.05497105,
+        "target_dot_N": -114.64947475150237,
+        "target_dot_K": -15.720761479421444,
+        "cone_ratio": 0.0571943449443653,
+        "cone_pass": true
+      },
+      {
+        "index": 8,
+        "radial_offset": 0.99,
+        "axial_offset": 0.99,
+        "momentum_norm": 476859.21097099176,
+        "lambda_squared": 9150811.861695718,
+        "target_dot_N": -110.26242376538312,
+        "target_dot_K": 37.59426576732749,
+        "cone_ratio": 0.14923900964233325,
+        "cone_pass": true
+      }
+    ],
+    "pass_count": 9,
+    "max_ratio": 0.913105372753982
+  },
+  "baseline_cone": {
+    "k": 11,
+    "tau": 0.000244140625,
+    "order": 96,
+    "rows": [
+      {
+        "index": 0,
+        "radial_offset": -0.99,
+        "axial_offset": -0.99,
+        "momentum_norm": 521509.9684713547,
+        "lambda_squared": 12728272.489736853,
+        "target_dot_N": -31.54045883289265,
+        "target_dot_K": -82.81444537377767,
+        "cone_ratio": 0.913105372753982,
+        "cone_pass": true
+      },
+      {
+        "index": 1,
+        "radial_offset": -0.99,
+        "axial_offset": 0.0,
+        "momentum_norm": 530005.7723448721,
+        "lambda_squared": 8718046.47522146,
+        "target_dot_N": -51.58386373290035,
+        "target_dot_K": -21.805824849925816,
+        "cone_ratio": 0.12042764266071188,
+        "cone_pass": true
+      },
+      {
+        "index": 2,
+        "radial_offset": -0.99,
+        "axial_offset": 0.99,
+        "momentum_norm": 524842.8194103374,
+        "lambda_squared": 11088235.119740551,
+        "target_dot_N": -45.396514183646545,
+        "target_dot_K": 42.06196928853381,
+        "cone_ratio": 0.2985795971940075,
+        "cone_pass": true
+      },
+      {
+        "index": 3,
+        "radial_offset": 0.0,
+        "axial_offset": -0.99,
+        "momentum_norm": 365682.5071088398,
+        "lambda_squared": 13086015.920479285,
+        "target_dot_N": -64.701848415498,
+        "target_dot_K": -88.56462864336333,
+        "cone_ratio": 0.5932471804027805,
+        "cone_pass": true
+      },
+      {
+        "index": 4,
+        "radial_offset": 0.0,
+        "axial_offset": 0.0,
+        "momentum_norm": 373519.1939297802,
+        "lambda_squared": 8972652.891337201,
+        "target_dot_N": -87.58372399536682,
+        "target_dot_K": -26.075002472540476,
+        "cone_ratio": 0.10510735121559465,
+        "cone_pass": true
+      },
+      {
+        "index": 5,
+        "radial_offset": 0.0,
+        "axial_offset": 0.99,
+        "momentum_norm": 376613.02524261706,
+        "lambda_squared": 10312386.91541077,
+        "target_dot_N": -83.11409602493514,
+        "target_dot_K": 40.54113680103818,
+        "cone_ratio": 0.18514216847516804,
+        "cone_pass": true
+      },
+      {
+        "index": 6,
+        "radial_offset": 0.99,
+        "axial_offset": -0.99,
+        "momentum_norm": 481063.1872748013,
+        "lambda_squared": 10356667.63391962,
+        "target_dot_N": -101.06348792371746,
+        "target_dot_K": -67.18436400847337,
+        "cone_ratio": 0.3073719541836642,
+        "cone_pass": true
+      },
+      {
+        "index": 7,
+        "radial_offset": 0.99,
+        "axial_offset": 0.0,
+        "momentum_norm": 478088.9022905062,
+        "lambda_squared": 8388965.05497105,
+        "target_dot_N": -114.64947475150237,
+        "target_dot_K": -15.720761479421444,
+        "cone_ratio": 0.0571943449443653,
+        "cone_pass": true
+      },
+      {
+        "index": 8,
+        "radial_offset": 0.99,
+        "axial_offset": 0.99,
+        "momentum_norm": 476859.21097099176,
+        "lambda_squared": 9150811.861695718,
+        "target_dot_N": -110.26242376538312,
+        "target_dot_K": 37.59426576732749,
+        "cone_ratio": 0.14923900964233325,
+        "cone_pass": true
+      }
+    ],
+    "pass_count": 9,
+    "max_ratio": 0.913105372753982
+  },
+  "free_indices": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17
+  ],
+  "scope": "Single-scale moment-constrained optimization of sampled full momentum; heldout radial/axial grid. No global maximum, spatial-volume L2, finite energy, or scale recursion established.",
+  "accepted": false,
+  "scale_recursion_established": false
+}

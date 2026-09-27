@@ -2,22 +2,22 @@
 
 ## ST073 research update - 2026-09-27
 
-Broader overlapping outer modes plus a midplane cost grid reduce the
-k=11 held-out full momentum peak by 58%, from 1.45e7 to 6.05e6.
-Refined sampled moment errors remain below 2.9e-5 and the inner cone
-remains 9/9 passing. The new outer cone screen still passes 0/6 nodes.
-See [the broad-profile trial](ST073_WIDE_OUTER_REPAIR.md).
+A staged broad-velocity/pressure solve reduces the k=11 held-out momentum
+peak from 6.05e6 to 1.42e6 while retaining refined sampled moments below
+2.9e-5 and all nine inner cone nodes. Outer cone passes improve to 3/6;
+all six shear lambda values are positive. The remaining three failed
+stress directions lie in the farther outer window. See
+[pressure repair](ST073_OUTER_PRESSURE_REPAIR.md).
 
-Next repair outer shear and mean/pressure stress direction under the
-moment constraints. Width reduction of viscous cost is useful, but
-outer pulse realizability remains absent. Rebuild coefficient time maps
-after profile changes; the saved old-width short DAE trajectory cannot
-be transferred unchanged. No candidate is accepted: full momentum,
-volume-L2, finite-energy closure and scale recursion remain unestablished.
+The fixed-velocity six-pressure-mode linear subproblem is infeasible
+within the tested bounds; this is not a joint impossibility result.
+Next separate local stress repair from outer axial-moment compensation
+and assess the added pressure support's full residual cost. No field is
+accepted: complete momentum, volume-L2, energy and recursion remain open.
 
-Earlier diagnosis is in [outer residual sources](ST073_OUTER_RESIDUAL_SOURCE.md)
-and the existing old-width trajectory in [the interval report](ST073_OUTER_DAE_INTERVAL.md).
-The snapshot below is historical, not current ST073 acceptance.
+The new profile has not been integrated in time. Earlier short-interval
+results refer to the older mode family. The snapshot below is historical,
+not current ST073 acceptance.
 
 Snapshot date: **2026-09-20**.
 

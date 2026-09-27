@@ -2,16 +2,18 @@
 
 ## Current ST073 continuation
 
-1. Repair outer shear and mean/pressure stress direction in the broader
-   overlapping mode family while preserving moments and the inner support
-   gap. The new held-out k=11 peak is 58% lower, but all six outer cone
-   samples fail. See ST073_WIDE_OUTER_REPAIR.md.
-2. Include velocity-shear lambda constraints as well as stress direction:
-   pressure variation alone cannot fix the negative lambda_squared nodes.
-   Preserve reduced curvature and evaluate full momentum on independent grids.
-3. Rebuild and integrate coefficient time maps after profile changes,
-   then verify independent times and segment overlaps. The saved old-width
-   DAE field must not be reused as if it represented the broader modes.
+1. Separate local outer stress repair from total axial-moment compensation.
+   The staged pressure/velocity field has positive lambda at all six outer
+   nodes and 3/6 cone passes; failures are confined to the farther window.
+   Test a pressure compensation support beyond those stress primitives,
+   preserving the inner gap. See ST073_OUTER_PRESSURE_REPAIR.md.
+2. Distinguish pressure bounds from linear-space incompatibility. The current
+   fixed-velocity six-mode pressure LP is infeasible in [-100,100]; it is
+   not evidence that the full coupled construction is impossible. Compare
+   relaxed bounds/support extensions and monitor full residual cost.
+3. Rebuild and integrate coefficient time maps for the selected new profile,
+   then verify independent times and segment overlaps. Existing old-width
+   DAE results cannot be transferred unchanged to the pressure-repaired field.
 4. Establish improvement across time intervals and scales on one callable
    field before claiming recursion. Full momentum maximum and spatial-volume
    L2 must both meet 1e-3; no current candidate does so.
