@@ -5,8 +5,9 @@
 Degree-3 mean enrichment with direct endpoint geometry now reduces
 independent actual momentum L2 to 1.92894e6 and maximum to 1.18244e11
 (about 27% and 30% below the prior 236-control candidate). All three
-actual sampled forward geometric signs pass. Integral/cone constraints
-pass assembly; their enlarged-mean independent replay is pending.
+actual sampled forward geometric signs pass. Enlarged-mean independent
+replay gives moment maximum 2.1084e-7 and 27/27 cones passing, minimum
+margin 9.94824e-5. Higher-quadrature refitting is next.
 No NS step or scale recursion is accepted. See
 [enriched mean endpoint](ST073_ENRICHED_MEAN_ENDPOINT.md).
 

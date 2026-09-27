@@ -49,8 +49,12 @@ oracle. Peak swirl decreases to 6557.77; the favorable weighted statistic
 does not assert peak winding amplification. This remains an affine
 increment over physical time about 1.692e-10.
 
-Independent integral/cone replay for the enlarged mean is pending. The
-assembled matching and these actual-field observations do not establish
+Independent integral/cone replay for the enlarged mean is now complete:
+order-96 joint moment maximum is 2.1084e-7, and all 27 locations / 81
+inequalities pass the order-64 cone replay, with minimum margin 9.94824e-5.
+The maximum predicted/actual cone-margin discrepancy is 1.2832e-6. This
+checks the new 64-column mean correction in the actual field. The
+matching and these actual-field observations do not establish
 an accepted NS time step, continuous interval or scale recursion. Both
 momentum metrics remain far above 1e-3.
 
@@ -64,6 +68,7 @@ python experiments/root_st073/enriched_endpoint_shape_cache.py
 python experiments/root_st073/enriched_mean_endpoint_tangent.py
 python experiments/root_st073/enriched_shape_replay.py --source experiments/root_st073/enriched_mean_endpoint_tangent.json --mode momentum --output experiments/root_st073/enriched_mean_momentum_replay.json
 python experiments/root_st073/enriched_shape_replay.py --source experiments/root_st073/enriched_mean_endpoint_tangent.json --mode shape --output experiments/root_st073/enriched_mean_shape_replay.json
+python experiments/root_st073/enriched_mean_compatibility.py
 ```
 
 The shared replayer supports both 236 and 264 controls. A three-point
@@ -71,3 +76,10 @@ embedding check at reference and endpoint times gives velocity differences
 at most 1.42e-14 and pressure difference 2.33e-10 when the old field is
 represented in the enlarged basis. This checks layout and reconstruction,
 not the physical residual tolerance.
+
+The next solve will use a higher-quadrature momentum cache instead of
+further increasing spatial degree on the original order-9 training grid.
+The solver accepts `--refined-cache` and `--output`, binding the frozen
+wave coefficients and cache hash while preserving the previous candidate.
+The new cache must supply actual frozen-wave residual (without tangent),
+the 264-column design, points, weights and packed wave coefficients.

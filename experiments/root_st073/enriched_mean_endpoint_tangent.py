@@ -1,5 +1,6 @@
 """Degree-3 mean/mode-2 tangent with matching and direct endpoint geometry."""
 import hashlib
+import argparse
 import json
 import os
 from pathlib import Path
@@ -28,7 +29,7 @@ def embed_seed(control):
     return new
 
 
-def run():
+def run(refined_cache_path=None,output_path=None):
     from enriched_endpoint_shape_cache import EnrichedEndpointShape
     oracle = EnrichedEndpointShape()
     paths = dict(seed=ROOT/'enriched_shape_candidate_snapshot.json',
@@ -50,19 +51,29 @@ def run():
     snapshot = json.loads((ROOT/'full_wave_frozen_cache.json').read_text())
     geometry = snapshot['inputs']['wave']
     carrier = np.array(geometry['carrier'])
-    with np.load(ROOT/'wave_momentum_projection.npz',allow_pickle=False) as loaded:
+    cache_path=Path(refined_cache_path) if refined_cache_path else ROOT/'wave_momentum_projection.npz'
+    with np.load(cache_path,allow_pickle=False) as loaded:
         cache = {key:loaded[key] for key in loaded.files}
     points,weights = cache['points'],cache['weights']
-    mode0 = _mode_block_columns(points,geometry['center'],geometry['widths'],0,3,np.zeros(2))[:,::2]
-    mode2 = _mode_block_columns(points,geometry['center'],geometry['widths'],2,3,2*carrier)
-    D = np.column_stack((mode0,cache['tangent_design'][:,36:108],mode2))
+    if refined_cache_path:
+        if not np.array_equal(np.asarray(cache['coefficients_original']),
+                              np.asarray(seed['selected']['coefficients_original'])):
+            raise ValueError('Refined cache initial wave differs from seed')
+        D=np.asarray(cache['tangent_design'])
+    else:
+        mode0 = _mode_block_columns(points,geometry['center'],geometry['widths'],0,3,np.zeros(2))[:,::2]
+        mode2 = _mode_block_columns(points,geometry['center'],geometry['widths'],2,3,2*carrier)
+        D = np.column_stack((mode0,cache['tangent_design'][:,36:108],mode2))
     E = np.column_stack((np.asarray(rows['moment_rows']),np.zeros((4,200))))
     C = np.column_stack((np.asarray(rows['cone_control_rows']),np.zeros((81,200))))
     if D.shape[1]!=264 or E.shape!=(4,264) or C.shape!=(81,264):
         raise ValueError('Unexpected enriched mean layout')
     c = np.array(seed['selected']['coefficients_original'])
     x = np.r_[c[:,0],c[:,1]]
-    residual,_ = residual_and_jacobian(cache,x)
+    if refined_cache_path:
+        residual=np.asarray(cache['residual'])
+    else:
+        residual,_ = residual_and_jacobian(cache,x)
     target,_ = quadratic_moment_target(moment['baseline_moments'],moment['wave_moment_forms'],x)
     setup = _weighted_constraint_setup(D,E,target,residual,weights)
     particular = setup['particular']
@@ -94,11 +105,12 @@ def run():
         degrees=dict(mode0=3,mode1=2,mode2=3),
         sources={key:dict(path=paths[key].name,sha256=hashlib.sha256(value).hexdigest()) for key,value in raw.items()},
         scope='Reference-time full momentum with integral moments, sampled cones and nonlinear fixed-cylinder endpoint geometry. No endpoint momentum or continuous trajectory acceptance.',
+        momentum_cache=dict(path=cache_path.name,sha256=hashlib.sha256(cache_path.read_bytes()).hexdigest()),
         objective_rank=setup['keep_rank'],requested_signed_fractional_endpoint_change=requested.tolist(),
         mapped_seed_control_max_error=float(np.max(abs(particular+mapping@initial-old_control))),
         initial_endpoint_constraint_margin=endpoint(initial)[0].tolist(),
         initial_cone_normalized_min_margin=float(np.min(matrix_n@initial-rhs_n)))
-    output = ROOT/'enriched_mean_endpoint_tangent.json'
+    output = Path(output_path) if output_path else ROOT/'enriched_mean_endpoint_tangent.json'
     def save():
         output.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
     if np.min(endpoint(initial)[0])<-1e-8 or np.min(matrix_n@initial-rhs_n)<-1e-8:
@@ -137,4 +149,8 @@ def run():
 
 
 if __name__=='__main__':
-    run()
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--refined-cache',type=Path)
+    parser.add_argument('--output',type=Path)
+    args=parser.parse_args()
+    run(args.refined_cache,args.output)
