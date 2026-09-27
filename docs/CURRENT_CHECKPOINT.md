@@ -22,6 +22,14 @@ terms. Full records are `broad_meridional_time_audit.json` and
 `broad_meridional_scale_audit.json`. A separate constrained 44-direction solve
 is in progress; no compatibility result is claimed until its replay completes.
 
+The next state-dependent evolution now has a factorized nonlinear residual
+engine, `meridional_state_cache.py`. It supports 25 velocity values, their
+25 time slopes and 19 pressure coefficients, retaining all quadratic
+advection. Two nonzero-state five-point comparisons agree relatively to
+2.25e-11, but absolute discrepancies reach 0.02481; this is not final-gate
+accuracy or an integrated trajectory. See
+[the state-cache record](ST073_MERIDIONAL_STATE_CACHE.md).
+
 A new broad annular r^-2 swirl direction admits positive instantaneous
 wave energy growth: at amplitude 44.8774 the mode-1 rate is 1.0217e4
 on the refined split quadrature, with all 22 sampled centrifugal growth

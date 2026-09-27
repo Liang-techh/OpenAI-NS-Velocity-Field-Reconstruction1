@@ -80,6 +80,13 @@ the earlier spatial-solve request below:
   without an independent interpolation/error check. Track the actual wave
   covariance and growth, core geometry and support simultaneously. Local
   annular energy is not a global finite-energy check.
+  The initial nonlinear residual engine is now implemented in
+  `meridional_state_cache.py`: 25 velocity values, 25 derivatives and
+  19 pressure coefficients, with every quadratic advection product retained.
+  Five-point two-state comparisons agree relatively to 2.25e-11 but have
+  absolute discrepancies up to 0.02481, so they are not 1e-3 validation.
+  See ST073_MERIDIONAL_STATE_CACHE.md. Integrating this engine with refreshed
+  constraints and an actual time step remains open.
 - [ ] Build enough compatible growing wave directions to realize both
   evolving stress components on the same revised mean. Currently only
   mode 1 grows; the saved coarse-grid eigenvector has not had a separate
