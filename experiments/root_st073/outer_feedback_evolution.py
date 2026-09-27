@@ -9,6 +9,7 @@ import time
 import numpy as np
 from scipy.interpolate import CubicHermiteSpline, CubicSpline
 from scipy.optimize import linprog, minimize
+from scipy.linalg import null_space
 from adaptive_bridge_recursive_defect import build_fields
 from adaptive_bridge_moment_fit import moment_slices
 from affine_momentum import momentum, jets
@@ -58,14 +59,38 @@ def build_current():
     return inner, base, OuterPressure(velocity, seed['pressure_coefficients'])
 
 
-def solve_control(inner, base, current, k, state, reference, order=48):
+def choose_control(En, mn, A, b, reference, feasible):
+    """Project onto linear controls with equality elimination and scaled variables."""
+    origin=reference+np.linalg.lstsq(En,-mn-En@reference,rcond=1e-12)[0]
+    null=null_space(En,rcond=1e-12)
+    scale=max(float(np.linalg.norm(null.T@(feasible-origin))),1.)
+    C=A@null*scale
+    d=A@origin+b
+    row_scale=np.maximum(np.maximum(np.linalg.norm(C,axis=1),abs(d)),1.)
+    Cn,dn=C/row_scale[:,None],d/row_scale
+    fit=minimize(lambda y:(.5*float(y@y),y),null.T@(feasible-origin)/scale,
+                 jac=True,method='SLSQP',
+                 constraints=[dict(type='ineq',fun=lambda y:Cn@y+dn,jac=lambda y:Cn)],
+                 options=dict(maxiter=250,ftol=1e-12))
+    candidate=origin+scale*null@fit.x
+    def valid(x):
+        return np.isfinite(x).all() and max(abs(En@x+mn))<=1e-7 and min(A@x+b)>=-1e-7
+    if fit.success and valid(candidate):
+        return candidate,'scaled_nullspace_projection'
+    if valid(feasible):
+        return feasible,'validated_linear_program_fallback'
+    raise RuntimeError(f'No numerically valid control: {fit.message}')
+
+
+def solve_control(inner, base, current, k, state, reference, order=48, radial_breaks=P_BREAKS,
+                  problem_callback=None):
     started = time.perf_counter()
     field = SwirlValue(current, state)
     zero = ZeroBackground(base)
     units = [OuterPressure(zero, e, windows=P_WINDOWS) for e in np.eye(9)]
     units += [OuterSwirlSlope(zero, e, k, P_WINDOWS) for e in np.eye(9)]
     data = moment_slices(inner, base, field, orders=(k,), n=order, unit_fields=units,
-                         unit_fields_are_deltas=True, radial_breaks=P_BREAKS)[0]
+                         unit_fields_are_deltas=True, radial_breaks=radial_breaks)[0]
     m, E, Q = _integrated_moment_coefficients(data)
     # The instantaneous velocity/gradient of every control is exactly zero.
     assert np.max(abs(Q)) < 1e-12
@@ -74,7 +99,7 @@ def solve_control(inner, base, current, k, state, reference, order=48):
         [(eta+de, .75+dy) for eta in (-.2, .2)
          for de in (-.005, 0., .005) for dy in (-.005, 0., .005)]))
     cache = outer_cache(field, units, k, order=order, locations=locations,
-                        radial_breaks=P_BREAKS)
+                        radial_breaks=radial_breaks)
     residual = momentum(cache['baseline'])
     A, b, lambdas = [], [], []
     for i, (sl, r, w, R) in enumerate(cache['panels']):
@@ -103,18 +128,15 @@ def solve_control(inner, base, current, k, state, reference, order=48):
                  bounds=[(None, None)]*18, method='highs')
     if not lp.success:
         raise RuntimeError(f'Feedback infeasible at k={k}: {lp.message}')
-    # Fixed reference, not previous solver output: deterministic feedback law.
-    fit = minimize(lambda x: (float((x-reference)@(x-reference)), 2*(x-reference)),
-                   lp.x, jac=True, method='SLSQP',
-                   constraints=[dict(type='eq', fun=lambda x: En@x+mn, jac=lambda x: En),
-                                dict(type='ineq', fun=lambda x: A@x+b, jac=lambda x: A)],
-                   options=dict(maxiter=250, ftol=1e-10))
-    x = fit.x
-    if not fit.success or max(abs(En@x+mn)) > 1e-7 or min(A@x+b) < -1e-7:
-        raise RuntimeError(f'Feedback optimization failed at k={k}: {fit.message}')
+    if problem_callback is not None:
+        problem_callback(dict(En=En.tolist(),mn=mn.tolist(),A=A.tolist(),b=b.tolist(),
+                              E=E.tolist(),m=m.tolist(),reference=reference.tolist(),
+                              feasible=lp.x.tolist(),lambdas=lambdas))
+    x,selection=choose_control(En,mn,A,b,reference,lp.x)
     row = dict(k=float(k), state=state.tolist(), control=x.tolist(),
                moment_max=float(max(abs(E@x+m))), minimum_constraint=float(min(A@x+b)),
-               minimum_lambda_squared=min(lambdas), seconds=time.perf_counter()-started)
+               minimum_lambda_squared=min(lambdas), selection_method=selection,
+               seconds=time.perf_counter()-started)
     print(json.dumps({key: value for key, value in row.items() if key not in ('state', 'control')}), flush=True)
     return x, row
 

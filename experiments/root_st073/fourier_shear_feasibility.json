@@ -1,0 +1,199 @@
+{
+  "accepted": false,
+  "scale_recursion_established": false,
+  "source": "broad_shear_growth.json",
+  "k": 11.0003,
+  "delta_state": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "state": [
+    -0.0020857741098437494,
+    -5.420760281067029e-05,
+    0.004419989266518509,
+    -0.0017948151135235941,
+    3.367381646447544e-06,
+    0.003556744199581995,
+    0.0008809027032145498,
+    9.625715367060785e-05,
+    0.00039151317960747583
+  ],
+  "mean_increment": {
+    "type": "broad_annular_shear",
+    "parameters": {
+      "amplitude": 44.87741591218079,
+      "power": 2.0,
+      "onset": [
+        0.01,
+        0.1
+      ],
+      "offset": [
+        0.88,
+        0.99
+      ],
+      "reference_y": 0.325
+    }
+  },
+  "radial_breaks": [
+    0.01,
+    0.055,
+    0.1,
+    0.12,
+    0.25,
+    0.38,
+    0.4,
+    0.56,
+    0.58,
+    0.72,
+    0.75,
+    0.88,
+    0.92,
+    0.93,
+    0.935,
+    0.96,
+    0.99
+  ],
+  "status": "instantaneous_repair_replayed",
+  "scope": "Instantaneous mean repair for a supported-wave energy seed. No evolved wave, stress realization, finite-energy or full-domain acceptance.",
+  "elapsed_seconds": 313.3510910999903,
+  "control": [
+    2.3475860684195586,
+    -2.7605263337790804,
+    -1.649773957941749,
+    0.6920959011752009,
+    1.89950235914071,
+    0.8320375079712042,
+    -0.719523545872262,
+    0.4244981952724644,
+    1.6296834607558197,
+    -1000.7877372458848,
+    -0.3599198130334228,
+    135.11283179869477,
+    482.565330414122,
+    0.07939753287880356,
+    228.98789824454167,
+    138.75478839458913,
+    0.33983975960254176,
+    61.668798154238466
+  ],
+  "control_solve": {
+    "k": 11.0003,
+    "state": [
+      -0.0020857741098437494,
+      -5.420760281067029e-05,
+      0.004419989266518509,
+      -0.0017948151135235941,
+      3.367381646447544e-06,
+      0.003556744199581995,
+      0.0008809027032145498,
+      9.625715367060785e-05,
+      0.00039151317960747583
+    ],
+    "control": [
+      2.3475860684195586,
+      -2.7605263337790804,
+      -1.649773957941749,
+      0.6920959011752009,
+      1.89950235914071,
+      0.8320375079712042,
+      -0.719523545872262,
+      0.4244981952724644,
+      1.6296834607558197,
+      -1000.7877372458848,
+      -0.3599198130334228,
+      135.11283179869477,
+      482.565330414122,
+      0.07939753287880356,
+      228.98789824454167,
+      138.75478839458913,
+      0.33983975960254176,
+      61.668798154238466
+    ],
+    "moment_max": 2.712517710445894e-12,
+    "minimum_constraint": -8.881784197001252e-16,
+    "minimum_lambda_squared": 1083081614.507124,
+    "selection_method": "scaled_nullspace_projection",
+    "seconds": 164.42536870000185
+  },
+  "moment_replay": {
+    "order": 96,
+    "values": [
+      5.495785475752774e-06,
+      1.4406797905118868e-05,
+      5.16918520971187e-07,
+      -1.4505515945590458e-05
+    ],
+    "max": 1.4505515945590458e-05
+  },
+  "outer_cones": [
+    {
+      "eta": -0.2,
+      "radial_fraction": 0.5,
+      "lambda_squared": 6927377191.217716,
+      "target_dot_N": -35.35500428576313,
+      "cone_ratio": 0.9258820085707032,
+      "cone_pass": true,
+      "momentum_norm": 22190849.804566786
+    },
+    {
+      "eta": -0.2,
+      "radial_fraction": 0.75,
+      "lambda_squared": 1132174741.595085,
+      "target_dot_N": -5304.5322350603665,
+      "cone_ratio": 0.005917242710914595,
+      "cone_pass": true,
+      "momentum_norm": 22060957.412136313
+    },
+    {
+      "eta": 0.0,
+      "radial_fraction": 0.5,
+      "lambda_squared": 7723533329.173216,
+      "target_dot_N": -35.34374267602584,
+      "cone_ratio": 0.221092608520528,
+      "cone_pass": true,
+      "momentum_norm": 24003061.89152774
+    },
+    {
+      "eta": 0.0,
+      "radial_fraction": 0.75,
+      "lambda_squared": 1249718868.1991482,
+      "target_dot_N": -6884.694154903178,
+      "cone_ratio": 0.0078445865683095,
+      "cone_pass": true,
+      "momentum_norm": 18682444.514063433
+    },
+    {
+      "eta": 0.2,
+      "radial_fraction": 0.5,
+      "lambda_squared": 6884529130.237599,
+      "target_dot_N": -35.15355188080122,
+      "cone_ratio": 0.9500000349172886,
+      "cone_pass": true,
+      "momentum_norm": 22390146.453161303
+    },
+    {
+      "eta": 0.2,
+      "radial_fraction": 0.75,
+      "lambda_squared": 1132046266.52747,
+      "target_dot_N": -5303.8438508774925,
+      "cone_ratio": 0.02045056391606622,
+      "cone_pass": true,
+      "momentum_norm": 22082058.941151638
+    }
+  ],
+  "cone_pass_count": 6,
+  "sampled_mean_momentum": {
+    "max": 7477252254.703875,
+    "sample_rms": 1456522503.262762,
+    "point_count": 305
+  },
+  "sampled_outer_mean_constraints_pass": true,
+  "constraint_scope": "Four integrated moments and six outer cone samples; excludes the growing-wave-region stress cone."
+}

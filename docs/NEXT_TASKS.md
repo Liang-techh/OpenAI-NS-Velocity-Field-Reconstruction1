@@ -16,13 +16,32 @@ the earlier spatial-solve request below:
   conventions. Completed in `fourier_patch_energy_budget.py` and its JSON;
   see ST073_WAVE_ENERGY_BUDGET.md. All tested modes at support multipliers
   1, 2, 4 and 8 decay. This finite matrix diagnostic is not a continuum theorem.
-- [ ] Co-design the coupled mean shear and supported wave space. Widening
-  the current patch up to 8 times alone has failed the energy gate. Seek
-  positive growth while preserving the current mean moment/cone constraints;
-  record production, dissipation and the support-wide stress-cone evidence
-  before another time sweep. Do not hide failure by shrinking amplitude.
-  A changed approximation space must demonstrate a resolved growth mode,
-  not merely more polynomial coefficients.
+- [x] Construct a changed mean that admits positive initial growth.
+  The old nine-direction constrained search found no candidate; this is
+  an optimizer result, not infeasibility. The broad annular r^-2 direction
+  in `broad_shear_growth.json` gives mode-1 rate 1.0217e4 with 22 positive
+  centrifugal nodes. See ST073_SHEAR_CODESIGN.md. Its mean change is large.
+- [x] Complete independent assessment of the broad-shear seed. The
+  moment maximum is 1.45e-5, and 6/6 outer cones pass, but full sampled
+  momentum is 7.48e9. `broad_shear_wave_cone.json` finds 0/5 cone passes
+  near the actual growing-wave center: T dot N has the wrong sign.
+- [ ] Add a broad-shear amplitude time-slope control. It must vanish as
+  an instantaneous velocity increment at k0 while contributing the
+  correct physical-time derivative (dk/dt=1/(tau*log(2))). Jointly solve
+  the four integral moments, existing 22 outer constraints, and the five
+  wave-region stress-cone constraints. The old outer slope supports start
+  at y=.40 and cannot affect the failed samples at y<=.395. Reuse the
+  saved linear control problem where valid; do not repeat the nine-value
+  optimization or equate positive lambda-squared with stress admissibility.
+- [ ] Repair the new radial centrifugal pressure balance, explicitly
+  choosing its inner/outer datum and checking induced axial imbalance.
+  Keep the original full momentum max/volume-L2 gates; do not absorb the
+  large residual into an arbitrary manufactured force.
+- [ ] Build enough compatible growing wave directions to realize both
+  evolving stress components on the same revised mean. Currently only
+  mode 1 grows; the saved coarse-grid eigenvector has not had a separate
+  fixed-vector refined replay. Use actual supported fields and evaluate
+  nonlinear mean/cross-harmonic residuals, not only energy eigenvalues.
 - [ ] Recompute the evolving mean stress target and compare the complete
   wave covariance against it over time. The existing covariance report
   measures only retention against the initial reference.

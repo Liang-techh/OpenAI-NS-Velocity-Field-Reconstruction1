@@ -1,0 +1,929 @@
+{
+  "accepted": false,
+  "pde_validated": false,
+  "scope": "Bounded one-scalar broad-annular shear growth screen only; no moment feasibility, solve_control, time integration, nonlinear transfer, or Navier--Stokes acceptance.",
+  "source_report": "fourier_patch_implicit.json",
+  "matrix_source": "fourier_shear_codesign.json",
+  "mean_report": "outer_feedback_evolution.json",
+  "initial_k": 11.0003,
+  "initial_physical_time": -0.00024408986266228504,
+  "center": [
+    0.0016227128870842616,
+    -2.036013852023506e-05
+  ],
+  "widths": [
+    0.0011600670852347063,
+    0.00045150643182473267
+  ],
+  "width_factor": 8.0,
+  "degree": 2,
+  "modes": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "carriers": {
+    "1": [
+      -871.4212739359624,
+      -616.1878920703391
+    ],
+    "2": [
+      -1742.8425478719248,
+      -1232.3757841406782
+    ],
+    "3": [
+      871.4212739359624,
+      3080.9394603516957
+    ],
+    "4": [
+      0.0,
+      2464.7515682813564
+    ],
+    "5": [
+      -871.4212739359624,
+      1848.5636762110173
+    ],
+    "6": [
+      -1742.8425478719248,
+      1232.3757841406782
+    ],
+    "7": [
+      871.4212739359624,
+      5545.691028633052
+    ],
+    "8": [
+      0.0,
+      4929.503136562713
+    ]
+  },
+  "target_growth_lambda": 10000.0,
+  "cone_floor_factor": 0.01,
+  "broad_parameters_unit": {
+    "amplitude": 1.0,
+    "power": 2.0,
+    "onset": [
+      0.01,
+      0.1
+    ],
+    "offset": [
+      0.88,
+      0.99
+    ],
+    "reference_y": 0.325
+  },
+  "baseline_diagnostic": {
+    "1": {
+      "lambda_max": -263261.93181209743,
+      "lambda_min": -4017516.226139186
+    },
+    "2": {
+      "lambda_max": -263464.28122691665,
+      "lambda_min": -4148656.2745599514
+    },
+    "3": {
+      "lambda_max": -274574.960553469,
+      "lambda_min": -4548033.6503661005
+    },
+    "4": {
+      "lambda_max": -290297.74242070655,
+      "lambda_min": -4357177.7639054805
+    },
+    "5": {
+      "lambda_max": -318754.161291914,
+      "lambda_min": -4251270.586719413
+    },
+    "6": {
+      "lambda_max": -354807.7495608951,
+      "lambda_min": -4219581.938620707
+    },
+    "7": {
+      "lambda_max": -396905.3342428374,
+      "lambda_min": -5549606.898801357
+    },
+    "8": {
+      "lambda_max": -443112.5981421068,
+      "lambda_min": -5353867.48599856
+    }
+  },
+  "baseline_node_lambda2": [
+    6283316.737785785,
+    16315833.869545747,
+    371638.6198298461,
+    24520023.93065283,
+    4277665.556634473,
+    16585522.55491751,
+    17196604.296512157,
+    15930408.06184253,
+    14672379.960025867,
+    17570044.640183486,
+    15064972.245702233,
+    17935697.938822392,
+    16694265.180937534,
+    15451424.737906907,
+    18145653.521630324,
+    16957268.04119891,
+    15758412.532513559,
+    17786938.857739918,
+    15378195.92890714,
+    17420532.783894453,
+    16206768.489942146,
+    14991718.616513673
+  ],
+  "node_labels": [
+    {
+      "eta": -0.2,
+      "y": 0.5
+    },
+    {
+      "eta": -0.2,
+      "y": 0.75
+    },
+    {
+      "eta": 0.0,
+      "y": 0.5
+    },
+    {
+      "eta": 0.0,
+      "y": 0.75
+    },
+    {
+      "eta": 0.2,
+      "y": 0.5
+    },
+    {
+      "eta": 0.2,
+      "y": 0.75
+    },
+    {
+      "eta": -0.20500000000000002,
+      "y": 0.745
+    },
+    {
+      "eta": -0.20500000000000002,
+      "y": 0.75
+    },
+    {
+      "eta": -0.20500000000000002,
+      "y": 0.755
+    },
+    {
+      "eta": -0.2,
+      "y": 0.745
+    },
+    {
+      "eta": -0.2,
+      "y": 0.755
+    },
+    {
+      "eta": -0.195,
+      "y": 0.745
+    },
+    {
+      "eta": -0.195,
+      "y": 0.75
+    },
+    {
+      "eta": -0.195,
+      "y": 0.755
+    },
+    {
+      "eta": 0.195,
+      "y": 0.745
+    },
+    {
+      "eta": 0.195,
+      "y": 0.75
+    },
+    {
+      "eta": 0.195,
+      "y": 0.755
+    },
+    {
+      "eta": 0.2,
+      "y": 0.745
+    },
+    {
+      "eta": 0.2,
+      "y": 0.755
+    },
+    {
+      "eta": 0.20500000000000002,
+      "y": 0.745
+    },
+    {
+      "eta": 0.20500000000000002,
+      "y": 0.75
+    },
+    {
+      "eta": 0.20500000000000002,
+      "y": 0.755
+    }
+  ],
+  "search": {
+    "method": "signed geometric bracket followed by bisection",
+    "signs": [
+      1,
+      -1
+    ],
+    "scans": [
+      {
+        "sign": 1,
+        "bracket_found": true,
+        "lower_nonfeasible": 44.877415905996344,
+        "upper_feasible": 44.87741591218079,
+        "records": [
+          {
+            "amplitude": 0.0001,
+            "best_mode": 1,
+            "best_growth_lambda": -263261.8807516275,
+            "min_node_lambda2": 372296.32154120697,
+            "growth_ok": false,
+            "cone_ok": true,
+            "feasible": false
+          },
+          {
+            "amplitude": 0.0002263803409521449,
+            "best_mode": 1,
+            "best_growth_lambda": -263261.8162195948,
+            "min_node_lambda2": 373127.6337313889,
+            "growth_ok": false,
+            "cone_ok": true,
+            "feasible": false
+          },
+          {
+            "amplitude": 0.0005124805876960937,
+            "best_mode": 1,
+            "best_growth_lambda": -263261.67012502596,
+            "min_node_lambda2": 375010.0004944352,
+            "growth_ok": false,
+            "cone_ok": true,
+            "feasible": false
+          },
+          {
+            "amplitude": 0.0011601553017399715,
+            "best_mode": 1,
+            "best_growth_lambda": -263261.3393611159,
+            "min_node_lambda2": 379273.5605699701,
+            "growth_ok": false,
+            "cone_ok": true,
+            "feasible": false
+          },
+          {
+            "amplitude": 0.0026263635276533325,
+            "best_mode": 1,
+            "best_growth_lambda": -263260.5903997074,
+            "min_node_lambda2": 388936.9620831937,
+            "growth_ok": false,
+            "cone_ok": true,
+            "feasible": false
+          },
+          {
+            "amplitude": 0.005945570708544395,
+            "best_mode": 1,
+            "best_growth_lambda": -263258.8939915465,
+            "min_node_lambda2": 410872.13904440036,
+            "growth_ok": false,
+            "cone_ok": true,
+            "feasible": false
+          },
+          {
+            "amplitude": 0.013459603241553642,
+            "best_mode": 1,
+            "best_growth_lambda": -263255.0490101139,
+            "min_node_lambda2": 460832.09256697365,
+            "growth_ok": false,
+            "cone_ok": true,
+            "feasible": false
+          },
+          {
+            "amplitude": 0.03046989570903508,
+            "best_mode": 1,
+            "best_growth_lambda": -263246.320915843,
+            "min_node_lambda2": 575484.1702980812,
+            "growth_ok": false,
+            "cone_ok": true,
+            "feasible": false
+          },
+          {
+            "amplitude": 0.06897785379387658,
+            "best_mode": 1,
+            "best_growth_lambda": -263226.4402169386,
+            "min_node_lambda2": 842986.373527669,
+            "growth_ok": false,
+            "cone_ok": true,
+            "feasible": false
+          },
+          {
+            "amplitude": 0.1561523006000498,
+            "best_mode": 1,
+            "best_growth_lambda": -263180.80922606273,
+            "min_node_lambda2": 1489271.2500036687,
+            "growth_ok": false,
+            "cone_ok": true,
+            "feasible": false
+          },
+          {
+            "amplitude": 0.35349811050301094,
+            "best_mode": 1,
+            "best_growth_lambda": -263074.3099664146,
+            "min_node_lambda2": 3160605.070853276,
+            "growth_ok": false,
+            "cone_ok": true,
+            "feasible": false
+          },
+          {
+            "amplitude": 0.8002502278161052,
+            "best_mode": 1,
+            "best_growth_lambda": -262816.8601513581,
+            "min_node_lambda2": 5099847.099877787,
+            "growth_ok": false,
+            "cone_ok": true,
+            "feasible": false
+          },
+          {
+            "amplitude": 1.8116091942004133,
+            "best_mode": 1,
+            "best_growth_lambda": -262150.76862604165,
+            "min_node_lambda2": 12846223.104917308,
+            "growth_ok": false,
+            "cone_ok": true,
+            "feasible": false
+          },
+          {
+            "amplitude": 4.101127070551304,
+            "best_mode": 2,
+            "best_growth_lambda": -259671.54701357696,
+            "min_node_lambda2": 51452489.032098815,
+            "growth_ok": false,
+            "cone_ok": true,
+            "feasible": false
+          },
+          {
+            "amplitude": 9.284145445194744,
+            "best_mode": 2,
+            "best_growth_lambda": -248415.95959874112,
+            "min_node_lambda2": 115444813.07812601,
+            "growth_ok": false,
+            "cone_ok": true,
+            "feasible": false
+          },
+          {
+            "amplitude": 21.017480113324915,
+            "best_mode": 2,
+            "best_growth_lambda": -202758.18217372923,
+            "min_node_lambda2": 332540900.55918294,
+            "growth_ok": false,
+            "cone_ok": true,
+            "feasible": false
+          },
+          {
+            "amplitude": 47.579443140094135,
+            "best_mode": 1,
+            "best_growth_lambda": 59994.02184151705,
+            "min_node_lambda2": 1194197386.1677454,
+            "growth_ok": true,
+            "cone_ok": true,
+            "feasible": true
+          }
+        ]
+      },
+      {
+        "sign": -1,
+        "bracket_found": true,
+        "lower_nonfeasible": -46.145633642812854,
+        "upper_feasible": -46.14563364899729,
+        "records": [
+          {
+            "amplitude": -0.0001,
+            "best_mode": 1,
+            "best_growth_lambda": -263261.98287142697,
+            "min_node_lambda2": 370980.99258555804,
+            "growth_ok": false,
+            "cone_ok": true,
+            "feasible": false
+          },
+          {
+            "amplitude": -0.0002263803409521449,
+            "best_mode": 1,
+            "best_growth_lambda": -263262.04739874887,
+            "min_node_lambda2": 370149.9875575896,
+            "growth_ok": false,
+            "cone_ok": true,
+            "feasible": false
+          },
+          {
+            "amplitude": -0.0005124805876960937,
+            "best_mode": 1,
+            "best_growth_lambda": -263262.1934691822,
+            "min_node_lambda2": 368269.19494128355,
+            "growth_ok": false,
+            "cone_ok": true,
+            "feasible": false
+          },
+          {
+            "amplitude": -0.0011601553017399715,
+            "best_mode": 1,
+            "best_growth_lambda": -263262.52410939947,
+            "min_node_lambda2": 364013.702062251,
+            "growth_ok": false,
+            "cone_ok": true,
+            "feasible": false
+          },
+          {
+            "amplitude": -0.0026263635276533325,
+            "best_mode": 1,
+            "best_growth_lambda": -263263.27243690565,
+            "min_node_lambda2": 354391.64336748427,
+            "growth_ok": false,
+            "cone_ok": true,
+            "feasible": false
+          },
+          {
+            "amplitude": -0.005945570708544395,
+            "best_mode": 1,
+            "best_growth_lambda": -263264.96559644234,
+            "min_node_lambda2": 332668.34038795775,
+            "growth_ok": false,
+            "cone_ok": true,
+            "feasible": false
+          },
+          {
+            "amplitude": -0.013459603241553642,
+            "best_mode": 1,
+            "best_growth_lambda": -263268.79392930306,
+            "min_node_lambda2": 283794.20153794106,
+            "growth_ok": false,
+            "cone_ok": true,
+            "feasible": false
+          },
+          {
+            "amplitude": -0.03046989570903508,
+            "best_mode": 1,
+            "best_growth_lambda": -263277.4367029013,
+            "min_node_lambda2": 174706.7564876961,
+            "growth_ok": false,
+            "cone_ok": true,
+            "feasible": false
+          },
+          {
+            "amplitude": -0.06897785379387658,
+            "best_mode": 1,
+            "best_growth_lambda": -263296.88015051605,
+            "min_node_lambda2": -64276.64355856731,
+            "growth_ok": false,
+            "cone_ok": false,
+            "feasible": false
+          },
+          {
+            "amplitude": -0.1561523006000498,
+            "best_mode": 1,
+            "best_growth_lambda": -263340.2703291774,
+            "min_node_lambda2": -564377.5928559966,
+            "growth_ok": false,
+            "cone_ok": false,
+            "feasible": false
+          },
+          {
+            "amplitude": -0.35349811050301094,
+            "best_mode": 1,
+            "best_growth_lambda": -263435.2862749671,
+            "min_node_lambda2": -1485648.7488786285,
+            "growth_ok": false,
+            "cone_ok": false,
+            "feasible": false
+          },
+          {
+            "amplitude": -0.8002502278161052,
+            "best_mode": 1,
+            "best_growth_lambda": -263633.8971975414,
+            "min_node_lambda2": -2440322.411975158,
+            "growth_ok": false,
+            "cone_ok": false,
+            "feasible": false
+          },
+          {
+            "amplitude": -1.8116091942004133,
+            "best_mode": 2,
+            "best_growth_lambda": -263687.13222682127,
+            "min_node_lambda2": -1274998.126982756,
+            "growth_ok": false,
+            "cone_ok": false,
+            "feasible": false
+          },
+          {
+            "amplitude": -4.101127070551304,
+            "best_mode": 2,
+            "best_growth_lambda": -262788.03835974605,
+            "min_node_lambda2": -9848290.565952515,
+            "growth_ok": false,
+            "cone_ok": false,
+            "feasible": false
+          },
+          {
+            "amplitude": -9.284145445194744,
+            "best_mode": 2,
+            "best_growth_lambda": -256602.87197383225,
+            "min_node_lambda2": -22756754.491825793,
+            "growth_ok": false,
+            "cone_ok": false,
+            "feasible": false
+          },
+          {
+            "amplitude": -21.017480113324915,
+            "best_mode": 3,
+            "best_growth_lambda": -208030.62163588192,
+            "min_node_lambda2": 18230192.339919157,
+            "growth_ok": false,
+            "cone_ok": true,
+            "feasible": false
+          },
+          {
+            "amplitude": -47.579443140094135,
+            "best_mode": 1,
+            "best_growth_lambda": 36037.49521404924,
+            "min_node_lambda2": 482983263.8014005,
+            "growth_ok": true,
+            "cone_ok": true,
+            "feasible": true
+          }
+        ]
+      }
+    ]
+  },
+  "best_attempt": null,
+  "selected_candidate": {
+    "delta_state": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "mode": 1,
+    "amplitude": 44.87741591218079,
+    "growth_lambda": 10000.000053698019,
+    "energy_rate_2lambda": 20000.000107396037,
+    "growths_by_mode": {
+      "1": 10000.000053698019,
+      "2": -30856.303155686728,
+      "3": -98669.75707244955,
+      "4": -92210.31188304588,
+      "5": -102084.0673481116,
+      "6": -138121.53445349608,
+      "7": -252210.56043162046,
+      "8": -318817.47263331444
+    },
+    "node_lambda2": [
+      6927377191.218021,
+      1132174741.5947385,
+      7723533329.1719265,
+      1249718868.1985788,
+      6884529130.23848,
+      1132046266.5273378,
+      1170311771.4911058,
+      1126411407.1910443,
+      1083081614.5078533,
+      1175799050.998231,
+      1089103700.7211118,
+      1181163605.776931,
+      1137813216.0517595,
+      1094999036.0361214,
+      1179985734.5228934,
+      1137685434.3728,
+      1095877785.1082082,
+      1174599625.2087126,
+      1090001676.586366,
+      1169091393.3356683,
+      1126282405.5038936,
+      1083998561.446255
+    ],
+    "min_node_lambda2": 1083081614.5078533,
+    "mean_increment": {
+      "type": "broad_annular_shear",
+      "parameters": {
+        "amplitude": 44.87741591218079,
+        "power": 2.0,
+        "onset": [
+          0.01,
+          0.1
+        ],
+        "offset": [
+          0.88,
+          0.99
+        ],
+        "reference_y": 0.325
+      }
+    },
+    "potential_coefficients": [
+      [
+        -0.02252173884802245,
+        0.029384886803567177
+      ],
+      [
+        -8.526870129541545e-05,
+        -1.0050122478791805e-05
+      ],
+      [
+        0.022405804768124427,
+        -0.029369641312472865
+      ],
+      [
+        0.3393528492939744,
+        0.25691375214335943
+      ],
+      [
+        0.0006042168261235951,
+        0.0010660084969119925
+      ],
+      [
+        -0.3364590682447847,
+        -0.25992727866598697
+      ],
+      [
+        0.02727869283555945,
+        -0.03708903229271397
+      ],
+      [
+        -0.0003683956912743415,
+        -0.0005804692094003974
+      ],
+      [
+        -0.03554311659235243,
+        0.04667172627226217
+      ],
+      [
+        0.015414261954881407,
+        -0.020102583031476544
+      ],
+      [
+        5.184457008761071e-05,
+        2.9293683033721737e-06
+      ],
+      [
+        -0.015149394477705433,
+        0.01996806786153793
+      ],
+      [
+        -0.012019645423180306,
+        0.013906676619774969
+      ],
+      [
+        -0.00021716528061266395,
+        -0.000226715587126667
+      ],
+      [
+        0.00953412133672681,
+        -0.011185940054641477
+      ],
+      [
+        -0.004548681226913236,
+        0.008342033157931937
+      ],
+      [
+        0.0004725745346753959,
+        0.0005956843235568613
+      ],
+      [
+        0.009848517714305921,
+        -0.015033905380033977
+      ],
+      [
+        -0.015447628812859136,
+        0.019883679786960557
+      ],
+      [
+        0.8658962034687516,
+        0.6619247983994753
+      ],
+      [
+        0.016001856946375827,
+        -0.01828018526541548
+      ],
+      [
+        0.0006424539446176768,
+        0.0004952477133711365
+      ],
+      [
+        0.023592558979674293,
+        -0.029834117601236568
+      ],
+      [
+        0.00030664080125911836,
+        0.000645911411863769
+      ],
+      [
+        0.015090801113775854,
+        -0.020199756592045058
+      ],
+      [
+        -0.8816507626946631,
+        -0.6423471454179907
+      ],
+      [
+        -0.02154883889059506,
+        0.013382351826543057
+      ]
+    ],
+    "potential_coefficient_dimension": 27,
+    "added_swirl_rms": 528.9062465634426,
+    "added_swirl_peak": 2021.890933538967,
+    "baseline_velocity_rms": 10.666838245699294,
+    "baseline_velocity_peak": 17.700954732908738,
+    "resolved_replay_growth_lambda": 10217.125566414765,
+    "resolved_replay_passes_growth_gate": true,
+    "resolved_replay_passes_22_node_gate": true,
+    "field_coefficient": [
+      [
+        -0.02252173884802245,
+        0.029384886803567177
+      ],
+      [
+        -8.526870129541545e-05,
+        -1.0050122478791805e-05
+      ],
+      [
+        0.022405804768124427,
+        -0.029369641312472865
+      ],
+      [
+        0.3393528492939744,
+        0.25691375214335943
+      ],
+      [
+        0.0006042168261235951,
+        0.0010660084969119925
+      ],
+      [
+        -0.3364590682447847,
+        -0.25992727866598697
+      ],
+      [
+        0.02727869283555945,
+        -0.03708903229271397
+      ],
+      [
+        -0.0003683956912743415,
+        -0.0005804692094003974
+      ],
+      [
+        -0.03554311659235243,
+        0.04667172627226217
+      ],
+      [
+        0.015414261954881407,
+        -0.020102583031476544
+      ],
+      [
+        5.184457008761071e-05,
+        2.9293683033721737e-06
+      ],
+      [
+        -0.015149394477705433,
+        0.01996806786153793
+      ],
+      [
+        -0.012019645423180306,
+        0.013906676619774969
+      ],
+      [
+        -0.00021716528061266395,
+        -0.000226715587126667
+      ],
+      [
+        0.00953412133672681,
+        -0.011185940054641477
+      ],
+      [
+        -0.004548681226913236,
+        0.008342033157931937
+      ],
+      [
+        0.0004725745346753959,
+        0.0005956843235568613
+      ],
+      [
+        0.009848517714305921,
+        -0.015033905380033977
+      ],
+      [
+        -0.015447628812859136,
+        0.019883679786960557
+      ],
+      [
+        0.8658962034687516,
+        0.6619247983994753
+      ],
+      [
+        0.016001856946375827,
+        -0.01828018526541548
+      ],
+      [
+        0.0006424539446176768,
+        0.0004952477133711365
+      ],
+      [
+        0.023592558979674293,
+        -0.029834117601236568
+      ],
+      [
+        0.00030664080125911836,
+        0.000645911411863769
+      ],
+      [
+        0.015090801113775854,
+        -0.020199756592045058
+      ],
+      [
+        -0.8816507626946631,
+        -0.6423471454179907
+      ],
+      [
+        -0.02154883889059506,
+        0.013382351826543057
+      ]
+    ]
+  },
+  "refined_replay": {
+    "z_order": 16,
+    "panel_order": 12,
+    "radial_bounds": [
+      0.0004626458018495553,
+      0.002782779972318968
+    ],
+    "point_count": 384,
+    "panels_per_z_max": 5,
+    "growths_by_mode": {
+      "1": 10220.72922816058,
+      "2": -30663.815098299077,
+      "3": -98691.26450014516,
+      "4": -92224.10260106646,
+      "5": -102086.68723051238,
+      "6": -138125.9214963609,
+      "7": -252244.2486301839,
+      "8": -318854.3948955888
+    },
+    "best_mode": 1,
+    "best_growth_lambda": 10220.72922816058,
+    "fixed_selected_mode_growth_lambda": 10220.72922816058,
+    "factor8_growth_lambda": 10000.000053698019,
+    "relative_difference": 0.022072917327728987,
+    "growth_discrepancy_status": "unresolved",
+    "ranks": {
+      "1": 27,
+      "2": 27,
+      "3": 27,
+      "4": 27,
+      "5": 27,
+      "6": 27,
+      "7": 27,
+      "8": 27
+    }
+  },
+  "higher_order_fixed_amplitude": {
+    "z_order": 16,
+    "panel_order": 16,
+    "radial_bounds": [
+      0.0004626458018495553,
+      0.002782779972318968
+    ],
+    "point_count": 512,
+    "panels_per_z_max": 5,
+    "growths_by_mode": {
+      "1": 10217.125566414765,
+      "2": -30667.13688032958,
+      "3": -98677.78804067796,
+      "4": -92214.78293477271,
+      "5": -102082.24504488366,
+      "6": -138118.69197380455,
+      "7": -252231.08278798478,
+      "8": -318837.15398233104
+    },
+    "best_mode": 1,
+    "best_growth_lambda": 10217.125566414765,
+    "fixed_selected_mode_growth_lambda": 10217.125566414765,
+    "factor8_growth_lambda": 10000.000053698019,
+    "relative_difference_from_panel12": 0.0003525836234744201,
+    "relative_difference_from_factor8": 0.021712551155082502,
+    "growth_convergence_status": "consistent_with_split",
+    "ranks": {
+      "1": 27,
+      "2": 27,
+      "3": 27,
+      "4": 27,
+      "5": 27,
+      "6": 27,
+      "7": 27,
+      "8": 27
+    }
+  },
+  "elapsed_seconds": 69.53004969999893
+}

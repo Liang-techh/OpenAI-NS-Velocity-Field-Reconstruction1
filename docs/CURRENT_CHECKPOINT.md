@@ -2,6 +2,22 @@
 
 ## ST073 research update - 2026-09-27
 
+A new broad annular r^-2 swirl direction admits positive instantaneous
+wave energy growth: at amplitude 44.8774 the mode-1 rate is 1.0217e4
+on the refined split quadrature, with all 22 sampled centrifugal growth
+conditions positive. This changes the earlier all-decaying energy result
+by changing the mean, not by changing viscosity or numerical time steps.
+Its added local swirl RMS is about 50 times the old mean velocity RMS.
+It is not an accepted low-residual replacement, and modes 2 through 8
+still decay. The mean compatibility result is recorded in
+`fourier_shear_feasibility.json`: the independent moment maximum is
+1.45e-5 and 6/6 outer cone samples pass, but full sampled momentum is
+7.48e9. At the actual wave center and four neighboring points, 0/5 stress
+cones pass because T dot N has the wrong sign. The next concrete control
+is the broad-shear amplitude time slope, which can affect this region
+where the existing outer slopes vanish. Radial pressure balance also
+remains unrepaired. See [the co-design record](ST073_SHEAR_CODESIGN.md).
+
 Full spatial potential evolution now includes the angular mean and modes
 1 through 8, cutoff derivatives, nonlinear transport and viscosity.
 An implicit weak-diffusion BDF solve fixes the explicit-step instability.
@@ -15,8 +31,9 @@ The initial-time energy screen now finds no positive growth direction
 in any retained mode at support multipliers 1, 2, 4 or 8. At multiplier
 8 the best combined amplitude rate is still -2.63e5, while the largest
 strain-only rate is 1.42e4. See [the energy budget](ST073_WAVE_ENERGY_BUDGET.md).
-The next blocker is co-designing the supported wave and background shear
-so a growth phase is possible while preserving mean moment/cone constraints.
+The broad-shear seed above passes the initial energy-growth screen; the
+remaining blocker is making that growth compatible with the full mean
+and wave dynamics and the required two-component stress.
 The paper requires growth followed by decay; decay at a pulse tail alone
 is not a failure criterion.
 
