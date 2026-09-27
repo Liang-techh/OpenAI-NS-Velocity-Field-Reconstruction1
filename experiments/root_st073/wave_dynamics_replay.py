@@ -1,5 +1,6 @@
 """Independent actual-field replay of the momentum-aware wave co-design."""
 import hashlib
+import argparse
 import json
 import time
 from pathlib import Path
@@ -15,9 +16,10 @@ from wave_residual_harmonics import budget
 ROOT = Path(__file__).resolve().parent
 
 
-def run():
+def run(source_path=None,output_path=None):
     start = time.perf_counter()
-    source_raw = (ROOT/'wave_dynamics_codesign.json').read_bytes()
+    source_path = Path(source_path) if source_path else ROOT/'wave_dynamics_codesign.json'
+    source_raw = source_path.read_bytes()
     source = json.loads(source_raw)
     if source['status'] != 'completed':
         raise ValueError('Finish and freeze optimization before independent replay')
@@ -44,14 +46,14 @@ def run():
     report = dict(status='running',accepted=False,pde_validated=False,
         scale_recursion_established=False,constraints_maintained=False,
         source_sha256=hashlib.sha256(source_raw).hexdigest(),
-        source='wave_dynamics_codesign.json',inputs=snapshot['inputs'],
+        source=source_path.name,inputs=snapshot['inputs'],
         selected_coefficients_original=source['selected']['coefficients_original'],
         tangent_coefficients=source['selected']['tangent_coefficients'],
         independent_geometry=dense['new_grid_definition'],
         previous_candidate_frozen=dense['new_harmonic_budget_frozen'],
         previous_candidate_corrected=dense['new_grid_actual_selected']['metric'],
         scope='Actual Cartesian full momentum at one time on a spatial grid unused by this shape optimization. No continuous trajectory, moment/cone compatibility, or recursion acceptance.')
-    output = ROOT/'wave_dynamics_replay.json'
+    output = Path(output_path) if output_path else ROOT/'wave_dynamics_replay.json'
     output.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
     print('Independent complete-field replay started',flush=True)
     residual = momentum(jets(field,points,tau,snapshot['timesteps']['hspace'],
@@ -64,4 +66,8 @@ def run():
 
 
 if __name__ == '__main__':
-    run()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--source',type=Path)
+    parser.add_argument('--output',type=Path)
+    args = parser.parse_args()
+    run(args.source,args.output)

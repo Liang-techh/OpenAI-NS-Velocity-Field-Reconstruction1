@@ -5,9 +5,12 @@
 Momentum-aware wave-shape optimization now reduces independent actual
 patch volume L2 from 7.3766e6 to 2.6453e6 and maximum from 5.6409e11 to
 2.0098e11, about 64% for both. Five-node flux constraints remain matched.
-Growth computed on the training quadrature disagrees with the saved
-positive growth matrix, so robust growth and mean compatibility remain
-unproven. See [momentum-aware wave construction](ST073_MOMENTUM_AWARE_WAVE.md).
+The growth sign discrepancy is traced to coarse quadrature of nearly
+cancelling production/dissipation terms. Higher z20/r11 quadrature gives
+lambda +997.096 for the new wave; positive growth has this finite-grid
+support, but the 1000 floor and continuum convergence are not verified.
+Renewed mean compatibility remains required. See
+[momentum-aware wave construction](ST073_MOMENTUM_AWARE_WAVE.md).
 
 Denser harmonic fitting now improves the new order-13 independent physical
 replay: frozen-wave patch L2 9.9155e6 becomes 7.3766e6, with maximum

@@ -17,6 +17,7 @@ for _thread_variable in ('OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','OMP_NUM_THREA
 
 import numpy as np
 from scipy.optimize import minimize
+from constrained_tangent_projection import ConstrainedTangent,quadratic_moment_target
 
 ROOT = Path(__file__).resolve().parent
 
@@ -79,20 +80,61 @@ class ProjectedMomentum:
         return self.last_result
 
 
-def run(maxiter=80,rcond=1e-6,method='retracted'):
+class MomentProjectedMomentum(ProjectedMomentum):
+    def __init__(self,cache,transform,rcond,moment_report):
+        super().__init__(cache,transform,rcond)
+        moment_report = moment_report.get('reusable_moment_linearization',moment_report)
+        self.moment_baseline = np.array(moment_report['baseline_moments'])
+        forms = np.array(moment_report['wave_moment_forms'])
+        self.moment_forms = np.array([transform.T@h@transform for h in forms])
+        self.constrained = ConstrainedTangent(
+            cache['tangent_design']*self.sqrtw[:,None],
+            moment_report['moment_rows'],rcond=rcond)
+        self.rank = self.constrained.metadata['null_design_rank']
+
+    def evaluate(self,x):
+        if self.last_x is not None and np.array_equal(x,self.last_x):
+            return self.last_result
+        wave = self.A@x
+        gradient = self.B@x
+        residual = self.R0+self.L@x+np.einsum('nij,nj->ni',gradient,wave)
+        weighted = residual.reshape(-1)*self.sqrtw
+        derivative = self.L+np.einsum('nijq,nj->niq',self.B,wave)
+        derivative += np.einsum('nij,njq->niq',gradient,self.A)
+        jac = derivative.reshape(-1,len(x))*self.sqrtw[:,None]
+        target,target_jac = quadratic_moment_target(self.moment_baseline,self.moment_forms,x)
+        solution = self.constrained.solve(weighted,target,jac,target_jac)
+        corrected = (solution['residual']/self.sqrtw).reshape(-1,3)
+        self.last_result = (solution['objective']/self.normalization,
+            solution['objective_gradient']/self.normalization,dict(
+                frozen_volume_L2=float(np.linalg.norm(weighted)),
+                corrected_volume_L2=float(np.linalg.norm(solution['residual'])),
+                corrected_max=float(np.linalg.norm(corrected,axis=1).max()),
+                tangent_coefficients=solution['controls'].tolist(),
+                assembled_moment_max_abs=float(max(abs(solution['moment_error'])))))
+        self.last_x = np.array(x,copy=True)
+        return self.last_result
+
+
+def run(maxiter=80,rcond=1e-6,method='retracted',moment_report_path=None,
+        seed_path=None,output_path=None):
     started = time.perf_counter()
     source_path = ROOT/'wave_stress_growth_codesign.json'
     raw = source_path.read_bytes()
     source = json.loads(raw)
     problem = source['problem']
-    initial_white = decode(source['selected']['coefficients_whitened'])
+    seed_raw = Path(seed_path).read_bytes() if seed_path else raw
+    seed = json.loads(seed_raw)
+    initial_white = decode(seed['selected']['coefficients_whitened'])
     variable_scale = float(np.linalg.norm(initial_white))
     transform = real_matrix(decode(problem['whitening']))*variable_scale
     x0 = np.r_[initial_white.real,initial_white.imag]/variable_scale
     cache_path = ROOT/'wave_momentum_projection.npz'
     with np.load(cache_path,allow_pickle=False) as loaded:
         cache = {key:loaded[key] for key in loaded.files}
-    objective = ProjectedMomentum(cache,transform,rcond)
+    moment_raw = Path(moment_report_path).read_bytes() if moment_report_path else None
+    objective = (MomentProjectedMomentum(cache,transform,rcond,json.loads(moment_raw))
+                 if moment_raw else ProjectedMomentum(cache,transform,rcond))
     objective.normalization = objective.evaluate(x0)[0]
     objective.last_x = None
     target = np.asarray(problem['target']).reshape(-1)
@@ -149,12 +191,16 @@ def run(maxiter=80,rcond=1e-6,method='retracted'):
         source_sha256=hashlib.sha256(raw).hexdigest(),source=source_path.name,
         projection_source='wave_momentum_projection.json',
         projection_cache_sha256=hashlib.sha256(cache_path.read_bytes()).hexdigest(),
+        seed_source=str(seed_path) if seed_path else source_path.name,
+        seed_sha256=hashlib.sha256(seed_raw).hexdigest(),
+        moment_source=str(moment_report_path) if moment_report_path else None,
+        moment_source_sha256=hashlib.sha256(moment_raw).hexdigest() if moment_raw else None,
         rcond=rcond,tangent_rank=objective.rank,variable_scale=variable_scale,
         growth_floor=floor,maxiter=maxiter,method=method,initial=summary(x0),iterations=[],
         scope='Training-only complete momentum shape fit with five-node flux equalities and original growth/norm bounds; tangent mode0 changes compatibility. No independent PDE or recursive acceptance.')
     best = x0.copy()
     best_value = report['initial']['objective']
-    output = ROOT/'wave_dynamics_codesign.json'
+    output = Path(output_path) if output_path else ROOT/'wave_dynamics_codesign.json'
 
     def save():
         report['selected'] = summary(best)
@@ -254,5 +300,8 @@ if __name__ == '__main__':
     parser.add_argument('--maxiter',type=int,default=80)
     parser.add_argument('--rcond',type=float,default=1e-6)
     parser.add_argument('--method',choices=('retracted','slsqp'),default='retracted')
+    parser.add_argument('--moment-report',type=Path)
+    parser.add_argument('--seed',type=Path)
+    parser.add_argument('--output',type=Path)
     args = parser.parse_args()
-    run(args.maxiter,args.rcond,args.method)
+    run(args.maxiter,args.rcond,args.method,args.moment_report,args.seed,args.output)

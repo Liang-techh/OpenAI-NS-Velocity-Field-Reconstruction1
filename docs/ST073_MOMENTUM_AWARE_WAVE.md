@@ -44,15 +44,32 @@ The normalized five-node flux mismatch is at most 1.79e-12. The original
 growth matrix still gives lambda approximately 1000. However, direct
 production/dissipation on the order-9 training grid gives lambda -8936 for
 the new wave, and -9971 for the original wave. The source's positive
-higher-quadrature result and this negative result disagree. Do not claim
-robust positive growth before resolving quadrature and mean-field
-consistency. The fitted wave time derivative has positive energy rate
+higher-quadrature result and this negative result initially disagreed.
+`wave_growth_consistency.py/.json` resolves the discrepancy: the source
+z16/r9 grid reproduces its stored operators to approximately 1e-17 relative
+error, and the higher z20/r11 grid gives lambda +997.125 for the original
+wave and +997.096 for the new wave. The coarse z9 integration changes the
+large production and dissipation terms by about 1%, reversing the sign
+of their small difference. Higher quadrature supports positive growth,
+but still does not independently meet the imposed 1000 floor or establish
+continuum convergence. Higher-grid operators are saved for reuse.
+The fitted wave time derivative has positive energy rate
 419.92, which does not itself prove the unforced wave energy balance.
 
 Mode-0 time and pressure corrections also change mean compatibility. The
 new field has not passed renewed moment/cone checks, continuous-time
 matching, global-domain residual checks, or a scale transition. All
 acceptance and recursion flags remain false.
+
+`constrained_tangent_projection.py` now supplies an equality-constrained
+variable projection for the next update: the linear time/pressure solve
+can enforce four physical moment equations with a quadratic wave-dependent
+right-hand side. Its algebra was compared with a direct KKT solution and
+its variable-target derivative with finite differences. This is operator
+verification, not evidence that the physical candidate satisfies moments.
+The optimizer accepts optional `--moment-report`, `--seed`, and `--output`
+arguments; replay accepts `--source` and `--output`, so subsequent
+candidates can retain prior reports unchanged.
 
 ## Reproduction
 
