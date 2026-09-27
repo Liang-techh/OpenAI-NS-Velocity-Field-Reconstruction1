@@ -6,8 +6,9 @@ Larger shape-direction margin now gives all three requested sampled forward
 changes over delta-k=1e-6: radial RMS decreases, aspect increases, and
 weighted angular speed increases. Peak swirl still decreases. This is an
 affine candidate increment over physical delta-t about 1.692e-10, not an
-accepted NS step or scale recursion. Independent momentum/compatibility
-replay is pending. See the updated
+accepted NS step or scale recursion. Independent reference-time replay now
+gives momentum L2 2.84751e6, max 2.10261e11, moment max 2.1176e-7 and all
+27/27 cones passing. Endpoint momentum/matching remain unaccepted. See the updated
 [shape-constrained result](ST073_SHAPE_CONSTRAINED_TANGENT.md).
 
 Shape-constrained tangent now preserves independent moments and 27/27

@@ -77,7 +77,14 @@ about 0.000890%, aspect increases about 0.000792%, and weighted spin rises
 about 1.06%. Peak sampled swirl still decreases (6569.41 to 6560.49).
 This establishes a favorable sampled change of this affine candidate over
 one very short increment, not continuous monotonicity, an accepted NS step,
-or scale recursion. Its independent momentum/compatibility replay is pending.
+or scale recursion.
+
+The larger-margin candidate's independent reference-time momentum replay
+is complete: L2 2,847,510.5674, maximum 2.1026062e11, on 18,720 points.
+Order-96 integrated moment maximum is 2.1176e-7 and all 27/27 locations
+(81/81 inequalities) pass the order-64 cone replay, minimum margin
+9.9758675e-5. These reference-time conditions and the favorable geometric
+endpoint are not a claim that endpoint momentum or matching is accepted.
 
 ## Reproduction
 
