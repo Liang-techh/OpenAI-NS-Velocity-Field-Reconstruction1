@@ -8,15 +8,16 @@ WINDOWS=((.12,.38),(.40,.72),(.58,.92))
 BREAKS=sorted({v for lo,hi in WINDOWS for v in (lo,(lo+hi)/2,hi)})
 
 class OuterPressure:
-    def __init__(self,base,coefficients):
-        self.base=base;self.coefficients=np.asarray(coefficients).reshape(2,3)
+    def __init__(self,base,coefficients,windows=None):
+        self.base=base;self.windows=tuple(WINDOWS[1:] if windows is None else windows)
+        self.coefficients=np.asarray(coefficients).reshape(len(self.windows),3)
         for name in ('inner','nu','join_X','ratio'):setattr(self,name,getattr(base,name))
     def fields(self,points,tau):
         points=np.asarray(points);u,p=self.base.fields(points,tau)
         r=np.hypot(points[:,0],points[:,1]);co=coordinates(r/np.sqrt(self.nu),points[:,2]/np.sqrt(self.nu),tau,self.inner.h)
         q,eta=np.asarray(co['q']),np.asarray(co['eta']);ri=np.sqrt(2*self.nu*q*self.join_X);y=(r-ri)/((self.ratio-1)*ri)
         p=p.copy()
-        for j,(lo,hi) in enumerate(WINDOWS[1:]):
+        for j,(lo,hi) in enumerate(self.windows):
             bump,_=flat_bump(y,lo,hi)
             for power in range(3):p+=self.coefficients[j,power]*self.nu*q**(-2*self.inner.A)*bump*(eta/.3)**power
         return u,p

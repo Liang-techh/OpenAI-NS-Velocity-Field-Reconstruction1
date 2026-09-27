@@ -2,21 +2,21 @@
 
 ## ST073 research update - 2026-09-27
 
-A staged broad-velocity/pressure solve reduces the k=11 held-out momentum
-peak from 6.05e6 to 1.42e6 while retaining refined sampled moments below
-2.9e-5 and all nine inner cone nodes. Outer cone passes improve to 3/6;
-all six shear lambda values are positive. The remaining three failed
-stress directions lie in the farther outer window. See
-[pressure repair](ST073_OUTER_PRESSURE_REPAIR.md).
+A combined compact-pressure/swirl-time-slope correction now passes all
+9 inner and 6 outer sampled cone nodes at k=11. Independent moment
+replay stays below 4.8e-5; held-out full momentum remains 1.42e6.
+See [the combined repair](ST073_OUTER_SLOPE_PRESSURE_REPAIR.md).
 
-The fixed-velocity six-pressure-mode linear subproblem is infeasible
-within the tested bounds; this is not a joint impossibility result.
-Next separate local stress repair from outer axial-moment compensation
-and assess the added pressure support's full residual cost. No field is
-accepted: complete momentum, volume-L2, energy and recursion remain open.
+Pressure alone was insufficient even with farther compensation and
+relaxed bounds: tangential stress had to change. The new time slopes
+supply that change without altering velocity or shear at the test time.
+This is instantaneous sampled compatibility, not a continuous support
+or time-interval result. Next test neighborhoods and nearby times, then
+integrate state-dependent slope/pressure controls with margins.
 
-The new profile has not been integrated in time. Earlier short-interval
-results refer to the older mode family. The snapshot below is historical,
+The full momentum target, spatial-volume L2, finite-energy closure and
+scale recursion remain unresolved; no field is accepted. Earlier short
+DAE paths belong to older profiles. The snapshot below is historical,
 not current ST073 acceptance.
 
 Snapshot date: **2026-09-20**.

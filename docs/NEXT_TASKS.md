@@ -2,18 +2,17 @@
 
 ## Current ST073 continuation
 
-1. Separate local outer stress repair from total axial-moment compensation.
-   The staged pressure/velocity field has positive lambda at all six outer
-   nodes and 3/6 cone passes; failures are confined to the farther window.
-   Test a pressure compensation support beyond those stress primitives,
-   preserving the inner gap. See ST073_OUTER_PRESSURE_REPAIR.md.
-2. Distinguish pressure bounds from linear-space incompatibility. The current
-   fixed-velocity six-mode pressure LP is infeasible in [-100,100]; it is
-   not evidence that the full coupled construction is impossible. Compare
-   relaxed bounds/support extensions and monitor full residual cost.
-3. Rebuild and integrate coefficient time maps for the selected new profile,
-   then verify independent times and segment overlaps. Existing old-width
-   DAE results cannot be transferred unchanged to the pressure-repaired field.
+1. Screen finite spatial neighborhoods and nearby times for the combined
+   pressure/swirl-time-slope field. All 9 inner and 6 outer nodes pass at
+   k=11, but farther nodes have small normal-stress margins and slopes
+   reach magnitude 11.125. See ST073_OUTER_SLOPE_PRESSURE_REPAIR.md.
+2. Integrate state-dependent slope and pressure controls while maintaining
+   moment constraints and cone margins on actual pulse supports. Existing
+   old-profile DAE results do not transfer to this new local trajectory.
+3. Build the full supported nonaxisymmetric pulse only after spatial/time
+   admissibility, with complete curl and amplitude/pressure evolution.
+   Held-out full momentum remains 1.42e6; pointwise moment/cone compatibility
+   does not satisfy either full momentum or volume-L2 acceptance.
 4. Establish improvement across time intervals and scales on one callable
    field before claiming recursion. Full momentum maximum and spatial-volume
    L2 must both meet 1e-3; no current candidate does so.

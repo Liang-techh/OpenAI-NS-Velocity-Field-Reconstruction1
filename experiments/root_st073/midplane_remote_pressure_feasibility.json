@@ -1,0 +1,387 @@
+{
+  "k": 11,
+  "pressure_windows": [
+    [
+      0.4,
+      0.72
+    ],
+    [
+      0.58,
+      0.92
+    ],
+    [
+      0.93,
+      0.99
+    ]
+  ],
+  "cases": [
+    {
+      "mode_count": 6,
+      "bound": 100.0,
+      "with_moments": true,
+      "success": false,
+      "status": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+    },
+    {
+      "mode_count": 6,
+      "bound": null,
+      "with_moments": true,
+      "success": false,
+      "status": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+    },
+    {
+      "mode_count": 9,
+      "bound": 100.0,
+      "with_moments": true,
+      "success": false,
+      "status": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+    },
+    {
+      "mode_count": 9,
+      "bound": null,
+      "with_moments": true,
+      "success": false,
+      "status": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+    },
+    {
+      "mode_count": 9,
+      "bound": null,
+      "with_moments": false,
+      "success": false,
+      "status": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+    }
+  ],
+  "nodewise": [
+    {
+      "index": 0,
+      "eta": -0.2,
+      "radial_fraction": 0.5,
+      "theta_stress": 104.03966047787064,
+      "normal": [
+        -0.6283741247983484,
+        -0.7779112798281753
+      ],
+      "lambda_squared": 6278398.283761704,
+      "arbitrary_axial_stress_feasible": true,
+      "status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)"
+    },
+    {
+      "index": 1,
+      "eta": -0.2,
+      "radial_fraction": 0.75,
+      "theta_stress": -7.462703666968246,
+      "normal": [
+        -0.9992758187961499,
+        -0.03805046608498081
+      ],
+      "lambda_squared": 16314731.532863252,
+      "arbitrary_axial_stress_feasible": false,
+      "status": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+    },
+    {
+      "index": 2,
+      "eta": 0.0,
+      "radial_fraction": 0.5,
+      "theta_stress": 115.30375986923016,
+      "normal": [
+        -0.9984718238862574,
+        -0.055263160471062965
+      ],
+      "lambda_squared": 148223.77966390623,
+      "arbitrary_axial_stress_feasible": true,
+      "status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)"
+    },
+    {
+      "index": 3,
+      "eta": 0.0,
+      "radial_fraction": 0.75,
+      "theta_stress": -102.66051013194694,
+      "normal": [
+        -0.9999217987429965,
+        0.012505854571780937
+      ],
+      "lambda_squared": 24557615.909397908,
+      "arbitrary_axial_stress_feasible": false,
+      "status": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+    },
+    {
+      "index": 4,
+      "eta": 0.2,
+      "radial_fraction": 0.5,
+      "theta_stress": 104.51233768801963,
+      "normal": [
+        -0.641296864624356,
+        0.7672928589677938
+      ],
+      "lambda_squared": 4272830.804454998,
+      "arbitrary_axial_stress_feasible": true,
+      "status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)"
+    },
+    {
+      "index": 5,
+      "eta": 0.2,
+      "radial_fraction": 0.75,
+      "theta_stress": -10.583457020576624,
+      "normal": [
+        -0.9974925587017872,
+        0.07077143021418707
+      ],
+      "lambda_squared": 16584156.790071212,
+      "arbitrary_axial_stress_feasible": false,
+      "status": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)"
+    }
+  ],
+  "pressure_linear_model": {
+    "A": [
+      [
+        -0.04197061309887842,
+        0.0021272881192299312,
+        0.015817221661963254,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -0.07064843924501017,
+        0.003580828926515297,
+        0.026624867761103503,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -0.013292786952746672,
+        0.0006737473119445654,
+        0.005009575562823009,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -0.00030835192570674135,
+        -0.24647597264895565,
+        0.32877167549879316,
+        -0.1337999220585816,
+        -0.07349585534482224,
+        0.15746110581771314,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -0.017192728790936623,
+        -13.742721215854244,
+        18.331269500593933,
+        -7.4602607621021155,
+        -4.097896600912348,
+        8.779533584292848,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.01657602493952314,
+        13.249769270556333,
+        -17.673726149596348,
+        7.192660917984952,
+        3.9509048902227035,
+        -8.464611372657421,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -1.9100167454002824e-16,
+        -0.0020560094135357566,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -1.8540969450919433e-16,
+        -0.005231874343902251,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -1.9659365457086212e-16,
+        0.001119855516830738,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        6.980134263705778e-16,
+        0.004333522782846718,
+        0.0,
+        6.472293099446663e-16,
+        0.0028581221315794694,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -7.865987360225337e-16,
+        -0.6024381007129352,
+        0.0,
+        5.501964418745271e-16,
+        -0.39733070641046747,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        2.182625588763689e-15,
+        0.6111051462786286,
+        0.0,
+        7.442621780148056e-16,
+        0.40304695067362634,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -0.0412780309081664,
+        -0.0020921844655755247,
+        0.015556212226532487,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -0.01793841356200365,
+        -0.0009092117372311479,
+        0.006760345933134723,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -0.06461764825432915,
+        -0.0032751571939199013,
+        0.024352078519930254,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -0.0004666487306715604,
+        0.3730078854386314,
+        0.4975512466871603,
+        -0.2024879969537864,
+        0.11122598805897316,
+        0.2382959827225975,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.01311544562813611,
+        -10.483612873814419,
+        -13.983979585359148,
+        5.691047976536034,
+        -3.1260738601990576,
+        -6.697453136442502,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -0.01404874308947923,
+        11.229628644691681,
+        14.979082078733468,
+        -6.096023970443606,
+        3.348525836317004,
+        7.174045101887697,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "b": [
+      0.9799999999999999,
+      0.730759916205161,
+      1.269240083794839,
+      -1.0199999999999998,
+      25.09972346922751,
+      -27.09972346922751,
+      0.9800000000000002,
+      0.9948844784837558,
+      1.0051155215162446,
+      -1.0200000000000002,
+      -1.0264655169043488,
+      -0.9735344830956515,
+      0.9799999999999999,
+      1.2081815407823107,
+      0.7918184592176891,
+      -1.0199999999999998,
+      -21.5771927709292,
+      19.5771927709292
+    ],
+    "E": [
+      [
+        -0.0006773530586938025,
+        -0.541430878312367,
+        0.7222088835533885,
+        -0.0009378907876157956,
+        -0.7496873697377732,
+        1.0,
+        -0.00020806988901093585,
+        -0.1663171979922507,
+        0.22184873949580117
+      ],
+      [
+        0.0006773530586940762,
+        -0.5414308783123694,
+        -0.7222088835533891,
+        0.0009378907876150616,
+        -0.7496873697377747,
+        -1.0,
+        0.00020806988901168926,
+        -0.16631719799225128,
+        -0.22184873949580228
+      ]
+    ],
+    "m": [
+      8.320897726619605e-07,
+      -7.874134280795382e-07
+    ]
+  },
+  "scope": "Fixed velocity and axisymmetric pressure subproblems; nodewise test allows arbitrary axial stress but preserves tangential stress. Numerical LP conclusions, not general nonlinear impossibility.",
+  "accepted": false,
+  "scale_recursion_established": false
+}
