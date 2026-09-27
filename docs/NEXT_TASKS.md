@@ -2,17 +2,16 @@
 
 ## Current ST073 continuation
 
-1. Reshape/broaden outer compact streamfunction modes while preserving
-   the inner support gap. The sampled 1.35e8 peak is dominated by axial
-   viscous curvature near y=0.4265. Refit moments and compare full residual
-   cost; do not assume pressure fitting alone resolves the profile defect.
-2. Repair outer mean/pressure stress geometry before adding pulse corrections
-   there: 0/6 outer cone nodes pass, all with positive target_dot_N. Inner
-   9/9 passes do not establish outer realizability. See
-   ST073_OUTER_RESIDUAL_SOURCE.md.
-3. Maintain and extend the integrated coefficient path after profile changes,
-   with independent time checks, segment overlap, and separate map/derivative
-   error accounting. SavedOuterDAEField reconstructs the existing short path.
+1. Repair outer shear and mean/pressure stress direction in the broader
+   overlapping mode family while preserving moments and the inner support
+   gap. The new held-out k=11 peak is 58% lower, but all six outer cone
+   samples fail. See ST073_WIDE_OUTER_REPAIR.md.
+2. Include velocity-shear lambda constraints as well as stress direction:
+   pressure variation alone cannot fix the negative lambda_squared nodes.
+   Preserve reduced curvature and evaluate full momentum on independent grids.
+3. Rebuild and integrate coefficient time maps after profile changes,
+   then verify independent times and segment overlaps. The saved old-width
+   DAE field must not be reused as if it represented the broader modes.
 4. Establish improvement across time intervals and scales on one callable
    field before claiming recursion. Full momentum maximum and spatial-volume
    L2 must both meet 1e-3; no current candidate does so.

@@ -24,7 +24,8 @@ def terms(field,point,tau):
     return {key:value.tolist() for key,value in out.items()}
 
 
-def outer_cones(field,k,order=64):
+def outer_cones(field,k,order=64,radial_breaks=None):
+    radial_breaks=RADIAL_BREAKS if radial_breaks is None else radial_breaks
     inner=field.inner;tau=.5*2.**-k;centers=[];labels=[]
     for eta in (-.2,0.,.2):
         for y in (.5,.75):
@@ -32,7 +33,7 @@ def outer_cones(field,k,order=64):
     points=list(centers);panels=[];g,w=leggauss(order)
     for R,_,z in centers:
         q=float(coordinates(0.,z/np.sqrt(inner.nu),tau,inner.h)['q']);ri=np.sqrt(2*inner.nu*q*inner.p.X_max)
-        edges=sorted(set(np.clip([0.,ri,R,*[ri*(1+15*b) for b in RADIAL_BREAKS]],0.,R)))
+        edges=sorted(set(np.clip([0.,ri,R,*[ri*(1+15*b) for b in radial_breaks]],0.,R)))
         rr=np.concatenate([(lo+hi)/2+(hi-lo)*g/2 for lo,hi in zip(edges[:-1],edges[1:])]);ww=np.concatenate([(hi-lo)*w/2 for lo,hi in zip(edges[:-1],edges[1:])])
         start=len(points);points.extend(np.column_stack((rr,np.zeros_like(rr),np.full_like(rr,z))));panels.append((slice(start,len(points)),rr,ww,R))
     jet=jets(field,np.array(points),tau,.0005*np.sqrt(inner.nu*tau),.0001*tau);res=momentum(jet);rows=[]

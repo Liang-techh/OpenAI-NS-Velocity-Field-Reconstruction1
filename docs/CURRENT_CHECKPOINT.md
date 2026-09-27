@@ -2,24 +2,22 @@
 
 ## ST073 research update - 2026-09-27
 
-The short integrated coefficient field preserves sampled moments and
-inner cone geometry, but its outer residual is now localized: at k=13.05
-the 1.35e8 sampled peak is dominated by axial viscous curvature near an
-outer-bump edge. All six sampled outer stress-cone nodes fail, each with
-the wrong normal stress sign. See
-[the residual diagnosis](ST073_OUTER_RESIDUAL_SOURCE.md).
+Broader overlapping outer modes plus a midplane cost grid reduce the
+k=11 held-out full momentum peak by 58%, from 1.45e7 to 6.05e6.
+Refined sampled moment errors remain below 2.9e-5 and the inner cone
+remains 9/9 passing. The new outer cone screen still passes 0/6 nodes.
+See [the broad-profile trial](ST073_WIDE_OUTER_REPAIR.md).
 
-Next reshape/broaden the outer streamfunction modes to reduce curvature,
-restore moments, and repair outer mean/pressure stress direction before
-attempting pulse corrections there. The inner 9/9 cone result cannot be
-extended to outer supports. The existing short path and its independent
-checks remain in [the interval report](ST073_OUTER_DAE_INTERVAL.md).
+Next repair outer shear and mean/pressure stress direction under the
+moment constraints. Width reduction of viscous cost is useful, but
+outer pulse realizability remains absent. Rebuild coefficient time maps
+after profile changes; the saved old-width short DAE trajectory cannot
+be transferred unchanged. No candidate is accepted: full momentum,
+volume-L2, finite-energy closure and scale recursion remain unestablished.
 
-A reusable evaluator now reconstructs the saved experimental path without
-rebuilding moment maps. No candidate is accepted: full momentum remains
-large, and volume L2, finite energy and scale recursion are unestablished.
-Earlier 12-point-only closures remain withdrawn. The snapshot below is
-historical, not current ST073 acceptance.
+Earlier diagnosis is in [outer residual sources](ST073_OUTER_RESIDUAL_SOURCE.md)
+and the existing old-width trajectory in [the interval report](ST073_OUTER_DAE_INTERVAL.md).
+The snapshot below is historical, not current ST073 acceptance.
 
 Snapshot date: **2026-09-20**.
 
