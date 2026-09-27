@@ -37,3 +37,21 @@ The momentum improvement cannot be accepted at the expense of this goal.
 A cached nonlinear endpoint observable/Jacobian for the acceleration controls
 is being constructed so the next fit can enforce shape directly, without
 repeating the expensive mean-field derivative evaluation at each iteration.
+
+## Acceleration endpoint oracle
+
+`acceleration_shape_oracle.py` reconstructs the balanced parent's endpoint
+velocity and gradient from the existing frozen cache, then adds analytic
+responses for all 324 acceleration controls. `AccelerationShapeOracle`
+returns three observables and their 3-by-324 Jacobian. No repeated mean-field
+replay is needed within optimization. Pressure-slope columns have zero
+velocity/gradient response. A directional Jacobian check has relative error
+1.13e-6.
+
+A material precision gap remains: the analytic oracle predicts corrected
+aspect change -2.58015e-6 relative to reference, whereas the actual finite-
+difference observation gives -7.44786e-7. The difference exceeds the chosen
+1e-6 directional margin. Both reject the unconstrained correction, but their
+agreement is insufficient to accept a newly constrained candidate near the
+boundary. A componentwise analytic-versus-FD and step-refinement comparison
+is required before claiming the shape gate is resolved.
