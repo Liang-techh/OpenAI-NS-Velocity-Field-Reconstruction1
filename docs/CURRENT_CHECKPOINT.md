@@ -6,8 +6,11 @@ The old growing-wave joint 45-control mean fit has completed spatial replay:
 annulus volume L2 worsens from 193257.9992 to 193600.2673, despite a small
 patch improvement. Do not extend this candidate as a successful recursive
 step. See [joint mean/wave spatial result](ST073_JOINT_WAVE_MEAN_STATUS.md).
-Full harmonic tangent work on the locked co-designed candidate remains in
-progress; no completed full-field result is claimed yet.
+Full harmonic tangent replay on the locked co-designed candidate now fails
+the spatial holdout: volume L2 is 1.1175e8 versus frozen-wave 1.0036e7 and
+mean-only 1.2146e5. The independent harmonic budget identifies the second
+harmonic as 98.52% of the fitted squared residual. Denser spatial fitting
+is next; no time step or scale recursion is accepted.
 
 Joint polarization/growth fitting now matches the required radial flux at
 five nodes with relative error 4.69e-11. Higher-quadrature growth lambda is

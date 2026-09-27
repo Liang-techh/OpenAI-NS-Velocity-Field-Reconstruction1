@@ -1,8 +1,8 @@
 # Joint mean and wave-force fit: spatial result
 
 The current `joint_wave_mean_fit.json` has completed independent spatial
-replay. Its high-order moment replay was still running when this note was
-written; the JSON status is authoritative for subsequent completion.
+and high-order moment replay. The latter gives maximum moment error
+1.46886e-5; this does not remedy the spatial residual failure below.
 The saved growing wave is the earlier `broad_shear_growth.json` candidate,
 not the new stress/growth co-designed wave.
 
@@ -51,5 +51,14 @@ and predicts holdout L2 8296492.66. The same holdout was used for this
 screen, so it is not independent validation of the truncation choice.
 Even this screened value remains far worse than mean-only and cannot
 justify advancing a recursive trajectory. Actual corrected-field replay
-and a denser spatial fit remain necessary. This analysis uses saved jets
-and does not repeat their expensive assembly.
+has now completed: full180 holdout volume L2 is 111750601.4350 and maximum
+3.67579e12, agreeing with the independent linear prediction and confirming
+failure of this fit. Restricted38 actual holdout L2 is 9758240.27, also
+much worse than mean-only. A denser spatial fit is the next bounded
+correction. This analysis uses saved jets without repeating their assembly.
+
+The small individual-column finite-difference check in the tangent report
+uses near-zero sampled responses and has relative error 1.0. Its small
+absolute errors are not positive validation; the full fitted-field replay
+is the relevant evidence here. The velocity dimension and interleaved
+complex coefficient decoding were corrected before the completed replay.
