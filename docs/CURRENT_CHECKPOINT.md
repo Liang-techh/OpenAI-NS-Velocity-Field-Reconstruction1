@@ -2,6 +2,16 @@
 
 ## ST073 research update - 2026-09-27
 
+The first full-vector meridional/pressure correction now reduces both metrics
+on the same independent spatial holdout: maximum 7.01009e9 -> 4.38510e9,
+physical-volume L2 237497.46 -> 186820.70. Its 44 directions preserve the
+instantaneous broad-shear velocity and fit its time derivative plus pressure.
+This is an unconstrained instantaneous experiment: the earlier moment/cone
+passes do not transfer, and finite-difference divergence remains 0.154809.
+The next solve must retain the new full-vector objective while reinstating
+moment/cone compatibility. No scale recursion or PDE acceptance is established.
+See [the meridional correction record](ST073_MERIDIONAL_MOMENTUM.md).
+
 A new broad annular r^-2 swirl direction admits positive instantaneous
 wave energy growth: at amplitude 44.8774 the mode-1 rate is 1.0217e4
 on the refined split quadrature, with all 22 sampled centrifugal growth

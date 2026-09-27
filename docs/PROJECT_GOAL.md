@@ -1,3 +1,26 @@
+## Active long-term goal: scale recursion (2026-09-27)
+
+The user's current goal takes precedence over the historical priorities below.
+Starting from the existing local low-residual core, construct a nonzero,
+divergence-free, finite-energy three-dimensional time-dependent Navier–Stokes
+velocity field. Scale recursion must produce core contraction, increasing axial
+aspect ratio and stronger rotation as the critical time approaches. Match the
+core, transition and exterior dynamics, including nonaxisymmetric corrections
+where necessary. On a declared spacetime domain with forcing restricted in
+advance, both full momentum maximum and spatial-volume L2 must be below 1e-3.
+Deliver reproducible Python/MATLAB evaluators and interactive visualization;
+the velocity and dynamics remain the immediate priority.
+
+Use the OpenAI reference paper as a source of construction mechanisms and
+explicit assumptions, without claiming that this implementation reproduces or
+proves its theorem. A positive local energy-growth rate, finite moment closure,
+sampled stress-cone feasibility or a single-time fit is not scale recursion.
+The required evolution and residual contraction across scales remain open.
+The broad-shear experiments are structural research candidates, not replacements
+for the retained PDE baseline unless compared on the same domain and gate.
+
+See `CURRENT_CHECKPOINT.md` and `NEXT_TASKS.md` for the current ST073 work.
+
 ## Repository-level progress baseline
 
 For all active NS construction routes, the current retained numerical baseline is ST006 on `main`: independent replay momentum max **0.1082289305112118** and volume-L2 **0.10758432876230622**, with the original `1e-3` target unchanged and `pde_validated=false`. New work should advance from this level: directly comparable candidates must beat ST006 to count as repository-level PDE improvement; non-comparable source/structural work must say so and should aim to produce a candidate that can eventually be evaluated against the same gate. ST006 is a performance baseline only, not paper/Kokuno source truth.

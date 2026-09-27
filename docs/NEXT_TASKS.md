@@ -41,7 +41,13 @@ the earlier spatial-solve request below:
   previous centrifugal peak but also the new axial/collar defects.
   The numerical added-radial-integral budget is about 4.66e8 even when
   distributed across the full annulus. More cutoff tuning alone is insufficient.
-- [ ] Add exact-divergence-free meridional velocity time-slope directions
+- [x] Implement the first unconstrained meridional/pressure full-vector fit.
+  `broad_meridional_momentum.json` records 44 directions and independent
+  176-node replay: max 7.01009e9 -> 4.38510e9, physical-volume L2
+  237497.46 -> 186820.70. The compact pressure primitive strength is free,
+  avoiding the worse L2 produced by fixing it at unit strength. No moment/cone
+  compatibility or time evolution is claimed; see ST073_MERIDIONAL_MOMENTUM.md.
+- [ ] Constrain the implemented exact-divergence-free meridional time slopes
   from compact axisymmetric streamfunctions, initially zero in velocity,
   to share radial and axial balance. Preserve the low-residual inner core.
   Combine their actual Cartesian jets with the compact pressure source
