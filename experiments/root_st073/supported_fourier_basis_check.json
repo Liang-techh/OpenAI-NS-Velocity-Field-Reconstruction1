@@ -1,0 +1,59 @@
+{
+  "layout": {
+    "degree": 2,
+    "polynomial_count": 9,
+    "polynomial_order": "a-major then b: j = a * (degree + 1) + b",
+    "component_order": [
+      "radial",
+      "theta",
+      "axial"
+    ],
+    "component_blocks": {
+      "radial": [
+        0,
+        9
+      ],
+      "theta": [
+        9,
+        18
+      ],
+      "axial": [
+        18,
+        27
+      ]
+    },
+    "pressure_block": [
+      0,
+      9
+    ]
+  },
+  "degree2_shapes": {
+    "velocity": [
+      4,
+      3,
+      27
+    ],
+    "pressure": [
+      4,
+      9
+    ],
+    "pressure_gradient": [
+      4,
+      3,
+      9
+    ]
+  },
+  "generic_point_count": 4,
+  "finite_difference_step": 2e-09,
+  "divergence_fd_max": 0.0006425699230670213,
+  "divergence_fd_relative_to_max_derivative": 8.246531973704696e-11,
+  "velocity_derivative_max": 7792001.839269549,
+  "pressure_gradient_fd_max": 1.235207349423549e-07,
+  "collocation_velocity_max_abs_diff": 5.685035733124713e-14,
+  "collocation_pressure_gradient_max_abs_diff": 2.842170943040401e-14,
+  "outside_support_max": 0.0,
+  "scope": "manufactured basis checks only; no physical NS acceptance",
+  "checks_passed": true,
+  "accepted": false,
+  "pde_validated": false
+}

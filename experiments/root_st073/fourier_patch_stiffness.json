@@ -1,0 +1,550 @@
+{
+  "accepted": false,
+  "pde_validated": false,
+  "scope": "Bounded viscous spectral diagnostic only; no nonlinear/background field evaluation and no physical acceptance.",
+  "source_report": "fourier_patch_evolution.json",
+  "source_mapping": {
+    "feedback_report": "feedback_moving_wave.json",
+    "wave_source": "compact_potential/midplane_wave_source_k11.json",
+    "source_indices": [
+      0,
+      16
+    ],
+    "carriers": {
+      "0": [
+        0.0,
+        0.0
+      ],
+      "1": [
+        -871.4212739359624,
+        -616.1878920703391
+      ],
+      "2": [
+        -1742.8425478719248,
+        -1232.3757841406782
+      ],
+      "3": [
+        871.4212739359624,
+        3080.9394603516957
+      ],
+      "4": [
+        0.0,
+        2464.7515682813564
+      ],
+      "5": [
+        -871.4212739359624,
+        1848.5636762110173
+      ],
+      "6": [
+        -1742.8425478719248,
+        1232.3757841406782
+      ],
+      "7": [
+        871.4212739359624,
+        5545.691028633052
+      ],
+      "8": [
+        0.0,
+        4929.503136562713
+      ]
+    }
+  },
+  "degree": 2,
+  "modes": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "center": [
+    0.0016227128870842616,
+    -2.036013852023506e-05
+  ],
+  "widths": [
+    0.0001450083856543383,
+    5.643830397809158e-05
+  ],
+  "viscosity": 0.01,
+  "physical_times": [
+    -0.00024408986266228504,
+    -0.0002440475724410183,
+    -0.00024400528221975155
+  ],
+  "tau0": 0.00024408986266228504,
+  "dt": 8.458044253349607e-08,
+  "laplacian_fd_step": 7.811687760373635e-07,
+  "matrix_definition": "S_m = -(inverse_m[:3q] @ (weight_m[:,None] * L_m.reshape(-1,3q))) / scale_m[:3q,None], with L_m = -nu*Delta(V_m).",
+  "quadratures": {
+    "current_7_scaled_0.95": {
+      "gauss_order_per_axis": 7,
+      "node_scale": 0.95,
+      "point_count": 49,
+      "weight_sum": 0.9999999999999999,
+      "weight_min": 0.0038538593525988627,
+      "weight_max": 0.0436724698042482,
+      "basis_build_seconds": 0.03758420000667684,
+      "modes": {
+        "0": {
+          "matrix_shape": [
+            27,
+            27
+          ],
+          "matrix_frobenius_norm": 4280686842.246139,
+          "matrix_max_abs": 3272116413.7052217,
+          "singular_max": 3490694102.9437776,
+          "singular_min": 1.1947917155533347e-09,
+          "rank_tolerance": 34.906941029437775,
+          "rank": 26,
+          "condition_number": 2.9215921549365274e+18,
+          "eigenvalue_real_min": -259657073.0512368,
+          "eigenvalue_real_max": 1.210415136257594e-08,
+          "eigenvalue_imag_max_abs": 1.2625989955067589e-08,
+          "eigenvalue_abs_max": 259657073.0512368,
+          "eigenvalue_real_spread_excluding_near_zero": 15.837342096856654,
+          "positive_real_eigenvalue_count": 0,
+          "dt_scaled_real_min": -21.96191014562593,
+          "dt_scaled_real_max": 1.0237744787390925e-15,
+          "dt_scaled_abs_max": 21.96191014562593,
+          "explicit_euler_diffusive_bound_pass": false
+        },
+        "1": {
+          "matrix_shape": [
+            27,
+            27
+          ],
+          "matrix_frobenius_norm": 342133846964.596,
+          "matrix_max_abs": 224245705487.8396,
+          "singular_max": 342107447322.2609,
+          "singular_min": 11152.351624400948,
+          "rank_tolerance": 3421.0744732226094,
+          "rank": 27,
+          "condition_number": 30675812.496239986,
+          "eigenvalue_real_min": -259685185.61272764,
+          "eigenvalue_real_max": -16419044.460254773,
+          "eigenvalue_imag_max_abs": 229611.58556991493,
+          "eigenvalue_abs_max": 259685185.63247135,
+          "eigenvalue_real_spread_excluding_near_zero": 15.8160961352584,
+          "positive_real_eigenvalue_count": 0,
+          "dt_scaled_real_min": -21.96428791851757,
+          "dt_scaled_real_max": -1.388730046425496,
+          "dt_scaled_abs_max": 21.964287920187502,
+          "explicit_euler_diffusive_bound_pass": false
+        },
+        "2": {
+          "matrix_shape": [
+            27,
+            27
+          ],
+          "matrix_frobenius_norm": 171872052793.6406,
+          "matrix_max_abs": 112067039409.39229,
+          "singular_max": 171819671212.05963,
+          "singular_min": 22350.157366189134,
+          "rank_tolerance": 1718.1967121205964,
+          "rank": 27,
+          "condition_number": 7687626.910045159,
+          "eigenvalue_real_min": -259768547.62964022,
+          "eigenvalue_real_max": -16489890.878407365,
+          "eigenvalue_imag_max_abs": 242761.78530724338,
+          "eigenvalue_abs_max": 259768547.70663655,
+          "eigenvalue_real_spread_excluding_near_zero": 15.753199922431849,
+          "positive_real_eigenvalue_count": 0,
+          "dt_scaled_real_min": -21.971338714798524,
+          "dt_scaled_real_max": -1.3947222678247553,
+          "dt_scaled_abs_max": 21.971338721310907,
+          "explicit_euler_diffusive_bound_pass": false
+        },
+        "3": {
+          "matrix_shape": [
+            27,
+            27
+          ],
+          "matrix_frobenius_norm": 114539874826.715,
+          "matrix_max_abs": 74486198318.76686,
+          "singular_max": 114459451818.61365,
+          "singular_min": 34502.690189985755,
+          "rank_tolerance": 1144.5945181861366,
+          "rank": 27,
+          "condition_number": 3317406.5902790087,
+          "eigenvalue_real_min": -259579862.88648373,
+          "eigenvalue_real_max": -16398931.23984405,
+          "eigenvalue_imag_max_abs": 197710.5649049173,
+          "eigenvalue_abs_max": 259579862.90569773,
+          "eigenvalue_real_spread_excluding_near_zero": 15.829071974825005,
+          "positive_real_eigenvalue_count": 0,
+          "dt_scaled_real_min": -21.955379675723027,
+          "dt_scaled_real_max": -1.3870288613423831,
+          "dt_scaled_abs_max": 21.955379677348155,
+          "explicit_euler_diffusive_bound_pass": false
+        },
+        "4": {
+          "matrix_shape": [
+            27,
+            27
+          ],
+          "matrix_frobenius_norm": 85814285755.46745,
+          "matrix_max_abs": 55986843025.98528,
+          "singular_max": 85706068602.04875,
+          "singular_min": 45223.58851847912,
+          "rank_tolerance": 857.0606860204875,
+          "rank": 27,
+          "condition_number": 1895162.931774594,
+          "eigenvalue_real_min": -259564749.73225677,
+          "eigenvalue_real_max": -16330296.635960879,
+          "eigenvalue_imag_max_abs": 0.00022353799201473587,
+          "eigenvalue_abs_max": 259564749.73225677,
+          "eigenvalue_real_spread_excluding_near_zero": 15.894674513178794,
+          "positive_real_eigenvalue_count": 0,
+          "dt_scaled_real_min": -21.954101398450433,
+          "dt_scaled_real_max": -1.3812237161728333,
+          "dt_scaled_abs_max": 21.954101398450433,
+          "explicit_euler_diffusive_bound_pass": false
+        },
+        "5": {
+          "matrix_shape": [
+            27,
+            27
+          ],
+          "matrix_frobenius_norm": 68774664245.60258,
+          "matrix_max_abs": 44860548421.292244,
+          "singular_max": 68638905343.30962,
+          "singular_min": 55660.524296451134,
+          "rank_tolerance": 686.3890534330963,
+          "rank": 27,
+          "condition_number": 1233170.298176404,
+          "eigenvalue_real_min": -259606895.87199998,
+          "eigenvalue_real_max": -16311441.821439825,
+          "eigenvalue_imag_max_abs": 181850.96025876453,
+          "eigenvalue_abs_max": 259606895.89057332,
+          "eigenvalue_real_spread_excluding_near_zero": 15.915631415816655,
+          "positive_real_eigenvalue_count": 0,
+          "dt_scaled_real_min": -21.957666137600995,
+          "dt_scaled_real_max": -1.3796289676167557,
+          "dt_scaled_abs_max": 21.957666139171934,
+          "explicit_euler_diffusive_bound_pass": false
+        },
+        "6": {
+          "matrix_shape": [
+            27,
+            27
+          ],
+          "matrix_frobenius_norm": 57576228173.51109,
+          "matrix_max_abs": 37420876541.688965,
+          "singular_max": 57413576746.98406,
+          "singular_min": 65928.68714646733,
+          "rank_tolerance": 574.1357674698406,
+          "rank": 27,
+          "condition_number": 870843.6225862335,
+          "eigenvalue_real_min": -259705559.39888087,
+          "eigenvalue_real_max": -16341567.792531746,
+          "eigenvalue_imag_max_abs": 226777.5100954305,
+          "eigenvalue_abs_max": 259705559.470178,
+          "eigenvalue_real_spread_excluding_near_zero": 15.892328249488152,
+          "positive_real_eigenvalue_count": 0,
+          "dt_scaled_real_min": -21.966011142366494,
+          "dt_scaled_real_max": -1.3821770355834615,
+          "dt_scaled_abs_max": 21.966011148396838,
+          "explicit_euler_diffusive_bound_pass": false
+        },
+        "7": {
+          "matrix_shape": [
+            27,
+            27
+          ],
+          "matrix_frobenius_norm": 49719617574.37733,
+          "matrix_max_abs": 31663719085.207634,
+          "singular_max": 49521531645.61665,
+          "singular_min": 85197.8055292562,
+          "rank_tolerance": 495.21531645616653,
+          "rank": 27,
+          "condition_number": 581253.6055123084,
+          "eigenvalue_real_min": -259298017.226591,
+          "eigenvalue_real_max": -16272849.301920338,
+          "eigenvalue_imag_max_abs": 160405.27252019683,
+          "eigenvalue_abs_max": 259298017.24374014,
+          "eigenvalue_real_spread_excluding_near_zero": 15.934395534108505,
+          "positive_real_eigenvalue_count": 0,
+          "dt_scaled_real_min": -21.931541045083154,
+          "dt_scaled_real_max": -1.3763647952373148,
+          "dt_scaled_abs_max": 21.93154104653364,
+          "explicit_euler_diffusive_bound_pass": false
+        },
+        "8": {
+          "matrix_shape": [
+            27,
+            27
+          ],
+          "matrix_frobenius_norm": 43481134406.39578,
+          "matrix_max_abs": 27815751346.627254,
+          "singular_max": 43252305058.58097,
+          "singular_min": 94253.02408993761,
+          "rank_tolerance": 432.5230505858097,
+          "rank": 27,
+          "condition_number": 458895.6744486945,
+          "eigenvalue_real_min": -259306572.1524614,
+          "eigenvalue_real_max": -16180067.375440178,
+          "eigenvalue_imag_max_abs": 0.00015678087726588667,
+          "eigenvalue_abs_max": 259306572.1524614,
+          "eigenvalue_real_spread_excluding_near_zero": 16.026297427294054,
+          "positive_real_eigenvalue_count": 0,
+          "dt_scaled_real_min": -21.932264624499116,
+          "dt_scaled_real_max": -1.3685172588365127,
+          "dt_scaled_abs_max": 21.932264624499116,
+          "explicit_euler_diffusive_bound_pass": false
+        }
+      }
+    },
+    "full_support_16": {
+      "gauss_order_per_axis": 16,
+      "node_scale": 1.0,
+      "point_count": 256,
+      "weight_sum": 1.0,
+      "weight_min": 0.00016801797220446248,
+      "weight_max": 0.009049067534361304,
+      "basis_build_seconds": 0.09454920000280254,
+      "modes": {
+        "0": {
+          "matrix_shape": [
+            27,
+            27
+          ],
+          "matrix_frobenius_norm": 3774483757.117432,
+          "matrix_max_abs": 3009126176.7064705,
+          "singular_max": 3188569961.379526,
+          "singular_min": 3.594582507520569e-09,
+          "rank_tolerance": 31.88569961379526,
+          "rank": 26,
+          "condition_number": 8.870487614927226e+17,
+          "eigenvalue_real_min": -254108983.61152154,
+          "eigenvalue_real_max": 2.4911106788671743e-08,
+          "eigenvalue_imag_max_abs": 0.0,
+          "eigenvalue_abs_max": 254108983.61152154,
+          "eigenvalue_real_spread_excluding_near_zero": 15.032009801717273,
+          "positive_real_eigenvalue_count": 0,
+          "dt_scaled_real_min": -21.492650285599392,
+          "dt_scaled_real_max": 2.1069924361850342e-15,
+          "dt_scaled_abs_max": 21.492650285599392,
+          "explicit_euler_diffusive_bound_pass": false
+        },
+        "1": {
+          "matrix_shape": [
+            27,
+            27
+          ],
+          "matrix_frobenius_norm": 272389829600.22202,
+          "matrix_max_abs": 177645365437.85898,
+          "singular_max": 272363940086.65338,
+          "singular_min": 14996.186635823515,
+          "rank_tolerance": 2723.639400866534,
+          "rank": 27,
+          "condition_number": 18162213.281343076,
+          "eigenvalue_real_min": -254161271.27486336,
+          "eigenvalue_real_max": -16907610.457533043,
+          "eigenvalue_imag_max_abs": 0.010336867217864809,
+          "eigenvalue_abs_max": 254161271.27486336,
+          "eigenvalue_real_spread_excluding_near_zero": 15.03235906181077,
+          "positive_real_eigenvalue_count": 0,
+          "dt_scaled_real_min": -21.497072799303886,
+          "dt_scaled_real_max": -1.4300531746821108,
+          "dt_scaled_abs_max": 21.497072799303886,
+          "explicit_euler_diffusive_bound_pass": false
+        },
+        "2": {
+          "matrix_shape": [
+            27,
+            27
+          ],
+          "matrix_frobenius_norm": 136900010146.91473,
+          "matrix_max_abs": 88902846874.26312,
+          "singular_max": 136848842859.4116,
+          "singular_min": 29934.329973088625,
+          "rank_tolerance": 1368.4884285941162,
+          "rank": 27,
+          "condition_number": 4571635.4093257,
+          "eigenvalue_real_min": -254317564.89123592,
+          "eigenvalue_real_max": -16916631.368791614,
+          "eigenvalue_imag_max_abs": 0.019090813340207225,
+          "eigenvalue_abs_max": 254317564.89123592,
+          "eigenvalue_real_spread_excluding_near_zero": 15.033582002644437,
+          "positive_real_eigenvalue_count": 0,
+          "dt_scaled_real_min": -21.51029218254184,
+          "dt_scaled_real_max": -1.430816167348416,
+          "dt_scaled_abs_max": 21.51029218254184,
+          "explicit_euler_diffusive_bound_pass": false
+        },
+        "3": {
+          "matrix_shape": [
+            27,
+            27
+          ],
+          "matrix_frobenius_norm": 91324457800.23997,
+          "matrix_max_abs": 59364647025.44042,
+          "singular_max": 91245930919.56236,
+          "singular_min": 44972.45900865896,
+          "rank_tolerance": 912.4593091956236,
+          "rank": 27,
+          "condition_number": 2028929.103076039,
+          "eigenvalue_real_min": -254806723.21331933,
+          "eigenvalue_real_max": -16897189.56597426,
+          "eigenvalue_imag_max_abs": 0.007578581545132011,
+          "eigenvalue_abs_max": 254806723.21331933,
+          "eigenvalue_real_spread_excluding_near_zero": 15.079828643600095,
+          "positive_real_eigenvalue_count": 0,
+          "dt_scaled_real_min": -21.551665409892596,
+          "dt_scaled_real_max": -1.4291717710624756,
+          "dt_scaled_abs_max": 21.551665409892596,
+          "explicit_euler_diffusive_bound_pass": false
+        },
+        "4": {
+          "matrix_shape": [
+            27,
+            27
+          ],
+          "matrix_frobenius_norm": 68474662730.358055,
+          "matrix_max_abs": 44508261277.65784,
+          "singular_max": 68369244825.26138,
+          "singular_min": 59535.99181100825,
+          "rank_tolerance": 683.6924482526139,
+          "rank": 27,
+          "condition_number": 1148368.2852264142,
+          "eigenvalue_real_min": -254508703.14017913,
+          "eigenvalue_real_max": -16862398.087485887,
+          "eigenvalue_imag_max_abs": 2.8916897503469122e-05,
+          "eigenvalue_abs_max": 254508703.14017913,
+          "eigenvalue_real_spread_excluding_near_zero": 15.09326857424022,
+          "positive_real_eigenvalue_count": 0,
+          "dt_scaled_real_min": -21.526458740222534,
+          "dt_scaled_real_max": -1.426229092415534,
+          "dt_scaled_abs_max": 21.526458740222534,
+          "explicit_euler_diffusive_bound_pass": false
+        },
+        "5": {
+          "matrix_shape": [
+            27,
+            27
+          ],
+          "matrix_frobenius_norm": 54934065566.510445,
+          "matrix_max_abs": 35605078835.35224,
+          "singular_max": 54802422331.88971,
+          "singular_min": 73816.76147834737,
+          "rank_tolerance": 548.0242233188972,
+          "rank": 27,
+          "condition_number": 742411.6316450008,
+          "eigenvalue_real_min": -254315600.42256376,
+          "eigenvalue_real_max": -16835707.686236605,
+          "eigenvalue_imag_max_abs": 0.009222835445331307,
+          "eigenvalue_abs_max": 254315600.42256376,
+          "eigenvalue_real_spread_excluding_near_zero": 15.105726777999944,
+          "positive_real_eigenvalue_count": 0,
+          "dt_scaled_real_min": -21.510126026912204,
+          "dt_scaled_real_max": -1.4239716064664734,
+          "dt_scaled_abs_max": 21.510126026912204,
+          "explicit_euler_diffusive_bound_pass": false
+        },
+        "6": {
+          "matrix_shape": [
+            27,
+            27
+          ],
+          "matrix_frobenius_norm": 46043404559.74589,
+          "matrix_max_abs": 29678808759.499603,
+          "singular_max": 45886702415.809845,
+          "singular_min": 87819.16689624696,
+          "rank_tolerance": 458.86702415809845,
+          "rank": 27,
+          "condition_number": 522513.5245250301,
+          "eigenvalue_real_min": -254227930.03968632,
+          "eigenvalue_real_max": -16817991.76973246,
+          "eigenvalue_imag_max_abs": 0.019019394296324866,
+          "eigenvalue_abs_max": 254227930.03968632,
+          "eigenvalue_real_spread_excluding_near_zero": 15.116426117963938,
+          "positive_real_eigenvalue_count": 0,
+          "dt_scaled_real_min": -21.50271082713135,
+          "dt_scaled_real_max": -1.4224731864086664,
+          "dt_scaled_abs_max": 21.50271082713135,
+          "explicit_euler_diffusive_bound_pass": false
+        },
+        "7": {
+          "matrix_shape": [
+            27,
+            27
+          ],
+          "matrix_frobenius_norm": 39883773699.489784,
+          "matrix_max_abs": 25580583511.89658,
+          "singular_max": 39693894275.41992,
+          "singular_min": 103302.16029945483,
+          "rank_tolerance": 396.9389427541992,
+          "rank": 27,
+          "condition_number": 384250.37927913887,
+          "eigenvalue_real_min": -256235831.39602894,
+          "eigenvalue_real_max": -16819026.290413156,
+          "eigenvalue_imag_max_abs": 0.0059442898240610895,
+          "eigenvalue_abs_max": 256235831.39602894,
+          "eigenvalue_real_spread_excluding_near_zero": 15.234879057302107,
+          "positive_real_eigenvalue_count": 0,
+          "dt_scaled_real_min": -21.672540012414416,
+          "dt_scaled_real_max": -1.4225606866256497,
+          "dt_scaled_abs_max": 21.672540012414416,
+          "explicit_euler_diffusive_bound_pass": false
+        },
+        "8": {
+          "matrix_shape": [
+            27,
+            27
+          ],
+          "matrix_frobenius_norm": 34931494794.668915,
+          "matrix_max_abs": 22370144600.335396,
+          "singular_max": 34713174975.47328,
+          "singular_min": 116445.90098719666,
+          "rank_tolerance": 347.1317497547328,
+          "rank": 27,
+          "condition_number": 298105.5982321785,
+          "eigenvalue_real_min": -255712026.9224767,
+          "eigenvalue_real_max": -16766330.09847792,
+          "eigenvalue_imag_max_abs": 9.733833071464445e-05,
+          "eigenvalue_abs_max": 255712026.9224767,
+          "eigenvalue_real_spread_excluding_near_zero": 15.251520483047791,
+          "positive_real_eigenvalue_count": 0,
+          "dt_scaled_real_min": -21.628236398240343,
+          "dt_scaled_real_max": -1.4181036193919374,
+          "dt_scaled_abs_max": 21.628236398240343,
+          "explicit_euler_diffusive_bound_pass": false
+        }
+      }
+    },
+    "comparison": {
+      "max_relative_change_in_abs_dominant_eigenvalue": 0.02136698752134701,
+      "dominant_abs_eigenvalue_ratio_full16_to_current7_by_mode": {
+        "0": 0.978633012478653,
+        "1": 0.9787284193969158,
+        "2": 0.979016001500087,
+        "3": 0.9816120571181886,
+        "4": 0.9805210584361205,
+        "5": 0.979618047317819,
+        "6": 0.9789083089262065,
+        "7": 0.9881904771958485,
+        "8": 0.9861378552801536
+      },
+      "current7_all_modes_have_no_significant_positive_real_eigenvalue": true,
+      "full16_all_modes_have_no_significant_positive_real_eigenvalue": true,
+      "current7_nonzero_modes_dt_scaled_real_range": [
+        -21.971338714798524,
+        -1.3685172588365127
+      ],
+      "full16_nonzero_modes_dt_scaled_real_range": [
+        -21.672540012414416,
+        -1.4181036193919374
+      ]
+    }
+  },
+  "interpretation": {
+    "current7": "All harmonics have strongly nonpositive viscous spectra; m=0 has one numerical near-zero gauge/null direction. Nonzero harmonics have dt-scaled real parts approximately -22 to -1.37, beyond explicit Euler stability.",
+    "full16": "The full-support 16-point quadrature gives the same dominant negative spectrum (within about the reported relative change), so the large negative eigenvalues are not caused by the 7-point scaled-node quadrature alias alone.",
+    "diagnosis": "The result indicates a stiff projected viscous operator, with additional severe basis/inverse conditioning. It does not establish PDE acceptance or explain the nonlinear midpoint failure by itself."
+  },
+  "elapsed_seconds": 0.13275389999034815
+}

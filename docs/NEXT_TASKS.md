@@ -2,6 +2,30 @@
 
 ## Current ST073 continuation
 
+Latest completed experiment: spatial Fourier evolution with weak viscous
+Galerkin projection and implicit BDF; see ST073_SPATIAL_FOURIER_EVOLUTION.md.
+Time integration succeeds, but the oscillatory energy proxy decays to
+1.44% and the wave remains rejected. Immediate priorities superseding
+the earlier spatial-solve request below:
+
+- [ ] Assemble the retained-space linear energy budget on the current
+  background: velocity mass M, gradient Gram K, and strain form S from
+  sym(grad U). Remove gauge nulls consistently and report eigenvalues of
+  the mass-normalized production-minus-dissipation form -nu K - S.
+  Record support, time, quadrature and amplitude-versus-energy growth
+  conventions. This finite matrix diagnostic is not a continuum theorem.
+- [ ] If all retained directions decay, construct a wider admissible
+  support or revise coupled mean shear; quantify cutoff diffusion and
+  stress production before another time sweep. Do not hide failure by
+  shrinking wave amplitude or merely increasing polynomial degree.
+- [ ] Recompute the evolving mean stress target and compare the complete
+  wave covariance against it over time. The existing covariance report
+  measures only retention against the initial reference.
+- [ ] Only advance a revised candidate after full spatial/time momentum
+  holdouts improve over the same background and required stress persists.
+  Then demonstrate inter-scale residual contraction, with domain/forcing,
+  finite-energy bounds and full momentum max/volume-L2 below 1e-3.
+
 1. Use the completed state-dependent trajectory in
    `outer_feedback_evolution.json` as the current short-time mean-field
    candidate. At k=11.0005 it reduces matched fixed-slope moment drift
