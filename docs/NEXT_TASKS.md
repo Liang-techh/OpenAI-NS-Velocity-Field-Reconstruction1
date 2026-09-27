@@ -30,6 +30,10 @@ Immediate update, 2026-09-27:
   their momentum contributions. Demonstrate repeated scale transfer and
   vortex diagnostics before claiming recursive amplification. Retain the
   original domain, forcing, global-energy and full-residual acceptance gates.
+  `wave_mean_flux.py` now provides the complete actual-wave mean source,
+  including radial and axial covariance derivatives and cylindrical terms.
+  Use it in the mean/pressure solve; do not replace it with a prescribed
+  center covariance or energy eigenvalue. See ST073_ACTUAL_WAVE_MEAN_COUPLING.md.
 
 Latest completed experiment: spatial Fourier evolution with weak viscous
 Galerkin projection and implicit BDF; see ST073_SPATIAL_FOURIER_EVOLUTION.md.
