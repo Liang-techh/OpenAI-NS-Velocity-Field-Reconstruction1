@@ -18,6 +18,13 @@ computational acceleration, not a reduction of the governing equations.
 The next experiment evolves the velocity coefficients and recomputes their
 slopes at each state; frozen initial slopes are already rejected below.
 
+For that experiment, `integrated_state_moments.py` now assembles current-state
+moment equations directly from fixed-radius conservation integrals. At a
+nonzero velocity state, its four predicted moments agree with independent
+actual-field integrated replay to 3.59e-8 (order 96). This removes the need
+to use the less accurate order-24 pointwise-residual integral rows as the
+evolution constraints. It does not establish continuum derivative accuracy.
+
 The first full-vector meridional/pressure correction now reduces both metrics
 on the same independent spatial holdout: maximum 7.01009e9 -> 4.38510e9,
 physical-volume L2 237497.46 -> 186820.70. Its 44 directions preserve the

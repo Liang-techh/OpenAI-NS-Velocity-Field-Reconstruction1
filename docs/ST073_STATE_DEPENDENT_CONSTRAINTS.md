@@ -31,6 +31,18 @@ The discrepancy must be controlled before constrained trajectory acceptance.
 The JSON also compares the assembled first cone at a nonzero state against
 an independent actual-field Cartesian replay.
 
+`integrated_state_moments.py` now supplies a better-conditioned alternative
+for the four moment rows. Its `assemble` function computes the baseline
+through integrated conservation identities and the slope columns from
+fixed-radius time derivatives of velocity moments. Pressure columns use
+axial derivatives of pressure integrals. It avoids integrating pointwise
+second spatial derivatives, while keeping the actual changing basis and
+fixed integration radius under differentiation. The order-96 nonzero-state
+check agrees with direct integrated replay to 3.59e-8 in absolute value.
+This verifies assembly against the chosen stencil, not convergence to an
+exact continuum identity. Use these E,m rows together with the refreshed
+cone rows for the next constrained evolution experiment.
+
 Next, combine this builder with evolving-state derivative fitting, find a
 feasible control at each new state (do not assume the old known point remains
 feasible), and verify moments with independent integrated identities. Reject
