@@ -1,0 +1,367 @@
+{
+  "k": 15,
+  "fit_order": 48,
+  "stages": [
+    {
+      "label": "outer_moment_fit",
+      "success": true,
+      "moment_max": 3.4378899727016687e-10,
+      "correction_norm": 35.75880904312516,
+      "momentum_peak": 1522383853.1578746,
+      "objective": 121.29422266994203
+    },
+    {
+      "label": "outer_momentum_fit",
+      "success": true,
+      "moment_max": 1.4733814168721437e-10,
+      "correction_norm": 39.61534108990487,
+      "momentum_peak": 616849510.3098174,
+      "objective": 16.195598654802037
+    }
+  ],
+  "optimizer_message": "Optimization terminated successfully",
+  "correction": [
+    -0.17530976350922425,
+    -0.7015626780659207,
+    0.49540783921928994,
+    0.1569400455969044,
+    -0.5867861104832305,
+    -0.19853299954142434,
+    8.763605526234006,
+    1.9034266561707298,
+    -12.648953338590513,
+    23.541949559987348,
+    1.8307172865759573,
+    -27.752545527997544
+  ],
+  "amplitudes": [
+    -0.12050448524080024,
+    0.03265449933840082,
+    0.0,
+    0.008069433557282272,
+    -0.001383196097686414,
+    0.0,
+    0.004524209727751422,
+    0.000539772297530036,
+    0.0,
+    0.022948226592363792,
+    -0.23836836858184762,
+    0.0,
+    0.00786946080268758,
+    -1.407383703312158,
+    0.0,
+    0.009504463807086333,
+    -1.477377145547811,
+    0.0,
+    -0.13943440318667102,
+    0.0032544073258496697,
+    0.0,
+    -0.1671968292687661,
+    -0.7012713569428531,
+    0.49540783921928994,
+    0.16141095709198397,
+    -0.5859350237166928,
+    -0.19853299954142434,
+    -0.0008247119740108829,
+    -0.09490936910835478,
+    0.0,
+    8.76469216067541,
+    0.5115429448169642,
+    -12.648953338590513,
+    23.547350330530534,
+    0.4191284991074735,
+    -27.752545527997544,
+    -0.14646627566876752,
+    0.002377591836994234,
+    0.0,
+    0.007562483690645784,
+    0.00034245528563825125,
+    0.0,
+    0.004379306495845444,
+    0.0008602130907427113,
+    0.0,
+    -0.0013289720346279321,
+    -0.07233372274861224,
+    0.0,
+    0.0013184804844418897,
+    -1.3862685232947234,
+    0.0,
+    0.0052428899483261595,
+    -1.361460882062968,
+    0.0
+  ],
+  "gradient_directional_error": 1.95499405553079e-09,
+  "replay": [
+    {
+      "order": 96,
+      "moments": [
+        -9.873500017268646e-05,
+        0.0002160640725638365,
+        -9.29900740631404e-05,
+        -0.00020025741164109658
+      ],
+      "absolute_max": 0.0002160640725638365,
+      "momentum_peak": 618251605.5179679
+    },
+    {
+      "order": 128,
+      "moments": [
+        -9.929046477845759e-05,
+        -0.0004884638844760896,
+        -8.817893346557213e-05,
+        0.00047473942781183165
+      ],
+      "absolute_max": 0.0004884638844760896,
+      "momentum_peak": 618371706.8725371
+    }
+  ],
+  "heldout_momentum_peaks": {
+    "baseline": 169710730.70800373,
+    "candidate": 920434042.157781
+  },
+  "heldout_components": {
+    "baseline": [
+      75583365.9271144,
+      49428130.49916169,
+      150140374.31130147
+    ],
+    "candidate": [
+      615877842.6241312,
+      241328364.63506147,
+      920425941.8112613
+    ]
+  },
+  "cone": {
+    "k": 15,
+    "tau": 1.52587890625e-05,
+    "order": 96,
+    "rows": [
+      {
+        "index": 0,
+        "radial_offset": -0.99,
+        "axial_offset": -0.99,
+        "momentum_norm": 33567247.197926186,
+        "lambda_squared": 2769080901.2074337,
+        "target_dot_N": -481.77292519664,
+        "target_dot_K": -1350.2830509897535,
+        "cone_ratio": 0.9003551352659235,
+        "cone_pass": true
+      },
+      {
+        "index": 1,
+        "radial_offset": -0.99,
+        "axial_offset": 0.0,
+        "momentum_norm": 34188136.25510275,
+        "lambda_squared": 1342747502.7198513,
+        "target_dot_N": -843.8464358279068,
+        "target_dot_K": -373.2943505646973,
+        "cone_ratio": 0.09778508024943336,
+        "cone_pass": true
+      },
+      {
+        "index": 2,
+        "radial_offset": -0.99,
+        "axial_offset": 0.99,
+        "momentum_norm": 34004298.40500333,
+        "lambda_squared": 1744329959.9032772,
+        "target_dot_N": -765.983467558731,
+        "target_dot_K": 664.140081730191,
+        "cone_ratio": 0.21949421386989423,
+        "cone_pass": true
+      },
+      {
+        "index": 3,
+        "radial_offset": 0.0,
+        "axial_offset": -0.99,
+        "momentum_norm": 20443188.49405146,
+        "lambda_squared": 2636567359.5484543,
+        "target_dot_N": -1085.9002325456488,
+        "target_dot_K": -1311.0765921684524,
+        "cone_ratio": 0.45703462764543623,
+        "cone_pass": true
+      },
+      {
+        "index": 4,
+        "radial_offset": 0.0,
+        "axial_offset": 0.0,
+        "momentum_norm": 20504482.134968262,
+        "lambda_squared": 1687589798.5156136,
+        "target_dot_N": -1411.6020983624367,
+        "target_dot_K": -342.7510198308975,
+        "cone_ratio": 0.07284330970166134,
+        "cone_pass": true
+      },
+      {
+        "index": 5,
+        "radial_offset": 0.0,
+        "axial_offset": 0.99,
+        "momentum_norm": 20420820.809878167,
+        "lambda_squared": 2038004595.3232064,
+        "target_dot_N": -1326.7476501505591,
+        "target_dot_K": 679.071878077755,
+        "cone_ratio": 0.16989625545563156,
+        "cone_pass": true
+      },
+      {
+        "index": 6,
+        "radial_offset": 0.99,
+        "axial_offset": -0.99,
+        "momentum_norm": 30329894.29838771,
+        "lambda_squared": 2737589029.5543923,
+        "target_dot_N": -1571.1860769894888,
+        "target_dot_K": -1051.8599088004814,
+        "cone_ratio": 0.31158192470906165,
+        "cone_pass": true
+      },
+      {
+        "index": 7,
+        "radial_offset": 0.99,
+        "axial_offset": 0.0,
+        "momentum_norm": 30261106.651254613,
+        "lambda_squared": 2231614226.464668,
+        "target_dot_N": -1783.8130819590085,
+        "target_dot_K": -247.54408754512397,
+        "cone_ratio": 0.05847688245451671,
+        "cone_pass": true
+      },
+      {
+        "index": 8,
+        "radial_offset": 0.99,
+        "axial_offset": 0.99,
+        "momentum_norm": 30210747.27979145,
+        "lambda_squared": 2431094320.9385395,
+        "target_dot_N": -1714.5273405568628,
+        "target_dot_K": 586.1502214782473,
+        "cone_ratio": 0.15108077187668673,
+        "cone_pass": true
+      }
+    ],
+    "pass_count": 9,
+    "max_ratio": 0.9003551352659235
+  },
+  "baseline_cone": {
+    "k": 15,
+    "tau": 1.52587890625e-05,
+    "order": 96,
+    "rows": [
+      {
+        "index": 0,
+        "radial_offset": -0.99,
+        "axial_offset": -0.99,
+        "momentum_norm": 33567247.197926186,
+        "lambda_squared": 2769080901.2074337,
+        "target_dot_N": -481.77292519664,
+        "target_dot_K": -1350.2830509897535,
+        "cone_ratio": 0.9003551352659235,
+        "cone_pass": true
+      },
+      {
+        "index": 1,
+        "radial_offset": -0.99,
+        "axial_offset": 0.0,
+        "momentum_norm": 34188136.25510275,
+        "lambda_squared": 1342747502.7198513,
+        "target_dot_N": -843.8464358279068,
+        "target_dot_K": -373.2943505646973,
+        "cone_ratio": 0.09778508024943336,
+        "cone_pass": true
+      },
+      {
+        "index": 2,
+        "radial_offset": -0.99,
+        "axial_offset": 0.99,
+        "momentum_norm": 34004298.40500333,
+        "lambda_squared": 1744329959.9032772,
+        "target_dot_N": -765.983467558731,
+        "target_dot_K": 664.140081730191,
+        "cone_ratio": 0.21949421386989423,
+        "cone_pass": true
+      },
+      {
+        "index": 3,
+        "radial_offset": 0.0,
+        "axial_offset": -0.99,
+        "momentum_norm": 20443188.49405146,
+        "lambda_squared": 2636567359.5484543,
+        "target_dot_N": -1085.9002325456488,
+        "target_dot_K": -1311.0765921684524,
+        "cone_ratio": 0.45703462764543623,
+        "cone_pass": true
+      },
+      {
+        "index": 4,
+        "radial_offset": 0.0,
+        "axial_offset": 0.0,
+        "momentum_norm": 20504482.134968262,
+        "lambda_squared": 1687589798.5156136,
+        "target_dot_N": -1411.6020983624367,
+        "target_dot_K": -342.7510198308975,
+        "cone_ratio": 0.07284330970166134,
+        "cone_pass": true
+      },
+      {
+        "index": 5,
+        "radial_offset": 0.0,
+        "axial_offset": 0.99,
+        "momentum_norm": 20420820.809878167,
+        "lambda_squared": 2038004595.3232064,
+        "target_dot_N": -1326.7476501505591,
+        "target_dot_K": 679.071878077755,
+        "cone_ratio": 0.16989625545563156,
+        "cone_pass": true
+      },
+      {
+        "index": 6,
+        "radial_offset": 0.99,
+        "axial_offset": -0.99,
+        "momentum_norm": 30329894.29838771,
+        "lambda_squared": 2737589029.5543923,
+        "target_dot_N": -1571.1860769894888,
+        "target_dot_K": -1051.8599088004814,
+        "cone_ratio": 0.31158192470906165,
+        "cone_pass": true
+      },
+      {
+        "index": 7,
+        "radial_offset": 0.99,
+        "axial_offset": 0.0,
+        "momentum_norm": 30261106.651254613,
+        "lambda_squared": 2231614226.464668,
+        "target_dot_N": -1783.8130819590085,
+        "target_dot_K": -247.54408754512397,
+        "cone_ratio": 0.05847688245451671,
+        "cone_pass": true
+      },
+      {
+        "index": 8,
+        "radial_offset": 0.99,
+        "axial_offset": 0.99,
+        "momentum_norm": 30210747.27979145,
+        "lambda_squared": 2431094320.9385395,
+        "target_dot_N": -1714.5273405568628,
+        "target_dot_K": 586.1502214782473,
+        "cone_ratio": 0.15108077187668673,
+        "cone_pass": true
+      }
+    ],
+    "pass_count": 9,
+    "max_ratio": 0.9003551352659235
+  },
+  "free_indices": [
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35
+  ],
+  "scope": "Single-scale moment-constrained optimization of sampled full momentum; heldout radial/axial grid. No global maximum, spatial-volume L2, finite energy, or scale recursion established.",
+  "accepted": false,
+  "scale_recursion_established": false
+}

@@ -1,4 +1,5 @@
 """Preserve inner cone support while repairing moments in outer windows."""
+import argparse
 import json
 import numpy as np
 from scipy.optimize import minimize, least_squares
@@ -10,16 +11,16 @@ from separated_moment_modes import SeparatedMomentModes, RADIAL_WINDOWS_THREE
 from radial_continuation import ROOT
 
 
-def run():
+def run(k=11):
     inner,fields=build_fields();base=fields['two_sided_cone']
     old=np.array(json.loads((ROOT/'midplane_connected_cone_edge_repair.json').read_text())['amplitudes']).reshape(3,2,3,2)
     start=np.zeros((3,2,3,3));start[:,:,:,:2]=old;start=start.ravel()
-    free=np.array([3,4,5,6,7,8,12,13,14,15,16,17])
+    free=np.array([3,4,5,6,7,8,12,13,14,15,16,17]) + 18 * ((11,15,19).index(k))
     def field(a,background=base):
         return SeparatedMomentModes(background,a,windows=RADIAL_WINDOWS_THREE,knots=(11.,15.,19.),axial_powers=(0,1,2))
     current=field(start)
     units=[field(np.eye(54)[i],ZeroBackground(base)) for i in free]
-    data=moment_slices(inner,base,current,orders=(11.,),n=48,unit_fields=units,
+    data=moment_slices(inner,base,current,orders=(float(k),),n=48,unit_fields=units,
         unit_fields_are_deltas=True,radial_breaks=RADIAL_BREAKS)[0]
     c=_integrated_moment_coefficients(data)
     scale=np.maximum(abs(c[0]),1.)
@@ -55,11 +56,11 @@ def run():
     candidate=start.copy();candidate[free]+=fit.x;f=field(candidate)
     replay=[]
     for n in (96,128):
-        d=moment_slices(inner,base,f,orders=(11.,),n=n,unit_fields=[f],radial_breaks=RADIAL_BREAKS)[0]
+        d=moment_slices(inner,base,f,orders=(float(k),),n=n,unit_fields=[f],radial_breaks=RADIAL_BREAKS)[0]
         values=outer_moments(d,np.zeros(1));rr=momentum(d['baseline'])
         replay.append(dict(order=n,moments=values.tolist(),absolute_max=float(max(abs(values))),momentum_peak=float(max(np.linalg.norm(rr,axis=1)))))
         print(json.dumps(replay[-1]),flush=True)
-    tau=.5*2**-11
+    tau=.5*2.**-k
     points=np.concatenate([inner.from_similarity(inner.p.X_max*(1+15*np.linspace(.01,.99,61))**2,np.full(61,eta),tau) for eta in (-.3,-.1,0.,.1,.3)])
     args=(points,tau,.0005*np.sqrt(inner.nu*tau),.0001*tau)
     heldout={}
@@ -67,13 +68,15 @@ def run():
     for label,fld in [('baseline',current),('candidate',f)]:
         rr=momentum(jets(fld,*args));heldout[label]=float(max(np.linalg.norm(rr,axis=1)));components[label]=np.max(abs(rr),axis=0).tolist()
     supports=json.loads((ROOT/'midplane_physical_covariance_pairs.json').read_text())
-    cone=_cone_replay(inner,f,supports,11,order=96)
-    baseline_cone=_cone_replay(inner,current,supports,11,order=96)
-    report=dict(k=11,fit_order=48,stages=stages,optimizer_message=str(fit.message),correction=fit.x.tolist(),amplitudes=candidate.tolist(),
+    cone=_cone_replay(inner,f,supports,k,order=96)
+    baseline_cone=_cone_replay(inner,current,supports,k,order=96)
+    report=dict(k=k,fit_order=48,stages=stages,optimizer_message=str(fit.message),correction=fit.x.tolist(),amplitudes=candidate.tolist(),
         gradient_directional_error=float(error),replay=replay,heldout_momentum_peaks=heldout,heldout_components=components,cone=cone,baseline_cone=baseline_cone,free_indices=free.tolist(),
         scope='Single-scale moment-constrained optimization of sampled full momentum; heldout radial/axial grid. No global maximum, spatial-volume L2, finite energy, or scale recursion established.',accepted=False,scale_recursion_established=False)
-    (ROOT/'midplane_outer_axial_repair.json').write_bytes((json.dumps(report,indent=2)+'\n').encode())
+    (ROOT/('midplane_outer_axial_repair.json' if k==11 else f'midplane_outer_axial_repair_k{k}.json')).write_bytes((json.dumps(report,indent=2)+'\n').encode())
     print(json.dumps(dict(heldout=heldout,cone_pass=cone['pass_count'])),flush=True)
 
 if __name__=='__main__':
-    run()
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--k',type=int,choices=(11,15,19),default=11)
+    run(parser.parse_args().k)

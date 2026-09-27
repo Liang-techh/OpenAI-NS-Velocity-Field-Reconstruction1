@@ -1,51 +1,28 @@
-# Current checkpoint â€” constrained velocity-field integration
+# Current checkpoint - constrained velocity-field integration
 
-## ST073 research update â€” 2026-09-27
+## ST073 research update - 2026-09-27
 
-Latest result: freezing the inner radial window and repairing moments
-with outer quadratic-axial modes gives independent sampled moment errors
-below 3.1e-5 and 9/9 inner cone nodes passing at k=11. Direct cone values
-are unchanged. Held-out full momentum remains 5.42x the initializer,
-so this is a diagnostic seed, not an accepted field. Extend across scales
-and locate outer residual/cone support next. See
-[the separated repair](ST073_OUTER_AXIAL_REPAIR.md).
+The current outer-window axial repair preserves all nine tested inner
+cone nodes at k=11,15,19 and intermediate k=13,17. Refined knot moment
+maxima are approximately 3.0e-5, 4.9e-4, 6.7e-3, respectively; the
+finest knot fails the absolute 1e-3 sampled-moment gate.
 
+One smooth field formed from these knot coefficients has intermediate
+moment defects 0.239 and 3.541. Full momentum still grows strongly under
+refinement. Scale recursion and the complete momentum max/volume-L2
+criteria remain unestablished. No candidate is accepted.
 
-The newest constrained trial reduces the preceding candidate's sampled
-momentum peak by 36%, with independent sampled moments below 3.1e-5.
-However, held-out momentum remains 7.42x the baseline and only 3/9 cone
-nodes pass. It remains rejected. Next include physical cone inequalities
-in the enriched-family solve and inspect residual components; see
-[the constrained-cost result](ST073_QUADRATIC_AXIAL_COST.md).
+Next derive moment constraints in coefficient values and time derivatives
+for a coupled continuation, rather than interpolating independent fits.
+Inspect outer stress realizability and residual contraction as well.
+See [scale transfer](ST073_OUTER_AXIAL_SCALE_TRANSFER.md),
+[the support-separated repair](ST073_OUTER_AXIAL_REPAIR.md), and
+[the quadrature correction](ST073_MOMENT_QUADRATURE_AUDIT.md).
+Earlier 12-point-only closure claims remain withdrawn. Historical rejected
+trials are recorded in their individual reports, not current next actions.
 
-
-Latest constructive trial: adding an independent quadratic axial factor
-closes four sampled moments at k=11 to 4.20e-4 under 96-point split
-replay, with coefficient increments below 22.6. However, the sampled
-full momentum peak increases 12.88x and only 3/9 cone nodes pass.
-The candidate is rejected. Next reduce momentum cost inside the
-moment-feasible family; see [the axial-shape trial](ST073_QUADRATIC_AXIAL_TRIAL.md).
-
-
-On `codex/st073-transition-next`, scale recursion remains unestablished.
-The connected-cone candidate's previously reported small outer moments
-fail radial quadrature refinement. Split integration gives maxima about
-213, 3372, and 53240 at k=11,15,19. Refined checks preserve the sampled
-geometric improvement, but do not repair moment closure.
-
-A resolved joint solve reached its iteration limit with large remaining
-moment defects and one failed cone node on each tested scale. It is a
-rejected candidate, not evidence of mathematical infeasibility. The moment-only diagnostic finds full initial row rank, but leaves
-large axial defects (about 204/3215/50689); its final Jacobian becomes
-poorly conditioned. The axial quadratic diagnostic gives positive numerical lower bounds
-inside the old +/-40 coefficient box, while unbounded negative directions
-exist. Next measure additional even axial-shape modes; see
-[the range diagnosis](ST073_AXIAL_QUADRATIC_RANGE.md). See
-[the numerical correction](ST073_MOMENT_QUADRATURE_AUDIT.md).
-No complete-field momentum gate or recursive contraction is established.
-
-The integration snapshot below is historical and must not be read as a
-current ST073 acceptance report.
+The integration snapshot below is historical and must not be interpreted
+as a current ST073 acceptance report.
 
 Snapshot date: **2026-09-20**.
 

@@ -1,37 +1,32 @@
 # Next constructive tasks and acceptance criteria
 
-Newest constructive seed: frozen inner window + outer quadratic axial
-repair passes four refined sampled moments and 9/9 inner cone nodes at
-k=11. Extend to k=15/19 and intermediate scales, then locate outer residual
-and stress-cone support. Full momentum still fails; see ST073_OUTER_AXIAL_REPAIR.md.
+## Current ST073 continuation
 
-Current priority: the enriched moment-constrained momentum fit lowers
-its predecessor peak by 36%, but still passes only 3/9 cone nodes and
-exceeds held-out baseline momentum 7.42x. Add physical cone constraints
-and component-wise residual diagnostics; see ST073_QUADRATIC_AXIAL_COST.md.
+1. Derive outer-mode moment dependence on coefficient values and time
+   derivatives; investigate a coupled differential-algebraic continuation
+   with fixed inner cone coefficients. Existing smooth knot interpolation
+   leaves moment errors 0.239/3.541 at k=13/17.
+2. Separate quadrature and finite-difference error in finest-knot moment
+   replay: k=19 has 1.74e-3/6.70e-3 at orders 96/128 despite tiny training
+   moments. Do not accept a same-rule cached fit as independent evidence.
+3. Locate outer residual concentrations, screen their stress realizability,
+   and couple mean/pressure restoration with the paper's pulse dynamics.
+4. Establish improvement across time intervals and scales on one callable
+   field before claiming recursion. Full momentum maximum and spatial-volume
+   L2 must both meet 1e-3; no current candidate does so.
 
-Latest trial: quadratic axial factors close sampled moments at k=11,
-but increase sampled momentum 12.88x and leave only 3/9 cone nodes passing.
-Next minimize full momentum cost subject to resolved moments; see
-ST073_QUADRATIC_AXIAL_TRIAL.md. Do not promote this candidate.
+The frozen-inner/outer-repair seed preserves 9/9 sampled inner cone nodes
+at k=11,13,15,17,19. This geometry success does not imply continuum cone
+positivity, moment continuation, or recursive contraction. See
+ST073_OUTER_AXIAL_SCALE_TRANSFER.md and ST073_OUTER_AXIAL_REPAIR.md.
 
-**Numerical correction:** the 12-point whole-bridge moment quadrature is
-under-resolved for the separated compact modes. The connected-cone
-candidate's small-moment claim fails refined integration, with refined sampled
-maxima near `213/3372/53240` at k=11/15/19. See
-`ST073_MOMENT_QUADRATURE_AUDIT.md`. Use explicit radial support panels,
-refined quadrature, and independent-order replay before accepting a
-moment-constrained candidate. Earlier 12-point-only closures are not
-acceptance evidence.
+**Numerical correction:** earlier 12-point whole-bridge moment closures
+were under-resolved. Use explicit radial support panels and independent
+quadrature refinement; see ST073_MOMENT_QUADRATURE_AUDIT.md.
 
-The resolved moment-only diagnostic leaves the axial moment as the
-immediate obstacle. The signed quadratic analysis now finds a positive box lower bound
-for the old +/-40 search, with unrestricted negative directions requiring
-very large coefficients. Add and measure independent even axial-shape
-modes before another joint cone solve; see ST073_AXIAL_QUADRATIC_RANGE.md.
-
-The next priority is **actual profile data**, not more tests of the toy exponent.
-Preserve the existing numerical regression suite while implementing these dependencies.
+The remaining construction roadmap below is historical background.
+Route-local closure statements do not supersede the current numerical
+correction or constitute acceptance evidence.
 
 ## P0: Instantiate one admissible leading-profile construction
 

@@ -1,0 +1,353 @@
+{
+  "amplitudes": [
+    -0.12050448524080024,
+    0.03265449933840082,
+    0.0,
+    -0.16169327596143124,
+    -0.6855313462468748,
+    0.48181481620261224,
+    0.1528369058760115,
+    -0.5776902204890416,
+    -0.1840707274210223,
+    0.022948226592363792,
+    -0.23836836858184762,
+    0.0,
+    8.915577089159715,
+    0.526240231345281,
+    -12.76906838990718,
+    23.79961157426312,
+    0.4324007185721652,
+    -27.786824883083188,
+    -0.13943440318667102,
+    0.0032544073258496697,
+    0.0,
+    -0.1671968292687661,
+    -0.7012713569428531,
+    0.49540783921928994,
+    0.16141095709198397,
+    -0.5859350237166928,
+    -0.19853299954142434,
+    -0.0008247119740108829,
+    -0.09490936910835478,
+    0.0,
+    8.76469216067541,
+    0.5115429448169642,
+    -12.648953338590513,
+    23.547350330530534,
+    0.4191284991074735,
+    -27.752545527997544,
+    -0.14646627566876752,
+    0.002377591836994234,
+    0.0,
+    -0.1728052633442136,
+    -0.7173721284929103,
+    0.5092780571147572,
+    0.16988673055609832,
+    -0.5947098023319313,
+    -0.21318714024707905,
+    -0.0013289720346279321,
+    -0.07233372274861224,
+    0.0,
+    8.59796563932606,
+    0.5011891103307813,
+    -12.501899337639022,
+    23.284403984555514,
+    0.41315750185507016,
+    -27.698370087572147
+  ],
+  "scales": [
+    {
+      "k": 13,
+      "replay": [
+        {
+          "order": 48,
+          "moments": [
+            -0.23343557709524346,
+            -0.12980007133954055,
+            0.23858156750958565,
+            0.12521253690674425
+          ],
+          "moment_max": 0.23858156750958565,
+          "momentum_peak": 77712077.34925956,
+          "component_peaks": [
+            56725787.3076462,
+            14751009.184401669,
+            65957491.3310622
+          ]
+        },
+        {
+          "order": 96,
+          "moments": [
+            -0.23345815996138422,
+            -0.12976540691080515,
+            0.23855906688205997,
+            0.12517753585812755
+          ],
+          "moment_max": 0.23855906688205997,
+          "momentum_peak": 77882369.87231855,
+          "component_peaks": [
+            56658020.07258008,
+            14766565.529487412,
+            66466674.072874665
+          ]
+        }
+      ],
+      "cone": {
+        "k": 13,
+        "tau": 6.103515625e-05,
+        "order": 96,
+        "rows": [
+          {
+            "index": 0,
+            "radial_offset": -0.99,
+            "axial_offset": -0.99,
+            "momentum_norm": 4182172.7273184536,
+            "lambda_squared": 188296559.1966029,
+            "target_dot_N": -123.62304036940509,
+            "target_dot_K": -334.50740224887556,
+            "cone_ratio": 0.9056742154877315,
+            "cone_pass": true
+          },
+          {
+            "index": 1,
+            "radial_offset": -0.99,
+            "axial_offset": 0.0,
+            "momentum_norm": 4256532.539191977,
+            "lambda_squared": 111871002.50251889,
+            "target_dot_N": -208.99082146601768,
+            "target_dot_K": -90.29387326450126,
+            "cone_ratio": 0.11024293889637217,
+            "cone_pass": true
+          },
+          {
+            "index": 2,
+            "radial_offset": -0.99,
+            "axial_offset": 0.99,
+            "momentum_norm": 4225288.633270412,
+            "lambda_squared": 143431528.06309754,
+            "target_dot_N": -186.93107380072402,
+            "target_dot_K": 167.13890320988506,
+            "cone_ratio": 0.2593422810549742,
+            "cone_pass": true
+          },
+          {
+            "index": 3,
+            "radial_offset": 0.0,
+            "axial_offset": -0.99,
+            "momentum_norm": 2738762.881705611,
+            "lambda_squared": 187192543.07883713,
+            "target_dot_N": -265.4869045696088,
+            "target_dot_K": -341.2309812594962,
+            "cone_ratio": 0.522593193821098,
+            "cone_pass": true
+          },
+          {
+            "index": 4,
+            "radial_offset": 0.0,
+            "axial_offset": 0.0,
+            "momentum_norm": 2775540.0516986432,
+            "lambda_squared": 124582818.97992438,
+            "target_dot_N": -352.0236221874976,
+            "target_dot_K": -95.1235284363493,
+            "cone_ratio": 0.08848141472792435,
+            "cone_pass": true
+          },
+          {
+            "index": 5,
+            "radial_offset": 0.0,
+            "axial_offset": 0.99,
+            "momentum_norm": 2783370.8810405964,
+            "lambda_squared": 146282272.89536798,
+            "target_dot_N": -332.5234697173864,
+            "target_dot_K": 165.93318231004562,
+            "cone_ratio": 0.17791619059225672,
+            "cone_pass": true
+          },
+          {
+            "index": 6,
+            "radial_offset": 0.99,
+            "axial_offset": -0.99,
+            "momentum_norm": 3819359.297447764,
+            "lambda_squared": 168386632.56180686,
+            "target_dot_N": -398.80302175639497,
+            "target_dot_K": -265.8328986894695,
+            "cone_ratio": 0.3092283025205732,
+            "cone_pass": true
+          },
+          {
+            "index": 7,
+            "radial_offset": 0.99,
+            "axial_offset": 0.0,
+            "momentum_norm": 3803313.8541061208,
+            "lambda_squared": 136834658.45539963,
+            "target_dot_N": -452.6065924120153,
+            "target_dot_K": -62.363883768014944,
+            "cone_ratio": 0.05776986018951782,
+            "cone_pass": true
+          },
+          {
+            "index": 8,
+            "radial_offset": 0.99,
+            "axial_offset": 0.99,
+            "momentum_norm": 3795323.9267353616,
+            "lambda_squared": 149162186.7751582,
+            "target_dot_N": -435.2307534584165,
+            "target_dot_K": 148.49550907182095,
+            "cone_ratio": 0.15006548180482476,
+            "cone_pass": true
+          }
+        ],
+        "pass_count": 9,
+        "max_ratio": 0.9056742154877315
+      }
+    },
+    {
+      "k": 17,
+      "replay": [
+        {
+          "order": 48,
+          "moments": [
+            -3.540215475001259,
+            -1.6492006401466714,
+            2.601564518262892,
+            1.6616278318547917
+          ],
+          "moment_max": 3.540215475001259,
+          "momentum_peak": 4895077582.374203,
+          "component_peaks": [
+            3565126484.566421,
+            974601778.9795012,
+            4178964086.7169456
+          ]
+        },
+        {
+          "order": 96,
+          "moments": [
+            -3.540573104990386,
+            -1.649349350159783,
+            2.6011980388126736,
+            1.6617687312250384
+          ],
+          "moment_max": 3.540573104990386,
+          "momentum_peak": 4906575415.163778,
+          "component_peaks": [
+            3562232318.643669,
+            975387442.7061241,
+            4211168997.0241723
+          ]
+        }
+      ],
+      "cone": {
+        "k": 17,
+        "tau": 3.814697265625e-06,
+        "order": 96,
+        "rows": [
+          {
+            "index": 0,
+            "radial_offset": -0.99,
+            "axial_offset": -0.99,
+            "momentum_norm": 267140563.60372782,
+            "lambda_squared": 42530175344.65501,
+            "target_dot_N": -1882.8633090416245,
+            "target_dot_K": -5377.255166602868,
+            "cone_ratio": 0.8964383640884038,
+            "cone_pass": true
+          },
+          {
+            "index": 1,
+            "radial_offset": -0.99,
+            "axial_offset": 0.0,
+            "momentum_norm": 272016908.67876244,
+            "lambda_squared": 19109178167.981335,
+            "target_dot_N": -3337.465343934671,
+            "target_dot_K": -1489.5656262702753,
+            "cone_ratio": 0.09275652799462475,
+            "cone_pass": true
+          },
+          {
+            "index": 2,
+            "radial_offset": -0.99,
+            "axial_offset": 0.99,
+            "momentum_norm": 270583557.22495145,
+            "lambda_squared": 25631263404.03715,
+            "target_dot_N": -3026.5563861399883,
+            "target_dot_K": 2642.372558959793,
+            "cone_ratio": 0.2111801090388729,
+            "cone_pass": true
+          },
+          {
+            "index": 3,
+            "radial_offset": 0.0,
+            "axial_offset": -0.99,
+            "momentum_norm": 157407055.41320157,
+            "lambda_squared": 40862985373.27462,
+            "target_dot_N": -4299.682608820086,
+            "target_dot_K": -5190.731764015219,
+            "cone_ratio": 0.447716169984271,
+            "cone_pass": true
+          },
+          {
+            "index": 4,
+            "radial_offset": 0.0,
+            "axial_offset": 0.0,
+            "momentum_norm": 157616929.9170977,
+            "lambda_squared": 25629731079.452106,
+            "target_dot_N": -5590.1185969795315,
+            "target_dot_K": -1355.7544676707666,
+            "cone_ratio": 0.07057419099866911,
+            "cone_pass": true
+          },
+          {
+            "index": 5,
+            "radial_offset": 0.0,
+            "axial_offset": 0.99,
+            "momentum_norm": 156943586.83633482,
+            "lambda_squared": 31285162477.031223,
+            "target_dot_N": -5252.756382743637,
+            "target_dot_K": 2690.5075322463827,
+            "cone_ratio": 0.16581405840960117,
+            "cone_pass": true
+          },
+          {
+            "index": 6,
+            "radial_offset": 0.99,
+            "axial_offset": -0.99,
+            "momentum_norm": 241651462.1951669,
+            "lambda_squared": 44559751012.09154,
+            "target_dot_N": -6195.133499381816,
+            "target_dot_K": -4157.134022395381,
+            "cone_ratio": 0.31354102646563353,
+            "cone_pass": true
+          },
+          {
+            "index": 7,
+            "radial_offset": 0.99,
+            "axial_offset": 0.0,
+            "momentum_norm": 241129410.71606052,
+            "lambda_squared": 36400666352.75161,
+            "target_dot_N": -7038.390183867154,
+            "target_dot_K": -980.0493341633209,
+            "cone_ratio": 0.05897539493251823,
+            "cone_pass": true
+          },
+          {
+            "index": 8,
+            "radial_offset": 0.99,
+            "axial_offset": 0.99,
+            "momentum_norm": 240728292.28476834,
+            "lambda_squared": 39616596070.68017,
+            "target_dot_N": -6764.165210872605,
+            "target_dot_K": 2313.222702964119,
+            "cone_ratio": 0.1518256410991251,
+            "cone_pass": true
+          }
+        ],
+        "pass_count": 9,
+        "max_ratio": 0.8964383640884038
+      }
+    }
+  ],
+  "accepted": false,
+  "scale_recursion_established": false,
+  "scope": "Two intermediate-time samples of one smooth coefficient-interpolated field; includes time derivatives in full momentum. Not a time-interval bound or recursive contraction."
+}
