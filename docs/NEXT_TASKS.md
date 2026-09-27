@@ -2,13 +2,16 @@
 
 ## Current ST073 continuation
 
-1. Derive outer-mode moment dependence on coefficient values and time
-   derivatives; investigate a coupled differential-algebraic continuation
-   with fixed inner cone coefficients. Existing smooth knot interpolation
-   leaves moment errors 0.239/3.541 at k=13/17.
-2. Separate quadrature and finite-difference error in finest-knot moment
-   replay: k=19 has 1.74e-3/6.70e-3 at orders 96/128 despite tiny training
-   moments. Do not accept a same-rule cached fit as independent evidence.
+1. Integrate the coupled outer-coefficient value/derivative constraints
+   along one trajectory. Local experiments establish a rank-two slope
+   response for angular moments; axial moments require value constraints.
+   See ST073_OUTER_MOMENT_DAE.md. Two local affine trajectories are not
+   an interval solution or recursive update.
+2. Stabilize integrated moment evaluation before using absolute gates:
+   derive integration-by-parts formulas or independently verify spatial
+   derivatives. Local k=17 replay differs between 3.66e-4 and 2.14e-3 at
+   orders 96/128. Earlier k=19 knot replay also fails. Avoid hiding this
+   discrepancy behind tiny cached training moments.
 3. Locate outer residual concentrations, screen their stress realizability,
    and couple mean/pressure restoration with the paper's pulse dynamics.
 4. Establish improvement across time intervals and scales on one callable

@@ -2,27 +2,23 @@
 
 ## ST073 research update - 2026-09-27
 
-The current outer-window axial repair preserves all nine tested inner
-cone nodes at k=11,15,19 and intermediate k=13,17. Refined knot moment
-maxima are approximately 3.0e-5, 4.9e-4, 6.7e-3, respectively; the
-finest knot fails the absolute 1e-3 sampled-moment gate.
+A local value/slope correction now reduces the interpolated field's
+moment defects from 0.239/3.541 at k=13/17 to 7.1e-5/2.14e-3 in
+128-point direct replay, preserving all nine sampled inner cone nodes.
+The coefficient-slope moment response has rank two: angular transport
+can be repaired with slopes, while axial moments need coefficient-value
+constraints. See [local moment dynamics](ST073_OUTER_MOMENT_DAE.md).
 
-One smooth field formed from these knot coefficients has intermediate
-moment defects 0.239 and 3.541. Full momentum still grows strongly under
-refinement. Scale recursion and the complete momentum max/volume-L2
-criteria remain unestablished. No candidate is accepted.
+This is not yet one integrated trajectory. The finer local replay fails
+the absolute 1e-3 moment gate, and full momentum remains very large.
+Next stabilize moment evaluation and integrate the coupled value/derivative
+constraints. Scale recursion and full momentum max/volume-L2 acceptance
+remain unestablished; no candidate is accepted.
 
-Next derive moment constraints in coefficient values and time derivatives
-for a coupled continuation, rather than interpolating independent fits.
-Inspect outer stress realizability and residual contraction as well.
-See [scale transfer](ST073_OUTER_AXIAL_SCALE_TRANSFER.md),
-[the support-separated repair](ST073_OUTER_AXIAL_REPAIR.md), and
-[the quadrature correction](ST073_MOMENT_QUADRATURE_AUDIT.md).
-Earlier 12-point-only closure claims remain withdrawn. Historical rejected
-trials are recorded in their individual reports, not current next actions.
-
-The integration snapshot below is historical and must not be interpreted
-as a current ST073 acceptance report.
+The [scale-transfer report](ST073_OUTER_AXIAL_SCALE_TRANSFER.md) records
+all knot/intermediate checks. Earlier 12-point-only closures remain
+withdrawn under the [quadrature correction](ST073_MOMENT_QUADRATURE_AUDIT.md).
+The integration snapshot below is historical, not current ST073 acceptance.
 
 Snapshot date: **2026-09-20**.
 
