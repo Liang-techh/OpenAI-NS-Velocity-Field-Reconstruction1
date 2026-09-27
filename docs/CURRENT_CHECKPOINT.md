@@ -2,24 +2,24 @@
 
 ## ST073 research update - 2026-09-27
 
-Integrated conservation identities now stabilize the local axisymmetric
-moment evaluation. A tiny additional value/slope correction at k=17
-reduces independent radial-order/axial-step moment maxima below 8e-5,
-while keeping 9/9 inner cone nodes passing. The k=13 local trajectory
-also has stable moment maxima about 3.3e-5. See
-[the integrated balance](ST073_INTEGRATED_MOMENT_BALANCE.md).
+One integrated coefficient trajectory now covers k in [13,13.1]. Its two
+held-out time samples have independently evaluated moment errors below
+1.4e-4 and 9/9 inner cone nodes passing. See
+[the short-interval result](ST073_OUTER_DAE_INTERVAL.md).
 
-These remain separate local affine trajectories. Next integrate the
-coupled outer-coefficient algebraic and angular-transport constraints
-on one interval, with held-out time checks. Full momentum still remains
-very large; finite energy, full momentum max/volume-L2 acceptance and
-scale recursion are not established. No candidate is accepted.
+The path integrates angular transport and algebraically projects axial
+moments, using interpolated numerical moment maps. Independent replay
+uses integrated conservation identities. This is not a uniform interval
+bound, full dyadic step, or scale recursion: sampled full momentum is
+still about 1.3e8, and volume-L2/finite-energy acceptance is absent.
+No candidate is accepted.
 
-See [local moment dynamics](ST073_OUTER_MOMENT_DAE.md) and
-[scale transfer](ST073_OUTER_AXIAL_SCALE_TRANSFER.md) for the preceding
-results. Earlier 12-point-only closures remain withdrawn under the
-[quadrature correction](ST073_MOMENT_QUADRATURE_AUDIT.md).
-The integration snapshot below is historical, not current ST073 acceptance.
+Next extend continuation with overlap and independent time checks, while
+addressing outer stress and full residual reduction. Earlier local
+results are in [integrated moments](ST073_INTEGRATED_MOMENT_BALANCE.md)
+and [scale transfer](ST073_OUTER_AXIAL_SCALE_TRANSFER.md).
+Earlier 12-point-only closures remain withdrawn. The snapshot below is
+historical, not current ST073 acceptance.
 
 Snapshot date: **2026-09-20**.
 

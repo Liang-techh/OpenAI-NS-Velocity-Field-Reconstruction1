@@ -2,15 +2,14 @@
 
 ## Current ST073 continuation
 
-1. Integrate the coupled outer-coefficient value/derivative constraints
-   on one interval using the integrated conservation-moment formulation.
-   Local value/slope corrections at k=13 and 17 now pass altered-order
-   and axial-step checks; they are not one integrated trajectory.
-   See ST073_INTEGRATED_MOMENT_BALANCE.md and ST073_OUTER_MOMENT_DAE.md.
-2. Verify the integrated trajectory at held-out times, track quadrature
-   and derivative-step sensitivity, and compare physical residuals.
-   The integrated helper assumes axisymmetry and regular-axis boundary
-   terms; do not apply it to nonaxisymmetric fields unchanged.
+1. Extend the integrated outer-coefficient continuation beyond k=[13,13.1]
+   with overlapping segments, physical error checks, and adaptive moment-map
+   resolution. The first interval passes two held-out moment/cone screens;
+   it is not a full dyadic step. See ST073_OUTER_DAE_INTERVAL.md.
+2. Verify new trajectories at held-out times and segment overlaps. Separate
+   solver tolerances, map-interpolation error, integrated-moment quadrature,
+   and physical derivative error. Endpoint stencils require interval padding
+   or justified one-sided treatment. No interval supremum is established.
 3. Locate outer residual concentrations, screen their stress realizability,
    and couple mean/pressure restoration with the paper's pulse dynamics.
 4. Establish improvement across time intervals and scales on one callable
