@@ -1,0 +1,56 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "source": "enriched_mean_endpoint_tangent.json",
+  "source_sha256": "ea78f641a3b4ca760e373716186c6eb93b27494f0c8982708c953468582b40c5",
+  "mode": "shape",
+  "tangent_control_count": 264,
+  "scope": "Sampled actual Cartesian field. No full-domain, time-evolution or scale-recursion acceptance.",
+  "domain": {
+    "radius": 0.004418957910297721,
+    "axial_half_length": 0.0009389701836394787,
+    "reference_k": 11.0003,
+    "radial_order_per_panel": 6,
+    "axial_order": 12,
+    "angles": 12
+  },
+  "delta_k": 1e-06,
+  "rows": [
+    {
+      "k": 11.0003,
+      "tau": 0.00024408986266228504,
+      "point_count": 7776,
+      "sampled_vorticity_max": 65194955.29375587,
+      "cylinder_enstrophy": 3197968.762588459,
+      "enstrophy_radial_rms": 0.001135818922406801,
+      "enstrophy_axial_rms": 0.00023692686470060112,
+      "enstrophy_aspect_ratio": 0.20859563089383382,
+      "enstrophy_weighted_angular_speed": 728003.8958324688,
+      "sampled_swirl_max": 6569.412559776973,
+      "sampled_circulation_max": 41.73792499709553,
+      "cylinder_kinetic_energy": 0.027303820263000482
+    },
+    {
+      "k": 11.000300999999999,
+      "tau": 0.0002440896934721437,
+      "point_count": 7776,
+      "sampled_vorticity_max": 65420134.79439294,
+      "cylinder_enstrophy": 3197971.360395762,
+      "enstrophy_radial_rms": 0.00113581778642314,
+      "enstrophy_axial_rms": 0.00023692686465738217,
+      "enstrophy_aspect_ratio": 0.208595839481877,
+      "enstrophy_weighted_angular_speed": 739846.6700326664,
+      "sampled_swirl_max": 6557.766955588745,
+      "sampled_circulation_max": 41.66393613587982,
+      "cylinder_kinetic_energy": 0.027301885499163885
+    }
+  ],
+  "forward_interval_direction_flags": {
+    "radial_contraction": true,
+    "relative_axial_elongation": true,
+    "angular_speed_magnitude_increase": true
+  },
+  "elapsed_seconds": 147.01575999998022
+}

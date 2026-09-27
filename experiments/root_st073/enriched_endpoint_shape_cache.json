@@ -1,0 +1,3319 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "wave_integrated": false,
+  "source": "shape_direction_margin_tangent.json",
+  "source_sha256": "c524232c750c15c807bd4290798bd32f39b7da4d896e73c293342688e91220ec",
+  "old_cache_source": "wave_endpoint_shape_cache.npz",
+  "old_cache_sha256": "8e580f48d8e03315908ac67c3bb467d7b9c48a1eb0caabf365175cb6e761a53b",
+  "old_report_source": "wave_endpoint_shape_cache.json",
+  "old_report_sha256": "f2cfb7c0d6d3305f3ab766b725a075fa5673d443d928c1e3d4eaa7160229eeb8",
+  "geometry_source": "full_wave_frozen_cache.json",
+  "geometry_sha256": "c03b9efa4bd65db79ee420df66808a34e7f634174851b47cca81f742b1435574",
+  "shape_rows_source": "wave_shape_tangent_rows.json",
+  "shape_rows_sha256": "940c3ef0ae5fbc53d6dcea54e273dbb698bb282f013835027ef277e53b64c218",
+  "mean_source": "broad_meridional_constrained.json",
+  "mean_source_sha256": "44d63c87eecdcfe796a25c829e90f18df0f0a722a8fc64b56a71d99ee4b0e34d",
+  "grid_hash": "019f71a253fc49948126e3f6d0dbbc8b9ea2d9fed107f10ad222adf1519b0e7a",
+  "cache_path": "enriched_endpoint_shape_cache.npz",
+  "cache_sha256": "8646a0608e2a3eaacefda90011e78910cf9579af56eb5b6efb92a1cdd6b4ae53",
+  "reference_k": 11.0003,
+  "endpoint_k": 11.000300999999999,
+  "tau_reference": 0.00024408986266228504,
+  "tau_endpoint": 0.0002440896934721437,
+  "dtau": 1.6919014133491908e-10,
+  "point_count": 7776,
+  "control_count": 264,
+  "mode_control_counts": {
+    "mode0_degree3": 64,
+    "mode1_degree2": 72,
+    "mode2_degree3": 128
+  },
+  "pressure_column_count": 64,
+  "precision_convention": {
+    "offset_reuse": "velocity_offset and gradient_offset copied bytewise from wave_endpoint_shape_cache.npz",
+    "tangent_velocity_gradient": "double precision supported_fourier_analytic_jets multiplied by dtau",
+    "pressure_columns": "exact zero velocity and gradient"
+  },
+  "old_to_new_mapping": [
+    0,
+    1,
+    2,
+    4,
+    5,
+    6,
+    8,
+    9,
+    10,
+    16,
+    17,
+    18,
+    20,
+    21,
+    22,
+    24,
+    25,
+    26,
+    32,
+    33,
+    34,
+    36,
+    37,
+    38,
+    40,
+    41,
+    42,
+    48,
+    49,
+    50,
+    52,
+    53,
+    54,
+    56,
+    57,
+    58,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    208,
+    209,
+    210,
+    211,
+    212,
+    213,
+    216,
+    217,
+    218,
+    219,
+    220,
+    221,
+    232,
+    233,
+    234,
+    235,
+    236,
+    237,
+    240,
+    241,
+    242,
+    243,
+    244,
+    245,
+    248,
+    249,
+    250,
+    251,
+    252,
+    253
+  ],
+  "old_control_layout": [
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 0
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 1
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 2
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 3
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 4
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 5
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 6
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 7
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 8
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 9
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 10
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 11
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 12
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 13
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 14
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 15
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 16
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 17
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 18
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 19
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 20
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 21
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 22
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 23
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 24
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 25
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 26
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 0
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 1
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 2
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 3
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 4
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 5
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 6
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 7
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 8
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 0
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 0
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 1
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 1
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 2
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 2
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 3
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 3
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 4
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 4
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 5
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 5
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 6
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 6
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 7
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 7
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 8
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 8
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 9
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 9
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 10
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 10
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 11
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 11
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 12
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 12
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 13
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 13
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 14
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 14
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 15
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 15
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 16
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 16
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 17
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 17
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 18
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 18
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 19
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 19
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 20
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 20
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 21
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 21
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 22
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 22
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 23
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 23
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 24
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 24
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 25
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 25
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 26
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 26
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "real",
+      "index": 0
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 0
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "real",
+      "index": 1
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 1
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "real",
+      "index": 2
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 2
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "real",
+      "index": 3
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 3
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "real",
+      "index": 4
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 4
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "real",
+      "index": 5
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 5
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "real",
+      "index": 6
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 6
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "real",
+      "index": 7
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 7
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "real",
+      "index": 8
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 8
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 0
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 0
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 1
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 1
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 2
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 2
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 3
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 3
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 4
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 4
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 5
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 5
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 6
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 6
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 7
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 7
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 8
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 8
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 9
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 9
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 10
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 10
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 11
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 11
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 12
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 12
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 13
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 13
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 14
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 14
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 15
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 15
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 16
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 16
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 17
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 17
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 18
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 18
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 19
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 19
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 20
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 20
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 21
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 21
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 22
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 22
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 23
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 23
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 24
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 24
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 25
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 25
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 26
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 26
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 0
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 0
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 1
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 1
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 2
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 2
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 3
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 3
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 4
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 4
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 5
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 5
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 6
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 6
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 7
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 7
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 8
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 8
+    }
+  ],
+  "control_layout": [
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 0,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 1,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 2,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 3,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 4,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 5,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 6,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 7,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 8,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 9,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 10,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 11,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 12,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 13,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 14,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 15,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 16,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 17,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 18,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 19,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 20,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 21,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 22,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 23,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 24,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 25,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 26,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 27,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 28,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 29,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 30,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 31,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 32,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 33,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 34,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 35,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 36,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 37,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 38,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 39,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 40,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 41,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 42,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 43,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 44,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 45,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 46,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "velocity",
+      "component": "real",
+      "index": 47,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 0,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 1,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 2,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 3,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 4,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 5,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 6,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 7,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 8,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 9,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 10,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 11,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 12,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 13,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 14,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 0,
+      "kind": "pressure",
+      "component": "real",
+      "index": 15,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 0,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 0,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 1,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 1,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 2,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 2,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 3,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 3,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 4,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 4,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 5,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 5,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 6,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 6,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 7,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 7,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 8,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 8,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 9,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 9,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 10,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 10,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 11,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 11,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 12,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 12,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 13,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 13,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 14,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 14,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 15,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 15,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 16,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 16,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 17,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 17,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 18,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 18,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 19,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 19,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 20,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 20,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 21,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 21,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 22,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 22,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 23,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 23,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 24,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 24,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 25,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 25,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "real",
+      "index": 26,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 26,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "real",
+      "index": 0,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 0,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "real",
+      "index": 1,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 1,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "real",
+      "index": 2,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 2,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "real",
+      "index": 3,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 3,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "real",
+      "index": 4,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 4,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "real",
+      "index": 5,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 5,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "real",
+      "index": 6,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 6,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "real",
+      "index": 7,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 7,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "real",
+      "index": 8,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 1,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 8,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 0,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 0,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 1,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 1,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 2,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 2,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 3,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 3,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 4,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 4,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 5,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 5,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 6,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 6,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 7,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 7,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 8,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 8,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 9,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 9,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 10,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 10,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 11,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 11,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 12,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 12,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 13,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 13,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 14,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 14,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 15,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 15,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 16,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 16,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 17,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 17,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 18,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 18,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 19,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 19,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 20,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 20,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 21,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 21,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 22,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 22,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 23,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 23,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 24,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 24,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 25,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 25,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 26,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 26,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 27,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 27,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 28,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 28,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 29,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 29,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 30,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 30,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 31,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 31,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 32,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 32,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 33,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 33,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 34,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 34,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 35,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 35,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 36,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 36,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 37,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 37,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 38,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 38,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 39,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 39,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 40,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 40,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 41,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 41,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 42,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 42,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 43,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 43,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 44,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 44,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 45,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 45,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 46,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 46,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "real",
+      "index": 47,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "velocity",
+      "component": "imag",
+      "index": 47,
+      "precision": "analytic_basis_jets"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 0,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 0,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 1,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 1,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 2,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 2,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 3,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 3,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 4,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 4,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 5,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 5,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 6,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 6,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 7,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 7,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 8,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 8,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 9,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 9,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 10,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 10,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 11,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 11,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 12,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 12,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 13,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 13,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 14,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 14,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "real",
+      "index": 15,
+      "precision": "zero_velocity_pressure"
+    },
+    {
+      "mode": 2,
+      "kind": "pressure",
+      "component": "imag",
+      "index": 15,
+      "precision": "zero_velocity_pressure"
+    }
+  ],
+  "reference_observables": [
+    0.001135818922406801,
+    0.20859563089383382,
+    728003.8958324688
+  ],
+  "coefficients_original": [
+    [
+      -46.533798491396134,
+      51.934790409029404
+    ],
+    [
+      -0.21318572250976625,
+      -0.03903562857263393
+    ],
+    [
+      46.27915055938291,
+      -51.88497563669014
+    ],
+    [
+      600.2307936813752,
+      531.5180227125076
+    ],
+    [
+      0.199140388159038,
+      2.644314594712002
+    ],
+    [
+      -594.471957118667,
+      -537.4707777111536
+    ],
+    [
+      56.35907056702356,
+      -65.41157277973319
+    ],
+    [
+      0.35141723483575127,
+      -1.0426933241643344
+    ],
+    [
+      -73.08029903859625,
+      83.20785372604246
+    ],
+    [
+      31.83248572961167,
+      -35.53105948004622
+    ],
+    [
+      0.15520724653241208,
+      0.02382513657067081
+    ],
+    [
+      -31.16245736253507,
+      35.22856532212158
+    ],
+    [
+      -24.589330801038184,
+      24.563724395133637
+    ],
+    [
+      -0.35966384824894826,
+      -0.4996017476708478
+    ],
+    [
+      19.548486010588068,
+      -19.174346707020057
+    ],
+    [
+      -9.575336709644041,
+      14.77094209673753
+    ],
+    [
+      -0.32723360781959987,
+      1.4134344512988013
+    ],
+    [
+      19.093327514646035,
+      -26.95948833121403
+    ],
+    [
+      -31.48174383838735,
+      34.84991600144496
+    ],
+    [
+      1530.627452253894,
+      1368.7371137451873
+    ],
+    [
+      32.60563340659708,
+      -31.58260434666682
+    ],
+    [
+      0.7060052213514819,
+      0.800005757914512
+    ],
+    [
+      48.53129312948707,
+      -53.03105910646532
+    ],
+    [
+      -0.359877744015608,
+      -0.37668977242141466
+    ],
+    [
+      31.81480557118144,
+      -35.92762954341032
+    ],
+    [
+      -1563.1822167913988,
+      -1332.8439081105334
+    ],
+    [
+      -32.79025464618999,
+      19.471391821830974
+    ]
+  ],
+  "mapped_candidate_checks": {
+    "original_wave_moment_cone": {
+      "control_source": "wave_moment_cone_tangent.json",
+      "old_values": [
+        0.001135823961316829,
+        0.2085927289922167,
+        735689.6361257615
+      ],
+      "new_values": [
+        0.001135823961316829,
+        0.2085927289922167,
+        735689.6361257615
+      ],
+      "value_max_abs_error": 0.0,
+      "mapped_jacobian_max_abs_error": 3.3881317890172014e-20
+    },
+    "shape_direction_margin": {
+      "control_source": "shape_direction_margin_tangent.json",
+      "old_values": [
+        0.0011358088118600253,
+        0.20859728347223067,
+        735706.2693047178
+      ],
+      "new_values": [
+        0.0011358088118600253,
+        0.20859728347223067,
+        735706.2693047178
+      ],
+      "value_max_abs_error": 0.0,
+      "mapped_jacobian_max_abs_error": 5.421010862427522e-20
+    }
+  },
+  "directional_gradient_check": {
+    "control_source": "shape_direction_margin_tangent.json",
+    "step": 1000.0,
+    "analytic": [
+      6.112140559912195e-18,
+      5.726698749652313e-14,
+      1.00045134374963e-06
+    ],
+    "finite_difference": [
+      6.112081327169783e-18,
+      5.726701057806594e-14,
+      1.000451564323157e-06
+    ],
+    "max_abs_error": 2.2057352701839274e-13,
+    "relative_error": 2.2047396883987982e-07
+  },
+  "scope": "Degree-enriched fixed-cylinder endpoint oracle. The mean and initial wave offset are reused from the frozen 180-column cache; only analytic tangent columns are rebuilt for degree 3 mode 0, degree 2 mode 1, and degree 3 mode 2. No mean replay, PDE, trajectory, or scale-recursion claim.",
+  "elapsed_seconds": 3.34875559998909
+}

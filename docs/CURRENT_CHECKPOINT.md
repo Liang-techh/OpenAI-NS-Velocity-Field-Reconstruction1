@@ -2,6 +2,14 @@
 
 ## ST073 research update - 2026-09-27
 
+Degree-3 mean enrichment with direct endpoint geometry now reduces
+independent actual momentum L2 to 1.92894e6 and maximum to 1.18244e11
+(about 27% and 30% below the prior 236-control candidate). All three
+actual sampled forward geometric signs pass. Integral/cone constraints
+pass assembly; their enlarged-mean independent replay is pending.
+No NS step or scale recursion is accepted. See
+[enriched mean endpoint](ST073_ENRICHED_MEAN_ENDPOINT.md).
+
 Degree-3 mode-2 enrichment now combines with shape constraints: independent
 actual-field momentum L2 is 2.63329e6 and max 1.68320e11, while all three
 sampled forward geometric directions remain favorable over delta-k=1e-6.
