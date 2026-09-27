@@ -80,3 +80,13 @@ and checks consistency with their previously recorded actual residuals.
 fitting, so neither is an independent validation grid. A new shifted-grid
 comparison against the old candidate is pending. No trajectory or recursion
 is accepted from this fit.
+
+A genuinely disjoint composite-midpoint grid has now been replayed with the
+full actual field for both candidates (11,880 points, 12 angles, offset
+0.137). Dual-candidate L2 is 1,899,864.8288 versus old 1,929,082.9297;
+its maximum is 1.20403687124e11 versus old 1.20180816970e11, a regression
+of about 0.1854%. This rejects the claim of simultaneous improvement on a
+new spatial grid. `dual_grid_disjoint_replay.json` records positive weights,
+volume, point disjointness and maxima coordinates. The candidate is not
+adopted as a joint improvement. Further peak-only grid expansion is deferred
+while endpoint acceleration and exterior dynamical corrections proceed.
