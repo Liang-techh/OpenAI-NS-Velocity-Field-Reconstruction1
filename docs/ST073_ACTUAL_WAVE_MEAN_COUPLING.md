@@ -67,3 +67,12 @@ pressure harmonics, wave evolution, and revised mean compatibility are not
 solved. The small L2 improvement cannot be used as a complete NS residual
 claim. Next use actual stress-direction evidence to choose a joint wave
 polarization/mean correction rather than increasing this amplitude blindly.
+
+`single_mode_force` provides the analytic angular average for one positive
+Fourier harmonic: half the real part of the complex velocity Jacobian times
+the conjugate velocity. It evaluates the complete curl at theta=0 and
+retains all spatial derivatives. The four-point comparison against 16-angle
+Cartesian averaging differs by at most 5.34e-8. It rejects mode zero; sums of
+waves in the same harmonic require their cross products and cannot be
+treated as independent energies. This operator makes full mean co-design
+with a scalar wave energy practical on the existing radial constraint grids.

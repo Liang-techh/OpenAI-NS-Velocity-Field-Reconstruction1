@@ -141,6 +141,7 @@
     ]
   ],
   "maximum_absolute_identity_error": 6.142767233541235e-06,
+  "single_mode_average_max_absolute_error": 5.3352778195403516e-08,
   "maximum_scaled_identity_error": 1.9778690364416902e-08,
   "angular_covariance_8_vs_16_max": 3.863576125695545e-14,
   "scope": "Four-point complete actual-wave mean-advection identity. Every covariance component retained, including curl/cutoff terms. Not a matched mean-wave solution or time integration."
