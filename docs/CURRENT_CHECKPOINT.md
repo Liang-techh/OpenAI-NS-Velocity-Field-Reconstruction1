@@ -2,6 +2,13 @@
 
 ## ST073 research update - 2026-09-27
 
+Target-direction check now rejects advancing the cone-compatible tangent
+as successful recursion: fixed-cylinder radial RMS increases and axial/
+radial aspect decreases, although weighted angular speed increases.
+These are sampled affine-tangent trends, not an NS trajectory. Shape-rate
+constraints must join the next tangent solve; residual and matching alone
+are insufficient. See [wave shape direction](ST073_WAVE_SHAPE_DIRECTION.md).
+
 Joint moment/cone correction now passes independent actual-field cone
 replay at all 27/27 locations (81/81 inequalities, minimum margin 9.9759e-5).
 Order-96 integral moment maximum is 2.1219e-7. Independent full momentum

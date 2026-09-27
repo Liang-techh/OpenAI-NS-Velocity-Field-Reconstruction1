@@ -1,0 +1,75 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "source": "wave_moment_cone_tangent.json",
+  "source_sha256": "c78a3b0479c8b0c85da94418198bc318d2c6cc515ccf6ab93e9ebca49a5a5ef6",
+  "domain": {
+    "radius": 0.004418957910297721,
+    "axial_half_length": 0.0009389701836394787,
+    "reference_k": 11.0003,
+    "radial_order_per_panel": 6,
+    "axial_order": 12,
+    "angles": 12
+  },
+  "delta_k": 1e-06,
+  "rows": [
+    {
+      "k": 11.000299,
+      "tau": 0.00024409003185254366,
+      "point_count": 7776,
+      "sampled_vorticity_max": 65180140.4036125,
+      "cylinder_enstrophy": 3197969.2813276295,
+      "enstrophy_radial_rms": 0.0011358163717141755,
+      "enstrophy_axial_rms": 0.00023692864610814132,
+      "enstrophy_aspect_ratio": 0.20859766772913152,
+      "enstrophy_weighted_angular_speed": 720314.5748229118,
+      "sampled_swirl_max": 6578.469628779435,
+      "sampled_circulation_max": 41.79546793008666,
+      "cylinder_kinetic_energy": 0.027305312465716804
+    },
+    {
+      "k": 11.0003,
+      "tau": 0.00024408986266228504,
+      "point_count": 7776,
+      "sampled_vorticity_max": 65194955.29375587,
+      "cylinder_enstrophy": 3197968.762588459,
+      "enstrophy_radial_rms": 0.001135818922406801,
+      "enstrophy_axial_rms": 0.00023692686470060112,
+      "enstrophy_aspect_ratio": 0.20859563089383382,
+      "enstrophy_weighted_angular_speed": 728003.8958324688,
+      "sampled_swirl_max": 6569.412559776973,
+      "sampled_circulation_max": 41.73792499709553,
+      "cylinder_kinetic_energy": 0.027303820263000482
+    },
+    {
+      "k": 11.000300999999999,
+      "tau": 0.0002440896934721437,
+      "point_count": 7776,
+      "sampled_vorticity_max": 65349885.25172826,
+      "cylinder_enstrophy": 3198012.6079862034,
+      "enstrophy_radial_rms": 0.0011358239611519057,
+      "enstrophy_axial_rms": 0.0002369246197029032,
+      "enstrophy_aspect_ratio": 0.20859272898471348,
+      "enstrophy_weighted_angular_speed": 735689.6364117042,
+      "sampled_swirl_max": 6560.355497052564,
+      "sampled_circulation_max": 41.68038210399123,
+      "cylinder_kinetic_energy": 0.027302382838787442
+    }
+  ],
+  "scope": "Fixed physical cylinder and affine tangent extension around one reference time. Sampled enstrophy shape, not an identified global core, resolved trajectory, or scale recursion.",
+  "derivative_per_k": {
+    "enstrophy_radial_rms": 0.0037947188650903907,
+    "enstrophy_aspect_ratio": -2.46937220901855,
+    "enstrophy_weighted_angular_speed": 7687530794.39624,
+    "cylinder_enstrophy": 21663329.286966473,
+    "cylinder_kinetic_energy": -1.4648134646806643
+  },
+  "sampled_direction_flags": {
+    "radial_contraction": false,
+    "relative_axial_elongation": false,
+    "angular_speed_magnitude_increase": true
+  },
+  "elapsed_seconds": 203.67517649999354
+}
