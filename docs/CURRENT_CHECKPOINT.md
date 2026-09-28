@@ -2,6 +2,21 @@
 
 ## Latest continuation checkpoint - 2026-09-27
 
+Actual-field replay of the corrected balanced candidate is COMPLETE:
+44,400-point L2 2.67960826077e6 and maximum 2.41717297546e11, agreeing
+with the analytic correction prediction. Both improve relative to the
+five-percent parent (2.78208007209e6, 2.77457969824e11), and to the
+original pressure-projected reference (2.93063976034e6, 2.70437112609e11).
+The replay caches all 58 chunks for subsequent scale diagnostics.
+Source: `scale_reference_refined_balanced_actual.json`.
+
+The wave-amplitude alternative also improves on a newly generated 4,800
+point support-split grid with angular shift 0.231: L2 ratio 0.977339,
+maximum ratio 0.958547 versus the same parent evaluated on that grid.
+This is fresh-grid evidence, not spatial convergence or a global PDE
+certificate. The test spans the same full wave cylinder; no domain was
+removed. Source: `scale_reference_wave_holdout_o4.json`.
+
 The refined fitter's imaginary-sign bug is now fixed and both fits rerun.
 Matrix-vs-basis and loader-vs-basis comparisons agree to 1.18e-15 and
 5.00e-16 relative. Invalid reports are preserved with `_invalid_imag_sign`

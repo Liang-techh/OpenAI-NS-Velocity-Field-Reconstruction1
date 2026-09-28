@@ -1,0 +1,69 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "candidate_source_sha256": "6fed26b80c122c89cd02783dbd9ee59d237395768f815bbe442a91e2461be763",
+  "grid": {
+    "order_per_interval": 4,
+    "radial_edges": [
+      0.0004626458018495553,
+      0.00069,
+      0.0008802090790000002,
+      0.00119,
+      0.001480209079,
+      0.002782779972318968
+    ],
+    "axial_edges": [
+      -0.00047186657034496774,
+      -0.0002549,
+      -0.000235807922023,
+      0.0001451,
+      0.00026419207797700003,
+      0.0004311462933044976
+    ],
+    "angular_shift": 0.231,
+    "angles": 12
+  },
+  "metrics": {
+    "parent": {
+      "point_count": 4800,
+      "volume_L2": 2729791.4719389905,
+      "volume_RMS": 18677346559.38993,
+      "max_norm": 279868198859.1491,
+      "max_point": [
+        0.0008777669264183601,
+        0.00020644940550558697,
+        1.9396775408059297e-05
+      ],
+      "max_index": 2040,
+      "max_vector": [
+        21260510334.998436,
+        278078685130.20026,
+        -23376148297.326317
+      ],
+      "physical_volume": 2.1361344835903804e-08
+    },
+    "candidate": {
+      "point_count": 4800,
+      "volume_L2": 2667932.1681890665,
+      "volume_RMS": 18254102635.47246,
+      "max_norm": 268266780813.1615,
+      "max_point": [
+        0.0008777669264183601,
+        0.00020644940550558697,
+        1.9396775408059297e-05
+      ],
+      "max_index": 2040,
+      "max_vector": [
+        1638159649.6087017,
+        267466299541.20294,
+        -20643660783.75459
+      ],
+      "physical_volume": 2.1361344835903804e-08
+    }
+  },
+  "L2_ratio": 0.9773391834556561,
+  "max_ratio": 0.9585468513633222,
+  "scope": "New support-split grid over the same full wave cylinder. Parent spatial FD and analytic increments; zero force, scale-generator time derivative. Spatial convergence and actual candidate FD agreement remain separate requirements."
+}
