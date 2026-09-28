@@ -247,8 +247,13 @@ def _basis_delta(points: np.ndarray, coefficients: np.ndarray, centers: list[np.
                 else:
                     coeff_real = block[cursor]
                     coeff_imag = block[cursor + 1]
-                    value = values[:, :, component].real * coeff_real + values[:, :, component].imag * coeff_imag
-                    jacobian = gradients[:, :, :, component].real * coeff_real + gradients[:, :, :, component].imag * coeff_imag
+                    # The packed imaginary control is the canonical
+                    # real-minus-imag column used by _column_component in
+                    # scale_reference_velocity_step.  Keeping this sign here
+                    # is essential for quadratic convection replay and for
+                    # matching the callable candidate loader.
+                    value = values[:, :, component].real * coeff_real - values[:, :, component].imag * coeff_imag
+                    jacobian = gradients[:, :, :, component].real * coeff_real - gradients[:, :, :, component].imag * coeff_imag
                     cursor += 2
                     delta_u += value
                     delta_j += jacobian
@@ -345,6 +350,43 @@ def run(output_path: Path | str = OUTPUT_PATH) -> dict[str, Any]:
     design, values = _build_columns(points, base_velocity, base_jacobian, base_laplacian, carrier, centers, widths, nu, h, tau0)
     report["status_detail"] = "solving_peak_weighted_trust"
     report["design"] = {"shape": [int(v) for v in design.shape], "values_shape": [int(v) for v in values.shape]}
+    # Check the two independent decoders on supported interior/transition
+    # samples before trusting the quadratic remainder.  The matrix columns use
+    # the worker's real-minus-imag convention; _basis_delta and the callable
+    # loader must reproduce those same physical velocities.
+    sample_indices = np.linspace(0, len(points) - 1, 8, dtype=int)
+    rng = np.random.default_rng(7301)
+    test_velocity = rng.standard_normal(2 * VELOCITY_COLUMNS_PER_PATCH)
+    test_coefficients = np.zeros(TOTAL_COLUMNS, dtype=float)
+    test_coefficients[:VELOCITY_COLUMNS_PER_PATCH] = test_velocity[:VELOCITY_COLUMNS_PER_PATCH]
+    test_coefficients[COLUMNS_PER_PATCH:COLUMNS_PER_PATCH + VELOCITY_COLUMNS_PER_PATCH] = test_velocity[VELOCITY_COLUMNS_PER_PATCH:]
+    values_tensor = values.reshape(len(points), 3, 2 * VELOCITY_COLUMNS_PER_PATCH)
+    matrix_eval = np.einsum("niq,q->ni", values_tensor[sample_indices], test_velocity)
+    basis_eval, _basis_jacobian = _basis_delta(points[sample_indices], test_coefficients, centers, widths, carrier, nu)
+    column_scale = max(float(np.max(np.linalg.norm(matrix_eval, axis=1))), 1.0e-300)
+    basis_scale = max(float(np.max(np.linalg.norm(basis_eval, axis=1))), 1.0e-300)
+    loader_eval = None
+    loader_error = None
+    try:
+        import scale_reference_candidate as candidate_module
+        loaded_reference = candidate_module.load_reference(step=FIT_PATH)
+        old_velocity_coefficients = np.asarray(fit_report["selected"]["coefficients"], dtype=float)
+        loader_eval = loaded_reference._correction_velocity(points[sample_indices])
+        old_basis_eval, _old_basis_jacobian = _basis_delta(points[sample_indices], old_velocity_coefficients, centers, widths, carrier, nu)
+        loader_error = loader_eval - old_basis_eval
+    except Exception as exc:  # pragma: no cover - provenance failures are recorded
+        loader_error = None
+        report["status_detail"] = "loader_consistency_unavailable"
+        report["loader_consistency_error"] = repr(exc)
+    report["consistency_check"] = {
+        "sample_indices": sample_indices.tolist(),
+        "matrix_vs_basis_max_abs": float(np.max(np.abs(matrix_eval - basis_eval))),
+        "matrix_vs_basis_relative_to_matrix": float(np.max(np.abs(matrix_eval - basis_eval)) / column_scale),
+        "matrix_vs_basis_relative_to_basis": float(np.max(np.abs(matrix_eval - basis_eval)) / basis_scale),
+        "callable_loader_vs_basis_max_abs": None if loader_error is None else float(np.max(np.abs(loader_error))),
+        "callable_loader_vs_basis_relative_to_basis": None if loader_error is None else float(np.max(np.abs(loader_error)) / max(float(np.max(np.linalg.norm(basis_eval, axis=1))), 1.0e-300)),
+        "imaginary_column_convention": "real-minus-imag",
+    }
     _save(output_path, report)
     solved = _solve_trust(design, values, base_residual, weights, peak_indices, trust_bound)
     increment = solved["coefficients"]

@@ -2,7 +2,24 @@
 
 ## Latest continuation checkpoint - 2026-09-27
 
-IMPORTANT: review found an imaginary-sign error in the new refined fitter's
+The refined fitter's imaginary-sign bug is now fixed and both fits rerun.
+Matrix-vs-basis and loader-vs-basis comparisons agree to 1.18e-15 and
+5.00e-16 relative. Invalid reports are preserved with `_invalid_imag_sign`
+suffixes. The peak-heavy direction still fails, but the corrected balanced
+direction improves refined-grid L2 from 2.7820801e6 to 2.6796083e6 and
+maximum from 2.77458e11 to approximately 2.41717e11. Additional velocity
+L2 is 0.0021639143; cumulative correction L2 on the refined grid is
+0.017183348 (7.941% of the recovered original reference norm on that grid).
+
+Cross-grid transfer also improves both metrics: on the original 18,720
+points, L2 changes 2.3750216e6 -> 2.3576868e6 (-0.730%), maximum
+1.5730462e11 -> 1.5597136e11 (-0.848%). This grid was used for the parent
+fit, so it is not a wholly unseen holdout. Actual-field replay of the new
+candidate is in progress; no PDE or dynamical recursion acceptance yet.
+Sources: `scale_reference_refined_balanced.json`,
+`scale_reference_refined_balanced_transfer.json`.
+
+Historical invalidation: review found an imaginary-sign error in the new refined fitter's
 `_basis_delta` helper: it used +Im where the shared real-control basis uses
 -Im. This invalidates that fitter's initial quadratic line-search numbers
 and the first balanced follow-up's cumulative correction norm. The prior
