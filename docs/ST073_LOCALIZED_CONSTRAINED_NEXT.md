@@ -108,6 +108,33 @@ can reduce the sampled profile drift absent other constraints. These
 coefficients are not adopted: momentum, moments, cones and shape were not
 enforced, and this is not a certified mathematical lower bound.
 
+### Two-patch constrained result
+
+`localized_two_patch_constrained.json` now retains a feasible 360-control
+candidate with the first-patch drift cap. The sampled reference maximum is
+7.45350483435e10 and L2 is 1635046.816606 (approximately 12.7% and 9.8%
+below the one-patch baseline). Moment maximum error is 4.67e-9, all 81
+cones pass with minimum margin 9.994e-10, and the three endpoint shape
+margins are (1.2335e-5, 1.5472e-5, 0.0159902).
+
+Drift is 2122.10373958 against cap 2122.10373947, within the documented
+relative numerical slack. The cap itself is the first-patch value times
+1.000001, so this prevents deterioration within tolerance; it does not yet
+reduce drift below the original parent. The uncapped alternative reduced
+L2 further to 1619891.676841 but increased drift to about 2528.88.
+
+SLSQP reached 100 iterations. A tiny interpolation back toward the feasible
+incumbent (step fraction 0.999999978624) repaired the final drift tolerance
+violation. All constraints were reevaluated after interpolation. Both the
+uncapped comparison and rejected trial coefficients remain in the report;
+optimizer convergence is not claimed. The objective gradient directional
+check has relative error 2.16e-11.
+
+`two_patch_actual_replay.py` performs the next independent-grid actual
+momentum check at reference and endpoint. It reuses the prior actual
+baseline only after validating grid, parent, first-fit and timestep hashes.
+Until that replay completes, the numbers above remain fitting-grid results.
+
 `global_localized_candidate.py` assembles this new constrained patch with
 the globalized enriched parent and the existing disjoint exterior collar.
 The source hashes and reference times are checked before composition. It
