@@ -99,6 +99,15 @@ regression but is only an intermediate constraint. Improvement toward the
 parent value and genuine profile transport/recursion remain open work;
 the current number must not be treated as a recursion acceptance threshold.
 
+The bounded capacity calculation in `localized_drift_floor.py` minimizes
+only this quadratic. After column normalization, eigenvalue cutoffs 1e-10
+and 1e-12 both give numerical rank 170 and minimum drift about 991.04;
+the stricter 1e-8 cutoff gives rank 166 and drift 1002.86. There are 270
+velocity columns and 90 exactly zero pressure responses. Thus this basis
+can reduce the sampled profile drift absent other constraints. These
+coefficients are not adopted: momentum, moments, cones and shape were not
+enforced, and this is not a certified mathematical lower bound.
+
 `global_localized_candidate.py` assembles this new constrained patch with
 the globalized enriched parent and the existing disjoint exterior collar.
 The source hashes and reference times are checked before composition. It
