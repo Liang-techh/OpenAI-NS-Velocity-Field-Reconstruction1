@@ -1,0 +1,90 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "scale_recursion_established": false,
+  "pde_validated": false,
+  "source_hashes": {
+    "localized_constrained_tangent.json": "20a33e63cd33a1b800c208fe5ecf107bccac4fc982413bcbe8d62acc2d78470e",
+    "enriched_mean_endpoint_tangent.json": "ea78f641a3b4ca760e373716186c6eb93b27494f0c8982708c953468582b40c5",
+    "global_collar_tangent.json": "35d0383f7ef02ef62e75f8c4147891bec03a07006d2f5080c64eda4f73918686"
+  },
+  "grid_sha256": "8646a0608e2a3eaacefda90011e78910cf9579af56eb5b6efb92a1cdd6b4ae53",
+  "point_count": 7776,
+  "h": 0.005,
+  "convention": "Fixed similarity labels: xy*=s^.5,z*=s^(.5-h),tau*=s; pull back cylindrical velocity with s^.5,s^(.5+h),s^(.5+h). Reference-volume weights.",
+  "caveat": "Measures local profile stationarity, not general recursion. Dynamic amplitudes and log-periodic profiles may have nonzero drift. Sampled tiny time intervals only.",
+  "rows": [
+    {
+      "field": "parent",
+      "delta_k": 1e-06,
+      "scale": 0.9999993068530597,
+      "relative_profile_L2": 0.0013860308160792616,
+      "relative_L2_per_abs_log_scale": 1999.619785004256,
+      "component_relative_L2": [
+        0.0007138974351542811,
+        0.0016816307999106637,
+        0.0009835893970369435
+      ]
+    },
+    {
+      "field": "parent",
+      "delta_k": 2e-06,
+      "scale": 0.9999986137065998,
+      "relative_profile_L2": 0.0027720616506844236,
+      "relative_L2_per_abs_log_scale": 1999.6197982825086,
+      "component_relative_L2": [
+        0.0014277944616292336,
+        0.0033632617719503454,
+        0.0019671783068651943
+      ]
+    },
+    {
+      "field": "parent",
+      "delta_k": 1e-05,
+      "scale": 0.999993068552217,
+      "relative_profile_L2": 0.013860308999186203,
+      "relative_L2_per_abs_log_scale": 1999.6199058427374,
+      "component_relative_L2": [
+        0.00713895596347933,
+        0.01681631575070132,
+        0.009835872048697507
+      ]
+    },
+    {
+      "field": "localized",
+      "delta_k": 1e-06,
+      "scale": 0.9999993068530597,
+      "relative_profile_L2": 0.0014709287528561282,
+      "relative_L2_per_abs_log_scale": 2122.101617381751,
+      "component_relative_L2": [
+        0.000718822143017819,
+        0.001792690449470527,
+        0.0010438715189837618
+      ]
+    },
+    {
+      "field": "localized",
+      "delta_k": 2e-06,
+      "scale": 0.9999986137065998,
+      "relative_profile_L2": 0.0029418568000631807,
+      "relative_L2_per_abs_log_scale": 2122.101108272952,
+      "component_relative_L2": [
+        0.001437643744684994,
+        0.003585380070424465,
+        0.002087742605224958
+      ]
+    },
+    {
+      "field": "localized",
+      "delta_k": 1e-05,
+      "scale": 0.999993068552217,
+      "relative_profile_L2": 0.014709255781512453,
+      "relative_L2_per_abs_log_scale": 2122.0970371275002,
+      "component_relative_L2": [
+        0.0071881970720770695,
+        0.017926867220521038,
+        0.010438695720067477
+      ]
+    }
+  ]
+}

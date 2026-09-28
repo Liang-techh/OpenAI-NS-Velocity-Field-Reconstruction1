@@ -61,6 +61,28 @@ interval, the full support, or scale recursion.
 
 ## Global field interface
 
+### Direct short-interval similarity drift
+
+`localized_similarity_drift.py` compares profiles at fixed similarity labels
+on 7,776 reference-cylinder points. For s = 2^(-delta-k), it evaluates at
+(sqrt(s) x, sqrt(s) y, s^(1/2-h) z, s tau), then multiplies cylindrical
+velocity components by (s^(1/2), s^(1/2+h), s^(1/2+h)). These exponents follow
+`full_radial.py` (A=1/2+h, D=1/2-h) and the existing q-normalization in
+`core_dyadic_transfer.py`. The weighted norms use reference-volume weights
+to compare pulled-back profiles, not physical energy at the later time.
+
+Across delta-k = 1e-6, 2e-6, 1e-5, relative profile L2 divided by |log(s)|
+is approximately 1999.62 for the global parent and 2122.10 for the localized
+candidate. At delta-k=1e-6 the relative differences are 0.00138603 and
+0.00147093. Thus the momentum-improving patch increases this local profile
+drift by about 6.13%. Tiny elapsed time must not disguise that tradeoff.
+
+This is evidence against treating the current field as a stationary
+rescaled profile over that interval. It does not rule out dynamic or
+log-periodic recursive profiles, nor establish any PDE statement. Further
+optimization must track profile transport as well as momentum and shape;
+lower residual alone is not a demonstrated recursive-scale improvement.
+
 `global_localized_candidate.py` assembles this new constrained patch with
 the globalized enriched parent and the existing disjoint exterior collar.
 The source hashes and reference times are checked before composition. It
