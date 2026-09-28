@@ -32,6 +32,24 @@ aspect increase and weighted spin increase of at least 1e-6, 1e-6 and 1e-3.
 Use a sampled peak cap and preserve a feasible incumbent. Only a successful
 constrained candidate warrants independent physical residual replay.
 
+The joint localized solve is now complete in `localized_constrained_tangent.py`.
+Normalizing the optimization variables as well as the objective avoided
+premature convergence near the zero correction. The retained constrained
+candidate on the same reference grid has maximum 8.53685623245e10 and L2
+1813180.126887: approximately 25.07% and 5.95% below its fixed parent.
+The four moment errors have maximum 4.67e-9. All 81 assembled cone conditions
+pass with minimum positive margin approximately 9.997e-10. The endpoint
+signed fractional contraction, aspect and spin margins above their requested
+thresholds are approximately (3.3282e-6, -1.27e-15, 0.0174064); the aspect
+constraint is active within floating-point precision.
+
+`localized_actual_replay.py` reconstructs the actual compact potential field
+and checks both parent and corrected momentum on the independent frozen
+18,720-point grid, at the reference and k0+1e-6 endpoint times. That replay
+must finish before interpreting the fitting-grid reduction as a replicated
+improvement. Even a successful replay does not certify the intervening
+time interval, the full support, or scale recursion.
+
 ## Pressure-only acceleration warmstart
 
 `pressure_acceleration_seed.py` uses a different parent: the balanced

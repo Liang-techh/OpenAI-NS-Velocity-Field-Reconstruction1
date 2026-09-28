@@ -1,0 +1,434 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "constraints_maintained": false,
+  "assembled_feasible": true,
+  "assembled_constraints_maintained": true,
+  "source": "enriched_mean_endpoint_tangent.json",
+  "source_sha256": "ea78f641a3b4ca760e373716186c6eb93b27494f0c8982708c953468582b40c5",
+  "sources": {
+    "candidate": {
+      "path": "enriched_mean_endpoint_tangent.json",
+      "sha256": "ea78f641a3b4ca760e373716186c6eb93b27494f0c8982708c953468582b40c5"
+    },
+    "refined_cache": {
+      "path": "refined_wave_momentum_cache.npz",
+      "sha256": "0045761921a3fea916b351dddd84c52f2ecf7f27c43b7139935d025c62ba2da0"
+    },
+    "refined_cache_report": {
+      "path": "refined_wave_momentum_cache.json",
+      "sha256": "977d1240cc557968cbdf55e7adfafe66bcf96d20522d57074518b135b185e942"
+    },
+    "localized_residual": {
+      "path": "localized_residual_enrichment.json",
+      "sha256": "f23caa94c26441eb17c840dbf6437d1648e623bb0a9a33d5b92a6c5a241545ba"
+    },
+    "localized_constraints": {
+      "path": "localized_constraint_rows.json",
+      "sha256": "5f61f2bd8e236fc64d0521bede6153a5a3f9dd016bdde4b8d8712d0edeb87f68"
+    },
+    "mean_rows": {
+      "path": "enriched_mean_constraint_rows.json",
+      "sha256": "3d40ab543e221f349f985a0b4aae7524f21b0ec2d74c12bba2cc62c7e024fa5b"
+    },
+    "moment": {
+      "path": "wave_dynamics_mean_compatibility.json",
+      "sha256": "ed66a30c9d9442d0f3f8ba322e72c362d7b021dae019f3a96b3c68c396532d17"
+    },
+    "cone": {
+      "path": "wave_mean_cone_projection.json",
+      "sha256": "9dcfa8f5620869f0935143b3e4247199aa1717c461176fa4d03008942be77a67"
+    },
+    "endpoint_cache": {
+      "path": "enriched_endpoint_shape_cache.npz",
+      "sha256": "8646a0608e2a3eaacefda90011e78910cf9579af56eb5b6efb92a1cdd6b4ae53"
+    },
+    "endpoint_cache_report": {
+      "path": "enriched_endpoint_shape_cache.json",
+      "sha256": "bd66162b489980004f7b3dff37829522bf12c4c9c544598bfd9e76dbb4e83956"
+    },
+    "geometry": {
+      "path": "full_wave_frozen_cache.json",
+      "sha256": "c03b9efa4bd65db79ee420df66808a34e7f634174851b47cca81f742b1435574"
+    }
+  },
+  "scope": "Reference-time constrained local patch fit. The enriched 264-control candidate is fixed; only 180 localized controls vary. Four moments, 81 cones, endpoint contraction/aspect/spin inequalities, and a refined grid peak cap are checked on frozen analytic/cache responses. No mean replay, finite-time, PDE, or recursive-scale acceptance.",
+  "inputs": {
+    "point_count": 44400,
+    "candidate_control_count": 264,
+    "local_control_count": 180,
+    "old_controls_held_fixed": true,
+    "column_normalization": "weighted L2 norm of each local momentum-response column",
+    "objective": "normalized weighted residual L2 using frozen base residual plus fixed 264 response",
+    "peak_cap": 113930727617.311,
+    "peak_cap_relative_to_fixed_candidate": 1e-06,
+    "peak_cutting_plane_round_limit": 5,
+    "tolerances": {
+      "moment_max_abs": 1e-05,
+      "cone_min_margin": 1e-07,
+      "cone_optimizer_safety": 1e-09,
+      "endpoint_min_margin": 1e-10,
+      "peak_feasibility_slack": 1e-10
+    },
+    "endpoint_requested_signed_fractional_change": [
+      1e-06,
+      1e-06,
+      0.001
+    ]
+  },
+  "zero_local_control_feasibility": {
+    "feasible": true,
+    "moment_max_abs": 4.6711647883057594e-09,
+    "cone_min_margin": 9.999999561927098e-05,
+    "cone_pass_count": 81,
+    "endpoint_margin": [
+      -1.773003012445597e-16,
+      -2.0180665847452112e-16,
+      0.015267459531278178
+    ],
+    "endpoint_min_margin": -2.0180665847452112e-16,
+    "momentum": {
+      "point_count": 44400,
+      "momentum_max": 113930613686.69733,
+      "momentum_volume_L2": 1927978.0992876193,
+      "momentum_volume_RMS": 13191306181.981344,
+      "physical_volume": 2.13613448359038e-08
+    },
+    "peak_cap": 113930727617.311
+  },
+  "selected": {
+    "reason": "feasible_lower_L2",
+    "feasible": true,
+    "local_patch_coefficients": [
+      755251.5002966732,
+      -13659430.40507608,
+      -5673729.504023477,
+      175932.01801759537,
+      1766815.087212614,
+      8919450.589043163,
+      -11556441.583947724,
+      178255760.00242472,
+      23160234.75491326,
+      593340.2178470987,
+      -3005507.119237415,
+      1331986.045587405,
+      -297258.0065275043,
+      12540.224908485923,
+      -762157.3585654661,
+      1870067.9554275905,
+      -7470851.140478451,
+      4827129.018577212,
+      -904362.3371445683,
+      12305.12438953664,
+      -737901.3795641799,
+      -23617362.011738736,
+      -16947500.025683478,
+      136123748.1761989,
+      -1067696.405932285,
+      6326731.779257165,
+      -20972764.938423008,
+      9889.609710038296,
+      -110139.3285135913,
+      1490117.1449264842,
+      -5315129.051394557,
+      -3822067.3551532757,
+      -34481441.946890526,
+      749406.1932994754,
+      4445997.37332544,
+      614888.187619649,
+      -16510175.90398338,
+      11842688.674059724,
+      48200.16538509707,
+      -106608.39230893996,
+      17227447.45827824,
+      -11717601.810776547,
+      653194657.8795635,
+      905740294.885779,
+      -2657234.5804377417,
+      -13150.666634200037,
+      -650971018.2009588,
+      -910748684.0453509,
+      18327234.90405191,
+      -11609560.652125511,
+      -316257.4516910452,
+      553749.920121023,
+      -15860809.799845878,
+      12501988.235666309,
+      20238138.906005174,
+      -14638107.291487195,
+      83021.76541788393,
+      101282.29789577276,
+      -19120035.847465824,
+      13263894.331498684,
+      -5588887.411188542,
+      4018831.906910924,
+      -466641.9455248424,
+      349455.3033231532,
+      -823176.6723366436,
+      267225.93415277224,
+      -17417195.28811091,
+      12543973.75005577,
+      1198899.3582334514,
+      -15607.117393119825,
+      25259630.098501436,
+      -21018856.788498733,
+      -11361688.28962542,
+      8339086.381645481,
+      816421084.4854498,
+      1133118023.3496041,
+      9444880.407592852,
+      -8724166.927677171,
+      -55178.515103108424,
+      -13899.999351746641,
+      2309229.719871382,
+      43157.33224663571,
+      -552275.7496445114,
+      240777.36137544355,
+      11188120.568594875,
+      -8528876.1053415,
+      -816100389.6039904,
+      -1129183466.2129214,
+      -1465059.910262486,
+      6457229.792248767,
+      -24949.416928884937,
+      -3898.2966099725813,
+      44999.77020336599,
+      29304.992287842022,
+      -227405.54306805215,
+      13978.367989846169,
+      111395.9676515987,
+      -32131.528489168788,
+      -549452.9814715747,
+      21335.118259118364,
+      692095.8313927789,
+      -343690.75803608424,
+      -266427.4396106838,
+      47961.98213853123,
+      1013993.556576394,
+      -2858.165493347746,
+      -1558419.5742343897,
+      446008.44627594843,
+      7129914.567797614,
+      371926.5196850823,
+      -12302339.632751692,
+      8317428.382868987,
+      -9865389.038478939,
+      -73913.64016392927,
+      9448285.47380256,
+      -141011122.7335593,
+      12050527.545745907,
+      16382218.334896997,
+      -4607393.325592836,
+      138376143.70984653,
+      -26506936.30175376,
+      5802049.274032781,
+      151472641.39567938,
+      -87902380.38758868,
+      93712792.44634506,
+      -10365527.018162217,
+      -6151171.536682977,
+      -454659.4882993628,
+      -340808.718055369,
+      373935.5635888789,
+      4891948.245493662,
+      -183472.22558883557,
+      1921781.156966172,
+      1166052.9509853304,
+      -6321906.830468767,
+      -6459787.219561835,
+      -825393.0800658402,
+      -4524903.184669129,
+      5246870.371063831,
+      1062918.9930720124,
+      3153683.208109886,
+      2094203.5640131081,
+      -9660000.692889381,
+      -380020.1942402126,
+      2488441.319672864,
+      -1315666.3442717015,
+      11360936.326642964,
+      -173608465.4724584,
+      4241482.389309034,
+      11962410.305407904,
+      -20533288.318477746,
+      11439094.880221687,
+      -32115789.630670946,
+      7923920.162682521,
+      118870768.67897497,
+      -78262834.34628737,
+      -1911899.7582506137,
+      -3008469.600474533,
+      -7343354.4443910355,
+      178128138.66514543,
+      -34223858.18081825,
+      -39914664.182856314,
+      82409.45634953293,
+      1526661.554484631,
+      -1295328.6902773266,
+      1194912.0711146519,
+      4051049.5630541374,
+      8915873.673368756,
+      -6086788.688127468,
+      945100.8129753033,
+      -4496162.0221124245,
+      -57377.7051133887,
+      -39797204.95142515,
+      3025652.4457078404,
+      -952087.2167373798,
+      5650884.119197664,
+      -7719997.411088166,
+      4836727.265061106,
+      15573443.23770877,
+      27553206.416703057
+    ],
+    "local_patch_coefficient_norm": 2573166804.602662,
+    "momentum": {
+      "point_count": 44400,
+      "momentum_max": 85368562324.54762,
+      "momentum_volume_L2": 1813180.1268867445,
+      "momentum_volume_RMS": 12405853689.771954,
+      "physical_volume": 2.13613448359038e-08
+    },
+    "peak_detail": {
+      "index": 22963,
+      "point": [
+        -0.000860645131066248,
+        -0.0008075787449619864,
+        1.4192077976710323e-05
+      ],
+      "radius": 0.0011802090793340035,
+      "z": 1.4192077976710323e-05,
+      "weight": 1.5114077925191567e-12,
+      "vector": [
+        20155268418.49882,
+        82906136173.42068,
+        2851170484.671392
+      ],
+      "norm": 85368562324.54762
+    },
+    "momentum_l2_improvement": 114797.97240087483,
+    "momentum_max_change": -28562051362.149704,
+    "moment_max_abs": 4.6711647883057594e-09,
+    "cone_min_margin": 9.996767857956002e-10,
+    "cone_pass_count": 81,
+    "endpoint_values": [
+      0.0011358140063928482,
+      0.20859583948946445,
+      741403.8174362656
+    ],
+    "endpoint_margin": [
+      3.3281669777695147e-06,
+      -1.2662805865855256e-15,
+      0.01740638721922517
+    ],
+    "endpoint_min_margin": -1.2662805865855256e-15,
+    "old_controls_unchanged": true,
+    "active_constraints": {
+      "moment_rows_within_1e-8_of_tolerance": [],
+      "cone_rows_within_1e-8_of_tolerance": [],
+      "endpoint_rows_within_1e-8": [
+        1
+      ],
+      "peak_cap_fractional_slack": 0.3345747487720121
+    }
+  },
+  "fixed_candidate_before": {
+    "momentum": {
+      "point_count": 44400,
+      "momentum_max": 113930613686.69733,
+      "momentum_volume_L2": 1927978.0992876193,
+      "momentum_volume_RMS": 13191306181.981344,
+      "physical_volume": 2.13613448359038e-08
+    },
+    "peak_detail": {
+      "index": 20490,
+      "point": [
+        -0.0009176819979186611,
+        -0.00021486914856208553,
+        -5.491235501718044e-05
+      ],
+      "radius": 0.0009425014590480913,
+      "z": -5.491235501718044e-05,
+      "weight": 1.30307326342901e-12,
+      "vector": [
+        -56059357533.68065,
+        -98004553798.56964,
+        15252560528.701283
+      ],
+      "norm": 113930613686.69733
+    },
+    "moment_max_abs": 4.6711647883057594e-09,
+    "cone_min_margin": 9.999999561927098e-05,
+    "cone_pass_count": 81
+  },
+  "cutting_plane_rounds": [
+    {
+      "round": 1,
+      "pool_size_before": 20,
+      "pool_size_after": 30,
+      "optimizer_success": true,
+      "optimizer_status": 0,
+      "optimizer_message": "Optimization terminated successfully",
+      "optimizer_iterations": 88,
+      "candidate_feasible": true,
+      "candidate_metrics": {
+        "point_count": 44400,
+        "momentum_max": 85368562324.54762,
+        "momentum_volume_L2": 1813180.1268867445,
+        "momentum_volume_RMS": 12405853689.771954,
+        "physical_volume": 2.13613448359038e-08
+      },
+      "candidate_moment_max_abs": 4.6711647883057594e-09,
+      "candidate_cone_min_margin": 9.996767857956002e-10,
+      "candidate_endpoint_min_margin": -1.2662805865855256e-15,
+      "candidate_global_peak": 85368562324.54762,
+      "peak_cap": 113930727617.311,
+      "global_peak_violating_point_count": 0,
+      "newly_added_worst_points": [
+        22963,
+        22957,
+        20563,
+        20557,
+        22848,
+        22859,
+        22854,
+        22853,
+        18054,
+        22975
+      ],
+      "worst_point": 22963
+    }
+  ],
+  "matrix_diagnostics": {
+    "local_design_shape": [
+      133200,
+      180
+    ],
+    "column_scale_min": 0.0006021562530205032,
+    "column_scale_max": 0.14410858600905554,
+    "objective_gradient_check": {
+      "step": 0.0001,
+      "analytic_directional": -0.07070446406647193,
+      "finite_difference_directional": -0.07070446406659547,
+      "absolute_error": 1.235400670651643e-13,
+      "relative_error": 1.7472739337760025e-12
+    },
+    "moment_row_rank": 0,
+    "moment_responsive_rows": 0,
+    "cone_responsive_rows": 21,
+    "endpoint_response_shape": [
+      7776,
+      3,
+      180
+    ],
+    "endpoint_gradient_response_shape": [
+      7776,
+      3,
+      3,
+      180
+    ]
+  },
+  "elapsed_seconds": 20.36773820000235
+}
