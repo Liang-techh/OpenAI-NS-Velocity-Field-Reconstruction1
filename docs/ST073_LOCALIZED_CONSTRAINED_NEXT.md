@@ -130,6 +130,14 @@ level; it does not establish a stationary profile or recursive closure.
 Independent actual-field replay is required before adopting this stricter
 candidate over the replayed candidate below.
 
+Direct global-field profile evaluation in
+`localized_parent_drift_fit_global_profile.json` gives 1999.619777783 at
+delta-k=1e-6, agreeing with the quadratic prediction to 4.73e-9. At
+delta-k=2e-6 and 1e-5 it gives 1999.620078540 and 1999.622487101. Thus the
+stricter cap is reproduced at its fitted interval, but is not a uniform
+bound over longer intervals. The raw finite-interval profile difference
+at delta-k=1e-6 is approximately 0.00138603 relative L2.
+
 The final-stage solve uses an inward numerical margin for the optimizer,
 while the verifier retains the original cap. A radial retraction toward
 zero local controls is also available: since zero controls have drift

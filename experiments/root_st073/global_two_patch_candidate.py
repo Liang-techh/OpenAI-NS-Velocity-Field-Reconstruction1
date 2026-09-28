@@ -38,8 +38,8 @@ def load(source=ROOT/'localized_two_patch_constrained.json'):
     return field,localized,snapshot,candidate,hashes
 
 
-def run():
-    field,localized,snapshot,candidate,hashes=load()
+def run(source=ROOT/'localized_two_patch_constrained.json', output=ROOT/'global_two_patch_candidate.json'):
+    field,localized,snapshot,candidate,hashes=load(source)
     grid_path=ROOT/'enriched_endpoint_shape_cache.npz'
     with np.load(grid_path,allow_pickle=False) as cache:
         points,weights=cache['points'],cache['weights']
@@ -62,7 +62,15 @@ def run():
             row['prediction_difference']=row['drift_per_abs_log_scale']-row['quadratic_prediction']
         report['rows'].append(row);print(json.dumps(row),flush=True)
     report['status']='completed'
-    (ROOT/'global_two_patch_candidate.json').write_text(json.dumps(report,indent=2)+'\n')
+    Path(output).write_text(json.dumps(report,indent=2)+'\n')
 
 
-if __name__=='__main__':run()
+if __name__=='__main__':
+    import argparse
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--source',type=Path,default=ROOT/'localized_two_patch_constrained.json')
+    parser.add_argument('--output',type=Path,default=None)
+    args=parser.parse_args()
+    destination=args.output or (ROOT/'global_two_patch_candidate.json' if args.source.name=='localized_two_patch_constrained.json'
+                                else ROOT/f'{args.source.stem}_global_profile.json')
+    run(args.source,destination)
