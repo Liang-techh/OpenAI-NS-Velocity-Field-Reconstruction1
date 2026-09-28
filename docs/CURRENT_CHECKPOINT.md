@@ -2,13 +2,35 @@
 
 ## Latest continuation checkpoint - 2026-09-27
 
+The assembly check is complete: rebuilding all 360 response columns gives
+the stored 18,720-point fit L2 exactly, with maximum relative difference
+1.94e-16. Eight refined-grid probes, including both peaks, agree with the
+callable field jets; pressure-gradient relative difference is 2.54e-10.
+No assembly mismatch was detected. The next optimization uses the refined
+44,400-point jets and requires both sampled L2 and peak improvement.
+
+The first cached multiscale replay gives (L2, maximum):
+scale 1: (2.78208e6, 2.77458e11); scale 1/2: (4.68490e6, 7.84557e11);
+scale 1/4: (7.88927e6, 2.21847e12). These use p_s=s^-1 p_0 and zero force.
+Absolute growth alone does not quantify relative imbalance in a singular
+scaling; pulled-back residual contraction must also be checked. None meets
+the absolute target, and no dynamical recursion step is accepted.
+
+Global axial angular momentum of this candidate is approximately
+2.81266605e-8 (order 4 to 8 change 0.259%). The prescribed whole-field map
+has M_z(s)=s^1.49 M_z(1), requiring nonzero net torque. An outer moment
+compensation is being constructed as a necessary compatibility correction;
+it does not establish local momentum balance or smooth forcing.
+Sources: `scale_reference_assembly_check.json`,
+`scale_reference_multiscale.json`, `scale_reference_angular_momentum.json`.
+
 Corrected independent replay of the five-percent trust continuation is now
 complete on 44,400 points, with pressure counted once: L2 2.78208007209e6
 versus baseline 2.93063976034e6 (-5.069%), but maximum 2.77457969824e11
 versus 2.70437112609e11 (+2.596%). Do not adopt this candidate as a joint
 momentum improvement. The much better fit-grid numbers below do not carry
-over directly. Assembly/linearization agreement is being checked before
-attributing the discrepancy solely to quadrature or fitting-grid effects.
+over directly. The completed assembly check supports a grid-dependent fit
+effect rather than a detected implementation mismatch.
 See `scale_reference_trust_nonlinear_actual.json`. Reusable per-chunk jets
 are now saved during replay, and failure reporting preserves prior results.
 

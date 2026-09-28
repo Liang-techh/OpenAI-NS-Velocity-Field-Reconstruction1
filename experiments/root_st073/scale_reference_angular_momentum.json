@@ -1,0 +1,176 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "constraints_maintained": false,
+  "scope": "Global compact angular-momentum quadrature for the prescribed reference velocity and its pure anisotropic scale law. This diagnoses the net-torque condition; it does not assert PDE, trajectory, or recursive-scale acceptance.",
+  "sources": {
+    "reference_report": {
+      "path": "scale_reference_trust_nonlinear_fit.json",
+      "sha256": "868d171a0875af35d5e1528d4b143a038848756f161592a758a939f514f33ee0"
+    },
+    "reference_loader": {
+      "path": "scale_reference_candidate.py",
+      "sha256": "25da674ebc1a8067c0fe6363f79e3246dde76adcb287cc0f6e37556a4ee8fb55"
+    },
+    "frozen_geometry": {
+      "path": "full_wave_frozen_cache.json",
+      "sha256": "c03b9efa4bd65db79ee420df66808a34e7f634174851b47cca81f742b1435574"
+    },
+    "support_quadrature": {
+      "path": "global_support_energy.py",
+      "sha256": "3ee5576886bf094f8a04c3e74b384f13184453a9ccf9577220a37748bd48cf44"
+    },
+    "collar_geometry": {
+      "path": "global_collar_tangent.py",
+      "sha256": "c1b98cbe054a7877a9c6c419786ef6446ef61b1a13bba9dc795b840ec4042861"
+    }
+  },
+  "reference": {
+    "tau0": 0.00024408986266228504,
+    "h": 0.005,
+    "viscosity": 0.01,
+    "source_semantics": "initial reference curl potential velocity; time tangent coefficients are not reused as velocity increments"
+  },
+  "support": {
+    "bounds": {
+      "radius": 0.0105,
+      "z_lower": -0.001,
+      "z_upper": 0.001,
+      "mean_radius": 0.010138451744687358,
+      "mean_z_halfwidth": 0.0009142369351569102
+    },
+    "radial_edges": [
+      0.0,
+      0.0001,
+      0.0004626458018495553,
+      0.00069,
+      0.0008802090790000002,
+      0.00119,
+      0.001480209079,
+      0.002782779972318968,
+      0.0049,
+      0.005069225872343679,
+      0.010138451744687358,
+      0.0105
+    ],
+    "axial_edges": [
+      -0.001,
+      -0.00094,
+      -0.0005,
+      -0.00047186657034496774,
+      -0.0002549,
+      -0.000235807922023,
+      0.0,
+      0.0001451,
+      0.00026419207797700003,
+      0.0004311462933044976,
+      0.0005,
+      0.00094,
+      0.001
+    ],
+    "collar_boxes": [
+      [
+        0.0001,
+        0.0049,
+        0.0005,
+        0.00094
+      ],
+      [
+        0.0001,
+        0.0049,
+        -0.00094,
+        -0.0005
+      ],
+      [
+        0.0049,
+        0.0105,
+        -0.001,
+        0.001
+      ]
+    ],
+    "finite_compact_support_used": true
+  },
+  "quadrature": {
+    "orders": [
+      4,
+      8
+    ],
+    "angle_count": 12,
+    "jacobian": "r dr dz dtheta",
+    "integrand": "r u_theta, so cylindrical volume weighting gives r^2 u_theta dr dz dtheta",
+    "rows": [
+      {
+        "panel_order_per_interval": 4,
+        "angle_count": 12,
+        "point_count": 25344,
+        "physical_volume": 6.927211801165495e-07,
+        "M_z": 2.8199395649235964e-08,
+        "M_z_base_without_new_velocity": 2.8200993254344747e-08,
+        "M_z_new_velocity_correction": -1.5976051087836836e-12,
+        "M_z_axisymmetric_angular_mean": 2.819939564923596e-08,
+        "M_z_base_axisymmetric_angular_mean": 2.820099325434474e-08,
+        "M_z_correction_axisymmetric_angular_mean": -1.5976051087836905e-12,
+        "nonaxisymmetric_cancellation_error": 3.308722450212111e-24,
+        "base_nonaxisymmetric_cancellation_error": 6.617444900424222e-24,
+        "correction_nonaxisymmetric_cancellation_error": 6.866245319043687e-27,
+        "velocity_max_abs": 8803.731852354233,
+        "correction_velocity_max_abs": 1544.4188109327795
+      },
+      {
+        "panel_order_per_interval": 8,
+        "angle_count": 12,
+        "point_count": 101376,
+        "physical_volume": 6.927211801165494e-07,
+        "M_z": 2.812666052291525e-08,
+        "M_z_base_without_new_velocity": 2.812786038200802e-08,
+        "M_z_new_velocity_correction": -1.1998590927680346e-12,
+        "M_z_axisymmetric_angular_mean": 2.812666052291525e-08,
+        "M_z_base_axisymmetric_angular_mean": 2.8127860382008015e-08,
+        "M_z_correction_axisymmetric_angular_mean": -1.1998590927680229e-12,
+        "nonaxisymmetric_cancellation_error": 0.0,
+        "base_nonaxisymmetric_cancellation_error": 6.617444900424222e-24,
+        "correction_nonaxisymmetric_cancellation_error": -1.1713006720721583e-26,
+        "velocity_max_abs": 9367.030244487154,
+        "correction_velocity_max_abs": 1784.074455825049
+      }
+    ],
+    "coarse_to_fine_abs_difference": -7.273512632071503e-11,
+    "coarse_to_fine_relative_difference": 0.002585985146066542,
+    "angular_modes_cancellation_checked": true
+  },
+  "angular_momentum": {
+    "M_z_reference": 2.812666052291525e-08,
+    "M_z_axisymmetric_reference": 2.812666052291525e-08,
+    "M_z_base_without_new_velocity": 2.812786038200802e-08,
+    "M_z_new_velocity_correction": -1.1998590927680346e-12,
+    "base_plus_correction_reconstruction_error": -4.415803533712037e-24,
+    "relative_new_correction": -4.265913800148758e-05,
+    "nonaxisymmetric_cancellation_error": 0.0
+  },
+  "pure_global_scale_law": {
+    "exponent": 1.49,
+    "formula": "M_z(s) = s^(3/2 - 2h) M_z(1)",
+    "rows": [
+      {
+        "scale": 1.0,
+        "M_z_predicted": 2.812666052291525e-08,
+        "required_net_torque": -0.00017169383325487506
+      },
+      {
+        "scale": 0.5,
+        "M_z_predicted": 1.0013444104787474e-08,
+        "required_net_torque": -0.00012225031841470792
+      },
+      {
+        "scale": 0.25,
+        "M_z_predicted": 3.5649117590057366e-09,
+        "required_net_torque": -8.704529492513456e-05
+      }
+    ],
+    "torque_formula": "dM_z/dt = -(3/2 - 2h) M_z(1) / tau0 * s^(1/2 - 2h)",
+    "interpretation": "A nonzero measured M_z requires net torque for this prescribed global map. A moment-neutral reference or an outer angular-momentum compensation can remove that requirement; this diagnostic does not choose either."
+  },
+  "elapsed_seconds": 90.43742920001387
+}

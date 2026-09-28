@@ -1,0 +1,243 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "scope": "Assembly and independent-grid consistency check only; no PDE or recursion acceptance.",
+  "sources": {
+    "fit_report": {
+      "path": "scale_reference_trust_nonlinear_fit.json",
+      "sha256": "868d171a0875af35d5e1528d4b143a038848756f161592a758a939f514f33ee0"
+    },
+    "actual_replay_report": {
+      "path": "scale_reference_trust_nonlinear_actual.json",
+      "sha256": "abd2cbade326953930e6a6373d251468610d9514c0a4bddac7e52cb1ad7b697e"
+    },
+    "generator_cache": {
+      "path": "scale_generator_momentum_defect.npz",
+      "sha256": "0fb7b970e7d6f7845b281a330472ee57d489d7533aeeb3a4bc475b26389abdc3"
+    },
+    "candidate_loader": {
+      "path": "scale_reference_candidate.py",
+      "sha256": "25da674ebc1a8067c0fe6363f79e3246dde76adcb287cc0f6e37556a4ee8fb55"
+    },
+    "trust_fit_helpers": {
+      "path": "scale_reference_trust_fit.py",
+      "sha256": "1122f1dbd2c39c9dc4a93c7b06a9f960a49622aad1018939fa4db7ee5009a986"
+    }
+  },
+  "status_detail": "completed",
+  "original_grid_model": {
+    "grid": {
+      "point_count": 18720,
+      "physical_volume": 2.1361344835903807e-08,
+      "array_sha256": "5aac1d4eb243bb62c7aeaccd716811c209f2f08984a3949d1a746c2c1b67d31d"
+    },
+    "coefficient_sha256": "4f25d82e27d2db5d8ec7705c422fb436ece90dfb44a4066724cabeeb2c6cf2e6",
+    "response_columns": 360,
+    "response_shape_per_column": [
+      56160
+    ],
+    "reconstructed_metric": {
+      "point_count": 18720,
+      "volume_L2": 2375021.5990847372,
+      "volume_RMS": 16249996363.507391,
+      "max_norm": 157304615976.81262,
+      "max_point": [
+        0.0008266507752215822,
+        -4.434994747006456e-05,
+        8.369327340100472e-05
+      ],
+      "max_index": 10487,
+      "max_vector": [
+        55374081352.547,
+        144620628193.83762,
+        -27628377129.208668
+      ],
+      "physical_volume": 2.1361344835903807e-08
+    },
+    "stored_selected_metric": {
+      "point_count": 18720,
+      "volume_L2": 2375021.5990847372,
+      "volume_RMS": 16249996363.507391,
+      "max_norm": 157304615976.81265,
+      "max_point": [
+        0.0008266507752215822,
+        -4.434994747006456e-05,
+        8.369327340100472e-05
+      ],
+      "max_index": 10487,
+      "max_vector": [
+        55374081352.547,
+        144620628193.83765,
+        -27628377129.20867
+      ],
+      "physical_volume": 2.1361344835903807e-08
+    },
+    "comparison_to_stored_selected": {
+      "volume_L2": {
+        "actual": 2375021.5990847372,
+        "expected": 2375021.5990847372,
+        "absolute_difference": 0.0,
+        "relative_difference": 0.0
+      },
+      "volume_RMS": {
+        "actual": 16249996363.507391,
+        "expected": 16249996363.507391,
+        "absolute_difference": 0.0,
+        "relative_difference": 0.0
+      },
+      "max_norm": {
+        "actual": 157304615976.81262,
+        "expected": 157304615976.81265,
+        "absolute_difference": -3.0517578125e-05,
+        "relative_difference": -1.940030680949529e-16
+      }
+    },
+    "reconstructed_baseline_metric": {
+      "point_count": 18720,
+      "volume_L2": 2927449.159218038,
+      "volume_RMS": 20029728660.14286,
+      "max_norm": 265177169197.8754,
+      "max_point": [
+        0.000920575756172346,
+        -4.9389037852791916e-05,
+        -2.036013852023506e-05
+      ],
+      "max_index": 8951,
+      "max_vector": [
+        101574635281.44748,
+        244952080968.15237,
+        -50602482.9493947
+      ],
+      "physical_volume": 2.1361344835903807e-08
+    },
+    "stored_baseline_metric": {
+      "point_count": 18720,
+      "volume_L2": 2927449.159218038,
+      "volume_RMS": 20029728660.14286,
+      "max_norm": 265177169197.8754,
+      "max_point": [
+        0.000920575756172346,
+        -4.9389037852791916e-05,
+        -2.036013852023506e-05
+      ],
+      "max_index": 8951,
+      "max_vector": [
+        101574635281.44748,
+        244952080968.15237,
+        -50602482.9493947
+      ],
+      "physical_volume": 2.1361344835903807e-08
+    },
+    "comparison_to_stored_baseline": {
+      "volume_L2": {
+        "actual": 2927449.159218038,
+        "expected": 2927449.159218038,
+        "absolute_difference": 0.0,
+        "relative_difference": 0.0
+      },
+      "volume_RMS": {
+        "actual": 20029728660.14286,
+        "expected": 20029728660.14286,
+        "absolute_difference": 0.0,
+        "relative_difference": 0.0
+      },
+      "max_norm": {
+        "actual": 265177169197.8754,
+        "expected": 265177169197.8754,
+        "absolute_difference": 0.0,
+        "relative_difference": 0.0
+      }
+    },
+    "d0c_weighted_norm": 1274699.311376891,
+    "quadratic_weighted_norm": 90243.19183265361,
+    "model": "baseline + D0 @ cumulative_coefficients + (delta_J @ delta_u)",
+    "patch_centers": [
+      [
+        0.00094,
+        -5.49e-05
+      ],
+      [
+        0.001180209079,
+        1.4192077977e-05
+      ]
+    ],
+    "patch_widths": [
+      [
+        0.00025,
+        0.0002
+      ],
+      [
+        0.0003,
+        0.00025
+      ]
+    ]
+  },
+  "independent_point_check": {
+    "indices": [
+      0,
+      12345,
+      18720,
+      20472,
+      20478,
+      30000,
+      40000,
+      44399
+    ],
+    "peak_indices": {
+      "baseline": 20472,
+      "corrected": 20478
+    },
+    "grouped_backend": "installed",
+    "velocity_loader_vs_cache": {
+      "max_abs": 0.0,
+      "rms": 0.0,
+      "reference_max_abs": 4462.7335613145515,
+      "relative_to_reference_max": 0.0
+    },
+    "jacobian_five_point_vs_cache": {
+      "max_abs": 0.0,
+      "rms": 0.0,
+      "reference_max_abs": 62924644.653976046,
+      "relative_to_reference_max": 0.0
+    },
+    "pressure_gradient_five_point_vs_cache": {
+      "max_abs": 21.165857791900635,
+      "rms": 6.119008783116648,
+      "reference_max_abs": 83282069836.58563,
+      "relative_to_reference_max": 2.5414663484507346e-10
+    },
+    "laplacian_five_point_vs_cache": {
+      "max_abs": 0.0,
+      "rms": 0.0,
+      "reference_max_abs": 1053490750329.0753,
+      "relative_to_reference_max": 0.0
+    },
+    "pressure_manual_vs_loader": {
+      "max_abs": 0.0,
+      "rms": 0.0,
+      "note": "candidate loader evaluates the frozen corrected pressure; cache stores pressure gradient, not scalar pressure"
+    },
+    "cache_keys": [
+      "generator",
+      "jacobian",
+      "laplacian",
+      "mean_swirl",
+      "points",
+      "pressure_gradient",
+      "residual",
+      "velocity",
+      "weights"
+    ],
+    "cache_directory": "C:\\Users\\z5242\\Documents\\Codex\\2026-09-13\\before-doing-any-project-work-verify\\work\\st073-transition-next\\experiments\\root_st073\\.scale_replay_cache\\5223af4ed2972f31284fcb31c0000f59f487ebf031cf5e3875b4d1b3787f444c"
+  },
+  "inputs": {
+    "generator_point_count": 18720,
+    "refined_cache_point_count": 44400,
+    "hspace": 1e-06,
+    "point_count_checked": 8,
+    "model": "baseline + D0 @ cumulative_coefficients + (delta_J @ delta_u)"
+  },
+  "elapsed_seconds": 18.571754300006432
+}
