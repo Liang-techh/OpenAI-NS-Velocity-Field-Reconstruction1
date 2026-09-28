@@ -45,10 +45,19 @@ constraint is active within floating-point precision.
 
 `localized_actual_replay.py` reconstructs the actual compact potential field
 and checks both parent and corrected momentum on the independent frozen
-18,720-point grid, at the reference and k0+1e-6 endpoint times. That replay
-must finish before interpreting the fitting-grid reduction as a replicated
-improvement. Even a successful replay does not certify the intervening
-time interval, the full support, or scale recursion.
+18,720-point grid, at the reference and k0+1e-6 endpoint times. The actual
+five-point Cartesian finite-difference replay has now completed:
+
+| Time | Parent maximum | Corrected maximum | Parent L2 | Corrected L2 |
+| --- | ---: | ---: | ---: | ---: |
+| Reference | 1.182440283324e11 | 8.544813886860e10 | 1928935.162611 | 1811030.475956 |
+| k0+1e-6 | 1.181780680253e11 | 8.548956477758e10 | 1929275.504933 | 1811462.667068 |
+
+Both metrics improve at both tested times: approximately 27.7% in maximum
+and 6.1% in L2. These are actual field evaluations on a different spatial
+grid, not design-matrix predictions. The physical time increment is only
+1.6919014147e-10. This evidence does not certify the intervening time
+interval, the full support, or scale recursion.
 
 ## Global field interface
 
