@@ -1,0 +1,191 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "scope": "Analytic transfer of the accepted refined original-wave amplitude candidate to the original 18,720-point generator cache. The current trust-nonlinear parent is reconstructed from cached base jets plus its saved local and pressure controls; the selected wave and pressure increments are then added analytically. This is a cross-grid comparison, not a fresh holdout or PDE acceptance test.",
+  "sources": {
+    "coarse_cache": {
+      "path": "scale_generator_momentum_defect.npz",
+      "sha256": "0fb7b970e7d6f7845b281a330472ee57d489d7533aeeb3a4bc475b26389abdc3"
+    },
+    "coarse_report": {
+      "path": "scale_generator_momentum_defect.json",
+      "sha256": "b699fd5fdabf5718b790c00cedfe0825a5db2c905f9440866a7e738114c5661e"
+    },
+    "trust_step": {
+      "path": "scale_reference_trust_nonlinear_fit.json",
+      "sha256": "868d171a0875af35d5e1528d4b143a038848756f161592a758a939f514f33ee0"
+    },
+    "pressure_projection": {
+      "path": "scale_generator_pressure_projection.json",
+      "sha256": "8eb620cbbada879246274d274a5c2b7374e4cde1c7fb4f6ad9aa9f66ab9bd4ed"
+    },
+    "drift_report": {
+      "path": "localized_drift_1800_fit.json",
+      "sha256": "47521663020188d3ab89360816aba46ae111f0663a1d962225a7b0a128f1821a"
+    },
+    "geometry": {
+      "path": "full_wave_frozen_cache.json",
+      "sha256": "c03b9efa4bd65db79ee420df66808a34e7f634174851b47cca81f742b1435574"
+    },
+    "refined_wave_report": {
+      "path": "scale_reference_refined_wave.json",
+      "sha256": "6fed26b80c122c89cd02783dbd9ee59d237395768f815bbe442a91e2461be763"
+    },
+    "adapter": {
+      "path": "scale_reference_refined_wave_adapter.py",
+      "sha256": "4fb3bf7ee533cf0542c0f218b00e4d46877a88c8e0a032b7a64b36aeec77dc93"
+    }
+  },
+  "inputs": {
+    "point_count": 18720,
+    "physical_volume": 2.1361344835903807e-08,
+    "tau0": 0.00024408986266228504,
+    "similarity_exponent_h": 0.005,
+    "viscosity": 0.01,
+    "grid_role": "original 18,720-point generator grid; cross-grid transfer, not fresh holdout",
+    "pressure_semantics": "coarse parent includes pressure projection plus trust-step pressure; refined pressure is an increment to that parent",
+    "amplitude_shift": -0.006377974861619399
+  },
+  "parent_reconstruction": {
+    "metric": {
+      "point_count": 18720,
+      "volume_L2": 2375021.5990847372,
+      "volume_RMS": 16249996363.507395,
+      "max_norm": 157304615976.81265,
+      "max_point": [
+        0.0008266507752215822,
+        -4.434994747006456e-05,
+        8.369327340100472e-05
+      ],
+      "max_index": 10487,
+      "max_vector": [
+        55374081352.547,
+        144620628193.83765,
+        -27628377129.20867
+      ],
+      "physical_volume": 2.1361344835903807e-08
+    },
+    "expected_trust_step_metric": {
+      "point_count": 18720,
+      "volume_L2": 2375021.5990847372,
+      "volume_RMS": 16249996363.507391,
+      "max_norm": 157304615976.81265,
+      "max_point": [
+        0.0008266507752215822,
+        -4.434994747006456e-05,
+        8.369327340100472e-05
+      ],
+      "max_index": 10487,
+      "max_vector": [
+        55374081352.547,
+        144620628193.83765,
+        -27628377129.20867
+      ],
+      "physical_volume": 2.1361344835903807e-08
+    },
+    "volume_L2_abs_difference": 0.0,
+    "max_abs_difference": 0.0,
+    "local_blocks": [
+      {
+        "patch": 1,
+        "control_count": 135,
+        "coefficient_norm": 44.05383079209406
+      },
+      {
+        "patch": 2,
+        "control_count": 135,
+        "coefficient_norm": 55.549467812917655
+      }
+    ],
+    "pressure_base_coefficient_count": 90,
+    "pressure_step_coefficient_count": 90
+  },
+  "selected_wave_transfer": {
+    "metric": {
+      "point_count": 18720,
+      "volume_L2": 2332834.1805481613,
+      "volume_RMS": 15961348294.761696,
+      "max_norm": 155362624087.78848,
+      "max_point": [
+        0.0008266507752215822,
+        -4.434994747006456e-05,
+        8.369327340100472e-05
+      ],
+      "max_index": 10487,
+      "max_vector": [
+        53745533812.38754,
+        141847935494.2333,
+        -33587583341.002842
+      ],
+      "physical_volume": 2.1361344835903807e-08
+    },
+    "parent_metric": {
+      "point_count": 18720,
+      "volume_L2": 2375021.5990847372,
+      "volume_RMS": 16249996363.507395,
+      "max_norm": 157304615976.81265,
+      "max_point": [
+        0.0008266507752215822,
+        -4.434994747006456e-05,
+        8.369327340100472e-05
+      ],
+      "max_index": 10487,
+      "max_vector": [
+        55374081352.547,
+        144620628193.83765,
+        -27628377129.20867
+      ],
+      "physical_volume": 2.1361344835903807e-08
+    },
+    "volume_L2_change": -42187.41853657598,
+    "max_change": -1941991889.02417,
+    "volume_L2_relative_change": -0.017762962051727782,
+    "max_relative_change": -0.012345422141397444,
+    "both_metrics_improve_on_coarse_transfer": true,
+    "wave_linear_metric": {
+      "point_count": 18720,
+      "volume_L2": 10671062.185673598,
+      "volume_RMS": 73011850409.60564,
+      "max_norm": 811994774457.3905,
+      "max_point": [
+        -0.0009205757561723461,
+        4.938903785279099e-05,
+        -2.036013852023506e-05
+      ],
+      "max_index": 8945,
+      "max_vector": [
+        -564335456745.2666,
+        -583363748019.7664,
+        -23403920666.211845
+      ],
+      "physical_volume": 2.1361344835903807e-08
+    },
+    "wave_quadratic_metric": {
+      "point_count": 18720,
+      "volume_L2": 9910031.697435282,
+      "volume_RMS": 67804848220.17011,
+      "max_norm": 904441436089.2338,
+      "max_point": [
+        -0.0009205757561723461,
+        4.938903785279099e-05,
+        -2.036013852023506e-05
+      ],
+      "max_index": 8945,
+      "max_vector": [
+        -560839012835.6836,
+        -709472599450.8877,
+        -11069942414.117718
+      ],
+      "physical_volume": 2.1361344835903807e-08
+    },
+    "pressure_increment_coefficient_count": 90
+  },
+  "limitations": [
+    "The comparison reuses the original generator grid and is not a new spatial holdout.",
+    "No finite-difference replay, moments, cones, shape, trajectory, PDE, or scale-recursion gate is evaluated here.",
+    "The parent reconstruction relies on saved analytic compact-control coefficients and cached base jets; its agreement with the frozen trust-step metrics is reported explicitly."
+  ],
+  "elapsed_seconds": 3.6506847999989986
+}
