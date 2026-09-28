@@ -1,0 +1,242 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "scope": "Frozen-time kinematic anisotropic transport of the current global two-patch velocity. The Piola map preserves divergence under the anisotropic coordinate map, and a sampled axisymmetric swirl increment restores mean swirl scaling. Pressure and time dynamics are omitted; this is not PDE or recursive-closure acceptance.",
+  "sources": {
+    "two_patch_module": {
+      "path": "global_two_patch_candidate.py",
+      "sha256": "26f7f7e4fc59972a42ffd756df9046a71dfd19c0a0f2fe768c1ef38361825397"
+    },
+    "two_patch_source": {
+      "path": "localized_two_patch_constrained.json",
+      "sha256": "8a8f3b8a9f98bd07c70f61ebd41fc36e693f734aec1bf899147b2b022d44392d"
+    },
+    "parent_module": {
+      "path": "global_localized_candidate.py",
+      "sha256": "d9c1a806d6997cde5fcd4a8139cb13d2147c9a3a99c2c2b5aff5567226b935f6"
+    },
+    "fixed_cylinder_cache": {
+      "path": "enriched_endpoint_shape_cache.npz",
+      "sha256": "8646a0608e2a3eaacefda90011e78910cf9579af56eb5b6efb92a1cdd6b4ae53"
+    },
+    "loader_hashes": {
+      "localized_constrained_tangent.json": "20a33e63cd33a1b800c208fe5ecf107bccac4fc982413bcbe8d62acc2d78470e",
+      "enriched_mean_endpoint_tangent.json": "ea78f641a3b4ca760e373716186c6eb93b27494f0c8982708c953468582b40c5",
+      "global_collar_tangent.json": "35d0383f7ef02ef62e75f8c4147891bec03a07006d2f5080c64eda4f73918686",
+      "localized_two_patch_constrained.json": "8a8f3b8a9f98bd07c70f61ebd41fc36e693f734aec1bf899147b2b022d44392d"
+    }
+  },
+  "inputs": {
+    "reference_k": 11.0003,
+    "reference_tau": 0.00024408986266228504,
+    "h": 0.005,
+    "scale": 0.5,
+    "mean_angles": 5,
+    "spatial_matrix": [
+      0.7071067811865476,
+      0.7071067811865476,
+      0.7095616781001912
+    ],
+    "determinant": 0.3547808390500956,
+    "piola_amplitude": 0.7095616781001912,
+    "horizontal_velocity_factor": 1.4142135623730951,
+    "axial_velocity_factor": 1.4191233562003824,
+    "swirl_increment_factor": 0.00490979382728729,
+    "pressure": "omitted by design"
+  },
+  "analytic_divergence_argument": {
+    "piola_formula": "uP(x)=s^(0.5-h)*S/det(S)*u_ref(S^-1 x)",
+    "piola_divergence": "div(uP)(x)=s^(-1)*div(u_ref)(S^-1 x)",
+    "swirl_increment": "delta_u=delta_u_theta(r,z)*e_theta is axisymmetric, hence div(delta_u)=0 for r>0",
+    "axis_mean_extraction": "five equispaced rotations; exact for angular Fourier modes |m|<=2, verified against twelve-angle samples"
+  },
+  "s_half_metric": {
+    "probe_count": 18,
+    "source_velocity": {
+      "finite": true,
+      "nonzero_count": 18,
+      "max_norm": 277.1060539172311,
+      "min_norm": 0.2992837610367849
+    },
+    "transport_velocity": {
+      "finite": true,
+      "nonzero_count": 18,
+      "max_norm": 392.53826740919965,
+      "min_norm": 0.4247205750009184
+    },
+    "reference_weighted_probe_norm": 432.0586729955126,
+    "raw_per_component_target_norm": 613.1203359662184,
+    "transport_target_norm": 612.6591764491372,
+    "transport_minus_raw_per_component_relative": 0.0011584065925021496,
+    "transported_support_probe_points": [
+      [
+        0.0017399041002472367,
+        0.0005573391395070477,
+        -0.00024507040636600943
+      ],
+      [
+        0.0014500395912708842,
+        0.00159702375710104,
+        -0.00024507040636600943
+      ],
+      [
+        0.0005362855253845233,
+        0.00247241446020893,
+        -0.00024507040636600943
+      ],
+      [
+        -0.0008724745503938633,
+        0.0027236953947542583,
+        -0.00024507040636600943
+      ],
+      [
+        -0.002274314070195186,
+        0.0020649946064382817,
+        -0.00024507040636600943
+      ],
+      [
+        -0.0017854707207163372,
+        0.0003872821967871555,
+        -8.343766751378189e-05
+      ],
+      [
+        -0.00205428300108431,
+        -0.0006580433484613275,
+        -8.343766751378189e-05
+      ],
+      [
+        -0.001700644118769347,
+        -0.0018730309685326618,
+        -8.343766751378189e-05
+      ],
+      [
+        -0.0006062625725806395,
+        -0.0027950266792248035,
+        -8.343766751378189e-05
+      ],
+      [
+        0.0009371164577542736,
+        -0.0029254948229509945,
+        -8.343766751378189e-05
+      ],
+      [
+        0.0013526219034600804,
+        -0.0012281315812092898,
+        8.343766751378189e-05
+      ],
+      [
+        0.002108082939732211,
+        -0.0004572592439832716,
+        8.343766751378189e-05
+      ],
+      [
+        0.0027236953947542583,
+        0.0008724745503938633,
+        8.343766751378189e-05
+      ],
+      [
+        0.0020649946064382817,
+        0.002274314070195186,
+        8.343766751378189e-05
+      ],
+      [
+        0.0003872821967871557,
+        0.0017854707207163372,
+        0.00024507040636600943
+      ],
+      [
+        -0.0006580433484613276,
+        0.00205428300108431,
+        0.00024507040636600943
+      ],
+      [
+        -0.0018730309685326618,
+        0.0017006441187693466,
+        0.00024507040636600943
+      ],
+      [
+        -0.0027950266792248044,
+        0.0006062625725806369,
+        0.00024507040636600943
+      ]
+    ]
+  },
+  "fields": {},
+  "axisymmetric_mean_alias_check": {
+    "probe_count": 8,
+    "angles_compared": [
+      5,
+      12
+    ],
+    "max_abs_difference": 3.907985046680551e-12,
+    "rms_difference": 1.382160337240735e-12,
+    "interpretation": "Five-angle mean is exact for current |m|<=2 angular content up to evaluation roundoff; this is a sampled bandwidth check."
+  },
+  "divergence_fd_check": {
+    "rows": [
+      {
+        "step": 7.811687760373635e-07,
+        "reference_divergence_max_abs": 0.0018206704217220704,
+        "transported_divergence_max_abs": 0.0036539192803388687,
+        "predicted_transport_divergence_max_abs": 0.0036413408434441408,
+        "fd_minus_analytic_prediction_max_abs": 1.2578436894727929e-05,
+        "fd_minus_analytic_prediction_weighted_rms": 4.92095045427495e-06,
+        "error_reduction_h_to_h2": 1.1371074531184224
+      },
+      {
+        "step": 3.9058438801868176e-07,
+        "reference_divergence_max_abs": 0.00011244831074463946,
+        "transported_divergence_max_abs": 0.0002256977074353017,
+        "predicted_transport_divergence_max_abs": 0.00022489662148927891,
+        "fd_minus_analytic_prediction_max_abs": 1.1061783879995346e-05,
+        "fd_minus_analytic_prediction_weighted_rms": 3.2257105230809154e-06
+      }
+    ],
+    "convergence_scope": "bounded 4th-order Cartesian finite differences on interior probes; not a continuum or 1e-3 certificate"
+  },
+  "support_and_finiteness": {
+    "reference_probe": {
+      "finite": true,
+      "nonzero_count": 18,
+      "max_norm": 277.1060539172311,
+      "min_norm": 0.2992837610367849
+    },
+    "transport_probe": {
+      "finite": true,
+      "nonzero_count": 18,
+      "max_norm": 392.5382674091997,
+      "min_norm": 0.4247205750009184
+    },
+    "outside_points": [
+      [
+        0.02,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.02,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.003
+      ]
+    ],
+    "outside_transport_max_abs": 0.0,
+    "interpretation": "The finite sampled reference is nonzero; the mapped support remains compact under S and these outside points evaluate to zero."
+  },
+  "composition_check": {
+    "s1": 0.5,
+    "s2": 0.8,
+    "product": 0.4,
+    "probe_count": 6,
+    "max_abs_difference": 1.0800249583553523e-12,
+    "relative_l2_difference": 4.321265753887083e-15,
+    "interpretation": "Numerical composition check for the kinematic map, including nested five-angle mean extraction."
+  },
+  "elapsed_seconds": 25.49818480000249
+}
