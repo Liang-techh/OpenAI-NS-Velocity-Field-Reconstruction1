@@ -1,0 +1,559 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "finite_time_evolution_validated": false,
+  "scale_recursion_established": false,
+  "scope": "Complete Cartesian momentum residual over one fixed bounding cylinder covering the reference and endpoint supports. Gauss nodes avoid the axis; FD stencils are evaluated across support boundaries. This is a bounded sampled diagnostic with no whole-R3, continuum, trajectory, or scale-recursion acceptance claim.",
+  "sources": {
+    "global_acceleration_candidate": {
+      "path": "global_acceleration_candidate.py",
+      "sha256": "ad20fb2b6a32b09db249c3ec4e831b29c4ea410eac5974134513a03a95e8a35d"
+    },
+    "global_source": {
+      "path": "global_axial_extension.py",
+      "sha256": "a9262692528ab17420851f822d2477ac2bbfcdfb0a2d4637b683ff92ae927dea"
+    },
+    "balanced": {
+      "sha256": "8396633295fb37307aa3d946852e5a4479e5f46e78474942997bc3b5ea601909"
+    },
+    "acceleration": {
+      "sha256": "ef25b18deb09dc9dc97049e425d2b7322c8ea3bccd81c6ddd2ae481922af23ba"
+    },
+    "collar": {
+      "sha256": "35d0383f7ef02ef62e75f8c4147891bec03a07006d2f5080c64eda4f73918686"
+    },
+    "frozen_cache": {
+      "path": "full_wave_frozen_cache.json",
+      "sha256": "c03b9efa4bd65db79ee420df66808a34e7f634174851b47cca81f742b1435574"
+    },
+    "support_bounds_source": {
+      "path": "global_support_energy.py",
+      "sha256": "3ee5576886bf094f8a04c3e74b384f13184453a9ccf9577220a37748bd48cf44"
+    },
+    "full_momentum_source": {
+      "path": "global_full_momentum.py",
+      "sha256": "5f73a9ba7e7267dab4cc2f14d6b9ed9b02c7ee56fde72293ad8a5e740388b4bd"
+    }
+  },
+  "states": {
+    "reference": {
+      "k": 11.0003,
+      "tau": 0.00024408986266228504
+    },
+    "endpoint": {
+      "k": 11.000300999999999,
+      "tau": 0.00024408969347214357,
+      "delta_k": 1e-06
+    },
+    "physical_time": "t=-tau"
+  },
+  "quadrature": {
+    "radial_order_per_panel": 4,
+    "axial_order_per_panel": 4,
+    "angle_order": 20,
+    "point_count": 32000,
+    "physical_volume": 6.940099274423217e-07,
+    "radial_edges": [
+      0.0,
+      0.0001,
+      0.0004626458018495553,
+      0.002782779972318968,
+      0.0049,
+      0.005069224115484173,
+      0.005069225872343679,
+      0.010138448230968346,
+      0.010138451744687358,
+      0.0105,
+      0.010501562337552076
+    ],
+    "axial_edges": [
+      -0.0010015623375520747,
+      -0.001,
+      -0.00094,
+      -0.0005,
+      -0.00047186657034496774,
+      0.0,
+      0.0004311462933044976,
+      0.0005,
+      0.00094,
+      0.001,
+      0.0010015623375520747
+    ],
+    "bounds_reference": {
+      "radius": 0.010138451744687358,
+      "z_lower": -0.0009142369351569102,
+      "z_upper": 0.0009142369351569102,
+      "mean_radius": 0.010138451744687358,
+      "mean_z_halfwidth": 0.0009142369351569102
+    },
+    "bounds_endpoint": {
+      "radius": 0.010138448230968346,
+      "z_lower": -0.0009142366214750907,
+      "z_upper": 0.0009142366214750907,
+      "mean_radius": 0.010138448230968346,
+      "mean_z_halfwidth": 0.0009142366214750907
+    },
+    "raw_collar_bounds": {
+      "radius_upper": 0.0105,
+      "z_lower": -0.001,
+      "z_upper": 0.001
+    },
+    "finite_difference_stencil_margin": 1.562337552074727e-06,
+    "axis_handling": "Gauss nodes lie strictly inside the first radial panel; r=0 is not sampled.",
+    "jacobian": "2*pi*r dr dz with evenly spaced theta weights summing to 2*pi",
+    "partition_point_counts": {
+      "wave_patch": 640,
+      "collar_union": 14720,
+      "rest": 16640
+    },
+    "partition_overlap_count": 0,
+    "partition_coverage_count": 32000,
+    "quadrature_converged": false
+  },
+  "prior_domain_replay": {
+    "status": "invalid_support_enclosure",
+    "reason": "The first order-4 grid used global_support_energy bounds only; those bounds omitted the collar extension to r=0.0105 and |z|=0.001.",
+    "report": {
+      "status": "completed",
+      "accepted": false,
+      "pde_validated": false,
+      "finite_time_evolution_validated": false,
+      "scale_recursion_established": false,
+      "scope": "Complete Cartesian momentum residual over one fixed bounding cylinder covering the reference and endpoint supports. Gauss nodes avoid the axis; FD stencils are evaluated across support boundaries. This is a bounded sampled diagnostic with no whole-R3, continuum, trajectory, or scale-recursion acceptance claim.",
+      "sources": {
+        "global_acceleration_candidate": {
+          "path": "global_acceleration_candidate.py",
+          "sha256": "ad20fb2b6a32b09db249c3ec4e831b29c4ea410eac5974134513a03a95e8a35d"
+        },
+        "global_source": {
+          "path": "global_axial_extension.py",
+          "sha256": "a9262692528ab17420851f822d2477ac2bbfcdfb0a2d4637b683ff92ae927dea"
+        },
+        "balanced": {
+          "sha256": "8396633295fb37307aa3d946852e5a4479e5f46e78474942997bc3b5ea601909"
+        },
+        "acceleration": {
+          "sha256": "ef25b18deb09dc9dc97049e425d2b7322c8ea3bccd81c6ddd2ae481922af23ba"
+        },
+        "collar": {
+          "sha256": "35d0383f7ef02ef62e75f8c4147891bec03a07006d2f5080c64eda4f73918686"
+        },
+        "frozen_cache": {
+          "path": "full_wave_frozen_cache.json",
+          "sha256": "c03b9efa4bd65db79ee420df66808a34e7f634174851b47cca81f742b1435574"
+        }
+      },
+      "states": {
+        "reference": {
+          "k": 11.0003,
+          "tau": 0.00024408986266228504
+        },
+        "endpoint": {
+          "k": 11.000300999999999,
+          "tau": 0.00024408969347214357,
+          "delta_k": 1e-06
+        },
+        "physical_time": "t=-tau"
+      },
+      "quadrature": {
+        "radial_order_per_panel": 4,
+        "axial_order_per_panel": 4,
+        "angle_order": 20,
+        "point_count": 15360,
+        "physical_volume": 5.904483427779006e-07,
+        "radial_edges": [
+          0.0,
+          0.0001,
+          0.0004626458018495553,
+          0.002782779972318968,
+          0.0049,
+          0.005069224115484173,
+          0.005069225872343679,
+          0.010138448230968346,
+          0.010138451744687358
+        ],
+        "axial_edges": [
+          -0.0009142369351569102,
+          -0.0005,
+          -0.00047186657034496774,
+          0.0,
+          0.0004311462933044976,
+          0.0005,
+          0.0009142369351569102
+        ],
+        "bounds_reference": {
+          "radius": 0.010138451744687358,
+          "z_lower": -0.0009142369351569102,
+          "z_upper": 0.0009142369351569102,
+          "mean_radius": 0.010138451744687358,
+          "mean_z_halfwidth": 0.0009142369351569102
+        },
+        "bounds_endpoint": {
+          "radius": 0.010138448230968346,
+          "z_lower": -0.0009142366214750907,
+          "z_upper": 0.0009142366214750907,
+          "mean_radius": 0.010138448230968346,
+          "mean_z_halfwidth": 0.0009142366214750907
+        },
+        "axis_handling": "Gauss nodes lie strictly inside the first radial panel; r=0 is not sampled.",
+        "jacobian": "2*pi*r dr dz with evenly spaced theta weights summing to 2*pi",
+        "partition_point_counts": {
+          "wave_patch": 640,
+          "collar_union": 9600,
+          "rest": 5120
+        },
+        "partition_overlap_count": 0,
+        "partition_coverage_count": 15360
+      },
+      "rows": [
+        {
+          "label": "reference",
+          "k": 11.0003,
+          "tau": 0.00024408986266228504,
+          "delta_k": 0.0,
+          "finite_difference_steps": {
+            "hspace": 7.811687760373635e-07,
+            "htime": 2.4408986266228506e-08
+          },
+          "metrics": {
+            "point_count": 15360,
+            "physical_volume": 5.904483427779006e-07,
+            "momentum_max": 73489981974.68166,
+            "momentum_max_point": [
+              -0.0009937253380693884,
+              -0.0007219837192639152,
+              -3.276256619678334e-05
+            ],
+            "momentum_volume_L2_squared": 3809288392910.2485,
+            "momentum_volume_L2": 1951739.8374041168,
+            "partition_squared_L2_sum": 3809288392910.2515,
+            "partition_squared_L2_absolute_difference": 0.0029296875,
+            "partitions": {
+              "wave_patch": {
+                "point_count": 640,
+                "physical_volume": 2.1361344835903804e-08,
+                "momentum_max": 73489981974.68166,
+                "momentum_max_point": [
+                  -0.0009937253380693884,
+                  -0.0007219837192639152,
+                  -3.276256619678334e-05
+                ],
+                "momentum_volume_L2_squared": 3756083580521.4873,
+                "momentum_volume_L2": 1938061.8102943692
+              },
+              "collar_union": {
+                "point_count": 9600,
+                "physical_volume": 5.149926758909629e-07,
+                "momentum_max": 3435290674.265492,
+                "momentum_max_point": [
+                  -0.00019274533181638754,
+                  0.0005932091345986777,
+                  -0.0005287612343449319
+                ],
+                "momentum_volume_L2_squared": 49465879979.97305,
+                "momentum_volume_L2": 222409.26235202764
+              },
+              "rest": {
+                "point_count": 5120,
+                "physical_volume": 5.409432205103381e-08,
+                "momentum_max": 3397069157.6955705,
+                "momentum_max_point": [
+                  -0.00019274533181638754,
+                  0.0005932091345986777,
+                  -0.0004980466440952964
+                ],
+                "momentum_volume_L2_squared": 3738932408.791191,
+                "momentum_volume_L2": 61146.81029122607
+              }
+            }
+          },
+          "outside_support_probe": {
+            "points": [
+              [
+                0.01014079525101547,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0009165804414850222
+              ],
+              [
+                0.0,
+                0.0,
+                -0.0009165804414850222
+              ]
+            ],
+            "velocity_max_abs": 0.0,
+            "pressure_max_abs": 1.6990001420547326e-05,
+            "zero_outside_probe": false
+          }
+        },
+        {
+          "label": "endpoint",
+          "k": 11.000300999999999,
+          "tau": 0.00024408969347214357,
+          "delta_k": 9.999999992515995e-07,
+          "finite_difference_steps": {
+            "hspace": 7.811687760373635e-07,
+            "htime": 2.4408986266228506e-08
+          },
+          "metrics": {
+            "point_count": 15360,
+            "physical_volume": 5.904483427779006e-07,
+            "momentum_max": 69469368676.64153,
+            "momentum_max_point": [
+              0.0009937253380693884,
+              0.0007219837192639154,
+              -3.276256619678334e-05
+            ],
+            "momentum_volume_L2_squared": 3537180847310.1157,
+            "momentum_volume_L2": 1880739.441631965,
+            "partition_squared_L2_sum": 3537180847310.1177,
+            "partition_squared_L2_absolute_difference": 0.001953125,
+            "partitions": {
+              "wave_patch": {
+                "point_count": 640,
+                "physical_volume": 2.1361344835903804e-08,
+                "momentum_max": 69469368676.64153,
+                "momentum_max_point": [
+                  0.0009937253380693884,
+                  0.0007219837192639154,
+                  -3.276256619678334e-05
+                ],
+                "momentum_volume_L2_squared": 3483977047220.914,
+                "momentum_volume_L2": 1866541.466783129
+              },
+              "collar_union": {
+                "point_count": 9600,
+                "physical_volume": 5.149926758909629e-07,
+                "momentum_max": 3434914911.5067816,
+                "momentum_max_point": [
+                  0.00019274533181638746,
+                  -0.0005932091345986777,
+                  -0.0005287612343449319
+                ],
+                "momentum_volume_L2_squared": 49465391656.33491,
+                "momentum_volume_L2": 222408.1645451329
+              },
+              "rest": {
+                "point_count": 5120,
+                "physical_volume": 5.409432205103381e-08,
+                "momentum_max": 3396680766.171275,
+                "momentum_max_point": [
+                  -0.00019274533181638754,
+                  0.0005932091345986777,
+                  -0.0004980466440952964
+                ],
+                "momentum_volume_L2_squared": 3738408432.8685093,
+                "momentum_volume_L2": 61142.525568286015
+              }
+            }
+          },
+          "outside_support_probe": {
+            "points": [
+              [
+                0.01014079525101547,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0009165804414850222
+              ],
+              [
+                0.0,
+                0.0,
+                -0.0009165804414850222
+              ]
+            ],
+            "velocity_max_abs": 3.0390940757487826e-11,
+            "pressure_max_abs": 1.6990001420547326e-05,
+            "zero_outside_probe": false
+          }
+        }
+      ],
+      "elapsed_seconds": 320.64695049999864
+    }
+  },
+  "rows": [
+    {
+      "label": "reference",
+      "k": 11.0003,
+      "tau": 0.00024408986266228504,
+      "delta_k": 0.0,
+      "finite_difference_steps": {
+        "hspace": 7.811687760373635e-07,
+        "htime": 2.4408986266228506e-08
+      },
+      "metrics": {
+        "point_count": 32000,
+        "physical_volume": 6.940099274423217e-07,
+        "momentum_max": 73489981974.68166,
+        "momentum_max_point": [
+          -0.0009937253380693884,
+          -0.0007219837192639152,
+          -3.276256619678334e-05
+        ],
+        "momentum_volume_L2_squared": 3813343578510.906,
+        "momentum_volume_L2": 1952778.4253496109,
+        "partition_squared_L2_sum": 3813343578510.9062,
+        "partition_squared_L2_absolute_difference": 0.00048828125,
+        "partitions": {
+          "wave_patch": {
+            "point_count": 640,
+            "physical_volume": 2.1361344835903804e-08,
+            "momentum_max": 73489981974.68166,
+            "momentum_max_point": [
+              -0.0009937253380693884,
+              -0.0007219837192639152,
+              -3.276256619678334e-05
+            ],
+            "momentum_volume_L2_squared": 3756083580521.4873,
+            "momentum_volume_L2": 1938061.8102943692
+          },
+          "collar_union": {
+            "point_count": 14720,
+            "physical_volume": 6.082123377349841e-07,
+            "momentum_max": 3437469222.8150363,
+            "momentum_max_point": [
+              0.00019274533181638746,
+              -0.0005932091345986777,
+              -0.0005305500114493084
+            ],
+            "momentum_volume_L2_squared": 53521065539.34019,
+            "momentum_volume_L2": 231346.2027770073
+          },
+          "rest": {
+            "point_count": 16640,
+            "physical_volume": 6.44362448714338e-08,
+            "momentum_max": 3397069157.6955705,
+            "momentum_max_point": [
+              -0.00019274533181638754,
+              0.0005932091345986777,
+              -0.0004980466440952964
+            ],
+            "momentum_volume_L2_squared": 3738932450.078809,
+            "momentum_volume_L2": 61146.81062883663
+          }
+        }
+      },
+      "outside_support_probe": {
+        "points": [
+          [
+            0.010503905843880187,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.001003905843880187
+          ],
+          [
+            0.0,
+            0.0,
+            -0.001003905843880187
+          ]
+        ],
+        "velocity_max_abs": 0.0,
+        "pressure_max_abs": 0.0,
+        "zero_outside_probe": true
+      }
+    },
+    {
+      "label": "endpoint",
+      "k": 11.000300999999999,
+      "tau": 0.00024408969347214357,
+      "delta_k": 9.999999992515995e-07,
+      "finite_difference_steps": {
+        "hspace": 7.811687760373635e-07,
+        "htime": 2.4408986266228506e-08
+      },
+      "metrics": {
+        "point_count": 32000,
+        "physical_volume": 6.940099274423217e-07,
+        "momentum_max": 69469368676.64153,
+        "momentum_max_point": [
+          0.0009937253380693884,
+          0.0007219837192639154,
+          -3.276256619678334e-05
+        ],
+        "momentum_volume_L2_squared": 3541235626814.466,
+        "momentum_volume_L2": 1881817.1076952366,
+        "partition_squared_L2_sum": 3541235626814.466,
+        "partition_squared_L2_absolute_difference": 0.0,
+        "partitions": {
+          "wave_patch": {
+            "point_count": 640,
+            "physical_volume": 2.1361344835903804e-08,
+            "momentum_max": 69469368676.64153,
+            "momentum_max_point": [
+              0.0009937253380693884,
+              0.0007219837192639154,
+              -3.276256619678334e-05
+            ],
+            "momentum_volume_L2_squared": 3483977047220.914,
+            "momentum_volume_L2": 1866541.466783129
+          },
+          "collar_union": {
+            "point_count": 14720,
+            "physical_volume": 6.082123377349841e-07,
+            "momentum_max": 3437092871.942758,
+            "momentum_max_point": [
+              0.0005932091345986776,
+              0.00019274533181638757,
+              -0.0005305500114493084
+            ],
+            "momentum_volume_L2_squared": 53520171119.39613,
+            "momentum_volume_L2": 231344.2696921541
+          },
+          "rest": {
+            "point_count": 16640,
+            "physical_volume": 6.44362448714338e-08,
+            "momentum_max": 3396680766.171275,
+            "momentum_max_point": [
+              -0.00019274533181638754,
+              0.0005932091345986777,
+              -0.0004980466440952964
+            ],
+            "momentum_volume_L2_squared": 3738408474.1560035,
+            "momentum_volume_L2": 61142.525905919225
+          }
+        }
+      },
+      "outside_support_probe": {
+        "points": [
+          [
+            0.010503905843880187,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.001003905843880187
+          ],
+          [
+            0.0,
+            0.0,
+            -0.001003905843880187
+          ]
+        ],
+        "velocity_max_abs": 0.0,
+        "pressure_max_abs": 0.0,
+        "zero_outside_probe": true
+      }
+    }
+  ],
+  "elapsed_seconds": 458.70013939999626,
+  "support_enclosure": {
+    "constructed_components": "The global axial/radial cutoff localizes the mean; the compact wave and acceleration bases use the frozen rectangular bump; the collar correction is supported only on the three BOXES.",
+    "fixed_cylinder_includes_reference_and_endpoint": true,
+    "fd_stencils_cross_support_boundary": true,
+    "exterior_zero_claim": "Pointwise zero exterior follows from these compact support factors for the constructed field on the registered time slab; the probe checks are numerical evidence, not a continuum theorem."
+  }
+}
