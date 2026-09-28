@@ -1,0 +1,714 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "constraints_maintained": false,
+  "scope": "Weighted pressure-only projection of the frozen scale-generator momentum defect. Velocity, generator residual, cones, full-domain constraints, PDE, forcing, and recursive-scale acceptance are outside this diagnostic.",
+  "source": "scale_generator_pressure_projection.py",
+  "source_sha256": "2c2ac7d5feaf295901022d665fc9776c20374c19fbb99203bb625bfd15623179",
+  "sources": {
+    "script": {
+      "path": "scale_generator_pressure_projection.py",
+      "sha256": "2c2ac7d5feaf295901022d665fc9776c20374c19fbb99203bb625bfd15623179"
+    },
+    "generator_report": {
+      "path": "scale_generator_momentum_defect.json",
+      "sha256": "b699fd5fdabf5718b790c00cedfe0825a5db2c905f9440866a7e738114c5661e"
+    },
+    "generator_cache": {
+      "path": "scale_generator_momentum_defect.npz",
+      "sha256": "0fb7b970e7d6f7845b281a330472ee57d489d7533aeeb3a4bc475b26389abdc3"
+    },
+    "generator_script": {
+      "path": "scale_generator_momentum_defect.py",
+      "sha256": "e4cc2699215c4ef806cfcadd386ca7337f0e99c4dfd379600ce18b40de8f3999"
+    },
+    "drift_report": {
+      "path": "localized_drift_1800_fit.json",
+      "sha256": "47521663020188d3ab89360816aba46ae111f0663a1d962225a7b0a128f1821a"
+    },
+    "drift_source": {
+      "path": "localized_drift_1800_fit.py",
+      "sha256": "e2c7bc28bd0434e62a69e03a19b0459a581b8d4a8a48df3846ca33717d8bf0b4"
+    },
+    "local_basis_source": {
+      "path": "localized_residual_enrichment.py",
+      "sha256": "a0505136c71e56b65741d5d89515ddcebb744be7b2a44ba5d6e4a37fb6a7c08a"
+    }
+  },
+  "inputs": {
+    "point_count": 18720,
+    "physical_volume": 2.1361344835903807e-08,
+    "grid_array_sha256": "5aac1d4eb243bb62c7aeaccd716811c209f2f08984a3949d1a746c2c1b67d31d",
+    "generator_residual_array_sha256": "1a106d1c35155d0a1253210d4d861d462a46d2e08c68e8ba81bd1773b0cc799b",
+    "patch_count": 2,
+    "pressure_columns_per_patch": 45,
+    "pressure_column_count": 90,
+    "degree": 2,
+    "modes": [
+      0,
+      1,
+      2
+    ],
+    "first_patch_center": [
+      0.00094,
+      -5.49e-05
+    ],
+    "first_patch_widths": [
+      0.00025,
+      0.0002
+    ],
+    "second_patch_center": [
+      0.001180209079,
+      1.4192077977e-05
+    ],
+    "second_patch_widths": [
+      0.0003,
+      0.00025
+    ],
+    "carrier": [
+      -871.4212739359624,
+      -616.1878920703391
+    ],
+    "weighted_least_squares": true,
+    "column_normalization": "weighted L2 norm",
+    "svd_relative_cutoff": 1e-12,
+    "generator_report_status": "completed"
+  },
+  "pressure_layout": {
+    "per_patch": [
+      {
+        "patch_local_mode": 0,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 0
+      },
+      {
+        "patch_local_mode": 0,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 1
+      },
+      {
+        "patch_local_mode": 0,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 2
+      },
+      {
+        "patch_local_mode": 0,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 3
+      },
+      {
+        "patch_local_mode": 0,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 4
+      },
+      {
+        "patch_local_mode": 0,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 5
+      },
+      {
+        "patch_local_mode": 0,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 6
+      },
+      {
+        "patch_local_mode": 0,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 7
+      },
+      {
+        "patch_local_mode": 0,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 8
+      },
+      {
+        "patch_local_mode": 1,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 0
+      },
+      {
+        "patch_local_mode": 1,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 0
+      },
+      {
+        "patch_local_mode": 1,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 1
+      },
+      {
+        "patch_local_mode": 1,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 1
+      },
+      {
+        "patch_local_mode": 1,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 2
+      },
+      {
+        "patch_local_mode": 1,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 2
+      },
+      {
+        "patch_local_mode": 1,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 3
+      },
+      {
+        "patch_local_mode": 1,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 3
+      },
+      {
+        "patch_local_mode": 1,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 4
+      },
+      {
+        "patch_local_mode": 1,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 4
+      },
+      {
+        "patch_local_mode": 1,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 5
+      },
+      {
+        "patch_local_mode": 1,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 5
+      },
+      {
+        "patch_local_mode": 1,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 6
+      },
+      {
+        "patch_local_mode": 1,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 6
+      },
+      {
+        "patch_local_mode": 1,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 7
+      },
+      {
+        "patch_local_mode": 1,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 7
+      },
+      {
+        "patch_local_mode": 1,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 8
+      },
+      {
+        "patch_local_mode": 1,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 8
+      },
+      {
+        "patch_local_mode": 2,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 0
+      },
+      {
+        "patch_local_mode": 2,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 0
+      },
+      {
+        "patch_local_mode": 2,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 1
+      },
+      {
+        "patch_local_mode": 2,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 1
+      },
+      {
+        "patch_local_mode": 2,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 2
+      },
+      {
+        "patch_local_mode": 2,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 2
+      },
+      {
+        "patch_local_mode": 2,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 3
+      },
+      {
+        "patch_local_mode": 2,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 3
+      },
+      {
+        "patch_local_mode": 2,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 4
+      },
+      {
+        "patch_local_mode": 2,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 4
+      },
+      {
+        "patch_local_mode": 2,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 5
+      },
+      {
+        "patch_local_mode": 2,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 5
+      },
+      {
+        "patch_local_mode": 2,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 6
+      },
+      {
+        "patch_local_mode": 2,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 6
+      },
+      {
+        "patch_local_mode": 2,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 7
+      },
+      {
+        "patch_local_mode": 2,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 7
+      },
+      {
+        "patch_local_mode": 2,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 8
+      },
+      {
+        "patch_local_mode": 2,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 8
+      }
+    ],
+    "joint_order": "first patch 45 pressure columns, then second patch 45 pressure columns",
+    "velocity_columns_changed": false,
+    "generator_values_changed": false
+  },
+  "before": {
+    "point_count": 18720,
+    "volume_L2": 2929395.031830593,
+    "volume_RMS": 20043042401.327385,
+    "max_norm": 266873978669.81693,
+    "max_point": [
+      0.000920575756172346,
+      -4.9389037852791916e-05,
+      -2.036013852023506e-05
+    ],
+    "max_index": 8951,
+    "max_vector": [
+      105953704201.24655,
+      244930239404.72278,
+      -2170456688.771034
+    ],
+    "physical_volume": 2.1361344835903807e-08
+  },
+  "after": {
+    "point_count": 18720,
+    "volume_L2": 2927449.159218038,
+    "volume_RMS": 20029728660.14286,
+    "max_norm": 265177169197.8754,
+    "max_point": [
+      0.000920575756172346,
+      -4.9389037852791916e-05,
+      -2.036013852023506e-05
+    ],
+    "max_index": 8951,
+    "max_vector": [
+      101574635281.44748,
+      244952080968.15237,
+      -50602482.9493947
+    ],
+    "physical_volume": 2.1361344835903807e-08
+  },
+  "change": {
+    "volume_L2": -1945.8726125550456,
+    "volume_L2_relative": -0.0006642574973369366,
+    "max_norm": -1696809471.9415283,
+    "max_norm_relative": -0.006358092611347706
+  },
+  "fit": {
+    "design_shape": [
+      56160,
+      90
+    ],
+    "weighted_design_shape": [
+      56160,
+      90
+    ],
+    "normalized_singular_values": [
+      1.770773688745406,
+      1.768355461579359,
+      1.7683554615793562,
+      1.7612654172035194,
+      1.7612654172035187,
+      1.361307150860072,
+      1.3613071508600711,
+      1.3589222528296527,
+      1.3589222528296518,
+      1.3587296238321764,
+      1.31699361856755,
+      1.316993618567549,
+      1.3046419656635615,
+      1.3046419656635606,
+      1.2993123375040971,
+      1.2216935198775614,
+      1.2212302639267083,
+      1.2212302639267079,
+      1.220554936465081,
+      1.2205549364650803,
+      1.1300881596774603,
+      1.1300881596774603,
+      1.1053326941554917,
+      1.1053326941554913,
+      1.0892148478733779,
+      1.0455344343203041,
+      1.0331066910455602,
+      1.0331066910455597,
+      1.0328097884623728,
+      1.0328097884623721,
+      0.9962399187956574,
+      0.996239918795657,
+      0.995242844359679,
+      0.9875698885197958,
+      0.9830034075611543,
+      0.9830034075611538,
+      0.9826391655102803,
+      0.9826391655102802,
+      0.9784297903122324,
+      0.9784297903122314,
+      0.953890844181488,
+      0.953890844181488,
+      0.9518853758742347,
+      0.9518853758742345,
+      0.951361852305862,
+      0.9012868399360894,
+      0.9011439985654415,
+      0.9011439985654411,
+      0.8993147780751283,
+      0.899314778075128,
+      0.8751844052430019,
+      0.8751844052430017,
+      0.874147701126714,
+      0.8723162961422243,
+      0.8723162961422238,
+      0.8285617229019508,
+      0.8285617229019505,
+      0.8279315943551551,
+      0.8279315943551547,
+      0.8258395294666494,
+      0.7941103061837304,
+      0.7888848855367824,
+      0.788884885536781,
+      0.7815490616405558,
+      0.7815490616405546,
+      0.7274554197608467,
+      0.7263596090811312,
+      0.7263596090811311,
+      0.7217920385374074,
+      0.7217920385374069,
+      0.6943370369050031,
+      0.6925946309163331,
+      0.6925946309163329,
+      0.6876567850246069,
+      0.6876567850246063,
+      0.5482481942361573,
+      0.5477465502455127,
+      0.5477465502455124,
+      0.5473048862695422,
+      0.5473048862695419,
+      0.5373755148344657,
+      0.5373755148344654,
+      0.5363504335240148,
+      0.5363273584899717,
+      0.5363273584899712,
+      0.44545041573707095,
+      0.4444979421125376,
+      0.4444979421125375,
+      0.4418146508814609,
+      0.4418146508814606
+    ],
+    "normalized_rank": 90,
+    "column_scale_min": 0.0009623094501816262,
+    "column_scale_max": 0.16027902552637932,
+    "coefficient_norm": 54058999.18670166,
+    "coefficients": [
+      -186121.90547417084,
+      1102484.2709238988,
+      -2511788.195671117,
+      -291593.33571034815,
+      -2577464.5005822256,
+      4086145.2133951522,
+      -251317.9687270903,
+      3704756.703855791,
+      -31061747.393998954,
+      24593.131912347813,
+      27319.747993883382,
+      -345227.7821385245,
+      82209.38922986324,
+      1361114.4117484833,
+      -52451.0269162309,
+      -48690.759539432554,
+      7742.859319453394,
+      247984.95884185546,
+      90724.39234756732,
+      167910.26017629163,
+      -1329330.8467057832,
+      -18394.50040301727,
+      47227.88185721158,
+      -678390.9648875504,
+      563163.6795615917,
+      12906186.791436953,
+      580544.2424122859,
+      32224.30231167222,
+      279510.13451533165,
+      8150.537416196802,
+      -1220214.9987524785,
+      1121862.389467531,
+      1957267.8186603906,
+      -633714.6605648395,
+      -81796.98027235812,
+      -2184721.355654129,
+      1326592.2747074012,
+      8082003.430371883,
+      3331851.917287673,
+      205611.3539102286,
+      172770.79338427016,
+      2646980.7940678406,
+      -3811163.7437042147,
+      -2197649.949722663,
+      37508724.96050996,
+      -107405.13141333946,
+      643482.321899255,
+      1157469.8451886964,
+      -30422.9996123692,
+      -449402.5446918074,
+      -2851344.2342187804,
+      409336.851849293,
+      6863490.8685955005,
+      1966699.8360307906,
+      9700.933924020046,
+      4657.938801242102,
+      -27965.46317899182,
+      -6803.646516643213,
+      107572.18119588659,
+      -79498.90150376,
+      84171.40417519171,
+      -26847.02736077509,
+      239644.3869317697,
+      -70251.22046503118,
+      -1394844.6900481386,
+      120673.89589961695,
+      -360267.52516692056,
+      111549.53989376512,
+      -591456.3076087721,
+      182374.4081241479,
+      4306006.94514974,
+      -869129.8409030131,
+      -47758.43438504138,
+      11657.29353912038,
+      -303086.06045830745,
+      -538222.9065958185,
+      1328591.3232106972,
+      -654114.6711438941,
+      292173.710649335,
+      73473.56868747318,
+      490297.9983875537,
+      918880.9375075711,
+      -4129596.319728445,
+      2608334.5627265233,
+      -878698.3425816586,
+      -1305487.1623408885,
+      -1263664.7223049805,
+      -5122625.21950821,
+      6847719.411819606,
+      5472592.869987869
+    ],
+    "first_patch_coefficients": [
+      -186121.90547417084,
+      1102484.2709238988,
+      -2511788.195671117,
+      -291593.33571034815,
+      -2577464.5005822256,
+      4086145.2133951522,
+      -251317.9687270903,
+      3704756.703855791,
+      -31061747.393998954,
+      24593.131912347813,
+      27319.747993883382,
+      -345227.7821385245,
+      82209.38922986324,
+      1361114.4117484833,
+      -52451.0269162309,
+      -48690.759539432554,
+      7742.859319453394,
+      247984.95884185546,
+      90724.39234756732,
+      167910.26017629163,
+      -1329330.8467057832,
+      -18394.50040301727,
+      47227.88185721158,
+      -678390.9648875504,
+      563163.6795615917,
+      12906186.791436953,
+      580544.2424122859,
+      32224.30231167222,
+      279510.13451533165,
+      8150.537416196802,
+      -1220214.9987524785,
+      1121862.389467531,
+      1957267.8186603906,
+      -633714.6605648395,
+      -81796.98027235812,
+      -2184721.355654129,
+      1326592.2747074012,
+      8082003.430371883,
+      3331851.917287673,
+      205611.3539102286,
+      172770.79338427016,
+      2646980.7940678406,
+      -3811163.7437042147,
+      -2197649.949722663,
+      37508724.96050996
+    ],
+    "second_patch_coefficients": [
+      -107405.13141333946,
+      643482.321899255,
+      1157469.8451886964,
+      -30422.9996123692,
+      -449402.5446918074,
+      -2851344.2342187804,
+      409336.851849293,
+      6863490.8685955005,
+      1966699.8360307906,
+      9700.933924020046,
+      4657.938801242102,
+      -27965.46317899182,
+      -6803.646516643213,
+      107572.18119588659,
+      -79498.90150376,
+      84171.40417519171,
+      -26847.02736077509,
+      239644.3869317697,
+      -70251.22046503118,
+      -1394844.6900481386,
+      120673.89589961695,
+      -360267.52516692056,
+      111549.53989376512,
+      -591456.3076087721,
+      182374.4081241479,
+      4306006.94514974,
+      -869129.8409030131,
+      -47758.43438504138,
+      11657.29353912038,
+      -303086.06045830745,
+      -538222.9065958185,
+      1328591.3232106972,
+      -654114.6711438941,
+      292173.710649335,
+      73473.56868747318,
+      490297.9983875537,
+      918880.9375075711,
+      -4129596.319728445,
+      2608334.5627265233,
+      -878698.3425816586,
+      -1305487.1623408885,
+      -1263664.7223049805,
+      -5122625.21950821,
+      6847719.411819606,
+      5472592.869987869
+    ],
+    "correction_metric": {
+      "point_count": 18720,
+      "volume_L2": 106755.1999078539,
+      "volume_RMS": 730423508.9721541,
+      "max_norm": 12773223795.712536,
+      "max_point": [
+        -0.0007113150376583039,
+        -0.00036132378125674656,
+        -0.00012441355044147482
+      ],
+      "max_index": 7350,
+      "max_vector": [
+        11375580258.199062,
+        5739578300.312731,
+        899255725.1460478
+      ],
+      "physical_volume": 2.1361344835903807e-08
+    },
+    "weighted_residual_orthogonality": {
+      "normalized_design_transpose_weighted_residual_l2": 5.337438327945683e-10,
+      "relative_to_weighted_rhs": 1.8220275073690873e-16,
+      "relative_to_design_norm_times_residual": 1.9218622389896107e-17
+    }
+  },
+  "elapsed_seconds": 0.5868569999875035
+}

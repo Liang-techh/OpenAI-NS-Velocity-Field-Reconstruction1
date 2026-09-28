@@ -69,3 +69,40 @@ Anisotropic transport is not asserted to be a symmetry
 of the fixed-viscosity NS equation. The remaining task is to construct
 pressure and evolution corrections and measure the full dynamic residual
 between successive mapped fields. No recursion step is accepted here.
+
+## Uniform energy bound for the prescribed velocity map
+
+The kinematic map has a stronger energy property than finiteness at each
+fixed scale. Write the reference in cylindrical components, with m(r,z)
+the angular mean swirl, and split
+
+```
+H = ur*e_r + (utheta-m)*e_theta
+Z = m*e_theta + uz*e_z
+T_s u(x) = s^(-1/2) H(S_s^-1 x)
+           + s^(-1/2-h) Z(S_s^-1 x).
+```
+
+For a true angular mean, H and Z are orthogonal after integration over
+the whole angle. With E_H=integral |H|^2 and E_Z=integral |Z|^2 over R^3,
+the change of variables det(S_s)=s^(3/2-h) gives exactly
+
+```
+||T_s u||_L2^2 = s^(1/2-h)*E_H + s^(1/2-3h)*E_Z.
+```
+
+Thus for the current h=0.005 and 0<s<=1, this squared norm is bounded
+by E_H+E_Z and tends to zero as s tends to zero. Kinetic energy is half
+this expression. The reference is smooth and compactly supported, so both
+constants are finite. The implemented five-angle projection agrees with
+the true angular mean for the current resolved cylindrical modes |m|<=2.
+For a more general smooth reference with a discrete mean, the cross term
+need not vanish, but the bound
+`||T_s u||^2 <= 2*s^(1/2-h)*E_H + 2*s^(1/2-3h)*E_Z` still applies whenever
+these two reference norms are finite.
+
+This is an analytic energy bound for the prescribed velocity family only.
+It does not establish a smooth force, pressure balance, or critical-time
+extension of an NS solution. Future dynamically fitted corrections must
+satisfy their own uniform energy bounds; this estimate cannot be inherited
+automatically by an independently optimized sequence of reference fields.

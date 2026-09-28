@@ -1,0 +1,293 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "scope": "Reference-time actual NS momentum diagnostic on the independent 18,720-point grid. The latest localized drift field is evaluated directly. The fitted physical-time derivative is replaced by the solenoidal scale generator while pressure, pressure gradient, convection, and viscosity remain unchanged. No forcing, PDE, trajectory, or recursive-scale acceptance is claimed.",
+  "sources": {
+    "localized_drift_report": {
+      "path": "localized_drift_1800_fit.json",
+      "sha256": "47521663020188d3ab89360816aba46ae111f0663a1d962225a7b0a128f1821a"
+    },
+    "localized_drift_source": {
+      "path": "localized_drift_1800_fit.py",
+      "sha256": "e2c7bc28bd0434e62a69e03a19b0459a581b8d4a8a48df3846ca33717d8bf0b4"
+    },
+    "grid_report": {
+      "path": "full_wave_dense_tangent.json",
+      "sha256": "c9482bd0ef62a22de36d3cd18c0bb54ffbd9f6bf8549ed320fb94fa7d3a13348"
+    },
+    "grid_array_sha256": "5aac1d4eb243bb62c7aeaccd716811c209f2f08984a3949d1a746c2c1b67d31d",
+    "frozen_geometry": {
+      "path": "full_wave_frozen_cache.json",
+      "sha256": "c03b9efa4bd65db79ee420df66808a34e7f634174851b47cca81f742b1435574"
+    },
+    "generator": {
+      "path": "scale_transport_generator.py",
+      "sha256": "a775cb68efe801cfd8f679704ae9c40b9c4c959b76d996ba1963262eb849ba76"
+    },
+    "cache": {
+      "path": "scale_generator_momentum_defect.npz"
+    },
+    "field_replay": {
+      "path": "enriched_shape_replay.py",
+      "sha256": "936775b70890306e96090dc0719c3e1bad1bd34350543e4f9b7095ae4ca81102"
+    },
+    "mean_report": {
+      "path": "broad_meridional_constrained.json",
+      "sha256": "44d63c87eecdcfe796a25c829e90f18df0f0a722a8fc64b56a71d99ee4b0e34d"
+    },
+    "candidate_report": {
+      "path": "enriched_mean_endpoint_tangent.json",
+      "sha256": "ea78f641a3b4ca760e373716186c6eb93b27494f0c8982708c953468582b40c5"
+    }
+  },
+  "inputs": {
+    "point_count": 18720,
+    "physical_volume": 2.1361344835903807e-08,
+    "tau0": 0.00024408986266228504,
+    "k0": 11.0003,
+    "physical_time": "t=-tau",
+    "viscosity": 0.01,
+    "forcing": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "hspace": 7.811687760373635e-07,
+    "htime": 2.4408986266228506e-08,
+    "spatial_stencil": "five-point fourth-order Cartesian derivative",
+    "time_stencil": "-(f(tau-2h)-8f(tau-h)+8f(tau+h)-f(tau+2h))/(12h)",
+    "chunk_size": 768,
+    "mean_angles": 5,
+    "cached_residual_used": false,
+    "similarity_exponent_h": 0.005
+  },
+  "field_provenance": {
+    "latest_drift_selected_reason": "target_cap_feasible_lower_L2_than_first_patch",
+    "base_candidate": "enriched_mean_endpoint_tangent.json",
+    "patches": [
+      {
+        "patch": 1,
+        "center": [
+          0.00094,
+          -5.49e-05
+        ],
+        "widths": [
+          0.00025,
+          0.0002
+        ],
+        "control_count": 180
+      },
+      {
+        "patch": 2,
+        "center": [
+          0.001180209079,
+          1.4192077977e-05
+        ],
+        "widths": [
+          0.0003,
+          0.00025
+        ],
+        "control_count": 180
+      }
+    ],
+    "loaded_patch_metadata": [
+      {
+        "patch": 1,
+        "center": [
+          0.00094,
+          -5.49e-05
+        ],
+        "widths": [
+          0.00025,
+          0.0002
+        ],
+        "control_count": 180
+      },
+      {
+        "patch": 2,
+        "center": [
+          0.001180209079,
+          1.4192077977e-05
+        ],
+        "widths": [
+          0.0003,
+          0.00025
+        ],
+        "control_count": 180
+      }
+    ]
+  },
+  "cache": {
+    "path": "scale_generator_momentum_defect.npz",
+    "sha256": "0fb7b970e7d6f7845b281a330472ee57d489d7533aeeb3a4bc475b26389abdc3",
+    "keys": [
+      "points",
+      "weights",
+      "velocity",
+      "gradient",
+      "pressure_gradient",
+      "laplacian",
+      "fitted_ut",
+      "generator_ut",
+      "delta_ut",
+      "original_residual",
+      "generator_residual"
+    ],
+    "array_shapes": {
+      "points": [
+        18720,
+        3
+      ],
+      "weights": [
+        18720
+      ],
+      "velocity": [
+        18720,
+        3
+      ],
+      "gradient": [
+        18720,
+        3,
+        3
+      ],
+      "pressure_gradient": [
+        18720,
+        3
+      ],
+      "laplacian": [
+        18720,
+        3
+      ],
+      "fitted_ut": [
+        18720,
+        3
+      ],
+      "generator_ut": [
+        18720,
+        3
+      ],
+      "delta_ut": [
+        18720,
+        3
+      ],
+      "original_residual": [
+        18720,
+        3
+      ],
+      "generator_residual": [
+        18720,
+        3
+      ]
+    }
+  },
+  "fitted_ut": {
+    "point_count": 18720,
+    "volume_L2": 2685642.676155453,
+    "volume_RMS": 18375278666.107533,
+    "max_norm": 257499333747.8213,
+    "max_point": [
+      0.0008219365098797166,
+      0.0004175157166371846,
+      -2.036013852023506e-05
+    ],
+    "max_index": 8940,
+    "max_vector": [
+      47942794515.84103,
+      -252975738619.73004,
+      -3266650331.108286
+    ],
+    "physical_volume": 2.1361344835903807e-08
+  },
+  "generator_ut": {
+    "point_count": 18720,
+    "volume_L2": 1861.8395058507926,
+    "volume_RMS": 12738783.180401018,
+    "max_norm": 60951057.695208915,
+    "max_point": [
+      -0.0007392505493511363,
+      -0.00037551406851599753,
+      -0.00012441355044147482
+    ],
+    "max_index": 7362,
+    "max_vector": [
+      9144454.698764777,
+      58592548.353214145,
+      14082743.337261654
+    ],
+    "physical_volume": 2.1361344835903807e-08
+  },
+  "delta_ut_generator_minus_fitted": {
+    "point_count": 18720,
+    "volume_L2": 2685616.6899310853,
+    "volume_RMS": 18375100867.281773,
+    "max_norm": 257503409625.52127,
+    "max_point": [
+      0.0008219365098797166,
+      0.0004175157166371846,
+      -2.036013852023506e-05
+    ],
+    "max_index": 8940,
+    "max_vector": [
+      -47943410660.48942,
+      252979647680.85846,
+      3276156632.000135
+    ],
+    "physical_volume": 2.1361344835903807e-08
+  },
+  "residual_original_fitted_ut": {
+    "point_count": 18720,
+    "volume_L2": 1687324.5737836675,
+    "volume_RMS": 11544744771.41923,
+    "max_norm": 89121783409.47652,
+    "max_point": [
+      0.0008709071185508786,
+      -4.6724307430406126e-05,
+      -0.00012441355044147482
+    ],
+    "max_index": 7379,
+    "max_vector": [
+      37788917662.09871,
+      80713506398.87721,
+      140942581.12692642
+    ],
+    "physical_volume": 2.1361344835903807e-08
+  },
+  "residual_replaced_generator_ut": {
+    "point_count": 18720,
+    "volume_L2": 2929395.031830593,
+    "volume_RMS": 20043042401.327385,
+    "max_norm": 266873978669.81693,
+    "max_point": [
+      0.000920575756172346,
+      -4.9389037852791916e-05,
+      -2.036013852023506e-05
+    ],
+    "max_index": 8951,
+    "max_vector": [
+      105953704201.24655,
+      244930239404.72278,
+      -2170456688.771034
+    ],
+    "physical_volume": 2.1361344835903807e-08
+  },
+  "comparison": {
+    "residual_volume_L2_change": 1242070.4580469255,
+    "residual_volume_L2_relative_change": 0.7361182770317264,
+    "residual_max_change": 177752195260.3404,
+    "interpretation": "Only u_t was replaced. A positive L2 change means the scale-compatible generator worsens this reference-time residual for the frozen pressure and spatial field; a negative change means improvement."
+  },
+  "pressure_and_forcing": {
+    "pressure_source": "field.fields(..., tau0) from latest reconstructed candidate, differentiated spatially by the same five-point stencil",
+    "pressure_replaced": false,
+    "forcing": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "viscous_term": "-nu*laplacian(u), unchanged between residuals",
+    "convection": "(u dot grad)u, unchanged between residuals"
+  },
+  "elapsed_seconds": 133.1708436999761
+}

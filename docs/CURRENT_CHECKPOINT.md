@@ -2,6 +2,17 @@
 
 ## Latest continuation checkpoint - 2026-09-27
 
+Scale-compatible dynamics now has a direct diagnostic: replacing only the
+fitted time derivative with the solenoidal scale generator increases inner
+momentum L2 from 1.68732e6 to 2.92940e6 (+73.61%), maximum from 8.91218e10
+to 2.66874e11. Pressure-only projection with the existing 90 local pressure
+columns reduces the new L2 by just 0.0664%. Therefore the next correction
+must address the reference velocity, not merely its independently fitted
+time tangent. See [dynamic matching](ST073_SCALE_DYNAMIC_MATCHING.md).
+The prescribed scale map also admits a uniform energy bound tending to
+zero as scale tends to zero; this analytic kinematic bound does not establish
+NS dynamics or carry over automatically to new corrected reference fields.
+
 New profile-aware continuation `localized_drift_1800_fit.json` reaches drift
 1799.999991729 on the fitted interval, about 9.98% below the original parent.
 The assembled refined-grid momentum maximum/L2 are 8.53686e10 / 1.67258e6;

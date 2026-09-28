@@ -22,3 +22,4 @@ dist/
 /experiments/root_st073/dual_grid_peak_cache.npz
 /experiments/root_st073/acceleration_momentum_cache.npz
 /experiments/root_st073/localized_drift_constraint.npz
+/experiments/root_st073/scale_generator_momentum_defect.npz
