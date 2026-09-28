@@ -1,0 +1,167 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "trajectory_validated": false,
+  "scale_recursion_established": false,
+  "constraints_maintained": false,
+  "scope": "Independent actual Cartesian finite-difference momentum replay on the 18,720-point new_frozen_cache holdout grid. Both the balanced parent and the selected constrained acceleration candidate are evaluated directly; no cached design or predicted residual supplies the metrics. This is a spatial holdout check only, with no PDE, trajectory, or recursion acceptance.",
+  "sources": {
+    "holdout_grid_report": {
+      "path": "full_wave_dense_tangent.json",
+      "sha256": "c9482bd0ef62a22de36d3cd18c0bb54ffbd9f6bf8549ed320fb94fa7d3a13348"
+    },
+    "balanced_parent": {
+      "path": "balanced_refined_tangent.json",
+      "sha256": "8396633295fb37307aa3d946852e5a4479e5f46e78474942997bc3b5ea601909"
+    },
+    "frozen_geometry": {
+      "path": "full_wave_frozen_cache.json",
+      "sha256": "c03b9efa4bd65db79ee420df66808a34e7f634174851b47cca81f742b1435574"
+    },
+    "selected_acceleration": {
+      "path": "shape_constrained_acceleration.json",
+      "sha256": "1aea761c97d40740f7c7e0cc4e3279b46a6df564048904c89dd4a2485e657eb5"
+    },
+    "momentum_helper": {
+      "path": "endpoint_acceleration_projection.py",
+      "sha256": "cb1e2cd29c8331ab05e27e6816d31d03c39c9d0ec9f8814d1e87445935b32a8e"
+    }
+  },
+  "grid": {
+    "origin": "full_wave_dense_tangent.json:new_frozen_cache",
+    "point_count": 18720,
+    "point_shape": [
+      18720,
+      3
+    ],
+    "weight_shape": [
+      18720
+    ],
+    "weighting": "physical cylindrical volume weights repeated over angles",
+    "array_sha256": "5aac1d4eb243bb62c7aeaccd716811c209f2f08984a3949d1a746c2c1b67d31d",
+    "cached_residual_is_reference_only": true,
+    "cached_reference_metric": {
+      "point_count": 18720,
+      "momentum_max": 904962920409.8473,
+      "momentum_volume_L2": 9915464.371065022,
+      "momentum_volume_RMS": 67842018798.644615,
+      "physical_volume": 2.1361344835903807e-08
+    }
+  },
+  "inputs": {
+    "delta_k": 1e-06,
+    "k0": 11.0003,
+    "tau0": 0.00024408986266228504,
+    "tau1": 0.0002440896934721437,
+    "physical_time_increment": 1.6919014133491908e-10,
+    "hspace": 7.811687760373635e-07,
+    "htime": 2.4408986266228506e-08,
+    "viscosity": 0.01,
+    "base_control_count": 264,
+    "acceleration_control_count": 324,
+    "center": [
+      0.0016227128870842616,
+      -2.036013852023506e-05
+    ],
+    "widths": [
+      0.0011600670852347063,
+      0.00045150643182473267
+    ],
+    "carrier": [
+      -871.4212739359624,
+      -616.1878920703391
+    ],
+    "replay_method": "affine_momentum.jets five-point Cartesian FD then affine_momentum.momentum",
+    "cached_design_used_for_metrics": false
+  },
+  "candidate_provenance": {
+    "balanced_parent_selected_reason": "feasible_lower_L2",
+    "acceleration_selected_reason": "feasible_lower_L2",
+    "acceleration_reference_state_unchanged": true,
+    "acceleration_linearized_gates_only": true
+  },
+  "mean_loader": {
+    "status": "completed",
+    "grouped_backend_replacements": 1
+  },
+  "balanced_parent": {
+    "method": "actual MixedAffineField plus affine_momentum.jets five-point Cartesian FD",
+    "metric": {
+      "point_count": 18720,
+      "momentum_max": 120606027578.94368,
+      "momentum_volume_L2": 1900309.363147574,
+      "momentum_volume_RMS": 13001995540.835238,
+      "physical_volume": 2.1361344835903807e-08
+    },
+    "max_residual": {
+      "index": 8951,
+      "point": [
+        0.000920575756172346,
+        -4.9389037852791916e-05,
+        -2.036013852023506e-05
+      ],
+      "weight": 2.8365012412420623e-12,
+      "vector": [
+        89312020577.70325,
+        80618459130.69397,
+        -8357087775.861811
+      ],
+      "norm": 120606027578.94368
+    }
+  },
+  "corrected_acceleration": {
+    "method": "actual AccelerationCorrectionField plus affine_momentum.jets five-point Cartesian FD",
+    "metric": {
+      "point_count": 18720,
+      "momentum_max": 121160121207.37468,
+      "momentum_volume_L2": 1875280.3427248287,
+      "momentum_volume_RMS": 12830745944.19641,
+      "physical_volume": 2.1361344835903807e-08
+    },
+    "max_residual": {
+      "index": 8951,
+      "point": [
+        0.000920575756172346,
+        -4.9389037852791916e-05,
+        -2.036013852023506e-05
+      ],
+      "weight": 2.8365012412420623e-12,
+      "vector": [
+        90729678085.09326,
+        79899270441.27017,
+        -8000441769.917656
+      ],
+      "norm": 121160121207.37468
+    },
+    "difference_from_balanced_parent": {
+      "point_count": 18720,
+      "momentum_max": 4101761038.61067,
+      "momentum_volume_L2": 197390.24435148915,
+      "momentum_volume_RMS": 1350552245.1415367,
+      "physical_volume": 2.1361344835903807e-08
+    },
+    "difference_max_detail": {
+      "index": 10564,
+      "point": [
+        -0.00101998575807477,
+        0.0006641845250443228,
+        8.369327340100472e-05
+      ],
+      "weight": 3.1276678010014097e-12,
+      "vector": [
+        -260029185.01999283,
+        382797238.86857104,
+        -4075572930.854866
+      ],
+      "norm": 4101761038.61067
+    },
+    "quadratic_remainder_not_inferred": true
+  },
+  "comparison": {
+    "l2_improvement": 25029.020422745263,
+    "l2_relative_change": -0.013171024101722306,
+    "peak_change": 554093628.4309998
+  },
+  "elapsed_seconds": 178.11849399999483
+}

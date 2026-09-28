@@ -124,6 +124,15 @@ or a complete trajectory. The maximum remains slightly above the original
 parent maximum under the permitted 1e-6 cap allowance. Full momentum is
 still many orders of magnitude above the requested 1e-3 tolerance.
 
+The independent actual-field check in `constrained_acceleration_holdout.py`
+is complete on 18,720 points at the short endpoint. Balanced-parent L2 is
+1900309.3631 and corrected L2 is 1875280.3427 (1.3171% reduction), but the
+maximum increases from 1.206060275789e11 to 1.211601212074e11. Consequently
+this acceleration candidate is not adopted as a joint maximum/L2
+improvement. The fitting-grid cap does not generalize to this holdout grid.
+The direct Cartesian finite-difference results, source hashes and worst
+point locations are retained in `constrained_acceleration_holdout.json`.
+
 The full-support diagnostic attributes approximately 98.5% of squared
 momentum L2 to the original wave patch. This supports prioritizing its
 dynamics over further exterior-only fits. Residual magnitudes remain far
