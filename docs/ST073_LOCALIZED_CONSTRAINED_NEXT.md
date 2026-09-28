@@ -127,8 +127,12 @@ passes the original unpatched-parent drift cap: 1999.619777778 versus
 9.99961e-10 (all 81 pass), and minimum endpoint shape margin is 1.15257e-5.
 This trades some momentum reduction against restoring the parent's drift
 level; it does not establish a stationary profile or recursive closure.
-Independent actual-field replay is required before adopting this stricter
-candidate over the replayed candidate below.
+Independent actual-field replay has now completed on 18,720 points. At
+reference, maximum/L2 are 8.21304315778e10 / 1654080.359925; at k0+1e-6
+they are 8.11334954910e10 / 1654655.442443. Both metrics improve over the
+single-patch baseline at both tested times. They are worse than the looser
+two-patch drift-cap candidate below, reflecting the price of restoring
+parent-level profile drift. Neither candidate satisfies the PDE target.
 
 Direct global-field profile evaluation in
 `localized_parent_drift_fit_global_profile.json` gives 1999.619777783 at

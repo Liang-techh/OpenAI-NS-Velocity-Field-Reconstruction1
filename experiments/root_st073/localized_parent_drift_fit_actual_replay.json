@@ -1,0 +1,49 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "source": "localized_parent_drift_fit.json",
+  "source_sha256": "c8899c2c76fb23b48c82cac18222ab716a2b3e9f3d0af76f7717e4508d41b525",
+  "baseline_sha256": "aaf2e9d79cfd561247d94240e49fe09ad2983d6e1d06d7cd1230e01333a48d78",
+  "grid_sha256": "c9482bd0ef62a22de36d3cd18c0bb54ffbd9f6bf8549ed320fb94fa7d3a13348",
+  "point_count": 18720,
+  "rows": [
+    {
+      "delta_k": 0.0,
+      "tau": 0.00024408986266228504,
+      "parent": {
+        "maximum": 118244028332.40237,
+        "volume_L2": 1928935.1626105846
+      },
+      "first_patch": {
+        "maximum": 85448138868.59697,
+        "volume_L2": 1811030.4759562362
+      },
+      "two_patch": {
+        "maximum": 82130431577.7962,
+        "volume_L2": 1654080.3599249371
+      },
+      "both_metrics_improve_vs_first": true
+    },
+    {
+      "delta_k": 1e-06,
+      "tau": 0.00024408969347214357,
+      "parent": {
+        "maximum": 118178068025.26837,
+        "volume_L2": 1929275.504932681
+      },
+      "first_patch": {
+        "maximum": 85489564777.57597,
+        "volume_L2": 1811462.6670680593
+      },
+      "two_patch": {
+        "maximum": 81133495490.98863,
+        "volume_L2": 1654655.4424426847
+      },
+      "both_metrics_improve_vs_first": true
+    }
+  ],
+  "scope": "Actual five-point Cartesian finite differences at two times on independent grid. Baseline metrics reused only after parent/grid/first-fit/timestep hash checks; no full-support or interval certificate.",
+  "elapsed_seconds": 264.07326440000907
+}

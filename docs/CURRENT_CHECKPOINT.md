@@ -2,6 +2,16 @@
 
 ## Latest continuation checkpoint - 2026-09-27
 
+The stricter `localized_parent_drift_fit.json` is now also independently
+replayed: maximum/L2 8.21304e10 / 1.65408e6 at reference and 8.11335e10 /
+1.65466e6 at the short endpoint. Its directly evaluated profile drift is
+1999.619777783, restoring the original parent's level. It trades some
+momentum reduction for this stricter profile cap; retain both candidates
+below as documented alternatives. `global_two_patch_candidate.load(source)`
+can load this stricter source explicitly. A velocity-only solenoidal scale
+map is also available; see [scale transport](ST073_SOLENOIDAL_SCALE_TRANSPORT.md).
+That map is kinematic, with no pressure/time dynamics or NS step accepted.
+
 Latest preferred momentum/shape continuation: the drift-capped two-patch
 candidate in `localized_two_patch_constrained.json`. Independent actual
 18,720-point replay gives maximum/L2 7.49634e10 / 1.63977e6 at reference
