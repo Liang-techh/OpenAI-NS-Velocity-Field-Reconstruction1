@@ -1,0 +1,41 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "source": "scale_reference_trust_nonlinear_fit.json",
+  "source_sha256": "868d171a0875af35d5e1528d4b143a038848756f161592a758a939f514f33ee0",
+  "grid_sha256": "8646a0608e2a3eaacefda90011e78910cf9579af56eb5b6efb92a1cdd6b4ae53",
+  "point_count": 7776,
+  "spatial_fd_step": 7.811687760373635e-07,
+  "scope": "Shape observables of the corrected prescribed scale family.\n\nThe diagnostic cylinder is pushed forward with the scale map. This checks\nkinematic morphology, not NS evolution or a fixed-domain core certificate.\n",
+  "rows": [
+    {
+      "scale": 1,
+      "radial_rms": 0.001136389951574611,
+      "axial_rms": 0.00022765722658612753,
+      "aspect_ratio": 0.20033372019057352,
+      "signed_angular_speed": 673264.8716935336,
+      "sampled_kinetic_energy": 0.024231941824557183,
+      "divergence_max": 0.6448610499501228
+    },
+    {
+      "scale": 0.5,
+      "radial_rms": 0.00080334135532273,
+      "axial_rms": 0.00016157988080645842,
+      "aspect_ratio": 0.20113477257939272,
+      "signed_angular_speed": 1353253.7886150822,
+      "sampled_kinetic_energy": 0.017231367477821787,
+      "divergence_max": 1.2897221073508263
+    },
+    {
+      "scale": 0.25,
+      "radial_rms": 0.0005679001901350561,
+      "axial_rms": 0.00011468161909524569,
+      "aspect_ratio": 0.2019397441440766,
+      "signed_angular_speed": 2720052.398534355,
+      "sampled_kinetic_energy": 0.012253376032925454,
+      "divergence_max": 2.5794441998004913
+    }
+  ]
+}

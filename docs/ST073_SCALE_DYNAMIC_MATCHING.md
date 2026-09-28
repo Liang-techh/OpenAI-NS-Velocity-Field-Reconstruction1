@@ -175,6 +175,47 @@ changed. Independent momentum, moment/cone, shape and interval gates remain
 unverified for this cumulative candidate. Its 5% perturbation budget differs
 from the one-percent alternatives and must be stated when comparing results.
 
+## Repeated velocity-metric trust updates
+
+The explicit command
+
+```
+python experiments/root_st073/scale_reference_nonlinear_fit.py --warm-start trust --solver trust --output experiments/root_st073/scale_reference_trust_nonlinear_fit.json
+```
+
+now produces a separate frozen continuation from the trust-region seed.
+Five optimizer updates reduce L2 from the seed's 2.69257e6 to 2.37502159908e6;
+the final maximum is 1.57304615977e11. Relative to the original
+pressure-projected baseline these are reductions of about 18.87% and 40.68%.
+The cumulative velocity L2 correction is 0.0108195713291, bounded by 5%
+of the original reference norm. Each incremental update respects a 1% bound.
+Exact nonlinear convection is included in the recorded objective.
+
+`--warm-start step --solver scaled-lstsq` preserves the preceding method;
+new report availability no longer silently changes the default warm start.
+The frozen older report is retained. Independent momentum and physical
+gates are not implied by these fit-grid improvements or optimizer steps.
+
+The completed `scale_reference_trust_nonlinear_shape.json` replays this
+five-percent candidate on the pushed-forward 7,776-point cylinder:
+
+| Scale | Radial RMS | Axial/radial aspect | Signed angular speed | Sampled kinetic energy |
+|---|---:|---:|---:|---:|
+| 1 | 0.00113638995 | 0.20033372 | 673264.87 | 0.02423194 |
+| 1/2 | 0.00080334136 | 0.20113477 | 1353253.79 | 0.01723137 |
+| 1/4 | 0.00056790019 | 0.20193974 | 2720052.40 | 0.01225338 |
+
+The kinematic morphology is retained. Absolute sampled finite-difference
+divergence errors range from 0.645 to 2.579, so these numerical Jacobians
+are not small-absolute-divergence certificates. The moving-cylinder and
+non-PDE scope of the preceding shape experiment still applies.
+
+The valid baseline of the initially flawed independent replay is recovered
+in `scale_reference_baseline_recovered.json` from the root's saved tool
+output, with explicit recovery provenance and original grid/pressure hashes.
+Its L2 is 2.93063976034e6 and maximum 2.70437112609e11 on the refined grid.
+It must not be confused with a recovered corrected-case result.
+
 ## Bounded original-wave amplitude fit
 
 `scale_wave_amplitude_fit.py` eliminates the 90 pressure coefficients by

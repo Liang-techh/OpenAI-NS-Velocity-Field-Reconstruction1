@@ -33,6 +33,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 import scale_reference_velocity_step as one_step  # noqa: E402
+import scale_reference_trust_fit as trust_solver  # noqa: E402
 
 
 GENERATOR_REPORT_PATH = ROOT / "scale_generator_momentum_defect.json"
@@ -62,8 +63,8 @@ def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def _save(report: dict[str, Any]) -> None:
-    OUTPUT_PATH.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+def _save(report: dict[str, Any], path: Path = OUTPUT_PATH) -> None:
+    path.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
 
 
 def _metric(values: np.ndarray, weights: np.ndarray, points: np.ndarray) -> dict[str, Any]:
@@ -125,11 +126,15 @@ def _coefficients_from_report(report: dict[str, Any], name: str) -> tuple[tuple[
     return _split_controls(section, name)
 
 
-def _load_seed() -> tuple[Path, dict[str, Any], tuple[tuple[np.ndarray, np.ndarray], tuple[np.ndarray, np.ndarray]]]:
+def _load_seed(warm_start: str) -> tuple[Path, dict[str, Any], tuple[tuple[np.ndarray, np.ndarray], tuple[np.ndarray, np.ndarray]]]:
     # The grouped trust worker may provide a better one-percent warm start.
     # The existing frozen step remains a deterministic fallback until that
     # report is available; no source is silently mixed with another schema.
-    path = TRUST_PATH if TRUST_PATH.exists() else STEP_PATH
+    if warm_start not in {"step", "trust"}:
+        raise ValueError("warm_start must be 'step' or 'trust'")
+    path = TRUST_PATH if warm_start == "trust" else STEP_PATH
+    if not path.exists():
+        raise FileNotFoundError(f"Requested warm-start report is missing: {path.name}")
     report = json.loads(path.read_text(encoding="utf-8"))
     if report.get("status") != "completed":
         raise ValueError(f"Warm-start report is not completed: {path.name}")
@@ -198,6 +203,72 @@ def _weighted_lstsq(design: np.ndarray, residual: np.ndarray,
     }
 
 
+def _trust_lstsq(design: np.ndarray, residual: np.ndarray, patch_data: list[tuple[Any, ...]],
+                 weights: np.ndarray, trust_bound: float) -> tuple[np.ndarray, dict[str, Any]]:
+    """Solve one increment with the trust worker's pressure projection/whitening."""
+
+    row_weight = np.repeat(np.sqrt(weights), 3)
+    weighted_design = design * row_weight[:, None]
+    rhs = -np.asarray(residual, dtype=float).reshape(-1) * row_weight
+    velocity_indices = np.r_[
+        np.arange(VELOCITY_COLUMNS_PER_PATCH),
+        np.arange(COLUMNS_PER_PATCH, COLUMNS_PER_PATCH + VELOCITY_COLUMNS_PER_PATCH),
+    ]
+    pressure_indices = np.r_[
+        np.arange(VELOCITY_COLUMNS_PER_PATCH, COLUMNS_PER_PATCH),
+        np.arange(COLUMNS_PER_PATCH + VELOCITY_COLUMNS_PER_PATCH, JOINT_COLUMNS),
+    ]
+    av = weighted_design[:, velocity_indices]
+    ap = weighted_design[:, pressure_indices]
+    value_matrix = np.column_stack(
+        [patch_data[0][1][:, :, j].reshape(-1) for j in range(VELOCITY_COLUMNS_PER_PATCH)]
+        + [patch_data[1][1][:, :, j].reshape(-1) for j in range(VELOCITY_COLUMNS_PER_PATCH)]
+    )
+    weighted_values = value_matrix * row_weight[:, None]
+    velocity_scales = np.maximum(np.sqrt(np.sum(av * av, axis=0)), 1.0e-30)
+    normalized_velocity_metric = weighted_values / velocity_scales[None, :]
+    pressure_u, pressure_s, pressure_vh = np.linalg.svd(ap, full_matrices=False)
+    pressure_rank = trust_solver._rank_from_singular_values(pressure_s)
+    if pressure_rank == 0:
+        raise np.linalg.LinAlgError("pressure design has zero numerical rank")
+    pressure_u = pressure_u[:, :pressure_rank]
+    pressure_s = pressure_s[:pressure_rank]
+    pressure_vh = pressure_vh[:pressure_rank, :]
+    pressure_rhs_projection = pressure_u.T @ rhs
+    projected_rhs = rhs - pressure_u @ pressure_rhs_projection
+    av_projected = av - pressure_u @ (pressure_u.T @ av)
+    trust_r = np.linalg.qr(normalized_velocity_metric, mode="r")
+    trust_u, trust_s, trust_vh = np.linalg.svd(trust_r, full_matrices=False)
+    trust_rank = trust_solver._rank_from_singular_values(trust_s)
+    if trust_rank == 0:
+        raise np.linalg.LinAlgError("velocity trust metric has zero numerical rank")
+    trust_v = trust_vh[:trust_rank, :].T
+    trust_s_kept = trust_s[:trust_rank]
+    av_scaled = av_projected / velocity_scales[None, :]
+    a_tilde = (av_scaled @ trust_v) / trust_s_kept[None, :]
+    solver = trust_solver._solve_multiplier(a_tilde, projected_rhs, trust_bound)
+    y = solver["coordinates"]
+    z = trust_v @ (y / trust_s_kept)
+    velocity_coefficients = z / velocity_scales
+    pressure_rhs = pressure_rhs_projection - (pressure_u.T @ av) @ velocity_coefficients
+    pressure_coefficients = pressure_vh.T @ (pressure_rhs / pressure_s)
+    controls = np.zeros(JOINT_COLUMNS, dtype=float)
+    controls[velocity_indices] = velocity_coefficients
+    controls[pressure_indices] = pressure_coefficients
+    return controls, {
+        "solver": "pressure SVD projection; velocity-metric QR/SVD; scalar trust multiplier",
+        "pressure_rank": int(pressure_rank),
+        "velocity_metric_rank": int(trust_rank),
+        "velocity_scale_min": float(np.min(velocity_scales)),
+        "velocity_scale_max": float(np.max(velocity_scales)),
+        "trust_bound": float(trust_bound),
+        "constrained_velocity_norm": float(solver["constrained_norm"]),
+        "unconstrained_velocity_norm": float(solver["unconstrained_norm"]),
+        "lagrange_multiplier": float(solver["multiplier"]),
+        "multiplier_iterations": int(solver["iterations"]),
+    }
+
+
 def _velocity_and_jacobian(patch_data: list[tuple[Any, ...]], controls: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
     velocity_blocks = []
     jacobian_blocks = []
@@ -241,10 +312,13 @@ def _selected_fields(coefficients: np.ndarray) -> dict[str, Any]:
     }
 
 
-def run(output_path: Path = OUTPUT_PATH) -> dict[str, Any]:
+def run(output_path: Path = OUTPUT_PATH, warm_start: str = "step",
+        solver: str = "scaled-lstsq") -> dict[str, Any]:
+    if solver not in {"scaled-lstsq", "trust"}:
+        raise ValueError("solver must be 'scaled-lstsq' or 'trust'")
     started = time.perf_counter()
     data = one_step._load_inputs()
-    source_path, seed_report, seed_blocks = _load_seed()
+    source_path, seed_report, seed_blocks = _load_seed(warm_start)
     points = data["points"]
     weights = data["weights"]
     baseline, pressure_correction, pressure_design, pressure_meta = one_step._pressure_baseline(data)
@@ -293,12 +367,15 @@ def run(output_path: Path = OUTPUT_PATH) -> dict[str, Any]:
             "viscosity": data["nu"],
             "degree": DEGREE,
             "modes": list(MODES),
+            "patch_count": 2,
             "velocity_columns_per_patch": VELOCITY_COLUMNS_PER_PATCH,
             "pressure_columns_per_patch": PRESSURE_COLUMNS_PER_PATCH,
             "joint_column_count": JOINT_COLUMNS,
             "step_trust_fraction": STEP_TRUST_FRACTION,
             "cumulative_trust_fraction": CUMULATIVE_TRUST_FRACTION,
             "warm_start": source_path.name,
+            "solver": solver,
+            "correction_kind": "initial reference curl-potential velocity; time-tangent coefficients are not reused as velocity increments",
             "warm_start_accepted": bool(seed_report.get("selected", {}).get("feasible", False)),
         },
         "pressure_baseline": {
@@ -315,13 +392,24 @@ def run(output_path: Path = OUTPUT_PATH) -> dict[str, Any]:
         "warm_start": {"metrics": _metric(current_residual, weights, points), **_selected_fields(seed_controls)},
         "iterations": [],
     }
-    _save(report)
+    if source_path == TRUST_PATH:
+        report["sources"]["trust_solver"] = {
+            "path": TRUST_PATH.with_name("scale_reference_trust_fit.py").name,
+            "sha256": _sha256(TRUST_PATH.with_name("scale_reference_trust_fit.py")),
+        }
+    report["warm_start"]["initial_metrics"] = report["warm_start"]["metrics"]
+    _save(report, output_path)
 
     for iteration in range(1, MAX_STEPS + 1):
         design, patch_data, _ = _build_design(
             data, current_velocity, current_jacobian, patch_geometry, pressure_design
         )
-        raw_controls, matrix = _weighted_lstsq(design, current_residual, weights)
+        if solver == "trust":
+            raw_controls, matrix = _trust_lstsq(
+                design, current_residual, patch_data, weights, step_bound
+            )
+        else:
+            raw_controls, matrix = _weighted_lstsq(design, current_residual, weights)
         raw_velocity, raw_jacobian = _velocity_and_jacobian(patch_data, raw_controls)
         raw_quadratic = np.einsum("nij,nj->ni", raw_jacobian, raw_velocity)
         raw_norm = float(np.sqrt(np.sum(weights * np.sum(raw_velocity * raw_velocity, axis=1))))
@@ -362,7 +450,7 @@ def run(output_path: Path = OUTPUT_PATH) -> dict[str, Any]:
                 "raw_alpha_cap": float(alpha_cap),
                 "trials": trials,
             })
-            _save(report)
+            _save(report, output_path)
             break
         alpha, trial_residual, trial_velocity, trial_jacobian, trial_metric, step_metric, cumulative_metric, backtrack = selected
         current_velocity += trial_velocity
@@ -385,8 +473,8 @@ def run(output_path: Path = OUTPUT_PATH) -> dict[str, Any]:
             "matrix": matrix,
             "trials": trials,
         })
-        report["warm_start"]["metrics"] = _metric(current_residual, weights, points)
-        _save(report)
+        report["warm_start"]["current_metrics"] = _metric(current_residual, weights, points)
+        _save(report, output_path)
 
     report["selected"] = {
         "feasible": bool(any(row.get("accepted", False) for row in report["iterations"])),
@@ -397,7 +485,7 @@ def run(output_path: Path = OUTPUT_PATH) -> dict[str, Any]:
     }
     report["status"] = "completed"
     report["elapsed_seconds"] = float(time.perf_counter() - started)
-    _save(report)
+    _save(report, output_path)
     print(json.dumps({
         "status": report["status"],
         "accepted_steps": report["selected"]["iterations_accepted"],
@@ -410,4 +498,11 @@ def run(output_path: Path = OUTPUT_PATH) -> dict[str, Any]:
 
 
 if __name__ == "__main__":
-    run()
+    import argparse
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--warm-start", choices=("step", "trust"), default="step")
+    parser.add_argument("--solver", choices=("scaled-lstsq", "trust"), default="scaled-lstsq")
+    parser.add_argument("--output", type=Path, default=OUTPUT_PATH)
+    args = parser.parse_args()
+    run(args.output, args.warm_start, args.solver)

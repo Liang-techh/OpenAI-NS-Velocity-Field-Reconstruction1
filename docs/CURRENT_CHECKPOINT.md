@@ -2,6 +2,16 @@
 
 ## Latest continuation checkpoint - 2026-09-27
 
+The repeated trust-region continuation now reaches fit-grid L2 2.37502e6
+and maximum 1.57305e11, about 18.87% and 40.68% below the common
+pressure-projected scale-generator baseline, at cumulative 5% velocity
+change. Source: `scale_reference_trust_nonlinear_fit.json`. Independent
+momentum and physical gates remain pending. The solver now exposes explicit
+warm-start, solver and output arguments, preserving earlier frozen reports.
+The completed shape replay of this candidate retains radial contraction,
+relative axial elongation, stronger winding and decreasing sampled energy
+at prescribed scales 1, 1/2 and 1/4. This is kinematic evidence only.
+
 The velocity-metric trust-region solve improves the one-percent update:
 `scale_reference_trust_fit.json` gives fit-grid L2 2.69257e6 and maximum
 1.76492e11, down about 8.02% and 33.44% from the pressure-projected baseline.

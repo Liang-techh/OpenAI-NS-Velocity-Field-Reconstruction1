@@ -16,8 +16,9 @@ from scale_transport_generator import _finite_difference_jacobian
 ROOT=Path(__file__).resolve().parent
 
 
-def run():
-    reference=load_reference()
+def run(source=ROOT/'scale_reference_velocity_step.json',output=ROOT/'scale_reference_shape_replay.json'):
+    source=Path(source)
+    reference=load_reference(step=source)
     path=ROOT/'enriched_endpoint_shape_cache.npz'
     with np.load(path) as d:
         points,weights=d['points'],d['weights']
@@ -32,9 +33,9 @@ def run():
     angles=theta.reshape(-1,12)
     if not np.allclose(np.exp(1j*(angles-angles[:,:1])),np.exp(2j*np.pi*np.arange(12)/12),atol=1e-10):
         raise ValueError('Invalid angular spacing')
-    source=json.loads((ROOT/'scale_generator_momentum_defect.json').read_text())
-    h=source['inputs']['similarity_exponent_h']
-    step=source['inputs']['hspace']
+    generator_report=json.loads((ROOT/'scale_generator_momentum_defect.json').read_text())
+    h=generator_report['inputs']['similarity_exponent_h']
+    step=generator_report['inputs']['hspace']
     u=reference.velocity(points)
     j=_finite_difference_jacobian(reference,points,step)
     er=np.column_stack((np.cos(theta),np.sin(theta),np.zeros(n)))
@@ -68,11 +69,17 @@ def run():
                          sampled_kinetic_energy=float(.5*np.sum(w[:,None]*velocity**2)),
                          divergence_max=float(abs(np.trace(gradient,axis1=1,axis2=2)).max())))
     report=dict(status='completed',accepted=False,pde_validated=False,scale_recursion_established=False,
-                source_sha256=hashlib.sha256((ROOT/'scale_reference_velocity_step.json').read_bytes()).hexdigest(),
+                source=source.name,source_sha256=hashlib.sha256(source.read_bytes()).hexdigest(),
                 grid_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),point_count=n,spatial_fd_step=step,
                 scope=__doc__,rows=rows)
-    (ROOT/'scale_reference_shape_replay.json').write_text(json.dumps(report,indent=2)+'\n')
+    Path(output).write_text(json.dumps(report,indent=2)+'\n')
     print(json.dumps(rows),flush=True)
 
 
-if __name__=='__main__':run()
+if __name__=='__main__':
+    import argparse
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--source',type=Path,default=ROOT/'scale_reference_velocity_step.json')
+    parser.add_argument('--output',type=Path,default=ROOT/'scale_reference_shape_replay.json')
+    args=parser.parse_args()
+    run(args.source,args.output)
