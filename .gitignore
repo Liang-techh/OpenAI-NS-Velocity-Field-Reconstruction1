@@ -20,3 +20,4 @@ dist/
 /experiments/root_st073/enriched_endpoint_shape_cache.npz
 /experiments/root_st073/refined_wave_momentum_cache.npz
 /experiments/root_st073/dual_grid_peak_cache.npz
+/experiments/root_st073/acceleration_momentum_cache.npz
