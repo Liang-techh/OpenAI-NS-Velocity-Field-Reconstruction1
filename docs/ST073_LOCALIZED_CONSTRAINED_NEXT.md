@@ -83,6 +83,16 @@ log-periodic recursive profiles, nor establish any PDE statement. Further
 optimization must track profile transport as well as momentum and shape;
 lower residual alone is not a demonstrated recursive-scale improvement.
 
+`localized_phase_aligned_drift.py` checks the rotational ambiguity in that
+diagnostic. On the validated 648-by-12 angular grid, a global phase shift
+reduces parent drift from 1999.619785 to 1992.763818 (0.343%) and two-patch
+drift from 2122.103740 to 2118.315202 (0.179%). Optimal phases are about
+1.269e-4 and 9.721e-5 radians. Fourier reconstruction using |m|<=2 has L2
+error about 6e-15 and omitted-mode energy fraction below 3e-28. Consequently
+rotation alignment is well resolved on this sampled angular basis, but
+does not materially explain the profile drift. The result does not test
+translations, an entire log-periodic cycle, or establish recursive closure.
+
 `localized_drift_constraint.py` now supplies this finite-interval diagnostic
 as an exact quadratic in the two patches' 360 physical tangent controls:
 drift squared = c.T G c + 2 g.T c + b. The reference velocity is independent

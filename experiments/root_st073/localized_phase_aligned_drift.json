@@ -1,0 +1,259 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "scope": "Fixed-cylinder anisotropic profile drift with one global angular phase fit. Parent is the global_localized_candidate.load return exterior; two_patch is global_two_patch_candidate.load. Both fields are evaluated directly. This does not relax PDE, shape, support, or recursion requirements.",
+  "sources": {
+    "fixed_cylinder_cache": {
+      "path": "enriched_endpoint_shape_cache.npz",
+      "sha256": "8646a0608e2a3eaacefda90011e78910cf9579af56eb5b6efb92a1cdd6b4ae53"
+    },
+    "parent_module": {
+      "path": "global_localized_candidate.py",
+      "sha256": "d9c1a806d6997cde5fcd4a8139cb13d2147c9a3a99c2c2b5aff5567226b935f6"
+    },
+    "two_patch_module": {
+      "path": "global_two_patch_candidate.py",
+      "sha256": "123e67d2e36766ea2e3c90674230c9c9070419553caf6dc04725aa407757d656"
+    },
+    "localized_parent_report": {
+      "path": "localized_constrained_tangent.json",
+      "sha256": "20a33e63cd33a1b800c208fe5ecf107bccac4fc982413bcbe8d62acc2d78470e"
+    },
+    "two_patch_source": {
+      "path": "localized_two_patch_constrained.json",
+      "sha256": "8a8f3b8a9f98bd07c70f61ebd41fc36e693f734aec1bf899147b2b022d44392d"
+    }
+  },
+  "loader_hashes": {
+    "parent": {
+      "localized_constrained_tangent.json": "20a33e63cd33a1b800c208fe5ecf107bccac4fc982413bcbe8d62acc2d78470e",
+      "enriched_mean_endpoint_tangent.json": "ea78f641a3b4ca760e373716186c6eb93b27494f0c8982708c953468582b40c5",
+      "global_collar_tangent.json": "35d0383f7ef02ef62e75f8c4147891bec03a07006d2f5080c64eda4f73918686"
+    },
+    "two_patch": {
+      "localized_constrained_tangent.json": "20a33e63cd33a1b800c208fe5ecf107bccac4fc982413bcbe8d62acc2d78470e",
+      "enriched_mean_endpoint_tangent.json": "ea78f641a3b4ca760e373716186c6eb93b27494f0c8982708c953468582b40c5",
+      "global_collar_tangent.json": "35d0383f7ef02ef62e75f8c4147891bec03a07006d2f5080c64eda4f73918686",
+      "localized_two_patch_constrained.json": "8a8f3b8a9f98bd07c70f61ebd41fc36e693f734aec1bf899147b2b022d44392d"
+    }
+  },
+  "grid": {
+    "point_count": 7776,
+    "angle_count": 12,
+    "radial_axial_block_count": 648,
+    "angle_origin_radians": 0.31,
+    "angle_spacing_radians": 0.5235987755982988,
+    "weight_sum": 1.1520501906683772e-07,
+    "angular_block_consistency": {
+      "max_radius_spread": 4.336808689942018e-19,
+      "max_z_spread": 0.0,
+      "max_weight_spread": 0.0,
+      "angle_step_error": 5.551115123125783e-16
+    },
+    "weights_repeated_across_angles": true,
+    "ordering": "z block, radial panel/node block, then theta=0.31+2*pi*j/12 contiguous"
+  },
+  "inputs": {
+    "reference_tau": 0.00024408986266228504,
+    "endpoint_tau": 0.00024408969347214357,
+    "delta_k": 1e-06,
+    "scale": 0.9999993068530597,
+    "h": 0.005,
+    "spatial_map": [
+      0.9999996534264698,
+      0.9999996534264698,
+      0.9999996568922045
+    ],
+    "velocity_pullback": [
+      0.9999996534264698,
+      0.9999996499607351,
+      0.9999996499607351
+    ],
+    "fourier_interpolation_max_abs_mode": 2
+  },
+  "fields": {
+    "parent": {
+      "phase_radians": 0.0001268908094342919,
+      "phase_period": "2*pi",
+      "phase_convention": "aligned endpoint is endpoint(theta + phi); positive phi advances endpoint angular profile",
+      "raw_L2": 0.00031236161869107075,
+      "aligned_L2": 0.0003112906446588845,
+      "endpoint_truncated_reconstruction_L2": 6.0080627896245286e-15,
+      "reference_truncated_reconstruction_L2": 5.3388387190944555e-15,
+      "refinement": {
+        "method": "coarse_4097_then_bounded",
+        "success": true,
+        "nfev": 18,
+        "message": "Solution found.",
+        "coarse_index": 2048,
+        "coarse_phase": 0.0,
+        "coarse_norm": 0.00031236161869109167
+      },
+      "endpoint_spectrum": {
+        "modes": [
+          -6,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "energy_fraction_by_mode": [
+          2.1544425195747884e-29,
+          5.729982161696921e-29,
+          2.4092697903399925e-29,
+          4.246443995562462e-29,
+          1.954048488450006e-07,
+          0.3483119916944286,
+          0.3033756258014451,
+          0.3483119916944286,
+          1.954048488450006e-07,
+          4.246443995562462e-29,
+          2.4092697903399925e-29,
+          5.729982161696921e-29
+        ],
+        "energy_fraction_abs_mode_le_2": 1.0,
+        "energy_fraction_abs_mode_gt_2": 2.692583441477354e-28,
+        "coefficient_max_abs_mode_gt_2": 4.886143663912277e-11
+      },
+      "reference_spectrum": {
+        "modes": [
+          -6,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "energy_fraction_by_mode": [
+          2.003228915157407e-29,
+          3.8116223528975064e-29,
+          1.729817443557562e-29,
+          3.296821507467485e-29,
+          3.236586573827761e-29,
+          0.3482663720581449,
+          0.3034672558837101,
+          0.3482663720581449,
+          3.236586573827761e-29,
+          3.296821507467485e-29,
+          1.729817443557562e-29,
+          3.8116223528975064e-29
+        ],
+        "energy_fraction_abs_mode_le_2": 1.0,
+        "energy_fraction_abs_mode_gt_2": 1.9679751523002515e-28,
+        "coefficient_max_abs_mode_gt_2": 5.1867734267427985e-11
+      },
+      "reference_profile_L2": 0.2253641225486346,
+      "raw_relative_profile_L2": 0.0013860308160792616,
+      "aligned_relative_profile_L2": 0.0013812786220739576,
+      "raw_drift_per_abs_log_scale": 1999.619785004256,
+      "aligned_drift_per_abs_log_scale": 1992.763818279025,
+      "relative_reduction_from_phase_alignment": 0.0034286351718693098
+    },
+    "two_patch": {
+      "phase_radians": 9.721261747099182e-05,
+      "phase_period": "2*pi",
+      "phase_convention": "aligned endpoint is endpoint(theta + phi); positive phi advances endpoint angular profile",
+      "raw_L2": 0.0003314948992305874,
+      "aligned_L2": 0.0003309030898701912,
+      "endpoint_truncated_reconstruction_L2": 6.0075523852363285e-15,
+      "reference_truncated_reconstruction_L2": 5.3388387190944555e-15,
+      "refinement": {
+        "method": "coarse_4097_then_bounded",
+        "success": true,
+        "nfev": 16,
+        "message": "Solution found.",
+        "coarse_index": 2048,
+        "coarse_phase": 0.0,
+        "coarse_norm": 0.0003314948992306042
+      },
+      "endpoint_spectrum": {
+        "modes": [
+          -6,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "energy_fraction_by_mode": [
+          2.152023231447859e-29,
+          5.725436650122018e-29,
+          2.4096705836289437e-29,
+          4.24300400153429e-29,
+          2.117087736972227e-07,
+          0.34830795704430495,
+          0.30338366249384274,
+          0.34830795704430495,
+          2.117087736972227e-07,
+          4.24300400153429e-29,
+          2.4096705836289437e-29,
+          5.725436650122018e-29
+        ],
+        "energy_fraction_abs_mode_le_2": 1.0,
+        "energy_fraction_abs_mode_gt_2": 2.6908245702018364e-28,
+        "coefficient_max_abs_mode_gt_2": 4.8771461990215036e-11
+      },
+      "reference_spectrum": {
+        "modes": [
+          -6,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1,
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "energy_fraction_by_mode": [
+          2.003228915157407e-29,
+          3.8116223528975064e-29,
+          1.729817443557562e-29,
+          3.296821507467485e-29,
+          3.236586573827761e-29,
+          0.3482663720581449,
+          0.3034672558837101,
+          0.3482663720581449,
+          3.236586573827761e-29,
+          3.296821507467485e-29,
+          1.729817443557562e-29,
+          3.8116223528975064e-29
+        ],
+        "energy_fraction_abs_mode_le_2": 1.0,
+        "energy_fraction_abs_mode_gt_2": 1.9679751523002515e-28,
+        "coefficient_max_abs_mode_gt_2": 5.1867734267427985e-11
+      },
+      "reference_profile_L2": 0.2253641225486346,
+      "raw_relative_profile_L2": 0.0014709302238604962,
+      "aligned_relative_profile_L2": 0.0014683042097740327,
+      "raw_drift_per_abs_log_scale": 2122.103739592458,
+      "aligned_drift_per_abs_log_scale": 2118.3152020923712,
+      "relative_reduction_from_phase_alignment": 0.0017852744092587969
+    }
+  },
+  "elapsed_seconds": 49.76342909998493
+}
