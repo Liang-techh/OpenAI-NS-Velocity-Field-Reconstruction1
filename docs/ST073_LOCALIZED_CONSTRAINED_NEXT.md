@@ -135,6 +135,15 @@ momentum check at reference and endpoint. It reuses the prior actual
 baseline only after validating grid, parent, first-fit and timestep hashes.
 Until that replay completes, the numbers above remain fitting-grid results.
 
+`global_two_patch_candidate.py` assembles both patches on the same compact
+global parent and exterior collar. Its direct velocity-profile replay gives
+drift 2122.103739592 at delta-k=1e-6, agreeing with the quadratic prediction
+to 1.24e-8. At delta-k=2e-6 and 1e-5 the values are 2122.103862100 and
+2122.104844590. These slightly different values are not covered by the
+single-interval optimizer cap; no interval-wide drift bound is inferred.
+The callable `load()` returns this global diagnostic field, while the
+single-patch loader remains available for the independently replayed baseline.
+
 `global_localized_candidate.py` assembles this new constrained patch with
 the globalized enriched parent and the existing disjoint exterior collar.
 The source hashes and reference times are checked before composition. It
