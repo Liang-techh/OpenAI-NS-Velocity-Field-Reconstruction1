@@ -1,0 +1,91 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "sources": {
+    "scale_reference_trust_nonlinear_fit.json": "868d171a0875af35d5e1528d4b143a038848756f161592a758a939f514f33ee0",
+    "scale_generator_momentum_defect.npz": "0fb7b970e7d6f7845b281a330472ee57d489d7533aeeb3a4bc475b26389abdc3"
+  },
+  "parent": {
+    "residual": {
+      "point_count": 18720,
+      "volume_L2": 2375021.5990847372,
+      "volume_RMS": 16249996363.507391,
+      "max_norm": 157304615976.81262,
+      "max_point": [
+        0.0008266507752215822,
+        -4.434994747006456e-05,
+        8.369327340100472e-05
+      ],
+      "max_index": 10487,
+      "max_vector": [
+        55374081352.547,
+        144620628193.83762,
+        -27628377129.208668
+      ],
+      "physical_volume": 2.1361344835903807e-08
+    },
+    "correction": {
+      "point_count": 18720,
+      "volume_L2": 0.010819571329084251,
+      "volume_RMS": 74.02795613314967,
+      "max_norm": 959.4820728037704,
+      "max_point": [
+        -0.0009307737252556182,
+        -0.00047280131038835495,
+        8.369327340100472e-05
+      ],
+      "max_index": 10530,
+      "max_vector": [
+        -73.10327096602043,
+        929.0605193400075,
+        -228.27244951934932
+      ],
+      "physical_volume": 2.1361344835903807e-08
+    }
+  },
+  "candidate": {
+    "residual": {
+      "point_count": 18720,
+      "volume_L2": 2375021.5990847372,
+      "volume_RMS": 16249996363.507391,
+      "max_norm": 157304615976.81262,
+      "max_point": [
+        0.0008266507752215822,
+        -4.434994747006456e-05,
+        8.369327340100472e-05
+      ],
+      "max_index": 10487,
+      "max_vector": [
+        55374081352.547,
+        144620628193.83762,
+        -27628377129.208668
+      ],
+      "physical_volume": 2.1361344835903807e-08
+    },
+    "correction": {
+      "point_count": 18720,
+      "volume_L2": 0.010819571329084251,
+      "volume_RMS": 74.02795613314967,
+      "max_norm": 959.4820728037704,
+      "max_point": [
+        -0.0009307737252556182,
+        -0.00047280131038835495,
+        8.369327340100472e-05
+      ],
+      "max_index": 10530,
+      "max_vector": [
+        -73.10327096602043,
+        929.0605193400075,
+        -228.27244951934932
+      ],
+      "physical_volume": 2.1361344835903807e-08
+    }
+  },
+  "improves_L2": false,
+  "improves_max": false,
+  "L2_relative_change": 0.0,
+  "max_relative_change": 0.0,
+  "scope": "Original 18720-point grid; analytic correction jets added to frozen base jets. Parent training grid, not a new independent holdout. Pressure includes prior projection once."
+}
