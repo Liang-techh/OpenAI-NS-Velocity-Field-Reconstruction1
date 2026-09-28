@@ -1,0 +1,24 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "source_hashes": {
+    "localized_constrained_tangent.json": "20a33e63cd33a1b800c208fe5ecf107bccac4fc982413bcbe8d62acc2d78470e",
+    "enriched_mean_endpoint_tangent.json": "ea78f641a3b4ca760e373716186c6eb93b27494f0c8982708c953468582b40c5",
+    "global_collar_tangent.json": "35d0383f7ef02ef62e75f8c4147891bec03a07006d2f5080c64eda4f73918686"
+  },
+  "probe_sha256": "7f2c55a8f334920e818719007122667adbc8f50ee9c29672ba20dceea7b48326",
+  "grid_sha256": "8646a0608e2a3eaacefda90011e78910cf9579af56eb5b6efb92a1cdd6b4ae53",
+  "cache_sha256": "5efa4cf85c9afcdeb200500a001a4e380e47a94ab92288874fa5970906c22dae",
+  "scope": "7776-point finite-interval pulled-back profile drift per abs(log scale); exact quadratic in 360 physical tangent controls, fixed parent.",
+  "layout": "first patch180 then second patch180; same interleaved real-minus-imag layout as localized fits",
+  "delta_k": 1e-06,
+  "parent_drift": 1999.6197850042554,
+  "first_patch_drift": 2122.1016173723738,
+  "first_patch_direct_drift": 2122.101617372266,
+  "quadratic_vs_direct_error": 1.07775122160092e-10,
+  "gradient_relative_error": 1.8650974086936902e-08,
+  "constraint": "c.T@gram@c + 2*linear@c + constant <= chosen_drift_cap**2",
+  "caveat": "Stationarity diagnostic only; a dynamic or log-periodic recursive profile may have nonzero drift."
+}

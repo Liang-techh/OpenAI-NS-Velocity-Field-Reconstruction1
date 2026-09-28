@@ -83,6 +83,22 @@ log-periodic recursive profiles, nor establish any PDE statement. Further
 optimization must track profile transport as well as momentum and shape;
 lower residual alone is not a demonstrated recursive-scale improvement.
 
+`localized_drift_constraint.py` now supplies this finite-interval diagnostic
+as an exact quadratic in the two patches' 360 physical tangent controls:
+drift squared = c.T G c + 2 g.T c + b. The reference velocity is independent
+of these controls and the endpoint velocity is affine, so this expression
+does not linearize the norm. Its value agrees with direct response evaluation
+to 1.08e-10 in drift units, and its directional gradient relative error is
+1.87e-8. The regenerable NPZ stores G, g and b; its hash and parent hashes are
+recorded in the adjacent JSON. The first patch's value is 2122.10161737,
+versus 1999.619785 for the parent without local patches.
+
+The next joint solve should cap drift at the first-patch baseline while
+maintaining momentum and shape constraints. This prevents further drift
+regression but is only an intermediate constraint. Improvement toward the
+parent value and genuine profile transport/recursion remain open work;
+the current number must not be treated as a recursion acceptance threshold.
+
 `global_localized_candidate.py` assembles this new constrained patch with
 the globalized enriched parent and the existing disjoint exterior collar.
 The source hashes and reference times are checked before composition. It
