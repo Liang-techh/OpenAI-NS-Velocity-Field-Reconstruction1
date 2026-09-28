@@ -67,7 +67,7 @@ class RefinedWaveReference:
         if not bool(selected.get("accepted", False)):
             raise ValueError("Refined wave report does not contain an accepted simultaneous improvement")
         self.reference = parent
-        self.base_field = parent
+        self.base_field = parent.base_field
         self.parent = parent
         self.tau0 = float(parent.tau0)
         self.h = float(parent.h)
@@ -172,15 +172,17 @@ def load_reference(report_path: Path | str = REFINED_REPORT_PATH) -> RefinedWave
     refined_report = json.loads(report_path.read_text(encoding="utf-8"))
     if refined_report.get("status") != "completed":
         raise ValueError("Refined wave report is not completed")
-    actual_report = json.loads(ACTUAL_REPLAY_PATH.read_text(encoding="utf-8"))
+    refined_sources = refined_report["sources"]
+    replay_name = refined_sources["actual_replay"]["path"]
+    actual_path = ROOT / replay_name
+    actual_report = json.loads(actual_path.read_text(encoding="utf-8"))
     if actual_report.get("status") != "completed":
         raise ValueError("Parent actual replay is not completed")
     geometry = json.loads(GEOMETRY_PATH.read_text(encoding="utf-8"))["inputs"]["wave"]
-    refined_sources = refined_report["sources"]
     actual_sources = actual_report["sources"]
     expected = {
         "refined_report": (report_path, refined_sources.get("actual_replay", {}).get("sha256")),
-        "actual_replay": (ACTUAL_REPLAY_PATH, refined_sources.get("actual_replay", {}).get("sha256")),
+        "actual_replay": (actual_path, refined_sources.get("actual_replay", {}).get("sha256")),
         "step": (ROOT / actual_sources["step"]["path"], actual_sources["step"]["sha256"]),
         "candidate_loader": (ROOT / actual_sources["candidate_loader"]["path"], actual_sources["candidate_loader"]["sha256"]),
         "geometry": (GEOMETRY_PATH, refined_sources["geometry"]["sha256"]),

@@ -1,0 +1,259 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "scope": "Cached multiscale momentum diagnostic for the frozen corrected reference. The saved Cartesian jets are mapped by the anisotropic Piola/swirl rule at scales 1, 1/2, and 1/4; only axial Hzz is recomputed with a fourth-order four-point stencil. The pressure rule is the explicit kinematic choice p_s=s^-1 p_0. This does not establish Navier--Stokes symmetry, PDE closure, finite-time evolution, or scale recursion.",
+  "sources": {
+    "actual_replay": {
+      "path": "scale_reference_refined_balanced_actual.json",
+      "sha256": "50e0e6a173f4ebf26eb2d53a0cdea31f27930bf3ded191be73610f5157700def"
+    },
+    "candidate_loader": {
+      "path": "scale_reference_candidate.py",
+      "sha256": "25da674ebc1a8067c0fe6363f79e3246dde76adcb287cc0f6e37556a4ee8fb55"
+    },
+    "step": {
+      "path": "scale_reference_refined_balanced.json",
+      "sha256": "c7e25a32310f2abf4607b225b2732031ac5c1bae665cf64a1e38ca7acb4b207e"
+    },
+    "generator": {
+      "path": "scale_transport_generator.py",
+      "sha256": "a775cb68efe801cfd8f679704ae9c40b9c4c959b76d996ba1963262eb849ba76"
+    },
+    "grid": {
+      "path": "refined_wave_momentum_cache.npz",
+      "sha256": "0045761921a3fea916b351dddd84c52f2ecf7f27c43b7139935d025c62ba2da0"
+    },
+    "chunk_cache": {
+      "directory": "C:\\Users\\z5242\\Documents\\Codex\\2026-09-13\\before-doing-any-project-work-verify\\work\\st073-transition-next\\experiments\\root_st073\\.scale_replay_cache\\f30ffc9e6fd7cd635e66117f96944222d02429e0114300b830c38da7037d6573",
+      "fingerprint": "f30ffc9e6fd7cd635e66117f96944222d02429e0114300b830c38da7037d6573",
+      "chunk_count": 58
+    }
+  },
+  "inputs": {
+    "point_count": 44400,
+    "tau0": 0.00024408986266228504,
+    "similarity_exponent_h": 0.005,
+    "viscosity": 0.01,
+    "physical_time_convention": "t=-tau",
+    "scales": [
+      1.0,
+      0.5,
+      0.25
+    ],
+    "mean_angles": 12,
+    "axial_stencil_step": 1e-06,
+    "axial_stencil": "four-point fourth-order Hzz using +/-h and +/-2h; center velocity reused from cache",
+    "pressure_rule": "p_s=s^-1 p_0; grad_p_s=s^-1 S^-1 grad_p_0",
+    "pressure_interpretation": "explicit kinematic pressure scaling; not asserted as Navier--Stokes pressure symmetry",
+    "quadrature_rule": "saved points/weights mapped by det(S); no domain narrowing",
+    "grouped_backend": "installed"
+  },
+  "reference_cache_metric": {
+    "point_count": 44400,
+    "volume_L2": 2679608.260765513,
+    "volume_RMS": 18333990945.532616,
+    "max_norm": 241717297546.22668,
+    "max_point": [
+      -0.000881699463254858,
+      -0.00020644407690997453,
+      -5.491235501718044e-05
+    ],
+    "max_index": 20478,
+    "max_vector": [
+      -5417165096.313738,
+      -241553157135.81427,
+      7069549709.210031
+    ],
+    "physical_volume": 2.13613448359038e-08
+  },
+  "scales": {
+    "1.0": {
+      "status": "completed",
+      "spatial_matrix": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "determinant": 1.0,
+      "piola_amplitude": 1.0,
+      "swirl_increment_factor": 0.0,
+      "physical_volume": 2.13613448359038e-08,
+      "residual": {
+        "point_count": 44400,
+        "volume_L2": 2679608.260765513,
+        "volume_RMS": 18333990945.53261,
+        "max_norm": 241717297546.22668,
+        "max_point": [
+          -0.000881699463254858,
+          -0.00020644407690997453,
+          -5.491235501718044e-05
+        ],
+        "max_index": 20478,
+        "max_vector": [
+          -5417165096.313738,
+          -241553157135.81427,
+          7069549709.210031
+        ],
+        "physical_volume": 2.1361344835903807e-08
+      },
+      "divergence": {
+        "max_abs": 15.758875293191522,
+        "weighted_RMS": 0.1123598790672441,
+        "max_point": [
+          0.0006606784332304194,
+          -0.00019974704938297314,
+          -5.491235501718044e-05
+        ],
+        "max_index": 20159
+      }
+    },
+    "0.5": {
+      "status": "completed",
+      "spatial_matrix": [
+        0.7071067811865476,
+        0.7071067811865476,
+        0.7095616781001912
+      ],
+      "determinant": 0.3547808390500956,
+      "piola_amplitude": 0.7095616781001912,
+      "swirl_increment_factor": 0.00490979382728729,
+      "physical_volume": 7.578595844120378e-09,
+      "residual": {
+        "point_count": 44400,
+        "volume_L2": 4512296.87803487,
+        "volume_RMS": 51832635515.205864,
+        "max_norm": 683416564253.8352,
+        "max_point": [
+          -0.0006234556694360493,
+          -0.00014597800671884017,
+          -3.896370277442401e-05
+        ],
+        "max_index": 20478,
+        "max_vector": [
+          -15361608167.36202,
+          -682939190425.686,
+          20403026043.641647
+        ],
+        "physical_volume": 7.578595844120378e-09
+      },
+      "divergence": {
+        "max_abs": 31.517750586383045,
+        "weighted_RMS": 0.22471975814217496,
+        "max_point": [
+          0.0004671702003209332,
+          -0.00014124249314070451,
+          -3.896370277442401e-05
+        ],
+        "max_index": 20159
+      }
+    },
+    "0.25": {
+      "status": "completed",
+      "spatial_matrix": [
+        0.5,
+        0.5,
+        0.5034777750283594
+      ],
+      "determinant": 0.12586944375708983,
+      "piola_amplitude": 0.5034777750283594,
+      "swirl_increment_factor": 0.013911100113437769,
+      "physical_volume": 2.6887405923985945e-09,
+      "residual": {
+        "point_count": 44400,
+        "volume_L2": 7598538.88403461,
+        "volume_RMS": 146539814789.5173,
+        "max_norm": 1932254018518.6301,
+        "max_point": [
+          -0.000440849731627429,
+          -0.00010322203845498726,
+          -2.764715032561738e-05
+        ],
+        "max_index": 20478,
+        "max_vector": [
+          -43560720735.96705,
+          -1930865980966.8188,
+          58861016262.055824
+        ],
+        "physical_volume": 2.6887405923985958e-09
+      },
+      "divergence": {
+        "max_abs": 63.03550117276609,
+        "weighted_RMS": 0.44943951625682294,
+        "max_point": [
+          0.0003303392166152097,
+          -9.987352469148657e-05,
+          -2.764715032561738e-05
+        ],
+        "max_index": 20159
+      }
+    }
+  },
+  "cache_agreement": {
+    "status": "completed",
+    "scale_one_metric": {
+      "point_count": 44400,
+      "volume_L2": 2679608.260765513,
+      "volume_RMS": 18333990945.53261,
+      "max_norm": 241717297546.22668,
+      "max_point": [
+        -0.000881699463254858,
+        -0.00020644407690997453,
+        -5.491235501718044e-05
+      ],
+      "max_index": 20478,
+      "max_vector": [
+        -5417165096.313738,
+        -241553157135.81427,
+        7069549709.210031
+      ],
+      "physical_volume": 2.1361344835903807e-08
+    },
+    "cached_metric": {
+      "point_count": 44400,
+      "volume_L2": 2679608.260765513,
+      "volume_RMS": 18333990945.532616,
+      "max_norm": 241717297546.22668,
+      "max_point": [
+        -0.000881699463254858,
+        -0.00020644407690997453,
+        -5.491235501718044e-05
+      ],
+      "max_index": 20478,
+      "max_vector": [
+        -5417165096.313738,
+        -241553157135.81427,
+        7069549709.210031
+      ],
+      "physical_volume": 2.13613448359038e-08
+    },
+    "difference_metric": {
+      "point_count": 44400,
+      "volume_L2": 1.1108523790705229e-11,
+      "volume_RMS": 7.600498086942024e-08,
+      "max_norm": 1.52587890625e-05,
+      "max_point": [
+        -0.0007632819753998675,
+        0.0002307678210227837,
+        -5.491235501718044e-05
+      ],
+      "max_index": 20429,
+      "max_vector": [
+        0.0,
+        1.52587890625e-05,
+        0.0
+      ],
+      "physical_volume": 2.1361344835903807e-08
+    },
+    "difference_max_abs_component": 1.52587890625e-05,
+    "relative_volume_L2": 4.145577528385338e-18,
+    "criterion": "scale 1 uses the same mapped points and weights; difference is from 12-angle mean swirl and mapped jet reconstruction"
+  },
+  "chunk_progress": {
+    "processed": 44400,
+    "total": 44400
+  },
+  "status_detail": "completed",
+  "elapsed_seconds": 65.92557059999672
+}

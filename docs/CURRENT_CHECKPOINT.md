@@ -2,6 +2,22 @@
 
 ## Latest continuation checkpoint - 2026-09-27
 
+Balanced-candidate improvements persist at all three tested scales. Physical
+L2 at scales 1, 1/2, 1/4 is 2.6796083e6, 4.5122969e6, 7.5985389e6;
+pulled-back L2 is 2.6796083e6, 2.6783825e6, 2.6771946e6. Against the
+previous parent, L2 improves about 3.68% and maximum about 12.9% at each
+scale. Against itself across scales, normalized residual remains nearly
+constant: this is a better reference profile, not dynamical closure.
+Sources: `scale_reference_refined_balanced_multiscale.json` and
+`scale_reference_refined_balanced_rescaled_defect.json`.
+
+The wave fit's quartic has a real stationary amplitude increment near
+-0.404914, outside the earlier 1% trust bound. A separate larger-amplitude
+experiment is now exploring wave amplitude [0.1, 1.1], holding background
+and local corrections fixed. It must not be confused with the bounded
+candidate or a uniform rescaling of the entire field; morphology, physical
+constraints and independent residual checks will be required before use.
+
 Actual-field replay of the corrected balanced candidate is COMPLETE:
 44,400-point L2 2.67960826077e6 and maximum 2.41717297546e11, agreeing
 with the analytic correction prediction. Both improve relative to the
