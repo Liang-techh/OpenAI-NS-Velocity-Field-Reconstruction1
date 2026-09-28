@@ -49,6 +49,13 @@ Do not combine its improvement with the spatial-enrichment percentages:
 the parents, evaluation times and coefficients differ. Continue with the
 joint acceleration/pressure solve while retaining feasible iterates.
 
+The first bounded joint solve in `shape_constrained_acceleration.py` is now
+complete. Its velocity-acceleration trial violated peak and shape gates, so
+the selected feasible result remains the pressure-only seed above. This is
+not evidence of further improvement or of infeasibility of the mathematical
+problem. The report retains the rejected trial and explicit constraint
+margins; the maximum and shape checks refer to the frozen sampled problem.
+
 The full-support diagnostic attributes approximately 98.5% of squared
 momentum L2 to the original wave patch. This supports prioritizing its
 dynamics over further exterior-only fits. Residual magnitudes remain far
