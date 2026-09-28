@@ -120,6 +120,24 @@ enforced, and this is not a certified mathematical lower bound.
 
 ### Two-patch constrained result
 
+The subsequent stricter candidate `localized_parent_drift_fit.json` now
+passes the original unpatched-parent drift cap: 1999.619777778 versus
+1999.619785004. Its fitting-grid L2 is 1646211.636461 and maximum is
+8.06382567449e10. Moment maximum error is 4.67e-9, minimum cone margin is
+9.99961e-10 (all 81 pass), and minimum endpoint shape margin is 1.15257e-5.
+This trades some momentum reduction against restoring the parent's drift
+level; it does not establish a stationary profile or recursive closure.
+Independent actual-field replay is required before adopting this stricter
+candidate over the replayed candidate below.
+
+The final-stage solve uses an inward numerical margin for the optimizer,
+while the verifier retains the original cap. A radial retraction toward
+zero local controls is also available: since zero controls have drift
+squared b equal to the parent cap squared, the nonzero boundary along
+lambda*c is lambda = -2*g.T*c / (c.T*G*c). After an inward step, all momentum,
+moment, cone and shape gates are checked again. This is a coefficient repair,
+not relaxation of the acceptance tolerance.
+
 `localized_two_patch_constrained.json` now retains a feasible 360-control
 candidate with the first-patch drift cap. The sampled reference maximum is
 7.45350483435e10 and L2 is 1635046.816606 (approximately 12.7% and 9.8%

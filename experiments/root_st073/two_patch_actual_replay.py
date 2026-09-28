@@ -18,7 +18,7 @@ ROOT=Path(__file__).resolve().parent
 def load(source=ROOT/'localized_two_patch_constrained.json'):
     path=Path(source)
     raw=path.read_bytes();report=json.loads(raw)
-    if report['status']!='completed' or not report['assembled_feasible'] or not report['inputs']['drift_cap_enabled']:
+    if report['status']!='completed' or not report['assembled_feasible'] or not report['drift_constraint']['enabled']:
         raise ValueError('Need a frozen feasible drift-capped two-patch candidate')
     parent_path=ROOT/report['sources']['candidate']['path']
     if hashlib.sha256(parent_path.read_bytes()).hexdigest()!=report['sources']['candidate']['sha256']:
