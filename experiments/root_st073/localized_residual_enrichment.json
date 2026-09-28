@@ -1,0 +1,1969 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "constraints_maintained": false,
+  "scope": "One localized degree-2 exact-curl velocity-derivative and pressure-gradient patch fitted against the frozen 44400-point residual. The 264 previous controls are held fixed. No mean finite-difference replay, moments, cones, endpoint shape, PDE, time step, or recursion claim.",
+  "sources": {
+    "refined_momentum_cache": {
+      "path": "refined_wave_momentum_cache.npz",
+      "sha256": "0045761921a3fea916b351dddd84c52f2ecf7f27c43b7139935d025c62ba2da0"
+    },
+    "refined_momentum_cache_report": {
+      "path": "refined_wave_momentum_cache.json",
+      "sha256": "977d1240cc557968cbdf55e7adfafe66bcf96d20522d57074518b135b185e942"
+    },
+    "frozen_geometry": {
+      "path": "full_wave_frozen_cache.json",
+      "sha256": "c03b9efa4bd65db79ee420df66808a34e7f634174851b47cca81f742b1435574"
+    },
+    "current_candidate": {
+      "path": "enriched_mean_endpoint_tangent.json",
+      "sha256": "ea78f641a3b4ca760e373716186c6eb93b27494f0c8982708c953468582b40c5"
+    },
+    "mean": {
+      "path": "broad_meridional_constrained.json",
+      "sha256": "44d63c87eecdcfe796a25c829e90f18df0f0a722a8fc64b56a71d99ee4b0e34d"
+    }
+  },
+  "inputs": {
+    "point_count": 44400,
+    "old_design_shape": [
+      133200,
+      264
+    ],
+    "old_control_count": 264,
+    "new_control_count": 180,
+    "degree": 2,
+    "modes": [
+      0,
+      1,
+      2
+    ],
+    "carrier_mode1": [
+      -871.4212739359624,
+      -616.1878920703391
+    ],
+    "carrier_mode2": [
+      -1742.8425478719248,
+      -1232.3757841406782
+    ],
+    "angles": 12,
+    "old_controls_held_fixed": true,
+    "initial_velocity_unchanged_at_reference": true,
+    "new_layout": [
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 0
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 1
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 2
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 3
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 4
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 5
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 6
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 7
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 8
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 9
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 10
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 11
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 12
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 13
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 14
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 15
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 16
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 17
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 18
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 19
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 20
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 21
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 22
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 23
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 24
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 25
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 26
+      },
+      {
+        "mode": 0,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 0
+      },
+      {
+        "mode": 0,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 1
+      },
+      {
+        "mode": 0,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 2
+      },
+      {
+        "mode": 0,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 3
+      },
+      {
+        "mode": 0,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 4
+      },
+      {
+        "mode": 0,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 5
+      },
+      {
+        "mode": 0,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 6
+      },
+      {
+        "mode": 0,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 7
+      },
+      {
+        "mode": 0,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 8
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 0
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 0
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 1
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 1
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 2
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 2
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 3
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 3
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 4
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 4
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 5
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 5
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 6
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 6
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 7
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 7
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 8
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 8
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 9
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 9
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 10
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 10
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 11
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 11
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 12
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 12
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 13
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 13
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 14
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 14
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 15
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 15
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 16
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 16
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 17
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 17
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 18
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 18
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 19
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 19
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 20
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 20
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 21
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 21
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 22
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 22
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 23
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 23
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 24
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 24
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 25
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 25
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 26
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 26
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 0
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 0
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 1
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 1
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 2
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 2
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 3
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 3
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 4
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 4
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 5
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 5
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 6
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 6
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 7
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 7
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 8
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 8
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 0
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 0
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 1
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 1
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 2
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 2
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 3
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 3
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 4
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 4
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 5
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 5
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 6
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 6
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 7
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 7
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 8
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 8
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 9
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 9
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 10
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 10
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 11
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 11
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 12
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 12
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 13
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 13
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 14
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 14
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 15
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 15
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 16
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 16
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 17
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 17
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 18
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 18
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 19
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 19
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 20
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 20
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 21
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 21
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 22
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 22
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 23
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 23
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 24
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 24
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 25
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 25
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 26
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 26
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 0
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 0
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 1
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 1
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 2
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 2
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 3
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 3
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 4
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 4
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 5
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 5
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 6
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 6
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 7
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 7
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 8
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 8
+      }
+    ]
+  },
+  "support_containment": {
+    "coordinates": [
+      "radius",
+      "z"
+    ],
+    "patch_center": [
+      0.00094,
+      -5.49e-05
+    ],
+    "patch_widths": [
+      0.00025,
+      0.0002
+    ],
+    "patch_bounds": {
+      "lower": [
+        0.00069,
+        -0.0002549
+      ],
+      "upper": [
+        0.00119,
+        0.0001451
+      ]
+    },
+    "original_wave_center": [
+      0.0016227128870842616,
+      -2.036013852023506e-05
+    ],
+    "original_wave_widths": [
+      0.0011600670852347063,
+      0.00045150643182473267
+    ],
+    "original_wave_bounds": {
+      "lower": [
+        0.0004626458018495553,
+        -0.00047186657034496774
+      ],
+      "upper": [
+        0.002782779972318968,
+        0.0004311462933044976
+      ]
+    },
+    "strictly_inside_original_support": true,
+    "lower_containment_margin": [
+      0.00022735419815044465,
+      0.00021696657034496773
+    ],
+    "upper_containment_margin": [
+      0.0015927799723189679,
+      0.0002860462933044976
+    ],
+    "patch_outside_original_support": false,
+    "added_support_outside_original_support": false
+  },
+  "target_peak_before_fit": {
+    "index": 20490,
+    "point": [
+      -0.0009176819979186611,
+      -0.00021486914856208553,
+      -5.491235501718044e-05
+    ],
+    "radius": 0.0009425014590480913,
+    "z": -5.491235501718044e-05,
+    "weight": 1.30307326342901e-12,
+    "vector": [
+      -56059357533.68065,
+      -98004553798.56964,
+      15252560528.701283
+    ],
+    "norm": 113930613686.69733
+  },
+  "fit": {
+    "method": "weighted least squares of current residual onto new columns only",
+    "weighted_row_definition": "sqrt(volume weight) repeated for 3 Cartesian components",
+    "column_normalization": "weighted L2 norm per column",
+    "ridge_lambda_normalized": 1e-08,
+    "svd_relative_rank_cutoff": 1e-12,
+    "rank": 179,
+    "column_count": 180,
+    "singular_values": [
+      1.557323844150431,
+      1.557323844150429,
+      1.5470355696368885,
+      1.5470355696368878,
+      1.5431211207845796,
+      1.448548714465748,
+      1.4485487144657447,
+      1.4221870438189432,
+      1.422187043818943,
+      1.418700986241756,
+      1.4181839545091952,
+      1.4181839545091934,
+      1.4163817172343343,
+      1.4163817172343325,
+      1.4055744287670002,
+      1.2900688139676588,
+      1.2874247977651612,
+      1.28742479776516,
+      1.2803679785484674,
+      1.2803679785484658,
+      1.2777590168468544,
+      1.262381880617396,
+      1.2623818806173952,
+      1.2374529994310652,
+      1.2374529994310646,
+      1.2221822863336533,
+      1.2221822863336518,
+      1.2133216903209751,
+      1.213321690320974,
+      1.2034440367804167,
+      1.201171564237211,
+      1.201171564237211,
+      1.1983516998409198,
+      1.1983516998409185,
+      1.1967521195539739,
+      1.1967521195539732,
+      1.1933926177744365,
+      1.1933926177744356,
+      1.1901562028002035,
+      1.1891564667380319,
+      1.1819702796948304,
+      1.1819702796948297,
+      1.1777390536760433,
+      1.1777390536760415,
+      1.1739082426364469,
+      1.1739082426364469,
+      1.1729136626007428,
+      1.172053844856023,
+      1.1720538448560225,
+      1.1696917978416348,
+      1.1691834086461133,
+      1.1669914950430516,
+      1.166991495043051,
+      1.1588163335732302,
+      1.1588163335732298,
+      1.1282598581593473,
+      1.1278596763715847,
+      1.1276826868490555,
+      1.1276826868490555,
+      1.1268452287451598,
+      1.1268452287451591,
+      1.1230730828622466,
+      1.1230730828622464,
+      1.1165614297913737,
+      1.1165614297913724,
+      1.10267564434874,
+      1.1026756443487395,
+      1.0915382829935576,
+      1.0915382829935576,
+      1.0877703796025786,
+      1.0827737130141575,
+      1.0827737130141564,
+      1.0771555868335567,
+      1.0771555868335556,
+      1.0764339558616456,
+      1.0718505835877166,
+      1.0718505835877166,
+      1.0702850437894613,
+      1.0702850437894604,
+      1.0677117453592293,
+      1.067711745359229,
+      1.0651034503993841,
+      1.0651034503993833,
+      1.060783942036193,
+      1.0599641328714677,
+      1.0014949848654087,
+      1.0014949848654064,
+      0.9987359217686642,
+      0.9987359217686629,
+      0.9944339862134863,
+      0.9944339862134859,
+      0.9937297470021917,
+      0.9937297470021914,
+      0.9926783902705131,
+      0.9924464700650456,
+      0.9796340082988652,
+      0.9796340082988646,
+      0.9794763756360001,
+      0.9794763756359992,
+      0.9781064111080223,
+      0.9779924263224988,
+      0.9699233499638551,
+      0.9699233499638518,
+      0.9494213569192054,
+      0.9494213569192043,
+      0.933035934936417,
+      0.9227473535237457,
+      0.9227473535237453,
+      0.9020698198780134,
+      0.9020698198780123,
+      0.8884517174443367,
+      0.8868717852632239,
+      0.88564223502952,
+      0.88564223502952,
+      0.8816476809958782,
+      0.8816476809958779,
+      0.8786321854210463,
+      0.8786321854210462,
+      0.8744413910870659,
+      0.87389163491936,
+      0.8721767552471338,
+      0.8721767552471332,
+      0.8704720282738978,
+      0.8704720282738975,
+      0.8692093248137253,
+      0.8692093248137251,
+      0.8646975130826414,
+      0.8646975130826398,
+      0.8530323783020197,
+      0.8530323783020187,
+      0.7878715372989078,
+      0.7876615632681466,
+      0.7876615632681464,
+      0.7876245513900697,
+      0.7871627782605916,
+      0.7871627782605909,
+      0.7866739266068848,
+      0.7866739266068845,
+      0.7832450528147221,
+      0.783245052814722,
+      0.702996868387995,
+      0.7023442373268486,
+      0.7008577828423949,
+      0.7008577828423946,
+      0.6999062130986387,
+      0.6999062130986384,
+      0.6949978850033568,
+      0.694997885003356,
+      0.6921312730771003,
+      0.6921312730770999,
+      0.6006488108194655,
+      0.5982539075178446,
+      0.5982539075178409,
+      0.591290524497085,
+      0.5912905244970846,
+      0.5796860768722977,
+      0.5782814114971795,
+      0.5782814114971794,
+      0.5741069336446397,
+      0.5741069336446393,
+      0.1005510945336306,
+      0.10055109453363041,
+      0.09971825560828634,
+      0.09971825560828604,
+      0.09918731057829601,
+      0.09504228776123297,
+      0.09410373887640913,
+      0.09410373887640912,
+      0.09212256345597175,
+      0.09212256345597154,
+      0.07342308598884055,
+      0.07332171032508622,
+      0.07332171032508601,
+      0.07301230851588607,
+      0.07301230851588601,
+      0.0015985570143505663,
+      0.001598557014350531,
+      0.0008402526860081048,
+      0.0008402526860080421,
+      4.548783579277303e-16
+    ],
+    "singular_value_min": 4.548783579277303e-16,
+    "singular_value_max": 1.557323844150431,
+    "condition_number": 3423605051788052.0,
+    "column_scales": [
+      0.11233148527837451,
+      0.04212533942927472,
+      0.012136135308410165,
+      0.023422730073365382,
+      0.008783739194863232,
+      0.002530558654571926,
+      0.008113867188653489,
+      0.0030427752777450407,
+      0.0008766102680354002,
+      0.14410858600905554,
+      0.04614735376037969,
+      0.01387224345715721,
+      0.041268047910429,
+      0.011289396848409601,
+      0.0035777708192368312,
+      0.014013075172836639,
+      0.0038659508895429323,
+      0.001221366011553243,
+      0.08972733833119276,
+      0.018728789142037048,
+      0.006679127485274969,
+      0.03391381188850873,
+      0.007078834421564282,
+      0.002524479442052376,
+      0.011402435653074817,
+      0.0023800457849064037,
+      0.0008487819025684722,
+      0.14376841735529314,
+      0.04610110372603349,
+      0.01385267209561374,
+      0.04121614878781001,
+      0.011281133409870641,
+      0.003574454302068211,
+      0.013994655393314218,
+      0.0038630427552781683,
+      0.0012201951811709657,
+      0.07984059571465936,
+      0.07984059571465935,
+      0.029834859369539876,
+      0.029834859369539866,
+      0.008602612238510112,
+      0.008602612238510112,
+      0.016648262890043168,
+      0.01664826289004316,
+      0.006221038186874247,
+      0.006221038186874245,
+      0.0017937863308118626,
+      0.0017937863308118622,
+      0.00576722858607144,
+      0.005767228586071439,
+      0.002155042134001892,
+      0.0021550421340018923,
+      0.0006213904971610383,
+      0.0006213904971610382,
+      0.10214093385052926,
+      0.10214093385052925,
+      0.03266388759375463,
+      0.032663887593754624,
+      0.009823023417872083,
+      0.009823023417872079,
+      0.0292174929170119,
+      0.029217492917011905,
+      0.007988635831539756,
+      0.007988635831539755,
+      0.0025322041104882693,
+      0.0025322041104882697,
+      0.009921666096233708,
+      0.009921666096233706,
+      0.0027356819168772974,
+      0.002735681916877297,
+      0.0008644580627212069,
+      0.0008644580627212069,
+      0.06408754233609064,
+      0.06408754233609062,
+      0.013376993995142132,
+      0.01337699399514213,
+      0.004770551239637036,
+      0.0047705512396370355,
+      0.02405489211528499,
+      0.024054892115284995,
+      0.005020980780783241,
+      0.0050209807807832406,
+      0.0017906002592407576,
+      0.0017906002592407576,
+      0.008089296302696808,
+      0.008089296302696804,
+      0.0016884896632999328,
+      0.0016884896632999322,
+      0.0006021562530205035,
+      0.0006021562530205032,
+      0.10214093402810731,
+      0.10214093402810727,
+      0.03266388760940872,
+      0.032663887609408714,
+      0.009823023423345944,
+      0.00982302342334594,
+      0.02921749437897049,
+      0.029217494378970497,
+      0.00798863603745072,
+      0.007988636037450718,
+      0.002532204188791842,
+      0.0025322041887918412,
+      0.009921671992436572,
+      0.00992167199243657,
+      0.0027356828230898932,
+      0.002735682823089893,
+      0.0008644584195336214,
+      0.0008644584195336215,
+      0.08105886144659531,
+      0.08105886144659548,
+      0.029977641690991586,
+      0.029977641690991583,
+      0.008665510889070284,
+      0.008665510889070277,
+      0.01690331928614453,
+      0.016903319286144563,
+      0.006250932180493267,
+      0.006250932180493277,
+      0.0018069551588478004,
+      0.001806955158847797,
+      0.005855889439131925,
+      0.005855889439131917,
+      0.0021654339775225057,
+      0.002165433977522508,
+      0.0006259682554335508,
+      0.0006259682554335533,
+      0.10285987861716947,
+      0.10285987861716928,
+      0.032762033244615935,
+      0.032762033244615886,
+      0.0098645044716038,
+      0.009864504471603787,
+      0.02932694839079521,
+      0.02932694839079519,
+      0.008006090681132783,
+      0.008006090681132803,
+      0.002539205500982714,
+      0.002539205500982721,
+      0.009960342303417963,
+      0.009960342303417935,
+      0.0027417982749978072,
+      0.002741798274997814,
+      0.0008669190086441701,
+      0.000866919008644169,
+      0.06597241442239626,
+      0.06597241442239626,
+      0.013770423352023314,
+      0.013770423352023314,
+      0.004910857417312837,
+      0.004910857417312836,
+      0.024276148448595818,
+      0.0242761484485959,
+      0.005067163590421523,
+      0.005067163590421531,
+      0.0018070701352063435,
+      0.001807070135206338,
+      0.008168448473090208,
+      0.00816844847309018,
+      0.0017050109867407836,
+      0.0017050109867407788,
+      0.0006080481354425306,
+      0.0006080481354425317,
+      0.10357144815666118,
+      0.10357144815666156,
+      0.03285955824265732,
+      0.03285955824265723,
+      0.009905673647941336,
+      0.009905673647941336,
+      0.02943622818555966,
+      0.02943622818555975,
+      0.008023544505919784,
+      0.008023544505919779,
+      0.0025462024425757924,
+      0.0025462024425757937,
+      0.009999136519498755,
+      0.009999136519498738,
+      0.002747943420184564,
+      0.002747943420184571,
+      0.0008693900253516647,
+      0.0008693900253516675
+    ],
+    "coefficients": [
+      2819372.954038551,
+      -17916744.904597558,
+      -3720135.397084162,
+      375962.44916641945,
+      4522407.113907508,
+      12317441.352180388,
+      -25566330.66309603,
+      198681480.95205894,
+      112473215.31293839,
+      593545.4678458786,
+      -3005418.0266644172,
+      1331489.2048290228,
+      -297214.5473195001,
+      45950.19299395977,
+      -639608.2285403792,
+      1869166.9120611735,
+      -7468308.135404987,
+      4915981.612430198,
+      -1541803.6697914843,
+      -217143.07425155287,
+      867479.4997571841,
+      -27576949.167709094,
+      -40775604.16701937,
+      183976538.79015952,
+      -2952699.878031977,
+      4544328.350172589,
+      -32927505.207707964,
+      -457900.57116226695,
+      -1359680.5386029324,
+      689371.9007461563,
+      -5280860.783829822,
+      -3776350.401225698,
+      -34303226.10821624,
+      -2905554.853536412,
+      -7871831.329306255,
+      2547435.418554113,
+      -17308327.216360033,
+      12326811.762572398,
+      168411.10425993355,
+      -146093.03251727743,
+      17855374.246499065,
+      -12159265.574802365,
+      678005362.1517363,
+      942538101.4473996,
+      -2526248.8369293595,
+      -22682.201967981597,
+      -676215779.1374357,
+      -947512019.731134,
+      20379774.494528256,
+      -12428266.04135335,
+      -646427.8339570714,
+      721486.1068906055,
+      -21188455.562592726,
+      14245227.519223189,
+      21057510.65266641,
+      -15187848.774854913,
+      38598.30664507865,
+      104739.3106315188,
+      -19749893.07596423,
+      13801039.46328319,
+      -5806760.6002758555,
+      4124953.2545051454,
+      -590432.2124853033,
+      388777.88673401176,
+      -193786.37513718434,
+      131898.31267755234,
+      -18183155.249753214,
+      13069386.732377457,
+      636986.0538093131,
+      53533.051706876635,
+      28049865.895163007,
+      -21735080.721236657,
+      -11832184.575110158,
+      8654746.764571361,
+      847458397.3848923,
+      1179071949.849063,
+      9805123.340995898,
+      -8965949.61031798,
+      49595.73901250863,
+      -32046.538477656173,
+      4009369.7714496898,
+      -412326.94030378823,
+      -1728900.5271909,
+      622348.8152663094,
+      11805659.59848782,
+      -8872712.514490614,
+      -847205790.5069267,
+      -1175149934.4554899,
+      -4030553.667561262,
+      7228702.159529704,
+      -25009.42885973378,
+      -3886.9606216295356,
+      44364.350078450596,
+      29270.7141777197,
+      -222545.57757839217,
+      13546.048924740122,
+      111552.86881640695,
+      -32133.640312357285,
+      -547866.3564182412,
+      21246.647446138762,
+      684816.8571573036,
+      -342842.5868876372,
+      -265127.5435699562,
+      47805.19316014488,
+      1018491.6117706286,
+      -3543.5681288093433,
+      -1589170.6738923641,
+      449748.7240364672,
+      3500761.896540491,
+      91292.12631198313,
+      -12295887.35447179,
+      8317381.256322126,
+      -6237217.455719723,
+      203736.29360126692,
+      3062094.5350642647,
+      -41007481.94763479,
+      12052452.627348302,
+      16382724.742963942,
+      1785287.9566400566,
+      38353744.741525665,
+      -22905482.253828168,
+      6691020.612360888,
+      151384002.09420967,
+      -87902012.54622737,
+      90086707.29391442,
+      -10882335.938710587,
+      -1717968.5389741927,
+      -171188.13684038701,
+      -341236.7670403089,
+      374110.02890095295,
+      461295.7235288355,
+      -455492.8922314683,
+      859853.7467369335,
+      1096980.1280736672,
+      -6321853.912256397,
+      -6462877.409125051,
+      82057.38048809103,
+      -4470143.203442219,
+      1102501.0299515054,
+      825037.340918607,
+      3149206.8516703756,
+      2096375.1703905768,
+      -5448302.779763891,
+      -62135.039344875746,
+      -79354.11063238156,
+      -1479452.3931845627,
+      3401344.86246496,
+      -48598822.93695055,
+      6810944.687183027,
+      12129610.52932688,
+      -20539663.787629846,
+      11438508.454489904,
+      -32143708.604507897,
+      8602264.245974526,
+      118788846.15840863,
+      -78261306.36302859,
+      655859.6754912414,
+      -2844690.1369409137,
+      616761.0524296114,
+      53120108.52610287,
+      -36800243.833336696,
+      -40081340.61944149,
+      82444.18286501446,
+      1526669.8658712278,
+      -1295137.0536486527,
+      1194943.963561805,
+      4050626.209170198,
+      8915801.217955388,
+      -6086784.245836675,
+      945121.0716882998,
+      -4496149.557845295,
+      -57301.91815814347,
+      -39797632.1454645,
+      3025065.697739112,
+      -952633.9185061062,
+      5650707.244601599,
+      -7721001.647795359,
+      4836377.328470298,
+      15591881.68784976,
+      27555689.537306935
+    ],
+    "coefficient_l2": 2661731775.6052055,
+    "coefficient_max_abs": 1179071949.849063
+  },
+  "momentum_before": {
+    "point_count": 44400,
+    "momentum_max": 113930613686.69733,
+    "momentum_volume_L2": 1927978.0992876193,
+    "momentum_volume_RMS": 13191306181.981344,
+    "physical_volume": 2.13613448359038e-08
+  },
+  "momentum_after": {
+    "point_count": 44400,
+    "momentum_max": 85359922939.41629,
+    "momentum_volume_L2": 1802155.804132503,
+    "momentum_volume_RMS": 12330424815.889042,
+    "physical_volume": 2.13613448359038e-08
+  },
+  "momentum_change": {
+    "max_absolute": -28570690747.281036,
+    "max_fractional": -0.25077272756424185,
+    "L2_absolute": -125822.29515511636,
+    "L2_fractional": -0.06526126785444675
+  },
+  "peak_after_fit": {
+    "index": 22963,
+    "point": [
+      -0.000860645131066248,
+      -0.0008075787449619864,
+      1.4192077976710323e-05
+    ],
+    "radius": 0.0011802090793340035,
+    "z": 1.4192077976710323e-05,
+    "weight": 1.5114077925191567e-12,
+    "vector": [
+      20156149864.364956,
+      82897025502.42598,
+      2851180407.9160676
+    ],
+    "norm": 85359922939.41629
+  },
+  "harmonic_budget_before": {
+    "point_count": 44400,
+    "angles": 12,
+    "physical_volume": 2.13613448359038e-08,
+    "momentum_max": 113930613686.69733,
+    "momentum_volume_L2": 1927978.0992876193,
+    "modes": [
+      {
+        "mode": 0,
+        "volume_L2": 1535075.7625645993,
+        "squared_L2_fraction": 0.6339506285131423,
+        "cylindrical_component_squared_L2": [
+          807380984190.181,
+          1365646691205.2803,
+          183429921417.82404
+        ]
+      },
+      {
+        "mode": 1,
+        "volume_L2": 223090.79100424377,
+        "squared_L2_fraction": 0.013389337665991536,
+        "cylindrical_component_squared_L2": [
+          28025789549.094227,
+          12534211934.962944,
+          9209499546.842005
+        ]
+      },
+      {
+        "mode": 2,
+        "volume_L2": 1144933.3838649814,
+        "squared_L2_fraction": 0.35266003382086614,
+        "cylindrical_component_squared_L2": [
+          615503774943.9877,
+          591905705613.6051,
+          103462972930.92416
+        ]
+      },
+      {
+        "mode": 3,
+        "volume_L2": 0.0007981597982663743,
+        "squared_L2_fraction": 1.7138606452985982e-19,
+        "cylindrical_component_squared_L2": [
+          5.7077056423799634e-08,
+          3.0512808539728293e-07,
+          2.7485392174753684e-07
+        ]
+      },
+      {
+        "mode": 4,
+        "volume_L2": 0.0008666194542445187,
+        "squared_L2_fraction": 2.020471252123982e-19,
+        "cylindrical_component_squared_L2": [
+          5.7579086715179375e-08,
+          6.924979812092661e-07,
+          9.522105506220637e-10
+        ]
+      },
+      {
+        "mode": 5,
+        "volume_L2": 0.0007905551292678406,
+        "squared_L2_fraction": 1.681357746223443e-19,
+        "cylindrical_component_squared_L2": [
+          5.708870838045423e-08,
+          2.8713764697043337e-07,
+          2.807510570608046e-07
+        ]
+      },
+      {
+        "mode": 6,
+        "volume_L2": 0.0002254521565794479,
+        "squared_L2_fraction": 1.367428399599902e-20,
+        "cylindrical_component_squared_L2": [
+          1.0635637077106038e-08,
+          3.98623665764957e-08,
+          3.306712527221546e-10
+        ]
+      }
+    ],
+    "parseval_relative_error": 1.3136082132234937e-16,
+    "scope": "Sampled cylindrical Fourier budget; angular aliasing and spatial accuracy unverified"
+  },
+  "harmonic_budget_after": {
+    "point_count": 44400,
+    "angles": 12,
+    "physical_volume": 2.13613448359038e-08,
+    "momentum_max": 85359922939.41629,
+    "momentum_volume_L2": 1802155.804132503,
+    "modes": [
+      {
+        "mode": 0,
+        "volume_L2": 1434498.973233415,
+        "squared_L2_fraction": 0.6336009411279911,
+        "cylindrical_component_squared_L2": [
+          669537914231.9076,
+          1191324004804.573,
+          196925385171.24164
+        ]
+      },
+      {
+        "mode": 1,
+        "volume_L2": 216110.0041723539,
+        "squared_L2_fraction": 0.01438020488058869,
+        "cylindrical_component_squared_L2": [
+          25097534221.46497,
+          12089519677.186361,
+          9516480004.723492
+        ]
+      },
+      {
+        "mode": 2,
+        "volume_L2": 1069240.2462764732,
+        "squared_L2_fraction": 0.35201885399142063,
+        "cylindrical_component_squared_L2": [
+          564467873790.8958,
+          490234677527.8173,
+          88572152938.65958
+        ]
+      },
+      {
+        "mode": 3,
+        "volume_L2": 0.0007981598404190891,
+        "squared_L2_fraction": 1.9615305432215513e-19,
+        "cylindrical_component_squared_L2": [
+          5.7077052330004935e-08,
+          3.0512815707626506e-07,
+          2.7485392145155584e-07
+        ]
+      },
+      {
+        "mode": 4,
+        "volume_L2": 0.0008666194661158872,
+        "squared_L2_fraction": 2.312449249348489e-19,
+        "cylindrical_component_squared_L2": [
+          5.757908994813944e-08,
+          6.924979977466232e-07,
+          9.52211356222726e-10
+        ]
+      },
+      {
+        "mode": 5,
+        "volume_L2": 0.0007905551648058398,
+        "squared_L2_fraction": 1.924330621924811e-19,
+        "cylindrical_component_squared_L2": [
+          5.708870490621557e-08,
+          2.8713770593057004e-07,
+          2.80751057764403e-07
+        ]
+      },
+      {
+        "mode": 6,
+        "volume_L2": 0.00022545213015389372,
+        "squared_L2_fraction": 1.5650348625184588e-20,
+        "cylindrical_component_squared_L2": [
+          1.0635634562610142e-08,
+          3.986235763464408e-08,
+          3.3067079367401286e-10
+        ]
+      }
+    ],
+    "parseval_relative_error": 4.510312492975545e-16,
+    "scope": "Sampled cylindrical Fourier budget; angular aliasing and spatial accuracy unverified"
+  },
+  "harmonic_budget_scope": "Sampled cylindrical Fourier decomposition on the frozen 12-angle grid; no continuum certificate.",
+  "elapsed_seconds": 2.9914052999811247
+}

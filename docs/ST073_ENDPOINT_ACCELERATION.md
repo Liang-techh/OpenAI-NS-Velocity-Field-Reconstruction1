@@ -4,7 +4,7 @@
 The original acceleration momentum design and shape response incorrectly
 used the real component for imaginary control columns. Both must use the
 negative imaginary component of the complex basis. The momentum helper is
-now fixed, and the shape helper is being regenerated with the same fix.
+now fixed, and the shape helper has been regenerated with the same fix.
 The old physical candidate and its actual FD replay remain reproducible,
 but its linear prediction, design rank/condition, and attribution of all
 actual-minus-linear difference to nonlinear convection are invalidated.
