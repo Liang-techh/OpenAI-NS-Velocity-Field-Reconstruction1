@@ -1,0 +1,292 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "scope": "Infinitesimal physical-time derivative of the frozen solenoidal scale map at s=1. The reference is held at tau0; pressure, Navier--Stokes dynamics, and recursive closure are omitted.",
+  "sources": {
+    "two_patch_module": {
+      "path": "global_two_patch_candidate.py",
+      "sha256": "26f7f7e4fc59972a42ffd756df9046a71dfd19c0a0f2fe768c1ef38361825397"
+    },
+    "two_patch_source": {
+      "path": "localized_two_patch_constrained.json",
+      "sha256": "8a8f3b8a9f98bd07c70f61ebd41fc36e693f734aec1bf899147b2b022d44392d"
+    },
+    "parent_module": {
+      "path": "global_localized_candidate.py",
+      "sha256": "d9c1a806d6997cde5fcd4a8139cb13d2147c9a3a99c2c2b5aff5567226b935f6"
+    },
+    "transport_module": {
+      "path": "solenoidal_scale_transport.py",
+      "sha256": "85ffafcb3a0eaca682d121bce21c15b15d030a3d5e0d62dc7896fad39135e240"
+    },
+    "fixed_cylinder_cache": {
+      "path": "enriched_endpoint_shape_cache.npz",
+      "sha256": "8646a0608e2a3eaacefda90011e78910cf9579af56eb5b6efb92a1cdd6b4ae53"
+    },
+    "loader_hashes": {
+      "localized_constrained_tangent.json": "20a33e63cd33a1b800c208fe5ecf107bccac4fc982413bcbe8d62acc2d78470e",
+      "enriched_mean_endpoint_tangent.json": "ea78f641a3b4ca760e373716186c6eb93b27494f0c8982708c953468582b40c5",
+      "global_collar_tangent.json": "35d0383f7ef02ef62e75f8c4147891bec03a07006d2f5080c64eda4f73918686",
+      "localized_two_patch_constrained.json": "8a8f3b8a9f98bd07c70f61ebd41fc36e693f734aec1bf899147b2b022d44392d"
+    }
+  },
+  "inputs": {
+    "reference_k": 11.0003,
+    "reference_tau": 0.00024408986266228504,
+    "physical_time_convention": "t=-tau",
+    "h": 0.005,
+    "nu": 0.01,
+    "mean_angles": 5,
+    "inner_radius": 0.005069225872343679,
+    "outer_radius": 0.010138451744687358,
+    "finite_difference_jacobian_step": 7.811687760373635e-07
+  },
+  "derivation": {
+    "scale_time_relation": "s=tau/tau0, ds/dt=-1/tau0 at s=1",
+    "formula": "ut=(diag(1/2,1/2,1/2+h)*u + J@[x/2,y/2,(1/2-h)z] + h*m*e_theta)/tau0",
+    "piola_sign": "d/ds [s^(-1/2) u_h(S^-1x)] = -u_h/2 - J_h@[x/2,y/2,(1/2-h)z]; ds/dt is negative",
+    "swirl_sign": "d/ds [s^(-1/2-h)-s^(-1/2)] at s=1 is -h; ds/dt gives +h/tau0",
+    "divergence_scope": "The Piola part transports divergence by s^(-1); the added axisymmetric swirl has zero divergence for r>0."
+  },
+  "sample_points": {
+    "labels": [
+      "axis",
+      "axis",
+      "interior",
+      "interior",
+      "transition",
+      "transition",
+      "exterior",
+      "exterior",
+      "exterior"
+    ],
+    "points": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0002
+      ],
+      [
+        0.003,
+        0.0,
+        0.0
+      ],
+      [
+        0.004,
+        0.001,
+        0.0001
+      ],
+      [
+        0.007603838808515518,
+        0.0,
+        0.0
+      ],
+      [
+        0.007603838808515518,
+        0.0,
+        0.0001
+      ],
+      [
+        0.010341220779581106,
+        0.0,
+        0.0
+      ],
+      [
+        0.012,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.001
+      ]
+    ]
+  },
+  "jacobian_refinement": {
+    "coarse_step": 7.811687760373635e-07,
+    "fine_step": 3.9058438801868176e-07,
+    "max_abs_difference": 6.592588033527136e-05,
+    "relative_l2_difference": 3.0432770804100346e-10,
+    "category": {
+      "axis": {
+        "count": 2,
+        "max_abs": 5.682326088397684e-09,
+        "rms": 4.651901989928079e-09
+      },
+      "exterior": {
+        "count": 3,
+        "max_abs": 0.0,
+        "rms": 0.0
+      },
+      "interior": {
+        "count": 2,
+        "max_abs": 7.026314112231892e-05,
+        "rms": 4.968618622043583e-05
+      },
+      "transition": {
+        "count": 2,
+        "max_abs": 8.586198683526364e-11,
+        "rms": 8.586198683526364e-11
+      }
+    }
+  },
+  "generator_jacobian_refinement": {
+    "max_abs_difference": 0.0005351456347852945,
+    "relative_l2_difference": 3.2350152648267187e-10,
+    "category": {
+      "axis": {
+        "count": 2,
+        "max_abs": 3.255991032347083e-10,
+        "rms": 2.3023333384552098e-10
+      },
+      "exterior": {
+        "count": 3,
+        "max_abs": 0.0,
+        "rms": 0.0
+      },
+      "interior": {
+        "count": 2,
+        "max_abs": 0.0005651164642435252,
+        "rms": 0.0003996099685582723
+      },
+      "transition": {
+        "count": 2,
+        "max_abs": 1.337411958957091e-09,
+        "rms": 1.337411958957091e-09
+      }
+    }
+  },
+  "forward_physical_time_check": {
+    "rows": [
+      {
+        "dt_over_tau0": 0.002,
+        "dt": 4.881797253245701e-07,
+        "max_abs_error": 5804.541977602756,
+        "weighted_rms_error": 2007.267621962839,
+        "relative_l2_error": 0.0034470815425809405,
+        "category": {
+          "axis": {
+            "count": 2,
+            "max_abs": 26.136705160457495,
+            "rms": 18.48378471173129
+          },
+          "exterior": {
+            "count": 3,
+            "max_abs": 0.0,
+            "rms": 0.0
+          },
+          "interior": {
+            "count": 2,
+            "max_abs": 5983.010885587779,
+            "rms": 4258.017239453558
+          },
+          "transition": {
+            "count": 2,
+            "max_abs": 1.5543585832622284,
+            "rms": 1.5543585832622284
+          }
+        },
+        "error_ratio_to_next_finer": 1.9557081306296997
+      },
+      {
+        "dt_over_tau0": 0.001,
+        "dt": 2.4408986266228504e-07,
+        "max_abs_error": 2968.0001257313415,
+        "weighted_rms_error": 1026.0486450810008,
+        "relative_l2_error": 0.0017620337754416183,
+        "category": {
+          "axis": {
+            "count": 2,
+            "max_abs": 13.055494837075457,
+            "rms": 9.232799752743626
+          },
+          "exterior": {
+            "count": 3,
+            "max_abs": 0.0,
+            "rms": 0.0
+          },
+          "interior": {
+            "count": 2,
+            "max_abs": 3059.262308110981,
+            "rms": 2176.558143152082
+          },
+          "transition": {
+            "count": 2,
+            "max_abs": 0.7773117757442378,
+            "rms": 0.7773117757442378
+          }
+        },
+        "error_ratio_to_next_finer": 1.9777975542117046
+      },
+      {
+        "dt_over_tau0": 0.0005,
+        "dt": 1.2204493133114252e-07,
+        "max_abs_error": 1500.659215302905,
+        "weighted_rms_error": 518.7068644083822,
+        "relative_l2_error": 0.0008907755192921012,
+        "category": {
+          "axis": {
+            "count": 2,
+            "max_abs": 6.524537728577343,
+            "rms": 4.614130081626759
+          },
+          "exterior": {
+            "count": 3,
+            "max_abs": 0.0,
+            "rms": 0.0
+          },
+          "interior": {
+            "count": 2,
+            "max_abs": 1546.804231806188,
+            "rms": 1100.3336807780113
+          },
+          "transition": {
+            "count": 2,
+            "max_abs": 0.3886885572094343,
+            "rms": 0.3886885572094343
+          }
+        },
+        "error_ratio_to_next_finer": 1.9888840363300908
+      },
+      {
+        "dt_over_tau0": 0.00025,
+        "dt": 6.102246566557126e-08,
+        "max_abs_error": 754.5232340805233,
+        "weighted_rms_error": 260.7840884338674,
+        "relative_l2_error": 0.0004478446261989386,
+        "category": {
+          "axis": {
+            "count": 2,
+            "max_abs": 3.261467010132037,
+            "rms": 2.306497994031126
+          },
+          "exterior": {
+            "count": 3,
+            "max_abs": 0.0,
+            "rms": 0.0
+          },
+          "interior": {
+            "count": 2,
+            "max_abs": 777.7251247228703,
+            "rms": 553.2017496406047
+          },
+          "transition": {
+            "count": 2,
+            "max_abs": 0.19435239020231165,
+            "rms": 0.19435239020231165
+          }
+        }
+      }
+    ],
+    "interpretation": "Forward physical-time differences of T_(1-dt/tau0) at fixed reference tau0. The expected first-order error decreases with dt; this validates the sign and amplitudes of the generator only."
+  },
+  "elapsed_seconds": 13.815109299990581
+}

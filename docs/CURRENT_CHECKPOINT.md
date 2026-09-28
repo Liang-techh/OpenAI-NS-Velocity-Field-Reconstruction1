@@ -2,6 +2,25 @@
 
 ## Latest continuation checkpoint - 2026-09-27
 
+New profile-aware continuation `localized_drift_1800_fit.json` reaches drift
+1799.999991729 on the fitted interval, about 9.98% below the original parent.
+The assembled refined-grid momentum maximum/L2 are 8.53686e10 / 1.67258e6;
+all 81 sampled cones and endpoint shape gates pass. Independent 18,720-point
+reference replay instead gives maximum/L2 8.91218e10 / 1.68732e6: L2 improves
+over the first patch, but its maximum worsens by about 4.3%. Do not adopt it
+as a joint momentum improvement. Completed endpoint replay also shows peak
+regression: maximum/L2 9.01431e10 / 1.68797e6 (peak about 5.4% above the
+first patch). Both rows are frozen in `localized_drift_1800_fit_actual_replay.json`.
+Direct global drift is 1799.999991721 at
+delta_k=1e-6, 1800.000663267 at 2e-6, and 1800.006038192 at 1e-5; the fitted
+cap does not extend uniformly to these longer intervals.
+The fit trades momentum quality for reduced profile drift; it is not an NS
+step. The velocity scale map now has an implemented physical-time generator
+in `scale_transport_generator.py`, checked against shrinking-time differences.
+The next decisive calculation replaces the fitted time derivative with this
+generator and measures the momentum defect with explicit pressure and zero
+forcing. No recursive dynamical closure has been established.
+
 The stricter `localized_parent_drift_fit.json` is now also independently
 replayed: maximum/L2 8.21304e10 / 1.65408e6 at reference and 8.11335e10 /
 1.65466e6 at the short endpoint. Its directly evaluated profile drift is
@@ -10,7 +29,7 @@ momentum reduction for this stricter profile cap; retain both candidates
 below as documented alternatives. `global_two_patch_candidate.load(source)`
 can load this stricter source explicitly. A velocity-only solenoidal scale
 map is also available; see [scale transport](ST073_SOLENOIDAL_SCALE_TRANSPORT.md).
-That map is kinematic, with no pressure/time dynamics or NS step accepted.
+That map and its time derivative are kinematic, with no NS step accepted.
 
 Latest preferred momentum/shape continuation: the drift-capped two-patch
 candidate in `localized_two_patch_constrained.json`. Independent actual
@@ -19,8 +38,8 @@ and 7.40549e10 / 1.64031e6 at k0+1e-6, improving both metrics over the
 one-patch baseline at both times. `global_two_patch_candidate.load()` is
 the assembled global field interface. Direct profile drift is about
 2122.104, matching the imposed cap but still above the unpatched parent's
-1999.620. A stricter parent-drift fit is the next optimization, not an
-accepted result. Full-support residual, critical-time behavior and scale
+1999.620. The stricter parent-level and 1800-drift fits above are now available
+as alternatives. Full-support residual, critical-time behavior and scale
 recursion remain unproved; zero recursion steps are accepted.
 
 The preceding continuation baseline was the constrained localized patch

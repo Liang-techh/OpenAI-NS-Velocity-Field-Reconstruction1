@@ -49,8 +49,23 @@ values are zero. Cartesian finite differences agree with the Piola
 divergence prediction to maximum 1.26e-5 and 1.11e-5 at two step sizes;
 this is a bounded sampling check, not a continuum divergence certificate.
 
-No pressure transformation, force, or time derivative has been accepted
-with this mapping. Anisotropic transport is not asserted to be a symmetry
+The physical-time derivative is now implemented in
+`experiments/root_st073/scale_transport_generator.py`. With t=-tau,
+s=tau/tau0, reference Cartesian Jacobian J, and mean swirl m, it is
+
+```
+ut = (diag(0.5,0.5,0.5+h) u
+      + J @ (x/2,y/2,(0.5-h)z) + h*m*e_theta) / tau0.
+```
+
+The frozen generator report checks nine axis/interior/transition/exterior
+points: halving the Cartesian Jacobian step changes the generator relatively
+by 3.24e-10; forward physical-time differences show first-order convergence
+with error ratios approaching 2. This checks the derivative of the chosen
+map, not the momentum equation.
+
+No pressure transformation or force has been accepted with this mapping.
+Anisotropic transport is not asserted to be a symmetry
 of the fixed-viscosity NS equation. The remaining task is to construct
 pressure and evolution corrections and measure the full dynamic residual
 between successive mapped fields. No recursion step is accepted here.
