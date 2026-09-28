@@ -2,7 +2,18 @@
 
 ## Latest continuation checkpoint - 2026-09-27
 
-The preferred continuation baseline is now the constrained localized patch
+Latest preferred momentum/shape continuation: the drift-capped two-patch
+candidate in `localized_two_patch_constrained.json`. Independent actual
+18,720-point replay gives maximum/L2 7.49634e10 / 1.63977e6 at reference
+and 7.40549e10 / 1.64031e6 at k0+1e-6, improving both metrics over the
+one-patch baseline at both times. `global_two_patch_candidate.load()` is
+the assembled global field interface. Direct profile drift is about
+2122.104, matching the imposed cap but still above the unpatched parent's
+1999.620. A stricter parent-drift fit is the next optimization, not an
+accepted result. Full-support residual, critical-time behavior and scale
+recursion remain unproved; zero recursion steps are accepted.
+
+The preceding continuation baseline was the constrained localized patch
 in `experiments/root_st073/localized_constrained_tangent.json`, with its
 fixed enriched 264-control parent. Independent actual Cartesian momentum
 replay on 18,720 points confirms simultaneous maximum/L2 improvement at
