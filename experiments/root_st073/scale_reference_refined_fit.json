@@ -1,0 +1,880 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "constraints_maintained": false,
+  "scope": "One refined-grid peak-aware reference correction diagnostic; no PDE, trajectory, or recursion acceptance.",
+  "sources": {
+    "fit_report": {
+      "path": "scale_reference_trust_nonlinear_fit.json",
+      "sha256": "868d171a0875af35d5e1528d4b143a038848756f161592a758a939f514f33ee0"
+    },
+    "actual_replay_report": {
+      "path": "scale_reference_trust_nonlinear_actual.json",
+      "sha256": "abd2cbade326953930e6a6373d251468610d9514c0a4bddac7e52cb1ad7b697e"
+    },
+    "generator_cache": {
+      "path": "scale_generator_momentum_defect.npz",
+      "sha256": "0fb7b970e7d6f7845b281a330472ee57d489d7533aeeb3a4bc475b26389abdc3"
+    },
+    "velocity_step_helpers": {
+      "path": "scale_reference_velocity_step.py",
+      "sha256": "de59e82571307ea156695771d4e3453748d23b39806f5ff871cfa6e122e24eb8"
+    },
+    "trust_helpers": {
+      "path": "scale_reference_trust_fit.py",
+      "sha256": "1122f1dbd2c39c9dc4a93c7b06a9f960a49622aad1018939fa4db7ee5009a986"
+    },
+    "pressure_design": {
+      "path": "scale_generator_pressure_projection.py",
+      "sha256": "2c2ac7d5feaf295901022d665fc9776c20374c19fbb99203bb625bfd15623179"
+    },
+    "two_patch_candidate": {
+      "path": "localized_drift_1800_fit.json",
+      "sha256": "47521663020188d3ab89360816aba46ae111f0663a1d962225a7b0a128f1821a"
+    },
+    "geometry": {
+      "path": "full_wave_frozen_cache.json",
+      "sha256": "c03b9efa4bd65db79ee420df66808a34e7f634174851b47cca81f742b1435574"
+    },
+    "pressure_report": {
+      "path": "scale_generator_pressure_projection.json",
+      "sha256": "8eb620cbbada879246274d274a5c2b7374e4cde1c7fb4f6ad9aa9f66ab9bd4ed"
+    }
+  },
+  "inputs": {
+    "point_count": 44400,
+    "physical_volume": 2.13613448359038e-08,
+    "grid_array_sha256": "8c798b8a68d51a60524e15b6286fda12c649d771a13ae49ee8100526a312e3a2",
+    "tau0": 0.00024408986266228504,
+    "similarity_exponent_h": 0.005,
+    "viscosity": 0.01,
+    "carrier": [
+      -871.4212739359624,
+      -616.1878920703391
+    ],
+    "degree": 2,
+    "modes": [
+      0,
+      1,
+      2
+    ],
+    "patch_count": 2,
+    "velocity_columns_per_patch": 135,
+    "pressure_columns_per_patch": 45,
+    "control_count_per_patch": 180,
+    "joint_column_count": 360,
+    "original_reference_velocity_norm": 0.21639142658270596,
+    "additional_velocity_trust_fraction": 0.01,
+    "additional_velocity_trust_bound": 0.00216391426582706,
+    "peak_count": 64,
+    "peak_weight_multiplier": 8.0,
+    "cache_chunk_count": 58,
+    "correction_kind": "initial reference curl-potential velocity increment around refined corrected state"
+  },
+  "baseline": {
+    "point_count": 44400,
+    "volume_L2": 2782080.072091978,
+    "volume_RMS": 19035107332.0357,
+    "max_norm": 277457969823.5515,
+    "max_point": [
+      -0.000881699463254858,
+      -0.00020644407690997453,
+      -5.491235501718044e-05
+    ],
+    "max_index": 20478,
+    "max_vector": [
+      -356016248.05381083,
+      -275764070874.1451,
+      30610055307.97759
+    ],
+    "physical_volume": 2.13613448359038e-08
+  },
+  "status_detail": "completed",
+  "design": {
+    "shape": [
+      133200,
+      360
+    ],
+    "values_shape": [
+      133200,
+      270
+    ]
+  },
+  "solver": {
+    "trust_bound": 0.00216391426582706,
+    "pressure_rank": 90,
+    "trust_rank": 268,
+    "velocity_scales_min": 0.0006021562530205033,
+    "velocity_scales_max": 0.16067077397452187,
+    "peak_count": 64,
+    "peak_weight": 0.0011692416642840962,
+    "active_peak_indices": [
+      20478,
+      20490,
+      22872,
+      22860,
+      20472,
+      22866,
+      20484,
+      15690,
+      20466,
+      22878,
+      20460,
+      20477,
+      20502,
+      20496,
+      20489,
+      22871,
+      20483,
+      22865,
+      22883,
+      20491,
+      15689,
+      20471,
+      20465,
+      22884,
+      20479,
+      15696,
+      22848,
+      15702,
+      15684,
+      22854,
+      22877,
+      20495,
+      25248,
+      20454,
+      22873,
+      20508,
+      20503,
+      15695,
+      20485,
+      20448,
+      22861,
+      25266,
+      25254,
+      20473,
+      22853,
+      22859,
+      15707,
+      20497,
+      22890,
+      20501,
+      20507,
+      25260,
+      15691,
+      20514,
+      20467,
+      20453,
+      22895,
+      25284,
+      22867,
+      22879,
+      22842,
+      20459,
+      25236,
+      25259
+    ],
+    "solver": {
+      "multiplier": 4.266826267224326e+22,
+      "unconstrained_norm": 0.2902456780487546,
+      "constrained_norm": 0.0021639142658309084,
+      "iterations": 35
+    },
+    "increment_velocity_metric": {
+      "point_count": 44400,
+      "volume_L2": 0.0021639142658309,
+      "volume_RMS": 14.805591226726067,
+      "max_norm": 348.40774641828966,
+      "max_point": [
+        -0.0008871186209360441,
+        -0.00020771293671056023,
+        -0.00018909084118731113
+      ],
+      "max_index": 15678,
+      "max_vector": [
+        -98.6845098510276,
+        333.8972079162171,
+        -12.72712950700814
+      ],
+      "physical_volume": 2.13613448359038e-08
+    },
+    "increment_pressure_norm": 101923712760.31654
+  },
+  "trials": [
+    {
+      "alpha": 1.0,
+      "metric": {
+        "point_count": 44400,
+        "volume_L2": 188726924.71133438,
+        "volume_RMS": 1291277452565.895,
+        "max_norm": 21658747320769.344,
+        "max_point": [
+          -0.00033127339951551164,
+          -0.0010957117576400083,
+          8.248663834888883e-05
+        ],
+        "max_index": 25352,
+        "max_vector": [
+          -5279049033254.165,
+          -17607270558117.863,
+          11454998921984.559
+        ],
+        "physical_volume": 2.13613448359038e-08
+      },
+      "velocity_metric": {
+        "point_count": 44400,
+        "volume_L2": 0.0021639142658309,
+        "volume_RMS": 14.805591226726067,
+        "max_norm": 348.40774641828966,
+        "max_point": [
+          -0.0008871186209360441,
+          -0.00020771293671056023,
+          -0.00018909084118731113
+        ],
+        "max_index": 15678,
+        "max_vector": [
+          -98.6845098510276,
+          333.8972079162171,
+          -12.72712950700814
+        ],
+        "physical_volume": 2.13613448359038e-08
+      },
+      "trust_region_pass": true,
+      "improves_volume_L2": false,
+      "improves_max": false
+    },
+    {
+      "alpha": 0.5,
+      "metric": {
+        "point_count": 44400,
+        "volume_L2": 94354256.01040354,
+        "volume_RMS": 645575736086.5159,
+        "max_norm": 10827591810466.021,
+        "max_point": [
+          -0.00033127339951551164,
+          -0.0010957117576400083,
+          8.248663834888883e-05
+        ],
+        "max_index": 25352,
+        "max_vector": [
+          -2647017880529.0474,
+          -8796790854833.525,
+          5731187609086.587
+        ],
+        "physical_volume": 2.13613448359038e-08
+      },
+      "velocity_metric": {
+        "point_count": 44400,
+        "volume_L2": 0.00108195713291545,
+        "volume_RMS": 7.4027956133630335,
+        "max_norm": 174.20387320914483,
+        "max_point": [
+          -0.0008871186209360441,
+          -0.00020771293671056023,
+          -0.00018909084118731113
+        ],
+        "max_index": 15678,
+        "max_vector": [
+          -49.3422549255138,
+          166.94860395810855,
+          -6.36356475350407
+        ],
+        "physical_volume": 2.13613448359038e-08
+      },
+      "trust_region_pass": true,
+      "improves_volume_L2": false,
+      "improves_max": false
+    },
+    {
+      "alpha": 0.25,
+      "metric": {
+        "point_count": 44400,
+        "volume_L2": 47228923.43479495,
+        "volume_RMS": 323142254522.46295,
+        "max_norm": 5411757086648.687,
+        "max_point": [
+          -0.00033127339951551164,
+          -0.0010957117576400083,
+          8.248663834888883e-05
+        ],
+        "max_index": 25352,
+        "max_vector": [
+          -1331137477727.9998,
+          -4391534171012.4263,
+          2868730626097.615
+        ],
+        "physical_volume": 2.13613448359038e-08
+      },
+      "velocity_metric": {
+        "point_count": 44400,
+        "volume_L2": 0.000540978566457725,
+        "volume_RMS": 3.7013978066815167,
+        "max_norm": 87.10193660457242,
+        "max_point": [
+          -0.0008871186209360441,
+          -0.00020771293671056023,
+          -0.00018909084118731113
+        ],
+        "max_index": 15678,
+        "max_vector": [
+          -24.6711274627569,
+          83.47430197905427,
+          -3.181782376752035
+        ],
+        "physical_volume": 2.13613448359038e-08
+      },
+      "trust_region_pass": true,
+      "improves_volume_L2": false,
+      "improves_max": false
+    },
+    {
+      "alpha": 0.125,
+      "metric": {
+        "point_count": 44400,
+        "volume_L2": 23734702.13981472,
+        "volume_RMS": 162393817222.3585,
+        "max_norm": 2703802233771.3813,
+        "max_point": [
+          -0.00033127339951551164,
+          -0.0010957117576400083,
+          8.248663834888883e-05
+        ],
+        "max_index": 25352,
+        "max_vector": [
+          -673231069717.8542,
+          -2188901621057.1448,
+          1437364302968.1335
+        ],
+        "physical_volume": 2.13613448359038e-08
+      },
+      "velocity_metric": {
+        "point_count": 44400,
+        "volume_L2": 0.0002704892832288625,
+        "volume_RMS": 1.8506989033407584,
+        "max_norm": 43.55096830228621,
+        "max_point": [
+          -0.0008871186209360441,
+          -0.00020771293671056023,
+          -0.00018909084118731113
+        ],
+        "max_index": 15678,
+        "max_vector": [
+          -12.33556373137845,
+          41.73715098952714,
+          -1.5908911883760175
+        ],
+        "physical_volume": 2.13613448359038e-08
+      },
+      "trust_region_pass": true,
+      "improves_volume_L2": false,
+      "improves_max": false
+    },
+    {
+      "alpha": 0.0625,
+      "metric": {
+        "point_count": 44400,
+        "volume_L2": 12108909.703998204,
+        "volume_RMS": 82849662812.26219,
+        "max_norm": 1349869104229.0676,
+        "max_point": [
+          -0.00033127339951551164,
+          -0.0010957117576400083,
+          8.248663834888883e-05
+        ],
+        "max_index": 25352,
+        "max_vector": [
+          -344286314060.37573,
+          -1087584294068.321,
+          721646683494.6432
+        ],
+        "physical_volume": 2.13613448359038e-08
+      },
+      "velocity_metric": {
+        "point_count": 44400,
+        "volume_L2": 0.00013524464161443126,
+        "volume_RMS": 0.9253494516703792,
+        "max_norm": 21.775484151143104,
+        "max_point": [
+          -0.0008871186209360441,
+          -0.00020771293671056023,
+          -0.00018909084118731113
+        ],
+        "max_index": 15678,
+        "max_vector": [
+          -6.167781865689225,
+          20.86857549476357,
+          -0.7954455941880088
+        ],
+        "physical_volume": 2.13613448359038e-08
+      },
+      "trust_region_pass": true,
+      "improves_volume_L2": false,
+      "improves_max": false
+    },
+    {
+      "alpha": 0.03125,
+      "metric": {
+        "point_count": 44400,
+        "volume_L2": 6516135.584204873,
+        "volume_RMS": 44583670139.36045,
+        "max_norm": 673021553189.1171,
+        "max_point": [
+          -0.00033127339951551164,
+          -0.0010957117576400083,
+          8.248663834888883e-05
+        ],
+        "max_index": 25352,
+        "max_vector": [
+          -179816048318.5352,
+          -536925367571.1133,
+          363779259280.7108
+        ],
+        "physical_volume": 2.13613448359038e-08
+      },
+      "velocity_metric": {
+        "point_count": 44400,
+        "volume_L2": 6.762232080721563e-05,
+        "volume_RMS": 0.4626747258351896,
+        "max_norm": 10.887742075571552,
+        "max_point": [
+          -0.0008871186209360441,
+          -0.00020771293671056023,
+          -0.00018909084118731113
+        ],
+        "max_index": 15678,
+        "max_vector": [
+          -3.0838909328446125,
+          10.434287747381784,
+          -0.3977227970940044
+        ],
+        "physical_volume": 2.13613448359038e-08
+      },
+      "trust_region_pass": true,
+      "improves_volume_L2": false,
+      "improves_max": false
+    },
+    {
+      "alpha": 0.015625,
+      "metric": {
+        "point_count": 44400,
+        "volume_L2": 4052153.8223665617,
+        "volume_RMS": 27725004649.728188,
+        "max_norm": 334845637583.011,
+        "max_point": [
+          -0.00033127339951551164,
+          -0.0010957117576400083,
+          8.248663834888883e-05
+        ],
+        "max_index": 25352,
+        "max_vector": [
+          -97581443469.33954,
+          -261595838571.8105,
+          184843393554.44785
+        ],
+        "physical_volume": 2.13613448359038e-08
+      },
+      "velocity_metric": {
+        "point_count": 44400,
+        "volume_L2": 3.3811160403607814e-05,
+        "volume_RMS": 0.2313373629175948,
+        "max_norm": 5.443871037785776,
+        "max_point": [
+          -0.0008871186209360441,
+          -0.00020771293671056023,
+          -0.00018909084118731113
+        ],
+        "max_index": 15678,
+        "max_vector": [
+          -1.5419454664223062,
+          5.217143873690892,
+          -0.1988613985470022
+        ],
+        "physical_volume": 2.13613448359038e-08
+      },
+      "trust_region_pass": true,
+      "improves_volume_L2": false,
+      "improves_max": false
+    },
+    {
+      "alpha": 0.0078125,
+      "metric": {
+        "point_count": 44400,
+        "volume_L2": 3148020.1013211505,
+        "volume_RMS": 21538884201.4871,
+        "max_norm": 276502627933.93604,
+        "max_point": [
+          -0.000881699463254858,
+          -0.00020644407690997453,
+          -5.491235501718044e-05
+        ],
+        "max_index": 20478,
+        "max_vector": [
+          -95186689.16623406,
+          -274847455883.3528,
+          30208776676.907623
+        ],
+        "physical_volume": 2.13613448359038e-08
+      },
+      "velocity_metric": {
+        "point_count": 44400,
+        "volume_L2": 1.6905580201803907e-05,
+        "volume_RMS": 0.1156686814587974,
+        "max_norm": 2.721935518892888,
+        "max_point": [
+          -0.0008871186209360441,
+          -0.00020771293671056023,
+          -0.00018909084118731113
+        ],
+        "max_index": 15678,
+        "max_vector": [
+          -0.7709727332111531,
+          2.608571936845446,
+          -0.0994306992735011
+        ],
+        "physical_volume": 2.13613448359038e-08
+      },
+      "trust_region_pass": true,
+      "improves_volume_L2": false,
+      "improves_max": true
+    },
+    {
+      "alpha": 0.00390625,
+      "metric": {
+        "point_count": 44400,
+        "volume_L2": 2877938.1324143275,
+        "volume_RMS": 19690972159.644566,
+        "max_norm": 276979940470.78143,
+        "max_point": [
+          -0.000881699463254858,
+          -0.00020644407690997453,
+          -5.491235501718044e-05
+        ],
+        "max_index": 20478,
+        "max_vector": [
+          -225297094.34281453,
+          -275305476769.45807,
+          30409392055.05907
+        ],
+        "physical_volume": 2.13613448359038e-08
+      },
+      "velocity_metric": {
+        "point_count": 44400,
+        "volume_L2": 8.452790100901954e-06,
+        "volume_RMS": 0.0578343407293987,
+        "max_norm": 1.360967759446444,
+        "max_point": [
+          -0.0008871186209360441,
+          -0.00020771293671056023,
+          -0.00018909084118731113
+        ],
+        "max_index": 15678,
+        "max_vector": [
+          -0.38548636660557656,
+          1.304285968422723,
+          -0.04971534963675055
+        ],
+        "physical_volume": 2.13613448359038e-08
+      },
+      "trust_region_pass": true,
+      "improves_volume_L2": false,
+      "improves_max": true
+    },
+    {
+      "alpha": 0.001953125,
+      "metric": {
+        "point_count": 44400,
+        "volume_L2": 2806355.63521571,
+        "volume_RMS": 19201201742.560116,
+        "max_norm": 277218865538.86743,
+        "max_point": [
+          -0.000881699463254858,
+          -0.00020644407690997453,
+          -5.491235501718044e-05
+        ],
+        "max_index": 20478,
+        "max_vector": [
+          -290580577.6315107,
+          -275534702169.4789,
+          30509717697.172443
+        ],
+        "physical_volume": 2.13613448359038e-08
+      },
+      "velocity_metric": {
+        "point_count": 44400,
+        "volume_L2": 4.226395050450977e-06,
+        "volume_RMS": 0.02891717036469935,
+        "max_norm": 0.680483879723222,
+        "max_point": [
+          -0.0008871186209360441,
+          -0.00020771293671056023,
+          -0.00018909084118731113
+        ],
+        "max_index": 15678,
+        "max_vector": [
+          -0.19274318330278828,
+          0.6521429842113615,
+          -0.024857674818375274
+        ],
+        "physical_volume": 2.13613448359038e-08
+      },
+      "trust_region_pass": true,
+      "improves_volume_L2": false,
+      "improves_max": true
+    },
+    {
+      "alpha": 0.0009765625,
+      "metric": {
+        "point_count": 44400,
+        "volume_L2": 2788170.8536662054,
+        "volume_RMS": 19076780712.383167,
+        "max_norm": 277338395278.3417,
+        "max_point": [
+          -0.000881699463254858,
+          -0.00020644407690997453,
+          -5.491235501718044e-05
+        ],
+        "max_index": 20478,
+        "max_vector": [
+          -323279389.4509603,
+          -275649368608.7313,
+          30559885006.48855
+        ],
+        "physical_volume": 2.13613448359038e-08
+      },
+      "velocity_metric": {
+        "point_count": 44400,
+        "volume_L2": 2.1131975252254884e-06,
+        "volume_RMS": 0.014458585182349675,
+        "max_norm": 0.340241939861611,
+        "max_point": [
+          -0.0008871186209360441,
+          -0.00020771293671056023,
+          -0.00018909084118731113
+        ],
+        "max_index": 15678,
+        "max_vector": [
+          -0.09637159165139414,
+          0.32607149210568076,
+          -0.012428837409187637
+        ],
+        "physical_volume": 2.13613448359038e-08
+      },
+      "trust_region_pass": true,
+      "improves_volume_L2": false,
+      "improves_max": true
+    },
+    {
+      "alpha": 0.00048828125,
+      "metric": {
+        "point_count": 44400,
+        "volume_L2": 2783605.0601321952,
+        "volume_RMS": 19045541363.50618,
+        "max_norm": 277398176950.1301,
+        "max_point": [
+          -0.000881699463254858,
+          -0.00020644407690997453,
+          -5.491235501718044e-05
+        ],
+        "max_index": 20478,
+        "max_vector": [
+          -339643062.90446043,
+          -275706715263.16797,
+          30584969783.21145
+        ],
+        "physical_volume": 2.13613448359038e-08
+      },
+      "velocity_metric": {
+        "point_count": 44400,
+        "volume_L2": 1.0565987626127442e-06,
+        "volume_RMS": 0.007229292591174837,
+        "max_norm": 0.1701209699308055,
+        "max_point": [
+          -0.0008871186209360441,
+          -0.00020771293671056023,
+          -0.00018909084118731113
+        ],
+        "max_index": 15678,
+        "max_vector": [
+          -0.04818579582569707,
+          0.16303574605284038,
+          -0.006214418704593818
+        ],
+        "physical_volume": 2.13613448359038e-08
+      },
+      "trust_region_pass": true,
+      "improves_volume_L2": false,
+      "improves_max": true
+    },
+    {
+      "alpha": 0.000244140625,
+      "metric": {
+        "point_count": 44400,
+        "volume_L2": 2782461.919732183,
+        "volume_RMS": 19037719949.439743,
+        "max_norm": 277428071986.6244,
+        "max_point": [
+          -0.000881699463254858,
+          -0.00020644407690997453,
+          -5.491235501718044e-05
+        ],
+        "max_index": 20478,
+        "max_vector": [
+          -347828466.5171544,
+          -275735391949.08905,
+          30597512452.089115
+        ],
+        "physical_volume": 2.13613448359038e-08
+      },
+      "velocity_metric": {
+        "point_count": 44400,
+        "volume_L2": 5.282993813063721e-07,
+        "volume_RMS": 0.0036146462955874187,
+        "max_norm": 0.08506048496540275,
+        "max_point": [
+          -0.0008871186209360441,
+          -0.00020771293671056023,
+          -0.00018909084118731113
+        ],
+        "max_index": 15678,
+        "max_vector": [
+          -0.024092897912848535,
+          0.08151787302642019,
+          -0.003107209352296909
+        ],
+        "physical_volume": 2.13613448359038e-08
+      },
+      "trust_region_pass": true,
+      "improves_volume_L2": false,
+      "improves_max": true
+    }
+  ],
+  "linear_direction": {
+    "weighted_L2": 188548485.6281552,
+    "quadratic_remainder": {
+      "point_count": 44400,
+      "volume_L2": 1471921.259869161,
+      "volume_RMS": 10070946356.639727,
+      "max_norm": 252808224489.6237,
+      "max_point": [
+        0.0009559624371691435,
+        0.00022383225932048464,
+        -5.491235501718044e-05
+      ],
+      "max_index": 20496,
+      "max_vector": [
+        -162235810991.9887,
+        -193775153914.47537,
+        6536797900.276361
+      ],
+      "physical_volume": 2.13613448359038e-08
+    }
+  },
+  "cumulative_velocity_before": {
+    "point_count": 18720,
+    "volume_L2": 0.010819571329084253,
+    "volume_RMS": 74.02795613314969,
+    "max_norm": 959.4820728037741,
+    "max_point": [
+      -0.0009307737252556182,
+      -0.00047280131038835495,
+      8.369327340100472e-05
+    ],
+    "max_index": 10530,
+    "max_vector": [
+      -73.10327096602008,
+      929.0605193400115,
+      -228.27244951934892
+    ],
+    "physical_volume": 2.1361344835903807e-08
+  },
+  "selected": null,
+  "best_l2_trial": {
+    "alpha": 0.000244140625,
+    "metric": {
+      "point_count": 44400,
+      "volume_L2": 2782461.919732183,
+      "volume_RMS": 19037719949.439743,
+      "max_norm": 277428071986.6244,
+      "max_point": [
+        -0.000881699463254858,
+        -0.00020644407690997453,
+        -5.491235501718044e-05
+      ],
+      "max_index": 20478,
+      "max_vector": [
+        -347828466.5171544,
+        -275735391949.08905,
+        30597512452.089115
+      ],
+      "physical_volume": 2.13613448359038e-08
+    },
+    "velocity_metric": {
+      "point_count": 44400,
+      "volume_L2": 5.282993813063721e-07,
+      "volume_RMS": 0.0036146462955874187,
+      "max_norm": 0.08506048496540275,
+      "max_point": [
+        -0.0008871186209360441,
+        -0.00020771293671056023,
+        -0.00018909084118731113
+      ],
+      "max_index": 15678,
+      "max_vector": [
+        -0.024092897912848535,
+        0.08151787302642019,
+        -0.003107209352296909
+      ],
+      "physical_volume": 2.13613448359038e-08
+    },
+    "trust_region_pass": true,
+    "improves_volume_L2": false,
+    "improves_max": true
+  },
+  "best_max_trial": {
+    "alpha": 0.0078125,
+    "metric": {
+      "point_count": 44400,
+      "volume_L2": 3148020.1013211505,
+      "volume_RMS": 21538884201.4871,
+      "max_norm": 276502627933.93604,
+      "max_point": [
+        -0.000881699463254858,
+        -0.00020644407690997453,
+        -5.491235501718044e-05
+      ],
+      "max_index": 20478,
+      "max_vector": [
+        -95186689.16623406,
+        -274847455883.3528,
+        30208776676.907623
+      ],
+      "physical_volume": 2.13613448359038e-08
+    },
+    "velocity_metric": {
+      "point_count": 44400,
+      "volume_L2": 1.6905580201803907e-05,
+      "volume_RMS": 0.1156686814587974,
+      "max_norm": 2.721935518892888,
+      "max_point": [
+        -0.0008871186209360441,
+        -0.00020771293671056023,
+        -0.00018909084118731113
+      ],
+      "max_index": 15678,
+      "max_vector": [
+        -0.7709727332111531,
+        2.608571936845446,
+        -0.0994306992735011
+      ],
+      "physical_volume": 2.13613448359038e-08
+    },
+    "trust_region_pass": true,
+    "improves_volume_L2": false,
+    "improves_max": true
+  },
+  "reason": "No line-search trial improved both true refined-grid L2 and true refined-grid maximum within the additional one-percent trust bound.",
+  "control_semantics": "initial velocity correction",
+  "elapsed_seconds": 22.321429700008593
+}

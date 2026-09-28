@@ -2,6 +2,17 @@
 
 ## Latest continuation checkpoint - 2026-09-27
 
+The first refined-grid peak-weighted trust fit is complete and rejected.
+All 13 exact-quadratic backtracking trials worsen physical-volume L2.
+The smallest step (1/4096) gives L2 2.7824619e6 versus 2.7820801e6,
+while peak decreases slightly to 2.7742807e11. The best sampled peak occurs
+at 1/128 but raises L2 to 3.14802e6. `scale_reference_refined_fit.json`
+therefore has `selected: null`. This rejects this weighted direction, not
+the entire correction space. The next solves vary peak weights and test
+an independent original-wave amplitude direction; both retain the joint
+L2/maximum acceptance rule. Once a grid is used for fitting it is no longer
+an independent holdout for that candidate.
+
 A callable compact outer moment compensator is now available in
 `scale_reference_outer_replay.load_compensated_reference()`, but is NOT
 adopted. Its C-infinity axisymmetric swirl leaves the inner wave untouched.
