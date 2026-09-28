@@ -2,6 +2,23 @@
 
 ## Latest continuation checkpoint - 2026-09-27
 
+Pulled back to the reference coordinates with the isotropic acceleration
+factor s^(3/2), the multiscale L2 values are 2.7820801e6, 2.7808352e6,
+2.7796287e6; maxima are 2.7745797e11, 2.7738288e11, 2.7730838e11.
+The scale-1/4 ratios are 0.999119 and 0.999461. These small sampled
+decreases do not establish a uniform contraction sufficient for closure.
+The anisotropic component normalization is bounded separately rather than
+inferred exactly from aggregate scalar norms. See
+`scale_reference_rescaled_defect.json`.
+
+The corrected reference's refined-grid angular budget still assigns
+50.164% of squared residual to the pressure-invariant mean azimuthal
+component (L2 1.97045e6). Its convection is almost entirely fluctuation
+momentum flux (1.96934e6), versus 1727.36 for convection of the angular
+mean. This supports continuing velocity/wave-flux correction rather than
+pressure-only fitting. See `scale_reference_refined_budget.json`; these
+are sampled norms, not continuum lower bounds.
+
 The assembly check is complete: rebuilding all 360 response columns gives
 the stored 18,720-point fit L2 exactly, with maximum relative difference
 1.94e-16. Eight refined-grid probes, including both peaks, agree with the

@@ -1,0 +1,356 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "source_sha256": "abd2cbade326953930e6a6373d251468610d9514c0a4bddac7e52cb1ad7b697e",
+  "cache_fingerprint": "5223af4ed2972f31284fcb31c0000f59f487ebf031cf5e3875b4d1b3787f444c",
+  "chunk_manifest": [
+    {
+      "name": "000000.npz",
+      "sha256": "51a42b3a2a7264ca43fbf575ae4b27b852e8eb4082e93cc937944404b5110c47"
+    },
+    {
+      "name": "000768.npz",
+      "sha256": "ac597dc1cd03f3f01988674e7a119f6c158f28b1f85b77608c2c60e9a257e566"
+    },
+    {
+      "name": "001536.npz",
+      "sha256": "dca2b31e7cce6988e5d82ca30fb3eaf6a4643de34eaada54658e866e6095ee8b"
+    },
+    {
+      "name": "002304.npz",
+      "sha256": "939202a4a93e6b1bcdd1977db55eca8f4e05b4e173bf5da76e4d1573d5e29ddb"
+    },
+    {
+      "name": "003072.npz",
+      "sha256": "0717459340acf9c942bd62939a61564d4948bf827366a9afe6027839c041f32e"
+    },
+    {
+      "name": "003840.npz",
+      "sha256": "231ac4caef84f9d470d5e5b23697738e6ad66abaa37482561131cff67637737b"
+    },
+    {
+      "name": "004608.npz",
+      "sha256": "27f81ed459c452a934b1891523f4973a5075d6c811a8775c8c0e683385debd13"
+    },
+    {
+      "name": "005376.npz",
+      "sha256": "aac3b1e2c817be2fef7df56c9dcddb1416633be14adfb5643a86e7250b4f8460"
+    },
+    {
+      "name": "006144.npz",
+      "sha256": "136386609b284a724b04938010b221bc1aa648ad67cbb9f0e063cca7b69009f2"
+    },
+    {
+      "name": "006912.npz",
+      "sha256": "44d75dc13155fd736c64316e9dee3cdef71157d8fd5ee36fdf166882b0aa8661"
+    },
+    {
+      "name": "007680.npz",
+      "sha256": "37e362c66fdb1a49d43ab3bcc34a080fd1bfe3375384d601c3ea46c7d9a61ec9"
+    },
+    {
+      "name": "008448.npz",
+      "sha256": "47a712ba0832ad5ad5b61863b22d8f11e4df4fec2746cfa9efe0e825ad2fff06"
+    },
+    {
+      "name": "009216.npz",
+      "sha256": "326aaa6e15ad5c945fb22a60aa38e58ab4452afd3f4c272ee196bfd34944500b"
+    },
+    {
+      "name": "009984.npz",
+      "sha256": "0eb00309318c3bb4ae9cf9f6a32e068ba7237747df34f00c812f49677b72b63b"
+    },
+    {
+      "name": "010752.npz",
+      "sha256": "ec92cef962529fbed7e23c9bbb5f60b70e557e77d3f45ae6851395e4708fb27a"
+    },
+    {
+      "name": "011520.npz",
+      "sha256": "e9706c7264e06b8e14cddfb3806c6622e2365cc1f443312749ae1ca4295a32c4"
+    },
+    {
+      "name": "012288.npz",
+      "sha256": "5c1b9e01b6fb6ee92c9fe76a916beda9ff69b5f200fc75ee6e583a74dc465ddd"
+    },
+    {
+      "name": "013056.npz",
+      "sha256": "95cafcefaaeeaefb8a0f372053edb1d69439feb9f5ce076c96e4058a00a8aece"
+    },
+    {
+      "name": "013824.npz",
+      "sha256": "c8131ad61a28a79afefa064f07a8b594c12d18352f586167f3771840b80780b7"
+    },
+    {
+      "name": "014592.npz",
+      "sha256": "68e23ec4805dfee877654df8ec2099314c7a63eb4c11e2506108ff6fa735862e"
+    },
+    {
+      "name": "015360.npz",
+      "sha256": "6e8be5a106eff7146520c13e672b211dda81351a414a78dc57f7340f16c23379"
+    },
+    {
+      "name": "016128.npz",
+      "sha256": "abcdab44d5bce46d4472fe450bbf0c6c896f1daae03f75d5e77a70261074dd2a"
+    },
+    {
+      "name": "016896.npz",
+      "sha256": "5c55729ed5ea2e75dced6105e54845614442eae43e4bfd6c3498da42f4b4295d"
+    },
+    {
+      "name": "017664.npz",
+      "sha256": "8d3ed42cbd09e82e1c0481fbd5296a2d4e79932bb17718d0fd6e3554cfd07b49"
+    },
+    {
+      "name": "018432.npz",
+      "sha256": "b2614091ee65043fb9cd275ec0efe1724ea6fb23312fe635695ff584b074b4a6"
+    },
+    {
+      "name": "019200.npz",
+      "sha256": "4b5011e4665071d52ceaae278af977b1bc8e699cb36f61ec1d5695042fcee283"
+    },
+    {
+      "name": "019968.npz",
+      "sha256": "f9bc87ec65282bc9c475b75e6e584d4edff721d924175e595f0c654a5497f42c"
+    },
+    {
+      "name": "020736.npz",
+      "sha256": "56a69f953ecb2be724b866ba4e40791520833396db49e4ea1cd2f1c000a77bf6"
+    },
+    {
+      "name": "021504.npz",
+      "sha256": "3ba9ac524834f48ad889cbd4aeb14769fa852b213f4f581b996dcf63d4d91a8d"
+    },
+    {
+      "name": "022272.npz",
+      "sha256": "a0cb3cbd224d5e3f68ba4c0c8d06aad216f1794b5b7b5d506180f226e76b8108"
+    },
+    {
+      "name": "023040.npz",
+      "sha256": "d9fde9c4350b34e8916bfa0232eb6ee34d7c557d9c20ecd43716ca120a112196"
+    },
+    {
+      "name": "023808.npz",
+      "sha256": "51b36f2e58992675abcc3bfdbe84cd57e610b8173f4b5184857074b15de0f790"
+    },
+    {
+      "name": "024576.npz",
+      "sha256": "0f0bc8f103cb57efa5186e2175eb1cd2c53847a40b77a369999a62c3493782df"
+    },
+    {
+      "name": "025344.npz",
+      "sha256": "0463717537c6084fcacf7b865b09b849c7bab1c0e5be1181da86f66027eeea60"
+    },
+    {
+      "name": "026112.npz",
+      "sha256": "3a30adf4d250552b691357780ae716cc33092f27a15d785eaff3ecfdb9cb63c0"
+    },
+    {
+      "name": "026880.npz",
+      "sha256": "e5334723fe3c05b9cc1dc8c7640d0e437f00abe14a3beb4735a555dc218a0e74"
+    },
+    {
+      "name": "027648.npz",
+      "sha256": "e709205e4b6412033a77c6592b0ddd354e39e549734a44ac3063186397f37c20"
+    },
+    {
+      "name": "028416.npz",
+      "sha256": "fe2edfa7da135dec093cb5389e88efeeeee396fada637a25840b1d2987ca52fe"
+    },
+    {
+      "name": "029184.npz",
+      "sha256": "e4e356651910b978cd55f651b2ccd47579142808adab92708e05c4ef84add11a"
+    },
+    {
+      "name": "029952.npz",
+      "sha256": "b87305b1321f2bb3ce9947634942ae08248d5f9b10713ea84a2c9d06c0ab288b"
+    },
+    {
+      "name": "030720.npz",
+      "sha256": "2123ab08f1007c89c43462451caed1a6a4e03bedc3397bb3892c30971dcc7520"
+    },
+    {
+      "name": "031488.npz",
+      "sha256": "ef2d1d4f29d97061cb29ec2e93047429388abe29464cebe5cceba8e3383d0e4a"
+    },
+    {
+      "name": "032256.npz",
+      "sha256": "2961701363c700316ccbbe45271a624dbe016a4d3dd88d6aa5ca70c9a01f121d"
+    },
+    {
+      "name": "033024.npz",
+      "sha256": "f0c764abb41702cc58e58b457a53102da7464c5ee62cddc81196de489b1d390e"
+    },
+    {
+      "name": "033792.npz",
+      "sha256": "78156239c9dd7eda6b345a359f31679088b96dcd7506fa5d1d56e448836ad303"
+    },
+    {
+      "name": "034560.npz",
+      "sha256": "5f14024233a212db674ea2604c4dd759edff9fd6212679241e610b68e7a79159"
+    },
+    {
+      "name": "035328.npz",
+      "sha256": "2ec5998de654cafbb379cdaba9895c3fde1ce11e935c057999cb6e0ae496b72e"
+    },
+    {
+      "name": "036096.npz",
+      "sha256": "62a54c9f46d1aef78de41ddf56ce0679c455f4c98ab7e98a911eb334f278adee"
+    },
+    {
+      "name": "036864.npz",
+      "sha256": "46d0e45ac77187d4cc7b7198cf87b67b28a33d61f3e67378391d2e174acbcc08"
+    },
+    {
+      "name": "037632.npz",
+      "sha256": "0cc59ff832ad6e553f3d9327c9150b57b577073e13ca051a8633c74e1055dbd5"
+    },
+    {
+      "name": "038400.npz",
+      "sha256": "a6fbe2c307a54006f55a7feab900994ff537f09dfc1f637166b174e78d209172"
+    },
+    {
+      "name": "039168.npz",
+      "sha256": "e7f33eac6b4c6daa23b37c6cd921038eb49ee00361a8782b36c470a08e7213e1"
+    },
+    {
+      "name": "039936.npz",
+      "sha256": "0e90dc9e0dad035cfb52f3df9f6bf9c698b547b557b441caa7393da65c7cb95f"
+    },
+    {
+      "name": "040704.npz",
+      "sha256": "78ee20594b802fcd28515e13de1a346004b2284433b73db5d5d8a60faa47ccc0"
+    },
+    {
+      "name": "041472.npz",
+      "sha256": "4c2964f09cd5395fd13a9d9399c96c2a095d873e54f36c804fd10b517ed185ee"
+    },
+    {
+      "name": "042240.npz",
+      "sha256": "27e339a23ba3bf1a6d283f3fe83fee56dde3f487d657ab589e1a79ae79338545"
+    },
+    {
+      "name": "043008.npz",
+      "sha256": "d0d387aca5706ed647f9b9aca7adeadfa5581ae37fa990de70bec5cf47fcab24"
+    },
+    {
+      "name": "043776.npz",
+      "sha256": "3b484840ef8d55c0365b649c82b48314b2b8e5f4e2792d109a557d5e4fe85b5a"
+    }
+  ],
+  "angular": {
+    "point_count": 44400,
+    "angles": 12,
+    "physical_volume": 2.13613448359038e-08,
+    "momentum_max": 277457969823.5515,
+    "momentum_volume_L2": 2782080.0720919785,
+    "modes": [
+      {
+        "mode": 0,
+        "volume_L2": 2241597.6329749157,
+        "squared_L2_fraction": 0.6491963476452356,
+        "cylindrical_component_squared_L2": [
+          826001115333.1116,
+          3882674884853.818,
+          316083947971.81586
+        ]
+      },
+      {
+        "mode": 1,
+        "volume_L2": 401858.63383374375,
+        "squared_L2_fraction": 0.020864469945559447,
+        "cylindrical_component_squared_L2": [
+          37401135803.31441,
+          111668487425.25735,
+          12420738358.151148
+        ]
+      },
+      {
+        "mode": 2,
+        "volume_L2": 1597189.3179801323,
+        "squared_L2_fraction": 0.32958963318858114,
+        "cylindrical_component_squared_L2": [
+          541843067610.2349,
+          1808508228554.9265,
+          200662421304.678
+        ]
+      },
+      {
+        "mode": 3,
+        "volume_L2": 52013.20617342394,
+        "squared_L2_fraction": 0.00034953285110697266,
+        "cylindrical_component_squared_L2": [
+          186169746.1728033,
+          2439733731.878664,
+          79470138.38763882
+        ]
+      },
+      {
+        "mode": 4,
+        "volume_L2": 355.94880304061553,
+        "squared_L2_fraction": 1.6369515401239333e-08,
+        "cylindrical_component_squared_L2": [
+          7370.193233810444,
+          114846.00720858663,
+          4483.349943649823
+        ]
+      },
+      {
+        "mode": 5,
+        "volume_L2": 0.04866413609581753,
+        "squared_L2_fraction": 3.0596995679743927e-16,
+        "cylindrical_component_squared_L2": [
+          2.2161267573991978e-07,
+          0.002294908618825939,
+          7.306791045057208e-05
+        ]
+      },
+      {
+        "mode": 6,
+        "volume_L2": 0.012112688565155018,
+        "squared_L2_fraction": 1.8955788359961818e-17,
+        "cylindrical_component_squared_L2": [
+          1.7532718488182749e-06,
+          0.00014109763000231897,
+          3.866322425299876e-06
+        ]
+      }
+    ],
+    "parseval_relative_error": 1.009370898969395e-15,
+    "scope": "Sampled cylindrical Fourier budget; angular aliasing and spatial accuracy unverified"
+  },
+  "mean_azimuthal": {
+    "volume_L2": 1970450.426895794,
+    "squared_L2_fraction": 0.501639556983141
+  },
+  "mean_azimuthal_terms": {
+    "generator": {
+      "volume_L2": 281.12143715029055,
+      "signed_projection": -1.7650532000528702e-05
+    },
+    "convection": {
+      "volume_L2": 1969452.7555026966,
+      "signed_projection": 0.9992537385393125
+    },
+    "viscosity": {
+      "volume_L2": 43070.88191405308,
+      "signed_projection": 0.0007639119926857648
+    },
+    "pressure": {
+      "volume_L2": 1.5058606152670013e-07,
+      "signed_projection": 2.156427445594221e-15
+    }
+  },
+  "reynolds_split": {
+    "mean_flow": {
+      "volume_L2": 1727.363697891346,
+      "signed_projection": 5.097235338247939e-05
+    },
+    "fluctuations": {
+      "volume_L2": 1969340.6332374322,
+      "signed_projection": 0.9992027661859302
+    }
+  },
+  "scope": "Sampled corrected-field budget. Angular mean azimuthal pressure gradient vanishes analytically for periodic single-valued pressure; numerical norms are not continuum lower bounds. Term norms are not additive."
+}

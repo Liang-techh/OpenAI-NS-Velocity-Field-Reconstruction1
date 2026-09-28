@@ -1,0 +1,165 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "scope": "Metrics-only pullback of the completed multiscale residual report. The isotropic s^(3/2) normalization is computed exactly from stored physical L2/max metrics. The anisotropic component normalization is bounded using its two scalar factors because component-resolved residual arrays were not saved. No PDE or scale-recursion conclusion is made.",
+  "sources": {
+    "multiscale_report": {
+      "path": "scale_reference_multiscale.json",
+      "sha256": "5c2db5397ee68223b4267e678c0746ed3680b2222ac40484935536400e90c83b"
+    }
+  },
+  "inputs": {
+    "similarity_exponent_h": 0.005,
+    "scales": [
+      1.0,
+      0.5,
+      0.25
+    ],
+    "source_point_count": 44400,
+    "source_pressure_rule": "p_s=s^-1 p_0; grad_p_s=s^-1 S^-1 grad_p_0",
+    "source_quadrature_rule": "saved points/weights mapped by det(S); no domain narrowing"
+  },
+  "normalizations": {
+    "isotropic": {
+      "residual_definition": "Rhat(y)=s^(3/2) R_s(S y)",
+      "L2_definition": "||Rhat||_L2(dy)=s^(3/2)/sqrt(det(S))*||R_s||_L2(dx)",
+      "max_definition": "max_y ||Rhat(y)||=s^(3/2)*max_x ||R_s(x)||"
+    },
+    "component_anisotropic": {
+      "matrix": "diag(s^(3/2), s^(3/2), s^(3/2+h))",
+      "available_evidence": "scalar physical L2/max metrics only",
+      "reported_evidence": "rigorous lower/upper bounds from minimum axial and maximum horizontal factors",
+      "exact_component_norm_claim": false
+    }
+  },
+  "scales": [
+    {
+      "scale": 1.0,
+      "determinant": 1.0,
+      "physical": {
+        "volume_L2": 2782080.072091978,
+        "max_norm": 277457969823.5515
+      },
+      "isotropic_pulled_back": {
+        "definition": "Rhat(y)=s^(3/2) R_s(S y)",
+        "L2": 2782080.072091978,
+        "max_norm": 277457969823.5515,
+        "L2_factor_from_physical": 1.0,
+        "max_factor_from_physical": 1.0,
+        "L2_ratio_to_s1": 1.0,
+        "max_ratio_to_s1": 1.0
+      },
+      "component_anisotropic_bounds": {
+        "definition": "D_s=diag(s^(3/2),s^(3/2),s^(3/2+h)) applied to R_s",
+        "horizontal_factor": 1.0,
+        "axial_factor": 1.0,
+        "physical_L2_lower_axial_factor": 2782080.072091978,
+        "physical_L2_upper_horizontal_factor": 2782080.072091978,
+        "physical_max_lower_axial_factor": 277457969823.5515,
+        "physical_max_upper_horizontal_factor": 277457969823.5515,
+        "pulled_back_L2_lower_axial_factor": 2782080.072091978,
+        "pulled_back_L2_upper_horizontal_factor": 2782080.072091978,
+        "bound_reason": "For every vector v, axial_factor*||v|| <= ||D_s v|| <= horizontal_factor*||v||; exact component aggregation is unavailable in the scalar source report.",
+        "physical_L2_lower_ratio_to_s1": 1.0,
+        "physical_L2_upper_ratio_to_s1": 1.0,
+        "physical_max_lower_ratio_to_s1": 1.0,
+        "physical_max_upper_ratio_to_s1": 1.0,
+        "pulled_L2_lower_ratio_to_s1": 1.0,
+        "pulled_L2_upper_ratio_to_s1": 1.0
+      }
+    },
+    {
+      "scale": 0.5,
+      "determinant": 0.3547808390500956,
+      "physical": {
+        "volume_L2": 4684900.023324336,
+        "max_norm": 784557257222.7218
+      },
+      "isotropic_pulled_back": {
+        "definition": "Rhat(y)=s^(3/2) R_s(S y)",
+        "L2": 2780835.22256924,
+        "max_norm": 277382878405.6525,
+        "L2_factor_from_physical": 0.5935740802844284,
+        "max_factor_from_physical": 0.3535533905932738,
+        "L2_ratio_to_s1": 0.9995525471983262,
+        "max_ratio_to_s1": 0.999729359304594,
+        "L2_ratio_to_previous_larger_scale": 0.9995525471983262,
+        "max_ratio_to_previous_larger_scale": 0.999729359304594
+      },
+      "component_anisotropic_bounds": {
+        "definition": "D_s=diag(s^(3/2),s^(3/2),s^(3/2+h)) applied to R_s",
+        "horizontal_factor": 0.3535533905932738,
+        "axial_factor": 0.35233018878550487,
+        "physical_L2_lower_axial_factor": 1650631.7096590796,
+        "physical_L2_upper_horizontal_factor": 1656362.2878368264,
+        "physical_max_lower_axial_factor": 276423206550.31946,
+        "physical_max_upper_horizontal_factor": 277382878405.6525,
+        "pulled_back_L2_lower_axial_factor": 2771214.2635801425,
+        "pulled_back_L2_upper_horizontal_factor": 2780835.2225692393,
+        "bound_reason": "For every vector v, axial_factor*||v|| <= ||D_s v|| <= horizontal_factor*||v||; exact component aggregation is unavailable in the scalar source report.",
+        "physical_L2_lower_ratio_to_s1": 0.593308483899204,
+        "physical_L2_upper_ratio_to_s1": 0.5953683017438564,
+        "physical_max_lower_ratio_to_s1": 0.996270558478136,
+        "physical_max_upper_ratio_to_s1": 0.999729359304594,
+        "pulled_L2_lower_ratio_to_s1": 0.9960943580952848,
+        "pulled_L2_upper_ratio_to_s1": 0.9995525471983261
+      }
+    },
+    {
+      "scale": 0.25,
+      "determinant": 0.12586944375708983,
+      "physical": {
+        "volume_L2": 7889271.946316611,
+        "max_norm": 2218467048045.1016
+      },
+      "isotropic_pulled_back": {
+        "definition": "Rhat(y)=s^(3/2) R_s(S y)",
+        "L2": 2779628.674225919,
+        "max_norm": 277308381005.6377,
+        "L2_factor_from_physical": 0.35233018878550487,
+        "max_factor_from_physical": 0.125,
+        "L2_ratio_to_s1": 0.9991188614983983,
+        "max_ratio_to_s1": 0.9994608595384412,
+        "L2_ratio_to_previous_larger_scale": 0.9995661201593218,
+        "max_ratio_to_previous_larger_scale": 0.9997314275472119
+      },
+      "component_anisotropic_bounds": {
+        "definition": "D_s=diag(s^(3/2),s^(3/2),s^(3/2+h)) applied to R_s",
+        "horizontal_factor": 0.125,
+        "axial_factor": 0.1241365619296295,
+        "physical_L2_lower_axial_factor": 979347.0955436206,
+        "physical_L2_upper_horizontal_factor": 986158.9932895764,
+        "physical_max_lower_axial_factor": 275392872098.4931,
+        "physical_max_upper_horizontal_factor": 277308381005.6377,
+        "pulled_back_L2_lower_axial_factor": 2760428.376475358,
+        "pulled_back_L2_upper_horizontal_factor": 2779628.674225919,
+        "bound_reason": "For every vector v, axial_factor*||v|| <= ||D_s v|| <= horizontal_factor*||v||; exact component aggregation is unavailable in the scalar source report.",
+        "physical_L2_lower_ratio_to_s1": 0.35201973709088935,
+        "physical_L2_upper_ratio_to_s1": 0.354468227993178,
+        "physical_max_lower_ratio_to_s1": 0.9925570790906756,
+        "physical_max_upper_ratio_to_s1": 0.9994608595384412,
+        "pulled_L2_lower_ratio_to_s1": 0.9922174434036547,
+        "pulled_L2_upper_ratio_to_s1": 0.9991188614983983
+      }
+    }
+  ],
+  "summary": {
+    "isotropic_pulled_L2_values_descending_scale": [
+      2782080.072091978,
+      2780835.22256924,
+      2779628.674225919
+    ],
+    "isotropic_pulled_max_values_descending_scale": [
+      277457969823.5515,
+      277382878405.6525,
+      277308381005.6377
+    ],
+    "isotropic_L2_contracts_with_halving": true,
+    "isotropic_max_contracts_with_halving": true,
+    "isotropic_L2_ratio_s025_to_s1": 0.9991188614983983,
+    "isotropic_max_ratio_s025_to_s1": 0.9994608595384412,
+    "interpretation": "The isotropic pulled-back norms remain approximately constant as the scale halves (small sampled decreases). These decreases are not evidence of a uniform contraction sufficient for dynamical closure, and no discretization uncertainty estimate is supplied. Absolute physical residual L2 and maximum increase toward smaller scales, while that absolute increase alone does not establish worsening relative dynamical balance or refute the kinematic recursion mechanism. Absolute residuals remain far above the 1e-3 target."
+  }
+}
