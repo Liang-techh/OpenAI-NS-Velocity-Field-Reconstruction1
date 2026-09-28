@@ -1,6 +1,32 @@
 # Current checkpoint - constrained velocity-field integration
 
-## ST073 research update - 2026-09-27
+## Latest continuation checkpoint - 2026-09-27
+
+The preferred continuation baseline is now the constrained localized patch
+in `experiments/root_st073/localized_constrained_tangent.json`, with its
+fixed enriched 264-control parent. Independent actual Cartesian momentum
+replay on 18,720 points confirms simultaneous maximum/L2 improvement at
+reference and k0+1e-6: corrected maxima 8.54481e10 / 8.54896e10 and volume
+L2 1.81103e6 / 1.81146e6 (about 27.7% / 6.1% below the respective parent).
+The physical time interval is only 1.6919e-10; no NS step or recursion is
+accepted, and the residual target 1e-3 remains unmet by many orders.
+
+`global_localized_candidate.load()` supplies the same inner candidate with
+the global compact mean and disjoint exterior collar. Assembly probes
+preserve inner/exterior values and vanish beyond the support union at both
+tested times. This is a global diagnostic field, not a full-support residual
+certificate or a critical-time extension. The older paragraph below about
+missing axial localization describes the pre-extension base, not this field.
+
+Prior acceleration fitting had a weighted-objective gradient bug, now fixed.
+The corrected candidate improves independent L2 but increases the holdout
+peak, so it is not adopted as a joint improvement. Prior unconstrained
+acceleration also failed the aspect gate. Prioritize joint optimization of
+the two compact spatial patches, retaining moments, positive cone margins,
+endpoint shape constraints and a sampled peak cap. See
+[current experiment evidence and next solve](ST073_LOCALIZED_CONSTRAINED_NEXT.md).
+
+## Earlier ST073 research update - 2026-09-27
 A globally localized diagnostic now combines the balanced compact wave,
 inner acceleration correction and exterior collar tangent through one
 callable field. Sampled assembly checks at reference and endpoint preserve
