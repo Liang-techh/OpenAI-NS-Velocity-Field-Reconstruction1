@@ -130,10 +130,18 @@ uncapped comparison and rejected trial coefficients remain in the report;
 optimizer convergence is not claimed. The objective gradient directional
 check has relative error 2.16e-11.
 
-`two_patch_actual_replay.py` performs the next independent-grid actual
+`two_patch_actual_replay.py` has completed the independent-grid actual
 momentum check at reference and endpoint. It reuses the prior actual
 baseline only after validating grid, parent, first-fit and timestep hashes.
-Until that replay completes, the numbers above remain fitting-grid results.
+
+| Time | One-patch actual maximum | Two-patch actual maximum | One-patch actual L2 | Two-patch actual L2 |
+| --- | ---: | ---: | ---: | ---: |
+| Reference | 8.54481388686e10 | 7.49634320355e10 | 1811030.475956 | 1639767.712242 |
+| k0+1e-6 | 8.54895647776e10 | 7.40548564649e10 | 1811462.667068 | 1640313.388504 |
+
+Both sampled metrics improve over the one-patch candidate at both times.
+The target 1e-3 remains far away. These two-time local-grid checks do not
+establish a full-support bound, intervening trajectory, or scale recursion.
 
 `global_two_patch_candidate.py` assembles both patches on the same compact
 global parent and exterior collar. Its direct velocity-profile replay gives
