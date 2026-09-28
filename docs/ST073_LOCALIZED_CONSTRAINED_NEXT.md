@@ -49,12 +49,34 @@ Do not combine its improvement with the spatial-enrichment percentages:
 the parents, evaluation times and coefficients differ. Continue with the
 joint acceleration/pressure solve while retaining feasible iterates.
 
-The first bounded joint solve in `shape_constrained_acceleration.py` is now
-complete. Its velocity-acceleration trial violated peak and shape gates, so
-the selected feasible result remains the pressure-only seed above. This is
-not evidence of further improvement or of infeasibility of the mathematical
-problem. The report retains the rejected trial and explicit constraint
-margins; the maximum and shape checks refer to the frozen sampled problem.
+The first joint solve had an inconsistent objective gradient: it applied
+sqrt(volume weight) only once in the transpose product, although the
+squared L2 objective requires the full volume weight. That implementation
+failure must not be interpreted as mathematical infeasibility. The gradient
+is corrected; a directional finite-difference check at the pressure seed
+has relative error 1.84e-9.
+
+The corrected bounded solve reaches its 100-iteration limit but retains a
+feasible improving trial. Its linearized L2 is 1874196.223078, about 1.318%
+below the original balanced endpoint. Fractional contraction and aspect
+increase remain at their 1e-6 thresholds within floating-point precision;
+the spin constraint margin is 0.01501777 above the requested 0.001 increase.
+Optimizer convergence is not claimed.
+
+`acceleration_nonlinear_replay.py` adds the exact quadratic convection
+remainder (delta gradient times delta velocity) to the corrected linear
+design on the same 44,400 points:
+
+- Nonlinear L2: 1874196.223145.
+- Nonlinear maximum: 113894702569.6755.
+- Quadratic remainder L2: 0.0010481; maximum: 39.3539.
+- The nonlinear maximum passes the declared cap tolerance (relative 1e-10).
+
+This is a cached finite-difference parent with an analytic correction, on
+the fitting grid. It is not independent-grid validation, a continuum bound,
+or a complete trajectory. The maximum remains slightly above the original
+parent maximum under the permitted 1e-6 cap allowance. Full momentum is
+still many orders of magnitude above the requested 1e-3 tolerance.
 
 The full-support diagnostic attributes approximately 98.5% of squared
 momentum L2 to the original wave patch. This supports prioritizing its

@@ -1,0 +1,38 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "scope": "Same fitted grid; cached FD parent plus analytic correction and exact quadratic convection. No independent spatial/time replay.",
+  "sources": {
+    "shape_constrained_acceleration.json": "1aea761c97d40740f7c7e0cc4e3279b46a6df564048904c89dd4a2485e657eb5",
+    "full_wave_frozen_cache.json": "c03b9efa4bd65db79ee420df66808a34e7f634174851b47cca81f742b1435574",
+    "endpoint_acceleration_projection.json": "ef25b18deb09dc9dc97049e425d2b7322c8ea3bccd81c6ddd2ae481922af23ba",
+    "acceleration_momentum_cache.npz": "e006390a45abf819530719874a8d666f5cfc51bf0fdbead29024e718d9353fea"
+  },
+  "point_count": 44400,
+  "base": {
+    "maximum": 113894588673.38148,
+    "volume_L2": 1899236.080152343
+  },
+  "linearized": {
+    "maximum": 113894702568.52718,
+    "volume_L2": 1874196.2230783852
+  },
+  "nonlinear": {
+    "maximum": 113894702569.6755,
+    "volume_L2": 1874196.2231453417
+  },
+  "quadratic_remainder": {
+    "maximum": 39.35388810861201,
+    "volume_L2": 0.0010481070357623047
+  },
+  "peak_cap": 113894702567.97015,
+  "nonlinear_peak_cap_pass": true,
+  "velocity_correction_max": 0.1812656168541321,
+  "shape_margins": [
+    -1.773003012445597e-16,
+    -2.0180665847452112e-16,
+    0.015017772496769236
+  ]
+}

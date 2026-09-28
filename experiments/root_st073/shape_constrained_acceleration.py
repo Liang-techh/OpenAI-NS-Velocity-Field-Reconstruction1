@@ -440,7 +440,9 @@ def run(output_path=OUTPUT):
         control = control_from_y(y)
         residual = base_flat + design @ control
         weighted = residual * row_weight
-        return (coordinate_scale * (design.T @ weighted) / scales / objective_scale
+        # The objective uses ||row_weight * residual||^2.  Apply the row
+        # weights a second time when differentiating through that norm.
+        return (coordinate_scale * (design.T @ (weighted * row_weight)) / scales / objective_scale
                 + RIDGE * np.asarray(y, dtype=float))
 
     def shape_constraint(y):
@@ -504,6 +506,32 @@ def run(output_path=OUTPUT):
         "shape_constraint_tolerance": 1.0e-9,
         "trust_region": "componentwise y bounds around the pressure-only feasible seed",
         "rounds": [],
+    }
+    gradient_check_center = (
+        pressure_seed["control"] * scales / coordinate_scale
+        if pressure_seed is not None and pressure_seed["feasible"]
+        else np.zeros(CONTROL_COUNT, dtype=float)
+    )
+    gradient_check_direction = np.linspace(-1.0, 1.0, CONTROL_COUNT, dtype=float)
+    gradient_check_direction /= np.linalg.norm(gradient_check_direction)
+    gradient_check_epsilon = 1.0e-6
+    gradient_check_fd = (
+        objective(gradient_check_center + gradient_check_epsilon * gradient_check_direction)
+        - objective(gradient_check_center - gradient_check_epsilon * gradient_check_direction)
+    ) / (2.0 * gradient_check_epsilon)
+    gradient_check_analytic = float(
+        objective_gradient(gradient_check_center) @ gradient_check_direction
+    )
+    report["optimization"]["objective_gradient_check"] = {
+        "center": "pressure_only_feasible_seed" if pressure_seed is not None and pressure_seed["feasible"] else "zero",
+        "epsilon": gradient_check_epsilon,
+        "finite_difference_directional": float(gradient_check_fd),
+        "analytic_directional": gradient_check_analytic,
+        "absolute_error": float(abs(gradient_check_analytic - gradient_check_fd)),
+        "relative_error": float(
+            abs(gradient_check_analytic - gradient_check_fd)
+            / max(abs(gradient_check_fd), 1.0e-12)
+        ),
     }
     if pressure_seed is not None:
         report["optimization"]["pressure_seed"] = {
