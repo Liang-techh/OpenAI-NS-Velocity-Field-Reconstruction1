@@ -140,6 +140,24 @@ derivatives do not independently certify small absolute divergence.
 
 ## Five bounded nonlinear updates
 
+The later `scale_reference_trust_fit.json` solves the linearized least-squares
+problem in the sampled velocity metric, with pressure eliminated and a
+scalar multiplier enforcing the 1% bound. It retains 267 velocity directions
+and 90 pressure directions. Exact quadratic replay gives L2 2.69256772629e6
+and maximum 1.76491979434e11, improving both fit-grid metrics much more than
+simply scaling the unconstrained least-squares direction. Independent
+momentum and physical gates remain required.
+
+Pressure-composition correction: the initial independent replay inferred
+the selected pressure from the total corrected-minus-original pressure,
+which already included the prior projection. It then added that projection
+again. Its corrected row is invalid for the intended field. Independently,
+the loader's base comparison view included the selected increment; it now
+contains only the prior projection. The corrected velocity and corrected
+pressure themselves are unchanged by that loader fix. A separate amplitude
+adapter reproduces the repaired baseline pressure exactly on the smoke
+probes. Reuse only the valid uncorrected baseline from the flawed replay.
+
 `scale_reference_nonlinear_fit.json` starts from the first one-percent
 reference step and accepts five further optimizer updates, stopping at
 the cumulative 5% reference-velocity L2 bound. Each update rebuilds the

@@ -2,6 +2,17 @@
 
 ## Latest continuation checkpoint - 2026-09-27
 
+The velocity-metric trust-region solve improves the one-percent update:
+`scale_reference_trust_fit.json` gives fit-grid L2 2.69257e6 and maximum
+1.76492e11, down about 8.02% and 33.44% from the pressure-projected baseline.
+This is a reduced-rank constrained fit, not an independent PDE result.
+The first independent replay contained a duplicated prior pressure
+projection in its corrected case. That corrected result must not be used;
+the uncorrected baseline case is separately reusable. The reference loader's
+`base_reference` pressure was also fixed to contain only the prior pressure
+projection, excluding the selected step's pressure increment. Numerical
+shape observations using velocity alone are unaffected by this pressure fix.
+
 Five bounded nonlinear reference updates reach fit-grid L2 2.77569e6 and
 maximum 2.48638e11, reductions of about 5.18% and 6.24% against the original
 pressure-projected scale-generator baseline. The cumulative velocity change

@@ -39,7 +39,9 @@ class WaveReference:
                 dp+=np.einsum('nq,q->n',p,mode_coeff[mode]).real
         return du,dp
 
-    def fields(self,points):
+    def fields(self,points,tau=None):
+        if tau is not None and not np.isclose(float(tau),self.tau0,rtol=0,atol=2e-15):
+            raise ValueError('Wave reference is frozen at tau0; use scale transport for other times')
         u,p=self.base.fields(points,self.tau0)
         du,dp=self._increments(points)
         return u+du,p+dp

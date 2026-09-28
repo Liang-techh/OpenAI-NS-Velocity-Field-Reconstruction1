@@ -519,7 +519,8 @@ class _BaseReferenceView:
         base = np.asarray(
             self._owner.base_field.fields(points_array, self.tau0)[1], dtype=float
         )
-        return base + self._owner._correction_pressure(points_array)
+        return base + self._owner._pressure_from_modes(
+            points_array, self._owner._pressure_baseline_modes)
 
     def fields(self, points: Any, tau: float | None = None) -> tuple[np.ndarray, np.ndarray]:
         if tau is not None and not np.isclose(float(tau), self.tau0, rtol=0.0, atol=2.0e-15):
@@ -555,6 +556,7 @@ class ScaleReferenceCandidate:
                                      for index, block in enumerate(blocks, 1))
         pressure_blocks = parsed["pressure_blocks"]
         pressure_baseline = parsed.get("pressure_baseline")
+        self._pressure_baseline_modes = pressure_baseline
         if pressure_blocks is None:
             self._pressure_modes = pressure_baseline
         elif pressure_baseline is None:
@@ -585,11 +587,14 @@ class ScaleReferenceCandidate:
         return result
 
     def _correction_pressure(self, points: np.ndarray) -> np.ndarray:
+        return self._pressure_from_modes(points, self._pressure_modes)
+
+    def _pressure_from_modes(self, points: np.ndarray, pressure_modes) -> np.ndarray:
         result = np.zeros(len(points), dtype=float)
-        if self._pressure_modes is None:
+        if pressure_modes is None:
             return result
         for patch_index in range(2):
-            modes = self._pressure_modes[patch_index]
+            modes = pressure_modes[patch_index]
             for mode in MODES:
                 values = basis_data(
                     points, self.center[patch_index], self.widths[patch_index],
