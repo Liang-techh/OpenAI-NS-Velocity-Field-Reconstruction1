@@ -15,8 +15,8 @@ from localized_actual_replay import metric
 ROOT=Path(__file__).resolve().parent
 
 
-def load():
-    path=ROOT/'localized_two_patch_constrained.json'
+def load(source=ROOT/'localized_two_patch_constrained.json'):
+    path=Path(source)
     raw=path.read_bytes();report=json.loads(raw)
     if report['status']!='completed' or not report['assembled_feasible'] or not report['inputs']['drift_cap_enabled']:
         raise ValueError('Need a frozen feasible drift-capped two-patch candidate')
@@ -36,9 +36,9 @@ def load():
     return field,snapshot,report,hashlib.sha256(raw).hexdigest()
 
 
-def run():
+def run(source=ROOT/'localized_two_patch_constrained.json', output=ROOT/'two_patch_actual_replay.json'):
     started=time.perf_counter()
-    field,snapshot,candidate,source_hash=load()
+    field,snapshot,candidate,source_hash=load(source)
     baseline_path=ROOT/'localized_actual_replay.json'
     baseline=json.loads(baseline_path.read_text())
     grid_path=ROOT/'full_wave_dense_tangent.json'
@@ -50,9 +50,9 @@ def run():
         raise ValueError('Frozen actual baseline is incompatible')
     grid=json.loads(grid_path.read_text())['new_frozen_cache']
     points,weights=np.asarray(grid['points']),np.asarray(grid['weights'])
-    output=ROOT/'two_patch_actual_replay.json'
+    output=Path(output)
     report=dict(status='running',accepted=False,pde_validated=False,scale_recursion_established=False,
-                source_sha256=source_hash,baseline_sha256=hashlib.sha256(baseline_path.read_bytes()).hexdigest(),
+                source=Path(source).name,source_sha256=source_hash,baseline_sha256=hashlib.sha256(baseline_path.read_bytes()).hexdigest(),
                 grid_sha256=grid_hash,point_count=len(points),rows=[],
                 scope='Actual five-point Cartesian finite differences at two times on independent grid. Baseline metrics reused only after parent/grid/first-fit/timestep hash checks; no full-support or interval certificate.')
     def save():output.write_text(json.dumps(report,indent=2)+'\n')
@@ -69,4 +69,12 @@ def run():
     report.update(status='completed',elapsed_seconds=time.perf_counter()-started);save()
 
 
-if __name__=='__main__':run()
+if __name__=='__main__':
+    import argparse
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--source',type=Path,default=ROOT/'localized_two_patch_constrained.json')
+    parser.add_argument('--output',type=Path,default=None)
+    args=parser.parse_args()
+    destination=args.output or (ROOT/'two_patch_actual_replay.json' if args.source.name=='localized_two_patch_constrained.json'
+                                else ROOT/f'{args.source.stem}_actual_replay.json')
+    run(args.source,destination)
