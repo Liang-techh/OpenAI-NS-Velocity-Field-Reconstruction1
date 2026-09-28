@@ -2,6 +2,24 @@
 
 ## Latest continuation checkpoint - 2026-09-27
 
+IMPORTANT: review found an imaginary-sign error in the new refined fitter's
+`_basis_delta` helper: it used +Im where the shared real-control basis uses
+-Im. This invalidates that fitter's initial quadratic line-search numbers
+and the first balanced follow-up's cumulative correction norm. The prior
+refined-fit rejection paragraph below is historical, not authoritative
+until the corrected rerun is recorded. The actual 44,400-point replay,
+earlier assembly check and cross-grid helper use separate correct paths.
+Do not interpret the erroneous 59% cumulative correction estimate.
+
+The independently implemented original-wave amplitude fit contracts the
+complex wave coefficients directly and is unaffected by that helper.
+It gives refined-grid L2 2.713699e6 and maximum 2.684803e11, reductions
+2.458% and 3.236% from the current corrected reference, with amplitude
+increment -0.00637797 and an additional velocity norm 0.0021639143.
+Pressure increments are added to the current corrected pressure once.
+This remains a fitted diagnostic pending transfer and actual-field replay;
+it is not an accepted dynamical recursion step.
+
 The first refined-grid peak-weighted trust fit is complete and rejected.
 All 13 exact-quadratic backtracking trials worsen physical-volume L2.
 The smallest step (1/4096) gives L2 2.7824619e6 versus 2.7820801e6,
