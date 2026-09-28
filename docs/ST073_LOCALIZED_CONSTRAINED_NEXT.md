@@ -50,6 +50,34 @@ must finish before interpreting the fitting-grid reduction as a replicated
 improvement. Even a successful replay does not certify the intervening
 time interval, the full support, or scale recursion.
 
+## Global field interface
+
+`global_localized_candidate.py` assembles this new constrained patch with
+the globalized enriched parent and the existing disjoint exterior collar.
+The source hashes and reference times are checked before composition. It
+does not mix in the acceleration candidate, which has a different parent.
+
+From the experiment directory:
+
+```python
+import numpy as np
+from global_localized_candidate import load
+field, _, _, snapshot, _, _, _ = load()
+tau = snapshot['inputs']['mean']['tau']  # physical time t = -tau
+points = np.array([[0.00094, 0., -0.0000549]])
+velocity, pressure = field.fields(points, tau)
+# velocity[:, 0], velocity[:, 1], velocity[:, 2] are u, v, w.
+```
+
+At the reference and short endpoint times, assembly probes agree exactly
+with the local candidate inside and the unchanged collar outside. Probes
+beyond the union support are zero. The union is contained in r <= 0.0105
+and -0.001 <= z <= 0.001 at those two times. The local addition uses the
+same compact curl basis and fits inside the existing wave support; it
+therefore preserves the structural divergence and fixed-time compactness
+properties of the parent. This assembly result supplies no new full-domain
+momentum bound, critical-time regularity claim, or recursion step.
+
 ## Pressure-only acceleration warmstart
 
 `pressure_acceleration_seed.py` uses a different parent: the balanced
