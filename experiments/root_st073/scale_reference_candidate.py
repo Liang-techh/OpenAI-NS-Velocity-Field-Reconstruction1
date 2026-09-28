@@ -526,7 +526,9 @@ class _BaseReferenceView:
         if tau is not None and not np.isclose(float(tau), self.tau0, rtol=0.0, atol=2.0e-15):
             raise ValueError("Base reference view is frozen at tau0")
         points_array = _points(points)
-        return self.velocity(points_array), self.pressure(points_array)
+        velocity, pressure = self._owner.base_field.fields(points_array, self.tau0)
+        return velocity, pressure + self._owner._pressure_from_modes(
+            points_array, self._owner._pressure_baseline_modes)
 
 
 class ScaleReferenceCandidate:
@@ -621,7 +623,16 @@ class ScaleReferenceCandidate:
         if tau is not None and not np.isclose(float(tau), self.tau0, rtol=0.0, atol=2.0e-15):
             raise ValueError("ScaleReferenceCandidate is frozen at tau0; no time derivative is assigned")
         points_array = _points(points)
-        return self.velocity(points_array), self.pressure(points_array)
+        velocity, pressure = self.base_field.fields(points_array, self.tau0)
+        velocity, pressure = np.array(velocity, copy=True), np.array(pressure, copy=True)
+        for patch in range(2):
+            for mode in MODES:
+                values, scalars, _ = basis_data(points_array, self.center[patch],
+                    self.widths[patch], mode, DEGREE, self.carriers[patch][mode])
+                velocity += np.einsum('ncq,q->nc', values, self._velocity_modes[patch][mode]).real
+                if self._pressure_modes is not None:
+                    pressure += np.einsum('nq,q->n', scalars, self._pressure_modes[patch][mode]).real
+        return velocity, pressure
 
 
 def load_reference(step: Path | str = STEP_PATH, source: Path | str = SOURCE_PATH,

@@ -177,6 +177,27 @@ from the one-percent alternatives and must be stated when comparing results.
 
 ## Repeated velocity-metric trust updates
 
+**Independent replay overrides any inference of joint improvement from the
+fit grid.** The corrected actual 44,400-point replay gives L2
+2.78208007209e6 and maximum 2.77457969824e11. Against the recovered same-grid
+baseline, L2 improves by 5.069% but maximum worsens by 2.596%. The candidate
+is not adopted. The assembly and nonlinear model must be cross-checked
+before treating the entire discrepancy as a grid generalization problem.
+
+Reproduce with:
+
+```
+python experiments/root_st073/scale_reference_actual_replay.py --step experiments/root_st073/scale_reference_trust_nonlinear_fit.json --case corrected --output experiments/root_st073/scale_reference_trust_nonlinear_actual.json
+```
+
+The repaired pipeline validates the recovered baseline before computation,
+checks pressure composition, saves each chunk's fields/jets/residual atomically,
+and preserves completed cases if later reporting fails. Chunk-cache reuse
+was checked by replaying a small diagnostic field with field evaluation
+disabled on the second run; metrics were identical. Combined velocity and
+pressure evaluation now avoids evaluating the expensive base twice, with
+smoke differences at roundoff. The corrected large-grid run took 203 seconds.
+
 The explicit command
 
 ```

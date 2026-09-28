@@ -1,0 +1,207 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "scope": "Independent frozen-reference scale-generator momentum replay on the refined 44,400-point grid. Five-point Cartesian spatial jets and analytic G(u) are used; no fitted temporal derivative, trajectory, PDE acceptance, or recursive-scale claim.",
+  "sources": {
+    "candidate_loader": {
+      "path": "scale_reference_candidate.py",
+      "sha256": "25da674ebc1a8067c0fe6363f79e3246dde76adcb287cc0f6e37556a4ee8fb55"
+    },
+    "step": {
+      "path": "scale_reference_trust_nonlinear_fit.json",
+      "sha256": "868d171a0875af35d5e1528d4b143a038848756f161592a758a939f514f33ee0"
+    },
+    "pressure_projection": {
+      "path": "scale_generator_pressure_projection.json",
+      "sha256": "8eb620cbbada879246274d274a5c2b7374e4cde1c7fb4f6ad9aa9f66ab9bd4ed"
+    },
+    "grid": {
+      "path": "refined_wave_momentum_cache.npz",
+      "sha256": "0045761921a3fea916b351dddd84c52f2ecf7f27c43b7139935d025c62ba2da0"
+    },
+    "baseline_recovery": {
+      "path": "scale_reference_baseline_recovered.json",
+      "sha256": "7062d94169b9c1218b333af6f198f669709c08ebb24e56cc99be4f20379e4eb6"
+    },
+    "generator": {
+      "path": "scale_transport_generator.py",
+      "sha256": "a775cb68efe801cfd8f679704ae9c40b9c4c959b76d996ba1963262eb849ba76"
+    }
+  },
+  "inputs": {
+    "chunk_size": 768,
+    "hspace": 1e-06,
+    "spatial_stencil": "five-point fourth-order",
+    "temporal_stencil": null,
+    "case_mode": "corrected",
+    "step_path": "scale_reference_trust_nonlinear_fit.json",
+    "tau0": 0.00024408986266228504,
+    "similarity_exponent_h": 0.005,
+    "viscosity": 0.01
+  },
+  "cases": {
+    "uncorrected_plus_pressure_projection": {
+      "status": "completed",
+      "metric": {
+        "point_count": 44400,
+        "volume_L2": 2930639.7603386533,
+        "volume_RMS": 20051558885.44582,
+        "max_norm": 270437112609.47076,
+        "max_point": [
+          0.000881699463254858,
+          0.00020644407690997466,
+          -5.491235501718044e-05
+        ],
+        "max_index": 20472,
+        "max_vector": [
+          17834040510.769176,
+          269240440447.5022,
+          18104256495.168205
+        ],
+        "physical_volume": 2.13613448359038e-08
+      },
+      "divergence": {
+        "max_abs": 0.28195083505488583,
+        "weighted_RMS": 0.008169224674227626,
+        "max_point": [
+          -0.0004429957974140628,
+          0.00013393369447501765,
+          -0.00018909084118731113
+        ],
+        "max_index": 14885
+      },
+      "chunks_completed": 58,
+      "processed": 44400
+    },
+    "corrected_reference": {
+      "status": "completed",
+      "metric": {
+        "point_count": 44400,
+        "volume_L2": 2782080.072091978,
+        "volume_RMS": 19035107332.0357,
+        "max_norm": 277457969823.5515,
+        "max_point": [
+          -0.000881699463254858,
+          -0.00020644407690997453,
+          -5.491235501718044e-05
+        ],
+        "max_index": 20478,
+        "max_vector": [
+          -356016248.05381083,
+          -275764070874.1451,
+          30610055307.97759
+        ],
+        "physical_volume": 2.13613448359038e-08
+      },
+      "divergence": {
+        "max_abs": 17.20451846672222,
+        "weighted_RMS": 0.1219384647166569,
+        "max_point": [
+          0.0006606784332304194,
+          -0.00019974704938297314,
+          -5.491235501718044e-05
+        ],
+        "max_index": 20159
+      },
+      "chunks_completed": 58,
+      "processed": 44400
+    }
+  },
+  "status_detail": "completed",
+  "baseline_reused": {
+    "source_report": "scale_reference_trust_nonlinear_actual.json",
+    "source_status": "recovered_completed_baseline",
+    "source_elapsed_seconds": null,
+    "reason": "same raw reference and prior pressure projection; baseline was valid before corrected pressure-composition fix"
+  },
+  "grouped_backend": {
+    "status": "installed"
+  },
+  "grid": {
+    "point_count": 44400,
+    "physical_volume": 2.13613448359038e-08,
+    "array_sha256": "8c798b8a68d51a60524e15b6286fda12c649d771a13ae49ee8100526a312e3a2",
+    "path": "refined_wave_momentum_cache.npz",
+    "sha256": "0045761921a3fea916b351dddd84c52f2ecf7f27c43b7139935d025c62ba2da0"
+  },
+  "pressure_composition": {
+    "composition": "loader corrected field includes prior projection",
+    "prior_projection_sample": [
+      -148682.78190142085,
+      -97654.82924330988,
+      -153901.40237431874
+    ],
+    "selected_pressure_sample": [
+      2593835.4341533645,
+      2414229.4125207164,
+      1606570.748753165
+    ],
+    "base_reference_pressure_delta_sample": [
+      -148682.78190141916,
+      -97654.8292433098,
+      -153901.40237431787
+    ],
+    "corrected_pressure_delta_sample": [
+      2445152.652251946,
+      2316574.583277406,
+      1452669.346378846
+    ],
+    "comparison_tolerance": 0.05187670868306729,
+    "loader_has_prior_projection": true,
+    "loader_base_reference_pressure_delta_is_prior_plus_increment": false,
+    "loader_corrected_delta_is_selected_increment_only": false,
+    "step_selected_increment_sample": [
+      2593835.4341533645,
+      2414229.4125207164,
+      1606570.748753165
+    ]
+  },
+  "pressure_projection": {
+    "path": "scale_generator_pressure_projection.json",
+    "sha256": "8eb620cbbada879246274d274a5c2b7374e4cde1c7fb4f6ad9aa9f66ab9bd4ed",
+    "coefficient_count": 90,
+    "centers": [
+      [
+        0.00094,
+        -5.49e-05
+      ],
+      [
+        0.001180209079,
+        1.4192077977e-05
+      ]
+    ],
+    "widths": [
+      [
+        0.00025,
+        0.0002
+      ],
+      [
+        0.0003,
+        0.00025
+      ]
+    ],
+    "carrier": [
+      -871.4212739359624,
+      -616.1878920703391
+    ]
+  },
+  "chunk_caches": {
+    "corrected_reference": {
+      "directory": "C:\\Users\\z5242\\Documents\\Codex\\2026-09-13\\before-doing-any-project-work-verify\\work\\st073-transition-next\\experiments\\root_st073\\.scale_replay_cache\\5223af4ed2972f31284fcb31c0000f59f487ebf031cf5e3875b4d1b3787f444c",
+      "fingerprint": "5223af4ed2972f31284fcb31c0000f59f487ebf031cf5e3875b4d1b3787f444c"
+    }
+  },
+  "comparison": {
+    "volume_L2_change": -148559.6882466753,
+    "volume_L2_relative_change": -0.05069189678553611,
+    "volume_L2_percent_change": -5.069189678553611,
+    "max_norm_change": 7020857214.0807495,
+    "max_norm_relative_change": 0.02596114544463184,
+    "max_norm_percent_change": 2.596114544463184,
+    "divergence_max_abs_change": 16.922567631667334,
+    "divergence_weighted_RMS_change": 0.11376924004242928
+  },
+  "elapsed_seconds": 203.09122060000664
+}

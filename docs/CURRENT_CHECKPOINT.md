@@ -2,6 +2,16 @@
 
 ## Latest continuation checkpoint - 2026-09-27
 
+Corrected independent replay of the five-percent trust continuation is now
+complete on 44,400 points, with pressure counted once: L2 2.78208007209e6
+versus baseline 2.93063976034e6 (-5.069%), but maximum 2.77457969824e11
+versus 2.70437112609e11 (+2.596%). Do not adopt this candidate as a joint
+momentum improvement. The much better fit-grid numbers below do not carry
+over directly. Assembly/linearization agreement is being checked before
+attributing the discrepancy solely to quadrature or fitting-grid effects.
+See `scale_reference_trust_nonlinear_actual.json`. Reusable per-chunk jets
+are now saved during replay, and failure reporting preserves prior results.
+
 The repeated trust-region continuation now reaches fit-grid L2 2.37502e6
 and maximum 1.57305e11, about 18.87% and 40.68% below the common
 pressure-projected scale-generator baseline, at cumulative 5% velocity
