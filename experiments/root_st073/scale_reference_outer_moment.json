@@ -1,0 +1,202 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "constraints_maintained": false,
+  "scope": "Compact outer axisymmetric swirl calibration for necessary global axial angular-momentum neutrality. The correction is divergence-free and smooth by construction; no Navier--Stokes or recursive-scale acceptance is claimed.",
+  "sources": {
+    "angular_momentum_report": {
+      "path": "scale_reference_angular_momentum.json",
+      "sha256": "204b3701740d1a9c89f3953f77c44ec906d3747d94b8412b1082a7f1531d3095"
+    },
+    "reference_report": {
+      "path": "scale_reference_trust_nonlinear_fit.json",
+      "sha256": "868d171a0875af35d5e1528d4b143a038848756f161592a758a939f514f33ee0"
+    },
+    "frozen_geometry": {
+      "path": "full_wave_frozen_cache.json",
+      "sha256": "c03b9efa4bd65db79ee420df66808a34e7f634174851b47cca81f742b1435574"
+    },
+    "collar_geometry": {
+      "path": "global_collar_tangent.py",
+      "sha256": "c1b98cbe054a7877a9c6c419786ef6446ef61b1a13bba9dc795b840ec4042861"
+    }
+  },
+  "parameters": {
+    "radius_center": 0.0075,
+    "radius_half_width": 0.001,
+    "axial_center": 0.0,
+    "axial_half_width": 0.0008,
+    "bump": "exp(-1/(1-x^2)) for |x|<1, zero otherwise",
+    "amplitude_C": -66721.18666005015,
+    "reference_M_z": 2.812666052291525e-08,
+    "calibration_normalization_order": 32,
+    "independent_validation_normalization_order": 64
+  },
+  "support": {
+    "outer_radial_support": [
+      0.0065,
+      0.0085
+    ],
+    "outer_axial_support": [
+      -0.0008,
+      0.0008
+    ],
+    "inner_wave_radial_support": [
+      0.0004626458018495553,
+      0.002782779972318968
+    ],
+    "inner_wave_axial_support": [
+      -0.00047186657034496774,
+      0.0004311462933044976
+    ],
+    "disjoint_from_inner_wave_support": true,
+    "overlaps_registered_outer_collar_envelope": true
+  },
+  "normalization": {
+    "orders": [
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "rows": [
+      {
+        "order": 4,
+        "radial_integral_B": 1.8508850620312377e-10,
+        "axial_integral_B": 0.0003484467594179744,
+        "radial_integral_B2": 5.7825397874549964e-11,
+        "axial_integral_B2": 0.00010897420514620626,
+        "moment_denominator_for_C": 4.0522454998305574e-13,
+        "kinetic_factor_for_C2": 1.9796673129416293e-14
+      },
+      {
+        "order": 8,
+        "radial_integral_B": 1.8894417776079655e-10,
+        "axial_integral_B": 0.000355287254583117,
+        "radial_integral_B2": 5.645732359342037e-11,
+        "axial_integral_B2": 0.00010641139842213123,
+        "moment_denominator_for_C": 4.217868253538163e-13,
+        "kinetic_factor_for_C2": 1.887375483926322e-14
+      },
+      {
+        "order": 16,
+        "radial_integral_B": 1.8889149990429124e-10,
+        "axial_integral_B": 0.00035519874288979795,
+        "radial_integral_B2": 5.649010133528672e-11,
+        "axial_integral_B2": 0.00010646935819079988,
+        "moment_denominator_for_C": 4.215641814519883e-13,
+        "kinetic_factor_for_C2": 1.8894998535573286e-14
+      },
+      {
+        "order": 32,
+        "radial_integral_B": 1.8888942211109175e-10,
+        "axial_integral_B": 0.0003551950488390865,
+        "radial_integral_B2": 5.648984976541544e-11,
+        "axial_integral_B2": 0.00010646889677578713,
+        "moment_denominator_for_C": 4.215551600756573e-13,
+        "kinetic_factor_for_C2": 1.8894832503194842e-14
+      },
+      {
+        "order": 64,
+        "radial_integral_B": 1.8888942442324682e-10,
+        "axial_integral_B": 0.0003551950529351755,
+        "radial_integral_B2": 5.648984971138485e-11,
+        "axial_integral_B2": 0.0001064688966759972,
+        "moment_denominator_for_C": 4.21555170097174e-13,
+        "kinetic_factor_for_C2": 1.889483246741306e-14
+      }
+    ],
+    "cancellation_rows": [
+      {
+        "order": 4,
+        "correction_M_z": -2.7037062838654285e-08,
+        "corrected_M_z": 1.0895976842609641e-09,
+        "relative_corrected_to_reference": 0.038738963815958566
+      },
+      {
+        "order": 8,
+        "correction_M_z": -2.8142117505181953e-08,
+        "corrected_M_z": -1.5456982266704065e-11,
+        "relative_corrected_to_reference": 0.0005495491458757079
+      },
+      {
+        "order": 16,
+        "correction_M_z": -2.8127262439849362e-08,
+        "corrected_M_z": -6.019169341126002e-13,
+        "relative_corrected_to_reference": 2.1400227503802264e-05
+      },
+      {
+        "order": 32,
+        "correction_M_z": -2.8126660522915252e-08,
+        "corrected_M_z": -3.308722450212111e-24,
+        "relative_corrected_to_reference": 1.1763651954047088e-16
+      },
+      {
+        "order": 64,
+        "correction_M_z": -2.812666119156274e-08,
+        "corrected_M_z": -6.686474909251895e-16,
+        "relative_corrected_to_reference": 2.377272944935754e-08
+      }
+    ],
+    "calibration_order": 32,
+    "independent_validation_order": 64,
+    "calibration_identity_note": "Cancellation at the calibration order is an identity by construction; only the independent validation order tests quadrature transfer.",
+    "independent_validation_corrected_M_z": -6.686474909251895e-16,
+    "independent_validation_relative_residual": 2.377272944935754e-08,
+    "source_M_z_quadrature_uncertainty_relative": 0.002585985146066542,
+    "source_uncertainty_note": "The reference M_z inherits the coarse-to-fine discrepancy reported by scale_reference_angular_momentum.json; outer normalization quadrature does not reduce that source-field uncertainty.",
+    "moment_formula": "delta M_z = C * 2*pi * integral(r^3 B_r dr) * integral(B_z dz)",
+    "correction_self_energy_formula": "delta E_self = pi*C^2*integral(r^3 B_r^2 dr)*integral(B_z^2 dz)"
+  },
+  "correction": {
+    "reference_M_z": 2.812666052291525e-08,
+    "calibration_order": 32,
+    "correction_M_z_calibrated": -2.8126660522915252e-08,
+    "corrected_M_z_calibrated": -3.308722450212111e-24,
+    "independent_validation_order": 64,
+    "corrected_M_z_validation": -6.686474909251895e-16,
+    "correction_self_energy": 8.411444233016771e-05,
+    "total_energy_cross_term_uncomputed": true,
+    "total_energy_note": "Reported energy is integral |delta u|^2/2 only; the cross term with the existing field is not computed.",
+    "max_speed": 68.02071202901709,
+    "velocity_formula": "C*B_r*B_z*(-y,x,0)",
+    "jacobian_exposed": true,
+    "laplacian_exposed": true,
+    "divergence": "identically zero for the axisymmetric swirl form"
+  },
+  "neutrality_scope": {
+    "moment_condition_only": true,
+    "global_neutrality_certificate": false,
+    "note": "The independent order-64 normalization validates the bump integral, while source M_z uncertainty remains inherited from its order-4/order-8 field quadrature."
+  },
+  "analytic_checks": {
+    "points": [
+      [
+        0.0075,
+        0.0,
+        0.0
+      ],
+      [
+        0.0072,
+        0.0003,
+        0.0001
+      ],
+      [
+        0.0068,
+        -0.0002,
+        -0.0003
+      ]
+    ],
+    "jacobian_step": 1e-08,
+    "laplacian_step": 2e-07,
+    "jacobian_max_abs_error": 2.825578849297017e-05,
+    "jacobian_relative_error": 2.573344736406711e-10,
+    "laplacian_max_abs_error": 93.23724550008774,
+    "laplacian_relative_error": 2.686330804070985e-07,
+    "analytic_divergence_max_abs": 0.0
+  },
+  "elapsed_seconds": 0.03565659999730997
+}

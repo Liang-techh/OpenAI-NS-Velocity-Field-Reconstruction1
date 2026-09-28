@@ -2,6 +2,23 @@
 
 ## Latest continuation checkpoint - 2026-09-27
 
+A callable compact outer moment compensator is now available in
+`scale_reference_outer_replay.load_compensated_reference()`, but is NOT
+adopted. Its C-infinity axisymmetric swirl leaves the inner wave untouched.
+Order-32 calibration and independent order-64 bump integration agree to
+2.38e-8 relative; the reference moment still carries a 0.259% coarse/fine
+quadrature discrepancy, so global neutrality is not certified.
+
+The annular momentum replay rejects direct addition under the existing
+scale generator, unchanged pressure and zero force: at order 20, outer L2
+increases from 9.39788 to 2352.97 and maximum from 1.19186e5 to 2.03104e7.
+Order 12 gives the same adverse direction but differs by about 10% in
+corrected L2; these are not converged continuum norms. The correction's
+self energy is 8.41143e-5; including the measured cross term, the total
+energy change is 8.37790e-5 on this annulus. Moment compensation therefore
+needs its own dynamical matching; it cannot be treated as a free repair.
+Sources: `scale_reference_outer_moment.json`, `scale_reference_outer_replay.json`.
+
 Pulled back to the reference coordinates with the isotropic acceleration
 factor s^(3/2), the multiscale L2 values are 2.7820801e6, 2.7808352e6,
 2.7796287e6; maxima are 2.7745797e11, 2.7738288e11, 2.7730838e11.

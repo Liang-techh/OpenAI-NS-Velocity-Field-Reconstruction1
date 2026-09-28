@@ -1,0 +1,57 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "rows": [
+    {
+      "order": 12,
+      "point_count": 576,
+      "baseline": {
+        "volume_L2": 8.944773913759924,
+        "max_norm": 89197.41941540492
+      },
+      "compensated": {
+        "volume_L2": 2611.1443030255177,
+        "max_norm": 21809184.51217803
+      },
+      "increment": {
+        "volume_L2": 2611.582967858134,
+        "max_norm": 21818259.269448765
+      },
+      "correction_self_energy": 8.411123157908574e-05,
+      "energy_cross_term": -3.352091330527253e-07,
+      "total_energy_change": 8.377602244603301e-05,
+      "swirl_ring_spread": 0.0,
+      "axial_moment_increment": -2.8125199774874643e-08
+    },
+    {
+      "order": 20,
+      "point_count": 1600,
+      "baseline": {
+        "volume_L2": 9.397881566187039,
+        "max_norm": 119185.97957612993
+      },
+      "compensated": {
+        "volume_L2": 2352.974434162831,
+        "max_norm": 20310400.964087028
+      },
+      "increment": {
+        "volume_L2": 2353.5602248653736,
+        "max_norm": 20321711.995309245
+      },
+      "correction_self_energy": 8.411433863565613e-05,
+      "energy_cross_term": -3.353798925324784e-07,
+      "total_energy_change": 8.377895874312365e-05,
+      "swirl_ring_spread": 0.0,
+      "axial_moment_increment": -2.8126459842229398e-08
+    }
+  ],
+  "sources": {
+    "scale_reference_outer_moment.json": "691b4361674bac73bbffb2cf3e43ab16520f9b2d646af6ea28b6fb128ed89b9d",
+    "scale_reference_trust_nonlinear_fit.json": "868d171a0875af35d5e1528d4b143a038848756f161592a758a939f514f33ee0"
+  },
+  "forcing": "zero",
+  "pressure": "unchanged from the frozen reference",
+  "scope": "Outer annulus only; base jets use spatial FD, correction jets are analytic. Four angular samples rely on disjointness from nonaxisymmetric wave support. This does not certify global residual, neutrality, or critical-time regularity."
+}
