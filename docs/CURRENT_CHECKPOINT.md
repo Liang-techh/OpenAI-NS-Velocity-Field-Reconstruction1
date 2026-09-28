@@ -2,6 +2,21 @@
 
 ## Latest continuation checkpoint - 2026-09-27
 
+Five bounded nonlinear reference updates reach fit-grid L2 2.77569e6 and
+maximum 2.48638e11, reductions of about 5.18% and 6.24% against the original
+pressure-projected scale-generator baseline. The cumulative velocity change
+is 5%, versus 1% for the alternatives below. This candidate is in
+`scale_reference_nonlinear_fit.json` and loads through the reference adapter;
+independent momentum and physical gates remain unverified. These are
+optimizer iterations, not accepted dynamical recursion steps.
+
+A bounded original-wave amplitude plus pressure fit now improves the
+scale-generator residual by 2.011% in L2 and 2.193% in maximum on the fit
+grid, under the same 1% velocity-change budget. The mean is held fixed.
+Use `scale_wave_reference.load_reference()` for this alternative; its
+independent momentum and physical gates remain pending. Its fit-grid L2
+2.86858e6 remains far above the requested 1e-3.
+
 The first actual reference-velocity correction has been fitted with a 1%
 velocity L2 trust bound. Its exact-quadratic fit-grid residual improves from
 2.92745e6 to 2.89622e6 L2 and from 2.65177e11 to 2.61537e11 maximum.

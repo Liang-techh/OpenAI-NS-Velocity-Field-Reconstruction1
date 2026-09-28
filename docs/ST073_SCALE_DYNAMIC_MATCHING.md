@@ -138,6 +138,45 @@ divergence error is 0.143 at scale 1 and scales to 0.573 at scale 1/4.
 The construction uses curls and a solenoidal map, but these numerical
 derivatives do not independently certify small absolute divergence.
 
+## Five bounded nonlinear updates
+
+`scale_reference_nonlinear_fit.json` starts from the first one-percent
+reference step and accepts five further optimizer updates, stopping at
+the cumulative 5% reference-velocity L2 bound. Each update rebuilds the
+response around the current field and replays the exact quadratic residual.
+The final fit-grid L2 is 2.77569409742e6 and maximum 2.48638412669e11,
+about 5.18% and 6.24% below the original pressure-projected baseline.
+These iterations use backtracked least-squares directions; they are not
+claims of optimal trust-region solutions or accepted dynamical time steps.
+
+The report can be loaded with
+`scale_reference_candidate.load_reference(step=...nonlinear_fit.json)`.
+Its `patch_count` and coefficient-semantics metadata were added after the
+numerical run for loader compatibility; coefficients and metrics were not
+changed. Independent momentum, moment/cone, shape and interval gates remain
+unverified for this cumulative candidate. Its 5% perturbation budget differs
+from the one-percent alternatives and must be stated when comparing results.
+
+## Bounded original-wave amplitude fit
+
+`scale_wave_amplitude_fit.py` eliminates the 90 pressure coefficients by
+weighted SVD, then minimizes the exact quartic residual objective along
+the original mode-1 amplitude direction. It checks both interval endpoints
+and all real stationary points within the same 1% velocity L2 bound. The
+mean velocity is unchanged; this is not a rescaling of the whole field.
+
+The resulting amplitude is 0.9892783905676281. On the fit grid, residual
+L2 is 2.86857726476e6 (2.011% below the pressure-projected baseline) and
+maximum is 2.59363049422e11 (2.193% below). `scale_wave_reference.py`
+exposes this alternative as a callable frozen velocity/pressure field,
+with `base_reference` for the pressure-projected comparison. Its pressure
+coefficients are additions to the original drift-1800 pressure; adding the
+earlier pressure projection again would double-count that correction.
+
+Axis, interior and outside-support smoke probes are finite, with zero
+velocity and pressure at the tested exterior point. Independent momentum,
+shape and physical gates are not yet established for this alternative.
+
 ## Relation to the reference paper
 
 The [OpenAI paper](https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf),
