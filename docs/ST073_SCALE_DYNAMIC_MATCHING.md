@@ -93,6 +93,51 @@ generator provide only small opposing projections. These are term norms,
 which must not be added. The next spatial correction specifically needs
 to rebalance this convective angular-momentum transport.
 
+An angular Reynolds decomposition resolves that imbalance further:
+convection of the angular-mean velocity has mean-azimuthal L2 only 1247.9,
+whereas the fluctuation momentum flux has L2 2.09610e6. Thus the current
+oscillatory velocity, rather than the mean-flow convection alone, is the
+dominant source of this component. The numerical split uses the same grid
+and derivative cache and retains their limitations.
+
+## First reference-velocity step
+
+`scale_reference_velocity_step.json` fits 270 initial curl-potential velocity
+coefficients and 90 pressure coefficients, retaining a 1% weighted velocity
+trust bound. This changes the reference field itself. Including the exact
+quadratic convection remainder yields L2 2.89622344576e6 and maximum
+2.61537118240e11, down 1.0667% and 1.3727% from the pressure-projected
+baseline on the fit grid. Independent momentum replay and physical gates
+remain required. This candidate is not an accepted recursive step.
+
+The separate `scale_wave_amplitude_probe.json` keeps the mean and pressure
+fixed and scales only the original mode-1 wave. Reducing its amplitude to
+0.99 changes velocity L2 by 0.9327%, while giving sampled residual L2
+2.87435725499e6 and maximum 2.60699651318e11. This is a promising direction
+within a comparable velocity-change budget, not yet independently replayed.
+Larger amplitude reductions are diagnostic rows only; their moment/cone and
+shape consequences cannot be inferred from lower momentum residual.
+
+`scale_reference_candidate.py` exposes the corrected global frozen reference
+as velocity and pressure functions. `scale_reference_shape_replay.json`
+evaluates its prescribed scale family on 7,776 points, with the diagnostic
+cylinder and weights pushed forward by the scale map:
+
+| Scale | Vorticity-weighted radial RMS | Axial/radial aspect | Signed angular speed | Sampled kinetic energy |
+|---|---:|---:|---:|---:|
+| 1 | 0.0011433810 | 0.20529246 | 705621.86 | 0.02512239 |
+| 1/2 | 0.0008082585 | 0.20610706 | 1418238.74 | 0.01786381 |
+| 1/4 | 0.0005713585 | 0.20692553 | 2850565.64 | 0.01270258 |
+
+The requested morphology appears in this prescribed kinematic family:
+radial contraction, increasing relative axial extent and increasing winding.
+These are enstrophy moments of a moving diagnostic cylinder, not an identified
+vortex-core boundary or proof that NS evolves through these states. The
+reference Jacobian uses spatial finite differences; its absolute sampled
+divergence error is 0.143 at scale 1 and scales to 0.573 at scale 1/4.
+The construction uses curls and a solenoidal map, but these numerical
+derivatives do not independently certify small absolute divergence.
+
 ## Relation to the reference paper
 
 The [OpenAI paper](https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf),

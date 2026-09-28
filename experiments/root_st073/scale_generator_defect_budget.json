@@ -132,5 +132,16 @@
       "signed_projection_fraction": -8.857228626140839e-15
     },
     "scope": "Signed projections onto the mean azimuthal residual sum to one; term norms do not add. Viscosity read from the frozen defect source."
+  },
+  "mean_azimuthal_convection_split": {
+    "convection_of_angular_mean": {
+      "volume_L2": 1247.914977041179,
+      "signed_projection_onto_residual": 8.041337212294329e-05
+    },
+    "fluctuation_momentum_flux": {
+      "volume_L2": 2096098.5260747736,
+      "signed_projection_onto_residual": 1.0001296433898128
+    },
+    "scope": "Angular Reynolds decomposition using resolved cylindrical means and Cartesian Jacobians. Fluctuation term is mean total convection minus convection of the angular mean. No sign/positivity or continuum certificate follows from term norms."
   }
 }

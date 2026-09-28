@@ -20,6 +20,7 @@ def run():
     with np.load(cache) as data:
         points, weights = data['points'], data['weights']
         residual = data['generator_residual']
+        velocity, jacobian = data['velocity'], data['gradient']
         terms = dict(generator_ut=data['generator_ut'],
                      convection=np.einsum('nij,nj->ni', data['gradient'], data['velocity']),
                      viscosity=-nu*data['laplacian'],
@@ -62,6 +63,23 @@ def run():
                    signed_projection_fraction=float(np.sum(ring_weights*mean_theta(values)*target)/mean_swirl_square))
         for name, values in terms.items()}
     report['axisymmetric_azimuthal_terms']['scope'] = 'Signed projections onto the mean azimuthal residual sum to one; term norms do not add. Viscosity read from the frozen defect source.'
+    er = np.column_stack((np.cos(theta), np.sin(theta), np.zeros(len(theta))))
+    et = np.column_stack((-np.sin(theta), np.cos(theta), np.zeros(len(theta))))
+    def ring_mean(values):
+        return values.reshape(-1,12).mean(axis=1)
+    ur = ring_mean(np.sum(er*velocity, axis=1))
+    uth = mean_theta(velocity)
+    uz = ring_mean(velocity[:, 2])
+    duth_dr = ring_mean(np.einsum('ni,nij,nj->n', et, jacobian, er))
+    duth_dz = ring_mean(np.einsum('ni,ni->n', et, jacobian[:, :, 2]))
+    mean_flow = ur*duth_dr + uz*duth_dz + ur*uth/radii.reshape(-1,12)[:,0]
+    fluctuations = mean_theta(terms['convection']) - mean_flow
+    report['mean_azimuthal_convection_split'] = {
+        name: dict(volume_L2=float(np.sqrt(np.sum(ring_weights*values**2))),
+                   signed_projection_onto_residual=float(np.sum(ring_weights*values*target)/mean_swirl_square))
+        for name, values in [('convection_of_angular_mean',mean_flow),
+                             ('fluctuation_momentum_flux',fluctuations)]}
+    report['mean_azimuthal_convection_split']['scope'] = 'Angular Reynolds decomposition using resolved cylindrical means and Cartesian Jacobians. Fluctuation term is mean total convection minus convection of the angular mean. No sign/positivity or continuum certificate follows from term norms.'
     (ROOT / 'scale_generator_defect_budget.json').write_text(json.dumps(report, indent=2)+'\n')
     print(json.dumps(dict(regions=rows, modes=report['angular']['modes'])))
 

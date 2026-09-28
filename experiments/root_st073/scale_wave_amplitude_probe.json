@@ -1,0 +1,72 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "sources": {
+    "scale_generator_momentum_defect.npz": "0fb7b970e7d6f7845b281a330472ee57d489d7533aeeb3a4bc475b26389abdc3",
+    "enriched_mean_endpoint_tangent.json": "ea78f641a3b4ca760e373716186c6eb93b27494f0c8982708c953468582b40c5",
+    "full_wave_frozen_cache.json": "c03b9efa4bd65db79ee420df66808a34e7f634174851b47cca81f742b1435574"
+  },
+  "scope": "Reference-time analytic wave amplitude direction on frozen inner grid; original mean and pressure fixed. Mode1 mean swirl is zero. Endpoint shape, moment, cone, independent replay and trajectory unverified. Zero-amplitude row is a diagnostic limit, not a candidate.",
+  "reference_velocity_L2": 0.21639142658270596,
+  "original_wave_velocity_L2": 0.20182737297756068,
+  "rows": [
+    {
+      "wave_amplitude": 1,
+      "momentum_volume_L2": 2929395.031830593,
+      "momentum_max": 266873978669.81693,
+      "velocity_change_fraction": 0.0,
+      "velocity_volume_L2": 0.21639142658270596
+    },
+    {
+      "wave_amplitude": 0.99,
+      "momentum_volume_L2": 2874357.254988134,
+      "momentum_max": 260699651317.7656,
+      "velocity_change_fraction": 0.009326957919029263,
+      "velocity_volume_L2": 0.21451022623102717
+    },
+    {
+      "wave_amplitude": 0.95,
+      "momentum_volume_L2": 2666635.7265603314,
+      "momentum_max": 236739992396.27805,
+      "velocity_change_fraction": 0.04663478959514631,
+      "velocity_volume_L2": 0.20701124696838055
+    },
+    {
+      "wave_amplitude": 0.9,
+      "momentum_volume_L2": 2436334.471813432,
+      "momentum_max": 208491874303.37552,
+      "velocity_change_fraction": 0.09326957919029251,
+      "velocity_volume_L2": 0.19770112464708992
+    },
+    {
+      "wave_amplitude": 0.75,
+      "momentum_volume_L2": 1960500.1540071298,
+      "momentum_max": 141259423699.84183,
+      "velocity_change_fraction": 0.23317394797573135,
+      "velocity_volume_L2": 0.17030560263002475
+    },
+    {
+      "wave_amplitude": 0.5,
+      "momentum_volume_L2": 1841328.2506980598,
+      "momentum_max": 98998489905.1959,
+      "velocity_change_fraction": 0.4663478959514627,
+      "velocity_volume_L2": 0.12757167842523312
+    },
+    {
+      "wave_amplitude": 0.25,
+      "momentum_volume_L2": 2071539.4701254172,
+      "momentum_max": 115315012831.01956,
+      "velocity_change_fraction": 0.6995218439271941,
+      "velocity_volume_L2": 0.09293467622832825
+    },
+    {
+      "wave_amplitude": 0,
+      "momentum_volume_L2": 2188012.647433762,
+      "momentum_max": 120788623278.02316,
+      "velocity_change_fraction": 0.9326957919029254,
+      "velocity_volume_L2": 0.07804460913782092
+    }
+  ]
+}

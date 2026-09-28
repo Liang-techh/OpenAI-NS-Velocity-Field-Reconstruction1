@@ -2,6 +2,16 @@
 
 ## Latest continuation checkpoint - 2026-09-27
 
+The first actual reference-velocity correction has been fitted with a 1%
+velocity L2 trust bound. Its exact-quadratic fit-grid residual improves from
+2.92745e6 to 2.89622e6 L2 and from 2.65177e11 to 2.61537e11 maximum.
+Independent momentum and physical gates remain pending. The corrected
+reference's prescribed scale family shows radial contraction, relative
+axial elongation, stronger winding and decreasing sampled energy at scales
+1, 1/2 and 1/4; these are kinematic morphology observations, not NS recursion.
+See `scale_reference_velocity_step.json`, `scale_reference_candidate.py`
+and `scale_reference_shape_replay.json` in `experiments/root_st073`.
+
 Scale-compatible dynamics now has a direct diagnostic: replacing only the
 fitted time derivative with the solenoidal scale generator increases inner
 momentum L2 from 1.68732e6 to 2.92940e6 (+73.61%), maximum from 8.91218e10
