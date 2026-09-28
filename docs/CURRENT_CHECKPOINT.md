@@ -8,7 +8,10 @@ momentum L2 from 1.68732e6 to 2.92940e6 (+73.61%), maximum from 8.91218e10
 to 2.66874e11. Pressure-only projection with the existing 90 local pressure
 columns reduces the new L2 by just 0.0664%. Therefore the next correction
 must address the reference velocity, not merely its independently fitted
-time tangent. See [dynamic matching](ST073_SCALE_DYNAMIC_MATCHING.md).
+time tangent. A cylindrical budget localizes 94.72% of squared residual
+inside the two existing patches. About 51.18% is mode-0 azimuthal error,
+whose true angular mean cannot be changed by a periodic pressure gradient.
+See [dynamic matching](ST073_SCALE_DYNAMIC_MATCHING.md).
 The prescribed scale map also admits a uniform energy bound tending to
 zero as scale tends to zero; this analytic kinematic bound does not establish
 NS dynamics or carry over automatically to new corrected reference fields.

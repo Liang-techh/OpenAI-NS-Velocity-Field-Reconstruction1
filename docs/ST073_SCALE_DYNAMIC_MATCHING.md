@@ -66,6 +66,33 @@ operator above, with a 1% reference-velocity L2 trust bound and exact
 quadratic residual replay. Its shape and moment gates still need evaluation
 before any corrected field can be adopted.
 
+## Where the scale-compatible defect lives
+
+`scale_generator_defect_budget.json` decomposes the same frozen residual
+into cylindrical angular modes and disjoint spatial regions. Modes 0 and 2
+carry 66.02% and 33.09% of its squared volume L2. These modes are already
+represented by the current basis; the result is not evidence for missing
+higher angular frequencies. The union of the two compact patches covers
+94.72% of the squared residual, with 47.19% in their overlap.
+
+The mode-0 azimuthal component alone carries about 51.18% of the squared
+residual (L2 about 2.096e6). For a single-valued periodic scalar pressure,
+the true angular mean of `(1/r)*partial_theta p` is zero at each positive
+radius. Pressure therefore cannot cancel this mean azimuthal component.
+The reported value is a resolved-grid estimate, not a rigorous continuum
+lower bound. It identifies a specific velocity/transport imbalance and
+supports the paper's use of oscillatory momentum flux and mean corrections.
+The planned reference-velocity step must address this component; reducing
+only the gradient part or introducing more pressure columns is insufficient.
+
+Term decomposition further identifies convection as the source: the mean
+azimuthal convective term has L2 2.09628e6, compared with 26615.4 for viscosity,
+270.1 for the scale generator and 8.48e-8 for the sampled pressure term.
+Its signed projection onto this residual is 1.000210; viscosity and the
+generator provide only small opposing projections. These are term norms,
+which must not be added. The next spatial correction specifically needs
+to rebalance this convective angular-momentum transport.
+
 ## Relation to the reference paper
 
 The [OpenAI paper](https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf),

@@ -1,0 +1,136 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "scale_recursion_established": false,
+  "cache_sha256": "0fb7b970e7d6f7845b281a330472ee57d489d7533aeeb3a4bc475b26389abdc3",
+  "candidate_sha256": "47521663020188d3ab89360816aba46ae111f0663a1d962225a7b0a128f1821a",
+  "defect_report_sha256": "b699fd5fdabf5718b790c00cedfe0825a5db2c905f9440866a7e738114c5661e",
+  "angular": {
+    "point_count": 18720,
+    "angles": 12,
+    "physical_volume": 2.1361344835903807e-08,
+    "momentum_max": 266873978669.81693,
+    "momentum_volume_L2": 2929395.031830593,
+    "modes": [
+      {
+        "mode": 0,
+        "volume_L2": 2380221.0293319523,
+        "squared_L2_fraction": 0.6602048256671884,
+        "cylindrical_component_squared_L2": [
+          989732012159.0178,
+          4391813652989.296,
+          283906483325.7449
+        ]
+      },
+      {
+        "mode": 1,
+        "volume_L2": 276824.55713354424,
+        "squared_L2_fraction": 0.008930038808233107,
+        "cylindrical_component_squared_L2": [
+          37526537678.9588,
+          27441924440.508183,
+          11663373312.715912
+        ]
+      },
+      {
+        "mode": 2,
+        "volume_L2": 1685013.729501194,
+        "squared_L2_fraction": 0.3308651355245791,
+        "cylindrical_component_squared_L2": [
+          652005646911.5388,
+          1999031353318.9536,
+          188234268377.03143
+        ]
+      },
+      {
+        "mode": 3,
+        "volume_L2": 0.0011236046744588376,
+        "squared_L2_fraction": 1.4711982283869744e-19,
+        "cylindrical_component_squared_L2": [
+          6.06172737915191e-08,
+          3.6175050148258425e-07,
+          8.401196891916469e-07
+        ]
+      },
+      {
+        "mode": 4,
+        "volume_L2": 0.0010010043524361762,
+        "squared_L2_fraction": 1.1676590516429755e-19,
+        "cylindrical_component_squared_L2": [
+          2.6501982548271574e-07,
+          7.361984037351188e-07,
+          7.914843783337149e-10
+        ]
+      },
+      {
+        "mode": 5,
+        "volume_L2": 0.001136380162723906,
+        "squared_L2_fraction": 1.5048437411493125e-19,
+        "cylindrical_component_squared_L2": [
+          6.104725961453217e-08,
+          3.772291637749122e-07,
+          8.530834508429665e-07
+        ]
+      },
+      {
+        "mode": 6,
+        "volume_L2": 0.0004992933433531518,
+        "squared_L2_fraction": 2.905063773507594e-20,
+        "cylindrical_component_squared_L2": [
+          1.8176198859352138e-07,
+          6.703096587137205e-08,
+          5.008882518749564e-10
+        ]
+      }
+    ],
+    "parseval_relative_error": 5.690024892711049e-16,
+    "scope": "Sampled cylindrical Fourier budget; angular aliasing and spatial accuracy unverified"
+  },
+  "regions": {
+    "first_only": {
+      "point_count": 840,
+      "squared_L2_fraction": 0.3007431298030616,
+      "volume_L2": 1606481.7573171912
+    },
+    "second_only": {
+      "point_count": 600,
+      "squared_L2_fraction": 0.17456200130829208,
+      "volume_L2": 1223919.338361898
+    },
+    "overlap": {
+      "point_count": 240,
+      "squared_L2_fraction": 0.4719210735051525,
+      "volume_L2": 2012392.204043579
+    },
+    "outside_both": {
+      "point_count": 17040,
+      "squared_L2_fraction": 0.05277379538349378,
+      "volume_L2": 672956.6748381584
+    }
+  },
+  "scope": "Frozen inner-grid error budget. Regions are disjoint supports, not claims of basis approximation capacity or PDE accuracy.",
+  "axisymmetric_azimuthal_defect": {
+    "volume_L2": 2095665.4439555223,
+    "squared_L2_fraction": 0.5117855541177821,
+    "interpretation": "The true angular mean of (1/r)*dtheta(p) vanishes for single-valued periodic pressure. This resolved-grid m=0 azimuthal residual therefore identifies a pressure-invariant momentum component. Numerical value is a sampled estimate, not a continuum lower-bound certificate."
+  },
+  "axisymmetric_azimuthal_terms": {
+    "generator_ut": {
+      "volume_L2": 270.1105647304239,
+      "signed_projection_fraction": -1.3827467594198733e-05
+    },
+    "convection": {
+      "volume_L2": 2096276.7338653235,
+      "signed_projection_fraction": 1.0002100567619354
+    },
+    "viscosity": {
+      "volume_L2": 26615.386304846037,
+      "signed_projection_fraction": -0.00019622929433383903
+    },
+    "pressure": {
+      "volume_L2": 8.481586963083672e-08,
+      "signed_projection_fraction": -8.857228626140839e-15
+    },
+    "scope": "Signed projections onto the mean azimuthal residual sum to one; term norms do not add. Viscosity read from the frozen defect source."
+  }
+}
