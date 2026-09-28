@@ -1,0 +1,1785 @@
+{
+  "status": "completed",
+  "accepted": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "constraints_maintained": false,
+  "source": "localized_constrained_tangent.json",
+  "source_sha256": "20a33e63cd33a1b800c208fe5ecf107bccac4fc982413bcbe8d62acc2d78470e",
+  "sources": {
+    "refined_cache": {
+      "path": "refined_wave_momentum_cache.npz",
+      "sha256": "0045761921a3fea916b351dddd84c52f2ecf7f27c43b7139935d025c62ba2da0"
+    },
+    "refined_cache_report": {
+      "path": "refined_wave_momentum_cache.json",
+      "sha256": "977d1240cc557968cbdf55e7adfafe66bcf96d20522d57074518b135b185e942"
+    },
+    "parent_candidate": {
+      "path": "enriched_mean_endpoint_tangent.json",
+      "sha256": "ea78f641a3b4ca760e373716186c6eb93b27494f0c8982708c953468582b40c5"
+    },
+    "first_residual_enrichment": {
+      "path": "localized_residual_enrichment.json",
+      "sha256": "f23caa94c26441eb17c840dbf6437d1648e623bb0a9a33d5b92a6c5a241545ba"
+    },
+    "first_constraint_rows": {
+      "path": "localized_constraint_rows.json",
+      "sha256": "5f61f2bd8e236fc64d0521bede6153a5a3f9dd016bdde4b8d8712d0edeb87f68"
+    },
+    "first_constrained_fit": {
+      "path": "localized_constrained_tangent.json",
+      "sha256": "20a33e63cd33a1b800c208fe5ecf107bccac4fc982413bcbe8d62acc2d78470e"
+    },
+    "geometry": {
+      "path": "full_wave_frozen_cache.json",
+      "sha256": "c03b9efa4bd65db79ee420df66808a34e7f634174851b47cca81f742b1435574"
+    }
+  },
+  "scope": "One additional compact degree-2 mode-0/1/2 weighted ridge probe. The fixed 264 parent and first assembled-feasible local 180 patch are reconstructed from frozen cache responses. No mean finite-difference replay, moment/cone/shape enforcement, PDE, or adoption claim.",
+  "inputs": {
+    "point_count": 44400,
+    "parent_control_count": 264,
+    "first_local_control_count": 180,
+    "additional_control_count": 180,
+    "degree": 2,
+    "modes": [
+      0,
+      1,
+      2
+    ],
+    "angles": 12,
+    "carrier_mode1": [
+      -871.4212739359624,
+      -616.1878920703391
+    ],
+    "carrier_mode2": [
+      -1742.8425478719248,
+      -1232.3757841406782
+    ],
+    "ridge_lambda_normalized": 1e-08,
+    "old_parent_controls_fixed": true,
+    "first_local_controls_fixed": true
+  },
+  "support_containment": {
+    "coordinates": [
+      "radius",
+      "z"
+    ],
+    "patch_center": [
+      0.001180209079,
+      1.4192077977e-05
+    ],
+    "patch_widths": [
+      0.0003,
+      0.00025
+    ],
+    "patch_bounds": {
+      "lower": [
+        0.0008802090790000002,
+        -0.000235807922023
+      ],
+      "upper": [
+        0.001480209079,
+        0.00026419207797700003
+      ]
+    },
+    "original_wave_center": [
+      0.0016227128870842616,
+      -2.036013852023506e-05
+    ],
+    "original_wave_widths": [
+      0.0011600670852347063,
+      0.00045150643182473267
+    ],
+    "original_wave_bounds": {
+      "lower": [
+        0.0004626458018495553,
+        -0.00047186657034496774
+      ],
+      "upper": [
+        0.002782779972318968,
+        0.0004311462933044976
+      ]
+    },
+    "strictly_inside_original_support": true,
+    "patch_outside_original_support": false,
+    "lower_containment_margin": [
+      0.0004175632771504449,
+      0.00023605864832196773
+    ],
+    "upper_containment_margin": [
+      0.001302570893318968,
+      0.00016695421532749756
+    ]
+  },
+  "additional_patch": {
+    "center": [
+      0.001180209079,
+      1.4192077977e-05
+    ],
+    "widths": [
+      0.0003,
+      0.00025
+    ],
+    "bounds": {
+      "lower": [
+        0.0008802090790000002,
+        -0.000235807922023
+      ],
+      "upper": [
+        0.001480209079,
+        0.00026419207797700003
+      ]
+    },
+    "layout": [
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 0
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 1
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 2
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 3
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 4
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 5
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 6
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 7
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 8
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 9
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 10
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 11
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 12
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 13
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 14
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 15
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 16
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 17
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 18
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 19
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 20
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 21
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 22
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 23
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 24
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 25
+      },
+      {
+        "mode": 0,
+        "kind": "velocity",
+        "component": "real",
+        "index": 26
+      },
+      {
+        "mode": 0,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 0
+      },
+      {
+        "mode": 0,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 1
+      },
+      {
+        "mode": 0,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 2
+      },
+      {
+        "mode": 0,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 3
+      },
+      {
+        "mode": 0,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 4
+      },
+      {
+        "mode": 0,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 5
+      },
+      {
+        "mode": 0,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 6
+      },
+      {
+        "mode": 0,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 7
+      },
+      {
+        "mode": 0,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 8
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 0
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 0
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 1
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 1
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 2
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 2
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 3
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 3
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 4
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 4
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 5
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 5
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 6
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 6
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 7
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 7
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 8
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 8
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 9
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 9
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 10
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 10
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 11
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 11
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 12
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 12
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 13
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 13
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 14
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 14
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 15
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 15
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 16
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 16
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 17
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 17
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 18
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 18
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 19
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 19
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 20
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 20
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 21
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 21
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 22
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 22
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 23
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 23
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 24
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 24
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 25
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 25
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "real",
+        "index": 26
+      },
+      {
+        "mode": 1,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 26
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 0
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 0
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 1
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 1
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 2
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 2
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 3
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 3
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 4
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 4
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 5
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 5
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 6
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 6
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 7
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 7
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 8
+      },
+      {
+        "mode": 1,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 8
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 0
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 0
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 1
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 1
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 2
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 2
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 3
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 3
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 4
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 4
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 5
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 5
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 6
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 6
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 7
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 7
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 8
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 8
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 9
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 9
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 10
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 10
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 11
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 11
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 12
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 12
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 13
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 13
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 14
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 14
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 15
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 15
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 16
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 16
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 17
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 17
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 18
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 18
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 19
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 19
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 20
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 20
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 21
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 21
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 22
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 22
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 23
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 23
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 24
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 24
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 25
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 25
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "real",
+        "index": 26
+      },
+      {
+        "mode": 2,
+        "kind": "velocity",
+        "component": "imag",
+        "index": 26
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 0
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 0
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 1
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 1
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 2
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 2
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 3
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 3
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 4
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 4
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 5
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 5
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 6
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 6
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 7
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 7
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "real",
+        "index": 8
+      },
+      {
+        "mode": 2,
+        "kind": "pressure_gradient",
+        "component": "imag",
+        "index": 8
+      }
+    ],
+    "velocity_columns": 81,
+    "pressure_gradient_columns": 27,
+    "total_columns": 180
+  },
+  "parent_residual": {
+    "fixed_264_metric": {
+      "point_count": 44400,
+      "momentum_max": 113930613686.69733,
+      "momentum_volume_L2": 1927978.0992876193,
+      "momentum_volume_RMS": 13191306181.981344,
+      "physical_volume": 2.13613448359038e-08
+    },
+    "fixed_264_peak": {
+      "index": 20490,
+      "point": [
+        -0.0009176819979186611,
+        -0.00021486914856208553,
+        -5.491235501718044e-05
+      ],
+      "radius": 0.0009425014590480913,
+      "z": -5.491235501718044e-05,
+      "weight": 1.30307326342901e-12,
+      "vector": [
+        -56059357533.68065,
+        -98004553798.56964,
+        15252560528.701283
+      ],
+      "norm": 113930613686.69733
+    },
+    "fixed_264_harmonic_budget": {
+      "point_count": 44400,
+      "angles": 12,
+      "physical_volume": 2.13613448359038e-08,
+      "momentum_max": 113930613686.69733,
+      "momentum_volume_L2": 1927978.0992876193,
+      "modes": [
+        {
+          "mode": 0,
+          "volume_L2": 1535075.7625645993,
+          "squared_L2_fraction": 0.6339506285131423,
+          "cylindrical_component_squared_L2": [
+            807380984190.181,
+            1365646691205.2803,
+            183429921417.82404
+          ]
+        },
+        {
+          "mode": 1,
+          "volume_L2": 223090.79100424377,
+          "squared_L2_fraction": 0.013389337665991536,
+          "cylindrical_component_squared_L2": [
+            28025789549.094227,
+            12534211934.962944,
+            9209499546.842005
+          ]
+        },
+        {
+          "mode": 2,
+          "volume_L2": 1144933.3838649814,
+          "squared_L2_fraction": 0.35266003382086614,
+          "cylindrical_component_squared_L2": [
+            615503774943.9877,
+            591905705613.6051,
+            103462972930.92416
+          ]
+        },
+        {
+          "mode": 3,
+          "volume_L2": 0.0007981597982663743,
+          "squared_L2_fraction": 1.7138606452985982e-19,
+          "cylindrical_component_squared_L2": [
+            5.7077056423799634e-08,
+            3.0512808539728293e-07,
+            2.7485392174753684e-07
+          ]
+        },
+        {
+          "mode": 4,
+          "volume_L2": 0.0008666194542445187,
+          "squared_L2_fraction": 2.020471252123982e-19,
+          "cylindrical_component_squared_L2": [
+            5.7579086715179375e-08,
+            6.924979812092661e-07,
+            9.522105506220637e-10
+          ]
+        },
+        {
+          "mode": 5,
+          "volume_L2": 0.0007905551292678406,
+          "squared_L2_fraction": 1.681357746223443e-19,
+          "cylindrical_component_squared_L2": [
+            5.708870838045423e-08,
+            2.8713764697043337e-07,
+            2.807510570608046e-07
+          ]
+        },
+        {
+          "mode": 6,
+          "volume_L2": 0.0002254521565794479,
+          "squared_L2_fraction": 1.367428399599902e-20,
+          "cylindrical_component_squared_L2": [
+            1.0635637077106038e-08,
+            3.98623665764957e-08,
+            3.306712527221546e-10
+          ]
+        }
+      ],
+      "parseval_relative_error": 1.3136082132234937e-16,
+      "scope": "Sampled cylindrical Fourier budget; angular aliasing and spatial accuracy unverified"
+    }
+  },
+  "current_reference_after_first_patch": {
+    "metric": {
+      "point_count": 44400,
+      "momentum_max": 85368562324.54762,
+      "momentum_volume_L2": 1813180.1268867445,
+      "momentum_volume_RMS": 12405853689.771955,
+      "physical_volume": 2.13613448359038e-08
+    },
+    "peak": {
+      "index": 22963,
+      "point": [
+        -0.000860645131066248,
+        -0.0008075787449619864,
+        1.4192077976710323e-05
+      ],
+      "radius": 0.0011802090793340035,
+      "z": 1.4192077976710323e-05,
+      "weight": 1.5114077925191567e-12,
+      "vector": [
+        20155268418.49882,
+        82906136173.42068,
+        2851170484.671392
+      ],
+      "norm": 85368562324.54762
+    },
+    "harmonic_budget": {
+      "point_count": 44400,
+      "angles": 12,
+      "physical_volume": 2.13613448359038e-08,
+      "momentum_max": 85368562324.54762,
+      "momentum_volume_L2": 1813180.1268867445,
+      "modes": [
+        {
+          "mode": 0,
+          "volume_L2": 1448305.2495376589,
+          "squared_L2_fraction": 0.6380259001050747,
+          "cylindrical_component_squared_L2": [
+            681835328403.9373,
+            1215352918052.296,
+            200399849382.10742
+          ]
+        },
+        {
+          "mode": 1,
+          "volume_L2": 216202.31448772748,
+          "squared_L2_fraction": 0.014218008742099062,
+          "cylindrical_component_squared_L2": [
+            25200453414.431435,
+            12115041521.479055,
+            9427945853.939728
+          ]
+        },
+        {
+          "mode": 2,
+          "volume_L2": 1069247.696237332,
+          "squared_L2_fraction": 0.34775609115282663,
+          "cylindrical_component_squared_L2": [
+            564455375016.8596,
+            490237659691.9792,
+            88597601200.00287
+          ]
+        },
+        {
+          "mode": 3,
+          "volume_L2": 0.0007981598380376806,
+          "squared_L2_fraction": 1.9377504275825075e-19,
+          "cylindrical_component_squared_L2": [
+            5.707706365216678e-08,
+            3.0512813972316624e-07,
+            2.7485392368100336e-07
+          ]
+        },
+        {
+          "mode": 4,
+          "volume_L2": 0.0008666194651538941,
+          "squared_L2_fraction": 2.2844148687683853e-19,
+          "cylindrical_component_squared_L2": [
+            5.757908632804315e-08,
+            6.924979995172103e-07,
+            9.522115383681677e-10
+          ]
+        },
+        {
+          "mode": 5,
+          "volume_L2": 0.0007905551531126608,
+          "squared_L2_fraction": 1.901001445159048e-19,
+          "cylindrical_component_squared_L2": [
+            5.7088709415790414e-08,
+            2.8713768181943907e-07,
+            2.807510588777531e-07
+          ]
+        },
+        {
+          "mode": 6,
+          "volume_L2": 0.00022545214870677564,
+          "squared_L2_fraction": 1.5460618248987535e-20,
+          "cylindrical_component_squared_L2": [
+            1.0635637519529862e-08,
+            3.986236299622375e-08,
+            3.30670840748458e-10
+          ]
+        }
+      ],
+      "parseval_relative_error": 2.97042193034729e-16,
+      "scope": "Sampled cylindrical Fourier budget; angular aliasing and spatial accuracy unverified"
+    },
+    "first_patch_coefficient_norm": 2573166804.602662,
+    "peak_location_relative_to_additional_patch": {
+      "radius": 0.0011802090793340035,
+      "z": 1.4192077976710323e-05,
+      "normalized_radius": 1.1133448040804665e-09,
+      "normalized_z": -1.1587071905259927e-12,
+      "distance_to_nearest_edge": 0.9999999988866553
+    }
+  },
+  "fit": {
+    "method": "weighted least squares of current post-first-patch residual onto additional patch only",
+    "weighted_row_definition": "sqrt(volume weight) repeated for 3 Cartesian components",
+    "column_normalization": "weighted L2 norm per additional column",
+    "ridge_lambda_normalized": 1e-08,
+    "column_count": 180,
+    "rank_relative_cutoff": 1e-12,
+    "rank": 179,
+    "singular_value_min": 3.9930513752718e-16,
+    "singular_value_max": 1.5546166085159956,
+    "condition_number": 3893304799791551.5,
+    "column_scale_min": 0.0006677712691778985,
+    "column_scale_max": 0.1606707739745219,
+    "coefficients": [
+      -4557663.486647736,
+      4068325.105915122,
+      -667728.2925705052,
+      -621142.413409166,
+      64554114.96244269,
+      -9839340.173250016,
+      44819488.191203244,
+      -67464727.58960943,
+      -19705440.544837717,
+      418268.1191275653,
+      2350239.804331562,
+      1357388.5548586748,
+      923464.09075854,
+      5097850.6465381645,
+      2950277.007365464,
+      546448.7758998001,
+      -3898473.895911181,
+      -8868422.20162575,
+      -7334765.572686475,
+      327832.22004190617,
+      60978238.43367762,
+      11639952.36932373,
+      46410458.72758229,
+      7251124.645126719,
+      6730748.447174645,
+      -13852153.348995466,
+      -146478229.4337833,
+      -177254.6149514407,
+      499202.0255382497,
+      -427622.01174358284,
+      7113319.18343786,
+      -5836147.35884801,
+      25859906.688361987,
+      3223589.8918411857,
+      -7011992.132654014,
+      20797261.735280145,
+      1176954.3261617308,
+      -1635742.0347555259,
+      1292944.3185981242,
+      -67031.9197668879,
+      -686052.8624371729,
+      1020357.9978889956,
+      -94634165.32205264,
+      -71386520.09899928,
+      4803180.112748154,
+      -1965063.7089366335,
+      94626173.55127381,
+      71948501.5516509,
+      2562964.014739531,
+      -2732546.072578637,
+      -8315292.273455131,
+      -1393028.4299117539,
+      805851.6376323466,
+      4659077.519731124,
+      -1646224.746820861,
+      2202964.6117127263,
+      -174101.8792925502,
+      -106529.331113687,
+      807244.9887115165,
+      -969396.8191156478,
+      389607.22367848636,
+      -694825.2511731185,
+      -479654.05601671414,
+      87974.28950664209,
+      -1500910.5783929855,
+      1868985.4273499025,
+      1445042.1392945552,
+      -1713678.0866987163,
+      -2684285.76982429,
+      1330924.4646841616,
+      -3811024.5269433875,
+      4956037.37457666,
+      757523.8623758114,
+      -1320608.0798040645,
+      -112910479.25478405,
+      -86351183.82749757,
+      3307504.510172703,
+      -396164.87966540485,
+      1226882.545250622,
+      -95675.51881285326,
+      4890260.303527492,
+      -6741693.947200642,
+      -13967110.789653815,
+      1316327.093617864,
+      -85412.41650735139,
+      1023132.1139524067,
+      116069471.915706,
+      83531993.71792156,
+      -10657376.626317965,
+      5283998.657579772,
+      -6883.9111272587825,
+      -14052.062181082045,
+      -33014.41542816988,
+      -15910.74109270943,
+      -79455.72919640521,
+      17727.00126693607,
+      49341.87332413111,
+      -46575.02063174868,
+      297857.825335743,
+      -322780.61131209246,
+      -30394.508697395726,
+      -44139.195228477845,
+      39836.149712203514,
+      -90126.42470158268,
+      117583.58559808291,
+      -121461.3516958726,
+      -740952.8309023944,
+      883320.5166674405,
+      -3794061.7731671315,
+      5527309.203434093,
+      4982880.034986566,
+      -1867876.8251311544,
+      720495.9594921519,
+      106132.67991642577,
+      141712031.99679813,
+      46768735.19756283,
+      23641322.439791143,
+      -20298339.379287973,
+      -141092274.5000582,
+      -42177145.14381415,
+      21725242.774716742,
+      -333409.33045854396,
+      -47540283.93736017,
+      42996455.96491246,
+      -13108977.902820194,
+      -10851889.436448593,
+      2107407.610772715,
+      -6098794.662076774,
+      -140526.10859526525,
+      -2375962.466071911,
+      -280977.4083886326,
+      6038698.650918151,
+      -44983.139453934135,
+      584902.748418847,
+      2984000.942785612,
+      3778623.8728076997,
+      -206069.7219720944,
+      1287199.7345256505,
+      -2194660.6504977983,
+      6455079.1376424255,
+      -3132577.9422126566,
+      5886790.019122368,
+      874832.8072286223,
+      -14628739.049040182,
+      -4143540.0500632417,
+      6470959.541336742,
+      170973594.2023439,
+      58082994.51139603,
+      24466886.106246408,
+      -22072998.769948494,
+      8789417.057573065,
+      -7696631.357833313,
+      19677949.53416492,
+      13589501.549452448,
+      -23230878.279806808,
+      -904462.2118539516,
+      7340977.838428464,
+      -6731368.46922666,
+      -180751888.75276682,
+      -39544551.686613835,
+      -48429050.638801634,
+      44204859.82268261,
+      -1382584.8290235521,
+      -25588.69639571849,
+      787698.262163909,
+      -1290295.8870011359,
+      -5494434.86188975,
+      -1488630.6909611474,
+      3441773.0771480477,
+      -6029011.5934537295,
+      -1474510.2140338263,
+      3655447.2246742537,
+      12219546.353378858,
+      -30933928.376088332,
+      886950.5223370165,
+      -3057040.5152729745,
+      -2334345.451108817,
+      10992418.664064644,
+      4681486.397259718,
+      3567542.316985368
+    ],
+    "coefficient_l2": 484985201.17262346,
+    "coefficient_max_abs": 180751888.75276682
+  },
+  "after_additional_patch": {
+    "metric": {
+      "point_count": 44400,
+      "momentum_max": 83351123441.73709,
+      "momentum_volume_L2": 1643432.8805709577,
+      "momentum_volume_RMS": 11244435984.59827,
+      "physical_volume": 2.13613448359038e-08
+    },
+    "peak": {
+      "index": 22848,
+      "point": [
+        0.0008194935200613655,
+        0.0001918789682124061,
+        1.4192077976710323e-05
+      ],
+      "radius": 0.000841657393399966,
+      "z": 1.4192077976710323e-05,
+      "weight": 8.342808514895977e-13,
+      "vector": [
+        33072248328.264503,
+        73865675077.01749,
+        -19937357270.45534
+      ],
+      "norm": 83351123441.73709
+    },
+    "harmonic_budget": {
+      "point_count": 44400,
+      "angles": 12,
+      "physical_volume": 2.13613448359038e-08,
+      "momentum_max": 83351123441.73709,
+      "momentum_volume_L2": 1643432.8805709574,
+      "modes": [
+        {
+          "mode": 0,
+          "volume_L2": 1301726.4423337243,
+          "squared_L2_fraction": 0.6273869924077792,
+          "cylindrical_component_squared_L2": [
+            499398448061.95374,
+            991464270600.6857,
+            203629012008.17545
+          ]
+        },
+        {
+          "mode": 1,
+          "volume_L2": 210866.38068922493,
+          "squared_L2_fraction": 0.016463066945741078,
+          "cylindrical_component_squared_L2": [
+            24745863418.74863,
+            11140617022.655622,
+            8578150063.568875
+          ]
+        },
+        {
+          "mode": 2,
+          "volume_L2": 980772.7931411865,
+          "squared_L2_fraction": 0.35614994064647887,
+          "cylindrical_component_squared_L2": [
+            474922146208.0892,
+            385901980452.2324,
+            101091145105.64291
+          ]
+        },
+        {
+          "mode": 3,
+          "volume_L2": 0.0007981598313617173,
+          "squared_L2_fraction": 2.3587167513973564e-19,
+          "cylindrical_component_squared_L2": [
+            5.7077066399083123e-08,
+            3.0512812639425107e-07,
+            2.7485392360603073e-07
+          ]
+        },
+        {
+          "mode": 4,
+          "volume_L2": 0.0008666194615613416,
+          "squared_L2_fraction": 2.780692284656483e-19,
+          "cylindrical_component_squared_L2": [
+            5.7579087447568484e-08,
+            6.924979935890509e-07,
+            9.52210120250126e-10
+          ]
+        },
+        {
+          "mode": 5,
+          "volume_L2": 0.0007905551442816693,
+          "squared_L2_fraction": 2.3139842283785014e-19,
+          "cylindrical_component_squared_L2": [
+            5.7088711951439234e-08,
+            2.871376649979117e-07,
+            2.8075105920086005e-07
+          ]
+        },
+        {
+          "mode": 6,
+          "volume_L2": 0.00022545216888782658,
+          "squared_L2_fraction": 1.8819361807603988e-20,
+          "cylindrical_component_squared_L2": [
+            1.0635639509182918e-08,
+            3.9862370093882063e-08,
+            3.30670853160094e-10
+          ]
+        }
+      ],
+      "parseval_relative_error": 7.231461785070774e-16,
+      "scope": "Sampled cylindrical Fourier budget; angular aliasing and spatial accuracy unverified"
+    },
+    "peak_location_relative_to_additional_patch": {
+      "radius": 0.000841657393399966,
+      "z": 1.4192077976710323e-05,
+      "normalized_radius": -1.1285056186667803,
+      "normalized_z": -1.1587071905259927e-12,
+      "distance_to_nearest_edge": -0.12850561866678034
+    }
+  },
+  "change_from_current_reference": {
+    "max_absolute": -2017438882.8105316,
+    "max_fractional": -0.023632105635570944,
+    "L2_absolute": -169747.24631578685,
+    "L2_fractional": -0.0936185234984046
+  },
+  "angular_diagnosis": {
+    "current_mode_L2": [
+      1448305.2495376589,
+      216202.31448772748,
+      1069247.696237332
+    ],
+    "current_mode_squared_fractions": [
+      0.6380259001050747,
+      0.014218008742099062,
+      0.34775609115282663
+    ],
+    "after_mode_L2": [
+      1301726.4423337243,
+      210866.38068922493,
+      980772.7931411865
+    ],
+    "after_mode_squared_fractions": [
+      0.6273869924077792,
+      0.016463066945741078,
+      0.35614994064647887
+    ],
+    "interpretation": "The current peak is inside the additional patch support; compare its normalized edge distances with the post-fit peak. The Fourier budget is sampled angular evidence only: mode-0/mode-2 dominance is already within the represented basis and does not establish missing higher angular modes. A large local reduction with the peak moving outside the patch indicates residual spatial structure in those represented modes. No continuum conclusion is made."
+  },
+  "elapsed_seconds": 3.665647500019986
+}
