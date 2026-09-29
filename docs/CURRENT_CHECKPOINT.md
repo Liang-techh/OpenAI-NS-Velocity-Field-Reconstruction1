@@ -1,5 +1,27 @@
 # Current checkpoint - constrained velocity-field integration
 
+## Lei–Ren Part I integration — 2026-09-29
+
+Read [LEI_REN_PART_I_INTEGRATION.md](LEI_REN_PART_I_INTEGRATION.md) before
+continuing the background/stress route. It pins arXiv:2609.35406v1 and
+introduces LR1-01 through LR1-13 without changing the final `1e-3` gate or
+promoting a candidate. Separate background residual, admissible stress
+divergence, flat remainder, and the full corrected-field residual.
+
+Implemented Part I stress tensor completion (including its theta-theta
+entry), projected divergence, radial-remainder preservation, core axis
+slopes and fixed-sector bounds in `lei_ren_part1.py`. The independent
+manufactured Cartesian divergence check has maximum error 1.01e-11.
+This is an algebraic implementation check, not an existing-profile certificate.
+
+The mapping delta=2h means the current h=0.005 lies outside the paper's
+stated delta<1/200 range. Do not silently transfer its theorem to this
+seed or silently change old parameters. Next: LR1-03/04, a declared
+source-compatible parameter manifest and a common outer pressure/five-moment
+contract, reusing existing modules. Part I does not complete oscillatory
+cancellation or global smooth forcing. Keep ST006 as the retained numerical
+baseline under its own protocol; ST073 metrics are not directly comparable.
+
 ## Latest continuation checkpoint - 2026-09-27
 
 Balanced-candidate improvements persist at all three tested scales. Physical

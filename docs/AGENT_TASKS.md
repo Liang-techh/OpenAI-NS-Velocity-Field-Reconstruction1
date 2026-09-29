@@ -1,5 +1,11 @@
 # Constrained active task queue — 2026-09-20
 
+Source integration added 2026-09-29: the scale-recursion background lane
+uses [LEI_REN_PART_I_INTEGRATION.md](LEI_REN_PART_I_INTEGRATION.md), LR1-01
+through LR1-13. Source mapping and algebraic interfaces (LR1-01/02) are
+complete; LR1-03/04 are next. This supplements the existing delivery lanes,
+preserves the retained PDE baseline and does not change scientific acceptance.
+
 This file is the **current routing authority** for the constrained delivery lanes. The long historical CR001–CR012 experiment diary that previously occupied this file remains available in Git history; it must not override the live delivery route below.
 
 Read before claiming work:

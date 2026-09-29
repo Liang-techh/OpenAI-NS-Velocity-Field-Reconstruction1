@@ -1,5 +1,16 @@
 # Next constructive tasks and acceptance criteria
 
+## Part I integration priority — 2026-09-29
+
+Use [LEI_REN_PART_I_INTEGRATION.md](LEI_REN_PART_I_INTEGRATION.md), queue
+LR1-01–LR1-13. Source mapping and algebraic interfaces are done; the next
+bounded task is LR1-03/04: declare compatible parameters and bind the same
+outer pressure and five moment functions to the core. Reuse existing core,
+moment and cone code. Do not run more unconstrained background residual
+fits in place of this stress/remainder construction. Existing full-field
+optimization results remain diagnostic evidence and are preserved.
+No scientific gate, baseline, forcing family or final objective is relaxed.
+
 ## Current ST073 continuation
 
 Immediate update, 2026-09-27:

@@ -1,0 +1,20 @@
+{
+  "status": "completed",
+  "source": "https://arxiv.org/html/2609.35406v1",
+  "source_version": "2609.35406v1",
+  "cartesian_tensor_divergence_max_error": 1.0049072685092142e-11,
+  "radial_remainder_preserved": true,
+  "axis_slope_check": true,
+  "current_h_mapping": {
+    "h": 0.005,
+    "delta": 0.01,
+    "A": 0.505,
+    "D": 0.495,
+    "in_part1_stated_delta_range": false,
+    "coordinates": "q=lambda^2; X=R; eta=Z; source x=physical x/sqrt(nu)"
+  },
+  "interior_sector_check": true,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "scope": "Manufactured algebraic checks only; no existing candidate is certified as a Part I background."
+}

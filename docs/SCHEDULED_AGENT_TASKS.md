@@ -1,3 +1,16 @@
+# Part I source integration — 2026-09-29
+
+For the active scale-recursion background lane, follow
+[LEI_REN_PART_I_INTEGRATION.md](LEI_REN_PART_I_INTEGRATION.md), tasks
+LR1-03 onward. LR1-01/02 are implemented; do not repeat the paper inventory
+or manufacture another exporter. Claim one bounded task, bind source and
+candidate hashes, and mark DONE only with its stated output and checks.
+The next output is a compatible parameter/outer-pressure/five-moment
+manifest. Distinguish `R_B`, `-D T_B`, `E_B`, and full corrected momentum.
+Do not mark Part II cancellation, all-orders flatness, or PDE validity from
+Part I algebraic checks. Retained baseline and delivery lanes below remain
+in force; no unrelated task is cancelled by this source integration.
+
 # Current routing after GitHub update — 2026-09-17
 
 Use the live Eq45 route in project_status.json and CURRENT_CHECKPOINT.md.
