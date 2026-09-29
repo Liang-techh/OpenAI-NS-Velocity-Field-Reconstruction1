@@ -13,7 +13,11 @@ Part I constructs the axisymmetric background and its admissible stress.
 It does not supply the oscillatory cancellation deferred to Part II.
 Our final requirement remains a nonzero, divergence-free, finite-energy
 time-dependent field with the requested morphology, repeated scale dynamics,
-and full momentum maximum and volume L2 below `1e-3` under declared forcing.
+and ultimately full momentum maximum and volume L2 below `1e-3` under declared forcing.
+Acceptance stages are geometry similarity, self-similar background,
+stress-resolved reconstruction, then full oscillatory correction. The full
+`1e-3` gate is a later-stage target after reliable corrections; background
+acceptance uses smoothness, divergence, energy, support and matching.
 
 We now distinguish three objects in every relevant report:
 
@@ -151,8 +155,8 @@ Use one candidate identity and keep paper facts, choices and observations separa
 | --- | --- | --- | --- |
 | LR1-01 | Pin source, map variables, record source/goal boundaries | none | DONE: this document; no scientific promotion |
 | LR1-02 | Implement stress completion, radial remainder, axis-slope and sector interfaces | LR1-01 | DONE: `lei_ren_part1.py`; manufactured Cartesian-divergence check |
-| LR1-03 | Create an explicit parameter manifest in the paper's stated delta range, with nu, tau interval, fixed interior sectors and nontriviality limits | LR1-01 | OPEN; retain old seed and ST006 baseline |
-| LR1-04 | Bind an existing outer/heat profile to its full `P0(Z)` and five moment functions; identify all missing moments and tail normalizations | LR1-03 | OPEN; one source identity, no independent pressure refit |
+| LR1-03 | Create an explicit parameter manifest in the paper's stated delta range, with nu, tau interval, fixed interior sectors and nontriviality limits | LR1-01 | DONE: `lei_ren_part1_manifest.py/.json`; declared seed only, not a field; retain old seed and ST006 baseline |
+| LR1-04 | Bind an existing outer/heat profile to its full `P0(Z)` and five moment functions; identify all missing moments and tail normalizations | LR1-03 | PARTIAL: finite-interval same-profile five-moment/pressure API implemented; actual outer/heat profile and renormalized tails remain OPEN |
 | LR1-05 | Use the Section 8.2 model to initialize a regular nonlinear core under that pressure; compare axis slopes and exit signs | LR1-04 | OPEN; model agreement alone is not core acceptance |
 | LR1-06 | Connect core and exterior and restore all five moment functions over the declared Z range | LR1-05 | OPEN; verify pressure and exterior field restoration, not just midplane scalars |
 | LR1-07 | Recompute actual stress and shear; check interior cones and both edge directional margins | LR1-06 | OPEN; distinguish relaxed from admissible cone |
@@ -160,7 +164,7 @@ Use one candidate identity and keep paper facts, choices and observations separa
 | LR1-09 | Implement a first lower-order coefficient correction with consistent axial viscosity, moments and cutoff derivatives | LR1-08 | OPEN; demonstrate a measured remainder-order gain, preserve support/cone |
 | LR1-10 | Repeat on at least three scales and declared Cartesian derivative orders; distinguish finite-order evidence from infinite flatness | LR1-09 | OPEN; fixed interior sector and independent discretization |
 | LR1-11 | Fit actual nonaxisymmetric wave flux to the profile-derived stress and recompute full interactions | LR1-07/09 | OPEN; Part II/OpenAI correction mechanisms still required |
-| LR1-12 | Validate repeated dynamics, fixed exterior/forcing regularity, nonzero field, energy and three morphology observables | LR1-11 | OPEN; no free residual-defined forcing or amplitude collapse |
+| LR1-12 | Measure geometry/exponent fits on the background early; later validate repeated dynamics, global energy and fixed exterior/forcing regularity after corrections | LR1-03/06 for geometry; LR1-11 for full dynamics | OPEN; imposed scaling is not measured recursion; no residual-defined forcing or amplitude collapse |
 | LR1-13 | Run original full max/L2 `1e-3` gate; reuse Python/MATLAB export and visualization only after field selection | LR1-12 | OPEN; same-contract ST006 comparison and independent holdout |
 
 Reproduce the completed algebraic checks:
@@ -171,3 +175,29 @@ python experiments/root_st073/lei_ren_part1_checks.py
 
 The generated JSON keeps `pde_validated=false` and
 `scale_recursion_established=false`. It does not certify an existing profile.
+
+## Executable seed and moment contract
+
+`lei_ren_part1_manifest.py` freezes a separate h=0.001, nu=0.01 seed,
+six tau levels and a fixed interior sector. Its exponents are dimensional
+predictions, not measured recursion. No old field parameters are changed.
+
+`lei_ren_part1_moments.py` computes the five cumulative moments from the
+same supplied F and Uz. The optional pressure check compares the supplied
+P(R,Z)-P0(Z) with the actual integral of F squared. Finite-radius integrals
+do not supply the exterior pressure normalization or the renormalized
+infinite angular moment. LR1-04 remains partial until those tails and an
+actual common exterior are bound.
+
+```powershell
+python experiments/root_st073/lei_ren_part1_manifest.py
+python experiments/root_st073/lei_ren_part1_moments_checks.py
+```
+
+`lei_ren_part1_core_moments.py/.json` binds the API to the existing
+PaperCoreReference at h=0.001 on R<=0.05 and nine Z values in [-0.5,0.5].
+Orders 32/64 agree and the local pressure identity defect is below 4e-17.
+This tests the data path using an autonomous, unmatched pressure datum;
+it does not complete LR1-04's exterior normalization or nonlinear core.
+Run `python experiments/root_st073/lei_ren_part1_core_moments.py` to reproduce.
+The manufactured polynomial moment check has maximum error 3.11e-15.

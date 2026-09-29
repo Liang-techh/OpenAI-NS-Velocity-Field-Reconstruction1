@@ -1,9 +1,24 @@
+## Active Part I stage order — 2026-09-29
+
+The active goal is `PROJECT_GOAL.md`: geometry similarity → self-similar
+background → stress-resolved reconstruction → full oscillatory correction.
+Full max/L2 <=1e-3 is a later-stage gate after reliable correction, not the
+acceptance test for the leading background. Historical routing below is
+subordinate to this stage order.
+
+LR1-01/02/03 are DONE (source mapping, algebra interfaces, declared seed).
+LR1-04 is PARTIAL: the finite-interval same-profile five-moment/pressure API
+is available. Next bind an actual outer/heat profile, its P0(Z), infinite-tail
+normalizations and common core pressure. Do not independently refit pressure
+or mark finite quadrature as full moment closure. Then claim LR1-05/06.
+Use `LEI_REN_PART_I_INTEGRATION.md` for exact outputs and dependencies.
+
 # Constrained active task queue — 2026-09-20
 
 Source integration added 2026-09-29: the scale-recursion background lane
 uses [LEI_REN_PART_I_INTEGRATION.md](LEI_REN_PART_I_INTEGRATION.md), LR1-01
 through LR1-13. Source mapping and algebraic interfaces (LR1-01/02) are
-complete; LR1-03/04 are next. This supplements the existing delivery lanes,
+complete; LR1-03 is also done and LR1-04 outer/tail binding is next. This supplements the existing delivery lanes,
 preserves the retained PDE baseline and does not change scientific acceptance.
 
 This file is the **current routing authority** for the constrained delivery lanes. The long historical CR001–CR012 experiment diary that previously occupied this file remains available in Git history; it must not override the live delivery route below.

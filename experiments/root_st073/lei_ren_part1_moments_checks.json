@@ -1,0 +1,52 @@
+{
+  "status": "completed",
+  "source": "https://arxiv.org/html/2609.35406v1",
+  "source_version": "2609.35406v1",
+  "source_section": "Section 2.5, equations (2.21)--(2.22)",
+  "quadrature_orders": [
+    2,
+    8
+  ],
+  "manufactured_profile": {
+    "F": "1 + (Z/2) R + R^2/4",
+    "Uz": "-3/10 + Z/5 + 2 R^2/5",
+    "Rmax": [
+      0.5,
+      1.1,
+      1.7
+    ],
+    "Z": [
+      -0.4,
+      0.15,
+      0.8
+    ]
+  },
+  "exact_error_at_n8": {
+    "angular": 1.7763568394002505e-15,
+    "axial": 2.7755575615628914e-16,
+    "mixed": 3.1086244689504383e-15,
+    "quadratic": 2.6645352591003757e-15,
+    "pressure": 8.881784197001252e-16
+  },
+  "coarse_error_at_n2": {
+    "angular": 8.881784197001252e-16,
+    "axial": 5.551115123125783e-17,
+    "mixed": 0.0922907050000017,
+    "quadratic": 0.02410798864583441,
+    "pressure": 0.004930059027777212
+  },
+  "broadcast_shape": [
+    2,
+    3
+  ],
+  "pressure_defect_max_abs": 1.1102230246251565e-16,
+  "validation_checks": {
+    "negative_Rmax": "passed",
+    "nonfinite_Z": "passed",
+    "nonpositive_n": "passed",
+    "incomplete_pressure": "passed"
+  },
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "scope": "Finite-interval Gauss--Legendre checks for the five cumulative moments only; no infinite tail, heat-exterior certification, PDE validation, or scale-recursion claim."
+}

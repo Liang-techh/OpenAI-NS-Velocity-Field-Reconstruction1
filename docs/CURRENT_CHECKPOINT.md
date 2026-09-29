@@ -16,9 +16,11 @@ This is an algebraic implementation check, not an existing-profile certificate.
 
 The mapping delta=2h means the current h=0.005 lies outside the paper's
 stated delta<1/200 range. Do not silently transfer its theorem to this
-seed or silently change old parameters. Next: LR1-03/04, a declared
-source-compatible parameter manifest and a common outer pressure/five-moment
-contract, reusing existing modules. Part I does not complete oscillatory
+seed or silently change old parameters. LR1-03 now has a declared source-compatible parameter manifest (h=0.001).
+LR1-04 has a finite-interval five-moment/pressure API and a local
+PaperCoreReference receipt (pressure identity defect below 4e-17); actual shared outer
+pressure and renormalized tails remain open. Follow the four acceptance
+stages in PROJECT_GOAL.md; full 1e-3 acceptance follows reliable corrections. Part I does not complete oscillatory
 cancellation or global smooth forcing. Keep ST006 as the retained numerical
 baseline under its own protocol; ST073 metrics are not directly comparable.
 

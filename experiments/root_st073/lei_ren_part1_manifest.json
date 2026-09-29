@@ -1,0 +1,71 @@
+{
+  "candidate_id": "lr1-background-seed-001",
+  "source": "https://arxiv.org/html/2609.35406v1",
+  "source_version": "2609.35406v1",
+  "parameters": {
+    "h": 0.001,
+    "delta": 0.002,
+    "A": 0.501,
+    "D": 0.499,
+    "in_part1_stated_delta_range": true,
+    "coordinates": "q=lambda^2; X=R; eta=Z; source x=physical x/sqrt(nu)",
+    "nu": 0.01,
+    "critical_time": 1.0
+  },
+  "sampling": {
+    "tau": [
+      0.125,
+      0.0625,
+      0.03125,
+      0.015625,
+      0.0078125,
+      0.00390625
+    ],
+    "core_R": [
+      0.0,
+      0.05
+    ],
+    "interior_Z": [
+      -0.5,
+      0.5
+    ],
+    "scope": "Fixed interior similarity sector; outer domain unresolved"
+  },
+  "fixed_profile_expected_tau_exponents": {
+    "radial_length": 0.5,
+    "axial_length": 0.499,
+    "axial_to_radial_aspect": -0.001,
+    "angular_and_axial_velocity": -0.501,
+    "angular_rotation_rate": -1.001,
+    "moving_sector_energy_dominant_components": 0.497
+  },
+  "exponent_scope": "Dimensional predictions at fixed (R,Z), for a nonzero fixed leading profile. Not measured dynamics, global energy, or nonlinear recursion evidence.",
+  "construction_contract": {
+    "radial_velocity": "Derive from axial profile by incompressibility; no independent free fit",
+    "pressure": "Compute P0(Z) from the assembled exterior and use the same value in the core",
+    "forcing": "No residual-defined force allowed; final smooth forcing prescription remains unresolved",
+    "nontriviality": "Reject an identically zero profile and amplitude-collapse improvements; freeze a declared profile normalization before optimization",
+    "layers": [
+      "regular core",
+      "transition and annular moment repair",
+      "outer and heat exterior"
+    ]
+  },
+  "acceptance_stages": [
+    "geometry similarity and measured exponent fits",
+    "self-similar background: smooth axis, divergence, finite energy, support and matching",
+    "stress-resolved background: profile-derived admissible stress and measured remainder scale laws",
+    "full oscillatory correction: complete momentum max and volume L2 <=1e-3 on declared independent holdout"
+  ],
+  "unresolved": [
+    "actual compatible outer/heat profile",
+    "P0 and renormalized infinite-tail moments",
+    "regular nonlinear core under that P0",
+    "stress cone and cutoff-aware remainder",
+    "global energy and forcing",
+    "actual oscillatory correction"
+  ],
+  "background_assembled": false,
+  "pde_validated": false,
+  "scale_recursion_established": false
+}

@@ -1,12 +1,27 @@
+## Active Part I stage order — 2026-09-29
+
+The active goal is `PROJECT_GOAL.md`: geometry similarity → self-similar
+background → stress-resolved reconstruction → full oscillatory correction.
+Full max/L2 <=1e-3 is a later-stage gate after reliable correction, not the
+acceptance test for the leading background. Historical routing below is
+subordinate to this stage order.
+
+LR1-01/02/03 are DONE (source mapping, algebra interfaces, declared seed).
+LR1-04 is PARTIAL: the finite-interval same-profile five-moment/pressure API
+is available. Next bind an actual outer/heat profile, its P0(Z), infinite-tail
+normalizations and common core pressure. Do not independently refit pressure
+or mark finite quadrature as full moment closure. Then claim LR1-05/06.
+Use `LEI_REN_PART_I_INTEGRATION.md` for exact outputs and dependencies.
+
 # Part I source integration — 2026-09-29
 
 For the active scale-recursion background lane, follow
 [LEI_REN_PART_I_INTEGRATION.md](LEI_REN_PART_I_INTEGRATION.md), tasks
-LR1-03 onward. LR1-01/02 are implemented; do not repeat the paper inventory
+LR1-04 onward. LR1-01/02/03 are implemented; do not repeat the paper inventory
 or manufacture another exporter. Claim one bounded task, bind source and
 candidate hashes, and mark DONE only with its stated output and checks.
-The next output is a compatible parameter/outer-pressure/five-moment
-manifest. Distinguish `R_B`, `-D T_B`, `E_B`, and full corrected momentum.
+The next output is an actual outer/heat profile bound to its P0 and
+infinite-tail moments; finite moments and parameters are already available. Distinguish `R_B`, `-D T_B`, `E_B`, and full corrected momentum.
 Do not mark Part II cancellation, all-orders flatness, or PDE validity from
 Part I algebraic checks. Retained baseline and delivery lanes below remain
 in force; no unrelated task is cancelled by this source integration.

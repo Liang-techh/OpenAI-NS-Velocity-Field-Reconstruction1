@@ -1,3 +1,11 @@
+## Active research route: self-similar background and stress decomposition
+
+The current research priority follows [Lei–Ren Part I integration](docs/LEI_REN_PART_I_INTEGRATION.md)
+and [the staged goal](docs/PROJECT_GOAL.md): geometry similarity, self-similar
+background, stress-resolved reconstruction, then full oscillatory correction.
+The complete momentum `1e-3` gate follows reliable corrections. The callable
+delivery below remains available; it is not a certified Part I background.
+
 ## Current deliverable: canonical callable 3D velocity
 
 The active delivery registered by `project_status.json` is the support-connected Eq45 candidate:
@@ -49,6 +57,7 @@ The current Eq45 delivery is a nonzero callable/exportable velocity candidate. `
 ## 当前入口
 
 - [新的目标与成功标准](docs/PROJECT_GOAL.md)
+- [Lei–Ren Part I 整合与逐项任务](docs/LEI_REN_PART_I_INTEGRATION.md)
 - [新任务清单](docs/AGENT_TASKS.md)
 - [迁移范围与当前状态](docs/MIGRATION.md)
 - [验证协议](docs/VALIDATION_PROTOCOL.md)

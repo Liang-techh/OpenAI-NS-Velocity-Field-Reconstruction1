@@ -1,11 +1,26 @@
+## Active Part I stage order — 2026-09-29
+
+The active goal is `PROJECT_GOAL.md`: geometry similarity → self-similar
+background → stress-resolved reconstruction → full oscillatory correction.
+Full max/L2 <=1e-3 is a later-stage gate after reliable correction, not the
+acceptance test for the leading background. Historical routing below is
+subordinate to this stage order.
+
+LR1-01/02/03 are DONE (source mapping, algebra interfaces, declared seed).
+LR1-04 is PARTIAL: the finite-interval same-profile five-moment/pressure API
+is available. Next bind an actual outer/heat profile, its P0(Z), infinite-tail
+normalizations and common core pressure. Do not independently refit pressure
+or mark finite quadrature as full moment closure. Then claim LR1-05/06.
+Use `LEI_REN_PART_I_INTEGRATION.md` for exact outputs and dependencies.
+
 # Next constructive tasks and acceptance criteria
 
 ## Part I integration priority — 2026-09-29
 
 Use [LEI_REN_PART_I_INTEGRATION.md](LEI_REN_PART_I_INTEGRATION.md), queue
 LR1-01–LR1-13. Source mapping and algebraic interfaces are done; the next
-bounded task is LR1-03/04: declare compatible parameters and bind the same
-outer pressure and five moment functions to the core. Reuse existing core,
+bounded task is the remaining LR1-04 outer/heat-pressure and tail binding;
+LR1-03 is complete and finite-interval five moments are implemented. Reuse existing core,
 moment and cone code. Do not run more unconstrained background residual
 fits in place of this stress/remainder construction. Existing full-field
 optimization results remain diagnostic evidence and are preserved.

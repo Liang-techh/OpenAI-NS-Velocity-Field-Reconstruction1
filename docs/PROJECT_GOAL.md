@@ -1,25 +1,38 @@
-## Active long-term goal: scale recursion (2026-09-27)
+# Active goal: staged self-similar numerical reconstruction (2026-09-29)
 
-The user's current goal takes precedence over the historical priorities below.
-Starting from the existing local low-residual core, construct a nonzero,
-divergence-free, finite-energy three-dimensional time-dependent Navier–Stokes
-velocity field. Scale recursion must produce core contraction, increasing axial
-aspect ratio and stronger rotation as the critical time approaches. Match the
-core, transition and exterior dynamics, including nonaxisymmetric corrections
-where necessary. On a declared spacetime domain with forcing restricted in
-advance, both full momentum maximum and spatial-volume L2 must be below 1e-3.
-Deliver reproducible Python/MATLAB evaluators and interactive visualization;
-the velocity and dynamics remain the immediate priority.
+Construct a nonzero, divergence-free, finite-energy 3D time-dependent
+Navier–Stokes background using the OpenAI construction and Lei–Ren Part I
+as sources of mechanisms, without requiring exact coefficient replication.
+Priority is self-similar scale recursion: radial core contraction, relative
+axial elongation, growing swirl/axial speed, winding density and vorticity
+concentration with bounded total energy. Measured exponent fits must be
+separated from scale laws imposed by the coordinate representation.
 
-Use the OpenAI reference paper as a source of construction mechanisms and
-explicit assumptions, without claiming that this implementation reproduces or
-proves its theorem. A positive local energy-growth rate, finite moment closure,
-sampled stress-cone feasibility or a single-time fit is not scale recursion.
-The required evolution and residual contraction across scales remain open.
-The broad-shear experiments are structural research candidates, not replacements
-for the retained PDE baseline unless compared on the same domain and gate.
+Build the inner core, transition/annular matching and outer/heat exterior.
+Recover dependent velocity components analytically. Declare viscosity,
+domains, normalization and forcing before optimization. Reject zero-field,
+amplitude-collapse and freely residual-defined forcing shortcuts.
 
-See `CURRENT_CHECKPOINT.md` and `NEXT_TASKS.md` for the current ST073 work.
+Acceptance proceeds in four stages:
+
+1. Geometry similarity: computable field and measured morphology/exponent fits.
+2. Self-similar background: axis smoothness, divergence at discretization
+   accuracy, energy, support and matching across layers.
+3. Stress-resolved reconstruction: evaluate background residual, its actual
+   admissible stress divergence and remainder separately; report max/L2,
+   fixed sectors, derivative orders and scale laws.
+4. Full oscillatory-corrected reconstruction: include realizable mean,
+   annular and oscillatory corrections, all interactions and declared forcing.
+   Full momentum max and volume L2 <=1e-3 is the later-stage acceptance gate,
+   after a reliable correction layer, rather than a background rejection rule.
+
+Deliver reproducible Python/MATLAB velocity evaluators, multiscale fields,
+streamline/vorticity visualizations and exponent, energy, divergence, stress
+and remainder diagnostics. Animation remains secondary to the field itself.
+Finite-order sampled decay does not prove infinite flatness or blowup.
+
+Read `LEI_REN_PART_I_INTEGRATION.md`, `CURRENT_CHECKPOINT.md` and `NEXT_TASKS.md`.
+Historical priorities below are subordinate to this active stage order.
 
 ## Repository-level progress baseline
 
