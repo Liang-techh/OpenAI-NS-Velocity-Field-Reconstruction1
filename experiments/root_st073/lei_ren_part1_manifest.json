@@ -58,6 +58,7 @@
     "full oscillatory correction: complete momentum max and volume L2 <=1e-3 on declared independent holdout"
   ],
   "unresolved": [
+    "coupled delta<=d_corr*mu restriction and profile compatibility",
     "actual compatible outer/heat profile",
     "P0 and renormalized infinite-tail moments",
     "regular nonlinear core under that P0",

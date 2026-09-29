@@ -156,8 +156,8 @@ Use one candidate identity and keep paper facts, choices and observations separa
 | LR1-01 | Pin source, map variables, record source/goal boundaries | none | DONE: this document; no scientific promotion |
 | LR1-02 | Implement stress completion, radial remainder, axis-slope and sector interfaces | LR1-01 | DONE: `lei_ren_part1.py`; manufactured Cartesian-divergence check |
 | LR1-03 | Create an explicit parameter manifest in the paper's stated delta range, with nu, tau interval, fixed interior sectors and nontriviality limits | LR1-01 | DONE: `lei_ren_part1_manifest.py/.json`; declared seed only, not a field; retain old seed and ST006 baseline |
-| LR1-04 | Bind an existing outer/heat profile to its full `P0(Z)` and five moment functions; identify all missing moments and tail normalizations | LR1-03 | PARTIAL: finite-interval same-profile five-moment/pressure API implemented; actual outer/heat profile and renormalized tails remain OPEN |
-| LR1-05 | Use the Section 8.2 model to initialize a regular nonlinear core under that pressure; compare axis slopes and exit signs | LR1-04 | OPEN; model agreement alone is not core acceptance |
+| LR1-04 | Bind an existing outer/heat profile to its full `P0(Z)` and five moment functions; identify all missing moments and tail normalizations | LR1-03 | PARTIAL: finite moments plus exact heat pressure tail and joined swirl-pressure path implemented; other renormalized tail moments and paper collar remain OPEN |
+| LR1-05 | Use the Section 8.2 model to initialize a regular nonlinear core under that pressure; compare axis slopes and exit signs | LR1-04 | PARTIAL: supplied-pressure nonlinear finite prefix and pressure iteration implemented; inspect off-grid defect; no convergence theorem |
 | LR1-06 | Connect core and exterior and restore all five moment functions over the declared Z range | LR1-05 | OPEN; verify pressure and exterior field restoration, not just midplane scalars |
 | LR1-07 | Recompute actual stress and shear; check interior cones and both edge directional margins | LR1-06 | OPEN; distinguish relaxed from admissible cone |
 | LR1-08 | Evaluate paired `R_B`, `D T_B`, `E_B` including radial momentum and all cutoff terms on matched grids | LR1-07 | OPEN; never infer E_B by assigning arbitrary T_B |
@@ -201,3 +201,46 @@ This tests the data path using an autonomous, unmatched pressure datum;
 it does not complete LR1-04's exterior normalization or nonlinear core.
 Run `python experiments/root_st073/lei_ren_part1_core_moments.py` to reproduce.
 The manufactured polynomial moment check has maximum error 3.11e-15.
+
+## Same-profile heat pressure and nonlinear core handoff
+
+`lei_ren_part1_outer_pressure.py` now supplies an executable joined swirl:
+existing local core for R<=0.05, a flat smooth blend through R=0.2, then
+exact heat swirl. It binds P0(Z) to the integral of that same swirl and the
+actual infinite heat pressure tail, rather than independently refitting it.
+The exact HeatExterior mapping matches Part I Section 5.9 with delta=2h.
+The independent blend is not the paper's inward collar (5.12) or O.1–O.8
+construction. Other terminal/renormalized moments and cone data remain open.
+The additional coupled source restriction delta<=d_corr*mu is not yet
+certified by the seed's nominal delta range.
+
+`PaperCoreSeries(axis_pressure_values=...)` accepts pressure on its
+Chebyshev grid and uses the same interpolant in the nonlinear radial
+recurrence, pressure evaluation and eta derivative. The default autonomous
+pressure remains available for historical replays. Five core tests pass,
+including a supplied-pressure analytic axis-slope and derivative check.
+
+`lei_ren_part1_pressure_core.py` iterates finite core reconstruction and
+joined-pressure evaluation and measures both collocation and off-grid
+pressure defects. Its JSON records the actual outcome; collocation convergence
+alone is not acceptance. This is a degree-four finite-prefix compatibility
+experiment, not a converged nonlinear paper core or five-moment closure.
+
+```powershell
+python experiments/root_st073/lei_ren_part1_outer_pressure_checks.py
+python experiments/root_st073/lei_ren_part1_pressure_core.py
+python -m pytest tests/test_paper_core_series.py -q
+```
+
+LR1-04 now includes an actual exact heat pressure tail and a common joined
+swirl-pressure path. Full renormalized moments and the source-compatible
+collar remain OPEN. LR1-05 has a finite nonlinear core handoff prototype;
+its pressure compatibility must be judged from the off-grid receipt.
+
+The retained pressure/core receipt uses 257 eta nodes and radial degree four.
+Seven iterations reduce the collocation pressure defect from 0.00329272 to
+5.47e-10. Twelve independent off-grid Z points have max pressure defect
+2.14e-8 (declared numerical pressure tolerance 1e-7). These are dimensionless
+profile-pressure defects, not momentum residual norms. The saved datum
+rebuilds through `load_core()` with zero replay difference on those points.
+The heat quadrature cache reuses the unchanged tail across core iterations.

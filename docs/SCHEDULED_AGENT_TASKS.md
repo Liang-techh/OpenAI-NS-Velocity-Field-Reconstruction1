@@ -1,3 +1,14 @@
+## Latest constructive output — 2026-09-29
+
+Exact heat pressure tail, a common joined swirl-pressure path, and a
+supplied-pressure nonlinear finite core are now implemented. See
+`lei_ren_part1_outer_pressure_checks.json` and
+`lei_ren_part1_pressure_core.json` for measured defects, not just interface
+availability. Use `load_core()` to reuse the saved finite candidate.
+LR1-04/05 remain PARTIAL: source collar, other tail moments, full five-moment
+matching, axial/radial matching and admissibility are open. Next claim the
+common-profile moment/tail and matching work; do not independently refit P0.
+
 ## Active Part I stage order — 2026-09-29
 
 The active goal is `PROJECT_GOAL.md`: geometry similarity → self-similar

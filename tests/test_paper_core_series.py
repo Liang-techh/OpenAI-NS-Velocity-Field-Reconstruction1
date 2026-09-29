@@ -83,3 +83,34 @@ def test_finite_degree_and_eta_grid_caps_fail_closed():
         PaperCoreSeries(eta_nodes=515)
     with pytest.raises(ValueError):
         PaperCoreSeries().F(0.5, 0.0)
+
+
+def test_supplied_axis_pressure_drives_core_slopes_and_pressure_derivatives():
+    ref = PaperCoreReference(h=.001, sigma=.3)
+    grid = ChebyshevEtaGrid(33)
+    e = grid.eta
+    p0 = -2 + .3*e**2 + .2*e
+    series = PaperCoreSeries(ref, maxdegree=3, eta_nodes=33,
+                             axis_pressure_values=p0)
+    d, L = 1-e**2, 1-2*ref.h*e**2
+    u0 = 4*e+ref.j
+    H = (.5-ref.h)*e+d*u0
+    expected_slope = ((.5+ref.h)*(1-2*e*u0)*u0 + 4*H
+                      + d*(.6*e+.2)-4*(.5+ref.h)*e*p0)/(2*L)
+    np.testing.assert_allclose(series.u[1], expected_slope, atol=2e-11)
+    points = np.array([-.43, .07, .38])
+    np.testing.assert_allclose(series.Pi(0, points),
+                               -2+.3*points**2+.2*points, atol=1e-13)
+    np.testing.assert_allclose(series.Pi_eta(0, points), .6*points+.2,
+                               atol=2e-12)
+    X = .015
+    step = 1e-5
+    finite_difference = (series.Pi(X, points+step)-series.Pi(X, points-step))/(2*step)
+    np.testing.assert_allclose(series.Pi_eta(X, points), finite_difference,
+                               atol=1e-7, rtol=1e-7)
+    np.testing.assert_allclose(series.Pi_radial_derivative(X, points),
+                               series.F(X, points)**2, atol=1e-13)
+    p0[:] = 0
+    assert np.all(series.pi[0] < 0)  # caller mutation cannot change the datum
+    with pytest.raises(ValueError):
+        PaperCoreSeries(eta_nodes=33, axis_pressure_values=[1, 2])

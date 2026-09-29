@@ -191,8 +191,11 @@ class PaperCoreSeries:
     """A finite, nonlinear radial Taylor prefix for the near-axis profile.
 
     Parameters are inherited from :class:`PaperCoreReference`; its pressure
-    datum and amplitude ``g`` remain explicit independent choices in that
-    reference object.  ``maxdegree`` retains coefficients through ``X`` raised
+    amplitude ``g`` remains an explicit independent choice in that
+    reference object. Optionally supply ``axis_pressure_values`` on the
+    Chebyshev grid to bind the recurrence to an assembled exterior's datum;
+    evaluation and eta derivatives use that same interpolated datum.
+    This does not itself certify exterior compatibility. ``maxdegree`` retains coefficients through ``X`` raised
     to that degree, and ``eta_nodes`` controls the angular interpolation grid.
     Both are deliberately capped to keep this evaluator a finite diagnostic.
     """
@@ -200,6 +203,7 @@ class PaperCoreSeries:
     reference: PaperCoreReference = field(default_factory=PaperCoreReference)
     maxdegree: int = 8
     eta_nodes: int = 129
+    axis_pressure_values: Any = field(default=None, repr=False)
 
     grid: ChebyshevEtaGrid = field(init=False, repr=False)
     g_values: np.ndarray = field(init=False, repr=False)
@@ -247,7 +251,16 @@ class PaperCoreSeries:
         phi[0] = 1.0
         u[0] = 4.0 * eta + j
         pressure_scale = self.reference.pressure_scale
-        pi[0] = -(pressure_scale**2) / (1.0 + eta**2) ** 2
+        if self.axis_pressure_values is None:
+            pi[0] = -(pressure_scale**2) / (1.0 + eta**2) ** 2
+        else:
+            supplied_pressure = _finite_array(self.axis_pressure_values, 'axis_pressure_values')
+            if supplied_pressure.shape != (eta_nodes,):
+                raise ValueError('axis_pressure_values must match the Chebyshev eta grid')
+            pi[0] = supplied_pressure
+            frozen_pressure = supplied_pressure.copy()
+            frozen_pressure.setflags(write=False)
+            object.__setattr__(self, 'axis_pressure_values', frozen_pressure)
 
         # Build the triangular recurrence.  At step n, only rows 0..n enter
         # the source.  Therefore phi[n+1], pi[n+1], and u[n+1] are computed in
@@ -472,6 +485,8 @@ class PaperCoreSeries:
         integral = X_array * _polynomial_value(integral_coefficients, X_array)
         ref = self.reference
         pressure_axis = -(ref.pressure_scale**2) / (1.0 + eta_array**2) ** 2
+        if self.axis_pressure_values is not None:
+            pressure_axis = self.grid.interpolate(self.pi_coefficients[0], eta_array)
         return pressure_axis + self.amplitude(eta_array) ** 2 * integral
 
     def Pi_radial_derivative(self, X: Any, eta: Any) -> np.ndarray:
@@ -505,6 +520,9 @@ class PaperCoreSeries:
         pressure_axis_eta = (
             4.0 * ref.pressure_scale**2 * eta_array / (1.0 + eta_array**2) ** 3
         )
+        if self.axis_pressure_values is not None:
+            pressure_axis_eta = self.grid.differentiate_and_interpolate(
+                self.pi_coefficients[0], eta_array)
         g = self.amplitude(eta_array)
         a = self.log_amplitude_derivative(eta_array)
         return pressure_axis_eta + g**2 * (2.0 * a * integral + integral_eta)
@@ -604,6 +622,8 @@ class PaperCoreSeries:
             "domain": f"0 <= Lambda*X <= {_DOMAIN_X_FACTOR}, |eta| <= 1",
             "pressure_datum": (
                 "-pressure_scale**2/(1+eta**2)**2, independent autonomous datum"
+                if self.axis_pressure_values is None else
+                "supplied Chebyshev-grid axis pressure; common datum in recurrence and evaluation"
             ),
             "limitations": [
                 "finite degree and Chebyshev interpolation truncation",
@@ -619,6 +639,7 @@ def build_paper_core_series(
     *,
     maxdegree: int = 8,
     eta_nodes: int = 129,
+    axis_pressure_values: Any = None,
 ) -> PaperCoreSeries:
     """Build one bounded finite nonlinear paper-core radial prefix."""
 
@@ -626,6 +647,7 @@ def build_paper_core_series(
         reference=PaperCoreReference() if reference is None else reference,
         maxdegree=maxdegree,
         eta_nodes=eta_nodes,
+        axis_pressure_values=axis_pressure_values,
     )
 
 
@@ -634,11 +656,13 @@ def paper_core_profile(
     *,
     maxdegree: int = 8,
     eta_nodes: int = 129,
+    axis_pressure_values: Any = None,
 ) -> LeadingProfile:
     """Build a finite-series :class:`LeadingProfile` adapter."""
 
     return build_paper_core_series(
-        reference, maxdegree=maxdegree, eta_nodes=eta_nodes
+        reference, maxdegree=maxdegree, eta_nodes=eta_nodes,
+        axis_pressure_values=axis_pressure_values,
     ).profile
 
 

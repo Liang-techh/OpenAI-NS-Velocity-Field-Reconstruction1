@@ -24,6 +24,29 @@ stages in PROJECT_GOAL.md; full 1e-3 acceptance follows reliable corrections. Pa
 cancellation or global smooth forcing. Keep ST006 as the retained numerical
 baseline under its own protocol; ST073 metrics are not directly comparable.
 
+## Actual exterior-pressure binding and core handoff — 2026-09-29
+
+The joined swirl now uses the existing exact heat exterior outside R=0.2.
+Its axis pressure is computed from the same swirl integral and actual heat
+tail. Pressure matching at R=0.2 is within 7e-18; an independent radial
+pressure derivative check has max error 1.76e-9. This independent smooth
+blend is not the paper inward collar or full five-moment restoration.
+
+The nonlinear finite core can now accept this pressure on its Chebyshev
+grid. `lei_ren_part1_pressure_core.py/.json` records a degree-four
+core/pressure iteration, including independent off-grid defects and saved
+axis pressure values. `load_core()` rebuilds the local core and joined swirl
+without repeating the iteration. Inspect the actual JSON convergence and
+holdout flags before accepting a pressure handoff. The retained 257-node
+receipt converges in seven iterations: collocation defect 5.47e-10 and
+independent profile-pressure defect 2.14e-8 (not momentum residual). These are local numerical
+compatibility results, not admissibility, finite global energy or recursion.
+
+Next: compute and restore all five moment functions on this common profile,
+including renormalized heat tails; construct axial/radial matching and
+profile-derived stress. Then evaluate geometry and separate R_B, D T_B, E_B
+across scales. Do not return to independent pressure fitting.
+
 ## Latest continuation checkpoint - 2026-09-27
 
 Balanced-candidate improvements persist at all three tested scales. Physical
