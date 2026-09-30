@@ -32,6 +32,24 @@
             853
           ]
         },
+        "stored_switch_origin_shift": {
+          "lower": "0.0",
+          "upper": "0.0",
+          "width": "0.0",
+          "lower_exact_mpf_tuple": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "upper_exact_mpf_tuple": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "constant_beta": 2,
         "primitive_method": "Taylor remainder with analytic flat edge bounds",
         "radial_edge_method": "exact exponential integral plus positive flat correction bound",
         "source_scope": "stored schedule parameters",
@@ -70,6 +88,24 @@
             833
           ]
         },
+        "stored_switch_origin_shift": {
+          "lower": "0.0",
+          "upper": "0.0",
+          "width": "0.0",
+          "lower_exact_mpf_tuple": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "upper_exact_mpf_tuple": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "constant_beta": 2,
         "primitive_method": "Taylor remainder with analytic flat edge bounds",
         "radial_edge_method": "exact exponential integral plus positive flat correction bound",
         "source_scope": "stored schedule parameters",
@@ -180,6 +216,24 @@
             774
           ]
         },
+        "stored_switch_origin_shift": {
+          "lower": "0.0",
+          "upper": "0.0",
+          "width": "0.0",
+          "lower_exact_mpf_tuple": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "upper_exact_mpf_tuple": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "constant_beta": 2,
         "primitive_method": "Taylor remainder with analytic flat edge bounds",
         "radial_edge_method": "exact exponential integral plus positive flat correction bound",
         "source_scope": "stored schedule parameters",
@@ -218,6 +272,24 @@
             762
           ]
         },
+        "stored_switch_origin_shift": {
+          "lower": "0.0",
+          "upper": "0.0",
+          "width": "0.0",
+          "lower_exact_mpf_tuple": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "upper_exact_mpf_tuple": [
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "constant_beta": 2,
         "primitive_method": "Taylor remainder with analytic flat edge bounds",
         "radial_edge_method": "exact exponential integral plus positive flat correction bound",
         "source_scope": "stored schedule parameters",

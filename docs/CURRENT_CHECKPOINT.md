@@ -1,3 +1,14 @@
+# 2026-09-30: Both steep pressure transitions enclosed at high order
+
+Shared order12 interval integration now handles the two post-flatten steep
+transitions, including negative primitive coefficients and stored switch
+origin/length offsets. Actual64-panel relative mass error upper bounds:
+1.69391e-12 and1.09072e-12; both widths shrink32->64. Axial derivative
+errors are zero in these beta0 preheat stages. First-two-stage regression
+results remain unchanged. Variable-beta flatten and subsequent propagation
+to the common core/five moment defects remain open.
+See STEEP_PREHEAT_INTEGRALS_2026_09_30.md.
+
 # 2026-09-30: High-order pressure integral error enclosure
 
 Directed interval Taylor algebra and midpoint remainder integration now

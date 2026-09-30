@@ -50,8 +50,9 @@ cell derivative bounds, and three primitive integrals against independent
 scalar quadrature. Both pass; the quadrature comparisons are regressions,
 while the derivative remainder bounds define the enclosure.
 
-Only the first two constant-beta transitions are
-covered by this higher-order path. Other stages, variable-beta derivative
+The path now also covers both post-flatten steep transitions; see
+STEEP_PREHEAT_INTEGRALS_2026_09_30.md for the signed correction and rounded
+origin handling. Variable-beta derivative
 errors, original parameter derivations and source/core propagation remain
 open. The resulting pressure stage error is not a five-moment closure
 certificate or evidence of temporal coefficient recursion.

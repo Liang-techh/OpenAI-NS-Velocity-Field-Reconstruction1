@@ -1,3 +1,16 @@
+# 2026-09-30: Steep-stage pressure error gate
+
+- [x] Extend high-order integral bounds to both steep transitions, preserving
+      stored origin/length offsets and the common normalization.
+- [x] Record actual relative mass errors and zero beta0 axial error budgets.
+- [x] Recheck first two transition results after signed-coefficient extension.
+- [ ] Enclose the variable-beta flatten mass and first/second axial
+      derivative errors; do not replace them by fixed-node mass errors.
+- [ ] Assemble all labeled pressure errors, then propagate them through
+      core/RK/restoration into interval bounds for the five centered defects.
+
+See STEEP_PREHEAT_INTEGRALS_2026_09_30.md.
+
 # 2026-09-30: Higher-order pressure error bounds installed
 
 - [x] Implement directed interval Taylor arithmetic and symmetric remainder

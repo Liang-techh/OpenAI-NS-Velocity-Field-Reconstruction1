@@ -1,4 +1,4 @@
-"""Taylor-remainder interval quadrature for the first two preheat transitions."""
+"""Taylor-remainder interval quadrature for constant-beta preheat transitions."""
 import mpmath as mp
 from lei_ren_part1_paper_interval_taylor import IntervalTaylor,integrate_symmetric
 from lei_ren_part1_paper_schedule_endpoint_enclosures import endpoints
@@ -47,29 +47,39 @@ class HighOrderPreheatIntegrals:
         return iv.mpf([max(mp.mpf(0),vl),min(mp.mpf('.5'),vh)])
 
     def integrate_stage(self,stage,*,panels=64,order=12):
-        if stage not in ('slope_transition_ref','slope_transition_mu'):
-            raise ValueError('Only first two constant-beta transitions supported')
+        if stage not in ('slope_transition_ref','slope_transition_mu','steep_transition_in','steep_transition_out'):
+            raise ValueError('Only constant-beta transition stages supported')
         iv=self.iv;s=self.e.schedule;c=self.e.scalar
         self.e.stage_pressure_upper(stage)
         with mp.workdps(self.e.precision+40):
             grid=self.primitive_grid(2*panels,order)
             left,right=s._stage_bounds[stage];L=c(right)-c(left)
-            if stage=='slope_transition_ref':base=iv.mpf(0);slope=iv.mpf('.1');coefficient=iv.mpf('.6')
-            else:base=self.e.log_amplitude_ratio(left)['interval'];slope=iv.mpf('-.5');coefficient=c(s.mu)
+            shift=iv.mpf(0)
+            if stage=='slope_transition_ref':
+                base=iv.mpf(0);slope=iv.mpf('.1');coefficient=iv.mpf('.6')
+            elif stage=='slope_transition_mu':
+                base=self.e.log_amplitude_ratio(left)['interval'];slope=iv.mpf('-.5');coefficient=c(s.mu)
+            elif stage=='steep_transition_in':
+                base=self.e.log_amplitude_ratio(left)['interval'];slope=-iv.mpf('.5')-c(s.mu);coefficient=1-c(s.mu)
+            else:
+                shift=c(left)-c(s.y_rel)-1-c(s.Ts)
+                coefficient=-(1-c(s.delta)/2);slope=-iv.mpf('1.5')
+                base=self.e.log_amplitude_ratio(left)['interval']+coefficient*self.e.primitive(shift)
+            prefactor=iv.mpf('.5' if stage in ('slope_transition_ref','slope_transition_mu') else '.125')
             total=iv.mpf(0);r=iv.mpf(1)/(2*panels)
             helper=VariablePreheatIntervalIntegrals(self.e)
             for i in range(panels):
                 uc=(iv.mpf(i)+iv.mpf('.5'))/panels;xc=L*uc
                 cell=iv.mpf([endpoints(L*iv.mpf(i)/panels)[0],endpoints(L*iv.mpf(i+1)/panels)[1]])
-                Jc=self._node_primitive(xc,2*i+1,grid,2*panels)
-                Jcell=helper._primitive(cell,grid,2*panels)
+                Jc=self._node_primitive(xc+shift,2*i+1,grid,2*panels)
+                Jcell=helper._primitive(cell+shift,grid,2*panels)
                 def density(value,J):
                     # Coefficients are with respect to normalized panel u.
-                    sigma=switch_taylor(iv,value,order-1)
+                    sigma=switch_taylor(iv,value+shift,order-1)
                     coefficients=[base+slope*value-coefficient*J]
                     coefficients.extend((-coefficient*sigma.coefficients[k-1]*L**k/k) for k in range(1,order+1))
                     coefficients[1]+=slope*L
-                    return (2*IntervalTaylor(iv,coefficients)).exp()*iv.mpf('.5')*L
+                    return (2*IntervalTaylor(iv,coefficients)).exp()*prefactor*L
                 if i==0 or i==panels-1:
                     # Derivatives of sigma at the flat endpoints are not
                     # evaluated by singular formulas. On these tiny edges,
@@ -77,20 +87,23 @@ class HighOrderPreheatIntegrals:
                     yl=L*iv.mpf(i)/panels;yr=L*iv.mpf(i+1)/panels
                     y=iv.mpf([endpoints(yl)[0],endpoints(yr)[1]])
                     if i==0:
-                        correction_upper=endpoints(y*self.e.sigma_interval(y))[1]
+                        arg=y+shift
+                        correction_upper=max(mp.mpf(0),endpoints(arg*self.e.sigma_interval(arg))[1])
                         edge_base=base;edge_slope=slope
                     else:
-                        d=1-y;small=self.e.sigma_interval(d)
+                        d=1-y-shift;small=self.e.sigma_interval(d)
                         correction_upper=max(mp.mpf(0),endpoints(d*small)[1])
-                        edge_base=base+coefficient/2;edge_slope=slope-coefficient
-                    edge=iv.mpf('.5')*iv.exp(2*edge_base)*(iv.exp(2*edge_slope*yr)-iv.exp(2*edge_slope*yl))/(2*edge_slope)
-                    multiplier=iv.mpf([endpoints(iv.exp(-2*coefficient*iv.mpf(correction_upper)))[0],1])
+                        edge_base=base+coefficient/2-coefficient*shift;edge_slope=slope-coefficient
+                    edge=prefactor*iv.exp(2*edge_base)*(iv.exp(2*edge_slope*yr)-iv.exp(2*edge_slope*yl))/(2*edge_slope)
+                    correction=iv.exp(-2*coefficient*iv.mpf(correction_upper))
+                    multiplier=iv.mpf([min(mp.mpf(1),endpoints(correction)[0]),max(mp.mpf(1),endpoints(correction)[1])])
                     total+=edge*multiplier
                 else:
                     total+=integrate_symmetric(density(xc,Jc),density(cell,Jcell),r)
             lo,hi=endpoints(total)
             return dict(stage=stage,panels=panels,Taylor_order=order,
                 normalized_mass_at_Z0_interval=total,interval_width=hi-lo,
+                stored_switch_origin_shift=shift,constant_beta=2 if prefactor==iv.mpf('.5') else 0,
                 primitive_method='Taylor remainder with analytic flat edge bounds',
                 radial_edge_method='exact exponential integral plus positive flat correction bound',
                 source_scope='stored schedule parameters',directed_interval_arithmetic=True,
