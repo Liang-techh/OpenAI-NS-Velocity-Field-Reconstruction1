@@ -12,7 +12,7 @@ data, schedules or candidate defaults are changed by this documentation update.
 The inspected `main` head is `e0c642ba8ff8d2c476ef3f961864a008d2d475c4`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`0e8d185c3438d1b495a32b3eef9168557095ee1f`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/0e8d185c3438d1b495a32b3eef9168557095ee1f)
+[`20f42080aed903e8a2550067e5fa805215486373`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/20f42080aed903e8a2550067e5fa805215486373)
 on `codex/st073-transition-next`, dated September 30. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,39 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### Combined long-annulus milestone: reshape, reference and axial restoration
+
+The connected computer executed repository checks successfully. This batch
+consolidates three new construction intervals on one source rather than issuing
+updates for individual tiny diagnostics. Values below are committed receipts,
+not independent numerical reruns or actual-scale error enclosures.
+
+| Stage/commit | Fixed evidence | Recorded progress |
+|---|---|---|
+| Long reshape, 65c72eb0 | [record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/65c72eb0ef4ebf6441ce0a96699dae64caf7d506/docs/COMPONENT_LONG_RESHAPE_2026_09_30.md), [receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/65c72eb0ef4ebf6441ce0a96699dae64caf7d506/experiments/root_st073/lei_ren_part1_paper_pressure_width_long_reshape_check.json) | Common R110 source reaches midpoint/endpoint at T=4e152, retaining five-moment seeds, interval increments, raw axial/swirl quadratic integrals and first Z tangents. Resolved T400 fixture discrepancies are about 3.13e-26 for integrals and 6.11e-17 for first Z. |
+| Reference extension, c891a2e1 | [record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/c891a2e1c495de0a08fe714a6328fc43b157e08b/docs/COMPONENT_REFERENCE_EXTENSION_2026_09_30.md), [receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/c891a2e1c495de0a08fe714a6328fc43b157e08b/experiments/root_st073/lei_ren_part1_paper_pressure_width_reference_extension_check.json) | Same reshape endpoint reaches Rz=exp(-8)Rref with analytic moment/raw-quadratic increments, unchanged axis P0 and retained first Z atoms. Recorded resolved integral/first-Z discrepancies are about 3.62e-100/1.02e-15. |
+| Axial restoration, 20f42080 | [record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/20f42080aed903e8a2550067e5fa805215486373/docs/COMPONENT_AXIAL_RESTORE_2026_09_30.md), [receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/20f42080aed903e8a2550067e5fa805215486373/experiments/root_st073/lei_ren_part1_paper_pressure_width_axial_restore_check.json) | Section9.38 restores Uz to 4Z and continues to Rh, preserving earlier components and adding separate restoration/reference parts. Z=.3 phases .5,1,3 complete; resolved physical integral/first-Z/part-receipt discrepancies are about 5.99e-11/4.16e-9/2.54e-9. |
+
+Zero entry discrepancies and reference endpoint identities at recorded precision
+are implementation observations. They do not certify high-order matching,
+uniform C2, functional terminal identities or a global Cartesian field. The
+earlier missing long-reshape/reference/axial intervals below are superseded by
+this batch, while their numerical and integration limits remain relevant.
+
+Next derive Section10 functional defects from **separate interval contributions
+and reference differences**. Keep tiny inherited seeds and flat reshape terms
+apart from huge cumulative totals. A normalized tail envelope is an unresolved
+error contribution, not a measured defect; rounded total-minus-reference zero
+does not establish a moment identity. Check quantitative smallness and analytic
+pressure compatibility over Z before the coupled five-correction solve. Preserve
+true axis P0 rather than resetting pressure after repair.
+
+P2 and leading-background acceptance remain incomplete. Quadrature/tail,
+pressure/width/radial/axial truncation, source and integration errors remain
+unenclosed. Global installation, finite radial energy, exact/controlled heat,
+uniform C2, admissible cone, temporal coefficient recursion, oscillatory
+correction and independent full Cartesian residual remain open.
 
 ### Combined derivative/continuation milestone: common source reaches R=110
 
@@ -262,6 +295,12 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [20f42080 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36770517493)
+completed with `13 failed, 423 passed`. The 13 failed identifiers remain the
+original route/token governance set. Four import/CLI/slice jobs pass and the
+full historical suite is skipped. No selected-suite regression is added by
+this batch; that selection does not validate the standalone interval receipts.
 
 The [0e8d185c research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36764693382)
 completed with the same original 13 failed identifiers and `423 passed` in
