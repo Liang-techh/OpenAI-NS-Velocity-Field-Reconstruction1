@@ -60,7 +60,13 @@ class PressureWidthExitContinuation:
                 z_theta=R*U*U-R*R*F*F,p=R*F*F)
             moments={k:ExponentialPolynomial({(0,0):start['moments'][k]})+
                      v.integral_polynomial() for k,v in integrands.items()}
-            return dict(start=start,Rb=rb,D=D,J=J,ginc=ginc,F=F,Uz=U,moments=moments)
+            collar_state=start['normalized_state']; Ra=self.comparison.Ra
+            Fa=start['Fa']
+            raw_quadratic=dict(
+                axial=ExponentialPolynomial({(0,0):Ra*collar_state[5]})+(R*U*U).integral_polynomial(),
+                swirl=ExponentialPolynomial({(0,0):Fa*Fa*Ra*Ra*collar_state[6]})+(R*R*F*F).integral_polynomial())
+            return dict(start=start,Rb=rb,D=D,J=J,ginc=ginc,F=F,Uz=U,moments=moments,
+                raw_quadratic=raw_quadratic)
 
     def evaluate_R(self,R,Z):
         with mp.workdps(self.precision):
@@ -81,6 +87,9 @@ class PressureWidthExitContinuation:
             result.update({k+'_Z':v.tangent for k,v in raw.items() if k!='moments'})
             result['moments']={k:v.value for k,v in raw['moments'].items()}
             result['moments_Z']={k:v.tangent for k,v in raw['moments'].items()}
+            quadratics={k:v.evaluate(y) for k,v in fun['raw_quadratic'].items()}
+            result['raw_quadratic_integrals']={k:v.value for k,v in quadratics.items()}
+            result['raw_quadratic_integrals_Z']={k:v.tangent for k,v in quadratics.items()}
             result['g_y']=gy.value; result['Uz_y']=uy.value
             root=(2*result['R']).sqrt(); F=result['F']
             convert=lambda value:PressureWidthJet(value,pressure_order=self.pressure_order,width_order=self.width_order)

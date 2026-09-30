@@ -1,3 +1,10 @@
+## 2026-09-30: propagate common R110 source into long reshape
+
+- [x] Carry pressure/width atoms, automatic Z tangents and separate raw quadratic integrals through R100..110 switches; actual receipt pressure_width_switches_check.json.
+- [ ] Implement v2 eq9.30 long reshape with common R110 data, normalized local integration, and separate inherited moment seeds/new increments; do not lose tiny seeds in combined MP sums.
+- [ ] Continue to reference/axial restoration, regenerate repairs from common components, and close all five terminal identities as functions of Z.
+- [ ] Establish uniform C2 source bounds, integration/jet error control, finite radial energy and exact heat before stress-cone and temporal-recursion claims.
+
 ## 2026-09-30: continue the same finite-ring state from R=100
 
 - [x] Preserve positive epsilon-driven prescribed velocity/moment changes beyond the collar through R=100 using analytic exponential-polynomial integration; actual receipt pressure_width_continuation_check.json.

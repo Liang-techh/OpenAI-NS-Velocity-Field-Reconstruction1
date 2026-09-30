@@ -75,6 +75,7 @@ class PressureWidthExitBridge:
                 z_theta=r*axial-Fa*Fa*r*r*swirl,p=Fa*Fa*r*p)
             slopes=self.rhs_y(s,state,z)
             return dict(s=s,y=y,R=R,F=Fa*g.exp(),Uz=u,log_F_over_Fa=g,
+                normalized_state=tuple(state),Fa=Fa,
                 F_R_over_F=slopes[0]/R,Uz_R=slopes[1]/R,moments=moments,
                 P=init['P0']+moments['p'],chi=self.multiplier(s),steps=self.steps,
                 pressure_order=self.pressure_order,width_order=self.width_order,
