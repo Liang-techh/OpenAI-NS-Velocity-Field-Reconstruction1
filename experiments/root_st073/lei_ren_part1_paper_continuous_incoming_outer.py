@@ -39,7 +39,8 @@ def regenerate_incoming(source, seeded, atoms, provider, *, order=96):
         dimensions=incoming['dimensionless_integrals']
         old_dimensions=deepcopy(dimensions)
         from lei_ren_part1_paper_continuous_incoming_swirl import ContinuousIncomingSwirl
-        if not hasattr(source,'_continuous_incoming_swirl_reference'):
+        if (not hasattr(source,'_continuous_incoming_swirl_reference') or
+            source._continuous_incoming_swirl_reference.engine.order!=order):
             source._continuous_incoming_swirl_reference=ContinuousIncomingSwirl(source,order=order)
         swirl=source._continuous_incoming_swirl_reference.reference(z)
         # Serializing at source algebra precision cannot add information to
@@ -56,10 +57,16 @@ def regenerate_incoming(source, seeded, atoms, provider, *, order=96):
         for key,value in zip(('m1_Mz_over_RpEp','m2_Mtheta_z_over_Rp_sqrt2RpEp2'),reference):
             incoming[key]=signed_log(value,precision)
         incoming['E_prior_mu_Mztheta_over_RpEp2']=signed_log(prior,precision)
-        offsets={key:from_signed_log(value) for key,value in
-                 seeded['incoming']['inner_seed_transport']['raw_offsets'].items()}
+        from lei_ren_part1_paper_axial_restore import reference_moments
+        terminal=source.inner.evaluate_x(mp.e,z)
+        reference_inner=reference_moments(terminal['R'],mp.sqrt(2*terminal['R'])*terminal['F'],z)
+        offsets={key:terminal['moments'][key]-reference_inner[key]
+                 for key in ('z','theta_z','z_theta')}
         incoming=seeded_axial_inputs(incoming,log_Rp=str(schedule.logR_p),mu=str(schedule.mu),
                                      offsets=offsets,precision=precision)
+        incoming['inner_seed_transport']['raw_offsets_regenerated_from_live_inner']=True
+        incoming['inner_seed_transport']['old_raw_offsets']=deepcopy(
+            seeded['incoming']['inner_seed_transport']['raw_offsets'])
         new_prior=from_signed_log(incoming['E_prior_mu_Mztheta_over_RpEp2'])
         future=source.outer.tail.evaluate(float(z),quadrature_order=source.outer.order)
         future_nominal=mp.mpf(future['energy_target_contribution_nominal'])
@@ -124,6 +131,8 @@ def regenerate_incoming(source, seeded, atoms, provider, *, order=96):
 
 class ContinuousIncomingProfile(ContinuousSeededAxialProfileJets):
     def __init__(self,source,*,prepared=None,incoming_precision=100,order=96):
+        if getattr(source,'continuous_pressure_anchor',False):
+            order=max(order,source.axis_pressure_order)
         from lei_ren_part1_paper_continuous_angular_schedule import install_continuous_angular_schedule
         self.angular_schedule_provider=install_continuous_angular_schedule(
             source.schedule,precision=source.precision,primitive_precision=incoming_precision)
@@ -145,7 +154,8 @@ class ContinuousIncomingProfile(ContinuousSeededAxialProfileJets):
         super().__init__(source,prepared=revised)
         self.shared_runtimes={}
         from lei_ren_part1_paper_continuous_angular_moments import ContinuousAngularMoments
-        self.angular_moment_provider=ContinuousAngularMoments(self,order=order)
+        self.angular_moment_provider=ContinuousAngularMoments(self,order=order,
+            mp_nodes=getattr(source,'continuous_pressure_anchor',False))
         from lei_ren_part1_paper_continuous_mixed_moments import ContinuousMixedMoments
         self.mixed_moment_provider=ContinuousMixedMoments(self)
         from lei_ren_part1_paper_continuous_axial_energy_moments import ContinuousAxialEnergyMoments

@@ -16,7 +16,7 @@ from lei_ren_part1_paper_joined_outer import _mp
 
 
 class ContinuousAngularMoments:
-    def __init__(self, profile, *, order=96):
+    def __init__(self, profile, *, order=96, mp_nodes=False):
         self.profile=profile
         self.schedule=profile.schedule
         self.precision=profile.precision
@@ -27,9 +27,14 @@ class ContinuousAngularMoments:
         with mp.workdps(self.precision):
             self.mu=_mp(str(self.schedule.mu))
             self.delta=_mp(str(self.schedule.delta))
-            nodes,weights=leggauss(self.order)
-            self.nodes=[((_mp(str(float(x)))+1)/2,_mp(str(float(w)))/2)
-                        for x,w in zip(nodes,weights)]
+            self.MP_nodes=bool(mp_nodes)
+            if self.MP_nodes:
+                nodes,weights=mp.gauss_quadrature(self.order,'legendre')
+                self.nodes=[((x+1)/2,w/2) for x,w in zip(nodes,weights)]
+            else:
+                nodes,weights=leggauss(self.order)
+                self.nodes=[((_mp(str(float(x)))+1)/2,_mp(str(float(w)))/2)
+                            for x,w in zip(nodes,weights)]
         self.stages=[
             ('slope_transition_ref',None),('axial_turnoff','-.5'),
             ('slope_transition_mu',None),('power_buffer','pulse'),

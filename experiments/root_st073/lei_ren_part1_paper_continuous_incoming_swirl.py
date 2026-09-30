@@ -20,7 +20,8 @@ class ContinuousIncomingSwirl:
         proxy=SimpleNamespace(schedule=source.schedule,precision=source.precision,
             angular_correction_provider=correction,log_at=source.outer.log_at,
             offset=source.outer.offset)
-        self.engine=ContinuousAngularMoments(proxy,order=order)
+        self.engine=ContinuousAngularMoments(proxy,order=order,
+            mp_nodes=getattr(source,'continuous_pressure_anchor',False))
 
     def reference(self,Z):
         with mp.workdps(self.precision):

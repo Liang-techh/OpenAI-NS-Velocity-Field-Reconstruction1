@@ -1,3 +1,15 @@
+## Priority route from two local papers (2026-09-30)
+
+Use [TWO_PAPER_ROUTE_2026_09_30.md](TWO_PAPER_ROUTE_2026_09_30.md), tasks P1-P12, as the current dependency order and acceptance criteria. Update its checkboxes with commits, commands and evidence as work finishes. Prior older pressure-tail instructions are superseded by coupled analytic preheat-pressure restoration; do not append the uncorrected heat pressure to an analytic-axis core.
+
+- [x] Read both supplied PDFs and document verified versions, source hashes, route corrections and actionable tasks.
+- [x] Install coherent MP angular nodes and regenerate actual incoming inner offsets from the live rebuilt core; replay actual coupled stress.
+- [x] Add angular tail-constant diagnosis for the implemented quadratic heat model, with independent fixture and tiny-delta check; no closure claim.
+- [ ] P1/P2: complete analytic preheat datum and jointly restore angular/pressure targets before another core rebuild.
+- [ ] P3/P4: close all five functional moments and physical radial-energy tail on that same source.
+- [ ] P6/P7/P8: establish cone margins, shear modification plus separate moment repair, and common parameter compatibility.
+- [ ] P9/P10: implement actual first/higher coefficient recursion and divergence-preserving summation only after a compatible leading input exists.
+
 ## Rebuilt-source coupled replay completed
 
 The public build_joined_field(continuous_pressure=True) path reproduces the nominal terminal pressure improvement and completes coupled actual five-moment stress evaluations at Rv+50 and Rtail+4. Relative total axial stress is 9.8244e-97 and 1.7797e-67 of the legacy probe, respectively. Angular stress remains unchanged at serialized precision. Comparisons include old binary64-96 versus new MP-192 pressure quadrature and the reconstructed inner source; neither candidate has a certified stress cone. Prioritize coherent angular/mixed-moment restoration next, retaining unresolved inner inputs and terminal radial energy obstruction.

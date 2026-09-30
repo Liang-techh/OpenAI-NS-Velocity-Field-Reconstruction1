@@ -1,3 +1,11 @@
+## 2026-09-30: two local papers revise the route; angular MP replay improved
+
+Read Lei-Ren 2609.35406v2 (29 Sep 2026) and Duraiswami 2609.17642v1 from user-supplied local PDFs. Current route and prioritized tasks: [TWO_PAPER_ROUTE_2026_09_30.md](TWO_PAPER_ROUTE_2026_09_30.md). This supersedes earlier instructions to append raw post-Rv heat pressure to the axis datum: v2 Sections 7.4 and 12.4 require simultaneous angular-moment and analytic preheat-pressure restoration, with coherent dependent core reconstruction. The current pre-Rv pressure adapter is not yet proved equal to that complete analytic target.
+
+Continuous angular moments/swirl now use coherent MP nodes; incoming inner offsets regenerate from the live reconstructed inner field rather than old seed receipts. Completed Z=.3 source replay has heat Ttheta/legacy approximately 8.0702e-69; flatten Ttheta/legacy remains approximately 1. P(infinity) stays approximately 2.1513e-69. Comparisons combine node and source changes; absolute stresses remain huge. This supersedes the older statement that angular stress is unchanged everywhere. Five functional moments, finite energy, admissible cone and scale recursion remain unresolved.
+
+New angular tail-constant extractor retains actual anchor, bump, inner offsets and quadratic heat atoms. Independent exponential fixture passes at approximately 4.92e-91 relative error; tiny-delta denominator avoids cancellation. Exact heat remainder and interval bounds are not enclosed. No actual moment or field is overwritten.
+
 ## Rebuilt-source coupled replay completed
 
 The public build_joined_field(continuous_pressure=True) path reproduces the nominal terminal pressure improvement and completes coupled actual five-moment stress evaluations at Rv+50 and Rtail+4. Relative total axial stress is 9.8244e-97 and 1.7797e-67 of the legacy probe, respectively. Angular stress remains unchanged at serialized precision. Comparisons include old binary64-96 versus new MP-192 pressure quadrature and the reconstructed inner source; neither candidate has a certified stress cone. Prioritize coherent angular/mixed-moment restoration next, retaining unresolved inner inputs and terminal radial energy obstruction.

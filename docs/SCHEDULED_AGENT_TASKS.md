@@ -1,3 +1,15 @@
+## Priority route from two local papers (2026-09-30)
+
+Use [TWO_PAPER_ROUTE_2026_09_30.md](TWO_PAPER_ROUTE_2026_09_30.md), tasks P1-P12, as the current dependency order and acceptance criteria. Update its checkboxes with commits, commands and evidence as work finishes. Prior older pressure-tail instructions are superseded by coupled analytic preheat-pressure restoration; do not append the uncorrected heat pressure to an analytic-axis core.
+
+- [x] Read both supplied PDFs and document verified versions, source hashes, route corrections and actionable tasks.
+- [x] Install coherent MP angular nodes and regenerate actual incoming inner offsets from the live rebuilt core; replay actual coupled stress.
+- [x] Add angular tail-constant diagnosis for the implemented quadratic heat model, with independent fixture and tiny-delta check; no closure claim.
+- [ ] P1/P2: complete analytic preheat datum and jointly restore angular/pressure targets before another core rebuild.
+- [ ] P3/P4: close all five functional moments and physical radial-energy tail on that same source.
+- [ ] P6/P7/P8: establish cone margins, shear modification plus separate moment repair, and common parameter compatibility.
+- [ ] P9/P10: implement actual first/higher coefficient recursion and divergence-preserving summation only after a compatible leading input exists.
+
 ## Coherent pressure source and coupled restoration (2026-09-30)
 
 - [x] Compare pressure-stage MP orders 96/128/192 on one field; old defect converges near -0.01229506638.
