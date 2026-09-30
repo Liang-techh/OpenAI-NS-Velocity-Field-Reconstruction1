@@ -315,6 +315,8 @@ class CorrectedSourceProfile:
                 'components':'Shared candidate angular/axial coefficients; radial recovered from same axial primitive',
                 'pressure':'Same angular correction object, separate baseline and signed-log correction',
                 'axis_regular':False,'finite_global_energy_certified':False,
+                'source_core_reference_scale_compatible':False,
+                'core_scale_limitation':'Default logPstar=14/logRref=10 are independent demo parameters; they do not satisfy Rref=110*(Cstar*Pstar)^10 with the Section 8 lower bound on Cstar.',
                 'stress_cone_certified':False,'scale_recursion_established':False,
                 'physical_localization_applied':'velocity_from_tau only; chart methods remain unlocalized',
                 'full_outer_closed':False}

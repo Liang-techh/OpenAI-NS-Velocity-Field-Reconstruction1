@@ -1,5 +1,13 @@
 ## Priority: continuous moments, then connection shear — 2026-09-29
 
+2026-09-30: actual five-moment integration now reaches Rv via
+`SourcePulseMoments`; later Z-flattening, angular corrections and heat remain.
+Before claiming a regular source core, satisfy the shared parameter relation
+Rref=110*(Cstar*Pstar)^10 and solve Eq. (8.2) with the actual shared P0.
+The current logPstar=14/logRref=10 demo fails this necessary relation.
+Use `lei_ren_part1_paper_regular_core_plan.md` for the exact axis data,
+matching jets, connection moments and inner contraction equations.
+
 New source-route baseline: five actual cumulative moments and MP stress are
 implemented through the initial axial turnoff. Coefficient/primitive bump
 quadratures now share their effective order; the exterior mean is still

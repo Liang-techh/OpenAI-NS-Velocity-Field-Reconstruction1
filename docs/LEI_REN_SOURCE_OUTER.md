@@ -225,6 +225,26 @@ existing full radial recurrence where suitable, with the SAME new axis
 data; do not reuse the unrelated ST073 axis traces as a source certificate.
 # Actual initial-stage stress and coherent end-bump replay
 
+The new `SourcePulseMoments(profile)` callable extends all five actual
+cumulative moments through Rv. `AngularCumulative` propagates normalized
+angular and swirl-energy moments analytically on long power stages;
+`PaperPulseCumulative` uses the actual row-specific pulse primitives and
+end-bump integrals; `PulseEnergyCumulative` integrates the quadratic axial
+moment. The pressure moment uses the same full nominal pressure difference
+from its temporary reference-axis value. Incoming, pulse, heat and
+quadrature uncertainties remain inherited. The bulk quadratic radial
+identity defect is 8.33e-15, and actual bulk stress is now recorded.
+Neither terminal moments nor their numerical defects are forced to zero.
+
+The current demo reference radius is incompatible with the paper's regular
+core scale relation. `lei_ren_part1_paper_core_scales.py` records the
+necessary test; with j=.02 and Lambda=2500 even the lower bound A_Omega=0
+requires logRref>=301.1814 when logPstar=14. The demo remains logRref=10.
+Changing this relation must be followed by recomputing all actual moments
+and shared pressure, constructing Eq. (8.2), joining its radial jets and
+performing the Section 10 inner moment correction. The extracted equations
+and requirements are in `lei_ren_part1_paper_regular_core_plan.md`.
+
 `PaperReferenceMoments(profile)` in
 `lei_ren_part1_paper_reference_moments.py` computes all five cumulative
 moments of the same velocity candidate from the origin through the initial

@@ -1,0 +1,14 @@
+{
+  "j": "0.02",
+  "Lambda": "2500.0",
+  "logPstar": "14.0",
+  "candidate_logRref": "10.0",
+  "A_Omega_lower_bound": "0.0",
+  "minimum_logCstar": "15.64809202171258423447500315164220738850681137158916279178390316976700638954004097946452433273111164",
+  "necessary_minimum_logRref": "301.1814005829182585728299665490715673924909220584578180690909273077682101289909989879562952404033495",
+  "implied_logCstar": "-13.47004803657924162280799350326494935074228083425661901512518956100981462335905891933110519130922331",
+  "necessary_scale_test_passed": false,
+  "reference_relation": "logRref=log(110)+10*(logCstar+logPstar)",
+  "source_core_certified": false,
+  "scope": "Necessary lower bound only; actual complex-domain A_Omega, Section 9/10 bounds and PDE core remain required."
+}

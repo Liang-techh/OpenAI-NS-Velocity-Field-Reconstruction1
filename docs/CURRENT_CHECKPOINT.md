@@ -1,5 +1,21 @@
 ## Source outer replacement and first correction inputs — 2026-09-29
 
+2026-09-30: `SourcePulseMoments` now combines all five actual cumulative
+moments from the reference through Rv, with actual source-pulse axial,
+mixed and quadratic integrals and forward angular/energy propagation.
+The bulk quadratic radial identity defect is 8.33e-15; the two linear
+moment identities give 4.17e-14 in the bulk and 1.40e-11 at the end bumps.
+The same-candidate bulk stress is saved in `lei_ren_part1_paper_pulse_moments.json`.
+This does not close later flattening/heat moments or certify the cone.
+
+A concrete core-scale obstruction is now explicit. Section 9 requires
+Rref=110*(Cstar*Pstar)^10; the default demo logPstar=14/logRref=10 is
+incompatible with the Section 8 core regime. For j=.02, Lambda>=2500
+and even A_Omega>=0 imply logRref>=301.1814. The regular-core equations,
+matching jets and Section 10 moment repair are extracted in
+`experiments/root_st073/lei_ren_part1_paper_regular_core_plan.md`.
+Do not reuse the old Lambda=10 core as the source candidate's core.
+
 Newest implementation adds actual five cumulative moments through the initial
 axial turnoff and arbitrary-exponent source stress from those moments and
 the same candidate pressure. See `lei_ren_part1_paper_reference_moments.py`,
