@@ -1,5 +1,13 @@
 ## Priority: continuous moments, then connection shear — 2026-09-29
 
+New source-route baseline: five actual cumulative moments and MP stress are
+implemented through the initial axial turnoff. Coefficient/primitive bump
+quadratures now share their effective order; the exterior mean is still
+replayed, never replaced by a boundary target. Next extend the same moment
+provider across the pulse, flattening and heat stages; preserve arbitrary
+exponents and separate exact closure from quadrature replay. Then construct
+the regular core and evaluate the stress cone before recursive corrections.
+
 Latest source-route outputs are in `LEI_REN_SOURCE_OUTER.md`:
 source velocity schedule, normalized backward pressure and pre-heat waiting
 root are implemented. Exact angular/axial algebra and source bump integrals

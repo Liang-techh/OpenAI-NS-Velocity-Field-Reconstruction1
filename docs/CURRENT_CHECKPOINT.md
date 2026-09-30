@@ -1,5 +1,21 @@
 ## Source outer replacement and first correction inputs — 2026-09-29
 
+Newest implementation adds actual five cumulative moments through the initial
+axial turnoff and arbitrary-exponent source stress from those moments and
+the same candidate pressure. See `lei_ren_part1_paper_reference_moments.py`,
+`lei_ren_part1_paper_mp_stress.py`, and `lei_ren_part1_paper_source_stress.py`.
+The axial coefficient solve and end-bump primitive now share their effective
+quadrature order and canonical full-support nodes. No nonzero exterior mean
+is overwritten with zero: finite quadrature consistency is not exact
+continuous closure and does not establish global finite energy. Later-stage
+mixed/angular moments, regular axis core, stress cone and recursive PDE
+coefficients remain open.
+The new actual stress receipt at offsets -1, .5 and 2 with Z=.3 gives
+maximum relative defect 1.06e-10 in I_theta_y+I_theta=N_theta and
+I_z_y+I_z/2=N_z. This verifies those local moment equations, not an
+admissibility cone or the full NS residual. Canonical axial linear replay
+defects are about 3.1e-105 and 4.2e-106 for the inherited numerical inputs.
+
 Latest unified candidate: `lei_ren_part1_paper_corrected_profile.py` now
 provides shared angular/axial coefficients, a source axial primitive and
 dependent radial velocity. It exposes Cartesian `velocity_from_tau` with

@@ -223,3 +223,26 @@ F1, Uz1, P1 jointly with zero positive-order axis data, extend them, restore
 their moments and demonstrate actual remainder-order improvement. Use the
 existing full radial recurrence where suitable, with the SAME new axis
 data; do not reuse the unrelated ST073 axis traces as a source certificate.
+# Actual initial-stage stress and coherent end-bump replay
+
+`PaperReferenceMoments(profile)` in
+`lei_ren_part1_paper_reference_moments.py` computes all five cumulative
+moments of the same velocity candidate from the origin through the initial
+axial turnoff. Its temporary power reference is integrable but is not a
+smooth axis core. Queries outside the implemented domain fail explicitly.
+`SourceStress(profile, moments)` in `lei_ren_part1_paper_source_stress.py`
+uses these actual moments, their Z derivatives and the same pressure to
+evaluate inertial stress, viscous shear and total stress at arbitrary MP
+exponents. Its receipt checks the radial inertial equations as well as
+derivative refinement; stress values are not full momentum residuals.
+The saved stress receipt checks offsets -1, .5, 2 at Z=.3: the maximum
+relative radial inertial-equation defect is 1.06e-10. These samples do not
+cover the later pulse or heat region and do not certify the stress cone.
+
+The axial coefficient solve now promotes bump quadrature to at least 192,
+and its actual primitive uses that effective order with identical canonical
+nodes on complete bump supports. `lei_ren_part1_paper_axial_tail_repair.py`
+records the actual linear and energy replay. Any remaining exterior mean is
+retained. An arbitrarily tiny nonzero mean cannot certify finite energy on
+an unbounded radial domain. Exact continuous closure, all later-stage
+moments, a regular core, the stress cone and scale recursion remain open.

@@ -12,6 +12,12 @@ from lei_ren_part1_paper_outer_closure import _paper_raw_bump
 from lei_ren_part1_paper_axial_pulse import pulse_K_p, pulse_value
 
 
+# The unified profile replays the translated end bumps with order 192.  Use
+# that same order for the coefficient solve so its exterior primitive is a
+# replay of the solved equations, rather than a different quadrature problem.
+CONSISTENT_QUADRATURE_ORDER = 192
+
+
 def signed_log(value,precision=120):
     return {'sign':int(mp.sign(value)),
             'log_abs':mp.nstr(mp.log(abs(value)),precision) if value else None,
@@ -27,7 +33,11 @@ def solve_actual_axial(mu, base_rows, pulse_rows, energy_target,*,precision=120,
         mu=mp.mpf(str(mu)); target=mp.mpf(str(energy_target))
         if not 0<mu<=mp.mpf(1)/60 or target<=0:
             raise ValueError('Source mu and actual positive energy target required')
-        nodes,weights=np.polynomial.legendre.leggauss(order)
+        requested_order = int(order)
+        if requested_order < 16 or requested_order != order:
+            raise ValueError('order must be an integer at least 16')
+        effective_order = max(requested_order, CONSISTENT_QUADRATURE_ORDER)
+        nodes,weights=np.polynomial.legendre.leggauss(effective_order)
         ell=mp.mpf('.15')
         raw=[mp.mpf(str(float(_paper_raw_bump(float(node))))) for node in nodes]
         normalization=sum(mp.mpf(str(float(w)))*v for w,v in zip(weights,raw))
@@ -46,7 +56,7 @@ def solve_actual_axial(mu, base_rows, pulse_rows, energy_target,*,precision=120,
         u=affine(base); v=affine(pulse)
         gram=sum(w*mp.exp(-2*mu*s)*b*b for w,s,b in zip(measure,support,beta))
         K=[mp.exp(-26+factor*mu)*gram for factor in (6,2)]
-        Kp=mp.mpf(str(pulse_K_p(quadrature_order=order)))
+        Kp=mp.mpf(str(pulse_K_p(quadrature_order=effective_order)))
         quadratic=Kp+mu*sum(k*b*b for k,b in zip(K,v))
         linear=2*mu*sum(k*a*b for k,a,b in zip(K,u,v))
         constant=mu*sum(k*a*a for k,a in zip(K,u))-target
@@ -71,8 +81,17 @@ def solve_actual_axial(mu, base_rows, pulse_rows, energy_target,*,precision=120,
                 'energy_target':mp.nstr(target,precision),
                 'linear_relative_replay':relative,
                 'energy_relative_replay':mp.nstr(abs(energy/target),30),
-                'K_p':mp.nstr(Kp,30),'K_bump':[mp.nstr(x,30) for x in K],
-                'quadrature_order':order,'precision':precision,
+                # Keep the replay weights at solve precision.  A 30-digit
+                # receipt is enough for display, but is not a faithful input
+                # when a downstream energy replay asks for 1e-40 closure.
+                'K_p':mp.nstr(Kp,precision),
+                'K_bump':[mp.nstr(x,precision) for x in K],
+                'K_p_source_precision':'Inherited from pulse_K_p float quadrature; '
+                                       'the shared replay is exact for this stored input, '
+                                       'not a claim of arbitrary-precision source integration.',
+                'requested_quadrature_order':requested_order,
+                'quadrature_order':effective_order,'precision':precision,
+                'coefficient_and_profile_quadrature_consistent': True,
                 'full_outer_closed':False,
                 'scope':'Actual-input algebra solve; inherited quadrature/heat uncertainties, corrected pressure, derivatives/cone/core still open.'}
 
@@ -110,7 +129,7 @@ def independent_end_bump_replay(mu,receipt,base_rows,pulse_rows,*,order=192,prec
         nodes,weights=np.polynomial.legendre.leggauss(order)
         raw=[mp.mpf(str(float(_paper_raw_bump(float(x))))) for x in nodes]
         normalization=sum(mp.mpf(str(float(w)))*v for w,v in zip(weights,raw))
-        errors=[]
+        errors=[]; absolute=[]
         for row_index in (1,2):
             lam=mp.mpf('.5')-row_index*mu; lhs=mp.mpf(0)
             for center,coefficient in zip((-3,-1),c):
@@ -120,8 +139,12 @@ def independent_end_bump_replay(mu,receipt,base_rows,pulse_rows,*,order=192,prec
                          *value/normalization*coefficient
             rhs=from_signed_log(base_rows[row_index-1])+a*mp.exp(
                 mp.mpf(pulse_rows[row_index-1]['log_normalized_pulse_integral']))
-            errors.append(mp.nstr(abs((lhs+rhs)/rhs),30))
-        return {'row_relative_differences':errors,'quadrature_order':order,
+            defect=lhs+rhs
+            absolute.append(signed_log(defect,precision))
+            errors.append(mp.nstr(abs(defect/rhs),30))
+        return {'row_relative_differences':errors,
+                'row_absolute_defects':absolute,
+                'quadrature_order':order,
                 'scope':'Independent translated-bump quadrature; incoming/pulse integration uncertainty remains inherited.'}
 
 

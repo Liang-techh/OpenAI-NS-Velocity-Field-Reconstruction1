@@ -100,9 +100,14 @@ class CorrectedSourceProfile:
                 integrals.append(mp.mpf(0)); continue
             midpoint=(left+right)/2; half=(right-left)/2
             total=mp.mpf(0)
-            for n,w in zip(nodes,weights):
+            for index,(n,w) in enumerate(zip(nodes,weights)):
                 t=midpoint+half*mp.mpf(str(float(n)))
-                beta=mp.mpf(str(float(_paper_raw_bump(float((t-center)/ell)))))/(ell*norm)
+                # Full supports use exactly the solve's canonical nodes.
+                # Reconstructing a node through (t-center)/ell introduces
+                # another floating-point perturbation of the same bump.
+                bump=raw[index] if right==mp.mpf(center)+ell else mp.mpf(
+                    str(float(_paper_raw_bump(float((t-center)/ell)))))
+                beta=bump/(ell*norm)
                 total+=half*mp.mpf(str(float(w)))*mp.exp(lam*t)*beta
             integrals.append(total)
         return integrals
@@ -150,13 +155,15 @@ class CorrectedSourceProfile:
                 if end>=Decimal('-3.15'):
                     c=[from_signed_log(row) for row in axial['c']]
                     Y+=mp.exp(-lam*mp.mpf(str(end)))*sum(
-                        coefficient*integral for coefficient,integral in zip(c,self._end_bump_integrals(end)))
+                        coefficient*integral for coefficient,integral in zip(c,
+                            self._end_bump_integrals(end,order=axial['quadrature_order'])))
                 E=mp.exp(mp.mpf(str(self.schedule.at_log_radius(logR,Z)['log_angular_amplitude'])))
                 return E*Y
             c=[from_signed_log(row) for row in axial['c']]
             norm=from_signed_log(incoming['row_normalization']['scaled_base_m1'])\
                  +ap*mp.exp(mp.mpf(self.pulse[0]['log_normalized_pulse_integral']))\
-                 +sum(coefficient*integral for coefficient,integral in zip(c,self._end_bump_integrals(0)))
+                 +sum(coefficient*integral for coefficient,integral in zip(c,
+                    self._end_bump_integrals(0,order=axial['quadrature_order'])))
             Ev=mp.exp(mp.mpf(str(self.schedule.at_log_radius(self.schedule.logR_v,Z)['log_angular_amplitude'])))
             return norm*Ev*mp.exp(-mp.mpf(str(end)))
 
