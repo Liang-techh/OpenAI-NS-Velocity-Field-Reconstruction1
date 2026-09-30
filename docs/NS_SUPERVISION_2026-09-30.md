@@ -12,7 +12,7 @@ data, schedules or candidate defaults are changed by this documentation update.
 The inspected `main` head is `e0c642ba8ff8d2c476ef3f961864a008d2d475c4`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`caffcf84b96e4b10d598079416833761dc80007b`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/caffcf84b96e4b10d598079416833761dc80007b)
+[`5b8008ec34f718a470372a17304a5e6bc8ffb59f`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5b8008ec34f718a470372a17304a5e6bc8ffb59f)
 on `codex/st073-transition-next`, dated September 30. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,44 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### Combined exit milestone: auxiliary comparison and base prescribed ODE
+
+The [37677947 auxiliary-exit record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/3767794728c1c36aa504cdc1a29f374864600b5e/docs/COMPONENT_AUXILIARY_EXIT_2026_09_30.md)
+and [saved receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/3767794728c1c36aa504cdc1a29f374864600b5e/experiments/root_st073/lei_ren_part1_paper_component_exit_comparison_check.json)
+carry pressure atoms through Section 9.23 comparison, including five moments,
+Z jets, stress and frozen D/E drivers. Five actual-source probes retain the
+pressure tail and axial response; resolved-tail scalar comparison reports a
+maximum scaled difference about `5.74e-53`. This auxiliary implementation still
+loses sufficiently tiny width increments within individual coefficients and
+does not itself complete the prescribed Section 9.25 bridge.
+
+The next [5b8008ec base-exit record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/5b8008ec34f718a470372a17304a5e6bc8ffb59f/docs/JOINT_PRESSURE_WIDTH_EXIT_2026_09_30.md)
+and [receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/5b8008ec34f718a470372a17304a5e6bc8ffb59f/experiments/root_st073/lei_ren_part1_paper_pressure_width_bridge_check.json)
+address that loss using a bivariate pressure/width ring and s=y/h_b in the
+Section 9.25–9.26 base ODE. The actual width `exp(-100-1e154)` remains separate
+from delta and flattening width. Pressure order 9/width order 2 retain nonzero
+width-driven velocity and first-width increments of all five moments. A
+resolved-family comparison with width `1e-6` reports a maximum scaled difference
+about `4.11e-18`; common pressure-order 3/9 atoms agree at serialized precision.
+These are recorded diagnostics, not independent reruns or remainder enclosures.
+
+**Base ODE progress is not full bridge/collar completion.** Full prescribed
+driver/state Z tangents, consistent axial-moment-derived Ur and joined-field
+divergence remain unverified. Continuation, switching, long reshape and inner
+moment repair still need the same components. Five nonzero moment increments
+do not establish five terminal identities as functions of Z. Pressure/width,
+radial/Z truncation and ODE error bounds and source collar constants remain
+uncertified. P2, pressure compatibility, finite energy, exact heat control,
+admissible cone and genuine time-scale recursion are not certified complete.
+
+The branch's revised PROJECT_GOAL.md describes seven stages and places the
+full `1e-3` gate after oscillatory correction. This is the **repository's stated
+route**, not newly verified user authorization: the complete underlying user
+instruction is unavailable in this review. The review preserves the user's
+existing scientific targets and does not expand implementation scope on the
+basis of that declaration. If a concrete conflict arises, identify the exact
+changed requirement for user clarification rather than adopting it silently.
 
 ### Combined P2 progress: coherent waiting and local component core
 
@@ -196,6 +234,13 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [5b8008ec research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36754492171)
+is completed with failure: constrained integration reports `13 failed, 423 passed`.
+All 13 failed identifiers exactly match da5fb365's original failure set below.
+Import/CLI, coordinate, forcing and velocity slices pass; the full historical
+suite is skipped. No additional selected-suite regression is observed, but the
+standalone exit diagnostic and its bounds are not certified by that CI selection.
 
 The [caffcf84 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36750738032)
 also reports `13 failed, 423 passed`; all 13 failed test identifiers exactly
