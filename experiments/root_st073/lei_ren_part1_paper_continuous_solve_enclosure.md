@@ -30,7 +30,7 @@ at 1024 and 4096 panels. Relative coefficient widths decrease from approximately
 including the nested startup primitive. The relative amplitude width is about
 `2.05e-9` at 4096 panels. Reference axial mass and squared-velocity uncertainty
 are now propagated into the first matching row and energy target. This is still
-**conditional on mixed angular, swirl, inner-offset and future-energy data**,
+**conditional on complete angular-velocity, swirl, inner-offset and future-energy data**,
 not a measurement of total amplitude accuracy. Their originating numerical
 errors are not bounded. The low-level `solve_atoms`
 API also accepts caller-supplied input intervals, including a supplied Kp interval.
@@ -52,11 +52,16 @@ target_iv = stored_target - mu*exp(-yp-2*log_Ep)*(Iuz2_iv-stored_Iuz2).
 ```
 
 This keeps the actual stored inner offsets once, without reconstructing huge
-absolute radial logarithms. Row 2 remains conditional on the mixed angular
-integral. Normalization logs and mu are declared parameters, not certificates
+absolute radial logarithms. The ideal mixed angular row is now enclosed too;
+its second-row perturbation is
+`exp(log_scale2-1.5*yp-2*log_Ep)*(I_theta_z_iv-stored_I_theta_z)`.
+The complete installed angular velocity still retains its legacy primitive.
+Normalization logs and mu are declared parameters, not certificates
 of their originating source uncertainty. `Md=.5` is the installed fixture;
-other callers must explicitly pass the matching schedule's Md.
+other callers must explicitly pass the matching schedule's Md and logPstar
+(the installed logPstar is 14).
 
-Next: enclose the remaining angular/inner/future inputs and energy target, tighten
+Next: install the complete continuous angular field and enclose inner/future
+inputs and energy target, tighten
 correlated pulse/basis bounds, then propagate genuine input intervals before
 claiming complete mean and energy closure.

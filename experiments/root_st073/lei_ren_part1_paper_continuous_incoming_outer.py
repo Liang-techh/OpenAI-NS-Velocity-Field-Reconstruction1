@@ -5,7 +5,6 @@ reuse the continuous exterior integral atoms for a new coefficient solve.
 Angular primitives and swirl energy retain their explicitly inherited scope.
 """
 from copy import deepcopy
-from decimal import Decimal
 from functools import lru_cache
 import json
 from pathlib import Path
@@ -28,20 +27,10 @@ def regenerate_incoming(source, seeded, atoms, provider, *, order=96):
         result=deepcopy(seeded)
         incoming=deepcopy(seeded['incoming'])
         z=mp.mpf(str(incoming['Z']))
-        # The source swirl factor is A(y)/(1+Z^2). Its original schedule
-        # primitive remains float-backed; only the axial atom is replaced.
-        nodes,weights=mp.gauss_quadrature(order,'legendre')
-        def integrate(a,b):
-            half=(b-a)/2;center=(a+b)/2
-            total=mp.mpf(0)
-            for node,weight in zip(nodes,weights):
-                y=center+half*node
-                logA=mp.mpf(str(schedule._log_A(Decimal(mp.nstr(y,precision)))))
-                total+=weight*mp.exp(mp.mpf('1.5')*y+logA)*provider.cutoff(y)
-            return half*total
-        cutoff_end=mp.exp(mp.mpf(str(schedule.Md)))
-        mixed_factor=4*(mp.exp(mp.mpf(str(schedule.logPstar)))/mp.mpf('1.6')+
-                        integrate(mp.mpf(0),mp.mpf(1))+integrate(mp.mpf(1),cutoff_end))
+        from lei_ren_part1_paper_continuous_incoming_angular import ContinuousIncomingAngular
+        angular=ContinuousIncomingAngular(str(schedule.logPstar),str(schedule.Md),
+                                          precision=provider.precision)
+        mixed_factor=angular.mixed_factor(order=order)
         full=provider.full_incoming_rows(z)
         dimensions=incoming['dimensionless_integrals']
         old_dimensions=deepcopy(dimensions)
@@ -49,7 +38,7 @@ def regenerate_incoming(source, seeded, atoms, provider, *, order=96):
         # the incoming quadrature atoms. Retain their declared precision.
         dimensions.update(I_z=mp.nstr(full['I_z'],provider.precision),
                           I_uz2=mp.nstr(full['I_uz2'],provider.precision),
-                          I_theta_z=mp.nstr(mixed_factor*z/(1+z*z),precision))
+                          I_theta_z=mp.nstr(mixed_factor*z/(1+z*z),provider.precision))
         yp=mp.mpf(str(schedule.y_p));ep=mp.mpf(incoming['log_Ep'])
         mu=mp.mpf(str(schedule.mu))
         reference=[mp.mpf(dimensions['I_z'])*mp.exp(-yp-ep),
@@ -69,14 +58,18 @@ def regenerate_incoming(source, seeded, atoms, provider, *, order=96):
             'precision':provider.precision,'mixed_quadrature_order':order,
             'reference_linear_factors':{
                 'I_z_over_Z':mp.nstr(provider.full_incoming_rows(1)['I_z'],provider.precision),
-                'I_theta_z_times_1plusZ2_over_Z':mp.nstr(mixed_factor,precision)},
+                'I_theta_z_times_1plusZ2_over_Z':mp.nstr(mixed_factor,provider.precision)},
             'old_dimensionless_integrals':old_dimensions,
             'dimensionless_integral_working_precision':{
                 'I_z':provider.precision,'I_uz2':provider.precision,
-                'I_theta_z':precision,'I_swirl':seeded['incoming']['precision']},
+                'I_theta_z':provider.precision,'I_swirl':seeded['incoming']['precision']},
             'mixed_axial_factor_working_precision':provider.precision,
             'serialized_digits_are_not_integral_accuracy':True,
             'angular_primitive_float_backed':True,'swirl_energy_inherited':True,
+            'mixed_reference_primitive_float_backed':False,
+            'mixed_reference_primitive_definition':'ContinuousIncomingAngular.J with exact J(1)=1/2',
+            'mixed_reference_logPstar':str(schedule.logPstar),
+            'mixed_reference_Md':str(schedule.Md),
             'quadrature_enclosure_certified':False,'inner_offsets_reapplied_once':True}
         result['incoming']=incoming
         result['energy_target']=mp.nstr(target,precision)

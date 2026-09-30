@@ -61,6 +61,7 @@
           "0.103623416576536438549428396249"
         ],
         "normalized_base1": "0.000888684576775230027593416613737",
+        "normalized_base2": "0.00234513832656245135861261818911",
         "energy_target": "3.79723419341893549872764058564e-42"
       },
       "nominal_containment": {
@@ -90,17 +91,17 @@
         {
           "lower": {
             "sign": 0,
-            "mantissa": "138492147115784407951694435184377778516254929846287153004397240538530000868345079",
-            "binary_exponent": -22632200868756138597443826540,
-            "decimal_display": "4.338444316032451323870776683411010403133e-6812971329388011841361942705"
+            "mantissa": "553320119758560616213151069816611603568083043941972022878052140568875300717109241",
+            "binary_exponent": -22632200868756138597443826542,
+            "decimal_display": "4.33336578735034304807180509048271445725e-6812971329388011841361942705"
           },
           "upper": {
             "sign": 0,
-            "mantissa": "611666301212233687442958666236072176699866060017146014979156797718914217409245839",
+            "mantissa": "612383059145514144513021422816224272196646546198464308140362399178281702288997673",
             "binary_exponent": -22632200868756138597443826542,
-            "decimal_display": "4.790308048268319154392497701847120600926e-6812971329388011841361942705"
+            "decimal_display": "4.79592138889154600181540527787980761221e-6812971329388011841361942705"
           },
-          "width_display": "4.518637322358678305217210184361101977928e-6812971329388011841361942706",
+          "width_display": "4.625556015412029537436001873970931549601e-6812971329388011841361942706",
           "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
         },
         {
@@ -203,6 +204,41 @@
           "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
         }
       },
+      "mixed_reference": {
+        "I_theta_z": {
+          "lower": {
+            "sign": 0,
+            "mantissa": "302293360503928478558997924353698331121388250609744902576353202063194837186579259",
+            "binary_exponent": -245,
+            "decimal_display": "5346624.336686809218436678708717340316943"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "303002280249511601218944508186447553833492538567749894290548107934355908588984981",
+            "binary_exponent": -245,
+            "decimal_display": "5359162.910336504998715645454145902029671"
+          },
+          "width_display": "12538.57364969578027896674542856171272775",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        },
+        "I_theta_z_Z": {
+          "lower": {
+            "sign": 0,
+            "mantissa": "420622260028402011450593442143525200795815455741388167193396657305057036452273891",
+            "binary_exponent": -244,
+            "decimal_display": "14878985.15714066173938035970927455562207"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "843217354822799868835594808714578819536630611916368207352901462447290143168123341",
+            "binary_exponent": -245,
+            "decimal_display": "14913878.43549302614321479315985556833945"
+          },
+          "width_display": "34893.27835236440383443345058101271737692",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        }
+      },
+      "mixed_reference_uncertainty_propagated": true,
       "normalized_base_intervals": [
         {
           "lower": {
@@ -223,17 +259,17 @@
         {
           "lower": {
             "sign": 0,
-            "mantissa": "676789374026319187495256037905749963462921587391992996196782831641815785606221102435919362484136793421149744824319243083394946870507504512300593047773545612222976379575695880684560574232826813916490097",
-            "binary_exponent": -19614574083820677516056219599,
-            "decimal_display": "1.723550832453924222105756607211258380272e-5904575151403376477338697013"
+            "mantissa": "523572207898547978202532769974693068861298402161809209020469110048708158521419699",
+            "binary_exponent": -19614574083820677516056219200,
+            "decimal_display": "1.721533270902026232671219493922199944401e-5904575151403376477338697013"
           },
           "upper": {
             "sign": 0,
-            "mantissa": "676789374026319187495256037905749963462921587391992996196782831641815785606221102435919362484136793421149744824319243083394946870507504512300593047773545612222976379575695880684560574232826813916490097",
-            "binary_exponent": -19614574083820677516056219599,
-            "decimal_display": "1.723550832453924222105756607211258380272e-5904575151403376477338697013"
+            "mantissa": "262400028575006893442814844329136037543733619642122753124933871512419615138146691",
+            "binary_exponent": -19614574083820677516056219199,
+            "decimal_display": "1.725570504556070993707629833248989033728e-5904575151403376477338697013"
           },
-          "width_display": "0.0",
+          "width_display": "4.037233654044761036410339326789089326863e-5904575151403376477338697016",
           "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
         }
       ],
@@ -256,7 +292,8 @@
       "reference_axial_uncertainty_propagated": true,
       "reference_axial_parameters": {
         "Z": "0.3",
-        "Md": ".5"
+        "Md": ".5",
+        "logPstar": "14"
       },
       "fixed_materialized_row_balances": [
         {
@@ -296,7 +333,7 @@
         true,
         true
       ],
-      "input_parameter_scope": "Reference axial Iz and Iuz2 quadrature errors propagated as additive perturbations of current stored inputs. Mu, Md and normalization logs are declared real parameters. Inner offsets, mixed angular row, swirl and future energy remain conditional stored contributions. Kp is independently enclosed.",
+      "input_parameter_scope": "Reference Iz, Iuz2 and ideal mixed angular row errors propagated as additive perturbations of current stored inputs. Mu, Md, logPstar and normalization logs are declared real parameters. Inner offsets, swirl and future energy remain conditional stored contributions. Complete installed angular velocity remains legacy. Kp is independently enclosed.",
       "basis_and_pulse_quadrature_enclosed": true,
       "inherited_input_uncertainty_enclosed": false,
       "pulse_energy_uncertainty_enclosed": true,
@@ -366,6 +403,7 @@
           "0.0248788833900256943699136943271"
         ],
         "normalized_base1": "0.000222097119380998775438192723545",
+        "normalized_base2": "0.000585769720401513425711107175322",
         "energy_target": "9.4930822346605146903715006846e-43"
       },
       "nominal_containment": {
@@ -395,17 +433,17 @@
         {
           "lower": {
             "sign": 0,
-            "mantissa": "287818813136490293328840391523715862201687657440932609346619526773393457002568853",
-            "binary_exponent": -22632200868756138597443826541,
-            "decimal_display": "4.508146923504862343596813255673153190377e-6812971329388011841361942705"
+            "mantissa": "575469101653466466581332430496501962791236846541600662145406119315801860068992513",
+            "binary_exponent": -22632200868756138597443826542,
+            "decimal_display": "4.506827110986844063957536809776290538805e-6812971329388011841361942705"
           },
           "upper": {
             "sign": 0,
-            "mantissa": "294988274999332474020744790922069239172138460988673517525828311799370196153694055",
+            "mantissa": "295074658829047514676922159625282251158115240406197235499203095001794112559186443",
             "binary_exponent": -22632200868756138597443826541,
-            "decimal_display": "4.620443222304586951856884803019463682894e-6812971329388011841361942705"
+            "decimal_display": "4.621796264490838172755349784493693403037e-6812971329388011841361942705"
           },
-          "width_display": "1.122962987997246082600715473463104925173e-6812971329388011841361942706",
+          "width_display": "1.149691535039941087978129747174028642316e-6812971329388011841361942706",
           "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
         },
         {
@@ -508,6 +546,41 @@
           "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
         }
       },
+      "mixed_reference": {
+        "I_theta_z": {
+          "lower": {
+            "sign": 0,
+            "mantissa": "605118063393763720535537764229245251327609982935162034269332554587992243480933105",
+            "binary_exponent": -246,
+            "decimal_display": "5351323.229389689830605371117959727314172"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "605472523232567790786454925427316377193888203309730839750086928645664897664465181",
+            "binary_exponent": -246,
+            "decimal_display": "5354457.872501547553110251352999450212556"
+          },
+          "width_display": "3134.64311185772250488023503972289838366",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        },
+        "I_theta_z_Z": {
+          "lower": {
+            "sign": 0,
+            "mantissa": "420991924838168949302247221290988668737098688433484289896859804797456377345297495",
+            "binary_exponent": -244,
+            "decimal_display": "14892061.58637497781605776060349648885595"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "210619264580136349241465589502621522647721049316458357864135743527352850487256619",
+            "binary_exponent": -243,
+            "decimal_display": "14900784.90512663080529152517195565655482"
+          },
+          "width_display": "8723.318751652989233764568459167698865842",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        }
+      },
+      "mixed_reference_uncertainty_propagated": true,
       "normalized_base_intervals": [
         {
           "lower": {
@@ -528,17 +601,17 @@
         {
           "lower": {
             "sign": 0,
-            "mantissa": "676789374026319187495256037905749963462921587391992996196782831641815785606221102435919362484136793421149744824319243083394946870507504512300593047773545612222976379575695880684560574232826813916490097",
-            "binary_exponent": -19614574083820677516056219599,
-            "decimal_display": "1.723550832453924222105756607211258380272e-5904575151403376477338697013"
+            "mantissa": "131008087624806224418922606094387620057066401734293189643211291438875574657101987",
+            "binary_exponent": -19614574083820677516056219198,
+            "decimal_display": "1.723046244250256733660369744577380884492e-5904575151403376477338697013"
           },
           "upper": {
             "sign": 0,
-            "mantissa": "676789374026319187495256037905749963462921587391992996196782831641815785606221102435919362484136793421149744824319243083394946870507504512300593047773545612222976379575695880684560574232826813916490097",
-            "binary_exponent": -19614574083820677516056219599,
-            "decimal_display": "1.723550832453924222105756607211258380272e-5904575151403376477338697013"
+            "mantissa": "262169656391329088264225664810648307145240686128666537452090071173996884291772843",
+            "binary_exponent": -19614574083820677516056219199,
+            "decimal_display": "1.724055552566990084357361671623717460959e-5904575151403376477338697013"
           },
-          "width_display": "0.0",
+          "width_display": "1.009308316733350696991927046336576467131e-5904575151403376477338697016",
           "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
         }
       ],
@@ -561,7 +634,8 @@
       "reference_axial_uncertainty_propagated": true,
       "reference_axial_parameters": {
         "Z": "0.3",
-        "Md": ".5"
+        "Md": ".5",
+        "logPstar": "14"
       },
       "fixed_materialized_row_balances": [
         {
@@ -601,7 +675,7 @@
         true,
         true
       ],
-      "input_parameter_scope": "Reference axial Iz and Iuz2 quadrature errors propagated as additive perturbations of current stored inputs. Mu, Md and normalization logs are declared real parameters. Inner offsets, mixed angular row, swirl and future energy remain conditional stored contributions. Kp is independently enclosed.",
+      "input_parameter_scope": "Reference Iz, Iuz2 and ideal mixed angular row errors propagated as additive perturbations of current stored inputs. Mu, Md, logPstar and normalization logs are declared real parameters. Inner offsets, swirl and future energy remain conditional stored contributions. Complete installed angular velocity remains legacy. Kp is independently enclosed.",
       "basis_and_pulse_quadrature_enclosed": true,
       "inherited_input_uncertainty_enclosed": false,
       "pulse_energy_uncertainty_enclosed": true,

@@ -1,3 +1,9 @@
+## 2026-09-30: continuous incoming angular primitive and second-row bounds
+
+Completed continuous_incoming_angular.py and continuous_incoming_angular_enclosure.py with exact J(1)=1/2 and full incoming mixed-row bounds. At 4096 panels mixed relative width is about 5.858e-4. regenerate_incoming now computes the nominal mixed factor with MP J instead of float-backed schedule._log_A; the input changes about -9.57e-17 relatively, at 100 working digits/order96 (not certified accuracy). Both reference matching rows now pass their quadrature uncertainty into the coefficient report, preserving inner offsets once. Updated field Rp mass and Z matching pass at about 6.92e-83; shared runtime identity checks pass and both terminal residuals remain nonzero.
+
+Next tasks: install continuous J and consistent angular jets throughout the complete exterior schedule; update angular cumulative/pressure/energy atoms together; enclose measured inner offsets, inherited swirl and future heat contribution; propagate all Z jets through coefficient tangents. Incoming angular bounds are for the ideal source, not a certificate of the legacy complete angular velocity. Finite energy, stress and scale recursion remain open.
+
 ## 2026-09-30: reference incoming axial intervals installed in coefficient report
 
 Completed continuous_incoming_enclosure.py with full-support bounds and analytic reference Z derivatives. At Md=.5 and Z=.3, 4096-panel relative widths are about 2.221e-4 for Iz and 2.156e-4 for Iuz2; the installed values are contained. The incoming provider exposes full_incoming_enclosure. The coefficient report propagates mass uncertainty into base1 and squared-velocity uncertainty with the correct negative sign into the target, preserving actual stored inner offsets once. Nominal amplitude and coefficients remain contained. Energy-target relative interval width from this component alone is about 9.49e-43; coefficient width remains pulse-dominated at about 2.49 percent.

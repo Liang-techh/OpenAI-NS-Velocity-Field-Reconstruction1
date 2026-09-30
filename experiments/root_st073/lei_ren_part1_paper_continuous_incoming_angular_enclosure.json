@@ -1,0 +1,165 @@
+{
+  "reports": [
+    {
+      "logPstar": "14.0",
+      "Z": "0.3",
+      "Md": ".5",
+      "panels": 1024,
+      "interval_precision": 80,
+      "mixed_factor": {
+        "lower": {
+          "sign": 0,
+          "mantissa": "274583135791068368024423114621275984101927660970518286506854158540735310444476161",
+          "binary_exponent": -243,
+          "decimal_display": "19426068.42329540682698659930833966981823"
+        },
+        "upper": {
+          "sign": 0,
+          "mantissa": "275227071226639704440541261602689861398755722532372820647247864707039950301661357",
+          "binary_exponent": -243,
+          "decimal_display": "19471625.24088930149533351181673011070781"
+        },
+        "width_display": "45556.81759389466834691250839044088957749",
+        "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+      },
+      "I_theta_z": {
+        "lower": {
+          "sign": 0,
+          "mantissa": "302293360503928478558997924353698331121388250609744902576353202063194837186579259",
+          "binary_exponent": -245,
+          "decimal_display": "5346624.336686809218436678708717340316943"
+        },
+        "upper": {
+          "sign": 0,
+          "mantissa": "303002280249511601218944508186447553833492538567749894290548107934355908588984981",
+          "binary_exponent": -245,
+          "decimal_display": "5359162.910336504998715645454145902029671"
+        },
+        "width_display": "12538.57364969578027896674542856171272775",
+        "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+      },
+      "I_theta_z_Z": {
+        "lower": {
+          "sign": 0,
+          "mantissa": "420622260028402011450593442143525200795815455741388167193396657305057036452273891",
+          "binary_exponent": -244,
+          "decimal_display": "14878985.15714066173938035970927455562207"
+        },
+        "upper": {
+          "sign": 0,
+          "mantissa": "843217354822799868835594808714578819536630611916368207352901462447290143168123341",
+          "binary_exponent": -245,
+          "decimal_display": "14913878.43549302614321479315985556833945"
+        },
+        "width_display": "34893.27835236440383443345058101271737692",
+        "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+      },
+      "sigma_primitive_terminal": {
+        "lower": {
+          "sign": 0,
+          "mantissa": "118455307289774467918313117663887729733895194312950297012365108440095131621654501",
+          "binary_exponent": -267,
+          "decimal_display": "0.49951171875"
+        },
+        "upper": {
+          "sign": 0,
+          "mantissa": "237373782936498200618320519267810211099203468564563156280888047216221915761868833",
+          "binary_exponent": -268,
+          "decimal_display": "0.50048828125"
+        },
+        "width_display": "0.0009765625",
+        "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+      },
+      "mixed_reference_quadrature_enclosed": true,
+      "parameter_scope": "Declared logPstar, Z and Md; ideal continuous incoming angular source only",
+      "complete_angular_velocity_installed": false,
+      "inner_offsets_enclosed": false,
+      "global_mean_closed": false,
+      "finite_energy_certified": false,
+      "relative_width": "0.00234513832656245135861261818911",
+      "exact_half_primitive_contained": true,
+      "nominal_factor_contained": true
+    },
+    {
+      "logPstar": "14.0",
+      "Z": "0.3",
+      "Md": ".5",
+      "panels": 4096,
+      "interval_precision": 80,
+      "mixed_factor": {
+        "lower": {
+          "sign": 0,
+          "mantissa": "549648907582668712819780135841564436622579067832772181127977070417426287828514239",
+          "binary_exponent": -244,
+          "decimal_display": "19443141.06678253971786618172858700924149"
+        },
+        "upper": {
+          "sign": 0,
+          "mantissa": "549970875269582409964363223929812375951115118006338846106328960186478948711889205",
+          "binary_exponent": -244,
+          "decimal_display": "19454530.27008895610963391324923133577229"
+        },
+        "width_display": "11389.20330641639176773152064432653079396",
+        "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+      },
+      "I_theta_z": {
+        "lower": {
+          "sign": 0,
+          "mantissa": "605118063393763720535537764229245251327609982935162034269332554587992243480933105",
+          "binary_exponent": -246,
+          "decimal_display": "5351323.229389689830605371117959727314172"
+        },
+        "upper": {
+          "sign": 0,
+          "mantissa": "605472523232567790786454925427316377193888203309730839750086928645664897664465181",
+          "binary_exponent": -246,
+          "decimal_display": "5354457.872501547553110251352999450212556"
+        },
+        "width_display": "3134.64311185772250488023503972289838366",
+        "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+      },
+      "I_theta_z_Z": {
+        "lower": {
+          "sign": 0,
+          "mantissa": "420991924838168949302247221290988668737098688433484289896859804797456377345297495",
+          "binary_exponent": -244,
+          "decimal_display": "14892061.58637497781605776060349648885595"
+        },
+        "upper": {
+          "sign": 0,
+          "mantissa": "210619264580136349241465589502621522647721049316458357864135743527352850487256619",
+          "binary_exponent": -243,
+          "decimal_display": "14900784.90512663080529152517195565655482"
+        },
+        "width_display": "8723.318751652989233764568459167698865842",
+        "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+      },
+      "sigma_primitive_terminal": {
+        "lower": {
+          "sign": 0,
+          "mantissa": "948337210853619640519046367221153965318281174411596219483157613024808531751074977",
+          "binary_exponent": -270,
+          "decimal_display": "0.4998779296875"
+        },
+        "upper": {
+          "sign": 0,
+          "mantissa": "118600047401321113162592581395148589618711781793782347717414430420105023033704513",
+          "binary_exponent": -267,
+          "decimal_display": "0.5001220703125"
+        },
+        "width_display": "0.000244140625",
+        "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+      },
+      "mixed_reference_quadrature_enclosed": true,
+      "parameter_scope": "Declared logPstar, Z and Md; ideal continuous incoming angular source only",
+      "complete_angular_velocity_installed": false,
+      "inner_offsets_enclosed": false,
+      "global_mean_closed": false,
+      "finite_energy_certified": false,
+      "relative_width": "0.000585769720401513425711107175322",
+      "exact_half_primitive_contained": true,
+      "nominal_factor_contained": true
+    }
+  ],
+  "full_angular_field_certified": false
+}
