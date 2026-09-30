@@ -12,7 +12,7 @@ data, schedules or candidate defaults are changed by this documentation update.
 The inspected `main` head is `e0c642ba8ff8d2c476ef3f961864a008d2d475c4`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`20f42080aed903e8a2550067e5fa805215486373`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/20f42080aed903e8a2550067e5fa805215486373)
+[`bf6b30f2f22cb77790c13b3b98b47def11c7857f`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/bf6b30f2f22cb77790c13b3b98b47def11c7857f)
 on `codex/st073-transition-next`, dated September 30. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,44 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### Combined defect/response milestone: five finite inputs and coupled map
+
+This batch includes the three angular building blocks and subsequent substantive
+assembly/map work. All figures are committed diagnostics, not independent
+reruns, actual-scale error bounds or functional closure certificates.
+
+1. The [flat component record at 0fe9760e](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/0fe9760e5e4084f6ce92f82a9b71aaf5a122fa55/docs/COMPONENT_FLAT_DEFECT_2026_09_30.md)
+   follows 0806b93d's signed-log saddle integration: support near 1e102 was missed
+   by the old cutoff1842. Three angular kernels retain 30 rectangular atoms and
+   separate derivative-order terms. Resolved value/first-Z discrepancies about
+   3.73e-60/3.39e-61 do not enclose finite-window, source or quadrature errors.
+   Mixed centered reference weight is rho^(8/5), not rho^(3/2).
+2. The [five centered-input record at b4f816f4](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/b4f816f41c18d34ddd3eea2583b449f34ebe2189/docs/CENTERED_COMPONENT_DEFECTS_2026_09_30.md)
+   and [receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/b4f816f41c18d34ddd3eea2583b449f34ebe2189/experiments/root_st073/lei_ren_part1_paper_centered_component_defects_check.json)
+   assemble five nonzero finite-component defects at Z=.3 on the common source,
+   preserving 69 labels and first-Z jets. Nominal d1/d2/d4 are about
+   2.23e-15/5.69e-16/5.92e-41; negative d3/d5 retain arbitrary-exponent values.
+   This supersedes the earlier three-building-block limitation, not the need for
+   uniform functional bounds or actual correction.
+3. The [five-bump map](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/bf6b30f2f22cb77790c13b3b98b47def11c7857f/docs/FIVE_BUMP_MAP_2026_09_30.md)
+   implements Eq.(10.8), two axial/three angular compact bumps, fixed matrix,
+   quadratic coupling, Jacobian and partial moment changes. Its resolved
+   field-density/inverse/first-Z fixture reports errors below4.41e-16 at order96.
+4. The [separated response record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/bf6b30f2f22cb77790c13b3b98b47def11c7857f/docs/FIVE_BUMP_RESPONSE_2026_09_30.md)
+   and [actual serialized-input receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/bf6b30f2f22cb77790c13b3b98b47def11c7857f/experiments/root_st073/lei_ren_part1_paper_five_bump_response_check.json)
+   retain 55 monomials through defect degree3, nonzero d3/d5 responses and all
+   69 labels in the linear response. Fixture coefficientwise/scalar/first-Z
+   discrepancies are about2.01e-87/1.67e-22/1.48e-52. Nonlinear terms use aggregate
+   serialized defect jets; source-stage crossproducts are not individually expanded.
+
+Defect degree3 is not temporal recursion. No corrected global field has been
+installed. Establish response convergence/remainder and uniform analytic input
+smallness, recover corrected partial moments/pressure/Ur from the same functions,
+and independently check actual row-relative changes before calling this a repair.
+Keep P0 fixed; rounded aggregate cancellation cannot certify tiny d3/d5 closure.
+Source/jet/quadrature errors, second-Z/C2, functional closure, relaxed cone,
+radial finite energy, exact heat and time-scale recursion remain unresolved.
 
 ### Combined long-annulus milestone: reshape, reference and axial restoration
 
@@ -295,6 +333,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [bf6b30f2 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36777302620)
+completed with the original 13 failed test identifiers and `423 passed`.
+Its selected governance suite does not certify the standalone defect/map/response
+receipts or exact functional moment closure.
 
 The [20f42080 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36770517493)
 completed with `13 failed, 423 passed`. The 13 failed identifiers remain the

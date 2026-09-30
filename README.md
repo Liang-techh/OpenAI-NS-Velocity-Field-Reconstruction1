@@ -1,7 +1,7 @@
 # Navier–Stokes Candidate Research
 
 > **Progress index updated 2026-09-30:** newer research is available on
-> `codex/st073-transition-next` at [`20f42080`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/20f42080aed903e8a2550067e5fa805215486373).
+> `codex/st073-transition-next` at [`bf6b30f2`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/bf6b30f2f22cb77790c13b3b98b47def11c7857f).
 > See [current evidence, paper mapping and replay instructions](docs/NS_SUPERVISION_2026-09-30.md).
 > The ST063 tables and September 22 pause record below remain historical curated
 > results. They do not describe the latest branch or establish a live task status.
@@ -9,9 +9,9 @@
 > reconstruction, with unresolved moment/stress matching and no certified global
 > NS field. The latest route now records the supplied Lei/Ren v2 and Duraiswami v1;
 > implementation compatibility and global acceptance remain separate milestones.
-> Common components now reach long reshape, reference extension and axial
-> restoration to Rh. Cancellation-resistant functional moment repair, uniform C2
-> bounds and independent Cartesian/global validation remain pending.
+> Five finite-component defects, the coupled five-bump map and a degree-3
+> separated response are implemented. Convergence/remainder bounds, corrected-field
+> installation and uniform functional moment closure remain pending.
 > Finite energy, cone and time-scale recursion remain uncertified. Research CI retains 13
 > pre-existing governance failures; see the evidence index for their scope.
 
