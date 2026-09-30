@@ -1,3 +1,17 @@
+# 2026-09-30: Second axial source adapters and actual inner endpoint
+
+Second-Z arithmetic, comparison, bridge, exponential continuation and R100--R110
+switch adapters implemented. Resolved independent shifted-source/RK stencils
+pass with max scaled error 1.513e-32, including five moments and Ur_Z.
+Fresh actual degree18, Z-depth3 source completed at Z=.3; inner comparison
+endpoint receipt saved. Actual collar/R100 propagation completed with second-Z fields/moments and
+raw energies; an independent cache and post_collar_R100 receipt were saved.
+Do not use the old first-Z cache as second-Z source data.
+See SECOND_AXIAL_PROPAGATION_2026_09_30.md.
+Actual R110 second-Z execution completed with inlet continuity checked.
+Second-Z centered defect parts, interval/source error
+bounds and all previously open global matching/recursion gates remain open.
+
 # 2026-09-30: Incremental analytic five-bump inverse installed
 
 The callable same-source correction now supports incremental Picard inversion,

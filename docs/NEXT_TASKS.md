@@ -1,3 +1,18 @@
+# 2026-09-30: Gate after second-Z source adapters
+
+- [x] Implement explicit second axial jet; reject unknown-second promotion.
+- [x] Propagate second-Z comparison, bridge, continuation and R110 switches.
+- [x] Check resolved field/moment/raw-energy C2 and Ur_Z against shifted-source stencils.
+- [x] Build fresh actual degree18 Z-depth3 inner core source and endpoint receipt.
+- [x] Complete actual second-Z collar/R100 propagation and save independent cache.
+- [x] Run actual second-Z R110 switches and check inlet value/first/second continuity.
+- [ ] Extend centered flat-kernel composition and every defect part to second-Z.
+- [ ] Connect second-Z source to inverse/physical field recovery.
+- [ ] Enclose uniform C1/C2 source and inverse tails; handle Z endpoint strips.
+- [ ] Complete heat/energy matching and then temporal n-dependent recursion.
+
+See SECOND_AXIAL_PROPAGATION_2026_09_30.md. A live job is not a completed stage.
+
 # 2026-09-30: Gate after incremental five-bump inverse
 
 - [x] Implement cancellation-resistant Picard increments and first-Z propagation.

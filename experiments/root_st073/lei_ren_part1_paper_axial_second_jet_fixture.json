@@ -1,0 +1,91 @@
+{
+  "actual_derivative_slots": true,
+  "atom_checks": {
+    "second_mixed_atom": true,
+    "second_pressure_atom": true,
+    "second_width_atom": true,
+    "tangent_mixed_atom": true,
+    "tangent_pressure_atom": true,
+    "tangent_width_atom": true,
+    "value_mixed_atom": true,
+    "value_pressure_atom": true,
+    "value_width_atom": true
+  },
+  "atom_exp_errors": {
+    "second_pressure_atom": "2.82309938796435164e-4342944819032518276511289187",
+    "tangent_pressure_atom": "0.0",
+    "value_mixed_atom": "0.0",
+    "value_pressure_atom": "0.0",
+    "value_width_atom": "0.0"
+  },
+  "automatic_first_Z_derivative": true,
+  "automatic_second_Z_derivative": true,
+  "checks": {
+    "atom_exp": true,
+    "atom_slots": true,
+    "constant": true,
+    "dual_operand_rejected": true,
+    "explicit_dual_promotion": true,
+    "oracle": true,
+    "orders": true,
+    "unknown_second_rejected": true
+  },
+  "class": "AxialSecondJet",
+  "limitations": [
+    "The three axial slots are local actual derivatives, not a global ODE enclosure.",
+    "Pressure and width products are truncated to the declared rectangle.",
+    "No field installation, bridge, stress-cone, or Navier--Stokes closure is claimed."
+  ],
+  "maximum_scaled_atom_exp_error": "2.82309938796435163633256259959e-4342944819032518276511289187",
+  "maximum_scaled_oracle_error": "2.09961751762377095611234466058e-161",
+  "oracle": {
+    "composite": {
+      "second": "8.89103499794030993e-162",
+      "tangent": "8.89103499794030993e-162",
+      "value": "0.0"
+    },
+    "exp": {
+      "second": "1.51483119878286882e-161",
+      "tangent": "2.09961751762377096e-161",
+      "value": "0.0"
+    },
+    "integer_power": {
+      "second": "1.66706906211380811e-162",
+      "tangent": "4.44551749897015497e-162",
+      "value": "4.44551749897015497e-162"
+    },
+    "log": {
+      "second": "1.11137937474253874e-162",
+      "tangent": "2.22275874948507748e-162",
+      "value": "8.89103499794030993e-162"
+    },
+    "rational": {
+      "second": "1.11137937474253874e-162",
+      "tangent": "2.22275874948507748e-162",
+      "value": "0.0"
+    },
+    "reciprocal": {
+      "second": "0.0",
+      "tangent": "6.66827624845523245e-162",
+      "value": "0.0"
+    },
+    "sqrt": {
+      "second": "0.0",
+      "tangent": "1.11137937474253874e-162",
+      "value": "0.0"
+    }
+  },
+  "passed": true,
+  "precision": 160,
+  "pressure_order": 4,
+  "resolved_Z": "0.37",
+  "tiny_pressure_atom": "6.82258848705827622e-4342944819032518276511289190",
+  "tiny_width_atom": "2.19522342890146497e-4342944819032518276511289189166050822943970058036665661144537831658646492088707747292249493384317483187061067447663037336416792871589639065692210646628123",
+  "unsupported_calls": [
+    "AxialDual cannot be promoted without an explicit second slot.",
+    "AxialDual cannot be used as an arithmetic operand without an explicit second slot.",
+    "Noninteger powers are unsupported; integer powers only.",
+    "The rectangular pressure/width remainder is not enclosed."
+  ],
+  "width_order": 3
+}
