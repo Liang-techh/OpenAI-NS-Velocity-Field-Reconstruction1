@@ -20,14 +20,47 @@ from lei_ren_part1_paper_corrected_pressure import CorrectedPressureAdapter
 
 
 class CorrectedSourceProfile:
-    def __init__(self,*,precision=160,order=128):
+    def __init__(self,*,precision=160,order=128,schedule=None,angular=None,tail=None,
+                 match_waiting=False):
         self.precision=precision; self.order=order
-        self.tail=build_default_tail(precision=precision,quadrature_order=order)
+        if tail is not None:
+            if schedule is not None and tail.schedule is not schedule:
+                raise ValueError('explicit schedule and tail must be the same object')
+            if angular is not None and tail.correction is not angular:
+                raise ValueError('explicit angular correction and tail must be shared')
+            if match_waiting:
+                raise ValueError('match_waiting cannot be used with an explicit tail')
+            self.tail=tail
+            construction_mode='explicit_tail'
+        else:
+            self.tail=build_default_tail(precision=precision,quadrature_order=order,
+                    schedule=schedule,correction=angular,match_waiting=match_waiting)
+            construction_mode='explicit_schedule' if schedule is not None or angular is not None else 'default'
         self.schedule=self.tail.schedule; self.angular=self.tail.correction
+        if schedule is not None and self.schedule is not schedule and tail is None and not match_waiting:
+            raise ValueError('tail factory returned a different schedule without matching requested')
+        if angular is not None and self.angular is not angular:
+            raise ValueError('tail factory did not preserve the supplied angular correction')
         self.pressure=CorrectedPressureAdapter(self.schedule,self.angular,
                     precision=precision,quadrature_order=order)
         self.pulse=[normalized_pulse_integral(self.schedule.mu,i,
                     precision=precision,order=order) for i in (1,2)]
+        waiting_was_matched = (
+            tail is None
+            and schedule is None
+            and angular is None
+        ) or bool(match_waiting)
+        self._construction_metadata={
+            'mode':construction_mode,
+            'explicit_schedule':schedule is not None,
+            'explicit_angular_correction':angular is not None,
+            'explicit_tail':tail is not None,
+            'match_waiting':waiting_was_matched,
+            'schedule_identity_preserved':tail is not None or not match_waiting,
+            'tail_schedule_identity':self.schedule is self.tail.schedule,
+            'tail_angular_identity':self.angular is self.tail.correction,
+            'source_scaled_factory_supported':True,
+        }
 
     def offset(self,logR,checkpoint):
         with localcontext() as ctx:
@@ -312,11 +345,12 @@ class CorrectedSourceProfile:
     def metadata(self):
         return {'source':'https://arxiv.org/html/2609.35406v1',
                 'schedule':self.schedule.metadata(),
+                'construction':self._construction_metadata,
                 'components':'Shared candidate angular/axial coefficients; radial recovered from same axial primitive',
                 'pressure':'Same angular correction object, separate baseline and signed-log correction',
                 'axis_regular':False,'finite_global_energy_certified':False,
-                'source_core_reference_scale_compatible':False,
-                'core_scale_limitation':'Default logPstar=14/logRref=10 are independent demo parameters; they do not satisfy Rref=110*(Cstar*Pstar)^10 with the Section 8 lower bound on Cstar.',
+                'source_core_reference_scale_compatible':False if self._construction_metadata['mode']=='default' else None,
+                'core_scale_limitation':'The default logPstar=14/logRref=10 fail the core-reference relation. Explicit schedules require separate Cstar/Lambda/domain and contraction checks; compatibility is not inferred from injection.',
                 'stress_cone_certified':False,'scale_recursion_established':False,
                 'physical_localization_applied':'velocity_from_tau only; chart methods remain unlocalized',
                 'full_outer_closed':False}

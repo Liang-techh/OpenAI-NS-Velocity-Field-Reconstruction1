@@ -225,6 +225,22 @@ existing full radial recurrence where suitable, with the SAME new axis
 data; do not reuse the unrelated ST073 axis traces as a source certificate.
 # Actual initial-stage stress and coherent end-bump replay
 
+Explicit shared construction now accepts `CorrectedSourceProfile(schedule=...,
+match_waiting=True)` or an already shared schedule/angular/tail triple.
+The original no-argument demonstration is retained. The necessary-scale
+example at logRref=301.1814 has actual same-axis pressure P0/Pstar²
+approximately -3.31462273 at Z=0 and -2.78985164 at Z=.3.
+`RegularCoreAxisJets` implements the narrow-root G integral and exact
+axis slopes using an injected same-pressure callback. The nonlinear
+`core_coefficients` recurrence generates finite radial jets of F, Uz and P;
+these are radial regularity coefficients, not the temporal coefficients
+required for scale recursion. The actual same-pressure third-degree prefix
+at Z=.3 has local equation-error exponents near 3 on R=1e-15..2.5e-16.
+Its pressure jets have explicit spacing-sensitivity evidence; no full
+contraction, Ra extension, connection, inner repair, energy or cone claim
+is made. The current Lambda=2500 must be reconsidered with actual pressure
+norms before extending the solution to Ra=4/Lambda.
+
 The new `SourcePulseMoments(profile)` callable extends all five actual
 cumulative moments through Rv. `AngularCumulative` propagates normalized
 angular and swirl-energy moments analytically on long power stages;

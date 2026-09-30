@@ -509,24 +509,73 @@ class AngularEnergyTail:
         }
 
 
-def build_default_tail(*, precision: int = DEFAULT_PRECISION, quadrature_order: int = DEFAULT_QUADRATURE_ORDER) -> AngularEnergyTail:
-    """Build the same matched candidate schedule used by the current checks."""
+def build_default_tail(
+    *,
+    precision: int = DEFAULT_PRECISION,
+    quadrature_order: int = DEFAULT_QUADRATURE_ORDER,
+    schedule: PaperOuterSchedule | None = None,
+    correction: AngularCorrection | None = None,
+    incoming: dict[str, Any] | None = None,
+    match_waiting: bool | None = None,
+) -> AngularEnergyTail:
+    """Build a shared schedule/correction/tail assembly.
 
-    base = PaperOuterSchedule(
-        logPstar=14,
-        logRref=10,
-        delta="1e-32",
-        Md=".5",
-        c_mu=".001",
-        c_delta=".001",
-        c_epsilon=".01",
-    )
-    incoming = incoming_angular_ratio(base)
-    waiting = solve_waiting_length(base, incoming["incoming_X"])
-    matched = apply_waiting_root(base, waiting)
-    correction = AngularCorrection(matched, incoming, precision=precision, order=max(128, quadrature_order))
+    With no explicit objects this retains the historical default: construct
+    the demo base schedule, solve its waiting-length root, and build one
+    matched ``AngularCorrection`` plus ``AngularEnergyTail``.
+
+    ``schedule`` allows a caller to provide source-scaled parameters.  Such a
+    schedule is used as supplied unless ``match_waiting=True``; in that mode
+    the waiting root is solved and the returned tail owns the matched schedule
+    produced from the explicit base.  ``correction`` may be supplied when a
+    caller already assembled the angular candidate; identity with the active
+    schedule is required so pressure and tail inputs cannot be mixed.
+    """
+
+    if int(quadrature_order) != quadrature_order or quadrature_order < 16:
+        raise ValueError("quadrature_order must be an integer at least 16")
+    if correction is not None and schedule is None:
+        schedule = correction.schedule
+    if correction is not None and schedule is not correction.schedule:
+        raise ValueError("correction must use the supplied schedule object")
+
+    if schedule is None:
+        base = PaperOuterSchedule(
+            logPstar=14,
+            logRref=10,
+            delta="1e-32",
+            Md=".5",
+            c_mu=".001",
+            c_delta=".001",
+            c_epsilon=".01",
+        )
+        incoming_data = incoming if incoming is not None else incoming_angular_ratio(base)
+        waiting = solve_waiting_length(base, incoming_data["incoming_X"])
+        active_schedule = apply_waiting_root(base, waiting)
+    else:
+        active_schedule = schedule
+        if match_waiting is None:
+            match_waiting = False
+        if match_waiting:
+            if correction is not None:
+                raise ValueError("match_waiting cannot be combined with an explicit correction")
+            incoming_data = incoming if incoming is not None else incoming_angular_ratio(active_schedule)
+            waiting = solve_waiting_length(active_schedule, incoming_data["incoming_X"])
+            active_schedule = apply_waiting_root(active_schedule, waiting)
+        else:
+            incoming_data = incoming if incoming is not None else incoming_angular_ratio(active_schedule)
+
+    if correction is None:
+        correction = AngularCorrection(
+            active_schedule,
+            incoming_data,
+            precision=precision,
+            order=max(128, quadrature_order),
+        )
+    elif correction.schedule is not active_schedule:
+        raise ValueError("explicit correction and active schedule must be identical")
     return AngularEnergyTail(
-        matched,
+        active_schedule,
         correction,
         precision=precision,
         quadrature_order=quadrature_order,

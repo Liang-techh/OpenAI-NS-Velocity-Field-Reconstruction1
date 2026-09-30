@@ -1,5 +1,14 @@
 ## Priority: continuous moments, then connection shear — 2026-09-29
 
+Latest core action: explicit shared source parameters and a third-degree
+nonlinear regular-core prefix with actual P0 are implemented. Read
+`lei_ren_part1_paper_shared_pressure_core.json` for the local scope
+R<=1e-15, Z=.3. Next select Lambda using actual P0 norms and the
+Section 8 contraction bounds (Lambda=2500 is only necessary), extend the
+same solution to Ra=4/Lambda, then join radial jets to Rh and perform
+Section 10 moment repair. Do not mark a finite radial Taylor prefix as
+the later time-scale recursion or as a globally matched velocity field.
+
 2026-09-30: actual five-moment integration now reaches Rv via
 `SourcePulseMoments`; later Z-flattening, angular corrections and heat remain.
 Before claiming a regular source core, satisfy the shared parameter relation

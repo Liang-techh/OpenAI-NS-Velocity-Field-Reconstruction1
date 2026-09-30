@@ -1,5 +1,21 @@
 ## Source outer replacement and first correction inputs — 2026-09-29
 
+2026-09-30: explicit schedule/correction/tail construction now supports a
+shared source-scaled candidate with logRref=301.1814 (j=.02, Lambda=2500,
+logCstar=2logLambda, logPstar=14). Its same-axis pressure is recomputed,
+not inherited from the old independent core. The A_Omega=0 choice is only
+a necessary lower-bound demonstration, not the full theorem parameter regime.
+`lei_ren_part1_paper_axis_jets.py` implements the exact regular axis data
+and Eq. (8.7). `lei_ren_part1_paper_core_recursion.py` implements the
+nonlinear Eq. (8.2) radial Taylor recurrence; the actual-pressure third-degree
+prefix is saved in `lei_ren_part1_paper_shared_pressure_core.json`.
+At Z=.3 and R=1e-15, 5e-16, 2.5e-16 the local equation error exponents are
+3.0000 angular and 3.00034 axial. The first axial slope agrees with the
+independent Eq. (8.7) callback to 2.81e-13 relatively. This is a LOCAL
+regular-core prefix, not time-scale recursion: extending to Ra=4/Lambda,
+selecting Lambda from the actual pressure/contraction data, matching to Rh
+and repairing the connection moments remain open.
+
 2026-09-30: `SourcePulseMoments` now combines all five actual cumulative
 moments from the reference through Rv, with actual source-pulse axial,
 mixed and quadratic integrals and forward angular/energy propagation.
