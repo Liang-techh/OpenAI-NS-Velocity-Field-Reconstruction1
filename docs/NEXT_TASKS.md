@@ -1,3 +1,12 @@
+## 2026-09-30 next: actual terminal defects and corrected stress across the annulus
+
+1. [DONE, finite scope] Same-source reference provider from exact power moments + centered defects, all source/reference parts, fixed P0, canonical shared delta and optional raw energy state.
+2. [DONE, one-point scope] Actual live-switch/common-defect P9/W2 background and finite degree3 bump response joined at Z=.3,x=1.25. Reuse the internally saved actual reference snapshot for subsequent diagnostics; arbitrary Z still requires a live source or new source cache.
+3. [OPEN] Replay all corrected terminal moment changes with the full quadratic products through degree2N, preserve tiny rows/source-stage contributions and report actual nonzero remainder. Do not infer closure from rounded total subtraction.
+4. [OPEN] Evaluate corrected partial moments/stress/shear on both sides and within all bump supports; report relaxed cone quantities and minimum nominal margins separately from uniform certification. Preserve original P0 and missing raw-energy status.
+5. [OPEN] Establish uniform C1/C2 source/defect bounds, higher-Z recovery and finite response/jet/quadrature enclosures. Conditional Catalan tail bounds require an actual uniform input bound.
+6. [OPEN] Join the same outer branch, recover separate energy primitives, resolve finite-energy radial tail and controlled/exact heat exterior; afterward genuine n-dependent temporal recursion and oscillatory stress cancellation.
+
 ## 2026-09-30 next: join actual common reference and control the full correction
 
 1. [DONE, finite scope] Field adapter with five partial physical moment increments, corrected raw quadratic receipts, same P0, first-Z pressure/moments, exact value-level Ur identity, updated shear/stress inputs and fixed-Rm guard.

@@ -773,10 +773,11 @@ def _join_reference(
     result['moment_parts']['five_bump_correction'] = dict(correction['increments'])
     result['moment_parts_Z']['five_bump_correction'] = dict(correction['increments_Z'])
     if correction.get('raw_increments') is not None:
-        result['raw_quadratic_parts'] = dict(reference_data.get('raw_quadratic_parts', {}))
-        result['raw_quadratic_parts_Z'] = dict(reference_data.get('raw_quadratic_parts_Z', {}))
+        result['raw_quadratic_parts'] = dict(reference_data.get('raw_quadratic_parts') or {})
+        result['raw_quadratic_parts_Z'] = dict(reference_data.get('raw_quadratic_parts_Z') or {})
         result['raw_quadratic_parts']['five_bump_correction'] = dict(correction['raw_increments'])
         result['raw_quadratic_parts_Z']['five_bump_correction'] = dict(correction['raw_increments_Z'])
+        result['raw_quadratic_parts_complete'] = reference_data.get('raw_quadratic_integrals') is not None
     return result
 
 

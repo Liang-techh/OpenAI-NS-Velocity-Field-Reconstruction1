@@ -1,3 +1,11 @@
+## 2026-09-30: actual common-source reference/bump join executed
+
+ReferenceDefectBackground now reconstructs the terminal reference interval from the exact power moments plus all centered source defect parts, keeping the original P0. It includes reference_power in the authoritative moment part maps and does not infer separate raw energies from d4. Resolved independent radial-density and source-lineage checks pass (maximum relative error3.20e-30).
+
+The actual warm-R100 run at Z=.3, x=1.25, P9/W2 completed: same P0/P0_Z, shared stress recovery, 69 source labels plus reference_power and five_bump_correction. A local ignored reference snapshot preserves the exact evaluated source for further diagnostics without repeated core/defect work. See REFERENCE_DEFECT_BACKGROUND_2026_09_30.md and five_moment_reference_background_check.json.
+
+The corrected raw swirl convention is integral(u_theta^2/2)dR, matching the old common provider; Mztheta=raw_axial-raw_swirl. Joined part maps now include correction increments, including optional unavailable raw state handling. This is a finite pointwise join, NOT uniform five-moment closure, cone certification, full outer/heat-energy completion or temporal recursion.
+
 ## 2026-09-30: finite bump field and full quadratic moment recovery
 
 The correction field adapter recovers u_theta, Uz, F, pressure/moments, raw axial/swirl quadratic changes and value-level Ur from the same first-Z data, preserves P0, enforces fixed Rm and updates corrected stress/shear inputs. The resolved join and independent density/first-Z radial checks pass. Ur_Z needs second-Z data and remains unavailable.

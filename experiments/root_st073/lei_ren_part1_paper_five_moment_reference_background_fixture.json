@@ -1,0 +1,18 @@
+{
+  "radial_density_relative_errors": {
+    "theta": "1.68000000000000748000000000004e-31",
+    "z": "3.25413034623154179775304847012e-95",
+    "theta_z": "1.68000000000000748000000000004e-31",
+    "z_theta": "4.95110415206623716721368416759e-31",
+    "p": "3.1920000000000264480000000002e-30"
+  },
+  "moment_part_reconstruction_absolute_error": "0.0",
+  "constant_defect_parts": true,
+  "same_source_cached_once": true,
+  "P0_preserved": true,
+  "optional_raw_reference_join_pass": true,
+  "raw_individual_energies_not_inferred": true,
+  "actual_source_scope": false,
+  "functional_closure": false,
+  "quadrature_enclosed": false
+}
