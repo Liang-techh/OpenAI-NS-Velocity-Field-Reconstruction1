@@ -1,3 +1,9 @@
+## 2026-09-30: continuous angular schedule installed in the shared field
+
+Installed continuous_angular_schedule.py in the existing schedule object. Full pre-heat log A, switch slopes, Z flattening and public MP Z entry points now use continuous MP primitives. Interior primitive working precision is 100 digits, arithmetic 443; accuracy is not inferred from either. Angular field adapters consume the returned jets. Heat normalization and interpolation retain epsilon in MP while H remains inherited. Incoming log Ep is regenerated before solving. Five transition Z differences at 1e-4 and 1e-30 pass; heat interface log jump is about 4.97e-292; Rp mass and Z matching still pass around 6.92e-83. Shared runtime identities and nonzero terminal residual retention pass.
+
+Next tasks: implement continuous relative angular correction and its coefficient Z jets; update angular cumulative and pressure moment providers together; enclose H and its energy contributions; bound actual inner offsets and inherited swirl/future energy; propagate full coefficient tangent intervals and resolve radial tail. No full five-moment, finite-energy, stress or scale-recursion certification.
+
 ## 2026-09-30: continuous incoming angular primitive and second-row bounds
 
 Completed continuous_incoming_angular.py and continuous_incoming_angular_enclosure.py with exact J(1)=1/2 and full incoming mixed-row bounds. At 4096 panels mixed relative width is about 5.858e-4. regenerate_incoming now computes the nominal mixed factor with MP J instead of float-backed schedule._log_A; the input changes about -9.57e-17 relatively, at 100 working digits/order96 (not certified accuracy). Both reference matching rows now pass their quadrature uncertainty into the coefficient report, preserving inner offsets once. Updated field Rp mass and Z matching pass at about 6.92e-83; shared runtime identity checks pass and both terminal residuals remain nonzero.

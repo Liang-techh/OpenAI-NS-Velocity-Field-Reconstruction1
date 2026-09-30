@@ -27,6 +27,9 @@ def regenerate_incoming(source, seeded, atoms, provider, *, order=96):
         result=deepcopy(seeded)
         incoming=deepcopy(seeded['incoming'])
         z=mp.mpf(str(incoming['Z']))
+        # All normalized rows must use the newly installed amplitude at Rp.
+        incoming['log_Ep']=mp.nstr(_mp(source.schedule.at_log_radius(
+            str(schedule.logR_p),z)['log_angular_amplitude']),precision)
         from lei_ren_part1_paper_continuous_incoming_angular import ContinuousIncomingAngular
         angular=ContinuousIncomingAngular(str(schedule.logPstar),str(schedule.Md),
                                           precision=provider.precision)
@@ -65,7 +68,9 @@ def regenerate_incoming(source, seeded, atoms, provider, *, order=96):
                 'I_theta_z':provider.precision,'I_swirl':seeded['incoming']['precision']},
             'mixed_axial_factor_working_precision':provider.precision,
             'serialized_digits_are_not_integral_accuracy':True,
-            'angular_primitive_float_backed':True,'swirl_energy_inherited':True,
+            'angular_primitive_float_backed':False,'swirl_energy_inherited':True,
+            'angular_heat_kernel_inherited':True,
+            'angular_correction_and_pressure_moments_complete':False,
             'mixed_reference_primitive_float_backed':False,
             'mixed_reference_primitive_definition':'ContinuousIncomingAngular.J with exact J(1)=1/2',
             'mixed_reference_logPstar':str(schedule.logPstar),
@@ -105,6 +110,9 @@ def regenerate_incoming(source, seeded, atoms, provider, *, order=96):
 
 class ContinuousIncomingProfile(ContinuousSeededAxialProfileJets):
     def __init__(self,source,*,prepared=None,incoming_precision=100,order=96):
+        from lei_ren_part1_paper_continuous_angular_schedule import install_continuous_angular_schedule
+        self.angular_schedule_provider=install_continuous_angular_schedule(
+            source.schedule,precision=source.precision,primitive_precision=incoming_precision)
         from lei_ren_part1_paper_continuous_incoming import ContinuousIncomingAxial
         self.incoming_provider=ContinuousIncomingAxial(str(source.schedule.Md),precision=incoming_precision)
         self.incoming_order=order
@@ -250,7 +258,9 @@ def run():
             installed_in_velocity_and_mean=True,terminal_mean_forced_zero=False,
             shared_complete_atoms_installed=True,
             source_schedule_identity_preserved=field.outer.schedule is source.schedule,
-            angular_primitive_float_backed=True,swirl_energy_inherited=True,
+            angular_primitive_float_backed=False,swirl_energy_inherited=True,
+            angular_preheat_schedule_installed=True,angular_heat_kernel_inherited=True,
+            angular_pressure_and_moments_complete=False,
             finite_energy_certified=False,scale_recursion_certified=False)
     Path(__file__).with_suffix('.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({key:report[key] for key in ('Rp_mass_relative_matching',

@@ -452,7 +452,7 @@ class ContinuousSeededOuterFieldJets(ContinuousSeededOuterField):
                 mp.nstr(log_radius, self.precision), z
             )
             Utheta = _mp(row["Utheta"])
-            Utheta_Z = Utheta * _mp(base["dlogU_dZ"])
+            Utheta_Z = _mp(row.get("Utheta_Z", Utheta * _mp(base["dlogU_dZ"])))
             Uz = _mp(row["Uz"])
             Uz_Z = _mp(row["Uz_Z"])
             R = mp.exp(log_radius)
@@ -465,8 +465,8 @@ class ContinuousSeededOuterFieldJets(ContinuousSeededOuterField):
                 "R": R,
                 "F": Utheta / root,
                 "FZ": Utheta_Z / root,
-                "logF_slope": _mp(base["logF_slope"]),
-                "logarithmic_slope": _mp(base["logarithmic_slope"]),
+                "logF_slope": _mp(row.get("logF_slope",base["logF_slope"])),
+                "logarithmic_slope": _mp(row.get("logarithmic_slope",base["logarithmic_slope"])),
                 "heat_method": row.get("heat_method", base.get("heat_method")),
                 "axial_Z_method": row.get("axial_Z_method"),
                 "angular_Z_jet_complete": False,

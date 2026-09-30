@@ -137,7 +137,7 @@ class ContinuousSolveEnclosure(ContinuousBasisEnclosure):
             reference_axial_parameters=dict(Z=str(incoming['Z']),Md=str(Md),logPstar=str(logPstar)),
             fixed_materialized_row_balances=[self.describe(x) for x in balances],
             fixed_materialized_row_zero_compatible=[contains(x,0) for x in balances],
-            input_parameter_scope='Reference Iz, Iuz2 and ideal mixed angular row errors propagated as additive perturbations of current stored inputs. Mu, Md, logPstar and normalization logs are declared real parameters. Inner offsets, swirl and future energy remain conditional stored contributions. Complete installed angular velocity remains legacy. Kp is independently enclosed.',
+            input_parameter_scope='Reference Iz, Iuz2 and ideal mixed angular row errors propagated as additive perturbations of current stored inputs. Mu, Md, logPstar and normalization logs are declared real parameters. Inner offsets, swirl and future energy remain conditional stored contributions. Base angular schedule is MP; relative angular correction, heat H, pressure and five moments retain inherited gaps. Kp is independently enclosed.',
             basis_and_pulse_quadrature_enclosed=True,
             inherited_input_uncertainty_enclosed=False,pulse_energy_uncertainty_enclosed=True,
             materialized_coefficients_replaced=False,global_mean_closed=False,
