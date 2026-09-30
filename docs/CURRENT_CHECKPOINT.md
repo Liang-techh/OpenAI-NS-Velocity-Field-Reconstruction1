@@ -1,3 +1,33 @@
+## Exact quadrature dependency graph and measured multi-time core geometry - 2026-09-30
+
+Run lei_ren_part1_paper_axial_closure_graph.py for actual shared candidate
+inputs. Canonical matrix and row atoms are now exported by the axial solver.
+Exact rational Cramer expressions eliminate both quadrature row terms;
+their formal Z derivatives also cancel for a fixed matrix and differentiable
+shared atoms. This is a quadrature-model identity, not continuous closure.
+Independent basis perturbations produce nonzero residual terms, not zero.
+Rounded graph coefficient/energy replays remain separate. The physical
+nonzero tail is unchanged; continuous integral/Z-derivative provenance and
+the exact energy root still need work. Read closure_graph.md for the next
+shared continuous/conservative basis requirements.
+
+Run lei_ren_part1_paper_core_scale_geometry.py. It uses actual regular-core
+physical callable roundtrips at logq=-alpha/delta, alpha=0,2,4,6. Measured
+aspect gains are 1,e,e^2,e^3; swirl/axial amplitudes, local winding density
+and axial vorticity component grow with the mapped scale laws. Log-aspect
+errors are about 1e-244 and relative velocity roundtrip errors about 1e-247.
+These extreme MP chart times are not ordinary simulation times. One core
+point diagnoses geometry/coordinate scaling; it is not a measured vortex
+core width, an integrated streamline, full vorticity, global energy, or a
+completed recursive transition. Both Python/JSON/Markdown artifacts exist.
+
+Next connect a shared continuous basis for values, partial/full primitives,
+and Z jets; prove the actual mean and its derivative close before removing
+the 1/r tail. Independently integrate energy over shrinking core/annuli and
+exterior, measure core-width profiles across time, and finish outer jets and
+five moments. Uniform stress/remainder and oscillatory correction remain
+open. Do not treat formal row cancellation as a finite-energy certificate.
+
 ## Installed seeded axial field; mean conditioning exposed - 2026-09-30
 
 Read lei_ren_part1_paper_seeded_outer_field.py/md/json and the regenerated

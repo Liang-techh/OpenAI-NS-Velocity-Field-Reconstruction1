@@ -84,6 +84,9 @@ def solve_actual_axial(mu, base_rows, pulse_rows, energy_target,*,precision=120,
             relative.append(mp.nstr(abs(defect/rhs),30) if rhs else None)
         energy=quadratic*a*a+linear*a+constant
         return {'a_p':mp.nstr(a,precision),'c':[signed_log(x,precision) for x in c],
+                'linear_matrix':[[mp.nstr(x,precision) for x in row] for row in matrix],
+                'linear_rhs_inputs':{'base':base_rows,'pulse':pulse_rows},
+                'input_mu':mp.nstr(mu,precision),
                 'u':[signed_log(x,precision) for x in u],
                 'v':[signed_log(x,precision) for x in v],
                 'energy_target':mp.nstr(target,precision),
