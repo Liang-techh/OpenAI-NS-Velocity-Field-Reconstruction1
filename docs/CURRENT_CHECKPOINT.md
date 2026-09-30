@@ -1,3 +1,20 @@
+## Exit continued to R=100 - 2026-09-30
+
+The frozen comparison now extends beyond the core and supplies exact
+algebraic D/I_z drivers; independent formula replay through R=110 agrees
+at about 1e-160 relative. ExitContinuation propagates actual endpoint
+values and five moments to R=100, retaining positive prescribed shear
+and conditional subprecision velocity/moment error bounds. Six samples
+(two Z sections, R=1,10,100) pass relaxed cone tests. This does not
+certify uniform Z jets, source constants or a completed outer match.
+
+Read exit_continuation.md/json and connection_next.md under
+experiments/root_st073. Next implement the source short shear switches
+on 100..110. Before the long reshape, satisfy the shared source parameter
+and radial-order gates; the existing lower-bound logCstar candidate is
+not certified for those inequalities. Recompute shared pressure/core
+when changing parameters. Temporal recursion and global energy remain open.
+
 ## Actual exit Z jets and three-component callable - 2026-09-30
 
 ExitTangents now transports actual five-moment Z jets and recovers Ur

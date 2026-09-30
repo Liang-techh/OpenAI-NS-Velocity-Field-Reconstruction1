@@ -1,3 +1,12 @@
+## Source exit now reaches R=100 - 2026-09-30
+
+The conditional actual exit propagates five moments toR100; six finite
+samples pass relaxed cone tests. Comparison extends to110. Next implement
+the source short shear switches and satisfy the shared parameter gates
+before reference angular/axial restoration and Section10 repair. Read
+exit_continuation.md and connection_next.md under experiments/root_st073.
+Full matching, finite energy and temporal recursion remain open.
+
 ## Actual three-component initial exit - 2026-09-30
 
 Actual Z-jet transport, continuity-based Ur and Section 3 stress are

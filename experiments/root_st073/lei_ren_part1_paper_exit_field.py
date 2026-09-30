@@ -41,11 +41,11 @@ class LocalCoreExitField:
                 sample={**self.core.evaluate(R,Z),'R':R}; region='core'
             else:
                 sample=self.tangent.evaluate(mp.log(R/self.tangent.r),Z)
-                region='initial_exit'
+                region=sample.get('region','initial_exit')
             chart=physical_chart(sample,Z,mp.log(q),delta=dt,nu=self.nu,
                                  phi=mp.atan2(y,x),precision=self.precision)
             return {**chart,'region':region,'R':R,'Z':Z,
-                    'scope':'Unlocalized core and initial exit only; no complete outer matching'}
+                    'scope':'Unlocalized core and constructed exit only; no complete outer matching'}
 
     def velocity(self,x,y,z,t):
         return self.evaluate(x,y,z,t)['uvw']

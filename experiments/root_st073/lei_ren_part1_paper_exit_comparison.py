@@ -265,7 +265,7 @@ class Section923Comparison:
     def _state(self, y: mp.mpf, Z: mp.mpf) -> tuple[dict[str, Any], mp.mpf]:
         if y < 0:
             raise ValueError("y must be nonnegative")
-        if self.R_a * mp.exp(y) > self.R_limit:
+        if y <= 2 * self.h_b and self.R_a * mp.exp(y) > self.R_limit:
             raise ValueError("comparison query lies outside the finite core radius")
         if y <= 2 * self.h_b:
             return self._transition_state(y, Z), _alpha(y, self.h_b)
@@ -297,6 +297,144 @@ class Section923Comparison:
         frozen["moments_Z"]["p"] += 2 * endpoint["F"] * endpoint["F_Z"] * delta_R
         return frozen, mp.mpf(0)
 
+    def frozen_coefficients(self, Z: Any) -> dict[str, Any]:
+        """Return exact power coefficients for the frozen branch.
+
+        For ``R >= R_b = R_a exp(2 h_b)``, the comparison fields are constant
+        in ``R`` while the cumulative moments and pressure are propagated by
+        their exact power laws.  With ``s = R - R_b`` the source stress has
+
+            D(R) = d_R R + d_0 + d_m1 / R,
+            I_z(R) = (i_0 + i_1 s + i_2 s^2) / sqrt(2 R),
+            E(R) = I_z(R) / F_b.
+
+        The returned coefficients are raw MP values and come from the endpoint
+        moments; no target moments are substituted.
+        """
+        with mp.workdps(self.precision):
+            zz = _mp(Z)
+            if abs(zz) >= 1:
+                raise ValueError("require |Z| < 1")
+            endpoint_y = 2 * self.h_b
+            endpoint_R = self.R_a * mp.exp(endpoint_y)
+            endpoint = self._transition_state(endpoint_y, zz)
+            f = endpoint["F"]
+            f_z = endpoint["F_Z"]
+            u = endpoint["Uz"]
+            u_z = endpoint["Uz_Z"]
+            m = endpoint["moments"]
+            mz = endpoint["moments_Z"]
+            z2 = zz * zz
+            d = 1 - z2
+            L = 1 - self.delta * z2
+
+            # transport = q0 + q1 (R - R_b)
+            q0 = -endpoint_R + (1 - self.delta) * zz * m["z"] + d * mz["z"]
+            q1 = -1 + (1 - self.delta) * zz * u + d * u_z
+
+            # The quadratic moment block in I_theta.
+            b0 = (
+                (1 - self.delta / 2) * m["theta"]
+                - (1 - self.delta) * zz * mz["theta"] / 2
+                - d * mz["theta_z"]
+                + (2 * self.delta - 1) * zz * m["theta_z"]
+            )
+            b2 = (
+                (1 - self.delta / 2) * f
+                - (1 - self.delta) * zz * f_z / 2
+                - d * (f_z * u + f * u_z)
+                + (2 * self.delta - 1) * zz * f * u
+            )
+            # Convert transport from shifted s to powers of R.
+            q0_R = q0 - q1 * endpoint_R
+            d_R = (q1 + b2 / (2 * f)) / L
+            d_0 = q0_R / L
+            d_m1 = (b0 - b2 * endpoint_R ** 2) / (2 * f * L)
+
+            # I_z is quadratic in s before the common 1/sqrt(2R) factor.
+            c0 = m["z"] - zz * mz["z"]
+            c1 = u - zz * u_z
+            # The last Section 3.17 term uses the physical pressure P, not
+            # the fifth cumulative moment named ``p``.
+            p0 = 2 * (1 + self.delta) * zz * endpoint["P"] - d * endpoint["P_Z"]
+            p1 = 2 * (1 + self.delta) * zz * f ** 2 - 2 * d * f * f_z
+            n0 = (
+                u * q0
+                + (1 - self.delta) * c0 / 2
+                + 2 * self.delta * zz * m["z_theta"]
+                - d * mz["z_theta"]
+                + endpoint_R * p0
+            )
+            n1 = (
+                u * q1
+                + (1 - self.delta) * c1 / 2
+                + 2 * self.delta * zz * (u ** 2 - f ** 2 * endpoint_R)
+                - d * (2 * u * u_z - 2 * endpoint_R * f * f_z)
+                + endpoint_R * p1
+                + p0
+            )
+            n2 = -self.delta * zz * f ** 2 + d * f * f_z + p1
+            iz0 = n0 / L
+            iz1 = n1 / L
+            iz2 = n2 / L
+            root_two = mp.sqrt(2)
+            iz_halfpower = {
+                "3/2": iz2 / root_two,
+                "1/2": (iz1 - 2 * endpoint_R * iz2) / root_two,
+                "-1/2": (iz0 - endpoint_R * iz1 + endpoint_R ** 2 * iz2) / root_two,
+            }
+            return {
+                "scope": "frozen_endpoint",
+                "Z": zz,
+                "R_b": endpoint_R,
+                "F_b": f,
+                "F_Z_b": f_z,
+                "Uz_b": u,
+                "Uz_Z_b": u_z,
+                "L": L,
+                "D_coefficients": {"R": d_R, "constant": d_0, "R_inv": d_m1},
+                "I_z_coefficients": {"constant": iz0, "linear": iz1, "quadratic": iz2},
+                "I_z_halfpower_coefficients": iz_halfpower,
+                "E_coefficients": {
+                    "constant": iz0 / f,
+                    "linear": iz1 / f,
+                    "quadratic": iz2 / f,
+                },
+                "endpoint_moments": dict(m),
+                "endpoint_moments_Z": dict(mz),
+            }
+
+    def frozen_driver_coefficients(self, Z: Any) -> dict[str, Any]:
+        """Return the frozen driver in the unshifted powers used by ExitBridge.
+
+        The returned expansion is exact for the frozen comparison branch:
+
+            D(R) = D[1] R + D[0] + D[-1] R^(-1),
+            I_z(R) = I_z[3] R^(3/2) + I_z[1] R^(1/2)
+                     + I_z[-1] R^(-1/2).
+        """
+        coefficients = self.frozen_coefficients(Z)
+        return {
+            "scope": coefficients["scope"],
+            "Z": coefficients["Z"],
+            "R_b": coefficients["R_b"],
+            "D": {
+                1: coefficients["D_coefficients"]["R"],
+                0: coefficients["D_coefficients"]["constant"],
+                -1: coefficients["D_coefficients"]["R_inv"],
+            },
+            "I_z": {
+                3: coefficients["I_z_halfpower_coefficients"]["3/2"],
+                1: coefficients["I_z_halfpower_coefficients"]["1/2"],
+                -1: coefficients["I_z_halfpower_coefficients"]["-1/2"],
+            },
+            "F_b": coefficients["F_b"],
+            "E": {
+                key: value / coefficients["F_b"]
+                for key, value in coefficients["I_z_halfpower_coefficients"].items()
+            },
+        }
+
     # ---------------------------------------------------------------
     # Public comparison evaluation.
     # ---------------------------------------------------------------
@@ -308,13 +446,19 @@ class Section923Comparison:
                 raise ValueError("require |Z| < 1")
             state, alpha = self._state(yy, zz)
             R = self.R_a * mp.exp(yy)
-            core = self._core_snapshot(R, zz)
             if yy <= 2 * self.h_b:
+                core = self._core_snapshot(R, zz)
                 F_R = alpha * core["F_R"] * state["F"] / core["F"]
                 Uz_R = alpha * core["Uz_R"]
+                core_scope = "finite_core"
+                core_reference_R = R
             else:
+                endpoint_R = self.R_a * mp.exp(2 * self.h_b)
+                core = self._core_snapshot(endpoint_R, zz)
                 F_R = mp.mpf(0)
                 Uz_R = mp.mpf(0)
+                core_scope = "frozen_endpoint_reference"
+                core_reference_R = endpoint_R
             root = mp.sqrt(2 * R)
             stress = evaluate_mp_stress(
                 mp.log(R),
@@ -356,7 +500,11 @@ class Section923Comparison:
                 "T_theta": stress["T_theta"],
                 "T_z": stress["T_z"],
                 "stress": stress,
+                "core_scope": core_scope,
+                "core_reference_R": core_reference_R,
                 "core": {
+                    "scope": core_scope,
+                    "reference_R": core_reference_R,
                     "F": core["F"],
                     "Uz": core["Uz"],
                     "FR": core["F_R"],
@@ -375,7 +523,7 @@ class Section923Comparison:
             "radial_degree": self.bundle.get("radial_degree"),
             "R_a": _nstr(self.R_a, self.precision),
             "h_b": _nstr(self.h_b, self.precision),
-            "comparison_domain": "0 <= y <= 2 h_b; frozen support after 2 h_b while within the finite core radius",
+            "comparison_domain": "0 <= y <= 2 h_b; frozen constant-field extension after 2 h_b with core queried only at its endpoint",
             "transition_steps": self.transition_steps,
             "Z_derivatives": "analytic coefficient rows including mixed RZ rows; no finite Z differences",
             "pressure_source": "core_adapter.build_source_core dominant AxisPressureJets factory",

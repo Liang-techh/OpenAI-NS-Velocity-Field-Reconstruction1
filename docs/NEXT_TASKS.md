@@ -1,3 +1,19 @@
+## Source exit extension follow-up - 2026-09-30
+
+- [x] Extend frozen comparison with actual moment/pressure powers beyond the core.
+- [x] Expose exact algebraic frozen D/I_z coefficients and independently replay them.
+- [x] Continue actual endpoint values/moments to R=100 with conditional tiny-shear bounds.
+- [x] Record six relaxed-cone samples at two Z sections and R=1,10,100.
+- [ ] Implement source switches 100..100exp(hb)..100exp(2hb)..110 with Z jets/moments.
+- [ ] Satisfy shared parameter and radius ordering gates before the long angular reshape.
+- [ ] Recompute pressure/core for a changed shared source candidate.
+- [ ] Restore reference angular power law and axial V=4Z on source intervals.
+- [ ] Compute/repair actual Section 10 five-moment defects and join the exterior.
+- [ ] Establish uniform stress/jet bounds and complete-field temporal scale/energy evidence.
+
+Use experiments/root_st073/lei_ren_part1_paper_connection_next.md for
+exact switches and parameter gates. Sampled passes are not certificates.
+
 ## Actual exit field follow-up - 2026-09-30
 
 - [x] Transport actual moment Z jets with normalized MP numerical driver derivatives.

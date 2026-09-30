@@ -1,3 +1,15 @@
+## Next source connection action - 2026-09-30
+
+Frozen comparison now reaches R=110; actual conditional exit continuation
+reaches R=100. Read connection_next.md and exit_continuation.md/json under
+experiments/root_st073. Next implement the two source short shear switches
+and a=4/5,b=0 continuation to110, transporting actual moments and Z jets.
+Then enforce the same-candidate source parameter/radial-order gates before
+long angular reshape. Current logCstar=2logLambda was only a lower-bound
+demonstration; changing it requires recomputing shared pressure and core.
+Preserve derivative/pressure uncertainties and all failures. Six relaxed
+passes do not certify the entire annulus or temporal scale recursion.
+
 ## Next actual exit work - 2026-09-30
 
 Z tangent transport, Ur recovery, actual stress and local physical callable
