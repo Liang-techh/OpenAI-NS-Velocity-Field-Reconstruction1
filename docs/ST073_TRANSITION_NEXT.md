@@ -1,3 +1,11 @@
+## 2026-09-30: quantitative terminal radial-energy obstruction audit
+
+Added continuous_radial_energy_tail.py/md/json for the current regenerated candidate. It retains Mz/Mz_Z and C=[(1-delta)Z Mz+(1-Z^2)Mz_Z]/(1-delta Z^2), giving physical ur=-nu*C/r. At fixed tau, radial kinetic-energy density per dZ dlogR is pi*nu^2/2*(dz/dZ)*C^2 with the explicit physical axial Jacobian.
+
+At Z=.3, nu=1 and tau=exp(-4), materialized C remains nonzero and the pointwise logarithmic energy density is positive. Post-Rv and heat mass/transport agree nominally to about 1.35e-292; density to about 2.70e-292. These are arithmetic consistency results, not accuracy certificates for the residual. No Z interval is integrated, no terminal value is forced zero, and the exact functional coefficient/integral closure remains unproved.
+
+This quantitative audit keeps the full finite-energy requirement visible while partial-energy and pressure worker checks continue. Next accept their separate-component results, run unified moment/stress diagnostics, and enclose actual integral inputs/terminal transport. The current numerical radial tail must be resolved before any global finite-energy or recursion claim.
+
 ## 2026-09-30: analytic radial velocity jets prepared for stress
 
 Added velocity_radial_jets(profile,logR,Z) using the same installed angular slope, incoming cutoff derivative, live pulse product jet and owned end-bump derivative. It supplies Utheta_y and Uz_y in logR coordinates alongside the existing Z jets, without changing coefficients or terminal moments.

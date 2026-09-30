@@ -1,3 +1,13 @@
+## Latest finite-energy obstruction handoff (2026-09-30)
+
+- [x] Quantify current materialized terminal radial coefficient and positive pointwise logarithmic energy density under the physical coordinate map.
+- [x] Check current terminal transport survives consistently from post-Rv to heat; retain nonzero values.
+- [ ] Enclose true integral/coefficient inputs and terminal C on physical Z intervals; distinguish exact functional zero from numerical residuals without clipping.
+- [ ] Accept partial-energy separate end-atom checks and complete pressure provider, then publish the prepared five-moment/stress bundle.
+- [ ] Resolve radial exterior transport and physical Z energy weights, followed by full stress/remainder and recursive-scale diagnostics.
+
+Evidence: continuous_radial_energy_tail.py/md/json. A positive density at one materialized Z point is not a certified integrated energy theorem. Total finite energy and recursion remain uncertified.
+
 ## Latest shared stress input handoff (2026-09-30)
 
 - [x] Supply analytic logR derivatives Utheta_y/Uz_y from the same continuous point definitions; independent checks cover incoming/pulse/end/heat.
