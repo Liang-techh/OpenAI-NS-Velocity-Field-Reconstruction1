@@ -1,0 +1,21 @@
+{
+  "records": [
+    {
+      "x": "1.25",
+      "logR_derivative_relative_error": "1.44022900906638134197213458728e-90",
+      "joined_radial_identity_absolute_error": "3.83522926976384886960607183983e-93",
+      "P0_preserved": true
+    },
+    {
+      "x": "2.2",
+      "logR_derivative_relative_error": "0.0",
+      "joined_radial_identity_absolute_error": "9.88530344281632046140965016717e-91",
+      "P0_preserved": true
+    }
+  ],
+  "fixed_radius_guard": true,
+  "actual_source_join": false,
+  "functional_closure": false,
+  "cone_certified": false,
+  "quadrature_enclosed": false
+}

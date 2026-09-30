@@ -1,0 +1,36 @@
+{
+  "records": [
+    {
+      "x": "1.25",
+      "moment_relative_errors": [
+        "1.52661867552337084190056292912e-21",
+        "1.16139555508431986968169506816e-88",
+        "1.72903208318137216014637772369e-21",
+        "3.92053534557124917349927457553e-22",
+        "2.77069403441195597351609889493e-21"
+      ],
+      "radial_velocity_relative_error": "1.45478748767883588690128685438e-84",
+      "moment_monomial_count": 125
+    },
+    {
+      "x": "2.2",
+      "moment_relative_errors": [
+        "4.22607977387072071060096820088e-16",
+        "1.26185807997563158036622503733e-88",
+        "4.22468042845131841329077573761e-16",
+        "4.33039995718086098943580745141e-16",
+        "4.22841848371599085822811147848e-16"
+      ],
+      "radial_velocity_relative_error": "2.63240770226591007500017024155e-80",
+      "moment_monomial_count": 125
+    }
+  ],
+  "velocity_degree": 2,
+  "quadratic_moment_degree": 4,
+  "higher_quadratic_terms_nonzero": true,
+  "independent_replay": "scalar normalized velocity-density integration and independent Z stencil",
+  "quadrature_enclosed": false,
+  "actual_source_field_installed": false,
+  "functional_closure": false,
+  "radial_first_Z_available": false
+}

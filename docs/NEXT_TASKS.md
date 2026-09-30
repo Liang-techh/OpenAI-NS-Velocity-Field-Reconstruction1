@@ -1,3 +1,12 @@
+## 2026-09-30 next: join actual common reference and control the full correction
+
+1. [DONE, finite scope] Field adapter with five partial physical moment increments, corrected raw quadratic receipts, same P0, first-Z pressure/moments, exact value-level Ur identity, updated shear/stress inputs and fixed-Rm guard.
+2. [DONE, finite scope] Termwise finite velocity response and all quadratic moment products through degree2N; actual serialized P9/W2 correction at x=1.25 retains tiny d3/d5 responses and higher remainder terms.
+3. [DONE, conditional scope] Uniform C1 contraction/Catalan tail majorant from supplied e and fixed finite weights. This does not verify actual uniform e or analytic bump/quadrature bounds.
+4. [OPEN] Join the actual PressureWidthAxialRestore reference at phase t=2+log(x), x in [1,e], using the same R110 source, P0 and all five moment parts/first-Z data. Reuse authoritative endpoint/cache data where available; no synthetic baseline or terminal target overwrite.
+5. [OPEN] Establish source-aware nonlinear products, uniform axial bounds and second-Z/C2 recovery. Quantify all finite response/pressure-width/source/quadrature remainder contributions rather than discarding them.
+6. [OPEN] Independently replay actual terminal five moments and pressure compatibility, then audit the relaxed cone from corrected partial moments, append the outer branch and resolve finite-energy/heat conditions before temporal recursion and oscillatory corrections.
+
 ## 2026-09-30 next: install source-aware bump correction and bound its remainder
 
 1. [DONE, finite scope] Paper five-bump A+Q map, generic jets/first-Z, inverse, Jacobian and partial integrals implemented and independently replayed.

@@ -1,3 +1,11 @@
+## 2026-09-30: finite bump field and full quadratic moment recovery
+
+The correction field adapter recovers u_theta, Uz, F, pressure/moments, raw axial/swirl quadratic changes and value-level Ur from the same first-Z data, preserves P0, enforces fixed Rm and updates corrected stress/shear inputs. The resolved join and independent density/first-Z radial checks pass. Ur_Z needs second-Z data and remains unavailable.
+
+The actual serialized Z=.3 P9/W2 correction at x=1.25 retains 55 velocity monomials and 461 cumulative-moment monomials, including 406 nonzero terms above defect degree3. All quadratic terms through degree6 are retained, so finite response truncation is not mistaken for closure. The actual full baseline join remains open. See FIVE_BUMP_FIELD_2026_09_30.md.
+
+Conditional C1 contraction/Catalan tail bounds are implemented for supplied uniform e and the finite fixed weights. Actual uniform e and analytic quadrature enclosures remain unverified. Five-moment functional closure, uniform C2/cone, energy/heat and genuine temporal recursion remain open.
+
 ## 2026-09-30: paper five-bump map and separated defect response
 
 Implemented Section10.2 Eq.(10.8): two axial and three angular compact bumps, the fixed invertible matrix, explicit quadratic coupling, first-Z support, Jacobian and partial cumulative moment changes. Independent field-density/inverse/tangent replay at order96 has relative errors below4.41e-16; quadrature is unenclosed.
