@@ -26,11 +26,13 @@ Interval squares preserve positivity, including intervals crossing zero.
 
 In the installed fixture, nominal amplitude and both coefficients are contained
 at 1024 and 4096 panels. Relative coefficient widths decrease from approximately
-10.36% to 2.49%. The amplitude width is about `6.3e-81` from interval arithmetic:
-this is **conditional on fixed Kp and target**, not a measurement of total
-amplitude accuracy. Incoming rows, energy target and Kp are exact stored dyadic
-parameters for this conditional calculation; their originating numerical errors
-are not bounded. The API also accepts caller-supplied input intervals.
+10.36% to 2.49%. Pulse energy now uses independent positive interval bounds,
+including the nested startup primitive. The relative amplitude width is about
+`2.05e-9` at 4096 panels. This is still **conditional on fixed incoming rows
+and energy target**, not a measurement of total amplitude accuracy. These two
+inputs are exact stored dyadic parameters for this conditional calculation;
+their originating numerical errors are not bounded. The low-level `solve_atoms`
+API also accepts caller-supplied input intervals, including a supplied Kp interval.
 
 Fixed materialized coefficient residual ranges include zero for both rows.
 This proves compatibility with the integral bounds, not exact mean cancellation.
@@ -41,6 +43,6 @@ Run `python experiments/root_st073/lei_ren_part1_paper_continuous_solve_enclosur
 The JSON saves exact dyadic endpoints, conditional parameter scope, coefficient
 widths and fixed-coefficient balance ranges. Decimal displays are approximate.
 
-Next: enclose continuous incoming cutoff integrals and pulse energy, tighten
+Next: enclose continuous incoming cutoff integrals and energy target, tighten
 correlated pulse/basis bounds, then propagate genuine input intervals before
 claiming complete mean and energy closure.

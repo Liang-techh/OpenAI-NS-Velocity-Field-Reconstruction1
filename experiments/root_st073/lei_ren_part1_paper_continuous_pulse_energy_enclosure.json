@@ -1,0 +1,157 @@
+{
+  "method": "Monotone startup primitive bounds, analytic plateau, cutoff interval rectangles",
+  "reports": [
+    {
+      "panels": 1024,
+      "interval_precision": 80,
+      "parts": {
+        "startup": {
+          "lower": {
+            "sign": 0,
+            "mantissa": "318694756408564375919857894455620878324946951858294291215628869876475341322016187",
+            "binary_exponent": -289,
+            "decimal_display": "0.0000003204100804833145117030802031794353745664"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "644930638609015692185117221255013190849583154435112111573407485304854300561577719",
+            "binary_exponent": -290,
+            "decimal_display": "0.0000003242009378371388007021903611872523260927"
+          },
+          "width_display": "0.000000003790857353824288999110158007816951526344",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        },
+        "plateau": {
+          "lower": {
+            "sign": 0,
+            "mantissa": "929784221897424283992394500771420985532838904590790573554418012562859069603613497",
+            "binary_exponent": -271,
+            "decimal_display": "0.2450492327933804675120773357488133025197"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "929784221897424283992394500771420985532838904590790573554418012562859069603613503",
+            "binary_exponent": -271,
+            "decimal_display": "0.2450492327933804675120773357488133025197"
+          },
+          "width_display": "1.581329691484578483652286107690502851156e-81",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        },
+        "cutoff": {
+          "lower": {
+            "sign": 0,
+            "mantissa": "32322208095736467351698780282232369981474496458504966885212081699758983531103565",
+            "binary_exponent": -288,
+            "decimal_display": "0.00000006499235452795828872937398780387246356668"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "518952350073089726568952969515179851452470183670504656496645636406115534617123537",
+            "binary_exponent": -292,
+            "decimal_display": "0.00000006521819111794439535274227911684153395637"
+          },
+          "width_display": "0.0000000002258365899861066233682913129690703896885",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        },
+        "total": {
+          "lower": {
+            "sign": 0,
+            "mantissa": "929785684220317808304645108282769786518626440814945142433450094369168868772422945",
+            "binary_exponent": -271,
+            "decimal_display": "0.2450496181958154787848777682030042858275"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "929785699460759945476395331146069334928884041425317308361004654959584545645758691",
+            "binary_exponent": -271,
+            "decimal_display": "0.2450496222125094225952733906814536066135"
+          },
+          "width_display": "0.000000004016693943810395622478449320786021916033",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        }
+      },
+      "pulse_energy_quadrature_enclosed": true,
+      "parameter_scope": "Exact decimal startup .02, shift .01 and cutoff [10,11] of ContinuousAxialPulse",
+      "finite_energy_certified": false,
+      "full_axial_closure_enclosed": false,
+      "relative_width": "0.0000000163913495290603377578626486807",
+      "nominal_contained": true
+    },
+    {
+      "panels": 4096,
+      "interval_precision": 80,
+      "parts": {
+        "startup": {
+          "lower": {
+            "sign": 0,
+            "mantissa": "640211060858899590842012781005666594868163855327719588277143918808501374717465533",
+            "binary_exponent": -290,
+            "decimal_display": "0.0000003218284477720319079318534604941507737088"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "160524085130191777234592066796481751460499791699845905330693252469670745243115523",
+            "binary_exponent": -288,
+            "decimal_display": "0.0000003227761612126291600890822437157899573945"
+          },
+          "width_display": "0.0000000009477134405972521572287832216391836857213",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        },
+        "plateau": {
+          "lower": {
+            "sign": 0,
+            "mantissa": "929784221897424283992394500771420985532838904590790573554418012562859069603613497",
+            "binary_exponent": -271,
+            "decimal_display": "0.2450492327933804675120773357488133025197"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "929784221897424283992394500771420985532838904590790573554418012562859069603613503",
+            "binary_exponent": -271,
+            "decimal_display": "0.2450492327933804675120773357488133025197"
+          },
+          "width_display": "1.581329691484578483652286107690502851156e-81",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        },
+        "cutoff": {
+          "lower": {
+            "sign": 0,
+            "mantissa": "258914420904225678227406412425413635883190501841752182014271126175088263267506845",
+            "binary_exponent": -291,
+            "decimal_display": "0.00000006507699669669270353684257780293441884934"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "518278096917548605327522759556679299628926379031806148843222268630089007689376143",
+            "binary_exponent": -292,
+            "decimal_display": "0.00000006513345584089291913148171114549610250856"
+          },
+          "width_display": "0.00000000005645914420021559463913334256168365921271",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        },
+        "total": {
+          "lower": {
+            "sign": 0,
+            "mantissa": "929785689923149288212269751999729126046092707384496034285312643528057388171855285",
+            "binary_exponent": -271,
+            "decimal_display": "0.2450496196988249362366888044448515996049"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "929785693733256403274659725703056031722777925187793666005815972421900352648872779",
+            "binary_exponent": -271,
+            "decimal_display": "0.2450496207029975210341565563127681638057"
+          },
+          "width_display": "0.000000001004172584797467751867916564200867344934",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        }
+      },
+      "pulse_energy_quadrature_enclosed": true,
+      "parameter_scope": "Exact decimal startup .02, shift .01 and cutoff [10,11] of ContinuousAxialPulse",
+      "finite_energy_certified": false,
+      "full_axial_closure_enclosed": false,
+      "relative_width": "0.00000000409783367969161948359880830657",
+      "nominal_contained": true
+    }
+  ]
+}

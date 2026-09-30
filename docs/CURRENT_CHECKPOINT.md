@@ -1,3 +1,9 @@
+## 2026-09-30: pulse energy uncertainty now propagated
+
+Completed continuous_pulse_energy_enclosure.py, JSON and proof notes. Startup uses monotonic switch bounds to enclose its nested primitive; plateau is analytic; cutoff uses outward positive rectangles. Entire support is covered. At 4096 panels Kp relative width is about 4.10e-9 and the installed nominal value is contained. The coefficient interval solver now consumes this Kp range; amplitude relative width is about 2.05e-9, coefficients about 2.49 percent. Incoming rows and target remain fixed conditional inputs. No coefficients or terminal residuals were overwritten.
+
+Next tasks: bound actual continuous incoming rows and squared-velocity energy; separate mixed angular uncertainty and target uncertainty; pass those intervals into the coefficient solve. Tighten correlated coefficient numerators where needed, then add incoming/target Z-derivative enclosures. Basis, pulse rows and Kp have bounds; full mean, finite energy, stress and scale recursion remain unproved.
+
 ## 2026-09-30: conditional coefficient interval solve
 
 Completed continuous_solve_enclosure.py with exact endpoint JSON and notes. It propagates basis and full pulse bounds through the factored determinant and the weighted energy quadratic. The live runtime exposes coefficient_enclosure. Conditional unique positive root and nominal containment pass at 1024 and 4096 panels; coefficient relative widths narrow from about 10.36 to 2.49 percent. Incoming rows, target and Kp are still fixed stored dyadic parameters, with originating uncertainty explicitly unbounded. Fixed-coefficient residual intervals containing zero establish compatibility only; nonzero materialized terminal residuals remain.

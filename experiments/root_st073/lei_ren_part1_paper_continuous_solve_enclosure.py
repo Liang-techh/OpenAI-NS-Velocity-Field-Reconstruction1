@@ -32,6 +32,7 @@ class ContinuousSolveEnclosure(ContinuousBasisEnclosure):
         matrix=[row['matrix'] for row in basis['rows']]
         det=basis['determinant']
         if self.bounds(det)[1]>=0:raise ArithmeticError('Determinant not strictly negative')
+        if len(base)!=2:raise ValueError('Exactly two incoming rows required')
         base=[self.declared_value(x) for x in base]
         target=self.declared_value(target);Kp=self.declared_value(Kp)
         if self.bounds(Kp)[0]<=0:raise ValueError('Pulse energy must be positive')
@@ -68,8 +69,11 @@ class ContinuousSolveEnclosure(ContinuousBasisEnclosure):
             amplitude=amplitude,coefficients=coefficients)
 
     def report(self,runtime,*,panels=4096):
+        from lei_ren_part1_paper_continuous_pulse_energy_enclosure import ContinuousPulseEnergyEnclosure
+        energy=ContinuousPulseEnergyEnclosure(precision=self.precision)
+        energy_atoms=energy.atoms(panels=panels)
         atoms=self.solve_atoms(runtime.solve_receipt['input_mu'],runtime.base,
-            runtime.target,runtime.Kp,panels=panels)
+            runtime.target,energy_atoms['total'],panels=panels)
         def contains(interval,point):
             lo,hi=self.bounds(interval)
             return bool(lo<=point<=hi)
@@ -93,11 +97,13 @@ class ContinuousSolveEnclosure(ContinuousBasisEnclosure):
             nominal_containment=dict(amplitude=contains(atoms['amplitude'],runtime.a),
                 coefficients=[contains(x,y) for x,y in zip(atoms['coefficients'],runtime.c)]),
             quadratic=[self.describe(x) for x in atoms['quadratic']],
+            pulse_energy=self.describe(atoms['Kp']),
+            nominal_pulse_energy_contained=contains(atoms['Kp'],runtime.Kp),
             fixed_materialized_row_balances=[self.describe(x) for x in balances],
             fixed_materialized_row_zero_compatible=[contains(x,0) for x in balances],
-            input_parameter_scope='Exact stored dyadic incoming rows, energy target and Kp; their source uncertainty is NOT enclosed. Mu is the declared decimal receipt value.',
+            input_parameter_scope='Exact stored dyadic incoming rows and energy target; their source uncertainty is NOT enclosed. Mu is the declared decimal receipt value. Kp is independently enclosed.',
             basis_and_pulse_quadrature_enclosed=True,
-            inherited_input_uncertainty_enclosed=False,pulse_energy_uncertainty_enclosed=False,
+            inherited_input_uncertainty_enclosed=False,pulse_energy_uncertainty_enclosed=True,
             materialized_coefficients_replaced=False,global_mean_closed=False,
             finite_energy_certified=False,scale_recursion_certified=False)
 
@@ -110,7 +116,7 @@ def run():
     for panels in (1024,4096):
         print(f'conditional coefficient enclosure panels={panels}',flush=True)
         report=encloser.report(runtime,panels=panels)
-        if not report['nominal_containment']['amplitude'] or not all(report['nominal_containment']['coefficients']):
+        if not report['nominal_pulse_energy_contained'] or not report['nominal_containment']['amplitude'] or not all(report['nominal_containment']['coefficients']):
             raise AssertionError('Nominal solve outside conditional interval solution')
         reports.append(report)
     result=dict(reports=reports,full_axial_closure_certified=False)
