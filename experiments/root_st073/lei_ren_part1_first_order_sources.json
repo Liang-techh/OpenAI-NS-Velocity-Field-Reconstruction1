@@ -1,0 +1,198 @@
+{
+  "source": "https://arxiv.org/html/2609.35406v1",
+  "source_equations": "13.8,13.16-13.19",
+  "candidate": {
+    "candidate_id": "lr1-extended-common-pressure-axial-background-001",
+    "nu": 0.01,
+    "h": 0.001,
+    "delta": 0.002,
+    "time": "T=1, tau=T-t>0",
+    "support": "|z|<0.5; infinite radial heat tail",
+    "core_radius": 0.005,
+    "collar_inner_radius": 1242.1747910914733,
+    "heat_radius": 2048.0,
+    "dependent_radial_component": "Recovered from same repaired axial primitive; localized streamfunction",
+    "pressure": "Integral of same extended swirl, normalized by actual heat tail; physical p=B(z)^2 p_profile",
+    "diagnostic_forcing": "zero; final smooth forcing unresolved",
+    "acceptance_stage": "extended background candidate; whole cone and recursion remain open",
+    "profile": {
+      "source": "https://arxiv.org/html/2609.35406v1",
+      "source_version": "2609.35406v1",
+      "source_section": "Section 2.5, equations (2.21)--(2.22)",
+      "profile_source": "lei_ren_part1_extended_pressure_core.load_extended_profile()",
+      "class": "SmoothExtendedAxial",
+      "R_core": 0.005,
+      "R_anchor": 0.01,
+      "R_cutoff": 0.02,
+      "Rmax_Ra": 1242.1747910914733,
+      "bump_supports": [
+        [
+          99.37398328731786,
+          248.43495821829467
+        ],
+        [
+          372.652437327442,
+          521.7134122584188
+        ],
+        [
+          670.7743871893956,
+          819.8353621203723
+        ],
+        [
+          968.8963370513492,
+          1117.957311982326
+        ]
+      ],
+      "bump_fractions": [
+        [
+          0.08,
+          0.2
+        ],
+        [
+          0.3,
+          0.42
+        ],
+        [
+          0.54,
+          0.66
+        ],
+        [
+          0.78,
+          0.9
+        ]
+      ],
+      "z_nodes": 257,
+      "z_range": [
+        -1.0,
+        1.0
+      ],
+      "radial_quadrature_order": 32,
+      "target_quadrature_order": 64,
+      "log_break_count": 24,
+      "reference_coefficients": [
+        1.0,
+        -1.0,
+        1.0,
+        -1.0
+      ],
+      "branch_orientation": {
+        "rule": "positive inner product with fixed reference projection",
+        "orientation_dot_min": 2.437967947178701,
+        "orientation_dot_max": 3.979187968758075,
+        "all_positive_at_nodes": true,
+        "quadratic_root": "positive parameter along the oriented direction",
+        "nonzero_quadratic_target": true
+      },
+      "conditioning": {
+        "scaled_linear_condition_min": 4.618759959770344,
+        "scaled_linear_condition_max": 961.338216859271,
+        "direction_norm_min": 10.250141540620533,
+        "direction_norm_max": 13.095228899171794,
+        "quadratic_discriminant_min": 244.67355388510308,
+        "quadratic_parameter_min": 0.11591965058836437,
+        "quadratic_parameter_max": 0.14897598536937823,
+        "moment_row_scale_mass": 57.21217556655882,
+        "moment_row_scale_mixed": 13.489698215328435
+      },
+      "mass_recovery": "last bump coefficient is recovered from base mass and the first three coefficients using the same 257-node core primitive",
+      "coefficient_gauge": "Chebyshev interpolation of moment functions followed by an oriented fixed-reference algebraic solve; not the full-nullspace minimum-L2 gauge",
+      "replay_seed": {
+        "schema_version": 1,
+        "save_method": "SmoothExtendedAxial.save_seed(path)",
+        "load_factory": "load_smooth_extended_axial_from_seed(path)",
+        "pressure_receipt_hash_bound": true
+      },
+      "moment_interpolation": {
+        "base_mixed": true,
+        "base_energy": true,
+        "bump_mixed": true,
+        "swirl_energy": true,
+        "quadratic_target": true,
+        "linear_and_quadratic_re_solve_at_query": true,
+        "analytic_eta_derivative": true
+      },
+      "primitive_tail": "U, dU_deta, average_U, average_dU_deta are exactly zero for R>=R_a",
+      "five_moment_closure": false,
+      "pde_validated": false,
+      "whole_cone_validated": false,
+      "scope": "Finite smooth axial repair of the shared-pressure ExtendedSwirl candidate. No complete Part I outer construction, PDE, stress cone, global energy, or five-moment certificate is claimed."
+    },
+    "pde_validated": false,
+    "scale_recursion_established": false,
+    "whole_stress_cone_validated": false
+  },
+  "R": 0.002,
+  "Z": 0.15,
+  "source_jet_refinement": [
+    {
+      "Omega_0": 0.038844115899959286,
+      "radial_pressure_known_source": -9.711028974989821,
+      "angular_axial_viscosity_source": -0.8224429234286375,
+      "axial_axial_viscosity_source": 3.5176431477269294,
+      "radial_V_jets": "analytic derivatives of the same finite core polynomial",
+      "radial_step": 4.0000000000000003e-07,
+      "axial_step": 0.0002,
+      "coefficient_solution_materialized": false
+    },
+    {
+      "Omega_0": 0.03884411589996875,
+      "radial_pressure_known_source": -9.711028974992187,
+      "angular_axial_viscosity_source": -0.8224429234559719,
+      "axial_axial_viscosity_source": 3.5176431416088736,
+      "radial_V_jets": "analytic derivatives of the same finite core polynomial",
+      "radial_step": 2.0000000000000002e-07,
+      "axial_step": 0.0001,
+      "coefficient_solution_materialized": false
+    }
+  ],
+  "independent_physical_comparisons": [
+    {
+      "tau": 0.125,
+      "predicted_angular_axial_viscosity": [
+        -1.7948274004202416,
+        7.676596290633573
+      ],
+      "measured_angular_axial_viscosity": [
+        -1.794826857233131,
+        7.677489700698888
+      ],
+      "viscosity_max_relative_difference": 0.0001163674716793561,
+      "predicted_radial_without_axial_viscosity": 1.343090802905122,
+      "measured_radial_without_axial_viscosity": 1.3430896981127212,
+      "radial_relative_difference": 8.225752923252116e-07
+    },
+    {
+      "tau": 0.03125,
+      "predicted_angular_axial_viscosity": [
+        -14.3387277214371,
+        61.327693132507555
+      ],
+      "measured_angular_axial_viscosity": [
+        -14.338727497154267,
+        61.32454645017363
+      ],
+      "viscosity_max_relative_difference": 5.1311954446885625e-05,
+      "predicted_radial_without_axial_viscosity": 10.744726423240976,
+      "measured_radial_without_axial_viscosity": 10.744697694010426,
+      "radial_relative_difference": 2.673805384656447e-06
+    },
+    {
+      "tau": 0.0078125,
+      "predicted_angular_axial_viscosity": [
+        -114.55091036685184,
+        489.94187040212324
+      ],
+      "measured_angular_axial_viscosity": [
+        -114.55082147652598,
+        490.0674965095201
+      ],
+      "viscosity_max_relative_difference": 0.0002563445000772458,
+      "predicted_radial_without_axial_viscosity": 85.95781138592781,
+      "measured_radial_without_axial_viscosity": 85.95682932983048,
+      "radial_relative_difference": 1.142499211503889e-05
+    }
+  ],
+  "first_coefficient_solved": false,
+  "flatness_established": false,
+  "next_equation": "Solve coupled F1,Uz1,P1 with zero axis data and P1_R=2F0F1-Omega0/(2R); then extend and restore positive-order moments."
+}

@@ -1,0 +1,405 @@
+{
+  "angular": {
+    "equation_replay": {
+      "max_absolute_error": 5.551115123125783e-16,
+      "normalized_residual_max": 2.7755575615628914e-17,
+      "r_replayed": -0.0026943927643716336,
+      "s_H_replayed": 0.41940662709268406
+    },
+    "implicit_derivative": {
+      "analytic_dr": [
+        -0.31096766027250994,
+        2.729482979144625
+      ],
+      "analytic_ds_H": [
+        0.04362411120030685,
+        -0.006023147761791943
+      ],
+      "fd_dr": [
+        -0.3109676589146959,
+        2.7294829789588357
+      ],
+      "fd_ds_H": [
+        0.043624111129014764,
+        -0.00602314775312307
+      ],
+      "max_absolute_error_dr": 1.3578140278802664e-09,
+      "max_absolute_error_ds_H": 7.129208334788473e-11
+    },
+    "inputs": {
+      "A_mu": 1.0017444546091359,
+      "B_mu": 1.0018518511768195,
+      "D_mu": 4.506836116534593,
+      "beta_inf": 5.523792265794071,
+      "beta_l2_squared": 4.500778753398013,
+      "d1_true": 0.02,
+      "d2_true": -0.01,
+      "ell": 0.15,
+      "mu": 0.01,
+      "normalization_integral": 0.4439938161680766,
+      "quadrature_order": 128,
+      "r": -0.002694392764371634,
+      "s_H": 0.4194066270926835
+    },
+    "paper_bump": {
+      "quadrature_refinement_64_to_256": {
+        "A_mu_abs_difference_64_256": 1.9984014443252818e-14,
+        "B_mu_abs_difference_64_256": 2.0872192862952943e-14,
+        "D_mu_abs_difference_64_256": 1.7988277534186636e-11,
+        "normalization_abs_difference_64_256": 8.897882430858317e-13
+      },
+      "source_definition": "(4.1), (4.13)",
+      "support": [
+        -0.15,
+        0.15
+      ]
+    },
+    "passed": true,
+    "rejection_checks": {
+      "degenerate_error": "A_mu, B_mu and D_mu must be strictly positive",
+      "degenerate_rejected": true,
+      "positivity_error": "angular bump multiplier fails the supplied positivity bound: d1=-0.20000000000000004, d2=3.4694469519536142e-18, beta_inf=5.5237922657940706",
+      "positivity_rejected": true,
+      "unreachable_error": "angular data are unreachable on the real small-branch solve: discriminant=-3.5452398550929312",
+      "unreachable_rejected": true
+    },
+    "solution": {
+      "branch": "small_q_continuation",
+      "d1": 0.020000000000000025,
+      "d2": -0.010000000000000002,
+      "discriminant": 1.1509529683725328,
+      "jacobian_condition": 1.3058892782233178,
+      "linear_determinant": -0.9820470350604972,
+      "positive": true,
+      "residual_equations": [
+        8.673617379884035e-19,
+        2.7755575615628914e-17
+      ],
+      "scalar_derivative": 1.07282476125998
+    }
+  },
+  "axial": {
+    "affine": {
+      "condition": 301.72459140126364,
+      "determinant": -0.0028765331566368364,
+      "max_absolute_residual": 4.780653954303271e-18,
+      "rows": [
+        {
+          "a": 0.9,
+          "c": [
+            0.08289501718986358,
+            -0.03146270762078515
+          ],
+          "max_absolute_residual": 4.780653954303271e-18,
+          "residual": [
+            4.750160768202116e-18,
+            4.780653954303271e-18
+          ]
+        },
+        {
+          "a": 1.05,
+          "c": [
+            0.08421081689893176,
+            -0.03196070248461566
+          ],
+          "max_absolute_residual": 2.303929616531697e-19,
+          "residual": [
+            -1.0842021724855044e-19,
+            -2.303929616531697e-19
+          ]
+        },
+        {
+          "a": 1.2,
+          "c": [
+            0.08552661660799993,
+            -0.03245869734844616
+          ],
+          "max_absolute_residual": 1.9956096237311316e-18,
+          "residual": [
+            1.9956096237311316e-18,
+            1.7042302898756523e-18
+          ]
+        }
+      ],
+      "source_sign": "A c = -base - a*pulse",
+      "u": [
+        0.07500021893545453,
+        -0.028474738437802134
+      ],
+      "v": [
+        0.008771998060454502,
+        -0.003319965758870023
+      ]
+    },
+    "energy": {
+      "a_p": 1.07,
+      "a_true": 1.07,
+      "c_at_root": [
+        0.08438625686014084,
+        -0.03202710179979306
+      ],
+      "derivative_at_root": 0.5232300000000004,
+      "endpoint_values": [
+        -0.08188305000000007,
+        0.07215195000000002
+      ],
+      "independent_equation_residual": 0.0,
+      "quadratic_coefficients": [
+        0.24450000000000002,
+        3.6563212715428817e-16,
+        -0.27992805000000043
+      ],
+      "roots": [
+        -1.0700000000000014,
+        1.07
+      ],
+      "solver_residual": 0.0
+    },
+    "implicit_derivative": {
+      "absolute_error": 3.180988805695506e-11,
+      "analytic_d_a_d_energy_target": 1.9112053972440404,
+      "finite_difference_d_a_d_energy_target": 1.9112053972758503
+    },
+    "inputs": {
+      "K_bump": [
+        2.44168159014593e-11,
+        2.3459418855848627e-11
+      ],
+      "K_bump_refinement_64_to_256_max_abs": 9.746190943920693e-23,
+      "K_p": 0.2445,
+      "base": [
+        0.0002,
+        -0.00015
+      ],
+      "beta_l2_squared": 4.500778753398013,
+      "ell": 0.15,
+      "energy_target": 0.279928050000002,
+      "gamma_centers": [
+        1297.0,
+        1299.0
+      ],
+      "gamma_supports": [
+        [
+          1296.85,
+          1297.15
+        ],
+        [
+          1298.85,
+          1299.15
+        ]
+      ],
+      "lambda_values": [
+        0.49,
+        0.48
+      ],
+      "matrix": [
+        [
+          0.23002369765708092,
+          0.6128880770140943
+        ],
+        [
+          0.23702487297168526,
+          0.6190370248537128
+        ]
+      ],
+      "matrix_refinement_64_to_256_max_abs": 2.9976021664879227e-15,
+      "mu": 0.01,
+      "pulse": [
+        1.7e-05,
+        -2.4e-05
+      ],
+      "quadrature_order": 128
+    },
+    "passed": true,
+    "rejection_checks": {
+      "affine_degenerate_error": "axial affine matrix is degenerate: determinant=0",
+      "affine_degenerate_rejected": true,
+      "energy_degenerate_error": "K_p, K_bump and mu must obey the source nonnegative energy ranges",
+      "energy_degenerate_rejected": true,
+      "unreachable_error": "energy target is unreachable on the requested interval: endpoint_values=(0.19804500000000191, 0.352080000000002)",
+      "unreachable_rejected": true
+    }
+  },
+  "checks_passed": true,
+  "equations": {
+    "angular": "(7.21), normalized exactly as (7.23)",
+    "axial_energy": "(7.34)",
+    "axial_linear": "(7.31)"
+  },
+  "scope": {
+    "actual_outer_closed": false,
+    "actual_source_outer_moment_data_bound": false,
+    "checks_are_manufactured_math_nucleus_only": true,
+    "open_dependencies": [
+      "Bind A_mu, B_mu, D_mu, r(Z), and s_H(Z) from the actual source outer profile.",
+      "Bind (7.31) matrix/base/pulse and (7.34) Gram/target data from the same profile.",
+      "Resolve the source waiting-length root and outer interval joins before any global claim."
+    ],
+    "paper_outer_profile_claim": false,
+    "waiting_length_root_bound": false
+  },
+  "source": "https://arxiv.org/html/2609.35406v1",
+  "source_definitions": {
+    "gamma_end_bumps": "(4.12), (7.28)--(7.29), centers t=13/mu-3 and 13/mu-1",
+    "normalized_bump": "(4.1), with outer choice ell=3/20 in (4.13)"
+  },
+  "source_sections": "Part I Sections 4.1, 4.12--4.13, 7.4--7.5, equations (4.1), (7.21), (7.23), (7.31)--(7.35)",
+  "source_version": "2609.35406v1",
+  "stable_axial": {
+    "cutoff": 1e-12,
+    "fixture": "fixed Decimal source-row targets; no velocity or residual fitting",
+    "float_rhs_error": "base[0] must be supplied as Decimal or decimal string when mu<1e-12; a binary float cannot recover the divided RHS",
+    "float_rhs_rejected_below_cutoff": true,
+    "passed": true,
+    "rows": [
+      {
+        "absolute_gamma_centers": [
+          1299999997.0,
+          1299999999.0
+        ],
+        "absolute_gamma_supports": [
+          [
+            1299999996.85,
+            1299999997.15
+          ],
+          [
+            1299999998.85,
+            1299999999.15
+          ]
+        ],
+        "absolute_geometry_supported": true,
+        "base_decimal": [
+          "0.0002000000000000000000000000000000000001",
+          "0.0001999875000000000000000000000"
+        ],
+        "condition": 4.319371230402331,
+        "direct_divided_row_replay_error": 1.9243834525894954e-08,
+        "direct_matrix_row0_error": 2.220446049250313e-16,
+        "direct_source_residual_max": 4.855870480019453e-17,
+        "gamma_offset_centers": [
+          -3.0,
+          -1.0
+        ],
+        "gamma_offset_supports": [
+          [
+            -3.15,
+            -2.85
+          ],
+          [
+            -1.15,
+            -0.85
+          ]
+        ],
+        "lambda_values": [
+          0.49999999,
+          0.49999998
+        ],
+        "matrix": [
+          [
+            0.22322940720580908,
+            0.6068004290492268
+          ],
+          [
+            -0.6692912078410582,
+            -0.6057212094864259
+          ]
+        ],
+        "mu": 1e-08,
+        "normalized_determinant": 0.27091140555118887,
+        "passed": true,
+        "pulse_decimal": [
+          "-0.0000170000000000000000000000000000000001",
+          "-0.00001699250000000000000000000000"
+        ],
+        "rhs_base_fixture_error": 7.078782005009998e-13,
+        "rhs_exact": false,
+        "rhs_pulse_fixture_error": 4.951594689828198e-14,
+        "scaled_base": [
+          0.0002,
+          1.2500000000007079
+        ],
+        "scaled_pulse": [
+          -1.7e-05,
+          -0.7499999999999505
+        ],
+        "scaled_residual_at_a_1_07": [
+          -6.898236322439022e-18,
+          -1.1102230246251565e-16
+        ],
+        "scaled_residual_max": 1.1102230246251565e-16,
+        "source_determinant_estimate": -2.7091140555118887e-09,
+        "source_determinant_over_mu": -0.27091140555118887,
+        "source_determinant_relation_error": 8.750033152052297e-18,
+        "source_rows_replay": "ordinary float rows available"
+      },
+      {
+        "absolute_gamma_centers": null,
+        "absolute_gamma_supports": null,
+        "absolute_geometry_supported": false,
+        "base_decimal": [
+          "0.0002000000000000000000000000000000000001",
+          "0.0001999999999999999999999998750"
+        ],
+        "condition": 4.319371278118983,
+        "direct_divided_row_replay_error": null,
+        "direct_matrix_row0_error": null,
+        "direct_source_residual_max": null,
+        "gamma_offset_centers": [
+          -3.0,
+          -1.0
+        ],
+        "gamma_offset_supports": [
+          [
+            -3.15,
+            -2.85
+          ],
+          [
+            -1.15,
+            -0.85
+          ]
+        ],
+        "lambda_values": [
+          0.5,
+          0.5
+        ],
+        "matrix": [
+          [
+            0.2232294005128972,
+            0.6068004229920148
+          ],
+          [
+            -0.6692911777289023,
+            -0.605721200384399
+          ]
+        ],
+        "mu": 1e-28,
+        "normalized_determinant": 0.2709113893109598,
+        "passed": true,
+        "pulse_decimal": [
+          "-0.0000170000000000000000000000000000000001",
+          "-0.00001699999999999999999999992500"
+        ],
+        "rhs_base_fixture_error": 1.000088900582341e-12,
+        "rhs_exact": true,
+        "rhs_pulse_fixture_error": 9.999778782798785e-13,
+        "scaled_base": [
+          0.0002,
+          1.250000000001
+        ],
+        "scaled_pulse": [
+          -1.7e-05,
+          -0.750000000001
+        ],
+        "scaled_residual_at_a_1_07": [
+          4.6363195400911383e-17,
+          -1.1102230246251565e-16
+        ],
+        "scaled_residual_max": 1.1102230246251565e-16,
+        "source_determinant_estimate": -2.709113893109598e-29,
+        "source_determinant_over_mu": -0.2709113893109598,
+        "source_determinant_relation_error": null,
+        "source_rows_replay": "scaled residual only; absolute float supports intentionally unavailable"
+      }
+    ]
+  }
+}

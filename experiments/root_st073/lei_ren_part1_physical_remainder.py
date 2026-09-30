@@ -39,11 +39,14 @@ class PhysicalRemainder:
         pressure=lambda x: self.field.pressure_from_tau(*x,tau)
         v=velocity(p)
         gradient=np.empty((3,3)); pressure_gradient=np.empty(3); lap=np.zeros(3)
+        axial_lap=np.zeros(3)
         for j in range(3):
             e=np.zeros(3); e[j]=h
             minus2,minus,plus,plus2=[velocity(p+k*e) for k in (-2,-1,1,2)]
             gradient[:,j]=(minus2-8*minus+8*plus-plus2)/(12*h)
-            lap+=(-plus2+16*plus-30*v+16*minus-minus2)/(12*h*h)
+            directional_lap=(-plus2+16*plus-30*v+16*minus-minus2)/(12*h*h)
+            lap+=directional_lap
+            if j==2: axial_lap=directional_lap
             pressure_gradient[j]=(pressure(p-2*e)-8*pressure(p-e)
                                   +8*pressure(p+e)-pressure(p+2*e))/(12*h)
         samples=[self.field.velocity_from_tau(*p,tau+k*dt) for k in (-2,-1,1,2)]
@@ -57,8 +60,14 @@ class PhysicalRemainder:
         div_cyl=np.array([0.,pair_r[0]+2*pair[0]/r,pair_r[1]+pair[1]/r])
         residual_cyl=np.array([er@residual,et@residual,residual[2]])
         remainder=residual_cyl+div_cyl
+        axial_viscosity_cartesian=-self.field.nu*axial_lap
+        axial_viscosity=np.array([er@axial_viscosity_cartesian,
+                                 et@axial_viscosity_cartesian,axial_viscosity_cartesian[2]])
         return {'R_B':residual_cyl.tolist(),'D_T_B':div_cyl.tolist(),
                 'E_B':remainder.tolist(),'divergence':float(np.trace(gradient)),
+                'axial_viscosity_residual':axial_viscosity.tolist(),
+                'E_B_without_axial_viscosity':(remainder-axial_viscosity).tolist(),
+                'axial_viscosity_is_removed_only_for_diagnostic':True,
                 'radial_remainder_equals_radial_residual':bool(remainder[0]==residual_cyl[0]),
                 'spatial_step':h,'tau_step':dt,
                 'forcing':'zero diagnostic forcing',

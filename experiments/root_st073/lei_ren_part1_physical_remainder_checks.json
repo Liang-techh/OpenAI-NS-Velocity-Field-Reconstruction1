@@ -148,6 +148,17 @@
             7.676498286450695
           ],
           "divergence": 1.0666656891089588e-08,
+          "axial_viscosity_residual": [
+            -1.4134834584617986,
+            -1.794827357992233,
+            7.676499642547684
+          ],
+          "E_B_without_axial_viscosity": [
+            1.3430912534993575,
+            6.909346472738775e-08,
+            -1.3560969893688934e-06
+          ],
+          "axial_viscosity_is_removed_only_for_diagnostic": true,
           "radial_remainder_equals_radial_residual": true,
           "spatial_step": 4.523312730319007e-07,
           "tau_step": 2.5e-05,
@@ -174,6 +185,17 @@
             7.677466303610669
           ],
           "divergence": 2.8859005851700203e-08,
+          "axial_viscosity_residual": [
+            -1.4138454322229488,
+            -1.794826857233131,
+            7.677489700698888
+          ],
+          "E_B_without_axial_viscosity": [
+            1.3430896981127212,
+            2.9783501354074815e-07,
+            -2.339708821885722e-05
+          ],
+          "axial_viscosity_is_removed_only_for_diagnostic": true,
           "radial_remainder_equals_radial_residual": true,
           "spatial_step": 2.2616563651595034e-07,
           "tau_step": 1.25e-05,
@@ -187,7 +209,9 @@
       "refinement_max_abs_difference": {
         "R_B": 0.0009680161560368106,
         "D_T_B": 1.0039376567015305e-09,
-        "E_B": 0.0009680171599741882
+        "E_B": 0.0009680171599741882,
+        "axial_viscosity_residual": 0.0009900581512036766,
+        "E_B_without_axial_viscosity": 2.2040991229488327e-05
       }
     },
     {
@@ -218,6 +242,17 @@
             1.624332612859547e-11
           ],
           "divergence": -1.5332179970073412e-13,
+          "axial_viscosity_residual": [
+            -0.005646016871622508,
+            -3.4040571119265532,
+            -0.0
+          ],
+          "E_B_without_axial_viscosity": [
+            -0.0013028209025559125,
+            -9.302678627420846e-10,
+            1.624332612859547e-11
+          ],
+          "axial_viscosity_is_removed_only_for_diagnostic": true,
           "radial_remainder_equals_radial_residual": true,
           "spatial_step": 7.0710678118654756e-06,
           "tau_step": 2.5e-05,
@@ -244,6 +279,17 @@
             2.297831369624248e-11
           ],
           "divergence": -8.176792576364278e-14,
+          "axial_viscosity_residual": [
+            -0.005646024735702267,
+            -3.4040571128083705,
+            -0.0
+          ],
+          "E_B_without_axial_viscosity": [
+            -0.0013028214044086914,
+            -3.127435643790477e-09,
+            2.297831369624248e-11
+          ],
+          "axial_viscosity_is_removed_only_for_diagnostic": true,
           "radial_remainder_equals_radial_residual": true,
           "spatial_step": 3.5355339059327378e-06,
           "tau_step": 1.25e-05,
@@ -257,7 +303,9 @@
       "refinement_max_abs_difference": {
         "R_B": 8.365932537869603e-09,
         "D_T_B": 8.473999280056432e-12,
-        "E_B": 8.365932537869603e-09
+        "E_B": 8.365932537869603e-09,
+        "axial_viscosity_residual": 7.864079758918008e-09,
+        "E_B_without_axial_viscosity": 2.1971677810483925e-09
       }
     },
     {
@@ -288,6 +336,17 @@
             61.332073062804064
           ],
           "divergence": -7.098890364432009e-09,
+          "axial_viscosity_residual": [
+            -11.27855638454837,
+            -14.338724692196754,
+            61.33210607208357
+          ],
+          "E_B_without_axial_viscosity": [
+            10.74473139147424,
+            -3.0978329057518295e-07,
+            -3.300927950533605e-05
+          ],
+          "axial_viscosity_is_removed_only_for_diagnostic": true,
           "radial_remainder_equals_radial_residual": true,
           "spatial_step": 2.2616563651595034e-07,
           "tau_step": 6.25e-06,
@@ -314,6 +373,17 @@
             61.3244501628246
           ],
           "divergence": 7.48564730201906e-08,
+          "axial_viscosity_residual": [
+            -11.27535469158669,
+            -14.338727497154267,
+            61.32454645017363
+          ],
+          "E_B_without_axial_viscosity": [
+            10.744697694010426,
+            -5.994611722570653e-07,
+            -9.628734903088798e-05
+          ],
+          "axial_viscosity_is_removed_only_for_diagnostic": true,
           "radial_remainder_equals_radial_residual": true,
           "spatial_step": 1.1308281825797517e-07,
           "tau_step": 3.125e-06,
@@ -327,7 +397,9 @@
       "refinement_max_abs_difference": {
         "R_B": 0.007622908022113961,
         "D_T_B": 8.042642998990724e-09,
-        "E_B": 0.007622899979466524
+        "E_B": 0.007622899979466524,
+        "axial_viscosity_residual": 0.007559621909940972,
+        "E_B_without_axial_viscosity": 6.327806952555193e-05
       }
     },
     {
@@ -358,6 +430,17 @@
             1.552415418437647e-10
           ],
           "divergence": -6.94999613415348e-13,
+          "axial_viscosity_residual": [
+            -0.045043395865048304,
+            -27.194730928733108,
+            -0.0
+          ],
+          "E_B_without_axial_viscosity": [
+            -0.010422566757881661,
+            -1.1145417033731064e-08,
+            1.552415418437647e-10
+          ],
+          "axial_viscosity_is_removed_only_for_diagnostic": true,
           "radial_remainder_equals_radial_residual": true,
           "spatial_step": 3.5355339059327378e-06,
           "tau_step": 6.25e-06,
@@ -384,6 +467,17 @@
             2.746033955780547e-10
           ],
           "divergence": -3.270717030545711e-13,
+          "axial_viscosity_residual": [
+            -0.04504181194686651,
+            -27.194730824187104,
+            -0.0
+          ],
+          "E_B_without_axial_viscosity": [
+            -0.010422576785615874,
+            -1.915422487286378e-08,
+            2.746033955780547e-10
+          ],
+          "axial_viscosity_is_removed_only_for_diagnostic": true,
           "radial_remainder_equals_radial_residual": true,
           "spatial_step": 1.7677669529663689e-06,
           "tau_step": 3.125e-06,
@@ -397,7 +491,9 @@
       "refinement_max_abs_difference": {
         "R_B": 1.573890447581494e-06,
         "D_T_B": 1.32149513554225e-10,
-        "E_B": 1.573890447581494e-06
+        "E_B": 1.573890447581494e-06,
+        "axial_viscosity_residual": 1.5839181817939307e-06,
+        "E_B_without_axial_viscosity": 1.0027734212436634e-08
       }
     },
     {
@@ -428,6 +524,17 @@
             489.95876263592504
           ],
           "divergence": 2.0613009610315203e-07,
+          "axial_viscosity_residual": [
+            -89.97178206164118,
+            -114.55089608698269,
+            489.95887815446906
+          ],
+          "E_B_without_axial_viscosity": [
+            85.9576955155778,
+            -2.2428638004612367e-06,
+            -0.00011551854402114259
+          ],
+          "axial_viscosity_is_removed_only_for_diagnostic": true,
           "radial_remainder_equals_radial_residual": true,
           "spatial_step": 1.1308281825797517e-07,
           "tau_step": 1.5625e-06,
@@ -454,6 +561,17 @@
             490.0665918017071
           ],
           "divergence": -4.850548975809943e-07,
+          "axial_viscosity_residual": [
+            -90.01465639535411,
+            -114.55082147652598,
+            490.0674965095201
+          ],
+          "E_B_without_axial_viscosity": [
+            85.95682932983048,
+            6.461184540285103e-06,
+            -0.0009047078129924557
+          ],
+          "axial_viscosity_is_removed_only_for_diagnostic": true,
           "radial_remainder_equals_radial_residual": true,
           "spatial_step": 5.6541409128987585e-08,
           "tau_step": 7.8125e-07,
@@ -467,7 +585,9 @@
       "refinement_max_abs_difference": {
         "R_B": 0.10782917786838198,
         "D_T_B": 1.2086325569318486e-08,
-        "E_B": 0.10782916578205004
+        "E_B": 0.10782916578205004,
+        "axial_viscosity_residual": 0.10861835505102135,
+        "E_B_without_axial_viscosity": 0.0008661857473128975
       }
     },
     {
@@ -498,6 +618,17 @@
             9.967462410997996e-10
           ],
           "divergence": -1.3082868122182845e-12,
+          "axial_viscosity_residual": [
+            -0.35934141403200687,
+            -217.25645609760312,
+            -0.0
+          ],
+          "E_B_without_axial_viscosity": [
+            -0.08338051555931669,
+            -3.030942252735258e-08,
+            9.967462410997996e-10
+          ],
+          "axial_viscosity_is_removed_only_for_diagnostic": true,
           "radial_remainder_equals_radial_residual": true,
           "spatial_step": 1.7677669529663689e-06,
           "tau_step": 1.5625e-06,
@@ -524,6 +655,17 @@
             1.6305485850409696e-09
           ],
           "divergence": 9.814371537686384e-13,
+          "axial_viscosity_residual": [
+            -0.35935652231700027,
+            -217.256457490933,
+            -0.0
+          ],
+          "E_B_without_axial_viscosity": [
+            -0.08338064389081318,
+            -1.9215406155126402e-08,
+            1.6305485850409696e-09
+          ],
+          "axial_viscosity_is_removed_only_for_diagnostic": true,
           "radial_remainder_equals_radial_residual": true,
           "spatial_step": 8.838834764831844e-07,
           "tau_step": 7.8125e-07,
@@ -537,7 +679,9 @@
       "refinement_max_abs_difference": {
         "R_B": 1.5236616489888721e-05,
         "D_T_B": 5.423359539236117e-10,
-        "E_B": 1.5236616489888721e-05
+        "E_B": 1.5236616489888721e-05,
+        "axial_viscosity_residual": 1.5108284993403664e-05,
+        "E_B_without_axial_viscosity": 1.2833149648505682e-07
       }
     }
   ],
@@ -579,6 +723,30 @@
       "normalized_tau_exponent": 0.001954516296586085
     },
     {
+      "R": 0.002,
+      "Z": 0.15,
+      "quantity": "axial_viscosity_residual",
+      "raw_norm_tau_exponent": -1.4990189085228365,
+      "norm_divided_by_leading_momentum_scale": [
+        3.6554688798654333,
+        3.6445880376389255,
+        3.6354453387911065
+      ],
+      "normalized_tau_exponent": 0.0019810914771628382
+    },
+    {
+      "R": 0.002,
+      "Z": 0.15,
+      "quantity": "E_B_without_axial_viscosity",
+      "raw_norm_tau_exponent": -1.499996175975117,
+      "norm_divided_by_leading_momentum_scale": [
+        0.6129170204192701,
+        0.6120667925497848,
+        0.6112135268535407
+      ],
+      "normalized_tau_exponent": 0.0010038240248825057
+    },
+    {
       "R": 1.0,
       "Z": -0.3,
       "quantity": "R_B",
@@ -613,17 +781,44 @@
         1.7200073442520876
       ],
       "normalized_tau_exponent": 0.002000001375687406
+    },
+    {
+      "R": 1.0,
+      "Z": -0.3,
+      "quantity": "axial_viscosity_residual",
+      "raw_norm_tau_exponent": -1.4989999987708273,
+      "norm_divided_by_leading_momentum_scale": [
+        1.729570363790568,
+        1.724781609409922,
+        1.7200061255492378
+      ],
+      "normalized_tau_exponent": 0.0020000012291720125
+    },
+    {
+      "R": 1.0,
+      "Z": -0.3,
+      "quantity": "E_B_without_axial_viscosity",
+      "raw_norm_tau_exponent": -1.5000003201331304,
+      "norm_divided_by_leading_momentum_scale": [
+        0.0006619507594214678,
+        0.0006610340886154179,
+        0.000660118570070661
+      ],
+      "normalized_tau_exponent": 0.000999679866868814
     }
   ],
   "sampled_component_maxima": {
     "R_B": 490.06669328781436,
     "D_T_B": 2.2081917930133512,
-    "E_B": 490.0665918017071
+    "E_B": 490.0665918017071,
+    "axial_viscosity_residual": 490.0674965095201,
+    "E_B_without_axial_viscosity": 85.95682932983048
   },
   "radial_identity_passed": true,
   "scope": "Six fixed-sector points and two finite-difference steps. Maxima are sampled only; no volume L2, global norms, flatness, cone or corrected-field claim.",
   "volume_L2_measured": false,
   "flatness_established": false,
+  "axial_viscosity_breakdown_is_not_a_field_correction": true,
   "whole_cone_validated": false,
   "full_PDE_gate_passed": false
 }

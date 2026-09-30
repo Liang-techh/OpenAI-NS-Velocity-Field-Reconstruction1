@@ -1,3 +1,31 @@
+## Source outer replacement and first correction inputs — 2026-09-29
+
+Read `LEI_REN_SOURCE_OUTER.md`. The actual leading remainder now has an
+axial-viscosity breakdown. At the sampled regular-core point its angular
+and axial components are predominantly the source axial-viscosity terms;
+diagnostic subtraction leaves the radial source rather than a flat field.
+`lei_ren_part1_first_order_sources.py/.json` materializes Omega0 and the
+known first-order forcing from the SAME core, with analytic radial polynomial
+jets and independent physical comparisons at three scales. First-order
+F1, Uz1 and P1 remain unsolved and must be coupled, extended and moment repaired.
+
+The source outer schedule and exact Section 7 closure kernels are separate
+from the old weak-anchor field. They require actual moment/pulse binding,
+waiting-length closure and a new regular common-pressure core. No automatic
+inheritance of source theorem constants or current-field diagnostics is allowed.
+
+Source velocity-schedule checks now pass, including a 212-digit checkpoint
+case preserving the 100-unit flattening and 3-unit heat connection after
+an enormous logarithmic radius. Same-candidate normalized backward pressure
+has a separate omitted-tail bound. The pre-heat waiting equation is also
+numerically solved: declared example tau_wait=82.448458, independently
+replayed normalized angular defect 2.68e-10. This waiting length is distinct
+from physical time-to-blowup tau. The source axial closure also has stable
+row scaling down to mu=1e-28 (condition about 4.32), preserving precise RHS
+data and stage-local gamma offsets. Actual heat bumps, axial pulse moments,
+all-five-moment binding and a new regular shared-pressure core remain open.
+The source demonstration does not replace the callable field's h=.001 manifest.
+
 ## Actual stress path and continuous-moment blocker — 2026-09-29
 
 Continuous axial repair now re-solves the interpolated moment system at

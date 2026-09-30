@@ -1,5 +1,15 @@
 ## Priority: continuous moments, then connection shear — 2026-09-29
 
+Latest source-route outputs are in `LEI_REN_SOURCE_OUTER.md`:
+source velocity schedule, normalized backward pressure and pre-heat waiting
+root are implemented. Exact angular/axial algebra and source bump integrals
+are available, with stable tiny-mu row scaling. Next bind actual angular
+heat defects and axial pulse integrals to those kernels, rebuild common
+pressure/core, and measure the actual relaxed/admissible cones. These
+outputs do not close all five moments or replace the retained physical field.
+Actual first-order core forcing is also materialized; next solve coupled
+F1, Uz1, P1, not merely subtract viscosity from diagnostic vectors.
+
 This queue supersedes the older short-join route below.
 
 - [x] Implement profile-derived inertial stress and shear from actual cumulative
