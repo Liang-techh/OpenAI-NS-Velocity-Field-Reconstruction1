@@ -34,6 +34,42 @@ class ContinuousEndCorrection:
                        for c,center in zip(self.c,(-3,-1)))
 
 
+class ContinuousAxialCorrection(ContinuousEndCorrection):
+    """One pulse/end provider for values and normalized cumulative row means.
+
+    Incoming rows are supplied explicitly; their uncertainty is not enclosed.
+    This is a component adapter, not the physical exterior installation.
+    """
+    def __init__(self,receipt,base_rows):
+        super().__init__(receipt)
+        self.pulse=ContinuousAxialPulse(precision=self.precision)
+        with mp.workdps(self.precision):
+            self.a=mp.mpf(receipt['a_p'])
+            self.base=[from_signed_log(x) for x in base_rows]
+
+    def pulse_value_jet(self,xi):
+        with mp.workdps(self.precision):
+            return {key:self.a*value for key,value in self.pulse.value_jet(xi).items()}
+
+    def cumulative_row(self,row,*,xi=None,end_offset=None):
+        if (xi is None)==(end_offset is None):
+            raise ValueError('Supply pulse xi or end-bump offset')
+        with mp.workdps(self.precision):
+            if row not in (1,2):raise ValueError('Expected row 1 or 2')
+            atom=self.pulse.partial_row(self.mu,row,xi) if xi is not None else self.pulse.full_row(self.mu,row)
+            integral=(mp.exp(mp.mpf(atom['log_normalized_pulse_integral']))
+                      if 'log_normalized_pulse_integral' in atom else mp.mpf(0))
+            end=self.weighted_primitive(row,end_offset) if end_offset is not None else mp.mpf(0)
+            mean=self.base[row-1]+self.a*integral+end
+            logbound=(mp.log(self.a)+mp.mpf(atom['log_normalized_pulse_integral'])+
+                      mp.mpf(atom['log_relative_omitted_positive_bound'])
+                      if 'log_relative_omitted_positive_bound' in atom else None)
+            return dict(nominal=signed_log(mean,self.precision),
+                log_pulse_omitted_positive_bound=mp.nstr(logbound,self.precision) if logbound is not None else None,
+                incoming_uncertainty_enclosed=False,quadrature_enclosure_certified=False,
+                terminal_mean_forced_zero=False)
+
+
 def solve_continuous(source, *, precision=200, energy_precision=100):
     from lei_ren_part1_paper_continuous_pulse_energy import continuous_pulse_energy
     with mp.workdps(precision):
@@ -92,6 +128,9 @@ def run():
     source=json.loads(Path(__file__).with_name('lei_ren_part1_paper_seeded_shared_candidate.json').read_text())
     report=solve_continuous(source)
     correction=ContinuousEndCorrection(report)
+    full_component=ContinuousAxialCorrection(report,source['axial']['linear_rhs_inputs']['base'])
+    report['continuous_component_cumulative_rows_after_support']=[
+        full_component.cumulative_row(row,end_offset=0) for row in (1,2)]
     with mp.workdps(report['algebra_precision']):
         offset=mp.mpf('-3.0375');jet=correction.value_jet(offset)
         lam=mp.mpf('.5')-correction.mu

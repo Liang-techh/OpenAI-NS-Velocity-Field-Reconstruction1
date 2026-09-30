@@ -76,7 +76,7 @@ class ContinuousAxialPulse:
                 quadrature_enclosure_certified=False)
 
     def partial_row(self,mu,row,xi,*,band=48):
-        """Same weighted primitive, resolved inside the saddle window.
+        """Same weighted primitive on plateau and cutoff, with omitted bounds.
 
         The positive contribution before the window is bounded, not erased.
         Outside that window an endpoint-specific evaluator is still required.
@@ -92,6 +92,8 @@ class ContinuousAxialPulse:
                 result['derivative']=mp.mpf(0)
                 return result
             lam=mp.mpf('.5')-row*mu;k=lam/mu
+            if xi<=mp.mpf('.02'):
+                raise ValueError('Startup weighted primitive requires endpoint evaluator')
             if mp.mpf('.02')<xi<=10:
                 # Exact antiderivative on the plateau; the positive startup
                 # atom is bounded explicitly, not claimed identically zero.
@@ -110,8 +112,15 @@ class ContinuousAxialPulse:
             if band*w>=mp.mpf('.25'):
                 raise ValueError('Band exceeds centered small-mu domain')
             lower=((11-xi)/u0-1)/w
-            if not -band<lower<band:
-                raise ValueError('Partial primitive outside resolved saddle window')
+            if lower<=-band:
+                result=self.full_row(mu,row,band=band)
+                result.update(region='after_saddle_window',
+                    xi=mp.nstr(xi,self.precision),
+                    log_derivative=mp.nstr(-k*(13-xi)+mp.log(self.value_jet(xi)['value'])-mp.log(mu),self.precision),
+                    continuous_definition='Integral through xi; full central window plus bounded positive remainder')
+                return result
+            if lower>=band:
+                return self._cutoff_prefix(mu,k,xi,band)
             def centered(x):
                 v=1+x*w;u=u0*v
                 difference=x*x*(2*v+1)/(6*v*v)
@@ -131,6 +140,46 @@ class ContinuousAxialPulse:
                 xi=mp.nstr(xi,self.precision),centered_lower=mp.nstr(lower,self.precision),
                 quadrature_enclosure_certified=False,
                 continuous_definition='Integral of value_jet over [0,xi] with the full-row weight')
+
+    def _cutoff_prefix(self,mu,k,xi,band):
+        """Resolve an increasing weighted cutoff integral at its upper endpoint."""
+        u=11-xi;extent=max(mp.mpf(64),band)
+        n=lambda x:mp.nstr(x,self.precision)
+        if u>=mp.mpf('.5'):
+            # In this half of the cutoff gp is O(1); exponential weight sets
+            # the endpoint width. A global gp<=11 gives the omitted bound.
+            total=mp.quad(lambda s:mp.exp(-s)*self.value_jet(xi-s/k)['value'],
+                          [0,4,16,extent])
+            logvalue=-k*(13-xi)-mp.log(mu*k)+mp.log(total)
+            bounds=[-k*(13-xi)-mp.log(mu*k)+mp.log(11)-extent]
+        else:
+            slope=k-2/u**3
+            if slope<=0:raise ArithmeticError('Endpoint branch crossed saddle')
+            if u+extent/slope>=mp.mpf('.5'):
+                raise ArithmeticError('Endpoint window exceeds flat cutoff half')
+            def scaled(s):
+                du=s/slope;v=u+du
+                # Stable reciprocal-square difference, avoiding large close
+                # exponent subtraction for the actual extreme-mu candidate.
+                phase=-k*du+du*(2*u+du)/(u*u*v*v)
+                smooth=1/(1-v)**2
+                return (mp.mpf('10.99')-v)*mp.exp(phase+smooth)/(1+mp.exp(-1/v**2+smooth))
+            total=mp.quad(scaled,[0,4,16,extent])
+            common=-2*k-k*u-1/u**2-mp.log(mu)
+            logvalue=common-mp.log(slope)+mp.log(total)
+            # ku+1/u^2 is convex with derivative >=slope for v>=u.
+            # On v<=.5, the logistic smooth exponent is <=4.
+            bounds=[common+mp.log(11)+4-mp.log(slope)-extent,
+                    mp.log(mp.mpf('5.5')/mu)-mp.mpf('2.5')*k,
+                    mp.log(11/(mu*k))-3*k]
+        largest=max(bounds)
+        logbound=largest+mp.log(sum(mp.exp(x-largest) for x in bounds))
+        return dict(log_normalized_pulse_integral=n(logvalue),
+            log_derivative=n(-k*(13-xi)+mp.log(self.value_jet(xi)['value'])-mp.log(mu)),
+            log_relative_omitted_positive_bound=n(logbound-logvalue),
+            log_omitted_piece_bounds=[n(x) for x in bounds],xi=n(xi),
+            region='cutoff_endpoint',quadrature_enclosure_certified=False,
+            continuous_definition='Integral through xi of shared pulse; endpoint quadrature plus positive omitted-piece bound')
 
 
 def run():
@@ -168,15 +217,32 @@ def run():
             ratio=(mp.exp(mp.mpf(right['log_normalized_pulse_integral'])-scale)-
                 mp.exp(mp.mpf(left['log_normalized_pulse_integral'])-scale))/(2*step)
             plateau_errors.append(mp.nstr(abs(ratio-1),60))
+        endpoint_x=11-2*mp.root(2/((mp.mpf('.5')-diagnostic_mu)/diagnostic_mu),3)
+        endpoint=pulse.partial_row(diagnostic_mu,1,endpoint_x,band=16)
+        endpoint_errors=[]
+        for step in (mp.mpf('1e-17'),mp.mpf('5e-18')):
+            left=pulse.partial_row(diagnostic_mu,1,endpoint_x-step,band=16)
+            right=pulse.partial_row(diagnostic_mu,1,endpoint_x+step,band=16)
+            scale=mp.mpf(endpoint['log_derivative'])
+            ratio=(mp.exp(mp.mpf(right['log_normalized_pulse_integral'])-scale)-
+                mp.exp(mp.mpf(left['log_normalized_pulse_integral'])-scale))/(2*step)
+            endpoint_errors.append(mp.nstr(abs(ratio-1),60))
+        candidate_k=(mp.mpf('.5')-mu)/mu
+        candidate_cutoff=[pulse.partial_row(mu,1,x) for x in
+            (mp.mpf('10.25'),mp.mpf('10.75'),11-2*mp.root(2/candidate_k,3),
+             11-mp.root(2/candidate_k,3)/2)]
         report=dict(rows=rows,value_jet_replay_relative_error=mp.nstr(abs(derivative/jet['derivative']-1),60),
             partial_derivative_diagnostic_mu=str(diagnostic_mu),
             partial_derivative_relative_errors=partial_errors,
             plateau_primitive_derivative_relative_errors=plateau_errors,
             plateau_primitive_receipt=plateau,
+            cutoff_endpoint_derivative_relative_errors=endpoint_errors,
+            cutoff_endpoint_primitive_receipt=endpoint,
+            actual_candidate_cutoff_partial_receipts=candidate_cutoff,
             shared_continuous_pulse_definition=True,
-            partial_weighted_primitives_implemented='Plateau, resolved saddle window and exact support endpoints',
+            partial_weighted_primitives_implemented='Plateau, full cutoff via endpoint/saddle/after-window branches and exact support endpoints',
             installed_in_global_profile=False,finite_energy_certified=False,
-            scope='MP pointwise/full-row, analytic plateau and saddle-window partial primitives with positive omitted-piece bounds; startup/off-window cutoff evaluation, energy atom and global installation remain open.')
+            scope='MP pointwise/full-row, plateau and cutoff partial primitives with positive omitted-piece bounds; startup weighted primitive and global installation remain open. Continuous energy atom exists in separate provider.')
         Path(__file__).with_suffix('.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
         print(json.dumps(dict(log_refinement=[r['log_precision_refinement'] for r in rows],
             log_input_change=[r['log_change_from_float_centered_input'] for r in rows],

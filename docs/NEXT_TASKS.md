@@ -1,3 +1,27 @@
+## Continuous cutoff primitive and shared cumulative component - 2026-09-30
+
+Completed cutoff partial integral branches for xi in (10,11): endpoint,
+saddle and after-window evaluation, with positive omitted-piece bounds.
+Four actual-candidate positions run; independent endpoint derivative replay
+refines 3.19e-12 -> 7.98e-13 when step is halved. Startup (0,.02] remains
+unsupported explicitly. Quadrature error is not enclosed by omitted bounds.
+
+ContinuousAxialCorrection now uses the solved pulse/end coefficients for
+point values and normalized cumulative rows, with the SAME continuous atoms.
+Actual terminal nominal values remain nonzero; no mean/tail reset occurs.
+This component is not yet installed in the global physical field.
+
+Injection audit: preserve original schedule/angular/tail/pressure identities;
+carry the entire seeded incoming receipt, not just linear base rows. Its
+row_normalization is seeded but dimensionless_integrals.I_z remains unseeded.
+Pre-Rp mass seed must be added once. Convert stored full-row pulse weight to
+current-point weight by exp[lambda*(13-xi)/mu]. Replace velocity and primitive
+providers together. Details in continuous_axial_solve.md.
+
+Next complete startup weighted primitive and shared incoming/Z provenance;
+install consistent axial values/means, then establish terminal mean AND its
+Z derivative closure. Global finite energy and scale recursion remain open.
+
 ## Continuous pulse energy and re-solved axial correction - 2026-09-30
 
 Completed: continuous_pulse_energy.py/md/json and continuous_axial_solve.py/md/json
