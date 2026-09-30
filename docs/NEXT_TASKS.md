@@ -1,3 +1,12 @@
+## 2026-09-30 next: lift flat defect kernels and assemble five centered functions
+
+1. Use flat_shape_defect stable log(q), expm1 and saddle quadrature; the tiny-q derivative is q_prime/q, so an ordinary moment-tail cutoff cannot resolve this defect.
+2. Implement nth B sensitivities integral exp(-k ell)(m q)^n exp(m B q) d ell. Each order needs its own saddle, approximately (2 n T^2/k)^(1/3); do not reuse the first-order center.
+3. Compose these derivatives with the shared pressure/width B atoms and first B_Z data. Retain signed-log components and explicit unresolved errors; scalar leading evidence is insufficient.
+4. Merge centered axial sources from inner, reshape, reference and restoration intervals. On reference swirl, centered mixed integrand is rho^(8/5)(V-4Z), including u/Am=rho^(1/10).
+5. Build all five defects as functions of Z, check Section10 smallness/pressure inputs, then solve the five corrections and quadratic interaction without target overwrites.
+6. Global heat/energy/cone and n-dependent recursion remain subsequent requirements.
+
 ## 2026-09-30 next: cancellation-resistant five functional defects
 
 1. Use PressureWidthAxialRestore phase3 and all five moment_parts (inner_seed, reshape, reference, axial_restore, restored_reference), first Z and raw quadratic parts.
