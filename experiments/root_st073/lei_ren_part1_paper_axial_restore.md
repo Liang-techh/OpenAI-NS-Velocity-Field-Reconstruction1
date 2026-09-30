@@ -62,14 +62,18 @@ Next tasks:
 
 - [ ] Represent the tiny angular/pressure defects by stable signed logs,
   asymptotic integrals or enclosing intervals; do not substitute zero.
-- [ ] Build the fixed Section 10.8 matrix using beta with radius 1/40,
+- [x] Build the fixed equation (10.8) matrix using beta with radius 1/40,
   angular centers 5/4,3/2,7/4 and axial centers 5/4,7/4. Report its inverse
   norm, bump normalization, quadrature refinement and input uncertainty.
-- [ ] Solve the centered nonlinear moment map, including quadratic terms,
+  Implemented in inner_moment_map.py/json and inner_corrected_field.py/md/json.
+- [x] Solve the representative centered nonlinear moment map, including quadratic terms,
   propagate Z derivatives and unresolved defect intervals, and integrate
   the partial bump moments. Preserve P0 and derive Ur from the new Mz.
-- [ ] Check velocity positivity, negative angular shear and relaxed cones
-  inside every bump support, and remeasure terminal moment defects.
+- [x] Sample velocity positivity, negative angular shear and relaxed cones
+  inside every bump support, and replay representative terminal defects
+  with higher quadrature. Eleven local samples are recorded.
+- [ ] Establish uniform norm/cone and complete actual closure enclosures;
+  the representative numerical solve does not complete that certificate.
 - [ ] Join the corrected background to the supplied heat exterior, then
   validate energy and multiple physical time scales.
 

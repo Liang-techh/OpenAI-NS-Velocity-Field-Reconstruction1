@@ -1,3 +1,25 @@
+## Five-bump numerical correction and physical inner callable - 2026-09-30
+
+Read experiments/root_st073/lei_ren_part1_paper_inner_corrected_field.py/md/json
+and inner_moment_map.py/json. Equation (10.8) now solves all five representative
+nonlinear moment equations with analytic coefficient Z derivatives. Actual
+partial moments, pressure with unchanged P0, and continuity-derived Ur are
+connected to the shared core-to-Rh candidate. Unknown defect entries3/5 use
+explicit midpoint representatives and conditional value/Z intervals; they
+are not claimed zero. Exact normalized bump mass identities are retained.
+At Z=.3 eleven center/flank probes pass the relaxed cone. Higher quadrature
+replay of the terminal representative equations gives normalized residuals
+around 1e-33 or lower, distinct from the much smaller algebraic solve residual.
+The local mapped-divergence flank replay gives q div(u) about 1.57e-24.
+CorrectedInnerField.physical_field().velocity(x,y,z,t) now covers the actual
+regular core through Rh and raises outside the constructed domain.
+Next audit terminal fields/moments over Z, resolve or enclose input uncertainty,
+then append the supplied corrected outer/heat profile with actual mean
+identities. Tiny nonzero mass tails cannot imply finite energy. Uniform
+source constants, inner admissible collar, global moment closure/energy,
+temporal scale recursion and oscillatory-corrected residual remain open.
+Detailed ordered tasks are in inner_corrected_field.md.
+
 ## Axial reference restored; actual defect inputs recorded - 2026-09-30
 
 Read experiments/root_st073/lei_ren_part1_paper_axial_restore.py/md/json.

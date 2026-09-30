@@ -114,7 +114,7 @@ def reference_moments(R,u,z):
                 z_theta=16*z*z*R-mp.mpf('5')/12*R*u*u,p=mp.mpf('2.5')*u*u)
 
 
-def defect_receipt(provider,Z):
+def defect_receipt(provider,Z,*,digits=60):
     """Expose numerical subtraction losses; never certify zero from cancellation."""
     with mp.workdps(provider.precision):
         z=mp.mpf(Z); v=provider.evaluate_phase(3,z)
@@ -141,10 +141,20 @@ def defect_receipt(provider,Z):
         uold=mp.exp(-reshape.logC)/(1+z*z)
         targets0=reference_moments(mp.mpf(110),uold,z)
         delta0={k:old['moments'][k]-targets0[k] for k in targets0}
+        targets0Z=dict(theta=zeta*targets0['theta'],z=mp.mpf(440),
+            theta_z=4*targets0['theta']+4*z*zeta*targets0['theta'],
+            z_theta=32*z*110-mp.mpf('5')/6*110*uold*uold*zeta,
+            p=5*uold*uold*zeta)
+        delta0Z={k:old['momentsZ'][k]-targets0Z[k] for k in targets0Z}
         scales=(Rm,mp.sqrt(2)*Rm**mp.mpf('1.5')*Am,
                 mp.sqrt(2)*Rm**mp.mpf('1.5')*Am,Rm*Am*Am,Am*Am)
         d0=[delta0['z']/scales[0],(delta0['theta_z']-4*z*delta0['theta'])/scales[1],
             delta0['theta']/scales[2],(delta0['z_theta']-8*z*delta0['z'])/scales[3],delta0['p']/scales[4]]
+        d0Z=[delta0Z['z']/scales[0],
+            (delta0Z['theta_z']-4*delta0['theta']-4*z*delta0Z['theta'])/scales[1]-zeta*d0[1],
+            delta0Z['theta']/scales[2]-zeta*d0[2],
+            (delta0Z['z_theta']-8*delta0['z']-8*z*delta0Z['z'])/scales[3]-2*zeta*d0[3],
+            delta0Z['p']/scales[4]-2*zeta*d0[4]]
         alpha=mp.exp(mp.log(110)+reshape.T-mp.log(Rm)); s=mp.exp(-1)
         entry=provider._start(mp.nstr(z,reshape.precision))
         eta=abs(entry['Uz']-4*z)+abs(entry['UZ']-4)
@@ -156,7 +166,7 @@ def defect_receipt(provider,Z):
         # the conditional physical bound. Such entries are unresolved too.
         unresolved=[i+1 for i,(value,bound) in enumerate(zip(centered,bounds))
                     if value==0 or abs(value)>bound]
-        n=lambda value:mp.nstr(value,60)
+        n=lambda value:mp.nstr(value,digits)
         return dict(Z=n(z),centered_defect_order=['z','theta_z-4Ztheta','theta','z_theta-8Zz','p'],
             centered_defects_from_finite_subtraction=[n(x) for x in centered],
             centered_Z_derivatives_from_finite_subtraction=[n(x) for x in centeredZ],
@@ -164,6 +174,8 @@ def defect_receipt(provider,Z):
             finite_subtraction_is_not_an_exact_defect_certificate=True,
             zeros_are_not_certified=True,
             conditional_centered_value_bounds=[n(x) for x in bounds],
+            conditional_centered_C1_bounds_using_sampled_data=[n(abs(x)+abs(xz)+change)
+                for x,xz,change in zip(d0,d0Z,changes)],
             bound_source='Eq10.18 with pointwise eta; uniform C1 assumptions unproved',
             sampled_eta=n(eta),input_e_star_certified=False,
             pressure_axis_offset_preserved=True,moment_repair_complete=False)

@@ -39,8 +39,11 @@ Next work, in dependency order:
   are implemented; global source constants and interval certification remain open.
 - [x] Restore the numerical axial reference profile through Rh. See
   axial_restore.py/md/json for actual moment transport and defect diagnostics.
-- [ ] Implement five actual moment repairs,
-  carrying pressure and Ur from the same fields and continuity formula.
+- [x] Implement the numerical representative five-bump correction, carrying
+  pressure and Ur from the same fields and continuity formula. See
+  inner_corrected_field.py/md/json; unresolved entries retain explicit intervals.
+- [ ] Establish actual uniform moment closure with source norm and quadrature
+  enclosures before claiming the complete source moment repair.
 - [ ] Match that repaired background to the heat exterior and establish
   finite energy before claiming a global velocity field.
 - [ ] Replay multiple times in the physical chart, measuring core radii,
