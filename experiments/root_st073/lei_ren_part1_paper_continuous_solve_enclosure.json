@@ -1,0 +1,335 @@
+{
+  "reports": [
+    {
+      "panels": 1024,
+      "interval_precision": 80,
+      "conditional_unique_positive_branch": true,
+      "amplitude": {
+        "lower": {
+          "sign": 0,
+          "mantissa": "239525540998185684529683428053547079443390019170646453428454915516472374328752447",
+          "binary_exponent": -267,
+          "decimal_display": "1.010050266264900596082245555209641071562"
+        },
+        "upper": {
+          "sign": 0,
+          "mantissa": "479051081996371369059366856107094158886780038341292906856909831032944748657504897",
+          "binary_exponent": -268,
+          "decimal_display": "1.010050266264900596082245555209641071562"
+        },
+        "width_display": "6.325318765938313934609144430762011404626e-81",
+        "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+      },
+      "coefficients": [
+        {
+          "lower": {
+            "sign": 1,
+            "mantissa": "556306729971834780432267272693703186376540640289364748574306762548624724643378095",
+            "binary_exponent": -3017626784935461081387607577,
+            "decimal_display": "-2.399801860713794768123151917061023492971e-908396177984635364023245682"
+          },
+          "upper": {
+            "sign": 1,
+            "mantissa": "504072971065455677510125268850546960152700560551748849193287657100051381636238211",
+            "binary_exponent": -3017626784935461081387607577,
+            "decimal_display": "-2.174475318606438467728657367195227196422e-908396177984635364023245682"
+          },
+          "width_display": "2.253265421073563003944945498657962965486e-908396177984635364023245683",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        },
+        {
+          "lower": {
+            "sign": 0,
+            "mantissa": "741752331620753797862864625328391396276439918377884369490597999200797999231875285",
+            "binary_exponent": -3017626784935461081387607579,
+            "decimal_display": "7.999447650500305793829690488692122114275e-908396177984635364023245683"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "818615235767804168301462893574376256609195301479818800752719769653584394004673579",
+            "binary_exponent": -3017626784935461081387607579,
+            "decimal_display": "8.828377674415782826559004906268794389318e-908396177984635364023245683"
+          },
+          "width_display": "8.289300239154770327293144175766722750431e-908396177984635364023245684",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        }
+      ],
+      "relative_widths": {
+        "amplitude": "6.26238017770038950976591535846e-81",
+        "coefficients": [
+          "0.103623407531597964962603482916",
+          "0.103623407531597964962603482945"
+        ]
+      },
+      "nominal_containment": {
+        "amplitude": true,
+        "coefficients": [
+          true,
+          true
+        ]
+      },
+      "quadratic": [
+        {
+          "lower": {
+            "sign": 0,
+            "mantissa": "929785691827380443724456771174390140921311266751782776115592691377892697170692431",
+            "binary_exponent": -271,
+            "decimal_display": "0.2450496202006944805135903197160539296079"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "58111605739211277732778548198399383807581954171986423507224543211118293573168277",
+            "binary_exponent": -267,
+            "decimal_display": "0.2450496202006944805135903197160539296079"
+          },
+          "width_display": "2.635549485807630806087143512817504751927e-82",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        },
+        {
+          "lower": {
+            "sign": 0,
+            "mantissa": "276984294567435378662250530118828070814384910935866699438147520082009575173187635",
+            "binary_exponent": -22632200868756138597443826541,
+            "decimal_display": "4.338444321293176969666129803285236150657e-6812971329388011841361942705"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "611666300471742219400725327585611526182987925281593166882089847303835329820841315",
+            "binary_exponent": -22632200868756138597443826542,
+            "decimal_display": "4.790308042469107669295585075255504440431e-6812971329388011841361942705"
+          },
+          "width_display": "4.518637211759306996294552719702682897735e-6812971329388011841361942706",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        },
+        {
+          "lower": {
+            "sign": 1,
+            "mantissa": "948568795027247950486835223705059643203707443718615220006588028493460433449451631",
+            "binary_exponent": -271,
+            "decimal_display": "-0.2499999999987227277429850744277002578215"
+          },
+          "upper": {
+            "sign": 1,
+            "mantissa": "474284397513623975243417611852529821601853721859307610003294014246730216724725815",
+            "binary_exponent": -270,
+            "decimal_display": "-0.2499999999987227277429850744277002578215"
+          },
+          "width_display": "2.635549485807630806087143512817504751927e-82",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        }
+      ],
+      "fixed_materialized_row_balances": [
+        {
+          "lower": {
+            "sign": 1,
+            "mantissa": "88478731613409901870737301357175004752756907676402098943355527782433119143912853",
+            "binary_exponent": -3017626784935461081387607590,
+            "decimal_display": "-4.659185657392548353162545069179230560032e-908396177984635364023245687"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "11059841451676237733842162669646839339786951641919231711915736914426777457147081",
+            "binary_exponent": -3017626784935461081387607587,
+            "decimal_display": "4.659185657392548353162545069179215287159e-908396177984635364023245687"
+          },
+          "width_display": "9.318371314785096706325090138358445847191e-908396177984635364023245687",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        },
+        {
+          "lower": {
+            "sign": 1,
+            "mantissa": "707829852907279214965898688888983156356164229256440215839505419627568157398104787",
+            "binary_exponent": -3017626784935461081387607593,
+            "decimal_display": "-4.659185657392548353162546899281138591276e-908396177984635364023245687"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "707829852907279214965898688888966011708901920653292220013846058242660298743451943",
+            "binary_exponent": -3017626784935461081387607593,
+            "decimal_display": "4.659185657392548353162546899281025739163e-908396177984635364023245687"
+          },
+          "width_display": "9.318371314785096706325093798562164330439e-908396177984635364023245687",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        }
+      ],
+      "fixed_materialized_row_zero_compatible": [
+        true,
+        true
+      ],
+      "input_parameter_scope": "Exact stored dyadic incoming rows, energy target and Kp; their source uncertainty is NOT enclosed. Mu is the declared decimal receipt value.",
+      "basis_and_pulse_quadrature_enclosed": true,
+      "inherited_input_uncertainty_enclosed": false,
+      "pulse_energy_uncertainty_enclosed": false,
+      "materialized_coefficients_replaced": false,
+      "global_mean_closed": false,
+      "finite_energy_certified": false,
+      "scale_recursion_certified": false
+    },
+    {
+      "panels": 4096,
+      "interval_precision": 80,
+      "conditional_unique_positive_branch": true,
+      "amplitude": {
+        "lower": {
+          "sign": 0,
+          "mantissa": "239525540998185684529683428053547079443390019170646453428454915516472374328752447",
+          "binary_exponent": -267,
+          "decimal_display": "1.010050266264900596082245555209641071562"
+        },
+        "upper": {
+          "sign": 0,
+          "mantissa": "479051081996371369059366856107094158886780038341292906856909831032944748657504897",
+          "binary_exponent": -268,
+          "decimal_display": "1.010050266264900596082245555209641071562"
+        },
+        "width_display": "6.325318765938313934609144430762011404626e-81",
+        "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+      },
+      "coefficients": [
+        {
+          "lower": {
+            "sign": 1,
+            "mantissa": "268350403654679437627104289141300281569482427499834610444895985452663669417881477",
+            "binary_exponent": -3017626784935461081387607576,
+            "decimal_display": "-2.31522562398769486501790911626049788482e-908396177984635364023245682"
+          },
+          "upper": {
+            "sign": 1,
+            "mantissa": "130918105814062444605893426235077769112476486508108981373385589687577104494776461",
+            "binary_exponent": -3017626784935461081387607575,
+            "decimal_display": "-2.259023642943302173835577159215055452459e-908396177984635364023245682"
+          },
+          "width_display": "5.620198104439269118233195704544243236165e-908396177984635364023245684",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        },
+        {
+          "lower": {
+            "sign": 0,
+            "mantissa": "12040519901525261515090210721644193897400289967601616039645968147021813454700317",
+            "binary_exponent": -3017626784935461081387607573,
+            "decimal_display": "8.310483553590578562900942247281253121137e-908396177984635364023245683"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "789764772276915558016861294595918706457470895430319065283444088812238700096158743",
+            "binary_exponent": -3017626784935461081387607579,
+            "decimal_display": "8.517239087383970338152544368383971795981e-908396177984635364023245683"
+          },
+          "width_display": "2.067555337933917752516021211027186748435e-908396177984635364023245684",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        }
+      ],
+      "relative_widths": {
+        "amplitude": "6.26238017770038950976591535846e-81",
+        "coefficients": [
+          "0.0248788812901340978434749795042",
+          "0.0248788812901340978434749795108"
+        ]
+      },
+      "nominal_containment": {
+        "amplitude": true,
+        "coefficients": [
+          true,
+          true
+        ]
+      },
+      "quadratic": [
+        {
+          "lower": {
+            "sign": 0,
+            "mantissa": "929785691827380443724456771174390140921311266751782776115592691377892697170692431",
+            "binary_exponent": -271,
+            "decimal_display": "0.2450496202006944805135903197160539296079"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "58111605739211277732778548198399383807581954171986423507224543211118293573168277",
+            "binary_exponent": -267,
+            "decimal_display": "0.2450496202006944805135903197160539296079"
+          },
+          "width_display": "2.635549485807630806087143512817504751927e-82",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        },
+        {
+          "lower": {
+            "sign": 0,
+            "mantissa": "287818813223686690883549819123698540456513610533117623501005785731067419304236049",
+            "binary_exponent": -22632200868756138597443826541,
+            "decimal_display": "4.508146924870631895257621199769707841347e-6812971329388011841361942705"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "589976549819994615071314009797072309614825204706160346756670928510262503141903521",
+            "binary_exponent": -22632200868756138597443826542,
+            "decimal_display": "4.620443220905317558860129932906263437276e-6812971329388011841361942705"
+          },
+          "width_display": "1.122962960346856636025087331365555959292e-6812971329388011841361942706",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        },
+        {
+          "lower": {
+            "sign": 1,
+            "mantissa": "948568795027247950486835223705059643203707443718615220006588028493460433449451631",
+            "binary_exponent": -271,
+            "decimal_display": "-0.2499999999987227277429850744277002578215"
+          },
+          "upper": {
+            "sign": 1,
+            "mantissa": "474284397513623975243417611852529821601853721859307610003294014246730216724725815",
+            "binary_exponent": -270,
+            "decimal_display": "-0.2499999999987227277429850744277002578215"
+          },
+          "width_display": "2.635549485807630806087143512817504751927e-82",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        }
+      ],
+      "fixed_materialized_row_balances": [
+        {
+          "lower": {
+            "sign": 1,
+            "mantissa": "707829852569022905802656591335553197641238019987509890068162214568648950138741639",
+            "binary_exponent": -3017626784935461081387607597,
+            "decimal_display": "-2.911991034478766290226737894330807585602e-908396177984635364023245688"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "707829852569022905802656591335553052624007447445390436273702611574258601652207139",
+            "binary_exponent": -3017626784935461081387607597,
+            "decimal_display": "2.911991034478766290226737894330806989006e-908396177984635364023245688"
+          },
+          "width_display": "5.823982068957532580453475788661614574608e-908396177984635364023245688",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        },
+        {
+          "lower": {
+            "sign": 1,
+            "mantissa": "353914926284511452901328850758593503533652594307357166732417680542141729253772603",
+            "binary_exponent": -3017626784935461081387607596,
+            "decimal_display": "-2.911991034478766290226742461585144998268e-908396177984635364023245688"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "353914926284511452901328850758592967763425923249696275338887658075809196027891123",
+            "binary_exponent": -3017626784935461081387607596,
+            "decimal_display": "2.911991034478766290226742461585140589982e-908396177984635364023245688"
+          },
+          "width_display": "5.82398206895753258045348492317028558825e-908396177984635364023245688",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        }
+      ],
+      "fixed_materialized_row_zero_compatible": [
+        true,
+        true
+      ],
+      "input_parameter_scope": "Exact stored dyadic incoming rows, energy target and Kp; their source uncertainty is NOT enclosed. Mu is the declared decimal receipt value.",
+      "basis_and_pulse_quadrature_enclosed": true,
+      "inherited_input_uncertainty_enclosed": false,
+      "pulse_energy_uncertainty_enclosed": false,
+      "materialized_coefficients_replaced": false,
+      "global_mean_closed": false,
+      "finite_energy_certified": false,
+      "scale_recursion_certified": false
+    }
+  ],
+  "full_axial_closure_certified": false
+}

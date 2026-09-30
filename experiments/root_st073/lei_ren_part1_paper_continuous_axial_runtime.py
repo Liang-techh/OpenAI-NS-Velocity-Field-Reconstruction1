@@ -291,6 +291,12 @@ class SharedContinuousAxialRuntime:
         return ContinuousPulseEnclosure(precision=precision).report(
             self.solve_receipt['input_mu'],row,panels=panels,band=band,nominal=self.pulse)
 
+    @lru_cache(maxsize=4)
+    def coefficient_enclosure(self,*,panels=4096,precision=80):
+        """Conditional coefficient bounds, preserving inherited-input gaps."""
+        from lei_ren_part1_paper_continuous_solve_enclosure import ContinuousSolveEnclosure
+        return ContinuousSolveEnclosure(precision=precision).report(self,panels=panels)
+
     def _make_receipt(self, solve):
         precision = self.precision
         with mp.workdps(precision):
