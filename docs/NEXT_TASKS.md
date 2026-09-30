@@ -1,3 +1,20 @@
+# 2026-09-30: Complete preheat pressure bound installed
+
+- [x] Enclose H=1 heat collar and exact exterior pressure mass with the
+      shared stored normalization; retain both terminal atoms separately.
+- [x] Combine reference, eleven pre-collar stages and terminal pieces into
+      a complete compact-interval pressure C2 norm upper bound.
+- [x] Retain exact MP interval endpoint tuples in JSON receipts.
+- [ ] Tighten variable-stage interval integrals and their axial derivatives
+      enough to enclose errors of the existing finite Gauss representation.
+- [ ] Propagate pressure errors through common core/RK/restoration and
+      assemble the actual five-defect interval norm for inverse closure.
+- [ ] Enclose original transcendental parameter derivations separately.
+- [ ] Establish actual heat-dependent velocity matching and finite energy;
+      H=1 pressure integral bounds alone do not prove either requirement.
+
+See COMPLETE_PREHEAT_ENCLOSURE_2026_09_30.md.
+
 # 2026-09-30: After endpoint primitive enclosure
 
 - [x] Evaluate common stored-schedule endpoint amplitudes with directed

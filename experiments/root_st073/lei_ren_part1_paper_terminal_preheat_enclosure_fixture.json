@@ -1,0 +1,8 @@
+{
+  "independent_collar_inside_interval": true,
+  "exterior_formula_agrees": true,
+  "stored_normalization_shift_preserved": true,
+  "heat_scale_shift_ratio": "1.02020134002675581016014392048315143530350899119392557727424",
+  "quadrature_error_used_as_certificate": false,
+  "full_heat_velocity_certified": false
+}

@@ -1,3 +1,16 @@
+# 2026-09-30: Complete stored-parameter preheat norm bound
+
+H=1 collar and exact exterior integral enclosures now use the shared stored
+heat normalization; no pressure datum is reset. All eleven finite stages
+plus reference and terminal pieces give a complete conservative normalized
+C2 pressure norm upper bound47.82861181496495 on |Z|<=.8.
+Independent resolved collar/exterior and normalization-shift checks pass.
+JSON endpoints retain exact binary MP tuples as well as rounded displays.
+This bounds the stored-parameter analytic pressure integral, not its Gauss
+approximation error or the five centered defect norms. Core/RK propagation,
+original parameter derivations and actual heat/energy gates remain open.
+See COMPLETE_PREHEAT_ENCLOSURE_2026_09_30.md.
+
 # 2026-09-30: Stored-schedule endpoint and radial-stage enclosures
 
 Directed interval evaluation removes primitive quadrature from preheat

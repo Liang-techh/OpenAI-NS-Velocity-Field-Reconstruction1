@@ -9,8 +9,9 @@ from lei_ren_part1_paper_schedule_endpoint_enclosures import ScheduleEndpointEnc
 def encode(value):
     if hasattr(value,'_mpi_'):
         lo,hi=endpoints(value)
-        return dict(lower=mp.nstr(lo,90),upper=mp.nstr(hi,90),width=mp.nstr(hi-lo,60))
-    if isinstance(value,mp.mpf):return dict(value=mp.nstr(value,90),log_abs=None if value==0 else mp.nstr(mp.log(abs(value)),70))
+        return dict(lower=mp.nstr(lo,90),upper=mp.nstr(hi,90),width=mp.nstr(hi-lo,60),
+                    lower_exact_mpf_tuple=list(value._mpi_[0]),upper_exact_mpf_tuple=list(value._mpi_[1]))
+    if isinstance(value,mp.mpf):return dict(value=mp.nstr(value,90),log_abs=None if value==0 else mp.nstr(mp.log(abs(value)),70),exact_mpf_tuple=list(value._mpf_))
     if isinstance(value,dict):return {k:encode(v) for k,v in value.items()}
     if isinstance(value,(list,tuple)):return [encode(v) for v in value]
     return value

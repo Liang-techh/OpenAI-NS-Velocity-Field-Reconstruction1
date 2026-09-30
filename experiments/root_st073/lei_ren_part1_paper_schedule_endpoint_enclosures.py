@@ -97,3 +97,36 @@ class ScheduleEndpointEnclosures:
             relative_to_stored_schedule_parameters=True,endpoint_primitive_quadrature_used=False,
             directed_interval_arithmetic=True,transcendental_parameter_errors_enclosed=False,
             heat_collar_included=False,core_propagation_errors_enclosed=False)
+
+    def terminal_preheat_bounds(self):
+        """Enclose H=1 heat collar and exact power tail of the shared datum.
+
+        Uses the stored shared log_c_inf, not a substituted normalization.
+        K0 lies in [1-epsilon,1], is independent of Z, and equals1 for t>=3.
+        The independent endpoint normalization route is only a diagnostic.
+        """
+        iv=self.iv;s=self.schedule;eps=self.scalar(s.epsilon);lam=1+self.scalar(s.delta)
+        if not 0<endpoints(eps)[0]<=endpoints(eps)[1]<1:raise ValueError('Require 0<epsilon<1')
+        if s.y_b-s.y_tail!=3:raise ValueError('Require exact stored heat collar length3')
+        # Preserve the actual stored source heat scale through cancellation
+        # of large logarithms with enough directed interval precision.
+        logscale=2*(self.scalar(s._log_c_inf)-self.scalar(s.logPstar))-iv.ln(2)-lam*self.scalar(s.logR_tail)
+        scale=iv.exp(logscale);tail_factor=iv.exp(-3*lam)/lam
+        collar_factor=(1-iv.exp(-3*lam))/lam
+        lower=endpoints(scale*(1-eps)**2*collar_factor)[0]
+        upper=endpoints(scale*collar_factor)[1]
+        collar=iv.mpf([lower,upper]);exterior=scale*tail_factor
+        combined=collar+exterior
+        ell=self.log_amplitude_ratio(s.y_tail)['interval']
+        expected_logc=self.scalar(s.logPstar)+ell+lam*self.scalar(s.logR_tail)/2-iv.ln(2*(1-eps))
+        return dict(stored_heat_log_scale=logscale,stored_heat_scale=scale,
+            heat_collar_mass_interval=collar,exterior_mass_interval=exterior,
+            combined_terminal_mass_interval=combined,
+            endpoint_normalization_log_residual=self.scalar(s._log_c_inf)-expected_logc,
+            normalization_reset=False,collar_K0_bounds=iv.mpf([endpoints(1-eps)[0],1]),
+            normalized_derivative_upper_bounds=[endpoints(combined)[1],mp.mpf(0),mp.mpf(0),mp.mpf(0)],
+            H_replaced_by_one=True,Z_independent=True,
+            relative_to_stored_schedule_parameters=True,directed_interval_arithmetic=True,
+            endpoint_primitive_quadrature_used=False,terminal_integral_quadrature_used=False,
+            actual_heat_velocity_field_certified=False,finite_energy_certified=False,
+            transcendental_parameter_errors_enclosed=False)
