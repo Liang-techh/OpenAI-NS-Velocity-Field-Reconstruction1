@@ -1,3 +1,14 @@
+## 2026-09-30: finish prescribed exit tangents and common annular data
+
+The actual base Section 9.25 ODE now retains pressure9/width2 atoms and nonzero five-moment collar increments. Read JOINT_PRESSURE_WIDTH_EXIT_2026_09_30.md and the actual bridge receipt before continuing.
+
+- [ ] Propagate Z tangents of normalized D/B drivers and the joint exit state with the same pressure/width atoms; keep any finite-difference derivative bounds explicit.
+- [ ] Recover Ur only from consistent axial moment/Z jets; verify structural divergence of the actual exit field.
+- [ ] Feed the resulting atoms through ExitContinuation, switches, long reshape and inner moment corrections without whole-field materialization.
+- [ ] Recompute downstream angular/axial/heat inputs and close the five terminal identities as functions of Z.
+- [ ] Enclose pressure/width and radial/Z truncations and RK error; certify source collar constants before declaring paper matching complete.
+- [ ] Continue pressure compatibility, finite-energy radial tail, controlled heat exterior and cone margins before n-dependent temporal recursion.
+
 ## 2026-09-30: prescribed bridge after component auxiliary exit
 
 - [ ] Read PROJECT_GOAL.md: use the updated seven stages; no background 1e-3 residual gate.

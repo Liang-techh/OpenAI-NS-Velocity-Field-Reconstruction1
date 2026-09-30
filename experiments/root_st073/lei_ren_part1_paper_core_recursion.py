@@ -90,10 +90,11 @@ recurrence are independent of pressure components. The default remains MP.
                 'scope':'Local exact-equation radial jets; no temporal recursion or global matching.'}
 
 
-def evaluate_core_jets(coefficients,R):
+def evaluate_core_jets(coefficients,R,*,radial_converter=None):
     """Center-Z values and derivatives of one finite radial polynomial."""
     with mp.workdps(max(80,coefficients['precision'],mp.mp.dps)):
-        r=mp.mpf(str(R)); result={}
+        r=mp.mpf(str(R)) if radial_converter is None else radial_converter(R)
+        result={}
         for name in ('F','Uz','P'):
             rows=coefficients[name]
             result[name]=sum(row[0]*r**n for n,row in enumerate(rows))

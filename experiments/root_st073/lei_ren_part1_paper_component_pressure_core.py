@@ -79,6 +79,53 @@ def build_component_coefficients(axis, pressure_datum, center, radial_degree=18)
         return result
 
 
+def evaluate_component_core_coefficients(coefficients,r,z,delta):
+    """Shared core/moment equations for scalar or component-valued radii."""
+    jets=evaluate_core_jets(coefficients,r,radial_converter=lambda value:value)
+    root=(2*r).sqrt() if hasattr(r,"sqrt") else mp.sqrt(2*r)
+    f=coefficients['F'];u=coefficients['Uz']
+    moments={k:coefficients['F'][0][0]*0 for k in ('theta','z','theta_z','z_theta','p')}
+    moments_Z=dict(moments)
+    for n,row in enumerate(f):
+        moments['theta']+=2*row[0]*r**(n+2)/(n+2)
+        moments_Z['theta']+=2*row[1]*r**(n+2)/(n+2)
+    for n,row in enumerate(u):
+        moments['z']+=row[0]*r**(n+1)/(n+1)
+        moments_Z['z']+=row[1]*r**(n+1)/(n+1)
+    for i,fi in enumerate(f):
+        for j,uj in enumerate(u):
+            n=i+j+2
+            moments['theta_z']+=2*fi[0]*uj[0]*r**n/n
+            moments_Z['theta_z']+=2*(fi[1]*uj[0]+fi[0]*uj[1])*r**n/n
+        for j,fj in enumerate(f):
+            n=i+j+1;value=fi[0]*fj[0];tangent=fi[1]*fj[0]+fi[0]*fj[1]
+            moments['p']+=value*r**n/n
+            moments_Z['p']+=tangent*r**n/n
+            moments['z_theta']-=value*r**(n+1)/(n+1)
+            moments_Z['z_theta']-=tangent*r**(n+1)/(n+1)
+    for i,ui in enumerate(u):
+        for j,uj in enumerate(u):
+            n=i+j+1
+            moments['z_theta']+=ui[0]*uj[0]*r**n/n
+            moments_Z['z_theta']+=(ui[1]*uj[0]+ui[0]*uj[1])*r**n/n
+    # Restore the exact F-polynomial integral, not a truncated pressure jet.
+    jets['P']=coefficients['P'][0][0]+moments['p']
+    jets['P_Z']=coefficients['P'][0][1]+moments_Z['p']
+    jets['P_R']=jets['F']**2
+    jets['Utheta']=root*jets['F']
+    jets['Ur']=((2*z*r*jets['Uz']-(1-delta)*z*moments['z']
+        -(1-z*z)*moments_Z['z'])/((1-delta*z*z)*root)) if r else coefficients["F"][0][0]*0
+    # Differentiate the radial-flux polynomial independently by powers.
+    flux_R=coefficients['F'][0][0]*0
+    for n,row in enumerate(u):
+        flux_R+=(((2*(n+1)-(1-delta))*z*row[0]
+            -(1-z*z)*row[1])*r**n/(1-delta*z*z))
+    jets['divergence_numerator']=((1-delta*z*z)*flux_R+(1-z*z)*jets['Uz_Z']
+        - (1+delta)*z*jets['Uz']-2*z*r*jets['Uz_R'])
+    jets['moments']=moments;jets['moments_Z']=moments_Z
+    return jets
+
+
 class ComponentPressureCore:
     """Local component jets for the complete preheat datum; no scalar installer."""
     def __init__(self,axis,pressure_datum,radial_degree=18):
@@ -93,49 +140,7 @@ class ComponentPressureCore:
             if not 0<=r<=mp.mpf('4.1')/self.axis.Lambda or abs(z)>=1:
                 raise ValueError('Local core query outside its domain')
             coefficients=self.coefficients(Z)
-            jets=evaluate_core_jets(coefficients,r)
-            root=mp.sqrt(2*r);delta=self.axis.delta
-            f=coefficients['F'];u=coefficients['Uz']
-            moments={k:PressurePolynomial(0) for k in ('theta','z','theta_z','z_theta','p')}
-            moments_Z=dict(moments)
-            for n,row in enumerate(f):
-                moments['theta']+=2*row[0]*r**(n+2)/(n+2)
-                moments_Z['theta']+=2*row[1]*r**(n+2)/(n+2)
-            for n,row in enumerate(u):
-                moments['z']+=row[0]*r**(n+1)/(n+1)
-                moments_Z['z']+=row[1]*r**(n+1)/(n+1)
-            for i,fi in enumerate(f):
-                for j,uj in enumerate(u):
-                    n=i+j+2
-                    moments['theta_z']+=2*fi[0]*uj[0]*r**n/n
-                    moments_Z['theta_z']+=2*(fi[1]*uj[0]+fi[0]*uj[1])*r**n/n
-                for j,fj in enumerate(f):
-                    n=i+j+1;value=fi[0]*fj[0];tangent=fi[1]*fj[0]+fi[0]*fj[1]
-                    moments['p']+=value*r**n/n
-                    moments_Z['p']+=tangent*r**n/n
-                    moments['z_theta']-=value*r**(n+1)/(n+1)
-                    moments_Z['z_theta']-=tangent*r**(n+1)/(n+1)
-            for i,ui in enumerate(u):
-                for j,uj in enumerate(u):
-                    n=i+j+1
-                    moments['z_theta']+=ui[0]*uj[0]*r**n/n
-                    moments_Z['z_theta']+=(ui[1]*uj[0]+ui[0]*uj[1])*r**n/n
-            # Restore the exact F-polynomial integral, not a truncated pressure jet.
-            jets['P']=coefficients['P'][0][0]+moments['p']
-            jets['P_Z']=coefficients['P'][0][1]+moments_Z['p']
-            jets['P_R']=jets['F']**2
-            jets['Utheta']=root*jets['F']
-            jets['Ur']=((2*z*r*jets['Uz']-(1-delta)*z*moments['z']
-                -(1-z*z)*moments_Z['z'])/((1-delta*z*z)*root)) if r else PressurePolynomial(0)
-            # Differentiate the radial-flux polynomial independently by powers.
-            flux_R=PressurePolynomial(0)
-            for n,row in enumerate(u):
-                flux_R+=(((2*(n+1)-(1-delta))*z*row[0]
-                    -(1-z*z)*row[1])*r**n/(1-delta*z*z))
-            jets['divergence_numerator']=((1-delta*z*z)*flux_R+(1-z*z)*jets['Uz_Z']
-                - (1+delta)*z*jets['Uz']-2*z*r*jets['Uz_R'])
-            jets['moments']=moments;jets['moments_Z']=moments_Z
-            return jets
+            return evaluate_component_core_coefficients(coefficients,r,z,self.axis.delta)
 
 
     def physical_chart(self,R,Z,logq,*,nu='.01',phi=0):

@@ -9,13 +9,15 @@ import mpmath as mp
 def evaluate_mp_stress(logR, Z, delta, *, Utheta, Uz, Utheta_y,
                        Utheta_Z, Uz_y, Uz_Z, moments, moments_Z,
                        P, P_Z, precision=160, shear_theta=None, shear_z=None,
-                       include_components=False,scalar_converter=None):
+                       include_components=False,scalar_converter=None,radius_override=None):
     """y=log R derivatives; return MP inertial, shear and total stress."""
     with mp.workdps(precision):
-        R=mp.exp(mp.mpf(str(logR))); z=mp.mpf(str(Z)); dt=mp.mpf(str(delta))
+        R=mp.exp(mp.mpf(str(logR))) if radius_override is None else radius_override
+        z=mp.mpf(str(Z)); dt=mp.mpf(str(delta))
         if not abs(z)<1 or not 0<=dt<1:
             raise ValueError('Require |Z|<1 and 0<=delta<1')
-        d=1-z*z; L=1-dt*z*z; root=mp.sqrt(2*R)
+        d=1-z*z; L=1-dt*z*z
+        root=(2*R).sqrt() if hasattr(R,"sqrt") else mp.sqrt(2*R)
         convert=mp.mpf if scalar_converter is None else scalar_converter
         a,b,ay,az,by,bz,p,pz=map(convert,
             (Utheta,Uz,Utheta_y,Utheta_Z,Uz_y,Uz_Z,P,P_Z))
@@ -35,12 +37,12 @@ def evaluate_mp_stress(logR, Z, delta, *, Utheta, Uz, Utheta_y,
         Sz=root*by/R if shear_z is None else convert(shear_z)
         Ur=(2*z*R*b-(1-dt)*z*m['z']-d*mz['z'])/(L*root)
         Ur_R=((1+dt)*z*b+2*z*by-d*bz)/(L*root)-Ur/(2*R)
-        Nt=-mp.sqrt(R/2)/L*((1+dt)*a/2+(1-dt)*z*az/2+ay)
-        Nt-=mp.sqrt(R/2)/L*(-2*(1+dt)*z*b*a
+        Nt=-(root/2)/L*((1+dt)*a/2+(1-dt)*z*az/2+ay)
+        Nt-=(root/2)/L*(-2*(1+dt)*z*b*a
             +d*(bz*a+b*az)-2*z*(by*a+b*ay))
         Nt-=R*Ur_R*a+Ur*ay+Ur*a
-        Nz=-mp.sqrt(R/2)/L*((1+dt)*b/2+(1-dt)*z*bz/2+by)
-        Nz-=mp.sqrt(R/2)/L*(-2*(1+dt)*z*(b*b+p)
+        Nz=-(root/2)/L*((1+dt)*b/2+(1-dt)*z*bz/2+by)
+        Nz-=(root/2)/L*(-2*(1+dt)*z*(b*b+p)
             +d*(2*b*bz+pz)-2*z*(2*b*by+a*a/2))
         Nz-=R*Ur_R*b+Ur*by+Ur*b/2
         result=dict(I_theta=Itheta,I_z=Iz,S_theta=Stheta,S_z=Sz,
