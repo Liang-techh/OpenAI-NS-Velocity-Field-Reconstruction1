@@ -1,3 +1,31 @@
+## Shared live continuous axial atoms installed - 2026-09-30
+
+New continuous_axial_runtime.py/md/json owns ONE live basis/pulse, complete
+matrix and pulse rows, numeric p, bump energy atoms and solved a/c. The point
+component, algebra and complete primitive share objects by identity. Partial
+integrals retain the same basis; complete end atoms use the stored matrix.
+
+The actual ContinuousIncomingProfile now uses this owner for point values,
+means and coefficient Z tangents. No coefficients or full integral atoms are
+reconstructed from JSON inside this installed path. Kp retains its inherited
+100-digit atom precision and open accuracy bounds; algebra uses 200 digits.
+
+Full-field reruns: Rp mass/Z-mass matching 6.92e-83. The actual primitive and
+independent full-atom replay (including Z derivative) now differ by zero at
+reported precision. The SHARED materialized residual remains nonzero:
+normalized mass balance 8.50e-202; Z balance 1.12e-201. Global finite energy
+and recursive closure are NOT certified. No mass or derivative is reset.
+
+Next tasks:
+- [x] Share live complete atoms between solve, values and cumulative means.
+- [x] Differentiate coefficients with the same live algebra and actual inputs.
+- [ ] Enclose complete and partial integral errors, coefficient sensitivity and
+      signed pulse omitted pieces without conflating them with exact identities.
+- [ ] Represent and establish BOTH terminal constraints for the exact continuous
+      functional coefficients, preserving materialized residual diagnostics.
+- [ ] Finish angular jets, all outer moments/pressure and physical energy;
+      recursive matching, stress/remainder and oscillatory corrections remain.
+
 ## Direct remaining end integrals installed - 2026-09-30
 
 ContinuousAxialBump.tail uses reflection of the same even bump to integrate

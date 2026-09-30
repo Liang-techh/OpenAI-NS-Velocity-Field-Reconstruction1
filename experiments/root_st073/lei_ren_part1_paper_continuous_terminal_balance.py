@@ -31,10 +31,13 @@ def terminal_balance(field,Z,*,nu='.01',tau=1):
         component=profile.component(float(z))
         tangent=profile.coefficient_tangent(float(z))
         lam=mp.mpf('.5')-component.mu
-        pulse=component.pulse.full_row(component.mu,1)
-        pulse_integral=mp.exp(_mp(pulse['log_normalized_pulse_integral']))
-        bump_atoms=[mp.exp(lam*center)*component.basis.full(mp.nstr(lam,component.precision))
-                    for center in (-3,-1)]
+        complete=component.terminal_balance(1,field.precision)
+        pulse=complete['pulse_atom']
+        pulse_integral=complete['pulse_integral']
+        runtime=getattr(component,'runtime',None)
+        bump_atoms=(runtime.algebra.M[0] if runtime is not None else
+                    [mp.exp(lam*center)*component.basis.full(mp.nstr(lam,component.precision))
+                     for center in (-3,-1)])
         terms=[component.base[0],component.a*pulse_integral]+[
             c*atom for c,atom in zip(component.c,bump_atoms)]
         baseZ=from_signed_log(tangent['input']['base_Z'][0])
@@ -55,6 +58,7 @@ def terminal_balance(field,Z,*,nu='.01',tau=1):
             conditional_C_bound_over_Rh=(abs((1-delta)*z)*from_signed_log(bound)+
                 d*from_signed_log(boundZ))*mp.exp(logRv-field.logRh)/L
         return dict(Z=mp.nstr(z,40),nu=mp.nstr(viscosity,40),tau=mp.nstr(time_gap,40),
+            complete_atom_binding=('shared_runtime' if runtime is not None else 'materialized_component'),
             normalized_mass_terms=[signed_log(v,field.precision) for v in terms],
             normalized_mass_Z_terms=[signed_log(v,field.precision) for v in termsZ],
             normalized_mass_relative_balance=mp.nstr(abs(sum(terms))/scale,60),

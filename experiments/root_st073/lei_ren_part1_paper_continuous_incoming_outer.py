@@ -118,19 +118,64 @@ class ContinuousIncomingProfile(ContinuousSeededAxialProfileJets):
         revised={z:regenerate_incoming(source,seeded,atoms,self.incoming_provider,order=order)
                  for z,(seeded,atoms) in (prepared or {}).items()}
         super().__init__(source,prepared=revised)
+        self.shared_runtimes={}
 
-    @lru_cache(maxsize=64)
-    def seed_solve(self,Z):
+    def _ensure_prepared(self,Z):
         z=float(Z)
-        if z in self.prepared:
-            regenerated=self.prepared[z]
-        else:
+        if z not in self.prepared:
             from lei_ren_part1_paper_continuous_axial_solve import solve_continuous
             old=SeededAxialProfile.seed_solve(self,z)
             atoms=solve_continuous(old,precision=200)
             regenerated=regenerate_incoming(self.seed_source,old,atoms,self.incoming_provider,order=self.incoming_order)
             self.prepared[z]=regenerated
-        return dict(regenerated[0],axial=regenerated[1])
+        return self.prepared[z]
+
+    def runtime(self,Z):
+        z=float(Z)
+        if z not in self.shared_runtimes:
+            from lei_ren_part1_paper_continuous_axial_runtime import SharedContinuousAxialRuntime
+            seeded,atoms=self._ensure_prepared(z)
+            runtime=SharedContinuousAxialRuntime(seeded,atoms)
+            self.shared_runtimes[z]=runtime
+            self.prepared[z]=(seeded,runtime.receipt)
+        return self.shared_runtimes[z]
+
+    @lru_cache(maxsize=64)
+    def seed_solve(self,Z):
+        runtime=self.runtime(Z)
+        seeded,_=self.prepared[float(Z)]
+        return dict(seeded,axial=runtime.receipt)
+
+    def component(self,Z):
+        return self.runtime(Z).component
+
+    @lru_cache(maxsize=64)
+    def coefficient_tangent(self,Z):
+        from lei_ren_part1_paper_seeded_input_tangents import actual_seeded_input_tangents
+        runtime=self.runtime(Z)
+        seeded,_=self.prepared[float(Z)]
+        input_jet=actual_seeded_input_tangents(self.seed_source,seeded,float(Z))
+        with mp.workdps(max(self.precision,self.jet_precision,runtime.algebra.precision)):
+            tangent=runtime.algebra.tangent(
+                [from_signed_log(value) for value in input_jet['base_Z']],
+                from_signed_log(input_jet['energy_target_Z']))
+        return dict(a_Z=tangent['a_Z'],c_Z=tangent['c_Z'],input=input_jet,
+            algebra_precision=runtime.algebra.precision,
+            linear_tangent_relative_replay=tangent['linear_tangent_relative_replay'],
+            energy_tangent_relative_replay=tangent['energy_tangent_relative_replay'],
+            shared_complete_atoms_installed=True)
+
+    def _pulse_integral_and_derivative(self,component,xi,tangent):
+        if _mp(xi)>=11:
+            balance=component.terminal_balance(1,max(self.precision,self.jet_precision))
+            return balance['pulse_integral'],mp.mpf(0),balance['pulse_atom']
+        return super()._pulse_integral_and_derivative(component,xi,tangent)
+
+    def _end_primitive_derivative(self,component,c_Z,end):
+        if all(_mp(end)-center>=component.basis.ell for center in (-3,-1)):
+            # The complete end moment is the very matrix used in the solve.
+            return component.runtime.full_end(c_Z,1)
+        return super()._end_primitive_derivative(component,c_Z,end)
 
     def _incoming_y(self,logR):
         return str(self.offset(logR,self.schedule.logRref))
@@ -154,7 +199,9 @@ class ContinuousIncomingProfile(ContinuousSeededAxialProfileJets):
 
     def axial_average_jet(self,logR,Z):
         if self.offset(logR,self.schedule.logR_p)>=0:
-            return super().axial_average_jet(logR,Z)
+            result=super().axial_average_jet(logR,Z)
+            result['shared_complete_atoms_installed']=True
+            return result
         with mp.workdps(self.precision):
             local=self.incoming_provider.mean_jet(self._incoming_y(logR),str(Z))
             offsets=self.seed_source.terminal_offsets(self.seed_source._z_key(_mp(Z)))
@@ -185,6 +232,7 @@ def run():
     atoms=json.loads((folder/'lei_ren_part1_paper_continuous_axial_solve.json').read_text())
     print('regenerating continuous incoming rows and coefficient solve',flush=True)
     field=ContinuousIncomingOuterField(source,prepared={.3:(seeded,atoms)})
+    field.outer.runtime(.3)
     revised,solved=field.outer.prepared[.3]
     with mp.workdps(field.precision):
         z=mp.mpf('.3');logRp=_mp(str(source.schedule.logR_p))
@@ -207,6 +255,7 @@ def run():
             Rp_mass_relative_matching=mp.nstr(jumps[0],40),
             Rp_mass_Z_relative_matching=mp.nstr(jumps[1],40),samples=samples,
             installed_in_velocity_and_mean=True,terminal_mean_forced_zero=False,
+            shared_complete_atoms_installed=True,
             source_schedule_identity_preserved=field.outer.schedule is source.schedule,
             angular_primitive_float_backed=True,swirl_energy_inherited=True,
             finite_energy_certified=False,scale_recursion_certified=False)
