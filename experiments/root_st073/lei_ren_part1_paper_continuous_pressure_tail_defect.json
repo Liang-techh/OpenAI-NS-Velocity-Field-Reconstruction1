@@ -1,0 +1,35 @@
+{
+  "samples": [
+    {
+      "label": "flatten",
+      "P": "-0.01208803828437988383614376645927168715135867189196",
+      "P_Z": "0.013307932056198037250800476835895435395991198413167",
+      "pressure_transport_coefficient": "-0.019363041141768144199914693796227858501167193691158",
+      "required_P_Z_for_zero_pressure_transport": "-0.007970135132558165166688197665453859660236486961732",
+      "axial_inertia_minus_pressure_relative_at_receipt_precision": "0.0",
+      "subdominant_moment_terms_resolved": false,
+      "nonzero_pressure_transport_detected": true
+    },
+    {
+      "label": "heat",
+      "P": "-0.01208803828437988383614376645927168715135867189196",
+      "P_Z": "0.013307932056198037250800476835895435395991198413167",
+      "pressure_transport_coefficient": "-0.019363041141768144199914693796227858501167193691158",
+      "required_P_Z_for_zero_pressure_transport": "-0.007970135132558165166688197665453859660236486961732",
+      "axial_inertia_minus_pressure_relative_at_receipt_precision": "0.0",
+      "subdominant_moment_terms_resolved": false,
+      "nonzero_pressure_transport_detected": true
+    }
+  ],
+  "Z": ".3",
+  "delta": "1e-200",
+  "source": "continuous_bundle_stress_check.json; post-Rv Uz and jets vanish by support",
+  "audit_of_rounded_receipts": true,
+  "independent_full_profile_replay": false,
+  "pressure_gauge_reset_applied": false,
+  "pressure_terminal_compatibility_certified": false,
+  "finite_energy_certified": false,
+  "stress_cone_certified": false,
+  "scale_recursion_certified": false,
+  "next_action": "Restore actual inner-seeded pressure total with angular correction; do not subtract a Z-dependent pressure datum without updating the inner construction."
+}

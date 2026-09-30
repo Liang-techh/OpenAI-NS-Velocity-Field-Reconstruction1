@@ -157,7 +157,18 @@ class ContinuousIncomingProfile(ContinuousSeededAxialProfileJets):
     def linear_axial_moments_jet(self,logR,Z):
         return self.mixed_moment_provider.moments_jet(logR,Z)
 
+    def pressure_moments_jet(self,logR,Z):
+        if not hasattr(self,'pressure_moment_provider'):
+            from lei_ren_part1_paper_continuous_pressure_moments import ContinuousPressureMoments
+            self.pressure_moment_provider=ContinuousPressureMoments(self,order=self.incoming_order)
+        return self.pressure_moment_provider.moments_jet(logR,Z)
+
     def quadratic_moments_jet(self,logR,Z):
+        if self.offset(logR,self.schedule.logR_v)<0:
+            if not hasattr(self,'partial_axial_energy_moment_provider'):
+                from lei_ren_part1_paper_continuous_partial_axial_energy import ContinuousPartialAxialEnergy
+                self.partial_axial_energy_moment_provider=ContinuousPartialAxialEnergy(self,quadrature_order=self.incoming_order)
+            return self.partial_axial_energy_moment_provider.moments_jet(logR,Z)
         return self.axial_energy_moment_provider.moments_jet(logR,Z)
 
     def _ensure_prepared(self,Z):

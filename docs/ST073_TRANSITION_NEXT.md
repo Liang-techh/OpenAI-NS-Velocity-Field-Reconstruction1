@@ -1,3 +1,11 @@
+## 2026-09-30: actual five-moment bundle installed; pressure mismatch isolated
+
+Shared profile pressure and partial quadratic APIs are installed. Nominal bounded partial-energy and pressure receipts are available. Integrated actual five-moment/pressure/velocity stress replay at Z=.3 (post-Rv flattening and heat) completes but yields enormous stress/shear ratios; coupled matching is not closed.
+
+The post-support pressure combination H=2(1+delta) Z P-(1-Z^2) PZ is approximately -0.01936304114, with P=-0.01208803828 and PZ=0.01330793206 at both points. N_z equals the pressure contribution to I_z when axial velocity/jets vanish; the saved I_z and N_z agree to their serialized precision. This identifies pressure compatibility as an immediate actionable obstruction, while smaller moment terms remain unresolved. Do not remove it with a Z-dependent pressure gauge reset.
+
+Artifacts: experiments/root_st073/lei_ren_part1_paper_continuous_{partial_axial_energy,pressure_moments,moment_bundle,bundle_stress_check,pressure_tail_defect}.{py,md,json} as applicable. Finite energy, admissible stress, full residual and scale recursion remain uncertified. The previously materialized nonzero radial-energy tail remains open.
+
 ## 2026-09-30: quantitative terminal radial-energy obstruction audit
 
 Added continuous_radial_energy_tail.py/md/json for the current regenerated candidate. It retains Mz/Mz_Z and C=[(1-delta)Z Mz+(1-Z^2)Mz_Z]/(1-delta Z^2), giving physical ur=-nu*C/r. At fixed tau, radial kinetic-energy density per dZ dlogR is pi*nu^2/2*(dz/dZ)*C^2 with the explicit physical axial Jacobian.

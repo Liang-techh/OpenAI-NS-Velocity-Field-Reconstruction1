@@ -1,3 +1,18 @@
+## Immediate coupled-matching tasks (2026-09-30)
+
+- [x] Add actual inner-anchored pressure moment and analytic Z jet provider; retain separate bump/heat increments.
+- [x] Add partial axial square/Z through pulse/end, with separate end-atom validation and precision-loss diagnostics.
+- [x] Wire all five actual moments and pressure into the shared continuous profile/bundle.
+- [x] Replay coupled stress at post-Rv flattening and heat; retain failed stress/shear ratios.
+- [x] Isolate post-support pressure transport coefficient H (~-0.019363 at Z=.3).
+- [ ] Derive actual angular-mean and total-pressure targets from the same seeded inner moments, schedule, compact bumps and complete heat primitives; compare with inherited float preheat / first-Taylor targets. Keep input offsets as separate atoms.
+- [ ] Solve angular correction against those actual targets with analytic Z tangent; check small-branch discriminant and multiplier positivity before installation. If incompatible, report the required inner reconstruction change rather than silently changing pressure datum.
+- [ ] Invalidate dependent caches and regenerate incoming swirl, mixed axial rows and future energy targets after angular changes; solve axial coefficients again from the same candidate.
+- [ ] Recompute P(infinity,Z) including the complete heat tail; bound residual components separately from their huge reference sums. Check a Z interval, not only .3.
+- [ ] Decompose both stress components into transport, linear moment, quadratic/mixed moment, pressure and shear terms; resolve tiny differences in normalized component form before interpreting a stress cone.
+- [ ] Resolve retained terminal axial mass and radial transport coefficient; demonstrate finite integrated radial energy without forcing the coefficient to zero.
+- [ ] Run full join/pulse/end/flatten/heat bundle checks after target restoration; only then advance admissible stress/remainder and scale recursion.
+
 ## Latest finite-energy obstruction handoff (2026-09-30)
 
 - [x] Quantify current materialized terminal radial coefficient and positive pointwise logarithmic energy density under the physical coordinate map.
