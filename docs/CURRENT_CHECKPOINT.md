@@ -1,3 +1,15 @@
+# 2026-09-30: Incremental analytic five-bump inverse installed
+
+The callable same-source correction now supports incremental Picard inversion,
+with individual updates and first-Z tangents preserved. Actual Z=.3, x=1.25:
+10 nonlinear updates reduce maximum nominal centered terminal residual to
+9.44313e-211. Same-source P0/P0_Z retained. This is the analytic local five-bump
+inverse, not temporal n-recursion or uniform functional closure.
+See FIVE_BUMP_INCREMENTAL_INVERSE_2026_09_30.md and inverse_check.json.
+Actual uniform C1/C2 defects, infinite response/source error enclosures and
+heat/energy matching remain open. Earlier cone samples concern degree-three
+fields and are not transferred as a certificate of this new inverse field.
+
 # 2026-09-30: Actual-source relaxed-cone sample and terminal tail
 
 Actual same-source five-bump reconstruction at Z=.3 now has 38 interval samples.

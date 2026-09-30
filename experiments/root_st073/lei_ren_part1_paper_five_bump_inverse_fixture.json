@@ -1,0 +1,10 @@
+{
+  "value_error": "1.85741918726593391025935884409363551444654057722849126288129e-73",
+  "first_Z_error": "1.84217630740214307655373526052787414320537823379348596316322e-72",
+  "residual_replay_error": "2.41418947745325269072090206216653042283590461283704208730335e-128",
+  "conditional_bound": "7.00480221120914907082915151293858037167059207311035198230443e-22",
+  "independent_root_solver": true,
+  "first_Z_oracle": "four-point stencil of independent root solver, step=1e-15",
+  "source_scope": "resolved analytic surrogate only",
+  "actual_source_certified": false
+}

@@ -1,3 +1,17 @@
+# 2026-09-30: Gate after incremental five-bump inverse
+
+- [x] Implement cancellation-resistant Picard increments and first-Z propagation.
+- [x] Join actual 10-update inverse to the common-source background at Z=.3.
+- [x] Compare resolved inverse against independent root solver and axial stencil.
+- [ ] Build uniform C1/C2 actual-source defect representation and remainder bounds.
+- [ ] Feed verified source bounds into contraction majorant; do not use a point norm.
+- [ ] Enclose infinite response, quadrature, pressure/width and core errors.
+- [ ] Preserve flat source hierarchy in nonlinear increments and physical moment parts.
+- [ ] Verify this inverse field's relaxed-cone intervals separately from old samples.
+- [ ] Finish heat and finite-energy matching, then temporal n-dependent recursion.
+
+See FIVE_BUMP_INCREMENTAL_INVERSE_2026_09_30.md for evidence and limitations.
+
 # 2026-09-30: Next construction gate after actual interval sampling
 
 - [x] Join same-source reference background with finite bump correction.
