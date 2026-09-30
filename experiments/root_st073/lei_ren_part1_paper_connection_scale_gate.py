@@ -10,7 +10,7 @@ from lei_ren_part1_paper_axis_jets import RegularCoreAxisJets
 
 
 def run(precision=160,*,Lambda='1e36',j='.02',logC=None,
-        logPstar='14',delta='1e-32',h_b='.005'):
+        logPstar='14',delta='1e-32',h_b='.005',write_receipt=True):
     with mp.workdps(precision):
         lam=mp.mpf(str(Lambda))
         logC=2*mp.log(lam) if logC is None else mp.mpf(str(logC))
@@ -44,8 +44,9 @@ def run(precision=160,*,Lambda='1e36',j='.02',logC=None,
             'A_Omega_certified':False,'A_C3_norm_bounded':False,'K_C3_norm_bounded':False,
             'source_parameter_regime_certified':False,
             'scope':'Rejection from necessary lower bounds; larger Cstar alone does not certify a new shared candidate'}
-    Path(__file__).with_suffix('.json').write_text(json.dumps(receipt,indent=2)+'\n',encoding='utf-8')
-    print(json.dumps(receipt,indent=2))
+    if write_receipt:
+        Path(__file__).with_suffix('.json').write_text(json.dumps(receipt,indent=2)+'\n',encoding='utf-8')
+        print(json.dumps(receipt,indent=2))
     return receipt
 
 

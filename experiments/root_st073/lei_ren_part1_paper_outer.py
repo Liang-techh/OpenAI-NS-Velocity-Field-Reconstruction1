@@ -277,11 +277,12 @@ class PaperOuterSchedule:
             else:
                 exponent_digits = 0
             self.decimal_precision = max(
-                DECIMAL_PRECISION, exponent_digits + 80
+                DECIMAL_PRECISION, exponent_digits + 80,
+                max(0, self.logRref.copy_abs().adjusted() + 1) + 80,
             )
             if self.decimal_precision > MAX_DECIMAL_PRECISION:
                 raise ValueError(
-                    "log_mu requires more than the supported Decimal precision "
+                    "source log radii require more than the supported Decimal precision "
                     f"cap ({MAX_DECIMAL_PRECISION} digits)"
                 )
             # Short alias for downstream schedule helpers that refer to the

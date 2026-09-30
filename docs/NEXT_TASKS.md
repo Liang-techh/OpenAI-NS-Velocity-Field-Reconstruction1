@@ -1,3 +1,20 @@
+## New shared candidate reaches R=110 - 2026-09-30
+
+Read experiments/root_st073/lei_ren_part1_paper_shared_candidate_1.md/json.
+The reproducible Python script recomputes pressure and degree 18 core at
+j=1e-14, Lambda=1e36, logCstar=5e151, logPstar=14, delta=1e-200.
+All five necessary input gates and six sampled core signs pass. The four
+new-parameter connection probes pass the relaxed cone; stricter admissible
+cones are not established. Explicit phases resolve distinct switch shears
+although the physical radius offsets round away. R=110 has a=.8,b=0.
+Real-axis norm bounds are available; mixed core A, full K and complex
+A_Omega bounds remain open. A=1e150 and logK_upper=1e152 are provisional.
+Next implement long angular reshaping with actual moments/Z jets while
+bounding these source constants, then axial restoration, moment repair
+and heat exterior matching. Finite energy, temporal scale recursion and
+full oscillatory-corrected residual remain unfinished. The detailed ordered
+checklist is in shared_candidate_1.md; mark tasks complete only with receipts.
+
 ## Latest executable task checklist - 2026-09-30
 
 - [x] Implement short source switches and actual five-moment/Z-jet transport to R=110.

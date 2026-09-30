@@ -568,6 +568,24 @@ class ExitSwitches:
             state, metadata = self._state_at(x, z)
             return self._output(x, z, state, metadata)
 
+    def evaluate_switch_phase(self, stage: int, phase: Any, Z: Any) -> dict[str, Any]:
+        """Resolve a subprecision collar by its explicit logarithmic phase.
+
+        Physical radii can round to R=100 while the shear transition remains
+        distinct. This API does not claim a physical grid resolves that layer.
+        """
+        with mp.workdps(self.precision):
+            p=_mp(phase); z=_mp(Z)
+            if stage not in (1,2) or not 0<=p<=1 or not abs(z)<1:
+                raise ValueError('Require stage 1/2, phase in [0,1], |Z|<1')
+            x=self.hb*((stage-1)+p)
+            state,metadata=self._state_at(x,z)
+            result=self._output(x,z,state,metadata)
+            result.update({'switch_stage':stage,'switch_phase':p,
+                           'log_radius_offset':x,'explicit_phase_coordinate':True,
+                           'physical_radius_offset_resolved':bool(result['R']!=self.R0)})
+            return result
+
 
 def build_default_switches(*, precision: int = 160, steps: int = 32) -> ExitSwitches:
     """Build the current finite source candidate through the Step 3 endpoint."""
