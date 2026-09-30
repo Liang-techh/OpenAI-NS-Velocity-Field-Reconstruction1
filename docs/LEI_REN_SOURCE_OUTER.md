@@ -70,6 +70,24 @@ cannot erase the difference. Combined ODE/quadrature refinement changes the
 finite difference by about 2.66e-7 relatively. This is numerical evidence,
 not an interval certificate for the coefficient functions or their derivatives.
 
+## Angular coefficients and profile representation
+
+`lei_ren_part1_paper_angular_correction.py/.json` now solves the small
+quadratic branch for the candidate-derived numerical inputs using mpmath's
+arbitrary exponent representation. It divides d_j by r before solving,
+so tiny coefficients never become zero. The angular multiplicative bump
+is callable in stage-local coordinates; `corrected_at_log_radius` retains
+the base log amplitude and its tiny log1p correction as separate terms.
+Both bump multipliers pass the positivity condition for the declared input.
+Independent actual bump quadrature gives angular increment/r error 5.11e-15.
+
+This is not an exact pressure-cancellation certificate. The weights retain
+finite quadrature uncertainty, the heat inputs are bounded Taylor values,
+and a finite precision subtraction cannot resolve the pressure target/r.
+The receipt reports this unresolved scale explicitly. The numerical waiting
+root's error also exceeds the tiny physical defect scales and must remain
+separate; do not declare all moments closed from algebraic residuals.
+
 ## Actual axial pulse inputs still required
 
 Section 7.5 fixes gp(xi)=[1-sigma(xi-10)]*integral_0^xi sigma(50v)dv
@@ -81,6 +99,11 @@ exp(13*lambda_i/mu), lambda_i=.5-i*mu. Do not feed unnormalized pulse
 integrals into its row-scaled matrix. The energy target (7.34) includes
 the actual future integral of the corrected angular profile from Rv to
 infinity, so it cannot be substituted before the angular repair is bound.
+
+`lei_ren_part1_paper_axial_pulse.py` now materializes this fixed pulse,
+its derivative and actual Kp integral. Its checks give Kp=.24504962020069448
+and quadrature refinement 2.03e-15, within the source range. Actual linear
+RHS integrals and the corrected angular energy target remain unbound.
 
 The binding order is: solve waiting length from actual normalized angular
 data; restore angular/pressure moments; integrate actual axial pulse and

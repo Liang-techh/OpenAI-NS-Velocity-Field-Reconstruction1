@@ -1,0 +1,127 @@
+{
+  "K_p": {
+    "gauss_legendre_128": 0.24504962020069276,
+    "gauss_legendre_256": 0.2450496202006935,
+    "gauss_legendre_64": 0.2450496202006948,
+    "max_refinement_difference": 2.0261570199409107e-15,
+    "piecewise_quad_error_estimate": 8.492806985823947e-14,
+    "piecewise_scipy_quad": 0.24504962020069448,
+    "source_bound": [
+      0.24,
+      0.246
+    ],
+    "source_bound_passed": true
+  },
+  "checks_passed": true,
+  "primitive_derivative": {
+    "max_absolute_error": 1.000088900582341e-12,
+    "rows": [
+      {
+        "absolute_error": 9.976974851561536e-172,
+        "finite_difference": 1.0034973778827171e-171,
+        "sigma_50xi": 5.799892726563447e-174,
+        "xi": 0.001
+      },
+      {
+        "absolute_error": 3.6692870963861424e-14,
+        "finite_difference": 0.4999999999999633,
+        "sigma_50xi": 0.5,
+        "xi": 0.01
+      },
+      {
+        "absolute_error": 4.085620730620576e-14,
+        "finite_difference": 0.9999999999999591,
+        "sigma_50xi": 1.0,
+        "xi": 0.019
+      },
+      {
+        "absolute_error": 4.085620730620576e-14,
+        "finite_difference": 0.9999999999999591,
+        "sigma_50xi": 1.0,
+        "xi": 0.03
+      },
+      {
+        "absolute_error": 1.000088900582341e-12,
+        "finite_difference": 1.000000000001,
+        "sigma_50xi": 1.0,
+        "xi": 0.5
+      }
+    ]
+  },
+  "pulse_derivative": {
+    "max_absolute_error": 6.521109838786288e-07,
+    "rows": [
+      {
+        "absolute_error": 4.4680774985295514e-10,
+        "analytic_derivative": 6.658357036482514e-07,
+        "finite_difference": 6.662825113981044e-07,
+        "xi": 0.005
+      },
+      {
+        "absolute_error": 4.4681780497768386e-10,
+        "analytic_derivative": 0.9999993341642964,
+        "finite_difference": 0.9999993337174786,
+        "xi": 0.015
+      },
+      {
+        "absolute_error": 1.000088900582341e-12,
+        "analytic_derivative": 1.0,
+        "finite_difference": 1.000000000001,
+        "xi": 0.5
+      },
+      {
+        "absolute_error": 3.78578279836006e-11,
+        "analytic_derivative": 1.0,
+        "finite_difference": 0.9999999999621422,
+        "xi": 9.5
+      },
+      {
+        "absolute_error": 3.78578279836006e-11,
+        "analytic_derivative": 1.0,
+        "finite_difference": 0.9999999999621422,
+        "xi": 10.005
+      },
+      {
+        "absolute_error": 6.521109838786288e-07,
+        "analytic_derivative": -83.42,
+        "finite_difference": -83.41999934788902,
+        "xi": 10.5
+      }
+    ]
+  },
+  "scope": {
+    "absolute_large_radius_coordinates_constructed": false,
+    "actual_affine_rhs_bound": false,
+    "corrected_angular_energy_input_open": true,
+    "fixed_pulse_only": true,
+    "full_axial_closure": false,
+    "open_dependencies": [
+      "Compute normalized incoming moment and pulse RHS data from the actual profile.",
+      "Supply the corrected angular tail to the (7.34) energy target."
+    ]
+  },
+  "source": "https://arxiv.org/html/2609.35406v1",
+  "source_equation": "g_p(xi)=[1-sigma(xi-10)]*int_0^xi sigma(50v)dv for xi>=0, else 0",
+  "source_section": "Part I Section 7.5, equation (7.28); definitions from (4.1)",
+  "source_version": "2609.35406v1",
+  "stage_local_checks": {
+    "derivative_at_stage": 1e-28,
+    "expected_stage_derivative": 1e-28,
+    "mu": 1e-28,
+    "value_at_stage": 4.99,
+    "value_direct": 4.99,
+    "xi": 5.0
+  },
+  "support": [
+    0.0,
+    11.0
+  ],
+  "support_checks": {
+    "derivative_at_eleven": 0.0,
+    "derivative_at_negative": 0.0,
+    "value_at_eleven": 0.0,
+    "value_at_negative": 0.0,
+    "value_at_thirteen": 0.0,
+    "value_at_zero": 0.0
+  }
+}

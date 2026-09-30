@@ -1,5 +1,15 @@
 ## Source outer replacement and first correction inputs — 2026-09-29
 
+Latest: source angular coefficients now use arbitrary-exponent signed logs
+and a scaled small-branch quadratic solve, with a callable multiplicative
+angular bump representation. Actual bump quadrature replays its normalized
+angular increment to 5.11e-15. This does NOT resolve cancellation at the much
+smaller pressure-target scale, certify the approximate heat inputs, or remove
+waiting-root uncertainty. The fixed axial pulse is also implemented:
+Kp=.24504962020069448, source .24<Kp<.246, refinement 2.03e-15.
+Actual axial RHS/tail energy, corrected pressure, derivatives/cone and the
+new regular core remain required before accepting the source outer field.
+
 Read `LEI_REN_SOURCE_OUTER.md`. The actual leading remainder now has an
 axial-viscosity breakdown. At the sampled regular-core point its angular
 and axial components are predominantly the source axial-viscosity terms;
