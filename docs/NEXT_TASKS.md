@@ -1,3 +1,11 @@
+## 2026-09-30 next: component axial restoration and functional repair
+
+1. Consume PressureWidthReferenceExtension at extension_length, preserving moment_parts/raw_quadratic_parts and first Z derivatives.
+2. Implement Section9.38 Uz=v1+(4Z-v1)sigma(log(R/Rz)) for phases0..1, then Uz=4Z to Rh (phase3). Keep angular reference and true axis pressure.
+3. Integrate prescribed axial mass, mixed and quadratic increments, retain separate parts, and recover Ur from prescribed moments.
+4. Restore five reference moment functions on [Rm,2Rm] without target overwrites or Z-dependent pressure resets.
+5. Install the joined branch; independently assess energy, heat, uniform stress cone and Cartesian equations before temporal recursion.
+
 ## 2026-09-30 next: reference extension after component long reshape
 
 1. Read COMPONENT_LONG_RESHAPE_2026_09_30.md and use PressureWidthLongReshape endpoint as the common source; do not reconstruct a separate pressure/core candidate.
