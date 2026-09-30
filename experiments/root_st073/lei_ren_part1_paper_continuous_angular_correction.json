@@ -1,0 +1,51 @@
+{
+  "source": "https://arxiv.org/html/2609.35406v1",
+  "source_version": "2609.35406v1",
+  "source_equations": "(7.13), (7.17), (7.20)--(7.23)",
+  "provider": {
+    "precision": 160,
+    "basis_precision": 100,
+    "integral_working_precision": 100,
+    "continuous_bump_shared_by_identity": true,
+    "weights": {
+      "A_mu": "1.001779896358128822609366692921476899729941058506250680196928813043126815214697088774754987076223626699124248392740077281649872465790073395309672814900564234647",
+      "B_mu": "1.001779896358128822609366692926585803956548255170298605189487450843402343768057500637718825172265523230154298478193190537679887004697328225402512844395898910179",
+      "D_mu": "4.506600787172984878990713254527330398405446534669055239455865104193009361286604321228743199875067402311639053813063503402597690504299027741246742720286210817843",
+      "beta_l2_squared": "4.500778753397983526582888068294391996563420092396794096606731856802825013666480591892889795076803821798421218219376227830569852080803569078280559675367410950471"
+    },
+    "full_outer_closed": false
+  },
+  "jet_checks": {
+    "h_t_relative_error": "4.59220439352379053986507215801e-15",
+    "h_tt_relative_error": "4.68979553288150050303798324682e-15",
+    "h_Z_relative_error": "7.38721375264378800518353418634e-17",
+    "h_tZ_relative_error": "7.38721375264378800518353418634e-17",
+    "normalized_coefficient_derivative_absolute_errors": {
+      "d1_over_r": "4.48797254423270322133847410862e-161",
+      "d2_over_r": "1.79518901769308128853538964345e-159"
+    }
+  },
+  "parity": {
+    "d1_even_difference": "0.0",
+    "d2_even_difference": "0.0",
+    "d1_Z_odd_difference": "0.0",
+    "d2_Z_odd_difference": "0.0"
+  },
+  "support_check": {
+    "h": "0.0",
+    "h_t": "0.0",
+    "h_tt": "0.0",
+    "h_Z": "0.0",
+    "h_tZ": "0.0"
+  },
+  "endpoint_check": {
+    "r_pre_positive_at_pm1": true,
+    "heat_r_zero_at_pm1": true,
+    "heat_r_positive_at_zero": true
+  },
+  "coefficients_cache_keys_are_exact_strings": true,
+  "signed_tiny_correction_preserved": true,
+  "pressure_cancellation_exact": false,
+  "quadrature_enclosure_certified": false,
+  "scope": "Continuous angular bump values, jets, weighted atoms and MP small-branch coefficient receipts; heat Taylor and fixed-node preheat inputs remain numerical inherited approximations."
+}

@@ -1,3 +1,18 @@
+## 2026-09-30 task handoff: shared angular correction installed
+
+- [x] Install one continuous bump definition in angular point values, coefficient equations, pressure partial integrals and bump energy integrals.
+- [x] Add implicit coefficient Z derivatives to actual Utheta_Z; retain tiny signed corrections separately.
+- [x] Add backward bump pressure Z jet and compare against independent fourth-order differences.
+- [x] Regenerate the nominal energy target from the live angular tail; preserve inherited uncertainty labels.
+- [ ] Continue full angular cumulative and pressure moments using the installed atoms; transport actual inner offsets once and expose moment Z jets.
+- [ ] Enclose the fixed preheat ODE/quadrature input and heat H/H-prime contributions, including full-support positive tails.
+- [ ] Enclose measured inner offsets, inherited incoming swirl energy and the complete live future energy contribution; pass each source into the coefficient interval solve.
+- [ ] Propagate all input Z bounds through axial coefficient tangents and show the true terminal mass/Z-mass combination closes; do not replace materialized residuals with zero.
+- [ ] Prove/control radial tail energy on the full exterior. Until then keep finite_energy_certified and scale_recursion_certified false.
+- [ ] After complete moments/energy closure, assemble admissible stress and remainder diagnostics and recursive-scale physical-coordinate comparisons.
+
+Acceptance evidence: continuous_angular_correction.json and continuous_incoming_outer.json. Current bump-pressure Z difference error is about 2.33e-20; this does not certify the exponentially smaller full pressure target. Full pressure Z, five moments, finite energy, stress and recursion remain open.
+
 ## 2026-09-30: continuous angular schedule installed in the shared field
 
 Installed continuous_angular_schedule.py in the existing schedule object. Full pre-heat log A, switch slopes, Z flattening and public MP Z entry points now use continuous MP primitives. Interior primitive working precision is 100 digits, arithmetic 443; accuracy is not inferred from either. Angular field adapters consume the returned jets. Heat normalization and interpolation retain epsilon in MP while H remains inherited. Incoming log Ep is regenerated before solving. Five transition Z differences at 1e-4 and 1e-30 pass; heat interface log jump is about 4.97e-292; Rp mass and Z matching still pass around 6.92e-83. Shared runtime identities and nonzero terminal residual retention pass.

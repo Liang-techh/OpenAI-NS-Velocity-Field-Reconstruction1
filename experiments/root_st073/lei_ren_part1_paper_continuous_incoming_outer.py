@@ -54,9 +54,10 @@ def regenerate_incoming(source, seeded, atoms, provider, *, order=96):
                  seeded['incoming']['inner_seed_transport']['raw_offsets'].items()}
         incoming=seeded_axial_inputs(incoming,log_Rp=str(schedule.logR_p),mu=str(schedule.mu),
                                      offsets=offsets,precision=precision)
-        old_prior=from_signed_log(seeded['incoming']['E_prior_mu_Mztheta_over_RpEp2'])
         new_prior=from_signed_log(incoming['E_prior_mu_Mztheta_over_RpEp2'])
-        target=mp.mpf(seeded['energy_target'])+old_prior-new_prior
+        future=source.outer.tail.evaluate(float(z),quadrature_order=source.outer.order)
+        future_nominal=mp.mpf(future['energy_target_contribution_nominal'])
+        target=(1-mp.exp(-26))/4-new_prior+future_nominal
         incoming['continuous_incoming']={
             'precision':provider.precision,'mixed_quadrature_order':order,
             'reference_linear_factors':{
@@ -70,6 +71,10 @@ def regenerate_incoming(source, seeded, atoms, provider, *, order=96):
             'serialized_digits_are_not_integral_accuracy':True,
             'angular_primitive_float_backed':False,'swirl_energy_inherited':True,
             'angular_heat_kernel_inherited':True,
+            'future_energy_regenerated_from_live_tail':True,
+            'future_energy_nominal':mp.nstr(future_nominal,precision),
+            'previous_energy_target':seeded['energy_target'],
+            'future_energy_uncertainty_fully_enclosed':False,
             'angular_correction_and_pressure_moments_complete':False,
             'mixed_reference_primitive_float_backed':False,
             'mixed_reference_primitive_definition':'ContinuousIncomingAngular.J with exact J(1)=1/2',
@@ -113,6 +118,16 @@ class ContinuousIncomingProfile(ContinuousSeededAxialProfileJets):
         from lei_ren_part1_paper_continuous_angular_schedule import install_continuous_angular_schedule
         self.angular_schedule_provider=install_continuous_angular_schedule(
             source.schedule,precision=source.precision,primitive_precision=incoming_precision)
+        from lei_ren_part1_paper_continuous_angular_correction import install_continuous_angular_correction
+        self.angular_correction_provider=install_continuous_angular_correction(
+            source.outer.angular,precision=source.precision,basis_precision=incoming_precision)
+        # Consumers share the correction object. Discard receipts computed
+        # before replacing its atoms, rather than mixing two bump definitions.
+        source.outer.tail._coefficient_cache.clear()
+        source.outer.pressure._coefficients_cache.clear()
+        source.outer.pressure._logU_rel=source.schedule.at_log_radius(
+            source.schedule.logR_rel,0)['log_angular_amplitude']
+        source.outer.coefficients.cache_clear()
         from lei_ren_part1_paper_continuous_incoming import ContinuousIncomingAxial
         self.incoming_provider=ContinuousIncomingAxial(str(source.schedule.Md),precision=incoming_precision)
         self.incoming_order=order
@@ -183,6 +198,7 @@ class ContinuousIncomingProfile(ContinuousSeededAxialProfileJets):
 
     def values(self,logR,Z):
         result=super().values(logR,Z)
+        self._install_angular_jet(result,logR,Z)
         if self.offset(logR,self.schedule.logR_p)<0:
             result['Uz']=self.incoming_provider.values(self._incoming_y(logR),str(Z))['Uz']
             result['continuous_incoming_values_installed']=True
@@ -190,11 +206,35 @@ class ContinuousIncomingProfile(ContinuousSeededAxialProfileJets):
 
     def values_with_jets(self,logR,Z):
         result=super().values_with_jets(logR,Z)
+        self._install_angular_jet(result,logR,Z)
         if self.offset(logR,self.schedule.logR_p)<0:
             values=self.incoming_provider.values(self._incoming_y(logR),str(Z))
             result.update(Uz=values['Uz'],Uz_Z=values['Uz_Z'],
                           axial_Z_method='continuous_incoming_analytic_Z')
         return result
+
+    def _install_angular_jet(self,result,logR,Z):
+        """Differentiate the same multiplier used in the angular velocity."""
+        with mp.workdps(max(self.precision,self.jet_precision)):
+            base=self.schedule.at_log_radius(logR,Z)
+            offset=_mp(str(self.offset(logR,self.schedule.logR_rel)))
+            jet=self.angular_correction_provider.value_jet(offset,Z)
+            amplitude=mp.exp(_mp(base['log_angular_amplitude']))
+            multiplier=1+jet['h']
+            LZ=_mp(base['dlogU_dZ'])
+            slope=_mp(base['logarithmic_slope'])+jet['h_t']/multiplier
+            result.update(Utheta=amplitude*multiplier,
+                Utheta_Z=amplitude*(LZ*multiplier+jet['h_Z']),
+                logarithmic_slope=slope,logF_slope=slope-mp.mpf('.5'),
+                angular_relative_correction=jet['h'],
+                angular_relative_correction_Z=jet['h_Z'],
+                angular_relative_correction_t=jet['h_t'],
+                angular_log1p_correction=mp.nstr(mp.log1p(jet['h']),self.precision),
+                angular_Z_method='continuous_schedule_and_implicit_bump_coefficients',
+                angular_correction_Z_jet_installed=True,
+                angular_Z_jet_complete=False)
+            # These local jets differentiate the installed numerical input
+            # model. Heat/baseline uncertainty and full moments remain open.
 
     values_Z=values_with_jets
 
@@ -252,6 +292,39 @@ def run():
                 Uz_Z=signed_log(velocity['Uz_Z'],field.precision),
                 mean=signed_log(mean['value'],field.precision),
                 mean_Z=signed_log(mean['derivative'],field.precision),method=mean['method']))
+        angular_checks=[]
+        for t in ('-3','-2.96','-1','-.96','0'):
+            radius=_mp(str(source.schedule.logR_rel))+mp.mpf(t)
+            text=mp.nstr(radius,field.precision)
+            velocity=field.outer.values_with_jets(text,z)
+            base=source.schedule.at_log_radius(text,z)
+            amp=mp.exp(_mp(base['log_angular_amplitude']))
+            correction=field.outer.angular_correction_provider.value_jet(mp.mpf(t),z)
+            expected=amp*(_mp(base['dlogU_dZ'])*(1+correction['h'])+correction['h_Z'])
+            error=abs((velocity['Utheta_Z']-expected)/expected) if expected else abs(velocity['Utheta_Z'])
+            if error>mp.mpf('1e-70'):
+                raise ArithmeticError('Actual angular correction Z jet differs from its provider')
+            if t=='-3' and not velocity['Utheta_Z']:
+                raise ArithmeticError('Actual field discarded the nonzero angular correction Z derivative')
+            angular_checks.append(dict(t=t,Utheta_Z=signed_log(velocity['Utheta_Z'],field.precision),
+                relative_correction_Z=signed_log(correction['h_Z'],field.precision),
+                provider_relative_error=mp.nstr(error,40)))
+        pressure_coeff=field.outer.angular.coefficients(z)
+        pressure_total,pressure_meta=field.outer.pressure._bump_integrals(float(z),pressure_coeff,order=96)
+        pressure_half,half_meta=field.outer.pressure._bump_integrals(float(z),pressure_coeff,order=96,upper_t=-3.)
+        if not pressure_half:
+            raise ArithmeticError('Partial pressure correction lost the first signed bump')
+        pressure_jet=field.outer.pressure.continuous_bump_jet('-2',z)
+        dz=mp.mpf('1e-5')
+        pressure_fd=sum(weight*field.outer.pressure.continuous_bump_jet('-2',z+shift*dz)['value']
+                        for shift,weight in ((-2,1),(-1,-8),(1,8),(2,-1)))/(12*dz)
+        pressure_jet_error=abs(pressure_fd/pressure_jet['derivative']-1)
+        if pressure_jet_error>mp.mpf('1e-13'):
+            raise ArithmeticError('Continuous bump pressure Z derivative failed independent difference')
+        logUv=source.schedule.at_log_radius(source.schedule.logR_v,z)['log_angular_amplitude']
+        bump_energy,energy_meta=field.outer.tail._angular_bump_correction(float(z),logUv,pressure_coeff,96)
+        if not (pressure_meta['continuous_bump_atoms_installed'] and energy_meta['continuous_bump_atoms_installed']):
+            raise ArithmeticError('Pressure or energy still uses legacy angular bump quadrature')
         report=dict(Z='.3',incoming=revised['incoming'],continuous_solve=solved,
             Rp_mass_relative_matching=mp.nstr(jumps[0],40),
             Rp_mass_Z_relative_matching=mp.nstr(jumps[1],40),samples=samples,
@@ -260,6 +333,16 @@ def run():
             source_schedule_identity_preserved=field.outer.schedule is source.schedule,
             angular_primitive_float_backed=False,swirl_energy_inherited=True,
             angular_preheat_schedule_installed=True,angular_heat_kernel_inherited=True,
+            angular_correction_checks=angular_checks,
+            angular_correction_Z_jet_installed=True,
+            source_correction_identity_preserved=field.outer.angular is source.outer.angular,
+            pressure_correction_same_bump_atoms=hasattr(field.outer.pressure.correction,'_continuous_provider'),
+            pressure_full_increment=signed_log(pressure_total,field.precision),
+            pressure_first_half_increment=signed_log(pressure_half,field.precision),
+            angular_bump_energy=signed_log(bump_energy,field.precision),
+            angular_bump_energy_same_atoms=True,
+            angular_bump_pressure_Z=signed_log(pressure_jet['derivative'],field.precision),
+            angular_bump_pressure_Z_difference_error=mp.nstr(pressure_jet_error,40),
             angular_pressure_and_moments_complete=False,
             finite_energy_certified=False,scale_recursion_certified=False)
     Path(__file__).with_suffix('.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')

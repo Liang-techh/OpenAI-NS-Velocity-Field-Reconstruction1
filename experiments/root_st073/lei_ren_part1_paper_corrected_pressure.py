@@ -72,6 +72,8 @@ def _coefficient_value(row: dict[str, Any], key: str, precision: int) -> mp.mpf:
     if not isinstance(entry, dict) or not entry.get("sign"):
         return mp.mpf("0")
     with mp.workdps(precision):
+        if entry.get('arbitrary_exponent_value') is not None:
+            return mp.mpf(str(entry['arbitrary_exponent_value']))
         result = mp.exp(mp.mpf(str(entry["log_abs"])))
         return result if int(entry["sign"]) > 0 else -result
 
@@ -203,15 +205,25 @@ class CorrectedPressureAdapter:
                 half = (right - left) / 2.0
                 linear_weight = mp.mpf("0")
                 quadratic_weight = mp.mpf("0")
-                for node, weight in zip(nodes, weights):
-                    local = midpoint + half * float(node)
-                    unit = (local - center) / float(ell)
-                    raw = mp.mpf(str(float(_paper_raw_bump(unit))))
-                    beta = raw / (ell * normalization)
-                    measure = half * mp.mpf(str(float(weight)))
-                    radial = mp.exp(-lam * mp.mpf(str(local)))
-                    linear_weight += measure * radial * beta
-                    quadratic_weight += measure * radial * beta * beta
+                provider = getattr(self.correction, '_continuous_provider', None)
+                if provider is not None:
+                    # Pressure and point velocity use the same bump atoms.
+                    c = mp.mpf(str(center))
+                    lo = mp.mpf(str(lower_t))-c
+                    hi = mp.mpf(str(upper_t))-c
+                    radial = mp.exp(-lam*c)
+                    linear_weight = radial * provider.weighted_atom(-lam, power=1, lower=lo, upper=hi)
+                    quadratic_weight = radial * provider.weighted_atom(-lam, power=2, lower=lo, upper=hi)
+                else:
+                    for node, weight in zip(nodes, weights):
+                        local = midpoint + half * float(node)
+                        unit = (local - center) / float(ell)
+                        raw = mp.mpf(str(float(_paper_raw_bump(unit))))
+                        beta = raw / (ell * normalization)
+                        measure = half * mp.mpf(str(float(weight)))
+                        radial = mp.exp(-lam * mp.mpf(str(local)))
+                        linear_weight += measure * radial * beta
+                        quadratic_weight += measure * radial * beta * beta
                 linear_term = coefficient * linear_weight
                 quadratic_term = mp.mpf("0.5") * coefficient * coefficient * quadratic_weight
                 pressure_term = linear_term + quadratic_term
@@ -233,7 +245,42 @@ class CorrectedPressureAdapter:
                 "lower_t": lower_t,
                 "upper_t": upper_t,
                 "supports_disjoint_cross_term": "exactly zero",
+                "continuous_bump_atoms_installed": getattr(self.correction, '_continuous_provider', None) is not None,
             }
+
+    def continuous_bump_jet(self, t: Any, Z: Any) -> dict[str, Any]:
+        """Backward bump pressure and Z jet, normalized by E_rel squared.
+
+        E_rel is Z-independent after flattening. Only the angular bump
+        contribution is differentiated here; this is not a full pressure jet.
+        Keep the signed support terms as cancellation at the target scale
+        can be unresolved even with arbitrary-exponent arithmetic.
+        """
+        provider = getattr(self.correction, '_continuous_provider', None)
+        if provider is None:
+            raise ValueError('Continuous angular correction must be installed')
+        with mp.workdps(self.precision):
+            t = mp.mpf(str(t))
+            coeff = provider.coefficients(Z)
+            lam = -(1+2*_decimal_mp(self.schedule.mu))
+            value = mp.mpf(0)
+            derivative = mp.mpf(0)
+            terms = []
+            for key, center in (('d1', -3), ('d2', -1)):
+                d = _coefficient_value(coeff, key, self.precision)
+                dz = _coefficient_value(coeff, key+'_Z', self.precision)
+                factor = mp.exp(lam*center)
+                linear = factor*provider.weighted_atom(lam, power=1, lower=t-center)
+                square = factor*provider.weighted_atom(lam, power=2, lower=t-center)
+                v = -(d*linear+d*d*square/2)
+                vz = -(dz*linear+d*dz*square)
+                value += v
+                derivative += vz
+                terms.append({'center':center,'value':v,'derivative':vz})
+            return {'value':value,'derivative':derivative,'support_terms':terms,
+                    'continuous_bump_atoms_installed':True,
+                    'full_pressure_Z_jet_complete':False,
+                    'exact_pressure_target':False}
 
     def pressure_increment(self, Z: Any, *, quadrature_order: int | None = None) -> dict[str, Any]:
         """Return Delta_p_bump normalized by E_rel squared."""

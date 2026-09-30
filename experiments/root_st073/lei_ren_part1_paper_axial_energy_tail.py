@@ -65,6 +65,8 @@ def _mp_signed_log(row: dict[str, Any], key: str, *, precision: int) -> mp.mpf:
     if not isinstance(value, dict) or not value.get("sign"):
         return mp.mpf("0")
     with mp.workdps(precision):
+        if value.get('arbitrary_exponent_value') is not None:
+            return mp.mpf(str(value['arbitrary_exponent_value']))
         result = mp.exp(mp.mpf(str(value["log_abs"])))
         return result if int(value["sign"]) > 0 else -result
 
@@ -246,16 +248,22 @@ class AngularEnergyTail:
                 coefficient = _mp_signed_log(coefficients, name, precision=self.precision)
                 linear = mp.mpf("0")
                 quadratic = mp.mpf("0")
-                for node, weight in zip(nodes, weights_gl):
-                    unit = mp.mpf(str(float(node)))
-                    local = ell * unit
-                    t = mp.mpf(str(center)) + local
-                    raw = mp.mpf(str(float(_paper_raw_bump(float(node)))))
-                    beta = raw / (ell * norm)
-                    measure = ell * mp.mpf(str(float(weight)))
-                    factor = mp.exp(-2 * mu * t)
-                    linear += measure * factor * beta
-                    quadratic += measure * factor * beta * beta
+                provider = getattr(self.correction, '_continuous_provider', None)
+                if provider is not None:
+                    factor = mp.exp(-2 * mu * mp.mpf(str(center)))
+                    linear = factor * provider.weighted_atom(-2*mu, power=1)
+                    quadratic = factor * provider.weighted_atom(-2*mu, power=2)
+                else:
+                    for node, weight in zip(nodes, weights_gl):
+                        unit = mp.mpf(str(float(node)))
+                        local = ell * unit
+                        t = mp.mpf(str(center)) + local
+                        raw = mp.mpf(str(float(_paper_raw_bump(float(node)))))
+                        beta = raw / (ell * norm)
+                        measure = ell * mp.mpf(str(float(weight)))
+                        factor = mp.exp(-2 * mu * t)
+                        linear += measure * factor * beta
+                        quadratic += measure * factor * beta * beta
                 contribution = pref * (2 * coefficient * linear + coefficient * coefficient * quadratic)
                 total += contribution
                 rows[name] = {
@@ -269,6 +277,7 @@ class AngularEnergyTail:
             return total, {
                 "background_prefactor_at_Rrel": mp.nstr(pref, self.precision),
                 "bumps_disjoint_quadratic_cross_term": "exactly zero by support",
+                "continuous_bump_atoms_installed": getattr(self.correction, '_continuous_provider', None) is not None,
                 "order": int(order),
                 "rows": rows,
             }

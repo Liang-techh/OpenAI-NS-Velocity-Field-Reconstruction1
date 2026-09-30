@@ -470,6 +470,7 @@ class ContinuousSeededOuterFieldJets(ContinuousSeededOuterField):
                 "heat_method": row.get("heat_method", base.get("heat_method")),
                 "axial_Z_method": row.get("axial_Z_method"),
                 "angular_Z_jet_complete": False,
+                "angular_correction_Z_jet_installed": row.get("angular_correction_Z_jet_installed",False),
             }
 
     def _outer_average(self, log_radius, z):
