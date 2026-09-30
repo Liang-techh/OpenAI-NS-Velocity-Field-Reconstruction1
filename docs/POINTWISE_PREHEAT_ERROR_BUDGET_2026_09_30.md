@@ -1,0 +1,30 @@
+# Same-source pointwise preheat pressure error budget — 2026-09-30
+
+The pressure approximation now has a directed interval error budget for all 14 components at Z = 0.3, using one common stored schedule and the existing 192-node finite pressure adapter. No pressure datum is reset.
+
+## Results
+
+All errors below are normalized by Pstar squared. The absolute upper bounds are:
+
+| Quantity | Error upper bound |
+| --- | ---: |
+| Pressure value | 1.8672588698572874e-13 |
+| First axial derivative | 2.0556978383749953e-13 |
+| Second axial derivative | 3.4575957526184936e-13 |
+| Value + first derivative + half second derivative | 5.6517545845415295e-13 |
+
+The last row is a weighted error at one point, not a uniform C2 norm. Physical pressure errors require multiplication by Pstar squared (approximately 1.446257064291475e12 for this stored schedule).
+
+The angular flatten stage has relative error upper bounds approximately 7.38e-19 for each of its value and first two axial derivatives. Its density is exp(2 ell + (beta - 3) log 2 - beta log(1 + Z squared)), with beta = 2(1 - sigma). The endpoint panels retain their baseline angular factor and use exact affine exponential integrals with interval beta corrections. Interior panels use interval Taylor integration with a remainder enclosure.
+
+## Reproduction and scope
+
+Run `lei_ren_part1_paper_flatten_preheat_integrals_fixture.py`, `lei_ren_part1_paper_flatten_preheat_integrals_check.py`, and `lei_ren_part1_paper_pointwise_preheat_error_budget.py` from `experiments/root_st073`. Matching JSON receipts retain exact binary interval endpoint tuples; rounded display strings are not authoritative endpoints.
+
+The budget includes the reference extension, eleven finite preheat stages, heat collar, and infinite exterior power integral. Each true positive integral is compared against the corresponding finite adapter component. Pressure has the opposite sign; no cancellation between independent stage errors is assumed.
+
+This certifies approximation error for the stored parameters only. It does not enclose the original transcendental parameter construction, core integration error, propagation through the five-moment repair, a uniform axial interval, an actual exterior heat velocity field, or temporal coefficient recursion. The analytic H=1 collar and power-tail pressure integrals are not a certificate of the exterior velocity solution.
+
+## Next dependency
+
+Extend the flatten pressure error to all |Z| <= 0.8. A coefficient expansion of (1 + Z squared)^(-beta), with beta in [0, 2], permits integration of coefficient errors and explicit uniform derivative tails. Combine this with the fixed-beta stages, then propagate the common analytic pressure error through the core and moment defects. Functional five-moment closure remains open until these propagation errors are enclosed.

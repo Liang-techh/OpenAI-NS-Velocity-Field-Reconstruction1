@@ -1,3 +1,9 @@
+## Latest completed pressure error budget (2026-09-30)
+
+All 14 pressure components now have a same-source, stored-parameter pointwise error budget at Z=0.3. Weighted normalized error upper: 5.6517545845415295e-13. This is not a uniform C2 bound or five-moment closure. See [the detailed receipt](POINTWISE_PREHEAT_ERROR_BUDGET_2026_09_30.md).
+
+Next: uniform |Z|<=0.8 pressure approximation errors, then core/RK and five-defect propagation; retain the common analytic datum. Temporal recursion and oscillatory correction remain open.
+
 # 2026-09-30: Both steep pressure transitions enclosed at high order
 
 Shared order12 interval integration now handles the two post-flatten steep

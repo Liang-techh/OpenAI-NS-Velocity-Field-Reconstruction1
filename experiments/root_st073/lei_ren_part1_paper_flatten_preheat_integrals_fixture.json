@@ -1,0 +1,40 @@
+{
+  "all_checks_passed": true,
+  "directed_interval_arithmetic": true,
+  "independent_scalar_quadrature": true,
+  "pointwise_Z_only": true,
+  "source_certificate": false,
+  "original_parameter_errors_enclosed": false,
+  "core_checks": [
+    {
+      "name": "value",
+      "lower": "0.19067323154142720725490427765587222",
+      "upper": "0.19103531366282514266710772425431573",
+      "reference": "0.19085427260143261628999738237992579"
+    },
+    {
+      "name": "first_Z",
+      "lower": "-0.17391999955427802319815829895957102",
+      "upper": "-0.17296295693850981519445488171903065",
+      "reference": "-0.1734414782373338515600445345474174"
+    },
+    {
+      "name": "second_Z",
+      "lower": "-0.29960256114257053047692496138462246",
+      "upper": "-0.29441151998032253493210091503130612",
+      "reference": "-0.29700704057594150428198165961208468"
+    }
+  ],
+  "core_metadata": {
+    "panels": 32,
+    "Taylor_order": 8,
+    "edge_method": "analytic affine amplitude with interval beta correction",
+    "edge_precision_limitation": true,
+    "interval_widths": {
+      "value": "0.0003620821213979354122034466",
+      "first_Z": "0.0009570426157682080037034172",
+      "second_Z": "0.005191041162247995544824046"
+    }
+  },
+  "wrapper_stored_length": "[100.0, 100.0]"
+}
