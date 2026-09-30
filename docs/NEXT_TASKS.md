@@ -1,3 +1,21 @@
+# 2026-09-30: Next construction gate after actual interval sampling
+
+- [x] Join same-source reference background with finite bump correction.
+- [x] Sample 38 points including support boundaries and interiors at Z=.3.
+- [x] Record relaxed-cone criterion separately from admissible cone.
+- [x] Retain and evaluate full degree-six scalar terminal moment polynomial.
+- [ ] Establish uniform actual C1/C2 centered defects; do not use one-Z data as a bound.
+- [ ] Recover second-Z source data and second-Z radial-velocity recovery.
+- [ ] Couple actual uniform bounds to the analytic inverse contraction majorant.
+- [ ] Enclose infinite-response and finite-quadrature errors and first/second-Z tails.
+- [ ] Preserve nonlinear source-product hierarchy in flat rows, particularly row5.
+- [ ] Enclose continuous support intervals and check each other stress region.
+- [ ] Complete exact heat matching and radial energy before temporal n-recursion.
+
+Detailed evidence: FIVE_BUMP_CONE_AND_TERMINAL_TAIL_2026_09_30.md.
+The row5 finite-response tail is much larger than its flat input, despite small
+absolute size. It cannot be called exact closure or silently dropped.
+
 ## 2026-09-30 next: actual terminal defects and corrected stress across the annulus
 
 1. [DONE, finite scope] Same-source reference provider from exact power moments + centered defects, all source/reference parts, fixed P0, canonical shared delta and optional raw energy state.

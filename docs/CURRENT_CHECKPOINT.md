@@ -1,3 +1,14 @@
+# 2026-09-30: Actual-source relaxed-cone sample and terminal tail
+
+Actual same-source five-bump reconstruction at Z=.3 now has 38 interval samples.
+All pass the kappa<=2 relaxed branch; paper claims only relaxed cone in this
+region, not admissible cone. Full degree-three velocity yields nonzero degree
+4--6 centered moment tails: row2 +8.93e-85, row4 -8.32e-71, row5 +5.56e-71.
+These are scalar nominal input-composition diagnostics, not exact functional
+closure or uniform-Z bounds. See FIVE_BUMP_CONE_AND_TERMINAL_TAIL_2026_09_30.md.
+Uniform C1/C2 source bounds, response remainder, heat/energy matching and temporal
+n-recursion remain open. Existing tiny source and response terms remain separate.
+
 ## 2026-09-30: actual common-source reference/bump join executed
 
 ReferenceDefectBackground now reconstructs the terminal reference interval from the exact power moments plus all centered source defect parts, keeping the original P0. It includes reference_power in the authoritative moment part maps and does not infer separate raw energies from d4. Resolved independent radial-density and source-lineage checks pass (maximum relative error3.20e-30).
