@@ -37,7 +37,9 @@ Next work, in dependency order:
   preserving offsets; match both values and shears at the short endpoint.
   See long_reshape.py/md/json. Conditional tail bounds and finite quadrature
   are implemented; global source constants and interval certification remain open.
-- [ ] Restore the axial profile and implement five actual moment repairs,
+- [x] Restore the numerical axial reference profile through Rh. See
+  axial_restore.py/md/json for actual moment transport and defect diagnostics.
+- [ ] Implement five actual moment repairs,
   carrying pressure and Ur from the same fields and continuity formula.
 - [ ] Match that repaired background to the heat exterior and establish
   finite energy before claiming a global velocity field.

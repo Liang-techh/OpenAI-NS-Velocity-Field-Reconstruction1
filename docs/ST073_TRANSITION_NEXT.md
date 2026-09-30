@@ -1,3 +1,23 @@
+## Axial reference restored; actual defect inputs recorded - 2026-09-30
+
+Read experiments/root_st073/lei_ren_part1_paper_axial_restore.py/md/json.
+Section 9.38 transports actual moments and Z jets from Rz through Rh.
+At Z=.3, V reaches 4Z=1.2, V_Z reaches 4, and V_y vanishes at the end.
+Five relaxed-cone probes pass. Largest 32/64 moment quadrature difference
+is 1.51e-32. Independent radial mapped-divergence replay at restoration
+midpoint gives q div(u)=2.14e-24, relative cancellation 3.26e-25.
+Centered defects d1,d2,d4 are about 2.234e-15,5.690e-16,5.915e-41.
+Angular/pressure entries d3,d5 are unresolved by subtraction: nonzero
+roundoff artifacts exceed their conditional physical bounds. Do not set
+them to zero or use them as measured defects. The receipt preserves
+conditional bounds and flags the missing uniform C1/e_star certificate.
+Next implement the fixed Section10.8 five-bump matrix and nonlinear
+moment correction, with stable signed-log/interval treatment of tiny
+defects and actual partial bump moments. Detailed checklist is in the
+axial_restore.md. Source requires relaxed cones in these later intervals;
+strict admissibility is needed in the inner collar. Finite energy,
+heat exterior matching and temporal scale recursion remain unfinished.
+
 ## Long reshape now reaches the axial restoration entry - 2026-09-30
 
 Read experiments/root_st073/lei_ren_part1_paper_long_reshape.py/md/json.

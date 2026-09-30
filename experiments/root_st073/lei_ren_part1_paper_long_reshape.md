@@ -60,9 +60,10 @@ reference log-value difference is about 5.59e-263. The largest recorded
 shaping tail bounds are 6.46e-1241, 1e-79, and 9.10e-881; the pressure
 Z-tail bound is 1.62e-43 under the stated local assumptions.
 
-Next implement V restoration on [Rz,e Rz], integrating actual moments and
-Z jets against the exact reference swirl. Then continue to Rh=exp(-5)Rref,
-record five actual repair defects, and implement Section 10 repair before
+V restoration on [Rz,e Rz] and continuation to Rh are now implemented in
+axial_restore.py/md/json, including actual moments and Z jets. Its receipt
+records the five repair inputs and flags angular/pressure subtraction loss.
+Next implement Section 10 repair before
 matching the exterior. Full complex and mixed source constants, pressure
 tail derivative bounds, finite energy, stress admissibility and temporal
 scale recursion remain open.
