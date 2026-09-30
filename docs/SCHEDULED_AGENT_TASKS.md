@@ -365,3 +365,19 @@ next_action:
 ## VIS002 delivery
 
 Implemented velocity_components.py with velocity/u/v/w, vectorized point/grid evaluation, CLI, packaged default coefficients, metadata and NPZ samples. See docs/VELOCITY_API.md. Two focused tests passed; an isolated extracted-wheel smoke reproduced the same point values. Build initially failed without isolated build dependencies, then normal isolated wheel build succeeded. Visual correspondence remains pending VIS001/VIS004. Commit and PR are linked in central issue15 delivery comments.
+## Active extended-background handoff — 2026-09-29
+
+Start from `docs/LEI_REN_EXTENDED_EXTERIOR.md` and replay
+`lei_ren_part1_extended_pressure_core.load_extended_profile()`. The actual
+collar, angular closure and common-pressure finite core are implemented;
+five actual axial slices pass three-moment repair in `lei_ren_part1_extended_axial.json`.
+Do not rerun the old short-join optimizer or the rejected 65-node pressure seed.
+
+Next task: build a smooth Z-dependent axial repair, keeping a consistent
+nullspace direction through degenerate quadratic roots. Preserve the core
+and collar jets, check all three moments at independent Z points, derive
+radial velocity from the axial primitive, and integrate the replacement
+physical field. Then evaluate actual stress and shear over the whole
+connection; the weak swirl anchor does not yet meet the final cone.
+Record completed artifacts and measured errors, leaving whole-background
+cone, higher-order remainder and oscillatory corrections explicitly open.

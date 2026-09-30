@@ -9,6 +9,11 @@ The new [layered kinematic candidate and measured scale diagnostics](docs/LEI_RE
 include dependent radial velocity, annular axial moment repair and full
 heat-tail energy. Its short outer join requires reconstruction before
 admissible stress or NS recursion acceptance.
+The [extended exterior route](docs/LEI_REN_EXTENDED_EXTERIOR.md) now has an
+actual heat collar with ODE-derived stress, angular-matched swirl and a
+rebuilt common-pressure finite core. It remains an intermediate profile;
+whole-connection moments, cone restoration and physical field integration
+are the next steps.
 
 ## Current deliverable: canonical callable 3D velocity
 

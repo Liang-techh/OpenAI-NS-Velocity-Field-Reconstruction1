@@ -109,6 +109,25 @@ angular closure over 33 Z points at 2.01e-11, positive swirl and sampled
 negative radial shear, with independent F_R error below 5.57e-7 in
 `lei_ren_part1_extended_swirl_rebuilt_checks.json`.
 
+## Actual axial moment repair
+
+The actual axial repair in `lei_ren_part1_extended_axial.py/.json` now uses
+the rebuilt common-pressure swirl and the actual collar quadratic target at
+Z=-1,-.5,0,.5,1. Its base axial core is retained through R=.005 and smoothly
+cut off by R=.02; four interior bumps restore zero axial moment, zero mixed
+moment and the nonzero quadratic target. Logarithmic quadrature breakpoints
+resolve the small core and large exterior in the same calculation.
+Independent 128-node residual is below 1.59e-13 at these five slices.
+
+Actual-profile integration exposed a degenerate minimum-L2 branch in the
+generic solver: when quadratic and objective centers coincide, the solver
+must still choose a deterministic nonzero nullspace direction for a positive
+energy level. Returning the center silently omitted the quadratic correction.
+The repaired branch is required for the disjoint core/bump supports here.
+The five-slice receipt is not yet a smooth-in-Z profile: interpolation,
+branch orientation, dependent radial recovery and between-slice moments
+remain to be implemented and independently checked.
+
 ## Next construction work
 
 1. Use the actual collar at Ra as the outer jet and five-moment boundary data.
@@ -116,8 +135,9 @@ negative radial shear, with independent F_R error below 5.57e-7 in
    to axial/quadratic repair; rebuild its pressure whenever swirl is modified.
 3. Preserve the regular core and actual collar jets during repairs. Negative
    F_R of the intermediate weak anchor is not a final cone certificate.
-4. Restore axial, mixed and quadratic moments on the same profile. Verify
-   between interpolation nodes, including the axial endpoint behavior.
+4. Extend the actual five-slice axial repair smoothly over Z, pinning the
+   nullspace branch orientation. Restore and verify moments between nodes,
+   including axial endpoints; recover radial velocity from its primitive.
 5. Compute actual profile-derived stress and its cone margins over the whole
    connection. Then implement higher-order coefficients and measure the
    physical background residual, stress divergence and remainder across scales.

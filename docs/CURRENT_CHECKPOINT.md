@@ -1,5 +1,13 @@
 ## Extended exterior boundary data — 2026-09-29
 
+Actual axial/mixed/quadratic repair is now bound to the rebuilt shared-pressure
+swirl at five Z slices (-1,-.5,0,.5,1). Independent 128-node moment residual
+is below 1.59e-13. A degenerate quadratic-root branch was repaired after
+actual-profile integration exposed it. Next implement a smooth Z-dependent
+repair with pinned branch orientation, between-slice moment checks and
+dependent radial recovery. This is not yet the replacement physical field
+or the whole admissible stress cone.
+
 The actual extended swirl now has a rebuilt common-pressure finite core:
 `lei_ren_part1_extended_pressure_core.json` converges in three iterations,
 collocation defect 4.32e-10, independent 16-Z pressure holdout 7.05e-9.

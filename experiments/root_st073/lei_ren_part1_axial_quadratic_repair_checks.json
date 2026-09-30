@@ -1,0 +1,696 @@
+{
+  "status": "completed",
+  "source": "https://arxiv.org/html/2609.35406v1",
+  "source_version": "2609.35406v1",
+  "source_section": "Section 2.5",
+  "Rmax": 1.0,
+  "Z_values": [
+    -0.7,
+    -0.3,
+    0.0,
+    0.35,
+    0.8
+  ],
+  "bump_count": 4,
+  "bump_supports": [
+    [
+      0.08,
+      0.2
+    ],
+    [
+      0.3,
+      0.42
+    ],
+    [
+      0.54,
+      0.66
+    ],
+    [
+      0.78,
+      0.9
+    ]
+  ],
+  "synthetic_profiles": {
+    "F": "0.7 + 0.35 R + 0.12 Z + 0.08 sin(2.5 R + 0.4 Z)",
+    "base_U": "0.3 + 0.4 R - 0.2 Z + 0.12 cos(pi R + 0.3 Z)",
+    "ranges": {
+      "F_min": 0.5938915481148709,
+      "F_max": 1.1712862371373642,
+      "F_range": 0.5773946890224934,
+      "base_U_min": 0.2565605569822435,
+      "base_U_max": 0.7226362902331022,
+      "base_U_range": 0.46607573325085866
+    }
+  },
+  "synthetic_target": {
+    "formula": "2.46463 * (1 + 0.04 Z)",
+    "reference_scale": 2.46463,
+    "actual_shared_background": false,
+    "nonzero": true
+  },
+  "rows": [
+    {
+      "Z": -0.7,
+      "quadratic_target": 2.39562036,
+      "repair_order64": {
+        "status": "solved",
+        "solvable": true,
+        "Z": -0.7,
+        "Rmax": 1.0,
+        "quadratic_target": 2.39562036,
+        "bump_intervals": [
+          [
+            0.08,
+            0.2
+          ],
+          [
+            0.3,
+            0.42
+          ],
+          [
+            0.54,
+            0.66
+          ],
+          [
+            0.78,
+            0.9
+          ]
+        ],
+        "quadrature_breakpoints": [],
+        "quadrature_order": 64,
+        "linear_rank": 2,
+        "linear_condition_number": 3.453164563117244,
+        "nullspace_dimension": 2,
+        "nullspace_condition_number": 1.0,
+        "particular_coefficients": [
+          -2.991555060105058,
+          -3.306481666606268,
+          -3.732204176900923,
+          -4.211023208416972
+        ],
+        "coefficients": [
+          -6.880514076857077,
+          1.47184319053185,
+          -2.8544856865963038,
+          -5.978107539107686
+        ],
+        "unconstrained_quadratic_minimum": 0.9317930730650077,
+        "nullspace_level": 1.4638272869349924,
+        "l2_change": 3.24015952266725
+      },
+      "repair_order32": {
+        "status": "solved",
+        "solvable": true,
+        "Z": -0.7,
+        "Rmax": 1.0,
+        "quadratic_target": 2.39562036,
+        "bump_intervals": [
+          [
+            0.08,
+            0.2
+          ],
+          [
+            0.3,
+            0.42
+          ],
+          [
+            0.54,
+            0.66
+          ],
+          [
+            0.78,
+            0.9
+          ]
+        ],
+        "quadrature_breakpoints": [],
+        "quadrature_order": 32,
+        "linear_rank": 2,
+        "linear_condition_number": 3.453164563118382,
+        "nullspace_dimension": 2,
+        "nullspace_condition_number": 1.0000000000000007,
+        "particular_coefficients": [
+          -2.991555059915518,
+          -3.3064816663958667,
+          -3.732204176662291,
+          -4.2110232081465995
+        ],
+        "coefficients": [
+          -6.880514076951776,
+          1.471843191090446,
+          -2.854485686291409,
+          -5.978107538967533
+        ],
+        "unconstrained_quadratic_minimum": 0.9317930728446858,
+        "nullspace_level": 1.4638272871553144,
+        "l2_change": 3.2401595226655973
+      },
+      "evaluation_order32": {
+        "quadrature_order": 32,
+        "mass_moment": -4.18641961374977e-11,
+        "mixed_moment": -3.968936637677167e-11,
+        "quadratic_value": 2.3956203599602337,
+        "quadratic_residual": -3.976641238523371e-11,
+        "l2_change": 3.240159522681863,
+        "finite": true
+      },
+      "evaluation_order64": {
+        "quadrature_order": 64,
+        "mass_moment": -1.734723475976807e-17,
+        "mixed_moment": 1.8735013540549517e-16,
+        "quadratic_value": 2.3956203599999992,
+        "quadratic_residual": -8.881784197001252e-16,
+        "l2_change": 3.24015952266725,
+        "finite": true
+      },
+      "max_abs_coefficient_difference_order64_minus_order32": 5.585958362530619e-10,
+      "abs_l2_change_difference_order64_minus_order32": 1.461275545011631e-11
+    },
+    {
+      "Z": -0.3,
+      "quadratic_target": 2.43505444,
+      "repair_order64": {
+        "status": "solved",
+        "solvable": true,
+        "Z": -0.3,
+        "Rmax": 1.0,
+        "quadratic_target": 2.43505444,
+        "bump_intervals": [
+          [
+            0.08,
+            0.2
+          ],
+          [
+            0.3,
+            0.42
+          ],
+          [
+            0.54,
+            0.66
+          ],
+          [
+            0.78,
+            0.9
+          ]
+        ],
+        "quadrature_breakpoints": [],
+        "quadrature_order": 64,
+        "linear_rank": 2,
+        "linear_condition_number": 3.5146266626814913,
+        "nullspace_dimension": 2,
+        "nullspace_condition_number": 1.0000000000000004,
+        "particular_coefficients": [
+          -2.5648182228523164,
+          -2.8534790528959695,
+          -3.2342984783984243,
+          -3.655045332704186
+        ],
+        "coefficients": [
+          -6.6682902135911934,
+          3.107983262757399,
+          -3.9587026150774944,
+          -4.788631520939605
+        ],
+        "unconstrained_quadratic_minimum": 0.5454216548259022,
+        "nullspace_level": 1.889632785174098,
+        "l2_change": 3.2170646341963107
+      },
+      "repair_order32": {
+        "status": "solved",
+        "solvable": true,
+        "Z": -0.3,
+        "Rmax": 1.0,
+        "quadratic_target": 2.43505444,
+        "bump_intervals": [
+          [
+            0.08,
+            0.2
+          ],
+          [
+            0.3,
+            0.42
+          ],
+          [
+            0.54,
+            0.66
+          ],
+          [
+            0.78,
+            0.9
+          ]
+        ],
+        "quadrature_breakpoints": [],
+        "quadrature_order": 32,
+        "linear_rank": 2,
+        "linear_condition_number": 3.514626662682583,
+        "nullspace_dimension": 2,
+        "nullspace_condition_number": 1.000000000000001,
+        "particular_coefficients": [
+          -2.5648182226896994,
+          -2.853479052714324,
+          -3.234298478191658,
+          -3.6550453324696828
+        ],
+        "coefficients": [
+          -6.6682902135993585,
+          3.1079832631843334,
+          -3.95870261489543,
+          -4.788631520754908
+        ],
+        "unconstrained_quadratic_minimum": 0.5454216546611597,
+        "nullspace_level": 1.8896327853388404,
+        "l2_change": 3.217064634195289
+      },
+      "evaluation_order32": {
+        "quadrature_order": 32,
+        "mass_moment": -3.618001211125321e-11,
+        "mixed_moment": -3.623543826103415e-11,
+        "quadratic_value": 2.4350544399739595,
+        "quadratic_residual": -2.6040503087187972e-11,
+        "l2_change": 3.2170646342108196,
+        "finite": true
+      },
+      "evaluation_order64": {
+        "quadrature_order": 64,
+        "mass_moment": 2.0816681711721685e-17,
+        "mixed_moment": 1.734723475976807e-18,
+        "quadratic_value": 2.4350544400000005,
+        "quadratic_residual": 4.440892098500626e-16,
+        "l2_change": 3.2170646341963107,
+        "finite": true
+      },
+      "max_abs_coefficient_difference_order64_minus_order32": 4.2693448776276455e-10,
+      "abs_l2_change_difference_order64_minus_order32": 1.4508838575011396e-11
+    },
+    {
+      "Z": 0.0,
+      "quadratic_target": 2.46463,
+      "repair_order64": {
+        "status": "solved",
+        "solvable": true,
+        "Z": 0.0,
+        "Rmax": 1.0,
+        "quadratic_target": 2.46463,
+        "bump_intervals": [
+          [
+            0.08,
+            0.2
+          ],
+          [
+            0.3,
+            0.42
+          ],
+          [
+            0.54,
+            0.66
+          ],
+          [
+            0.78,
+            0.9
+          ]
+        ],
+        "quadrature_breakpoints": [],
+        "quadrature_order": 64,
+        "linear_rank": 2,
+        "linear_condition_number": 3.564230131462552,
+        "nullspace_dimension": 2,
+        "nullspace_condition_number": 1.0,
+        "particular_coefficients": [
+          -2.237615672703374,
+          -2.5094255342511778,
+          -2.8619628006542333,
+          -3.2468564695579833
+        ],
+        "coefficients": [
+          -5.73359786038156,
+          3.8787708812167416,
+          -5.9344108668134,
+          -3.0666226311885474
+        ],
+        "unconstrained_quadratic_minimum": 0.2879566630522985,
+        "nullspace_level": 2.176673336947702,
+        "l2_change": 3.2105575805911086
+      },
+      "repair_order32": {
+        "status": "solved",
+        "solvable": true,
+        "Z": 0.0,
+        "Rmax": 1.0,
+        "quadratic_target": 2.46463,
+        "bump_intervals": [
+          [
+            0.08,
+            0.2
+          ],
+          [
+            0.3,
+            0.42
+          ],
+          [
+            0.54,
+            0.66
+          ],
+          [
+            0.78,
+            0.9
+          ]
+        ],
+        "quadrature_breakpoints": [],
+        "quadrature_order": 32,
+        "linear_rank": 2,
+        "linear_condition_number": 3.564230131463604,
+        "nullspace_dimension": 2,
+        "nullspace_condition_number": 1.0000000000000013,
+        "particular_coefficients": [
+          -2.237615672561439,
+          -2.5094255340913945,
+          -2.861962800471289,
+          -3.246856469349775
+        ],
+        "coefficients": [
+          -5.733597860338399,
+          3.878770881551646,
+          -5.934410866706891,
+          -3.066622630980252
+        ],
+        "unconstrained_quadratic_minimum": 0.28795666292389793,
+        "nullspace_level": 2.176673337076102,
+        "l2_change": 3.2105575805903728
+      },
+      "evaluation_order32": {
+        "quadrature_order": 32,
+        "mass_moment": -3.1912222864249884e-11,
+        "mixed_moment": -3.326710261430943e-11,
+        "quadratic_value": 2.464629999982976,
+        "quadratic_residual": -1.702415985960215e-11,
+        "l2_change": 3.210557580605588,
+        "finite": true
+      },
+      "evaluation_order64": {
+        "quadrature_order": 64,
+        "mass_moment": 6.071532165918825e-17,
+        "mixed_moment": -1.0408340855860843e-17,
+        "quadratic_value": 2.4646299999999997,
+        "quadratic_residual": -4.440892098500626e-16,
+        "l2_change": 3.2105575805911086,
+        "finite": true
+      },
+      "max_abs_coefficient_difference_order64_minus_order32": 3.349045485379065e-10,
+      "abs_l2_change_difference_order64_minus_order32": 1.4479528687161292e-11
+    },
+    {
+      "Z": 0.35,
+      "quadratic_target": 2.49913482,
+      "repair_order64": {
+        "status": "solved",
+        "solvable": true,
+        "Z": 0.35,
+        "Rmax": 1.0,
+        "quadratic_target": 2.49913482,
+        "bump_intervals": [
+          [
+            0.08,
+            0.2
+          ],
+          [
+            0.3,
+            0.42
+          ],
+          [
+            0.54,
+            0.66
+          ],
+          [
+            0.78,
+            0.9
+          ]
+        ],
+        "quadrature_breakpoints": [],
+        "quadrature_order": 64,
+        "linear_rank": 2,
+        "linear_condition_number": 3.624691315045026,
+        "nullspace_dimension": 2,
+        "nullspace_condition_number": 1.0000000000000004,
+        "particular_coefficients": [
+          -1.8484920780650416,
+          -2.1040361156974434,
+          -2.4293913916167655,
+          -2.7802816683120426
+        ],
+        "coefficients": [
+          -3.1324588325189056,
+          2.880913481816494,
+          -8.626950240452965,
+          -0.2837056625359158
+        ],
+        "unconstrained_quadratic_minimum": 0.022842054889480688,
+        "nullspace_level": 2.4762927651105193,
+        "l2_change": 3.213204891313888
+      },
+      "repair_order32": {
+        "status": "solved",
+        "solvable": true,
+        "Z": 0.35,
+        "Rmax": 1.0,
+        "quadratic_target": 2.49913482,
+        "bump_intervals": [
+          [
+            0.08,
+            0.2
+          ],
+          [
+            0.3,
+            0.42
+          ],
+          [
+            0.54,
+            0.66
+          ],
+          [
+            0.78,
+            0.9
+          ]
+        ],
+        "quadrature_breakpoints": [],
+        "quadrature_order": 32,
+        "linear_rank": 2,
+        "linear_condition_number": 3.6246913150460256,
+        "nullspace_dimension": 2,
+        "nullspace_condition_number": 1.000000000000001,
+        "particular_coefficients": [
+          -1.8484920779477323,
+          -2.104036115563435,
+          -2.4293913914614915,
+          -2.7802816681338585
+        ],
+        "coefficients": [
+          -3.132458832429001,
+          2.88091348203802,
+          -8.62695024039341,
+          -0.28370566232212635
+        ],
+        "unconstrained_quadratic_minimum": 0.022842054797666322,
+        "nullspace_level": 2.476292765202334,
+        "l2_change": 3.213204891313263
+      },
+      "evaluation_order32": {
+        "quadrature_order": 32,
+        "mass_moment": -2.6933536997897356e-11,
+        "mixed_moment": -2.942028391739182e-11,
+        "quadratic_value": 2.4991348199921832,
+        "quadratic_residual": -7.816858271780802e-12,
+        "l2_change": 3.2132048913283793,
+        "finite": true
+      },
+      "evaluation_order64": {
+        "quadrature_order": 64,
+        "mass_moment": -3.469446951953614e-18,
+        "mixed_moment": -2.5847379792054426e-16,
+        "quadratic_value": 2.49913482,
+        "quadratic_residual": 0.0,
+        "l2_change": 3.213204891313888,
+        "finite": true
+      },
+      "max_abs_coefficient_difference_order64_minus_order32": 2.2152590872792643e-10,
+      "abs_l2_change_difference_order64_minus_order32": 1.4491075006617393e-11
+    },
+    {
+      "Z": 0.8,
+      "quadratic_target": 2.54349816,
+      "repair_order64": {
+        "status": "solved",
+        "solvable": true,
+        "Z": 0.8,
+        "Rmax": 1.0,
+        "quadratic_target": 2.54349816,
+        "bump_intervals": [
+          [
+            0.08,
+            0.2
+          ],
+          [
+            0.3,
+            0.42
+          ],
+          [
+            0.54,
+            0.66
+          ],
+          [
+            0.78,
+            0.9
+          ]
+        ],
+        "quadrature_breakpoints": [],
+        "quadrature_order": 64,
+        "linear_rank": 2,
+        "linear_condition_number": 3.7048563652985775,
+        "nullspace_dimension": 2,
+        "nullspace_condition_number": 1.0000000000000002,
+        "particular_coefficients": [
+          -1.337257842355455,
+          -1.5776199324456202,
+          -1.877059388178028,
+          -2.195781715229616
+        ],
+        "coefficients": [
+          0.3319477639104489,
+          -0.009998083177524375,
+          -9.413703591960392,
+          2.1040350330187465
+        ],
+        "unconstrained_quadratic_minimum": -0.2620721271360144,
+        "nullspace_level": 2.8055702871360144,
+        "l2_change": 3.231882100954454
+      },
+      "repair_order32": {
+        "status": "solved",
+        "solvable": true,
+        "Z": 0.8,
+        "Rmax": 1.0,
+        "quadratic_target": 2.54349816,
+        "bump_intervals": [
+          [
+            0.08,
+            0.2
+          ],
+          [
+            0.3,
+            0.42
+          ],
+          [
+            0.54,
+            0.66
+          ],
+          [
+            0.78,
+            0.9
+          ]
+        ],
+        "quadrature_breakpoints": [],
+        "quadrature_order": 32,
+        "linear_rank": 2,
+        "linear_condition_number": 3.7048563652994955,
+        "nullspace_dimension": 2,
+        "nullspace_condition_number": 1.0000000000000018,
+        "particular_coefficients": [
+          -1.3372578422705543,
+          -1.5776199323451097,
+          -1.8770593880580737,
+          -2.1957817150889936
+        ],
+        "coefficients": [
+          0.3319477640037469,
+          -0.009998083060025031,
+          -9.41370359189563,
+          2.1040350331891746
+        ],
+        "unconstrained_quadratic_minimum": -0.2620721271899923,
+        "nullspace_level": 2.805570287189992,
+        "l2_change": 3.2318821009536753
+      },
+      "evaluation_order32": {
+        "quadrature_order": 32,
+        "mass_moment": -2.0541429668341493e-11,
+        "mixed_moment": -2.3913947211351427e-11,
+        "quadratic_value": 2.54349816000199,
+        "quadratic_residual": 1.9899637493381306e-12,
+        "l2_change": 3.2318821009690284,
+        "finite": true
+      },
+      "evaluation_order64": {
+        "quadrature_order": 64,
+        "mass_moment": -1.1275702593849246e-16,
+        "mixed_moment": 1.734723475976807e-18,
+        "quadratic_value": 2.543498160000001,
+        "quadratic_residual": 8.881784197001252e-16,
+        "l2_change": 3.231882100954454,
+        "finite": true
+      },
+      "max_abs_coefficient_difference_order64_minus_order32": 1.7042811606415853e-10,
+      "abs_l2_change_difference_order64_minus_order32": 1.4574563778069205e-11
+    }
+  ],
+  "independent_quadrature_summary": {
+    "max_abs_residual_order64": 8.881784197001252e-16,
+    "max_abs_residual_order32": 4.18641961374977e-11,
+    "max_abs_coefficient_difference_order64_minus_order32": 5.585958362530619e-10,
+    "max_abs_l2_change_difference_order64_minus_order32": 1.461275545011631e-11,
+    "residual_components": [
+      "integral U",
+      "integral 2 R F U",
+      "integral (U^2 - R F^2) - quadratic_target"
+    ]
+  },
+  "unsolvable_target_diagnostic": {
+    "status": "quadratic_target_unreachable",
+    "solvable": false,
+    "Z": 0.0,
+    "Rmax": 1.0,
+    "quadratic_target": -100.0,
+    "bump_intervals": [
+      [
+        0.08,
+        0.2
+      ],
+      [
+        0.3,
+        0.42
+      ],
+      [
+        0.54,
+        0.66
+      ],
+      [
+        0.78,
+        0.9
+      ]
+    ],
+    "quadrature_breakpoints": [],
+    "quadrature_order": 64,
+    "linear_rank": 2,
+    "linear_condition_number": 3.564230131462552,
+    "nullspace_dimension": 2,
+    "nullspace_condition_number": 1.0,
+    "particular_coefficients": [
+      -2.237615672703374,
+      -2.5094255342511778,
+      -2.8619628006542333,
+      -3.2468564695579833
+    ],
+    "coefficients": null,
+    "unconstrained_quadratic_minimum": 0.2879566630522985,
+    "nullspace_level": -100.2879566630523,
+    "l2_change": null
+  },
+  "finite_input_validation": {
+    "nonpositive_Rmax": "passed",
+    "noncallable_F": "passed",
+    "too_few_bumps": "passed"
+  },
+  "minimal_L2_root_rule": "The selected nullspace root is nearest the correction-L2 center on the quadratic level ellipse.",
+  "solves_generic_finite_subproblem_only": true,
+  "full_outer_completed": false,
+  "pde_validated": false,
+  "admissibility_validated": false,
+  "scope": "Generic finite axial repair building block with four compact C-infinity bumps. The synthetic target is near the reported actual-collar quadratic scale but is not the actual shared background. No outer connection, five-moment closure, PDE, stress, or global certificate is claimed."
+}
