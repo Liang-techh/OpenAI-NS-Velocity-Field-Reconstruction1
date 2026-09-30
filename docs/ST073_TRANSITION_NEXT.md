@@ -1,3 +1,11 @@
+## 2026-09-30: incoming swirl reference regenerated coherently
+
+Replaced inherited incoming I_swirl by the same normalized ContinuousAngularMoments propagation used by actual angular cumulative moments. Reference energy is generated before actual inner offsets are applied once; energy target and live axial coefficients are then recomputed together. Reference swirl/Ep^2 remains Z independent, preserving the analytic tangent cancellation for this input.
+
+Shared-field test passed: actual Rp swirl and Z primitive match regenerated reference plus measured inner offsets to about 1.17e-84 nominal relative difference. The change from inherited I_swirl is about 7.92e-19; this is not a global accuracy certificate. Updated linear-equation replay errors are about 6.87e-174 and 1.09e-173, and the live coefficient tangent evaluates. Quadrature/input uncertainty, terminal radial transport and complete five moments remain open.
+
+Pressure cumulative implementation and partial axial-square integration are assigned to bounded Luna/max workers. Their unfinished files are not accepted or uploaded as completed work. Next integrate their verified results, complete full pressure/heat targets and stress diagnostics.
+
 ## 2026-09-30: cumulative heat angular moments and infinite swirl component
 
 Extended actual seeded angular and swirl-square moments/Z jets beyond Rtail using the installed common heat polynomial. Collar Gauss atoms and analytic exterior exponential atoms retain reference, heat corrections and Z terms separately. Actual quadratic moments now dispatch through finite heat radii. Six forward-integrand checks at t=.6,4,30 pass with maximum relative difference 7.69e-14; Rtail increments are zero and corrections remain nonzero.

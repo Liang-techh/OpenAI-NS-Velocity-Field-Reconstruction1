@@ -1,3 +1,13 @@
+## Latest incoming swirl handoff (2026-09-30)
+
+- [x] Replace inherited incoming swirl reference with the same continuous angular propagation as actual moments.
+- [x] Reapply actual inner offsets once and regenerate live energy target/axial coefficients coherently; check actual Rp swirl and Z matching.
+- [ ] Accept and install partial axial energy after shared-atom derivative/boundary checks; end Z energy must be 2*sum(c*c_Z*Kpartial), never sum(c_Z^2*Kpartial).
+- [ ] Complete and install actual inner-seeded pressure moment/P jets from the same angular field.
+- [ ] Regenerate full heat-defect angular/pressure targets, enclose inputs/tails, and resolve terminal radial transport before finite-energy/stress/recursion claims.
+
+Evidence: continuous_incoming_swirl.py/md/json. The two worker tasks are in progress, not completed. Keep unrelated scale_reference edits untouched.
+
 ## Latest cumulative heat handoff (2026-09-30)
 
 - [x] Extend actual angular/swirl-square cumulative moments and Z jets through heat collar and finite exterior radii.

@@ -2,7 +2,8 @@
 
 Regenerate reference axial inputs, reapply measured inner offsets once, and
 reuse the continuous exterior integral atoms for a new coefficient solve.
-Angular primitives and swirl energy retain their explicitly inherited scope.
+Swirl reference energy is regenerated from shared angular propagation;
+quadrature, input uncertainty and complete exterior closure remain open.
 """
 from copy import deepcopy
 from functools import lru_cache
@@ -37,11 +38,16 @@ def regenerate_incoming(source, seeded, atoms, provider, *, order=96):
         full=provider.full_incoming_rows(z)
         dimensions=incoming['dimensionless_integrals']
         old_dimensions=deepcopy(dimensions)
+        from lei_ren_part1_paper_continuous_incoming_swirl import ContinuousIncomingSwirl
+        if not hasattr(source,'_continuous_incoming_swirl_reference'):
+            source._continuous_incoming_swirl_reference=ContinuousIncomingSwirl(source,order=order)
+        swirl=source._continuous_incoming_swirl_reference.reference(z)
         # Serializing at source algebra precision cannot add information to
         # the incoming quadrature atoms. Retain their declared precision.
         dimensions.update(I_z=mp.nstr(full['I_z'],provider.precision),
                           I_uz2=mp.nstr(full['I_uz2'],provider.precision),
-                          I_theta_z=mp.nstr(mixed_factor*z/(1+z*z),provider.precision))
+                          I_theta_z=mp.nstr(mixed_factor*z/(1+z*z),provider.precision),
+                          I_swirl=mp.nstr(swirl['I_swirl'],precision))
         yp=mp.mpf(str(schedule.y_p));ep=mp.mpf(incoming['log_Ep'])
         mu=mp.mpf(str(schedule.mu))
         reference=[mp.mpf(dimensions['I_z'])*mp.exp(-yp-ep),
@@ -66,10 +72,12 @@ def regenerate_incoming(source, seeded, atoms, provider, *, order=96):
             'old_dimensionless_integrals':old_dimensions,
             'dimensionless_integral_working_precision':{
                 'I_z':provider.precision,'I_uz2':provider.precision,
-                'I_theta_z':provider.precision,'I_swirl':seeded['incoming']['precision']},
+                'I_theta_z':provider.precision,'I_swirl':precision},
             'mixed_axial_factor_working_precision':provider.precision,
             'serialized_digits_are_not_integral_accuracy':True,
-            'angular_primitive_float_backed':False,'swirl_energy_inherited':True,
+            'angular_primitive_float_backed':False,'swirl_energy_inherited':False,
+            'swirl_reference_shared_angular_propagation':True,
+            'swirl_quadrature_order':order,'swirl_quadrature_error_enclosed':False,
             'angular_heat_kernel_inherited':False,
             'heat_integral_targets_inherited_Taylor':True,
             'future_energy_regenerated_from_live_tail':True,
