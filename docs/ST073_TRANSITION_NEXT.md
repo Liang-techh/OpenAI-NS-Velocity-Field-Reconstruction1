@@ -1,3 +1,11 @@
+## 2026-09-30: mixed moments and complete exterior axial energy installed
+
+Added actual inner-seeded mixed moments/Z jets and complete axial-square/Z jets, using the live continuous incoming, pulse and end atoms. Installed linear_axial_moments_jet and quadratic_moments_jet on ContinuousIncomingProfile. The quadratic provider currently supports Rv through Rtail. Actual inner offsets are applied once; materialized terminal residuals remain nonzero. Pulse/end supports are disjoint by xi = 13 + mu*t_v > 11 on the end band.
+
+Fixed the tiny positive pulse startup primitive using a positive scaled endpoint integral. The startup checks retain a nonzero value at xi=1e-5; full source energy integration runs again. Mixed Rp matching is about 2.28e-81; local mixed integrands about 2.08e-23 and 1.19e-17. Exterior quadratic integrand checks are about 7.34e-15 and 1.88e-14; axial energy is constant after axial support. These are nominal consistency checks, not certified quadrature accuracy or NS momentum residual bounds.
+
+Next: partial axial-square/Z primitives inside incoming/pulse/end; consistent heat H and derivative primitives; complete pressure/Z; regenerate inherited incoming swirl from the installed angular primitive and update targets coherently. Enclose inputs and coefficient tangents, resolve nonzero terminal radial transport, then finite energy, stress/remainder and scale recursion. No full closure claim.
+
 ## 2026-09-30: actual inner-seeded angular moments extended to Rtail
 
 Added continuous_angular_moments.py/md/json and installed ContinuousIncomingProfile.angular_moments_jet. It transports actual Mtheta, full swirl-square integral and both Z derivatives from Rh through every preheat stage to Rtail. Actual inner raw swirl is half the square integral; the API uses twice that atom. Reference baseline, signed compact-bump contributions and actual inner offsets remain separate; offsets are reapplied once. Constant stages use exact exponential transfers and finite stages declared Gauss nodes on the installed continuous schedule. Absolute checkpoint guards avoid rejecting recorded endpoints after subtraction of enormous log radii.

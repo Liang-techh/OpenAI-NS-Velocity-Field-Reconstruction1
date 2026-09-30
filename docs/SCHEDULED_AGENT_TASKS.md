@@ -1,3 +1,18 @@
+## 2026-09-30: continuous moment handoff (latest)
+
+- [x] Install mixed moment and Z jet with actual inner offsets and shared row-2 pulse/end atoms.
+- [x] Install complete axial-square and Z jet after Rv; combine exterior z_theta with actual angular moments.
+- [x] Repair positive tiny startup pulse integration and retain nonzero values.
+- [ ] Implement partial axial-square/Z through incoming, pulse and end bands; match complete value at Rv and check forward integrands.
+- [ ] Regenerate incoming swirl energy from the installed angular primitive; update energy targets/coefficient tangents together.
+- [ ] Continue angular and quadratic primitives through heat with one consistent H/H-prime/H-second definition and separate tiny deficits.
+- [ ] Complete pressure moment/Z propagation with actual inner offsets and shared correction atoms.
+- [ ] Enclose quadrature and inherited input uncertainty; propagate full coefficient tangent intervals.
+- [ ] Resolve terminal mass/Z-mass radial transport without forcing measured residuals to zero; bound full exterior radial energy.
+- [ ] After complete moment and energy closure, implement admissible stress/remainder and recursive physical-scale diagnostics.
+
+Evidence: continuous_mixed_moments.json, continuous_axial_energy_moments.json, continuous_axial_startup_check.json. Finite energy and scale recursion remain uncertified. Older checklist entries below are historical; use this latest section for current status.
+
 ## 2026-09-30 handoff: angular moments now reach Rtail
 
 - [x] Install actual Rh-seeded Mtheta and full integral(Utheta^2 dR), with analytic Z propagation through all preheat stages.

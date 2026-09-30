@@ -137,9 +137,19 @@ class ContinuousIncomingProfile(ContinuousSeededAxialProfileJets):
         self.shared_runtimes={}
         from lei_ren_part1_paper_continuous_angular_moments import ContinuousAngularMoments
         self.angular_moment_provider=ContinuousAngularMoments(self,order=order)
+        from lei_ren_part1_paper_continuous_mixed_moments import ContinuousMixedMoments
+        self.mixed_moment_provider=ContinuousMixedMoments(self)
+        from lei_ren_part1_paper_continuous_axial_energy_moments import ContinuousAxialEnergyMoments
+        self.axial_energy_moment_provider=ContinuousAxialEnergyMoments(self)
 
     def angular_moments_jet(self,logR,Z):
         return self.angular_moment_provider.moments_jet(logR,Z)
+
+    def linear_axial_moments_jet(self,logR,Z):
+        return self.mixed_moment_provider.moments_jet(logR,Z)
+
+    def quadratic_moments_jet(self,logR,Z):
+        return self.axial_energy_moment_provider.moments_jet(logR,Z)
 
     def _ensure_prepared(self,Z):
         z=float(Z)

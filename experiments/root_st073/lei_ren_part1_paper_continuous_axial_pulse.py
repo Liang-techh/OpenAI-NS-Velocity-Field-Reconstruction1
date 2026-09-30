@@ -4,7 +4,8 @@ Full integral definitions include all support. Numerical centered evaluations
 retain an explicit positive omitted-piece bound and uncertified quadrature
 error. Startup partial rows use an endpoint-scaled integration-by-parts
 primitive with the same ``value_jet`` source and a positive tail bound. These
-atoms are not yet installed in the global mean/energy solve.
+The shared continuous runtime owns these definitions; full-field input and
+quadrature bounds are not certified by this module.
 """
 import json
 from pathlib import Path
@@ -27,6 +28,42 @@ class ContinuousAxialPulse:
         derivative=product*(2/x**3+2/(1-x)**3)
         return value,derivative
 
+    @staticmethod
+    def _startup_primitive(q):
+        """Evaluate ``int_0^(q/50) sigma(50*s) ds`` at the startup endpoint.
+
+        Direct quadrature in ``u`` can lose the positive primitive when
+        ``q`` is small.  The change of variables
+        ``u=q/(1+q**2*v)`` keeps the same sigma definition and exposes the
+        endpoint scale without subtracting a bulk integral.  This is a
+        numerical endpoint evaluator; its quadrature error is not enclosed.
+        """
+        q=mp.mpf(q)
+        if q<=0 or q>mp.mpf('.5'):
+            raise ValueError('startup q must lie in (0,.5]')
+        phase_q=1/q**2-1/(1-q)**2
+        tiny_q=mp.exp(-phase_q)
+        prefactor=tiny_q*q**3/mp.mpf(50)
+
+        def scaled(v):
+            if mp.isinf(v):
+                return mp.mpf(0)
+            v=mp.mpf(v)
+            denominator=1+q**2*v
+            u=q/denominator
+            if u==0:
+                return mp.mpf(0)
+            dq=-(q**3*v)/denominator
+            heat_difference=(dq*(2-u-q)/
+                             ((1-u)**2*(1-q)**2))
+            difference=2*v+q**2*v**2-heat_difference
+            phase_u=1/u**2-1/(1-u)**2
+            return (mp.exp(-difference)/
+                    (denominator**2*(1+mp.exp(-phase_u))))
+
+        integral=mp.quad(scaled,[0,1,4,16,mp.inf])
+        return prefactor*integral
+
     def value_jet(self,xi):
         with mp.workdps(self.precision):
             xi=mp.mpf(xi)
@@ -36,18 +73,10 @@ class ContinuousAxialPulse:
             else:
                 q=50*xi
                 if q<=mp.mpf('.5'):
-                    # On the flat left endpoint, sigma(u) <= exp(-phase(q))
-                    # for 0 <= u <= q.  If even the resulting integral upper
-                    # bound is below the active MP resolution, adaptive
-                    # quadrature must not manufacture a tiny nonzero pulse.
-                    phase=1/q**2-1/(1-q)**2
-                    log_upper=mp.log(q)-phase-mp.log(50)
-                    if log_upper < -mp.mpf(max(8,self.precision-8))*mp.log(10):
-                        raise ArithmeticError(
-                            'Startup pulse is below the active MP precision; '
-                            'a smaller-xi log evaluator is required'
-                        )
-                    primitive=mp.quad(lambda u:self.sigma_pair(u)[0],[0,q])/50
+                    # Resolve the positive startup primitive directly in its
+                    # endpoint scale.  This retains tiny nonzero values that
+                    # ordinary adaptive quadrature can round away.
+                    primitive=self._startup_primitive(q)
                 else:
                     # Symmetric integral, preserving the positive correction.
                     primitive=xi-mp.mpf('.01')+mp.quad(
