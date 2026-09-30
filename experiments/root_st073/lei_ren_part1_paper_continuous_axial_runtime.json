@@ -222,6 +222,7 @@
     "incoming_rows_regenerated": true,
     "live_complete_atoms_owned": true,
     "live_basis_and_pulse_shared_by_identity": true,
+    "basis_enclosure_available": true,
     "quadrature_enclosure_certified": false,
     "installed_in_global_profile": true,
     "global_mean_closed": false,
@@ -237,5 +238,18 @@
   "incoming_uncertainty_enclosed": false,
   "global_mean_closed": false,
   "finite_energy_certified": false,
-  "scope": "One live basis, pulse, complete pulse rows, matrix, and solve; no fullfield construction or global certificate."
+  "scope": "One live basis, pulse, complete pulse rows, matrix, and solve; no fullfield construction or global certificate.",
+  "basis_enclosure_summary": {
+    "panels": 1024,
+    "interval_precision": 60,
+    "nominal_containment": {
+      "normalizer": true,
+      "matrix": true,
+      "determinant": true,
+      "energy_gram": true
+    },
+    "determinant_strictly_negative": true,
+    "basis_quadrature_enclosed": true,
+    "complete_axial_quadrature_enclosed": false
+  }
 }

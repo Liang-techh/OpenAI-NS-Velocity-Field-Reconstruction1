@@ -1,3 +1,29 @@
+## Interval enclosures for continuous basis atoms - 2026-09-30
+
+New continuous_basis_enclosure.py/md/json uses outward interval arithmetic
+and an analytic midpoint remainder for the actual continuous bump definition.
+It encloses I0, both weighted B rows/matrix atoms, and squared-bump energy Gram.
+Exact dyadic endpoints are serialized; displayed decimal digits are not the
+certificate. Real declared mu/ell are covered, inherited parameter errors not.
+
+For 4096 panels: I0 width 1.216e-6, B1 width 5.706e-6; determinant width 1.477e-33.
+The correlated analytic determinant identity (with positive sinh bounds)
+proves this candidate's real basis matrix invertible despite tiny mu.
+Nominal I0/matrix/determinant/Gram all lie inside independent intervals.
+1024-to4096 panel refinement decreases the analytic remainder by 16.
+
+SharedContinuousAxialRuntime now exposes optional basis_enclosure; its fixture
+checks the actual owned basis against these bounds. Complete pulse quadrature,
+incoming moments, coefficient errors and source target remain unenclosed.
+The broad full-axial/global-energy certificates stay FALSE, and materialized
+terminal residuals remain visible. This bounds basis integrals, not the whole
+NS field or exact terminal cancellation.
+
+Next: enclose pulse centered quadrature and incoming primitives; propagate
+correlated atom/input errors through functional coefficients; establish both
+terminal constraints without replacing materialized residuals. Full outer
+moments/pressure, global energy, recursive matching and stress/remainder remain.
+
 ## Shared live continuous axial atoms installed - 2026-09-30
 
 New continuous_axial_runtime.py/md/json owns ONE live basis/pulse, complete

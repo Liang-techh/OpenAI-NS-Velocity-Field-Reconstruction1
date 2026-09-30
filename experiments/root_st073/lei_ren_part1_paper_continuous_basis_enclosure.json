@@ -1,0 +1,722 @@
+{
+  "method": "Outward interval midpoint rule plus analytic global second-derivative remainder",
+  "reports": [
+    {
+      "mu": "0.00000000000000000000000000047808928838854690812771770423179628938895918566154107150931053078280643868823391336854620345065110714965403795563736299445577657491164810252834853612624151481709914217115510248942523896495521771638574",
+      "panels": 1024,
+      "interval_precision": 60,
+      "normalizer": {
+        "enclosure": {
+          "lower": {
+            "sign": 0,
+            "mantissa": "11415278836764438180711320080374095477083032253169154699709789",
+            "binary_exponent": -204,
+            "decimal_display": "0.4439840912639378797119091598943333173839"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "11415778910954577110177896176573391070376407753014720626158179",
+            "binary_exponent": -204,
+            "decimal_display": "0.4440035410722209959341886813351724441304"
+          },
+          "width_display": "0.00001944980828311622227952144083912674649856",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        },
+        "midpoint": {
+          "lower": {
+            "sign": 0,
+            "mantissa": "11415528873859507645444608128473743273729720003091937662933683",
+            "binary_exponent": -204,
+            "decimal_display": "0.4439938161680794378230489206147528807571"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "11415528873859507645444608128473743273729720003091937662934285",
+            "binary_exponent": -204,
+            "decimal_display": "0.4439938161680794378230489206147528807571"
+          },
+          "width_display": "2.341409498295254567312954100234771745522e-59",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        },
+        "analytic_quadrature_bound": {
+          "lower": {
+            "sign": 0,
+            "mantissa": "8193215531236220380382760129259000518664189469752138920555307",
+            "binary_exponent": -219,
+            "decimal_display": "0.000009724904141558111139760720419563373249278"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "4096607765618110190191380064629500259332094734876069460277655",
+            "binary_exponent": -218,
+            "decimal_display": "0.000009724904141558111139760720419563373249278"
+          },
+          "width_display": "3.560837904659924530302465851085733932833e-66",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        }
+      },
+      "weighted_rows": [
+        {
+          "B": {
+            "lower": {
+              "sign": 0,
+              "mantissa": "6430317598245553852611077868957396991870741480816681728503565",
+              "binary_exponent": -202,
+              "decimal_display": "1.000399116384536117403915949701333558902"
+            },
+            "upper": {
+              "sign": 0,
+              "mantissa": "6430904440090646903606484290484935991592014615304003283978137",
+              "binary_exponent": -202,
+              "decimal_display": "1.00049041452872867434939748020915683688"
+            },
+            "width_display": "0.00009129814419255694548153050782327797772629",
+            "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+          },
+          "raw": {
+            "enclosure": {
+              "lower": {
+                "sign": 0,
+                "mantissa": "5710167567680090478367889481753681535751261600126705639271549",
+                "binary_exponent": -203,
+                "decimal_display": "0.4441807501602549742867039412902591206172"
+              },
+              "upper": {
+                "sign": 0,
+                "mantissa": "2855219263838869105647117238198217592294947432341970870636307",
+                "binary_exponent": -202,
+                "decimal_display": "0.4442018275128181125494539780120951872842"
+              },
+              "width_display": "0.00002107735256313826275003672183606666702376",
+              "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+            },
+            "midpoint": {
+              "lower": {
+                "sign": 0,
+                "mantissa": "11420606095357828689662123958150116720341156464810647380543863",
+                "binary_exponent": -204,
+                "decimal_display": "0.4441912888365365434180789596511771539507"
+              },
+              "upper": {
+                "sign": 0,
+                "mantissa": "11420606095357828689662123958150116720341156464810647380544463",
+                "binary_exponent": -204,
+                "decimal_display": "0.4441912888365365434180789596511771539507"
+              },
+              "width_display": "2.333630729197928140179024020167546590221e-59",
+              "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+            },
+            "analytic_quadrature_bound": {
+              "lower": {
+                "sign": 0,
+                "mantissa": "138731518795639258288637257089868205380231453304884224391465",
+                "binary_exponent": -213,
+                "decimal_display": "0.00001053867628156913137501836091803333351188"
+              },
+              "upper": {
+                "sign": 0,
+                "mantissa": "1109852150365114066309098056718945643041851626439073795131721",
+                "binary_exponent": -216,
+                "decimal_display": "0.00001053867628156913137501836091803333351188"
+              },
+              "width_display": "9.495567745759798747473242269561957154221e-66",
+              "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+            }
+          },
+          "matrix": [
+            {
+              "lower": {
+                "sign": 0,
+                "mantissa": "11478382364014376732127813760730654962432166333513331629382171",
+                "binary_exponent": -205,
+                "decimal_display": "0.2232192150512292351120761868608797268274"
+              },
+              "upper": {
+                "sign": 0,
+                "mantissa": "11479429900933396032273183731429462128539900320352011519741153",
+                "binary_exponent": -205,
+                "decimal_display": "0.2232395864207641747820550192414543732873"
+              },
+              "width_display": "0.00002037136953493966997883238057464645996007",
+              "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+            },
+            {
+              "lower": {
+                "sign": 0,
+                "mantissa": "1950092387512816133470838272303510930068765358684180655887699",
+                "binary_exponent": -201,
+                "decimal_display": "0.6067727360366482359776263893343054613804"
+              },
+              "upper": {
+                "sign": 0,
+                "mantissa": "7801081425194167068382847277893345264440109747280092444822975",
+                "binary_exponent": -203,
+                "decimal_display": "0.6068281111602758866737289443097605441762"
+              },
+              "width_display": "0.00005537512362765069610255497545508279579851",
+              "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+            }
+          ]
+        },
+        {
+          "B": {
+            "lower": {
+              "sign": 0,
+              "mantissa": "3215158799122776926305538934475970434479194982736921148302479",
+              "binary_exponent": -201,
+              "decimal_display": "1.000399116384536117403915949700484720496"
+            },
+            "upper": {
+              "sign": 0,
+              "mantissa": "6430904440090646903606484290479456166689518227672948893190325",
+              "binary_exponent": -202,
+              "decimal_display": "1.000490414528728674349397480208304311027"
+            },
+            "width_display": "0.00009129814419255694548153050781959053155661",
+            "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+          },
+          "raw": {
+            "enclosure": {
+              "lower": {
+                "sign": 0,
+                "mantissa": "11420335135360180956735778963497672919928085791934987641527419",
+                "binary_exponent": -204,
+                "decimal_display": "0.4441807501602549742867039412898822333591"
+              },
+              "upper": {
+                "sign": 0,
+                "mantissa": "2855219263838869105647117238195784637215327076682856127671615",
+                "binary_exponent": -202,
+                "decimal_display": "0.4442018275128181125494539780117166793685"
+              },
+              "width_display": "0.00002107735256313826275003672183444600933129",
+              "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+            },
+            "midpoint": {
+              "lower": {
+                "sign": 0,
+                "mantissa": "11420606095357828689662123958140405734394697049333206076106641",
+                "binary_exponent": -204,
+                "decimal_display": "0.4441912888365365434180789596507994563638"
+              },
+              "upper": {
+                "sign": 0,
+                "mantissa": "5710303047678914344831061979070202867197348524666603038053619",
+                "binary_exponent": -203,
+                "decimal_display": "0.4441912888365365434180789596507994563638"
+              },
+              "width_display": "2.32196257555193849947812890006670885727e-59",
+              "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+            },
+            "analytic_quadrature_bound": {
+              "lower": {
+                "sign": 0,
+                "mantissa": "8878817202920912530472784453068864441917682424821664291925809",
+                "binary_exponent": -219,
+                "decimal_display": "0.00001053867628156913137501836091722300466565"
+              },
+              "upper": {
+                "sign": 0,
+                "mantissa": "1109852150365114066309098056633608055239710303102708036490727",
+                "binary_exponent": -216,
+                "decimal_display": "0.00001053867628156913137501836091722300466565"
+              },
+              "width_display": "8.308621777539823904039086985866712509943e-66",
+              "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+            }
+          },
+          "matrix": [
+            {
+              "lower": {
+                "sign": 0,
+                "mantissa": "5739191182007188366063906888591995263294113380024221396332173",
+                "binary_exponent": -204,
+                "decimal_display": "0.2232192150512292351120761871808464724134"
+              },
+              "upper": {
+                "sign": 0,
+                "mantissa": "5739714950466698016136591873942128916102814928150484350566671",
+                "binary_exponent": -204,
+                "decimal_display": "0.2232395864207641747820550195614495140936"
+              },
+              "width_display": "0.00002037136953493966997883238060304168019907",
+              "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+            },
+            {
+              "lower": {
+                "sign": 0,
+                "mantissa": "7800369550051264533883353092936698235967756771384335734341497",
+                "binary_exponent": -203,
+                "decimal_display": "0.6067727360366482359776263896238821604473"
+              },
+              "upper": {
+                "sign": 0,
+                "mantissa": "7801081425194167068382847281616311368045858708336061884015641",
+                "binary_exponent": -203,
+                "decimal_display": "0.6068281111602758866737289445993614809474"
+              },
+              "width_display": "0.00005537512362765069610255497547932050009013",
+              "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+            }
+          ]
+        }
+      ],
+      "determinant": {
+        "lower": {
+          "sign": 1,
+          "mantissa": "8245644946955204968019057753414454509770796555776738909456075",
+          "binary_exponent": -295,
+          "decimal_display": "-1.295316535240416505739085855039163983224e-28"
+        },
+        "upper": {
+          "sign": 1,
+          "mantissa": "2061035032368390418443476509019125650793546183309879597803955",
+          "binary_exponent": -293,
+          "decimal_display": "-1.295080141971117277663508436747946218066e-28"
+        },
+        "width_display": "2.363932692992280755774182912177651575328e-32",
+        "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+      },
+      "determinant_strictly_negative": true,
+      "energy_gram": {
+        "lower": {
+          "sign": 0,
+          "mantissa": "7231726463195563081580331789072501241278122639170917251779349",
+          "binary_exponent": -200,
+          "decimal_display": "4.500314426577870856740673372314213732395"
+        },
+        "upper": {
+          "sign": 0,
+          "mantissa": "1808304702623720759659622289103934668543105583212970742432907",
+          "binary_exponent": -198,
+          "decimal_display": "4.501243116582225147439161921895102095854"
+        },
+        "width_display": "0.0009286900043542906984885495808883634589234",
+        "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+      },
+      "energy_raw": {
+        "enclosure": {
+          "lower": {
+            "sign": 0,
+            "mantissa": "1710787641721838479709046114941479005171580868280457380134857",
+            "binary_exponent": -203,
+            "decimal_display": "0.1330782203951379254263644987349580188091"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "6843963081027572995428244664985609786190770032944511357799765",
+            "binary_exponent": -205,
+            "decimal_display": "0.1330940212948506176875301571756991236348"
+          },
+          "width_display": "0.00001580089971269226116565844074110482569957",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        },
+        "midpoint": {
+          "lower": {
+            "sign": 0,
+            "mantissa": "6843556823957463457132214562375762903438546753033170439169377",
+            "binary_exponent": -205,
+            "decimal_display": "0.1330861208449942715569473279553285712219"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "855444602994682932141526820296970362929818344129146304896227",
+            "binary_exponent": -202,
+            "decimal_display": "0.1330861208449942715569473279553285712219"
+          },
+          "width_display": "8.53719908431575377948826287377960794256e-60",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        },
+        "analytic_quadrature_bound": {
+          "lower": {
+            "sign": 0,
+            "mantissa": "6656115836674675442157201159731327012426218067409610833076981",
+            "binary_exponent": -219,
+            "decimal_display": "0.000007900449856346130582829220370552412849783"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "1664028959168668860539300289932831753106554516852402708269247",
+            "binary_exponent": -217,
+            "decimal_display": "0.000007900449856346130582829220370552412849783"
+          },
+          "width_display": "8.308621777539823904039086985866712509943e-66",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        }
+      },
+      "basis_quadrature_enclosed": true,
+      "arithmetic_rounding_enclosed": true,
+      "parameter_scope": "Declared real decimal mu and ell, not an enclosure of inherited source parameter uncertainty",
+      "full_axial_closure_enclosed": false,
+      "pulse_quadrature_enclosed": false,
+      "incoming_uncertainty_enclosed": false,
+      "finite_energy_certified": false,
+      "scale_recursion_certified": false,
+      "nominal_containment": {
+        "normalizer": true,
+        "matrix": true,
+        "determinant": true,
+        "energy_gram": true
+      }
+    },
+    {
+      "mu": "0.00000000000000000000000000047808928838854690812771770423179628938895918566154107150931053078280643868823391336854620345065110714965403795563736299445577657491164810252834853612624151481709914217115510248942523896495521771638574",
+      "panels": 4096,
+      "interval_precision": 60,
+      "normalizer": {
+        "enclosure": {
+          "lower": {
+            "sign": 0,
+            "mantissa": "11415513246541065803898777639757688347241743804081864126704585",
+            "binary_exponent": -204,
+            "decimal_display": "0.4439932083615705904411026861255264410504"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "1426943062647243685873804830721268040227822471602776499638747",
+            "binary_exponent": -201,
+            "decimal_display": "0.443994423974588285204995156215578886472"
+          },
+          "width_display": "0.00000121561301769476389247009005244542165616",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        },
+        "midpoint": {
+          "lower": {
+            "sign": 0,
+            "mantissa": "11415528873859507645444608142763916334532161788452038061906079",
+            "binary_exponent": -204,
+            "decimal_display": "0.4439938161680794378230489211705526637612"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "5707764436929753822722304071381958167266080894226019030954241",
+            "binary_exponent": -203,
+            "decimal_display": "0.4439938161680794378230489211705526637612"
+          },
+          "width_display": "9.346191070437702201416991200771024093836e-59",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        },
+        "analytic_quadrature_bound": {
+          "lower": {
+            "sign": 0,
+            "mantissa": "8193215531236220380382760129259000518664189469752138920555307",
+            "binary_exponent": -223,
+            "decimal_display": "0.0000006078065088473819462350450262227108280799"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "4096607765618110190191380064629500259332094734876069460277655",
+            "binary_exponent": -222,
+            "decimal_display": "0.0000006078065088473819462350450262227108280799"
+          },
+          "width_display": "2.225523690412452831439041156928583708021e-67",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        }
+      },
+      "weighted_rows": [
+        {
+          "B": {
+            "lower": {
+              "sign": 0,
+              "mantissa": "3215296336979342688301466751514251136942489049268808635057117",
+              "binary_exponent": -201,
+              "decimal_display": "1.000441911393670767965936189346613510776"
+            },
+            "upper": {
+              "sign": 0,
+              "mantissa": "6430629351573986164864967139143812159625691833382998274244999",
+              "binary_exponent": -202,
+              "decimal_display": "1.000447617527680075939161981613658230294"
+            },
+            "width_display": "0.000005706134009307973225792267044719517931185",
+            "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+          },
+          "raw": {
+            "enclosure": {
+              "lower": {
+                "sign": 0,
+                "mantissa": "5710294580178987853177113705158917125344365361234917249585457",
+                "binary_exponent": -203,
+                "decimal_display": "0.4441906301692689453473680215610809716458"
+              },
+              "upper": {
+                "sign": 0,
+                "mantissa": "5710311515178840836485010267324089228396779940269744505961695",
+                "binary_exponent": -203,
+                "decimal_display": "0.4441919475038041414887898988561957258125"
+              },
+              "width_display": "0.000001317334535196141421877295114754166688985",
+              "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+            },
+            "midpoint": {
+              "lower": {
+                "sign": 0,
+                "mantissa": "5710303047678914344831061986241503176870572650752330877772981",
+                "binary_exponent": -203,
+                "decimal_display": "0.4441912888365365434180789602086383487291"
+              },
+              "upper": {
+                "sign": 0,
+                "mantissa": "5710303047678914344831061986241503176870572650752330877774171",
+                "binary_exponent": -203,
+                "decimal_display": "0.4441912888365365434180789602086383487291"
+              },
+              "width_display": "9.256735225818448289376795279997934807878e-59",
+              "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+            },
+            "analytic_quadrature_bound": {
+              "lower": {
+                "sign": 0,
+                "mantissa": "138731518795639258288637257089868205380231453304884224391465",
+                "binary_exponent": -217,
+                "decimal_display": "0.0000006586672675980707109386475573770833444926"
+              },
+              "upper": {
+                "sign": 0,
+                "mantissa": "1109852150365114066309098056718945643041851626439073795131721",
+                "binary_exponent": -220,
+                "decimal_display": "0.0000006586672675980707109386475573770833444926"
+              },
+              "width_display": "5.934729841099874217170776418476223221388e-67",
+              "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+            }
+          },
+          "matrix": [
+            {
+              "lower": {
+                "sign": 0,
+                "mantissa": "5739436692758884288025468474628572862560880286303533936914009",
+                "binary_exponent": -204,
+                "decimal_display": "0.2232287639084710032094089072142153857487"
+              },
+              "upper": {
+                "sign": 0,
+                "mantissa": "11478938856575175995132524659848146554648468186279341570777085",
+                "binary_exponent": -205,
+                "decimal_display": "0.2232300371190663284994589259151890453057"
+              },
+              "width_display": "0.000001273210595325290050018700973659557053232",
+              "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+            },
+            {
+              "lower": {
+                "sign": 0,
+                "mantissa": "7800703233758777706578660455104621702332268819965883013975315",
+                "binary_exponent": -203,
+                "decimal_display": "0.6067986925217710837566160275622442488505"
+              },
+              "upper": {
+                "sign": 0,
+                "mantissa": "7800747725955187853143364754772682088357455578858731162038611",
+                "binary_exponent": -203,
+                "decimal_display": "0.6068021534669961580155652169176561474126"
+              },
+              "width_display": "0.000003460945225074258949189355411898562062744",
+              "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+            }
+          ]
+        },
+        {
+          "B": {
+            "lower": {
+              "sign": 0,
+              "mantissa": "6430592673958685376602933503023035040923307071398230247391943",
+              "binary_exponent": -202,
+              "decimal_display": "1.00044191139367076796593618934576294392"
+            },
+            "upper": {
+              "sign": 0,
+              "mantissa": "3215314675786993082432483569569171722644818729820907330215583",
+              "binary_exponent": -201,
+              "decimal_display": "1.000447617527680075939161981612807432972"
+            },
+            "width_display": "0.00000570613400930797322579226704448905254569",
+            "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+          },
+          "raw": {
+            "enclosure": {
+              "lower": {
+                "sign": 0,
+                "mantissa": "5710294580178987853177113705154062283445261341219915899432897",
+                "binary_exponent": -203,
+                "decimal_display": "0.4441906301692689453473680215607033247044"
+              },
+              "upper": {
+                "sign": 0,
+                "mantissa": "11420623030357681672970020534638466168698849089614609103190575",
+                "binary_exponent": -204,
+                "decimal_display": "0.44419194750380414148878989885581797758"
+              },
+              "width_display": "0.000001317334535196141421877295114652875583206",
+              "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+            },
+            "midpoint": {
+              "lower": {
+                "sign": 0,
+                "mantissa": "2855151523839457172415530993118323841948671471506805112756749",
+                "binary_exponent": -202,
+                "decimal_display": "0.4441912888365365434180789602082606511422"
+              },
+              "upper": {
+                "sign": 0,
+                "mantissa": "11420606095357828689662123972473295367794685886027220451029373",
+                "binary_exponent": -204,
+                "decimal_display": "0.4441912888365365434180789602082606511422"
+              },
+              "width_display": "9.245067072172458648675900159897097074927e-59",
+              "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+            },
+            "analytic_quadrature_bound": {
+              "lower": {
+                "sign": 0,
+                "mantissa": "8878817202920912530472784453068864441917682424821664291925809",
+                "binary_exponent": -223,
+                "decimal_display": "0.0000006586672675980707109386475573264377916029"
+              },
+              "upper": {
+                "sign": 0,
+                "mantissa": "1109852150365114066309098056633608055239710303102708036490727",
+                "binary_exponent": -220,
+                "decimal_display": "0.0000006586672675980707109386475573264377916029"
+              },
+              "width_display": "5.192888610962389940024429366166695318715e-67",
+              "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+            }
+          },
+          "matrix": [
+            {
+              "lower": {
+                "sign": 0,
+                "mantissa": "358714793297430268001591780178473928554517808924177368502679",
+                "binary_exponent": -200,
+                "decimal_display": "0.2232287639084710032094089075341954412844"
+              },
+              "upper": {
+                "sign": 0,
+                "mantissa": "11478938856575175995132524676302257801990588208050708563912239",
+                "binary_exponent": -205,
+                "decimal_display": "0.2232300371190663284994589262351708755427"
+              },
+              "width_display": "0.000001273210595325290050018700975434258317321",
+              "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+            },
+            {
+              "lower": {
+                "sign": 0,
+                "mantissa": "7800703233758777706578660458827422271460149574602860991318865",
+                "binary_exponent": -203,
+                "decimal_display": "0.606798692521771083756616027851832309077"
+              },
+              "upper": {
+                "sign": 0,
+                "mantissa": "7800747725955187853143364758495502131729892878708332157059923",
+                "binary_exponent": -203,
+                "decimal_display": "0.6068021534669961580155652172072457224955"
+              },
+              "width_display": "0.000003460945225074258949189355413413418580247",
+              "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+            }
+          ]
+        }
+      ],
+      "determinant": {
+        "lower": {
+          "sign": 1,
+          "mantissa": "8244939530246108168277389913721287194480443850753581067396931",
+          "binary_exponent": -295,
+          "decimal_display": "-1.295205720630594460076700868379768030762e-28"
+        },
+        "upper": {
+          "sign": 1,
+          "mantissa": "4122422739576822018266450715625903387386835069741712928880391",
+          "binary_exponent": -294,
+          "decimal_display": "-1.295190946051285027071857934084212456111e-28"
+        },
+        "width_display": "1.477457930943300484293429555557465073904e-33",
+        "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+      },
+      "determinant_strictly_negative": true,
+      "energy_gram": {
+        "lower": {
+          "sign": 0,
+          "mantissa": "7232425971888856246845889890462296368463015068992473384969175",
+          "binary_exponent": -200,
+          "decimal_display": "4.500749731906406861840429213986817339505"
+        },
+        "upper": {
+          "sign": 0,
+          "mantissa": "3616259621797474476193849346028325680838418139471575015931129",
+          "binary_exponent": -199,
+          "decimal_display": "4.500807775031607569912544378625351076953"
+        },
+        "width_display": "0.00005804312520070807211516463853373744764006",
+        "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+      },
+      "energy_raw": {
+        "enclosure": {
+          "lower": {
+            "sign": 0,
+            "mantissa": "1710882858222645402747178170240661870124556694396921209923289",
+            "binary_exponent": -203,
+            "decimal_display": "0.1330856270668782499237859011290554118368"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "6843582215024345303275716443788878340842254687576602454523629",
+            "binary_exponent": -205,
+            "decimal_display": "0.1330866146231102931901087547816017308884"
+          },
+          "width_display": "0.0000009875562320432663228536525463190516062228",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        },
+        "midpoint": {
+          "lower": {
+            "sign": 0,
+            "mantissa": "855444602994682932141526820296970363833780091572767955888441",
+            "binary_exponent": -202,
+            "decimal_display": "0.1330861208449942715569473279553285713626"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "6843556823957463457132214562375762910670240732582143647109257",
+            "binary_exponent": -205,
+            "decimal_display": "0.1330861208449942715569473279553285713626"
+          },
+          "width_display": "3.362372942319348128641277109058073378744e-59",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        },
+        "analytic_quadrature_bound": {
+          "lower": {
+            "sign": 0,
+            "mantissa": "6656115836674675442157201159731327012426218067409610833076981",
+            "binary_exponent": -223,
+            "decimal_display": "0.0000004937781160216331614268262731595258031114"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "1664028959168668860539300289932831753106554516852402708269247",
+            "binary_exponent": -221,
+            "decimal_display": "0.0000004937781160216331614268262731595258031114"
+          },
+          "width_display": "5.192888610962389940024429366166695318715e-67",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        }
+      },
+      "basis_quadrature_enclosed": true,
+      "arithmetic_rounding_enclosed": true,
+      "parameter_scope": "Declared real decimal mu and ell, not an enclosure of inherited source parameter uncertainty",
+      "full_axial_closure_enclosed": false,
+      "pulse_quadrature_enclosed": false,
+      "incoming_uncertainty_enclosed": false,
+      "finite_energy_certified": false,
+      "scale_recursion_certified": false,
+      "nominal_containment": {
+        "normalizer": true,
+        "matrix": true,
+        "determinant": true,
+        "energy_gram": true
+      }
+    }
+  ],
+  "global_finite_energy_certified": false
+}

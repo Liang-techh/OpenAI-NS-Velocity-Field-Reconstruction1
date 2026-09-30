@@ -275,6 +275,15 @@ class SharedContinuousAxialRuntime:
                 for index, value in enumerate(values)
             )
 
+    @lru_cache(maxsize=4)
+    def basis_enclosure(self,*,panels=4096,precision=60):
+        """Optional certified basis bounds; pulse/input closure stays open."""
+        from lei_ren_part1_paper_continuous_basis_enclosure import ContinuousBasisEnclosure
+        encloser=ContinuousBasisEnclosure(precision=precision,
+            ell=mp.nstr(self.basis.ell,self.precision))
+        return encloser.report(self.solve_receipt['input_mu'],panels=panels,
+                              nominal=self.basis)
+
     def _make_receipt(self, solve):
         precision = self.precision
         with mp.workdps(precision):
@@ -322,6 +331,7 @@ class SharedContinuousAxialRuntime:
                 "incoming_rows_regenerated": True,
                 "live_complete_atoms_owned": True,
                 "live_basis_and_pulse_shared_by_identity": True,
+                "basis_enclosure_available": True,
                 "quadrature_enclosure_certified": False,
                 "installed_in_global_profile": True,
                 "global_mean_closed": False,
@@ -430,6 +440,16 @@ def run():
                 "no fullfield construction or global certificate."
             ),
         }
+
+    basis_bounds=runtime.basis_enclosure(panels=1024,precision=60)
+    if not all(basis_bounds['nominal_containment'].values()) or not basis_bounds['determinant_strictly_negative']:
+        raise AssertionError('Live basis failed independent midpoint enclosure')
+    report['basis_enclosure_summary']=dict(
+        panels=basis_bounds['panels'],interval_precision=basis_bounds['interval_precision'],
+        nominal_containment=basis_bounds['nominal_containment'],
+        determinant_strictly_negative=basis_bounds['determinant_strictly_negative'],
+        basis_quadrature_enclosed=True,
+        complete_axial_quadrature_enclosed=False)
 
     output = HERE / "lei_ren_part1_paper_continuous_axial_runtime.json"
     output.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
