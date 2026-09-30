@@ -1,0 +1,454 @@
+{
+  "source_version": "2609.35406v2",
+  "Z": ".3",
+  "schedule_inputs": {
+    "logPstar": "14",
+    "logRref": "500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000144.70048036579241622807993503264949350742280834256619015125189561009814623359058919331105191309223308975668351",
+    "delta": "1E-200",
+    "Md": "0.5",
+    "c_mu": "0.001",
+    "c_delta": "0.001",
+    "c_epsilon": "0.01",
+    "waiting_length": "471.10466198526845204047017735707945027348724579822865347044326041682783089989358481108610670265999688964674304001080483104338582681941624445564980082002906426013052870598564848325634487862164978775602625749743795490936109783428857537"
+  },
+  "normalized_prefix": {
+    "sign": -1,
+    "log_abs": "1.02598841774538434993514823311647193488726797588984966651035733803304"
+  },
+  "post_Rv_pressure": {
+    "sign": -1,
+    "log_abs": "-27191573448168950000791928858.17029969865897039596526001901653721100605"
+  },
+  "post_Rv_pressure_Z": {
+    "sign": 1,
+    "log_abs": "-27191573448168950000791928858.07415583810606821268153787626858889857428"
+  },
+  "post_Rv_to_prefix_log_abs": "-27191573448168950000791928859.19628811640435474590040825213300914589332",
+  "tail_lost_by_subtracting_nominal_total": true,
+  "stages": [
+    {
+      "stage": "exterior_power_tail",
+      "pressure_Taylor_coefficients": [
+        {
+          "sign": -1,
+          "log_abs": "-27191573448168950000791936859.24354837445830517410497393786672377081105"
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        }
+      ],
+      "pressure": {
+        "sign": -1,
+        "log_abs": "-27191573448168950000791936859.24354837445830517410497393786672377081105"
+      },
+      "pressure_Z": {
+        "sign": 0,
+        "log_abs": null
+      },
+      "order128_to192_relative_change": "0.0"
+    },
+    {
+      "stage": "heat_collar",
+      "pressure_Taylor_coefficients": [
+        {
+          "sign": -1,
+          "log_abs": "-27191573448168950000791936856.29461755540100676064369767838898302121508"
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        }
+      ],
+      "pressure": {
+        "sign": -1,
+        "log_abs": "-27191573448168950000791936856.29461755540100676064369767838898302121508"
+      },
+      "pressure_Z": {
+        "sign": 0,
+        "log_abs": null
+      },
+      "order128_to192_relative_change": "6.21295660917986701049970368275146617084e-214"
+    },
+    {
+      "stage": "power_buffer_rel",
+      "pressure_Taylor_coefficients": [
+        {
+          "sign": -1,
+          "log_abs": "-27191573448168950000791928959.38423866729675621582928715516892971509814"
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        }
+      ],
+      "pressure": {
+        "sign": -1,
+        "log_abs": "-27191573448168950000791928959.38423866729675621582928715516892971509814"
+      },
+      "pressure_Z": {
+        "sign": 0,
+        "log_abs": null
+      },
+      "order128_to192_relative_change": "0.0"
+    },
+    {
+      "stage": "steep_power",
+      "pressure_Taylor_coefficients": [
+        {
+          "sign": -1,
+          "log_abs": "-27191573448168950000791930849.71550932542897746884376511773758214242172"
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        }
+      ],
+      "pressure": {
+        "sign": -1,
+        "log_abs": "-27191573448168950000791930849.71550932542897746884376511773758214242172"
+      },
+      "pressure_Z": {
+        "sign": 0,
+        "log_abs": null
+      },
+      "order128_to192_relative_change": "0.0"
+    },
+    {
+      "stage": "steep_transition_in",
+      "pressure_Taylor_coefficients": [
+        {
+          "sign": -1,
+          "log_abs": "-27191573448168950000791930847.21668592344030318842222112776196151684981"
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        }
+      ],
+      "pressure": {
+        "sign": -1,
+        "log_abs": "-27191573448168950000791930847.21668592344030318842222112776196151684981"
+      },
+      "pressure_Z": {
+        "sign": 0,
+        "log_abs": null
+      },
+      "order128_to192_relative_change": "4.658866195303955439328164610519292139426e-27"
+    },
+    {
+      "stage": "steep_transition_out",
+      "pressure_Taylor_coefficients": [
+        {
+          "sign": -1,
+          "log_abs": "-27191573448168950000791936384.19618753631136541160022567699919011694765"
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        }
+      ],
+      "pressure": {
+        "sign": -1,
+        "log_abs": "-27191573448168950000791936384.19618753631136541160022567699919011694765"
+      },
+      "pressure_Z": {
+        "sign": 0,
+        "log_abs": null
+      },
+      "order128_to192_relative_change": "1.51873086208230173641841452783028914851e-27"
+    },
+    {
+      "stage": "waiting",
+      "pressure_Taylor_coefficients": [
+        {
+          "sign": -1,
+          "log_abs": "-27191573448168950000791936385.1388863891898531336347965807872734973238"
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        },
+        {
+          "sign": 0,
+          "log_abs": null
+        }
+      ],
+      "pressure": {
+        "sign": -1,
+        "log_abs": "-27191573448168950000791936385.1388863891898531336347965807872734973238"
+      },
+      "pressure_Z": {
+        "sign": 0,
+        "log_abs": null
+      },
+      "order128_to192_relative_change": "0.0"
+    },
+    {
+      "stage": "z_flatten",
+      "pressure_Taylor_coefficients": [
+        {
+          "sign": -1,
+          "log_abs": "-27191573448168950000791928858.17029969865897039596526001901653721100605"
+        },
+        {
+          "sign": 1,
+          "log_abs": "-27191573448168950000791928858.07415583810606821268153787626858889857428"
+        },
+        {
+          "sign": 1,
+          "log_abs": "-27191573448168950000791928858.24734491133675023884389022091183334197888"
+        },
+        {
+          "sign": -1,
+          "log_abs": "-27191573448168950000791928857.31041787141783815724219075342532284654544"
+        },
+        {
+          "sign": 1,
+          "log_abs": "-27191573448168950000791928859.21518227912009007307771972700778446908672"
+        },
+        {
+          "sign": 1,
+          "log_abs": "-27191573448168950000791928857.13976779355394296402543314996026956890769"
+        },
+        {
+          "sign": -1,
+          "log_abs": "-27191573448168950000791928857.3682706390567213848844341972692690995118"
+        },
+        {
+          "sign": -1,
+          "log_abs": "-27191573448168950000791928857.52694930551423737161796881058375852131969"
+        },
+        {
+          "sign": 1,
+          "log_abs": "-27191573448168950000791928856.85234378063254143473682402129642645010728"
+        }
+      ],
+      "pressure": {
+        "sign": -1,
+        "log_abs": "-27191573448168950000791928858.17029969865897039596526001901653721100605"
+      },
+      "pressure_Z": {
+        "sign": 1,
+        "log_abs": "-27191573448168950000791928858.07415583810606821268153787626858889857428"
+      },
+      "order128_to192_relative_change": "6.359546007508774298596447127958020539544e-39"
+    }
+  ],
+  "centered_Taylor_direct_differentiation_errors": [
+    "0.0",
+    "0.0",
+    "0.0",
+    "2.481040258324023918665928e-265",
+    "9.924161033296095674663712e-265",
+    "1.240520129162011959332964e-265",
+    "5.08117044904760098542782e-262",
+    "1.524351134714280295628346e-261",
+    "1.016234089809520197085564e-261",
+    "2.381798647991062961919291e-262",
+    "1.219480907771424236502677e-260",
+    "0.0"
+  ],
+  "actual_post_Rv_derivative_relative_error": "2.146283982829728012689813754036959854374e-60",
+  "all_post_flatten_Z_derivatives_zero": true,
+  "raw_heat_pressure_used": false,
+  "core_rebuilt_with_complete_target": false,
+  "actual_angular_bumps_restored": false,
+  "quadrature_error_enclosed": false,
+  "pressure_terminal_compatibility_certified": false,
+  "finite_energy_certified": false,
+  "stress_cone_certified": false,
+  "scale_recursion_certified": false
+}

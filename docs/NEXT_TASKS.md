@@ -1,3 +1,9 @@
+## Complete analytic preheat target implemented (2026-09-30)
+
+- [x] P1: implement ContinuousPreheatPressure from v2 (6.10), retaining the Z-dependent flatten interval and Z-independent H=1 collar/power exterior as separate arbitrary-exponent atoms; provide arbitrary-center Taylor jets.
+- [x] Replay actual source at Z=.3; tail and derivative nonzero although total-minus-prefix rounds to zero. Direct Taylor/derivative checks and MP128/192 comparison completed; no quadrature enclosure claimed.
+- [ ] P2: solve both angular bumps against the actual angular and complete preheat-pressure targets; retain the quadratic pressure row, analytic Z tangents and the small-branch bounds. Reconstruct the core with component-aware jets only after correction compatibility is established. Existing candidate is unchanged by the new standalone target adapter.
+
 ## Priority route from two local papers (2026-09-30)
 
 Use [TWO_PAPER_ROUTE_2026_09_30.md](TWO_PAPER_ROUTE_2026_09_30.md), tasks P1-P12, as the current dependency order and acceptance criteria. Update its checkboxes with commits, commands and evidence as work finishes. Prior older pressure-tail instructions are superseded by coupled analytic preheat-pressure restoration; do not append the uncorrected heat pressure to an analytic-axis core.
