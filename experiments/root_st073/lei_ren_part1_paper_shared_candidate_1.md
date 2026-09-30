@@ -32,9 +32,11 @@ Next work, in dependency order:
   by a real-axis maximum. Check Cstar >= Lambda^2 exp(Lambda A_Omega).
 - [ ] If either provisional budget fails, rebuild all components with the
   new parameters using this script rather than rescaling old receipts.
-- [ ] Implement the long angular reshaping interval from R=110, transporting
+- [x] Implement the numerical long angular reshaping interval from R=110, transporting
   actual five moments and their Z jets. Integrate in shifted log radius,
   preserving offsets; match both values and shears at the short endpoint.
+  See long_reshape.py/md/json. Conditional tail bounds and finite quadrature
+  are implemented; global source constants and interval certification remain open.
 - [ ] Restore the axial profile and implement five actual moment repairs,
   carrying pressure and Ur from the same fields and continuity formula.
 - [ ] Match that repaired background to the heat exterior and establish

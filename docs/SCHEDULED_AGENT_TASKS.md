@@ -1,3 +1,20 @@
+## Long reshape now reaches the axial restoration entry - 2026-09-30
+
+Read experiments/root_st073/lei_ren_part1_paper_long_reshape.py/md/json.
+Section 9.30 is connected to actual shared-candidate R=110 moments and
+Z jets. Endpoint-normalized MP quadrature reaches Rsh and analytic
+reference-power primitives continue to Rz=exp(-8)Rref. Five Z=.3 probes
+pass the relaxed cone; full admissible stress remains unestablished.
+Largest 16/32 normalized quadrature difference is 6.57e-25. The angular
+reference log-value difference at Rsh/Rz is about 5.59e-263. Inherited
+inner moments are preserved, and conditional value/Z tail bounds are
+recorded separately from uncertified quadrature error.
+Next implement axial restoration on [Rz,e Rz] with actual five moments
+and Z jets, continue to Rh, compute actual Section 10 repair defects,
+and implement moment repair. Complex A_Omega, mixed core A/K, pressure
+Z-tail bounds, heat exterior, finite energy, admissible stress and temporal
+scale recursion remain unfinished. Provisional source budgets are unchanged.
+
 ## New shared candidate reaches R=110 - 2026-09-30
 
 Read experiments/root_st073/lei_ren_part1_paper_shared_candidate_1.md/json.

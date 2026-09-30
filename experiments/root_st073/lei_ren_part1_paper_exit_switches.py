@@ -521,6 +521,12 @@ class ExitSwitches:
                 "driver_derivative_step": self.derivative_step,
                 "driver_derivative_method": "MP fourth-order centered normalized D/B stencil",
                 "normalized_moment_state": state,
+                "raw_quadratic_integrals": {
+                    "axial": self.R0 * axial,
+                    "axial_Z": self.R0 * axial_Z,
+                    "swirl": F0**2 * self.R0**2 * swirl,
+                    "swirl_Z": F0**2 * self.R0**2 * (swirl_Z + 2*F0_Z/F0*swirl),
+                },
                 "initial_raw_integrals_source": start["raw_integrals_source"],
                 "stress": stress,
                 "initial_moment_normalization": "actual provider values; axial/swirl split from core collar primitive",

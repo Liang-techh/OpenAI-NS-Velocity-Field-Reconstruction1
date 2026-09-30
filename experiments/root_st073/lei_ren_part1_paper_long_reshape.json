@@ -1,0 +1,305 @@
+{
+  "source": "arXiv:2609.35406v1 Eq9.30",
+  "shared_parameters": {
+    "j": "0.00000000000001",
+    "logCstar": "50000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0",
+    "logPstar": "14.0",
+    "delta": "1.0e-200",
+    "logRref": "500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000144.70048036579241622807993503264949350742280834256619015125189561009814623359058919331105191309223308975668351"
+  },
+  "rows": [
+    {
+      "name": "start",
+      "y": "0.0",
+      "a": "0.8",
+      "region": "long_swirl_reshape",
+      "normalized_integrals_scope": "increments from R110, local endpoint normalization",
+      "F_positive": true,
+      "cone": {
+        "prerequisites_passed": true,
+        "kappa": {
+          "sign": 1,
+          "log_abs": "-0.2231435513142097557662950903098345"
+        },
+        "T_dot_S_over_F_squared": {
+          "sign": -1,
+          "log_abs": "86.712001671499661617546056789793893"
+        },
+        "branch": "kappa<=2",
+        "branch_margin": {
+          "sign": 1,
+          "log_abs": "86.935145222813871373312351880103728"
+        },
+        "relaxed_passed": true,
+        "admissible_passed": false
+      },
+      "normalized_integrals": {
+        "theta": "0.0",
+        "p": "0.0",
+        "swirl": "0.0"
+      },
+      "normalized_tail_bounds": {
+        "theta": "0.0",
+        "p": "0.0",
+        "swirl": "0.0"
+      },
+      "normalized_Z_tail_bounds": {
+        "theta": "0.0",
+        "p": "0.0",
+        "swirl": "0.0"
+      },
+      "tail_bounds_scope": "local endpoint normalization",
+      "quadrature_refinement": {
+        "Uz": "0.0",
+        "Ur": "0.0",
+        "P": "0.0",
+        "PZ": "0.0",
+        "theta": "0.0",
+        "p": "0.0",
+        "swirl": "0.0"
+      }
+    },
+    {
+      "name": "one_log_unit",
+      "y": "1.0",
+      "a": "0.8",
+      "region": "long_swirl_reshape",
+      "normalized_integrals_scope": "increments from R110, local endpoint normalization",
+      "F_positive": true,
+      "cone": {
+        "prerequisites_passed": true,
+        "kappa": {
+          "sign": 1,
+          "log_abs": "-0.2231435513142097557662950903098345"
+        },
+        "T_dot_S_over_F_squared": {
+          "sign": -1,
+          "log_abs": "87.865113193732076754575267483593369"
+        },
+        "branch": "kappa<=2",
+        "branch_margin": {
+          "sign": 1,
+          "log_abs": "88.088256745046286510341562573903204"
+        },
+        "relaxed_passed": true,
+        "admissible_passed": false
+      },
+      "normalized_integrals": {
+        "theta": "0.498814676253340369696762957722906398211278658",
+        "p": "0.906346234610090706650322456904802878207043719",
+        "swirl": "0.582338156739831586129185327430647950023979758"
+      },
+      "normalized_tail_bounds": {
+        "theta": "0.0",
+        "p": "0.0",
+        "swirl": "0.0"
+      },
+      "normalized_Z_tail_bounds": {
+        "theta": "0.0",
+        "p": "0.0",
+        "swirl": "0.0"
+      },
+      "tail_bounds_scope": "local endpoint normalization",
+      "quadrature_refinement": {
+        "Uz": "0.0",
+        "Ur": "0.0",
+        "P": "0.0",
+        "PZ": "0.0",
+        "theta": "9.81647463042886457005859915695835904407121234e-49",
+        "p": "1.3668390445725540620273040290263845378581289e-77",
+        "swirl": "1.02954570464548847381914348274502224393757255e-52"
+      }
+    },
+    {
+      "name": "midpoint",
+      "y": "200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0",
+      "a": "0.8",
+      "region": "long_swirl_reshape",
+      "normalized_integrals_scope": "increments from R110, local endpoint normalization",
+      "F_positive": true,
+      "cone": {
+        "prerequisites_passed": true,
+        "kappa": {
+          "sign": 1,
+          "log_abs": "-0.2231435513142097557662950903098345"
+        },
+        "T_dot_S_over_F_squared": {
+          "sign": -1,
+          "log_abs": "2.0e+152"
+        },
+        "branch": "kappa<=2",
+        "branch_margin": {
+          "sign": 1,
+          "log_abs": "2.0e+152"
+        },
+        "relaxed_passed": true,
+        "admissible_passed": false
+      },
+      "normalized_integrals": {
+        "theta": "0.625",
+        "p": "5.0",
+        "swirl": "0.833333333333333333333333333333333333333333333"
+      },
+      "normalized_tail_bounds": {
+        "theta": "6.45161290322580645161290322580645161290322581e-1241",
+        "p": "1.0e-79",
+        "swirl": "9.09090909090909090909090909090909090909090909e-881"
+      },
+      "normalized_Z_tail_bounds": {
+        "theta": "5.19453534881301061299615863720601584130546123e-1205",
+        "p": "1.61030595813203329002880917753386491080469298e-43",
+        "swirl": "1.46391450739275753638982652503078628254972089e-844"
+      },
+      "tail_bounds_scope": "local endpoint normalization",
+      "quadrature_refinement": {
+        "Uz": "0.0",
+        "Ur": "0.0",
+        "P": "0.0",
+        "PZ": "0.0",
+        "theta": "6.56290152334135506286530791989958802930989062e-25",
+        "p": "6.56290152334135506286530008533700507612724688e-25",
+        "swirl": "4.40576812527176888968499458359369072694971422e-25"
+      }
+    },
+    {
+      "name": "end",
+      "y": "400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000.0",
+      "a": "0.8",
+      "region": "long_swirl_reshape",
+      "normalized_integrals_scope": "increments from R110, local endpoint normalization",
+      "F_positive": true,
+      "cone": {
+        "prerequisites_passed": true,
+        "kappa": {
+          "sign": 1,
+          "log_abs": "-0.2231435513142097557662950903098345"
+        },
+        "T_dot_S_over_F_squared": {
+          "sign": -1,
+          "log_abs": "4.0e+152"
+        },
+        "branch": "kappa<=2",
+        "branch_margin": {
+          "sign": 1,
+          "log_abs": "4.0e+152"
+        },
+        "relaxed_passed": true,
+        "admissible_passed": false
+      },
+      "normalized_integrals": {
+        "theta": "0.625",
+        "p": "5.0",
+        "swirl": "0.833333333333333333333333333333333333333333333"
+      },
+      "normalized_tail_bounds": {
+        "theta": "6.45161290322580645161290322580645161290322581e-1241",
+        "p": "1.0e-79",
+        "swirl": "9.09090909090909090909090909090909090909090909e-881"
+      },
+      "normalized_Z_tail_bounds": {
+        "theta": "5.19453534881301061299615863720601584130546123e-1205",
+        "p": "1.61030595813203329002880917753386491080469298e-43",
+        "swirl": "1.46391450739275753638982652503078628254972089e-844"
+      },
+      "tail_bounds_scope": "local endpoint normalization",
+      "quadrature_refinement": {
+        "Uz": "0.0",
+        "Ur": "0.0",
+        "P": "0.0",
+        "PZ": "0.0",
+        "theta": "6.56290152334135506286530791989958802930989062e-25",
+        "p": "6.56290152334135506286530008533700507612724688e-25",
+        "swirl": "4.40576812527176888968499458359369072694971422e-25"
+      },
+      "reference_logu_error": "5.59394911821754236927833444968292687357767482e-263"
+    },
+    {
+      "name": "axial_restore_entry",
+      "y": "500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000132.0",
+      "a": "0.8",
+      "region": "reference_swirl_before_axial_restore",
+      "normalized_integrals_scope": "inherited shaping increments at Rsh; later primitives exact",
+      "F_positive": true,
+      "cone": {
+        "prerequisites_passed": true,
+        "kappa": {
+          "sign": 1,
+          "log_abs": "-0.2231435513142097557662950903098345"
+        },
+        "T_dot_S_over_F_squared": {
+          "sign": -1,
+          "log_abs": "5.0e+152"
+        },
+        "branch": "kappa<=2",
+        "branch_margin": {
+          "sign": 1,
+          "log_abs": "5.0e+152"
+        },
+        "relaxed_passed": true,
+        "admissible_passed": false
+      },
+      "normalized_integrals": {
+        "theta": "0.625",
+        "p": "5.0",
+        "swirl": "0.833333333333333333333333333333333333333333333"
+      },
+      "normalized_tail_bounds": {
+        "theta": "6.45161290322580645161290322580645161290322581e-1241",
+        "p": "1.0e-79",
+        "swirl": "9.09090909090909090909090909090909090909090909e-881"
+      },
+      "normalized_Z_tail_bounds": {
+        "theta": "5.19453534881301061299615863720601584130546123e-1205",
+        "p": "1.61030595813203329002880917753386491080469298e-43",
+        "swirl": "1.46391450739275753638982652503078628254972089e-844"
+      },
+      "tail_bounds_scope": "inherited Rsh normalization; reference primitives exact",
+      "quadrature_refinement": {
+        "Uz": "0.0",
+        "Ur": "0.0",
+        "P": "0.0",
+        "PZ": "0.0",
+        "theta": "6.56290152334135506286530791989958802930989062e-25",
+        "p": "6.56290152334135506286530008533700507612724688e-25",
+        "swirl": "4.40576812527176888968499458359369072694971422e-25"
+      },
+      "reference_logu_error": "5.59394911821754236927833444969294771537771968e-263"
+    }
+  ],
+  "source_constants_certified": false,
+  "finite_energy_certified": false,
+  "scale_recursion_established": false,
+  "initial_match_errors": {
+    "F": "3.80142277046072593081225067398997814828374368e-294",
+    "FZ": "3.80142277046072593081225067398997814828374368e-294",
+    "Uz": "0.0",
+    "UZ": "0.0",
+    "Ur": "1.72446993491926222864748114119037877948777692e-261",
+    "P": "0.0",
+    "PZ": "0.0",
+    "g_y": "5.08117044904760098542782045847167872390643133e-262",
+    "u_y": "0.0"
+  },
+  "initial_moment_match_errors": {
+    "moments": {
+      "theta": "0.0",
+      "z": "0.0",
+      "theta_z": "0.0",
+      "z_theta": "0.0",
+      "p": "0.0"
+    },
+    "momentsZ": {
+      "theta": "0.0",
+      "z": "0.0",
+      "theta_z": "0.0",
+      "z_theta": "0.0",
+      "p": "0.0"
+    },
+    "raw_quadratic_integrals": {
+      "axial": "0.0",
+      "axial_Z": "0.0",
+      "swirl": "0.0",
+      "swirl_Z": "0.0"
+    }
+  }
+}
