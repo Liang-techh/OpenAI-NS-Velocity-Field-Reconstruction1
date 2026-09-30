@@ -1,3 +1,17 @@
+# 2026-09-30: C2 inverse majorant integration
+
+- [x] Define a submultiplicative C2 norm with second derivative weight 1/2.
+- [x] Bound the common Am^-2 analytically on a declared compact axial interval.
+- [x] Implement conditional contraction and Picard C2 tail bounds.
+- [x] Check a resolved analytic family against deeper finite inverse updates.
+- [ ] Supply an enclosed interval norm for the actual five defects, retaining
+      the 69 labels and pressure/width atoms; pointwise C2 data is insufficient.
+- [ ] Enclose bump quadrature and matrix inverse/operator constants.
+- [ ] Integrate source error bounds into the C2 inverse tail and relative-flat
+      closure; prove endpoint strip control separately.
+
+See FIVE_BUMP_C2_MAJORANT_2026_09_30.md.
+
 # 2026-09-30: Next gate after common-source C2 repair
 
 Completed: 69 centered source parts and 71 physical moment parts carry C2,

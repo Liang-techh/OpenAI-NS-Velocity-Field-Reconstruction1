@@ -59,7 +59,7 @@ def _matrix_value(matrix: Any, row: int, column: int) -> mp.mpf:
     return _mp(value, "quadratic weight")
 
 
-def _quadratic_pair_bounds(moment_map: Any, pstar: mp.mpf) -> tuple[list[list[mp.mpf]], dict[str, Any]]:
+def _quadratic_pair_bounds(moment_map: Any, pstar: mp.mpf, amplitude_bound=None) -> tuple[list[list[mp.mpf]], dict[str, Any]]:
     """Build the symmetric column-pair l1 tensor bound for Q."""
 
     weights = getattr(moment_map, "quadratic_weights", None)
@@ -89,7 +89,7 @@ def _quadratic_pair_bounds(moment_map: Any, pstar: mp.mpf) -> tuple[list[list[mp
         axial_angular.append(row)
 
     # ||Am^-2||_C1 <= 40 / Pstar^2 is the supplied paper bound.
-    am_inverse_square_bound = mp.mpf(40) / (pstar * pstar)
+    am_inverse_square_bound = mp.mpf(40) / (pstar * pstar) if amplitude_bound is None else amplitude_bound
     for left in range(2):
         row = []
         for right in range(2):
@@ -111,9 +111,9 @@ def _quadratic_pair_bounds(moment_map: Any, pstar: mp.mpf) -> tuple[list[list[mp
 
     contribution_receipt = {
         "axial_angular_half_fg": axial_angular,
-        "axial_axial_gg_times_40_over_Pstar2": axial_axial,
+        "axial_axial_gg_times_amplitude_bound": axial_axial,
         "angular_angular_half_abs_ff_plus_ff_over_x": angular_angular,
-        "Am_inverse_square_C1_bound": am_inverse_square_bound,
+        "Am_inverse_square_norm_bound": am_inverse_square_bound,
     }
     return pair, contribution_receipt
 
@@ -123,6 +123,7 @@ def compute_majorant(
     e_bound: Any,
     Pstar: Any,
     degree: int = 3,
+    *, amplitude_inverse_square_bound=None, norm_label="C1",
 ) -> dict[str, Any]:
     """Compute a conditional uniform C1 response and tail majorant.
 
@@ -146,7 +147,10 @@ def compute_majorant(
         if pstar < 1:
             raise ValueError("Pstar must be at least 1")
         ca = max(mp.mpf(1), abs(_mp(moment_map.inverse_l1_norm, "inverse_l1_norm")))
-        pair_bounds, contribution_receipt = _quadratic_pair_bounds(moment_map, pstar)
+        amplitude_bound = mp.mpf(40)/(pstar*pstar) if amplitude_inverse_square_bound is None else _mp(amplitude_inverse_square_bound, 'amplitude_inverse_square_bound')
+        if amplitude_bound < 0:
+            raise ValueError('amplitude_inverse_square_bound must be nonnegative')
+        pair_bounds, contribution_receipt = _quadratic_pair_bounds(moment_map, pstar, amplitude_bound)
         # Each pair entry already sums the absolute output-row coefficients
         # for one ordered (j,k) coefficient pair.  The maximum pair entry is
         # the l1 bilinear operator bound.  Keep a floor of one so all
@@ -178,7 +182,7 @@ def compute_majorant(
             "CA": ca,
             "CQ_raw_max_pair_sum": cq_raw,
             "CQ": cq,
-            "Am_inverse_square_C1_bound": mp.mpf(40) / (pstar * pstar),
+            "Am_inverse_square_norm_bound": amplitude_bound,
             "condition_threshold": threshold,
             "contraction_condition_passed": condition_passed,
             "contraction_radius": radius,
@@ -192,6 +196,7 @@ def compute_majorant(
             "pair_bounds": pair_bounds,
         }
         metadata = {
+            "norm_label": norm_label,
             "degree": degree,
             "CA": _nstr(ca),
             "CQ_raw_max_pair_sum": _nstr(cq_raw),
@@ -223,10 +228,15 @@ def compute_majorant(
             "convergent_response_certified": False,
             "temporal_recursion_certified": False,
             "smallness_condition_is_conditional": True,
-            "paper_pressure_bound": "||Am^-2||_C1 <= 40/Pstar^2",
+            "paper_pressure_bound": "||Am^-2||_C1 <= 40/Pstar^2" if amplitude_inverse_square_bound is None else "explicit supplied Banach algebra norm bound",
         }
         # ``raw_mp`` is an explicit alias for callers that distinguish the
         # arbitrary-precision payload from the serializable receipt.
+        if amplitude_inverse_square_bound is None:
+            raw['Am_inverse_square_C1_bound'] = amplitude_bound
+            contribution_receipt['Am_inverse_square_C1_bound'] = amplitude_bound
+            metadata['contribution_receipt']['Am_inverse_square_C1_bound'] = _nstr(amplitude_bound)
+            metadata['contribution_receipt']['axial_axial_gg_times_40_over_Pstar2'] = metadata['contribution_receipt']['axial_axial_gg_times_amplitude_bound']
         return {"raw": raw, "raw_mp": raw, "metadata": metadata}
 
 
