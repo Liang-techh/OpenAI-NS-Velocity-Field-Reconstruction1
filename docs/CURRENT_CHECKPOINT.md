@@ -1,3 +1,9 @@
+## 2026-09-30: separate heat deficit/jet provider prepared
+
+Added continuous_heat_kernel.py/md/json: one Gamma integral for H/H-prime/H-second, normalized positive deficit quadrature, separate logH and tiny derivative correction, plus a common small-x quadratic Taylor approximation with explicit analytic truncation bounds. A first run exposed absolute-tolerance loss in the tiny deficit integral; normalization by h fixed it. Functional derivative checks now pass with maximum relative difference 4.28e-19; exp(-1e6) argument retains nonzero deficit. Arithmetic/quadrature are not enclosed. Provider is not yet installed in the shared field or targets.
+
+Next install using separate heat atoms, regenerate angular/pressure/energy targets consistently, and continue cumulative heat moments. Never interpret this standalone provider as full heat or finite-energy closure.
+
 ## 2026-09-30: mixed moments and complete exterior axial energy installed
 
 Added actual inner-seeded mixed moments/Z jets and complete axial-square/Z jets, using the live continuous incoming, pulse and end atoms. Installed linear_axial_moments_jet and quadratic_moments_jet on ContinuousIncomingProfile. The quadratic provider currently supports Rv through Rtail. Actual inner offsets are applied once; materialized terminal residuals remain nonzero. Pulse/end supports are disjoint by xi = 13 + mu*t_v > 11 on the end band.

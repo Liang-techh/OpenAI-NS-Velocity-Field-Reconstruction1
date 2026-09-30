@@ -1,3 +1,10 @@
+## Heat provider integration task (2026-09-30)
+
+- [x] Implement one heat functional and separate deficit/logH/derivative correction, retaining tiny positive atoms.
+- [ ] Install continuous_heat_kernel in the live angular schedule; use logH/separate deficits so rounded H=1 cannot erase the correction.
+- [ ] Regenerate heat-dependent angular correction, pressure and energy targets coherently; check all jets after installation.
+- [ ] Continue cumulative angular/quadratic/pressure moments through collar and exterior, bound full tails, and enclose numerical errors.
+
 ## 2026-09-30: continuous moment handoff (latest)
 
 - [x] Install mixed moment and Z jet with actual inner offsets and shared row-2 pulse/end atoms.

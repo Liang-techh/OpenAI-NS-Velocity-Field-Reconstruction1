@@ -1,0 +1,53 @@
+{
+  "samples": [
+    {
+      "xi": "0",
+      "deficit": "0.0",
+      "H_prime": "-5.0e-201",
+      "H_second": "1.0e-200",
+      "derivative_relative_errors": [],
+      "method": "shared_quadratic_Taylor_with_analytic_truncation_bounds"
+    },
+    {
+      "xi": "1e-12",
+      "deficit": "4.999999999995e-213",
+      "H_prime": "-4.99999999999e-201",
+      "H_second": "1.0e-200",
+      "derivative_relative_errors": [],
+      "method": "shared_quadratic_Taylor_with_analytic_truncation_bounds"
+    },
+    {
+      "xi": ".2",
+      "deficit": "8.521108814236610090624349558628044776271e-202",
+      "H_prime": "-3.697227964408474773439126103429888059322e-201",
+      "H_second": "4.402978754296617070369413620046082076275e-201",
+      "derivative_relative_errors": [
+        "4.858341567146103899359883425395836455098e-20",
+        "4.270624604483946107274452253175731347552e-19"
+      ],
+      "method": "shared_positive_Gamma_integrals"
+    },
+    {
+      "xi": "1",
+      "deficit": "2.981736811615970371705392496846396880371e-201",
+      "H_prime": "-2.018263188384029628294607503153603119629e-201",
+      "H_second": "1.054789565152088884883822509460809358887e-201",
+      "derivative_relative_errors": [
+        "1.015701258528468831764538311986949085674e-21",
+        "6.631394179543876957378579476887918239124e-21"
+      ],
+      "method": "shared_positive_Gamma_integrals"
+    }
+  ],
+  "tiny_log_deficit": "-1000461.210165779369082113015523058331018",
+  "tiny_logH_retained": true,
+  "tiny_prime_correction_retained": true,
+  "common_functional": true,
+  "analytic_Taylor_truncation_bounds": true,
+  "arithmetic_error_enclosed": false,
+  "quadrature_error_enclosed": false,
+  "installed_in_shared_field": false,
+  "complete_heat_moments": false,
+  "finite_energy_certified": false,
+  "scale_recursion_certified": false
+}
