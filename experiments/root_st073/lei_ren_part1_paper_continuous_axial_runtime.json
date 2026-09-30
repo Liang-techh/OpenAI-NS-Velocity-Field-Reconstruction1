@@ -251,5 +251,23 @@
     "determinant_strictly_negative": true,
     "basis_quadrature_enclosed": true,
     "complete_axial_quadrature_enclosed": false
-  }
+  },
+  "pulse_enclosure_summary": [
+    {
+      "row": 1,
+      "panels": 1024,
+      "nominal_center_contained": true,
+      "centered_relative_width": "0.0777080228772078074030249",
+      "pulse_quadrature_enclosed": true,
+      "complete_axial_closure_enclosed": false
+    },
+    {
+      "row": 2,
+      "panels": 1024,
+      "nominal_center_contained": true,
+      "centered_relative_width": "0.0777080228772078074030249",
+      "pulse_quadrature_enclosed": true,
+      "complete_axial_closure_enclosed": false
+    }
+  ]
 }

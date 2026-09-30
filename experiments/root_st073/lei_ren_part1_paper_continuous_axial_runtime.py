@@ -284,6 +284,13 @@ class SharedContinuousAxialRuntime:
         return encloser.report(self.solve_receipt['input_mu'],panels=panels,
                               nominal=self.basis)
 
+    @lru_cache(maxsize=8)
+    def pulse_enclosure(self,row,*,panels=4096,precision=80,band=48):
+        """Complete pulse bounds using this runtime owned pulse provider."""
+        from lei_ren_part1_paper_continuous_pulse_enclosure import ContinuousPulseEnclosure
+        return ContinuousPulseEnclosure(precision=precision).report(
+            self.solve_receipt['input_mu'],row,panels=panels,band=band,nominal=self.pulse)
+
     def _make_receipt(self, solve):
         precision = self.precision
         with mp.workdps(precision):
@@ -450,6 +457,15 @@ def run():
         determinant_strictly_negative=basis_bounds['determinant_strictly_negative'],
         basis_quadrature_enclosed=True,
         complete_axial_quadrature_enclosed=False)
+
+    pulse_bounds=[runtime.pulse_enclosure(row,panels=1024) for row in (1,2)]
+    if not all(b['nominal_center_contained'] for b in pulse_bounds):
+        raise AssertionError('Live pulse failed independent range enclosure')
+    report['pulse_enclosure_summary']=[dict(row=b['row'],panels=b['panels'],
+        nominal_center_contained=b['nominal_center_contained'],
+        centered_relative_width=b['centered_relative_width'],
+        pulse_quadrature_enclosed=True,complete_axial_closure_enclosed=False)
+        for b in pulse_bounds]
 
     output = HERE / "lei_ren_part1_paper_continuous_axial_runtime.json"
     output.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")

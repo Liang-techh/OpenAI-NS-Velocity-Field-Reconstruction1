@@ -1,3 +1,9 @@
+## 2026-09-30: complete continuous pulse interval bounds
+
+Added experiments/root_st073/lei_ren_part1_paper_continuous_pulse_enclosure.py and its JSON/notes. Both weighted rows have outward bounds for the full functional pulse support, including three positive omitted pieces. At 4096 panels the centered relative interval width is about 1.89 percent. The live shared runtime exposes pulse_enclosure and its provider passes independent containment. Basis and pulse integration are now bounded for declared decimal parameters; incoming/angular uncertainty, pulse energy and complete coefficient closure remain open. Terminal mass and Z residuals are still retained and nonzero; finite energy and scale recursion are not certified.
+
+Next agent tasks: tighten the pulse interval width with analytic curvature or adaptive range panels; preserve exact dyadic endpoints and positive omitted support; propagate correlated basis and pulse bounds into the coefficient solve without subtracting nearly equal matrix products; enclose incoming rows and pulse energy before claiming full mean closure. Keep user changes in scale_reference files.
+
 ## Interval enclosures for continuous basis atoms - 2026-09-30
 
 New continuous_basis_enclosure.py/md/json uses outward interval arithmetic
