@@ -1,3 +1,11 @@
+## 2026-09-30: paper five-bump map and separated defect response
+
+Implemented Section10.2 Eq.(10.8): two axial and three angular compact bumps, the fixed invertible matrix, explicit quadratic coupling, first-Z support, Jacobian and partial cumulative moment changes. Independent field-density/inverse/tangent replay at order96 has relative errors below4.41e-16; quadrature is unenclosed.
+
+The formal five-defect inverse response now retains55 monomials through degree3. Independent coefficientwise residual~2.01e-87, scalar contraction coefficient comparison~1.67e-22 and first-Z check~1.48e-52. The actual serialized Z=.3 P9/W2 run retains55 monomial responses, separately nonzero d3/d5 contributions, and all69 original source labels in the linear response. Nonlinear source-stage products are not individually expanded. See FIVE_BUMP_MAP_2026_09_30.md and FIVE_BUMP_RESPONSE_2026_09_30.md.
+
+These are finite map/response milestones, NOT actual functional five-moment closure or temporal recursion. Convergence/remainder control, uniform analytic input bounds, corrected-field installation, radial energy/heat and stress-cone requirements remain open.
+
 ## 2026-09-30: all five centered finite-component defect inputs computed
 
 The common actual R110 source now feeds CenteredComponentDefects with pressure order 9, width order 2, and automatic first-Z tangents. The Z=.3 receipt preserves all five nonzero baseline defects and 69 separate source labels. d1~2.23437e-15, d2~5.68986e-16, d4~5.91501e-41; negative d3/d5 retain arbitrary-exponent values (log magnitudes ~-1.6e152/-2e151). Explicit P0 is unchanged. See CENTERED_COMPONENT_DEFECTS_2026_09_30.md and the centered_component_defects_check.json receipt.

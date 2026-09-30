@@ -1,3 +1,12 @@
+## 2026-09-30 next: install source-aware bump correction and bound its remainder
+
+1. [DONE, finite scope] Paper five-bump A+Q map, generic jets/first-Z, inverse, Jacobian and partial integrals implemented and independently replayed.
+2. [DONE, finite scope] Degree3 formal response in five independent defect variables; actual serialized centered inputs preserve direct tiny d3/d5 responses and69 labeled linear source responses. This degree is NOT temporal n.
+3. [OPEN] Carry nonlinear source-stage crossproducts and truncation limits explicitly. Establish a convergent response/remainder treatment under uniform C1 smallness; do not report rounded aggregate moment cancellation as tiny-row closure.
+4. [OPEN] Recover corrected u_theta, Uz, F, all five partial cumulative moments, pressure and Ur from the same coefficient functions. Preserve P0 and endpoint matching; radial recovery must use the same axial moment/tangent.
+5. [OPEN] Independently replay actual corrected moment changes relative to each incoming row, including first-Z; extend to uniform axial and second-Z/C2 control and retain all source/quadrature uncertainties.
+6. [OPEN] Audit relaxed cone using corrected partial moments on the bump supports, append the same outer construction and resolve finite-energy radial tail/heat exterior. Then pursue genuine n-dependent temporal recovery and oscillatory stress correction.
+
 ## 2026-09-30 next: consume completed five centered defects in paper repair
 
 1. [DONE, finite-ring scope] Assemble all five centered defect rows from the actual common R110 field, five moments, P0 and first-Z data; preserve each flat derivative/source part.

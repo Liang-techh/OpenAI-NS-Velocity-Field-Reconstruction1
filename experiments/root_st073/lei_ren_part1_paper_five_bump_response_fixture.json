@@ -1,0 +1,11 @@
+{
+  "formal_defect_degree": 3,
+  "coefficient_count": 55,
+  "coefficientwise_residual_absolute_error": "2.01076468338594879614802819276e-87",
+  "independent_scalar_contraction_relative_error": "1.66754001323366034320455079115e-22",
+  "independent_first_Z_relative_error": "1.48045430856101425820223364048e-52",
+  "quadrature_enclosed": false,
+  "degree_remainder_enclosed": false,
+  "actual_source_closure": false,
+  "temporal_recursion": false
+}
