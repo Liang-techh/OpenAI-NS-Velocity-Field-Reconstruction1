@@ -11,7 +11,7 @@ from lei_ren_part1_paper_pressure_width_continuation import PressureWidthExitCon
 from lei_ren_part1_paper_axial_correction import signed_log
 
 
-def run(resume=False):
+def build_provider(resume=False):
     cache=Path(__file__).resolve().parents[2]/'work_paper_cache'/'pressure_width_R100_source.pkl'
     if resume:
         # Only the local cache written by this command is supported. It is not
@@ -49,6 +49,13 @@ def run(resume=False):
                 functions=provider.functions('.3'))
             with cache.open('wb') as stream:pickle.dump(data,stream)
             print('local R100 source cache saved',flush=True)
+        return provider
+
+
+def run(resume=False):
+    provider=build_provider(resume=resume)
+    with mp.workdps(provider.precision):
+        start=provider.evaluate_R(100,'.3')
         from lei_ren_part1_paper_pressure_width_switches import PressureWidthExitSwitches
         switches=PressureWidthExitSwitches(provider,steps=8)
         boundary=switches.evaluate_R(100,'.3')

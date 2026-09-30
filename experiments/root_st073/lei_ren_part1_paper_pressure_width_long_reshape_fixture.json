@@ -1,0 +1,145 @@
+{
+  "C2_claim": false,
+  "axial_field_constant_checked": true,
+  "cone_certified": false,
+  "endpoint_seeds_preserved_separately": true,
+  "endpoint_swirl_Z_profile": "-0.550458715596330258222322107475",
+  "endpoint_swirl_Z_profile_error": "4.70757623030437069846803e-26",
+  "endpoint_swirl_Z_profile_expected": "-0.550458715596330258222322154551",
+  "finite_difference_step": "0.00010000000000000000479",
+  "finite_energy_certified": false,
+  "global_field_installed": false,
+  "increments_preserved_separately": true,
+  "independent_Z_tangent": "fourth-order centered finite difference of scalar quadrature",
+  "independent_quadrature": "mp.quad split over resolved ell intervals",
+  "logC": "-4.0",
+  "maximum_scaled_normalized_Z_tangent_error": "6.11058908769302954907676574254e-17",
+  "maximum_scaled_normalized_integral_error": "3.12711018360743634926530694936e-26",
+  "maximum_scaled_phase_zero_error": "0.0",
+  "metadata": {
+    "A": "1.0",
+    "T": "400.0",
+    "automatic_Z_tangent": true,
+    "branch": "pressure_width_long_reshape",
+    "conditional_normalized_tail_envelopes": true,
+    "cone_certified": false,
+    "endpoint_moment_seeds_preserved": true,
+    "endpoint_raw_quadratic_seeds_preserved": true,
+    "functional_terminal_moments_closed": false,
+    "global_field_installed": false,
+    "logC": "-4.0",
+    "nominal_B_budget_checked": true,
+    "nominal_C2_uniform_bounds_proved": false,
+    "normalized_tail_bounds_atomwise_enclosed": false,
+    "outer_matching_complete": false,
+    "pressure_order": 3,
+    "pressure_width_jet_remainder_enclosed": false,
+    "quadrature_error_certified": false,
+    "quadrature_order": 24,
+    "reference_radius": "110",
+    "shape_interval": "0 <= log(R/110) <= T",
+    "source_equation": "Section 9.30 long reshape",
+    "source_error_enclosed": false,
+    "tail_digits": 50,
+    "tail_growth_bound": ".05",
+    "width_order": 2
+  },
+  "normalized_Z_tangent_errors": {
+    "pressure@phase=0.5": "6.11058908769302954907677e-17",
+    "pressure@phase=1.0": "4.64783708897548842266972e-28",
+    "swirl@phase=0.5": "3.1314287605714767139803e-18",
+    "swirl@phase=1.0": "7.10338889463014407672593e-63",
+    "theta@phase=0.5": "9.53879251564454727436698e-19",
+    "theta@phase=1.0": "4.51650258100906373616231e-73"
+  },
+  "normalized_integral_errors": {
+    "pressure@phase=0.5": "3.12711018360743634926531e-26",
+    "pressure@phase=1.0": "2.69118028873724710196973e-30",
+    "swirl@phase=0.5": "7.41130917906305479613778e-27",
+    "swirl@phase=1.0": "3.33867637306155043414418e-37",
+    "theta@phase=0.5": "2.26517111279099701655322e-27",
+    "theta@phase=1.0": "5.32191788613686792326162e-38"
+  },
+  "passed": true,
+  "phase_rows": [
+    {
+      "axial_field_constant": true,
+      "integral_errors": {
+        "pressure": "3.12711018360743634926531e-26",
+        "swirl": "7.41130917906305479613778e-27",
+        "theta": "2.26517111279099701655322e-27"
+      },
+      "nonzero_moment_increments": true,
+      "nonzero_moment_seeds": true,
+      "normalized_integrals": {
+        "pressure": "4.57140679952135929352392",
+        "swirl": "0.819850999555816703004652",
+        "theta": "0.621166226434455181055045"
+      },
+      "normalized_integrals_Z": {
+        "pressure": "0.517031045861412093984317",
+        "swirl": "0.017377447729228801659256",
+        "theta": "0.00499157985988481481171818"
+      },
+      "phase": "0.5",
+      "tangent_errors": {
+        "pressure": "6.11058908769302954907677e-17",
+        "swirl": "3.1314287605714767139803e-18",
+        "theta": "9.53879251564454727436698e-19"
+      }
+    },
+    {
+      "axial_field_constant": true,
+      "integral_errors": {
+        "pressure": "2.69118028873724710196973e-30",
+        "swirl": "3.33867637306155043414418e-37",
+        "theta": "5.32191788613686792326162e-38"
+      },
+      "nonzero_moment_increments": true,
+      "nonzero_moment_seeds": true,
+      "normalized_integrals": {
+        "pressure": "4.99999999999983720450036",
+        "swirl": "0.833333333333333333333333",
+        "theta": "0.625"
+      },
+      "normalized_integrals_Z": {
+        "pressure": "2.1295213105479260913169e-13",
+        "swirl": "2.76572895047500106646151e-49",
+        "theta": "2.4983536796087726073524e-60"
+      },
+      "phase": "1.0",
+      "tangent_errors": {
+        "pressure": "4.64783708897548842266972e-28",
+        "swirl": "7.10338889463014407672593e-63",
+        "theta": "4.51650258100906373616231e-73"
+      }
+    }
+  ],
+  "phase_zero_endpoint_errors": {
+    "F": "0.0",
+    "P": "0.0",
+    "Uz": "0.0",
+    "moment:p": "0.0",
+    "moment:theta": "0.0",
+    "moment:theta_z": "0.0",
+    "moment:z": "0.0",
+    "moment:z_theta": "0.0",
+    "raw:axial": "0.0",
+    "raw:swirl": "0.0"
+  },
+  "phases": [
+    "0.5",
+    "1.0"
+  ],
+  "precision": 100,
+  "pressure_order": 3,
+  "pressure_width_truncation_remainder_enclosed": false,
+  "quadrature_error_enclosed": false,
+  "quadrature_order": 24,
+  "reshape_A": "1.0",
+  "reshape_T": "400.0",
+  "source_B_budget_ok": true,
+  "tail_digits": 50,
+  "temporal_recursion_certified": false,
+  "width_order": 2
+}

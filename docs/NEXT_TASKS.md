@@ -1,3 +1,11 @@
+## 2026-09-30 next: reference extension after component long reshape
+
+1. Read COMPONENT_LONG_RESHAPE_2026_09_30.md and use PressureWidthLongReshape endpoint as the common source; do not reconstruct a separate pressure/core candidate.
+2. Implement the paper reference-power interval after Section9.30 with analytic five-moment and raw-quadratic primitives and automatic first Z tangents. Preserve inherited seeds and every interval increment separately.
+3. Restore axial profile using those same component inputs; recover radial velocity from the prescribed axial moment and derivative. Do not substitute auxiliary comparison moments.
+4. Perform functional terminal moment/pressure repair without a Z-dependent pressure reset or rounding away tiny inner contributions.
+5. Then join the branch and assess radial energy, heat, uniform C2/cone and independent Cartesian equations. Pressure/width Taylor orders remain distinct from n-dependent temporal recursion.
+
 ## 2026-09-30: propagate common R110 source into long reshape
 
 - [x] Carry pressure/width atoms, automatic Z tangents and separate raw quadratic integrals through R100..110 switches; actual receipt pressure_width_switches_check.json.
