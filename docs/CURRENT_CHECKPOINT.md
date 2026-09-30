@@ -1,3 +1,15 @@
+# 2026-09-30: Convergent variable-stage integral/error intervals
+
+Directed monotone switch and primitive grids now feed positive radial
+interval subdivision. Actual first two transition widths shrink64->128
+panels. Signed true-minus-finite Gauss mass intervals give absolute error
+upper bounds0.00240550 and1.01380e-8; beta2 converts them to compact
+axial derivative budgets. Six negative-slope stages have analytic integral
+intervals and finite-mass error receipts. The first transition bound is
+still too loose for the target five-defect hierarchy. Variable-beta
+flatten errors, other transitions and source propagation remain open.
+See VARIABLE_PREHEAT_INTERVAL_INTEGRALS_2026_09_30.md.
+
 # 2026-09-30: Complete stored-parameter preheat norm bound
 
 H=1 collar and exact exterior integral enclosures now use the shared stored

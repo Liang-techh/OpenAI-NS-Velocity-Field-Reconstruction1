@@ -2,7 +2,9 @@
 
 Scope: the continuous formula with the supplied stored Decimal parameters.
 Does not certify how those parameters were calculated from transcendental
-paper inputs. No primitive quadrature is used for endpoint enclosures.
+paper inputs. The default endpoint enclosures use no primitive quadrature;
+``primitive_refined`` and ``primitive_grid_enclosures`` provide optional
+directed Darboux enclosures for the monotone switch primitive.
 """
 import mpmath as mp
 from mpmath.ctx_iv import MPIntervalContext
@@ -17,8 +19,125 @@ class ScheduleEndpointEnclosures:
         self.schedule=schedule
         self.precision=max(schedule.decimal_precision+30,precision or 0)
         self.iv=MPIntervalContext();self.iv.dps=self.precision
+        # Keys contain only exact scalar endpoint tuples and the panel count.
+        # Interval objects themselves are deliberately not used as keys.
+        self._primitive_scalar_cache={}
 
     def scalar(self,value):return self.iv.mpf(str(value))
+
+    def _as_interval(self,value):
+        return value if hasattr(value,'_mpi_') else self.scalar(value)
+
+    @staticmethod
+    def _panel_count(panels):
+        try:n=int(panels)
+        except (TypeError,ValueError,OverflowError):raise ValueError('panels must be a positive integer')
+        if n<1 or n!=panels:raise ValueError('panels must be a positive integer')
+        return n
+
+    def _sigma_point(self,x):
+        """Evaluate the known increasing logistic switch at one scalar endpoint."""
+        iv=self.iv;one=iv.mpf(1)
+        if x<=0:return iv.mpf(0)
+        if x>=1:return one
+        xv=iv.mpf(x)
+        phase=one/(xv*xv)-one/((one-xv)*(one-xv))
+        plo,phi=endpoints(phase)
+        # Use the reciprocal logistic branch on the positive side so that
+        # tiny switches do not require forming exp(large positive phase).
+        if plo>=0:
+            tiny=iv.exp(-phase)
+            return tiny/(one+tiny)
+        if phi<=0:
+            tiny=iv.exp(phase)
+            return one/(one+tiny)
+        return one/(one+iv.exp(phase))
+
+    def sigma_interval(self,value):
+        """Return a directed hull for the increasing switch ``sigma``.
+
+        The phase is ``1/x**2 - 1/(1-x)**2`` on ``0 < x < 1``.  Exact
+        endpoint values are used outside that interval, and the monotonic
+        endpoint hull handles a genuine input interval without sampling.
+        """
+        value=self._as_interval(value);lo,hi=endpoints(value)
+        if lo>hi:raise ValueError('invalid interval with lower endpoint above upper endpoint')
+        if not mp.isfinite(lo) or not mp.isfinite(hi):raise ValueError('sigma interval requires finite endpoints')
+        if hi<=0:return self.iv.mpf(0)
+        if lo>=1:return self.iv.mpf(1)
+        left=mp.mpf(0) if lo<0 else lo
+        right=mp.mpf(1) if hi>1 else hi
+        lower=self._sigma_point(left);upper=self._sigma_point(right)
+        slo,_=endpoints(lower);_,shi=endpoints(upper)
+        return self.iv.mpf([slo,shi])
+
+    def _primitive_darboux_scalar(self,x,panels):
+        """Darboux enclosure for J(x) with scalar endpoint x in [0,1]."""
+        iv=self.iv;n=self._panel_count(panels)
+        if x<=0:return iv.mpf(0)
+        if x>=1:return iv.mpf('.5')
+        xv=iv.mpf(x)
+        h=xv/iv.mpf(n)
+        lower_sum=iv.mpf(0);upper_sum=iv.mpf(0)
+        for k in range(n):
+            left=h*k;right=h*(k+1)
+            lower_sum += self.sigma_interval(left)
+            upper_sum += self.sigma_interval(right)
+        lower=h*lower_sum;upper=h*upper_sum
+        return iv.mpf([endpoints(lower)[0],endpoints(upper)[1]])
+
+    def _primitive_scalar(self,x,panels):
+        """Cached scalar-endpoint primitive enclosure; interval callers do not cache."""
+        iv=self.iv;n=self._panel_count(panels);xv=iv.mpf(x)
+        xlo,xhi=endpoints(xv);key=(xlo._mpf_,xhi._mpf_,n)
+        cached=self._primitive_scalar_cache.get(key)
+        if cached is not None:return cached
+        if x<=0:
+            result=iv.mpf(0)
+        elif x>=1:
+            result=xv-iv.mpf('.5')
+        else:
+            result=self._primitive_darboux_scalar(x,n)
+        self._primitive_scalar_cache[key]=result
+        return result
+
+    def primitive_refined(self,value,panels=128):
+        """Directed Darboux enclosure of monotone J at a scalar or interval."""
+        n=self._panel_count(panels);value=self._as_interval(value)
+        lo,hi=endpoints(value)
+        if lo>hi:raise ValueError('invalid interval with lower endpoint above upper endpoint')
+        if not mp.isfinite(lo) or not mp.isfinite(hi):raise ValueError('primitive interval requires finite endpoints')
+        if hi<=0:return self.iv.mpf(0)
+        if lo>=1:return self.iv.mpf(value)-self.iv.mpf('.5')
+        if lo<=0:lower=self.iv.mpf(0)
+        else:lower=self._primitive_scalar(lo,n)
+        if hi>=1:upper=self.iv.mpf(value)-self.iv.mpf('.5')
+        else:upper=self._primitive_scalar(hi,n)
+        lower_endpoint=endpoints(lower)[0];upper_endpoint=endpoints(upper)[1]
+        return self.iv.mpf([lower_endpoint,upper_endpoint])
+
+    def primitive_grid_enclosures(self,panels=128):
+        """Return O(N) directed prefix enclosures for J(i/N), i=0,...,N.
+
+        A single uniform sigma grid supplies lower and upper Darboux prefix
+        sums.  The terminal prefix is replaced by the exact symmetry value
+        J(1)=1/2.
+        """
+        iv=self.iv;n=self._panel_count(panels)
+        h=iv.mpf(1)/iv.mpf(n)
+        grid=[h*i for i in range(n+1)]
+        sigma=[self.sigma_interval(x) for x in grid]
+        result=[iv.mpf(0)]
+        lower_sum=iv.mpf(0);upper_sum=iv.mpf(0)
+        for i in range(1,n+1):
+            lower_sum += sigma[i-1]
+            upper_sum += sigma[i]
+            lower=h*lower_sum;upper=h*upper_sum
+            if i==n:
+                result.append(iv.mpf('.5'))
+            else:
+                result.append(iv.mpf([endpoints(lower)[0],endpoints(upper)[1]]))
+        return result
 
     def primitive(self,value):
         """Monotone J interval, exact outer branches and conservative interior.

@@ -1,3 +1,19 @@
+# 2026-09-30: After convergent radial interval integration
+
+- [x] Add directed monotone sigma/J enclosures and O(N) primitive grids.
+- [x] Enclose actual first two variable-stage masses with width contraction
+      and signed errors against the retained192-point Gauss values.
+- [x] Convert beta2 mass errors into axial derivative error budgets.
+- [x] Bound six negative-slope stage integrals analytically and record errors.
+- [ ] Replace first-order interval subdivision with higher-order enclosed
+      integration to reach the small five-defect hierarchy; the current
+      first-stage error bound0.00240550 is too loose.
+- [ ] Enclose steep-transition and variable-beta flatten derivative errors.
+- [ ] Assemble the complete pressure approximation error, then propagate it
+      through core/RK/restoration to the five centered defects.
+
+See VARIABLE_PREHEAT_INTERVAL_INTEGRALS_2026_09_30.md.
+
 # 2026-09-30: Complete preheat pressure bound installed
 
 - [x] Enclose H=1 heat collar and exact exterior pressure mass with the
