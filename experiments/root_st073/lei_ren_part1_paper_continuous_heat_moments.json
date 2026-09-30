@@ -1,0 +1,78 @@
+{
+  "samples": [
+    {
+      "t": "0.6",
+      "integrand_relative_errors": [
+        "3.57819940500348042554962230449468902479e-16",
+        "9.39e-17",
+        "6.044570899980953933988536489894537996156e-14",
+        "7.683517946963391638960018287913156085469e-14",
+        "6.044570899980953933988536489894537996156e-14",
+        "7.683517946963391638960018287913156085469e-14"
+      ],
+      "separate_heat_correction_retained": true,
+      "quadratic_heat_dispatch_finite": true
+    },
+    {
+      "t": "4.0",
+      "integrand_relative_errors": [
+        "3.333333337301587303902116402968173801726e-18",
+        "1.68869148845713691356272047303395473519e-440",
+        "1.103599875982411706031018772769074429252e-440",
+        "3.333333337301587303902116402968173801726e-18",
+        "2.420534332706915827496258407472531311453e-440",
+        "3.333333337301587303902116402968173801726e-18"
+      ],
+      "separate_heat_correction_retained": true,
+      "quadratic_heat_dispatch_finite": true
+    },
+    {
+      "t": "30.0",
+      "integrand_relative_errors": [
+        "3.333333337301587303902116402968173801726e-18",
+        "1.483392829142100894046201204105172338764e-440",
+        "3.105003506829571797876869807906665649734e-439",
+        "3.333333337301587303902116402968173801726e-18",
+        "5.489682323454812182635573964682781470889e-440",
+        "3.333333337301587303902116402968173801726e-18"
+      ],
+      "separate_heat_correction_retained": true,
+      "quadratic_heat_dispatch_finite": true
+    }
+  ],
+  "Rtail_increment_zero": true,
+  "heat_kernel_shared": true,
+  "actual_inner_anchor_once": true,
+  "finite_radius_heat_supported": true,
+  "quadrature_error_enclosed": false,
+  "heat_polynomial_truncation_enclosed": false,
+  "infinite_swirl_heat_tail_integrated": true,
+  "infinite_swirl_heat_Z_relative_error": "4.046756098641816710889227211070095131049e-440",
+  "swirl_heat_tail": {
+    "reference": {
+      "sign": 1,
+      "log_abs": "5.0e+152",
+      "arbitrary_exponent_value": "1.6819882115502270604097261676790263349443788525564e+217147240951625913825564459458302541147198502901833283057226891582932324604435387364612474669215874159353053372383151866820839643579481953284610532330066"
+    },
+    "heat_correction": {
+      "sign": -1,
+      "log_abs": "-27191573448168950000791937287.967208628348830270576",
+      "arbitrary_exponent_value": "-5.0472273541305165404976337140771423886334639744728e-11809150302806752954677397710"
+    },
+    "heat_correction_Z": {
+      "sign": 1,
+      "log_abs": "-27191573448168950000791937288.383723572643579626904",
+      "arbitrary_exponent_value": "3.3278422115146262904380002510398741023956905326194e-11809150302806752954677397710"
+    },
+    "analytic_heat_truncation_absolute_bound": {
+      "sign": 1,
+      "log_abs": "-1.0e+153",
+      "arbitrary_exponent_value": "1.3522971938434036621792956696556702575442934011996e-434294481903251827651128918916605082294397005803666566114453783165864649208870774729224949338431748318706106744766303733641714714609872326828085096852460"
+    }
+  },
+  "physical_Z_energy_weight_integrated": false,
+  "radial_energy_included": false,
+  "complete_five_moments": false,
+  "finite_energy_certified": false,
+  "scale_recursion_certified": false
+}

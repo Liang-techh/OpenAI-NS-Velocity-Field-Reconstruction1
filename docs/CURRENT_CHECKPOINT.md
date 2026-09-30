@@ -1,3 +1,11 @@
+## 2026-09-30: cumulative heat angular moments and infinite swirl component
+
+Extended actual seeded angular and swirl-square moments/Z jets beyond Rtail using the installed common heat polynomial. Collar Gauss atoms and analytic exterior exponential atoms retain reference, heat corrections and Z terms separately. Actual quadratic moments now dispatch through finite heat radii. Six forward-integrand checks at t=.6,4,30 pass with maximum relative difference 7.69e-14; Rtail increments are zero and corrections remain nonzero.
+
+Added complete_swirl_heat_integral for Rtail..infinity Utheta^2 dR, retaining its reference/correction/Z atoms and an analytic integrated polynomial-truncation bound. Positive delta makes this swirl radial integral converge. This does not include physical Z weights or radial kinetic energy; total finite energy and recursive closure are still unproven. Quadrature/arithmetic and full heat-target uncertainty remain open.
+
+Next regenerate exact heat-defect/angular/pressure targets from these shared atoms, regenerate inherited incoming swirl coherently, complete pressure moments/Z, finish partial axial energy and resolve terminal radial transport.
+
 ## 2026-09-30: continuous heat point jets installed
 
 Installed the new common heat functional in ContinuousAngularSchedule and propagated separate heat deficit/log-amplitude/slope correction atoms to actual angular field adapters. Preserved nonzero heat Z derivatives beyond Decimal exponent storage using arbitrary-exponent MP values. Shared-field collar and exterior checks passed: retained-log radial derivative maximum relative difference 1.83e-12; Z derivative and actual field jet nominal agreement at working precision. The live nominal future-energy target is regenerated on construction; exact heat-defect integral targets still retain their explicitly declared Taylor approximations. Complete heat cumulative moments, input bounds, finite energy and recursion remain open.

@@ -1,3 +1,5 @@
+Update: quadratic moments also dispatch through finite heat radii via the shared angular provider; see continuous_heat_moments.md.
+
 # Actual complete axial-square and exterior quadratic moments
 
 ContinuousIncomingProfile.quadratic_moments_jet currently supports Rv through Rtail. It combines actual inner axial energy, continuous incoming energy, and the live solve's complete pulse/end energy atoms. Pulse and end supports are disjoint: the end band has xi = 13 + mu*t_v > 11. There is no cross term. The end Gram atoms already contain exp(-26).

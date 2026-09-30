@@ -1,3 +1,14 @@
+## Latest cumulative heat handoff (2026-09-30)
+
+- [x] Extend actual angular/swirl-square cumulative moments and Z jets through heat collar and finite exterior radii.
+- [x] Preserve separate heat increments and actual preheat/inner anchor once; actual quadratic API now supports finite heat points.
+- [x] Integrate the swirl radial heat component to infinity with analytic exponential atoms and a polynomial-truncation bound.
+- [ ] Integrate physical Z energy weights and resolve terminal radial transport; swirl-component convergence does not prove total finite energy.
+- [ ] Regenerate exact heat-defect angular/pressure targets and incoming swirl from common cumulative atoms, updating coefficients/tangents together.
+- [ ] Complete pressure moments/Z, partial axial energy and all input/tail uncertainty before stress/recursion claims.
+
+Evidence: continuous_heat_moments.py/md/json. Complete five moments, total finite energy and recursion remain uncertified.
+
 ## Latest heat installation handoff (2026-09-30)
 
 - [x] Install continuous heat point kernel in the shared angular schedule and preserve separate tiny deficit/log/slope atoms in field adapters.

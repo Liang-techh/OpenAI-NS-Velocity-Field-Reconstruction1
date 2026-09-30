@@ -37,6 +37,8 @@ class ContinuousAngularMoments:
             ('power_buffer_rel','pulse'),('steep_transition_in',None),
             ('steep_power','-1.5'),('steep_transition_out',None),
             ('waiting','waiting')]
+        from lei_ren_part1_paper_continuous_heat_moments import ContinuousHeatMoments
+        self.heat_provider=ContinuousHeatMoments(self)
 
     def _radius(self,y):
         return self.profile.log_at(self.schedule.logRref,str(y))
@@ -173,6 +175,8 @@ class ContinuousAngularMoments:
 
     def moments_jet(self,logR,Z,*,include_inner=True):
         with mp.workdps(self.precision):
+            if self.profile.offset(logR,self.schedule.logR_tail)>0:
+                return self.heat_provider.moments_jet(logR,Z,include_inner=include_inner)
             z=_mp(Z)
             if abs(z)>=1:raise ValueError('Actual inner seed requires |Z|<1')
             y=self._preheat_y(logR)
