@@ -1,0 +1,50 @@
+{
+  "precision": 160,
+  "refined_precision": 200,
+  "mu": "4.78089288388546908127717704231796289388959185661541071509311e-28",
+  "continuous_normalizer": "0.443993816168079437823048921170552663761201789045697497307485",
+  "full_mass_from_identical_atom": "1.0",
+  "continuous_matrix": [
+    [
+      "0.223229400512897183348606397604034288237464989378859237727611",
+      "0.606800422992014685826679723454841158100643394651611764597463"
+    ],
+    [
+      "0.223229400512897183348606397924015231122608391193397536779738",
+      "0.606800422992014685826679723744429975754277204142571659001636"
+    ]
+  ],
+  "analytic_determinant": "-1.29519833332029336262124438143956886960663970225157867928005e-28",
+  "determinant_relative_refinement": "1.75809091633607258847138410597245008954853628239990371061222e-162",
+  "matrix_relative_refinement": "1.87494577011625590601765331646162377764145233100067130887001e-161",
+  "matrix_relative_change_from_float_raw_canonical_basis": "0.000000000000000000220863941463759624854338732676314144006719898740810729644211",
+  "energy_gram": "4.50077875339798352658288806829439199656342009239679409661205",
+  "primitive_derivative_replay": [
+    {
+      "step": "0.00001",
+      "relative_derivative_error": "0.0000000000000000100864653101169140945593102999386212946542211343615501533524"
+    },
+    {
+      "step": "0.000005",
+      "relative_derivative_error": "0.000000000000000000630404083208017934257346012030502623975757963728101624847164"
+    }
+  ],
+  "endpoint_values": {
+    "-1": {
+      "beta": "0.0",
+      "beta_s": "0.0",
+      "beta_ss": "0.0"
+    },
+    "1": {
+      "beta": "0.0",
+      "beta_s": "0.0",
+      "beta_ss": "0.0"
+    }
+  },
+  "pointwise_and_primitive_definition_shared": true,
+  "numerical_quadrature_enclosure_certified": false,
+  "installed_in_global_profile": false,
+  "continuous_mean_closure_certified": false,
+  "finite_energy_certified": false,
+  "scope": "Continuous bump sublayer only; incoming/core primitive, pulse full/partial integrals and Z jets still require shared provenance."
+}

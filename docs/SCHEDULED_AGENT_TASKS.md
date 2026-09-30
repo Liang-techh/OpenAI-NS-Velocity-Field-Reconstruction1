@@ -1,3 +1,31 @@
+## Continuous integral providers and bounded core energy - 2026-09-30
+
+New artifacts: lei_ren_part1_paper_continuous_axial_basis.py/md/json,
+lei_ren_part1_paper_continuous_axial_pulse.py/md/json,
+lei_ren_part1_paper_core_energy.py/md/json, under experiments/root_st073.
+The continuous bump shares values, derivatives and full/partial primitives.
+Its matrix differs from the old float-node canonical matrix by 2.21e-19.
+The MP pulse shares pointwise values and full weighted rows; saddle-window
+partial weighted primitives now include positive omitted-piece bounds and
+an independent derivative diagnostic. Off-window partial evaluation raises
+an explicit error and remains to be implemented. Pulse full-row log inputs
+change by 6.68e-15 from the float-centered evaluator. No global installation.
+
+Actual bounded core energy integration confirms declining kinetic energy
+under the selected shrinking time scales, despite growing velocity amplitude.
+This is core-only; the exterior nonzero radial tail remains the global energy
+obstruction. Do not infer recursive scale closure or full NS residual closure.
+
+Next tasks in order:
+1. Complete off-window continuous pulse partial primitives with bounds.
+2. Add continuous pulse energy and shared incoming primitive/Z derivatives.
+3. Re-solve with the same continuous bump/pulse/incoming atoms used by velocity.
+4. Establish actual terminal mean AND its Z derivative cancellation before
+   modifying any 1/r tail; keep nonzero arithmetic tails visible.
+5. Complete outer jets/five moments, annular/exterior energy and measured
+   core-width profiles; then uniform stress/remainder and oscillatory layers.
+The full goal remains active; local core energy is not global finite energy.
+
 ## Exact quadrature dependency graph and measured multi-time core geometry - 2026-09-30
 
 Run lei_ren_part1_paper_axial_closure_graph.py for actual shared candidate
