@@ -42,9 +42,10 @@ def incoming_angular_ratio(schedule,*,rtol=1e-11):
         x=propagate(x,schedule.y_d-1,Decimal(1))
         x=transition(x,schedule.y_d,Decimal(1))
         x=propagate(x,schedule.y_v-schedule.y_w,1-schedule.mu)
+        incoming_flattening_X=x
         x=transition(x,schedule.y_v,schedule.Tf)
         x=propagate(x,schedule.y_rel-schedule.y_f,1-schedule.mu)
-        return {'incoming_X':x,'ode_rtol':rtol,
+        return {'incoming_X':x,'incoming_flattening_X':incoming_flattening_X,'ode_rtol':rtol,
                 'discarded_constant_stage_contraction_log_factors':omitted,
                 'discarded_stage_note':'Each discarded correction is (incoming-equilibrium)*exp(log_factor); no physical radius is truncated.'}
 

@@ -26,6 +26,16 @@ data and stage-local gamma offsets. Actual heat bumps, axial pulse moments,
 all-five-moment binding and a new regular shared-pressure core remain open.
 The source demonstration does not replace the callable field's h=.001 manifest.
 
+Heat-replacement r_H and s_H now have candidate-derived logarithmic inputs
+in `lei_ren_part1_paper_heat_defects.py/.json`. Their positive leading values
+are retained with analytic Taylor remainder bounds instead of underflowing
+to zero. Independent Gamma-expectation checks pass; pressure-collar integral
+refinement is 4.24e-11. This is bounded heat-defect evaluation, not the exact
+angular coefficient solve. Incoming Z-dependent r_pre is also retained by
+the actual flattening difference ODE followed by logarithmic mu^(30(1-mu))
+propagation. The next task is a coefficient representation that preserves
+these tiny inputs, with waiting-root and quadrature uncertainties separated.
+
 ## Actual stress path and continuous-moment blocker — 2026-09-29
 
 Continuous axial repair now re-solves the interpolated moment system at
