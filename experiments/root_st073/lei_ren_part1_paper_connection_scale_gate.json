@@ -1,0 +1,32 @@
+{
+  "Lambda": "1000000000000000000000000000000000000.0",
+  "j": "0.02",
+  "logCstar": "165.786126695571289249295384737274222947279307",
+  "logPstar": "14.0",
+  "logRref": "1802.56174732150530872103378240539172298021588",
+  "axis_endpoint_G_max": "2.82881931783253170191000176071014770614062906",
+  "A_necessary_lower_bound": "2828819317832531701910001760710147716.14062906",
+  "logK_necessary_lower_bound": "2828819317832531701910001760710147871.92675575",
+  "j_necessary_upper_bound_Kp_ge_1": "0.0000000000156171914042978510744627686156921539230384808",
+  "loghb_necessary_upper_bound": "-282881931783253170191000176071014787237.118339",
+  "shape_only_necessary_minimum_logCstar": "113152772713301268076400070428405908716.558085",
+  "gate_margins": {
+    "Cstar_ge_exp4A": "-11315277271330126807640007042840590698.7763895",
+    "Rref_ge_long_shape_bound": "-1131527727133012680764000704284059085507.71958",
+    "Rz_ge_axial_bound": "-5657638635665063403820003521420293925.99224455",
+    "hb_small_enough_for_K_lower": "-282881931783253170191000176071014787231.820022",
+    "j_below_universal_necessary_upper": "-0.0199999999843828085957021489255372313843078461"
+  },
+  "necessary_gates_passed": {
+    "Cstar_ge_exp4A": false,
+    "Rref_ge_long_shape_bound": false,
+    "Rz_ge_axial_bound": false,
+    "hb_small_enough_for_K_lower": false,
+    "j_below_universal_necessary_upper": false
+  },
+  "A_Omega_certified": false,
+  "A_C3_norm_bounded": false,
+  "K_C3_norm_bounded": false,
+  "source_parameter_regime_certified": false,
+  "scope": "Rejection from necessary lower bounds; larger Cstar alone does not certify a new shared candidate"
+}

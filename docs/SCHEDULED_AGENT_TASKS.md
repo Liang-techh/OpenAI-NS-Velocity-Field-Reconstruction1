@@ -1,3 +1,37 @@
+## Short source switches now reach R=110 - 2026-09-30
+
+ExitSwitches implements both exact short switch intervals, actual moment
+and Z-jet transport, and analytic a=.8,b=0 continuation to R=110. At Z=.3,
+R=100 field/moment/jet/slope matching is 1.60e-160 relative. All six sampled
+relaxed cones pass. The 16/32 switch endpoint difference is 7.03e-12; the
+largest interior difference is 2.44e-9. The recorded b=0 cone margin gives
+D(R=110) about 5.68e37, above 3. Read exit_switches.md/json under
+experiments/root_st073. These remain development-fixture diagnostics.
+
+Next priority is the shared parameter rebuild, not blindly extending
+this fixture to Rsh. Its necessary parameter gate explicitly fails.
+Follow connection_scale_gate.md for selecting j, controlling A/K,
+choosing Cstar/Rref/delta and a common source collar, and recomputing
+pressure/core. Then replay the reusable exit/switch modules, reshape
+angular velocity, restore axial velocity and repair actual five moments.
+Full matching, finite energy and temporal scale recursion remain open.
+
+## Shared source parameters must be rebuilt - 2026-09-30
+
+The current development fixture fails necessary Section9 input conditions:
+Cstar/A, long angular-shape radius, axial-radius separation, j and short
+collar width. Read connection_scale_gate.md/json under experiments/root_st073.
+This is an explicit necessary-condition rejection, not just missing proof.
+Real endpoint max(G) bounds A; it is not the complex A_Omega bound.
+
+build_source_core now accepts shared j/logC/logPstar/delta and recomputes
+outer schedule, pressure anchor, axis and core together. Its nondefault
+wiring receipt passes local checks, but does not certify a replacement.
+Do not reuse old fixture receipts after changing parameters. Next select
+one compatible shared candidate with controlled A/K, then rerun pressure,
+core, switches and long reshape. Existing local source modules remain
+useful algorithm implementations; full matching and recursion remain open.
+
 ## Next source connection action - 2026-09-30
 
 Frozen comparison now reaches R=110; actual conditional exit continuation

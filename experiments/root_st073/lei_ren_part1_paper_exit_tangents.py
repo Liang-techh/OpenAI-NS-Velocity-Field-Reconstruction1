@@ -350,6 +350,12 @@ class ExitTangents(ExitBridge):
                 "moments": moments,
                 "momentsZ": moments_Z,
                 "moments_Z": moments_Z,
+                "raw_quadratic_integrals": {
+                    "axial": self.r * axial,
+                    "axial_Z": self.r * axial_Z,
+                    "swirl": Fa2r2 * swirl,
+                    "swirl_Z": Fa2r2 * (swirl_Z + 2 * Fa_Z / Fa * swirl),
+                },
                 "P": P,
                 "PZ": P_Z,
                 "P_Z": P_Z,

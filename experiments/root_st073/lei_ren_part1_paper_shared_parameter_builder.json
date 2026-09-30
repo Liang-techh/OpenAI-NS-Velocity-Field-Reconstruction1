@@ -1,0 +1,15 @@
+{
+  "shared_parameters": {
+    "j": "0.01",
+    "logCstar": "170.0",
+    "logPstar": "13.0",
+    "delta": "1.0e-34",
+    "logRref": "1834.700480365792416228079935032649493507422808342566190151251895610098146233590589193311051913092233"
+  },
+  "axis_delta_equals_core_delta": true,
+  "F_positive": true,
+  "F_R_negative": true,
+  "pressure_recomputed": true,
+  "scope": "Nondefault-parameter wiring smoke, not compatible source parameter regime",
+  "source_parameter_regime_certified": false
+}

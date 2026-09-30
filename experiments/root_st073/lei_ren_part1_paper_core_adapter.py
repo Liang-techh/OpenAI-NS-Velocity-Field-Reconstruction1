@@ -94,7 +94,8 @@ class CorePolynomial:
                     'scope':'Unlocalized finite core; outer connection and pressure-jet uncertainties remain.'}
 
 
-def build_source_core(precision=160,degree=18,Lambda='1e36'):
+def build_source_core(precision=160,degree=18,Lambda='1e36',*,
+                      j='.02',logC=None,logPstar='14',delta='1e-32'):
     from lei_ren_part1_paper_outer import PaperOuterSchedule
     from lei_ren_part1_paper_corrected_profile import CorrectedSourceProfile
     from lei_ren_part1_paper_axis_pressure_jets import AxisPressureJets
@@ -102,25 +103,32 @@ def build_source_core(precision=160,degree=18,Lambda='1e36'):
     from lei_ren_part1_paper_core_ra_experiment import build_coefficients
     from lei_ren_part1_paper_axial_correction import signed_log
     with mp.workdps(precision):
-        lam=mp.mpf(str(Lambda)); logC=2*mp.log(lam); logP=mp.mpf(14)
-        logR=mp.log(110)+10*(logC+logP)
-        schedule=PaperOuterSchedule(logPstar='14',logRref=mp.nstr(logR,precision),
-            delta='1e-32',Md='.5',c_mu='.001',c_delta='.001',c_epsilon='.01')
+        lam=mp.mpf(str(Lambda))
+        chosen_logC=2*mp.log(lam) if logC is None else mp.mpf(str(logC))
+        logP=mp.mpf(str(logPstar)); chosen_delta=mp.mpf(str(delta))
+        logR=mp.log(110)+10*(chosen_logC+logP)
+        schedule=PaperOuterSchedule(logPstar=mp.nstr(logP,precision),logRref=mp.nstr(logR,precision),
+            delta=mp.nstr(chosen_delta,precision),Md='.5',c_mu='.001',c_delta='.001',c_epsilon='.01')
         profile=CorrectedSourceProfile(schedule=schedule,match_waiting=True,precision=precision)
         pressure=AxisPressureJets(profile,R_a=4/lam)
         anchor=pressure.dominant_taylor(0)
         # AxisPressureJets separates P0/Pstar². Restore physical profile
         # units before using the Section 8 nonlinear equations.
         K=mp.exp(2*logP)*mp.mpf(anchor['anchor_K_actual_Z0'])
-        axis=RegularCoreAxisJets(j='.02',Lambda=lam,logC=logC,delta='1e-32',precision=precision)
+        axis=RegularCoreAxisJets(j=j,Lambda=lam,logC=chosen_logC,delta=chosen_delta,precision=precision)
         def factory(z):
             center=mp.mpf(str(z))
             jets=mp.taylor(lambda w:K/(1+w*w)**2,center,degree+1)
             return build_coefficients(center,degree,axis=axis,
                 pressure_taylor_coefficients=jets,precision=precision)
-        core=CorePolynomial(factory,Lambda=lam,precision=precision)
+        core=CorePolynomial(factory,Lambda=lam,delta=chosen_delta,precision=precision)
         return {'profile':profile,'axis':axis,'pressure':pressure,'core':core,'K':K,
-                'Lambda':lam,'radial_degree':degree,'precision':precision}
+                'Lambda':lam,'radial_degree':degree,'precision':precision,
+                'shared_parameters':{'j':mp.nstr(axis.j,precision),
+                    'logCstar':mp.nstr(chosen_logC,precision),'logPstar':mp.nstr(logP,precision),
+                    'delta':mp.nstr(chosen_delta,precision),'logRref':mp.nstr(logR,precision)},
+                'pressure_recomputed_for_shared_parameters':True,
+                'source_parameter_regime_certified':False}
 
 
 def run(precision=160,degree=18,Lambda='1e36'):
