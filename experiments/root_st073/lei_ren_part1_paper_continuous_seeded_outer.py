@@ -35,6 +35,7 @@ class ContinuousSeededAxialProfile(SeededAxialProfile):
                 if difference>mp.mpf(10)**(-continuous['algebra_precision']+5):
                     raise ValueError('Prepared continuous solve uses a different schedule mu')
         return dict(incoming=seeded['incoming'],axial=continuous,
+            energy_target=seeded.get('energy_target',seeded['axial'].get('energy_target')),
             seed_origin=seeded.get('seed_origin'),
             continuous_mean_closure_certified=False,finite_energy_certified=False)
 

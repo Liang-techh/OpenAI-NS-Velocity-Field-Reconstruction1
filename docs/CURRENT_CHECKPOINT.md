@@ -1,3 +1,32 @@
+## Actual axial coefficient and cumulative mean Z derivatives - 2026-09-30
+
+New continuous_axial_tangents.py/md/json differentiates the same continuous
+linear rows and quadratic energy constraint. Independent declared-direction
+fourth-order replay refines 2.19e-17 -> 1.37e-18; actual nominal input jets
+replay derivative rows around 1e-201. Arithmetic replay is not a certificate.
+
+New seeded_input_tangents.py/md/json transports actual corrected Rh momentsZ
+and reference/source-factor derivatives into normalized incoming rows/target.
+It does not recover tiny reference inputs by subtracting a large seed. Swirl
+reference energy derivative cancels analytically after Ep normalization.
+Unresolved inner entries [3,5], subtraction and quadrature uncertainty remain.
+Future angular-energy derivative is explicitly float-backed fourth-order FD;
+its relative two-step change is about 3e-12, not an error enclosure.
+
+New continuous_seeded_outer_jets.py/md/json installs post-Rp Uz_Z and mean_Z
+from those input/coefficient jets. Local radial divergence refines 6.24e-24
+-> 3.90e-25 without neighboring full coefficient solves. Pulse integrals are
+separate from cumulative means; each seed/amplitude is counted once.
+Schedule/angular/tail/pressure identities and nonzero terminal rows remain.
+Incoming before Rp retains a declared finite-difference fallback; angular
+velocity Z jets remain incomplete. Signed pulse omission bounds are separate
+from incoming/coefficient/quadrature uncertainty.
+
+Next: analytic angular coefficient/heat target derivatives; shared continuous
+incoming primitive and Z cache precision; actual mean and mean_Z closure;
+outer five moments/jets and global energy; recursive matching, stress/remainder
+and oscillatory correction. Global finite energy/scale recursion are not done.
+
 ## Continuous axial correction installed in joined exterior - 2026-09-30
 
 New continuous_seeded_outer.py/md/json adapter installs continuous Uz AND
