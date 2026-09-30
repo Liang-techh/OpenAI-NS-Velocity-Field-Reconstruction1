@@ -241,6 +241,73 @@ def _window_integral(
     return width * total
 
 
+def _saddle_derivative_in_context(
+    *,
+    k: mp.mpf,
+    m: mp.mpf,
+    B: mp.mpf,
+    T: mp.mpf,
+    n: int,
+    order: int,
+    window: mp.mpf,
+) -> dict[str, Any]:
+    """Evaluate one positive ``B`` derivative at an active MP precision.
+
+    This helper assumes that its scalar inputs were parsed inside the caller's
+    ``mp.workdps`` context.  Each ``n`` gets its own log-density and saddle;
+    reusing the first-derivative saddle would lose the ``n``-dependent flat
+    tail scale.
+    """
+
+    def q_data(ell: mp.mpf):
+        return _logistic_data(ell / T)
+
+    def log_phi(ell: mp.mpf) -> mp.mpf:
+        q, _, _, _ = q_data(ell)
+        if q == 0:
+            return mp.ninf
+        return -k * ell + n * (mp.log(m) + mp.log(q)) + m * B * q
+
+    def phi_prime(ell: mp.mpf) -> mp.mpf:
+        q, one_minus_q, _, D_prime = q_data(ell)
+        if q == 0:
+            return mp.inf
+        return -k + (n + m * B * q) * one_minus_q * D_prime / T
+
+    mode, log_mode, mode_method = _locate_mode(T, log_phi, phi_prime)
+    _, width = _curvature(mode, T, k, phi_prime)
+    mass = _window_integral(
+        T=T,
+        mode=mode,
+        log_mode=log_mode,
+        width=width,
+        phi=log_phi,
+        order=order,
+        window=window,
+    )
+    log_abs = log_mode + mp.log(mass) if mass > 0 else mp.ninf
+    value = mp.exp(log_abs)
+    return {
+        "n": n,
+        "sign": 1,
+        "log_abs": log_abs,
+        "value": value,
+        "mode": mode,
+        "width": width,
+        "mode_method": mode_method,
+        "quadrature_window_unenclosed": True,
+        "tail_unenclosed": True,
+        "signed_log_representation": True,
+        "global_field_installed": False,
+        "first_B_sensitivity_separate": n == 1,
+        "B_derivative_separate": True,
+        "limitations": (
+            "Finite saddle-window quadrature; tails and quadrature remainder "
+            "are not enclosed."
+        ),
+    }
+
+
 @dataclass(frozen=True)
 class FlatShapeKernel:
     """Reusable evaluator for one ``(k,m,T)`` flat-shape kernel."""
@@ -311,35 +378,20 @@ class FlatShapeKernel:
                 factor = _expm1_log_derivative_factor(r)
                 return -k + factor * one_minus_q * D_prime / T
 
-            def sensitivity_phi(ell: mp.mpf) -> mp.mpf:
-                q, _, _, _ = q_data(ell)
-                if q == 0:
-                    return mp.ninf
-                return -k * ell + mp.log(m) + mp.log(q) + m * B_value * q
-
-            def sensitivity_prime(ell: mp.mpf) -> mp.mpf:
-                q, one_minus_q, _, D_prime = q_data(ell)
-                if q == 0:
-                    return mp.inf
-                r = m * B_value * q
-                return -k + one_minus_q * D_prime / T * (1 + r)
-
-            sensitivity_mode, sensitivity_log, sensitivity_method = _locate_mode(
-                T, sensitivity_phi, sensitivity_prime
-            )
-            _, sensitivity_width = _curvature(
-                sensitivity_mode, T, k, sensitivity_prime
-            )
-            sensitivity_mass = _window_integral(
+            derivative = _saddle_derivative_in_context(
+                k=k,
+                m=m,
+                B=B_value,
                 T=T,
-                mode=sensitivity_mode,
-                log_mode=sensitivity_log,
-                width=sensitivity_width,
-                phi=sensitivity_phi,
+                n=1,
                 order=self.order,
                 window=self.window,
             )
-            sensitivity_log_abs = sensitivity_log + mp.log(sensitivity_mass)
+            sensitivity_mode = derivative["mode"]
+            sensitivity_width = derivative["width"]
+            sensitivity_method = derivative["mode_method"]
+            sensitivity_log_abs = derivative["log_abs"]
+            sensitivity = derivative["value"]
 
             if B_value == 0:
                 value_sign = 0
@@ -368,7 +420,6 @@ class FlatShapeKernel:
                 if value_sign == 0
                 else value_sign * mp.exp(value_log_abs)
             )
-            sensitivity = mp.exp(sensitivity_log_abs)
             return {
                 "k": k,
                 "m": m,
@@ -422,7 +473,74 @@ def evaluate_flat_shape_defect(
     ).evaluate(B)
 
 
+def evaluate_flat_shape_derivative(
+    k: Any,
+    m: Any,
+    B: Any,
+    T: Any,
+    n: int,
+    precision: int = 260,
+    order: int = 32,
+    window: Any = 24,
+) -> dict[str, Any]:
+    """Evaluate the positive ``n``-th derivative with respect to ``B``.
+
+    The returned integral is
+
+    ``integral(exp(-k*ell) * (m*q(ell/T))**n * exp(m*B*q(ell/T)), dell)``.
+
+    Every order is located and integrated at its own saddle.  In particular,
+    the dominant flat-tail location scales like ``n**(1/3)`` for the tiny-tail
+    regime, so sharing the ``n=1`` saddle would be inaccurate for higher
+    orders.
+    """
+
+    if int(n) != n or int(n) < 1:
+        raise ValueError("n must be a positive integer")
+    n_value = int(n)
+    kernel = FlatShapeKernel(
+        k,
+        m,
+        T,
+        precision=precision,
+        order=order,
+        window=window,
+    )
+    workdps = _work_precision(kernel.T, kernel.precision)
+    with mp.workdps(workdps):
+        B_value = _mp(B)
+        if not mp.isfinite(B_value):
+            raise ValueError("B must be finite")
+        result = _saddle_derivative_in_context(
+            k=kernel.k,
+            m=kernel.m,
+            B=B_value,
+            T=kernel.T,
+            n=n_value,
+            order=kernel.order,
+            window=kernel.window,
+        )
+        result.update(
+            {
+                "k": kernel.k,
+                "m": kernel.m,
+                "B": B_value,
+                "T": kernel.T,
+                "work_precision": workdps,
+                "quadrature_order": kernel.order,
+                "saddle_window": kernel.window,
+                "parameter_derivative_order": n_value,
+            }
+        )
+        return result
+
+
 evaluate = evaluate_flat_shape_defect
 
 
-__all__ = ["FlatShapeKernel", "evaluate_flat_shape_defect", "evaluate"]
+__all__ = [
+    "FlatShapeKernel",
+    "evaluate_flat_shape_defect",
+    "evaluate_flat_shape_derivative",
+    "evaluate",
+]

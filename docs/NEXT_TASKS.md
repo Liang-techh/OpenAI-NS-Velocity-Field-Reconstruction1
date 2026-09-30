@@ -1,3 +1,11 @@
+## 2026-09-30 next: assemble all five centered defect functions
+
+1. Consume shared R110 field/moments/P0 and actual B/B_Z. Use the completed flat_shape_component API for the three angular kernels; retain every derivative-order term.
+2. Form inner centered seed/reference terms separately at R110. Add constant axial g=V110-4Z sources through Rz and restoration sources proportional to (1-sigma) and its square.
+3. Mixed centered reference weight is rho^(8/5), not rho^(3/2); preserve the u/Am factor. Apply Am and its first-Z derivative consistently.
+4. Keep source terms and inherited error limits visible; rounded public sums do not prove functional terminal closure. Check Section10 quantitative smallness and pressure compatibility before solving corrections.
+5. Implement five-bump repair and quadratic interaction from the same data, then global heat/energy/stress-cone and independent Cartesian checks. Temporal recursion remains later work.
+
 ## 2026-09-30 next: lift flat defect kernels and assemble five centered functions
 
 1. Use flat_shape_defect stable log(q), expm1 and saddle quadrature; the tiny-q derivative is q_prime/q, so an ordinary moment-tail cutoff cannot resolve this defect.
