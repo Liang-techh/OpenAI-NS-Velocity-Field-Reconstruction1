@@ -1,3 +1,27 @@
+## Actual terminal balance and energy-tail obstruction - 2026-09-30
+
+New continuous_terminal_balance.py/md/json evaluates the INSTALLED continuous
+incoming/exterior and actual input/coefficient Z jets, not a formal quadrature
+graph. Installed terminal mass/sumabs balance is 1.73e-200; Z mass balance is
+6.62e-201. Both remain nonzero. Independent full-atom replay differs slightly
+from the cumulative primitive; that summation discrepancy is retained.
+
+Recovered physical radial tail: ur=-nu*C(Z)/r, with
+C=((1-delta)*Z*Mz+(1-Z^2)*Mz_Z)/(1-delta*Z^2).
+The radial kinetic energy density per dZ dlogr is pi*nu^2*C^2*dz/dZ.
+At Z=.3 the nominal C/Rh is nonzero, logabs about 1.1504127226124e28.
+Thus increasing ordinary coefficient precision does not establish finite
+GLOBAL energy: any surviving continuous 1/r tail makes that integral diverge.
+Pulse omitted-piece bounds are transported separately and remain conditional
+on nominal coefficients; other quadrature/input/coefficient errors are open.
+
+Next: tie complete continuous integral atoms, coefficient constraints and
+partial primitives through a cancellation-preserving definition; close BOTH
+terminal mass and its Z derivative while preserving actual incoming seeds.
+Do not assign mass zero, add an arbitrary radial mask, or use a favorable
+alternate term replay as physical-field closure evidence. Angular primitive,
+all five outer moments, stress/remainder and recursive matching remain open.
+
 ## Shared continuous incoming axial field installed - 2026-09-30
 
 New continuous_incoming.py/md/json provides the same MP smooth cutoff for
