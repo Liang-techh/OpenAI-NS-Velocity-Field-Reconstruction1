@@ -416,6 +416,41 @@ class ContinuousPressureMoments:
                 "PZ": _mp(row["PZ"]),
             }
 
+    def terminal_pressure_jet(self, Z):
+        """Actual P(infinity,Z) and target for the compact bump integral.
+
+        Retain the baseline and heat correction separately; this supplies
+        a matching target, not a pressure gauge change or a coefficient solve.
+        The heat truncation bound covers the integral value only, not its Z jet.
+        """
+        with mp.workdps(self.precision):
+            z=_mp(Z)
+            if abs(z)>=1:
+                raise ValueError('Actual inner seed requires |Z|<1')
+            anchor=self._inner_anchor(z)
+            ref,ref_z=self._reference_increment(self.schedule.logR_tail,z)
+            bump=self._bump_increment(self.schedule.logR_tail,z)
+            heat=self.heat_provider.complete_pressure_heat_integral(z)
+            base=mp.fsum([anchor['P'],ref,heat['reference']])
+            base_z=mp.fsum([anchor['PZ'],ref_z])
+            correction=heat['heat_correction']
+            correction_z=heat['heat_correction_Z']
+            required=-mp.fsum([base,correction])
+            required_z=-mp.fsum([base_z,correction_z])
+            return dict(P_infinity=mp.fsum([base,bump['value'],correction]),
+                P_infinity_Z=mp.fsum([base_z,bump['derivative'],correction_z]),
+                pressure_baseline=base,pressure_baseline_Z=base_z,
+                current_bump=bump['value'],current_bump_Z=bump['derivative'],
+                required_bump=required,required_bump_Z=required_z,
+                additional_bump_required=required-bump['value'],
+                additional_bump_required_Z=required_z-bump['derivative'],
+                inner_anchor=anchor,preheat_reference=ref,preheat_reference_Z=ref_z,
+                heat=heat,components_retained_separately=True,
+                pressure_datum_changed=False,angular_coefficients_changed=False,
+                quadrature_error_enclosed=False,arithmetic_error_enclosed=False,
+                pressure_Z_truncation_enclosed=False,
+                pressure_terminal_compatibility_certified=False)
+
     def radial_integrand_jet(self, logR, Z):
         """Return the local radial derivatives implied by the actual swirl.
 

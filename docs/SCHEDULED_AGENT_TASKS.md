@@ -1,3 +1,11 @@
+## Pressure target follow-up (2026-09-30)
+
+- [x] Extract P(infinity), its Z jet, required compact-bump integral and required Z jet from actual inner + preheat + complete heat primitives.
+- [x] Compare same-order MP pressure-stage Gauss nodes against binary64 nodes while keeping inner/schedule/bump/heat inputs fixed; measured about 1.7 percent change in terminal defect.
+- [ ] Compare MP pressure quadrature orders using one shared field, retaining pressure baseline terms separately; isolate quadrature convergence from inner datum uncertainty.
+- [ ] Trace actual inner P/PZ generation and early angular reference pressure total at the same normalization; identify cancellation error versus true seeded mismatch.
+- [ ] Only after attribution, use actual targets to restore coupled angular/pressure matching. Updating a Z-dependent pressure datum requires a coherent inner reconstruction, not a standalone gauge subtraction.
+
 ## Immediate coupled-matching tasks (2026-09-30)
 
 - [x] Add actual inner-anchored pressure moment and analytic Z jet provider; retain separate bump/heat increments.

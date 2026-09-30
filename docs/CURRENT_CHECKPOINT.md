@@ -1,3 +1,9 @@
+## 2026-09-30: infinite pressure target and node sensitivity measured
+
+The pressure provider now exposes terminal_pressure_jet(Z), retaining actual inner anchor, preheat, compact bump and complete infinite heat contributions. The restoration target is extracted without changing the pressure datum or coefficients. New reproducible receipt: experiments/root_st073/lei_ren_part1_paper_continuous_pressure_target.{py,json,md}.
+
+At Z=.3 nominal P(infinity)=-0.01208803828438 and P(infinity)_Z=+0.01330793205620. Replacing only pressure variable-stage binary64 Gauss nodes with same-order MP nodes changes these to -0.01229506811512 and +0.01353585480563 (about 1.7 percent shift). Totals before cancellation are about 4e12. Therefore materialized pressure mismatch is real in the current numerical evaluation, but its interpretation as an analytic target defect remains unproven. Resolve MP quadrature convergence and inherited inner pressure input before solving a late compact bump against this target. No pressure gauge reset, coefficient change, finite-energy or stress-cone certificate is claimed.
+
 ## 2026-09-30: actual five-moment bundle installed; pressure mismatch isolated
 
 Shared profile pressure and partial quadratic APIs are installed. Nominal bounded partial-energy and pressure receipts are available. Integrated actual five-moment/pressure/velocity stress replay at Z=.3 (post-Rv flattening and heat) completes but yields enormous stress/shear ratios; coupled matching is not closed.
