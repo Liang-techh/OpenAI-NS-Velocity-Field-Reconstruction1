@@ -43,9 +43,22 @@
     "0.00000000157490131013210744755745088489899230896172396701200122247152",
     "0.000000000393725327951579861332096343989177625752033444908927179560892"
   ],
+  "plateau_primitive_derivative_relative_errors": [
+    "0.00000000000416666666665854834669336654375218695973882219358082087027956",
+    "0.00000000000104166666666366052417334715619778123135745891625497568999163"
+  ],
+  "plateau_primitive_receipt": {
+    "log_normalized_pulse_integral": "-3999999999989.699416909675028194936864944675979105243791008921215328905240697919610207761622403320309751448795526091333155594254641670336534354058470730132727068",
+    "log_derivative": "-3999999999962.761542974308024494534994315171964900980530190714484499089890347778921659341638523751654405712011029403097519047650892129817378527676732585780841997",
+    "log_relative_omitted_positive_bound": "-2490000000000.539458915191172554264651721776396171140745032945153448253382018362081090320359792588338957118484076460980345941239976090203539596468191914444410144",
+    "xi": "5.0",
+    "region": "plateau",
+    "quadrature_enclosure_certified": false,
+    "continuous_definition": "Integral of value_jet over [0,xi]; analytic plateau plus bounded positive startup"
+  },
   "shared_continuous_pulse_definition": true,
-  "partial_weighted_primitives_implemented": "Resolved saddle window and exact support endpoints only",
+  "partial_weighted_primitives_implemented": "Plateau, resolved saddle window and exact support endpoints",
   "installed_in_global_profile": false,
   "finite_energy_certified": false,
-  "scope": "MP pointwise/full-row and saddle-window partial primitives with positive omitted-piece bounds; off-window partial evaluation, energy atom and global installation remain open."
+  "scope": "MP pointwise/full-row, analytic plateau and saddle-window partial primitives with positive omitted-piece bounds; startup/off-window cutoff evaluation, energy atom and global installation remain open."
 }

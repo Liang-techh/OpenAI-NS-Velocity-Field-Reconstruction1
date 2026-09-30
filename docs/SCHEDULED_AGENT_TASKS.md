@@ -1,3 +1,26 @@
+## Continuous pulse energy and re-solved axial correction - 2026-09-30
+
+Completed: continuous_pulse_energy.py/md/json and continuous_axial_solve.py/md/json
+under experiments/root_st073. Kp uses the same continuous pulse definition,
+MP startup/cutoff nodes, and analytic plateau. Same-order 70/100 precision
+refinement is 7.54e-72; order80/112 refinement is 2.76e-21 (not an enclosure).
+Fixed an import-time decimal-boundary precision leak. Old float Kp differs
+by 9.84e-15 relative. Working digits do not equal certified integral accuracy.
+
+Re-solved actual seeded base rows/energy target with continuous bump, pulse
+and energy atoms. Old coefficients have 6.68e-15 relative continuous-row
+defects; new row arithmetic replay is about 1e-173. Energy algebra replay is
+about 1e-201. Consistent solved end-bump value/derivative/weighted primitive
+provider is available. These coefficients are not installed globally yet.
+Continuous pulse partial integrals now cover the analytic plateau in addition
+to the saddle window, retaining an explicit positive startup bound.
+
+Next: complete startup/off-window cutoff and incoming primitives; derive
+shared Z derivatives; install continuous coefficients in both point velocity
+and cumulative means together. Establish actual mean/Z-mean closure before
+any tail removal. Then exterior energy, outer jets/five moments, recursive
+transitions, stress/remainder and oscillatory correction. Full goal stays open.
+
 ## Continuous integral providers and bounded core energy - 2026-09-30
 
 New artifacts: lei_ren_part1_paper_continuous_axial_basis.py/md/json,

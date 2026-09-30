@@ -92,6 +92,20 @@ class ContinuousAxialPulse:
                 result['derivative']=mp.mpf(0)
                 return result
             lam=mp.mpf('.5')-row*mu;k=lam/mu
+            if mp.mpf('.02')<xi<=10:
+                # Exact antiderivative on the plateau; the positive startup
+                # atom is bounded explicitly, not claimed identically zero.
+                delta=xi-mp.mpf('.02')
+                lower_factor=mp.mpf('.01')/k-1/k**2
+                bracket=delta/k+lower_factor*(-mp.expm1(-k*delta))
+                logvalue=-k*(13-xi)-mp.log(mu)+mp.log(bracket)
+                logbound=mp.log(mp.mpf('.02')/(mu*k))-k*mp.mpf('12.98')
+                return dict(log_normalized_pulse_integral=mp.nstr(logvalue,self.precision),
+                    log_derivative=mp.nstr(-k*(13-xi)+mp.log(xi-mp.mpf('.01'))-mp.log(mu),self.precision),
+                    log_relative_omitted_positive_bound=mp.nstr(logbound-logvalue,self.precision),
+                    xi=mp.nstr(xi,self.precision),region='plateau',
+                    quadrature_enclosure_certified=False,
+                    continuous_definition='Integral of value_jet over [0,xi]; analytic plateau plus bounded positive startup')
             u0=mp.root(2/k,3);L=1/u0**2;w=1/mp.sqrt(6*L)
             if band*w>=mp.mpf('.25'):
                 raise ValueError('Band exceeds centered small-mu domain')
@@ -145,13 +159,24 @@ def run():
             ratio=(mp.exp(mp.mpf(right['log_normalized_pulse_integral'])-scale)-
                 mp.exp(mp.mpf(left['log_normalized_pulse_integral'])-scale))/(2*step)
             partial_errors.append(mp.nstr(abs(ratio-1),60))
+        plateau=pulse.partial_row(diagnostic_mu,1,mp.mpf(5))
+        plateau_errors=[]
+        for step in (mp.mpf('1e-17'),mp.mpf('5e-18')):
+            left=pulse.partial_row(diagnostic_mu,1,5-step)
+            right=pulse.partial_row(diagnostic_mu,1,5+step)
+            scale=mp.mpf(plateau['log_derivative'])
+            ratio=(mp.exp(mp.mpf(right['log_normalized_pulse_integral'])-scale)-
+                mp.exp(mp.mpf(left['log_normalized_pulse_integral'])-scale))/(2*step)
+            plateau_errors.append(mp.nstr(abs(ratio-1),60))
         report=dict(rows=rows,value_jet_replay_relative_error=mp.nstr(abs(derivative/jet['derivative']-1),60),
             partial_derivative_diagnostic_mu=str(diagnostic_mu),
             partial_derivative_relative_errors=partial_errors,
+            plateau_primitive_derivative_relative_errors=plateau_errors,
+            plateau_primitive_receipt=plateau,
             shared_continuous_pulse_definition=True,
-            partial_weighted_primitives_implemented='Resolved saddle window and exact support endpoints only',
+            partial_weighted_primitives_implemented='Plateau, resolved saddle window and exact support endpoints',
             installed_in_global_profile=False,finite_energy_certified=False,
-            scope='MP pointwise/full-row and saddle-window partial primitives with positive omitted-piece bounds; off-window partial evaluation, energy atom and global installation remain open.')
+            scope='MP pointwise/full-row, analytic plateau and saddle-window partial primitives with positive omitted-piece bounds; startup/off-window cutoff evaluation, energy atom and global installation remain open.')
         Path(__file__).with_suffix('.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
         print(json.dumps(dict(log_refinement=[r['log_precision_refinement'] for r in rows],
             log_input_change=[r['log_change_from_float_centered_input'] for r in rows],
