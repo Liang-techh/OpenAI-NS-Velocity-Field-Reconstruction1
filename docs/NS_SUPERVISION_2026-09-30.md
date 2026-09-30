@@ -12,7 +12,7 @@ data, schedules or candidate defaults are changed by this documentation update.
 The inspected `main` head is `e0c642ba8ff8d2c476ef3f961864a008d2d475c4`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`bf6b30f2f22cb77790c13b3b98b47def11c7857f`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/bf6b30f2f22cb77790c13b3b98b47def11c7857f)
+[`573bdace5fbf0259955ab97509a267a38187d0c9`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/573bdace5fbf0259955ab97509a267a38187d0c9)
 on `codex/st073-transition-next`, dated September 30. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,47 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### Combined finite-field milestone: actual reference join and terminal-tail audit
+
+The [finite correction adapter](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/972de05bf3c6fe401b34d354044b6b8ad3e35e2f/docs/FIVE_BUMP_FIELD_2026_09_30.md)
+recovers velocity, pressure, partial moments and value-level Ur from common
+first-Z inputs, preserving P0. Degree3 velocity generates all quadratic moments
+through degree6: 55 velocity and 461 cumulative-moment monomials are retained,
+including 406 terms above degree3. Ur_Z requires second-Z data and is unavailable.
+The corrected raw swirl convention is integral(u_theta²/2)dR; Mztheta equals
+raw_axial minus raw_swirl. Joined part maps now retain five_bump_correction.
+
+The [f93be3f2 same-source reference record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/f93be3f21bfab76548b7e2845285b018756b1249/docs/REFERENCE_DEFECT_BACKGROUND_2026_09_30.md)
+and [actual-source receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/f93be3f21bfab76548b7e2845285b018756b1249/experiments/root_st073/lei_ren_part1_paper_five_moment_reference_background_check.json)
+execute the common reference/bump join at Z=.3, x=1.25, P9/W2 with original
+P0/P0_Z, 69 source labels, reference_power and correction labels. Recorded
+resolved density/source-lineage discrepancy is about3.20e-30. This supersedes
+the historical statement that no actual baseline join had run. It remains a
+finite local join, not complete global heat/energy/functional closure.
+
+The [573bdace cone/tail audit](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/573bdace5fbf0259955ab97509a267a38187d0c9/docs/FIVE_BUMP_CONE_AND_TERMINAL_TAIL_2026_09_30.md)
+and [cone receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/573bdace5fbf0259955ab97509a267a38187d0c9/experiments/root_st073/lei_ren_part1_paper_five_bump_cone_scan.json)
+sample 38 points over 1<=x<=e at Z=.3, including support boundaries and interiors.
+They pass the kappa<=2 **relaxed** branch only; this region's criterion is not
+the admissible cone. Sampling cannot establish continuous or uniform-Z bounds.
+
+The [terminal-tail receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/573bdace5fbf0259955ab97509a267a38187d0c9/experiments/root_st073/lei_ren_part1_paper_five_bump_terminal_tail.json)
+retains degree4–6 centered tails: row2 +8.93e-85, row4 -8.32e-71, row5 +5.56e-71;
+linear rows1/3 have zero higher-degree tails. **Row5's tail greatly exceeds its
+ultraflat input defect**, so small absolute values do not certify its hierarchy
+or exact functional closure. This scalar nominal input-composition diagnostic
+does not truncate nonlinear products again to P9/W2; equivalence to the nominal
+truncated field jet is not certified. Its aggregate replay uses the same
+quadrature map, not independent quadrature validation.
+
+All figures are committed diagnostics, not independent reruns by this review.
+Next establish actual uniform C1/C2 input bounds, second-Z recovery and a
+convergent response majorant with enclosed coefficient/quadrature/infinite tails.
+Preserve nonlinear source-product hierarchy, enclose continuous support intervals,
+audit other stress regions, and finish heat/radial-energy matching. Full global
+field certification, admissible cone, time-scale recursion, oscillatory correction
+and Cartesian NS residual acceptance remain open.
 
 ### Combined defect/response milestone: five finite inputs and coupled map
 
@@ -333,6 +374,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [573bdace research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36783630624)
+completed with the original 13 failed identifiers and `423 passed` in constrained
+integration. This selected governance suite does not certify the standalone
+joined-field/cone/tail diagnostics or exact functional closure.
 
 The [bf6b30f2 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36777302620)
 completed with the original 13 failed test identifiers and `423 passed`.
