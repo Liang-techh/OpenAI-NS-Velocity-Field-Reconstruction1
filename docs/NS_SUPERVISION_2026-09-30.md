@@ -12,7 +12,7 @@ data, schedules or candidate defaults are changed by this documentation update.
 The inspected `main` head is `e0c642ba8ff8d2c476ef3f961864a008d2d475c4`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`da5fb365a4d477f8a54718157d920750a02aa119`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/da5fb365a4d477f8a54718157d920750a02aa119)
+[`caffcf84b96e4b10d598079416833761dc80007b`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/caffcf84b96e4b10d598079416833761dc80007b)
 on `codex/st073-transition-next`, dated September 30. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,44 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### Combined P2 progress: coherent waiting and local component core
+
+This update consolidates two substantive commits rather than treating every
+tiny diagnostic change as a new milestone. All numerical values here are saved
+implementation receipts, not independently rerun or enclosed by this review.
+
+- [`d51f2627`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d51f2627be186338987a348187c338dc1b4d33ed)
+  rebuilds continuous waiting before pressure/core reconstruction and implements
+  signed coupled angular algebra with analytic tangents. The [construction record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/d51f2627be186338987a348187c338dc1b4d33ed/docs/COHERENT_WAITING_COUPLED_ANGULAR_2026_09_30.md)
+  identifies a missing preheat/heat amplitude conversion in the earlier oversized
+  target. At Z=.3 the retained angular target is about `2.32e-837`, while nominal
+  terminal pressure improves to about `1.19e-98`. Direct arithmetic subtraction
+  has a much larger unresolved floor. A solver branch-accepted flag and nominal
+  pressure reduction do not certify either terminal moment or pressure-row closure.
+- [`caffcf84`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/caffcf84b96e4b10d598079416833761dc80007b)
+  propagates the complete preheat pressure through a **local** component-valued
+  nonlinear radial recurrence. The [core record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/caffcf84b96e4b10d598079416833761dc80007b/docs/COMPONENT_PREHEAT_CORE_2026_09_30.md)
+  and [receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/caffcf84b96e4b10d598079416833761dc80007b/experiments/root_st073/lei_ren_part1_paper_component_pressure_core_check.json)
+  retain pressure-parameter powers through 9 for the degree-18 radial jet,
+  including the nonzero tiny tail and its axial response. Reported scalar/component
+  fixture difference is at most `2.57e-101`; component-scaled divergence numerator
+  at two interior points is at most `5.68e-259`. These checks do not certify the
+  exterior divergence or constitute the later time-scale recursion.
+
+The [updated coupled angular receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/caffcf84b96e4b10d598079416833761dc80007b/experiments/root_st073/lei_ren_part1_paper_coupled_angular_coherent_waiting.json)
+retains linear, nonlinear and exponentially separated pressure atoms. Nominal
+atom residuals at working precision do not enclose the materialized scalar or
+full-field pressure row. The existing scalar joined field is not replaced.
+Exit continuation, reshape and inner/incoming corrections still need component
+propagation; summing early loses the tiny tail again. Install compatible angular
+coefficients and regenerate axial/energy targets and all five terminal functional
+moments on that same candidate before global closure claims.
+
+**P2 is partially implemented, not certified complete.** Waiting/collar,
+quadrature, grouped atom and radial/Z truncation errors remain unenclosed.
+The nonzero radial-energy tail, finite energy, admissible cone and genuine
+time-scale recursion remain unresolved.
 
 ### P1 milestone: standalone complete preheat-pressure target
 
@@ -39,7 +77,8 @@ MP128/192 flatten quadrature changes about `6.36e-39`, and the steep transition
 about `4.66e-27`. These are submitted diagnostics, not independently rerun
 results, interval error bounds or PDE residuals.
 
-The route marks internal P1 complete as a derivation/adapter milestone. The
+The route marks internal P1 complete as a derivation/adapter milestone. This
+historical P1-only receipt predates the local component-core progress above. The
 receipt explicitly keeps `core_rebuilt_with_complete_target=false`,
 `actual_angular_bumps_restored=false`, `quadrature_error_enclosed=false` and
 `pressure_terminal_compatibility_certified=false`. P2 must still solve both
@@ -157,6 +196,13 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [caffcf84 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36750738032)
+also reports `13 failed, 423 passed`; all 13 failed test identifiers exactly
+match da5fb365 below. Import/CLI, coordinates, forcing and velocity slices pass;
+the full historical suite is skipped. No new selected-suite failures appear
+in the combined milestone. These selected governance tests do not validate the
+standalone component core or pressure-row closure.
 
 The [da5fb365 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36744983311)
 has `13 failed, 423 passed` in its constrained-integration job. Its 13 failed
