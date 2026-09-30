@@ -1,3 +1,32 @@
+## Shared inner-through-heat callable and actual seeded exterior solve - 2026-09-30
+
+Run lei_ren_part1_paper_joined_outer.py. JoinedOuterField keeps the SAME source
+profile and the actual five-bump corrected Rh mass/pressure offsets. It now
+provides a physical velocity callable from the regular core through heat.
+The Z=.3 heat-chart roundtrip passed at working precision. This is a
+provisional continuation: sampled nonzero radial transport still prevents
+claiming finite energy. Float-Z derivative errors, missing corrected outer
+velocity jets and full five-moment exterior stress remain explicit.
+
+Run lei_ren_part1_paper_seeded_axial_inputs.py --shared to reproduce the actual
+Rh-seeded Section 7.31/7.34 coefficient solve (seeded_shared_candidate.json).
+Canonical linear row replay is 5.924e-416 and 1.945e-416; energy replay is
+2.870e-444. These are finite-quadrature coefficient equations, NOT full NS
+residuals or a continuous mean closure proof. New coefficients are not yet
+installed in the joined velocity/primitive. The default command is a clearly
+labelled historical fixture regression, not the actual shared candidate.
+
+Next implement a seeded axial pulse/primitive provider together: before Rp,
+retain old outer cumulative mass plus actual Rh offset; from Rp onward use
+updated incoming m1 and the newly solved pulse/end-bump coefficients. Avoid
+double-counting the inner offset in the joined radial transport. Recompute
+Z jets from the same actual primitive, update incoming integral provenance,
+measure terminal mean by replay rather than assign zero, and quantify
+quadrature/precision refinements. Preserve shared swirl and axis pressure.
+Then resolve finite energy and axial support before claiming temporal scale
+recursion. Global norms, admissible stress/remainder and oscillatory layer
+remain open.
+
 ## Actual inner seed transport and serialization precision - 2026-09-30
 
 New lei_ren_part1_paper_seeded_axial_inputs.py maps explicit raw inner offsets

@@ -1,0 +1,533 @@
+{
+  "Z": ".3",
+  "precision": 443,
+  "files": {
+    "python": "C:\\Users\\z5242\\Documents\\Codex\\2026-09-13\\before-doing-any-project-work-verify\\work\\st073-transition-next\\experiments\\root_st073\\lei_ren_part1_paper_joined_outer.py",
+    "json": "C:\\Users\\z5242\\Documents\\Codex\\2026-09-13\\before-doing-any-project-work-verify\\work\\st073-transition-next\\experiments\\root_st073\\lei_ren_part1_paper_joined_outer.json",
+    "markdown": "C:\\Users\\z5242\\Documents\\Codex\\2026-09-13\\before-doing-any-project-work-verify\\work\\st073-transition-next\\experiments\\root_st073\\lei_ren_part1_paper_joined_outer.md"
+  },
+  "construction": {
+    "inner": "CorrectedInnerField(build_candidate())",
+    "outer_profile": "inner.provider.reshape.switches.comparison.bundle['profile']",
+    "coordinate": "y=log(R/inner.r)",
+    "Rh_logR": "5.0e+152",
+    "logRref": "5.0e+152",
+    "outer_join_offset_from_logRref": "-5.0"
+  },
+  "terminal_offsets_relative_to_reference_4ZR": {
+    "mass_offset": {
+      "sign": 1,
+      "log_abs": "5.0e+152",
+      "arbitrary_exponent_value": "1.92957279699603138487250550687929092938364675701223806777496e+217147240951625913825564459458302541147198502901833283057226891582932324604435387364612474669215874159353053372383151866820839643579481953284610532331291"
+    },
+    "mass_offset_Z": {
+      "sign": -1,
+      "log_abs": "5.0e+152",
+      "arbitrary_exponent_value": "-1.19509963751147534156476801626248629784079763821491516186534e+217147240951625913825564459458302541147198502901833283057226891582932324604435387364612474669215874159353053372383151866820839643579481953284610532331281"
+    },
+    "mass_offset_over_Rh": {
+      "sign": 1,
+      "log_abs": "-404.146541002783981577833404261066536009312774393096853504275",
+      "arbitrary_exponent_value": "3.02961444081250214196126989866536362308991540879557999335077e-176"
+    },
+    "mass_offset_Z_over_Rh": {
+      "sign": -1,
+      "log_abs": "-427.651461001854916023952012252442559707521409994313160220683",
+      "arbitrary_exponent_value": "-1.87642110505043524876497178489654865789033952038280392249128e-186"
+    },
+    "pressure_offset": {
+      "sign": -1,
+      "log_abs": "-224.252970948638812726772611790049789855563572990665850723546",
+      "arbitrary_exponent_value": "-4.05669322350423830004278880290322849068680262456758356557975e-98"
+    },
+    "pressure_offset_Z": {
+      "sign": -1,
+      "log_abs": "-8.83714748331547775038105245115102689783408492753976213754167",
+      "arbitrary_exponent_value": "-0.000145236445745120387447053668559780595001692183313447817935434"
+    },
+    "small_nonzero_offsets_were_preserved": true,
+    "pressure_base_at_Rh": {
+      "sign": -1,
+      "log_abs": "28.7009961581652813502563645875877703379786390760350234482993",
+      "arbitrary_exponent_value": "-2915306739533.5759351204070438121112705567071414487784404826"
+    },
+    "inner_pressure_at_Rh": {
+      "sign": -1,
+      "log_abs": "28.7009961581652813502563645875877703379786390760350234482993",
+      "arbitrary_exponent_value": "-2915306739533.5759351204070438121112705567071414487784404826"
+    }
+  },
+  "join_relative_errors_before_carrying_offsets": {
+    "F": "6.95757528443349053763214058479784102401001102454654508849938e-111",
+    "FZ": "0.000000000000000136666666666666666666666666666666666666666666666666666666667",
+    "Uz": "3.38744696603173399028521363898111914927095421793656938685153e-262",
+    "UZ": "0.0",
+    "Ur": "2.77098881729572049399021756695730687347984358161784482210486e-177",
+    "P": "1.39151505688669810752642809868567827390883731666577908557775e-110",
+    "PZ": "0.0000000000000000452518779914931275822453537829899037676030602391846246907371"
+  },
+  "join_relative_errors_after_carrying_offsets": {
+    "mass": "3.38744696603173399028521363897955766233210098486679324839099e-262",
+    "mass_Z": "1.56148693885323306977613846053576081733694911845750408531261e-292",
+    "pressure": "0.0",
+    "pressure_Z": "0.0"
+  },
+  "rows": [
+    {
+      "name": "Rh_join",
+      "y": "5.0e+152",
+      "schedule_offset_from_logRref": "-5.0",
+      "region": "five_bump_inner_correction",
+      "heat_method": null,
+      "values": {
+        "F": {
+          "sign": 1,
+          "log_abs": "-2.5e+152",
+          "arbitrary_exponent_value": "1.8749820184967767640060106731176837833670020231417764037678e-108573620475812956912782229729151270573599251450916641528613445791466162302217693682306237334607937079676526686191575933410419821789740976642305266165728"
+        },
+        "FZ": {
+          "sign": -1,
+          "log_abs": "-2.5e+152",
+          "arbitrary_exponent_value": "-1.03210019366795051229688660905560575231211120539914297455108e-108573620475812956912782229729151270573599251450916641528613445791466162302217693682306237334607937079676526686191575933410419821789740976642305266165728"
+        },
+        "Uz": {
+          "sign": 1,
+          "log_abs": "0.182321556793954626211718025154514633197389337914486983942726",
+          "arbitrary_exponent_value": "1.2"
+        },
+        "UZ": {
+          "sign": 1,
+          "log_abs": "1.38629436111989061883446424291635313615100026872051050824136",
+          "arbitrary_exponent_value": "4.0"
+        },
+        "Ur": {
+          "sign": -1,
+          "log_abs": "2.5e+152",
+          "arbitrary_exponent_value": "-5.85323214087194810977128089095855742620393817394156943382901e+108573620475812956912782229729151270573599251450916641528613445791466162302217693682306237334607937079676526686191575933410419821789740976642305266165733"
+        },
+        "P": {
+          "sign": -1,
+          "log_abs": "28.7009961581652813502563645875877703379786390760350234482993",
+          "arbitrary_exponent_value": "-2915306739533.5759351204070438121112705567071414487784404826"
+        },
+        "PZ": {
+          "sign": 1,
+          "log_abs": "28.7971400187181836441267490699018117353178825077038252312338",
+          "arbitrary_exponent_value": "3209512006825.95515793072335098581057308995281627388452163222"
+        }
+      },
+      "axial_average": {
+        "sign": 0,
+        "log_abs": null,
+        "arbitrary_exponent_value": "0"
+      },
+      "axial_average_Z": {
+        "sign": 0,
+        "log_abs": null,
+        "arbitrary_exponent_value": "0"
+      },
+      "mass_offset": {
+        "sign": 0,
+        "log_abs": null,
+        "arbitrary_exponent_value": "0"
+      },
+      "mass_offset_Z": {
+        "sign": 0,
+        "log_abs": null,
+        "arbitrary_exponent_value": "0"
+      },
+      "pressure_offset": {
+        "sign": 0,
+        "log_abs": null,
+        "arbitrary_exponent_value": "0"
+      },
+      "pressure_offset_Z": {
+        "sign": 0,
+        "log_abs": null,
+        "arbitrary_exponent_value": "0"
+      },
+      "full_five_moments_available": true,
+      "outer_moment_scope": null,
+      "outer_velocity_jets_complete": null
+    },
+    {
+      "name": "Rref",
+      "y": "5.0e+152",
+      "schedule_offset_from_logRref": "0.0",
+      "region": "shared_corrected_outer_profile",
+      "heat_method": null,
+      "values": {
+        "F": {
+          "sign": 1,
+          "log_abs": "-2.5e+152",
+          "arbitrary_exponent_value": "2.53751222536817061188061019585971415668226712620194701301563e-108573620475812956912782229729151270573599251450916641528613445791466162302217693682306237334607937079676526686191575933410419821789740976642305266165729"
+        },
+        "FZ": {
+          "sign": -1,
+          "log_abs": "-2.5e+152",
+          "arbitrary_exponent_value": "-1.39679572038614876977281067644572322917369194057303427510411e-108573620475812956912782229729151270573599251450916641528613445791466162302217693682306237334607937079676526686191575933410419821789740976642305266165729"
+        },
+        "Uz": {
+          "sign": 1,
+          "log_abs": "0.182321556793954626211718025154514633197389337914486983942726",
+          "arbitrary_exponent_value": "1.2"
+        },
+        "UZ": {
+          "sign": 1,
+          "log_abs": "1.38629436111989061883446424291635313615100026872051050824136",
+          "arbitrary_exponent_value": "4.0"
+        },
+        "Ur": {
+          "sign": -1,
+          "log_abs": "2.5e+152",
+          "arbitrary_exponent_value": "-7.13069652067679703186840922229970488068797557882860382680543e+108573620475812956912782229729151270573599251450916641528613445791466162302217693682306237334607937079676526686191575933410419821789740976642305266165734"
+        },
+        "P": {
+          "sign": -1,
+          "log_abs": "27.622614426643794448809161025032404878890579336385178340441",
+          "arbitrary_exponent_value": "-991628548115.184059885706336642572843967304222938768081364048"
+        },
+        "PZ": {
+          "sign": 1,
+          "log_abs": "27.7187582871685438604498012811530919182095823854792383040251",
+          "arbitrary_exponent_value": "1091701153857.54149521691039866196506131425171760915722710967"
+        }
+      },
+      "axial_average": {
+        "sign": 1,
+        "log_abs": "0.182321556793954626211718025154514633197389337914486983942726",
+        "arbitrary_exponent_value": "1.2"
+      },
+      "axial_average_Z": {
+        "sign": 1,
+        "log_abs": "1.38629436111989061883446424291635313615100026872051050824136",
+        "arbitrary_exponent_value": "4.0"
+      },
+      "mass_offset": {
+        "sign": 1,
+        "log_abs": "5.0e+152",
+        "arbitrary_exponent_value": "1.92957279699603138487250550687929092938364675701223806777496e+217147240951625913825564459458302541147198502901833283057226891582932324604435387364612474669215874159353053372383151866820839643579481953284610532331291"
+      },
+      "mass_offset_Z": {
+        "sign": -1,
+        "log_abs": "5.0e+152",
+        "arbitrary_exponent_value": "-1.19509963751147534156476801626248629784079763821491516186534e+217147240951625913825564459458302541147198502901833283057226891582932324604435387364612474669215874159353053372383151866820839643579481953284610532331281"
+      },
+      "pressure_offset": {
+        "sign": -1,
+        "log_abs": "-224.252970948638812726772611790049789855563572990665850723546",
+        "arbitrary_exponent_value": "-4.05669322350423830004278880290322849068680262456758356557975e-98"
+      },
+      "pressure_offset_Z": {
+        "sign": -1,
+        "log_abs": "-8.83714748331547775038105245115102689783408492753976213754167",
+        "arbitrary_exponent_value": "-0.000145236445745120387447053668559780595001692183313447817935434"
+      },
+      "full_five_moments_available": false,
+      "outer_moment_scope": "Only axial mass/mean is propagated from Rh; full five moments beyond the early exterior are unavailable.",
+      "outer_velocity_jets_complete": false
+    },
+    {
+      "name": "heat_tail_start",
+      "y": "5.0e+152",
+      "schedule_offset_from_logRref": "27191573448168950000791933137.082780597825812341729087596675701124835177028737854",
+      "region": "shared_corrected_outer_profile",
+      "heat_method": "H_to_1_declared_bound",
+      "values": {
+        "F": {
+          "sign": 1,
+          "log_abs": "-2.5e+152",
+          "arbitrary_exponent_value": "2.48946050568490141066795348179276115152077715808517442640716e-108573620475812956912782229729151270573599251450916641528613445791466162302217693682306237334607937079676526686191575933410431630940043783395259943562443"
+        },
+        "FZ": {
+          "sign": 0,
+          "log_abs": null,
+          "arbitrary_exponent_value": "0"
+        },
+        "Uz": {
+          "sign": 0,
+          "log_abs": null,
+          "arbitrary_exponent_value": "0"
+        },
+        "UZ": {
+          "sign": 0,
+          "log_abs": null,
+          "arbitrary_exponent_value": "0"
+        },
+        "Ur": {
+          "sign": -1,
+          "log_abs": "2.5e+152",
+          "arbitrary_exponent_value": "-1.35124437928722381985310553279246344466095827141395015235545e+108573620475812956912782229729151270573599251450916641528613445791466162302217693682306237334607937079676526686191575933410418913393562992006941242918863"
+        },
+        "P": {
+          "sign": -1,
+          "log_abs": "-224.252970948638812726772611790049789855563572990665850723546",
+          "arbitrary_exponent_value": "-4.05669322350423830004278880290322849068680262456758356557975e-98"
+        },
+        "PZ": {
+          "sign": -1,
+          "log_abs": "-8.83714748331547775038105245115102689783408492753976213754167",
+          "arbitrary_exponent_value": "-0.000145236445745120387447053668559780595001692183313447817935434"
+        }
+      },
+      "axial_average": {
+        "sign": 1,
+        "log_abs": "-15687446222044662294755953938.6593122144598725719706514581936",
+        "arbitrary_exponent_value": "1.23423713416097326910648428445398667681774499201319634561595e-6812971329388011841361944830"
+      },
+      "axial_average_Z": {
+        "sign": 1,
+        "log_abs": "-15687446222044662294755953926.1156051313146004169632385243563",
+        "arbitrary_exponent_value": "3.4598827190393929627085835890115421346295054357409335276618e-6812971329388011841361944825"
+      },
+      "mass_offset": {
+        "sign": 1,
+        "log_abs": "5.0e+152",
+        "arbitrary_exponent_value": "1.92957279699603138487250550687929092938364675701223806777496e+217147240951625913825564459458302541147198502901833283057226891582932324604435387364612474669215874159353053372383151866820839643579481953284610532331291"
+      },
+      "mass_offset_Z": {
+        "sign": -1,
+        "log_abs": "5.0e+152",
+        "arbitrary_exponent_value": "-1.19509963751147534156476801626248629784079763821491516186534e+217147240951625913825564459458302541147198502901833283057226891582932324604435387364612474669215874159353053372383151866820839643579481953284610532331281"
+      },
+      "pressure_offset": {
+        "sign": -1,
+        "log_abs": "-224.252970948638812726772611790049789855563572990665850723546",
+        "arbitrary_exponent_value": "-4.05669322350423830004278880290322849068680262456758356557975e-98"
+      },
+      "pressure_offset_Z": {
+        "sign": -1,
+        "log_abs": "-8.83714748331547775038105245115102689783408492753976213754167",
+        "arbitrary_exponent_value": "-0.000145236445745120387447053668559780595001692183313447817935434"
+      },
+      "full_five_moments_available": false,
+      "outer_moment_scope": "Only axial mass/mean is propagated from Rh; full five moments beyond the early exterior are unavailable.",
+      "outer_velocity_jets_complete": false
+    },
+    {
+      "name": "heat_connection",
+      "y": "5.0e+152",
+      "schedule_offset_from_logRref": "27191573448168950000791933140.082780597825812341729087596675701124835177028737854",
+      "region": "shared_corrected_outer_profile",
+      "heat_method": "H_to_1_declared_bound",
+      "values": {
+        "F": {
+          "sign": 1,
+          "log_abs": "-2.5e+152",
+          "arbitrary_exponent_value": "1.23942940395631330618816833531402877983870199625960186733221e-108573620475812956912782229729151270573599251450916641528613445791466162302217693682306237334607937079676526686191575933410431630940043783395259943562444"
+        },
+        "FZ": {
+          "sign": 0,
+          "log_abs": null,
+          "arbitrary_exponent_value": "0"
+        },
+        "Uz": {
+          "sign": 0,
+          "log_abs": null,
+          "arbitrary_exponent_value": "0"
+        },
+        "UZ": {
+          "sign": 0,
+          "log_abs": null,
+          "arbitrary_exponent_value": "0"
+        },
+        "Ur": {
+          "sign": -1,
+          "log_abs": "2.5e+152",
+          "arbitrary_exponent_value": "-3.01503374750023908944293998625573191455955680868313028915713e+108573620475812956912782229729151270573599251450916641528613445791466162302217693682306237334607937079676526686191575933410418913393562992006941242918862"
+        },
+        "P": {
+          "sign": -1,
+          "log_abs": "-224.252970948638812726772611790049789855563572990665850723546",
+          "arbitrary_exponent_value": "-4.05669322350423830004278880290322849068680262456758356557975e-98"
+        },
+        "PZ": {
+          "sign": -1,
+          "log_abs": "-8.83714748331547775038105245115102689783408492753976213754167",
+          "arbitrary_exponent_value": "-0.000145236445745120387447053668559780595001692183313447817935434"
+        }
+      },
+      "axial_average": {
+        "sign": 1,
+        "log_abs": "-15687446222044662294755953941.6593122144598725719706514581936",
+        "arbitrary_exponent_value": "6.14490485806288378391660980953970485248008088875725331990846e-6812971329388011841361944832"
+      },
+      "axial_average_Z": {
+        "sign": 1,
+        "log_abs": "-15687446222044662294755953929.1156051313146004169632385243563",
+        "arbitrary_exponent_value": "1.72257417477605251385013163808783348841050614308640216225831e-6812971329388011841361944826"
+      },
+      "mass_offset": {
+        "sign": 1,
+        "log_abs": "5.0e+152",
+        "arbitrary_exponent_value": "1.92957279699603138487250550687929092938364675701223806777496e+217147240951625913825564459458302541147198502901833283057226891582932324604435387364612474669215874159353053372383151866820839643579481953284610532331291"
+      },
+      "mass_offset_Z": {
+        "sign": -1,
+        "log_abs": "5.0e+152",
+        "arbitrary_exponent_value": "-1.19509963751147534156476801626248629784079763821491516186534e+217147240951625913825564459458302541147198502901833283057226891582932324604435387364612474669215874159353053372383151866820839643579481953284610532331281"
+      },
+      "pressure_offset": {
+        "sign": -1,
+        "log_abs": "-224.252970948638812726772611790049789855563572990665850723546",
+        "arbitrary_exponent_value": "-4.05669322350423830004278880290322849068680262456758356557975e-98"
+      },
+      "pressure_offset_Z": {
+        "sign": -1,
+        "log_abs": "-8.83714748331547775038105245115102689783408492753976213754167",
+        "arbitrary_exponent_value": "-0.000145236445745120387447053668559780595001692183313447817935434"
+      },
+      "full_five_moments_available": false,
+      "outer_moment_scope": "Only axial mass/mean is propagated from Rh; full five moments beyond the early exterior are unavailable.",
+      "outer_velocity_jets_complete": false
+    },
+    {
+      "name": "exact_heat",
+      "y": "5.0e+152",
+      "schedule_offset_from_logRref": "27191573448168950000791933141.082780597825812341729087596675701124835177028737854",
+      "region": "shared_corrected_outer_profile",
+      "heat_method": "H_to_1_declared_bound",
+      "values": {
+        "F": {
+          "sign": 1,
+          "log_abs": "-2.5e+152",
+          "arbitrary_exponent_value": "4.5596059649890238196939181531834467123289045581931807693373e-108573620475812956912782229729151270573599251450916641528613445791466162302217693682306237334607937079676526686191575933410431630940043783395259943562445"
+        },
+        "FZ": {
+          "sign": 0,
+          "log_abs": null,
+          "arbitrary_exponent_value": "0"
+        },
+        "Uz": {
+          "sign": 0,
+          "log_abs": null,
+          "arbitrary_exponent_value": "0"
+        },
+        "UZ": {
+          "sign": 0,
+          "log_abs": null,
+          "arbitrary_exponent_value": "0"
+        },
+        "Ur": {
+          "sign": -1,
+          "log_abs": "2.5e+152",
+          "arbitrary_exponent_value": "-1.82871040792717343933947538311262605033833904726122623365545e+108573620475812956912782229729151270573599251450916641528613445791466162302217693682306237334607937079676526686191575933410418913393562992006941242918862"
+        },
+        "P": {
+          "sign": -1,
+          "log_abs": "-224.252970948638812726772611790049789855563572990665850723546",
+          "arbitrary_exponent_value": "-4.05669322350423830004278880290322849068680262456758356557975e-98"
+        },
+        "PZ": {
+          "sign": -1,
+          "log_abs": "-8.83714748331547775038105245115102689783408492753976213754167",
+          "arbitrary_exponent_value": "-0.000145236445745120387447053668559780595001692183313447817935434"
+        }
+      },
+      "axial_average": {
+        "sign": 1,
+        "log_abs": "-15687446222044662294755953942.6593122144598725719706514581936",
+        "arbitrary_exponent_value": "2.26058416523585478412512047557359426145891154307805169327159e-6812971329388011841361944832"
+      },
+      "axial_average_Z": {
+        "sign": 1,
+        "log_abs": "-15687446222044662294755953930.1156051313146004169632385243563",
+        "arbitrary_exponent_value": "6.33699624792972614625931149933919726071948472537455462835215e-6812971329388011841361944827"
+      },
+      "mass_offset": {
+        "sign": 1,
+        "log_abs": "5.0e+152",
+        "arbitrary_exponent_value": "1.92957279699603138487250550687929092938364675701223806777496e+217147240951625913825564459458302541147198502901833283057226891582932324604435387364612474669215874159353053372383151866820839643579481953284610532331291"
+      },
+      "mass_offset_Z": {
+        "sign": -1,
+        "log_abs": "5.0e+152",
+        "arbitrary_exponent_value": "-1.19509963751147534156476801626248629784079763821491516186534e+217147240951625913825564459458302541147198502901833283057226891582932324604435387364612474669215874159353053372383151866820839643579481953284610532331281"
+      },
+      "pressure_offset": {
+        "sign": -1,
+        "log_abs": "-224.252970948638812726772611790049789855563572990665850723546",
+        "arbitrary_exponent_value": "-4.05669322350423830004278880290322849068680262456758356557975e-98"
+      },
+      "pressure_offset_Z": {
+        "sign": -1,
+        "log_abs": "-8.83714748331547775038105245115102689783408492753976213754167",
+        "arbitrary_exponent_value": "-0.000145236445745120387447053668559780595001692183313447817935434"
+      },
+      "full_five_moments_available": false,
+      "outer_moment_scope": "Only axial mass/mean is propagated from Rh; full five moments beyond the early exterior are unavailable.",
+      "outer_velocity_jets_complete": false
+    }
+  ],
+  "tail_radial_transport": {
+    "sample": "exact_heat y_b+1",
+    "tail_logR": "5.0e+152",
+    "tail_mass": {
+      "sign": 1,
+      "log_abs": "5.0e+152",
+      "arbitrary_exponent_value": "4.54663241632526749426920132162553377530932710811958396223128e+217147240951625913825564459458302541147198502901833283057226891582932324604435387364612474669215874159353053372383151866820844639758455372025723847782545"
+    },
+    "tail_mass_Z": {
+      "sign": 1,
+      "log_abs": "5.0e+152",
+      "arbitrary_exponent_value": "1.27453748487010334533634375844453124329394804410831930850895e+217147240951625913825564459458302541147198502901833283057226891582932324604435387364612474669215874159353053372383151866820844639758455372025723847782551"
+    },
+    "tail_mass_over_Rh": {
+      "sign": 1,
+      "log_abs": "11504127226124287706035979203.4234683833659397697584361384821",
+      "arbitrary_exponent_value": "7.1386491595494861578523163565497563143130346747728765586485e+4996178973418741113315451078"
+    },
+    "tail_mass_Z_over_Rh": {
+      "sign": 1,
+      "log_abs": "11504127226124287706035979215.9671754665112119247658490723194",
+      "arbitrary_exponent_value": "2.00114614775389209358991897496682087422967220155735771504018e+4996178973418741113315451084"
+    },
+    "coefficient_for_V_over_R": {
+      "sign": -1,
+      "log_abs": "5.0e+152",
+      "arbitrary_exponent_value": "-1.15983047522151894183632110094491991905762531293670300661833e+217147240951625913825564459458302541147198502901833283057226891582932324604435387364612474669215874159353053372383151866820844639758455372025723847782551"
+    },
+    "coefficient_over_Rh": {
+      "sign": -1,
+      "log_abs": "11504127226124287706035979215.8728659630657399507402722538953",
+      "arbitrary_exponent_value": "-1.82104513605078967001267362291471396047589599732759795254954e+4996178973418741113315451084"
+    },
+    "coefficient_for_Ur_asymptotic": {
+      "sign": -1,
+      "log_abs": "5.0e+152",
+      "arbitrary_exponent_value": "-8.2012399405595202476963645968013777688939307408989911943135e+217147240951625913825564459458302541147198502901833283057226891582932324604435387364612474669215874159353053372383151866820844639758455372025723847782550"
+    },
+    "energy_integrand": "coefficient^2 / R (logarithmic divergence when coefficient != 0)",
+    "nonzero_coefficient_detected": true,
+    "axial_average_Z_method": "Fourth-order centered finite difference with h=1e-6 through the profile API, whose Z argument is float-backed.",
+    "coefficient_status": "Sampled arbitrary-MP transport diagnostic; the float-backed outer Z derivative and cancellation are not a continuous source coefficient proof.",
+    "interpretation": "A nonzero carried axial mass leaves V/R ~ C/R, so the corresponding radial transport energy has C^2/R logarithmic divergence. This is a defect receipt, not a finite-energy claim."
+  },
+  "physical_callable_roundtrip": {
+    "region": "shared_corrected_outer_profile",
+    "Z_relative_error": "7.98783651242420011756344605571092441539568883866510926005814e-446",
+    "R_relative_error": "0.0",
+    "cylindrical_velocity_relative_errors": [
+      "0.0",
+      "0.0",
+      "0.0"
+    ],
+    "wrapper": "LocalCoreExitField",
+    "wrapper_subclass": "JoinedLocalCoreExitField",
+    "scope": "Joined inner through shared source heat; no finite-energy certificate"
+  },
+  "availability": {
+    "full_five_moments_beyond_early_exterior": false,
+    "moments_were_fabricated": false,
+    "actual_axial_average_used": true,
+    "actual_axial_average_Z_used": true,
+    "actual_axial_average_Z_method": "sampled fourth-order float-Z stencil h=1e-6",
+    "outer_corrected_Z_jet_limitation": "Outer values use the shared schedule log-Z jet; a complete angular-correction Z jet is unavailable in the profile API.",
+    "pressure_offset_carried": true,
+    "heat_profile_reached": true,
+    "finite_energy_certified": false,
+    "scale_recursion_established": false,
+    "global_NS_or_stress_certificate": false,
+    "outer_velocity_jets_complete": false
+  }
+}

@@ -43,3 +43,96 @@ No default zero is supplied for missing offsets.
             'finite_energy_certified':False,
         }
     return result
+
+
+def solve_seeded_axial(profile, Z, *, offsets, precision=443):
+    """Re-solve the actual exterior equations using a retained inner seed.
+
+    This returns coefficients only. The old profile still uses its original
+    coefficients and primitive until an explicit adapter installs both the
+    new pulse/end bumps and the propagated incoming moment offsets.
+    """
+    from lei_ren_part1_paper_axial_correction import (
+        solve_actual_axial, independent_end_bump_replay)
+    schedule = profile.schedule
+    data = profile.coefficients(float(Z))
+    with mp.workdps(precision):
+        incoming = seeded_axial_inputs(data['incoming'],
+            log_Rp=str(schedule.logR_p), mu=str(schedule.mu),
+            offsets=offsets, precision=precision)
+        prior = from_signed_log(incoming['E_prior_mu_Mztheta_over_RpEp2'])
+        future = profile.tail.evaluate(Z, quadrature_order=profile.order)
+        target = (1-mp.exp(-26))/4-prior+mp.mpf(
+            future['energy_target_contribution_nominal'])
+        base = [incoming['row_normalization'][key]
+            for key in ('scaled_base_m1','scaled_base_m2')]
+        solved = solve_actual_axial(str(schedule.mu), base, profile.pulse,
+            mp.nstr(target,precision), precision=precision, order=profile.order)
+        replay = independent_end_bump_replay(str(schedule.mu), solved,
+            base, profile.pulse, order=solved['quadrature_order'],
+            precision=precision)
+        return dict(incoming=incoming, axial=solved,
+            canonical_quadrature_replay=replay,
+            energy_target=mp.nstr(target,precision),
+            scope='Actual seeded coefficients; not installed in the velocity/primitive provider.',
+            continuous_mean_closure_certified=False,
+            finite_energy_certified=False)
+
+
+def run_regression():
+    """Reproducible fixture check, explicitly separate from the shared core."""
+    import json
+    from pathlib import Path
+    from lei_ren_part1_paper_corrected_profile import CorrectedSourceProfile
+    profile = CorrectedSourceProfile(precision=160)
+    offsets = dict(z='1e-10',theta_z='-2e-10',z_theta='3e-10')
+    result = solve_seeded_axial(profile,.5,offsets=offsets,precision=160)
+    rows = result['canonical_quadrature_replay']['row_relative_differences']
+    with mp.workdps(160):
+        assert all(mp.mpf(v)<mp.mpf('1e-30') for v in rows)
+        assert mp.mpf(result['axial']['energy_relative_replay'])<mp.mpf('1e-40')
+    report = dict(fixture='Historical default exterior; explicit injected offsets, not measured shared-core offsets',
+        Z='.5',raw_offsets=offsets,seed_transport=result['incoming']['inner_seed_transport'],
+        a_p=result['axial']['a_p'],linear_relative_replay=rows,
+        energy_relative_replay=result['axial']['energy_relative_replay'],
+        installed_in_velocity_provider=False,continuous_mean_closure_certified=False,
+        finite_energy_certified=False)
+    Path(__file__).with_suffix('.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+    print(json.dumps({k:report[k] for k in ('linear_relative_replay','energy_relative_replay','installed_in_velocity_provider')}))
+    return report
+
+
+def solve_joined_seed(field, Z):
+    """Use the measured corrected Rh moments of a JoinedOuterField."""
+    from lei_ren_part1_paper_axial_restore import reference_moments
+    with mp.workdps(field.precision):
+        z = mp.mpf(Z)
+        terminal = field.inner.evaluate_x(mp.e,z)
+        R = terminal['R']
+        u = mp.sqrt(2*R)*terminal['F']
+        reference = reference_moments(R,u,z)
+        offsets = {k:terminal['moments'][k]-reference[k]
+            for k in ('z','theta_z','z_theta')}
+        result = solve_seeded_axial(field.outer,z,offsets=offsets,
+            precision=field.precision)
+        result['seed_origin'] = 'Actual five-bump corrected inner terminal at Rh'
+        result['seed_log_Rh'] = mp.nstr(terminal['logR'],field.precision)
+        result['unresolved_inner_input_entries'] = terminal['unresolved_input_entries']
+        result['subtraction_and_inherited_quadrature_uncertainty_certified'] = False
+        return result
+
+
+if __name__=='__main__':
+    import sys
+    if '--shared' in sys.argv:
+        import json
+        from pathlib import Path
+        from lei_ren_part1_paper_joined_outer import build_joined_field
+        result = solve_joined_seed(build_joined_field(),'.3')
+        Path(__file__).with_name('lei_ren_part1_paper_seeded_shared_candidate.json').write_text(
+            json.dumps(result,indent=2)+'\n',encoding='utf-8')
+        print(json.dumps({'linear_replay':result['canonical_quadrature_replay']['row_relative_differences'],
+            'energy_replay':result['axial']['energy_relative_replay'],
+            'installed_in_velocity_provider':False}))
+    else:
+        run_regression()
