@@ -25,11 +25,13 @@ derivatives. Call at another spacing to measure interpolation sensitivity.
 
 
 def core_coefficients(Z,delta,*,F0_Z_taylor,U0_Z_taylor,P0_Z_taylor,
-                      radial_degree=3,precision=160):
+                      radial_degree=3,precision=160,scalar_converter=None):
     """Return radial coefficients, each represented by a local Z polynomial.
 
 The input coefficient k equals derivative_k/k!, not derivative_k.
 At least radial_degree+2 initial Z coefficients are required.
+scalar_converter optionally supplies component arithmetic; divisors in this
+recurrence are independent of pressure components. The default remains MP.
 """
     with mp.workdps(precision):
         degree=int(radial_degree)
@@ -38,7 +40,8 @@ At least radial_degree+2 initial Z coefficients are required.
         K=min(len(F0_Z_taylor),len(U0_Z_taylor),len(P0_Z_taylor))
         initial_count=K
         if K<degree+2:raise ValueError('Insufficient axis Z Taylor coefficients')
-        def pad(v):return list(map(mp.mpf,v))+[mp.mpf(0)]*(K-len(v))
+        convert=mp.mpf if scalar_converter is None else scalar_converter
+        def pad(v):return list(map(convert,v))+[convert(0)]*(K-len(v))
         def const(v):return pad([v])
         def add(*args):return [sum(a[k] for a in args) for k in range(K)]
         def scale(a,c):return [v*c for v in a]
@@ -83,6 +86,7 @@ At least radial_degree+2 initial Z coefficients are required.
             pressure.append(scale(ff,mp.mpf(1)/(n+1)))
         return {'F':f,'Uz':u,'P':pressure,'Z':mp.mpf(str(Z)),
                 'delta':dt,'radial_degree':degree,'initial_Z_degree':initial_count-1,'precision':precision,
+                'component_scalar_arithmetic':scalar_converter is not None,
                 'scope':'Local exact-equation radial jets; no temporal recursion or global matching.'}
 
 

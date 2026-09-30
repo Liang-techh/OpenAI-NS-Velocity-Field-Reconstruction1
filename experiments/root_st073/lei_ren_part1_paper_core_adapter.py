@@ -96,7 +96,8 @@ class CorePolynomial:
 
 def build_source_core(precision=160,degree=18,Lambda='1e36',*,
                       j='.02',logC=None,logPstar='14',delta='1e-32',
-                      continuous_pressure=False,pressure_order=192,coherent_waiting=False):
+                      continuous_pressure=False,pressure_order=192,coherent_waiting=False,
+                      complete_preheat_components=False):
     from lei_ren_part1_paper_outer import PaperOuterSchedule
     from lei_ren_part1_paper_corrected_profile import CorrectedSourceProfile
     from lei_ren_part1_paper_axis_pressure_jets import AxisPressureJets
@@ -104,8 +105,8 @@ def build_source_core(precision=160,degree=18,Lambda='1e36',*,
     from lei_ren_part1_paper_core_ra_experiment import build_coefficients
     from lei_ren_part1_paper_axial_correction import signed_log
     with mp.workdps(precision):
-        if coherent_waiting and not continuous_pressure:
-            raise ValueError("coherent_waiting requires continuous_pressure")
+        if (coherent_waiting or complete_preheat_components) and not continuous_pressure:
+            raise ValueError("Coherent waiting and complete preheat components require continuous_pressure")
         waiting_receipt=None
         lam=mp.mpf(str(Lambda))
         chosen_logC=2*mp.log(lam) if logC is None else mp.mpf(str(logC))
@@ -150,6 +151,12 @@ def build_source_core(precision=160,degree=18,Lambda='1e36',*,
             return build_coefficients(center,degree,axis=axis,
                 pressure_taylor_coefficients=jets,precision=precision)
         core=CorePolynomial(factory,Lambda=lam,delta=chosen_delta,precision=precision)
+        datum=component_core=None
+        if complete_preheat_components:
+            from lei_ren_part1_paper_continuous_preheat_pressure import ContinuousPreheatPressure
+            from lei_ren_part1_paper_component_pressure_core import ComponentPressureCore
+            datum=ContinuousPreheatPressure(pressure,quadrature_order=pressure_order)
+            component_core=ComponentPressureCore(axis,datum,radial_degree=degree)
         return {'profile':profile,'axis':axis,'pressure':pressure,'core':core,'K':K,
                 'Lambda':lam,'radial_degree':degree,'precision':precision,
                 'shared_parameters':{'j':mp.nstr(axis.j,precision),
@@ -158,6 +165,8 @@ def build_source_core(precision=160,degree=18,Lambda='1e36',*,
                 'pressure_recomputed_for_shared_parameters':True,
                 'continuous_preflatten_pressure_anchor':continuous_pressure,
                 'coherent_preheat_waiting':coherent_waiting,'waiting_match_receipt':waiting_receipt,
+                'complete_preheat_pressure_datum':datum,'component_pressure_core':component_core,
+                'post_Rv_pressure_tail_in_component_axis_jet':complete_preheat_components,
                 'post_Rv_pressure_tail_in_axis_jet':False,
                 'source_parameter_regime_certified':False}
 

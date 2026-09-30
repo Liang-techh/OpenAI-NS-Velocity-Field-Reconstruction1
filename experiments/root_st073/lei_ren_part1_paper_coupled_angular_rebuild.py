@@ -7,6 +7,7 @@ from lei_ren_part1_paper_continuous_incoming_outer import ContinuousIncomingOute
 from lei_ren_part1_paper_coupled_angular_targets import CoupledAngularTargets
 from lei_ren_part1_paper_axial_correction import signed_log
 from lei_ren_part1_paper_coupled_angular_solve import solve_coupled_angular
+from lei_ren_part1_paper_coupled_angular_components import solve_coupled_angular_components
 
 
 def run(coherent_waiting=False):
@@ -25,8 +26,9 @@ def run(coherent_waiting=False):
         normalized_actual=actual['required_bump']/target['pressure_scale']
         mu=mp.mpf(str(p.schedule.mu))
         solution=solve_coupled_angular(p.angular_correction_provider,target,smallness_limit=mu**29,require_positive=True)
+        components=solve_coupled_angular_components(p.angular_correction_provider,target,smallness_limit=mu**29,require_positive=True)
         encode=lambda v:signed_log(v,80)
-        report=dict(coupled_solution=solution.as_dict(80),coupled_rows_closed_at_target_scale=all(abs(v)<mp.mpf('1e-30') for v in solution.target_normalized_row_residuals) if solution.target_normalized_row_residuals is not None else False,direct_forward_preheat_target=encode(target['direct_forward_preheat_target']),waiting_match_residual=encode(source.waiting_match_receipt['normalized_match_residual']) if coherent_waiting else None,Z='.3',coherent_waiting=coherent_waiting,waiting_length=str(p.schedule.waiting_length),actual_targets={k:encode(target[k]) for k in ('r','rZ','s','sZ')},
+        report=dict(component_coupled_solution=components.as_dict(80),coupled_solution=solution.as_dict(80),coupled_rows_closed_at_target_scale=all(abs(v)<mp.mpf('1e-30') for v in solution.target_normalized_row_residuals) if solution.target_normalized_row_residuals is not None else False,direct_forward_preheat_target=encode(target['direct_forward_preheat_target']),waiting_match_residual=encode(source.waiting_match_receipt['normalized_match_residual']) if coherent_waiting else None,Z='.3',coherent_waiting=coherent_waiting,waiting_length=str(p.schedule.waiting_length),actual_targets={k:encode(target[k]) for k in ('r','rZ','s','sZ')},
             angular_target_components={k:encode(v) for k,v in target['r_components'].items()},
             angular_target_Z_components={k:encode(v) for k,v in target['rZ_components'].items()},
             angular_target_over_mu29=encode(abs(target['r'])/mu**29),

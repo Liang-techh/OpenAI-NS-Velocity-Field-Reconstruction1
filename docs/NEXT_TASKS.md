@@ -1,3 +1,13 @@
+## 2026-09-30: component integration priority
+
+Read COMPONENT_PREHEAT_CORE_2026_09_30.md and the two actual component receipts. The local complete-pressure core is implemented, but downstream scalar adapters still lose its tiny tail.
+
+- [ ] Preserve component-valued core through exit continuation and reshape; avoid str/mp.mpf conversion of whole component objects.
+- [ ] Carry five component moments and pressure jets into inner corrections with a common candidate identity.
+- [ ] Install the separate angular linear/nonlinear/pressure atoms, regenerate downstream energy and axial targets, and replay terminal pressure and all five moments.
+- [ ] Enclose grouped post-stage aggregation, quadrature and finite radial/Z truncation errors before global closure claims.
+- [ ] Resolve radial finite-energy tail, then continue admissible cone and lower-order temporal recursion.
+
 ## 2026-09-30 next: finish the coherent coupled lane
 
 Read COHERENT_WAITING_COUPLED_ANGULAR_2026_09_30.md and its actual-source JSON first. Waiting and signed bump algebra are implemented, but neither a branch-accepted solution nor a tiny retained target proves actual moment closure.
