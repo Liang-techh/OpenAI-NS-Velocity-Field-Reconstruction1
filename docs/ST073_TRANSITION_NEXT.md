@@ -1,3 +1,13 @@
+## Source exit update - 2026-09-30
+
+The same high-degree core now feeds Section 9.23 comparison and actual
+Section 9.25 initial exit. Five moment increments are jointly accumulated.
+See experiments/root_st073/lei_ren_part1_paper_exit_bridge.md for y<=.01
+scope. Next transport actual Z derivatives, recover Ur, evaluate actual
+stress/cone, extend to the reference region and repair moment defects.
+The baseline future-pressure Z envelope leaves angular-correction
+coefficient derivatives open. Temporal scale recursion remains open.
+
 # ST073 continuation: local kernel to matched scale recursion
 
 The current user objective requires nonzero divergence-free finite-energy 3D

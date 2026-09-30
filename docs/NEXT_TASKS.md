@@ -1,3 +1,18 @@
+## Active source connection tasks - 2026-09-30
+
+- [x] Implement Section 9.23 comparison with analytic Z jets and moments.
+- [x] Implement initial Section 9.25 actual exit and joint five-moment ODE.
+- [x] Record 16/32/64-step refinement and baseline tail derivative envelope.
+- [ ] Transport actual exit Z jets and Mz_Z; recover Ur from divergence identity.
+- [ ] Evaluate actual exit stress/cone with derivative/truncation uncertainty.
+- [ ] Extend connection to R=100..110 and restore reference power law.
+- [ ] Compute and repair all actual Section 10 moment defects.
+- [ ] Bound d1_Z,d2_Z to close corrected-tail pressure derivatives.
+- [ ] Assemble localized full field and test temporal scale laws and energy.
+
+See experiments/root_st073/lei_ren_part1_paper_exit_bridge.md for inputs,
+receipt commands and scope. Matching and temporal recursion remain open.
+
 ## Priority: continuous moments, then connection shear — 2026-09-29
 
 Latest core continuation reaches s=4.1 in finite samples with Lambda=1e36.

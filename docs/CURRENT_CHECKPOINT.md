@@ -1,3 +1,18 @@
+## Initial actual inner exit - 2026-09-30
+
+The same source-scaled core now feeds Section 9.23 comparison and actual
+Section 9.25 exit modules. F, Uz and five moments are jointly integrated
+on 0<=log(R/Ra)<=.01, Ra=4/Lambda, Lambda=1e36. The actual-ODE receipt
+compares 16/32/64 steps with fixed comparison discretization. At Z=.3,
+the 32/64 log-amplitude difference is 3.05e-11 and the largest normalized
+moment difference is 3.85e-11. This is an initial exit, not full matching
+or temporal scale recursion. Actual Z-jet transport and stress/cone
+are next. See experiments/root_st073/lei_ren_part1_paper_exit_bridge.md.
+
+The future-pressure module supplies an uncorrected tail Z envelope.
+Angular bump coefficient derivatives remain unresolved; corrected-tail
+C1 bounds, source collar constants and global finite energy remain open.
+
 ## Source outer replacement and first correction inputs — 2026-09-29
 
 2026-09-30: high-degree core continuation now reaches s=Lambda R=4.1

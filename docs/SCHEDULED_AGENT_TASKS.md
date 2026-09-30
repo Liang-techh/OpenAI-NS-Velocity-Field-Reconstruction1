@@ -1,3 +1,16 @@
+## Next source agent action - 2026-09-30
+
+Read the exit_bridge.md and comparison/bridge JSON receipts under
+experiments/root_st073 before repeating core/moment work. The initial
+comparison and actual exit are implemented, locally scoped to y<=.01.
+Next transport actual exit Z derivatives, recover Ur from the same
+Mz and Mz_Z, then evaluate actual Section 3 stress and connection cone.
+Record derivative and step uncertainty separately. Extend to source
+connection/repair radii and repair the actual five-moment defects next.
+Do not infer temporal scale recursion from radial matching. The baseline
+pressure-tail envelope leaves d1_Z,d2_Z unresolved. Mark tasks complete
+only with reproducible evidence and update NEXT_TASKS.
+
 ## Priority: continuous moments, then connection shear — 2026-09-29
 
 Latest core continuation reaches s=4.1 in finite samples with Lambda=1e36.

@@ -94,7 +94,7 @@ class CorePolynomial:
                     'scope':'Unlocalized finite core; outer connection and pressure-jet uncertainties remain.'}
 
 
-def run(precision=160,degree=18,Lambda='1e36'):
+def build_source_core(precision=160,degree=18,Lambda='1e36'):
     from lei_ren_part1_paper_outer import PaperOuterSchedule
     from lei_ren_part1_paper_corrected_profile import CorrectedSourceProfile
     from lei_ren_part1_paper_axis_pressure_jets import AxisPressureJets
@@ -119,6 +119,16 @@ def run(precision=160,degree=18,Lambda='1e36'):
             return build_coefficients(center,degree,axis=axis,
                 pressure_taylor_coefficients=jets,precision=precision)
         core=CorePolynomial(factory,Lambda=lam,precision=precision)
+        return {'profile':profile,'axis':axis,'pressure':pressure,'core':core,'K':K,
+                'Lambda':lam,'radial_degree':degree,'precision':precision}
+
+
+def run(precision=160,degree=18,Lambda='1e36'):
+    from lei_ren_part1_paper_axial_correction import signed_log
+    with mp.workdps(precision):
+        bundle=build_source_core(precision,degree,Lambda)
+        core=bundle['core']; axis=bundle['axis']; pressure=bundle['pressure']
+        K=bundle['K']; lam=bundle['Lambda']
         z='.3'; rows=[]
         center=axis.Z0; d=1-center*center; L=1-axis.delta*center*center
         U0=4*center+axis.j; H=axis.H0(center)
