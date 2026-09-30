@@ -1,3 +1,12 @@
+## 2026-09-30 next: consume completed five centered defects in paper repair
+
+1. [DONE, finite-ring scope] Assemble all five centered defect rows from the actual common R110 field, five moments, P0 and first-Z data; preserve each flat derivative/source part.
+2. [OPEN] Build the Section10 correction on [Rm,2Rm] using normalized rho coordinates and paper bump supports. Read d/d_Z and parts/parts_Z from CenteredComponentDefects, not rounded terminal moment subtraction. Preserve tiny nonzero d3/d5 through the coefficient solve.
+3. [OPEN] Recover the exact linear moment matrix and nonlinear angular/axial quadratic interaction from the paper. Implement the branch selected by its smallness hypotheses; do not substitute freely chosen coefficients or a generic least-squares repair.
+4. [OPEN] Replay corrected moment changes independently, relative to each incoming defect, including first-Z and pressure compatibility. Keep the true P0 unchanged; no terminal target overwrite.
+5. [OPEN] Extend finite Z data to functional bounds and second-Z/C2 control. Report source, pressure/width truncation and quadrature uncertainties separately; a small value at Z=.3 is insufficient for uniform smallness or cone certification.
+6. [OPEN] Join the corrected annulus to the common outer branch, resolve finite-energy radial tail and controlled/exact heat exterior, then admissible stress and flat remainder. Only afterward implement genuine n-dependent temporal recursion and oscillatory correction.
+
 ## 2026-09-30 next: assemble all five centered defect functions
 
 1. Consume shared R110 field/moments/P0 and actual B/B_Z. Use the completed flat_shape_component API for the three angular kernels; retain every derivative-order term.

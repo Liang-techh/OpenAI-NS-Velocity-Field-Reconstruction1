@@ -1,3 +1,9 @@
+## 2026-09-30: all five centered finite-component defect inputs computed
+
+The common actual R110 source now feeds CenteredComponentDefects with pressure order 9, width order 2, and automatic first-Z tangents. The Z=.3 receipt preserves all five nonzero baseline defects and 69 separate source labels. d1~2.23437e-15, d2~5.68986e-16, d4~5.91501e-41; negative d3/d5 retain arbitrary-exponent values (log magnitudes ~-1.6e152/-2e151). Explicit P0 is unchanged. See CENTERED_COMPONENT_DEFECTS_2026_09_30.md and the centered_component_defects_check.json receipt.
+
+This completes finite-component defect assembly, NOT five-moment closure. Uniform analytic smallness, higher axial derivatives, source/jet/quadrature bounds, actual five-bump repair, exact heat/energy/cone and temporal recursion remain open.
+
 ## 2026-09-30: flat reshape defects lifted to pressure9/width2 components
 
 The scalar kernel now supports positive integer B derivatives with independent saddles. compose_flat_shape_defect retains the rectangular finite-ring value and first-Z tangent as separate derivative-order terms. Actual serialized common-source pressure9/width2 B/B_Z replay passes all three angular kernels: all30 atoms survive and the n11 (9,2) contribution remains separately nonzero; the tangent uses derivatives through12. Independent resolved P2/W1 coefficient integration discrepancies are3.73e-60 value and3.39e-61 tangent; scalar derivatives1..3 differ by3.83e-59. All source/finite-ring/window/quadrature errors remain unenclosed. Next merge these components with centered axial/inner sources into all five defect functions, then Section10 repair. Details: [COMPONENT_FLAT_DEFECT_2026_09_30.md](COMPONENT_FLAT_DEFECT_2026_09_30.md).

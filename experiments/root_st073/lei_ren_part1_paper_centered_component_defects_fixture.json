@@ -1,0 +1,123 @@
+{
+  "A": "1.0",
+  "P0_Z_error": "0.0",
+  "P0_error": "0.0",
+  "T": "400.0",
+  "Z": "0.299999999999999988897769753748",
+  "Z_tangent_errors": {
+    "1": "1.50011943737466941064970978128e-14",
+    "2": "4.51827291714243210638957421914e-15",
+    "3": "6.76140756452399953872556430015e-81",
+    "4": "4.22919800801141285822886886979e-53",
+    "5": "5.15556170778413011567460643791e-30"
+  },
+  "Z_tangent_relative_errors": {
+    "1": "1.72149570475435426246885087539e-14",
+    "2": "2.03613286872174728999200751006e-14",
+    "3": "1.9791622244883925502035033465e-16",
+    "4": "1.650992991498583755663766146e-14",
+    "5": "1.96352424959695556406657042409e-16"
+  },
+  "actual_Z_rows": {
+    "1": "-0.871404693739099648139799134848",
+    "2": "-0.221904620594767076017744053266",
+    "3": "3.41629780563935477639488707443e-65",
+    "4": "2.56160869839462967718897719662e-39",
+    "5": "2.62566744915036866576319781148e-14"
+  },
+  "actual_rows": {
+    "1": "-0.172046561035119411508468707536",
+    "2": "-0.0438119362053415324875757023331",
+    "3": "-2.6078215562891811858034645696e-65",
+    "4": "2.28088065458246111386982381737e-40",
+    "5": "-2.00724379778182865577471682386e-14"
+  },
+  "all_rows_have_separate_receipts": true,
+  "cone_certified": false,
+  "expected_Z_rows": {
+    "1": "-0.871404693739114649334172881542",
+    "2": "-0.221904620594771594290661195698",
+    "3": "3.41629780563935410025413062203e-65",
+    "4": "2.56160869839467196916905731074e-39",
+    "5": "2.62566744915036815020702703307e-14"
+  },
+  "expected_rows": {
+    "1": "-0.172046561035122373282627104746",
+    "2": "-0.0438119362053424245568092027137",
+    "3": "-2.60782155628918118580346296025e-65",
+    "4": "2.28088065458250156856764658235e-40",
+    "5": "-2.00724379778182865577471559728e-14"
+  },
+  "finite_difference_step": "0.000100000000000000004792173602386",
+  "functional_closure": false,
+  "global_field_installed": false,
+  "independent_Z_tangent": "fourth-order centered finite difference of scalar replay",
+  "independent_replay": "mp.quad split over centered shape, reference, and restoration rows",
+  "logC": "-4.0",
+  "logPstar": "45.2999999999999971578290569596",
+  "maximum_relative_Z_tangent_error": "2.03613286872174728999200751006e-14",
+  "maximum_relative_row_error": "2.03613286872174728999200751006e-14",
+  "maximum_scaled_Z_tangent_error": "1.50011943737466941064970978128e-14",
+  "maximum_scaled_row_error": "2.96177415839721015380278813382e-15",
+  "metadata": {
+    "K1": "0.6509892735665870903474336643256837082527",
+    "K16": "0.7708671296459529132944854454420728315072",
+    "K2": "0.6024474461279228455681304586882578331789",
+    "Rm": "6.298640477276789731453123191280973315151e+178",
+    "Rsh": "5.743616658740558345647639307314613932476e+175",
+    "Rsh_less_than_Rz_guard": "T < 10*(logC + logPstar) - 8",
+    "Rz": "8.52428292997847686238669404224862619452e+177",
+    "Z": "0.2999999999999999888977697537484345957637",
+    "alpha": "0.0009118819655545421252473959009131706949127",
+    "automatic_first_Z_derivative": true,
+    "branch": "centered_component_defects",
+    "complete_formal_five_defect_assembly": true,
+    "error_enclosures": false,
+    "explicit_P0_preserved": true,
+    "finite_Z_difference_used": false,
+    "flat_kernel_order": 32,
+    "flat_kernel_window": "24.0",
+    "functional_closure": false,
+    "global_field_installed": false,
+    "independent_variable": "Z; rows are centered component receipts at R=110",
+    "no_increments_after_restoration_t1": true,
+    "pressure_order": 3,
+    "pressure_parameter_distinct_from_temporal": true,
+    "pressure_width_remainder_enclosed": false,
+    "quadrature_remainder_enclosed": false,
+    "restore_order": 64,
+    "rho0": "1.74640861622186727456686505450339473283e-177",
+    "shared_log_parameter_consistency_checked": true,
+    "smallness_certified": false,
+    "width_order": 2,
+    "work_precision": 323
+  },
+  "part_row_nonzero_counts": {
+    "1": 5,
+    "2": 11,
+    "3": 8,
+    "4": 13,
+    "5": 8
+  },
+  "passed": true,
+  "precision": 100,
+  "pressure_order": 3,
+  "pressure_width_truncation_remainder_enclosed": false,
+  "quadrature_error_enclosed": false,
+  "row_errors": {
+    "1": "2.96177415839721015380278813382e-15",
+    "2": "8.92069233500380540604381628366e-16",
+    "3": "1.60935594722979485959280884998e-89",
+    "4": "4.0454697822764982587715301557e-54",
+    "5": "1.22657905768935034075654024547e-38"
+  },
+  "row_relative_errors": {
+    "1": "1.72149570475435426246885087539e-14",
+    "2": "2.03613286872174728999200751006e-14",
+    "3": "6.17126560423037422372952216144e-25",
+    "4": "1.77364377840145772737674930839e-14",
+    "5": "6.11076272371508741124035386525e-25"
+  },
+  "smallness_certified": false,
+  "width_order": 2
+}
