@@ -1,3 +1,11 @@
+## 2026-09-30: continue the same finite-ring state from R=100
+
+- [x] Preserve positive epsilon-driven prescribed velocity/moment changes beyond the collar through R=100 using analytic exponential-polynomial integration; actual receipt pressure_width_continuation_check.json.
+- [ ] Propagate pressure/width atoms and automatic Z tangents through the R=100..110 shear switches. Normalize evolving state to avoid losing tiny swirl coefficients.
+- [ ] Carry that endpoint through long reshape with common pressure and actual five-moment offsets, retaining separately tiny correction atoms.
+- [ ] Regenerate inner/outer repairs and close terminal identities as Z functions; resolve radial finite-energy obstruction.
+- [ ] Enclose finite jets and collar/source errors, then audit exact heat and admissible cone before temporal recursion.
+
 ## 2026-09-30: continue from derivative-aware prescribed exit
 
 - [x] Carry automatic first Z derivatives through the actual pressure/width prescribed exit and recover Ur from Mz/Mz_Z. Receipt: lei_ren_part1_paper_pressure_width_axial_bridge_check.json; limits in AXIAL_JOINT_EXIT_2026_09_30.md.

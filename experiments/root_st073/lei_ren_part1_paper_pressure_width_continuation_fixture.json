@@ -1,0 +1,48 @@
+{
+  "analytic_primitive_defects": {
+    "Uz_y_driver_defect": "2.7250942976052164607424343784e-107",
+    "analytic_divergence_numerator": "3.57183559775710931942432358845e-102",
+    "moment_radial_identity_defect": "1.3625471488026082303712171892e-106"
+  },
+  "continuation_metadata": {
+    "collar_RK_error_enclosed": false,
+    "cone_certified": false,
+    "continuation_integrals": "analytic exponential polynomials",
+    "finite_energy_certified": false,
+    "finite_ring_remainder_enclosed": false,
+    "frozen_auxiliary_driver": true,
+    "functional_terminal_moments_closed": false,
+    "global_matching_complete": false,
+    "positive_epsilon_changes_retained": true,
+    "post_collar_quadrature_error": false,
+    "prescribed_values_frozen": false,
+    "pressure_order": 3,
+    "width_order": 2
+  },
+  "endpoint_radius": "0.40000800008",
+  "epsilon": "0.00001",
+  "errors": {
+    "F": "1.5336938848900359024e-16",
+    "P": "3.6840355159628352167e-16",
+    "Uz": "2.3052476695662925445e-16",
+    "moment:p": "2.6662290942416790259e-16",
+    "moment:theta": "1.1827886550188049012e-14",
+    "moment:theta_z": "9.0183519543521252606e-15",
+    "moment:z": "3.1221788099926726455e-16",
+    "moment:z_theta": "2.9308267172514116602e-13"
+  },
+  "global_field_installed": false,
+  "independent_Cartesian_divergence_verified": false,
+  "independent_replay": "scalar RK4 in y=log(R/Rb), materialized at pressure=width=1",
+  "legacy_frozen_prescribed_comparison_used": false,
+  "maximum_scaled_difference": "2.93082671725141166023613359097e-13",
+  "passed": true,
+  "positive_width_F_change": "0.00000155884141678964242338669533471",
+  "positive_width_Uz_change": "-0.00000029870266860392808753181618095",
+  "pressure_order": 3,
+  "pressure_width_truncation_remainder_enclosed": false,
+  "rk_remainder_enclosed": false,
+  "rk_steps": 512,
+  "target_radius": "0.8",
+  "width_order": 2
+}
