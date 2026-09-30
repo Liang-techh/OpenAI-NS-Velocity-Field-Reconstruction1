@@ -1,3 +1,14 @@
+# 2026-09-30: Actual common preheat compact-interval envelope
+
+Actual common schedule: 205 positive pressure atoms at radial Gauss order192,
+260 digits, retained separately. Analytic axial factor bounds on |Z|<=.8
+through derivative3 give normalized C2 envelope46.00696349. Radial
+quadrature and scalar rounding errors remain unenclosed. This is a bound
+for the declared finite atom representation, not full-source closure.
+Positive radial-stage mass/variable-beta derivative bound APIs added;
+their schedule endpoint inputs still need enclosure.
+See PREHEAT_INTERVAL_BOUNDS_2026_09_30.md.
+
 # 2026-09-30: Conditional interval C2 inverse majorant
 
 Implemented factorial-weighted C2 Banach norm, exact common amplitude

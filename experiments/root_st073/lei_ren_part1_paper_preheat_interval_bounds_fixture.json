@@ -1,0 +1,11 @@
+{
+  "independent_derivative_checks": 64,
+  "compact_radius": ".8",
+  "tiny_atom_preserved": true,
+  "mass_error_budgets_separate": true,
+  "positive_stage_mass_envelope_passed": true,
+  "variable_beta_integral_derivatives_checked": true,
+  "normalized_C2_bound": "35.66864",
+  "actual_quadrature_enclosed": false,
+  "actual_source_norm_enclosed": false
+}

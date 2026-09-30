@@ -1,3 +1,18 @@
+# 2026-09-30: Common-source pressure interval gate
+
+- [x] Retain all actual positive preheat atoms and bound their axial factors
+      through derivative3 on a declared compact interval (actual 205 atoms).
+- [x] Implement a positive-stage radial mass envelope and universal
+      variable-beta derivative envelope, conditional on endpoint bounds.
+- [ ] Enclose continuous schedule log-amplitude endpoint values and slopes.
+- [ ] Obtain radial-stage integral/derivative enclosures, with a separate
+      variable-beta quadrature remainder; never treat it as a fixed-node mass error.
+- [ ] Propagate these pressure errors through core comparison, bridge,
+      restoration and all 69 labeled centered source parts.
+- [ ] Supply the resulting defect interval norm to the C2 contraction bound.
+
+See PREHEAT_INTERVAL_BOUNDS_2026_09_30.md.
+
 # 2026-09-30: C2 inverse majorant integration
 
 - [x] Define a submultiplicative C2 norm with second derivative weight 1/2.

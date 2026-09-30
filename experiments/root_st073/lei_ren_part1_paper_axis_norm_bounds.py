@@ -1,11 +1,12 @@
 """Conservative real interval bounds for the axis profile derivatives.
 
-This is only the real ``Z in [-1, 1]`` contribution to an axis norm.  It
-does not bound mixed radial derivatives, a complex ``A_Omega`` norm, the
-pressure amplitude, or the nonlinear core.  For an injected
-``RegularCoreAxisJets`` object, ``axis_norm_bounds(axis)`` bounds
-``G, G', G'', G'''`` using coefficient absolute sums for ``H`` and the
-positive denominator ``H^2 + sigma0^2``.
+This is only the real ``Z`` contribution to an axis norm.  It does not bound
+mixed radial derivatives, a complex ``A_Omega`` norm, the pressure amplitude,
+or the nonlinear core.  For an injected ``RegularCoreAxisJets`` object,
+``axis_norm_bounds(axis)`` bounds ``G, G', G'', G'''`` on
+``[-axial_radius, axial_radius]`` using radius-weighted coefficient absolute
+sums for ``H`` and the positive denominator ``H^2 + sigma0^2``.  The default
+``axial_radius=1`` retains the original ``[-1, 1]`` calculation.
 
 Writing ``f(H)=H/(H^2+sigma0^2)``, the quotient derivatives used here are
 
@@ -54,9 +55,21 @@ def _nstr(value: Any, digits: int = 50) -> str:
     return mp.nstr(_mp(value), digits)
 
 
-def _poly_derivative_abs_sum(coefficients: Mapping[int, Any], order: int) -> mp.mpf:
-    """Coefficient absolute-sum bound on [-1, 1] for one polynomial derivative."""
+def _poly_derivative_abs_sum(
+    coefficients: Mapping[int, Any], order: int, radius: Any = 1
+) -> mp.mpf:
+    """Radius-weighted coefficient bound for one polynomial derivative.
 
+    If ``p(Z) = sum c[k] Z**k``, then on ``|Z| <= radius``
+
+    ``|p^(order)(Z)| <= sum |c[k]| k!/(k-order)! radius**(k-order)``.
+
+    ``radius=1`` is the legacy coefficient sum.
+    """
+
+    radius = _mp(radius)
+    if not mp.isfinite(radius) or radius < 0:
+        raise ValueError("radius must be a finite nonnegative real number")
     total = mp.mpf(0)
     for degree, coefficient in coefficients.items():
         if degree < order:
@@ -64,7 +77,7 @@ def _poly_derivative_abs_sum(coefficients: Mapping[int, Any], order: int) -> mp.
         falling = mp.mpf(1)
         for step in range(order):
             falling *= degree - step
-        total += abs(_mp(coefficient)) * falling
+        total += abs(_mp(coefficient)) * falling * radius ** (degree - order)
     return total
 
 
@@ -84,11 +97,20 @@ def _l_coefficients(axis: Any) -> dict[int, mp.mpf]:
     return {0: mp.mpf(1), 2: -axis.delta}
 
 
-def _real_polynomial_bounds(axis: Any) -> dict[str, list[mp.mpf]]:
+def _real_polynomial_bounds(
+    axis: Any, axial_radius: Any = 1
+) -> dict[str, list[mp.mpf]]:
+    axial_radius = _mp(axial_radius)
     h_coefficients = _h_coefficients(axis)
     l_coefficients = _l_coefficients(axis)
-    h = [_poly_derivative_abs_sum(h_coefficients, order) for order in range(4)]
-    l = [_poly_derivative_abs_sum(l_coefficients, order) for order in range(4)]
+    h = [
+        _poly_derivative_abs_sum(h_coefficients, order, axial_radius)
+        for order in range(4)
+    ]
+    l = [
+        _poly_derivative_abs_sum(l_coefficients, order, axial_radius)
+        for order in range(4)
+    ]
     return {"H_derivative_abs_sum": h, "L_derivative_abs_sum": l}
 
 
@@ -106,10 +128,10 @@ def _quotient_derivative_bounds(sigma0: mp.mpf) -> list[mp.mpf]:
     ]
 
 
-def _g_derivative_bounds(axis: Any) -> list[mp.mpf]:
+def _g_derivative_bounds(axis: Any, axial_radius: Any = 1) -> list[mp.mpf]:
     """Leibniz bounds for G' = L f(H) through its third derivative."""
 
-    polynomial = _real_polynomial_bounds(axis)
+    polynomial = _real_polynomial_bounds(axis, axial_radius)
     h = polynomial["H_derivative_abs_sum"]
     l = polynomial["L_derivative_abs_sum"]
     f = _quotient_derivative_bounds(axis.sigma0)
@@ -124,29 +146,75 @@ def _g_derivative_bounds(axis: Any) -> list[mp.mpf]:
     ]
 
 
-def _u0_c3_bound(axis: Any) -> mp.mpf:
-    """C^3 sum bound for U0z=4Z+j on [-1,1]."""
+def _u0_c3_bound(axis: Any, axial_radius: Any = 1) -> mp.mpf:
+    """C^3 sum bound for U0z=4Z+j on a symmetric compact interval."""
 
-    return (mp.mpf(4) + axis.j) + mp.mpf(4)
+    radius = _mp(axial_radius)
+    return (mp.mpf(4) * radius + axis.j) + mp.mpf(4)
 
 
-def axis_norm_bounds(axis: Any) -> dict[str, Any]:
-    """Return conservative real-axis MP bounds for ``G`` and its derivatives."""
+def axis_norm_bounds(
+    axis: Any,
+    *,
+    axial_radius: Any = 1,
+    include_endpoint_values: bool = True,
+) -> dict[str, Any]:
+    """Return conservative real-axis MP bounds on a compact interval.
+
+    ``axial_radius`` must satisfy ``0 < axial_radius <= 1`` and defines the
+    interval ``[-axial_radius, axial_radius]``.  ``G`` is anchored at the
+    axis object's ``Z0``, so its anchor path length is
+    ``axial_radius + abs(Z0)``.  If the anchor lies outside the interval, the
+    anchor derivative bound is evaluated at the larger radius
+    ``max(axial_radius, abs(Z0))``.  The legacy ``G_value_upper`` keeps the
+    old diameter bound when that is larger; ``G_anchor_value_upper`` exposes
+    the actual anchor-length bound.  Endpoint values are optional because
+    each call performs adaptive MP quadrature of ``G``.
+    """
 
     precision = int(getattr(axis, "precision", 160))
     with mp.workdps(precision):
         if not hasattr(axis, "sigma0") or not hasattr(axis, "H0"):
             raise TypeError("axis must expose sigma0 and H0 from RegularCoreAxisJets")
-        polynomial = _real_polynomial_bounds(axis)
+        radius = _mp(axial_radius)
+        if not mp.isfinite(radius) or radius <= 0 or radius > 1:
+            raise ValueError("axial_radius must satisfy 0 < axial_radius <= 1")
+        polynomial = _real_polynomial_bounds(axis, radius)
         quotient = _quotient_derivative_bounds(axis.sigma0)
-        g_bounds = _g_derivative_bounds(axis)
-        g_value_upper = 2 * g_bounds[0]
-        u0_c3 = _u0_c3_bound(axis)
+        g_bounds = _g_derivative_bounds(axis, radius)
+        diameter_path_length = 2 * radius
+        z0_abs = abs(_mp(axis.Z0))
+        anchor_path_length = radius + z0_abs
+        # If Z0 lies outside the compact interval, the path from the anchor
+        # to an interval endpoint crosses radii larger than ``axial_radius``.
+        # Enclose that path with a separate derivative radius.
+        anchor_derivative_radius = max(radius, z0_abs)
+        anchor_g_bound = _g_derivative_bounds(axis, anchor_derivative_radius)[0]
+        g_anchor_value_upper = anchor_path_length * anchor_g_bound
+        # Preserve the old [-1, 1] value (2 * sup|G'|) whenever it is the
+        # larger safe path; if Z0 lies outside the compact interval, the
+        # anchor path automatically takes over.
+        g_value_upper = max(
+            diameter_path_length * g_bounds[0],
+            g_anchor_value_upper,
+        )
+        u0_c3 = _u0_c3_bound(axis, radius)
         A_axis_upper = mp.mpf(10) + axis.Lambda * sum(g_bounds) + u0_c3
+        endpoint_values = None
+        if include_endpoint_values:
+            if radius == 1:
+                # Keep the legacy JSON keys for the default calculation.
+                endpoint_values = {"-1": axis.G(-1), "1": axis.G(1)}
+            else:
+                endpoint_values = {
+                    _nstr(-radius): axis.G(-radius),
+                    _nstr(radius): axis.G(radius),
+                }
         return {
             "source": SOURCE,
             "source_version": SOURCE_VERSION,
-            "interval": (mp.mpf(-1), mp.mpf(1)),
+            "interval": (-radius, radius),
+            "axial_radius": radius,
             "j": axis.j,
             "Lambda": axis.Lambda,
             "delta": axis.delta,
@@ -157,9 +225,17 @@ def axis_norm_bounds(axis: Any) -> dict[str, Any]:
             "quotient_derivative_bounds": quotient,
             "G_derivative_bounds": g_bounds,
             "G_value_upper": g_value_upper,
-            "G_actual_endpoint_values": {"-1": axis.G(-1), "1": axis.G(1)},
+            "G_anchor_path_length": anchor_path_length,
+            "G_anchor_derivative_radius": anchor_derivative_radius,
+            "G_anchor_derivative_bound": anchor_g_bound,
+            "G_anchor_value_upper": g_anchor_value_upper,
+            "G_diameter_path_length": diameter_path_length,
+            "G_actual_endpoint_values": endpoint_values,
+            "endpoint_values_evaluated": bool(include_endpoint_values),
             "U0z_C3_sum_bound": u0_c3,
             "A_axis_upper": A_axis_upper,
+            "scalar_rounding_enclosed": False,
+            "source_error_enclosed": False,
             "scope": "real interval axis contribution only; no mixed radial, complex A_Omega, K, cone, PDE, or full-core certificate",
         }
 
@@ -168,9 +244,20 @@ def _direct_gradient(axis: Any, z: mp.mpf) -> mp.mpf:
     return axis.L(z) * axis.H0(z) / (axis.H0(z) ** 2 + axis.sigma0 ** 2)
 
 
-def _derivative_checks(axis: Any) -> list[dict[str, Any]]:
-    bounds = _g_derivative_bounds(axis)
-    points = [mp.mpf("-.8"), mp.mpf("-.2"), axis.Z0, mp.mpf(".2"), mp.mpf(".8")]
+def _derivative_checks(axis: Any, axial_radius: Any = 1) -> list[dict[str, Any]]:
+    radius = _mp(axial_radius)
+    bounds = _g_derivative_bounds(axis, radius)
+    if radius == 1:
+        points = [mp.mpf("-.8"), mp.mpf("-.2"), axis.Z0, mp.mpf(".2"), mp.mpf(".8")]
+    else:
+        points = [
+            -mp.mpf(".8") * radius,
+            -mp.mpf(".2") * radius,
+            mp.mpf(".2") * radius,
+            mp.mpf(".8") * radius,
+        ]
+        if abs(_mp(axis.Z0)) <= radius:
+            points.insert(2, _mp(axis.Z0))
     rows = []
     with mp.workdps(axis.precision):
         for point in points:
