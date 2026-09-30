@@ -28,10 +28,11 @@ In the installed fixture, nominal amplitude and both coefficients are contained
 at 1024 and 4096 panels. Relative coefficient widths decrease from approximately
 10.36% to 2.49%. Pulse energy now uses independent positive interval bounds,
 including the nested startup primitive. The relative amplitude width is about
-`2.05e-9` at 4096 panels. This is still **conditional on fixed incoming rows
-and energy target**, not a measurement of total amplitude accuracy. These two
-inputs are exact stored dyadic parameters for this conditional calculation;
-their originating numerical errors are not bounded. The low-level `solve_atoms`
+`2.05e-9` at 4096 panels. Reference axial mass and squared-velocity uncertainty
+are now propagated into the first matching row and energy target. This is still
+**conditional on mixed angular, swirl, inner-offset and future-energy data**,
+not a measurement of total amplitude accuracy. Their originating numerical
+errors are not bounded. The low-level `solve_atoms`
 API also accepts caller-supplied input intervals, including a supplied Kp interval.
 
 Fixed materialized coefficient residual ranges include zero for both rows.
@@ -43,6 +44,19 @@ Run `python experiments/root_st073/lei_ren_part1_paper_continuous_solve_enclosur
 The JSON saves exact dyadic endpoints, conditional parameter scope, coefficient
 widths and fixed-coefficient balance ranges. Decimal displays are approximate.
 
-Next: enclose continuous incoming cutoff integrals and energy target, tighten
+For the installed schedule `yp=12+exp(Md)-60*log(mu)`, the additive transport is
+
+```
+base1_iv = stored_base1 + exp(log_scale1-yp-log_Ep)*(Iz_iv-stored_Iz)
+target_iv = stored_target - mu*exp(-yp-2*log_Ep)*(Iuz2_iv-stored_Iuz2).
+```
+
+This keeps the actual stored inner offsets once, without reconstructing huge
+absolute radial logarithms. Row 2 remains conditional on the mixed angular
+integral. Normalization logs and mu are declared parameters, not certificates
+of their originating source uncertainty. `Md=.5` is the installed fixture;
+other callers must explicitly pass the matching schedule's Md.
+
+Next: enclose the remaining angular/inner/future inputs and energy target, tighten
 correlated pulse/basis bounds, then propagate genuine input intervals before
 claiming complete mean and energy closure.

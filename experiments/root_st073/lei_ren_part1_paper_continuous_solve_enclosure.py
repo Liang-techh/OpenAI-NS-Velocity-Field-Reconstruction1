@@ -68,12 +68,32 @@ class ContinuousSolveEnclosure(ContinuousBasisEnclosure):
             K=K,c0=c0,cp=cp,quadratic=[A,B,C],discriminant=D,
             amplitude=amplitude,coefficients=coefficients)
 
-    def report(self,runtime,*,panels=4096):
+    def report(self,runtime,*,panels=4096,Md='.5'):
         from lei_ren_part1_paper_continuous_pulse_energy_enclosure import ContinuousPulseEnergyEnclosure
+        from lei_ren_part1_paper_continuous_incoming_enclosure import ContinuousIncomingEnclosure
         energy=ContinuousPulseEnergyEnclosure(precision=self.precision)
         energy_atoms=energy.atoms(panels=panels)
-        atoms=self.solve_atoms(runtime.solve_receipt['input_mu'],runtime.base,
-            runtime.target,energy_atoms['total'],panels=panels)
+        incoming=runtime.seeded['incoming']
+        reference=ContinuousIncomingEnclosure(precision=self.precision).row_atoms(
+            str(incoming['Z']),Md,panels=panels)
+        v=self.iv;mu=v.mpf(runtime.solve_receipt['input_mu'])
+        # Actual source schedule: Td=exp(Md)+10, yw=2+Td,
+        # Tw=-60 log(mu), yp=yw+Tw. Avoid huge absolute log_Rp subtraction.
+        yp=12+v.exp(v.mpf(Md))-60*v.log(mu)
+        ep=v.mpf(incoming['log_Ep'])
+        scale1=v.mpf(incoming['row_normalization']['log_scale1'])
+        mass_scale=v.exp(-yp-ep+scale1)
+        energy_scale=mu*v.exp(-yp-2*ep)
+        dimensions=incoming['dimensionless_integrals']
+        mass_change=mass_scale*(reference['I_z']-v.mpf(dimensions['I_z']))
+        # Preserve other contributions and the inner offset exactly as stored.
+        # Only the reference axial integral perturbations are propagated here.
+        base=[self.declared_value(runtime.base[0])+mass_change,
+              self.declared_value(runtime.base[1])]
+        target=self.declared_value(runtime.target)+energy_scale*(
+            v.mpf(dimensions['I_uz2'])-reference['I_uz2'])
+        atoms=self.solve_atoms(runtime.solve_receipt['input_mu'],base,
+            target,energy_atoms['total'],panels=panels)
         def contains(interval,point):
             lo,hi=self.bounds(interval)
             return bool(lo<=point<=hi)
@@ -93,15 +113,22 @@ class ContinuousSolveEnclosure(ContinuousBasisEnclosure):
             amplitude=self.describe(atoms['amplitude']),
             coefficients=[self.describe(c) for c in atoms['coefficients']],
             relative_widths=dict(amplitude=relative_width(atoms['amplitude']),
-                coefficients=[relative_width(c) for c in atoms['coefficients']]),
+                coefficients=[relative_width(c) for c in atoms['coefficients']],
+                normalized_base1=relative_width(atoms['base'][0]),
+                energy_target=relative_width(atoms['target'])),
             nominal_containment=dict(amplitude=contains(atoms['amplitude'],runtime.a),
                 coefficients=[contains(x,y) for x,y in zip(atoms['coefficients'],runtime.c)]),
             quadratic=[self.describe(x) for x in atoms['quadratic']],
             pulse_energy=self.describe(atoms['Kp']),
             nominal_pulse_energy_contained=contains(atoms['Kp'],runtime.Kp),
+            incoming_reference={key:self.describe(reference[key]) for key in ('I_z','I_uz2','I_z_Z','I_uz2_Z')},
+            normalized_base_intervals=[self.describe(x) for x in atoms['base']],
+            energy_target_interval=self.describe(atoms['target']),
+            reference_axial_uncertainty_propagated=True,
+            reference_axial_parameters=dict(Z=str(incoming['Z']),Md=str(Md)),
             fixed_materialized_row_balances=[self.describe(x) for x in balances],
             fixed_materialized_row_zero_compatible=[contains(x,0) for x in balances],
-            input_parameter_scope='Exact stored dyadic incoming rows and energy target; their source uncertainty is NOT enclosed. Mu is the declared decimal receipt value. Kp is independently enclosed.',
+            input_parameter_scope='Reference axial Iz and Iuz2 quadrature errors propagated as additive perturbations of current stored inputs. Mu, Md and normalization logs are declared real parameters. Inner offsets, mixed angular row, swirl and future energy remain conditional stored contributions. Kp is independently enclosed.',
             basis_and_pulse_quadrature_enclosed=True,
             inherited_input_uncertainty_enclosed=False,pulse_energy_uncertainty_enclosed=True,
             materialized_coefficients_replaced=False,global_mean_closed=False,

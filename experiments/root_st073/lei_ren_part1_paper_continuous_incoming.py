@@ -403,6 +403,17 @@ class ContinuousIncomingAxial:
                 "I_uz2": self.I_uz2(terminal, Z, order=order),
             }
 
+    def full_incoming_enclosure(self,Z,*,panels=4096,precision=80):
+        """Optional full-reference interval bounds with explicit source scope."""
+        from lei_ren_part1_paper_continuous_incoming_enclosure import ContinuousIncomingEnclosure
+        with mp.workdps(max(self.precision+20,precision+20)):
+            # Serialized parameters are declared reals for the bounds, not
+            # certificates of their original schedule or Z uncertainty.
+            md=mp.nstr(self.Md,self.precision+20)
+            z=mp.nstr(_as_mpf(Z),self.precision+20)
+        return ContinuousIncomingEnclosure(precision=precision).report(
+            z,md,panels=panels,nominal=self)
+
     incoming_rows = full_incoming_rows
     full_rows = full_incoming_rows
 

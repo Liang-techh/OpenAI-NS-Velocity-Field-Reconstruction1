@@ -1,3 +1,9 @@
+## 2026-09-30: reference incoming axial intervals installed in coefficient report
+
+Completed continuous_incoming_enclosure.py with full-support bounds and analytic reference Z derivatives. At Md=.5 and Z=.3, 4096-panel relative widths are about 2.221e-4 for Iz and 2.156e-4 for Iuz2; the installed values are contained. The incoming provider exposes full_incoming_enclosure. The coefficient report propagates mass uncertainty into base1 and squared-velocity uncertainty with the correct negative sign into the target, preserving actual stored inner offsets once. Nominal amplitude and coefficients remain contained. Energy-target relative interval width from this component alone is about 9.49e-43; coefficient width remains pulse-dominated at about 2.49 percent.
+
+Conditional gaps remain: mixed angular row2, inherited swirl energy, inner offsets, future heat energy, normalization-source uncertainty and their Z jets. Reference axial derivative intervals are available but not yet propagated through coefficient tangents. Next tasks: enclose the mixed angular primitive and its factor; enclose inner moment offsets and future energy; transport each source separately into base/target intervals and tangent equations; tighten pulse range bounds. No global mean, finite-energy, stress or scale-recursion certification.
+
 ## 2026-09-30: pulse energy uncertainty now propagated
 
 Completed continuous_pulse_energy_enclosure.py, JSON and proof notes. Startup uses monotonic switch bounds to enclose its nested primitive; plateau is analytic; cutoff uses outward positive rectangles. Entire support is covered. At 4096 panels Kp relative width is about 4.10e-9 and the installed nominal value is contained. The coefficient interval solver now consumes this Kp range; amplitude relative width is about 2.05e-9, coefficients about 2.49 percent. Incoming rows and target remain fixed conditional inputs. No coefficients or terminal residuals were overwritten.

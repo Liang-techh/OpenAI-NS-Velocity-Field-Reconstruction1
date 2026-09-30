@@ -1,0 +1,183 @@
+{
+  "method": "Analytic plateau and outward transformed rectangles with monotone cutoff bounds",
+  "reports": [
+    {
+      "Z": ".3",
+      "Md": ".5",
+      "panels": 1024,
+      "interval_precision": 80,
+      "rows": {
+        "I_z": {
+          "lower": {
+            "sign": 0,
+            "mantissa": "32131479895779876104858773890516421520679903384430040308270264035047006465351025",
+            "binary_exponent": -262,
+            "decimal_display": "4.335826192259117012506925818479233181707"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "514560554342275504900649209377025995278882361917245333947926201317602673763810319",
+            "binary_exponent": -266,
+            "decimal_display": "4.339679374123755763049985216316655166333"
+          },
+          "width_display": "0.003853181864638750543059397837421984626834",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        },
+        "I_uz2": {
+          "lower": {
+            "sign": 0,
+            "mantissa": "151318498604800214947523683519520146226295718938693117532437420287647086345356753",
+            "binary_exponent": -264,
+            "decimal_display": "5.104734607245617997272658492350836371349"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "605796205895006373890270555032684459857575490546100959712417109460171850930461589",
+            "binary_exponent": -266,
+            "decimal_display": "5.109138812642552610783158932417278355092"
+          },
+          "width_display": "0.004404205396934613510500440066441983743034",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        },
+        "I_z_Z": {
+          "lower": {
+            "sign": 0,
+            "mantissa": "856839463887463362796233970413771240551464090251467741553873707601253505742694001",
+            "binary_exponent": -265,
+            "decimal_display": "14.45275397419705670835641939493077727236"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "857600923903792508167748682295043325464803936528742223246543668862671122939683863",
+            "binary_exponent": -265,
+            "decimal_display": "14.46559791374585254349995072105551722111"
+          },
+          "width_display": "0.01284393954879583514353132612473994875611",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        },
+        "I_uz2_Z": {
+          "lower": {
+            "sign": 0,
+            "mantissa": "504394995349334049825078945065067154087652396462310391774791400958823621151189177",
+            "binary_exponent": -263,
+            "decimal_display": "34.03156404830411998181772328233890914233"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "252415085789585989120946064596951858273989787727542066546840462275071604554358995",
+            "binary_exponent": -262,
+            "decimal_display": "34.06092541761701740522105954944852236728"
+          },
+          "width_display": "0.02936136931289742340333626710961322495356",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        }
+      },
+      "reference_axial_quadrature_enclosed": true,
+      "full_support_covered": true,
+      "omitted_support_bound": "0",
+      "parameter_scope": "Declared real decimal Z and Md; angular, source schedule and inner-seed uncertainty are not enclosed",
+      "mixed_angular_row_enclosed": false,
+      "inner_offsets_enclosed": false,
+      "global_mean_closed": false,
+      "finite_energy_certified": false,
+      "scale_recursion_certified": false,
+      "relative_widths": {
+        "I_z": "0.000888684576775230027593416613737",
+        "I_uz2": "0.000862768730559140306506247742527"
+      },
+      "nominal_containment": {
+        "I_z": true,
+        "I_uz2": true
+      }
+    },
+    {
+      "Z": ".3",
+      "Md": ".5",
+      "panels": 4096,
+      "interval_precision": 80,
+      "rows": {
+        "I_z": {
+          "lower": {
+            "sign": 0,
+            "mantissa": "514274852297547662141337993308399000270840475263152612629520692397850964374176309",
+            "binary_exponent": -266,
+            "decimal_display": "4.337269832117110467939111785140546011548"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "514389071260813036096828792940477185644936993932928840653790148344640982196227621",
+            "binary_exponent": -266,
+            "decimal_display": "4.338233127252801786339427438560755969291"
+          },
+          "width_display": "0.0009632951356913184003156534202099577426525",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        },
+        "I_uz2": {
+          "lower": {
+            "sign": 0,
+            "mantissa": "605469646765787196600397627119950996215436657944663550025804628427518525181831269",
+            "binary_exponent": -266,
+            "decimal_display": "5.106384691858234561595271922206761369432"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "605600199590058529157878407671097682485930949578718185382590700298613540900924083",
+            "binary_exponent": -266,
+            "decimal_display": "5.107485742830647504010745245684457880152"
+          },
+          "width_display": "0.001101050972412942415473323477696510719641",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        },
+        "I_z_Z": {
+          "lower": {
+            "sign": 0,
+            "mantissa": "428562376914623051784448327756999166892367062719293843857933910331542470311813591",
+            "binary_exponent": -264,
+            "decimal_display": "14.45756610705703489313037261713515337183"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "428657559384010863414023994117064321370780828277440700544825123620534151830189683",
+            "binary_exponent": -264,
+            "decimal_display": "14.46077709084267262113142479520251989764"
+          },
+          "width_display": "0.003210983785637728001052178067366525808842",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        },
+        "I_uz2_Z": {
+          "lower": {
+            "sign": 0,
+            "mantissa": "504558038971489330500331355933292496846197214953886291688170523689598770984859391",
+            "binary_exponent": -263,
+            "decimal_display": "34.04256461238823041063514614804507579621"
+          },
+          "upper": {
+            "sign": 0,
+            "mantissa": "126166708247928860241224668264812017184568947828899621954706395895544487687692517",
+            "binary_exponent": -261,
+            "decimal_display": "34.04990495220431669340496830456305253434"
+          },
+          "width_display": "0.007340339816086282769822156517976738130938",
+          "exact_endpoint_definition": "(-1)^sign * mantissa * 2^binary_exponent"
+        }
+      },
+      "reference_axial_quadrature_enclosed": true,
+      "full_support_covered": true,
+      "omitted_support_bound": "0",
+      "parameter_scope": "Declared real decimal Z and Md; angular, source schedule and inner-seed uncertainty are not enclosed",
+      "mixed_angular_row_enclosed": false,
+      "inner_offsets_enclosed": false,
+      "global_mean_closed": false,
+      "finite_energy_certified": false,
+      "scale_recursion_certified": false,
+      "relative_widths": {
+        "I_z": "0.000222097119380998775438192723545",
+        "I_uz2": "0.000215622409758608570754864024536"
+      },
+      "nominal_containment": {
+        "I_z": true,
+        "I_uz2": true
+      }
+    }
+  ]
+}
