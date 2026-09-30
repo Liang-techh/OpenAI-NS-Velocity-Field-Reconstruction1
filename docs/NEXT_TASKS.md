@@ -1,3 +1,11 @@
+## 2026-09-30 next: cancellation-resistant five functional defects
+
+1. Use PressureWidthAxialRestore phase3 and all five moment_parts (inner_seed, reshape, reference, axial_restore, restored_reference), first Z and raw quadratic parts.
+2. Derive centered Section10 defects from interval integrands and reference differences. Retain log-scaled flat reshape contributions and unresolved quadrature/tail errors; never infer closure from rounded total subtraction.
+3. Check quantitative defect smallness and inherited analytic pressure compatibility as functions of Z before the five-bump solve on [Rm,2Rm]. Preserve true axis P0.
+4. Solve coupled axial/angular repairs with their quadratic interaction; then join outer data and assess finite energy, exact heat, uniform C2/stress cone and independent Cartesian equations.
+5. Only after those leading-background conditions hold advance n-dependent temporal recursion and oscillatory correction.
+
 ## 2026-09-30 next: component axial restoration and functional repair
 
 1. Consume PressureWidthReferenceExtension at extension_length, preserving moment_parts/raw_quadratic_parts and first Z derivatives.

@@ -373,6 +373,8 @@ class PressureWidthReferenceExtension:
                     "reshape": reshape_Z_public,
                     "reference": extension_Z_public,
                 },
+                "raw_quadratic_integrals": raw_public,
+                "raw_quadratic_integrals_Z": raw_Z_public,
                 "raw_quadratic_parts": {
                     "inner_seed": raw_inner_public,
                     "reshape": raw_reshape_public,
