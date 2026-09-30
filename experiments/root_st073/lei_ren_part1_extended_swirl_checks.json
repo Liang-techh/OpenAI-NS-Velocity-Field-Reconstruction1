@@ -1,0 +1,700 @@
+{
+  "source": "https://arxiv.org/html/2609.35406v1",
+  "scope": "actual angular-matched swirl with old finite core; common-pressure iteration and axial repair remain open",
+  "R_core": 0.005,
+  "R_anchor": 0.01,
+  "anchor_power": 0.005,
+  "collar": {
+    "source": "https://arxiv.org/html/2609.35406v1",
+    "source_version": "2609.35406v1",
+    "source_sections": "Sections 3.2, 3.4 and 5, equations (5.12)-(5.24)",
+    "status": "finite exact-heat inward collar with ODE-integrated stress",
+    "h": 0.001,
+    "delta": 0.002,
+    "c_inf": 0.1,
+    "R_b": 2048.0,
+    "ell": 0.5,
+    "collar_inner_radius": 1242.1747910914733,
+    "epsilon": 2e-05,
+    "laguerre_order": 64,
+    "taylor_order": 12,
+    "taylor_xi_max": 0.003,
+    "heat_mapping": "delta=2h; F_heat=HeatExterior.profile_E/sqrt(2R)",
+    "stress_source": "Section 3.2 Ntheta,Nz and radial ODE (3.13)",
+    "global_moment_matching": false,
+    "full_background": false,
+    "pde_certified": false
+  },
+  "Z_count": 33,
+  "rows": [
+    {
+      "Z": -1.0,
+      "shift": -4.40109531996158,
+      "cross_radius": 527.34566128521,
+      "angular_target": 174.59750697201764,
+      "bracket_defects": [
+        24.373956278975783,
+        -37.00818043660021
+      ],
+      "angular_solve_defect": 0.0,
+      "angular_holdout_defect": -1.6200374375330284e-12,
+      "pressure_integral_inner": 1.9345722171547503e-05,
+      "new_axis_pressure": -2.330605062501554e-05,
+      "old_axis_pressure": -0.03684421813157848,
+      "required_inner_axial_energy": 2.475167820832022,
+      "common_pressure_core_rebuilt": false,
+      "whole_cone_validated": false,
+      "minimum_F_sampled": 3.426444643650089e-05,
+      "maximum_F_R_sampled": -1.1964330949559402e-09
+    },
+    {
+      "Z": -0.9375,
+      "shift": 1.4157653568138464,
+      "cross_radius": 249.784302149517,
+      "angular_target": 174.63154830298876,
+      "bracket_defects": [
+        223.7395239258577,
+        -17.541027823520494
+      ],
+      "angular_solve_defect": 0.0,
+      "angular_holdout_defect": -8.810729923425242e-13,
+      "pressure_integral_inner": 4.31098093489727e-05,
+      "new_axis_pressure": -4.7070137028849796e-05,
+      "old_axis_pressure": -0.036807531629579456,
+      "required_inner_axial_energy": 2.4781256075874953,
+      "common_pressure_core_rebuilt": false,
+      "whole_cone_validated": false,
+      "minimum_F_sampled": 3.426444238096598e-05,
+      "maximum_F_R_sampled": -5.117713114867012e-09
+    },
+    {
+      "Z": -0.875,
+      "shift": 2.905802397665246,
+      "cross_radius": 146.28739548894276,
+      "angular_target": 174.66339340704232,
+      "bracket_defects": [
+        478.2298828084239,
+        -10.301201208632563
+      ],
+      "angular_solve_defect": -2.842170943040401e-14,
+      "angular_holdout_defect": -7.389644451905042e-13,
+      "pressure_integral_inner": 7.542821114333532e-05,
+      "new_axis_pressure": -7.938853809971293e-05,
+      "old_axis_pressure": -0.0367901285664065,
+      "required_inner_axial_energy": 2.480549383169728,
+      "common_pressure_core_rebuilt": false,
+      "whole_cone_validated": false,
+      "minimum_F_sampled": 3.4264438587947646e-05,
+      "maximum_F_R_sampled": -1.46518427190421e-08
+    },
+    {
+      "Z": -0.8125,
+      "shift": 3.839819005027328,
+      "cross_radius": 94.87784474495795,
+      "angular_target": 174.6930422865871,
+      "bracket_defects": [
+        799.0406388198306,
+        -6.721171850249192
+      ],
+      "angular_solve_defect": -9.43600753089413e-12,
+      "angular_holdout_defect": -1.014655026665423e-11,
+      "pressure_integral_inner": 0.00011801496641454958,
+      "new_axis_pressure": -0.00012197529269748254,
+      "old_axis_pressure": -0.036779626574389095,
+      "required_inner_axial_energy": 2.4826061330727582,
+      "common_pressure_core_rebuilt": false,
+      "whole_cone_validated": false,
+      "minimum_F_sampled": 3.426443505727154e-05,
+      "maximum_F_R_sampled": -1.6747406307069284e-08
+    },
+    {
+      "Z": -0.75,
+      "shift": 4.54833332907547,
+      "cross_radius": 64.92759976188034,
+      "angular_target": 174.72049494386414,
+      "bracket_defects": [
+        1207.766914968749,
+        -4.64778637936422
+      ],
+      "angular_solve_defect": -1.0629719326971099e-11,
+      "angular_holdout_defect": -1.1397105481592007e-11,
+      "pressure_integral_inner": 0.00017427507452927776,
+      "new_axis_pressure": -0.0001782354001887869,
+      "old_axis_pressure": -0.03677343359284895,
+      "required_inner_axial_energy": 2.4844581697861092,
+      "common_pressure_core_rebuilt": false,
+      "whole_cone_validated": false,
+      "minimum_F_sampled": 3.426443178877554e-05,
+      "maximum_F_R_sampled": -1.6747403114794197e-08
+    },
+    {
+      "Z": -0.6875,
+      "shift": 5.137415540215665,
+      "cross_radius": 45.72397762795105,
+      "angular_target": 174.7457513809465,
+      "bracket_defects": [
+        1737.4613202027062,
+        -3.327715278927002
+      ],
+      "angular_solve_defect": -2.4158453015843406e-12,
+      "angular_holdout_defect": -3.353761712787673e-12,
+      "pressure_integral_inner": 0.00024960949381973264,
+      "new_axis_pressure": -0.0002535698189058073,
+      "old_axis_pressure": -0.0367707370786348,
+      "required_inner_axial_energy": 2.486206402397847,
+      "common_pressure_core_rebuilt": false,
+      "whole_cone_validated": false,
+      "minimum_F_sampled": 3.426442878230966e-05,
+      "maximum_F_R_sampled": -1.6747400178707014e-08
+    },
+    {
+      "Z": -0.625,
+      "shift": 5.6538746093035215,
+      "cross_radius": 32.627650115901154,
+      "angular_target": 174.76881159974013,
+      "bracket_defects": [
+        2438.942769373883,
+        -2.434691822335708
+      ],
+      "angular_solve_defect": 0.0,
+      "angular_holdout_defect": -9.379164112033322e-13,
+      "pressure_integral_inner": 0.00035255971692678965,
+      "new_axis_pressure": -0.0003565200414893902,
+      "old_axis_pressure": -0.03677151792640898,
+      "required_inner_axial_energy": 2.487920805363848,
+      "common_pressure_core_rebuilt": false,
+      "whole_cone_validated": false,
+      "minimum_F_sampled": 3.426442603773605e-05,
+      "maximum_F_R_sampled": -1.674739749860579e-08
+    },
+    {
+      "Z": -0.5625,
+      "shift": 6.12137153509321,
+      "cross_radius": 23.32433990105786,
+      "angular_target": 174.78967560198384,
+      "bracket_defects": [
+        3392.9246055374624,
+        -1.8059673399390306
+      ],
+      "angular_solve_defect": -2.842170943040401e-14,
+      "angular_holdout_defect": -1.1084466677857563e-12,
+      "pressure_integral_inner": 0.0004970734057762711,
+      "new_axis_pressure": -0.0005010337298653316,
+      "old_axis_pressure": -0.03677640438378415,
+      "required_inner_axial_energy": 2.489658704199255,
+      "common_pressure_core_rebuilt": false,
+      "whole_cone_validated": false,
+      "minimum_F_sampled": 3.426442355492895e-05,
+      "maximum_F_R_sampled": -1.6747395074306347e-08
+    },
+    {
+      "Z": -0.5,
+      "shift": 6.551865293863112,
+      "cross_radius": 16.538606088865862,
+      "angular_target": 174.80834338925018,
+      "bracket_defects": [
+        4733.372465202326,
+        -1.3518543079391065
+      ],
+      "angular_solve_defect": -1.7053025658242404e-13,
+      "angular_holdout_defect": -1.4779288903810084e-12,
+      "pressure_integral_inner": 0.000707005989587524,
+      "new_axis_pressure": -0.0007109663132529548,
+      "old_axis_pressure": -0.03678689877415256,
+      "required_inner_axial_energy": 2.491476099168829,
+      "common_pressure_core_rebuilt": false,
+      "whole_cone_validated": false,
+      "minimum_F_sampled": 3.426442133377467e-05,
+      "maximum_F_R_sampled": -1.6747392905642208e-08
+    },
+    {
+      "Z": -0.4375,
+      "shift": 6.949853285776449,
+      "cross_radius": 11.513811828056886,
+      "angular_target": 174.82481496294506,
+      "bracket_defects": [
+        6695.195925907216,
+        -1.0191483131984285
+      ],
+      "angular_solve_defect": -9.663381206337363e-13,
+      "angular_holdout_defect": -2.1316282072803006e-12,
+      "pressure_integral_inner": 0.0010256296746968911,
+      "new_axis_pressure": -0.001029589997988581,
+      "old_axis_pressure": -0.03680608836807978,
+      "required_inner_axial_energy": 2.4934371922841168,
+      "common_pressure_core_rebuilt": false,
+      "whole_cone_validated": false,
+      "minimum_F_sampled": 3.426441937417154e-05,
+      "maximum_F_R_sampled": -1.6747390992464563e-08
+    },
+    {
+      "Z": -0.375,
+      "shift": 7.31422885127541,
+      "cross_radius": 7.775103183761531,
+      "angular_target": 174.83909032430856,
+      "bracket_defects": [
+        9719.549464578533,
+        -0.7744542690049343
+      ],
+      "angular_solve_defect": -5.684341886080802e-14,
+      "angular_holdout_defect": -1.6768808563938364e-12,
+      "pressure_integral_inner": 0.0015374398910081503,
+      "new_axis_pressure": -0.0015414002139759692,
+      "old_axis_pressure": -0.03684048159429987,
+      "required_inner_axial_energy": 2.4956256307775253,
+      "common_pressure_core_rebuilt": false,
+      "whole_cone_validated": false,
+      "minimum_F_sampled": 3.4264417676029914e-05,
+      "maximum_F_R_sampled": -1.6747389334642216e-08
+    },
+    {
+      "Z": -0.3125,
+      "shift": 7.640309094567935,
+      "cross_radius": 5.010978466294601,
+      "angular_target": 174.85116947441477,
+      "bracket_defects": [
+        14710.350014314097,
+        -0.5958526486458879
+      ],
+      "angular_solve_defect": 5.684341886080802e-14,
+      "angular_holdout_defect": -1.4495071809506044e-12,
+      "pressure_integral_inner": 0.002423577101777062,
+      "new_axis_pressure": -0.002427537424470864,
+      "old_axis_pressure": -0.036905210488451,
+      "required_inner_axial_energy": 2.4981610085056043,
+      "common_pressure_core_rebuilt": false,
+      "whole_cone_validated": false,
+      "minimum_F_sampled": 3.426441623927216e-05,
+      "maximum_F_R_sampled": -1.6747387932061544e-08
+    },
+    {
+      "Z": -0.25,
+      "shift": 7.925144376561394,
+      "cross_radius": 3.0095251610183253,
+      "angular_target": 174.86105241417238,
+      "bracket_defects": [
+        23741.840139202144,
+        -0.46840821352981266
+      ],
+      "angular_solve_defect": 5.400124791776761e-13,
+      "angular_holdout_defect": -1.2789769243681803e-12,
+      "pressure_integral_inner": 0.004122154693205442,
+      "new_axis_pressure": -0.004126115015675067,
+      "old_axis_pressure": -0.03704150928331493,
+      "required_inner_axial_energy": 2.5012251659842653,
+      "common_pressure_core_rebuilt": false,
+      "whole_cone_validated": false,
+      "minimum_F_sampled": 3.4264415063832584e-05,
+      "maximum_F_R_sampled": -1.6747386784626466e-08
+    },
+    {
+      "Z": -0.1875,
+      "shift": 8.180287442089613,
+      "cross_radius": 1.6216558799628287,
+      "angular_target": 174.86873914432454,
+      "bracket_defects": [
+        42341.4880031802,
+        -0.3815718662123686
+      ],
+      "angular_solve_defect": 8.526512829121202e-14,
+      "angular_holdout_defect": -2.1316282072803006e-12,
+      "pressure_integral_inner": 0.007874859513581946,
+      "new_axis_pressure": -0.007878819835877222,
+      "old_axis_pressure": -0.03739261206386636,
+      "required_inner_axial_energy": 2.5051026181347003,
+      "common_pressure_core_rebuilt": false,
+      "whole_cone_validated": false,
+      "minimum_F_sampled": 3.426441414965748e-05,
+      "maximum_F_R_sampled": -1.67473858922584e-08
+    },
+    {
+      "Z": -0.125,
+      "shift": 8.452950538605021,
+      "cross_radius": 0.7380001756436434,
+      "angular_target": 174.87422966544918,
+      "bracket_defects": [
+        88283.9029667489,
+        -0.3275288753854113
+      ],
+      "angular_solve_defect": -5.968558980384842e-13,
+      "angular_holdout_defect": -2.5579538487363607e-12,
+      "pressure_integral_inner": 0.017984714744400776,
+      "new_axis_pressure": -0.017988675066571525,
+      "old_axis_pressure": -0.03867878886253526,
+      "required_inner_axial_energy": 2.5102165672553705,
+      "common_pressure_core_rebuilt": false,
+      "whole_cone_validated": false,
+      "minimum_F_sampled": 3.426441349670509e-05,
+      "maximum_F_R_sampled": -1.6747385254896253e-08
+    },
+    {
+      "Z": -0.0625,
+      "shift": 8.824781383670304,
+      "cross_radius": 0.2716937916509087,
+      "angular_target": 174.87752397795884,
+      "bracket_defects": [
+        224034.60419321017,
+        -0.29992390430751925
+      ],
+      "angular_solve_defect": 1.4210854715202004e-13,
+      "angular_holdout_defect": 7.105427357601002e-13,
+      "pressure_integral_inner": 0.051162061950146,
+      "new_axis_pressure": -0.05116602227224203,
+      "old_axis_pressure": -0.04660084597693269,
+      "required_inner_axial_energy": 2.516804548993997,
+      "common_pressure_core_rebuilt": false,
+      "whole_cone_validated": false,
+      "minimum_F_sampled": 3.426441310494559e-05,
+      "maximum_F_R_sampled": -1.6747384872496413e-08
+    },
+    {
+      "Z": 0.0,
+      "shift": 9.09517855415012,
+      "cross_radius": 0.14430914423319638,
+      "angular_target": 174.87862208210123,
+      "bracket_defects": [
+        403849.8216561429,
+        -0.29274869019650396
+      ],
+      "angular_solve_defect": -1.7337242752546445e-12,
+      "angular_holdout_defect": -2.1316282072803006e-12,
+      "pressure_integral_inner": 0.09886891001669317,
+      "new_axis_pressure": -0.0988728703387643,
+      "old_axis_pressure": -0.06934342539987223,
+      "required_inner_axial_energy": 2.5209531192998447,
+      "common_pressure_core_rebuilt": false,
+      "whole_cone_validated": false,
+      "minimum_F_sampled": 3.426441297436108e-05,
+      "maximum_F_R_sampled": -1.6747384745032708e-08
+    },
+    {
+      "Z": 0.0625,
+      "shift": 8.763596578155276,
+      "cross_radius": 0.3156352566950527,
+      "angular_target": 174.87752397795884,
+      "bracket_defects": [
+        194835.21619082757,
+        -0.30280546616938864
+      ],
+      "angular_solve_defect": -8.526512829121202e-13,
+      "angular_holdout_defect": -3.552713678800501e-12,
+      "pressure_integral_inner": 0.04375415176396688,
+      "new_axis_pressure": -0.043758112086062916,
+      "old_axis_pressure": -0.044311106879606516,
+      "required_inner_axial_energy": 2.515819926023341,
+      "common_pressure_core_rebuilt": false,
+      "whole_cone_validated": false,
+      "minimum_F_sampled": 3.426441310494559e-05,
+      "maximum_F_R_sampled": -1.6747384872496413e-08
+    },
+    {
+      "Z": 0.125,
+      "shift": 8.407682152913846,
+      "cross_radius": 0.8360994479325278,
+      "angular_target": 174.87422966544918,
+      "bracket_defects": [
+        78583.3169111922,
+        -0.3340971008747431
+      ],
+      "angular_solve_defect": 2.842170943040401e-14,
+      "angular_holdout_defect": -2.2168933355715126e-12,
+      "pressure_integral_inner": 0.015780300970947694,
+      "new_axis_pressure": -0.015784261293118444,
+      "old_axis_pressure": -0.038354389412156645,
+      "required_inner_axial_energy": 2.5094022583353306,
+      "common_pressure_core_rebuilt": false,
+      "whole_cone_validated": false,
+      "minimum_F_sampled": 3.426441349670509e-05,
+      "maximum_F_R_sampled": -1.6747385254896253e-08
+    },
+    {
+      "Z": 0.1875,
+      "shift": 8.141823469743219,
+      "cross_radius": 1.7832944916539617,
+      "angular_target": 174.86873914432454,
+      "bracket_defects": [
+        38743.78528589155,
+        -0.3925383076567641
+      ],
+      "angular_solve_defect": 0.0,
+      "angular_holdout_defect": -2.6147972675971687e-12,
+      "pressure_integral_inner": 0.007129362062090083,
+      "new_axis_pressure": -0.00713332238438536,
+      "old_axis_pressure": -0.03731680289366719,
+      "required_inner_axial_energy": 2.50450223438348,
+      "common_pressure_core_rebuilt": false,
+      "whole_cone_validated": false,
+      "minimum_F_sampled": 3.426441414965748e-05,
+      "maximum_F_R_sampled": -1.67473858922584e-08
+    },
+    {
+      "Z": 0.25,
+      "shift": 7.884832722396689,
+      "cross_radius": 3.2432870076264675,
+      "angular_target": 174.86105241417238,
+      "bracket_defects": [
+        22134.094876063366,
+        -0.4844061134523372
+      ],
+      "angular_solve_defect": 4.831690603168681e-13,
+      "angular_holdout_defect": -2.5011104298755527e-12,
+      "pressure_integral_inner": 0.003813094980518448,
+      "new_axis_pressure": -0.0038170553029880728,
+      "old_axis_pressure": -0.03701513173986903,
+      "required_inner_axial_energy": 2.5007727617366515,
+      "common_pressure_core_rebuilt": false,
+      "whole_cone_validated": false,
+      "minimum_F_sampled": 3.4264415063832584e-05,
+      "maximum_F_R_sampled": -1.6747386784626466e-08
+    },
+    {
+      "Z": 0.3125,
+      "shift": 7.5962389727655735,
+      "cross_radius": 5.325588808165488,
+      "angular_target": 174.85116947441477,
+      "bracket_defects": [
+        13890.926408268546,
+        -0.6175153421611412
+      ],
+      "angular_solve_defect": 2.842170943040401e-14,
+      "angular_holdout_defect": -1.8474111129762605e-12,
+      "pressure_integral_inner": 0.002275444546757858,
+      "new_axis_pressure": -0.0022794048694516596,
+      "old_axis_pressure": -0.03689358857913124,
+      "required_inner_axial_energy": 2.4978084970120484,
+      "common_pressure_core_rebuilt": false,
+      "whole_cone_validated": false,
+      "minimum_F_sampled": 3.426441623927216e-05,
+      "maximum_F_R_sampled": -1.6747387932061544e-08
+    },
+    {
+      "Z": 0.375,
+      "shift": 7.267706037182341,
+      "cross_radius": 8.180048164705093,
+      "angular_target": 174.83909032430856,
+      "bracket_defects": [
+        9263.50605408403,
+        -0.8024636837313892
+      ],
+      "angular_solve_defect": 0.0,
+      "angular_holdout_defect": -1.3358203432289883e-12,
+      "pressure_integral_inner": 0.0014590896021798045,
+      "new_axis_pressure": -0.0014630499251476233,
+      "old_axis_pressure": -0.03683458098393282,
+      "required_inner_axial_energy": 2.4953426394540807,
+      "common_pressure_core_rebuilt": false,
+      "whole_cone_validated": false,
+      "minimum_F_sampled": 3.4264417676029914e-05,
+      "maximum_F_R_sampled": -1.6747389334642216e-08
+    },
+    {
+      "Z": 0.4375,
+      "shift": 6.902848446498706,
+      "cross_radius": 12.019887026828435,
+      "angular_target": 174.82481496294506,
+      "bracket_defects": [
+        6426.124339380692,
+        -1.0542758165671273
+      ],
+      "angular_solve_defect": -2.842170943040401e-14,
+      "angular_holdout_defect": -1.3642420526593924e-12,
+      "pressure_integral_inner": 0.0009813506161066624,
+      "new_axis_pressure": -0.0009853109393983522,
+      "old_axis_pressure": -0.036802817538104465,
+      "required_inner_axial_energy": 2.493204737699441,
+      "common_pressure_core_rebuilt": false,
+      "whole_cone_validated": false,
+      "minimum_F_sampled": 3.426441937417154e-05,
+      "maximum_F_R_sampled": -1.6747390992464563e-08
+    },
+    {
+      "Z": 0.5,
+      "shift": 6.505981168343021,
+      "cross_radius": 17.158542450192282,
+      "angular_target": 174.80834338925018,
+      "bracket_defects": [
+        4568.564511884496,
+        -1.3950059380269977
+      ],
+      "angular_solve_defect": -4.263256414560601e-13,
+      "angular_holdout_defect": -1.6484591469634324e-12,
+      "pressure_integral_inner": 0.0006808830549973235,
+      "new_axis_pressure": -0.0006848433786627542,
+      "old_axis_pressure": -0.03678498272019163,
+      "required_inner_axial_energy": 2.4912821394432973,
+      "common_pressure_core_rebuilt": false,
+      "whole_cone_validated": false,
+      "minimum_F_sampled": 3.426442133377467e-05,
+      "maximum_F_R_sampled": -1.6747392905642208e-08
+    },
+    {
+      "Z": 0.5625,
+      "shift": 6.077648408985277,
+      "cross_radius": 24.07363702985817,
+      "angular_target": 174.78967560198384,
+      "bracket_defects": [
+        3289.8246264918716,
+        -1.8582431217290605
+      ],
+      "angular_solve_defect": -2.842170943040401e-14,
+      "angular_holdout_defect": -1.1084466677857563e-12,
+      "pressure_integral_inner": 0.00048127429754176614,
+      "new_axis_pressure": -0.0004852346216308267,
+      "old_axis_pressure": -0.03677524487108544,
+      "required_inner_axial_energy": 2.4894954317312403,
+      "common_pressure_core_rebuilt": false,
+      "whole_cone_validated": false,
+      "minimum_F_sampled": 3.426442355492895e-05,
+      "maximum_F_R_sampled": -1.6747395074306347e-08
+    },
+    {
+      "Z": 0.625,
+      "shift": 5.612885955183526,
+      "cross_radius": 33.525807535246514,
+      "angular_target": 174.76881159974013,
+      "bracket_defects": [
+        2374.0022055467903,
+        -2.4974727724555237
+      ],
+      "angular_solve_defect": 2.842170943040401e-14,
+      "angular_holdout_defect": -9.663381206337363e-13,
+      "pressure_integral_inner": 0.0003429174381284016,
+      "new_axis_pressure": -0.00034687776269100214,
+      "old_axis_pressure": -0.036770805725730875,
+      "required_inner_axial_energy": 2.4877830581943625,
+      "common_pressure_core_rebuilt": false,
+      "whole_cone_validated": false,
+      "minimum_F_sampled": 3.426442603773605e-05,
+      "maximum_F_R_sampled": -1.674739749860579e-08
+    },
+    {
+      "Z": 0.6875,
+      "shift": 5.099402020318793,
+      "cross_radius": 46.796498577461186,
+      "angular_target": 174.7457513809465,
+      "bracket_defects": [
+        1696.8633882129504,
+        -3.4028044462935156
+      ],
+      "angular_solve_defect": -1.2221335055073723e-12,
+      "angular_holdout_defect": -2.1032064978498966e-12,
+      "pressure_integral_inner": 0.00024376385643410997,
+      "new_axis_pressure": -0.00024772418152018463,
+      "old_axis_pressure": -0.03677030056059276,
+      "required_inner_axial_energy": 2.4860907363411404,
+      "common_pressure_core_rebuilt": false,
+      "whole_cone_validated": false,
+      "minimum_F_sampled": 3.426442878230966e-05,
+      "maximum_F_R_sampled": -1.6747400178707014e-08
+    },
+    {
+      "Z": 0.75,
+      "shift": 4.51328345062226,
+      "cross_radius": 66.20967551698317,
+      "angular_target": 174.72049494386414,
+      "bracket_defects": [
+        1182.9987405190147,
+        -4.737667537650367
+      ],
+      "angular_solve_defect": -3.467448550509289e-12,
+      "angular_holdout_defect": -4.234834705130197e-12,
+      "pressure_integral_inner": 0.00017081842537839813,
+      "new_axis_pressure": -0.00017477875103790727,
+      "old_axis_pressure": -0.036773171565456446,
+      "required_inner_axial_energy": 2.4843623089786746,
+      "common_pressure_core_rebuilt": false,
+      "whole_cone_validated": false,
+      "minimum_F_sampled": 3.426443178877554e-05,
+      "maximum_F_R_sampled": -1.6747403114794197e-08
+    },
+    {
+      "Z": 0.8125,
+      "shift": 3.807428261599144,
+      "cross_radius": 96.42249844096311,
+      "angular_target": 174.6930422865871,
+      "bracket_defects": [
+        784.6255593433458,
+        -6.829580417298359
+      ],
+      "angular_solve_defect": 2.0804691303055733e-11,
+      "angular_holdout_defect": 2.0094148567295633e-11,
+      "pressure_integral_inner": 0.00011606960698709801,
+      "new_axis_pressure": -0.00012002993327003098,
+      "old_axis_pressure": -0.03677947576056112,
+      "required_inner_axial_energy": 2.482528625507583,
+      "common_pressure_core_rebuilt": false,
+      "whole_cone_validated": false,
+      "minimum_F_sampled": 3.426443505727154e-05,
+      "maximum_F_R_sampled": -1.6747406307069284e-08
+    },
+    {
+      "Z": 0.875,
+      "shift": 2.8750416845690507,
+      "cross_radius": 148.18958614809023,
+      "angular_target": 174.66339340704232,
+      "bracket_defects": [
+        470.4909334914205,
+        -10.434813078530652
+      ],
+      "angular_solve_defect": 2.842170943040401e-14,
+      "angular_holdout_defect": -7.105427357601002e-13,
+      "pressure_integral_inner": 7.442369257942683e-05,
+      "new_axis_pressure": -7.838401953580445e-05,
+      "old_axis_pressure": -0.03679004822268473,
+      "required_inner_axial_energy": 2.480489316989474,
+      "common_pressure_core_rebuilt": false,
+      "whole_cone_validated": false,
+      "minimum_F_sampled": 3.4264438587947646e-05,
+      "maximum_F_R_sampled": -1.4242914690470644e-08
+    },
+    {
+      "Z": 0.9375,
+      "shift": 1.3818181342363505,
+      "cross_radius": 252.29201990656952,
+      "angular_target": 174.63154830298876,
+      "bracket_defects": [
+        220.07783103996192,
+        -17.71724627614492
+      ],
+      "angular_solve_defect": 0.0,
+      "angular_holdout_defect": -8.526512829121202e-13,
+      "pressure_integral_inner": 4.265835965316601e-05,
+      "new_axis_pressure": -4.661868733304311e-05,
+      "old_axis_pressure": -0.03680749338368577,
+      "required_inner_axial_energy": 2.478082148583087,
+      "common_pressure_core_rebuilt": false,
+      "whole_cone_validated": false,
+      "minimum_F_sampled": 3.426444238096598e-05,
+      "maximum_F_R_sampled": -5.049926811635327e-09
+    },
+    {
+      "Z": 1.0,
+      "shift": -4.651947994784638,
+      "cross_radius": 531.7740072336529,
+      "angular_target": 174.59750697201764,
+      "bracket_defects": [
+        22.821155986304575,
+        -37.319218394651955
+      ],
+      "angular_solve_defect": 5.400124791776761e-13,
+      "angular_holdout_defect": -1.0800249583553523e-12,
+      "pressure_integral_inner": 1.9165705122752454e-05,
+      "new_axis_pressure": -2.312603357622049e-05,
+      "old_axis_pressure": -0.03684420207171557,
+      "required_inner_axial_energy": 2.475137953758955,
+      "common_pressure_core_rebuilt": false,
+      "whole_cone_validated": false,
+      "minimum_F_sampled": 3.426444643650089e-05,
+      "maximum_F_R_sampled": -1.1864917954751091e-09
+    }
+  ],
+  "angular_independent_n256_max_defect": 2.0094148567295633e-11,
+  "minimum_positive_swirl_passed": true,
+  "sampled_negative_angular_shear_passed": true,
+  "independent_F_R_max_relative_error": 5.479229706625828e-07,
+  "common_pressure_core_rebuilt": false,
+  "whole_stress_cone_validated": false,
+  "five_moments_closed": false,
+  "recursion_validated": false,
+  "checks_passed": true
+}

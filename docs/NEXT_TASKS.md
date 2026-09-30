@@ -502,3 +502,15 @@ Every new change must be integrated from the latest `main`, preserving newer
 parallel work and the fail-closed provenance gates. Historical PR #5 is an
 integration baseline, not a snapshot to restore. Never force-reset or
 force-push over another agent's work.
+## Current Part I exterior handoff — 2026-09-29
+
+Use `LEI_REN_EXTENDED_EXTERIOR.md` and the actual inward targets in
+`lei_ren_part1_exterior_targets_checks.json`. Prototype boundary: Rb=2048,
+ell=.5, Ra=1242.17479109. The .75 collar is locally implementable but its
+inner boundary fails the conditional core-exit angular budget.
+
+Next construct a shared-pressure outer connection, preserving negative
+angular shear; restore the actual angular, axial, mixed, quadratic and
+pressure moments over Z. The positive quadratic target is about 2.46463.
+Rebuild the regular core under the new pressure before accepting the
+connection. Necessary radius passes are not moment closure or NS recursion.

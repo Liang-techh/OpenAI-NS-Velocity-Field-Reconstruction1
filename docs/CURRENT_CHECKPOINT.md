@@ -1,3 +1,32 @@
+## Extended exterior boundary data — 2026-09-29
+
+The actual heat collar pressure/shear/ODE stress implementation now passes
+finite local cone and boundary-limit checks. The actual extended swirl in
+`lei_ren_part1_extended_swirl.py` closes the angular target at 33 Z points
+with independent integral defect 2.01e-11 and sampled positive F/negative
+F_R. This is not the final stress cone over the whole outer connection.
+Its actual pressure differs from the old core; shared-pressure rebuild is
+the next acceptance step. The axial quadratic repair primitive is also
+implemented, with synthetic independent moment residual below 4.20e-11.
+
+Read `LEI_REN_EXTENDED_EXTERIOR.md`. The 33-point necessary angular radius
+threshold is 999.6394381, with endpoint threshold 499.6662749. Both are
+conditional on the saved core, not sufficient for closure.
+
+Actual source collar moment targets are now transported inward by
+`lei_ren_part1_exterior_targets.py`. Use Rb=2048, ell=.5, Ra=1242.17479109:
+ell=.75 would put the inner boundary below the necessary angular threshold.
+Actual collar targets at Ra pass the angular and endpoint necessary screens
+at all 33 Z points. Independent heat-transfer identities agree within
+8.53e-14; radial moment-density derivatives agree to relative 1.01e-8.
+
+The quadratic target is about +2.46463, so zero axial/mixed moments alone
+do not restore terminal data. Cumulative pressure target remains unset until
+the full new connection supplies a common axis pressure. Next construct the
+extended connection using actual collar jets and these inward targets,
+rebuild the core with its full pressure integral, and restore all five moments.
+NS recursion, whole-background cone and higher-order flatness remain open.
+
 ## Live route after actual moment/field diagnostics — 2026-09-29
 
 Read `LEI_REN_BACKGROUND_FIELD.md` and its retained JSON receipts. The
