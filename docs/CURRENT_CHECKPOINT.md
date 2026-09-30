@@ -1,3 +1,15 @@
+# 2026-09-30: High-order pressure integral error enclosure
+
+Directed interval Taylor algebra and midpoint remainder integration now
+replace low-order subdivision for the first two variable preheat stages.
+Order12 with64 radial panels gives normalized mass error upper bounds
+2.21850e-13 and2.97946e-41 against the retained192-point Gauss values.
+Widths shrink32->64. Analytic flat-edge bounds preserve nonzero startup
+contributions without evaluating singular derivative formulas at endpoints.
+Independent Taylor and switch/primitive checks pass. Remaining variable
+stages and propagation to the common source/five defects are still open.
+See HIGH_ORDER_PREHEAT_INTEGRALS_2026_09_30.md.
+
 # 2026-09-30: Convergent variable-stage integral/error intervals
 
 Directed monotone switch and primitive grids now feed positive radial

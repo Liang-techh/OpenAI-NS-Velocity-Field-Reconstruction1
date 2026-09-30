@@ -1,0 +1,12 @@
+{
+  "independent_switch_derivative_checks": 27,
+  "maximum_scaled_discrepancy": "1.238702412766014300974168429492523748203e-121",
+  "primitive_grid_independent_integral_checks": 3,
+  "primitive_interval_widths": [
+    "2.394426461484742319517335265699107141605e-15",
+    "0.0000000001939276683762875057817781169864883376312",
+    "0.0000000002702683933212669786964990388368518405799"
+  ],
+  "source_certificate": false,
+  "directed_interval_arithmetic": true
+}

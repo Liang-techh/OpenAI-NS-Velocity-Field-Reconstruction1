@@ -1,3 +1,19 @@
+# 2026-09-30: Higher-order pressure error bounds installed
+
+- [x] Implement directed interval Taylor arithmetic and symmetric remainder
+      integration, independently checking derivative and integral formulas.
+- [x] Enclose switch primitive with Taylor panels and analytic flat edges.
+- [x] Enclose actual first two transition mass errors at order12; improve
+      first-stage error from0.00240550 to2.21850e-13 and retain axial budgets.
+- [ ] Extend high-order integration to both steep transitions and variable
+      beta flatten, including uniform first/second axial derivative errors.
+- [ ] Tighten the first-stage bound further to the source accuracy required
+      by the core amplification and relative-flat hierarchy, not a generic tolerance.
+- [ ] Assemble complete pressure error, including terminal normalization,
+      then propagate it through common core/RK/restoration to five defects.
+
+See HIGH_ORDER_PREHEAT_INTEGRALS_2026_09_30.md.
+
 # 2026-09-30: After convergent radial interval integration
 
 - [x] Add directed monotone sigma/J enclosures and O(N) primitive grids.
