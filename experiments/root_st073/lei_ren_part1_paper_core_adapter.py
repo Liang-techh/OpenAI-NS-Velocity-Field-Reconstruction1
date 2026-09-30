@@ -55,7 +55,7 @@ class CorePolynomial:
                     power=i+j+1
                     m['z_theta']+=ui[0]*uj[0]*r**power/power
                     mz['z_theta']+=(ui[1]*uj[0]+ui[0]*uj[1])*r**power/power
-            # Full F² integral, rather than its truncated Taylor pressure.
+            # Full FÃ‚Â² integral, rather than its truncated Taylor pressure.
             a['P']=coefficients['P'][0][0]+m['p']
             a['P_Z']=coefficients['P'][0][1]+mz['p']
             a['P_R']=a['F']**2
@@ -95,7 +95,8 @@ class CorePolynomial:
 
 
 def build_source_core(precision=160,degree=18,Lambda='1e36',*,
-                      j='.02',logC=None,logPstar='14',delta='1e-32'):
+                      j='.02',logC=None,logPstar='14',delta='1e-32',
+                      continuous_pressure=False,pressure_order=192):
     from lei_ren_part1_paper_outer import PaperOuterSchedule
     from lei_ren_part1_paper_corrected_profile import CorrectedSourceProfile
     from lei_ren_part1_paper_axis_pressure_jets import AxisPressureJets
@@ -110,9 +111,19 @@ def build_source_core(precision=160,degree=18,Lambda='1e36',*,
         schedule=PaperOuterSchedule(logPstar=mp.nstr(logP,precision),logRref=mp.nstr(logR,precision),
             delta=mp.nstr(chosen_delta,precision),Md='.5',c_mu='.001',c_delta='.001',c_epsilon='.01')
         profile=CorrectedSourceProfile(schedule=schedule,match_waiting=True,precision=precision)
-        pressure=AxisPressureJets(profile,R_a=4/lam)
+        if continuous_pressure:
+            from lei_ren_part1_paper_continuous_angular_schedule import install_continuous_angular_schedule
+            from lei_ren_part1_paper_continuous_axis_pressure import ContinuousAxisPressureJets
+            # Build the nonlinear inner core with this datum from the start;
+            # never shift a completed field's Z-dependent pressure afterward.
+            # CorrectedSourceProfile may replace the schedule when solving
+            # its waiting length. Install on the actual profile-owned object.
+            install_continuous_angular_schedule(profile.schedule,precision=precision,primitive_precision=100)
+            pressure=ContinuousAxisPressureJets(profile,R_a=4/lam,quadrature_order=pressure_order)
+        else:
+            pressure=AxisPressureJets(profile,R_a=4/lam)
         anchor=pressure.dominant_taylor(0)
-        # AxisPressureJets separates P0/Pstar². Restore physical profile
+        # AxisPressureJets separates P0/PstarÃ‚Â². Restore physical profile
         # units before using the Section 8 nonlinear equations.
         K=mp.exp(2*logP)*mp.mpf(anchor['anchor_K_actual_Z0'])
         axis=RegularCoreAxisJets(j=j,Lambda=lam,logC=chosen_logC,delta=chosen_delta,precision=precision)
@@ -128,6 +139,8 @@ def build_source_core(precision=160,degree=18,Lambda='1e36',*,
                     'logCstar':mp.nstr(chosen_logC,precision),'logPstar':mp.nstr(logP,precision),
                     'delta':mp.nstr(chosen_delta,precision),'logRref':mp.nstr(logR,precision)},
                 'pressure_recomputed_for_shared_parameters':True,
+                'continuous_preflatten_pressure_anchor':continuous_pressure,
+                'post_Rv_pressure_tail_in_axis_jet':False,
                 'source_parameter_regime_certified':False}
 
 

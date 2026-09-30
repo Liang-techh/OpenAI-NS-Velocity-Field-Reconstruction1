@@ -160,7 +160,9 @@ class ContinuousIncomingProfile(ContinuousSeededAxialProfileJets):
     def pressure_moments_jet(self,logR,Z):
         if not hasattr(self,'pressure_moment_provider'):
             from lei_ren_part1_paper_continuous_pressure_moments import ContinuousPressureMoments
-            self.pressure_moment_provider=ContinuousPressureMoments(self,order=self.incoming_order)
+            continuous=getattr(self.seed_source,'continuous_pressure_anchor',False)
+            order=max(self.incoming_order,self.seed_source.axis_pressure_order) if continuous else self.incoming_order
+            self.pressure_moment_provider=ContinuousPressureMoments(self,order=order,mp_nodes=continuous)
         return self.pressure_moment_provider.moments_jet(logR,Z)
 
     def quadratic_moments_jet(self,logR,Z):

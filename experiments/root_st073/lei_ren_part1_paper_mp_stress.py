@@ -8,7 +8,8 @@ import mpmath as mp
 
 def evaluate_mp_stress(logR, Z, delta, *, Utheta, Uz, Utheta_y,
                        Utheta_Z, Uz_y, Uz_Z, moments, moments_Z,
-                       P, P_Z, precision=160, shear_theta=None, shear_z=None):
+                       P, P_Z, precision=160, shear_theta=None, shear_z=None,
+                       include_components=False):
     """y=log R derivatives; return MP inertial, shear and total stress."""
     with mp.workdps(precision):
         R=mp.exp(mp.mpf(str(logR))); z=mp.mpf(str(Z)); dt=mp.mpf(str(delta))
@@ -41,6 +42,22 @@ def evaluate_mp_stress(logR, Z, delta, *, Utheta, Uz, Utheta_y,
         Nz-=mp.sqrt(R/2)/L*(-2*(1+dt)*z*(b*b+p)
             +d*(2*b*bz+pz)-2*z*(2*b*by+a*a/2))
         Nz-=R*Ur_R*b+Ur*by+Ur*b/2
-        return dict(I_theta=Itheta,I_z=Iz,S_theta=Stheta,S_z=Sz,
+        result=dict(I_theta=Itheta,I_z=Iz,S_theta=Stheta,S_z=Sz,
                     T_theta=Itheta+Stheta,T_z=Iz+Sz,U_r=Ur,
                     N_theta=Nt,N_z=Nz)
+        if include_components:
+            Btheta=((1-dt/2)*m['theta']-(1-dt)*z*mz['theta']/2
+                    -d*mz['theta_z']+(2*dt-1)*z*m['theta_z'])
+            result['components']=dict(
+                theta_transport=a*transport/(L*root),
+                theta_mean=((1-dt/2)*m['theta']-(1-dt)*z*mz['theta']/2)/(2*L*R),
+                theta_mixed=(-d*mz['theta_z']+(2*dt-1)*z*m['theta_z'])/(2*L*R),
+                z_transport=transport*b/(L*root),
+                z_linear=(1-dt)*(m['z']-z*mz['z'])/(2*L*root),
+                z_quadratic=(2*dt*z*m['z_theta']-d*mz['z_theta'])/(L*root),
+                z_pressure=R*(2*(1+dt)*z*p-d*pz)/(L*root))
+            result['angular_matching']=dict(B_theta=Btheta,
+                B_theta_target=-2*L*R*(a*transport/(L*root)+Stheta),
+                # This is a coupled constraint, never a replacement integral.
+                defect=Btheta+2*L*R*(a*transport/(L*root)+Stheta))
+        return result

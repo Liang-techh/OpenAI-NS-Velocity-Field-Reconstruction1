@@ -1,3 +1,17 @@
+## Coherent pressure source and coupled restoration (2026-09-30)
+
+- [x] Compare pressure-stage MP orders 96/128/192 on one field; old defect converges near -0.01229506638.
+- [x] Install continuous angular schedule before core pressure extraction and rebuild the nonlinear core and complete inner pipeline from the continuous pre-Rv pressure anchor.
+- [x] Expose public build_joined_field(continuous_pressure=True); shared pressure API selects MP quadrature coherently.
+- [x] Measure actual complete heat-tail pressure of rebuilt source at Z=.3: 2.15e-69 nominal, about 67 orders below old defect; retain inner uncertainty entries 3 and 5.
+- [x] Expose stress components and full angular Btheta constraint; replay component sums without replacing actual moments.
+- [ ] Restore omitted post-Rv pressure tail and analytic Z jets in the axis datum, rebuilding the core coherently again. Retain normalized baseline/correction atoms rather than subtracting rounded large values.
+- [ ] Trace and resolve inner moment uncertainty entries 3 and 5 with component-level integrals; validate bounds instead of treating zero representatives as actual zero.
+- [ ] Restore angular mean using the exact transport/mixed-moment Btheta constraint across the actual stage schedule, not the constant-slope target inside unfinished flattening.
+- [ ] Regenerate swirl/mixed/axial-energy inputs after any angular changes, and re-solve pulse/end coefficients on that same source.
+- [ ] Extend the coherent candidate to a Z interval and pulse/end/join/heat stress checks. Only promote after parameter provenance and matching are consistent.
+- [ ] Close terminal radial transport and integrate physical radial energy; no finite-energy or recursion claim until this passes.
+
 ## Pressure target follow-up (2026-09-30)
 
 - [x] Extract P(infinity), its Z jet, required compact-bump integral and required Z jet from actual inner + preheat + complete heat primitives.

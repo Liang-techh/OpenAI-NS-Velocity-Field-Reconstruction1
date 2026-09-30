@@ -1,3 +1,17 @@
+## Rebuilt-source coupled replay completed
+
+The public build_joined_field(continuous_pressure=True) path reproduces the nominal terminal pressure improvement and completes coupled actual five-moment stress evaluations at Rv+50 and Rtail+4. Relative total axial stress is 9.8244e-97 and 1.7797e-67 of the legacy probe, respectively. Angular stress remains unchanged at serialized precision. Comparisons include old binary64-96 versus new MP-192 pressure quadrature and the reconstructed inner source; neither candidate has a certified stress cone. Prioritize coherent angular/mixed-moment restoration next, retaining unresolved inner inputs and terminal radial energy obstruction.
+
+## 2026-09-30: coherent pressure-datum core rebuild reduces nominal defect by 67 orders
+
+MP pressure-stage orders 128 and 192 converge near the old P(infinity)=-0.01229506638282; the difference is 1.56e-15. Raising those orders cannot explain the 0.0123 mismatch. The core was constructed using a legacy pressure anchor before the outer continuous angular schedule was installed.
+
+New opt-in path: build_joined_field(continuous_pressure=True), followed by ContinuousIncomingOuterField on that source. ContinuousAxisPressureJets integrates the same pre-Rv angular schedule with MP nodes and exact constant-stage atoms before computing the nonlinear core pressure Taylor coefficients. Exit, reshape, axial restoration, inner moment corrections and exterior axial inputs are reconstructed. Shared pressure queries select coherent MP quadrature automatically. No completed field's Z-dependent pressure is shifted.
+
+Actual Z=.3 replay gives P(infinity)=2.15130102858891e-69, P(infinity)_Z=-2.36840480211623e-69 and pressure transport coefficient 3.44602898707912e-69. Relative to the old nominal pressure defect this is a factor 1.7796940893e-67. This is improvement, not exact closure: inner uncertainty entries 3 and 5 persist, the post-Rv axis pressure tail jet remains omitted, quadrature is unenclosed, and finite energy/stress cone/recursion remain unproved.
+
+The stress evaluator/bundle now expose separate transport, linear, mixed/quadratic and pressure components plus the coupled angular Btheta target. The legacy two-point replay sums those pieces back to the original stresses; no moment is overwritten. New candidate receipt: experiments/root_st073/lei_ren_part1_paper_continuous_pressure_rebuild.{py,json,md}.
+
 ## 2026-09-30: infinite pressure target and node sensitivity measured
 
 The pressure provider now exposes terminal_pressure_jet(Z), retaining actual inner anchor, preheat, compact bump and complete infinite heat contributions. The restoration target is extracted without changing the pressure datum or coefficients. New reproducible receipt: experiments/root_st073/lei_ren_part1_paper_continuous_pressure_target.{py,json,md}.

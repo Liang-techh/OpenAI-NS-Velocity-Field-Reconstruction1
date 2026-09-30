@@ -30,10 +30,25 @@ def run():
                 raise ArithmeticError('Missing actual moment')
             shear=abs(stress['S_theta'])+abs(stress['S_z'])
             ratios={k:mp.nstr(abs(stress[k])/shear,40) if shear else None for k in ('T_theta','T_z')}
-            samples.append(dict(label=label,moments={k:signed_log(v,60) for k,v in row['moments'].items()},
+            parts=row['stress_components']
+            replay=[]
+            for key, names in [('I_theta',('theta_transport','theta_mean','theta_mixed')),
+                              ('I_z',('z_transport','z_linear','z_quadratic','z_pressure'))]:
+                total=mp.fsum(parts[name] for name in names)
+                scale=max(abs(total),abs(stress[key]))
+                error=abs(total-stress[key])/scale if scale else mp.mpf(0)
+                if error>mp.mpf('1e-100'):
+                    raise ArithmeticError('Component decomposition disagrees with stress')
+                replay.append(mp.nstr(error,40))
+            samples.append(dict(label=label,logR=str(radius),Z='.3',delta=str(p.schedule.delta),
+                axial_support_ended=bool(row['velocity']['Uz']==0 and row['velocity']['Uz_Z']==0 and row['velocity']['Uz_y']==0),
+                moments={k:signed_log(v,60) for k,v in row['moments'].items()},
                 moments_Z={k:signed_log(v,60) for k,v in row['moments_Z'].items()},
                 P=signed_log(row['P'],60),P_Z=signed_log(row['P_Z'],60),
                 stress={k:signed_log(v,60) for k,v in stress.items()},
+                stress_components={k:signed_log(v,60) for k,v in parts.items()},
+                angular_matching={k:signed_log(v,60) for k,v in row['angular_matching'].items()},
+                component_replay_relative_errors=replay,
                 total_stress_over_sum_absolute_shears=ratios,
                 all_five_moments_evaluated=True))
         report=dict(samples=samples,same_candidate_moment_pressure_velocity_inputs=True,

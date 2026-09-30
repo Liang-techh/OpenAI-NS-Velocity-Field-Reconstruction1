@@ -57,7 +57,7 @@ class ContinuousPressureMoments:
     own API when the interface is selected.
     """
 
-    def __init__(self, profile, *, order=96):
+    def __init__(self, profile, *, order=96, mp_nodes=False):
         self.profile = profile
         self.schedule = profile.schedule
         self.precision = int(profile.precision)
@@ -81,12 +81,17 @@ class ContinuousPressureMoments:
                 mp.nstr(profile.seed_source.logRh, self.precision),
                 self.schedule.logRref)))
             self._tail_y = _mp(str(self.schedule.y_tail))
-            nodes, weights = leggauss(self.order)
-            self.nodes = [
-                ((_mp(str(float(node))) + 1) / 2,
-                 _mp(str(float(weight))) / 2)
-                for node, weight in zip(nodes, weights)
-            ]
+            self.MP_nodes=bool(mp_nodes)
+            if self.MP_nodes:
+                nodes,weights=mp.gauss_quadrature(self.order,'legendre')
+                self.nodes=[((node+1)/2,weight/2) for node,weight in zip(nodes,weights)]
+            else:
+                nodes, weights = leggauss(self.order)
+                self.nodes = [
+                    ((_mp(str(float(node))) + 1) / 2,
+                     _mp(str(float(weight))) / 2)
+                    for node, weight in zip(nodes, weights)
+                ]
         self.stages = list(self.angular.stages)
 
     @staticmethod

@@ -136,7 +136,7 @@ class CorrectedInnerField:
         return LocalCoreExitField(self,nu=nu,T=T)
 
 
-def build_candidate():
+def build_candidate(*,continuous_pressure=False,pressure_order=192):
     from lei_ren_part1_paper_core_adapter import build_source_core
     from lei_ren_part1_paper_exit_comparison import Section923Comparison
     from lei_ren_part1_paper_exit_tangents import ExitTangents
@@ -145,7 +145,8 @@ def build_candidate():
     from lei_ren_part1_paper_long_reshape import LongReshape
     with mp.workdps(260):
         bundle=build_source_core(precision=260,degree=18,j='1e-14',Lambda='1e36',
-            logC='5e151',logPstar='14',delta='1e-200')
+            logC='5e151',logPstar='14',delta='1e-200',
+            continuous_pressure=continuous_pressure,pressure_order=pressure_order)
         hb=mp.exp(-100-100*mp.mpf('1e152'))
         comparison=Section923Comparison(bundle,h_b=hb,transition_steps=16)
         switches=ExitSwitches(ExitContinuation(ExitTangents(comparison,epsilon=hb,

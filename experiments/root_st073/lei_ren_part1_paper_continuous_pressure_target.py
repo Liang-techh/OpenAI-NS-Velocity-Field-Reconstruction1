@@ -8,7 +8,7 @@ from lei_ren_part1_paper_continuous_incoming_outer import ContinuousIncomingOute
 from lei_ren_part1_paper_axial_correction import signed_log
 
 
-def run(*,mp_node_audit=False):
+def run(*,mp_node_audit=False,mp_orders=()):
     path=Path(__file__);folder=path.parent
     print('building shared candidate for actual terminal pressure target',flush=True)
     seeded=json.loads((folder/'lei_ren_part1_paper_seeded_shared_candidate.json').read_text())
@@ -42,6 +42,30 @@ def run(*,mp_node_audit=False):
                 pressure_shift=signed_log(audited['P_infinity']-row['P_infinity'],field.precision),
                 pressure_Z_shift=signed_log(audited['P_infinity_Z']-row['P_infinity_Z'],field.precision),
                 quadrature_error_enclosed=False,inner_datum_precision_audited=False)
+        if mp_orders:
+            provider=p.pressure_moment_provider
+            old_nodes=provider.nodes
+            comparisons=[]
+            try:
+                for order in mp_orders:
+                    print('pressure-only MP stage quadrature order '+str(order),flush=True)
+                    nodes,weights=mp.gauss_quadrature(order,'legendre')
+                    provider.nodes=[((x+1)/2,w/2) for x,w in zip(nodes,weights)]
+                    evaluated=provider.terminal_pressure_jet(z)
+                    comparisons.append(dict(order=order,
+                        P_infinity=signed_log(evaluated['P_infinity'],field.precision),
+                        P_infinity_Z=signed_log(evaluated['P_infinity_Z'],field.precision)))
+            finally:
+                provider.nodes=old_nodes
+            changes=[]
+            for previous,current in zip(comparisons,comparisons[1:]):
+                changes.append(dict(orders=[previous['order'],current['order']],
+                    P_absolute_change=mp.nstr(abs(mp.mpf(previous['P_infinity']['arbitrary_exponent_value'])-mp.mpf(current['P_infinity']['arbitrary_exponent_value'])),50),
+                    PZ_absolute_change=mp.nstr(abs(mp.mpf(previous['P_infinity_Z']['arbitrary_exponent_value'])-mp.mpf(current['P_infinity_Z']['arbitrary_exponent_value'])),50)))
+            report['MP_pressure_stage_order_comparison']=dict(samples=comparisons,
+                successive_absolute_changes=changes,
+                scope='only pressure variable-stage quadrature order/nodes change; one shared field',
+                quadrature_error_enclosed=False,inner_datum_precision_audited=False)
         # A correction target must be the negative actual terminal mismatch.
         for total,target in [('P_infinity','additional_bump_required'),('P_infinity_Z','additional_bump_required_Z')]:
             scale=max(abs(row[total]),abs(row[target]))
@@ -52,4 +76,5 @@ def run(*,mp_node_audit=False):
     return report
 
 
-if __name__=='__main__':run(mp_node_audit='--mp-node-audit' in sys.argv)
+if __name__=='__main__':run(mp_node_audit='--mp-node-audit' in sys.argv,
+    mp_orders=(96,128,192) if '--mp-order-audit' in sys.argv else ())

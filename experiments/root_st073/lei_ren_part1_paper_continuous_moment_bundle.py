@@ -42,8 +42,12 @@ class ContinuousMomentBundle:
                 Utheta_y=velocity['Utheta_y'],Utheta_Z=velocity['Utheta_Z'],
                 Uz_y=velocity['Uz_y'],Uz_Z=velocity['Uz_Z'],
                 moments=row['moments'],moments_Z=row['moments_Z'],
-                P=row['P'],P_Z=row['P_Z'],precision=self.precision)
+                P=row['P'],P_Z=row['P_Z'],precision=self.precision,
+                include_components=True)
+            components=stress.pop('components')
+            angular_matching=stress.pop('angular_matching')
             return dict(row,velocity=velocity,stress=stress,
+                stress_components=components,angular_matching=angular_matching,
                 stress_derivatives_from_shared_continuous_jets=True,
                 tiny_stress_terms_separately_resolved=False,
                 stress_cone_certified=False,stress_remainder_decomposed=False,

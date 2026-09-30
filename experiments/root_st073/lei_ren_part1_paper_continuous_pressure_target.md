@@ -22,3 +22,5 @@ Btheta_target = -2 L R [Utheta*transport/(L sqrt(2R)) + S_theta]
 ```
 
 This is an equation for coherent profile/moment restoration, not permission to overwrite the integral. The simplified normalized angular mean 1/(1-delta/2) applies only after flattening with G=1 and a constant heat reference slope; it must not be used at arbitrary finite flattening or actual corrected heat points. Preserve derivative identities and mixed moment terms.
+
+MP pressure-stage order comparison completed on one shared field: orders 96, 128, 192. The 128-to-192 terminal changes are 1.5568102589e-15 for P and 1.7139195511e-15 for PZ. Both converge near P=-0.01229506638282 and PZ=0.01353585289852. This nominal convergence does not enclose quadrature error, but shows the measured 0.0123 mismatch is not explained by the tested pressure-stage order. The core is currently built from a legacy angular pressure anchor before the continuous angular schedule is installed; an opt-in route now reconstructs the core from a continuous preflattening integral instead. Post-Rv tail jets remain omitted and must be restored coherently later.
