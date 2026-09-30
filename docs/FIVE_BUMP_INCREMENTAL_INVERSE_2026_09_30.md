@@ -78,3 +78,31 @@ Reproduce after generating the actual local reference snapshot:
 python experiments/root_st073/lei_ren_part1_paper_five_bump_inverse_fixture.py
 python experiments/root_st073/lei_ren_part1_paper_five_bump_inverse_check.py
 ```
+
+## Source representation route for actual uniform bounds
+
+Read-only source inspection identified a concrete missing propagation layer:
+
+- `component_pressure_core.py` / `core_recursion.py` hold finite local Z Taylor
+  rows. The actual provider requests component Z depth 2, but
+  `pressure_width_axial_comparison.py` exposes only rows 0 and 1.
+- `centered_component_defects.py`, bridge/switches and the continuation's
+  exponential-polynomial coefficients currently carry only `AxialDual`.
+  There is no second-Z defect output.
+- `continuous_preheat_pressure.py` has analytic rational-power Taylor
+  recurrences, and `axis_norm_bounds.py` provides real derivative bounds for
+  rational axis quantities. These are usable bounds for analytic factors, but
+  not bounds for the whole numerical source.
+
+The next implementation must propagate a second-order Z jet from the source
+through comparison, bridge, switches, and every one of the 69 centered defect
+parts. Then use interval/Taylor bounds on axial cells, rather than sampled
+suprema. Separate remainders are needed for the core truncation, preheat/angular
+quadrature, bridge and switch RK solves, flat saddle quadrature, and restoration
+Gauss quadrature. A further Z order is useful for Taylor remainder control.
+
+Current providers reject |Z| >= 1. Compact estimates on |Z| <= 1-eta are an
+intermediate gate only: the full objective still requires endpoint extension
+and endpoint-strip control as Z approaches +/-1. The Z=.3 snapshot provides
+no information at other axial points, even though the new field adapter can
+consume those points when the authoritative source supplies them.
