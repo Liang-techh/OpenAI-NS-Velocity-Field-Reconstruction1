@@ -61,11 +61,16 @@ class ContinuousAxialCorrection(ContinuousEndCorrection):
                       if 'log_normalized_pulse_integral' in atom else mp.mpf(0))
             end=self.weighted_primitive(row,end_offset) if end_offset is not None else mp.mpf(0)
             mean=self.base[row-1]+self.a*integral+end
+            relative_bound=atom.get('log_relative_omitted_absolute_bound',
+                                    atom.get('log_relative_omitted_positive_bound'))
+            correction_sign=atom.get('omitted_correction_sign',1)
             logbound=(mp.log(self.a)+mp.mpf(atom['log_normalized_pulse_integral'])+
-                      mp.mpf(atom['log_relative_omitted_positive_bound'])
-                      if 'log_relative_omitted_positive_bound' in atom else None)
+                      mp.mpf(relative_bound) if relative_bound is not None else None)
             return dict(nominal=signed_log(mean,self.precision),
-                log_pulse_omitted_positive_bound=mp.nstr(logbound,self.precision) if logbound is not None else None,
+                log_pulse_omitted_absolute_bound=mp.nstr(logbound,self.precision) if logbound is not None else None,
+                pulse_omitted_correction_sign=correction_sign,
+                log_pulse_omitted_positive_bound=(mp.nstr(logbound,self.precision)
+                    if logbound is not None and correction_sign==1 else None),
                 incoming_uncertainty_enclosed=False,quadrature_enclosure_certified=False,
                 terminal_mean_forced_zero=False)
 

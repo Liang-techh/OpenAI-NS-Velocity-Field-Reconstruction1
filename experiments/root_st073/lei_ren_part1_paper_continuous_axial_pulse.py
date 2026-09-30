@@ -2,7 +2,9 @@
 
 Full integral definitions include all support. Numerical centered evaluations
 retain an explicit positive omitted-piece bound and uncertified quadrature
-error. These atoms are not yet installed in the global mean/energy solve.
+error. Startup partial rows use an endpoint-scaled integration-by-parts
+primitive with the same ``value_jet`` source and a positive tail bound. These
+atoms are not yet installed in the global mean/energy solve.
 """
 import json
 from pathlib import Path
@@ -34,6 +36,17 @@ class ContinuousAxialPulse:
             else:
                 q=50*xi
                 if q<=mp.mpf('.5'):
+                    # On the flat left endpoint, sigma(u) <= exp(-phase(q))
+                    # for 0 <= u <= q.  If even the resulting integral upper
+                    # bound is below the active MP resolution, adaptive
+                    # quadrature must not manufacture a tiny nonzero pulse.
+                    phase=1/q**2-1/(1-q)**2
+                    log_upper=mp.log(q)-phase-mp.log(50)
+                    if log_upper < -mp.mpf(max(8,self.precision-8))*mp.log(10):
+                        raise ArithmeticError(
+                            'Startup pulse is below the active MP precision; '
+                            'a smaller-xi log evaluator is required'
+                        )
                     primitive=mp.quad(lambda u:self.sigma_pair(u)[0],[0,q])/50
                 else:
                     # Symmetric integral, preserving the positive correction.
@@ -52,6 +65,8 @@ class ContinuousAxialPulse:
             mu=mp.mpf(mu);band=mp.mpf(band)
             if row not in (1,2) or not 0<mu<=mp.mpf('1e-6'):
                 raise ValueError('Centered source rows require small positive mu')
+            if band<=0:
+                raise ValueError('Centered source band must be positive')
             lam=mp.mpf('.5')-row*mu;k=lam/mu
             u0=mp.root(2/k,3);L=1/u0**2;w=1/mp.sqrt(6*L)
             if band*w>=mp.mpf('.25'):raise ValueError('Band exceeds centered small-mu domain')
@@ -76,15 +91,18 @@ class ContinuousAxialPulse:
                 quadrature_enclosure_certified=False)
 
     def partial_row(self,mu,row,xi,*,band=48):
-        """Same weighted primitive on plateau and cutoff, with omitted bounds.
+        """Same weighted primitive on startup, plateau, and cutoff.
 
-        The positive contribution before the window is bounded, not erased.
-        Outside that window an endpoint-specific evaluator is still required.
+        A finite centered band retains a positive omitted contribution bound;
+        it is never replaced by zero. Extremely small endpoint pulses can
+        remain below the active MP precision and raise explicitly.
         """
         with mp.workdps(self.precision):
             mu=mp.mpf(mu);xi=mp.mpf(xi);band=mp.mpf(band)
             if row not in (1,2) or not 0<mu<=mp.mpf('1e-6'):
                 raise ValueError('Centered source rows require small positive mu')
+            if band<=0:
+                raise ValueError('Centered source band must be positive')
             if xi<=0:
                 return dict(value=mp.mpf(0),derivative=mp.mpf(0),exact_support_zero=True)
             if xi>=11:
@@ -93,7 +111,91 @@ class ContinuousAxialPulse:
                 return result
             lam=mp.mpf('.5')-row*mu;k=lam/mu
             if xi<=mp.mpf('.02'):
-                raise ValueError('Startup weighted primitive requires endpoint evaluator')
+                # Endpoint scaling resolves the startup contribution without
+                # subtracting the exponentially small primitive from a bulk
+                # formula.  With s=k*(xi-v),
+                #
+                # J(xi)=exp(-k*(13-xi))/(mu*k)
+                #        * integral_0^(k*xi) exp(-s) gp(xi-s/k) ds.
+                #
+                # The source value is the shared value_jet, including its
+                # nested MP startup primitive.  A finite band truncates the
+                # positive sigma correction after integration by parts; the
+                # omitted correction therefore has negative sign.
+                source_at_endpoint=self.value_jet(xi)['value']
+                if source_at_endpoint==0:
+                    raise ArithmeticError(
+                        'Startup endpoint pulse is below the active MP precision; '
+                        'a smaller-xi log evaluator is required'
+                    )
+                span_total=k*xi
+                span=min(span_total,band)
+                if span<=0:
+                    raise ArithmeticError(
+                        'Startup endpoint span collapsed at positive xi; '
+                        'a smaller-xi log evaluator is required'
+                    )
+                # Integrating the raw startup value_jet at every outer node
+                # would nest a second adaptive quadrature.  Integrate by
+                # parts once instead.  If G(v)=gp(v), G'=sigma(50v), then
+                #
+                # (1/mu) int exp(-k*(xi-v))G(v)dv
+                #   = G(xi)/lambda - mu/lambda^2 * int exp(-s)
+                #       sigma(50*(xi-s/k)) ds.
+                # The remaining endpoint integral is single-level and uses
+                # the same sigma_pair definition as value_jet.
+                def sigma_scaled(s):
+                    v=xi-s/k
+                    if v<=0:return mp.mpf(0)
+                    return mp.exp(-s)*self.sigma_pair(50*v)[0]
+                knots=[mp.mpf(0)]+[point for point in (4,8,16,32)
+                    if mp.mpf(point)<span]+[span]
+                sigma_total=mp.quad(sigma_scaled,knots)
+                lam=mp.mpf('.5')-row*mu
+                endpoint_homogeneous=(source_at_endpoint/lam-
+                    mu*sigma_total/(lam*lam))
+                if endpoint_homogeneous<=0:
+                    raise ArithmeticError(
+                        'Startup endpoint integration lost a positive weighted primitive; '
+                        'a higher precision or smaller-xi evaluator is required'
+                    )
+                logvalue=-k*(13-xi)+mp.log(endpoint_homogeneous)
+                # The retained integration-by-parts correction is a
+                # subtraction.  When span < k*xi, the missing sigma tail
+                # therefore gives an absolute error with negative sign,
+                # rather than a positive omitted source-mass contribution.
+                if span_total>span:
+                    sigma_at_endpoint=self.sigma_pair(50*xi)[0]
+                    if sigma_at_endpoint==0:
+                        raise ArithmeticError(
+                            'Startup sigma endpoint is below the active MP precision; '
+                            'a smaller-xi log evaluator is required'
+                        )
+                    logbound=(-k*(13-xi)+mp.log(mu*sigma_at_endpoint/(lam*lam))-span)
+                    log_relative_bound=logbound-logvalue
+                    omitted_sign=-1
+                else:
+                    log_relative_bound=None
+                    omitted_sign=0
+                log_source=-k*(13-xi)+mp.log(source_at_endpoint)-mp.log(mu)
+                return dict(log_normalized_pulse_integral=mp.nstr(logvalue,self.precision),
+                    log_derivative=mp.nstr(log_source,self.precision),
+                    log_relative_omitted_positive_bound=None,
+                    log_relative_omitted_absolute_bound=(
+                        mp.nstr(log_relative_bound,self.precision)
+                        if log_relative_bound is not None else None),
+                    omitted_correction_sign=omitted_sign,
+                    xi=mp.nstr(xi,self.precision),region='startup_endpoint_scaled',
+                    startup_span=mp.nstr(span,self.precision),
+                    startup_total_span=mp.nstr(span_total,self.precision),
+                    quadrature_enclosure_certified=False,
+                    continuous_definition=(
+                        'Integral of value_jet over [0,xi] using s=k*(xi-v) '
+                        'endpoint scaling with a signed omitted IBP correction bound'),
+                    startup_omitted_bound='For s>=startup_span, sigma(50v)<=sigma(50xi) '
+                        'gives a negative omitted IBP correction bounded by '
+                        'exp(-k*(13-xi))*mu*sigma(50xi)*exp(-startup_span)/lambda^2; '
+                        'quadrature error is not enclosed')
             if mp.mpf('.02')<xi<=10:
                 # Exact antiderivative on the plateau; the positive startup
                 # atom is bounded explicitly, not claimed identically zero.
@@ -231,6 +333,51 @@ def run():
         candidate_cutoff=[pulse.partial_row(mu,1,x) for x in
             (mp.mpf('10.25'),mp.mpf('10.75'),11-2*mp.root(2/candidate_k,3),
              11-mp.root(2/candidate_k,3)/2)]
+        # Startup samples are evaluated at one moderate and the actual shared
+        # candidate mu.  Keep the receipts compact because the logs can carry
+        # 10^28-scale exponents.  The finite-band tail bound is positive and
+        # explicit; it is not a claim of uniform startup accuracy.
+        startup_receipts={}
+        startup_derivative_diagnostics={}
+        startup_points=(mp.mpf('.005'),mp.mpf('.01'),mp.mpf('.015'),mp.mpf('.02'))
+        startup_cases=(('moderate_mu_1e-6',mp.mpf('1e-6')),('actual_candidate_mu',mu))
+        for case_name,startup_mu in startup_cases:
+            by_row={}
+            for index in (1,2):
+                compact=[]
+                for point in startup_points:
+                    atom=pulse.partial_row(startup_mu,index,point,band=16)
+                    compact.append(dict(xi=atom['xi'],region=atom['region'],
+                        log_normalized_pulse_integral=atom['log_normalized_pulse_integral'],
+                        log_derivative=atom['log_derivative'],
+                        log_relative_omitted_positive_bound=atom['log_relative_omitted_positive_bound'],
+                        log_relative_omitted_absolute_bound=atom['log_relative_omitted_absolute_bound'],
+                        omitted_correction_sign=atom['omitted_correction_sign'],
+                        startup_span=atom['startup_span'],
+                        startup_total_span=atom['startup_total_span'],
+                        quadrature_enclosure_certified=atom['quadrature_enclosure_certified']))
+                by_row[str(index)]=compact
+                probe=mp.mpf('.01');central_start=pulse.partial_row(startup_mu,index,probe,band=16)
+                scale=mp.mpf(central_start['log_derivative'])
+                errors=[]
+                startup_k=(mp.mpf('.5')-startup_mu)/startup_mu
+                # Resolve the endpoint exponential rather than taking a
+                # fixed xi step.  At the actual candidate, a 1e-6 step would
+                # move the log by O(1e22) and overflow the scaled diagnostic.
+                step_base=min(mp.mpf('1e-6'),mp.mpf('.05')/startup_k)
+                for step in (step_base,step_base/2):
+                    left=pulse.partial_row(startup_mu,index,probe-step,band=16)
+                    right=pulse.partial_row(startup_mu,index,probe+step,band=16)
+                    ratio=(mp.exp(mp.mpf(right['log_normalized_pulse_integral'])-scale)-
+                        mp.exp(mp.mpf(left['log_normalized_pulse_integral'])-scale))/(2*step)
+                    errors.append(mp.nstr(abs(ratio-1),60))
+                startup_derivative_diagnostics.setdefault(case_name,{})[str(index)]=dict(
+                    xi=mp.nstr(probe,60),steps=[mp.nstr(x,60) for x in (step_base,step_base/2)],
+                    relative_errors=errors,
+                    comparison='Centered derivative of the finite-band log primitive versus its direct source-term log_derivative; signed omitted IBP correction and quadrature effects remain',
+                    log_relative_omitted_absolute_bound=central_start['log_relative_omitted_absolute_bound'],
+                    omitted_correction_sign=central_start['omitted_correction_sign'])
+            startup_receipts[case_name]=by_row
         report=dict(rows=rows,value_jet_replay_relative_error=mp.nstr(abs(derivative/jet['derivative']-1),60),
             partial_derivative_diagnostic_mu=str(diagnostic_mu),
             partial_derivative_relative_errors=partial_errors,
@@ -240,9 +387,11 @@ def run():
             cutoff_endpoint_primitive_receipt=endpoint,
             actual_candidate_cutoff_partial_receipts=candidate_cutoff,
             shared_continuous_pulse_definition=True,
-            partial_weighted_primitives_implemented='Plateau, full cutoff via endpoint/saddle/after-window branches and exact support endpoints',
+            startup_partial_receipts=startup_receipts,
+            startup_derivative_diagnostics=startup_derivative_diagnostics,
+            partial_weighted_primitives_implemented='Startup endpoint-scaled, plateau, full cutoff via endpoint/saddle/after-window branches, and exact support endpoints',
             installed_in_global_profile=False,finite_energy_certified=False,
-            scope='MP pointwise/full-row, plateau and cutoff partial primitives with positive omitted-piece bounds; startup weighted primitive and global installation remain open. Continuous energy atom exists in separate provider.')
+            scope='MP pointwise/full-row and startup, plateau, and cutoff partial primitives with positive omitted-piece bounds where applicable and signed startup correction bounds; ordinary startup samples resolve at the tested precision, while tiny endpoint pulses, quadrature enclosure, global installation, and finite-energy claims remain open. Continuous energy atom exists in separate provider.')
         Path(__file__).with_suffix('.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
         print(json.dumps(dict(log_refinement=[r['log_precision_refinement'] for r in rows],
             log_input_change=[r['log_change_from_float_centered_input'] for r in rows],

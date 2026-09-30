@@ -1,3 +1,27 @@
+## Continuous axial correction installed in joined exterior - 2026-09-30
+
+New continuous_seeded_outer.py/md/json adapter installs continuous Uz AND
+its cumulative seeded mean together. Original schedule/angular/tail/pressure
+objects are preserved. Seven fixed-Z positions cover Rp, startup, plateau, cutoff,
+first end bump, Rv and after-Rv. Post-Rv constant mass replay is 2.10e-443.
+Actual Ur is recovered from the same mean. Independent radial divergence
+relative cancellation refines 6.24e-24 -> 3.90e-25 as step halves.
+These are local diagnostics; float-Z derivatives remain uncertified.
+
+Startup weighted primitives now use endpoint scaling and integration by
+parts, retaining the shared smooth sigma definition. Truncating a SUBTRACTED
+sigma integral produces a negative correction: absolute omission bounds and
+sign are propagated by the component and installed mean. Actual-mu startup
+xi=.015 bound transport passes. Numerical loss of a positive primitive raises;
+no nonzero terminal mean is replaced by zero. Quadrature and inherited input
+uncertainty are not covered by omitted-piece bounds.
+
+Next derive shared continuous incoming and Z derivatives (avoid float cache
+loss), certify actual terminal mean/Z-mean closure, and finish exterior jets,
+five moments and energy. The installed finite numerical tail remains nonzero;
+full finite energy, recursive matching, stress/remainder and oscillatory
+closure are still open. Do not equate tiny local divergence with NS closure.
+
 ## Continuous cutoff primitive and shared cumulative component - 2026-09-30
 
 Completed cutoff partial integral branches for xi in (10,11): endpoint,
