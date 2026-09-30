@@ -1,3 +1,7 @@
+## Uniform pressure approximation budget (2026-09-30)
+
+All 14 stored-datum pressure stages now have an absolute error enclosure on |Z|<=0.8: weighted normalized C2 upper 3.079264485429091e-12. Flatten uses a conservative positive-mass bound; relative flatten error, original parameter errors, runtime evaluation roundoff, core/RK propagation and five-moment closure remain open. See POINTWISE_PREHEAT_ERROR_BUDGET_2026_09_30.md. Next: relative flatten coefficient error and pressure-to-core/moment propagation.
+
 ## Immediate pressure-to-core dependency (2026-09-30)
 
 All 14 pressure components now have a same-source, stored-parameter pointwise error budget at Z=0.3. Weighted normalized error upper: 5.6517545845415295e-13. This is not a uniform C2 bound or five-moment closure. See [the detailed receipt](POINTWISE_PREHEAT_ERROR_BUDGET_2026_09_30.md).
