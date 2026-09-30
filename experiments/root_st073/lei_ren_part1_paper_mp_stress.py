@@ -9,18 +9,19 @@ import mpmath as mp
 def evaluate_mp_stress(logR, Z, delta, *, Utheta, Uz, Utheta_y,
                        Utheta_Z, Uz_y, Uz_Z, moments, moments_Z,
                        P, P_Z, precision=160, shear_theta=None, shear_z=None,
-                       include_components=False):
+                       include_components=False,scalar_converter=None):
     """y=log R derivatives; return MP inertial, shear and total stress."""
     with mp.workdps(precision):
         R=mp.exp(mp.mpf(str(logR))); z=mp.mpf(str(Z)); dt=mp.mpf(str(delta))
         if not abs(z)<1 or not 0<=dt<1:
             raise ValueError('Require |Z|<1 and 0<=delta<1')
         d=1-z*z; L=1-dt*z*z; root=mp.sqrt(2*R)
-        a,b,ay,az,by,bz,p,pz=map(mp.mpf,
+        convert=mp.mpf if scalar_converter is None else scalar_converter
+        a,b,ay,az,by,bz,p,pz=map(convert,
             (Utheta,Uz,Utheta_y,Utheta_Z,Uz_y,Uz_Z,P,P_Z))
         keys=('theta','z','theta_z','z_theta','p')
-        m={k:mp.mpf(moments[k]) for k in keys}
-        mz={k:mp.mpf(moments_Z[k]) for k in keys}
+        m={k:convert(moments[k]) for k in keys}
+        mz={k:convert(moments_Z[k]) for k in keys}
         transport=-R+(1-dt)*z*m['z']+d*mz['z']
         Itheta=a*transport/(L*root)+((1-dt/2)*m['theta']
             -(1-dt)*z*mz['theta']/2-d*mz['theta_z']
@@ -30,8 +31,8 @@ def evaluate_mp_stress(logR, Z, delta, *, Utheta, Uz, Utheta_y,
             +R*(2*(1+dt)*z*p-d*pz))/(L*root)
         # An ODE may prescribe a shear far below the precision of Utheta.
         # Supply that exact expression to avoid losing it in 2*ay-a.
-        Stheta=(2*ay-a)/root if shear_theta is None else mp.mpf(shear_theta)
-        Sz=root*by/R if shear_z is None else mp.mpf(shear_z)
+        Stheta=(2*ay-a)/root if shear_theta is None else convert(shear_theta)
+        Sz=root*by/R if shear_z is None else convert(shear_z)
         Ur=(2*z*R*b-(1-dt)*z*m['z']-d*mz['z'])/(L*root)
         Ur_R=((1+dt)*z*b+2*z*by-d*bz)/(L*root)-Ur/(2*R)
         Nt=-mp.sqrt(R/2)/L*((1+dt)*a/2+(1-dt)*z*az/2+ay)

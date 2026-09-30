@@ -1,3 +1,7 @@
+## User-updated active objective — 2026-09-30
+
+PROJECT_GOAL.md now defines the seven research stages and the paper-faithful dependency order. Functional five-moment closure, analytic preheat pressure, heat exterior, finite energy and admissible stress precede genuine higher-order coefficient recursion. Background residual size is not a 1e-3 acceptance gate; that gate applies only after realizable oscillatory stress correction and independent full Cartesian validation. Distinguish instantaneous streamlines from material winding, and local radial Taylor jets from n-dependent temporal recursion. Older instructions below are historical and subordinate to this user update.
+
 ## Active Part I stage order — 2026-09-29
 
 The active goal is `PROJECT_GOAL.md`: geometry similarity → self-similar

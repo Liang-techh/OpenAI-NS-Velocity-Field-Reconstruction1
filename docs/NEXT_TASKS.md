@@ -1,3 +1,11 @@
+## 2026-09-30: prescribed bridge after component auxiliary exit
+
+- [ ] Read PROJECT_GOAL.md: use the updated seven stages; no background 1e-3 residual gate.
+- [ ] Carry pressure-parameter jets through ExitBridge/ExitTangents normalization, log/exp and driver equations, without materializing a whole scalar coefficient.
+- [ ] Retain the actual tiny collar-width dependence independently, or enclose its effect; order-9 pressure atoms alone do not certify the complete collar.
+- [ ] Propagate the same data through ExitContinuation, switching, long reshape and inner mean repairs; regenerate outer targets coherently.
+- [ ] Establish functional five-moment/pressure/heat/finite-energy closure before admissible cone and genuine n-dependent time recursion.
+
 ## 2026-09-30: component integration priority
 
 Read COMPONENT_PREHEAT_CORE_2026_09_30.md and the two actual component receipts. The local complete-pressure core is implemented, but downstream scalar adapters still lose its tiny tail.

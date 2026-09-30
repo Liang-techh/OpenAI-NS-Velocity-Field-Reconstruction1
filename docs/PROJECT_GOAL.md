@@ -1,3 +1,45 @@
+# Active goal: paper-faithful staged blow-up reconstruction (2026-09-30)
+
+This user-updated objective supersedes the older stage order and background residual gates below. Construct a reproducible, nonzero, divergence-free three-dimensional time-dependent Navier–Stokes background and subsequent correction layers, based on the OpenAI analytic construction, Lei–Ren Part I profile reconstruction and relevant numerical research. Recover dependent fields from analytic constraints; do not independently fit velocity components or choose forcing as the measured residual.
+
+## Construction dependency order
+
+self-similar core → five-moment matching → analytic pressure restoration → transition/annular matching → exact heat exterior → admissible stress → higher-order coefficient recursion → oscillatory stress correction.
+
+Use one consistent set of construction data for the core, angular repairs, pressure, annuli and heat exterior. The axis pressure must be the compatible analytic H=1 preheat datum, rebuilt into the core rather than appended to an already completed field. Five terminal moments must hold as functions of the axial variable; isolated small sampled errors do not establish those identities.
+
+## Required dynamics and geometry
+
+Use explicit similarity/physical coordinate maps. Measure radial contraction, relative axial elongation, swirl/axial/vorticity growth and scale laws as t approaches T. Distinguish imposed coordinate exponents from fitted dynamics. Measure instantaneous streamlines separately from particle trajectories and cumulative material winding. Establish finite total energy on the construction's physical spacetime domain, including the actual radial tail.
+
+Prefer streamfunction/vector-potential recovery and curl-based cutoffs to preserve divergence structurally, to rounding error. Verify axis regularity, finite energy, time/space support, pressure compatibility and high-order continuity across inner core, correction annuli, flattening, heat collar and exterior. A polynomial heat approximation is not the exact exterior unless its error is independently controlled.
+
+## Background stress and recursion
+
+For R_B=partial_t u_B+(u_B dot grad)u_B+grad p_B-nu Laplacian u_B, evaluate the source decomposition R_B=-div(T_B)+E_B. Assess admissible stress cone signs/margins separately in inner exit, matching, pulse/end, flatten and heat collar. Report maximum and volume-L2 norms and scale dependence for stress and remainder separately; assess the high-order/flat decay of E_B. Do not demand a small full residual as the leading-background acceptance condition.
+
+Only after leading profile/moment/stress conditions hold, implement genuine order-dependent coefficient recovery: distinguish n=1 and n>=2, use the correct n-dependent radial equations, common core definition interval and separate moment repair. Verify finite-order remainder and eventual smooth summation. Coordinate rescaling and local radial Taylor recursion are not higher-order temporal coefficient recursion.
+
+After a reliable mean/oscillatory correction implementation, verify realizable averaged quadratic momentum flux and cancellation of background admissible stress. Then independently validate R_full=partial_t u+(u dot grad)u+grad p-nu Laplacian u-f in Cartesian coordinates, with both L-infinity and physical volume-L2 below 1e-3.
+
+## Research stages and deliverables
+
+1. Geometry similarity.
+2. Self-similar leading-core reconstruction.
+3. Five-moment/heat-exterior matched background reconstruction.
+4. Admissible-stress reconstruction.
+5. Higher-order recursive background reconstruction.
+6. Oscillatory stress-corrected reconstruction.
+7. Full Navier–Stokes residual validation.
+
+Deliver reproducible Python/MATLAB implementations, multitime 3D fields in both coordinate systems, streamlines and particle trajectories, vorticity/core visualizations, radial/axial widths and aspect ratios, measured velocity/vorticity exponents, functional five-moment diagnostics, analytic pressure/heat-tail diagnostics, finite-energy/tail checks, cone margins, stress/flat-remainder decomposition, coefficient-recursion diagnostics, correction comparisons and independent Cartesian residual validation. Explicitly label implemented, approximate, unverified and unavailable construction ingredients.
+
+Read CURRENT_CHECKPOINT.md, NEXT_TASKS.md and TWO_PAPER_ROUTE_2026_09_30.md for the current evidence and dependencies. The current work is leading-core and coupled matching; later stages are not complete.
+
+---
+
+## Historical objective and baseline (superseded where conflicting)
+
 # Active goal: staged self-similar numerical reconstruction (2026-09-29)
 
 Construct a nonzero, divergence-free, finite-energy 3D time-dependent

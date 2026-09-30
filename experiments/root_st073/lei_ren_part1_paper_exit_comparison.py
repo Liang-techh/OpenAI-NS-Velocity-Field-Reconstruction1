@@ -136,6 +136,7 @@ class Section923Comparison:
     ) -> None:
         self.bundle = bundle
         self.core = bundle["core"]
+        self.scalar_converter=bundle.get("scalar_converter",mp.mpf)
         self.precision = int(bundle.get("precision", getattr(self.core, "precision", 160)))
         self.transition_steps = int(transition_steps)
         with mp.workdps(self.precision):
@@ -475,6 +476,7 @@ class Section923Comparison:
                 P=state["P"],
                 P_Z=state["P_Z"],
                 precision=self.precision,
+                scalar_converter=self.scalar_converter,
             )
             return {
                 "y": yy,
