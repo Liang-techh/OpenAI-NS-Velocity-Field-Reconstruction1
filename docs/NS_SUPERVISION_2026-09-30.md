@@ -12,7 +12,7 @@ data, schedules or candidate defaults are changed by this documentation update.
 The inspected `main` head is `e0c642ba8ff8d2c476ef3f961864a008d2d475c4`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`34267950f3829d93711dacdcda581c02ae5f902a`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/34267950f3829d93711dacdcda581c02ae5f902a)
+[`da5fb365a4d477f8a54718157d920750a02aa119`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/da5fb365a4d477f8a54718157d920750a02aa119)
 on `codex/st073-transition-next`, dated September 30. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,33 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### P1 milestone: standalone complete preheat-pressure target
+
+Commit `da5fb365` implements `ContinuousPreheatPressure` from v2 Eq.(6.10),
+retaining the complete future angular profile with H replaced by 1, including
+the Z-dependent flatten interval and later Z-independent stages. See the
+[derivation and limitations](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/da5fb365a4d477f8a54718157d920750a02aa119/experiments/root_st073/lei_ren_part1_paper_continuous_preheat_pressure.md)
+and [saved diagnostic receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/da5fb365a4d477f8a54718157d920750a02aa119/experiments/root_st073/lei_ren_part1_paper_continuous_preheat_pressure_check.json).
+
+At Z=.3 the reported normalized post-Rv pressure is nonzero, with log absolute
+magnitude about `-2.719157344816895e28`. Summing it into the dominant prefix
+and subtracting that prefix loses the tail even at 260 digits. Retained
+arbitrary-exponent stage atoms and arbitrary-center Taylor components are
+therefore important for the next coupled solve. The recorded centered finite
+difference/analytic derivative discrepancy is about `2.15e-60` relative;
+MP128/192 flatten quadrature changes about `6.36e-39`, and the steep transition
+about `4.66e-27`. These are submitted diagnostics, not independently rerun
+results, interval error bounds or PDE residuals.
+
+The route marks internal P1 complete as a derivation/adapter milestone. The
+receipt explicitly keeps `core_rebuilt_with_complete_target=false`,
+`actual_angular_bumps_restored=false`, `quadrature_error_enclosed=false` and
+`pressure_terminal_compatibility_certified=false`. P2 must still solve both
+angular corrections with the quadratic pressure row, analytic Z tangents and
+small-branch bounds, then rebuild the core using component-aware jets. The
+new adapter does not change the existing candidate or certify finite energy,
+the stress cone or scale recursion.
 
 Latest follow-up: [two-paper route and P0–P12 checklist](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/34267950f3829d93711dacdcda581c02ae5f902a/docs/TWO_PAPER_ROUTE_2026_09_30.md)
 records reading the two supplied local PDFs and corrects the old pressure-tail
@@ -128,3 +155,33 @@ success is asserted here.
 The `1e-3` complete-momentum maximum and spatial volume-L2 remain a future target
 under an explicitly fixed forcing/domain/time contract. This documentation records
 the frontier and failures without extending scientific implementation scope.
+
+## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [da5fb365 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36744983311)
+has `13 failed, 423 passed` in its constrained-integration job. Its 13 failed
+test identifiers exactly match the [34267950 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36743046659),
+also `13 failed, 423 passed`. The new commit changes only four route/checkpoint
+documents and four standalone pressure files; it does not change the affected
+governance implementations, tests, project_status.json or CI workflow. No new
+failure in this selected CI suite is attributable to P1 from this comparison.
+
+| Failure group | Count | Concrete impact |
+|---|---:|---|
+| Axial-cap scope/routing, coordinate warp, cross-backbone, material-path, swirl-gain, temporal/sampled Piola and ST052 stage accounting | 9 | Route expectations conflict between `materialize_integrated_axial_cap_poloidal_child_then_fresh_validate` and `frozen_st052m_standalone_runtime_to_unified_velocity_visual_diagnostics_then_optional_pde_validation`. These governance gates cannot endorse the registered delivery state. |
+| PDE/visual-promotion rejection tests | 3 | An earlier route mismatch raises first, so the expected state-specific rejection message is never reached. Failure does not demonstrate that promotion was allowed; it leaves those intended checks unexercised in this run. |
+| Compact poloidal energy-envelope scope | 1 | The live next-integration task lacks `COMPACT_C4_ODD_Z_POLOIDAL`; experiment ownership/scope metadata is inconsistent. |
+
+Import/CLI and coordinate, forcing and velocity slices pass. The full historical
+suite is skipped. The constrained job selects `tests/test_constrained_*.py`;
+this result does not validate the new standalone preheat-pressure diagnostic.
+These metadata/route failures do not measure its numerical accuracy, and must
+not be dismissed as proof that the pressure implementation is correct.
+
+For comparison, the earlier `main` documentation commit `e850790b` has a
+[successful tests run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36743804834)
+and successful research-publication workflow. That is a different source tree,
+not certification of the research branch or its Part I background. This review
+does not repair route metadata, change scientific code, weaken tests or trigger
+a rerun. Ownership and intended current delivery route need clarification by
+the implementation task before such repair.
