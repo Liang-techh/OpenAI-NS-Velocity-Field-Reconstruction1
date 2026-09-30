@@ -1,3 +1,34 @@
+## Priority: continuous moments, then connection shear — 2026-09-29
+
+This queue supersedes the older short-join route below.
+
+- [x] Implement profile-derived inertial stress and shear from actual cumulative
+  moments and pressure. Independent heat/collar agreement is below 1.66e-13.
+- [x] Integrate actual extended pressure inward to avoid cancellation;
+  independent radial identity relative error is below 3.28e-8.
+- [ ] Finish continuous axial repair: interpolate moment functions, solve
+  linear/quadratic constraints at each Z, differentiate that same solve, and
+  compare actual off-grid mixed/quadratic integrals. Preserve the failed
+  coefficient-interpolation receipt; do not widen tolerances to claim closure.
+- [ ] Bind the repaired candidate metadata to physical-field and actual-stress
+  reports. Repeat heat-tail stress diagnostics using actual integrated moments,
+  not theoretical terminal values. The historical 27-point stress receipt
+  omitted its candidate grid metadata and is explicitly marked as such.
+- [ ] Restore shear throughout weak-anchor gaps while preserving all moment
+  functions, core matching and heat boundary data. The new
+  `lei_ren_part1_connection_shear_screen.py/.json` isolates a necessary failure:
+  F=G(Z)R^(-.005), U_R=0 gives kappa=.01<2. Four isolated compact axial bumps
+  cannot cure gaps in which their derivative vanishes. Derive required local
+  shear from S_z^2 > -2 F S_theta-S_theta^2, then construct a smooth repair
+  supported away from the fixed core/collar. This condition is only necessary.
+- [ ] Recompute actual stress signs, directional cone margins and edge limits
+  after shear restoration. If changing F, rebuild common pressure/core and
+  restore moments again; do not reuse an incompatible pressure receipt.
+- [ ] Evaluate paired physical R_B, D T_B and E_B, including radial momentum
+  and cutoff derivatives, before a first higher-order coefficient correction.
+  Demonstrate remainder-order improvement across scales, then implement actual
+  oscillatory velocity corrections and the full max/volume-L2 gate.
+
 ## Live route after actual moment/field diagnostics — 2026-09-29
 
 Read `LEI_REN_BACKGROUND_FIELD.md` and its retained JSON receipts. The
