@@ -1,5 +1,39 @@
 ## Actual stress path and continuous-moment blocker — 2026-09-29
 
+Continuous axial repair now re-solves the interpolated moment system at
+each queried Z, with analytic derivatives of that same solve. The default
+moment grid is 257 nodes; independent actual integrals give maximum mass
+5.72e-14, mixed 8.36e-11 and quadratic 2.17e-11 residuals. The old direct
+coefficient-interpolation receipt is retained separately. This removes one
+finite terminal-moment obstruction, not the whole cone or recursion.
+The validated replay seed avoids rebuilding all 257 radial integrations;
+the physical field's default loader checks its pressure-receipt hash.
+
+The updated physical-field receipt uses this same 257-node moment solve.
+Its 12-point finest Cartesian divergence is 1.76e-7 (relative 1.70e-9),
+axis parity errors are zero, and the finest-time full energy estimate is
+0.6904 with 1.43% coarse/refined difference. These are finite diagnostics,
+with imposed similarity exponents, not recursion or PDE acceptance.
+
+After correcting the moment-derivative stencil, the actual collar/heat-tail
+stress maximum is 4.00e-10, down from 1.972e-3 in the historical candidate.
+This still exceeds quadrature-only support; derivative error must also be
+accounted for before assigning a physical meaning to the remaining tail.
+The transition remains inadmissible and does not supply the relaxed-cone
+input required by the Section 11 shear loop. Tiny heat-edge stresses must
+not be used as robust directional-cone evidence.
+
+`lei_ren_part1_physical_remainder.py` now measures physical R_B, D T_B,
+and E_B from the SAME callable velocity, pressure and actual moment stress.
+It selects the explicit envelope B(z)^2, retains all velocity/pressure
+cutoff derivatives in physical finite differences, and preserves radial
+E_B=R_B because the completed tensor's radial divergence is zero.
+The six fixed-sector sample receipt finds growing leading-order remainders,
+not flatness: sampled core axial E_B is about 7.68, 61.32, 490.07 at
+tau=1/8,1/32,1/128. Spatial/time step refinement is recorded; these are
+neither global maxima nor volume-L2 norms. Implement compatible leading
+transition and actual higher coefficients before claiming remainder decay.
+
 The profile-derived stress evaluator is now implemented in
 `experiments/root_st073/lei_ren_part1_profile_stress.py`. It evaluates the
 source inertial terms and radial shear from one profile's actual five
@@ -7,14 +41,16 @@ cumulative moments, their Z derivatives, and its pressure. Independent
 exact-heat and inward-collar checks validate this algebraic path; they do
 not certify the assembled extended background.
 
-The first assembled-profile stress diagnostic found only 4 of 27 sampled
+The historical first assembled-profile stress diagnostic found only 4 of 27 sampled
 points satisfying the cone and a heat-tail stress component of 1.972e-3,
 compared with stress quadrature refinement of 1.34e-13. This receipt is a
 failed candidate diagnostic, not a PDE pass. Direct interpolation of axial
-repair coefficients left off-grid mixed/quadratic moment defects. The next
-repair must solve the linear and quadratic constraints at each Z from
-moment data, differentiate the SAME coefficient solve, and check actual
-independent integrals. Increasing the coefficient grid alone is insufficient.
+repair coefficients left off-grid mixed/quadratic moment defects. The
+continuous solve above addresses those defects. A later review also exposed
+a reversed fourth-order moment-Z derivative stencil in the stress adapter;
+its receipt is retained as a failed historical diagnostic. Recompute the
+current stress with the corrected stencil and independent derivative checks
+before attributing its heat-tail stress to a physical obstruction.
 
 The extended swirl pressure is now integrated inward from the exact collar
 pressure, avoiding cancellation against the larger axis datum. Its independent

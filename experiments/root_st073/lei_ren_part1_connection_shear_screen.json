@@ -1,9 +1,112 @@
 {
   "input_receipt": "lei_ren_part1_extended_profile_stress_checks.json",
-  "original_candidate_metadata_unrecorded": true,
+  "original_candidate_metadata_unrecorded": false,
+  "input_candidate_metadata": {
+    "source": "https://arxiv.org/html/2609.35406v1",
+    "source_version": "2609.35406v1",
+    "source_section": "Section 2.5, equations (2.21)--(2.22)",
+    "profile_source": "lei_ren_part1_extended_pressure_core.load_extended_profile()",
+    "class": "SmoothExtendedAxial",
+    "R_core": 0.005,
+    "R_anchor": 0.01,
+    "R_cutoff": 0.02,
+    "Rmax_Ra": 1242.1747910914733,
+    "bump_supports": [
+      [
+        99.37398328731786,
+        248.43495821829467
+      ],
+      [
+        372.652437327442,
+        521.7134122584188
+      ],
+      [
+        670.7743871893956,
+        819.8353621203723
+      ],
+      [
+        968.8963370513492,
+        1117.957311982326
+      ]
+    ],
+    "bump_fractions": [
+      [
+        0.08,
+        0.2
+      ],
+      [
+        0.3,
+        0.42
+      ],
+      [
+        0.54,
+        0.66
+      ],
+      [
+        0.78,
+        0.9
+      ]
+    ],
+    "z_nodes": 257,
+    "z_range": [
+      -1.0,
+      1.0
+    ],
+    "radial_quadrature_order": 32,
+    "target_quadrature_order": 64,
+    "log_break_count": 24,
+    "reference_coefficients": [
+      1.0,
+      -1.0,
+      1.0,
+      -1.0
+    ],
+    "branch_orientation": {
+      "rule": "positive inner product with fixed reference projection",
+      "orientation_dot_min": 2.437967947178701,
+      "orientation_dot_max": 3.979187968758075,
+      "all_positive_at_nodes": true,
+      "quadratic_root": "positive parameter along the oriented direction",
+      "nonzero_quadratic_target": true
+    },
+    "conditioning": {
+      "scaled_linear_condition_min": 4.618759959770344,
+      "scaled_linear_condition_max": 961.338216859271,
+      "direction_norm_min": 10.250141540620533,
+      "direction_norm_max": 13.095228899171794,
+      "quadratic_discriminant_min": 244.67355388510308,
+      "quadratic_parameter_min": 0.11591965058836437,
+      "quadratic_parameter_max": 0.14897598536937823,
+      "moment_row_scale_mass": 57.21217556655882,
+      "moment_row_scale_mixed": 13.489698215328435
+    },
+    "mass_recovery": "last bump coefficient is recovered from base mass and the first three coefficients using the same 257-node core primitive",
+    "coefficient_gauge": "Chebyshev interpolation of moment functions followed by an oriented fixed-reference algebraic solve; not the full-nullspace minimum-L2 gauge",
+    "replay_seed": {
+      "schema_version": 1,
+      "save_method": "SmoothExtendedAxial.save_seed(path)",
+      "load_factory": "load_smooth_extended_axial_from_seed(path)",
+      "pressure_receipt_hash_bound": true
+    },
+    "moment_interpolation": {
+      "base_mixed": true,
+      "base_energy": true,
+      "bump_mixed": true,
+      "swirl_energy": true,
+      "quadratic_target": true,
+      "linear_and_quadratic_re_solve_at_query": true,
+      "analytic_eta_derivative": true
+    },
+    "primitive_tail": "U, dU_deta, average_U, average_dU_deta are exactly zero for R>=R_a",
+    "five_moment_closure": false,
+    "pde_validated": false,
+    "whole_cone_validated": false,
+    "scope": "Finite smooth axial repair of the shared-pressure ExtendedSwirl candidate. No complete Part I outer construction, PDE, stress cone, global energy, or five-moment certificate is claimed."
+  },
   "necessary_condition": "S_z^2 > -2 F S_theta - S_theta^2; also require F>0 and S_theta<0",
   "weak_anchor_obstruction": "On F=G(Z) R^(-p), U_R=0 implies kappa=2p. For p=.005 this is .01, below 2, regardless of terminal moment closure.",
   "next_action": "Restore axial radial shear across weak-anchor gaps while preserving mass, mixed, quadratic and angular moments; then recompute actual stress direction.",
+  "source_shear_loop_gate": "Lei-Ren Section 11 additionally requires relaxed-cone input with H(t0)>2 and positive boundary margins. Raising kappa alone is insufficient.",
   "rows": [
     {
       "R": 0.002,
@@ -14,6 +117,14 @@
       "kappa": 0.1387619404395091,
       "minimum_abs_U_R_boundary": 0.6176665707765896,
       "actual_abs_U_R": 0.16101097105175863,
+      "a": 0.0030661340085521675,
+      "t0": 6.652542336483027,
+      "H_t0": -0.13262903141227506,
+      "frozen_loop_necessary_margin_H_minus_2": -2.132629031412275,
+      "frozen_loop_necessary_input_pass": false,
+      "actual_relaxed_cone_margin": -0.001422350268974949,
+      "actual_relaxed_cone_pass": false,
+      "actual_stress_component_max": 4.5143274602851835e-08,
       "necessary_shear_failed": true
     },
     {
@@ -25,6 +136,14 @@
       "kappa": 212.74536766830957,
       "minimum_abs_U_R_boundary": 0.15127292453194713,
       "actual_abs_U_R": 1.5646173876039506,
+      "a": 0.011420768167304985,
+      "t0": 136.48054276974574,
+      "H_t0": -212.72257488964055,
+      "frozen_loop_necessary_margin_H_minus_2": -214.72257488964055,
+      "frozen_loop_necessary_input_pass": false,
+      "actual_relaxed_cone_margin": 1.0027559952119268e-17,
+      "actual_relaxed_cone_pass": true,
+      "actual_stress_component_max": 2.268018080286982e-08,
       "necessary_shear_failed": false
     },
     {
@@ -36,6 +155,14 @@
       "kappa": 7862.883293044039,
       "minimum_abs_U_R_boundary": 0.04051650117029937,
       "actual_abs_U_R": 2.5483878532821844,
+      "a": 0.01246878957067101,
+      "t0": -794.1058998119861,
+      "H_t0": -7862.858252702601,
+      "frozen_loop_necessary_margin_H_minus_2": -7864.858252702601,
+      "frozen_loop_necessary_input_pass": false,
+      "actual_relaxed_cone_margin": 2.285167621232899e-19,
+      "actual_relaxed_cone_pass": false,
+      "actual_stress_component_max": 2.106434998649931e-09,
       "necessary_shear_failed": false
     },
     {
@@ -47,6 +174,14 @@
       "kappa": 0.01,
       "minimum_abs_U_R_boundary": 0.28430470667800667,
       "actual_abs_U_R": 0.0,
+      "a": 0.01,
+      "t0": 0.0,
+      "H_t0": 0.02628922697473304,
+      "frozen_loop_necessary_margin_H_minus_2": -1.973710773025267,
+      "frozen_loop_necessary_input_pass": false,
+      "actual_relaxed_cone_margin": -0.004810052146163587,
+      "actual_relaxed_cone_pass": false,
+      "actual_stress_component_max": 0.03383123829712576,
       "necessary_shear_failed": true
     },
     {
@@ -58,6 +193,14 @@
       "kappa": 0.01,
       "minimum_abs_U_R_boundary": 0.03573905404190682,
       "actual_abs_U_R": 0.0,
+      "a": 0.01,
+      "t0": 0.0,
+      "H_t0": 0.05930665812376948,
+      "frozen_loop_necessary_margin_H_minus_2": -1.9406933418762304,
+      "frozen_loop_necessary_input_pass": false,
+      "actual_relaxed_cone_margin": -7.473795257163313e-05,
+      "actual_relaxed_cone_pass": false,
+      "actual_stress_component_max": 0.24213866428043476,
       "necessary_shear_failed": true
     },
     {
@@ -69,6 +212,14 @@
       "kappa": 0.01,
       "minimum_abs_U_R_boundary": 0.009150393858069953,
       "actual_abs_U_R": 0.0,
+      "a": 0.01,
+      "t0": 0.0,
+      "H_t0": 0.06480072725781638,
+      "frozen_loop_necessary_margin_H_minus_2": -1.9351992727421836,
+      "frozen_loop_necessary_input_pass": false,
+      "actual_relaxed_cone_margin": -4.885437273160356e-06,
+      "actual_relaxed_cone_pass": false,
+      "actual_stress_component_max": 0.39971400126429835,
       "necessary_shear_failed": true
     },
     {
@@ -80,6 +231,14 @@
       "kappa": 2.0562446324039567,
       "minimum_abs_U_R_boundary": 0.0,
       "actual_abs_U_R": 0.0,
+      "a": 2.0562446324039567,
+      "t0": 0.0,
+      "H_t0": 0.15072798175921157,
+      "frozen_loop_necessary_margin_H_minus_2": -1.8492720182407885,
+      "frozen_loop_necessary_input_pass": false,
+      "actual_relaxed_cone_margin": 0.0008270538785585008,
+      "actual_relaxed_cone_pass": false,
+      "actual_stress_component_max": 0.13728310365297258,
       "necessary_shear_failed": false
     },
     {
@@ -91,6 +250,14 @@
       "kappa": 0.009999999999999998,
       "minimum_abs_U_R_boundary": 0.006082600409455712,
       "actual_abs_U_R": 0.0,
+      "a": 0.01,
+      "t0": 0.0,
+      "H_t0": 0.014327170649522455,
+      "frozen_loop_necessary_margin_H_minus_2": -1.9856728293504775,
+      "frozen_loop_necessary_input_pass": false,
+      "actual_relaxed_cone_margin": -7.383515419605924e-05,
+      "actual_relaxed_cone_pass": false,
+      "actual_stress_component_max": 0.10889237949392114,
       "necessary_shear_failed": true
     },
     {
@@ -102,6 +269,14 @@
       "kappa": 0.01,
       "minimum_abs_U_R_boundary": 0.001557349261749172,
       "actual_abs_U_R": 0.0,
+      "a": 0.01,
+      "t0": 0.0,
+      "H_t0": 0.13036040276467548,
+      "frozen_loop_necessary_margin_H_minus_2": -1.8696395972353246,
+      "frozen_loop_necessary_input_pass": false,
+      "actual_relaxed_cone_margin": -4.557292034253194e-06,
+      "actual_relaxed_cone_pass": false,
+      "actual_stress_component_max": 0.0824647359953138,
       "necessary_shear_failed": true
     },
     {
@@ -109,10 +284,18 @@
       "Z": 0.0,
       "F": 0.0007096555467716762,
       "S_theta": -0.0014281673472519621,
-      "S_z": 3.528867780343116e-101,
+      "S_z": 3.528867779713354e-101,
       "kappa": 2.012479651217972,
       "minimum_abs_U_R_boundary": 0.0,
-      "actual_abs_U_R": 2.4952863373913376e-102,
+      "actual_abs_U_R": 2.4952863369460283e-102,
+      "a": 2.012479651217972,
+      "t0": 2.4709063587705586e-98,
+      "H_t0": 0.3283534079892483,
+      "frozen_loop_necessary_margin_H_minus_2": -1.6716465920107517,
+      "frozen_loop_necessary_input_pass": false,
+      "actual_relaxed_cone_margin": 5.792025464977742e-12,
+      "actual_relaxed_cone_pass": false,
+      "actual_stress_component_max": 0.0011951495299710089,
       "necessary_shear_failed": false
     },
     {
@@ -120,10 +303,18 @@
       "Z": 0.15,
       "F": 0.0007082444415580928,
       "S_theta": -0.0014217735672119962,
-      "S_z": 1.5422631629115759e-100,
+      "S_z": 1.5444258217184362e-100,
       "kappa": 2.0074616668846486,
       "minimum_abs_U_R_boundary": 0.0,
-      "actual_abs_U_R": 1.0905447408689883e-101,
+      "actual_abs_U_R": 1.092073971576712e-101,
+      "a": 2.0074616668846486,
+      "t0": 1.0862670803107931e-97,
+      "H_t0": 0.5340864149455326,
+      "frozen_loop_necessary_margin_H_minus_2": -1.4659135850544676,
+      "frozen_loop_necessary_input_pass": false,
+      "actual_relaxed_cone_margin": 3.0265674687041113e-12,
+      "actual_relaxed_cone_pass": false,
+      "actual_stress_component_max": 0.009550487865297845,
       "necessary_shear_failed": false
     },
     {
@@ -131,10 +322,18 @@
       "Z": -0.3,
       "F": 0.0007082045132813505,
       "S_theta": -0.0014215234719867362,
-      "S_z": -1.0715059774621529e-100,
+      "S_z": -1.0790266850871049e-100,
       "kappa": 2.0072217069054505,
       "minimum_abs_U_R_boundary": 0.0,
-      "actual_abs_U_R": 7.576691427454082e-102,
+      "actual_abs_U_R": 7.629870861063331e-102,
+      "a": 2.0072217069054505,
+      "t0": -7.59063572533942e-98,
+      "H_t0": 0.794978226668733,
+      "frozen_loop_necessary_margin_H_minus_2": -1.205021773331267,
+      "frozen_loop_necessary_input_pass": false,
+      "actual_relaxed_cone_margin": 1.5043273381454654e-12,
+      "actual_relaxed_cone_pass": false,
+      "actual_stress_component_max": 0.010051668339574701,
       "necessary_shear_failed": false
     },
     {
@@ -146,6 +345,14 @@
       "kappa": 2.0111213357651088,
       "minimum_abs_U_R_boundary": 0.0,
       "actual_abs_U_R": 0.0,
+      "a": 2.0111213357651088,
+      "t0": 0.0,
+      "H_t0": 1.5556750138085087,
+      "frozen_loop_necessary_margin_H_minus_2": -0.4443249861914913,
+      "frozen_loop_necessary_input_pass": false,
+      "actual_relaxed_cone_margin": -5.270616095778602e-14,
+      "actual_relaxed_cone_pass": false,
+      "actual_stress_component_max": 0.0048305493322709095,
       "necessary_shear_failed": false
     },
     {
@@ -157,6 +364,14 @@
       "kappa": 2.0106819666763225,
       "minimum_abs_U_R_boundary": 0.0,
       "actual_abs_U_R": 0.0,
+      "a": 2.0106819666763225,
+      "t0": 0.0,
+      "H_t0": 1.4205010287849948,
+      "frozen_loop_necessary_margin_H_minus_2": -0.5794989712150052,
+      "frozen_loop_necessary_input_pass": false,
+      "actual_relaxed_cone_margin": -1.8014876457266687e-12,
+      "actual_relaxed_cone_pass": false,
+      "actual_stress_component_max": 0.027579622344930676,
       "necessary_shear_failed": false
     },
     {
@@ -168,6 +383,14 @@
       "kappa": 2.010823845371011,
       "minimum_abs_U_R_boundary": 0.0,
       "actual_abs_U_R": 0.0,
+      "a": 2.010823845371011,
+      "t0": 0.0,
+      "H_t0": 1.3091012211772826,
+      "frozen_loop_necessary_margin_H_minus_2": -0.6908987788227174,
+      "frozen_loop_necessary_input_pass": false,
+      "actual_relaxed_cone_margin": 8.304129424489166e-15,
+      "actual_relaxed_cone_pass": false,
+      "actual_stress_component_max": 0.0012564413344164547,
       "necessary_shear_failed": false
     },
     {
@@ -179,6 +402,14 @@
       "kappa": 2.002150976758421,
       "minimum_abs_U_R_boundary": 0.0,
       "actual_abs_U_R": 0.0,
+      "a": 2.002150976758421,
+      "t0": 0.0,
+      "H_t0": 2.0022643406611227,
+      "frozen_loop_necessary_margin_H_minus_2": 0.002264340661122688,
+      "frozen_loop_necessary_input_pass": true,
+      "actual_relaxed_cone_margin": -1.2210646334126773e-12,
+      "actual_relaxed_cone_pass": false,
+      "actual_stress_component_max": 0.1016245954206206,
       "necessary_shear_failed": false
     },
     {
@@ -190,6 +421,14 @@
       "kappa": 2.002631511178942,
       "minimum_abs_U_R_boundary": 0.0,
       "actual_abs_U_R": 0.0,
+      "a": 2.002631511178942,
+      "t0": 0.0,
+      "H_t0": 1.9890339353668416,
+      "frozen_loop_necessary_margin_H_minus_2": -0.010966064633158412,
+      "frozen_loop_necessary_input_pass": false,
+      "actual_relaxed_cone_margin": -2.4265257328155656e-12,
+      "actual_relaxed_cone_pass": false,
+      "actual_stress_component_max": 0.1294862987091385,
       "necessary_shear_failed": false
     },
     {
@@ -201,6 +440,14 @@
       "kappa": 2.0035979867583014,
       "minimum_abs_U_R_boundary": 0.0,
       "actual_abs_U_R": 0.0,
+      "a": 2.0035979867583014,
+      "t0": 0.0,
+      "H_t0": 1.9613372503291568,
+      "frozen_loop_necessary_margin_H_minus_2": -0.038662749670843155,
+      "frozen_loop_necessary_input_pass": false,
+      "actual_relaxed_cone_margin": -1.8739424128022753e-12,
+      "actual_relaxed_cone_pass": false,
+      "actual_stress_component_max": 0.09726322412486921,
       "necessary_shear_failed": false
     },
     {
@@ -212,6 +459,14 @@
       "kappa": 506162.683957262,
       "minimum_abs_U_R_boundary": 0.0,
       "actual_abs_U_R": 0.0015806834313256894,
+      "a": 2.001995650179728,
+      "t0": -502.8201097771708,
+      "H_t0": -2220325.837757435,
+      "frozen_loop_necessary_margin_H_minus_2": -2220327.837757435,
+      "frozen_loop_necessary_input_pass": false,
+      "actual_relaxed_cone_margin": -5.453945136557007e-07,
+      "actual_relaxed_cone_pass": false,
+      "actual_stress_component_max": 0.23940028463030255,
       "necessary_shear_failed": false
     },
     {
@@ -219,10 +474,18 @@
       "Z": 0.15,
       "F": 7.022377149244291e-05,
       "S_theta": -0.00014058769134389453,
-      "S_z": -0.07703983818394253,
-      "kappa": 601174.7349036824,
+      "S_z": -0.07702200490562609,
+      "kappa": 600896.4466810318,
       "minimum_abs_U_R_boundary": 0.0,
-      "actual_abs_U_R": 0.0017226631515487943,
+      "actual_abs_U_R": 0.001722264387323022,
+      "a": 2.0019957395626893,
+      "t0": -547.8573847352037,
+      "H_t0": -2586545.770420624,
+      "frozen_loop_necessary_margin_H_minus_2": -2586547.770420624,
+      "frozen_loop_necessary_input_pass": false,
+      "actual_relaxed_cone_margin": -3.554620421442967e-07,
+      "actual_relaxed_cone_pass": false,
+      "actual_stress_component_max": 0.2545189123287031,
       "necessary_shear_failed": false
     },
     {
@@ -230,10 +493,18 @@
       "Z": -0.3,
       "F": 7.022378094658863e-05,
       "S_theta": -0.00014058772913505308,
-      "S_z": -0.04878192464452026,
-      "kappa": 241040.40275795027,
+      "S_z": -0.04867112760891308,
+      "kappa": 239946.7184976234,
       "minimum_abs_U_R_boundary": 0.0,
-      "actual_abs_U_R": 0.0010907969957841955,
+      "actual_abs_U_R": 0.0010883194987509645,
+      "a": 2.001996008189625,
+      "t0": -346.19755158117704,
+      "H_t0": -1093064.4109441906,
+      "frozen_loop_necessary_margin_H_minus_2": -1093066.4109441906,
+      "frozen_loop_necessary_input_pass": false,
+      "actual_relaxed_cone_margin": -2.1878214384986674e-07,
+      "actual_relaxed_cone_pass": false,
+      "actual_stress_component_max": 0.17304984024886527,
       "necessary_shear_failed": false
     },
     {
@@ -245,6 +516,14 @@
       "kappa": 2.001997337763633,
       "minimum_abs_U_R_boundary": 0.0,
       "actual_abs_U_R": 0.0,
+      "a": 2.001997337763633,
+      "t0": 0.0,
+      "H_t0": 2.0019973186230393,
+      "frozen_loop_necessary_margin_H_minus_2": 0.0019973186230393125,
+      "frozen_loop_necessary_input_pass": true,
+      "actual_relaxed_cone_margin": -2.7889856813818442e-30,
+      "actual_relaxed_cone_pass": false,
+      "actual_stress_component_max": 3.99862472463057e-10,
       "necessary_shear_failed": false
     },
     {
@@ -256,6 +535,14 @@
       "kappa": 2.0019973975084695,
       "minimum_abs_U_R_boundary": 0.0,
       "actual_abs_U_R": 0.0,
+      "a": 2.0019973975084695,
+      "t0": 0.0,
+      "H_t0": 2.0019973991865787,
+      "frozen_loop_necessary_margin_H_minus_2": 0.0019973991865787077,
+      "frozen_loop_necessary_input_pass": true,
+      "actual_relaxed_cone_margin": -1.7405044751617465e-31,
+      "actual_relaxed_cone_pass": false,
+      "actual_stress_component_max": 9.966891931321233e-11,
       "necessary_shear_failed": false
     },
     {
@@ -267,6 +554,14 @@
       "kappa": 2.0019975767857687,
       "minimum_abs_U_R_boundary": 0.0,
       "actual_abs_U_R": 0.0,
+      "a": 2.0019975767857687,
+      "t0": 0.0,
+      "H_t0": 2.0019975798314626,
+      "frozen_loop_necessary_margin_H_minus_2": 0.001997579831462648,
+      "frozen_loop_necessary_input_pass": true,
+      "actual_relaxed_cone_margin": -2.4413888948781368e-33,
+      "actual_relaxed_cone_pass": false,
+      "actual_stress_component_max": 1.263256802973065e-11,
       "necessary_shear_failed": false
     },
     {
@@ -278,6 +573,14 @@
       "kappa": 2.001998262153177,
       "minimum_abs_U_R_boundary": 0.0,
       "actual_abs_U_R": 0.0,
+      "a": 2.001998262153177,
+      "t0": 0.0,
+      "H_t0": 2.001998243004898,
+      "frozen_loop_necessary_margin_H_minus_2": 0.001998243004897926,
+      "frozen_loop_necessary_input_pass": true,
+      "actual_relaxed_cone_margin": -7.746935548077614e-31,
+      "actual_relaxed_cone_pass": false,
+      "actual_stress_component_max": 3.2291807772951214e-10,
       "necessary_shear_failed": false
     },
     {
@@ -289,6 +592,14 @@
       "kappa": 2.001998301188417,
       "minimum_abs_U_R_boundary": 0.0,
       "actual_abs_U_R": 0.0,
+      "a": 2.0019983011884173,
+      "t0": 0.0,
+      "H_t0": 2.0019983028673263,
+      "frozen_loop_necessary_margin_H_minus_2": 0.0019983028673262737,
+      "frozen_loop_necessary_input_pass": true,
+      "actual_relaxed_cone_margin": -4.828539679809713e-32,
+      "actual_relaxed_cone_pass": false,
+      "actual_stress_component_max": 8.050199573516875e-11,
       "necessary_shear_failed": false
     },
     {
@@ -300,10 +611,21 @@
       "kappa": 2.001998418312414,
       "minimum_abs_U_R_boundary": 0.0,
       "actual_abs_U_R": 0.0,
+      "a": 2.0019984183124135,
+      "t0": 0.0,
+      "H_t0": 2.001998421347418,
+      "frozen_loop_necessary_margin_H_minus_2": 0.001998421347417789,
+      "frozen_loop_necessary_input_pass": true,
+      "actual_relaxed_cone_margin": -7.122393247293234e-34,
+      "actual_relaxed_cone_pass": false,
+      "actual_stress_component_max": 1.020428227344104e-11,
       "necessary_shear_failed": false
     }
   ],
   "necessary_shear_failed_count": 6,
+  "frozen_loop_necessary_input_failed_count": 20,
+  "actual_relaxed_cone_failed_count": 26,
+  "scope": "Diagnostic on measured points with nonzero stress; zero-stress core requires a separate directional boundary treatment. Neither scalar screen establishes the relaxed or admissible cone.",
   "whole_cone_validated": false,
   "pde_validated": false
 }

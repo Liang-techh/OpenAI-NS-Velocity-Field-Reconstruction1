@@ -1,0 +1,318 @@
+{
+  "metadata": {
+    "candidate_id": "lr1-extended-common-pressure-axial-background-001",
+    "nu": 0.01,
+    "h": 0.001,
+    "delta": 0.002,
+    "time": "T=1, tau=T-t>0",
+    "support": "|z|<0.5; infinite radial heat tail",
+    "core_radius": 0.005,
+    "collar_inner_radius": 1242.1747910914733,
+    "heat_radius": 2048.0,
+    "dependent_radial_component": "Recovered from same repaired axial primitive; localized streamfunction",
+    "pressure": "Integral of same extended swirl, normalized by actual heat tail; physical p=B(z)^2 p_profile",
+    "diagnostic_forcing": "zero; final smooth forcing unresolved",
+    "acceptance_stage": "extended background candidate; whole cone and recursion remain open",
+    "profile": {
+      "source": "https://arxiv.org/html/2609.35406v1",
+      "source_version": "2609.35406v1",
+      "source_section": "Section 2.5, equations (2.21)--(2.22)",
+      "profile_source": "lei_ren_part1_extended_pressure_core.load_extended_profile()",
+      "class": "SmoothExtendedAxial",
+      "R_core": 0.005,
+      "R_anchor": 0.01,
+      "R_cutoff": 0.02,
+      "Rmax_Ra": 1242.1747910914733,
+      "bump_supports": [
+        [
+          99.37398328731786,
+          248.43495821829467
+        ],
+        [
+          372.652437327442,
+          521.7134122584188
+        ],
+        [
+          670.7743871893956,
+          819.8353621203723
+        ],
+        [
+          968.8963370513492,
+          1117.957311982326
+        ]
+      ],
+      "bump_fractions": [
+        [
+          0.08,
+          0.2
+        ],
+        [
+          0.3,
+          0.42
+        ],
+        [
+          0.54,
+          0.66
+        ],
+        [
+          0.78,
+          0.9
+        ]
+      ],
+      "z_nodes": 257,
+      "z_range": [
+        -1.0,
+        1.0
+      ],
+      "radial_quadrature_order": 32,
+      "target_quadrature_order": 64,
+      "log_break_count": 24,
+      "reference_coefficients": [
+        1.0,
+        -1.0,
+        1.0,
+        -1.0
+      ],
+      "branch_orientation": {
+        "rule": "positive inner product with fixed reference projection",
+        "orientation_dot_min": 2.437967947178701,
+        "orientation_dot_max": 3.979187968758075,
+        "all_positive_at_nodes": true,
+        "quadratic_root": "positive parameter along the oriented direction",
+        "nonzero_quadratic_target": true
+      },
+      "conditioning": {
+        "scaled_linear_condition_min": 4.618759959770344,
+        "scaled_linear_condition_max": 961.338216859271,
+        "direction_norm_min": 10.250141540620533,
+        "direction_norm_max": 13.095228899171794,
+        "quadratic_discriminant_min": 244.67355388510308,
+        "quadratic_parameter_min": 0.11591965058836437,
+        "quadratic_parameter_max": 0.14897598536937823,
+        "moment_row_scale_mass": 57.21217556655882,
+        "moment_row_scale_mixed": 13.489698215328435
+      },
+      "mass_recovery": "last bump coefficient is recovered from base mass and the first three coefficients using the same 257-node core primitive",
+      "coefficient_gauge": "Chebyshev interpolation of moment functions followed by an oriented fixed-reference algebraic solve; not the full-nullspace minimum-L2 gauge",
+      "moment_interpolation": {
+        "base_mixed": true,
+        "base_energy": true,
+        "bump_mixed": true,
+        "swirl_energy": true,
+        "quadratic_target": true,
+        "linear_and_quadratic_re_solve_at_query": true,
+        "analytic_eta_derivative": true
+      },
+      "primitive_tail": "U, dU_deta, average_U, average_dU_deta are exactly zero for R>=R_a",
+      "five_moment_closure": false,
+      "pde_validated": false,
+      "whole_cone_validated": false,
+      "scope": "Finite smooth axial repair of the shared-pressure ExtendedSwirl candidate. No complete Part I outer construction, PDE, stress cone, global energy, or five-moment certificate is claimed."
+    },
+    "pde_validated": false,
+    "scale_recursion_established": false,
+    "whole_stress_cone_validated": false
+  },
+  "rows": [
+    {
+      "tau": 0.125,
+      "radial_length": 0.0022616563651595032,
+      "axial_length": 0.005375032434806678,
+      "axial_to_radial_aspect": 2.376591120387824,
+      "swirl": 0.0011251195476311858,
+      "axial_velocity": 0.1746112679473523,
+      "velocity_amplitude": 0.17785872212399673,
+      "vorticity_amplitude": 1.0662778961852368,
+      "axial_vorticity": 0.9892702535235938,
+      "winding_density": 0.4534400919313032,
+      "global_energy": {
+        "total": 0.7029430950798342,
+        "radial_heat_tail": 0.001144915597278455,
+        "inner_connection_and_collar": 0.7017981794825557
+      }
+    },
+    {
+      "tau": 0.0625,
+      "radial_length": 0.0015992325525180033,
+      "axial_length": 0.0038033572566523897,
+      "axial_to_radial_aspect": 2.378239018874382,
+      "swirl": 0.0015922626134770225,
+      "axial_velocity": 0.2471088467263258,
+      "velocity_amplitude": 0.25169832324719643,
+      "vorticity_amplitude": 2.1336338487455873,
+      "axial_vorticity": 1.979912402230692,
+      "winding_density": 0.6412611277329523,
+      "global_energy": {
+        "total": 0.6719246746986759,
+        "radial_heat_tail": 0.0011451072058183452,
+        "inner_connection_and_collar": 0.6707795674928575
+      }
+    },
+    {
+      "tau": 0.03125,
+      "radial_length": 0.0011308281825797516,
+      "axial_length": 0.002691244489625236,
+      "axial_to_radial_aspect": 2.3798880599930894,
+      "swirl": 0.0022533607522991425,
+      "axial_velocity": 0.3497069968521513,
+      "velocity_amplitude": 0.356193091274439,
+      "vorticity_amplitude": 4.2694311239260605,
+      "axial_vorticity": 3.962570497334218,
+      "winding_density": 0.9068801838626063,
+      "global_energy": {
+        "total": 0.762380322261816,
+        "radial_heat_tail": 0.0011452451230108795,
+        "inner_connection_and_collar": 0.7612350771388051
+      }
+    },
+    {
+      "tau": 0.015625,
+      "radial_length": 0.0007996162762590016,
+      "axial_length": 0.001904316742864463,
+      "axial_to_radial_aspect": 2.381538244536234,
+      "swirl": 0.003188942977763026,
+      "axial_velocity": 0.49490329977053643,
+      "velocity_amplitude": 0.5040697962190369,
+      "vorticity_amplitude": 8.54320371300958,
+      "axial_vorticity": 7.930636188077683,
+      "winding_density": 1.2825222554659044,
+      "global_energy": {
+        "total": 0.6832008948169981,
+        "radial_heat_tail": 0.0011453439296152139,
+        "inner_connection_and_collar": 0.6820555508873829
+      }
+    },
+    {
+      "tau": 0.0078125,
+      "radial_length": 0.0005654140912898758,
+      "axial_length": 0.001347488966957033,
+      "axial_to_radial_aspect": 2.3831895732966517,
+      "swirl": 0.004512973479744932,
+      "axial_velocity": 0.7003842597616556,
+      "velocity_amplitude": 0.7133388438953484,
+      "vorticity_amplitude": 17.09511955345378,
+      "axial_vorticity": 15.872270383547757,
+      "winding_density": 1.8137603677252134,
+      "global_energy": {
+        "total": 0.6802821717611414,
+        "radial_heat_tail": 0.0011454145047216189,
+        "inner_connection_and_collar": 0.6791367572564198
+      }
+    },
+    {
+      "tau": 0.00390625,
+      "radial_length": 0.0003998081381295008,
+      "axial_length": 0.0009534792585710958,
+      "axial_to_radial_aspect": 2.3848420470677283,
+      "swirl": 0.006386733714244098,
+      "axial_velocity": 0.9911797143994036,
+      "velocity_amplitude": 1.0094878268316572,
+      "vorticity_amplitude": 34.207721701296016,
+      "axial_vorticity": 31.766552033711765,
+      "winding_density": 2.5650445109318074,
+      "global_energy": {
+        "total": 0.6806773167925388,
+        "radial_heat_tail": 0.0011454648322556872,
+        "inner_connection_and_collar": 0.6795318519602832
+      }
+    }
+  ],
+  "fitted_tau_exponents": {
+    "radial_length": 0.4999999999999999,
+    "axial_length": 0.4990000000000001,
+    "axial_to_radial_aspect": -0.000999999999999998,
+    "swirl": -0.5010000000000001,
+    "axial_velocity": -0.5009999999999999,
+    "velocity_amplitude": -0.5009639766529564,
+    "vorticity_amplitude": -1.000733327124766,
+    "axial_vorticity": -1.0010000000003243,
+    "winding_density": -0.5
+  },
+  "divergence": [
+    {
+      "step": 1.767766952966369e-05,
+      "max_abs": 6.902280318854537e-06,
+      "max_relative_to_gradient": 1.1023370626303374e-08,
+      "per_point_abs": [
+        3.3223557238670764e-10,
+        1.1048939541069558e-10,
+        6.902280318854537e-06,
+        5.559996907322784e-13,
+        3.5951400967348945e-08,
+        2.3077022681672332e-08,
+        2.1967726215876837e-07,
+        5.365813221525073e-07,
+        1.3799616831178252e-14,
+        3.3732456931889754e-14,
+        1.175467501113303e-10,
+        8.662645600843177e-11
+      ]
+    },
+    {
+      "step": 8.838834764831844e-06,
+      "max_abs": 4.33555968015753e-07,
+      "max_relative_to_gradient": 1.1473798240977035e-09,
+      "per_point_abs": [
+        1.3529017905966612e-09,
+        1.2368417401376064e-09,
+        4.33555968015753e-07,
+        1.3073986337985843e-12,
+        1.1893904172666225e-07,
+        2.4561480072016195e-09,
+        8.003101470421825e-08,
+        1.2906094637443744e-08,
+        1.0221966502410584e-14,
+        4.497660924251967e-14,
+        3.1223812424485686e-10,
+        6.37175867623796e-11
+      ]
+    },
+    {
+      "step": 4.419417382415922e-06,
+      "max_abs": 1.753665221926326e-07,
+      "max_relative_to_gradient": 1.6917238063172987e-09,
+      "per_point_abs": [
+        1.3411778354566195e-09,
+        2.8608582169908914e-09,
+        2.7805810987047153e-08,
+        1.3091749906379846e-12,
+        1.753665221926326e-07,
+        5.653641166336598e-09,
+        1.0002352546223392e-07,
+        6.83478255103509e-08,
+        4.2932237626081005e-14,
+        1.0426392822032726e-13,
+        2.1512958081615352e-10,
+        6.417569253791555e-11
+      ]
+    }
+  ],
+  "divergence_accepted": true,
+  "divergence_points": 12,
+  "axis_checks": [
+    {
+      "epsilon": 1e-05,
+      "transverse_odd_error": 0.0,
+      "axial_even_error": 0.0,
+      "center_limit_error": 1.6617599790658133e-07
+    },
+    {
+      "epsilon": 5e-06,
+      "transverse_odd_error": 0.0,
+      "axial_even_error": 0.0,
+      "center_limit_error": 4.154399685374344e-08
+    }
+  ],
+  "outside_axial_support_max": 0.0,
+  "finest_time_refined_global_energy": {
+    "total": 0.6904224236033485,
+    "radial_heat_tail": 0.0011454646645011914,
+    "inner_connection_and_collar": 0.6892769589388473
+  },
+  "energy_relative_refinement": 0.014316779141003488,
+  "uniform_energy_integrability_exponent": 0.004008016032064128,
+  "geometry_scaling_is_imposed_by_representation": true,
+  "whole_stress_cone_validated": false,
+  "scale_recursion_established": false,
+  "pde_validated": false
+}

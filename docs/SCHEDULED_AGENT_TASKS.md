@@ -6,10 +6,12 @@ This queue supersedes the older short-join route below.
   moments and pressure. Independent heat/collar agreement is below 1.66e-13.
 - [x] Integrate actual extended pressure inward to avoid cancellation;
   independent radial identity relative error is below 3.28e-8.
-- [ ] Finish continuous axial repair: interpolate moment functions, solve
+- [x] Finish continuous axial repair: interpolate moment functions, solve
   linear/quadratic constraints at each Z, differentiate that same solve, and
   compare actual off-grid mixed/quadratic integrals. Preserve the failed
   coefficient-interpolation receipt; do not widen tolerances to claim closure.
+  Current 257-node actual holdouts: mass 5.72e-14, mixed 8.36e-11,
+  quadratic 2.17e-11. The same algebraic solve supplies analytic Z derivatives.
 - [ ] Bind the repaired candidate metadata to physical-field and actual-stress
   reports. Repeat heat-tail stress diagnostics using actual integrated moments,
   not theoretical terminal values. The historical 27-point stress receipt
@@ -19,8 +21,29 @@ This queue supersedes the older short-join route below.
   `lei_ren_part1_connection_shear_screen.py/.json` isolates a necessary failure:
   F=G(Z)R^(-.005), U_R=0 gives kappa=.01<2. Four isolated compact axial bumps
   cannot cure gaps in which their derivative vanishes. Derive required local
-  shear from S_z^2 > -2 F S_theta-S_theta^2, then construct a smooth repair
+  shear from S_z^2 > -2 F S_theta-S_theta^2. First check the full relaxed cone
+  (3.23), H(t0)>2 and boundary margins required by the Section 11
+  mean-preserving shear loop; increasing shear magnitude alone is insufficient.
+  Then construct a smooth repair
   supported away from the fixed core/collar. This condition is only necessary.
+- [ ] Implement a separate source outer candidate rather than relabeling the
+  weak anchor. Reference data are Utheta=Pstar/(1+Z^2)*(R/Rref)^(.1),
+  Uz=4Z, hence F proportional to R^(-.4). Section 6 uses y=log(R/Rref),
+  A=Pstar*exp(integral s), with
+  s=.1-.6*sigma(y)-mu*sigma(y-yd)
+  -(1-mu)*sigma(y-yrel)+(1-delta/2)*sigma(y-yrel-1-Ts).
+  Add the axial cutoff and Z flattening from (6.2), followed by the
+  pre-heat/heat transition (6.4). Preserve the source schedule in logarithms:
+  its exp(13/mu) radius cannot generally be materialized in floating point.
+  Keep any compressed numerical schedule explicitly separate and validate
+  its actual relaxed cone; it cannot inherit the theorem.
+- [ ] Close that outer candidate with the Section 7 scalar waiting-length
+  root, two angular bump equations (7.21), and axial pulse/linear/quadratic
+  system (7.31),(7.34). The four current axial bumps are a retained numerical
+  candidate, not a replacement for this coupled construction.
+  Build inward pressure from the SAME new swirl and rebuild the finite core.
+  Section 10's coupled five-bump repair also requires a small normalized
+  defect and agreement with the reference branch; do not assume these inputs.
 - [ ] Recompute actual stress signs, directional cone margins and edge limits
   after shear restoration. If changing F, rebuild common pressure/core and
   restore moments again; do not reuse an incompatible pressure receipt.

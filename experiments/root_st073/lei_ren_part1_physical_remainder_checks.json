@@ -1,0 +1,629 @@
+{
+  "candidate": {
+    "candidate_id": "lr1-extended-common-pressure-axial-background-001",
+    "nu": 0.01,
+    "h": 0.001,
+    "delta": 0.002,
+    "time": "T=1, tau=T-t>0",
+    "support": "|z|<0.5; infinite radial heat tail",
+    "core_radius": 0.005,
+    "collar_inner_radius": 1242.1747910914733,
+    "heat_radius": 2048.0,
+    "dependent_radial_component": "Recovered from same repaired axial primitive; localized streamfunction",
+    "pressure": "Integral of same extended swirl, normalized by actual heat tail; physical p=B(z)^2 p_profile",
+    "diagnostic_forcing": "zero; final smooth forcing unresolved",
+    "acceptance_stage": "extended background candidate; whole cone and recursion remain open",
+    "profile": {
+      "source": "https://arxiv.org/html/2609.35406v1",
+      "source_version": "2609.35406v1",
+      "source_section": "Section 2.5, equations (2.21)--(2.22)",
+      "profile_source": "lei_ren_part1_extended_pressure_core.load_extended_profile()",
+      "class": "SmoothExtendedAxial",
+      "R_core": 0.005,
+      "R_anchor": 0.01,
+      "R_cutoff": 0.02,
+      "Rmax_Ra": 1242.1747910914733,
+      "bump_supports": [
+        [
+          99.37398328731786,
+          248.43495821829467
+        ],
+        [
+          372.652437327442,
+          521.7134122584188
+        ],
+        [
+          670.7743871893956,
+          819.8353621203723
+        ],
+        [
+          968.8963370513492,
+          1117.957311982326
+        ]
+      ],
+      "bump_fractions": [
+        [
+          0.08,
+          0.2
+        ],
+        [
+          0.3,
+          0.42
+        ],
+        [
+          0.54,
+          0.66
+        ],
+        [
+          0.78,
+          0.9
+        ]
+      ],
+      "z_nodes": 257,
+      "z_range": [
+        -1.0,
+        1.0
+      ],
+      "radial_quadrature_order": 32,
+      "target_quadrature_order": 64,
+      "log_break_count": 24,
+      "reference_coefficients": [
+        1.0,
+        -1.0,
+        1.0,
+        -1.0
+      ],
+      "branch_orientation": {
+        "rule": "positive inner product with fixed reference projection",
+        "orientation_dot_min": 2.437967947178701,
+        "orientation_dot_max": 3.979187968758075,
+        "all_positive_at_nodes": true,
+        "quadratic_root": "positive parameter along the oriented direction",
+        "nonzero_quadratic_target": true
+      },
+      "conditioning": {
+        "scaled_linear_condition_min": 4.618759959770344,
+        "scaled_linear_condition_max": 961.338216859271,
+        "direction_norm_min": 10.250141540620533,
+        "direction_norm_max": 13.095228899171794,
+        "quadratic_discriminant_min": 244.67355388510308,
+        "quadratic_parameter_min": 0.11591965058836437,
+        "quadratic_parameter_max": 0.14897598536937823,
+        "moment_row_scale_mass": 57.21217556655882,
+        "moment_row_scale_mixed": 13.489698215328435
+      },
+      "mass_recovery": "last bump coefficient is recovered from base mass and the first three coefficients using the same 257-node core primitive",
+      "coefficient_gauge": "Chebyshev interpolation of moment functions followed by an oriented fixed-reference algebraic solve; not the full-nullspace minimum-L2 gauge",
+      "replay_seed": {
+        "schema_version": 1,
+        "save_method": "SmoothExtendedAxial.save_seed(path)",
+        "load_factory": "load_smooth_extended_axial_from_seed(path)",
+        "pressure_receipt_hash_bound": true
+      },
+      "moment_interpolation": {
+        "base_mixed": true,
+        "base_energy": true,
+        "bump_mixed": true,
+        "swirl_energy": true,
+        "quadratic_target": true,
+        "linear_and_quadratic_re_solve_at_query": true,
+        "analytic_eta_derivative": true
+      },
+      "primitive_tail": "U, dU_deta, average_U, average_dU_deta are exactly zero for R>=R_a",
+      "five_moment_closure": false,
+      "pde_validated": false,
+      "whole_cone_validated": false,
+      "scope": "Finite smooth axial repair of the shared-pressure ExtendedSwirl candidate. No complete Part I outer construction, PDE, stress cone, global energy, or five-moment certificate is claimed."
+    },
+    "pde_validated": false,
+    "scale_recursion_established": false,
+    "whole_stress_cone_validated": false
+  },
+  "rows": [
+    {
+      "tau": 0.125,
+      "R": 0.002,
+      "Z": 0.15,
+      "physical_point": [
+        0.0022616563651595032,
+        0.0,
+        0.005375032434806678
+      ],
+      "leading_momentum_scale": 2.191307556441812,
+      "measurements": [
+        {
+          "R_B": [
+            -0.07039220496244097,
+            -1.7948272914433914,
+            7.676499867535293
+          ],
+          "D_T_B": [
+            0.0,
+            2.5446232065022174e-09,
+            -1.5810845984009424e-06
+          ],
+          "E_B": [
+            -0.07039220496244097,
+            -1.7948272888987682,
+            7.676498286450695
+          ],
+          "divergence": 1.0666656891089588e-08,
+          "radial_remainder_equals_radial_residual": true,
+          "spatial_step": 4.523312730319007e-07,
+          "tau_step": 2.5e-05,
+          "forcing": "zero diagnostic forcing",
+          "stress_envelope": "B(z)^2 times nu q^(-1-h) actual profile T",
+          "whole_cone_validated": false,
+          "flatness_established": false,
+          "full_corrected_field": false
+        },
+        {
+          "R_B": [
+            -0.07075573411022756,
+            -1.794826561940986,
+            7.67746788369133
+          ],
+          "D_T_B": [
+            0.0,
+            2.5428686070686673e-09,
+            -1.580080660744241e-06
+          ],
+          "E_B": [
+            -0.07075573411022756,
+            -1.7948265593981174,
+            7.677466303610669
+          ],
+          "divergence": 2.8859005851700203e-08,
+          "radial_remainder_equals_radial_residual": true,
+          "spatial_step": 2.2616563651595034e-07,
+          "tau_step": 1.25e-05,
+          "forcing": "zero diagnostic forcing",
+          "stress_envelope": "B(z)^2 times nu q^(-1-h) actual profile T",
+          "whole_cone_validated": false,
+          "flatness_established": false,
+          "full_corrected_field": false
+        }
+      ],
+      "refinement_max_abs_difference": {
+        "R_B": 0.0009680161560368106,
+        "D_T_B": 1.0039376567015305e-09,
+        "E_B": 0.0009680171599741882
+      }
+    },
+    {
+      "tau": 0.125,
+      "R": 1.0,
+      "Z": -0.3,
+      "physical_point": [
+        0.052414241836095915,
+        0.0,
+        -0.011140833825903407
+      ],
+      "leading_momentum_scale": 1.9681545581291973,
+      "measurements": [
+        {
+          "R_B": [
+            -0.00694883777417842,
+            -3.4127042402611583,
+            -0.03440746661550308
+          ],
+          "D_T_B": [
+            0.0,
+            0.008647127404336976,
+            0.0344074666317464
+          ],
+          "E_B": [
+            -0.00694883777417842,
+            -3.404057112856821,
+            1.624332612859547e-11
+          ],
+          "divergence": -1.5332179970073412e-13,
+          "radial_remainder_equals_radial_residual": true,
+          "spatial_step": 7.0710678118654756e-06,
+          "tau_step": 2.5e-05,
+          "forcing": "zero diagnostic forcing",
+          "stress_envelope": "B(z)^2 times nu q^(-1-h) actual profile T",
+          "whole_cone_validated": false,
+          "flatness_established": false,
+          "full_corrected_field": false
+        },
+        {
+          "R_B": [
+            -0.006948846140110958,
+            -3.4127042433414543,
+            -0.03440746661724209
+          ],
+          "D_T_B": [
+            0.0,
+            0.008647127405647942,
+            0.0344074666402204
+          ],
+          "E_B": [
+            -0.006948846140110958,
+            -3.404057115935806,
+            2.297831369624248e-11
+          ],
+          "divergence": -8.176792576364278e-14,
+          "radial_remainder_equals_radial_residual": true,
+          "spatial_step": 3.5355339059327378e-06,
+          "tau_step": 1.25e-05,
+          "forcing": "zero diagnostic forcing",
+          "stress_envelope": "B(z)^2 times nu q^(-1-h) actual profile T",
+          "whole_cone_validated": false,
+          "flatness_established": false,
+          "full_corrected_field": false
+        }
+      ],
+      "refinement_max_abs_difference": {
+        "R_B": 8.365932537869603e-09,
+        "D_T_B": 8.473999280056432e-12,
+        "E_B": 8.365932537869603e-09
+      }
+    },
+    {
+      "tau": 0.03125,
+      "R": 0.002,
+      "Z": 0.15,
+      "physical_point": [
+        0.0011308281825797516,
+        0.0,
+        0.002691244489625236
+      ],
+      "leading_momentum_scale": 17.55477968291821,
+      "measurements": [
+        {
+          "R_B": [
+            -0.533824993074131,
+            -14.33872502236527,
+            61.3320857290278
+          ],
+          "D_T_B": [
+            0.0,
+            2.0385225996628918e-08,
+            -1.2666223736322363e-05
+          ],
+          "E_B": [
+            -0.533824993074131,
+            -14.338725001980045,
+            61.332073062804064
+          ],
+          "divergence": -7.098890364432009e-09,
+          "radial_remainder_equals_radial_residual": true,
+          "spatial_step": 2.2616563651595034e-07,
+          "tau_step": 6.25e-06,
+          "forcing": "zero diagnostic forcing",
+          "stress_envelope": "B(z)^2 times nu q^(-1-h) actual profile T",
+          "whole_cone_validated": false,
+          "flatness_established": false,
+          "full_corrected_field": false
+        },
+        {
+          "R_B": [
+            -0.5306569975762647,
+            -14.338728116986609,
+            61.32446282100569
+          ],
+          "D_T_B": [
+            0.0,
+            2.0371169728537308e-08,
+            -1.2658181093323373e-05
+          ],
+          "E_B": [
+            -0.5306569975762647,
+            -14.338728096615439,
+            61.3244501628246
+          ],
+          "divergence": 7.48564730201906e-08,
+          "radial_remainder_equals_radial_residual": true,
+          "spatial_step": 1.1308281825797517e-07,
+          "tau_step": 3.125e-06,
+          "forcing": "zero diagnostic forcing",
+          "stress_envelope": "B(z)^2 times nu q^(-1-h) actual profile T",
+          "whole_cone_validated": false,
+          "flatness_established": false,
+          "full_corrected_field": false
+        }
+      ],
+      "refinement_max_abs_difference": {
+        "R_B": 0.007622908022113961,
+        "D_T_B": 8.042642998990724e-09,
+        "E_B": 0.007622899979466524
+      }
+    },
+    {
+      "tau": 0.03125,
+      "R": 1.0,
+      "Z": -0.3,
+      "physical_point": [
+        0.026207120918047958,
+        0.0,
+        -0.00557814450562871
+      ],
+      "leading_momentum_scale": 15.767079134246003,
+      "measurements": [
+        {
+          "R_B": [
+            -0.055465962622929965,
+            -27.264003925259175,
+            -0.2756415885568128
+          ],
+          "D_T_B": [
+            0.0,
+            0.06927298538065016,
+            0.27564158871205435
+          ],
+          "E_B": [
+            -0.055465962622929965,
+            -27.194730939878525,
+            1.552415418437647e-10
+          ],
+          "divergence": -6.94999613415348e-13,
+          "radial_remainder_equals_radial_residual": true,
+          "spatial_step": 3.5355339059327378e-06,
+          "tau_step": 6.25e-06,
+          "forcing": "zero diagnostic forcing",
+          "stress_envelope": "B(z)^2 times nu q^(-1-h) actual profile T",
+          "whole_cone_validated": false,
+          "flatness_established": false,
+          "full_corrected_field": false
+        },
+        {
+          "R_B": [
+            -0.055464388732482384,
+            -27.264003828819476,
+            -0.27564158856960047
+          ],
+          "D_T_B": [
+            0.0,
+            0.06927298547814718,
+            0.27564158884420387
+          ],
+          "E_B": [
+            -0.055464388732482384,
+            -27.19473084334133,
+            2.746033955780547e-10
+          ],
+          "divergence": -3.270717030545711e-13,
+          "radial_remainder_equals_radial_residual": true,
+          "spatial_step": 1.7677669529663689e-06,
+          "tau_step": 3.125e-06,
+          "forcing": "zero diagnostic forcing",
+          "stress_envelope": "B(z)^2 times nu q^(-1-h) actual profile T",
+          "whole_cone_validated": false,
+          "flatness_established": false,
+          "full_corrected_field": false
+        }
+      ],
+      "refinement_max_abs_difference": {
+        "R_B": 1.573890447581494e-06,
+        "D_T_B": 1.32149513554225e-10,
+        "E_B": 1.573890447581494e-06
+      }
+    },
+    {
+      "tau": 0.0078125,
+      "R": 0.002,
+      "Z": 0.15,
+      "physical_point": [
+        0.0005654140912898758,
+        0.0,
+        0.001347488966957033
+      ],
+      "leading_momentum_scale": 140.63306121035643,
+      "measurements": [
+        {
+          "R_B": [
+            -4.014086546063385,
+            -114.55089849326853,
+            489.958864109946
+          ],
+          "D_T_B": [
+            0.0,
+            1.6342204792649536e-07,
+            -0.00010147402095749251
+          ],
+          "E_B": [
+            -4.014086546063385,
+            -114.55089832984649,
+            489.95876263592504
+          ],
+          "divergence": 2.0613009610315203e-07,
+          "radial_remainder_equals_radial_residual": true,
+          "spatial_step": 1.1308281825797517e-07,
+          "tau_step": 1.5625e-06,
+          "forcing": "zero diagnostic forcing",
+          "stress_envelope": "B(z)^2 times nu q^(-1-h) actual profile T",
+          "whole_cone_validated": false,
+          "flatness_established": false,
+          "full_corrected_field": false
+        },
+        {
+          "R_B": [
+            -4.057827065523622,
+            -114.55081517852904,
+            490.06669328781436
+          ],
+          "D_T_B": [
+            0.0,
+            1.63187594103992e-07,
+            -0.00010148610728306183
+          ],
+          "E_B": [
+            -4.057827065523622,
+            -114.55081501534144,
+            490.0665918017071
+          ],
+          "divergence": -4.850548975809943e-07,
+          "radial_remainder_equals_radial_residual": true,
+          "spatial_step": 5.6541409128987585e-08,
+          "tau_step": 7.8125e-07,
+          "forcing": "zero diagnostic forcing",
+          "stress_envelope": "B(z)^2 times nu q^(-1-h) actual profile T",
+          "whole_cone_validated": false,
+          "flatness_established": false,
+          "full_corrected_field": false
+        }
+      ],
+      "refinement_max_abs_difference": {
+        "R_B": 0.10782917786838198,
+        "D_T_B": 1.2086325569318486e-08,
+        "E_B": 0.10782916578205004
+      }
+    },
+    {
+      "tau": 0.0078125,
+      "R": 1.0,
+      "Z": -0.3,
+      "physical_point": [
+        0.013103560459023979,
+        0.0,
+        -0.0027929414092263964
+      ],
+      "leading_momentum_scale": 126.3116168386084,
+      "measurements": [
+        {
+          "R_B": [
+            -0.44272192959132356,
+            -217.8114088062682,
+            -2.208191791474269
+          ],
+          "D_T_B": [
+            0.0,
+            0.5549526783556387,
+            2.2081917924710153
+          ],
+          "E_B": [
+            -0.44272192959132356,
+            -217.25645612791254,
+            9.967462410997996e-10
+          ],
+          "divergence": -1.3082868122182845e-12,
+          "radial_remainder_equals_radial_residual": true,
+          "spatial_step": 1.7677669529663689e-06,
+          "tau_step": 1.5625e-06,
+          "forcing": "zero diagnostic forcing",
+          "stress_envelope": "B(z)^2 times nu q^(-1-h) actual profile T",
+          "whole_cone_validated": false,
+          "flatness_established": false,
+          "full_corrected_field": false
+        },
+        {
+          "R_B": [
+            -0.44273716620781345,
+            -217.8114101885881,
+            -2.2081917913828026
+          ],
+          "D_T_B": [
+            0.0,
+            0.5549526784396835,
+            2.2081917930133512
+          ],
+          "E_B": [
+            -0.44273716620781345,
+            -217.2564575101484,
+            1.6305485850409696e-09
+          ],
+          "divergence": 9.814371537686384e-13,
+          "radial_remainder_equals_radial_residual": true,
+          "spatial_step": 8.838834764831844e-07,
+          "tau_step": 7.8125e-07,
+          "forcing": "zero diagnostic forcing",
+          "stress_envelope": "B(z)^2 times nu q^(-1-h) actual profile T",
+          "whole_cone_validated": false,
+          "flatness_established": false,
+          "full_corrected_field": false
+        }
+      ],
+      "refinement_max_abs_difference": {
+        "R_B": 1.5236616489888721e-05,
+        "D_T_B": 5.423359539236117e-10,
+        "E_B": 1.5236616489888721e-05
+      }
+    }
+  ],
+  "finite_scale_fits": [
+    {
+      "R": 0.002,
+      "Z": 0.15,
+      "quantity": "R_B",
+      "raw_norm_tau_exponent": -1.4990454841429819,
+      "norm_divided_by_leading_momentum_scale": [
+        3.5982126366753007,
+        3.587667639897267,
+        3.578766413276576
+      ],
+      "normalized_tau_exponent": 0.0019545158570173676
+    },
+    {
+      "R": 0.002,
+      "Z": 0.15,
+      "quantity": "D_T_B",
+      "raw_norm_tau_exponent": -1.5012850563293434,
+      "norm_divided_by_leading_momentum_scale": [
+        7.210684334351891e-07,
+        7.210684334352775e-07,
+        7.21638550783873e-07
+      ],
+      "normalized_tau_exponent": -0.00028505632934636437
+    },
+    {
+      "R": 0.002,
+      "Z": 0.15,
+      "quantity": "E_B",
+      "raw_norm_tau_exponent": -1.4990454837034133,
+      "norm_divided_by_leading_momentum_scale": [
+        3.5982119343033996,
+        3.5876669375280414,
+        3.578765710338986
+      ],
+      "normalized_tau_exponent": 0.001954516296586085
+    },
+    {
+      "R": 1.0,
+      "Z": -0.3,
+      "quantity": "R_B",
+      "raw_norm_tau_exponent": -1.4990052841520654,
+      "norm_divided_by_leading_momentum_scale": [
+        1.7340532276604055,
+        1.7292647138949901,
+        1.7244894707312806
+      ],
+      "normalized_tau_exponent": 0.001994715847933858
+    },
+    {
+      "R": 1.0,
+      "Z": -0.3,
+      "quantity": "D_T_B",
+      "raw_norm_tau_exponent": -1.5009999999996908,
+      "norm_divided_by_leading_momentum_scale": [
+        0.018025723227004797,
+        0.01802572323254514,
+        0.018025723226989393
+      ],
+      "normalized_tau_exponent": 3.085524741899729e-13
+    },
+    {
+      "R": 1.0,
+      "Z": -0.3,
+      "quantity": "E_B",
+      "raw_norm_tau_exponent": -1.498999998624312,
+      "norm_divided_by_leading_momentum_scale": [
+        1.7295715899727158,
+        1.7247828321464886,
+        1.7200073442520876
+      ],
+      "normalized_tau_exponent": 0.002000001375687406
+    }
+  ],
+  "sampled_component_maxima": {
+    "R_B": 490.06669328781436,
+    "D_T_B": 2.2081917930133512,
+    "E_B": 490.0665918017071
+  },
+  "radial_identity_passed": true,
+  "scope": "Six fixed-sector points and two finite-difference steps. Maxima are sampled only; no volume L2, global norms, flatness, cone or corrected-field claim.",
+  "volume_L2_measured": false,
+  "flatness_established": false,
+  "whole_cone_validated": false,
+  "full_PDE_gate_passed": false
+}
