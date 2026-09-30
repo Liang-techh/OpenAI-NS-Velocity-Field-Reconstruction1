@@ -1,5 +1,15 @@
 ## Source outer replacement and first correction inputs — 2026-09-29
 
+Latest axial progress: actual incoming moments, row-normalized pulse
+integrals and corrected angular energy tail now feed the source affine and
+quadratic energy solve. a_p=1.0100502663 is within the source interval;
+independent end-bump quadrature replays both normalized linear rows to
+2.45e-19 relatively. This is algebra/quad evidence for the actual numerical
+inputs, not PDE accuracy: incoming moment refinement is about 3.8e-7,
+pulse refinement 3.38e-9 and angular-tail refinement 5.06e-13, with separate
+heat bounds. Source profile assembly, common-pressure/stress recomputation,
+coefficient derivatives, relaxed cone and new regular inner core remain open.
+
 Latest: source angular coefficients now use arbitrary-exponent signed logs
 and a scaled small-branch quadratic solve, with a callable multiplicative
 angular bump representation. Actual bump quadrature replays its normalized

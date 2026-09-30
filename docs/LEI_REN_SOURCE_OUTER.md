@@ -103,7 +103,43 @@ infinity, so it cannot be substituted before the angular repair is bound.
 `lei_ren_part1_paper_axial_pulse.py` now materializes this fixed pulse,
 its derivative and actual Kp integral. Its checks give Kp=.24504962020069448
 and quadrature refinement 2.03e-15, within the source range. Actual linear
-RHS integrals and the corrected angular energy target remain unbound.
+RHS integrals and the corrected angular energy target are now materialized
+by the following modules, retaining their uncertainties.
+
+`lei_ren_part1_paper_axial_incoming.py/.json` integrates the SAME temporary
+reference and source outer candidate through Rp, producing m1, m2 and
+E_prior with signed logarithmic row normalizations. Actual axial/mixed
+moment refinement is about 3.14e-7/3.78e-7 relatively at Z=.5; prior-energy
+refinement is 1.37e-12. This reference remains singular in F at the axis
+and is not the future regular core.
+
+`lei_ren_part1_paper_axial_pulse_moments.py/.json` integrates both actual
+row-normalized pulse terms around the flat-endpoint saddle. The radial
+stage remains logarithmic; omitted positive pieces have separate bounds.
+Source-input quadrature refinement is 3.38e-9 relatively. Independent
+original-coordinate quadrature at mu=1e-6 differs by 1.21e-10 relatively.
+
+`lei_ren_part1_paper_axial_energy_tail.py/.json` integrates the actual
+future corrected angular energy through flattening, angular bumps,
+drop/steep/restore/waiting and heat exterior. It retains heat-collar and
+exterior deficit bounds separately instead of rounding their widths to zero.
+Q at Z=0,.5 is about 533.0691,806.2893; maximum quadrature refinement is
+5.06e-13 relatively. The Z=0 energy-target contribution is 6.51e-37.
+
+`lei_ren_part1_paper_axial_correction.py/.json` binds these actual inputs
+to the source affine and energy equations, with an analytic determinant
+and arbitrary-exponent end coefficients. The selected a_p is approximately
+1.0100502663, inside (.9,1.2). Independent translated-bump quadrature
+replays both normalized linear rows to 2.45e-19 relatively. Algebraic
+working-precision errors are reported separately and do not replace the
+larger incoming/pulse/tail integration uncertainties. Pulse and end-bump
+axial factors are callable in separate stage-local coordinates.
+
+Next bind the corrected angular and axial factors into one source profile,
+recover radial velocity from its streamfunction, and recompute SAME-profile
+pressure and stress. Then check coefficient derivatives and the relaxed
+cone before replacing the regular core. Exact pressure-target cancellation
+and all-five-moment global closure remain unproved.
 
 The binding order is: solve waiting length from actual normalized angular
 data; restore angular/pressure moments; integrate actual axial pulse and

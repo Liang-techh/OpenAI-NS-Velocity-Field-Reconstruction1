@@ -3,9 +3,12 @@
 Latest source-route outputs are in `LEI_REN_SOURCE_OUTER.md`:
 source velocity schedule, normalized backward pressure and pre-heat waiting
 root are implemented. Exact angular/axial algebra and source bump integrals
-are available, with stable tiny-mu row scaling. Next bind actual angular
-heat defects and axial pulse integrals to those kernels, rebuild common
-pressure/core, and measure the actual relaxed/admissible cones. These
+are available, with stable tiny-mu row scaling. Actual approximate angular
+inputs and axial incoming/pulse/energy inputs now feed callable coefficient
+solves. Next assemble one corrected source profile, derive its radial
+component from the streamfunction, recompute common pressure/stress, rebuild
+the regular core, and measure actual relaxed/admissible cones. Preserve the
+separate integration/heat/waiting uncertainties in the new receipts. These
 outputs do not close all five moments or replace the retained physical field.
 Actual first-order core forcing is also materialized; next solve coupled
 F1, Uz1, P1, not merely subtract viscosity from diagnostic vectors.
