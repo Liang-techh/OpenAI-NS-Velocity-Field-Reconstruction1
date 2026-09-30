@@ -197,7 +197,10 @@ class ContinuousSeededAxialProfileJets(ContinuousSeededAxialProfile):
             base = self.schedule.at_log_radius(logR, Z)
             inherited = super().values(logR, Z)
             Utheta = _mp(inherited["Utheta"])
-            LZ = _mp(base["dlogU_dZ"])
+            # Through Rv the amplitude has the exact source factor
+            # (1+Z^2)^-1. Do not round its derivative through binary64.
+            z_mp = _mp(Z)
+            LZ = -2*z_mp/(1+z_mp*z_mp) if self.offset(logR,self.schedule.logR_v)<=0 else _mp(base["dlogU_dZ"])
             Uz = _mp(inherited["Uz"])
             start = self.offset(logR, self.schedule.logR_p)
             end = self.offset(logR, self.schedule.logR_v)
@@ -298,7 +301,8 @@ class ContinuousSeededAxialProfileJets(ContinuousSeededAxialProfile):
                 )
                 lam = mp.mpf(".5") - component.mu
                 scale = mp.exp(logE - lam * _mp(end))
-                LZ = _mp(self.schedule.at_log_radius(logR, Z)["dlogU_dZ"])
+                z_mp = _mp(Z)
+                LZ = -2*z_mp/(1+z_mp*z_mp)
                 value = scale * N
                 derivative = scale * (N_Z + LZ * N)
                 region = "continuous_seeded_exterior_before_Rv"
@@ -309,7 +313,8 @@ class ContinuousSeededAxialProfileJets(ContinuousSeededAxialProfile):
                 at_rv = self.schedule.at_log_radius(self.schedule.logR_v, Z)
                 logE = _mp(at_rv["log_angular_amplitude"])
                 scale = mp.exp(logE - _mp(end))
-                LZ = _mp(at_rv["dlogU_dZ"])
+                z_mp = _mp(Z)
+                LZ = -2*z_mp/(1+z_mp*z_mp)
                 value = scale * N
                 derivative = scale * (N_Z + LZ * N)
                 region = "continuous_seeded_exterior_after_Rv"

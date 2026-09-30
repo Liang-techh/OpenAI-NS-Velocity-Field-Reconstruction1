@@ -1,3 +1,36 @@
+## Shared continuous incoming axial field installed - 2026-09-30
+
+New continuous_incoming.py/md/json provides the same MP smooth cutoff for
+Uz, Uz_y, Uz_Z and weighted cumulative mass/axial-energy integrals. It reuses
+the pulse switch and evaluates the reflected cutoff to retain positive flat
+tails. Incoming mean_Z is analytic; quadrature accuracy is not enclosed.
+
+New continuous_incoming_outer.py/md/json installs that provider before Rp,
+regenerates I_z, I_theta_z and I_uz2, reapplies measured inner offsets ONCE,
+updates the prior-energy target and re-solves with retained continuous atoms.
+Both incoming point values and mass/Z-mass now feed the joined field.
+Rp mass and mass_Z relative matching: 6.92e-83 each. New linear row replay:
+1.27e-173 / 1.24e-173; energy replay 1.63e-201 (numerical algebra only).
+
+A float-rounded amplitude derivative produced a 2.26e-17 derivative jump.
+Using the exact MP derivative of (1+Z^2)^-1 removes that discrepancy.
+Zero-Z tangent factors are taken from the regenerated incoming receipt.
+
+Remaining limits: the mixed integral retains the float-backed angular
+primitive, swirl energy is inherited, future angular target derivative is
+still finite-differenced, and integral/coefficient uncertainty is unenclosed.
+No terminal mean is assigned zero. Global finite energy, full five moments,
+NS stress/remainder and scale recursion remain incomplete.
+
+Next actionable tasks:
+- [x] Install continuous incoming axial values and matching mass/Z-mass.
+- [x] Regenerate axial incoming rows/target and install updated coefficients.
+- [ ] Replace retained angular primitive and cache/jet precision coherently.
+- [ ] Resolve terminal mean AND its Z derivative with explicit integral bounds.
+- [ ] Continue all five moments and pressure jets through outer/heat layers.
+- [ ] Establish finite global energy and cross-scale matching before claiming
+      recursive background closure; then stress/remainder and pulse corrections.
+
 ## Actual axial coefficient and cumulative mean Z derivatives - 2026-09-30
 
 New continuous_axial_tangents.py/md/json differentiates the same continuous

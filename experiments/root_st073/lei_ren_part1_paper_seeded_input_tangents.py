@@ -80,10 +80,12 @@ def actual_seeded_input_tangents(source,seeded,Z):
             future_jets.append(_finite_difference(future,z,step=h))
         reference_factors=None
         if z==0:
-            from lei_ren_part1_paper_axial_incoming import _stage_integrals
-            reference=_stage_integrals(source.schedule,.5,order=seeded['incoming']['order'])
-            reference_factors=dict(I_z_over_Z=2*reference['I_z'],
-                I_theta_z_times_1plusZ2_over_Z=mp.mpf('2.5')*reference['I_theta_z'])
+            reference_factors=seeded['incoming'].get('continuous_incoming',{}).get('reference_linear_factors')
+            if reference_factors is None:
+                from lei_ren_part1_paper_axial_incoming import _stage_integrals
+                reference=_stage_integrals(source.schedule,.5,order=seeded['incoming']['order'])
+                reference_factors=dict(I_z_over_Z=2*reference['I_z'],
+                    I_theta_z_times_1plusZ2_over_Z=mp.mpf('2.5')*reference['I_theta_z'])
         result=seeded_input_tangents(seeded,terminal,mp.nstr(z,source.precision),
             y_p=str(source.schedule.y_p),mu=str(source.schedule.mu),
             future_energy_Z=mp.nstr(future_jets[-1],source.precision),
