@@ -80,20 +80,29 @@ class ExtendedSwirl:
             raise ArithmeticError("anchor below actual collar endpoint")
         return self.R_anchor if gap(a) >= 0 else math.exp(brentq(gap,a,b,xtol=1e-13))
 
-    def _integral(self, z, shift, density, n):
+    def _integral(self, z, shift, density, n, upper=None, lower=0.0):
         nodes,weights=leggauss(n)
         r0,r1,rc,ra=self.R_core,self.R_anchor,self._cross(z),self.collar.collar_inner_radius
+        upper=ra if upper is None else float(upper)
+        lower=float(lower)
+        if not 0 <= lower <= upper <= ra:
+            raise ValueError("partial radial integral must stay inside the collar boundary")
         value=0.0
         for a,b in ((0,r0),(r0,r1)):
+            a=max(a,lower)
+            b=min(b,upper)
+            if b <= a: continue
             rs=a+(b-a)*(nodes+1)/2
             fs=np.array([self._prefix(float(r),z) for r in rs])
             value += float(np.dot(weights*(b-a)/2,density(rs,fs)))
-        for a,b in ((r1,rc),(rc,ra)):
+        for segment,(a,b) in enumerate(((r1,rc),(rc,ra))):
+            a=max(a,lower)
+            b=min(b,upper)
             if b <= a: continue
             logs=math.log(a)+(math.log(b/a))*(nodes+1)/2
             rs=np.exp(logs)
             anchors=self._anchor(rs,z)
-            if a == rc:
+            if segment == 1:
                 x=(logs-math.log(rc))/math.log(ra/rc)
                 s=_step(x,shift)
                 outer=np.array([self._outer(float(r),z) for r in rs])
@@ -174,8 +183,23 @@ class ExtendedSwirl:
                 "required_inner_axial_energy":targets["quadratic_target"]+swirl_energy,
                 "common_pressure_core_rebuilt":False,"whole_cone_validated":False}
 
+    @lru_cache(maxsize=4096)
     def axis_pressure(self,z,*,n=128):
         z=float(z)
         shift=self.timing(z)["shift"]
         return self.collar.P(self.collar.collar_inner_radius,z)-self._integral(
             z,shift,lambda r,f:f*f,n)
+
+    def pressure(self,r,z):
+        """Same-swirl radial pressure, normalized by the actual heat tail."""
+        r,z=float(r),float(z)
+        if not math.isfinite(r) or not math.isfinite(z) or r<0 or abs(z)>1:
+            raise ValueError("require finite R>=0 and |Z|<=1")
+        if r>=self.collar.R_b: return self.collar.P_heat(r,z)
+        if r>=self.collar.collar_inner_radius: return self.collar.P(r,z)
+        if r==0: return self.axis_pressure(z)
+        shift=self.timing(z)["shift"]
+        # Integrate inward from the exterior to avoid cancellation between
+        # a large axis pressure and its nearly equal interior increment.
+        return self.collar.P(self.collar.collar_inner_radius,z)-self._integral(
+            z,shift,lambda q,f:f*f,128,lower=r)

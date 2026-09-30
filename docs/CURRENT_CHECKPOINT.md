@@ -1,3 +1,31 @@
+## Actual stress path and continuous-moment blocker — 2026-09-29
+
+The profile-derived stress evaluator is now implemented in
+`experiments/root_st073/lei_ren_part1_profile_stress.py`. It evaluates the
+source inertial terms and radial shear from one profile's actual five
+cumulative moments, their Z derivatives, and its pressure. Independent
+exact-heat and inward-collar checks validate this algebraic path; they do
+not certify the assembled extended background.
+
+The first assembled-profile stress diagnostic found only 4 of 27 sampled
+points satisfying the cone and a heat-tail stress component of 1.972e-3,
+compared with stress quadrature refinement of 1.34e-13. This receipt is a
+failed candidate diagnostic, not a PDE pass. Direct interpolation of axial
+repair coefficients left off-grid mixed/quadratic moment defects. The next
+repair must solve the linear and quadratic constraints at each Z from
+moment data, differentiate the SAME coefficient solve, and check actual
+independent integrals. Increasing the coefficient grid alone is insufficient.
+
+The extended swirl pressure is now integrated inward from the exact collar
+pressure, avoiding cancellation against the larger axis datum. Its independent
+radial pressure identity receipt has maximum relative error 3.28e-8.
+
+After continuous moment closure, remeasure actual heat-tail stress and the
+whole connection cone before implementing a higher-order remainder correction.
+Do not replace measured terminal moments by theoretical heat targets inside
+the diagnostic. Geometry fits and divergence passes do not establish scale
+recursion, admissibility or the final full momentum gate.
+
 ## Extended exterior boundary data — 2026-09-29
 
 Actual axial/mixed/quadratic repair is now bound to the rebuilt shared-pressure
