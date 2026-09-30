@@ -7,8 +7,16 @@ import numpy as np
 from lei_ren_part1_extended_swirl import ExtendedSwirl
 
 
-def run():
-    profile=ExtendedSwirl()
+def run(profile=None, *, output=None, core_pressure_source="old short-join seed"):
+    profile=ExtendedSwirl() if profile is None else profile
+    shared_pressure=False
+    pressure_receipt=Path(__file__).with_name(core_pressure_source)
+    if core_pressure_source != "old short-join seed" and pressure_receipt.is_file():
+        pressure_data=json.loads(pressure_receipt.read_text(encoding='utf-8'))
+        shared_pressure=bool(pressure_data.get('finite_pressure_iteration_converged')
+                             and pressure_data.get('shared_pressure_holdout_satisfied')
+                             and np.array_equal(profile.core.axis_pressure_values,
+                                                pressure_data['core_axis_pressure_values']))
     rows=[]
     derivative_errors=[]
     positive=True
@@ -35,7 +43,8 @@ def run():
         rows.append(row)
     holdout=max(abs(row["angular_holdout_defect"]) for row in rows)
     report={"source":"https://arxiv.org/html/2609.35406v1",
-            "scope":"actual angular-matched swirl with old finite core; common-pressure iteration and axial repair remain open",
+            "scope":"actual angular-matched swirl; whole stress cone and physical field integration remain open",
+            "core_pressure_source":core_pressure_source,
             "R_core":profile.R_core,"R_anchor":profile.R_anchor,
             "anchor_power":profile.anchor_power,"collar":profile.collar.metadata(),
             "Z_count":len(rows),"rows":rows,
@@ -43,11 +52,12 @@ def run():
             "minimum_positive_swirl_passed":positive,
             "sampled_negative_angular_shear_passed":negative_shear,
             "independent_F_R_max_relative_error":max(derivative_errors),
-            "common_pressure_core_rebuilt":False,"whole_stress_cone_validated":False,
+            "common_pressure_core_rebuilt":shared_pressure,"whole_stress_cone_validated":False,
             "five_moments_closed":False,"recursion_validated":False}
     report["checks_passed"]=bool(positive and negative_shear and holdout<1e-6
                                  and max(derivative_errors)<2e-5)
-    Path(__file__).with_suffix('.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
+    output=Path(output) if output else Path(__file__).with_suffix('.json')
+    output.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({k:v for k,v in report.items() if k not in ('rows','collar')},indent=2))
     if not report["checks_passed"]: raise AssertionError("extended angular bridge failed")
     return report

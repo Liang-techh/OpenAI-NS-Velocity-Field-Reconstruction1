@@ -92,13 +92,30 @@ nullspace. Synthetic nonconstant-swirl/nonzero-base cases use a nonzero
 quadratic target, with independent 32-node residual below 4.20e-11. Those
 checks establish the repair primitive, not an assembled background.
 
+## Common-pressure rebuilt core
+
+`lei_ren_part1_extended_pressure_core.py/.json` now rebuilds the finite
+nonlinear core under the actual extended swirl's pressure integral and
+resolves the angular blend after each rebuild. The 257-node iteration
+converges in three steps with collocation pressure defect 4.32e-10.
+Independent 16-point pressure holdout with refined radial quadrature has
+maximum defect 7.05e-9. `load_extended_profile()` replays this candidate and
+by default refuses a saved receipt that failed the pressure holdout.
+
+The earlier 65-node attempt also converged at nodes but failed the independent
+holdout at 0.00189012; it is retained as `_coarse65.json`. This is why node
+convergence alone is insufficient. The rebuilt 257-node candidate retains
+angular closure over 33 Z points at 2.01e-11, positive swirl and sampled
+negative radial shear, with independent F_R error below 5.57e-7 in
+`lei_ren_part1_extended_swirl_rebuilt_checks.json`.
+
 ## Next construction work
 
 1. Use the actual collar at Ra as the outer jet and five-moment boundary data.
-2. Construct a smooth outer connection that preserves positive swirl and
-   negative angular shear, and meets the actual angular target.
-3. Recompute its full pressure integral and rebuild the regular finite core
-   under that common pressure; iterate the connection when its axis values change.
+2. Retain the actual angular-matched, common-pressure candidate as the input
+   to axial/quadratic repair; rebuild its pressure whenever swirl is modified.
+3. Preserve the regular core and actual collar jets during repairs. Negative
+   F_R of the intermediate weak anchor is not a final cone certificate.
 4. Restore axial, mixed and quadratic moments on the same profile. Verify
    between interpolation nodes, including the axial endpoint behavior.
 5. Compute actual profile-derived stress and its cone margins over the whole

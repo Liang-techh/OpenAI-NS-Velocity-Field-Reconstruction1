@@ -514,3 +514,10 @@ angular shear; restore the actual angular, axial, mixed, quadratic and
 pressure moments over Z. The positive quadratic target is about 2.46463.
 Rebuild the regular core under the new pressure before accepting the
 connection. Necessary radius passes are not moment closure or NS recursion.
+
+Update: the actual angular-matched extended swirl and common-pressure core
+are now implemented. Replay `load_extended_profile()`; 257-node pressure
+holdout is 7.05e-9, rebuilt angular holdout is 2.01e-11. The 65-node
+pressure receipt failed off-grid and must not be used. Continue with actual
+axial/quadratic repair, smooth Z dependence and radial recovery; the weak
+anchor still needs the full admissible shear/stress construction.

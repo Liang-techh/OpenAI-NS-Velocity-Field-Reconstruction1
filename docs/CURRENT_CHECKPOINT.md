@@ -1,12 +1,21 @@
 ## Extended exterior boundary data — 2026-09-29
 
+The actual extended swirl now has a rebuilt common-pressure finite core:
+`lei_ren_part1_extended_pressure_core.json` converges in three iterations,
+collocation defect 4.32e-10, independent 16-Z pressure holdout 7.05e-9.
+Replay with `load_extended_profile()`, whose default requires passed pressure
+holdout. The 65-node attempt failed off-grid at 0.00189012 and is retained
+as `_coarse65.json`. Rebuilt-core angular closure remains 2.01e-11 over
+33 Z points. Next bind actual axial/quadratic repair to this profile,
+ensure smooth dependence on Z, and recover the radial component.
+
 The actual heat collar pressure/shear/ODE stress implementation now passes
 finite local cone and boundary-limit checks. The actual extended swirl in
 `lei_ren_part1_extended_swirl.py` closes the angular target at 33 Z points
 with independent integral defect 2.01e-11 and sampled positive F/negative
 F_R. This is not the final stress cone over the whole outer connection.
-Its actual pressure differs from the old core; shared-pressure rebuild is
-the next acceptance step. The axial quadratic repair primitive is also
+Its actual pressure differs from the old core; the shared-pressure rebuild
+is recorded above. The axial quadratic repair primitive is also
 implemented, with synthetic independent moment residual below 4.20e-11.
 
 Read `LEI_REN_EXTENDED_EXTERIOR.md`. The 33-point necessary angular radius
@@ -21,10 +30,10 @@ at all 33 Z points. Independent heat-transfer identities agree within
 8.53e-14; radial moment-density derivatives agree to relative 1.01e-8.
 
 The quadratic target is about +2.46463, so zero axial/mixed moments alone
-do not restore terminal data. Cumulative pressure target remains unset until
-the full new connection supplies a common axis pressure. Next construct the
-extended connection using actual collar jets and these inward targets,
-rebuild the core with its full pressure integral, and restore all five moments.
+do not restore terminal data. The target-only receipt intentionally leaves
+P0 unset; use the rebuilt profile's actual axis pressure when computing its
+cumulative pressure target. Next restore the axial, mixed and quadratic
+moments on this same extended swirl, then its full stress cone.
 NS recursion, whole-background cone and higher-order flatness remain open.
 
 ## Live route after actual moment/field diagnostics — 2026-09-29
