@@ -135,6 +135,11 @@ class ContinuousIncomingProfile(ContinuousSeededAxialProfileJets):
                  for z,(seeded,atoms) in (prepared or {}).items()}
         super().__init__(source,prepared=revised)
         self.shared_runtimes={}
+        from lei_ren_part1_paper_continuous_angular_moments import ContinuousAngularMoments
+        self.angular_moment_provider=ContinuousAngularMoments(self,order=order)
+
+    def angular_moments_jet(self,logR,Z):
+        return self.angular_moment_provider.moments_jet(logR,Z)
 
     def _ensure_prepared(self,Z):
         z=float(Z)

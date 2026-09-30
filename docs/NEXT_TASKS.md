@@ -1,3 +1,17 @@
+## 2026-09-30 handoff: angular moments now reach Rtail
+
+- [x] Install actual Rh-seeded Mtheta and full integral(Utheta^2 dR), with analytic Z propagation through all preheat stages.
+- [x] Preserve separate tiny bump moments and actual inner offsets; verify forward derivatives against the installed velocity and correction integrands.
+- [ ] Assemble Mtheta_z and its Z jet from the same live row-2 incoming/pulse/end atoms; transport actual inner mixed offsets once. Reject legacy independently reconstructed float bump atoms.
+- [ ] Implement full and partial axial-square primitives and Z jets on the shared pulse/end basis, including actual inner raw axial energy. Combine z_theta = axial_square - swirl_square/2 with the new angular provider.
+- [ ] Complete pressure moment/Z propagation using the same pressure integrands and actual inner pressure offset; keep unresolved tiny target cancellation visible.
+- [ ] Extend the angular/energy provider from Rtail through the heat collar and exterior. Use one functional H/H-prime definition with separate small deficit terms, rather than a rounded H=1 paired with a nonzero inherited derivative. Bound quadrature and full tails.
+- [ ] Enclose inherited inner, swirl and live future-energy inputs; propagate all input Z intervals through the coefficient tangent solve.
+- [ ] Resolve actual terminal mass/Z-mass radial transport and full exterior energy before claiming finite energy or scale recursion.
+- [ ] After full moment/energy closure, connect admissible stress/remainder and physical recursive-scale diagnostics.
+
+Acceptance evidence: continuous_angular_moments.json. Forward integrand maximum relative difference is about 6.83e-14; separate bump maximum is about 1.11e-17. These are nominal consistency checks. Complete five moments, heat and global finite energy remain explicitly uncertified.
+
 ## 2026-09-30 task handoff: shared angular correction installed
 
 - [x] Install one continuous bump definition in angular point values, coefficient equations, pressure partial integrals and bump energy integrals.
