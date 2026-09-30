@@ -97,7 +97,7 @@ class CorePolynomial:
 def build_source_core(precision=160,degree=18,Lambda='1e36',*,
                       j='.02',logC=None,logPstar='14',delta='1e-32',
                       continuous_pressure=False,pressure_order=192,coherent_waiting=False,
-                      complete_preheat_components=False):
+                      complete_preheat_components=False,component_Z_jet_depth=1):
     from lei_ren_part1_paper_outer import PaperOuterSchedule
     from lei_ren_part1_paper_corrected_profile import CorrectedSourceProfile
     from lei_ren_part1_paper_axis_pressure_jets import AxisPressureJets
@@ -156,7 +156,7 @@ def build_source_core(precision=160,degree=18,Lambda='1e36',*,
             from lei_ren_part1_paper_continuous_preheat_pressure import ContinuousPreheatPressure
             from lei_ren_part1_paper_component_pressure_core import ComponentPressureCore
             datum=ContinuousPreheatPressure(pressure,quadrature_order=pressure_order)
-            component_core=ComponentPressureCore(axis,datum,radial_degree=degree)
+            component_core=ComponentPressureCore(axis,datum,radial_degree=degree,Z_jet_depth=component_Z_jet_depth)
         return {'profile':profile,'axis':axis,'pressure':pressure,'core':core,'K':K,
                 'Lambda':lam,'radial_degree':degree,'precision':precision,
                 'shared_parameters':{'j':mp.nstr(axis.j,precision),

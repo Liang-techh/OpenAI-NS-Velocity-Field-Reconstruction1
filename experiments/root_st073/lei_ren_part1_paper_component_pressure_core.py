@@ -57,11 +57,13 @@ class PressurePolynomial:
     def component(self, power):return self.atoms.get(int(power),mp.mpf(0))
 
 
-def build_component_coefficients(axis, pressure_datum, center, radial_degree=18):
+def build_component_coefficients(axis, pressure_datum, center, radial_degree=18,*,Z_jet_depth=1):
     """Propagate all powers of the supplied complete post-Rv datum."""
     precision=max(axis.precision,pressure_datum.precision)
     with mp.workdps(precision):
-        degree=int(radial_degree);length=degree+2
+        degree=int(radial_degree)
+        if int(Z_jet_depth)!=Z_jet_depth or Z_jet_depth<1:raise ValueError('Positive integer Z jet depth required')
+        length=degree+int(Z_jet_depth)+1
         z=mp.mpf(str(center))
         jets=pressure_datum.taylor_components(degree=length-1,center=z)
         physical=mp.exp(2*pressure_datum.log_pstar)
@@ -72,7 +74,7 @@ def build_component_coefficients(axis, pressure_datum, center, radial_degree=18)
             F0_Z_taylor=_axis_F0_taylor(axis,z,length),
             U0_Z_taylor=_axis_u0_taylor(z,j=axis.j,length=length),P0_Z_taylor=p0,
             radial_degree=degree,precision=precision,scalar_converter=PressurePolynomial)
-        result.update(pressure_datum_components=jets,
+        result.update(Z_jet_depth=int(Z_jet_depth),pressure_datum_components=jets,
             complete_preheat_input_included=True,pressure_parameter_order_truncated=False,
             component_arithmetic_error_enclosed=False,post_stage_aggregation_error_enclosed=False,
             pressure_datum_quadrature_enclosed=False,global_field_installed=False)
@@ -128,12 +130,15 @@ def evaluate_component_core_coefficients(coefficients,r,z,delta):
 
 class ComponentPressureCore:
     """Local component jets for the complete preheat datum; no scalar installer."""
-    def __init__(self,axis,pressure_datum,radial_degree=18):
+    def __init__(self,axis,pressure_datum,radial_degree=18,*,Z_jet_depth=1):
         self.axis=axis;self.pressure_datum=pressure_datum;self.degree=int(radial_degree)
+        if int(Z_jet_depth)!=Z_jet_depth or Z_jet_depth<1:
+            raise ValueError('Positive integer Z jet depth required')
+        self.Z_jet_depth=int(Z_jet_depth)
         self.precision=max(axis.precision,pressure_datum.precision)
     @lru_cache(maxsize=32)
     def coefficients(self, Z):
-        return build_component_coefficients(self.axis,self.pressure_datum,Z,self.degree)
+        return build_component_coefficients(self.axis,self.pressure_datum,Z,self.degree,Z_jet_depth=self.Z_jet_depth)
     def evaluate(self,R,Z):
         with mp.workdps(self.precision):
             r=mp.mpf(str(R));z=mp.mpf(str(Z))

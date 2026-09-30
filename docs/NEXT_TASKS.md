@@ -1,3 +1,11 @@
+## 2026-09-30: continue from derivative-aware prescribed exit
+
+- [x] Carry automatic first Z derivatives through the actual pressure/width prescribed exit and recover Ur from Mz/Mz_Z. Receipt: lei_ren_part1_paper_pressure_width_axial_bridge_check.json; limits in AXIAL_JOINT_EXIT_2026_09_30.md.
+- [ ] Propagate the same state and tangents through switching, continuation and long reshape, without independent field fitting.
+- [ ] Control finite-RK/jet errors and verify actual radial derivatives and Cartesian divergence on the joined field.
+- [ ] Close all five functional terminal moments and compatible pressure; resolve nonzero radial energy tail.
+- [ ] Establish exact/controlled heat and admissible cone before genuine temporal recursion.
+
 ## 2026-09-30: finish prescribed exit tangents and common annular data
 
 The actual base Section 9.25 ODE now retains pressure9/width2 atoms and nonzero five-moment collar increments. Read JOINT_PRESSURE_WIDTH_EXIT_2026_09_30.md and the actual bridge receipt before continuing.

@@ -9,12 +9,13 @@ import mpmath as mp
 def evaluate_mp_stress(logR, Z, delta, *, Utheta, Uz, Utheta_y,
                        Utheta_Z, Uz_y, Uz_Z, moments, moments_Z,
                        P, P_Z, precision=160, shear_theta=None, shear_z=None,
-                       include_components=False,scalar_converter=None,radius_override=None):
+                       include_components=False,scalar_converter=None,radius_override=None,axial_override=None):
     """y=log R derivatives; return MP inertial, shear and total stress."""
     with mp.workdps(precision):
         R=mp.exp(mp.mpf(str(logR))) if radius_override is None else radius_override
-        z=mp.mpf(str(Z)); dt=mp.mpf(str(delta))
-        if not abs(z)<1 or not 0<=dt<1:
+        z=mp.mpf(str(Z)) if axial_override is None else axial_override
+        dt=mp.mpf(str(delta))
+        if not abs(mp.mpf(str(Z)))<1 or not 0<=dt<1:
             raise ValueError('Require |Z|<1 and 0<=delta<1')
         d=1-z*z; L=1-dt*z*z
         root=(2*R).sqrt() if hasattr(R,"sqrt") else mp.sqrt(2*R)

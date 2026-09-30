@@ -374,6 +374,8 @@ class PressureWidthComparison:
             return derivative["F"] / radius, derivative["Uz"] / radius
         return self.jet(0), self.jet(0)
 
+    def _stress_axial_coordinate(self,Z):return Z
+
     def evaluate(self, s: Any, Z: Any) -> dict[str, Any]:
         """Evaluate the comparison profile at scalar ``s=y/h_b``."""
 
@@ -407,6 +409,7 @@ class PressureWidthComparison:
                 precision=self.precision,
                 scalar_converter=self.jet,
                 radius_override=radius,
+                axial_override=self._stress_axial_coordinate(z),
             )
             I_theta = stress["I_theta"]
             I_z = stress["I_z"]
