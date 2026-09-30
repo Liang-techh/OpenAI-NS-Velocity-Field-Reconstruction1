@@ -135,11 +135,69 @@ working-precision errors are reported separately and do not replace the
 larger incoming/pulse/tail integration uncertainties. Pulse and end-bump
 axial factors are callable in separate stage-local coordinates.
 
-Next bind the corrected angular and axial factors into one source profile,
-recover radial velocity from its streamfunction, and recompute SAME-profile
-pressure and stress. Then check coefficient derivatives and the relaxed
-cone before replacing the regular core. Exact pressure-target cancellation
-and all-five-moment global closure remain unproved.
+## Unified source candidate and axial primitive
+
+`lei_ren_part1_paper_axial_primitive.py/.json` supplies the actual normalized
+pulse primitive in startup, bulk, cutoff and post-pulse coordinates. Startup
+and cutoff tail bounds are retained. The bulk particular solution satisfies
+the source transport ODE; the post-pulse identity reuses the same actual
+normalized pulse rows. Moderate-mu independent quadrature checks test the
+boundary and centered branches. Very small startup values may remain below
+the startup evaluator's tolerance; the unified profile rejects a purported
+zero at a positive interior pulse coordinate.
+
+`lei_ren_part1_paper_corrected_profile.py/.json` now assembles source angular
+and axial coefficients in one candidate. It integrates the SAME axial
+velocity for Mz/R and derives V/R from source (3.9), with a Z derivative
+of that primitive. End-bump moments are independently reintegrated rather
+than forcing the exterior mass to zero. The numerical exterior mass and
+its derivative remain part of the open all-five-moment/energy acceptance.
+In the sampled bulk pulse, the independent M_R=Uz check differs by 2.09e-15
+relatively and the radial Z stencil changes by 1.48e-14 under refinement.
+
+The callable `velocity_from_tau(x,y,z,tau)` returns Cartesian u,v,w as
+signed-log dictionaries with arbitrary-exponent values. `cartesian_chart`
+also gives the corresponding physical coordinates. The physical API applies
+the existing smooth axial cutoff to the meridional streamfunction, including
+its radial correction; chart APIs remain unlocalized. Inputs may be decimal
+strings. The physical-coordinate/chart roundtrip is checked separately.
+The current coefficient stencil rejects charts too near |Z|=1. This is a
+computable candidate API, not a regular-core or finite-global-energy claim.
+
+`velocity(x,y,z,t,T=1)` provides the time-coordinate wrapper;
+`velocity_values_from_tau` returns numeric mpmath scalars rather than the
+signed-log receipts. Run from the repository root, for example:
+
+```python
+import sys
+sys.path.insert(0, "experiments/root_st073")
+from lei_ren_part1_paper_corrected_profile import CorrectedSourceProfile
+profile = CorrectedSourceProfile()
+u, v, w = profile.velocity_values_from_tau(".1", ".2", ".01", ".1")
+```
+
+`lei_ren_part1_paper_corrected_pressure.py/.json` uses the same angular
+correction object for actual full/truncated bump pressure integrals, keeping
+the backward pressure change separate from its much larger baseline.
+The sign is P_corrected-P_baseline=-Erel^2 Delta_p_bump. Exact pressure
+target cancellation remains unresolved, including zero-target endpoints
+when finite-precision bump integration leaves a nonzero residue.
+
+The pressure adapter now propagates the baseline P/Utheta^2 backward at any
+logarithmic radius. Constant slopes use analytic contractions; finite
+transitions use actual source-profile quadrature. The H=1 heat nominal value
+and propagated heat deficit bound remain separate. Its Rref comparison with
+the existing pressure integral differs by 9.0e-17. The unified profile's
+`pressure_at_log_radius` and `pressure_from_tau` use this same adapter;
+physical pressure scales by nu*B(z)^2*q^(-1-delta). Velocity and pressure
+share the same implicit physical chart. The sampled chart/physical-coordinate
+roundtrips pass independently of the primitive check. These are coordinate
+and same-profile checks, not a full momentum-residual or stress-cone claim.
+
+Next recompute SAME-profile stress, check coefficient derivatives and the
+relaxed cone, and replace the temporary reference with the regular shared
+pressure core. Exact pressure-target cancellation and all-five-moment global
+closure remain unproved; the retained physical field is not replaced yet.
 
 The binding order is: solve waiting length from actual normalized angular
 data; restore angular/pressure moments; integrate actual axial pulse and

@@ -5,9 +5,11 @@ source velocity schedule, normalized backward pressure and pre-heat waiting
 root are implemented. Exact angular/axial algebra and source bump integrals
 are available, with stable tiny-mu row scaling. Actual approximate angular
 inputs and axial incoming/pulse/energy inputs now feed callable coefficient
-solves. Next assemble one corrected source profile, derive its radial
-component from the streamfunction, recompute common pressure/stress, rebuild
-the regular core, and measure actual relaxed/admissible cones. Preserve the
+solves. A unified source profile and streamfunction-derived radial component
+are now available in `lei_ren_part1_paper_corrected_profile.py`. Same-profile
+pressure is available at arbitrary log radius and physical coordinates. Next
+compute actual stress, resolve numerical exterior mean tails, rebuild the
+regular core, and measure actual relaxed/admissible cones. Preserve the
 separate integration/heat/waiting uncertainties in the new receipts. These
 outputs do not close all five moments or replace the retained physical field.
 Actual first-order core forcing is also materialized; next solve coupled

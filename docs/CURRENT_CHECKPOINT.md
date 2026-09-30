@@ -1,5 +1,17 @@
 ## Source outer replacement and first correction inputs — 2026-09-29
 
+Latest unified candidate: `lei_ren_part1_paper_corrected_profile.py` now
+provides shared angular/axial coefficients, a source axial primitive and
+dependent radial velocity. It exposes Cartesian `velocity_from_tau` with
+streamfunction axial localization and signed-log arbitrary-exponent output.
+Independent bulk M_R=Uz error is 2.09e-15; radial Z-stencil refinement is
+1.48e-14. The corresponding pressure adapter retains baseline and signed
+bump correction separately. The baseline pressure now propagates at arbitrary
+log radius; physical pressure shares the velocity chart and axial cutoff.
+This temporary-reference candidate remains
+unaccepted: regular axis core, global mean tails/energy, exact pressure
+target, stress cone and recursive PDE corrections are unresolved.
+
 Latest axial progress: actual incoming moments, row-normalized pulse
 integrals and corrected angular energy tail now feed the source affine and
 quadratic energy solve. a_p=1.0100502663 is within the source interval;
