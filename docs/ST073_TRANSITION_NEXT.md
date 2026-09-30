@@ -1,3 +1,26 @@
+## Actual inner seed transport and serialization precision - 2026-09-30
+
+New lei_ren_part1_paper_seeded_axial_inputs.py maps explicit raw inner offsets
+(z, theta_z, z_theta) into the two normalized Section 7.31 linear rows and
+the Section 7.34 prior-energy input. Use the same schedule log_Rp and log_Ep.
+No absent offset defaults to zero. This is preparation for a new outer
+coefficient solve, not a completed repair or a replacement axial primitive.
+The copied dimensionless_integrals remain historical reference inputs;
+update the actual primitive consistently before using a seeded receipt in
+CorrectedSourceProfile. A dimensional replay at logRp=5e152+17 passed.
+
+from_signed_log now preserves arbitrary_exponent_value when available,
+validates its sign, and retains the legacy log-only fallback. The stored
+precision receipt shows relative error 2.24e-161 versus 2.23e-8 for a
+log-only roundtrip. The existing actual-tail solve/replay at Z=.5 passes
+(linear differences below 5.80e-133, energy difference 6.85e-160).
+
+Next: complete the same-object inner/outer join, measure terminal transport,
+then feed actual offsets into the pulse/end-bump coefficient solve and replay
+the same primitive. Do not zero the residual mean. Finite energy, uniform
+source constants, temporal scale recursion, and oscillatory residual remain
+unestablished.
+
 ## Five-bump numerical correction and physical inner callable - 2026-09-30
 
 Read experiments/root_st073/lei_ren_part1_paper_inner_corrected_field.py/md/json

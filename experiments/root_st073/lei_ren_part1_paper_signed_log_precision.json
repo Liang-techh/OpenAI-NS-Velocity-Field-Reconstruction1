@@ -1,0 +1,8 @@
+{
+  "input_log_scale": "-5e152",
+  "receipt_digits": 160,
+  "mantissa_relative_error": "2.23937743359846629050104004062239731314e-161",
+  "log_only_relative_error": "0.00000002231565231205082895000727177940022378662",
+  "nonzero_preserved": true,
+  "scope": "serialization accuracy, not continuous mean closure or finite energy"
+}

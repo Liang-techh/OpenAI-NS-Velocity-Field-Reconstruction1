@@ -25,6 +25,14 @@ def signed_log(value,precision=120):
 
 
 def from_signed_log(row):
+    # A rounded log of size 1e152 loses 152 digits of relative information
+    # on exponentiation. Preserve the serialized mantissa when available;
+    # tiny nonzero exterior means must not be altered by a log roundtrip.
+    if 'arbitrary_exponent_value' in row:
+        value = mp.mpf(row['arbitrary_exponent_value'])
+        if int(mp.sign(value)) != int(row['sign']):
+            raise ValueError('Signed-log value and declared sign disagree')
+        return value
     return mp.mpf(0) if not row['sign'] else row['sign']*mp.exp(mp.mpf(row['log_abs']))
 
 
