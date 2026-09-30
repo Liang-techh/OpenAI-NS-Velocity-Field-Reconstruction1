@@ -1,0 +1,280 @@
+{
+  "B": {
+    "atoms": {
+      "0,0": "-4.0",
+      "0,1": "0.002",
+      "1,0": "0.001",
+      "1,1": "0.0004",
+      "2,0": "-0.0003",
+      "2,1": "0.0002"
+    },
+    "normalized_coefficient_convention": "coefficient of pressure**p * width**w (derivatives divided by p! * w!)",
+    "pressure_order": 2,
+    "rectangular_truncation": true,
+    "truncated_input_atoms": [],
+    "width_order": 1
+  },
+  "B0": "-4.0",
+  "B_Z": {
+    "atoms": {
+      "0,0": "0.7",
+      "0,1": "0.18",
+      "1,0": "-0.25",
+      "1,1": "-0.03",
+      "2,0": "0.05",
+      "2,1": "0.02"
+    },
+    "normalized_coefficient_convention": "coefficient of pressure**p * width**w (derivatives divided by p! * w!)",
+    "pressure_order": 2,
+    "rectangular_truncation": true,
+    "truncated_input_atoms": [],
+    "width_order": 1
+  },
+  "B_ZZ": {
+    "atoms": {
+      "0,0": "0.3",
+      "0,1": "-0.09",
+      "1,0": "0.11",
+      "1,1": "0.02",
+      "2,0": "0.04",
+      "2,1": "0.01"
+    },
+    "normalized_coefficient_convention": "coefficient of pressure**p * width**w (derivatives divided by p! * w!)",
+    "pressure_order": 2,
+    "rectangular_truncation": true,
+    "truncated_input_atoms": [],
+    "width_order": 1
+  },
+  "T": "400.0",
+  "analytic_constant": "1.281327606384599996309558015405504906207e-49",
+  "analytic_relative_error": "3.08348909546388480696201324952e-122",
+  "derivative_orders_cached": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "finite_Z_relative_error": "7.98569090542978000366345535989e-20",
+  "finite_Z_second": "1.281327606384599996411880877537320997275e-49",
+  "finite_Z_stencil_step": "0.0010000000000000000208",
+  "fullsecond": {
+    "atoms": {
+      "0,0": "1.28132760638459999630955801541e-49",
+      "0,1": "-3.8439828191356274492177751508e-50",
+      "1,0": "4.69820122338612607062429669437e-50",
+      "1,1": "8.54218404248922849381283053585e-51",
+      "2,0": "1.70843680851585543143556824755e-50",
+      "2,1": "4.27109202130241802149255090596e-51"
+    },
+    "normalized_coefficient_convention": "coefficient of pressure**p * width**w (derivatives divided by p! * w!)",
+    "pressure_order": 2,
+    "rectangular_truncation": true,
+    "truncated_input_atoms": [],
+    "width_order": 1
+  },
+  "fullsecond_constant": "1.281327606384599996309558015405504906207e-49",
+  "global_field_installed": false,
+  "k": "1.2",
+  "limitations": "Resolved scalar finite-Z and finite-ring algebra checks only; saddle tails, quadrature remainder and global field claims remain unenclosed.",
+  "m": "2.0",
+  "metadata": {
+    "all_five_moment_claim": false,
+    "derivative_cache_order": 5,
+    "global_field_installed": false,
+    "pressure_order": 2,
+    "pressure_parameter_distinct_from_temporal": true,
+    "quadrature_order": 32,
+    "quadrature_remainder_enclosed": false,
+    "rectangular_pressure_width_truncation": true,
+    "saddle_window": "24.0",
+    "second_Z_derivative": true,
+    "second_derivative_cache_order": 5,
+    "second_remainder_enclosed": false,
+    "second_terms_preserved_before_sum": true,
+    "second_truncation_order": 3,
+    "terms_preserved_before_sum": true,
+    "value_truncation_order": 3,
+    "width_order": 1,
+    "work_precision": 323
+  },
+  "old_api_preserved": true,
+  "old_derivative_orders_cached": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "passed": true,
+  "precision": 120,
+  "quadrature_remainder_enclosed": false,
+  "second_chain_terms": {
+    "0": {
+      "atoms": {
+        "0,0": "2.22836447900856002025972431647e-61",
+        "0,1": "1.14601601777583086756214393419e-61",
+        "1,0": "-1.59168891357754287161408879748e-61",
+        "1,1": "-6.00294104549244740151599203622e-62",
+        "2,0": "6.02567945854355515682476473332e-62",
+        "2,1": "2.77408639223514614767026904704e-62"
+      },
+      "normalized_coefficient_convention": "coefficient of pressure**p * width**w (derivatives divided by p! * w!)",
+      "pressure_order": 2,
+      "rectangular_truncation": true,
+      "truncated_input_atoms": [],
+      "width_order": 1
+    },
+    "1": {
+      "atoms": {
+        "0,1": "4.535773731047788505653806535e-72",
+        "1,0": "2.2678868655238942528269032675e-72",
+        "1,1": "-1.16634181655514561573955025186e-72",
+        "2,0": "-2.3002852493170927421530018856e-72",
+        "2,1": "7.12764443450366765174169598356e-74"
+      },
+      "normalized_coefficient_convention": "coefficient of pressure**p * width**w (derivatives divided by p! * w!)",
+      "pressure_order": 2,
+      "rectangular_truncation": true,
+      "truncated_input_atoms": [],
+      "width_order": 1
+    },
+    "2": {
+      "atoms": {
+        "1,1": "4.10235100025689771180015358504e-81",
+        "2,0": "1.02558775006422442795003839626e-81",
+        "2,1": "-2.81304068589044414523439102974e-81"
+      },
+      "normalized_coefficient_convention": "coefficient of pressure**p * width**w (derivatives divided by p! * w!)",
+      "pressure_order": 2,
+      "rectangular_truncation": true,
+      "truncated_input_atoms": [],
+      "width_order": 1
+    },
+    "3": {
+      "atoms": {
+        "2,1": "3.03553892914116264729235856676e-89"
+      },
+      "normalized_coefficient_convention": "coefficient of pressure**p * width**w (derivatives divided by p! * w!)",
+      "pressure_order": 2,
+      "rectangular_truncation": true,
+      "truncated_input_atoms": [],
+      "width_order": 1
+    }
+  },
+  "second_curvature_terms": {
+    "0": {
+      "atoms": {
+        "0,0": "1.28132760638237163183054945539e-49",
+        "0,1": "-3.84398281914711489549164836616e-50",
+        "1,0": "4.69820122340202931671201466975e-50",
+        "1,1": "8.5421840425491442122036630359e-51",
+        "2,0": "1.70843680850982884244073260718e-50",
+        "2,1": "4.27109202127457210610183151795e-51"
+      },
+      "normalized_coefficient_convention": "coefficient of pressure**p * width**w (derivatives divided by p! * w!)",
+      "pressure_order": 2,
+      "rectangular_truncation": true,
+      "truncated_input_atoms": [],
+      "width_order": 1
+    },
+    "1": {
+      "atoms": {
+        "0,1": "2.72860956613293063705272365283e-64",
+        "1,0": "1.36430478306646531852636182641e-64",
+        "1,1": "1.13692065255538776543863485534e-64",
+        "2,0": "9.09536522044310212350907884275e-66",
+        "2,1": "1.05051468296117829526529860634e-64"
+      },
+      "normalized_coefficient_convention": "coefficient of pressure**p * width**w (derivatives divided by p! * w!)",
+      "pressure_order": 2,
+      "rectangular_truncation": true,
+      "truncated_input_atoms": [],
+      "width_order": 1
+    },
+    "2": {
+      "atoms": {
+        "1,1": "2.77700432513129908509416726632e-75",
+        "2,0": "6.94251081282824771273541816581e-76",
+        "2,1": "5.32259162316832324643048726045e-76"
+      },
+      "normalized_coefficient_convention": "coefficient of pressure**p * width**w (derivatives divided by p! * w!)",
+      "pressure_order": 2,
+      "rectangular_truncation": true,
+      "truncated_input_atoms": [],
+      "width_order": 1
+    },
+    "3": {
+      "atoms": {
+        "2,1": "1.25582173477251970769392456685e-84"
+      },
+      "normalized_coefficient_convention": "coefficient of pressure**p * width**w (derivatives divided by p! * w!)",
+      "pressure_order": 2,
+      "rectangular_truncation": true,
+      "truncated_input_atoms": [],
+      "width_order": 1
+    }
+  },
+  "second_remainder_enclosed": false,
+  "second_sum_replay_error": "4.42015792581320678465078870889e-171",
+  "second_term_split_errors": {
+    "0": "3.95095970200375487390038104976e-171",
+    "1": "1.17497199060143846343043744245e-185",
+    "2": "1.93406947589252161916798807687e-196",
+    "3": "5.82346646079908823220189997949e-206"
+  },
+  "second_terms": {
+    "0": {
+      "atoms": {
+        "0,0": "1.28132760638459999630955801541e-49",
+        "0,1": "-3.84398281913565473531389005748e-50",
+        "1,0": "4.69820122338611242757623924103e-50",
+        "1,1": "8.54218404248911480174873856189e-51",
+        "2,0": "1.70843680851585452189927616234e-50",
+        "2,1": "4.27109202130231297002418297943e-51"
+      },
+      "normalized_coefficient_convention": "coefficient of pressure**p * width**w (derivatives divided by p! * w!)",
+      "pressure_order": 2,
+      "rectangular_truncation": true,
+      "truncated_input_atoms": [],
+      "width_order": 1
+    },
+    "1": {
+      "atoms": {
+        "0,1": "2.72860961149066794753060870936e-64",
+        "1,0": "1.36430480574533397376530435468e-64",
+        "1,1": "1.13692064089196959988717869795e-64",
+        "2,0": "9.09536292015785280641633668975e-66",
+        "2,1": "1.05051468367394273871566537151e-64"
+      },
+      "normalized_coefficient_convention": "coefficient of pressure**p * width**w (derivatives divided by p! * w!)",
+      "pressure_order": 2,
+      "rectangular_truncation": true,
+      "truncated_input_atoms": [],
+      "width_order": 1
+    },
+    "2": {
+      "atoms": {
+        "1,1": "2.77700842748229934199187906648e-75",
+        "2,0": "6.94252106870574835497969766619e-76",
+        "2,1": "5.32256349276146434198903491654e-76"
+      },
+      "normalized_coefficient_convention": "coefficient of pressure**p * width**w (derivatives divided by p! * w!)",
+      "pressure_order": 2,
+      "rectangular_truncation": true,
+      "truncated_input_atoms": [],
+      "width_order": 1
+    },
+    "3": {
+      "atoms": {
+        "2,1": "1.25585209016181111932039749044e-84"
+      },
+      "normalized_coefficient_convention": "coefficient of pressure**p * width**w (derivatives divided by p! * w!)",
+      "pressure_order": 2,
+      "rectangular_truncation": true,
+      "truncated_input_atoms": [],
+      "width_order": 1
+    }
+  }
+}

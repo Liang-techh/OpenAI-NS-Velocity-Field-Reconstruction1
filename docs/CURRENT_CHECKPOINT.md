@@ -1,3 +1,16 @@
+# 2026-09-30: Second-Z centered source and corrected field completed
+
+All 69 labeled centered defect parts, flat kernels through derivative 13,
+finite nonlinear inverse and 71-part physical moment reconstruction now
+carry value/first/second axial derivatives. Actual Z=.3, x=1.25 completed;
+P0/P0_ZZ preserved and Ur agrees with the shared stress recovery.
+Maximum nominal second-Z inverse residual after ten updates: 5.85616e-209.
+Resolved density second derivative discrepancy: 1.75147e-14; corrected
+field scaled discrepancy: 9.64652e-32. These are finite construction checks.
+Uniform axial bounds, source error enclosures, relative-flat/infinite inverse
+closure, heat/energy matching and temporal recursion remain open.
+See SECOND_CENTERED_DEFECTS_2026_09_30.md.
+
 # 2026-09-30: Second axial source adapters and actual inner endpoint
 
 Second-Z arithmetic, comparison, bridge, exponential continuation and R100--R110
@@ -9,7 +22,7 @@ raw energies; an independent cache and post_collar_R100 receipt were saved.
 Do not use the old first-Z cache as second-Z source data.
 See SECOND_AXIAL_PROPAGATION_2026_09_30.md.
 Actual R110 second-Z execution completed with inlet continuity checked.
-Second-Z centered defect parts, interval/source error
+Interval/source error
 bounds and all previously open global matching/recursion gates remain open.
 
 # 2026-09-30: Incremental analytic five-bump inverse installed

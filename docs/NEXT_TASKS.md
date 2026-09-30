@@ -1,3 +1,24 @@
+# 2026-09-30: Next gate after common-source C2 repair
+
+Completed: 69 centered source parts and 71 physical moment parts carry C2,
+with actual Z=.3 receipts and independent resolved derivative checks.
+See SECOND_CENTERED_DEFECTS_2026_09_30.md for commands and limitations.
+
+- [ ] Declare a compact axial interval |Z| <= 1-eta and derive interval or
+      Taylor majorants for the same common source; do not infer them from samples.
+- [ ] Bound radial/core and axial Taylor truncations separately; retain the
+      third source derivative needed by the second comparison driver.
+- [ ] Enclose analytic preheat/angular quadrature, RK bridge/switch and pressure
+      restoration errors; carry them into all five C2 moment defects.
+- [ ] Enclose flat-kernel quadrature through N+2 and expansion remainders;
+      retain pressure/width atoms and all 69 labels separately.
+- [ ] Derive same-source inverse radius and contraction bounds in C1/C2;
+      enclose the infinite tail and test relative-flat rows, not only absolute tails.
+- [ ] Extend compact-interval bounds to endpoint strips before claiming |Z|<1.
+- [ ] Establish finite-energy radial tail and exact heat exterior compatibility.
+- [ ] Implement distinct n=1 and n>=2 temporal recovery equations with moment
+      repair and streamfunction cutoff; then stress-corrected oscillatory layers.
+
 # 2026-09-30: Gate after second-Z source adapters
 
 - [x] Implement explicit second axial jet; reject unknown-second promotion.
@@ -6,8 +27,8 @@
 - [x] Build fresh actual degree18 Z-depth3 inner core source and endpoint receipt.
 - [x] Complete actual second-Z collar/R100 propagation and save independent cache.
 - [x] Run actual second-Z R110 switches and check inlet value/first/second continuity.
-- [ ] Extend centered flat-kernel composition and every defect part to second-Z.
-- [ ] Connect second-Z source to inverse/physical field recovery.
+- [x] Extend centered flat-kernel composition and every defect part to second-Z.
+- [x] Connect second-Z source to inverse/physical field recovery.
 - [ ] Enclose uniform C1/C2 source and inverse tails; handle Z endpoint strips.
 - [ ] Complete heat/energy matching and then temporal n-dependent recursion.
 

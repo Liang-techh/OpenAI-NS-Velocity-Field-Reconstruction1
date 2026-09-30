@@ -168,22 +168,30 @@ def compose_flat_shape_defect(
     B_Z: PressureWidthJet,
     T: Any,
     *,
+    B_ZZ: PressureWidthJet | None = None,
     precision: int = 260,
     order: int = 32,
     window: Any = 24,
 ) -> dict[str, Any]:
-    """Compose the scalar defect and its first Z tangent over a finite ring.
+    """Compose the scalar defect and its Z derivatives over a finite ring.
 
     ``B`` is expanded around its scalar constant atom ``B0``.  If ``P`` and
     ``W`` are the retained pressure and width orders, ``N = P + W`` and the
     returned value uses derivatives through ``I^(N)(B0)``.  The returned
-    tangent is the chain-rule product through ``I^(N+1)(B0) * B_Z``.
+    tangent is the chain-rule product through ``I^(N+1)(B0) * B_Z``.  When
+    ``B_ZZ`` is supplied, the returned ``second_terms`` apply the full second
+    chain rule through ``I^(N+2)(B0)``.
     """
 
     if not isinstance(B, PressureWidthJet) or not isinstance(B_Z, PressureWidthJet):
         raise TypeError("B and B_Z must be PressureWidthJet instances")
     if _orders(B) != _orders(B_Z):
         raise ValueError("B and B_Z must have matching pressure/width orders")
+    if B_ZZ is not None:
+        if not isinstance(B_ZZ, PressureWidthJet):
+            raise TypeError("B_ZZ must be a PressureWidthJet instance")
+        if _orders(B) != _orders(B_ZZ):
+            raise ValueError("B and B_ZZ must have matching pressure/width orders")
     if int(precision) < 80:
         raise ValueError("precision must be at least 80")
     if int(order) < 8:
@@ -191,6 +199,7 @@ def compose_flat_shape_defect(
 
     pressure_order, width_order = _orders(B)
     truncation_order = pressure_order + width_order
+    derivative_cache_order = truncation_order + (2 if B_ZZ is not None else 1)
     workdps = _scalar_work_precision(T, precision)
     with mp.workdps(workdps):
         B0 = B.component(0, 0)
@@ -221,7 +230,7 @@ def compose_flat_shape_defect(
         )
         scalar_records[0] = base_record
         scalar_records[1] = base_record
-        for derivative_order in range(2, truncation_order + 2):
+        for derivative_order in range(2, derivative_cache_order + 1):
             scalar_records[derivative_order] = evaluate_flat_shape_derivative(
                 k,
                 m,
@@ -237,10 +246,20 @@ def compose_flat_shape_defect(
             derivative_order: _derivative_value(
                 scalar_records[derivative_order], derivative_order
             )
-            for derivative_order in range(truncation_order + 2)
+            for derivative_order in range(derivative_cache_order + 1)
         }
         value_terms: dict[int, PressureWidthJet] = {}
         tangent_terms: dict[int, PressureWidthJet] = {}
+        second_terms: dict[int, PressureWidthJet] | None = None
+        second_chain_terms: dict[int, PressureWidthJet] | None = None
+        second_curvature_terms: dict[int, PressureWidthJet] | None = None
+        if B_ZZ is not None:
+            # Keep the two second-chain contributions independently inspectable:
+            # I''(B) * B_Z**2 and I'(B) * B_ZZ.
+            second_terms = {}
+            second_chain_terms = {}
+            second_curvature_terms = {}
+            B_Z_squared = B_Z * B_Z
         delta_power = one
         for term_order in range(truncation_order + 1):
             factorial = mp.factorial(term_order)
@@ -252,6 +271,18 @@ def compose_flat_shape_defect(
                 * (derivative_values[term_order + 1] / factorial)
                 * B_Z
             )
+            if B_ZZ is not None:
+                coefficient = delta_power / factorial
+                second_chain_terms[term_order] = (
+                    coefficient * derivative_values[term_order + 2] * B_Z_squared
+                )
+                second_curvature_terms[term_order] = (
+                    coefficient * derivative_values[term_order + 1] * B_ZZ
+                )
+                second_terms[term_order] = (
+                    second_chain_terms[term_order]
+                    + second_curvature_terms[term_order]
+                )
             delta_power = delta_power * delta
 
         value = _zero(B)
@@ -260,7 +291,7 @@ def compose_flat_shape_defect(
             value = value + value_terms[term_order]
             tangent = tangent + tangent_terms[term_order]
 
-        return {
+        result: dict[str, Any] = {
             "value": value,
             "tangent": tangent,
             "value_terms": value_terms,
@@ -279,7 +310,7 @@ def compose_flat_shape_defect(
             "saddle_window": _mp(window),
             "pressure_order": pressure_order,
             "width_order": width_order,
-            "derivative_truncation_order": truncation_order + 1,
+            "derivative_truncation_order": derivative_cache_order,
             "value_truncation_order": truncation_order,
             "term_receipts": {
                 term_order: _record_receipt(
@@ -298,7 +329,7 @@ def compose_flat_shape_defect(
                 "pressure_order": pressure_order,
                 "width_order": width_order,
                 "value_truncation_order": truncation_order,
-                "derivative_cache_order": truncation_order + 1,
+                "derivative_cache_order": derivative_cache_order,
                 "work_precision": workdps,
                 "quadrature_order": int(order),
                 "saddle_window": _mp(window),
@@ -320,6 +351,46 @@ def compose_flat_shape_defect(
                 "pressure/width ring; tails and quadrature remainder are unenclosed."
             ),
         }
+
+        if B_ZZ is not None:
+            assert (
+                second_terms is not None
+                and second_chain_terms is not None
+                and second_curvature_terms is not None
+            )
+            fullsecond = _zero(B)
+            for term_order in range(truncation_order + 1):
+                fullsecond = fullsecond + second_terms[term_order]
+            result.update(
+                {
+                    "B_ZZ": B_ZZ,
+                    "second_terms": second_terms,
+                    "second_chain_terms": second_chain_terms,
+                    "second_curvature_terms": second_curvature_terms,
+                    "fullsecond": fullsecond,
+                    "second_term_receipts": {
+                        term_order: _record_receipt(
+                            scalar_records[term_order + 2],
+                            derivative_order=term_order + 2,
+                        )
+                        for term_order in range(truncation_order + 1)
+                    },
+                    "metadata": {
+                        **result["metadata"],
+                        "second_Z_derivative": True,
+                        "second_truncation_order": truncation_order,
+                        "second_derivative_cache_order": derivative_cache_order,
+                        "second_terms_preserved_before_sum": True,
+                        "second_remainder_enclosed": False,
+                    },
+                    "second_Z_derivative": True,
+                    "second_truncation_order": truncation_order,
+                    "second_derivative_cache_order": derivative_cache_order,
+                    "second_terms_preserved_before_sum": True,
+                    "second_remainder_enclosed": False,
+                }
+            )
+        return result
 
 
 compose = compose_flat_shape_defect
