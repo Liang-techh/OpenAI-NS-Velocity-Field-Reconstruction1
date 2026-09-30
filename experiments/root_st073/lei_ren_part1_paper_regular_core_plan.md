@@ -335,4 +335,3 @@ core would first need the completed source \(P_0(Z)\), the analytic core
 parameter regime, and the Section 9 jet/scale compatibility; the five
 Section 10 moment defects must then be measured from the actual connection,
 not replaced by target values.
-
