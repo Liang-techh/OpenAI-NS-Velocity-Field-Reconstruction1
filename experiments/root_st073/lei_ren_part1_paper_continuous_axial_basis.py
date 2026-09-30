@@ -30,6 +30,15 @@ class ContinuousAxialBump:
         for p in ('-.5','0','.5'):
             if mp.mpf(p)<upper:points.append(mp.mpf(p))
         points.append(upper)
+        if upper<mp.mpf('-.5') and abs(lam*self.ell)<=1:
+            # A flat endpoint integral may be far below mp.quad's absolute
+            # stopping scale. Factor out the monotone endpoint maximum so
+            # quadrature sees an O(1) integrand and refines relative shape.
+            log_endpoint=lam*self.ell*upper-1/(1-upper*upper)
+            def scaled(x):
+                if abs(x)>=1:return mp.mpf(0)
+                return mp.exp(lam*self.ell*x-1/(1-x*x)-log_endpoint)
+            return mp.exp(log_endpoint)*mp.quad(scaled,points)
         return mp.quad(lambda x:mp.exp(lam*self.ell*x)*self.raw(x),points)
 
     def values(self,s):
@@ -63,6 +72,16 @@ class ContinuousAxialBump:
             return dict(value=self.primitive(lam,s),
                 derivative=mp.exp(lam*s)*v['beta'],
                 second_derivative=mp.exp(lam*s)*(lam*v['beta']+v['beta_s']))
+
+    def tail(self,lam,s):
+        """Remaining weighted mass, integrated directly by reflection.
+
+        beta is even, so int_s^ell exp(lam*t) beta(t) dt equals
+        primitive(-lam,-s). This preserves a small positive endpoint tail
+        without subtracting two nearly equal complete/partial integrals.
+        """
+        with mp.workdps(self.precision):
+            return self.primitive(-mp.mpf(lam),-mp.mpf(s))
 
     def matrix(self,mu):
         with mp.workdps(self.precision):

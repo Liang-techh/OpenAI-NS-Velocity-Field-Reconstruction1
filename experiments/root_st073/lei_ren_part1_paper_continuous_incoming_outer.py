@@ -45,8 +45,10 @@ def regenerate_incoming(source, seeded, atoms, provider, *, order=96):
         full=provider.full_incoming_rows(z)
         dimensions=incoming['dimensionless_integrals']
         old_dimensions=deepcopy(dimensions)
-        dimensions.update(I_z=mp.nstr(full['I_z'],precision),
-                          I_uz2=mp.nstr(full['I_uz2'],precision),
+        # Serializing at source algebra precision cannot add information to
+        # the incoming quadrature atoms. Retain their declared precision.
+        dimensions.update(I_z=mp.nstr(full['I_z'],provider.precision),
+                          I_uz2=mp.nstr(full['I_uz2'],provider.precision),
                           I_theta_z=mp.nstr(mixed_factor*z/(1+z*z),precision))
         yp=mp.mpf(str(schedule.y_p));ep=mp.mpf(incoming['log_Ep'])
         mu=mp.mpf(str(schedule.mu))
@@ -66,9 +68,14 @@ def regenerate_incoming(source, seeded, atoms, provider, *, order=96):
         incoming['continuous_incoming']={
             'precision':provider.precision,'mixed_quadrature_order':order,
             'reference_linear_factors':{
-                'I_z_over_Z':mp.nstr(provider.full_incoming_rows(1)['I_z'],precision),
+                'I_z_over_Z':mp.nstr(provider.full_incoming_rows(1)['I_z'],provider.precision),
                 'I_theta_z_times_1plusZ2_over_Z':mp.nstr(mixed_factor,precision)},
             'old_dimensionless_integrals':old_dimensions,
+            'dimensionless_integral_working_precision':{
+                'I_z':provider.precision,'I_uz2':provider.precision,
+                'I_theta_z':precision,'I_swirl':seeded['incoming']['precision']},
+            'mixed_axial_factor_working_precision':provider.precision,
+            'serialized_digits_are_not_integral_accuracy':True,
             'angular_primitive_float_backed':True,'swirl_energy_inherited':True,
             'quadrature_enclosure_certified':False,'inner_offsets_reapplied_once':True}
         result['incoming']=incoming

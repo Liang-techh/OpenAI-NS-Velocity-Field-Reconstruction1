@@ -86,7 +86,7 @@ def run():
     field=ContinuousIncomingOuterField(source,prepared={.3:(seeded,atoms)})
     print('evaluating actual terminal mass and Z mass',flush=True)
     result=terminal_balance(field,'.3')
-    result['source_commit']='9a929d36'
+    result['source_definition']='Installed continuous incoming exterior with retained terminal balance and direct end tails'
     Path(__file__).with_suffix('.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({key:result[key] for key in ('normalized_mass_relative_balance',
         'normalized_mass_Z_relative_balance','nominal_nonzero_tail')}),flush=True)

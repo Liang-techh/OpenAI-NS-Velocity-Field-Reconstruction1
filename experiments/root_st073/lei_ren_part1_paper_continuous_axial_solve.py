@@ -5,6 +5,7 @@ No coefficients are installed into the global velocity/mean provider here.
 """
 import json
 from pathlib import Path
+from functools import lru_cache
 import mpmath as mp
 from lei_ren_part1_paper_axial_correction import from_signed_log, signed_log
 from lei_ren_part1_paper_continuous_axial_basis import ContinuousAxialBump
@@ -33,6 +34,15 @@ class ContinuousEndCorrection:
             return sum(c*mp.exp(lam*center)*self.basis.primitive(lam,mp.mpf(offset)-center)
                        for c,center in zip(self.c,(-3,-1)))
 
+    def weighted_tail(self,row,offset,*,coefficients=None):
+        """Integrate the actual end correction from offset to infinity."""
+        with mp.workdps(self.precision):
+            if row not in (1,2):raise ValueError('Expected row 1 or 2')
+            lam=mp.mpf('.5')-row*self.mu
+            c=self.c if coefficients is None else coefficients
+            return sum(value*mp.exp(lam*center)*self.basis.tail(lam,mp.mpf(offset)-center)
+                       for value,center in zip(c,(-3,-1)))
+
 
 class ContinuousAxialCorrection(ContinuousEndCorrection):
     """One pulse/end provider for values and normalized cumulative row means.
@@ -51,6 +61,20 @@ class ContinuousAxialCorrection(ContinuousEndCorrection):
         with mp.workdps(self.precision):
             return {key:self.a*value for key,value in self.pulse.value_jet(xi).items()}
 
+    @lru_cache(maxsize=8)
+    def terminal_balance(self,row,evaluation_precision=None):
+        """Cache the evaluated full-atom residual; never substitute zero."""
+        with mp.workdps(max(self.precision,evaluation_precision or self.precision)):
+            if row not in (1,2):raise ValueError('Expected row 1 or 2')
+            atom=self.pulse.full_row(self.mu,row)
+            integral=mp.exp(mp.mpf(atom['log_normalized_pulse_integral']))
+            end=self.weighted_primitive(row,0)
+            return dict(value=self.base[row-1]+self.a*integral+end,
+                        pulse_integral=integral,pulse_atom=atom,
+                        full_end_primitive=end,materialized_residual_retained=True,
+                        exact_functional_identity='M c + b + a p = 0 for exact continuous atoms',
+                        functional_identity_certified_for_materialized_coefficients=False)
+
     def cumulative_row(self,row,*,xi=None,end_offset=None):
         if (xi is None)==(end_offset is None):
             raise ValueError('Supply pulse xi or end-bump offset')
@@ -60,13 +84,22 @@ class ContinuousAxialCorrection(ContinuousEndCorrection):
             integral=(mp.exp(mp.mpf(atom['log_normalized_pulse_integral']))
                       if 'log_normalized_pulse_integral' in atom else mp.mpf(0))
             end=self.weighted_primitive(row,end_offset) if end_offset is not None else mp.mpf(0)
-            mean=self.base[row-1]+self.a*integral+end
+            if end_offset is not None and mp.mpf(end_offset)>=mp.mpf('-3.15'):
+                # Pulse support is complete throughout the end-bump region.
+                # N(s)=rho-int_s^infinity end, where rho is the evaluated
+                # full balance. Keeping rho makes this a representation of
+                # the same materialized field, not an imposed terminal mask.
+                mean=self.terminal_balance(row)['value']-self.weighted_tail(row,end_offset)
+                method='retained_terminal_balance_minus_direct_end_tail'
+            else:
+                mean=self.base[row-1]+self.a*integral+end
+                method='forward_continuous_primitive'
             relative_bound=atom.get('log_relative_omitted_absolute_bound',
                                     atom.get('log_relative_omitted_positive_bound'))
             correction_sign=atom.get('omitted_correction_sign',1)
             logbound=(mp.log(self.a)+mp.mpf(atom['log_normalized_pulse_integral'])+
                       mp.mpf(relative_bound) if relative_bound is not None else None)
-            return dict(nominal=signed_log(mean,self.precision),
+            return dict(nominal=signed_log(mean,self.precision),method=method,
                 log_pulse_omitted_absolute_bound=mp.nstr(logbound,self.precision) if logbound is not None else None,
                 pulse_omitted_correction_sign=correction_sign,
                 log_pulse_omitted_positive_bound=(mp.nstr(logbound,self.precision)

@@ -178,6 +178,13 @@ class ContinuousSeededAxialProfileJets(ContinuousSeededAxialProfile):
         a_Z = tangent["a_Z"]
         if xi is None:
             raise ValueError("The normalized pulse coordinate is required")
+        if end is not None and _mp(end)>=mp.mpf('-3.15'):
+            terminal=component.terminal_balance(1,max(self.precision,self.jet_precision))
+            integral=terminal['pulse_integral']
+            N=terminal['value']-component.weighted_tail(1,_mp(end))
+            terminal_Z=base_Z+a_Z*integral+self._end_primitive_derivative(component,tangent['c_Z'],0)
+            N_Z=terminal_Z-component.weighted_tail(1,_mp(end),coefficients=tangent['c_Z'])
+            return N,N_Z,terminal['pulse_atom']
         integral, _, atom = self._pulse_integral_and_derivative(component, xi, tangent)
         N = component.base[0] + component.a * integral
         N_Z = base_Z + a_Z * integral
@@ -363,6 +370,11 @@ class ContinuousSeededAxialProfileJets(ContinuousSeededAxialProfile):
                 "N_Z": N_Z,
                 "pulse_atom": atom,
                 "method": "continuous_mean_analytic_Z_jet",
+                "cumulative_representation": (
+                    "retained_terminal_balance_minus_direct_end_tail"
+                    if _mp(end)>=mp.mpf('-3.15') else "forward_continuous_primitive"
+                ),
+                "terminal_materialized_residual_retained": True,
                 "region": region,
                 "terminal_mean_forced_zero": False,
                 "angular_Z_jet_complete": False,
@@ -382,6 +394,8 @@ class ContinuousSeededAxialProfileJets(ContinuousSeededAxialProfile):
         )
         for key in (
             "method",
+            "cumulative_representation",
+            "terminal_materialized_residual_retained",
             "region",
             "N",
             "N_Z",

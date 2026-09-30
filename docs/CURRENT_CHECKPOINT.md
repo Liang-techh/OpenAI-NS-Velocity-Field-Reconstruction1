@@ -1,3 +1,32 @@
+## Direct remaining end integrals installed - 2026-09-30
+
+ContinuousAxialBump.tail uses reflection of the same even bump to integrate
+remaining mass directly. Flat endpoint integrals factor out the endpoint
+maximum before quadrature, avoiding absolute-error stopping on tiny values.
+At precision100, s=.1499 retains log(tail)=-763.2991417 while full-minus-partial
+rounds to zero. This is a numerical representation improvement, not closure.
+
+ContinuousAxialCorrection now caches and RETAINS its evaluated terminal
+balance rho. End-region cumulative rows use rho minus the direct remaining
+end integral. The installed mean/Z-mean jet path uses the same representation
+and retains rho_Z; no terminal mass or derivative is replaced with zero.
+
+Actual full-field reruns: Rp mass and Z-mass matching remain 6.92e-83.
+Installed normalized terminal mass balance is 1.11e-200; Z balance6.29e-201;
+physical radial tail remains nonzero. Incoming scalar serialization now keeps
+its declared100-digit quadrature precision, with separate source/algebra and
+mixed-integral precision provenance; extra printed digits are not accuracy.
+
+Next tasks:
+- [x] Direct end-tail primitives and retained-residual cumulative representation.
+- [x] Install representation in actual outer mean AND Z-mean jets.
+- [x] Preserve incoming atom precision in regenerated receipts.
+- [ ] Share complete continuous atoms with functional coefficient definitions,
+      keeping evaluated coefficient/atom residuals and quadrature bounds apart.
+- [ ] Establish both terminal constraints under that complete integral model.
+- [ ] Finish angular jets, outer five moments and pressure, global energy,
+      recursive matching, stress/remainder and oscillatory corrections.
+
 ## Actual terminal balance and energy-tail obstruction - 2026-09-30
 
 New continuous_terminal_balance.py/md/json evaluates the INSTALLED continuous
