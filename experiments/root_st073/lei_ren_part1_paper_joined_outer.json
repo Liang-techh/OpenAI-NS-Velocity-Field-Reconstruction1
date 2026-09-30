@@ -529,5 +529,6 @@
     "scale_recursion_established": false,
     "global_NS_or_stress_certificate": false,
     "outer_velocity_jets_complete": false
-  }
+  },
+  "historical_provenance": "Before axial_incoming Decimal stage-offset correction; use seeded_outer_field.json for current installed axial diagnostics."
 }

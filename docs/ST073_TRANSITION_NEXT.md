@@ -1,3 +1,25 @@
+## Installed seeded axial field; mean conditioning exposed - 2026-09-30
+
+Read lei_ren_part1_paper_seeded_outer_field.py/md/json and the regenerated
+seeded_shared_candidate.json. New coefficients are now installed in both
+axial velocity and the actual cumulative mean. Schedule/angular/pressure
+identities are retained. Direct seeded transport avoids subtract/add loss.
+Fixed Decimal stage-offset loss in axial_incoming._row, MP bump normalization,
+and stored full pulse row reuse. Prior joined_outer.json is labelled historical.
+At Z=.3 Rp relative mean jump=3.541e-260; Rv reported mean jump=0 at precision;
+pulse independent divergence relative cancellation=3.899e-25. These are local
+numerical diagnostics, not full momentum residuals or uniform certificates.
+
+IMPORTANT: tail coefficient ratio is -2.590e-183, but log(|tail/Rh|) remains
+1.1504e28. The numerical tail is still nonzero and the implemented radial
+1/r energy obstruction remains. Increasing ordinary MP precision is not the
+next solution: derive an exact closure identity for the same actual field,
+with continuous integral/conservative-model provenance and uncertainty.
+Do not set a nonzero terminal mean to zero or hide an arithmetic residual.
+Then restore corrected outer jets, full five moments, energy/support tests,
+actual multi-time scale diagnostics and stress/remainder. Oscillatory layers
+and full residual <=1e-3 remain later requirements.
+
 ## Shared inner-through-heat callable and actual seeded exterior solve - 2026-09-30
 
 Run lei_ren_part1_paper_joined_outer.py. JoinedOuterField keeps the SAME source

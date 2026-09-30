@@ -242,9 +242,10 @@ class JoinedOuterField:
             base_mass = R * average
             base_mass_Z = R * average_Z
             offsets = self.terminal_offsets(self._z_key(z))
+            mean_seeded = getattr(self, 'axial_mean_already_seeded', False)
             if carry:
-                mass = base_mass + offsets["mass_offset"]
-                mass_Z = base_mass_Z + offsets["mass_offset_Z"]
+                mass = base_mass if mean_seeded else base_mass + offsets["mass_offset"]
+                mass_Z = base_mass_Z if mean_seeded else base_mass_Z + offsets["mass_offset_Z"]
                 pressure_offset = offsets["pressure_offset"]
                 pressure_offset_Z = offsets["pressure_offset_Z"]
             else:
@@ -279,8 +280,9 @@ class JoinedOuterField:
                 "PZ": pressure_Z,
                 "Utheta": values["Utheta"],
                 "Utheta_Z": values["Utheta_Z"],
-                "axial_average": average + (offsets["mass_offset"] / R if carry else 0),
-                "axial_average_Z": average_Z + (offsets["mass_offset_Z"] / R if carry else 0),
+                "axial_average": average + (offsets["mass_offset"] / R if carry and not mean_seeded else 0),
+                "axial_average_Z": average_Z + (offsets["mass_offset_Z"] / R if carry and not mean_seeded else 0),
+                "axial_mean_already_seeded": mean_seeded,
                 "base_axial_average": average,
                 "base_axial_average_Z": average_Z,
                 "mass": mass,

@@ -74,7 +74,13 @@ def _row(schedule: PaperOuterSchedule, y: Any, z: float) -> dict[str, Any]:
         y_decimal = y
     else:
         y_decimal = Decimal(str(y))
-    return schedule.at_log_radius(schedule.logRref + y_decimal, z)
+    # Decimal's process default has only 28 digits. At logRref ~ 1e152
+    # that drops the entire stage offset, evaluating incoming data in the
+    # reference region instead of at Rp or along the turnoff interval.
+    with localcontext() as ctx:
+        ctx.prec = schedule.decimal_precision
+        log_radius = schedule.logRref + y_decimal
+    return schedule.at_log_radius(log_radius, z)
 
 
 def _integrate_finite(

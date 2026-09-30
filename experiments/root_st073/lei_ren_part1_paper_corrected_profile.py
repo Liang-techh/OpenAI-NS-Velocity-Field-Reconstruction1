@@ -105,7 +105,7 @@ class CorrectedSourceProfile:
                     xi=self.schedule.mu*start
                 receipt=self.coefficients(float(Z))['axial']
                 if Decimal('-3.15')<=end<=Decimal('-.85'):
-                    factor=axial_factor(receipt,end_offset=float(end),precision=self.precision)
+                    factor=axial_factor(receipt,end_offset=mp.mpf(str(end)),precision=self.precision)
                     Uz=amplitude*from_signed_log(factor)
                 else:
                     # Use the complementary flat step directly. Subtracting
@@ -180,9 +180,17 @@ class CorrectedSourceProfile:
             ap=mp.mpf(axial['a_p'])
             if end<=0:
                 xi=mp.mpf(str(self.schedule.mu))*mp.mpf(str(start))
-                primitive=normalized_pulse_primitive(self.schedule.mu,1,mp.nstr(xi,self.precision),
-                            precision=self.precision,order=self.order)
-                J=mp.exp(mp.mpf(primitive['log_J'])) if primitive['log_J'] is not None else mp.mpf(0)
+                if xi>=11:
+                    # After pulse support, use exactly the full-row input
+                    # used by the coefficient solve. Recomputing it at a
+                    # different precision can create a jump at Rv even if
+                    # both evaluations are individually very accurate.
+                    J=mp.exp(mp.mpf(self.pulse[0]['log_normalized_pulse_integral'])
+                        -lam*mp.mpf(str(end)))
+                else:
+                    primitive=normalized_pulse_primitive(self.schedule.mu,1,mp.nstr(xi,self.precision),
+                                precision=self.precision,order=self.order)
+                    J=mp.exp(mp.mpf(primitive['log_J'])) if primitive['log_J'] is not None else mp.mpf(0)
                 m1=from_signed_log(incoming['m1_Mz_over_RpEp'])
                 Y=m1*mp.exp(-lam*mp.mpf(str(start)))+ap*J
                 if end>=Decimal('-3.15'):

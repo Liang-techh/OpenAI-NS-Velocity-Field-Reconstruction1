@@ -117,10 +117,16 @@ def axial_factor(receipt,*,xi=None,end_offset=None,precision=120):
         else:
             # The pulse is zero here, since its support ends at xi=11.
             nodes,weights=np.polynomial.legendre.leggauss(receipt['quadrature_order'])
-            normalization=sum(float(w)*float(_paper_raw_bump(float(n))) for n,w in zip(nodes,weights))
+            # Match the solve and the cumulative primitive's canonical
+            # normalization. A binary64 sum here would change the actual
+            # pointwise bump while leaving the moment equations unchanged.
+            normalization=sum(mp.mpf(str(float(w)))*mp.mpf(str(float(_paper_raw_bump(float(n)))))
+                for n,w in zip(nodes,weights))
             result=mp.mpf(0)
+            offset=end_offset if isinstance(end_offset,mp.mpf) else mp.mpf(str(end_offset))
             for data,center in zip(receipt['c'],(-3.,-1.)):
-                bump=float(_paper_raw_bump((float(end_offset)-center)/.15))/(.15*normalization)
+                unit=(offset-mp.mpf(str(center)))/mp.mpf('.15')
+                bump=mp.mpf(str(float(_paper_raw_bump(float(unit)))))/(mp.mpf('.15')*normalization)
                 if bump:result+=from_signed_log(data)*bump
         return signed_log(result,precision)
 

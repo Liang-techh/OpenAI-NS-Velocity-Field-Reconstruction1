@@ -1,0 +1,6 @@
+{
+  "canonical_pointwise_vs_primitive_relative_error": "1.244744899711643390727919511991513654271e-160",
+  "order": 192,
+  "precision": 160,
+  "scope": "Same quadrature normalization; continuous integral and quadrature error not certified"
+}
