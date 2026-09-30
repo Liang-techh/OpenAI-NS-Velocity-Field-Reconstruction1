@@ -1,3 +1,22 @@
+## Actual exit Z jets and three-component callable - 2026-09-30
+
+ExitTangents now transports actual five-moment Z jets and recovers Ur
+from the same Mz/Mz_Z. The shared stress evaluator accepts exact ODE
+shears to preserve the extremely small terminal shear. All five starting
+moments and their jets match the core. At Z=.3,y=.0025, independently
+differenced relative divergence cancellation error is 3.95e-20; the
+16/32-step terminal Ur relative difference is 6.05e-19. Driver Z-step
+uncertainty is checked separately. These are finite local diagnostics.
+
+The midpoint passes sampled admissible/relaxed cone tests; the endpoint
+passes relaxed only. The core-join strict test has numerically zero
+T dot S and is retained as false. The strict condition excludes the Ra boundary. Near-join interior margins
+and uniform cone control remain unverified.
+LocalCoreExitField.velocity(x,y,z,t) now covers core and initial exit;
+physical roundtrips at two times pass. Full matching, finite energy and
+temporal recursion remain open. See exit_field.md/json and
+exit_callable.json under experiments/root_st073.
+
 ## Initial actual inner exit - 2026-09-30
 
 The same source-scaled core now feeds Section 9.23 comparison and actual

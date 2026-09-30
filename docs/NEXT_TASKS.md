@@ -1,3 +1,19 @@
+## Actual exit field follow-up - 2026-09-30
+
+- [x] Transport actual moment Z jets with normalized MP numerical driver derivatives.
+- [x] Recover Ur and evaluate actual exit stress with cancellation-safe shear.
+- [x] Add independent local divergence, separated derivative/ODE refinement and cone samples.
+- [x] Provide unified physical core/initial-exit velocity(x,y,z,t) callable.
+- [ ] Check positive near-join cone margins with truncation/pressure uncertainties.
+- [ ] Establish bounds for driver jets and omitted corrected-tail pressure derivatives.
+- [ ] Check unsampled Z/y regions, then extend frozen comparison and actual exit.
+- [ ] Match reference power law and repair actual five moments (Section 10).
+- [ ] Restore admissible shear after relaxed connection; assemble complete exterior.
+- [ ] Validate complete-field energy and temporal scale laws before recursion claims.
+
+Read experiments/root_st073/lei_ren_part1_paper_exit_field.md/json.
+Earlier entries below describe historical stages; the latest checklist wins.
+
 ## Active source connection tasks - 2026-09-30
 
 - [x] Implement Section 9.23 comparison with analytic Z jets and moments.

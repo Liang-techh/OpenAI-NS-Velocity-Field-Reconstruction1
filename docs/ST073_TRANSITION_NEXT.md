@@ -1,3 +1,12 @@
+## Actual three-component initial exit - 2026-09-30
+
+Actual Z-jet transport, continuity-based Ur and Section 3 stress are
+implemented with a physical core/exit callable. The one independent
+divergence sample has relative error 3.95e-20. Midpoint admissible and
+endpoint relaxed cone samples pass; near-join interior cone remains unverified.
+See exit_field.md/json under experiments/root_st073. These local results
+leave full matching, finite energy and temporal recursion open.
+
 ## Source exit update - 2026-09-30
 
 The same high-degree core now feeds Section 9.23 comparison and actual

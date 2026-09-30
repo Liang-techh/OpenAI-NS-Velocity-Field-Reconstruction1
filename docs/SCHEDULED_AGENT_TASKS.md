@@ -1,3 +1,15 @@
+## Next actual exit work - 2026-09-30
+
+Z tangent transport, Ur recovery, actual stress and local physical callable
+are implemented. Read exit_field.md/json and exit_callable.json under
+experiments/root_st073. Avoid repeating these implementations. Numerical
+driver derivatives are not analytic bounds. The Ra boundary is excluded from the strict condition; near-join interior
+margin control remains open; midpoint admissible and terminal relaxed passes
+are only samples. Next inspect near-join interior margins, control unsampled Z/y and
+future corrected-pressure jets, extend the actual connection, then repair
+Section 10 actual moments. Preserve every failure and distinguish relaxed
+from admissible cone tests. Temporal recursion remains an open task.
+
 ## Next source agent action - 2026-09-30
 
 Read the exit_bridge.md and comparison/bridge JSON receipts under

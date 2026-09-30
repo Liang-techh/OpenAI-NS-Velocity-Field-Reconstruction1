@@ -1,0 +1,35 @@
+{
+  "rows": [
+    {
+      "region": "core",
+      "logq": "-4",
+      "R_relative_error": "1.7782069995880619867541707314164481e-161",
+      "Z_error": "3.1798981147957455664323628217450101e-162",
+      "cylindrical_velocity_relative_error": "0.0"
+    },
+    {
+      "region": "core",
+      "logq": "-8",
+      "R_relative_error": "1.7782069995880619867541707314164481e-161",
+      "Z_error": "4.5382751792527172423146625287494515e-162",
+      "cylindrical_velocity_relative_error": "0.0"
+    },
+    {
+      "region": "initial_exit",
+      "logq": "-4",
+      "R_relative_error": "1.7782069995880619867541707314164481e-161",
+      "Z_error": "3.1798981147957455664323628217450101e-162",
+      "cylindrical_velocity_relative_error": "3.575149916042596114589263797057891e-148"
+    },
+    {
+      "region": "initial_exit",
+      "logq": "-8",
+      "R_relative_error": "1.7782069995880619867541707314164481e-161",
+      "Z_error": "4.5382751792527172423146625287494515e-162",
+      "cylindrical_velocity_relative_error": "3.5751499160426372511966640980698834e-148"
+    }
+  ],
+  "scope": "Physical-map roundtrip at two times in local core/exit, not dynamic recursion",
+  "outer_matching_complete": false,
+  "global_finite_energy_certified": false
+}

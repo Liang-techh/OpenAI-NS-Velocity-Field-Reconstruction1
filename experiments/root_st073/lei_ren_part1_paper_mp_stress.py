@@ -8,7 +8,7 @@ import mpmath as mp
 
 def evaluate_mp_stress(logR, Z, delta, *, Utheta, Uz, Utheta_y,
                        Utheta_Z, Uz_y, Uz_Z, moments, moments_Z,
-                       P, P_Z, precision=160):
+                       P, P_Z, precision=160, shear_theta=None, shear_z=None):
     """y=log R derivatives; return MP inertial, shear and total stress."""
     with mp.workdps(precision):
         R=mp.exp(mp.mpf(str(logR))); z=mp.mpf(str(Z)); dt=mp.mpf(str(delta))
@@ -27,7 +27,10 @@ def evaluate_mp_stress(logR, Z, delta, *, Utheta, Uz, Utheta_y,
         Iz=(transport*b+(1-dt)*(m['z']-z*mz['z'])/2
             +2*dt*z*m['z_theta']-d*mz['z_theta']
             +R*(2*(1+dt)*z*p-d*pz))/(L*root)
-        Stheta=(2*ay-a)/root; Sz=root*by/R
+        # An ODE may prescribe a shear far below the precision of Utheta.
+        # Supply that exact expression to avoid losing it in 2*ay-a.
+        Stheta=(2*ay-a)/root if shear_theta is None else mp.mpf(shear_theta)
+        Sz=root*by/R if shear_z is None else mp.mpf(shear_z)
         Ur=(2*z*R*b-(1-dt)*z*m['z']-d*mz['z'])/(L*root)
         Ur_R=((1+dt)*z*b+2*z*by-d*bz)/(L*root)-Ur/(2*R)
         Nt=-mp.sqrt(R/2)/L*((1+dt)*a/2+(1-dt)*z*az/2+ay)
