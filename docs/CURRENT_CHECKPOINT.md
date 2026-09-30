@@ -1,3 +1,20 @@
+## Live route after actual moment/field diagnostics — 2026-09-29
+
+Read `LEI_REN_BACKGROUND_FIELD.md` and its retained JSON receipts. The
+callable 3D kinematic seed now has repaired axial/mixed moments, dependent
+radial velocity, physical axial localization, full radial-tail energy and
+six-scale geometry diagnostics. Finest sampled Cartesian divergence is
+9.34e-7 (relative 3.09e-9); full sampled energy is 0.002711–0.002890.
+These results do not establish NS recursion or stress admissibility.
+
+The angular budget rejects the short Rjoin=0.2 seed as the next admissible
+source route under its current axis/pressure choices. Necessary angular and
+pressure inequalities fail at all nine Z points. Next implement an extended
+outer/collar family from Part I Sections 4–7, screen those inequalities,
+recompute common pressure/core, and restore all five moments before cone and
+stress/remainder claims. Do not continue unconstrained fits of the short join.
+The earlier short-join tasks below are historical dependencies/diagnostics.
+
 # Current checkpoint - constrained velocity-field integration
 
 ## Lei–Ren Part I integration — 2026-09-29

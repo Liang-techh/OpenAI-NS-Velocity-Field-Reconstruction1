@@ -5,6 +5,10 @@ and [the staged goal](docs/PROJECT_GOAL.md): geometry similarity, self-similar
 background, stress-resolved reconstruction, then full oscillatory correction.
 The complete momentum `1e-3` gate follows reliable corrections. The callable
 delivery below remains available; it is not a certified Part I background.
+The new [layered kinematic candidate and measured scale diagnostics](docs/LEI_REN_BACKGROUND_FIELD.md)
+include dependent radial velocity, annular axial moment repair and full
+heat-tail energy. Its short outer join requires reconstruction before
+admissible stress or NS recursion acceptance.
 
 ## Current deliverable: canonical callable 3D velocity
 

@@ -1,0 +1,451 @@
+{
+  "status": "completed",
+  "candidate_id": "lr1-axial-moment-match-001",
+  "source": "https://arxiv.org/html/2609.35406v1",
+  "source_version": "2609.35406v1",
+  "source_section": "Section 2.5, equations (2.21)-(2.22)",
+  "profile": "AxialMatchedProfile(load_core())",
+  "parameters": {
+    "R_core": 0.05,
+    "R_join": 0.2,
+    "bump_supports": [
+      [
+        0.055,
+        0.095
+      ],
+      [
+        0.115,
+        0.18
+      ]
+    ],
+    "quadrature_order_constructor": 64,
+    "independent_quadrature_orders": [
+      96,
+      128
+    ],
+    "offgrid_Z": [
+      -0.43,
+      -0.17,
+      0.06,
+      0.31,
+      0.48
+    ]
+  },
+  "thresholds": {
+    "conditioning_relative_min_lower": 1e-08,
+    "nodal_axial_moment_max": 5e-13,
+    "nodal_mixed_moment_max": 5e-13,
+    "offgrid_axial_moment_max": 2e-10,
+    "offgrid_mixed_moment_max": 2e-08,
+    "eta_derivative_fd_max": 2e-05,
+    "core_unchanged_max": 2e-13
+  },
+  "matrix_conditioning": {
+    "w1_min": 0.0018825735415756832,
+    "w1_max": 0.07129648940579489,
+    "w2_min": 0.1105638979362136,
+    "w2_max": 0.13801611170512404,
+    "denominator_min_abs": 0.06671962229932915,
+    "denominator_max_abs": 0.10882143823390622,
+    "relative_min_abs": 0.48341908401156686,
+    "condition_proxy": 1.6310259933081244
+  },
+  "nodal_moment_residuals": {
+    "max_abs_integral_U": 0.0,
+    "max_abs_integral_2RFU": 9.540979117872439e-18
+  },
+  "independent_offgrid_moments": [
+    {
+      "Z": -0.43,
+      "orders": {
+        "96": {
+          "integral_U": 4.369351695775528e-16,
+          "integral_2RFU": 2.8812704603692206e-10
+        },
+        "128": {
+          "integral_U": -1.9002642070563985e-15,
+          "integral_2RFU": 2.8812700719072055e-10
+        }
+      },
+      "refinement_128_minus_96": {
+        "integral_U": -2.3371993766339513e-15,
+        "integral_2RFU": -3.8846201510503095e-17
+      }
+    },
+    {
+      "Z": -0.17,
+      "orders": {
+        "96": {
+          "integral_U": 1.28520309086895e-16,
+          "integral_2RFU": -3.04298488208876e-10
+        },
+        "128": {
+          "integral_U": -8.322911858402865e-16,
+          "integral_2RFU": -3.04298508660063e-10
+        }
+      },
+      "refinement_128_minus_96": {
+        "integral_U": -9.608114949271815e-16,
+        "integral_2RFU": -2.0451186994981455e-17
+      }
+    },
+    {
+      "Z": 0.06,
+      "orders": {
+        "96": {
+          "integral_U": -4.2637520982413343e-17,
+          "integral_2RFU": 3.421221565868085e-10
+        },
+        "128": {
+          "integral_U": 3.494508539280501e-16,
+          "integral_2RFU": 3.4212217163580467e-10
+        }
+      },
+      "refinement_128_minus_96": {
+        "integral_U": 3.920883749104634e-16,
+        "integral_2RFU": 1.504899614585074e-17
+      }
+    },
+    {
+      "Z": 0.31,
+      "orders": {
+        "96": {
+          "integral_U": -4.673944743608174e-16,
+          "integral_2RFU": -4.622790055383256e-10
+        },
+        "128": {
+          "integral_U": 1.3730293960709065e-15,
+          "integral_2RFU": -4.622789748302049e-10
+        }
+      },
+      "refinement_128_minus_96": {
+        "integral_U": 1.840423870431724e-15,
+        "integral_2RFU": 3.070812071152059e-17
+      }
+    },
+    {
+      "Z": 0.48,
+      "orders": {
+        "96": {
+          "integral_U": -2.345671400172389e-16,
+          "integral_2RFU": 2.0714108301894828e-10
+        },
+        "128": {
+          "integral_U": 2.398668557616196e-15,
+          "integral_2RFU": 2.071411259889297e-10
+        }
+      },
+      "refinement_128_minus_96": {
+        "integral_U": 2.6332356976334348e-15,
+        "integral_2RFU": 4.2969981414210656e-17
+      }
+    }
+  ],
+  "independent_offgrid_max_abs_order128": {
+    "integral_U": 2.398668557616196e-15,
+    "integral_2RFU": 4.622789748302049e-10
+  },
+  "core_unchanged_max_abs": 8.881784197001252e-16,
+  "exterior_branch": [
+    {
+      "Z": -0.43,
+      "U_at_Rjoin": 0.0,
+      "average_U_at_Rjoin": 0.0,
+      "average_dU_deta_at_Rjoin": 0.0,
+      "U_exterior": 0.0,
+      "average_U_exterior": 0.0,
+      "average_dU_deta_exterior": 0.0,
+      "F_exterior_minus_joined": 0.0
+    },
+    {
+      "Z": -0.17,
+      "U_at_Rjoin": 0.0,
+      "average_U_at_Rjoin": 0.0,
+      "average_dU_deta_at_Rjoin": 0.0,
+      "U_exterior": 0.0,
+      "average_U_exterior": 0.0,
+      "average_dU_deta_exterior": 0.0,
+      "F_exterior_minus_joined": 0.0
+    },
+    {
+      "Z": 0.06,
+      "U_at_Rjoin": 0.0,
+      "average_U_at_Rjoin": 0.0,
+      "average_dU_deta_at_Rjoin": 0.0,
+      "U_exterior": 0.0,
+      "average_U_exterior": 0.0,
+      "average_dU_deta_exterior": 0.0,
+      "F_exterior_minus_joined": 0.0
+    },
+    {
+      "Z": 0.31,
+      "U_at_Rjoin": 0.0,
+      "average_U_at_Rjoin": 0.0,
+      "average_dU_deta_at_Rjoin": 0.0,
+      "U_exterior": 0.0,
+      "average_U_exterior": 0.0,
+      "average_dU_deta_exterior": 0.0,
+      "F_exterior_minus_joined": 0.0
+    },
+    {
+      "Z": 0.48,
+      "U_at_Rjoin": 0.0,
+      "average_U_at_Rjoin": 0.0,
+      "average_dU_deta_at_Rjoin": 0.0,
+      "U_exterior": 0.0,
+      "average_U_exterior": 0.0,
+      "average_dU_deta_exterior": 0.0,
+      "F_exterior_minus_joined": 0.0
+    },
+    {
+      "Z": 0.0,
+      "U_at_Rjoin": 0.0,
+      "average_U_at_Rjoin": 0.0,
+      "average_dU_deta_at_Rjoin": 0.0,
+      "U_exterior": 0.0,
+      "average_U_exterior": 0.0,
+      "average_dU_deta_exterior": 0.0,
+      "F_exterior_minus_joined": 0.0
+    }
+  ],
+  "exterior_branch_max_abs": 0.0,
+  "eta_derivative_fd_step": 1e-06,
+  "eta_derivative_fd_max_abs": 2.4850521640473744e-09,
+  "eta_derivative_rows": [
+    {
+      "R": 0.025,
+      "Z": -0.43,
+      "finite_difference": 4.023970060829107,
+      "analytic_interpolated": 4.023970060533196,
+      "error": 2.959117395562316e-10
+    },
+    {
+      "R": 0.025,
+      "Z": -0.17,
+      "finite_difference": 4.216105784105029,
+      "analytic_interpolated": 4.216105784247037,
+      "error": -1.4200818299059392e-10
+    },
+    {
+      "R": 0.025,
+      "Z": 0.06,
+      "finite_difference": 4.158874065463003,
+      "analytic_interpolated": 4.15887406524301,
+      "error": 2.1999291277552402e-10
+    },
+    {
+      "R": 0.025,
+      "Z": 0.31,
+      "finite_difference": 4.130352235676149,
+      "analytic_interpolated": 4.130352235558417,
+      "error": 1.177324904233501e-10
+    },
+    {
+      "R": 0.025,
+      "Z": 0.48,
+      "finite_difference": 3.962220686881679,
+      "analytic_interpolated": 3.9622206860406823,
+      "error": 8.409966056888152e-10
+    },
+    {
+      "R": 0.075,
+      "Z": -0.43,
+      "finite_difference": -24.374998987219954,
+      "analytic_interpolated": -24.37499898772165,
+      "error": 5.016964621518127e-10
+    },
+    {
+      "R": 0.075,
+      "Z": -0.17,
+      "finite_difference": -26.606476767110365,
+      "analytic_interpolated": -26.606476768010094,
+      "error": 8.997282918699057e-10
+    },
+    {
+      "R": 0.075,
+      "Z": 0.06,
+      "finite_difference": -25.395698873165173,
+      "analytic_interpolated": -25.395698873145637,
+      "error": -1.9536372519723955e-11
+    },
+    {
+      "R": 0.075,
+      "Z": 0.31,
+      "finite_difference": -25.743497461760967,
+      "analytic_interpolated": -25.74349746424602,
+      "error": 2.4850521640473744e-09
+    },
+    {
+      "R": 0.075,
+      "Z": 0.48,
+      "finite_difference": -23.5852278720472,
+      "analytic_interpolated": -23.585227870601077,
+      "error": -1.4461214448147075e-09
+    },
+    {
+      "R": 0.14,
+      "Z": -0.43,
+      "finite_difference": -0.9092553063250186,
+      "analytic_interpolated": -0.9092553069438079,
+      "error": 6.187892420683738e-10
+    },
+    {
+      "R": 0.14,
+      "Z": -0.17,
+      "finite_difference": -1.3687721210353665,
+      "analytic_interpolated": -1.3687721206893853,
+      "error": -3.459812436545917e-10
+    },
+    {
+      "R": 0.14,
+      "Z": 0.06,
+      "finite_difference": -1.6735562281891547,
+      "analytic_interpolated": -1.6735562280304423,
+      "error": -1.587123765744991e-10
+    },
+    {
+      "R": 0.14,
+      "Z": 0.31,
+      "finite_difference": -1.0746331184363633,
+      "analytic_interpolated": -1.0746331196280308,
+      "error": 1.1916674313994235e-09
+    },
+    {
+      "R": 0.14,
+      "Z": 0.48,
+      "finite_difference": -0.8283452250235079,
+      "analytic_interpolated": -0.828345227036946,
+      "error": 2.0134380829262e-09
+    },
+    {
+      "R": 0.19,
+      "Z": -0.43,
+      "finite_difference": 3.3599502398971235e-06,
+      "analytic_interpolated": 3.3599502397205337e-06,
+      "error": 1.7658985236005016e-16
+    },
+    {
+      "R": 0.19,
+      "Z": -0.17,
+      "finite_difference": 5.138789729636463e-06,
+      "analytic_interpolated": 5.138789729916695e-06,
+      "error": -2.8023153323666547e-16
+    },
+    {
+      "R": 0.19,
+      "Z": 0.06,
+      "finite_difference": 5.103666378510142e-06,
+      "analytic_interpolated": 5.103666378361304e-06,
+      "error": 1.488380883926839e-16
+    },
+    {
+      "R": 0.19,
+      "Z": 0.31,
+      "finite_difference": 4.266572195654e-06,
+      "analytic_interpolated": 4.266572195583597e-06,
+      "error": 7.040283747693568e-17
+    },
+    {
+      "R": 0.19,
+      "Z": 0.48,
+      "finite_difference": 2.8904847075115895e-06,
+      "analytic_interpolated": 2.8904847066350607e-06,
+      "error": 8.765287520600632e-16
+    },
+    {
+      "R": 0.25,
+      "Z": -0.43,
+      "finite_difference": 0.0,
+      "analytic_interpolated": 0.0,
+      "error": 0.0
+    },
+    {
+      "R": 0.25,
+      "Z": -0.17,
+      "finite_difference": 0.0,
+      "analytic_interpolated": 0.0,
+      "error": 0.0
+    },
+    {
+      "R": 0.25,
+      "Z": 0.06,
+      "finite_difference": 0.0,
+      "analytic_interpolated": 0.0,
+      "error": 0.0
+    },
+    {
+      "R": 0.25,
+      "Z": 0.31,
+      "finite_difference": 0.0,
+      "analytic_interpolated": 0.0,
+      "error": 0.0
+    },
+    {
+      "R": 0.25,
+      "Z": 0.48,
+      "finite_difference": 0.0,
+      "analytic_interpolated": 0.0,
+      "error": 0.0
+    }
+  ],
+  "pressure_owner": "JoinedOuterPressure.pressure unchanged",
+  "five_moment_closure": false,
+  "admissible_stress": false,
+  "finite_energy_certified": false,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "scope": "Finite two-axial-moment repair of the saved degree-four core. Independent Gauss checks cover off-grid eta values, exact core and exterior branches, and eta derivatives. No Part I O.1-O.8 outer construction, collar, all-five-moment closure, stress cone, PDE, energy, forcing, or recursion claim.",
+  "implementation_metadata": {
+    "source": "https://arxiv.org/html/2609.35406v1",
+    "source_version": "2609.35406v1",
+    "source_section": "Section 2.5, equations (2.21)-(2.22)",
+    "status": "finite two-axial-moment repair",
+    "core_degree": 4,
+    "eta_nodes": 257,
+    "quadrature_order": 64,
+    "R_core": 0.05,
+    "R_join": 0.2,
+    "bump_supports": [
+      [
+        0.055,
+        0.095
+      ],
+      [
+        0.115,
+        0.18
+      ]
+    ],
+    "bump_normalizations": [
+      0.00028119433626438674,
+      0.0004569407964296283
+    ],
+    "base_integral_coefficients": [
+      0.12500000000000003,
+      0.008115335489424677,
+      0.0007267505390228357,
+      7.542911562766934e-05,
+      8.568690791574113e-06
+    ],
+    "matrix_conditioning": {
+      "w1_min": 0.0018825735415756832,
+      "w1_max": 0.07129648940579489,
+      "w2_min": 0.1105638979362136,
+      "w2_max": 0.13801611170512404,
+      "denominator_min_abs": 0.06671962229932915,
+      "denominator_max_abs": 0.10882143823390622,
+      "relative_min_abs": 0.48341908401156686,
+      "condition_proxy": 1.6310259933081244
+    },
+    "nodal_moment_residuals": {
+      "max_abs_integral_U": 0.0,
+      "max_abs_integral_2RFU": 9.540979117872439e-18
+    },
+    "pressure_owner": "joined.pressure unchanged",
+    "paper_exact": false,
+    "all_five_moment_matching": false,
+    "admissible_stress": false,
+    "pde_validated": false,
+    "scale_recursion_established": false,
+    "scope": "Finite radial axial-moment repair on the saved core; U is zero outside R_join and the original joined F/pressure are retained. No Lei-Ren O.1-O.8 outer construction, collar, cone, energy, forcing, all-five-moment closure, PDE, or recursion claim."
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "metadata": {
+    "candidate_id": "lr1-axial-matched-heat-background-001",
+    "nu": 0.01,
+    "h": 0.001,
+    "delta": 0.002,
+    "time": "T=1, tau=T-t>0",
+    "support": "|z|<0.5; algebraically decaying radial heat tail",
+    "cutoff_plateau": "|z|<=0.25",
+    "dependent_radial_component": "Recovered from axial primitive and localized streamfunction",
+    "pressure": "Same joined swirl/heat pressure; axial localization p=B(z)^2 p_profile",
+    "diagnostic_forcing": "zero for reporting background residual; final smooth forcing unresolved",
+    "acceptance_stage": "geometry/background candidate; stress and momentum acceptance open",
+    "pde_validated": false,
+    "scale_recursion_established": false,
+    "full_five_moment_matching": false
+  },
+  "rows": [
+    {
+      "tau": 0.125,
+      "radial_length": 0.007151985398521516,
+      "axial_length": 0.005375032434806678,
+      "axial_to_radial_aspect": 0.7515441007356956,
+      "swirl": 0.0033766418683364168,
+      "axial_velocity": 0.1822638930983221,
+      "velocity_amplitude": 0.21237091136292932,
+      "vorticity_amplitude": 1.5560917871993807,
+      "axial_vorticity": 0.8884141330836741,
+      "winding_density": 0.412266333834764,
+      "winding_over_scaled_axial_length": 0.002215944916140694,
+      "moving_core_sector_energy": 1.1465629588584815e-06,
+      "global_energy": {
+        "total": 0.002711244760866248,
+        "radial_heat_tail": 0.0011662529368112661,
+        "matched_inner_and_annulus": 0.0015449918240549817
+      }
+    },
+    {
+      "tau": 0.0625,
+      "radial_length": 0.005057217374241737,
+      "axial_length": 0.0038033572566523897,
+      "axial_to_radial_aspect": 0.7520652119927222,
+      "swirl": 0.004778603853584185,
+      "axial_velocity": 0.2579387971511472,
+      "velocity_amplitude": 0.30049127980939033,
+      "vorticity_amplitude": 3.1104217996077272,
+      "axial_vorticity": 1.778060296615437,
+      "winding_density": 0.5830326406189575,
+      "winding_over_scaled_axial_length": 0.002217481424563317,
+      "moving_core_sector_energy": 8.12340294303032e-07,
+      "global_energy": {
+        "total": 0.0027726229061357482,
+        "radial_heat_tail": 0.0011664490362662575,
+        "matched_inner_and_annulus": 0.0016061738698694907
+      }
+    },
+    {
+      "tau": 0.03125,
+      "radial_length": 0.003575992699260758,
+      "axial_length": 0.002691244489625236,
+      "axial_to_radial_aspect": 0.7525866845817609,
+      "swirl": 0.006762652268106797,
+      "axial_velocity": 0.3650334794499857,
+      "velocity_amplitude": 0.42517605389637464,
+      "vorticity_amplitude": 6.217355727069071,
+      "axial_vorticity": 3.558586362653254,
+      "winding_density": 0.8245326676695282,
+      "winding_over_scaled_axial_length": 0.0022190189983816136,
+      "moving_core_sector_energy": 5.755434899142945e-07,
+      "global_energy": {
+        "total": 0.0028173614209320097,
+        "radial_heat_tail": 0.0011665902168220815,
+        "matched_inner_and_annulus": 0.0016507712041099283
+      }
+    },
+    {
+      "tau": 0.015625,
+      "radial_length": 0.0025286086871208683,
+      "axial_length": 0.001904316742864463,
+      "axial_to_radial_aspect": 0.753108518753355,
+      "swirl": 0.009570465998144552,
+      "axial_velocity": 0.5165932484413398,
+      "velocity_amplitude": 0.601597192977376,
+      "vorticity_amplitude": 12.427807156719554,
+      "axial_vorticity": 7.122107683606969,
+      "winding_density": 1.166065281237915,
+      "winding_over_scaled_axial_length": 0.0022205576383343205,
+      "moving_core_sector_energy": 4.077728973124507e-07,
+      "global_energy": {
+        "total": 0.00284968538118408,
+        "radial_heat_tail": 0.0011666913720807118,
+        "matched_inner_and_annulus": 0.0016829940091033684
+      }
+    },
+    {
+      "tau": 0.0078125,
+      "radial_length": 0.001787996349630379,
+      "axial_length": 0.001347488966957033,
+      "axial_to_radial_aspect": 0.7536307147582213,
+      "swirl": 0.013544067592178992,
+      "axial_velocity": 0.7310797484583615,
+      "velocity_amplitude": 0.8512220916189875,
+      "vorticity_amplitude": 24.84194882956571,
+      "axial_vorticity": 14.254092127637922,
+      "winding_density": 1.6490653353390567,
+      "winding_over_scaled_axial_length": 0.002222097345160679,
+      "moving_core_sector_energy": 2.889073755078309e-07,
+      "global_energy": {
+        "total": 0.002872899434748277,
+        "radial_heat_tail": 0.0011667636085242134,
+        "matched_inner_and_annulus": 0.0017061358262240635
+      }
+    },
+    {
+      "tau": 0.00390625,
+      "radial_length": 0.0012643043435604342,
+      "axial_length": 0.0009534792585710958,
+      "axial_to_radial_aspect": 0.7541532728472503,
+      "swirl": 0.019167485363521225,
+      "axial_velocity": 1.0346197907513546,
+      "velocity_amplitude": 1.2044258058029895,
+      "vorticity_amplitude": 49.65685334392594,
+      "axial_vorticity": 28.52795147279864,
+      "winding_density": 2.3321305624758293,
+      "winding_over_scaled_axial_length": 0.0022236381196004463,
+      "moving_core_sector_energy": 2.0469110108832334e-07,
+      "global_energy": {
+        "total": 0.002889501046621099,
+        "radial_heat_tail": 0.001166815077588421,
+        "matched_inner_and_annulus": 0.001722685969032678
+      }
+    }
+  ],
+  "fitted_tau_exponents": {
+    "radial_length": 0.5000000000000001,
+    "axial_length": 0.4990000000000001,
+    "axial_to_radial_aspect": -0.0009999999999999508,
+    "swirl": -0.501,
+    "axial_velocity": -0.5010000000000001,
+    "velocity_amplitude": -0.5007374894129645,
+    "axial_vorticity": -1.0009999999991241,
+    "vorticity_amplitude": -0.999198750396741,
+    "winding_density": -0.5000000000000001,
+    "winding_over_scaled_axial_length": -0.0009999999999997257,
+    "moving_core_sector_energy": 0.4971590577398482
+  },
+  "expected_exponents": {
+    "radial_length": 0.5,
+    "axial_length": 0.499,
+    "axial_to_radial_aspect": -0.001,
+    "swirl": -0.501,
+    "axial_velocity": -0.501,
+    "axial_vorticity": -1.001,
+    "winding_density": -0.5,
+    "winding_over_scaled_axial_length": -0.001
+  },
+  "divergence": [
+    {
+      "step": 1.767766952966369e-05,
+      "max_abs": 0.00024291664578868222,
+      "max_relative_to_gradient": 7.855585154041689e-07,
+      "per_point_abs": [
+        2.5983024443121394e-07,
+        0.00014617793397064816,
+        0.00024291664578868222,
+        1.2628167147045975e-05,
+        7.16404713330121e-12,
+        3.3726621495588915e-10,
+        7.206268914927705e-11,
+        4.866423930494079e-11
+      ]
+    },
+    {
+      "step": 8.838834764831844e-06,
+      "max_abs": 1.5187927118631706e-05,
+      "max_relative_to_gradient": 4.942148508965452e-08,
+      "per_point_abs": [
+        1.647799763304647e-08,
+        9.126054010266671e-06,
+        1.5187927118631706e-05,
+        7.94469684455533e-07,
+        1.5439205469647277e-11,
+        1.3532286402551108e-09,
+        1.8073853524924743e-10,
+        4.083466897952803e-11
+      ]
+    },
+    {
+      "step": 4.419417382415922e-06,
+      "max_abs": 9.33999331209634e-07,
+      "max_relative_to_gradient": 3.0947681977709376e-09,
+      "per_point_abs": [
+        4.106937012693379e-10,
+        5.904505542275729e-07,
+        9.33999331209634e-07,
+        4.9749606323423734e-08,
+        7.851497230149107e-13,
+        1.3411209920377587e-09,
+        1.355757728305207e-10,
+        3.8775982424965605e-11
+      ]
+    }
+  ],
+  "divergence_accepted": true,
+  "divergence_tolerances": {
+    "absolute": 1e-05,
+    "relative_to_gradient": 1e-07
+  },
+  "axis_smoothness_checks": [
+    {
+      "epsilon": 1e-05,
+      "transverse_odd_error": 0.0,
+      "axial_even_error": 0.0,
+      "center_limit_error": 1.6424485865806915e-07
+    },
+    {
+      "epsilon": 5e-06,
+      "transverse_odd_error": 0.0,
+      "axial_even_error": 0.0,
+      "center_limit_error": 4.106121193059309e-08
+    }
+  ],
+  "axial_support_outside_max": 0.0,
+  "finest_time_refined_global_energy": {
+    "total": 0.002889490424875203,
+    "radial_heat_tail": 0.0011668151083008022,
+    "matched_inner_and_annulus": 0.0017226753165744007
+  },
+  "finest_time_energy_relative_refinement": 3.6759792519935885e-06,
+  "uniform_energy_integrability_exponent": 0.004008016032064128,
+  "energy_bound_scope": "For fixed h<1/6, bounded profiles and zero axial primitive outside Rjoin, q^(-2h)<=|z/sqrt(nu)|^(-4h/(1-2h)) away from z=0. This integrable bound plus H<=1 controls the full radial heat tail and fixed axial cutoff uniformly as tau decreases. No PDE/stress bound follows.",
+  "geometry_scaling_is_imposed_by_representation": true,
+  "pde_validated": false,
+  "scale_recursion_established": false,
+  "stress_resolved": false,
+  "full_five_moment_matching": false
+}

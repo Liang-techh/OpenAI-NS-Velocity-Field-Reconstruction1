@@ -158,7 +158,7 @@ Use one candidate identity and keep paper facts, choices and observations separa
 | LR1-03 | Create an explicit parameter manifest in the paper's stated delta range, with nu, tau interval, fixed interior sectors and nontriviality limits | LR1-01 | DONE: `lei_ren_part1_manifest.py/.json`; declared seed only, not a field; retain old seed and ST006 baseline |
 | LR1-04 | Bind an existing outer/heat profile to its full `P0(Z)` and five moment functions; identify all missing moments and tail normalizations | LR1-03 | PARTIAL: finite moments plus exact heat pressure tail and joined swirl-pressure path implemented; other renormalized tail moments and paper collar remain OPEN |
 | LR1-05 | Use the Section 8.2 model to initialize a regular nonlinear core under that pressure; compare axis slopes and exit signs | LR1-04 | PARTIAL: supplied-pressure nonlinear finite prefix and pressure iteration implemented; inspect off-grid defect; no convergence theorem |
-| LR1-06 | Connect core and exterior and restore all five moment functions over the declared Z range | LR1-05 | OPEN; verify pressure and exterior field restoration, not just midplane scalars |
+| LR1-06 | Connect core and exterior and restore all five moment functions over the declared Z range | LR1-05 | PARTIAL: two axial moments and physical divergence checked; angular/quadratic closure needs a rebuilt extended outer/collar |
 | LR1-07 | Recompute actual stress and shear; check interior cones and both edge directional margins | LR1-06 | OPEN; distinguish relaxed from admissible cone |
 | LR1-08 | Evaluate paired `R_B`, `D T_B`, `E_B` including radial momentum and all cutoff terms on matched grids | LR1-07 | OPEN; never infer E_B by assigning arbitrary T_B |
 | LR1-09 | Implement a first lower-order coefficient correction with consistent axial viscosity, moments and cutoff derivatives | LR1-08 | OPEN; demonstrate a measured remainder-order gain, preserve support/cone |
@@ -244,3 +244,24 @@ Seven iterations reduce the collocation pressure defect from 0.00329272 to
 profile-pressure defects, not momentum residual norms. The saved datum
 rebuilds through `load_core()` with zero replay difference on those points.
 The heat quadrature cache reuses the unchanged tail across core iterations.
+
+## Actual heat-tail moments and 3D kinematic candidate
+
+See `LEI_REN_BACKGROUND_FIELD.md` for the callable field, energy comparison
+argument and measured six-scale results. The exact heat-tail adapter now
+supplies renormalized angular target, quadratic and pressure tails; the two
+axial tails are zero. Analytic leading-term subtraction avoids cancellation
+and slow-convergence errors when h is small. Radial derivative checks have
+max error 3.14e-10; series-order comparison is recorded independently.
+
+The annular two-axial-moment repair and streamfunction-based physical cutoff
+produce a nonzero 3D candidate with sampled Cartesian divergence below 1e-6
+at the finest step and a finite full radial-tail energy. This fills part of
+LR1-06/12 but does not complete five-moment closure or a Part I background.
+
+The angular budget now changes the immediate route: the Rjoin=0.2 seed
+cannot keep its current axis/pressure choices and meet the required angular
+moment and decreasing angular-shear sign. Before LR1-07/08, implement an
+extended outer/collar family using Sections 4–7, screen necessary angular
+and pressure bounds, recompute P0 and the nonlinear core, then restore all
+five moments. Retain the short field only as a kinematic research seed.
