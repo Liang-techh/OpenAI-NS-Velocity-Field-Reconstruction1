@@ -12,7 +12,7 @@ data, schedules or candidate defaults are changed by this documentation update.
 The inspected `main` head is `e0c642ba8ff8d2c476ef3f961864a008d2d475c4`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`5b8008ec34f718a470372a17304a5e6bc8ffb59f`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/5b8008ec34f718a470372a17304a5e6bc8ffb59f)
+[`0e8d185c3438d1b495a32b3eef9168557095ee1f`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/0e8d185c3438d1b495a32b3eef9168557095ee1f)
 on `codex/st073-transition-next`, dated September 30. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,34 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### Combined derivative/continuation milestone: common source reaches R=110
+
+Local execution is available again and the isolated documentation checkout was
+clean before this update. The original NS work task/ID and working directory
+remain unlocated. This review reads source and receipts; it does not rerun the
+numerics or reinterpret a local chart as global Cartesian validation.
+
+| Commit/stage | Fixed evidence | Progress and limits |
+|---|---|---|
+| a7ab24d7: first Z jets at prescribed exit | [record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/a7ab24d7e87b33bb6c999ea32c30dd5d19a7a7f5/docs/AXIAL_JOINT_EXIT_2026_09_30.md), [receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/a7ab24d7e87b33bb6c999ea32c30dd5d19a7a7f5/experiments/root_st073/lei_ren_part1_paper_pressure_width_axial_bridge_check.json) | Automatic first-Z differentiation carries the same core/drivers/finite RK state and all five moment derivatives; Ur is recovered from Mz/Mz_Z. Resolved derivative replay reports about 1.17e-18 and Ur replay about 1.60e-13 scaled discrepancy. Second-Z/Ur_Z and independent Cartesian divergence are not validated. |
+| 13cd78a2: positive-epsilon continuation to R=100 | [record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/13cd78a21a0daed34c1f111be6cd5cf9f988ce4d/docs/ANALYTIC_POST_COLLAR_EXIT_2026_09_30.md), [receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/13cd78a21a0daed34c1f111be6cd5cf9f988ce4d/experiments/root_st073/lei_ren_part1_paper_pressure_width_continuation_check.json) | Analytic exponential-polynomial integration retains epsilon-driven fields, moments and first-Z atoms at R=1,10,100 rather than freezing velocities. Recorded resolved RK4 comparison is about 2.93e-13. Differentiated moment primitives give local finite-ring identities, not a global certificate. |
+| 0e8d185c: switches and constant-power segment to R=110 | [record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/0e8d185c3438d1b495a32b3eef9168557095ee1f/docs/COMPONENT_SHEAR_SWITCHES_2026_09_30.md), [receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/0e8d185c3438d1b495a32b3eef9168557095ee1f/experiments/root_st073/lei_ren_part1_paper_pressure_width_switches_check.json) | Same source carries pressure, five moments and separate axial/swirl quadratic integrals. Boundary agreement below 1e-200 and tail retention are reported. Resolved physical-moment replays differ about 9.61e-13 at width 1e-6 and 1.02e-9 at width 1e-5; these are finite truncation/RK diagnostics, not error enclosures. |
+
+All numbers above are submitted diagnostics, not independent reruns by this
+supervisor. At Z=.3, source/reshape input values and first derivatives fit their
+nominal budgets, but this does not establish uniform C2 bounds over Z or cone
+admissibility. First-Z propagation supersedes the older base-exit limitation
+below; it does not establish all higher derivatives or the completed annulus.
+
+The next missing connection is the **long reshape** using common R110 components,
+followed by reference/axial restoration and functional terminal moment repair.
+Pressure/width/radial/axial truncation, inherited collar and switch integration,
+source/data aggregation and uniform derivative errors remain unenclosed.
+P2/global pressure compatibility, radial finite energy, exact/controlled heat
+exterior, admissible cone, higher-order time-scale recursion and oscillatory
+correction remain unaccepted. Local algebra and finite-annulus checks are not
+full-space Cartesian momentum/divergence certification.
 
 ### Combined exit milestone: auxiliary comparison and base prescribed ODE
 
@@ -234,6 +262,12 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [0e8d185c research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36764693382)
+completed with the same original 13 failed identifiers and `423 passed` in
+constrained integration. Import/CLI plus coordinate/forcing/velocity slices
+pass; full historical tests are skipped. The standalone axial/continuation/
+switch receipts are not validated by this selected governance suite.
 
 The [5b8008ec research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36754492171)
 is completed with failure: constrained integration reports `13 failed, 423 passed`.
