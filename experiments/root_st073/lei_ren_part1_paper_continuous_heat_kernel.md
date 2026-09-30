@@ -1,3 +1,5 @@
+Update: point kernel is now installed; see continuous_heat_install_check.md. Integrated heat targets/moments remain open.
+
 # Heat functional with separate tiny deficit
 
 The new provider evaluates H(xi) = E[(1+xi V)^(-h)] with V distributed as Gamma(1+h,1), and first/second derivatives from the same integral. It retains deficit=1-H, logH, and the correction to H-prime at zero separately; rounded full H is not a substitute for these atoms. Positive quadrature is normalized by h before integration, avoiding absolute tolerance loss of a whole tiny integral.

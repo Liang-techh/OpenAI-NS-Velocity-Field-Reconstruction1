@@ -1,0 +1,7 @@
+# Continuous heat point kernel installed in the shared field
+
+ContinuousAngularSchedule now evaluates its heat point values and jets using ContinuousHeatKernel. It forms the heat interpolation as K=K0+dK, retains dK/K0 and log1p(dK/K0), and computes the slope correction without subtracting full baseline slopes. Actual angular field adapters expose heat_deficit, heat_log_amplitude_correction, heat_logarithmic_slope_correction and angular_heat_relative_correction separately. A full amplitude/log amplitude can still round away an arbitrarily smaller correction; use these separate atoms when integrating differences.
+
+The installed dlogU/dZ is nonzero in the heat exterior. Its exponent exceeds Decimal storage on the paper schedule, so these jets remain MP arbitrary-exponent numbers instead of becoming zero. At collar t=.6 and exterior t=4,30, forward differences of the retained log correction agree with the slope jet to maximum relative difference 1.83e-12. Z differences and actual field Utheta_Z agree nominally at working precision; this does not certify input accuracy.
+
+Construction regenerates the live nominal future-energy target from the current schedule, as before. Exact integrated heat-defect targets are NOT regenerated: angular/pressure targets retain their leading Taylor approximations and declared analytic truncation scope. Complete cumulative heat moments, outward error bounds and full terminal closure remain open. No finite-energy or scale-recursion certification.

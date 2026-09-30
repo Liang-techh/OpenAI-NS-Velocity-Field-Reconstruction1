@@ -1,3 +1,9 @@
+## 2026-09-30: continuous heat point jets installed
+
+Installed the new common heat functional in ContinuousAngularSchedule and propagated separate heat deficit/log-amplitude/slope correction atoms to actual angular field adapters. Preserved nonzero heat Z derivatives beyond Decimal exponent storage using arbitrary-exponent MP values. Shared-field collar and exterior checks passed: retained-log radial derivative maximum relative difference 1.83e-12; Z derivative and actual field jet nominal agreement at working precision. The live nominal future-energy target is regenerated on construction; exact heat-defect integral targets still retain their explicitly declared Taylor approximations. Complete heat cumulative moments, input bounds, finite energy and recursion remain open.
+
+Evidence: continuous_heat_install_check.py/md/json. Next integrate the retained heat atoms into full cumulative angular/quadratic/pressure moments, regenerate correction targets coherently, and complete partial axial energy.
+
 ## 2026-09-30: separate heat deficit/jet provider prepared
 
 Added continuous_heat_kernel.py/md/json: one Gamma integral for H/H-prime/H-second, normalized positive deficit quadrature, separate logH and tiny derivative correction, plus a common small-x quadratic Taylor approximation with explicit analytic truncation bounds. A first run exposed absolute-tolerance loss in the tiny deficit integral; normalization by h fixed it. Functional derivative checks now pass with maximum relative difference 4.28e-19; exp(-1e6) argument retains nonzero deficit. Arithmetic/quadrature are not enclosed. Provider is not yet installed in the shared field or targets.

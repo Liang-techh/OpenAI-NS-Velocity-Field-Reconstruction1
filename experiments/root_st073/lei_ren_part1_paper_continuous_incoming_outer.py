@@ -70,7 +70,8 @@ def regenerate_incoming(source, seeded, atoms, provider, *, order=96):
             'mixed_axial_factor_working_precision':provider.precision,
             'serialized_digits_are_not_integral_accuracy':True,
             'angular_primitive_float_backed':False,'swirl_energy_inherited':True,
-            'angular_heat_kernel_inherited':True,
+            'angular_heat_kernel_inherited':False,
+            'heat_integral_targets_inherited_Taylor':True,
             'future_energy_regenerated_from_live_tail':True,
             'future_energy_nominal':mp.nstr(future_nominal,precision),
             'previous_energy_target':seeded['energy_target'],
@@ -248,6 +249,11 @@ class ContinuousIncomingProfile(ContinuousSeededAxialProfileJets):
                 angular_Z_method='continuous_schedule_and_implicit_bump_coefficients',
                 angular_correction_Z_jet_installed=True,
                 angular_Z_jet_complete=False)
+            for key in ('heat_deficit','heat_log_amplitude_correction','heat_logarithmic_slope_correction',
+                        'heat_kernel_method','heat_truncation_absolute_bounds','heat_integral_targets_regenerated'):
+                if key in base:result[key]=base[key]
+            if 'heat_log_amplitude_correction' in base:
+                result['angular_heat_relative_correction']=mp.expm1(base['heat_log_amplitude_correction'])
             # These local jets differentiate the installed numerical input
             # model. Heat/baseline uncertainty and full moments remain open.
 
@@ -347,7 +353,8 @@ def run():
             shared_complete_atoms_installed=True,
             source_schedule_identity_preserved=field.outer.schedule is source.schedule,
             angular_primitive_float_backed=False,swirl_energy_inherited=True,
-            angular_preheat_schedule_installed=True,angular_heat_kernel_inherited=True,
+            angular_preheat_schedule_installed=True,angular_heat_kernel_inherited=False,
+            heat_point_kernel_installed=True,heat_integral_targets_inherited_Taylor=True,
             angular_correction_checks=angular_checks,
             angular_correction_Z_jet_installed=True,
             source_correction_identity_preserved=field.outer.angular is source.outer.angular,

@@ -1,14 +1,15 @@
 """Install a continuous MP pre-heat angular schedule in one shared object.
 
-The heat factor H and relative angular correction retain their existing
-implementations. Heat interpolation and normalization use MP arithmetic to
-preserve the interface. Quadrature working precision is explicit.
+Heat point values use one continuous kernel and retain tiny deficits and
+log-amplitude corrections separately. Heat-dependent integral targets still
+use their declared Taylor approximations; full heat moments remain open.
 """
-from decimal import Decimal
+from decimal import Decimal, InvalidOperation
 import types
 import mpmath as mp
 from lei_ren_part1_paper_continuous_incoming_angular import ContinuousIncomingAngular
 from lei_ren_part1_paper_continuous_axial_pulse import ContinuousAxialPulse
+from lei_ren_part1_paper_continuous_heat_kernel import ContinuousHeatKernel
 
 
 def _mp(value):
@@ -23,6 +24,16 @@ class ContinuousAngularSchedule:
         self.primitive=ContinuousIncomingAngular(str(schedule.logPstar),str(schedule.Md),
                                                  precision=self.primitive_precision)
         self.original_evaluate=schedule._evaluate_log_radius
+        with mp.workdps(self.precision+20):
+            self.heat_kernel=ContinuousHeatKernel(_mp(schedule.delta)/2,precision=self.precision+20)
+
+    def heat_jet(self,log_radius,Z):
+        with mp.workdps(self.precision+20):
+            z=_mp(Z);invR=mp.exp(-_mp(log_radius))
+            xi=2*(1-z*z)*invR
+            row=self.heat_kernel.jet(xi)
+            row.update(xi=xi,inv_R=invR,xi_Z=-4*z*invR)
+            return row
 
     def J_mp(self,argument):
         with mp.workdps(self.precision+20):
@@ -73,8 +84,9 @@ class ContinuousAngularSchedule:
             # Legacy call supplies stage metadata and axial/heat source data.
             row=self.original_evaluate(log_decimal,float(z))
             heat_branch=y>=_mp(s.y_tail)
+            heat_extra={}
             if heat_branch:
-                heat=s._heat_info(log_decimal,float(z))
+                heat=self.heat_jet(log_decimal,z)
                 H=_mp(heat['H']);Hp=_mp(heat['H_prime']);xi=_mp(heat['xi'])
                 t=y-_mp(s.y_tail);eps=_mp(s.epsilon)
                 switch,derivative=ContinuousAxialPulse.sigma_pair(t)
@@ -82,13 +94,24 @@ class ContinuousAngularSchedule:
                 phi=mp.exp(-1/edge**2) if edge>0 else mp.mpf(0)
                 phi_prime=2*phi/edge**3 if edge>0 else mp.mpf(0)
                 factor=1-eps*phi
-                K=(1-switch)*(1-eps)+switch*H*factor
-                Kt=-derivative*(1-eps)+derivative*H*factor
-                Kt+=switch*(-xi*Hp*factor+H*eps*phi_prime/2)
+                factor_t=eps*phi_prime/2
+                K0=(1-switch)*(1-eps)+switch*factor
+                Kt0=-derivative*(1-eps)+derivative*factor+switch*factor_t
+                dK= switch*factor*heat['H_minus_one']
+                dKt=derivative*factor*heat['H_minus_one']
+                dKt+=switch*(-xi*Hp*factor+heat['H_minus_one']*factor_t)
+                relative=dK/K0
+                log_correction=mp.log1p(relative)
+                slope_correction=(dKt*K0-Kt0*dK)/(K0*K0*(1+relative))
+                K=K0*(1+relative)
                 a=(1+_mp(s.delta))/2
-                logu=_mp(s._log_c_inf)-a*_mp(log_decimal)+mp.log(K)
-                slope=-a+Kt/K
+                logu=_mp(s._log_c_inf)-a*_mp(log_decimal)+mp.log(K0)+log_correction
+                slope=-a+Kt0/K0+slope_correction
                 LZ=switch*factor*Hp*(-4*z*mp.exp(-_mp(log_decimal)))/K
+                heat_extra=dict(heat_deficit=heat['deficit'],heat_log_amplitude_correction=log_correction,
+                    heat_logarithmic_slope_correction=slope_correction,
+                    heat_kernel_method=heat['method'],heat_truncation_absolute_bounds=heat['truncation_absolute_bounds'],
+                    heat_arithmetic_error_enclosed=False,heat_integral_targets_regenerated=False)
             else:
                 logA=_mp(s._log_A(y_decimal))
                 flat,flat_prime=ContinuousAxialPulse.sigma_pair((y-_mp(s.y_v))/_mp(s.Tf))
@@ -98,15 +121,21 @@ class ContinuousAngularSchedule:
                 slope=_mp(self.slope_decimal(y_decimal))+flat_prime/_mp(s.Tf)*(zlog-mp.log(2))
             logF=logu-(mp.log(2)+_mp(log_decimal))/2
             u=mp.exp(logu);F=mp.exp(logF)
-            def dec(value):return Decimal(mp.nstr(value,self.precision))
+            def dec(value):
+                try:return Decimal(mp.nstr(value,self.precision))
+                except InvalidOperation:
+                    # Decimal's exponent storage is bounded even when its
+                    # context is wide. Preserve arbitrary-exponent MP jets.
+                    return value
             row.update(log_angular_amplitude=dec(logu),logF=dec(logF),
                 Utheta=u,F=F,Utheta_Z=u*LZ,F_Z=F*LZ,
                 dlogU_dZ=dec(LZ),dlogF_dZ=dec(LZ),
                 logarithmic_slope=dec(slope),logF_slope=dec(slope-mp.mpf('.5')),
                 continuous_angular_preheat_installed=True,
-                angular_heat_kernel_inherited=heat_branch,
+                angular_heat_kernel_inherited=False,continuous_heat_kernel_installed=True,
                 angular_primitive_working_precision=self.primitive_precision,
                 angular_primitive_quadrature_enclosed=False)
+            row.update(heat_extra)
             return row
 
     def install(self):
@@ -116,7 +145,7 @@ class ContinuousAngularSchedule:
         s._slope_s=types.MethodType(lambda owner,y:self.slope_decimal(y),s)
         s._sigma_J1=mp.mpf('.5');s._sigma_J1_decimal=Decimal('.5')
         # Recompute the same analytic heat prefactor with the new primitive.
-        # The inherited heat kernel itself is not certified by this update.
+        # Point heat jets are installed; complete heat integrals are open.
         with mp.workdps(self.precision+20):
             logc=_mp(s._log_A(s.y_tail))+(1+_mp(s.delta))*_mp(s.logR_tail)/2
             logc-=mp.log(2*(1-_mp(s.epsilon)))
@@ -174,7 +203,8 @@ def run():
             primitive_working_precision=provider.primitive_precision,
             arithmetic_working_precision=provider.precision,
             preheat_angular_Z_jets_installed=True,
-            heat_kernel_inherited=True,angular_relative_correction_Z_complete=False,
+            heat_kernel_inherited=False,heat_point_kernel_installed=True,
+            heat_integral_targets_regenerated=False,angular_relative_correction_Z_complete=False,
             angular_pressure_and_moments_complete=False,
             finite_energy_certified=False,scale_recursion_certified=False)
     Path(__file__).with_suffix('.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')

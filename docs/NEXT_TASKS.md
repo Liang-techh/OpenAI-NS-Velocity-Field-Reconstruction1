@@ -1,3 +1,13 @@
+## Latest heat installation handoff (2026-09-30)
+
+- [x] Install continuous heat point kernel in the shared angular schedule and preserve separate tiny deficit/log/slope atoms in field adapters.
+- [x] Retain nonzero heat Z jets beyond Decimal exponent storage; check actual field jets in collar/exterior.
+- [ ] Integrate retained heat atoms into cumulative angular/quadratic/pressure moments through the full exterior.
+- [ ] Regenerate angular and pressure heat-defect targets from the same full heat functional; retain explicit bounds until exact integral/uncertainty closure.
+- [ ] Enclose inputs and full tails, then resolve terminal radial transport/energy before recursion claims.
+
+The earlier standalone-provider integration task is now complete only for point jets; integrated targets and moments remain open.
+
 ## Heat provider integration task (2026-09-30)
 
 - [x] Implement one heat functional and separate deficit/logH/derivative correction, retaining tiny positive atoms.
