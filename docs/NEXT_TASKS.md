@@ -1,3 +1,13 @@
+## Latest pressure heat handoff (2026-09-30)
+
+- [x] Add common pressure-weighted finite heat increments and complete infinite heat tail, keeping tiny correction/Z atoms separate.
+- [x] Check pressure heat forward integrands and complete-tail Z jet against independent differences.
+- [ ] Complete actual inner-seeded preheat pressure moment/P jets and consume these heat helpers.
+- [ ] Accept partial axial-square worker results and publish prepared quadratic dispatch with its dependency.
+- [ ] Assemble all five moments and exact heat targets, then resolve terminal radial transport, bound full energy and evaluate stress/remainder/recursion.
+
+Evidence: continuous_pressure_heat_check.py/md/json. Remaining worker files and local dispatch are not yet accepted as completed work.
+
 ## Latest incoming swirl handoff (2026-09-30)
 
 - [x] Replace inherited incoming swirl reference with the same continuous angular propagation as actual moments.

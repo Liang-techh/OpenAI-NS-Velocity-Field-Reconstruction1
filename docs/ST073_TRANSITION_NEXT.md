@@ -1,3 +1,11 @@
+## 2026-09-30: shared pressure heat cumulative and infinite-tail atoms
+
+Added pressure_increments(t,Z) and complete_pressure_heat_integral(Z) to the common heat-moment owner. They use the pressure weight Utheta^2/(2R), exponent -(1+delta), and the same retained heat polynomial/collar atoms as the installed angular field. Reference, tiny correction and correction Z remain separate. Infinite-tail analytic polynomial truncation is bounded; quadrature/arithmetic are not.
+
+Shared-field finite pressure-integrand checks at t=.6 and 4 passed with maximum relative difference 9.50e-14. Infinite-tail Z difference passes nominally at working precision, and Rtail increments vanish. Actual preheat/inner pressure provider remains in progress; full pressure matching, five moments, finite energy and recursion are not claimed.
+
+The partial-axial worker's Python PID44536 was confirmed live during this turn. Parent has prepared lazy quadratic dispatch locally but will publish it only with the accepted provider, keeping uploaded code free of unfinished dependencies.
+
 ## 2026-09-30: incoming swirl reference regenerated coherently
 
 Replaced inherited incoming I_swirl by the same normalized ContinuousAngularMoments propagation used by actual angular cumulative moments. Reference energy is generated before actual inner offsets are applied once; energy target and live axial coefficients are then recomputed together. Reference swirl/Ep^2 remains Z independent, preserving the analytic tangent cancellation for this input.

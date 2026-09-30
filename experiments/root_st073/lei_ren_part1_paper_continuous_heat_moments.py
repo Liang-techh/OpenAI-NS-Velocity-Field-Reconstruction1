@@ -25,7 +25,7 @@ class ContinuousHeatMoments:
         return mp.exp(rate*left)*mp.expm1(rate*(right-left))/rate if rate else right-left
 
     @lru_cache(maxsize=128)
-    def _collar(self,t_key,z_key):
+    def _collar(self,t_key,z_key,pressure=False):
         with mp.workdps(self.precision):
             t=_mp(t_key);z=_mp(z_key);s=self.schedule
             heat=self.profile.angular_schedule_provider.heat_jet(s.logR_tail,z)
@@ -33,7 +33,7 @@ class ContinuousHeatMoments:
             if x>mp.mpf('1e-8'):
                 raise ValueError('Heat moments require installed small-x polynomial branch throughout collar/exterior')
             c1=h*(1+h);c2=h*(h+1)**2*(h+2)
-            rates=[1-h,-2*h];result=[mp.mpf(0)]*6
+            rates=[1-h,-2*h-int(pressure)];result=[mp.mpf(0)]*6
             eps=_mp(s.epsilon)
             for unit,weight in self.angular.nodes:
                 v=t*unit;sw=ContinuousAxialPulse.sigma_pair(v)[0]
@@ -47,17 +47,17 @@ class ContinuousHeatMoments:
                 for i,val in enumerate(vals):result[i]+=t*weight*mp.exp(rates[i%2]*v)*val
             return tuple(result)
 
-    def increments(self,t,Z):
+    def increments(self,t,Z,*,pressure=False):
         with mp.workdps(self.precision):
             t=_mp(t);z=_mp(Z);s=self.schedule
             if t<0:raise ValueError('Heat starts at Rtail')
-            row=list(self._collar(mp.nstr(min(t,mp.mpf(3)),self.precision),mp.nstr(z,self.precision)))
+            row=list(self._collar(mp.nstr(min(t,mp.mpf(3)),self.precision),mp.nstr(z,self.precision),pressure))
             if t>3:
                 heat=self.profile.angular_schedule_provider.heat_jet(s.logR_tail,z)
                 x=heat['xi'];xz=heat['xi_Z'];h=_mp(s.delta)/2
                 c1=h*(1+h);c2=h*(h+1)**2*(h+2)
                 b1=-c1*x;b2=c2*x*x/2;b1z=-c1*xz;b2z=c2*x*xz
-                rates=[1-h,-2*h]
+                rates=[1-h,-2*h-int(pressure)]
                 for i,rate in enumerate(rates):row[i]+=self.atom(rate,mp.mpf(3),t)
                 for j,b,bz in ((1,b1,b1z),(2,b2,b2z)):
                     atom=self.atom(rates[0]-j,mp.mpf(3),t)
@@ -68,6 +68,18 @@ class ContinuousHeatMoments:
                     atom=self.atom(rates[1]-j,mp.mpf(3),t)
                     row[3]+=b*atom;row[5]+=bz*atom
             return row
+
+    def pressure_increments(self,t,Z):
+        """Actual heat contribution to Mp = integral Utheta^2/(2R) dR."""
+        with mp.workdps(self.precision):
+            s=self.schedule;inc=self.increments(t,Z,pressure=True)
+            E=_mp(s._log_c_inf)-(1+_mp(s.delta))*_mp(s.logR_tail)/2
+            scale=mp.exp(2*E)/2
+            return dict(reference=scale*inc[1],heat_correction=scale*inc[3],
+                heat_correction_Z=scale*inc[5],
+                pressure_increment=scale*(inc[1]+inc[3]),
+                pressure_increment_Z=scale*inc[5],heat_kernel_shared=True,
+                quadrature_error_enclosed=False,arithmetic_error_enclosed=False)
 
     def moments_jet(self,logR,Z,*,include_inner=True):
         with mp.workdps(self.precision):
@@ -99,36 +111,46 @@ class ContinuousHeatMoments:
         The declared delta>0 makes the reference exterior integrable. This
         does not cover radial velocity energy or the full physical Z weight.
         """
+        return self._complete_square_heat_integral(Z)
+
+    def complete_pressure_heat_integral(self,Z):
+        """Actual heat contribution to Mp out to infinity; split atoms."""
+        return self._complete_square_heat_integral(Z,pressure=True)
+
+    def _complete_square_heat_integral(self,Z,*,pressure=False):
         with mp.workdps(self.precision):
             s=self.schedule;z=_mp(Z);delta=_mp(s.delta);h=delta/2
             if delta<=0 or h>mp.mpf('.5'):
                 raise ValueError('Tail formula requires 0<delta<=1')
-            collar=self._collar('3',mp.nstr(z,self.precision))
+            collar=self._collar('3',mp.nstr(z,self.precision),pressure)
             heat=self.profile.angular_schedule_provider.heat_jet(s.logR_tail,z)
             x=heat['xi'];xz=heat['xi_Z']
             c1=h*(1+h);c2=h*(h+1)**2*(h+2);c3=h*(h+1)**2*(h+2)**2*(h+3)
             b1=-c1*x;b2=c2*x*x/2;b1z=-c1*xz;b2z=c2*x*xz
             coeff=[2*b1,2*b2+b1*b1,2*b1*b2,b2*b2]
             coeffZ=[2*b1z,2*b2z+2*b1*b1z,2*(b1z*b2+b1*b2z),2*b2*b2z]
-            reference=collar[1]+mp.exp(-3*delta)/delta
+            rate=delta+int(pressure)
+            reference=collar[1]+mp.exp(-3*rate)/rate
             correction=collar[3];correctionZ=collar[5]
             for j,(b,bz) in enumerate(zip(coeff,coeffZ),1):
-                atom=mp.exp(-3*(delta+j))/(delta+j)
+                atom=mp.exp(-3*(rate+j))/(rate+j)
                 correction+=b*atom;correctionZ+=bz*atom
             rlog=_mp(s.logR_tail);E=_mp(s._log_c_inf)-(1+delta)*rlog/2
-            scale=mp.exp(rlog+2*E)
+            scale=mp.exp(2*E)/2 if pressure else mp.exp(rlog+2*E)
             # H and the small-x polynomial lie in (0,1], so the square
             # discrepancy is <= 2*|H-P| <= c3*x^3/3 on the whole heat region.
-            truncation_bound=scale*c3*x**3/(3*(delta+3))
-            return dict(reference=scale*reference,heat_correction=scale*correction,
+            truncation_bound=scale*c3*x**3/(3*(rate+3))
+            result=dict(reference=scale*reference,heat_correction=scale*correction,
                 heat_correction_Z=scale*correctionZ,
-                swirl_heat_integral=scale*(reference+correction),
                 analytic_heat_truncation_absolute_bound=truncation_bound,
-                infinite_swirl_heat_tail_integrated=True,
+                infinite_swirl_heat_tail_integrated=not pressure,
+                infinite_pressure_heat_tail_integrated=pressure,
                 swirl_heat_integrable_for_declared_delta=True,
                 physical_Z_energy_weight_integrated=False,radial_energy_included=False,
                 quadrature_error_enclosed=False,arithmetic_error_enclosed=False,
                 finite_energy_certified=False,scale_recursion_certified=False)
+            result['pressure_heat_integral' if pressure else 'swirl_heat_integral']=scale*(reference+correction)
+            return result
 
 
 def run(*,tail_only=False):
