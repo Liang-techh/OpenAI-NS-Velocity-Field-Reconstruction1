@@ -55,7 +55,7 @@ class CorePolynomial:
                     power=i+j+1
                     m['z_theta']+=ui[0]*uj[0]*r**power/power
                     mz['z_theta']+=(ui[1]*uj[0]+ui[0]*uj[1])*r**power/power
-            # Full FÃ‚Â² integral, rather than its truncated Taylor pressure.
+            # Full FÃƒâ€šÃ‚Â² integral, rather than its truncated Taylor pressure.
             a['P']=coefficients['P'][0][0]+m['p']
             a['P_Z']=coefficients['P'][0][1]+mz['p']
             a['P_R']=a['F']**2
@@ -96,7 +96,7 @@ class CorePolynomial:
 
 def build_source_core(precision=160,degree=18,Lambda='1e36',*,
                       j='.02',logC=None,logPstar='14',delta='1e-32',
-                      continuous_pressure=False,pressure_order=192):
+                      continuous_pressure=False,pressure_order=192,coherent_waiting=False):
     from lei_ren_part1_paper_outer import PaperOuterSchedule
     from lei_ren_part1_paper_corrected_profile import CorrectedSourceProfile
     from lei_ren_part1_paper_axis_pressure_jets import AxisPressureJets
@@ -104,6 +104,9 @@ def build_source_core(precision=160,degree=18,Lambda='1e36',*,
     from lei_ren_part1_paper_core_ra_experiment import build_coefficients
     from lei_ren_part1_paper_axial_correction import signed_log
     with mp.workdps(precision):
+        if coherent_waiting and not continuous_pressure:
+            raise ValueError("coherent_waiting requires continuous_pressure")
+        waiting_receipt=None
         lam=mp.mpf(str(Lambda))
         chosen_logC=2*mp.log(lam) if logC is None else mp.mpf(str(logC))
         logP=mp.mpf(str(logPstar)); chosen_delta=mp.mpf(str(delta))
@@ -119,11 +122,25 @@ def build_source_core(precision=160,degree=18,Lambda='1e36',*,
             # CorrectedSourceProfile may replace the schedule when solving
             # its waiting length. Install on the actual profile-owned object.
             install_continuous_angular_schedule(profile.schedule,precision=precision,primitive_precision=100)
+            if coherent_waiting:
+                from types import SimpleNamespace
+                from lei_ren_part1_paper_continuous_angular_moments import ContinuousAngularMoments
+                from lei_ren_part1_paper_continuous_waiting_match import coherent_waiting_length
+                proxy=SimpleNamespace(schedule=profile.schedule,precision=precision,
+                    angular_correction_provider=None,log_at=profile.log_at,offset=profile.offset)
+                angular=ContinuousAngularMoments(proxy,order=pressure_order,mp_nodes=True)
+                waiting_receipt=coherent_waiting_length(angular)
+                inputs=profile.schedule.metadata()['inputs']
+                inputs['waiting_length']=mp.nstr(waiting_receipt['waiting_length'],precision)
+                rebuilt=PaperOuterSchedule(**inputs)
+                profile=CorrectedSourceProfile(schedule=rebuilt,precision=precision,match_waiting=False)
+                install_continuous_angular_schedule(profile.schedule,precision=precision,primitive_precision=100)
+                profile.schedule._coherent_preheat_waiting=True
             pressure=ContinuousAxisPressureJets(profile,R_a=4/lam,quadrature_order=pressure_order)
         else:
             pressure=AxisPressureJets(profile,R_a=4/lam)
         anchor=pressure.dominant_taylor(0)
-        # AxisPressureJets separates P0/PstarÃ‚Â². Restore physical profile
+        # AxisPressureJets separates P0/PstarÃƒâ€šÃ‚Â². Restore physical profile
         # units before using the Section 8 nonlinear equations.
         K=mp.exp(2*logP)*mp.mpf(anchor['anchor_K_actual_Z0'])
         axis=RegularCoreAxisJets(j=j,Lambda=lam,logC=chosen_logC,delta=chosen_delta,precision=precision)
@@ -140,6 +157,7 @@ def build_source_core(precision=160,degree=18,Lambda='1e36',*,
                     'delta':mp.nstr(chosen_delta,precision),'logRref':mp.nstr(logR,precision)},
                 'pressure_recomputed_for_shared_parameters':True,
                 'continuous_preflatten_pressure_anchor':continuous_pressure,
+                'coherent_preheat_waiting':coherent_waiting,'waiting_match_receipt':waiting_receipt,
                 'post_Rv_pressure_tail_in_axis_jet':False,
                 'source_parameter_regime_certified':False}
 

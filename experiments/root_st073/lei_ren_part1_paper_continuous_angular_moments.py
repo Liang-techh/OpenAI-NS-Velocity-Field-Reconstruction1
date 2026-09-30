@@ -131,6 +131,46 @@ class ContinuousAngularMoments:
                 if end==y:break
             return tuple(state)
 
+    @lru_cache(maxsize=256)
+    def angular_difference_from_axis(self,y_key,z_key):
+        """Propagate Xtheta(Z)-Xtheta(0) without subtracting two O(1) means.
+
+        This retained difference is needed after imposing the coherent Z=0
+        preheat waiting equation; it is not a replacement for the actual mean.
+        """
+        with mp.workdps(self.precision):
+            y=_mp(y_key);z=_mp(z_key);logq=mp.log1p(z*z)
+            def difference(at):
+                v=_mp(str(self.schedule.y_v));f=_mp(str(self.schedule.y_f))
+                if at<=v:flatten=mp.mpf(0)
+                elif at>=f:flatten=mp.mpf(1)
+                else:
+                    from lei_ren_part1_paper_continuous_axial_pulse import ContinuousAxialPulse
+                    flatten=ContinuousAxialPulse.sigma_pair((at-v)/(f-v))[0]
+                return mp.expm1(-(1-flatten)*logq)
+            state=mp.mpf(5)/8*difference(mp.mpf(0))
+            bounds=self.schedule._make_stage_bounds()
+            for name,slope in self.stages:
+                left,right=(_mp(str(v)) for v in bounds[name])
+                if y<=left:break
+                end=min(y,right);length=end-left
+                if slope is not None:
+                    rate_s=(-mp.mpf('.5')-self.mu if slope=='pulse' else
+                            -(1+self.delta)/2 if slope=='waiting' else mp.mpf(slope))
+                    rate=mp.mpf('1.5')+rate_s
+                    atom=-mp.expm1(-rate*length)/rate if rate else length
+                    state=state*mp.exp(-rate*length)+difference(left)*atom
+                else:
+                    El=self._base(mp.nstr(left,self.precision))
+                    Ee=self._base(mp.nstr(end,self.precision))
+                    state*=mp.exp(-mp.mpf('1.5')*length-(Ee-El))
+                    for unit,weight in self.nodes:
+                        t=length*unit;at=left+t
+                        Et=self._base(mp.nstr(at,self.precision))
+                        state+=length*weight*mp.exp(-mp.mpf('1.5')*(length-t)-(Ee-Et))*difference(at)
+                if end==y:break
+            return state
+
     def _bump_moments(self,logR,z):
         """Separate normalized corrections and their Z derivatives."""
         t=_mp(str(self.profile.offset(logR,self.schedule.logR_rel)))

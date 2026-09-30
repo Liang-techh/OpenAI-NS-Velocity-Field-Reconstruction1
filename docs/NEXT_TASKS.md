@@ -1,3 +1,13 @@
+## 2026-09-30 next: finish the coherent coupled lane
+
+Read COHERENT_WAITING_COUPLED_ANGULAR_2026_09_30.md and its actual-source JSON first. Waiting and signed bump algebra are implemented, but neither a branch-accepted solution nor a tiny retained target proves actual moment closure.
+
+- [ ] Represent the coupled pressure row with separate perturbative atoms so s, far below r and r^2, survives cancellation; demand target-relative replay for both rows.
+- [ ] Feed complete analytic preheat pressure components into core coefficient construction; retain post-Rv jets without adding them to an O(1) prefix scalar.
+- [ ] Install compatible coupled coefficients and regenerate incoming/axial targets and all five terminal moments together.
+- [ ] Enclose waiting/collar inputs and distinguish direct arithmetic cancellation from identity-based retained targets.
+- [ ] Resolve nonzero radial 1/r energy tail before global finite-energy claims; then continue cone repair and genuine lower-order recursion.
+
 ## Complete analytic preheat target implemented (2026-09-30)
 
 - [x] P1: implement ContinuousPreheatPressure from v2 (6.10), retaining the Z-dependent flatten interval and Z-independent H=1 collar/power exterior as separate arbitrary-exponent atoms; provide arbitrary-center Taylor jets.

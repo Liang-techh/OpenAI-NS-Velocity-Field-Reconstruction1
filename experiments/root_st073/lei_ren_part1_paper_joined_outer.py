@@ -130,6 +130,8 @@ class JoinedOuterField:
         core_bundle=self.provider.reshape.switches.comparison.bundle
         self.continuous_pressure_anchor=bool(core_bundle.get('continuous_preflatten_pressure_anchor',False))
         self.axis_pressure_order=int(core_bundle['pressure'].quadrature_order)
+        self.coherent_preheat_waiting=bool(core_bundle.get('coherent_preheat_waiting',False))
+        self.waiting_match_receipt=core_bundle.get('waiting_match_receipt')
         self.schedule = self.outer.schedule
         self.delta = _mp(self.core.delta)
         with mp.workdps(self.precision):
@@ -357,10 +359,17 @@ class JoinedOuterField:
 
 _DEFAULT: JoinedOuterField | None = None
 _CONTINUOUS_DEFAULT: JoinedOuterField | None = None
+_COHERENT_DEFAULT: JoinedOuterField | None = None
 
 
-def build_joined_field(*,continuous_pressure=False) -> JoinedOuterField:
-    global _DEFAULT,_CONTINUOUS_DEFAULT
+def build_joined_field(*,continuous_pressure=False,coherent_waiting=False) -> JoinedOuterField:
+    global _DEFAULT,_CONTINUOUS_DEFAULT,_COHERENT_DEFAULT
+    if coherent_waiting:
+        if not continuous_pressure:
+            raise ValueError("coherent_waiting requires continuous_pressure")
+        if _COHERENT_DEFAULT is None:
+            _COHERENT_DEFAULT=JoinedOuterField(CorrectedInnerField(build_candidate(continuous_pressure=True,coherent_waiting=True)))
+        return _COHERENT_DEFAULT
     if continuous_pressure:
         if _CONTINUOUS_DEFAULT is None:
             _CONTINUOUS_DEFAULT=JoinedOuterField(CorrectedInnerField(build_candidate(continuous_pressure=True)))
