@@ -12,7 +12,7 @@ data, schedules or candidate defaults are changed by this documentation update.
 The inspected `main` head is `e0c642ba8ff8d2c476ef3f961864a008d2d475c4`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`573bdace5fbf0259955ab97509a267a38187d0c9`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/573bdace5fbf0259955ab97509a267a38187d0c9)
+[`43e96bff12c0af3b68ff1ddf90ba803367d131cf`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/43e96bff12c0af3b68ff1ddf90ba803367d131cf)
 on `codex/st073-transition-next`, dated September 30. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,49 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### Combined inverse/second-Z milestone and conditional interval bounds
+
+The [incremental inverse record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/43e96bff12c0af3b68ff1ddf90ba803367d131cf/docs/FIVE_BUMP_INCREMENTAL_INVERSE_2026_09_30.md)
+reports ten common-source updates at Z=.3 with nominal value/first-Z residuals
+about9.44e-211/6.24e-210. This is not exact closure: the fifth input row is
+smaller still, and no uniform source or infinite inverse-tail enclosure follows.
+The old 38-point relaxed-cone sample belongs to the preceding finite-degree
+field and **must not certify this new inverse field**.
+
+The [be5a6a31 second-source record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/be5a6a310f5132f0de4e3d1d14b37bfa1fd124a8/docs/SECOND_AXIAL_PROPAGATION_2026_09_30.md)
+builds a fresh degree18/Z-depth3 core, then carries value/first/second derivatives
+through collar, continuation and switches to R110. Old first-Z caches are not
+promoted to second-Z data. Ur_Z is recovered; Ur_ZZ remains unavailable because
+third moment derivatives are required.
+
+The subsequent [89b80241 defect/field record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/89b802419d5f95a264c57b39429ebee0ba85c410/docs/SECOND_CENTERED_DEFECTS_2026_09_30.md)
+supersedes the earlier defect_second_Z_installed=false state: all69 labeled
+centered parts, flat sensitivities through derivative13, inverse and71 physical
+parts carry second-Z slots. Actual Z=.3, x=1.25 checks preserve P0/P0_ZZ.
+Reported ten-update second-Z residual is about5.86e-209; resolved density and
+field discrepancies are about1.75e-14/9.65e-32. These are committed finite
+construction diagnostics, not independent reruns, uniform-Z bounds or certified
+exact-profile derivatives.
+
+The [1f35784e C2 majorant](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/1f35784e986c41c718f8713b987185d36a1b4210/docs/FIVE_BUMP_C2_MAJORANT_2026_09_30.md)
+adds a factorial-weighted Banach norm and conditional Picard tail contract.
+It requires an actual enclosed defect interval norm; a pointwise jet norm cannot
+serve as that input. Bump quadrature/matrix constants remain unenclosed.
+
+The [43e96bff preheat interval record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/43e96bff12c0af3b68ff1ddf90ba803367d131cf/docs/PREHEAT_INTERVAL_BOUNDS_2026_09_30.md)
+retains205 positive atoms at Gauss order192/260 digits and analytically bounds
+their Z factors through derivative3 on |Z|<=.8, normalized C2 envelope about46.007.
+This bounds the declared finite representation, not the exact radial integral
+or full source. Variable-beta quadrature errors require their own derivative
+remainder envelope; they cannot be modeled as fixed-node mass errors. Schedule
+endpoint, rounding, radial integral, core/RK/restoration and all69 source-part
+errors still need propagation. Compact real-axis bounds do not cover endpoint
+strips or complex analyticity-domain norms.
+
+Relative-flat closure, uniform C1/C2 and endpoint control, new-field cone,
+finite radial energy, exact heat, temporal n-recursion, oscillatory correction
+and full Cartesian residual acceptance remain open.
 
 ### Combined finite-field milestone: actual reference join and terminal-tail audit
 
@@ -374,6 +417,10 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [43e96bff research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36789662198)
+completed with the same original13 failed identifiers and423 passed. Selected
+governance checks do not certify the new second-Z or interval-bound receipts.
 
 The [573bdace research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36783630624)
 completed with the original 13 failed identifiers and `423 passed` in constrained
