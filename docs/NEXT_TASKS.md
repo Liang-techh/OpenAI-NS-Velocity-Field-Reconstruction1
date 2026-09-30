@@ -1,3 +1,19 @@
+# 2026-09-30: After endpoint primitive enclosure
+
+- [x] Evaluate common stored-schedule endpoint amplitudes with directed
+      intervals and exact switch primitive outer branches.
+- [x] Bound positive pre-collar stage masses and axial derivatives, using
+      negative-slope exponential caps for long stages (11 actual stages).
+- [ ] Enclose original exp/log parameter derivations and checkpoint arithmetic
+      relative to exact paper constants; current scope is stored parameters.
+- [ ] Subdivide variable radial stages to narrow integral/derivative bounds
+      and enclose finite Gauss errors; current upper bounds are conservative.
+- [ ] Add common heat collar/exterior normalization and mass bounds.
+- [ ] Propagate pressure/core/RK errors to all five interval defect norms
+      and the C2 inverse contraction/tail estimate.
+
+See SCHEDULE_ENDPOINT_ENCLOSURES_2026_09_30.md.
+
 # 2026-09-30: Common-source pressure interval gate
 
 - [x] Retain all actual positive preheat atoms and bound their axial factors

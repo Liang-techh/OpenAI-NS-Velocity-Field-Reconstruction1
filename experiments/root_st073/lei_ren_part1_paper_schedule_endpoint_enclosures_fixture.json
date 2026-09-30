@@ -1,0 +1,10 @@
+{
+  "primitive_checks_passed": true,
+  "boundary_crossing_enclosure_passed": true,
+  "independent_variable_stage_mass": "0.4794627069965128960807686",
+  "stage_mass_upper": "0.610701379080084916960535997319837085153790470760251820636713",
+  "parameter_scope": "stored Decimal schedule values",
+  "directed_interval_arithmetic": true,
+  "full_source_certified": false,
+  "independent_integration_dps": 25
+}

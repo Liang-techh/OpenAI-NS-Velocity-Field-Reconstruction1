@@ -1,3 +1,15 @@
+# 2026-09-30: Stored-schedule endpoint and radial-stage enclosures
+
+Directed interval evaluation removes primitive quadrature from preheat
+log-amplitude endpoint bounds. Exact switch symmetry gives J(1)=1/2.
+Actual 11 finite pre-collar stages have positive mass/axial derivative
+upper bounds; maximum endpoint log width2.39823e-205. Negative-slope
+integral caps avoid huge pulse-length estimates. Resolved primitive and
+independent positive-stage integration checks pass. Scope is relative to
+stored Decimal parameters, not exact exp/log paper-input derivations.
+Heat collar, tight quadrature remainders and core/RK errors remain open.
+See SCHEDULE_ENDPOINT_ENCLOSURES_2026_09_30.md.
+
 # 2026-09-30: Actual common preheat compact-interval envelope
 
 Actual common schedule: 205 positive pressure atoms at radial Gauss order192,
