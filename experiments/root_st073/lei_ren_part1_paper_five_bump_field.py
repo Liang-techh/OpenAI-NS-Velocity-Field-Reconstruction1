@@ -349,9 +349,10 @@ def _correction_duals(
         raw_increments = None
     else:
         g2, xf, f2 = raw_primitives
+        # Repository convention: swirl = integral(R*F^2) dR = integral(u_theta^2/2) dR.
         raw_increments = {
             "axial": Rm_dual * (8 * Z_dual * a1 + g2),
-            "swirl": Rm_dual * Am_dual**2 * (2 * xf + f2),
+            "swirl": Rm_dual * Am_dual**2 * (xf + f2 / 2),
         }
 
     gammas = _gamma_values(moment_map, x_value)
@@ -766,6 +767,16 @@ def _join_reference(
         result["Ur"] = stress["U_r"]
     result["delta_Ur"] = correction["delta_Ur"]
     result["delta_Ur_Z"] = correction["delta_Ur_Z"]
+    # Keep corrected interval contributions visible to downstream moment consumers.
+    result['moment_parts'] = dict(reference_data.get('moment_parts', {}))
+    result['moment_parts_Z'] = dict(reference_data.get('moment_parts_Z', {}))
+    result['moment_parts']['five_bump_correction'] = dict(correction['increments'])
+    result['moment_parts_Z']['five_bump_correction'] = dict(correction['increments_Z'])
+    if correction.get('raw_increments') is not None:
+        result['raw_quadratic_parts'] = dict(reference_data.get('raw_quadratic_parts', {}))
+        result['raw_quadratic_parts_Z'] = dict(reference_data.get('raw_quadratic_parts_Z', {}))
+        result['raw_quadratic_parts']['five_bump_correction'] = dict(correction['raw_increments'])
+        result['raw_quadratic_parts_Z']['five_bump_correction'] = dict(correction['raw_increments_Z'])
     return result
 
 
@@ -923,7 +934,7 @@ class FiveBumpField:
             "coefficients_external": True,
             "reference_pressure_width_axial_restore": True,
             "P0_preserved": True,
-            "raw_quadratic_baseline_only": True,
+            "raw_quadratic_updated_when_baseline_available": True,
             "baseline_compatibility_certified": False,
             "first_Z_from_same_dual": True,
             "radial_velocity_first_Z_available": False,

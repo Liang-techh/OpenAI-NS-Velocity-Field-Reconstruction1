@@ -14,6 +14,7 @@
     }
   ],
   "fixed_radius_guard": true,
+  "raw_swirl_convention": "integral(u_theta^2/2) dR; Mztheta=raw_axial-raw_swirl",
   "actual_source_join": false,
   "functional_closure": false,
   "cone_certified": false,

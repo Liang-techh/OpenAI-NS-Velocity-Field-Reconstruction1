@@ -30,3 +30,9 @@ The independent resolved fixture at x=1.25 and 2.2 directly integrates all five 
 five_bump_majorant computes CA and a quadratic C1 operator bound from the fixed finite weights, using the paper estimate norm(Am^-2)<=40/Pstar^2. Given an externally established uniform defect bound e, it computes the contraction condition e<=1/(8 CA^2 CQ) and a positive Catalan-series tail bound without subtracting nearly equal roots. Its resolved scalar fixture passes zero/boundary/failure cases and bounds the independently observed response error.
 
 The finite quadrature weights are unenclosed and actual uniform e has not been verified. These majorants are conditional algebraic bounds, not a certificate of actual five-moment closure, admissible stress, exact heat, finite energy, or temporal recursion. Next priority is joining the same actual reference provider and then controlling the input/convergence/remainder and cone conditions uniformly in Z.
+
+## Common-source integration convention
+
+The repository raw swirl primitive is integral(R F^2) dR = integral(u_theta^2/2) dR. The field adapter now uses the same factor, so Mztheta = raw_axial - raw_swirl. Joined moment/raw part maps explicitly include the five_bump_correction label; downstream consumers must not use an inherited part map that omits the correction. The resolved join fixture checks this convention and the corrected part sums.
+
+Old materialized long-reshape/restore moment totals can round away the flat d3/d5 terms. On Rm..Rh, source and power reference velocities agree, so each original five-moment difference is constant in R. A same-source reference provider can therefore reconstruct its moments as the exact power reference plus the separately retained centered source defects, using the original P0. Separate raw energies require their own source primitives and cannot be inferred from d4 alone.
