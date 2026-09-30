@@ -1,5 +1,15 @@
 ## Priority: continuous moments, then connection shear — 2026-09-29
 
+Latest core continuation reaches s=4.1 in finite samples with Lambda=1e36.
+Use `CorePolynomial` for actual same-polynomial moments, radial velocity,
+pressure and stress; use AxisPressureJets physical_taylor for profile units.
+The old rounded-root failures at Lambda<=1e24 must remain visible.
+Before Section 9 matching, bound the omitted future pressure Z derivatives
+and the relevant analytic domain, control the unsampled Z range, and verify
+core endpoint jets/shear with degree and pressure uncertainty separated.
+Then compute the actual connection's five moment defects and Section 10
+repair; do not replace defects by the reference boundary targets.
+
 Latest core action: explicit shared source parameters and a third-degree
 nonlinear regular-core prefix with actual P0 are implemented. Read
 `lei_ren_part1_paper_shared_pressure_core.json` for the local scope

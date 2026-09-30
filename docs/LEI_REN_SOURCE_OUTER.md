@@ -225,6 +225,26 @@ existing full radial recurrence where suitable, with the SAME new axis
 data; do not reuse the unrelated ST073 axis traces as a source certificate.
 # Actual initial-stage stress and coherent end-bump replay
 
+`AxisPressureJets` now separates actual normalized P0/Pstar^2 into a
+dominant K/(1+Z^2)^2 and the same-candidate R>Rv tail. `physical_taylor`
+restores Pstar^2 before the nonlinear core solve. Future-tail values and
+heat bounds are retained, but derivative bounds remain open. The core
+high-degree builder accepts these analytic dominant Z jets; `CorePolynomial`
+derives all five moments, radial velocity, pressure and stress from the
+same radial polynomial. Its pressure uses the full integral of F^2 rather
+than a separately truncated pressure polynomial.
+
+The source-scaled Lambda=1e18 run succeeds away from the H0 root but fails
+F_R<0 at the intentional nearby literal Z=-.00444443468970541. Passing at
+the exact root does not remove this genuine narrow-layer failure. The
+receipt preserves Lambda=1e18..1e24 failures and the Lambda=1e36 successful
+sample sweep. For the latter, |U1|/(Lambda|H0'|) is about 1.42e-26 and
+U1^2/(Lambda*sigma0^2) is about 2.55e-6. Actual anchored-pressure core
+samples through s=4.1 all retain F>0,F_R<0, including that literal and
+the dangerous offsets. This is not a uniform-in-Z contraction proof,
+a connection to the outer reference, an energy certificate or time-scale
+recursion. The physical chart is an unlocalized core only.
+
 Explicit shared construction now accepts `CorrectedSourceProfile(schedule=...,
 match_waiting=True)` or an already shared schedule/angular/tail triple.
 The original no-argument demonstration is retained. The necessary-scale

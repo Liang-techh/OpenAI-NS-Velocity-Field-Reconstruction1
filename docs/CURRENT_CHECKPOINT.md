@@ -1,5 +1,26 @@
 ## Source outer replacement and first correction inputs — 2026-09-29
 
+2026-09-30: high-degree core continuation now reaches s=Lambda R=4.1
+at sampled Z, with a same-polynomial velocity/pressure/five-moment/stress
+adapter. AxisPressureJets supplies analytic dominant pressure jets from
+the actual preflatten/tail decomposition; its normalized P/Pstar^2 and
+physical units are explicit. Future tail values and heat bounds remain
+separate; future-tail Z derivative bounds are NOT established.
+
+The historical Lambda=1e18..1e24 nearby rounded-root point genuinely has
+F_R>0 even though the exact root passes. It is preserved as an intentional
+failure probe in `lei_ren_part1_paper_core_ra_experiment.json`. Choosing
+Lambda=1e36 suppresses that failure in the tested narrow window
+DeltaZ=c*|U1|/(Lambda*|H0'|), c=-16,-4,-1,0,1,4,16. The actual anchored
+pressure adapter's 45 samples through s=4.1 retain F>0,F_R<0; its pressure
+ratio U1^2/(Lambda*sigma0^2) is 2.55e-6. Prototype degree18/24 narrow-layer
+differences are below displayed precision; at Z=.3 the degree18 nominal
+core stress/shear angular ratio is at most 1.12e-28. These are finite
+polynomial/sample diagnostics, not a uniform theorem, admissible global
+cone or time-scale recursion. Next establish tail derivative/domain bounds,
+check the core across the remaining Z domain, then perform Section 9/10
+connection and moment repair using these actual core inputs.
+
 2026-09-30: explicit schedule/correction/tail construction now supports a
 shared source-scaled candidate with logRref=301.1814 (j=.02, Lambda=2500,
 logCstar=2logLambda, logPstar=14). Its same-axis pressure is recomputed,

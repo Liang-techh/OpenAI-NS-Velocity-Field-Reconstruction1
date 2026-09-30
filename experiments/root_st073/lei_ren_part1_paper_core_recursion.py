@@ -36,13 +36,14 @@ At least radial_degree+2 initial Z coefficients are required.
         if degree<1 or degree!=radial_degree:
             raise ValueError('Positive integer radial_degree required')
         K=min(len(F0_Z_taylor),len(U0_Z_taylor),len(P0_Z_taylor))
+        initial_count=K
         if K<degree+2:raise ValueError('Insufficient axis Z Taylor coefficients')
         def pad(v):return list(map(mp.mpf,v))+[mp.mpf(0)]*(K-len(v))
         def const(v):return pad([v])
         def add(*args):return [sum(a[k] for a in args) for k in range(K)]
         def scale(a,c):return [v*c for v in a]
         def mul(a,b):return [sum(a[i]*b[k-i] for i in range(k+1)) for k in range(K)]
-        def diff(a):return [(k+1)*a[k+1] if k+1<K else mp.mpf(0) for k in range(K)]
+        def diff(a):return [(k+1)*a[k+1] if k+1<len(a) else mp.mpf(0) for k in range(K)]
         def inverse(a):
             q=[1/a[0]]
             for k in range(1,K):q.append(-sum(a[i]*q[k-i] for i in range(1,k+1))/a[0])
@@ -52,6 +53,9 @@ At least radial_degree+2 initial Z coefficients are required.
         invL=inverse(L)
         f=[pad(F0_Z_taylor)]; u=[pad(U0_Z_taylor)]; pressure=[pad(P0_Z_taylor)]
         for n in range(degree):
+            # One Z derivative is consumed by each radial recurrence.
+            # Retain only jets that can still affect a trusted coefficient.
+            K=initial_count-n-1
             W=[]; H=[]
             for i in range(n+1):
                 wi=scale(add(scale(mul(z,u[i]),1-dt),mul(d,diff(u[i]))),-mp.mpf(1)/(i+1))
@@ -78,7 +82,7 @@ At least radial_degree+2 initial Z coefficients are required.
             for i in range(n+1):ff=add(ff,mul(f[i],f[n-i]))
             pressure.append(scale(ff,mp.mpf(1)/(n+1)))
         return {'F':f,'Uz':u,'P':pressure,'Z':mp.mpf(str(Z)),
-                'delta':dt,'radial_degree':degree,'initial_Z_degree':K-1,'precision':precision,
+                'delta':dt,'radial_degree':degree,'initial_Z_degree':initial_count-1,'precision':precision,
                 'scope':'Local exact-equation radial jets; no temporal recursion or global matching.'}
 
 
