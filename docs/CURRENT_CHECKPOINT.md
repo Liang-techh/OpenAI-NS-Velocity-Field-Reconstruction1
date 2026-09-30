@@ -1,3 +1,11 @@
+## 2026-09-30: analytic radial velocity jets prepared for stress
+
+Added velocity_radial_jets(profile,logR,Z) using the same installed angular slope, incoming cutoff derivative, live pulse product jet and owned end-bump derivative. It supplies Utheta_y and Uz_y in logR coordinates alongside the existing Z jets, without changing coefficients or terminal moments.
+
+Independent shared-field point derivative checks passed in incoming, pulse, end-bump and heat regions; maximum local relative difference is 1.61e-16. These are nominal functional checks, not input uncertainty or stress-cone certification. The helper is available for the next same-candidate stress adapter after actual five-moment/P providers are accepted.
+
+Partial axial energy and preheat pressure workers remain active. Their Python processes were confirmed live during this turn. No incomplete worker dependency or prepared local quadratic dispatch is published as completed work.
+
 ## 2026-09-30: shared pressure heat cumulative and infinite-tail atoms
 
 Added pressure_increments(t,Z) and complete_pressure_heat_integral(Z) to the common heat-moment owner. They use the pressure weight Utheta^2/(2R), exponent -(1+delta), and the same retained heat polynomial/collar atoms as the installed angular field. Reference, tiny correction and correction Z remain separate. Infinite-tail analytic polynomial truncation is bounded; quadrature/arithmetic are not.

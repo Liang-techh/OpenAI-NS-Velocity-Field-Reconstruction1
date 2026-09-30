@@ -1,0 +1,63 @@
+{
+  "samples": [
+    {
+      "label": "incoming",
+      "method": "shared_incoming_analytic_cutoff",
+      "radial_derivative_relative_errors": [
+        "2.083333333339533730158739200975529108847e-23",
+        "1.604584362537998123340678107081526884155e-16"
+      ],
+      "Uz_y": {
+        "sign": -1,
+        "log_abs": "2.5531167179438735554243572809603306680439512695444",
+        "arbitrary_exponent_value": "-12.847082181165220742151891499989199143546939157517"
+      }
+    },
+    {
+      "label": "pulse",
+      "method": "shared_pulse_product_jet",
+      "radial_derivative_relative_errors": [
+        "2.083333333339533730158739208943683915359e-23",
+        "2.083333333339533730158739207346859304835e-23"
+      ],
+      "Uz_y": {
+        "sign": -1,
+        "log_abs": "-5229148740032490384767679776.9555923190403001584164",
+        "arbitrary_exponent_value": "-2.1880260304863628814235882521735721297955540720941e-2270990442847452491284114740"
+      }
+    },
+    {
+      "label": "end_bump",
+      "method": "shared_end_bump_product_jet",
+      "radial_derivative_relative_errors": [
+        "2.083333333339533730158739208943683915359e-23",
+        "1.258339773054748097841286912004692824667e-17"
+      ],
+      "Uz_y": {
+        "sign": 1,
+        "log_abs": "-15687446222044662294755949028.687515984243606802308",
+        "arbitrary_exponent_value": "2.9178033068727607337010270005306829143012047886592e-6812971329388011841361942698"
+      }
+    },
+    {
+      "label": "heat",
+      "method": "post_axial_support",
+      "radial_derivative_relative_errors": [
+        "2.083333333339533730158739200975529108847e-23",
+        "0.0"
+      ],
+      "Uz_y": {
+        "sign": 0,
+        "log_abs": null,
+        "arbitrary_exponent_value": "0.0"
+      }
+    }
+  ],
+  "analytic_logR_velocity_derivatives": true,
+  "shared_runtime_atoms": true,
+  "input_uncertainty_enclosed": false,
+  "stress_cone_certified": false,
+  "complete_five_moments": false,
+  "finite_energy_certified": false,
+  "scale_recursion_certified": false
+}

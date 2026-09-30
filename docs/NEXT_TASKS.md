@@ -1,3 +1,12 @@
+## Latest shared stress input handoff (2026-09-30)
+
+- [x] Supply analytic logR derivatives Utheta_y/Uz_y from the same continuous point definitions; independent checks cover incoming/pulse/end/heat.
+- [ ] Accept and install the partial axial-energy and actual pressure providers after their live checks finish.
+- [ ] Assemble actual five moments/Z plus pressure/PZ and analytic velocity jets in one same-candidate stress diagnostic; retain separate tiny components and avoid calling nominal provision full closure.
+- [ ] Resolve pressure/terminal mass constraints, physical Z energy and radial exterior transport, then stress/remainder/recursive-scale closure.
+
+Evidence: continuous_velocity_radial_jets.py/md/json. Stress, total finite energy and recursion remain uncertified.
+
 ## Latest pressure heat handoff (2026-09-30)
 
 - [x] Add common pressure-weighted finite heat increments and complete infinite heat tail, keeping tiny correction/Z atoms separate.
