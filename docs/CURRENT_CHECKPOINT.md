@@ -1,3 +1,9 @@
+## 2026-10-01: PARTIAL C120-F1 actual new-center/local-interval core seeds
+
+A new same-source factory recomputes exact Lambda120 amplitude, the unchanged accepted fourteen-stage physical pressure, and coupled core rows at arbitrary supplied axial centers/intervals. Saved actual cases: Z = 0.5 and the family [0.49,0.51], radial degree8 with retained axial depth3. All 216 scalar coefficient intervals are contained in the local-family bounds. The completed Z = 0.3 tensor is not loaded or extrapolated.
+
+Run experiments/root_st073/lei_ren_part1_paper_candidate_general_center_factory.py. See docs/CANDIDATE_GENERAL_CENTER_FACTORY_2026_10_01.md. Next: explicit-center resumable recurrence and controlled radial tails; a new center-aware comparison adapter consuming these new rows; actual transition/functional defects and repairs. Degree8 is finite seed work, not a replacement for the completed degree124 center core, a whole-axis profile, or temporal recursion.
+
 ## 2026-10-01: PARTIAL C120-M8 refined correction installed in actual field
 
 The refined directed-weight controls are installed in the actual candidate matching field. Cumulative partial integrals use the same exponential bump family and saved full normalization/weight intervals. Eleven support/edge samples pass the nominal relaxed cone; P0 and first Z derivative are preserved. At x = 2, partial and full refined maps agree atom-for-atom for values and tangents. Exact field/moment atoms and partial integral bounds are saved.
