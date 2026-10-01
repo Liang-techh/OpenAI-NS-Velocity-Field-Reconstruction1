@@ -1,3 +1,7 @@
+## 2026-09-30 actual directed collar endpoint and portable input
+
+Accepted finite-core Z=.3 data now produce directed473-digit first/second-width coefficients, five profile moments and F/Uz/P/Ur/Ur_Z. Exact JSON source input allows ~35-second replay without a pickle or expensive chain rebuild. Independent radial-driver derivative checks pass; 174/180 legacy narrow-interval comparisons fail and are recorded. This encloses stored finite arithmetic only, not source/core/omitted-order errors. See ACTUAL_DIRECTED_COLLAR_ENDPOINT_2026_09_30.md.
+
 ## 2026-09-30 same-pressure second-width endpoint conversion
 
 Analytic width coefficients now reconstruct unnormalized F/Uz/P, all five profile moments, Ur and Ur_Z without resetting P0. Six independent mixed width/Z radial-flux derivative checks pass. Actual accepted interval-inlet evaluation remains pending; Ur_ZZ and omitted-width/source errors are unclosed. See COLLAR_WIDTH_PHYSICAL_ENDPOINT_2026_09_30.md.

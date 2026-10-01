@@ -1,3 +1,12 @@
+## 2026-09-30 actual collar results and next error layers
+
+- [x] Evaluate accepted directed finite-core inlet and radial inertial derivatives.
+- [x] Publish all eight first/second-width coefficient jets and five-moment/velocity endpoint conversion.
+- [x] Save exact portable finite-core JSON input and verify atom-preserving replay.
+- [ ] Propagate true pressure/core/source errors into the directed inlet.
+- [ ] Enclose omitted pressure/width orders and whole-collar spatial errors.
+- [ ] Extend point-Z data to functional axial-domain moment closure and stress-cone control.
+
 ## 2026-09-30 collar endpoint propagation
 
 - [x] Convert analytic first/second-width coefficients to unnormalized five moments and F/Uz/P.
