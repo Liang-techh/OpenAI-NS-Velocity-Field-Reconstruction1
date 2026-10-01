@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "fixture_only": true,
+  "known_solution_value_derivative_coefficients_contained": 10,
+  "outside_box_data_rejected": true,
+  "input_hashes": {
+    "lei_ren_part1_paper_interval_five_bump_inverse.py": "35fe5d14fdd0685a7836c40d0208779cee10f2486a2445464599de6afd234ea8",
+    "lei_ren_part1_paper_interval_five_bump_inverse_check.py": "1b4f71c7f8f8f6976b0d39f8c3d0f1316c1591abca22fa509f40a38b23c33b73"
+  }
+}
