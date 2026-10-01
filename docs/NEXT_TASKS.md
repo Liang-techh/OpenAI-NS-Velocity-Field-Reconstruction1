@@ -1,3 +1,7 @@
+## 2026-09-30: Candidate global positivity and actual analytic Taylor tails
+
+Applied Lambda1e48 contraction norms to the infinite analytic core: F/F0>=0.25594623652652049 on allscaledR[0,4.1],Z[-1,1]. Exact radial Taylor truncation tails are now bounded with known norms; normalized mixed C3 tails<=1e-12 require radialdegree124 and axislength128. This is conditional on accepted stored data and does not identify any unverified finite adapter with those exact coefficients. Next: directed fullP0 highjets, resumable candidate coupled coefficients, moments/pressure and sharedcollar. Physical derivative conversion/sourceerrors remain separate. See CANDIDATE_ANALYTIC_CORE_TAILS_2026_09_30.md.
+
 ## 2026-09-30: Tighter inverse and contraction-compatible core candidate
 
 Exact commuting powers of (chi/2)J2 reduce inverse log upper390.6324 to13.34508. Fixed analytic multipliers use the same Cauchy convolution. Existing Lambda1e36 gates remain unproved (logs25.7093/14.94475). Separate Lambda1e48 candidate, holding accepted P0,j,delta,logCstar fixed and recomputing its amplitude, passes both gates: size<=0.1463551, Lipschitz<=3.093312e-6. This supplies a fixed-datum analytic contraction candidate, not a rebuilt shared field. Next: candidate axis/gauge core and infinite tails; check new Ra pressure conventions, then rebuild all matching data together. Preserve old inlet receipts. See COMMUTING_INVERSE_AND_CORE_CANDIDATE_2026_09_30.md.
