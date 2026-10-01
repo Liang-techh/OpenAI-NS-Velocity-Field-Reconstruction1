@@ -1,3 +1,7 @@
+## 2026-09-30: Angular core defect integral identified
+
+Implemented the paper identity d_R(R T_theta)=R D_theta/L using the retained nonlinear core. At Z=.3, R=4/Lambda, integrated pressure-degree-zero trace divided by axis F is6.731847608842599e-29 and agrees with independent inlet bounds. Defect orders below18 contribute at most2.602e-261 in stored MP arithmetic; remaining radial orders carry the finite trace. Next: recover row19 and beyond with unchanged P0, then enclose the infinite coupled radial tail. MP cancellation is not a source-roundoff certificate; zero containment alone is not exact matching. See CORE_TRACE_AND_RECIPROCAL_2026_09_30.md.
+
 ## 2026-09-30: Core entrance compatibility and reciprocal mixed C3
 
 Completed reciprocal mixed C3 bounds on all142 positive cells of an immutable snapshot; current adaptive receipt has209 accepted and208 pending cells. Retained degree18 / pressure9 core angular entrance stress divided by F lies in [2.378912224e-28,2.378913715e-28], excluding zero under currently propagated errors. Bridge zero-stress shear therefore does not yet prove C1 matching. Prioritize separating truncation defects and enclosing the infinite nonlinear core before cone claims. Full K, whole-axis reciprocal bounds and temporal recursion remain open. See CORE_TRACE_AND_RECIPROCAL_2026_09_30.md.

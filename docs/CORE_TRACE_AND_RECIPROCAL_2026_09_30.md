@@ -24,6 +24,22 @@ The leading bridge identity T=(1-chi)I follows from its prescribed shear. It can
 
 Resolving the retained stress polynomial by pressure-parameter degree localizes the dominant defect to degree zero: its coefficient divided by the pressure-free inlet F is approximately [2.3789125968e-28,2.3789133421e-28]. Degree one is enclosed within +/-3.7264524313e-35; degree two within +/-9.335001e-72. These are coefficients of stress divided by the pressure-free amplitude, not Taylor coefficients of the full stress-to-F ratio. Increasing pressure order alone cannot change the nonzero degree-zero coefficient; the radial recurrence and entrance identity need attention. No bound on missing orders follows from this breakdown.
 
+Here "pressure-free" means the coefficient of pressure-parameter degree zero: the accepted physical analytic preheat pressure datum is still present. It does not mean zero physical pressure.
+
+## Angular defect integral implemented
+
+Paper equations (3.13), (3.19), and (8.5) give, at fixed Z,
+
+    d_R [R T_theta] = R D_theta / L,
+    D_theta = 2L(R F_RR + 2F_R) - B_theta,
+    T_theta(R) = (1/(LR)) integral_0^R s D_theta(s) ds.
+
+The last formula uses axis regularity and L independent of R. The diagnostic `lei_ren_part1_paper_angular_defect_integral.py` computes this integral from the full retained pressure-degree-zero radial polynomial, including nonlinear products. It uses the stored accepted axis data without replacing P0.
+
+At R=4/Lambda and Z=.3 the integral divided by axis F is approximately 6.731847608842599e-29 and lies inside the independent directed inlet stress interval. The absolute sum of contributions from radial defect orders below18 is approximately 2.601107373415409e-261. Thus those computed recurrence equations cancel at the stored source precision; the observed trace is carried by the remaining finite-polynomial defect orders. The first such equation needs radial row19, which the degree18 input does not supply.
+
+This computation is MP arithmetic with stored coefficients, not a directed source-generation error certificate or infinite-tail bound. A total stress enclosure merely containing zero would not establish the exact identity. Completion requires a controlled analytic core solving the equations with regular axis data, plus compatible entrance evaluation.
+
 ## Next dependencies, in order
 
 1. Identify the exact stress-free core identity and separate the radial truncation defect from pressure-parameter truncation. Use the same accepted analytic preheat datum and coupled core recurrence.
@@ -39,6 +55,7 @@ Resolving the retained stress polynomial by pressure-parameter degree localizes 
 Run from the repository root with Python and mpmath:
 
     python experiments/root_st073/lei_ren_part1_paper_core_boundary_stress_gap.py
+    python experiments/root_st073/lei_ren_part1_paper_angular_defect_integral.py
     python experiments/root_st073/lei_ren_part1_paper_positive_cell_reciprocal_C3.py --seconds 50
     python experiments/root_st073/lei_ren_part1_paper_adaptive_core_positivity.py --seconds 180
 
