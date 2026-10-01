@@ -1,3 +1,9 @@
+## 2026-10-01: PARTIAL C120-M8 refined correction installed in actual field
+
+The refined directed-weight controls are installed in the actual candidate matching field. Cumulative partial integrals use the same exponential bump family and saved full normalization/weight intervals. Eleven support/edge samples pass the nominal relaxed cone; P0 and first Z derivative are preserved. At x = 2, partial and full refined maps agree atom-for-atom for values and tangents. Exact field/moment atoms and partial integral bounds are saved.
+
+Run experiments/root_st073/lei_ren_part1_paper_candidate_refined_bump_field.py. See docs/CANDIDATE_REFINED_BUMP_FIELD_2026_10_01.md. Values/stresses remain midpoint approximations at Z = 0.3; no uniform cone, source/ring error, smooth primitive or Cartesian divergence certificate is inferred. Next priority: actual same-source new-center/local-interval core factory using exact amplitude, fixed analytic pressure and coupled functional recursion; then propagate comparison/transition and moment repair axially. No center extrapolation or temporal recursion claim.
+
 ## 2026-10-01: PARTIAL C120-M7 directed bump integrals and refined inverse
 
 Actual paper exponential-bump weighted integrals now have directed interval Taylor and endpoint-tail bounds. The original five-bump controls show a real finite-quadrature bias: second-row residual approximately 1.13735e-27, interval width 9.41e-35, excluding zero. Re-solving with enclosed-weight midpoints preserves the original nominal source targets and reduces the directed finite-center residual bounds to less than 5e-35 (values) and 1.3e-56 (first Z); all ten intervals include zero.
