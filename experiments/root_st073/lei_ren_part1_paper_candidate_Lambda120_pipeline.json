@@ -1,17 +1,23 @@
 {
   "Lambda": "1e120",
   "state_file": "lei_ren_part1_paper_candidate_gauge_core_Lambda120_state.json",
-  "state_sha256": "561ed5a66830573b1ae280c3f35e282ed08fd38c912b96c8494f52c526cbe58b",
-  "completed_radial_order": 35,
+  "state_sha256": "fc1c779f17ef182b8eab9be7ab97e9fdf3faef7ff7cc7808efc9766bc1bb297b",
+  "completed_radial_order": 124,
   "required_radial_degree": 124,
-  "finite_core_complete": false,
+  "finite_core_complete": true,
   "analytic_fixed_data_weighted_sign_passed": true,
   "analytic_sign_receipt_sha256": "311b1483c33dd4582a58de0af12ffc83afb32ec7b2fcba6cbb8bf43d31465b94",
   "whole_axis_finite_core_certified": false,
-  "combined_center_error_budget_passed": false,
-  "shared_core_moments_and_inlet_regenerated": false,
+  "combined_center_error_budget_passed": true,
+  "shared_core_moments_and_inlet_regenerated": true,
   "terminal_functional_five_moment_closure": false,
   "coherent_collar_matched": false,
   "temporal_recursion": false,
-  "full_corrected_NS_residual_validated": false
+  "full_corrected_NS_residual_validated": false,
+  "dependent_artifact_hashes": {
+    "lei_ren_part1_paper_candidate_core_tail_budget_Lambda120.json": "1c2c71bb991ca9997a983a7a85880d5b9d6381bb6dab211104a87c07953e7dd2",
+    "lei_ren_part1_paper_candidate_combined_core_budget_Lambda120.json": "de501e8f8dd0b1058efb26f05205bcbd615fdc7ac8d6963e386cf524de21e7b8",
+    "lei_ren_part1_paper_candidate_inlet_trace_Lambda120.json": "ad376281e40555b039c7bbb8a765ab062b8b4b9bd70959fcf9f832b1a65920b3",
+    "lei_ren_part1_paper_candidate_shared_inlet_Lambda120.json": "ad8af5fe66e4604f676deb80a8ef6ba34894f8d32352107d6bf8a37851351096"
+  }
 }
