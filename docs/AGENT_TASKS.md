@@ -1,3 +1,20 @@
+# F38-C angular/pressure task handoff - 2026-10-01
+
+- [x] F38-C1: Recover correlated rpre(Z) from exact Z0 waiting identity and flatten divided difference; preserve exact axis zero, evenness, Xv memory and nonzero mu^[30(1-mu)] scale.
+- [x] F38-C2: Solve actual two-bump angular/pressure equations, including quadratic pressure terms, via whole-Z small smooth branch and C1 Jacobian bounds. Restore original preheat P0 with true Gamma heat targets.
+- [x] F38-C3: Prove stronger finite logS cap before Rrel normalization; retain formal actualS separately.
+- [x] F38-C4: Provide coefficient/swirl/partial angular-pressure-energy correction callables and allfive cumulative changes; independent twenty-three-identity/source-invariant checker and correlated fixtures. Full outer composition remains pending.
+- [ ] F38-C5a: Assemble exact corrected future swirl energy from Rv toinfinity in Rp*Utheta(Rp,Z)^2 units. Integrate100-unit flatten, -30logmu power buffer, both angular bumps, steep unit transitions/Ts power, waiting, epsilon collar and full Gamma exterior. Use positive normalized pieces, retain signed angular energy correction and a*S heat deficit.
+- [ ] F38-C5b: Add complete future energy to the trial pulse equation. Keep actual incoming Mztheta/Rp/Utheta^2 and c1/c2 energies with formal super-small scales; prove a unique smooth positive ap in(.9,1.2), its C1 derivative and selected c1/c2 signs. No nominal a=1 replacement.
+- [ ] F38-C6: Install actual axial pulse and partial moment integrals, including separate nontzero incoming/late histories. Verify Mz=Mtheta_z=0 and Mztheta=half positive future swirl energy atRv.
+- [ ] F38-D: Compose allfive corrected primitives and recover Ur/pressure; verify whole-Z terminal identities, exact heat matching, smooth interfaces, axis regularity and finite physical energy.
+- [ ] F39-A: Obtain angular repair C4 bounds and certify all pulse/flatten/bump/waiting/collar cone margins. Current C1 small-branch result does not prove the entire cone.
+- [ ] F39-B/F40/F41: Admissible global stress and flat remainder; genuine n-dependent temporal recursion and smooth sum; mean/oscillatory stress cancellation; independent full Cartesian residual/dynamic vortex measurements.
+
+Read docs/ACTUAL_ANGULAR_PRESSURE_REPAIR_2026_10_01.md and compliant_outer_angular_repair.py/.json plus _check.py/.json. Reproduction: compliant_reconstruction.py --stage angular. Preserve source/family hashes, exact preheat P0, formalS and nonzero heat mismatch atZ0. Do not mark future energy, ap or full matching complete from this repair alone.
+
+---
+
 # F37/F38 task handoff - 2026-10-01
 
 - [x] F37-A: Recompute compliant core positivity, frozen angular/H bounds, physical C3 norms, Kp17, KN18000 and core-tail admission.

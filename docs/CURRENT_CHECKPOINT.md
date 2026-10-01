@@ -1,3 +1,11 @@
+# F38-C angular/pressure checkpoint - 2026-10-01
+
+Actual whole-Z smooth angular/pressure two-bump recovery is now implemented for the compliant family. Correlated Xf(0)-Xf(Z), exact preheat waiting identity, Gamma heat defects in Rrel units and a stronger finite logS cap feed the full quadratic pressure system. A uniform contraction and actual derivative Jacobian provide coefficient C1 enclosures; partial angular/pressure/energy and allfive cumulative changes are callable. Twenty-three independent identities/source invariants, five weight quadratures, two correlated flatten fixtures and whole-Z branch gates PASS.
+
+Read docs/ACTUAL_ANGULAR_PRESSURE_REPAIR_2026_10_01.md. Reproduce with compliant_reconstruction.py --stage angular (usual experiments/root_st073/lei_ren_part1_paper_ prefix). Coefficients are true implicit functions enclosed by intervals, not midpoint fits. Prescribed preheat P0 remains unchanged; S/positive heat mismatch atZ0 are retained. NEXT: complete corrected future swirl energy -> select ap/c1/c2 -> compose allfive outer primitives -> C4/whole-outer cone. Full background, global stress/flat remainder and temporal recursion remain incomplete.
+
+---
+
 # F37/F38 checkpoint - 2026-10-01
 
 The separate c_epsilon=.001 family now has recomputed core/norm/exit/Cstar/K1/reference bounds, whole-Z functional five-moment repair, outer candidates and the exact Gamma heat component. Ordered inner16 and outer10 rebuilds PASS. Explicit 148 pressure-jet and S-jet inclusions preserve the old completed recurrence as an envelope, with new Kp17/KN18000 and finite-core sensitivity provenance. Old .01 data remain unchanged.
