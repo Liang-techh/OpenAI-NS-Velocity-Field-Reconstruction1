@@ -1,0 +1,22 @@
+{
+  "all_scaled_transfer_fixture_checks_passed": true,
+  "coefficient_comparisons": 75,
+  "cutoff_cases": [
+    "0",
+    ".25",
+    "1"
+  ],
+  "Lambda_cases": [
+    "8",
+    "500",
+    "1e8"
+  ],
+  "base_drivers_require_actual_chi_multiplier": true,
+  "full_pressure_and_swirl_axial_derivatives_retained": true,
+  "input_hashes": {
+    "lei_ren_part1_paper_logarithmic_transfer_check.py": "fede6283757e091b0db60c3fdbb387d2b1181d603ebbef8e1b536d250e27c7b6",
+    "lei_ren_part1_paper_logarithmic_comparison.py": "efeaee4b70d3190f1031df10f3e3c98c59300c87de82036ddfc9c85c4ee45b58",
+    "lei_ren_part1_paper_candidate_shared_inlet.py": "cb578a0de74a1afd6550d04f1b6a9d8ce140f240613ee4ffaf28f5a2d21b420d",
+    "lei_ren_part1_paper_interval_taylor.py": "a1c29ec76998d876d9becadebb65c7be69242bb99d6049ef3f5ad6af86b14b8c"
+  }
+}

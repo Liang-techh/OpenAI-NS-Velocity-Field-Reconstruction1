@@ -1,3 +1,14 @@
+# F22 — 2026-10-01: fresh Md40 actual exit reaches R110
+
+Fresh same-source comparison (32 closed cells), actual exit bridge (48 cells), whole-interval continuation to physical R100, and terminal switches/constant-power moments to R110 are generated. Fields retain C1 local axial enclosures; comparison fields retain C2. Physical F0 and microscopic shear remain implicit positive functions with nonzero-upper bounds. No old transition receipt is reused.
+
+Actual R110 normalized Phi lower is about 0.0434131. Relaxed cone (3.23) passes there on Z in [0.49,0.51] by exact zero-axial-source cancellation. This is one interface, not full stress coverage or an admissible stress lift. Parameter admission is still missing: candidate hb=0.005 differs from the microscopic shear, while the paper requires hb=epsilon_b=cstar K^-100. Next: recover and enforce this shared parameter, certify the supplied exit inputs, regenerate the connection, then build long reshape and functional five-moment repair. Temporal recursion and heat-matched full background remain incomplete.
+
+Details and next tasks: docs/LOGARITHMIC_ACTUAL_EXIT_2026_10_01.md.
+Evidence: experiments/root_st073/lei_ren_part1_paper_logarithmic_exit_switch.json and lei_ren_part1_paper_logarithmic_R110_cone.json.
+
+---
+
 # F21 — 2026-10-01: fresh Md40 degree-110 core completed
 
 All 110 normalized radial orders are generated from 114 same-source axial jets on Z in [0.49,0.51], with four final axial coefficients. Cumulative recurrence time: 693.621 seconds. Finite plus analytic-tail Phi remains positive at scaled exits 4 and 4.1 (lower bounds about 0.0469 and 0.0257). Controlled core moments and restored epsilon-P jets are callable.
