@@ -28,6 +28,26 @@ def q_coefficients(iv,beta,z,degree):
     return values
 
 
+def core_moment_second_derivatives(coefficients,r):
+    """Exact second axial derivatives of the five finite polynomial integrals."""
+    f=coefficients['F'];u=coefficients['Uz'];zero=f[0][0]*0
+    result={name:zero for name in ('theta','z','theta_z','z_theta','p')}
+    def product_second(a,b):return 2*(a[2]*b[0]+a[1]*b[1]+a[0]*b[2])
+    for n,row in enumerate(f):result['theta']+=4*row[2]*r**(n+2)/(n+2)
+    for n,row in enumerate(u):result['z']+=2*row[2]*r**(n+1)/(n+1)
+    for i,fi in enumerate(f):
+        for j,uj in enumerate(u):
+            n=i+j+2;result['theta_z']+=2*product_second(fi,uj)*r**n/n
+        for j,fj in enumerate(f):
+            n=i+j+1;value=product_second(fi,fj)
+            result['p']+=value*r**n/n
+            result['z_theta']-=value*r**(n+1)/(n+1)
+    for i,ui in enumerate(u):
+        for j,uj in enumerate(u):
+            n=i+j+1;result['z_theta']+=product_second(ui,uj)*r**n/n
+    return result
+
+
 def run(radial_degree=18,jet_depth=2):
     precision=473;iv=MPIntervalContext();iv.dps=precision
     report=json.loads(Path(__file__).with_name('lei_ren_part1_paper_uniform_pressure_high_derivatives.json').read_text())
@@ -68,16 +88,18 @@ def run(radial_degree=18,jet_depth=2):
             rows[key]=parts;field[key]=dict(zip(('value','first_Z','second_Z'),[endpoints(v)[1] for v in sums]))
         true_fields=evaluate_component_core_coefficients(true,radius,iv.mpf(center),iv.mpf(axis.delta),square_root=iv.sqrt)
         fixed_fields=evaluate_component_core_coefficients(fixed,radius,iv.mpf(center),iv.mpf(axis.delta),square_root=iv.sqrt)
+        true_fields['moments_ZZ']=core_moment_second_derivatives(true,radius)
+        fixed_fields['moments_ZZ']=core_moment_second_derivatives(fixed,radius)
         moment_errors={}
         for name in ('theta','z','theta_z','z_theta','p'):
             moment_errors[name]={}
-            for label,key in (('value','moments'),('first_Z','moments_Z')):
+            for label,key in (('value','moments'),('first_Z','moments_Z'),('second_Z','moments_ZZ')):
                 diff=true_fields[key][name]-fixed_fields[key][name]
                 lo,hi=endpoints(diff)
                 moment_errors[name][label]=dict(error_interval=diff,absolute_error_upper=max(abs(lo),abs(hi)))
         out=dict(Z=center,radial_degree=radial_degree,Z_jet_depth=jet_depth,precision=precision,
             field_coefficient_error_upper_bounds_at_R4_over_Lambda=field,coefficient_errors=rows,
-            five_core_moment_pressure_error_bounds=moment_errors,core_moment_second_Z_error_enclosed=False,
+            five_core_moment_pressure_error_bounds=moment_errors,core_moment_second_Z_error_enclosed=True,
             pressure_error_propagated=True,pressure_datum='same stored finite masses and exact q powers plus uniform analytic-integral error',
             axis_data_held_fixed=True,pointwise_core_only=True,uniform_core_error_enclosed=False,
             radial_series_remainder_enclosed=False,core_RK_error_enclosed=False,

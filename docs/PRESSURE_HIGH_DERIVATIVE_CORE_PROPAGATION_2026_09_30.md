@@ -22,13 +22,13 @@ At R=4/Lambda, the pressure-driven finite-core axial velocity error upper bounds
 
 The corresponding pressure errors are about 0.32085, 1.02672, and 6.21167 in profile pressure units. These are pressure errors, not momentum residuals. The pressure scale Pstar squared is approximately 1.446e12. They must not be compared directly to the full corrected PDE residual target.
 
-The receipt also propagates the pressure uncertainty into all five finite-core radial moments and their first axial derivatives, using the exact polynomial integral formulas. This only covers the core contribution at this axial location, not the full core-to-exterior defect functions or terminal identities. Second derivatives of the five moments remain separate work.
+The receipt also propagates the pressure uncertainty into all five finite-core radial moments and their first two axial derivatives, using the exact polynomial integral formulas. This only covers the core contribution at this axial location, not the full core-to-exterior defect functions or terminal identities.
 
 Rational divisions in `core_coefficients` now use the supplied scalar arithmetic, so interval callers obtain directed rational operations. The field/moment evaluator accepts an optional square-root provider for interval arithmetic while preserving existing scalar and pressure-polynomial behavior.
 
 ## Evidence and remaining scope
 
-The resolved fixture checks 108 independent q-power derivatives against the analytic envelopes, 162 nonlinear coefficient containments for independent pressure perturbations, and 30 field-moment containments. The existing pressure-polynomial regression also passes. These fixtures verify implementation linkage; the uniform pressure conclusion is supported by the analytic derivative envelope.
+The resolved fixture checks 108 independent q-power derivatives against the analytic envelopes, 162 nonlinear coefficient containments for independent pressure perturbations, and 45 field-moment containments. Five independent second moment derivative checks and the existing pressure-polynomial regression also pass. These fixtures verify implementation linkage; the uniform pressure conclusion is supported by the analytic derivative envelope.
 
 This does not enclose errors in the axis data, original paper parameters, infinite radial series remainder, analytic core continuation, RK continuation, transition/annulus integrals, full five-defect closure, exterior velocity solution or temporal coefficient recursion. In particular, the very small Uz error above is local pressure-only evidence and cannot certify the whole field.
 

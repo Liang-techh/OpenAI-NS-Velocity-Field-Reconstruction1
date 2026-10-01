@@ -2,7 +2,8 @@
   "all_checks_passed": true,
   "independent_q_power_derivative_checks": 108,
   "nonlinear_interval_coefficient_containment_checks": 162,
-  "five_moment_interval_containment_checks": 30,
+  "five_moment_interval_containment_checks": 45,
+  "independent_second_moment_derivative_checks": 5,
   "pressure_polynomial_arithmetic_regression": {
     "maximum_scaled_difference": "2.5729667790087687812659338018e-101",
     "parameters": [

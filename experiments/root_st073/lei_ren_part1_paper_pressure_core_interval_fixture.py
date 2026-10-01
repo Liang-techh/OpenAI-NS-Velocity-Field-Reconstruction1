@@ -4,6 +4,7 @@ from pathlib import Path
 import mpmath as mp
 from mpmath.ctx_iv import MPIntervalContext
 from lei_ren_part1_paper_core_recursion import core_coefficients
+from lei_ren_part1_paper_pressure_core_interval_propagation import core_moment_second_derivatives
 from lei_ren_part1_paper_component_pressure_core import fixture as component_fixture,evaluate_component_core_coefficients
 from lei_ren_part1_paper_uniform_pressure_high_derivatives import derivative_envelope
 from lei_ren_part1_paper_schedule_endpoint_enclosures import endpoints
@@ -29,6 +30,7 @@ def run():
         enclosure=core_coefficients(z,delta,P0_Z_taylor=uncertain,scalar_converter=iv.mpf,**kwargs)
         containment=0;moment_containment=0
         interval_field=evaluate_component_core_coefficients(enclosure,iv.mpf(".2"),iv.mpf(z),iv.mpf(delta),square_root=iv.sqrt)
+        interval_field['moments_ZZ']=core_moment_second_derivatives(enclosure,iv.mpf('.2'))
         for direction in (-1,0,1):
             sample=[p+direction*(-1)**k*e for k,(p,e) in enumerate(zip(base,error))]
             result=core_coefficients(z,delta,P0_Z_taylor=sample,**kwargs)
@@ -39,14 +41,27 @@ def run():
                         assert lo<=value<=hi,(key,value,lo,hi)
                         containment+=1
             sample_field=evaluate_component_core_coefficients(result,mp.mpf('.2'),z,delta)
-            for key in ('moments','moments_Z'):
+            sample_field['moments_ZZ']=core_moment_second_derivatives(result,mp.mpf('.2'))
+            for key in ('moments','moments_Z','moments_ZZ'):
                 for name,value in sample_field[key].items():
                     lo,hi=endpoints(interval_field[key][name]);assert lo<=value<=hi
                     moment_containment+=1
+        def moment_at_shift(t,name):
+            shifted=dict(result)
+            for key in ('F','Uz','P'):
+                shifted[key]=[[mp.fsum(v*t**k for k,v in enumerate(row)),
+                    mp.fsum(k*v*t**(k-1) for k,v in enumerate(row) if k),
+                    mp.fsum(k*(k-1)*v*t**(k-2)/2 for k,v in enumerate(row) if k>1)] for row in result[key]]
+            return evaluate_component_core_coefficients(shifted,mp.mpf('.2'),z,delta)['moments'][name]
+        second=core_moment_second_derivatives(result,mp.mpf('.2'))
+        for name in second:
+            independently=mp.diff(lambda t:moment_at_shift(t,name),mp.mpf(0),2)
+            assert abs(independently-second[name])<mp.mpf('1e-95')
         component=component_fixture()
     report=dict(all_checks_passed=True,independent_q_power_derivative_checks=checks,
         nonlinear_interval_coefficient_containment_checks=containment,
         five_moment_interval_containment_checks=moment_containment,
+        independent_second_moment_derivative_checks=5,
         pressure_polynomial_arithmetic_regression=component,
         point_samples_are_regression_only=True,uniform_pressure_proof='analytic coefficient envelope',
         core_fixture_scope='resolved finite radial recurrence; no exact infinite profile or RK claim')
