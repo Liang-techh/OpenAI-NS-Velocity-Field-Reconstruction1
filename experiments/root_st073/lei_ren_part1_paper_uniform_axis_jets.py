@@ -9,12 +9,15 @@ from lei_ren_part1_paper_interval_taylor import IntervalTaylor,constant
 from lei_ren_part1_paper_schedule_endpoint_enclosures import endpoints
 
 
-def uniform_axis_jets(iv,*,radius,j,Lambda,logC,delta,length):
+def uniform_axis_jets(iv,*,radius,j,Lambda,logC,delta,length,axial_interval=None):
     a=iv.mpf(radius);j=iv.mpf(j);lam=iv.mpf(Lambda);lc=iv.mpf(logC);dt=iv.mpf(delta)
     if not 0<endpoints(a)[0]<=endpoints(a)[1]<=1:raise ValueError('Require radius in (0,1]')
     if not 0<endpoints(j)[0]<=endpoints(j)[1]<endpoints(a)[0]:raise ValueError('Require 0<j<radius')
     if endpoints(lam)[0]<=0 or endpoints(dt)[0]<=0 or endpoints(dt)[1]>=1:raise ValueError('Positive Lambda and 0<delta<1 required')
-    order=length-1;z=IntervalTaylor.variable(iv,iv.mpf([-endpoints(a)[1],endpoints(a)[1]]),order)
+    center=iv.mpf([-endpoints(a)[1],endpoints(a)[1]]) if axial_interval is None else iv.mpf(axial_interval)
+    zl,zh=endpoints(center)
+    if zl < -endpoints(a)[1] or zh > endpoints(a)[1]:raise ValueError('Axial interval outside radius')
+    order=length-1;z=IntervalTaylor.variable(iv,center,order)
     one=constant(iv,1,order);u=4*z+j;L=one-(z*z)*dt;H=z*((1-dt)/2)+(one-z*z)*u
     # Root bracket: H(-j)<0<H(0), H' positive on [-j,0].
     left=-j;Hleft=(1-dt)*left/2+(1-left**2)*(4*left+j)

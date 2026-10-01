@@ -22,6 +22,29 @@ def absolute_upper(value):
     lo,hi=endpoints(value);return max(abs(lo),abs(hi))
 
 
+def accepted_pressure_axis_rows(ctx,z,length,error_path):
+    """Common accepted finite datum plus its certified integral contribution."""
+    error_path=Path(error_path);error=json.loads(error_path.read_text())
+    if length>len(error['derivatives']):raise ValueError('Insufficient pressure error derivatives')
+    if max(abs(v) for v in endpoints(z))>mp.mpf(error['radius']):
+        raise ValueError('Axial interval outside pressure error receipt')
+    profile,alignment=accepted_profile();datum=ContinuousPreheatPressure(profile,quadrature_order=192)
+    components=datum.taylor_components(0,center=0)['components']
+    pressure=[ctx.mpf(0) for _ in range(length)]
+    for name,row in components.items():
+        expected=mp.make_mpf(tuple(alignment['stages'][name]['accepted_mass']['exact_mpf_tuple']))
+        if row['value_at_Z0']!=expected:raise AssertionError('Accepted datum changed: '+name)
+        atoms=row['atoms'] if row['kind']=='q_power_atoms' else [dict(beta=row.get('beta',0),atom_at_Z0=row['value_at_Z0'])]
+        for atom in atoms:
+            values=q_coefficients(ctx,atom['beta'],z,length-1)
+            for k in range(length):pressure[k]-=ctx.mpf(atom['atom_at_Z0'])*values[k]
+    physical=ctx.exp(ctx.mpf(28));p0=[]
+    for nominal,row in zip(pressure,error['derivatives']):
+        size=mp.make_mpf(tuple(row['normalized_Taylor_coefficient_error_upper']['exact_mpf_tuple']))
+        p0.append(IntervalDifference(ctx,physical*nominal,physical*ctx.mpf([-size,size])))
+    return p0,alignment
+
+
 def finite_norms(core,r,ctx):
     """C3 upper sums in x=R/Ra in [0,1], Z in [-1,1]."""
     out={}
@@ -55,25 +78,11 @@ def finite_norms(core,r,ctx):
 def run():
     base=Path(__file__).parent;precision=473;ctx=MPIntervalContext();ctx.dps=precision
     error_path=base/'lei_ren_part1_paper_global_pressure_high_derivatives.json'
-    error=json.loads(error_path.read_text());profile,alignment=accepted_profile()
-    datum=ContinuousPreheatPressure(profile,quadrature_order=192)
     with mp.workdps(precision+40):
         degree=18;length=degree+4;z=ctx.mpf([-1,1]);lam=ctx.mpf('1e36');dt=ctx.mpf('1e-200');j=ctx.mpf('1e-14')
         axis=uniform_axis_jets(ctx,radius=1,j=j,Lambda=lam,logC='5e151',delta=dt,length=length)
         print('global axis jets ready',flush=True)
-        components=datum.taylor_components(0,center=0)['components']
-        pressure=[ctx.mpf(0) for _ in range(length)]
-        for name,row in components.items():
-            expected=mp.make_mpf(tuple(alignment['stages'][name]['accepted_mass']['exact_mpf_tuple']))
-            if row['value_at_Z0']!=expected:raise AssertionError('Accepted datum changed: '+name)
-            atoms=row['atoms'] if row['kind']=='q_power_atoms' else [dict(beta=row.get('beta',0),atom_at_Z0=row['value_at_Z0'])]
-            for atom in atoms:
-                values=q_coefficients(ctx,atom['beta'],z,length-1)
-                for k in range(length):pressure[k]-=ctx.mpf(atom['atom_at_Z0'])*values[k]
-        physical=ctx.exp(ctx.mpf(28));p0=[]
-        for nominal,row in zip(pressure,error['derivatives']):
-            size=mp.make_mpf(tuple(row['normalized_Taylor_coefficient_error_upper']['exact_mpf_tuple']))
-            p0.append(IntervalDifference(ctx,physical*nominal,physical*ctx.mpf([-size,size])))
+        p0,alignment=accepted_pressure_axis_rows(ctx,z,length,error_path)
         convert=IntervalDifference.converter(ctx)
         core=core_coefficients(z,'1e-200',F0_Z_taylor=axis['F0'],U0_Z_taylor=axis['U0'],P0_Z_taylor=p0,
                                radial_degree=degree,precision=precision,scalar_converter=convert)

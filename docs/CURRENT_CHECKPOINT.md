@@ -1,3 +1,7 @@
+## 2026-09-30: Exact amplitude-factored core and radial positivity
+
+Coupled finite recurrence now supports F=F0 A with derivative A_Z+ell A, retained F0-squared swirl and pressure terms, and unchanged P0. Independent unfactored coefficient fixture passes below1e-170. Directed Bernstein bounds establish F/F0>=0.282979986880543 approximately on all R in [0,Ra] at Z=.3, with reciprocal axial C3 slice bounds. One global Z box remains inconclusive from rational-gradient interval dependence; no zero is observed or claimed. Next: full-domain axial subdivision concentrated near H0 root / correlated rational products, then global reciprocal core C3, frozen K contributions and radial remainder. See AMPLITUDE_FACTORED_CORE_2026_09_30.md. Global cone and temporal recursion remain open.
+
 ## 2026-09-30: Whole-axis finite-core C3 contributions
 
 Coherent pressure derivative errors now extend to |Z|<=1. Directed degree18 finite core covers x=R/Ra in [0,1] and all real Z in [-1,1], with mixed C3 bounds and full F-squared pressure integration. Combined axial exit C2 deviation of Uz-4Z and mz/Ra-4Z is <=2.00000115626372515e-14. Fifteen independent actual-inlet containment checks pass. Next: positive normalized core F lower bounds / reciprocal C3, frozen D/E and reciprocal D, and infinite radial remainder before full K and cone certification. See GLOBAL_FINITE_CORE_NORM_CONTRIBUTIONS_2026_09_30.md. True temporal recursion remains open.

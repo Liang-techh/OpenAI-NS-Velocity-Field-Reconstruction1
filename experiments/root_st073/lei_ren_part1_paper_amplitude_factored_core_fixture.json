@@ -1,0 +1,105 @@
+{
+  "all_checks_passed": true,
+  "radial_degree": 4,
+  "Z_derivative_depth": 3,
+  "jet_length": 8,
+  "points": [
+    {
+      "Z": "-0.4",
+      "max_scaled_equivalence_error": "8.26332469830071882677437008518e-171",
+      "max_scaled_pressure_formula_error": "6.80636017619318379384554226035e-171",
+      "row_lengths": {
+        "A": [
+          8,
+          7,
+          6,
+          5,
+          4
+        ],
+        "Uz": [
+          8,
+          7,
+          6,
+          5,
+          4
+        ],
+        "P": [
+          8,
+          7,
+          6,
+          5,
+          4
+        ]
+      },
+      "axis_amplitude_row_is_one": true
+    },
+    {
+      "Z": "0.0",
+      "max_scaled_equivalence_error": "8.28042160527809516877946784448e-171",
+      "max_scaled_pressure_formula_error": "1.03667736036141141773013071878e-171",
+      "row_lengths": {
+        "A": [
+          8,
+          7,
+          6,
+          5,
+          4
+        ],
+        "Uz": [
+          8,
+          7,
+          6,
+          5,
+          4
+        ],
+        "P": [
+          8,
+          7,
+          6,
+          5,
+          4
+        ]
+      },
+      "axis_amplitude_row_is_one": true
+    },
+    {
+      "Z": "0.3",
+      "max_scaled_equivalence_error": "9.86828453861914872594227243347e-171",
+      "max_scaled_pressure_formula_error": "3.0767012779269771364192066302e-171",
+      "row_lengths": {
+        "A": [
+          8,
+          7,
+          6,
+          5,
+          4
+        ],
+        "Uz": [
+          8,
+          7,
+          6,
+          5,
+          4
+        ],
+        "P": [
+          8,
+          7,
+          6,
+          5,
+          4
+        ]
+      },
+      "axis_amplitude_row_is_one": true
+    }
+  ],
+  "data": {
+    "F0": "exp(-2 Z^2)",
+    "ell": "-4 Z",
+    "S": "exp(-4 Z^2)",
+    "U0": "4 Z + .01",
+    "P0": "-3/(1+Z^2)^2",
+    "delta": ".01"
+  },
+  "comparison": "Reconstructed F rows F0*A against core_coefficients F; Uz and physical P rows compared directly.",
+  "scope": "Resolved algebraic fixture only; no actual source generation or global core claim."
+}
