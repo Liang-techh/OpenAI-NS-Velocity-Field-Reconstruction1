@@ -1,3 +1,7 @@
+## 2026-10-01: whole-axis analytic core moment envelopes
+
+DONE C120-A3: five core moments have analytic ordinary axial coefficient envelopes through order 3 for all Z in [-1,1], preserving F0/S and the accepted P0. See GLOBAL_CORE_MOMENTS_2026_10_01.md. This is not a finite atlas or terminal closure. Next: actual candidate comparison/transition with analytic driver derivatives; old Z finite differences are unsuitable at Lambda120.
+
 ## 2026-10-01: generalized-center directed core algebra ready
 
 PARTIAL C120-A2: functional_core_recursion.py now accepts explicit real center intervals and a variable initial jet length. At degree4, .3 reproduces90 intervals /180 endpoints of the unchanged production recurrence exactly; independent factored/unfactored comparisons pass on -.4 +/-1e-40 and 0 +/-1e-40. Required derivative depth and integer degrees are guarded; all physical pressure/swirl-square/cross terms remain. Existing degree124 hashed drivers/states are untouched. This is an algebra prerequisite, not a completed whole-axis candidate atlas.
