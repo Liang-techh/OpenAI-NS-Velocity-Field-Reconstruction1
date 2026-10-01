@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `cc8bad62569b1eb57c0277bf86337965c770d8be`.
+The inspected `main` head before this update is `6bd089841880087d6146c9fdeebfb0086fa02e96`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`542988d3456b19358dc071b54dac77129d45ed40`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/542988d3456b19358dc071b54dac77129d45ed40)
+[`4140114fd09eb71472bee27cbc5153c24609a50b`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/4140114fd09eb71472bee27cbc5153c24609a50b)
 on `codex/st073-transition-next`, observed October 1. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,62 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-01 batch: shared exit family and new inlet-tolerance core
+
+The [36af71ab actual-exit report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/36af71ab54068c54219268340ef8ccfdfc7d83e9/docs/LOGARITHMIC_ACTUAL_EXIT_2026_10_01.md)
+records the old Md40/j=1e-14 degree110 core reaching R110, but used independently
+selected width/plateau parameters. The [036fdd9b shared-family report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/036fdd9bfa52a08684c631aec112308b0fa250cf/docs/SHARED_EXIT_PARAMETER_FAMILY_2026_10_01.md)
+then propagates h_b=epsilon_b=cstar*K^-100 through comparison, actual bridge,
+continuation and terminal switches on Z in [.49,.51]. It records 32 comparison,
+48 bridge and32 switch cells, and one relaxed weak-branch R110 interface check.
+This advances the previously pending old-j exit, not whole-exit cone coverage.
+The [shared parameter receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/036fdd9bfa52a08684c631aec112308b0fa250cf/experiments/root_st073/lei_ren_part1_paper_shared_exit_parameters.json)
+explicitly retains full_Section9_parameter_admission=false. K remains symbolic;
+the envelope [0,h_upper] neither chooses zero width nor certifies its missing
+functional norm bounds. Preheat Kp=17 does not restore corrected heat pressure.
+
+The [4140114f new-core report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/4140114fd09eb71472bee27cbc5153c24609a50b/docs/SHARED_INLET_TOLERANCE_CORE_2026_10_01.md)
+records fixed bump constants C_A=344, C_Q=1081, C_S=57749553 with explicit
+inherited hypotheses. Their selected hierarchy gives e_star~1.39827e-19 and
+j=eta_tol/8~1.74784e-22. Old j=1e-14 is about57.2 million times too large for
+this hierarchy; this is not an impossibility result for other constant choices.
+The outer fourteen-atom pressure datum is j-independent and reusable, but U0,
+sigma, the analytic tube, primitive G and logC change. Older F21/F22/F23 receipts
+remain historical old-j evidence; their core coefficients and R110 check cannot
+be transferred to the new core. The earlier source-alignment audit and its later
+rebuilt pressure budget retain their original source/scope, not universal budgets.
+
+Fresh resolvent/20-term majorant gates and the
+[degree144 tail admission](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/4140114fd09eb71472bee27cbc5153c24609a50b/experiments/root_st073/lei_ren_part1_paper_shared_core_tail_admission.json)
+are recorded for the new tube. The ~6.84211e-14 maximum bounds mixed derivatives
+through total order3 of Phi/Uz on scaled radius[0,4.1]; it is not a physical-R
+bound, raw-Psi target, complete finite-core error or full K certificate.
+The [paired producer receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/4140114fd09eb71472bee27cbc5153c24609a50b/experiments/root_st073/lei_ren_part1_paper_shared_interval_core_Z049_Z051.json)
+has completed_radial_order=9 and completed_target=false (148 initial axial jets
+on [.49,.51]). Its analytic_core_family_sha256 is
+`a4056322a3946c0ec0d43cc14d6f82d9a022410a5c077bab3577e87f8e9d7bdf`;
+the [new seed receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/4140114fd09eb71472bee27cbc5153c24609a50b/experiments/root_st073/lei_ren_part1_paper_shared_core_seed_check.json)
+records seed acceptance, including fixed jets, new tube/anchor, pressure units
+and positive-upper swirl enclosure. These are committed results, not independent
+replays or mathematical verification by this supervision update.
+
+Replay order is in the pinned new-core report: fixed bump constants, fresh tube,
+linear/commuting resolvents, core majorant, tail admission, source binding, then
+`shared_interval_core.py --seconds 60 --max-steps 144` sequential batches and seed
+checks. Never run two recurrence writers
+or instantiate the old exit loader on the new state. Completion must be read from
+the paired receipt, not from the admitted target degree.
+
+Remaining gates include orders10..144 and fresh finite-plus-tail moments/exit;
+new-family h_b rebinding, K1/full physical C3 K and reciprocal norms, supplied
+exit input and frozen Df/Ef inequalities, radius compatibility; long reshape,
+all five functional defects/C2 control, uniform inverse and pressure-compatible
+reference identities. Whole-axis cone/stress, inverse/outer tails, exact heat
+matching, original-parameter admission, finite energy, time recursion and full
+Cartesian NS closure/residual remain unestablished. No older inverse or cone
+certificate is promoted to this new source. Section9, stress lift and the NS
+1e-3 target remain incomplete.
 
 ### 2026-10-01 batch: actual Md40 finite core and same-source exit enclosures
 
@@ -1305,6 +1361,12 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [4140114f research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36909435712)
+finished failure. Its actual constrained log reports the same original13 failed
+identifiers/423 passed; four smoke/slice jobs pass and full historical tests skip.
+No selected governance regression appears. This CI does not independently verify
+the bump majorants, new tube, scaled tails or uncompleted coefficient factory.
 
 The [542988d3 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36900810397)
 actual constrained log has original13 failed identifiers/423 passed. Four
