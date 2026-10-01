@@ -1,3 +1,7 @@
+## 2026-09-30: Inner exit collar stress through first width
+
+Shared-pressure and actual five-moment stress coefficients now include leading and first-width shear/inertial/total terms at Z=.3. Leading T=(1-chi)I, S=-chi I; exit leading shear vanishes but first-width shear equals -I. Directed identity checks pass at six locations. See INNER_EXIT_COLLAR_LOW_WIDTH_STRESS_2026_09_30.md. Finite-width cone and directional margins remain open; second-width stress requires third-width velocities. No temporal recursion or full residual completion claimed.
+
 ## 2026-09-30 spatial collar coefficient coverage
 
 - [x] Derive first/second-width formulas at general s and enclose J/K primitives over the inner exit collar.

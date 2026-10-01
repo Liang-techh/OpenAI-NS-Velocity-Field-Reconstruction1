@@ -1,3 +1,7 @@
+## 2026-09-30: Inner exit collar stress through first width
+
+Shared-pressure and actual five-moment stress coefficients now include leading and first-width shear/inertial/total terms at Z=.3. Leading T=(1-chi)I, S=-chi I; exit leading shear vanishes but first-width shear equals -I. Directed identity checks pass at six locations. See INNER_EXIT_COLLAR_LOW_WIDTH_STRESS_2026_09_30.md. Finite-width cone and directional margins remain open; second-width stress requires third-width velocities. No temporal recursion or full residual completion claimed.
+
 ## 2026-09-30 inner exit collar spatial coefficient enclosure
 
 All eight first/second-width coefficients and five unnormalized moment coefficients now have directed enclosures over64 whole cells covering s=[0,2], at Z=.3. Conditional pressure error for second-width u is <=8.17e-36 over this domain. This is the inner exit collar, not exterior heat collar or full nonlinear solution; omitted orders and global axial/stress closure remain open. See INNER_EXIT_COLLAR_SPATIAL_WIDTH_BOUNDS_2026_09_30.md.
