@@ -1,3 +1,9 @@
+## 2026-09-30: candidate accepted physical pressure jets ready
+
+Directed physical P0 Taylor intervals at Z=0.3 now cover orders 0 through 160 (260 digits), including all 14 accepted pressure stages without pressure-parameter truncation. Eight independent fixed-beta coefficient checks pass and the old nominal pressure is enclosed. See docs/CANDIDATE_PRESSURE_JETS_2026_09_30.md.
+
+Next: resumable coupled candidate core at Lambda=1e48, radial degree124 and initial axial length128; preserve physical pressure and F0-squared couplings, propagate coefficient errors, then integrate matching. This does not complete five moments, collar matching or temporal recursion. Original parameter errors remain outside the accepted-datum claim.
+
 ## 2026-09-30: Candidate global positivity and actual analytic Taylor tails
 
 Applied Lambda1e48 contraction norms to the infinite analytic core: F/F0>=0.25594623652652049 on allscaledR[0,4.1],Z[-1,1]. Exact radial Taylor truncation tails are now bounded with known norms; normalized mixed C3 tails<=1e-12 require radialdegree124 and axislength128. This is conditional on accepted stored data and does not identify any unverified finite adapter with those exact coefficients. Next: directed fullP0 highjets, resumable candidate coupled coefficients, moments/pressure and sharedcollar. Physical derivative conversion/sourceerrors remain separate. See CANDIDATE_ANALYTIC_CORE_TAILS_2026_09_30.md.
