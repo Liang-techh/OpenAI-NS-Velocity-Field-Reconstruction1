@@ -1,3 +1,9 @@
+## PARTIAL C120-F16 — fresh outer reference and angular slope field
+
+Installed exact post-repair reference continuation x=R/Rm from 2 to exp(6), then Eq. (4.6) angular slope transition y=log(R/Rref) in [0,1]. Same implicit terminal moment identities, local C1 family, five cumulative moments and analytic P0+Mp; directed monotone rectangles enclose the primitive and three angular masses. Independent moderate-scale ODE fixture checks71 quantities; inlet C1 moment overlap, exact terminal J=1/2/shear=-2 and nested refinement pass. Six production points certify only relaxed cone; no whole-stage cone claim. See docs/CONTROLLED_OUTER_SLOPE_2026_10_01.md.
+
+Important new evidence: the accepted pressure schedule fixes Md=0.5, while the source paper requires Md>1 and sufficiently large, with Pstar>exp(exp(Md)+10). The new initial slope stage does not use Md. Next resolve a coherent paper-compatible outer parameter regime and propagate any changed schedule into pressure/source/repair data; do not silently claim the old Md=0.5 satisfies the paper. Then implement axial turnoff, the -1/2-mu buffer, Section11 strong-cone input, pulse/flatten/waiting and exact heat exterior. Genuine temporal recursion, oscillatory correction, whole-axis/higher smoothness, full finite energy and Cartesian NS residual remain incomplete.
+
 ## PARTIAL C120-F15 — complete connecting relaxed cone fromR110 toRm
 
 Resolved the preceding long-reshape margin/direction non-certificates by analytically cancelling common angular amplitude, keeping physical source-Z atoms including ell, grouping shared zeta*J terms, and centring axial mass. Two complete cells cover R110..Rz;64 directed cells cover restoration/reference continuation Rz..Rm. The composed certificate verifies common core/family, dependencies and gap-free exact radial boundaries. All66 complete cells certify the relaxed kappa<=2 cone on Z in [0.49,0.51]. No velocities, moments or pressure were fitted or changed.

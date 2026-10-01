@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "independent_fixture_containments": 71,
+  "exact_inlet_five_moment_C1_overlap": true,
+  "exact_terminal_J_and_shear": true,
+  "nested_rectangle_refinement": true,
+  "numerical_oracle": "SciPy DOP853 independent coupled primitive ODE, moderate synthetic fixture only",
+  "numerical_oracle_is_not_a_rigorous_certificate": true,
+  "input_hashes": {
+    "lei_ren_part1_paper_interval_outer_slope_field_check.py": "d7babe90954b2106260bd57a84e436bd72a47a14078cefd16ab9dff8996273a7",
+    "lei_ren_part1_paper_interval_outer_slope_field.py": "906e5efa703f53f2d61762d3b7dca38d521ee3649e00962a1f0a81ddfd3254d5"
+  }
+}
