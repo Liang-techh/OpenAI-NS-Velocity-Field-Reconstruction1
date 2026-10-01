@@ -1,3 +1,9 @@
+## 2026-10-01: PARTIAL C120-M7 directed bump integrals and refined inverse
+
+Actual paper exponential-bump weighted integrals now have directed interval Taylor and endpoint-tail bounds. The original five-bump controls show a real finite-quadrature bias: second-row residual approximately 1.13735e-27, interval width 9.41e-35, excluding zero. Re-solving with enclosed-weight midpoints preserves the original nominal source targets and reduces the directed finite-center residual bounds to less than 5e-35 (values) and 1.3e-56 (first Z); all ten intervals include zero.
+
+See docs/CANDIDATE_BUMP_ENCLOSURES_2026_10_01.md. Run experiments/root_st073/lei_ren_part1_paper_candidate_enclosed_weight_inverse.py after generating the directed weight receipt. The original inverse and cone scan are retained. The refined controls are not yet installed into the physical field; source errors, ring remainders, axial functional closure, uniform cone and temporal recursion remain open. Next: consistent paper-normalized partial moment integration and installation of the refined correction field, then source/axial bounds and outer matching.
+
 ## 2026-10-01: PARTIAL C120-M6 actual repaired matching cone diagnostic
 
 The actual Lambda120 five-bump repaired field passes the relaxed connecting-region cone at all 39 support-aware samples at Z = 0.3. Kappa remains approximately 0.8, so the stronger kappa > 2 admissible condition is not established here. Pressure datum and first Z derivative remain unchanged. Ratios are formed before evaluation in the retained pressure/width ring. This is finite nominal sampling, not a uniform cone certificate.
