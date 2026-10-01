@@ -1,3 +1,11 @@
+# F38-C5 future energy / axial amplitude checkpoint - 2026-10-01
+
+Complete corrected future swirl energy through flatten, power buffer, both angular bumps, steep/waiting, epsilon collar and infinite Gamma exterior is now source-bound and C1 callable. Its Section7.34 weighting selects the unique actual whole-Z positive ap branch in[1.0086895652225,1.0114075201817]. Actual affine c1/c2 functions use the selected amplitude and true incoming value/derivative jets with explicit fixed row-factor scaling. Formal super-small positive end-energy scales and heat a*S factors remain nonzero. Energy11 and amplitude7 independent identities plus source/branch gates pass.
+
+Read docs/COMPLETE_FUTURE_ENERGY_AND_AXIAL_AMPLITUDE_2026_10_01.md. Reproduce with compliant_reconstruction.py --stage energy (usual experiments/root_st073/lei_ren_part1_paper_ prefix). NEXT: actual compact axial pulse/partial primitives -> allfive corrected outer/heat assembly -> whole-Z terminal closure, C4/cone, global stress/flat remainder -> true temporal recursion. Mztheta(Rv) must be half the positive future energy, not zero. Full physical energy, full outer matching, cone/stress and temporal completion remain false.
+
+---
+
 # F38-C angular/pressure checkpoint - 2026-10-01
 
 Actual whole-Z smooth angular/pressure two-bump recovery is now implemented for the compliant family. Correlated Xf(0)-Xf(Z), exact preheat waiting identity, Gamma heat defects in Rrel units and a stronger finite logS cap feed the full quadratic pressure system. A uniform contraction and actual derivative Jacobian provide coefficient C1 enclosures; partial angular/pressure/energy and allfive cumulative changes are callable. Twenty-three independent identities/source invariants, five weight quadratures, two correlated flatten fixtures and whole-Z branch gates PASS.

@@ -1,3 +1,20 @@
+# F38-C5 task handoff - 2026-10-01
+
+- [x] F38-C5a: Assemble complete corrected future swirl energy in Rv*Utheta(Rv,Z)^2 and Section7.34 Rp units; include100-unit flatten, -30logmu power, both angular bumps, steep Ts/unit transitions, waiting, epsilon collar and full Gamma tail; retain C1/signed changes/formal a*S.
+- [x] F38-C5b: Select actual positive smooth ap in[1.0086895652225,1.0114075201817] from complete energy and true incoming source; recover selected c1/c2 signs, C1 jets, exact affine/quadratic relations and positive formal end-energy caps. Explicit row factor Qi=mi*exp(-13lambda_i/mu-common_logpref) multiplies actual value and derivative jets.
+- [ ] F38-C6a: Implement gp(mu*t), selected ap/c1/c2 and the two end bumps as callable axial fields with segmented log coordinates. Preserve swirl q^-1 and fixed slope throughout the pulse; no early flatten.
+- [ ] F38-C6b: Implement both actual partial axial/mixed moment primitives, with current-radius normalization and retained incoming/late tails. Use exact divided-difference recovery for nearly equal rows; do not subtract enormous rounded absolute coordinates or independently cancelling moment boxes.
+- [ ] F38-C6c: Implement pulse partial energy and allfive primitive changes; prove terminal Mz=Mtheta_z=0, and Mztheta(Rv)=half of positive future energy. Derive Ur from streamfunction/moment identities; exact no divergence penalty.
+- [ ] F38-D1: Continue terminal pulse moments through flatten, angular repairs, steep/waiting/collar/heat. Compose actual corrected full profiles and five primitives; preserve source P0 and nonzero backward targets.
+- [ ] F38-D2: Prove whole-Z terminal identities, axis regularity, pressure compatibility, flat support interfaces and core/outer/heat smooth matching; add a coherent similarity-space callable field.
+- [ ] F39-A: Obtain C4 correction/pulse bounds and quantitative cone margins in every remaining region, including heat collar; inner cone alone does not prove this.
+- [ ] F39-B: Build global admissible stress and separate flat remainder, maxima/L2/scale diagnostics and exact physical units.
+- [ ] F40/F41: Genuine n-dependent coefficient recurrence with common domain/order-specific repair/smooth sum; mean/oscillatory cancellation; independent Cartesian residual and full time-dependent vortex diagnostics.
+
+Evidence: docs/COMPLETE_FUTURE_ENERGY_AND_AXIAL_AMPLITUDE_2026_10_01.md and compliant_future_swirl_energy / compliant_axial_amplitude_selection pairs with independent check pairs. --stage energy reproduces this layer. Actual ap is now selected; actual pulse field, full outer closure, full physical energy/cone/stress/flat remainder/temporal recursion remain pending. Preserve unrelated edits, legacy identities and formal nonzero scales.
+
+---
+
 # F38-C angular/pressure task handoff - 2026-10-01
 
 - [x] F38-C1: Recover correlated rpre(Z) from exact Z0 waiting identity and flatten divided difference; preserve exact axis zero, evenness, Xv memory and nonzero mu^[30(1-mu)] scale.

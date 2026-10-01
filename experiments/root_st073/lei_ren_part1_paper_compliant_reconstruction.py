@@ -2,7 +2,8 @@
 
 Stops on the first failed prerequisite. Each module writes its separate,
 source-bound receipt; no legacy .01 file is edited. The angular stage solves
-the functional angular/pressure correction. Actual ap selection, complete
+the functional angular/pressure correction. The energy stage supplies the
+complete future swirl energy and selects actual ap/c1/c2 functions. Complete
 outer assembly and temporal recursion remain unfinished.
 """
 import argparse
@@ -23,11 +24,13 @@ OUTER=('outer_initial','outer_initial_check','outer_buffer','outer_buffer_check'
        'outer_pulse_map','outer_pulse_map_check','outer_angular_candidate',
        'outer_angular_candidate_check','exact_heat_component','exact_heat_component_check')
 ANGULAR=('outer_angular_repair','outer_angular_repair_check')
+ENERGY=('future_swirl_energy','future_swirl_energy_check',
+        'axial_amplitude_selection','axial_amplitude_selection_check')
 
 
 def stages(stage):
-    return {'source':SOURCE,'inner':INNER,'outer':OUTER,'angular':ANGULAR,
-            'all':SOURCE+INNER+OUTER+ANGULAR}[stage]
+    return {'source':SOURCE,'inner':INNER,'outer':OUTER,'angular':ANGULAR,'energy':ENERGY,
+            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY}[stage]
 
 
 def run(stage='all',list_only=False):
@@ -43,16 +46,17 @@ def run(stage='all',list_only=False):
     result=dict(stages_completed_this_run=completed,
         source_relation='epsilon_source=.001*delta; epsilon_core=1/Lambda',
         legacy_source_preserved=True,full_NS_background_completed=False,
-        actual_angular_pressure_corrections_completed='outer_angular_repair_check' in completed,actual_ap_selected=False,
+        actual_angular_pressure_corrections_completed=('outer_angular_repair_check' in completed or 'axial_amplitude_selection_check' in completed),
+        actual_ap_selected='axial_amplitude_selection_check' in completed,
         temporal_recursion=False,
-        next_dependency='Complete corrected future swirl energy, select ap, compose all five outer primitives and prove the matched outer cone')
+        next_dependency='Install actual axial pulse partial fields, compose all five outer primitives and prove the matched outer cone')
     print(json.dumps(result,indent=2),flush=True)
     return result
 
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--stage',choices=('source','inner','outer','angular','all'),default='all')
+    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','all'),default='all')
     parser.add_argument('--list',action='store_true',help='Print the ordered modules without running them')
     args=parser.parse_args()
     run(args.stage,args.list)
