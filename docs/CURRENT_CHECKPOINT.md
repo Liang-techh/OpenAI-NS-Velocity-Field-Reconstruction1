@@ -1,3 +1,11 @@
+# F29 checkpoint - 2026-10-01
+
+The same selected F27/F28 family now has a callable interval log swirl reshape/reference and axial-restoration prescription plus whole-axis analytic relaxed-cone bounds from R110 toRh=exp(-5)Rref. R110 normalized amplitude is recomputed, G normalization/signs and exact interface offsets are guarded, inherited moments/P0 are preserved. SQ>=1.6114999994723; restoration |bw|<=.0012799288928393. Independent differentiation of allfive primitives verifies both stress ODE identities;7 log-interface checks pass.
+
+Read `docs/SAME_FAMILY_REFERENCE_JOIN_2026_10_01.md` first. T=400Abar is a conservative choice with the same Abar radius restriction selected in F27, not an exact A norm evaluation. NEXT: actual normalized five-defect ledger and Section10 functional correction, then selected-radius corrected outer/heat field. The log prescription/analytic proof is not a whole-axis finite physical velocity evaluator. FullSection9 admission, heat matching, global admissible stress/flat remainder and temporal recursion remain unfinished.
+
+---
+
 # F28 checkpoint - 2026-10-01
 
 The selected F27 increased-Cstar family now has input-independent K1=192922259423111113597, the existing flat cutoff derivative bound8, and13 shared-width gates. The exact prescribed actual exit has a whole-axis Z in[-1,1], Ra<R<=110 analytic relaxed-cone certificate and a nonempty admissible inner collar. Separate velocity/cumulative-mean gates include both short switches by exact positive averaging. No stress or moment reset.

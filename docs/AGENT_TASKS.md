@@ -1,3 +1,18 @@
+# F29 task handoff - 2026-10-01
+
+DONE: recomputed R110 log-amplitude budget; same-family (9.30) log swirl reshape and (9.38) axial restoration with whole-axis analytic relaxedcone throughRh; pressure/N/J budgets; exact relative interfaces; independent five-primitive-to-stress identities and7 callable-interface checks. Details: `docs/SAME_FAMILY_REFERENCE_JOIN_2026_10_01.md`. Use shared_reference_join_bounds.py/.json and shared_reference_join_check.py/.json (prefix lei_ren_part1_paper_).
+
+NEXT (bounded ordered work, mark DONE with evidence):
+1. Build allfive normalized functional defects for the actual connection atRh and/orRm in Section10.3 units. Derive explicit log majorants for the inherited R110 part (B0 in10.27), shaping alpha term, and actual axial eta; use F27 amplitude coefficients, F28 continuous moments and F29 join, not old hardcoded A/logC fixtures.
+2. Evaluate the complete sufficient test10.19/10.29 against e_star using directed arithmetic. Current Cstar selection has radius margins but is not yet a certified actual five-defect admission. If a stronger lower bound is needed, construct an explicitly new compatible family and propagate all dependent receipts; never silently mutate an accepted field.
+3. Solve the fixed5-bump functional contraction using CA/CQ/CS and actual normalized defect functions; preserve positivity, actual pressure, relaxedcone and support strictly inside[Rm,2Rm]. Certify allfive identities as functions on[-1,1], not sampledsmall errors.
+4. Rebuild the completed outer profile atselectedRref with the same normalized schedule/waiting root and preheatP0, its own moment repairs and exact heat tail. Then verify allfive matches and recoveredpressure/Ur/exteriorstress.
+5. Section11 admissible shear loop and second moment restoration, stress/flat remainder; afterleading closure, actualn-dependent coefficient recovery/commoninnerinterval/independent repairs, divergence-preserving smoothsummation andoscillatory corrections.
+
+Keep fullSection9/heat/stresslift/temporal flags false until actualrequirements are covered. Preserve unrelated scale_reference changes. No finite core computation is live; completed144radialorders are spatial, nottemporal.
+
+---
+
 # F28 task handoff - 2026-10-01
 
 DONE: fixed existing-cutoff derivative bound8; input-independent K1 coefficient ledger including fullR110 differences; eta_tol/j/min-branch binding;13 shared-width gates; whole-axis exact implicit exit relaxed cone throughR110 and nonempty admissible collar. Details: `docs/SHARED_K1_AND_GLOBAL_EXIT_2026_10_01.md`.
