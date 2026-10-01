@@ -1,0 +1,36 @@
+{
+  "branch": "independent_physical_five_bump_integral",
+  "precision": 110,
+  "quadrature_order": 96,
+  "interval": [
+    "1",
+    "2"
+  ],
+  "paper_row_names": [
+    "z",
+    "z_weighted",
+    "theta",
+    "z_theta",
+    "p"
+  ],
+  "physical_moment_names": [
+    "theta",
+    "z",
+    "theta_z",
+    "z_theta",
+    "p"
+  ],
+  "value_max_absolute_error": "0.0",
+  "dual_tangent_max_absolute_error": "1.03582208128285132718842202658e-24",
+  "Rm_three_normalized_scale_max_absolute_error": "4.28810652832852092764379188953e-112",
+  "polarized_cross_terms_integrated": true,
+  "background_subtraction_used": false,
+  "production_map_apply_used": false,
+  "production_map_matrix_used": false,
+  "reference_fields_supplied": false,
+  "quadrature_enclosed": false,
+  "inverse_solved": false,
+  "functional_closure": false,
+  "cone_certified": false,
+  "source_sha256": "6ca5011ee5ea873bed826907ffc7535b132cad336feb241724c24eff3beaa4f2"
+}

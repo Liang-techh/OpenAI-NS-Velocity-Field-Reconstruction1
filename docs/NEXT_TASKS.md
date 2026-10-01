@@ -1,3 +1,9 @@
+## 2026-10-01: PARTIAL C120-M5 independent physical five-bump integral replay
+
+The persisted actual-candidate correction now has a reproducible independent order-128 physical-moment replay. Maximum retained value residual: 1.1390562734e-27; first-Z residual: 2.5951210115e-50. This is finite quadrature consistency on the paper reference bump supports at Z = 0.3, distinct from the 6.23766e-210 production-map algebra residual. Physical Rm factors were corrected in the independent helper and checked at Rm = 3. No quadrature enclosure, full source replay, whole-axis closure or temporal recursion is claimed.
+
+Run experiments/root_st073/lei_ren_part1_paper_candidate_bump_integral_replay.py. See docs/CANDIDATE_FIVE_BUMP_INVERSE_2026_10_01.md. Next actionable work: repaired stress-cone margins over bump supports, controlled quadrature and source-error bounds, then axial functional inverse and heat matching.
+
 ## 2026-10-01: actual-candidate finite five-bump inverse
 
 PARTIAL C120-M4: new R110 candidate source now drives the five-bump inverse and corrected reference field at Z=.3. Ten nonlinear updates, analytic first-Z tangents and exact incremental atoms are retained; max polarization residual6.23766e-210. P0/P0_Z preserved. See CANDIDATE_FIVE_BUMP_INVERSE_2026_10_01.md. This is finite map algebra with quadrature64, not certified physical/global closure. Independent actual bump integration is next, followed by quadrature/source enclosures, support cone and full-axis functional inverse. Temporal n-dependent recursion remains open.
