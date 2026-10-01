@@ -1,7 +1,7 @@
 # Navier–Stokes Candidate Research
 
 > **Progress index updated 2026-10-01:** newer research is available on
-> `codex/st073-transition-next` at [`1548c529`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1548c529541ed08d32ee6077a114aed50abe65f7).
+> `codex/st073-transition-next` at [`282a475e`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/282a475e1bca8e8e88c1405a39fcf37c7f1f6b85).
 > See [current evidence, paper mapping and replay instructions](docs/NS_SUPERVISION_2026-09-30.md).
 > The ST063 tables and September 22 pause record below remain historical curated
 > results. They do not describe the latest branch or establish a live task status.
@@ -23,7 +23,10 @@
 > installed with 66-cell relaxed coverage; the first outer slope segment is callable.
 > A separate Md=1.1 source was coherently rebuilt through pressure, degree124 core
 > and local C1 repair, but is rejected by a strictly positive axial-turnoff direction
-> at phase=.5. Md1.3 screening also fails; Md2/3 midpoint screening remains unresolved.
+> at phase=.5. Md2-6 midpoint screening now also reports direction obstructions.
+> Md40/48/64 pass a conditional local-family full O.2 certificate; their new pressure
+> atoms, core and matching chain are not generated. The waiting root is enclosed,
+> with no exact source realization selected yet.
 > Old cone certificates stay with Md=.5. C2/Ur_Z, full parameter gates, whole-axis
 > matching and final strong stress remain open.
 > Lambda36/48 receipts stay separate; these moment bounds are not NS acceptance.

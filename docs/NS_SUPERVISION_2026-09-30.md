@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `fa55f2f965c29c1a8f0169a283116cadba3c2645`.
+The inspected `main` head before this update is `f6d4e8e8c56e2f921189f5dbd422c233f2dcd939`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`1548c529541ed08d32ee6077a114aed50abe65f7`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1548c529541ed08d32ee6077a114aed50abe65f7)
+[`282a475e1bca8e8e88c1405a39fcf37c7f1f6b85`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/282a475e1bca8e8e88c1405a39fcf37c7f1f6b85)
 on `codex/st073-transition-next`, observed October 1. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,55 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-01 batch: resolved failed screens and conditional large-Md O.2 route
+
+The [f5aa035b larger-Md screen record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/f5aa035b720efbd8b8e839205a7ea219f98f4f8c/docs/LARGE_MD_OUTER_SCREEN_2026_10_01.md)
+evaluates pressure by splitting the same complete14-stage backward integral at
+the current radius. This resolves the old Md2/3 midpoint non-certificates as
+direction obstructions on[.49,.51], including Z=.5. Fresh Md4/5/6 trial sources
+also have strictly negative finite negative-dot coefficients at phase=.5, ruling
+out every positive radial placement of those normalized sources. Their .25/.75
+phase passes remain screens, not whole-stage proofs. Md1.1/1.3 rejection remains
+preserved. No Md2-6 fresh core or production angular correction is generated.
+The pressure-screen-only workaround for finite-float bump underflow at Md>=6
+does not fix the production correction backend.
+
+The [282a475e normalized O.2 record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/282a475e1bca8e8e88c1405a39fcf37c7f1f6b85/docs/NORMALIZED_O2_CERTIFICATE_2026_10_01.md)
+and [original slow-turnoff receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/282a475e1bca8e8e88c1405a39fcf37c7f1f6b85/experiments/root_st073/lei_ren_part1_paper_normalized_slow_turnoff.json)
+establish a **conditional local axial-family parameter route** for Md40,48,64.
+The512 complete closed phase cells cover O.2 slow turnoff, with exact b=0
+endpoints and the11-unit zero-Uz buffer handled separately by the weak branch.
+For Md40, finite negative-dot/R and strong-bracket lower bounds are about.364424/
+.343967. This is more than sampled phase screening, but certifies the relaxed
+condition's strong branch when kappa>2 and weak branch at b=0, not a constructed
+final admissible-stress lift. Md16/24/32 failed lower-bound tests are noncertificates,
+not the direction obstructions of Md2-6.
+
+Conditions remain explicit: Z in[.49,.51], logPstar>=exp(Md)+11, prescribed tiny
+delta/mu/epsilon, Rref>=exp(10), exact repaired reference inlet moments, a complete
+same-parameter preheat backward pressure integral and nonnegative waiting length.
+The pressure envelope bounds the whole future ansatz, including collar factors,
+without fitting/deleting a tail. It is not a newly realized numerical pressure
+datum or actual corrected heat profile. Existing Md1.1 solution rows and cone/
+moment certificates cannot be attached to this parameter family.
+
+The [logarithmic parameter/waiting-root receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/282a475e1bca8e8e88c1405a39fcf37c7f1f6b85/experiments/root_st073/lei_ren_part1_paper_logarithmic_outer_parameters.json)
+retains huge stage lengths symbolically and bounds a unique positive continuous
+waiting root (Md40 about9.41541e17, with interval width about3).
+The exact root has not been selected/transferred to a numerical datum;
+source_fourteen_pressure_atoms_generated=false and new_core_generated=false.
+This provides a route to coherent rebuilding, not a completed background.
+
+Next must generate all14 new pressure atoms with enclosed root/source dependence,
+complex jets, fresh majorants and a consistently selected j/Lambda/logC before
+core admission and downstream reconstruction. Large Pstar prevents assuming old
+majorant dominance; normalized/logarithmic amplitude arithmetic is required.
+Production correction weights, whole-axis extension, later O.3/O.4/heat layers,
+C2/Ur_Z, final strong stress, full finite energy, temporal recursion and corrected
+NS residual/L2 remain unaccepted. Pinned records list screen, normalized proof
+and parameter replays; no numerical result, rigorous bound or proof was independently
+rerun/audited here. Only documentation is changed.
 
 ### 2026-10-01 batch: coherent Md1.1 reconstruction and actual directional rejection
 
@@ -1166,6 +1215,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [282a475e research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36868692137)
+actual constrained log reports original13 failed identifiers/423 passed. Four
+smoke/slice jobs pass; full historical tests skip. No selected governance regression
+appears; this CI does not independently certify the conditional O.2 route.
 
 The [1548c529 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36862011202)
 actual constrained log reports original13 failed identifiers/423 passed. Four
