@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `8bf0842073a5b9e0ab491ad00d20eb1ee6cd9238`.
+The inspected `main` head before this update is `23908c0c95e4fd2e485379dc87675358e0204e5d`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`13f9fd07cc25133aab04ee049c9cfc1907f13dcb`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/13f9fd07cc25133aab04ee049c9cfc1907f13dcb)
+[`b275f9df571c37aba9236059bfe128f819158047`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b275f9df571c37aba9236059bfe128f819158047)
 on `codex/st073-transition-next`, observed October 1. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,67 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-01 batch: physical parameter family and whole-axis implicit inner exit
+
+The [physical-family report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/b275f9df571c37aba9236059bfe128f819158047/docs/PHYSICAL_NORMS_AND_CSTAR_FAMILY_2026_10_01.md)
+and [norm receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/b275f9df571c37aba9236059bfe128f819158047/experiments/root_st073/lei_ren_part1_paper_shared_physical_norm_family.json)
+record physical C3 bounds for all Section9.16 K contributions, including inverse
+F/D and C4 inputs for frozen stress, in the paper's core/frozen coordinates.
+A and Kbar are bounded independently of subsequently increased Cstar, with
+K<=Kbar*Cstar. The selected same-data larger Cstar/Rref records positive
+Section9.17 radius margins (including long-reshape length400A) and Rm>=16.
+These are logarithmic implicit-family budgets, not convenient physical grid sizes
+or a completed outer field at that radius. Pressure and waiting data stay fixed.
+
+The [envelope-transfer receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/b275f9df571c37aba9236059bfe128f819158047/experiments/root_st073/lei_ren_part1_paper_shared_Cstar_envelope_transfer.json)
+records148 scaled S Cauchy-jet inclusion checks plus source/state/seed identities.
+The enlarged-Cstar core/local exit is covered by existing interval rows and
+shared-width envelopes; neither point amplitudes nor144 spatial orders were
+recomputed. Base core identity is unchanged; the selected uniform family is
+`f87c3a1c6d0e1cb72082caebf1bf38a8b6031f166c72f94a63e4a2df57af94c5`.
+The earlier physical-family receipt's selected-family binding false flag is
+superseded by this separate inclusion companion, not rewritten. Likewise its
+pending K1 flag describes the earlier stage, not the later ledger.
+
+The [fixed-ledger/global-exit report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/b275f9df571c37aba9236059bfe128f819158047/docs/SHARED_K1_AND_GLOBAL_EXIT_2026_10_01.md)
+and [K1 receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/b275f9df571c37aba9236059bfe128f819158047/experiments/root_st073/lei_ren_part1_paper_shared_K1_ledger.json)
+record K1=192922259423111113597, assembled independently of input profiles.
+Derivative loss is explicit (comparison operators C3->C2), rather than an
+invalid same-order C1 bound. Exact8j=eta_tol and its selected minimum branch
+are checked; cstar=eta_tol/(24K1) meets the two restrictions, and h_b=epsilon_b
+remains one positive implicit scalar. Thirteen decreasing-K inner conditions
+are recorded passing for K>=10^6. The fixed flat-step derivative bound8 is
+analytic, not a sampled maximum, and prepares rather than installs long reshape.
+
+The [global-exit receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/b275f9df571c37aba9236059bfe128f819158047/experiments/root_st073/lei_ren_part1_paper_shared_global_exit_certificate.json)
+records actual_whole_axis_Ra_R110_relaxed_cone_analytically_certified=true,
+nonempty_inner_admissible_collar_analytically_certified=true and an exact implicit
+exit specification on Z in [-1,1], Ra<R<=110. Its admitted inner parameter
+identity is `3c763d62031d0efa696bbc163024bf7cc49ec79b79ce6cf1512094ece38845e4`.
+The error retains its vanishing-endpoint weight; both short-switch moment
+increments enter the axial velocity/mean budgets. This is stronger in scope
+than frozen-profile inputs and the earlier local R110 interface check, but the
+remaining exit is relaxed, not all admissible. It explicitly leaves
+whole_axis_finite_velocity_evaluator_built=false,
+admissible_stress_lift_constructed=false and full_Section9_parameter_admission=false.
+The transfer receipt's earlier global-exit false flag is historical; the later
+analytic companion supplies the new claim, not enlargement of local samples.
+
+Replay the pinned F27 norm/transfer companions, then the F28 fixed step, K1 ledger
+and global-exit producers. They preserve base receipt identities. These are
+published analytic arguments and saved checks; this review neither reran them
+nor independently verified their proofs. The corrected F26 compute-time statement
+is1994.579 seconds cumulative over all144 recurrence steps;125 is only the final
+resumed batch update count, not the count corresponding to that elapsed time.
+
+Next dependencies are the new R110 amplitude budget, same-family long reshape
+and axial restoration at selected Rref, five functional terminal defects and
+Section10 repair, pressure-compatible reference inlet and corrected heat exterior.
+Full assembled stress/flat remainder, finite energy, true temporal coefficient
+recursion, pulse corrections and independent full Cartesian NS residual remain
+open. Earlier claims that K1/physical K/radius or analytic inner-exit gates were
+pending are historical checkpoints; their completion does not finish Section9.
 
 ### 2026-10-01 batch: completed new core, local exit and global frozen inputs
 
@@ -1417,6 +1478,12 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [b275f9df research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36921857280)
+finished failure. Its actual constrained log has the original13 failed identifiers
+and423 passed; four smoke/slice jobs pass, full historical tests skip. No selected
+governance regression appears. CI does not independently certify the analytic
+K ledger, radius inequalities, inclusion transfer or global implicit exit proof.
 
 The [13f9fd07 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36914874244)
 finished failure. Its actual constrained log has the same original13 failed

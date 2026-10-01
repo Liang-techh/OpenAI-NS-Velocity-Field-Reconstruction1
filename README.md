@@ -1,7 +1,7 @@
 # Navier–Stokes Candidate Research
 
 > **Progress index updated 2026-10-01:** newer research is available on
-> `codex/st073-transition-next` at [`13f9fd07`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/13f9fd07cc25133aab04ee049c9cfc1907f13dcb).
+> `codex/st073-transition-next` at [`b275f9df`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b275f9df571c37aba9236059bfe128f819158047).
 > See [current evidence, paper mapping and replay instructions](docs/NS_SUPERVISION_2026-09-30.md).
 > The ST063 tables and September 22 pause record below remain historical curated
 > results. They do not describe the latest branch or establish a live task status.
@@ -35,9 +35,11 @@
 > transfer of old-j core/exit results. Fresh scaled mixed-C3 tail admission selects
 > degree144; all144 orders and a fresh local-axis exit chain to R110 are now recorded.
 > Whole-axis analytic core inputs and frozen-profile (9.14) gates are recorded too;
-> these do not establish a whole-axis finite evaluator or actual transition cone.
-> K1, physical C3 K, radius compatibility, functional repair and the exact reference
-> inlet remain pending; full Section9 admission is still false.
+> a larger-Cstar family now has physical C3 K bounds, fixed K1, radius compatibility
+> and an analytic whole-axis actual inner-exit relaxed certificate. Existing finite
+> rows transfer by amplitude-jet inclusion, not recomputation. The whole-axis finite
+> evaluator, selected-radius long reshape, functional repair, reference inlet and
+> corrected exterior remain pending; full Section9 admission is still false.
 > Old cone certificates stay with Md=.5. C2/Ur_Z, full parameter gates, whole-axis
 > matching and final strong stress remain open.
 > Lambda36/48 receipts stay separate; these moment bounds are not NS acceptance.
