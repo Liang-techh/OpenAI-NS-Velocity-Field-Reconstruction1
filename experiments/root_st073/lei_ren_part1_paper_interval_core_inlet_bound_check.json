@@ -1,0 +1,18 @@
+{
+  "closed_form_polynomial_coefficients_contained": 32,
+  "axial_orders": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "nonzero_axial_tail_derivatives": true,
+  "Psi_to_physical_U_factor": "1/Lambda",
+  "passed": true,
+  "fixture_only": true,
+  "production_source_errors_certified": false,
+  "input_hashes": {
+    "lei_ren_part1_paper_interval_core_inlet_bound.py": "146d80902f09cb6737c7d22833f102b2dc0af08150fdd986bb4629665c6bebf5",
+    "lei_ren_part1_paper_interval_core_inlet_bound_check.py": "ae2793124d44216ffc4f091e9fd0fa1d0eb8fadb5a7b543634497cee5137148b"
+  }
+}

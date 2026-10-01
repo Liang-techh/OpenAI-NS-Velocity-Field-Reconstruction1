@@ -15,6 +15,7 @@ def run():
     if end['outside_analytic_core_radial_domain'] or not frozen['outside_analytic_core_radial_domain']:
         raise AssertionError('Frozen continuation core-certificate scope mislabeled')
     partial_rejected = False
+    production_loaded = False
     if c.degree < 124:
         try:
             IntervalComparisonJets(4)
@@ -24,6 +25,11 @@ def run():
             partial_rejected = True
         if not partial_rejected:
             raise AssertionError('Partial core accepted for production')
+    else:
+        production = IntervalComparisonJets(4)
+        if production.state_hash != c.state_hash:
+            raise AssertionError('Diagnostic and production loaded different core snapshots')
+        production_loaded = True
     scalar_rejected = False
     try:
         c.evaluate(0, '.5')
@@ -35,6 +41,7 @@ def run():
     out = dict(completed_degree=c.degree, state_sha256=c.state_hash,
         center_family=c.center_family, steps=4, diagnostic_partial=True,
         production_partial_rejected=partial_rejected, scalar_slice_rejected=scalar_rejected,
+        production_core_gate_loaded=production_loaded,
         outside_domain_frozen_continuation_labeled=True,
         comparison_driver_only=True, stress_derivatives_supplied=False,
         start_D=list(start['D'].coefficients), endpoint_D=list(end['D'].coefficients),
