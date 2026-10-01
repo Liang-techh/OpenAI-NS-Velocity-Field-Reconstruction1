@@ -1,0 +1,13 @@
+# F32: same-family O.3 continuation to the pulse inlet
+
+The selected-family outer candidate now reaches Rp through the slope-mu transition [Rd,Rw] and the Tw-long pure-power buffer [Rw,Rp]. The new API is `SharedOuterBuffer.slope_mu(Z,offset)` with offset in [0,1], and `.power(Z,phase)` with phase in [0,1]. It transports the same five local normalized primitives and unchanged preheat pressure from F31; it does not select or fit new source data.
+
+In the unit transition, u=u_d exp(-t/2-mu*J(t)), Uz=0. Three directed kernels transport the angular, energy and pressure primitives, with integrands exp(t-mu*J), exp(-2mu*J), and exp(-t-2mu*J). Each closed cell integrates its exponential weight exactly and encloses the remaining monotone primitive factor. Axial and mixed moments decay in local units while their physical accumulated history remains nonzero.
+
+In the buffer, u=u_w exp((-.5-mu)t). The angular moment has the stable local expression h=h_w exp(-1.5t)+u_w[exp((-.5-mu)t)-exp(-1.5t)]/(1-mu). The energy primitive uses exp(-t) times the integral of exp(-2mu*s). When mu*t is tiny, this integral is enclosed by t*exp(-2mu*t) and t, avoiding subtraction from one followed by division by microscopic mu. Relative stage coordinates carry the exact unit transition and Tw=-60log(mu), without subtracting large absolute log radii.
+
+Evidence consists of `experiments/root_st073/lei_ren_part1_paper_shared_outer_buffer.py/.json` and `lei_ren_part1_paper_shared_outer_buffer_check.py/.json`. The latter independently differentiates the ten cumulative-moment expressions, checks eight value/first-axial-derivative interfaces, calls the whole-axis C1 API, checks cancellation-free decay-integral examples, and confirms nonzero accumulated axial history at the zero-Uz pulse inlet.
+
+Next is a parametric O.4 pulse and its coupled moment equations, then the later candidate through the selected-radius heat collar. Section 7 determines coefficients in the order waiting tau -> angular (d1,d2) -> axial (ap,c1,c2), although the axial supports occur earlier in radius. The positive axial pulse amplitude cannot be selected until the entire corrected swirl/heat energy tail is available. Its target is Mztheta(Rv)=one-half of the positive swirl-energy tail beyond Rv, not zero at Rv; Mztheta vanishes at infinity. The two linear equations alone cancel Mz and Mtheta_z at Rv.
+
+No completed outer correction, whole-outer cone, exact heat matching, global admissible stress lift, flat remainder or temporal recursion is claimed here. Finite pressure intervals may remain broad because the shared pressure atoms have not yet been evaluated together with the later outer repairs; their source identity is preserved.

@@ -1,3 +1,11 @@
+# F32 checkpoint - 2026-10-01
+
+Same-family O.3 slope-mu transition and Tw-long pure-power buffer now continue the F31 candidate through the pulse inlet Rp. All five local normalized primitives, unchanged P0 and retained axial/mixed histories are transported; relative offsets are exact, tiny-mu decay integrals avoid cancellation. Ten independent cumulative ODE identities, eight value/C1 interfaces, whole-axis C1 calls and pulse-inlet nonzero axial history pass.
+
+Read docs/SAME_FAMILY_OUTER_BUFFER_2026_10_01.md and shared_outer_buffer.py/.json plus shared_outer_buffer_check.py/.json (prefix lei_ren_part1_paper_). NEXT: O.4 raw pulse and actual coupled axial moment repairs, then flatten/angular repair, steep restoration/waiting and recomputed selected-radius heat collar/exterior. Completed outer corrections, whole-outer cone, heat matching, global admissible stress/flat remainder and true temporal recursion remain incomplete. No finite core process is live.
+
+---
+
 # F31 checkpoint - 2026-10-01
 
 The actual F30 terminal identities now feed a selected-family callable O.1 reference and O.2 slope/axial-turnoff/zero-Uz buffer through Rd. Local normalized five primitives avoid materializing Rref; endpoint-weighted turnoff kernels retain positive far tails; unchanged Md40 P0 and actual delta supply pressure/stress/Ur. Twenty independent moment/normalization identities and twelve value/C1 interfaces pass. Whole-axis C1 call and retained nonzero axial history after Uz=0 pass.

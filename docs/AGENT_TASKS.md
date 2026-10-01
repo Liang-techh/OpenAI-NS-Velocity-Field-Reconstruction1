@@ -1,3 +1,17 @@
+# F32 task handoff - 2026-10-01
+
+DONE: same-family O.3 d-to-w slope-mu and w-to-p pure-power buffer reaching Rp; all five normalized cumulative primitives/P0 retained. Ten independent moment ODE identities and eight interfaces pass, as do whole-axis C1 calls and nonzero axial history after Uz=0. Evidence: shared_outer_buffer.py/.json and shared_outer_buffer_check.py/.json (prefix lei_ren_part1_paper_), docs/SAME_FAMILY_OUTER_BUFFER_2026_10_01.md. F30 and F31 remain the source-bound inlet chain.
+
+NEXT ACTIONS, ordered:
+1. Derive O.4 pulse profiles using the same selected Md40/mu/delta schedule, in scaled pulse coordinate xi=mu*(y-yp), with explicit startup/cutoff/end offsets. Never materialize Rref, inverse-mu duration or subtract close absolute log radii. Carry the actual F32 inlet primitives.
+2. Derive the parametric axial pulse map and solve its two linear equations for trial ap; keep ap pending. Section7 requires waiting tau -> angular (d1,d2) -> axial (ap,c1,c2). The energy target atRv is the positive one-half swirl-energy tail beyondRv, not zero; Mztheta vanishes at infinity. Select the positive ap branch only after the entire corrected swirl/heat tail exists. Preserve incoming source moments and directed continuous integrals.
+3. Build flatten/angular correction and waiting/steep transitions, then recompute selected-radius exact heat H_delta and moment-restoration coefficients. Couple all late pressure atoms to P0; the current coarse pressure intervals are source enclosures, not completed pressure/heat compatibility.
+4. Certify full inner/outer/heat functional closure, smoothness, finite-energy tail and cone margins. Then admissible stress lift/flat remainder, n-dependent coefficient recursion, smooth divergence-preserving summation and oscillatory/full Cartesian residual reconstruction.
+
+Preserve unrelated scale_reference files and all positive unresolved tails. Mark DONE with actual source-bound receipts and scope, not sampled fits. Whole-outer/heat/global-stress/temporal completion flags remain false.
+
+---
+
 # F31 task handoff - 2026-10-01
 
 DONE: selected-family O.1 reference and O.2 slope transition/axial turnoff/retained-moment buffer through Rd. Original pressure source/actual delta retained; no physical Rref expansion; normalized turnoff kernels use exact exponential cell masses and positive far tails. Evidence: shared_outer_initial.py/.json and shared_outer_initial_check.py/.json (prefix lei_ren_part1_paper_), twenty identities and twelve interfaces. Details: docs/SAME_FAMILY_INITIAL_OUTER_2026_10_01.md.
