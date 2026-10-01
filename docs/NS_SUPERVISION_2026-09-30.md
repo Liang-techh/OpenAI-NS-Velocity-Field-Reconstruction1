@@ -12,7 +12,7 @@ data, schedules or candidate defaults are changed by this documentation update.
 The inspected `main` head is `e0c642ba8ff8d2c476ef3f961864a008d2d475c4`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`43e96bff12c0af3b68ff1ddf90ba803367d131cf`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/43e96bff12c0af3b68ff1ddf90ba803367d131cf)
+[`aee022540eaeff47309d6530be07cc711b00d2a1`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/aee022540eaeff47309d6530be07cc711b00d2a1)
 on `codex/st073-transition-next`, dated September 30. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,43 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-01 batch: stored-pressure error budget and finite-core propagation
+
+The [preheat interval/amplitude record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/aee022540eaeff47309d6530be07cc711b00d2a1/docs/PREHEAT_INTERVAL_BOUNDS_2026_09_30.md)
+and [steep-stage integration record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/95c2b3e530dd648a7cd0627aa8156a08d10bb90f/docs/STEEP_PREHEAT_INTEGRALS_2026_09_30.md)
+are separate evidence: the approximately47.8286 compact pressure C2 amplitude
+envelope is not a pressure approximation error or a five-defect norm. The two
+steep-stage relative mass error bounds about1.69e-12/1.09e-12 concern stored
+stage integrals, not complete source accuracy.
+
+Subsequent [complete pressure-budget record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/aee022540eaeff47309d6530be07cc711b00d2a1/docs/POINTWISE_PREHEAT_ERROR_BUDGET_2026_09_30.md)
+covers all14 stored pressure stages uniformly on |Z|<=.8 with weighted normalized
+absolute C2 error upper about3.07926448543e-12. Variable-beta flatten uses a
+conservative true-plus-finite positive-mass bound; this does not establish its
+relative accuracy or resolve the ultraflat hierarchy. The comparison is the
+mathematical stored finite datum versus the true stored-schedule integral,
+excluding runtime evaluation rounding and original paper-parameter derivation.
+
+The [high-derivative finite-core record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/aee022540eaeff47309d6530be07cc711b00d2a1/docs/PRESSURE_HIGH_DERIVATIVE_CORE_PROPAGATION_2026_09_30.md)
+extends the pressure approximation derivative envelopes through order24, then
+feeds those intervals through the degree18 nonlinear radial core at Z=.3 with
+axis jets fixed. At R=4/Lambda the reported pressure-only Uz/Uz_Z/Uz_ZZ error
+uppers are about2.25e-36/1.51e-35/1.26e-34. Five finite-core moments and their
+first two Z derivatives also receive pressure uncertainty intervals. Corresponding
+profile pressure errors about.321/1.027/6.212 are not momentum residuals; pressure
+scale Pstar² is about1.446e12. These quantities must not be compared to the full
+NS residual target.
+
+This review has not independently rerun the receipts or verified their rigorous
+enclosures. Their stated enclosure scope is stored pressure approximation and
+its finite-core contribution only. Original parameter/axis errors, infinite
+radial-series remainder, continuation/RK/annulus/restoration errors, exact heat,
+runtime rounding and complete five-defect interval norm remain open. Thus the
+conditional inverse majorant still lacks a fully enclosed actual source input;
+uniform/global closure, finite energy, new-field cone and time-scale recursion
+remain unaccepted. Previous statements that pressure-to-core propagation was
+wholly absent are superseded only within this restricted pressure-only scope.
 
 ### Combined inverse/second-Z milestone and conditional interval bounds
 
@@ -417,6 +454,10 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [aee02254 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36795141973)
+completed with the original13 failed identifiers and423 passed. Its selected
+governance tests do not independently certify the new interval receipts.
 
 The [43e96bff research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36789662198)
 completed with the same original13 failed identifiers and423 passed. Selected
