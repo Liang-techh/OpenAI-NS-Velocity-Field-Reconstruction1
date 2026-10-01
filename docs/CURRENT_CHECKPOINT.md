@@ -1,3 +1,13 @@
+# F23 — 2026-10-01: shared paper exit parameter family reaches R110
+
+Same-source preheat pressure Kp=17 is certified (KN=18000). The paper identity h_b=epsilon_b=cstar K^-100 is restored symbolically, and the shared conditional family is propagated through comparison, actual exit and terminal switches to R110. The relaxed cone passes there on Z in [0.49,0.51]. Final regeneration completed; 57 phase/dy fixtures and five-receipt family/hash checks pass.
+
+Full Section 9 admission remains false: physical C3 K norms, K1/bump constants, source j=eta_tol/8, supplied exit inputs and frozen-profile inequalities are unfinished. A shared symbolic family is not a completed numerical parameter instantiation. No global stress lift, terminal five-moment repair, exact heat exterior or temporal recursion has been completed.
+
+Next action: derive C_A/C_Q/C_S and e_star, resolve source j and K1, certify K/input/radius gates, then admit the shared exit and build long reshape/five-moment repair. Detailed ordered tasks: docs/SHARED_EXIT_PARAMETER_FAMILY_2026_10_01.md. New endpoint: experiments/root_st073/lei_ren_part1_paper_shared_exit_switch.json.
+
+---
+
 # F22 — 2026-10-01: fresh Md40 actual exit reaches R110
 
 Fresh same-source comparison (32 closed cells), actual exit bridge (48 cells), whole-interval continuation to physical R100, and terminal switches/constant-power moments to R110 are generated. Fields retain C1 local axial enclosures; comparison fields retain C2. Physical F0 and microscopic shear remain implicit positive functions with nonzero-upper bounds. No old transition receipt is reused.

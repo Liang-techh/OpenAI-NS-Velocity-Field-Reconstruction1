@@ -1,0 +1,21 @@
+{
+  "phase_cutoff_and_dy_checks": 57,
+  "fixture_h_powers_of_two": [
+    -3,
+    -10,
+    -1000
+  ],
+  "production_family_sha256": "1ad446dbb3c1df2331c54c1f84d1c01b3561b2b9550787940dadb5367fd41562",
+  "all_five_receipts_share_same_h_parameter": true,
+  "fixture_is_algebra_only": true,
+  "full_Section9_parameter_admission": false,
+  "input_hashes": {
+    "lei_ren_part1_paper_shared_comparison.json": "930e2153a7242476765c87e245ff68776bdd3d7513b48de853339c004d812c52",
+    "lei_ren_part1_paper_shared_exit_bridge.json": "571becd9d6c8cb2b8145314a998749d7a2c38d34d2991b3799f54b96c0159ccd",
+    "lei_ren_part1_paper_shared_exit_continuation.json": "95320622b4877d672258a484698fffb18920ae2bde61132ae41e844fabac6268",
+    "lei_ren_part1_paper_shared_exit_switch.json": "b2dddede21ce200ea743b8998f255f290c44395d02405e0d3d58a1cdbc9dac34",
+    "lei_ren_part1_paper_shared_R110_cone.json": "657c416333c76a4666d3b4a88692a6a6b98d75cc1508b7fa0bb84bdb0371da6c",
+    "lei_ren_part1_paper_shared_phase_check.py": "acd378d58880e2595113265080a8ad8fd2e840c834a8411f1193413b60615e8c",
+    "lei_ren_part1_paper_interval_comparison_enclosure.py": "03027203a8ca43721508f8b337ac7107d09be785da3dd491a7b5ab27e46c8ed8"
+  }
+}

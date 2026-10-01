@@ -1,0 +1,369 @@
+{
+  "identity": {
+    "center_Z": [
+      ".49",
+      ".51"
+    ],
+    "target_radial_degree": 110,
+    "initial_axis_length": 114,
+    "retained_axial_depth": 3,
+    "precision": 160,
+    "implicit_source_sha256": "082d18b8f1ec2df84526fbdc190217d97dfb8825e823fa4c9e017c8a58d001bb",
+    "datum_enclosure_sha256": "04bdb5e1cc6216bd2592af7b4229b5188414b1893d62847d30345536fe9bbdd5",
+    "row_units": {
+      "A": "physical_A[n]/Lambda**n",
+      "Uz": "physical_Uz[n]/Lambda**n",
+      "P": "epsilon*physical_P[n]/Lambda**n"
+    },
+    "epsilon": {
+      "lower_exact_mpf_tuple": [
+        0,
+        60773161704629097660784049895149292803853229943891537886287200905965642456689216371475517681455405893221721362249815913987019479015663588797069785433929610497929,
+        -1358356628656378481,
+        535
+      ],
+      "upper_exact_mpf_tuple": [
+        0,
+        60773161704629097660784049895149292803853229943891537886287200905965642456689216371475517681455405893221721362249815913987019479015663588797070408399278421592569,
+        -1358356628656378481,
+        535
+      ]
+    },
+    "delta": {
+      "lower_exact_mpf_tuple": [
+        0,
+        1265363693325395565361396769888323562017288755512975008460665950608058927192464912807997065141327592896263506250216081851956997491748639837556585840273387692589,
+        -1358356628656377076,
+        529
+      ],
+      "upper_exact_mpf_tuple": [
+        0,
+        40491638186412658091564696636426353984553240176415200270741310419457885670158877209855906084522482972680432200006914619262623919735956474801811161954984869713813,
+        -1358356628656377081,
+        534
+      ]
+    }
+  },
+  "physical_R": 110,
+  "axial_family": [
+    ".49",
+    ".51"
+  ],
+  "input_hashes": {
+    "lei_ren_part1_paper_logarithmic_pressure_datum.json": "25eaffef5c11036123b2ceaa8f353ac0113daf09274080d26e00446b2de21cd9",
+    "lei_ren_part1_paper_logarithmic_pressure_datum.py": "576e16dc89281d7f4011337023ab47256f1d338aa981d98d8f848e8884ed2e05",
+    "lei_ren_part1_paper_candidate_pressure_mass_refinement.json": "8824c74fac38ebade9d90f1269e6e337b2b2f64dea6a692b0cb4db601e548181",
+    "lei_ren_part1_paper_logarithmic_outer_parameters.py": "2a1fbb83ef254dd2fca8cebd64598cf6fcf3e2571649bbb9109a3914fa5d3224",
+    "lei_ren_part1_paper_candidate_pressure_function.py": "4cc4c87488e5f468aa9a459d1e8c9f754e85f12dee811ca9d8e066fd4d4986dc",
+    "lei_ren_part1_paper_outer.py": "e641dbe3808066a1ab792294ec2b07faede60c379ef6bfca60f6c11ed79f90f2",
+    "lei_ren_part1_paper_coherent_uniform_fixed_beta_error.json": "2ea09fa66dfae800c5f93a1ca11d1da69e25c021853445748606427c65737340",
+    "lei_ren_part1_paper_logarithmic_core_majorant.json": "a23103d7883d2558c55dd8e09ccc20802e7cb579b60275b78106568d87e5ebca",
+    "lei_ren_part1_paper_analytic_radial_tail.json": "bd2db15d3314c6ea6553afee057a5dbc64dbfb2eb451d53f54eae1baa13d7e47",
+    "lei_ren_part1_paper_linear_resolvent_bound.json": "682853412f72ab48b2f97cd0f06228f60ff28724ecb939aae34b0757381db0b3",
+    "lei_ren_part1_paper_commuting_resolvent_bound.json": "8992aa4de56964e6c947a0bab2b12be054c2b2c8d149d0cdbbe53eecdb8badd2",
+    "lei_ren_part1_paper_logarithmic_core_majorant.py": "537e88870b08d40eab8f3161aed9e8bf0d09c4d6abaef2177cd9bf05dc7bc890",
+    "lei_ren_part1_paper_nonlinear_map_majorant.py": "92d84671e7680af47544c7a9ebaee27132cd1c230ea96a61a179325cf9ff8aff",
+    "lei_ren_part1_paper_analytic_radial_tail.py": "f3de412dab4cbb03c16fa5bb252ce600320dc1aa5935ea2f66c6c40f35563827",
+    "lei_ren_part1_paper_linear_resolvent_bound.py": "44186fb15eb7a776fde65aa9fee70274daa7253ce108f90b8f9cea791ba5e808",
+    "lei_ren_part1_paper_commuting_resolvent_bound.py": "7f787bd0ea1179bb78bd2bed574cf840687fb4d0008c499c1bcc1ec7f1736d71",
+    "lei_ren_part1_paper_logarithmic_core_tail_admission.json": "0fa0a272471eecbdb8409219ef3143719a0827c9a12075a55818ddc8ba607640",
+    "lei_ren_part1_paper_logarithmic_core_tail_admission.py": "5d1e3e60ebae8a53b6fb5d6e7702fac12d5cb271bc2ed255ff03054656950bd7",
+    "lei_ren_part1_paper_normalized_slow_turnoff.json": "268316219e72f04a6434670d53f8c2a70192a4efd774d6878091c420abb3f173",
+    "lei_ren_part1_paper_normalized_slow_turnoff.py": "9c4e10ac3c7ba885a2c9b93fe0eeaf1fe922506c13b9221474a20e282589bb37",
+    "lei_ren_part1_paper_interval_outer_slope_field.py": "906e5efa703f53f2d61762d3b7dca38d521ee3649e00962a1f0a81ddfd3254d5",
+    "lei_ren_part1_paper_interval_long_reshape_field.py": "604e10235c2960fda99e120775da780b3fe4f9060c3432e707ca3aeeb36a9c3f",
+    "lei_ren_part1_paper_interval_repaired_reference_field.py": "98b2b75fdf26aa286842e24749fbbb5963f69adeeeb941ec3f753bd022feb69c",
+    "lei_ren_part1_paper_interval_taylor.py": "a1c29ec76998d876d9becadebb65c7be69242bb99d6049ef3f5ad6af86b14b8c",
+    "lei_ren_part1_paper_interval_comparison_enclosure.py": "03027203a8ca43721508f8b337ac7107d09be785da3dd491a7b5ab27e46c8ed8",
+    "lei_ren_part1_paper_logarithmic_source_binding.py": "f7bfcb24243fda27d32631460bf266091583f058aed6cf6b760d03a04f45b69d",
+    "lei_ren_part1_paper_logarithmic_interval_core.py": "03681cfdf80bd312d4f7fdaaf06bb005237391f23745993ca34f8ba9e6215649",
+    "lei_ren_part1_paper_logarithmic_source_binding.json": "a29fe9dab10f6524a2b1774a8725ce3fb269df2d11de8ffc43eae75abb13346d",
+    "lei_ren_part1_paper_logarithmic_core_step.py": "52210fcdde9a538ca28a7010264daa6802b1cd02052741e05001162617d34fb6",
+    "lei_ren_part1_paper_functional_core_step.py": "03aab21f3e6e665dd2ff0e9a3d2e6187e90813c300ccbb2d35e23a6d99098998",
+    "lei_ren_part1_paper_candidate_gauge_core.py": "864da25569c8965cfd25787f9e27d315643c2d1a4d8d678289d7cc7923acb007",
+    "lei_ren_part1_paper_uniform_fixed_beta_error.py": "32775aa3cc3ec6f1abea67ab3ab1fcc73b9c7812c1f8417a483def95cd160636",
+    "lei_ren_part1_paper_schedule_endpoint_enclosures.py": "760a4facb6792b68d6c71264625ade4aaf99269b24d23dc7da558f1a6b9fb5f7",
+    "lei_ren_part1_paper_logarithmic_interval_core_Z049_Z051_state.json": "e8cef5ccf2a114232a83523adbf9cebc9fdee4fbaa230a70e2edb2e6bb61588d",
+    "lei_ren_part1_paper_logarithmic_interval_core_Z049_Z051.json": "f3950462d7683e581b4c32bbba1847856350778d1c3f810b91b4c71c8dc250ee",
+    "lei_ren_part1_paper_logarithmic_core_seed_check.json": "0174239c139174e8b7434b5746716bfdf95dc6cbe820483d722f3c8cea471709",
+    "lei_ren_part1_paper_candidate_shared_inlet.py": "cb578a0de74a1afd6550d04f1b6a9d8ce140f240613ee4ffaf28f5a2d21b420d",
+    "lei_ren_part1_paper_logarithmic_core_exit.py": "9b68699a5bbd9eb4f40e4a71d4c1beaf5e484beb2cfbba2b00c87974b6c3131c",
+    "lei_ren_part1_paper_logarithmic_comparison.py": "efeaee4b70d3190f1031df10f3e3c98c59300c87de82036ddfc9c85c4ee45b58",
+    "lei_ren_part1_paper_interval_exit_continuation_enclosure.py": "cf2597357287116c85022bf9a453ab287d521a6954a0f97b555859d650a9517d",
+    "lei_ren_part1_paper_shared_pressure_Kp.py": "f9047f2176d7a6bea858fa1fbe31e0a78d6c97835550c72f438f4221dd34f965",
+    "lei_ren_part1_paper_shared_pressure_Kp.json": "c2c320f4cd1d197c47a2aff3c56f5b00b2302ccce5d3417d9d8718529e4cc4ac",
+    "lei_ren_part1_paper_shared_exit_parameters.py": "545e7c5201fb96e0cf65f966f5ee5c28adc4b7346391f6992d785c52938d4795",
+    "lei_ren_part1_paper_shared_comparison.py": "2adb5c34eebc8e94ee5dd46f00690e68b53e6f3731b9587b29007be02d7d83ba",
+    "lei_ren_part1_paper_shared_exit_switch.json": "b2dddede21ce200ea743b8998f255f290c44395d02405e0d3d58a1cdbc9dac34",
+    "lei_ren_part1_paper_shared_R110_cone.py": "9d617a0b5d323ca6d414b8cb7d5552c6d83b59ce9a889775ab42aee2cfd1f8cb"
+  },
+  "S_theta_over_F": {
+    "lower": "-0.8",
+    "upper": "-0.8",
+    "width": "8.89103499794030993377085365708224038765009824585963117393436e-162",
+    "lower_exact_mpf_tuple": [
+      1,
+      89978275890863927656210770153719637177393942366038332662015111452236751613429757406380813722077817142998418212670417902464165321109885993780170303617303277102695,
+      -535,
+      535
+    ],
+    "upper_exact_mpf_tuple": [
+      1,
+      44989137945431963828105385076859818588696971183019166331007555726118375806714878703190406861038908571499209106335208951232082660554942996890085151808651638551347,
+      -534,
+      534
+    ]
+  },
+  "S_z_over_F": {
+    "lower": "0.0",
+    "upper": "0.0",
+    "width": "0.0",
+    "lower_exact_mpf_tuple": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "upper_exact_mpf_tuple": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "kappa": {
+    "lower": "0.8",
+    "upper": "0.8",
+    "width": "8.89103499794030993377085365708224038765009824585963117393436e-162",
+    "lower_exact_mpf_tuple": [
+      0,
+      44989137945431963828105385076859818588696971183019166331007555726118375806714878703190406861038908571499209106335208951232082660554942996890085151808651638551347,
+      -534,
+      534
+    ],
+    "upper_exact_mpf_tuple": [
+      0,
+      89978275890863927656210770153719637177393942366038332662015111452236751613429757406380813722077817142998418212670417902464165321109885993780170303617303277102695,
+      -535,
+      535
+    ]
+  },
+  "I_theta_over_F": {
+    "lower": "3.544528137065505618288855784394796829488845871981366443374135402566738914125112255252463e+408906090034569568",
+    "upper": "5.55309307335136529936015054480987340984057352863474391247950602346435375890016855110603846e+408906090034569570",
+    "width": "5.51764779198071024317726198696592544154568506991493024804576e+408906090034569570",
+    "lower_exact_mpf_tuple": [
+      0,
+      7398422883940760135267080299982732028498869179706828655378403643034850969655455741574533961457013563745809057821634401330867570353816331185431262031069801453665,
+      1358356628656377418,
+      532
+    ],
+    "upper_exact_mpf_tuple": [
+      0,
+      36221438794026775138375690849018986077461090173036457511355918792592483964256553616824648258780289312035457698024829513513480534602466037497427923555568626523839,
+      1358356628656377423,
+      534
+    ]
+  },
+  "T_theta_over_F": {
+    "lower": "3.544528137065505618288855784394796829488845871981366443374135402566738914125112255252463e+408906090034569568",
+    "upper": "5.55309307335136529936015054480987340984057352863474391247950602346435375890016855110603846e+408906090034569570",
+    "width": "5.51764779198071024317726198696592544154568506991493024804576e+408906090034569570",
+    "lower_exact_mpf_tuple": [
+      0,
+      59187383071526081082136642399861856227990953437654629243027229144278807757243645932596271691656108509966472462573075210646940562830530649483450096248558411629319,
+      1358356628656377415,
+      535
+    ],
+    "upper_exact_mpf_tuple": [
+      0,
+      36221438794026775138375690849018986077461090173036457511355918792592483964256553616824648258780289312035457698024829513513480534602466037497427923555568626523839,
+      1358356628656377423,
+      534
+    ]
+  },
+  "weak_branch_margin": {
+    "lower": "3.544528137065505618288855784394796829488845871981366443374135402566738914125112255252463e+408906090034569568",
+    "upper": "5.55309307335136529936015054480987340984057352863474391247950602346435375890016855110603846e+408906090034569570",
+    "width": "5.51764779198071024317726198696592544154568506991493024804576e+408906090034569570",
+    "lower_exact_mpf_tuple": [
+      0,
+      29593691535763040541068321199930928113995476718827314621513614572139403878621822966298135845828054254983236231286537605323470281415265324741725048124279205814659,
+      1358356628656377416,
+      534
+    ],
+    "upper_exact_mpf_tuple": [
+      0,
+      36221438794026775138375690849018986077461090173036457511355918792592483964256553616824648258780289312035457698024829513513480534602466037497427923555568626523839,
+      1358356628656377423,
+      534
+    ]
+  },
+  "zero_axial_source_cancelled_exactly": true,
+  "positive_F0_and_Phi_cancelled_by_analytic_definition": true,
+  "relaxed_3_23_cone_certified_at_R110_local_axis": true,
+  "admissible_stress_lift_constructed": false,
+  "whole_transition_cone_certified": false,
+  "parameter_family_sha256": "1ad446dbb3c1df2331c54c1f84d1c01b3561b2b9550787940dadb5367fd41562",
+  "parameters": {
+    "parameter_family_sha256": "1ad446dbb3c1df2331c54c1f84d1c01b3561b2b9550787940dadb5367fd41562",
+    "definition": {
+      "K_terms": [
+        "1e6",
+        "1/ell_c",
+        "1/Ra",
+        "Cstar",
+        "Pstar",
+        "A",
+        "norm_C3(Fcore)",
+        "norm_C3(1/Fcore)",
+        "norm_C3_Z(P0)",
+        "sum_five_norm_C3(core_moments)",
+        "norm_C3(Df)",
+        "norm_C3(Ef)",
+        "norm_C3(1/Df)"
+      ],
+      "A": "10+norm_C3(log(Cstar Fcore))+norm_C3(Uzcore)",
+      "pressure_Kp": 17,
+      "epsilon0": "1/(1e6*(1+KN))",
+      "KN": 18000,
+      "gamma": ".01",
+      "eta_tol": "min(epsilon0/4,e_star/100)",
+      "cstar": "0.5*min(epsilon0*gamma^2/(1e6*K1),eta_tol/(12*K1),1)",
+      "h_b": "cstar*K^-100",
+      "epsilon_b": "h_b (the identical scalar)",
+      "K1": "positive absolute moment constant >=1",
+      "core_norm_domain": "0<=R/Ra<=exp(ell_c), full real Z domain",
+      "frozen_norm_domain": "0<=log(R/Ra)<=log(110/Ra), full real Z domain",
+      "source_sha": "082d18b8f1ec2df84526fbdc190217d97dfb8825e823fa4c9e017c8a58d001bb",
+      "source_datum_sha": "04bdb5e1cc6216bd2592af7b4229b5188414b1893d62847d30345536fe9bbdd5",
+      "source_logC_definition": "Lambda*Gupper + 2*logLambda + 1000"
+    },
+    "input_hashes": {
+      "lei_ren_part1_paper_analytic_radial_tail.json": "bd2db15d3314c6ea6553afee057a5dbc64dbfb2eb451d53f54eae1baa13d7e47",
+      "lei_ren_part1_paper_linear_resolvent_bound.json": "682853412f72ab48b2f97cd0f06228f60ff28724ecb939aae34b0757381db0b3",
+      "lei_ren_part1_paper_commuting_resolvent_bound.json": "8992aa4de56964e6c947a0bab2b12be054c2b2c8d149d0cdbbe53eecdb8badd2",
+      "lei_ren_part1_paper_logarithmic_pressure_datum.py": "576e16dc89281d7f4011337023ab47256f1d338aa981d98d8f848e8884ed2e05",
+      "lei_ren_part1_paper_candidate_pressure_mass_refinement.json": "8824c74fac38ebade9d90f1269e6e337b2b2f64dea6a692b0cb4db601e548181",
+      "lei_ren_part1_paper_logarithmic_outer_parameters.py": "2a1fbb83ef254dd2fca8cebd64598cf6fcf3e2571649bbb9109a3914fa5d3224",
+      "lei_ren_part1_paper_candidate_pressure_function.py": "4cc4c87488e5f468aa9a459d1e8c9f754e85f12dee811ca9d8e066fd4d4986dc",
+      "lei_ren_part1_paper_outer.py": "e641dbe3808066a1ab792294ec2b07faede60c379ef6bfca60f6c11ed79f90f2",
+      "lei_ren_part1_paper_coherent_uniform_fixed_beta_error.json": "2ea09fa66dfae800c5f93a1ca11d1da69e25c021853445748606427c65737340",
+      "lei_ren_part1_paper_logarithmic_core_majorant.py": "537e88870b08d40eab8f3161aed9e8bf0d09c4d6abaef2177cd9bf05dc7bc890",
+      "lei_ren_part1_paper_nonlinear_map_majorant.py": "92d84671e7680af47544c7a9ebaee27132cd1c230ea96a61a179325cf9ff8aff",
+      "lei_ren_part1_paper_analytic_radial_tail.py": "f3de412dab4cbb03c16fa5bb252ce600320dc1aa5935ea2f66c6c40f35563827",
+      "lei_ren_part1_paper_linear_resolvent_bound.py": "44186fb15eb7a776fde65aa9fee70274daa7253ce108f90b8f9cea791ba5e808",
+      "lei_ren_part1_paper_commuting_resolvent_bound.py": "7f787bd0ea1179bb78bd2bed574cf840687fb4d0008c499c1bcc1ec7f1736d71",
+      "lei_ren_part1_paper_shared_pressure_Kp.py": "f9047f2176d7a6bea858fa1fbe31e0a78d6c97835550c72f438f4221dd34f965",
+      "lei_ren_part1_paper_shared_pressure_Kp.json": "c2c320f4cd1d197c47a2aff3c56f5b00b2302ccce5d3417d9d8718529e4cc4ac",
+      "lei_ren_part1_paper_logarithmic_core_majorant.json": "a23103d7883d2558c55dd8e09ccc20802e7cb579b60275b78106568d87e5ebca",
+      "lei_ren_part1_paper_shared_exit_parameters.py": "545e7c5201fb96e0cf65f966f5ee5c28adc4b7346391f6992d785c52938d4795"
+    },
+    "logC_lower": {
+      "lower": "1883082134696162971.26319928599227843607097293803644373789321000951431330820653563469387199",
+      "upper": "1883082134696162971.26319928599227843607097293803644373789321000951431330820653563469387199",
+      "width": "2.0501330894674953466158952602997519316315985715829555225081e-143",
+      "lower_exact_mpf_tuple": [
+        0,
+        91851701939276418308156968904836493695995589461171675856153055873065615014974323498664486952819391220154481156338795166613383586359760538637592118565910055609351,
+        -474,
+        535
+      ],
+      "upper_exact_mpf_tuple": [
+        0,
+        11481462742409552288519621113104561711999448682646459482019131984133201876871790437333060869102423902519310144542349395826672948294970067329699014820738756951169,
+        -471,
+        532
+      ]
+    },
+    "log_h_upper": {
+      "lower": "-188308213469616297127.013075779787788916514525925102550357396501085791586074774243478880593",
+      "upper": "-188308213469616297127.013075779787788916514525925102550357396501085791586074774243478880593",
+      "width": "7.87251106355518213100503779955104741746533851487854920643111e-141",
+      "lower_exact_mpf_tuple": [
+        1,
+        71759142140059701803511771508425559843308754670797798747720655558588059638233861957476827338470347668544577367633144102156674817599493881665421496522224627045601,
+        -467,
+        535
+      ],
+      "upper_exact_mpf_tuple": [
+        1,
+        35879571070029850901755885754212779921654377335398899373860327779294029819116930978738413669235173834272288683816572051078337408799746940832710748261112313522799,
+        -466,
+        534
+      ]
+    },
+    "h_upper": {
+      "lower": "8.55484894424046446389303275244431287294920593515100603336850432854223738423576235390867799e-81781218006913957009",
+      "upper": "8.55484894424046446389303275244431287294920593515100603336850432854223738423576235390867799e-81781218006913957009",
+      "width": "6.73481429605764258916437675452110292241114663407248596078049e-81781218006913957149",
+      "lower_exact_mpf_tuple": [
+        0,
+        25906645752617171756373683520466205466774182145274863883607831250386776448334701906591408945858306307508237334315370109989068405230142668759468097681331890038609,
+        -271671325731275734181,
+        533
+      ],
+      "upper_exact_mpf_tuple": [
+        0,
+        103626583010468687025494734081864821867096728581099455534431325001547105793338807626365635783433225230032949337261480439956273620920570675038688192146555894365045,
+        -271671325731275734183,
+        535
+      ]
+    },
+    "shared_h_epsilon_box": {
+      "lower": "0.0",
+      "upper": "8.55484894424046446389303275244431287294920593515100603336850432854223738423576235390867799e-81781218006913957009",
+      "width": "8.5548489442404644638930327524443128729492059351510060333685e-81781218006913957009",
+      "lower_exact_mpf_tuple": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "upper_exact_mpf_tuple": [
+        0,
+        103626583010468687025494734081864821867096728581099455534431325001547105793338807626365635783433225230032949337261480439956273620920570675038688192146555894365045,
+        -271671325731275734183,
+        535
+      ]
+    },
+    "h_equals_epsilon_by_symbolic_identity": true,
+    "cstar_restrictions_satisfied_by_symbolic_min": true,
+    "h_upper_proof": "K>=Cstar; cstar<=1/2; logCstar>=2logLambda+1000",
+    "no_K_numeric_value_invented": true,
+    "actual_positive_h_not_materialized": true,
+    "h_box_zero_lower_is_enclosure_not_zero_selection": true,
+    "conditional_h_positive_requires_full_norm_K_finite": true,
+    "full_physical_C3_K_norms_certified": false,
+    "full_Df_Ef_input_tests_certified": false,
+    "preheat_pressure_Kp_certified": true,
+    "pressure_Kp": 17,
+    "KN": 18000,
+    "epsilon0": {
+      "lower": "0.0000000000555524693072607077384589745014165879673351480473307038497861229931670462752069329481695461",
+      "upper": "0.0000000000555524693072607077384589745014165879673351480473307038497861229931670462752069329481695461",
+      "width": "5.17526350329880948048716740280054532203945462001698974865393e-172",
+      "lower_exact_mpf_tuple": [
+        0,
+        53671150533543391265698459681850832513456576436120701609038876332585955534269768686964526506609668601223037831669104177231335462766554464415072894192920959234167,
+        -568,
+        534
+      ],
+      "upper_exact_mpf_tuple": [
+        0,
+        107342301067086782531396919363701665026913152872241403218077752665171911068539537373929053013219337202446075663338208354462670925533108928830145788385841918468335,
+        -569,
+        535
+      ]
+    },
+    "K1_e_star_numeric_bounds_certified": false,
+    "source_j_eta_tol_relation_verified": false,
+    "full_Section9_parameter_admission": false,
+    "scope": "conditional shared-parameter family; core/connection calculations stay local in Z"
+  },
+  "h_b_equals_exit_epsilon_by_definition": true,
+  "full_Section9_parameter_admission": false,
+  "whole_axis": false,
+  "terminal_five_moment_repaired": false,
+  "temporal_recursion": false
+}
