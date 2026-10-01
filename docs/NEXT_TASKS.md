@@ -1,3 +1,11 @@
+## 2026-09-30 pressure contribution propagated
+
+- [x] Propagate accepted pressure-integral error into separate prefix/post pressure atoms.
+- [x] Regenerate degree18 interval core and propagate errors through all eight first/second-width endpoint states and five moments.
+- [ ] Account separately for axis and adapter generation roundoff and original parameter errors.
+- [ ] Bound omitted pressure and width orders; do not equate retained coefficient errors with total field errors.
+- [ ] Extend endpoint/point-Z control to the spatial collar, axial moment functions and stress cone.
+
 ## 2026-09-30 actual collar results and next error layers
 
 - [x] Evaluate accepted directed finite-core inlet and radial inertial derivatives.

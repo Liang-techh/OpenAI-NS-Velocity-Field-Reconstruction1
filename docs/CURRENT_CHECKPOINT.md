@@ -1,3 +1,7 @@
+## 2026-09-30 conditional pressure error reaches collar endpoint
+
+Accepted coherent pressure-integral derivative bounds now regenerate the finite degree18 core and reach all retained first/second-width endpoint atoms and five moments. At Z=.3, Uz pressure-only errors for width0/1/2 are4.51e-36/2.25e-36/7.91e-36. Axis/adapter generation errors, omitted pressure/width orders, full spatial collar and global axial closure remain open. See PRESSURE_ERROR_TO_COLLAR_ENDPOINT_2026_09_30.md.
+
 ## 2026-09-30 actual directed collar endpoint and portable input
 
 Accepted finite-core Z=.3 data now produce directed473-digit first/second-width coefficients, five profile moments and F/Uz/P/Ur/Ur_Z. Exact JSON source input allows ~35-second replay without a pickle or expensive chain rebuild. Independent radial-driver derivative checks pass; 174/180 legacy narrow-interval comparisons fail and are recorded. This encloses stored finite arithmetic only, not source/core/omitted-order errors. See ACTUAL_DIRECTED_COLLAR_ENDPOINT_2026_09_30.md.

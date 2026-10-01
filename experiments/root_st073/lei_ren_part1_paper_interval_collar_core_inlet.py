@@ -107,7 +107,10 @@ def _axial_constant(ctx: Any, value: Any) -> IntervalAxialSecondJet:
 
 def _row_atom(ctx: Any, polynomial: Any) -> IntervalPressureWidthJet:
     """Convert one cached ``PressurePolynomial`` to pressure atoms."""
-
+    if isinstance(polynomial,IntervalPressureWidthJet):
+        if polynomial.ctx is not ctx or polynomial.orders!=(PRESSURE_ORDER,WIDTH_ORDER):
+            raise ValueError('Regenerated core context/orders must match inlet')
+        return polynomial
     atoms = {
         (int(power), 0): _pair(ctx, coefficient)
         for power, coefficient in polynomial.atoms.items()
@@ -285,6 +288,8 @@ def build_inlet(
     cache_path: Any = DEFAULT_CACHE,
     *,
     precision: int = MINIMUM_PRECISION,
+    interval_core: Any = None,
+    ctx: Any = None,
 ) -> dict[str, Any]:
     """Return the directed finite-core snapshot at ``R=4/Lambda, Z=.3``.
 
@@ -298,9 +303,12 @@ def build_inlet(
     if precision < MINIMUM_PRECISION:
         raise ValueError(f"precision must be at least {MINIMUM_PRECISION}")
     raw, path, digest = _read_cache(cache_path)
-    ctx = mp.ctx_iv.MPIntervalContext()
-    ctx.dps = precision
-    coefficients = _interval_coefficients(ctx, raw["coefficients"])
+    if ctx is None:
+        ctx = mp.ctx_iv.MPIntervalContext()
+        ctx.dps = precision
+    elif ctx.dps!=precision:
+        raise ValueError('Supplied interval context precision must match')
+    coefficients = _interval_coefficients(ctx, raw["coefficients"] if interval_core is None else interval_core)
     lambda_interval = ctx.mpf(raw["Lambda"])
     delta_interval = ctx.mpf(raw["delta"])
     radius = _axial_constant(ctx, _ring(ctx, 4) / _ring(ctx, lambda_interval))
@@ -352,6 +360,7 @@ def build_inlet(
             "precision": precision,
             "scope": "stored finite radial/Z core only at Z=.3; no collar/transition RK rebuild",
             "stored_finite_core_only": True,
+            "supplied_core_perturbations_preserved": interval_core is not None,
             "source_remainder_enclosed": False,
             "core_remainder_enclosed": False,
             "collar_RK_rebuilt": False,
@@ -359,6 +368,18 @@ def build_inlet(
         }
     )
     return snapshot
+
+
+def build_inlet_from_interval_core(core,ctx,Lambda,delta):
+    """Evaluate regenerated nominal/perturbed rows with the accepted axis.
+
+Supplied errors remain distinct through every atom and axial slot. This does
+not certify their provenance; the caller must retain its error receipt.
+"""
+    raw,_,_=_read_cache(DEFAULT_CACHE)
+    if Lambda!=raw['Lambda'] or delta!=raw['delta']:
+        raise ValueError('Regenerated core must use the same accepted axis constants')
+    return build_inlet(precision=ctx.dps,interval_core=core,ctx=ctx)
 
 
 def _encode_ring(ring: IntervalPressureWidthJet) -> dict[str, Any]:
@@ -409,6 +430,7 @@ __all__ = [
     "WIDTH_ORDER",
     "DEFAULT_CACHE",
     "build_inlet",
+    "build_inlet_from_interval_core",
     "encode_jet",
     "encode_snapshot",
 ]
