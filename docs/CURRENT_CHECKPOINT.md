@@ -1,3 +1,7 @@
+## 2026-10-01 PARTIAL C120-F3: fresh interval comparison diagnostic
+
+Fresh Z in [0.49,0.51] core advanced to 28/124. Added interval-family comparison adapter and reproducible degree-28 inlet, switched endpoint and A/B driver diagnostic. No Z=0.3 tensor reuse; incomplete normal loading and scalar-slice queries rejected. Analytic tail remains unmet (upper 230255768972826965691194877441343514900992292969874275.703552589757537765763959695687472891); comparison ODE error and radial tail propagation are not enclosed. See docs/INTERVAL_COMPARISON_JETS_2026_10_01.md. Next: finish124, assess axial partition widths, propagate controlled errors and connect exit/transition equations. Temporal recursion remains incomplete.
+
 ## 2026-10-01 PARTIAL C120-F2: resumable fresh interval core
 
 Completed explicit-center production radial degree 15/124 for Z in [0.49,0.51], resumed from 8 with exact interval checkpoints. Same accepted fourteen-stage pressure datum; no old center tensor reuse. Incremental versus batch checks pass at 360 exact endpoints. Current normalized mixed C3 Taylor-tail upper bound: 126612833122270085302199092484174206541772425306035599267306885.94725745593822625758709161; target not met. See docs/CANDIDATE_INTERVAL_CORE_2026_10_01.md. Next: continue to 124, assess interval widths, then implement the center-aware comparison and transition adapter. Temporal recursion and whole-axis closure remain incomplete.
