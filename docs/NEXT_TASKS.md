@@ -1,3 +1,7 @@
+## 2026-09-30: Complex-axis guards and conditional infinite radial tails
+
+Directed common complex capsule eta=5e-19 excludes H0 +/- i sigma, L, and pressure-q poles; h=eta/8=6.25e-20 meets the strict norm-domain condition. A_Omega <=5.5783159801e16 certifies the current Cstar complex-axis guard. Implemented infinite mixed C3 radial tail factors from paper(8.30), conditional on an actual certified nonlinear X_h norm. That norm, analytic P0 modulus and nonlinear Kstar remain open; Lambda1e36 is not yet certified sufficient. Next: accepted-pressure complex modulus and explicit fixed-point size/Lipschitz estimates. See ANALYTIC_CORE_TAIL_DEPENDENCIES_2026_09_30.md. Do not promote conditional factors to actual remainder bounds.
+
 ## 2026-09-30: Coupled radial core extended to degree20
 
 Recovered radial rows19 and20 from the same22 accepted axis Taylor rows, with unchanged physical P0 and unchanged degree18 prefix. At Z=.3, pressure-parameter degree-zero entrance trace/axisF falls in magnitude from6.7318476e-29 to1.5337999e-33 (factor43890). Independent moment/integrated-defect identities pass. This is finite coupled radial continuation, not temporal recursion or a global tail certificate. Next: higher analytic axis jets and a validated infinite nonlinear radial majorant. Do not extrapolate the measured ratios into an infinite-tail proof. See CORE_TRACE_AND_RECIPROCAL_2026_09_30.md.
