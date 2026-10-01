@@ -1,0 +1,28 @@
+{
+  "center_family": [
+    ".49",
+    ".51"
+  ],
+  "state_sha256": "e6dc5928ecb65dd006f02bfa105cd4f5d443e3187fc18358f4298c5b122a9ed9",
+  "profile_domain": "R110 <= R <= Rm",
+  "log_radius_domain": [
+    "0",
+    "500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000134"
+  ],
+  "gap_free_piecewise_coverage": true,
+  "whole_cell_count": 66,
+  "full_R110_to_Rm_relaxed_cone_certified": true,
+  "fixed_parameter_source_family_only": true,
+  "strong_admissibility_claimed": false,
+  "higher_smoothness_or_full_terminal_matching_claimed": false,
+  "whole_axis": false,
+  "original_parameter_remainders_enclosed": false,
+  "heat_exterior_matched": false,
+  "temporal_recursion": false,
+  "input_hashes": {
+    "lei_ren_part1_paper_interval_connecting_cone_certificate.py": "690390e198b37e41d5810a8acc1b15b462eee77f663f2f5e56ef6397d072abdc",
+    "lei_ren_part1_paper_interval_long_reshape_angular_cone.json": "5185eec60fcedcf9cfa27e685806c8820f1b9e8c4f8211848e071b1c5a8f0414",
+    "lei_ren_part1_paper_interval_axial_restore_cone_atlas.json": "abdbc6feb1078da6ffb4229b5733ca29292731ba46069c5b935c1e11f4f47ec2",
+    "lei_ren_part1_paper_interval_long_reshape_field.py": "604e10235c2960fda99e120775da780b3fe4f9060c3432e707ca3aeeb36a9c3f"
+  }
+}

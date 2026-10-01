@@ -1,3 +1,11 @@
+## PARTIAL C120-F15 — complete connecting relaxed cone fromR110 toRm
+
+Resolved the preceding long-reshape margin/direction non-certificates by analytically cancelling common angular amplitude, keeping physical source-Z atoms including ell, grouping shared zeta*J terms, and centring axial mass. Two complete cells cover R110..Rz;64 directed cells cover restoration/reference continuation Rz..Rm. The composed certificate verifies common core/family, dependencies and gap-free exact radial boundaries. All66 complete cells certify the relaxed kappa<=2 cone on Z in [0.49,0.51]. No velocities, moments or pressure were fitted or changed.
+
+Independent scalar stress comparisons at three angular amplitude scales verify normalization; the synthetic fixture makes no cone claim. Restoration regression contains88 point-packet coefficients in full cells. Source pressure remains unchanged; zero axial shear makes axial inertial stress irrelevant to the long-phase relaxed margin, not zero. See docs/CONTROLLED_CONNECTING_CONE_2026_10_01.md and interval_connecting_cone_certificate.json.
+
+Next implement the paper's post-five-bump shear/flatten profile and exact heat exterior with the same functional terminal moments and analytic pressure. Strong admissibility, higher axial smoothness/Ur_Z, whole-axis coverage, original parameter remainders, complete finite energy, flat remainder, genuine n-dependent temporal recursion, oscillatory stress correction and full Cartesian NS residual remain incomplete. The40-cell repaired reference-annulus relaxed cone is separately certified.
+
 ## PARTIAL C120-F14 — callable controlled R110-to-Rm connecting layers
 
 Installed long swirl reshape, exact reference continuation with inherited whole flat-kernel defects, controlled axial restoration and final reference continuation toRm. Unified API IntervalAxialRestoreField.evaluate_log_offset(y) accepts y=log(R/110) through rm_log=10*(5e151+14)-6. Rz begins at rm_log-2; restoration ends one logarithmic unit later. All layers preserve the same local C1 source family, g/B, five cumulative moments and analytic pressure P0+Mp. Whole reverse kernels use analytic negative-B/sigma-derivative bounds; partial axial restoration uses directed cells and the existing full restoration weights. No midpoint controls, fitted pressure or finite-window integral replacement.

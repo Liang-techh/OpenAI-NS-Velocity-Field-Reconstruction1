@@ -1,0 +1,16 @@
+{
+  "existing_point_packet_coefficients_contained": 88,
+  "phase_samples": [
+    "0",
+    "1/2",
+    "1",
+    "2"
+  ],
+  "production_cell_proof_uses_analytic_envelopes": true,
+  "independent_quadrature_repeated": false,
+  "input_hashes": {
+    "lei_ren_part1_paper_interval_axial_restore_cone_atlas_check.py": "015304c35afa314267d7fabbaa226089b3fc64b6239c5507fe7f5bb710cd0055",
+    "lei_ren_part1_paper_interval_axial_restore_cone_atlas.py": "29488245f448a109682fc3de098085b67512ba9ecc933d282cfeb110ad9d4ac0",
+    "lei_ren_part1_paper_interval_axial_restore_field.py": "5416cf9439a8bfcbaca94430d162f4938902cd1611ba753ab35df6b17c3ffecf"
+  }
+}
