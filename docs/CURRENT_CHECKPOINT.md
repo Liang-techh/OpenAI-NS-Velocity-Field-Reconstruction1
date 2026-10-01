@@ -1,3 +1,15 @@
+# F25 — 2026-10-01: full-real-axis analytic core exit inputs certified
+
+The fresh F24 core has whole-axis Z in [-1,1] analytic normalized Phi lower about .2653810764 on scaled radius [0,4.1]. The two summed C2 axial/average errors are bounded by 3.495670e-22; the signed Ha*partial_Z logF bound is 2.888359e-380. These discharge the three CORE exit requirements (4.35)/(9.9), without selecting F0 or using sampled finite coefficients. Frozen D/E tests, K1, physical C3 K bounds and full Section9 admission remain open.
+
+Degree-144 finite recurrence remains live beyond the last closed batch. Never start a second writer or restart on an observation timeout. The receipt/state pair becomes consumable when the current writer finishes and their hashes match. The new core exit loader and new-family comparison/actual-exit/R110 producers are prepared and syntax-checked, but downstream field results are still pending finite completion. F23 R110 belongs to old j.
+
+NEXT: poll the existing recurrence handle until terminal; if not complete, resume sequentially. Then run shared_core_seed_check.py, shared_tolerance_core_exit.py, shared_tolerance_comparison.py, shared_tolerance_exit_bridge.py, shared_tolerance_exit_continuation.py, shared_tolerance_exit_switch.py, shared_tolerance_R110_cone.py, shared_tolerance_phase_check.py. All are under experiments/root_st073/ with prefix lei_ren_part1_paper_.
+
+Evidence and remaining tasks: docs/UNIFORM_CORE_EXIT_INPUTS_2026_10_01.md and experiments/root_st073/lei_ren_part1_paper_shared_core_uniform_bounds.json. Complete background, stress lift, heat exterior and temporal recursion remain unfinished.
+
+---
+
 # F24 — 2026-10-01: fixed bump constants select a fresh inlet-tolerance core
 
 Directed/analytic fixed constants: CA=344, CQ=1081, CS=57749553. With Kp=17 and KN=18000, the selected hierarchy gives e_star about 1.398268e-19 and j about 1.747835e-22. Old j=1e-14 does not meet this choice. Reuse the j-independent preheat datum, but regenerate the core and connections; F21/F22/F23 remain old-j branches.
