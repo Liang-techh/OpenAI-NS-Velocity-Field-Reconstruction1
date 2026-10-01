@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `23908c0c95e4fd2e485379dc87675358e0204e5d`.
+The inspected `main` head before this update is `47a7e41269e87e30623877f75e9e14b0d00244b0`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`b275f9df571c37aba9236059bfe128f819158047`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b275f9df571c37aba9236059bfe128f819158047)
+[`70e48e44d2cf879b81eb78d111f9bb9126ab189f`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/70e48e44d2cf879b81eb78d111f9bb9126ab189f)
 on `codex/st073-transition-next`, observed October 1. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,75 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-01 batch: actual functional five-moment repair and outer transport
+
+The [same-family join report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/70e48e44d2cf879b81eb78d111f9bb9126ab189f/docs/SAME_FAMILY_REFERENCE_JOIN_2026_10_01.md)
+records the selected-radius long reshape and axial restoration through Rh on
+Z in [-1,1], with a recomputed R110 amplitude budget, inherited five moments
+and unchanged P=P0+Mp. T=400Abar is explicitly a conservative bound-based
+construction choice. Exact relative log offsets preserve stage topology without
+subtracting huge absolute radii. The relaxed-cone claim is analytic; callable
+log-interface examples are interval diagnostics, not full physical point fields.
+
+The [functional repair report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/70e48e44d2cf879b81eb78d111f9bb9126ab189f/docs/ACTUAL_FUNCTIONAL_FIVE_MOMENT_REPAIR_2026_10_01.md)
+and [actual defect admission](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/70e48e44d2cf879b81eb78d111f9bb9126ab189f/experiments/root_st073/lei_ren_part1_paper_shared_five_defect_admission.json)
+derive all five centered defects from the actual source primitives, including
+inner exit, reshape, restoration, reference-to-axis contributions and nonzero
+tails. The complete summed C1 norm on Z in [-1,1] is recorded <=4.9017390830378e-23.
+This is a moment-source admission norm, not progress percentage or NS momentum
+residual. The true correlated function norm is distinguished from enlarged
+independent value/derivative boxes; the two source classes are not interchanged.
+
+The [repair producer receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/70e48e44d2cf879b81eb78d111f9bb9126ab189f/experiments/root_st073/lei_ren_part1_paper_shared_five_moment_repair.json)
+records a unique implicit C1 coefficient family, ||h||C1<=3.37239648913e-20,
+using fixed directed bump weights and the actual source delta. Its stated
+functional argument is Ah+Q(h,h)=-d, strict self-map/uniform contraction and
+implicit differentiation; invertible centering then restores the original five
+terminal moment targets identically. The top-level
+actual_implicit_functional_five_moment_identities_analytically_certified=true
+therefore asserts function identities, not merely zero-containing residual
+intervals. Midpoints select only a preconditioner, not source functions, tails,
+pressure or solution coefficients.
+
+The [companion checker](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/70e48e44d2cf879b81eb78d111f9bb9126ab189f/experiments/root_st073/lei_ren_part1_paper_shared_five_moment_repair_check.json)
+records13 symbolic identities relating the original five physical correction
+integrands, cumulative primitives, Q/N and Ur. It explicitly says residual zero
+containment is not the closure proof and reports the implicit functional closure
+checked. The producer's pending-check flag is historical generation scope; the
+separate checker supplies the later check. The nested generic inverse still
+has terminal_physical_five_moment_closure=false: preserve that flag alongside
+the top-level functional claim rather than reporting a completed full physical
+field. This supervision reviewed saved claims/code interfaces, not their proofs
+independently and not a numerical replay.
+
+`SharedFiveMomentRepair.coefficients(Z)` encloses coefficients and first axial
+derivatives. `evaluate_patch(x,Z)` couples swirl, axial velocity, partial moments,
+pressure and radial velocity on x=R/Rm in [1,e], with support[49/40,71/40].
+The corrected inner relaxed-cone bound through Rh is recorded; the original
+core/collar persists. Exact coefficient point functions and physical radii are
+not materialized; C1 does not provide Ur_Z. Patch examples do not certify a
+full Cartesian residual or an independently evaluated full physical field.
+
+The [initial outer report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/70e48e44d2cf879b81eb78d111f9bb9126ab189f/docs/SAME_FAMILY_INITIAL_OUTER_2026_10_01.md)
+uses these functional identities for the same-family reference continuation,
+slope transition, axial turnoff and Rd buffer. The [outer buffer report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/70e48e44d2cf879b81eb78d111f9bb9126ab189f/docs/SAME_FAMILY_OUTER_BUFFER_2026_10_01.md)
+and [buffer receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/70e48e44d2cf879b81eb78d111f9bb9126ab189f/experiments/root_st073/lei_ren_part1_paper_shared_outer_buffer.json)
+extend callable C1 local-unit transport through the slope-mu transition and
+pure-power buffer to Rp. All five accumulated primitives and original pressure
+are retained, including nonzero axial history after Uz=0. Stable kernels avoid
+microscopic subtraction/division; no new source fit or moment reset is used.
+
+Replay order is the pinned join, defect-admission, repair and companion checker,
+then outer-initial/outer-buffer producers and checkers. Remaining work starts at
+the O.4 pulse/coupled corrections and selected-radius heat collar. The axial
+pulse cannot be fixed before the full corrected swirl-energy tail is available;
+its mixed-moment target at Rv is half that tail, not zero. Whole-outer cone,
+exact heat/pressure/radial match, global stress lift and flat remainder, finite
+energy, temporal n-dependent recursion, oscillatory correction and full Cartesian
+NS validation remain open. Full Section9 remains false. Earlier pending inner
+reshape/five-function repair statuses remain historical, superseded only in this
+implicit same-family scope; outer repairs are separate.
 
 ### 2026-10-01 batch: physical parameter family and whole-axis implicit inner exit
 
@@ -1478,6 +1547,12 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [70e48e44 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36929746585)
+finished failure. Its actual constrained log has original13 failed identifiers
+and423 passed; four smoke/slice jobs pass, full historical tests skip. No selected
+governance regression appears. This CI does not independently validate the
+functional Banach argument or complete outer/NS acceptance.
 
 The [b275f9df research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36921857280)
 finished failure. Its actual constrained log has the original13 failed identifiers
