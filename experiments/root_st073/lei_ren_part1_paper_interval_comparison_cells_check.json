@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "cells": 32,
+  "core_cells": 16,
+  "switched_cells": 16,
+  "endpoint_separate": true,
+  "field_axial_order": 2,
+  "driver_axial_order": 1,
+  "source_lower_positive": true,
+  "receipt_source_hash_checked": true,
+  "physical_exit_ODE_solved": false,
+  "stress_cone_certified": false
+}

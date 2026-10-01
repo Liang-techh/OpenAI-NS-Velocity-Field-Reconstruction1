@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "fixture_only": true,
+  "scalar_center": ".5",
+  "family": [
+    ".49",
+    ".51"
+  ],
+  "caller_exit_epsilon": ".01",
+  "comparison_cells": 32,
+  "independent_RK_steps": 512,
+  "exit_and_first_axial_derivative_coefficient_checks": 18,
+  "numerical_reference_is_accuracy_diagnostic_not_proof": true,
+  "source_hashes": {
+    "lei_ren_part1_paper_interval_exit_bridge_enclosure.py": "08633f3676f4be7b16900ccd1bc8940e25bacc974eb3892498940188b4d33d1f",
+    "lei_ren_part1_paper_interval_exit_bridge_enclosure_check.py": "9d2f12250b38f27fb52527a8b466f2d2e96de23dd3165e74c7378fb45e8cf0cd",
+    "lei_ren_part1_paper_interval_comparison_cells.py": "2fc5faf168ebdd70f55cbc69615d41f653ce57eef123bcf235bc521c85815b1a"
+  }
+}
