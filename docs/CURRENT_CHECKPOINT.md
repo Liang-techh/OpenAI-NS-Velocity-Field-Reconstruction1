@@ -1,3 +1,9 @@
+## 2026-10-01: shared candidate five core moments and analytic inlet ready
+
+The same refined Lambda48 degree124 coefficients now generate five core moment contributions, prescribed recovered pressure, and normalized inlet jets at scaled_R4, Z=.3. Infinite radial tails are integrated into the moments and propagated through the inlet formulas. Six integral fixtures, five original physical stress checks, and an independent angular trace comparison pass. Both analytic core stress jets through axial order2 contain zero.
+
+See docs/CANDIDATE_SHARED_MOMENTS_INLET_2026_10_01.md. This prepares core data for matching; terminal functional five-moment closure and shared collar regeneration are not complete. Whole-axis weighted angular derivative estimate remains next; temporal recursion remains open.
+
 ## 2026-10-01: Lambda48 candidate completed124/124; normalized C3 target passes
 
 Refined physical pressure and all F0-squared couplings propagated through124 radial orders. Combined finite coefficient uncertainty plus infinite analytic tails: worst mixed C3 error1.84247e-23 (Phi) and7.51074e-13 (Psi), all20 budgets <1e-12 on scaled_R[0,4.1] at Z=.3. Provisional angular exit trace at scaled_R4 is enclosed by +/-1.75612e-63 without resetting/fitting.
