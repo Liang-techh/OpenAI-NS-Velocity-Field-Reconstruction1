@@ -1,3 +1,11 @@
+# F30 checkpoint - 2026-10-01
+
+Actual same-family Section 10 five-defect admission and implicit functional five-bump repair are complete on Z in [-1,1]. Complete C1 defect upper 4.9017390830378e-23 (0.0350558 percent of e_star); coefficient C1 upper 3.37239648913e-20; corrected |bw| upper 8.9742822813401e-6. Source P0/delta/core and positive unresolved tails are retained. Callable coefficient/partial-moment/pressure/Ur enclosures installed; 13 independent physical-integrand, primitive and stress identities pass.
+
+Read docs/ACTUAL_FUNCTIONAL_FIVE_MOMENT_REPAIR_2026_10_01.md and the shared_five_defect_admission, shared_five_moment_repair and shared_five_moment_repair_check pairs (prefix lei_ren_part1_paper_) together. Implicit functional closure is not a full finite physical velocity evaluator. NEXT: selected-radius reference-plus-outer construction with the same Md40 pressure/schedule/waiting root, its own outer repairs and exact heat profile. Global admissible lift/flat remainder and actual temporal recursion remain incomplete.
+
+---
+
 # F29 checkpoint - 2026-10-01
 
 The same selected F27/F28 family now has a callable interval log swirl reshape/reference and axial-restoration prescription plus whole-axis analytic relaxed-cone bounds from R110 toRh=exp(-5)Rref. R110 normalized amplitude is recomputed, G normalization/signs and exact interface offsets are guarded, inherited moments/P0 are preserved. SQ>=1.6114999994723; restoration |bw|<=.0012799288928393. Independent differentiation of allfive primitives verifies both stress ODE identities;7 log-interface checks pass.

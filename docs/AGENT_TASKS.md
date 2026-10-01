@@ -1,3 +1,18 @@
+# F30 task handoff - 2026-10-01
+
+DONE: actual signed five-defect ledger and complete Section 10.19 test; same-source C1 five-bump contraction with explicit angular-box source coverage; corrected inner cone and coupled callable partial moments/P0+Mp/Ur; 13 independent identities. Read docs/ACTUAL_FUNCTIONAL_FIVE_MOMENT_REPAIR_2026_10_01.md. Preserve source data and positive tiny tails; do not reset terminal moments in the repaired patch or use the tube delta upper as the physical delta.
+
+NEXT, in order (mark DONE with source-bound receipts):
+1. Continue from the exact implicit repaired terminal identities to Rref, then build O.2 slope transition and axial turnoff at the selected family radius. Use normalized local cumulative moments and exact relative log offsets; carry P0, actual delta and Md40. Keep complete moment history after Uz vanishes; do not reuse the old frozen A/logC field.
+2. Build O.3 power-buffer/slope-mu change and O.4 pulse, including its separate axial moment corrections; avoid materializing Rref or inverse-mu lengths. Retain true waiting-root and continuous source integrals.
+3. Build flatten and angular moment correction, steep power/restoration/waiting, heat collar and exact exterior with recomputed selected-radius heat coefficients. Prove all five terminal identities and P0 compatibility as functions on [-1,1], including the positive late pressure atoms.
+4. Recover the matched background velocity/radial component and stress from the same primitives; certify smooth interfaces, cone margins and finite-energy tail. Implement the Section 11 admissible shear loop/second restoration and flat remainder.
+5. Implement actual n-dependent coefficient recovery with common core interval, independent moment repairs, divergence-preserving cutoff/smooth summation; then mean/oscillatory correction and independent Cartesian full residual diagnostics.
+
+Keep corrected-outer/heat/global-stress/temporal-completion flags false until the corresponding actual constructions are covered. Preserve unrelated scale_reference files. No finite core job is live; 144 spatial core orders are not temporal recursion.
+
+---
+
 # F29 task handoff - 2026-10-01
 
 DONE: recomputed R110 log-amplitude budget; same-family (9.30) log swirl reshape and (9.38) axial restoration with whole-axis analytic relaxedcone throughRh; pressure/N/J budgets; exact relative interfaces; independent five-primitive-to-stress identities and7 callable-interface checks. Details: `docs/SAME_FAMILY_REFERENCE_JOIN_2026_10_01.md`. Use shared_reference_join_bounds.py/.json and shared_reference_join_check.py/.json (prefix lei_ren_part1_paper_).
