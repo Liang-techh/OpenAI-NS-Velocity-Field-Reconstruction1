@@ -1,3 +1,7 @@
+## 2026-09-30: Full nonlinear map majorant and actual parameter gates
+
+Implemented all20 split terms of paper(8.50), retaining restored pressure, swirl and derivative coupling. Explicit product/integrated derivative constants give size and Lipschitz majorants for(8.51). At epsilon1e-36 scaled upper logs are407.4556429 and396.6910940, so these conservative bounds do not prove contraction. This is not nonexistence evidence. Angular cross-swirl and coarse resolvent amplification dominate; next tighten the preconditioned inverse and separate center residual from ball variation. No arbitrary Kstar, trace reset or temporal-recursion claim. See NONLINEAR_CORE_MAJORANT_2026_09_30.md.
+
 ## 2026-09-30: Accepted complex pressure and linear model norms
 
 All14 true radial mass stages now bound accepted analytic P0 on the common complex capsule, physical modulus<=4.7937965388e12. Direct differentiation of the same integral avoids the eta^-1 Cauchy loss. Derived g/L gives axial linear-model norm<=1.9175186155e15; direct Bessel coefficients sharpen angular-model norm to<=47312.40216952. No pressure datum replacement, finite real-error-to-complex substitution, or nonlinear contraction claim. Next: explicit size/Lipschitz majorants for every paper(8.50) nonlinear term. Original parameter/source errors and full matching remain open. See ANALYTIC_CORE_TAIL_DEPENDENCIES_2026_09_30.md.
