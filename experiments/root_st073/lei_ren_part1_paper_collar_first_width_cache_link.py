@@ -33,6 +33,18 @@ def run(cache_dir):
             dict(precision=260,axis=axis,component_pressure_core=component),
             h_b=width,pressure_order=9,width_order=2)
         bar=comparison.evaluate(0,'.3')
+        # The relative comparison amplitude is identically one at the inlet.
+        # Record finite-MP self-division/log artifacts before interval replay.
+        inlet_ratio=bar['F']/bar['F']
+        inlet_log=inlet_ratio.log()
+        identity_artifacts=[]
+        for slot in ('value','tangent','second'):
+            for p in range(10):
+                target=1 if slot=='value' and p==0 else 0
+                quotient_error=getattr(inlet_ratio,slot).atoms.get((p,0),0)-target
+                log_error=getattr(inlet_log,slot).atoms.get((p,0),0)
+                identity_artifacts.append(dict(Z_slot=slot,pressure_power=p,
+                    quotient_minus_identity=quotient_error,log_identity_error=log_error))
     iv=mp.ctx_iv.MPIntervalContext();iv.dps=300
     def exact(value):
         # Direct MP conversion preserves the stored binary number.
@@ -78,6 +90,9 @@ def run(cache_dir):
             within_stored_generation_roundoff=(max_relative<mp.mpf('1e-250') and nonzero_zero_targets==0),
             failed_relative_comparisons=failed,
             analytic_first_width_replacement_coefficients_available=True,
+            inlet_self_division_log_artifacts=identity_artifacts,
+            inlet_identity_nonzero_artifact_count=sum(
+                bool(x['quotient_minus_identity'] or x['log_identity_error']) for x in identity_artifacts),
             original_cache_modified=False,
             finite_model_point_Z_only=True,source_driver_error_enclosed=False,
             second_width_ODE_error_enclosed=False,full_ODE_error_enclosed=False,
