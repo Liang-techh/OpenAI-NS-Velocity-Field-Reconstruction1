@@ -9,17 +9,65 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `745340e8f2a98e737eb595c1e19d4daeff891cb6`.
+The inspected `main` head before this update is `a71e8b4a51185b9500aa124ad4461d59b244218d`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`dee158b94a68f88d88930edd51325ddfa1a26158`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/dee158b94a68f88d88930edd51325ddfa1a26158)
-on `codex/st073-transition-next`, dated September 30. This branch contains the
+[`a86ab76188abc19eb0c923819c5d3eb8a4da11c1`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a86ab76188abc19eb0c923819c5d3eb8a4da11c1)
+on `codex/st073-transition-next`, observed October 1. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
 NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-01 batch: separate Lambda48 analytic candidate and pressure jets
+
+The [315ed9f6 commuting inverse/candidate record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/315ed9f658914125e58015287467f775b4fd0d53/docs/COMMUTING_INVERSE_AND_CORE_CANDIDATE_2026_09_30.md)
+tightens the inverse upper to about624734.8 (log13.345), retaining the full
+factorial tail and nonlinear product constants. With these estimates, the old
+Lambda=1e36 contraction gates remain unproved; conservative uppers do not prove
+nonexistence. A **separate Lambda=1e48 candidate** has recorded correction-size
+upper.1463551 and Lipschitz upper3.0933e-6, passing the sufficient gates under
+the accepted fixed datum and paper analytic-space estimates. Its F0-squared
+amplitude enclosure is recomputed, not borrowed from the old field. The accepted
+P0 adapter formula is unchanged by the new Ra convention; terminal compatibility
+does not follow from that adapter observation.
+
+The [59e6455a candidate analytic-tail record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/59e6455aa9eef4dedc601242726d706b7ba9150c/docs/CANDIDATE_ANALYTIC_CORE_TAILS_2026_09_30.md)
+uses the candidate fixed-point ball to bound normalized angular positivity
+F/F0>=.2559462 over scaled_R in[0,4.1], real Z in[-1,1]. Candidate norm bounds
+now multiply the analytic infinite Taylor-tail factors. Radial degree124 is
+sufficient for the stated <=1e-12 normalized mixed C3 tail target, requiring at
+least128 axis Taylor coefficients. This compares the analytic solution with its
+exact Taylor truncation; unverified adapter coefficients are not automatically
+that truncation. Physical radial derivatives gain Lambda powers, and velocity
+amplitude/epsilon conversions remain separate. The internal normalized tail
+target is not a Cartesian NS momentum target.
+
+The [ee13d9bd accepted pressure-jet record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/ee13d9bd3bf82543d9f43f8c51cf78eeafe8ae37/docs/CANDIDATE_PRESSURE_JETS_2026_09_30.md)
+supplies directed physical P Taylor intervals at Z=.3 through order160, from all14
+accepted true pressure stages without pressure-parameter truncation. Fixed-beta
+terms use true mass intervals; flatten uses a true-mass/Cauchy enclosure. This
+provides input depth, not the computed degree124 coupled candidate or global-Z
+coefficient-error enclosure. The [a86ab761 scaled evaluator](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/a86ab76188abc19eb0c923819c5d3eb8a4da11c1/experiments/root_st073/lei_ren_part1_paper_candidate_core_evaluation.py)
+evaluates supplied finite gauge rows and structurally removes the common uncertain
+axis datum from Psi. Its16 polynomial self-check cases are implementation checks;
+the module explicitly does not identify its input with the analytic fixed point
+or add an infinite tail. No independent numerical replay was performed here.
+
+This batch advances the analytic candidate route conditionally on the stored
+inputs and stated estimates; this review is not an independent proof verification.
+The old Lambda36 positivity cells, degree20 trace, inverse/defect probes, collar
+and matching receipts remain historical results of that old field. They cannot
+certify Lambda48, and Lambda48 bounds cannot retroactively certify Lambda36.
+Next required integration is directed candidate coefficient generation, input/
+coefficient errors combined with analytic tails, candidate pressure/five moments
+and inlet/collar rebuilt together, then functional terminal matching and cone.
+Original parameter derivation, full source errors, full K, heat/finite energy,
+temporal recursion, oscillatory correction and corrected NS residual/L2 remain
+unaccepted. Pinned records provide candidate majorant, tail and pressure-jet replay
+commands; scientific implementation and CI were not changed by this review.
 
 ### 2026-10-01 batch: partial positivity, entrance trace and analytic-tail prerequisites
 
@@ -623,6 +671,13 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The requested [ee13d9bd run36812576440](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36812576440)
+and latest [a86ab761 run36812765620](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36812765620)
+were inspected from their actual constrained-integration logs: both finish with
+13 failed/423 passed, and all13 identifiers match the original route/token set.
+Four smoke/slice jobs pass; full historical tests are skipped. This comparison
+does not certify the conditional candidate bounds or new evaluator self-checks.
 
 The [dee158b9 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36810491338)
 completed with the same original13 failed identifiers and423 passed. Four
