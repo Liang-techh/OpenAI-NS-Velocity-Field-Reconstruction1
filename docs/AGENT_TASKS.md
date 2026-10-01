@@ -1,3 +1,11 @@
+# F26 task handoff - 2026-10-01
+
+Completed: fresh 144-order core, seed check, local new-family exit chain through R110, and whole-axis frozen (9.14) input gates. Do not restart completed recurrence or reuse the old-j exit branch.
+
+Current task order and acceptance boundaries: `docs/FROZEN_PROFILE_AND_FRESH_EXIT_2026_10_01.md`, section Ordered remaining work. First construct the fixed Section 9 K1 ledger and physical C3 K/radius admission. Then transfer margins to the whole actual transition, long reshape and five functional repairs, exact heat exterior, stress/flat remainder, and true temporal scale recursion. Mark tasks complete only with source-bound receipts and exact domain/parameter identities; preserve historical frozen artifacts and add companions.
+
+---
+
 # F25 — 2026-10-01: full-real-axis analytic core exit inputs certified
 
 The fresh F24 core has whole-axis Z in [-1,1] analytic normalized Phi lower about .2653810764 on scaled radius [0,4.1]. The two summed C2 axial/average errors are bounded by 3.495670e-22; the signed Ha*partial_Z logF bound is 2.888359e-380. These discharge the three CORE exit requirements (4.35)/(9.9), without selecting F0 or using sampled finite coefficients. Frozen D/E tests, K1, physical C3 K bounds and full Section9 admission remain open.

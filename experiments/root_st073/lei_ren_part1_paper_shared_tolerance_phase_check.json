@@ -1,0 +1,21 @@
+{
+  "phase_cutoff_and_dy_checks": 57,
+  "fixture_h_powers_of_two": [
+    -3,
+    -10,
+    -1000
+  ],
+  "production_family_sha256": "933017f45cc5cb9d5b090a5de8afa8985e12b504f053fc8349242c8521ac17f7",
+  "all_five_receipts_share_same_h_parameter": true,
+  "fixture_is_algebra_only": true,
+  "full_Section9_parameter_admission": false,
+  "input_hashes": {
+    "lei_ren_part1_paper_shared_tolerance_comparison.json": "6c22dbc4723160da52196bdabbe0c167cf8a9622dd16ecd2588609e77e766996",
+    "lei_ren_part1_paper_shared_tolerance_exit_bridge.json": "2a354e021e857f89849daf89d187949ca5c43cfb222dc2a73af87ec4fcf39058",
+    "lei_ren_part1_paper_shared_tolerance_exit_continuation.json": "7b9484dfe8b6cfedeac7d5df6f478f40d32d78589482bedfc0f71597479a9deb",
+    "lei_ren_part1_paper_shared_tolerance_exit_switch.json": "c4cc5b208f73876ee7031eaed4b4f3f8e0ae6a910c6d43cfa1bfa83fa5b8b2ee",
+    "lei_ren_part1_paper_shared_tolerance_R110_cone.json": "adfc0e729b193d575ef8461ec86ad001a8dfdee72d9f3cdbdeb6d88caf363843",
+    "lei_ren_part1_paper_shared_tolerance_phase_check.py": "0e456cc7d202c63f24a114efc92c72a43bc2d9703c6e7239aff8157a61f9b9df",
+    "lei_ren_part1_paper_interval_comparison_enclosure.py": "03027203a8ca43721508f8b337ac7107d09be785da3dd491a7b5ab27e46c8ed8"
+  }
+}

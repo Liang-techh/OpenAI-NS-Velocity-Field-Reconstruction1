@@ -1,3 +1,11 @@
+# F26 checkpoint - 2026-10-01
+
+Fresh inlet-tolerance core completed 144/144 radial orders; terminal seed acceptance passed. The same-family local comparison/bridge/continuation/switch reached R=110 and its local relaxed direction condition passed; 57 phase/derivative checks passed. New analytic companions prove all frozen-profile (9.14) inputs over Z in [-1,1], Ra..110.
+
+Read `docs/FROZEN_PROFILE_AND_FRESH_EXIT_2026_10_01.md` first for evidence, domain limits, and ordered remaining work. Full physical C3 K, a fixed Section 9 K1 ledger, radius admission, whole actual-transition cone, five functional repairs, exact heat exterior, admissible stress/flat remainder, and true temporal recursion remain unfinished. 144 spatial orders are not temporal recursion.
+
+---
+
 # F25 — 2026-10-01: full-real-axis analytic core exit inputs certified
 
 The fresh F24 core has whole-axis Z in [-1,1] analytic normalized Phi lower about .2653810764 on scaled radius [0,4.1]. The two summed C2 axial/average errors are bounded by 3.495670e-22; the signed Ha*partial_Z logF bound is 2.888359e-380. These discharge the three CORE exit requirements (4.35)/(9.9), without selecting F0 or using sampled finite coefficients. Frozen D/E tests, K1, physical C3 K bounds and full Section9 admission remain open.

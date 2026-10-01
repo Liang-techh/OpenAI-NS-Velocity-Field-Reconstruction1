@@ -155,7 +155,7 @@
   "tiny_swirl_positive_upper_preserved": true,
   "true_F0_point_value_not_selected": true,
   "seed_acceptance_passed": true,
-  "finite_core_completed": false,
+  "finite_core_completed": true,
   "temporal_recursion": false,
   "whole_axis_core_generated": false
 }
