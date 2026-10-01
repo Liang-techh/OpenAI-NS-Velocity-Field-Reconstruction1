@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `94224d04973651b60e9f93b933375b94c7e6a3c2`.
+The inspected `main` head before this update is `08aae97b894081a49d813a7539d9104dc6fabd9a`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`f300106e427730726009f6486ee4f49eacb9c530`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/f300106e427730726009f6486ee4f49eacb9c530)
+[`85bc70c6ad5d154d8fce8c4e23066febeb2ec20c`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/85bc70c6ad5d154d8fce8c4e23066febeb2ec20c)
 on `codex/st073-transition-next`, observed October 1. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,62 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-01 batch: Lambda120 actual transition and finite five-bump repair
+
+The [whole-axis analytic core-moment record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/6bb90b2b49cc0abce15f214f5693e0e82d45529f/docs/GLOBAL_CORE_MOMENTS_2026_10_01.md)
+encloses all five Lambda120 core moments through axial order3 at scaled_R=4
+uniformly on real Z in[-1,1], using analytic norm sums and positive radial
+integration weights. The20 center-coefficient containment checks are consistency
+checks, not the uniform proof. The separate functional-center recurrence API is
+checked only at degree4 (90 scalar/interval checks); it has not produced a new
+degree124 center atlas or whole-axis finite numerical field.
+
+The [candidate comparison/driver record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/1311833bf3747ea318533317a7615435ba613352/docs/CANDIDATE_COMPARISON_JETS_2026_10_01.md)
+propagates actual Z=.3 Taylor drivers rather than querying off-center finite
+differences. It retains the common amplitude, pressure and moment algebra. Its
+32/64-step change in D about6.76e-12 is a refinement observation, not a controlled
+ODE error. Auxiliary comparison at R110 remains distinct from actual transition.
+
+The [cebabe33 actual transition record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/cebabe33d208a52653dba595e433eeeb7591385f/docs/CANDIDATE_TRANSITION_R110_2026_10_01.md)
+now rebuilds Lambda120's bridge, post-collar continuation and switches through
+physical R110 at Z=.3, replacing the Lambda36 source for this calculation only.
+The adapter projects directed input jets to nominal MP midpoints for the existing
+integrators. Same-source nonzero amplitude, P0/P0_Z, five moments, axial tangents
+and raw quadratic integrals are retained. Four sampled point tests pass relaxed
+conditions; stronger tests fail at R101/110. These regional diagnostics are not
+uniform cone certificates, and source/tail/RK errors are not propagated as bounds
+through this nominal chain. The earlier pending actual center transition is
+superseded; full controlled transition and heat matching remain open.
+
+The [actual candidate-defect record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/cebabe33d208a52653dba595e433eeeb7591385f/docs/CANDIDATE_MOMENT_DEFECTS_2026_10_01.md)
+restores exact refined R110 tuples and generates all five centered rows plus
+first-Z tangents from that source. At Z=.3, d1/d2/d4 are about2.23e-15/5.69e-16/
+5.92e-41; d3/d5 remain tiny nonzero signed atoms. They are normalized moment
+defects, not NS residuals or proof that terminal moments vanish. Fixed-parameter
+atom storage does not establish a parameter-family error enclosure.
+
+The [85bc70c6 finite inverse record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/85bc70c6ad5d154d8fce8c4e23066febeb2ec20c/docs/CANDIDATE_FIVE_BUMP_INVERSE_2026_10_01.md)
+and [original inverse receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/85bc70c6ad5d154d8fce8c4e23066febeb2ec20c/experiments/root_st073/lei_ren_part1_paper_candidate_five_bump_inverse.json)
+solve A h+Q(h,h)=-d for this candidate with10 nonlinear updates at473 digits,
+64-order finite bump quadrature and first axial tangents including Am_Z. The
+largest retained polarization value/tangent residual is about6.23766e-210.
+This is finite-map algebra, not independently integrated physical moment closure,
+a relative bound for every ultraflat row, or an infinite inverse-tail estimate.
+The corrected field is evaluated only at x=1.25,Z=.3; P0/P0_Z are preserved and
+stress evaluation succeeds, which does not certify its cone. Exact increments
+remain stored separately from rounded materialized sums.
+
+The receipt explicitly reports no independent integral validation, no quadrature
+or source-error enclosure, no whole-axis inverse, no uniform cone and no terminal
+functional five-moment closure. The next requirements are independent actual bump
+moment/tangent integration, controlled quadrature and source errors, stress across
+all supports, and a functional axial inverse. Existing Lambda36 inverse/cone
+receipts are not reused as candidate acceptance evidence. Replay commands are in
+the pinned comparison, transition, defect and inverse records; this review has
+not independently rerun numerical results or verified rigorous estimates. Full
+matching, heat/finite energy, global K/cone, temporal recursion, oscillatory repair
+and complete Cartesian NS residual/L2 remain unaccepted.
 
 ### 2026-10-01 batch: separate Lambda120 core and functional repair inputs
 
@@ -780,6 +836,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [85bc70c6 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36826585967)
+actual log has the original13 failed identifiers and423 passed. Four smoke/slice
+jobs pass; full historical tests skip. No added selected governance failure is
+observed; this does not certify transition integration or five-bump repair errors.
 
 The [f300106e research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36820936935)
 actual constrained-integration log reports the original13 failed identifiers and
