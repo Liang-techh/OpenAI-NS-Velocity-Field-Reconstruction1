@@ -1,0 +1,14 @@
+{
+  "independent_partial_restore_primitives_contained": 3,
+  "exact_C1_inlet_field_and_moment_coefficients": 22,
+  "restored_axial_field_exactly_4Z": true,
+  "terminal_axial_radial_derivative_zero": true,
+  "unified_R110_to_Rm_dispatcher_terminal_preserved": true,
+  "whole_connecting_cone_or_higher_smoothness_certified": false,
+  "input_hashes": {
+    "lei_ren_part1_paper_interval_axial_restore_field_check.py": "3957552229af38d4c92091a1c1e8a6b67b8109fbd27063d382f9b1f8ad5f8e36",
+    "lei_ren_part1_paper_interval_axial_restore_field.py": "5416cf9439a8bfcbaca94430d162f4938902cd1611ba753ab35df6b17c3ffecf",
+    "lei_ren_part1_paper_interval_long_reshape_field.py": "604e10235c2960fda99e120775da780b3fe4f9060c3432e707ca3aeeb36a9c3f",
+    "lei_ren_part1_paper_interval_functional_defects.json": "c7383c7310754327c520cf3e3bf53f56b204aa06cbb54c9c052eef52d4a8713d"
+  }
+}
