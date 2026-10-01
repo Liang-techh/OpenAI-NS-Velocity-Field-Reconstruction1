@@ -10,11 +10,15 @@ normalization for an astronomical interval.
 Source: Lei--Ren, arXiv:2609.35406v1, Sections 9.4--9.5, equations
 (9.25)--(9.33).  This is a finite numerical connection candidate; it does
 not certify the source parameter gate, the relaxed cone globally, moment
-repair, pressure matching, PDE, or time-scale recursion.
+repair, pressure matching, PDE, or time-scale recursion.  The default Z
+driver tangent uses a fourth-order centered stencil.  An optional
+``analytic_driver_provider`` can supply the normalized switch data and
+their Z tangents at the center, avoiding all off-center Z evaluations.
 """
 
 from __future__ import annotations
 
+from collections.abc import Mapping
 from functools import lru_cache
 import json
 from pathlib import Path
@@ -50,7 +54,13 @@ def _signed_log(value: Any, precision: int = 50) -> dict[str, Any]:
 class ExitSwitches:
     """Piecewise actual-value extension of ``ExitContinuation`` to R=110."""
 
-    def __init__(self, provider: ExitContinuation, *, steps: int = 32) -> None:
+    def __init__(
+        self,
+        provider: ExitContinuation,
+        *,
+        steps: int = 32,
+        analytic_driver_provider: Any | None = None,
+    ) -> None:
         if not isinstance(provider, ExitContinuation):
             raise TypeError("provider must be an ExitContinuation")
         if int(steps) != steps or steps < 8:
@@ -69,6 +79,7 @@ class ExitSwitches:
         self.R110 = mp.mpf("110")
         self.steps = int(steps)
         self.derivative_step = _mp(getattr(self.tangent, "derivative_step", "1e-45"))
+        self.analytic_driver_provider = analytic_driver_provider
         self._start_cache: dict[str, dict[str, Any]] = {}
         self._driver_cache: dict[tuple[str, str, str], dict[str, Any]] = {}
 
@@ -193,6 +204,114 @@ class ExitSwitches:
                 "F0_Z": start["F0_Z"],
             }
 
+    def _analytic_driver(
+        self, x: mp.mpf, Z: mp.mpf, blend: mp.mpf
+    ) -> dict[str, Any] | None:
+        """Resolve the optional center-only analytic switch driver.
+
+        The provider may be a callable ``(x, Z, blend) -> Mapping`` or expose
+        ``switch_driver(x, Z, blend)`` / ``analytic_switch_driver(...)``.  It
+        must return scalar ``D``, ``D_Z``, ``I_z``, ``I_z_Z``, ``Fbar``,
+        ``Fbar_Z``, ``F0`` and ``F0_Z``.  A ``bar`` mapping or ``barE`` value
+        is optional; absent both, one center ``comparison.evaluate`` call is
+        used to preserve the existing ``barE`` output.  No off-center Z
+        evaluations are made on this path.
+        """
+
+        provider = self.analytic_driver_provider
+        if provider is None:
+            return None
+        method = getattr(provider, "switch_driver", None)
+        if method is None:
+            method = getattr(provider, "analytic_switch_driver", None)
+        if method is None and callable(provider):
+            method = provider
+        if method is None or not callable(method):
+            raise TypeError(
+                "analytic_driver_provider must be callable or expose "
+                "switch_driver(x, Z, blend)"
+            )
+        raw = method(x, Z, blend)
+        if not isinstance(raw, Mapping):
+            raise TypeError("analytic switch driver must return a mapping")
+        required = (
+            "D",
+            "D_Z",
+            "I_z",
+            "I_z_Z",
+            "Fbar",
+            "Fbar_Z",
+            "F0",
+            "F0_Z",
+        )
+        missing = [name for name in required if name not in raw]
+        if missing:
+            raise KeyError(
+                "analytic switch driver is missing " + ", ".join(missing)
+            )
+        values = {name: _mp(raw[name]) for name in required}
+        if values["Fbar"] == 0:
+            raise ArithmeticError("analytic switch driver comparison Fbar vanished")
+        R = self.R0 * mp.exp(x)
+        y_global = self._global_y(R)
+        bar = raw.get("bar")
+        if bar is None:
+            barE = raw.get("barE", raw.get("E"))
+            if barE is None:
+                # This is a center evaluation only; the provider path still
+                # performs no Z +/- h queries.
+                bar = self.comparison.evaluate(y_global, Z)
+            else:
+                bar = {
+                    "E": _mp(barE),
+                    "F": values["Fbar"],
+                    "FZ": values["Fbar_Z"],
+                    "F_Z": values["Fbar_Z"],
+                    "I_z": values["I_z"],
+                    "D": values["D"],
+                }
+        elif not isinstance(bar, Mapping):
+            raise TypeError("analytic switch driver bar must be a mapping")
+        else:
+            bar = dict(bar)
+            if "E" not in bar:
+                barE = raw.get("barE", raw.get("E"))
+                if barE is not None:
+                    bar["E"] = _mp(barE)
+        if "E" not in bar:
+            raise KeyError(
+                "analytic switch driver bar must provide E or barE"
+            )
+        result = dict(values)
+        result["R"] = R
+        result["bar"] = bar
+        result["B"] = (
+            -self.epsilon
+            * mp.sqrt(R / 2)
+            * (values["F0"] / values["Fbar"])
+            * values["I_z"]
+            * blend
+        )
+        ratio_Z = (
+            values["F0_Z"] / values["Fbar"]
+            - values["F0"] * values["Fbar_Z"] / (values["Fbar"] ** 2)
+        )
+        result["B_Z"] = (
+            -self.epsilon
+            * mp.sqrt(R / 2)
+            * blend
+            * (
+                ratio_Z * values["I_z"]
+                + values["F0"] * values["I_z_Z"] / values["Fbar"]
+            )
+        )
+        result["blend"] = blend
+        result["derivative_step"] = None
+        result["derivative_method"] = "analytic driver provider"
+        result["analytic_driver_used"] = True
+        result["normalized_driver"] = True
+        return result
+
     def _driver_tangent(self, x: mp.mpf, Z: mp.mpf, blend: mp.mpf) -> dict[str, Any]:
         """MP fourth-order centered Z derivative of normalized D and B."""
 
@@ -204,6 +323,10 @@ class ExitSwitches:
             )
             if key in self._driver_cache:
                 return self._driver_cache[key]
+            analytic = self._analytic_driver(_mp(x), _mp(Z), _mp(blend))
+            if analytic is not None:
+                self._driver_cache[key] = analytic
+                return analytic
             h = self.derivative_step
             center = self._bar_driver(x, Z, blend)
             R = center["R"]
@@ -245,6 +368,7 @@ class ExitSwitches:
                 "bar": center["bar"],
                 "derivative_step": h,
                 "derivative_method": "MP fourth-order centered driver stencil",
+                "analytic_driver_used": False,
                 "normalized_driver": True,
             }
             self._driver_cache[key] = result
@@ -397,6 +521,11 @@ class ExitSwitches:
                     "barD": d["D"],
                     "barE": d["bar"]["E"],
                     "bar": d["bar"],
+                    "driver_derivative_step": d.get("derivative_step"),
+                    "driver_derivative_method": d.get(
+                        "derivative_method", "MP fourth-order centered driver stencil"
+                    ),
+                    "analytic_driver_used": bool(d.get("analytic_driver_used", False)),
                 }
             if region == "switch_2":
                 s = (x - self.hb) / self.hb
@@ -410,6 +539,11 @@ class ExitSwitches:
                     "barD": d["D"],
                     "barE": d["bar"]["E"],
                     "bar": d["bar"],
+                    "driver_derivative_step": d.get("derivative_step"),
+                    "driver_derivative_method": d.get(
+                        "derivative_method", "MP fourth-order centered driver stencil"
+                    ),
+                    "analytic_driver_used": bool(d.get("analytic_driver_used", False)),
                 }
             return {
                 "a": mp.mpf(".8"),
@@ -419,6 +553,9 @@ class ExitSwitches:
                 "barD": mp.mpf(0),
                 "barE": mp.mpf(0),
                 "bar": None,
+                "driver_derivative_step": None,
+                "driver_derivative_method": "constant power branch",
+                "analytic_driver_used": False,
             }
 
     def _output(self, x: mp.mpf, Z: mp.mpf, state: list[mp.mpf], metadata: dict[str, Any]) -> dict[str, Any]:
@@ -518,8 +655,12 @@ class ExitSwitches:
                 "barE": driver["barE"],
                 "chi": None,
                 "region": metadata["region"],
-                "driver_derivative_step": self.derivative_step,
-                "driver_derivative_method": "MP fourth-order centered normalized D/B stencil",
+                "driver_derivative_step": driver.get("driver_derivative_step"),
+                "driver_derivative_method": driver.get(
+                    "driver_derivative_method",
+                    "MP fourth-order centered normalized D/B stencil",
+                ),
+                "analytic_driver_used": bool(driver.get("analytic_driver_used", False)),
                 "normalized_moment_state": state,
                 "raw_quadratic_integrals": {
                     "axial": self.R0 * axial,

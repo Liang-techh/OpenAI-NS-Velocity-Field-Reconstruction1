@@ -1,0 +1,39 @@
+{
+  "protocol": {
+    "exit": "provider.exit_driver(y, Z) -> A,B,A_Z,B_Z",
+    "switch": "provider.switch_driver(x, Z, blend) -> D,D_Z,I_z,I_z_Z,Fbar,Fbar_Z,F0,F0_Z plus optional bar/barE"
+  },
+  "center": "0.3",
+  "exit_provider_calls": 1,
+  "switch_provider_calls": 1,
+  "exit_rhs": [
+    "0.2",
+    "0.3",
+    "2.0",
+    "0.0",
+    "0.0",
+    "0.0",
+    "1.0",
+    "1.0",
+    "0.4",
+    "0.5"
+  ],
+  "switch_rhs": [
+    "-0.01",
+    "-0.296984848098349960248354632084",
+    "2.0",
+    "0.0",
+    "0.0",
+    "0.0",
+    "1.0",
+    "1.0",
+    "-0.003",
+    "-0.0599626550446192300691916019065"
+  ],
+  "analytic_exit_used": true,
+  "analytic_switch_used": true,
+  "fallback_exit_used": true,
+  "fallback_switch_used": true,
+  "off_center_provider_calls": 0,
+  "source_scope": "Hook plumbing only; no core, pressure, transition, or cone certification."
+}

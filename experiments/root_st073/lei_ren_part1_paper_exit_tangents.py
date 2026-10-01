@@ -8,15 +8,19 @@ cumulative moments.  Its tangent is integrated together with the state:
     g_{yZ} = A_Z,
     u_{yZ} = exp(g) (B_Z + B g_Z).
 
-The comparison driver's ``A_Z`` and ``B_Z`` use an mpmath fourth-order
-centered stencil on already normalized drivers.  This is a numerical driver
-derivative, not a certification of the source bridge or of the relaxed cone.
-The initial tangent comes from the actual core coefficient and moment jets,
-including the derivative of the ``F_a`` normalization.
+By default the comparison driver's ``A_Z`` and ``B_Z`` use an mpmath
+fourth-order centered stencil on already normalized drivers.  An optional
+``analytic_driver_provider`` can instead supply the four scalar fields
+``A``, ``B``, ``A_Z`` and ``B_Z`` at the center ``(y, Z)``; that path performs
+no off-center Z evaluations.  Neither path certifies the source bridge or
+the relaxed cone.  The initial tangent comes from the actual core
+coefficient and moment jets, including the derivative of the ``F_a``
+normalization.
 """
 
 from __future__ import annotations
 
+from collections.abc import Mapping
 from functools import lru_cache
 from typing import Any
 
@@ -46,6 +50,7 @@ class ExitTangents(ExitBridge):
         epsilon: Any | None = None,
         steps: int = 16,
         derivative_step: Any = "1e-45",
+        analytic_driver_provider: Any | None = None,
     ) -> None:
         super().__init__(comparison, epsilon=epsilon, steps=steps)
         with mp.workdps(self.precision):
@@ -54,7 +59,12 @@ class ExitTangents(ExitBridge):
                 raise ValueError("derivative_step must be positive")
             if 2 * self.derivative_step >= 1:
                 raise ValueError("derivative_step must keep the centered stencil in |Z|<1")
-        self.driver_derivative_method = "mp fourth-order centered stencil"
+        self.analytic_driver_provider = analytic_driver_provider
+        self.driver_derivative_method = (
+            "analytic driver provider"
+            if analytic_driver_provider is not None
+            else "mp fourth-order centered stencil"
+        )
         self._driver_cache: dict[tuple[str, str], dict[str, Any]] = {}
 
     def _z_key(self, Z: Any) -> str:
@@ -160,8 +170,48 @@ class ExitTangents(ExitBridge):
                 "normalization": "D and B differentiated after Fa/barF normalization",
             }
 
+    def _analytic_driver(self, y: mp.mpf, Z: mp.mpf) -> dict[str, Any] | None:
+        """Resolve the optional center-only analytic driver hook.
+
+        The provider may be a callable ``(y, Z) -> Mapping`` or expose an
+        ``exit_driver(y, Z)`` / ``analytic_exit_driver(y, Z)`` method.  The
+        returned mapping must contain scalar ``A``, ``B``, ``A_Z`` and
+        ``B_Z`` values.  No stencil points are constructed on this path.
+        """
+
+        provider = self.analytic_driver_provider
+        if provider is None:
+            return None
+        method = getattr(provider, "exit_driver", None)
+        if method is None:
+            method = getattr(provider, "analytic_exit_driver", None)
+        if method is None and callable(provider):
+            method = provider
+        if method is None or not callable(method):
+            raise TypeError(
+                "analytic_driver_provider must be callable or expose "
+                "exit_driver(y, Z)"
+            )
+        raw = method(y, Z)
+        if not isinstance(raw, Mapping):
+            raise TypeError("analytic exit driver must return a mapping")
+        required = ("A", "B", "A_Z", "B_Z")
+        missing = [name for name in required if name not in raw]
+        if missing:
+            raise KeyError(
+                "analytic exit driver is missing " + ", ".join(missing)
+            )
+        result = dict(raw)
+        for name in required:
+            result[name] = _mp(result[name])
+        result["derivative_step"] = None
+        result["derivative_method"] = "analytic driver provider"
+        result["analytic_driver_used"] = True
+        result["normalized_driver"] = True
+        return result
+
     def _driver_tangent(self, y: mp.mpf, Z: mp.mpf) -> dict[str, Any]:
-        """Fourth-order centered MP derivative of normalized A and B."""
+        """Return normalized driver values and their Z tangent."""
 
         with mp.workdps(self.precision):
             z = _mp(Z)
@@ -169,6 +219,10 @@ class ExitTangents(ExitBridge):
             cached = self._driver_cache.get(key)
             if cached is not None:
                 return cached
+            analytic = self._analytic_driver(_mp(y), z)
+            if analytic is not None:
+                self._driver_cache[key] = analytic
+                return analytic
             h = self.derivative_step
             values = {
                 "minus_2": self._normalized_driver(y, z - 2 * h),
@@ -190,6 +244,7 @@ class ExitTangents(ExitBridge):
                 "B_Z": derivative("B"),
                 "derivative_step": h,
                 "derivative_method": self.driver_derivative_method,
+                "analytic_driver_used": False,
                 "normalized_driver": True,
             }
             self._driver_cache[key] = result
@@ -366,8 +421,11 @@ class ExitTangents(ExitBridge):
                 "B": driver["B"],
                 "A_Z": driver["A_Z"],
                 "B_Z": driver["B_Z"],
-                "driver_derivative_step": self.derivative_step,
-                "driver_derivative_method": self.driver_derivative_method,
+                "driver_derivative_step": driver.get("derivative_step"),
+                "driver_derivative_method": driver.get(
+                    "derivative_method", self.driver_derivative_method
+                ),
+                "analytic_driver_used": bool(driver.get("analytic_driver_used", False)),
                 "normalized_driver": True,
                 "stress": stress,
                 "Z_moment_derivatives_available": True,
