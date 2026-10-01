@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `5350fb9b5f8c24d06ef13975cffdf4a3cf01331d`.
+The inspected `main` head before this update is `94224d04973651b60e9f93b933375b94c7e6a3c2`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`77b14f77899238254ca983d650bbebf8cbb02c6e`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/77b14f77899238254ca983d650bbebf8cbb02c6e)
+[`f300106e427730726009f6486ee4f49eacb9c530`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/f300106e427730726009f6486ee4f49eacb9c530)
 on `codex/st073-transition-next`, observed October 1. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,63 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-01 batch: separate Lambda120 core and functional repair inputs
+
+The [Lambda48 shared-core record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/da39efe2b75599fd53d4e823585ac197f3f15bff/docs/CANDIDATE_SHARED_MOMENTS_INLET_2026_10_01.md)
+first supplies all five radial core moments, recovered P=P0+Mp and common inlet
+jets at Z=.3 from the completed degree124 candidate. It integrates analytic
+radial-tail bounds into moments and propagates product errors by Leibniz sums,
+retaining amplitude factors and separating finite from analytic enclosures.
+This is a core contribution, not terminal five-moment closure.
+
+The [c8a154e5 weighted-sign record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/c8a154e5af9ff5080c6c9e0738b04d3f77f91cde/docs/CANDIDATE_WEIGHTED_ANGULAR_SIGN_2026_10_01.md)
+introduces a **different Lambda=1e120 candidate** with conditional analytic bound
+-Phi_s>=(chi+1/Lambda)/32 on scaled_R in[0,4.1],Z in[-1,1]. The estimate retains
+the near-root weight, all epsilon-bearing nonlinear terms and fixed-data operator
+majorants. Lambda48 fails this sufficient estimate, which does not prove an
+incorrect actual slope. The analytic Lambda120 sign cannot certify Lambda48's
+finite rows or matching.
+
+The [separate regeneration record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/d454c8e5473d079b642f1b1ef39e7205b4e1e1b9/docs/CANDIDATE_LAMBDA120_REGENERATION_2026_10_01.md)
+and [0dbf0414 completion record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/0dbf04143af0dfe6b92629f541e87d470a18b932/docs/CANDIDATE_LAMBDA120_CORE_COMPLETE_2026_10_01.md)
+confirm actual Lambda120 regeneration through124 radial orders at Z=.3, using
+128 initial axial coefficients and its separately enclosed anchored amplitude.
+The same14-stage pressure datum is preserved. Its20 normalized mixed-C3 budgets
+pass over scaled_R in[0,4.1], with worst Phi/Psi uppers about1.84246e-23/7.51073e-13.
+These similar display values do not merge the two candidates: distinct state,
+budget, trace and inlet files retain Lambda and source hashes.
+
+The [Lambda120 shared-inlet receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/0dbf04143af0dfe6b92629f541e87d470a18b932/experiments/root_st073/lei_ren_part1_paper_candidate_shared_inlet_Lambda120.json)
+and [shared-inlet implementation](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/f300106e427730726009f6486ee4f49eacb9c530/experiments/root_st073/lei_ren_part1_paper_candidate_shared_inlet.py)
+bind the exact state to its combined budget and independent trace, integrating
+same-source finite intervals and omitted radial tails into five moments/inlet
+jets. Pressure remains the prescribed F-squared primitive. Angular Ttheta/F is
+reported within about+/-1.75611e-135 and normalized axial stress within
++/-1.50196e-16. Zero containment is a consistency check, not an identity proof
+for the finite polynomial or annular/terminal matching. The analytic exact
+equation is a separate dependency. Whole-axis inlet and shared collar flags
+remain false; only the analytic sign estimate has whole-axis scope.
+
+The [f300106e functional repair record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/f300106e427730726009f6486ee4f49eacb9c530/docs/FUNCTIONAL_MOMENT_REPAIR_INPUTS_2026_10_01.md)
+implements reference endpoint target jets for centers/intervals in[-1,1] from
+the authoritative accepted schedule, and a directed physical five-bump change
+map retaining all quadratic terms and its control Jacobian. It distinguishes
+physical Rh=exp(accepted_logRref-5) from core scaled_R=4, and physical/control
+row ordering from the existing normalized paper map. Polynomial fixtures verify
+the algebra, not actual compact bump integration. Actual transition moments,
+five defects as functions of Z, certified integration errors and a repair
+solution remain missing; functional pressure input is not a velocity/moment join.
+
+Replay uses the pinned separate Lambda120 pipeline and functional pressure,
+reference-target and repair-map commands. Weighted-sign source provenance also
+requires the local paper-text cache documented in the regeneration record.
+No numerical receipt or rigorous estimate was independently rerun/verified here.
+Original parameter errors, physical-coordinate error propagation, whole-axis
+finite field/inlet, actual transition/collar and terminal closure, full K/cone,
+heat exterior/finite energy, temporal recursion, oscillatory correction and full
+Cartesian NS residual/L2 remain unaccepted. Lambda36,48 and120 evidence must
+retain their separate candidate/source identities.
 
 ### 2026-10-01 batch: degree124 candidate coefficient-plus-tail budget
 
@@ -723,6 +780,12 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [f300106e research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36820936935)
+actual constrained-integration log reports the original13 failed identifiers and
+423 passed. Four smoke/slice jobs pass; full historical suite is skipped. No
+added selected governance regression appears; these jobs do not independently
+certify the candidate slope, moment errors or functional repair fixtures.
 
 The [77b14f77 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36815270231)
 was inspected from actual job logs: original13 failed identifiers/423 passed,
