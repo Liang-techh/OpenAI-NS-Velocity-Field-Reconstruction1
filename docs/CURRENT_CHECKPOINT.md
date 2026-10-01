@@ -1,3 +1,11 @@
+## 2026-10-01: functional reference targets and directed physical repair inputs
+
+DONE C120-M1 (endpoint target component): reference_endpoint_targets.py implements paper (9.3) as directed axial Taylor functions from the canonical accepted schedule hash. Physical Rh is kept in log factors and is not confused with s=4. Eighty independent derivative checks, whole-axis containment and physical scale conversion pass.
+
+PARTIAL C120-M2: five_bump_moment_map.py now supplies an independent physical moment integration backend, all angular/axial quadratic cross terms, the control Jacobian and the conversion of actual defects to the existing paper (10.8) rows. It extends the data path to directed axial jets; it does not replace existing paper compact bumps or declare a solve. Direct changed-field moment, Jacobian and row-conversion checks pass. Actual transition defect functions and enclosed compact-support integrals remain required.
+
+Next: finish generalized-center core recursion, generate true candidate core/transition interval functions, accumulate all five moments without reset, then solve the existing (10.8) map with matching source/parameter data. Full coherent outer profile moments remain incomplete. See docs/FUNCTIONAL_MOMENT_REPAIR_INPUTS_2026_10_01.md.
+
 ## 2026-10-01: Lambda120 degree124 complete; functional pressure jets available
 
 DONE: the separate Lambda120 core completed124/124 radial orders. All20 normalized mixed C3 budgets pass at Z=.3 on s=[0,4.1]. Worst Phi error1.84246060226628271e-23; worst Psi error7.51073122007974972e-13. Shared five core moments, recovered pressure and inlet stress jets are regenerated. The new candidate_pressure_function.py supplies directed pressure jets at every real center/interval in [-1,1], preserving all14 accepted stages. The fixed pressure datum is chosen before Lambda in the paper; changing the outer profile generally requires rebuilding it. See docs/CANDIDATE_LAMBDA120_CORE_COMPLETE_2026_10_01.md.
