@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `2b10ba5b07d7e65b8f0f7f9f23163525e23d8b53`.
+The inspected `main` head before this update is `f88bfddcd0a3575cc1e5fa221d4d7516131b9ad5`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`2f2780672d9e299dcbb825b5a30c2cc8bbac3045`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2f2780672d9e299dcbb825b5a30c2cc8bbac3045)
+[`c3fd531a97c1b146e12ff5b9dd6fc37dfea2e110`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c3fd531a97c1b146e12ff5b9dd6fc37dfea2e110)
 on `codex/st073-transition-next`, observed October 1. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,65 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-01 batch: uniform local C1 inverse and complete relaxed reference annulus
+
+The [functional five-row defect record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/53ef2fafa2d46b7aa9523d4bed407fc600e22322/docs/FUNCTIONAL_FIVE_DEFECTS_2026_10_01.md)
+uses the controlled Lambda120 R110 family[.49,.51], full flat-kernel bounds and
+512-cell restoration integrals, retaining first-Z uncertainty rather than the
+old Z=.3 midpoint source. It reconstructs Uz-4Z algebraically to avoid spurious
+family-width subtraction. This is fixed accepted-parameter scope, not a formal
+pressure/width parameter-family remainder certificate.
+
+The [bb257c47 uniform inverse record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/bb257c4751d0cfba34bd632078a8e8ca3980d575/docs/FUNCTIONAL_FIVE_BUMP_INVERSE_2026_10_01.md)
+and [original inverse receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/bb257c4751d0cfba34bd632078a8e8ca3980d575/experiments/root_st073/lei_ren_part1_paper_interval_five_bump_inverse.json)
+provide a strict interval self-map and weighted contraction bound about.00271269494639
+on a uniform coefficient box. The fixed midpoint-derived preconditioner is only
+a choice of R; source/map intervals are not projected. Banach contraction and
+implicit differentiation establish a unique local C1 h(Z), with h/h_Z enclosures.
+This is stronger than a point solve or residual interval containing zero. It is
+still conditional on the accepted fixed datum and stated analytic/enclosure
+dependencies; this reviewer has not independently audited the proof.
+
+The [ad8750fa installed reference-field record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/ad8750faa47adbc2821212e206b920c6db158294/docs/REPAIRED_REFERENCE_FIELD_2026_10_01.md)
+installs interval controls and same-source partial moments in a callable local
+field for x=R/Rm in[1,2]. It preserves P=P0+Mp and recovers Ur/Ur_R through the
+axial moment identities. At x=2 the partial map equals the full implicit map,
+so all five terminal **reference-annulus** identities follow for that local C1
+solution family. They are not inferred from zero containment alone and do not
+prove complete inner-to-heat-exterior closure. Independent moderate-scale physical
+fixtures support map/stress translations; they are not a full production replay.
+C2 controls, Ur_Z and independent Cartesian divergence remain unavailable.
+
+The [c3fd531a full reference-annulus atlas](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/c3fd531a97c1b146e12ff5b9dd6fc37dfea2e110/docs/REFERENCE_ANNULUS_CONE_ATLAS_2026_10_01.md)
+and [atlas receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/c3fd531a97c1b146e12ff5b9dd6fc37dfea2e110/experiments/root_st073/lei_ren_part1_paper_interval_reference_annulus_cone_atlas.json)
+certify relaxed kappa<=2 conditions on all40 gap-free full radial cells in[1,2]
+for the local axial family, with0 unresolved. Positive cumulative weight ranges,
+analytic bump/slope bounds and all physical radius factors cover entire cells.
+This supersedes the prior five-point radial limitation for this annulus only;
+it does not establish strong admissibility or whole-axis coverage. Translation
+regressions are distinct from the earlier independent physical fixtures.
+
+The [both-branch switch certificate](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/bb257c4751d0cfba34bd632078a8e8ca3980d575/docs/SWITCH_BOTH_BRANCH_CERTIFICATE_2026_10_01.md)
+covers the remaining first-switch strip by correlated sufficient conditions for
+both possible kappa branches, cancelling common amplitude/tiny shear before
+division. It does not isolate the crossing or certify every point as strong.
+Together with preceding cell/subcell evidence it supplies the appropriate branch
+coverage. The constant-power tail remains relaxed. Historical raw central-strip
+diagnostics and the receipt's whole_switch_cone_certified=false aggregate flag
+remain preserved; the new full-cell both-conditional-branches result is separate,
+not a rewritten all-strong summary.
+
+The actual callable R110-to-Rm reshape/restoration field is still uninstalled:
+an endpoint defect enclosure is not that connecting field. Local reference
+identities do not remove this gap. Original parameters/Section9 constants, C2 and
+higher axial regularity, whole-axis matching, final strong stress via shear
+modulation, flatten/heat collar/exact exterior, complete finite energy, flat
+remainder, temporal recursion, oscillatory correction and corrected Cartesian NS
+residual/L2 remain unaccepted. All Lambda identities and historical center results
+stay separate. Pinned records provide inverse/field/atlas/branch replays; no
+numerical receipt, rigorous enclosure or proof was independently rerun/audited here.
+Only documentation changes are made by this checkpoint.
 
 ### 2026-10-01 batch: controlled actual exit, local radial cone atlas and switches
 
@@ -994,6 +1053,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [c3fd531a research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36850888972)
+actual log reports the original13 failed identifiers/423 passed. Four smoke/slice
+jobs pass; full historical tests skip. No selected governance regression appears;
+this does not independently certify the local inverse or annulus bounds.
 
 The [2f278067 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36844431360)
 actual constrained log has the original13 failed identifiers/423 passed. Four
