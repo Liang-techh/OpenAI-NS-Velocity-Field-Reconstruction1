@@ -18,7 +18,7 @@ def physical_moment_coefficients(inlet,normalized):
                 p=Fa*Fa*r*normalized['p'])
 
 
-def physical_endpoint(inlet,first,second):
+def physical_endpoint(inlet,first,second,*,s=2):
     """Return same-pressure endpoint fields and all five moments through W^2."""
     template=inlet['F'];ctx=template.ctx;orders=dict(pressure_order=template.pressure_order,
                                                   width_order=template.width_order)
@@ -29,7 +29,7 @@ def physical_endpoint(inlet,first,second):
     second_m=physical_moment_coefficients(inlet,second)
     moments={name:inlet['moments'][name]+W*first_m[name]+W*W*second_m[name]
              for name in first_m}
-    R=inlet['R']*(1+2*W+2*W*W)
+    R=inlet['R']*(1+W*s+W*W*(s*s)/2)
     F=inlet['F']*(1+W*first['g']+W*W*(second['g']+first['g']*first['g']/2))
     U=inlet['Uz']+W*first['u']+W*W*second['u']
     P=inlet['P']+W*first_m['p']+W*W*second_m['p']

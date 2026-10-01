@@ -1,3 +1,7 @@
+## 2026-09-30 inner exit collar spatial coefficient enclosure
+
+All eight first/second-width coefficients and five unnormalized moment coefficients now have directed enclosures over64 whole cells covering s=[0,2], at Z=.3. Conditional pressure error for second-width u is <=8.17e-36 over this domain. This is the inner exit collar, not exterior heat collar or full nonlinear solution; omitted orders and global axial/stress closure remain open. See INNER_EXIT_COLLAR_SPATIAL_WIDTH_BOUNDS_2026_09_30.md.
+
 ## 2026-09-30 conditional pressure error reaches collar endpoint
 
 Accepted coherent pressure-integral derivative bounds now regenerate the finite degree18 core and reach all retained first/second-width endpoint atoms and five moments. At Z=.3, Uz pressure-only errors for width0/1/2 are4.51e-36/2.25e-36/7.91e-36. Axis/adapter generation errors, omitted pressure/width orders, full spatial collar and global axial closure remain open. See PRESSURE_ERROR_TO_COLLAR_ENDPOINT_2026_09_30.md.

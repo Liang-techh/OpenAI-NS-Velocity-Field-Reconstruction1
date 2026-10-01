@@ -62,6 +62,25 @@ The supplied derivative jets must be from this same inlet and pressure.
     return result
 
 
+def second_width_spatial_coefficients(inlet,*,s,switch_primitive,integrated_primitive):
+    """All eight second-width coefficients at any s in [0,2].
+
+J=integral_0^s chi0, K=integral_0^s J, M=sJ-K. The leading switch only
+samples the direct core, so the same inlet radial derivatives suffice.
+Caller-supplied intervals must enclose these primitives on its entire cell.
+"""
+    r=inlet['R'];D=inlet['D'];Iz=inlet['I_z'];u=inlet['Uz']
+    # Put scalar intervals into the common axial ring before left arithmetic.
+    zero=u*0;s=zero+s;J=zero+switch_primitive;K=zero+integrated_primitive;M=s*J-K
+    B=(r/2).sqrt()*Iz;a=r*inlet['F_R']/inlet['F']
+    DK=D*K;BK=B*K
+    return dict(g=-(r*inlet['D_R']*M+D*(s-J))/2,
+                u=-(r/2).sqrt()*(r*inlet['I_z_R']*M+Iz*((1/2-a)*M-D*(J*J)/4+s-J)),
+                theta=2*s*s-DK,mz=(u*s*s)/2-BK,
+                mixed=2*u*s*s-u*DK-2*BK,axial=(u*u*s*s)/2-2*u*BK,
+                swirl=s*s-DK,p=s*s/2-DK)
+
+
 def run():
     profile,_=accepted_profile();e=ScheduleEndpointEnclosures(profile.schedule)
     with mp.workdps(e.precision+40):

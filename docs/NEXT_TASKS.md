@@ -1,3 +1,11 @@
+## 2026-09-30 spatial collar coefficient coverage
+
+- [x] Derive first/second-width formulas at general s and enclose J/K primitives over the inner exit collar.
+- [x] Cover s=[0,2] with64 whole interval cells for eight states and five moment coefficients at Z=.3.
+- [ ] Bound omitted width/pressure orders to promote coefficient bounds to full collar bounds.
+- [ ] Extend from point Z to the required axial domain and control spatial derivatives/stress.
+- [ ] Complete exterior heat matching and functional terminal five-moment closure.
+
 ## 2026-09-30 pressure contribution propagated
 
 - [x] Propagate accepted pressure-integral error into separate prefix/post pressure atoms.
