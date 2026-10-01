@@ -42,3 +42,9 @@ The complete 14-stage stored-datum budget now encloses the error uniformly on |Z
 For the flatten stage, both the true density and every finite atom are positive and have beta in [0,2]. Their common derivative envelopes are 1, 4a, and 4+24a squared. Multiplying these envelopes by true mass upper plus a directed sum of exact stored finite atom masses proves an absolute error bound by the triangle inequality. This deliberately coarse estimate is adequate here because the flatten mass is extremely small in the stored schedule. It does not establish relative flatten accuracy or relative-flat closure needed downstream. The separate coefficient approach remains useful for those requirements.
 
 All core integration and pressure-to-moment propagation errors remain open. This budget concerns the mathematical stored finite datum; runtime evaluation roundoff is not included.
+
+## First pressure-to-core propagation
+
+For fixed axis F0 and U0, the first radial axial-velocity coefficient satisfies Delta U1 = ((1-Z squared) Delta P0_Z - 2(1+delta) Z Delta P0) / (2(1-delta Z squared)). Applying the uniform pressure receipt gives normalized U1 error upper 5.324376631865864e-13 and U1_Z error upper 3.50521461597836e-12 on |Z|<=0.8. Normalization is division by Pstar squared, not relative coefficient error. F1 and P1 are unaffected by pressure at this first step when the axis velocity data are held fixed.
+
+Generator and receipt: `lei_ren_part1_paper_pressure_first_core_error.py/json`. An independent pressure perturbation passed through `core_coefficients` agrees with the analytic U1 and U1_Z sensitivity to 1e-95 at 100 decimal digits on a resolved fixture, while F1 and P1 agree exactly. This verifies the linkage to the implemented core recurrence. U1_ZZ needs a third pressure derivative; higher radial coefficients and RK/core truncation error remain unenclosed.
