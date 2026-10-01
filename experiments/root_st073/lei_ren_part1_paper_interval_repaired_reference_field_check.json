@@ -1,0 +1,14 @@
+{
+  "independent_physical_moment_coefficients_contained": 10,
+  "independent_stress_components_contained": 6,
+  "same_pressure_value_derivative_contained": true,
+  "radial_velocity_contained": true,
+  "synthetic_fixture_only": true,
+  "production_cone_or_whole_axis_certified": false,
+  "input_hashes": {
+    "lei_ren_part1_paper_interval_repaired_reference_field_check.py": "f8001f3507b92e7449a790f78b69a5d368536099f4ba2257a99afbbd9a492a4d",
+    "lei_ren_part1_paper_interval_repaired_reference_field.py": "98b2b75fdf26aa286842e24749fbbb5963f69adeeeb941ec3f753bd022feb69c",
+    "lei_ren_part1_paper_interval_partial_five_bump_map.py": "ba3dc92321c141051b8a1b5448b7dbea26b0c0dfe85b8fc2183ffdea09a058af",
+    "lei_ren_part1_paper_mp_stress.py": "512e07633079b0c0d936938f487bb6c87501036793f5cd98503a7073630396da"
+  }
+}

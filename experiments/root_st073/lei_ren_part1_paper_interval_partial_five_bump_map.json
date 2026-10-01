@@ -1,0 +1,51 @@
+{
+  "precision": 80,
+  "order": 12,
+  "tolerance": "1e-20",
+  "coefficient_order": [
+    "c1",
+    "c2",
+    "xi1",
+    "xi2",
+    "xi3"
+  ],
+  "normalization": {
+    "lower": "0.443993816168079437822499569283606603073508296622414180301365825350457804840751467954600765",
+    "upper": "0.44399381616807943782357866217628363981831838630753117552040203028898130175099926247047604",
+    "width": "1.07909289267703665103751413810321081977345120966897623352647e-21",
+    "lower_exact_mpf_tuple": [
+      0,
+      842317358408512577011938541941611488782124746413585298934846132451194224555080249,
+      -270,
+      269
+    ],
+    "upper_exact_mpf_tuple": [
+      0,
+      842317358408512577013985729631480196324100611455098195332043905657579539006219785,
+      -270,
+      269
+    ]
+  },
+  "full_module_sha256": "98805b8a6983dec78fcdbbea85e733eac098af5ad9faed2928959444caeff46e",
+  "full_receipt_sha256": "d9eae4585c7e1dddf267ea37d024c94ea0f9b05e07e396b9625934168146e8da",
+  "full_x2_parent_coefficient_overlap_count": 35,
+  "full_x2_first_mass_exact_one": true,
+  "support_endpoint_value_derivative_zero_checks": 12,
+  "independent_clipped_center": "3/2",
+  "independent_c1_map_coefficients_contained": 10,
+  "directed_partial_backend": true,
+  "independent_quadrature_used": true,
+  "no_midpoint_weights": true,
+  "source_error_enclosed": false,
+  "parameter_error_enclosed": false,
+  "cone_certified": false,
+  "field_installed": false,
+  "controls_solved": false,
+  "input_hashes": {
+    "lei_ren_part1_paper_interval_partial_five_bump_map.py": "ba3dc92321c141051b8a1b5448b7dbea26b0c0dfe85b8fc2183ffdea09a058af",
+    "lei_ren_part1_paper_bump_integral_enclosures.py": "98805b8a6983dec78fcdbbea85e733eac098af5ad9faed2928959444caeff46e",
+    "lei_ren_part1_paper_bump_integral_enclosures_check.json": "d9eae4585c7e1dddf267ea37d024c94ea0f9b05e07e396b9625934168146e8da",
+    "lei_ren_part1_paper_bump_partial_enclosures.py": "96c7be3b9732acdc0fcb78de3c6d594b1bf2d519a39eb616e4389e9aef70dae1",
+    "lei_ren_part1_paper_interval_five_bump_inverse.py": "35fe5d14fdd0685a7836c40d0208779cee10f2486a2445464599de6afd234ea8"
+  }
+}

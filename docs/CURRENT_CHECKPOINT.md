@@ -1,3 +1,11 @@
+## PARTIAL C120-F12 — callable C1 repaired reference-annulus field
+
+The uniform implicit five-bump family is now installed in a callable interval field on x=R/Rm in [1,2], Z in [0.49,0.51]. Actual bump values/radial slopes, directed partial cumulative moments, first axial derivatives, pressure P0+Mp and radial velocity use the same controls/source data. Terminal reference moment identities at x=2 follow from the certified implicit inverse; all five centered value/derivative rows also contain zero diagnostically. This is local reference-map closure, not complete inner-to-heat-exterior matching.
+
+Independent physical quadrature encloses ten moment coefficients, six stress components, pressure value/derivative and radial velocity. All five sampled radial positions certify only the relaxed kappa<=2 cone on the local axial family. The full radial annulus cone, strong stress and independent Cartesian divergence remain unproved. See docs/REPAIRED_REFERENCE_FIELD_2026_10_01.md.
+
+Next enclose complete radial cells including nonzero bump slopes; install the actual R110-to-Rm reshape/restoration field; recover C2/higher axial derivatives and whole-axis coverage; then shear modulation, flatten/collar/heat exterior. Genuine n-dependent temporal recursion, flat remainder, oscillatory stress correction and full NS residual validation remain incomplete.
+
 ## PARTIAL C120-F11 — uniform five-bump inverse and both-branch switch certificate
 
 The fresh fixed-parameter five-row defect family admits one implicit C1 coefficient function h(Z) on [0.49,0.51]. Directed bump weights, source defects and nonlinear coupling intervals are retained. A midpoint inverse is used only as a fixed preconditioner; the actual map/data are not projected. Its strict self-map and weighted Jacobian contraction upper0.00271269494639 prove existence/uniqueness in |c_i|<=2e-14, |xi_i|<=1e-32. Tightened controls have c1 about-1.00e-14, c2 about7.76e-15 and angular xi about1e-36. Implicit differentiation is enclosed with derivative contraction0.00120725889435. Ten independent known-solution value/derivative coefficients are contained; outside-box data are rejected. See docs/FUNCTIONAL_FIVE_BUMP_INVERSE_2026_10_01.md.
