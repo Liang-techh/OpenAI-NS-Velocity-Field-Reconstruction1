@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `08aae97b894081a49d813a7539d9104dc6fabd9a`.
+The inspected `main` head before this update is `f3a7c95ae7deb29e87cf569537d781c60c942171`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`85bc70c6ad5d154d8fce8c4e23066febeb2ec20c`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/85bc70c6ad5d154d8fce8c4e23066febeb2ec20c)
+[`e5c56318f9b95f84678da803d546f2921c0237bf`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e5c56318f9b95f84678da803d546f2921c0237bf)
 on `codex/st073-transition-next`, observed October 1. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,59 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-01 batch: bump quadrature correction and genuine degree8 new centers
+
+The [independent physical replay record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/f300d00c7f882c6af192a37988a755cf71c9690d/docs/CANDIDATE_FIVE_BUMP_INVERSE_2026_10_01.md)
+reintegrates actual Lambda120 center controls without the production map's apply
+method or product weights. Its finite order128 replay gives value/first-Z residuals
+about1.13906e-27/2.59512e-50. This is a submitted independent method comparison,
+not a replay performed by this reviewer and not yet a quadrature certificate.
+
+The [9d033e81 directed bump enclosure record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/9d033e81a61ce0cab02a8df6b73e7d7e0db7f8c3/docs/CANDIDATE_BUMP_ENCLOSURES_2026_10_01.md)
+uses cell-wide Taylor derivative remainders and positive exponential endpoint tails
+for the actual normalized Section10.2 bump family, including squared weights.
+Applied to the old controls, the second-row residual lies in about
+[1.1373475745e-27,1.1373476687e-27], excluding zero. This materially corrects the
+interpretation of the old6.23766e-210 finite-map algebra residual: it was not the
+accuracy of the true bump integrals. Old receipts remain historical; no claim
+of physical NS accuracy follows from either number.
+
+Re-solving the same fixed source with directed-weight midpoints preserves P0 and
+produces separate controls/receipts. The [refined directed residual receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/9d033e81a61ce0cab02a8df6b73e7d7e0db7f8c3/experiments/root_st073/lei_ren_part1_paper_candidate_bump_enclosed_refined_residual.json)
+has all five value and five first-Z residual intervals containing zero, with
+absolute bounds below5e-35/1.3e-56. These bounds enclose bump integrals for finite
+fixed controls and nominal source targets at Z=.3. Source reconstruction, RK,
+discarded pressure/width terms and the coefficient-ring remainder are not enclosed.
+Containment of zero is not exact infinite inverse or functional terminal closure.
+
+The [34088627 installed refined-field record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/340886279e14140a0ec7b3d22d637fe88f590711/docs/CANDIDATE_REFINED_BUMP_FIELD_2026_10_01.md)
+supersedes the enclosure note's pending installation: it uses consistent directed
+partial integrals, returning the saved full-weight intervals after each support.
+At x=2 the cumulative map agrees atom-for-atom with the refined full-support map
+for values and first derivatives. Eleven new samples on supports/edges/gaps pass
+the relaxed condition, with fixed P0/P0_Z. Field and stress values are nominal
+midpoints; saved partial-integral uncertainty does not prove an exact smooth
+primitive or Cartesian divergence. Kappa near.8 still fails the stronger >2 gate.
+The older39-point scan belongs to the old finite-Gauss controls and is not reused
+as certification for the refined field. Uniform cone and later shear modification
+remain open.
+
+The [e5c56318 general-center factory record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/e5c56318f9b95f84678da803d546f2921c0237bf/docs/CANDIDATE_GENERAL_CENTER_FACTORY_2026_10_01.md)
+genuinely recomputes Lambda120 amplitude/axis/physical-pressure seeds and coupled
+rows at Z=.5 and for centers in[.49,.51], retaining all14 accepted stages and
+F0-squared coupling. Both runs reach radial degree8 with axial depth3;216 scalar
+coefficient intervals fit in the family bounds. An interval of centers denotes
+local Taylor families, not an extrapolated Z=.3 series. This is not production
+degree124, a tail-certified new core, new transition or functional matching.
+
+Pinned records give physical replay, weight/residual, refined-field/partial-weight
+and new-center replay commands. No numerical receipt or rigorous enclosure was
+independently rerun/verified here. Source/parameter errors, production-depth
+center families and tails, their comparison/transition, full axial inverse and
+terminal matching, heat/finite energy, global K/cone, temporal recursion and
+corrected Cartesian residual/L2 remain unaccepted. All updates preserve separate
+Lambda36/48/120 identities and the old quadrature diagnostics.
 
 ### 2026-10-01 batch: Lambda120 actual transition and finite five-bump repair
 
@@ -836,6 +889,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [e5c56318 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36832193677)
+actual constrained log reports the same original13 failed identifiers/423 passed.
+Four smoke/slice jobs pass; full historical tests skip. No selected governance
+regression is added; this does not certify the new directed-integral bounds.
 
 The [85bc70c6 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36826585967)
 actual log has the original13 failed identifiers and423 passed. Four smoke/slice

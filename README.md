@@ -1,7 +1,7 @@
 # Navier–Stokes Candidate Research
 
 > **Progress index updated 2026-10-01:** newer research is available on
-> `codex/st073-transition-next` at [`85bc70c6`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/85bc70c6ad5d154d8fce8c4e23066febeb2ec20c).
+> `codex/st073-transition-next` at [`e5c56318`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e5c56318f9b95f84678da803d546f2921c0237bf).
 > See [current evidence, paper mapping and replay instructions](docs/NS_SUPERVISION_2026-09-30.md).
 > The ST063 tables and September 22 pause record below remain historical curated
 > results. They do not describe the latest branch or establish a live task status.
@@ -11,11 +11,12 @@
 > implementation compatibility and global acceptance remain separate milestones.
 > The pressure budget is now rebuilt against the accepted source after a helper
 > mismatch audit, with pressure-only uniform finite-core/moment propagation.
-> Lambda=1e120 now has whole-axis analytic core-moment envelopes and actual nominal
-> Z=.3 transition data through R110, candidate defects and a finite five-bump repair.
-> Independent bump integration, quadrature/source-error bounds, whole-axis repair,
-> terminal matching, full K and regional cone certification remain open.
-> Lambda36/48 receipts stay separate; small finite-map residuals are not NS acceptance.
+> Directed bump integration exposes a ~1.14e-27 bias behind the earlier tiny map
+> residual. Re-solved Lambda120 center controls and consistent cumulative integrals
+> now bound nominal-source value/first-Z residuals below 5e-35/1.3e-56.
+> New Z=.5 and [.49,.51] cores reach degree8 only. Source errors, production-depth
+> interval cores, whole-axis repair/matching and final cone certification remain open.
+> Lambda36/48 receipts stay separate; these moment bounds are not NS acceptance.
 > Full source errors, five-defect norm, relative-flat closure and global checks remain pending.
 > Finite energy, cone and time-scale recursion remain uncertified. Research CI retains 13
 > pre-existing governance failures; see the evidence index for their scope.
