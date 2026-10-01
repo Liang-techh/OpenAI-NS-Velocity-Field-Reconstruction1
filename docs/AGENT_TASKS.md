@@ -1,3 +1,14 @@
+# F20 — 2026-10-01: Md40 pressure/core analytic admission bound to one source
+
+Complete fourteen-atom preheat-pressure enclosures and axial jets now exist for Md=40. Fresh all-20-term contraction and scaled Phi/Uz tail bounds pass; degree 110, initial axial length 114, maximum mixed C3 tail 7.10071e-14. This does not mean finite core coefficients or the new velocity field have been generated. Raw-Psi tail and physical-R derivatives are separate, unpassed claims.
+
+Source binding connects the new pressure/core admission to F19 O.2. The fresh transition and exact functional repaired inlet remain required. Next: direct normalized radial recurrence, same-source seed, finite core, then transition/five moments/heat restoration. True temporal recursion and admissible stress lift are not complete.
+
+Details and ordered tasks: docs/LOGARITHMIC_PRESSURE_CORE_ADMISSION_2026_10_01.md.
+Evidence: experiments/root_st073/lei_ren_part1_paper_logarithmic_source_binding.json.
+
+---
+
 # F19 — 2026-10-01: conditional full O.2 parameter route found
 
 Md=40 passes the normalized slow-turnoff cone inequalities on the full cutoff phase plus a separate 11-unit zero-axial buffer, for Z in [0.49,0.51], under the SAME complete preheat-pressure and exact repaired-inlet conditions. Finite strong bracket lower: 0.3439670547. This is a conditional parameter-family proof; no Md40 core or fourteen-stage numerical pressure datum has been generated. Md16/24/32 lower-bound noncertificates are not physical failure proofs.

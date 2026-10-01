@@ -1,0 +1,86 @@
+{
+  "cases": [
+    {
+      "center": "0",
+      "Lambda": "8",
+      "degree": 6,
+      "all_coefficients_overlap": true,
+      "swirl_pressure_nonzero": true
+    },
+    {
+      "center": "0",
+      "Lambda": "500",
+      "degree": 6,
+      "all_coefficients_overlap": true,
+      "swirl_pressure_nonzero": true
+    },
+    {
+      "center": "0",
+      "Lambda": "1e8",
+      "degree": 6,
+      "all_coefficients_overlap": true,
+      "swirl_pressure_nonzero": true
+    },
+    {
+      "center": ".5",
+      "Lambda": "8",
+      "degree": 6,
+      "all_coefficients_overlap": true,
+      "swirl_pressure_nonzero": true
+    },
+    {
+      "center": ".5",
+      "Lambda": "500",
+      "degree": 6,
+      "all_coefficients_overlap": true,
+      "swirl_pressure_nonzero": true
+    },
+    {
+      "center": ".5",
+      "Lambda": "1e8",
+      "degree": 6,
+      "all_coefficients_overlap": true,
+      "swirl_pressure_nonzero": true
+    },
+    {
+      "center": "-.75",
+      "Lambda": "8",
+      "degree": 6,
+      "all_coefficients_overlap": true,
+      "swirl_pressure_nonzero": true
+    },
+    {
+      "center": "-.75",
+      "Lambda": "500",
+      "degree": 6,
+      "all_coefficients_overlap": true,
+      "swirl_pressure_nonzero": true
+    },
+    {
+      "center": "-.75",
+      "Lambda": "1e8",
+      "degree": 6,
+      "all_coefficients_overlap": true,
+      "swirl_pressure_nonzero": true
+    }
+  ],
+  "coefficient_comparisons": 1053,
+  "maximum_absolute_or_relative_endpoint_difference_upper": "2.2227587494850774834427134142705600969125245614649077934835905829686756089538688376355692417622887502197955856489646737138666892335490294279116883366084351216200771308895294003174317104418382832233448e-162",
+  "scaled_step_matches_frozen_physical_step": true,
+  "scale_definitions": {
+    "A": "physical_A[n]/Lambda**n",
+    "Uz": "physical_Uz[n]/Lambda**n",
+    "P": "epsilon*physical_P[n]/Lambda**n",
+    "ell": "epsilon*physical_ell",
+    "S": "epsilon**2*F0**2"
+  },
+  "Md40_seed_generated": false,
+  "degree110_core_generated": false,
+  "temporal_recursion": false,
+  "input_hashes": {
+    "lei_ren_part1_paper_logarithmic_core_step_check.py": "21019153fa8686f2e493faaf99cbe5b7a92a73ef2b28ac50bab20f3b4c8a3fc5",
+    "lei_ren_part1_paper_logarithmic_core_step.py": "52210fcdde9a538ca28a7010264daa6802b1cd02052741e05001162617d34fb6",
+    "lei_ren_part1_paper_functional_core_step.py": "03aab21f3e6e665dd2ff0e9a3d2e6187e90813c300ccbb2d35e23a6d99098998",
+    "lei_ren_part1_paper_schedule_endpoint_enclosures.py": "760a4facb6792b68d6c71264625ade4aaf99269b24d23dc7da558f1a6b9fb5f7"
+  }
+}

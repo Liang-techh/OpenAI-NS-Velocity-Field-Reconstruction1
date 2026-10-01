@@ -1,0 +1,82 @@
+{
+  "implicit_source_sha256": "082d18b8f1ec2df84526fbdc190217d97dfb8825e823fa4c9e017c8a58d001bb",
+  "datum_enclosure_sha256": "04bdb5e1cc6216bd2592af7b4229b5188414b1893d62847d30345536fe9bbdd5",
+  "Md": "40",
+  "source_pressure_condition_discharged_by_fourteen_atom_envelope": true,
+  "continuous_waiting_root_condition_discharged": true,
+  "core_analytic_contraction_and_scaled_tail_admitted": true,
+  "selected_radial_degree": 110,
+  "logRref_definition": "log(110)+10*(logC+logPstar)",
+  "logRref_lower": {
+    "lower": "21184674015331829681.4114723332055486338783805855594855587214209496022148685754215004042061",
+    "upper": "21184674015331829681.4114723332055486338783805855594855587214209496022148685754215004042061",
+    "width": "9.84063882944397766375629724943880927183167314359818650803889e-142",
+    "lower_exact_mpf_tuple": [
+      0,
+      64583227926053720205068038763879558613754249153332868808935574176564961221412629134862716412725273099644654983320210842532115106565528061922262854553428399052671,
+      -470,
+      535
+    ],
+    "upper_exact_mpf_tuple": [
+      0,
+      32291613963026860102534019381939779306877124576666434404467787088282480610706314567431358206362636549822327491660105421266057553282764030961131427276714199526337,
+      -469,
+      534
+    ]
+  },
+  "O2_minimum_finite_strong_bracket": {
+    "lower": "0.343967054732024807200796060113257675633371868109649894208406307450731632590502383877395348",
+    "upper": "0.343967054732024807200796060113257675633371868109649894208406307450731632590502383877395348",
+    "width": "0.0",
+    "lower_exact_mpf_tuple": [
+      0,
+      3552835540590736290808359130293211613252232665598240031254433290436092569575468546118745760392212301406995570402722643063,
+      -402,
+      401
+    ],
+    "upper_exact_mpf_tuple": [
+      0,
+      3552835540590736290808359130293211613252232665598240031254433290436092569575468546118745760392212301406995570402722643063,
+      -402,
+      401
+    ]
+  },
+  "pressure_core_outer_parameter_definitions_consistent": true,
+  "O2_certificate_bound_to_same_pressure_source": true,
+  "remaining_O2_inlet_condition": "fresh core/transition/functional moment repair must realize exact reference identities",
+  "fresh_finite_core_generated": false,
+  "fresh_reference_inlet_built": false,
+  "admissible_stress_lift_constructed": false,
+  "whole_axis_cone_certified": false,
+  "actual_heat_pressure_restoration_completed": false,
+  "background_assembled": false,
+  "temporal_recursion": false,
+  "input_hashes": {
+    "lei_ren_part1_paper_logarithmic_pressure_datum.json": "25eaffef5c11036123b2ceaa8f353ac0113daf09274080d26e00446b2de21cd9",
+    "lei_ren_part1_paper_logarithmic_pressure_datum.py": "576e16dc89281d7f4011337023ab47256f1d338aa981d98d8f848e8884ed2e05",
+    "lei_ren_part1_paper_candidate_pressure_mass_refinement.json": "8824c74fac38ebade9d90f1269e6e337b2b2f64dea6a692b0cb4db601e548181",
+    "lei_ren_part1_paper_logarithmic_outer_parameters.py": "2a1fbb83ef254dd2fca8cebd64598cf6fcf3e2571649bbb9109a3914fa5d3224",
+    "lei_ren_part1_paper_candidate_pressure_function.py": "4cc4c87488e5f468aa9a459d1e8c9f754e85f12dee811ca9d8e066fd4d4986dc",
+    "lei_ren_part1_paper_outer.py": "e641dbe3808066a1ab792294ec2b07faede60c379ef6bfca60f6c11ed79f90f2",
+    "lei_ren_part1_paper_coherent_uniform_fixed_beta_error.json": "2ea09fa66dfae800c5f93a1ca11d1da69e25c021853445748606427c65737340",
+    "lei_ren_part1_paper_logarithmic_core_majorant.json": "a23103d7883d2558c55dd8e09ccc20802e7cb579b60275b78106568d87e5ebca",
+    "lei_ren_part1_paper_analytic_radial_tail.json": "bd2db15d3314c6ea6553afee057a5dbc64dbfb2eb451d53f54eae1baa13d7e47",
+    "lei_ren_part1_paper_linear_resolvent_bound.json": "682853412f72ab48b2f97cd0f06228f60ff28724ecb939aae34b0757381db0b3",
+    "lei_ren_part1_paper_commuting_resolvent_bound.json": "8992aa4de56964e6c947a0bab2b12be054c2b2c8d149d0cdbbe53eecdb8badd2",
+    "lei_ren_part1_paper_logarithmic_core_majorant.py": "537e88870b08d40eab8f3161aed9e8bf0d09c4d6abaef2177cd9bf05dc7bc890",
+    "lei_ren_part1_paper_nonlinear_map_majorant.py": "92d84671e7680af47544c7a9ebaee27132cd1c230ea96a61a179325cf9ff8aff",
+    "lei_ren_part1_paper_analytic_radial_tail.py": "f3de412dab4cbb03c16fa5bb252ce600320dc1aa5935ea2f66c6c40f35563827",
+    "lei_ren_part1_paper_linear_resolvent_bound.py": "44186fb15eb7a776fde65aa9fee70274daa7253ce108f90b8f9cea791ba5e808",
+    "lei_ren_part1_paper_commuting_resolvent_bound.py": "7f787bd0ea1179bb78bd2bed574cf840687fb4d0008c499c1bcc1ec7f1736d71",
+    "lei_ren_part1_paper_logarithmic_core_tail_admission.json": "0fa0a272471eecbdb8409219ef3143719a0827c9a12075a55818ddc8ba607640",
+    "lei_ren_part1_paper_logarithmic_core_tail_admission.py": "5d1e3e60ebae8a53b6fb5d6e7702fac12d5cb271bc2ed255ff03054656950bd7",
+    "lei_ren_part1_paper_normalized_slow_turnoff.json": "268316219e72f04a6434670d53f8c2a70192a4efd774d6878091c420abb3f173",
+    "lei_ren_part1_paper_normalized_slow_turnoff.py": "9c4e10ac3c7ba885a2c9b93fe0eeaf1fe922506c13b9221474a20e282589bb37",
+    "lei_ren_part1_paper_interval_outer_slope_field.py": "906e5efa703f53f2d61762d3b7dca38d521ee3649e00962a1f0a81ddfd3254d5",
+    "lei_ren_part1_paper_interval_long_reshape_field.py": "604e10235c2960fda99e120775da780b3fe4f9060c3432e707ca3aeeb36a9c3f",
+    "lei_ren_part1_paper_interval_repaired_reference_field.py": "98b2b75fdf26aa286842e24749fbbb5963f69adeeeb941ec3f753bd022feb69c",
+    "lei_ren_part1_paper_interval_taylor.py": "a1c29ec76998d876d9becadebb65c7be69242bb99d6049ef3f5ad6af86b14b8c",
+    "lei_ren_part1_paper_interval_comparison_enclosure.py": "03027203a8ca43721508f8b337ac7107d09be785da3dd491a7b5ab27e46c8ed8",
+    "lei_ren_part1_paper_logarithmic_source_binding.py": "f7bfcb24243fda27d32631460bf266091583f058aed6cf6b760d03a04f45b69d"
+  }
+}
