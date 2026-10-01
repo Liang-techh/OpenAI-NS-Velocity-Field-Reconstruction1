@@ -1,0 +1,62 @@
+{
+  "identity": {
+    "center": [
+      ".49",
+      ".51"
+    ],
+    "target_radial_degree": 124,
+    "required_axial_depth": 3,
+    "initial_axis_length": 128,
+    "parameters": {
+      "j": "1e-14",
+      "Lambda": "1e120",
+      "logC": "5e151",
+      "delta": "1e-200",
+      "sigma_denominator": "500"
+    },
+    "precision": 260,
+    "new_schedule_sha256": "15cf393dd5e73823acba88721764491a64eb5df2021e92d6e0a1b9d0d8252ebf"
+  },
+  "completed_radial_order": 124,
+  "completed_target": true,
+  "state_file": "lei_ren_part1_paper_Md11_interval_core_Z049_Z051_state.json",
+  "state_sha256": "612e3764e6149a329d3fd50da5fe41a34f0f455149d3f7ebeb3e8f669d0d3216",
+  "input_hashes": {
+    "lei_ren_part1_paper_candidate_pressure_axis_jets_refined.json": "e78d0bb7084dc1a1714d86eb001f20e11f61db8ea40bd6e56502633cbce4ef94",
+    "lei_ren_part1_paper_coherent_uniform_fixed_beta_error.json": "2ea09fa66dfae800c5f93a1ca11d1da69e25c021853445748606427c65737340",
+    "lei_ren_part1_paper_coherent_uniform_preheat_error_budget.json": "28ec5fceb88666a5bd662ab57f7c5986195b84cf09676008d6cfdf04a74b849c",
+    "lei_ren_part1_paper_candidate_pressure_axis_jets.json": "fec257dbef852bd9386bcaa751cdd6b95ba162485c4885d067b1f242fec7add2",
+    "lei_ren_part1_paper_candidate_pressure_mass_refinement.json": "8824c74fac38ebade9d90f1269e6e337b2b2f64dea6a692b0cb4db601e548181",
+    "lei_ren_part1_paper_Md11_pressure_datum.py": "baecad7d1d1a2d954bf649bcde1a26884bbcbeab0b01d6060e3c3cb7a719b772",
+    "lei_ren_part1_paper_outer.py": "e641dbe3808066a1ab792294ec2b07faede60c379ef6bfca60f6c11ed79f90f2",
+    "lei_ren_part1_paper_corrected_profile.py": "9e270072854a15f34612850625a8cdd1c60cfd1a7d22449fd637651150acafbe",
+    "lei_ren_part1_paper_continuous_angular_schedule.py": "a87134975ae94ffa5730b2a49ebb7aa80f4100ae51e381ff5d71a8faf70c5093",
+    "lei_ren_part1_paper_schedule_endpoint_enclosures.py": "760a4facb6792b68d6c71264625ade4aaf99269b24d23dc7da558f1a6b9fb5f7",
+    "lei_ren_part1_paper_high_order_preheat_integrals.py": "655b69cd66639e03865c6bad6feee18af9a3137e45732361ec578ab279a1183f",
+    "lei_ren_part1_paper_variable_preheat_interval_integrals.py": "68a90a4c73c87d26d80fa0a5abdefe429060da69c14c47b3d92843f7a7720c1f",
+    "lei_ren_part1_paper_interval_taylor.py": "a1c29ec76998d876d9becadebb65c7be69242bb99d6049ef3f5ad6af86b14b8c",
+    "lei_ren_part1_paper_uniform_fixed_beta_error.py": "32775aa3cc3ec6f1abea67ab3ab1fcc73b9c7812c1f8417a483def95cd160636",
+    "lei_ren_part1_paper_reference_endpoint_targets.py": "bd025f73cef375eac79e6d73146c1d331d82f3c9009d69ce8ec2f34610bbcfc3",
+    "lei_ren_part1_paper_Md11_pressure_datum.json": "865ad00b131d89cb09c54549ec354ce9d3ed78c0bb235881ee59a40c08ebd7cd",
+    "lei_ren_part1_paper_amplitude_factored_core.py": "bb1253348804880ff1a4d437befe749402e7357399554f8ced551a88cebcd30c",
+    "lei_ren_part1_paper_candidate_gauge_core.py": "864da25569c8965cfd25787f9e27d315643c2d1a4d8d678289d7cc7923acb007",
+    "lei_ren_part1_paper_core_recursion.py": "d63bab2b501f288170e7346fef02bbbb658f49257d480ac0b39d97232bc90ab2",
+    "lei_ren_part1_paper_functional_core_recursion.py": "f144cf4f5f87921aabcca93a6ed082942de795d1eb0be5fe6319fbccc969d09f",
+    "lei_ren_part1_paper_Md11_interval_core.py": "301616ce2aa961089d5d074ef52bba14a2b40100b053009a9ee7542ab61f8189",
+    "lei_ren_part1_paper_candidate_exact_amplitude.py": "d0e087a6acb1397c7a3632525ca3c07dd9859dc9c1c6f8b126ded0dc4824e3c1",
+    "lei_ren_part1_paper_uniform_axis_jets.py": "561c69c49f2a6f3dc8c95a9b15dc51d1d50124f20ee9f3706c602a3fb261fb85",
+    "lei_ren_part1_paper_factored_core_positivity.py": "d9c05f9f1fa4e0695ac66fabefb5ed5ef26141948e7613110ee75377af93b710",
+    "lei_ren_part1_paper_functional_core_step.py": "03aab21f3e6e665dd2ff0e9a3d2e6187e90813c300ccbb2d35e23a6d99098998",
+    "lei_ren_part1_paper_candidate_general_center_factory.py": "88dd6a6470ca0e67649e142f490d323ce9f16304f88f918c7735f0684ea19923"
+  },
+  "exact_interval_checkpoint": true,
+  "retained_axial_depth": 3,
+  "new_fourteen_stage_pressure_used": true,
+  "old_core_tensor_used": false,
+  "analytic_tail_certified": false,
+  "production_inlet_certified": false,
+  "new_moment_inverse_generated": false,
+  "temporal_recursion": false,
+  "last_run_updates": 113,
+  "elapsed_compute_seconds": 1174.3130000000237
+}

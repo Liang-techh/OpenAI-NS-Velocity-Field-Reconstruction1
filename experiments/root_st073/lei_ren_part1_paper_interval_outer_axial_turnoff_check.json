@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "independent_fixture_containments": 84,
+  "exact_C1_inlet_moments_preserved": true,
+  "terminal_Uz_and_Uz_y_exact_zero": true,
+  "retained_Mz_preserved_through_zero_axial_buffer": true,
+  "incompatible_pressure_Md_and_Md_le_one_rejected": true,
+  "new_production_pressure_schedule_regenerated": false,
+  "analytic_preheat_pressure_for_new_Md_certified": false,
+  "fixture_Md": "1.1",
+  "fixture_scope": "moderate synthetic field; numerical ODE is not a rigorous oracle",
+  "input_hashes": {
+    "lei_ren_part1_paper_interval_outer_axial_turnoff_check.py": "2d670dc092d0aceb0233b346a5b21480fa978fedd43f921bf2557538f63222b5",
+    "lei_ren_part1_paper_interval_outer_axial_turnoff.py": "cf86d5840ebef50044b575e496d0f27b36b019a2268e09d8f47bfbaeeaefa70b",
+    "lei_ren_part1_paper_interval_outer_slope_field.py": "906e5efa703f53f2d61762d3b7dca38d521ee3649e00962a1f0a81ddfd3254d5",
+    "lei_ren_part1_paper_mp_stress.py": "512e07633079b0c0d936938f487bb6c87501036793f5cd98503a7073630396da"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "new_schedule_sha256": "15cf393dd5e73823acba88721764491a64eb5df2021e92d6e0a1b9d0d8252ebf",
+  "state_sha256": "612e3764e6149a329d3fd50da5fe41a34f0f455149d3f7ebeb3e8f669d0d3216",
+  "center_family": [
+    ".49",
+    ".51"
+  ],
+  "completed_core_degree": 124,
+  "artifacts": {
+    "comparison_cells": "lei_ren_part1_paper_Md11_comparison_cells.json",
+    "exit_bridge": "lei_ren_part1_paper_Md11_exit_bridge.json",
+    "exit_continuation": "lei_ren_part1_paper_Md11_exit_continuation.json",
+    "exit_switch": "lei_ren_part1_paper_Md11_exit_switch.json",
+    "functional_defects": "lei_ren_part1_paper_Md11_functional_defects.json",
+    "five_bump_inverse": "lei_ren_part1_paper_Md11_five_bump_inverse.json"
+  },
+  "new_core_to_R110_exit_and_functional_moment_inverse_generated": true,
+  "local_uniform_implicit_C1_family_exists": true,
+  "new_whole_transition_cone_certified": false,
+  "new_heat_exterior_matched": false,
+  "original_parameter_errors_enclosed": false,
+  "whole_axis": false,
+  "temporal_recursion": false,
+  "input_hashes": {
+    "lei_ren_part1_paper_Md11_transition_pipeline.py": "f459366a2bc90261599e5469f3810af79482b3faef63019e46858decaecd46df",
+    "lei_ren_part1_paper_Md11_comparison_jets.py": "17a3541ccf2aaa806ee18157088cd9a5322da49a798462788cd806bcaf84287f",
+    "lei_ren_part1_paper_Md11_interval_core_Z049_Z051_state.json": "612e3764e6149a329d3fd50da5fe41a34f0f455149d3f7ebeb3e8f669d0d3216",
+    "lei_ren_part1_paper_Md11_core_tail_admission.json": "6582bfcd5696767ad955a64f702f27fbb4557b1343e8289c8a7dfc7ef7be0fec",
+    "lei_ren_part1_paper_interval_comparison_cells.py": "2fc5faf168ebdd70f55cbc69615d41f653ce57eef123bcf235bc521c85815b1a",
+    "lei_ren_part1_paper_interval_exit_bridge_enclosure.py": "08633f3676f4be7b16900ccd1bc8940e25bacc974eb3892498940188b4d33d1f",
+    "lei_ren_part1_paper_interval_exit_continuation_enclosure.py": "cf2597357287116c85022bf9a453ab287d521a6954a0f97b555859d650a9517d",
+    "lei_ren_part1_paper_interval_exit_switch_enclosure.py": "72249847c48ba12cac19062439a3d3afc16ea933a7a91f1f7aff675b61125ce0",
+    "lei_ren_part1_paper_interval_functional_defects.py": "5a2f90f35217a9fa887c1b70f201fa233ef834915d5534cc8f489348565a3ec4",
+    "lei_ren_part1_paper_interval_five_bump_inverse.py": "35fe5d14fdd0685a7836c40d0208779cee10f2486a2445464599de6afd234ea8",
+    "lei_ren_part1_paper_Md11_comparison_cells.json": "9704fad94a58a688e021589470a186168046592c92bea02b84a993ffa2fa9ac1",
+    "lei_ren_part1_paper_Md11_exit_bridge.json": "3ef7d757cd22ed79e2034b05ca517013ced6a9f8172598f2e2e0e753e2de0329",
+    "lei_ren_part1_paper_Md11_exit_continuation.json": "bc3da941df9f5dde3bd8164ace32c1efc3c897c46613641aeae5d7acfff800ad",
+    "lei_ren_part1_paper_Md11_exit_switch.json": "4273fd8b982fbe161399e70a4194951e8a1d7a2b0c979063d2aa7a918bd5b250",
+    "lei_ren_part1_paper_Md11_functional_defects.json": "8473a3b1f88aa7428f7b3688eb680117b4270ca814428aee1fbdd22107108c66",
+    "lei_ren_part1_paper_bump_integral_enclosures_check.json": "d9eae4585c7e1dddf267ea37d024c94ea0f9b05e07e396b9625934168146e8da",
+    "lei_ren_part1_paper_Md11_five_bump_inverse.json": "e45469aaafdcaeb5819ce05610c91cf932b6906e8dd2596346457ce18f79541d"
+  }
+}
