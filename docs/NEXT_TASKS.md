@@ -1,3 +1,9 @@
+## 2026-10-01: PARTIAL C120-M6 actual repaired matching cone diagnostic
+
+The actual Lambda120 five-bump repaired field passes the relaxed connecting-region cone at all 39 support-aware samples at Z = 0.3. Kappa remains approximately 0.8, so the stronger kappa > 2 admissible condition is not established here. Pressure datum and first Z derivative remain unchanged. Ratios are formed before evaluation in the retained pressure/width ring. This is finite nominal sampling, not a uniform cone certificate.
+
+Run experiments/root_st073/lei_ren_part1_paper_candidate_repaired_cone_scan.py; see docs/CANDIDATE_REPAIRED_CONE_2026_10_01.md. Next: implement directed integration of actual paper exponential bumps, bound map/repair errors, then prove support/axial cone control and continue outer construction. Temporal n-dependent recursion remains open.
+
 ## 2026-10-01: PARTIAL C120-M5 independent physical five-bump integral replay
 
 The persisted actual-candidate correction now has a reproducible independent order-128 physical-moment replay. Maximum retained value residual: 1.1390562734e-27; first-Z residual: 2.5951210115e-50. This is finite quadrature consistency on the paper reference bump supports at Z = 0.3, distinct from the 6.23766e-210 production-map algebra residual. Physical Rm factors were corrected in the independent helper and checked at Rm = 3. No quadrature enclosure, full source replay, whole-axis closure or temporal recursion is claimed.
