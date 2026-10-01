@@ -102,7 +102,8 @@ def factored_core_coefficients(
             Z if hasattr(Z, "_mpi_") else mp.mpf(str(Z)),
             1,
         ])
-        dt = mp.mpf(str(delta))
+        delta_value = mp.mpf(str(delta))
+        dt = convert(delta_value)
         one = const(1)
         d = add(one, scale(mul(z, z), -1))
         L = add(one, scale(mul(z, z), -dt))
@@ -219,7 +220,7 @@ def factored_core_coefficients(
             "Uz": u,
             "P": pressure,
             "Z": Z if hasattr(Z, "_mpi_") else mp.mpf(str(Z)),
-            "delta": dt,
+            "delta": delta_value,
             "radial_degree": degree,
             "initial_Z_degree": initial_count - 1,
             "precision": precision,
