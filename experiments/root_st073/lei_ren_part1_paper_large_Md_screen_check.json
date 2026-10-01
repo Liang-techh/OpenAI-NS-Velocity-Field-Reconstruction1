@@ -1,0 +1,59 @@
+{
+  "weighted_integral_checks": [
+    {
+      "Md": "2",
+      "key": "B_mass",
+      "nested": true,
+      "old_overlap": true,
+      "scipy_point_contained": true,
+      "oracle_reported_error": 2.4617889663098615e-11
+    },
+    {
+      "Md": "2",
+      "key": "B_squared_mass",
+      "nested": true,
+      "old_overlap": true,
+      "scipy_point_contained": true,
+      "oracle_reported_error": 4.890191286469845e-12
+    },
+    {
+      "Md": "4",
+      "key": "B_mass",
+      "nested": true,
+      "old_overlap": true,
+      "scipy_point_contained": true,
+      "oracle_reported_error": 2.6155252980057512e-11
+    },
+    {
+      "Md": "4",
+      "key": "B_squared_mass",
+      "nested": true,
+      "old_overlap": true,
+      "scipy_point_contained": true,
+      "oracle_reported_error": 1.1745526383097338e-10
+    },
+    {
+      "Md": "6",
+      "key": "B_mass",
+      "nested": true,
+      "old_overlap": true,
+      "scipy_point_contained": true,
+      "oracle_reported_error": 3.3305659791205144e-06
+    },
+    {
+      "Md": "6",
+      "key": "B_squared_mass",
+      "nested": true,
+      "old_overlap": true,
+      "scipy_point_contained": true,
+      "oracle_reported_error": 1.918718994457346e-06
+    }
+  ],
+  "exact_rational_finite_cone_identities": 12,
+  "all_passed": true,
+  "whole_phase_cone_certified": false,
+  "input_hashes": {
+    "lei_ren_part1_paper_large_Md_screen_check.py": "ac992efa0b9f11eeecb603e47fc896fdaede9715c431ca6d7afff62dc7227d97",
+    "lei_ren_part1_paper_large_Md_screen.py": "240005f6148899536e897beaff385279c8b3c321db45d638d36a25151f3e2736"
+  }
+}

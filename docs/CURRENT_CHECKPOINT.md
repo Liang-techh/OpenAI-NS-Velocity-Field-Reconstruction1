@@ -1,3 +1,13 @@
+# F18 — 2026-10-01: larger-Md O.2 screening
+
+Md=2,3 midpoint ambiguity is resolved by same-source remaining pressure atoms: actual direction failure. Fresh fourteen-stage screening sources for Md=4,5,6 also fail midpoint direction, including Z=0.5; do not regenerate their cores. Weighted cutoff integration and cancellation-free cone algebra are implemented. Md>=6 pressure screening avoids the unused float bump factory; production bump correction still requires arbitrary precision.
+
+Next: implement normalized O.2 propagation (paper 6.24–6.26), logarithmic large-Md parameters and controlled small-term bounds; certify complete phase/axial cells and finite placement before selecting a new source/core. Genuine temporal recursion remains unimplemented.
+
+Details and ordered tasks: docs/LARGE_MD_OUTER_SCREEN_2026_10_01.md. Evidence: experiments/root_st073/lei_ren_part1_paper_large_Md_screen.json and lei_ren_part1_paper_outer_tail_pressure_probe.json.
+
+---
+
 ## PARTIAL C120-F17 — new Md>1 pressure/core chain and axial turnoff; candidate obstruction found
 
 Generated a separate Md=1.1 fourteen-stage analytic preheat pressure source, nominal waiting root, and SHA15cf393dd5e73823acba88721764491a64eb5df2021e92d6e0a1b9d0d8252ebf. Explicit Md>1 and logPstar>Td pass; unknown paper constants and parameter/waiting-root errors remain conditional. New pressure norms fit the unchanged universal contraction majorants with strict slack; the fresh degree124 mixedC3 tail is7.467286253e-13<1e-12. All124 radial orders were freshly computed; all128 P0 coefficients match the new datum. This is radial profile generation, not temporal recursion.
