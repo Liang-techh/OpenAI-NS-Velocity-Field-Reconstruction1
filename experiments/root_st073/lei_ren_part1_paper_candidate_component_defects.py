@@ -25,7 +25,9 @@ class CandidateEndpointSource:
                 raise ValueError('Actual transition input changed: '+name)
         self.precision = 260
         with mp.workdps(500):
-            self.delta = mp.mpf('1e-200')
+            # Preserve the canonical decimal across downstream MP contexts;
+            # comparing differently rounded MP values can falsely reject it.
+            self.delta = '1e-200'
             self.center = mp.mpf(self.receipt['center'])
             def unpack(record):
                 if 'exact_mpf_tuple' in record:

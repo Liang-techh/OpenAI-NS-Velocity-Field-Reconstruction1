@@ -1,3 +1,7 @@
+## 2026-10-01: actual-candidate finite five-bump inverse
+
+PARTIAL C120-M4: new R110 candidate source now drives the five-bump inverse and corrected reference field at Z=.3. Ten nonlinear updates, analytic first-Z tangents and exact incremental atoms are retained; max polarization residual6.23766e-210. P0/P0_Z preserved. See CANDIDATE_FIVE_BUMP_INVERSE_2026_10_01.md. This is finite map algebra with quadrature64, not certified physical/global closure. Independent actual bump integration is next, followed by quadrature/source enclosures, support cone and full-axis functional inverse. Temporal n-dependent recursion remains open.
+
 ## 2026-10-01: actual candidate transition and new five-row defects
 
 DONE C120-T3-NUM: actual Lambda120 center exit/continuation/switches now reach R110 with nonzero amplitude, pressure and all five moments/tangents. Exact MP endpoints are persisted. PARTIAL C120-M3: candidate-specific centered five-row defects and first axial tangents generated; nominal d1=2.23437e-15, d2=5.68986e-16, d4=5.91501e-41; d3/d5 retained nonzero. See CANDIDATE_TRANSITION_R110_2026_10_01.md and CANDIDATE_MOMENT_DEFECTS_2026_10_01.md. Next: actual five-bump map with target -d, independent repaired moment checks, then functional error/cone/heat closure. Center MP projection and finite quadrature/RK data are not certificates. Strong cone passes only at reported R1/R100; R101/R110 pass relaxed diagnostics only. Temporal recursion remains open.
