@@ -81,10 +81,10 @@ def build_component_coefficients(axis, pressure_datum, center, radial_degree=18,
         return result
 
 
-def evaluate_component_core_coefficients(coefficients,r,z,delta):
+def evaluate_component_core_coefficients(coefficients,r,z,delta,*,square_root=None):
     """Shared core/moment equations for scalar or component-valued radii."""
     jets=evaluate_core_jets(coefficients,r,radial_converter=lambda value:value)
-    root=(2*r).sqrt() if hasattr(r,"sqrt") else mp.sqrt(2*r)
+    root=square_root(2*r) if square_root is not None else ((2*r).sqrt() if hasattr(r,"sqrt") else mp.sqrt(2*r))
     f=coefficients['F'];u=coefficients['Uz']
     moments={k:coefficients['F'][0][0]*0 for k in ('theta','z','theta_z','z_theta','p')}
     moments_Z=dict(moments)

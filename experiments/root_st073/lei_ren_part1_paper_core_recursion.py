@@ -48,7 +48,7 @@ recurrence are independent of pressure components. The default remains MP.
         def mul(a,b):return [sum(a[i]*b[k-i] for i in range(k+1)) for k in range(K)]
         def diff(a):return [(k+1)*a[k+1] if k+1<len(a) else mp.mpf(0) for k in range(K)]
         def inverse(a):
-            q=[1/a[0]]
+            q=[convert(1)/a[0]]
             for k in range(1,K):q.append(-sum(a[i]*q[k-i] for i in range(1,k+1))/a[0])
             return q
         z=pad([mp.mpf(str(Z)),1]); dt=mp.mpf(str(delta)); one=const(1)
@@ -61,7 +61,7 @@ recurrence are independent of pressure components. The default remains MP.
             K=initial_count-n-1
             W=[]; H=[]
             for i in range(n+1):
-                wi=scale(add(scale(mul(z,u[i]),1-dt),mul(d,diff(u[i]))),-mp.mpf(1)/(i+1))
+                wi=scale(add(scale(mul(z,u[i]),1-dt),mul(d,diff(u[i]))),-convert(1)/(i+1))
                 if i==0:wi=add(one,wi)
                 W.append(wi)
                 hi=mul(d,u[i])
@@ -79,11 +79,11 @@ recurrence are independent of pressure components. The default remains MP.
                 ff=const(0)
                 for i in range(n):ff=add(ff,mul(f[i],f[n-1-i]))
                 rhsu=add(rhsu,scale(mul(z,ff),-2))
-            f.append(scale(mul(invL,rhsf),mp.mpf(1)/(2*(n+1)*(n+2))))
-            u.append(scale(mul(invL,rhsu),mp.mpf(1)/(2*(n+1)**2)))
+            f.append(scale(mul(invL,rhsf),convert(1)/(2*(n+1)*(n+2))))
+            u.append(scale(mul(invL,rhsu),convert(1)/(2*(n+1)**2)))
             ff=const(0)
             for i in range(n+1):ff=add(ff,mul(f[i],f[n-i]))
-            pressure.append(scale(ff,mp.mpf(1)/(n+1)))
+            pressure.append(scale(ff,convert(1)/(n+1)))
         return {'F':f,'Uz':u,'P':pressure,'Z':mp.mpf(str(Z)),
                 'delta':dt,'radial_degree':degree,'initial_Z_degree':initial_count-1,'precision':precision,
                 'component_scalar_arithmetic':scalar_converter is not None,

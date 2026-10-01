@@ -1,3 +1,7 @@
+## Pressure-to-finite-core propagation (2026-09-30)
+
+All14 pressure approximation derivatives bounded uniformly through order24. Actual degree18 finite core at Z=.3 now has pressure-only coefficient and five core-moment error intervals. Uz error at R=4/Lambda <=2.253655468045584e-36. This excludes axis errors, radial truncation/RK continuation and full five-defect closure. See PRESSURE_HIGH_DERIVATIVE_CORE_PROPAGATION_2026_09_30.md.
+
 ## Uniform pressure approximation budget (2026-09-30)
 
 All 14 stored-datum pressure stages now have an absolute error enclosure on |Z|<=0.8: weighted normalized C2 upper 3.079264485429091e-12. Flatten uses a conservative positive-mass bound; relative flatten error, original parameter errors, runtime evaluation roundoff, core/RK propagation and five-moment closure remain open. See POINTWISE_PREHEAT_ERROR_BUDGET_2026_09_30.md. Next: relative flatten coefficient error and pressure-to-core/moment propagation.

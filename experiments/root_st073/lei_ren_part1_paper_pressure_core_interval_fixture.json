@@ -1,0 +1,18 @@
+{
+  "all_checks_passed": true,
+  "independent_q_power_derivative_checks": 108,
+  "nonlinear_interval_coefficient_containment_checks": 162,
+  "five_moment_interval_containment_checks": 30,
+  "pressure_polynomial_arithmetic_regression": {
+    "maximum_scaled_difference": "2.5729667790087687812659338018e-101",
+    "parameters": [
+      0,
+      1,
+      -1,
+      0.5
+    ]
+  },
+  "point_samples_are_regression_only": true,
+  "uniform_pressure_proof": "analytic coefficient envelope",
+  "core_fixture_scope": "resolved finite radial recurrence; no exact infinite profile or RK claim"
+}
