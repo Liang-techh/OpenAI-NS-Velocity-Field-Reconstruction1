@@ -1,3 +1,11 @@
+# F28 checkpoint - 2026-10-01
+
+The selected F27 increased-Cstar family now has input-independent K1=192922259423111113597, the existing flat cutoff derivative bound8, and13 shared-width gates. The exact prescribed actual exit has a whole-axis Z in[-1,1], Ra<R<=110 analytic relaxed-cone certificate and a nonempty admissible inner collar. Separate velocity/cumulative-mean gates include both short switches by exact positive averaging. No stress or moment reset.
+
+Read `docs/SHARED_K1_AND_GLOBAL_EXIT_2026_10_01.md` first. Next: explicitly recompute the R110 amplitude budget and install the same-family long reshape/axial restoration in log coordinates, then functional five-moment repair. Whole-axis finite evaluation, corrected outer at selected Rref, full Section9 admission, stress lift/flat remainder, and temporal recursion remain unfinished. No finite recurrence process is live; 144/144 core orders completed in F26.
+
+---
+
 # F27 checkpoint - 2026-10-01
 
 Generated full physical C3 K upper bounds for the increased-Cstar implicit analytic family, using mixed C4 inputs for frozen stress. Proved K(Cstar)<=Kbar*Cstar and selected logarithmic Cstar/Rref satisfying all9.17 radius restrictions plus Rm>=16. Bound the completed 144-order local core/exit envelopes to the selected family by148 S Cauchy-jet checks and shared-width inclusion; no point-amplitude run or old-receipt relabeling.

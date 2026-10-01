@@ -1,0 +1,23 @@
+{
+  "cutoff_formula": "sigma(s)=exp(-1/s^2)/(exp(-1/s^2)+exp(-1/(1-s)^2)), 0<s<1; flat constants outside",
+  "global_derivative_upper": 8,
+  "derivative_at_half": 8,
+  "global_derivative_bound_certified": true,
+  "existing_cutoff_unchanged": true,
+  "smooth_flat_endpoints": true,
+  "strict_monotonicity_on_open_unit_interval": true,
+  "proof": {
+    "symmetry": "sigma(1-s)=1-sigma(s), derivative symmetric",
+    "variables": "t=|1-2s|,v=t^2,u=s(1-s)=(1-v)/4",
+    "identity": "sigma_prime/8=(1+3v)/(1-v)^3 / cosh^2(8t/(1-v)^2)",
+    "hyperbolic": "cosh^2(x)=1+sinh^2(x)>=1+x^2",
+    "polynomial": "(1-v)^4+64v-(1+3v)(1-v)=v*(58+9v-4v^2+v^3)>=54v>=0",
+    "endpoints": "the defining exp(-1/s^2) edges are flat; derivative tends to0 at0,1"
+  },
+  "sample_center_is_not_the_global_proof": true,
+  "input_hashes": {
+    "lei_ren_part1_paper_shared_fixed_step_bound.py": "b7e0879dca4d5c41297b93332fd27b075b67a783252966468b2fe8de759cb633",
+    "lei_ren_part1_paper_interval_comparison_enclosure.py": "03027203a8ca43721508f8b337ac7107d09be785da3dd491a7b5ab27e46c8ed8",
+    "../../src/openai_ns_reconstruction/schedule_pressure.py": "e827c3df9552daf201468c2c58540aaf621ed2bb808bdf48be8db14a0b760055"
+  }
+}

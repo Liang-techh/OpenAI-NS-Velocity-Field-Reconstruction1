@@ -1,3 +1,18 @@
+# F28 task handoff - 2026-10-01
+
+DONE: fixed existing-cutoff derivative bound8; input-independent K1 coefficient ledger including fullR110 differences; eta_tol/j/min-branch binding;13 shared-width gates; whole-axis exact implicit exit relaxed cone throughR110 and nonempty admissible collar. Details: `docs/SHARED_K1_AND_GLOBAL_EXIT_2026_10_01.md`.
+
+NEXT, in order:
+1. Recompute the normalized R110 log-amplitude bound from the core and exact integrated relative log changes. Do not use an unverified long-reshape amplitude assertion.
+2. Install (9.30) same-family long swirl reshape and (9.38) axial restoration. Use sigma_prime<=8, T=400 times a proved A bound, exact logRref offsets, continuously inherited five moments/P0, angular D/Q barrier, pressure and axial stress bounds. Old hardcoded A=1e150/logC=5e151 fixtures are a different family.
+3. Build normalized Section10 functional defect ledger for all five moments on[-1,1]; prove the quantitative defect test with explicit constants, solve the fixed bump contraction, and preserve cone margins. Do not substitute point fits.
+4. Rebuild the selected-radius outer/heat profile with the same analytic preheat datum and its own moment corrections; close actual inner/outer pressure and radial-velocity matching.
+5. Section11 admissible shear loop and second moment restoration, flat remainder, then n-dependent temporal coefficient recursion and oscillatory correction.
+
+Keep fullSection9/heat/stresslift/temporal flags false until their actual evidence exists. Preserve unrelated scale_reference work and historical producers. Mark DONE with commit and receipt scope, not merely an implementation plan.
+
+---
+
 # F27 task handoff - 2026-10-01
 
 Done: uniform physical C3 K ledger, mixed C4-to-C3 stress bounds, inverse F/inverse D norms, increased-Cstar radius9.17 selection, and explicit reuse of144-order local finite/exit envelopes. See `docs/PHYSICAL_NORMS_AND_CSTAR_FAMILY_2026_10_01.md` for sources, units and exact scope.
