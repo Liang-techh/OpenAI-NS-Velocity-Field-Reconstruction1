@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "target_R": "100",
+  "target_physical_radius_enclosed": true,
+  "target_fields_axial_order": 1,
+  "range_fields_axial_order": 1,
+  "physical_moment_rows_checked": 5,
+  "cancellation_safe_exp_delta_g": true,
+  "target_g_integral_uses_full_path_driver": true,
+  "target_u_integral_uses_full_path_driver": true,
+  "terminal_derivatives_use_endpoint_driver": true,
+  "Ur_Z_available": false,
+  "switch_100_110_enclosed": false,
+  "terminal_matching_complete": false,
+  "stress_cone_certified": false
+}

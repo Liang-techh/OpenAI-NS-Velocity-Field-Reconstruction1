@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "fixture_only": true,
+  "scalar_physical_stress_components_contained": 6,
+  "cone_fixture_cases": 5,
+  "uncertain_intervals_not_claimed_failed": true,
+  "input_hashes": {
+    "lei_ren_part1_paper_interval_exit_stress_enclosure.py": "851b6a98436ff32f1d0cddd85b08f26ed7766e87390ccc10dc3ee55c6d76dfef",
+    "lei_ren_part1_paper_interval_exit_stress_enclosure_check.py": "dbdb96f83d4f698676b18edcdd691f87c64e7ce30e8638c0811329424bb28017"
+  }
+}
