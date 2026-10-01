@@ -7,6 +7,54 @@ not identify them with the analytic fixed point or add an infinite tail.
 import math
 
 
+def coefficient_uncertainty_bound(ctx, rows, *, Lambda, radius_upper,
+                                  radial_order=0, axial_order=0,
+                                  component='Phi'):
+    """Uniform finite-polynomial error about rounded coefficient midpoints.
+
+    Covers 0<=s<=radius_upper at the axial Taylor center. It includes input
+    uncertainty already propagated into the supplied interval rows. It does
+    not cover a neighborhood in Z or any omitted radial orders.
+    """
+    import mpmath as mp
+    i, k = radial_order, axial_order
+    if not isinstance(i, int) or not isinstance(k, int) or min(i, k) < 0:
+        raise ValueError('Nonnegative integer derivative orders required')
+    if component not in ('Phi', 'Psi'):
+        raise ValueError('Component must be Phi or Psi')
+    lam = ctx.mpf(Lambda)
+    radius = ctx.mpf(radius_upper)
+    if lam._mpi_[0][0] or lam._mpi_[0][1] == 0:
+        raise ValueError('Strictly positive Lambda required')
+    if radius._mpi_[0][0]:
+        raise ValueError('Nonnegative radial upper bound required')
+    total = ctx.mpf(0)
+    representative_rows = []
+    # Directed conversion encloses midpoint rounding as well as row widths.
+    with mp.workdps(ctx.dps + 40):
+        for n, row in enumerate(rows):
+            points = []
+            for coefficient in row:
+                lo, hi = [mp.make_mpf(t) for t in coefficient._mpi_]
+                points.append(ctx.mpf((lo+hi)/2))
+            representative_rows.append(points)
+            if n < max(i, 1 if component=='Psi' else 0):
+                continue
+            if len(row) <= k:
+                raise ValueError('Insufficient axial derivative depth')
+            discrepancy = row[k]-points[k]
+            lo, hi = [mp.make_mpf(t) for t in discrepancy._mpi_]
+            error = ctx.mpf(max(abs(lo),abs(hi)))
+            factor = math.factorial(k) * math.prod(range(n-i+1,n+1))
+            exponent = n if component=='Phi' else n-1
+            total += error * factor * radius**(n-i) / lam**exponent
+    return dict(uniform_midpoint_error_upper=total,
+                representative_rows=representative_rows,
+                radial_interval=['0',str(radius_upper)],
+                axial_scope='Taylor center only',
+                infinite_radial_tail_included=False)
+
+
 def scaled_mixed_derivative(ctx, rows, *, Lambda, scaled_radius,
                             radial_order=0, axial_order=0, component='Phi'):
     """Enclose a finite derivative at the Taylor center in Z.
@@ -74,6 +122,18 @@ def self_check():
                     raise AssertionError((name, i, k, result, target))
                 count += 1
         print('Independent scaled-coordinate polynomial checks:', count, flush=True)
+        # A known uncertain physical coefficient: +/-20 in A2 with Lambda10
+        # gives a uniform Phi value error .2*s^2 and second derivative .4.
+        uncertain = [[ctx.mpf(1)], [ctx.mpf(20)], [ctx.mpf([280,320])]]
+        for i, target in ((0,mp.mpf('.05')),(1,mp.mpf('.2')),
+                          (2,mp.mpf('.4'))):
+            bound = coefficient_uncertainty_bound(ctx,uncertain,Lambda=lam,
+                radius_upper='.5',radial_order=i)
+            lo,hi = [mp.make_mpf(t) for t in
+                     bound['uniform_midpoint_error_upper']._mpi_]
+            if hi < target or hi-target > mp.mpf('1e-60'):
+                raise AssertionError(('coefficient error',i,hi,target))
+        print('Independent coefficient-uncertainty checks:',3,flush=True)
 
 
 if __name__ == '__main__':
