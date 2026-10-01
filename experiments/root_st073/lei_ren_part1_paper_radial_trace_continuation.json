@@ -1,0 +1,50 @@
+{
+  "input_path": "lei_ren_part1_paper_interval_collar_core_inlet_input.json",
+  "input_sha256": "4853cf747fcffbb044d9308cc3b1e21500708c43b2b8bd074626dfe3c4cbbc77",
+  "precision": 600,
+  "Z": ".3",
+  "physical_P0_preserved": true,
+  "pressure_parameter_degree": 0,
+  "axis_rows_available": {
+    "F": 22,
+    "Uz": 22,
+    "P": 22
+  },
+  "results": [
+    {
+      "radial_degree": 18,
+      "normalized_trace_over_axis_F": "6.7318476088425989071082828154690937479199984404582599188538920659603155455497328e-29",
+      "computed_order_absolute_defect_sum": "3.3217727604644895351775900003622914431038581552254424070980539549514439100220815e-601",
+      "independent_moment_identity_error": "1.1800539674102577690073112674618625470355293223984227364766286020327047169037124e-602",
+      "first_uncomputed_equation_contribution": "6.7318476088425989071082220944415475574370031422420719660312649781480543007931217e-29",
+      "retained_prefix_max_change": "0.0",
+      "ratio_to_previous": null
+    },
+    {
+      "radial_degree": 19,
+      "normalized_trace_over_axis_F": "-3.3743597036805007053113629616420865850119785646357150599106423160733462035966124e-31",
+      "computed_order_absolute_defect_sum": "3.3217727604644895351775900007000064033694330311258096714251812071940034229702516e-601",
+      "independent_moment_identity_error": "1.6677022651146114490576877638935486195164900622400090246076985855597509445755084e-601",
+      "first_uncomputed_equation_contribution": "-3.3743597036805007053113324558626973505587991579992564375537792142071995800928379e-31",
+      "retained_prefix_max_change": "0.0",
+      "ratio_to_previous": "0.0050125313283208020050035114664146279922486646030792249108062263273105728337521586"
+    },
+    {
+      "radial_degree": 20,
+      "normalized_trace_over_axis_F": "1.5337998653093185024112053424251899462202776482032427766025770331560747720868662e-33",
+      "computed_order_absolute_defect_sum": "3.3217727604644895351775900007000064033694330311258096714251812071940034229702516e-601",
+      "independent_moment_identity_error": "7.2377898720628127261870398911486659434483373305744504099961765587551212909967132e-602",
+      "first_uncomputed_equation_contribution": "1.5337998653093185024111914474532114129289744238073787593331058707271561844594584e-33",
+      "retained_prefix_max_change": "0.0",
+      "ratio_to_previous": "0.0045454545454545454545364141659509120874685719981116756678203950954072231762117911"
+    }
+  ],
+  "coupled_swirl_and_pressure_terms_retained": true,
+  "committed_degree18_trace_agreement": true,
+  "source_generation_roundoff_enclosed": false,
+  "infinite_radial_remainder_enclosed": false,
+  "extrapolated_tail_bound": false,
+  "core_C1_matching_certified": false,
+  "temporal_recursion": false,
+  "required_next_dependency": "Generate higher analytic axis jets and validate an infinite coupled radial remainder; finite-order ratios alone are insufficient"
+}

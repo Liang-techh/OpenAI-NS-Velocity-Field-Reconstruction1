@@ -1,3 +1,7 @@
+## 2026-09-30: Coupled radial core extended to degree20
+
+Recovered radial rows19 and20 from the same22 accepted axis Taylor rows, with unchanged physical P0 and unchanged degree18 prefix. At Z=.3, pressure-parameter degree-zero entrance trace/axisF falls in magnitude from6.7318476e-29 to1.5337999e-33 (factor43890). Independent moment/integrated-defect identities pass. This is finite coupled radial continuation, not temporal recursion or a global tail certificate. Next: higher analytic axis jets and a validated infinite nonlinear radial majorant. Do not extrapolate the measured ratios into an infinite-tail proof. See CORE_TRACE_AND_RECIPROCAL_2026_09_30.md.
+
 ## 2026-09-30: Angular core defect integral identified
 
 Implemented the paper identity d_R(R T_theta)=R D_theta/L using the retained nonlinear core. At Z=.3, R=4/Lambda, integrated pressure-degree-zero trace divided by axis F is6.731847608842599e-29 and agrees with independent inlet bounds. Defect orders below18 contribute at most2.602e-261 in stored MP arithmetic; remaining radial orders carry the finite trace. Next: recover row19 and beyond with unchanged P0, then enclose the infinite coupled radial tail. MP cancellation is not a source-roundoff certificate; zero containment alone is not exact matching. See CORE_TRACE_AND_RECIPROCAL_2026_09_30.md.

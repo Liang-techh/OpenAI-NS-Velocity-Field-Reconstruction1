@@ -40,6 +40,20 @@ At R=4/Lambda and Z=.3 the integral divided by axis F is approximately 6.7318476
 
 This computation is MP arithmetic with stored coefficients, not a directed source-generation error certificate or infinite-tail bound. A total stress enclosure merely containing zero would not establish the exact identity. Completion requires a controlled analytic core solving the equations with regular axis data, plus compatible entrance evaluation.
 
+## Coupled radial continuation to degree20
+
+The new `lei_ren_part1_paper_radial_trace_continuation.py` replays the coupled radial recurrence from the same22 axis Taylor rows, including the same physical pressure datum. It reaches degree20, the highest degree these rows support with the required first axial derivative. The pressure-parameter degree-zero angular entrance trace divided by axis F is:
+
+| Radial degree | Signed trace / axis F | Absolute ratio to previous degree |
+| --- | --- | --- |
+| 18 | 6.731847608842599e-29 | — |
+| 19 | -3.374359703680501e-31 | 0.00501253132832 |
+| 20 | 1.533799865309319e-33 | 0.00454545454545 |
+
+The magnitude decreases by a factor of approximately43890 from18 to20. The retained normalized degree18 prefix, including its first axial derivatives, is unchanged in both continuations. An independently evaluated moment trace agrees with the angular defect integral, and the regenerated degree18 trace agrees with the committed source diagnostic.
+
+This extends the actual coupled finite core, rather than resetting its trace or modifying P0. It remains a point-Z, pressure-parameter degree-zero MP computation; no full pressure-parameter sum or infinite radial tail certificate is implied. These finite-order ratios are not extrapolated into a geometric tail bound. Higher orders need higher analytic axis jets and a validated analytic majorant or contraction argument. This spatial radial recurrence is distinct from the requested n-dependent temporal recursion.
+
 ## Next dependencies, in order
 
 1. Identify the exact stress-free core identity and separate the radial truncation defect from pressure-parameter truncation. Use the same accepted analytic preheat datum and coupled core recurrence.
@@ -56,6 +70,7 @@ Run from the repository root with Python and mpmath:
 
     python experiments/root_st073/lei_ren_part1_paper_core_boundary_stress_gap.py
     python experiments/root_st073/lei_ren_part1_paper_angular_defect_integral.py
+    python experiments/root_st073/lei_ren_part1_paper_radial_trace_continuation.py
     python experiments/root_st073/lei_ren_part1_paper_positive_cell_reciprocal_C3.py --seconds 50
     python experiments/root_st073/lei_ren_part1_paper_adaptive_core_positivity.py --seconds 180
 
