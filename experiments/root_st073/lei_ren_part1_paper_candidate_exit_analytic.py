@@ -6,7 +6,7 @@ finite exit integrator. This experiment is not a certified bridge/cone.
 import hashlib
 import json
 from pathlib import Path
-from types import SimpleNamespace
+from functools import lru_cache
 
 import mpmath as mp
 
@@ -45,14 +45,21 @@ def candidate_core(calc):
     return CorePolynomial(factory,Lambda='1e120',delta='1e-200',precision=calc.precision)
 
 
+class CachedCandidateExit(ExitTangents):
+    @lru_cache(maxsize=32)
+    def evaluate(self,y,Z):
+        return super().evaluate(y,Z)
+
+
 def build_exit(calc,steps=8):
+    from lei_ren_part1_paper_candidate_comparison_adapter import CandidateMPComparison
     core = candidate_core(calc)
-    comparison = SimpleNamespace(core=core,precision=calc.precision,h_b=calc.hb)
+    comparison = CandidateMPComparison(calc,core)
     bounds = uniform_axis_jets(calc.ctx,radius=1,j='1e-14',Lambda='1e120',
                               logC='5e151',delta='1e-200',length=4)
     upper = endpoints(bounds['G_absolute_upper'])[1]
     logeps = -mp.mpf('1e120')*(2*upper+1)
-    bridge = ExitTangents(comparison,steps=steps,epsilon=mp.exp(logeps),
+    bridge = CachedCandidateExit(comparison,steps=steps,epsilon=mp.exp(logeps),
         analytic_driver_provider=lambda y,z:provider(y,z))
     def provider(y,z):
         packet = calc.exit_driver_jets(y,z,bridge.multiplier(y))
@@ -90,7 +97,8 @@ def run():
             input_hashes={name:hashlib.sha256((HERE/name).read_bytes()).hexdigest()
                 for name in (STATE,'lei_ren_part1_paper_candidate_comparison_jets.py',
                     'lei_ren_part1_paper_exit_tangents.py','lei_ren_part1_paper_exit_bridge.py',
-                    'lei_ren_part1_paper_core_adapter.py','lei_ren_part1_paper_uniform_axis_jets.py')},
+                    'lei_ren_part1_paper_core_adapter.py','lei_ren_part1_paper_uniform_axis_jets.py',
+                    'lei_ren_part1_paper_candidate_comparison_adapter.py')},
             source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest())
         Path(__file__).with_suffix('.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
         print('Actual candidate initial exit bridge generated with analytic derivatives; numerical center result only',flush=True)

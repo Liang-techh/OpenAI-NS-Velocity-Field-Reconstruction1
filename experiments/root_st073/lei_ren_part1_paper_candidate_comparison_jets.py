@@ -12,7 +12,7 @@ from pathlib import Path
 import mpmath as mp
 from mpmath.ctx_iv import MPIntervalContext
 
-from lei_ren_part1_paper_candidate_shared_inlet import finite_moments, normalized_inlet
+from lei_ren_part1_paper_candidate_shared_inlet import integral, radial_product, normalized_inlet
 from lei_ren_part1_paper_interval_taylor import IntervalTaylor
 from lei_ren_part1_paper_schedule_endpoint_enclosures import endpoints
 from lei_ren_part1_paper_schedule_endpoint_enclosures_check import encode
@@ -65,7 +65,11 @@ class CandidateComparisonJets:
             self.F0 = restore(c, fixed['F0_interval'])
             self.hb = mp.mpf('.005')
             self.initial_phi = self.radial(self.phi, c.mpf(4))
+            self.phi_squared = radial_product(self.phi,self.phi)
+            self.phi_u = radial_product(self.phi,self.u)
+            self.u_squared = radial_product(self.u,self.u)
         self.cache = {}
+        self.radial_cache = {}
 
     @staticmethod
     def radial(rows, s, derivative=0):
@@ -77,14 +81,20 @@ class CandidateComparisonJets:
 
     def core_state(self, s):
         return dict(phi=self.radial(self.phi,s), U=self.radial(self.u,s),
-                    **finite_moments(self.phi,self.u,s))
+                    theta=integral(self.phi,s,1)*2,z=integral(self.u,s),
+                    theta_z=integral(self.phi_u,s,1)*2,p=integral(self.phi_squared,s),
+                    u_squared=integral(self.u_squared,s),
+                    weighted_phi_squared=integral(self.phi_squared,s,1))
 
     def rhs(self, y, state):
         c = self.ctx
         s = 4*c.exp(c.mpf(y))
-        phi = self.radial(self.phi,s)
-        slope = self.radial(self.phi,s,1)*s/phi
-        u_slope = self.radial(self.u,s,1)*s
+        key = mp.nstr(y,self.precision)
+        if key not in self.radial_cache:
+            phi = self.radial(self.phi,s)
+            self.radial_cache[key] = (self.radial(self.phi,s,1)*s/phi,
+                                      self.radial(self.u,s,1)*s)
+        slope,u_slope = self.radial_cache[key]
         if y <= self.hb:
             alpha = c.mpf(1)
         elif y >= 2*self.hb:

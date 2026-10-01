@@ -638,6 +638,7 @@ class ExitSwitches:
                 "P": P,
                 "PZ": P_Z,
                 "P_Z": P_Z,
+                "P0": start["P0"],
                 "P0_Z": start["P0_Z"],
                 "Ur": Ur,
                 "g_y": g_y,

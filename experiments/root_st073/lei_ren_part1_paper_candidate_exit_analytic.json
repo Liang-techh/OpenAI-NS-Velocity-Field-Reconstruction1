@@ -48,11 +48,12 @@
   "terminal_five_moment_closure": false,
   "input_hashes": {
     "lei_ren_part1_paper_candidate_gauge_core_Lambda120_state.json": "fc1c779f17ef182b8eab9be7ab97e9fdf3faef7ff7cc7808efc9766bc1bb297b",
-    "lei_ren_part1_paper_candidate_comparison_jets.py": "9d85ba14fc26e0f7ededc5698d564d0f0d58759cdfea1631261eb7a223896030",
-    "lei_ren_part1_paper_exit_tangents.py": "30fa34f1d09a7b82e504b14931bb2f36ced23e1a3c1961830cd8f51f9b2902ae",
+    "lei_ren_part1_paper_candidate_comparison_jets.py": "a51f5db29cbdff9be1eb8776009e334a58188bd7e4189bb2cb886a6d4ec5df31",
+    "lei_ren_part1_paper_exit_tangents.py": "7c4941bc78d1820f6cbde0ca49f8dbb967de244bb0944b34782b0ce69246e8c4",
     "lei_ren_part1_paper_exit_bridge.py": "f7995c8b1e4183e9fcd7b78007e8a4eb143122fd3c481b77d7436f8c49028f18",
     "lei_ren_part1_paper_core_adapter.py": "b82000aceec2e8a2c5e3f039045a2532ee747204eb024ff2a1d5fa8bea34ceb6",
-    "lei_ren_part1_paper_uniform_axis_jets.py": "561c69c49f2a6f3dc8c95a9b15dc51d1d50124f20ee9f3706c602a3fb261fb85"
+    "lei_ren_part1_paper_uniform_axis_jets.py": "561c69c49f2a6f3dc8c95a9b15dc51d1d50124f20ee9f3706c602a3fb261fb85",
+    "lei_ren_part1_paper_candidate_comparison_adapter.py": "35a8e51b9532e3e4d45553e21fbe5ae143ed0686cfd71f367f5ffca7755d94e9"
   },
-  "source_sha256": "019ea34504fa312e49a8ab7e13420e974969874210ff39513e7e37a314e9073c"
+  "source_sha256": "6f17994fe00991bb0f26ec4af99a91b7ba43f2e0bd55c8ef26ed485bcb7d9585"
 }

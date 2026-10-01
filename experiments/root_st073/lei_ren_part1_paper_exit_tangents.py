@@ -414,6 +414,7 @@ class ExitTangents(ExitBridge):
                 "P": P,
                 "PZ": P_Z,
                 "P_Z": P_Z,
+                "P0": init["P0"],
                 "P0_Z": init["P0_Z"],
                 "Ur": Ur,
                 "chi": self.multiplier(yy),

@@ -1,0 +1,31 @@
+{
+  "branch": "candidate_lambda120_comparison_nominal_center",
+  "center": "0.3",
+  "Lambda": "1.0e+120",
+  "radial_degree": 124,
+  "state_sha256": "fc1c779f17ef182b8eab9be7ab97e9fdf3faef7ff7cc7808efc9766bc1bb297b",
+  "rows": [
+    {
+      "R": "1.0",
+      "driver_relative_error": "1.41116905737095226810669752487e-261",
+      "moment_relative_error": "9.18493751970775274320088915877e-262",
+      "pressure_relative_error": "0.0"
+    },
+    {
+      "R": "100.0",
+      "driver_relative_error": "2.31876881938878680001693998571e-261",
+      "moment_relative_error": "1.0502059240339462719052594896e-261",
+      "pressure_relative_error": "0.0"
+    }
+  ],
+  "max_driver_relative_error": "2.318768819388786800016939985713718293116e-261",
+  "max_moment_relative_error": "1.050205924033946271905259489601431645373e-261",
+  "max_pressure_relative_error": "0.0",
+  "frozen_coefficients_reused": true,
+  "amplitude_factor_cancelled_algebraically": true,
+  "pressure_reset_or_fit": false,
+  "nominal_center_only": true,
+  "transition_discretization_enclosed": false,
+  "whole_axis_certified": false,
+  "source_sha256": "0ed79d35606dc3bdb941fa76aff5554260548fa31d9369b95ebcc46d52a8d752"
+}
