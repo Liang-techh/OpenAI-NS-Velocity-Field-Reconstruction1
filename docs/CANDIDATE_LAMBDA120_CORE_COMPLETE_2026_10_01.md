@@ -78,3 +78,31 @@ Still open: whole-axis finite core/inlet generation; actual transition and
 five-bump repair; final outer five-moment closure; coherent heat collar;
 admissible cone; n-dependent temporal recursion; oscillatory corrections;
 independent full corrected Cartesian residual.
+
+## Authoritative reference endpoint parameters
+
+Use `coherent_pressure_source_alignment.json`'s `accepted_schedule`:
+`logPstar=14`, `delta=1e-200`, and
+`logRref=5e152+144.7004803657924162280799350326494935074...`.
+The older `reference_moments.json` values `delta=1e-32`, `logRref=10` are
+obsolete diagnostics. The accepted delta agrees with the Lambda120 core.
+
+The physical reference endpoint is `Rh=exp(logRref-5)`; the paper and
+`outer.py` use the relative log radius `y_h=-5`. It is not the core's
+scaled radius `s=4`, which corresponds to `R=4e-120` for Lambda120.
+
+At Rh, (9.3) supplies the analytic target functions:
+
+`uh=exp(13.5)/(1+Z^2)`;
+`Mtheta=(5/8)*Rh*sqrt(2Rh)*uh`;
+`Mz=4Z*Rh`;
+`Mthetaz=4Z*Mtheta`;
+`Mztheta=16Z^2*Rh-(5/12)*Rh*uh^2`;
+`Mp=(5/2)*uh^2`.
+
+Evaluate these using factored or signed-log quantities. The existing joined
+outer receipt only stores complete five moments at Rh and Z=.3; subsequent
+rows do not provide the full five-moment profile. Thus the analytic Rh target
+can be implemented immediately, while full transition/terminal outer moment
+data must still be generated. The functional pressure receipt cannot substitute
+for that missing coherent velocity/moment profile.
