@@ -1,0 +1,9 @@
+{
+  "all_checks_passed": true,
+  "directed_interval_arithmetic": true,
+  "independent_resolved_samples": 36,
+  "zero_difference_expression_exact": true,
+  "core_converter_zero_components": 36,
+  "denominator_crossing_rejected": true,
+  "source_certificate": false
+}

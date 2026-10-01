@@ -1,0 +1,8 @@
+{
+  "all_checks_passed": true,
+  "pointwise_jet_regression_checks": 80,
+  "interval_root_bracket_proved": true,
+  "G_bound_basis": "path length times positive-denominator analytic envelope",
+  "point_samples_are_regression_only": true,
+  "uniform_axis_proof": "rational interval jets plus analytic G envelope"
+}

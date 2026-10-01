@@ -1,0 +1,14 @@
+{
+  "all_checks_passed": true,
+  "actual_parameter_local_perturbation_checks": 76,
+  "radial_degree": 18,
+  "Z_samples": [
+    "-.8",
+    "0",
+    ".3",
+    ".8"
+  ],
+  "point_samples_are_regression_only": true,
+  "uniform_proof": "analytic axis enclosures and paired directed recurrence",
+  "radial_series_remainder_enclosed": false
+}

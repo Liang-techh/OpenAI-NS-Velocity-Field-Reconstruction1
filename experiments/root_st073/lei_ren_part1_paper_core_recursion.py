@@ -51,7 +51,7 @@ recurrence are independent of pressure components. The default remains MP.
             q=[convert(1)/a[0]]
             for k in range(1,K):q.append(-sum(a[i]*q[k-i] for i in range(1,k+1))/a[0])
             return q
-        z=pad([mp.mpf(str(Z)),1]); dt=mp.mpf(str(delta)); one=const(1)
+        z=pad([Z if hasattr(Z,"_mpi_") else mp.mpf(str(Z)),1]); dt=mp.mpf(str(delta)); one=const(1)
         d=add(one,scale(mul(z,z),-1)); L=add(one,scale(mul(z,z),-dt))
         invL=inverse(L)
         f=[pad(F0_Z_taylor)]; u=[pad(U0_Z_taylor)]; pressure=[pad(P0_Z_taylor)]
@@ -84,7 +84,7 @@ recurrence are independent of pressure components. The default remains MP.
             ff=const(0)
             for i in range(n+1):ff=add(ff,mul(f[i],f[n-i]))
             pressure.append(scale(ff,convert(1)/(n+1)))
-        return {'F':f,'Uz':u,'P':pressure,'Z':mp.mpf(str(Z)),
+        return {'F':f,'Uz':u,'P':pressure,'Z':Z if hasattr(Z,"_mpi_") else mp.mpf(str(Z)),
                 'delta':dt,'radial_degree':degree,'initial_Z_degree':initial_count-1,'precision':precision,
                 'component_scalar_arithmetic':scalar_converter is not None,
                 'scope':'Local exact-equation radial jets; no temporal recursion or global matching.'}

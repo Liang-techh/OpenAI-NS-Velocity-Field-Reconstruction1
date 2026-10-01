@@ -1,3 +1,7 @@
+## Uniform pressure-to-finite-core dependency (2026-09-30)
+
+Pressure perturbation now enclosed at all |Z|<=.8 for degree18 finite core boundary R=4/Lambda, including five core moments through second axial derivatives. Uniform Uz error <=4.394371482111663e-36; Ur <=4.516471968020449e-53. Common axis data enclosed analytically without G quadrature. Full core error and full five-defect closure remain open. See UNIFORM_PRESSURE_CORE_DEPENDENCY_2026_09_30.md. Next: tighten relative flatten coefficients, reconcile accepted coherent source if different, and bound core remainder/continuation plus annular contributions.
+
 ## Pressure-to-finite-core propagation (2026-09-30)
 
 All14 pressure approximation derivatives bounded uniformly through order24. Actual degree18 finite core at Z=.3 now has pressure-only coefficient and five core-moment error intervals. Uz error at R=4/Lambda <=2.253655468045584e-36. This excludes axis errors, radial truncation/RK continuation and full five-defect closure. See PRESSURE_HIGH_DERIVATIVE_CORE_PROPAGATION_2026_09_30.md.
