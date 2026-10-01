@@ -1,0 +1,130 @@
+{
+  "input_hashes": {
+    "lei_ren_part1_paper_logarithmic_pressure_datum.json": "25eaffef5c11036123b2ceaa8f353ac0113daf09274080d26e00446b2de21cd9",
+    "lei_ren_part1_paper_logarithmic_pressure_datum.py": "576e16dc89281d7f4011337023ab47256f1d338aa981d98d8f848e8884ed2e05",
+    "lei_ren_part1_paper_candidate_pressure_mass_refinement.json": "8824c74fac38ebade9d90f1269e6e337b2b2f64dea6a692b0cb4db601e548181",
+    "lei_ren_part1_paper_logarithmic_outer_parameters.py": "2a1fbb83ef254dd2fca8cebd64598cf6fcf3e2571649bbb9109a3914fa5d3224",
+    "lei_ren_part1_paper_candidate_pressure_function.py": "4cc4c87488e5f468aa9a459d1e8c9f754e85f12dee811ca9d8e066fd4d4986dc",
+    "lei_ren_part1_paper_outer.py": "e641dbe3808066a1ab792294ec2b07faede60c379ef6bfca60f6c11ed79f90f2",
+    "lei_ren_part1_paper_coherent_uniform_fixed_beta_error.json": "2ea09fa66dfae800c5f93a1ca11d1da69e25c021853445748606427c65737340",
+    "lei_ren_part1_paper_logarithmic_core_majorant.json": "a23103d7883d2558c55dd8e09ccc20802e7cb579b60275b78106568d87e5ebca",
+    "lei_ren_part1_paper_analytic_radial_tail.json": "bd2db15d3314c6ea6553afee057a5dbc64dbfb2eb451d53f54eae1baa13d7e47",
+    "lei_ren_part1_paper_linear_resolvent_bound.json": "682853412f72ab48b2f97cd0f06228f60ff28724ecb939aae34b0757381db0b3",
+    "lei_ren_part1_paper_commuting_resolvent_bound.json": "8992aa4de56964e6c947a0bab2b12be054c2b2c8d149d0cdbbe53eecdb8badd2",
+    "lei_ren_part1_paper_logarithmic_core_majorant.py": "537e88870b08d40eab8f3161aed9e8bf0d09c4d6abaef2177cd9bf05dc7bc890",
+    "lei_ren_part1_paper_nonlinear_map_majorant.py": "92d84671e7680af47544c7a9ebaee27132cd1c230ea96a61a179325cf9ff8aff",
+    "lei_ren_part1_paper_analytic_radial_tail.py": "f3de412dab4cbb03c16fa5bb252ce600320dc1aa5935ea2f66c6c40f35563827",
+    "lei_ren_part1_paper_linear_resolvent_bound.py": "44186fb15eb7a776fde65aa9fee70274daa7253ce108f90b8f9cea791ba5e808",
+    "lei_ren_part1_paper_commuting_resolvent_bound.py": "7f787bd0ea1179bb78bd2bed574cf840687fb4d0008c499c1bcc1ec7f1736d71",
+    "lei_ren_part1_paper_logarithmic_core_tail_admission.json": "0fa0a272471eecbdb8409219ef3143719a0827c9a12075a55818ddc8ba607640",
+    "lei_ren_part1_paper_logarithmic_core_tail_admission.py": "5d1e3e60ebae8a53b6fb5d6e7702fac12d5cb271bc2ed255ff03054656950bd7",
+    "lei_ren_part1_paper_normalized_slow_turnoff.json": "268316219e72f04a6434670d53f8c2a70192a4efd774d6878091c420abb3f173",
+    "lei_ren_part1_paper_normalized_slow_turnoff.py": "9c4e10ac3c7ba885a2c9b93fe0eeaf1fe922506c13b9221474a20e282589bb37",
+    "lei_ren_part1_paper_interval_outer_slope_field.py": "906e5efa703f53f2d61762d3b7dca38d521ee3649e00962a1f0a81ddfd3254d5",
+    "lei_ren_part1_paper_interval_long_reshape_field.py": "604e10235c2960fda99e120775da780b3fe4f9060c3432e707ca3aeeb36a9c3f",
+    "lei_ren_part1_paper_interval_repaired_reference_field.py": "98b2b75fdf26aa286842e24749fbbb5963f69adeeeb941ec3f753bd022feb69c",
+    "lei_ren_part1_paper_interval_taylor.py": "a1c29ec76998d876d9becadebb65c7be69242bb99d6049ef3f5ad6af86b14b8c",
+    "lei_ren_part1_paper_interval_comparison_enclosure.py": "03027203a8ca43721508f8b337ac7107d09be785da3dd491a7b5ab27e46c8ed8",
+    "lei_ren_part1_paper_logarithmic_source_binding.py": "f7bfcb24243fda27d32631460bf266091583f058aed6cf6b760d03a04f45b69d",
+    "lei_ren_part1_paper_logarithmic_interval_core.py": "03681cfdf80bd312d4f7fdaaf06bb005237391f23745993ca34f8ba9e6215649",
+    "lei_ren_part1_paper_logarithmic_source_binding.json": "a29fe9dab10f6524a2b1774a8725ce3fb269df2d11de8ffc43eae75abb13346d",
+    "lei_ren_part1_paper_logarithmic_core_step.py": "52210fcdde9a538ca28a7010264daa6802b1cd02052741e05001162617d34fb6",
+    "lei_ren_part1_paper_functional_core_step.py": "03aab21f3e6e665dd2ff0e9a3d2e6187e90813c300ccbb2d35e23a6d99098998",
+    "lei_ren_part1_paper_candidate_gauge_core.py": "864da25569c8965cfd25787f9e27d315643c2d1a4d8d678289d7cc7923acb007",
+    "lei_ren_part1_paper_uniform_fixed_beta_error.py": "32775aa3cc3ec6f1abea67ab3ab1fcc73b9c7812c1f8417a483def95cd160636",
+    "lei_ren_part1_paper_schedule_endpoint_enclosures.py": "760a4facb6792b68d6c71264625ade4aaf99269b24d23dc7da558f1a6b9fb5f7",
+    "lei_ren_part1_paper_logarithmic_core_seed_check.py": "3d4e99b5ed639a4300a5fdd25c1feb91fa261d4c442a748d70b027b8cc5205f8"
+  },
+  "implicit_source_sha256": "082d18b8f1ec2df84526fbdc190217d97dfb8825e823fa4c9e017c8a58d001bb",
+  "datum_enclosure_sha256": "04bdb5e1cc6216bd2592af7b4229b5188414b1893d62847d30345536fe9bbdd5",
+  "fixed_seed_sha256": "db637768ed5b050a34e625a0c23dadc67ab82308c9e2a3b16b6d69464a46d18a",
+  "seed_axial_length": 114,
+  "identical_j_sigma_delta_upper_guarded": true,
+  "scalar_Gbar_dominates_complex_G": true,
+  "root_anchor_interval": [
+    "-j",
+    "0"
+  ],
+  "Hleft": {
+    "lower": "-0.000000000000034999999999999999999999999997",
+    "upper": "-0.000000000000034999999999999999999999999997",
+    "width": "2.52698413247012181664412470839870377052707745118017077570993e-174",
+    "lower_exact_mpf_tuple": [
+      1,
+      69252512412469269536940705879565283574482268930887254671466123145168070651399838649751078950918519194530583187196925389548549129855546224566525579284097326193291,
+      -579,
+      535
+    ],
+    "upper_exact_mpf_tuple": [
+      1,
+      34626256206234634768470352939782641787241134465443627335733061572584035325699919324875539475459259597265291593598462694774274564927773112283262789642048663096643,
+      -578,
+      534
+    ]
+  },
+  "Hright": {
+    "lower": "0.00000000000001",
+    "upper": "0.00000000000001",
+    "width": "1.26349206623506090832206235419935188526353872559008538785496e-175",
+    "lower_exact_mpf_tuple": [
+      0,
+      39572864235696725449680403363143550405621015856193894386250088974863556017045098747250624169798887198335627428162582294296218405489080193594807384816302906866657,
+      -580,
+      534
+    ],
+    "upper_exact_mpf_tuple": [
+      0,
+      79145728471393450899360806726287100811242031712387788772500177949727112034090197494501248339597774396671254856325164588592436810978160387189614769632605813733315,
+      -581,
+      535
+    ]
+  },
+  "root_derivative_lower": {
+    "lower": "4.4999999999999999999999999986",
+    "upper": "4.4999999999999999999999999986",
+    "width": "1.4225655996704495894033365851331584620240157193375409878295e-160",
+    "lower_exact_mpf_tuple": [
+      0,
+      63265975235763699133273197744651372039228631551324596681853204607299041085621912906545704018159175763233003373138084585965593741374484605355028328566880202720043,
+      -532,
+      535
+    ],
+    "upper_exact_mpf_tuple": [
+      0,
+      63265975235763699133273197744651372039228631551324596681853204607299041085621912906545704018159175763233003373138084585965593741374484605355028328566880202720045,
+      -532,
+      535
+    ]
+  },
+  "unique_axis_anchor_root_proved": true,
+  "primitive_branch": "G(Z0)=0 at unique H root",
+  "real_F0_strictly_positive_by_definition": true,
+  "S_scaled_complex_supremum_bound": "exp(-6logLambda-2000)",
+  "Cauchy_radius": {
+    "lower": "0.00000000000000000025",
+    "upper": "0.00000000000000000025",
+    "width": "7.71174356832922917677040011108002859657921585443167350985696e-180",
+    "lower_exact_mpf_tuple": [
+      0,
+      32418090381882757488378186435087196492284736189394038281216072888208225089163344893747711319899248392876545989150787415487462117776654494592866209641515341305165,
+      -595,
+      534
+    ],
+    "upper_exact_mpf_tuple": [
+      0,
+      16209045190941378744189093217543598246142368094697019140608036444104112544581672446873855659949624196438272994575393707743731058888327247296433104820757670652583,
+      -594,
+      533
+    ]
+  },
+  "directed_lower_radius_used_by_interval_division": true,
+  "fourteen_atom_pressure_units_guarded": true,
+  "all_fixed_jets_reproduced": true,
+  "interval_center_means_family_of_local_jets": true,
+  "tiny_swirl_positive_upper_preserved": true,
+  "true_F0_point_value_not_selected": true,
+  "seed_acceptance_passed": true,
+  "finite_core_completed": true,
+  "temporal_recursion": false,
+  "whole_axis_core_generated": false
+}

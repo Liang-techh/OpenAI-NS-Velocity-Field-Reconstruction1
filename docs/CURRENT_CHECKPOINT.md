@@ -1,3 +1,14 @@
+# F21 — 2026-10-01: fresh Md40 degree-110 core completed
+
+All 110 normalized radial orders are generated from 114 same-source axial jets on Z in [0.49,0.51], with four final axial coefficients. Cumulative recurrence time: 693.621 seconds. Finite plus analytic-tail Phi remains positive at scaled exits 4 and 4.1 (lower bounds about 0.0469 and 0.0257). Controlled core moments and restored epsilon-P jets are callable.
+
+F0 remains implicit and strictly positive by its analytic definition; its tiny squared source is enclosed, never set to zero. This is local radial profile generation, not temporal n-dependent recursion. Next: fresh directed comparison/transition and functional five-moment repair, preserving symbolic amplitude and Lambda scales. No new full background or stress lift exists yet.
+
+Details and next tasks: docs/LOGARITHMIC_FINITE_CORE_2026_10_01.md.
+Evidence: experiments/root_st073/lei_ren_part1_paper_logarithmic_interval_core_Z049_Z051.json and lei_ren_part1_paper_logarithmic_core_exit.json.
+
+---
+
 # F20 — 2026-10-01: Md40 pressure/core analytic admission bound to one source
 
 Complete fourteen-atom preheat-pressure enclosures and axial jets now exist for Md=40. Fresh all-20-term contraction and scaled Phi/Uz tail bounds pass; degree 110, initial axial length 114, maximum mixed C3 tail 7.10071e-14. This does not mean finite core coefficients or the new velocity field have been generated. Raw-Psi tail and physical-R derivatives are separate, unpassed claims.
