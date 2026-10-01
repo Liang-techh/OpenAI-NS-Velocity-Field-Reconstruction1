@@ -1,3 +1,9 @@
+## 2026-10-01: refine pressure before high-order candidate integration
+
+Same-source directed pressure mass refinement reduced the first Psi coefficient source value budget at Z=.3, scaled_R=4.1 from .88679 to 1.0886e-16. New refined pressure jets preserve all14 stages and all161 coefficient intervals are contained in the old ones. See docs/CANDIDATE_PRESSURE_REFINEMENT_2026_10_01.md. Old input files remain unchanged.
+
+Use a separate candidate gauge state for the refined pressure receipt. Combine finite coefficient uncertainty with infinite Taylor tails; the first-coefficient budget is not a total core error claim. Candidate matching, global stress cone, temporal recursion and corrected residual remain open.
+
 ## 2026-09-30: candidate accepted physical pressure jets ready
 
 Directed physical P0 Taylor intervals at Z=0.3 now cover orders 0 through 160 (260 digits), including all 14 accepted pressure stages without pressure-parameter truncation. Eight independent fixed-beta coefficient checks pass and the old nominal pressure is enclosed. See docs/CANDIDATE_PRESSURE_JETS_2026_09_30.md.
