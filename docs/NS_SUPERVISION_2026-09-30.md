@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `f6d4e8e8c56e2f921189f5dbd422c233f2dcd939`.
+The inspected `main` head before this update is `d6e3cb72df1a23e85bf0c2b8c38e43dbe8f40f6c`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`282a475e1bca8e8e88c1405a39fcf37c7f1f6b85`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/282a475e1bca8e8e88c1405a39fcf37c7f1f6b85)
+[`ad8097704b3032bef4473abecea2fef321474fea`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ad8097704b3032bef4473abecea2fef321474fea)
 on `codex/st073-transition-next`, observed October 1. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,52 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-01 batch: Md40 implicit-source pressure/core admission and scaled recurrence
+
+The [ad809770 admission record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/ad8097704b3032bef4473abecea2fef321474fea/docs/LOGARITHMIC_PRESSURE_CORE_ADMISSION_2026_10_01.md)
+and [source-binding receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/ad8097704b3032bef4473abecea2fef321474fea/experiments/root_st073/lei_ren_part1_paper_logarithmic_source_binding.json)
+bind the complete14-atom normalized pressure envelope, continuous waiting-root
+enclosure, fresh analytic majorant/tail admission and local O.2 certificate to
+implicit source SHA082d18b8f1ec2df84526fbdc190217d97dfb8825e823fa4c9e017c8a58d001bb.
+Late atoms retain positive uppers; conservative envelopes are not zeroed.
+The source-definition SHA is separate from the actual datum enclosure/dependency
+SHA. This advances the prior missing pressure-atom envelope, but does not select
+a numerical waiting root, complete corrected heat-pressure restoration or realize
+the exact repaired reference inlet required by O.2.
+
+New logLambda=4logPstar+1000 and symbolic logC=Lambda*Gbar+2logLambda+1000
+preserve common-symbol cancellation. All20 nonlinear majorant terms are recomputed
+with the new pressure and checked universal hypotheses; no Md1.1 fixed-point
+rows are reused. Complex normalized pressure jets through axial order127 are
+available on[.49,.51]. Physical F0 is not materialized. This is analytic admission,
+not a generated finite velocity field.
+
+The [original tail admission](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/ad8097704b3032bef4473abecea2fef321474fea/experiments/root_st073/lei_ren_part1_paper_logarithmic_core_tail_admission.json)
+admits degree110 with initial jet length114 and maximum scaled mixed-C3 tail
+about7.10071e-14. Variables are Phi and Uz=4Z+j+epsilon_core*Psi; radial
+derivatives are in r=Lambda R, not physical R. raw_Psi_tail_target_met=false and
+physical_R_derivative_bounds_certified=false remain explicit. Therefore this
+cannot be ranked as an improvement over the old degree124 raw-Psi certificate
+or presented as a physical NS residual/total computed-field error.
+
+The [direct scaled-step check receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/ad8097704b3032bef4473abecea2fef321474fea/experiments/root_st073/lei_ren_part1_paper_logarithmic_core_step_check.json)
+contains1053 coefficient comparisons across nine representable-scale cases:
+three centers, Lambda8/500/1e8, through radial degree6. Positive nonzero S/swirl
+pressure terms survive the rescaling. These bounded algebra checks are not an
+Md40 seed, degree110 production run or infinite-field verification. Source-binding
+flags still report fresh_finite_core_generated=false; exact reference inlet and
+all downstream reconstruction must be newly generated for the source.
+
+Next is the same-source114-jet logarithmic seed with nonzero F0-squared bounds,
+resumable degree110 rows, combined coefficient/input errors and tails, then new
+comparison/exit/functional repair realizing the O.2 inlet. Original parameter/
+remaining theorem constants, whole-axis coverage, corrected heat exterior, full
+strong stress, finite energy, temporal recursion, oscillatory correction and
+complete Cartesian NS residual/L2 remain unaccepted. Md=.5/1.1 and earlier Lambda
+results remain separate and historical. Pinned records supply pressure/admission/
+binding/scaled-check replay commands. No numerical receipt, bound or proof was
+independently rerun/audited here; only documentation is changed.
 
 ### 2026-10-01 batch: resolved failed screens and conditional large-Md O.2 route
 
@@ -1215,6 +1261,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [ad809770 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36874104155)
+actual constrained log has original13 failed identifiers/423 passed. Four
+smoke/slice jobs pass; full historical tests skip. No selected governance regression
+appears; these checks do not independently certify the analytic admission.
 
 The [282a475e research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36868692137)
 actual constrained log reports original13 failed identifiers/423 passed. Four

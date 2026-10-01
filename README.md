@@ -1,7 +1,7 @@
 # Navier–Stokes Candidate Research
 
 > **Progress index updated 2026-10-01:** newer research is available on
-> `codex/st073-transition-next` at [`282a475e`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/282a475e1bca8e8e88c1405a39fcf37c7f1f6b85).
+> `codex/st073-transition-next` at [`ad809770`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ad8097704b3032bef4473abecea2fef321474fea).
 > See [current evidence, paper mapping and replay instructions](docs/NS_SUPERVISION_2026-09-30.md).
 > The ST063 tables and September 22 pause record below remain historical curated
 > results. They do not describe the latest branch or establish a live task status.
@@ -24,9 +24,11 @@
 > A separate Md=1.1 source was coherently rebuilt through pressure, degree124 core
 > and local C1 repair, but is rejected by a strictly positive axial-turnoff direction
 > at phase=.5. Md2-6 midpoint screening now also reports direction obstructions.
-> Md40/48/64 pass a conditional local-family full O.2 certificate; their new pressure
-> atoms, core and matching chain are not generated. The waiting root is enclosed,
-> with no exact source realization selected yet.
+> Md40/48/64 pass a conditional local-family full O.2 certificate.
+> Md40 now binds all14 pressure-atom envelopes, continuous waiting root and core
+> admission to one implicit source. Its degree110 tail applies to Phi/Uz in scaled-r
+> coordinates; raw-Psi and physical-R targets differ. Fresh finite core and exact
+> repaired reference inlet are still missing.
 > Old cone certificates stay with Md=.5. C2/Ur_Z, full parameter gates, whole-axis
 > matching and final strong stress remain open.
 > Lambda36/48 receipts stay separate; these moment bounds are not NS acceptance.
