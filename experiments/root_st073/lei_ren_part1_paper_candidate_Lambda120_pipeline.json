@@ -1,0 +1,17 @@
+{
+  "Lambda": "1e120",
+  "state_file": "lei_ren_part1_paper_candidate_gauge_core_Lambda120_state.json",
+  "state_sha256": "561ed5a66830573b1ae280c3f35e282ed08fd38c912b96c8494f52c526cbe58b",
+  "completed_radial_order": 35,
+  "required_radial_degree": 124,
+  "finite_core_complete": false,
+  "analytic_fixed_data_weighted_sign_passed": true,
+  "analytic_sign_receipt_sha256": "311b1483c33dd4582a58de0af12ffc83afb32ec7b2fcba6cbb8bf43d31465b94",
+  "whole_axis_finite_core_certified": false,
+  "combined_center_error_budget_passed": false,
+  "shared_core_moments_and_inlet_regenerated": false,
+  "terminal_functional_five_moment_closure": false,
+  "coherent_collar_matched": false,
+  "temporal_recursion": false,
+  "full_corrected_NS_residual_validated": false
+}

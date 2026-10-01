@@ -66,7 +66,7 @@ def run(candidate_name='lei_ren_part1_paper_nonlinear_candidate_Lambda48.json', 
                     Phi_tail_upper=phi_norm*factor['tail_per_Xh_norm'],
                     Psi_tail_upper=psi_norm*factor['tail_per_Xh_norm'],**factor))
         report=dict(input_hashes={n:hashlib.sha256((base/n).read_bytes()).hexdigest() for n in names},
-             accepted_schedule_sha256=candidate['accepted_schedule_sha256'],precision=160,Lambda=candidate['Lambda'],
+             accepted_schedule_sha256=candidate['accepted_schedule_sha256'],precision=160,Lambda=candidate['Lambda']['lower'],
              Xh_parameter=h,analytic_correction_norm_upper=correction,
              analytic_Phi_Xh_norm_upper=phi_norm,analytic_Psi_Xh_norm_upper=psi_norm,
              real_domain=dict(scaled_R=['0','4.1'],Z=['-1','1']),

@@ -21,13 +21,13 @@ DEFAULT_STATE=('lei_ren_part1_paper_candidate_gauge_core_'
                'lei_ren_part1_paper_candidate_pressure_axis_jets_refined_state.json')
 
 
-def run(state_name=DEFAULT_STATE):
+def run(state_name=DEFAULT_STATE, budget_name='lei_ren_part1_paper_candidate_core_tail_budget.json', output_name=None):
     path=HERE/state_name
     raw=path.read_bytes()
     state=json.loads(raw)
     pressure_name=state['target']['pressure_file']
     for name,digest in state['source_hashes'].items():
-        filename=({'driver':'lei_ren_part1_paper_candidate_gauge_core.py',
+        filename=({'driver':state['target'].get('driver_file','lei_ren_part1_paper_candidate_gauge_core.py'),
                    'pressure_input':pressure_name}).get(name,name)
         if hashlib.sha256((HERE/filename).read_bytes()).hexdigest()!=digest:
             raise AssertionError('State dependency changed: '+filename)
@@ -35,14 +35,13 @@ def run(state_name=DEFAULT_STATE):
     for name,digest in pressure['input_hashes'].items():
         if hashlib.sha256((HERE/name).read_bytes()).hexdigest()!=digest:
             raise AssertionError('Pressure dependency changed: '+name)
-    budget_name='lei_ren_part1_paper_candidate_core_tail_budget.json'
     budget=json.loads((HERE/budget_name).read_text())
     for name,digest in budget['input_hashes'].items():
         if hashlib.sha256((HERE/name).read_bytes()).hexdigest()!=digest:
             raise AssertionError('Analytic tail dependency changed: '+name)
     if state['accepted_schedule_sha256']!=budget['accepted_schedule_sha256']:
         raise AssertionError('Analytic and finite core sources disagree')
-    if state['target']['Lambda']!=budget['Lambda']:
+    if mp.mpf(state['target']['Lambda'])!=mp.mpf(budget['Lambda']):
         raise AssertionError('Analytic and finite core Lambda disagree')
     identity_name='lei_ren_part1_paper_gauge_fixed_point_identity.json'
     identity=json.loads((HERE/identity_name).read_text())
@@ -103,7 +102,7 @@ def run(state_name=DEFAULT_STATE):
             whole_axis_finite_core_certified=False,physical_coordinate_errors_enclosed=False,
             original_parameter_errors_enclosed=False,core_to_collar_matching_certified=False,
             temporal_recursion=False,full_NS_residual_target=False)
-        output=Path(__file__).with_suffix('.json')
+        output=HERE/output_name if output_name else Path(__file__).with_suffix('.json')
         output.write_text(json.dumps(encode(result),indent=2)+'\n',encoding='utf-8')
         print('Candidate combined radial order',degree,'all C3 budgets pass',all_pass,flush=True)
         for component in ('Phi','Psi'):
@@ -116,5 +115,7 @@ def run(state_name=DEFAULT_STATE):
 if __name__=='__main__':
     parser=argparse.ArgumentParser()
     parser.add_argument('--state-file',default=DEFAULT_STATE)
+    parser.add_argument('--tail-budget-file',default='lei_ren_part1_paper_candidate_core_tail_budget.json')
+    parser.add_argument('--output-name')
     args=parser.parse_args()
-    run(args.state_file)
+    run(args.state_file,args.tail_budget_file,args.output_name)

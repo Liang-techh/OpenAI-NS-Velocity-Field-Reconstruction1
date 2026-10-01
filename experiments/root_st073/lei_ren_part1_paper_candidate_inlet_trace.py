@@ -10,11 +10,11 @@ from lei_ren_part1_paper_schedule_endpoint_enclosures import endpoints
 from lei_ren_part1_paper_schedule_endpoint_enclosures_check import encode
 
 
-def run(s_exit='4'):
-    base=Path(__file__).parent;path=base/DEFAULT_STATE
+def run(s_exit='4',state_name=DEFAULT_STATE,output_name=None):
+    base=Path(__file__).parent;path=base/state_name
     raw=path.read_bytes();state=json.loads(raw)
     for name,digest in state['source_hashes'].items():
-        name=({'driver':'lei_ren_part1_paper_candidate_gauge_core.py',
+        name=({'driver':state['target'].get('driver_file','lei_ren_part1_paper_candidate_gauge_core.py'),
                'pressure_input':state['target']['pressure_file']}).get(name,name)
         if hashlib.sha256((base/name).read_bytes()).hexdigest()!=digest:
             raise AssertionError('Candidate state dependency changed: '+name)
@@ -79,7 +79,8 @@ def run(s_exit='4'):
             analytic_core_angular_trace_zero_by_exact_equation=True,
             finite_trace_reset_or_fit_used=False,whole_axis_trace_certified=False,
             core_to_collar_matching_certified=False,temporal_recursion=False)
-        Path(__file__).with_suffix('.json').write_text(json.dumps(encode(report),indent=2)+'\n',encoding='utf-8')
+        output=base/output_name if output_name else Path(__file__).with_suffix('.json')
+        output.write_text(json.dumps(encode(report),indent=2)+'\n',encoding='utf-8')
         print('Candidate inlet degree',state['completed_radial_order'],
               'Ttheta/F interval',mp.nstr(endpoints(ratio)[0],18),
               mp.nstr(endpoints(ratio)[1],18),flush=True)
@@ -88,4 +89,6 @@ def run(s_exit='4'):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--scaled-exit',default='4')
-    args=parser.parse_args();run(args.scaled_exit)
+    parser.add_argument('--state-file',default=DEFAULT_STATE)
+    parser.add_argument('--output-name')
+    args=parser.parse_args();run(args.scaled_exit,args.state_file,args.output_name)

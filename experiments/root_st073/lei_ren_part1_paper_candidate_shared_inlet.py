@@ -101,11 +101,11 @@ def fixture():
         return dict(independent_polynomial_integral_checks=6,original_physical_stress_checks=5,passed=True)
 
 
-def run(state_name=DEFAULT_STATE,s_exit='4'):
+def run(state_name=DEFAULT_STATE,s_exit='4',budget_name='lei_ren_part1_paper_candidate_combined_core_budget.json',trace_name='lei_ren_part1_paper_candidate_inlet_trace.json',output_name=None):
     checks=fixture();base=Path(__file__).parent;path=base/state_name
     raw=path.read_bytes();state=json.loads(raw)
     for name,digest in state['source_hashes'].items():
-        name=({'driver':'lei_ren_part1_paper_candidate_gauge_core.py',
+        name=({'driver':state['target'].get('driver_file','lei_ren_part1_paper_candidate_gauge_core.py'),
                'pressure_input':state['target']['pressure_file']}).get(name,name)
         if hashlib.sha256((base/name).read_bytes()).hexdigest()!=digest:
             raise AssertionError('Candidate dependency changed:'+name)
@@ -131,7 +131,7 @@ def run(state_name=DEFAULT_STATE,s_exit='4'):
         inlet=normalized_inlet(phi,u,m,S,ell,jet(state['fixed_jets']['P0_Z_taylor']),lam,s,z,dt)
         # Integrate the proved uniform radial remainders, then transfer the
         # resulting analytic core enclosures through the same inlet formulas.
-        budget_path=base/'lei_ren_part1_paper_candidate_combined_core_budget.json'
+        budget_path=base/budget_name
         budget=json.loads(budget_path.read_text())
         if budget['state_sha256']!=hashlib.sha256(raw).hexdigest():
             raise AssertionError('Combined tail budget belongs to a different state')
@@ -179,7 +179,7 @@ def run(state_name=DEFAULT_STATE,s_exit='4'):
             if any(not endpoints(v)[0]<=0<=endpoints(v)[1]
                    for v in enclosed[name].coefficients):
                 raise AssertionError('Analytic core stress-zero consistency failed:'+name)
-        trace_path=base/'lei_ren_part1_paper_candidate_inlet_trace.json'
+        trace_path=base/trace_name
         trace=json.loads(trace_path.read_text())
         if trace['state_sha256']!=hashlib.sha256(raw).hexdigest():
             raise AssertionError('Independent angular trace has different core data')
@@ -222,7 +222,8 @@ def run(state_name=DEFAULT_STATE,s_exit='4'):
             five_terminal_functional_moments_closed=False,
             whole_axis_inlet_certified=False,shared_collar_regenerated=False,
             temporal_recursion=False)
-        Path(__file__).with_suffix('.json').write_text(json.dumps(encode(report),indent=2)+'\n',encoding='utf-8')
+        output=base/output_name if output_name else Path(__file__).with_suffix('.json')
+        output.write_text(json.dumps(encode(report),indent=2)+'\n',encoding='utf-8')
         print('Shared candidate five core moments and inlet:',state['completed_radial_order'],
               'radial orders; independent integral checks6',flush=True)
         print('finite normalized Tz interval',*[mp.nstr(v,18) for v in endpoints(inlet['tz'][0])],flush=True)
@@ -231,5 +232,9 @@ def run(state_name=DEFAULT_STATE,s_exit='4'):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--state-file',default=DEFAULT_STATE)
-    parser.add_argument('--scaled-exit',default='4');args=parser.parse_args()
-    run(args.state_file,args.scaled_exit)
+    parser.add_argument('--scaled-exit',default='4')
+    parser.add_argument('--combined-budget-file',default='lei_ren_part1_paper_candidate_combined_core_budget.json')
+    parser.add_argument('--trace-file',default='lei_ren_part1_paper_candidate_inlet_trace.json')
+    parser.add_argument('--output-name')
+    args=parser.parse_args()
+    run(args.state_file,args.scaled_exit,args.combined_budget_file,args.trace_file,args.output_name)

@@ -1,3 +1,7 @@
+## 2026-10-01: true anchored amplitude and Lambda120 core at order35
+
+The six-pole analytic primitive now encloses G(.3)=8.620576621613044845639278153395... and the true nonzero F0 for Lambda48 and Lambda120. Strict root disks, separation, real anchor, logarithm path and derivative checks pass; an independent integral is enclosed. The separate Lambda120 core completed35/124 radial orders with the unchanged gauge recurrence and accepted physical pressure datum. A zero-time resume preserves the exact state hash. The pipeline regenerates combined C3 budgets and all shared inlet data only after order124. Next command: python experiments/root_st073/lei_ren_part1_paper_candidate_Lambda120_pipeline.py --seconds 180. Functional terminal five-moment closure, collar matching and temporal recursion remain open. See docs/CANDIDATE_LAMBDA120_REGENERATION_2026_10_01.md.
+
 ## 2026-10-01: weighted angular sign and separate Lambda120 candidate
 
 The Lambda120 analytic candidate passes -Phi_s >= (chi+epsilon)/32 over s in [0,4.1], Z in [-1,1]. The second-order bound retains explicit epsilon dependence in all ten applicable nonlinear terms. Lambda48 fails this sufficient estimate; its completed degree124 numerical data remain separate. Standalone Lambda120 all20-term contraction and radial-tail receipts are generated, requiring degree124 / axis length128. Finite Lambda120 regeneration and functional five-moment terminal closure remain open. See docs/CANDIDATE_WEIGHTED_ANGULAR_SIGN_2026_10_01.md.
