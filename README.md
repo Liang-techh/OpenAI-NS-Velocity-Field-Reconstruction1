@@ -1,7 +1,7 @@
 # Navier–Stokes Candidate Research
 
 > **Progress index updated 2026-10-01:** newer research is available on
-> `codex/st073-transition-next` at [`c3fd531a`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c3fd531a97c1b146e12ff5b9dd6fc37dfea2e110).
+> `codex/st073-transition-next` at [`57d71843`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/57d7184381d21979d66f16af458e431109b34e0f).
 > See [current evidence, paper mapping and replay instructions](docs/NS_SUPERVISION_2026-09-30.md).
 > The ST063 tables and September 22 pause record below remain historical curated
 > results. They do not describe the latest branch or establish a live task status.
@@ -19,8 +19,11 @@
 > actual exit and switches reach profile R110. A uniform C1 implicit inverse now
 > establishes five reference identities at x=2 on this local axial family; all40
 > reference-annulus cells certify relaxed conditions. The last switch cell has a
-> two-branch certificate, not an all-strong result. The R110-to-Rm field, C2/Ur_Z,
-> original parameters, whole-axis matching and final strong stress remain open.
+> two-branch certificate, not an all-strong result. The R110-to-Rm field is now
+> installed with 66-cell relaxed coverage; the first outer slope segment is callable.
+> Original-text review confirms Md=.5 is outside the complete paper outer regime;
+> the initial slope formula remains local. Any parameter change needs a coherent
+> rebuild. C2/Ur_Z, whole-axis matching and final strong stress remain open.
 > Lambda36/48 receipts stay separate; these moment bounds are not NS acceptance.
 > Full source errors, five-defect norm, relative-flat closure and global checks remain pending.
 > Finite energy, cone and time-scale recursion remain uncertified. Research CI retains 13

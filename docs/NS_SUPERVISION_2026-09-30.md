@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `f88bfddcd0a3575cc1e5fa221d4d7516131b9ad5`.
+The inspected `main` head before this update is `fabcdec9d999d06d447b63f0d3de6eb09e19a501`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`c3fd531a97c1b146e12ff5b9dd6fc37dfea2e110`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c3fd531a97c1b146e12ff5b9dd6fc37dfea2e110)
+[`57d7184381d21979d66f16af458e431109b34e0f`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/57d7184381d21979d66f16af458e431109b34e0f)
 on `codex/st073-transition-next`, observed October 1. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,62 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-01 batch: installed connecting field, relaxed coverage and first outer stage
+
+The [750251d4 callable connecting-field record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/750251d4f983c682cdbc207b8bb70d9e0c14ebd4/docs/CONTROLLED_CONNECTING_FIELD_2026_10_01.md)
+installs actual Lambda120 long swirl reshape, reference continuation and axial
+restoration from R110 to Rm for Z in[.49,.51]. Its y=log(R/110) and Tshape=4e152
+are profile-radius variables, not physical time. Entire endpoint-normalized
+kernel bounds retain inherited moments, nonzero amplitude and P=P0+Mp. Completed
+restoration uses exact reference Uz=4Z and zero Uz_y. This supersedes the earlier
+uninstalled-connecting-field gap, without promoting the local C1 field to a
+whole-axis or temporal solution.
+
+The [d3167ce6 connecting-cone record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/d3167ce6042ffadf98bfa253a3e10453f41b025c/docs/CONTROLLED_CONNECTING_CONE_2026_10_01.md)
+and [composed certificate receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/d3167ce6042ffadf98bfa253a3e10453f41b025c/experiments/root_st073/lei_ren_part1_paper_interval_connecting_cone_certificate.json)
+cover the complete R110-to-Rm path with2 long-shape/reference cells and64
+restoration/reference cells, verifying common source/dependencies and exact
+boundary coverage. Common angular amplitude and centered mass are cancelled
+algebraically before cone evaluation. All66 cells certify relaxed conditions on
+the local axial family. Earlier shape sample non-certificates remain historical;
+the new whole-cell result changes their certification scope without changing
+velocities or fitting pressure. Strong final admissibility is still absent.
+
+The [57d71843 first outer stage](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/57d7184381d21979d66f16af458e431109b34e0f/docs/CONTROLLED_OUTER_SLOPE_2026_10_01.md)
+extends the actual local reference solution after x=2 to Rref using the proven
+implicit terminal identities, then implements y=log(R/Rref) in[0,1] with angular
+slope1/10 to-1/2. Directed monotone rectangles advance all five inherited moments;
+symmetry fixes J(1)=1/2 and terminal normalized shear=-2. Six production point
+packets certify relaxed conditions, not complete radial outer coverage or strong
+stress. The71-quantity DOP853 fixture is implementation evidence, not a rigorous
+production oracle or a replay performed by this reviewer.
+
+**Parameter consistency issue confirmed by supplied original-paper review:**
+the accepted source alignment manifest and outer receipt retain Md=.5 and
+logPstar=14. The independent original-text review supplied to this supervision
+confirms Lei/Ren p.29 requires Md>1 as a sufficiently large fixed auxiliary
+constant; p.30 Proposition4.1 requires Td=exp(Md)+10 and Pstar>exp(Td).
+Thus Md=.5 is outside the complete outer construction's permitted regime.
+This is a construction-parameter compatibility issue, not a paper error or
+invalidation of every fixed-datum local formula/enclosure. The same review
+confirms p.76 Eq.(6.22) on[Rref,e Rref] has no Md and keeps Uz=4Z; Md enters the
+later slow axial turnoff. The installed initial slope segment remains a local
+result, not full paper-compliant outer certification. No changed Md/Pstar
+or coherently rebuilt pressure/core/defect/repair chain is present in this batch.
+Do not silently change parameters or transfer old certificates: any required
+change must propagate through all14 pressure masses and dependent candidate data.
+
+The next task is to choose a compatible parameter regime and rebuild all affected
+same-source data, then construct axial cutoff, next angular turn/power buffer, shear modulation,
+flatten/waiting/heat collar and exact exterior with controlled inherited moments.
+C2/Ur_Z, full axis, original parameter remainders, full strong cone, complete
+finite energy, flat remainder, true temporal recursion, oscillatory corrections
+and independent Cartesian NS residual/L2 remain unaccepted. Local C1 reference
+identities and relaxed path coverage are substantial functional results, but
+they do not certify a complete NS background. Pinned records provide connecting,
+cone and outer-field replay commands. No numerical result or proof/enclosure was
+independently rerun/audited here; only documentation is changed.
 
 ### 2026-10-01 batch: uniform local C1 inverse and complete relaxed reference annulus
 
@@ -1053,6 +1109,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [57d71843 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36856030211)
+actual log reports original13 failed identifiers/423 passed. Four smoke/slice jobs
+pass; full historical tests skip. No additional selected governance regression
+appears; these jobs do not independently certify connecting or outer-field bounds.
 
 The [c3fd531a research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36850888972)
 actual log reports the original13 failed identifiers/423 passed. Four smoke/slice
