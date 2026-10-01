@@ -1,7 +1,7 @@
 # Navier–Stokes Candidate Research
 
 > **Progress index updated 2026-10-01:** newer research is available on
-> `codex/st073-transition-next` at [`ad809770`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ad8097704b3032bef4473abecea2fef321474fea).
+> `codex/st073-transition-next` at [`542988d3`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/542988d3456b19358dc071b54dac77129d45ed40).
 > See [current evidence, paper mapping and replay instructions](docs/NS_SUPERVISION_2026-09-30.md).
 > The ST063 tables and September 22 pause record below remain historical curated
 > results. They do not describe the latest branch or establish a live task status.
@@ -27,8 +27,10 @@
 > Md40/48/64 pass a conditional local-family full O.2 certificate.
 > Md40 now binds all14 pressure-atom envelopes, continuous waiting root and core
 > admission to one implicit source. Its degree110 tail applies to Phi/Uz in scaled-r
-> coordinates; raw-Psi and physical-R targets differ. Fresh finite core and exact
-> repaired reference inlet are still missing.
+> coordinates; raw-Psi and physical-R targets differ. Fresh degree110 coefficients
+> and finite-plus-tail exits/core moments are now generated for [.49,.51]. F0 stays
+> strictly positive and implicit; comparison/transition, functional repair and the
+> exact reference inlet are still missing.
 > Old cone certificates stay with Md=.5. C2/Ur_Z, full parameter gates, whole-axis
 > matching and final strong stress remain open.
 > Lambda36/48 receipts stay separate; these moment bounds are not NS acceptance.

@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `d6e3cb72df1a23e85bf0c2b8c38e43dbe8f40f6c`.
+The inspected `main` head before this update is `cc8bad62569b1eb57c0277bf86337965c770d8be`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`ad8097704b3032bef4473abecea2fef321474fea`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ad8097704b3032bef4473abecea2fef321474fea)
+[`542988d3456b19358dc071b54dac77129d45ed40`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/542988d3456b19358dc071b54dac77129d45ed40)
 on `codex/st073-transition-next`, observed October 1. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,50 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-01 batch: actual Md40 finite core and same-source exit enclosures
+
+The [542988d3 finite-core report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/542988d3456b19358dc071b54dac77129d45ed40/docs/LOGARITHMIC_FINITE_CORE_2026_10_01.md)
+and [completed producer receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/542988d3456b19358dc071b54dac77129d45ed40/experiments/root_st073/lei_ren_part1_paper_logarithmic_interval_core_Z049_Z051.json)
+record actual110 radial orders from114 ordinary axial Taylor inputs on centers
+in[.49,.51], with final axial depth3. Fresh seed and finite rows use the same
+Md40 implicit pressure/source definition and retain waiting/pressure uncertainty;
+no old tensor is reused. This supersedes the finite-core-pending status, not the
+remaining whole-axis or reference-inlet conditions.
+
+The [seed acceptance receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/542988d3456b19358dc071b54dac77129d45ed40/experiments/root_st073/lei_ren_part1_paper_logarithmic_core_seed_check.json)
+guards root/tube, pressure units, fixed jets and nonzero-upper swirl. F0 remains
+the strictly positive analytic exp(-logC-Lambda G), not a materialized point
+amplitude. The scaled F0-squared source has a zero interval lower endpoint and
+strictly positive upper; this is a conservative bound, not choosing zero flow
+or discarding swirl coupling. No amplitude-collapse completion claim follows.
+
+The [subsequent exit receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/542988d3456b19358dc071b54dac77129d45ed40/experiments/root_st073/lei_ren_part1_paper_logarithmic_core_exit.json)
+and [exit implementation](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/542988d3456b19358dc071b54dac77129d45ed40/experiments/root_st073/lei_ren_part1_paper_logarithmic_core_exit.py)
+validate the completed state hash, accepted seed and same-source tail identity,
+then combine finite intervals and analytic tails at scaled radii4/4.1. The20
+mixed derivative cases retain Phi/Uz scaled-r/Z scope. Full Phi values are about
+[.046903439,.517711916] and[.025706620,.515369533]; family/enclosure width remains
+separate from radial truncation error. Six radial integral components recover
+all five core moments through axial order2, including both quadratic pieces.
+Pressure is restored from the same primitive as epsilon*P=epsilon*P0+
+epsilon^2*F0^2*integral(Phi^2), not the finite saved pressure prefix alone.
+
+The producer's historical finite_plus_tail_exit_validation_completed=false
+records its earlier stage; the later seed/exit receipts provide the downstream
+validation and finite_and_same_source_tail_combined=true. This temporal distinction
+does not rewrite the old producer flag or claim validation of every next layer.
+Core moments are not repaired terminal reference identities: the new comparison,
+transition/annulus, normalized inlet and functional five-bump inverse still need
+rebuilding from these rows. O.2 remains conditional on the exact reference inlet.
+
+Physical-R derivatives, a fully selected physical velocity sampler, original
+parameter errors/remaining constants, whole axis, final strong stress, heat/
+finite energy, temporal recursion and corrected Cartesian NS residual/L2 remain
+unaccepted. Replay commands for producer, seed acceptance and exit are in the
+pinned report. No numerical receipt, enclosure or proof was independently rerun/
+audited here. Earlier Md/Lambda receipts retain their separate identities; only
+documentation changes are made in this checkpoint.
 
 ### 2026-10-01 batch: Md40 implicit-source pressure/core admission and scaled recurrence
 
@@ -1261,6 +1305,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [542988d3 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36900810397)
+actual constrained log has original13 failed identifiers/423 passed. Four
+smoke/slice jobs pass; full historical tests skip. No selected governance regression
+appears; these checks do not independently certify the finite-core error chain.
 
 The [ad809770 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36874104155)
 actual constrained log has original13 failed identifiers/423 passed. Four
