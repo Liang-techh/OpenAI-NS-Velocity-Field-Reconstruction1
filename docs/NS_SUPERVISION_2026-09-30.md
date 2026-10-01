@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `895240d58b7ffad7bfd96349be2d8469e9f77c27`.
+The inspected `main` head before this update is `2b10ba5b07d7e65b8f0f7f9f23163525e23d8b53`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`1b7173c38f3cc2d8d8f1774c421aed7d55c74876`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1b7173c38f3cc2d8d8f1774c421aed7d55c74876)
+[`2f2780672d9e299dcbb825b5a30c2cc8bbac3045`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2f2780672d9e299dcbb825b5a30c2cc8bbac3045)
 on `codex/st073-transition-next`, observed October 1. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,59 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-01 batch: controlled actual exit, local radial cone atlas and switches
+
+The [6e2fdf64 actual bridge record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/6e2fdf641c74316e990ee91a2c315fa50ef0a83b/docs/CONTROLLED_INTERVAL_EXIT_BRIDGE_2026_10_01.md)
+feeds the Lambda120 degree124 center family[.49,.51] and controlled comparison
+into the actual exit equations on y in[0,.01]. Whole-cell A/log-amplitude and
+exp(g)B ranges propagate fields and six cumulative moments without midpoint
+projection, including input/core tails and cell-integration errors. Prescribed
+P0 and the nonzero angular amplitude are retained. The positive exit shear
+epsilon policy is separate from epsilon_radial=1/Lambda and does not certify
+the paper's Section9 contraction constants.
+
+The [b46bccd6 actual R100 continuation/stress record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/b46bccd6e45462d4f2304bf1bc3b75ec00362413/docs/CONTROLLED_EXIT_R100_STRESS_2026_10_01.md)
+then integrates actual deviations over the full path to profile R100, preserving
+tiny shear directly and recovering pressure/moments from the same data. This is
+the actual exit, superseding the prior auxiliary-comparison-only status on this
+family. Values and first axial derivatives are enclosed where available, but
+Ur_Z still requires additional moment derivatives and remains unavailable.
+R is the profile coordinate, not a completed lab-space/time NS construction.
+
+At this checkpoint strong-cone diagnostics passed at the switched endpoint and
+R100, while a whole-radial single box could not certify angular shear sign.
+That non-certificate is not an actual field failure or an all-annulus pass. The
+[2f278067 local radial atlas](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/2f2780672d9e299dcbb825b5a30c2cc8bbac3045/docs/CONTROLLED_EXIT_RADIAL_CONE_ATLAS_2026_10_01.md)
+and [original atlas receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/2f2780672d9e299dcbb825b5a30c2cc8bbac3045/experiments/root_st073/lei_ren_part1_paper_interval_exit_radial_cone_atlas.json)
+subsequently certify all256 complete logarithmic cells from the switched endpoint
+to R100, with verified coverage,0 unresolved and0 evaluation errors. Local drivers,
+global actual deviation boxes and accumulated moment errors are used throughout
+cells, not only at centers. This conditional strong-cone result is restricted to
+that radial segment and axial family; the old single-box result remains historical.
+It does not certify the initial bridge, full axis or complete matched annulus.
+
+The [controlled actual switch record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/2f2780672d9e299dcbb825b5a30c2cc8bbac3045/docs/CONTROLLED_EXIT_SWITCH_R110_2026_10_01.md)
+and [switch receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/2f2780672d9e299dcbb825b5a30c2cc8bbac3045/experiments/root_st073/lei_ren_part1_paper_interval_exit_switch_enclosure.json)
+advance actual fields/moments over two16-cell source switches, then use exact
+constant-power primitives to R110. All same-source pressure/amplitude and C1 axial
+jets remain intervals. Of32 switch cells,31 certify a cone branch. The first
+switch's last cell x in[.0046875,.005] remains unresolved as kappa spans2; this is
+not evidence of actual cone failure. The R110 endpoint and full constant-power
+range certify relaxed kappa<=2 conditions, not the stronger kappa>2 condition.
+whole_switch_cone_certified=false and Ur_Z_available=false remain explicit.
+
+This is substantive actual-profile progress beyond the prior comparison integral,
+but original parameter errors and Section9 constants are not enclosed. New family
+R110 defects/repairs must use these interval sources; the old Z=.3 scalar inverse
+cannot be imported as a family identity. Remaining requirements include the
+unresolved switch cell, initial/other-region cone coverage, functional five-moment
+terminal matching, pressure/flatten/heat compatibility, finite energy and all
+smoothness conditions. Full axis/global K, temporal recursion, flat remainder,
+oscillatory correction and complete Cartesian NS residual/L2 remain unaccepted.
+Pinned records provide bridge, continuation, stress-atlas and switch replays.
+No numerical receipt or rigorous estimate was independently rerun/verified here;
+only README and this supervision document are changed.
 
 ### 2026-10-01 batch: degree124 interval family and controlled auxiliary comparison
 
@@ -941,6 +994,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [2f278067 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36844431360)
+actual constrained log has the original13 failed identifiers/423 passed. Four
+smoke/slice jobs pass; full historical tests skip. No added selected governance
+regression is observed; this CI does not independently validate the exit/cone bounds.
 
 The [1b7173c3 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36837938568)
 actual log has the same original13 failed identifiers/423 passed. Four smoke/slice
