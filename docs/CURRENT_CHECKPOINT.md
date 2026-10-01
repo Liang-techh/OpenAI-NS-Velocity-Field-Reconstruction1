@@ -1,3 +1,11 @@
+# F31 checkpoint - 2026-10-01
+
+The actual F30 terminal identities now feed a selected-family callable O.1 reference and O.2 slope/axial-turnoff/zero-Uz buffer through Rd. Local normalized five primitives avoid materializing Rref; endpoint-weighted turnoff kernels retain positive far tails; unchanged Md40 P0 and actual delta supply pressure/stress/Ur. Twenty independent moment/normalization identities and twelve value/C1 interfaces pass. Whole-axis C1 call and retained nonzero axial history after Uz=0 pass.
+
+Read docs/SAME_FAMILY_INITIAL_OUTER_2026_10_01.md and shared_outer_initial.py/.json plus shared_outer_initial_check.py/.json (prefix lei_ren_part1_paper_). NEXT: O.3 slope-mu/power buffer, O.4 pulse with actual separate axial moment repairs, flatten/angular correction, waiting and selected-radius heat collar/exact heat coefficients. Complete corrected outer, whole outer cone, global admissible lift/flat remainder and temporal recursion remain false.
+
+---
+
 # F30 checkpoint - 2026-10-01
 
 Actual same-family Section 10 five-defect admission and implicit functional five-bump repair are complete on Z in [-1,1]. Complete C1 defect upper 4.9017390830378e-23 (0.0350558 percent of e_star); coefficient C1 upper 3.37239648913e-20; corrected |bw| upper 8.9742822813401e-6. Source P0/delta/core and positive unresolved tails are retained. Callable coefficient/partial-moment/pressure/Ur enclosures installed; 13 independent physical-integrand, primitive and stress identities pass.

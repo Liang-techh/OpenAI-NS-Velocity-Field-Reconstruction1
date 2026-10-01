@@ -1,3 +1,17 @@
+# F31 task handoff - 2026-10-01
+
+DONE: selected-family O.1 reference and O.2 slope transition/axial turnoff/retained-moment buffer through Rd. Original pressure source/actual delta retained; no physical Rref expansion; normalized turnoff kernels use exact exponential cell masses and positive far tails. Evidence: shared_outer_initial.py/.json and shared_outer_initial_check.py/.json (prefix lei_ren_part1_paper_), twenty identities and twelve interfaces. Details: docs/SAME_FAMILY_INITIAL_OUTER_2026_10_01.md.
+
+NEXT:
+1. Continue the same five normalized local primitives through O.3 d-to-w slope-mu transition and w-to-p pure-power buffer. Preserve exact short offsets and segmented Tw; retain zero Uz with nonzero accumulated moments.
+2. Construct the raw O.4 pulse then solve its actual coupled axial corrections, using the same P0 and source schedule; derive all moments from continuous integrals rather than old source fixtures.
+3. Construct flatten/angular repair, steep power/restoration/waiting, selected-radius heat collar/exact heat coefficients and all-five/pressure terminal compatibility. Separate completed initial-outer candidate from completed corrected exterior.
+4. Complete global cone/stress lift/flat remainder, then n-dependent temporal recursion and oscillatory full-residual reconstruction.
+
+Keep broad completion flags false and preserve unrelated scale_reference work. Positive tail caps and original source identities must remain explicit.
+
+---
+
 # F30 task handoff - 2026-10-01
 
 DONE: actual signed five-defect ledger and complete Section 10.19 test; same-source C1 five-bump contraction with explicit angular-box source coverage; corrected inner cone and coupled callable partial moments/P0+Mp/Ur; 13 independent identities. Read docs/ACTUAL_FUNCTIONAL_FIVE_MOMENT_REPAIR_2026_10_01.md. Preserve source data and positive tiny tails; do not reset terminal moments in the repaired patch or use the tube delta upper as the physical delta.
