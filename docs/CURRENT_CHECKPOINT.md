@@ -1,3 +1,7 @@
+## 2026-10-01 PARTIAL C120-F2: resumable fresh interval core
+
+Completed explicit-center production radial degree 15/124 for Z in [0.49,0.51], resumed from 8 with exact interval checkpoints. Same accepted fourteen-stage pressure datum; no old center tensor reuse. Incremental versus batch checks pass at 360 exact endpoints. Current normalized mixed C3 Taylor-tail upper bound: 126612833122270085302199092484174206541772425306035599267306885.94725745593822625758709161; target not met. See docs/CANDIDATE_INTERVAL_CORE_2026_10_01.md. Next: continue to 124, assess interval widths, then implement the center-aware comparison and transition adapter. Temporal recursion and whole-axis closure remain incomplete.
+
 ## 2026-10-01: PARTIAL C120-F1 actual new-center/local-interval core seeds
 
 A new same-source factory recomputes exact Lambda120 amplitude, the unchanged accepted fourteen-stage physical pressure, and coupled core rows at arbitrary supplied axial centers/intervals. Saved actual cases: Z = 0.5 and the family [0.49,0.51], radial degree8 with retained axial depth3. All 216 scalar coefficient intervals are contained in the local-family bounds. The completed Z = 0.3 tensor is not loaded or extrapolated.

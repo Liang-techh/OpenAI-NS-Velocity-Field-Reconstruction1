@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "all_checks_passed": true,
+  "api": "advance_one(ctx, fixed, rows, n, center, delta)",
+  "initializer": "initial_rows(ctx, fixed, center, degree, required_depth=3)",
+  "precision": 260,
+  "parameters": {
+    "j": "1e-14",
+    "Lambda": "1e120",
+    "logC": "5e151",
+    "delta": "1e-200",
+    "sigma_denominator": "500"
+  },
+  "cases": {
+    "scalar_Z05": {
+      "center": ".5",
+      "radial_degree": 4,
+      "required_depth": 3,
+      "exact_coefficient_comparison_count": 90,
+      "exact_endpoint_comparison_count": 180,
+      "same_accepted_pressure_datum": true,
+      "requested_center_recomputed": true,
+      "old_center_tensor_loaded": false
+    },
+    "interval_Z049_Z051": {
+      "center": [
+        ".49",
+        ".51"
+      ],
+      "radial_degree": 4,
+      "required_depth": 3,
+      "exact_coefficient_comparison_count": 90,
+      "exact_endpoint_comparison_count": 180,
+      "same_accepted_pressure_datum": true,
+      "requested_center_recomputed": true,
+      "old_center_tensor_loaded": false
+    }
+  },
+  "source_hashes": {
+    "lei_ren_part1_paper_functional_core_step.py": "03aab21f3e6e665dd2ff0e9a3d2e6187e90813c300ccbb2d35e23a6d99098998",
+    "lei_ren_part1_paper_amplitude_factored_core.py": "bb1253348804880ff1a4d437befe749402e7357399554f8ced551a88cebcd30c",
+    "lei_ren_part1_paper_candidate_gauge_core.py": "864da25569c8965cfd25787f9e27d315643c2d1a4d8d678289d7cc7923acb007",
+    "lei_ren_part1_paper_functional_core_recursion.py": "f144cf4f5f87921aabcca93a6ed082942de795d1eb0be5fe6319fbccc969d09f",
+    "lei_ren_part1_paper_candidate_general_center_factory.py": "88dd6a6470ca0e67649e142f490d323ce9f16304f88f918c7735f0684ea19923",
+    "lei_ren_part1_paper_candidate_exact_amplitude.py": "d0e087a6acb1397c7a3632525ca3c07dd9859dc9c1c6f8b126ded0dc4824e3c1",
+    "lei_ren_part1_paper_candidate_pressure_function.py": "4cc4c87488e5f468aa9a459d1e8c9f754e85f12dee811ca9d8e066fd4d4986dc",
+    "lei_ren_part1_paper_uniform_axis_jets.py": "561c69c49f2a6f3dc8c95a9b15dc51d1d50124f20ee9f3706c602a3fb261fb85",
+    "lei_ren_part1_paper_factored_core_positivity.py": "d9c05f9f1fa4e0695ac66fabefb5ed5ef26141948e7613110ee75377af93b710"
+  },
+  "accepted_schedule_sha256": "736bbadbde99bc2f3d098d279d61ef4cb64418368263a4aba7b275e7f8892de4",
+  "all_fourteen_accepted_pressure_stages_retained": true,
+  "old_center_tensor_used": false,
+  "whole_axis_core_generated": false,
+  "terminal_functional_closure": false,
+  "equation_provenance": {
+    "paper": "Lei--Ren Part I, Section 8.2, equations (8.1)--(8.2)",
+    "paper_text_lines": "work_paper_cache/lei_ren_part1.txt:12275-12332",
+    "full_reference": "lei_ren_part1_paper_functional_core_recursion.py:coupled_rows"
+  },
+  "scope": "Exact finite-step comparison at fresh scalar and interval centers; no infinite-radial remainder, whole-axis core, or terminal matching."
+}
