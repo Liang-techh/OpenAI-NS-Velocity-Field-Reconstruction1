@@ -1,0 +1,71 @@
+{
+  "precision": 80,
+  "coefficient_order": [
+    "c1",
+    "c2",
+    "xi1",
+    "xi2",
+    "xi3"
+  ],
+  "cell": {
+    "left": "6/5",
+    "right": "13/10"
+  },
+  "point_interior": "149/100",
+  "point_weight_equalities": 35,
+  "point_bump_equalities": 6,
+  "independent_support_crossing_weight_checks": 5,
+  "independent_dense_bump_value_derivative_checks": 102,
+  "positive_primitive_envelope": "[0, upper(full)] when support is reached",
+  "beta_upper": {
+    "lower": "0.0",
+    "upper": "33.1427535947642060666073699244153876930593214342411828347237415829566215153061917269889177",
+    "width": "33.14275359476420845794564229436218738555908203125",
+    "lower_exact_mpf_tuple": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "upper_exact_mpf_tuple": [
+      0,
+      491221591272360841196705612582593821408605476418689088372476977471716425905193883,
+      -263,
+      269
+    ]
+  },
+  "derivative_upper": {
+    "lower": "-3901.61205482389352798307024778940261589267432579950802417927074322477521246246449078059587",
+    "upper": "3901.61205482389352798307024778940261589267432579950802417927074322477521246246449078059587",
+    "width": "7803.2241096477873725234530866146087646484375",
+    "lower_exact_mpf_tuple": [
+      1,
+      451775811221556887588287128954878245773797024827919781403349347664553265608689609,
+      -256,
+      268
+    ],
+    "upper_exact_mpf_tuple": [
+      0,
+      451775811221556887588287128954878245773797024827919781403349347664553265608689609,
+      -256,
+      268
+    ]
+  },
+  "full_module_sha256": "98805b8a6983dec78fcdbbea85e733eac098af5ad9faed2928959444caeff46e",
+  "full_receipt_sha256": "d9eae4585c7e1dddf267ea37d024c94ea0f9b05e07e396b9625934168146e8da",
+  "partial_module_sha256": "ba3dc92321c141051b8a1b5448b7dbea26b0c0dfe85b8fc2183ffdea09a058af",
+  "partial_receipt_sha256": "39a59d9a7ae8d6fde61d4e4b324eeef1ffcb3a5df93c3c708c9d1ebff7c9e5ad",
+  "directed_interval_arithmetic": true,
+  "source_error_enclosed": false,
+  "parameter_error_enclosed": false,
+  "field_installed": false,
+  "controls_solved": false,
+  "cone_certified": false,
+  "input_hashes": {
+    "lei_ren_part1_paper_interval_five_bump_cell_map.py": "260b866e939cdbcd3923f917a6183f36da4abebb3c00d9b2ec902cd83050cf38",
+    "lei_ren_part1_paper_interval_partial_five_bump_map.py": "ba3dc92321c141051b8a1b5448b7dbea26b0c0dfe85b8fc2183ffdea09a058af",
+    "lei_ren_part1_paper_interval_partial_five_bump_map.json": "39a59d9a7ae8d6fde61d4e4b324eeef1ffcb3a5df93c3c708c9d1ebff7c9e5ad",
+    "lei_ren_part1_paper_bump_integral_enclosures.py": "98805b8a6983dec78fcdbbea85e733eac098af5ad9faed2928959444caeff46e",
+    "lei_ren_part1_paper_bump_integral_enclosures_check.json": "d9eae4585c7e1dddf267ea37d024c94ea0f9b05e07e396b9625934168146e8da"
+  }
+}

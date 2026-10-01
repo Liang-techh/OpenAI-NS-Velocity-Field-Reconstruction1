@@ -1,0 +1,13 @@
+{
+  "point_reduction_exact_coefficients": 30,
+  "point_enclosures_contained_in_full_cell": 30,
+  "partition_gap_free": true,
+  "independent_quadrature_repeated": false,
+  "full_cell_certificate_from_interval_bounds_not_this_regression": true,
+  "input_hashes": {
+    "lei_ren_part1_paper_interval_reference_annulus_cone_atlas_check.py": "ad49c11f0f458ffc53f4c93810af368840f5df69550070fd5a8c612c0dee69b4",
+    "lei_ren_part1_paper_interval_reference_annulus_cone_atlas.py": "f1a5bfa756b5716a3f560e9b6f1e9a008addb7bd93bcc3e20ae7ae6abf2e62b5",
+    "lei_ren_part1_paper_interval_five_bump_cell_map.py": "260b866e939cdbcd3923f917a6183f36da4abebb3c00d9b2ec902cd83050cf38",
+    "lei_ren_part1_paper_interval_repaired_reference_field.py": "98b2b75fdf26aa286842e24749fbbb5963f69adeeeb941ec3f753bd022feb69c"
+  }
+}

@@ -1,3 +1,11 @@
+## PARTIAL C120-F13 — complete radial reference-annulus relaxed cone
+
+All40 exact radial cells covering x=R/Rm in [1,2] certify the relaxed kappa<=2 cone on Z in [0.49,0.51]. The same implicit C1 controls, directed cumulative five-bump moments and analytic pressure P0 are retained. Analytic whole-support bump value/derivative bounds include nonzero radial slopes, while positive cumulative primitives are enclosed throughout partial supports. Coverage is gap-free with no unresolved cell; this replaces the preceding five-point limitation for this reference annulus only. Strong admissibility and whole-axis coverage remain unproved.
+
+A degenerate radial cell reproduces30 physical point-field coefficients exactly; all30 are enclosed by a support-crossing cell. Independent scalar primitive and bump fixtures accompany the analytic cell bounds. See docs/REFERENCE_ANNULUS_CONE_ATLAS_2026_10_01.md.
+
+Next install the actual R110-to-Rm long reshape and axial restoration field, using controlled cumulative moments and the same analytic pressure. The existing enclosed terminal defect integrals are not a callable connecting field. C2/higher implicit derivatives, whole-axis matching, shear modulation, flatten/collar/exact heat exterior, complete finite energy, flat remainder, genuine n-dependent temporal recursion, oscillatory correction and full Cartesian NS residual remain incomplete.
+
 ## PARTIAL C120-F12 — callable C1 repaired reference-annulus field
 
 The uniform implicit five-bump family is now installed in a callable interval field on x=R/Rm in [1,2], Z in [0.49,0.51]. Actual bump values/radial slopes, directed partial cumulative moments, first axial derivatives, pressure P0+Mp and radial velocity use the same controls/source data. Terminal reference moment identities at x=2 follow from the certified implicit inverse; all five centered value/derivative rows also contain zero diagnostically. This is local reference-map closure, not complete inner-to-heat-exterior matching.
