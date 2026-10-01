@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `fabcdec9d999d06d447b63f0d3de6eb09e19a501`.
+The inspected `main` head before this update is `fa55f2f965c29c1a8f0169a283116cadba3c2645`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`57d7184381d21979d66f16af458e431109b34e0f`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/57d7184381d21979d66f16af458e431109b34e0f)
+[`1548c529541ed08d32ee6077a114aed50abe65f7`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1548c529541ed08d32ee6077a114aed50abe65f7)
 on `codex/st073-transition-next`, observed October 1. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,63 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-01 batch: coherent Md1.1 reconstruction and actual directional rejection
+
+The [1548c529 new-source/rejection report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/1548c529541ed08d32ee6077a114aed50abe65f7/docs/MD11_PRESSURE_AND_AXIAL_TURNOFF_2026_10_01.md)
+constructs a **separate Md=1.1, Lambda120** pressure source with schedule SHA
+15cf393dd5e73823acba88721764491a64eb5df2021e92d6e0a1b9d0d8252ebf.
+It retains logPstar14 and satisfies explicit Md>1/logPstar>Td, but does not
+establish all sufficiently-large/small paper constants. All14 pressure stages
+are regenerated except the unchanged initial slope mass, transferred only under
+its parameter independence. Waiting is nominal; stored exp(Md) endpoint rounding
+and original parameter errors remain outside the enclosure.
+
+New complex pressure/Psi bounds lie below the universal majorants, allowing
+monotone transfer of upper estimates, not transfer of the old fixed point or
+finite rows. A new128-jet core is generated through degree124 for[.49,.51],
+with normalized radial-tail upper7.4672863e-13. The
+[new-source transition pipeline receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/1548c529541ed08d32ee6077a114aed50abe65f7/experiments/root_st073/lei_ren_part1_paper_Md11_transition_pipeline.json)
+records fresh comparison, actual exit/R110, functional defects and a local uniform
+C1 inverse (contraction upper about.002712694947). The leading-field adapter
+continues through reshape/restoration/reference/slope and axial turnoff with the
+same P0. This is coherent reconstruction progress, **not candidate acceptance**.
+The old Md=.5 66-cell connecting and40-cell reference-annulus cone certificates
+remain bound to their old source; new_whole_transition_cone_certified=false.
+
+The [original Md1.1 obstruction receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/1548c529541ed08d32ee6077a114aed50abe65f7/experiments/root_st073/lei_ren_part1_paper_Md11_axial_cone_obstruction.json)
+shows at axial-turnoff phase=.5, for every enclosed Z in[.49,.51], the normalized
+inertial stress/shear direction per R lies in about[10.3722,64.3827], strictly
+positive; the added shear-square contribution is positive. The necessary negative
+direction is therefore ruled out for this fixed candidate. This is an actual
+directional obstruction within stated fixed-data scope, not an inconclusive box.
+Increasing radial placement or order cannot remove that radius-independent
+obstruction. It does not contradict the paper's sufficiently-large Md requirement.
+Small tail/implicit-inverse bounds and explicit Md>1 cannot override this rejection.
+
+The [trial parameter-screen receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/1548c529541ed08d32ee6077a114aed50abe65f7/experiments/root_st073/lei_ren_part1_paper_outer_parameter_probe.json)
+rebuilds trial14-stage pressure schedules and nominal waiting roots, choosing
+logPstar=max(14,exp(Md)+11). These are asymptotic inertial-cone screens at fixed
+phases on the local axial family, not full finite-placement or whole-stage tests.
+
+| Trial Md | Phase=.25/.75 screens | Phase=.5 screen | Status beyond screens |
+|---|---|---|---|
+| 1.1 | pass | strict direction obstruction | rebuilt core/repair, rejected candidate |
+| 1.3 | pass | strict direction obstruction | trial source only; no new core |
+| 2 | pass | interval direction/margin unresolved | trial source only; no new core |
+| 3 | pass | interval direction/margin unresolved | trial source only; no new core |
+
+A fixed-phase pass is not continuous-phase acceptance. Md2/3 are neither rejected
+by these unresolved boxes nor certified candidates. Screening receipts explicitly
+leave whole-stage cone, finite-placement shear, waiting-root certification and
+unknown paper constants open. Recommendation only: resolve correlated midpoint
+estimates and certify full phase/axial cells before choosing parameters and spending
+another expensive coherent core rebuild; do not fit pressure or silently migrate
+old certificates. Scientific implementation and parameters are unchanged by this
+review. No numerical result, rigorous enclosure or proof was independently rerun/
+audited here. Full parameter gates, C2/Ur_Z, whole-axis matching, final strong
+stress, heat/finite energy, temporal recursion and corrected NS residual/L2 remain
+unaccepted. Pinned report lists separate source/core/pipeline/turnoff replays.
 
 ### 2026-10-01 batch: installed connecting field, relaxed coverage and first outer stage
 
@@ -1109,6 +1166,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [1548c529 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36862011202)
+actual constrained log reports original13 failed identifiers/423 passed. Four
+smoke/slice jobs pass; full historical tests skip. No added selected governance
+regression appears; this software result does not reverse the scientific rejection.
 
 The [57d71843 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36856030211)
 actual log reports original13 failed identifiers/423 passed. Four smoke/slice jobs
