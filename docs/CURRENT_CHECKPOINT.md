@@ -1,3 +1,7 @@
+## 2026-09-30: Explicit analytic linear inverse bound
+
+Implemented product constant256, Cauchy fixed-data multiplier bounds, and full factorial resolvent series with a directed infinite-tail enclosure. Log operator-norm upper bound is390.6324362373922; independent modified-Bessel containment passes. This conservative upper bound is neither an actual norm nor evidence of divergence. Angular linear-model analytic norm is bounded; axial model needs accepted-pressure complex modulus. Nonlinear Kstar and actual Lambda contraction remain open. See ANALYTIC_CORE_TAIL_DEPENDENCIES_2026_09_30.md.
+
 ## 2026-09-30: Complex-axis guards and conditional infinite radial tails
 
 Directed common complex capsule eta=5e-19 excludes H0 +/- i sigma, L, and pressure-q poles; h=eta/8=6.25e-20 meets the strict norm-domain condition. A_Omega <=5.5783159801e16 certifies the current Cstar complex-axis guard. Implemented infinite mixed C3 radial tail factors from paper(8.30), conditional on an actual certified nonlinear X_h norm. That norm, analytic P0 modulus and nonlinear Kstar remain open; Lambda1e36 is not yet certified sufficient. Next: accepted-pressure complex modulus and explicit fixed-point size/Lipschitz estimates. See ANALYTIC_CORE_TAIL_DEPENDENCIES_2026_09_30.md. Do not promote conditional factors to actual remainder bounds.

@@ -53,6 +53,23 @@ These are factors per unit analytic norm, not tail bounds for the actual nonline
 
 The infinite core, matching, full K, global cone, temporal recursion, oscillatory correction, and full residual validation remain open.
 
+## Explicit linear resolvent now bounded
+
+`lei_ren_part1_paper_linear_resolvent_bound.py` implements the paper's product constant256 and the multiplier choice
+
+    M_chi_beta = 256 (||chi||_h + ||beta||_h/500).
+
+Cauchy estimates on disks of radius eta/2 bound the full axial coefficient norms from the saved complex modulus bounds. The square-weight supremum is bounded by max(1,4r), where r=h/(eta/2) is enclosed with directed arithmetic. At these inputs r is approximately1/4; keeping its enclosure avoids treating rounded equality as exact.
+
+The linear inverse norm is bounded by the complete positive factorial series
+
+    sum_(n>=0) (40 M_chi_beta)^n / [n!(n+1)!].
+
+The driver sums through n=447 and encloses every remaining term with a decreasing geometric ratio. The logarithm of the resulting norm upper bound is approximately390.6324362373922. An independent modified-Bessel evaluation I1(2 sqrt(K))/sqrt(K) lies below the directed upper bound, with relative excess below1e-95.
+
+This is a conservative upper bound, not the measured operator norm or a lower bound showing failure. The corresponding normalized angular linear model norm is bounded, but the axial model still needs the analytic pressure multiplier g/L. No numerical nonlinear Kstar or successful contraction for Lambda1e36 follows from this result.
+
 Reproduce from the repository root:
 
     python experiments/root_st073/lei_ren_part1_paper_analytic_radial_tail.py
+    python experiments/root_st073/lei_ren_part1_paper_linear_resolvent_bound.py
