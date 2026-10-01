@@ -9,6 +9,9 @@
   "diagnostic_partial": true,
   "production_partial_rejected": true,
   "scalar_slice_rejected": true,
+  "outside_domain_frozen_continuation_labeled": true,
+  "comparison_driver_only": true,
+  "stress_derivatives_supplied": false,
   "start_D": [
     {
       "lower": "1.07178344535101737370532014194664526418156175866672952255117384346203621292513259392980112",
@@ -279,9 +282,9 @@
   "temporal_recursion": false,
   "whole_axis_transition_generated": false,
   "source_hashes": {
-    "lei_ren_part1_paper_interval_comparison_jets.py": "2b94abae238da6bb8d12d0f740b11edd2783714fe89e414e58574d4c64fd2fa3",
+    "lei_ren_part1_paper_interval_comparison_jets.py": "a77c869be97876d2d495b0f56df4fa39bfa1ef816eb0d6ff7f2ae26270044662",
     "lei_ren_part1_paper_candidate_comparison_jets.py": "a51f5db29cbdff9be1eb8776009e334a58188bd7e4189bb2cb886a6d4ec5df31",
     "lei_ren_part1_paper_candidate_shared_inlet.py": "cb578a0de74a1afd6550d04f1b6a9d8ce140f240613ee4ffaf28f5a2d21b420d",
-    "lei_ren_part1_paper_interval_comparison_jets_check.py": "85d9137cdf326e8d4f7259059984ea0b25009bc6c4f558c2b2a4d0d6f515f67d"
+    "lei_ren_part1_paper_interval_comparison_jets_check.py": "68c6daf29db8cb2a2dc4bb408cdd86e4120007e8aa14922c443c5b652ca00737"
   }
 }

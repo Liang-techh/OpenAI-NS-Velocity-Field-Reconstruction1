@@ -132,7 +132,10 @@ class IntervalComparisonJets(CandidateComparisonJets):
                 D=inlet['ratio'], I_z=inlet['iz']*c.sqrt(self.eps), pressure=inlet['pressure'],
                 Fbar_over_F0=state['phi'], Fa_over_Fbar=self.initial_phi/state['phi'],
                 diagnostic_partial=self.diagnostic_partial, analytic_tail_propagated=False,
-                ODE_discretization_error_enclosed=False)
+                ODE_discretization_error_enclosed=False,
+                outside_analytic_core_radial_domain=bool(endpoints(s)[1] > mp.mpf('4.1')),
+                comparison_driver_only=True, stress_derivatives_supplied=False,
+                adapter_source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest())
             self.cache[key] = packet
             return packet
 

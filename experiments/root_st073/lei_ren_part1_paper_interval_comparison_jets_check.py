@@ -11,6 +11,9 @@ def run():
     start = c.evaluate('0')
     end = c.evaluate('.01')
     driver = c.exit_driver_jets('.01', None, '1')
+    frozen = c.evaluate('.03')
+    if end['outside_analytic_core_radial_domain'] or not frozen['outside_analytic_core_radial_domain']:
+        raise AssertionError('Frozen continuation core-certificate scope mislabeled')
     partial_rejected = False
     if c.degree < 124:
         try:
@@ -32,6 +35,8 @@ def run():
     out = dict(completed_degree=c.degree, state_sha256=c.state_hash,
         center_family=c.center_family, steps=4, diagnostic_partial=True,
         production_partial_rejected=partial_rejected, scalar_slice_rejected=scalar_rejected,
+        outside_domain_frozen_continuation_labeled=True,
+        comparison_driver_only=True, stress_derivatives_supplied=False,
         start_D=list(start['D'].coefficients), endpoint_D=list(end['D'].coefficients),
         endpoint_I_z=list(end['I_z'].coefficients),
         driver_A=list(driver['A'].coefficients), driver_B=list(driver['B'].coefficients),

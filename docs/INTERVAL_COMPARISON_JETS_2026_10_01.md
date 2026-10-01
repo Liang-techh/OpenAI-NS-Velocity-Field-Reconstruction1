@@ -18,3 +18,4 @@ The reproducible check computes the actual finite-core inlet at y=0, the switche
 6. Extend controlled coverage to the full axial domain before promoting this to functional terminal closure.
 
 No completed whole-axis transition, exact heat exterior, final stress cone, temporal n-dependent recursion or full Cartesian residual is claimed.
+Review confirmed that inherited comparison methods do not load the old core. Packets now explicitly label frozen continuation beyond scaled radius 4.1 as outside the analytic core radial domain and record the adapter source hash. A diagnostic at y=0.03 checks that label. These packets supply comparison drivers only; the zero radial endpoint derivative override is not suitable for later stress/cone evaluation. Such evaluation must supply the actual switched field derivatives.
