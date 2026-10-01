@@ -1,3 +1,7 @@
+## 2026-09-30 same-pressure second-width endpoint conversion
+
+Analytic width coefficients now reconstruct unnormalized F/Uz/P, all five profile moments, Ur and Ur_Z without resetting P0. Six independent mixed width/Z radial-flux derivative checks pass. Actual accepted interval-inlet evaluation remains pending; Ur_ZZ and omitted-width/source errors are unclosed. See COLLAR_WIDTH_PHYSICAL_ENDPOINT_2026_09_30.md.
+
 ## 2026-09-30 analytic second-width integral coefficients
 
 All eight normalized collar second-width endpoint coefficients now have analytic formulas using directed K and same-core radial inertial derivatives. Actual directed inlet evaluation and full nonlinear remainder remain open. See COLLAR_SECOND_WIDTH_INTEGRAL_COEFFICIENTS_2026_09_30.md.

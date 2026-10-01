@@ -1,0 +1,45 @@
+{
+  "all_checks_passed": true,
+  "mixed_derivative_checks": [
+    {
+      "field": "Ur",
+      "width_power": 0,
+      "oracle": "0.2295973519024264695368688962923774253971",
+      "numerical_oracle_distance": "0.0"
+    },
+    {
+      "field": "Ur",
+      "width_power": 1,
+      "oracle": "0.2189651043081630610406508714986344853225",
+      "numerical_oracle_distance": "0.0"
+    },
+    {
+      "field": "Ur",
+      "width_power": 2,
+      "oracle": "0.3432696407286037953638794395475408387029",
+      "numerical_oracle_distance": "0.0"
+    },
+    {
+      "field": "Ur_Z",
+      "width_power": 0,
+      "oracle": "0.979880905497791142273839097136605781184",
+      "numerical_oracle_distance": "0.0"
+    },
+    {
+      "field": "Ur_Z",
+      "width_power": 1,
+      "oracle": "0.8410367951700734730634295632645012866413",
+      "numerical_oracle_distance": "0.0"
+    },
+    {
+      "field": "Ur_Z",
+      "width_power": 2,
+      "oracle": "0.8288697239725703126769691722689506772651",
+      "numerical_oracle_distance": "0.0"
+    }
+  ],
+  "P0_identity_preserved": true,
+  "unknown_Ur_ZZ_preserved": true,
+  "actual_source_used": false,
+  "full_ODE_error_enclosed": false
+}

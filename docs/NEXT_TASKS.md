@@ -1,3 +1,11 @@
+## 2026-09-30 collar endpoint propagation
+
+- [x] Convert analytic first/second-width coefficients to unnormalized five moments and F/Uz/P.
+- [x] Recover Ur and Ur_Z from the same axial moment primitive; retain unavailable Ur_ZZ.
+- [ ] Populate and publish endpoint coefficients from the accepted directed finite-core inlet.
+- [ ] Propagate the pressure/source error envelopes into the interval inlet.
+- [ ] Bound omitted width orders and extend endpoint control to the whole collar.
+
 ## 2026-09-30 next collar dependency steps
 
 - [x] Derive six second-width integral coefficients and enclose their common weighted switch integral.
