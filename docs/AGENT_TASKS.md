@@ -1,3 +1,26 @@
+# F37/F38 task handoff - 2026-10-01
+
+- [x] F37-A: Recompute compliant core positivity, frozen angular/H bounds, physical C3 norms, Kp17, KN18000 and core-tail admission.
+- [x] F37-B: Explicitly include all148 pressure/S jets in accepted envelopes; bind new Kp and finite-core sensitivity; recompute Cstar/K1/widths, whole-axis exit and reference cone.
+- [x] F37-C: Recompute actual whole-Z five defects and implicit functional five-bump repair, with source-bound independent identities.
+- [x] F38-A: Rebuild compliant outer inlet/buffers, trial axial map, angular candidate and NEW same-source waiting root.
+- [x] F38-B: Recompute exact Gamma heat/collar and three future defects; prove c_epsilon=.001 gate by exact source rational; retain formal S.
+- [ ] F38-C1: At Rrel, derive the angular defect from the correlated actual X(Z)-X(0), not independent O(1) boxes. Retain inherited pulse/flatten history and mu^30 suppression. Express the heat angular deficit in these same units.
+- [ ] F38-C2: Derive actual two-bump angular/pressure equations near log(R/Rrel)=-3,-1, with radius .15. Include quadratic pressure coefficients. Prove a uniform inverse and small smooth C1 coefficient branch over all Z; keep prescribed preheat P0 unchanged.
+- [ ] F38-C3: Prove a sufficiently strong finite log cap for S before rescaling heat defects by finite relative offsets. Never materialize selected Rref or exp(-1/mu), or set positive tails to zero.
+- [ ] F38-C4: Install corrected swirl partial angular/pressure/energy primitives as callables and source-bound receipts. Validate recovery identities independently, including Z derivatives and support interfaces.
+- [ ] F38-C5: Integrate complete corrected future swirl energy through flatten, steep, waiting, collar and infinite exterior. Select positive ap from Section7.34; compose actual c1(ap,Z),c2(ap,Z), not trial values.
+- [ ] F38-C6: Install actual pulse velocities/partial moments. Prove Mz and Mtheta_z terminal closure and the positive half-future-energy Mztheta target at Rv; zero Mztheta only at infinity.
+- [ ] F38-D: Compose corrected outer/heat field; recover Ur and pressure from allfive primitives; prove whole-Z terminal identities, high-order interface smoothness, axis regularity and finite physical energy.
+- [ ] F39-A: Certify cone signs/margins through pulse/end, flatten, angular bumps, waiting and heat collar; no inference from inner cone alone.
+- [ ] F39-B: Construct global admissible divergence-form stress and separate flat remainder, reporting maxima/L2/scales and their exact physical units.
+- [ ] F40: Implement genuine n=1 and n>=2 recovery equations, common inner domain, order-specific moment repair, finite remainder and divergence-preserving smooth sum.
+- [ ] F41: Construct mean/oscillatory pulses, verify averaged quadratic stress cancellation, then independent Cartesian full residual and multi-time vortex dynamics.
+
+Evidence: docs/COMPLIANT_INNER_OUTER_HEAT_FAMILY_2026_10_01.md; compliant_reconstruction.py ordered stages and compliant_*.py/.json pairs. All names have prefix lei_ren_part1_paper_. Mark tasks done only when scope-matched source evidence exists. The full background, actual ap, heat matching, temporal recursion and full residual remain incomplete. Preserve unrelated edits and old source identities.
+
+---
+
 # F36 priority tasks - 2026-10-01
 
 - [x] F36-A: Create separate c_epsilon=.001 raw-preheat source, regenerated waiting and fourteen positive pressure atoms; preserve old source.

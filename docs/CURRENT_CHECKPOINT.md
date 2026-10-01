@@ -1,3 +1,13 @@
+# F37/F38 checkpoint - 2026-10-01
+
+The separate c_epsilon=.001 family now has recomputed core/norm/exit/Cstar/K1/reference bounds, whole-Z functional five-moment repair, outer candidates and the exact Gamma heat component. Ordered inner16 and outer10 rebuilds PASS. Explicit 148 pressure-jet and S-jet inclusions preserve the old completed recurrence as an envelope, with new Kp17/KN18000 and finite-core sensitivity provenance. Old .01 data remain unchanged.
+
+Read docs/COMPLIANT_INNER_OUTER_HEAT_FAMILY_2026_10_01.md and run experiments/root_st073/lei_ren_part1_paper_compliant_reconstruction.py --stage inner or --stage outer. Source .001 numeric gate is proved by exact rational correlation. Functional five-defect C1 <=4.9017390830378e-23; coefficient C1 <=3.37239648913e-20; corrected bw <=8.9742822813401e-6. Reference SQ >=1.6114999994723.
+
+NEXT: actual two-bump angular/pressure correction with the same Gamma heat tails and unchanged preheat P0; complete future swirl energy; select ap; recover all five corrected outer primitives and whole-outer cone. Heat matching, global stress/flat remainder, temporal recursion and full residual remain false. exp(-1000) is only an inverse-radius upper bound, never the actual S.
+
+---
+
 # F36 checkpoint - 2026-10-01
 
 Separate c_epsilon=.001 raw-preheat source, regenerated waiting/14 pressure atoms, correlated constant-Z pressure perturbation, and new all20-term analytic core contraction are complete. A fixed-point resolvent bounds new-minus-old core; a compact callable interval view covers all 33,060 local A/Uz/P coefficients through radial144 without rerunning/relabeling the old state. Six independent transfer identities and 443 unchanged axis-coefficient checks pass.
