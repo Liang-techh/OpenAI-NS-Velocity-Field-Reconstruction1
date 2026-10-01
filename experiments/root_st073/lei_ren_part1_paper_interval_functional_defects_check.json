@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "fixture_only": true,
+  "flat_kernel_value_and_axial_coefficients_contained": 18,
+  "restoration_quadratures_contained": 3,
+  "centered_axial_transport_coefficients_contained": 2,
+  "five_row_assembly_independent_validation": false,
+  "input_hashes": {
+    "lei_ren_part1_paper_interval_functional_defects.py": "5a2f90f35217a9fa887c1b70f201fa233ef834915d5534cc8f489348565a3ec4",
+    "lei_ren_part1_paper_interval_functional_defects_check.py": "216004fcfe6cff4ef51af4fb0879d4d93f5f698fa6248d99d0b62b1d173f24c4"
+  }
+}

@@ -1,3 +1,13 @@
+## PARTIAL C120-F10 — functional five-row defect family and switch branch refinement
+
+The controlled R110 source now supplies physical fixed-parameter five defect rows and their first axial derivatives on every center in [0.49,0.51], with the accepted analytic axis pressure unchanged. Entire negative-B flat kernels are bounded analytically, including first axial derivatives; full-support restoration integrals use512 directed cells. The centered g=Uz110-4Z is assembled from j, nonzero core rows and controlled transport increments, avoiding baseline interval subtraction. It remains about1e-14. Normalized d1 is [2.23133e-15,2.23742e-15], d2 [5.67609e-16,5.70369e-16], and d4 [7.64598e-41,7.91583e-41]; exact d3/d5 bounds and all first axial coefficients are in the receipt. These are defects, not repaired identities or NS residuals.
+
+Independent fixtures enclose18 flat-kernel coefficients,3 restoration integrals and2 centered transport coefficients. Formal pressure/width atoms and source parameter remainders remain outside this fixed-parameter family packet. See docs/FUNCTIONAL_FIVE_DEFECTS_2026_10_01.md.
+
+The remaining first-switch cell was subdivided128 ways with correlated stage1 shear algebra:127 certify,1 remains unresolved at x in [0.00499755859375,0.005]. Next isolate the kappa branch crossing or prove both branch margins; uniform refinement alone cannot remove the boundary transition. See docs/SWITCH_BRANCH_REFINEMENT_2026_10_01.md.
+
+Next implement a functional five-bump inverse/repair from these fresh family defects and controlled integral coefficients, propagating source and restoration uncertainties. Retain the same P0/F0 and independent axial derivatives. Whole-axis coverage, higher axial orders, terminal five-moment closure, final heat matching/shear modulation, genuine n-dependent temporal recursion, flat remainder, oscillatory corrections and full Cartesian NS residual remain incomplete.
+
 ## PARTIAL C120-F9 — exit cone atlas and controlled switch through profile R=110
 
 All 256 complete logarithmic radial cells from the actual exit endpoint through R=100 certify the strong kappa>2 cone on axial family [0.49,0.51]. Coverage, negative angular shear upper bounds and positive margin lower bounds are verified. This resolves the earlier single-box post-exit non-certificate; it is not a whole-axis or complete-annulus claim.
