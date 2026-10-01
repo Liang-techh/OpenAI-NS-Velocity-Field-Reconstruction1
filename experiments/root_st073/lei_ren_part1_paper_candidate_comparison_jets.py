@@ -105,7 +105,7 @@ class CandidateComparisonJets:
     def evaluate(self,y,Z='.3'):
         with mp.workdps(self.precision+40):
             yy, zz = mp.mpf(str(y)), mp.mpf(str(Z))
-            if zz != self.center:
+            if abs(zz-self.center) > mp.mpf(10)**(-self.precision+5):
                 raise ValueError('This completed tensor supplies only Z=.3 jets; no extrapolation')
             if yy < 0:
                 raise ValueError('Comparison requires y >= 0')

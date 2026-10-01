@@ -1,3 +1,7 @@
+## 2026-10-01: candidate initial exit uses analytic drivers
+
+PARTIAL C120-T2: actual Lambda120 center tensor is connected to the initial exit bridge through analytic comparison driver derivatives, retaining nonzero F, five moments and pressure jets. 8/16-step log-amplitude difference is 6.85214e-8. MP input midpoint projection, radial tails and RK4 errors remain uncertified. See CANDIDATE_COMPARISON_JETS_2026_10_01.md and candidate_exit_analytic.json. Analytic hooks are implemented and checked in both ExitTangents and ExitSwitches. Next: candidate frozen-driver coefficient adapter, ExitContinuation to R=100, analytic switches to R=110, then actual component defects and five-moment repair. Whole-axis closure, cone, heat matching and temporal recursion are open.
+
 ## 2026-10-01: actual Lambda120 comparison propagated
 
 PARTIAL C120-T1: completed 124-order core now drives the Section 9.23 comparison ODE at Z=.3 with analytic axial Taylor derivatives and all moment increments, followed by exact frozen comparison propagation to R=110. See CANDIDATE_COMPARISON_JETS_2026_10_01.md. This is the auxiliary comparison, not the actual exit/transition; RK4 and omitted radial errors are not yet certified. Next: consume analytic drivers in the exit chain and regenerate its moments.

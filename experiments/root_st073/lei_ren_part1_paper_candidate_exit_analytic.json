@@ -1,0 +1,58 @@
+{
+  "state_sha256": "fc1c779f17ef182b8eab9be7ab97e9fdf3faef7ff7cc7808efc9766bc1bb297b",
+  "actual_candidate_core_used": true,
+  "midpoint_projection_of_directed_inputs": true,
+  "comparison_steps": 32,
+  "exit_steps": 8,
+  "refinement_exit_steps": 16,
+  "epsilon_policy": "conservative uniform analytic G bound; cone not certified",
+  "log_epsilon": "-5.0000000000000501e+136",
+  "center": ".3",
+  "endpoint_y": ".01",
+  "analytic_driver_used": true,
+  "axial_finite_difference_used": false,
+  "F_nonzero": true,
+  "log_abs_F": "-5.00000000000000000000000000000086205766216130448456392781534e+151",
+  "endpoint_Uz": "1.20000000000001",
+  "moment_signed_logs": {
+    "theta": {
+      "sign": 1,
+      "log_abs": "-5.00000000000000000000000000000086205766216130448456392781534e+151"
+    },
+    "z": {
+      "sign": 1,
+      "log_abs": "-274.73159524137162849534459891087526119737686646915562936177"
+    },
+    "theta_z": {
+      "sign": 1,
+      "log_abs": "-5.00000000000000000000000000000086205766216130448456392781534e+151"
+    },
+    "z_theta": {
+      "sign": 1,
+      "log_abs": "-274.549273684577665535799547552422135453068365827228796698816"
+    },
+    "p": {
+      "sign": 1,
+      "log_abs": "-1.00000000000000000000000000000017241153243226089691278556307e+152"
+    }
+  },
+  "exit_step_refinement": {
+    "log_F_over_Fa": "0.0000000685213772295226824552381887268024753270198162665753722361602",
+    "Uz": "5.49344184191383990966810919477381600951241537590723855504727e-115",
+    "F_R_over_F": "0.0"
+  },
+  "infinite_radial_remainder_propagated": false,
+  "ODE_discretization_error_enclosed": false,
+  "stress_cone_certified": false,
+  "full_transition_R110_generated": false,
+  "terminal_five_moment_closure": false,
+  "input_hashes": {
+    "lei_ren_part1_paper_candidate_gauge_core_Lambda120_state.json": "fc1c779f17ef182b8eab9be7ab97e9fdf3faef7ff7cc7808efc9766bc1bb297b",
+    "lei_ren_part1_paper_candidate_comparison_jets.py": "9d85ba14fc26e0f7ededc5698d564d0f0d58759cdfea1631261eb7a223896030",
+    "lei_ren_part1_paper_exit_tangents.py": "30fa34f1d09a7b82e504b14931bb2f36ced23e1a3c1961830cd8f51f9b2902ae",
+    "lei_ren_part1_paper_exit_bridge.py": "f7995c8b1e4183e9fcd7b78007e8a4eb143122fd3c481b77d7436f8c49028f18",
+    "lei_ren_part1_paper_core_adapter.py": "b82000aceec2e8a2c5e3f039045a2532ee747204eb024ff2a1d5fa8bea34ceb6",
+    "lei_ren_part1_paper_uniform_axis_jets.py": "561c69c49f2a6f3dc8c95a9b15dc51d1d50124f20ee9f3706c602a3fb261fb85"
+  },
+  "source_sha256": "019ea34504fa312e49a8ab7e13420e974969874210ff39513e7e37a314e9073c"
+}
