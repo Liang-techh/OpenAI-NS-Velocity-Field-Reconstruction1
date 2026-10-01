@@ -86596,7 +86596,6 @@
     }
   ],
   "actual_finite_core_endpoint_evaluated": true,
-  "all_eight_width_orders_evaluated": true,
   "all_five_endpoint_moments_evaluated": true,
   "original_pressure_datum_preserved": true,
   "source_coefficient_errors_enclosed": false,
@@ -86606,5 +86605,6 @@
   "uniform_Z_certified": false,
   "temporal_recursion": false,
   "expensive_source_or_collar_chain_rebuilt": false,
-  "elapsed_seconds": 34.34400000004098
+  "elapsed_seconds": 34.34400000004098,
+  "all_eight_states_at_width_orders_one_and_two_evaluated": true
 }
