@@ -1,3 +1,7 @@
+## 2026-09-30: Whole-axis finite-core C3 contributions
+
+Coherent pressure derivative errors now extend to |Z|<=1. Directed degree18 finite core covers x=R/Ra in [0,1] and all real Z in [-1,1], with mixed C3 bounds and full F-squared pressure integration. Combined axial exit C2 deviation of Uz-4Z and mz/Ra-4Z is <=2.00000115626372515e-14. Fifteen independent actual-inlet containment checks pass. Next: positive normalized core F lower bounds / reciprocal C3, frozen D/E and reciprocal D, and infinite radial remainder before full K and cone certification. See GLOBAL_FINITE_CORE_NORM_CONTRIBUTIONS_2026_09_30.md. True temporal recursion remains open.
+
 ## 2026-09-30: Derived strict-to-relaxed collar marker
 
 Conditional log-sigma inversion gives s_an about 3.16227766016837933e-77 under existing logK=1e152, logc_star=-100. Preserve log(log(R_an/R_a)); coarse stress samples miss the strict collar. Actual h_b=exp(-100-100*1e152), unrelated to primitive enclosure widths. Inlet-direction log(kappa_exit) about -9.9e153 is compatible with the relaxed region. Edge-factored margin helper added. Next: certify global C3 K and c_star/K1, then bound normalized comparison error with its (1-chi) factor and apply regional cone gates. See INNER_COLLAR_CONE_REGIONS_2026_09_30.md. Full cone and time recursion remain open.

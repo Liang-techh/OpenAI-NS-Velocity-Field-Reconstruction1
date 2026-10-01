@@ -22,7 +22,7 @@ def derivative_envelope(ctx, radius, n):
     """
     if not isinstance(n,int) or isinstance(n,bool) or n<0:raise ValueError('Nonnegative integer order required')
     a=ctx.mpf(radius)
-    if endpoints(a)[0]<0 or endpoints(a)[1]>=1:raise ValueError('Require 0<=radius<1')
+    if endpoints(a)[0]<0 or endpoints(a)[1]>1:raise ValueError('Require 0<=radius<=1')
     total=ctx.mpf(0)
     for j in range(n//2+1):
         k=n-j;m=n-2*j
@@ -30,12 +30,13 @@ def derivative_envelope(ctx, radius, n):
     return math.factorial(n)*total
 
 
-def run(degree=24,*,fixed_receipt=None,full_receipt=None,output=None):
+def run(degree=24,*,fixed_receipt=None,full_receipt=None,output=None,radius=None):
     iv=MPIntervalContext();iv.dps=300
     fixed_path=Path(fixed_receipt) if fixed_receipt else Path(__file__).with_name('lei_ren_part1_paper_uniform_fixed_beta_error.json')
     fixed=json.loads(fixed_path.read_text())
     full_path=Path(full_receipt) if full_receipt else Path(__file__).with_name('lei_ren_part1_paper_uniform_preheat_error_budget.json')
     full=json.loads(full_path.read_text())
+    chosen_radius=full['radius'] if radius is None else radius
     with mp.workdps(330):
         varying=iv.mpf(0);constant=iv.mpf(0)
         for stage,row in fixed['stages'].items():
@@ -47,13 +48,13 @@ def run(degree=24,*,fixed_receipt=None,full_receipt=None,output=None):
         flatten= true_mass+finite_mass
         bounds=[];rows=[]
         for n in range(degree+1):
-            factor=derivative_envelope(iv,full['radius'],n)
+            factor=derivative_envelope(iv,chosen_radius,n)
             error=(varying+flatten)*factor+(constant if n==0 else 0)
             bounds.append(endpoints(error)[1])
             rows.append(dict(order=n,q_power_derivative_envelope=factor,
                 normalized_derivative_error_upper=endpoints(error)[1],
                 normalized_Taylor_coefficient_error_upper=endpoints(error/math.factorial(n))[1]))
-        report=dict(fixed_pressure_receipt=fixed_path.name,complete_pressure_receipt=full_path.name,radius=full['radius'],maximum_derivative_order=degree,stage_count=14,
+        report=dict(fixed_pressure_receipt=fixed_path.name,complete_pressure_receipt=full_path.name,radius=str(chosen_radius),maximum_derivative_order=degree,stage_count=14,
             derivatives=rows,normalized_derivative_error_upper_bounds=bounds,
             uniform_Z_error_enclosed=True,all_pressure_stages_included=True,
             flatten_relative_error_enclosed=False,adapter_evaluation_roundoff_enclosed=False,
