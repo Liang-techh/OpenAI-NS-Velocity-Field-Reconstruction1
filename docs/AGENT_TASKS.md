@@ -1,3 +1,21 @@
+# F36 priority tasks - 2026-10-01
+
+- [x] F36-A: Create separate c_epsilon=.001 raw-preheat source, regenerated waiting and fourteen positive pressure atoms; preserve old source.
+- [x] F36-B: Prove correlated pressure perturbation after common y_t, using finite log cap and full physical Pstar^2 factor; preserve exact constant-Z correlation.
+- [x] F36-C: Rebuild all20 coupled core majorants and prove new-source contraction plus fixed-point resolvent sensitivity and mixed C3 differences.
+- [x] F36-D: Provide compact new finite interval view of 33,060 coefficients through radial144; verify axis correlation and first axial recovery; preserve old state.
+- [ ] F37-A: Use new core differences to recompute inner-exit shear/positivity bounds and physical C3 norms. Bind every receipt to new source, datum and unchanged F0/Lambda/delta/j/Cstar definitions.
+- [ ] F37-B: Re-admit selected Cstar, radius restrictions, K1, short collars and reference join using perturbed norms. Do not infer global cone from local core closeness.
+- [ ] F37-C: Recompute functional whole-Z five-defect bounds and five-bump inverse/repair for compliant family; pressure adapters must preserve exact source correlation.
+- [ ] F38-A: Rebuild compliant outer inlet/buffers, trial axial map and angular candidate; refine the NEW waiting root at the actual source.
+- [ ] F38-B: Recompute Gamma heat/collar/three tail-defect data at new selected radius; retain formal inverse-radius factors and physical units.
+- [ ] F38-C: Solve actual angular/pressure corrections and complete future swirl energy, then select ap and realize all five terminal targets as functions of Z.
+- [ ] F39: Certify whole-outer cone and build admissible stress/flat remainder before true n-dependent temporal recursion and oscillatory correction.
+
+Read docs/COMPLIANT_PRESSURE_AND_CORE_TRANSFER_2026_10_01.md. Constant-Z transfer applies to raw H=1 preheat datum; true heat is Z-dependent. AllSection7 admission, corrected heat matching and temporal recursion remain false. Complete tasks only with reproducible source-bound evidence; do not change old receipt labels.
+
+---
+
 # F35 priority tasks - 2026-10-01
 
 - [x] Specify exact H_delta Gamma heat component, collar and scaled future angular/pressure/swirl-energy defects; independent nine-identity checker.

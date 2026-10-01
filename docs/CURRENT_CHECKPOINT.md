@@ -1,3 +1,11 @@
+# F36 checkpoint - 2026-10-01
+
+Separate c_epsilon=.001 raw-preheat source, regenerated waiting/14 pressure atoms, correlated constant-Z pressure perturbation, and new all20-term analytic core contraction are complete. A fixed-point resolvent bounds new-minus-old core; a compact callable interval view covers all 33,060 local A/Uz/P coefficients through radial144 without rerunning/relabeling the old state. Six independent transfer identities and 443 unchanged axis-coefficient checks pass.
+
+Read docs/COMPLIANT_PRESSURE_AND_CORE_TRANSFER_2026_10_01.md and compliant_pressure_source, compliant_core_transfer, compliant_core_transfer_check, compliant_finite_core, compliant_finite_core_check .py/.json pairs (prefix lei_ren_part1_paper_). Numeric epsilon gate resolved for NEW source; old outer/heat receipts remain .01. NEXT: transfer exit/norm/Cstar/reference and functional five-moment repair into the compliant family, then actual angular/pressure/energy closure with exact heat. Full Section7/cone/stress/flat remainder/temporal recursion remain unfinished. True H_delta pressure changes are not part of the constant-source transfer.
+
+---
+
 # F35 checkpoint - 2026-10-01
 
 The selected-family exact Gamma heat component, flat collar and scaled angular/pressure/swirl-energy tail defects are specified with nonzero formal inverse-radius factors. Nine independent identities, positive deficits and collar endpoint checks pass. Incoming five-moment matching, actual ap selection and whole-outer cone remain unfinished.
