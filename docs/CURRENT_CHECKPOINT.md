@@ -1,3 +1,7 @@
+## 2026-10-01: weighted angular sign and separate Lambda120 candidate
+
+The Lambda120 analytic candidate passes -Phi_s >= (chi+epsilon)/32 over s in [0,4.1], Z in [-1,1]. The second-order bound retains explicit epsilon dependence in all ten applicable nonlinear terms. Lambda48 fails this sufficient estimate; its completed degree124 numerical data remain separate. Standalone Lambda120 all20-term contraction and radial-tail receipts are generated, requiring degree124 / axis length128. Finite Lambda120 regeneration and functional five-moment terminal closure remain open. See docs/CANDIDATE_WEIGHTED_ANGULAR_SIGN_2026_10_01.md.
+
 ## 2026-10-01: shared candidate five core moments and analytic inlet ready
 
 The same refined Lambda48 degree124 coefficients now generate five core moment contributions, prescribed recovered pressure, and normalized inlet jets at scaled_R4, Z=.3. Infinite radial tails are integrated into the moments and propagated through the inlet formulas. Six integral fixtures, five original physical stress checks, and an independent angular trace comparison pass. Both analytic core stress jets through axial order2 contain zero.

@@ -3,6 +3,7 @@
 Uses the certified fixed-datum contraction. Norm tails compare the analytic
 solution with its exact Taylor truncation, not any unverified finite adapter.
 """
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -13,9 +14,9 @@ from lei_ren_part1_paper_schedule_endpoint_enclosures import endpoints
 from lei_ren_part1_paper_schedule_endpoint_enclosures_check import encode
 
 
-def run():
+def run(candidate_name='lei_ren_part1_paper_nonlinear_candidate_Lambda48.json', output_name=None):
     base=Path(__file__).parent
-    names=['lei_ren_part1_paper_nonlinear_candidate_Lambda48.json',
+    names=[candidate_name,
            'lei_ren_part1_paper_linear_resolvent_bound.json',
            'lei_ren_part1_paper_complex_pressure_bound.json',
            'lei_ren_part1_paper_analytic_radial_tail.json']
@@ -65,7 +66,7 @@ def run():
                     Phi_tail_upper=phi_norm*factor['tail_per_Xh_norm'],
                     Psi_tail_upper=psi_norm*factor['tail_per_Xh_norm'],**factor))
         report=dict(input_hashes={n:hashlib.sha256((base/n).read_bytes()).hexdigest() for n in names},
-             accepted_schedule_sha256=candidate['accepted_schedule_sha256'],precision=160,Lambda='1e48',
+             accepted_schedule_sha256=candidate['accepted_schedule_sha256'],precision=160,Lambda=candidate['Lambda'],
              Xh_parameter=h,analytic_correction_norm_upper=correction,
              analytic_Phi_Xh_norm_upper=phi_norm,analytic_Psi_Xh_norm_upper=psi_norm,
              real_domain=dict(scaled_R=['0','4.1'],Z=['-1','1']),
@@ -82,10 +83,16 @@ def run():
              original_parameter_errors_enclosed=False,core_to_collar_matching_certified=False,
              global_stress_cone_certified=False,temporal_recursion=False,
              next_dependency='Generate the coupled candidate coefficients and compare them with these exact Taylor tails; restore moments/pressure and coherent collar data')
-        Path(__file__).with_suffix('.json').write_text(json.dumps(encode(report),indent=2)+'\n')
+        output=base/output_name if output_name else Path(__file__).with_suffix('.json')
+        output.write_text(json.dumps(encode(report),indent=2)+'\n')
         print('candidate Phi global lower',mp.nstr(endpoints(phi_lower)[0],22),
               'required radial degree',required,'axis length',required+4,flush=True)
         return report
 
 
-if __name__=='__main__':run()
+if __name__=='__main__':
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--candidate-file',default='lei_ren_part1_paper_nonlinear_candidate_Lambda48.json')
+    parser.add_argument('--output-name')
+    args=parser.parse_args()
+    run(args.candidate_file,args.output_name)
