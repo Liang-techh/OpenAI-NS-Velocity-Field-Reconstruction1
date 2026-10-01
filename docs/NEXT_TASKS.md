@@ -1,3 +1,9 @@
+## 2026-10-01: refined candidate recurrence reached radial order34
+
+A resumable exact coupled gauge driver now uses refined physical pressure, retains F0-squared terms, stores exact interval tuples and refuses changed source/input hashes. Degree4 original/gauge and JSON resume fixtures pass. Symbolic substitution verifies all10+10 fixed-point terms and coefficient uniqueness identifies the analytic candidate's Taylor rows.
+
+Current refined state:34/124 radial orders, Z=.3 only. Finite mixed C3 coefficient uncertainties at this stage are <=5.52e-62 (Phi) and4.35e-15 (Psi); infinite tails still fail the total1e-12 target. Continue this immutable state, then recompute combined budget and restore shared exit/collar/moment data. See docs/RESUMABLE_CANDIDATE_CORE_2026_10_01.md. This radial recurrence is not temporal recursion.
+
 ## 2026-10-01: refine pressure before high-order candidate integration
 
 Same-source directed pressure mass refinement reduced the first Psi coefficient source value budget at Z=.3, scaled_R=4.1 from .88679 to 1.0886e-16. New refined pressure jets preserve all14 stages and all161 coefficient intervals are contained in the old ones. See docs/CANDIDATE_PRESSURE_REFINEMENT_2026_10_01.md. Old input files remain unchanged.

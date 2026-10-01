@@ -1,0 +1,34 @@
+{
+  "input_hashes": {
+    "lei_ren_part1_paper_core_recursion.py": "d63bab2b501f288170e7346fef02bbbb658f49257d480ac0b39d97232bc90ab2",
+    "lei_ren_part1_paper_amplitude_factored_core.py": "bb1253348804880ff1a4d437befe749402e7357399554f8ced551a88cebcd30c",
+    "lei_ren_part1_paper_nonlinear_map_majorant.py": "92d84671e7680af47544c7a9ebaee27132cd1c230ea96a61a179325cf9ff8aff"
+  },
+  "angular_symbolic_difference": "0",
+  "axial_symbolic_difference": "0",
+  "angular_term_count": 10,
+  "axial_term_count": 10,
+  "scaled_equations": [
+    "2(s Phi_ss+2 Phi_s)+chi Phi=epsilon Etheta",
+    "2(s Psi_ss+Psi_s)=B+epsilon Ez"
+  ],
+  "substitutions": [
+    "s=Lambda R",
+    "epsilon=1/Lambda",
+    "F=F0 Phi",
+    "Uz=U0+epsilon Psi",
+    "P=P0+epsilon Pcal",
+    "F0_Z/F0=-Lambda g",
+    "g=L H0/(H0\u00b2+sigma\u00b2)",
+    "M=(integral_0^s Psi)/s",
+    "Pcal=F0\u00b2 integral_0^s Phi\u00b2"
+  ],
+  "beta_definition": "(U0*delta*z - W0 - delta/2)/L",
+  "chi_definition": "H0*g/L",
+  "normalized_equations_exactly_reproduce_core": true,
+  "coefficient_uniqueness": "At radial order n, known coefficients through n determine the next angular/axial rows by division by 2L(n+1)(n+2) and 2L(n+1)\u00b2; pressure follows by integration. L is zero-free on the admitted analytic tube.",
+  "scope": "Exact formal equation identity; analytic existence and directed input inclusion are separate dependencies.",
+  "original_parameter_errors_enclosed": false,
+  "matching_certified": false,
+  "temporal_recursion": false
+}
