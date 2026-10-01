@@ -1,3 +1,9 @@
+## 2026-10-01: Lambda48 candidate completed124/124; normalized C3 target passes
+
+Refined physical pressure and all F0-squared couplings propagated through124 radial orders. Combined finite coefficient uncertainty plus infinite analytic tails: worst mixed C3 error1.84247e-23 (Phi) and7.51074e-13 (Psi), all20 budgets <1e-12 on scaled_R[0,4.1] at Z=.3. Provisional angular exit trace at scaled_R4 is enclosed by +/-1.75612e-63 without resetting/fitting.
+
+See docs/CANDIDATE_CORE_124_COMPLETE_2026_10_01.md. This is not a whole-axis finite field or full NS residual certificate. Next: paper's anchored weighted angular derivative estimate near H0=0, then regenerate consistent exit/collar and functional five-moment data. Temporal recursion remains open.
+
 ## 2026-10-01: refined candidate recurrence reached radial order34
 
 A resumable exact coupled gauge driver now uses refined physical pressure, retains F0-squared terms, stores exact interval tuples and refuses changed source/input hashes. Degree4 original/gauge and JSON resume fixtures pass. Symbolic substitution verifies all10+10 fixed-point terms and coefficient uniqueness identifies the analytic candidate's Taylor rows.
