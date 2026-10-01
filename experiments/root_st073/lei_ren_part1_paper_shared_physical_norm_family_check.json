@@ -1,0 +1,13 @@
+{
+  "log_sum_checks": 3,
+  "reciprocal_mixed_jet_checks": 18,
+  "physical_five_moment_Cstar_power_checks": 27,
+  "moderate_fixture_is_algebra_only": true,
+  "production_family_not_sampled": true,
+  "all_checks_passed": true,
+  "full_NS_validation": false,
+  "input_hashes": {
+    "lei_ren_part1_paper_shared_physical_norm_family_check.py": "c237f3f6d2ac7bd12988d37867af01f81fb082cd9dc73e572b69f27dded64847",
+    "lei_ren_part1_paper_shared_physical_norm_family.py": "4637f872fbd87a1ccee0d1eb2b866b4ab20c39906ceeb7dc5f74660303608832"
+  }
+}

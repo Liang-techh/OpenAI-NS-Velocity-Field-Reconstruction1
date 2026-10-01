@@ -1,3 +1,11 @@
+# F27 checkpoint - 2026-10-01
+
+Generated full physical C3 K upper bounds for the increased-Cstar implicit analytic family, using mixed C4 inputs for frozen stress. Proved K(Cstar)<=Kbar*Cstar and selected logarithmic Cstar/Rref satisfying all9.17 radius restrictions plus Rm>=16. Bound the completed 144-order local core/exit envelopes to the selected family by148 S Cauchy-jet checks and shared-width inclusion; no point-amplitude run or old-receipt relabeling.
+
+Read `docs/PHYSICAL_NORMS_AND_CSTAR_FAMILY_2026_10_01.md` first. Numeric fixed K1, full actual-axis connecting cone, selected-radius corrected outer/heat field, functional five-moment repair, admissible stress/flat remainder and temporal recursion remain unfinished. The conservative implicit parameters are not an ordinary-grid evaluator.
+
+---
+
 # F26 checkpoint - 2026-10-01
 
 Fresh inlet-tolerance core completed 144/144 radial orders; terminal seed acceptance passed. The same-family local comparison/bridge/continuation/switch reached R=110 and its local relaxed direction condition passed; 57 phase/derivative checks passed. New analytic companions prove all frozen-profile (9.14) inputs over Z in [-1,1], Ra..110.

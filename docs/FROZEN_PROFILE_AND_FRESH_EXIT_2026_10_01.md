@@ -4,7 +4,7 @@ Date: 2026-10-01. This checkpoint supersedes the pending computation and frozen-
 
 ## Completed results
 
-The fresh inlet-tolerance core has completed radial order 144/144, with 148 initial axial jets and retained axial depth three. The final resumed batch performed 125 updates in 1994.579 seconds (this is the last batch's compute time, not total project time). Its terminal state SHA256 is:
+The fresh inlet-tolerance core has completed radial order 144/144, with 148 initial axial jets and retained axial depth three. The final resumed batch performed 125 updates. The state records 1994.579 seconds of cumulative recurrence computation over all 144 steps; this is not total project time. Its terminal state SHA256 is:
 
     16477c4ce787db62ce2f28bd345ce011c77da9500a2e6ce4c64370233edbdb9b
 

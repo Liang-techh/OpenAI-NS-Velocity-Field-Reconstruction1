@@ -1,3 +1,11 @@
+# F27 task handoff - 2026-10-01
+
+Done: uniform physical C3 K ledger, mixed C4-to-C3 stress bounds, inverse F/inverse D norms, increased-Cstar radius9.17 selection, and explicit reuse of144-order local finite/exit envelopes. See `docs/PHYSICAL_NORMS_AND_CSTAR_FAMILY_2026_10_01.md` for sources, units and exact scope.
+
+NEXT: construct a fixed Section9 K1 coefficient ledger for comparison C2/C3 fields, C3 moments, q=Ibar/Fbar C_Z^2, actual bridge and both short switches. Constants must be independent of j, profiles, K, Pstar, Lambda and Cstar. A q and P q contain q_Z: their C1 bounds require q C2, so do not promote provisional C1-only operator estimates or arbitrary constants to K1. Then admit the positive shared width and full-axis actual cone; proceed to long reshape, axial restoration and functional defects/repairs, selected-radius corrected outer/heat field, stress/flat remainder and temporal recursion. Preserve immutable prior receipts and their identities.
+
+---
+
 # F26 task handoff - 2026-10-01
 
 Completed: fresh 144-order core, seed check, local new-family exit chain through R110, and whole-axis frozen (9.14) input gates. Do not restart completed recurrence or reuse the old-j exit branch.
