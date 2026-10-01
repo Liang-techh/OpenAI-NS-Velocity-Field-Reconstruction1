@@ -1,3 +1,11 @@
+## 2026-09-30 next collar dependency steps
+
+- [x] Derive six second-width integral coefficients and enclose their common weighted switch integral.
+- [ ] Evaluate directed first/second-width coefficients from the accepted finite-core inlet.
+- [x] Derive dynamic second-width g/u from same-core radial inertial derivatives.
+- [ ] Evaluate those directed inlet derivatives and propagate their errors.
+- [ ] Propagate original source errors and bound pressure/width omitted orders.
+
 ## 2026-09-30 active collar tasks
 
 - [x] Derive and enclose first-width switch primitive and endpoint symmetry.

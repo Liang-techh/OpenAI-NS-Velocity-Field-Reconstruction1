@@ -1,3 +1,7 @@
+## 2026-09-30 analytic second-width integral coefficients
+
+All eight normalized collar second-width endpoint coefficients now have analytic formulas using directed K and same-core radial inertial derivatives. Actual directed inlet evaluation and full nonlinear remainder remain open. See COLLAR_SECOND_WIDTH_INTEGRAL_COEFFICIENTS_2026_09_30.md.
+
 ## 2026-09-30 collar first-width analytic linkage
 
 First-width endpoint quadrature is exact by symmetry; 240 accepted cached coefficient comparisons expose 28 relative discrepancies. Directed analytic replacement coefficients are recorded, without changing the caches. This does not certify second-width/full collar error. See COLLAR_FIRST_WIDTH_ANALYTIC_LINK_2026_09_30.md.

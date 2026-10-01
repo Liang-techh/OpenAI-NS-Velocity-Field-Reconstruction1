@@ -1,0 +1,114 @@
+{
+  "actual_derivative_slots": true,
+  "automatic_first_Z_derivative": true,
+  "automatic_second_Z_derivative": true,
+  "checks": {
+    "context_mismatch_rejected": true,
+    "first_order_dual_operand_rejected": true,
+    "first_order_dual_promotion_rejected": true,
+    "independent_mp_diff_oracle": true,
+    "order_mismatch_rejected": true,
+    "point_nominal_and_perturbation_containment": true,
+    "scalar_orders_required": true,
+    "strict_domain_failures": true,
+    "wide_nominal_and_perturbation_containment": true,
+    "zero_difference_exact": true
+  },
+  "class": "IntervalAxialSecondJet",
+  "directed_interval_arithmetic": true,
+  "domain_failures": {
+    "log": true,
+    "reciprocal": true,
+    "sqrt": true
+  },
+  "limitations": [
+    "Pressure/width products are truncated to the declared rectangle.",
+    "The three axial slots are local actual derivatives; no global ODE remainder is claimed.",
+    "No full core, collar, field, or paper-parameter rerun is performed."
+  ],
+  "maximum_scaled_point_nominal_rounding": "5.43340522924765641234190993071e-141",
+  "maximum_scaled_wide_nominal_rounding": "1.29011010885696216222705024e-15",
+  "operations": [
+    "identity",
+    "add",
+    "subtract",
+    "multiply",
+    "rational",
+    "reciprocal",
+    "positive_power",
+    "negative_power",
+    "exp",
+    "log",
+    "sqrt",
+    "composite"
+  ],
+  "oracle": {
+    "add": {
+      "second": "1.64010647157399628e-142",
+      "tangent": "6.56042588629598511e-142",
+      "value": "0.0"
+    },
+    "composite": {
+      "second": "2.62417035451839404e-141",
+      "tangent": "3.93625553177759107e-141",
+      "value": "5.18528940147044894e-141"
+    },
+    "exp": {
+      "second": "2.86486719096045787e-141",
+      "tangent": "3.62227015283177094e-141",
+      "value": "2.1996278970312763e-141"
+    },
+    "identity": {
+      "second": "1.64010647157399628e-142",
+      "tangent": "6.56042588629598511e-142",
+      "value": "2.32647659203645287e-141"
+    },
+    "log": {
+      "second": "8.20053235786998139e-143",
+      "tangent": "3.28021294314799255e-142",
+      "value": "0.0"
+    },
+    "multiply": {
+      "second": "0.0",
+      "tangent": "0.0",
+      "value": "0.0"
+    },
+    "negative_power": {
+      "second": "3.07519963420124302e-143",
+      "tangent": "8.20053235786998139e-143",
+      "value": "3.28021294314799255e-142"
+    },
+    "positive_power": {
+      "second": "1.89408963238778523e-141",
+      "tangent": "2.2643612216424685e-141",
+      "value": "1.82857177454351836e-141"
+    },
+    "rational": {
+      "second": "0.0",
+      "tangent": "3.28021294314799255e-142",
+      "value": "3.89112721978460856e-141"
+    },
+    "reciprocal": {
+      "second": "2.05013308946749535e-143",
+      "tangent": "3.28021294314799255e-142",
+      "value": "1.31208517725919702e-141"
+    },
+    "sqrt": {
+      "second": "0.0",
+      "tangent": "1.64010647157399628e-142",
+      "value": "0.0"
+    },
+    "subtract": {
+      "second": "1.64010647157399628e-142",
+      "tangent": "6.56042588629598511e-142",
+      "value": "2.62417035451839404e-141"
+    }
+  },
+  "passed": true,
+  "point_containment_checks": 1296,
+  "precision": 140,
+  "pressure_order": 2,
+  "wide_containment_checks": 1296,
+  "width_order": 2,
+  "zero_difference_checks": 324
+}
