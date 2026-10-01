@@ -1,3 +1,7 @@
+## 2026-10-01: actual Lambda120 comparison propagated
+
+PARTIAL C120-T1: completed 124-order core now drives the Section 9.23 comparison ODE at Z=.3 with analytic axial Taylor derivatives and all moment increments, followed by exact frozen comparison propagation to R=110. See CANDIDATE_COMPARISON_JETS_2026_10_01.md. This is the auxiliary comparison, not the actual exit/transition; RK4 and omitted radial errors are not yet certified. Next: consume analytic drivers in the exit chain and regenerate its moments.
+
 ## 2026-10-01: whole-axis analytic core moment envelopes
 
 DONE C120-A3: five core moments have analytic ordinary axial coefficient envelopes through order 3 for all Z in [-1,1], preserving F0/S and the accepted P0. See GLOBAL_CORE_MOMENTS_2026_10_01.md. This is not a finite atlas or terminal closure. Next: actual candidate comparison/transition with analytic driver derivatives; old Z finite differences are unsuitable at Lambda120.
