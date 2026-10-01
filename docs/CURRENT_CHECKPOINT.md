@@ -1,3 +1,11 @@
+# F35 checkpoint - 2026-10-01
+
+The selected-family exact Gamma heat component, flat collar and scaled angular/pressure/swirl-energy tail defects are specified with nonzero formal inverse-radius factors. Nine independent identities, positive deficits and collar endpoint checks pass. Incoming five-moment matching, actual ap selection and whole-outer cone remain unfinished.
+
+Read docs/EXACT_HEAT_COMPONENT_AND_PARAMETER_GATE_2026_10_01.md and shared_exact_heat_component.py/.json with its _check.py/.json (prefix lei_ren_part1_paper_). NEW BLOCKER: current c_epsilon=.01 exceeds the supplied v2 Section7 bound .001. Preserve old source; next create a separate compliant .001 source and quantify pressure/core transfer. This is not an admitted global background or temporal recursion.
+
+---
+
 # F34 checkpoint - 2026-10-01
 
 The actual F32 angular primitive now feeds pulse angular transport, 100-unit flatten, post-flatten power buffer, steep transitions/power and waiting. The same continuous preheat waiting root is enclosed from actual X_t(0)/directed collar integrals; width improves from3 to.00630990 inside the prior Md40 source enclosure. Source P0 hashes remain unchanged. Formal log origins/relative offsets, nonzero pulse-memory cap and positive waiting departure are retained. Seven identities and twenty value/axial-C1 interfaces pass.

@@ -1,3 +1,16 @@
+# F35 priority tasks - 2026-10-01
+
+- [x] Specify exact H_delta Gamma heat component, collar and scaled future angular/pressure/swirl-energy defects; independent nine-identity checker.
+- [ ] Create a SEPARATE c_epsilon=.001 implicit pressure source. Recompute waiting and fourteen pressure-atom envelopes; preserve old .01 sources/hashes.
+- [ ] Prove pressure-source perturbation, including physical Pstar^2 scale and complex derivatives. Establish actual fixed-point/finite-core transfer; do not relabel old coefficients.
+- [ ] Solve coupled angular/pressure corrections with exact heat tails; then select ap from complete future swirl energy.
+- [ ] Match the full five-moment outer/heat field; prove outer cone, admissible lift and flat remainder.
+- [ ] Implement genuine n-dependent temporal coefficient recursion and oscillatory stress cancellation, then independent Cartesian residual validation.
+
+Read docs/EXACT_HEAT_COMPONENT_AND_PARAMETER_GATE_2026_10_01.md. Heat defects are scaled: retain exact/formal S or a*S; exp(-1000) is only an upper bound. Section7 admission remains false. Complete a task only with scope-matched source evidence and a reproducible receipt.
+
+---
+
 # F34 task handoff - 2026-10-01
 
 DONE: actual Rp angular primitive through pulse, exact100-unit flatten, Rrel buffer, steep transitions/power and waiting; formal separated log amplitude origin and inherited X history retained. Same-source continuous preheat waiting root refined to width.00630990 from3; original P0/source hashes preserved. Seven independent identities/twenty interfaces pass. Evidence: shared_outer_angular_candidate.py/.json and shared_outer_angular_candidate_check.py/.json (prefix lei_ren_part1_paper_), docs/SAME_SOURCE_ANGULAR_CANDIDATE_AND_WAITING_2026_10_01.md.
