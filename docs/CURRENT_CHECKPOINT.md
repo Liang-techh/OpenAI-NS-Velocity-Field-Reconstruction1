@@ -1,3 +1,7 @@
+## 2026-09-30: Derived strict-to-relaxed collar marker
+
+Conditional log-sigma inversion gives s_an about 3.16227766016837933e-77 under existing logK=1e152, logc_star=-100. Preserve log(log(R_an/R_a)); coarse stress samples miss the strict collar. Actual h_b=exp(-100-100*1e152), unrelated to primitive enclosure widths. Inlet-direction log(kappa_exit) about -9.9e153 is compatible with the relaxed region. Edge-factored margin helper added. Next: certify global C3 K and c_star/K1, then bound normalized comparison error with its (1-chi) factor and apply regional cone gates. See INNER_COLLAR_CONE_REGIONS_2026_09_30.md. Full cone and time recursion remain open.
+
 ## 2026-09-30: Inner exit collar stress through first width
 
 Shared-pressure and actual five-moment stress coefficients now include leading and first-width shear/inertial/total terms at Z=.3. Leading T=(1-chi)I, S=-chi I; exit leading shear vanishes but first-width shear equals -I. Directed identity checks pass at six locations. See INNER_EXIT_COLLAR_LOW_WIDTH_STRESS_2026_09_30.md. Finite-width cone and directional margins remain open; second-width stress requires third-width velocities. No temporal recursion or full residual completion claimed.
