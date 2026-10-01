@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head is `e0c642ba8ff8d2c476ef3f961864a008d2d475c4`.
+The inspected `main` head before this update is `9c5161ce19eab33678b9c329938c9b5914887d2b`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`aee022540eaeff47309d6530be07cc711b00d2a1`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/aee022540eaeff47309d6530be07cc711b00d2a1)
+[`b712909dcd3d5cea6aa8d69d2fab5a316e94a63b`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b712909dcd3d5cea6aa8d69d2fab5a316e94a63b)
 on `codex/st073-transition-next`, dated September 30. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,57 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-01 batch: accepted-source alignment and analytic collar endpoint
+
+The [accepted-source alignment record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/1e969f2ce3e685b6cc8109e5c1129138cf6a12f2/docs/ACCEPTED_COHERENT_PRESSURE_ALIGNMENT_2026_09_30.md)
+identifies different waiting/collar/exterior masses in the former pressure helper.
+The historical audit's `source_alignment_complete=false` remains a failed
+alignment result for that helper; the old complete budget cannot simply be
+assigned to the accepted snapshot. A fresh adapter records exact agreement with
+every accepted component mass. The eleven unchanged stages transfer only after
+the stored-input identity audit; waiting is reenclosed at its accepted length,
+and collar/exterior are recomputed from accepted normalization data. No accepted
+core, pressure anchor or continuation snapshot is replaced.
+
+The rebuilt accepted-source weighted normalized C2 pressure error upper is
+about3.079264485429091e-12 uniformly on |Z|<=.8. Order24 derivative inputs and
+degree18 finite-core/five-core-moment propagation are rebuilt against that source.
+The [uniform finite-core dependency record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/b712909dcd3d5cea6aa8d69d2fab5a316e94a63b/docs/UNIFORM_PRESSURE_CORE_DEPENDENCY_2026_09_30.md)
+extends the pressure-only comparison across the axial interval, with recorded
+core-exit Uz/Ur error uppers about4.39e-36/4.52e-53 and moment derivatives through
+second Z. These are not total core errors or full five-defect norms. A separate
+sharper flatten coefficient receipt gives value/first/second-Z bounds normalized
+to true Z0 mass, not local derivative-relative accuracy or relative-flat closure;
+the high-order core transfer retains its conservative positive-mass flatten bound.
+
+The [first-width collar record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/b712909dcd3d5cea6aa8d69d2fab5a316e94a63b/docs/COLLAR_FIRST_WIDTH_ANALYTIC_LINK_2026_09_30.md)
+and [second-width coefficient record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/b712909dcd3d5cea6aa8d69d2fab5a316e94a63b/docs/COLLAR_SECOND_WIDTH_INTEGRAL_COEFFICIENTS_2026_09_30.md)
+derive all eight analytic normalized endpoint coefficients using same-core inlet
+radial derivatives and directed second-Z jets. The switch integral K has a
+recorded directed interval width about5.04e-15. Independent resolved-model ODE
+checks contract their second-coefficient discrepancy by31.84 on doubling steps;
+this is not an actual-source calculation or certified RK remainder.
+
+The [same-pressure profile endpoint conversion](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/b712909dcd3d5cea6aa8d69d2fab5a316e94a63b/docs/COLLAR_WIDTH_PHYSICAL_ENDPOINT_2026_09_30.md)
+retains common inlet F, radius and pressure datum, converts both width orders to
+unnormalized profile fields/five moments, and reconstructs Ur/Ur_Z from the same
+axial-flux primitive. Six mixed width/Z fixture checks are recorded. Ur_ZZ still
+needs third moment derivatives. Actual accepted finite-core interval inlet
+evaluation is still pending; the resolved fixture is not an actual-source
+enclosure. This conversion precedes similarity-to-Cartesian space/time conversion
+and does not demonstrate full spatial continuity/divergence or temporal recursion.
+
+Replay the accepted pressure transfer with
+`lei_ren_part1_paper_coherent_pressure_error_transfer.py`; its `accepted_profile()`
+is the canonical helper and the committed exact-input manifest removes any need
+for the optional local audit pickle. The pinned alignment and collar records
+provide the separate fixture commands and receipt scope. No numerical receipt
+in this batch was independently rerun here or its rigorous enclosure independently
+verified. Infinite radial remainder, continuation/RK and omitted width errors,
+complete five-defect C2 bounds, inverse tail, original parameter errors, uniform
+cone, exterior/finite energy and full-field closure remain open. The full NS
+residual/L2 target and time-scale recursion remain unaccepted.
 
 ### 2026-10-01 batch: stored-pressure error budget and finite-core propagation
 
@@ -454,6 +505,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [b712909d research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36800418976)
+completed with the same original13 failed identifiers and423 passed. No additional
+selected-suite regression appears in this batch. This governance suite does not
+certify the accepted-source interval or analytic collar receipts.
 
 The [aee02254 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36795141973)
 completed with the original13 failed identifiers and423 passed. Its selected

@@ -1,7 +1,7 @@
 # Navier–Stokes Candidate Research
 
 > **Progress index updated 2026-10-01:** newer research is available on
-> `codex/st073-transition-next` at [`aee02254`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/aee022540eaeff47309d6530be07cc711b00d2a1).
+> `codex/st073-transition-next` at [`b712909d`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b712909dcd3d5cea6aa8d69d2fab5a316e94a63b).
 > See [current evidence, paper mapping and replay instructions](docs/NS_SUPERVISION_2026-09-30.md).
 > The ST063 tables and September 22 pause record below remain historical curated
 > results. They do not describe the latest branch or establish a live task status.
@@ -9,8 +9,10 @@
 > reconstruction, with unresolved moment/stress matching and no certified global
 > NS field. The latest route now records the supplied Lei/Ren v2 and Duraiswami v1;
 > implementation compatibility and global acceptance remain separate milestones.
-> Stored-parameter preheat approximation error now has a compact C2 budget,
-> with pressure-only propagation into the finite core and its moments.
+> The pressure budget is now rebuilt against the accepted source after a helper
+> mismatch audit, with pressure-only uniform finite-core/moment propagation.
+> Analytic collar endpoint coefficients through second width now convert to profile
+> fields and moments; actual interval inlet evaluation and omitted-order bounds remain open.
 > Full source errors, five-defect norm, relative-flat closure and global checks remain pending.
 > Finite energy, cone and time-scale recursion remain uncertified. Research CI retains 13
 > pre-existing governance failures; see the evidence index for their scope.
