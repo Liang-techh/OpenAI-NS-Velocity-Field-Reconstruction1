@@ -1,3 +1,7 @@
+## Accepted coherent source pressure errors (2026-09-30)
+
+Source mismatch resolved: only waiting/collar/exterior differed. Fresh coherent adapter matches every accepted core snapshot mass. All14 accepted pressure errors and order24 derivatives now feed accepted uniform core/five-core-moment receipts. Canonical helper: coherent_pressure_error_transfer.accepted_profile(). Affine flatten uniform relative-to-Z0-mass value error <=3.93004537174433e-16. See ACCEPTED_COHERENT_PRESSURE_ALIGNMENT_2026_09_30.md. Core remainder, continuation/RK, full five-defect closure and temporal recursion remain open.
+
 ## Uniform pressure-to-finite-core dependency (2026-09-30)
 
 Pressure perturbation now enclosed at all |Z|<=.8 for degree18 finite core boundary R=4/Lambda, including five core moments through second axial derivatives. Uniform Uz error <=4.394371482111663e-36; Ur <=4.516471968020449e-53. Common axis data enclosed analytically without G quadrature. Full core error and full five-defect closure remain open. See UNIFORM_PRESSURE_CORE_DEPENDENCY_2026_09_30.md. Next: tighten relative flatten coefficients, reconcile accepted coherent source if different, and bound core remainder/continuation plus annular contributions.

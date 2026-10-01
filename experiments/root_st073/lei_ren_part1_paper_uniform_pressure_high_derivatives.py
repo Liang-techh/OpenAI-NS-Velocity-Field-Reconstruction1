@@ -30,10 +30,12 @@ def derivative_envelope(ctx, radius, n):
     return math.factorial(n)*total
 
 
-def run(degree=24):
+def run(degree=24,*,fixed_receipt=None,full_receipt=None,output=None):
     iv=MPIntervalContext();iv.dps=300
-    fixed=json.loads(Path(__file__).with_name('lei_ren_part1_paper_uniform_fixed_beta_error.json').read_text())
-    full=json.loads(Path(__file__).with_name('lei_ren_part1_paper_uniform_preheat_error_budget.json').read_text())
+    fixed_path=Path(fixed_receipt) if fixed_receipt else Path(__file__).with_name('lei_ren_part1_paper_uniform_fixed_beta_error.json')
+    fixed=json.loads(fixed_path.read_text())
+    full_path=Path(full_receipt) if full_receipt else Path(__file__).with_name('lei_ren_part1_paper_uniform_preheat_error_budget.json')
+    full=json.loads(full_path.read_text())
     with mp.workdps(330):
         varying=iv.mpf(0);constant=iv.mpf(0)
         for stage,row in fixed['stages'].items():
@@ -51,13 +53,13 @@ def run(degree=24):
             rows.append(dict(order=n,q_power_derivative_envelope=factor,
                 normalized_derivative_error_upper=endpoints(error)[1],
                 normalized_Taylor_coefficient_error_upper=endpoints(error/math.factorial(n))[1]))
-        report=dict(radius=full['radius'],maximum_derivative_order=degree,stage_count=14,
+        report=dict(fixed_pressure_receipt=fixed_path.name,complete_pressure_receipt=full_path.name,radius=full['radius'],maximum_derivative_order=degree,stage_count=14,
             derivatives=rows,normalized_derivative_error_upper_bounds=bounds,
             uniform_Z_error_enclosed=True,all_pressure_stages_included=True,
             flatten_relative_error_enclosed=False,adapter_evaluation_roundoff_enclosed=False,
             original_parameter_errors_enclosed=False,core_RK_error_enclosed=False,
             five_defect_interval_closure=False,temporal_recursion=False)
-        Path(__file__).with_suffix('.json').write_text(json.dumps(encode(report),indent=2)+'\n')
+        (Path(output) if output else Path(__file__).with_suffix('.json')).write_text(json.dumps(encode(report),indent=2)+'\n')
         print('uniform pressure derivatives through',degree,'order3 error',mp.nstr(bounds[3],16),'order24 coefficient error',mp.nstr(bounds[-1]/math.factorial(degree),16))
 
 

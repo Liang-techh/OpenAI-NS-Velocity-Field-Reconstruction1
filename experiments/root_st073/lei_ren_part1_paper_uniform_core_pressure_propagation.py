@@ -27,11 +27,12 @@ def q_coefficients(iv,beta,z,degree):
     return c
 
 
-def run(degree=18,depth=2):
+def run(degree=18,depth=2,*,profile=None,pressure_receipt=None,output=None,profile_origin=None):
     precision=473;iv=MPIntervalContext();iv.dps=precision;length=degree+depth+1
-    receipt=json.loads(Path(__file__).with_name('lei_ren_part1_paper_uniform_pressure_high_derivatives.json').read_text())
+    receipt_path=Path(pressure_receipt) if pressure_receipt else Path(__file__).with_name('lei_ren_part1_paper_uniform_pressure_high_derivatives.json')
+    receipt=json.loads(receipt_path.read_text())
     assert length-1<=receipt['maximum_derivative_order']
-    profile=source_profile();datum=ContinuousPreheatPressure(profile,quadrature_order=192)
+    profile=source_profile() if profile is None else profile;datum=ContinuousPreheatPressure(profile,quadrature_order=192)
     with mp.workdps(precision):
         j=mp.mpf('1e-14');lam=mp.mpf('1e36');logC=mp.mpf('5e151');delta=mp.mpf('1e-200')
         a=iv.mpf(receipt['radius']);z=iv.mpf([-endpoints(a)[1],endpoints(a)[1]])
@@ -68,14 +69,14 @@ def run(degree=18,depth=2):
             return dict(error_interval=value.difference,absolute_error_upper=max(abs(lo),abs(hi)))
         field_errors={name:error(fields[name]) for name in ('F','F_Z','F_ZZ','Uz','Uz_Z','Uz_ZZ','Ur','Ur_Z','P','P_Z','P_ZZ')}
         moment_errors={name:dict(value=error(fields['moments'][name]),first_Z=error(fields['moments_Z'][name]),second_Z=error(second[name])) for name in second}
-        out=dict(radius=receipt['radius'],radial_degree=degree,Z_jet_depth=depth,precision=precision,
+        out=dict(pressure_error_receipt=receipt_path.name,profile_origin=profile_origin or 'source_profile helper',radius=receipt['radius'],radial_degree=degree,Z_jet_depth=depth,precision=precision,
             R='4/Lambda',field_pressure_error_bounds=field_errors,five_core_moment_pressure_error_bounds=moment_errors,
             axis_G_absolute_upper=axis['G_absolute_upper'],axis_F0_interval=axis['F0_interval'],
             uniform_pressure_perturbation_enclosed=True,uniform_axis_jets_enclosed=True,
             shared_axis_data_difference_exactly_zero=True,parameter_scope='stored MP axis constants and stored schedule pressure datum',
             original_parameter_errors_enclosed=False,radial_series_remainder_enclosed=False,
             core_RK_error_enclosed=False,full_five_defect_interval_closure=False,temporal_recursion=False)
-        Path(__file__).with_suffix('.json').write_text(json.dumps(encode(out),indent=2)+'\n')
+        (Path(output) if output else Path(__file__).with_suffix('.json')).write_text(json.dumps(encode(out),indent=2)+'\n')
         for name in ('Uz','Uz_Z','Uz_ZZ','Ur','Ur_Z'):
             print(name,'uniform pressure-driven finite core error',mp.nstr(field_errors[name]['absolute_error_upper'],16),flush=True)
 
