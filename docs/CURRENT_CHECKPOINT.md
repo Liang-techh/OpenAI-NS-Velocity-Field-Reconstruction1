@@ -1,3 +1,11 @@
+# F34 checkpoint - 2026-10-01
+
+The actual F32 angular primitive now feeds pulse angular transport, 100-unit flatten, post-flatten power buffer, steep transitions/power and waiting. The same continuous preheat waiting root is enclosed from actual X_t(0)/directed collar integrals; width improves from3 to.00630990 inside the prior Md40 source enclosure. Source P0 hashes remain unchanged. Formal log origins/relative offsets, nonzero pulse-memory cap and positive waiting departure are retained. Seven identities and twenty value/axial-C1 interfaces pass.
+
+Read docs/SAME_SOURCE_ANGULAR_CANDIDATE_AND_WAITING_2026_10_01.md and shared_outer_angular_candidate.py/.json plus companion_check.py/.json (prefix lei_ren_part1_paper_). This is angular candidate data, not a full post-Rv five-moment velocity field. NEXT: selected-radius H_delta heat factor/collar/exterior and its moment/pressure/energy data; actual angular corrections; full future-energy target and ap selection; coupled pulse/matched background. Heat/global cone/admissible lift/flat remainder/temporal recursion remain unfinished.
+
+---
+
 # F33 checkpoint - 2026-10-01
 
 Actual F32 incoming moments now feed the Section7.31 trial linear c1(a,Z),c2(a,Z) map on Z in [-1,1], a in [.9,1.2]. An exact divided-difference matrix has determinant in[-.271848,-.269975], avoiding subtraction of near-identical rows. Common saddle log scaling preserves nonzero tiny coefficients and positive pulse tails; Kpulse in[.2443923749493,.2457111997123]. Twelve independent identities and five source/inverse examples pass.

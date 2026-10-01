@@ -1,3 +1,17 @@
+# F34 task handoff - 2026-10-01
+
+DONE: actual Rp angular primitive through pulse, exact100-unit flatten, Rrel buffer, steep transitions/power and waiting; formal separated log amplitude origin and inherited X history retained. Same-source continuous preheat waiting root refined to width.00630990 from3; original P0/source hashes preserved. Seven independent identities/twenty interfaces pass. Evidence: shared_outer_angular_candidate.py/.json and shared_outer_angular_candidate_check.py/.json (prefix lei_ren_part1_paper_), docs/SAME_SOURCE_ANGULAR_CANDIDATE_AND_WAITING_2026_10_01.md.
+
+NEXT, ordered:
+1. Implement selected-radius exact heat H_delta using the positive Gamma integral or finite directed remainder, not a convergent Taylor series atzero. Keep its positive deficit1-H_delta separate. Use the actual angular waiting amplitude/coordinate and delta to define c_infinity, heat collar and exact exterior; recompute angular/pressure/energy moment scales at the chosen Rref.
+2. Enclose all three future heat/angular moment defects and solve actual angular(d1,d2) pressure restoration after the already fixed source waiting root. Carry all tiny positive late atoms and original analytic P0; no fitted pressure tail or old heat-radius coefficients.
+3. Feed the entire corrected swirl-energy tail into F33 Section7.34, select positive ap and compose the trial c1(a,Z),c2(a,Z) map. Then install actual pulse partial moments, exact Mz=Mtheta_z=0 atRv and positive energy tail target, complete inner/outer/heat closure.
+4. Full interface smoothness/finite energy/cone; global stress lift/flat remainder; n-dependent temporal coefficient recurrence and divergence-preserving smooth sum; oscillatory correction and independent Cartesian residual.
+
+Angular candidate X data is not complete post-Rv five-moment field data. Formal huge amplitude terms must remain segmented; positive magnitude caps cannot be zeroed. Preserve unrelated work and false broad-completion flags.
+
+---
+
 # F33 task handoff - 2026-10-01
 
 DONE: actual F32-source trial two-linear-moment correction map; exact divided-difference inverse; shared pulse saddle with directed positive tails; formal nonzero coefficient scales; fixed Kpulse bounds. Evidence: shared_outer_pulse_map.py/.json and shared_outer_pulse_map_check.py/.json (prefix lei_ren_part1_paper_), twelve independent identities. Details: docs/SAME_FAMILY_TRIAL_PULSE_MAP_2026_10_01.md.
