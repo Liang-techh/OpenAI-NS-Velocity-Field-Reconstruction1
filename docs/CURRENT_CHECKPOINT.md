@@ -1,3 +1,7 @@
+## 2026-09-30 collar first-width analytic linkage
+
+First-width endpoint quadrature is exact by symmetry; 240 accepted cached coefficient comparisons expose 28 relative discrepancies. Directed analytic replacement coefficients are recorded, without changing the caches. This does not certify second-width/full collar error. See COLLAR_FIRST_WIDTH_ANALYTIC_LINK_2026_09_30.md.
+
 ## Accepted coherent source pressure errors (2026-09-30)
 
 Source mismatch resolved: only waiting/collar/exterior differed. Fresh coherent adapter matches every accepted core snapshot mass. All14 accepted pressure errors and order24 derivatives now feed accepted uniform core/five-core-moment receipts. Canonical helper: coherent_pressure_error_transfer.accepted_profile(). Affine flatten uniform relative-to-Z0-mass value error <=3.93004537174433e-16. See ACCEPTED_COHERENT_PRESSURE_ALIGNMENT_2026_09_30.md. Core remainder, continuation/RK, full five-defect closure and temporal recursion remain open.

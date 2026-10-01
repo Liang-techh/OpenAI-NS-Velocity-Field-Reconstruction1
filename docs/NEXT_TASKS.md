@@ -1,3 +1,11 @@
+## 2026-09-30 active collar tasks
+
+- [x] Derive and enclose first-width switch primitive and endpoint symmetry.
+- [x] Audit 240 accepted first-width pressure/Z atoms; preserve failing comparisons and analytic replacements.
+- [ ] Diagnose and enclose stored high-pressure u coefficient discrepancies.
+- [ ] Integrate directed pressure/width and axial arithmetic into collar equations.
+- [ ] Bound second-width integration and full collar truncation/source errors.
+
 ## Accepted coherent source pressure errors (2026-09-30)
 
 Source mismatch resolved: only waiting/collar/exterior differed. Fresh coherent adapter matches every accepted core snapshot mass. All14 accepted pressure errors and order24 derivatives now feed accepted uniform core/five-core-moment receipts. Canonical helper: coherent_pressure_error_transfer.accepted_profile(). Affine flatten uniform relative-to-Z0-mass value error <=3.93004537174433e-16. See ACCEPTED_COHERENT_PRESSURE_ALIGNMENT_2026_09_30.md. Core remainder, continuation/RK, full five-defect closure and temporal recursion remain open.
