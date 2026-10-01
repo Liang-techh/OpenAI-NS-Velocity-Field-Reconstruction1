@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "fixture_only": true,
+  "independent_quadrature_coefficients_contained": 16,
+  "cutoff_convention_checks": 7,
+  "zero_axial_shear_cancellation_fixture": true,
+  "switch_ODE_independent_numerical_validation": false,
+  "input_hashes": {
+    "lei_ren_part1_paper_interval_exit_switch_enclosure.py": "72249847c48ba12cac19062439a3d3afc16ea933a7a91f1f7aff675b61125ce0",
+    "lei_ren_part1_paper_interval_exit_switch_enclosure_check.py": "7e7928226988f45e56b69e87d7f92c5d1c71a530de4c6ef6d11113e080d64897"
+  }
+}

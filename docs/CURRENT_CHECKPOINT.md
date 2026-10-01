@@ -1,3 +1,13 @@
+## PARTIAL C120-F9 — exit cone atlas and controlled switch through profile R=110
+
+All 256 complete logarithmic radial cells from the actual exit endpoint through R=100 certify the strong kappa>2 cone on axial family [0.49,0.51]. Coverage, negative angular shear upper bounds and positive margin lower bounds are verified. This resolves the earlier single-box post-exit non-certificate; it is not a whole-axis or complete-annulus claim.
+
+The actual fields and moments also extend through the two controlled R100 switches and exact constant-power tail to R110. Of32 switch cells,31 certify cone conditions; only the last first-switch cell x in [0.0046875,0.005] remains unresolved. The second switch has identically zero axial shear: cancelling repeated shear factors yields kappa=a and relaxed margin tt-(2-a). The full final constant-power range and R110 terminal packet certify only the relaxed kappa<=2 cone, not the strong cone.
+
+Evidence: docs/CONTROLLED_EXIT_RADIAL_CONE_ATLAS_2026_10_01.md, docs/CONTROLLED_EXIT_SWITCH_R110_2026_10_01.md and their interval_exit_radial_cone_atlas / interval_exit_switch_enclosure receipts. Independent constant-power quadrature covers16 field/moment axial coefficients; seven cutoff convention checks and an extreme-shear cancellation fixture pass. Actual switch ODE errors use directed cell-range integrals; no midpoint projection or pressure reset.
+
+Next: resolve the remaining first-switch cone interval using subdivision/correlated algebra; compute functional terminal defects and five-moment repair from this fresh R110 family; carry the accepted analytic pressure into flatten/collar/heat exterior; implement the paper's relaxed-to-strong shear modulation. Ur_Z, whole-axis coverage, parameter/contraction estimates, genuine n-dependent temporal recursion, flat remainder, oscillatory corrections and independent full NS residual remain incomplete.
+
 ## PARTIAL C120-F8 — controlled actual exit through profile R=100
 
 The fresh [0.49,0.51] axial family now has controlled actual-exit field and moment continuation from the switched endpoint through profile R=100. Integration uses whole-path comparison driver envelopes, with endpoint drivers reserved for terminal derivatives. C2 comparison moments retain C1 drivers; actual physical F, Uz, P and moments retain C1, and Ur value is recovered from the same data. The prescribed tiny nonzero shear is retained without subtracting large derivatives.
