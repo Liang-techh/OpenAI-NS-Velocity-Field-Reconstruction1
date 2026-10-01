@@ -29,6 +29,23 @@ def factorial_series_bound(ctx,K,relative_tail='1e-100'):
     raise RuntimeError('Factorial inverse summation did not close')
 
 
+def bessel_model_norm_bound(ctx,coefficient_modulus,weight):
+    """Bound the model norm directly, avoiding an operator inverse bound.
+
+For each n Cauchy bounds its coefficient by chi_mod^n/(2^n n!(n+1)!).
+The axial weight divided by binomial(n+m,m) is no larger than weight.
+The positive radial sequence decreases forever after its ratio falls below1.
+"""
+    K=10*coefficient_modulus;term=ctx.mpf(1);upper=endpoints(term)[1];n=0
+    while n<10000:
+        ratio=K*(n+2)/(n+1)**3
+        if endpoints(ratio)[1]<=1:
+            return dict(model_Xh_norm_upper=ctx.mpf([0,upper])*weight,
+                        last_checked_radial_order=n,subsequent_weighted_coefficient_ratio_upper=ratio)
+        n+=1;term*=ratio;upper=max(upper,endpoints(term)[1])
+    raise RuntimeError('Model coefficient maximum did not close')
+
+
 def run():
     path=Path(__file__).with_name('lei_ren_part1_paper_analytic_radial_tail.json')
     source=json.loads(path.read_text());ctx=MPIntervalContext();ctx.dps=160
@@ -53,6 +70,7 @@ def run():
         multiplier=256*(chi_norm+beta_norm/500)
         factorial_constant=40*multiplier
         bound=factorial_series_bound(ctx,factorial_constant)
+        direct_model=bessel_model_norm_bound(ctx,restore('chi_modulus_upper'),weight)
         report=dict(input_receipt=path.name,input_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
              precision=160,Xh_parameter=h,Cauchy_disk_radius=eta/2,
              Cauchy_weight_supremum_upper=weight,product_constant=256,
@@ -60,7 +78,9 @@ def run():
              uniform_epsilon_range=['0','1/500'],multiplier_norm_upper=multiplier,
              factorial_inverse_constant=factorial_constant,**bound,
              resolvent_norm_log_upper=ctx.log(bound['resolvent_norm_upper']),
-             Phi_model_Xh_norm_upper=bound['resolvent_norm_upper'],
+             Phi_model_Xh_norm_upper=direct_model['model_Xh_norm_upper'],
+             direct_Bessel_model_norm=direct_model,
+             Phi_model_inverse_based_alternative_upper=bound['resolvent_norm_upper'],
              analytic_linear_inverse_bound_certified=True,
              bound_is_conservative_not_actual_operator_norm=True,
              analytic_pressure_modulus_certified=False,Psi_model_Xh_norm_certified=False,

@@ -1,3 +1,7 @@
+## 2026-09-30: Accepted complex pressure and linear model norms
+
+All14 true radial mass stages now bound accepted analytic P0 on the common complex capsule, physical modulus<=4.7937965388e12. Direct differentiation of the same integral avoids the eta^-1 Cauchy loss. Derived g/L gives axial linear-model norm<=1.9175186155e15; direct Bessel coefficients sharpen angular-model norm to<=47312.40216952. No pressure datum replacement, finite real-error-to-complex substitution, or nonlinear contraction claim. Next: explicit size/Lipschitz majorants for every paper(8.50) nonlinear term. Original parameter/source errors and full matching remain open. See ANALYTIC_CORE_TAIL_DEPENDENCIES_2026_09_30.md.
+
 ## 2026-09-30: Explicit analytic linear inverse bound
 
 Implemented product constant256, Cauchy fixed-data multiplier bounds, and full factorial resolvent series with a directed infinite-tail enclosure. Log operator-norm upper bound is390.6324362373922; independent modified-Bessel containment passes. This conservative upper bound is neither an actual norm nor evidence of divergence. Angular linear-model analytic norm is bounded; axial model needs accepted-pressure complex modulus. Nonlinear Kstar and actual Lambda contraction remain open. See ANALYTIC_CORE_TAIL_DEPENDENCIES_2026_09_30.md.

@@ -69,7 +69,22 @@ The driver sums through n=447 and encloses every remaining term with a decreasin
 
 This is a conservative upper bound, not the measured operator norm or a lower bound showing failure. The corresponding normalized angular linear model norm is bounded, but the axial model still needs the analytic pressure multiplier g/L. No numerical nonlinear Kstar or successful contraction for Lambda1e36 follows from this result.
 
+## Accepted analytic pressure and both linear model norms
+
+`lei_ren_part1_paper_complex_pressure_bound.py` now bounds the full accepted pressure directly from positive true radial masses. It uses all13 `true_mass_interval` records in the coherent fixed-beta receipt and the separate `flatten_true_mass_upper` for the14th stage. The accepted schedule hashes agree. Finite quadrature masses and finite real derivative errors are not used as complex error bounds.
+
+Each fixed contribution is a positive mass times q^(-beta), beta=0 or2. The flatten stage is a positive mixture with beta in[0,2]. The capsule q modulus lower bound therefore bounds the entire integral by its mass times q_lower^-2. Restoring Pstar^2=exp(28) gives a physical complex pressure modulus upper of approximately4.793796538744645e12.
+
+Differentiating this same mass representation gives |P0'|<=4(1+eta)|P0|_majorant/q_lower. This is much sharper than the generic Cauchy alternative2|P0|_majorant/eta. It preserves the original datum and all true pressure stages. The g/L multiplier from(8.16) is consequently bounded on the half capsule; applying Cauchy there bounds its full X_h norm. The axial linear model Psi0=-(g/(2L)) scaled_R has norm at most approximately1.917518615499938e15.
+
+The angular model norm is also sharpened directly from its Bessel coefficients. Cauchy bounds each coefficient by chi_modulus^n/[2^n n!(n+1)!]; the full axial square-weight factor is bounded as above, including outward rounding. The radial maximum of (10 chi_modulus)^n(n+1)^2/[n!(n+1)!] gives ||Phi0||_h<=47312.40216951903 approximately. This replaces the much larger inverse-based model estimate, while retaining the existing resolvent upper bound for use on nonlinear terms.
+
+Independent checks cover the direct radial maximum through199 and100 complex q-power cases. These checks support the implementations; the stated whole-domain bounds follow from the mass representation and Cauchy inequalities, not sampling.
+
+The new pressure claim remains relative to the accepted stored schedule. Original parameter derivation, adapter roundoff, full core source error, five-moment closure, nonlinear Kstar, and actual Lambda contraction are not certified. Next: implement the size and Lipschitz majorants for every term in(8.50) on the paper's coupled ball, keeping pressure and swirl contributions.
+
 Reproduce from the repository root:
 
     python experiments/root_st073/lei_ren_part1_paper_analytic_radial_tail.py
     python experiments/root_st073/lei_ren_part1_paper_linear_resolvent_bound.py
+    python experiments/root_st073/lei_ren_part1_paper_complex_pressure_bound.py
