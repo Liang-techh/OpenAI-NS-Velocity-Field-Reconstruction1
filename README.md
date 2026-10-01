@@ -1,7 +1,7 @@
 # Navier–Stokes Candidate Research
 
 > **Progress index updated 2026-10-01:** newer research is available on
-> `codex/st073-transition-next` at [`a86ab761`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a86ab76188abc19eb0c923819c5d3eb8a4da11c1).
+> `codex/st073-transition-next` at [`77b14f77`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/77b14f77899238254ca983d650bbebf8cbb02c6e).
 > See [current evidence, paper mapping and replay instructions](docs/NS_SUPERVISION_2026-09-30.md).
 > The ST063 tables and September 22 pause record below remain historical curated
 > results. They do not describe the latest branch or establish a live task status.
@@ -11,10 +11,10 @@
 > implementation compatibility and global acceptance remain separate milestones.
 > The pressure budget is now rebuilt against the accepted source after a helper
 > mismatch audit, with pressure-only uniform finite-core/moment propagation.
-> A separate Lambda=1e48 analytic candidate now has conditional contraction,
-> positivity and normalized Taylor-tail bounds, plus pressure jets at Z=.3 through
-> order160. These do not certify the old Lambda=1e36 numerical field or its matching.
-> Candidate degree124 coefficient generation/error propagation and rebuilt matching,
+> The separate Lambda=1e48 candidate now completes degree124 at Z=.3: all20
+> normalized mixed-C3 coefficient-plus-tail budgets pass the internal 1e-12 target.
+> This does not certify physical errors, the whole-axis numerical field or the old
+> Lambda=1e36 field. Whole-axis radial derivative sign, rebuilt candidate matching,
 > full K and finite-width regional cone certification remain open.
 > Full source errors, five-defect norm, relative-flat closure and global checks remain pending.
 > Finite energy, cone and time-scale recursion remain uncertified. Research CI retains 13

@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `a71e8b4a51185b9500aa124ad4461d59b244218d`.
+The inspected `main` head before this update is `5350fb9b5f8c24d06ef13975cffdf4a3cf01331d`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`a86ab76188abc19eb0c923819c5d3eb8a4da11c1`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a86ab76188abc19eb0c923819c5d3eb8a4da11c1)
+[`77b14f77899238254ca983d650bbebf8cbb02c6e`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/77b14f77899238254ca983d650bbebf8cbb02c6e)
 on `codex/st073-transition-next`, observed October 1. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,58 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-01 batch: degree124 candidate coefficient-plus-tail budget
+
+The [same-source pressure refinement record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/f04cb9260407b1d1b72fa052e745993160f9a1ab/docs/CANDIDATE_PRESSURE_REFINEMENT_2026_10_01.md)
+narrows the slope_transition_ref true mass enclosure by directed integration,
+preserving every other stage and the accepted schedule. All161 refined pressure
+Taylor intervals are reported contained in the original intervals. The earlier
+coarse mass enclosure alone gave a Psi source uncertainty budget about.887;
+this was an upper uncertainty, not a measured physical error. Refined inputs
+use a separate resumable state, rather than relabeling old coarse rows.
+
+The [77b14f77 completion record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/77b14f77899238254ca983d650bbebf8cbb02c6e/docs/CANDIDATE_CORE_124_COMPLETE_2026_10_01.md)
+and [original combined receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/77b14f77899238254ca983d650bbebf8cbb02c6e/experiments/root_st073/lei_ren_part1_paper_candidate_combined_core_budget.json)
+record all124 radial steps at Lambda=1e48,260-digit directed arithmetic and128
+initial axial Taylor coefficients; the final row retains four coefficients.
+All20 component/derivative budgets through total mixed order3 pass the internal
+normalized1e-12 target. Largest midpoint error uppers are about1.8424663e-23
+for Phi=F/F0 and7.5107312e-13 for Psi=Lambda(Uz-U0). Each adds propagated finite
+coefficient interval uncertainty to the analytic infinite radial Taylor tail.
+The scope is all scaled_R in[0,4.1] **at axial Taylor center Z=.3 only**; axial
+derivative slots do not create an interval of axial centers.
+
+The [combined-budget implementation](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/77b14f77899238254ca983d650bbebf8cbb02c6e/experiments/root_st073/lei_ren_part1_paper_candidate_combined_core_budget.py)
+checks nested input/driver hashes, accepted schedule and Lambda equality, and
+the exact gauge-to-fixed-point equation identity. The
+[coefficient-identification argument](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/057b4fbbba0e500dd976e341f48c2904dd4a4b07/docs/RESUMABLE_CANDIDATE_CORE_2026_10_01.md)
+retains all10 angular/10 axial terms; nonzero recurrence divisors determine the
+analytic Taylor coefficients uniquely. Accordingly the receipt marks the identity
+audited and the accepted-datum analytic error enclosed, rather than leaving an
+unresolved identity prerequisite. This remains reliant on the accepted-datum
+analytic existence/input bounds; this review is not an independent proof or
+numerical rerun. Physical-coordinate errors and original parameter errors are
+explicitly unenclosed. Factors Lambda^i, F0 derivatives and epsilon must be
+propagated before reporting dimensional velocity/momentum errors.
+
+At provisional exit scaled_R=4,Z=.3, the [final degree124 trace receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/77b14f77899238254ca983d650bbebf8cbb02c6e/experiments/root_st073/lei_ren_part1_paper_candidate_inlet_trace.json)
+and completion report record angular
+Ttheta/F approximately[-1.75612e-63,1.75612e-63] with overlapping integrated
+equation evaluations. This retained-field containment does not prove exact
+matching. The older angular-inlet note still labels its displayed value order56;
+the completion report and final receipt scope take precedence, without treating
+repeated display digits as new matching evidence. Whole-axis radial derivative
+sign near the H0 root remains open despite analytic value positivity. Candidate
+exit/collar/pressure/five-moment data must be rebuilt and terminal identities
+verified as functions of Z; Lambda36 matching is not transferable.
+
+Replay commands are the pinned completion record's combined-core-budget and
+inlet-trace scripts using the committed refined state. No receipt was independently
+rerun here. Whole-axis finite-field error, original parameters, candidate matching,
+full K/cone, heat exterior/finite energy, true temporal recursion, oscillatory
+correction and complete Cartesian NS residual/L2 remain unaccepted. Only the
+earlier pending degree124 generation/local normalized budget is superseded.
 
 ### 2026-10-01 batch: separate Lambda48 analytic candidate and pressure jets
 
@@ -671,6 +723,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [77b14f77 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36815270231)
+was inspected from actual job logs: original13 failed identifiers/423 passed,
+four smoke/slice jobs pass, full historical suite skipped. No selected governance
+regression is added; this CI does not certify the combined analytic error budgets.
 
 The requested [ee13d9bd run36812576440](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36812576440)
 and latest [a86ab761 run36812765620](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36812765620)
