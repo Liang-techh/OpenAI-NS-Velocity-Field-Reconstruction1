@@ -1,3 +1,11 @@
+# F33 checkpoint - 2026-10-01
+
+Actual F32 incoming moments now feed the Section7.31 trial linear c1(a,Z),c2(a,Z) map on Z in [-1,1], a in [.9,1.2]. An exact divided-difference matrix has determinant in[-.271848,-.269975], avoiding subtraction of near-identical rows. Common saddle log scaling preserves nonzero tiny coefficients and positive pulse tails; Kpulse in[.2443923749493,.2457111997123]. Twelve independent identities and five source/inverse examples pass.
+
+Read docs/SAME_FAMILY_TRIAL_PULSE_MAP_2026_10_01.md and shared_outer_pulse_map.py/.json plus shared_outer_pulse_map_check.py/.json (prefix lei_ren_part1_paper_). Actual ap remains pending: waiting tau -> angular(d1,d2) -> axial(ap,c1,c2); the future corrected swirl/heat energy is required. NEXT: later angular candidate/heat data and its angular/pressure corrections, then evaluate the energy root and install the O.4 field. Complete outer/heat/cone/stress/temporal flags remain false.
+
+---
+
 # F32 checkpoint - 2026-10-01
 
 Same-family O.3 slope-mu transition and Tw-long pure-power buffer now continue the F31 candidate through the pulse inlet Rp. All five local normalized primitives, unchanged P0 and retained axial/mixed histories are transported; relative offsets are exact, tiny-mu decay integrals avoid cancellation. Ten independent cumulative ODE identities, eight value/C1 interfaces, whole-axis C1 calls and pulse-inlet nonzero axial history pass.

@@ -1,3 +1,17 @@
+# F33 task handoff - 2026-10-01
+
+DONE: actual F32-source trial two-linear-moment correction map; exact divided-difference inverse; shared pulse saddle with directed positive tails; formal nonzero coefficient scales; fixed Kpulse bounds. Evidence: shared_outer_pulse_map.py/.json and shared_outer_pulse_map_check.py/.json (prefix lei_ren_part1_paper_), twelve independent identities. Details: docs/SAME_FAMILY_TRIAL_PULSE_MAP_2026_10_01.md.
+
+NEXT:
+1. Build actual later angular candidate through flatten, Rrel, steep transitions and waiting, preserving exact 100-unit flatten and separated stage coordinates. Derive the same continuous preheat waiting root more sharply from actual angular moment history, without changing the source pressure definition.
+2. Build the selected-radius exact H_delta heat factor/collar/exterior and angular/pressure/energy tail data. H_delta has a zero-radius Taylor series at zero; use its positive Gamma integral or finite directed remainder, retain 1-H_delta explicitly, never set H=1 as an exact heat field.
+3. Determine actual angular(d1,d2) using exact heat moment/pressure defects, then insert the entire corrected swirl-energy tail into Section7.34 and select positive ap. Trial linear c_j map is ready but full O.4 closure remains pending. AtRv energy target is positive one-half future swirl tail; only at infinity Mztheta=0.
+4. Install coupled pulse/partial primitives and all inner-outer-heat functional matches; cone and finite energy; global admissible stress/flat remainder; n-dependent temporal recursion and oscillatory/full Cartesian residual reconstruction.
+
+Preserve unrelated work. Formal coefficient exponential factors, sign-indefinite incoming functions and positive magnitude caps must not become zero masks. All broad completion flags remain false.
+
+---
+
 # F32 task handoff - 2026-10-01
 
 DONE: same-family O.3 d-to-w slope-mu and w-to-p pure-power buffer reaching Rp; all five normalized cumulative primitives/P0 retained. Ten independent moment ODE identities and eight interfaces pass, as do whole-axis C1 calls and nonzero axial history after Uz=0. Evidence: shared_outer_buffer.py/.json and shared_outer_buffer_check.py/.json (prefix lei_ren_part1_paper_), docs/SAME_FAMILY_OUTER_BUFFER_2026_10_01.md. F30 and F31 remain the source-bound inlet chain.
