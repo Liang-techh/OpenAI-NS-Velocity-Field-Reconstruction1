@@ -167,11 +167,52 @@ class IntervalDifference:
                 base = base * base
         return result
 
+    def exp(self):
+        """Return the paired enclosure of ``exp(nominal + difference)``.
+
+        The perturbation is evaluated with ``expm1`` so a zero difference
+        remains exactly zero even when the nominal interval is wide.
+        """
+
+        nominal = self.ctx.exp(self.nominal)
+        difference = nominal * self.ctx.expm1(self.difference)
+        return IntervalDifference(self.ctx, nominal, difference)
+
+    def log(self):
+        """Return the paired enclosure of ``log(nominal + difference)``."""
+
+        if not _strictly_positive(self.nominal) or not _strictly_positive(self.value):
+            raise ValueError(
+                "IntervalDifference log requires positive nominal and total"
+            )
+        nominal = self.ctx.log(self.nominal)
+        difference = self.ctx.log1p(self.difference / self.nominal)
+        return IntervalDifference(self.ctx, nominal, difference)
+
+    def sqrt(self):
+        """Return the paired enclosure of ``sqrt(nominal + difference)``."""
+
+        if not _strictly_positive(self.nominal) or not _strictly_positive(self.value):
+            raise ValueError(
+                "IntervalDifference sqrt requires positive nominal and total"
+            )
+        nominal = self.ctx.sqrt(self.nominal)
+        actual_root = self.ctx.sqrt(self.value)
+        difference = self.difference / (actual_root + nominal)
+        return IntervalDifference(self.ctx, nominal, difference)
+
     def __repr__(self):
         return (
             "IntervalDifference(" f"nominal={self.nominal!r}, "
             f"difference={self.difference!r})"
         )
+
+
+def _strictly_positive(value):
+    """Whether an interval has a strictly positive lower endpoint."""
+
+    lower, _ = _endpoints(value)
+    return lower > 0
 
 
 def make_converter(ctx):

@@ -1,0 +1,25 @@
+{
+  "all_checks_passed": true,
+  "directed_interval_arithmetic": true,
+  "coefficient_checks": 81,
+  "perturbation_checks": 243,
+  "wide_nominal_point_checks": 135,
+  "operation_names": [
+    "add_sub",
+    "multiply",
+    "divide",
+    "reciprocal",
+    "power",
+    "exp",
+    "log",
+    "sqrt",
+    "mixed"
+  ],
+  "mixed_atoms_preserved": true,
+  "tiny_pressure_width_atoms_preserved": true,
+  "nonconstant_constant_atom_removed_structurally": true,
+  "zero_difference_exact": true,
+  "strict_positive_domain_rejections": 2,
+  "rectangular_truncation": true,
+  "source_certificate": false
+}
