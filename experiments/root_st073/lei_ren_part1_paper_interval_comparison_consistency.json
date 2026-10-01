@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "all_checks_passed": true,
+  "captured_state_file": "lei_ren_part1_paper_candidate_interval_core_Z049_Z051_state.json",
+  "captured_state_sha256": "2cf064d95c53d64c15e90028c9a492aeb1e95af2449ba76c886c3b3c453cdf42",
+  "captured_completed_radial_order": 38,
+  "target_radial_degree": 124,
+  "captured_center_family": [
+    ".49",
+    ".51"
+  ],
+  "initial_axis_length": 128,
+  "scalar_comparison_center": ".5",
+  "scalar_comparison_required_depth": 89,
+  "scalar_comparison_axis_length": 128,
+  "accepted_schedule_sha256": "736bbadbde99bc2f3d098d279d61ef4cb64418368263a4aba7b275e7f8892de4",
+  "pressure_identity": {
+    "relation_coefficient_count": 4251,
+    "overlap_coefficient_count": 4251,
+    "maximum_nonoverlap_gap": "[0.0, 0.0]",
+    "P0_fixed_identity_checked": true,
+    "physical_pressure_row_identity_checked": true
+  },
+  "scalar_family_containment": {
+    "counts_by_component": {
+      "A": 4251,
+      "Uz": 4251,
+      "P": 4251
+    },
+    "total_containment_count": 12753,
+    "scalar_recomputed_from_same_amplitude_and_pressure": true,
+    "old_Z03_tensor_used": false
+  },
+  "source_hashes": {
+    "lei_ren_part1_paper_interval_comparison_consistency.py": "fec810d64a157b0eb2bb95c767665f8204008eb1f2856684db0a4b0178002dfe",
+    "lei_ren_part1_paper_candidate_general_center_factory.py": "88dd6a6470ca0e67649e142f490d323ce9f16304f88f918c7735f0684ea19923",
+    "lei_ren_part1_paper_candidate_exact_amplitude.py": "d0e087a6acb1397c7a3632525ca3c07dd9859dc9c1c6f8b126ded0dc4824e3c1",
+    "lei_ren_part1_paper_candidate_pressure_function.py": "4cc4c87488e5f468aa9a459d1e8c9f754e85f12dee811ca9d8e066fd4d4986dc",
+    "lei_ren_part1_paper_uniform_axis_jets.py": "561c69c49f2a6f3dc8c95a9b15dc51d1d50124f20ee9f3706c602a3fb261fb85",
+    "lei_ren_part1_paper_factored_core_positivity.py": "d9c05f9f1fa4e0695ac66fabefb5ed5ef26141948e7613110ee75377af93b710",
+    "lei_ren_part1_paper_functional_core_recursion.py": "f144cf4f5f87921aabcca93a6ed082942de795d1eb0be5fe6319fbccc969d09f",
+    "lei_ren_part1_paper_functional_core_step.py": "03aab21f3e6e665dd2ff0e9a3d2e6187e90813c300ccbb2d35e23a6d99098998"
+  },
+  "captured_state_input_hashes": {
+    "lei_ren_part1_paper_candidate_pressure_axis_jets_refined.json": "e78d0bb7084dc1a1714d86eb001f20e11f61db8ea40bd6e56502633cbce4ef94",
+    "lei_ren_part1_paper_coherent_uniform_fixed_beta_error.json": "2ea09fa66dfae800c5f93a1ca11d1da69e25c021853445748606427c65737340",
+    "lei_ren_part1_paper_coherent_uniform_preheat_error_budget.json": "28ec5fceb88666a5bd662ab57f7c5986195b84cf09676008d6cfdf04a74b849c",
+    "lei_ren_part1_paper_candidate_pressure_axis_jets.json": "fec257dbef852bd9386bcaa751cdd6b95ba162485c4885d067b1f242fec7add2",
+    "lei_ren_part1_paper_candidate_pressure_mass_refinement.json": "8824c74fac38ebade9d90f1269e6e337b2b2f64dea6a692b0cb4db601e548181",
+    "lei_ren_part1_paper_candidate_general_center_factory.py": "88dd6a6470ca0e67649e142f490d323ce9f16304f88f918c7735f0684ea19923",
+    "lei_ren_part1_paper_functional_core_step.py": "03aab21f3e6e665dd2ff0e9a3d2e6187e90813c300ccbb2d35e23a6d99098998",
+    "lei_ren_part1_paper_functional_core_recursion.py": "f144cf4f5f87921aabcca93a6ed082942de795d1eb0be5fe6319fbccc969d09f",
+    "lei_ren_part1_paper_candidate_gauge_core.py": "864da25569c8965cfd25787f9e27d315643c2d1a4d8d678289d7cc7923acb007",
+    "lei_ren_part1_paper_candidate_exact_amplitude.py": "d0e087a6acb1397c7a3632525ca3c07dd9859dc9c1c6f8b126ded0dc4824e3c1",
+    "lei_ren_part1_paper_uniform_axis_jets.py": "561c69c49f2a6f3dc8c95a9b15dc51d1d50124f20ee9f3706c602a3fb261fb85",
+    "lei_ren_part1_paper_candidate_pressure_function.py": "4cc4c87488e5f468aa9a459d1e8c9f754e85f12dee811ca9d8e066fd4d4986dc",
+    "lei_ren_part1_paper_factored_core_positivity.py": "d9c05f9f1fa4e0695ac66fabefb5ed5ef26141948e7613110ee75377af93b710",
+    "lei_ren_part1_paper_analytic_radial_tail.py": "f3de412dab4cbb03c16fa5bb252ce600320dc1aa5935ea2f66c6c40f35563827",
+    "lei_ren_part1_paper_candidate_core_tail_budget_Lambda120.json": "1c2c71bb991ca9997a983a7a85880d5b9d6381bb6dab211104a87c07953e7dd2",
+    "lei_ren_part1_paper_candidate_interval_core.py": "07a1d7c5f8baf330ebf8cdc7a614417821ba77f53b9533f8c45bed69f14d996f"
+  },
+  "scalar_center_recomputed": true,
+  "comparison_driver_checked": false,
+  "analytic_tail_target_checked": false,
+  "analytic_tail_target_met": false,
+  "ODE_discretization_error_enclosed": false,
+  "whole_axis_transition_generated": false,
+  "terminal_five_moment_closure": false,
+  "temporal_recursion": false,
+  "scope": "Fresh-state physical pressure identity and scalar .5 family containment only; no infinite radial, ODE, whole-axis, or terminal closure claim."
+}

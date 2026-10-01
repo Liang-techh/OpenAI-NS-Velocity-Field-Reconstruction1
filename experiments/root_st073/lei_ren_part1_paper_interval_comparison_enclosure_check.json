@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "fixture_only": true,
+  "closed_form_field_coefficient_checks": 24,
+  "nonzero_slope_RK256_coefficient_checks": 24,
+  "nonzero_slope_driver_coefficient_checks": 6,
+  "closed_form_frozen_extension_coefficient_checks": 24,
+  "directed_cells_closed_form": 16,
+  "directed_cells_nonzero_slope": 32,
+  "axial_field_orders": [
+    0,
+    1,
+    2
+  ],
+  "driver_axial_orders": [
+    0,
+    1
+  ],
+  "numerical_reference_is_accuracy_diagnostic_not_proof": true,
+  "construction_parameter_errors_certified": false,
+  "source_hashes": {
+    "lei_ren_part1_paper_interval_comparison_enclosure.py": "03027203a8ca43721508f8b337ac7107d09be785da3dd491a7b5ab27e46c8ed8",
+    "lei_ren_part1_paper_interval_comparison_enclosure_check.py": "3e260d9d22804f773f5caf59fad3e1e28c8e4bf5ce1fd9e81580f07549c668ab"
+  }
+}
