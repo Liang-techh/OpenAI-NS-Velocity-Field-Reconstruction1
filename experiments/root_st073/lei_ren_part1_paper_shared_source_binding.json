@@ -1,0 +1,113 @@
+{
+  "implicit_source_sha256": "082d18b8f1ec2df84526fbdc190217d97dfb8825e823fa4c9e017c8a58d001bb",
+  "datum_enclosure_sha256": "04bdb5e1cc6216bd2592af7b4229b5188414b1893d62847d30345536fe9bbdd5",
+  "Md": "40",
+  "analytic_core_family_sha256": "a4056322a3946c0ec0d43cc14d6f82d9a022410a5c077bab3577e87f8e9d7bdf",
+  "required_j": {
+    "lower": "0.00000000000000000000017478350439605991118305874452830216702858360381887718933503835157552941146827569093117212",
+    "upper": "0.00000000000000000000017478350439605991118305874452830216702858360381887718933503835157552941146827569093117212",
+    "width": "3.76549978922325643396992192923829521317344524142171558098484e-183",
+    "lower_exact_mpf_tuple": [
+      0,
+      92834159702403849721836905609362508071507182481613869006763729248009901437018860214793034276575650981101670664678099112537778866652538720984562874172691347729079,
+      -607,
+      535
+    ],
+    "upper_exact_mpf_tuple": [
+      0,
+      92834159702403849721836905609362508071507182481613869006763729248009901437018860214793034276575650981101670664678099112537778866652538720984562874172691347729081,
+      -607,
+      535
+    ]
+  },
+  "source_j_eta_tol_relation_verified": true,
+  "full_Section9_parameter_admission": false,
+  "source_pressure_condition_discharged_by_fourteen_atom_envelope": true,
+  "continuous_waiting_root_condition_discharged": true,
+  "core_analytic_contraction_and_scaled_tail_admitted": true,
+  "selected_radial_degree": 144,
+  "logRref_definition": "log(110)+10*(logC+logPstar)",
+  "logRref_lower": {
+    "lower": "21184674015331829681.4114723332055486338783805855594855587214209496022148685754215004042061",
+    "upper": "21184674015331829681.4114723332055486338783805855594855587214209496022148685754215004042061",
+    "width": "9.84063882944397766375629724943880927183167314359818650803889e-142",
+    "lower_exact_mpf_tuple": [
+      0,
+      64583227926053720205068038763879558613754249153332868808935574176564961221412629134862716412725273099644654983320210842532115106565528061922262854553428399052671,
+      -470,
+      535
+    ],
+    "upper_exact_mpf_tuple": [
+      0,
+      32291613963026860102534019381939779306877124576666434404467787088282480610706314567431358206362636549822327491660105421266057553282764030961131427276714199526337,
+      -469,
+      534
+    ]
+  },
+  "O2_minimum_finite_strong_bracket": {
+    "lower": "0.343967054732024807200796060113257675633371868109649894208406307450731632590502383877395348",
+    "upper": "0.343967054732024807200796060113257675633371868109649894208406307450731632590502383877395348",
+    "width": "0.0",
+    "lower_exact_mpf_tuple": [
+      0,
+      3552835540590736290808359130293211613252232665598240031254433290436092569575468546118745760392212301406995570402722643063,
+      -402,
+      401
+    ],
+    "upper_exact_mpf_tuple": [
+      0,
+      3552835540590736290808359130293211613252232665598240031254433290436092569575468546118745760392212301406995570402722643063,
+      -402,
+      401
+    ]
+  },
+  "pressure_core_outer_parameter_definitions_consistent": true,
+  "O2_certificate_bound_to_same_pressure_source": true,
+  "remaining_O2_inlet_condition": "fresh core/transition/functional moment repair must realize exact reference identities",
+  "fresh_finite_core_generated": false,
+  "fresh_reference_inlet_built": false,
+  "admissible_stress_lift_constructed": false,
+  "whole_axis_cone_certified": false,
+  "actual_heat_pressure_restoration_completed": false,
+  "background_assembled": false,
+  "temporal_recursion": false,
+  "input_hashes": {
+    "lei_ren_part1_paper_logarithmic_pressure_datum.json": "25eaffef5c11036123b2ceaa8f353ac0113daf09274080d26e00446b2de21cd9",
+    "lei_ren_part1_paper_logarithmic_pressure_datum.py": "576e16dc89281d7f4011337023ab47256f1d338aa981d98d8f848e8884ed2e05",
+    "lei_ren_part1_paper_candidate_pressure_mass_refinement.json": "8824c74fac38ebade9d90f1269e6e337b2b2f64dea6a692b0cb4db601e548181",
+    "lei_ren_part1_paper_logarithmic_outer_parameters.py": "2a1fbb83ef254dd2fca8cebd64598cf6fcf3e2571649bbb9109a3914fa5d3224",
+    "lei_ren_part1_paper_candidate_pressure_function.py": "4cc4c87488e5f468aa9a459d1e8c9f754e85f12dee811ca9d8e066fd4d4986dc",
+    "lei_ren_part1_paper_outer.py": "e641dbe3808066a1ab792294ec2b07faede60c379ef6bfca60f6c11ed79f90f2",
+    "lei_ren_part1_paper_coherent_uniform_fixed_beta_error.json": "2ea09fa66dfae800c5f93a1ca11d1da69e25c021853445748606427c65737340",
+    "lei_ren_part1_paper_shared_core_majorant.json": "42e67d4c98b9a14761c2cd63d9b8999a4dc93d759f1e9270eedf6cdd9fe25802",
+    "lei_ren_part1_paper_shared_analytic_tube.json": "1e0de95d87056a3841c753877b51a07655d2d04420e8dc0e7a9d42ba59a608d6",
+    "lei_ren_part1_paper_shared_linear_resolvent.json": "c7a20b6f4f4de0f5184ea68abfb607ea82b7678d636107a05a252e21429a5c59",
+    "lei_ren_part1_paper_shared_commuting_resolvent.json": "956746a82584e7aa8f06ad85feec7f32a262a9af283a9e6e78b631cfabddbbbe",
+    "lei_ren_part1_paper_shared_pressure_Kp.py": "f9047f2176d7a6bea858fa1fbe31e0a78d6c97835550c72f438f4221dd34f965",
+    "lei_ren_part1_paper_bump_integral_enclosures_check.json": "d9eae4585c7e1dddf267ea37d024c94ea0f9b05e07e396b9625934168146e8da",
+    "lei_ren_part1_paper_shared_pressure_Kp.json": "c2c320f4cd1d197c47a2aff3c56f5b00b2302ccce5d3417d9d8718529e4cc4ac",
+    "lei_ren_part1_paper_analytic_radial_tail.json": "bd2db15d3314c6ea6553afee057a5dbc64dbfb2eb451d53f54eae1baa13d7e47",
+    "lei_ren_part1_paper_shared_bump_constants.py": "1c986f72e6967db685d8a464377d4b7b8c679a6eea2bf16aa138702f065f5ced",
+    "lei_ren_part1_paper_interval_five_bump_inverse.py": "35fe5d14fdd0685a7836c40d0208779cee10f2486a2445464599de6afd234ea8",
+    "lei_ren_part1_paper_interval_exit_continuation_enclosure.py": "cf2597357287116c85022bf9a453ab287d521a6954a0f97b555859d650a9517d",
+    "lei_ren_part1_paper_bump_integral_enclosures.py": "98805b8a6983dec78fcdbbea85e733eac098af5ad9faed2928959444caeff46e",
+    "lei_ren_part1_paper_bump_integral_enclosures_check.py": "fce743608e07edfd80880c25dc591054b366d2ee187ac9b14c5b9028d695ff2f",
+    "lei_ren_part1_paper_shared_bump_constants.json": "9dd940dab760c8d1976e6b543bd2170e6374400c142b8d1e2d09abdf90abf77f",
+    "lei_ren_part1_paper_shared_analytic_tube.py": "38bde24df951cc3db6e33bae4e58c345cb6d2ca589444cf0357be1e13ba14b7b",
+    "lei_ren_part1_paper_shared_core_majorant.py": "2545fa489e2739fef2b2fb3095108e1a22936ba9a4bff030719e425b3e040d69",
+    "lei_ren_part1_paper_nonlinear_map_majorant.py": "92d84671e7680af47544c7a9ebaee27132cd1c230ea96a61a179325cf9ff8aff",
+    "lei_ren_part1_paper_analytic_radial_tail.py": "f3de412dab4cbb03c16fa5bb252ce600320dc1aa5935ea2f66c6c40f35563827",
+    "lei_ren_part1_paper_linear_resolvent_bound.py": "44186fb15eb7a776fde65aa9fee70274daa7253ce108f90b8f9cea791ba5e808",
+    "lei_ren_part1_paper_commuting_resolvent_bound.py": "7f787bd0ea1179bb78bd2bed574cf840687fb4d0008c499c1bcc1ec7f1736d71",
+    "lei_ren_part1_paper_shared_core_tail_admission.json": "e3db61864f607cc199d6e342483facf141e945cb233bf5f5e2cda04c2d13a166",
+    "lei_ren_part1_paper_shared_core_tail_admission.py": "4804672b48798972f418cdbda6d466d7fa11567b696b7708777bd54467a5ee59",
+    "lei_ren_part1_paper_normalized_slow_turnoff.json": "268316219e72f04a6434670d53f8c2a70192a4efd774d6878091c420abb3f173",
+    "lei_ren_part1_paper_normalized_slow_turnoff.py": "9c4e10ac3c7ba885a2c9b93fe0eeaf1fe922506c13b9221474a20e282589bb37",
+    "lei_ren_part1_paper_interval_outer_slope_field.py": "906e5efa703f53f2d61762d3b7dca38d521ee3649e00962a1f0a81ddfd3254d5",
+    "lei_ren_part1_paper_interval_long_reshape_field.py": "604e10235c2960fda99e120775da780b3fe4f9060c3432e707ca3aeeb36a9c3f",
+    "lei_ren_part1_paper_interval_repaired_reference_field.py": "98b2b75fdf26aa286842e24749fbbb5963f69adeeeb941ec3f753bd022feb69c",
+    "lei_ren_part1_paper_interval_taylor.py": "a1c29ec76998d876d9becadebb65c7be69242bb99d6049ef3f5ad6af86b14b8c",
+    "lei_ren_part1_paper_interval_comparison_enclosure.py": "03027203a8ca43721508f8b337ac7107d09be785da3dd491a7b5ab27e46c8ed8",
+    "lei_ren_part1_paper_shared_source_binding.py": "85e983bf092bbeefd5795ffaa6d1867a178c3e67c4ce7658e997c9ae578c43f9"
+  }
+}

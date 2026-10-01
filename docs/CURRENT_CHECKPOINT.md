@@ -1,3 +1,15 @@
+# F24 — 2026-10-01: fixed bump constants select a fresh inlet-tolerance core
+
+Directed/analytic fixed constants: CA=344, CQ=1081, CS=57749553. With Kp=17 and KN=18000, the selected hierarchy gives e_star about 1.398268e-19 and j about 1.747835e-22. Old j=1e-14 does not meet this choice. Reuse the j-independent preheat datum, but regenerate the core and connections; F21/F22/F23 remain old-j branches.
+
+Fresh tube, both resolvent bounds and all-20-term contraction pass. The mixed scaled C3 tail requires degree 144 (upper about 6.842106e-14). Fresh finite core is generated through order 9/144 from 148 axial jets on Z in [0.49,0.51]; seed acceptance passes. No fresh exit/R110 result is yet available. Full physical K, K1, exit-input gates, five-moment closure, heat exterior, stress lift and temporal recursion remain incomplete.
+
+NEXT ACTION: run experiments/root_st073/lei_ren_part1_paper_shared_interval_core.py --seconds 60 --max-steps 144 in sequential resumable batches until completed_target=true, then rerun shared_core_seed_check.py and build a fresh family-bound exit loader. Do not reuse the old-j R110 receipt as a new-core result.
+
+Details, proof hypotheses and ordered tasks: docs/SHARED_INLET_TOLERANCE_CORE_2026_10_01.md. The new receipt/state are shared_interval_core_Z049_Z051.json and shared_interval_core_Z049_Z051_state.json under experiments/root_st073/.
+
+---
+
 # F23 — 2026-10-01: shared paper exit parameter family reaches R110
 
 Same-source preheat pressure Kp=17 is certified (KN=18000). The paper identity h_b=epsilon_b=cstar K^-100 is restored symbolically, and the shared conditional family is propagated through comparison, actual exit and terminal switches to R110. The relaxed cone passes there on Z in [0.49,0.51]. Final regeneration completed; 57 phase/dy fixtures and five-receipt family/hash checks pass.
