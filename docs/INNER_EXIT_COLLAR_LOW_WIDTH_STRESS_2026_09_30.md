@@ -39,8 +39,23 @@ the endpoint cone cannot be assessed from leading shear alone. Interior
 leading stress and shear are opposite in direction when 0<chi0<1, but
 this does not by itself establish the kappa and angular-width inequalities.
 
-Next work must enclose finite-width stress and its directional margins,
-including vanishing-stress edges. Width-two stress needs width-three
+The cached paper text, lines 2789–2824, confirms the strict cone:
+T dot S < 0, kappa > 2, and (kappa-2)(T dot S_perp)^2 < 2(T dot S)^2,
+where kappa=-|S|^2/(F S_theta). For the aligned leading pair, the cross
+product vanishes and kappa=chi(D^2+E^2)/D, with E=Iz0/Fa. The relaxed
+kappa<=2 branch reduces to D^2+E^2>2D. Stress-free points are excluded
+from strict inequalities.
+
+Importantly, lines 5891–5913 distinguish the admissible interval ending
+at R_an from the later relaxed collar. After the finite-width switch,
+chi=epsilon_b and the paper states kappa<1. The later portion should
+therefore not be assigned the strict admissible-cone gate. Locate R_an
+on the accepted schedule and apply each regional condition separately;
+the low-width expansion does not determine that location or certify
+the finite-width gate by itself.
+
+Next work must enclose finite-width stress and its appropriate regional
+directional margins, including vanishing-stress edges. Width-two stress needs width-three
 velocity coefficients because radial differentiation divides by W.
 Original source/axis errors, pressure orders above nine, omitted width
 orders, global Z coverage, and the nonlinear collar remainder remain open.
