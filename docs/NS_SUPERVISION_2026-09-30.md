@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `a821dd9b6d3633ed4a9713b5c7c533bf10561a21`.
+The inspected `main` head before this update is `745340e8f2a98e737eb595c1e19d4daeff891cb6`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`be563ead9bce2118cac19f0277cdd94ea4332d50`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/be563ead9bce2118cac19f0277cdd94ea4332d50)
+[`dee158b94a68f88d88930edd51325ddfa1a26158`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/dee158b94a68f88d88930edd51325ddfa1a26158)
 on `codex/st073-transition-next`, dated September 30. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,62 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-01 batch: partial positivity, entrance trace and analytic-tail prerequisites
+
+The [amplitude-factored recurrence record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/94750bcdc9280083a4da5ad5bba651e7774fe50e/docs/AMPLITUDE_FACTORED_CORE_2026_09_30.md)
+removes the common F0 amplitude while retaining its coupled swirl and pressure
+terms. This improves interval conditioning, not the underlying physical field.
+The [7e71fbcc positivity/Bessel record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/7e71fbcc795beec23d7a87f8a45ce84f16c3982e/docs/ADAPTIVE_AND_BESSEL_CORE_POSITIVITY_2026_09_30.md)
+reported142 accepted/216 pending cells and52.9% length coverage. The
+[latest exact partition receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/dee158b94a68f88d88930edd51325ddfa1a26158/experiments/root_st073/lei_ren_part1_paper_adaptive_core_positivity.json)
+now records209 accepted/208 pending, zero unresolved/refinement-limit failures,
+and accepted axial length fraction0.93244600558944256. Every accepted cell covers
+all x=R/Ra in[0,1]. Pending cells are inconclusive, not counterexamples; the
+whole-axis positivity flag remains false. Coverage is not project completion.
+The approximately.265381 Bessel lower bound applies to the reference model only;
+the actual nonlinear comparison constant is still unbounded.
+
+The [entrance trace and reciprocal record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/1bbee2f9a54b10116719b2a083b533530b560954/docs/CORE_TRACE_AND_RECIPROCAL_2026_09_30.md)
+completes mixed reciprocal C3 on an immutable earlier142-cell snapshot only,
+with inverse-axis amplitude kept logarithmic. This is not reciprocal control on
+the remaining/newly accepted cells or the infinite core. At Z=.3, the degree18
+retained inlet has normalized angular stress in about[2.3789122e-28,2.3789137e-28],
+excluding zero with the propagated conditional pressure uncertainty. The bridge's
+prescribed entrance shear therefore does not establish C1 matching to that finite
+core. The axial stress interval contains zero; no axial mismatch is established.
+This is a truncation diagnosis, not a counterexample to the paper construction.
+
+An angular defect integral localizes the leading discrepancy to uncomputed radial
+orders, predominantly pressure-parameter degree zero (which still includes the
+physical analytic pressure datum). Coupled continuation from the same22 axis rows
+to degrees19/20 preserves the degree18 prefix and P0. The signed entrance trace
+divided by axis F changes from6.73e-29 to-3.37e-31 to1.53e-33, about43890-fold
+magnitude reduction. These point-Z MP diagnostics do not enclose generation errors,
+the full pressure sum or infinite tail; their ratios are not a geometric tail proof.
+No entrance trace is reset to zero.
+
+The [dee158b9 analytic prerequisites record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/dee158b94a68f88d88930edd51325ddfa1a26158/docs/ANALYTIC_CORE_TAIL_DEPENDENCIES_2026_09_30.md)
+provides pole-free complex-axis guards on disks of radius5e-19 about[-1,1],
+h=6.25e-20, and the supplied amplitude guard. Conditional mixed radial tail
+factors through C3 are per unit analytic norm, not actual nonlinear-core remainders:
+the degree20 third-Z factor is about2.95e43 despite a small value factor.
+The explicit factorial linear-resolvent series is bounded with log upper
+about390.632; this conservative upper is neither a measured norm nor evidence
+of failure. Accepted true radial pressure masses give complex pressure modulus
+upper about4.79e12, without substituting finite quadrature errors for holomorphic
+bounds. Sharpened angular/axial linear model norm uppers are about47312.4/1.92e15.
+All claims retain the accepted stored schedule and original pressure datum.
+
+These are prerequisites to the nonlinear size/Lipschitz majorants in the coupled
+map, not a successful fixed-point certificate. Actual Kstar and the sufficiency
+of Lambda=1e36 remain open. Original parameter derivation and adapter rounding,
+actual infinite core/tail, full axial positivity/reciprocal domain, frozen K
+contributions, entrance matching, five-moment closure, cone, finite energy and
+temporal recursion remain unaccepted. This review did not independently rerun
+the receipts or verify their rigorous enclosures. The pinned records give the
+portable positivity, reciprocal, trace-continuation, analytic-tail, resolvent and
+complex-pressure replay commands; science code and cached proofs are unchanged.
 
 ### 2026-10-01 batch: actual inlet, retained collar and whole-axis finite-core contributions
 
@@ -567,6 +623,12 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [dee158b9 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36810491338)
+completed with the same original13 failed identifiers and423 passed. Four
+smoke/slice jobs pass and full historical tests are skipped. No added selected
+governance regression is observed; this suite does not certify the new analytic
+or interval receipts.
 
 The [be563ead research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36805300257)
 finished with the original13 failed identifiers and423 passed. Four smoke/slice

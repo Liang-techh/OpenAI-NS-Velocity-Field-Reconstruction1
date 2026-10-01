@@ -1,7 +1,7 @@
 # Navier–Stokes Candidate Research
 
 > **Progress index updated 2026-10-01:** newer research is available on
-> `codex/st073-transition-next` at [`be563ead`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/be563ead9bce2118cac19f0277cdd94ea4332d50).
+> `codex/st073-transition-next` at [`dee158b9`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/dee158b94a68f88d88930edd51325ddfa1a26158).
 > See [current evidence, paper mapping and replay instructions](docs/NS_SUPERVISION_2026-09-30.md).
 > The ST063 tables and September 22 pause record below remain historical curated
 > results. They do not describe the latest branch or establish a live task status.
@@ -11,9 +11,10 @@
 > implementation compatibility and global acceptance remain separate milestones.
 > The pressure budget is now rebuilt against the accepted source after a helper
 > mismatch audit, with pressure-only uniform finite-core/moment propagation.
-> Actual Z=.3 inlet arithmetic and pressure-error propagation now reach collar
-> width orders 0-2, with whole-spatial coefficient bounds at that Z. Whole-axis
-> finite-core C3 and axis reciprocal contributions are recorded; infinite radial
+> Finite-core positivity covers 209 accepted axial cells (93.24% of interval length),
+> with 208 cells pending; reciprocal C3 bounds cover an earlier 142-cell snapshot.
+> Degree20 continuation reduces a nonzero finite entrance trace. Complex pressure
+> and linear model bounds are recorded; nonlinear contraction, infinite radial
 > remainder, full K and finite-width regional cone certification remain open.
 > Full source errors, five-defect norm, relative-flat closure and global checks remain pending.
 > Finite energy, cone and time-scale recursion remain uncertified. Research CI retains 13
