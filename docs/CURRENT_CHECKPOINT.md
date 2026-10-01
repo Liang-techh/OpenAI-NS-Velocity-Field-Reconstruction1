@@ -1,3 +1,14 @@
+# F19 — 2026-10-01: conditional full O.2 parameter route found
+
+Md=40 passes the normalized slow-turnoff cone inequalities on the full cutoff phase plus a separate 11-unit zero-axial buffer, for Z in [0.49,0.51], under the SAME complete preheat-pressure and exact repaired-inlet conditions. Finite strong bracket lower: 0.3439670547. This is a conditional parameter-family proof; no Md40 core or fourteen-stage numerical pressure datum has been generated. Md16/24/32 lower-bound noncertificates are not physical failure proofs.
+
+New backend retains log parameters and segmented radii, and encloses a unique positive continuous waiting root without float bump weights. Next: regenerate same-source pressure atoms/complex jets using this backend; normalize core amplitude scales and recompute majorants/axis parameters before any fresh core. Then bind the new repaired inlet to this proof and extend the axial/radial scope. Temporal recursion remains unimplemented.
+
+Details and ordered tasks: docs/NORMALIZED_O2_CERTIFICATE_2026_10_01.md.
+Evidence: experiments/root_st073/lei_ren_part1_paper_normalized_slow_turnoff.json and lei_ren_part1_paper_logarithmic_outer_parameters.json.
+
+---
+
 # F18 — 2026-10-01: larger-Md O.2 screening
 
 Md=2,3 midpoint ambiguity is resolved by same-source remaining pressure atoms: actual direction failure. Fresh fourteen-stage screening sources for Md=4,5,6 also fail midpoint direction, including Z=0.5; do not regenerate their cores. Weighted cutoff integration and cancellation-free cone algebra are implemented. Md>=6 pressure screening avoids the unused float bump factory; production bump correction still requires arbitrary precision.
