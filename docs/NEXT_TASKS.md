@@ -1,3 +1,7 @@
+## 2026-09-30: Tighter inverse and contraction-compatible core candidate
+
+Exact commuting powers of (chi/2)J2 reduce inverse log upper390.6324 to13.34508. Fixed analytic multipliers use the same Cauchy convolution. Existing Lambda1e36 gates remain unproved (logs25.7093/14.94475). Separate Lambda1e48 candidate, holding accepted P0,j,delta,logCstar fixed and recomputing its amplitude, passes both gates: size<=0.1463551, Lipschitz<=3.093312e-6. This supplies a fixed-datum analytic contraction candidate, not a rebuilt shared field. Next: candidate axis/gauge core and infinite tails; check new Ra pressure conventions, then rebuild all matching data together. Preserve old inlet receipts. See COMMUTING_INVERSE_AND_CORE_CANDIDATE_2026_09_30.md.
+
 ## 2026-09-30: Full nonlinear map majorant and actual parameter gates
 
 Implemented all20 split terms of paper(8.50), retaining restored pressure, swirl and derivative coupling. Explicit product/integrated derivative constants give size and Lipschitz majorants for(8.51). At epsilon1e-36 scaled upper logs are407.4556429 and396.6910940, so these conservative bounds do not prove contraction. This is not nonexistence evidence. Angular cross-swirl and coarse resolvent amplification dominate; next tighten the preconditioned inverse and separate center residual from ball variation. No arbitrary Kstar, trace reset or temporal-recursion claim. See NONLINEAR_CORE_MAJORANT_2026_09_30.md.

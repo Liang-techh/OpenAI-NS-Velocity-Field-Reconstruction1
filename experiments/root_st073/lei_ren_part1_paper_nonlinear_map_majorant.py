@@ -6,6 +6,7 @@ a proof of nonexistence or divergence.
 """
 import hashlib
 import json
+import argparse
 from pathlib import Path
 import mpmath as mp
 from mpmath.ctx_iv import MPIntervalContext
@@ -13,12 +14,13 @@ from lei_ren_part1_paper_schedule_endpoint_enclosures import endpoints
 from lei_ren_part1_paper_schedule_endpoint_enclosures_check import encode
 
 
-def run():
+def run(Lambda='1e36',output_name=None):
     base=Path(__file__).parent
     names=['lei_ren_part1_paper_analytic_radial_tail.json',
            'lei_ren_part1_paper_linear_resolvent_bound.json',
-           'lei_ren_part1_paper_complex_pressure_bound.json']
-    tube,linear,pressure=[json.loads((base/n).read_text()) for n in names]
+           'lei_ren_part1_paper_complex_pressure_bound.json',
+           'lei_ren_part1_paper_commuting_resolvent_bound.json']
+    tube,linear,pressure,commuting=[json.loads((base/n).read_text()) for n in names]
     ctx=MPIntervalContext();ctx.dps=160
     with mp.workdps(200):
         def get(record,name):
@@ -28,13 +30,17 @@ def run():
         if not linear['analytic_linear_inverse_bound_certified'] or not pressure['all_true_pressure_stages_included']:
             raise AssertionError('Analytic input gates missing')
         eta=get(tube,'complex_tube_radius');h=get(tube,'Xh_parameter');a=1+eta
-        dt=ctx.mpf('1e-200');eps=ctx.mpf('1e-36');j=ctx.mpf('1e-14')
+        dt=ctx.mpf('1e-200');lam=ctx.mpf(Lambda);eps=1/lam;j=ctx.mpf('1e-14')
+        if endpoints(lam)[0]<500:raise ValueError('Lambda must satisfy the model gate')
         L=get(tube,'L_modulus_lower');pole=get(tube,'denominator_factor_modulus_lower')
         H=get(tube,'H0_modulus_upper');U=4*a+j;d=1+a*a
         weight=get(linear,'Cauchy_weight_supremum_upper')
         Bphi=get(linear,'Phi_model_Xh_norm_upper')+1
         Bpsi=get(pressure,'Psi_model_Xh_norm_upper')+1
-        Rnorm=get(linear,'resolvent_norm_upper')
+        if commuting['input_sha256']!=hashlib.sha256((base/names[0]).read_bytes()).hexdigest():
+            raise AssertionError('Commuting inverse uses different analytic tube')
+        Rnorm=get(commuting,'resolvent_norm_upper')
+        fixed_multiplier=get(commuting,'axial_convolution_factor_upper')
         # Fixed analytic coefficient norms follow by Cauchy on eta/2 disks.
         coefficients=dict(beta=get(tube,'beta_modulus_upper')*weight,
             W0_over_L=(1+(1+dt)*a*U+4*d)/L*weight,
@@ -42,12 +48,19 @@ def run():
             d_over_L=d/L*weight,z_over_L=a/L*weight,
             axial_linear=((1+dt)/2*(1+4*a*U)+4*d)/L*weight,
             cross_swirl=d/pole*weight)
-        Fsquare=ctx.exp(2*get(tube,'axis_F_log_modulus_upper'))*weight
+        Gupper=get(tube,'G_modulus_upper');logC=ctx.mpf('5e151')
+        Cstar_margin=logC-2*ctx.log(lam)-lam*Gupper
+        if endpoints(Cstar_margin)[0]<=0:raise AssertionError('Candidate fails the complex Cstar guard')
+        Fsquare=ctx.exp(2*(-logC+lam*Gupper))*weight
         product=ctx.mpf(256);J1=ctx.mpf(80);J2=ctx.mpf(40)
         axial=ctx.mpf(20480)/h;radial=ctx.mpf(20480)
         Pcal=80*product**2*Fsquare
         rows=[]
         def term(component,name,c,p,q):
+            # All displayed formulas have one outer fixed axial multiplier.
+            # Cauchy convolution bounds it by S(r), rather than generic256.
+            # The internal products of the unknown fields retain256.
+            c=c*fixed_multiplier/product
             # c phi^p psi^q is a positive norm majorant after radial inversion.
             value=c*Bphi**p*Bpsi**q
             lip=ctx.mpf(0)
@@ -87,9 +100,14 @@ def run():
         lip_gate=endpoints(map_lip)[1]<=mp.mpf('.5')
         report=dict(input_hashes={n:hashlib.sha256((base/n).read_bytes()).hexdigest() for n in names},
             accepted_schedule_sha256=pressure['accepted_schedule_sha256'],precision=160,
-            epsilon=eps,ball_center='paper X0=(Phi0,Psi0)',ball_radius=1,
+            Lambda=lam,epsilon=eps,Cstar_log_margin=Cstar_margin,
+            pressure_datum_held_fixed=True,
+            candidate_requires_shared_core_regeneration=Lambda!='1e36',
+            ball_center='paper X0=(Phi0,Psi0)',ball_radius=1,
             Phi_ball_norm_upper=Bphi,Psi_ball_norm_upper=Bpsi,
             product_constant=product,J1_norm_upper=J1,J2_norm_upper=J2,
+            fixed_analytic_multiplier_factor_upper=fixed_multiplier,
+            angular_resolvent_norm_upper=Rnorm,
             integrated_axial_derivative_constant=axial,integrated_radial_derivative_constant=radial,
             fixed_coefficient_norm_upper=coefficients,F0_squared_Xh_norm_upper=Fsquare,
             restored_pressure_coefficient_norm_upper=Pcal,terms=rows,
@@ -98,17 +116,28 @@ def run():
             scaled_map_size_log_upper=ctx.log(map_size),scaled_map_Lipschitz_log_upper=ctx.log(map_lip),
             size_gate_proved=size_gate,Lipschitz_gate_proved=lip_gate,
             contraction_proved=size_gate and lip_gate,
+            analytic_fixed_point_exists_for_fixed_datum=size_gate and lip_gate,
             all_paper_8_50_terms_included=True,pressure_and_swirl_couplings_retained=True,
             bounds_relative_to_stored_accepted_parameters=True,
             failed_upper_bound_gate_is_not_nonexistence=True,
             infinite_core_remainder_enclosed=False,original_parameter_errors_enclosed=False,
             temporal_recursion=False,
-            next_dependency='Sharpen preconditioned angular inverse and fixed-data multiplier bounds; do not infer divergence from these coarse upper bounds')
-        Path(__file__).with_suffix('.json').write_text(json.dumps(encode(report),indent=2)+'\n')
+            next_dependency=('Regenerate shared axis/gauge core at the candidate, verify Ra pressure conventions and apply analytic tails before rebuilding matching layers'
+                             if size_gate and lip_gate else
+                             'Sharpen preconditioned angular inverse and fixed-data multiplier bounds; do not infer divergence from these upper bounds'))
+        output=Path(__file__).with_suffix('.json') if output_name is None else base/output_name
+        output.write_text(json.dumps(encode(report),indent=2)+'\n')
         print('all20 terms included; scaled size log upper',mp.nstr(endpoints(ctx.log(map_size))[1],20),
               'scaled Lipschitz log upper',mp.nstr(endpoints(ctx.log(map_lip))[1],20),
               'contraction proved',size_gate and lip_gate,flush=True)
         return report
 
 
-if __name__=='__main__':run()
+if __name__=='__main__':
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--Lambda',default='1e36')
+    parser.add_argument('--output-name')
+    args=parser.parse_args()
+    if args.Lambda!='1e36' and args.output_name is None:
+        parser.error('A candidate Lambda needs a separate output-name to preserve the current receipt')
+    run(args.Lambda,args.output_name)
