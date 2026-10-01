@@ -1,7 +1,7 @@
 # Navier–Stokes Candidate Research
 
 > **Progress index updated 2026-10-01:** newer research is available on
-> `codex/st073-transition-next` at [`70e48e44`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/70e48e44d2cf879b81eb78d111f9bb9126ab189f).
+> `codex/st073-transition-next` at [`7e207175`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/7e20717526a81ed9c52ea8445a83355007c0cf05).
 > See [current evidence, paper mapping and replay instructions](docs/NS_SUPERVISION_2026-09-30.md).
 > The ST063 tables and September 22 pause record below remain historical curated
 > results. They do not describe the latest branch or establish a live task status.
@@ -9,6 +9,16 @@
 > reconstruction, with unresolved moment/stress matching and no certified global
 > NS field. The latest route now records the supplied Lei/Ren v2 and Duraiswami v1;
 > implementation compatibility and global acceptance remain separate milestones.
+> **Source correction:** the prior Md40 progression below belongs to legacy
+> epsilon=.01delta, which exceeds the paper construction's c_epsilon<=.001 bound.
+> Those cone/repair receipts do not directly certify the new .001delta source.
+> The new source now has separately rebuilt inner-exit/reference-join and implicit
+> functional five-moment repair receipts. Its 144-order view uses sensitivity and
+> input-envelope inclusion, not a new point-coefficient recurrence run. Trial pulse,
+> waiting candidate and isolated exact heat components remain unmatched: outer
+> corrections, energy-selected pulse, whole-outer cone and stress lift are pending.
+> Satisfying the epsilon bound alone does not admit every Section7 hypothesis.
+> The remaining paragraphs summarize historical source-specific evidence.
 > The pressure budget is now rebuilt against the accepted source after a helper
 > mismatch audit, with pressure-only uniform finite-core/moment propagation.
 > Directed bump integration exposes a ~1.14e-27 bias behind the earlier tiny map

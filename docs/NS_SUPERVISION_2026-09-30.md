@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `47a7e41269e87e30623877f75e9e14b0d00244b0`.
+The inspected `main` head before this update is `81836d454b44fdf3d805a97c6f10edf543d485c4`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`70e48e44d2cf879b81eb78d111f9bb9126ab189f`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/70e48e44d2cf879b81eb78d111f9bb9126ab189f)
+[`7e20717526a81ed9c52ea8445a83355007c0cf05`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/7e20717526a81ed9c52ea8445a83355007c0cf05)
 on `codex/st073-transition-next`, observed October 1. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,82 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-01 batch: epsilon-source correction and newly rebuilt matching
+
+**Source boundary:** the preceding shared-family certificates, including the
+70e48e44 whole-axis functional repair, belong to legacy source epsilon=.01delta.
+They cannot directly certify the new epsilon=.001delta field. Parent-thread
+independent paper-text review reports Lei/Ren v2 Section7.1 p83 auxiliary
+constants after (7.1) explicitly c_epsilon<=10^-3, with epsilon=c_epsilon*delta;
+Section6.1 p68 (6.2) gives the same definition. The legacy choice violates that
+construction's sufficient hypothesis. This is not a universal necessary bound
+for every physical solution. The new choice meets this one upper bound, not all
+smallness hypotheses or Section7 admission. This document attributes that direct
+text check to the supplied parent review; it was not repeated in this environment.
+
+At [c90e0fcd source-transfer stage](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/c90e0fcdb68c9f533e7887ef32ed19353cbf4582/docs/COMPLIANT_PRESSURE_AND_CORE_TRANSFER_2026_10_01.md),
+new pressure/waiting and all20-term fixed-point sensitivity companions were
+constructed, while connecting cones and repair transfer remained pending.
+New implicit source is
+`5aec111986d745459eb2e2fece291f1dc3fa7bf986529494df802c2aa2daceae`;
+legacy source is
+`082d18b8f1ec2df84526fbdc190217d97dfb8825e823fa4c9e017c8a58d001bb`.
+The constant-in-Z pressure perturbation proof applies only to raw preheat H=1
+profiles: epsilon/waiting changes occur after axial flattening. Actual heat
+H_delta pressure changes generally depend on Z and are excluded from this proof.
+Source epsilon=.001delta and core epsilon=1/Lambda are distinct quantities.
+
+The [7e207175 rebuilt-family report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/7e20717526a81ed9c52ea8445a83355007c0cf05/docs/COMPLIANT_INNER_OUTER_HEAT_FAMILY_2026_10_01.md)
+records later new-source inner/outer stage execution, superseding those pending
+transfer tasks in the narrower reported scopes. The compact144-order local
+coefficient view combines old intervals with correlated sensitivity caps; it
+does not recompute point coefficients or relabel the old solution.
+The [seed-inclusion receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/7e20717526a81ed9c52ea8445a83355007c0cf05/experiments/root_st073/lei_ren_part1_paper_compliant_seed_inclusion.json)
+records14 pressure-mass box checks, complex-envelope containment and148 pressure
+input jets with their physical units, new_point_coefficients_recomputed=false.
+The amplitude/width inclusion companion separately binds the selected new
+Cstar family. Analytic existence identifies the new solution inside these
+envelopes; whole-axis exit is separately rebuilt, not inferred from local rows.
+
+The [new global-exit receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/7e20717526a81ed9c52ea8445a83355007c0cf05/experiments/root_st073/lei_ren_part1_paper_compliant_global_exit_certificate.json)
+and rebuilt reference join provide new-source implicit inner matching claims.
+The [new repair receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/7e20717526a81ed9c52ea8445a83355007c0cf05/experiments/root_st073/lei_ren_part1_paper_compliant_five_moment_repair.json)
+binds source5aec1119 and five-defect family
+`3983d0ddb33fa85e6ab152ef7e29960f8b95aca3e1e86f1bda0882b39d825894`.
+It records new whole-Z implicit functional identities, corrected inner relaxed
+cone, no source midpoint projection or moment reset, and callable partial fields.
+Rounded bounds remain C1 defect<=4.9017390830378e-23 and coefficient norm
+<=3.37239648913e-20; equality of these summaries to legacy figures does not make
+the source identities interchangeable. The [new checker](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/7e20717526a81ed9c52ea8445a83355007c0cf05/experiments/root_st073/lei_ren_part1_paper_compliant_five_moment_repair_check.json)
+reports13 integrand/primitive/stress identities and explicitly does not use zero
+containment as the closure proof. Exact coefficient point functions, whole-axis
+full physical evaluator and Ur_Z remain absent. No independent proof audit or
+numerical replay was performed by this documentation update.
+
+New-source inlet/buffer, trial pulse and angular-through-waiting components now
+consume the same repaired family. The [trial pulse receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/7e20717526a81ed9c52ea8445a83355007c0cf05/experiments/root_st073/lei_ren_part1_paper_compliant_outer_pulse_map.json)
+recovers c1/c2 for trial amplitude, with actual_ap_selected=false. Waiting is
+recomputed for the new source; its root enclosure width~.0063099 is a root
+diagnostic, not matching closure. The [exact heat receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/7e20717526a81ed9c52ea8445a83355007c0cf05/experiments/root_st073/lei_ren_part1_paper_compliant_exact_heat_component.json)
+specifies an isolated positive-Gamma heat component and controlled future-defect
+interfaces, retaining formal inverse radius and finite directed remainder. Its
+exact correlated ratio epsilon/delta=1/1000 meets the numerical gate. It still
+sets angular_pressure_corrections_installed=false, actual_ap_selected=false,
+heat_exterior_matched_to_incoming_five_moments=false and
+full_physical_kinetic_energy_certified=false. Isolated radial swirl integrability
+is not full-domain kinetic energy or a matched background.
+
+Replay the pinned ordered driver `compliant_reconstruction.py --stage source`,
+then `--stage inner` and `--stage outer`; `--list` gives dependencies. Reported
+successful ordered runs are saved evidence, not runs performed by this reviewer.
+Next: actual angular terminal defects plus exact heat defects in common units,
+uniform angular/pressure repair, complete corrected swirl-energy tail and actual
+ap selection, five-moment outer transport and matching. Whole-outer cone,
+pressure/Ur heat match, global stress/flat remainder, true temporal recursion,
+pulse corrections and independent Cartesian NS residual remain open. Neither
+the epsilon gate nor the rebuilt inner functional repair completes Section9 or
+the global NS objective. Earlier shared subsections remain legacy history.
 
 ### 2026-10-01 batch: actual functional five-moment repair and outer transport
 
@@ -1547,6 +1623,12 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [7e207175 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36937412157)
+finished failure. Its actual constrained log has the original13 failed identifiers
+and423 passed; four smoke/slice jobs pass and full historical tests skip. No
+selected governance regression appears. These checks do not independently certify
+source-transfer sensitivity, functional closure or heat matching.
 
 The [70e48e44 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36929746585)
 finished failure. Its actual constrained log has original13 failed identifiers
