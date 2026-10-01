@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `9c5161ce19eab33678b9c329938c9b5914887d2b`.
+The inspected `main` head before this update is `a821dd9b6d3633ed4a9713b5c7c533bf10561a21`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`b712909dcd3d5cea6aa8d69d2fab5a316e94a63b`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b712909dcd3d5cea6aa8d69d2fab5a316e94a63b)
+[`be563ead9bce2118cac19f0277cdd94ea4332d50`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/be563ead9bce2118cac19f0277cdd94ea4332d50)
 on `codex/st073-transition-next`, dated September 30. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,68 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-01 batch: actual inlet, retained collar and whole-axis finite-core contributions
+
+The [37f7ef59 actual directed endpoint](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/37f7ef592bf21f2f36ca5e9467e2ebe8830ab469/docs/ACTUAL_DIRECTED_COLLAR_ENDPOINT_2026_09_30.md)
+supersedes the earlier pending actual-inlet evaluation **at Z=.3 only**. Exact
+portable JSON copies the stored finite input and trusted pickle hash; 473-digit
+directed arithmetic yields retained first/second-width atoms, five profile moments
+and F/Uz/P/Ur/Ur_Z without replacing P0. It is not an independently certified
+source construction. Of180 legacy scalar comparisons,174 fall outside the new
+narrow arithmetic intervals. These are recorded generation/rounding error
+obligations, not174 physical-field failures; intervals and caches are not enlarged
+or overwritten to hide them.
+
+The [c12159e9 conditional pressure transfer](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/c12159e90c217aa9890886e91f4af5de6e22c2b5/docs/PRESSURE_ERROR_TO_COLLAR_ENDPOINT_2026_09_30.md)
+regenerates degree18, pressure-order9 finite recurrence from exact axis inputs
+and accepted pressure derivative-error envelopes, then propagates uncertainty
+through endpoint width orders0-2 and all five moments. Axis perturbation is set
+to zero. Both pressure groups receive conservative combined seed bounds, which
+may double the seed bound at pressure=1. Reported Uz contribution bounds are
+about4.51e-36/2.25e-36/7.91e-36 for widths0/1/2. Width-w bounds describe
+coefficients divided by h_b^w; the corresponding physical contribution still
+needs multiplication by h_b^w. Pressure value error about.641701 is a profile
+pressure uncertainty, not a momentum residual. Nominal regeneration also exposes
+older rounded coefficient discrepancies, kept separate from pressure uncertainty.
+
+The [whole-spatial inner exit collar record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/acaa4ca6ecb3d8791da185d097625ef12b0344a7/docs/INNER_EXIT_COLLAR_SPATIAL_WIDTH_BOUNDS_2026_09_30.md)
+covers64 whole cells across s=[0,2] at Z=.3, including all eight retained
+first/second-width states and five moment coefficients. It encloses coefficient
+functions, not the full nonlinear collar or exterior heat collar. The
+[low-width stress record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/3404da0cd98dfae5dd97bc2e654ad623a65adfa1/docs/INNER_EXIT_COLLAR_LOW_WIDTH_STRESS_2026_09_30.md)
+checks leading/first-width same-pressure stress identities at six positions.
+Leading shear vanishes after the switch but first-width shear does not; a
+leading-only endpoint cone assessment is insufficient. Width-two stress needs
+width-three velocities, since radial differentiation lowers width order.
+
+The [regional cone record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/6e857083bb5cc6bd3fa4be5256f725d4aa5ffed5/docs/INNER_COLLAR_CONE_REGIONS_2026_09_30.md)
+distinguishes the strict interval from the later relaxed connection. Its directed
+marker s_an about3.16e-77 is conditional on injected logK=1e152 and logc_star=-100,
+not derived certified constants. Coarse stress samples miss that strict interval.
+Edge-factored margin formulas still need the actual comparison-error estimate,
+complete global K and c_star/K1 gates; they are not an actual-field cone certificate.
+
+The [be563ead whole-axis finite-core record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/be563ead9bce2118cac19f0277cdd94ea4332d50/docs/GLOBAL_FINITE_CORE_NORM_CONTRIBUTIONS_2026_09_30.md)
+extends pressure envelopes through order24 to closed real Z in[-1,1], and encloses
+degree18 finite F/Uz/P mixed derivatives through total order3 over x=R/Ra in[0,1].
+It restores the full finite F-squared pressure integral. The combined finite-model
+exit C2 deviation of Uz-4Z and mz/Ra-4Z is reported <=2.00000115626372515e-14;
+15 actual-inlet containment checks are regressions, not the source of uniformity.
+Directed axis-only F and reciprocal C3 norms add a contribution to K (40 recorded
+fixture checks), but do not bound reciprocal F away from the axis or complete K.
+Closed-axis bounds on this finite model do not extend the paper's flat-remainder
+guarantee to closed endpoints.
+
+Portable replays are documented in these pinned records: actual inlet check,
+pressure-perturbed core check, spatial collar coefficient script, regional cone
+script and global finite-core bounds script. This review has not independently
+rerun their numerical receipts or verified their rigorous enclosures. Original
+source/axis parameters, adapter generation, infinite radial remainder, omitted
+pressure/width orders, full collar uniform-Z/RK errors, full five-defect C2 norm,
+inverse tail and global functional closure remain open. Finite energy/exterior,
+full stress cone, Cartesian NS residual/L2 and true temporal recursion remain
+unaccepted; spatial width expansions are not temporal dynamics.
 
 ### 2026-10-01 batch: accepted-source alignment and analytic collar endpoint
 
@@ -505,6 +567,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [be563ead research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36805300257)
+finished with the original13 failed identifiers and423 passed. Four smoke/slice
+jobs pass; full historical tests are skipped. No new selected-suite regression
+is observed; this governance suite does not certify the new interval receipts.
 
 The [b712909d research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36800418976)
 completed with the same original13 failed identifiers and423 passed. No additional
