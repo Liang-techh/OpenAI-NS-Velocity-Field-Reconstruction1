@@ -52,5 +52,15 @@ enclosure comes from the directed recurrence and analytic interval data.
 - Continue five-moment closure, matching, heat exterior, flat remainder,
   time recursion and oscillatory stress correction.
 
+The separate `lei_ren_part1_paper_uniform_axis_log_norms.py` now bounds
+axis-only F and 1/F through three actual Z derivatives on [-1,1]. It keeps
+the common amplitude outside the normalized derivative recurrence, using
+opposite signs for the F and reciprocal equations. Its reciprocal C3 log
+upper bound is approximately 5e151, below the assumed log K=1e152 for this
+axis contribution. This does not bound 1/F away from the axis in the core.
+Forty independent modest-parameter derivative and reciprocal checks pass.
+Logarithms and positive norm sums are computed with directed arithmetic;
+exact binary interval endpoints are stored separately from display strings.
+
 Original source-parameter derivation, infinite radial error and full K are
 explicitly marked uncertified. This is not temporal coefficient recursion.
