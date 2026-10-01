@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "all_checks_passed": true,
+  "api": "coupled_rows(ctx, fixed, center, degree, delta, required_depth=3)",
+  "precision": 220,
+  "scalar_center_point_checks": 90,
+  "exact_interval_comparison_count": 90,
+  "exact_endpoint_comparison_count": 180,
+  "nondegenerate_centers": [
+    {
+      "center": "-.4",
+      "center_interval": [
+        "-0.4000000000000000000000000000000000000001",
+        "-0.3999999999999999999999999999999999999999"
+      ],
+      "radial_degree": 4,
+      "required_depth": 3,
+      "jet_length": 8,
+      "row_lengths": {
+        "A": [
+          8,
+          7,
+          6,
+          5,
+          4
+        ],
+        "Uz": [
+          8,
+          7,
+          6,
+          5,
+          4
+        ],
+        "P": [
+          8,
+          7,
+          6,
+          5,
+          4
+        ]
+      },
+      "containment_checks": 120,
+      "maximum_midpoint_scaled_error": "2.73624497096805604908328199523e-77",
+      "maximum_reconstructed_F_scaled_error": "9.78474241861425532993869123309e-78",
+      "all_checks_passed": true
+    },
+    {
+      "center": "0",
+      "center_interval": [
+        "-1.0e-40",
+        "1.0e-40"
+      ],
+      "radial_degree": 4,
+      "required_depth": 3,
+      "jet_length": 8,
+      "row_lengths": {
+        "A": [
+          8,
+          7,
+          6,
+          5,
+          4
+        ],
+        "Uz": [
+          8,
+          7,
+          6,
+          5,
+          4
+        ],
+        "P": [
+          8,
+          7,
+          6,
+          5,
+          4
+        ]
+      },
+      "containment_checks": 120,
+      "maximum_midpoint_scaled_error": "2.57641040552056431345515333155e-78",
+      "maximum_reconstructed_F_scaled_error": "1.75271242069333342386639579497e-78",
+      "all_checks_passed": true
+    }
+  ],
+  "source_hashes": {
+    "lei_ren_part1_paper_amplitude_factored_core.py": "bb1253348804880ff1a4d437befe749402e7357399554f8ced551a88cebcd30c",
+    "lei_ren_part1_paper_candidate_gauge_core.py": "864da25569c8965cfd25787f9e27d315643c2d1a4d8d678289d7cc7923acb007",
+    "lei_ren_part1_paper_core_recursion.py": "d63bab2b501f288170e7346fef02bbbb658f49257d480ac0b39d97232bc90ab2",
+    "lei_ren_part1_paper_schedule_endpoint_enclosures.py": "760a4facb6792b68d6c71264625ade4aaf99269b24d23dc7da558f1a6b9fb5f7",
+    "lei_ren_part1_paper_functional_core_recursion.py": "f144cf4f5f87921aabcca93a6ed082942de795d1eb0be5fe6319fbccc969d09f"
+  },
+  "equation_provenance": {
+    "paper": "Lei--Ren Part I, Section 8.2, equations (8.1)--(8.2)",
+    "paper_text_lines": "work_paper_cache/lei_ren_part1.txt:12275-12332",
+    "production_recurrence": "candidate_gauge_core.py:_advance_one",
+    "factored_recurrence": "amplitude_factored_core.py:factored_core_coefficients",
+    "unfactored_recurrence": "core_recursion.py:core_coefficients"
+  },
+  "scope": "Degree-4 directed algebra and interval-center containment only; no actual candidate 124-order run, whole-axis core, or terminal moment closure."
+}

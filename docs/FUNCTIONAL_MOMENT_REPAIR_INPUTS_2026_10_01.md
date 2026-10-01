@@ -85,3 +85,33 @@ Run both new receipts:
 python experiments/root_st073/lei_ren_part1_paper_reference_endpoint_targets.py
 python experiments/root_st073/lei_ren_part1_paper_five_bump_moment_map.py
 ```
+
+## Generalized axial-center core recurrence
+
+`lei_ren_part1_paper_functional_core_recursion.py` provides
+`coupled_rows(ctx, fixed, center, degree, delta, required_depth=3)`.
+The center is explicit and may be a real interval. At least
+`degree+required_depth+1` initial axial coefficients are required. Every radial
+step consumes one axial coefficient while retaining the additional input entry
+needed by differentiation. Unequal input vector lengths are reduced to their
+common available length; noninteger degrees are rejected.
+
+All original swirl-square, physical pressure and cross terms remain. No global
+variable in the hashed production driver or completed states is modified.
+At scalar center .3, degree4 reproduces90 intervals /180 endpoints of the
+unchanged directed production recurrence exactly. Independent unfactored and
+factored comparisons also pass on centers `-.4 +/-1e-40` and `0 +/-1e-40`,
+with120 containment comparisons per interval center.
+
+This verifies the generalized algebra, not a new candidate degree124 atlas or
+global closure. For a nondegenerate center interval, the output encloses local
+coefficient families at every center in the interval; it must not be treated as
+a single Taylor expansion about that interval.
+
+Next actual data generation: build common candidate fixed jets from the
+accepted functional P0, the prescribed axis amplitude/gradient and U0; generate
+center-interval radial rows; attach the existing analytic radial-tail bounds;
+then form all five cumulative moments and carry them through the actual
+transition to Rh. If direct interval propagation is too wide near the H0 root,
+use the global analytic core estimates and an adaptive axial representation;
+do not replace missing functional data with a few point samples.

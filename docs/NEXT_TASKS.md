@@ -1,3 +1,9 @@
+## 2026-10-01: generalized-center directed core algebra ready
+
+PARTIAL C120-A2: functional_core_recursion.py now accepts explicit real center intervals and a variable initial jet length. At degree4, .3 reproduces90 intervals /180 endpoints of the unchanged production recurrence exactly; independent factored/unfactored comparisons pass on -.4 +/-1e-40 and 0 +/-1e-40. Required derivative depth and integer degrees are guarded; all physical pressure/swirl-square/cross terms remain. Existing degree124 hashed drivers/states are untouched. This is an algebra prerequisite, not a completed whole-axis candidate atlas.
+
+Next: generate actual candidate fixed jets using functional accepted P0 and the prescribed amplitude/U0, use the generalized recurrence and global analytic bounds to enclose core/exit moment functions, propagate all five moments through the actual transition, and solve the existing paper five-bump map with certified support integrals. See docs/FUNCTIONAL_MOMENT_REPAIR_INPUTS_2026_10_01.md.
+
 ## 2026-10-01: functional reference targets and directed physical repair inputs
 
 DONE C120-M1 (endpoint target component): reference_endpoint_targets.py implements paper (9.3) as directed axial Taylor functions from the canonical accepted schedule hash. Physical Rh is kept in log factors and is not confused with s=4. Eighty independent derivative checks, whole-axis containment and physical scale conversion pass.
