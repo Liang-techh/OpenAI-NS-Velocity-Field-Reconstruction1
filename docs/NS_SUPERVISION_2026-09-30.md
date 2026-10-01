@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `f3a7c95ae7deb29e87cf569537d781c60c942171`.
+The inspected `main` head before this update is `895240d58b7ffad7bfd96349be2d8469e9f77c27`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`e5c56318f9b95f84678da803d546f2921c0237bf`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e5c56318f9b95f84678da803d546f2921c0237bf)
+[`1b7173c38f3cc2d8d8f1774c421aed7d55c74876`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1b7173c38f3cc2d8d8f1774c421aed7d55c74876)
 on `codex/st073-transition-next`, observed October 1. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,58 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-01 batch: degree124 interval family and controlled auxiliary comparison
+
+The [94ba0218 fresh interval-core/inlet record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/94ba0218849511809338b259a271cbd74a6f056a/docs/INTERVAL_CORE_INLET_BOUND_2026_10_01.md)
+and [completed production receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/1b7173c38f3cc2d8d8f1774c421aed7d55c74876/experiments/root_st073/lei_ren_part1_paper_candidate_interval_core_Z049_Z051.json)
+confirm the fresh Lambda120 local-center family[.49,.51] at radial degree124/124.
+The normalized mixed-C3 analytic radial Taylor-tail upper is about7.4672863e-13,
+passing the internal1e-12 truncation target. This **is not a combined finite-field
+midpoint error bound**. Family variation and coefficient interval dependency remain
+separate: at scaled_R=4, full Phi is about[.046903439,.517711916] and D about
+[1.07178345,30.68073765]. A tiny radial tail does not narrow those broad ranges.
+The same accepted14-stage pressure/source identity is preserved; this supersedes
+the earlier degree8-only status for this family, not for every axial center.
+
+Core-inlet error propagation now integrates tails and Leibniz product bounds into
+the five moments and prescribed pressure, with physical Uz error scaled by
+1/Lambda. The bound covers the inlet only, not its later physical transition.
+Earlier degree15/28/48 prose remains historical; the pinned completed receipt
+and state hash identify the current degree124 evidence.
+
+The [1b7173c3 controlled comparison record](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/1b7173c38f3cc2d8d8f1774c421aed7d55c74876/docs/CONTROLLED_INTERVAL_COMPARISON_2026_10_01.md)
+and [original enclosure receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/1b7173c38f3cc2d8d8f1774c421aed7d55c74876/experiments/root_st073/lei_ren_part1_paper_interval_comparison_enclosure.json)
+bind the same degree124 state to32 directed cells on y in[.005,.01]. Integrating
+factor/additive solutions enclose the auxiliary switched comparison field and
+radial moment integrals using entire-cell coefficient ranges plus analytic tails.
+Partial-cell lengths enclose intervening fields, rather than sampled interpolation.
+Field/moment jets retain axial order2, drivers order1; no third-order driver
+certificate is supplied. Endpoint Phi/D ranges about[.0404413,.51696617]/
+[1.06413,35.82671] remain broad and are not NS residuals.
+
+After the cutoff vanishes, the comparison freezes its fields and uses exact
+polynomial moment increments to physical R110. This does not extend the analytic
+core beyond scaled_R4.1 and is **not the actual physical exit ODE solution**.
+The receipt explicitly marks comparison discretization enclosed and core tails
+propagated, while exit_ODE_error_enclosed=false and physical_exit_ODE_solved=false.
+No midpoint projection or comparison driver certificate closes that physical gap.
+
+The [historical consistency receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/1b7173c38f3cc2d8d8f1774c421aed7d55c74876/experiments/root_st073/lei_ren_part1_paper_interval_comparison_consistency.json)
+captured degree38 state hash2cf064d95c53d64c15e90028c9a492aeb1e95af2449ba76c886c3b3c453cdf42.
+Its4251 pressure-identity overlaps and12753 scalar Z=.5 coefficient containments
+are not a fresh independent degree124 replay. Fixtures for the new integral
+method likewise support implementation; this reviewer did not independently run
+them or verify the rigorous estimates.
+
+Next requirements are controlled physical exit/switch propagation preserving
+these intervals, narrower/correlated axial families where needed, functional
+defects and bounded five-moment repair on those sources, then wider axial coverage.
+Original parameter errors, physical full-field error, terminal matching, heat/
+finite energy, full K/cone, temporal recursion, oscillatory correction and complete
+Cartesian NS residual/L2 remain unaccepted. Lambda36/48/120 identities remain
+separate. Replay guidance is in the pinned records; no science code or CI changes
+are introduced by this update.
 
 ### 2026-10-01 batch: bump quadrature correction and genuine degree8 new centers
 
@@ -889,6 +941,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [1b7173c3 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36837938568)
+actual log has the same original13 failed identifiers/423 passed. Four smoke/slice
+jobs pass; full historical tests skip. No additional selected governance failure
+appears; these tests do not independently certify the interval comparison bounds.
 
 The [e5c56318 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36832193677)
 actual constrained log reports the same original13 failed identifiers/423 passed.

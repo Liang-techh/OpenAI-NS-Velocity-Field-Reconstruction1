@@ -1,7 +1,7 @@
 # Navier–Stokes Candidate Research
 
 > **Progress index updated 2026-10-01:** newer research is available on
-> `codex/st073-transition-next` at [`e5c56318`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e5c56318f9b95f84678da803d546f2921c0237bf).
+> `codex/st073-transition-next` at [`1b7173c3`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1b7173c38f3cc2d8d8f1774c421aed7d55c74876).
 > See [current evidence, paper mapping and replay instructions](docs/NS_SUPERVISION_2026-09-30.md).
 > The ST063 tables and September 22 pause record below remain historical curated
 > results. They do not describe the latest branch or establish a live task status.
@@ -14,8 +14,10 @@
 > Directed bump integration exposes a ~1.14e-27 bias behind the earlier tiny map
 > residual. Re-solved Lambda120 center controls and consistent cumulative integrals
 > now bound nominal-source value/first-Z residuals below 5e-35/1.3e-56.
-> New Z=.5 and [.49,.51] cores reach degree8 only. Source errors, production-depth
-> interval cores, whole-axis repair/matching and final cone certification remain open.
+> The fresh [.49,.51] center family now reaches degree124 with a 7.47e-13
+> normalized radial-tail bound; broad field intervals remain separate. Controlled
+> auxiliary comparison integrals are available, while physical exit ODE errors,
+> source errors, whole-axis repair/matching and final cone certification remain open.
 > Lambda36/48 receipts stay separate; these moment bounds are not NS acceptance.
 > Full source errors, five-defect norm, relative-flat closure and global checks remain pending.
 > Finite energy, cone and time-scale recursion remain uncertified. Research CI retains 13
