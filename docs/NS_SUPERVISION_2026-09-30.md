@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `101772f7fef2a092222b63498632b78a9af267af`.
+The inspected `main` head before this update is `07708d497b640108fc9a0f5c42e711115410ea45`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`c59b795612d5922a08fee54875a74641bf5fde3f`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c59b795612d5922a08fee54875a74641bf5fde3f)
+[`bab19fee20a018d9b32eeb76baa23c6a0a6672d6`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/bab19fee20a018d9b32eeb76baa23c6a0a6672d6)
 on `codex/st073-transition-next`, observed October 2. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,40 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-02 batch: actual R110-to-Rsh long reshape histories
+
+The [bab19fee report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/bab19fee20a018d9b32eeb76baa23c6a0a6672d6/docs/LONG_RESHAPE_PROFILES_2026_10_02.md)
+and [checker receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/bab19fee20a018d9b32eeb76baa23c6a0a6672d6/experiments/root_st073/lei_ren_part1_paper_compliant_long_reshape_profiles_check.json)
+bind the actual R110 log inlet, original selected T=400Abar, sigma derivative8
+and all inherited nonzero histories through the entire phase[0,1] to Rsh.
+Log/angular/axial inputs and five cumulative moment shapes retain axial order5,
+with mean-recovered radial velocity axial4. Actual B_C2 is intersected with
+its same-source theorem; higher jets retain inlet bounds rather than extending
+that theorem. Original P0 remains separate from the normalized pressure moment.
+
+Finite radial kernel definitions and inherited-decay terms remain exact;
+positive-rate infinite integrals are derivative upper bounds only, not a
+truncation or replacement source. Bell factors restore true derivatives divided
+by current amplitude. The Rsh log velocity equals the reference expression
+exactly, but that identity alone does not establish accumulated reference
+moments, pressure, recovered Ur or high-order radial interfaces.
+
+The accepted checker leaves reshape_radial_mixed4_certified=false,
+reference_continuation_installed=false and actual_five_moment_patch_connected=false.
+Next propagate actual histories using exact log offsets-8/-7/-6/-5 to reference,
+axial restoration and repair. Do not subtract huge rounded logs to recover
+offsets or reset histories from matched velocity. Existing standalone patch
+certificates remain separate until the actual source chain is connected.
+
+Bridge/switch/reshape mixed4, core/annular high-order joins, full physical-field
+dispatcher, admissible stress/independent flat remainder, genuine temporal
+recovery and corrected NS validation remain open. Infinite unlocalized global
+kinetic energy remains a failure of the unchanged finite-energy goal; no
+localization or reduced domain goal is adopted. Replay reshapeprofiles in the
+compliant driver. This reviewer read saved claims/receipt/logs only, without
+independent scientific execution or complete proof audit. Main structure and
+historical evidence are preserved.
 
 ### 2026-10-02 batch: actual core histories, bridge and R110 axial inlet
 
@@ -2039,6 +2073,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [bab19fee run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36983651108)
+retains the same original13 failed constrained identifiers/423 passed in its
+actual log; four smoke/slice jobs pass and full historical tests skip. No new
+selected failure appears; these checks do not certify full physical assembly.
 
 The [c27335c7 exact-head run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36978782947)
 retains the original13 constrained failed identifiers/423 passed in its actual
