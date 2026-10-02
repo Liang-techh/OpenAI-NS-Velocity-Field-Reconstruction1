@@ -18,6 +18,10 @@ Flatjets supplies original sigma/gp/beta derivatives and flat support
 majorants. Mixedjets recovers every velocity/pressure multiindex in (y,Z)
 with total order<=4 from the same primitive ODEs and physical prefactors.
 Uniform whole-pulse interfaces and post-pulse C4 remain unfinished.
+Physicaljets maps actual leading profiles to physical cylindrical r/z
+derivatives and finite log-bound ledgers. Interfacejets identifies internal
+pulse charts by exact uncapped source equations, not interval overlap.
+Quantitative flat velocity and two-sided external joins remain pending.
 """
 import argparse
 import importlib
@@ -49,11 +53,13 @@ PULSEJETS=('pulse_high_jets','pulse_high_jets_check')
 RADIALJETS=('fifth_axial_jets','fifth_axial_jets_check','pulse_radial_C4','pulse_radial_C4_check')
 FLATJETS=('flat_pulse_derivatives','flat_pulse_derivatives_check')
 MIXEDJETS=('pulse_mixed_C4','pulse_mixed_C4_check')
+PHYSICALJETS=('pulse_physical_bounds','pulse_physical_bounds_check')
+INTERFACEJETS=('pulse_interface_certificate',)
 
 
 def stages(stage):
-    return {'source':SOURCE,'inner':INNER,'outer':OUTER,'angular':ANGULAR,'energy':ENERGY,'pulse':PULSE,'postpulse':POSTPULSE,'closure':CLOSURE,'angularjets':ANGULARJETS,'axialjets':AXIALJETS,'pulsejets':PULSEJETS,'radialjets':RADIALJETS,'flatjets':FLATJETS,'mixedjets':MIXEDJETS,
-            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS}[stage]
+    return {'source':SOURCE,'inner':INNER,'outer':OUTER,'angular':ANGULAR,'energy':ENERGY,'pulse':PULSE,'postpulse':POSTPULSE,'closure':CLOSURE,'angularjets':ANGULARJETS,'axialjets':AXIALJETS,'pulsejets':PULSEJETS,'radialjets':RADIALJETS,'flatjets':FLATJETS,'mixedjets':MIXEDJETS,'physicaljets':PHYSICALJETS,'interfacejets':INTERFACEJETS,
+            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS}[stage]
 
 
 def run(stage='all',list_only=False):
@@ -66,9 +72,11 @@ def run(stage='all',list_only=False):
         print('Build compliant stage:',name,flush=True)
         importlib.import_module(PREFIX+name).run()
         completed.append(name)
-    inherited_angular=any(name in completed for name in ('future_energy_high_jets_check','axial_high_jets_check','pulse_high_jets_check','fifth_axial_jets_check','pulse_radial_C4_check','flat_pulse_derivatives_check','pulse_mixed_C4_check'))
-    inherited_fifth=any(name in completed for name in ('fifth_axial_jets_check','pulse_radial_C4_check','flat_pulse_derivatives_check','pulse_mixed_C4_check'))
-    inherited_radial=any(name in completed for name in ('pulse_radial_C4_check','flat_pulse_derivatives_check','pulse_mixed_C4_check'))
+    inherited_physical=any(name in completed for name in ('pulse_physical_bounds_check','pulse_interface_certificate'))
+    inherited_mixed=inherited_physical or 'pulse_mixed_C4_check' in completed
+    inherited_angular=inherited_mixed or any(name in completed for name in ('future_energy_high_jets_check','axial_high_jets_check','pulse_high_jets_check','fifth_axial_jets_check','pulse_radial_C4_check','flat_pulse_derivatives_check'))
+    inherited_fifth=inherited_mixed or any(name in completed for name in ('fifth_axial_jets_check','pulse_radial_C4_check','flat_pulse_derivatives_check'))
+    inherited_radial=inherited_mixed or any(name in completed for name in ('pulse_radial_C4_check','flat_pulse_derivatives_check'))
     result=dict(stages_completed_this_run=completed,
         source_relation='epsilon_source=.001*delta; epsilon_core=1/Lambda',
         legacy_source_preserved=True,full_NS_background_completed=False,
@@ -85,19 +93,22 @@ def run(stage='all',list_only=False):
         pulse_radial_velocity_axial_C3_installed=inherited_radial or 'pulse_high_jets_check' in completed,
         pulse_primitives_axial_C5_installed=inherited_radial,
         pulse_radial_velocity_axial_C4_installed=inherited_radial,
-        original_radial_shape_derivatives_C4_available=any(name in completed for name in ('flat_pulse_derivatives_check','pulse_mixed_C4_check')),
-        pulse_all_mixed_derivatives_total_order_le4_available='pulse_mixed_C4_check' in completed,
-        quantitative_flat_support_majorants_available=any(name in completed for name in ('flat_pulse_derivatives_check','pulse_mixed_C4_check')),
+        original_radial_shape_derivatives_C4_available=inherited_mixed or 'flat_pulse_derivatives_check' in completed,
+        pulse_all_mixed_derivatives_total_order_le4_available=inherited_mixed,
+        quantitative_flat_support_majorants_available=inherited_mixed or 'flat_pulse_derivatives_check' in completed,
+        all_cylindrical_r_z_derivatives_total_order_le4_mapped=inherited_physical,
+        complete_pulse_physical_spatial_supremum_log_ledger_available=inherited_physical,
+        exact_functional_main_gap_and_gap_end_identities_certified='pulse_interface_certificate' in completed,
         full_pulse_C4_installed=False,
         temporal_recursion=False,
-        next_dependency='Certify uniform all-chart mixed bounds/flat interfaces, compose post-pulse C4 and stress cone; build admissible stress/flat remainder, then genuine n-dependent temporal recursion')
+        next_dependency='Quantitative flat velocity/moment bounds and two-sided external joins; compose post-pulse C4, Cartesian map, energy and stress cone; then genuine temporal recursion')
     print(json.dumps(result,indent=2),flush=True)
     return result
 
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','all'),default='all')
+    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','all'),default='all')
     parser.add_argument('--list',action='store_true',help='Print the ordered modules without running them')
     args=parser.parse_args()
     run(args.stage,args.list)

@@ -1,3 +1,17 @@
+# F38-D3c1g2 physical derivative ledger and functional pulse interfaces - 2026-10-01
+
+The SAME actual compliant .001 O4 pulse now maps all15 profile mixed derivatives to physical cylindrical component r/z derivatives through total order4 using paper Lemma2.1, the implicit lambda(t,z), angular/axial beta=-1-delta, radial beta=-1 and pressure beta=-2-2delta. The exact repeated radial lowering factors and axial product/coordinate terms are retained. Huge absolute source radii and all norm scales remain finite formal logarithms with separate logCstar/logPstar/inverse-mu/finite-offset parts.
+
+A complete six-chart physical supremum log ledger covers allZ in[-1,1] and every r/z multiindex through4, with time sectors log(tau)=-1,-10,-100 and a generic positive-tau formula. Sixteen symbolic operator identities,180 independent derivatives using a directly solved physical implicit lambda,180 radius/time scale identities and1080 actual chart/derivative/time-sector log bounds PASS. This ledger is neither a physical energy integral nor a Cartesian vector derivative certificate.
+
+Thirty-two source-bound functional pulse identities now prove the actual selected main/gap and gap/end moment/energy functions, exact two-gap coordinate change, full end future supports, original pressure/angular histories and inlet values. The production two-row inverse, first row exponential and end/incoming scale normalizations are translated directly. Exact underlying sources enter equalities; positive numerical caps remain enclosures only. Axial identities through5 and repeated-y compatibility use arbitrary smooth source histories and the same ODEs, not sampled interval overlap. Read-only GPT-5.6 Luna/max independently derived these identities and confirmed the physical recurrence.
+
+Read docs/PHYSICAL_PULSE_DERIVATIVES_AND_FUNCTIONAL_INTERFACES_2026_10_01.md. New --stage physicaljets and --stage interfacejets; ordered pipeline has62 modules. F38-D3c1g2a1b and g2a2 are COMPLETE. Full pulse/outer C4, kinetic energy/volume L2, cone/admissible stress/flat remainder, full Cartesian derivatives/residual and true n-dependent recursion remain incomplete.
+
+NEXT: quantitative flat velocity/moment comparison ledger plus two-sided O3 power/pulse and pulse/O5 flatten high-order joins -> complete post-pulse high mixed derivatives -> Cartesian vector map, physical energy and stress cone -> stress/flat remainder -> genuine recursive coefficients. This header supersedes missing O4 physical r/z mapping/log bounds and INTERNAL functional-interface identities only.
+
+---
+
 # F38-D3c1g original flat shapes and mixed pulse derivatives - 2026-10-01
 
 The SAME compliant .001 family now has original sigma/gp/normalized beta derivatives through radial order4, including support-crossing boxes and analytic flat-tail majorants. Exact constant/zero extensions, beta radius .15, original positive normalization, main mu^k factors and finite end offsets remain unchanged. Tiny source caps are positive enclosures, not replacement definitions. Tail caps use W*exp(-1000) only after a directed log inequality, so numerical upper tails also vanish with endpoint distance; sigma order0 means deviation from its endpoint constant.

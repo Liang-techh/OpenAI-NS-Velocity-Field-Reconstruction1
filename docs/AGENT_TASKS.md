@@ -1,3 +1,30 @@
+# F38-D3c1g2 physical pulse map and functional interfaces handoff - 2026-10-01
+
+- [x] F38-D3c1g2a1b: Convert every complete O4 factored chart box into physical cylindrical component r/z derivative log bounds. Apply exact implicit lambda and beta scales, repeated radial lowering factors and axial coordinate derivatives through4. Preserve source Rp=110(Cstar Pstar)^10 exp(yd+1+Tw), separate huge log origins/inverse-mu/finite offsets, and never materialize exp(logCstar). All1080 source chart/derivative/time-sector bounds,180 independent physical implicit-coordinate derivatives and180 independent scale identities PASS.
+- [x] F38-D3c1g2a2: Exact INTERNAL main/gap and gap/end identities use the actual selected two-row inverse and energy equation, true divided-difference weights, exact common/incoming source scales and Rp/Rv energy factor exp(-26). Prove coordinate substitution xi=13+mu*s, full future weights at s=-4, pressure/angular history and zero-length entrance values. Thirty-two source-bound identities including arbitrary axial functions through5 PASS. Caps are enclosures, never the exact source functions.
+
+F38-D3c1g2a as a whole remains PARTIAL: complete physical supremum log bounds and internal function equalities do not replace quantitative flat velocity comparisons and two-sided external high-order joins.
+
+Next executable work:
+
+- [ ] F38-D3c1g2a3a: Compose the ORIGINAL sigma/gp/beta analytic tail bounds with actual whole-Z ap/end derivative bounds. Use entrance xi=mu*h and exit 11-xi=mu*h for small log-radius distance h; retain exact end support offsets and beta w<=2h/.15. Produce bounds for all B mixed derivatives needed by velocity C4. Do not replace positive tails with zero or a fixed numerical floor.
+- [ ] F38-D3c1g2a3b: Compare each partial moment with the homogeneous/zero-input continuation having its exact common interface value. Bound the difference by the local source integral, then recover higher y/mixed derivatives from the true ODEs. For energy include the full B^2 binomial derivatives and retain its nonzero terminal future target. Apply paper(3.9), physical prefactor rates and axial input to produce quantitative velocity flat-comparison bounds.
+- [ ] F38-D3c1g2a3c: Install independently evaluated high-order O3 pure-power inlet data and identify it with the pulse entrance through every required mixed order. Values are source-identified already; the two-sided field derivative provider and quantitative joined certificate remain missing.
+- [ ] F38-D3c1g2a3d: Install high-order O5 flatten data at Rv and identify it with pulse terminal data. B and radial velocity vanish by empty supports, energy is POSITIVE selected future energy, and swirl/pressure/angular histories continue with original flat flatten factors. Certify full pulse C4 only after both external joins and flat-comparison ledger have evidence.
+- [ ] F38-D3c1g2b: Cell Taylor remainder only if a cell polynomial is used. Current derivative maps use interval algebra, with no cell polynomial substitution or inferred remainder.
+- [ ] F38-D3c2a: Complete high mixed derivative providers through100-unit flatten and following power while retaining original P0+Mp and admitted absolute pressure/angular closures.
+- [ ] F38-D3c2b: Both angular supports with actual C5 angular functions and original beta derivatives; recover signed physical swirl/primitive/pressure derivatives in the same source graph.
+- [ ] F38-D3c2c: Exact derivative transport and interface certificates through steep entry/power/exit and waiting, using original sigma where the shape agrees.
+- [ ] F38-D3c2d: Epsilon collar and full exact Gamma exterior high derivatives and infinite-tail bounds. Keep formal S>0 and exact heat identity; no finite S-series replacement.
+- [ ] F38-D3c2e: Extend current physical cylindrical mapping to all regions and differentiate the cylindrical basis for Cartesian vector derivatives. Axis/core/inner/outer joining evidence is required for whole-field C4.
+- [ ] F39: Physical kinetic energy and volume L2 integrals in the actual required physical domain, full stress-cone margins, global admissible divergence-form stress and independently flat remainder. Supremum log bounds do not imply finite energy or a low corrected residual.
+- [ ] F40: Real n=1 and n>=2 coefficient recovery with n-dependent forcing and separate moment repair on a common inner domain; curl-based truncation and smooth summation. Leading physical derivative mapping is NOT temporal recursion.
+- [ ] F41: Mean/oscillatory families, averaged quadratic stress cancellation, full forced Cartesian residual and genuine vortex/material-line winding diagnostics.
+
+Evidence: docs/PHYSICAL_PULSE_DERIVATIVES_AND_FUNCTIONAL_INTERFACES_2026_10_01.md; --stage physicaljets and --stage interfacejets,62 ordered modules. Preserve prior source receipts and unrelated edits. Full pulse/outer C4, energy, global stress/flat remainder, Cartesian vector residual and temporal recursion remain false.
+
+---
+
 # F38-D3c1g original flat derivatives and pulse mixed-order handoff - 2026-10-01
 
 - [x] F38-D3c1g1a: Original sigma derivatives0..4, logistic/reflection with exact exterior constants, analytic Cn exp(4-m^-2)m^-3n endpoint majorants, finite positive caps and support-crossing boxes. Constants(4,28,256,3104); no source reset.
