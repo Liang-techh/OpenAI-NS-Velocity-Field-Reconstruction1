@@ -1,3 +1,33 @@
+# Next execution: prescribed-shear bridge mixed4 and core/R100 joins - 2026-10-02
+
+Read docs/MICROSWITCH_MIXED_C4_2026_10_02.md and the current checkpoint header. Reproduce --stage switchmixed (100 ordered modules). This header supersedes open microscopic-switch and full R2..110 items below. All providers retain SAME actual source, original P0 and positive formal parameters; enclosures do not reconstruct point coefficients or complete the NS field.
+
+- [x] Restore BOTH microscopic switches through physical phase/Z total4; retain original first/second angular control, actual/comparison quotient, current-radius drive and original sigma jets.
+- [x] Carry hb/Pstar/F0/u-base source exponents through full Bell, Leibniz, quadratic V and Z derivatives; cap final ordinary coefficients only. Retain final factor ledgers; include adversarial combined-scale fixtures.
+- [x] Cancel hb powers symbolically before forming logR derivative bounds; retain exact D_y^k=hb^-k D_s^k without materializing inverse width.
+- [x] Bind first-branch PARTIAL signed axial integral to the accepted source graph and derivative recurrence. Preserve complete SAME V110 in second switch and postpower.
+- [x] Prove comparison moment positive-weight containment with axial0..6 and the original smoothing continuation box. Label enclosures truthfully; never substitute comparison moments for actual moments.
+- [x] Restore COMPLETE R2..110 positive power transport with actual R2 histories, formal R2/zeta/theta/logR trees, original angular +.6hb identity and directed containments.
+- [x] Certify LOCAL phase1/R2/R110 functional mixed4 joins by original flatness and actual histories/P0. Keep bridge/core/full Cartesian and stress/temporal gatesfalse.
+- [ ] Claim the remaining bridge task and use the accepted family/source/parameter hashes. Keep unrelated experiments. Retain original source chi=1-(1-hb)*sigma(y/hb), alpha=1-sigma((y-hb)/hb), y=log(R/Ra); no reset moments or cap-valued source.
+- [ ] Split bridge coverage into original y/hb in[0,1], [1,2], and y in[2hb,log(100/Ra)]. The comparison core continuation remains radially varying in the first two charts; the frozen-comparison direction recurrence applies ONLY after2hb.
+- [ ] Supply sufficient TRUE mixed core/continuation jets for comparison and its own moment ODEs. Account for the extra axial order consumed by each direction Z derivative and the radial orders needed by control differentiation; derive missing orders from the core equations/admitted analytic bounds rather than duplicate arbitrary sixth-order boxes.
+- [ ] Recover smooth comparison Fbar/Vbar radial-phase jets from alpha times ORIGINAL core derivatives. Recover its own moment histories and physical radial RHSs separately. Preserve source-positive/IBP bounds and all reciprocal-width factors.
+- [ ] Recover actual bridge logF/Uz phase/logR derivatives from ORIGINAL chi and the full actual/comparison quotient times hydro + Pstar^2 pressure + F0^2 swirl drive. Include derivatives of comparison denominator in the smoothing charts; it is not frozen there.
+- [ ] Reuse factored source algebra to retain width/amplitude correlations in derivative products and cancel source width powers before log bounds. Treat source HB and numerical enclosure radius as separate objects.
+- [ ] Recover physical Ur and all five primitives through mixed total4 using actual own histories, original P0, true radial prefactors and raw V units. Do not differentiate normalized primitive means as physical primitives.
+- [ ] Prove internal y=hb and2hb functional joins with original sigma flatness and shared histories. Bind y=0 to accepted actual core exit, with the exact source chi=1 and alpha=1 endpoint jets.
+- [ ] Prove y=log(100/Ra) bridge-to-first-switch joins using original late chi=hb, same comparison source and actual R100 histories. Keep source functional identities separate from diagnostic interval overlap.
+- [ ] Check focused finite fixtures with genuinely varying comparison phi/V, nonzero histories, original cutoff and all three drive scales. Bind actual enclosures and endpoint identities to current prerequisite receipts. Do not rerun the entire inherited suite unless an upstream source changed.
+- [ ] Build complete core/bridge/switch/reshape/reference/restore/patch dispatcher and missing Rh-to-pre-O3 continuation, with original radius/support ordering and SAME outer source moments/P0.
+- [ ] Assemble complete physical Cartesian spatial4 and fixed-position time derivatives across all layers, axis and interfaces; preserve structural divergence and primitive pressure.
+- [ ] Restore required local/terminal energy domains and admissible divergence-form stress with regional margins. Construct and bound the independent flat remainder. Unlocalized whole-space energy is infinite.
+- [ ] Implement genuine n-dependent coefficient recovery, independent moment repair, finite-order remainder and smooth summation. Then mean/oscillatory correction and full forced Cartesian residual validation.
+
+For each completion record the actual scope, callable artifact, reproduction command and accepted receipt/commit. DONE, accepted and merged remain distinct. Keep full-field/stress/global-energy/temporal gatesfalse until complete evidence exists.
+
+---
+
 # Next execution: microscopic switches and bridge mixed4 - 2026-10-02
 
 Read docs/LONG_RESHAPE_MIXED_C4_2026_10_02.md; reproduce --stage reshapemixed (98 ordered modules). This header supersedes open long-reshape/R110/Rsh mixed4 items below. All accepted providers retain SAME actual source, original P0, formal positive amplitudes and selected parameters. Local source certificates are not reconstructed point functions or a complete NS field.

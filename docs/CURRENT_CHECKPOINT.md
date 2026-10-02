@@ -1,3 +1,19 @@
+# Original microscopic switch mixed4 / full R2..110 power - 2026-10-02
+
+SAME actual source now supplies BOTH original microscopic switches with physical phase/Z derivatives of total order <=4 and exact formal phase-to-logR bounds. Complete original post-switch power R2..110 has ordinary logR/Z mixed4. Local phase1, R2 and R110 joins follow from original sigma flatness, physical primitive RHSs and exact actual histories/P0. Read docs/MICROSWITCH_MIXED_C4_2026_10_02.md; reproduce --stage switchmixed (100 ordered modules).
+
+Two read-only Luna/max findings were resolved: comparison own moments are explicitly positive-kernel ENCLOSURES of the true smoothing history, not exact values; a new factored derivative algebra carries hb/Pstar/F0/u-base source factors through the full Bell/Leibniz/Z derivative before numerical capping. At logR conversion hb powers cancel per source term BEFORE the logarithmic triangle bound. The looser capped-phase conversion is diagnostic only. Directed width, smoothing-box and R2/zeta/theta/R110 containments are checked; formal radii are never rounded to100.
+
+The first branch retains V100 plus the original signed PARTIAL I_first_switch(0,s) graph, bound to the accepted shared source namespace/integrand and full derivative recurrence. Second branch/postpower retain SAME V110. All six actual R2 histories, original pressure datum and raw axial V are retained. Source integrals remain formal, not newly computed point coefficients.
+
+Checks:480 actual phase velocity/pressure bounds,600 primitive bounds,1080 final factored source-sum rows and1080 phase-to-logR ledgers;180 velocity/pressure and225 primitive bounds on the full R2..110 power; independent96 comparison +192 controls +135 physical derivatives and18 extreme-factor coefficients; symbolic original source/flatness/FTC/Leibniz/IBP/positive-kernel identities. Local source certificates are not dynamics measurements or full NS validation.
+
+NOT DONE: prescribed-shear bridge mixed4 and core/bridge/R100 joins; complete inner/pre-O3 and Cartesian assembly; required-domain/terminal energy; admissible divergence-form stress and independent flat remainder; genuine n-dependent recursion and mean/oscillatory correction. Full-inner/full-field/stress/global-energy/temporal gates remainfalse. Original unlocalized whole-space energy remains infinite.
+
+NEXT: actual prescribed-shear bridge in its TWO microscopic smoothing charts and following frozen-comparison macro chart -> core/bridge/R100 functional joins -> complete assembly -> energy/stress/flat remainder -> recursion/correction.
+
+---
+
 # Actual long reshape mixed4 / shared signed axial source - 2026-10-02
 
 SAME actual R110 source: full original reshape logR/Z physical velocity/pressure and all five primitive derivatives through total4 are now available. Original T=400*Abar, full moment kernels and P0 are retained. Local original R109..110 post-switch power supplies the left R110 side; Rsh connects to the accepted reference branch by flat source identities and exact actual histories. This does NOT complete microscopic switches/bridge or full physical assembly.

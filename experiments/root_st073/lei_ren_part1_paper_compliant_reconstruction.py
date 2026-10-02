@@ -67,6 +67,10 @@ including variable-slope Bell terms and actual full primitive histories.
 Its original kernel sign is derived independently from the integrating
 factor. It supplies the local original power before R110 and the Rsh join;
 microscopic switch/bridge interfaces and full physical assembly remain open.
+Switchmixed adds original microscopic phase/Z4 derivatives with formal
+hb^-k logR bound ledgers, retaining source factors until final derivatives.
+It supplies complete R2..110 power mixed4 and local phase1/R2/R110 joins;
+the prescribed-shear bridge and core/bridge interfaces remain unfinished.
 """
 import argparse
 import importlib
@@ -116,6 +120,7 @@ ACTUALPATCH=('actual_moment_patch','actual_moment_patch_check')
 PATCHMIXED=('actual_patch_mixed_C4','actual_patch_mixed_C4_check')
 RESTOREMIXED=('reference_restore_mixed_C4','reference_restore_mixed_C4_check')
 RESHAPEMIXED=('long_reshape_mixed_C4','long_reshape_mixed_C4_check')
+SWITCHMIXED=('microswitch_mixed_C4','microswitch_mixed_C4_check')
 
 
 def stages(stage):
@@ -129,7 +134,8 @@ def stages(stage):
             'patchmixed':PATCHMIXED,
             'restoremixed':RESTOREMIXED,
             'reshapemixed':RESHAPEMIXED,
-            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS+POSTMIXEDJETS+STEEPJETS+HEATJETS+PHYSICALFIELD+COREPHYSICAL+FROZENFIELD+BRIDGEPROFILES+SWITCHPROFILES+RESHAPEPROFILES+RESTOREPROFILES+ACTUALPATCH+PATCHMIXED+RESTOREMIXED+RESHAPEMIXED}[stage]
+            'switchmixed':SWITCHMIXED,
+            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS+POSTMIXEDJETS+STEEPJETS+HEATJETS+PHYSICALFIELD+COREPHYSICAL+FROZENFIELD+BRIDGEPROFILES+SWITCHPROFILES+RESHAPEPROFILES+RESTOREPROFILES+ACTUALPATCH+PATCHMIXED+RESTOREMIXED+RESHAPEMIXED+SWITCHMIXED}[stage]
 
 
 def run(stage='all',list_only=False):
@@ -142,7 +148,8 @@ def run(stage='all',list_only=False):
         print('Build compliant stage:',name,flush=True)
         importlib.import_module(PREFIX+name).run()
         completed.append(name)
-    inherited_reshapemixed='long_reshape_mixed_C4_check' in completed
+    inherited_switchmixed='microswitch_mixed_C4_check' in completed
+    inherited_reshapemixed=inherited_switchmixed or 'long_reshape_mixed_C4_check' in completed
     inherited_restoremixed=inherited_reshapemixed or 'reference_restore_mixed_C4_check' in completed
     inherited_patchmixed=inherited_restoremixed or 'actual_patch_mixed_C4_check' in completed
     inherited_patch=inherited_patchmixed or 'actual_moment_patch_check' in completed
@@ -216,7 +223,12 @@ def run(stage='all',list_only=False):
         actual_100_110_switch_axial5_enclosures_available=inherited_switch,
         actual_100_110_radial_recovery_axial4_available=inherited_switch,
         actual_R110_inlet_axial5_available=inherited_switch,
-        switch_radial_mixed4_certified=False,
+        switch_phase_mixed4_available=inherited_switchmixed,
+        switch_logR_mixed4_log_ledger_available=inherited_switchmixed,
+        switch_radial_mixed4_certified=inherited_switchmixed,
+        switch_radial_mixed4_scope='Original phase/Z total<=4 plus formal hb^-k logR bound ledgers; physical hb^-k values not materialized; bridge/core joins excluded',
+        complete_original_R2_R110_power_mixed4_available=inherited_switchmixed,
+        phase1_R2_and_R110_local_functional_mixed4_joins_certified=inherited_switchmixed,
         actual_long_reshape_log_velocity_axial5_available=inherited_reshape,
         actual_long_reshape_moment_axial5_enclosures_available=inherited_reshape,
         actual_long_reshape_radial_recovery_axial4_available=inherited_reshape,
@@ -256,14 +268,14 @@ def run(stage='all',list_only=False):
         full_pulse_C4_scope='Leading O4 and two local external interfaces, spatial/profile mixed total<=4 at fixed positive tau; whole outer/core/axis and time derivatives excluded',
         full_outer_C4_certified=False,
         temporal_recursion=False,
-        next_dependency='Actual reshape/reference/restore/patch mixed4 -> remaining microscopic switches/bridge mixed4 and core joins -> inner/pre-O3 and whole physical assembly; energy/stress/flat remainder -> actual recursion/correction')
+        next_dependency='Actual microscopic switches and full R2..110 power -> prescribed-shear bridge mixed4 and core/bridge/switch joins -> inner/pre-O3 and whole physical assembly; energy/stress/flat remainder -> actual recursion/correction')
     print(json.dumps(result,indent=2),flush=True)
     return result
 
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','postmixedjets','steepjets','heatjets','physicalfield','corephysical','frozenfield','bridgeprofiles','switchprofiles','reshapeprofiles','restoreprofiles','actualpatch','patchmixed','restoremixed','reshapemixed','all'),default='all')
+    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','postmixedjets','steepjets','heatjets','physicalfield','corephysical','frozenfield','bridgeprofiles','switchprofiles','reshapeprofiles','restoreprofiles','actualpatch','patchmixed','restoremixed','reshapemixed','switchmixed','all'),default='all')
     parser.add_argument('--list',action='store_true',help='Print the ordered modules without running them')
     args=parser.parse_args()
     run(args.stage,args.list)
