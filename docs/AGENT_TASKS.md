@@ -1,3 +1,27 @@
+# F38-D1 corrected post-pulse task handoff - 2026-10-01
+
+- [x] F38-D1a: Add same-family corrected outer provider consuming actual selected pulse, implicit angular coefficients, original pressure source and exact Gamma heat. Verify dependency hashes and complete pulse prerequisites.
+- [x] F38-D1b: Recover corrected velocities and allfive primitives through100-unit flatten and post-flatten power. Keep the complete angular history, current-radius normalizations and exact pulse zero axial/mixed histories; energy is the direct remaining swirl integral.
+- [x] F38-D1c: Install both actual angular bumps and signed linear/quadratic partial and future changes. Handle interval boxes crossing support boundaries. Original P0+Mp is retained with exactly zero increment at Rv; no midpoint controls or pressure replacement.
+- [x] F38-D1d: Compose steep entry, Ts power, steep exit and waiting. Use distinct energy/pressure normalizations, direct positive remaining kernels and independent interface identities.
+- [x] F38-D1e: Extend the same fields and primitives through epsilon collar and entire Gamma exterior using formal positive S_current and exact Gamma deficit/remainder bounds. Implement arbitrary-radius local tail targets, first Z derivatives and inherited non-reset angular history.
+- [x] F38-D1f: Add --stage postpulse and independent21-identity/seven-interface checker. Whole-Z history/energy/source checks and eight true Gamma value/derivative fixtures with bounded tail remainders pass.
+- [ ] F38-D2a1: Compose the absolute raw-preheat pressure-source identity. Show that the repaired reference Mp(Rref)=2.5 Uref^2 plus the exact fourteen-stage raw preheat integral equals -P0(Z). Verify original schedule, all finite offsets, source rational epsilon=.001*delta, common waiting root and full q(Z) derivative dependence. Interval containment of zero is not a functional proof.
+- [ ] F38-D2a2: Prove full corrected pressure terminal closure using the same Gamma pressure deficit and both actual angular bumps. Explicitly match Erel^2*sH to c_infinity^2*Rtail^(-1-delta)*(a/Rtail)*Pressure_hat. Compose with D2a1 to prove P0+Mp(Rv)+Ev0^2*Prv=0 identically, retaining actual source factors rather than replacing them by caps.
+- [ ] F38-D2a3: Prove the absolute renormalized angular target. Bind actual pulse Xv and flatten history to the same Z0 continuous waiting identity; combine rpre(Z), exact bump angular change and S*Theta_hat. Prove Ctheta=(1-epsilon)Xtail-Aheat_target_tail=0 on the full Z interval. Do not erase Ctheta because normalized differences decay at infinity.
+- [ ] F38-D2a4: Add independent symbolic/source-chain checks of both zero constants and their axial derivatives. Then admit the actual heat moment/pressure match without resetting forward histories. Keep full background/C4/cone flags separate.
+- [ ] F38-D2b: Obtain second/higher axial jets for pulse and corrected angular coefficients, full Ur_Z, required mixed derivatives and C4 bounds. Prove all flat interfaces quantitatively and preserve structural divergence through every chart.
+- [ ] F38-D2c: Expose a coherent core/inner/matching/pulse/post-pulse similarity-space field with physical-coordinate mapping. Preserve formal/log representations where admitted radii cannot be materialized. Exact similarity rescaling does not count as coefficient recursion.
+- [ ] F39-A1: Certify admissible stress-cone signs and margins in pulse/end/flatten/bumps/steep/waiting/heat collar. Use the fully closed pressure and angular moments; no inference from local positive energy or inner cone.
+- [ ] F39-A2: Verify complete physical kinetic energy and time integral with the actual radial/axial coordinate Jacobian and constructed domain. Finite swirl radial tail alone is insufficient.
+- [ ] F39-B: Build global admissible divergence-form stress and a separate flat remainder. Report maxima, volume L2 norms and scaling for each, including controlled collar/exterior limits.
+- [ ] F40: Implement genuine n=1 and n>=2 coefficient recovery, common inner domain, order-specific moment repair, divergence-preserving finite truncation and smooth sum.
+- [ ] F41: Add mean/oscillatory stress cancellation and independent full Cartesian residual, vortex widths/scaling, material trajectories and accumulated winding diagnostics.
+
+Evidence: docs/CORRECTED_POST_PULSE_OUTER_AND_GAMMA_TAILS_2026_10_01.md, compliant_corrected_outer_field.py/.json and _check.py/.json. --stage postpulse regenerates the callable assembly layer. The actual forward pressure and angular constants remain retained and unproved zero. Full matched-background acceptance, full physical energy, C4/cone/stress/flat remainder and temporal recursion remain incomplete. These latest task statuses supersede historical pending entries below; preserve unrelated edits and all source histories.
+
+---
+
 # F38-C6 task handoff - 2026-10-01
 
 - [x] F38-C6a: Install true gp(mu*t), selected ap(Z), selected affine c1/c2 and both compact end bumps with entrance/main/gap/end coordinate charts. Swirl retains its q^-1 factor and fixed slope throughout O.4.

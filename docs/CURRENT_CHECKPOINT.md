@@ -1,3 +1,15 @@
+# F38-D1 corrected post-pulse outer checkpoint - 2026-10-01
+
+The actual selected pulse now feeds one callable corrected post-Rv family through100-unit flatten, post-flatten power, both implicit angular bumps, steep entry/power/exit, waiting, epsilon collar and infinite exact Gamma heat. Five cumulative primitives and C1 axial enclosures are carried continuously. Uz=Ur=Mz=Mtheta_z=0 are inherited from the pulse, and Mztheta is half the direct remaining corrected swirl energy. Direct arbitrary-radius pressure/energy/Gamma targets retain epsilon atoms and formal S_current.
+
+Twenty-one independent normalization/ODE/constant-offset identities, seven region interfaces, whole-Z zero histories/positive energy, original P0+Mp, exact empty Rv pressure increment, selected pulse future-energy source agreement and eight independent Gamma value/Z-derivative fixtures PASS. Ev(Z)-to-Ev0 unit conversion preserves the full q^2 C1 jet. Support-crossing interval bumps are handled without dropping a nonzero correction.
+
+NEXT: prove the absolute pressure constant P0+Mp(Rv)+Ev0^2*Prv and the renormalized angular constant Ctheta both vanish as functions of Z by composing the exact preheat source, waiting identity and repair equations. Both are currently retained; neither is set to zero or fitted. Backward pressure is still an independent diagnostic, while actual pressure remains P0+Mp. Then higher axial jets, C4/cone, global stress/flat remainder and genuine temporal recursion. Full matched-background acceptance remains false.
+
+Read docs/CORRECTED_POST_PULSE_OUTER_AND_GAMMA_TAILS_2026_10_01.md. Reproduce with compliant_reconstruction.py --stage postpulse (usual experiments/root_st073/lei_ren_part1_paper_ prefix). This latest header supersedes historical pending assembly entries below; preserve historical bytes and legacy sources.
+
+---
+
 # F38-C6 selected pulse checkpoint - 2026-10-01
 
 The actual selected axial pulse now covers entrance/main/inactive gap/end charts, with five partial primitives, unchanged analytic P0 and paper (3.9) radial recovery. Tiny history/end factors remain formal nonzero sources with proved directed caps. Near xi11 energy uses the selected positive terminal identity; Rv and Rp end-energy units differ by exp(26). Whole-Z terminal Uz=Mz=Mtheta_z=Ur=0 and Mztheta/(Rv Utheta^2)=half of positive corrected future energy are checked.

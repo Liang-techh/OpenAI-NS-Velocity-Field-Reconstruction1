@@ -4,8 +4,9 @@ Stops on the first failed prerequisite. Each module writes its separate,
 source-bound receipt; no legacy .01 file is edited. The angular stage solves
 the functional angular/pressure correction. The energy stage supplies the
 complete future swirl energy and selects actual ap/c1/c2 functions. The pulse
-stage installs the full O.4 interval in segmented coordinates. Complete
-outer assembly and temporal recursion remain unfinished.
+stage installs the full O.4 interval in segmented coordinates. The postpulse
+stage composes corrected outer fields and primitives through Gamma heat.
+Absolute terminal identities, C4/cone and temporal recursion remain unfinished.
 """
 import argparse
 import importlib
@@ -28,11 +29,12 @@ ANGULAR=('outer_angular_repair','outer_angular_repair_check')
 ENERGY=('future_swirl_energy','future_swirl_energy_check',
         'axial_amplitude_selection','axial_amplitude_selection_check')
 PULSE=('axial_pulse_field','axial_pulse_field_check')
+POSTPULSE=('corrected_outer_field','corrected_outer_field_check')
 
 
 def stages(stage):
-    return {'source':SOURCE,'inner':INNER,'outer':OUTER,'angular':ANGULAR,'energy':ENERGY,'pulse':PULSE,
-            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE}[stage]
+    return {'source':SOURCE,'inner':INNER,'outer':OUTER,'angular':ANGULAR,'energy':ENERGY,'pulse':PULSE,'postpulse':POSTPULSE,
+            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE}[stage]
 
 
 def run(stage='all',list_only=False):
@@ -48,18 +50,19 @@ def run(stage='all',list_only=False):
     result=dict(stages_completed_this_run=completed,
         source_relation='epsilon_source=.001*delta; epsilon_core=1/Lambda',
         legacy_source_preserved=True,full_NS_background_completed=False,
-        actual_angular_pressure_corrections_completed=any(name in completed for name in ('outer_angular_repair_check','axial_amplitude_selection_check','axial_pulse_field_check')),
-        actual_ap_selected=any(name in completed for name in ('axial_amplitude_selection_check','axial_pulse_field_check')),
-        actual_O4_partial_pulse_field_installed='axial_pulse_field_check' in completed,
+        actual_angular_pressure_corrections_completed=any(name in completed for name in ('outer_angular_repair_check','axial_amplitude_selection_check','axial_pulse_field_check','corrected_outer_field_check')),
+        actual_ap_selected=any(name in completed for name in ('axial_amplitude_selection_check','axial_pulse_field_check','corrected_outer_field_check')),
+        actual_O4_partial_pulse_field_installed=any(name in completed for name in ('axial_pulse_field_check','corrected_outer_field_check')),
+        corrected_post_Rv_fields_and_primitives_installed='corrected_outer_field_check' in completed,
         temporal_recursion=False,
-        next_dependency='Continue selected pulse terminal targets through all corrected outer/heat primitives; recover full profiles and prove interface/C4/cone bounds')
+        next_dependency='Compose absolute pressure/angular terminal source identities; recover higher axial derivatives and certify full interface/C4/cone bounds')
     print(json.dumps(result,indent=2),flush=True)
     return result
 
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','all'),default='all')
+    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','all'),default='all')
     parser.add_argument('--list',action='store_true',help='Print the ordered modules without running them')
     args=parser.parse_args()
     run(args.stage,args.list)
