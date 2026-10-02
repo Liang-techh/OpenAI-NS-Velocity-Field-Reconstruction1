@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `18e8763014316f432cd5b3402ca5c5a9956f6875`.
+The inspected `main` head before this update is `5ef5b9a81ceca017e78817fc3f628bbfd7af97df`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`fcb374d0b8e2f705333459ce08765ac996819c52`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/fcb374d0b8e2f705333459ce08765ac996819c52)
+[`a2d9ae80776626b982c36d0eee4fe3b7e92a9fbb`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a2d9ae80776626b982c36d0eee4fe3b7e92a9fbb)
 on `codex/st073-transition-next`, observed October 2. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,46 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-02 batch: root-centered normalized F0 peak, not full vortex morphology
+
+The [a2d9ae80 report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/a2d9ae80776626b982c36d0eee4fe3b7e92a9fbb/docs/ROOT_CENTERED_CORE_PEAK_2026_10_02.md)
+and [checker receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/a2d9ae80776626b982c36d0eee4fe3b7e92a9fbb/experiments/root_st073/lei_ren_part1_paper_compliant_root_centered_peak_check.json)
+record the exact shared anchor H(a)=0 and Z=a+b*xi, b=sigma/sqrt(Lambda),
+on |xi|<=4. Lambda*b^2=sigma^2 is canceled before enclosures; a rounded
+anchor is not substituted for that identity. Directed polynomial integration
+with its explicit denominator remainder bounds K=Lambda*G and normalized
+F0/F0(a)=exp(-K). This supersedes the previous unresolved normalized peak
+precision, not unresolved complete Phi-weighted swirl morphology.
+
+Absolute F0 is not materialized: -selected_logCstar and -K remain separate
+log terms to avoid absorbing the finite shape into the enormous base log.
+Fractional normalized-F0 widths have directed level brackets. Physical axial
+width uses the integral Jacobian J=(1-delta*Z^2)/(1-Z^2)^((3-delta)/2),
+not subtraction of nearly coincident coordinates. Comparing this axial width
+with the rho=4.1 reference core cutoff is a geometric coordinate ratio, not
+a measured radial vortex width or whole-vortex aspect ratio. Its tau^(-delta/2)
+law preserves the original tiny delta; ordinary finite log-time intervals
+produce extremely weak relative elongation. The separate slow-time packet
+does not make its extreme physical time accessible or establish dynamics.
+
+Six saved physical swirl packets at xi=-1,0,1 and rho=2,4.1 retain the same
+nonlinear Phi, its radial remainder and axial transport bounds. They are local
+enclosures, not a full-field evaluator or location of the full Phi-weighted
+swirl peak. The checker explicitly keeps full_swirl_peak_including_Phi_measured,
+whole_vortex_aspect_ratio_measured, measured_blowup_dynamics and temporal_recursion
+false. Complete rooted ur/uz/p, controlled vorticity, radial morphology,
+multitime dynamics and particle winding remain pending, alongside signed
+annular integrals, implicit repair values and physical-point chart selection.
+
+All237 receipt input SHA256 bindings match the pinned Git blob bytes; its
+all_passed=true and separate finite/source diagnostics were read, without
+independent scientific execution or complete proof audit. Replay compliant
+driver stage rootpeak with accepted prerequisites; the ordered pipeline has113
+modules. Energy/support, admissible stress, independent flat remainder,
+n-dependent recursion and mean/oscillatory/full NS correction remain unfinished.
+The original unlocalized whole-space energy is still infinite; no scientific
+route change or reduced finite-energy goal is adopted by this review.
 
 ### 2026-10-02 batch: common physical maps, fresh core and anchored amplitude
 
@@ -2305,6 +2345,12 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The exact-head [a2d9ae80 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37016522026)
+was freshly inspected rather than inheriting its predecessor's count: actual
+log shows13 failed/423 passed with the same original constrained identifiers.
+Four smoke/slice jobs pass, full historical tests skip, and the run ends failure.
+No new selected failure appears; local peak receipt acceptance is not an NS pass.
 
 The exact-head [fcb374d0 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37013762524)
 finished failure: its actual log retains the same original13 failed constrained
