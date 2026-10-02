@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `afa060b944b2268a1c1a1c6cfc8087a0e9ed665a`.
+The inspected `main` head before this update is `101772f7fef2a092222b63498632b78a9af267af`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`1adcc2215f6fbd82a054e47e33c73c050405cf4a`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1adcc2215f6fbd82a054e47e33c73c050405cf4a)
+[`c59b795612d5922a08fee54875a74641bf5fde3f`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c59b795612d5922a08fee54875a74641bf5fde3f)
 on `codex/st073-transition-next`, observed October 2. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,46 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-02 batch: actual core histories, bridge and R110 axial inlet
+
+The [c27335c7 frozen report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/c27335c79c7787010a836c94b4b28553502383e1/docs/FROZEN_COMPARISON_FIELD_2026_10_02.md)
+encloses the actual nonlinear core's five exit primitives through axial order5.
+Its unsmoothed frozen comparison is auxiliary, not actual connecting velocity;
+core-exit radial derivatives generally differ. The [bridge report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/c27335c79c7787010a836c94b4b28553502383e1/docs/INNER_BRIDGE_PROFILES_2026_10_02.md)
+and [checker](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/c27335c79c7787010a836c94b4b28553502383e1/experiments/root_st073/lei_ren_part1_paper_compliant_inner_bridge_profiles_check.json)
+separately enclose the smooth comparison through axial6, actual prescribed-shear
+velocity/moment/pressure inputs through axial5 and radial recovery through axial4.
+The varying comparison uses its own moments/direction, not a frozen shortcut;
+the angular sign binds to the accepted same-source theorem rather than a broad
+interval straddling zero. Bell ratios preserve actual F0/F0^2 derivatives,
+original P0 and nonzero cumulative histories. h_b=cstar*K^-100 remains exact
+and positive;1e-180 bounds only combined width/norm products, never defines h_b.
+
+The newer [c59b7956 switch report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/c59b795612d5922a08fee54875a74641bf5fde3f/docs/INNER_SWITCH_PROFILES_2026_10_02.md)
+and [checker](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/c59b795612d5922a08fee54875a74641bf5fde3f/experiments/root_st073/lei_ren_part1_paper_compliant_inner_switch_profiles_check.json)
+now supply the actual original100..110 switches, axial5 profiles/moments and
+radial recovery axial4, plus actual R110 axial5 logarithmic inlet. Dbar/Ebar
+are evaluated at the current radius, sigma integrates to1/2 and R2=100exp(2h)
+is not rounded to100. Subsequent constant-power moment transport is exact;
+logCstar cancels in the actual inlet log expression before enclosure. This
+supersedes switch/inlet-pending status in the preceding bridge receipt, not
+its missing radial mixed derivatives or global physical acceptance.
+
+The checker retains switch_radial_mixed4_certified=false,
+long_reshape_with_this_inlet_installed=false, full Cartesian/stress acceptance
+false and temporal_recursion=false. Bridge mixed4/core high-order joins remain
+unbuilt. The actual inlet is not yet connected through reshape/reference,
+axial restoration/repair and the missing preceding O3 dispatcher; existing
+standalone repair certificates remain separate until that connection. These
+are conservative source-function enclosures, not newly solved point coefficients.
+
+The global unlocalized kinetic-energy obstruction remains a failure of the
+finite-energy target; no finite-local goal substitution or axial cutoff is
+authorized. Whole physical assembly, stress/independent flat remainder and
+genuine temporal recovery remain open. Replay frozenfield/bridgeprofiles/
+switchprofiles in the compliant driver. This review read report/checker claims
+and CI logs only, not scientific execution or independent proof auditing.
 
 ### 2026-10-02 batch: physical maps and whole-space finite-energy obstruction
 
@@ -1999,6 +2039,15 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [c27335c7 exact-head run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36978782947)
+retains the original13 constrained failed identifiers/423 passed in its actual
+log; four smoke/slice jobs pass and full historical tests skip. This is evidence
+for c27335c7, distinct from the preceding head with no discovered run. The
+newer [c59b7956 exact-head run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36981242924)
+was separately checked with its full40-character SHA: its actual log has the
+same original13 failed identifiers/423 passed, four successful smoke/slice jobs
+and skipped full tests. Both runs finish failure; no new selected failure appears.
 
 For fixed head1adcc221, the commit-filtered Actions API returned no workflow
 run during this review. Therefore no latest-head13/423 result is asserted;

@@ -4,7 +4,7 @@
 
 The current research route is an exploratory **Lei–Ren Part I-oriented ST073 reconstruction**. The long-term deliverable is a nonzero, divergence-free, finite-energy, three-dimensional time-dependent field with quantitatively verified shrinking-core geometry and independently evaluated momentum residuals. This is an independent research repository, not an OpenAI project or a claim to have recovered an exact original field.
 
-> **Reviewed snapshot: 2026-10-02 UTC.** Research branch: `codex/st073-transition-next`, pinned at [`1adcc221`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1adcc2215f6fbd82a054e47e33c73c050405cf4a). Source-bound Cartesian spatial-four and first physical-time derivatives now cover the outer charts and analytic core/axis separately; intermediate annuli and joins remain missing. **The current unlocalized source has infinite whole-space physical kinetic energy at every fixed positive tau and therefore does not meet the finite-energy goal.** Local sector/strip bounds do not change that goal. Global assembly, stress, temporal recursion and independent full NS validation remain incomplete. These are reviewed records, not scientific code or proofs independently rerun. See the [latest supervision checkpoint](docs/NS_SUPERVISION_2026-09-30.md); other navigation pages retain separately dated snapshots.
+> **Reviewed snapshot: 2026-10-02 UTC.** Research branch: `codex/st073-transition-next`, pinned at [`c59b7956`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c59b795612d5922a08fee54875a74641bf5fde3f). Core exit primitives, smoothed comparison, actual bridge and original 100..110 switches now have source-bound axial enclosures, including an actual R110 axial-five inlet. Radial mixed derivatives, core/annular joins and connection to reshape remain missing. **The current unlocalized source has infinite whole-space physical kinetic energy at every fixed positive tau and therefore does not meet the finite-energy goal.** Local sector/strip bounds do not change that goal. Global assembly, stress, temporal recursion and independent full NS validation remain incomplete. These are reviewed records, not scientific code or proofs independently rerun. See the [latest supervision checkpoint](docs/NS_SUPERVISION_2026-09-30.md); other navigation pages retain separately dated snapshots.
 
 [**Research status and evidence**](docs/RESEARCH_STATUS.md) · [**Choose a version / replay**](docs/CURRENT_CHECKPOINT.md) · [Project goal](docs/PROJECT_GOAL.md) · [Repository map](docs/REPOSITORY_GUIDE.md) · [Documentation](docs/README.md)
 
@@ -23,6 +23,7 @@ Source-bound inner core and exit
   -> local pulse joins / flatten-power-angular C4  [recorded]
   -> steep-waiting-collar / infinite Gamma jets    [recorded]
   -> outer and core/axis Cartesian/time-one maps   [recorded separately]
+  -> bridge/switch axial enclosures, R110 inlet    [recorded; joins open]
   -> whole-space finite energy of current source   [fails: infinite]
   -> full velocity derivatives and C4 interfaces    [open]
   -> physical energy, outer cone, stress/remainder  [open]
