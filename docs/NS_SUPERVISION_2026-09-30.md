@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `1779a327c769123231d0791106aeba11230a821c`.
+The inspected `main` head before this update is `06bc2e98386cdbd19302d43eda636f1b13f18177`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`eff37bb41d3df904ab2d8a05f4f7a1204f6ac00d`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/eff37bb41d3df904ab2d8a05f4f7a1204f6ac00d)
+[`2ca31f0767b920f18ed1459d166df30f820ace1c`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2ca31f0767b920f18ed1459d166df30f820ace1c)
 on `codex/st073-transition-next`, observed October 2. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,49 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-02 batch: steep/waiting and complete collar/Gamma derivative chain
+
+The [steep/waiting report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/2ca31f0767b920f18ed1459d166df30f820ace1c/docs/STEEP_WAITING_MIXED_C4_2026_10_02.md)
+and [accepted checker](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/2ca31f0767b920f18ed1459d166df30f820ace1c/experiments/root_st073/lei_ren_part1_paper_compliant_steep_waiting_C4_check.json)
+record total spatial mixed order<=4 throughout steep entry/long power/exit and
+refined waiting, with angular-to-steep and internal joins=true. Canonical
+axial-five inputs, original .001delta epsilon, refined waiting root, positive
+formal scales, full Gamma future energy and forward P0+Mp histories persist.
+Its earlier collar/Gamma-pending flag remains generation-stage history.
+
+The [collar/full Gamma report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/2ca31f0767b920f18ed1459d166df30f820ace1c/docs/COLLAR_FULL_GAMMA_MIXED_C4_2026_10_02.md)
+and [later checker](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/2ca31f0767b920f18ed1459d166df30f820ace1c/experiments/root_st073/lei_ren_part1_paper_compliant_collar_Gamma_C4_check.json)
+extend the chain across the original distinct exp(-4/(3-t)^2) flat collar
+and all t>=3, Z in [-1,1] in the infinite Gamma exterior. Exact positive
+Gamma expectation, finite derivative moments and integrated infinite tails
+are used, not a finite radial cutoff or convergent infinite S-series. Tiny
+positive S/Ev0 definitions are retained; numerical caps are only enclosures.
+The later receipt accepts waiting/collar and collar/Gamma joins while retaining
+the full forward angular homogeneous history and pressure accumulation.
+
+This completes the reported leading-profile partition derivative chain and
+adjacent spatial joins, not full_outer_C4 acceptance. Both checkers still set
+full_outer_C4_certified=false, physical_energy_integral_certified=false,
+whole_outer_cone_certified=false and temporal_recursion=false. They retain
+local full_pulse_C4_installed=true in its earlier fixed-source positive-tau
+spatial scope. No time derivative or uniform tau->0 claim is added.
+The earlier absolute leading terminal moment companion remains valid in its
+own source-bound scope; it is not a certificate of globally zero physical
+stress. Preserving unreduced angular/pressure histories in these providers
+does not reset them or silently promote a stress-free physical exterior.
+
+Remaining work includes complete Cartesian vector/basis differentiation,
+core/axis interfaces and assembled physical bounds, full physical kinetic
+energy, whole-outer cone, admissible stress and independently flat remainder,
+actual n-dependent temporal recovery and oscillatory stress cancellation,
+then independent full Cartesian momentum/divergence residual validation.
+Positive remaining radial swirl energy alone does not supply these gates.
+
+Replay steepjets/heatjets in the compliant driver. Saved producer/checker
+claims and flags were read; no scientific code was independently run and
+no proof audit is claimed. Existing main structure and original receipts
+are preserved; only README and this supervision record are changed.
 
 ### 2026-10-02 batch: local pulse spatial C4 and flatten/power/angular propagation
 
@@ -1882,6 +1925,12 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [2ca31f07 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36968966286)
+retains the original13 failed constrained identifiers/423 passed in its actual
+log; four smoke/slice jobs pass and full historical tests skip. No selected
+governance regression appears. These checks do not certify global physical
+stress, full-field energy, temporal dynamics or the NS residual goal.
 
 The [eff37bb4 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36965152720)
 retains the original13 constrained failed identifiers/423 passed in its actual

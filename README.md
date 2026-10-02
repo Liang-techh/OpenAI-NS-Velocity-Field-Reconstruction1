@@ -4,7 +4,7 @@
 
 The current research route is an exploratory **Lei–Ren Part I-oriented ST073 reconstruction**. The long-term deliverable is a nonzero, divergence-free, finite-energy, three-dimensional time-dependent field with quantitatively verified shrinking-core geometry and independently evaluated momentum residuals. This is an independent research repository, not an OpenAI project or a claim to have recovered an exact original field.
 
-> **Reviewed snapshot: 2026-10-02 UTC.** Research branch: `codex/st073-transition-next`, pinned at [`eff37bb4`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/eff37bb41d3df904ab2d8a05f4f7a1204f6ac00d). Later checkers accept local leading O.4 spatial C4 and both O3/O5 joins, and extend mixed derivatives through full flatten, following power and both angular supports. This is fixed-source spatial order <=4 at positive tau, not time derivatives or uniform tau-to-zero bounds. **Whole outer C4, Cartesian vector derivatives, physical energy, admissible stress, temporal recursion and independent full NS validation remain open.** These are reviewed repository records, not numerical experiments or proofs independently rerun during this documentation update. See the [latest supervision checkpoint](docs/NS_SUPERVISION_2026-09-30.md) for pinned receipts; other navigation pages retain their separately dated snapshots.
+> **Reviewed snapshot: 2026-10-02 UTC.** Research branch: `codex/st073-transition-next`, pinned at [`2ca31f07`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2ca31f0767b920f18ed1459d166df30f820ace1c). Local leading O.4 spatial C4 and its joins remain accepted; the partition derivative chain now reaches steep/waiting/collar and the entire infinite Gamma exterior with adjacent source joins. This is fixed-source spatial order <=4 at positive tau, not time derivatives or uniform tau-to-zero bounds. **Whole outer C4 acceptance, Cartesian/core/axis assembly, physical energy, admissible stress, temporal recursion and independent full NS validation remain open.** These are reviewed repository records, not numerical experiments or proofs independently rerun during this documentation update. See the [latest supervision checkpoint](docs/NS_SUPERVISION_2026-09-30.md) for pinned receipts; other navigation pages retain their separately dated snapshots.
 
 [**Research status and evidence**](docs/RESEARCH_STATUS.md) · [**Choose a version / replay**](docs/CURRENT_CHECKPOINT.md) · [Project goal](docs/PROJECT_GOAL.md) · [Repository map](docs/REPOSITORY_GUIDE.md) · [Documentation](docs/README.md)
 
@@ -21,13 +21,14 @@ Source-bound inner core and exit
   -> fifth axial source / pulse Ur axial C4        [recorded]
   -> pulse mixed jets / cylindrical derivative map [recorded]
   -> local pulse joins / flatten-power-angular C4  [recorded]
+  -> steep-waiting-collar / infinite Gamma jets    [recorded]
   -> full velocity derivatives and C4 interfaces    [open]
   -> physical energy, outer cone, stress/remainder  [open]
   -> genuine temporal recursion and corrections    [open]
   -> independent Cartesian NS residual validation  [open]
 ```
 
-The recorded absolute closure supersedes the earlier unresolved angular and pressure offsets for the compliant epsilon=.001delta source. Local pulse C4, quantitative flat comparison and the accepted O3/O5 joins do **not** establish full-field C4 or a stress flat remainder. Angular-to-steep joining and steep/waiting/collar/Gamma mixed propagation remain open. Cylindrical component derivatives omit basis differentiation required for Cartesian vectors. The small moment/fixture errors are **not** full Navier-Stokes residuals. See the [eight-goal assessment and pinned evidence](docs/RESEARCH_STATUS.md).
+The recorded absolute closure supersedes the earlier unresolved angular and pressure offsets for the compliant epsilon=.001delta source. The completed partition derivative chain and adjacent joins do **not** establish full_outer_C4 acceptance, globally vanishing physical stress or an independent flat remainder. Complete Cartesian/core/axis assembly and physical acceptance remain open. Cylindrical component derivatives omit basis differentiation required for Cartesian vectors. The small moment/fixture errors are **not** full Navier-Stokes residuals. See the [eight-goal assessment and pinned evidence](docs/RESEARCH_STATUS.md).
 
 ## Choose the correct layer
 
