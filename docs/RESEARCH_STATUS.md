@@ -1,61 +1,84 @@
-# Research results and limitations
+# Current research status and evidence
 
-Updated 2026-09-21 from pinned ST061 and ST063 study records. This is a navigation and reporting update, not a new fit or a new scientific validation. The original full momentum maximum and spatial volume L2 targets remain 0.001 and remain unmet.
+**Snapshot:** 2026-10-02 UTC. **Research:** ST073, `codex/st073-transition-next`, pinned at [`e0bfdad0`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e0bfdad05fc64f1f0fa4c662d13bd36b8b340f4c).
 
-## Latest geometry experiment: ST063
+This assessment reviews saved implementation, reports and receipts. It does not independently rerun the numerical pipeline or audit the full mathematical proof. The research implementation has not been promoted into the main ST006 compatibility API.
 
-Source: [unaltered ST063 record](research_snapshots/ST063.md), copied from commit `a3d04d3467361bab7c9fc7c8c6aedf31987ee069`, issue #939.
+## What changed since the previous homepage
 
-All selected arrays were frozen before the two holdouts. Each validation used 4,096 Cartesian points and six original times, with separate original spatial, temporal and energy-quadrature refinements. Reported values are worst over the six times at h=0.005 and time step=0.0025.
+The old main summary stopped at `9a6c1098` with two unresolved global offsets. The later [absolute leading moment report][closure] records a source-composition identity for both offsets, completing its five leading terminal moment conditions on `Z in [-1,1]`. The [angular high-jet report][jets] then supplies axial Taylor coefficients through order four for the two actual implicit angular correction functions.
 
-| Seed | Candidate | Sampled full-vector max | Spatial volume L2 |
-|---|---|---:|---:|
-| 9216391 | ST061-P | 0.026279255060335002 | 0.034035600656015505 |
-| 9216391 | ST063-G1R | 0.024546533709074312 | 0.033767328775136926 |
-| 9216391 | ST063-G2R | 0.02438535329193401 | 0.03425749818472021 |
-| 9216392 | ST061-P | 0.02566467314396125 | 0.03358854497849373 |
-| 9216392 | ST063-G1R | 0.026861392722101148 | 0.033883206585681475 |
-| 9216392 | ST063-G2R | 0.02250355909296729 | 0.034206087967209475 |
+The source-bound absolute identities are recorded as:
 
-G2R decreases paired sampled maxima by 7.21%/12.32%, but increases L2 by 0.65%/1.84%. G1R worsens the second maximum and second L2; its independent structure audit also records a radial-pressure sign miss. All six original reports fail both momentum gates. The other original sampled gates passing is not a full-domain structure certificate.
+```text
+Ctheta(Z) = 0
+P0(Z) + Mp(Rv,Z) + Ev0^2*Prv(Z) = 0
+```
 
-### Geometry, not image similarity
+These preserve the original analytic pressure datum, forward primitives and exact positive formal scales; they are not pressure fits or selections of zero from overlapping intervals. Old conservative receipts remain historical evidence, not the latest closure state.
 
-In the declared cylinder r<=0.35, |z|<=0.60, using omega_z squared, centered axial variance, and single-transverse variance r^2/2:
+**This closes a leading-moment subproblem, not the complete NS field.** Full-field C4, physical energy, stress/cone, temporal recursion, oscillatory cancellation and independent Cartesian residual validation remain incomplete in the [reviewed driver][driver].
 
-| Time | Parent aspect | G2R aspect |
-|---|---:|---:|
-| 0.25 | 1.48755304 | 1.59680197 |
-| 0.50 | 1.65049839 | 1.73146643 |
-| 0.75 | 1.75122740 | 1.81256943 |
+## Assessment against the eight project goals
 
-At t=0.5, the on-axis angular-velocity factor at z=0.6 changes from 0.02876447 to 0.08350277; at z=0 it decreases from 0.09172868 to 0.08589759. This is redistribution, not stronger rotation everywhere. The low-threshold omega_z>=0.15 near-axis band spans the observation window; its length is observation-limited. Neither field forms the claimed axis-connected strong band at 0.25 or 0.35. The hoped-for 10%–20% aspect improvement is not achieved and the central disk remains.
+| Goal | Recorded evidence at this snapshot | Still required |
+|---|---|---|
+| Incompressibility | Structural radial recovery and local primitive identities are implemented | Coherent full physical field, required derivatives and independent Cartesian divergence validation |
+| Finite energy | Corrected future radial swirl energy and selected positive axial amplitude are recorded | Full physical-domain/time energy with all components and radial/axial Jacobians |
+| Anisotropic shrinking core | Core, exit and similarity-profile construction are developed | Verified physical time evolution and measured radial/axial scale laws |
+| Swirl/axial growth | Source-bound angular field and selected axial pulse are available in partial charts | Genuine temporal coefficient recovery and multi-time growth diagnostics |
+| Stress and remainder | Local identities and bounded construction components are recorded | Whole-outer cone, global admissible stress and a controlled flat remainder |
+| Functional moment cancellation | Inner functional repair plus all five absolute leading terminal identities are recorded | Higher-regularity and later-order requirements; no automatic global NS acceptance |
+| Inner/transition/outer matching | Corrected pulse-to-Gamma assembly and absolute leading pressure/angular matching are recorded | Full mixed derivatives, C4 interfaces and global stress-compatible matching |
+| Full NS residual <= 1e-3 | No independently validated complete ST073 Cartesian residual is established | Both full-vector maximum and physical spatial volume L2 under the registered problem |
 
-G2R retains five direction checks on the stated fresh core probes and at least 99.699% signed shear on the fresh midplane probes. Bias remains positive but its minimum decreases. Effective-volume changes are small, not literally zero or certified for every time. Exact windows, tolerances, rejected fits and restart limits remain in the original record.
+No completion percentages are assigned: these are dependent acceptance gates, not equal-sized tasks.
 
-## Residual-oriented controls: ST061
+## Source identity and parameter provenance
 
-Source: [unaltered ST061 record](research_snapshots/ST061.md), commit `ad0e6dacf3851a12f4272bb4f6b282cf49506d8e`, issue #900. These are different holdouts from ST063; do not rank candidates by picking a favorable value across experiments.
+The reviewed compliant source is `epsilon_source=.001*delta`:
 
-| Seed | Candidate | Sampled full-vector max | Spatial volume L2 |
-|---|---|---:|---:|
-| 9206291 | ST060-Q | 0.027559315226219006 | 0.03374187106068435 |
-| 9206291 | ST061-D | 0.026788020110924435 | 0.03333465903335943 |
-| 9206291 | ST061-P | 0.02580782220423295 | 0.03347432641256566 |
-| 9206292 | ST060-Q | 0.027992393733693038 | 0.03457784543286563 |
-| 9206292 | ST061-D | 0.027204469154934973 | 0.03426968736612646 |
-| 9206292 | ST061-P | 0.02620795221578385 | 0.034440441141806846 |
+```text
+source SHA: 5aec111986d745459eb2e2fece291f1dc3fa7bf986529494df802c2aa2daceae
+inner five-moment family SHA: 3983d0ddb33fa85e6ab152ef7e29960f8b95aca3e1e86f1bda0882b39d825894
+```
 
-D is the lower-L2 alternative, P the lower-peak alternative on these paired samples. The finite-budget optimizers were not proved optimal. Unconstrained pressure projection was rejected because it reversed the audited axial pressure directions. This organization update does not re-run those studies or reinterpret internal optimizer failures as convergence.
+It is distinct from legacy `epsilon=.01*delta`; those old receipts must not be relabeled as evidence for the new source. The source epsilon is also distinct from the core parameter `1/Lambda`. Meeting one epsilon bound does not establish every paper hypothesis. The 144-order view uses sensitivity/envelope inclusion and is not a newly rerun point-coefficient recurrence.
 
-## Historical compatibility baseline
+The [absolute closure report][closure] identifies the supplied Lei–Ren `2609.35406v2` source and its text hash. That is the version used by this implementation; this documentation review does not independently establish arXiv publication history.
 
-[ST006](../artifacts/research/ST006/manifest.json) remains the `research_baseline` API default for compatibility. Its original seed 9172801 report records max 0.1082289305, volume L2 0.1075843288 and a failed original divergence maximum gate. It is not the latest scientific result. Its bytes, evidence and API are not changed here.
+## What the five terminal identities mean
 
-The old ST006/ST030–ST033 publication discussion is retained at the pre-organization commit and in [the old experiment index](../artifacts/research/experiment_index.json). The newer [catalog](research_catalog.json) is an additional discovery index, not a replacement of historical evidence.
+The closure report identifies the five moments as `Mz`, `Mtheta_z`, `Mztheta`, `Mtheta` and `Mp`. Their targets and normalizations are not five interchangeable scalar zero tests.
 
-## Acceptance and availability
+The selected axial equations give the zero `Mz` and `Mtheta_z` histories after `Rv`. The energy equation leaves `Mztheta(Rv,Z)` equal to **half the positive remaining corrected swirl energy**, tending to its zero target at infinity. The angular condition uses its renormalized asymptotic target; the pressure condition uses the absolute analytic datum. Resetting these finite-radius histories to zero would change the constructed source.
 
-Spatial volume L2 is sqrt(64*mean(|R|^2)) at each time. It is not RMS, a time average, a color scale or an effective-volume statistic. Finite maxima are not continuous suprema. All source-field identity, PDE-validation and blow-up flags stay false.
+The earlier inner repair records approximately `||d||_C1 <= 4.90e-23` and `||h||_C1 <= 3.37e-20`; the selected amplitude was enclosed near `[1.0086895652, 1.0114075202]`. These are source/repair/amplitude bounds, **not** momentum residuals. See the [source rebuild][source] and [energy/amplitude report][energy].
 
-ST061/ST063 complete offline bundles contain more than their current GitHub branches. New MATLAB comparison code was exported and checked through Python references but not run natively in ST063. Original ST054 native receipts cannot certify this new interface. See [availability and exact hashes](research_catalog.json) and [visualization](../visualization/README.md).
+## Higher derivatives: the precise new boundary
+
+The two angular correction functions now have ordinary axial Taylor coefficients through order four, meaning derivative divided by `n!`. Their actual implicit equations and Jacobian are differentiated; the selected source branch and nonzero Gamma corrections are retained. The recorded checks include 15 symbolic identities and 50 independent branch/derivative/integral fixtures. These are saved checker results, not a new run in this review.
+
+This does not supply fourth-order regularity for every velocity component, full pulse `Ur_Z`, mixed derivatives or all region interfaces. It also does not supply a fifth-derivative remainder for treating a fourth-degree Taylor jet as a finite-cell approximation. [Source and limits][jets].
+
+## Next dependency sequence
+
+1. Recover C4 corrected future energy and the actual incoming moment/energy functions; differentiate the selected `ap/c1/c2` equations on the same branch and with the same units.
+2. Propagate complete jets through pulse and outer charts, recover radial/axial mixed derivatives and certify every required C4 interface, including support endpoints.
+3. Establish full physical energy and whole-outer cone margins; construct global admissible stress and a separately controlled flat remainder.
+4. Implement genuine order-dependent temporal recovery and required oscillatory corrections, then independently evaluate the complete Cartesian residual and time-dependent geometry.
+
+The [pinned task handoff][tasks] gives the executable subtasks. A coordinate rescaling alone is not temporal recursion; a local or radial energy integral is not the full energy certificate.
+
+## Historical numerical results are separate
+
+The original ST061/ST063 tables, including unfavorable controls and validation limits, are preserved byte-for-byte in [historical numerical results](LEGACY_NUMERICAL_RESULTS.md). ST063-G2R's two paired sampled maxima are about `0.02439` and `0.02250`; spatial volume L2 is about `0.03426` and `0.03421`. Both original momentum gates fail. These values must not be assigned to the new ST073 construction.
+
+The [old asset catalog](research_catalog.json), ST054 viewer and ST006 loader retain their original identities. The [structured reconstruction snapshot](reconstruction_status.json) is a separate navigation record, not a scientific acceptance receipt.
+
+[closure]: https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/e0bfdad05fc64f1f0fa4c662d13bd36b8b340f4c/docs/ABSOLUTE_LEADING_MOMENT_CLOSURE_2026_10_01.md
+[jets]: https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/e0bfdad05fc64f1f0fa4c662d13bd36b8b340f4c/docs/ACTUAL_ANGULAR_C4_JETS_2026_10_01.md
+[driver]: https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/e0bfdad05fc64f1f0fa4c662d13bd36b8b340f4c/experiments/root_st073/lei_ren_part1_paper_compliant_reconstruction.py
+[source]: https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/e0bfdad05fc64f1f0fa4c662d13bd36b8b340f4c/docs/COMPLIANT_INNER_OUTER_HEAT_FAMILY_2026_10_01.md
+[energy]: https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/e0bfdad05fc64f1f0fa4c662d13bd36b8b340f4c/docs/COMPLETE_FUTURE_ENERGY_AND_AXIAL_AMPLITUDE_2026_10_01.md
+[tasks]: https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/e0bfdad05fc64f1f0fa4c662d13bd36b8b340f4c/docs/AGENT_TASKS.md

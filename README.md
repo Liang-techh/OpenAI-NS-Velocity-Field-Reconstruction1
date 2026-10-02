@@ -1,129 +1,41 @@
-# Navier–Stokes Candidate Research
+# Navier–Stokes Velocity-Field Reconstruction
 
-> **Progress index updated 2026-10-02:** newer research is available on
-> `codex/st073-transition-next` at [`9a6c1098`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/9a6c1098a5865347a55d4f205c97504fb674d3d0).
-> See [current evidence, paper mapping and replay instructions](docs/NS_SUPERVISION_2026-09-30.md).
-> The ST063 tables and September 22 pause record below remain historical curated
-> results. They do not describe the latest branch or establish a live task status.
-> The new continuous-pressure experiment is an exploratory Part I background
-> reconstruction, with unresolved moment/stress matching and no certified global
-> NS field. The latest route now records the supplied Lei/Ren v2 and Duraiswami v1;
-> implementation compatibility and global acceptance remain separate milestones.
-> **Source correction:** the prior Md40 progression below belongs to legacy
-> epsilon=.01delta, which exceeds the paper construction's c_epsilon<=.001 bound.
-> Those cone/repair receipts do not directly certify the new .001delta source.
-> The new source now has separately rebuilt inner-exit/reference-join and implicit
-> functional five-moment repair receipts. Its 144-order view uses sensitivity and
-> input-envelope inclusion, not a new point-coefficient recurrence run. Actual
-> angular corrections, positive energy-selected axial pulse and five partial
-> primitives are now recorded; a corrected post-Rv interface reaches the Gamma tail.
-> Global Ctheta and forward/backward pressure offsets are retained and not proved
-> zero, so full outer matching remains false. Higher axial jets, C4, whole-outer cone,
-> stress lift and temporal recursion remain pending. Radial swirl-tail energy alone
-> does not certify full three-dimensional time-dependent kinetic energy.
-> Satisfying the epsilon bound alone does not admit every Section7 hypothesis.
-> The remaining paragraphs summarize historical source-specific evidence.
-> The pressure budget is now rebuilt against the accepted source after a helper
-> mismatch audit, with pressure-only uniform finite-core/moment propagation.
-> Directed bump integration exposes a ~1.14e-27 bias behind the earlier tiny map
-> residual. Re-solved Lambda120 center controls and consistent cumulative integrals
-> now bound nominal-source value/first-Z residuals below 5e-35/1.3e-56.
-> The fresh [.49,.51] center family now reaches degree124 with a 7.47e-13
-> normalized radial-tail bound; broad field intervals remain separate. Controlled
-> actual exit and switches reach profile R110. A uniform C1 implicit inverse now
-> establishes five reference identities at x=2 on this local axial family; all40
-> reference-annulus cells certify relaxed conditions. The last switch cell has a
-> two-branch certificate, not an all-strong result. The R110-to-Rm field is now
-> installed with 66-cell relaxed coverage; the first outer slope segment is callable.
-> A separate Md=1.1 source was coherently rebuilt through pressure, degree124 core
-> and local C1 repair, but is rejected by a strictly positive axial-turnoff direction
-> at phase=.5. Md2-6 midpoint screening now also reports direction obstructions.
-> Md40/48/64 pass a conditional local-family full O.2 certificate.
-> Md40 now binds all14 pressure-atom envelopes, continuous waiting root and core
-> admission to one implicit source. Its degree110 tail applies to Phi/Uz in scaled-r
-> coordinates; raw-Psi and physical-R targets differ. Fresh degree110 coefficients
-> and finite-plus-tail exits/core moments are now generated for [.49,.51]. F0 stays
-> strictly positive and implicit. The old-j branch now reaches R110 using the shared
-> symbolic h_b=epsilon_b family, with one relaxed interface check; complete Section9
-> admission remains false. Fixed bump constants select a new j~1.75e-22, invalidating
-> transfer of old-j core/exit results. Fresh scaled mixed-C3 tail admission selects
-> degree144; all144 orders and a fresh local-axis exit chain to R110 are now recorded.
-> Whole-axis analytic core inputs and frozen-profile (9.14) gates are recorded too;
-> a larger-Cstar family now has physical C3 K bounds, fixed K1, radius compatibility
-> and an analytic whole-axis actual inner-exit relaxed certificate. Existing finite
-> rows transfer by amplitude-jet inclusion, not recomputation. Same-family long
-> reshape/restoration and whole-axis implicit functional five-moment repair are now
-> recorded, with a C1 source bound and unique coefficient-function enclosures.
-> The same-family reference/outer API transports five moments through Rp. This is
-> not a full physical point evaluator: Ur_Z, whole-outer cone, pulse/outer corrections,
-> heat matching and stress lift remain pending; full Section9 admission is still false.
-> Old cone certificates stay with Md=.5. C2/Ur_Z, full parameter gates, whole-axis
-> matching and final strong stress remain open.
-> Lambda36/48 receipts stay separate; these moment bounds are not NS acceptance.
-> Full source errors, five-defect norm, relative-flat closure and global checks remain pending.
-> Finite energy, cone and time-scale recursion remain uncertified. Research CI retains 13
-> pre-existing governance failures; see the evidence index for their scope.
+**Independent reconstruction of structured Navier–Stokes velocity fields: source-tracked profile construction, functional moment repair, multiscale diagnostics and reproducible validation.**
 
-**Independent velocity-field construction, full-residual validation, and interactive visualization.**
+The current research route is an exploratory **Lei–Ren Part I-oriented ST073 reconstruction**. The long-term deliverable is a nonzero, divergence-free, finite-energy, three-dimensional time-dependent field with quantitatively verified shrinking-core geometry and independently evaluated momentum residuals. This is an independent research repository, not an OpenAI project or a claim to have recovered an exact original field.
 
-We construct nontrivial, time-dependent Navier–Stokes candidates while balancing momentum residuals, effective flow volume, and axial-core geometry. This is an independent research workspace, not an OpenAI repository or a claim to have recovered OpenAI's exact velocity field.
+> **Reviewed snapshot: 2026-10-02 UTC.** Research branch: `codex/st073-transition-next`, pinned at [`e0bfdad0`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e0bfdad05fc64f1f0fa4c662d13bd36b8b340f4c). Saved source records now admit the five absolute leading terminal moments and provide fourth-order axial jets for the two angular correction functions. **Full-field regularity, physical energy, admissible stress, temporal recursion and independent full NS validation remain open.** These are reviewed repository records, not numerical experiments or proofs independently rerun during this documentation update.
 
-**Latest documented geometry experiment: ST063-G2R. Numerical controls: ST061-D/P. The original full `1e-3` momentum target remains unmet.** Repository organization and visualization do not change that scientific status.
+[**Research status and evidence**](docs/RESEARCH_STATUS.md) · [**Choose a version / replay**](docs/CURRENT_CHECKPOINT.md) · [Project goal](docs/PROJECT_GOAL.md) · [Repository map](docs/REPOSITORY_GUIDE.md) · [Documentation](docs/README.md)
 
-[**Research pause snapshot (2026-09-22)**](docs/FINAL_RESEARCH_SNAPSHOT_2026-09-22.md) · [Latest results](docs/RESEARCH_STATUS.md) · [Which version should I use?](docs/CURRENT_CHECKPOINT.md) · [Visualization](visualization/README.md) · [Repository map](docs/REPOSITORY_GUIDE.md) · [Experiment catalog](experiments/README.md)
+## Current construction
 
-> **Research pause:** scheduled NS reconstruction agents were paused on 2026-09-22. Existing branches, PRs, commits, CI history, and research records remain preserved on GitHub. See the frozen snapshot above for the consolidated stop-state.
+```text
+Source-bound inner core and exit
+  -> functional five-moment repair
+  -> angular/pressure correction and selected axial pulse
+  -> corrected outer field and Gamma heat tail
+  -> absolute leading terminal-moment closure       [recorded]
+  -> angular coefficient axial jets through order 4 [recorded]
+  -> full velocity derivatives and C4 interfaces    [open]
+  -> physical energy, outer cone, stress/remainder  [open]
+  -> genuine temporal recursion and corrections    [open]
+  -> independent Cartesian NS residual validation  [open]
+```
 
-## What is new
+The newly recorded absolute closure supersedes the earlier unresolved angular and pressure offsets. Angular-coefficient C4 does **not** establish C4 for the whole field. The small moment/fixture errors reported in the construction are **not** full Navier–Stokes residuals. See the [eight-goal assessment and pinned evidence](docs/RESEARCH_STATUS.md).
 
-ST063-G2R redistributes rotation along the axis without graphically stretching the field. In the declared observation cylinder, its axial-to-single-transverse RMS aspect ratio increases by **3.5%–7.3%** at the three principal checked times. The moderate-strength axial rotation profile is more continuous, but the hoped-for 10%–20% aspect improvement and a continuous high-threshold strong core have **not** been achieved.
+## Choose the correct layer
 
-On two new paired validation samples, G2R reduces the sampled momentum maximum by **7.21% / 12.32%** relative to ST061-P, while spatial volume L2 **increases by 0.65% / 1.84%**. It is a geometry/residual tradeoff, not a universally better candidate.
-
-Source: [immutable ST063 study record](docs/research_snapshots/ST063.md). [Results and availability catalog](docs/research_catalog.json) records candidate identities, sample IDs, source commits and what is actually available on GitHub.
-
-## Choose the right entry point
-
-| Purpose | Entry | Important distinction |
+| Purpose | Entry point | Availability and limit |
 |---|---|---|
-| Inspect the latest axial-core improvement | [ST063 comparison guide](visualization/README.md#latest-st063-parentchild-comparison) | Complete comparison data is in the delivered ST063 ZIP; the research branch does not contain every dependency or array |
-| Compare residual-oriented alternatives | [ST061-D/P results](docs/RESEARCH_STATUS.md#residual-oriented-controls-st061) | D has lower L2; P has lower sampled peaks on the same ST061 samples |
-| Run the viewer already bundled on `main` | `visualization/matlab/ns_explorer.m` | Displays ST054-Q2/M3, not ST063 |
-| Run the backward-compatible Python API | `research_baseline.load_best()` | Still returns frozen ST006; the historical function name is not a latest-candidate selector |
-| Continue research | [Experiment and branch guide](experiments/README.md) | Use the selected candidate's complete bundle, not another stage's missing dependencies |
-| Find older evidence | [Documentation index](docs/README.md) | Historical files and failed experiments remain available at their original paths |
+| Continue ST073 construction | [Pinned research checkout and ordered driver](docs/CURRENT_CHECKPOINT.md#st073-research-checkout) | Research branch; not promoted into the main compatibility API |
+| Inspect current milestones | [Research status](docs/RESEARCH_STATUS.md), [structured snapshot](docs/reconstruction_status.json) | Source-bound evidence and explicit open gates; no completion percentages |
+| Inspect earlier numerical results | [ST061/ST063 results](docs/LEGACY_NUMERICAL_RESULTS.md), [asset catalog](docs/research_catalog.json) | Historical candidates and separately delivered bundles; original momentum gates fail |
+| Use the checked-in MATLAB viewer | [Visualization hub](visualization/README.md) | ST054-Q2/M3, not an ST073 time-dependent reconstruction |
+| Use the compatible Python API | `research_baseline.load_best()` | Still returns frozen ST006; its name is not a latest-candidate selector |
 
-## Latest paired numerical results
-
-ST063 validation used 4,096 Cartesian points per seed, six fixed times and the original separate spatial/time/energy-quadrature refinement ladders. Values are worst over those times at spatial step `0.005` and time step `0.0025`.
-
-| Seed | Candidate | Full-vector sampled maximum | Spatial volume L2 |
-|---|---|---:|---:|
-| 9216391 | ST061-P, parent | 0.02627926 | 0.03403560 |
-| 9216391 | ST063-G2R | **0.02438535** | 0.03425750 |
-| 9216392 | ST061-P, parent | 0.02566467 | 0.03358854 |
-| 9216392 | ST063-G2R | **0.02250356** | 0.03420609 |
-
-Compare within a seed. Spatial volume L2 is `sqrt(64 * mean(|R|^2))` at each time, not RMS or a time average. **Both original momentum gates still fail.** Sampled maxima, local peak searches and plots are not continuous-domain upper bounds. See [full comparison and limitations](docs/RESEARCH_STATUS.md).
-
-## Visualization quick start
-
-For the ST054 viewer and data already present in a normal `main` checkout:
-
-```matlab
-addpath('visualization/matlab');
-ns_explorer;
-```
-
-For the latest parent/G2R comparison, extract the separately delivered **`NS_ST063_MATLAB_Comparison.zip`**, switch MATLAB's Current Folder to its `NS_ST063_MATLAB_Comparison` directory, then run:
-
-```matlab
-start_here
-```
-
-The ST063 comparison shares physical axis scales, camera, time, seeds and absolute thresholds between the two fields. Its new MATLAB UI has **not been executed natively** in the ST063 study; MAT export/reference tests and Python renders are separate evidence. The [visualization guide](visualization/README.md) explains exactly which data and tests belong to each viewer.
-
-## Compatible Python baseline
+## Existing main-checkout quick starts
 
 ```bash
 python -m pip install -e '.[dev]'
@@ -131,18 +43,25 @@ python scripts/ns_candidate.py verify
 python scripts/ns_candidate.py evaluate --point 0.1 0 0.1 --time 0.5
 ```
 
-These commands deliberately retain **ST006** compatibility. For ST061/ST063, use the corresponding complete research bundle and its replay entry. Updating this homepage does not relabel the old baseline or silently replace anyone's numerical arrays.
+These are **ST006 compatibility commands**, not an ST073 scientific acceptance test.
 
-## Scientific contract
+```matlab
+addpath('visualization/matlab');
+ns_explorer;
+```
 
-The constrained research family uses viscosity `0.01`, time `[0.25,0.75]`, physical domain `R^3`, evaluation box `[-2,2]^3`, and smooth compact velocity and pressure inside `r<2`, `|z|<2`. Initial energy is one. The force is independently prescribed within the original bounded two-parameter divergence-free family, not defined from the candidate residual.
+This opens the existing **ST054** viewer. ST063 comparison data has separate bundle requirements; see [visualization and provenance](visualization/README.md).
 
-New geometric targets and relative training allowances are autonomous experiment settings, not numerical targets extracted from a schematic. Software integrity, visualization readiness, sampled scientific acceptance and mathematical proof remain separate states.
+## Scientific acceptance
 
-`pde_validated=false` · `source_correspondence_verified=false` · `paper_exact=false` · `blowup_proved=false`
+The final numerical target remains **both full-vector momentum maximum and spatial volume L2 at or below `1e-3`**, under an explicitly registered physical problem, forcing model, units and validation protocol. Sampled maxima are not certified continuous suprema. The force must be prescribed or constrained independently, not freely defined to cancel the candidate residual.
 
-## Workspace organization
+The ST006/ST061/ST063 benchmark keeps its original viscosity, domain, support, nontriviality and forcing requirements. ST073 must explicitly connect its similarity-coordinate construction to a physical validation problem; its local identities do not inherit a benchmark pass.
 
-This repository, whose name ends in **Reconstruction1**, is the research workspace. [The separate publication repository](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction) is a different checkout and is not changed by this organization update.
+**No acceptance promotion:** `pde_validated=false`, `paper_exact=false`, `blowup_proved=false`; the reviewed ST073 driver also retains `full_NS_background_completed=false` and `temporal_recursion=false`.
 
-Existing source paths, parameter files, validation reports, integration tasks, branches and scientific defaults are preserved. New English navigation distinguishes current research from the compatibility release and legacy exact-reconstruction material. See [organization record](docs/ORGANIZATION.md) and [branch guide](docs/BRANCH_AND_PR_GUIDE.md).
+## Preservation and history
+
+Code, coefficients, raw reports, configurations, workflows, research branches and scientific thresholds are preserved. Organization is through entry points and evidence routing, not bulk renaming or merging unfinished research code. The September 22 pause record is historical and does not establish whether a task is running now.
+
+See [experiments](experiments/README.md), [branches](docs/BRANCH_AND_PR_GUIDE.md), and the [organization record](docs/ORGANIZATION.md). The [repository without the trailing 1](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction) is a separate publication project and is unchanged.

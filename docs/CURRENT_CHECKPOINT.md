@@ -1,28 +1,52 @@
-# Current checkpoint and candidate selection
+# Current checkpoint and version selection
 
-Updated 2026-09-22. This page separates latest documented research from what the `main` checkout can currently execute. Scheduled NS reconstruction agents were paused on 2026-09-22; the consolidated stop-state is recorded in [FINAL_RESEARCH_SNAPSHOT_2026-09-22.md](FINAL_RESEARCH_SNAPSHOT_2026-09-22.md).
+Reviewed 2026-10-02 UTC against research commit [`e0bfdad05fc64f1f0fa4c662d13bd36b8b340f4c`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e0bfdad05fc64f1f0fa4c662d13bd36b8b340f4c). This is a pinned snapshot, not a live scheduler report.
 
-## Four distinct entry points
+| Layer | Identity | What to use it for |
+|---|---|---|
+| Current reconstruction | ST073 / `codex/st073-transition-next` | Source-bound Part I construction and staged checks |
+| Earlier numerical candidates | ST061-D/P; ST063-G1R/G2R | Frozen residual/geometry comparisons, with original failures retained |
+| Main MATLAB viewer | ST054-Q2/M3 | Existing checked-in visualizer and its own native-test history |
+| Main Python API | ST006 | Backward-compatible `research_baseline.load_best()` and CLI |
 
-| Role | Candidate | Where to start | State |
-|---|---|---|---|
-| Latest geometry experiment | ST063-G2R | [ST063 record](research_snapshots/ST063.md), [comparison guide](../visualization/README.md) | Local study and complete offline bundle; full array/runtime import to `main` not performed |
-| Residual-oriented controls | ST061-D and ST061-P | [ST061 record](research_snapshots/ST061.md) | D lower L2, P lower peak within the ST061 paired samples; no universal winner |
-| Viewer bundled on `main` | ST054-Q2 and ST054-M3 | [MATLAB viewer](../visualization/matlab/README.md) | Existing frozen export and original native-test receipts; not the latest geometry field |
-| Backward-compatible Python baseline | ST006 | [Frozen manifest](../artifacts/research/ST006/manifest.json), `research_baseline.load_best()` | Historical retained API default; not a claim that subsequent studies do not exist |
+The latest source records admit absolute leading five-moment closure and angular coefficient axial jets through order four. They do not establish a complete C4 physical field, energy/stress/temporal closure or independent NS residual acceptance. Read [the evidence and limits](RESEARCH_STATUS.md) before continuing.
 
-ST063-G1R remains an explicitly reported control, including its second-sample residual regressions and one off-grid radial-pressure sign miss. It is not hidden, but is not the preferred geometry example.
+## ST073 research checkout
 
-## What changed most recently
+From an existing clone, use a separate worktree so local main work is not overwritten:
 
-G2R has a longer moderate-strength axial rotation plateau and a 3.5%–7.3% fixed-window aspect increase at t=0.25/0.5/0.75. Its paired sampled peaks decrease, but paired volume L2 increases by 0.65%/1.84%. Strong-axis continuity at thresholds 0.25 and 0.35 is not established. The new comparison UI is supplied, not natively MATLAB-tested in that round.
+```bash
+git fetch origin main codex/st073-transition-next
+git worktree add --detach ../ns-st073-e0bfdad e0bfdad05fc64f1f0fa4c662d13bd36b8b340f4c
+cd ../ns-st073-e0bfdad
+python experiments/root_st073/lei_ren_part1_paper_compliant_reconstruction.py --stage all --list
+```
 
-Every candidate above remains unvalidated for the original full NS target. No geometry result, source-code upload or software test changes that status.
+Choose an unused worktree directory. The immutable commit above is the reviewed source; a later branch head may have additional work. `--list` prints module names without executing numerical construction or validating dependencies.
 
-## Resume the right experiment
+The source driver orders these stages:
 
-A working continuation needs the actual frozen candidate, compatible runtime, registration, source identity and evidence. A branch README or hash alone is not a recoverable field. [The catalog](research_catalog.json) binds the available complete bundle names and hashes, source commits, exact raw identities and test limits. Do not run an ST063 command from a checkout that lacks its complete bundle.
+```text
+source -> inner -> outer -> angular -> energy -> pulse
+       -> postpulse -> closure -> angularjets
+```
 
-The main ST006 API and its original failure reports remain unchanged. See [results](RESEARCH_STATUS.md) for current paired comparisons and [repository guide](REPOSITORY_GUIDE.md) for runnable commands.
+At this snapshot, `--stage all` selects 45 modules. On a complete checkout with its required scientific dependencies, full reproduction is:
 
-The historical multi-agent routing state remains preserved in its GitHub branches and pull requests, but the scheduled NS agents are paused. Do not treat the existence of an open PR as automatic scientific admission; resume from the exact lineage documented in the final pause snapshot.
+```bash
+python experiments/root_st073/lei_ren_part1_paper_compliant_reconstruction.py --stage all
+```
+
+This command regenerates source-bound receipts in the research worktree. A selected stage such as `--stage angularjets` does not automatically run all earlier stages; use it only with matching prerequisites. The driver stops on a failed stage. These commands were inspected in source, **not numerically executed for this documentation update**.
+
+## Historical runtime and assets
+
+The [visualization hub](../visualization/README.md) distinguishes the bundled ST054 viewer from the separately delivered ST063 comparison ZIP. The [historical catalog](research_catalog.json) records candidate/bundle hashes and missing branch-only dependencies. Do not substitute a different field when an array is unavailable.
+
+The main ST006 loader and original failed validation remain unchanged. See [historical numerical results](LEGACY_NUMERICAL_RESULTS.md) and [experiment navigation](../experiments/README.md).
+
+## Continuation boundary
+
+The next dependency is complete same-source higher derivatives: corrected future energy, incoming moment/energy functions and selected amplitude/end coefficients, then full pulse/outer mixed derivatives and C4 interfaces. Energy, outer cone/stress, flat remainder, temporal recursion and full residual validation follow; see [task routing](AGENT_TASKS.md).
+
+The September 22 pause snapshot and older supervision headings are historical. Neither their presence nor recent branch activity establishes that an external task is currently running.

@@ -1,19 +1,20 @@
-# Branch and PR guide
+# Branch and integration guide
 
-Updated 2026-09-21. This is a curated scope guide, not a complete inventory of every branch or a live claim that all CI has passed.
+Reviewed 2026-10-02 UTC. This is a curated routing guide, not an inventory of every branch, a CI report or a live-task monitor.
 
-| Branch / location | Purpose | Safe interpretation |
+| Branch / layer | Role | Interpretation |
 |---|---|---|
-| `main` | Stable checkout, compatible ST006 API, bundled ST054 viewer and current research navigation | Updated documentation does not change runtime candidate selection |
-| `research/st063-axial-core` | Latest user-requested geometry experiment, issue #939 | Pinned record `a3d04d3467361bab7c9fc7c8c6aedf31987ee069`; complete data remains in the delivered bundles |
-| `research/st061-quadratic-subspace` | Residual/volume method controls, issue #900 | Pinned record `ad0e6dacf3851a12f4272bb4f6b282cf49506d8e`; retain D/P tradeoffs |
-| `research/st062-feasible-subproblems` | Solver-diagnosis work, issue #932 | Do not infer a completed ST062 candidate from its issue number |
-| `codex/cr001-constraints` | Separate multi-agent integration and live task routing | Read that branch's current task file; do not replace its state with this overview |
-| `docs/st063-repository-refresh` | This maintenance change, issue #1068 | English entry points and evidence indexing only; no new fit or scientific promotion |
-| Historical experiment branches and PRs | Original code, failures and previous research | Preserve; an old number or open state is not proof of incompleteness or acceptance |
+| `main` | Current navigation, ST006 compatibility API and ST054 viewer | Documentation refresh does not promote ST073 into the runtime |
+| `codex/st073-transition-next` | Current reviewed Part I-oriented reconstruction | Pinned snapshot `e0bfdad05fc64f1f0fa4c662d13bd36b8b340f4c`; recheck head before continuation |
+| `research/st063-axial-core` | Historical geometry comparison | Original study `a3d04d3467361bab7c9fc7c8c6aedf31987ee069`; complete data has separate bundle requirements |
+| `research/st061-quadratic-subspace` | Historical residual/volume controls | Original study `ad0e6dacf3851a12f4272bb4f6b282cf49506d8e`; retain D/P tradeoffs |
+| `research/st062-feasible-subproblems` | Historical diagnosis | An issue or branch does not establish a completed candidate |
+| `codex/cr001-constraints` | Earlier parallel-integration routing | Historical reference; do not assume it is the current ST073 head or live scheduler |
+| `docs/st073-repository-refresh-20261002` | Isolated documentation refresh | No numerical code merge or acceptance promotion |
+| Other branches and PRs | Preserved research lineage | Neither open nor merged status establishes scientific acceptance |
 
-Pinned original study records are available directly on main as [ST061](research_snapshots/ST061.md) and [ST063](research_snapshots/ST063.md). The [catalog](research_catalog.json) identifies complete offline bundles separately from branch source files.
+Use [the pinned checkout instructions](CURRENT_CHECKPOINT.md#st073-research-checkout), [evidence assessment](RESEARCH_STATUS.md) and [historical asset catalog](research_catalog.json). The [current source task handoff](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/e0bfdad05fc64f1f0fa4c662d13bd36b8b340f4c/docs/AGENT_TASKS.md) records construction dependencies; task ownership and newer commits must be checked separately.
 
-The repository without a trailing `1` is a separate publication project. This change does not update that repository, its release artifacts or its About metadata.
+Integrate only reviewed changes against the current parent. Preserve concurrent commits, source hashes, physical defaults and failed controls. Do not force-push, bulk-delete branches, close scientific issues as a side effect of cleanup or merge an unvalidated scientific branch just to simplify the homepage.
 
-No branches or PRs are bulk-deleted, no histories are rewritten, and no scientific issues are closed by this cleanup. Before merging a numerical change, recheck the exact head, dependencies and actual executed tests. Never treat a merged documentation PR as a merged candidate or a proof.
+The repository without the trailing `1` is a separate publication project and is unchanged.

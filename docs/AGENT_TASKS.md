@@ -1,19 +1,28 @@
-# 当前任务路由
+# Task routing and next dependencies
 
-## main 发布与维护
+Navigation snapshot: 2026-10-02 UTC. This document does not create, claim, resume, stop or schedule an external agent task.
 
-`PUB-ST006-001`：原始 ST006 参数/证据版本化、稳定接口、统一状态与目录导航、专项软件回归和独立科学复验。维护入口为 `research_baseline/`、`artifacts/research/`、`scripts/ns_candidate.py`，讨论在 #205。
+## Current research handoff
 
-软件发布不关闭科学目标。ST006 仍未通过完整 1e-3 门槛；任何新候选必须保留原物理条件、非平凡性及独立采样验收，或者明确注册不同问题的新版本。
+Use `codex/st073-transition-next`; reviewed commit `e0bfdad05fc64f1f0fa4c662d13bd36b8b340f4c`. Read its [source task handoff](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/e0bfdad05fc64f1f0fa4c662d13bd36b8b340f4c/docs/AGENT_TASKS.md), latest head, open PRs and actual ownership before taking a task. This main-branch summary does not override newer source instructions.
 
-## 活跃科学与定时 agent
+The saved handoff completes F38-D2 absolute leading moment closure and F38-D3a angular coefficient axial jets through order four. The former unresolved angular/pressure constants are no longer the next task at this pinned source. Full-field C4 and NS acceptance remain open.
 
-并行集成仍是 `codex/cr001-constraints`。执行定时/多人科学工作前，读取该分支最新 `AGENTS.md`、`docs/PROJECT_GOAL.md`、`docs/CURRENT_CHECKPOINT.md`、`docs/AGENT_TASKS.md` 及实际存在的调度入口，再检查认领/依赖/开放 PR。本次不修改排程、不重复认领、不自动合并其他路线。
+| Dependency | Next concrete work |
+|---|---|
+| F38-D3b | C4 corrected future swirl energy; same-source incoming moment/energy jets; higher derivatives of the actual positive `ap/c1/c2` selection |
+| F38-D3c | Carry full jets through pulse and outer fields; recover `Ur_Z` and mixed derivatives with consistent primitive/energy units |
+| F38-D3d/e | Required finite-cell remainders, all C4 interfaces and coherent similarity/physical field dispatch |
+| F39-A | Whole-outer cone margins and full physical per-time/spacetime energy bounds |
+| F39-B | Global admissible stress, flat remainder and genuine order-dependent temporal coefficient recovery |
+| F41 | Required oscillatory/mean corrections, independent full forced Cartesian residual and time-dependent geometry diagnostics |
 
-根研究失败实验 #210/#240 与 Kokuno 等互补方向分开保存；见 [分支指南](BRANCH_AND_PR_GUIDE.md)。
+Preserve the exact implicit source, fixed derivative normalization factors, signed bump energy changes and positive formal scales. Angular-coefficient C4 is not full-field C4; coordinate scaling is not temporal recursion. See [status and evidence](RESEARCH_STATUS.md).
 
-原 main 的 CR001–CR012 TODO 表原字节归档到 [archive/pre_publication/AGENT_TASKS.md](archive/pre_publication/AGENT_TASKS.md)。它是迁移时的历史状态，不得再据此宣称当前尚未构造候选。
+## Main maintenance and historical routes
 
-## 状态用语
+Keep `research_baseline/`, the frozen ST006 artifacts and `scripts/ns_candidate.py` backward-compatible. ST061/ST063 remain separate numerical controls; ST054 remains the main viewer. The earlier `codex/cr001-constraints` routing and September pause notices are historical, not a claim about an active scheduler.
 
-代码交付、审核、合并、文件完整性、数值科学验收分别记录。DONE 不是 PDE pass。任何验收必须注明候选哈希、提交、实际命令与结果；未执行写 not run。
+The [pre-refresh task page](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/e99559447f5c5d522b57276aa340718193117a0b/docs/AGENT_TASKS.md) and all old assignments remain in Git history. This update does not duplicate task claims or alter schedules.
+
+Record the source commit, actual commands, results and limits for each delivered change. Code supplied, locally checked, remotely checked, merged and scientifically accepted must remain distinct states.

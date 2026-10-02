@@ -1,51 +1,37 @@
-# 新目标：公开约束下的独立重建与验证
+# Project goal: independent, source-tracked NS reconstruction
 
-用户于 2026-09-16 明确取消“一比一精确复刻”的要求，并指定迁移到本仓库。
-依据：[用户提供的目标讨论](https://chatgpt.com/share/6aaab4a8-759c-83e9-b3e8-e45eb954fd16)。
-该讨论是目标说明，不是任何数学定理或论文内容的独立证据。
+Updated 2026-10-02 UTC. Scope: `Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1` only.
 
-## 最终交付
+Build a **nonzero, divergence-free, finite-energy, three-dimensional time-dependent Navier–Stokes velocity-field reconstruction**. Prioritize measurable self-similar scale evolution and anisotropic core geometry, while retaining reproducible field evaluation, independent residual validation and explicit provenance. The current implementation route is Lei–Ren Part I-oriented ST073; it is not a claim of exact original coefficients, a complete original proof or a certified blow-up solution.
 
-构造参数化的非平凡候选 `u(x,t;theta)` 及相容压力，在明确域和参数下满足已选取的公开结构约束，并提供可复现的独立数值验证。允许不同于论文的自由参数、表示、频谱系数和优化路径。
+## Mathematical and numerical deliverable
 
-交付包括：约束清单、候选生成器、优化配置与结果、独立验证器、收敛/敏感性报告、3–5 个结构性质的符号或形式验证，以及公开约束和自主选择的对照说明。
+For a registered problem, provide velocity `u(x,t)`, pressure `p(x,t)` and a prescribed or independently constrained force `f(x,t)` with:
 
-## Stage A — 约束与问题定义
+```text
+div u = 0
+E(t) = (1/2) integral_R3 |u(x,t)|^2 dx
+R_NS = u_t + (u . grad)u + grad p - nu*Delta u - f
+```
 
-逐条记录来源、公式、变量、适用域与证据等级。对称性、尺度律、边界/支撑、频谱或集中机制只在公开来源支持时列为“来源要求”；不能把讨论中的示例当成论文事实。
-确定粘性 nu、时间区间、空间域、边界条件和 forcing 约定。区分硬约束和待拟合目标。
-在优化前规定非平凡性、归一化、误差指标和验收阈值；阈值随离散精度的关系需说明。
+The energy target includes control toward the intended limiting time, not merely finiteness at a few sampled times. Define the physical-to-similarity coordinate map and its Jacobian explicitly. Verify the source-derived radial/axial scales, relative elongation, swirl/axial growth and vorticity concentration across times; do not infer them from an imposed plot stretch or a single image.
 
-## Stage B — 可执行候选族
+The eight work packages are incompressibility; physical energy; anisotropic core geometry; velocity/scaling growth; admissible stress and remainder; functional moment cancellation; inner/transition/outer matching; and independently evaluated full NS residuals. [Current status](RESEARCH_STATUS.md) records each separately.
 
-复用已有坐标/轴对称表示，在适用域内以向量势、流函数或受约束基函数构造散度为零的候选。按需求选表示，不强制 Fourier。
-所有参数有明确意义和界。至少提供一个可运行、非零且符合基本边界条件的初始化。
+Moment requirements are functions of the axial variable and can have nonzero reference targets. They must use the source's definitions and terminal radius. In particular, a positive remaining-energy moment at a finite radius must not be reset to its zero target at infinity.
 
-## Stage C — 约束优化
+## Final acceptance
 
-优化压力/速度参数，并按预定义方式处理 forcing。损失可以包括独立定义的 NS residual、边界误差、结构约束、频谱/缩放目标；优先通过表示满足硬约束。
-记录种子、参数、权重、训练采样和资源预算。排除通过 `u=0`、振幅趋零或自由 forcing 消掉残差的退化最优解。
+Both the full-vector momentum maximum and the physical spatial volume L2 target remain `<= 1e-3`. State whether a maximum is sampled or rigorously bounded, the spatial/time domain, nondimensionalization, quadrature weights, refinement levels and differentiation errors. A new theoretical source is not automatically the same physical benchmark as an older numerical candidate.
 
-## Stage D — 独立验证
+The historical constrained benchmark retains viscosity `0.01`, times `[0.25,0.75]`, evaluation box `[-2,2]^3`, its original compact-support conditions, initial-energy normalization and bounded divergence-free forcing family. Do not change those defaults as part of repository cleanup. Register any different ST073 physical problem separately before comparing acceptance numbers.
 
-报告未参与优化的测试点/网格上的误差，包括最大值和适当积分范数。用不同算子实现或解析对照检查导数/残差。
-至少三个适用的精度级别用于收敛/平台误差分析；分别控制网格、求积、基函数截断、参数阶或时间步，不能同时改变一切后归因。
-按实际约束检查散度、NS 方程、边界/支撑、能量、频谱和尺度/增长。尚未通过者如实报告，不事后放宽阈值包装成功。
+Reject zero-field/amplitude-collapse solutions and unrestricted `f=R` constructions. Use held-out points and an independent differentiation/residual implementation; separate spatial, temporal, quadrature and truncation refinements. Include reproducible Python/MATLAB evaluation and visual diagnostics with an exact candidate/source identity.
 
-## Stage E — 少量关键严格性质
+## Research route and scope
 
-选择 3–5 个支撑可信度的具体命题，例如散度恒等式、表示的对称性、坐标/缩放恒等式、某个支撑或局部区间界。
-符号验证或 Lean 局部证明均可，记录假设和适用域。有限数值样例不等于恒等式；不要求完成整个 NS blow-up theorem。
+The present route is source-bound core construction, functional five-moment repair, corrected pulse/heat-tail assembly, absolute leading moment closure, full derivative/interface control, energy/cone/stress/remainder construction, genuine temporal coefficient recovery and any required oscillatory corrections. Dependency closure, not an arbitrary percentage, defines progress.
 
-## Stage F — 可复现成果与结论边界
+Only selected structural identities or local proofs are required as supporting evidence; this project does not require closing every historical exact-reconstruction theorem adapter. Preserve useful legacy modules and truthful limitations without making obsolete proof tasks the critical path.
 
-从干净环境能生成候选、重新验证并重建报告。逐项区分来源约束、自主参数化、数值证据、严格局部证明和未决问题。
-成功意味着候选在已公布约束、域与精度标准下通过验证，不意味着与原始场逐系数一致或证明奇异性。
-
-## 不再作为强制门槛
-
-- 恢复隐藏数据、搜索轨迹或原始精确参数。
-- 将旧仓库每个全阶定理接口闭合。
-- 完整复制论文/Lean 证明或把 `paper_exact_velocity_available` 改成 true。
-
-旧成果可用于表示、诊断、局部严格界和对照，但不能冒充已经完成本目标。
+The [previous September goal](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/e99559447f5c5d522b57276aa340718193117a0b/docs/PROJECT_GOAL.md) remains in Git history. This update changes documentation and routing, not physical defaults, candidate coefficients or scheduler state.

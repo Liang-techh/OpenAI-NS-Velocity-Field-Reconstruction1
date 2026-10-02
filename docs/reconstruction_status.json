@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "record_type": "reviewed_reconstruction_navigation_snapshot_not_scientific_receipt",
+  "snapshot_date_utc": "2026-10-02",
+  "repository": "Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1",
+  "research_route": "ST073_Lei_Ren_Part_I_oriented_independent_reconstruction",
+  "research_branch": "codex/st073-transition-next",
+  "reviewed_commit": "e0bfdad05fc64f1f0fa4c662d13bd36b8b340f4c",
+  "documentation_base_commit": "e99559447f5c5d522b57276aa340718193117a0b",
+  "evidence_policy": "Saved source, reports and receipts reviewed; numerical pipeline and mathematical proof not independently rerun or fully audited for this documentation update.",
+  "live_task_status": "not_determined",
+  "source": {
+    "epsilon_relation": "epsilon_source=.001*delta",
+    "core_epsilon_is_separate": "1/Lambda",
+    "source_sha256": "5aec111986d745459eb2e2fece291f1dc3fa7bf986529494df802c2aa2daceae",
+    "inner_five_moment_family_sha256": "3983d0ddb33fa85e6ab152ef7e29960f8b95aca3e1e86f1bda0882b39d825894",
+    "legacy_epsilon_01_receipts_are_interchangeable": false
+  },
+  "recorded_milestones": {
+    "inner_functional_five_moment_repair": "reported_source_bound",
+    "selected_positive_axial_pulse": "reported_source_bound",
+    "corrected_outer_gamma_tail_assembly": "reported_partial_field",
+    "absolute_five_leading_terminal_moments": "admitted_in_saved_source_composition_and_checker",
+    "angular_and_pressure_absolute_offsets": "zero_identities_recorded_for_same_source",
+    "angular_coefficient_axial_jets_through_order_4": "reported_for_two_implicit_functions_only"
+  },
+  "open_gates": [
+    "C4_corrected_future_energy_and_incoming_moment_energy_functions",
+    "higher_selected_ap_c1_c2_derivatives",
+    "full_velocity_mixed_derivatives_and_Ur_Z",
+    "all_required_C4_interfaces_and_finite_cell_remainders",
+    "full_physical_domain_and_time_energy",
+    "whole_outer_admissible_stress_cone",
+    "global_admissible_stress_and_flat_remainder",
+    "genuine_order_dependent_temporal_recursion",
+    "required_oscillatory_corrections",
+    "independent_full_Cartesian_divergence_and_momentum_validation",
+    "multi_time_physical_scaling_and_geometry_diagnostics"
+  ],
+  "replay": {
+    "driver": "experiments/root_st073/lei_ren_part1_paper_compliant_reconstruction.py",
+    "stages": ["source", "inner", "outer", "angular", "energy", "pulse", "postpulse", "closure", "angularjets"],
+    "modules_in_all_stage_at_snapshot": 45,
+    "numerically_executed_during_documentation_update": false
+  },
+  "ST073_independent_NS_validation": {
+    "available": false,
+    "momentum_sampled_max": null,
+    "momentum_spatial_volume_L2": null,
+    "target_for_each": 0.001,
+    "note": "Local moment and fixture errors are not full NS residuals. Physical problem, units and operators must be registered before acceptance."
+  },
+  "acceptance": {
+    "full_NS_background_completed": false,
+    "temporal_recursion_completed": false,
+    "pde_validated": false,
+    "paper_exact": false,
+    "blowup_proved": false
+  },
+  "main_compatibility": {
+    "python_candidate": "ST006",
+    "matlab_viewer_candidates": ["ST054-Q2", "ST054-M3"],
+    "ST073_runtime_promoted": false,
+    "historical_candidate_catalog": "docs/research_catalog.json",
+    "historical_numerical_results": "docs/LEGACY_NUMERICAL_RESULTS.md"
+  },
+  "evidence_paths_at_reviewed_commit": [
+    "docs/ABSOLUTE_LEADING_MOMENT_CLOSURE_2026_10_01.md",
+    "docs/ACTUAL_ANGULAR_C4_JETS_2026_10_01.md",
+    "docs/CURRENT_CHECKPOINT.md",
+    "docs/AGENT_TASKS.md",
+    "experiments/root_st073/lei_ren_part1_paper_compliant_absolute_moment_closure.json",
+    "experiments/root_st073/lei_ren_part1_paper_compliant_reconstruction.py"
+  ]
+}
