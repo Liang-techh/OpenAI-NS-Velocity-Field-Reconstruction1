@@ -1,3 +1,61 @@
+# Current next work: source values and actual field evaluation - 2026-10-02
+
+Read docs/CORE_COEFFICIENT_REBUILD_2026_10_02.md and docs/GLOBAL_PHYSICAL_SOURCE_ASSEMBLY_2026_10_02.md. This header supersedes core-row rebuild and physical-map TODOs below. Keep the full paper-faithful goal and all later energy/stress/recursion/correction gates. Current focused stages: freshcore/globalphysical;109 ordered modules.
+
+- [x] Rebuild coupled radial coefficient enclosures directly from SAME selected Cstar and CURRENT compliant pressure datum: degree24, four initial axial centers,5400 coefficients. No old finite rows read or point representatives selected.
+- [x] Rebuild full axial seed length; use ell=-G_Z, S=epsilon_core^2 F0^2, epsilon_core=1/Lambda and correct pressure scale. Keep the source .001*delta epsilon separate.
+- [x] Add explicit Bessel plus nonlinear correction infinite radial tails, epsilon-corrected Uz/average tails, original Q recovery and independently bounded integrated pressure tail.
+- [x] Check scaled coefficients against original unscaled equations with nonzero swirl/axial/pressure; verify tail majorants and reproduce16 actual-source core packets.
+- [x] Assemble all33 chart physical spatial4/time1 source bounds and nonsingular axis; preserve original source units, moving basis and exact width-factor cancellation.
+- [x] Distinguish uncapped micro/macro rows from provider-prebounded ordinary rows. Label cap-based numerical logR enclosures separately from formal radius expressions; do not claim correlated exact evaluation.
+- [ ] Refine the implicit F0 amplitude from the original anchored G source in logarithmic coordinates, with controlled numerical error and separate parameter/datum uncertainty. No arbitrary interval midpoint may be labeled an exact solution.
+- [ ] Resolve signed original bridge/first-switch integral graphs with stable factorization and controlled quadrature/remainders. Preserve the same values and axial derivatives in every dependent history.
+- [ ] Numerically solve the admitted unique five-bump branch with a posteriori Jacobian/error control. Preserve full axial dependence, all five terminal identities and the analytic pressure datum.
+- [ ] Compose an actual background evaluator using fresh core rows/tails and resolved annular values. Return numeric approximation, error bound and formal-only scales separately; support similarity and physical representations.
+- [ ] Select charts from physical/logarithmic coordinates with bracketed implicit lambda, nonsingular axis, unbounded heat exterior and distinguishable microscopic boundaries. Give explicit precision failure where a physical point cannot be resolved.
+- [ ] Use independently controlled derivatives to measure core widths/aspect ratio, swirl/axial/vorticity growth and multitime exponent fits; distinguish imposed exponents from observed fits.
+- [ ] Integrate real particles and cumulative winding with convergence control; report instantaneous streamlines separately. Do not substitute shrinking coordinates for recursive coefficients or winding evidence.
+- [ ] Establish required physical spacetime energy/support and terminal bounds including actual radial tail. Unlocalized whole-space energy is infinite; identify the original localization ingredient rather than silently changing the target.
+- [ ] Build admissible divergence stress and independently bounded flat remainder from SAME background; report regionwise cone margins, maxima, physical-volume L2 and scale decay separately.
+- [ ] After leading profile/moment/stress gates, implement correct n=1/n>=2 equations, common core interval, separate per-order moment repair, curl-preserving cutoffs, finite remainder and smooth summation.
+- [ ] Then implement realizable mean/two-family oscillatory corrections and averaged quadratic stress cancellation; independently validate corrected Cartesian forced-NS residual max/L2<1e-3 with declared forcing/viscosity.
+
+For each task completion record files/commit/check/domain/limits and mark [x]. Preserve unrelated experiments. Radial Taylor generation is not temporal coefficient recursion. Detailed earlier tasks below remain active except the completed items superseded here.
+
+---
+
+# Next execution: actual source values after complete physical maps - 2026-10-02
+
+Read docs/GLOBAL_PHYSICAL_SOURCE_ASSEMBLY_2026_10_02.md. This header supersedes physical source-map TODOs below; it does not mark point reconstruction, stress or recursion complete. Current stage: globalphysical;107 ordered modules. Preserve SAME selected Cstar, analytic preheat pressure, exact integral sources, implicit moment-repair branch and positive formal scales. Use Luna/max for bounded work where useful; never spawn Astra children.
+
+- [x] Assemble all33 source charts in common physical factors, including native nonsingular core/axis.
+- [x] Apply all35 Cartesian spatial multiindices through total4, moving cylindrical basis and first time derivative at fixed physical position.
+- [x] Retain exact original logarithmic radii and positive microscopic hb source; do not sort rounded micro radii.
+- [x] Combine signed microscopic factors with hb^-k before final bounds; macro bridge uses already-logR rows without extra conversion.
+- [x] Restore distinct fixed-basepoint units without differentiating them twice, including actual patch Rm/current-R conversion.
+- [x] Expose source-bound API with explicit chart coordinates and log(tau), honest uncapped/prebounded precision modes and incomplete downstream scopes.
+- [x] Establish exact Mz solenoidal identity; independently check implicit-root spatial/time operators, different units, physical divergence and extreme source scales.
+- [ ] Recompute the SAME admitted nonlinear core coefficients. Start from the actual analytic pressure datum and original fixed-point/radial equations; do not select interval midpoints or transplant old source coefficients. Report solver/truncation error separately from source parameter enclosures.
+- [ ] Implement a core evaluator on the common original rho domain, with an independently bounded infinite remainder and axis values. Keep radial Taylor generation separate from higher-order temporal coefficient recursion.
+- [ ] Resolve the signed original bridge and first-switch integral graphs with controlled quadrature/analytic remainder. Share the results in all dependent histories and axial derivatives; never reset moment histories at a chart boundary.
+- [ ] Solve the admitted implicit five-bump branch with a posteriori Jacobian/error control. Check its functional axial dependence and all five terminal identities, preserving the accepted pressure datum.
+- [ ] Compose genuine source values and their numerical errors for every chart. Distinguish point approximation, error enclosure and formal-only scales in the returned API.
+- [ ] Select charts from physical/logarithmic coordinates. Solve the positive implicit lambda root with a bracket; preserve subprecision microscopic edge ordering; support axis, unbounded heat exterior and explicit unresolved precision failures.
+- [ ] Measure radial/axial widths and aspect ratio at multiple times; fit exponents independently of imposed coordinate powers. Report similarity coordinate and physical measurements together.
+- [ ] Compute vorticity from the same derivatives. Measure swirl/axial/vorticity growth and nontriviality; do not use a zero/amplitude-collapse field.
+- [ ] Integrate particle trajectories separately from instantaneous streamlines. Report cumulative material winding with step/tolerance convergence; geometric elongation is not winding evidence.
+- [ ] Establish the paper-required physical spacetime energy domain and terminal-time energy bound. The unlocalized whole-space field has infinite energy. Include core, annuli and actual radial heat tail; state support/localization ingredients still missing.
+- [ ] Build SAME-field momentum residual for stress analysis using declared viscosity and original forcing constraints. Never define unrestricted forcing as the measured residual.
+- [ ] Construct actual divergence-form stress and independently bound flat remainder. Check cone signs/margins in core exit, matching, pulse/end, flatten and heat collar. Report separate supremum/physical-volume L2 values and scale dependence.
+- [ ] Once leading profile/moments/stress gates pass, implement correct n=1 and n>=2 coefficient recovery on the common core interval with separate per-order moment repair.
+- [ ] Apply cutoffs to streamfunction/vector potential before curl; check finite-order remainder and smooth summation. Coordinate rescaling is not temporal recursion.
+- [ ] Implement realizable mean and two-family oscillatory corrections; independently measure averaged quadratic flux and cancellation of admissible stress.
+- [ ] Validate corrected full forced NS residual with independent Cartesian operators and physical-volume quadrature. The max/L2<1e-3 gate applies at this later corrected stage.
+
+For each completed task, replace [ ] with [x], record concrete files/commit/check result/domain/limits, and update CURRENT_CHECKPOINT.md. DONE, uploaded and merged are distinct. Preserve unrelated experiments.
+
+---
+
 # Next execution: common physical assembly from accepted source dispatcher - 2026-10-02
 
 This header supersedes missing Rh-to-pre-O3/source-dispatch items below. Read docs/PRE_PULSE_AND_SOURCE_DISPATCH_2026_10_02.md. Current focused stages are prepulsemixed and sourcedispatch; all105 ordered modules remain available. Preserve SAME admitted actual core/implicit repair/analytic pressure, exact integral sources and original formal scales.

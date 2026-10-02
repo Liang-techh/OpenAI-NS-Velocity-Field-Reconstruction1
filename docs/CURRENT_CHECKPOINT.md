@@ -1,3 +1,33 @@
+# Fresh compliant core radial coefficients + all33 physical maps - 2026-10-02
+
+The SAME selected-Cstar/compliant analytic-preheat core now has freshly recomputed coupled radial coefficient enclosures through degree24 at Z=.3,.5,-.5,0. No old finite rows are read or relabelled. Full axis jets are rebuilt from the CURRENT pressure datum; core epsilon=1/Lambda and ell=-G_Z are kept distinct from source epsilon and physical log-F0 derivative. Positive implicit swirl is retained via nonzero Cauchy enclosures.
+
+Finite core polynomials now carry controlled infinite radial tails: explicit factorial Bessel tail plus admitted nonlinear Xh correction for Phi; epsilon_core times correction tail for physical Uz/radial average. SAME rows recover Q and pressure; pressure has a separate convolution/integration tail bound. These are directed source enclosures, not selected exact point parameters or temporal coefficient recursion.
+
+Checks PASS: 5400 fresh scalar coefficient enclosures;90 independent original/unscaled coupled-equation coefficients;60 independent mixed-tail sums and pressure convolution bound;48 first-radial axis diagnostics;16 reproducible core packets. Read docs/CORE_COEFFICIENT_REBUILD_2026_10_02.md; reproduce --stage freshcore.
+
+All33 source charts also have common physical-factor Cartesian spatial4/fixed-position time1 bounds with nonsingular axis. Checks PASS:140 independent spatial derivatives;4 time derivatives;120 micro/macro factor rows;7134 finite source rows and 12846 signed terms. Bridge/switch exact radius formulas are retained separately; numerical radius bounds use conservative positive-width caps and do NOT evaluate formal hb/radius correlations. No capped width is inverted. Read docs/GLOBAL_PHYSICAL_SOURCE_ASSEMBLY_2026_10_02.md; reproduce --stage globalphysical. Ordered pipeline:109 modules.
+
+NOT DONE: selected source point values/implicit F0; resolved signed integral and five-bump numerical values throughout the chain; automatic physical-point chart dispatch; measured contraction/growth/material winding; required-domain/terminal energy; admissible stress and independently bounded flat remainder; actual n-dependent recursion and mean/oscillatory correction; full corrected forced-NS validation. Original unlocalized whole-space energy remains infinite.
+
+NEXT: refine usable source values and signed bridge/switch integrals/implicit repair -> compose physical-point evaluator and measured dynamics -> required-domain energy/stress/flat remainder -> true n-dependent recursion/correction.
+
+---
+
+# All33 physical source assembly / nonsingular axis - 2026-10-02
+
+The SAME admitted core/implicit five-moment repair/analytic pressure/annular/exact-heat source now has common physical factors, all Cartesian spatial multiindices through total4 and fixed-position time1 in all33 charts. Core/axis use native nonsingular formulas. Original formal radii retain microscopic positive hb variations; signed micro and bridge-macro factors are combined before final log bounds. Other providers retain conservative prebounded mixed rows, explicitly labeled.
+
+Checks PASS:140 independent implicit-root Cartesian derivatives;4 fixed-position time derivatives;120 extreme signed scale rows (60 microscopic hb conversions,60 macro rows without extra conversion); exact original Mz divergence identity and independent Cartesian solenoidal fixture;7134 finite physical source rows and 12846 signed terms across all33 whole-chart domains; core requested-time and nonsingular-axis checks; current source hash bindings. Finite fixtures validate operators, not admitted nonlinear point coefficients.
+
+Read docs/GLOBAL_PHYSICAL_SOURCE_ASSEMBLY_2026_10_02.md. Reproduce --stage globalphysical; the ordered pipeline now has107 modules. Explicit chart coordinates plus log(tau) return signed factored physical bounds. Automatic selection from arbitrary physical points and actual nonlinear point values remain unfinished.
+
+NOT DONE: actual point core coefficients and source integral values; physical-point dispatcher; construction-domain/terminal energy; admissible divergence-form stress; independently bounded flat remainder; true n-dependent recursion; mean/oscillatory correction and full forced-NS residual acceptance. Original unlocalized whole-space energy remains infinite. Physical derivative maps are not measured dynamics or a recursion result.
+
+NEXT: actual same-source nonlinear core reconstruction with controlled infinite remainder -> usable physical-point field and dynamics -> required-domain energy/stress/flat remainder -> n-dependent recursion/correction.
+
+---
+
 # Actual Rh-to-Rp mixed4 and callable core-to-heat source chain - 2026-10-02
 
 SAME actual inner implicit five-moment repair now supplies Rh..Rref, original O2 slope, whole axial turnoff plus 11-unit buffer, O3 slope-mu transition and entire power buffer toRp. All five accumulated histories and original analytic P0 remain bound. Physical velocity/pressure/primitives have logR/Z mixed4; full axial5 log-amplitude metadata is retained.

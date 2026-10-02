@@ -81,6 +81,17 @@ and complete O3 transport, physical logR/Z4, actual repaired terminal source
 and original pressure. Sourcedispatch provides explicit same-source chart
 coordinates from core through the exact heat exterior, retaining original
 normalizations; this is not full physical Cartesian assembly or point data.
+Globalphysical assembles all33 source charts in common physical factors,
+Cartesian spatial4 and fixed-x time1, retaining the native nonsingular axis.
+It combines uncapped microscopic/macro source factors before final bounds;
+ordinary providers retain their prebounded mixed rows. Independent implicit
+coordinate fixtures check the operators. This is a source-bound assembly,
+not reconstructed nonlinear point coefficients, stress or temporal recursion.
+Freshcore regenerates coupled finite radial rows from the CURRENT compliant
+pressure datum and selected Cstar, retaining positive implicit swirl sources.
+Explicit Bessel plus admitted nonlinear correction tails give controlled
+profile enclosures; old finite rows are not read or relabelled. Radial Taylor
+generation remains distinct from higher-order temporal coefficient recursion.
 """
 import argparse
 import importlib
@@ -134,6 +145,8 @@ SWITCHMIXED=('microswitch_mixed_C4','microswitch_mixed_C4_check')
 BRIDGEMIXED=('bridge_mixed_C4','bridge_mixed_C4_check')
 PREPULSEMIXED=('pre_pulse_mixed_C4','pre_pulse_mixed_C4_check')
 SOURCEDISPATCH=('source_dispatcher',)
+GLOBALPHYSICAL=('global_physical_assembly','global_physical_assembly_check')
+FRESHCORE=('core_coefficient_rebuild','core_coefficient_rebuild_check')
 
 
 def stages(stage):
@@ -151,7 +164,9 @@ def stages(stage):
             'bridgemixed':BRIDGEMIXED,
             'prepulsemixed':PREPULSEMIXED,
             'sourcedispatch':SOURCEDISPATCH,
-            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS+POSTMIXEDJETS+STEEPJETS+HEATJETS+PHYSICALFIELD+COREPHYSICAL+FROZENFIELD+BRIDGEPROFILES+SWITCHPROFILES+RESHAPEPROFILES+RESTOREPROFILES+ACTUALPATCH+PATCHMIXED+RESTOREMIXED+RESHAPEMIXED+SWITCHMIXED+BRIDGEMIXED+PREPULSEMIXED+SOURCEDISPATCH}[stage]
+            'globalphysical':GLOBALPHYSICAL,
+            'freshcore':FRESHCORE,
+            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS+POSTMIXEDJETS+STEEPJETS+HEATJETS+PHYSICALFIELD+COREPHYSICAL+FROZENFIELD+BRIDGEPROFILES+SWITCHPROFILES+RESHAPEPROFILES+RESTOREPROFILES+ACTUALPATCH+PATCHMIXED+RESTOREMIXED+RESHAPEMIXED+SWITCHMIXED+BRIDGEMIXED+PREPULSEMIXED+SOURCEDISPATCH+GLOBALPHYSICAL+FRESHCORE}[stage]
 
 
 def run(stage='all',list_only=False):
@@ -164,7 +179,9 @@ def run(stage='all',list_only=False):
         print('Build compliant stage:',name,flush=True)
         importlib.import_module(PREFIX+name).run()
         completed.append(name)
-    inherited_dispatch='source_dispatcher' in completed
+    inherited_global='global_physical_assembly_check' in completed
+    inherited_fresh='core_coefficient_rebuild_check' in completed
+    inherited_dispatch=inherited_global or 'source_dispatcher' in completed
     inherited_prepulse=inherited_dispatch or 'pre_pulse_mixed_C4_check' in completed
     inherited_bridgemixed=inherited_dispatch or 'bridge_mixed_C4_check' in completed
     inherited_switchmixed=inherited_bridgemixed or 'microswitch_mixed_C4_check' in completed
@@ -177,7 +194,7 @@ def run(stage='all',list_only=False):
     inherited_switch=inherited_reshape or 'inner_switch_profiles_check' in completed
     inherited_bridge=inherited_switch or 'inner_bridge_profiles_check' in completed
     inherited_frozen=inherited_bridge or 'frozen_comparison_field_check' in completed
-    inherited_core=inherited_frozen or 'core_physical_field_check' in completed
+    inherited_core=inherited_fresh or inherited_frozen or 'core_physical_field_check' in completed
     inherited_energy=inherited_core or 'physical_energy_check' in completed
     inherited_cartesian=inherited_energy or 'cartesian_field_check' in completed
     inherited_heat=inherited_cartesian or 'collar_Gamma_C4_check' in completed
@@ -288,6 +305,13 @@ def run(stage='all',list_only=False):
         all_profile_source_charts_callable=inherited_dispatch,
         full_source_chart_dispatcher_installed=inherited_dispatch,
         source_dispatcher_scope='Explicit source chart coordinates, original formal radii and distinct normalizations; 33 same-source charts; not a pointwise physical Cartesian field',
+        all33_source_chart_physical_spatial4_time1_assembly_available=inherited_global,
+        whole_core_axis_nonsingular_physical_source_map_available=inherited_global,
+        global_physical_assembly_scope='Signed factored physical source bounds; fixed-basepoint units; uncapped micro/macro factors and provider-prebounded ordinary rows; not nonlinear point coefficients or dynamics',
+        full_point_physical_field_evaluation=False,
+        fresh_compliant_finite_core_coefficients_recomputed=inherited_fresh,
+        fresh_core_infinite_radial_tails_bound=inherited_fresh,
+        fresh_core_scope='Directed coupled radial coefficients from same selected Cstar/compliant pressure; explicit model plus nonlinear correction tails; not point parameter selection, full physical field, or temporal recursion',
         original_unlocalized_whole_space_kinetic_energy_is_infinite=True if inherited_energy else None,
         full_cartesian_vector_derivatives_certified=False,
         core_axis_interfaces_certified=False,
@@ -297,14 +321,14 @@ def run(stage='all',list_only=False):
         full_pulse_C4_scope='Leading O4 and two local external interfaces, spatial/profile mixed total<=4 at fixed positive tau; whole outer/core/axis and time derivatives excluded',
         full_outer_C4_certified=False,
         temporal_recursion=False,
-        next_dependency='Accepted core-to-heat source dispatcher -> common physical scales and complete Cartesian spatial/time assembly with nonsingular axis; required-domain energy/stress/flat remainder -> actual n-dependent recursion/correction')
+        next_dependency='Fresh compliant radial core enclosures plus all33 physical source maps -> resolved original signed integrals/implicit repair values and physical-coordinate chart selection; required-domain energy/stress/flat remainder -> actual n-dependent recursion/correction')
     print(json.dumps(result,indent=2),flush=True)
     return result
 
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','postmixedjets','steepjets','heatjets','physicalfield','corephysical','frozenfield','bridgeprofiles','switchprofiles','reshapeprofiles','restoreprofiles','actualpatch','patchmixed','restoremixed','reshapemixed','switchmixed','bridgemixed','prepulsemixed','sourcedispatch','all'),default='all')
+    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','postmixedjets','steepjets','heatjets','physicalfield','corephysical','frozenfield','bridgeprofiles','switchprofiles','reshapeprofiles','restoreprofiles','actualpatch','patchmixed','restoremixed','reshapemixed','switchmixed','bridgemixed','prepulsemixed','sourcedispatch','globalphysical','freshcore','all'),default='all')
     parser.add_argument('--list',action='store_true',help='Print the ordered modules without running them')
     args=parser.parse_args()
     run(args.stage,args.list)
