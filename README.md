@@ -4,7 +4,7 @@
 
 The current research route is an exploratory **Lei–Ren Part I-oriented ST073 reconstruction**. The long-term deliverable is a nonzero, divergence-free, finite-energy, three-dimensional time-dependent field with quantitatively verified shrinking-core geometry and independently evaluated momentum residuals. This is an independent research repository, not an OpenAI project or a claim to have recovered an exact original field.
 
-> **Reviewed snapshot: 2026-10-02 UTC.** Research branch: `codex/st073-transition-next`, pinned at [`e0bfdad0`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e0bfdad05fc64f1f0fa4c662d13bd36b8b340f4c). Saved source records now admit the five absolute leading terminal moments and provide fourth-order axial jets for the two angular correction functions. **Full-field regularity, physical energy, admissible stress, temporal recursion and independent full NS validation remain open.** These are reviewed repository records, not numerical experiments or proofs independently rerun during this documentation update.
+> **Reviewed snapshot: 2026-10-02 UTC.** Research branch: `codex/st073-transition-next`, pinned at [`e446e97f`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e446e97fe57cb075909959b40993ec186cba0fab). Saved source records admit the five absolute leading terminal moments and now provide fourth-order axial jets for angular corrections, complete future swirl energy, incoming pulse moments and selected ap/c1/c2. **Full-field regularity, physical energy, admissible stress, temporal recursion and independent full NS validation remain open.** These are reviewed repository records, not numerical experiments or proofs independently rerun during this documentation update. See the [latest supervision checkpoint](docs/NS_SUPERVISION_2026-09-30.md) for pinned receipts; other navigation pages retain their separately dated snapshots.
 
 [**Research status and evidence**](docs/RESEARCH_STATUS.md) · [**Choose a version / replay**](docs/CURRENT_CHECKPOINT.md) · [Project goal](docs/PROJECT_GOAL.md) · [Repository map](docs/REPOSITORY_GUIDE.md) · [Documentation](docs/README.md)
 
@@ -17,13 +17,14 @@ Source-bound inner core and exit
   -> corrected outer field and Gamma heat tail
   -> absolute leading terminal-moment closure       [recorded]
   -> angular coefficient axial jets through order 4 [recorded]
+  -> future energy / axial coefficient order 4 jets [recorded]
   -> full velocity derivatives and C4 interfaces    [open]
   -> physical energy, outer cone, stress/remainder  [open]
   -> genuine temporal recursion and corrections    [open]
   -> independent Cartesian NS residual validation  [open]
 ```
 
-The newly recorded absolute closure supersedes the earlier unresolved angular and pressure offsets. Angular-coefficient C4 does **not** establish C4 for the whole field. The small moment/fixture errors reported in the construction are **not** full Navier–Stokes residuals. See the [eight-goal assessment and pinned evidence](docs/RESEARCH_STATUS.md).
+The recorded absolute closure supersedes the earlier unresolved angular and pressure offsets for the compliant epsilon=.001delta source. Coefficient/energy jets through order four do **not** establish whole-field C4 or provide a fifth-derivative Taylor remainder. Mixed field derivatives, interior Ur_Z and interfaces/cone remain open. The small moment/fixture errors reported in the construction are **not** full Navier-Stokes residuals. See the [eight-goal assessment and pinned evidence](docs/RESEARCH_STATUS.md).
 
 ## Choose the correct layer
 

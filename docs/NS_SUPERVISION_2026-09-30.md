@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `a36495ca1a7abc41a69e4161b0e338990f1a99ea`.
+The inspected `main` head before this update is `487c63eb0e4cd39e5a8ff98c359942ae6d13caa0`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`9a6c1098a5865347a55d4f205c97504fb674d3d0`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/9a6c1098a5865347a55d4f205c97504fb674d3d0)
+[`e446e97fe57cb075909959b40993ec186cba0fab`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e446e97fe57cb075909959b40993ec186cba0fab)
 on `codex/st073-transition-next`, observed October 2. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,74 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-02 batch: absolute leading closure and coefficient/energy axial jets
+
+The [absolute closure report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/e0bfdad05fc64f1f0fa4c662d13bd36b8b340f4c/docs/ABSOLUTE_LEADING_MOMENT_CLOSURE_2026_10_01.md)
+and [producer receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/e0bfdad05fc64f1f0fa4c662d13bd36b8b340f4c/experiments/root_st073/lei_ren_part1_paper_compliant_absolute_moment_closure.json)
+now record all_five_terminal_moment_identities_certified=true and
+full_outer_five_moment_match=true for the unchanged .001delta source5aec1119
+and inner five-defect family3983d0dd. This supersedes the prior unresolved
+Ctheta/pressure-offset status only for this source-bound leading profile.
+Old unreduced constant enclosures remain saved diagnostics, not overwritten.
+
+The pressure equality uses the exact raw-preheat definition P0=-Mp_pre(infinity),
+the repaired reference mass2.5*Uref^2, and equality of the positive bump pressure
+increment to the removed Gamma heat increment, with
+c_inf*Rtail^(-1/2-delta/2)=Etail/(1-epsilon). It gives
+P0+Mp(Rv)+Ev0^2*Prv=0 as a source-function identity. For angular history,
+the correlated flatten correction cancels the full Z-dependent raw history;
+the exact waiting equation supplies its absolute Z=0 constant. The bump/heat
+multiplier identity (1-epsilon)*T*rH=S*Theta_hat then gives Ctheta(Z)=0,
+including the nonzero heat correction at Z=0. No fitted pressure datum or zero
+selected from an interval is introduced. The selected axial equations and
+complete corrected future energy supply the other three terminal conditions.
+
+The [production closure code](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/e0bfdad05fc64f1f0fa4c662d13bd36b8b340f4c/experiments/root_st073/lei_ren_part1_paper_compliant_absolute_moment_closure.py)
+contains the source-bound admitted view and extracts selected upstream Python
+AST expressions for comparison with independently derived symbolic formulas.
+The [checker receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/e0bfdad05fc64f1f0fa4c662d13bd36b8b340f4c/experiments/root_st073/lei_ren_part1_paper_compliant_absolute_moment_closure_check.json)
+records32 source/algebra identities and moderate-parameter physical integral
+fixtures. The reported ~7.34e-65 fixture constant error is not an actual-source
+NS residual or rigorous error bound for the whole construction. The equivalent
+backward pressure/angular view preserves original forward primitives. This
+review checked report, flags and production-expression linkage; it neither
+executed the checker nor independently audited the complete proof.
+
+The [angular jets report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/e0bfdad05fc64f1f0fa4c662d13bd36b8b340f4c/docs/ACTUAL_ANGULAR_C4_JETS_2026_10_01.md)
+records orders0..4 of the actual two angular coefficients using the exact
+Jacobian at the admitted branch, not differentiation of interval iterations.
+True Gamma derivative/tail bounds and actual correlated flatten jets are retained.
+Ordinary coefficients mean derivative/n!; a whole-Z box encloses derivatives
+at every real center, not a Taylor expansion about an interval. Odd orders1/3
+vanish at Z=0, while heat-driven C0 need not vanish.
+
+The newer [e446e97f axial/energy report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/e446e97fe57cb075909959b40993ec186cba0fab/docs/ACTUAL_AXIAL_C4_AND_COMPLETE_FUTURE_ENERGY_2026_10_01.md)
+and [axial jets receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/e446e97fe57cb075909959b40993ec186cba0fab/experiments/root_st073/lei_ren_part1_paper_compliant_axial_high_jets.json)
+extend orders0..4 to complete future swirl energy, true incoming moment/energy
+functions and selected ap/c1/c2. The energy includes all signed/quadratic angular
+bumps and Gamma/collar contributions. Incoming energy is recovered from its
+separated positive axial source, with no extra inverse-pressure factor; fixed
+row-normalization factors multiply every derivative order. The actual positive
+C0 amplitude and C1 enclosure remain selected, with a positive implicit
+denominator; no nominal branch or even-parity reset is imposed on axial controls.
+
+Neither angular nor axial providers supply a fifth-derivative Taylor remainder.
+These jets cannot certify finite-cell approximations without an appropriate
+remainder. They are coefficient/energy derivatives of the leading profile,
+not full-field C4 or n-dependent temporal recursion. Remaining work is to
+install them in pulse charts/five partial primitives, recover internal Ur_Z
+and mixed radial/axial derivatives, propagate through outer regions and certify
+all interfaces and whole-outer cone. Full physical kinetic energy, global
+admissible stress/flat remainder, temporal scale recovery, oscillatory correction
+and independent Cartesian NS residual remain open. Radial swirl energy is
+not the full spatial/time energy requirement.
+
+Replay the ordered closure, angularjets and axialjets stages in the pinned
+compliant_reconstruction driver. Published checks are saved evidence; no
+numerical reproduction ran in this environment. Concurrent main documentation
+commits36dede39/487c63eb were fast-forwarded before this two-file update, preserving
+their navigation, safeguards and separate dated status snapshots.
 
 ### 2026-10-02 batch: selected axial pulse and corrected post-pulse Gamma assembly
 
@@ -1694,6 +1762,13 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [e0bfdad0 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36950836928)
+and [e446e97f run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36952474846)
+both finish failure. Actual constrained logs retain the same original13 failed
+identifiers/423 passed; each has four successful smoke/slice jobs and skipped
+full historical tests. No selected governance regression appears. CI does not
+independently certify the absolute source equalities or full-field C4/NS status.
 
 The [9a6c1098 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36947041706)
 has the original13 constrained failed identifiers/423 passed in its actual log;
