@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `a8cc7bbf2a057aa3c1dbf05bd4236d34c8abecfe`.
+The inspected `main` head before this update is `1aa15527daa5d9ad13109980ff832bc95b71340d`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`36faf5d077b9885fa8d71d8ff40a3f5d448da078`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/36faf5d077b9885fa8d71d8ff40a3f5d448da078)
+[`c0dfaa759b81e302d95ff3e410a661cc4bd36e37`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c0dfaa759b81e302d95ff3e410a661cc4bd36e37)
 on `codex/st073-transition-next`, observed October 2. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,51 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-02 batch: factored microswitch mixed4 and complete postpower interval
+
+The [c0dfaa75 report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/c0dfaa759b81e302d95ff3e410a661cc4bd36e37/docs/MICROSWITCH_MIXED_C4_2026_10_02.md)
+and [checker receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/c0dfaa759b81e302d95ff3e410a661cc4bd36e37/experiments/root_st073/lei_ren_part1_paper_compliant_microswitch_mixed_C4_check.json)
+record physical phase/Z total-order-four derivatives on both original switches,
+and ordinary logR/Z mixed4 over the complete original R2..110 power region.
+The SAME actual source, inherited moments, raw axial V and original P0 remain
+bound. The checker records local phase1/R2/R110 functional joins true, but
+bridge_switch_inlet_join_certified=false and full inner/Cartesian/stress/time
+gates false. These joins supersede the prior pending microscopic-switch scope;
+they do not complete bridge mixed4 or either bridge boundary.
+
+Source [producer algebra](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/c0dfaa759b81e302d95ff3e410a661cc4bd36e37/experiments/root_st073/lei_ren_part1_paper_compliant_microswitch_mixed_C4.py)
+retains exponent vectors in loghb,2logPstar,2logF0base and2logu-base through
+Bell/Leibniz derivatives, quotients, true axial jets and radial prefactors.
+It combines source logs before applying final positive exponential caps.
+This corrects premature tiny-width caps before large amplitude products in
+the reviewed new-stage algebra. The extreme fixture hb^2*Pstar^2=exp(1)
+tests the failure mechanism; it does not reconstruct signed actual integrals
+or restore every lost correlation in inherited interval histories.
+
+With hb=cstar*K^-100>0 and s=log(R/100)/hb, exact D_logR^k=hb^-k*D_phase^k
+remains explicit. Each factored source term cancels its width power before
+the final log triangle bound; the looser capped-phase conversion is a separate
+diagnostic. A finite phase bound is therefore not a finite radial bound.
+The physical Ur prefactor is differentiated via (D_phase+hb/2)^k Q;
+all physical primitive RHSs and Pstar^-2 axial quadratic factors remain.
+Source amplitudes and positive widths are formal values, not numerical caps.
+
+The saved receipt accepts1,080 conversion rows,1,080 final product ledgers,
+the complete postpower interval and local joins, plus separate finite fixtures.
+Its input SHA256 bindings were checked against this pinned commit's exact
+blob bytes; this is provenance verification, not independent scientific
+execution or a complete proof audit. Replay compliant driver stage switchmixed
+with accepted prerequisites; the ordered pipeline records100 modules.
+
+Still missing: prescribed-shear bridge mixed4, core/bridge and bridge/R100
+interfaces, complete inner/pre-O3 dispatcher, actual Rh-to-outer connection,
+physical Cartesian/time assembly, admissible stress and independent flat
+remainder, genuine recursion and oscillatory correction/full NS validation.
+Unlocalized whole-space energy remains infinite, so the unchanged finite-energy
+goal fails for the current source. No scientific route change is authorized or
+implemented here. Older receipts remain scoped historical evidence; the prior
+kernel-sign correction and refreshed dependency chain are not bypassed.
 
 ### 2026-10-02 correction batch: exact kernel sign and refreshed mixed4 source chain
 
@@ -2157,6 +2202,12 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The exact-head [c0dfaa75 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37000328752)
+finished failure: the actual log retains the original13 constrained failed
+identifiers/423 passed, with four smoke/slice successes and full historical
+tests skipped. No new selected failure appeared. Source receipt acceptance,
+research CI and main documentation publication remain distinct evidence.
 
 The exact-head [36faf5d0 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36995933009)
 finished failure with the original13 constrained failed identifiers/423 passed,
