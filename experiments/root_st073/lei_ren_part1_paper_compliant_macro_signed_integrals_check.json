@@ -1,0 +1,39 @@
+{
+  "all_passed": true,
+  "failures": [],
+  "producer_source": "lei_ren_part1_paper_compliant_macro_signed_integrals.py",
+  "producer_json": "lei_ren_part1_paper_compliant_macro_signed_integrals.json",
+  "comparison_source_namespace": "65041355158affd14bf9477f51f1d76d7abc314f6984ba63034a42125517b1ba",
+  "actual_five_defect_family_sha256": "3983d0ddb33fa85e6ab152ef7e29960f8b95aca3e1e86f1bda0882b39d825894",
+  "implicit_source_sha256": "5aec111986d745459eb2e2fece291f1dc3fa7bf986529494df802c2aa2daceae",
+  "datum_enclosure_sha256": "dd4040ee3ded75a56f65407fdd1cebee6aa6f559cce9d1bb57e2146a8a436010",
+  "formal_width_not_materialized": true,
+  "higher_hb_powers_resolved": false,
+  "first_switch_resolved": false,
+  "actual_signed_bridge_completed": false,
+  "independent_modal_rebuild": {
+    ".5": {
+      "endpoint_identities_checked": 6,
+      "mode_integrals_checked": 12,
+      "label": ".5"
+    },
+    "0": {
+      "endpoint_identities_checked": 6,
+      "mode_integrals_checked": 12,
+      "label": "0"
+    },
+    "exact_shared_root": {
+      "endpoint_identities_checked": 6,
+      "mode_integrals_checked": 12,
+      "label": "exact_shared_root"
+    }
+  },
+  "independent_high_precision_quadrature": true,
+  "input_hashes": {
+    "lei_ren_part1_paper_compliant_comparison_point_integrals.json": "42e5b54453ebb1769eea5f2cb21a622bdae5e6b2dc1988020abfa967252dcff1",
+    "lei_ren_part1_paper_compliant_comparison_point_integrals_check.json": "3b2cd05bd8732acaf3b53b4f97422c55721a4ab9db9c760758b5cbdd0e31171b",
+    "lei_ren_part1_paper_compliant_macro_signed_integrals.json": "1d06ba692c0c30c57d3f8e57f96e34467e722d3b1341ad8b433bcfe1be3eb7f9",
+    "lei_ren_part1_paper_compliant_macro_signed_integrals.py": "98bc37d95e5c02f9a8d0ed614e31901a13135239b3886945bc3c73ac47a68313",
+    "lei_ren_part1_paper_compliant_macro_signed_integrals_check.py": "63ab0d1c93819ec67a944371519b04977576043ad16c0009920805a208f972c9"
+  }
+}

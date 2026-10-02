@@ -1,3 +1,22 @@
+# Next: signed micro contributions and complete bridge — 2026-10-02
+
+The leading signed macro contribution R_a*exp(2hb) to R=100 is complete and independently checked; see docs/MACRO_SIGNED_INTEGRALS_2026_10_02.md. Stage macrosignedleading; 121 ordered modules.
+
+- [x] Rebuild exact time-varying macro H/M/K/A/B/C exponential histories from actual core inlet atoms.
+- [x] Recompute original (9.13) Dbar and hydrostatic/pressure/swirl drive modes rather than constant endpoint covers.
+- [x] Analytically integrate the leading formal-hb macro coefficients with stable R_a*exp(Y)=100 kernels; keep pressure/swirl scales factored in logs.
+- [x] Independently check three Z packets, all six R=100 moment identities, signed modes and a regularized high-precision J_F quadrature.
+- [ ] Integrate both actual signed microscopic contributions R_a to R2 from the prescribed alpha/chi charts and actual core atoms.
+- [ ] Compose actual micro and macro field histories at R2/R100, with actual moments and exact endpoint joins.
+- [ ] Integrate original 100-to-110 first switch and retain all width powers with controlled remainders; keep V=4C distinct from raw axial Uz.
+- [ ] Recover implicit five-bump functions/values with a posteriori Jacobian and remainder bounds.
+- [ ] Compose selected physical point field; measure global radial/axial widths, aspect ratio, multitime exponents and material winding.
+- [ ] Close required-domain energy/support, admissible stress-cone margins, independent flat remainder, true n-dependent scale recursion, and oscillatory correction.
+
+The current J_F/J_V packets are only the leading macro contribution, not complete actual signed bridge integrals.
+
+---
+
 # Next: signed original bridge controls — 2026-10-02
 
 Comparison-history milestone is complete and independently checked; see docs/COMPARISON_HISTORIES_2026_10_02.md. Stage comparisonpoints; 120 ordered modules.

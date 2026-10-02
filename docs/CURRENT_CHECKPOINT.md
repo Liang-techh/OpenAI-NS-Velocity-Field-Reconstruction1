@@ -1,3 +1,11 @@
+# Current: leading signed macro bridge contribution — 2026-10-02
+
+Read docs/MACRO_SIGNED_INTEGRALS_2026_10_02.md. Stage macrosignedleading; 121 ordered modules. The exact frozen comparison moments now yield the leading formal-hb signed macro contribution from R_a*exp(2hb) to R=100 through original (9.13), using exact exponential modes and stable radius kernels. Independent checker PASS at Z=0, Z=.5 and the shared root; all six R100 moment identities and independent regularized J_F quadrature pass. Pressure and swirl scales remain logarithmic/factored. The microscopic Ra-to-R2 terms, 100-to-110 switch and O(hb^2) remainders are still unresolved; actual_signed_bridge_completed remains false.
+
+NEXT: compute the signed actual micro contributions from Ra to R2, compose them with this macro term, then resolve the original first switch and finite-width remainder/actual moment feedback. Continue to implicit five-bump recovery, physical point field, measured global morphology, and the full required energy/stress/flat-remainder/dynamics gates. Genuine scale-indexed coefficient recursion and oscillatory correction remain open; this step advances a prerequisite but does not implement recursion.
+
+---
+
 # Current: original comparison histories through frozen macro — 2026-10-02
 
 Read docs/COMPARISON_HISTORIES_2026_10_02.md. Stage comparisonpoints; 120 ordered modules. The original 9.23 comparison namespace now consumes actual core H/M/K/A/B/C inlet atoms, carries signed formal-width coefficients through order two with weighted cubic remainders, integrates both microscopic switches and transports all six moments through the frozen macro to R=100. Independent checker PASS; original Gaussian switch quadrature agrees with the directed Simpson receipt. This comparison history is not the actual signed bridge.

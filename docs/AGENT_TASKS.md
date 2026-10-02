@@ -1,3 +1,15 @@
+# Active handoff: complete actual signed bridge — 2026-10-02
+
+Read docs/MACRO_SIGNED_INTEGRALS_2026_10_02.md and rerun the passing macro checker. Stage macrosignedleading; 121 ordered modules. The leading formal-hb macro contribution from R_a*exp(2hb) through R=100 is integrated from exact time-varying moment modes. Source amplitudes stay logarithmic/factored, and full bridge completion is still false.
+
+Priority A: integrate the actual signed core-to-R2 micro contributions across both original smoothing charts using the current actual core inlet atoms, original alpha/chi, and comparison/moment histories. Do not infer them by subtracting interval covers or use midpoint/cap as a value.
+Priority B: compose micro and macro contributions with shared exact R2/R100 endpoint data; propagate actual F,V and all six actual moments. Resolve the original R100-to-110 first switch with its signed quotient, pulse weight, and directed truncation remainder. Retain all formal hb powers and a controlled omitted-order bound.
+Priority C: recover the implicit five-bump functions with a posteriori Jacobian/remainder control, compose the physical point field, measure full morphology/material winding, and continue the global energy/support, admissible stress, independent flat remainder and true n-dependent recursion/correction gates.
+
+Use the existing scale-log/factored algebra for extreme positive source factors; never materialize exp(Y) for Y≈9.4e17 or the extreme F0^2 scale. Preserve pressure V=4C separately from raw axial V=Uz. Do not claim that the leading macro contribution resolves the complete I_bridge or scale recursion. Preserve unrelated working files.
+
+---
+
 # Active handoff: signed actual bridge integrations — 2026-10-02
 
 Read docs/COMPARISON_HISTORIES_2026_10_02.md and reproduce the passing checker. Stage comparisonpoints; 120 ordered modules. Both original microscopic switches, all six inherited moments, and frozen macro histories through R=100 are implemented with formal positive width and controlled cubic remainder.
