@@ -1,3 +1,22 @@
+# Next execution: actual inner bridge radial jets and original short switches - 2026-10-02
+
+Read docs/INNER_BRIDGE_PROFILES_2026_10_02.md; reproduce --stage bridgeprofiles (84 modules in complete pipeline). SAME selected core/Cstar/K/hb/P0 only. The completions below are AXIAL ENCLOSURE scope, not point coefficient reconstruction or full annular matching.
+
+- [x] Enclose the true smoothed comparison(9.23), normalized by original F0, using positive integration-by-parts weights over the admitted continuation; axial6 from actual Xh bounds.
+- [x] Continue comparison's own five moment histories from the original core; restore normalized inertial direction axial5 and factored axial drive.
+- [x] Enclose actual prescribed-shear bridge(9.26) overRa..100 through axial5, cancel Factual/Fbar amplitude, retain exact hb and combine width/pressure/gradient source logs before numerical enclosure.
+- [x] Continue ACTUAL bridge five moments (not comparison moments), originalP0, positive swirl and core-exit values; recoverUr axial4 from exact cumulative mean.
+- [ ] Restore actual bridge phase/radial mixed derivatives through4. Use original sigma_jets and formal inverse-width prefactors exp(-n loghb), including endpoint-crossing flat tails. Do not replace hb with its cap or numerically differentiate a capped shape.
+- [ ] Establish all required core-exit derivative joins from the original flat identities, and admit two-sided interval providers; snapshots of overlapping intervals do not prove functional matching.
+- [ ] Integrate first switch100<=R<=100exp(hb): a=hb*Dbar, b=-hb*Ebar*(1-sigma(log(R/100)/hb)). Retain exact core/actual bridge moments and originalP0.
+- [ ] Integrate second switch100exp(hb)<=R<=100exp(2hb): b=0, a transitions from hb*Dbar to4/5; then a=4/5,b=0 until110. Preserve positive formal radii and tiny offsets instead of rounded radius subtraction.
+- [ ] Supply actual110 velocity/pressure/five-moment jets to the long reshape, reference continuation, axial restoration and moment patch. Keep the existing standalone repair separate until actual inlet histories are connected.
+- [ ] Complete precedingO3 and whole physical Cartesian assembly, local/terminal energy domains, admissible stress/independent flat remainder, actual n-dependent recursion and oscillatory correction.
+
+For each completion give exact scope, artifact, reproduction command and accepted receipt/commit. Full-field/cone/energy/temporal gates remainfalse. Original global unlocalized energy is infinite. Preserve unrelated experiments and accepted source hashes.
+
+---
+
 # Next execution: smoothed comparison and actual prescribed-shear bridge - 2026-10-02
 
 Read docs/FROZEN_COMPARISON_FIELD_2026_10_02.md. --stage frozenfield has82 ordered modules in the complete pipeline. This header refines the annular tasks below without completing the annular assembly.

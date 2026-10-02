@@ -1,3 +1,17 @@
+# Smoothed comparison and ACTUAL inner bridge axial enclosures - 2026-10-02
+
+SAME source: smoothed comparison(9.23) with own five cumulative moments now has axial6 enclosures and factored inertial direction axial5. The actual prescribed-shear bridge(9.26) over Ra=4/Lambda<=R<=100 now has regular velocity/moment/pressure axial5 enclosures and mean-recovered Ur axial4. Exact hb=epsilon_b=cstar*K^-100 and original preheat P0 are retained; hb/F0 are not materialized or replaced by a numerical cap. Products hb*pressure/gradient factors are combined in logs BEFORE enclosure. The actual-to-comparison F0 factor cancels before axial integration.
+
+These are callable enclosures of the ORIGINAL analytic integrations, NOT recomputed point coefficients. Positive IBP weights bound the true smoothed comparison; positive radial integration weights bound ITS OWN and ACTUAL bridge moments. The unsmoothed frozen direction is not substituted. AtRa the log correction is exactly0 and all core moments are inherited.
+
+Checks PASS:142 actual width-source log product inequalities,245 complete finite actual profile bounds/positive swirl; separate moderate-parameter fixtures168 comparison axial derivatives,6 exact integrated-chi inequalities,252 variable-profile moment derivatives and72 direction derivatives;2 structural identities. Fixtures do not admit the actual source. Reproduce --stage bridgeprofiles;84 ordered modules. Read docs/INNER_BRIDGE_PROFILES_2026_10_02.md.
+
+NOT DONE: radial/phase mixed4 with inverse-hb scales, full core high-derivative interfaces, switches100..110, actual110 inlet and remaining reshape/restoration/moment patch/precedingO3/full physical assembly. Stress lift/independent flat remainder, energy/terminal domains, true temporal coefficient recursion and oscillatory correction remain open. Full-field/cone/energy/temporal gates remainfalse. The original unlocalized whole-space kinetic energy remains infinite.
+
+NEXT: actual bridge phase/radial mixed derivatives and flat matching ->100..110 original switches -> actual110 inlet -> reshape/reference/axial restoration/five-moment patch -> missing precedingO3/full physical field -> energy/stress/flat remainder -> actual recursion/correction.
+
+---
+
 # Core exit five primitives and explicit frozen comparison - 2026-10-02
 
 The SAME actual .001 source now supplies all five core-exit radial primitive enclosures with axial jets through5. The explicit UNSMOOTHED auxiliary frozen field(9.12) is callable across Ra=4/Lambda..110, with all mixed profile derivatives through4 and inertial-direction axial4. Exact core moment histories and original P0 are retained. F0 and F0^2 remain formal positive sources; axial_drive=sqrt(R/2)*F*Ef is factored before enclosure. Shapes and true moment derivatives divided by basepoint amplitudes are stored separately.
