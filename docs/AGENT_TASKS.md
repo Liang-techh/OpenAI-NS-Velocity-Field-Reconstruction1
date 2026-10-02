@@ -1,3 +1,30 @@
+# Quantitative flat comparisons, local pulse C4 and O5 flatten handoff - 2026-10-01
+
+This is the current task list. Historical headers below retain prior evidence; their pending flat-comparison/external-join tasks are superseded here.
+
+- [x] F38-D3c1g2a3a: Actual original sigma/gp/beta support bounds composed with selected ap/end axial C5 data, entrance/exit widths mu*h and end w<=2h/.15. Positive numerical upper tails vanish; exact sources are unchanged.
+- [x] F38-D3c1g2a3b: SAME-history homogeneous comparisons for linear moments and energy, full B^2 derivative products, paper(3.9), physical prefactor/axial factors and cylindrical r/z bounds. Both orientations and all support endpoints covered; terminal positive energy retained. Fixed positive tau scope.
+- [x] F38-D3c1g2a3c: Independent O3 power inlet mixed provider. Source-bound canonical whole-Z shapes proved through actual O2/O3 production expressions before using stored H/Pin constants. Both high-order source join and quantitative flat comparison admitted.
+- [x] F38-D3c1g2a3d: Independent original O5 flatten high derivatives and pulse terminal join. Actual empty linear supports, original P0+Mp/Xv, complete positive future energy and correct Rv/Ev0 units retained. Local leading O4 spatial C4 accepted; no whole-outer/time claim.
+- [x] F38-D3c2a1: Entire original100-unit flatten mixed derivatives through4, axial C5 primitive input, whole-Z/time box and exact Z-independent exit swirl. Positive future energy and formal Ev0 retained.
+- [ ] F38-D3c2a2: Independent following-power mixed provider on the ENTIRE original interval from Rf to the first angular chart. Retain its exact length Lrel, the final4-unit chart split, all X/energy/pressure histories and physical factor logs. Use correlated future-energy decomposition/backward tails if subtracting the long forward energy interval loses positivity; do not clip an unresolved energy interval to positive or reset its history.
+- [ ] F38-D3c2a3: Prove flatten/power source equality through all15 velocity/pressure mixed orders and primitive axial5. Original sigma flat derivatives at t=100 give the power ODEs, but independently evaluated continuation data and exact units must enter the proof. Compose scope only after a2/a3 evidence exists.
+- [ ] F38-D3c2b1: Both angular supports with ACTUAL implicit angular C5 coefficients and original normalized beta y derivatives0..4. Preserve signed bump contributions, H=X*theta, source positivity/inverse bounds and disjoint support energy products. Do not substitute axial-pulse coefficients for angular ones.
+- [ ] F38-D3c2b2: Recover high mixed angular/energy/pressure derivatives from the signed actual swirl and primitive ODEs. Keep mean changes and positive full future energy together; prove power/angular and angular/steep source interfaces.
+- [ ] F38-D3c2c1: Steep entry, long steep power and exit high mixed providers, using original sigma for both transitions. Include all slope derivatives and exact parameter changes mu -> delta/2. Keep waiting/root data source-bound and avoid collapsing finite offsets into huge origins.
+- [ ] F38-D3c2c2: Waiting high derivatives, interfaces and positive future tail bounds; original P0+Mp and angular/pressure absolute closure remain the same functions. Report any weak bounds without inventing cone signs.
+- [ ] F38-D3c2d1: Original epsilon collar shape and its y derivatives through4, including the distinct exp(-4/(3-t)^2) flat factor near3. Derive product/chain rules for sigma and epsilon atoms; do not silently treat the collar factor as the O4 beta or sigma.
+- [ ] F38-D3c2d2: Full exact Gamma exterior mixed derivatives and infinite-tail bounds, formal S>0, original exact heat identity. No finite S-series replacement. Source-identify waiting/collar/Gamma interfaces through required orders.
+- [ ] F38-D3c2e: Map all regions to physical cylindrical and CARTESIAN vector derivatives, including derivatives of the cylindrical basis. Accept whole-field C4 only after core/inner/outer/axis interfaces have evidence. A leading pulse certificate alone is insufficient.
+- [ ] F38-D3c1g2b: Supply cell Taylor remainder if/when an actual cell polynomial replaces a source. Current ledgers/providers use derivative interval algebra and exact weighted integrals, so no polynomial/remainder is inferred from jet length.
+- [ ] F39: Physical kinetic energy and volume L2 in the required actual domain, all-region stress-cone margins, global divergence-form admissible stress and INDEPENDENT flat remainder. Report suprema/L2/scale dependence separately. Existing endpoint flat differences are not this remainder.
+- [ ] F40: Genuine n=1 and n>=2 coefficient equations and independent moment repairs on a common inner domain; curl-based truncation, finite-order remainder and smooth summation. Leading spatial derivatives and coordinate scaling are not coefficient recursion.
+- [ ] F41: Mean/oscillatory families and averaged quadratic stress cancellation, full forced Cartesian residual, quantitative vortex contraction/aspect ratio and true material-line winding diagnostics.
+
+Evidence: docs/PULSE_FLAT_COMPARISONS_AND_TWO_SIDED_C4_JOINS_2026_10_01.md. Run --stage flatcomparison then --stage externaljets;68 ordered modules. Preserve prior source receipts and unrelated edits. full_pulse_C4_installed is now TRUE ONLY for the stated local leading spatial scope; full_outer_C4, physical energy, stress/remainder, Cartesian full residual and temporal recursion remain FALSE.
+
+---
+
 # F38-D3c1g2 physical pulse map and functional interfaces handoff - 2026-10-01
 
 - [x] F38-D3c1g2a1b: Convert every complete O4 factored chart box into physical cylindrical component r/z derivative log bounds. Apply exact implicit lambda and beta scales, repeated radial lowering factors and axial coordinate derivatives through4. Preserve source Rp=110(Cstar Pstar)^10 exp(yd+1+Tw), separate huge log origins/inverse-mu/finite offsets, and never materialize exp(logCstar). All1080 source chart/derivative/time-sector bounds,180 independent physical implicit-coordinate derivatives and180 independent scale identities PASS.

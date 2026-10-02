@@ -17,11 +17,16 @@ velocity axial derivatives through4; higher radial/interface bounds remain.
 Flatjets supplies original sigma/gp/beta derivatives and flat support
 majorants. Mixedjets recovers every velocity/pressure multiindex in (y,Z)
 with total order<=4 from the same primitive ODEs and physical prefactors.
-Uniform whole-pulse interfaces and post-pulse C4 remain unfinished.
+Subsequent stages admit the uniform local pulse interfaces; complete
+post-pulse/whole-field C4 remains unfinished.
 Physicaljets maps actual leading profiles to physical cylindrical r/z
 derivatives and finite log-bound ledgers. Interfacejets identifies internal
 pulse charts by exact uncapped source equations, not interval overlap.
-Quantitative flat velocity and two-sided external joins remain pending.
+Flatcomparison supplies quantitative moment/velocity differences against
+continuations with the same exact interface histories. Externaljets rebuilds
+O3 power high derivatives and the entire original O5 flatten, and admits
+both local external joins. Leading O4 pulse C4 is certified in its stated
+local spatial scope; whole outer/core/axis C4 and stress remain unfinished.
 """
 import argparse
 import importlib
@@ -55,11 +60,13 @@ FLATJETS=('flat_pulse_derivatives','flat_pulse_derivatives_check')
 MIXEDJETS=('pulse_mixed_C4','pulse_mixed_C4_check')
 PHYSICALJETS=('pulse_physical_bounds','pulse_physical_bounds_check')
 INTERFACEJETS=('pulse_interface_certificate',)
+FLATCOMPARISON=('pulse_flat_comparison','pulse_flat_comparison_check')
+EXTERNALJETS=('power_inlet_C4','power_inlet_C4_check','flatten_mixed_C4','flatten_mixed_C4_check')
 
 
 def stages(stage):
-    return {'source':SOURCE,'inner':INNER,'outer':OUTER,'angular':ANGULAR,'energy':ENERGY,'pulse':PULSE,'postpulse':POSTPULSE,'closure':CLOSURE,'angularjets':ANGULARJETS,'axialjets':AXIALJETS,'pulsejets':PULSEJETS,'radialjets':RADIALJETS,'flatjets':FLATJETS,'mixedjets':MIXEDJETS,'physicaljets':PHYSICALJETS,'interfacejets':INTERFACEJETS,
-            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS}[stage]
+    return {'source':SOURCE,'inner':INNER,'outer':OUTER,'angular':ANGULAR,'energy':ENERGY,'pulse':PULSE,'postpulse':POSTPULSE,'closure':CLOSURE,'angularjets':ANGULARJETS,'axialjets':AXIALJETS,'pulsejets':PULSEJETS,'radialjets':RADIALJETS,'flatjets':FLATJETS,'mixedjets':MIXEDJETS,'physicaljets':PHYSICALJETS,'interfacejets':INTERFACEJETS,'flatcomparison':FLATCOMPARISON,'externaljets':EXTERNALJETS,
+            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS}[stage]
 
 
 def run(stage='all',list_only=False):
@@ -72,7 +79,10 @@ def run(stage='all',list_only=False):
         print('Build compliant stage:',name,flush=True)
         importlib.import_module(PREFIX+name).run()
         completed.append(name)
-    inherited_physical=any(name in completed for name in ('pulse_physical_bounds_check','pulse_interface_certificate'))
+    inherited_external='flatten_mixed_C4_check' in completed
+    inherited_power=inherited_external or 'power_inlet_C4_check' in completed
+    inherited_flat=inherited_power or 'pulse_flat_comparison_check' in completed
+    inherited_physical=inherited_flat or any(name in completed for name in ('pulse_physical_bounds_check','pulse_interface_certificate'))
     inherited_mixed=inherited_physical or 'pulse_mixed_C4_check' in completed
     inherited_angular=inherited_mixed or any(name in completed for name in ('future_energy_high_jets_check','axial_high_jets_check','pulse_high_jets_check','fifth_axial_jets_check','pulse_radial_C4_check','flat_pulse_derivatives_check'))
     inherited_fifth=inherited_mixed or any(name in completed for name in ('fifth_axial_jets_check','pulse_radial_C4_check','flat_pulse_derivatives_check'))
@@ -98,17 +108,23 @@ def run(stage='all',list_only=False):
         quantitative_flat_support_majorants_available=inherited_mixed or 'flat_pulse_derivatives_check' in completed,
         all_cylindrical_r_z_derivatives_total_order_le4_mapped=inherited_physical,
         complete_pulse_physical_spatial_supremum_log_ledger_available=inherited_physical,
-        exact_functional_main_gap_and_gap_end_identities_certified='pulse_interface_certificate' in completed,
-        full_pulse_C4_installed=False,
+        exact_functional_main_gap_and_gap_end_identities_certified=inherited_flat or 'pulse_interface_certificate' in completed,
+        quantitative_flat_velocity_moment_comparison_ledger_available=inherited_flat,
+        two_sided_O3_pulse_join_certified=inherited_power,
+        two_sided_pulse_O5_join_certified=inherited_external,
+        entire_original_100_unit_flatten_mixed_C4_available=inherited_external,
+        full_pulse_C4_installed=inherited_external,
+        full_pulse_C4_scope='Leading O4 and two local external interfaces, spatial/profile mixed total<=4 at fixed positive tau; whole outer/core/axis and time derivatives excluded',
+        full_outer_C4_certified=False,
         temporal_recursion=False,
-        next_dependency='Quantitative flat velocity/moment bounds and two-sided external joins; compose post-pulse C4, Cartesian map, energy and stress cone; then genuine temporal recursion')
+        next_dependency='Following power/angular/steep/waiting/collar/Gamma high mixed derivatives; whole-field Cartesian map, physical energy and stress cone; then genuine temporal recursion')
     print(json.dumps(result,indent=2),flush=True)
     return result
 
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','all'),default='all')
+    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','all'),default='all')
     parser.add_argument('--list',action='store_true',help='Print the ordered modules without running them')
     args=parser.parse_args()
     run(args.stage,args.list)
