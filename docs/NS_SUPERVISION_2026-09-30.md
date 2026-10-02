@@ -9,17 +9,88 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `81836d454b44fdf3d805a97c6f10edf543d485c4`.
+The inspected `main` head before this update is `a36495ca1a7abc41a69e4161b0e338990f1a99ea`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`7e20717526a81ed9c52ea8445a83355007c0cf05`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/7e20717526a81ed9c52ea8445a83355007c0cf05)
-on `codex/st073-transition-next`, observed October 1. This branch contains the
+[`9a6c1098a5865347a55d4f205c97504fb674d3d0`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/9a6c1098a5865347a55d4f205c97504fb674d3d0)
+on `codex/st073-transition-next`, observed October 2. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
 NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-02 batch: selected axial pulse and corrected post-pulse Gamma assembly
+
+The [angular repair report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/9a6c1098a5865347a55d4f205c97504fb674d3d0/docs/ACTUAL_ANGULAR_PRESSURE_REPAIR_2026_10_01.md)
+records same-source implicit two-bump corrections using correlated flatten
+history, waiting and exact heat right sides. The [future-energy/amplitude report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/9a6c1098a5865347a55d4f205c97504fb674d3d0/docs/COMPLETE_FUTURE_ENERGY_AND_AXIAL_AMPLITUDE_2026_10_01.md)
+then includes both signed/quadratic bump energy changes, flatten/power, steep,
+waiting, collar and infinite Gamma energy. It selects the whole-Z unique smooth
+positive branch ap in approximately[1.0086895652225,1.0114075201817], retaining
+actual incoming jets and nonzero formal end scales. This supersedes trial-only
+amplitude status, not global terminal matching.
+
+The [selected pulse report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/9a6c1098a5865347a55d4f205c97504fb674d3d0/docs/SELECTED_AXIAL_PULSE_AND_PARTIAL_MOMENTS_2026_10_01.md)
+and [pulse receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/9a6c1098a5865347a55d4f205c97504fb674d3d0/experiments/root_st073/lei_ren_part1_paper_compliant_axial_pulse_field.json)
+install actual entrance/main/gap/end fields and five partial primitives over O.4,
+including both selected affine end bumps. Separate relative charts preserve
+small finite offsets and cumulative history. On Z in [-1,1] the recorded Rv
+identities are Mz=Mtheta_z=Uz=Ur=0 and Mztheta equal to half the positive
+remaining corrected swirl energy. Its zero target is at infinity, not at Rv.
+Pressure remains the original P0+Mp; radial recovery uses the same Mz/Mz_Z.
+The [pulse checker](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/9a6c1098a5865347a55d4f205c97504fb674d3d0/experiments/root_st073/lei_ren_part1_paper_compliant_axial_pulse_field_check.json)
+records15 normalization/ODE/recovery identities, source/terminal checks and
+chart/finite-mu fixtures. Interval overlap alone is not exact interface proof.
+It explicitly leaves radial_Z_derivative_certified=false: pulse C1 data does
+not supply Ur_Z or the global higher-jet stress evaluator.
+
+The [corrected post-pulse report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/9a6c1098a5865347a55d4f205c97504fb674d3d0/docs/CORRECTED_POST_PULSE_OUTER_AND_GAMMA_TAILS_2026_10_01.md)
+and [outer receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/9a6c1098a5865347a55d4f205c97504fb674d3d0/experiments/root_st073/lei_ren_part1_paper_compliant_corrected_outer_field.json)
+compose one callable provider from post-Rv flatten/power and both angular bumps
+through steep/waiting/collar to arbitrary-radius exact Gamma tails. All five
+primitives, current-radius remaining energy/pressure integrals and source C1
+jets are retained. Post-Rv Uz=Ur=Mz=Mtheta_z=0 is inherited from the selected
+pulse, not a reset; Ur derivatives vanish only in this outer region. The source
+remains `5aec111986d745459eb2e2fece291f1dc3fa7bf986529494df802c2aa2daceae`
+and inner five-defect family3983d0dd. Formal inverse radii and tiny positive
+Gamma/collar atoms are bounded, never substituted by zero or finite caps.
+
+**Outstanding global equalities:** angular history contains
+Xforward=Xheat_target+Ctheta*exp(-(1-a)*t)/K(t,Z), with
+Ctheta=(1-epsilon)*X(Rtail,Z)-Aheat_target(Rtail,Z). Pressure keeps
+Pforward-Pbackward=P0+Mp(Rv)+Ev0^2*Prv. Neither expression is proved zero.
+They are constants with respect to the later radial evolution and can depend
+on Z; they are not the raw-preheat constant-in-Z perturbation from the previous
+source comparison. Local ODEs, solved correction systems and overlapping boxes
+do not replace the missing absolute equality chain tying inherited inner
+moments and the assembled pressure datum to exact heat normalizations.
+The receipt explicitly retains forward_angular_heat_target_equality_verified=false,
+full_global_pressure_terminal_identity_verified=false and
+full_outer_five_moment_match=false. No pressure datum is fitted or replaced.
+
+The [outer checker](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/9a6c1098a5865347a55d4f205c97504fb674d3d0/experiments/root_st073/lei_ren_part1_paper_compliant_corrected_outer_field_check.json)
+records21 physical normalization/ODE/constant-offset identities, seven region
+interfaces, whole-Z inherited zero histories/positive energy and eight Gamma
+fixtures. Its global equality flags remain false. These saved checks and
+reported analytic claims were read, not independently replayed or proof-audited.
+The delta-positive radial swirl tail is finite; this is not full three-dimensional
+time-dependent kinetic energy, spatial volume L2 or temporal energy control.
+
+Replay the ordered driver angular/energy stages, then
+`compliant_reconstruction.py --stage pulse` and `--stage postpulse` (with the
+repository experiments/root_st073/lei_ren_part1_paper_ prefix). Check each paired
+source receipt; `--stage all` includes these layers. Repository instructions
+were checked; no applicable .agents/skills package was found in this clone.
+Only README and this supervision index are changed in the isolated clean clone.
+
+Next: establish absolute Ctheta/pressure equalities, higher axial derivatives,
+C4 pulse/interface bounds and whole-outer cone. Full background acceptance,
+global stress/flat remainder, genuine order-dependent temporal recursion,
+oscillatory cancellation and independent Cartesian momentum/divergence residual
+remain incomplete. Earlier trial-pulse and unassembled-postpulse statuses are
+historical; full physical field and NS1e-3 acceptance are still unestablished.
 
 ### 2026-10-01 batch: epsilon-source correction and newly rebuilt matching
 
@@ -1623,6 +1694,12 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [9a6c1098 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36947041706)
+has the original13 constrained failed identifiers/423 passed in its actual log;
+four smoke/slice jobs pass and full historical tests skip. No selected governance
+regression appears. These checks do not prove the two global matching constants
+vanish or certify full physical energy/cone/NS dynamics.
 
 The [7e207175 research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36937412157)
 finished failure. Its actual constrained log has the original13 failed identifiers
