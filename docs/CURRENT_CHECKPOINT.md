@@ -1,3 +1,13 @@
+# Current: actual local physical swirl morphology - 2026-10-02
+
+Read docs/ROOTED_SWIRL_MORPHOLOGY_2026_10_02.md first. SAME-source nonlinear Phi and physical prefactors now give3 fixed-r axial maxima and9 true-peak-normalized fractional widths, retaining actual negative log-curvature, anchor slope, tails and original microscopic positive factors. Peak shifts use Z=a+b^2*y without rounded root addition. Focused generator/checker PASS; ordered pipeline117 modules, stage swirlmorphology.
+
+Whole admitted rooted core |xi|<=4, rho<=4.1 has partial_r utheta>0. Hence no interior radial swirl maximum exists there; original annular values are necessary to locate the global radial peak. The core cutoff is not a measured width; vorticity width/aspect ratio is not inferred. Local axial morphology supersedes corresponding TODOs below only in this bounded scope.
+
+NEXT: actual coefficientwise core H/M/K/A/B/C atoms with controlled tails -> signed bridge/first-switch joint source integrals -> implicit five-bump values and physical point selection/global morphology. Existing interval covers are not actual point moment values. Then measured multitime dynamics/particles, required-domain energy/support, admissible stress and independent flat remainder, genuine n-dependent recursion and mean/oscillatory correction. All global dynamics/energy/stress/temporal completion flags remain false; original unlocalized whole-space energy remains infinite.
+
+---
+
 # Current: local rooted full vector, pressure and vorticity - 2026-10-02
 
 Read docs/ROOTED_CORE_FIELD_2026_10_02.md first. It supersedes rooted ur/uz/p/vorticity TODOs below within its local domain only. Current pipeline115 modules; focused stage rootedfield.

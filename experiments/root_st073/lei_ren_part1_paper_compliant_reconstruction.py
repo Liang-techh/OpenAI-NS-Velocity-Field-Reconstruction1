@@ -108,6 +108,11 @@ ur/utheta/uz/pressure plus cylindrical/Cartesian physical vorticity. Common
 primitive identities preserve structural divergence; inverse peak-width
 factors cancel before enclosure. This is a local source field, not resolved
 annular point values, measured full dynamics, stress or temporal recursion.
+Swirlmorphology resolves actual fixed-physical-radius Phi-weighted local
+swirl peaks and their fractional levels. Actual negative log curvature and
+anchor slope bound the positive peak gain in a second centered chart.
+Whole-core radial growth proves the global radial peak requires annuli;
+the core cutoff remains distinct from measured vortex width/aspect ratio.
 """
 import argparse
 import importlib
@@ -166,6 +171,7 @@ FRESHCORE=('core_coefficient_rebuild','core_coefficient_rebuild_check')
 AXISAMPLITUDE=('anchored_axis_amplitude','anchored_axis_amplitude_check')
 ROOTPEAK=('root_centered_peak','root_centered_peak_check')
 ROOTEDFIELD=('rooted_core_field','rooted_core_field_check')
+SWIRLMORPHOLOGY=('rooted_swirl_morphology','rooted_swirl_morphology_check')
 
 
 def stages(stage):
@@ -188,7 +194,8 @@ def stages(stage):
             'axisamplitude':AXISAMPLITUDE,
             'rootpeak':ROOTPEAK,
             'rootedfield':ROOTEDFIELD,
-            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS+POSTMIXEDJETS+STEEPJETS+HEATJETS+PHYSICALFIELD+COREPHYSICAL+FROZENFIELD+BRIDGEPROFILES+SWITCHPROFILES+RESHAPEPROFILES+RESTOREPROFILES+ACTUALPATCH+PATCHMIXED+RESTOREMIXED+RESHAPEMIXED+SWITCHMIXED+BRIDGEMIXED+PREPULSEMIXED+SOURCEDISPATCH+GLOBALPHYSICAL+FRESHCORE+AXISAMPLITUDE+ROOTPEAK+ROOTEDFIELD}[stage]
+            'swirlmorphology':SWIRLMORPHOLOGY,
+            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS+POSTMIXEDJETS+STEEPJETS+HEATJETS+PHYSICALFIELD+COREPHYSICAL+FROZENFIELD+BRIDGEPROFILES+SWITCHPROFILES+RESHAPEPROFILES+RESTOREPROFILES+ACTUALPATCH+PATCHMIXED+RESTOREMIXED+RESHAPEMIXED+SWITCHMIXED+BRIDGEMIXED+PREPULSEMIXED+SOURCEDISPATCH+GLOBALPHYSICAL+FRESHCORE+AXISAMPLITUDE+ROOTPEAK+ROOTEDFIELD+SWIRLMORPHOLOGY}[stage]
 
 
 def run(stage='all',list_only=False):
@@ -202,7 +209,8 @@ def run(stage='all',list_only=False):
         importlib.import_module(PREFIX+name).run()
         completed.append(name)
     inherited_global='global_physical_assembly_check' in completed
-    inherited_rooted='rooted_core_field_check' in completed
+    inherited_morphology='rooted_swirl_morphology_check' in completed
+    inherited_rooted=inherited_morphology or 'rooted_core_field_check' in completed
     inherited_peak=inherited_rooted or 'root_centered_peak_check' in completed
     inherited_axis=inherited_peak or 'anchored_axis_amplitude_check' in completed
     inherited_fresh=inherited_axis or 'core_coefficient_rebuild_check' in completed
@@ -349,6 +357,10 @@ def run(stage='all',list_only=False):
         local_rooted_pressure_positive_primitive_preserved=inherited_rooted,
         rooted_field_scope='Exact H-root radial seeds, nonlinear tails and analytic mixed-jet transport; local physical ur/utheta/uz/p and cylindrical/Cartesian vorticity in signed log factors; not global point selection, measured full morphology, stress or recursion',
         full_swirl_peak_including_Phi_measured=False,
+        actual_Phi_weighted_local_physical_swirl_peak_certified=inherited_morphology,
+        actual_local_true_peak_normalized_axial_widths_available=inherited_morphology,
+        whole_rooted_core_radial_swirl_monotonicity_certified=inherited_morphology,
+        swirl_morphology_scope='Fixed-r axial scans at rho_anchor=1,2,4 in rooted |xi|<=4; actual Phi/geometry, strict peak signs and curvature bounds; radial monotonicity on rho<=4.1 requires original annular values for global radial peak; no whole-vortex width/aspect/dynamics or recursion',
         whole_vortex_aspect_ratio_measured=False,
         original_unlocalized_whole_space_kinetic_energy_is_infinite=True if inherited_energy else None,
         full_cartesian_vector_derivatives_certified=False,
@@ -359,14 +371,14 @@ def run(stage='all',list_only=False):
         full_pulse_C4_scope='Leading O4 and two local external interfaces, spatial/profile mixed total<=4 at fixed positive tau; whole outer/core/axis and time derivatives excluded',
         full_outer_C4_certified=False,
         temporal_recursion=False,
-        next_dependency='Resolved rooted physical vector/pressure/vorticity -> actual core radial morphology and full swirl maximum, multitime diagnostics/particles, original annular signed integrals/implicit repair and physical-point selection; required-domain energy/stress/flat remainder -> n-dependent recursion/correction')
+        next_dependency='Actual rooted local swirl peaks/axial widths -> coefficientwise actual core moments and signed original bridge/first-switch integrals -> implicit five-bump values/physical-point selection/global radial morphology; measured dynamics/particles and required-domain energy/stress/flat remainder -> genuine n-dependent recursion/correction')
     print(json.dumps(result,indent=2),flush=True)
     return result
 
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','postmixedjets','steepjets','heatjets','physicalfield','corephysical','frozenfield','bridgeprofiles','switchprofiles','reshapeprofiles','restoreprofiles','actualpatch','patchmixed','restoremixed','reshapemixed','switchmixed','bridgemixed','prepulsemixed','sourcedispatch','globalphysical','freshcore','axisamplitude','rootpeak','rootedfield','all'),default='all')
+    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','postmixedjets','steepjets','heatjets','physicalfield','corephysical','frozenfield','bridgeprofiles','switchprofiles','reshapeprofiles','restoreprofiles','actualpatch','patchmixed','restoremixed','reshapemixed','switchmixed','bridgemixed','prepulsemixed','sourcedispatch','globalphysical','freshcore','axisamplitude','rootpeak','rootedfield','swirlmorphology','all'),default='all')
     parser.add_argument('--list',action='store_true',help='Print the ordered modules without running them')
     args=parser.parse_args()
     run(args.stage,args.list)

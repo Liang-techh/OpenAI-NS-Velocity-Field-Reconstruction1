@@ -151,9 +151,11 @@ parameters/profiles are not the paper source and it is not an NS test.
 
 ## Remaining work
 
-Locate the full Phi-weighted angular maximum, measure actual radial/axial
-morphology, fit multitime field/vorticity exponents and integrate true
-particles/material winding. The existing F0 fractional width and rho=4.1
+Local fixed-r Phi-weighted axial maxima and fractional levels are now
+resolved by ROOTED_SWIRL_MORPHOLOGY_2026_10_02.md. Whole-core radial swirl
+growth makes the original annular values necessary for the global radial
+peak. Measure full radial morphology, fit multitime field/vorticity
+exponents and integrate true particles/material winding. F0 width and rho=4.1
 cutoff reference do not establish a whole-vortex aspect ratio. Numerical
 point selection outside this root chart, signed annular integrals, actual
 implicit five-bump values and a complete global field remain open.

@@ -1,3 +1,26 @@
+# Next: actual core atoms into signed annular integration - 2026-10-02
+
+Read docs/ROOTED_SWIRL_MORPHOLOGY_2026_10_02.md; focused swirlmorphology,117 ordered modules. Preserve SAME Cstar/core/preheat pressure, nonlinear tails, shared moments, positive microscopic factors and unrelated experiments.
+
+- [x] Resolve actual fixed-physical-radius axial swirl slopes with rho(Z)=rho_anchor*D/D_anchor, full nonlinear Phi mixed jets and physical lambda derivatives.
+- [x] Prove strict local log concavity, bracket3 actual peaks in Z=a+b^2*y, and enclose positive height gain using anchor slope and actual negative curvature.
+- [x] Enclose9 fractional axial widths normalized to actual physical peaks, with strict endpoint signs and original physical z Jacobian.
+- [x] Prove whole-rooted-core radial swirl monotonicity; establish that original annular values are needed for a global radial peak. Do not infer a vorticity width.
+- [ ] Integrate actual core atoms H/M/K/A/B/C coefficientwise on rho in[0,4], using fresh current-family rows and directed nonlinear/axial tails. Carry signed axial derivatives and raw Uz normalization. Pressure primitive V is not bridge raw axial V.
+- [ ] Transport actual joint comparison/core histories through both microscopic smoothing charts and the frozen macro with exact integrating factors. Never reset primitives or use cover endpoints as source values.
+- [ ] Resolve original signed prescribed-shear and first-switch partial/terminal integrals with actual comparisons, R, Pstar/F0 units and common V100/V110/E identities; retain original widths and directed error.
+- [ ] Recover admitted implicit five-bump values/functions with controlled Jacobian and remainder; preserve all five functional terminal identities and original pressure datum.
+- [ ] Compose numerical physical point selection and original field through all annuli/collar/exterior; locate radial swirl/vorticity metrics with thresholds and explicit domains.
+- [ ] Measure multitime widths/aspect/amplitude exponents and actual particle/material winding, distinguishing source observations from imposed coordinate powers.
+- [ ] Close construction-domain energy/support and terminal tails; original unlocalized whole-space energy remains infinite.
+- [ ] Construct admissible divergence stress and independently flat remainder with regional cone margins, maxima, volume-L2 and decay.
+- [ ] Implement genuine n=1/n>=2 recovery, common core interval, per-order moment repair, curl-preserving cutoffs, finite remainder and smooth sum after prerequisites.
+- [ ] Implement realizable mean/two-family oscillatory correction and averaged flux cancellation before full Cartesian forced-NS max/L2<1e-3 acceptance.
+
+Earlier TODOs are superseded only by the scoped completed items above. Record source/check/domain/limits and commit before marking done.
+
+---
+
 # Next: measure rooted field dynamics and resolve annular values - 2026-10-02
 
 Read docs/ROOTED_CORE_FIELD_2026_10_02.md; focused rootedfield,115 ordered modules. Local vector/vorticity recovery supersedes the corresponding TODOs below. Preserve the full project goal and SAME Cstar/core/pressure/primitive identities.

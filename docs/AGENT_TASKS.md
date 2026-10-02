@@ -1,3 +1,15 @@
+# Active handoff: signed core moments and annular source values - 2026-10-02
+
+Read docs/ROOTED_SWIRL_MORPHOLOGY_2026_10_02.md. Local actual Phi-weighted fixed-r peaks/levels and whole-core radial swirl monotonicity now pass; stage swirlmorphology,117 ordered modules. Do not repeat their inventories or relabel the cutoff as measured width. Keep the full docs/PROJECT_GOAL.md scope and preserve unrelated experiments.
+
+Priority A: implement actual signed core atoms from fresh coupled rows, coefficientwise radial integration on rho in[0,4] and admitted tails. H=integral(rho*Phi)/8, M=integral(Uz)/4, K=integral(rho*Phi*Uz)/8, A=integral(Uz^2)/4, B=integral(rho*Phi^2)/16, C=integral(Phi^2)/4. Preserve source axial jets; do not substitute interval-cover endpoints as values. Uz here is raw axial V in the bridge namespace; pressure primitive V=int Phi^2 is a distinct quantity.
+Priority B: consume CompliantBridgeMixedC4.formal_comparison_source(), transport all six common histories through the two original comparison switches and frozen macro, and evaluate the signed actual prescribed-shear/first-switch source integrals. Preserve original units, positive widths, V100/V110/E identities; caps bound final error only. Then solve the admitted implicit five-bump values with a posteriori Jacobian/remainder control.
+Priority C: compose original same-source physical field/chart selection, locate radial swirl/vorticity thresholds and measure multitime dynamics and material winding. Establish required-domain energy/support and actual admissible divergence stress/independent flat remainder before true n-dependent coefficient recursion and mean/oscillatory correction.
+
+Mark completion with actual code, source/check receipt, bounded domain, explicit limits and commit. Global field, whole-vortex morphology, energy/stress/dynamics/temporal gates remain open.
+
+---
+
 # Active handoff: measure local field and resolve annular values - 2026-10-02
 
 Read docs/ROOTED_CORE_FIELD_2026_10_02.md. SAME-source rooted ur/utheta/uz/p and physical Cartesian vorticity are now callable with directed tails/transport; focused rootedfield,115 ordered modules. Their local completion supersedes matching TODOs below, without claiming whole-Z/global field completion.
