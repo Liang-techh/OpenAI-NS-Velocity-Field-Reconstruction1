@@ -1,3 +1,26 @@
+# Following power / angular mixed C4 handoff - 2026-10-02
+
+This current list supersedes historical pending F38-D3c2a and angular recovery items below. Full goal is unchanged; no leading-profile derivative stage constitutes true coefficient recursion.
+
+- [x] F38-D3c2a2: ENTIRE independent following-power provider, actual Lrel and final4-unit chart split, high mixed velocity/pressure and axial5 primitive data. Correlated future decomposition cancels q^2 before enclosure, retains complete signed angular/Gamma/epsilon source, and proves uniform positive remaining energy. No unresolved interval clipping/reset.
+- [x] F38-D3c2a3: Exact production-source factorization identifies flatten/power energy and all axial orders through5; common ODEs and original flat sigma identify15 mixed velocity/pressure orders. Independent function providers and diagnostics installed. F38-D3c2a as a whole is COMPLETE in this scope.
+- [x] F38-D3c2b1: BOTH actual implicit angular C5 coefficient functions, original normalized beta derivatives0..4, four support-edge crossing boxes, signed bump terms, disjoint-support energy and positive swirl denominator retained.
+- [x] F38-D3c2b2a: Signed swirl log-rate quotient derivatives and full repeated velocity/angular/energy/pressure ODE recovery. Source-weighted past/future integrals retain original pressure history and positive entire future energy. Power/angular internal source join accepted; no terminal mean deletion.
+- [ ] F38-D3c2b2b: Angular/steep entry external high-order join. Rebuild the steep provider from the SAME angular-terminal X/energy/P0+Mp and inherited zero linear/radial moments. Verify exact source/unit identities before accepting the extended external interface.
+- [ ] F38-D3c2c1: Original steep entry on[0,1], long steep power on[0,Ts], steep exit on[0,1], every y/Z mixed order<=4 and axial5 primitive inputs. Use exact sigma derivatives and slope product/chain rules with original parameter change mu -> delta/2. Keep unit transition integrals J(1)=1/2, signed angular history, finite offsets and waiting data in their source graph.
+- [ ] F38-D3c2c2: Exact high-order interface certificates for entry/power/exit/waiting, including nonzero incoming angular/pressure histories and complete positive future energy. Reuse backward source tails where forward subtraction loses positive correlation. No inference from pointwise interval overlap.
+- [ ] F38-D3c2c3: Waiting high derivatives across the full actual refined waiting interval. Preserve original waiting root, waiting_logone and epsilon relation=.001*delta; avoid exponentiating formal inverse-mu or absolute radius. Record scalar tail factors separately from huge origins.
+- [ ] F38-D3c2d1: Original epsilon collar on[0,3], including distinct exp(-4/(3-t)^2) flat factor and sigma. Supply derivatives0..4, product/chain rules, support-crossing bounds and SAME angular/pressure/energy input histories. Do not substitute the O4 beta shape.
+- [ ] F38-D3c2d2: Full EXACT Gamma exterior high mixed derivatives, retained S>0 and complete infinite tail bounds. Derive from the integral source, not a finite S-series. Source-identify waiting/collar/Gamma interfaces through every required order.
+- [ ] F38-D3c2e: Physical cylindrical r/z map for ALL regions; derivatives of the cylindrical basis for Cartesian vector components. Whole-field C4 requires core/inner/outer/axis interfaces, independent from the already accepted local pulse/O5/O6 profile scope.
+- [ ] F39: Physical kinetic energy and volume L2 on the original required domain, all-region stress-cone margins, global admissible divergence-form stress and independently flat remainder. Remaining radial swirl-energy bounds and endpoint flat comparisons are neither the physical integral nor the stress remainder.
+- [ ] F40: Genuine n=1 and n>=2 coefficient equations and independent moment repairs on a common inner domain, curl-based truncation, finite-order remainder and smooth summation. No relabeling leading spatial derivatives or coordinate scaling as recursion.
+- [ ] F41: Actual mean/oscillatory families, averaged quadratic stress cancellation, full forced Cartesian residual, vortex-core/aspect-ratio and real material-line winding diagnostics.
+
+Evidence: docs/POSTFLATTEN_POWER_AND_ANGULAR_MIXED_C4_2026_10_02.md; --stage postmixedjets;70 ordered modules. The checker admits whole following-power/angular mixed derivatives and flatten/power/power-angular joins, but angular/steep and whole outer C4 remain pending. Preserve prior source hashes/receipts and unrelated edits.
+
+---
+
 # Quantitative flat comparisons, local pulse C4 and O5 flatten handoff - 2026-10-01
 
 This is the current task list. Historical headers below retain prior evidence; their pending flat-comparison/external-join tasks are superseded here.

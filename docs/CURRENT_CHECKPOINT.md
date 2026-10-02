@@ -1,3 +1,19 @@
+# F38-D3c2a/b entire following power and actual angular mixed C4 - 2026-10-02
+
+The SAME actual compliant .001 family now supplies every velocity/pressure (y,Z) mixed derivative of total order<=4 and axial C5 primitive data throughout the entire following power and BOTH actual angular supports. O5 flatten/power and power/angular source joins are accepted. The power includes y=(Lrel-4)*phase and the angular chart covers the final s in[-4,0], including all four compact support edges. Actual angular coefficients are the implicit angular C5 functions, never the axial pulse coefficients.
+
+Complete future energy is rebuilt from source steep/waiting/epsilon/infinite Gamma atoms and actual signed angular changes. Shared q^2 source factors are cancelled BEFORE enclosure. Power energy is[I(2mu,Lrel-y)+exp(-2mu*(Lrel-y))*(Post+AC)]/2; remaining distance4+(Lrel-4)*(1-phase) preserves the last4-unit split. Angular energy is[exp(2mu*s)*(Post+ACfuture(s))+I(2mu,-s)]/[2(1+h)^2]. Whole-Z/whole-time lower bounds exceed2.498 in power and.498 in angular. They are remaining RADIAL SWIRL INTEGRAL bounds, not physical kinetic energy. No long forward subtraction, clipping/reset or omitted Gamma/epsilon source is used.
+
+All actual C5 angular coefficients and original beta derivatives through4 feed nonconstant log-rate recovery, full binomial velocity/angular/energy/pressure equations, source-weighted past/future support integrals and original P0+Mp. Linear/radial zero histories remain inherited; terminal past angular/pressure changes remain nonzero. Ninety-six independent log-rate and240 mixed derivative checks,2520 actual mixed bounds,1260 inherited zeros,126 production factorization/join identities and56 original C1 diagnostics PASS. Two hundred overlap diagnostics are separate from functional proofs. Reused read-only GPT-5.6 Luna/max independently derived the backward-energy units and final4-unit identity.
+
+F38-D3c2a is COMPLETE in leading profile mixed C4/axial C5 scope. F38-D3c2b source/derivative recovery and power/angular join are COMPLETE; angular/steep external joining remains pending, so b as a whole is PARTIAL. Local leading pulse C4 remains accepted. Whole outer/core/axis C4, physical Cartesian vector derivatives, time derivatives, physical energy, admissible stress/flat remainder and actual n-dependent recursion remain incomplete.
+
+Read docs/POSTFLATTEN_POWER_AND_ANGULAR_MIXED_C4_2026_10_02.md; reproduce --stage postmixedjets with lei_ren_part1_paper_compliant_reconstruction.py. Ordered pipeline now has70 modules. Checker receipts control extension acceptance; previous source receipts and unrelated work are preserved.
+
+NEXT: steep entry/long power/exit and waiting high mixed derivatives with SAME angular-terminal histories -> epsilon collar/full exact Gamma derivatives and interfaces -> whole-field Cartesian map, physical energy and stress/flat remainder -> actual temporal coefficient recursion. This header supersedes historical pending following-power/angular-derivative tasks only, not the remaining steep/heat/energy/stress/recursion work.
+
+---
+
 # F38-D3c1g2a3 quantitative flat comparison / both pulse joins / O5 flatten - 2026-10-01
 
 The SAME actual compliant .001 family now has quantitative original-support forcing/moment/velocity differences against zero-input continuations with the SAME exact nonzero interface histories. Original sigma/gp/beta bounds feed all required y/Z source derivatives, repeated primitive ODEs, paper(3.9), physical prefactors and cylindrical r/z maps. The numerical positive tail caps also vanish at endpoints. Thirty endpoint/distance packets,360 independent two-orientation derivative checks,4200 finite bounds,840 exact-zero difference bounds and1920 monotone bounds PASS. The limit is at fixed source and fixed positive physical tau; it is not the stress flat remainder.

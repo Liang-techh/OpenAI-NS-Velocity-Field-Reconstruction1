@@ -27,6 +27,9 @@ continuations with the same exact interface histories. Externaljets rebuilds
 O3 power high derivatives and the entire original O5 flatten, and admits
 both local external joins. Leading O4 pulse C4 is certified in its stated
 local spatial scope; whole outer/core/axis C4 and stress remain unfinished.
+Postmixedjets adds the entire following power and both actual angular
+supports. Correlated future-tail factorization keeps q^2 cancellation and
+positive energy before enclosure, with source-identified O5/O6 joins.
 """
 import argparse
 import importlib
@@ -62,11 +65,12 @@ PHYSICALJETS=('pulse_physical_bounds','pulse_physical_bounds_check')
 INTERFACEJETS=('pulse_interface_certificate',)
 FLATCOMPARISON=('pulse_flat_comparison','pulse_flat_comparison_check')
 EXTERNALJETS=('power_inlet_C4','power_inlet_C4_check','flatten_mixed_C4','flatten_mixed_C4_check')
+POSTMIXEDJETS=('power_angular_C4','power_angular_C4_check')
 
 
 def stages(stage):
-    return {'source':SOURCE,'inner':INNER,'outer':OUTER,'angular':ANGULAR,'energy':ENERGY,'pulse':PULSE,'postpulse':POSTPULSE,'closure':CLOSURE,'angularjets':ANGULARJETS,'axialjets':AXIALJETS,'pulsejets':PULSEJETS,'radialjets':RADIALJETS,'flatjets':FLATJETS,'mixedjets':MIXEDJETS,'physicaljets':PHYSICALJETS,'interfacejets':INTERFACEJETS,'flatcomparison':FLATCOMPARISON,'externaljets':EXTERNALJETS,
-            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS}[stage]
+    return {'source':SOURCE,'inner':INNER,'outer':OUTER,'angular':ANGULAR,'energy':ENERGY,'pulse':PULSE,'postpulse':POSTPULSE,'closure':CLOSURE,'angularjets':ANGULARJETS,'axialjets':AXIALJETS,'pulsejets':PULSEJETS,'radialjets':RADIALJETS,'flatjets':FLATJETS,'mixedjets':MIXEDJETS,'physicaljets':PHYSICALJETS,'interfacejets':INTERFACEJETS,'flatcomparison':FLATCOMPARISON,'externaljets':EXTERNALJETS,'postmixedjets':POSTMIXEDJETS,
+            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS+POSTMIXEDJETS}[stage]
 
 
 def run(stage='all',list_only=False):
@@ -79,7 +83,8 @@ def run(stage='all',list_only=False):
         print('Build compliant stage:',name,flush=True)
         importlib.import_module(PREFIX+name).run()
         completed.append(name)
-    inherited_external='flatten_mixed_C4_check' in completed
+    inherited_post='power_angular_C4_check' in completed
+    inherited_external=inherited_post or 'flatten_mixed_C4_check' in completed
     inherited_power=inherited_external or 'power_inlet_C4_check' in completed
     inherited_flat=inherited_power or 'pulse_flat_comparison_check' in completed
     inherited_physical=inherited_flat or any(name in completed for name in ('pulse_physical_bounds_check','pulse_interface_certificate'))
@@ -113,18 +118,21 @@ def run(stage='all',list_only=False):
         two_sided_O3_pulse_join_certified=inherited_power,
         two_sided_pulse_O5_join_certified=inherited_external,
         entire_original_100_unit_flatten_mixed_C4_available=inherited_external,
+        entire_following_power_high_mixed_derivatives_available=inherited_post,
+        both_actual_angular_supports_high_mixed_derivatives_available=inherited_post,
+        flatten_power_and_power_angular_joins_certified=inherited_post,
         full_pulse_C4_installed=inherited_external,
         full_pulse_C4_scope='Leading O4 and two local external interfaces, spatial/profile mixed total<=4 at fixed positive tau; whole outer/core/axis and time derivatives excluded',
         full_outer_C4_certified=False,
         temporal_recursion=False,
-        next_dependency='Following power/angular/steep/waiting/collar/Gamma high mixed derivatives; whole-field Cartesian map, physical energy and stress cone; then genuine temporal recursion')
+        next_dependency='Steep/waiting/collar/full Gamma high mixed derivatives and interfaces; whole-field Cartesian map, physical energy and stress cone; then genuine temporal recursion')
     print(json.dumps(result,indent=2),flush=True)
     return result
 
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','all'),default='all')
+    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','postmixedjets','all'),default='all')
     parser.add_argument('--list',action='store_true',help='Print the ordered modules without running them')
     args=parser.parse_args()
     run(args.stage,args.list)
