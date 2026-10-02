@@ -1,3 +1,19 @@
+# F38-D3c2d original collar and full infinite Gamma mixed C4 - 2026-10-02
+
+The SAME actual compliant .001 source now supplies leading velocity/pressure mixed spatial derivatives of total order<=4 and axial5 canonical inputs throughout the original heat collar AND the full Gamma exterior, including wholeZ[-1,1] and unbounded log-radius offset[3,infinity]. Waiting/collar and collar/Gamma function interfaces are accepted. The post-pulse spatial chain now reaches the infinite heat exterior. This remains leading spatial reconstruction, NOT actual n-dependent temporal recursion.
+
+Gamma derivatives come from the FULL positive expectation, its exact divided FTC integral and cancelled Stirling log-radius derivative identities. No finite S-series defines H. Original phi=exp(-4/(3-t)^2), original sigma, epsilon=.001*delta, actual refined waiting/root normalization and full epsilon/Gamma tails are retained. The actual homogeneous angular history is not deleted, and forward pressure remains P0+Mp with exact inherited waiting-terminal data. Formal positive S and Ev0 scales are not replaced by numerical caps.
+
+The new receipt passes331 functional source identities,2280 actual finite mixed bounds,1140 inherited exact zeros,40 earlier C1 comparisons and240 separate interface/prefix diagnostics. Independent original-phi checks75, full-Gamma mixed/axial checks32 and positive-moment derivative checks38 pass. Independent nonconstant-rate recovery remains96 rate+240 mixed checks. A read-only GPT-5.6 Luna/max review found no material derivative, source-unit or unbounded enclosure error; its proof-binding concern was addressed with direct production expressions, inlet pressure equality, endpoint K/rate identities and required mixed source joins.
+
+F38-D3c2d1a/b/c/d and d2a/b/c are COMPLETE in this leading-profile mixed C4/axial5 scope. Whole physical Cartesian field and core/axis interfaces, physical kinetic energy and spacetime volume norms, admissible stress/flat remainder, actual coefficient recursion and oscillatory correction remain incomplete. Full outer C4/cone/physical-energy/temporal gates remain false.
+
+Read docs/COLLAR_FULL_GAMMA_MIXED_C4_2026_10_02.md and the collar_Gamma_C4_check receipt. Reproduce --stage heatjets with lei_ren_part1_paper_compliant_reconstruction.py; ordered pipeline74 modules. Preserve previous hashes/receipts and unrelated work. This header supersedes historical pending collar/Gamma high derivative/interface tasks only.
+
+NEXT: assemble ALL regions in physical cylindrical/Cartesian variables and identify core/axis interfaces -> physical energy on the original required domain -> actual divergence-form admissible stress and independent flat remainder -> genuine n=1/n>=2 coefficient recursion and smooth summation -> oscillatory correction and physical vortex/material-line diagnostics.
+
+---
+
 # F38-D3c2b/c steep entry/power/exit and waiting mixed C4 - 2026-10-02
 
 The SAME actual compliant .001 source now supplies leading velocity/pressure mixed spatial derivatives of total order<=4 and axial5 primitive data across the full original steep entry, long steep power, steep exit and refined waiting interval. Angular/steep entry and all three internal O7 interfaces are source-certified. This extends the previously accepted local pulse, original100-unit flatten and following power/angular providers; it does NOT implement genuine temporal coefficient recursion.

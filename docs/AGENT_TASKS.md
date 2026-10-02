@@ -1,3 +1,37 @@
+# Collar / full Gamma complete; physical field and stress handoff - 2026-10-02
+
+Read docs/COLLAR_FULL_GAMMA_MIXED_C4_2026_10_02.md, CURRENT_CHECKPOINT.md and collar_Gamma_C4_check.json. Reproduce --stage heatjets;74 ordered modules. This supersedes historical pending F38-D3c2d high derivative/interface items. Leading spatial construction is not coefficient recursion.
+
+- [x] F38-D3c2d1a: ORIGINAL exp(-4/(3-t)^2) flat collar, derivatives0..4, endpoint majorants and original sigma. This is distinct from the O4 normalized bump.
+- [x] F38-D3c2d1b: Actual K=(1-epsilon*W)-a*S*Dhat*sigma*(1-epsilon*phi), axial5 and ordinary y mixed derivatives through4, original positive Gamma source and formal S retained.
+- [x] F38-D3c2d1c: Actual waiting-terminal X/P0+Mp histories, original1/(1-epsilon) velocity normalization, preserved homogeneous angular constant, and forward pressure transport.
+- [x] F38-D3c2d1d: Full future collar energy, both epsilon atoms and entire infinite Gamma tail, positive remaining radial swirl integral. Physical kinetic energy remains a separate task.
+- [x] F38-D3c2d2a: FULL Gamma expectation derivatives, exact divided FTC representation, Stirling radius derivatives and axial5 composition. No finite S-series definition.
+- [x] F38-D3c2d2b: WholeZ and UNBOUNDED exterior spatial mixed derivative enclosures, full infinite analytic tail weights and positive normalized energy.
+- [x] F38-D3c2d2c: Waiting/collar and collar/Gamma source joins, endpoint K/rate derivative identities and all required mixed orders. Actual inlet pressure is inherited exactly. Numeric overlap diagnostics remain separate.
+- [ ] F38-D3c2e1a: Inventory physical map conventions from source and existing pulse_physical_bounds. Specify exact similarity variables, tau, h, axial and radial scales, component units and pressure units for ALL regions; do not overwrite formal enormous scales with numerical caps.
+- [ ] F38-D3c2e1b: Assemble core/inner/matching/O3/O4/O5/O6/O7/collar/Gamma dispatch using SAME family and datum. Cover source radial/axial/time domains explicitly and record region boundaries as segmented coordinates.
+- [ ] F38-D3c2e1c: Restore missing inner/core derivatives through spatial order4 and required axial orders, original near-axis expansions, analytic pressure source and matched moment interfaces. Use source functions, not fitted endpoint values.
+- [ ] F38-D3c2e1d: Prove axis regularity and core/inner/annulus interfaces with independent defining functions, including required derivative orders. Do not promote whole-field C4 from the completed local post-pulse chain.
+- [ ] F38-D3c2e2a: Actual Cartesian vector transform, including derivatives of e_r/e_theta and r^-1 factors. Account for exact cylindrical divergence cancellation. At the axis use source regular limits; never divide an interval containing r=0.
+- [ ] F38-D3c2e2b: Independent Cartesian derivative/residual evaluator. Compare source component derivatives and Cartesian finite differences at meaningful moderate fixtures, with finite difference checks labelled diagnostics only. Report true unit/scaling factors separately.
+- [ ] F39a1: Derive physical volume measure and kinetic energy expression on the original spatial/time domain from the source map. Identify contributions of axial, radial and swirl components in EVERY region, including exact Gamma tail.
+- [ ] F39a2: Integrate finite physical energy and volume L2 using controlled infinite-tail estimates and anisotropic time scaling. Record whether a bound is fixed-time, uniform in tau, or spacetime. Normalized radial swirl positivity is insufficient.
+- [ ] F39b1: Extract actual admissible stress definition and cone inequalities from the source equations. Implement divergence-form stress from common velocity/pressure/time data; no arbitrary matrix fitted to residual.
+- [ ] F39b2: Region-by-region cone margins (core, inner exit, matching, O3, pulse/main/end, flatten, power/angular, steep/waiting, collar/Gamma). Preserve source signs and quantify uncertainty, max and volume L2 separately.
+- [ ] F39b3: Establish the exterior physical stress-free identity from the exact heat PDE and matched original pressure/primitive datum; independently resolve any remaining absolute pressure offset/homogeneous angular constant before asserting zero stress.
+- [ ] F39c1: Identify E_B independently from T_B and verify the full divergence identity. Quantify its flat/high-order scale decay, max and volume L2 on the required domain.
+- [ ] F39c2: Assess unresolved physical C3 K norm/Section9 parameter hypotheses using the assembled field, retaining exact source chosen constants. No nominal bound or changed parameter family to force an admission flag.
+- [ ] F40a: Actual n=1 recovery equations, common inner domain, independent per-order moment repair, pressure/heat compatibility and divergence-preserving potential/curl truncation.
+- [ ] F40b: Correct n>=2 coefficient equations and independent repair, finite-order remainder, smooth summation. Report measured per-order relations; coordinate rescaling of the leading field is not recursion.
+- [ ] F41a: Actual mean and two-family oscillatory layers realizing/cancelling the accepted stress via averaged quadratic momentum flux. Preserve source supports, scales and moments.
+- [ ] F41b: Corrected forced Cartesian residual Linfinity/L2<1e-3 using an independent evaluator, only after the correction layers are admitted.
+- [ ] F41c: Multi-time velocity/vorticity, measured radial/axial core widths and aspect ratio, scale exponents, true particle/material-line winding distinguished from streamlines, and recursive-layer diagnostics.
+
+Whole-field Cartesian/core/axis, physical energy, cone, flat remainder, temporal recursion and corrected residual gates remain false. Preserve previous accepted source receipts and unrelated edits.
+
+---
+
 # Steep/waiting mixed C4 handoff - 2026-10-02
 
 Current authoritative continuation list. Leading spatial derivative progress is not actual coefficient recursion. Read docs/STEEP_WAITING_MIXED_C4_2026_10_02.md and the steep_waiting_C4_check.json receipt first. Reproduce --stage steepjets; ordered pipeline72 modules.
