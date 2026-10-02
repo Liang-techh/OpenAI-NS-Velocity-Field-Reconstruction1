@@ -1,3 +1,21 @@
+# Anchored amplitude resolved / logarithmic physical core values - 2026-10-02
+
+The SAME current-source original G integral is now evaluated from the unique H root in[-j,0] via six complex poles and branch-safe separate logarithms. Seven uniform directed Rouche disks (radius1e-180) propagate j/delta/root uncertainty; all poles remain off the real path. The exact cubic remainder includes its j quadratic coefficient. Old candidate fixed parameters/certificate/exp(logF0) are not used. Original selected Cstar and fresh compliant pressure/core remain unchanged.
+
+At Z=.3, G≈12.58997725263873146476493948 with directed interval width≈5.72e-156; G(anchor)=0 exactly. logF0=-selected_logCstar-Lambda G is now location-dependent with directed errors rather than only a broad global bound. exp(logF0) remains unmaterialized because of its extreme magnitude; positive swirl is retained in logarithmic factors rather than rounded to zero.
+
+Fresh degree24 core rows and radial remainders now combine with resolved amplitude into physical signed factor enclosures for ur/utheta/uz/p and rotated Cartesian velocity. Twelve initial core packets include structural axis ur=utheta=0. These are source-value/error enclosures with original physical scales, not exact point parameter selection or a complete annular field.
+
+Checks PASS:7 strict uniform source-root disks; original rational/residue/cubic/sign identities;7 independent peak-resolved real integrals;42 independent rational gradient Taylor coefficients;48 halfplane log terms;12 reproducible physical core packets; current hashes and explicit incomplete downstream gates. Independent quadrature is diagnostic, not the source error certificate.
+
+Read docs/ANCHORED_AXIS_AMPLITUDE_2026_10_02.md. Reproduce --stage axisamplitude; ordered pipeline111 modules. Prior all33 physical spatial4/time1 maps and fresh5400 core coefficient enclosures remain accepted.
+
+NOT DONE: original signed annular integral/implicit five-bump values and complete physical-point chart selection; measured core contraction/growth/material winding; construction-domain/terminal energy; actual admissible stress and independent flat remainder; genuine n-dependent temporal recursion, mean/oscillatory correction and full corrected forced-NS residual. Original unlocalized whole-space energy remains infinite.
+
+NEXT: resolved signed bridge/first-switch integrals with shared histories -> implicit five-bump numerical values -> composed physical-point field and independent dynamics -> energy/stress/flat remainder -> true recursion/correction.
+
+---
+
 # Fresh compliant core radial coefficients + all33 physical maps - 2026-10-02
 
 The SAME selected-Cstar/compliant analytic-preheat core now has freshly recomputed coupled radial coefficient enclosures through degree24 at Z=.3,.5,-.5,0. No old finite rows are read or relabelled. Full axis jets are rebuilt from the CURRENT pressure datum; core epsilon=1/Lambda and ell=-G_Z are kept distinct from source epsilon and physical log-F0 derivative. Positive implicit swirl is retained via nonzero Cauchy enclosures.

@@ -100,15 +100,16 @@ value=core.values(rows, rho='4')
 mixed=core.profile(rows, rho='2', radial_order=1, axial_order=2)
 ```
 
-Focused pipeline stage, now part of 109 ordered modules:
+Focused pipeline stage, now part of 111 ordered modules:
 
 ```
 python experiments/root_st073/lei_ren_part1_paper_compliant_reconstruction.py --stage freshcore
 ```
 
-The next bottleneck is usable source values throughout the chain: implicit
-F0/pressure uncertainty, signed bridge and switch integrals, and the admitted
-five-bump branch. After these are resolved, compose a physical-point evaluator
+The anchored G amplitude now has directed logarithmic values in
+ANCHORED_AXIS_AMPLITUDE_2026_10_02.md. The next bottleneck is usable annular
+source values: signed bridge/switch integrals and the admitted five-bump branch,
+with controlled source pressure/parameter uncertainty. Compose a physical-point evaluator
 and measured dynamics. Required-domain energy, admissible stress, independent
 flat remainder, temporal coefficient recursion and oscillatory correction
 remain unfinished. The unlocalized whole-space energy remains infinite.

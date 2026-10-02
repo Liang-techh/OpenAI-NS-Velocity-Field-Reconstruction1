@@ -92,6 +92,10 @@ pressure datum and selected Cstar, retaining positive implicit swirl sources.
 Explicit Bessel plus admitted nonlinear correction tails give controlled
 profile enclosures; old finite rows are not read or relabelled. Radial Taylor
 generation remains distinct from higher-order temporal coefficient recursion.
+Axisamplitude resolves the SAME anchored rational G through six uniformly
+certified complex poles and branch-safe logarithms. It combines logF0 with
+fresh radial rows into physical core source-value factors; no exp(logF0),
+old candidate parameters, selected point representatives or dynamics claim.
 """
 import argparse
 import importlib
@@ -147,6 +151,7 @@ PREPULSEMIXED=('pre_pulse_mixed_C4','pre_pulse_mixed_C4_check')
 SOURCEDISPATCH=('source_dispatcher',)
 GLOBALPHYSICAL=('global_physical_assembly','global_physical_assembly_check')
 FRESHCORE=('core_coefficient_rebuild','core_coefficient_rebuild_check')
+AXISAMPLITUDE=('anchored_axis_amplitude','anchored_axis_amplitude_check')
 
 
 def stages(stage):
@@ -166,7 +171,8 @@ def stages(stage):
             'sourcedispatch':SOURCEDISPATCH,
             'globalphysical':GLOBALPHYSICAL,
             'freshcore':FRESHCORE,
-            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS+POSTMIXEDJETS+STEEPJETS+HEATJETS+PHYSICALFIELD+COREPHYSICAL+FROZENFIELD+BRIDGEPROFILES+SWITCHPROFILES+RESHAPEPROFILES+RESTOREPROFILES+ACTUALPATCH+PATCHMIXED+RESTOREMIXED+RESHAPEMIXED+SWITCHMIXED+BRIDGEMIXED+PREPULSEMIXED+SOURCEDISPATCH+GLOBALPHYSICAL+FRESHCORE}[stage]
+            'axisamplitude':AXISAMPLITUDE,
+            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS+POSTMIXEDJETS+STEEPJETS+HEATJETS+PHYSICALFIELD+COREPHYSICAL+FROZENFIELD+BRIDGEPROFILES+SWITCHPROFILES+RESHAPEPROFILES+RESTOREPROFILES+ACTUALPATCH+PATCHMIXED+RESTOREMIXED+RESHAPEMIXED+SWITCHMIXED+BRIDGEMIXED+PREPULSEMIXED+SOURCEDISPATCH+GLOBALPHYSICAL+FRESHCORE+AXISAMPLITUDE}[stage]
 
 
 def run(stage='all',list_only=False):
@@ -180,7 +186,8 @@ def run(stage='all',list_only=False):
         importlib.import_module(PREFIX+name).run()
         completed.append(name)
     inherited_global='global_physical_assembly_check' in completed
-    inherited_fresh='core_coefficient_rebuild_check' in completed
+    inherited_axis='anchored_axis_amplitude_check' in completed
+    inherited_fresh=inherited_axis or 'core_coefficient_rebuild_check' in completed
     inherited_dispatch=inherited_global or 'source_dispatcher' in completed
     inherited_prepulse=inherited_dispatch or 'pre_pulse_mixed_C4_check' in completed
     inherited_bridgemixed=inherited_dispatch or 'bridge_mixed_C4_check' in completed
@@ -312,6 +319,9 @@ def run(stage='all',list_only=False):
         fresh_compliant_finite_core_coefficients_recomputed=inherited_fresh,
         fresh_core_infinite_radial_tails_bound=inherited_fresh,
         fresh_core_scope='Directed coupled radial coefficients from same selected Cstar/compliant pressure; explicit model plus nonlinear correction tails; not point parameter selection, full physical field, or temporal recursion',
+        actual_anchored_G_with_directed_error_available=inherited_axis,
+        fresh_core_logarithmic_physical_source_values_available=inherited_axis,
+        anchored_amplitude_scope='Current interval parameters, seven uniform root disks and halfplane logarithms; signed logarithmic physical core values; no exp(logF0), resolved annular values or dynamics claim',
         original_unlocalized_whole_space_kinetic_energy_is_infinite=True if inherited_energy else None,
         full_cartesian_vector_derivatives_certified=False,
         core_axis_interfaces_certified=False,
@@ -321,14 +331,14 @@ def run(stage='all',list_only=False):
         full_pulse_C4_scope='Leading O4 and two local external interfaces, spatial/profile mixed total<=4 at fixed positive tau; whole outer/core/axis and time derivatives excluded',
         full_outer_C4_certified=False,
         temporal_recursion=False,
-        next_dependency='Fresh compliant radial core enclosures plus all33 physical source maps -> resolved original signed integrals/implicit repair values and physical-coordinate chart selection; required-domain energy/stress/flat remainder -> actual n-dependent recursion/correction')
+        next_dependency='Resolved anchored G and fresh logarithmic core values -> original annular signed integrals and implicit repair values, physical-point chart selection and measured dynamics; required-domain energy/stress/flat remainder -> actual n-dependent recursion/correction')
     print(json.dumps(result,indent=2),flush=True)
     return result
 
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','postmixedjets','steepjets','heatjets','physicalfield','corephysical','frozenfield','bridgeprofiles','switchprofiles','reshapeprofiles','restoreprofiles','actualpatch','patchmixed','restoremixed','reshapemixed','switchmixed','bridgemixed','prepulsemixed','sourcedispatch','globalphysical','freshcore','all'),default='all')
+    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','postmixedjets','steepjets','heatjets','physicalfield','corephysical','frozenfield','bridgeprofiles','switchprofiles','reshapeprofiles','restoreprofiles','actualpatch','patchmixed','restoremixed','reshapemixed','switchmixed','bridgemixed','prepulsemixed','sourcedispatch','globalphysical','freshcore','axisamplitude','all'),default='all')
     parser.add_argument('--list',action='store_true',help='Print the ordered modules without running them')
     args=parser.parse_args()
     run(args.stage,args.list)

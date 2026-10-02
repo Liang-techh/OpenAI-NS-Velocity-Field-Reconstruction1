@@ -82,8 +82,8 @@ The API accepts the original explicit chart coordinate and log(tau). It returns
 rows, formal scale bases and scope metadata. It does not automatically select
 a chart from an arbitrary physical point or return reconstructed point values.
 
-The ordered pipeline has 109 modules, including the subsequent fresh core
-coefficient rebuild. The focused physical-map stage is
+The ordered pipeline has 111 modules, including the subsequent fresh core
+coefficient rebuild and anchored amplitude. The focused physical-map stage is
 
 ```
 python experiments/root_st073/lei_ren_part1_paper_compliant_reconstruction.py --stage globalphysical
@@ -108,8 +108,9 @@ factor algebra, not point coefficients of the admitted nonlinear core.
 1. Continue from the fresh compliant core coefficient rebuild described in
    CORE_COEFFICIENT_REBUILD_2026_10_02.md. This supplies directed radial rows
    and controlled infinite remainders, not selected source parameter values.
-   Resolve implicit amplitude and pressure-source uncertainty for a usable
-   point evaluator; never choose enclosure midpoints as exact solutions.
+   The anchored G amplitude now has directed logarithmic values in
+   ANCHORED_AXIS_AMPLITUDE_2026_10_02.md. Keep source/pressure uncertainty
+   separate from numerical errors; never choose midpoints as exact solutions.
 2. Resolve original integral sources and the implicit five-bump branch into
    usable values with error bounds. Preserve shared histories and all five
    functional terminal conditions when composing an actual field evaluator.

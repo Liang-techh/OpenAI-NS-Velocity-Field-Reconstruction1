@@ -1,3 +1,28 @@
+# Next: resolve annular values after actual anchored amplitude - 2026-10-02
+
+Read docs/ANCHORED_AXIS_AMPLITUDE_2026_10_02.md first. It supersedes the unresolved-G item below; complete annular values, point dispatch, dynamics, energy/stress and recursion remain open. Current focused stages: axisamplitude/freshcore/globalphysical. Pipeline111 modules. Preserve SAME pressure/core/Cstar, source identities and exact positive widths.
+
+- [x] Resolve the original anchored G with directed parameter/root errors, using the unique real H root, six certified complex poles and branch-safe logarithms.
+- [x] Retain original selected Cstar, logF0=-logCstar-Lambda G and positive formal amplitude. No fixed-candidate parameter relabeling or exp(logF0)/underflow-to-zero replacement.
+- [x] Combine resolved logarithmic amplitude with fresh degree24 core rows/tails to return physical ur/utheta/uz/p source factors and signed Cartesian terms; handle the axis structurally.
+- [x] Check seven independent peak-resolved real integrals,42 rational gradient coefficients, all seven root disks/log branches and12 physical core packets.
+- [ ] Add a root-centered scaled axial chart Z=a+sigma/sqrt(Lambda)*eta with shared H(a)=0. Evaluate Lambda*G directly with directed remainder/root/parameter bounds before enclosure; never add a subprecision offset to a rounded anchor. Recover normalized F0/F0(a), measure peak widths and distinguish source uncertainty from numerical error. Ordinary G point precision does not yet resolve this peak.
+- [ ] Resolve original signed prescribed-shear bridge integral and first-switch partial/terminal integrals. Keep exact chi/comparison quotient, current R, Pstar/F0 units and shared actual histories. Use signed factor arithmetic before numerical enclosure; never reset V100/V110 or moment data.
+- [ ] Extend actual core primitive evaluation through all five moment histories with controlled radial/axial remainder. Compare original annular inlet source values without treating independently rounded endpoint boxes as functional equality.
+- [ ] Numerically recover the admitted implicit five-bump branch with a posteriori Jacobian/remainder control, full axial dependence and all five terminal moment identities. Do not choose unconstrained midpoint bump coefficients.
+- [ ] Compose full core/annular/pre-pulse/pulse/post-pulse/collar/exterior value functions in physical and similarity coordinates, with numerical error and source uncertainty separate.
+- [ ] Implement bracketed physical/logarithmic chart selection, including original implicit lambda, subprecision microscopic boundaries, nonsingular axis and unbounded heat exterior. Report explicit precision resolution failures rather than selecting rounded edges.
+- [ ] Measure radial/axial widths, aspect ratio and swirl/axial/vorticity growth across times; fit exponents independently of imposed scaling powers. Verify nontriviality, divergence and derivative discretization error.
+- [ ] Integrate particle trajectories/cumulative material winding independently of instantaneous streamlines with convergence controls. Do not label coordinate shrinkage as winding or coefficient recursion.
+- [ ] Establish original required energy/support domain and terminal bounds including actual radial tail. Whole-space unlocalized energy is infinite; do not silently replace the required construction.
+- [ ] Construct actual divergence-form admissible stress and independently bounded flat remainder; report regionwise cone margins, maximum/physical-volume L2 norms and scale decay separately.
+- [ ] After leading profile/moment/stress gates, implement correct n=1/n>=2 recovery, common core interval, per-order moment repair, curl-preserving cutoffs, finite-order remainder and smooth summation.
+- [ ] Implement realizable mean/two-family oscillatory stress correction; validate averaged quadratic flux cancellation before the full forced-NS max/L2<1e-3 acceptance gate.
+
+Mark [x] only with concrete code/check/domain/limits and commit. Preserve unrelated experiments and historical sources. Earlier detailed tasks remain open except the completed entries superseded here.
+
+---
+
 # Current next work: source values and actual field evaluation - 2026-10-02
 
 Read docs/CORE_COEFFICIENT_REBUILD_2026_10_02.md and docs/GLOBAL_PHYSICAL_SOURCE_ASSEMBLY_2026_10_02.md. This header supersedes core-row rebuild and physical-map TODOs below. Keep the full paper-faithful goal and all later energy/stress/recursion/correction gates. Current focused stages: freshcore/globalphysical;109 ordered modules.
