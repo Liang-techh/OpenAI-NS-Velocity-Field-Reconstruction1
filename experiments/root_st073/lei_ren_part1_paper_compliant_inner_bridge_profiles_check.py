@@ -133,6 +133,12 @@ def run():
         for name,digest in receipt['input_hashes'].items():
             if hashlib.sha256((HERE/name).read_bytes()).hexdigest()!=digest:raise ValueError('Bridge source changed: '+name)
         c=MPIntervalContext();c.dps=240
+        sign=receipt['angular_log_correction_nonpositive_source']
+        certificate=json.loads((HERE/sign['certificate']).read_bytes())
+        if (not certificate['exact_implicit_exit_field_specified']
+                or not certificate['actual_whole_axis_Ra_R110_relaxed_cone_analytically_certified']
+                or certificate['admitted_inner_parameter_family_sha256']!=sign['admitted_inner_parameter_family_sha256']):
+            raise ValueError('Angular log sign lacks accepted same-source comparison positivity')
         logh=read_interval(c,receipt['source_log_hb_enclosure']);proof_count=0;bound_count=0
         for proof in receipt['source_log_product_cap_proofs']:
             upper=read_interval(c,proof['input_absolute_upper']);additional=read_interval(c,proof['additional_source_log'])
@@ -160,6 +166,7 @@ def run():
         result=dict(actual_five_defect_family_sha256=receipt['actual_five_defect_family_sha256'],implicit_source_sha256=receipt['implicit_source_sha256'],
             comparison_fixture=comparison_and_chi_fixture(),moment_fixture=variable_profile_moment_fixture(),structural_identities=structural_identities(),
             actual_source_width_product_log_proofs_checked=proof_count,actual_bridge_profile_bounds_checked=bound_count,
+            angular_log_sign_bound_to_accepted_same_source_comparison_theorem=True,
             source_bound_smoothed_comparison_axial6_enclosures_available=True,
             actual_prescribed_shear_bridge_axial5_enclosures_available=True,
             actual_bridge_radial_recovery_axial4_enclosures_available=True,

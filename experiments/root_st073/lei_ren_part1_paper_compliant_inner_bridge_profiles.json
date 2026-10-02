@@ -11271,6 +11271,12 @@
     ]
   },
   "comparison_IBP_weights": "alpha*g(y)+integral(-alpha_prime)*g; nonnegative, sum1, independent of Z",
+  "angular_log_correction_nonpositive_source": {
+    "certificate": "lei_ren_part1_paper_compliant_global_exit_certificate.json",
+    "proof": "same-source comparison Dbar>=1/(2K)>0 from its admitted comparison/frozen transfer theorem",
+    "admitted_inner_parameter_family_sha256": "6449e4d0b58b6773ce8c9c48ec52c9a8132a05da30ddafd805e37e58b75708c3",
+    "broad_direction_interval_not_used_as_sign_proof": true
+  },
   "integrated_chi_bound": "integral_0^y chi dt<=hb*(1+y); early length<=hb, laterchi=hb",
   "source_log_product_cap_proofs": [
     {
@@ -21741,6 +21747,6 @@
     "lei_ren_part1_paper_compliant_frozen_comparison_field.json": "b42f371b45e46dbeac3ae84d7520009e826917e6ae36c1225d65a47bf2573d03",
     "lei_ren_part1_paper_compliant_frozen_comparison_field_check.py": "2a9c2fb93465e63a941dffd73163936d8c35b026c63e6cfd9ef6b33ee56c8abc",
     "lei_ren_part1_paper_compliant_frozen_comparison_field_check.json": "68737b02622414f095ce8aecb6daf0dd5c222e0a4479a265cdb672249b00d163",
-    "lei_ren_part1_paper_compliant_inner_bridge_profiles.py": "85ce883dd962349e1f509e115fbff8baf1b33a85a969d3ff6c53ba007cdc3b9f"
+    "lei_ren_part1_paper_compliant_inner_bridge_profiles.py": "142945ac1dd8a5705c380e79da29ea6bd89374c18cfa50f0412f1ba70c520840"
   }
 }

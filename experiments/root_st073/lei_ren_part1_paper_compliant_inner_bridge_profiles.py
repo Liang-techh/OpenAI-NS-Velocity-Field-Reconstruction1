@@ -85,6 +85,9 @@ class CompliantInnerBridgeProfiles:
                 and ledger['uniform_Cstar_family_sha256']==self.core.records['physical_norm_family']['uniform_Cstar_family_sha256']
                 and ledger['base_analytic_core_family_sha256']==self.core.records['core_transfer']['analytic_core_family_sha256']
                 and gate['admitted_inner_parameter_family_sha256']==ledger['admitted_inner_parameter_family_sha256']
+                and gate['uniform_Cstar_family_sha256']==ledger['uniform_Cstar_family_sha256']
+                and gate['base_analytic_core_family_sha256']==ledger['base_analytic_core_family_sha256']
+                and gate['exact_implicit_exit_field_specified']
                 and gate['actual_whole_axis_Ra_R110_relaxed_cone_analytically_certified']
                 and ledger['positive_width_not_materialized'] and ledger['h_b_equals_epsilon_b_by_definition']):
             raise ValueError('Same admitted width, core and exact bridge prescription required')
@@ -217,6 +220,11 @@ class CompliantInnerBridgeProfiles:
             comparison_own_moment_axial6_coefficients=coefficient_lists(comparison['moments']),
             comparison_direction_axial5_coefficients=coefficient_lists(comparison['direction']),
             comparison_IBP_weights='alpha*g(y)+integral(-alpha_prime)*g; nonnegative, sum1, independent of Z',
+            angular_log_correction_nonpositive_source=dict(
+                certificate=PREFIX+'global_exit_certificate.json',
+                proof='same-source comparison Dbar>=1/(2K)>0 from its admitted comparison/frozen transfer theorem',
+                admitted_inner_parameter_family_sha256=self.records['K1_ledger']['admitted_inner_parameter_family_sha256'],
+                broad_direction_interval_not_used_as_sign_proof=True),
             integrated_chi_bound='integral_0^y chi dt<=hb*(1+y); early length<=hb, laterchi=hb',
             source_log_product_cap_proofs=self.cap_proofs,
             source_bound_smoothed_comparison_axial6_enclosures_available=True,

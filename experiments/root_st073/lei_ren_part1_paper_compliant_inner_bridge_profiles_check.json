@@ -22,6 +22,7 @@
   },
   "actual_source_width_product_log_proofs_checked": 142,
   "actual_bridge_profile_bounds_checked": 245,
+  "angular_log_sign_bound_to_accepted_same_source_comparison_theorem": true,
   "source_bound_smoothed_comparison_axial6_enclosures_available": true,
   "actual_prescribed_shear_bridge_axial5_enclosures_available": true,
   "actual_bridge_radial_recovery_axial4_enclosures_available": true,
@@ -264,8 +265,8 @@
     "lei_ren_part1_paper_compliant_frozen_comparison_field.json": "b42f371b45e46dbeac3ae84d7520009e826917e6ae36c1225d65a47bf2573d03",
     "lei_ren_part1_paper_compliant_frozen_comparison_field_check.py": "2a9c2fb93465e63a941dffd73163936d8c35b026c63e6cfd9ef6b33ee56c8abc",
     "lei_ren_part1_paper_compliant_frozen_comparison_field_check.json": "68737b02622414f095ce8aecb6daf0dd5c222e0a4479a265cdb672249b00d163",
-    "lei_ren_part1_paper_compliant_inner_bridge_profiles.py": "85ce883dd962349e1f509e115fbff8baf1b33a85a969d3ff6c53ba007cdc3b9f",
-    "lei_ren_part1_paper_compliant_inner_bridge_profiles.json": "afc2e67d5469d4e2541e6bc91e4754a8cc916d916727ae82fa1729c26e2cda0a",
-    "lei_ren_part1_paper_compliant_inner_bridge_profiles_check.py": "2d3cf6a5c6c7db868831e84be35d70278ff0c30df08fb02c2abf4d61eaddc872"
+    "lei_ren_part1_paper_compliant_inner_bridge_profiles.py": "142945ac1dd8a5705c380e79da29ea6bd89374c18cfa50f0412f1ba70c520840",
+    "lei_ren_part1_paper_compliant_inner_bridge_profiles.json": "f9076e496b4204f647d6c4aa2c24222b16ff1147242f652e68ecb01892498e20",
+    "lei_ren_part1_paper_compliant_inner_bridge_profiles_check.py": "0b98618cdde53a64abc6719a455caa6eb87db7409be679e255b46fd0ef7a6dc9"
   }
 }

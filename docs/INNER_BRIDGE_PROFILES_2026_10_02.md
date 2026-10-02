@@ -83,7 +83,7 @@ Here `F0` cancels in `Factual/Fbar=phi_actual/barphi`. The source comparison dir
 \int_0^y\chi(t)dt\le h_b(1+y)
 \]
 
-follows from the initial interval of length at most `hb` and the constant value `chi=hb` afterward. Together with `R<=100`, it gives derivative enclosures through axial order five, with width/pressure/gradient factors combined in logs before numerical enclosure. Comparison positivity comes from the inherited same-source analytic certificate; the actual swirl remains strictly positive.
+follows from the initial interval of length at most `hb` and the constant value `chi=hb` afterward. Together with `R<=100`, it gives derivative enclosures through axial order five, with width/pressure/gradient factors combined in logs before numerical enclosure. Comparison positivity comes from the inherited same-source analytic certificate; the actual swirl remains strictly positive. In particular, the nonpositive zeroth log correction is bound directly to that certificate's `Dbar>=1/(2K)>0` theorem and identical inner/core/Cstar family. The broad direction interval itself can straddle zero and is not used as a sign proof.
 
 The **actual** five moment histories are integrated from the core using these actual field ranges. Recover
 
