@@ -1,3 +1,28 @@
+# F38-D3c1f fifth source and radial C4 handoff - 2026-10-01
+
+- [x] F38-D3c1f1: Separate actual implicit angular fifth-order layer using the admitted C0-C4 prefix and same Jacobian, all ordered quadratic convolution terms, true fifth Gamma collar/infinite-tail bounds and flatten derivative. No guard bypass or prior-source edits. Whole-Z physical fifth derivative sum is below mu/100.
+- [x] F38-D3c1f2: Complete future energy and actual ap/c1/c2 fifth coefficients with the same q^2 weights, signed bumps, epsilon/Gamma tail and positive selected inverse. Incoming g5=0 and h5=6Z; every derivative keeps its original fixed row factor. Independent fifth branch/root/flatten/Gamma checks and225 earlier prefix comparisons PASS.
+- [x] F38-D3c1f3: Actual Mz5/allfive partial primitives/pressure5 in every O4 chart; radial velocity and Ur_y axial C4; physical Ur_Z/Ur_yZ axial C3. Seventy-two independent physical derivatives,792 old-source comparisons, three chart/pressure interfaces and exact terminal derivative/energy gates PASS.
+
+F38-D3c1 as a whole is still PARTIAL: axial C4 is not full radial/axial C4.
+
+Next executable work:
+
+- [ ] F38-D3c1g1a: Derive and implement directed sigma derivatives through required radial order from the ORIGINAL flat cutoff, with positive log/odds evaluations near0/1 and exact zero off support. Preserve exponentially small sources; an upper cap is an enclosure, not a definition.
+- [ ] F38-D3c1g1b: Derive true gp derivatives from primitive(sigma(50xi))*sigma(11-xi). Include both entrance xi in[0,.02] and exit xi in[10,11], Leibniz factors and powers50. Convert main y derivatives with exact powersmu; preserve segmented end offsets rather than rounding xi=13+mu*s.
+- [ ] F38-D3c1g1c: Derive normalized beta derivatives through all radial orders needed for velocity C4 and stress quantities. Retain ell=.15 normalization powers and original exp(-1/(1-r^2)) shape. Produce uniform finite derivative suprema and enclosures for intervals crossing either support endpoint; current beta_y sup alone is insufficient.
+- [ ] F38-D3c1g1d: Recover repeated y and mixed Z/y derivatives of both linear moment equations, energy, angular and pressure primitives from exact source ODEs. Apply paper(3.9) after the moment recovery. Include physical prefactor derivatives and both coordinates' normalization factors. State actual available order for each velocity component and mixed derivative.
+- [ ] F38-D3c1g2a: Establish uniform pulse derivative bounds through the complete required multiindices; verify every entrance/main/gap/end interface by source identity and directed bounds, including support-crossing cells. Distinguish overlap checks already done from quantitative flat compatibility still required.
+- [ ] F38-D3c1g2b: Add cell Taylor remainders only where an algorithm uses a cell polynomial. The available leading-source fifth coefficients do not automatically give fifth radial velocity derivatives; do not infer a remainder from array length or zero overlap.
+- [ ] F38-D3c2: Compose all high-order velocities/primitives through100-unit flatten, both angular supports, steep entry/power/exit, waiting, epsilon collar and the entire Gamma exterior; preserve the admitted absolute pressure/angular closure and common source graph. Certify core/inner/outer interfaces and whole-field C4 only after required mixed orders exist.
+- [ ] F39-A/B: Compute outer stress-cone margins with complete source derivatives and physical units; full physical kinetic energy; global admissible stress and independently bounded flat remainder. Keep background residual distinct from corrected full residual.
+- [ ] F40: Actual n=1 and n>=2 coefficient recovery with n-dependent forcing, common inner interval, separate moment repair and curl-based truncation/smooth sum. Fifth leading-profile axial jets are NOT temporal recursion.
+- [ ] F41: Mean and both oscillatory families, averaged momentum-flux cancellation, independent full forced Cartesian residual and vortex/material-line winding diagnostics.
+
+Evidence: docs/FIFTH_AXIAL_SOURCE_AND_PULSE_RADIAL_C4_2026_10_01.md; --stage radialjets (55 ordered modules). Supersede historical missing fifth-source/Mz5/radial-axial-C4 entries only. Full pulse/outer C4, outer cone, global stress/flat remainder, physical energy and temporal recursion remain false.
+
+---
+
 # F38-D3c1 pulse derivatives handoff - 2026-10-01
 
 F38-D3c1 remains PARTIAL because paper(3.9) consumes one axial moment derivative. Do not mark full pulse C4 complete based on C4 coefficient arrays.

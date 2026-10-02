@@ -1,3 +1,17 @@
+# F38-D3c1f fifth source / radial axial C4 checkpoint - 2026-10-01
+
+A separate source layer now recovers true fifth axial coefficients of the SAME implicit angular branch, complete future swirl energy, actual selected ap and both end functions. C0-C4 prefixes are inherited without bypassing existing C4 guards or changing earlier receipts. Exact Gamma fifth derivatives and complete infinite tails, correlated flatten, fixed incoming row factors and positive quadratic derivative inverses remain bound to the same compliant .001 family.
+
+These data feed every O4 entrance/main/gap/end chart. All five partial primitives and original P0+Mp pressure have axial order5; physical radial velocity and Ur_y have axial order4; Ur_Z and Ur_yZ have axial order3. Paper(3.9) uses the SAME Mz5 source. Empty future supports give exact terminal linear/radial derivative zeros, while every terminal energy coefficient through5 equals half the positive complete future energy.
+
+Six fifth-equation identities,13 independent branch/flatten/log/true-Gamma fifth checks,225 admitted C4 prefix comparisons,72 independent physical radial derivatives,792 earlier pulse derivative comparisons and three higher-order/pressure interfaces PASS. Actual whole-Z angular fifth derivative sum is below mu/100. The reusable generic fifth-order formulas received a read-only GPT-5.6 Luna/max review. Finite-parameter fixtures remain distinct from actual source admission.
+
+Read docs/FIFTH_AXIAL_SOURCE_AND_PULSE_RADIAL_C4_2026_10_01.md. Reproduce compliant_reconstruction.py --stage radialjets; ordered pipeline has55 modules. F38-D3c1f1 through f3 are COMPLETE. The C4 claim is AXIAL radial-velocity regularity only: full radial/mixed derivative coverage, flat interfaces, full pulse/outer C4, physical energy, cone/admissible stress/flat remainder and genuine n-dependent temporal recursion remain incomplete. No cell Taylor remainder is supplied.
+
+NEXT: higher gp/sigma/beta radial derivatives with support-crossing bounds -> source ODE recovery of all needed mixed orders -> quantitative flat pulse interfaces -> complete post-pulse high jets and whole outer C4/cone. This header supersedes missing fifth-input/radial-axial-C4 tasks only.
+
+---
+
 # F38-D3c1 selected pulse high-jet checkpoint - 2026-10-01
 
 The actual selected ap/c1/c2 C4 jets now feed every O4 entrance/main/inactive-gap/end chart. All five normalized partial primitives, axial/swirl coefficients and original P0+Mp pressure have axial jets through4. Paper(3.9) recovers radial velocity and its log-radius derivative through3; physical Ur_Z and Ur_yZ are available through2 with the required Utheta_Z/Utheta product-rule terms. Same actual source data and one interval context initialize every cap/normalization; no independent radial fit or source reset is introduced.

@@ -12,6 +12,8 @@ axial derivatives through4. Axialjets supplies complete future energy, exact
 incoming functions and actual selected ap/c1/c2 through4. Full outer C4/cone
 and temporal recursion remain unfinished. Pulsejets transports all five
 partial primitives through4 and radial velocity through3 in every O.4 chart.
+Radialjets admits separate fifth-order source data and recovers radial
+velocity axial derivatives through4; higher radial/interface bounds remain.
 """
 import argparse
 import importlib
@@ -40,11 +42,12 @@ ANGULARJETS=('angular_high_jets','angular_high_jets_check')
 AXIALJETS=('future_energy_high_jets','future_energy_high_jets_check',
            'axial_high_jets','axial_high_jets_check')
 PULSEJETS=('pulse_high_jets','pulse_high_jets_check')
+RADIALJETS=('fifth_axial_jets','fifth_axial_jets_check','pulse_radial_C4','pulse_radial_C4_check')
 
 
 def stages(stage):
-    return {'source':SOURCE,'inner':INNER,'outer':OUTER,'angular':ANGULAR,'energy':ENERGY,'pulse':PULSE,'postpulse':POSTPULSE,'closure':CLOSURE,'angularjets':ANGULARJETS,'axialjets':AXIALJETS,'pulsejets':PULSEJETS,
-            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS}[stage]
+    return {'source':SOURCE,'inner':INNER,'outer':OUTER,'angular':ANGULAR,'energy':ENERGY,'pulse':PULSE,'postpulse':POSTPULSE,'closure':CLOSURE,'angularjets':ANGULARJETS,'axialjets':AXIALJETS,'pulsejets':PULSEJETS,'radialjets':RADIALJETS,
+            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS}[stage]
 
 
 def run(stage='all',list_only=False):
@@ -57,7 +60,7 @@ def run(stage='all',list_only=False):
         print('Build compliant stage:',name,flush=True)
         importlib.import_module(PREFIX+name).run()
         completed.append(name)
-    inherited_angular=any(name in completed for name in ('future_energy_high_jets_check','axial_high_jets_check','pulse_high_jets_check'))
+    inherited_angular=any(name in completed for name in ('future_energy_high_jets_check','axial_high_jets_check','pulse_high_jets_check','fifth_axial_jets_check','pulse_radial_C4_check'))
     result=dict(stages_completed_this_run=completed,
         source_relation='epsilon_source=.001*delta; epsilon_core=1/Lambda',
         legacy_source_preserved=True,full_NS_background_completed=False,
@@ -68,9 +71,12 @@ def run(stage='all',list_only=False):
         all_five_absolute_terminal_moments_admitted=inherited_angular or any(name in completed for name in ('absolute_moment_closure_check','angular_high_jets_check')),
         actual_angular_coefficient_C4_available=inherited_angular or 'angular_high_jets_check' in completed,
         complete_future_corrected_energy_C4_available=inherited_angular,
-        actual_selected_ap_c1_c2_C4_available=any(name in completed for name in ('axial_high_jets_check','pulse_high_jets_check')),
-        pulse_primitives_axial_C4_installed='pulse_high_jets_check' in completed,
-        pulse_radial_velocity_axial_C3_installed='pulse_high_jets_check' in completed,
+        actual_selected_ap_c1_c2_C4_available=any(name in completed for name in ('axial_high_jets_check','pulse_high_jets_check','fifth_axial_jets_check','pulse_radial_C4_check')),
+        actual_selected_ap_c1_c2_C5_available=any(name in completed for name in ('fifth_axial_jets_check','pulse_radial_C4_check')),
+        pulse_primitives_axial_C4_installed=any(name in completed for name in ('pulse_high_jets_check','pulse_radial_C4_check')),
+        pulse_radial_velocity_axial_C3_installed=any(name in completed for name in ('pulse_high_jets_check','pulse_radial_C4_check')),
+        pulse_primitives_axial_C5_installed='pulse_radial_C4_check' in completed,
+        pulse_radial_velocity_axial_C4_installed='pulse_radial_C4_check' in completed,
         full_pulse_C4_installed=False,
         temporal_recursion=False,
         next_dependency='Recover higher axial derivatives and certify full interface/C4/cone bounds; build admissible stress and flat remainder, then genuine n-dependent temporal recursion')
@@ -80,7 +86,7 @@ def run(stage='all',list_only=False):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','all'),default='all')
+    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','all'),default='all')
     parser.add_argument('--list',action='store_true',help='Print the ordered modules without running them')
     args=parser.parse_args()
     run(args.stage,args.list)
