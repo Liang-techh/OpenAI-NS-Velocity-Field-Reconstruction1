@@ -108,7 +108,7 @@ class CompliantCoreCoefficientRebuild:
             else:
                 factor=tail_factor(c,degree=N,radial_order=i,axial_order=k,
                     radius=c.mpf(endpoints(r)[1]),h=self.core.h)['tail_per_Xh_norm']
-                if i+k<=5:
+                if i+k<=5 and N>=6:
                     # The explicit Phi Bessel model has factorial decay.
                     # Its nonlinear correction has the admitted Xh tail.
                     # Psi's model is linear in rho and thus has no tail here.
@@ -123,7 +123,7 @@ class CompliantCoreCoefficientRebuild:
             polynomials[label]=value;tails[label]=tail;fields[label]=value+symmetric(c,tail)
         return dict(rho=r,radial_order=i,axial_order=k,finite_polynomials=polynomials,
             infinite_radial_tail_bounds=tails,source_profile_enclosures=fields,
-            tail_decomposition='Explicit Bessel model plus admitted nonlinear correction for total order<=5; full analytic norms at higher orders',
+            tail_decomposition='Explicit Bessel model plus admitted nonlinear correction for total order<=5 and degree>=6; full analytic norms otherwise',
             analytic_tail_norms_admitted=True,finite_polynomial_is_not_complete_solution=True)
 
     def values(self,packet,rho):

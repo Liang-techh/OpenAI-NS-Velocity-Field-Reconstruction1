@@ -25579,7 +25579,7 @@
                   ]
                 }
               },
-              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5; full analytic norms at higher orders",
+              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5 and degree>=6; full analytic norms otherwise",
               "analytic_tail_norms_admitted": true,
               "finite_polynomial_is_not_complete_solution": true
             },
@@ -25762,7 +25762,7 @@
                   ]
                 }
               },
-              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5; full analytic norms at higher orders",
+              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5 and degree>=6; full analytic norms otherwise",
               "analytic_tail_norms_admitted": true,
               "finite_polynomial_is_not_complete_solution": true
             }
@@ -26106,7 +26106,7 @@
                   ]
                 }
               },
-              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5; full analytic norms at higher orders",
+              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5 and degree>=6; full analytic norms otherwise",
               "analytic_tail_norms_admitted": true,
               "finite_polynomial_is_not_complete_solution": true
             },
@@ -26289,7 +26289,7 @@
                   ]
                 }
               },
-              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5; full analytic norms at higher orders",
+              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5 and degree>=6; full analytic norms otherwise",
               "analytic_tail_norms_admitted": true,
               "finite_polynomial_is_not_complete_solution": true
             }
@@ -26633,7 +26633,7 @@
                   ]
                 }
               },
-              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5; full analytic norms at higher orders",
+              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5 and degree>=6; full analytic norms otherwise",
               "analytic_tail_norms_admitted": true,
               "finite_polynomial_is_not_complete_solution": true
             },
@@ -26816,7 +26816,7 @@
                   ]
                 }
               },
-              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5; full analytic norms at higher orders",
+              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5 and degree>=6; full analytic norms otherwise",
               "analytic_tail_norms_admitted": true,
               "finite_polynomial_is_not_complete_solution": true
             }
@@ -27160,7 +27160,7 @@
                   ]
                 }
               },
-              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5; full analytic norms at higher orders",
+              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5 and degree>=6; full analytic norms otherwise",
               "analytic_tail_norms_admitted": true,
               "finite_polynomial_is_not_complete_solution": true
             },
@@ -27343,7 +27343,7 @@
                   ]
                 }
               },
-              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5; full analytic norms at higher orders",
+              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5 and degree>=6; full analytic norms otherwise",
               "analytic_tail_norms_admitted": true,
               "finite_polynomial_is_not_complete_solution": true
             }
@@ -52931,7 +52931,7 @@
                   ]
                 }
               },
-              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5; full analytic norms at higher orders",
+              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5 and degree>=6; full analytic norms otherwise",
               "analytic_tail_norms_admitted": true,
               "finite_polynomial_is_not_complete_solution": true
             },
@@ -53114,7 +53114,7 @@
                   ]
                 }
               },
-              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5; full analytic norms at higher orders",
+              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5 and degree>=6; full analytic norms otherwise",
               "analytic_tail_norms_admitted": true,
               "finite_polynomial_is_not_complete_solution": true
             }
@@ -53458,7 +53458,7 @@
                   ]
                 }
               },
-              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5; full analytic norms at higher orders",
+              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5 and degree>=6; full analytic norms otherwise",
               "analytic_tail_norms_admitted": true,
               "finite_polynomial_is_not_complete_solution": true
             },
@@ -53641,7 +53641,7 @@
                   ]
                 }
               },
-              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5; full analytic norms at higher orders",
+              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5 and degree>=6; full analytic norms otherwise",
               "analytic_tail_norms_admitted": true,
               "finite_polynomial_is_not_complete_solution": true
             }
@@ -53985,7 +53985,7 @@
                   ]
                 }
               },
-              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5; full analytic norms at higher orders",
+              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5 and degree>=6; full analytic norms otherwise",
               "analytic_tail_norms_admitted": true,
               "finite_polynomial_is_not_complete_solution": true
             },
@@ -54168,7 +54168,7 @@
                   ]
                 }
               },
-              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5; full analytic norms at higher orders",
+              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5 and degree>=6; full analytic norms otherwise",
               "analytic_tail_norms_admitted": true,
               "finite_polynomial_is_not_complete_solution": true
             }
@@ -54512,7 +54512,7 @@
                   ]
                 }
               },
-              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5; full analytic norms at higher orders",
+              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5 and degree>=6; full analytic norms otherwise",
               "analytic_tail_norms_admitted": true,
               "finite_polynomial_is_not_complete_solution": true
             },
@@ -54695,7 +54695,7 @@
                   ]
                 }
               },
-              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5; full analytic norms at higher orders",
+              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5 and degree>=6; full analytic norms otherwise",
               "analytic_tail_norms_admitted": true,
               "finite_polynomial_is_not_complete_solution": true
             }
@@ -80283,7 +80283,7 @@
                   ]
                 }
               },
-              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5; full analytic norms at higher orders",
+              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5 and degree>=6; full analytic norms otherwise",
               "analytic_tail_norms_admitted": true,
               "finite_polynomial_is_not_complete_solution": true
             },
@@ -80466,7 +80466,7 @@
                   ]
                 }
               },
-              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5; full analytic norms at higher orders",
+              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5 and degree>=6; full analytic norms otherwise",
               "analytic_tail_norms_admitted": true,
               "finite_polynomial_is_not_complete_solution": true
             }
@@ -80810,7 +80810,7 @@
                   ]
                 }
               },
-              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5; full analytic norms at higher orders",
+              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5 and degree>=6; full analytic norms otherwise",
               "analytic_tail_norms_admitted": true,
               "finite_polynomial_is_not_complete_solution": true
             },
@@ -80993,7 +80993,7 @@
                   ]
                 }
               },
-              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5; full analytic norms at higher orders",
+              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5 and degree>=6; full analytic norms otherwise",
               "analytic_tail_norms_admitted": true,
               "finite_polynomial_is_not_complete_solution": true
             }
@@ -81337,7 +81337,7 @@
                   ]
                 }
               },
-              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5; full analytic norms at higher orders",
+              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5 and degree>=6; full analytic norms otherwise",
               "analytic_tail_norms_admitted": true,
               "finite_polynomial_is_not_complete_solution": true
             },
@@ -81520,7 +81520,7 @@
                   ]
                 }
               },
-              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5; full analytic norms at higher orders",
+              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5 and degree>=6; full analytic norms otherwise",
               "analytic_tail_norms_admitted": true,
               "finite_polynomial_is_not_complete_solution": true
             }
@@ -81864,7 +81864,7 @@
                   ]
                 }
               },
-              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5; full analytic norms at higher orders",
+              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5 and degree>=6; full analytic norms otherwise",
               "analytic_tail_norms_admitted": true,
               "finite_polynomial_is_not_complete_solution": true
             },
@@ -82047,7 +82047,7 @@
                   ]
                 }
               },
-              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5; full analytic norms at higher orders",
+              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5 and degree>=6; full analytic norms otherwise",
               "analytic_tail_norms_admitted": true,
               "finite_polynomial_is_not_complete_solution": true
             }
@@ -107635,7 +107635,7 @@
                   ]
                 }
               },
-              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5; full analytic norms at higher orders",
+              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5 and degree>=6; full analytic norms otherwise",
               "analytic_tail_norms_admitted": true,
               "finite_polynomial_is_not_complete_solution": true
             },
@@ -107818,7 +107818,7 @@
                   ]
                 }
               },
-              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5; full analytic norms at higher orders",
+              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5 and degree>=6; full analytic norms otherwise",
               "analytic_tail_norms_admitted": true,
               "finite_polynomial_is_not_complete_solution": true
             }
@@ -108162,7 +108162,7 @@
                   ]
                 }
               },
-              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5; full analytic norms at higher orders",
+              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5 and degree>=6; full analytic norms otherwise",
               "analytic_tail_norms_admitted": true,
               "finite_polynomial_is_not_complete_solution": true
             },
@@ -108345,7 +108345,7 @@
                   ]
                 }
               },
-              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5; full analytic norms at higher orders",
+              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5 and degree>=6; full analytic norms otherwise",
               "analytic_tail_norms_admitted": true,
               "finite_polynomial_is_not_complete_solution": true
             }
@@ -108689,7 +108689,7 @@
                   ]
                 }
               },
-              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5; full analytic norms at higher orders",
+              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5 and degree>=6; full analytic norms otherwise",
               "analytic_tail_norms_admitted": true,
               "finite_polynomial_is_not_complete_solution": true
             },
@@ -108872,7 +108872,7 @@
                   ]
                 }
               },
-              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5; full analytic norms at higher orders",
+              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5 and degree>=6; full analytic norms otherwise",
               "analytic_tail_norms_admitted": true,
               "finite_polynomial_is_not_complete_solution": true
             }
@@ -109216,7 +109216,7 @@
                   ]
                 }
               },
-              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5; full analytic norms at higher orders",
+              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5 and degree>=6; full analytic norms otherwise",
               "analytic_tail_norms_admitted": true,
               "finite_polynomial_is_not_complete_solution": true
             },
@@ -109399,7 +109399,7 @@
                   ]
                 }
               },
-              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5; full analytic norms at higher orders",
+              "tail_decomposition": "Explicit Bessel model plus admitted nonlinear correction for total order<=5 and degree>=6; full analytic norms otherwise",
               "analytic_tail_norms_admitted": true,
               "finite_polynomial_is_not_complete_solution": true
             }
@@ -109646,6 +109646,6 @@
     "lei_ren_part1_paper_compliant_physical_energy_check.py": "01b20779bd10f0fdcede7688137631dd8f03d0e4d4d22cebb73002fdabad437f",
     "lei_ren_part1_paper_compliant_physical_energy_check.json": "93504b2b9b968bc4ea39f711d6cc248b985862af6318f9609367050c4419fae2",
     "lei_ren_part1_paper_compliant_core_physical_field.py": "19acdd5f7a506e7582427f004be8e2cd7ae22771eafc76b66ee44d053b9aec54",
-    "lei_ren_part1_paper_compliant_core_coefficient_rebuild.py": "d9b611de46122f92c385d6ef78ee2dcb47afd20f8599f34dc4d1cdb155fe1e22"
+    "lei_ren_part1_paper_compliant_core_coefficient_rebuild.py": "d37bfa6fe89b8955e17b38a00e1c8ae53b6725bb5a73c4648067737ce3be990f"
   }
 }

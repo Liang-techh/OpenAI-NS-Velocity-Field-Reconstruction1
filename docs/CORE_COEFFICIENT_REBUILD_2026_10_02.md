@@ -49,13 +49,13 @@ an exhaustive whole-axis numerical grid.
 
 ## Controlled infinite remainder
 
-For mixed orders through total5, the Phi remainder is the explicit Bessel
+For radial degree at least6 and mixed orders through total5, the Phi remainder is the explicit Bessel
 model's factorial tail plus the admitted nonlinear fixed-point correction
 Xh tail. The Psi model is linear in rho and is fully present for N>=1.
 Consequently the physical Uz and its radial average have tails bounded by
 `epsilon_core * correction_Xh_norm * tail_factor`. The raw Psi tail must not
 be used without that outer epsilon_core. Higher requested mixed orders use
-conservative admitted full analytic norms.
+conservative admitted full analytic norms, as do degree4/5 requests.
 
 The radial average uses the same axial rows divided by n+1. The original
 radial recovery then gives

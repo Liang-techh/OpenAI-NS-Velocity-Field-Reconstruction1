@@ -16,6 +16,7 @@
   "fresh_radial_coefficient_enclosures_checked": 5400,
   "first_axis_radial_coefficients_checked": 48,
   "reproducible_profile_value_packets_checked": 16,
+  "low_degree_full_analytic_tail_fallbacks_checked": 2,
   "same_selected_Cstar_and_compliant_pressure_source": true,
   "old_finite_coefficient_rows_read": false,
   "positive_swirl_source_not_dropped": true,
@@ -249,9 +250,9 @@
     "lei_ren_part1_paper_compliant_physical_energy_check.py": "01b20779bd10f0fdcede7688137631dd8f03d0e4d4d22cebb73002fdabad437f",
     "lei_ren_part1_paper_compliant_physical_energy_check.json": "93504b2b9b968bc4ea39f711d6cc248b985862af6318f9609367050c4419fae2",
     "lei_ren_part1_paper_compliant_core_physical_field.py": "19acdd5f7a506e7582427f004be8e2cd7ae22771eafc76b66ee44d053b9aec54",
-    "lei_ren_part1_paper_compliant_core_coefficient_rebuild.py": "d9b611de46122f92c385d6ef78ee2dcb47afd20f8599f34dc4d1cdb155fe1e22",
-    "lei_ren_part1_paper_compliant_core_coefficient_rebuild.json": "d18ccdfa9273571a4afda48dd3faf1ba4fd598c497cfeebf44dfa6c74401a87c",
-    "lei_ren_part1_paper_compliant_core_coefficient_rebuild_check.py": "e97f1da5a0e5607855de9329dce571916e6e52a0d61f22a1c394e5be3e26e226",
+    "lei_ren_part1_paper_compliant_core_coefficient_rebuild.py": "d37bfa6fe89b8955e17b38a00e1c8ae53b6725bb5a73c4648067737ce3be990f",
+    "lei_ren_part1_paper_compliant_core_coefficient_rebuild.json": "f4811f93a387913d3e3f2778e1b3f5e44adc3fd7ab5639c9e8fe2e4e858bb372",
+    "lei_ren_part1_paper_compliant_core_coefficient_rebuild_check.py": "0aed6d045d79c53ec73c383f7839b81c4f40e219ba6d7d539f0479b0ce753c45",
     "lei_ren_part1_paper_core_recursion.py": "d63bab2b501f288170e7346fef02bbbb658f49257d480ac0b39d97232bc90ab2"
   }
 }

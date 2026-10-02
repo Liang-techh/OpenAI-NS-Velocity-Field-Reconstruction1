@@ -125,6 +125,12 @@ def run():
                 value_count+=1
         if receipt['full_point_physical_field_evaluation'] or receipt['temporal_recursion']:
             raise ValueError('Fresh radial coefficient reconstruction scope promoted')
+        # Degree4/5 requests precede the six-term mixed Bessel-tail adapter.
+        # They must remain usable with the admitted full analytic norm.
+        for degree in (4,5):
+            low=f.values(f.rebuild('.3',degree=degree,depth=1),'4.1')
+            if any(not all(mp.isfinite(v) for v in endpoints(low[key])) for key in ('Phi','Uz','radial_recovery_Q','P_scaled')):
+                raise ArithmeticError('Low-degree analytic-tail fallback is unusable')
     for name in (NAME,Path(__file__).name,'lei_ren_part1_paper_core_recursion.py'):
         hashes[name]=hashlib.sha256((HERE/name).read_bytes()).hexdigest()
     result=dict(actual_five_defect_family_sha256=receipt['actual_five_defect_family_sha256'],
@@ -132,6 +138,7 @@ def run():
         independent_original_equations=original,independent_infinite_tail_checks=tails,
         fresh_radial_coefficient_enclosures_checked=coefficients,first_axis_radial_coefficients_checked=axis_rows,
         reproducible_profile_value_packets_checked=value_count,
+        low_degree_full_analytic_tail_fallbacks_checked=2,
         same_selected_Cstar_and_compliant_pressure_source=True,old_finite_coefficient_rows_read=False,
         positive_swirl_source_not_dropped=True,infinite_radial_tails_bound=True,
         full_point_physical_field_evaluation=False,temporal_recursion=False,all_passed=True,input_hashes=hashes)
