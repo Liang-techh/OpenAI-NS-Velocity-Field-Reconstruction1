@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `212ad94e96ceb5388a54c799109b67f3ce826b57`.
+The inspected `main` head before this update is `a880610a6ab53371e43991954142b878edf23003`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`42cce21ea424a5a509120c32536d1ef62e13b3a3`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/42cce21ea424a5a509120c32536d1ef62e13b3a3)
+[`67687e6c29a719e05df6e9ccd4b8c60059a0ff8e`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/67687e6c29a719e05df6e9ccd4b8c60059a0ff8e)
 on `codex/st073-transition-next`, observed October 2. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,48 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-02 batch: pulse mixed jets, cylindrical map and internal identities
+
+The [original-flat-shape/mixed report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/67687e6c29a719e05df6e9ccd4b8c60059a0ff8e/docs/ORIGINAL_FLAT_SHAPES_AND_PULSE_MIXED_C4_2026_10_01.md)
+records unchanged sigma/gp/beta derivatives through radial order4, endpoint-
+crossing enclosures and flat support majorants. Source ODEs and physical profile
+product rules then give all15 (y,Z) multiindices with total order<=4 for pulse
+Ur/Uz/Utheta/P. This supersedes missing pulse mixed jets, not post-pulse field
+coverage. Source5aec1119 and exact implicit positive scales are retained; caps
+bound them rather than replace them. No cell Taylor remainder is inferred.
+
+The [physical/interface report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/67687e6c29a719e05df6e9ccd4b8c60059a0ff8e/docs/PHYSICAL_PULSE_DERIVATIVES_AND_FUNCTIONAL_INTERFACES_2026_10_01.md)
+and [physical checker receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/67687e6c29a719e05df6e9ccd4b8c60059a0ff8e/experiments/root_st073/lei_ren_part1_paper_compliant_pulse_physical_bounds_check.json)
+map the profile jets to r/z cylindrical component derivatives using the actual
+implicit lambda(t,z), anisotropic component scales and six whole-Z chart boxes.
+The ledger represents finite positive bounds logarithmically;1080 recorded
+derivative/time-sector bounds are not physical energy or volume L2. Component
+derivatives omit cylindrical basis differentiation and explicitly leave
+full_cartesian_vector_derivatives_certified=false.
+
+The [internal-interface receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/67687e6c29a719e05df6e9ccd4b8c60059a0ff8e/experiments/root_st073/lei_ren_part1_paper_compliant_pulse_interface_certificate.json)
+records32 selected-source functional identities: production two-row inverse,
+fixed row/log normalization, selected energy equation and gap/end coordinate
+changes identify the exact internal histories, including axial derivatives
+through5. Numerical caps or interval overlap are not substituted for function
+equalities. Internal O.4 agreement does not complete independent O3/O5 two-sided
+high-order joining data or quantitative flat velocity/moment comparison.
+
+The new companions still set full_pulse_C4_installed=false,
+full_outer_C4_certified=false, whole_outer_cone_certified=false,
+physical_energy_integral_certified=false and temporal_recursion=false.
+Quantitative interface ledgers, post-pulse mixed derivatives, full physical
+energy, global stress/flat remainder and independent corrected Cartesian NS
+residual remain open. Older raw provider match flags do not revoke the later
+source-bound absolute closure companion; scope and generation stages remain
+separate. These are leading-profile derivatives, not temporal recursion.
+
+Replay flatjets/mixedjets/physicaljets/interfacejets in the compliant driver;
+this documentation review read reports and selected receipt flags/logs only.
+No scientific pipeline was executed and no independent proof audit is claimed.
+Existing main navigation was checked and preserved; only two authorized docs
+are updated with this milestone.
 
 ### 2026-10-02 batch: fifth axial source and pulse radial derivative recovery
 
@@ -1802,6 +1844,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [67687e6c run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36959688728)
+has the original13 failed constrained identifiers/423 passed in its actual log;
+four smoke/slice jobs pass and full historical tests skip. No selected governance
+regression appears. This CI does not certify full pulse/outer C4 or NS acceptance.
 
 The [42cce21e research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36955401837)
 has the original13 failed constrained identifiers/423 passed in its actual log;
