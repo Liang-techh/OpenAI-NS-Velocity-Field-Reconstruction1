@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `1aa15527daa5d9ad13109980ff832bc95b71340d`.
+The inspected `main` head before this update is `b0c689843c365595fa3d345e723f7572fe1134e0`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`c0dfaa759b81e302d95ff3e410a661cc4bd36e37`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/c0dfaa759b81e302d95ff3e410a661cc4bd36e37)
+[`7020332a484c13acdc16dac5ad410f40dea81095`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/7020332a484c13acdc16dac5ad410f40dea81095)
 on `codex/st073-transition-next`, observed October 2. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,60 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-02 batch: bridge joins, actual pre-pulse continuation and source dispatch
+
+The [7020332a bridge report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/7020332a484c13acdc16dac5ad410f40dea81095/docs/BRIDGE_MIXED_C4_2026_10_02.md)
+and [bridge checker](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/7020332a484c13acdc16dac5ad410f40dea81095/experiments/root_st073/lei_ren_part1_paper_compliant_bridge_mixed_C4_check.json)
+record mixed4 on both original smoothing charts and the macro bridge, plus
+local core/bridge and R100 functional joins. Varying comparison fields in
+the smoothing charts retain quotient derivatives and their own moment histories.
+The extra core rho0..3/Z0..6 rectangle uses admitted full analytic model-plus-
+correction norms, including epsilon_core for higher V derivatives, rather than
+promoting old low-order rows. Factored hb/amplitude algebra and exact phase-to-
+logR conversion remain necessary. These are conditional source-function joins,
+not independent interval representatives or a completed Cartesian field.
+
+The [pre-pulse report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/7020332a484c13acdc16dac5ad410f40dea81095/docs/PRE_PULSE_AND_SOURCE_DISPATCH_2026_10_02.md)
+and [pre-pulse checker](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/7020332a484c13acdc16dac5ad410f40dea81095/experiments/root_st073/lei_ren_part1_paper_compliant_pre_pulse_mixed_C4_check.json)
+bind actual implicit-patch Rh terminal identities to all six original
+reference/O2/O3 continuation charts through Rp and the accepted pulse inlet.
+Original P0 and accumulated moments remain; V=0 does not reset axial history.
+The checker marks pre-pulse mixed4, functional joins and Rp/pulse binding true.
+Its full_inner_dispatcher_installed=false is an earlier stage-local gate,
+distinct from the subsequently installed explicit source dispatcher below.
+
+This reviewer read the complete large [dispatcher JSON](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/7020332a484c13acdc16dac5ad410f40dea81095/experiments/root_st073/lei_ren_part1_paper_compliant_source_dispatcher.json)
+directly from the local pinned Git blob, bypassing no access restriction and
+executing no scientific code. It contains33 actual_chart_evaluations, one for
+every registry route from core to heat_exterior, total_finite_derivative_rows=3330,
+all_routes_exercised=true and all_passed=true. These saved finite sample packets
+are observed evidence of the reported route exercise, not an independent replay
+or uniform-domain scientific validation. The producer checks finite endpoints
+at one coordinate per route with Z=.5; no separate dispatcher checker is supplied.
+The bridge/pre-pulse checker and dispatcher input hash bindings were checked
+against exact blob bytes at this commit, as provenance verification only.
+
+The [callable dispatcher](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/7020332a484c13acdc16dac5ad410f40dea81095/experiments/root_st073/lei_ren_part1_paper_compliant_source_dispatcher.py)
+requires evaluate(chart,Z,coordinate), checks accepted source/family dependencies
+and returns original source packets. Coordinates include rho, x, phase, logR
+and selector fractions; normalization differs across packets and fixed-basepoint
+factors must not be differentiated again. Manifest explicitly records automatic
+absolute-radius dispatch=false, common physical units=false, full Cartesian
+derivatives=false, stress=false and temporal_recursion=false. Callable routes
+therefore do not supply arbitrary physical(x,y,z,t) evaluation or a uniform
+physical field. Replay bridgemixed, prepulsemixed and sourcedispatch with accepted
+prerequisites; the latest ordered pipeline records105 modules.
+
+This supersedes the previous pending bridge and Rh-to-pre-pulse source bindings
+and explicit source-dispatch step, while preserving earlier stage receipts.
+Next is common physical assembly with the original similarity map, nonsingular
+axis/core treatment and annular spatial/time transformations. Complete global
+interfaces, physical stress and independent flat remainder, genuine temporal
+recursion and oscillatory NS correction remain unverified. Original unlocalized
+whole-space energy remains infinite and the unchanged finite-energy goal unmet.
+No scientific route change, independent execution or complete proof audit occurs
+in this documentation review.
 
 ### 2026-10-02 batch: factored microswitch mixed4 and complete postpower interval
 
@@ -2202,6 +2256,12 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The exact-head [7020332a run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37005681314)
+finished failure with the original13 constrained failed identifiers/423 passed,
+verified from the actual log. Four smoke/slice jobs passed; full historical
+tests skipped. No new selected failure appeared; neither route exercise nor
+these repository checks certify common physical assembly or full NS acceptance.
 
 The exact-head [c0dfaa75 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37000328752)
 finished failure: the actual log retains the original13 constrained failed
