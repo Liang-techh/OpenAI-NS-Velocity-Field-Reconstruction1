@@ -1,3 +1,19 @@
+# Original prescribed-shear bridge mixed4 / core and R100 joins - 2026-10-02
+
+SAME actual source now supplies BOTH original varying-comparison smoothing charts and the entire following frozen-comparison bridge Ra..100, with physical velocity/pressure/five-primitive mixed4 and source-factored logR bounds. Exact comparison fields and six own moments retain global formal source references, separate from their numerical positive-kernel enclosures. Actual core exit, R100, original P0 and signed bridge integral remain unchanged. Read docs/BRIDGE_MIXED_C4_2026_10_02.md; reproduce --stage bridgemixed (102 ordered modules).
+
+The old core total5 packet lacked the rectangular rho0..3/Z0..6 required by comparison direction axial5. Missing rows now use SAME full Bessel-model/Psi-transfer + correction analytic norms and the general mixed Xh embedding; true V retains epsilon_core. Fresh Psi transfer norm is used instead of the older uncertified linear Psi norm. No upstream source changes, new fitted coefficients, or reset moments. Read-only Luna/max review confirmed this full-norm route and original alpha/chi units.
+
+Local core/bridge, internal y=hb/2hb and R100/first-switch functional mixed4 joins are bound to the same admitted stress-free analytic core, exact comparison/global moment sources, original flat cutoff jets and actual histories/P0. Numerical interval equality is additional evidence, not the join proof. Macro fraction selects coverage; derivatives there are y=logR, not fraction derivatives. hb/amplitude factors remain formal until final physical coefficients; logR conversion cancels width powers before its bound.
+
+Checks PASS:80 requested rectangular analytic extension rows;480 microscopic velocity/pressure +600 primitive bounds and240 macro velocity/pressure +300 primitive bounds;1620 final source-sum/logR rows and12435 source cap inequalities; independent42 Euler/log/core +96 varying-comparison closed-integral direction +192 original alpha/chi/quotient/drive derivatives;63 symbolic source/flatness/embedding/kernel identities. These are source-field enclosures, not reconstructed point coefficients, measured blowup dynamics, or full NS validation.
+
+NOT DONE: complete inner/Rh-to-pre-O3 dispatcher and outer source binding; full physical Cartesian spatial/time assembly; required-domain/terminal energy; admissible divergence-form stress and independently bounded flat remainder; genuine n-dependent recursion and mean/oscillatory correction. Full-inner/full-field/stress/global-energy/temporal gates remainfalse. Original unlocalized whole-space energy remains infinite.
+
+NEXT: combine accepted core -> bridge -> switches -> reshape -> reference/restore -> actual patch charts, restore missing Rh-to-pre-O3 continuation and bind outer source -> complete physical assembly -> energy/stress/flat remainder -> actual recursion/correction.
+
+---
+
 # Original microscopic switch mixed4 / full R2..110 power - 2026-10-02
 
 SAME actual source now supplies BOTH original microscopic switches with physical phase/Z derivatives of total order <=4 and exact formal phase-to-logR bounds. Complete original post-switch power R2..110 has ordinary logR/Z mixed4. Local phase1, R2 and R110 joins follow from original sigma flatness, physical primitive RHSs and exact actual histories/P0. Read docs/MICROSWITCH_MIXED_C4_2026_10_02.md; reproduce --stage switchmixed (100 ordered modules).

@@ -71,6 +71,11 @@ Switchmixed adds original microscopic phase/Z4 derivatives with formal
 hb^-k logR bound ledgers, retaining source factors until final derivatives.
 It supplies complete R2..110 power mixed4 and local phase1/R2/R110 joins;
 the prescribed-shear bridge and core/bridge interfaces remain unfinished.
+Bridgemixed adds the two original varying-comparison smoothing charts and
+the entire following frozen-comparison bridge to R100, with physical mixed4
+and source-factored logR bounds. Same analytic full-norm embeddings supply
+the missing rectangular core orders; original comparison/actual histories
+and core/phase/R100 local joins are bound separately from numerical covers.
 """
 import argparse
 import importlib
@@ -121,6 +126,7 @@ PATCHMIXED=('actual_patch_mixed_C4','actual_patch_mixed_C4_check')
 RESTOREMIXED=('reference_restore_mixed_C4','reference_restore_mixed_C4_check')
 RESHAPEMIXED=('long_reshape_mixed_C4','long_reshape_mixed_C4_check')
 SWITCHMIXED=('microswitch_mixed_C4','microswitch_mixed_C4_check')
+BRIDGEMIXED=('bridge_mixed_C4','bridge_mixed_C4_check')
 
 
 def stages(stage):
@@ -135,7 +141,8 @@ def stages(stage):
             'restoremixed':RESTOREMIXED,
             'reshapemixed':RESHAPEMIXED,
             'switchmixed':SWITCHMIXED,
-            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS+POSTMIXEDJETS+STEEPJETS+HEATJETS+PHYSICALFIELD+COREPHYSICAL+FROZENFIELD+BRIDGEPROFILES+SWITCHPROFILES+RESHAPEPROFILES+RESTOREPROFILES+ACTUALPATCH+PATCHMIXED+RESTOREMIXED+RESHAPEMIXED+SWITCHMIXED}[stage]
+            'bridgemixed':BRIDGEMIXED,
+            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS+POSTMIXEDJETS+STEEPJETS+HEATJETS+PHYSICALFIELD+COREPHYSICAL+FROZENFIELD+BRIDGEPROFILES+SWITCHPROFILES+RESHAPEPROFILES+RESTOREPROFILES+ACTUALPATCH+PATCHMIXED+RESTOREMIXED+RESHAPEMIXED+SWITCHMIXED+BRIDGEMIXED}[stage]
 
 
 def run(stage='all',list_only=False):
@@ -148,7 +155,8 @@ def run(stage='all',list_only=False):
         print('Build compliant stage:',name,flush=True)
         importlib.import_module(PREFIX+name).run()
         completed.append(name)
-    inherited_switchmixed='microswitch_mixed_C4_check' in completed
+    inherited_bridgemixed='bridge_mixed_C4_check' in completed
+    inherited_switchmixed=inherited_bridgemixed or 'microswitch_mixed_C4_check' in completed
     inherited_reshapemixed=inherited_switchmixed or 'long_reshape_mixed_C4_check' in completed
     inherited_restoremixed=inherited_reshapemixed or 'reference_restore_mixed_C4_check' in completed
     inherited_patchmixed=inherited_restoremixed or 'actual_patch_mixed_C4_check' in completed
@@ -255,10 +263,13 @@ def run(stage='all',list_only=False):
         actual_patch_all_mixed_derivatives_total_order_le4_available=inherited_patchmixed,
         patch_Rm_and_Rh_functional_profile_joins_certified=inherited_patchmixed,
         original_patch_beta_support_flat_joins_certified=inherited_patchmixed,
-        actual_bridge_radial_mixed4_certified=False,
-        bridge_100_110_switches_installed=False,
-        actual_smooth_comparison_installed=False,
-        actual_prescribed_shear_bridge_installed=False,
+        actual_bridge_radial_mixed4_certified=inherited_bridgemixed,
+        actual_bridge_radial_mixed4_scope='Original two microscopic phase/Z charts with factored logR ledgers and complete frozen-comparison macro logR/Z4; fixed parameters; Cartesian/time/global stress excluded',
+        core_bridge_and_R100_local_functional_mixed4_joins_certified=inherited_bridgemixed,
+        original_comparison_rectangular_core_radial3_axial6_available=inherited_bridgemixed,
+        bridge_100_110_switches_installed=inherited_bridgemixed,
+        actual_smooth_comparison_installed=inherited_bridgemixed,
+        actual_prescribed_shear_bridge_installed=inherited_bridgemixed,
         original_unlocalized_whole_space_kinetic_energy_is_infinite=True if inherited_energy else None,
         full_cartesian_vector_derivatives_certified=False,
         core_axis_interfaces_certified=False,
@@ -268,14 +279,14 @@ def run(stage='all',list_only=False):
         full_pulse_C4_scope='Leading O4 and two local external interfaces, spatial/profile mixed total<=4 at fixed positive tau; whole outer/core/axis and time derivatives excluded',
         full_outer_C4_certified=False,
         temporal_recursion=False,
-        next_dependency='Actual microscopic switches and full R2..110 power -> prescribed-shear bridge mixed4 and core/bridge/switch joins -> inner/pre-O3 and whole physical assembly; energy/stress/flat remainder -> actual recursion/correction')
+        next_dependency='Accepted core/bridge/switch/reshape/reference/restore/patch source charts -> complete inner and Rh-to-pre-O3 continuation/outer source binding -> full physical assembly; required-domain energy/stress/flat remainder -> actual recursion/correction')
     print(json.dumps(result,indent=2),flush=True)
     return result
 
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','postmixedjets','steepjets','heatjets','physicalfield','corephysical','frozenfield','bridgeprofiles','switchprofiles','reshapeprofiles','restoreprofiles','actualpatch','patchmixed','restoremixed','reshapemixed','switchmixed','all'),default='all')
+    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','postmixedjets','steepjets','heatjets','physicalfield','corephysical','frozenfield','bridgeprofiles','switchprofiles','reshapeprofiles','restoreprofiles','actualpatch','patchmixed','restoremixed','reshapemixed','switchmixed','bridgemixed','all'),default='all')
     parser.add_argument('--list',action='store_true',help='Print the ordered modules without running them')
     args=parser.parse_args()
     run(args.stage,args.list)

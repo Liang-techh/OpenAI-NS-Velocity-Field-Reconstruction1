@@ -1,3 +1,30 @@
+# Next execution: complete inner dispatch and Rh-to-pre-O3 connection - 2026-10-02
+
+Read docs/BRIDGE_MIXED_C4_2026_10_02.md and the current checkpoint. Reproduce --stage bridgemixed (102 ordered modules). This header supersedes open bridge mixed4/core/R100 items below. SAME family/source, original P0 and actual histories; exact function references remain separate from numerical enclosures. Do not treat source-bound interval providers as newly reconstructed point coefficients or measured NS dynamics.
+
+- [x] Cover original y/hb in[0,1], [1,2] and the complete following y in[2hb,log(100/Ra)]. Preserve varying comparison in the first two charts and freeze it only after2hb.
+- [x] Supply SAME admitted core rho0..3/Z0..6 rectangle, reusing total5 and proving missing full-norm analytic rows with epsilon_core in V. Bind fresh compliant Psi model norm, Bessel norm, tube and actual core sources.
+- [x] Recover original alpha comparison logPhi/V jets and its six own moment ODE jets. Keep exact global field/integral history graph separately from positive-kernel numeric covers.
+- [x] Recover actual chi*Dbar angular control and chi*actual/comparison quotient axial drive with full denominator/cutoff/radius derivatives and all hydro/Pstar^2-pressure/F0^2-swirl scales.
+- [x] Recover physical Ur, pressure and all five primitive mixed4 rows with true prefactors, original P0, raw V and Pstar^-2. Keep width/amplitude factors until final rows and cancel hb powers before logR bounds.
+- [x] Bind local core/bridge, y=hb/2hb and R100/switch functional joins to admitted exact source equations/flatness/shared histories. Verify independent varying-comparison fixtures and current hashes; keep full-field/stress/temporal gatesfalse.
+- [ ] Claim complete source dispatcher responsibility. Inspect existing core/bridge/switch/reshape/reference/restore/patch and outer provider APIs; preserve their original sources, derivative coordinates and current fixed-basepoint normalizations.
+- [ ] Specify the original radius topology in logs, including Ra, Raexp(hb), Raexp(2hb),100,100exp(hb),100exp(2hb),110,Rsh,Rz,eRz,Rm,Rh and outer pre-O3 radii/supports. Do not sort rounded numeric radii or materialize enormous source radii.
+- [ ] Determine from original construction how Rh connects to pre-O3/outer reference. Read the actual outer initial/reference/pressure providers and paper definitions before extending. Preserve exact source/reference profiles, all moments and original P0; no midpoint reset or after-the-fact pressure tail.
+- [ ] Implement the missing Rh-to-pre-O3 field and primitive transport with mixed4 enclosures. Start from actual five-bump terminal identities, retain current formal amplitude/radius factors and prove the outer initial history match functionally.
+- [ ] Implement an inner/global chart selector accepting explicit source chart coordinates and physical/similarity points when representable. Expose coordinate units, source log-radius, exact formal field refs, normalization and bound scope. Do not differentiate coverage fractions as physical coordinates.
+- [ ] Merge one-sided support/interface providers at actual source boundaries. Include core axis regularity, original zero-bump neighborhoods and original flat cutoff jets. Keep interval overlap as diagnostic; use same source identities for functional joins.
+- [ ] Map all remaining annular profile mixed4 and fixed-position first physical-time derivatives to Cartesian vector components, differentiating the moving cylindrical basis. Use accepted nonsingular core map at the axis.
+- [ ] Supply full-field primitive pressure and structural divergence identities across every dispatcher layer. Independently check physical component samples where parameters are representable; clearly distinguish formal-source bound rows from numeric point evaluations.
+- [ ] Restore actual construction-domain and terminal-time energy with physical volume, complete radial tail and axial domain weights. Declare domains explicitly; original unlocalized whole-space Gamma field has infinite energy.
+- [ ] Construct background admissible divergence-form stress and independently bounded flat remainder. Report regional cone margins and separate max/volume-L2/scale dependence, without forcing the leading residual itself below1e-3.
+- [ ] After leading matching/stress conditions, implement genuine n-dependent recovery (n=1 and n>=2), common inner interval, independent moment repair, finite-order remainder and smooth summation. Coordinate scaling or radial Taylor ODEs are not this recursion.
+- [ ] Add mean and two-family oscillatory correction, realizable averaged quadratic stress cancellation, and full forced Cartesian residual checks with independent operators/quadrature; report the complete1e-3 max/L2 target only at that stage.
+
+For each completion record actual scope, callable artifact, reproduction command and accepted receipt/commit. Preserve unrelated experiments. DONE, accepted and merged remain distinct. Keep full-field/stress/global-energy/temporal gatesfalse until complete evidence exists.
+
+---
+
 # Next execution: prescribed-shear bridge mixed4 and core/R100 joins - 2026-10-02
 
 Read docs/MICROSWITCH_MIXED_C4_2026_10_02.md and the current checkpoint header. Reproduce --stage switchmixed (100 ordered modules). This header supersedes open microscopic-switch and full R2..110 items below. All providers retain SAME actual source, original P0 and positive formal parameters; enclosures do not reconstruct point coefficients or complete the NS field.
