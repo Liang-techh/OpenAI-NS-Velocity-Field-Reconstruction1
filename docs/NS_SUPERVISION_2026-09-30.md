@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `a880610a6ab53371e43991954142b878edf23003`.
+The inspected `main` head before this update is `1779a327c769123231d0791106aeba11230a821c`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`67687e6c29a719e05df6e9ccd4b8c60059a0ff8e`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/67687e6c29a719e05df6e9ccd4b8c60059a0ff8e)
+[`eff37bb41d3df904ab2d8a05f4f7a1204f6ac00d`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/eff37bb41d3df904ab2d8a05f4f7a1204f6ac00d)
 on `codex/st073-transition-next`, observed October 2. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,44 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-02 batch: local pulse spatial C4 and flatten/power/angular propagation
+
+The [flat-comparison/two-sided join report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/eff37bb41d3df904ab2d8a05f4f7a1204f6ac00d/docs/PULSE_FLAT_COMPARISONS_AND_TWO_SIDED_C4_JOINS_2026_10_01.md)
+records quantitative endpoint differences against the zero-local-input field
+with the same nonzero histories, an independent O3 inlet and the entire
+100-unit O5 flatten. The [later flatten checker](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/eff37bb41d3df904ab2d8a05f4f7a1204f6ac00d/experiments/root_st073/lei_ren_part1_paper_compliant_flatten_mixed_C4_check.json)
+sets full_pulse_C4_installed=true and both two-sided O3/O5 joins=true. Older
+producer/checker false flags remain historical generation-stage evidence;
+only this later source-bound checker supplies local pulse acceptance.
+Its scope is the fixed .001delta leading O4 pulse and local spatial interfaces,
+total(y,Z) order<=4 and admitted cylindrical r/z component map, at each fixed
+positive tau. It does not establish time derivatives, uniform tau->0 bounds,
+core/axis/global C4, Cartesian vector derivatives or a stress flat remainder.
+
+The [postflatten report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/eff37bb41d3df904ab2d8a05f4f7a1204f6ac00d/docs/POSTFLATTEN_POWER_AND_ANGULAR_MIXED_C4_2026_10_02.md)
+and [power/angular checker](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/eff37bb41d3df904ab2d8a05f4f7a1204f6ac00d/experiments/root_st073/lei_ren_part1_paper_compliant_power_angular_C4_check.json)
+extend all required mixed derivatives across the complete following power and
+both angular supports, preserving axial C5 inputs and exact inherited primitives.
+Correlated q-squared cancellation occurs before interval enclosure; direct
+remaining-energy formulas retain positivity without clipping/reset. Source
+identities separately prove flatten/power and power/angular joins; numerical
+overlap is only diagnostic. The checker marks those joins true but
+angular_steep_join_certified=false and full_outer_C4_certified=false.
+
+Reported normalized remaining swirl-energy lower bounds >2.498 (power) and
+>.498 (angular) are not full physical kinetic energy. Pressure remains P0+Mp,
+with original formal positive scales and signed bump corrections. Full
+steep/waiting/collar/Gamma derivative propagation, angular-to-steep joining,
+whole-outer C4/cone, full Cartesian vector derivatives, physical energy,
+admissible stress/flat remainder, actual temporal recursion and corrected NS
+residual remain open. The pulse endpoint flat limit is not an independent
+stress/remainder certificate.
+
+Replay flatcomparison/externaljets/postmixedjets in the compliant driver.
+This reviewer read reports, selected raw acceptance flags and CI logs only;
+no unknown scientific code was executed and no independent proof audit or
+numerical replay is claimed. Main structure and historical receipts are preserved.
 
 ### 2026-10-02 batch: pulse mixed jets, cylindrical map and internal identities
 
@@ -1844,6 +1882,12 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [eff37bb4 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36965152720)
+retains the original13 constrained failed identifiers/423 passed in its actual
+log; four smoke/slice jobs pass and full historical tests skip. No selected
+governance regression appears. Green local checker receipts do not promote
+whole-field C4, energy, stress or NS dynamics acceptance.
 
 The [67687e6c run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36959688728)
 has the original13 failed constrained identifiers/423 passed in its actual log;
