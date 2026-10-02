@@ -1,3 +1,25 @@
+# Next execution: ACTUAL Rsh continuation, axial restore and actual five defects - 2026-10-02
+
+Read docs/LONG_RESHAPE_PROFILES_2026_10_02.md. Reproduce --stage reshapeprofiles;88 modules in complete pipeline. SAME admitted source/core/Cstar/Abar/T/hb/P0. Completions below have AXIAL ENCLOSURE scope; radial/phase mixed4 and point coefficient reconstruction remain separate.
+
+- [x] Connect actualR110 inlet to original log interpolation with T=400*Abar, actualB axial5 and exact constantV110; source C2 intersection only, no higher theorem promotion.
+- [x] Continue all ACTUAL moment histories through the ENTIRE shape phase[0,1] with full backward kernels and nonzero inherited decay terms. Preserve original P0; recoverUr axial4.
+- [x] Combine inherited Taylor coefficients with decay Bell factors BEFORE source-log capping. Keep huge radii/Cstar/physical swirl formal and exact; no kernel truncation.
+- [x] Directly bind B_C2_upper=2Abar, sigma derivative8, source shear and q-derived positive kernel rates. Independently check bothB signs, all axial orders through5, inherited histories and physical primitive normalization.
+- [x] Supply actualRsh log velocity/moment/kernel axial5 exit to the next continuation. Angular reference endpoint identity is proved; full high-radial join certification remainsopen.
+- [ ] Implement original reference continuation from ACTUAL Rsh toRz=e^-8 Rref. Angular log=logPstar+offset/10-log(1+Z^2); axialV=actualV110. Use formal delta=10(logCstar+logPstar)-T+offset factored before enclosure; retain offsets exactly and never subtract huge rounded absolute logR values.
+- [ ] Transport all actualRsh histories under the a=4/5 power branch with exact positive exponent kernels. Preserve amplitude derivative jets and pressure datum; do not reset to reference moments at velocity agreement.
+- [ ] Implement original axial restoration onRz..eRz: V=V110+(4Z-V110)*sigma(t), t=log(R/Rz). Use original flat cutoff and actual mismatch through5; carry all actual moments, including mixed angular-axial and axial quadratic integrals.
+- [ ] Continue restored V=4Z and reference swirl toRh=e^-5 Rref, recording prepatch data at Rm=e^-6 Rref. Keep all inherited moment defects and original pressure nonzero.
+- [ ] Build the actual five defect functions from these histories. Normalize each exactly as(4.42); bind actual source hashes, pressure and inlet. Test functional derivatives as Z functions and distinguish interval bounds from point fits.
+- [ ] Connect the existing five-moment repair to these ACTUAL defect/inlet functions only after direct agreement. Enforce all five terminal identities and preserve the relaxed cone throughout Rm..2Rm.
+- [ ] Restore bridge/switch/reshape/continuation radial-phase mixed4 and all two-sided core/annular joins with formal inverse-hb scales and original flat tails. Interval overlap is not a functional high-order join proof.
+- [ ] Complete inner/pre-O3/whole Cartesian field, local and terminal-time energy, admissible stress lift and independent flat remainder, genuine n-dependent recursion and oscillatory correction.
+
+For every completion list exact scope, artifact, reproduction command and accepted receipt/commit. Keep global-field/cone/energy/temporal gatesfalse until their full scopes are actually built. Original unlocalized whole-space energy is infinite; preserve source/domain distinction and unrelated experiments.
+
+---
+
 # Next execution: actual110 inlet to long reshape and inner assembly - 2026-10-02
 
 Read docs/INNER_SWITCH_PROFILES_2026_10_02.md; reproduce --stage switchprofiles (86 modules in complete pipeline). SAME admitted core/Cstar/K/hb/P0 and actual bridge only. Completed items below are AXIAL ENCLOSURES, not point coefficient reconstruction or full mixed annular matching.

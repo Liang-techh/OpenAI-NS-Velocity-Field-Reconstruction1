@@ -1,3 +1,19 @@
+# ACTUAL R110 long reshape and all inherited moments - 2026-10-02
+
+SAME source: the actual110 inlet now drives the ORIGINAL long angular reshape (4.38)/(9.30), retaining selected A_upper and T=400*Abar. Callable logUtheta/normalized true velocity derivatives, original P0 and all actual cumulative moment histories have axial5 enclosures; recoveredUr has axial4. Entire phase[0,1] and actualRsh exit are covered. These remain enclosures of original integrations, NOT recomputed point coefficients or full mixed spatial assembly.
+
+All five histories continue from R110 with current-amplitude-normalized FULL backward kernels. No kernel cutoff or infinite-y approximation defines the field. Positive full exponential moments bound derivatives through5; both signs ofB are allowed. Inherited moment coefficients convolve with decay Bell factors BEFORE source-log capping. Source Rsh=110exp(T), Cstar and tiny amplitudes stay formal; caps never replace their values. Actual Uz remains exactly V110 throughout shaping.
+
+Direct same-source bindings retain B_C2_upper=2Abar, original sigma derivative8 and selected shear[.7,.9]; q=partial_y logu and the three kernel rate ranges are recomputed from those operands. At Rsh the angular log matches the reference by the exact Rref=110(Cstar*Pstar)^10 identity. Full high-radial interfaces and reference moments are NOT declared complete.
+
+Checks PASS:426 source exponential-cap inequalities,385 profile/log bounds,1254 normalized moment/kernel bounds. Independent fixtures pass144 full-kernel axial derivatives,144 nonzero-history decay derivatives and96 normalized amplitude derivatives;7 physical primitive/reference identities. Exact R110 histories/P0 and selected A/T retained. Finite fixtures do not admit the actual source. Read-only Luna/max review verified formulas and requested the direct theorem bindings now included. Reproduce --stage reshapeprofiles;88 ordered modules. Read docs/LONG_RESHAPE_PROFILES_2026_10_02.md.
+
+NOT DONE: actualRsh reference continuation toRz, axial restoration to4Z, actual five-defect/patch connection, bridge/switch/reshape radial-phase mixed4, full core/annular joins and precedingO3/full physical assembly. Energy/terminal domains, admissible stress lift/independent flat remainder, actual n-dependent recursion and oscillatory correction remain open. Original global unlocalized energy is infinite; full-field/cone/energy/temporal gates remainfalse.
+
+NEXT: actualRsh -> reference continuation -> axial restoration -> actual five defects/repair -> inner/full physical assembly -> energy/stress/flat remainder -> actual recursion/correction.
+
+---
+
 # Original 100..110 switches and ACTUAL R110 inlet - 2026-10-02
 
 SAME source: the original (4.37)/(9.30) two short switches now provide callable actual velocity/moment/pressure axial5 enclosures and mean-recovered Ur axial4. R100 inherits the accepted ACTUAL bridge and original P0; comparison moments are never substituted. Exact positive hb and R2=100exp(2hb) remain formal. All h-squared pressure/gradient products are factored in source logs BEFORE enclosure.
