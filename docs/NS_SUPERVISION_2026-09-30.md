@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `5ef5b9a81ceca017e78817fc3f628bbfd7af97df`.
+The inspected `main` head before this update is `9b9ee2b95ee77102a00942f7a0c1e22e97a5baa6`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`a2d9ae80776626b982c36d0eee4fe3b7e92a9fbb`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/a2d9ae80776626b982c36d0eee4fe3b7e92a9fbb)
+[`d1e64d8dee8284c04eb09099bd44ec02921baef4`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d1e64d8dee8284c04eb09099bd44ec02921baef4)
 on `codex/st073-transition-next`, observed October 2. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,52 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-02 batch: rooted vector, compatible pressure and physical vorticity
+
+The [d1e64d8d report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/d1e64d8dee8284c04eb09099bd44ec02921baef4/docs/ROOTED_CORE_FIELD_2026_10_02.md)
+and [checker receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/d1e64d8dee8284c04eb09099bd44ec02921baef4/experiments/root_st073/lei_ren_part1_paper_compliant_rooted_core_field_check.json)
+record ur/utheta/uz, compatible pressure and cylindrical/Cartesian physical
+vorticity on rho in[0,4.1], xi in[-4,4], Z=a+sigma/sqrt(Lambda)*xi.
+The shared exact H(a)=0 is retained before degree24/depth3 rebuilding;
+normalized Psi is recovered before adding affine4Z+j. Same-coefficient radial
+averages and nonlinear analytic tails remain. Root Bessel-tail valuation removes
+only the specified high-degree model rows, not the nonlinear correction.
+
+Same Mz primitive identities give structural divergence; the saved normalized
+raw interval width approximately2.64e-201 is a finite packet diagnostic, not
+full momentum residual or a global-time bound. Curl cancels the microscopic
+width symbolically and includes the2+delta prefactor. Transverse velocity and
+vorticity vanish structurally at the axis; axial vorticity has its finite source
+limit. Pressure remains original P0 plus positive integral of Phi^2, with
+dR=epsilon*drho retained. Base/increment and positive amplitude logs stay
+separate; no post hoc pressure fit or numerical zero swirl is introduced.
+
+The large [producer receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/d1e64d8dee8284c04eb09099bd44ec02921baef4/experiments/root_st073/lei_ren_part1_paper_compliant_rooted_core_field.json)
+was read from its85,066-line local Git blob. Key source/family identifiers,
+packet/axis markers, availability/open gates and dependency bindings were
+inspected; this is not a line-by-line audit. The checker reports18 source
+packets at xi=-1,0,1, rho=0,2,4.1 and logtau=-1,-10, including six axis
+packets and90 coefficientwise moment-jet checks. Its241 SHA256 bindings,
+including the producer receipt, match exact pinned blob bytes.
+
+The separate synthetic kinematic Cartesian finite-difference fixture uses
+three points/three resolutions and non-paper profiles/parameters. Its curl
+errors around1e-18 and divergence errors around1e-37 test operator formulas,
+not the actual source momentum equation. Neither those fixture errors nor
+the actual interval divergence width is an NS residual. Receipt all_passed
+is source/algorithm evidence reviewed without independent scientific execution
+or complete proof audit. Replay compliant driver stage rootedfield with
+accepted prerequisites; the pipeline records115 modules.
+
+This supersedes the pending local rooted vector/pressure/vorticity step, not
+the full-field/value or morphology goals. Full Phi-weighted swirl maximum,
+radial/axial morphology, time exponents and particle winding remain unmeasured.
+Signed annular histories, implicit patch values and automatic physical-point
+selection remain open. Energy/support, admissible stress, independent flat
+remainder, genuine coefficient recursion and full NS acceptance remain unmet;
+original unlocalized whole-space energy is still infinite. No scientific
+scheme change or reduced finite-energy goal is adopted here.
 
 ### 2026-10-02 batch: root-centered normalized F0 peak, not full vortex morphology
 
@@ -2345,6 +2391,12 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The exact-head [d1e64d8d run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37035251695)
+finished failure: its actual log has13 failed/423 passed with the same original
+constrained identifiers. Four smoke/slice jobs pass; full historical tests
+skip. No new selected failure appears. Synthetic operator validation and
+source packet receipts are distinct from CI and full scientific acceptance.
 
 The exact-head [a2d9ae80 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37016522026)
 was freshly inspected rather than inheriting its predecessor's count: actual
