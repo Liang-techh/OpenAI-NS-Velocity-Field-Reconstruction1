@@ -1,3 +1,25 @@
+# Next execution: connect ACTUAL five defects to original implicit repair - 2026-10-02
+
+Read docs/REFERENCE_RESTORE_PROFILES_2026_10_02.md; reproduce --stage restoreprofiles (90 modules in complete pipeline). SAME actual source/core/Cstar/Abar/T/hb/P0. All completions below have AXIAL ENCLOSURE scope; higher radial matching and point coefficients remain separate. This header supersedes older reference/restore items below without erasing history.
+
+- [x] Continue ACTUAL Rsh histories through original reference swirl to Rz using exact formal log length and offsets. Retain actual V110, amplitude jets and original analytic P0.
+- [x] Center reference baselines before numerical enclosure. Preserve all nonzero incoming histories and negative contributions; bind E=j+epsilon*Psi plus six admitted drives and actual C2 theorem operands.
+- [x] Restore V with original sigma over Rz..eRz; integrate complete linear and quadratic kernels and uncertain endpoint segments. Bind the same cutoff before using admitted endpoint refinement.
+- [x] Continue unpatched V=4Z and reference swirl through Rm/Rh, preserving actual moment and pressure defects. Provide actual normalized five defect functions through axial5 using original(4.42) scales, including the fourth-row swirl correction.
+- [x] Independently compare complete physical primitive integrations and normalized source identities. Check exact Rsh/Rz inlet/P0 and restored4Z; retain source hashes and distinguish finite fixtures from actual-source admission.
+- [ ] Bind actual E and early/swirl/pressure tails from reference_restore_profiles to the existing correlated C1 five_defect_admission. Compare exact source definitions, kernels and negative incoming terms; independent interval overlap alone is insufficient. Do not claim the Banach bound for every arbitrary function in expanded Taylor boxes.
+- [ ] Add a new actual patch provider that supplies these actual defects to the existing implicit inverse. Preserve the accepted anisotropic axial/angular coefficient scales, bump centers/support, normalization and selected source datum. Do not use midpoint defects or discard tails.
+- [ ] Recover repair coefficient axial jets through5 by differentiating the actual n=0 implicit five-row nonlinear map. Carry the shared inverse/Jacobian and nonlinear higher-order terms; do not independently solve unrelated coefficient samples.
+- [ ] Continue all actual Rm inlet moments through the patch Rm..2Rm and unchanged reference branch to Rh. Supply original pressure, Ur recovered from mean, positive swirl and actual higher jets. Preserve both sides of every bump support using original flat cutoffs.
+- [ ] Prove all five terminal reference identities as functions of Z. Report exact mathematical identities plus interval enclosures, not only sampled residuals. Bind the resulting outer inlet to the same accepted source.
+- [ ] Establish the relaxed admissible cone throughout the patch using actual coefficients, partial moments and source stress directions. Distinguish this local cone from a complete divergence-form stress lift and flat remainder.
+- [ ] Restore bridge/switch/reshape/reference/patch phase-radial mixed4 and all two-sided core/annular joins with formal inverse-hb scales. Interval overlap is not a functional high-order join proof.
+- [ ] Complete inner/pre-O3/whole Cartesian dispatcher and local/terminal energy domains; construct admissible stress lift and independently bounded flat remainder; then actual n-dependent recursion and oscillatory correction.
+
+For each completion list exact scope, callable artifact, reproduction command and accepted receipt/commit. Keep global-field/cone/energy/temporal gatesfalse until their full scopes are actually constructed. Preserve the original source and unrelated experiments; unlocalized whole-space kinetic energy is infinite.
+
+---
+
 # Next execution: ACTUAL Rsh continuation, axial restore and actual five defects - 2026-10-02
 
 Read docs/LONG_RESHAPE_PROFILES_2026_10_02.md. Reproduce --stage reshapeprofiles;88 modules in complete pipeline. SAME admitted source/core/Cstar/Abar/T/hb/P0. Completions below have AXIAL ENCLOSURE scope; radial/phase mixed4 and point coefficient reconstruction remain separate.

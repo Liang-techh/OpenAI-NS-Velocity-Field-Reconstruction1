@@ -46,8 +46,11 @@ ACTUAL R100 bridge history, transports the exact following a=4/5 power
 moments, and supplies actual R110 axial5 velocity/moment/pressure and log
 shape enclosures. Reshapeprofiles connects this actual inlet to the original
 T=400*Abar long reshape, with log-velocity axial5, full positive moment-kernel
-axial5 and recovered Ur axial4 enclosures. Reference/axial continuation,
-actual moment patch and full radial/phase mixed4 remain unfinished.
+axial5 and recovered Ur axial4 enclosures.
+Restoreprofiles continues actual Rsh histories through the reference branch,
+original axial restoration to4Z and unpatched Rm/Rh, supplying centered
+actual normalized five-defect axial5 functions. Actual moment patch and
+full radial/phase mixed4 remain unfinished.
 """
 import argparse
 import importlib
@@ -92,6 +95,7 @@ FROZENFIELD=('frozen_comparison_field','frozen_comparison_field_check')
 BRIDGEPROFILES=('inner_bridge_profiles','inner_bridge_profiles_check')
 SWITCHPROFILES=('inner_switch_profiles','inner_switch_profiles_check')
 RESHAPEPROFILES=('long_reshape_profiles','long_reshape_profiles_check')
+RESTOREPROFILES=('reference_restore_profiles','reference_restore_profiles_check')
 
 
 def stages(stage):
@@ -100,7 +104,8 @@ def stages(stage):
             'bridgeprofiles':BRIDGEPROFILES,
             'switchprofiles':SWITCHPROFILES,
             'reshapeprofiles':RESHAPEPROFILES,
-            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS+POSTMIXEDJETS+STEEPJETS+HEATJETS+PHYSICALFIELD+COREPHYSICAL+FROZENFIELD+BRIDGEPROFILES+SWITCHPROFILES+RESHAPEPROFILES}[stage]
+            'restoreprofiles':RESTOREPROFILES,
+            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS+POSTMIXEDJETS+STEEPJETS+HEATJETS+PHYSICALFIELD+COREPHYSICAL+FROZENFIELD+BRIDGEPROFILES+SWITCHPROFILES+RESHAPEPROFILES+RESTOREPROFILES}[stage]
 
 
 def run(stage='all',list_only=False):
@@ -113,7 +118,8 @@ def run(stage='all',list_only=False):
         print('Build compliant stage:',name,flush=True)
         importlib.import_module(PREFIX+name).run()
         completed.append(name)
-    inherited_reshape='long_reshape_profiles_check' in completed
+    inherited_restore='reference_restore_profiles_check' in completed
+    inherited_reshape=inherited_restore or 'long_reshape_profiles_check' in completed
     inherited_switch=inherited_reshape or 'inner_switch_profiles_check' in completed
     inherited_bridge=inherited_switch or 'inner_bridge_profiles_check' in completed
     inherited_frozen=inherited_bridge or 'frozen_comparison_field_check' in completed
@@ -189,6 +195,12 @@ def run(stage='all',list_only=False):
         actual_Rsh_exit_axial5_available=inherited_reshape,
         long_reshape_with_this_inlet_axial5_enclosures_available=inherited_reshape,
         reshape_radial_mixed4_certified=False,
+        actual_reference_continuation_axial5_enclosures_available=inherited_restore,
+        actual_axial_restoration_axial5_enclosures_available=inherited_restore,
+        actual_unpatched_Rm_Rh_moment_axial5_enclosures_available=inherited_restore,
+        actual_five_defect_profile_axial5_enclosures_available=inherited_restore,
+        actual_reference_restore_radial_recovery_axial4_available=inherited_restore,
+        reference_restore_radial_mixed4_certified=False,
         reference_continuation_installed=False,
         actual_five_moment_patch_connected=False,
         actual_bridge_radial_mixed4_certified=False,
@@ -204,14 +216,14 @@ def run(stage='all',list_only=False):
         full_pulse_C4_scope='Leading O4 and two local external interfaces, spatial/profile mixed total<=4 at fixed positive tau; whole outer/core/axis and time derivatives excluded',
         full_outer_C4_certified=False,
         temporal_recursion=False,
-        next_dependency='Actual Rsh exit -> reference continuation/axial restoration/actual five-moment patch; bridge/switch/reshape phase-radial mixed4 and core joins -> whole physical assembly; energy/stress/flat remainder -> actual recursion/correction')
+        next_dependency='Actual reference/restore five defects -> connect original five-moment patch; bridge/switch/reshape/reference phase-radial mixed4 and core joins -> whole physical assembly; energy/stress/flat remainder -> actual recursion/correction')
     print(json.dumps(result,indent=2),flush=True)
     return result
 
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','postmixedjets','steepjets','heatjets','physicalfield','corephysical','frozenfield','bridgeprofiles','switchprofiles','reshapeprofiles','all'),default='all')
+    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','postmixedjets','steepjets','heatjets','physicalfield','corephysical','frozenfield','bridgeprofiles','switchprofiles','reshapeprofiles','restoreprofiles','all'),default='all')
     parser.add_argument('--list',action='store_true',help='Print the ordered modules without running them')
     args=parser.parse_args()
     run(args.stage,args.list)

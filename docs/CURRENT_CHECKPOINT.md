@@ -1,3 +1,17 @@
+# ACTUAL reference continuation / axial restore / five defects - 2026-10-02
+
+SAME source: actual Rsh histories now continue through the original reference branch to Rz=e^-8*Rref, original axial restore to exact4Z, and the unpatched branch at Rm=e^-6*Rref and Rh=e^-5*Rref. Velocity/P0/all five moments and actual normalized defect functions have axial5 enclosures; recoveredUr has axial4. Exact offsets and actual incoming histories are retained. This is an enclosure provider, NOT point coefficient reconstruction or a connected five-bump repair.
+
+Reference baselines cancel algebraically BEFORE interval enclosure. E=V110-4Z comes from j+epsilon*Psi plus six admitted drive caps, with SAME-source C2 refinement only through2. Centered mean/mixed/axial-square equations preserve negative inherited terms. The fourth physical defect retains its separate swirl term. Source-dependent positive history caps include Pstar^-2 and are applied only after source-log product proofs. Original P0 remains unchanged; restoration endpoint integrals refine the SAME cutoff function.
+
+Checks PASS:333 actual source cap inequalities,350 profile bounds,1080 centered moment bounds,30 actual normalized defect derivative bounds;18 independently integrated restoration kernels and108 physical primitive derivatives;16 exact primitive/normalization/radial-constant identities. Exact Rsh/Rz inlet/P0 and final4Z are retained. Direct core/bridge/switch/Rsh velocity chain, six caps and original cutoff identity are checked. Read-only Luna/max audit found no material formula error. Reproduce --stage restoreprofiles;90 ordered modules. Read docs/REFERENCE_RESTORE_PROFILES_2026_10_02.md.
+
+NOT DONE: actual five-moment patch connection/higher coefficient jets; bridge/switch/reshape/reference radial-phase mixed4 and full high-order interfaces; inner/pre-O3/full Cartesian assembly, terminal-energy domains, admissible stress lift/independent flat remainder, genuine n-dependent recursion and oscillatory correction. Original global unlocalized energy remains infinite. Full-field/cone/energy/temporal gates remainfalse.
+
+NEXT: bind actual defects to original implicit five-bump repair -> repair coefficient derivatives / actual patch histories and terminal identities -> full spatial assembly -> energy/stress/flat remainder -> actual recursion/correction.
+
+---
+
 # ACTUAL R110 long reshape and all inherited moments - 2026-10-02
 
 SAME source: the actual110 inlet now drives the ORIGINAL long angular reshape (4.38)/(9.30), retaining selected A_upper and T=400*Abar. Callable logUtheta/normalized true velocity derivatives, original P0 and all actual cumulative moment histories have axial5 enclosures; recoveredUr has axial4. Entire phase[0,1] and actualRsh exit are covered. These remain enclosures of original integrations, NOT recomputed point coefficients or full mixed spatial assembly.
