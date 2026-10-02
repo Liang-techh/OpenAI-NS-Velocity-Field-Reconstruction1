@@ -2,7 +2,7 @@
 
 Read docs/FIRST_MICRO_SWITCH_LEADING_2026_10_02.md and docs/MACRO_SIGNED_INTEGRALS_2026_10_02.md. Stage firstswitchleading; 122 ordered modules. The full leading h_b bridge coefficient R_a->100 is checked, and the first R=100 micro chart now has its leading h_b^2 signed F/V correction at Z=0, .5 and the shared root. The exact pulse integral is 1/2, pressure/swirl scales remain factored, and the independent checker passes. This covers only R=100*exp(hb*s), 0<=s<=1; second micro chart, power segment to110, higher terms and full bridge remain unresolved.
 
-NEXT: propagate finite-width moments/field feedback and h_b^2 terms through both inner charts and macro, then complete second switch/power joins and controlled remainders. The scale-recursion equation scan is underway. Genuine n-dependent recursion, stress correction and full target remain active.
+NEXT: propagate finite-width moments/field feedback and h_b^2 terms through both inner charts and macro, then complete second switch/power joins and controlled remainders. The exact Lei–Ren n-dependent equations and gates are recorded in docs/LEI_REN_COEFFICIENT_RECURSION_GATE_2026_10_02.md. The v2 positive-order solve remains gated by common-interval leading data and the complete leading stress/flat-remainder requirements; no n=1 coefficient is yet solved. Genuine n-dependent recursion and full target remain active.
 
 ---
 

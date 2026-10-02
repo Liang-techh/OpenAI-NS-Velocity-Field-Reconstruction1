@@ -6,6 +6,8 @@ Priority A: derive controlled h_b^2 coefficients and remainder through both R_a-
 Priority B: complete second microswitch chart and postpower to R=110, validate V100/V110/E identities, and bound omitted orders; the first chart's leading term alone is not full switch closure.
 Priority C: recover implicit five-bump values/functions, compose the selected physical point field, measure full morphology and material winding, then close energy/support, stress cone, flat remainder and true n-dependent recursion/correction.
 
+The exact Lei–Ren coefficient equations, order-dependent recovery operators, common-interval requirement and current n=1 admission gap are in docs/LEI_REN_COEFFICIENT_RECURSION_GATE_2026_10_02.md. Do not resume the old v1 Omega0 finite-difference receipt as the v2 n=1 solution.
+
 Preserve pressure V=4C separately from raw axial V=Uz. Do not report geometric scaling or these leading bridge terms as implemented scale recursion. Preserve unrelated working files.
 
 ---

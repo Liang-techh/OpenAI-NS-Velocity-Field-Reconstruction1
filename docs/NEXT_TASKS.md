@@ -11,6 +11,8 @@ Leading R_a-to-100 bridge coefficient and first micro-chart leading h_b^2 correc
 
 The first-chart packet is only a leading coefficient and does not complete the switch or actual signed bridge.
 
+Scale-recursion reference: docs/LEI_REN_COEFFICIENT_RECURSION_GATE_2026_10_02.md contains the paper's actual order-indexed system and admission conditions. Implement the v2 coupled n=1 solve only after one common analytic leading-profile interval and the leading admissible stress/flat-remainder gates are bound; the existing v1 Omega0 sample and radial Taylor series are not n=1 completion.
+
 ---
 
 # Next: finite-width bridge correction and first switch — 2026-10-02
