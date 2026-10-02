@@ -1,3 +1,17 @@
+# ACTUAL five-bump patch mixed4 / functional radial joins - 2026-10-02
+
+SAME actual implicit coefficient family/P0/history: the original five-bump patch now supplies complete x=R/Rm,Z and y=logR,Z velocity-pressure mixed derivatives through total4, plus all five TRUE physical primitive x/Z mixed4 derivatives. Formal Rm/Pstar factors remain exact. Original gamma derivatives use r=1/40 and the accepted normalization; no outer pulse width or capped shape is substituted.
+
+Raw V=Uz=4Z+g is NOT normalized by Pstar. Centered-energy source g^2/Am^2 retains the crucial Pstar^-2 factor. Ur/sqrt(Rm/2)=sqrt(x)*Q includes differentiated radial prefactors and the SAME actual mean primitive. All actual partial moments/P0 are retained at zeroth order; original physical primitive ODEs provide higher x derivatives, then exact Stirling coefficients provide logR derivatives.
+
+Checks PASS:720 actual x/Z velocity-pressure bounds,720 y/Z bounds,900 physical primitive bounds across whole patch and axial domain, support edges and interior packets. Independent closed physical integrals with nonzero histories compare135 x/Z and60 y/Z derivatives;5 actual normalized gamma derivatives;4 exact coordinate identities,6 original support edges,10 flat derivative endpoint limits. Original beta flatness and actual implicit terminal identities give FUNCTIONAL Rm/Rh reference joins through mixed4, not interval-overlap assertions. Reproduce --stage patchmixed;94 ordered modules. Read docs/ACTUAL_PATCH_MIXED_C4_2026_10_02.md.
+
+NOT DONE: remaining actual bridge/switch/reshape/reference mixed4 and their high-order interfaces, inner/pre-O3 dispatcher and complete physical Cartesian spatial/time assembly; terminal-energy domains, admissible stress lift/independent flat remainder, actual n-dependent recursion and oscillatory correction. Original unlocalized whole-space energy is infinite. Full-inner-interface/full-field/stress/global-energy/temporal gates remainfalse.
+
+NEXT: remaining actual inner charts mixed4 and functional joins -> inner/pre-O3 dispatcher -> full Cartesian assembly -> energy/stress/flat remainder -> actual recursion/correction.
+
+---
+
 # ACTUAL five-moment patch connected / implicit axial5 coefficients - 2026-10-02
 
 SAME source: the actual core -> bridge -> switches -> reshape -> reference/restore -> Rm history now feeds the original five-bump implicit repair. Actual normalized five defects include every incoming/negative/swirl term; the actual five coefficient functions have axial5 enclosures using the SAME pointwise Jacobian at every order. Callable patch velocity/pressure/all five moments have axial5; recoveredUr has axial4. Functional terminal five-moment identities are connected to this actual source, not fitted samples or reset histories.

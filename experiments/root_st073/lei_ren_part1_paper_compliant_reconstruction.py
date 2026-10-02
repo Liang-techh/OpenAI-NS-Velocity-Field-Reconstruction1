@@ -54,6 +54,10 @@ transported defects to the original implicit five-bump family, recovers
 its coefficient axial5 jets using one common Jacobian, and supplies patch
 velocity/pressure/moment axial5, Ur axial4 and functional terminal closure.
 Full radial matching, Cartesian assembly and stress lift remain unfinished.
+Patchmixed adds actual patch x/Z and logR/Z mixed derivatives through total4,
+including the physical radial prefactor and all five true primitives. Its
+original beta edges and Rm/Rh reference joins are proved functionally;
+other inner charts/interfaces and full physical assembly remain unfinished.
 """
 import argparse
 import importlib
@@ -100,6 +104,7 @@ SWITCHPROFILES=('inner_switch_profiles','inner_switch_profiles_check')
 RESHAPEPROFILES=('long_reshape_profiles','long_reshape_profiles_check')
 RESTOREPROFILES=('reference_restore_profiles','reference_restore_profiles_check')
 ACTUALPATCH=('actual_moment_patch','actual_moment_patch_check')
+PATCHMIXED=('actual_patch_mixed_C4','actual_patch_mixed_C4_check')
 
 
 def stages(stage):
@@ -110,7 +115,8 @@ def stages(stage):
             'reshapeprofiles':RESHAPEPROFILES,
             'restoreprofiles':RESTOREPROFILES,
             'actualpatch':ACTUALPATCH,
-            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS+POSTMIXEDJETS+STEEPJETS+HEATJETS+PHYSICALFIELD+COREPHYSICAL+FROZENFIELD+BRIDGEPROFILES+SWITCHPROFILES+RESHAPEPROFILES+RESTOREPROFILES+ACTUALPATCH}[stage]
+            'patchmixed':PATCHMIXED,
+            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS+POSTMIXEDJETS+STEEPJETS+HEATJETS+PHYSICALFIELD+COREPHYSICAL+FROZENFIELD+BRIDGEPROFILES+SWITCHPROFILES+RESHAPEPROFILES+RESTOREPROFILES+ACTUALPATCH+PATCHMIXED}[stage]
 
 
 def run(stage='all',list_only=False):
@@ -123,7 +129,8 @@ def run(stage='all',list_only=False):
         print('Build compliant stage:',name,flush=True)
         importlib.import_module(PREFIX+name).run()
         completed.append(name)
-    inherited_patch='actual_moment_patch_check' in completed
+    inherited_patchmixed='actual_patch_mixed_C4_check' in completed
+    inherited_patch=inherited_patchmixed or 'actual_moment_patch_check' in completed
     inherited_restore=inherited_patch or 'reference_restore_profiles_check' in completed
     inherited_reshape=inherited_restore or 'long_reshape_profiles_check' in completed
     inherited_switch=inherited_reshape or 'inner_switch_profiles_check' in completed
@@ -214,7 +221,10 @@ def run(stage='all',list_only=False):
         actual_patch_radial_recovery_axial4_available=inherited_patch,
         actual_five_functional_terminal_identities_connected=inherited_patch,
         actual_patch_local_relaxed_cone_theorem_bound=inherited_patch,
-        actual_patch_radial_mixed4_certified=False,
+        actual_patch_radial_mixed4_certified=inherited_patchmixed,
+        actual_patch_all_mixed_derivatives_total_order_le4_available=inherited_patchmixed,
+        patch_Rm_and_Rh_functional_profile_joins_certified=inherited_patchmixed,
+        original_patch_beta_support_flat_joins_certified=inherited_patchmixed,
         actual_bridge_radial_mixed4_certified=False,
         bridge_100_110_switches_installed=False,
         actual_smooth_comparison_installed=False,
@@ -228,14 +238,14 @@ def run(stage='all',list_only=False):
         full_pulse_C4_scope='Leading O4 and two local external interfaces, spatial/profile mixed total<=4 at fixed positive tau; whole outer/core/axis and time derivatives excluded',
         full_outer_C4_certified=False,
         temporal_recursion=False,
-        next_dependency='Connected actual patch -> inner/pre-O3 dispatcher; bridge/switch/reshape/reference/patch radial mixed4 and core joins -> whole physical assembly; energy/stress/flat remainder -> actual recursion/correction')
+        next_dependency='Actual patch mixed4 -> inner/pre-O3 dispatcher; remaining bridge/switch/reshape/reference mixed4 and core joins -> whole physical assembly; energy/stress/flat remainder -> actual recursion/correction')
     print(json.dumps(result,indent=2),flush=True)
     return result
 
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','postmixedjets','steepjets','heatjets','physicalfield','corephysical','frozenfield','bridgeprofiles','switchprofiles','reshapeprofiles','restoreprofiles','actualpatch','all'),default='all')
+    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','postmixedjets','steepjets','heatjets','physicalfield','corephysical','frozenfield','bridgeprofiles','switchprofiles','reshapeprofiles','restoreprofiles','actualpatch','patchmixed','all'),default='all')
     parser.add_argument('--list',action='store_true',help='Print the ordered modules without running them')
     args=parser.parse_args()
     run(args.stage,args.list)

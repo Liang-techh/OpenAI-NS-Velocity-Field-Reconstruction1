@@ -1,3 +1,23 @@
+# Next execution: remaining inner radial charts and interfaces - 2026-10-02
+
+Read docs/ACTUAL_PATCH_MIXED_C4_2026_10_02.md. Reproduce --stage patchmixed (94 ordered modules). SAME actual source, implicit coefficient family and original P0. This header supersedes previous open PATCH mixed4/join items; it does not complete other annular charts or full physical assembly.
+
+- [x] Restore actual patch x/Z velocity-pressure mixed4 from original beta derivatives at r=1/40 and the accepted axial5 implicit family, keeping true current partial moments/P0.
+- [x] Recover all five true physical primitive mixed4 derivatives from their original RHSs; retain raw V units and Am^-2 with Pstar^-2. Differentiate sqrt(x) in Ur/sqrt(Rm/2) before mixed assembly.
+- [x] Supply exact logR/Z derivative grids using Stirling conversion and ordinary derivative units, with formal Rm derivative scales.
+- [x] Prove original beta support-edge flatness and functional Rm/Rh reference joins through4 using open zero-source neighborhoods and full implicit terminal identities. Keep actual primitive constants across each edge; interval overlap is not the proof.
+- [ ] Restore actual reference and axial-restoration mixed4 from accepted actual axial5 fields. Differentiate original sigma(log(R/Rz)), preserve offsets and source radial factors; carry all primitive ODEs and pressure datum. Bind restore endpoints by exact flat identities.
+- [ ] Restore long reshape mixed4 from original sigma(y/T), actual B110, selected T=400Abar and actual full-kernel histories. Keep all formal large/small sources and prove R110/Rsh joins with functional derivatives.
+- [ ] Restore both100..110 switch mixed4, keeping formal hb^-k factors, original second-switch sigma, current-R comparison drive and exact microscopic radius offsets. Never differentiate a numerical width cap.
+- [ ] Restore prescribed-shear bridge mixed4 using true smoothed-comparison high derivatives and original drive equations. Retain the exact core-exit source and inverse-hb derivative scales, then certify two-sided core/bridge and bridge/switch joins.
+- [ ] Build the complete inner chart dispatcher and missing Rh-to-pre-O3 continuation. Bind terminal actual reference moments/P0 to the SAME accepted outer source; keep formal radius topology and original supports.
+- [ ] Assemble complete Cartesian spatial4 and fixed-physical-position time derivatives across all layers/axis/interfaces, maintaining structural divergence and primitive pressure.
+- [ ] Restore construction-domain local/terminal energy. Build admissible divergence-form stress with regional cone margins and independent flat remainder; then genuine n-dependent recovery/moment repair/summation, oscillatory correction and full forced residual validation.
+
+For each completion record exact scope, artifact, reproduction command and accepted receipt/commit. Preserve source/old receipts and unrelated experiments. Full-inner-interface/full-field/stress/global-energy/temporal gates remainfalse until their complete scopes are proved. Original unlocalized whole-space kinetic energy is infinite.
+
+---
+
 # Next execution: inner/pre-O3 assembly and actual radial matching - 2026-10-02
 
 Read docs/ACTUAL_MOMENT_PATCH_2026_10_02.md; reproduce --stage actualpatch (92 modules in complete pipeline). SAME actual source/core/Cstar/Abar/T/hb/P0. This header supersedes old uncompleted patch-connection items below. All completions here have AXIAL ENCLOSURE / functional moment scope; full mixed spatial matching and point coefficient reconstruction remain separate.
