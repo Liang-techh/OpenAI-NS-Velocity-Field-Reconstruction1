@@ -1,3 +1,13 @@
+# F38-C6 selected pulse checkpoint - 2026-10-01
+
+The actual selected axial pulse now covers entrance/main/inactive gap/end charts, with five partial primitives, unchanged analytic P0 and paper (3.9) radial recovery. Tiny history/end factors remain formal nonzero sources with proved directed caps. Near xi11 energy uses the selected positive terminal identity; Rv and Rp end-energy units differ by exp(26). Whole-Z terminal Uz=Mz=Mtheta_z=Ur=0 and Mztheta/(Rv Utheta^2)=half of positive corrected future energy are checked.
+
+Fifteen independent paper/ODE/normalization identities, three directed chart overlaps, independent gp/beta quadratures and an actual-shape finite-mu fixture (eight moment interfaces plus one energy interface; max relative error about7.58e-58) PASS. Interface relations rely on exact selected source equations, not zero-box overlap alone. Ur_Z/C4 and full outer closure remain unavailable.
+
+Read docs/SELECTED_AXIAL_PULSE_AND_PARTIAL_MOMENTS_2026_10_01.md. Reproduce with compliant_reconstruction.py --stage pulse (usual experiments/root_st073/lei_ren_part1_paper_ prefix). NEXT: propagate selected terminal data through corrected flatten/angular/steep/waiting/collar/Gamma heat; compose allfive matched outer primitives, recover higher axial derivatives and prove C4/cone. Full physical energy, global admissible stress/flat remainder and genuine temporal recursion remain incomplete. This newest header supersedes historical pending pulse statuses below; preserve the historical body.
+
+---
+
 # F38-C5 future energy / axial amplitude checkpoint - 2026-10-01
 
 Complete corrected future swirl energy through flatten, power buffer, both angular bumps, steep/waiting, epsilon collar and infinite Gamma exterior is now source-bound and C1 callable. Its Section7.34 weighting selects the unique actual whole-Z positive ap branch in[1.0086895652225,1.0114075201817]. Actual affine c1/c2 functions use the selected amplitude and true incoming value/derivative jets with explicit fixed row-factor scaling. Formal super-small positive end-energy scales and heat a*S factors remain nonzero. Energy11 and amplitude7 independent identities plus source/branch gates pass.

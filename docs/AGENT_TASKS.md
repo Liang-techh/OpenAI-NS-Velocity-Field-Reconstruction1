@@ -1,3 +1,27 @@
+# F38-C6 task handoff - 2026-10-01
+
+- [x] F38-C6a: Install true gp(mu*t), selected ap(Z), selected affine c1/c2 and both compact end bumps with entrance/main/gap/end coordinate charts. Swirl retains its q^-1 factor and fixed slope throughout O.4.
+- [x] F38-C6b: Recover both actual normalized axial/mixed histories with retained incoming and omitted positive tails. Use reduced combined logs in the inactive gap; zero Uz never implies reset moments. End recovery uses direct future beta integrals rather than one-minus-CDF subtraction.
+- [x] F38-C6c: Compose five pulse primitives, unchanged P0+Mp pressure and paper (3.9) Ur. Check whole-Z terminal Mz=Mtheta_z=Uz=Ur=0 and Mztheta=half positive future swirl energy. Preserve exact selected-source equations, source hashes and nonzero formal factors. Ur_Z and full C4 remain pending.
+- [x] F38-C6d: Add pulse producer/checker to the ordered compliant pipeline. Fifteen independent identities, three directed interface overlaps, whole-Z terminal/source gates, independent shape/weight quadratures and eight-moment/one-energy finite-mu fixture pass. Receipts are not global cone certificates.
+- [ ] F38-D1a: Begin a corrected outer assembly provider consuming selected pulse terminal values from compliant_axial_pulse_field, actual angular repair and exact Gamma heat from the same family. Keep family/datum/source hashes; reject mixed .01 and .001 receipts.
+- [ ] F38-D1b: Implement callable corrected Utheta and normalized Mtheta/Mp/Mztheta through all100-unit flatten and -30logmu power buffer. Transport exact Rv terminal targets, use segmented relative logs and preserve q-dependent flatten history. Mz and Mtheta_z stay exactly zero when Uz=0.
+- [ ] F38-D1c: Add both solved angular bumps and their signed linear/quadratic partial primitive changes. Use actual implicit d1/d2 jets; do not use midpoint coefficients. Recover pressure from original P0+Mp and Ur with the correct local Utheta_Z/Utheta.
+- [ ] F38-D1d: Continue through steep entry, Ts-long steep power, steep exit and waiting. Carry radial normalization factors explicitly. Implement positive future energy primitives from any current radius instead of subtracting large independent totals.
+- [ ] F38-D1e: Add selected epsilon collar and exact Gamma heat as the same outer field. Retain nonzero S=1/Rtail and H_delta defects; keep c_epsilon=.001 source correlation. Expose normalized/log forms when physical radii cannot be materialized.
+- [ ] F38-D2a: Prove allfive moment terminal identities as functions over the entire Z interval, with actual heat moment targets and P(infinity,Z)=0. Independently test interface identities and current-radius normalizations, not only sampled residuals or interval overlap at zero.
+- [ ] F38-D2b: Recover second and higher axial jets so Ur_Z and the required full stress derivatives are available. Prove flat support interfaces and core/outer/collar/exterior C4 matching using the paper's original smooth shapes.
+- [ ] F38-D2c: Add one coherent similarity-space field entrypoint with region dispatch and physical-coordinate mapping, maintaining exact structural divergence. Separate instantaneous similarity scaling from any claim of coefficient recursion.
+- [ ] F39-A1: Bound pulse/end/flatten/bump/steep/waiting/collar stress-cone margins in physical units. Include all derivative and coupling terms; local inner or amplitude positivity does not prove global cone.
+- [ ] F39-A2: Establish full physical-domain energy and radial-tail integrability including coordinate Jacobian, axial domain and time scaling. Complete future swirl radial energy alone is insufficient.
+- [ ] F39-B: Construct global admissible divergence-form stress and separate flat remainder. Report each maximum, volume L2 norm and scale dependence independently; do not demand background total residual below1e-3.
+- [ ] F40: Implement actual n=1/n>=2 recovery equations, common inner domain, order-specific moment repair, finite-order remainder and divergence-preserving smooth sum.
+- [ ] F41: Add mean/oscillatory pulses and averaged quadratic stress cancellation, then independent Cartesian corrected residual and multi-time vortex-core/material-line diagnostics.
+
+Evidence: docs/SELECTED_AXIAL_PULSE_AND_PARTIAL_MOMENTS_2026_10_01.md and compliant_axial_pulse_field.py/.json plus _check.py/.json. --stage pulse reproduces this layer. These latest task statuses supersede historical pending entries below. Preserve unrelated edits, all legacy sources and exact nonzero scales. Full matched background, full physical energy, global cone/stress/flat remainder and temporal recursion remain incomplete.
+
+---
+
 # F38-C5 task handoff - 2026-10-01
 
 - [x] F38-C5a: Assemble complete corrected future swirl energy in Rv*Utheta(Rv,Z)^2 and Section7.34 Rp units; include100-unit flatten, -30logmu power, both angular bumps, steep Ts/unit transitions, waiting, epsilon collar and full Gamma tail; retain C1/signed changes/formal a*S.
