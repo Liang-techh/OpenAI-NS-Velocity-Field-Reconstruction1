@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `fb15a79b88f251f76dd26a1f40a6b27c35ce54c8`.
+The inspected `main` head before this update is `a8cc7bbf2a057aa3c1dbf05bd4236d34c8abecfe`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`ab69bf444bc2d3413612b98a334071e4d8778015`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ab69bf444bc2d3413612b98a334071e4d8778015)
+[`36faf5d077b9885fa8d71d8ff40a3f5d448da078`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/36faf5d077b9885fa8d71d8ff40a3f5d448da078)
 on `codex/st073-transition-next`, observed October 2. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,52 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-02 correction batch: exact kernel sign and refreshed mixed4 source chain
+
+The [36faf5d0 reshape report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/36faf5d077b9885fa8d71d8ff40a3f5d448da078/docs/LONG_RESHAPE_MIXED_C4_2026_10_02.md)
+corrects the full kernel to integral exp[-k*t+m*B*(sigma(y/T)-sigma((y-t)/T))]dt.
+Both the earlier printed exact kernel source and independent full-integral
+fixture had the reversed difference. The source diff corrects both uses of
+the exact definition; the refreshed checker includes a symbolic integrating-
+factor/sign identity. Symmetric rate/Bell absolute enclosures already covered
+both signs, so their recorded numerical bounds are unchanged. This is a real
+source/fixture correction, not permission to transfer an old source receipt.
+
+At this pinned commit, all six checker receipts for long_reshape_profiles,
+reference_restore_profiles, actual_moment_patch, actual_patch_mixed_C4,
+reference_restore_mixed_C4 and long_reshape_mixed_C4 record all_passed=true.
+This reviewer independently SHA256-checked all1,512 filename/hash bindings
+against262 distinct Git blob byte streams at that commit, with no mismatch.
+This checks provenance, not scientific execution or proof validity. The
+[refreshed actual-patch receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/36faf5d077b9885fa8d71d8ff40a3f5d448da078/experiments/root_st073/lei_ren_part1_paper_compliant_actual_moment_patch_check.json)
+and [patch mixed4 receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/36faf5d077b9885fa8d71d8ff40a3f5d448da078/experiments/root_st073/lei_ren_part1_paper_compliant_actual_patch_mixed_C4_check.json)
+bind the corrected parent chain. Earlier pinned receipts remain historical;
+they must not be cited as current certification of this corrected source.
+
+The terminal five-moment conclusion retains its conditional functional scope:
+the SAME actual transported defects enter Lh+Q(h,Am^-2)+d=0, and full bump
+weights imply terminal identities. The implicit-map algebra and recorded
+absolute bounds are not reported changed by this correction, but their use
+for the current source requires the refreshed chain. Neither old nor new
+receipts establish global physical closure, admissible stress or an NS pass.
+
+The [reference/restoration report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/36faf5d077b9885fa8d71d8ff40a3f5d448da078/docs/REFERENCE_RESTORE_MIXED_C4_2026_10_02.md)
+records mixed4 and functional Rz/restoration-end/Rm joins. Its standalone
+Rsh_reshape_join_certified=false is a stage-local pending gate, superseded for
+that interface by the combined [reshape checker](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/36faf5d077b9885fa8d71d8ff40a3f5d448da078/experiments/root_st073/lei_ren_part1_paper_compliant_long_reshape_mixed_C4_check.json),
+which marks Rsh/reference and local R110 post-switch-power/reshape joins true.
+Shared signed bridge/first-switch integrals bind V110=4Z+E as source functions,
+not independent representatives of cap intervals; their point values were
+not numerically rebuilt. This does not certify the microscopic switches.
+
+Replay compliant driver stages restoremixed and reshapemixed with accepted
+prerequisites; the latest ordered pipeline records98 modules. Bridge and
+microscopic-switch mixed4, core/bridge joins, inner/pre-O3 dispatcher, actual
+Rh-to-outer connection and complete Cartesian/time assembly remain unfinished.
+Admissible stress, independent flat remainder, temporal recursion and
+oscillatory correction remain open. Whole-space energy is still infinite for
+the unlocalized source; the unchanged finite-energy goal remains unmet.
 
 ### 2026-10-02 batch: actual restoration, functional repair and local mixed4 joins
 
@@ -2111,6 +2157,12 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The exact-head [36faf5d0 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36995933009)
+finished failure with the original13 constrained failed identifiers/423 passed,
+verified from its actual log. Four smoke/slice jobs passed; full historical
+tests skipped. No new selected failure appeared. This is distinct from main
+documentation CI and the source-bound scientific checker receipts.
 
 The exact-head [ab69bf44 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36991228303)
 finished with the same original13 constrained failed identifiers/423 passed,
