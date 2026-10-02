@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `487c63eb0e4cd39e5a8ff98c359942ae6d13caa0`.
+The inspected `main` head before this update is `212ad94e96ceb5388a54c799109b67f3ce826b57`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`e446e97fe57cb075909959b40993ec186cba0fab`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/e446e97fe57cb075909959b40993ec186cba0fab)
+[`42cce21ea424a5a509120c32536d1ef62e13b3a3`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/42cce21ea424a5a509120c32536d1ef62e13b3a3)
 on `codex/st073-transition-next`, observed October 2. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,46 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-02 batch: fifth axial source and pulse radial derivative recovery
+
+The [42cce21e report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/42cce21ea424a5a509120c32536d1ef62e13b3a3/docs/FIFTH_AXIAL_SOURCE_AND_PULSE_RADIAL_C4_2026_10_01.md)
+extends actual angular controls, complete future swirl energy, incoming data and
+selected ap/c1/c2 through axial order five, preserving admitted C0-C4 prefixes.
+It uses the same exact implicit Jacobians/positive root denominator and complete
+Gamma tail derivative bounds; coefficients are derivative/n!, not ordinary
+derivatives. The [fifth-source checker](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/42cce21ea424a5a509120c32536d1ef62e13b3a3/experiments/root_st073/lei_ren_part1_paper_compliant_fifth_axial_jets_check.json)
+records225 prefix comparisons and branch/Gamma/flatten fifth checks. It retains
+full_pulse_C4_installed=false, full_outer_C4_certified=false and temporal_recursion=false.
+
+The [radial producer receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/42cce21ea424a5a509120c32536d1ef62e13b3a3/experiments/root_st073/lei_ren_part1_paper_compliant_pulse_radial_C4.json)
+records pulse primitives through axial order5, Ur and Ur_y through axial order4,
+and Ur_Z/Ur_yZ through axial order3 in all O.4 charts. The physical amplitude
+and its axial logarithmic derivative are retained in this recovery. This
+supersedes the earlier missing-Ur_Z statement in the O.4 pulse scope, not every
+interior chart or all radial/axial mixed derivatives. At Rv the linear/radial
+terminal derivatives vanish from empty future supports, while energy equals
+half the positive future-energy function and its first five axial coefficients.
+Zero gap axial velocity still does not erase inherited moment histories.
+
+The [radial checker](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/42cce21ea424a5a509120c32536d1ef62e13b3a3/experiments/root_st073/lei_ren_part1_paper_compliant_pulse_radial_C4_check.json)
+records72 independent direct physical derivative fixtures,792 lower-order
+source comparisons, three high-order/pressure interfaces and whole-Z terminal
+gates. The finite fixtures are distinct from actual Md40 source admission.
+This review read the report/receipts and checked scope/flags; no independent
+replay or complete proof audit was performed. Existing source/receipt identities
+remain unchanged and the leading-profile derivatives are not temporal orders.
+
+Replay `compliant_reconstruction.py --stage radialjets` under the usual
+experiments/root_st073/lei_ren_part1_paper_ prefix. No cell Taylor remainder is
+provided. Higher log-radial derivatives of gp/sigma/beta, endpoint-crossing
+boxes, complete mixed velocity/moment derivatives, uniform flat-interface
+bounds and post-pulse C4 still need installation. Full-field C4, whole-outer
+cone, full physical kinetic energy, admissible stress/flat remainder, genuine
+n-dependent time recursion, oscillatory corrections and independent Cartesian
+momentum/divergence residual acceptance remain open. Main navigation and
+structural safeguards from the other session were read and preserved; this
+update changes only README and this chronological supervision record.
 
 ### 2026-10-02 batch: absolute leading closure and coefficient/energy axial jets
 
@@ -1762,6 +1802,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [42cce21e research run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36955401837)
+has the original13 failed constrained identifiers/423 passed in its actual log;
+four smoke/slice jobs pass and full historical tests skip. No selected governance
+regression appears. CI does not certify whole-field C4, cone, energy or dynamics.
 
 The [e0bfdad0 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36950836928)
 and [e446e97f run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36952474846)
