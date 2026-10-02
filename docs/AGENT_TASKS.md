@@ -1,3 +1,33 @@
+# Steep/waiting mixed C4 handoff - 2026-10-02
+
+Current authoritative continuation list. Leading spatial derivative progress is not actual coefficient recursion. Read docs/STEEP_WAITING_MIXED_C4_2026_10_02.md and the steep_waiting_C4_check.json receipt first. Reproduce --stage steepjets; ordered pipeline72 modules.
+
+- [x] F38-D3c2b2b: Angular/steep entry source join with SAME angular-terminal X/energy/P0+Mp, mixed order<=4 and axial5 primitive data. No independent history reset.
+- [x] F38-D3c2c1: Original entry[0,1], entire long steep power[0,Ts], original exit[0,1], actual sigma derivatives and full binomial recovery. Correlated positive unit kernels and backward future source installed.
+- [x] F38-D3c2c2: Exact entry/power, power/exit and exit/waiting interfaces. Production-source identities plus arbitrary axial histories/common endpoint ODEs determine all required mixed derivatives; overlap diagnostics are separate.
+- [x] F38-D3c2c3: Entire actual refined waiting interval, original waiting_logone, epsilon=.001*delta, same nonzero angular/pressure histories and complete Gamma/epsilon future. Positive energy retained without independent long forward subtraction.
+- [ ] F38-D3c2d1a: Original collar factor phi(t)=exp(-4/(3-t)^2) on[0,3], zero at3 with flat derivatives. Supply ordinary t derivatives0..4, support-crossing majorants and distinct shape/source identities; reuse sigma(t), which becomes1 beyond1. Do not replace this phi with normalized O4 beta.
+- [ ] F38-D3c2d1b: Actual collar heat bracket K(Z,t)=(1-epsilon*W)-a*S*D(Z,t), W=1-sigma+sigma*phi, C=1-epsilon*phi, D=sigma*C*original_deficit. Supply axial5 and all y/Z mixed<=4 jets; S>0 remains an exact source and caps are enclosures only.
+- [ ] F38-D3c2d1c: Angular and pressure transport from SAME waiting-terminal X/P0+Mp. Collar velocity uses waiting endpoint scale/(1-epsilon) times K. Recover X from the original exact angular tail plus retained constant defect; restore physical primitive continuity including K and normalization. Preserve signed inlet histories.
+- [ ] F38-D3c2d1d: Complete positive future energy throughout collar from direct remaining phi/sigma integrals, epsilon and epsilon-squared atoms and the infinite Gamma source. Never replace physical energy by normalized radial tail or delete an interval lower endpoint to obtain positivity.
+- [ ] F38-D3c2d2a: Full EXACT Gamma integral axial5/mixed4 provider over original exterior. Derive radius derivatives from the integral definition; finite asymptotic S series is not a substitute. Keep inverse-radius origin and local offset separate; avoid exp(logCstar), exp(-1/mu) or absolute enormous radii.
+- [ ] F38-D3c2d2b: Uniform exterior derivatives and infinite radial-tail enclosures. Cover t>=3 including unbounded offset using source monotonicity/decay and controlled heat-integral bounds, with no finite sample extrapolation.
+- [ ] F38-D3c2d2c: Waiting/collar and collar/Gamma functional interfaces, all mixed<=4 and axial5 canonical primitive orders. Bind new production expressions to original source functions before promoting certification. Record numerical overlaps separately.
+- [ ] F38-D3c2e1: Join all regions in the physical cylindrical r/z map, retaining original inner/core/axis regularity and original common pressure datum. Local O4-O7 high derivatives do not imply whole-field regularity.
+- [ ] F38-D3c2e2: Convert cylindrical components AND cylindrical basis derivatives to Cartesian vector derivatives. Build independent full-field Cartesian derivative evaluators; do not relabel component-only coordinate maps as a vector certificate.
+- [ ] F39a: Physical kinetic energy and volume L2 in the required space/time domain, all-region radial tail and time scaling. Remaining radial swirl integral positivity is insufficient. Maintain exact divergence structure.
+- [ ] F39b: Construct the actual divergence-form admissible stress, check region-wise cone margins (inner exit, annulus, pulse/end, flatten, steep, collar/exterior), physical maxima/L2 and scale dependence.
+- [ ] F39c: Independently identify and estimate flat remainder with high-order decay, separate from stress. Report both norms and source equations; do not demand background residual<1e-3 before oscillatory correction.
+- [ ] F40a: Actual n=1 coefficient equations on a common inner domain; independent moment repair and pressure/heat compatibility. No reused leading-field scaling as recursion.
+- [ ] F40b: Correct n>=2 recovery equations, common domain and independent per-order repair. Curl after truncating streamfunction/vector potential; finite-order remainder and smooth summation.
+- [ ] F41a: Actual mean and two-family oscillatory corrections; averaged quadratic stress realization/cancellation using constructed admissible stress.
+- [ ] F41b: Corrected forced Cartesian residual Linfinity/L2<1e-3 and independent residual evaluator. Only promote after all prerequisite correction layers are admitted.
+- [ ] F41c: Multi-time velocity/vorticity, core radial/axial widths and aspect ratio, true particle/material-line winding distinct from instantaneous streamlines, measured scale exponents and real recursive-layer fits.
+
+This header supersedes historical pending angular/steep and steep/waiting items only. Whole outer, physical energy, cone, temporal recursion remain false. Preserve prior source hashes and unrelated files.
+
+---
+
 # Following power / angular mixed C4 handoff - 2026-10-02
 
 This current list supersedes historical pending F38-D3c2a and angular recovery items below. Full goal is unchanged; no leading-profile derivative stage constitutes true coefficient recursion.

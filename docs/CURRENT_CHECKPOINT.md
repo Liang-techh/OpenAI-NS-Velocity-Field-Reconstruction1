@@ -1,3 +1,19 @@
+# F38-D3c2b/c steep entry/power/exit and waiting mixed C4 - 2026-10-02
+
+The SAME actual compliant .001 source now supplies leading velocity/pressure mixed spatial derivatives of total order<=4 and axial5 primitive data across the full original steep entry, long steep power, steep exit and refined waiting interval. Angular/steep entry and all three internal O7 interfaces are source-certified. This extends the previously accepted local pulse, original100-unit flatten and following power/angular providers; it does NOT implement genuine temporal coefficient recursion.
+
+The original angular-terminal X and P0+Mp histories are inherited. Complete epsilon and infinite Gamma future energy is factored before local normalization; no long forward subtraction, clipping or reset is used. Waiting retains its refined same-source root and log(1-epsilon), epsilon=.001*delta. Directed cells preserve positive correlated lengths for whole-time boxes. All segments have strictly positive remaining radial swirl energy; the steep power has a uniform1/4 floor. These are not physical kinetic-energy certificates.
+
+The new receipt passes433 functional production source identities,3600 actual finite mixed bounds,1800 inherited exact zeros,72 prior actual C1 comparisons and472 separate interface/prefix overlap diagnostics. Independent nonconstant-rate checks remain96 rate+240 mixed;24 direct original-sigma quadrature comparisons are diagnostics only. Reused read-only GPT-5.6 Luna/max found no material source-unit, whole-domain enclosure or derivative error.
+
+F38-D3c2b2b and F38-D3c2c1/c2/c3 are COMPLETE within leading-profile mixed C4/primitive axial5 scope. Whole outer/core/axis C4, collar/heat external interfaces, physical Cartesian vector derivatives, physical energy/stress/flat remainder and actual n-dependent recursion remain incomplete.
+
+Read docs/STEEP_WAITING_MIXED_C4_2026_10_02.md. Reproduce --stage steepjets with lei_ren_part1_paper_compliant_reconstruction.py; ordered pipeline72 modules. Prior hashes/receipts and unrelated work are preserved. This header supersedes historical pending steep/waiting derivative tasks, not the remaining collar/Gamma/physical/stress/recursion work.
+
+NEXT: original epsilon collar and FULL exact Gamma high mixed derivatives -> waiting/collar/Gamma functional interfaces -> whole-field Cartesian/core/axis maps and physical energy -> admissible stress and independent flat remainder -> true n-dependent recursion -> oscillatory correction and physical diagnostics.
+
+---
+
 # F38-D3c2a/b entire following power and actual angular mixed C4 - 2026-10-02
 
 The SAME actual compliant .001 family now supplies every velocity/pressure (y,Z) mixed derivative of total order<=4 and axial C5 primitive data throughout the entire following power and BOTH actual angular supports. O5 flatten/power and power/angular source joins are accepted. The power includes y=(Lrel-4)*phase and the angular chart covers the final s in[-4,0], including all four compact support edges. Actual angular coefficients are the implicit angular C5 functions, never the axial pulse coefficients.
