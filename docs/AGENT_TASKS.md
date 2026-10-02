@@ -1,3 +1,29 @@
+# Next execution: inner/pre-O3 assembly and actual radial matching - 2026-10-02
+
+Read docs/ACTUAL_MOMENT_PATCH_2026_10_02.md; reproduce --stage actualpatch (92 modules in complete pipeline). SAME actual source/core/Cstar/Abar/T/hb/P0. This header supersedes old uncompleted patch-connection items below. All completions here have AXIAL ENCLOSURE / functional moment scope; full mixed spatial matching and point coefficient reconstruction remain separate.
+
+- [x] Bind actual reference_restore defect functions to the original correlated C1 admission using exact dominant+tail transport, retained negative incoming/swirl terms and directly bounded actual transported tail norms. Preserve original cutoff/kernel/data hashes; overlap alone is not the identity proof.
+- [x] Supply these actual defects to the original implicit five-bump map with unchanged anisotropic coefficient boxes and original radius1/40, centers5/4,3/2,7/4 and normalization. No midpoint defect or tail substitution.
+- [x] Recover all five coefficient functions through axial5 using one common J(h0), lower-order quadratic convolutions and actual Am^-2 derivatives. Independent physical-weight fixture verifies30 Taylor coefficients; symbolic checks verify all20 higher convolution identities.
+- [x] Continue actualRm moments through original partial bump integrals, preserve analytic P0 and recoverUr from the same mean. Provide whole-patch axial5 enclosures and Ur axial4.
+- [x] Connect five terminal reference identities as functions ofZ after the full supports. Exact terminal zero enclosures follow the unique implicit map solution; retain unreduced residual diagnostics and do not reset or fit moments.
+- [x] Bind the inherited LOCAL relaxed-cone theorem to the same actual C1 source/coefficients; report margin/bw/kappa. Keep divergence-form stress lift and independent flat remainder separate.
+- [ ] Restore bridge radial/phase mixed4 using original smoothed-comparison derivatives and the formal hb source, not cap derivatives. Differentiate original drive and integral equations; retain formal inverse-hb prefactors and all cross derivatives.
+- [ ] Restore both100..110 switch mixed4, preserving the second sigma factor and exact microscopic radius offsets. Derive all support-end radial identities from original flatness, not interval overlap.
+- [ ] Restore long reshape and reference/axial restoration mixed4. Carry y=logR derivatives of original sigma(y/T), log velocity, V and all primitive RHSs. Preserve large source T and exact relative-radius offsets.
+- [ ] Restore actual patch mixed4 from the same axial5 coefficient family and original beta radial derivatives. Carry normalized partial-weight radial derivatives and all beta support crossings. Public provider must require the current actual patch independent-check receipt.
+- [ ] Certify two-sided core/bridge, bridge/switch, switch/reshape, reshape/reference, restore/reference and reference/patch joins to every derivative order needed by the physical4 map. Use exact functional source identities plus two-sided providers, not finite point samples.
+- [ ] Build a dispatcher for core/bridge/switch/reshape/reference/restore/patch with explicit source radial charts and positive formal amplitudes. Do not materialize exp(logCstar) or select shorter convenient parameter intervals.
+- [ ] Build missing Rh-to-pre-O3 reference/outer initial continuation and bind actual terminal moments/P0 to the SAME accepted outer source. Preserve the declared source/core/domain invariants and all original support locations.
+- [ ] Assemble the full similarity and physical Cartesian field across every layer, including axis and all annular interfaces. Supply spatial4 and first physical time derivative at fixed physical position, with structural divergence and independently checked primitive pressure.
+- [ ] Restore local and terminal-time energy in the construction's required domains. Original unlocalized whole-space energy is infinite; do not silently impose a cutoff or claim global finite energy.
+- [ ] Construct admissible divergence-form stress separately from the full residual. Report regional cone margins and stress L-infinity/volumeL2/scale behavior, then independently bound the flat remainder.
+- [ ] Implement genuine n-dependent coefficient recovery/moment repair and finite-order remainder/smooth summation only after the leading background prerequisites. Then original mean/oscillatory corrections and full forced Cartesian residual targets.
+
+For every completion record exact scope, callable artifact, reproduction command and accepted receipt/commit. Preserve old source/receipts and unrelated experiments. Keep full-field/stress-lift/global-energy/temporal gatesfalse until their full scopes are proved.
+
+---
+
 # Next execution: connect ACTUAL five defects to original implicit repair - 2026-10-02
 
 Read docs/REFERENCE_RESTORE_PROFILES_2026_10_02.md; reproduce --stage restoreprofiles (90 modules in complete pipeline). SAME actual source/core/Cstar/Abar/T/hb/P0. All completions below have AXIAL ENCLOSURE scope; higher radial matching and point coefficients remain separate. This header supersedes older reference/restore items below without erasing history.

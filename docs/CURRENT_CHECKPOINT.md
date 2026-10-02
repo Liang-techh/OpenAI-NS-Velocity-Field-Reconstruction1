@@ -1,3 +1,17 @@
+# ACTUAL five-moment patch connected / implicit axial5 coefficients - 2026-10-02
+
+SAME source: the actual core -> bridge -> switches -> reshape -> reference/restore -> Rm history now feeds the original five-bump implicit repair. Actual normalized five defects include every incoming/negative/swirl term; the actual five coefficient functions have axial5 enclosures using the SAME pointwise Jacobian at every order. Callable patch velocity/pressure/all five moments have axial5; recoveredUr has axial4. Functional terminal five-moment identities are connected to this actual source, not fitted samples or reset histories.
+
+Exact source transport expresses each actual row as the original dominant kernel plus retained tail. Each Rsh Taylor coefficient combines with its exact decay in source logs BEFORE capping; all actual transported tails satisfy the old summedC1 cap10^-800/Pstar^2. The true correlated E C1 admission and original anisotropic coefficient boxes are retained; arbitrary independent Taylor boxes are not assigned that Banach norm. Original P0 and actualRm inlet stay bound. Higher derivatives retain all quadratic convolutions and Am^-2 derivatives.
+
+Checks PASS:5 actual source tailC1 bounds,36 factored decay caps,30 coefficient Taylor bounds,497 velocity/pressure/moment bounds;5 exact transport identities and20 common-Jacobian convolution identities. Independent fixture integrates21 physical bump weights and recovers30 derivatives of nonconstant smooth coefficients. Actual higher inverse contraction<=about1.138e-7; local relaxed cone margin>=about3.7999282, |bw|<=about8.9743e-6, kappa<1. This is a LOCAL relaxed-cone theorem, NOT a stress lift. Read-only Luna/max audit found no material formula error; public provider requires current independent acceptance/cutoff bindings. Reproduce --stage actualpatch;92 ordered modules. Read docs/ACTUAL_MOMENT_PATCH_2026_10_02.md.
+
+NOT DONE: bridge/switch/reshape/reference/patch radial-phase mixed4 and all high-order core/annular interfaces; inner/pre-O3/whole Cartesian dispatcher and full spatial/time assembly; terminal-energy domains, admissible divergence-form stress lift, independent flat remainder, actual n-dependent recursion and oscillatory correction. Original unlocalized whole-space energy remains infinite. Full-field/stress-lift/global-energy/temporal gates remainfalse.
+
+NEXT: actual patch -> missing inner/pre-O3 dispatcher and outer source binding; actual radial mixed4/flat joins -> full Cartesian assembly -> energy/stress/flat remainder -> actual recursion/correction.
+
+---
+
 # ACTUAL reference continuation / axial restore / five defects - 2026-10-02
 
 SAME source: actual Rsh histories now continue through the original reference branch to Rz=e^-8*Rref, original axial restore to exact4Z, and the unpatched branch at Rm=e^-6*Rref and Rh=e^-5*Rref. Velocity/P0/all five moments and actual normalized defect functions have axial5 enclosures; recoveredUr has axial4. Exact offsets and actual incoming histories are retained. This is an enclosure provider, NOT point coefficient reconstruction or a connected five-bump repair.
