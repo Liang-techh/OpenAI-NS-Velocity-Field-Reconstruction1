@@ -4,7 +4,7 @@
 
 The current research route is an exploratory **Lei–Ren Part I-oriented ST073 reconstruction**. The long-term deliverable is a nonzero, divergence-free, finite-energy, three-dimensional time-dependent field with quantitatively verified shrinking-core geometry and independently evaluated momentum residuals. This is an independent research repository, not an OpenAI project or a claim to have recovered an exact original field.
 
-> **Reviewed snapshot: 2026-10-02 UTC.** Research branch: `codex/st073-transition-next`, pinned at [`7020332a`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/7020332a484c13acdc16dac5ad410f40dea81095). Bridge mixed4 and local core/bridge/R100 joins are recorded, followed by actual Rh-to-Rp continuation and the pulse inlet binding. A callable source dispatcher records 33 chart sample packets. It requires explicit chart names and preserves different source coordinates/normalizations; automatic physical-point dispatch, common physical units and complete Cartesian assembly remain unfinished. The earlier kernel correction and factored positive-width derivative conversions remain required. **The current unlocalized source has infinite whole-space physical kinetic energy at every fixed positive tau and therefore does not meet the finite-energy goal.** Local sector/strip bounds do not change that goal. Global assembly, stress, temporal recursion and independent full NS validation remain incomplete. These are reviewed records, not scientific code or proofs independently rerun. See the [latest supervision checkpoint](docs/NS_SUPERVISION_2026-09-30.md); other navigation pages retain separately dated snapshots.
+> **Reviewed snapshot: 2026-10-02 UTC.** Research branch: `codex/st073-transition-next`, pinned at [`fcb374d0`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/fcb374d0b8e2f705333459ce08765ac996819c52). All 33 explicit source charts now record common physical Cartesian spatial C4 and fixed-position first-time derivative maps, including a nonsingular axis. Fresh degree24 core coefficients and directed anchored logarithmic amplitude are recorded at selected axial centers. These are source enclosures, not a complete point-value field: physical-point chart selection, anchor peak resolution and signed annular integrals/implicit-repair values remain unfinished. Earlier provider correlation losses are not recovered by assembly. **The current unlocalized source has infinite whole-space physical kinetic energy at every fixed positive tau and therefore does not meet the finite-energy goal.** Local sector/strip bounds do not change that goal. Stress, independent flat remainder, temporal coefficient recursion and full NS validation remain incomplete. These are reviewed records, not scientific code or proofs independently rerun. See the [latest supervision checkpoint](docs/NS_SUPERVISION_2026-09-30.md); other navigation pages retain separately dated snapshots.
 
 [**Research status and evidence**](docs/RESEARCH_STATUS.md) · [**Choose a version / replay**](docs/CURRENT_CHECKPOINT.md) · [Project goal](docs/PROJECT_GOAL.md) · [Repository map](docs/REPOSITORY_GUIDE.md) · [Documentation](docs/README.md)
 
@@ -27,10 +27,11 @@ Source-bound inner core and exit
   -> actual reshape/reference/restore mixed4 joins [recorded locally; corrected source]
   -> microswitch phase4 / formal logR / R2-110     [recorded locally]
   -> bridge/core/R100 joins, actual Rh-Rp-pulse    [recorded locally]
-  -> explicit 33-chart source dispatcher          [recorded; common physical assembly open]
+  -> explicit 33-chart Cartesian spatial4/time1   [recorded source maps; point locator open]
+  -> fresh core degree24 / anchored log amplitude [recorded at selected centers; peak open]
   -> actual five-moment patch mixed4 / Rm-Rh joins [recorded locally]
   -> whole-space finite energy of current source   [fails: infinite]
-  -> full velocity derivatives and C4 interfaces    [open]
+  -> complete point-value field / global interfaces [open]
   -> physical energy, outer cone, stress/remainder  [open]
   -> genuine temporal recursion and corrections    [open]
   -> independent Cartesian NS residual validation  [open]

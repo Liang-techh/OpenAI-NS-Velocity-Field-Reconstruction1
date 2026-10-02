@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `b0c689843c365595fa3d345e723f7572fe1134e0`.
+The inspected `main` head before this update is `18e8763014316f432cd5b3402ca5c5a9956f6875`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`7020332a484c13acdc16dac5ad410f40dea81095`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/7020332a484c13acdc16dac5ad410f40dea81095)
+[`fcb374d0b8e2f705333459ce08765ac996819c52`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/fcb374d0b8e2f705333459ce08765ac996819c52)
 on `codex/st073-transition-next`, observed October 2. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,55 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-02 batch: common physical maps, fresh core and anchored amplitude
+
+The [fcb374d0 assembly report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/fcb374d0b8e2f705333459ce08765ac996819c52/docs/GLOBAL_PHYSICAL_SOURCE_ASSEMBLY_2026_10_02.md)
+and [assembly checker](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/fcb374d0b8e2f705333459ce08765ac996819c52/experiments/root_st073/lei_ren_part1_paper_compliant_global_physical_assembly_check.json)
+record all33 explicit source charts mapped to physical Cartesian spatial
+derivatives through total4 and first time derivatives at fixed physical
+position, with native nonsingular core/axis formulas. Fixed-basepoint units
+are restored without differentiating them again; cylindrical basis derivatives
+and implicit lambda time dependence are included. Four microscopic charts
+retain hb^-k source terms until final bounds. Macro bridge uses uncapped
+factored rows; other annuli consume prebounded rows and cannot recover their
+previously erased correlations. This supersedes the previous pending common
+physical-unit/map step, not the missing physical-point/value evaluator.
+
+The [fresh core report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/fcb374d0b8e2f705333459ce08765ac996819c52/docs/CORE_COEFFICIENT_REBUILD_2026_10_02.md)
+and [core checker](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/fcb374d0b8e2f705333459ce08765ac996819c52/experiments/root_st073/lei_ren_part1_paper_compliant_core_coefficient_rebuild_check.json)
+record direct coupled radial-degree24 rebuilds at Z=.3,.5,-.5,0 using the
+current .001 pressure family and selected Cstar. They do not read or relabel
+old finite rows. Finite coefficient enclosures and controlled infinite radial
+remainders remain separate; pressure and core epsilon scales remain distinct.
+The checker marks old_finite_coefficient_rows_read=false and infinite radial
+tails bound=true. These selected-center rebuilds supersede earlier claims that
+core coefficients were not recomputed; they are not an exhaustive axial grid,
+selected exact parameter solution or temporal coefficient recursion.
+
+The [anchored amplitude report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/fcb374d0b8e2f705333459ce08765ac996819c52/docs/ANCHORED_AXIS_AMPLITUDE_2026_10_02.md)
+and [amplitude checker](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/fcb374d0b8e2f705333459ce08765ac996819c52/experiments/root_st073/lei_ren_part1_paper_compliant_anchored_axis_amplitude_check.json)
+record directed anchored G/logF0 estimates, certified pole/anchor disks and
+branch-safe logarithms, combined with fresh radial rows. At Z=.3 the saved
+G estimate is approximately12.58997725 with width approximately5.72e-156.
+This small absolute G error does not resolve Lambda*G near the amplitude peak:
+its width sigma/sqrt(Lambda) still requires an anchor-centered scaled chart
+preserving H(a)=0 and shared parameter/root uncertainty. Extremely small
+positive swirl remains logarithmic; it is not rounded into a zero solution.
+
+All three saved checker receipts mark all_passed=true. This reviewer verified
+741 SHA256 bindings against289 distinct pinned Git blob byte streams, with
+no mismatch. This is provenance verification and saved-evidence review only,
+not independent scientific execution or complete proof audit. Replay stages
+globalphysical, freshcore and axisamplitude with accepted prerequisites;
+the ordered pipeline records111 modules. The API still requires explicit
+chart/Z/coordinate/log_tau; automatic arbitrary physical(x,y,z,t) selection
+and a complete point-value field remain false. Resolve signed bridge/switch
+integrals, shared histories and implicit five-bump values with error bounds.
+First-time mapping is not genuine coefficient recursion or measured dynamics.
+Energy, admissible stress, independent flat remainder, temporal recursion,
+mean/oscillatory correction and full NS validation remain open; the original
+unlocalized whole-space energy is still infinite and its goal remains unmet.
 
 ### 2026-10-02 batch: bridge joins, actual pre-pulse continuation and source dispatch
 
@@ -2256,6 +2305,12 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The exact-head [fcb374d0 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37013762524)
+finished failure: its actual log retains the same original13 failed constrained
+identifiers/423 passed. Four smoke/slice jobs passed; full historical tests
+skipped. No new selected failure appeared. Source-map receipt acceptance is
+distinct from research CI, main documentation checks and full NS acceptance.
 
 The exact-head [7020332a run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37005681314)
 finished failure with the original13 constrained failed identifiers/423 passed,
