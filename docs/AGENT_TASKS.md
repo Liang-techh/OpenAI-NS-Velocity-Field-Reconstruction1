@@ -1,3 +1,15 @@
+# Active handoff: finite-width signed bridge and first switch — 2026-10-02
+
+Read docs/MACRO_SIGNED_INTEGRALS_2026_10_02.md and rerun its passing checker. Stage macrosignedleading; 121 ordered modules. The complete R_a-to-100 bridge has its leading formal-h_b coefficient: first micro pulse weight 1/2 plus exact frozen-macro mode integrals. Second micro chart is zero at h_b^1. Source amplitudes remain factored; full signed bridge completion is still false.
+
+Priority A: propagate the actual finite-width expansion through order h_b^2 across both original micro charts and the macro, including field quotient, actual moment feedback, endpoint radius shifts, differentiated Z jets and a directed omitted-order remainder. Preserve exact positive width; never materialize it as a cap.
+Priority B: integrate the original R=100-to-110 first switch with its signed quotient, pulse weight, current drive and directed truncation/remainder. Validate actual V100/V110/E joins.
+Priority C: recover implicit five-bump functions with a posteriori Jacobian/remainder control, compose the physical point field, measure full morphology/material winding, then continue required-domain energy/support, admissible stress, independent flat remainder and true n-dependent recursion/correction gates.
+
+Use exact stable radius kernels and log-factored amplitude scales. Keep pressure V=4C distinct from raw axial V=Uz. Do not relabel the h_b-leading result as the full finite-width bridge or as scale recursion. Preserve unrelated working files.
+
+---
+
 # Active handoff: complete actual signed bridge — 2026-10-02
 
 Read docs/MACRO_SIGNED_INTEGRALS_2026_10_02.md and rerun the passing macro checker. Stage macrosignedleading; 121 ordered modules. The leading formal-hb macro contribution from R_a*exp(2hb) through R=100 is integrated from exact time-varying moment modes. Source amplitudes stay logarithmic/factored, and full bridge completion is still false.

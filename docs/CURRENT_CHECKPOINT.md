@@ -1,3 +1,11 @@
+# Current: leading formal bridge coefficient through R=100 — 2026-10-02
+
+Read docs/MACRO_SIGNED_INTEGRALS_2026_10_02.md. Stage macrosignedleading; 121 ordered modules. The leading h_b coefficient now covers the actual prescribed-shear bridge from R_a through R=100: the first micro chart contributes its exact pulse weight 1/2, the second micro chart has zero h_b coefficient, and the macro is integrated from exact time-varying H/M/K/A/B/C exponential modes. Three source points (Z=0, Z=.5, exact shared root) preserve directed axial jets and factored pressure/swirl amplitude logs. Independent checker PASS for pulse quadrature, J_F, signed mode rows and six R100 moment identities. `actual_signed_bridge_completed` remains false because O(h_b^2) terms, finite-width feedback and R100-to-110 switch remain open.
+
+NEXT: derive controlled second-order width terms and remainder through the two micro charts and macro, then integrate the original R100-to-110 first switch. Recover implicit five-bump values before physical field/morphology, global energy/stress/flat remainder/dynamics and genuine scale-indexed recursion/correction. This is an upstream leading-coefficient advance, not scale recursion.
+
+---
+
 # Current: leading signed macro bridge contribution — 2026-10-02
 
 Read docs/MACRO_SIGNED_INTEGRALS_2026_10_02.md. Stage macrosignedleading; 121 ordered modules. The exact frozen comparison moments now yield the leading formal-hb signed macro contribution from R_a*exp(2hb) to R=100 through original (9.13), using exact exponential modes and stable radius kernels. Independent checker PASS at Z=0, Z=.5 and the shared root; all six R100 moment identities and independent regularized J_F quadrature pass. Pressure and swirl scales remain logarithmic/factored. The microscopic Ra-to-R2 terms, 100-to-110 switch and O(hb^2) remainders are still unresolved; actual_signed_bridge_completed remains false.

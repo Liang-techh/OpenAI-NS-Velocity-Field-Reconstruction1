@@ -1,3 +1,20 @@
+# Next: finite-width bridge correction and first switch — 2026-10-02
+
+The leading formal-h_b coefficient over the full R_a-to-100 bridge is implemented and independently checked; see docs/MACRO_SIGNED_INTEGRALS_2026_10_02.md. Stage macrosignedleading; 121 ordered modules.
+
+- [x] Integrate the first actual micro chart's leading coefficient using the exact pulse weight 1/2; record the second micro chart's zero h_b coefficient from chi=h_b.
+- [x] Integrate macro H/M/K/A/B/C exponential histories and original (9.13) signed directions to R=100 with stable radius kernels.
+- [x] Keep pressure/swirl amplitude factors logarithmic; independently check pulse weight, J_F, all signed modes, three Z packets and six R100 moment identities.
+- [ ] Propagate actual fields and all six moments through both microswitch charts and the macro to order h_b^2, with directed remainder and exact endpoint joins.
+- [ ] Integrate the original R100-to-110 first switch and preserve signed quotient, drives, width powers and V100/V110/E identities.
+- [ ] Recover implicit five-bump functions/values with a posteriori Jacobian and remainder bounds.
+- [ ] Compose the selected physical point field; measure global radial/axial widths, aspect ratio, multitime exponents and material winding.
+- [ ] Close required-domain energy/support, admissible stress-cone margins, independent flat remainder, true n-dependent scale recursion, and oscillatory correction.
+
+This is the leading formal coefficient only; finite-width signed bridge integrals remain unresolved.
+
+---
+
 # Next: signed micro contributions and complete bridge — 2026-10-02
 
 The leading signed macro contribution R_a*exp(2hb) to R=100 is complete and independently checked; see docs/MACRO_SIGNED_INTEGRALS_2026_10_02.md. Stage macrosignedleading; 121 ordered modules.

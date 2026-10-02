@@ -221,6 +221,19 @@ def _midpoint_jet(value):
     return [_midpoint(row) for row in value.coefficients]
 
 
+def _sigma_mp(x):
+    """Independent scalar pulse evaluator used only in the micro quadrature."""
+    if x <= 0:
+        return mp.mpf(0)
+    if x >= 1:
+        return mp.mpf(1)
+    if x > mp.mpf("0.5"):
+        return 1 - _sigma_mp(1 - x)
+    exponent = 1 / (1 - x) ** 2 - 1 / x ** 2
+    value = mp.exp(exponent)
+    return value / (1 + value)
+
+
 class CompliantMacroSignedIntegralCheck:
     def __init__(self):
         self.bridge = CompliantInnerBridgeProfiles()
@@ -274,17 +287,27 @@ class CompliantMacroSignedIntegralCheck:
         target = _target(phi, value)
         inputs = self.bridge.inputs(z)
         rows = _modes(self.bridge, z, inputs, phi, value, inlet)
+        core_direction = _direction(self.bridge, z, inputs, phi, value, inlet)
+        micro_weight = c.mpf("0.5")
         radius = self.bridge.r
         d_rows = rows["D_over_R"]
-        jf = _weighted(d_rows, _radius_kernels(c, radius, self.Y, 1)) * (-c.mpf("0.5"))
+        jf_macro = _weighted(d_rows, _radius_kernels(c, radius, self.Y, 1)) * (-c.mpf("0.5"))
+        jf_micro = core_direction["D_over_R"] * (-c.mpf("0.5") * micro_weight * radius)
+        jf = jf_micro + jf_macro
         radial_kernels = _radius_kernels(c, radius, self.Y, 1)
         swirl_kernels = _radius_kernels(c, radius, self.Y, 2)
         hydro_rows = rows["drive_hydro"]
         pressure_rows = rows["drive_pressure"]
         swirl_rows = rows["drive_swirl"]
-        jvh = -_weighted(hydro_rows, radial_kernels)
-        jvp = -_weighted(pressure_rows, radial_kernels)
-        jvs = -_weighted(swirl_rows, swirl_kernels)
+        jvh_macro = -_weighted(hydro_rows, radial_kernels)
+        jvp_macro = -_weighted(pressure_rows, radial_kernels)
+        jvs_macro = -_weighted(swirl_rows, swirl_kernels)
+        jvh_micro = core_direction["drive_hydro"] * (-micro_weight * radius)
+        jvp_micro = core_direction["drive_pressure"] * (-micro_weight * radius)
+        jvs_micro = core_direction["drive_swirl"] * (-micro_weight * radius * radius)
+        jvh = jvh_micro + jvh_macro
+        jvp = jvp_micro + jvp_macro
+        jvs = jvs_micro + jvs_macro
         expected_endpoint = {}
         for name, rate, source, target_value in (
             ("H", 2, inlet[MTH], target[MTH]),
@@ -297,16 +320,26 @@ class CompliantMacroSignedIntegralCheck:
             expected_endpoint[name] = target_value + (source - target_value) * c.exp(-rate * self.Y)
         return dict(label=label, z=z, start=start, end=end, endpoint=endpoint,
                     inlet=inlet, target=target, rows=rows, d_rows=d_rows,
-                    radius=radius, jf=jf, hydro_rows=hydro_rows, pressure_rows=pressure_rows,
+                    radius=radius, jf=jf, jf_micro=jf_micro, jf_macro=jf_macro,
+                    core_direction=core_direction, hydro_rows=hydro_rows, pressure_rows=pressure_rows,
                     swirl_rows=swirl_rows, jvh=jvh, jvp=jvp, jvs=jvs,
+                    components={"hydro": (jvh, jvh_micro, jvh_macro),
+                                "pressure": (jvp, jvp_micro, jvp_macro),
+                                "swirl": (jvs, jvs_micro, jvs_macro)},
                     expected_endpoint=expected_endpoint)
 
     def check_packet(self, data):
         label = data["label"]
-        stored = self.producer["macro_signed_integral_packets"][label]
+        stored = self.producer["leading_signed_bridge_packets"][label]
         c = self.ctx
         stored_jf = _output_jet(c, stored["J_F"])
         self.require(_contains(stored_jf, data["jf"]), label + ": J_F enclosure")
+        self.require(_contains(_output_jet(c, stored["J_F_micro"]), data["jf_micro"]),
+                     label + ": first microscopic J_F")
+        self.require(_contains(_output_jet(c, stored["J_F_macro"]), data["jf_macro"]),
+                     label + ": macro J_F")
+        self.require(stored.get("second_micro_leading_coefficient_zero") is True,
+                     label + ": second microscopic chart leading order")
         for component, expected, scale_log in (
             ("hydro", data["jvh"], c.mpf(0)),
             ("pressure", data["jvp"], self.Pstar2_log),
@@ -320,6 +353,11 @@ class CompliantMacroSignedIntegralCheck:
             self.require(alo <= elo and ahi >= ehi, label + ": J_V " + component + " scale log")
             self.require(stored["J_V"]["terms"][component] == item,
                          label + ": J_V signed factored sum binding")
+            _, micro_expected, macro_expected = data["components"][component]
+            self.require(_contains(_output_jet(c, item["micro_normalized_axial_coefficients"]), micro_expected),
+                         label + ": J_V " + component + " micro contribution")
+            self.require(_contains(_output_jet(c, item["macro_normalized_axial_coefficients"]), macro_expected),
+                         label + ": J_V " + component + " macro contribution")
         self.require(stored["J_V"].get("no_amplitude_scale_materialized") is True,
                      label + ": amplitude scale must remain factored")
         stored_modes = stored["D_over_R_modes"]
@@ -348,7 +386,7 @@ class CompliantMacroSignedIntegralCheck:
     def independent_quadrature(self, data):
         """Use midpoint coefficients and mp.quad, independent of interval algebra."""
         c = self.ctx
-        stored = self.producer["macro_signed_integral_packets"][data["label"]]
+        stored = self.producer["leading_signed_bridge_packets"][data["label"]]
         modes = [_output_jet(c, row) for row in stored["D_over_R_modes"]]
         radius = _midpoint(data["radius"])
         alpha = radius / 100
@@ -360,7 +398,13 @@ class CompliantMacroSignedIntegralCheck:
             q0 = 100 * coeff[0] * mp.quad(lambda x: mp.mpf(1), [alpha, 1])
             q1 = 100 * coeff[1] * alpha * y * mp.quad(lambda t: mp.mpf(1), [0, 1])
             q2 = 100 * coeff[2] * alpha * mp.quad(lambda s: mp.mpf(1), [0, 1 - alpha])
-            quad = -mp.mpf("0.5") * (q0 + q1 + q2)
+            macro_quad = -mp.mpf("0.5") * (q0 + q1 + q2)
+            micro_weight = mp.quad(lambda x: 1 - _sigma_mp(x), [0, mp.mpf("0.5"), 1])
+            core_d = _midpoint(data["core_direction"]["D_over_R"].coefficients[0])
+            micro_quad = -mp.mpf("0.5") * micro_weight * radius * core_d
+            quad = macro_quad + micro_quad
+            self.require(abs(micro_weight - mp.mpf("0.5")) < mp.mpf("1e-150"),
+                         data["label"] + ": independent pulse micro weight quadrature")
         lo, hi = endpoints(_output_jet(c, stored["J_F"]).coefficients[0])
         tol = max(mp.mpf("1e-150"), abs(quad) * mp.mpf("1e-140"))
         self.require(lo - tol <= quad <= hi + tol,
@@ -376,6 +420,8 @@ class CompliantMacroSignedIntegralCheck:
                      "formal width source")
         self.require(self.producer.get("old_inner_bridge_cumulative_cover_used") is False,
                      "old constant cover flag")
+        self.require(self.producer.get("leading_formal_hb_full_Ra_to_R100") is True,
+                     "leading formal coefficient includes core-to-R100 first chart")
         results = {}
         for label in (".5", "0", "exact_shared_root"):
             rebuilt = self.rebuild(label)

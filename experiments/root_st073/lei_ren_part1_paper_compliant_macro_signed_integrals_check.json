@@ -32,8 +32,8 @@
   "input_hashes": {
     "lei_ren_part1_paper_compliant_comparison_point_integrals.json": "42e5b54453ebb1769eea5f2cb21a622bdae5e6b2dc1988020abfa967252dcff1",
     "lei_ren_part1_paper_compliant_comparison_point_integrals_check.json": "3b2cd05bd8732acaf3b53b4f97422c55721a4ab9db9c760758b5cbdd0e31171b",
-    "lei_ren_part1_paper_compliant_macro_signed_integrals.json": "1d06ba692c0c30c57d3f8e57f96e34467e722d3b1341ad8b433bcfe1be3eb7f9",
-    "lei_ren_part1_paper_compliant_macro_signed_integrals.py": "98bc37d95e5c02f9a8d0ed614e31901a13135239b3886945bc3c73ac47a68313",
-    "lei_ren_part1_paper_compliant_macro_signed_integrals_check.py": "63ab0d1c93819ec67a944371519b04977576043ad16c0009920805a208f972c9"
+    "lei_ren_part1_paper_compliant_macro_signed_integrals.json": "af8f06a0a32e084bfb69796731582f44ba13d81c89bc1b766a46d86bc55a805b",
+    "lei_ren_part1_paper_compliant_macro_signed_integrals.py": "8e3c67908eecb8661128f1126fcb91bd84f4e5beb85d49f25f724accb32e22a5",
+    "lei_ren_part1_paper_compliant_macro_signed_integrals_check.py": "df2b02d4f063c3d38a0887cba9e6e57ab10cb9cc802a656bf4d2633e3e9cd9bc"
   }
 }

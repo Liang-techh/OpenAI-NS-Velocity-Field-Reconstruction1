@@ -6,11 +6,13 @@ zero-width exponential moment modes after the 2 h_b smoothing chart, and
 integrates the signed (9.13) direction and axial-drive modes from R_a to 100.
 The returned coefficients are the formal leading terms
 
-    log(F_100/F_2) = h_b * J_F + O(h_b^2),
-    V_100 - V_2     = h_b * J_V + O(h_b^2).
+    log(F_100/F_a) = h_b * J_F + O(h_b^2),
+    V_100 - V_a     = h_b * J_V + O(h_b^2).
 
-No numerical cap is used as h_b and no h_b is materialized.  Higher width
-orders, the first switch, and the complete actual bridge remain unresolved.
+No numerical cap is used as h_b and no h_b is materialized.  The first
+microscopic chart and frozen macro contribute at order h_b; the second
+microscopic chart starts at order h_b^2.  Higher width orders, the R=100
+first switch, and the complete actual bridge remain unresolved.
 """
 
 import hashlib
@@ -264,6 +266,7 @@ class CompliantMacroSignedIntegrals:
         self.hashes = dict(self.comparison.get("input_hashes", {}))
         self.hashes[COMPARISON_NAME] = _sha256(COMPARISON_NAME)
         self.hashes[COMPARISON_CHECK_NAME] = _sha256(COMPARISON_CHECK_NAME)
+        self.hashes[PREFIX + "flat_pulse_derivatives.py"] = _sha256(PREFIX + "flat_pulse_derivatives.py")
         for path in (
             "lei_ren_part1_paper_compliant_inner_bridge_profiles.py",
             "lei_ren_part1_paper_compliant_bridge_mixed_C4.py",
@@ -293,18 +296,36 @@ class CompliantMacroSignedIntegrals:
         # Simplify Ra*exp(Y) exactly before interval arithmetic; never form
         # exp(Y), whose intermediate exponent is needlessly enormous.
         D_modes = modes["D_over_R"]
-        J_F = _weighted_modes(c, D_modes, _radius_kernels(c, radius, self.Y, 1)) * (-c.mpf("0.5"))
+        J_F_macro = _weighted_modes(c, D_modes, _radius_kernels(c, radius, self.Y, 1)) * (-c.mpf("0.5"))
+        # On the first actual smoothing chart chi_0(s)=1-sigma(s), 0<=s<=1.
+        # The admitted pulse is exactly reflection-symmetric, so its integral
+        # is 1/2. The second chart has chi=hb and contributes only O(hb^2).
+        core_direction = _mode_direction(self.bridge, z, inputs, phi, value, inlet)
+        micro_weight = c.mpf("0.5")
+        J_F_micro = core_direction["D_over_R"] * (-c.mpf("0.5") * micro_weight * radius)
+        J_F = J_F_micro + J_F_macro
 
         # R * hydro, R * P0^2 * pressure, and R^2 * F0^2 * swirl.
         hydro_kernels = _radius_kernels(c, radius, self.Y, 1)
         swirl_kernels = _radius_kernels(c, radius, self.Y, 2)
-        JV_hydro = _weighted_modes(c, modes["drive_hydro"], hydro_kernels) * -1
-        JV_pressure_normalized = _weighted_modes(c, modes["drive_pressure"], hydro_kernels) * -1
-        JV_swirl_normalized = _weighted_modes(c, modes["drive_swirl"], swirl_kernels) * -1
+        JV_hydro_macro = _weighted_modes(c, modes["drive_hydro"], hydro_kernels) * -1
+        JV_pressure_macro = _weighted_modes(c, modes["drive_pressure"], hydro_kernels) * -1
+        JV_swirl_macro = _weighted_modes(c, modes["drive_swirl"], swirl_kernels) * -1
+        JV_hydro_micro = core_direction["drive_hydro"] * (-micro_weight * radius)
+        JV_pressure_micro = core_direction["drive_pressure"] * (-micro_weight * radius)
+        JV_swirl_micro = core_direction["drive_swirl"] * (-micro_weight * radius * radius)
+        JV_hydro = JV_hydro_micro + JV_hydro_macro
+        JV_pressure_normalized = JV_pressure_micro + JV_pressure_macro
+        JV_swirl_normalized = JV_swirl_micro + JV_swirl_macro
         pressure_log = 2 * self.bridge.core.logP
         hydro_term = _factored_component(JV_hydro, c.mpf(0))
         pressure_term = _factored_component(JV_pressure_normalized, pressure_log)
         swirl_term = _factored_component(JV_swirl_normalized, self.F02_log)
+        for term, micro, macro in ((hydro_term, JV_hydro_micro, JV_hydro_macro),
+                                   (pressure_term, JV_pressure_micro, JV_pressure_macro),
+                                   (swirl_term, JV_swirl_micro, JV_swirl_macro)):
+            term["micro_normalized_axial_coefficients"] = _as_output(micro)
+            term["macro_normalized_axial_coefficients"] = _as_output(macro)
         JV = dict(exact_representation="sum(exp(scale_log_i)*normalized_i(Z))",
                   terms=dict(hydro=hydro_term, pressure=pressure_term, swirl=swirl_term),
                   no_amplitude_scale_materialized=True)
@@ -327,6 +348,10 @@ class CompliantMacroSignedIntegrals:
             "macro_coordinate": "Delta=log(R/Ra)-2hb",
             "Y": self.Y,
             "Ra": radius,
+            "first_micro_chi_integral": micro_weight,
+            "second_micro_leading_coefficient_zero": True,
+            "J_F_micro": _as_output(J_F_micro),
+            "J_F_macro": _as_output(J_F_macro),
             "comparison_phi_two_hb": _as_output(phi),
             "comparison_V_two_hb": _as_output(value),
             "comparison_moments_two_hb": {
@@ -367,11 +392,12 @@ class CompliantMacroSignedIntegrals:
             "J_V_swirl": swirl_term,
             "J_V": JV,
             "formal_changes": {
-                "log_F100_over_F2": "hb*J_F + O(hb^2)",
-                "V100_minus_V2": "hb*J_V + O(hb^2)",
+                "log_F100_over_Fa": "hb*J_F + O(hb^2), including first micro chart and macro",
+                "V100_minus_Va": "hb*J_V + O(hb^2), including first micro chart and macro",
                 "hb_source": "hb=cstar*K^-100; retained formally",
                 "F0_squared_source_log": self.F02_log,
             },
+            "micro_source_formula": "chi_0(s)=1-sigma(s), 0<=s<=1; integral=1/2 by exact pulse reflection symmetry; chart 1<=s<=2 has chi=hb and zero hb^1 coefficient",
             "signed_source_formulas": {
                 "J_F": "-1/2*integral_0^Y Dbar(Delta)dDelta",
                 "J_V": "-integral_0^Y [R*hydro+R*Pstar^2*pressure+R^2*F0^2*swirl]dDelta",
@@ -383,6 +409,8 @@ class CompliantMacroSignedIntegrals:
             "higher_hb_powers_resolved": False,
             "first_switch_resolved": False,
             "actual_signed_bridge_completed": False,
+            "leading_formal_hb_full_Ra_to_R100": True,
+            "actual_signed_bridge_integrals_resolved": False,
         }
 
     def report(self):
@@ -398,11 +426,12 @@ class CompliantMacroSignedIntegrals:
             "comparison_source_namespace": self.comparison["original_comparison_source"]["source_namespace"],
             "Y_exact_log_100_over_Ra": self.Y,
             "formal_width_source": "hb=cstar*K^-100; no cap substituted or inverted",
-            "macro_signed_integral_packets": packets,
+            "leading_signed_bridge_packets": packets,
             "leading_formal_hb_coefficient_only": True,
             "higher_hb_powers_resolved": False,
             "first_switch_resolved": False,
             "actual_signed_bridge_completed": False,
+            "leading_formal_hb_full_Ra_to_R100": True,
             "old_inner_bridge_cumulative_cover_used": False,
             "input_hashes": self.hashes,
         }
