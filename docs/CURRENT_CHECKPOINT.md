@@ -1,3 +1,17 @@
+# F38-D3c1g original flat shapes and mixed pulse derivatives - 2026-10-01
+
+The SAME compliant .001 family now has original sigma/gp/normalized beta derivatives through radial order4, including support-crossing boxes and analytic flat-tail majorants. Exact constant/zero extensions, beta radius .15, original positive normalization, main mu^k factors and finite end offsets remain unchanged. Tiny source caps are positive enclosures, not replacement definitions. Tail caps use W*exp(-1000) only after a directed log inequality, so numerical upper tails also vanish with endpoint distance; sigma order0 means deviation from its endpoint constant.
+
+All five partial histories are differentiated repeatedly using their actual source ODEs. Paper(3.9) consumes the same Mz5 input; all15 (y,Z) velocity/pressure mixed derivatives with k+n<=4 are now callable in every entrance/main/gap/end chart. Physical Utheta and sqrt(R/2)*Utheta prefactors and inlet axial derivatives are included before forming mixed values. y=log similarity R, Z is the paper axial variable; these are not yet Cartesian physical spatial derivatives.
+
+Independent beta symbolic derivatives/envelope extrema/flat-limit proofs,80 original-shape point derivatives,225 box/support derivatives,15 end-normalization checks and tiny positive-cap gates PASS. An independent closed-form ODE/physical fixture checks480 mixed derivatives. Actual-source checks include1680 finite mixed enclosures,540 earlier-source derivative comparisons, three mixed chart overlaps, exact whole-Z terminal Uz/Ur zeros and retained positive selected future energy. A read-only GPT-5.6 Luna/max worker confirmed the envelope/transport formulas.
+
+Read docs/ORIGINAL_FLAT_SHAPES_AND_PULSE_MIXED_C4_2026_10_01.md. Reproduce --stage flatjets then --stage mixedjets with compliant_reconstruction.py; ordered pipeline has59 modules. F38-D3c1g1a through g1d are COMPLETE. Quantitative flat SHAPE tails are available; a complete uniform pulse/interface certificate remains pending. Full pulse/outer C4, physical energy, cone/admissible stress/flat remainder and genuine n-dependent temporal recursion remain incomplete. No cell polynomial/remainder is inferred from jet length.
+
+NEXT: convert complete factored entrance/main/exit/both-gap/end interval boxes into a scale-aware physical bound ledger -> exact functional/quantitative flat interface composition -> complete post-pulse mixed C4 -> physical energy and stress cone/lift -> actual temporal coefficient recursion. This header supersedes missing original radial-shape/mixed derivative availability only.
+
+---
+
 # F38-D3c1f fifth source / radial axial C4 checkpoint - 2026-10-01
 
 A separate source layer now recovers true fifth axial coefficients of the SAME implicit angular branch, complete future swirl energy, actual selected ap and both end functions. C0-C4 prefixes are inherited without bypassing existing C4 guards or changing earlier receipts. Exact Gamma fifth derivatives and complete infinite tails, correlated flatten, fixed incoming row factors and positive quadratic derivative inverses remain bound to the same compliant .001 family.

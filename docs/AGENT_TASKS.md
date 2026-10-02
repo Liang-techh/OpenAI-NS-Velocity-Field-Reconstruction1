@@ -1,3 +1,32 @@
+# F38-D3c1g original flat derivatives and pulse mixed-order handoff - 2026-10-01
+
+- [x] F38-D3c1g1a: Original sigma derivatives0..4, logistic/reflection with exact exterior constants, analytic Cn exp(4-m^-2)m^-3n endpoint majorants, finite positive caps and support-crossing boxes. Constants(4,28,256,3104); no source reset.
+- [x] F38-D3c1g1b: Original gp primitive/exit product through4, entrance50 factors, Leibniz and exit signs, exact primitive xi-.01 beyond .02, broad-box entrance/middle/exit splitting and exact main y factors mu^k.
+- [x] F38-D3c1g1c: Original beta derivatives0..4 with R_(n+1)=w^2 Rn'+(4n*r*w-2r)Rn and coefficient-norm majorants. Correct envelope peak w=1/(2n). Both support crossings and normalized .15^(-(n+1)) factors installed.
+- [x] F38-D3c1g1d: Repeated radial y derivatives of both linear moments, angular and energy histories and original P0+Mp pressure from true ODEs. Apply same Mz5/paper(3.9) radial recovery; differentiate Utheta and sqrt(R/2) prefactors and inlet axial factor. All15 multiindices k+n<=4 callable for every velocity component/pressure in every O4 chart.
+
+F38-D3c1g2a remains PARTIAL: analytic flat SHAPE envelopes with vanishing numerical caps, actual broad boxes covering all six entrance/main/exit/gap/end charts and three mixed chart overlaps are available; full uniform pulse/interface acceptance is not complete.
+
+Next executable work:
+
+- [x] F38-D3c1g2a1a: Whole-Z finite factored derivative boxes cover entrance xi[0,.02], main[.02,10], exit[10,11], gap main[11,12.0001], gap end from the admitted reciprocal endpoint to s=-4, and end[-4,0]. A directed overlap bound covers uncertainty in the source-dependent s=-1/mu boundary. All1680 reported actual mixed enclosures are finite.
+- [ ] F38-D3c1g2a1b: Convert these factored boxes into a scale-aware physical bound ledger for every required mixed multiindex. Retain nonzero moment/energy histories and exact positive radial factors; factored bounds are not physical norms.
+- [ ] F38-D3c1g2a2: Bind functional main/gap moment and energy identities to actual selected equations; prove every y/Z derivative across xi11. Express both gap coordinate charts as the same function using retained exact offset logs, then bind gap/end s=-4 to identical full future support integrals. Do not promote finite interval overlap to functional equality.
+- [ ] F38-D3c1g2a3: Compose quantitative sigma/beta/gp flat tail bounds through actual ap/end functions, repeated moment ODEs and radial recovery. Include mixed axial factors and physical prefactor rates at all support endpoints. Check the O3 power-buffer/pulse entrance and pulse/post-Rv joining data; certify full pulse C4 only with the correct stated scope.
+- [ ] F38-D3c1g2b: Introduce an independently bounded cell Taylor remainder ONLY where an algorithm evaluates a cell polynomial. Current mixed module performs interval derivative algebra, not cell polynomial approximation; finite arrays alone supply no cell remainder.
+- [ ] F38-D3c2a: Transport high mixed derivatives through the corrected100-unit flatten and following pure power, preserving actual incoming histories, original P0+Mp and repaired absolute pressure/angular constants.
+- [ ] F38-D3c2b: Use actual angular C5 source plus original beta support derivatives through both angular corrections. Recover velocity/moment/pressure mixed derivatives from the corrected same-source ODEs, with signed bump contributions and true physical units.
+- [ ] F38-D3c2c: Propagate the high derivatives through steep entry/power/exit and waiting. Reuse original sigma derivative provider where the original shape matches; derive the exact slope product/chain rules and certify all interfaces.
+- [ ] F38-D3c2d: Propagate through epsilon collar and full infinite Gamma exterior, retaining formal S>0 and all Gamma tail atoms; do not use a finite S-series as the exact heat profile. Compose uniform high derivative/interface certificates for the whole outer field.
+- [ ] F38-D3c2e: Restore physical Cartesian derivative mappings and accept whole-field C4 only after core/inner/outer interfaces and axis behavior have evidence at all required orders.
+- [ ] F39-A/B: Physical energy and complete outer stress-cone margins; global admissible divergence-form stress plus independently flat remainder with suprema, L2 and scale dependence. Background residual does not need to be fitted directly to1e-3.
+- [ ] F40: Actual n=1 and n>=2 coefficient recovery, n-dependent forcing and independent repairs on the common inner interval, curl-based truncation and smooth sum. Leading-profile mixed derivatives are NOT temporal recursion.
+- [ ] F41: Mean and both oscillatory pulse families, averaged quadratic stress cancellation, independent full forced Cartesian residual and vortex/material-line winding diagnostics.
+
+Evidence: docs/ORIGINAL_FLAT_SHAPES_AND_PULSE_MIXED_C4_2026_10_01.md. New --stage flatjets and --stage mixedjets;59 ordered modules. Original-shape/symbolic checks and480 independent physical/primitive mixed derivatives PASS. Full pulse/outer C4, global stress/flat remainder, physical energy and temporal recursion remain false. Supersede historical g1a..g1d availability tasks only; preserve prior receipts and unrelated working-tree edits.
+
+---
+
 # F38-D3c1f fifth source and radial C4 handoff - 2026-10-01
 
 - [x] F38-D3c1f1: Separate actual implicit angular fifth-order layer using the admitted C0-C4 prefix and same Jacobian, all ordered quadratic convolution terms, true fifth Gamma collar/infinite-tail bounds and flatten derivative. No guard bypass or prior-source edits. Whole-Z physical fifth derivative sum is below mu/100.
