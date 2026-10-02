@@ -81,6 +81,14 @@ rescaling, or pressure-row-only implementation is not this recursion.
   candidate-local leading-profile evidence. The current physical-field receipt
   still flags core/annulus interfaces, full-field smoothness, whole-background
   admissible stress lift, and `temporal_recursion` as incomplete.
+- `lei_ren_part1_paper_compliant_omega0_regular_source.py` now evaluates the
+  v2-core `Omega_0/R` and known pressure forcing at twelve source-bound core
+  points, including the axis by substituting `V_0=R*Q`. Its independent
+  checker verifies the symbolic regularization and nine positive-radius
+  direct quotients. This supplies candidate-local `n=1` source data only; it
+  does not certify the whole Assumption 14.1 interval or solve `n=1`.
+  Reproduce with `python experiments/root_st073/lei_ren_part1_paper_compliant_omega0_regular_source.py`
+  followed by `python experiments/root_st073/lei_ren_part1_paper_compliant_omega0_regular_source_check.py`.
 - `lei_ren_part1_first_order_sources.py` is an older v1 extended-field source
   diagnostic. It computes sampled `Omega_0` and viscosity inputs but explicitly
   reports `first_coefficient_solved=false`; it cannot certify a v2 `n=1` solve.

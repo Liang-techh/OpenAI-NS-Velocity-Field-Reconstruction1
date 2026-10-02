@@ -1,0 +1,79 @@
+{
+  "all_passed": true,
+  "failures": [],
+  "symbolic_regular_identity": true,
+  "actual_source_rows_checked": 12,
+  "positive_radius_direct_rows": 9,
+  "axis_rows_regularized": 3,
+  "n1_coefficient_solved": false,
+  "assumption_14_1_full_interval_admitted": false,
+  "global_admissible_stress_lift_constructed": false,
+  "flat_remainder_certified": false,
+  "checked_points": [
+    {
+      "rho": "0",
+      "Z": "-0.5",
+      "positive_radius_direct_check": false
+    },
+    {
+      "rho": "0",
+      "Z": "0",
+      "positive_radius_direct_check": false
+    },
+    {
+      "rho": "0",
+      "Z": "0.5",
+      "positive_radius_direct_check": false
+    },
+    {
+      "rho": "1",
+      "Z": "-0.5",
+      "positive_radius_direct_check": true
+    },
+    {
+      "rho": "1",
+      "Z": "0",
+      "positive_radius_direct_check": true
+    },
+    {
+      "rho": "1",
+      "Z": "0.5",
+      "positive_radius_direct_check": true
+    },
+    {
+      "rho": "2",
+      "Z": "-0.5",
+      "positive_radius_direct_check": true
+    },
+    {
+      "rho": "2",
+      "Z": "0",
+      "positive_radius_direct_check": true
+    },
+    {
+      "rho": "2",
+      "Z": "0.5",
+      "positive_radius_direct_check": true
+    },
+    {
+      "rho": "4",
+      "Z": "-0.5",
+      "positive_radius_direct_check": true
+    },
+    {
+      "rho": "4",
+      "Z": "0",
+      "positive_radius_direct_check": true
+    },
+    {
+      "rho": "4",
+      "Z": "0.5",
+      "positive_radius_direct_check": true
+    }
+  ],
+  "input_hashes": {
+    "lei_ren_part1_paper_compliant_omega0_regular_source.json": "987022f7adec467e069f3cafd3082cadc9cc0326060d3a6830b70c1b64a02b7d",
+    "lei_ren_part1_paper_compliant_omega0_regular_source_check.py": "16e8e98dbb23fac4a29f1325b654c607b71525f13e3aa89c3c3f350595cdf4b8",
+    "lei_ren_part1_paper_compliant_omega0_regular_source.py": "7bd07352c42befd0ae0a0ac0d0d414c752d5557422bb7af3b4cf3d81b54248f9"
+  }
+}
