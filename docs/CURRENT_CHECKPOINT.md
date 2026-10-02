@@ -1,3 +1,19 @@
+# Original 100..110 switches and ACTUAL R110 inlet - 2026-10-02
+
+SAME source: the original (4.37)/(9.30) two short switches now provide callable actual velocity/moment/pressure axial5 enclosures and mean-recovered Ur axial4. R100 inherits the accepted ACTUAL bridge and original P0; comparison moments are never substituted. Exact positive hb and R2=100exp(2hb) remain formal. All h-squared pressure/gradient products are factored in source logs BEFORE enclosure.
+
+The second switch retains its original sigma factor. Its integral1/2 gives log(F2/F100)=-.2hb-.5hb^2 JD, then log(F/F100)=-(2/5)log(R/100)+.6hb-.5hb^2 JD. Current-R Dbar/Ebar are retained. Uz is the exact same source function from the end of the FIRST switch onward. Following a=4/5 power transport continues all actual R2 moments with exact positive integral weights.
+
+The ACTUAL R110 inlet now supplies velocity, original pressure, all five moment shapes and B110=log(Cstar*Utheta110*(1+Z^2)) through axial5. logCstar cancels before enclosure. These remain enclosures of original integrations, NOT recomputed point coefficients. Long reshape using this inlet is not installed yet.
+
+Checks PASS:152 actual source-log product proofs,391 profile/inlet-log bounds,396 moment bounds,6 direct angular h-squared bounds, exact R100 history and zero later axial change. Independent fixtures pass14 angular+10 physical/factored axial integrations,5 sigma checks and288 direct-quadrature moment derivatives;13 symbolic identities. Read-only Luna/max audit: no material source/factor error. Reproduce --stage switchprofiles;86 ordered modules. Read docs/INNER_SWITCH_PROFILES_2026_10_02.md.
+
+NOT DONE: bridge/switch radial-phase mixed4, full high-derivative core joins, long reshape/reference/axial restoration/actual five-moment patch and missing precedingO3/full physical assembly. Stress lift/independent flat remainder, terminal-energy domains, true n-dependent recursion and oscillatory correction remain open. Original global unlocalized kinetic energy is infinite. Full-field/cone/energy/temporal gates remainfalse.
+
+NEXT: accepted actual110 inlet -> long reshape/reference/axial restoration/moment patch; bridge/switch mixed4 and core joins -> whole physical assembly -> energy/stress/flat remainder -> actual recursion/correction.
+
+---
+
 # Smoothed comparison and ACTUAL inner bridge axial enclosures - 2026-10-02
 
 SAME source: smoothed comparison(9.23) with own five cumulative moments now has axial6 enclosures and factored inertial direction axial5. The actual prescribed-shear bridge(9.26) over Ra=4/Lambda<=R<=100 now has regular velocity/moment/pressure axial5 enclosures and mean-recovered Ur axial4. Exact hb=epsilon_b=cstar*K^-100 and original preheat P0 are retained; hb/F0 are not materialized or replaced by a numerical cap. Products hb*pressure/gradient factors are combined in logs BEFORE enclosure. The actual-to-comparison F0 factor cancels before axial integration.

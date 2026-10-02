@@ -1,3 +1,23 @@
+# Next execution: actual110 inlet to long reshape and inner assembly - 2026-10-02
+
+Read docs/INNER_SWITCH_PROFILES_2026_10_02.md; reproduce --stage switchprofiles (86 modules in complete pipeline). SAME admitted core/Cstar/K/hb/P0 and actual bridge only. Completed items below are AXIAL ENCLOSURES, not point coefficient reconstruction or full mixed annular matching.
+
+- [x] Continue the original first short switch from ACTUAL R100 histories: current-R Dbar/Ebar, actual Factual/Fbar amplitude cancellation and source h-squared drive bounds.
+- [x] Continue the original second switch with a=hb*Dbar*(1-sigma)+(4/5)*sigma,b=0. Keep integral sigma=1/2; logF2/F100=-.2hb-.5hb^2 JD. Uz is unchanged from first-switch exit onward.
+- [x] Transport the following exact a=4/5 power field and all actual R2 cumulative histories to110. Keep formal R2=100exp(2hb), positive weights and original P0.
+- [x] Supply ACTUAL R110 velocity/pressure/five-moment axial5 enclosures, Ur axial4 and B110 log-shape axial5 with logCstar cancelled before enclosure.
+- [x] Independently integrate original a/b switches with variable Dbar/Ebar; reject the dropped-sigma and frozen-Dbar alternatives. Check inherited-history quadratures, primitive RHSs and actual width-product logs. Source admission is separate from finite fixtures.
+- [ ] Read the original long reshape (9.33)--(9.36) and its already selected A/T choices. Use the accepted actual110 B110, not the old standalone/reference inlet. Build its needed axial5 logarithmic shape before exponentiation; retain formal huge radial log length.
+- [ ] Integrate actual reshape moments from R110 and retain original pressure. Track formal positive amplitudes; do not materialize exp(-logCstar), select a convenient shorter interval or reset any moment.
+- [ ] Connect actual reshape exit to original reference continuation and axial restoration. Supply functional high-derivative identities at joins; interval overlap alone is not proof.
+- [ ] Recompute/bind the five moment defects to these actual histories and connect the existing standalone repair only after direct source/inlet agreement. Verify terminal identities as Z functions, not finite point fitting.
+- [ ] Restore actual bridge and both switches radial/phase mixed4 using original flat sigma and formal inverse-hb prefactors. Source hb caps must never define differentiated cutoffs. Certify two-sided core/annular matching.
+- [ ] Complete missing precedingO3 and whole physical Cartesian assembly, local/terminal energy domains, admissible stress lift and independent flat remainder, actual n-dependent recursion and oscillatory correction.
+
+For each completion give exact scope, artifact, reproduction command and accepted receipt/commit. Preserve source hashes and unrelated experiments. Full-field/cone/energy/temporal gates remainfalse; the original unlocalized whole-space energy remains infinite.
+
+---
+
 # Next execution: actual inner bridge radial jets and original short switches - 2026-10-02
 
 Read docs/INNER_BRIDGE_PROFILES_2026_10_02.md; reproduce --stage bridgeprofiles (84 modules in complete pipeline). SAME selected core/Cstar/K/hb/P0 only. The completions below are AXIAL ENCLOSURE scope, not point coefficient reconstruction or full annular matching.
