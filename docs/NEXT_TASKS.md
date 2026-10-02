@@ -1,3 +1,30 @@
+# Next: measure rooted field dynamics and resolve annular values - 2026-10-02
+
+Read docs/ROOTED_CORE_FIELD_2026_10_02.md; focused rootedfield,115 ordered modules. Local vector/vorticity recovery supersedes the corresponding TODOs below. Preserve the full project goal and SAME Cstar/core/pressure/primitive identities.
+
+- [x] Rebuild fresh root-centered coupled rows with exact H(a)=0 and scaled amplitude gradient zero before enclosure; retain original positive swirl source and analytic pressure.
+- [x] Prove exact-zero root Bessel tail by chi valuation2, retaining nonlinear radial tails; transport mixed Phi/Psi/average jets with full analytic norms. Normalize Psi before affine U0 recombination.
+- [x] Recover rooted ur/utheta/uz/p and Q/Qrho/QZ using the same true radial primitive; restore Cartesian physical vectors, coordinates and signed logarithmic factors without selecting parameter midpoints.
+- [x] Recover physical cylindrical/Cartesian vorticity with correct 2+delta coefficient, exact sqrt(epsilon)/b cancellation, normalized Psi_rho and nonsingular axis limits.
+- [x] Bind coefficientwise radial/axial primitive identities and exact structural divergence; report raw interval divergence separately.
+- [x] Recover original positive epsilon F0^2 pressure integral by finite convolution plus directed radial/axial remainder, preserving the original datum and V_rho=Phi^2/V(0)=0/dR=epsilon drho.
+- [x] Check18 source vector/pressure/vorticity packets,6 axes,90 actual shared-moment jets and an independent Cartesian curl/divergence fixture at3 points/3 resolutions. Fixture parameters are not source data or NS evidence.
+- [ ] Locate full physical Phi-weighted swirl maxima and levels with derivative signs and source uncertainty. Bound any shift from the F0 anchor; preserve geometry/prefactor derivatives and do not equate F0 peak with whole-field peak.
+- [ ] Extract actual radial/axial core metrics from velocity/vorticity profiles with explicit threshold/domain. If the needed radial level is outside rho<=4.1, continue original matching charts rather than assign the core cutoff as width.
+- [ ] Add reproducible multitime local field/vorticity samples and amplitude/width exponent fits with convergence/error bars. Separate imposed scaling laws, normalized source measurements and fitted physical dynamics; preserve tiny original delta/log-time factors.
+- [ ] Integrate true particles and cumulative material winding in stable rooted/similarity coordinates, using actual ur/utheta/uz. Resolve axial exit and chart transitions; validate stepping/interpolation and keep instantaneous streamlines separate.
+- [ ] Resolve signed prescribed-shear and first-switch partial/terminal integrals with common actual histories and directed error, retaining original comparison quotients, Pstar/F0 units and exact positive widths.
+- [ ] Transport actual core/annular values through all five primitive histories as axial functions; recover admitted implicit five-bump values with a posteriori Jacobian/remainder bounds and current analytic preheat pressure.
+- [ ] Compose physical/logarithmic point selection and same-source field through original annuli, pulses, flatten, heat collar and exact exterior. Handle subprecision boundaries explicitly and verify shared-source interfaces rather than interval overlaps alone.
+- [ ] Establish required physical energy/support and terminal bounds including actual radial tail; original unlocalized whole-space energy is infinite and cannot be silently relabeled.
+- [ ] Construct actual admissible divergence stress and separately bounded flat remainder; report regionwise cone margins, maxima, physical-volume L2 and scale decay before recursion.
+- [ ] Implement genuine n=1/n>=2 recovery/common core interval/per-order moment repair/curl-based cutoffs/finite remainder/smooth sum after the leading gates hold.
+- [ ] Implement realizable mean and two-family oscillatory correction, verify averaged quadratic flux cancellation and then full Cartesian forced-NS max/L2<1e-3 acceptance.
+
+Mark [x] only with actual code/source/check/domain/limits and commit. Earlier detailed requirements remain open except the explicitly superseded local tasks.
+
+---
+
 # Next: complete rooted field, measure dynamics, resolve annuli - 2026-10-02
 
 Read docs/ROOT_CENTERED_CORE_PEAK_2026_10_02.md. Its completed rooted chart supersedes the microscopic amplitude-peak TODO below. Pipeline113 modules; focused rootpeak. Preserve SAME Cstar/core/pressure/five-history identities and original positive scales.

@@ -152,8 +152,10 @@ the directed algebraic remainder is what proves the microscopic error bound.
 
 ## Remaining dependencies
 
-Recover complete rooted ur/uz/p and independently controlled vorticity;
-measure actual radial morphology and locate the full Phi-weighted swirl peak.
+Local rooted ur/utheta/uz/p and independently checked physical vorticity
+are now implemented in docs/ROOTED_CORE_FIELD_2026_10_02.md. The current
+pipeline has115 modules. Measure actual radial morphology and locate the
+full Phi-weighted swirl peak.
 Measure multitime field dynamics and integrate true particle winding.
 Resolve original signed annular integrals, shared five histories and the
 admitted implicit bump branch; compose full physical point selection.

@@ -1,3 +1,15 @@
+# Active handoff: measure local field and resolve annular values - 2026-10-02
+
+Read docs/ROOTED_CORE_FIELD_2026_10_02.md. SAME-source rooted ur/utheta/uz/p and physical Cartesian vorticity are now callable with directed tails/transport; focused rootedfield,115 ordered modules. Their local completion supersedes matching TODOs below, without claiming whole-Z/global field completion.
+
+Priority A: use the actual local vector/vorticity API for full angular peak location, source-resolved radial morphology, multitime normalized diagnostics and particles. Preserve original tiny delta, source uncertainty and log factors. Do not use rho=4.1 cutoff as a measured radial vortex width or coordinate scaling as measured recursion.
+Priority B: resolve original signed bridge/first-switch integrals and common five primitive histories, then actual admitted implicit bump values. Extend the original source evaluator through annuli/collar/exterior and bracket physical chart selection; never reset pressure/Cstar/moments.
+Priority C: after full leading profile/moment prerequisites, establish required-domain energy/support, actual admissible divergence stress and independent flat remainder before genuine n-dependent recursion and mean/oscillatory correction.
+
+Preserve exact shared H(a)=0, coefficientwise M averaging and pressure V_rho=Phi^2 identities; keep inverse-width cancellations before enclosure. Mark completion with code, bounded domain, source/check receipt and commit. All later full-field/energy/stress/dynamics/temporal gates remain open. Preserve unrelated experiments.
+
+---
+
 # Active handoff: rooted field dynamics and annular values - 2026-10-02
 
 Read docs/ROOT_CENTERED_CORE_PEAK_2026_10_02.md. It supersedes the unresolved scaled-root peak task below. Keep full docs/PROJECT_GOAL.md scope. Focused pipeline rootpeak;113 modules. Preserve unrelated experiments and SAME pressure/core/Cstar source; claim one bounded task and record actual evidence/limits/commit.

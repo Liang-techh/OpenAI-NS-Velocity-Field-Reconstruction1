@@ -1,3 +1,18 @@
+# Current: local rooted full vector, pressure and vorticity - 2026-10-02
+
+Read docs/ROOTED_CORE_FIELD_2026_10_02.md first. It supersedes rooted ur/uz/p/vorticity TODOs below within its local domain only. Current pipeline115 modules; focused stage rootedfield.
+
+- Rebuilt SAME-source degree24/depth3 coupled radial rows at the shared exact H root; constant H and scaled amplitude-gradient seeds are exactly zero before enclosure. Positive implicit swirl sources and original pressure remain.
+- Used the root Bessel valuation to remove only its exact-zero model tail; retained admitted nonlinear tails and full analytic mixed-jet transport. Normalized Psi before adding affine U0.
+- Recovered local ur/utheta/uz/p, common Q/Qrho/QZ, cylindrical and Cartesian physical vorticity. Canceled sqrt(epsilon)/b=1/sigma before amplitude derivatives; handled the axis without inverse radius.
+- Bound actual coefficientwise radial/axial primitive identities, hence exact structural divergence. Raw normalized interval diagnostic width is approximately2.64e-201 in the initial packets; it is not a full NS residual or global-in-time bound.
+- Retained original Pstar^2*p0 plus epsilon F0^2 integral Phi^2, with positive directed convolution remainder. Pressure datum is unchanged; no residual-fitting tail.
+- Generated18 physical/logarithmic packets,6 on-axis;90 actual moment-jet packets checked. Independent finite-scale Cartesian curl/divergence with three difference resolutions passed. The synthetic fixture is not paper or NS validation data.
+
+NEXT: full Phi-weighted peak/radial morphology, multitime measured diagnostics and real particle winding; signed annular integral/common-history/implicit-bump values and full physical point selection; required-domain energy, actual stress/flat remainder, genuine n-dependent recursion and corrections. The source vector is locally callable in the rooted chart, not a completed global field. All full dynamics/stress/energy/temporal completion gates remain false; unlocalized whole-space energy remains infinite.
+
+---
+
 # Current: resolved root-centered peak and local swirl - 2026-10-02
 
 Read docs/ROOT_CENTERED_CORE_PEAK_2026_10_02.md first. This supersedes the unresolved microscopic peak item below. Current pipeline:113 ordered modules; focused stage rootpeak. Original same-source pressure/core/Cstar and positive microscopic width are preserved.
