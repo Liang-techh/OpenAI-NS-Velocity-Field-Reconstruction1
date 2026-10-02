@@ -1,0 +1,30 @@
+{
+  "all_passed": true,
+  "failures": [],
+  "leading_hb2_first_switch_checked": true,
+  "independent_sigma_integral": {
+    "value": "0.5",
+    "log_abs": "-0.69314718055994528622676398299518041312694549560546875",
+    "exact_mpf_tuple": [
+      0,
+      1,
+      -1,
+      1
+    ]
+  },
+  "points_checked": [
+    ".5",
+    "0",
+    "exact_shared_root"
+  ],
+  "full_first_switch_resolved": false,
+  "actual_signed_bridge_completed": false,
+  "input_hashes": {
+    "lei_ren_part1_paper_compliant_first_switch_leading.json": "3745da8bedeb7051a69c8a8b4a29357350b157869fcbca341260e2b8e3f8cc97",
+    "lei_ren_part1_paper_compliant_first_switch_leading.py": "05f5f4db0280e6a5c8afda74175d01283de2d3d7aa1ea3030eacffbb845626a9",
+    "lei_ren_part1_paper_compliant_first_switch_leading_check.py": "39849f15b8cfa4cbc0a082a0a9be76e8da90670fedc990cce897191a1f3a99bf",
+    "lei_ren_part1_paper_compliant_comparison_point_integrals.json": "42e5b54453ebb1769eea5f2cb21a622bdae5e6b2dc1988020abfa967252dcff1",
+    "lei_ren_part1_paper_compliant_comparison_point_integrals_check.json": "3b2cd05bd8732acaf3b53b4f97422c55721a4ab9db9c760758b5cbdd0e31171b",
+    "lei_ren_part1_paper_compliant_flat_pulse_derivatives.py": "32f51123a47c2bafbb6c2f7056302bab996a019883615333875207d72a9bb7d7"
+  }
+}

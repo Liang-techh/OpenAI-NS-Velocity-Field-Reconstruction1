@@ -1,3 +1,15 @@
+# Active handoff: finite-width bridge closure — 2026-10-02
+
+Read docs/FIRST_MICRO_SWITCH_LEADING_2026_10_02.md. Stage firstswitchleading; 122 ordered modules. The first R=100 micro chart has a checked leading h_b^2 signed F/V term using the exact pulse weight and endpoint moment histories. It ends at R=100*exp(hb), not R=110.
+
+Priority A: derive controlled h_b^2 coefficients and remainder through both R_a-to-R_a*exp(2hb) charts and macro, including actual moment feedback and radius shifts. Preserve exact positive width and all source logs.
+Priority B: complete second microswitch chart and postpower to R=110, validate V100/V110/E identities, and bound omitted orders; the first chart's leading term alone is not full switch closure.
+Priority C: recover implicit five-bump values/functions, compose the selected physical point field, measure full morphology and material winding, then close energy/support, stress cone, flat remainder and true n-dependent recursion/correction.
+
+Preserve pressure V=4C separately from raw axial V=Uz. Do not report geometric scaling or these leading bridge terms as implemented scale recursion. Preserve unrelated working files.
+
+---
+
 # Active handoff: finite-width signed bridge and first switch — 2026-10-02
 
 Read docs/MACRO_SIGNED_INTEGRALS_2026_10_02.md and rerun its passing checker. Stage macrosignedleading; 121 ordered modules. The complete R_a-to-100 bridge has its leading formal-h_b coefficient: first micro pulse weight 1/2 plus exact frozen-macro mode integrals. Second micro chart is zero at h_b^1. Source amplitudes remain factored; full signed bridge completion is still false.
