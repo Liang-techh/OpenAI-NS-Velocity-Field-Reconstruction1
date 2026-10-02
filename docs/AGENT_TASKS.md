@@ -1,3 +1,28 @@
+# F38-D3a angular high-jet handoff - 2026-10-01
+
+- [x] F38-D3a1: Recover SAME exact angular coefficient Taylor orders2..4 using the C0 implicit Jacobian and full quadratic convolution. Retain admitted C0/C1 branch, exact Z0 odd-jet parity and the original implicit source functions.
+- [x] F38-D3a2: Derive true Gamma divided-deficit axial derivative bounds through4 from positive integral expectations and compose d=1-Z^2. Bound complete epsilon collar and entire infinite angular/pressure/energy defect tails analytically. Preserve actual positive S and use caps only as enclosures; never define heat by an infinite S-series.
+- [x] F38-D3a3: Differentiate the actual flatten Q-power integral through4 while preserving correlated value/slope. Add full finite log-jet helper, uniform derivative smallness, source/family bindings and --stage angularjets. Fifteen identities and fifty independent derivative/branch/integral checks pass.
+
+Next executable tasks, in dependency order:
+
+- [ ] F38-D3b1: Add complete future swirl energy C4 provider consuming the admitted angular C4 functions and reusable Gamma energy-defect jets. Recover flatten, power, both signed bump energy terms, steep/waiting, epsilon atoms and infinite tail through4 in the SAME Rv*Utheta(Rv,Z)^2 units. Keep q^2 prefactors and Section7.34 mu*exp(-26)/2 weighting; compare lower-order jets with the old C1 provider without replacing either source.
+- [ ] F38-D3b2: Recover same-source incoming axial/mixed moments and incoming energy through4 at Rp. Derive their full functional Q/Z dependence from repaired reference and actual O1/O2/O3 fields. Apply Qi=mi*exp(-13lambda_i/mu-common_logpref) to EVERY derivative coefficient with the SAME fixed factor. Do not use independently recapped derivatives as a different source.
+- [ ] F38-D3b3: Differentiate the actual selected scalar quadratic amplitude equation through4 using the positive C0 root and nonzero derivative denominator. Retain actual nu_j=mu*Kj*exp(2log_end_scale)>0, incoming/future energy and affine u_j(Z)+v_j*ap(Z). No nominal ap=1 or derivative-of-interval-iteration substitution. Check C0/C1 consistency and independent positive-root derivatives.
+- [ ] F38-D3c1: Install higher ap/c1/c2, swirl, all five primitives and Ur through every pulse entrance/main/gap/end chart. Recover Ur_Z and radial/axial mixed derivatives from the SAME Mz primitive and paper(3.9). Preserve formal tiny histories, empty future supports, positive energy targets and separate Rp/Rv units.
+- [ ] F38-D3c2: Transport complete higher jets through flatten, angular supports, steep/waiting and Gamma collar/exterior. Add mixed derivatives of the fixed sigma/beta/phi shapes; axial C4 of d_j alone does not bound derivatives of h or the whole field.
+- [ ] F38-D3d1: If using Taylor polynomials over cells, obtain the required fifth-order or other explicit finite-cell remainder bounds. Current jets only enclose pointwise derivatives through4. Do not use them as fourth-degree approximations with zero remainder.
+- [ ] F38-D3d2: Certify all C4 flat interfaces with the original cutoff functions, including interval boxes crossing support endpoints. Combine core/inner/reference/pulse/post-pulse derivative bounds; keep full_outer_C4 false until all required orders and interfaces are covered.
+- [ ] F38-D3e: Expose coherent region dispatch in similarity and physical coordinates with derivative availability and exact structural divergence. Coordinate scaling alone is not n-dependent temporal recursion.
+- [ ] F39-A1: Certify every whole-outer admissible stress-cone margin using CLOSED pressure/angular moments and full derivatives in physical units, including pulse/end/flatten/bumps/steep/waiting/collar/exterior. Report limiting intervals and margins.
+- [ ] F39-A2: Prove physical per-time and spacetime kinetic-energy bounds with radial/axial Jacobian, constructed domain and all velocity contributions; completed finite swirl radial tail is not a full energy certificate.
+- [ ] F39-B: Construct global admissible divergence-form stress and separate flat remainder, reporting maxima, physical volume L2 and scale dependence for each. Then actual n=1/n>=2 recovery, common inner domain, order-specific moment repair and divergence-preserving smooth summation.
+- [ ] F41: Implement mean/two-family oscillatory corrections and averaged quadratic stress cancellation before full forced Cartesian residual targets and multi-time vortex/material-line diagnostics.
+
+Evidence: docs/ACTUAL_ANGULAR_C4_JETS_2026_10_01.md and compliant_angular_high_jets.py/.json plus _check.py/.json. Run --stage angularjets. This completed angular subtask supersedes older D3a pending entries; all full-field C4/cone/energy/stress/temporal tasks remain open. Preserve legacy sources, original pressure, positive formal scales and unrelated edits.
+
+---
+
 # F38-D2 absolute leading moment handoff - 2026-10-01
 
 - [x] F38-D2a1: Bind the actual repaired reference pressure mass to the exact reference extension integral5/2; retain the full fourteen-stage raw-preheat analytic pressure definition, same .001 source, family hashes and continuous waiting root.

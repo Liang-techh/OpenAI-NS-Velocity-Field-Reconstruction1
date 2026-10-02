@@ -1,3 +1,15 @@
+# F38-D3a actual angular C4 checkpoint - 2026-10-01
+
+The two SAME implicit angular repair functions now have ordinary axial Taylor jets through order4 over all real Z in [-1,1]. C0 is the existing admitted branch, higher coefficients differentiate the actual quadratic equations with the same nonzero Jacobian and all convolution terms. Correlated flatten history and true Gamma collar/infinite-tail derivatives supply the exact same RHS; S remains formal positive and caps only enclose it.
+
+Fifteen independent symbolic identities, twenty independent stable closed-form branch checks, twenty true Gamma deficit/angular/pressure/energy tail derivative checks and ten direct flatten/log checks PASS. Exact odd jets1 and3 atZ0 survive; positive Z0 heat values are not erased. Whole-Z physical derivative sums of d1/d2 for orders0..4 are below mu/100. A read-only GPT-5.6 Luna/max review independently confirms factors, rates and recurrence.
+
+Read docs/ACTUAL_ANGULAR_C4_JETS_2026_10_01.md. Reproduce compliant_reconstruction.py --stage angularjets; full ordered pipeline now has45 modules. All prior source and closure receipts remain unchanged. New provider exposes reusable C4 Gamma scaled future defects as well as coefficient jets.
+
+NEXT: C4 complete corrected future energy; same-source incoming moment/energy jets with fixed row normalization factors at every order; C4 actual ap/c1/c2 selection; propagate through all pulse/outer fields and recover full mixed/Ur derivatives and quantitative interfaces. No fifth-derivative Taylor remainder is included yet; do not treat a fourth-degree jet as a cell approximation without a remainder bound. Full outer C4, physical energy, stress cone/admissible lift/flat remainder and true temporal recursion remain incomplete. This header supersedes historical pending angular-coefficient C4 entries only.
+
+---
+
 # F38-D2 absolute leading moment closure checkpoint - 2026-10-01
 
 All five leading terminal moment identities are now admitted for the same exact implicit compliant family over Z in [-1,1]. The two previously retained global constants are proven zero by source composition: repaired reference mass plus complete raw preheat pressure datum; angular bump pressure mass equals the Gamma heat loss; correlated flatten history plus the first bump equation and the same continuous Z0 waiting identity equals the exact collar/Gamma angular target. Source S remains formal positive, and Z0 heat/bump corrections remain nonzero.

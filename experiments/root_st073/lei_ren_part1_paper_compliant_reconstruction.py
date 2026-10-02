@@ -7,7 +7,8 @@ complete future swirl energy and selects actual ap/c1/c2 functions. The pulse
 stage installs the full O.4 interval in segmented coordinates. The postpulse
 stage composes corrected outer fields and primitives through Gamma heat.
 The closure stage composes absolute pressure/angular source identities and
-admits all five terminal moments. C4/cone and temporal recursion remain unfinished.
+admits all five terminal moments. Angularjets adds the actual angular branch's
+axial derivatives through4. Full outer C4/cone and temporal recursion remain unfinished.
 """
 import argparse
 import importlib
@@ -32,11 +33,12 @@ ENERGY=('future_swirl_energy','future_swirl_energy_check',
 PULSE=('axial_pulse_field','axial_pulse_field_check')
 POSTPULSE=('corrected_outer_field','corrected_outer_field_check')
 CLOSURE=('absolute_moment_closure','absolute_moment_closure_check')
+ANGULARJETS=('angular_high_jets','angular_high_jets_check')
 
 
 def stages(stage):
-    return {'source':SOURCE,'inner':INNER,'outer':OUTER,'angular':ANGULAR,'energy':ENERGY,'pulse':PULSE,'postpulse':POSTPULSE,'closure':CLOSURE,
-            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE}[stage]
+    return {'source':SOURCE,'inner':INNER,'outer':OUTER,'angular':ANGULAR,'energy':ENERGY,'pulse':PULSE,'postpulse':POSTPULSE,'closure':CLOSURE,'angularjets':ANGULARJETS,
+            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS}[stage]
 
 
 def run(stage='all',list_only=False):
@@ -52,11 +54,12 @@ def run(stage='all',list_only=False):
     result=dict(stages_completed_this_run=completed,
         source_relation='epsilon_source=.001*delta; epsilon_core=1/Lambda',
         legacy_source_preserved=True,full_NS_background_completed=False,
-        actual_angular_pressure_corrections_completed=any(name in completed for name in ('outer_angular_repair_check','axial_amplitude_selection_check','axial_pulse_field_check','corrected_outer_field_check','absolute_moment_closure_check')),
-        actual_ap_selected=any(name in completed for name in ('axial_amplitude_selection_check','axial_pulse_field_check','corrected_outer_field_check','absolute_moment_closure_check')),
-        actual_O4_partial_pulse_field_installed=any(name in completed for name in ('axial_pulse_field_check','corrected_outer_field_check','absolute_moment_closure_check')),
-        corrected_post_Rv_fields_and_primitives_installed=any(name in completed for name in ('corrected_outer_field_check','absolute_moment_closure_check')),
-        all_five_absolute_terminal_moments_admitted='absolute_moment_closure_check' in completed,
+        actual_angular_pressure_corrections_completed=any(name in completed for name in ('outer_angular_repair_check','axial_amplitude_selection_check','axial_pulse_field_check','corrected_outer_field_check','absolute_moment_closure_check','angular_high_jets_check')),
+        actual_ap_selected=any(name in completed for name in ('axial_amplitude_selection_check','axial_pulse_field_check','corrected_outer_field_check','absolute_moment_closure_check','angular_high_jets_check')),
+        actual_O4_partial_pulse_field_installed=any(name in completed for name in ('axial_pulse_field_check','corrected_outer_field_check','absolute_moment_closure_check','angular_high_jets_check')),
+        corrected_post_Rv_fields_and_primitives_installed=any(name in completed for name in ('corrected_outer_field_check','absolute_moment_closure_check','angular_high_jets_check')),
+        all_five_absolute_terminal_moments_admitted=any(name in completed for name in ('absolute_moment_closure_check','angular_high_jets_check')),
+        actual_angular_coefficient_C4_available='angular_high_jets_check' in completed,
         temporal_recursion=False,
         next_dependency='Recover higher axial derivatives and certify full interface/C4/cone bounds; build admissible stress and flat remainder, then genuine n-dependent temporal recursion')
     print(json.dumps(result,indent=2),flush=True)
@@ -65,7 +68,7 @@ def run(stage='all',list_only=False):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','all'),default='all')
+    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','all'),default='all')
     parser.add_argument('--list',action='store_true',help='Print the ordered modules without running them')
     args=parser.parse_args()
     run(args.stage,args.list)
