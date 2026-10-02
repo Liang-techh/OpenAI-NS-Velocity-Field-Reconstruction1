@@ -1,3 +1,13 @@
+# Current: actual coefficientwise core inlet atoms - 2026-10-02
+
+Read docs/CORE_INTEGRAL_ATOMS_2026_10_02.md first. H/M/K/A/B/C are now integrated from fresh degree24/depth6 coupled Phi/Uz rows on rho in[0,4], with differentiated nonlinear/model tails. No cover endpoints or midpoint parameters define values. Axial derivatives through6, same exit mean and pressure primitive V_pressure=4C are available; raw bridge V=Uz is a separate quantity. Exact shared-root atoms retain H(a)=0 and zero Bessel model tail through6, while nonlinear tails remain.
+
+Focused generator/checker PASS:210 actual source atom coefficients at Z=.3,.5,-.5,0 and exact shared root;35 shared mean/pressure coefficients;42 independent exact integrals,42 signed product-tail coefficients and14 factorial-tail sums. Example at Z=.5: H=.4795280821510107, B=.1272028385626529, C=.4006067501478635 with value interval widths approximately1e-44. API accepts Z source intervals in[-1,1]. Pipeline119 ordered modules; stage coreatoms.
+
+NEXT: consume these actual atoms in the original comparison namespace -> both smoothing history transports -> signed actual prescribed-shear/first-switch integrations -> implicit five-bump values -> composed physical point field and measured global morphology/dynamics. Existing bridge providers have not yet been replaced; original_signed_bridge_integrals_resolved remains false. Required-domain energy/stress/flat remainder and true n-dependent recursion/corrections remain open. Original unlocalized whole-space energy is infinite. Local swirl morphology from45efa5cd remains accepted.
+
+---
+
 # Current: actual local physical swirl morphology - 2026-10-02
 
 Read docs/ROOTED_SWIRL_MORPHOLOGY_2026_10_02.md first. SAME-source nonlinear Phi and physical prefactors now give3 fixed-r axial maxima and9 true-peak-normalized fractional widths, retaining actual negative log-curvature, anchor slope, tails and original microscopic positive factors. Peak shifts use Z=a+b^2*y without rounded root addition. Focused generator/checker PASS; ordered pipeline117 modules, stage swirlmorphology.

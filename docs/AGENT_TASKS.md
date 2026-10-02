@@ -1,3 +1,15 @@
+# Active handoff: consume actual inlet atoms in original annular integrals - 2026-10-02
+
+Read docs/CORE_INTEGRAL_ATOMS_2026_10_02.md. The six coefficientwise core inlet atoms and axial6 derivatives now pass; stage coreatoms,119 ordered modules. Reuse core_atoms(Z,z_order=6,degree=24) or exact root_atoms(...). Preserve full docs/PROJECT_GOAL.md, same current Cstar/core/preheat pressure, source intervals, positive widths, nonlinear tails and unrelated experiments. Do not redo core atom inventories.
+
+Priority A: add a signed comparison/bridge point provider consuming CompliantBridgeMixedC4.formal_comparison_source(). Bind this exact namespace to the new actual core atoms and endpoint phi/v/mean; keep pressure V_pressure distinct from raw axial V=Uz. Propagate phi_bar/V_bar and all H/M/K/A/B/C comparison histories through both original microscopic smoothing charts using their exact integrating factors. Do not reset histories or choose cover endpoints.
+Priority B: retain the exact 2hb endpoint histories for the frozen macro, with H=H2 exp(-2Delta)+phi2(1-exp(-2Delta)), M=M2 exp(-Delta)+V2(1-exp(-Delta)) and analogous K/A/B/C. Integrate actual F/V controls jointly with their signed directions/comparison quotient, then actual moment histories. Preserve original Ra/R100 and width factors. For the first switch retain R=100 exp(hb*s), original (1-sigma(s)), actual phi/barphi quotient, hydro+Pstar^2 pressure+R F0^2 swirl source factors, and common V100/V110/E=V110-4Z identities. Caps bound final error only.
+Priority C: numerically recover admitted implicit five-bump values with a posteriori Jacobian/remainder control, compose original physical field/chart selection and measure whole-vortex radial/axial morphology and material winding. Close required-domain energy, actual admissible stress and independent flat remainder before genuine n-dependent recursion/mean/oscillatory correction.
+
+Core atom tail products deliberately use conservative independent absolute bounds; sharpen correlations only if needed. Mark completion with source/check/domain/limits and commit. Signed bridge/annular field/global dynamics/energy/stress/temporal gates remain false.
+
+---
+
 # Active handoff: signed core moments and annular source values - 2026-10-02
 
 Read docs/ROOTED_SWIRL_MORPHOLOGY_2026_10_02.md. Local actual Phi-weighted fixed-r peaks/levels and whole-core radial swirl monotonicity now pass; stage swirlmorphology,117 ordered modules. Do not repeat their inventories or relabel the cutoff as measured width. Keep the full docs/PROJECT_GOAL.md scope and preserve unrelated experiments.

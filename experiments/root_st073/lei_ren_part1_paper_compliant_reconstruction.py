@@ -113,6 +113,11 @@ swirl peaks and their fractional levels. Actual negative log curvature and
 anchor slope bound the positive peak gain in a second centered chart.
 Whole-core radial growth proves the global radial peak requires annuli;
 the core cutoff remains distinct from measured vortex width/aspect ratio.
+Coreatoms integrates fresh coupled radial rows for H/M/K/A/B/C and their
+axial Taylor coefficients through6, retaining original nonlinear and
+factorial model tails. Root atoms use exact H valuation before enclosure.
+Pressure primitive V_pressure=4C remains distinct from raw bridge V=Uz.
+These are actual inlet atom enclosures, not signed bridge integrals yet.
 """
 import argparse
 import importlib
@@ -172,6 +177,7 @@ AXISAMPLITUDE=('anchored_axis_amplitude','anchored_axis_amplitude_check')
 ROOTPEAK=('root_centered_peak','root_centered_peak_check')
 ROOTEDFIELD=('rooted_core_field','rooted_core_field_check')
 SWIRLMORPHOLOGY=('rooted_swirl_morphology','rooted_swirl_morphology_check')
+COREATOMS=('core_integral_atoms','core_integral_atoms_check')
 
 
 def stages(stage):
@@ -195,7 +201,8 @@ def stages(stage):
             'rootpeak':ROOTPEAK,
             'rootedfield':ROOTEDFIELD,
             'swirlmorphology':SWIRLMORPHOLOGY,
-            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS+POSTMIXEDJETS+STEEPJETS+HEATJETS+PHYSICALFIELD+COREPHYSICAL+FROZENFIELD+BRIDGEPROFILES+SWITCHPROFILES+RESHAPEPROFILES+RESTOREPROFILES+ACTUALPATCH+PATCHMIXED+RESTOREMIXED+RESHAPEMIXED+SWITCHMIXED+BRIDGEMIXED+PREPULSEMIXED+SOURCEDISPATCH+GLOBALPHYSICAL+FRESHCORE+AXISAMPLITUDE+ROOTPEAK+ROOTEDFIELD+SWIRLMORPHOLOGY}[stage]
+            'coreatoms':COREATOMS,
+            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS+POSTMIXEDJETS+STEEPJETS+HEATJETS+PHYSICALFIELD+COREPHYSICAL+FROZENFIELD+BRIDGEPROFILES+SWITCHPROFILES+RESHAPEPROFILES+RESTOREPROFILES+ACTUALPATCH+PATCHMIXED+RESTOREMIXED+RESHAPEMIXED+SWITCHMIXED+BRIDGEMIXED+PREPULSEMIXED+SOURCEDISPATCH+GLOBALPHYSICAL+FRESHCORE+AXISAMPLITUDE+ROOTPEAK+ROOTEDFIELD+SWIRLMORPHOLOGY+COREATOMS}[stage]
 
 
 def run(stage='all',list_only=False):
@@ -210,7 +217,8 @@ def run(stage='all',list_only=False):
         completed.append(name)
     inherited_global='global_physical_assembly_check' in completed
     inherited_morphology='rooted_swirl_morphology_check' in completed
-    inherited_rooted=inherited_morphology or 'rooted_core_field_check' in completed
+    inherited_atoms='core_integral_atoms_check' in completed
+    inherited_rooted=inherited_atoms or inherited_morphology or 'rooted_core_field_check' in completed
     inherited_peak=inherited_rooted or 'root_centered_peak_check' in completed
     inherited_axis=inherited_peak or 'anchored_axis_amplitude_check' in completed
     inherited_fresh=inherited_axis or 'core_coefficient_rebuild_check' in completed
@@ -361,6 +369,10 @@ def run(stage='all',list_only=False):
         actual_local_true_peak_normalized_axial_widths_available=inherited_morphology,
         whole_rooted_core_radial_swirl_monotonicity_certified=inherited_morphology,
         swirl_morphology_scope='Fixed-r axial scans at rho_anchor=1,2,4 in rooted |xi|<=4; actual Phi/geometry, strict peak signs and curvature bounds; radial monotonicity on rho<=4.1 requires original annular values for global radial peak; no whole-vortex width/aspect/dynamics or recursion',
+        actual_core_atoms_coefficientwise_integrated=inherited_atoms,
+        actual_core_atoms_axial6_available=inherited_atoms,
+        core_atom_scope='Same-source fresh degree24 coupled rows integrated on rho in[0,4], six normalized atoms and axial coefficients through6; differentiated nonlinear/model tails, exact shared-root valuation and original pressure primitive; no midpoint parameters, cover endpoints as values, signed bridge integrals or temporal recursion',
+        original_signed_bridge_integrals_resolved=False,
         whole_vortex_aspect_ratio_measured=False,
         original_unlocalized_whole_space_kinetic_energy_is_infinite=True if inherited_energy else None,
         full_cartesian_vector_derivatives_certified=False,
@@ -371,14 +383,14 @@ def run(stage='all',list_only=False):
         full_pulse_C4_scope='Leading O4 and two local external interfaces, spatial/profile mixed total<=4 at fixed positive tau; whole outer/core/axis and time derivatives excluded',
         full_outer_C4_certified=False,
         temporal_recursion=False,
-        next_dependency='Actual rooted local swirl peaks/axial widths -> coefficientwise actual core moments and signed original bridge/first-switch integrals -> implicit five-bump values/physical-point selection/global radial morphology; measured dynamics/particles and required-domain energy/stress/flat remainder -> genuine n-dependent recursion/correction')
+        next_dependency='Actual coefficientwise core inlet atoms -> signed original bridge/first-switch joint histories/integrals -> implicit five-bump values/physical-point selection/global radial morphology; measured dynamics/particles and required-domain energy/stress/flat remainder -> genuine n-dependent recursion/correction')
     print(json.dumps(result,indent=2),flush=True)
     return result
 
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','postmixedjets','steepjets','heatjets','physicalfield','corephysical','frozenfield','bridgeprofiles','switchprofiles','reshapeprofiles','restoreprofiles','actualpatch','patchmixed','restoremixed','reshapemixed','switchmixed','bridgemixed','prepulsemixed','sourcedispatch','globalphysical','freshcore','axisamplitude','rootpeak','rootedfield','swirlmorphology','all'),default='all')
+    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','postmixedjets','steepjets','heatjets','physicalfield','corephysical','frozenfield','bridgeprofiles','switchprofiles','reshapeprofiles','restoreprofiles','actualpatch','patchmixed','restoremixed','reshapemixed','switchmixed','bridgemixed','prepulsemixed','sourcedispatch','globalphysical','freshcore','axisamplitude','rootpeak','rootedfield','swirlmorphology','coreatoms','all'),default='all')
     parser.add_argument('--list',action='store_true',help='Print the ordered modules without running them')
     args=parser.parse_args()
     run(args.stage,args.list)

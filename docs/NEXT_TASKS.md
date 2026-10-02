@@ -1,3 +1,27 @@
+# Next: signed original comparison and actual bridge integrations - 2026-10-02
+
+Read docs/CORE_INTEGRAL_ATOMS_2026_10_02.md. Stage coreatoms,119 ordered modules. Local swirl morphology and six actual core atoms are done in their stated scope. Earlier matching TODOs are superseded only by these scoped entries.
+
+- [x] Integrate fresh current-family Phi/Uz radial rows for H/M/K/A/B/C, preserving affine U0 and full finite product convolutions.
+- [x] Carry actual axial Taylor coefficients/ordinary derivatives through6 with correct factorials, original Bessel tails and admitted nonlinear differentiated product tails.
+- [x] Recover common exit mean M and pressure primitive V_pressure=4C; keep raw bridge V=Uz separate.
+- [x] Rebuild exact shared-root depth6 atoms with H(a)=0 before enclosure and model-tail valuation2, retaining nonlinear tails.
+- [x] Check210 actual source atom coefficients and independent exact integrals/signed product tails/axial6 factorial sums; retain current source/hash receipts.
+- [ ] Bind actual atom/endpoint jets to CompliantBridgeMixedC4.formal_comparison_source() and its exact comparison namespace.
+- [ ] Propagate original phi_bar/V_bar and six comparison moment histories through both microscopic smoothing charts with integrating factors and exact hb; retain endpoint histories separately from bounds.
+- [ ] Transport the frozen macro from the actual 2hb endpoint; do not reset moments to core or cover values.
+- [ ] Integrate signed actual prescribed-shear F/V source controls jointly, with comparison quotient, original units, directed quadrature/truncation errors and preserved positive widths.
+- [ ] Integrate actual five primitive histories from those F/V functions; recover original first-switch partial/terminal integrals and common V100/V110/E identities. Caps only bound errors.
+- [ ] Recover admitted implicit five-bump values/functions with a posteriori Jacobian/remainder bounds and functional terminal closure.
+- [ ] Compose original global physical point selection and field, measure radial swirl/vorticity widths/aspect ratio/multitime exponents, and integrate true particle/material winding.
+- [ ] Close construction-domain finite energy/support/terminal tails; construct actual admissible divergence stress and independently flat remainder with regional margins/max/L2/decay.
+- [ ] Implement genuine n=1/n>=2 recovery, common core interval, per-order moment repair, curl-preserving cutoffs, finite remainder/smooth sum and realizable mean/two-family oscillatory correction.
+- [ ] Validate averaged flux cancellation before independent full Cartesian forced-NS max/L2<1e-3 acceptance.
+
+Keep all later completion gates false until their actual evidence is available. Preserve unrelated experiments and record actual source/check/domain/limits and commit.
+
+---
+
 # Next: actual core atoms into signed annular integration - 2026-10-02
 
 Read docs/ROOTED_SWIRL_MORPHOLOGY_2026_10_02.md; focused swirlmorphology,117 ordered modules. Preserve SAME Cstar/core/preheat pressure, nonlinear tails, shared moments, positive microscopic factors and unrelated experiments.

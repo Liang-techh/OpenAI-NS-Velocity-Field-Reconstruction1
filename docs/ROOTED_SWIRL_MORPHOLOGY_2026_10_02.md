@@ -74,8 +74,9 @@ The core cutoff cannot be a measured radial peak or width. The original
 connecting annuli must be resolved to find the global radial swirl peak.
 This statement alone does not locate a vorticity core or its width.
 
-Next implement actual coefficientwise core atoms H,M,K,A,B,C from fresh
-coupled rows and controlled tails. Feed those into signed prescribed-shear
+Actual coefficientwise core atoms H,M,K,A,B,C from fresh coupled rows and
+controlled tails are now available in CORE_INTEGRAL_ATOMS_2026_10_02.md.
+Feed those into signed prescribed-shear
 and first-switch integrals with the same joint histories. Existing bridge
 interval covers are not point moments. Preserve the formal comparison
 namespace and V100/V110/E identities; caps can bound errors but cannot
@@ -88,7 +89,8 @@ physical point selection and measure the full radial morphology.
 python experiments/root_st073/lei_ren_part1_paper_compliant_reconstruction.py --stage swirlmorphology
 ```
 
-The ordered pipeline has117 modules. The focused generator and checker
+The morphology stage adds modules116/117; coreatoms extends the ordered
+pipeline to119. The focused generator and checker
 pass for three source maxima, nine fractional widths and whole-rooted-core
 radial monotonicity. Exact fixed-r slope/curvature and second-centered
 chart identities are checked independently. A finite-scale synthetic
