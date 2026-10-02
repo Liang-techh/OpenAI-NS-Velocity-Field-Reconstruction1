@@ -4,7 +4,7 @@
 
 The current research route is an exploratory **Lei–Ren Part I-oriented ST073 reconstruction**. The long-term deliverable is a nonzero, divergence-free, finite-energy, three-dimensional time-dependent field with quantitatively verified shrinking-core geometry and independently evaluated momentum residuals. This is an independent research repository, not an OpenAI project or a claim to have recovered an exact original field.
 
-> **Reviewed snapshot: 2026-10-02 UTC.** Research branch: `codex/st073-transition-next`, pinned at [`2ca31f07`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2ca31f0767b920f18ed1459d166df30f820ace1c). Local leading O.4 spatial C4 and its joins remain accepted; the partition derivative chain now reaches steep/waiting/collar and the entire infinite Gamma exterior with adjacent source joins. This is fixed-source spatial order <=4 at positive tau, not time derivatives or uniform tau-to-zero bounds. **Whole outer C4 acceptance, Cartesian/core/axis assembly, physical energy, admissible stress, temporal recursion and independent full NS validation remain open.** These are reviewed repository records, not numerical experiments or proofs independently rerun during this documentation update. See the [latest supervision checkpoint](docs/NS_SUPERVISION_2026-09-30.md) for pinned receipts; other navigation pages retain their separately dated snapshots.
+> **Reviewed snapshot: 2026-10-02 UTC.** Research branch: `codex/st073-transition-next`, pinned at [`1adcc221`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1adcc2215f6fbd82a054e47e33c73c050405cf4a). Source-bound Cartesian spatial-four and first physical-time derivatives now cover the outer charts and analytic core/axis separately; intermediate annuli and joins remain missing. **The current unlocalized source has infinite whole-space physical kinetic energy at every fixed positive tau and therefore does not meet the finite-energy goal.** Local sector/strip bounds do not change that goal. Global assembly, stress, temporal recursion and independent full NS validation remain incomplete. These are reviewed records, not scientific code or proofs independently rerun. See the [latest supervision checkpoint](docs/NS_SUPERVISION_2026-09-30.md); other navigation pages retain separately dated snapshots.
 
 [**Research status and evidence**](docs/RESEARCH_STATUS.md) · [**Choose a version / replay**](docs/CURRENT_CHECKPOINT.md) · [Project goal](docs/PROJECT_GOAL.md) · [Repository map](docs/REPOSITORY_GUIDE.md) · [Documentation](docs/README.md)
 
@@ -22,13 +22,15 @@ Source-bound inner core and exit
   -> pulse mixed jets / cylindrical derivative map [recorded]
   -> local pulse joins / flatten-power-angular C4  [recorded]
   -> steep-waiting-collar / infinite Gamma jets    [recorded]
+  -> outer and core/axis Cartesian/time-one maps   [recorded separately]
+  -> whole-space finite energy of current source   [fails: infinite]
   -> full velocity derivatives and C4 interfaces    [open]
   -> physical energy, outer cone, stress/remainder  [open]
   -> genuine temporal recursion and corrections    [open]
   -> independent Cartesian NS residual validation  [open]
 ```
 
-The recorded absolute closure supersedes the earlier unresolved angular and pressure offsets for the compliant epsilon=.001delta source. The completed partition derivative chain and adjacent joins do **not** establish full_outer_C4 acceptance, globally vanishing physical stress or an independent flat remainder. Complete Cartesian/core/axis assembly and physical acceptance remain open. Cylindrical component derivatives omit basis differentiation required for Cartesian vectors. The small moment/fixture errors are **not** full Navier-Stokes residuals. See the [eight-goal assessment and pinned evidence](docs/RESEARCH_STATUS.md).
+The recorded absolute closure supersedes the earlier unresolved angular and pressure offsets for the compliant epsilon=.001delta source. Cartesian maps now retain basis differentiation, but separate regional derivatives do **not** establish complete physical-field assembly, globally vanishing stress or an independent flat remainder. Full physical energy cannot be inferred from finite radial swirl tails: the axial endpoint weight is nonintegrable for the current unlocalized source. No new axial cutoff or reduced finite-energy goal is adopted. The small moment/fixture errors are **not** full NS residuals. See the [eight-goal assessment](docs/RESEARCH_STATUS.md) and latest checkpoint.
 
 ## Choose the correct layer
 

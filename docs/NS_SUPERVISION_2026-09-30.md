@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `06bc2e98386cdbd19302d43eda636f1b13f18177`.
+The inspected `main` head before this update is `afa060b944b2268a1c1a1c6cfc8087a0e9ed665a`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`2ca31f0767b920f18ed1459d166df30f820ace1c`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2ca31f0767b920f18ed1459d166df30f820ace1c)
+[`1adcc2215f6fbd82a054e47e33c73c050405cf4a`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1adcc2215f6fbd82a054e47e33c73c050405cf4a)
 on `codex/st073-transition-next`, observed October 2. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,80 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-02 batch: physical maps and whole-space finite-energy obstruction
+
+**Goal conflict:** the [physical field/energy report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/1adcc2215f6fbd82a054e47e33c73c050405cf4a/docs/CARTESIAN_FIELD_AND_PHYSICAL_ENERGY_2026_10_02.md),
+[energy producer](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/1adcc2215f6fbd82a054e47e33c73c050405cf4a/experiments/root_st073/lei_ren_part1_paper_compliant_physical_energy.py)
+and [checker receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/1adcc2215f6fbd82a054e47e33c73c050405cf4a/experiments/root_st073/lei_ren_part1_paper_compliant_physical_energy_check.json)
+record infinite whole-space physical kinetic energy for the original unlocalized
+.001delta source at each fixed tau=1-t_phys>0. This is failure of the user's
+finite-energy target for this construction, not merely a pending certificate.
+Local finite sectors/strips do not replace the requested whole-space goal.
+No axial localization or scientific implementation change is authorized here.
+
+At fixed tau, lambda=sqrt(tau/d), d=1-Z^2, L=1-delta*Z^2. Differentiating
+z=lambda^(1-delta)Z gives dz/dZ=lambda^(1-delta)*L/d, while
+r*dr=lambda^2*dR at fixed Z. Hence the azimuth-integrated Jacobian is
+dV=2*pi*lambda^(3-delta)*L/d*dR*dZ. With physical component scales,
+E=pi*integral L/d*[lambda^(1-delta)*Ur^2+
+lambda^(1-3delta)*(Utheta^2+Uz^2)]dR dZ. The swirl/axial endpoint weight is
+tau^((1-3delta)/2)*L*d^(-alpha), alpha=(3-3delta)/2.
+
+For R>=Rb=Rtail*exp(3), the retained exact heat swirl is
+c_inf*R^(-(1+delta)/2)*H_delta(2d/R). Monotonic positive Gamma expectation
+gives the radial lower bound
+c_inf^2*Rb^(-delta)*H_delta(2/Rb)^2/delta>0 uniformly in Z.
+The producer explicitly guards actual0<delta<1/200, positive Gamma floor,
+and alpha>1; thus the Z=+-1 integral diverges. Those endpoints map to physical
+axial infinity at each fixed tau>0. The conclusion depends on retaining the
+same positive c_inf/Rb heat source over all Z without axial localization.
+Inspection of the Jacobian, exponents and lower-bound argument agrees with
+the saved producer; no scientific calculation was independently executed.
+The checker records Jacobian/mass/heat identities and moderate physical/Gamma
+fixtures, not a complete independent proof audit of all inherited source gates.
+
+Parent-thread review subsequently checked the original supplied Lei/Ren v2 PDF:
+Theorem1.1 pp8-9 gives the similarity domain, physical smoothness off(1,0),
+heat/stress/moment/residual structure, but no whole-space L2 or finite-energy
+conclusion. Section2.2 p11 identifies the full physical axial real line at
+0<=t<1. This is attributed to that direct PDF review, not a PDF read repeated
+in this environment; the current energy obstruction does not contradict that
+theorem. No universal impossibility result or local-energy goal downgrade follows.
+
+The same parent independently derived from original formulas2.2-2.6 pp11-13
+and5.4/5.9 pp58-60 an equivalent physical-axis lower bound: on a fixed similarity
+radial band[Rb,2Rb], the positive heat profile stays bounded below as z->infinity.
+Then r*dr=lambda^2*dR and utheta=lambda^(-1-delta)*Utheta give
+E>=C*integral lambda^(-2delta)dz. Since lambda~z^(1/(1-delta)), this diverges
+like integral z^(-2delta/(1-delta))dz for delta<=1/3, consistently with alpha>=1
+above. The actual paper p6 uses0<delta<1/200. This is an independent derivation
+from paper formulas, not a paper-stated energy theorem. The parent also checked
+Prop16.2 pp227-228: positive-order velocity/pressure/stress cutoff retains the
+leading heat tail, not a full velocity axial localization. Section17.2 p243
+flat remainder scope stays compact/interior away from axial similarity endpoints.
+These checks add evidence but no localization implementation authorization.
+
+Local postpulse/core strip bounds at fixed positive tau and on time intervals
+away from tau=0 are reported; they neither repair the global obstruction nor
+prove terminal-time integrability or energy of missing intermediate annuli.
+
+The same head adds complete Cartesian vector/basis spatial derivatives through
+total order4 and first fixed-physical-position time derivatives on outer charts,
+and separately the [analytic core/axis report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/1adcc2215f6fbd82a054e47e33c73c050405cf4a/docs/CORE_AXIS_PHYSICAL_FIELD_2026_10_02.md)
+with nonlinear fixed-point correction bounds, exact axis conditions and a
+division-free Cartesian representation. This supersedes the earlier missing
+basis/axis map in those regional scopes. The core is not replaced by its linear
+model or extrapolated finite table. Intermediate frozen/reference/join/matching
+annuli, remaining O3 ranges and functional joins still prevent whole-field
+assembly and full-background local-energy/divergence acceptance.
+
+First physical-time differentiation of the stationary leading map is not
+n-dependent coefficient recursion or a final dynamical solution. Full physical
+stress/cone, independent flat remainder, temporal coefficient repairs,
+oscillatory corrections and held-out Cartesian residual validation remain open.
+Replay physicalfield/corephysical stages only in an appropriate research setup;
+this documentation review read sources/receipts and did not run scientific code.
 
 ### 2026-10-02 batch: steep/waiting and complete collar/Gamma derivative chain
 
@@ -1925,6 +1999,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+For fixed head1adcc221, the commit-filtered Actions API returned no workflow
+run during this review. Therefore no latest-head13/423 result is asserted;
+older research logs below remain attached to their own commits. Saved scientific
+checker receipts are separate from GitHub CI and do not establish NS acceptance.
 
 The [2ca31f07 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36968966286)
 retains the original13 failed constrained identifiers/423 passed in its actual
