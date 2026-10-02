@@ -1,3 +1,15 @@
+# F38-D3c1 selected pulse high-jet checkpoint - 2026-10-01
+
+The actual selected ap/c1/c2 C4 jets now feed every O4 entrance/main/inactive-gap/end chart. All five normalized partial primitives, axial/swirl coefficients and original P0+Mp pressure have axial jets through4. Paper(3.9) recovers radial velocity and its log-radius derivative through3; physical Ur_Z and Ur_yZ are available through2 with the required Utheta_Z/Utheta product-rule terms. Same actual source data and one interval context initialize every cap/normalization; no independent radial fit or source reset is introduced.
+
+Nine source/physical derivative identities,56 independent direct physical radial derivative checks,180 old-source lower-order field comparisons, three high-jet/pressure chart interfaces and whole-Z terminal derivative/positive-energy gates PASS. Terminal linear and radial jets vanish by empty future supports, while energy and ALL its derivatives equal half of the complete positive future energy. A read-only GPT-5.6 Luna/max review confirmed pressure-source APIs and radial/mixed equations and identified a source-context issue that was corrected.
+
+Read docs/SELECTED_PULSE_C4_PRIMITIVES_AND_RADIAL_C3_2026_10_01.md. Reproduce compliant_reconstruction.py --stage pulsejets; ordered pipeline has51 modules. F38-D3c1 is PARTIAL, not complete: radial recovery consumes one Mz derivative, so full radial C4 still requires fifth-order Mz/ap/end source data. No fifth-order cell Taylor remainder is claimed.
+
+NEXT: actual fifth-order angular/future-energy/amplitude input -> Mz5 -> radial C4; higher radial mixed derivatives and quantitative flat pulse interfaces; propagate through all post-pulse regions. Full pulse/outer C4, physical energy, outer stress cone/admissible lift/flat remainder and genuine n-dependent temporal recursion remain incomplete. This header supersedes missing pulse axial jets/Ur_Z entries, not full-C4/stress/recursion tasks.
+
+---
+
 # F38-D3b complete future energy / actual axial C4 checkpoint - 2026-10-01
 
 Complete corrected future swirl energy, exact incoming moment/energy functions, and the actual selected ap/c1/c2 now have ordinary axial Taylor coefficients through4 for the SAME compliant .001 family. The entire flatten/bump/steep/waiting/collar/infinite Gamma energy is differentiated. Incoming shapes are derived from actual source transport; their positive axial energy coefficient is accumulated directly without catastrophic subtraction. Fixed incoming row factors apply to EVERY derivative order. The unique admitted positive amplitude branch uses its true implicit quadratic and the same positive derivative denominator.

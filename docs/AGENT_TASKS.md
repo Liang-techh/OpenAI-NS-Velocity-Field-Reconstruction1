@@ -1,3 +1,28 @@
+# F38-D3c1 pulse derivatives handoff - 2026-10-01
+
+F38-D3c1 remains PARTIAL because paper(3.9) consumes one axial moment derivative. Do not mark full pulse C4 complete based on C4 coefficient arrays.
+
+- [x] F38-D3c1a: Source-bound selected pulse high-jet provider, consuming actual CompliantAxialHighJets functions and checking source/family/dependency hashes. Initialize ALL scalars/caps/normalizations from the same high-order graph and context.
+- [x] F38-D3c1b: Exact incoming U/Mz/Mtheta/Mtheta_z/Mztheta/Mp functional shapes through4 and raw analytic preheat P0 through4. Preserve negative swirl plus positive axial energy separately, true q(Z) dependence, all source atoms and original pressure restoration.
+- [x] F38-D3c1c: Transport C4 selected functions through real entrance/main/gap/end partial kernels, keeping empty supports, nonzero histories, formal end scales and backward energy near main-support exit.
+- [x] F38-D3c1d1: Recover Ur and Ur_y axial jets through3 and physical Ur_Z/Ur_yZ through2 from same Mz primitive and paper(3.8)-(3.9). Include Utheta_Z/Utheta product rules. Nine identities,56 direct physical derivative checks,180 lower-order source comparisons, three high-jet/pressure interfaces and terminal gates PASS.
+
+Next bounded work, in dependency order:
+
+- [ ] F38-D3c1f1: Recover actual implicit angular branch through axial order5 in a separate admitted source layer. Keep the same C0 branch, C1-C4 enclosures, nonzero Jacobian, quadratic convolution, correlated flatten source and true Gamma fifth-derivative/tail bounds. Do not bypass a C4 admission guard or reset earlier receipts. Check fifth derivatives independently.
+- [ ] F38-D3c1f2: Differentiate complete corrected future energy through5, retaining every flatten/bump/steep/waiting/epsilon/Gamma contribution and q^2 factors. Recover selected ap/c1/c2 fifth coefficients using SAME positive quadratic derivative inverse and exact fixed incoming row factors.
+- [ ] F38-D3c1f3: Propagate Mz through5 and B through4 on each chart, then install radial velocity axial C4 from paper(3.9). Keep mixed derivative availability distinct: differentiation consumes retained order. Require exact terminal derivative zeros and selected energy identity.
+- [ ] F38-D3c1g1: Derive higher radial/log-radial and axial-radial mixed derivatives of actual gp, sigma and beta supports, with directed bounds crossing support endpoints. Existing beta_y sup covers only the first radial derivative and does not certify all mixed orders.
+- [ ] F38-D3c1g2: Establish uniform pulse C4 bounds and quantitative flat entrance/main/gap/end compatibility. Check the actual source ODE/functional identities, independent finite-parameter derivatives and every derivative order required by the stress quantities. Add fifth-derivative remainders if cell Taylor expansions are used; finite jets alone are not a cell enclosure.
+- [ ] F38-D3c2: Transport all admitted high jets through post-pulse flatten, angular supports, steep entry/power/exit, waiting, epsilon collar and entire Gamma exterior, preserving absolute pressure/angular closures. Then certify full inner/outer C4 interfaces.
+- [ ] F39: Outer stress cone, full physical kinetic energy, global admissible stress lift and flat remainder after needed velocity derivatives exist.
+- [ ] F40: Actual n=1 and n>=2 coefficient recovery, separate moment repairs and smooth divergence-preserving sum. Leading-profile derivative jets are not temporal recursion.
+- [ ] F41: Mean/oscillatory families, averaged stress cancellation, independent full forced Cartesian residual and vortex/material-line measurements.
+
+Evidence: docs/SELECTED_PULSE_C4_PRIMITIVES_AND_RADIAL_C3_2026_10_01.md; --stage pulsejets (51 ordered modules). Historical missing pulse/Ur_Z tasks are superseded only to the explicit derivative orders above; all full-C4/cone/stress/recursion gates remain false.
+
+---
+
 # F38-D3b actual axial high-jet handoff - 2026-10-01
 
 - [x] F38-D3b1: Complete corrected future swirl energy through4, including both signed angular bumps, epsilon collar and infinite Gamma tail. Preserve full q^2 prefactors, original radial units and Section7.34 weight. Actual C0/C1 inclusion and independent energy derivative paths PASS.
