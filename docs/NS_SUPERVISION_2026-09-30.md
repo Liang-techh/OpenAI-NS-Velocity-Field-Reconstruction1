@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `07708d497b640108fc9a0f5c42e711115410ea45`.
+The inspected `main` head before this update is `fb15a79b88f251f76dd26a1f40a6b27c35ce54c8`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`bab19fee20a018d9b32eeb76baa23c6a0a6672d6`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/bab19fee20a018d9b32eeb76baa23c6a0a6672d6)
+[`ab69bf444bc2d3413612b98a334071e4d8778015`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ab69bf444bc2d3413612b98a334071e4d8778015)
 on `codex/st073-transition-next`, observed October 2. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,44 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-02 batch: actual restoration, functional repair and local mixed4 joins
+
+The [f633a727 restoration report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/f633a7274ac4dee493e223ab3fc21add25225a12/docs/REFERENCE_RESTORE_PROFILES_2026_10_02.md)
+continues actual Rsh histories through reference and original axial restoration
+to Rm/Rh, retaining original P0, cumulative primitives and exact log offsets.
+The original cutoff restores 4Z; it does not reset nonzero histories from
+matched velocity. Axial-five inputs recover radial velocity through axial-four.
+The [actual repair report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/f633a7274ac4dee493e223ab3fc21add25225a12/docs/ACTUAL_MOMENT_PATCH_2026_10_02.md)
+binds those actual defects to one smooth implicit five-coefficient family.
+Its terminal identities follow from Lh+Q(h,Am^-2)+d=0 after full bump weights,
+not interval zero containment or midpoint fitting. The recorded local relaxed
+cone margin approximately3.7999282 is conditional on this actual patch's
+same-source smallness theorem; it does not certify global admissible stress.
+
+The newer [ab69bf44 mixed4 report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/ab69bf444bc2d3413612b98a334071e4d8778015/docs/ACTUAL_PATCH_MIXED_C4_2026_10_02.md)
+and [checker receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/ab69bf444bc2d3413612b98a334071e4d8778015/experiments/root_st073/lei_ren_part1_paper_compliant_actual_patch_mixed_C4_check.json)
+record actual patch x/Z and log-radius/Z velocity-pressure derivatives through
+total order4, and physical primitive x/Z derivatives. The checker marks actual
+patch mixed derivatives, original beta flat edges and functional Rm/Rh joins
+true. It retains physical Am/Rm prefactors, Am^-2 in the centered-energy row,
+the differentiated sqrt(x) in recovered Ur and the exact Stirling conversion.
+The same implicit family supplies terminal reference identities; compact edge
+flatness and open-neighborhood equality supply local joins. Finite fixtures
+test algorithms separately and do not admit the actual source.
+
+This supersedes the previous checkpoint's pending actual repair connection and
+the older patch report's pending patch mixed4, without rewriting those historical
+records. Bridge, both microscopic switches, reshape and reference/restoration
+mixed4 and their high-order interfaces remain open, as do the inner/pre-O3
+dispatcher, actual Rh-to-outer connection and full physical Cartesian/time
+assembly. Primitive y/Z grids are not explicitly supplied here. Admissible
+stress, independent flat remainder, true n-dependent temporal recursion and
+oscillatory correction remain unfinished. The infinite whole-space energy
+barrier remains unchanged. These are saved source/receipt claims reviewed
+without independent scientific execution or complete proof audit. Replay the
+ordered compliant driver stages actualpatch and patchmixed with prerequisites;
+the latest report records94 modules.
 
 ### 2026-10-02 batch: actual R110-to-Rsh long reshape histories
 
@@ -2073,6 +2111,14 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The exact-head [ab69bf44 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36991228303)
+finished with the same original13 constrained failed identifiers/423 passed,
+verified from its actual log. Four smoke/slice jobs passed; full historical
+tests skipped. The preceding [f633a727 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36989616582)
+also finished failure. Local patch receipt acceptance is distinct from these
+repository checks and from full scientific acceptance; no CI or science code
+is changed by this documentation batch.
 
 The [bab19fee run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/36983651108)
 retains the same original13 failed constrained identifiers/423 passed in its
