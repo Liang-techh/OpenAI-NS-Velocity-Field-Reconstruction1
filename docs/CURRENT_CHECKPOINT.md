@@ -1,3 +1,19 @@
+# Actual long reshape mixed4 / shared signed axial source - 2026-10-02
+
+SAME actual R110 source: full original reshape logR/Z physical velocity/pressure and all five primitive derivatives through total4 are now available. Original T=400*Abar, full moment kernels and P0 are retained. Local original R109..110 post-switch power supplies the left R110 side; Rsh connects to the accepted reference branch by flat source identities and exact actual histories. This does NOT complete microscopic switches/bridge or full physical assembly.
+
+SOURCE CORRECTION: the old printed backward kernel and independent quadrature had reversed the sigma difference. Correct is exp[-k*t+m*B*(sigma(y/T)-sigma((y-t)/T))]. Absolute rate/Bell enclosure algorithms were symmetric and unchanged, but exact source metadata/fixture needed fixing. A new physical integrating-factor sign identity catches regression. Reshape, reference/restore, actual patch, patchmixed and restoremixed source-bound receipts were regenerated and checked after the correction.
+
+New exact axial source graph retains the signed original bridge and first-switch integrals, including chi, 1-sigma, actual/comparison quotient, current R, Pstar^2 and F0^2 scales. V100/V110/E share the same formal integral references at Z orders0..5, not independent cap representatives. Caps are enclosures only; formal integral point values are not recomputed. Raw V and current-basepoint physical normalization remain correct. Read-only Luna/max review identified and guided these source bindings.
+
+Checks PASS:480 actual velocity/pressure mixed bounds,600 actual primitive mixed bounds,135 independent full physical integral derivatives;5 Bell identities,6 centered-history identities,8 flat endpoint log-velocity identities,18 shared signed-integral Taylor identities;480 factored positive-amplitude cap proofs and10 cutoff endpoint checks. Exact R110 raw histories/P0 and actual Rsh parent are retained. Reproduce --stage reshapemixed;98 ordered modules. Read docs/LONG_RESHAPE_MIXED_C4_2026_10_02.md.
+
+NOT DONE: microscopic switch/bridge mixed4 and core/bridge interfaces; complete inner/pre-O3/full Cartesian dispatcher; construction-domain/terminal energy; admissible stress lift, independent flat remainder, genuine n-dependent recursion and oscillatory correction. Full-field/stress/global-energy/temporal gates remainfalse. Original unlocalized whole-space energy remains infinite.
+
+NEXT: both microscopic switches with exact hb derivative scales -> bridge/core interfaces -> complete spatial assembly -> energy/stress/flat remainder -> actual recursion/correction.
+
+---
+
 # Actual reference/axial-restoration mixed4 and Rm patch join - 2026-10-02
 
 SAME actual source: reference Rsh..Rz, original axial restoration Rz..eRz and postrestore eRz..Rm now supply logR/Z mixed derivatives of total order <=4 for velocity, pressure and all five physical primitives. The unpatched interval stops at Rm; the accepted actual patch takes over. Exact positive amplitudes remain formal, original P0/raw V units and current-basepoint physical normalization are retained.

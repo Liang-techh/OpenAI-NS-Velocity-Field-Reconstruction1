@@ -62,6 +62,11 @@ Restoremixed adds reference/axial-restoration logR/Z mixed derivatives through4
 and physical five primitives, stopping the unpatched continuation at Rm.
 Original flat Rz/restoration interfaces and the actual patch inlet share exact
 source histories. Rsh/reshape and remaining inner interfaces remain unfinished.
+Reshapemixed restores physical long-reshape logR/Z derivatives through4,
+including variable-slope Bell terms and actual full primitive histories.
+Its original kernel sign is derived independently from the integrating
+factor. It supplies the local original power before R110 and the Rsh join;
+microscopic switch/bridge interfaces and full physical assembly remain open.
 """
 import argparse
 import importlib
@@ -110,6 +115,7 @@ RESTOREPROFILES=('reference_restore_profiles','reference_restore_profiles_check'
 ACTUALPATCH=('actual_moment_patch','actual_moment_patch_check')
 PATCHMIXED=('actual_patch_mixed_C4','actual_patch_mixed_C4_check')
 RESTOREMIXED=('reference_restore_mixed_C4','reference_restore_mixed_C4_check')
+RESHAPEMIXED=('long_reshape_mixed_C4','long_reshape_mixed_C4_check')
 
 
 def stages(stage):
@@ -122,7 +128,8 @@ def stages(stage):
             'actualpatch':ACTUALPATCH,
             'patchmixed':PATCHMIXED,
             'restoremixed':RESTOREMIXED,
-            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS+POSTMIXEDJETS+STEEPJETS+HEATJETS+PHYSICALFIELD+COREPHYSICAL+FROZENFIELD+BRIDGEPROFILES+SWITCHPROFILES+RESHAPEPROFILES+RESTOREPROFILES+ACTUALPATCH+PATCHMIXED+RESTOREMIXED}[stage]
+            'reshapemixed':RESHAPEMIXED,
+            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS+POSTMIXEDJETS+STEEPJETS+HEATJETS+PHYSICALFIELD+COREPHYSICAL+FROZENFIELD+BRIDGEPROFILES+SWITCHPROFILES+RESHAPEPROFILES+RESTOREPROFILES+ACTUALPATCH+PATCHMIXED+RESTOREMIXED+RESHAPEMIXED}[stage]
 
 
 def run(stage='all',list_only=False):
@@ -135,7 +142,8 @@ def run(stage='all',list_only=False):
         print('Build compliant stage:',name,flush=True)
         importlib.import_module(PREFIX+name).run()
         completed.append(name)
-    inherited_restoremixed='reference_restore_mixed_C4_check' in completed
+    inherited_reshapemixed='long_reshape_mixed_C4_check' in completed
+    inherited_restoremixed=inherited_reshapemixed or 'reference_restore_mixed_C4_check' in completed
     inherited_patchmixed=inherited_restoremixed or 'actual_patch_mixed_C4_check' in completed
     inherited_patch=inherited_patchmixed or 'actual_moment_patch_check' in completed
     inherited_restore=inherited_patch or 'reference_restore_profiles_check' in completed
@@ -214,7 +222,8 @@ def run(stage='all',list_only=False):
         actual_long_reshape_radial_recovery_axial4_available=inherited_reshape,
         actual_Rsh_exit_axial5_available=inherited_reshape,
         long_reshape_with_this_inlet_axial5_enclosures_available=inherited_reshape,
-        reshape_radial_mixed4_certified=False,
+        reshape_radial_mixed4_certified=inherited_reshapemixed,
+        R110_local_original_power_reshape_mixed4_join_certified=inherited_reshapemixed,
         actual_reference_continuation_axial5_enclosures_available=inherited_restore,
         actual_axial_restoration_axial5_enclosures_available=inherited_restore,
         actual_unpatched_Rm_Rh_moment_axial5_enclosures_available=inherited_restore,
@@ -222,7 +231,7 @@ def run(stage='all',list_only=False):
         actual_reference_restore_radial_recovery_axial4_available=inherited_restore,
         reference_restore_radial_mixed4_certified=inherited_restoremixed,
         Rz_restore_end_and_actual_Rm_mixed4_joins_certified=inherited_restoremixed,
-        Rsh_reshape_mixed4_join_certified=False,
+        Rsh_reshape_mixed4_join_certified=inherited_reshapemixed,
         reference_continuation_installed=False,
         actual_five_moment_patch_connected=inherited_patch,
         actual_patch_coefficient_axial5_enclosures_available=inherited_patch,
@@ -247,14 +256,14 @@ def run(stage='all',list_only=False):
         full_pulse_C4_scope='Leading O4 and two local external interfaces, spatial/profile mixed total<=4 at fixed positive tau; whole outer/core/axis and time derivatives excluded',
         full_outer_C4_certified=False,
         temporal_recursion=False,
-        next_dependency='Actual reference/restore/patch mixed4 -> remaining reshape/switch/bridge mixed4 and core joins -> inner/pre-O3 and whole physical assembly; energy/stress/flat remainder -> actual recursion/correction')
+        next_dependency='Actual reshape/reference/restore/patch mixed4 -> remaining microscopic switches/bridge mixed4 and core joins -> inner/pre-O3 and whole physical assembly; energy/stress/flat remainder -> actual recursion/correction')
     print(json.dumps(result,indent=2),flush=True)
     return result
 
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','postmixedjets','steepjets','heatjets','physicalfield','corephysical','frozenfield','bridgeprofiles','switchprofiles','reshapeprofiles','restoreprofiles','actualpatch','patchmixed','restoremixed','all'),default='all')
+    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','postmixedjets','steepjets','heatjets','physicalfield','corephysical','frozenfield','bridgeprofiles','switchprofiles','reshapeprofiles','restoreprofiles','actualpatch','patchmixed','restoremixed','reshapemixed','all'),default='all')
     parser.add_argument('--list',action='store_true',help='Print the ordered modules without running them')
     args=parser.parse_args()
     run(args.stage,args.list)

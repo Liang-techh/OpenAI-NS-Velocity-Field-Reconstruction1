@@ -67,7 +67,7 @@ For the angular, pressure and swirl-energy moments respectively, let
 
 ```
 I(k,multiplicity;y,Z) = integral_0^y
- exp[-k*t + multiplicity*B(Z)*(sigma((y-t)/T)-sigma(y/T))]dt.
+ exp[-k*t + multiplicity*B(Z)*(sigma(y/T)-sigma((y-t)/T))]dt.
 ```
 
 The corresponding inherited-decay factor is

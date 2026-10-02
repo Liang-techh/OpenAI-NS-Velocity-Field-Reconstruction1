@@ -1,35 +1,54 @@
 {
   "actual_five_defect_family_sha256": "3983d0ddb33fa85e6ab152ef7e29960f8b95aca3e1e86f1bda0882b39d825894",
   "implicit_source_sha256": "5aec111986d745459eb2e2fece291f1dc3fa7bf986529494df802c2aa2daceae",
-  "source_transport_and_implicit_structure": {
-    "exact_actual_dominant_tail_transport_identities": 5,
-    "exact_higher_implicit_Jacobian_convolution_identities": 20,
+  "actual_mixed_bounds_checked": {
+    "physical_velocity_pressure_y_Z_mixed4": 480,
+    "physical_five_primitive_y_Z_mixed4": 600
+  },
+  "symbolic_checks": {
+    "exact_exponential_Bell_derivative_identities": 5,
+    "exact_Rsh_actual_centered_history_identities": 6,
+    "exact_flat_endpoint_log_velocity_y_identities": 8,
+    "functional_join_proof": "same actual histories, P0 and raw V; sigma flatness gives identical physical primitive RHS derivatives; R110 original power is supplied on R109..R110",
     "passed": true
   },
-  "original_restoration_integrals_directly_source_bound": true,
-  "independent_coefficient_fixture": {
-    "independent_physical_bump_weight_integrals": 21,
-    "independent_smooth_implicit_coefficient_Taylor_coefficients": 30,
-    "fixture_inverse_contraction_upper": "0.37769483775985979631",
-    "variable_inverse_amplitude_derivatives_retained": true,
+  "independent_physical_fixture": {
+    "independent_full_physical_primitive_mixed_derivatives": 135,
+    "finite_full_integrals": true,
+    "nonconstant_log_velocity_and_nonzero_histories": true,
     "finite_fixture_only": true,
     "actual_source_admission": false,
     "passed": true
   },
-  "actual_source_tail_C1_caps_checked": 5,
-  "actual_source_factored_decay_caps_checked": 36,
-  "actual_implicit_coefficient_axial5_bounds_checked": 30,
-  "actual_velocity_pressure_moment_bounds_checked": 497,
-  "exact_actual_Rm_inlet_and_original_P0_bound": true,
-  "actual_five_functional_terminal_identities_connected": true,
-  "actual_five_moment_patch_connected": true,
-  "actual_patch_coefficient_axial5_enclosures_available": true,
-  "actual_patch_velocity_pressure_moment_axial5_enclosures_available": true,
-  "actual_patch_radial_recovery_axial4_available": true,
-  "actual_patch_local_relaxed_cone_theorem_bound": true,
-  "residual_zero_containment_not_used_as_closure_proof": true,
-  "radial_mixed4_certified": false,
-  "all_radial_endpoint_joins_certified": false,
+  "exact_original_cutoff_endpoint_checks": 10,
+  "same_actual_Rsh_parent_retained": true,
+  "exact_shared_axial_source_binding": {
+    "exact_common_signed_integral_Taylor_identities": 18,
+    "axial_orders": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "canonical_signed_integral_ASTs_match_original_sources": true,
+    "original_core_bridge_first_switch_and_sigma_source_hashes_bound": true,
+    "same_actual_v_cover_and_Rsh_history_bound": true,
+    "caps_are_enclosures_only": true,
+    "formal_integrals_numerically_reconstructed": false,
+    "passed": true
+  },
+  "actual_factored_positive_source_caps_checked": 480,
+  "same_actual_R110_power_parent_retained": true,
+  "join_overlap_is_diagnostic_only": true,
+  "exact_R110_two_sided_physical_mixed_grids_retained": true,
+  "original_selected_T_and_inverse_T_factors_retained": true,
+  "actual_long_reshape_all_mixed_derivatives_total_order_le4_available": true,
+  "Rsh_reference_mixed4_join_certified": true,
+  "R110_postswitch_power_reshape_local_mixed4_join_certified": true,
+  "microscopic_switch_mixed4_certified": false,
+  "full_inner_interfaces_certified": false,
   "full_cartesian_vector_derivatives_certified": false,
   "admissible_stress_lift_constructed": false,
   "temporal_recursion": false,
@@ -285,6 +304,18 @@
     "lei_ren_part1_paper_compliant_reference_restore_profiles_check.json": "fecc91c0ba8368c681a2631db174b7f25da82ee16ceace2a744fb3f545f15087",
     "lei_ren_part1_paper_compliant_actual_moment_patch.py": "11a1623af5f5880dd3456e455b6d7e36140b9d8cc9ff2836a417aea02da0134c",
     "lei_ren_part1_paper_compliant_actual_moment_patch.json": "c6d7b3bf43390f3531ffe909b5d66bbbed9fa5b9cbf063f00277d56c471e92f5",
-    "lei_ren_part1_paper_compliant_actual_moment_patch_check.py": "d41f0e6ee1012f924a0d02d508012bc4b6f899380763b4c2086b256ad2c38f9c"
+    "lei_ren_part1_paper_compliant_actual_moment_patch_check.py": "d41f0e6ee1012f924a0d02d508012bc4b6f899380763b4c2086b256ad2c38f9c",
+    "lei_ren_part1_paper_compliant_actual_moment_patch_check.json": "8abd343db73ec66fe42254bb842b707bc7bac9cb8085fba1fefd45e429271e92",
+    "lei_ren_part1_paper_compliant_actual_patch_mixed_C4.py": "afe05b65f64c29ac3bc47528bbea58abbd8186ced832a14bfad3adebf5b97a3f",
+    "lei_ren_part1_paper_compliant_actual_patch_mixed_C4.json": "eb6b414df39c255ccbfc6fdd11a2a7e1f5c68519e8eb51617cf1ae8c414feb02",
+    "lei_ren_part1_paper_compliant_actual_patch_mixed_C4_check.py": "5ed8ca49b1e1e51f3ec240992e5c96a27c58b48ca44b8b5d21c05c83355c8103",
+    "lei_ren_part1_paper_compliant_actual_patch_mixed_C4_check.json": "acc788b12acc83168815b959493fc62db8148548b07f4219266bf041e142172c",
+    "lei_ren_part1_paper_compliant_reference_restore_mixed_C4.py": "78208904129b77cacc8550f43c773e0c3e905361d79f13b13a13b2546c242749",
+    "lei_ren_part1_paper_compliant_reference_restore_mixed_C4.json": "07dc9ba1d16aeb06dd2afe11d5550f66aa62b5bbf6539ffd68f689392872cfbe",
+    "lei_ren_part1_paper_compliant_reference_restore_mixed_C4_check.py": "335c5c4f17db3e4279584ec332961785645dbfbe021b6b2dd11d1fca8ad37487",
+    "lei_ren_part1_paper_compliant_reference_restore_mixed_C4_check.json": "494ba9a0f608f4ae61734e27984b6af717d46967faf7680bb1a896f1c3967d3e",
+    "lei_ren_part1_paper_compliant_long_reshape_mixed_C4.py": "11a4af5087c15cdf9bc1190bca91ac0fd943d5cd546860ffcc36ea1adc465e7f",
+    "lei_ren_part1_paper_compliant_long_reshape_mixed_C4.json": "0fb26c9862c94e2d8073017bfb3aa12e8d040e5daeb568a0ea149ecaf5039ed5",
+    "lei_ren_part1_paper_compliant_long_reshape_mixed_C4_check.py": "b48a87cd91735aa913d24ac8139855a05dbb694f08e93b517fcd1dc35ed2478b"
   }
 }

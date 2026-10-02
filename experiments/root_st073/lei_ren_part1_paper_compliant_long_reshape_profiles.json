@@ -3036,7 +3036,7 @@
       "P": "Pstar^2*original_P0_normalized+Mp",
       "Ur": "sqrt(R/2)*Q"
     },
-    "source_full_kernel": "integral_0^y exp(-k*t+m*B*(sigma((y-t)/T)-sigma(y/T)))dt; (k,m)=(1.6,1),(.2,2),(1.2,2)",
+    "source_full_kernel": "integral_0^y exp(-k*t+m*B*(sigma(y/T)-sigma((y-t)/T)))dt; (k,m)=(1.6,1),(.2,2),(1.2,2)",
     "source_inherited_decay": "exp(-k*y+m*B*sigma(y/T)); original nonzero R110 histories",
     "source_axial_velocity": "V(R,Z)=actual_V110(Z)",
     "actual_R110_histories_retained": true,
@@ -6024,7 +6024,7 @@
       "P": "Pstar^2*original_P0_normalized+Mp",
       "Ur": "sqrt(R/2)*Q"
     },
-    "source_full_kernel": "integral_0^y exp(-k*t+m*B*(sigma((y-t)/T)-sigma(y/T)))dt; (k,m)=(1.6,1),(.2,2),(1.2,2)",
+    "source_full_kernel": "integral_0^y exp(-k*t+m*B*(sigma(y/T)-sigma((y-t)/T)))dt; (k,m)=(1.6,1),(.2,2),(1.2,2)",
     "source_inherited_decay": "exp(-k*y+m*B*sigma(y/T)); original nonzero R110 histories",
     "source_axial_velocity": "V(R,Z)=actual_V110(Z)",
     "actual_R110_histories_retained": true,
@@ -9012,7 +9012,7 @@
       "P": "Pstar^2*original_P0_normalized+Mp",
       "Ur": "sqrt(R/2)*Q"
     },
-    "source_full_kernel": "integral_0^y exp(-k*t+m*B*(sigma((y-t)/T)-sigma(y/T)))dt; (k,m)=(1.6,1),(.2,2),(1.2,2)",
+    "source_full_kernel": "integral_0^y exp(-k*t+m*B*(sigma(y/T)-sigma((y-t)/T)))dt; (k,m)=(1.6,1),(.2,2),(1.2,2)",
     "source_inherited_decay": "exp(-k*y+m*B*sigma(y/T)); original nonzero R110 histories",
     "source_axial_velocity": "V(R,Z)=actual_V110(Z)",
     "actual_R110_histories_retained": true,
@@ -12001,7 +12001,7 @@
         "P": "Pstar^2*original_P0_normalized+Mp",
         "Ur": "sqrt(R/2)*Q"
       },
-      "source_full_kernel": "integral_0^y exp(-k*t+m*B*(sigma((y-t)/T)-sigma(y/T)))dt; (k,m)=(1.6,1),(.2,2),(1.2,2)",
+      "source_full_kernel": "integral_0^y exp(-k*t+m*B*(sigma(y/T)-sigma((y-t)/T)))dt; (k,m)=(1.6,1),(.2,2),(1.2,2)",
       "source_inherited_decay": "exp(-k*y+m*B*sigma(y/T)); original nonzero R110 histories",
       "source_axial_velocity": "V(R,Z)=actual_V110(Z)",
       "actual_R110_histories_retained": true,
@@ -14989,7 +14989,7 @@
         "P": "Pstar^2*original_P0_normalized+Mp",
         "Ur": "sqrt(R/2)*Q"
       },
-      "source_full_kernel": "integral_0^y exp(-k*t+m*B*(sigma((y-t)/T)-sigma(y/T)))dt; (k,m)=(1.6,1),(.2,2),(1.2,2)",
+      "source_full_kernel": "integral_0^y exp(-k*t+m*B*(sigma(y/T)-sigma((y-t)/T)))dt; (k,m)=(1.6,1),(.2,2),(1.2,2)",
       "source_inherited_decay": "exp(-k*y+m*B*sigma(y/T)); original nonzero R110 histories",
       "source_axial_velocity": "V(R,Z)=actual_V110(Z)",
       "actual_R110_histories_retained": true,
@@ -17977,7 +17977,7 @@
         "P": "Pstar^2*original_P0_normalized+Mp",
         "Ur": "sqrt(R/2)*Q"
       },
-      "source_full_kernel": "integral_0^y exp(-k*t+m*B*(sigma((y-t)/T)-sigma(y/T)))dt; (k,m)=(1.6,1),(.2,2),(1.2,2)",
+      "source_full_kernel": "integral_0^y exp(-k*t+m*B*(sigma(y/T)-sigma((y-t)/T)))dt; (k,m)=(1.6,1),(.2,2),(1.2,2)",
       "source_inherited_decay": "exp(-k*y+m*B*sigma(y/T)); original nonzero R110 histories",
       "source_axial_velocity": "V(R,Z)=actual_V110(Z)",
       "actual_R110_histories_retained": true,
@@ -20965,7 +20965,7 @@
         "P": "Pstar^2*original_P0_normalized+Mp",
         "Ur": "sqrt(R/2)*Q"
       },
-      "source_full_kernel": "integral_0^y exp(-k*t+m*B*(sigma((y-t)/T)-sigma(y/T)))dt; (k,m)=(1.6,1),(.2,2),(1.2,2)",
+      "source_full_kernel": "integral_0^y exp(-k*t+m*B*(sigma(y/T)-sigma((y-t)/T)))dt; (k,m)=(1.6,1),(.2,2),(1.2,2)",
       "source_inherited_decay": "exp(-k*y+m*B*sigma(y/T)); original nonzero R110 histories",
       "source_axial_velocity": "V(R,Z)=actual_V110(Z)",
       "actual_R110_histories_retained": true,
@@ -23953,7 +23953,7 @@
         "P": "Pstar^2*original_P0_normalized+Mp",
         "Ur": "sqrt(R/2)*Q"
       },
-      "source_full_kernel": "integral_0^y exp(-k*t+m*B*(sigma((y-t)/T)-sigma(y/T)))dt; (k,m)=(1.6,1),(.2,2),(1.2,2)",
+      "source_full_kernel": "integral_0^y exp(-k*t+m*B*(sigma(y/T)-sigma((y-t)/T)))dt; (k,m)=(1.6,1),(.2,2),(1.2,2)",
       "source_inherited_decay": "exp(-k*y+m*B*sigma(y/T)); original nonzero R110 histories",
       "source_axial_velocity": "V(R,Z)=actual_V110(Z)",
       "actual_R110_histories_retained": true,
@@ -26941,7 +26941,7 @@
         "P": "Pstar^2*original_P0_normalized+Mp",
         "Ur": "sqrt(R/2)*Q"
       },
-      "source_full_kernel": "integral_0^y exp(-k*t+m*B*(sigma((y-t)/T)-sigma(y/T)))dt; (k,m)=(1.6,1),(.2,2),(1.2,2)",
+      "source_full_kernel": "integral_0^y exp(-k*t+m*B*(sigma(y/T)-sigma((y-t)/T)))dt; (k,m)=(1.6,1),(.2,2),(1.2,2)",
       "source_inherited_decay": "exp(-k*y+m*B*sigma(y/T)); original nonzero R110 histories",
       "source_axial_velocity": "V(R,Z)=actual_V110(Z)",
       "actual_R110_histories_retained": true,
@@ -29929,7 +29929,7 @@
         "P": "Pstar^2*original_P0_normalized+Mp",
         "Ur": "sqrt(R/2)*Q"
       },
-      "source_full_kernel": "integral_0^y exp(-k*t+m*B*(sigma((y-t)/T)-sigma(y/T)))dt; (k,m)=(1.6,1),(.2,2),(1.2,2)",
+      "source_full_kernel": "integral_0^y exp(-k*t+m*B*(sigma(y/T)-sigma((y-t)/T)))dt; (k,m)=(1.6,1),(.2,2),(1.2,2)",
       "source_inherited_decay": "exp(-k*y+m*B*sigma(y/T)); original nonzero R110 histories",
       "source_axial_velocity": "V(R,Z)=actual_V110(Z)",
       "actual_R110_histories_retained": true,
@@ -32917,7 +32917,7 @@
         "P": "Pstar^2*original_P0_normalized+Mp",
         "Ur": "sqrt(R/2)*Q"
       },
-      "source_full_kernel": "integral_0^y exp(-k*t+m*B*(sigma((y-t)/T)-sigma(y/T)))dt; (k,m)=(1.6,1),(.2,2),(1.2,2)",
+      "source_full_kernel": "integral_0^y exp(-k*t+m*B*(sigma(y/T)-sigma((y-t)/T)))dt; (k,m)=(1.6,1),(.2,2),(1.2,2)",
       "source_inherited_decay": "exp(-k*y+m*B*sigma(y/T)); original nonzero R110 histories",
       "source_axial_velocity": "V(R,Z)=actual_V110(Z)",
       "actual_R110_histories_retained": true,
@@ -49086,6 +49086,6 @@
     "lei_ren_part1_paper_compliant_inner_switch_profiles.json": "1680c222a20af1dcbf1e44b0e6202df635cd83d5c20d85422881173f2ebb2695",
     "lei_ren_part1_paper_compliant_inner_switch_profiles_check.py": "d3ab688f7e35fefec7be5a3bd620f0ba58a1f2170f5234f5af8ca85be648046f",
     "lei_ren_part1_paper_compliant_inner_switch_profiles_check.json": "dcb1cc3fae08ed420f1ab2f7c2d20045248fb4d32bf7d887e48047f5ef0a3453",
-    "lei_ren_part1_paper_compliant_long_reshape_profiles.py": "fa204b0ef4e890b95ecf1ea39204d991c761f8507d6fa96d54e86497d88bc1ff"
+    "lei_ren_part1_paper_compliant_long_reshape_profiles.py": "b12c7ef683033e3a0612ede04720d37b625a116ec8231c1d9a7a1806ae05c4c3"
   }
 }

@@ -73,7 +73,7 @@ def normalized_amplitude_decay(c,logjet,rate_min,rate_max,y,proofs,initial=None)
 def backward_kernel(c,B,T,y,m,rate_min,rate_max,proofs):
     """Full, untruncated endpoint-normalized moment integral, axial5.
 
-    K = integral_0^y exp(-k*t + m*B*(sigma((y-t)/T)-sigma(y/T)))dt.
+    K = integral_0^y exp(-k*t + m*B*(sigma(y/T)-sigma((y-t)/T)))dt.
     Source log-u slope in[.05,.15] gives the supplied positive rate bounds.
     |delta sigma|<=8*t/T. Differentiate the EXACT integrand in Z and bound
     its Bell-polynomial coefficient of t^p by full positive exponential
@@ -228,7 +228,7 @@ class CompliantLongReshapeProfiles:
                 Mtheta_z='sqrt(2)*R^(3/2)*Utheta*theta_z_shape',Mz='R*mean',
                 Mztheta='R*axial-R*Utheta^2*swirl_shape/2',Mp='Utheta^2*pressure_shape/2',
                 P='Pstar^2*original_P0_normalized+Mp',Ur='sqrt(R/2)*Q'),
-            source_full_kernel='integral_0^y exp(-k*t+m*B*(sigma((y-t)/T)-sigma(y/T)))dt; (k,m)=(1.6,1),(.2,2),(1.2,2)',
+            source_full_kernel='integral_0^y exp(-k*t+m*B*(sigma(y/T)-sigma((y-t)/T)))dt; (k,m)=(1.6,1),(.2,2),(1.2,2)',
             source_inherited_decay='exp(-k*y+m*B*sigma(y/T)); original nonzero R110 histories',
             source_axial_velocity='V(R,Z)=actual_V110(Z)',
             actual_R110_histories_retained=True,original_pressure_datum_retained=True,

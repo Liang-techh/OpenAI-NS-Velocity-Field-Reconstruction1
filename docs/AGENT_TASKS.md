@@ -1,3 +1,29 @@
+# Next execution: microscopic switches and bridge mixed4 - 2026-10-02
+
+Read docs/LONG_RESHAPE_MIXED_C4_2026_10_02.md; reproduce --stage reshapemixed (98 ordered modules). This header supersedes open long-reshape/R110/Rsh mixed4 items below. All accepted providers retain SAME actual source, original P0, formal positive amplitudes and selected parameters. Local source certificates are not reconstructed point functions or a complete NS field.
+
+- [x] Recover full original long reshape mixed4 from original sigma(y/T), actual B110, selected T=400Abar and all full-kernel moment histories; preserve q_y/q_yy/q_yyy in Bell derivatives and all inverse-T factors.
+- [x] Differentiate five physical primitive RHSs and pressure with true radial factors, raw V units and Pstar^-2; keep fixed-current-basepoint amplitude normalization. Differentiate sqrt(R/2) before recovering Ur mixed4.
+- [x] Correct exact backward-kernel source sign and independent full-integral fixture; prove the physical integrating-factor identity. Refresh/check all five downstream stage pairs with new source hashes.
+- [x] Retain both signed original axial source integrals as common formal references, preserving original chi/1-sigma, quotient, current R and hydro/pressure/swirl scale factors. Prove V100/V110/E identities at ordinary Taylor orders0..5, not by matching caps or overlap.
+- [x] Supply actual original post-switch power mixed4 on local R109..110; bind exact phi/V/five moment/P0 inlet data to the same switch.post(110) source.
+- [x] Certify local two-sided R110 and Rsh functional mixed4 joins by original flat endpoint identities, same actual histories and common signed axial source. Preserve microscopic/full-inner gatesfalse.
+- [x] Verify135 independent physical integral mixed derivatives,480 actual velocity bounds,600 primitive bounds and480 positive-source cap inequalities formed after all large factors.
+- [ ] Restore BOTH original microscopic switches using formal hb, exact phase-to-logR chain rules and inverse-hb factors. Keep second-switch sigma factor, current-radius Dbar/axial drives and exact radii100*exp(hb*s); do not differentiate width caps.
+- [ ] Keep first-switch axial increment as the SAME signed formal integral now shared by V110/E. Recover all radial derivatives of phi_actual/phi_bar and all hydro/Pstar^2-pressure/F0^2-swirl contributions from accepted comparison directions. Distinguish angular Dbar from axial drive.
+- [ ] Supply complete original post-switch power interval R2..110, preserving positive formal R2=100*exp(2hb) rather than rounding it to100. Connect exact phase2/R2 and the already accepted R109..110 local provider.
+- [ ] Prove both microscopic-switch endpoint joins with original cutoff flatness and exact actual primitive histories. Keep every support-end source and reciprocal-width factor; interval overlap is diagnostic only.
+- [ ] Recover actual prescribed-shear bridge mixed4 using original comparison axial6/direction5 inputs and actual drive ODEs. Preserve chi/alpha smoothing widths, formal inverse-hb scales and all actual incoming core histories.
+- [ ] Certify two-sided core/bridge and bridge/switch interfaces to all derivative orders required for Cartesian4, retaining axis regularity and the same analytic P0. Do not replace actual moments with comparison moments.
+- [ ] Build complete core/bridge/switch/reshape/reference/restore/patch dispatcher and missing Rh-to-pre-O3 continuation. Preserve formal radius ordering and original supports; bind outer moments/P0 to the same actual source.
+- [ ] Assemble complete physical Cartesian spatial4 and fixed-position time derivatives across every layer/axis/interface. Preserve exact structural divergence and primitive pressure.
+- [ ] Restore required local/terminal energy domains, admissible divergence-form stress with regional margins and an independently bounded flat remainder. Original unlocalized whole-space energy is infinite.
+- [ ] Implement genuine n-dependent coefficient recovery, independent moment repair, finite-order remainder and smooth summation. Then mean/oscillatory correction and full forced Cartesian residual validation.
+
+For each completion record scope, callable artifact, reproduction command and accepted receipt/commit. Preserve original source/history and unrelated experiments. Full-inner/full-field/stress/global-energy/temporal gates remainfalse until their complete scopes are proved.
+
+---
+
 # Next execution: actual long reshape mixed4 and remaining inner interfaces - 2026-10-02
 
 Read docs/REFERENCE_RESTORE_MIXED_C4_2026_10_02.md. Reproduce --stage restoremixed (96 ordered modules). This header supersedes open reference/restoration mixed4 items below. SAME actual source, original cutoff, five-defect family and P0; full reconstruction and recursion remain unfinished.

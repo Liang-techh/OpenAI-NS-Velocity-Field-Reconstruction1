@@ -52,7 +52,7 @@ def finite_kernel_fixture():
                     cuts=[mp.mpf(0)]+[mp.mpf(q) for q in (1,5,20,80,400) if q<y]+([y] if y else [])
                     for n in range(6):
                         def integrand(t):
-                            change=sigma((y-t)/T)-sig
+                            change=sig-sigma((y-t)/T)
                             return mp.exp(-mp.mpf(kappa)*t+m*fn(z)*change)*derivatives[n](z,change)
                         expected=mp.quad(integrand,cuts) if y else mp.mpf(0)
                         a,b=endpoints(bounded[n]*math.factorial(n))
@@ -110,8 +110,16 @@ def structural_identities():
     offset=y-10*(logC+logP)
     if s.simplify(logfield.subs(S,1)-(offset/10-s.log(Q)))!=0:
         raise ArithmeticError('Reference radius compatibility identity failed')
+    # Independent integrating-factor derivation fixes the sign of the full
+    # backward kernel. Absolute rate/derivative bounds alone cannot do so.
+    t,k,mult=s.symbols('t k mult',real=True);step=s.Function('sigma')
+    ell=lambda x:x/10+B*(1-step(x/T))
+    kernel_log=-k*t+mult*B*(step(y/T)-step((y-t)/T))
+    physical_ratio_log=-(k-mult/10)*t+mult*(ell(y-t)-ell(y))
+    if s.simplify(physical_ratio_log-kernel_log)!=0:
+        raise ArithmeticError('Current-amplitude full kernel integrating-factor sign changed')
     return dict(exact_five_physical_primitive_RHS=5,exact_reference_log_endpoint=1,
-                exact_reference_radius_compatibility=1,passed=True)
+                exact_reference_radius_compatibility=1,exact_current_amplitude_kernel_sign_identity=1,passed=True)
 
 
 def run():
@@ -152,6 +160,8 @@ def run():
                 raise ArithmeticError('Full kernel rate bounds do not follow from actual source '+name)
         packets=[receipt[n] for n in ('whole_reshape','actual_R110_inlet','actual_Rsh_exit')]+receipt['samples']
         for packet in packets:
+            if packet['source_full_kernel']!='integral_0^y exp(-k*t+m*B*(sigma(y/T)-sigma((y-t)/T)))dt; (k,m)=(1.6,1),(.2,2),(1.2,2)':
+                raise ValueError('Exact full kernel source sign differs from the physical integrating factor')
             for name in ('log_Utheta_over_Pstar_axial5_coefficients','Utheta_true_axial5_divided_by_current_Utheta',
                          'Uz_actual_axial5_coefficients','actual_Q_axial4_coefficients',
                          'pressure_axis_axial5_coefficients','angular_shear_axial5_coefficients'):
