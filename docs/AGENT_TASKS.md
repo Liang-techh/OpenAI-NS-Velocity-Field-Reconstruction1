@@ -1,3 +1,20 @@
+# Next execution: smoothed comparison and actual prescribed-shear bridge - 2026-10-02
+
+Read docs/FROZEN_COMPARISON_FIELD_2026_10_02.md. --stage frozenfield has82 ordered modules in the complete pipeline. This header refines the annular tasks below without completing the annular assembly.
+
+- [x] Recover all five actual core-exit primitives with axial5 interval enclosures and formal original F0 factors.
+- [x] Implement exact UNSMOOTHED auxiliary frozen moment transport(9.12), radial recovery, mixed profile4 and factored inertial direction axial4 across Ra..110.
+- [x] Preserve true derivatives of amplitudes separately from normalized shape derivatives; independently integrate a polynomial core and reconstruct original inertial stress to check units and signs.
+- [ ] Implement alpha=1-sigma((y-hb)/hb) and comparison(9.23), with own inherited five moments, original P0, exact core agreement for y<=hb and frozen continuation after2hb. Use formal hb=cstar*K^-100 from selected admitted family; do not substitute a convenient numeric width.
+- [ ] Compute smoothed q=Ibar/Fbar. Do not use the unsmoothed frozen q as the actual bridge direction. Retain exact positive amplitudes and cancel inverse-F0 in the axial drive before evaluation.
+- [ ] Integrate actual bridge(9.26): d_y logF=-chi_b*Dbar/2, d_y V=-chi_b*sqrt(R/2)*F*Ebar, chi_b=1-(1-epsilon_b)*sigma(y/hb). Accumulate ACTUAL five moments from core; pressure=P0+Mp.
+- [ ] Retain flat stress error proportional1-chi_b, prove core derivative matching and distinguish admissible inner collar from relaxed remainder. Original profile shear is not oscillatory correction.
+- [ ] Extend through the original two short switches at100 to110; feed actual110 jets to long reshape, reference/axial restoration, and then moment repair. Restore all mixed derivatives needed by Cartesian4 and moment Z5.
+
+Full-field/cone/energy/temporal gates stay false. Preserve unrelated experiments and source hashes; mark a task done only with the corresponding artifact and exact verified scope.
+
+---
+
 # Active execution queue: core/axis implemented, annular assembly next - 2026-10-02
 
 Use docs/CORE_AXIS_PHYSICAL_FIELD_2026_10_02.md and CURRENT_CHECKPOINT.md before historical tasks. SAME actual .001*delta family only. Reproduce --stage corephysical if this stage changes; do not rerun the entire 80-module pipeline merely to restate status.

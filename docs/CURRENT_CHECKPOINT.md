@@ -1,3 +1,15 @@
+# Core exit five primitives and explicit frozen comparison - 2026-10-02
+
+The SAME actual .001 source now supplies all five core-exit radial primitive enclosures with axial jets through5. The explicit UNSMOOTHED auxiliary frozen field(9.12) is callable across Ra=4/Lambda..110, with all mixed profile derivatives through4 and inertial-direction axial4. Exact core moment histories and original P0 are retained. F0 and F0^2 remain formal positive sources; axial_drive=sqrt(R/2)*F*Ef is factored before enclosure. Shapes and true moment derivatives divided by basepoint amplitudes are stored separately.
+
+This is NOT the smoothed comparison(9.23) or actual bridge(9.26). Frozen radial derivatives do not match the core smoothly. Actual bridge/inner interfaces, complete physical field, admissible stress, independent flat remainder, physical energy/terminal domains and real coefficient recursion remain incomplete.
+
+Reproduce --stage frozenfield;82 ordered modules. Read docs/FROZEN_COMPARISON_FIELD_2026_10_02.md. The stage checks five primitive RHS/exit identities, mean recovery and structural divergence, positive integration weights; independent polynomial-core fixtures compare150 moment,60 direction and450 mixed derivatives;525 actual mixed bounds are complete and finite. Fixtures do not admit the actual source.
+
+NEXT: smoothed comparison with ITS OWN five moments -> actual prescribed-shear bridge with weighted flat departure error -> short switches at100 and source field at110 -> reshape/reference/axial restoration/moment repair -> preceding O3/full physical dispatcher -> stress/flat remainder -> actual recursion/correction. Global unlocalized source energy remains infinite; local/terminal energy requirements remain open.
+
+---
+
 # F38 core/axis physical map and local core energy - 2026-10-02
 
 The SAME admitted .001*delta source now has whole-Z nonlinear analytic core enclosures through mixed order5, nonsingular Cartesian spatial4 and first fixed-physical-position time derivatives INCLUDING THE EXACT AXIS, and local positive-time core kinetic-energy bounds. The selected physical norm Cstar and original analytic preheat pressure are bound directly to the accepted analytic family. The leading infinite Bessel model has a factorial tail plus the admitted nonlinear fixed-point correction; it is not substituted for the nonlinear solution. No old local finite coefficient state is extrapolated.
