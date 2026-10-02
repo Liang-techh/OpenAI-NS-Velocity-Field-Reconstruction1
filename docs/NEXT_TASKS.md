@@ -1,3 +1,20 @@
+# Next: signed original bridge controls — 2026-10-02
+
+Comparison-history milestone is complete and independently checked; see docs/COMPARISON_HISTORIES_2026_10_02.md. Stage comparisonpoints; 120 ordered modules.
+
+- [x] Bind actual coefficientwise core atoms and endpoint jets to the original comparison namespace.
+- [x] Carry both microscopic switches, six moments, formal signed width coefficients and controlled cubic field remainder.
+- [x] Transport histories from the exact 2hb state through the frozen macro to R=100; independently check Gaussian switch weights and source receipts.
+- [ ] Integrate the actual time-varying signed prescribed-shear/bridge controls jointly from those histories; retain original source directions, quotient, widths, and directed quadrature tails.
+- [ ] Integrate actual first-switch field histories and verify V100/V110/E identities with pressure V=4C distinct from raw axial V=Uz.
+- [ ] Recover admitted implicit five-bump functions/values with a posteriori Jacobian and remainder control.
+- [ ] Compose the original selected physical point field and measure full radial/axial morphology and material winding.
+- [ ] Close construction-domain energy/support, admissible divergence stress, independent flat remainder, and true n-dependent scale recursion plus mean/oscillatory correction.
+
+Caps are final error bounds only; they are not values for formal positive widths.
+
+---
+
 # Next: signed original comparison and actual bridge integrations - 2026-10-02
 
 Read docs/CORE_INTEGRAL_ATOMS_2026_10_02.md. Stage coreatoms,119 ordered modules. Local swirl morphology and six actual core atoms are done in their stated scope. Earlier matching TODOs are superseded only by these scoped entries.

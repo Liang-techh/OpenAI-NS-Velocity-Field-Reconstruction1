@@ -1,3 +1,15 @@
+# Active handoff: signed actual bridge integrations — 2026-10-02
+
+Read docs/COMPARISON_HISTORIES_2026_10_02.md and reproduce the passing checker. Stage comparisonpoints; 120 ordered modules. Both original microscopic switches, all six inherited moments, and frozen macro histories through R=100 are implemented with formal positive width and controlled cubic remainder.
+
+Priority A: implement the signed actual prescribed-shear/bridge source controls from the original shared comparison namespace. Recompute time-varying Dbar and forcing from the exponential moment histories; do not replace them with frozen endpoint constants. Preserve actual inlet atoms, original width factors, source intervals, endpoint identities, exact R_a/R100, and pressure primitive V=4C separately from raw axial bridge V=Uz.
+Priority B: integrate the original first-switch field integrals with their signed directions, quotient, hydrostatic, pressure and swirl terms plus directed quadrature/truncation errors. Recover the actual five primitive histories and validate V100/V110/E identities.
+Priority C: solve admitted implicit five-bump functions with a posteriori Jacobian/remainder control, compose the original physical point field and measured morphology, then continue required-domain energy/support, admissible stress, independent flat remainder, and genuine n-dependent scale recursion/corrections.
+
+Do not relabel auxiliary comparison histories as the actual bridge; do not reset frozen-macro moments; preserve unrelated working files. Record source/check hashes and explicit bounded scope.
+
+---
+
 # Active handoff: consume actual inlet atoms in original annular integrals - 2026-10-02
 
 Read docs/CORE_INTEGRAL_ATOMS_2026_10_02.md. The six coefficientwise core inlet atoms and axial6 derivatives now pass; stage coreatoms,119 ordered modules. Reuse core_atoms(Z,z_order=6,degree=24) or exact root_atoms(...). Preserve full docs/PROJECT_GOAL.md, same current Cstar/core/preheat pressure, source intervals, positive widths, nonlinear tails and unrelated experiments. Do not redo core atom inventories.

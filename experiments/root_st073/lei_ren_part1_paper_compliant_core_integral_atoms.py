@@ -42,10 +42,30 @@ def product_tail(c,left_norm,right_norm,left_tail,right_tail,k):
                 +left_tail[ell]*right_tail[k-ell] for ell in range(k+1)),c.mpf(0))
 
 
+def bessel_radial_tail_coefficients(c,chi,degree,order,radius,radial_order,axial_weight):
+    """Factorial radial-model tail using a scaled axial coefficient norm."""
+    if order>chi.order or axial_weight<=0:raise ValueError('Finite positive axial Taylor scale required')
+    lo,hi=endpoints(chi[0])
+    if lo<0 or hi>1:raise ArithmeticError('Real chi0 must lie in[0,1]')
+    variation=sum((abs(chi[k])*axial_weight**k for k in range(1,order+1)),c.mpf(0))
+    N=int(degree);n=N+1;i=int(radial_order);r=c.mpf(radius);tau=c.mpf(axial_weight)
+    tails=[]
+    for k in range(order+1):
+        first=(r**(n-i)*(k+1)*(n+1)**k*(1+variation)**k
+               /(tau**k*2**n*math.factorial(n-i)*math.factorial(n+1)))
+        ratio=r/2*(c.mpf(n+2)/(n+1))**k/((n+1-i)*(n+2))
+        if endpoints(ratio)[1]>=1:raise ArithmeticError('Scaled axial factorial radial tail does not contract')
+        tails.append(first/(1-ratio))
+    return tails
+
+
 class CompliantCoreIntegralAtoms:
     def __init__(self):
         self.field=CompliantRootedCoreField();self.rebuild=self.field.rebuild
         self.core=self.field.core;self.ctx=self.field.ctx;self.cache={}
+        tau_model=self.core.h/(100*max(endpoints(self.rebuild.phi_norm)[1],mp.mpf(1)))
+        tau_micro=endpoints(self.core.sigma)[0]/1000
+        self.axial_weight=self.ctx.mpf(min(endpoints(tau_model)[0],tau_micro))
         self.hashes=dict(self.field.hashes);name=PREFIX+'rooted_core_field_check.json'
         receipt=json.loads((HERE/name).read_bytes())
         if not receipt['all_passed'] or receipt['implicit_source_sha256']!=self.core.source:
@@ -67,17 +87,7 @@ class CompliantCoreIntegralAtoms:
         square=list((H*H).coefficients);square[0]=H[0]**2
         h2=IntervalTaylor(c,square);denominator=h2+self.core.sigma**2
         chi=h2/denominator
-        lo,hi=endpoints(h2[0]);sl,sh=endpoints(self.core.sigma**2)
-        chi0=c.mpf([endpoints(c.mpf(lo)/(c.mpf(lo)+sh))[0],endpoints(c.mpf(hi)/(c.mpf(hi)+sl))[1]])
-        if endpoints(chi0)[0]<0 or endpoints(chi0)[1]>1:raise ArithmeticError('Real chi comparison unresolved')
-        M=sum((abs(chi[k]) for k in range(1,order+1)),c.mpf(0));n=degree+1;r=c.mpf(4)
-        tails=[]
-        for k in range(order+1):
-            first=r**n*(k+1)*(n+1)**k*(1+M)**k/(2**n*math.factorial(n)*math.factorial(n+1))
-            ratio=r/2*(c.mpf(n+2)/(n+1))**k/((n+1)*(n+2))
-            if endpoints(ratio)[1]>=1:raise ArithmeticError('Differentiated factorial radial tail fails to contract')
-            tails.append(first/(1-ratio))
-        return tails
+        return bessel_radial_tail_coefficients(c,chi,degree,order,4,0,self.axial_weight)
 
     def atoms_from_packet(self,packet,order,shared_root=False):
         c=self.ctx;N=packet['radial_degree'];rows=packet['rows'];r=c.mpf(4)

@@ -68,7 +68,7 @@ def independent_integral_fixture():
 def independent_factorial_tails():
     with mp.workdps(160):
         c=MPIntervalContext();c.dps=180
-        f=object.__new__(CompliantCoreIntegralAtoms);f.ctx=c
+        f=object.__new__(CompliantCoreIntegralAtoms);f.ctx=c;f.axial_weight=c.mpf('.00000001')
         f.core=SimpleNamespace(delta=c.mpf('.02'),j=c.mpf('.12'),sigma=c.mpf('.12')/500)
         j=mp.mpf('.12');delta=mp.mpf('.02');sigma=j/500;center=mp.mpf('.3')
         H=lambda z:-4*z**3-j*z*z+(9-delta)*z/2+j

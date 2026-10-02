@@ -1,3 +1,11 @@
+# Current: original comparison histories through frozen macro — 2026-10-02
+
+Read docs/COMPARISON_HISTORIES_2026_10_02.md. Stage comparisonpoints; 120 ordered modules. The original 9.23 comparison namespace now consumes actual core H/M/K/A/B/C inlet atoms, carries signed formal-width coefficients through order two with weighted cubic remainders, integrates both microscopic switches and transports all six moments through the frozen macro to R=100. Independent checker PASS; original Gaussian switch quadrature agrees with the directed Simpson receipt. This comparison history is not the actual signed bridge.
+
+NEXT: evaluate the actual time-varying signed prescribed-shear/bridge controls and first-switch integrals in the shared namespace; preserve endpoint identities, exact positive widths, source intervals, and separate pressure V=4C from raw axial V=Uz. Then recover implicit five-bump values and compose the physical point field. Global energy/stress/flat remainder, dynamics, and genuine scale recursion/correction remain open.
+
+---
+
 # Current: actual coefficientwise core inlet atoms - 2026-10-02
 
 Read docs/CORE_INTEGRAL_ATOMS_2026_10_02.md first. H/M/K/A/B/C are now integrated from fresh degree24/depth6 coupled Phi/Uz rows on rho in[0,4], with differentiated nonlinear/model tails. No cover endpoints or midpoint parameters define values. Axial derivatives through6, same exit mean and pressure primitive V_pressure=4C are available; raw bridge V=Uz is a separate quantity. Exact shared-root atoms retain H(a)=0 and zero Bessel model tail through6, while nonlinear tails remain.
