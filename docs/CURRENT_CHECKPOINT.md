@@ -1,3 +1,17 @@
+# Actual Rh-to-Rp mixed4 and callable core-to-heat source chain - 2026-10-02
+
+SAME actual inner implicit five-moment repair now supplies Rh..Rref, original O2 slope, whole axial turnoff plus 11-unit buffer, O3 slope-mu transition and entire power buffer toRp. All five accumulated histories and original analytic P0 remain bound. Physical velocity/pressure/primitives have logR/Z mixed4; full axial5 log-amplitude metadata is retained.
+
+A single source-chart dispatcher now calls all33 core/bridge/switch/reshape/reference/restore/patch/pre-pulse/pulse/flatten/angular/steep/waiting/collar/exterior charts. Each preserves its actual derivative coordinate, distinct fixed-basepoint units and formal positive scales. Read docs/PRE_PULSE_AND_SOURCE_DISPATCH_2026_10_02.md; reproduce --stage prepulsemixed and --stage sourcedispatch (105 ordered modules).
+
+Checks PASS:135 independent closed physical-integral mixed derivatives;15 original axial-cutoff logR derivatives;18 whole/interface packets;135 converted actual Rh physical mixed rows;30 actual Rp canonical inlet axial5 coefficients;original production source identities and flat/shared-history functional joins. All33 dispatcher routes return finite actual packets with current source bindings. Interval overlap is diagnostic, never a functional closure proof.
+
+NOT DONE: point core coefficient reconstruction; automatic physical-coordinate chart selection; common physical-unit and full Cartesian spatial/time assembly; construction-domain/terminal energy; admissible divergence-form stress and independently bounded flat remainder; true n-dependent recursion, mean and oscillatory corrections. Original unlocalized whole-space energy remains infinite.
+
+NEXT: use the accepted source dispatcher to assemble common physical scales and all Cartesian spatial/time rows, including nonsingular axis -> required-domain energy/stress/flat remainder -> actual recursion/correction.
+
+---
+
 # Original prescribed-shear bridge mixed4 / core and R100 joins - 2026-10-02
 
 SAME actual source now supplies BOTH original varying-comparison smoothing charts and the entire following frozen-comparison bridge Ra..100, with physical velocity/pressure/five-primitive mixed4 and source-factored logR bounds. Exact comparison fields and six own moments retain global formal source references, separate from their numerical positive-kernel enclosures. Actual core exit, R100, original P0 and signed bridge integral remain unchanged. Read docs/BRIDGE_MIXED_C4_2026_10_02.md; reproduce --stage bridgemixed (102 ordered modules).

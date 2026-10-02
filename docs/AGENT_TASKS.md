@@ -1,3 +1,28 @@
+# Next execution: common physical assembly from accepted source dispatcher - 2026-10-02
+
+This header supersedes missing Rh-to-pre-O3/source-dispatch items below. Read docs/PRE_PULSE_AND_SOURCE_DISPATCH_2026_10_02.md. Current focused stages are prepulsemixed and sourcedispatch; all105 ordered modules remain available. Preserve SAME admitted actual core/implicit repair/analytic pressure, exact integral sources and original formal scales.
+
+- [x] Bind actual five-bump functional Rh terminal closure to original reference on log(R/Rref) in[-5,0].
+- [x] Implement complete O2 slope/axial turnoff/11-unit buffer and O3 slope-mu/whole power toRp with true logR/Z mixed4, all five nonzero incoming histories, raw V and Pstar^-2.
+- [x] Prove new production expressions match original source formulas, flat/shared-history internal joins and canonical accepted Rp inlet. Compare actual Rh rows in converted physical units; keep overlap diagnostic.
+- [x] Expose full axial5 log-amplitude metadata and true current-basepoint physical mixed derivatives.
+- [x] Provide one explicit source-chart entry point, check current same-family receipts, and exercise all33 routes from core through exact heat exterior.
+- [ ] Create the common physical assembly module, consuming source_dispatcher instead of hand-assembled unrelated receipt samples. Preserve derivative coordinate and source-specific units.
+- [ ] Specify every original radius as an exact logarithmic source expression/tree. Resolve physical/similarity points only when representable; otherwise accept logarithmic chart coordinates. Never sort rounded micro radii.
+- [ ] Normalize each physical component to one common formal scale BEFORE applying coordinate operators. Physical source grids already differentiated radial prefactors; do not differentiate current-basepoint normalization twice.
+- [ ] For microscopic bridge/switch spatial derivatives, combine the factored width powers with all radius/amplitude coefficients before enclosure. Do not invert a capped hb value.
+- [ ] Reuse accepted core nonsingular axis templates; map every annular multiindex through spatial4 and first fixed-x physical-time derivative. Keep the moving cylindrical basis in Cartesian derivatives.
+- [ ] Expose a documented leading background velocity/pressure API for similarity and physical coordinates, explicitly separating genuine source values from enclosures and formal-only scales.
+- [ ] Recover point core coefficients where feasible using the accepted analytic source/fixed-point definition; do not choose box midpoints as solutions. Maintain independent source admission and bound scopes.
+- [ ] Prove exact divergence from the same Mz/streamfunction recovery and independently cross-check a finite computable Cartesian fixture.
+- [ ] Establish the original required physical spacetime/energy domain and terminal-time bounds. Whole-space unlocalized energy is infinite; do not claim otherwise or change the target silently.
+- [ ] Construct actual divergence-form stress and independent flat remainder from the SAME assembled background. Report cone signs/margins and separate supremum/physical-volume L2 scale dependence.
+- [ ] Implement correct n=1 and n>=2 coefficient equations on the common core domain, separate moment repair per order, curl-preserving cutoffs, finite-order remainder and smooth summation. Coordinate rescaling is not recursion.
+- [ ] Implement mean and oscillatory pulse corrections, averaged quadratic stress cancellation, then independent corrected Cartesian residuals.
+- [ ] Measure radial/axial widths, fitted scale exponents, vorticity, particle winding and layer recursion after the physical source evaluation is usable. Keep imposed exponents separate from measured dynamics.
+
+---
+
 # Next execution: complete inner dispatch and Rh-to-pre-O3 connection - 2026-10-02
 
 Read docs/BRIDGE_MIXED_C4_2026_10_02.md and the current checkpoint. Reproduce --stage bridgemixed (102 ordered modules). This header supersedes open bridge mixed4/core/R100 items below. SAME family/source, original P0 and actual histories; exact function references remain separate from numerical enclosures. Do not treat source-bound interval providers as newly reconstructed point coefficients or measured NS dynamics.
