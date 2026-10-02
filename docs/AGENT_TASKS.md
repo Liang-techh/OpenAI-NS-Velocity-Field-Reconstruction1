@@ -1,3 +1,31 @@
+# Cartesian outer map / physical energy domains handoff - 2026-10-02
+
+Read CURRENT_CHECKPOINT.md and docs/CARTESIAN_FIELD_AND_PHYSICAL_ENERGY_2026_10_02.md. Reproduce --stage physicalfield;78 ordered modules. The accepted leading outer spatial chain is mapped to physical Cartesian derivatives; genuine temporal coefficient recursion is still pending. These statuses supersede only the named historical map/energy subtasks.
+
+- [x] F38-D3c2e1a-outer: Source-bound physical component/radius conventions for local O3, six O4 charts and complete postpulse chain. Rv=Rp*exp(13/mu); Ev0=Pstar*U*exp(-13/(2mu)-13). Huge positive scales remain formal; no caps define a replacement field.
+- [x] F38-D3c2e2a-outer: Cartesian spatial vector derivatives through total4 with moving cylindrical basis and inverse-r powers on all16 accepted r>0 charts. Separate Ur/Utheta lambda exponents; inherited postpulse Ur/Uz remain zero. Axis completion remains OPEN.
+- [x] F38-D3c2e2b-derivatives: Independent implicit physical-coordinate Cartesian derivative fixtures through4 and first fixed-x time derivatives; original scale checks. Full residual evaluator remains OPEN.
+- [x] F39a1-volume: Restore exact physical volume Jacobian and kinetic functional, including distinct radial versus angular/axial weights. Separate signed profile moments from physical energy.
+- [x] F39a2-postpulse: Full infinite post-Rv radial source provides local physical energy bounds on closed Z sectors, fixed |z|<=1 at positive tau, and a physical time interval away from tau=0. Exact inverse-mu cancellation and full Gamma radial positivity retained.
+- [x] F39a2-global-domain-audit: Original unlocalized Gamma tail proves INFINITE WHOLE-SPACE kinetic energy; Theorem1.1 has no global-energy claim. Preserve this obstruction and keep global energy false. Do not add a silent Z cutoff.
+- [ ] F38-D3c2e1a-inner: Map same-source core/inner/matching and preceding O3 radius conventions; preserve source functions, datum and segmented boundaries.
+- [ ] F38-D3c2e1b: Assemble callable common-family dispatch across ALL regions and physical times. Covered outer charts are not a full-field assembler. Record all uncovered intervals and exact original region boundaries.
+- [ ] F38-D3c2e1c: Restore core/inner high mixed derivatives and required axial orders on the original analytic tube; source pressure and moment histories must match the accepted outer family. Do not extrapolate the local Z=.49-.51 finite core state to whole Z.
+- [ ] F38-D3c2e1d/e2a-axis: Source near-axis limits for Utheta/sqrt(R), Ur/sqrt(R), Uz and pressure; construct smooth Cartesian axis evaluations without division by an interval containing r=0. Prove high-order core/annulus interfaces.
+- [ ] F38-D3c2e2b-residual: Independent Cartesian full leading-field divergence/vorticity/residual assembly from physical time and spatial operators; preserve exact pressure history. Basis identities alone are not a physical residual certificate.
+- [ ] F39a1-all-regions: Add Ur/Uz/swirl kinetic contributions of core, matching annuli and preceding O3 regions, preserving original radial interfaces and pressure/core family.
+- [ ] F39a2-terminal: Specify finite physical spatial domain and whether requested bounds are fixed-time, uniform in tau or spacetime through tau=0. The current conservative strip bound proportional to tau^-1 does not prove terminal-time integrability.
+- [ ] F39a2-global-variant: Only if a finite GLOBAL-energy variant is expressly chosen, design a new axial/physical-space localization through meridional streamfunction/vector potential then curl; repair pressure/moments/stress/residual. This is additional work beyond the paper source, not an existing completed cutoff.
+- [ ] F39b1/b2: Actual common-source divergence-form admissible stress and region cone margins, with max and physical volume L2. Do not fit an arbitrary matrix to residual.
+- [ ] F39b3: Exact physical Gamma heat/stress-free identity with inherited pressure and retained homogeneous angular constant; no zero-stress claim until absolute pressure compatibility is resolved.
+- [ ] F39c1/c2: Independent flat remainder, divergence identity, decay and physical max/L2; resolve outstanding core/Section9 parameter hypotheses.
+- [ ] F40a/b: Correct n=1 and n>=2 coefficient recovery on the common inner domain, independent per-order moment repair, divergence-preserving potential/curl truncation, finite-order remainder and smooth summation. Leading spatial derivatives or coordinate rescaling are not recursion.
+- [ ] F41a/b/c: Mean/two-family oscillatory correction of admitted stress; corrected forced Cartesian residual Linfinity/L2<1e-3; measured physical core widths, scale exponents, vorticity and true material-line winding.
+
+Whole Cartesian field, axis, full-background energy, stress cone, flat remainder, genuine temporal recursion and corrected residual gates remain false. Preserve unrelated work and prior source receipts.
+
+---
+
 # Collar / full Gamma complete; physical field and stress handoff - 2026-10-02
 
 Read docs/COLLAR_FULL_GAMMA_MIXED_C4_2026_10_02.md, CURRENT_CHECKPOINT.md and collar_Gamma_C4_check.json. Reproduce --stage heatjets;74 ordered modules. This supersedes historical pending F38-D3c2d high derivative/interface items. Leading spatial construction is not coefficient recursion.

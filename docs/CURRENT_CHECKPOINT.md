@@ -1,3 +1,19 @@
+# F38-D3c2e physical Cartesian outer map / F39 local energy domains - 2026-10-02
+
+The SAME actual compliant .001 source now supplies Cartesian vector spatial derivatives through total order4 and the first fixed-physical-x time derivative on local O3 power, ALL six O4 pulse charts and the COMPLETE postpulse chain through UNBOUNDED Gamma. Moving e_r/e_theta basis derivatives and inverse-r powers are retained; Ur/Utheta lambda exponents remain separate. This is not whole-field/core/axis assembly or actual coefficient recursion.
+
+Physical volume and kinetic-energy weights are restored. The complete post-Rv infinite radial energy yields finite kinetic bounds on closed Z sectors, on fixed physical |z|<=1 at each positive tau, and on that strip over exp(-100)<=tau<=exp(-1). Inverse-mu mass factors cancel before enclosure. Terminal-time and full-background energy remain unproved.
+
+Important source/domain correction: the ORIGINAL UNLOCALIZED Gamma field has INFINITE WHOLE-SPACE physical kinetic energy for delta<1/200. Its radial swirl integral has a uniform strictly positive lower bound, while physical Z-endpoint volume weights have exponent(3-3delta)/2>1. Theorem1.1 makes no global kinetic-energy claim; profile moments are not volume energy. No axial cutoff or source alteration has been inserted. A finite-global-energy variant would require an additional construction.
+
+Receipts pass3360 actual Cartesian contribution bounds and64 physical-time brackets; independent140 spatial+4 time derivative fixtures,46 basis/commutator/divergence identities and240 source-scale comparisons. Physical energy passes24 source/domain inequalities,5 symbolic identities, one independent three-component physical kinetic integral,3 volume points and15 Gamma floor fixtures. Reproduce --stage physicalfield;78 ordered modules. Read docs/CARTESIAN_FIELD_AND_PHYSICAL_ENERGY_2026_10_02.md.
+
+Complete only within accepted outer-chart physical-map scope: F38-D3c2e2a-outer, F38-D3c2e2b-derivative fixtures, F39a1-volume/functional, F39a2-postpulse local domains. Full Cartesian/core/axis interfaces, full-background local/terminal-time energy, admissible stress and independent flat remainder, genuine n-dependent recursion, oscillatory correction and corrected residual remain incomplete. Whole-field/global-energy/cone/temporal gates remain false.
+
+NEXT: source core/axis and pre-pulse physical assembly -> local physical energy including Ur/Uz and terminal-time domains -> admissible stress/flat remainder -> actual coefficient recursion -> oscillatory correction and physical diagnostics. Preserve unrelated edits and all accepted receipts.
+
+---
+
 # F38-D3c2d original collar and full infinite Gamma mixed C4 - 2026-10-02
 
 The SAME actual compliant .001 source now supplies leading velocity/pressure mixed spatial derivatives of total order<=4 and axial5 canonical inputs throughout the original heat collar AND the full Gamma exterior, including wholeZ[-1,1] and unbounded log-radius offset[3,infinity]. Waiting/collar and collar/Gamma function interfaces are accepted. The post-pulse spatial chain now reaches the infinite heat exterior. This remains leading spatial reconstruction, NOT actual n-dependent temporal recursion.

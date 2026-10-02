@@ -30,6 +30,12 @@ local spatial scope; whole outer/core/axis C4 and stress remain unfinished.
 Postmixedjets adds the entire following power and both actual angular
 supports. Correlated future-tail factorization keeps q^2 cancellation and
 positive energy before enclosure, with source-identified O5/O6 joins.
+Physicalfield maps the accepted local O3/O4 and complete postpulse chain to
+Cartesian vector derivatives through4, including the moving cylindrical basis,
+and the first fixed-x physical-time derivative. It also restores physical
+volume/energy weights and source-bound local postpulse energy domains; the
+original unlocalized Gamma field has infinite whole-space kinetic energy.
+Core/axis physical assembly, stress, terminal-time energy and recursion remain.
 """
 import argparse
 import importlib
@@ -68,11 +74,12 @@ EXTERNALJETS=('power_inlet_C4','power_inlet_C4_check','flatten_mixed_C4','flatte
 POSTMIXEDJETS=('power_angular_C4','power_angular_C4_check')
 STEEPJETS=('steep_waiting_C4','steep_waiting_C4_check')
 HEATJETS=('collar_Gamma_C4','collar_Gamma_C4_check')
+PHYSICALFIELD=('cartesian_field','cartesian_field_check','physical_energy','physical_energy_check')
 
 
 def stages(stage):
-    return {'source':SOURCE,'inner':INNER,'outer':OUTER,'angular':ANGULAR,'energy':ENERGY,'pulse':PULSE,'postpulse':POSTPULSE,'closure':CLOSURE,'angularjets':ANGULARJETS,'axialjets':AXIALJETS,'pulsejets':PULSEJETS,'radialjets':RADIALJETS,'flatjets':FLATJETS,'mixedjets':MIXEDJETS,'physicaljets':PHYSICALJETS,'interfacejets':INTERFACEJETS,'flatcomparison':FLATCOMPARISON,'externaljets':EXTERNALJETS,'postmixedjets':POSTMIXEDJETS,'steepjets':STEEPJETS,'heatjets':HEATJETS,
-            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS+POSTMIXEDJETS+STEEPJETS+HEATJETS}[stage]
+    return {'source':SOURCE,'inner':INNER,'outer':OUTER,'angular':ANGULAR,'energy':ENERGY,'pulse':PULSE,'postpulse':POSTPULSE,'closure':CLOSURE,'angularjets':ANGULARJETS,'axialjets':AXIALJETS,'pulsejets':PULSEJETS,'radialjets':RADIALJETS,'flatjets':FLATJETS,'mixedjets':MIXEDJETS,'physicaljets':PHYSICALJETS,'interfacejets':INTERFACEJETS,'flatcomparison':FLATCOMPARISON,'externaljets':EXTERNALJETS,'postmixedjets':POSTMIXEDJETS,'steepjets':STEEPJETS,'heatjets':HEATJETS,'physicalfield':PHYSICALFIELD,
+            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS+POSTMIXEDJETS+STEEPJETS+HEATJETS+PHYSICALFIELD}[stage]
 
 
 def run(stage='all',list_only=False):
@@ -85,7 +92,9 @@ def run(stage='all',list_only=False):
         print('Build compliant stage:',name,flush=True)
         importlib.import_module(PREFIX+name).run()
         completed.append(name)
-    inherited_heat='collar_Gamma_C4_check' in completed
+    inherited_energy='physical_energy_check' in completed
+    inherited_cartesian=inherited_energy or 'cartesian_field_check' in completed
+    inherited_heat=inherited_cartesian or 'collar_Gamma_C4_check' in completed
     inherited_steep=inherited_heat or 'steep_waiting_C4_check' in completed
     inherited_post=inherited_steep or 'power_angular_C4_check' in completed
     inherited_external=inherited_post or 'flatten_mixed_C4_check' in completed
@@ -130,18 +139,27 @@ def run(stage='all',list_only=False):
         waiting_exit_Gamma_future_source_retained=inherited_steep,
         entire_collar_and_unbounded_Gamma_high_mixed_derivatives_available=inherited_heat,
         waiting_collar_and_collar_Gamma_joins_certified=inherited_heat,
+        accepted_outer_chart_cartesian_spatial_C4_mapped=inherited_cartesian,
+        accepted_outer_chart_first_physical_time_derivative_mapped=inherited_cartesian,
+        physical_volume_and_kinetic_energy_functional_restored=inherited_energy,
+        complete_postpulse_local_physical_energy_bounds_available=inherited_energy,
+        original_unlocalized_whole_space_kinetic_energy_is_infinite=True if inherited_energy else None,
+        full_cartesian_vector_derivatives_certified=False,
+        core_axis_interfaces_certified=False,
+        physical_energy_integral_certified=False,
+        global_physical_energy_integral_certified=False,
         full_pulse_C4_installed=inherited_external,
         full_pulse_C4_scope='Leading O4 and two local external interfaces, spatial/profile mixed total<=4 at fixed positive tau; whole outer/core/axis and time derivatives excluded',
         full_outer_C4_certified=False,
         temporal_recursion=False,
-        next_dependency='Whole-field Cartesian/core/axis interfaces, physical energy and admissible stress/flat remainder; then genuine temporal recursion and oscillatory stress correction')
+        next_dependency='Missing core/axis and pre-pulse physical assembly; local physical energy/terminal-time control on specified domain; admissible stress/flat remainder then genuine temporal recursion and oscillatory correction')
     print(json.dumps(result,indent=2),flush=True)
     return result
 
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','postmixedjets','steepjets','heatjets','all'),default='all')
+    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','postmixedjets','steepjets','heatjets','physicalfield','all'),default='all')
     parser.add_argument('--list',action='store_true',help='Print the ordered modules without running them')
     args=parser.parse_args()
     run(args.stage,args.list)
