@@ -1,3 +1,17 @@
+# F38 core/axis physical map and local core energy - 2026-10-02
+
+The SAME admitted .001*delta source now has whole-Z nonlinear analytic core enclosures through mixed order5, nonsingular Cartesian spatial4 and first fixed-physical-position time derivatives INCLUDING THE EXACT AXIS, and local positive-time core kinetic-energy bounds. The selected physical norm Cstar and original analytic preheat pressure are bound directly to the accepted analytic family. The leading infinite Bessel model has a factorial tail plus the admitted nonlinear fixed-point correction; it is not substituted for the nonlinear solution. No old local finite coefficient state is extrapolated.
+
+Actual checks PASS:1050 profile bounds,50 exact axis conditions,294 nonlinear correction comparisons,490 Cartesian contribution bounds,14 time brackets. Independent moderate-parameter diagnostics PASS126 infinite model mixed derivatives,280 Cartesian spatial derivatives,8 time derivatives and3 recovery identities. These fixtures do not admit the actual source. Reproduce --stage corephysical;80 ordered modules. Read docs/CORE_AXIS_PHYSICAL_FIELD_2026_10_02.md.
+
+COMPLETE within this scope only: whole-Z core derivative enclosures through5, core/axis Cartesian spatial4/time1, local positive-time core energy bounds. The new results are enclosures of the unique admitted analytic fixed point, not newly recomputed point coefficients. Core/inner-annulus interfaces, complete physical field, full-background/terminal-time energy, stress cone/independent flat remainder, genuine n-dependent recursion and oscillatory correction remain INCOMPLETE. Whole-field/cone/energy/temporal gates remain false.
+
+The original unlocalized paper source still has infinite whole-space physical kinetic energy. Local core/outer bounds do not repair this. The terminal-time strip bound is not an integrability certificate. Preserve this source/domain distinction and do not add an unaccounted cutoff.
+
+NEXT: restore inner frozen/reference/join/matching/shear annuli and preceding O3 physical assembly -> certify all core/annular/O3 joins -> whole-background physical divergence, local energy and terminal-time domain analysis -> admissible stress and independent flat remainder -> actual coefficient recursion -> oscillatory correction and physical diagnostics. Preserve accepted receipts and unrelated work.
+
+---
+
 # F38-D3c2e physical Cartesian outer map / F39 local energy domains - 2026-10-02
 
 The SAME actual compliant .001 source now supplies Cartesian vector spatial derivatives through total order4 and the first fixed-physical-x time derivative on local O3 power, ALL six O4 pulse charts and the COMPLETE postpulse chain through UNBOUNDED Gamma. Moving e_r/e_theta basis derivatives and inverse-r powers are retained; Ur/Utheta lambda exponents remain separate. This is not whole-field/core/axis assembly or actual coefficient recursion.

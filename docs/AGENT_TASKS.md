@@ -1,3 +1,27 @@
+# Active execution queue: core/axis implemented, annular assembly next - 2026-10-02
+
+Use docs/CORE_AXIS_PHYSICAL_FIELD_2026_10_02.md and CURRENT_CHECKPOINT.md before historical tasks. SAME actual .001*delta family only. Reproduce --stage corephysical if this stage changes; do not rerun the entire 80-module pipeline merely to restate status.
+
+- [x] Bind selected physical norm Cstar, original pressure datum and analytic core hash to the accepted source.
+- [x] Implement whole-Z analytic nonlinear core mixed derivative enclosures through5, with infinite Bessel tail and fixed-point correction bound.
+- [x] Restore mean-based Ur with both negative mean terms and the original forward pressure increment.
+- [x] Map core/axis to physical Cartesian spatial4 and fixed-position time1 without inverse-radius division; exact axis values/slopes and symbolic core divergence.
+- [x] Bound separate radial/swirl/axial local core energy on closed Z sectors and a fixed physical strip separated from terminal time.
+- [ ] Restore the ORIGINAL frozen/reference/join/matching/shear annuli between core and O3, retaining shared Cstar/F0/P0 and moment data. Identify exact intervals and cutoff functions from the paper. Build functional mixed derivatives and radial moment recovery, not independently fitted velocities.
+- [ ] Establish core-exit and each annular interface through required derivative order; retain axis regularity, analytic pressure compatibility and all five functional moments. Do not promote sample agreement to a functional join.
+- [ ] Extend the accepted local O3 map to the full preceding O3 region and add an explicit regional physical-field dispatcher. Reject unsupported regions instead of silently selecting a neighboring chart.
+- [ ] Assemble whole-background Cartesian divergence and independent residual diagnostics; distinguish exact structural divergence from interval cancellation and sampled numerical evidence.
+- [ ] Integrate physical local energy across all regions and analyze terminal-time domains. Original unlocalized global energy is infinite; any finite-global-energy variant requires a separately documented construction with moment/pressure/stress repair.
+- [ ] Construct the actual admissible divergence-form stress and independent flat remainder; report cone margin in inner exit/matching/pulse/flatten/collar, volume L2 and scale dependence separately.
+- [ ] Implement n=1 and n>=2 recovery equations, common core definition and independent moment repair. Keep temporal_recursion=false until these actual coefficients are implemented.
+- [ ] Implement finite-order remainder and smooth sum; apply localization to streamfunction/vector potential before taking curl.
+- [ ] Add mean/oscillatory pulse corrections from available sources and verify averaged quadratic stress cancellation before full residual targets.
+- [ ] Measure radial/axial width, aspect ratio, swirl/axial/vorticity exponents, scale recurrence, instantaneous streamlines and cumulative material-line winding on the corrected multitime field.
+
+For each completion, update the checkbox and give artifact, exact scope, reproduction command and authoritative receipt/commit. Do not mark an entire research stage complete because one chart or finite diagnostic passes. Do not modify unrelated scale-reference experiments.
+
+---
+
 # Cartesian outer map / physical energy domains handoff - 2026-10-02
 
 Read CURRENT_CHECKPOINT.md and docs/CARTESIAN_FIELD_AND_PHYSICAL_ENERGY_2026_10_02.md. Reproduce --stage physicalfield;78 ordered modules. The accepted leading outer spatial chain is mapped to physical Cartesian derivatives; genuine temporal coefficient recursion is still pending. These statuses supersede only the named historical map/energy subtasks.
