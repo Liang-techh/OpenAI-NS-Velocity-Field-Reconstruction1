@@ -1,3 +1,26 @@
+# Next execution: actual long reshape mixed4 and remaining inner interfaces - 2026-10-02
+
+Read docs/REFERENCE_RESTORE_MIXED_C4_2026_10_02.md. Reproduce --stage restoremixed (96 ordered modules). This header supersedes open reference/restoration mixed4 items below. SAME actual source, original cutoff, five-defect family and P0; full reconstruction and recursion remain unfinished.
+
+- [x] Recover reference Rsh..Rz mixed logR/Z derivatives through4 from actual axial5 histories and the original six centered transport equations.
+- [x] Recover original axial restoration mixed4 including all sigma derivatives and quadratic E*alpha products; preserve exact formal offsets and physical prefactors.
+- [x] Recover all five true physical primitive mixed4 grids, pressure datum and radial velocity sqrt(R/2) product derivatives. Preserve source positive amplitudes separately from numerical enclosures.
+- [x] Prove exact Rz and restoration-end functional mixed joins using identical histories and original flat cutoff endpoints.
+- [x] Prove actual Rm primitive/defect sign identities algebraically, then use the original open zero-bump neighborhood to connect all mixed derivatives through4 to the accepted actual patch. Stop unpatched coverage at Rm.
+- [x] Require both actual-family and implicit-source hashes for prerequisite receipts; run135 independent physical integral derivatives and the symbolic identity checks.
+- [ ] Restore long reshape mixed4 from original sigma(y/T), actual B110, selected T=400Abar and full-kernel moment histories. Retain every derivative of log velocity and primitive RHSs, including formal inverse-T factors. Do not substitute a numerical phase width.
+- [ ] Prove R110 switch/reshape and Rsh reshape/reference two-sided mixed4 joins from source flatness and identical actual inlet/exit histories. Keep Rsh_reshape_mixed4_join_certified=false until this is complete.
+- [ ] Restore both microscopic100..110 switch mixed4, preserving formal hb^-k factors, original second-switch sigma, current-R comparison drive and exact radius offsets. Prove original support endpoint identities.
+- [ ] Restore prescribed-shear bridge mixed4 using actual smoothed-comparison high derivatives and original drive equations. Preserve formal inverse-hb derivative scales and certify core/bridge plus bridge/switch joins.
+- [ ] Build complete inner chart dispatcher and missing Rh-to-pre-O3 continuation. Bind actual reference terminal moments/P0 to the SAME outer source; preserve radius topology and original supports.
+- [ ] Assemble complete Cartesian spatial4 and fixed-position physical-time derivatives over all layers, axis and interfaces. Retain structural divergence and primitive pressure; do not promote local providers to full-field certificates.
+- [ ] Restore required-domain local/terminal energy, admissible divergence-form stress with regional cone margins and an independently bounded flat remainder. Original unlocalized whole-space energy is infinite.
+- [ ] Implement genuine n-dependent coefficient recovery, moment repair and smooth summation, then oscillatory corrections and the full forced Cartesian residual.
+
+For each completion record scope, callable artifact, reproduction command and accepted receipt/commit. Preserve source history and unrelated experiments. Full-inner/full-field/stress/global-energy/temporal gates remainfalse until their full scopes are proved.
+
+---
+
 # Next execution: remaining inner radial charts and interfaces - 2026-10-02
 
 Read docs/ACTUAL_PATCH_MIXED_C4_2026_10_02.md. Reproduce --stage patchmixed (94 ordered modules). SAME actual source, implicit coefficient family and original P0. This header supersedes previous open PATCH mixed4/join items; it does not complete other annular charts or full physical assembly.

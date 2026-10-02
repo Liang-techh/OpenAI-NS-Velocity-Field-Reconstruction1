@@ -1,3 +1,15 @@
+# Actual reference/axial-restoration mixed4 and Rm patch join - 2026-10-02
+
+SAME actual source: reference Rsh..Rz, original axial restoration Rz..eRz and postrestore eRz..Rm now supply logR/Z mixed derivatives of total order <=4 for velocity, pressure and all five physical primitives. The unpatched interval stops at Rm; the accepted actual patch takes over. Exact positive amplitudes remain formal, original P0/raw V units and current-basepoint physical normalization are retained.
+
+Checks PASS:720 actual velocity/pressure bounds,900 actual primitive bounds and135 independent closed-primitive mixed derivatives. Symbolic checks prove5 physical RHS identities,5 Ur prefactor identities,5 Rh-to-Rm defect identities and5 exact actual patch inlet identities. Original flat sigma endpoints and identical Rz/restoration-end packets bind local functional joins. Rm uses source identities and an open zero-bump neighborhood; interval overlap is diagnostic only. Prerequisite family AND implicit source hashes are required. Existing read-only Luna/max audit findings addressed. Reproduce --stage restoremixed;96 ordered modules. Read docs/REFERENCE_RESTORE_MIXED_C4_2026_10_02.md.
+
+NOT DONE: Rsh/reshape and remaining reshape/switch/bridge mixed4/interfaces; inner/pre-O3/full Cartesian dispatcher; required-domain/terminal energy; admissible divergence-form stress/independent flat remainder; actual n-dependent recursion and oscillatory correction. Full-field/stress/global-energy/temporal gates remainfalse. Original unlocalized whole-space energy remains infinite.
+
+NEXT: actual long reshape mixed4 and R110/Rsh functional joins -> switches/bridge/core interfaces -> complete spatial assembly -> energy/stress/flat remainder -> actual recursion/correction.
+
+---
+
 # ACTUAL five-bump patch mixed4 / functional radial joins - 2026-10-02
 
 SAME actual implicit coefficient family/P0/history: the original five-bump patch now supplies complete x=R/Rm,Z and y=logR,Z velocity-pressure mixed derivatives through total4, plus all five TRUE physical primitive x/Z mixed4 derivatives. Formal Rm/Pstar factors remain exact. Original gamma derivatives use r=1/40 and the accepted normalization; no outer pulse width or capped shape is substituted.
