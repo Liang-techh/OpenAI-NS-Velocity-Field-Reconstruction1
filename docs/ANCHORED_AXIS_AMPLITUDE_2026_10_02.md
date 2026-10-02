@@ -111,13 +111,11 @@ python experiments/root_st073/lei_ren_part1_paper_compliant_reconstruction.py --
 
 ## Remaining work
 
-First add a root-centered scaled axial chart preserving the shared exact
-anchor H(a)=0. Ordinary point precision cannot resolve the amplitude peak
-width of order sigma/sqrt(Lambda), and the small absolute G error above
-is not an error bound small enough to resolve Lambda*G there. Evaluate
-Lambda*G in centered scaled coordinates before numerical enclosure; retain
-root/parameter uncertainty and never round the offset away. The current
-point samples therefore do not measure the peak shape or core dynamics.
+The root-centered scaled axial chart is now implemented in
+docs/ROOT_CENTERED_CORE_PEAK_2026_10_02.md. It resolves finite Lambda*G,
+normalized F0 and SAME Phi-weighted local swirl while preserving the exact
+shared root and tiny offset. Ordinary point samples here still do not
+measure the peak or full dynamics. The pipeline now has113 modules.
 
 Resolve the original signed bridge/switch integrals, their shared histories
 and the admitted five-bump branch into usable values with controlled error.

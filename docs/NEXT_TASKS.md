@@ -1,3 +1,32 @@
+# Next: complete rooted field, measure dynamics, resolve annuli - 2026-10-02
+
+Read docs/ROOT_CENTERED_CORE_PEAK_2026_10_02.md. Its completed rooted chart supersedes the microscopic amplitude-peak TODO below. Pipeline113 modules; focused rootpeak. Preserve SAME Cstar/core/pressure/five-history identities and original positive scales.
+
+- [x] Keep exact shared H(a)=0 and original b=sigma/sqrt(Lambda) in a root-centered xi chart; do not add the tiny offset to a rounded anchor.
+- [x] Resolve K=Lambda G through exact numerator coefficients and a separately directed one-sided denominator remainder; normalized exp(-K) is finite, absolute F0 stays unmaterialized.
+- [x] Keep finite -K separate from enormous -logCstar; retain source/root uncertainty and derivatives through5 with b/epsilon factors.
+- [x] Certify unique source-uniform left/right half,1/e,1e-6 amplitude levels and restore their original physical z-map widths without near-coincident subtraction.
+- [x] Transport SAME fresh nonlinear Phi with full analytic derivative norms; return six physical swirl packets and exact shared-anchor normalization. Do not replace Phi by its model.
+- [x] Preserve original tiny delta/time effects in split logarithmic geometry; label core cutoff reference separately from measured radial morphology and coordinate laws separately from fitted dynamics.
+- [x] Independently check exact identities,9 original real scaled integrals,45 K derivatives,54 amplitude derivatives,6 level roots,6 swirl packets and6 visible-denominator fixture integrals/30 derivatives.
+- [ ] Extend this rooted chart to SAME ur/uz/p with controlled finite radial rows/tails and pressure source. Retain original gradient/seed correlations, root identity and cylindrical radial recovery; handle the axis structurally.
+- [ ] Derive root-chart Cartesian velocity, spatial derivatives and vorticity using original physical mapping and moving basis. Separate interval parameter uncertainty from differentiation error; test visible finite-scale fixtures and exact divergence identities.
+- [ ] Locate the full Phi-weighted angular-velocity maximum and fractional levels. Bound the shift from the F0 anchor; do not relabel F0 peak location/width as the complete swirl maximum.
+- [ ] Recover an actual radial core metric from velocity/vorticity profiles with stated domain and threshold. If its level lies outside core rho<=4.1, continue the original matching charts instead of silently assigning the core cutoff radius as the width.
+- [ ] Produce multitime normalized field samples, radial/axial widths and amplitude/vorticity diagnostics. Fit exponents independently with error bars; preserve original delta and explicitly report inaccessible ordinary floating-point times.
+- [ ] Integrate true particle trajectories and accumulated material winding in stable coordinates. Validate time-step/coordinate convergence; instantaneous swirl or shrinking geometry alone is not winding evidence.
+- [ ] Resolve original signed prescribed-shear and first-switch partial/terminal integrals with stable factorization, common actual histories and directed remainders. Keep exact comparisons and Pstar/F0 normalizations.
+- [ ] Carry core/matching primitive values into all five actual histories, preserving whole-Z functional terminal identities and analytic preheat pressure; numerically recover the admitted implicit five-bump branch with a posteriori Jacobian/error control.
+- [ ] Assemble full physical-point chart selection and same-source ur/utheta/uz/p through core, annuli, pulse, flatten, collar and unbounded exact heat exterior. Retain subprecision chart widths in factored coordinates and report unresolved point selection explicitly.
+- [ ] Establish required physical energy/support domain and terminal bounds, including actual radial tail. Original unlocalized whole-space energy remains infinite; do not replace the construction's required domain silently.
+- [ ] Construct actual admissible divergence-form stress and independent flat remainder; report regionwise cone margin, maxima, physical-volume L2 and decay separately before recursion.
+- [ ] Implement genuine n=1/n>=2 recovery, common core interval, separate orderwise moment repair, curl-preserving cutoffs, finite-order remainder and smooth summation after preceding gates hold.
+- [ ] Implement realizable mean/two-family oscillatory stress correction and independently validate averaged flux cancellation; only then apply full Cartesian forced-NS max/L2<1e-3 acceptance.
+
+Mark [x] only with actual source/code/check/domain/limits and a commit. Earlier detailed requirements remain open except explicitly superseded completed entries.
+
+---
+
 # Next: resolve annular values after actual anchored amplitude - 2026-10-02
 
 Read docs/ANCHORED_AXIS_AMPLITUDE_2026_10_02.md first. It supersedes the unresolved-G item below; complete annular values, point dispatch, dynamics, energy/stress and recursion remain open. Current focused stages: axisamplitude/freshcore/globalphysical. Pipeline111 modules. Preserve SAME pressure/core/Cstar, source identities and exact positive widths.

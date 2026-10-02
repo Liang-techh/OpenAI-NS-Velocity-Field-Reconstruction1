@@ -1,3 +1,9 @@
+# Update: shared-root physical swirl - 2026-10-02
+
+The rooted stage now transports these SAME fresh nonlinear radial rows using the full analytic derivative norm, combining them with resolved finite K=Lambda G. Read docs/ROOT_CENTERED_CORE_PEAK_2026_10_02.md; focused stage rootpeak and113 ordered modules. The fresh core receipts below are unchanged. Complete rooted vector/vorticity, annular values, field dynamics, stress and temporal recursion remain open.
+
+---
+
 # Fresh compliant core coefficients with controlled radial remainder
 
 The coupled radial core coefficients are now recomputed directly from the

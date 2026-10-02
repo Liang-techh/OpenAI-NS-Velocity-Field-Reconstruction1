@@ -1,3 +1,9 @@
+# Update: resolved local rooted peak - 2026-10-02
+
+Read docs/ROOT_CENTERED_CORE_PEAK_2026_10_02.md for actual rooted amplitude ratios, local Phi-weighted swirl and physical fractional-width bounds. Current pipeline113 modules. The all33 source-bound Cartesian assembly below is unchanged and is still not a complete physical-point field, measured dynamics, admissible stress or temporal recursion.
+
+---
+
 # All 33 leading source charts in physical Cartesian coordinates
 
 The same admitted analytic core, repaired five-moment family, pressure datum,

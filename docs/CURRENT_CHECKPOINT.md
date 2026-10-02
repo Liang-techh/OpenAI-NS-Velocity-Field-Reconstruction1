@@ -1,3 +1,19 @@
+# Current: resolved root-centered peak and local swirl - 2026-10-02
+
+Read docs/ROOT_CENTERED_CORE_PEAK_2026_10_02.md first. This supersedes the unresolved microscopic peak item below. Current pipeline:113 ordered modules; focused stage rootpeak. Original same-source pressure/core/Cstar and positive microscopic width are preserved.
+
+- Resolved K=Lambda G on the exact shared-root offset Z=a+sigma/sqrt(Lambda)*xi, |xi|<=4. Keep the offset separate; exact H(a)=0 precedes interval enclosure. No numerical width cap.
+- Integrated the exact degree4 numerator and separately proved the one-sided positive-denominator remainder. Original parameter/root uncertainty is retained.
+- Materialized only F0/F0(a)=exp(-K), keeping absolute log amplitude as separate -logCstar and -K terms. At xi=1 the ratio is approximately .10539922456; directed K width approximately1.28e-201.
+- Certified source-uniform half,1/e and1e-6 level roots on both sides; half-maximum full axial similarity width is approximately1.11007281488*sigma/sqrt(Lambda).
+- Combined the SAME fresh nonlinear Phi with its full analytic derivative bound for six local physical swirl packets. Absolute utheta remains in separate logarithmic factors.
+- Restored physical axial fractional width through the original z Jacobian and preserved tiny delta/time effects in split logs. Radial reference is rho=4.1 core cutoff, NOT a measured vortex radial width. Coordinate laws are NOT fitted dynamics.
+- Independent algebra,9 original scaled integrals,45 K derivatives,54 amplitude derivative values,6 level roots,6 local swirl packets and a visible-denominator synthetic fixture passed. The fixture never substitutes source parameters.
+
+NEXT: complete rooted ur/uz/p/vorticity, actual radial morphology and full Phi-weighted swirl peak/width, multitime measurements and particles; resolve signed annular integrals/shared moments/implicit bump values and physical-point chart selection. Required-domain energy, actual admissible stress/flat remainder, n-dependent recursion and mean/oscillatory corrections remain open. Original unlocalized whole-space energy remains infinite. This is concrete leading-core progress, not completed blow-up or temporal recursion.
+
+---
+
 # Anchored amplitude resolved / logarithmic physical core values - 2026-10-02
 
 The SAME current-source original G integral is now evaluated from the unique H root in[-j,0] via six complex poles and branch-safe separate logarithms. Seven uniform directed Rouche disks (radius1e-180) propagate j/delta/root uncertainty; all poles remain off the real path. The exact cubic remainder includes its j quadratic coefficient. Old candidate fixed parameters/certificate/exp(logF0) are not used. Original selected Cstar and fresh compliant pressure/core remain unchanged.

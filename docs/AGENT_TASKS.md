@@ -1,3 +1,22 @@
+# Active handoff: rooted field dynamics and annular values - 2026-10-02
+
+Read docs/ROOT_CENTERED_CORE_PEAK_2026_10_02.md. It supersedes the unresolved scaled-root peak task below. Keep full docs/PROJECT_GOAL.md scope. Focused pipeline rootpeak;113 modules. Preserve unrelated experiments and SAME pressure/core/Cstar source; claim one bounded task and record actual evidence/limits/commit.
+
+Completed: rooted K/F0 ratio, polynomial plus directed denominator remainder, two-sided fractional levels, original physical axial mapping, shared-source Phi-weighted local swirl and independent checks.
+
+Priorities:
+1. Recover rooted physical ur/uz/p in the SAME chart, preserving H(a)=0, tiny offsets and pressure datum; retain analytic radial tails and source uncertainty. Do not divide unresolved radii or absorb finite changes into huge logs.
+2. Recover independently controlled vorticity and physical derivatives on the root chart. Include moving cylindrical basis, true z/r derivative factors and axis regularity. Check separate finite-scale fixtures without relabeling them as the paper source.
+3. Measure actual core radial morphology and full Phi-weighted swirl peak/levels, rather than treating rho=4.1 domain cutoff as a vortex width. Keep admitted intervals and precision failures explicit.
+4. Measure multitime field ratios and fit scale exponents with error/convergence controls. Preserve original delta and distinguish coordinate laws, normalized field observations and physical fitted dynamics.
+5. Resolve original signed bridge/first-switch integrals with stable factorization, actual common histories and directed error; recover the same five primitive functions and admit the actual implicit bump branch numerically.
+6. Compose full physical/logarithmic point selection and recover source ur/utheta/uz/p through annuli/collar/exterior; preserve shared interface histories and exact positive widths.
+7. Then establish required-domain energy/support, admissible divergence stress and independently flat remainder before n-dependent coefficient recursion and oscillatory correction.
+
+All stress/energy/full-field/temporal recursion/dynamics completion flags remain false. Mark DONE only with scoped code and evidence; historical sampled low residuals do not close these gates.
+
+---
+
 # Next: resolve annular values after actual anchored amplitude - 2026-10-02
 
 Read docs/ANCHORED_AXIS_AMPLITUDE_2026_10_02.md first. It supersedes the unresolved-G item below; complete annular values, point dispatch, dynamics, energy/stress and recursion remain open. Current focused stages: axisamplitude/freshcore/globalphysical. Pipeline111 modules. Preserve SAME pressure/core/Cstar, source identities and exact positive widths.
