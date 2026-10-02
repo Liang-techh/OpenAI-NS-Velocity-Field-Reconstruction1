@@ -1,3 +1,25 @@
+# F38-D3b actual axial high-jet handoff - 2026-10-01
+
+- [x] F38-D3b1: Complete corrected future swirl energy through4, including both signed angular bumps, epsilon collar and infinite Gamma tail. Preserve full q^2 prefactors, original radial units and Section7.34 weight. Actual C0/C1 inclusion and independent energy derivative paths PASS.
+- [x] F38-D3b2: Exact incoming moment and energy functions through4 at Rp. Derive g=Z+Z^3 and h=Z^2+2Z^4+Z^6 from real source transport. Accumulate positive E_Z directly from 16*Pstar^-2*(exp(-td)+K_B2)*exp(-1-Tw), never subtract large energy terms. Same fixed row factor multiplies every derivative coefficient.
+- [x] F38-D3b3: Actual positive selected ap and affine c1/c2 through4. Use same C0 root, C1 source, true energy quadratic and positive derivative inverse at every order. Retain formal nonzero end scales; do not impose even parity on axial coefficients. Independent direct scalar root/end derivatives and whole-Z signs PASS.
+
+Next bounded implementation: F38-D3c1 selected pulse jets.
+
+- [ ] F38-D3c1a: Add a separate source-bound pulse high-jet provider consuming CompliantAxialHighJets.select(Z); verify transitive hashes and source family. Keep previous C1 receipts unchanged. Supply ordinary Taylor arrays through4 for ap and both affine controls in entrance/main/gap/end charts.
+- [ ] F38-D3c1b: Derive incoming histories at Rp through4 from the SAME exact U*r, M*Z, K*Z*r, E_Z*Z^2+E_Q*r^2 functions. Preserve pressure and angular histories and current-radius normalization. Do not reconstruct small histories by differences of large values.
+- [ ] F38-D3c1c: Differentiate partial true pulse integrals and beta end-correction primitives in each segmented radial chart. Constants whose source definitions are independent of Z must stay fixed for every order. Empty supports must stay exactly empty; surviving tiny histories and end-scale factors must remain formal positive.
+- [ ] F38-D3c1d: Recover Ur and Ur_Z from the same Mz and its derivatives with paper(3.9); determine the highest axial order actually available to each velocity. Add required higher Mz orders if differentiation consumes one order. A fourth-order coefficient list alone does not establish velocity C4.
+- [ ] F38-D3c1e: Derive radial/axial mixed derivatives directly from source ODEs/analytic pulses, including support-boundary boxes. Check entrance/main/gap/end overlaps with functional source identities and independent finite-parameter derivatives. Preserve selected terminal Uz=Mz=Mtheta_z=Ur=0 and positive remaining energy identity.
+- [ ] F38-D3c2: Propagate all available velocity/primitive jets through flatten, both angular supports, steep entry/power/exit, waiting, epsilon collar and infinite Gamma heat. Preserve exact global pressure and angular closure. Then bound complete core/outer C4 interfaces and any cell Taylor remainder actually used.
+- [ ] F39: Certify outer admissible stress cone, full physical kinetic energy, global divergence-form stress and flat remainder, using full velocity derivatives and physical normalization.
+- [ ] F40: Implement genuine n=1 and n>=2 coefficient recovery with order-dependent forcing and moment repair. Leading-profile axial differentiation is not scale recursion; scaled copies do not satisfy this task.
+- [ ] F41: Add both oscillatory families and independently measure stress cancellation, full forced Cartesian NS residual and vortex/material-line diagnostics.
+
+Evidence: docs/ACTUAL_AXIAL_C4_AND_COMPLETE_FUTURE_ENERGY_2026_10_01.md; --stage axialjets (49 ordered modules total). This header supersedes historical pending D3b tasks only. Full pulse/outer C4, full physical energy, outer cone/stress/flat remainder and temporal recursion remain false.
+
+---
+
 # F38-D3a angular high-jet handoff - 2026-10-01
 
 - [x] F38-D3a1: Recover SAME exact angular coefficient Taylor orders2..4 using the C0 implicit Jacobian and full quadratic convolution. Retain admitted C0/C1 branch, exact Z0 odd-jet parity and the original implicit source functions.

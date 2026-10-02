@@ -1,3 +1,15 @@
+# F38-D3b complete future energy / actual axial C4 checkpoint - 2026-10-01
+
+Complete corrected future swirl energy, exact incoming moment/energy functions, and the actual selected ap/c1/c2 now have ordinary axial Taylor coefficients through4 for the SAME compliant .001 family. The entire flatten/bump/steep/waiting/collar/infinite Gamma energy is differentiated. Incoming shapes are derived from actual source transport; their positive axial energy coefficient is accumulated directly without catastrophic subtraction. Fixed incoming row factors apply to EVERY derivative order. The unique admitted positive amplitude branch uses its true implicit quadratic and the same positive derivative denominator.
+
+Six future energy identities and ten independent energy derivative checks, nine incoming source/shape identities and fifteen independent direct root/end derivative checks PASS, with actual whole-Z source/sign/inverse gates. A read-only GPT-5.6 Luna/max review supplied the exact positive incoming energy source and endpoint normalization. Previous C0/C1 branches and all prior receipts remain unchanged. These are derivatives of the leading profile, NOT temporal coefficient recursion.
+
+Read docs/ACTUAL_AXIAL_C4_AND_COMPLETE_FUTURE_ENERGY_2026_10_01.md. Reproduce compliant_reconstruction.py --stage axialjets; ordered pipeline now has49 modules. F38-D3b1 through D3b3 below are superseded as COMPLETE.
+
+NEXT: transport all selected high jets through each pulse chart and five partial primitives, recover Ur_Z and mixed derivatives using the SAME Mz primitive/paper(3.9), then compose full post-pulse C4 and quantitative interfaces. No fifth-order Taylor remainder is supplied. Full physical energy, full pulse/outer C4, outer stress cone/admissible lift/flat remainder and true n-dependent recursion remain incomplete.
+
+---
+
 # F38-D3a actual angular C4 checkpoint - 2026-10-01
 
 The two SAME implicit angular repair functions now have ordinary axial Taylor jets through order4 over all real Z in [-1,1]. C0 is the existing admitted branch, higher coefficients differentiate the actual quadratic equations with the same nonzero Jacobian and all convolution terms. Correlated flatten history and true Gamma collar/infinite-tail derivatives supply the exact same RHS; S remains formal positive and caps only enclose it.
