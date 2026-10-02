@@ -1,3 +1,31 @@
+# F38-D2 absolute leading moment handoff - 2026-10-01
+
+- [x] F38-D2a1: Bind the actual repaired reference pressure mass to the exact reference extension integral5/2; retain the full fourteen-stage raw-preheat analytic pressure definition, same .001 source, family hashes and continuous waiting root.
+- [x] F38-D2a2: Compose Erel^2*sH=Delta_Mp_heat in physical units using c_infinity*Rtail^(-1/2-a)=Etail/(1-epsilon), so Mp_actual(infinity)=-P0 and P0+Mp(Rv)+Ev0^2*Prv=0 as exact functions.
+- [x] F38-D2a3: Compose the scalar pulse/flatten history, rpre, actual angular bump increment and waiting identity. Prove Ctheta=0 using the transfer exp(-(rate+k)/2-k*tau); retain positive Z0 heat corrections and formal S.
+- [x] F38-D2a4: Add32 source/AST/algebra identities, independent physical Gamma/collar/squared-bump integrals, source-bound admitted equivalent field views and --stage closure. Preserve forward Mp/P0 and old conservative receipts. All five leading terminal moments are certified; full background acceptance remains false.
+
+Immediate execution order (do not restart completed core/moment solves):
+
+- [ ] F38-D3a: Add higher axial jets for the SAME exact angular repair functions. Differentiate the two actual moment equations to orders2..4, solving each order with the existing nonzero Jacobian. Retain the quadratic cross terms, correlated rpre and true S*Gamma derivative terms. Never differentiate interval contraction iterates or choose box midpoints. Use a separate source-bound layer or rebuild all affected descendants after any source edit.
+- [ ] F38-D3b: Add higher jets for complete corrected future swirl energy and the selected ap/c1/c2 branch. Differentiate the actual quadratic energy equation, with fixed row factors applied to every incoming derivative. Retain tiny positive end-energy factors. Check the n-independent leading-profile derivatives here; these are not coefficient recursion in n.
+- [ ] F38-D3c: Transport higher jets through every pulse chart, flatten, both angular supports, steep/waiting and collar/Gamma regions. Recover Ur_Z and all radial/axial mixed derivatives using the SAME Mz primitive and paper(3.9). Keep pure-gap histories and all current-radius normalizations. Do not materialize huge physical log origins or subtract independent nearly cancelling energy boxes.
+- [ ] F38-D3d: Establish uniform C4 bounds and flat interface compatibility in every chart, including boxes crossing support endpoints. Use the original sigma/beta/phi/Gamma definitions. Verify with independent finite-parameter derivatives or functional identities and directed bounds, not identical implementation mirrors. Keep whole-outer C4 false until all required derivative orders and interfaces are covered.
+- [ ] F38-D3e: Expose one source-bound core/inner/reference/outer similarity-field entrypoint and physical-coordinate map. Dispatch using segmented log radius. Preserve analytic P0 and proved equivalent outer pressure, axis regularity and structural divergence; report derivative availability honestly. Mere coordinate rescaling is not temporal recursion.
+- [ ] F39-A1: Compute and certify every admissible stress-cone quantity on pulse entrance/main/gap/end, flatten, angular bumps, steep entry/power/exit, waiting and heat collar/exterior. Use CLOSED local pressure and angular moments; retain all required derivative terms and physical unit factors. Report each margin and controlling interval. Positive energy/selected ap and the inner cone do not prove the whole outer cone.
+- [ ] F39-A2: Integrate full physical kinetic energy with the actual radial/axial coordinate Jacobian, constructed domain and time scaling. Include radial and axial velocity contributions and tails; distinguish per-time energy from spacetime energy. The finite remaining swirl radial integral already completed is only one ingredient.
+- [ ] F39-B1: Construct global divergence-form stress from the matched leading background. Establish stress boundary/interface compatibility and admissibility on the entire domain; bind it to the same source family.
+- [ ] F39-B2: Independently construct and bound the flat remainder. Report stress and remainder separately: maximum, physical volume L2, radial/axial locations and scale dependence. Do not enforce1e-3 on the uncorrected background total residual.
+- [ ] F40-A: Implement true n=1 recovery equations with the admitted common inner interval and separate moment repair. Bind every inhomogeneous term to the leading source; report solvability and finite-order remainder.
+- [ ] F40-B: Implement n>=2 recovery with actual n-dependent coefficients and order-specific moment repair; do not reuse n=1 equations or claim scaled copies of U0 are recursive solutions.
+- [ ] F40-C: Truncate streamfunction/vector potential before curl, preserve exact divergence and construct the paper's smooth sum. Prove or quantify finite-order and flat errors before advertising a multi-time recursive background.
+- [ ] F41-A: Implement mean corrections and both oscillatory pulse families when the source permits. Measure averaged quadratic momentum flux and its cancellation of the actual admissible background stress.
+- [ ] F41-B: Independently validate the full forced Cartesian NS residual after oscillatory correction, targeting both Linfinity and physical L2 below1e-3. Add vortex widths/aspect ratio, actual material-line winding, vorticity/amplitude exponents and inter-level recurrence diagnostics; geometric shrinkage alone is insufficient winding/recursion evidence.
+
+Evidence: docs/ABSOLUTE_LEADING_MOMENT_CLOSURE_2026_10_01.md and compliant_absolute_moment_closure.py/.json plus _check.py/.json. Run --stage closure. This newest completed/pending list supersedes historical D2a entries below. Preserve unrelated edits and all legacy pressure/core sources. Full background/C4/cone/physical energy/stress/flat remainder/temporal recursion are still incomplete.
+
+---
+
 # F38-D1 corrected post-pulse task handoff - 2026-10-01
 
 - [x] F38-D1a: Add same-family corrected outer provider consuming actual selected pulse, implicit angular coefficients, original pressure source and exact Gamma heat. Verify dependency hashes and complete pulse prerequisites.

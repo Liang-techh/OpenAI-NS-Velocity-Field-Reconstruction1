@@ -1,3 +1,15 @@
+# F38-D2 absolute leading moment closure checkpoint - 2026-10-01
+
+All five leading terminal moment identities are now admitted for the same exact implicit compliant family over Z in [-1,1]. The two previously retained global constants are proven zero by source composition: repaired reference mass plus complete raw preheat pressure datum; angular bump pressure mass equals the Gamma heat loss; correlated flatten history plus the first bump equation and the same continuous Z0 waiting identity equals the exact collar/Gamma angular target. Source S remains formal positive, and Z0 heat/bump corrections remain nonzero.
+
+The new admitted outer view preserves original forward Mp/P0 and unreduced pressure/angular enclosures, returning proved equivalent backward pressure and heat angular targets. Thirty-two AST-bound/source/algebra identities and an independent true-Gamma/physical-radii/squared-bump fixture PASS. The fixture maximum absolute constant error is about7.34e-65 with a bounded positive infinite pressure-tail remainder; it is not the actual Md40 admission. The functional proof uses arbitrary smooth axial histories, not sampled zero overlap.
+
+Read docs/ABSOLUTE_LEADING_MOMENT_CLOSURE_2026_10_01.md. Reproduce compliant_reconstruction.py --stage closure (usual experiments/root_st073/lei_ren_part1_paper_ prefix); ordered pipeline now has43 modules. Existing postpulse conservative receipts remain unchanged.
+
+NEXT: second and higher axial jets for the true implicit angular/amplitude branches; full Ur/mixed derivatives and C4 interfaces; full outer stress-cone margins and physical energy; global admissible stress/flat remainder; genuine n-dependent coefficient recursion and oscillatory cancellation. Full NS background, C4, full physical energy, cone/stress and temporal recursion remain incomplete. This header supersedes historical pending absolute-pressure/angular/five-terminal-moment entries below, but not their higher-regularity/stress/recursion tasks.
+
+---
+
 # F38-D1 corrected post-pulse outer checkpoint - 2026-10-01
 
 The actual selected pulse now feeds one callable corrected post-Rv family through100-unit flatten, post-flatten power, both implicit angular bumps, steep entry/power/exit, waiting, epsilon collar and infinite exact Gamma heat. Five cumulative primitives and C1 axial enclosures are carried continuously. Uz=Ur=Mz=Mtheta_z=0 are inherited from the pulse, and Mztheta is half the direct remaining corrected swirl energy. Direct arbitrary-radius pressure/energy/Gamma targets retain epsilon atoms and formal S_current.
