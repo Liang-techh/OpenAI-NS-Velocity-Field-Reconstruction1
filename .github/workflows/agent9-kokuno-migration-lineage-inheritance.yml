@@ -1,0 +1,74 @@
+name: agent9-kokuno-migration-lineage-inheritance
+
+on:
+  pull_request:
+    paths:
+      - 'src/openai_ns_reconstruction/kokuno_external_migration_inheritance.py'
+      - 'src/openai_ns_reconstruction/kokuno_external_migration_contract.py'
+      - 'tests/test_kokuno_external_migration_inheritance.py'
+      - '.github/workflows/agent9-kokuno-migration-lineage-inheritance.yml'
+  push:
+    branches:
+      - agent9/kokuno-migration-lineage-inheritance-117
+
+jobs:
+  inheritance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install repository runtime
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e . pytest
+
+      - name: Authenticate corrected Kokuno source identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone -q https://github.com/KokunoYumeto/yang-mills-interacting-workbench.git /tmp/kokuno-upstream
+          git -C /tmp/kokuno-upstream checkout -q 143f6773feb424ad9ed3a8d116653200f20346b7
+          test "$(git -C /tmp/kokuno-upstream rev-parse HEAD)" = "143f6773feb424ad9ed3a8d116653200f20346b7"
+          test "$(git -C /tmp/kokuno-upstream rev-parse HEAD:navier-stokes/navier_stokes_workbench.tex)" = "205a99807302e21a51c5eaf223390c0dfc42bcd0"
+
+      - name: Focused fail-closed regressions
+        run: python -m pytest -q tests/test_kokuno_external_migration_inheritance.py
+
+      - name: Materialize deterministic inheritance receipt
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from openai_ns_reconstruction.kokuno_external_migration_inheritance import (
+              inherit_kokuno_migration_contract,
+          )
+
+          receipt = inherit_kokuno_migration_contract(
+              {
+                  "candidate_semantic_identity_sha256": "2" * 64,
+                  "runtime_semantic_identity_sha256": "7" * 64,
+                  "stage": "current_q_s_to_correction_lineage",
+                  "repository_candidate_scientific_evidence": True,
+              },
+              evidence_role="correction_lineage",
+          )
+          out = Path("artifacts/agent9")
+          out.mkdir(parents=True, exist_ok=True)
+          (out / "kokuno-migration-lineage-inheritance.json").write_text(
+              json.dumps(receipt, indent=2, sort_keys=True) + "\n",
+              encoding="utf-8",
+          )
+          print(receipt["inheritance_sha256"])
+          PY
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: kokuno-migration-lineage-inheritance
+          path: artifacts/agent9/kokuno-migration-lineage-inheritance.json
+          if-no-files-found: error
