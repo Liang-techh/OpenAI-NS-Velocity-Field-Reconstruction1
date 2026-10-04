@@ -1,3 +1,15 @@
+# Current: original angular physical decomposition and right joins accepted - 2026-10-04
+
+Read docs/ANGULAR_PHYSICAL_2026_10_04.md. Original angular s[-4,0],Z[-1,1], SAME complete moments/absolute datum, selected axial coefficients, original beta pulses and velocities are dispatched through unchanged general-K physical transfer. K_Z/K_ZZ remain; exact nu/lambda units, completed Ttheta_theta=r*partial_z(Tz) and generally nonzero Etheta=-nu*partial_zz(utheta) are retained.
+
+24 actual symbolic identities cancel homogeneous A/E and pressure unit baselines before enclosure. Reduced theta divergence includes b*Z*K_Z; axial full-factor rows include Q_Z terms. Actual endpoint rate implementations, theta normalization, production radius and45 native velocity mixed4 identities close angular s0/entry t0. Accepted common K4/stress3/pressure4 and general remainder operator close completed physical stress/diagonal/divergence/remainder joins.
+
+Focused producer/checker PASS with346 hashes:356 finite signed physical rows and85 exact zeros on whole original box/support crossings/points. Independent native Cartesian K(q,Z) fixture with nonzero K_Z/K_ZZ at nu=.01/.7 passes6 decomposition equations,2 divergence checks,24 divergence mixed2 and12 remainder mixed2 comparisons; both viscosity remainders are nonzero. Its1e-36 tolerance is local formula validation, not global corrected NS accuracy. Read-only Luna/max review found no material issue.
+
+NEXT: angular whole-domain cone using actual variable kappa-2=2*mu-2*F_s/F and continuous source/history bounds. Raw theta hull is not a positivity proof. Angular cone, preceding-power left physical/stress join and original100-unit flatten remain open, followed by bridge feedback/global flat-volume-energy bounds, actual n-dependent recursion, oscillatory cancellation and final corrected residual. Their gates stay false.
+
+---
+
 # Current: original angular full moments/stress/absolute pressure accepted - 2026-10-04
 
 Read docs/ANGULAR_STRESS_2026_10_04.md. SAME complete entry t0 datum is transported through original angular s[-4,0], Z[-1,1], both original compact beta pulses and support crossings. Original selected d_j(Z), forward angular history, velocities, source radius and analytic absolute pressure are retained. K=KR*exp((a-mu)*s)*F retains K_Z and all needed axial derivatives.
