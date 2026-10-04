@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `c4a6876b66136844b99911f0c1fb4118264710f5`.
+The inspected `main` head before this update is `27bc7015a7ab1e8b418fe039d3a3d696a3121ad7`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`84b6a74a8d42a25ee67ed611d2defd1d3ec49c7d`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/84b6a74a8d42a25ee67ed611d2defd1d3ec49c7d)
+[`92840165958077b516311f3edefb3b03df199889`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/92840165958077b516311f3edefb3b03df199889)
 on `codex/st073-transition-next`, observed October 4. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,38 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-04 batch: angular repair physical stress and independent cone
+
+The [92840165 stress report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/92840165958077b516311f3edefb3b03df199889/docs/ANGULAR_STRESS_2026_10_04.md)
+and [physical report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/92840165958077b516311f3edefb3b03df199889/docs/ANGULAR_PHYSICAL_2026_10_04.md)
+record original angular s[-4,0]/Z[-1,1] full moments, stress mixed3,
+absolute pressure mixed4 and regional completed physical decomposition.
+Selected axial coefficients, compact beta supports and original datum remain.
+K_Z/K_ZZ are retained in physical axial-viscosity recovery; generally nonzero
+Etheta is not replaced by a waiting/exterior zero. The theta-theta completion
+and common angular s=0/entry t=0 physical right join are accepted. Preceding-
+power stress/physical left join is still open.
+
+The separate [cone report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/92840165958077b516311f3edefb3b03df199889/docs/ANGULAR_CONE_2026_10_04.md)
+and [cone checker](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/92840165958077b516311f3edefb3b03df199889/experiments/root_st073/lei_ren_part1_paper_compliant_angular_cone_check.json)
+accept the entire original angular support/crossing domain continuously using
+selected source coefficient bounds, original variable shear, whole-domain
+directional margins and actual Bmax logs. Raw theta boxes crossing zero and
+phase samples are not positivity proofs. Older stress/physical cone=false
+flags remain scoped historical gates, superseded by this independent adapter.
+Regional joined two-vector scope extends to Rtail*exp(-wait-Ts-6)<=R<
+Rtail*exp(3); Gamma exact zero stress is separate. No completed full-tensor
+or global cone acceptance follows.
+
+Three current checker receipts were read and their filename/hash bindings
+verified against pinned blobs. Saved source admission and bounded fixtures
+do not constitute independent scientific execution or a complete proof audit.
+Replay angularstress, angularphysical and angularcone with current prerequisites.
+Preceding power/100-unit flatten and left interfaces, global flat/volume/energy,
+Ra-to100 finite-width feedback, implicit bump values and full point selection
+remain open. Original unlocalized whole-space energy remains infinite; coupled
+n=1/higher temporal recursion and full corrected NS remain unfinished.
 
 ### 2026-10-04 batch: whole-entry source-bound two-vector cone
 
@@ -2679,6 +2711,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The exact-head [92840165 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37225094770)
+ended failure. Actual log:13 original constrained failures/423 passed, four
+smoke/slice successes and full historical tests skipped. No new selected
+failure appears; angular regional acceptance does not close global NS gates.
 
 The exact-head [84b6a74a run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37220118858)
 ended failure. Its actual log shows the same13 original constrained failures/
