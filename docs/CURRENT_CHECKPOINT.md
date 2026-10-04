@@ -1,3 +1,13 @@
+# Current: original pulse-end full meridional similarity stress — 2026-10-04
+
+Read docs/PULSE_END_STRESS_2026_10_04.md. The complete original end chart s[-4,0], Z[-1,1], including both beta supports centered at -3 and -1 with ell=.15, now has a source-bound full meridional similarity-stress companion. All original axial/radial transport and shear terms, five partial moment data, signed angular memory, selected quadratic energy loss and analytic absolute pressure source are retained. The physical Ev0/pressure-square/radius bridge is explicitly consumed; no runtime cap is selected as a field value.
+
+The focused checker verifies 500 finite signed mixed3 sector rows and 30 independent direct-integral full-stress/radial-source comparisons with nonzero meridional histories. The common physical amplitude and pressure units are connected, while the actual pulse s0/flatten t0 functional stress3/pressure4 join is still open. The unified controller provides --stage pulseendstress.
+
+Next: prove selected full-moment and pressure functional interfaces, original support derivative joins, then build the full meridional physical tensor/remainder adapter and continuous pulse-end cone. Gap/main/entrance pulse regions, upstream finite-width bridge feedback, completed global tensor admissibility, flat/volume/required-domain energy bounds, genuine n-dependent recursion and oscillatory correction remain unfinished. The accepted downstream regional flatten/tail cone is unchanged.
+
+---
+
 # Current: whole original100-unit flatten cone accepted - 2026-10-04
 
 Read docs/FLATTEN_CONE_2026_10_04.md. The original flatten t[0,100],Z[-1,1] now satisfies the regional two-vector cone and joins the accepted power/angular/entry/exit/waiting/collar tail. Nonzero coverage starts at Rtail*exp(-wait-Ts-102-Lrel); Gamma stress is exactly zero beyond exp(3). Current fields, complete moments/absolute pressure, original sigma/radius and viscosity units remain.
