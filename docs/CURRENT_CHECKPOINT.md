@@ -1,4 +1,14 @@
-# Current: actual full collar similarity stress recovery - 2026-10-04
+# Current: physical collar stress/remainder implemented; independent fixture pending - 2026-10-04
+
+Read docs/HEAT_COLLAR_PHYSICAL_2026_10_04.md. CompliantCollarPhysicalC2 consumes the accepted common collar stresses and physical field assembly, transfers the original nu*lambda^(-2-delta) stress factors, and forms the symmetric divergence-form tensor with T_theta_theta=r*partial_z(Tz). Regional angular/axial momentum identities use the same full future moments and pressure datum. Radial momentum and divergence vanish; the collar retains Etheta=-nu*partial_zz(utheta), generally nonzero. Source-log and pure-power cancellations occur analytically before interval enclosure. Physical stress mixed3 and cylindrical diagonal/divergence/remainder mixed2 interfaces are implemented.
+
+The producer has generated its source-bound receipt and the exact symbolic identities pass. A bounded read-only review accepted the units and reduced full-integral stress derivative formulas. The independent Cartesian fixture is still running; no collar_physical_C2_check receipt is admitted yet. The ordered collarphysical stage reproduces producer then checker. Keep F39b4-collar-physical incomplete until the current-hash checker passes. Its Cartesian residual checks stress divergence, not Tz_z separately; the latter uses the accepted physical chain rule and same-moment derivative formula.
+
+NEXT: finish the current independent fixture without restarting solely on observation timeouts; accept its receipt only if all_passed and all source hashes match. Then certify the actual collar stress cone and its directional limits near the zero-stress Gamma join. Complete remaining-region cone/flat-remainder bounds, finite-width bridge/second switch and common leading inputs before coupled n=1, n>=2 recursion and oscillatory correction. Physical energy, global flat remainder, all-region stress, genuine recursion and full corrected NS completion remain false.
+
+---
+
+# Previous: actual full collar similarity stress recovery - 2026-10-04
 
 Read docs/HEAT_COLLAR_STRESS_2026_10_04.md. CompliantCollarStressC3 recovers original Ttheta/Tz from SAME full sigma/phi/Gamma angular/energy/absolute-pressure moments, consuming the actual zero angular-history defect, selected half-energy equation, exact amplitude/pressure identities and inherited zero meridional histories. Exact unit baselines cancel before interval evaluation; signed mixed3 coefficients retain positive source-defined Qtheta/Qz factors. Original fields/datum/forward histories remain accessible. Same complete future moments and flat source jets join to exact zero Gamma stress through mixed3 at offset3.
 
