@@ -1,3 +1,15 @@
+# Current: original preceding-power whole two-vector cone accepted - 2026-10-04
+
+Read docs/OUTER_POWER_CONE_2026_10_04.md. Whole original outer_power phase[0,1], Z[-1,1], Lrel-4 now has the original two-vector cone against SAME full moments/absolute pressure, native forward X, velocities and physical units. Completed physical right joins compose the angular/entry/power/exit/waiting/collar tail from Rtail*exp(-wait-Ts-2-Lrel) to Rtail*exp(3); Gamma stress is exactly zero separately.
+
+Native W=(mu-a)/(1-mu)+Hf(Z)*exp(-(1-mu)*u) preserves the tiny surplus and original flatten-exit axial correlation. Actual source ASTs replay F/Fc and F(100)=f=(1+Z^2)/2, explicitly bind original unnormalized Xint=f*I_norm, and give Xf=I_norm+exp(-100*r)*Xv/f. The continuous original100-unit integral yields Hf>=exp(-100*r)*[b*expm1(50*r)-2*k]/(2*r)>0; positive Xv is sufficient, no Xv>=1/r assumption. Exact S>0 gives strict negative shear, kappa-2=2*mu and original inlet B log correlations give the directional bound. No raw-theta/grid/cap-field proof is used.
+
+Focused corrected producer/checker PASS with386 current hashes,12 exact identities,18 bridge facts and24 positive source margins. One bounded correlated-flatten fixture checks three direct identities and three positive-lemma comparisons at1e-60; its sample values are not the actual cone proof. Read-only Luna/max caught the source normalization gap, confirmed its correction, then current producer/checker were rerun. Completed diagonal and generally nonzero axial-viscosity remainder remain.
+
+NEXT: SAME full moments/absolute pressure and variable-K stress through original100-unit flatten, both function/physical joins, then its continuous whole-domain cone. The boundary-history inequality above does not complete flatten itself. Finite-width bridge feedback, completed full-tensor/global cone, independent global flat/volume/required-domain energy bounds, actual n-dependent recursion, oscillatory cancellation and final corrected Cartesian residual remain unfinished.
+
+---
+
 # Current: original preceding-power physical decomposition/right join accepted - 2026-10-04
 
 Read docs/OUTER_POWER_PHYSICAL_2026_10_04.md. Whole original outer_power phase[0,1], Z[-1,1], Lrel-4 now has completed physical stress/diagonal/divergence/remainder through the unchanged general-K map, exact nu/lambda units and SAME full moments/absolute pressure. Native assembly retains phase; canonical q=-wait-Ts-6+(Lrel-4)*(phase-1) is used for stress/source factors. Ordinary q/y rows are not multiplied by phase factors.
