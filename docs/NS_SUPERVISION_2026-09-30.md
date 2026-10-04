@@ -9,17 +9,66 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `9b9ee2b95ee77102a00942f7a0c1e22e97a5baa6`.
+The inspected `main` head before this update is `39e96d75e0382fe7bb0ee3029243d77627219ee2`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`d1e64d8dee8284c04eb09099bd44ec02921baef4`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/d1e64d8dee8284c04eb09099bd44ec02921baef4)
-on `codex/st073-transition-next`, observed October 2. This branch contains the
+[`99ad7e01de2e9d03773f45ec5c7cdf0317233445`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/99ad7e01de2e9d03773f45ec5c7cdf0317233445)
+on `codex/st073-transition-next`, observed October 4 (research commit October 2). This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
 NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-04 review batch: local morphology, leading integrals and recursion input
+
+The [d7d004f9 local swirl report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/d7d004f9/docs/ROOTED_SWIRL_MORPHOLOGY_2026_10_02.md)
+records three actual Phi-weighted axial swirl maxima at anchor rho=1,2,4,
+with fixed physical radius during each axial scan, and nine true-peak-normalized
+fractional widths. These supersede the earlier pending local axial maximum
+step. Radius is not fixed across times. The same source is radially increasing
+on the admitted rooted core rho<=4.1, so there is no interior radial swirl
+maximum; the cutoff is not a measured radial width or whole-vortex aspect ratio.
+The [core atoms report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/d7d004f9/docs/CORE_INTEGRAL_ATOMS_2026_10_02.md)
+integrates actual fresh coupled rows into H,M,K,A,B,C through axial order6,
+retaining controlled tails and the same mean/pressure primitive. Six atoms
+encode five physical moment conditions; they are not solved implicit bump values.
+
+The [99ad7e01 comparison report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/99ad7e01de2e9d03773f45ec5c7cdf0317233445/docs/COMPARISON_HISTORIES_2026_10_02.md)
+transports actual-core-seeded auxiliary comparison histories through microscopic
+charts and the frozen macro to R100, retaining signed width powers through2
+and a weighted cubic remainder. This is comparison evidence, not the signed
+actual bridge. The [macro signed report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/99ad7e01de2e9d03773f45ec5c7cdf0317233445/docs/MACRO_SIGNED_INTEGRALS_2026_10_02.md)
+resolves only the leading hb coefficient of actual bridge logF/axial changes
+through R100, with pressure/swirl terms factored in logarithms. The
+[first-switch report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/99ad7e01de2e9d03773f45ec5c7cdf0317233445/docs/FIRST_MICRO_SWITCH_LEADING_2026_10_02.md)
+resolves only its leading hb² correction at Z=0,.5 and the shared root.
+Higher coefficients, second-chart/power propagation, finite-width feedback,
+controlled actual integral remainders and full signed source values remain
+unfinished; actual_signed_bridge_completed stays false.
+
+The [recursion gate](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/99ad7e01de2e9d03773f45ec5c7cdf0317233445/docs/LEI_REN_COEFFICIENT_RECURSION_GATE_2026_10_02.md)
+and [regular Omega0 checker](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/99ad7e01de2e9d03773f45ec5c7cdf0317233445/experiments/root_st073/lei_ren_part1_paper_compliant_omega0_regular_source_check.json)
+record local Omega0/R and known n=1 forcing at12 core points, including three
+regularized axis rows and nine direct positive-radius comparisons. Unknown
+F1/Uz1/P1 remain coupled and unsolved; n1_coefficient_solved=false and the
+full Assumption14.1 common interval is not admitted. Radial Taylor rows,
+coordinate scaling or the older pressure/Omega-row implementation are not
+time/coefficient recursion. Per-order functional moment repair and subsequent
+n=2 sourcing remain later work. This is repository-text evidence review, not
+an independent verification of the paper's all-order theorem assumptions.
+
+Six saved checker receipts for morphology, coreatoms, comparison, macro signed,
+first-switch leading and regular Omega0 report acceptance; their filename/hash
+bindings were verified against this pinned source without scientific execution.
+Focused replay uses the producer/checker pairs linked by those reports. No
+independent numerical rerun or complete proof audit is claimed. Global radial
+morphology, multitime exponents, particle winding, five-bump point values,
+complete physical-point selection, admissible stress, independent flat remainder,
+genuine temporal recursion and full NS validation remain open. The original
+unlocalized whole-space energy stays infinite; the unchanged finite-energy
+goal remains unmet. No scientific route change occurs in this documentation batch.
 
 ### 2026-10-02 batch: rooted vector, compatible pressure and physical vorticity
 
@@ -2391,6 +2440,12 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The exact-head [99ad7e01 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37057767656)
+finished failure. Its freshly inspected log shows the same original13 failed
+constrained identifiers/423 passed; four smoke/slice jobs pass and full
+historical tests skip. No new selected failure appears. Local morphology or
+regular forcing-source acceptance does not promote full scientific acceptance.
 
 The exact-head [d1e64d8d run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37035251695)
 finished failure: its actual log has13 failed/423 passed with the same original
