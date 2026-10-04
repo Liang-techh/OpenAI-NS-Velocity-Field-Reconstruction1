@@ -1,3 +1,17 @@
+# Current: whole original angular cone and joined entry tail accepted - 2026-10-04
+
+Read docs/ANGULAR_CONE_2026_10_04.md. Whole original angular s[-4,0],Z[-1,1] now has the original two-vector cone against SAME complete moments/absolute pressure and the accepted entry/power/exit/waiting/collar/Gamma tail. Original selected axial coefficients, beta pulses, velocities, Ts/Lrel, radius and physical units remain.
+
+Actual source ASTs recover W=k*N-b*Z*N_Z-F from the native cumulative N=F*X. The stable (mu-a)/(1-mu) surplus, attenuated flatten history, original positive partial beta moments and actual h/F_s rows give continuous whole-support/crossing bounds. W_lower/mu is approximately .999999999953212. Entry's different sigmoid M ODE is not reused; the raw theta hull is not a positivity proof.
+
+Focused producer/checker PASS with374 current hashes/24 positive margins. Actual variable kappa-2=2*mu-2*F_s/F stays positive; exact source S>0 gives strict negative shear. Actual inlet Bmax at q=-wait-Ts-6 regroups shared Ts/wait source logs into -k*Ts+6*bh; unchanged other parts and full source sum are AST-verified. Continuous directional margin passes without phase sampling or cap-selected fields.
+
+Current K4/full-moment/stress3/pressure4 and completed physical right joins compose Rtail*exp(-wait-Ts-6)<=R<Rtail*exp(3); Gamma stress exactly zero separately. CertifiedAngularPhysical adds metadata to unchanged angular physical evaluation; actual interior Z=.5,s=-3,nu=.7 call PASS with nonzero axial-viscosity remainder retained. Completed full-tensor/global cone gates remain false.
+
+NEXT: SAME full moments/stress/absolute pressure through original preceding power and its angular s-4 left joins, then original100-unit flatten and their regional physical/cone companions. Finite-width bridge feedback, independent global flat/physical-volume/energy bounds, actual n-dependent recursion, oscillatory cancellation and final corrected Cartesian residual remain unfinished.
+
+---
+
 # Current: original angular physical decomposition and right joins accepted - 2026-10-04
 
 Read docs/ANGULAR_PHYSICAL_2026_10_04.md. Original angular s[-4,0],Z[-1,1], SAME complete moments/absolute datum, selected axial coefficients, original beta pulses and velocities are dispatched through unchanged general-K physical transfer. K_Z/K_ZZ remain; exact nu/lambda units, completed Ttheta_theta=r*partial_z(Tz) and generally nonzero Etheta=-nu*partial_zz(utheta) are retained.
