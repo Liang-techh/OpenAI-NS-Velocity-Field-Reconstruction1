@@ -26,7 +26,7 @@ The actual normalized moment factor has the source logarithm
 where `finite=-3*L+2*log(u0)-log(6)/2-2*log(mu)`. The producer replays
 the original logscale and both native gap recipes to establish
 `logD0=-1/mu+finite`. Backward growing exponentials are not materialized,
-and inverse-mu terms are grouped before enclosure.
+and inverse-mu terms are grouped before enclosure. Direct replay binds both charts' leading factors and the actual xi=12/s=-1/mu switch. Full beta weights use the original fixed 256 integration cells.
 
 The exact original histories are
 
@@ -47,7 +47,7 @@ at s=0; that enclosure is used only as a bound for the same function.
 The existing analytic datum/FTC source identity is directly consumed.
 The original cumulative pressure moment Mp is separately retained with its
 same Pin, U and forward time decay. Thus absolute pressure and the fifth
-cumulative moment are distinct retained quantities.
+cumulative moment are distinct retained quantities. The Mp inlet, swirl limit and decaying tail are separate sectors; the source U^2 is retained explicitly as 2*actual_log_inlet_U.
 
 All raw linear moments and the signed angular-memory contribution are
 constant on the inactive gap after exact source-factor cancellations.
@@ -65,8 +65,8 @@ right boundary d=4mu is the same end s=-4 source through
 velocity4/moment4/stress3/pressure4. Original main/gap and chart-switch
 functional source certificates remain, using uncapped defining sources.
 
-Focused checker PASS: 423 current hashes, 42 source-function identities and
-900 finite signed coefficient rows across the whole gap, right boundary
+Focused checker PASS: 423 current hashes, 45 source-function identities and
+945 finite signed coefficient rows across the whole gap, right boundary
 and coordinate switch. It retains 75 structural zero pressure/velocity rows.
 Three independent fixtures use direct complete original-beta integrals and
 the original full stress evaluator. They supply489 comparisons:

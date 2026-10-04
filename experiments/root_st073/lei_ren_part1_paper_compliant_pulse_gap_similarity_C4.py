@@ -128,6 +128,9 @@ def source_proof(records):
         zero('actual_'+name+'_same_finite_source_recipe',actual-finite)
     leading=asts.evaluate(asts.expression('axial_pulse_field','gap','leading'),
         dict(D=d,finite=finite,self=SimpleNamespace(mu=mu)))
+    end_leading=asts.evaluate(asts.expression('axial_pulse_field','gap_from_end','leading'),
+        dict(s=-d/mu,finite=finite,self=SimpleNamespace(mu=mu)))
+    zero('actual_both_gap_chart_reduced_leading_sources_identical',end_leading-leading)
     for i in (1,2):
         native=leading-i*d
         zero('actual_reduced_D'+str(i)+'_moment_scale',native-(logscale+(s.Rational(1,2)-i*mu)*d/mu))
@@ -135,6 +138,10 @@ def source_proof(records):
         wanted="self.selection.future.future(Z)['complete_future_energy_Taylor']/2")
     asts.expression('axial_pulse_field','_gap','full_weights',
         wanted='backward_bump_weights(c,self.mu,normal,-4)')
+    weightfn=asts.method('axial_pulse_field','backward_bump_weights')
+    if ast.literal_eval(weightfn.args.defaults[-1])!=256:
+        raise ValueError('Native full-beta weight quadrature default changed')
+    proofs['same_native_gap_weight_cells_256_required']=True
     asts.expression('axial_pulse_field','_gap','zero',wanted='C[0]*0')
     gapfn=asts.method('axial_pulse_field','_gap')
     expected=ast.dump(ast.parse('Cj*(c.exp(lam*center)*w[row-1])',mode='eval').body)
@@ -176,7 +183,11 @@ def source_proof(records):
     zero('actual_gap_end_loss_source_at_minus4',J.subs(d,4*mu)-s.exp(-8*mu)*J0)
     zero('actual_gap_end_pressure_source_at_minus4',
         P.subs(d,4*mu)-(P0*s.exp(-4*p)+C*C*(s.exp(-4*p)-1)/(2*p)))
-    zero('actual_gap_coordinate_switch_at_xi12',d.subs(d,1)-(13-s.Integer(12)))
+    mainD=asts.evaluate(asts.expression('axial_pulse_field','gap','D'),dict(xi=s.Integer(12)))
+    endD=asts.evaluate(asts.expression('axial_pulse_field','gap_from_end','D'),
+        dict(s=-1/mu,self=SimpleNamespace(mu=mu)))
+    zero('actual_gap_main_distance_at_xi12',mainD-1)
+    zero('actual_gap_end_distance_at_s_minus_inverse_mu',endD-mainD)
     B0,Rv,D0=s.symbols('actual_Bv actual_Rv actual_end_scale',positive=True)
     B=B0*s.exp(p*d/(2*mu));R=Rv*s.exp(-d/mu)
     D1=D0*s.exp((s.Rational(1,2)-mu)*d/mu)
@@ -238,6 +249,7 @@ def source_proof(records):
 class CompliantPulseGapSimilarityC4:
     @source_precision
     def __init__(self,cells=256):
+        if cells!=256:raise ValueError('The same native full-beta gap source requires cells=256')
         self.records,self.hashes,family=sources();self.family,self.source=family
         self.ctx=c=MPIntervalContext();c.dps=240
         selected=self.records['pulse_mixed_C4']
@@ -322,11 +334,15 @@ class CompliantPulseGapSimilarityC4:
                 'inverse_mu':-13/self.mu,'finite':c.mpf(-26)},
                 full_pressure_mixed4_coefficient_enclosures=ordinary_grid(rows['pressure_memory_rows'],4))}
         # The unchanged cumulative pressure primitive, separate from the datum.
-        zero=C*0;Pinpart=C*C*(self.Pin+self.U*self.U/(2*p));tail=-C*C*self.U*self.U/(2*p)
+        zero=C*0;Pinpart=C*C*self.Pin;tail=-C*C/(2*p)
         mp_rows={'same_original_inlet':dict(exact_source_log_parts={'logPstar':2*self.logP},
             full_moment_mixed4_coefficient_enclosures=ordinary_grid([Pinpart]+[zero]*4,4)),
+            'same_original_swirl_limit':dict(exact_source_log_parts={
+                'logPstar':2*self.logP,'actual_log_inlet_U':2*self.logU},
+                full_moment_mixed4_coefficient_enclosures=ordinary_grid([-tail]+[zero]*4,4)),
             'retained_forward_swirl_decay':dict(exact_source_log_parts={
-                'logPstar':2*self.logP,'exact_forward_time_decay':-p*(13-d)/self.mu},
+                'logPstar':2*self.logP,'actual_log_inlet_U':2*self.logU,
+                'exact_forward_time_decay':-p*(13-d)/self.mu},
                 full_moment_mixed4_coefficient_enclosures=ordinary_grid([tail*(-p)**j for j in range(5)],4))}
         velocity={}
         velocity_modes={'radial':(.5,1,1,0),'theta':(0,1,0,0),'axial':(0,1,1,0)}

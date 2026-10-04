@@ -14,12 +14,12 @@
     ],
     "ordinary_derivative": "d_s=d_logR=-mu*d_d"
   },
-  "source_function_identities_checked": 42,
+  "source_function_identities_checked": 45,
   "finite_signed_rows_checked": {
     "full_meridional_stress_log_sectors": 270,
     "full_absolute_pressure_log_sectors": 90,
     "full_velocity_log_sectors": 135,
-    "five_raw_moments": 405
+    "five_raw_moments": 450
   },
   "structural_zero_rows_checked": {
     "full_absolute_pressure_log_sectors": 30,
@@ -469,8 +469,8 @@
     "lei_ren_part1_paper_compliant_pulse_end_cone.json": "79d1723d329d1f1fdebd9abd2a5893d15ea3898163ea94f8dd1bce4a1859f115",
     "lei_ren_part1_paper_compliant_pulse_end_cone_check.py": "df2f7b0e26c063b9064ff829a0127b98a48f608a2d7c4c3e4e1f8c2781d23d61",
     "lei_ren_part1_paper_compliant_pulse_end_cone_check.json": "f434cb1f26154ae8cc5fc326ee1e8dfedab74e0150d7db741e16c2de3fb769f8",
-    "lei_ren_part1_paper_compliant_pulse_gap_similarity_C4.py": "070dfae22b5b1e3c29ed2aa44234838ab8028cc20038f42d4abdaf046e563870",
-    "lei_ren_part1_paper_compliant_pulse_gap_similarity_C4.json": "a261b0281e91c04be79a95ee1993f1c0029f41a47cdc44bdf6de24d7079b84b0",
+    "lei_ren_part1_paper_compliant_pulse_gap_similarity_C4.py": "4056d92ee70334bb35f35d67bff9af090e70ff42d1621560a8d278d0421a528c",
+    "lei_ren_part1_paper_compliant_pulse_gap_similarity_C4.json": "b84fc674d15b81b7094751a9c3d59bef4e40c8d46d26437a9a561e6850ded153",
     "lei_ren_part1_paper_compliant_pulse_gap_similarity_C4_check.py": "07eaebacc22989e7310ecd0a68ff76bd3d9f40df5aa8f099da7d9bfd677850bc"
   },
   "source_caps_used_as_defining_field_values": false,
