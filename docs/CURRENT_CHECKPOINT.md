@@ -1,4 +1,14 @@
-# Current: physical collar stress/remainder implemented; independent fixture pending - 2026-10-04
+# Current: physical collar accepted and actual heat-part cone proved - 2026-10-04
+
+Read docs/HEAT_COLLAR_PHYSICAL_2026_10_04.md and docs/HEAT_COLLAR_CONE_2026_10_04.md. CompliantCollarPhysicalC2 transfers the original common collar moments to the physical divergence-form tensor with T_theta_theta=r*partial_z(Tz), retains the nonzero axial-viscosity remainder and supports the requested derivative grids. Focused checker PASS with current hashes:210 finite signed rows,115 exact zeros,eight viscosity factors,six moderate Cartesian decomposition errors below2.1e-42,two exact divergences and two nonzero remainders. Pressure offset derivatives reuse the accepted full-pressure FTC; P_Z is differentiated under the full integral and the implicit coordinate map is differentiated natively. No new global residual or standalone Tz_z validation is claimed.
+
+The actual heat part offset[1,3), Z[-1,1] now has a whole-domain admissible TWO-VECTOR cone proof and uniform direction toward positive e_theta at the zero-stress join. The SAME source sigma=1, original phi, canonical Gamma and actual future moments give ctheta>0 and 2*ctheta^2-(kappa-2)*B^2*cz^2>0. Exact positive factors are cancelled before enclosure; the actual B source logs bound the directional term. Source/proof checker PASS after targeted read-only review of the axial chain bound, common-moment identities, radius and signs. Paper exponents are phi*y^(-3) angular, phi*y^3 axial and O(y^6) ratio, y=3-offset. Strict inequalities exclude offset3, whose stress is exactly zero. Stages collarphysical and collarheatcone are available.
+
+NEXT: prove the actual sigmoid transition offset[0,1] cone against the same full Gamma reference and future moments, then join its source proof at offset1 with the accepted heat proof. Keep whole-collar and global cone flags false until that closes. Complete remaining-region cone/flat-remainder bounds, finite-width bridge/second switch and common leading inputs before coupled n=1,n>=2 recursion and oscillatory correction. The completed tensor's diagonal is not part of the two-vector cone. Physical energy, independent global flat remainder, genuine recursion and full corrected NS completion remain false.
+
+---
+
+# Previous: physical collar implementation while independent fixture was pending - 2026-10-04
 
 Read docs/HEAT_COLLAR_PHYSICAL_2026_10_04.md. CompliantCollarPhysicalC2 consumes the accepted common collar stresses and physical field assembly, transfers the original nu*lambda^(-2-delta) stress factors, and forms the symmetric divergence-form tensor with T_theta_theta=r*partial_z(Tz). Regional angular/axial momentum identities use the same full future moments and pressure datum. Radial momentum and divergence vanish; the collar retains Etheta=-nu*partial_zz(utheta), generally nonzero. Source-log and pure-power cancellations occur analytically before interval enclosure. Physical stress mixed3 and cylindrical diagonal/divergence/remainder mixed2 interfaces are implemented.
 

@@ -24,10 +24,13 @@ def independent_cartesian_fixture():
     with mp.workdps(40):
         a,S,eps,B0=map(mp.mpf,('.15','.004','.002','1.3'))
         delta=2*a; k=1-a; bh=mp.mpf('.5')+a; p=1+delta; b=(1-delta)/2
-        cache={}
+        cache={}; hcache={}
         def H(x,n=0):
             if not x:return (-1)**n*mp.rf(a,n)*mp.rf(1+a,n)
-            return (-1)**n*mp.rf(a,n)*mp.rf(1+a,n)*x**(-1-a-n)*mp.hyperu(1+a+n,2,1/x)
+            key=(x._mpf_,n,mp.mp.prec)
+            if key not in hcache:
+                hcache[key]=(-1)**n*mp.rf(a,n)*mp.rf(1+a,n)*x**(-1-a-n)*mp.hyperu(1+a+n,2,1/x)
+            return hcache[key]
         def sigma(v):
             if v<=0:return mp.mpf(0)
             if v>=1:return mp.mpf(1)
@@ -75,6 +78,20 @@ def independent_cartesian_fixture():
         def pressure(r,z,tau,nu):
             lam,v,Z,R=coordinates(r,z,tau,nu)
             return -nu*lam**(-2-2*delta)*B0*B0*mp.exp(-p*v)*moment(v,Z,'P')
+        def pressure_gradient(r,z,tau,nu):
+            # The full pressure FTC was independently accepted by the C4
+            # pressure checker. Reuse it, and differentiate the implicit
+            # coordinate map natively instead of re-differentiating its
+            # quadrature at twice the working precision for every axis.
+            lam,v,Z,R=coordinates(r,z,tau,nu); P=moment(v,Z,'P'); Pz=moment(v,Z,'P',1)
+            Py=p*P-K(v,Z)**2/2; eta=-2-2*delta; B2=B0*B0*mp.exp(-p*v)
+            result=[]
+            for axis,base in ((0,r),(1,z)):
+                def mapped(q,index):
+                    return coordinates(q,z,tau,nu)[index] if axis==0 else coordinates(r,q,tau,nu)[index]
+                dl,dv,dZ=[mp.diff(lambda q:mapped(q,index),base) for index in range(3)]
+                result.append(-nu*lam**eta*B2*(eta*P*dl/lam+(Py-p*P)*dv+Pz*dZ))
+            return result
         def stress_first_jets(r,z,tau,nu):
             lam,v,Z,R=coordinates(r,z,tau,nu); B=B0*mp.exp(-bh*v); L=1-delta*Z*Z; d=1-Z*Z
             A=moment(v,Z,'A'); Az=moment(v,Z,'A',1)
@@ -105,6 +122,9 @@ def independent_cartesian_fixture():
                 return [-y/rr*g,x/rr*g,mp.mpf(0)]
             def pres(x,y,z):return pressure(mp.sqrt(x*x+y*y),z,tau,nu)
             Tt,Tz,Ttr,Tzr,Tzz=stress_first_jets(r,z,tau,nu)
+            print('Complete future stress moment first jets recovered',flush=True)
+            pr,pz=pressure_gradient(r,z,tau,nu)
+            pressure_cart=[mp.cos(angle)*pr,mp.sin(angle)*pr,pz]
             # Complete the independently obtained first stress jets. The
             # unneeded derivatives of r*Tz_z cancel structurally in divergence.
             def tensor(x,y,zz):
@@ -125,7 +145,7 @@ def independent_cartesian_fixture():
                 ut=-mp.diff(lambda ta:vel(*point,ta)[i],tau)
                 conv=sum(u[j]*partial(lambda x,y,z:vel(x,y,z)[i],j) for j in range(3))
                 lap=sum(partial(lambda x,y,z:vel(x,y,z)[i],j,2) for j in range(3))
-                momentum=ut+conv+partial(pres,i)-nu*lap
+                momentum=ut+conv+pressure_cart[i]-nu*lap
                 div=sum(partial(lambda x,y,z:tensor(x,y,z)[i][j],j) for j in range(3))
                 error=momentum+div-E[i]
                 if abs(error)>mp.mpf('1e-29'):raise ArithmeticError('Independent Cartesian stress/remainder decomposition failed: '+str((offset,nu,i,error)))
@@ -139,6 +159,7 @@ def independent_cartesian_fixture():
                     Cartesian_decomposition_errors=residuals,divergence_errors=divergences,radial_momentum_errors=radial,
                     nonzero_axial_viscosity_remainders_exercised=int(nonzero),
                     stress_jets_from_full_integral_derivatives_and_FTC=True,
+                    pressure_gradient_from_accepted_full_integral_FTC_and_native_implicit_map=True,
                     full_future_moments_not_radially_truncated=True, moderate_fixture_only=True,passed=True)
 
 

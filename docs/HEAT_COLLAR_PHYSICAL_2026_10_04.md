@@ -7,10 +7,13 @@ divergence-form tensor. It recovers the leading regional identity
 It consumes the accepted main physical velocity/pressure assembly and the
 separate `CompliantCollarStressC3` source; the main dispatcher is preserved.
 
-Validation status: the producer's exact identities and source-bound record
-are available. The independent Cartesian fixture is still running and its
-checker receipt has not been admitted. This stage remains open in the task
-list until the current-source receipt passes.
+Validation status: producer and focused checker PASS with all current source
+hashes. The receipt checks 210 finite signed physical rows, 115 exact zeros,
+eight viscosity derivative factors and six moderate Cartesian decomposition
+components at nu=.01/.7. Their errors are at most about 2.1e-42; divergences
+are zero, radial momenta are below 8.3e-44 and both axial-viscosity remainders
+are nonzero. These are formula/unit fixtures, not extreme-source global NS
+residual measurements.
 
 ## Physical map and source factors
 
@@ -102,10 +105,14 @@ zero-stress exterior. The source functional identity holds throughout the
 collar and uses the exact original moment recurrences, not sampled residual
 values to reset the pressure or moments.
 
-The independent checker differentiates the full velocity/pressure directly
-in Cartesian coordinates, solves the implicit physical coordinate map and
-uses complete future moment integrals for the stress. Independently obtained
-stress first jets differentiate those full integrals under the integral sign
+The independent checker differentiates velocity/time/Laplacian directly in
+Cartesian coordinates, solves the implicit physical coordinate map and uses
+complete future moment integrals for the stress. Pressure derivatives reuse
+the independently accepted full-pressure FTC for the offset derivative;
+P_Z is obtained under the complete future integral. Both use a natively
+differentiated implicit coordinate map. This fixture does not repeat the
+earlier pressure quadrature derivative checks. Its stress first jets
+differentiate those full integrals under the integral sign
 and apply the FTC at their moving lower limits. This avoids repeated nested
 high-precision quadrature without using production coefficient helpers.
 Those jets form the completed Cartesian tensor; omitted higher tensor jets
