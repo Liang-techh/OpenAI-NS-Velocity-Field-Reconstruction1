@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `558bd98a4f7ae3e571a0938024a451ec735d650b`.
+The inspected `main` head before this update is `0582f1c29ea82f156d1408d6de703a80888241eb`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`da5d5699982f2be92512a4823305aeb1d807d663`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/da5d5699982f2be92512a4823305aeb1d807d663)
+[`2ad9447de50be12407489d2d45ba30b5847577e6`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2ad9447de50be12407489d2d45ba30b5847577e6)
 on `codex/st073-transition-next`, observed October 4. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,37 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-04 batch: steep-entry physical decomposition, no cone extension
+
+The [2ad9447d stress report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/2ad9447de50be12407489d2d45ba30b5847577e6/docs/STEEP_ENTRY_STRESS_2026_10_04.md)
+and [physical report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/2ad9447de50be12407489d2d45ba30b5847577e6/docs/STEEP_ENTRY_PHYSICAL_2026_10_04.md)
+record source stress mixed3/absolute pressure mixed4 and regional physical
+stress mixed3 with completed diagonal, divergence and remainder mixed2.
+The original entry phase t has q=-wait-Ts-2+t and dq/dt=1; it is not the
+Ts-scaled steep-power phase. Same future moments/datum and both native pressure
+routes remain bound. Etheta=-nu*partial_zz(utheta) is generally nonzero;
+Ttheta_theta=r*partial_z(Tz) is retained, not dropped from the tensor.
+
+The right entry t=1/power phase0 connection uses actual K4, stress mixed3,
+pressure mixed4 and common physical maps/source factors. Native left angular
+radius/field/pressure connection is admitted, but upstream angular stress is
+not. The [physical checker](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/2ad9447de50be12407489d2d45ba30b5847577e6/experiments/root_st073/lei_ren_part1_paper_compliant_steep_entry_physical_C2_check.json)
+records acceptance while entry_cone remains false. The similarity receipt's
+older physical=false gate remains stage-local historical scope. No two-vector
+cone coverage is extended: the previously certified joined tail still begins
+at Rtail*exp(-wait-1-Ts). Positive theta stress or regional decomposition is
+not a directional cone proof, nor is a two-vector cone a completed tensor cone.
+
+Both receipts' filename/hash bindings were checked against the pinned source.
+Saved acceptance and moderate native Cartesian fixtures are not independent
+project-source execution or a complete proof audit. Replay steepentrystress
+and steepentryphysical with accepted prerequisites. Entry cone, upstream
+angular/power/flatten stress, global tensor/cone and flat/volume estimates,
+Ra-to100 finite-width feedback, implicit bump values and full physical-point
+selection remain open. Energy remains infinite for the original unlocalized
+source, and the unchanged finite-energy goal is unmet. Coupled n=1, higher
+temporal recursion/corrections and full corrected NS remain unfinished.
 
 ### 2026-10-04 batch: steep-exit admission and subsequent steep-power transfer
 
@@ -2621,6 +2652,12 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The exact-head [2ad9447d run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37218366353)
+has reached terminal failure. Its actual log was newly read:13 original
+constrained failed identifiers/423 passed, four smoke/slice successes and
+full historical tests skipped. No new selected failure appears. This is
+terminal evidence for this commit, not a carried-forward predecessor count.
 
 The requested [d30d1608 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37211886455)
 and newer [da5d5699 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37214448808)
