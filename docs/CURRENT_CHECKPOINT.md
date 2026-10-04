@@ -1,3 +1,13 @@
+# Current: pulse-end / flatten functional similarity interface — 2026-10-04
+
+Read docs/PULSE_END_FLATTEN_JOIN_2026_10_04.md. The original pulse s0 / flatten t0 now connects all five moment data through mixed4, theta/axial similarity stress through mixed3 and the SAME analytic absolute pressure through mixed4 as functions on Z[-1,1]. The source bridge explicitly replays both local inlet jet producers, original buffer Pin/U paths, live-to-fifth-to-power constant serialization, and the common repaired analytic datum. Signed tiny incoming memory, complete future energy half, production radius and exact log amplitudes remain.
+
+The current checker establishes functional identities using actual source ASTs and verifies 435 independent original physical-similarity derivative comparisons with unequal reference rates, signed history and a nonzero analytic datum. This completes the external similarity interface; interval overlap and source caps are not defining values or proofs. Run the new bounded stage with --stage pulseendjoin.
+
+Next: implement the full meridional pulse-end physical tensor/diagonal/divergence/remainder in original nu/time units, compose the physical flatten interface, then establish continuous pulse-end admissibility. Internal beta support-interface bounds, gap/main/entrance coverage, finite-width upstream bridge feedback, completed global tensor cone, flat/volume/required-domain energy, actual n-dependent recursion, oscillatory correction and final corrected residual/dynamics remain unfinished.
+
+---
+
 # Current: original pulse-end full meridional similarity stress — 2026-10-04
 
 Read docs/PULSE_END_STRESS_2026_10_04.md. The complete original end chart s[-4,0], Z[-1,1], including both beta supports centered at -3 and -1 with ell=.15, now has a source-bound full meridional similarity-stress companion. All original axial/radial transport and shear terms, five partial moment data, signed angular memory, selected quadratic energy loss and analytic absolute pressure source are retained. The physical Ev0/pressure-square/radius bridge is explicitly consumed; no runtime cap is selected as a field value.
