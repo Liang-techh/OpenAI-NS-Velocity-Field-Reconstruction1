@@ -1,4 +1,14 @@
-# Current: whole original collar cone accepted - 2026-10-04
+# Current: signed complete switch enclosures and corrected angular weight - 2026-10-04
+
+Read docs/SWITCH_SIGNED_INTEGRALS_2026_10_04.md. The original full R100-to-R110 switch now has signed source-integral/field enclosures on the entire Z[-1,1] domain, preserving the actual incoming bridge and complete frozen-comparison moments. Both microscopic charts and the postpower are included; exact hb remains a source, with caps used for bounds only. Focused checker PASS:72 finite signed output rows, four common-history/modal checks and eight independent moderate finite-width axial integral fixtures. Read-only review accepted source/normalizations and the inherited comparison-sign use. These are bounded source functions, not selected nonlinear point values.
+
+The older first-switch angular hb^2 term had an extra axial half-weight. It is corrected from -25 to -50 times D_over_R; the source physical switch providers were already correct. Second angular contribution is -25*D_over_R. Combined R110 logF has hb coefficient.6 and hb^2 coefficient-75*D_over_R. Corrected first-switch checker and the complete signed-switch checker pass with current hashes; ordered switchintegrals stage is available.
+
+The whole heat-collar two-vector cone remains accepted as recorded below. NEXT: actual higher Ra-to-R100 width feedback/remainders and subsequent signed common histories; independently build the waiting-region physical stress/remainder companion from retained angular/energy/pressure and zero-meridional histories. Remaining-region cone/flat bounds, global energy, common leading inputs, coupled n=1/n>=2 recursion, oscillatory correction and full corrected residual are unfinished. No global or recursion flag is admitted by this switch increment.
+
+---
+
+# Previous: whole original collar cone accepted - 2026-10-04
 
 Read docs/WHOLE_COLLAR_CONE_2026_10_04.md. The original sigmoid interval offset[0,1] now has a whole-domain source proof using the SAME Gamma reference, complete future moments and actual source amplitudes. Seven positive margins and the directional log inequality pass with current hashes. Exact source joins compose it with the accepted heat proof on[1,3), covering the whole collar offset[0,3), Z[-1,1]. Stress is exactly zero at3; strict inequalities exclude that endpoint.
 

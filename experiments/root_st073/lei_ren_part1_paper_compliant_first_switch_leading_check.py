@@ -1,4 +1,5 @@
 """Independent receipt check for the first R=100 micro-chart leading term."""
+import ast
 import hashlib
 import json
 from pathlib import Path
@@ -87,6 +88,12 @@ def run():
     require(wlo <= pulse <= whi, "independent pulse quadrature")
     require(abs(pulse-mp.mpf("0.5")) < mp.mpf("1e-150"), "exact symmetric pulse integral")
 
+    from lei_ren_part1_paper_compliant_first_switch_leading import switch_control_source_bridge
+    require(record["source_control_bridge"]==switch_control_source_bridge(),"original unweighted angular control")
+    tree=ast.parse((HERE/(PREFIX+"microswitch_mixed_C4.py")).read_text(encoding="utf8"))
+    fn=next(n for n in ast.walk(tree) if isinstance(n,ast.FunctionDef) and n.name=="switch_controls")
+    first=next(n for n in ast.walk(fn) if isinstance(n,ast.If) and ast.unparse(n.test)=="branch == 'first'")
+    require(ast.unparse(first.body[0])=="a = tinyD","independent first angular branch")
     checked=[]
     for label in (".5","0","exact_shared_root"):
         packets=comparison["comparison_point_packets"][label]["macro"]
@@ -95,7 +102,8 @@ def run():
         moments=_packet_moments_correct(c,endpoint);inputs=bridge.inputs(z)
         current=_direction_913(c,z,bridge.delta,phi,v,moments,inputs["p0"],inputs["F0_ratios"],inputs["F0_squared_ratios"])
         saved=record["packets"][label]
-        expected_f=current["D_over_R"]*(-c.mpf(25))
+        expected_f=current["D_over_R"]*(-c.mpf(50))
+        require(endpoints(read_interval(c,saved["exact_angular_first_chart_weight"]))==(mp.mpf(1),mp.mpf(1)),label+" unweighted angular source")
         saved_f=_jet(c,saved["J_logF_hb2"])
         require(_contains(saved_f,expected_f),label+" log-F coefficient")
         for component, source, radius_power, scale_log in (
@@ -112,7 +120,7 @@ def run():
         checked.append(label)
 
     result=dict(all_passed=not failures,failures=failures,
-        leading_hb2_first_switch_checked=True,independent_sigma_integral=pulse,
+        leading_hb2_first_switch_checked=True,original_angular_first_weight1_checked=True,independent_sigma_integral=pulse,
         points_checked=checked,full_first_switch_resolved=False,
         actual_signed_bridge_completed=False,
         input_hashes={NAME:_hash(NAME),SOURCE:_hash(SOURCE),
@@ -120,7 +128,8 @@ def run():
                       COMPARISON_SOURCE:_hash(COMPARISON_SOURCE),
                       COMPARISON_NAME:_hash(COMPARISON_NAME),
                       COMPARISON_CHECK_NAME:_hash(COMPARISON_CHECK_NAME),
-                      PREFIX+"flat_pulse_derivatives.py":_hash(PREFIX+"flat_pulse_derivatives.py")})
+                      PREFIX+"flat_pulse_derivatives.py":_hash(PREFIX+"flat_pulse_derivatives.py"),
+                      PREFIX+"microswitch_mixed_C4.py":_hash(PREFIX+"microswitch_mixed_C4.py")})
     (HERE/(Path(__file__).stem+".json")).write_text(json.dumps(_encode(result),indent=2)+"\n",encoding="utf8")
     print("First-switch leading checker:","PASS" if result["all_passed"] else "FAIL",flush=True)
     if failures: raise RuntimeError("; ".join(failures))

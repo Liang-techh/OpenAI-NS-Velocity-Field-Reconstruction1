@@ -1,3 +1,5 @@
+> Update2026-10-04: R100..110 now has accepted signed source-integral enclosures and corrected width coefficients; see SWITCH_SIGNED_INTEGRALS_2026_10_04.md. Actual higher bridge orders and point recovery remain open.
+
 # Leading signed core-to-R100 bridge coefficient — 2026-10-02
 
 The comparison histories now feed the leading formal-width coefficient from $R_a$ through the original microswitch charts to $R=100$. This includes the first actual core chart and the signed macro integral from the two-chart endpoint $R_2=R_a e^{2h_b}$ to $R=100$. At order $h_b$, the actual cutoff weight on the first chart is $1-\sigma(s)$, whose exact integral is $1/2$ by the pulse reflection symmetry. The second micro chart has $\chi=h_b$, so its leading $h_b^1$ coefficient is zero. On the macro, the frozen comparison fields are their $h_b=0$ inlet values and all six comparison moments retain their exact rates and targets. Their directions from the original (9.13) are finite exponential modes in $\Delta=y-2h_b$; the axial drive uses the original hydrostatic, analytic-pressure, and swirl split.

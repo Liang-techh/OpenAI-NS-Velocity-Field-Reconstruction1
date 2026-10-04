@@ -1,11 +1,12 @@
 """Leading h_b^2 signed correction across the first R=100 micro chart.
 
 The switch is R=100 exp(h_b s), 0<=s<=1.  At leading h_b^2, its smooth
-weight integrates exactly to 1/2; the actual/comparison quotient and current
+axial cutoff integrates exactly to 1/2, while the angular weight is1; the actual/comparison quotient and current
 direction are their R=100 zero-width endpoint values.  All pressure and swirl
 amplitudes remain logarithmic/factored.  Higher orders and the complete
 finite-width switch are deliberately unresolved.
 """
+import ast
 import hashlib
 import json
 from pathlib import Path
@@ -41,6 +42,50 @@ def _tree(value):
     if isinstance(value, dict):
         return {key: _tree(row) for key, row in value.items()}
     return list(value.coefficients)
+
+
+
+def switch_control_source_bridge():
+    """Bind the original unequal angular/axial first-switch weights."""
+    path=HERE/(PREFIX+"microswitch_mixed_C4.py")
+    tree=ast.parse(path.read_text(encoding="utf8"))
+    fn=next(n for n in ast.walk(tree) if isinstance(n,ast.FunctionDef) and n.name=="switch_controls")
+    branch=next(n for n in ast.walk(fn) if isinstance(n,ast.If)
+                and ast.unparse(n.test)=="branch == 'first'")
+    if len(branch.body)!=1 or not isinstance(branch.body[0],ast.Assign):
+        raise ValueError("Original angular first-switch branch changed")
+    if ast.unparse(branch.body[0].targets[0])!="a" or ast.unparse(branch.body[0].value)!="tinyD":
+        raise ValueError("First angular shear must keep unweighted tinyD")
+    if len(branch.orelse)!=1 or not isinstance(branch.orelse[0],ast.Assign):
+        raise ValueError("Original second angular switch branch changed")
+    second="[sum((tinyD[j]*(math.comb(k,j)*complement[k-j]) for j in range(k+1)),tinyD[0]*0)+sig[k]*c.mpf('.8') for k in range(4)]"
+    if ast.dump(branch.orelse[0].value)!=ast.dump(ast.parse(second,mode="eval").body):
+        raise ValueError("Original second angular shear composition changed")
+    expected={
+        "sig":"[cutoff[k]*math.factorial(k) for k in range(5)]",
+        "complement":"[1-sig[0]]+[-row for row in sig[1:]]",
+        "tinyD":"[scale_width(row,k+1) for k,row in enumerate(Dbar_y)]",
+        "logF":"[scale_width(row,1)*(-c.mpf('.5')) for row in a]",
+    }
+    proofs={"first_angular_shear_is_unweighted_tinyD":True}
+    for target,expression in expected.items():
+        wanted=ast.dump(ast.parse(expression,mode="eval").body)
+        found=[n.value for n in ast.walk(fn) if isinstance(n,ast.Assign)
+               and any(ast.unparse(v)==target for v in n.targets)]
+        if sum(ast.dump(v)==wanted for v in found)!=1:
+            raise ValueError("Original angular switch assignment changed: "+target)
+        proofs[target+"_source_binding"]=True
+    post=next(n for n in ast.walk(tree) if isinstance(n,ast.FunctionDef) and n.name=="postpower")
+    for target,expression in {"length":"c.ln(c.mpf(110)/100)-2*self.h","zeta":"length*fraction","theta":"c.exp(-zeta)","phi":"phi2*theta**c.mpf('.4')"}.items():
+        wanted=ast.dump(ast.parse(expression,mode="eval").body)
+        found=[n.value for n in ast.walk(post) if isinstance(n,ast.Assign) and any(ast.unparse(v)==target for v in n.targets)]
+        if sum(ast.dump(v)==wanted for v in found)!=1:
+            raise ValueError("Original complete postpower changed: "+target)
+        proofs["postpower_"+target+"_source_binding"]=True
+    proofs["second_angular_control_source_binding"]=True
+    return dict(identities=proofs,input_hashes={path.name:_hash(path.name)},
+                first_angular_weight="1",first_axial_weight="1-sigma(s)",
+                paper_source="Lei-Ren Part I v2: original 100-to-110 switch prescription")
 
 
 class FirstSwitchLeading:
@@ -81,8 +126,9 @@ class FirstSwitchLeading:
         current = direction(c, z, self.bridge.delta, phi, value, moments,
                             inputs["p0"], inputs["F0_ratios"], inputs["F0_squared_ratios"])
 
-        # d_s log F = -h_b^2 (1-sigma(s))*Dbar/2 + O(h_b^3).
-        jf = current["D_over_R"] * (-c.mpf(100) * self.pulse_weight / 2)
+        # First chart keeps a=hb*Dbar: the angular equation has NO cutoff.
+        # d_s log F=-hb^2*Dbar/2; only the axial shear is switched off.
+        jf = current["D_over_R"] * (-c.mpf(100) / 2)
         # d_s V = -h_b^2 (1-sigma(s))*G + O(h_b^3), with R=100 at this order.
         hydro = current["drive_hydro"] * (-c.mpf(100) * self.pulse_weight)
         pressure = current["drive_pressure"] * (-c.mpf(100) * self.pulse_weight)
@@ -92,6 +138,7 @@ class FirstSwitchLeading:
             source_radius="R=100*exp(hb*s)",
             phase_bounds=[0, 1],
             exact_pulse_weight=self.pulse_weight,
+            exact_angular_first_chart_weight=c.mpf(1),
             endpoint_moments_R100=_tree(moments),
             D_over_R_at_R100=_as_output(current["D_over_R"]),
             J_logF_hb2=_as_output(jf),
@@ -110,6 +157,7 @@ class FirstSwitchLeading:
                 pressure_scale_log=self.pressure_log,
                 swirl_scale_log=self.swirl_log),
             source_equation="V_s=-hb^2*(1-sigma(s))*(phi_actual/barphi)*G(R,Z)",
+            angular_source_equation="logF_s=-hb^2*Dbar(R,Z)/2; no sigma factor",
             source_fields_at_leading_order="comparison moments at exact R=100 endpoint; actual/barphi=1",
             higher_hb_orders_resolved=False,
             full_first_switch_resolved=False,
@@ -123,6 +171,7 @@ class FirstSwitchLeading:
             comparison_source_namespace=self.comparison["original_comparison_source"]["source_namespace"],
             exact_first_switch="first micro chart: R=100*exp(hb*s), 0<=s<=1",
             pulse_weight_identity="integral_0^1(1-sigma(s))ds=1/2",
+            source_control_bridge=switch_control_source_bridge(),
             packets={label: self.packet(label) for label in (".5", "0", "exact_shared_root")},
             leading_hb2_first_switch_only=True,
             full_first_switch_resolved=False,

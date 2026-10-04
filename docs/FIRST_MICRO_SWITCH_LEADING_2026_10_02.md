@@ -1,14 +1,27 @@
-# First micro-switch leading correction — 2026-10-02
+# First micro-switch leading correction - corrected 2026-10-04
 
-The first switch chart in the accepted construction is the short interval $R=100e^{h_bs}$, $0\le s\le1$. The implementation now evaluates its leading $h_b^2$ signed field corrections at the exact $R=100$ comparison-history endpoint for $Z=0$, $Z=0.5$, and the shared root. It uses the original switch equations: $\partial_s\log F=-\frac12h_b^2(1-\sigma(s))\bar D+O(h_b^3)$ and $\partial_sV=-h_b^2(1-\sigma(s))(\phi_{actual}/\bar\phi)G+O(h_b^3)$.
+The first chart is R=100*exp(hb*s), 0<=s<=1. The original prescription
+keeps angular shear a=hb*Dbar and closes only axial shear with
+1-sigma(s). Therefore d_s logF=-hb^2*Dbar/2, while
+d_s V=-hb^2*(1-sigma(s))*(phi_actual/barphi)*G.
 
-At this order, $R=100$, the actual/comparison quotient is $1$, and the six moment histories equal their zero-width comparison endpoint. Pulse reflection symmetry gives $\int_0^1(1-\sigma(s))ds=1/2$; an independent high-precision quadrature verifies this. Pressure and swirl prefactors remain logarithmic and factored. The checker reconstructs the directions and verifies the signed axial-jet coefficients and source logs at all three points.
+The angular hb^2 coefficient is -50*D_over_R(R100). The previous
+-25 coefficient incorrectly used the axial half-weight for the angular
+equation and has been corrected in both producer and checker. The
+physical switch providers already used the correct source equations.
+An AST bridge now binds the original controls and postpower source.
 
-Reproduce with:
+The axial pulse has exact integral1/2 by reflection symmetry. Its hydro,
+pressure and swirl signed jets retain their original positive scale logs
+at source points0, .5 and the exact shared root. The focused checker
+passes with current hashes.
 
-```powershell
-python experiments/root_st073/lei_ren_part1_paper_compliant_first_switch_leading.py
-python experiments/root_st073/lei_ren_part1_paper_compliant_first_switch_leading_check.py
-```
+The full R100-to-R110 signed source-integral enclosures and composed
+width coefficients through order2 are now documented in
+[SWITCH_SIGNED_INTEGRALS_2026_10_04.md](SWITCH_SIGNED_INTEGRALS_2026_10_04.md).
+They preserve the actual incoming bridge field. Higher actual Ra-to-R100
+orders, nonlinear point recovery, global stress/flat remainder and
+genuine recursion remain open.
 
-This is only the leading $h_b^2$ term on the first micro chart. It does not cover the second chart $100e^{h_b}\to100e^{2h_b}$, the subsequent power segment to $R=110$, or controlled higher-order remainders. Full switch completion and `actual_signed_bridge_completed` remain false. The leading full bridge coefficient through $R=100$ remains documented separately in `MACRO_SIGNED_INTEGRALS_2026_10_02.md`.
+Reproduce this focused first-chart packet with stage firstswitchleading,
+or both corrected packet and full switch companion with stage switchintegrals.
