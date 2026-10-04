@@ -1,3 +1,13 @@
+# Current: whole original steep-exit cone and joined outer tail accepted - 2026-10-04
+
+Read docs/STEEP_EXIT_CONE_2026_10_04.md. Original steep_exit phase[0,1], Z[-1,1] now has a whole-domain admissible TWO-VECTOR cone against the SAME full waiting/collar/Gamma moments. The actual variable shear is kappa-2=delta+2*k*(1-sigma) in[delta,2]. Exact S>0 and positive K prove negative shear independently of enclosing cap endpoints. The actual entire source stress box gives positive theta lower approximately2.15989e18 and finite axial absolute upper approximately1.22502; these are normalized proof bounds, not selected physical fields. Original Bmax at q=-wait-1 is AST-bound before enclosure, with waiting_and_current=+bh.
+
+Focused cone producer/checker PASS with338 current checker hashes and11 positive margins. Fresh whole phase/Z bounds and exact source/log identities prove both directional inequalities without phase sampling. Bounded read-only Luna/max review found no material gap. CertifiedSteepExitPhysical validates the receipt/current hashes/family and adds cone metadata to the unchanged physical field; actual interior nu=.7 smoke call PASS, nonzero Etheta retained.
+
+Accepted similarity/physical right joins compose the nonzero cone tail Rtail*exp(-wait-1)<=R<Rtail*exp(3); Gamma stress is exactly zero separately. NEXT: same complete future moments through original steep power and entry, then angular/power/flatten and each regional physical/cone proof. Upstream finite-width feedback, independent global flat/volume/energy bounds, true n-dependent recursion, oscillatory correction and full corrected residual remain unfinished. Completed tensor/global cone and recursion flags stay false.
+
+---
+
 # Current: original steep-exit physical stress and nonzero remainder accepted - 2026-10-04
 
 Read docs/STEEP_EXIT_PHYSICAL_2026_10_04.md. CompliantSteepExitPhysicalC2 maps the accepted SAME full-future stress/pressure through original phase q=-wait-1+t and the unchanged general-K physical transfer. It completes Ttheta_theta=r*partial_z(Tz), preserves nu/lambda units, and retains Etheta=-nu*partial_zz(utheta). Homogeneous angular/energy divergence and stationary pressure modes cancel before enclosure. Actual signed and positive-pressure integrand AST replay proves their exact full-integral split.
