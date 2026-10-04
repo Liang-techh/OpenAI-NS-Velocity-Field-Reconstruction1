@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `0582f1c29ea82f156d1408d6de703a80888241eb`.
+The inspected `main` head before this update is `c4a6876b66136844b99911f0c1fb4118264710f5`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`2ad9447de50be12407489d2d45ba30b5847577e6`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2ad9447de50be12407489d2d45ba30b5847577e6)
+[`84b6a74a8d42a25ee67ed611d2defd1d3ec49c7d`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/84b6a74a8d42a25ee67ed611d2defd1d3ec49c7d)
 on `codex/st073-transition-next`, observed October 4. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,33 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-04 batch: whole-entry source-bound two-vector cone
+
+The [84b6a74a report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/84b6a74a8d42a25ee67ed611d2defd1d3ec49c7d/docs/STEEP_ENTRY_CONE_2026_10_04.md)
+and [checker](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/84b6a74a8d42a25ee67ed611d2defd1d3ec49c7d/experiments/root_st073/lei_ren_part1_paper_compliant_steep_entry_cone_check.json)
+record steep_entry_cone_certified=true on original t[0,1]/Z[-1,1]. This
+supersedes the previous current pending entry-cone state without rewriting
+the older physical/similarity receipts. The raw whole-entry theta interval
+crosses zero and is explicitly not the positivity proof. Actual angular
+terminal/full bump weights and selected coefficient functions give stable
+M0>0, retaining (mu-a)/(1-mu) before enclosure. Native angular ODE comparison
+M_t+(1-mu)*(1-sigma)*M=mu-a+(1-mu)*sigma yields a whole-domain positive lower.
+Exact positive S gives strict shear; actual variable kappa, whole-source Cz
+and source-bound Bmax/log cancellation establish the directional inequality.
+No phase grid, shortened Ts, midpoint field or pressure reset supplies it.
+
+Same-source physical/right joins compose entry/power/exit/waiting/collar on
+Rtail*exp(-wait-Ts-2)<=R<Rtail*exp(3). Gamma exact zero stress is separate.
+This is a regional two-vector cone, not a completed tensor or global cone.
+Generally nonzero entry Etheta remains; upstream angular stress, global flat/
+volume/energy, Ra-to100 feedback, physical-point values and true coefficient
+recursion remain unfinished. Current checker preserves all those global gates.
+Its input hashes were verified against pinned blobs; this is saved-source
+provenance review, not scientific execution or complete proof audit. Replay
+steepentrycone with current prerequisites. Original unlocalized whole-space
+energy remains infinite and the unchanged finite-energy goal unmet; coupled
+n=1, higher temporal recursion/corrections and full corrected NS remain open.
 
 ### 2026-10-04 batch: steep-entry physical decomposition, no cone extension
 
@@ -2652,6 +2679,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The exact-head [84b6a74a run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37220118858)
+ended failure. Its actual log shows the same13 original constrained failures/
+423 passed, four smoke/slice successes and full historical tests skipped.
+No new selected failure appears; regional cone acceptance is not a global pass.
 
 The exact-head [2ad9447d run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37218366353)
 has reached terminal failure. Its actual log was newly read:13 original
