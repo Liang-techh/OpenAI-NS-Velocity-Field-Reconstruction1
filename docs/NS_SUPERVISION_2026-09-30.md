@@ -9,17 +9,62 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `39e96d75e0382fe7bb0ee3029243d77627219ee2`.
+The inspected `main` head before this update is `927e61be9a097b391de08c673f64160eb12f541a`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`99ad7e01de2e9d03773f45ec5c7cdf0317233445`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/99ad7e01de2e9d03773f45ec5c7cdf0317233445)
-on `codex/st073-transition-next`, observed October 4 (research commit October 2). This branch contains the
+[`4d09ce865f23c77d1c946b3e8f0980c42ac739a6`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/4d09ce865f23c77d1c946b3e8f0980c42ac739a6)
+on `codex/st073-transition-next`, observed October 4. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
 NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-04 review batch: conditional heat-pressure candidate and later source transfer
+
+At fixed [b2915119 report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/b2915119f3960bf7fa8d37b9e2ae98d59672be13/docs/HEAT_EXTERIOR_ABSOLUTE_PRESSURE_C4_2026_10_03.md)
+and [checker receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/b2915119f3960bf7fa8d37b9e2ae98d59672be13/experiments/root_st073/lei_ren_part1_paper_compliant_heat_pressure_C4_check.json),
+candidate_checks_passed=true but all_passed=false. Exact absolute-pressure
+transfer was not admitted; default construction rejected it unless explicitly
+allow_conditional=True. Four missing links were shared inlet-buffer callable,
+exact S=1/Rtail/Gamma parameters independent of caps, actual C4 Ptail/forward
+integrals tied to retained P0/Mp/Prv histories, and canonical full positive
+Gamma expectation tied to the derivative evaluator. Source hashes, partial
+unit identities and75 overlapping derivative bounds did not prove transfer.
+The broad forward enclosure and tiny negative tail enclosure did not prove
+physical inconsistency either. This remains the historical b2915119 scope.
+
+The newly observed [4d09ce86 report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/4d09ce865f23c77d1c946b3e8f0980c42ac739a6/docs/HEAT_EXTERIOR_ABSOLUTE_PRESSURE_C4_2026_10_03.md)
+and [refreshed checker](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/4d09ce865f23c77d1c946b3e8f0980c42ac739a6/experiments/root_st073/lei_ren_part1_paper_compliant_heat_pressure_C4_check.json)
+record explicit defining-function and retained-history bridges, including
+actual callable paths, uncapped S, full Gamma expectation and original
+integrals through pulse/flatten/power/waiting/collar. The report counts76
+history bindings and removes the earlier P3 placeholders. Combined receipt
+records no unresolved bindings, source_history_transfer_conditional=false,
+absolute_pressure_same_source_mixed4_available=true and all_passed=true.
+The nested earlier partial bridge still has false flags; it must not be
+confused with the combined top-level result. Both versions' dependency hashes
+were checked against their own pinned Git blobs; hash agreement verifies
+provenance, not mathematical history equivalence or independent proof validity.
+
+Current companion default use no longer requires the conditional override.
+Its scope is Z in[-1,1], exterior t=log(R/Rtail)>=3, axial jets through5 and
+logR/Z mixed derivatives through4. Original dispatcher and inward collar remain
+unchanged. The75 overlap diagnostics remain supplementary; exact source-history
+identities, not interval overlap, are the reported basis of transfer. This
+review reads saved claims/source bindings without executing scientific code
+or independently auditing the entire bridge proof.
+
+The [heat stress equations report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/4d09ce865f23c77d1c946b3e8f0980c42ac739a6/docs/HEAT_EXTERIOR_STRESS_EQUATIONS_2026_10_03.md)
+records the Gamma heat equations and conditional terminal theorem for
+Ttheta=Ctheta(Z)/R and Tz=Cz(Z)/sqrt(R). Actual angular/energy terminal-history
+transfer is still missing, so neither homogeneous constant nor actual exterior
+zero stress is certified. Pressure transfer alone does not close this gate.
+Collar/dispatcher adoption, all-region stress/cone/flat remainder, finite-width
+signed feedback, implicit bump values, full point field and coupled n=1/time
+recursion/full NS remain open. The original unlocalized whole-space energy
+remains infinite and the unchanged finite-energy goal unmet.
 
 ### 2026-10-04 review batch: local morphology, leading integrals and recursion input
 
@@ -2440,6 +2485,13 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The [b2915119 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37167067403)
+and newer exact-head [4d09ce86 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37169193878)
+both ended failure. Both actual logs were read:13 original constrained failed
+identifiers/423 passed, four smoke/slice successes, full historical tests skipped.
+No new selected failure appeared. Conditional candidate checks, subsequently
+admitted companion receipts and repository CI are distinct acceptance layers.
 
 The exact-head [99ad7e01 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37057767656)
 finished failure. Its freshly inspected log shows the same original13 failed
