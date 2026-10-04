@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `8feb27d9fab5a736093845596ad889df035538dc`.
+The inspected `main` head before this update is `fca9d86ca5da4f7d66338cfb0ed2bffa670dcf74`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`03290e2b33e15050be2a68eae0d6ee0975c46799`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/03290e2b33e15050be2a68eae0d6ee0975c46799)
+[`2e436d15c89c90c9198facd2e616d40c35172ac1`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2e436d15c89c90c9198facd2e616d40c35172ac1)
 on `codex/st073-transition-next`, observed October 4. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,40 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-04 batch: whole100-unit flatten and actual energy right interface
+
+The [2e436d15 stress report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/2e436d15c89c90c9198facd2e616d40c35172ac1/docs/FLATTEN_STRESS_2026_10_04.md),
+[physical report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/2e436d15c89c90c9198facd2e616d40c35172ac1/docs/FLATTEN_PHYSICAL_2026_10_04.md)
+and [cone report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/2e436d15c89c90c9198facd2e616d40c35172ac1/docs/FLATTEN_CONE_2026_10_04.md)
+record original t[0,100]/Z[-1,1] full moments, stress mixed3, absolute pressure
+mixed4, completed regional physical decomposition and continuous two-vector cone.
+Native signed incoming pulse memory, selected outer-angular coefficients,
+original sigmoid and variable K_Z/K_ZZ remain; axial viscosity is generally
+nonzero. The right flatten t100/power phase0 interface is now source/physical
+accepted, superseding the previous pending left-power join scope.
+
+The new actual energy bridge replays energy=(ev-Eint/2)*exp(2mu*t)/F^2 and
+the actual outer-power assignment/decay integral. Their difference and axial
+derivatives0..5 vanish for arbitrary smooth shared histories, with original
+half-normalization and full heat future retained. This fills an implementation
+gap left by older abstract normalization/overlap checks; it is not completion
+of a new axial a_p selection. Earlier receipts keep their historical scope.
+The independent [cone checker](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/2e436d15c89c90c9198facd2e616d40c35172ac1/experiments/root_st073/lei_ren_part1_paper_compliant_flatten_cone_check.json)
+consumes the continuous native history bound, signed inlet memory, actual
+variable shear and B logs rather than raw interval positivity or phase samples.
+Joined two-vector coverage becomes Rtail*exp(-wait-Ts-102-Lrel)<=R<
+Rtail*exp(3); Gamma zero stress is separate, full tensor/global cone is false.
+
+Three current receipts' source hashes were verified against pinned blobs;
+moderate fixtures and saved acceptance are not independent scientific execution
+or complete proof audit. Replay flattenstress/flattenphysical/flattencone with
+current prerequisites. Selected pulse-end s[-4,0], both beta supports centered
+at-3/-1, nonzero meridional stress and compatible pressure are next. Its left
+physical/stress join cannot be inferred from older pulse velocity C4 continuity.
+Global flat/volume/energy, finite-width feedback, implicit values, full point
+selection, coupled n=1 and temporal recursion/corrections remain open. Original
+unlocalized whole-space energy remains infinite and the goal unchanged.
 
 ### 2026-10-04 batch: preceding-power physical/right join and normalized-history cone
 
@@ -2743,6 +2777,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The exact-head [2e436d15 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37232057462)
+ended failure. Actual log retains13 original constrained failures/423 passed,
+four smoke/slice successes and full historical tests skipped. No new selected
+failure appears; regional flatten acceptance does not establish global NS.
 
 The exact-head [03290e2b run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37228964234)
 ended failure: actual log retains13 original constrained failures/423 passed,
