@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `ae42659e337d3f10c1791b2f6a47da584d97d93c`.
+The inspected `main` head before this update is `fa74d41e25dadff63b84b6f25d1cb25878501483`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`b775e7f1850c003cef86514fb1e5c1397f29be3b`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b775e7f1850c003cef86514fb1e5c1397f29be3b)
+[`bedd984e552fb713588144da4d4be2e379a5f1bb`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/bedd984e552fb713588144da4d4be2e379a5f1bb)
 on `codex/st073-transition-next`, observed October 4. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,48 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-04 batch: joined regional tail cones and corrected signed switches
+
+The [collar physical report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/bedd984e552fb713588144da4d4be2e379a5f1bb/docs/HEAT_COLLAR_PHYSICAL_2026_10_04.md)
+and [waiting physical report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/bedd984e552fb713588144da4d4be2e379a5f1bb/docs/WAITING_STRESS_PHYSICAL_2026_10_04.md)
+record regional R_B=-div(T_B)+E_B transfer with the completed tensor diagonal.
+Waiting remainder is exactly zero; collar retains its nonzero axial-viscosity
+term, whose lambda exponent alone does not establish flatness. The
+[whole collar cone](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/bedd984e552fb713588144da4d4be2e379a5f1bb/docs/WHOLE_COLLAR_CONE_2026_10_04.md)
+and [waiting cone](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/bedd984e552fb713588144da4d4be2e379a5f1bb/docs/WAITING_CONE_2026_10_04.md)
+consume the actual common future histories and functional join, giving the
+two-vector directional condition on Rt<=R<Rtail*exp(3). This supersedes the
+previous pending regional transfer/direction step. Exact zero stress at the
+Gamma join is separate from strict nonzero-tail inequalities. Completed full
+tensor cone, whole-outer cone and global admissible stress remain false;
+steep-exit/waiting stress join is still pending. Stage-local older false flags
+are not rewritten by the later cone adapters.
+
+The [signed switch report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/bedd984e552fb713588144da4d4be2e379a5f1bb/docs/SWITCH_SIGNED_INTEGRALS_2026_10_04.md)
+corrects first_switch_leading's angular coefficient from -25D/R to -50D/R:
+the angular first chart is unweighted, unlike its axial1-sigma drive. Original
+physical switch source formulas were already correct and are not changed.
+Old leading receipts remain historical and cannot certify the corrected
+angular coefficient. The current [switch checker](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/bedd984e552fb713588144da4d4be2e379a5f1bb/experiments/root_st073/lei_ren_part1_paper_compliant_switch_signed_integrals_check.json)
+records whole-Z signed R100-to110 enclosures through both microscopic charts
+and the postpower segment. These preserve incoming actual R100 histories and
+factored widths/amplitudes, not selected point values. The report says72 finite
+output rows, but the checker counts60; this review uses60 and records the
+documentation discrepancy without changing research artifacts. Ra-to100
+higher finite-width feedback/remainders and actual_signed_bridge_completed
+remain open. Width coefficients are not temporal coefficient recursion.
+
+The six current checker receipts for collar physical/cone, waiting physical/
+cone, signed switches and corrected leading switch were source-hash checked
+against this pinned commit. Saved regional acceptance is not independent
+scientific execution or a complete proof audit. Moderate Cartesian/integral
+fixtures validate formulas, not global extreme-source NS norms. Global
+flatness/energy, implicit bump values, complete physical-point evaluation,
+coupled n=1 and genuine higher temporal recursion/corrections remain unmet.
+Original unlocalized whole-space energy is still infinite and the finite-energy
+goal unchanged. Replay collarphysical, collarcone, waitingcone and switchintegrals
+with their current accepted prerequisites.
 
 ### 2026-10-04 batch: regional heat NS, adopted collar pressure and collar mixed3 stress
 
@@ -2538,6 +2580,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The exact-head [bedd984e run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37186226927)
+ended failure. The actual log retains13 original constrained failed identifiers/
+423 passed; four smoke/slice jobs pass and full historical tests skip. No new
+selected failure appears. Regional cone acceptance is not global NS completion.
 
 The exact-head [b775e7f1 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37177372324)
 ended failure. Its actual log was read:13 failed/423 passed with the same
