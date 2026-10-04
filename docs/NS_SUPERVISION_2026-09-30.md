@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `fa74d41e25dadff63b84b6f25d1cb25878501483`.
+The inspected `main` head before this update is `558bd98a4f7ae3e571a0938024a451ec735d650b`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`bedd984e552fb713588144da4d4be2e379a5f1bb`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/bedd984e552fb713588144da4d4be2e379a5f1bb)
+[`da5d5699982f2be92512a4823305aeb1d807d663`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/da5d5699982f2be92512a4823305aeb1d807d663)
 on `codex/st073-transition-next`, observed October 4. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,47 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-04 batch: steep-exit admission and subsequent steep-power transfer
+
+At fixed d30d1608, the [steep-exit stress report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/d30d1608f418b91d33faf7a8489d20475d78d4e2/docs/STEEP_EXIT_STRESS_2026_10_04.md),
+[physical report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/d30d1608f418b91d33faf7a8489d20475d78d4e2/docs/STEEP_EXIT_PHYSICAL_2026_10_04.md)
+and [cone report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/d30d1608f418b91d33faf7a8489d20475d78d4e2/docs/STEEP_EXIT_CONE_2026_10_04.md)
+record accepted source stress mixed3, pressure mixed4, completed physical tensor/
+divergence/remainder and regional two-vector cone. The same physical source
+joins waiting on its right. Etheta=-nu*partial_zz(utheta) is generally nonzero;
+six mixed2 zeros occur only at the flat waiting endpoint. Stress/divergence
+can remain nonzero there. Do not extend waiting's regional zero remainder
+through steep-exit or infer global flatness from a lambda exponent.
+
+The [d30d1608 steep-power report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/d30d1608f418b91d33faf7a8489d20475d78d4e2/docs/STEEP_POWER_STRESS_2026_10_04.md)
+then covered only same-source similarity stress/absolute pressure and its
+mixed3/mixed4 right joins. Its physical/cone flags were false; theta-stress
+positivity alone was not a cone proof. This remains that commit's history.
+
+The newly observed [da5d5699 physical report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/da5d5699982f2be92512a4823305aeb1d807d663/docs/STEEP_POWER_PHYSICAL_2026_10_04.md)
+and [cone report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/da5d5699982f2be92512a4823305aeb1d807d663/docs/STEEP_POWER_CONE_2026_10_04.md)
+add physical mixed3 stress/completed diagonal and mixed2 divergence/remainder,
+retaining nonzero axial viscosity. Exact exponential-mode cancellations and
+common source endpoint operators establish the right physical join. Whole
+original Ts/Z bounds, strict exact-source shear, kappa-2=2 and the actual Bmax
+log cancellation establish the directional inequality; phase sampling or a
+positive theta interval does not establish it. Joined regional two-vector
+scope becomes Rtail*exp(-wait-1-Ts)<=R<Rtail*exp(3). Gamma zero stress is
+separate; complete tensor/global cone is still false.
+
+Six current stress/physical/cone receipts for steep-exit and steep-power were
+read and their filename/hash bindings verified against the latest pinned
+blobs. Stage-local old false flags are preserved. This is saved-evidence and
+provenance review without scientific execution or complete proof audit;
+moderate fixture errors are not project/global NS norms. Focused stages
+steepexitstress, steepexitphysical, steeppowerstress and steeppowercone require
+current accepted prerequisites. Original steep entry and earlier regions,
+global flat/volume bounds, required physical energy, Ra-to100 finite-width
+feedback, implicit bump values and physical-point selection remain incomplete.
+Coupled n=1/higher recursion and corrected full NS remain open. Original
+unlocalized whole-space energy is still infinite; no goal or source change
+is authorized by this documentation batch.
 
 ### 2026-10-04 batch: joined regional tail cones and corrected signed switches
 
@@ -2580,6 +2621,13 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The requested [d30d1608 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37211886455)
+and newer [da5d5699 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37214448808)
+both ended failure. Both actual logs retain the same13 original constrained
+failed identifiers/423 passed, four smoke/slice successes and full historical
+tests skipped. No new selected failure appears. Regional cones are not full
+tensor/global stress or corrected NS acceptance.
 
 The exact-head [bedd984e run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37186226927)
 ended failure. The actual log retains13 original constrained failed identifiers/
