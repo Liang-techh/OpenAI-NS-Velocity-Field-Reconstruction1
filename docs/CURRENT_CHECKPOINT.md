@@ -1,3 +1,17 @@
+# Current: original100-unit flatten physical stress/remainder accepted - 2026-10-04
+
+Read docs/FLATTEN_PHYSICAL_2026_10_04.md. SAME full moments/absolute pressure and original100-unit flatten now pass through unchanged general-K physical transfer. K_Z/K_ZZ, original sigma, radius, nu/lambda units, completed Ttheta_theta=r*partial_z(Tz) and generally nonzero Etheta=-nu*partial_zz(utheta) remain. The evaluator uses the current stress/pressure packet while provider('flatten') retains native exact logEv2_parts.
+
+Focused producer/checker PASS with362 current hashes,136 finite signed physical rows/60 exact zeros. Five variable-sigma shape/source identities accompany the admitted general-K divergence/remainder proof. Actual sig/sj/flat-endpoint/theta and45 velocity mixed4 identities plus six remainder-operator requirements consume current same-source55 K4/full-moment/stress3/pressure4 identities. Actual production radius/q/source logs and AST-equal physical operators close right power completed stress/diagonal/divergence/remainder. Read-only Luna/max review found no material binding/unit gap.
+
+Accepted unchanged general variable-K Cartesian oracle consumed without rerun: nu=.01/.7,24 divergence mixed2/12 nonzero-remainder mixed2 comparisons. New original flatten adapter/source joins checked separately. Local oracle tolerance is not full corrected NS accuracy.
+
+Read-only incoming-history scan found exact Z-independent Xv=1/r+(Xp-1/r)*exp(-13*r/mu), r=1-mu, from axial_pulse_field.end and the original buffer.power('0',1) ratio. Whole-Z Xv is only an enclosure. Next cone work must AST-bind this route and preserve k*Xv-1=(mu-a)/r+k*(Xp-1/r)*exp(-13*r/mu); no Xv>=1/r assumption.
+
+NEXT: continuous whole original flatten cone. Retain native N=F*X and K_Z correlation in W=(k+b*j)*N/F-b*Z*N_Z/F-1, signed incoming pulse Xv/history, actual kappa-2=2mu-2rho*sigma_t, strict source shear and original inlet B/log factors. This physical increment does not extend the admitted cone tail. Left pulse stress/physical connection, finite-width bridge feedback, completed full-tensor/global cone, global flat/volume/required-domain energy bounds, actual n-dependent recursion, oscillatory cancellation and final corrected Cartesian residual remain unfinished.
+
+---
+
 # Current: original100-unit flatten full moments/stress/pressure accepted - 2026-10-04
 
 Read docs/FLATTEN_STRESS_2026_10_04.md. Whole original t[0,100],Z[-1,1] now has SAME full A/E/P, analytic absolute pressure and variable-K similarity stress. Native forward X, original sigma, selected outer-angular repairs, full heat future, lengths/radius and units remain. Stable normalized (F/f)^2 remaining kernels transport the actual power phase0 datum; original positive q Taylor constant is retained.
