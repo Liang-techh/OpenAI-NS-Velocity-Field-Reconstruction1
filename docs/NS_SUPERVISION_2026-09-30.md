@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `fca9d86ca5da4f7d66338cfb0ed2bffa670dcf74`.
+The inspected `main` head before this update is `4cd8c65ffc086174f576814f2d9edffca70a18b3`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`2e436d15c89c90c9198facd2e616d40c35172ac1`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2e436d15c89c90c9198facd2e616d40c35172ac1)
+[`275a3dedaf6d9555cdf314e0f60ecdb407a8db48`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/275a3dedaf6d9555cdf314e0f60ecdb407a8db48)
 on `codex/st073-transition-next`, observed October 4. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,33 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-04 batch: original pulse-end full meridional similarity stress
+
+The [275a3ded report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/275a3dedaf6d9555cdf314e0f60ecdb407a8db48/docs/PULSE_END_STRESS_2026_10_04.md)
+and [checker receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/275a3dedaf6d9555cdf314e0f60ecdb407a8db48/experiments/root_st073/lei_ren_part1_paper_compliant_pulse_end_stress_C3_check.json)
+record the original s[-4,0]/Z[-1,1] end chart, both beta supports centered
+at -3/-1 with width .15, and full meridional similarity stress mixed3.
+Nonzero Ur/Uz, five partial moments, signed incoming angular history, both
+shears, axial/nonlinear meridional transport and absolute pressure are retained.
+The saved checker accepts 500 finite sector rows and a 30-check independent
+direct-integral fixture with tolerance 1e-55. That moderate fixture explicitly
+does not validate the actual project's NS equations or cone.
+
+Amplitude and pressure-square unit bridges are recorded; full functional
+pulse-to-flatten stress equality remains false. Actual K4/five-moment/stress
+mixed3/pressure mixed4 equality at the interface and derivative joins at all
+four beta endpoints remain dependencies. Physical decomposition, completed
+tensor, actual three-component remainder and pulse-end cone are not built.
+The downstream pure-swirl adapter is insufficient here; cone coverage is
+unchanged. Full pulse coverage, global admissibility, upstream finite-width
+feedback, finite energy, n=1/temporal recursion and corrected NS remain open.
+
+Provenance review checked 331 receipt hash bindings: 330 equal pinned Git
+blob bytes; schedule_pressure.py matches only after LF-to-CRLF conversion.
+No unexplained digest mismatch remains, but byte-level replay depends on
+checkout line endings. This is not scientific execution or a complete proof
+audit. Replay stage pulseendstress only with its current prerequisites.
 
 ### 2026-10-04 batch: whole100-unit flatten and actual energy right interface
 
@@ -2777,6 +2804,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The exact-head [275a3ded run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37235815703)
+ended failure: actual log13 failed/423 passed, with the same13 identifiers
+as 2e436d15. Four smoke/slice jobs pass; full historical tests are skipped.
+No new constrained failure appears; this does not certify pulse-end physics.
 
 The exact-head [2e436d15 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37232057462)
 ended failure. Actual log retains13 original constrained failures/423 passed,
