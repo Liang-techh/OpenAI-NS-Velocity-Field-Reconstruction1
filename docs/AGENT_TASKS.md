@@ -1,3 +1,17 @@
+# Active handoff: exact heat pressure and exterior stress — 2026-10-03
+
+Read docs/HEAT_EXTERIOR_ABSOLUTE_PRESSURE_C4_2026_10_03.md and CURRENT_CHECKPOINT.md. The full Gamma exterior now has a callable companion with SAME-source absolute pressure axial5/mixed4. Existing absolute five-moment closure had already proved pressure normalization; forward interval cancellation obscured its numerical value. Do not repair a purported pressure mismatch by adding a gauge or a fitted tail.
+
+- [x] F39b3-pressure: Bind the admitted absolute closure to the accepted Gamma C4 family/datum using the explicit inlet-amplitude/Rtail/full-Gamma source and pressure-unit bridge; evaluate P from its exact equivalent remaining integral; recover y1..4 via FTC/Leibniz with axial5 data. Retain original P0/Mp forward enclosures, formal positive amplitude logs and full infinite Gamma source. Evidence: compliant_heat_pressure_source_bridge.py, compliant_heat_pressure_C4.py/json and focused independent checker. Hash/interval agreement alone is not the source-equivalence proof.
+- [ ] F39b3-exterior-stress: Derive exact heat PDE and SAME five-terminal-moment stress identity, including the angular normalization and pressure units, on the entire Gamma exterior. Recover inertial/shear stress from equations (3.12)-(3.18), justify homogeneous constants using actual terminal source identities, then distinguish local exterior zero stress from a complete global lift.
+- [ ] F39b3-collar-pressure: Extend equivalent pressure evaluation to original inward collar using its whole future integral and existing common-pressure proof; retain flat joins and high derivatives. Connect the accepted companion to the main source dispatcher with current downstream bindings when integration is complete.
+- [ ] F39b-global: Build all-region physical divergence-form stress, required cone margins and independent flat remainder/volume norms from the common field; full admissibility is still open.
+- [ ] F40-recursion: Once the required leading inputs hold, solve coupled v2 n=1 and independent moment repair, then n>=2, finite-order remainder and smooth divergence-preserving summation. The existing Omega0/R packet is a source term only.
+
+The finite-width signed bridge/second switch, implicit annular values, complete physical point selection, full morphology/dynamics and physical energy remain open. Global stress, recursion and corrected residual completion remain false. Preserve unrelated edits.
+
+---
+
 # Active handoff: finite-width bridge closure — 2026-10-02
 
 Read docs/FIRST_MICRO_SWITCH_LEADING_2026_10_02.md. Stage firstswitchleading; 122 ordered modules. The first R=100 micro chart has a checked leading h_b^2 signed F/V term using the exact pulse weight and endpoint moment histories. It ends at R=100*exp(hb), not R=110.

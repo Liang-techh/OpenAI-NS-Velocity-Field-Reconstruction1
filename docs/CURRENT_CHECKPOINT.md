@@ -1,3 +1,13 @@
+# Current: same-source absolute Gamma pressure mixed4 — 2026-10-03
+
+Read docs/HEAT_EXTERIOR_ABSOLUTE_PRESSURE_C4_2026_10_03.md. New callable CompliantHeatPressureC4.exterior(Z,t) composes the previously admitted absolute five-moment pressure closure with the full Gamma C4 source on Z in[-1,1], t=log(R/Rtail) in[3,infinity]. It supplies axial5 and logR/Z mixed4 pressure bounds from the full remaining pressure integral and its FTC/Leibniz derivatives. Original datum, velocities, repair coefficients and forward histories are retained. The former broad forward pressure intervals reflect enclosure cancellation, not evidence of a physical mismatch; the existing same-source absolute closure permits the tight equivalent tail representation.
+
+Focused producer/checker PASS: original absolute source proof recomputed, explicit production source/unit bridge, direct full Gamma/infinite pressure integral and axial derivative fixture, seven mixed derivatives, 75 actual overlap diagnostics, and admitted full-Z C1 consistency. The bridge binds the inlet amplitude, original Rtail and full Gamma function, proves pressure units equal Ev0^2*theta_base^2/Pstar^2, and propagates the original infinity-offset identity throughout the exterior. Hash agreement and interval overlap are dependency/diagnostic checks only. New provider is a callable companion; the original dispatcher and original collar representation are unchanged. Exterior stress identity, global stress/cone/flat remainder, energy, and coupled positive-order recursion remain uncompleted.
+
+NEXT: independently derive the exact Gamma heat PDE and moment-normalized exterior stress identity using this SAME pressure source; continue all-region leading field and cone/flat-remainder assembly before admitting n=1. The finite-width signed bridge and second R100 switch remain open as recorded below. Do not infer a pressure mismatch or zero physical pressure from a broad sum or a cap endpoint.
+
+---
+
 # Current: first micro-switch leading correction — 2026-10-02
 
 Read docs/FIRST_MICRO_SWITCH_LEADING_2026_10_02.md and docs/MACRO_SIGNED_INTEGRALS_2026_10_02.md. Stage firstswitchleading; 122 ordered modules. The full leading h_b bridge coefficient R_a->100 is checked, and the first R=100 micro chart now has its leading h_b^2 signed F/V correction at Z=0, .5 and the shared root. The exact pulse integral is 1/2, pressure/swirl scales remain factored, and the independent checker passes. This covers only R=100*exp(hb*s), 0<=s<=1; second micro chart, power segment to110, higher terms and full bridge remain unresolved.
