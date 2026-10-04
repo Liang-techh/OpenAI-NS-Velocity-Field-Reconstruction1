@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `27bc7015a7ab1e8b418fe039d3a3d696a3121ad7`.
+The inspected `main` head before this update is `8feb27d9fab5a736093845596ad889df035538dc`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`92840165958077b516311f3edefb3b03df199889`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/92840165958077b516311f3edefb3b03df199889)
+[`03290e2b33e15050be2a68eae0d6ee0975c46799`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/03290e2b33e15050be2a68eae0d6ee0975c46799)
 on `codex/st073-transition-next`, observed October 4. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,38 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-04 batch: preceding-power physical/right join and normalized-history cone
+
+The ba998a24 preceding-power work and current [03290e2b stress report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/03290e2b33e15050be2a68eae0d6ee0975c46799/docs/OUTER_POWER_STRESS_2026_10_04.md),
+[physical report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/03290e2b33e15050be2a68eae0d6ee0975c46799/docs/OUTER_POWER_PHYSICAL_2026_10_04.md)
+and [cone report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/03290e2b33e15050be2a68eae0d6ee0975c46799/docs/OUTER_POWER_CONE_2026_10_04.md)
+record whole original phase[0,1]/Z[-1,1] stress mixed3, pressure mixed4,
+physical completed tensor/decomposition and right angular source/physical joins.
+The generally nonzero angular axial-viscosity remainder remains, as do the
+actual original source scales and common future histories.
+
+The cone source bridge explicitly corrects Xint=f*I_norm, not Xint=I_norm,
+with Xf=exp(-100*(1-mu))*Xv/f+I_norm. Original F/Fc, weighted cell sum and
+endpoint normalization are replayed before using the continuous correlated
+flatten-history lower bound. Current producer/checker receipts were refreshed
+after this correction. Hashes verify provenance, not the integral identity.
+Independent Xf/Xf_Z boxes or raw crossing-zero stress intervals cannot prove
+positivity. Source history, variable shear and actual Bmax logs supply the
+whole-domain directional inequality. The flatten-exit lemma is a boundary
+history result, not physical/stress/cone admission over the100-unit flatten.
+
+The independent [cone checker](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/03290e2b33e15050be2a68eae0d6ee0975c46799/experiments/root_st073/lei_ren_part1_paper_compliant_outer_power_cone_check.json)
+supersedes old stress/physical cone=false flags within its regional adapter.
+Joined two-vector coverage extends to Rtail*exp(-wait-Ts-2-Lrel)<=R<
+Rtail*exp(3), with Gamma zero stress separately. Full tensor/global cone,
+flatten stress and physical left join remain false. Three current receipts'
+filename/hash bindings were checked against pinned blobs; no scientific
+execution or complete proof audit is claimed. Replay outerpowerstress,
+outerpowerphysical and outerpowercone with accepted prerequisites.
+Global flat/volume/energy, finite-width Ra-to100 feedback, implicit bump values,
+physical-point selection, coupled n=1 and higher temporal recursion/corrections
+remain open. Unlocalized whole-space energy stays infinite and its goal unmet.
 
 ### 2026-10-04 batch: angular repair physical stress and independent cone
 
@@ -2711,6 +2743,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The exact-head [03290e2b run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37228964234)
+ended failure: actual log retains13 original constrained failures/423 passed,
+four smoke/slice successes and full historical tests skipped. No new selected
+failure appears; regional preceding-power admission is not global acceptance.
 
 The exact-head [92840165 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37225094770)
 ended failure. Actual log:13 original constrained failures/423 passed, four
