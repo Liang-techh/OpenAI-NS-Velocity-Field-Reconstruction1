@@ -1,3 +1,24 @@
+# Active handoff: whole inactive-gap similarity complete; physical transfer and cone next — 2026-10-04
+
+Read docs/PULSE_GAP_SIMILARITY_2026_10_04.md and CURRENT_CHECKPOINT.md. Use --stage pulsegapsimilarity for this increment. Keep the whole original xi[11,13-4mu],d[4mu,2],Z[-1,1] gap and ordinary d_s=-mu*d_d units. Zero axial input must not remove radial or cumulative histories.
+
+- [x] F39b7-pulse-gap-source: Same selected C5 controls, positive original beta normalization/full weights, complete future, full energy Gram, canonical inlet Pin/U/Xp and same uncapped absolute P0 getter. Replay native logE reduction and both original gap recipes.
+- [x] F39b7-pulse-gap-similarity: All five raw cumulative moments mixed4, full velocity mixed4, meridional stress mixed3 and absolute pressure mixed4 throughout both inactive gap charts. Preserve raw history constants by exact factor cancellation, stable expm1 energy primitive and all source logs. 900 finite signed rows.
+- [x] F39b7-pulse-gap-end-source-join: Source-functional right boundary d=4mu/end s=-4, through velocity4/moment4/stress3/pressure4. Actual new splitter/original full stress source equality and old main/gap functional certificates;42 identities and423 hashes. 489 independent formula/moment comparisons retain three nonzero radial histories.
+- [ ] F39b7-pulse-gap-physical: Pull this same whole-gap companion into original fixed-positive-nu and unchanged-time physical units. Recover symmetric completed tensor, Ttheta_theta=r partial_z(Tz), Cartesian/cylindrical divergence and actual three-component remainder. Ur and radial material/viscous terms remain nonzero; Uz=0 only removes the actual axial-velocity viscosity term. Consume admitted full meridional operators and prove the right completed physical end join. Preserve pressure/source unit factors and required derivative orders.
+- [ ] F39b7-pulse-gap-cone: Continuous bounds on the complete inactive gap. Prove Bh=Uz=Sz=0 from actual gap source; retain nonzero Ur/full moment histories. Use kappa-2=2mu only after this structural-zero proof. Bound separate Mz and mixed-history angular corrections using regrouped B*D1/B*D2 logs, signed angular memory, radial shear and all axial energy/pressure/moment/loss sectors. Establish strict full directional margins and compose end/tail using the actual xi=11 left radius. Completed/global cone remains separate.
+- [ ] F39b7-pulse-main-exit: Full selected main/exit moment, absolute pressure, stress, physical error and cone. Preserve order-one axial amplitude/shear and gp/gp derivatives; continuous correlated bounds must replace terminal tiny-shear estimates. Close source-functional and physical joins at actual xi=11 and all earlier chart boundaries.
+- [ ] F39b7-pulse-entrance: Restore whole entrance source/physical/cone and connect its same original inlet to the upstream companion and main pulse.
+- [ ] F38-bridge-feedback: Actual Ra-to-R100 finite-width moment/quotient/radius feedback and omitted terms; compose accepted R100-to-R110 signed integrals and remaining implicit leading input.
+- [ ] F40-global-admissibility: Compose every region/interface and establish completed full-tensor admissibility independently of regional two-vector criteria.
+- [ ] F40-global-flat-volume-energy: Independent global temporal flat remainder, physical-volume norms and required-domain kinetic energy.
+- [ ] F40-recursion-n1: Actual coupled n=1 recovery on common core interval with compatible datum and independent moment repair.
+- [ ] F40-recursion-higher: Correct n-dependent n>=2 recovery, independent repairs, finite-order remainder and smooth summation with exact divergence structure.
+- [ ] F40-oscillatory-correction: Mean/two-family oscillatory corrections and independently measured averaged quadratic stress cancellation.
+- [ ] F40-corrected-residual-dynamics: Independent full corrected Cartesian residual, energy, measured vortex widths/aspect ratios/scale fits and cumulative particle winding.
+
+---
+
 # Active handoff: continuous pulse-end full-shear cone complete; broader pulse coverage next — 2026-10-04
 
 Read docs/PULSE_END_CONE_2026_10_04.md and CURRENT_CHECKPOINT.md. Use --stage pulseendcone for this increment only. Preserve the same source family, ten sectors, selected C5 controls, signed histories, absolute pressure and exact B/D/H/R logs. No sampled cone proof or numerical cap chosen as a field.

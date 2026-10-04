@@ -1,3 +1,15 @@
+# Current: whole original inactive-gap similarity companion — 2026-10-04
+
+Read docs/PULSE_GAP_SIMILARITY_2026_10_04.md. The complete inactive gap xi[11,13-4mu],d=13-xi in[4mu,2],Z[-1,1] now retains all five raw cumulative moments mixed4, actual velocity mixed4, full meridional stress mixed3 and the same absolute pressure mixed4. Main-scale gap xi[11,12] and end-scale gap s[-1/mu,-4] are one source. Axial input is zero; radial velocity, nonzero raw linear moments, signed angular memory, selected energy loss and analytic pressure datum remain.
+
+Uncapped source factors are kept in exact logs. Actual native logE and both gap recipes are replayed; ordinary stress rows0..3 of the new splitter equal the original full source identically. Raw cumulative moment and absolute-pressure-memory factor cancellations are exact. P0 is the same canonical pressure getter, bounded by the whole end source without choosing a box value. The stable expm1 energy primitive preserves the d=4mu endpoint.
+
+Focused checker PASS:423 current hashes,42 source-function identities,900 finite signed rows and75 structural zero pressure/velocity rows. Three nonzero-radial-history fixtures supply489 independent complete-beta/full-stress/velocity/pressure/all-five-raw-moment comparisons. Tolerance1e-55,max positive enclosure miss3.3585e-71. Actual end s=-4 source-functional velocity4/moment4/stress3/pressure4 joins and original main/gap coordinate/source certificates are consumed. Use --stage pulsegapsimilarity.
+
+NEXT: full physical gap tensor/diagonal/divergence and actual three-component remainder, then continuous whole-gap cone and composition to admitted end/tail. Main/exit/entrance full companions, upstream finite-width bridge feedback, completed global tensor admissibility, global temporal flat/physical-volume/required-domain energy, true n-dependent recursion, oscillatory correction and corrected Cartesian residual/dynamics remain open.
+
+---
+
 # Current: continuous whole pulse-end cone with full axial shear — 2026-10-04
 
 Read docs/PULSE_END_CONE_2026_10_04.md. The complete original s[-4,0],Z[-1,1] end region now satisfies the regional two-vector cone through both beta supports and their complement. Full axial shear is retained: kappa-2=2mu+(2+2mu)*sigma^2. Current ten stress sectors, signed memory, meridional transport, absolute pressure and exact B/D/H/R log recipes remain.
