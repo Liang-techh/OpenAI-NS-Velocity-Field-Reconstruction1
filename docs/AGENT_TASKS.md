@@ -1,3 +1,24 @@
+# Active handoff: pulse-end internal support interfaces complete; continuous cone next — 2026-10-04
+
+Read docs/PULSE_END_SUPPORT_INTERFACES_2026_10_04.md and CURRENT_CHECKPOINT.md. Preserve the current full physical/source family and exact positive log recipes. Use --stage pulseendinterfaces for this increment only. These local support limits are not global temporal flat-remainder evidence.
+
+- [x] F39b7-pulse-end-flat-source: Original four rational support edges, normalized beta derivatives0..4, positive normalization/width scaling, same selected C5 controls and old admitted flat majorants. Keep D as the current exact log factor.
+- [x] F39b7-pulse-end-flat-histories: Both boundary orientations with identical generally nonzero moment/energy/pressure/angular histories. Linear and quadratic source differences through ordinary logR4, without resetting primitives.
+- [x] F39b7-pulse-end-flat-interfaces: Full stress mixed3, velocity mixed4 and physical three-component error mixed2; full nonzero-history nonlinear products and exact endpoint differences. Completed diagonal/divergence mixed2 inherit the current exact linear operators.
+- [ ] F39b7-pulse-end-cone-source: Bind original full S_theta/S_z and kappa=a+b^2/a. In end supports, a=2+2mu while b=2D*(Bhat_s-(.5+mu)Bhat). Keep the axial shear contribution; kappa-2 is not only2mu. Recover T dot S and T dot S_perp using all ten current stress sectors.
+- [ ] F39b7-pulse-end-cone-bounds: Continuous whole s[-4,0],Z[-1,1] bounds over both supports and complement. Derive stable positive angular equilibrium, signed attenuated memory, radial shear, tiny BD corrections and full axial stress/shear bounds in exact logs. Do not use grid samples or cap-selected fields as proof.
+- [ ] F39b7-pulse-end-cone-compose: Check every strict sign/directional/shear-strength margin, consume current source/physical support and flatten interfaces, then extend the admitted regional tail to pulse s=-4. Completed full-tensor/global admissibility remains separate.
+- [ ] F39b7-pulse-gap-main-entrance: Original moments/absolute pressure/stress/physical error/cone across gaps, main, exit and entrance; all adjacent source-functional and physical interfaces.
+- [ ] F38-bridge-feedback: Actual Ra-to-R100 finite-width moment/quotient/radius feedback and omitted terms; compose accepted R100-to-R110 integrals and remaining implicit data.
+- [ ] F40-global-admissibility: Compose every region/interface and establish completed full-tensor admissibility.
+- [ ] F40-global-flat-volume-energy: Independent global temporal flat remainder, physical-volume norms and required-domain kinetic energy.
+- [ ] F40-recursion-n1: Actual coupled n=1 recovery on common core interval with compatible datum and independent moment repair.
+- [ ] F40-recursion-higher: Correct n-dependent n>=2 recovery, independent repairs, finite-order remainder and smooth summation with exact divergence structure.
+- [ ] F40-oscillatory-correction: Mean/two-family oscillatory corrections and independently measured averaged quadratic stress cancellation.
+- [ ] F40-corrected-residual-dynamics: Independent full corrected Cartesian residual, energy, measured vortex widths/aspect ratios/scale fits and cumulative particle winding.
+
+---
+
 # Active handoff: original pulse-end physical tensor and three-component remainder completed — 2026-10-04
 
 Read docs/PULSE_END_PHYSICAL_2026_10_04.md and CURRENT_CHECKPOINT.md. Use --stage pulseendphysical for the bounded new layer. Preserve the same source family, selected C5 coefficients, exact B/D/H/R logs, signed moment histories, complete future and analytic absolute pressure. Check tasks off only when the corresponding current producer/checker and source-functional interface are admitted.

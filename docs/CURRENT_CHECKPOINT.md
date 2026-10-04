@@ -1,3 +1,13 @@
+# Current: four original pulse-end support interfaces closed — 2026-10-04
+
+Read docs/PULSE_END_SUPPORT_INTERFACES_2026_10_04.md. All four original beta boundaries -3±.15/-1±.15 now have whole-Z source-functional flat difference bounds through full stress3, velocity4 and physical error2. The reference shares the exact NONZERO interface moments, future/energy, angular memory and absolute pressure; only local beta input is removed. Nonlinear stress/error products preserve full actual/reference histories.
+
+Focused checker PASS:415 current hashes,21 source/interface identities,6416 finite difference entries,1604 exact endpoint zeros and4812 monotone envelope comparisons. One bounded fixture supplies1448 independent original-beta quadrature/derivative comparisons on both orientations/all four edges, including eight nonzero reference radial histories; tolerance1e-55, maximum positive enclosure miss zero. The admitted current full Cartesian operator is consumed without rerun. Use --stage pulseendinterfaces.
+
+NEXT: continuous whole-end cone with FULL axial shear. The paper kappa=a+b^2/a, a=2+2mu,b=2Uz_y/Utheta; hence kappa-2=2mu+b^2/a inside supports. Derive exact T dot S and cross-direction margins from signed sectors before composition with flatten. Gap/main/entrance, upstream finite-width bridge feedback, completed/global cone, global temporal flat/physical-volume/required-domain energy, true n-dependent recursion and oscillatory correction remain open.
+
+---
+
 # Current: original pulse-end physical tensor and three-component remainder — 2026-10-04
 
 Read docs/PULSE_END_PHYSICAL_2026_10_04.md. The original s[-4,0],Z[-1,1] end chart now has a source-bound physical tensor with completed Ttheta_theta=r*partial_z(Tz), actual full meridional transport and all three remainder components. Physical stress mixed3 and diagonal/divergence/remainder mixed2 preserve the same original beta supports, C5 selection, complete future, analytic absolute pressure, signed tiny history, radius and exact positive log factors.
