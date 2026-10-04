@@ -4,7 +4,7 @@
 
 The current research route is an exploratory **Lei–Ren Part I-oriented ST073 reconstruction**. The long-term deliverable is a nonzero, divergence-free, finite-energy, three-dimensional time-dependent field with quantitatively verified shrinking-core geometry and independently evaluated momentum residuals. This is an independent research repository, not an OpenAI project or a claim to have recovered an exact original field.
 
-> **Reviewed snapshot: 2026-10-04 UTC.** Research branch: `codex/st073-transition-next`, pinned at [`4d09ce86`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/4d09ce865f23c77d1c946b3e8f0980c42ac739a6). The b2915119 heat-pressure candidate was conditional and default-rejected. The newer source/history bridges record transfer of absolute pressure to the exterior mixed4 companion; the original dispatcher and inward collar have not adopted it. Heat equations and a conditional terminal theorem do not yet certify actual exterior zero stress. Signed bridge/switch values remain leading-order only; coupled n=1, global morphology and point-value evaluation remain open. **The current unlocalized source has infinite whole-space physical kinetic energy at every fixed positive tau and therefore does not meet the finite-energy goal.** Stress, independent flat remainder, temporal recursion and full NS validation remain incomplete. These are reviewed records, not scientific code or proofs independently rerun. See the [latest supervision checkpoint](docs/NS_SUPERVISION_2026-09-30.md); other navigation pages retain separately dated snapshots.
+> **Reviewed snapshot: 2026-10-04 UTC.** Research branch: `codex/st073-transition-next`, pinned at [`b775e7f1`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b775e7f1850c003cef86514fb1e5c1397f29be3b). The heat exterior records all three regional physical NS identities, zero completed background stress and zero leading remainder for positive tau; physical Cauchy shear is generally nonzero. Full collar pressure mixed4 is adopted by the rebuilt 33-chart dispatcher/physical assembly. Collar similarity stresses are recovered only through mixed3: kappa>2 does not complete the stress-direction cone or physical tensor/remainder transfer. Signed bridge/switch values remain leading-order only; coupled n=1, global morphology and point-value evaluation remain open. **The current unlocalized source has infinite whole-space physical kinetic energy at every fixed positive tau and therefore does not meet the finite-energy goal.** Global stress, independent flat remainder, temporal recursion and full corrected NS validation remain incomplete. These are reviewed records, not scientific code or proofs independently rerun. See the [latest supervision checkpoint](docs/NS_SUPERVISION_2026-09-30.md); other navigation pages retain separately dated snapshots.
 
 [**Research status and evidence**](docs/RESEARCH_STATUS.md) · [**Choose a version / replay**](docs/CURRENT_CHECKPOINT.md) · [Project goal](docs/PROJECT_GOAL.md) · [Repository map](docs/REPOSITORY_GUIDE.md) · [Documentation](docs/README.md)
 
@@ -33,8 +33,9 @@ Source-bound inner core and exit
   -> local swirl maxima/widths and core atoms     [recorded; no core radial maximum]
   -> comparison R100 / leading bridge-switch terms [recorded; finite-width integrals open]
   -> regular Omega0/R and local n=1 forcing       [recorded; coupled n=1 solve open]
-  -> source-bound exterior absolute-pressure C4   [recorded companion; dispatcher unchanged]
-  -> heat equations / conditional stress theorem [recorded; actual stress constants open]
+  -> collar pressure mixed4 / rebuilt dispatcher [recorded adoption]
+  -> heat exterior regional NS/background T=0    [recorded; tau>0, exterior only]
+  -> collar similarity stress mixed3 / kappa>2   [recorded; direction/physical transfer open]
   -> actual five-moment patch mixed4 / Rm-Rh joins [recorded locally]
   -> whole-space finite energy of current source   [fails: infinite]
   -> complete point-value field / global interfaces [open]

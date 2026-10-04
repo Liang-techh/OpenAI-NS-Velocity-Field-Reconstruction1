@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `927e61be9a097b391de08c673f64160eb12f541a`.
+The inspected `main` head before this update is `ae42659e337d3f10c1791b2f6a47da584d97d93c`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`4d09ce865f23c77d1c946b3e8f0980c42ac739a6`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/4d09ce865f23c77d1c946b3e8f0980c42ac739a6)
+[`b775e7f1850c003cef86514fb1e5c1397f29be3b`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/b775e7f1850c003cef86514fb1e5c1397f29be3b)
 on `codex/st073-transition-next`, observed October 4. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,59 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-04 batch: regional heat NS, adopted collar pressure and collar mixed3 stress
+
+The [b775e7f1 exterior stress report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/b775e7f1850c003cef86514fb1e5c1397f29be3b/docs/HEAT_EXTERIOR_STRESS_C4_2026_10_03.md)
+records actual terminal angular/energy/meridional history transfer and full
+future-integral moment-to-stress identities, superseding the previously
+conditional exterior homogeneous-constant gate. The zero is a terminal
+discrepancy or background stress, not physical energy, which stays positive.
+The [physical heat report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/b775e7f1850c003cef86514fb1e5c1397f29be3b/docs/HEAT_PHYSICAL_NS_2026_10_03.md)
+and [physical checker](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/b775e7f1850c003cef86514fb1e5c1397f29be3b/experiments/root_st073/lei_ren_part1_paper_compliant_heat_physical_C4_check.json)
+bind the actual full Gamma amplitude, pressure integral, viscosity pullback
+and original similarity map. All three regional physical momentum identities
+and divergence vanish; centrifugal radial balance is included. Completed
+divergence-form background T_B and leading E_B vanish locally. The physical
+Cauchy tensor is separate and has generally nonzero angular shear. Scope is
+tau>0, r>0 and log(R/Rtail)>=3; source Z endpoints represent infinity, and
+tau=0 is not certified. This is not whole-field or corrected-NS completion.
+
+The [collar pressure/dispatch report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/b775e7f1850c003cef86514fb1e5c1397f29be3b/docs/HEAT_COLLAR_PRESSURE_DISPATCH_2026_10_03.md)
+binds absolute pressure on offset[0,3] from the same full remaining integral,
+original sigma/phi and unbounded Gamma tail. Exact history/FTC identities
+give mixed4 pressure and waiting/collar/exterior joins. Current dispatcher
+source routes were read: heat_collar uses CompliantCollarPressureC4, and
+heat_exterior uses CompliantHeatStressC4. The rebuilt dispatcher receipt
+records33 exercised routes/3330 finite rows/all_passed; physical assembly
+and its dependency receipt were also inspected and hash-verified. The
+assembly unwraps companions' original heat provider for source offsets.
+This supersedes prior pending adoption, preserving old conditional history.
+Sample-route checks and hash agreement are provenance/operator evidence,
+not independent proofs of history equivalence or global point evaluation.
+
+The [collar stress report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/b775e7f1850c003cef86514fb1e5c1397f29be3b/docs/HEAT_COLLAR_STRESS_2026_10_04.md)
+and [collar checker](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/b775e7f1850c003cef86514fb1e5c1397f29be3b/experiments/root_st073/lei_ren_part1_paper_compliant_collar_stress_C3_check.json)
+recover signed Ttheta/Tz through total logR/Z order3 with actual full moments,
+distinct energy/pressure units and uncapped amplitudes. They record160 finite
+stress bounds,40 endpoint zero rows and exact mixed3 exterior join. Inward
+stress is generally nonzero. Positive swirl/negative angular shear and
+kappa>2 are shear-strength conditions only; collar_cone_certified=false,
+physical_remainder_transfer_pending=true. The completed physical tensor,
+including theta-theta=r*partial_z(Tz), axial-viscosity remainder and independent
+R_B=-div(T_B)+E_B transfer still need verification.
+
+Six current receipts (exterior stress, collar pressure, physical heat, collar
+stress, source dispatcher and physical assembly) report acceptance. All2193
+filename/hash bindings match303 distinct pinned Git blobs. This review
+inspects saved sources/receipts without independent scientific execution or
+complete proof audit. Moderate fixture residuals are formula tests, not
+global extreme-source residual measurements. Focused stages heatcompanions,
+heatphysical and collarstress preserve prerequisites. All-region cone/stress,
+global flat remainder, finite-width bridge/second switch, implicit bump values,
+physical-point selection, coupled n=1 and genuine temporal recursion/corrections
+remain open. Original unlocalized whole-space energy is still infinite and
+the unchanged finite-energy goal unmet.
 
 ### 2026-10-04 review batch: conditional heat-pressure candidate and later source transfer
 
@@ -2485,6 +2538,12 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The exact-head [b775e7f1 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37177372324)
+ended failure. Its actual log was read:13 failed/423 passed with the same
+original constrained identifiers, four smoke/slice successes and full historical
+tests skipped. No new selected failure appeared. Regional physical identities,
+source receipts, research CI and full-field acceptance are distinct scopes.
 
 The [b2915119 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37167067403)
 and newer exact-head [4d09ce86 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37169193878)
