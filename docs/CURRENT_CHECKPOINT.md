@@ -1,3 +1,15 @@
+# Current: waiting physical stress and exact-zero regional remainder - 2026-10-04
+
+Read docs/WAITING_STRESS_PHYSICAL_2026_10_04.md. Original O7 waiting phase[0,1], Z[-1,1] now has source-bound full-future stress mixed3 and absolute pressure mixed4. Actual collar endpoint moments are transported backwards by the constant-K FTC; the collar is never evaluated at a negative offset. Original velocity, pressure datum and forward histories are retained. Actual formula AST replay proves20 mixed stress and15 mixed pressure waiting/collar joins; selected terminal meridional histories plus the actual zero-field source route give the cumulative zeros.
+
+CompliantWaitingPhysicalC2 reuses the accepted general-K physical transfer through an original-phase adapter, maps nu*lambda^(-2-delta), completes T_theta_theta=r*partial_z(Tz), and analytically removes homogeneous angular-inertial/axial-energy divergence before enclosure. Waiting physical swirl is exactly a pure radial power, so E_B=0 regionally and its axial/time velocity derivatives vanish. The background stress/residual remain generally nonzero; pressure retains its datum derivatives.
+
+Ordered waitingphysical stage PASS with current sources. Similarity checker:80 signed stress/60 pressure rows,96 exact meridional zeros,72 flat endpoint K checks. Physical checker:124 finite signed rows,72 exact zeros,314 current input hashes; six independent native Cartesian decomposition errors below1.3e-61 and24 reduced-divergence mixed2 comparisons at nu=.01/.7. The independent fixture uses a convergent analytic future; actual full Gamma history is consumed separately from accepted receipts. Source fixtures are not global NS validation.
+
+NEXT: waiting cone/strict source sign and steep-exit/waiting stress join; extend the common stress decomposition through steep exit/power/entry and angular/power/flatten, while recovering actual Ra-to-R100 higher width feedback and omitted terms. All-region cone/flat-volume bounds, physical energy, common leading data, coupled n=1/n>=2 recursion, oscillatory correction and full corrected residual remain unfinished. No global or recursion flag is admitted.
+
+---
+
 # Current: signed complete switch enclosures and corrected angular weight - 2026-10-04
 
 Read docs/SWITCH_SIGNED_INTEGRALS_2026_10_04.md. The original full R100-to-R110 switch now has signed source-integral/field enclosures on the entire Z[-1,1] domain, preserving the actual incoming bridge and complete frozen-comparison moments. Both microscopic charts and the postpower are included; exact hb remains a source, with caps used for bounds only. Focused checker PASS:72 finite signed output rows, four common-history/modal checks and eight independent moderate finite-width axial integral fixtures. Read-only review accepted source/normalizations and the inherited comparison-sign use. These are bounded source functions, not selected nonlinear point values.
