@@ -1,3 +1,13 @@
+# Current: whole waiting cone and common outer-tail composition - 2026-10-04
+
+Read docs/WAITING_CONE_2026_10_04.md. The original waiting phase[0,1], source Z[-1,1] now has a whole-domain two-vector cone proof using SAME full future endpoint moments. Exact modes control the negative shear across the entire backwards interval; the source theta gap is at least approximately2.6788*epsilon and the axial bound is approximately5.16953*epsilon. The actual source Bmax at q=-wait is AST-bound to original production log factors before enclosure. Exact S=1/Rtail>0 proves the strict source shear sign even though its enclosing box includes zero.
+
+The focused waitingcone producer/checker passes with current sources, fresh whole-Z margins and the exact mode/log theorem; no extra phase sampling or repeated physical fixture is used. Bounded read-only review accepted normalization, conservative bounds and source signs. CertifiedWaitingPhysical consumes the receipt and unchanged physical field, adds local cone metadata only, and keeps completed tensor/global flags false.
+
+Actual functional waiting/collar stress mixed3 and pressure mixed4 joins compose this with the accepted whole collar cone, covering the nonzero tail Rt<=R<Rtail*exp(3). The Gamma join/exterior stress is exactly zero separately; waiting E_B=0 remains accepted. NEXT: actual steep-exit/preceding-region full-moment stress and physical remainder, then all-region cone and independent flat-volume bounds. Upstream finite-width bridge feedback, physical energy, coupled n=1/n>=2 recursion, oscillatory correction and full corrected residual remain unfinished.
+
+---
+
 # Current: waiting physical stress and exact-zero regional remainder - 2026-10-04
 
 Read docs/WAITING_STRESS_PHYSICAL_2026_10_04.md. Original O7 waiting phase[0,1], Z[-1,1] now has source-bound full-future stress mixed3 and absolute pressure mixed4. Actual collar endpoint moments are transported backwards by the constant-K FTC; the collar is never evaluated at a negative offset. Original velocity, pressure datum and forward histories are retained. Actual formula AST replay proves20 mixed stress and15 mixed pressure waiting/collar joins; selected terminal meridional histories plus the actual zero-field source route give the cumulative zeros.
