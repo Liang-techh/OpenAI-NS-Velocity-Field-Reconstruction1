@@ -1,3 +1,15 @@
+# Current: original100-unit flatten full moments/stress/pressure accepted - 2026-10-04
+
+Read docs/FLATTEN_STRESS_2026_10_04.md. Whole original t[0,100],Z[-1,1] now has SAME full A/E/P, analytic absolute pressure and variable-K similarity stress. Native forward X, original sigma, selected outer-angular repairs, full heat future, lengths/radius and units remain. Stable normalized (F/f)^2 remaining kernels transport the actual power phase0 datum; original positive q Taylor constant is retained.
+
+The previously missing actual flatten/power energy connection is closed by replaying both actual energy ASTs, the C5 complete future half-normalization and consumed original complete decomposition. Endpoint energy and axial derivatives0..5 agree for arbitrary smooth histories, not interval overlap.55 actual implementation identities close right K4/full moments/stress3/pressure4; production radius gives q=t-100-Lrel-2-Ts-wait. K_Z/K_ZZ are retained, and later axial a_p selection is not claimed.
+
+Focused producer/checker PASS with259 hashes,80 finite signed stress rows,60 pressure rows and96 exact zeros;11 transport identities/23 bridge facts. One original-sigma fixture checks12 kernel axial5,15 K mixed4 and12 full E/P axial5 comparisons at1e-55, maximum positive miss below4.2e-86. Accepted unchanged general-K stress/pressure oracle consumed without rerun. Read-only Luna/max source review found no material normalization/history gap.
+
+NEXT: flatten variable-K physical decomposition/completed tensor/nonzero axial-viscosity remainder and right physical join, then continuous whole original flatten cone. Left pulse stress/physical connection, finite-width bridge feedback, completed full-tensor/global cone, independent global flat/physical-volume/required-domain energy bounds, actual n-dependent recursion, oscillatory cancellation and final corrected Cartesian residual remain unfinished.
+
+---
+
 # Current: original preceding-power whole two-vector cone accepted - 2026-10-04
 
 Read docs/OUTER_POWER_CONE_2026_10_04.md. Whole original outer_power phase[0,1], Z[-1,1], Lrel-4 now has the original two-vector cone against SAME full moments/absolute pressure, native forward X, velocities and physical units. Completed physical right joins compose the angular/entry/power/exit/waiting/collar tail from Rtail*exp(-wait-Ts-2-Lrel) to Rtail*exp(3); Gamma stress is exactly zero separately.
