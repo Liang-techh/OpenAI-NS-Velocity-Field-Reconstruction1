@@ -1,3 +1,13 @@
+# Current: whole original100-unit flatten cone accepted - 2026-10-04
+
+Read docs/FLATTEN_CONE_2026_10_04.md. The original flatten t[0,100],Z[-1,1] now satisfies the regional two-vector cone and joins the accepted power/angular/entry/exit/waiting/collar tail. Nonzero coverage starts at Rtail*exp(-wait-Ts-102-Lrel); Gamma stress is exactly zero beyond exp(3). Current fields, complete moments/absolute pressure, original sigma/radius and viscosity units remain.
+
+Focused producer/checker PASS:398 current hashes,10 exact identities,14 source bridge facts and26 positive necessary margins. Native W retains K_Z and N_Z correlation. Actual Z-independent signed pulse memory is bounded in logarithms; no Xv>=equilibrium assumption or near-one box subtraction. Eight continuous original-sigma intervals give sigma_t<=.266814 and actual 0<kappa-2<=.369882<2. Original inlet B log/source normalization is AST-replayed. Four independent nonzero signed-memory direct integrals pass1e-60; max comparison error<4.1e-86. Samples do not establish the actual cone.
+
+NEXT: full original selected pulse-end stress and compatible pressure through both supports, then pulse s0/flatten t0 complete source/physical join. Broader pulse/gap/entrance and upstream finite-width bridge/implicit data remain. Completed full-tensor/global cone, independent flat/volume/required-domain energy bounds, actual n-dependent recursion, oscillatory cancellation, corrected Cartesian residual and measured dynamics remain unfinished. Generally nonzero flatten remainder is retained.
+
+---
+
 # Current: original100-unit flatten physical stress/remainder accepted - 2026-10-04
 
 Read docs/FLATTEN_PHYSICAL_2026_10_04.md. SAME full moments/absolute pressure and original100-unit flatten now pass through unchanged general-K physical transfer. K_Z/K_ZZ, original sigma, radius, nu/lambda units, completed Ttheta_theta=r*partial_z(Tz) and generally nonzero Etheta=-nu*partial_zz(utheta) remain. The evaluator uses the current stress/pressure packet while provider('flatten') retains native exact logEv2_parts.
