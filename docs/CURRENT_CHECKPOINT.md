@@ -1,3 +1,15 @@
+# Current: original steep-power complete-future stress and pressure accepted - 2026-10-04
+
+Read docs/STEEP_POWER_STRESS_2026_10_04.md. The original full Ts steep_power on phase[0,1], Z[-1,1] now recovers the SAME complete steep-exit/waiting/collar/Gamma angular, energy and absolute-pressure moments. Exact modes retain unit baselines and source factors before cancellation, with stress mixed3 and full-datum pressure mixed4. Actual source ASTs prove5 K/20 stress/15 pressure right joins on arbitrary terminal axial functions. Original velocities, coefficients and forward histories remain unchanged.
+
+The angular inlet is recovered through the original functional XS+Ts*phase identity, avoiding huge independent AQ/KQ-Ts subtraction. Actual forward nextJ/J(1), backward nextf/terminal integral and original logistic-return AST bindings derive f=J-v+1/2 by FTC and endpoints; the actual signed/forward density split and common zero-history closure prove AQ/KQ=XQ=XS+Ts. Whole-Z XS is enclosed approximately[1.491282615002014,1.506043547510141]; the whole-power normalized theta lower is approximately.8099880972790025. These are directed bounds, not selected fields or a cone certificate.
+
+Focused producer/checker PASS with243 current checker hashes:80 finite signed actual stress rows,60 pressure rows,96 exact meridional zeros. One independent convergent-full-future fixture checks6 finite integrals,30 full-moment derivatives,20 quotient derivatives,40 native original stress mixed3 and30 pressure mixed4 at tolerance1e-60. This fixture is separate from actual source-history admission and global NS accuracy.
+
+NEXT: original-phase general-K steep-power physical transfer with completed tensor/nu-lambda units and retained nonzero Etheta, then its whole-Ts cone. Continue SAME moments through steep entry and angular/power/flatten, plus upstream finite-width feedback and independent global flat/volume/energy bounds. True n-dependent recursion, oscillatory correction and full corrected residual remain unfinished. Steep-power physical/cone and global/recursion gates remain false.
+
+---
+
 # Current: whole original steep-exit cone and joined outer tail accepted - 2026-10-04
 
 Read docs/STEEP_EXIT_CONE_2026_10_04.md. Original steep_exit phase[0,1], Z[-1,1] now has a whole-domain admissible TWO-VECTOR cone against the SAME full waiting/collar/Gamma moments. The actual variable shear is kappa-2=delta+2*k*(1-sigma) in[delta,2]. Exact S>0 and positive K prove negative shear independently of enclosing cap endpoints. The actual entire source stress box gives positive theta lower approximately2.15989e18 and finite axial absolute upper approximately1.22502; these are normalized proof bounds, not selected physical fields. Original Bmax at q=-wait-1 is AST-bound before enclosure, with waiting_and_current=+bh.
