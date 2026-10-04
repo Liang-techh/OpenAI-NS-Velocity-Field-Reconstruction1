@@ -1,5 +1,7 @@
 # Original steep power: complete-future stress and pressure — 2026-10-04
 
+Update: the regional physical decomposition and whole original Ts cone have subsequently passed. Read STEEP_POWER_PHYSICAL_2026_10_04.md and STEEP_POWER_CONE_2026_10_04.md for current scope and the next steep-entry dependency. The next-work list below records the dependencies identified at similarity-stage acceptance.
+
 The original Ts-long steep-power region now recovers the same complete angular, energy and absolute-pressure moments as the accepted steep-exit/waiting/collar/Gamma continuation. The companion supplies signed similarity stress through mixed order 3 and absolute pressure through mixed order 4. Actual formula identities join its right endpoint to steep-exit phase 0. Original coefficients, velocities and pressure datum are retained.
 
 This completes the steep-power similarity companion. Its physical stress/remainder transfer and whole-domain directional cone remain unfinished, as do steep entry and the preceding repair/power/flatten regions. True n-dependent coefficient recursion is not implemented by this increment.

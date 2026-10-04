@@ -1,3 +1,15 @@
+# Current: original full-Ts power physical decomposition and whole cone accepted - 2026-10-04
+
+Read docs/STEEP_POWER_PHYSICAL_2026_10_04.md and docs/STEEP_POWER_CONE_2026_10_04.md. CompliantSteepPowerPhysicalC2 maps SAME complete future stress/absolute pressure through q=-wait-1-Ts*(1-phase) and the unchanged general-K physical transfer. Completed Ttheta_theta=r*partial_z(Tz), nu/lambda units and generally nonzero Etheta=-nu*partial_zz(utheta) are retained. Exact exponential rates cancel homogeneous angular/energy/pressure divergence before enclosure.
+
+Physical producer/checker PASS with330 current hashes:156 finite signed rows/40 exact zeros. Independent native completed-tensor Cartesian decomposition passes at nu=.01/.7 with two nonzero remainders; six errors below3.4e-53,24 divergence and12 remainder mixed2 comparisons below1e-36. Actual packet/source AST bindings prove45 velocity mixed4 rows, both full-pressure routes, six remainder operators and common K4/pressure mixed4 joins. The flat sigma endpoint and exact amplitude/datum are consumed explicitly.
+
+Whole original Ts power phase[0,1]/Z[-1,1] cone producer/checker PASS with350 current hashes/12 margins. Actual source gives kappa-2=2 and strict negative shear from exact S>0; whole normalized theta lower approximately.8099880972790025. Source Bmax is bound at q=-wait-1-Ts, regrouping -1.5Ts+bhTs=-kTs and cancelling shared wait before enclosure. No phase sampling, shortened Ts or cap-defined field is used. Bounded read-only review accepted formulas/scope; actual CertifiedSteepPowerPhysical interior nu=.7 call PASS with remainder retained.
+
+Functional similarity and physical joins now compose the nonzero two-vector cone tail Rtail*exp(-wait-1-Ts)<=R<Rtail*exp(3); Gamma stress is exactly zero separately. NEXT: SAME moments through original steep entry, both joins and regional physical/cone companions, then angular/power/flatten. Upstream finite-width feedback, independent global flat/volume/energy bounds, true n-dependent recursion, oscillatory cancellation and final corrected residual remain unfinished. Completed-tensor/global cone and recursion gates remain false.
+
+---
+
 # Current: original steep-power complete-future stress and pressure accepted - 2026-10-04
 
 Read docs/STEEP_POWER_STRESS_2026_10_04.md. The original full Ts steep_power on phase[0,1], Z[-1,1] now recovers the SAME complete steep-exit/waiting/collar/Gamma angular, energy and absolute-pressure moments. Exact modes retain unit baselines and source factors before cancellation, with stress mixed3 and full-datum pressure mixed4. Actual source ASTs prove5 K/20 stress/15 pressure right joins on arbitrary terminal axial functions. Original velocities, coefficients and forward histories remain unchanged.
