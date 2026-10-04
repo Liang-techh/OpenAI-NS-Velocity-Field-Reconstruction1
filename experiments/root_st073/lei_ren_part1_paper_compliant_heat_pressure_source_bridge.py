@@ -124,6 +124,12 @@ def source_bridge():
     syntax('compliant_collar_Gamma_C4', 'data', 'pressure3', 'self.forward_pressure(Z, 3, Ptail)')
     syntax('compliant_collar_Gamma_C4', 'forward_pressure', 'K', "self.shape(Z, v, False)['K_rows'][0]")
     return dict(identities=proofs,
+                complete_defining_function_history_bridge_verified=False,
+                unresolved_bindings=[
+                    'Bind both inlet buffer objects to the same SharedOuterBuffer callable',
+                    'Bind exact S=exp(-logRtail), independently of all numerical caps',
+                    'Bind actual C4 Ptail/forward_pressure integrals to retained closure P0/Mp/Prv histories',
+                    'Bind canonical full Gamma defining expectation to the C4 derivative evaluator'],
                 shared_defining_heat_function='Full positive Gamma expectation with a=delta/2, xi=2*(1-Z^2)*S*exp(-t)',
                 shared_pressure_tail='A_p=integral_0^infinity exp(-(1+delta)*v)*H(xi*exp(-v))^2/2 dv',
                 pressure_infinity_constant_source='Original P0+Mp(Rv)+(Ev0^2/Pstar^2)*Prv; zero by the independently admitted absolute closure',

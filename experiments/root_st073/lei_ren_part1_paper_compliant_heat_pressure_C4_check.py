@@ -106,10 +106,13 @@ def run():
     read = lambda q: read_interval(c, q)
     overlaps = 0
     for point in record['samples']+[record['whole_Z_inlet'], record['whole_Z_unbounded_exterior']]:
-        if not point['pressure_infinity_offset_exactly_zero_from_source_closure'] or not point['original_pressure_datum_and_forward_history_retained']:
-            raise ValueError('Absolute same-source pressure binding lost')
-        if not point['defining_source_and_pressure_scale_bridge_verified']:
-            raise ValueError('Source/scale bridge missing')
+        if not point['original_pressure_datum_and_forward_history_retained']:
+            raise ValueError('Original pressure history lost')
+        if (point['pressure_infinity_offset_exactly_zero_from_source_closure']
+                or point['defining_source_and_pressure_scale_bridge_verified']
+                or point['absolute_pressure_same_source_mixed4_available']
+                or not point['source_history_transfer_conditional']):
+            raise ValueError('Conditional candidate overclaims source/history transfer')
         if point['heat_exterior_stress_identity_certified'] or point['global_admissible_stress_lift_constructed'] or point['temporal_recursion']:
             raise ValueError('Pressure adapter overclaims stress or recursion')
         ratio = point['pressure_over_Utheta_squared_Taylor']['coefficients'][0]
@@ -139,12 +142,14 @@ def run():
                   defining_source_bridge=bridge,
                   actual_forward_tail_overlap_diagnostics=overlaps,
                   independent_admitted_C1_absolute_pressure_consistent=True,
-                  absolute_pressure_same_source_mixed4_available=True,
+                  absolute_pressure_same_source_mixed4_available=False,
+                  candidate_pressure_tail_mixed4_available=True,
+                  source_history_transfer_conditional=True,
                   heat_exterior_stress_identity_certified=False,
                   global_admissible_stress_lift_constructed=False, temporal_recursion=False,
-                  all_passed=True, input_hashes=hashes)
+                  candidate_checks_passed=True, all_passed=False, input_hashes=hashes)
     Path(__file__).with_suffix('.json').write_text(json.dumps(result, indent=2)+'\n', encoding='utf8')
-    print('Same-source full Gamma pressure: independent infinite integral and mixed derivatives PASS', flush=True)
+    print('Candidate integral and mixed derivatives PASS; full source/history admission remains false', flush=True)
     return result
 
 

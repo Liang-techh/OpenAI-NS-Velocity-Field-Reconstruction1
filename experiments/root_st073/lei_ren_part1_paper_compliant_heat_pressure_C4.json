@@ -1,7 +1,7 @@
 {
   "actual_five_defect_family_sha256": "3983d0ddb33fa85e6ab152ef7e29960f8b95aca3e1e86f1bda0882b39d825894",
   "implicit_source_sha256": "5aec111986d745459eb2e2fece291f1dc3fa7bf986529494df802c2aa2daceae",
-  "scope": "Exact Gamma exterior t=log(R/Rtail)>=3, Z in[-1,1]; leading pressure axial5 and logR/Z mixed4",
+  "scope": "Conditional pressure-tail candidate: Gamma exterior t=log(R/Rtail)>=3, Z in[-1,1]; axial5 and logR/Z mixed4",
   "samples": [
     {
       "Z": {
@@ -913,11 +913,13 @@
           ]
         }
       },
-      "exact_pressure_definition": "P=P0+Mp=-integral_R^infinity Utheta^2/(2rho) drho, by admitted same-source absolute five-moment closure",
-      "pressure_infinity_offset_exactly_zero_from_source_closure": true,
+      "exact_pressure_definition": "Candidate P=-integral_R^infinity Utheta^2/(2rho) drho; equality with retained P0+Mp requires the unresolved source/history bridge",
+      "pressure_infinity_offset_exactly_zero_from_source_closure": false,
       "original_pressure_datum_and_forward_history_retained": true,
-      "defining_source_and_pressure_scale_bridge_verified": true,
-      "absolute_pressure_same_source_mixed4_available": true,
+      "defining_source_and_pressure_scale_bridge_verified": false,
+      "candidate_pressure_tail_mixed4_available": true,
+      "source_history_transfer_conditional": true,
+      "absolute_pressure_same_source_mixed4_available": false,
       "exact_Gamma_exterior_pressure_only": true,
       "heat_exterior_stress_identity_certified": false,
       "global_admissible_stress_lift_constructed": false,
@@ -2092,11 +2094,13 @@
           ]
         }
       },
-      "exact_pressure_definition": "P=P0+Mp=-integral_R^infinity Utheta^2/(2rho) drho, by admitted same-source absolute five-moment closure",
-      "pressure_infinity_offset_exactly_zero_from_source_closure": true,
+      "exact_pressure_definition": "Candidate P=-integral_R^infinity Utheta^2/(2rho) drho; equality with retained P0+Mp requires the unresolved source/history bridge",
+      "pressure_infinity_offset_exactly_zero_from_source_closure": false,
       "original_pressure_datum_and_forward_history_retained": true,
-      "defining_source_and_pressure_scale_bridge_verified": true,
-      "absolute_pressure_same_source_mixed4_available": true,
+      "defining_source_and_pressure_scale_bridge_verified": false,
+      "candidate_pressure_tail_mixed4_available": true,
+      "source_history_transfer_conditional": true,
+      "absolute_pressure_same_source_mixed4_available": false,
       "exact_Gamma_exterior_pressure_only": true,
       "heat_exterior_stress_identity_certified": false,
       "global_admissible_stress_lift_constructed": false,
@@ -3271,11 +3275,13 @@
           ]
         }
       },
-      "exact_pressure_definition": "P=P0+Mp=-integral_R^infinity Utheta^2/(2rho) drho, by admitted same-source absolute five-moment closure",
-      "pressure_infinity_offset_exactly_zero_from_source_closure": true,
+      "exact_pressure_definition": "Candidate P=-integral_R^infinity Utheta^2/(2rho) drho; equality with retained P0+Mp requires the unresolved source/history bridge",
+      "pressure_infinity_offset_exactly_zero_from_source_closure": false,
       "original_pressure_datum_and_forward_history_retained": true,
-      "defining_source_and_pressure_scale_bridge_verified": true,
-      "absolute_pressure_same_source_mixed4_available": true,
+      "defining_source_and_pressure_scale_bridge_verified": false,
+      "candidate_pressure_tail_mixed4_available": true,
+      "source_history_transfer_conditional": true,
+      "absolute_pressure_same_source_mixed4_available": false,
       "exact_Gamma_exterior_pressure_only": true,
       "heat_exterior_stress_identity_certified": false,
       "global_admissible_stress_lift_constructed": false,
@@ -4451,11 +4457,13 @@
         ]
       }
     },
-    "exact_pressure_definition": "P=P0+Mp=-integral_R^infinity Utheta^2/(2rho) drho, by admitted same-source absolute five-moment closure",
-    "pressure_infinity_offset_exactly_zero_from_source_closure": true,
+    "exact_pressure_definition": "Candidate P=-integral_R^infinity Utheta^2/(2rho) drho; equality with retained P0+Mp requires the unresolved source/history bridge",
+    "pressure_infinity_offset_exactly_zero_from_source_closure": false,
     "original_pressure_datum_and_forward_history_retained": true,
-    "defining_source_and_pressure_scale_bridge_verified": true,
-    "absolute_pressure_same_source_mixed4_available": true,
+    "defining_source_and_pressure_scale_bridge_verified": false,
+    "candidate_pressure_tail_mixed4_available": true,
+    "source_history_transfer_conditional": true,
+    "absolute_pressure_same_source_mixed4_available": false,
     "exact_Gamma_exterior_pressure_only": true,
     "heat_exterior_stress_identity_certified": false,
     "global_admissible_stress_lift_constructed": false,
@@ -5630,11 +5638,13 @@
         ]
       }
     },
-    "exact_pressure_definition": "P=P0+Mp=-integral_R^infinity Utheta^2/(2rho) drho, by admitted same-source absolute five-moment closure",
-    "pressure_infinity_offset_exactly_zero_from_source_closure": true,
+    "exact_pressure_definition": "Candidate P=-integral_R^infinity Utheta^2/(2rho) drho; equality with retained P0+Mp requires the unresolved source/history bridge",
+    "pressure_infinity_offset_exactly_zero_from_source_closure": false,
     "original_pressure_datum_and_forward_history_retained": true,
-    "defining_source_and_pressure_scale_bridge_verified": true,
-    "absolute_pressure_same_source_mixed4_available": true,
+    "defining_source_and_pressure_scale_bridge_verified": false,
+    "candidate_pressure_tail_mixed4_available": true,
+    "source_history_transfer_conditional": true,
+    "absolute_pressure_same_source_mixed4_available": false,
     "exact_Gamma_exterior_pressure_only": true,
     "heat_exterior_stress_identity_certified": false,
     "global_admissible_stress_lift_constructed": false,
@@ -5936,6 +5946,13 @@
       "production_compliant_collar_Gamma_C4_pressure3": true,
       "production_compliant_collar_Gamma_C4_K": true
     },
+    "complete_defining_function_history_bridge_verified": false,
+    "unresolved_bindings": [
+      "Bind both inlet buffer objects to the same SharedOuterBuffer callable",
+      "Bind exact S=exp(-logRtail), independently of all numerical caps",
+      "Bind actual C4 Ptail/forward_pressure integrals to retained closure P0/Mp/Prv histories",
+      "Bind canonical full Gamma defining expectation to the C4 derivative evaluator"
+    ],
     "shared_defining_heat_function": "Full positive Gamma expectation with a=delta/2, xi=2*(1-Z^2)*S*exp(-t)",
     "shared_pressure_tail": "A_p=integral_0^infinity exp(-(1+delta)*v)*H(xi*exp(-v))^2/2 dv",
     "pressure_infinity_constant_source": "Original P0+Mp(Rv)+(Ev0^2/Pstar^2)*Prv; zero by the independently admitted absolute closure",
@@ -5944,7 +5961,9 @@
   },
   "pressure_datum_or_velocity_changed": false,
   "exact_pressure_tail_not_a_fitted_correction": true,
-  "absolute_pressure_same_source_mixed4_available": true,
+  "absolute_pressure_same_source_mixed4_available": false,
+  "candidate_pressure_tail_mixed4_available": true,
+  "source_history_transfer_conditional": true,
   "heat_exterior_stress_identity_certified": false,
   "global_admissible_stress_lift_constructed": false,
   "temporal_recursion": false,
@@ -6165,7 +6184,7 @@
     "lei_ren_part1_paper_compliant_collar_Gamma_C4.json": "361b878b1cb6e96dbad58616251ee066228ab5f93a056ff92a2fcabd73bbe042",
     "lei_ren_part1_paper_compliant_collar_Gamma_C4_check.py": "4eaed7c3afba1413bd427d382c5e6158b6eb310274e64f8c9dbe362b056b8478",
     "lei_ren_part1_paper_compliant_collar_Gamma_C4_check.json": "64faabc0df91911f5ded98f69b22cf1f13aa31096f632ac83b9055e89128a19a",
-    "lei_ren_part1_paper_compliant_heat_pressure_C4.py": "ca34ebfeb92184e91f10791e70d00ff5df2633a8d8eaa4ef2df5eb2b42adeb24",
-    "lei_ren_part1_paper_compliant_heat_pressure_source_bridge.py": "a5fa40bc5f61f85d5de3ccfbe2922217716eb02c86d0cda51ba10eb88de0d9fa"
+    "lei_ren_part1_paper_compliant_heat_pressure_C4.py": "a163ea3e69f384367224da42cb49ba7aa9cdb07b5d98106a79c4f56256ff909f",
+    "lei_ren_part1_paper_compliant_heat_pressure_source_bridge.py": "77f6982b18ee3b3f7321673f448425b3c352bf4a8d0bdca3a1c65e8f5e927cde"
   }
 }

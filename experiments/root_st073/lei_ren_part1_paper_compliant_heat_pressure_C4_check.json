@@ -51,6 +51,13 @@
       "production_compliant_collar_Gamma_C4_pressure3": true,
       "production_compliant_collar_Gamma_C4_K": true
     },
+    "complete_defining_function_history_bridge_verified": false,
+    "unresolved_bindings": [
+      "Bind both inlet buffer objects to the same SharedOuterBuffer callable",
+      "Bind exact S=exp(-logRtail), independently of all numerical caps",
+      "Bind actual C4 Ptail/forward_pressure integrals to retained closure P0/Mp/Prv histories",
+      "Bind canonical full Gamma defining expectation to the C4 derivative evaluator"
+    ],
     "shared_defining_heat_function": "Full positive Gamma expectation with a=delta/2, xi=2*(1-Z^2)*S*exp(-t)",
     "shared_pressure_tail": "A_p=integral_0^infinity exp(-(1+delta)*v)*H(xi*exp(-v))^2/2 dv",
     "pressure_infinity_constant_source": "Original P0+Mp(Rv)+(Ev0^2/Pstar^2)*Prv; zero by the independently admitted absolute closure",
@@ -59,11 +66,14 @@
   },
   "actual_forward_tail_overlap_diagnostics": 75,
   "independent_admitted_C1_absolute_pressure_consistent": true,
-  "absolute_pressure_same_source_mixed4_available": true,
+  "absolute_pressure_same_source_mixed4_available": false,
+  "candidate_pressure_tail_mixed4_available": true,
+  "source_history_transfer_conditional": true,
   "heat_exterior_stress_identity_certified": false,
   "global_admissible_stress_lift_constructed": false,
   "temporal_recursion": false,
-  "all_passed": true,
+  "candidate_checks_passed": true,
+  "all_passed": false,
   "input_hashes": {
     "lei_ren_part1_paper_shared_analytic_tube.json": "1e0de95d87056a3841c753877b51a07655d2d04420e8dc0e7a9d42ba59a608d6",
     "lei_ren_part1_paper_shared_linear_resolvent.json": "c7a20b6f4f4de0f5184ea68abfb607ea82b7678d636107a05a252e21429a5c59",
@@ -281,9 +291,9 @@
     "lei_ren_part1_paper_compliant_collar_Gamma_C4.json": "361b878b1cb6e96dbad58616251ee066228ab5f93a056ff92a2fcabd73bbe042",
     "lei_ren_part1_paper_compliant_collar_Gamma_C4_check.py": "4eaed7c3afba1413bd427d382c5e6158b6eb310274e64f8c9dbe362b056b8478",
     "lei_ren_part1_paper_compliant_collar_Gamma_C4_check.json": "64faabc0df91911f5ded98f69b22cf1f13aa31096f632ac83b9055e89128a19a",
-    "lei_ren_part1_paper_compliant_heat_pressure_C4.py": "ca34ebfeb92184e91f10791e70d00ff5df2633a8d8eaa4ef2df5eb2b42adeb24",
-    "lei_ren_part1_paper_compliant_heat_pressure_source_bridge.py": "a5fa40bc5f61f85d5de3ccfbe2922217716eb02c86d0cda51ba10eb88de0d9fa",
-    "lei_ren_part1_paper_compliant_heat_pressure_C4.json": "81658ef1c5509cb1105bbbf971141751e6b6297dc2810137a19f5e9e1dbed49e",
-    "lei_ren_part1_paper_compliant_heat_pressure_C4_check.py": "c2d980a43421b30c2168eb7e8dd9e5db273ccc859ee19f0f331a31f63901fe61"
+    "lei_ren_part1_paper_compliant_heat_pressure_C4.py": "a163ea3e69f384367224da42cb49ba7aa9cdb07b5d98106a79c4f56256ff909f",
+    "lei_ren_part1_paper_compliant_heat_pressure_source_bridge.py": "77f6982b18ee3b3f7321673f448425b3c352bf4a8d0bdca3a1c65e8f5e927cde",
+    "lei_ren_part1_paper_compliant_heat_pressure_C4.json": "ea5dc96f09be834c2f3d79a3b6e26885f154c378789205a07ca976ad9f15a97a",
+    "lei_ren_part1_paper_compliant_heat_pressure_C4_check.py": "dab17f2d54318b001d02367d4fe7f77a13681853671772c73dcfaaf496066083"
   }
 }
