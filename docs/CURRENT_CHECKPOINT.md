@@ -1,3 +1,13 @@
+# Current: original steep-exit full-future stress and pressure accepted - 2026-10-04
+
+Read docs/STEEP_EXIT_STRESS_2026_10_04.md. Original steep_out t[0,1], Z[-1,1] now recovers the SAME complete waiting/collar/Gamma angular, energy and absolute-pressure moments by signed backward FTC. Stable expm1 defects cancel unit baselines before the accepted general-K stress recovery. Exact source Ev0/pressure datum and production q=-wait-1+t radius are explicitly bound; forward histories and original velocities are retained.
+
+Ordered steepexitstress producer/checker PASS with239 current checker hashes:80 finite signed stress rows,60 pressure rows,96 actual meridional-history zeros,24 flat endpoint K coefficient checks. Actual formula ASTs on arbitrary terminal axial functions prove20 stress and15 pressure mixed joins to waiting. One bounded independent original-sigma/convergent-future fixture checks signed integrals, original unnormalized stresses, pressure, full moment derivatives and normalized quotient derivatives. Numeric fixture tolerance2e-7 is not global NS residual accuracy.
+
+The exact source gives kappa-2=delta+2*k*(1-sigma)>=delta and strictly negative shear. Steep-exit directional cone and physical remainder transfer remain unfinished; the accepted waiting/collar cone domain is unchanged. NEXT: original-phase general-K physical transfer, completed tensor and generally nonzero Etheta=-nu*partial_zz(utheta), then steep-exit cone and preceding steep power/entry. Upstream bridge feedback, independent global flat/volume/energy bounds, true coefficient recursion, oscillatory correction and full corrected residual remain open.
+
+---
+
 # Current: whole waiting cone and common outer-tail composition - 2026-10-04
 
 Read docs/WAITING_CONE_2026_10_04.md. The original waiting phase[0,1], source Z[-1,1] now has a whole-domain two-vector cone proof using SAME full future endpoint moments. Exact modes control the negative shear across the entire backwards interval; the source theta gap is at least approximately2.6788*epsilon and the axial bound is approximately5.16953*epsilon. The actual source Bmax at q=-wait is AST-bound to original production log factors before enclosure. Exact S=1/Rtail>0 proves the strict source shear sign even though its enclosing box includes zero.
