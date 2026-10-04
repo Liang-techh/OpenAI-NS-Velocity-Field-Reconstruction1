@@ -1,3 +1,13 @@
+# Current: original steep-exit physical stress and nonzero remainder accepted - 2026-10-04
+
+Read docs/STEEP_EXIT_PHYSICAL_2026_10_04.md. CompliantSteepExitPhysicalC2 maps the accepted SAME full-future stress/pressure through original phase q=-wait-1+t and the unchanged general-K physical transfer. It completes Ttheta_theta=r*partial_z(Tz), preserves nu/lambda units, and retains Etheta=-nu*partial_zz(utheta). Homogeneous angular/energy divergence and stationary pressure modes cancel before enclosure. Actual signed and positive-pressure integrand AST replay proves their exact full-integral split.
+
+Focused producer/checker PASS with322 current hashes:147 finite signed physical rows,49 exact zeros,six actual waiting-endpoint mixed2 remainder zeros. Independent native completed-tensor Cartesian decomposition passes at nu=.01/.7 with both nonzero remainders;24 mixed2 divergence and12 remainder comparisons pass. The moderate polynomial-K/convergent-full-future fixture is separate from actual sigma/Gamma source-history admission and global NS validation.
+
+Actual flat K1..4 at phase1 gives zero remainder and axial/time velocity jets; common source stress/pressure joins and identical physical factors admit the waiting physical right join. Stress/divergence generally remain nonzero. NEXT: whole steep-exit directional cone using variable kappa-2=delta+2*k*(1-sigma), then preceding steep power/entry and angular/power/flatten. Upstream bridge feedback, independent global flat/volume/energy bounds, true n-dependent recursion, oscillatory correction and full corrected residual remain unfinished.
+
+---
+
 # Current: original steep-exit full-future stress and pressure accepted - 2026-10-04
 
 Read docs/STEEP_EXIT_STRESS_2026_10_04.md. Original steep_out t[0,1], Z[-1,1] now recovers the SAME complete waiting/collar/Gamma angular, energy and absolute-pressure moments by signed backward FTC. Stable expm1 defects cancel unit baselines before the accepted general-K stress recovery. Exact source Ev0/pressure datum and production q=-wait-1+t radius are explicitly bound; forward histories and original velocities are retained.

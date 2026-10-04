@@ -184,6 +184,7 @@ WAITINGSTRESS=('waiting_stress_C3','waiting_stress_C3_check')
 WAITINGPHYSICAL=WAITINGSTRESS+('waiting_physical_C2','waiting_physical_C2_check')
 WAITINGCONE=('waiting_cone','waiting_cone_check')
 STEEPEXITSTRESS=('steep_exit_stress_C3','steep_exit_stress_C3_check')
+STEEPEXITPHYSICAL=STEEPEXITSTRESS+('steep_exit_physical_C2','steep_exit_physical_C2_check')
 FRESHCORE=('core_coefficient_rebuild','core_coefficient_rebuild_check')
 AXISAMPLITUDE=('anchored_axis_amplitude','anchored_axis_amplitude_check')
 ROOTPEAK=('root_centered_peak','root_centered_peak_check')
@@ -222,6 +223,7 @@ def stages(stage):
             'waitingphysical':WAITINGPHYSICAL,
             'waitingcone':WAITINGCONE,
             'steepexitstress':STEEPEXITSTRESS,
+            'steepexitphysical':STEEPEXITPHYSICAL,
             'freshcore':FRESHCORE,
             'axisamplitude':AXISAMPLITUDE,
             'rootpeak':ROOTPEAK,
@@ -232,7 +234,7 @@ def stages(stage):
             'macrosignedleading':MACROSIGNEDLEADING,
             'firstswitchleading':FIRSTSWITCHLEADING,
             'switchintegrals':SWITCHINTEGRALS,
-            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS+POSTMIXEDJETS+STEEPJETS+HEATJETS+HEATCOMPANIONS+COLLARSTRESS+PHYSICALFIELD+COREPHYSICAL+FROZENFIELD+BRIDGEPROFILES+SWITCHPROFILES+RESHAPEPROFILES+RESTOREPROFILES+ACTUALPATCH+PATCHMIXED+RESTOREMIXED+RESHAPEMIXED+SWITCHMIXED+BRIDGEMIXED+PREPULSEMIXED+SOURCEDISPATCH+GLOBALPHYSICAL+HEATPHYSICAL+COLLARPHYSICAL+COLLARHEATCONE+COLLARCONE+WAITINGPHYSICAL+WAITINGCONE+STEEPEXITSTRESS+FRESHCORE+AXISAMPLITUDE+ROOTPEAK+ROOTEDFIELD+SWIRLMORPHOLOGY+COREATOMS+COMPARISONPOINTS+MACROSIGNEDLEADING+SWITCHINTEGRALS}[stage]
+            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS+POSTMIXEDJETS+STEEPJETS+HEATJETS+HEATCOMPANIONS+COLLARSTRESS+PHYSICALFIELD+COREPHYSICAL+FROZENFIELD+BRIDGEPROFILES+SWITCHPROFILES+RESHAPEPROFILES+RESTOREPROFILES+ACTUALPATCH+PATCHMIXED+RESTOREMIXED+RESHAPEMIXED+SWITCHMIXED+BRIDGEMIXED+PREPULSEMIXED+SOURCEDISPATCH+GLOBALPHYSICAL+HEATPHYSICAL+COLLARPHYSICAL+COLLARHEATCONE+COLLARCONE+WAITINGPHYSICAL+WAITINGCONE+STEEPEXITPHYSICAL+FRESHCORE+AXISAMPLITUDE+ROOTPEAK+ROOTEDFIELD+SWIRLMORPHOLOGY+COREATOMS+COMPARISONPOINTS+MACROSIGNEDLEADING+SWITCHINTEGRALS}[stage]
 
 
 def run(stage='all',list_only=False):
@@ -382,6 +384,9 @@ def run(stage='all',list_only=False):
         actual_heat_part_collar_cone_certified='collar_heat_cone_check' in completed,
         actual_whole_collar_two_vector_cone_certified='collar_cone_check' in completed,
         actual_R100_R110_signed_source_integral_enclosures_available='switch_signed_integrals_check' in completed,
+        actual_regional_physical_steep_exit_stress_remainder_identity_verified='steep_exit_physical_C2_check' in completed,
+        actual_steep_exit_waiting_physical_stress_remainder_join_verified='steep_exit_physical_C2_check' in completed,
+        actual_steep_exit_regional_remainder_exact_zero=False,
         actual_original_steep_exit_similarity_stress_mixed3_recovered='steep_exit_stress_C3_check' in completed,
         actual_original_steep_exit_absolute_pressure_mixed4_recovered='steep_exit_stress_C3_check' in completed,
         actual_steep_exit_waiting_stress_pressure_functional_joins_verified='steep_exit_stress_C3_check' in completed,
@@ -435,7 +440,7 @@ def run(stage='all',list_only=False):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','postmixedjets','steepjets','heatjets','heatcompanions','collarstress','physicalfield','corephysical','frozenfield','bridgeprofiles','switchprofiles','reshapeprofiles','restoreprofiles','actualpatch','patchmixed','restoremixed','reshapemixed','switchmixed','bridgemixed','prepulsemixed','sourcedispatch','globalphysical','heatphysical','collarphysical','collarheatcone','collarcone','waitingstress','waitingphysical','waitingcone','steepexitstress','freshcore','axisamplitude','rootpeak','rootedfield','swirlmorphology','coreatoms','comparisonpoints','macrosignedleading','firstswitchleading','switchintegrals','all'),default='all')
+    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','postmixedjets','steepjets','heatjets','heatcompanions','collarstress','physicalfield','corephysical','frozenfield','bridgeprofiles','switchprofiles','reshapeprofiles','restoreprofiles','actualpatch','patchmixed','restoremixed','reshapemixed','switchmixed','bridgemixed','prepulsemixed','sourcedispatch','globalphysical','heatphysical','collarphysical','collarheatcone','collarcone','waitingstress','waitingphysical','waitingcone','steepexitstress','steepexitphysical','freshcore','axisamplitude','rootpeak','rootedfield','swirlmorphology','coreatoms','comparisonpoints','macrosignedleading','firstswitchleading','switchintegrals','all'),default='all')
     parser.add_argument('--list',action='store_true',help='Print the ordered modules without running them')
     args=parser.parse_args()
     run(args.stage,args.list)
