@@ -1,3 +1,15 @@
+# Current: original angular full moments/stress/absolute pressure accepted - 2026-10-04
+
+Read docs/ANGULAR_STRESS_2026_10_04.md. SAME complete entry t0 datum is transported through original angular s[-4,0], Z[-1,1], both original compact beta pulses and support crossings. Original selected d_j(Z), forward angular history, velocities, source radius and analytic absolute pressure are retained. K=KR*exp((a-mu)*s)*F retains K_Z and all needed axial derivatives.
+
+Focused producer/checker PASS with251 current hashes:180 finite signed stress mixed3 rows,135 pressure mixed4 rows and216 exact meridional zeros.55 actual AST identities close the angular s0/entry t0 K4/full-moment/stress3/pressure4 join on arbitrary terminal axial functions. Native source ODEs and shared datum identify the actual full energy/pressure histories. Both packet pressure routes agree.
+
+Independent original-beta fixture checks20 stress mixed3 and15 pressure mixed4 comparisons, plus35 doubled-step stability comparisons. Numerical tolerance1e-35 is a local formula check, not global NS accuracy. Fixed170-digit quadrature and1e-26 step give maximum step change below2.4e-46.
+
+NEXT: angular general-K physical adapter, completed tensor and generally nonzero axial-viscosity remainder with K_Z/K_ZZ retained; then whole angular cone using actual kappa-2=2*mu-2*F_s/F. Angular physical/cone gates are not yet admitted. Left preceding-power stress/physical connection, original100-unit flatten, bridge feedback, independent global flat/volume/energy bounds, actual n-dependent recursion, oscillatory cancellation and final corrected Cartesian NS residual remain unfinished.
+
+---
+
 # Current: whole original entry cone and joined outer tail accepted - 2026-10-04
 
 Read docs/STEEP_ENTRY_CONE_2026_10_04.md. Whole original entry t[0,1], Z[-1,1] now has the original two-vector cone against SAME complete power/exit/waiting/collar/Gamma moments. Source velocities, selected angular coefficients, sigmoid, analytic pressure datum, original Ts/radius and physical units remain.
