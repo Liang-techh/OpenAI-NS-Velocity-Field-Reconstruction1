@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `1a2c438d33dc986a4b02a3cb0fd1cd40994a05f5`.
+The inspected `main` head before this update is `7d9386f006ad2ef4520651b44cab563ce31da539`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`205f6f0a09bf1ce45e6ab86c68b659b0af46286d`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/205f6f0a09bf1ce45e6ab86c68b659b0af46286d)
+[`ca2ce856b421e227547431e6aa6d55c4baf3b66b`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ca2ce856b421e227547431e6aa6d55c4baf3b66b)
 on `codex/st073-transition-next`, observed October 4. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,42 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-04 batch: continuous original pulse-end two-vector cone
+
+This checkpoint reviews [2ebf0625](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/2ebf06255aa384f9bc58e5153f6d2cc4ff9005b4),
+not the subsequent gap-similarity commits 080df2d7/ca2ce856. The
+[cone report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/2ebf06255aa384f9bc58e5153f6d2cc4ff9005b4/docs/PULSE_END_CONE_2026_10_04.md)
+and [checker receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/2ebf06255aa384f9bc58e5153f6d2cc4ff9005b4/experiments/root_st073/lei_ren_part1_paper_compliant_pulse_end_cone_check.json)
+accept regional two-vector admissibility on original s[-4,0]/Z[-1,1].
+Both beta supports, all ten stress sectors, signed memory and nonzero axial
+shear remain. The source keeps kappa-2=2mu+(2+2mu)*sigma^2 symbolically,
+avoiding rounded subtraction or the pure-swirl simplification.
+
+Continuous original B/D/H/R logarithmic recipes and current coefficient
+enclosures bound the actual angular corrections, all six axial sectors and
+shear ratio. Correlated modes cancel symbolically before enclosure. Positive
+dot and directional margins are continuous-source evidence, not phase-grid
+sampling. Caps remain bounds rather than defining field values. The current
+selected C5 checker and same-source physical/support interfaces are consumed;
+normalized support bounds restore their accepted parent scales.
+Four independent fixtures give 36 normalization/unit comparisons at tolerance
+1e-60 (saved maximum error 4.9091e-91); these fixtures are distinct from the
+actual continuous source cone argument, not actual-project NS verification.
+
+All 419 receipt input bindings were checked against fixed source blobs:
+418 match exact Git bytes and schedule_pressure.py matches after LF-to-CRLF
+conversion. No unexplained mismatch remains; replay depends on checkout
+bytes. This includes the selected C5, physical and support prerequisites.
+Replay pulseendcone only with the current prerequisites.
+
+Regional joined nonzero-stress coverage now starts at
+Rtail*exp(-wait-Ts-106-Lrel) and ends before Rtail*exp(3); outer Gamma stress
+is zero separately. Only the old pulse-end cone pending state is superseded.
+Gap/main/entrance admissibility and adjacent interfaces, completed tensor/global
+cone, temporal flatness, physical-volume norms/finite energy, upstream
+finite-width feedback, n=1/temporal recursion and corrected full NS remain open.
+No scientific code or complete proof audit was run in this review.
 
 ### 2026-10-04 batch: pulse-end functional/physical join and four beta interfaces
 
@@ -2850,6 +2886,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The exact-head [2ebf0625 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37242372610)
+ended failure:13 failed/423 passed, all13 identifiers unchanged from 205f6f0a.
+Four smoke/slice jobs pass; full historical tests are skipped. Regional cone
+admission does not certify global tensor admissibility or corrected NS.
 
 The exact-head [205f6f0a run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37241254649)
 ended failure:13 failed/423 passed with all13 identifiers unchanged from
