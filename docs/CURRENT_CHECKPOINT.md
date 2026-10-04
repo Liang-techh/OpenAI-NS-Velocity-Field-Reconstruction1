@@ -1,3 +1,15 @@
+# Current: original steep-entry full-future stress and pressure accepted - 2026-10-04
+
+Read docs/STEEP_ENTRY_STRESS_2026_10_04.md. CompliantSteepEntryStressC3 transports the SAME complete original power/exit/waiting/collar/Gamma moments through the whole original entry t[0,1], Z[-1,1]. Actual q=-wait-Ts-2+t gives ordinary q=t derivatives. Original velocities/repair coefficients remain; angular A=K*X retains the actual positive forward history. Energy and absolute pressure use directed signed remaining integrals and the exact common datum.
+
+Entry f=integral_t^1 sigma=1/2-J is separately AST-bound to the actual forward J/remaining f accumulators, shared sigmoid and their half-integral endpoint guards. It is not the accepted exit primitive J-t+1/2. The actual KS is power phase0, with original Ts/epsilon/thetaR/thetaS source bindings. Variable kappa-2=2*mu+2*(1-mu)*sigma lies in[2*mu,2]; source shear is strictly negative.
+
+Focused producer/checker PASS with247 current hashes:80 finite signed stress rows,60 pressure rows,96 exact meridional zeros. Actual AST replay proves55 arbitrary-terminal-function K/full-moment/stress mixed3/pressure mixed4 right joins. Native C4 source consumes187 field/history identities including angular-entry left field/pressure joins. Actual native PS/PQ and power pressure ASTs recover the same PS from full PQ; both packet pressure routes retain the original analytic datum.
+
+One independent original-sigma/complete-convergent-future fixture checks8 integrals,30 full-moment derivatives,20 quotient derivatives,40 original unnormalized stress mixed3 and30 pressure mixed4 rows. Its2e-7 numeric comparison tolerance is not global NS accuracy. NEXT: original entry physical adapter, complete tensor/nonzero axial-viscosity remainder, physical joins and whole entry cone, then upstream angular/power/flatten. No cone coverage is extended by this similarity increment. All entry-physical/cone, upstream angular-stress, global/energy/recursion gates remain false.
+
+---
+
 # Current: original full-Ts power physical decomposition and whole cone accepted - 2026-10-04
 
 Read docs/STEEP_POWER_PHYSICAL_2026_10_04.md and docs/STEEP_POWER_CONE_2026_10_04.md. CompliantSteepPowerPhysicalC2 maps SAME complete future stress/absolute pressure through q=-wait-1-Ts*(1-phase) and the unchanged general-K physical transfer. Completed Ttheta_theta=r*partial_z(Tz), nu/lambda units and generally nonzero Etheta=-nu*partial_zz(utheta) are retained. Exact exponential rates cancel homogeneous angular/energy/pressure divergence before enclosure.
