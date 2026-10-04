@@ -220,23 +220,26 @@
       "acceptance_receipt": "lei_ren_part1_paper_compliant_steep_waiting_C4_check.json"
     },
     "heat_collar": {
-      "provider": "lei_ren_part1_paper_compliant_collar_Gamma_C4",
+      "provider": "lei_ren_part1_paper_compliant_collar_pressure_C4",
       "method": "collar",
       "coverage_coordinate": "t=log(R/Rtail)",
       "domain": "[0,3]",
-      "acceptance_receipt": "lei_ren_part1_paper_compliant_collar_Gamma_C4_check.json"
+      "acceptance_receipt": "lei_ren_part1_paper_compliant_collar_pressure_C4_check.json"
     },
     "heat_exterior": {
-      "provider": "lei_ren_part1_paper_compliant_collar_Gamma_C4",
+      "provider": "lei_ren_part1_paper_compliant_heat_stress_C4",
       "method": "exterior",
       "coverage_coordinate": "t=log(R/Rtail)",
       "domain": "[3,infinity)",
-      "acceptance_receipt": "lei_ren_part1_paper_compliant_collar_Gamma_C4_check.json"
+      "acceptance_receipt": "lei_ren_part1_paper_compliant_heat_stress_C4_check.json"
     }
   },
   "all_profile_source_charts_callable": true,
   "core_to_Rp_pre_pulse_source_chain_available": true,
   "same_actual_inner_five_moment_source_and_pressure_family": true,
+  "full_collar_and_exterior_absolute_pressure_companions_adopted": true,
+  "source_bound_exterior_similarity_stress_companion_adopted": true,
+  "actual_physical_heat_stress_transfer_certified": false,
   "all_absolute_radii_automatically_dispatched": false,
   "uniform_physical_units_assembled": false,
   "full_cartesian_vector_derivatives_certified": false,
@@ -520,7 +523,23 @@
     "lei_ren_part1_paper_compliant_pre_pulse_mixed_C4.json": "30c9dbfdea691bfa899b3e92e70460a2303d6a7277044072fe8e13e8752127b5",
     "lei_ren_part1_paper_compliant_pre_pulse_mixed_C4_check.py": "d4840cd15fc4881d5c7be3d9a1abf5186db11a02a17568da81f51c3819800b35",
     "lei_ren_part1_paper_compliant_pre_pulse_mixed_C4_check.json": "ffdff9f47a6d1de47d9f2180962567a54183f830e9e7b9f18891b02b5d8a0863",
-    "lei_ren_part1_paper_compliant_source_dispatcher.py": "7e18de8020781d9a1898eea99e5c70ea10859bd9b15647f0767c1a43e04597a0"
+    "lei_ren_part1_paper_compliant_heat_pressure_C4.py": "60d7d89c2e24e7e7f30995941a6d6efcba4b85fa4ef9a1dcfee27590b80f022e",
+    "lei_ren_part1_paper_compliant_heat_pressure_source_bridge.py": "fbdd75519d45c464859c4b96aded897722fe5bce5a5e14fa44ef2a003d6dfe9d",
+    "lei_ren_part1_paper_compliant_heat_pressure_history_bridge.py": "a9ac2924af9286b71da146b7b6f26f5eb96e79179babc584ccb4014d1ad70926",
+    "lei_ren_part1_paper_compliant_heat_defining_function_bridge.py": "c39dcd3cadc4955096be26b9e8a8574f53c552838a76442d4470bbeb12d35621",
+    "lei_ren_part1_paper_compliant_collar_pressure_C4.py": "bd2829232fc6abb409e74a9f896b5f7d7e1d4a9139ac69d97a8a3a1f34eabc5d",
+    "lei_ren_part1_paper_compliant_collar_pressure_C4.json": "1673bf27941fc2357afb66630339480a66d01ad57498d7dfcca9e9150147b9c3",
+    "lei_ren_part1_paper_compliant_collar_pressure_C4_check.py": "0c16fbc6ff6d939357a2fd80be820653715e5d19fbd21e28a219fbbeef7dadea",
+    "lei_ren_part1_paper_compliant_collar_pressure_C4_check.json": "67b6ce18f676439e229fac84900593c779a8b69a225a595a8aa53cc14bd3f00f",
+    "lei_ren_part1_paper_schedule_endpoint_enclosures_check.py": "1c71f12b742916e3c79123582de26a0ca225b42cb6910a3fcbef3cd03f422d35",
+    "lei_ren_part1_paper_compliant_heat_terminal_history_bridge.py": "a284eb25def1a8c2bc69ff2d3dce73d9d003f9a67816516863d922dbf4250931",
+    "lei_ren_part1_paper_compliant_heat_terminal_stress_identities.py": "5cb604d5e8f3940df9f2470c17ab2d21bd31264608d6b392c3be8f599d6ffa3a",
+    "lei_ren_part1_paper_compliant_heat_stress_equations.py": "5d02d9902821f704831bfde9a8bd8c73fdf2ad16946da1fac1df0cf50bb911b6",
+    "lei_ren_part1_paper_compliant_heat_stress_C4.py": "cee49436789a7c1922299cfc72eec8796b8b188d980e3b243ed7e53965a2bffb",
+    "lei_ren_part1_paper_compliant_heat_stress_C4.json": "6f8b7a3594f15f8fc99ceac865c583bfc317c5e53a529a1525a90916f8ae4f58",
+    "lei_ren_part1_paper_compliant_heat_stress_C4_check.py": "f0b0d180c1a373e02a923acde356d98c86f70c523cfe0122132b4ef7c2ae711d",
+    "lei_ren_part1_paper_compliant_heat_stress_C4_check.json": "edd8587ebc8a12ee7dc5e4111363e0abf29439c9acf0b0427ed9fc9136996fa8",
+    "lei_ren_part1_paper_compliant_source_dispatcher.py": "da7eb1fc46c2da84f374117df5d2b675112ce936f049c25cc392d79cdde306bb"
   },
   "actual_chart_evaluations": {
     "core": {
@@ -1816,7 +1835,9 @@
       },
       "finite_derivative_rows": 75,
       "derivative_coordinate": "rho,Z",
-      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation"
+      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation",
+      "heat_absolute_pressure_companion_used": false,
+      "heat_exterior_similarity_stress_identity_available": false
     },
     "bridge_first": {
       "coverage_sample": ".5",
@@ -4141,7 +4162,9 @@
       },
       "finite_derivative_rows": 135,
       "derivative_coordinate": "original phase s,Z with factored logR conversion",
-      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation"
+      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation",
+      "heat_absolute_pressure_companion_used": false,
+      "heat_exterior_similarity_stress_identity_available": false
     },
     "bridge_second": {
       "coverage_sample": "1.5",
@@ -6466,7 +6489,9 @@
       },
       "finite_derivative_rows": 135,
       "derivative_coordinate": "original phase s,Z with factored logR conversion",
-      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation"
+      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation",
+      "heat_absolute_pressure_companion_used": false,
+      "heat_exterior_similarity_stress_identity_available": false
     },
     "bridge_macro": {
       "coverage_sample": ".5",
@@ -8791,7 +8816,9 @@
       },
       "finite_derivative_rows": 135,
       "derivative_coordinate": "y=logR,Z; selector fraction is not derivative coordinate",
-      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation"
+      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation",
+      "heat_absolute_pressure_companion_used": false,
+      "heat_exterior_similarity_stress_identity_available": false
     },
     "switch_first": {
       "coverage_sample": ".5",
@@ -11116,7 +11143,9 @@
       },
       "finite_derivative_rows": 135,
       "derivative_coordinate": "original phase s,Z with factored logR conversion",
-      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation"
+      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation",
+      "heat_absolute_pressure_companion_used": false,
+      "heat_exterior_similarity_stress_identity_available": false
     },
     "switch_second": {
       "coverage_sample": "1.5",
@@ -13441,7 +13470,9 @@
       },
       "finite_derivative_rows": 135,
       "derivative_coordinate": "original phase s,Z with factored logR conversion",
-      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation"
+      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation",
+      "heat_absolute_pressure_companion_used": false,
+      "heat_exterior_similarity_stress_identity_available": false
     },
     "switch_power": {
       "coverage_sample": ".5",
@@ -15766,7 +15797,9 @@
       },
       "finite_derivative_rows": 135,
       "derivative_coordinate": "y=logR,Z; selector fraction is not derivative coordinate",
-      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation"
+      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation",
+      "heat_absolute_pressure_companion_used": false,
+      "heat_exterior_similarity_stress_identity_available": false
     },
     "reshape": {
       "coverage_sample": ".5",
@@ -18091,7 +18124,9 @@
       },
       "finite_derivative_rows": 135,
       "derivative_coordinate": "y=logR,Z; selector fraction is not derivative coordinate",
-      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation"
+      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation",
+      "heat_absolute_pressure_companion_used": false,
+      "heat_exterior_similarity_stress_identity_available": false
     },
     "inner_reference": {
       "coverage_sample": ".5",
@@ -20416,7 +20451,9 @@
       },
       "finite_derivative_rows": 135,
       "derivative_coordinate": "y=logR,Z; selector fraction is not derivative coordinate",
-      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation"
+      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation",
+      "heat_absolute_pressure_companion_used": false,
+      "heat_exterior_similarity_stress_identity_available": false
     },
     "axial_restore": {
       "coverage_sample": ".5",
@@ -22741,7 +22778,9 @@
       },
       "finite_derivative_rows": 135,
       "derivative_coordinate": "y=logR,Z; selector fraction is not derivative coordinate",
-      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation"
+      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation",
+      "heat_absolute_pressure_companion_used": false,
+      "heat_exterior_similarity_stress_identity_available": false
     },
     "restore_buffer": {
       "coverage_sample": "-6.5",
@@ -25066,7 +25105,9 @@
       },
       "finite_derivative_rows": 135,
       "derivative_coordinate": "y=logR,Z; selector fraction is not derivative coordinate",
-      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation"
+      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation",
+      "heat_absolute_pressure_companion_used": false,
+      "heat_exterior_similarity_stress_identity_available": false
     },
     "actual_patch": {
       "coverage_sample": "1.5",
@@ -28421,7 +28462,9 @@
       },
       "finite_derivative_rows": 195,
       "derivative_coordinate": "y=logR,Z; selector fraction is not derivative coordinate",
-      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation"
+      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation",
+      "heat_absolute_pressure_companion_used": false,
+      "heat_exterior_similarity_stress_identity_available": false
     },
     "Rh_reference": {
       "coverage_sample": "-2",
@@ -30746,7 +30789,9 @@
       },
       "finite_derivative_rows": 135,
       "derivative_coordinate": "y=logR,Z; selector fraction is not derivative coordinate",
-      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation"
+      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation",
+      "heat_absolute_pressure_companion_used": false,
+      "heat_exterior_similarity_stress_identity_available": false
     },
     "O2_slope": {
       "coverage_sample": ".5",
@@ -33071,7 +33116,9 @@
       },
       "finite_derivative_rows": 135,
       "derivative_coordinate": "y=logR,Z; selector fraction is not derivative coordinate",
-      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation"
+      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation",
+      "heat_absolute_pressure_companion_used": false,
+      "heat_exterior_similarity_stress_identity_available": false
     },
     "O2_axial": {
       "coverage_sample": ".5",
@@ -35396,7 +35443,9 @@
       },
       "finite_derivative_rows": 135,
       "derivative_coordinate": "y=logR,Z; selector fraction is not derivative coordinate",
-      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation"
+      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation",
+      "heat_absolute_pressure_companion_used": false,
+      "heat_exterior_similarity_stress_identity_available": false
     },
     "O2_buffer": {
       "coverage_sample": "5",
@@ -37721,7 +37770,9 @@
       },
       "finite_derivative_rows": 135,
       "derivative_coordinate": "y=logR,Z; selector fraction is not derivative coordinate",
-      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation"
+      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation",
+      "heat_absolute_pressure_companion_used": false,
+      "heat_exterior_similarity_stress_identity_available": false
     },
     "O3_slope_mu": {
       "coverage_sample": ".5",
@@ -40046,7 +40097,9 @@
       },
       "finite_derivative_rows": 135,
       "derivative_coordinate": "y=logR,Z; selector fraction is not derivative coordinate",
-      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation"
+      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation",
+      "heat_absolute_pressure_companion_used": false,
+      "heat_exterior_similarity_stress_identity_available": false
     },
     "O3_power": {
       "coverage_sample": ".5",
@@ -42371,7 +42424,9 @@
       },
       "finite_derivative_rows": 135,
       "derivative_coordinate": "y=logR,Z; selector fraction is not derivative coordinate",
-      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation"
+      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation",
+      "heat_absolute_pressure_companion_used": false,
+      "heat_exterior_similarity_stress_identity_available": false
     },
     "pulse_entrance": {
       "coverage_sample": "0",
@@ -43409,7 +43464,9 @@
       },
       "finite_derivative_rows": 60,
       "derivative_coordinate": "y=logR,Z; selector fraction is not derivative coordinate",
-      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation"
+      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation",
+      "heat_absolute_pressure_companion_used": false,
+      "heat_exterior_similarity_stress_identity_available": false
     },
     "pulse_main": {
       "coverage_sample": "5",
@@ -44447,7 +44504,9 @@
       },
       "finite_derivative_rows": 60,
       "derivative_coordinate": "y=logR,Z; selector fraction is not derivative coordinate",
-      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation"
+      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation",
+      "heat_absolute_pressure_companion_used": false,
+      "heat_exterior_similarity_stress_identity_available": false
     },
     "pulse_exit": {
       "coverage_sample": "10.5",
@@ -45485,7 +45544,9 @@
       },
       "finite_derivative_rows": 60,
       "derivative_coordinate": "y=logR,Z; selector fraction is not derivative coordinate",
-      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation"
+      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation",
+      "heat_absolute_pressure_companion_used": false,
+      "heat_exterior_similarity_stress_identity_available": false
     },
     "pulse_gap": {
       "coverage_sample": "11.5",
@@ -46523,7 +46584,9 @@
       },
       "finite_derivative_rows": 60,
       "derivative_coordinate": "y=logR,Z; selector fraction is not derivative coordinate",
-      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation"
+      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation",
+      "heat_absolute_pressure_companion_used": false,
+      "heat_exterior_similarity_stress_identity_available": false
     },
     "pulse_gap_end": {
       "coverage_sample": "-5",
@@ -47561,7 +47624,9 @@
       },
       "finite_derivative_rows": 60,
       "derivative_coordinate": "y=logR,Z; selector fraction is not derivative coordinate",
-      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation"
+      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation",
+      "heat_absolute_pressure_companion_used": false,
+      "heat_exterior_similarity_stress_identity_available": false
     },
     "pulse_end": {
       "coverage_sample": "-2",
@@ -48599,7 +48664,9 @@
       },
       "finite_derivative_rows": 60,
       "derivative_coordinate": "y=logR,Z; selector fraction is not derivative coordinate",
-      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation"
+      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation",
+      "heat_absolute_pressure_companion_used": false,
+      "heat_exterior_similarity_stress_identity_available": false
     },
     "flatten": {
       "coverage_sample": "50",
@@ -49637,7 +49704,9 @@
       },
       "finite_derivative_rows": 60,
       "derivative_coordinate": "y=logR,Z; selector fraction is not derivative coordinate",
-      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation"
+      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation",
+      "heat_absolute_pressure_companion_used": false,
+      "heat_exterior_similarity_stress_identity_available": false
     },
     "outer_power": {
       "coverage_sample": ".5",
@@ -50675,7 +50744,9 @@
       },
       "finite_derivative_rows": 60,
       "derivative_coordinate": "y=logR,Z; selector fraction is not derivative coordinate",
-      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation"
+      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation",
+      "heat_absolute_pressure_companion_used": false,
+      "heat_exterior_similarity_stress_identity_available": false
     },
     "outer_angular": {
       "coverage_sample": "-2",
@@ -51713,7 +51784,9 @@
       },
       "finite_derivative_rows": 60,
       "derivative_coordinate": "y=logR,Z; selector fraction is not derivative coordinate",
-      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation"
+      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation",
+      "heat_absolute_pressure_companion_used": false,
+      "heat_exterior_similarity_stress_identity_available": false
     },
     "steep_entry": {
       "coverage_sample": ".5",
@@ -52751,7 +52824,9 @@
       },
       "finite_derivative_rows": 60,
       "derivative_coordinate": "y=logR,Z; selector fraction is not derivative coordinate",
-      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation"
+      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation",
+      "heat_absolute_pressure_companion_used": false,
+      "heat_exterior_similarity_stress_identity_available": false
     },
     "steep_power": {
       "coverage_sample": ".5",
@@ -53789,7 +53864,9 @@
       },
       "finite_derivative_rows": 60,
       "derivative_coordinate": "y=logR,Z; selector fraction is not derivative coordinate",
-      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation"
+      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation",
+      "heat_absolute_pressure_companion_used": false,
+      "heat_exterior_similarity_stress_identity_available": false
     },
     "steep_exit": {
       "coverage_sample": ".5",
@@ -54827,7 +54904,9 @@
       },
       "finite_derivative_rows": 60,
       "derivative_coordinate": "y=logR,Z; selector fraction is not derivative coordinate",
-      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation"
+      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation",
+      "heat_absolute_pressure_companion_used": false,
+      "heat_exterior_similarity_stress_identity_available": false
     },
     "waiting": {
       "coverage_sample": ".5",
@@ -55865,7 +55944,9 @@
       },
       "finite_derivative_rows": 60,
       "derivative_coordinate": "y=logR,Z; selector fraction is not derivative coordinate",
-      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation"
+      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation",
+      "heat_absolute_pressure_companion_used": false,
+      "heat_exterior_similarity_stress_identity_available": false
     },
     "heat_collar": {
       "coverage_sample": "1.5",
@@ -56644,88 +56725,88 @@
           },
           "P_over_Pstar_squared": {
             "y0_Z0": {
-              "lower": "-0.000772687426544160223618414209607798104456982703795016701272591298797853431753538378144385235",
-              "upper": "0.00077070028943357263898616783140888088673517026387252241342247112526996363128910014714103831",
-              "width": "0.00154338771597773284464938381432830283301882445812225341796875",
+              "lower": "-1.66214873487617239867335168127252934979965527125333126665195747726026113608402671715842561e-18400774051555611783",
+              "upper": "0.0",
+              "width": "1.66214873487617251791368966451294403464915981270235827497809e-18400774051555611783",
               "lower_exact_mpf_tuple": [
                 1,
-                10551891788392965306737815772748758726124710156814170212865100607013908129069419897487375481114610800503582667769455303802668149549673965180748648957759183191504091431949062727924802191088875795504356828148380234807751243115886970705796931585,
-                -811,
+                8849140052288087642285964534758823219552822999587505718214925234789214964598930020118039806228823392025530977133323198554189261429237938763811100555782313213741057262544830162753419797373796798424590073165508112123437187162170833873561677013,
+                -61126048289536946050,
                 801
               ],
               "upper_exact_mpf_tuple": [
                 0,
-                10524755258097138495022695776113995557681650725171042353815254774684493685801319643919906364877760471671775970247263356261347245439596355368005956270354805472567015449406751467144923783582090222369508614124596924644165750749236840051507212295,
-                -811,
-                801
+                0,
+                0,
+                0
               ]
             },
             "y0_Z1": {
-              "lower": "-0.0012331204630937162223778685302542094187762724221960358614759538004319418100625602354256613",
-              "upper": "0.00123629988247065635778946273537247696713117232607202672203614607807656549080566140503101638",
-              "width": "0.0024694203455643726381751879017656392534263432025909423828125",
+              "lower": "-5.33761987186057606139932183384712388375712715757672311127190048054582228396793689463783065e-43752951633698898338",
+              "upper": "0.0",
+              "width": "5.33761987186057593829412005829323860648236337188694897476713e-43752951633698898338",
               "lower_exact_mpf_tuple": [
                 1,
-                8419804206477710796018156620891196446145320580136833883052203819747594948641055715135925091902208377337420776197810685009077796351677084294404765016283844378393579415664903761126844860559787986558028088133801955934399772303697721952117256193,
-                -810,
+                10308506290289617407229073269701467335632347975570416608596890212400766591876782639293232645141520218507795584542589351492805894028934048072045066350854440048897909466410845299053223886386803475344044349256200340849746214274267016434423936933,
+                -145344159266232290212,
                 801
               ],
               "upper_exact_mpf_tuple": [
                 0,
-                4220756715357186122695126309099503490449884062725668085146040242805563251627767958994950192445844320201433067107782121521067259819869586072299459583103673276431653044709873797464467959588492413870532132842289885813566911394200663326863029249,
-                -809,
-                800
+                0,
+                0,
+                0
               ]
             },
             "y0_Z2": {
-              "lower": "-0.00049451995298826254311578509414899078685246893042881068881445843123062619632226456201240655",
-              "upper": "0.000493248185237486488951147412101683767510508968878414344590381520172776724025024094170264518",
-              "width": "0.0009877681382257489685339013618659009807743132114410400390625",
+              "lower": "-1.06752397437211521227986436676942477675142543151534462225438009610916445679358737892756613e-43752951633698898337",
+              "upper": "0.0",
+              "width": "1.06752397437211518765882401165864772129647267437738979495343e-43752951633698898337",
               "lower_exact_mpf_tuple": [
                 1,
-                6753210744571497796312202094559205584719814500361068936233664388488901202604428734391920307913350912322292907372451394433707615711791337715679135332965877244670414264512316187819489571200398522829799790386534730835177260160878810699361284097,
-                -811,
+                10308506290289617407229073269701467335632347975570416608596890212400766591876782639293232645141520218507795584542589351492805894028934048072045066350854440048897909466410845299053223886386803475344044349256200340849746214274267016434423936933,
+                -145344159266232290211,
                 801
               ],
               "upper_exact_mpf_tuple": [
                 0,
-                3367921682591084318407262648356478578458128232054733553220881527899037979456422286054370036760883350934968310479124274003631118540670833717761906006513537752085932600850609906045536159282734784614113799898073102843189562573568195732800099329,
-                -810,
-                800
+                0,
+                0,
+                0
               ]
             },
             "y0_Z3": {
-              "lower": "-0.00830793521020281072434518958170304521912147803120401957208290164467452009821404464180843004",
-              "upper": "0.00828656951198977301437927652330828729417655067715736098911840953890264896362040478206044391",
-              "width": "0.0165945047221925830183142380747085553593933582305908203125",
+              "lower": "-1.14768887263934818866419651033302235774527505792148605918620741093550458537790203940405673e-68696223125807615744",
+              "upper": "1.23164637922469637854263290005371941616934902089436713761603709981174924031509893523544528e-68696223125807615746",
+              "width": "1.16000533643159513456941228675152762229840679351166305895482e-68696223125807615744",
               "lower_exact_mpf_tuple": [
                 1,
-                3545435640900036343063906099643582931977902612689561191522673803956673131367325085555758161654509228969203776370536982077696498248690452300731546049807085552468491362179690656452254434550802777997926427682785101054738029154141081232027859969,
-                -806,
-                800
+                8257453780737914566166838154810446668629115310799235293323777724698852129971333240762587899103734476455130163600167862288894526251349144508223430449200863858913132916581217975486966660757530301587445197181538711022260591131133420803078340103,
+                -228203913614271257822,
+                801
               ],
               "upper_exact_mpf_tuple": [
                 0,
-                3536317766720638534327625780774302507381034643657470230881925604293989878429243400357088538598927518481716726003080487703812674467704375403650001306839214639289553771871583780470673948964520749349823079338472981727162731193597596695865844481,
-                -806,
+                5671370096544026199511282516816441679912630424447338917842475583067946382657264721758170906607305221926736513131042654974723336282556614439775917035388691835805829566464170611845652779703047549827791689176743537183598111356406434833004070261,
+                -228203913614271257828,
                 800
               ]
             },
             "y0_Z4": {
-              "lower": "-0.0402490519153788974984136288274973954288575318604786105185751320460985806804419660842935847",
-              "upper": "0.0403528281638422235182480636825576482071614647229909522072598079884190976198967882602123745",
-              "width": "0.0806018800792211165262557415189803577959537506103515625",
+              "lower": "-2.29537774527869637732839302066604471549055011584297211837241482187100917075580407880811347e-68696223125807615744",
+              "upper": "2.46329275844939275708526580010743883233869804178873427523207419962349848063019787047089057e-68696223125807615746",
+              "width": "2.32001067286319026913882457350305524459681358702332611790965e-68696223125807615744",
               "lower_exact_mpf_tuple": [
                 1,
-                4294100145303632505969259876654510187534113495869785280356623948071273423806938414719321796870126272442084595860883449354629676139355312990146430158304760633709226336573749319769489093944311463135496889592791317995973537526974945147532994049,
-                -804,
-                800
+                8257453780737914566166838154810446668629115310799235293323777724698852129971333240762587899103734476455130163600167862288894526251349144508223430449200863858913132916581217975486966660757530301587445197181538711022260591131133420803078340103,
+                -228203913614271257821,
+                801
               ],
               "upper_exact_mpf_tuple": [
                 0,
-                4305171849664329845149028835281493560258881743980181446848961047661674516660323318174849196294761206605461728449937763951488605016266977793745448774765746742849057123797342323359411141152022161936843904365489514502542427077633387074783184385,
-                -804,
-                800
+                11342740193088052399022565033632883359825260848894677835684951166135892765314529443516341813214610443853473026262085309949446672565113228879551834070777383671611659132928341223691305559406095099655583378353487074367196222712812869666008140525,
+                -228203913614271257828,
+                801
               ]
             },
             "y1_Z0": {
@@ -56740,9 +56821,9 @@
               ],
               "upper_exact_mpf_tuple": [
                 0,
-                8849140052288087642285964534758823219552822999587505718214925234789214964598930020118039806228823392025530977133323198554189261429237938763811100555782313213741057262544830162753419797373796798424590073165508112123437187162170833873561677013,
-                -61126048289536946050,
-                801
+                2212285013072021910571491133689705804888205749896876429553731308697303741149732505029509951557205848006382744283330799638547315357309484690952775138945578303435264315636207540688354949343449199606147518291377028030859296790542708468390419253,
+                -61126048289536946048,
+                799
               ]
             },
             "y1_Z1": {
@@ -56757,9 +56838,9 @@
               ],
               "upper_exact_mpf_tuple": [
                 0,
-                2520553755783164468364169723103506572103353673784434866272683922926220688626512929444575207819129671745848400928934839800647770850465525398472069927454316311860577344547463875294683553400579937627005489663209063979182622314310698193039157609,
-                -145344159266232290209,
-                799
+                10082215023132657873456678892414026288413414695137739465090735691704882754506051717778300831276518686983393603715739359202591083401862101593888279709817265247442309378189855501178734213602319750508021958652836255916730489257242792772156630435,
+                -145344159266232290211,
+                801
               ]
             },
             "y1_Z2": {
@@ -56774,9 +56855,9 @@
               ],
               "upper_exact_mpf_tuple": [
                 0,
-                5041107511566328936728339446207013144206707347568869732545367845852441377253025858889150415638259343491696801857869679601295541700931050796944139854908632623721154689094927750589367106801159875254010979326418127958365244628621396386078315219,
-                -145344159266232290209,
-                800
+                10082215023132657873456678892414026288413414695137739465090735691704882754506051717778300831276518686983393603715739359202591083401862101593888279709817265247442309378189855501178734213602319750508021958652836255916730489257242792772156630437,
+                -145344159266232290210,
+                801
               ]
             },
             "y1_Z3": {
@@ -56785,15 +56866,15 @@
               "width": "3.32607821503445325831814463840209664723915833811635898315435e-68696223125807615744",
               "lower_exact_mpf_tuple": [
                 1,
-                3550037482275319590903534558888732157210878974134425653083262986138940046063914575916454630231153337165834309652359008707036875558788487636415330734098086853427831479371850973030024063253844530652832986437177734258424353019851928031241404313,
-                -311063667962310225432,
-                800
+                7100074964550639181807069117777464314421757948268851306166525972277880092127829151832909260462306674331668619304718017414073751117576975272830661468196173706855662958743701946060048126507689061305665972874355468516848706039703856062482808625,
+                -311063667962310225433,
+                801
               ],
               "upper_exact_mpf_tuple": [
                 0,
-                2991330859186269611696152694088367976053076037320836582260088031327874345540975380473855134574142996027322770146566542939926749965156132590571004191803935749140734203825304619765185803185805167459997755659861090807463628033001590585043988373,
-                -228203913614271257819,
-                799
+                5982661718372539223392305388176735952106152074641673164520176062655748691081950760947710269148285992054645540293133085879853499930312265181142008383607871498281468407650609239530371606371610334919995511319722181614927256066003181170087976745,
+                -228203913614271257820,
+                800
               ]
             },
             "y2_Z0": {
@@ -56802,9 +56883,9 @@
               "width": "1.66214873487617251791368966451294403464915981270235827497809e-18400774051555611783",
               "lower_exact_mpf_tuple": [
                 1,
-                8849140052288087642285964534758823219552822999587505718214925234789214964598930020118039806228823392025530977133323198554189261429237938763811100555782313213741057262544830162753419797373796798424590073165508112123437187162170833873561677015,
-                -61126048289536946050,
-                801
+                4424570026144043821142982267379411609776411499793752859107462617394607482299465010059019903114411696012765488566661599277094630714618969381905550277891156606870528631272415081376709898686898399212295036582754056061718593581085416936780838507,
+                -61126048289536946049,
+                800
               ],
               "upper_exact_mpf_tuple": [
                 0,
@@ -56815,36 +56896,36 @@
             },
             "y2_Z1": {
               "lower": "-2.08817959632179374953486577234606010879313240487009892197018491846844420965798438090678094e-43752951633698898337",
-              "upper": "0.0",
+              "upper": "9.89759303363961103371759761099170138404494260483029072454848523690982693075159864860401821e-44161857723733467488",
               "width": "2.08817959632179378812965705105633860813667628220217911383449e-43752951633698898337",
               "lower_exact_mpf_tuple": [
                 1,
-                10082215023132657873456678892414026288413414695137739465090735691704882754506051717778300831276518686983393603715739359202591083401862101593888279709817265247442309378189855501178734213602319750508021958652836255916730489257242792772156630439,
-                -145344159266232290210,
-                801
+                2520553755783164468364169723103506572103353673784434866272683922926220688626512929444575207819129671745848400928934839800647770850465525398472069927454316311860577344547463875294683553400579937627005489663209063979182622314310698193039157609,
+                -145344159266232290208,
+                799
               ],
               "upper_exact_mpf_tuple": [
                 0,
-                0,
-                0,
-                0
+                5956219602361782725085449473896768204251649692150618696583496294444434091123659828724390387170614224752035207758854960659856254849970601768367238592206709604984792593231538091848089736909740510851765631556028501239505266433004177415320791945,
+                -146702515894888666769,
+                800
               ]
             },
             "y2_Z2": {
               "lower": "-4.17635919264358749906973154469212021758626480974019784394036983693688841931596876181356188e-43752951633698898337",
-              "upper": "6.55851960627864599665526484859643839949409369642667267096360584481757170314526768356637381e-69105129215842184892",
+              "upper": "1.97951860672792220674351952219834027680898852096605814490969704738196538615031972972080364e-44161857723733467487",
               "width": "4.17635919264358757625931410211267721627335256440435822766898e-43752951633698898337",
               "lower_exact_mpf_tuple": [
                 1,
-                10082215023132657873456678892414026288413414695137739465090735691704882754506051717778300831276518686983393603715739359202591083401862101593888279709817265247442309378189855501178734213602319750508021958652836255916730489257242792772156630443,
+                10082215023132657873456678892414026288413414695137739465090735691704882754506051717778300831276518686983393603715739359202591083401862101593888279709817265247442309378189855501178734213602319750508021958652836255916730489257242792772156630439,
                 -145344159266232290209,
                 801
               ],
               "upper_exact_mpf_tuple": [
                 0,
-                11487111648368401936433927653418229380874831545242092491835320694616070261068762086735396637865658564608547815933091051429627190799215518610969880131787654430724091535907078319074651756171550579331100283815348964695804430683970506494750886959,
-                -229562270242927634372,
-                801
+                2978109801180891362542724736948384102125824846075309348291748147222217045561829914362195193585307112376017603879427480329928127424985300884183619296103354802492396296615769045924044868454870255425882815778014250619752633216502088707660395973,
+                -146702515894888666767,
+                799
               ]
             },
             "y3_Z0": {
@@ -56859,24 +56940,24 @@
               ],
               "upper_exact_mpf_tuple": [
                 0,
-                8849140052288087642285964534758823219552822999587505718214925234789214964598930020118039806228823392025530977133323198554189261429237938763811100555782313213741057262544830162753419797373796798424590073165508112123437187162170833873561677019,
-                -61126048289536946050,
-                801
+                1106142506536010955285745566844852902444102874948438214776865654348651870574866252514754975778602924003191372141665399819273657678654742345476387569472789151717632157818103770344177474671724599803073759145688514015429648395271354234195209627,
+                -61126048289536946047,
+                798
               ]
             },
             "y3_Z1": {
-              "lower": "-3.66577519764430038285836948555248199409071948327047804612906860626289886324133283281630304e-44161857723733467488",
+              "lower": "-4.32561473322027445177287599295192875302704899025916409443230095539022065862477274272323759e-44161857723733467487",
               "upper": "4.17635919264358749906973154469212021758626480974019784394036983693688841931596876181356188e-43752951633698898337",
               "width": "4.17635919264358757625931410211267721627335256440435822766898e-43752951633698898337",
               "lower_exact_mpf_tuple": [
                 1,
-                8824029040535974407533999220587804747039481025408323994938513028806569023886903449962059832845354407040052159642748089866453710888845335953136649766232162377755248286268945321256429239866282238298912046749671853688155950271117299874549321471,
-                -146702515894888666771,
+                13015442834790562251112648850367012001883234512477277892534306717489689310233182588694038253446897750384076935473053432553019223561046870530876558405192439507188991222246694348853233128802766301490895268955765984190030026649898017314960249075,
+                -146702515894888666768,
                 801
               ],
               "upper_exact_mpf_tuple": [
                 0,
-                10082215023132657873456678892414026288413414695137739465090735691704882754506051717778300831276518686983393603715739359202591083401862101593888279709817265247442309378189855501178734213602319750508021958652836255916730489257242792772156630443,
+                10082215023132657873456678892414026288413414695137739465090735691704882754506051717778300831276518686983393603715739359202591083401862101593888279709817265247442309378189855501178734213602319750508021958652836255916730489257242792772156630437,
                 -145344159266232290209,
                 801
               ]
@@ -56887,7 +56968,7 @@
               "width": "1.66214873487617251791368966451294403464915981270235827497809e-18400774051555611783",
               "lower_exact_mpf_tuple": [
                 1,
-                8849140052288087642285964534758823219552822999587505718214925234789214964598930020118039806228823392025530977133323198554189261429237938763811100555782313213741057262544830162753419797373796798424590073165508112123437187162170833873561677021,
+                8849140052288087642285964534758823219552822999587505718214925234789214964598930020118039806228823392025530977133323198554189261429237938763811100555782313213741057262544830162753419797373796798424590073165508112123437187162170833873561677019,
                 -61126048289536946050,
                 801
               ],
@@ -56903,7 +56984,9 @@
       },
       "finite_derivative_rows": 60,
       "derivative_coordinate": "y=logR,Z; selector fraction is not derivative coordinate",
-      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation"
+      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation",
+      "heat_absolute_pressure_companion_used": true,
+      "heat_exterior_similarity_stress_identity_available": false
     },
     "heat_exterior": {
       "coverage_sample": "4",
@@ -57682,87 +57765,87 @@
           },
           "P_over_Pstar_squared": {
             "y0_Z0": {
-              "lower": "-0.000772687426544160223618414209607798104456982703795016701272591298797853431753538378144385235",
-              "upper": "0.00077070028943357263898616783140888088673517026387252241342247112526996363128910014714103831",
-              "width": "0.00154338771597773284464938381432830283301882445812225341796875",
+              "lower": "-1.36437476615025734674557580945940066215495727428281797095527002870706651045470100414401585e-18400774051555611784",
+              "upper": "0.0",
+              "width": "1.36437476615025732349336458559597242404606459441565423453997e-18400774051555611784",
               "lower_exact_mpf_tuple": [
                 1,
-                10551891788392965306737815772748758726124710156814170212865100607013908129069419897487375481114610800503582667769455303802668149549673965180748648957759183191504091431949062727924802191088875795504356828148380234807751243115886970705796931585,
-                -811,
-                801
+                5811053192118043091598607763032047867658858320962591444512247961964844308770181049674049612850446556586828555555369307799234578687357403954375734241211830503253983208178323146340043110808417961693075791971552905347294470339354838640442832969,
+                -61126048289536946053,
+                800
               ],
               "upper_exact_mpf_tuple": [
                 0,
-                1315594407262142311877836972014249444710206340646380294226906846835561710725164955489988295609720058958971996280907919532668405679949544421000744533794350684070876931175843933393115472947761277796188576765574615580520718843654605006438401537,
-                -808,
-                798
+                0,
+                0,
+                0
               ]
             },
             "y0_Z1": {
-              "lower": "-0.0012331204630937162223778685302542094187762724221960358614759538004319418100625602354256613",
-              "upper": "0.00123629988247065635778946273537247696713117232607202672203614607807656549080566140503101638",
-              "width": "0.0024694203455643726381751879017656392534263432025909423828125",
+              "lower": "-3.51751086114698307008191645235545980769962878612767821147863381009900568066584456423654739e-43752951633698898340",
+              "upper": "0.0",
+              "width": "3.51751086114698297607999706097860667518335456608677480422576e-43752951633698898340",
               "lower_exact_mpf_tuple": [
                 1,
-                4209902103238855398009078310445598223072660290068416941526101909873797474320527857567962545951104188668710388098905342504538898175838542147202382508141922189196789707832451880563422430279893993279014044066900977967199886151848860976058628097,
-                -809,
+                4347739549392070741954473558922271415937313261866151152308701822364204094696418892099311166678746479175666475693743319284106114716355758891134648814778153334078020680057294706158099685127793429658869858964786160989334971353164681902736366521,
+                -145344159266232290218,
                 800
               ],
               "upper_exact_mpf_tuple": [
                 0,
-                8441513430714372245390252618199006980899768125451336170292080485611126503255535917989900384891688640402866134215564243042134519639739172144598919166207346552863306089419747594928935919176984827741064265684579771627133822788401326653726058499,
-                -810,
-                801
+                0,
+                0,
+                0
               ]
             },
             "y0_Z2": {
-              "lower": "-0.00049451995298826254311578509414899078685246893042881068881445843123062619632226456201240655",
-              "upper": "0.000493248185237486488951147412101683767510508968878414344590381520172776724025024094170264518",
-              "width": "0.0009877681382257489685339013618659009807743132114410400390625",
+              "lower": "-7.03502172229396614016383290471091961539925757225535642295726762019801136133168912847309478e-43752951633698898340",
+              "upper": "0.0",
+              "width": "7.03502172229396595215999412195721335036670913217354960845152e-43752951633698898340",
               "lower_exact_mpf_tuple": [
                 1,
-                3376605372285748898156101047279602792359907250180534468116832194244450601302214367195960153956675456161146453686225697216853807855895668857839567666482938622335207132256158093909744785600199261414899895193267365417588630080439405349680642049,
-                -810,
+                4347739549392070741954473558922271415937313261866151152308701822364204094696418892099311166678746479175666475693743319284106114716355758891134648814778153334078020680057294706158099685127793429658869858964786160989334971353164681902736366521,
+                -145344159266232290217,
                 800
               ],
               "upper_exact_mpf_tuple": [
                 0,
-                6735843365182168636814525296712957156916256464109467106441763055798075958912844572108740073521766701869936620958248548007262237081341667435523812013027075504171865201701219812091072318565469569228227599796146205686379125147136391465600198659,
-                -811,
-                801
+                0,
+                0,
+                0
               ]
             },
             "y0_Z3": {
-              "lower": "-0.00830793521020281072434518958170304521912147803120401957208290164467452009821404464180843004",
-              "upper": "0.00828656951198977301437927652330828729417655067715736098911840953890264896362040478206044391",
-              "width": "0.0165945047221925830183142380747085553593933582305908203125",
+              "lower": "-6.13200624874920392956830589143950983628993465828407352511308080659654438047340437778737893e-68696223125807615748",
+              "upper": "6.13200624874920392956830589143950983628993465828407352511308080659654438047340437778737893e-68696223125807615748",
+              "width": "1.22640124974984083796003131758821657504637727994619038568986e-68696223125807615747",
               "lower_exact_mpf_tuple": [
                 1,
-                7090871281800072686127812199287165863955805225379122383045347607913346262734650171111516323309018457938407552741073964155392996497380904601463092099614171104936982724359381312904508869101605555995852855365570202109476058308282162464055719939,
-                -807,
+                9035548503555090022357412292172828111858446148294319059623677290730490120610796976049989184863801797068698992631853673610348345200546573330107110972490814672572379319945616573878116127780399992736818189715147226527973641163124680818393784479,
+                -228203913614271257833,
                 801
               ],
               "upper_exact_mpf_tuple": [
                 0,
-                7072635533441277068655251561548605014762069287314940461763851208587979756858486800714177077197855036963433452006160975407625348935408750807300002613678429278579107543743167560941347897929041498699646158676945963454325462387195193391731688963,
-                -807,
+                9035548503555090022357412292172828111858446148294319059623677290730490120610796976049989184863801797068698992631853673610348345200546573330107110972490814672572379319945616573878116127780399992736818189715147226527973641163124680818393784479,
+                -228203913614271257833,
                 801
               ]
             },
             "y0_Z4": {
-              "lower": "-0.0402490519153788974984136288274973954288575318604786105185751320460985806804419660842935847",
-              "upper": "0.0403528281638422235182480636825576482071614647229909522072598079884190976198967882602123745",
-              "width": "0.0806018800792211165262557415189803577959537506103515625",
+              "lower": "-1.22640124974984078591366117828790196725798693165681470502261616131930887609468087555747579e-68696223125807615747",
+              "upper": "1.22640124974984078591366117828790196725798693165681470502261616131930887609468087555747579e-68696223125807615747",
+              "width": "2.45280249949968167592006263517643315009275455989238077137973e-68696223125807615747",
               "lower_exact_mpf_tuple": [
                 1,
-                8588200290607265011938519753309020375068226991739570560713247896142546847613876829438643593740252544884169191721766898709259352278710625980292860316609521267418452673147498639538978187888622926270993779185582635991947075053949890295065988099,
-                -805,
+                9035548503555090022357412292172828111858446148294319059623677290730490120610796976049989184863801797068698992631853673610348345200546573330107110972490814672572379319945616573878116127780399992736818189715147226527973641163124680818393784481,
+                -228203913614271257832,
                 801
               ],
               "upper_exact_mpf_tuple": [
                 0,
-                8610343699328659690298057670562987120517763487960362893697922095323349033320646636349698392589522413210923456899875527902977210032533955587490897549531493485698114247594684646718822282304044323873687808730979029005084854155266774149566368771,
-                -805,
+                9035548503555090022357412292172828111858446148294319059623677290730490120610796976049989184863801797068698992631853673610348345200546573330107110972490814672572379319945616573878116127780399992736818189715147226527973641163124680818393784481,
+                -228203913614271257832,
                 801
               ]
             },
@@ -57778,9 +57861,9 @@
               ],
               "upper_exact_mpf_tuple": [
                 0,
-                11622106384236086183197215526064095735317716641925182889024495923929688617540362099348099225700893113173657111110738615598469157374714807908751468482423661006507966416356646292680086221616835923386151583943105810694588940678709677280885665937,
-                -61126048289536946054,
-                801
+                5811053192118043091598607763032047867658858320962591444512247961964844308770181049674049612850446556586828555555369307799234578687357403954375734241211830503253983208178323146340043110808417961693075791971552905347294470339354838640442832969,
+                -61126048289536946053,
+                800
               ]
             },
             "y1_Z1": {
@@ -57840,9 +57923,9 @@
               "width": "1.36437476615025732349336458559597242404606459441565423453997e-18400774051555611784",
               "lower_exact_mpf_tuple": [
                 1,
-                11622106384236086183197215526064095735317716641925182889024495923929688617540362099348099225700893113173657111110738615598469157374714807908751468482423661006507966416356646292680086221616835923386151583943105810694588940678709677280885665939,
-                -61126048289536946054,
-                801
+                2905526596059021545799303881516023933829429160481295722256123980982422154385090524837024806425223278293414277777684653899617289343678701977187867120605915251626991604089161573170021555404208980846537895985776452673647235169677419320221416485,
+                -61126048289536946052,
+                799
               ],
               "upper_exact_mpf_tuple": [
                 0,
@@ -57853,36 +57936,36 @@
             },
             "y2_Z1": {
               "lower": "-1.40700434445879322803276658094218392307985151445107128459145352403960227226633782569461896e-43752951633698898339",
-              "upper": "0.0",
+              "upper": "1.36028050707781590703274639269191212218736288836191018515279649695306496028845773402824944e-69105129215842184895",
               "width": "1.4070043444587931904319988243914426700733418264347099216903e-43752951633698898339",
               "lower_exact_mpf_tuple": [
                 1,
-                8695479098784141483908947117844542831874626523732302304617403644728408189392837784198622333357492958351332951387486638568212229432711517782269297629556306668156041360114589412316199370255586859317739717929572321978669942706329363805472733043,
-                -145344159266232290217,
-                801
-              ],
-              "upper_exact_mpf_tuple": [
-                0,
-                0,
-                0,
-                0
-              ]
-            },
-            "y2_Z2": {
-              "lower": "-2.81400868891758645606553316188436784615970302890214256918290704807920454453267565138923791e-43752951633698898339",
-              "upper": "3.62741468554084241875399038051176565916630103563176049374079065854150656076922062407533185e-69105129215842184895",
-              "width": "2.81400868891758638086399764878288534014668365286941984338061e-43752951633698898339",
-              "lower_exact_mpf_tuple": [
-                1,
-                4347739549392070741954473558922271415937313261866151152308701822364204094696418892099311166678746479175666475693743319284106114716355758891134648814778153334078020680057294706158099685127793429658869858964786160989334971353164681902736366523,
-                -145344159266232290215,
+                4347739549392070741954473558922271415937313261866151152308701822364204094696418892099311166678746479175666475693743319284106114716355758891134648814778153334078020680057294706158099685127793429658869858964786160989334971353164681902736366521,
+                -145344159266232290216,
                 800
               ],
               "upper_exact_mpf_tuple": [
                 0,
-                13011644233432432614175461970237931335914507282542408261530601513382858791749373835496139562962785550657558652470003950778150263445755359136465262373288371207075960413188919178878939112906550123179105007317751564837099931101258163549918783949,
+                4879366587537162230315798238839224250967940230953403098073975567518572046906015188311052336111044581496584494676251481541806348792158259676174473389983139202653485154945844692079602167339956296192164377744156836813912474162971811331219543979,
                 -229562270242927634383,
+                800
+              ]
+            },
+            "y2_Z2": {
+              "lower": "-2.81400868891758645606553316188436784615970302890214256918290704807920454453267565138923791e-43752951633698898339",
+              "upper": "2.72056101415563181406549278538382424437472577672382037030559299390612992057691546805649889e-69105129215842184895",
+              "width": "2.81400868891758638086399764878288534014668365286941984338061e-43752951633698898339",
+              "lower_exact_mpf_tuple": [
+                1,
+                8695479098784141483908947117844542831874626523732302304617403644728408189392837784198622333357492958351332951387486638568212229432711517782269297629556306668156041360114589412316199370255586859317739717929572321978669942706329363805472733045,
+                -145344159266232290216,
                 801
+              ],
+              "upper_exact_mpf_tuple": [
+                0,
+                1219841646884290557578949559709806062741985057738350774518493891879643011726503797077763084027761145374146123669062870385451587198039564919043618347495784800663371288736461173019900541834989074048041094436039209203478118540742952832804885995,
+                -229562270242927634380,
+                798
               ]
             },
             "y3_Z0": {
@@ -57897,26 +57980,26 @@
               ],
               "upper_exact_mpf_tuple": [
                 0,
-                11622106384236086183197215526064095735317716641925182889024495923929688617540362099348099225700893113173657111110738615598469157374714807908751468482423661006507966416356646292680086221616835923386151583943105810694588940678709677280885665943,
+                11622106384236086183197215526064095735317716641925182889024495923929688617540362099348099225700893113173657111110738615598469157374714807908751468482423661006507966416356646292680086221616835923386151583943105810694588940678709677280885665945,
                 -61126048289536946054,
                 801
               ]
             },
             "y3_Z1": {
-              "lower": "-1.36028050707781590703274639269191212218736288836191018515279649695306496028845773402824944e-69105129215842184895",
+              "lower": "-6.80140253538907953516373196345956061093681444180955092576398248476532480144228867014124722e-69105129215842184895",
               "upper": "2.81400868891758645606553316188436784615970302890214256918290704807920454453267565138923791e-43752951633698898339",
               "width": "2.81400868891758638086399764878288534014668365286941984338061e-43752951633698898339",
               "lower_exact_mpf_tuple": [
                 1,
-                4879366587537162230315798238839224250967940230953403098073975567518572046906015188311052336111044581496584494676251481541806348792158259676174473389983139202653485154945844692079602167339956296192164377744156836813912474162971811331219543981,
-                -229562270242927634383,
+                6099208234421452787894747798549030313709925288691753872592469459398215058632518985388815420138805726870730618345314351927257935990197824595218091737478924003316856443682305865099502709174945370240205472180196046017390592703714764164024429975,
+                -229562270242927634381,
                 800
               ],
               "upper_exact_mpf_tuple": [
                 0,
-                4347739549392070741954473558922271415937313261866151152308701822364204094696418892099311166678746479175666475693743319284106114716355758891134648814778153334078020680057294706158099685127793429658869858964786160989334971353164681902736366523,
-                -145344159266232290215,
-                800
+                2173869774696035370977236779461135707968656630933075576154350911182102047348209446049655583339373239587833237846871659642053057358177879445567324407389076667039010340028647353079049842563896714829434929482393080494667485676582340951368183261,
+                -145344159266232290214,
+                799
               ]
             },
             "y4_Z0": {
@@ -57925,9 +58008,9 @@
               "width": "1.36437476615025732349336458559597242404606459441565423453997e-18400774051555611784",
               "lower_exact_mpf_tuple": [
                 1,
-                5811053192118043091598607763032047867658858320962591444512247961964844308770181049674049612850446556586828555555369307799234578687357403954375734241211830503253983208178323146340043110808417961693075791971552905347294470339354838640442832973,
-                -61126048289536946053,
-                800
+                11622106384236086183197215526064095735317716641925182889024495923929688617540362099348099225700893113173657111110738615598469157374714807908751468482423661006507966416356646292680086221616835923386151583943105810694588940678709677280885665949,
+                -61126048289536946054,
+                801
               ],
               "upper_exact_mpf_tuple": [
                 0,
@@ -57941,7 +58024,9 @@
       },
       "finite_derivative_rows": 60,
       "derivative_coordinate": "y=logR,Z; selector fraction is not derivative coordinate",
-      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation"
+      "output_kind": "directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation",
+      "heat_absolute_pressure_companion_used": true,
+      "heat_exterior_similarity_stress_identity_available": true
     }
   },
   "all_routes_exercised": true,

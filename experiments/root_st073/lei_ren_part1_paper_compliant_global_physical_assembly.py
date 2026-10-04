@@ -191,7 +191,9 @@ class CompliantGlobalPhysicalAssembly:
                 offset=(origin+v if chart=='steep_entry' else origin+1+steep.Ts*v if chart=='steep_power'
                     else origin+1+steep.Ts+v if chart=='steep_exit' else origin+2+steep.Ts+steep.wait*v)
             else:
-                heat=provider;steep=heat.steep
+                # Pressure/stress companions retain the original heat
+                # source object; radius offsets still come from that source.
+                heat=getattr(provider,'heat',provider);steep=heat.steep
                 offset=100+steep.outer.Lrel+2+steep.Ts+steep.wait+v
             return self.logRp+13/self.params.mu+offset,'R=Rv*exp(exact original flatten/angular/steep/waiting/collar offset)'
         raise ValueError('No original radius source for chart: '+chart)

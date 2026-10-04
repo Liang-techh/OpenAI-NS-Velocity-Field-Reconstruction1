@@ -52,8 +52,8 @@ ROUTES={
     'steep_power':('steep_waiting_C4','CompliantSteepWaitingC4','steep_power','fraction of original Ts steep power','[0,1]','steep_waiting_C4_check',None),
     'steep_exit':('steep_waiting_C4','CompliantSteepWaitingC4','steep_out','original one-unit exit offset','[0,1]','steep_waiting_C4_check',None),
     'waiting':('steep_waiting_C4','CompliantSteepWaitingC4','waiting','fraction of selected waiting interval','[0,1]','steep_waiting_C4_check',None),
-    'heat_collar':('collar_Gamma_C4','CompliantCollarGammaC4','collar','t=log(R/Rtail)','[0,3]','collar_Gamma_C4_check',None),
-    'heat_exterior':('collar_Gamma_C4','CompliantCollarGammaC4','exterior','t=log(R/Rtail)','[3,infinity)','collar_Gamma_C4_check',None),
+ 'heat_collar':('collar_pressure_C4','CompliantCollarPressureC4','collar','t=log(R/Rtail)','[0,3]','collar_pressure_C4_check',None),
+ 'heat_exterior':('heat_stress_C4','CompliantHeatStressC4','exterior','t=log(R/Rtail)','[3,infinity)','heat_stress_C4_check',None),
 }
 
 
@@ -102,6 +102,8 @@ class CompliantSourceDispatcher:
             original_scale_metadata=packet.get('exact_formal_prefactors',dict(
                 rule='Use component normalization named in the source grid plus original positive amplitude/radius sources in source_packet; no common numerical rescaling has been applied')),
             source_packet=packet,acceptance_receipt=PREFIX+receipt+'.json',
+            heat_absolute_pressure_companion_used=chart in ('heat_collar','heat_exterior') and packet.get('absolute_pressure_same_source_mixed4_available',False),
+            heat_exterior_similarity_stress_identity_available=chart=='heat_exterior' and packet.get('heat_exterior_stress_identity_certified',False),
             output_kind='directed source-field enclosures with formal scales; not point coefficients or a physical Cartesian evaluation',
             full_cartesian_vector_derivatives_certified=False,admissible_stress_lift_constructed=False,temporal_recursion=False)
 
@@ -111,6 +113,9 @@ class CompliantSourceDispatcher:
             ordered_chart_registry={name:dict(provider=PREFIX+spec[0],method=spec[2],coverage_coordinate=spec[3],domain=spec[4],acceptance_receipt=PREFIX+spec[5]+'.json') for name,spec in ROUTES.items()},
             all_profile_source_charts_callable=True,core_to_Rp_pre_pulse_source_chain_available=True,
             same_actual_inner_five_moment_source_and_pressure_family=True,
+            full_collar_and_exterior_absolute_pressure_companions_adopted=True,
+            source_bound_exterior_similarity_stress_companion_adopted=True,
+            actual_physical_heat_stress_transfer_certified=False,
             all_absolute_radii_automatically_dispatched=False,uniform_physical_units_assembled=False,
             full_cartesian_vector_derivatives_certified=False,admissible_stress_lift_constructed=False,
             original_unlocalized_whole_space_energy_infinite=True,temporal_recursion=False,input_hashes=dict(self.hashes))
@@ -135,7 +140,9 @@ def run():
                         if any(not mp.isfinite(v) for v in endpoints(value)):raise ArithmeticError('Nonfinite dispatched source: '+chart)
                         rows+=1
             samples[chart]=dict(coverage_sample=values[chart],source_grids=packet['physical_mixed_grids'],finite_derivative_rows=rows,
-                derivative_coordinate=packet['derivative_coordinate'],output_kind=packet['output_kind'])
+                derivative_coordinate=packet['derivative_coordinate'],output_kind=packet['output_kind'],
+                heat_absolute_pressure_companion_used=packet['heat_absolute_pressure_companion_used'],
+                heat_exterior_similarity_stress_identity_available=packet['heat_exterior_similarity_stress_identity_available'])
             count+=rows;print('Dispatched actual source chart: '+chart,flush=True)
     result.update(actual_chart_evaluations=samples,all_routes_exercised=True,total_finite_derivative_rows=count,
         all_passed=True,input_hashes=dict(field.hashes))

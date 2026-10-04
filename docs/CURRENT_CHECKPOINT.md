@@ -1,4 +1,14 @@
-# Current: actual terminal-history Gamma exterior stress closure - 2026-10-03
+# Current: full collar absolute pressure and heat companion dispatch - 2026-10-03
+
+Read docs/HEAT_COLLAR_PRESSURE_DISPATCH_2026_10_03.md. CompliantCollarPressureC4().collar(Z,t) now restores the original absolute pressure throughout Z[-1,1], t=log(R/Rtail) in[0,3], with axial5/mixed4. It uses the full sigma/phi/Gamma future integral to infinity and retains the original forward pressure, velocities and moments. The inherited actual history/absolute closure transfers at every collar offset by splitting the same production-bound integral. Flat waiting/collar and collar/exterior pressure joins use the original source jets and common future integral.
+
+New focused producer/checker PASS:120 finite mixed pressure bounds,30 endpoint overlap diagnostics,3 complete future integrals and21 mixed derivative checks in one independent moderate-parameter fixture. Overlap is not used as functional proof. Targeted read-only review found no material source/normalization gap. All33 main source routes pass with the collar pressure and exterior stress companions adopted. The physical radius interface consumes the original nested heat object, preserving its original history. Affected physical assembly producer/checker receipts are regenerated and pass, including140 independent Cartesian derivative and4 fixed-x time-derivative fixture checks. The ordered reconstruction workflow now has an explicit heatcompanions stage.
+
+NEXT: independently transfer the exterior original stress identity through the actual physical map/prefactors, then all-region stress/cone and flat remainder. Source-field physical assembly is distinct from certifying the mapped stress equation. Finite-width bridge/second switch, nonlinear global point-field selection, physical energy and genuine coefficient recursion remain open. n=1 Omega0/R remains only a source term. Global/physical stress and recursion completion flags remain false.
+
+---
+
+# Previous: actual terminal-history Gamma exterior stress closure - 2026-10-03
 
 Read docs/HEAT_EXTERIOR_STRESS_C4_2026_10_03.md. CompliantHeatStressC4().exterior(Z,t) now supplies source-bound zero original similarity stress on Z in[-1,1], t=log(R/Rtail) in[3,infinity], with mixed derivatives through total order4. Individual angular inertial/shear terms are retained through mixed3 and satisfy 2<=kappa_heat<=2+delta. The pressure companion, original forward angular/pressure histories and positive energy are preserved.
 
