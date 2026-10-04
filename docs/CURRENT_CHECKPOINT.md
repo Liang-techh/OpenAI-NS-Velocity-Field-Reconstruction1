@@ -1,3 +1,15 @@
+# Current: original preceding-power physical decomposition/right join accepted - 2026-10-04
+
+Read docs/OUTER_POWER_PHYSICAL_2026_10_04.md. Whole original outer_power phase[0,1], Z[-1,1], Lrel-4 now has completed physical stress/diagonal/divergence/remainder through the unchanged general-K map, exact nu/lambda units and SAME full moments/absolute pressure. Native assembly retains phase; canonical q=-wait-Ts-6+(Lrel-4)*(phase-1) is used for stress/source factors. Ordinary q/y rows are not multiplied by phase factors.
+
+K_Z=0 here does not suppress full A/E/P axial derivatives. Six exact source identities cancel homogeneous angular/energy modes and pressure baselines before enclosure. Actual completed Ttheta_theta=r*partial_z(Tz) and generally nonzero Etheta=-nu*partial_zz(utheta) remain.
+
+Focused producer/checker PASS with354 hashes:180 finite signed physical rows and65 exact zero rows. Actual native theta/rates/radius and45 velocity mixed4 identities plus six common remainder-operator requirements consume same-source K4/stress3/pressure4 and both pressure routes. Actual source-log equality and AST-equal divergence/viscosity transfer close the right angular s=-4 completed physical join. A bounded independent constant-K/nonzero-P_Z fixture passes12 divergence mixed2 comparisons at1e-55 tolerance; the unchanged accepted general-K Cartesian oracle is consumed without rerunning it. Read-only Luna/max review found no material gap.
+
+NEXT: whole original preceding-power two-vector cone using stable native cumulative W, actual flatten-exit axial history, constant kappa-2=2*mu, strict shear and original inlet B/log correlations. This physical increment does not extend the admitted cone tail. Original100-unit flatten/left stress-physical join, finite-width bridge feedback, global flat/volume/energy bounds, actual n-dependent recursion, oscillatory cancellation and final corrected Cartesian residual remain unfinished.
+
+---
+
 # Current: original preceding-power full moments/stress/pressure accepted - 2026-10-04
 
 Read docs/OUTER_POWER_STRESS_2026_10_04.md. Whole original outer_power phase[0,1], Z[-1,1], Lrel-4 now continues the SAME full angular s=-4 datum. Actual q=-wait-Ts-6+(Lrel-4)*(phase-1) and ordinary-q derivative factors are retained. Native A=K*X forward history, original flatten-exit X, both selected angular full-future repairs, velocities and absolute pressure datum remain.
