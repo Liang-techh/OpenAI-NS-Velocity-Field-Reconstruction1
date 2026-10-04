@@ -1,4 +1,14 @@
-# Current: actual physical Gamma exterior momentum closure - 2026-10-04
+# Current: actual full collar similarity stress recovery - 2026-10-04
+
+Read docs/HEAT_COLLAR_STRESS_2026_10_04.md. CompliantCollarStressC3 recovers original Ttheta/Tz from SAME full sigma/phi/Gamma angular/energy/absolute-pressure moments, consuming the actual zero angular-history defect, selected half-energy equation, exact amplitude/pressure identities and inherited zero meridional histories. Exact unit baselines cancel before interval evaluation; signed mixed3 coefficients retain positive source-defined Qtheta/Qz factors. Original fields/datum/forward histories remain accessible. Same complete future moments and flat source jets join to exact zero Gamma stress through mixed3 at offset3.
+
+Focused producer/checker PASS:160 actual finite signed stress coefficients,40 exact Gamma endpoint zeros,18 independent full-future moment Z-derivative checks and16 direct original stress/axial/radial derivative checks at moderate parameters. Both stresses are nonzero in the fixtures. The whole collar box proves kappa-2=delta-2*K_y/K>0 and negative angular shear. The remaining stress-direction cone conditions are not certified. Ordered stage collarstress is available after heatcompanions; main field dispatcher source is preserved.
+
+NEXT: physical collar stress and completed tensor/divergence transfer, angular axial-viscosity remainder, regional R_B=-div(T_B)+E_B. Then collar cone directions and zero-stress join limits, remaining-region cone/flat-remainder bounds and norms. Global field/energy, finite-width bridge/second switch, coupled n=1 and n>=2 recursion and oscillatory correction remain unfinished. Keep all global completion flags false.
+
+---
+
+# Previous: actual physical Gamma exterior momentum closure - 2026-10-04
 
 Read docs/HEAT_PHYSICAL_NS_2026_10_03.md. CompliantHeatPhysicalC4 connects the actual source-bound Gamma exterior to the physical velocity/pressure, with the same fixed positive c_infinity=Ev0*theta_base*Rtail^((1+delta)/2). The production map, exact radius/Gamma bracket and pressure amplitude equalities are consumed explicitly. Original lambda factors cancel; the exterior is independent of physical z. Full pressure FTC cancels radial centrifugal momentum, the full Gamma ODE cancels angular momentum, and axial pressure/viscosity vanish. The local completed background stress tensor T_B and all three physical momentum components are exactly zero.
 
