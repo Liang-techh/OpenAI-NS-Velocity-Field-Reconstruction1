@@ -1,3 +1,15 @@
+# Current: original pulse-end physical tensor and three-component remainder — 2026-10-04
+
+Read docs/PULSE_END_PHYSICAL_2026_10_04.md. The original s[-4,0],Z[-1,1] end chart now has a source-bound physical tensor with completed Ttheta_theta=r*partial_z(Tz), actual full meridional transport and all three remainder components. Physical stress mixed3 and diagonal/divergence/remainder mixed2 preserve the same original beta supports, C5 selection, complete future, analytic absolute pressure, signed tiny history, radius and exact positive log factors.
+
+Focused checker PASS:411 current hashes,28 exact full physical identities,18 source/interface bindings,900 finite signed rows and260 structural-zero rows. An independent Cartesian fixture at nu=.01/.7 checks114 stress/divergence/diagonal/three-component-error/incompressibility identities through the required derivative orders; all three fixture errors are nonzero. Tolerance1e-55, maximum positive enclosure miss1.1885e-88. This is local formula evidence, not final corrected NS accuracy.
+
+The current exact similarity moment4/stress3/pressure4/velocity4 source join composes to completed physical stress/divergence/remainder at pulse s0 / flatten t0. Actual Er/Ez mixed2 vanish there from empty original supports; generally nonzero Etheta is retained. Run only --stage pulseendphysical for this increment.
+
+NEXT: original beta support derivative interfaces and continuous whole-end cone through both supports, then gap/main/entrance coverage and upstream finite-width bridge feedback. Completed full-tensor/global cone, independent global flat/physical-volume/required-domain energy bounds, actual n-dependent recursion, oscillatory cancellation and corrected Cartesian residual/dynamics remain unfinished.
+
+---
+
 # Current: pulse-end / flatten functional similarity interface — 2026-10-04
 
 Read docs/PULSE_END_FLATTEN_JOIN_2026_10_04.md. The original pulse s0 / flatten t0 now connects all five moment data through mixed4, theta/axial similarity stress through mixed3 and the SAME analytic absolute pressure through mixed4 as functions on Z[-1,1]. The source bridge explicitly replays both local inlet jet producers, original buffer Pin/U paths, live-to-fifth-to-power constant serialization, and the common repaired analytic datum. Signed tiny incoming memory, complete future energy half, production radius and exact log amplitudes remain.

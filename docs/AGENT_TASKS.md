@@ -1,3 +1,25 @@
+# Active handoff: original pulse-end physical tensor and three-component remainder completed — 2026-10-04
+
+Read docs/PULSE_END_PHYSICAL_2026_10_04.md and CURRENT_CHECKPOINT.md. Use --stage pulseendphysical for the bounded new layer. Preserve the same source family, selected C5 coefficients, exact B/D/H/R logs, signed moment histories, complete future and analytic absolute pressure. Check tasks off only when the corresponding current producer/checker and source-functional interface are admitted.
+
+- [x] F39b7-pulse-end-physical-source: Source-replay original full meridional momentum/stress equations and actual radial recovery. Exact incompressibility and centrifugal pressure FTC cancellation; original nu/lambda/unchanged-time map. 28 exact identities.
+- [x] F39b7-pulse-end-physical-tensor: Completed symmetric tensor including Ttheta_theta=r partial_z(Tz), cylindrical/Cartesian divergence and actual three-component error. Stress mixed3, diagonal/divergence/error mixed2 in exact signed log sectors; nonzero radial material and viscous terms retained.
+- [x] F39b7-pulse-end-physical-join: Compose current functional velocity4/moment4/stress3/pressure4 source join, common radius/reference units and physical operators at pulse s0 / flatten t0. Actual Er/Ez mixed2 vanish by empty support, while angular axial viscosity remains. 411 hashes;114 independent Cartesian comparisons with two viscosities and all three nonzero fixture errors.
+- [ ] F39b7-pulse-end-flat-interfaces: Cover all four original beta support endpoints -3±.15 and -1±.15. Recover source derivatives and partial linear/quadratic primitive joins through the stress3/velocity4/error2 requirements. Use original flat-tail derivative estimates for intervals crossing support edges; point checks cannot establish uniform continuity. Keep ordinary s=logR rates and whole Z[-1,1].
+- [ ] F39b7-pulse-end-cone-source: Derive necessary signs and original admissibility inequalities from full ten stress sectors, actual selected C5 coefficients and correlated backward histories. Retain signed incoming H and selected energy loss. Keep full tensor completion distinct from the original regional two-vector criterion.
+- [ ] F39b7-pulse-end-cone-bounds: Establish continuous bounds over both original width-.15 supports, their complement and the intervening region on whole s[-4,0],Z[-1,1]. Combine exact source factors before enclosure; retain small differences symbolically. No cap-selected fields, sample-grid proof or pure-swirl omission.
+- [ ] F39b7-pulse-end-cone-compose: Consume current full functional/physical right joins and compose with admitted flatten-to-heat tail. Extend the certified regional domain only after continuous whole-end margins pass. Whole-pulse and completed global tensor gates remain separate.
+- [ ] F39b7-pulse-gap-main-entrance: Extend original moments/absolute pressure/stress/physical errors/cone across gap_end, gap_main, main, exit and entrance using unchanged support/radius charts. Close every adjacent source-functional and physical interface; terminal end coverage is insufficient.
+- [ ] F38-bridge-feedback: Resolve actual Ra-to-R100 finite-width moment/quotient/radius feedback and controlled omitted terms; compose accepted R100-to-R110 signed integrals and remaining implicit leading data.
+- [ ] F40-global-admissibility: Compose every original region and current interface; prove completed full-tensor/global admissibility and required source bounds.
+- [ ] F40-global-flat-volume-energy: Independently bound global flat remainder, physical-volume norms and kinetic energy on the required spacetime domain. Separate leading regional error from flat corrected error and localized from unlocalized energy.
+- [ ] F40-recursion-n1: Solve actual coupled n=1 recovery on the common core interval with compatible pressure datum and independent moment repair. Existing leading source/scaling is not the recursive solution.
+- [ ] F40-recursion-higher: Implement correct n-dependent n>=2 equations, independent repairs, finite-order remainder and smooth summation. Preserve incompressibility by streamfunction/vector-potential recovery and cutoff.
+- [ ] F40-oscillatory-correction: Original mean/two-family oscillatory corrections with exact divergence structure and independently measured averaged quadratic stress cancellation.
+- [ ] F40-corrected-residual-dynamics: Independent full corrected Cartesian residual and required-domain energy; measured scale fits, vortex radial/axial widths/aspect ratios and actual cumulative particle winding.
+
+---
+
 # Active handoff: pulse-end / flatten similarity interface closed; full meridional physical transfer next — 2026-10-04
 
 Read docs/PULSE_END_FLATTEN_JOIN_2026_10_04.md and CURRENT_CHECKPOINT.md. Use --stage pulseendjoin for the new interface only. Preserve original source family, selected coefficients, complete moments/future, signed history, beta supports/radii, analytic absolute pressure and nu/time units.

@@ -203,6 +203,7 @@ FLATTENPHYSICAL=('flatten_physical_C2','flatten_physical_C2_check')
 FLATTENCONE=('flatten_cone','flatten_cone_check')
 PULSEENDSTRESS=('pulse_end_stress_C3','pulse_end_stress_C3_check')
 PULSEENDJOIN=('pulse_end_flatten_join','pulse_end_flatten_join_check')
+PULSEENDPHYSICAL=('pulse_end_physical_C2','pulse_end_physical_C2_check')
 FRESHCORE=('core_coefficient_rebuild','core_coefficient_rebuild_check')
 AXISAMPLITUDE=('anchored_axis_amplitude','anchored_axis_amplitude_check')
 ROOTPEAK=('root_centered_peak','root_centered_peak_check')
@@ -260,6 +261,7 @@ def stages(stage):
             'flattencone':FLATTENCONE,
             'pulseendstress':PULSEENDSTRESS,
             'pulseendjoin':PULSEENDJOIN,
+            'pulseendphysical':PULSEENDPHYSICAL,
             'freshcore':FRESHCORE,
             'axisamplitude':AXISAMPLITUDE,
             'rootpeak':ROOTPEAK,
@@ -270,7 +272,7 @@ def stages(stage):
             'macrosignedleading':MACROSIGNEDLEADING,
             'firstswitchleading':FIRSTSWITCHLEADING,
             'switchintegrals':SWITCHINTEGRALS,
-            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS+POSTMIXEDJETS+STEEPJETS+HEATJETS+HEATCOMPANIONS+COLLARSTRESS+PHYSICALFIELD+COREPHYSICAL+FROZENFIELD+BRIDGEPROFILES+SWITCHPROFILES+RESHAPEPROFILES+RESTOREPROFILES+ACTUALPATCH+PATCHMIXED+RESTOREMIXED+RESHAPEMIXED+SWITCHMIXED+BRIDGEMIXED+PREPULSEMIXED+SOURCEDISPATCH+GLOBALPHYSICAL+HEATPHYSICAL+COLLARPHYSICAL+COLLARHEATCONE+COLLARCONE+WAITINGPHYSICAL+WAITINGCONE+STEEPEXITPHYSICAL+STEEPEXITCONE+STEEPPOWERPHYSICAL+STEEPPOWERCONE+STEEPENTRYPHYSICAL+STEEPENTRYCONE+ANGULARSTRESS+ANGULARPHYSICAL+ANGULARCONE+OUTERPOWERSTRESS+OUTERPOWERPHYSICAL+OUTERPOWERCONE+FLATTENSTRESS+FLATTENPHYSICAL+FLATTENCONE+PULSEENDSTRESS+PULSEENDJOIN+FRESHCORE+AXISAMPLITUDE+ROOTPEAK+ROOTEDFIELD+SWIRLMORPHOLOGY+COREATOMS+COMPARISONPOINTS+MACROSIGNEDLEADING+SWITCHINTEGRALS}[stage]
+            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS+POSTMIXEDJETS+STEEPJETS+HEATJETS+HEATCOMPANIONS+COLLARSTRESS+PHYSICALFIELD+COREPHYSICAL+FROZENFIELD+BRIDGEPROFILES+SWITCHPROFILES+RESHAPEPROFILES+RESTOREPROFILES+ACTUALPATCH+PATCHMIXED+RESTOREMIXED+RESHAPEMIXED+SWITCHMIXED+BRIDGEMIXED+PREPULSEMIXED+SOURCEDISPATCH+GLOBALPHYSICAL+HEATPHYSICAL+COLLARPHYSICAL+COLLARHEATCONE+COLLARCONE+WAITINGPHYSICAL+WAITINGCONE+STEEPEXITPHYSICAL+STEEPEXITCONE+STEEPPOWERPHYSICAL+STEEPPOWERCONE+STEEPENTRYPHYSICAL+STEEPENTRYCONE+ANGULARSTRESS+ANGULARPHYSICAL+ANGULARCONE+OUTERPOWERSTRESS+OUTERPOWERPHYSICAL+OUTERPOWERCONE+FLATTENSTRESS+FLATTENPHYSICAL+FLATTENCONE+PULSEENDSTRESS+PULSEENDJOIN+PULSEENDPHYSICAL+FRESHCORE+AXISAMPLITUDE+ROOTPEAK+ROOTEDFIELD+SWIRLMORPHOLOGY+COREATOMS+COMPARISONPOINTS+MACROSIGNEDLEADING+SWITCHINTEGRALS}[stage]
 
 
 def run(stage='all',list_only=False):
@@ -472,7 +474,7 @@ def run(stage='all',list_only=False):
         actual_flatten_power_completed_physical_stress_remainder_join_verified='flatten_physical_C2_check' in completed,
         actual_flatten_K_Z_and_K_ZZ_physical_terms_retained='flatten_physical_C2_check' in completed,
         actual_flatten_regional_remainder_exact_zero=False,
-        actual_left_pulse_physical_stress_join_verified=False,
+        actual_left_pulse_physical_stress_join_verified='pulse_end_physical_C2_check' in completed,
         actual_flatten_two_vector_cone_certified='flatten_cone_check' in completed,
         actual_flatten_power_angular_tail_two_vector_cone_certified='flatten_cone_check' in completed,
         actual_original_flatten_signed_pulse_memory_uniform_bound_verified='flatten_cone_check' in completed,
@@ -482,7 +484,9 @@ def run(stage='all',list_only=False):
         actual_pulse_end_flatten_full_stress_functional_join_verified='pulse_end_flatten_join_check' in completed,
         actual_pulse_end_flatten_full_moment_mixed4_join_verified='pulse_end_flatten_join_check' in completed,
         actual_pulse_end_flatten_absolute_pressure_mixed4_join_verified='pulse_end_flatten_join_check' in completed,
-        actual_pulse_end_physical_decomposition_constructed=False,
+        actual_pulse_end_physical_decomposition_constructed='pulse_end_physical_C2_check' in completed,
+        actual_pulse_end_three_component_remainder_mixed2_available='pulse_end_physical_C2_check' in completed,
+        actual_pulse_end_flatten_completed_physical_interface_verified='pulse_end_physical_C2_check' in completed,
         actual_pulse_end_cone_certified=False,
         actual_original_steep_exit_similarity_stress_mixed3_recovered='steep_exit_stress_C3_check' in completed,
         actual_original_steep_exit_absolute_pressure_mixed4_recovered='steep_exit_stress_C3_check' in completed,
@@ -537,7 +541,7 @@ def run(stage='all',list_only=False):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','postmixedjets','steepjets','heatjets','heatcompanions','collarstress','physicalfield','corephysical','frozenfield','bridgeprofiles','switchprofiles','reshapeprofiles','restoreprofiles','actualpatch','patchmixed','restoremixed','reshapemixed','switchmixed','bridgemixed','prepulsemixed','sourcedispatch','globalphysical','heatphysical','collarphysical','collarheatcone','collarcone','waitingstress','waitingphysical','waitingcone','steepexitstress','steepexitphysical','steepexitcone','steeppowerstress','steeppowerphysical','steeppowercone','steepentrystress','steepentryphysical','steepentrycone','angularstress','angularphysical','angularcone','outerpowerstress','outerpowerphysical','outerpowercone','flattenstress','flattenphysical','flattencone','pulseendstress','pulseendjoin','freshcore','axisamplitude','rootpeak','rootedfield','swirlmorphology','coreatoms','comparisonpoints','macrosignedleading','firstswitchleading','switchintegrals','all'),default='all')
+    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','postmixedjets','steepjets','heatjets','heatcompanions','collarstress','physicalfield','corephysical','frozenfield','bridgeprofiles','switchprofiles','reshapeprofiles','restoreprofiles','actualpatch','patchmixed','restoremixed','reshapemixed','switchmixed','bridgemixed','prepulsemixed','sourcedispatch','globalphysical','heatphysical','collarphysical','collarheatcone','collarcone','waitingstress','waitingphysical','waitingcone','steepexitstress','steepexitphysical','steepexitcone','steeppowerstress','steeppowerphysical','steeppowercone','steepentrystress','steepentryphysical','steepentrycone','angularstress','angularphysical','angularcone','outerpowerstress','outerpowerphysical','outerpowercone','flattenstress','flattenphysical','flattencone','pulseendstress','pulseendjoin','pulseendphysical','freshcore','axisamplitude','rootpeak','rootedfield','swirlmorphology','coreatoms','comparisonpoints','macrosignedleading','firstswitchleading','switchintegrals','all'),default='all')
     parser.add_argument('--list',action='store_true',help='Print the ordered modules without running them')
     args=parser.parse_args()
     run(args.stage,args.list)
