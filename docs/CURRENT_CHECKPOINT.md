@@ -1,3 +1,15 @@
+# Current: continuous whole pulse-end cone with full axial shear — 2026-10-04
+
+Read docs/PULSE_END_CONE_2026_10_04.md. The complete original s[-4,0],Z[-1,1] end region now satisfies the regional two-vector cone through both beta supports and their complement. Full axial shear is retained: kappa-2=2mu+(2+2mu)*sigma^2. Current ten stress sectors, signed memory, meridional transport, absolute pressure and exact B/D/H/R log recipes remain.
+
+Focused checker PASS: 419 current hashes, 22 exact source/cone/radius identities, 10 positive logarithmic source margins and 10 positive algebraic cone margins. All three angular corrections are bounded before proving the positive stress lower bound; actual axial stress and shear bounds establish both T dot S<0 and the strict directional margin continuously. Four nonzero-axial-shear fixtures exercise both shear signs and nu=.01/.7, with 36 independent original-evaluator/unit comparisons; tolerance1e-60, maximum error4.9091e-91. Fixtures do not prove the actual cone.
+
+The same-source pulse/flatten physical join composes with the admitted downstream tail. Exact production-radius replay extends nonzero regional coverage to Rtail*exp(-wait-Ts-106-Lrel)<=R<Rtail*exp(3), with Gamma stress exactly zero beyond. Use --stage pulseendcone. Direct selected C5 source check is consumed. Support interfaces remain whole-source normalized coefficient bounds restored through parent modes/log factors.
+
+NEXT: gap/main/exit/entrance full stress/pressure/physical/cone coverage and adjacent source-functional joins, then actual upstream finite-width bridge feedback. Completed full-tensor/global admissibility, global temporal flat/physical-volume/required-domain energy, true n-dependent recursion, oscillatory correction and final corrected Cartesian residual/dynamics remain open.
+
+---
+
 # Current: four original pulse-end support interfaces closed — 2026-10-04
 
 Read docs/PULSE_END_SUPPORT_INTERFACES_2026_10_04.md. All four original beta boundaries -3±.15/-1±.15 now have whole-Z source-functional flat difference bounds through full stress3, velocity4 and physical error2. The reference shares the exact NONZERO interface moments, future/energy, angular memory and absolute pressure; only local beta input is removed. Nonlinear stress/error products preserve full actual/reference histories.
