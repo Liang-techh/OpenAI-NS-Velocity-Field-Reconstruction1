@@ -1,3 +1,17 @@
+# Current: whole original entry cone and joined outer tail accepted - 2026-10-04
+
+Read docs/STEEP_ENTRY_CONE_2026_10_04.md. Whole original entry t[0,1], Z[-1,1] now has the original two-vector cone against SAME complete power/exit/waiting/collar/Gamma moments. Source velocities, selected angular coefficients, sigmoid, analytic pressure datum, original Ts/radius and physical units remain.
+
+The raw whole-entry theta interval box crosses zero and is NOT the positivity proof. Actual angular terminal ASTs retain the stable M0=(mu-a)/(1-mu)+attenuated flatten/selected-repair terms. The native entry angular ODE and actual first-derivative AST give M_t+(1-mu)*(1-sigma)*M=mu-a+(1-mu)*sigma. Whole-Z source bounds and mu>a yield continuous M>=M0_lower*exp(-(1-mu)), approximately .36787944115422993605*mu. Exact S>0 gives strict negative shear; its cap only bounds the subtraction. Actual variable kappa-2 remains in[2*mu,2].
+
+Focused producer/checker PASS with 362 current hashes/17 positive margins. Actual inlet Bmax at q=-wait-Ts-2 regroups shared source logs to -k*Ts+2*bh before enclosure; all other parts/source total are AST-checked. No phase grid, shortened entry/Ts or chosen cap field is used. Read-only Luna/max findings about ODE consumption/source-log hashing were incorporated.
+
+Accepted source/physical entry-power joins compose the nonzero two-vector cone tail Rtail*exp(-wait-Ts-2)<=R<Rtail*exp(3); Gamma stress is exactly zero separately. CertifiedSteepEntryPhysical adds regional metadata to the unchanged entry physical method; actual interior viscosity=.7 call PASS. Generally nonzero Etheta=-nu*partial_zz(utheta) is retained.
+
+NEXT: SAME full moments and absolute pressure through actual angular repair supports, preceding power and100-unit flatten, their regional physical/cone companions and functional joins. Upstream finite-width feedback, independent global flat/physical-volume/energy bounds, actual n-dependent recursion, oscillatory cancellation and final corrected Cartesian NS residual remain unfinished. Completed-tensor/global/recursion gates stay false.
+
+---
+
 # Current: original entry physical decomposition and joins accepted - 2026-10-04
 
 Read docs/STEEP_ENTRY_PHYSICAL_2026_10_04.md. CompliantSteepEntryPhysicalC2 dispatches original entry t[0,1] through q=-wait-Ts-2+t and the unchanged general-K physical map. SAME full moments/absolute pressure, source amplitudes/coefficients, nu/lambda units and completed Ttheta_theta=r*partial_z(Tz) are retained. Etheta=-nu*partial_zz(utheta) remains generally nonzero.
