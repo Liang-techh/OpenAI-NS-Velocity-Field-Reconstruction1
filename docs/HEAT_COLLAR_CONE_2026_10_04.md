@@ -1,3 +1,5 @@
+> Whole-collar update: the sigmoid gate below is now closed by docs/WHOLE_COLLAR_CONE_2026_10_04.md. This document retains the accepted heat-part proof and its historical next-step wording.
+
 # Actual collar heat-part cone and flat join direction - 2026-10-04
 
 `collar_heat_cone` proves the admissible two-vector cone on the entire actual

@@ -1,4 +1,14 @@
-# Current: physical collar accepted and actual heat-part cone proved - 2026-10-04
+# Current: whole original collar cone accepted - 2026-10-04
+
+Read docs/WHOLE_COLLAR_CONE_2026_10_04.md. The original sigmoid interval offset[0,1] now has a whole-domain source proof using the SAME Gamma reference, complete future moments and actual source amplitudes. Seven positive margins and the directional log inequality pass with current hashes. Exact source joins compose it with the accepted heat proof on[1,3), covering the whole collar offset[0,3), Z[-1,1]. Stress is exactly zero at3; strict inequalities exclude that endpoint.
+
+CertifiedCollarPhysical consumes this accepted receipt and the unchanged physical field, verifies every input hash and source/family identity, and adds local two-vector cone metadata. The completed tensor diagonal is outside this cone. Physical collar decomposition and the retained nonzero axial-viscosity remainder remain as previously accepted. Ordered stage collarcone reproduces the new producer/checker. This companion consumes the accepted C3 full-moment bridge; it does not independently re-prove that history transfer.
+
+NEXT: complete remaining-region stress/cone and independent flat-remainder/volume bounds, the finite-width bridge/second switch and common leading inputs. Then solve coupled n=1 and n>=2 coefficient recursion and oscillatory correction. Existing Omega0/R is only an n=1 source term. Global admissible stress, physical energy, global flat remainder, genuine recursion and full corrected NS completion remain false.
+
+---
+
+# Previous: physical collar accepted and actual heat-part cone proved - 2026-10-04
 
 Read docs/HEAT_COLLAR_PHYSICAL_2026_10_04.md and docs/HEAT_COLLAR_CONE_2026_10_04.md. CompliantCollarPhysicalC2 transfers the original common collar moments to the physical divergence-form tensor with T_theta_theta=r*partial_z(Tz), retains the nonzero axial-viscosity remainder and supports the requested derivative grids. Focused checker PASS with current hashes:210 finite signed rows,115 exact zeros,eight viscosity factors,six moderate Cartesian decomposition errors below2.1e-42,two exact divergences and two nonzero remainders. Pressure offset derivatives reuse the accepted full-pressure FTC; P_Z is differentiated under the full integral and the implicit coordinate map is differentiated natively. No new global residual or standalone Tz_z validation is claimed.
 
