@@ -1,10 +1,30 @@
-# Active handoff: actual terminal-moment heat stress closure - 2026-10-03
+# Active handoff: inward collar pressure and dispatcher adoption - 2026-10-03
+
+Read docs/HEAT_EXTERIOR_STRESS_C4_2026_10_03.md and CURRENT_CHECKPOINT.md. The actual terminal angular, selected-energy and meridional histories now admit zero exterior similarity stress. Preserve the original datum, repair coefficients, nonzero pulse memory, exact positive source scales and forward histories. The exterior result does not certify the physical/global field or recursion.
+
+- [x] F39b3-exterior-stress: Actual angular/waiting/bump closure, canonical full exterior energy and half normalization, selected energy equation residual, and C4 primitive meridional histories are source-bound. Focused producer/checker PASS after targeted read-only review. Scope Z[-1,1], t>=3; total stress mixed4, individual shear mixed3. Energy remains positive. Main dispatcher/physical transfer still open.
+- [ ] F39b3-collar-pressure-A: Add an inward collar pressure companion for0<=t<=3 from CompliantCollarGammaC4.collar_tails and its SAME full sigma/phi/Gamma bracket. Use the full remaining integral to infinity, including both epsilon atoms and the canonical exterior tail. Preserve the original forward Ptail/pressure packet and velocity/energy/angular fields.
+- [ ] F39b3-collar-pressure-B: Replay actual forward pressure from Ptail plus integral_0^t exp(-prate*v)*K(v)^2/2. Reuse the admitted pressure-history bridge's complete collar density and absolute closure; prove equality to the negative remaining integral for arbitrary t. Do not infer this equality from interval overlap or manually set a pressure constant.
+- [ ] F39b3-collar-pressure-C: Recover pressure axial5 and mixed logR/Z derivatives through4 from the defining integral/FTC and full K derivative rows. Keep the reference-radius versus current-radius exponential factors explicit. K in the collar includes sigma and phi; do not use the exterior H alone before t=3.
+- [ ] F39b3-collar-joins: Establish waiting/collar join at t=0 and collar/exterior join at t=3 from actual flat sigma/phi source derivatives and the common full future integrals. Add necessary whole-box/endpoint checks, preserving original waiting length and pressure scale.
+- [ ] F39b3-dispatcher: Integrate admitted pressure/stress companions into compliant_source_dispatcher.py, with explicit chart domains and original source/family identities. Rebuild the affected producer/checker receipt chain. Route t<3 to the collar, t>=3 to exterior; do not advertise whole outer C4 or cone completion merely from routing.
+- [ ] F39b3-physical-transfer: Apply the actual existing physical coordinate map and original stress/velocity prefactors to the admitted exterior identity. Preserve split logarithmic positive scales. Independently check the mapped original heat equations before changing actual_compliant_field_physical_heat_region_certified.
+- [ ] F39b-global: Assemble physical stress and cone margins in all remaining regions, independent flat remainder and volume norms; retain finite-width bridge and second-switch blockers.
+- [ ] F40-recursion: Complete leading common-field inputs, then solve coupled v2 n=1 with independent moment repair, n>=2, finite-order remainder and smooth divergence-preserving summation. Existing Omega0/R is a source term only.
+
+Do not mark global stress, physical energy, material winding, temporal recursion, oscillatory correction or full corrected NS residual complete. Preserve unrelated working files.
+
+---
+
+# Previous handoff: actual terminal-moment heat stress closure - 2026-10-03
+
+Historical handoff; the current checklist above supersedes its next-step ordering.
 
 Read docs/HEAT_EXTERIOR_ABSOLUTE_PRESSURE_C4_2026_10_03.md, HEAT_EXTERIOR_STRESS_EQUATIONS_2026_10_03.md and CURRENT_CHECKPOINT.md. The Gamma exterior has source-bound absolute pressure with axial5/mixed4. Producer/checker pass, including all four source/history links. Heat PDE and conditional terminal-normalization theorem are implemented; actual terminal stress closure remains open. Preserve the original datum and histories.
 
 - [x] F39b3-pressure: Common SharedOuterBuffer callable/constants chain, exact S=1/Rtail/xi, actual C4 Ptail/forward integrals to original P0/Mp/Prv and canonical Gamma evaluator binding complete. New bridges and focused pressure producer/checker pass: all_passed=True, absolute_pressure_same_source_mixed4_available=True. Original datum, positive amplitude logs and histories retained. Scope: exterior t>=3, whole Z[-1,1], axial5/mixed4.
 - [x] F39b3-heat-equations: Canonical Gamma ODE, physical heat PDE, angular/axial source equations and homogeneous stress forms from (3.12)-(3.18), plus conditional terminal-normalization theorem. Independent 12-point Gamma ODE fixture passes. This does not eliminate actual stress constants.
-- [ ] F39b3-exterior-stress: Bind original angular/energy terminal targets and histories to the actual C4 field, preserving all five terminal moments and units. Apply the proved decay bounds to show R*Ttheta and sqrt(R)*Tz tend to zero, then eliminate both homogeneous constants. Matching velocities alone is insufficient. Keep actual heat-stress certification false until this transfer is proved.
+- [x] F39b3-exterior-stress: Completed by the source-bound terminal-history bridge and full-integral stress companion. See docs/HEAT_EXTERIOR_STRESS_C4_2026_10_03.md and the current checklist above. Physical/global transfer remains open.
 - [ ] F39b3-collar-pressure: Extend equivalent pressure evaluation to the inward collar using its whole future integral; retain flat joins/high derivatives. Integrate the admitted companion into the main dispatcher with current downstream bindings.
 - [ ] F39b-global: Build all-region physical divergence-form stress, required cone margins and independent flat remainder/volume norms from the common field.
 - [ ] F40-recursion: Once leading inputs hold, solve coupled v2 n=1 and independent moment repair, then n>=2, finite-order remainder and smooth divergence-preserving summation. Omega0/R is only a source term.

@@ -1,4 +1,14 @@
-# Current: source-bound Gamma pressure and heat stress equations - 2026-10-03
+# Current: actual terminal-history Gamma exterior stress closure - 2026-10-03
+
+Read docs/HEAT_EXTERIOR_STRESS_C4_2026_10_03.md. CompliantHeatStressC4().exterior(Z,t) now supplies source-bound zero original similarity stress on Z in[-1,1], t=log(R/Rtail) in[3,infinity], with mixed derivatives through total order4. Individual angular inertial/shear terms are retained through mixed3 and satisfy 2<=kappa_heat<=2+delta. The pressure companion, original forward angular/pressure histories and positive energy are preserved.
+
+The actual terminal-history bridge has299 source/algebra bindings, including C4 Xp/Xv producer and lossless endpoint paths, corrected epsilon/Ts/wait, actual angular repair closure, full Gamma exterior energy with factor2 and /2H^2 normalization, selected quadratic residual and primitive meridional moment inheritance. Targeted read-only review found the necessary angular/energy/meridional source gaps closed. The focused checker recomputes this bridge and the full-integral stress identities, checks actual terminal primitive zeros and positive energy, and covers240 exterior zero mixed-stress bounds. Four independent full-integral fixtures have residuals approximately1e-56 to1e-58; these are moderate fixtures, not the full project NS residual.
+
+NEXT: extend source-bound equivalent pressure inward through the full collar, adopt companions in the main source dispatcher and transfer the original physical map/prefactors. Then assemble all-region stress, cone margins and independent flat remainder. Physical energy, finite-width bridge/second switch, complete physical point field and genuine recursion remain open. The regular n=1 Omega0/R source is not a coupled coefficient solution. Global/physical completion flags remain false.
+
+---
+
+# Previous: source-bound Gamma pressure and heat stress equations - 2026-10-03
 
 Read docs/HEAT_EXTERIOR_ABSOLUTE_PRESSURE_C4_2026_10_03.md. CompliantHeatPressureC4().exterior(Z,t) now evaluates source-bound absolute full-Gamma pressure on Z in[-1,1], t=log(R/Rtail) in[3,infinity], with axial5 and logR/Z mixed4. The four missing source/history links are complete; the original absolute closure transfers to this companion. Original datum, velocities, repair coefficients and forward histories are retained. Main dispatcher/collar adoption remains open.
 

@@ -1,5 +1,7 @@
 # Exact heat equations and conditional exterior stress closure
 
+Update: the separate actual terminal-history bridge and stress companion now satisfy the theorem's inputs in the exterior similarity chart. Read docs/HEAT_EXTERIOR_STRESS_C4_2026_10_03.md. The theorem module remains generic; the companion supplies the actual source connection. Physical-map transfer, inward collar and global stress remain open.
+
 The canonical Gamma heat equations and terminal-normalization theorem are implemented in experiments/root_st073/lei_ren_part1_paper_compliant_heat_stress_equations.py. The source is Lei-Ren Part I v2, equations (3.12), (3.13), (3.18) and (5.1)-(5.11), PDF pages 20-21 and 58-60.
 
 For a=delta/2 and the full positive Gamma expectation H:
@@ -31,7 +33,7 @@ sqrt(R)*Tz = O(c^2*R^(-2*a)) -> 0
 
 For 0<a<1/2, |Z|<=1 and R>=1, these limits force both homogeneous constants to vanish. The theorem and explicit bounds are proved conditionally on those exact terminal inputs.
 
-Actual pressure-history transfer is admitted by the separate pressure bridges. Actual angular/energy terminal-history transfer is still required. Flags remain homogeneous_constants_eliminated_from_actual_terminal_moments=False, heat_exterior_stress_identity_certified=False and actual_compliant_field_physical_heat_region_certified=False. Global stress, cone, flat remainder and recursion are also uncompleted.
+Actual pressure-history transfer is admitted by the separate pressure bridges. Actual angular, selected-energy and meridional terminal-history transfer is now admitted by the terminal-history bridge. The exterior companion reports homogeneous_constants_eliminated_from_actual_terminal_moments=True and heat_exterior_stress_identity_certified=True. actual_compliant_field_physical_heat_region_certified remains False. Global stress, cone, flat remainder and recursion are also uncompleted.
 
 ## Evidence and next task
 
@@ -41,4 +43,4 @@ python experiments/root_st073/lei_ren_part1_paper_compliant_heat_stress_equation
 
 Source identities and 12 independent full positive Gamma quadrature ODE checks pass, covering a=.003,.15,.35 and xi=0,.002,.08,2. The finite fixture supplements exact identities; it does not replace terminal-history proof.
 
-Next trace common-field angular and energy moments through retained histories, transfer exact terminal targets, and apply the bounds to eliminate Ctheta and Cz. Only then certify actual exterior zero stress and continue collar/all-region stress assembly.
+Next extend equivalent pressure inward through the collar, adopt the companions in the main dispatcher, transfer the original physical map/prefactors and continue collar/all-region stress assembly.
