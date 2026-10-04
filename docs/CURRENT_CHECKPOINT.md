@@ -1,3 +1,15 @@
+# Current: original preceding-power full moments/stress/pressure accepted - 2026-10-04
+
+Read docs/OUTER_POWER_STRESS_2026_10_04.md. Whole original outer_power phase[0,1], Z[-1,1], Lrel-4 now continues the SAME full angular s=-4 datum. Actual q=-wait-Ts-6+(Lrel-4)*(phase-1) and ordinary-q derivative factors are retained. Native A=K*X forward history, original flatten-exit X, both selected angular full-future repairs, velocities and absolute pressure datum remain.
+
+Energy/pressure continuation uses factored exp(2*(a-mu)*y)*[-expm1(rate*y)]/rate kernels, rates2*mu and1+2*mu, to avoid large intermediate exponential cancellation. Canonical stress/pressure rates remain k=1-a and p=1+delta; native normalized moment rates are not substituted. K_Z=0 here does not suppress full A/E/P axial dependence.
+
+Focused producer/checker PASS with255 current hashes:100 finite signed stress mixed3 rows,75 pressure mixed4 rows,120 exact meridional zeros.11 transport identities,20 source bridge facts and55 actual source AST identities close phase1/angular s=-4 K4/full-moment/stress3/pressure4 for arbitrary axial endpoint functions. Both full-pressure packet routes agree. One bounded independent piecewise-exponential fixture passes9 direct complete-history integrals,20 stress/15 pressure comparisons and nonzero A_Z/E_Z/P_Z; tolerance1e-55 is local formula validation, not global corrected NS accuracy.
+
+NEXT: original preceding-power physical decomposition, completed tensor/nonzero axial-viscosity remainder and right physical joins, then whole original regional cone. The accepted angular/entry tail cone is not extended by this similarity increment. Original100-unit flatten/left stress-physical join, finite-width bridge feedback, global flat/volume/energy bounds, actual n-dependent recursion, oscillatory cancellation and final corrected Cartesian residual remain unfinished.
+
+---
+
 # Current: whole original angular cone and joined entry tail accepted - 2026-10-04
 
 Read docs/ANGULAR_CONE_2026_10_04.md. Whole original angular s[-4,0],Z[-1,1] now has the original two-vector cone against SAME complete moments/absolute pressure and the accepted entry/power/exit/waiting/collar/Gamma tail. Original selected axial coefficients, beta pulses, velocities, Ts/Lrel, radius and physical units remain.
