@@ -1,5 +1,10 @@
 # Full collar absolute pressure and heat companion dispatch - 2026-10-03
 
+Subsequent update: the separate physical Gamma companion now proves the
+regional full momentum identity. Read HEAT_PHYSICAL_NS_2026_10_03.md. The
+scope below describes the earlier pressure/routing step; collar/global
+stress and recursion remain unfinished.
+
 The full original heat collar now has a source-bound absolute pressure
 companion. Its domain is Z in[-1,1], t=log(R/Rtail) in[0,3]. Here t is the
 radial chart offset, not physical time. The companion supplies axial Taylor

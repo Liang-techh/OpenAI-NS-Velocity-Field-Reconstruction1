@@ -175,6 +175,7 @@ BRIDGEMIXED=('bridge_mixed_C4','bridge_mixed_C4_check')
 PREPULSEMIXED=('pre_pulse_mixed_C4','pre_pulse_mixed_C4_check')
 SOURCEDISPATCH=('source_dispatcher',)
 GLOBALPHYSICAL=('global_physical_assembly','global_physical_assembly_check')
+HEATPHYSICAL=('heat_physical_C4','heat_physical_C4_check')
 FRESHCORE=('core_coefficient_rebuild','core_coefficient_rebuild_check')
 AXISAMPLITUDE=('anchored_axis_amplitude','anchored_axis_amplitude_check')
 ROOTPEAK=('root_centered_peak','root_centered_peak_check')
@@ -200,13 +201,14 @@ def stages(stage):
             'sourcedispatch':SOURCEDISPATCH,
             'heatcompanions':HEATCOMPANIONS,
             'globalphysical':GLOBALPHYSICAL,
+            'heatphysical':HEATPHYSICAL,
             'freshcore':FRESHCORE,
             'axisamplitude':AXISAMPLITUDE,
             'rootpeak':ROOTPEAK,
             'rootedfield':ROOTEDFIELD,
             'swirlmorphology':SWIRLMORPHOLOGY,
             'coreatoms':COREATOMS,
-            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS+POSTMIXEDJETS+STEEPJETS+HEATJETS+HEATCOMPANIONS+PHYSICALFIELD+COREPHYSICAL+FROZENFIELD+BRIDGEPROFILES+SWITCHPROFILES+RESHAPEPROFILES+RESTOREPROFILES+ACTUALPATCH+PATCHMIXED+RESTOREMIXED+RESHAPEMIXED+SWITCHMIXED+BRIDGEMIXED+PREPULSEMIXED+SOURCEDISPATCH+GLOBALPHYSICAL+FRESHCORE+AXISAMPLITUDE+ROOTPEAK+ROOTEDFIELD+SWIRLMORPHOLOGY+COREATOMS}[stage]
+            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS+POSTMIXEDJETS+STEEPJETS+HEATJETS+HEATCOMPANIONS+PHYSICALFIELD+COREPHYSICAL+FROZENFIELD+BRIDGEPROFILES+SWITCHPROFILES+RESHAPEPROFILES+RESTOREPROFILES+ACTUALPATCH+PATCHMIXED+RESTOREMIXED+RESHAPEMIXED+SWITCHMIXED+BRIDGEMIXED+PREPULSEMIXED+SOURCEDISPATCH+GLOBALPHYSICAL+HEATPHYSICAL+FRESHCORE+AXISAMPLITUDE+ROOTPEAK+ROOTEDFIELD+SWIRLMORPHOLOGY+COREATOMS}[stage]
 
 
 def run(stage='all',list_only=False):
@@ -351,6 +353,7 @@ def run(stage='all',list_only=False):
         full_source_chart_dispatcher_installed=inherited_dispatch,
         source_dispatcher_scope='Explicit source chart coordinates, original formal radii and distinct normalizations; 33 same-source charts; not a pointwise physical Cartesian field',
         all33_source_chart_physical_spatial4_time1_assembly_available=inherited_global,
+        actual_physical_heat_region_NS_identity_certified='heat_physical_C4_check' in completed,
         whole_core_axis_nonsingular_physical_source_map_available=inherited_global,
         global_physical_assembly_scope='Signed factored physical source bounds; fixed-basepoint units; uncapped micro/macro factors and provider-prebounded ordinary rows; not nonlinear point coefficients or dynamics',
         full_point_physical_field_evaluation=False,
@@ -394,7 +397,7 @@ def run(stage='all',list_only=False):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','postmixedjets','steepjets','heatjets','heatcompanions','physicalfield','corephysical','frozenfield','bridgeprofiles','switchprofiles','reshapeprofiles','restoreprofiles','actualpatch','patchmixed','restoremixed','reshapemixed','switchmixed','bridgemixed','prepulsemixed','sourcedispatch','globalphysical','freshcore','axisamplitude','rootpeak','rootedfield','swirlmorphology','coreatoms','all'),default='all')
+    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','postmixedjets','steepjets','heatjets','heatcompanions','physicalfield','corephysical','frozenfield','bridgeprofiles','switchprofiles','reshapeprofiles','restoreprofiles','actualpatch','patchmixed','restoremixed','reshapemixed','switchmixed','bridgemixed','prepulsemixed','sourcedispatch','globalphysical','heatphysical','freshcore','axisamplitude','rootpeak','rootedfield','swirlmorphology','coreatoms','all'),default='all')
     parser.add_argument('--list',action='store_true',help='Print the ordered modules without running them')
     args=parser.parse_args()
     run(args.stage,args.list)

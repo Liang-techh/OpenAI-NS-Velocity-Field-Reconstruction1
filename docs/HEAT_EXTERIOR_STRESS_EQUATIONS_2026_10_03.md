@@ -1,6 +1,6 @@
 # Exact heat equations and conditional exterior stress closure
 
-Update: the separate actual terminal-history bridge and stress companion now satisfy the theorem's inputs in the exterior similarity chart. Read docs/HEAT_EXTERIOR_STRESS_C4_2026_10_03.md. The theorem module remains generic; the companion supplies the actual source connection. Physical-map transfer, inward collar and global stress remain open.
+Update: the actual terminal-history bridge and stress companion satisfy the theorem's exterior inputs. The inward collar pressure/main routing are also complete. The separate CompliantHeatPhysicalC4 now admits the actual regional physical momentum identity with correct viscosity units; read docs/HEAT_PHYSICAL_NS_2026_10_03.md. This theorem module remains generic. Collar/global stress and recursion remain open.
 
 The canonical Gamma heat equations and terminal-normalization theorem are implemented in experiments/root_st073/lei_ren_part1_paper_compliant_heat_stress_equations.py. The source is Lei-Ren Part I v2, equations (3.12), (3.13), (3.18) and (5.1)-(5.11), PDF pages 20-21 and 58-60.
 

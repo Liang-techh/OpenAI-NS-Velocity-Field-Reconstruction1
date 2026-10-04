@@ -1,4 +1,14 @@
-# Current: full collar absolute pressure and heat companion dispatch - 2026-10-03
+# Current: actual physical Gamma exterior momentum closure - 2026-10-04
+
+Read docs/HEAT_PHYSICAL_NS_2026_10_03.md. CompliantHeatPhysicalC4 connects the actual source-bound Gamma exterior to the physical velocity/pressure, with the same fixed positive c_infinity=Ev0*theta_base*Rtail^((1+delta)/2). The production map, exact radius/Gamma bracket and pressure amplitude equalities are consumed explicitly. Original lambda factors cancel; the exterior is independent of physical z. Full pressure FTC cancels radial centrifugal momentum, the full Gamma ODE cancels angular momentum, and axial pressure/viscosity vanish. The local completed background stress tensor T_B and all three physical momentum components are exactly zero.
+
+Producer/checker PASS after targeted read-only review of actual amplitude/dataflow and tensor semantics. Explicit viscosity pullback supports fixed nu>0 with x_source=x/sqrt(nu), u=sqrt(nu)*u_source and p=nu*p_source. Independent moderate fixtures at nu=.01 and .7 check6 Cartesian momentum components and2 divergences;10 derivative-unit rows and an actual nonunit-viscosity source packet are checked. Actual regional receipts contain48 exact zero bounds and24 finite zeroth source rows. The new regional API reports actual_compliant_field_physical_heat_region_certified=True. Scope tau>0, r>0, log(R/Rtail)>=3, finite physical |Z|<1; source endpoints +/-1 are infinity limits. This is a leading exterior identity, not full corrected/global NS validation or a zero Cauchy stress claim.
+
+NEXT: construct actual collar Ttheta/Tz from full sigma/phi/Gamma moments and original stress equations, map its axial-viscosity and radial remainder, then collar cone margins and remaining regions. Finite-width bridge/second switch, global point-field selection, required-domain energy, independent global flat remainder and genuine coefficient recursion remain open. n=1 Omega0/R is a source term only. Global completion flags remain false.
+
+---
+
+# Previous: full collar absolute pressure and heat companion dispatch - 2026-10-03
 
 Read docs/HEAT_COLLAR_PRESSURE_DISPATCH_2026_10_03.md. CompliantCollarPressureC4().collar(Z,t) now restores the original absolute pressure throughout Z[-1,1], t=log(R/Rtail) in[0,3], with axial5/mixed4. It uses the full sigma/phi/Gamma future integral to infinity and retains the original forward pressure, velocities and moments. The inherited actual history/absolute closure transfers at every collar offset by splitting the same production-bound integral. Flat waiting/collar and collar/exterior pressure joins use the original source jets and common future integral.
 
