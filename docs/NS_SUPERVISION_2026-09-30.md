@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `4cd8c65ffc086174f576814f2d9edffca70a18b3`.
+The inspected `main` head before this update is `1a2c438d33dc986a4b02a3cb0fd1cd40994a05f5`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`275a3dedaf6d9555cdf314e0f60ecdb407a8db48`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/275a3dedaf6d9555cdf314e0f60ecdb407a8db48)
+[`205f6f0a09bf1ce45e6ab86c68b659b0af46286d`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/205f6f0a09bf1ce45e6ab86c68b659b0af46286d)
 on `codex/st073-transition-next`, observed October 4. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,52 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-04 batch: pulse-end functional/physical join and four beta interfaces
+
+The [205f6f0a functional join](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/205f6f0a09bf1ce45e6ab86c68b659b0af46286d/docs/PULSE_END_FLATTEN_JOIN_2026_10_04.md),
+[physical report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/205f6f0a09bf1ce45e6ab86c68b659b0af46286d/docs/PULSE_END_PHYSICAL_2026_10_04.md)
+and [support interface report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/205f6f0a09bf1ce45e6ab86c68b659b0af46286d/docs/PULSE_END_SUPPORT_INTERFACES_2026_10_04.md)
+record actual s0/flatten t0 five-moment mixed4, stress mixed3 and absolute
+pressure mixed4 functional equality on Z[-1,1]. Source identities retain unequal
+reference rates, signed angular memory and half of the complete future energy;
+interval overlap is not the join proof. The saved independent interface fixture
+checks 435 derivatives at tolerance 1e-55, not a full-project NS certificate.
+
+The full meridional physical companion now records the completed tensor,
+including Ttheta_theta=r*partial_z(Tz), physical divergence and generally
+nonzero three-component remainder mixed2. Er retains fixed-position time,
+radial viscosity, nonlinear meridional transport and axial viscosity;
+Etheta=-nu*partial_zz(utheta), Ez=-nu*partial_zz(uz). At the flatten endpoint
+Er/Ez mixed2 vanish and Etheta equals the generally nonzero flatten error.
+The saved 114 Cartesian fixture comparisons are local formula evidence, not
+actual-source cone or corrected NS accuracy. Pure-swirl zero Er/Ez does not
+apply inside the supports.
+
+Four beta edges -3+/-.15 and -1+/-.15 now record analytic flat difference
+envelopes for velocity mixed4, stress mixed3 and all error mixed2, retaining
+common reference histories in nonlinear products. Saved evidence includes
+6,416 difference entries, 1,604 endpoint zeros, 4,812 envelope comparisons
+and 1,448 fixture comparisons. These are local spatial interfaces for fixed
+positive tau; they do not prove uniform tau->0 flatness or an order-five
+radial Taylor remainder. Earlier receipts remain historical snapshots.
+
+The [join receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/205f6f0a09bf1ce45e6ab86c68b659b0af46286d/experiments/root_st073/lei_ren_part1_paper_compliant_pulse_end_flatten_join_check.json),
+[physical receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/205f6f0a09bf1ce45e6ab86c68b659b0af46286d/experiments/root_st073/lei_ren_part1_paper_compliant_pulse_end_physical_C2_check.json)
+and [support receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/205f6f0a09bf1ce45e6ab86c68b659b0af46286d/experiments/root_st073/lei_ren_part1_paper_compliant_pulse_end_support_interfaces_check.json)
+have 407/411/415 hash bindings. Of 1,233 total, 1,230 match exact pinned blob
+bytes; all three schedule_pressure.py bindings match after LF-to-CRLF
+conversion, with no unexplained mismatch. There are 415 distinct source paths.
+This provenance review runs no scientific code and is not a complete proof
+audit. Replay pulseendjoin/pulseendphysical/pulseendinterfaces with current
+prerequisites and the receipt's checkout-byte convention.
+
+Pulse-end cone is still false and regional cone coverage is unchanged.
+Its next check must use actual axial shear: kappa=a+b^2/a, a=2+2mu,
+b=2*partial_y(Uz)/Utheta; substituting kappa-2=2mu discards b^2/a.
+Whole-pulse coverage, completed tensor/global cone, upstream finite-width
+feedback, whole-space finite energy, n=1/temporal recursion, oscillatory
+correction and independently validated corrected NS remain open.
 
 ### 2026-10-04 batch: original pulse-end full meridional similarity stress
 
@@ -2804,6 +2850,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The exact-head [205f6f0a run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37241254649)
+ended failure:13 failed/423 passed with all13 identifiers unchanged from
+275a3ded; four smoke/slice jobs pass and full historical tests are skipped.
+No new constrained failure appears; this is not global physical acceptance.
 
 The exact-head [275a3ded run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37235815703)
 ended failure: actual log13 failed/423 passed, with the same13 identifiers
