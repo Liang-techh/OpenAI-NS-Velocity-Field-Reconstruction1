@@ -1,5 +1,7 @@
 # Original steep-entry full-future stress and pressure — 2026-10-04
 
+Update: the regional physical decomposition and native physical connections are now accepted in docs/STEEP_ENTRY_PHYSICAL_2026_10_04.md. The similarity receipt below retains its original scoped flags; the entry cone and upstream angular stress remain open.
+
 The original sigmoid entry now has a callable similarity-stress companion on
 the entire original t in [0,1], Z in [-1,1]. It transports the SAME complete
 power/exit/waiting/collar/Gamma future, preserving the original velocities,

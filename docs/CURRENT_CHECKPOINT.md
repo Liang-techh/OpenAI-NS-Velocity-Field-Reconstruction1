@@ -1,3 +1,15 @@
+# Current: original entry physical decomposition and joins accepted - 2026-10-04
+
+Read docs/STEEP_ENTRY_PHYSICAL_2026_10_04.md. CompliantSteepEntryPhysicalC2 dispatches original entry t[0,1] through q=-wait-Ts-2+t and the unchanged general-K physical map. SAME full moments/absolute pressure, source amplitudes/coefficients, nu/lambda units and completed Ttheta_theta=r*partial_z(Tz) are retained. Etheta=-nu*partial_zz(utheta) remains generally nonzero.
+
+Actual homogeneous angular/energy divergence modes and pressure unit baselines cancel before enclosure. New divergence AST replay proves reduced mixed2 rows; physical stress mixed3, diagonal/divergence/remainder mixed2 are available. Actual original radius ASTs prove angular offset0/entry t0 and entry t1/power phase0 equality. Native source theta/rates and flatten_mixed ASTs prove45 velocity mixed4 right joins; both full-pressure routes and same K4/remainder operators are consumed. Native left radius/field/pressure connection is closed, upstream angular stress is not.
+
+Focused producer/checker PASS with338 current hashes:156 finite signed physical rows/40 exact zeros. One independent native completed-tensor Cartesian fixture at nu=.01/.7 passes6 decomposition equations, two divergence zeros and two nonzero remainders.24 divergence and12 remainder mixed2 comparisons are below1e-36. Fixture uses moderate variable polynomial K/complete analytic future; actual original sigma/Gamma history is admitted separately.
+
+NEXT: whole original entry directional cone using actual variable kappa-2=2*mu+2*(1-mu)*sigma in[2*mu,2], whole original source stress box and inlet B source logs. Only after margins pass may entry extend the existing power-tail cone. Then upstream angular/power/flatten. Global cone, independently bounded flat/volume/energy, actual higher-order recursion, oscillatory correction and final corrected residual remain unfinished; their gates stay false.
+
+---
+
 # Current: original steep-entry full-future stress and pressure accepted - 2026-10-04
 
 Read docs/STEEP_ENTRY_STRESS_2026_10_04.md. CompliantSteepEntryStressC3 transports the SAME complete original power/exit/waiting/collar/Gamma moments through the whole original entry t[0,1], Z[-1,1]. Actual q=-wait-Ts-2+t gives ordinary q=t derivatives. Original velocities/repair coefficients remain; angular A=K*X retains the actual positive forward history. Energy and absolute pressure use directed signed remaining integrals and the exact common datum.
