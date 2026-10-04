@@ -1,0 +1,77 @@
+{
+  "identities": {
+    "canonical_Gamma_ODE_is_integral_of_a_total_derivative": true,
+    "Gamma_IBP_endpoint_limits_zero_for_a_positive": true,
+    "physical_angular_heat_equation_is_same_Gamma_ODE": true,
+    "original_3_12_angular_source_of_full_Gamma_heat": true,
+    "angular_radial_stress_source_is_exact_Gamma_ODE": true,
+    "original_3_12_axial_source_of_same_pressure_tail": true,
+    "axial_radial_stress_source_zero": true,
+    "angular_homogeneous_stress_equation": true,
+    "axial_homogeneous_stress_equation": true,
+    "Gamma_first_derivative_moment_bound": true,
+    "terminal_Mtheta_remainder_bound": true,
+    "terminal_Mtheta_Z_bound": true,
+    "terminal_Mztheta_tail_bound": true,
+    "terminal_absolute_pressure_tail_bound": true,
+    "terminal_angular_weighted_limit_zero": true,
+    "terminal_axial_weighted_limit_zero": true
+  },
+  "exact_heat_angular_radial_source_verified": true,
+  "exact_heat_axial_radial_source_verified": true,
+  "exact_heat_stress_is_homogeneous_verified": true,
+  "canonical_physical_heat_flow_equation_verified": true,
+  "actual_compliant_field_physical_heat_region_certified": false,
+  "canonical_physical_velocity": "ur=uz=0; utheta=A*r^(-1-delta)*H(4*nu*tau/r^2)",
+  "canonical_physical_pressure": "p=-integral_r^infinity utheta(rho,tau)^2/rho drho; radial balance by FTC",
+  "terminal_normalization_implies_zero_heat_stress_theorem_verified": true,
+  "terminal_theorem_assumptions": [
+    "0<a=delta/2<1/2, |Z|<=1, R>=1",
+    "Mz=Mtheta_z=Ur=Uz=0 on the exterior from original terminal moments",
+    "Mtheta=sqrt(2)*c*(R^(1-a)/(1-a)+integral_R^infinity rho^(-a)*(1-H(2d/rho)) drho)",
+    "Mztheta=c^2/2*integral_R^infinity rho^(-1-2a)*H(2d/rho)^2 drho",
+    "P=-c^2/2*integral_R^infinity rho^(-2-2a)*H(2d/rho)^2 drho"
+  ],
+  "terminal_normalized_bounds": {
+    "Mtheta_remainder": "2*sqrt(2)*c*(1+a)*R^(-a)",
+    "Mtheta_Z": "4*sqrt(2)*c*(1+a)*R^(-a)",
+    "Mztheta": "c^2*R^(-2a)/(4a)",
+    "absolute_pressure": "c^2*R^(-1-2a)/(2*(1+2a))",
+    "R_Ttheta": "O(c*R^(-a)) -> 0",
+    "sqrtR_Tz": "O(c^2*R^(-2a)) -> 0"
+  },
+  "homogeneous_stress_forms": {
+    "theta": "Ctheta(Z)/R",
+    "axial": "Cz(Z)/sqrt(R)"
+  },
+  "homogeneous_constants_eliminated_from_actual_terminal_moments": false,
+  "heat_exterior_stress_identity_certified": false,
+  "global_admissible_stress_lift_constructed": false,
+  "temporal_recursion": false,
+  "source": {
+    "paper": "Lei--Ren, arXiv:2609.35406v2",
+    "formulas": [
+      "(3.12)",
+      "(3.13)",
+      "(3.18)",
+      "(5.1)--(5.11)"
+    ],
+    "inspected_pdf_pages": [
+      20,
+      21,
+      58,
+      59,
+      60
+    ]
+  },
+  "Gamma_ODE": "xi^2*H_xixi+(1+2*(1+a)*xi)*H_xi+a*(1+a)*H=0",
+  "independent_Gamma_ODE_fixture": {
+    "independent_positive_Gamma_integral_ODE_checks": 12,
+    "finite_parameter_fixture_only": true,
+    "passed": true
+  },
+  "equation_checks_passed": true,
+  "input_hashes": {
+    "lei_ren_part1_paper_compliant_heat_stress_equations.py": "5d02d9902821f704831bfde9a8bd8c73fdf2ad16946da1fac1df0cf50bb911b6"
+  }
+}

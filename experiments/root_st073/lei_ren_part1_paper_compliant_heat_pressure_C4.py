@@ -1,9 +1,9 @@
-"""Conditional absolute-pressure candidate on the Gamma exterior, axial5/mixed4.
+"""Source-bound absolute pressure on the Gamma exterior, axial5/mixed4.
 
 The admitted five-moment closure identifies P0+Mp with the negative
 remaining pressure integral.  Use that equivalent expression before
 interval enclosure, retaining the original forward history for comparison.
-Source/history transfer remains conditional; default construction rejects it.
+Default construction requires the complete defining-function/history bridge.
 No pressure datum, velocity, or angular correction coefficient is changed.
 """
 import hashlib
@@ -73,10 +73,17 @@ class CompliantHeatPressureC4:
             self.hashes[name] = hashlib.sha256((HERE/name).read_bytes()).hexdigest()
         self.hashes[Path(__file__).name] = hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
         self.bridge = source_bridge()
-        if not self.bridge['complete_defining_function_history_bridge_verified'] and not allow_conditional:
+        self.admitted = self.bridge['complete_defining_function_history_bridge_verified']
+        if not self.admitted and not allow_conditional:
             raise ValueError('Pressure source/history bridge incomplete; candidate use requires allow_conditional=True')
         bridge_name = PREFIX+'compliant_heat_pressure_source_bridge.py'
         self.hashes[bridge_name] = hashlib.sha256((HERE/bridge_name).read_bytes()).hexdigest()
+        history_name = PREFIX+'compliant_heat_pressure_history_bridge.py'
+        self.hashes[history_name] = hashlib.sha256((HERE/history_name).read_bytes()).hexdigest()
+        self.hashes.update(self.bridge['retained_pressure_history_bridge']['input_hashes'])
+        function_name = PREFIX+'compliant_heat_defining_function_bridge.py'
+        self.hashes[function_name] = hashlib.sha256((HERE/function_name).read_bytes()).hexdigest()
+        self.hashes.update(self.bridge['defining_function_bridge']['input_hashes'])
 
     def exterior(self, Z, t):
         c = self.ctx
@@ -101,13 +108,13 @@ class CompliantHeatPressureC4:
                      pressure_over_Pstar_squared_Taylor=rows[0],
                      pressure_y_derivative_axial5_Taylor=rows,
                      pressure_over_Utheta_squared_Taylor=-local['pressure_numerator']/(local['K_rows'][0]**2),
-                     exact_pressure_definition='Candidate P=-integral_R^infinity Utheta^2/(2rho) drho; equality with retained P0+Mp requires the unresolved source/history bridge',
-                     pressure_infinity_offset_exactly_zero_from_source_closure=False,
+                     exact_pressure_definition='P=P0+Mp=-integral_R^infinity Utheta^2/(2rho) drho, after complete defining-function/retained-history bridge and original absolute closure',
+                     pressure_infinity_offset_exactly_zero_from_source_closure=self.admitted,
                      original_pressure_datum_and_forward_history_retained=True,
-                     defining_source_and_pressure_scale_bridge_verified=False,
-                     absolute_pressure_same_source_mixed4_available=False,
+                     defining_source_and_pressure_scale_bridge_verified=self.admitted,
+                     absolute_pressure_same_source_mixed4_available=self.admitted,
                      candidate_pressure_tail_mixed4_available=True,
-                     source_history_transfer_conditional=True,
+                     source_history_transfer_conditional=not self.admitted,
                      exact_Gamma_exterior_pressure_only=True,
                      heat_exterior_stress_identity_certified=False,
                      global_admissible_stress_lift_constructed=False,
@@ -134,7 +141,7 @@ class CompliantHeatPressureC4:
         with mp.workdps(270):
             return dict(actual_five_defect_family_sha256=self.family,
                         implicit_source_sha256=self.source,
-                        scope='Conditional pressure-tail candidate: Gamma exterior t=log(R/Rtail)>=3, Z in[-1,1]; axial5 and logR/Z mixed4',
+                        scope='Source-bound absolute pressure: Gamma exterior t=log(R/Rtail)>=3, Z in[-1,1]; axial5 and logR/Z mixed4',
                         samples=[pressure_summary(self.exterior(z, t)) for z, t in (('0', '3'), ('.5', '3'), ('.5', '4'))],
                         whole_Z_inlet=pressure_summary(self.exterior([-1, 1], 3)),
                         whole_Z_unbounded_exterior=pressure_summary(self.exterior([-1, 1], [3, mp.inf])),
@@ -142,18 +149,18 @@ class CompliantHeatPressureC4:
                         defining_source_bridge=self.bridge,
                         pressure_datum_or_velocity_changed=False,
                         exact_pressure_tail_not_a_fitted_correction=True,
-                        absolute_pressure_same_source_mixed4_available=False,
+                        absolute_pressure_same_source_mixed4_available=self.admitted,
                         candidate_pressure_tail_mixed4_available=True,
-                        source_history_transfer_conditional=True,
+                        source_history_transfer_conditional=not self.admitted,
                         heat_exterior_stress_identity_certified=False,
                         global_admissible_stress_lift_constructed=False,
                         temporal_recursion=False, input_hashes=self.hashes)
 
 
 def run():
-    result = CompliantHeatPressureC4(allow_conditional=True).report()
+    result = CompliantHeatPressureC4().report()
     Path(__file__).with_suffix('.json').write_text(json.dumps(encode(pack(result)), indent=2)+'\n', encoding='utf8')
-    print('Conditional Gamma pressure candidate generated; source/history transfer remains open', flush=True)
+    print('Source-bound absolute Gamma pressure generated; original forward history retained', flush=True)
     return result
 
 

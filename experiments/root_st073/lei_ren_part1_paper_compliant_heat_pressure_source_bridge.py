@@ -1,14 +1,16 @@
 """Defining-function and unit bridge from absolute closure to Gamma C4.
 
-Returned interval boxes need not be equal. The two evaluators enclose one
-full Gamma function, one amplitude and one original pressure history. This
-bridge binds their production origins and proves the exact unit identities.
+Returned interval boxes need not be equal. Function/radius and retained
+pressure-history bindings are separate from formal amplitude/unit algebra.
+Complete transfer is admitted only when all of these actual bindings hold.
 """
 import ast
 from pathlib import Path
 
 import sympy as s
 from lei_ren_part1_paper_compliant_absolute_moment_closure import assignment
+from lei_ren_part1_paper_compliant_heat_pressure_history_bridge import pressure_history_bridge
+from lei_ren_part1_paper_compliant_heat_defining_function_bridge import defining_function_bridge
 
 HERE = Path(__file__).parent
 PREFIX = 'lei_ren_part1_paper_'
@@ -109,26 +111,22 @@ def source_bridge():
          -C*theta_base**2*s.exp(-p*t)*A
          +C*weights['self.Prel']*weights['self.Ptail']*weights['self.tailmult']*s.exp(-p*t)*A)
 
-    # Retained forward history: the common inlet P0+Mp(Rv) plus the same
-    # original swirl integral determines both pressures uniquely. The
-    # earlier closure proof fixes the infinity constant; no P3=-tail
-    # substitution is used to manufacture this bridge.
-    P0, Mp, Prv, A3 = s.symbols('P0 Mp_Rv Prv A3', real=True)
-    P3 = P0+Mp+C*(Prv-theta_base**2*s.exp(-3*p)*A3)
-    zero('retained_P3_plus_heat_tail_equals_original_infinity_offset',
-         P3+C*theta_base**2*s.exp(-3*p)*A3-(P0+Mp+C*Prv))
-    Pforward = P3+C*theta_base**2*(A3*s.exp(-3*p)-A*s.exp(-p*t))
-    zero('same_forward_pressure_for_entire_exterior',
-         Pforward-(-C*theta_base**2*s.exp(-p*t)*A)-(P0+Mp+C*Prv))
+    # Compose actual production assignments/integrands. The previous
+    # free P3/P0/Mp placeholders could not identify the retained history.
+    history = pressure_history_bridge()
+    functions = defining_function_bridge()
+    complete = (history['complete_retained_pressure_history_bridge_verified']
+                and functions['three_defining_function_links_verified'])
     syntax('compliant_collar_Gamma_C4', 'data', 'Ptail', "terminal['pressure_over_Pstar_squared_Taylor']")
     syntax('compliant_collar_Gamma_C4', 'data', 'pressure3', 'self.forward_pressure(Z, 3, Ptail)')
     syntax('compliant_collar_Gamma_C4', 'forward_pressure', 'K', "self.shape(Z, v, False)['K_rows'][0]")
     return dict(identities=proofs,
-                complete_defining_function_history_bridge_verified=False,
-                unresolved_bindings=[
+                retained_pressure_history_bridge=history,
+                defining_function_bridge=functions,
+                complete_defining_function_history_bridge_verified=bool(complete),
+                unresolved_bindings=[] if complete else [
                     'Bind both inlet buffer objects to the same SharedOuterBuffer callable',
                     'Bind exact S=exp(-logRtail), independently of all numerical caps',
-                    'Bind actual C4 Ptail/forward_pressure integrals to retained closure P0/Mp/Prv histories',
                     'Bind canonical full Gamma defining expectation to the C4 derivative evaluator'],
                 shared_defining_heat_function='Full positive Gamma expectation with a=delta/2, xi=2*(1-Z^2)*S*exp(-t)',
                 shared_pressure_tail='A_p=integral_0^infinity exp(-(1+delta)*v)*H(xi*exp(-v))^2/2 dv',

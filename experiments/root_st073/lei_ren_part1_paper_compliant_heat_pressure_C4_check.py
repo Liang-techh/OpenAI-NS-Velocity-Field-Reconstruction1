@@ -102,17 +102,19 @@ def run():
     bridge = source_bridge()
     if bridge != record['defining_source_bridge']:
         raise ValueError('Heat defining source/scale bridge changed')
+    if not bridge['complete_defining_function_history_bridge_verified'] or bridge['unresolved_bindings']:
+        raise ValueError('Complete actual defining-function/history transfer required')
     c = MPIntervalContext(); c.dps = 270
     read = lambda q: read_interval(c, q)
     overlaps = 0
     for point in record['samples']+[record['whole_Z_inlet'], record['whole_Z_unbounded_exterior']]:
         if not point['original_pressure_datum_and_forward_history_retained']:
             raise ValueError('Original pressure history lost')
-        if (point['pressure_infinity_offset_exactly_zero_from_source_closure']
-                or point['defining_source_and_pressure_scale_bridge_verified']
-                or point['absolute_pressure_same_source_mixed4_available']
-                or not point['source_history_transfer_conditional']):
-            raise ValueError('Conditional candidate overclaims source/history transfer')
+        if (not point['pressure_infinity_offset_exactly_zero_from_source_closure']
+                or not point['defining_source_and_pressure_scale_bridge_verified']
+                or not point['absolute_pressure_same_source_mixed4_available']
+                or point['source_history_transfer_conditional']):
+            raise ValueError('Admitted pressure source/history transfer lost')
         if point['heat_exterior_stress_identity_certified'] or point['global_admissible_stress_lift_constructed'] or point['temporal_recursion']:
             raise ValueError('Pressure adapter overclaims stress or recursion')
         ratio = point['pressure_over_Utheta_squared_Taylor']['coefficients'][0]
@@ -142,14 +144,14 @@ def run():
                   defining_source_bridge=bridge,
                   actual_forward_tail_overlap_diagnostics=overlaps,
                   independent_admitted_C1_absolute_pressure_consistent=True,
-                  absolute_pressure_same_source_mixed4_available=False,
+                  absolute_pressure_same_source_mixed4_available=True,
                   candidate_pressure_tail_mixed4_available=True,
-                  source_history_transfer_conditional=True,
+                  source_history_transfer_conditional=False,
                   heat_exterior_stress_identity_certified=False,
                   global_admissible_stress_lift_constructed=False, temporal_recursion=False,
-                  candidate_checks_passed=True, all_passed=False, input_hashes=hashes)
+                  candidate_checks_passed=True, all_passed=True, input_hashes=hashes)
     Path(__file__).with_suffix('.json').write_text(json.dumps(result, indent=2)+'\n', encoding='utf8')
-    print('Candidate integral and mixed derivatives PASS; full source/history admission remains false', flush=True)
+    print('Source-bound absolute Gamma pressure integral and mixed derivatives PASS', flush=True)
     return result
 
 
