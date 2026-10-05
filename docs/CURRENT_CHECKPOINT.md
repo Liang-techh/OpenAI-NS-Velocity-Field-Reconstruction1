@@ -1,3 +1,13 @@
+# Current checkpoint: current Rsh functional mixed4 join complete — 2026-10-05
+
+Read docs/ACTUAL_RSH_SOURCE_JOIN_2026_10_05.md. Current long phase-one/reference phase-zero share the same Rsh parent, six source histories, signed V/E graph, canonical P0 and physical normalization. Original flat cutoff and inverse-T derivatives give the same boundary jet through total order4; the long finite neighborhood remains unchanged.
+
+Focused PASS:321 current hashes;6 exact centered-history identities;15 flat log boundary rows;9 physical function identities implying135 mixed rows. Original independent physical fixtures are reused by current hashes. The axial-square clamp is enclosure-only. A new receipt owns current_Rsh_source_functional_join_certified=true; native historical flags stay scoped.
+
+NEXT: install current five source defects in the original actual implicit moment patch/mixed4 and re-admit the common Jacobian and remainder; compose the current downstream dispatcher. Production points, full global tensor/flatness/physical-volume/energy, true n-dependent recursion and oscillatory/corrected reconstruction remain open.
+
+---
+
 # Current checkpoint: correlated E and current restoration reach Rm — 2026-10-05
 
 Read docs/ACTUAL_REFERENCE_RESTORE_MIXED_C4_2026_10_05.md. Current long-reshape histories now drive original reference/restoration mixed4 through unpatched Rm. Operational E uses the SAME fresh core recurrence with exact4Z removed before interval summation, current signed bridge increment and current first-switch cover. The old six-cap E route is removed.

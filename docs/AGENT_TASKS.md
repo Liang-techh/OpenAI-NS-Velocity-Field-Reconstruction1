@@ -1,3 +1,24 @@
+# Active handoff: current Rsh join accepted; current nonlinear patch next — 2026-10-05
+
+Read docs/ACTUAL_RSH_SOURCE_JOIN_2026_10_05.md and CURRENT_CHECKPOINT.md. Use --stage actualrshjoin. This supersedes earlier pending Rsh mixed4 join entries below. Source enclosures remain separate from selected production point histories.
+
+- [x] F39-current-Rsh-mixed4-join: same current Rsh parent/P0/V/E/core and both invP2 paths; original flat cutoff, six arbitrary-history centered identities, original physical operators/factorials,9 physical function identities implying135 mixed rows. Exact source proof, not interval overlap.
+- [ ] F39-patch-current-provider: current reference/restoration into original actual moment patch; carry all five current source defects, E/E² tail terms, original signed restoration kernels, fixed bump weights and inverse amplitude. Recompute one implicit coefficient family through axial5; do not reuse legacy patch source acceptance.
+- [ ] F39-patch-current-mixed4: current admitted implicit patch in unchanged x/Z and logR/Z physical algorithms, all bump support edges and current Rm/Rh functional joins. Keep original compact supports/radial units/P0.
+- [ ] F39-leading-input-recompute: common current five-defect leading inputs, shared implicit Jacobian and all controlled nonlinear remainder gates; refresh affected dependents only. Local patch inverse acceptance alone is not full leading-input completion.
+- [ ] F39-current-dispatcher-composition: distinct current receipt ownership for reshape/reference/restoration/patch charts and exact current interfaces.
+- [ ] F40-global-admissibility: completed full tensor admission across every region/interface.
+- [ ] F40-global-flat-volume-energy: temporal-flat remainder, physical-volume norms and energy over the required spacetime domain.
+- [ ] F40-production-points: consistent defining source parameters and evaluable histories; bounds/caps are not values.
+- [ ] F40-recursion-n1: coupled n=1 recovery with common core interval/datum and independent moment repair.
+- [ ] F40-recursion-higher: n-dependent n>=2 equations/repairs, finite-order remainder and smooth divergence-preserving sum.
+- [ ] F40-oscillatory-correction: mean/two-family correction and averaged quadratic stress cancellation.
+- [ ] F40-corrected-residual-dynamics: corrected Cartesian residual, energy, measured widths/aspect/exponents/cumulative winding.
+
+Acceptance:321 hashes,6 exact history identities,15 log boundary rows,135 implied physical mixed rows. Production-point/global/recursion flags remain false.
+
+---
+
 # Active handoff: current E/restoration complete; Rsh join and patch next — 2026-10-05
 
 Read docs/ACTUAL_REFERENCE_RESTORE_MIXED_C4_2026_10_05.md and CURRENT_CHECKPOINT.md. Use --stage actualrestoremixed. This supersedes older pending centered-E/current-reference provider entries below.
