@@ -1,3 +1,17 @@
+# Next: current Rh source join and physical assembly — 2026-10-05
+
+Eight current switch-to-patch charts and external Rm composition are accepted. Read CURRENT_MATCHED_SOURCE_DISPATCHER_2026_10_05.md and the newest AGENT_TASKS.md section on codex/st073-transition-next.
+
+1. Prove patch(x=e) -> pre_pulse.reference(offset=-5) with the same compliant .001 pressure function, same stage masses/flatten source and first-six pressure Taylor projection.
+2. Add current accepted Rh neighbor ownership and preserve every chart's physical normalization/derivative coordinates.
+3. Map current source rows through existing Cartesian/physical-time operators and complete shared leading-input/nonlinear remainder admission.
+4. Recover production point fields and complete global tensor/flatness/physical-volume/required-domain energy.
+5. Implement true coupled n=1/n>=2 recursion, separate repairs/summation, oscillatory correction and corrected residual/dynamics.
+
+These remain source enclosures. Coordinate scaling, radial Taylor rows and the patch's axial5 inverse are not temporal coefficient recursion. Older dispatcher/patch tasks below are superseded only in the accepted local scopes.
+
+---
+
 # Next: compose current matched-background providers — 2026-10-05
 
 Current Rsh functional join, nonlinear five-moment repair/common local Jacobian and patch mixed4 are accepted. Read ACTUAL_FEEDBACK_PATCH_MIXED_C4_2026_10_05.md and the latest AGENT_TASKS.md section. Use branch codex/st073-transition-next.

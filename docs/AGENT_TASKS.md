@@ -1,3 +1,29 @@
+# Active handoff: eight current chart owners composed; external Rh next — 2026-10-05
+
+Read docs/CURRENT_MATCHED_SOURCE_DISPATCHER_2026_10_05.md and CURRENT_CHECKPOINT.md on codex/st073-transition-next. Run --stage currentmatcheddispatch. This supersedes pending current-owner/chart replay and R110-to-Rm composition entries below. Root owns integration; useful bounded reviews use GPT-5.6 Luna/max.
+
+- [x] F39-dispatcher-current-provider-ownership: eight current charts with route-specific acceptance, dedicated Rsh receipt, same family/source/datum and one terminal nested object graph. Legacy ROUTES remain intact.
+- [x] F39-dispatcher-current-chart-replay:1140 whole-domain mixed rows, original phase/x/logR units, chart selectors/domains and a fresh lazy receipt-load call.
+- [x] F39-dispatcher-R110-through-Rm-composition: current R110/Rsh/Rz/restore-exit source identities plus external Rm common-profile/P0/history transform, nine physical function identities implying135 mixed rows. This does not close Rh or all inner interfaces.
+- [ ] F39-Rh-pressure-defining-function: AST-bind core_physical_field.CompliantPressureDatum('40',160) and five_moment_repair's import alias to compliant CompliantPressureDatum('40',precision=160); trace outer_initial.repair.datum -> outer_buffer -> pre_pulse.datum. Require the same .001 source parameter definition; reject the legacy .01 datum.
+- [ ] F39-Rh-pressure-projection: prove the inherited normalized_jets callable, stage masses and flatten source are common. Bind P0,0=-(m2*q0+m0+flatten0), P0,n=-(m2*qn+flatten_n), qn=partial_Z^n(1+Z²)^-2/n!, all in P/Pstar² units. Order5 gives indices0..5; order6->truncate(5) gives the same first SIX defining coefficients. Numerical boxes need not be identical; hashes/overlap are not the function proof.
+- [ ] F39-Rh-current-functional-join: replay current patch full-support x=e and pre_pulse.reference(Z,-5) symbolically for arbitrary Z/P0 and original scales. All original bump supports end at71/40<e; use the current unique implicit closure. Prove Utheta/Pstar=exp(-.5)/(1+Z²), V=4Z and canonical five primitive histories, then mixed4 with fixed basepoint normalization and correct D_y=x D_x/Stirling conversion.
+- [ ] F39-Rh-current-neighbor-owner: consume the new Rh receipt before exposing the external reference neighbor under current dispatcher ownership. Keep full_inner_interfaces/whole Cartesian/global flags false until their own scope is complete.
+- [ ] F39-current-physical-composition: inject current accepted dispatch into the existing physical coordinate operators for these charts. Preserve uncapped microscopic source ledgers and all fixed normalization factors through Cartesian/time derivatives; do not re-differentiate basepoint units.
+- [ ] F39-leading-common-inputs: identify all shared leading five-defect/implicit/remainder consumers still tied to old inputs, recompute from this one current E/history family, distinguish raw Uz from pressure primitive4C and preserve P0.
+- [ ] F39-leading-full-remainder-admission: complete common Jacobian/nonlinear remainder/source-class gates for every shared leading consumer; refresh affected dependents only. Local patch inverse acceptance is not full leading-input completion.
+- [ ] F40-production-points: consistent defining parameters, evaluable histories/3D fields and signed/logarithmic factors where needed. Caps/bounds/midpoints cannot define fields.
+- [ ] F40-global-admissibility: completed full physical tensor and cone signs/margins across every region/interface.
+- [ ] F40-global-flat-volume-energy: temporal-flat remainder, physical-volume norms and required-domain kinetic energy including actual tail/support.
+- [ ] F40-recursion-n1: actual coupled n=1 equations/common core interval/datum and independent moment repair after leading stress/flat gates.
+- [ ] F40-recursion-higher: n-dependent n>=2 equations/repairs, finite-order remainder and smooth divergence-preserving sum.
+- [ ] F40-oscillatory-correction: mean/two-family pulse corrections and averaged quadratic momentum-flux cancellation.
+- [ ] F40-corrected-residual-dynamics: independent corrected Cartesian residual/energy, measured widths/aspect/growth/trajectories/cumulative winding.
+
+Acceptance:333 current hashes,8 owners,1140 mixed rows and the current external Rm source join. External Rh/complete Cartesian/full leading/global/point/recursion remain false.
+
+---
+
 # Active handoff: current nonlinear patch accepted; current field composition next — 2026-10-05
 
 Read docs/ACTUAL_FEEDBACK_PATCH_MIXED_C4_2026_10_05.md and CURRENT_CHECKPOINT.md on branch codex/st073-transition-next. Run --stage actualfeedbackpatch. This section supersedes earlier pending current-patch/local-Jacobian entries below; full leading-input admission is still separate. Root owns integration; bounded reviews use GPT-5.6 Luna/max.

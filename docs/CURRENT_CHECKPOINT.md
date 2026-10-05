@@ -1,3 +1,13 @@
+# Current checkpoint: eight current source charts composed — 2026-10-05
+
+Read docs/CURRENT_MATCHED_SOURCE_DISPATCHER_2026_10_05.md. The three switch charts, long reshape, three reference/restoration charts and actual patch now share one nested current object graph and current acceptance ownership. Canonical P0, six histories, actual V/E graph, original chart domains and derivative units remain together.
+
+Focused PASS:333 hashes/eight owners/1140 whole-domain physical mixed rows. Current R110/Rsh/Rz/restore-exit interfaces are composed; a new external Rm open-neighborhood source identity proves nine physical functions and135 implied mixed rows. A fresh lazy caller loads the new dispatcher receipt. Legacy routes are unchanged.
+
+NEXT: dedicated current patch(x=e) -> Rh_reference(offset=-5) source join, including the common compliant pressure function and order5/order6 first-six projection. Then current physical/Cartesian composition and shared full leading-input/remainder admission. Production points, global tensor/flatness/physical-volume/required-domain energy, true n-dependent recursion and correction/dynamics remain open.
+
+---
+
 # Current checkpoint: current nonlinear five-moment patch and mixed4 complete — 2026-10-05
 
 Read docs/ACTUAL_FEEDBACK_PATCH_MIXED_C4_2026_10_05.md. Current Rsh/restoration source histories now feed the original five-bump implicit repair and physical mixed4 algorithms. All five current defects/controls through axial5, E/E² tails, same common Jacobian, normalized correlated-C1 source class, original beta supports and canonical P0 are retained. Five terminal moments close through the same unique implicit function.
