@@ -9,17 +9,60 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `7d9386f006ad2ef4520651b44cab563ce31da539`.
+The inspected `main` head before this update is `f5ea061c923980bc6852d1aa1e9c0c66fdf7e107`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`ca2ce856b421e227547431e6aa6d55c4baf3b66b`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ca2ce856b421e227547431e6aa6d55c4baf3b66b)
-on `codex/st073-transition-next`, observed October 4. This branch contains the
+[`036f3f05ba84ab55aaca4aff6047bb493d34ba5c`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/036f3f05ba84ab55aaca4aff6047bb493d34ba5c)
+on `codex/st073-transition-next`, observed October 5. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
 NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-05 review: whole inactive-gap similarity, physical and regional cone
+
+Fixed [036f3f05 similarity](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/036f3f05ba84ab55aaca4aff6047bb493d34ba5c/docs/PULSE_GAP_SIMILARITY_2026_10_04.md),
+[physical](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/036f3f05ba84ab55aaca4aff6047bb493d34ba5c/docs/PULSE_GAP_PHYSICAL_2026_10_04.md)
+and [cone](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/036f3f05ba84ab55aaca4aff6047bb493d34ba5c/docs/PULSE_GAP_CONE_2026_10_04.md)
+record the entire original xi[11,13-4mu], d[4mu,2], Z[-1,1] inactive gap.
+Both native charts, their switch and gap-to-end velocity4/moment4/stress3/
+absolute-pressure4 functional and completed physical joins are source-bound.
+Five raw cumulative moments remain; absolute pressure P and the cumulative
+pressure moment Mp are distinct retained quantities. Signed memory, complete
+future energy, selected backward loss and nonzero radial histories remain.
+
+The physical companion uses the required backward factor
+D1=D0*exp((.5-mu)*d/mu) with its reduced exact log, rather than terminal
+D0 alone. Uz=0 makes axial shear and Ez zero; it does not remove Ur or its
+transport. Actual Er=partial_t(ur)+ur*partial_r(ur)-nu*partial_zz(ur) and
+Etheta=-nu*partial_zz(utheta) remain generally nonzero. The radial vector
+Laplacian vanishes by the recorded source identity, separately from interval
+enclosure width. The full tensor still includes r*partial_z(Tz).
+
+Whole-gap cone uses symbolically grouped original log factors and continuous
+endpoint monotonicity envelopes, not end-only bounds or sampling. Zero axial
+shear permits kappa-2=2mu only in this gap. Four angular and four axial
+correction sectors retain signed source coefficients; caps remain inequalities.
+The selected C5 and physical/end joins are consumed. Joined regional coverage
+now starts at Rtail*exp(-2/mu-wait-Ts-102-Lrel), ends before Rtail*exp(3),
+and treats outer zero Gamma stress separately.
+
+Saved fixtures (489 similarity, 114 physical, 41 normalization/unit plus24
+log-envelope comparisons) check formulas at moderate parameters, not actual
+project NS, global flatness or energy. Continuous source bounds are separate.
+The [similarity receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/036f3f05ba84ab55aaca4aff6047bb493d34ba5c/experiments/root_st073/lei_ren_part1_paper_compliant_pulse_gap_similarity_C4_check.json),
+[physical receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/036f3f05ba84ab55aaca4aff6047bb493d34ba5c/experiments/root_st073/lei_ren_part1_paper_compliant_pulse_gap_physical_C2_check.json)
+and [cone receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/036f3f05ba84ab55aaca4aff6047bb493d34ba5c/experiments/root_st073/lei_ren_part1_paper_compliant_pulse_gap_cone_check.json)
+have 423/427/431 input bindings (431 distinct paths):1,278 exact Git byte
+matches and three schedule_pressure.py matches after LF-to-CRLF conversion.
+No unexplained mismatch remains; receipt replay depends on checkout bytes.
+Replay pulsegapsimilarity/pulsegapphysical/pulsegapcone with current prerequisites.
+No scientific code or complete proof audit was executed here. Main/exit/
+entrance companions and admissibility, upstream finite-width feedback,
+completed tensor/global cone, temporal flatness, volume/finite energy,
+n=1/n-dependent recursion, oscillatory correction and corrected NS remain open.
 
 ### 2026-10-04 batch: continuous original pulse-end two-vector cone
 
@@ -2886,6 +2929,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The exact-head [036f3f05 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37247723448)
+ended failure:13 failed/423 passed; all13 identifiers match 2ebf0625.
+Four smoke/slice jobs pass and full historical tests are skipped. Gap regional
+acceptance does not resolve the pre-existing governance failures or full NS.
 
 The exact-head [2ebf0625 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37242372610)
 ended failure:13 failed/423 passed, all13 identifiers unchanged from 205f6f0a.
