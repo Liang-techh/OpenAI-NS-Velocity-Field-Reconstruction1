@@ -223,6 +223,7 @@ SWIRLMORPHOLOGY=('rooted_swirl_morphology','rooted_swirl_morphology_check')
 COREATOMS=('core_integral_atoms','core_integral_atoms_check')
 COMPARISONPOINTS=('comparison_point_integrals','comparison_point_integrals_check')
 MACROSIGNEDLEADING=('macro_signed_integrals','macro_signed_integrals_check')
+ACTUALBRIDGEINTEGRALS=('actual_bridge_integrals','actual_bridge_integrals_check')
 FIRSTSWITCHLEADING=('first_switch_leading','first_switch_leading_check')
 SWITCHINTEGRALS=FIRSTSWITCHLEADING+('switch_signed_integrals','switch_signed_integrals_check')
 
@@ -292,9 +293,10 @@ def stages(stage):
             'coreatoms':COREATOMS,
             'comparisonpoints':COMPARISONPOINTS,
             'macrosignedleading':MACROSIGNEDLEADING,
+            'actualbridgeintegrals':ACTUALBRIDGEINTEGRALS,
             'firstswitchleading':FIRSTSWITCHLEADING,
             'switchintegrals':SWITCHINTEGRALS,
-            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS+POSTMIXEDJETS+STEEPJETS+HEATJETS+HEATCOMPANIONS+COLLARSTRESS+PHYSICALFIELD+COREPHYSICAL+FROZENFIELD+BRIDGEPROFILES+SWITCHPROFILES+RESHAPEPROFILES+RESTOREPROFILES+ACTUALPATCH+PATCHMIXED+RESTOREMIXED+RESHAPEMIXED+SWITCHMIXED+BRIDGEMIXED+PREPULSEMIXED+SOURCEDISPATCH+GLOBALPHYSICAL+HEATPHYSICAL+COLLARPHYSICAL+COLLARHEATCONE+COLLARCONE+WAITINGPHYSICAL+WAITINGCONE+STEEPEXITPHYSICAL+STEEPEXITCONE+STEEPPOWERPHYSICAL+STEEPPOWERCONE+STEEPENTRYPHYSICAL+STEEPENTRYCONE+ANGULARSTRESS+ANGULARPHYSICAL+ANGULARCONE+OUTERPOWERSTRESS+OUTERPOWERPHYSICAL+OUTERPOWERCONE+FLATTENSTRESS+FLATTENPHYSICAL+FLATTENCONE+PULSEENDSTRESS+PULSEENDJOIN+PULSEENDPHYSICAL+PULSEENDINTERFACES+PULSEENDCONE+PULSEGAPSIMILARITY+PULSEGAPPHYSICAL+PULSEGAPCONE+PULSEMAINEXITSIMILARITY+PULSEMAINEXITPHYSICAL+PULSEMAINEXITCONE+PULSEENTRANCESIMILARITY+PULSEENTRANCEPHYSICAL+PULSEENTRANCECONE+FRESHCORE+AXISAMPLITUDE+ROOTPEAK+ROOTEDFIELD+SWIRLMORPHOLOGY+COREATOMS+COMPARISONPOINTS+MACROSIGNEDLEADING+SWITCHINTEGRALS}[stage]
+            'all':SOURCE+INNER+OUTER+ANGULAR+ENERGY+PULSE+POSTPULSE+CLOSURE+ANGULARJETS+AXIALJETS+PULSEJETS+RADIALJETS+FLATJETS+MIXEDJETS+PHYSICALJETS+INTERFACEJETS+FLATCOMPARISON+EXTERNALJETS+POSTMIXEDJETS+STEEPJETS+HEATJETS+HEATCOMPANIONS+COLLARSTRESS+PHYSICALFIELD+COREPHYSICAL+FROZENFIELD+BRIDGEPROFILES+SWITCHPROFILES+RESHAPEPROFILES+RESTOREPROFILES+ACTUALPATCH+PATCHMIXED+RESTOREMIXED+RESHAPEMIXED+SWITCHMIXED+BRIDGEMIXED+PREPULSEMIXED+SOURCEDISPATCH+GLOBALPHYSICAL+HEATPHYSICAL+COLLARPHYSICAL+COLLARHEATCONE+COLLARCONE+WAITINGPHYSICAL+WAITINGCONE+STEEPEXITPHYSICAL+STEEPEXITCONE+STEEPPOWERPHYSICAL+STEEPPOWERCONE+STEEPENTRYPHYSICAL+STEEPENTRYCONE+ANGULARSTRESS+ANGULARPHYSICAL+ANGULARCONE+OUTERPOWERSTRESS+OUTERPOWERPHYSICAL+OUTERPOWERCONE+FLATTENSTRESS+FLATTENPHYSICAL+FLATTENCONE+PULSEENDSTRESS+PULSEENDJOIN+PULSEENDPHYSICAL+PULSEENDINTERFACES+PULSEENDCONE+PULSEGAPSIMILARITY+PULSEGAPPHYSICAL+PULSEGAPCONE+PULSEMAINEXITSIMILARITY+PULSEMAINEXITPHYSICAL+PULSEMAINEXITCONE+PULSEENTRANCESIMILARITY+PULSEENTRANCEPHYSICAL+PULSEENTRANCECONE+FRESHCORE+AXISAMPLITUDE+ROOTPEAK+ROOTEDFIELD+SWIRLMORPHOLOGY+COREATOMS+COMPARISONPOINTS+MACROSIGNEDLEADING+ACTUALBRIDGEINTEGRALS+SWITCHINTEGRALS}[stage]
 
 
 def run(stage='all',list_only=False):
@@ -574,6 +576,10 @@ def run(stage='all',list_only=False):
         actual_core_atoms_coefficientwise_integrated=inherited_atoms,
         actual_core_atoms_axial6_available=inherited_atoms,
         core_atom_scope='Same-source fresh degree24 coupled rows integrated on rho in[0,4], six normalized atoms and axial coefficients through6; differentiated nonlinear/model tails, exact shared-root valuation and original pressure primitive; no midpoint parameters, cover endpoints as values, signed bridge integrals or temporal recursion',
+        full_finite_width_signed_Ra_R100_integral_enclosures_available='actual_bridge_integrals_check' in completed,
+        actual_Ra_R100_own_six_moment_feedback_enclosures_available='actual_bridge_integrals_check' in completed,
+        actual_macro_signed_own_moment_Volterra_feedback_integrated='actual_bridge_integrals_check' in completed,
+        actual_bridge_integral_scope='Known comparison direction, actual core atoms, exact finite-width radius kernels, signed micro/macro source terms and controlled nonlinear feedback; whole real Z domain; no production point selection or downstream switch/implicit recomputation',
         original_signed_bridge_integrals_resolved=False,
         whole_vortex_aspect_ratio_measured=False,
         original_unlocalized_whole_space_kinetic_energy_is_infinite=True if inherited_energy else None,
@@ -592,7 +598,7 @@ def run(stage='all',list_only=False):
 
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','postmixedjets','steepjets','heatjets','heatcompanions','collarstress','physicalfield','corephysical','frozenfield','bridgeprofiles','switchprofiles','reshapeprofiles','restoreprofiles','actualpatch','patchmixed','restoremixed','reshapemixed','switchmixed','bridgemixed','prepulsemixed','sourcedispatch','globalphysical','heatphysical','collarphysical','collarheatcone','collarcone','waitingstress','waitingphysical','waitingcone','steepexitstress','steepexitphysical','steepexitcone','steeppowerstress','steeppowerphysical','steeppowercone','steepentrystress','steepentryphysical','steepentrycone','angularstress','angularphysical','angularcone','outerpowerstress','outerpowerphysical','outerpowercone','flattenstress','flattenphysical','flattencone','pulseendstress','pulseendjoin','pulseendphysical','pulseendinterfaces','pulseendcone','pulsegapsimilarity','pulsegapphysical','pulsegapcone','pulsemainexitsimilarity','pulsemainexitphysical','pulsemainexitcone','pulseentrancesimilarity','pulseentrancephysical','pulseentrancecone','freshcore','axisamplitude','rootpeak','rootedfield','swirlmorphology','coreatoms','comparisonpoints','macrosignedleading','firstswitchleading','switchintegrals','all'),default='all')
+    parser.add_argument('--stage',choices=('source','inner','outer','angular','energy','pulse','postpulse','closure','angularjets','axialjets','pulsejets','radialjets','flatjets','mixedjets','physicaljets','interfacejets','flatcomparison','externaljets','postmixedjets','steepjets','heatjets','heatcompanions','collarstress','physicalfield','corephysical','frozenfield','bridgeprofiles','switchprofiles','reshapeprofiles','restoreprofiles','actualpatch','patchmixed','restoremixed','reshapemixed','switchmixed','bridgemixed','prepulsemixed','sourcedispatch','globalphysical','heatphysical','collarphysical','collarheatcone','collarcone','waitingstress','waitingphysical','waitingcone','steepexitstress','steepexitphysical','steepexitcone','steeppowerstress','steeppowerphysical','steeppowercone','steepentrystress','steepentryphysical','steepentrycone','angularstress','angularphysical','angularcone','outerpowerstress','outerpowerphysical','outerpowercone','flattenstress','flattenphysical','flattencone','pulseendstress','pulseendjoin','pulseendphysical','pulseendinterfaces','pulseendcone','pulsegapsimilarity','pulsegapphysical','pulsegapcone','pulsemainexitsimilarity','pulsemainexitphysical','pulsemainexitcone','pulseentrancesimilarity','pulseentrancephysical','pulseentrancecone','freshcore','axisamplitude','rootpeak','rootedfield','swirlmorphology','coreatoms','comparisonpoints','macrosignedleading','actualbridgeintegrals','firstswitchleading','switchintegrals','all'),default='all')
     parser.add_argument('--list',action='store_true',help='Print the ordered modules without running them')
     args=parser.parse_args()
     run(args.stage,args.list)

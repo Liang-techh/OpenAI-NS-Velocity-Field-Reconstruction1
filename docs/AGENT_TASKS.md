@@ -1,3 +1,25 @@
+# Active handoff: finite-width actual bridge source and macro own feedback — 2026-10-04
+
+Read docs/ACTUAL_BRIDGE_INTEGRALS_2026_10_04.md and CURRENT_CHECKPOINT.md. Use --stage actualbridgeintegrals. Root owns writes; bounded read-only reviews use GPT-5.6 Luna/max. Keep the original comparison-driven known shear direction. Actual own moments recover I/Ur/pressure; they do not replace that known direction.
+
+- [x] F38-bridge-integral-enclosures: Both finite-width microscopic controls, signed macro modes with exact R0/L, full core atom initial histories, actual F/V axial5 and radial Q4, canonical pressure, bounded nonlinear prefixes; complete real Z[-1,1] R100 packet. No width/cap/parameter midpoint selection.
+- [x] F38-bridge-macro-feedback: True signed double Volterra kernels including both resonances, actual micro inlet, linear own six-moment feedback, exp(ell)-1-ell and axial nonlinear bounds, all quadratic cross products.
+- [ ] F38-signed-scale-correction: In macro_signed_integrals, first_switch_leading and switch_signed_integrals, replace a purported defining -2logC-2LambdaGbar factor with the full F0(Z)^2 source/log range. Gbar is only a bound. Retain signed normalized jets and actual amplitude derivatives. Refresh only changed receipts; derive a source/AST binding to the exact original F0 function before composing.
+- [ ] F38-R100-functional-transfer: Match this arbitrary-Z source to the same original R100 F/V function, own H/M/K/A/B/C and P0 in inner_switch_profiles/microswitch providers. Consume actual source definitions/current endpoint receipts; do not infer a source equality from interval overlap. Preserve angular first-switch weight1 versus axial cutoff mass1/2 and the original second switch. Carry every incoming history.
+- [ ] F38-micro-own-feedback-refinement: Where implicit input accuracy needs it, integrate signed actual micro prefix histories with positive kernels and controlled omitted terms. Current conservative micro enclosures are valid, but actual point history recovery remains false. Do not replace the prescribed comparison direction with an actual-stress ODE.
+- [ ] F38-bridge-compose-implicit: Correctly compose R100-to-R110, then carry actual R110 moment/velocity/pressure data through reshape/restoration and recompute common V100/E and five-defect implicit input/Jacobian/remainders. Retain raw Uz versus V_pressure=4C. Existing mixed4 providers must consume the same source histories.
+- [ ] F40-global-admissibility: Independently establish completed full-tensor admissibility over all original regions/interfaces. Regional two-vector cones remain insufficient.
+- [ ] F40-global-flat-volume-energy: Global temporal-flat remainder, physical-volume norms and kinetic energy in the required physical spacetime domain.
+- [ ] F40-production-points: Consistent exact source parameters and evaluable velocity/pressure/stress calls; bounds are not defining values.
+- [ ] F40-recursion-n1: Actual coupled n=1 recovery with a common core interval, compatible datum and independent moment repair.
+- [ ] F40-recursion-higher: n-dependent n>=2 recovery, separate repairs, finite-order remainder and smooth divergence-preserving summation.
+- [ ] F40-oscillatory-correction: Mean/two-family correction and measured averaged quadratic stress cancellation.
+- [ ] F40-corrected-residual-dynamics: Independent corrected Cartesian residual, energy, vortex-width/aspect/scale fits and cumulative particle winding.
+
+Acceptance:298 hashes,5 source/control AST bindings,813 logarithmic bounds,108 core atom coefficients,72 joins,1349 finite rows,240 signed terms;33 independent direct integrals,tolerance1e-55,max positive miss7.982e-85. Point selection, existing-switch functional transfer, downstream implicit recomputation, global completion and recursion flags remain false.
+
+---
+
 # Active handoff: continuous entrance and downstream cone complete; upstream feedback next — 2026-10-04
 
 Read docs/PULSE_ENTRANCE_CONE_2026_10_04.md and CURRENT_CHECKPOINT.md. Use --stage pulseentrancecone for this accepted increment. Root owns writes; use bounded read-only GPT-5.6 Luna/max reviews when useful. Regional two-vector admission does not imply the completed global tensor cone.

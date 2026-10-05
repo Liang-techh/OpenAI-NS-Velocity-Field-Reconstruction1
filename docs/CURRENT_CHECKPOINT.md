@@ -1,3 +1,15 @@
+# Current checkpoint: finite-width actual bridge integrals and own feedback — 2026-10-04
+
+Read docs/ACTUAL_BRIDGE_INTEGRALS_2026_10_04.md. The new actualbridgeintegrals stage supplies signed original Ra-to-R100 micro/macro source integrals, actual core-atom anchored own six-moment enclosures and signed macro Volterra feedback, including both resonant double kernels and nonlinear/quadratic remainders. The known comparison direction is preserved; actual moments recover actual I/Ur/pressure and are never substituted by comparison histories.
+
+Whole real Z[-1,1] R100 coverage now uses the exact real chi0 correlation before model tails, unchanged original source-method replay and a stronger proven enclosure-only width cap. F0(Z)^2 retains its full log range; Gbar is not a defining G value. The older macro/first-switch/switch signed scale range must be corrected before downstream composition.
+
+Focused stage PASS:298 hashes,5 source/control AST bindings,813 source-log product bounds,108 fresh atom coefficients,72 microscopic joins,1349 finite field/moment coefficients,240 signed terms;33 independent direct scalar integrals,tolerance1e-55,max positive miss7.982e-85. Use --stage actualbridgeintegrals. These are source-functional bounds with controlled remainder, not selected production point histories.
+
+NEXT: correct older signed-integral F0-squared range; arbitrary-Z R100 actual field/own histories/P0 functional transfer into switches; refine micro feedback if needed; propagate R110 and recompute actual implicit leading inputs/Jacobian/remainders. Existing mixed4 provider installation, global tensor admissibility/flatness/volume/energy, exact production point evaluation, true n-dependent recursion, oscillatory correction and corrected residual/measured dynamics remain open.
+
+---
+
 # Current checkpoint: continuous entrance full-shear cone complete — 2026-10-04
 
 Read docs/PULSE_ENTRANCE_CONE_2026_10_04.md. Original xi[0,.02],Z[-1,1] now has continuous regional two-vector cone bounds, retaining all12 corrections and both finite-radius shears. The exact canonical inlet/main completed physical interfaces and admitted main/exit/gap/end/downstream tail are consumed. Regional coverage begins at actual Rp=Rtail*exp(-13/mu-wait-Ts-102-Lrel).
