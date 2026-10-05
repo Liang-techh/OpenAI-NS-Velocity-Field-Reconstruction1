@@ -1,3 +1,15 @@
+# Current checkpoint: actual switch mixed4 and R100 source join complete — 2026-10-05
+
+Read docs/ACTUAL_SWITCH_MIXED_C4_2026_10_05.md. Current finite-width R100 histories now drive the unchanged original first/second switch and R2-to-R110 postpower mixed4 algorithms. Actual own H/M/K/A/B/C, raw Uz, canonical P0 and the current exact axial source remain together; prescribed Dbar/Ebar still come from the known comparison histories.
+
+The current R100 functional mixed4 join is certified by exact phase-zero/current-field trace bindings, frozen comparison assignments, shared physical callable identity and symbolic microscopic width conversion. This is source tracing and algebra, not interval overlap. A new current-history dispatcher admits exactly the three switch charts.
+
+Focused PASS:311 current hashes;1080 switch rows and405 postpower rows;10 mixed4 input/control AST bindings,7 current field bindings and7 R100 trace groups;3 dispatcher charts/405 rows. Original generic fixtures are consumed through their unchanged hash-current receipt. A separate lazy dispatcher call loads the new acceptance receipt successfully.
+
+NEXT: expose exact source definitions to long reshape, propagate actual R110 through reshape/restoration/moment patch, preserve correlated centered E, then recompute shared five-defect leading inputs/Jacobian/remainders. Exact production points, full global tensor/flatness/physical-volume/energy, actual n-dependent recursion, oscillatory correction and corrected residual/measured dynamics remain open.
+
+---
+
 # Current checkpoint: actual finite-width R100-to-R110 histories composed — 2026-10-05
 
 Read docs/ACTUAL_BRIDGE_SWITCH_2026_10_05.md. The actual finite-width R100 phi/raw V/H/M/K/A/B/C/P0 now feed the unchanged original microscopic switch and exact postpower methods. The complete real Z[-1,1] companion supplies R110 axial5 velocity/moments/pressure/log shape and radial Q4, plus same-source signed switch integrals. Known comparison histories still prescribe Dbar/Ebar; actual own histories recover the actual field.

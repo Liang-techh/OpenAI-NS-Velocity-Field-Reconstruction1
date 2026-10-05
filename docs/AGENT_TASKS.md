@@ -1,3 +1,27 @@
+# Active handoff: current actual switch mixed4 complete; downstream transfer next — 2026-10-05
+
+Read docs/ACTUAL_SWITCH_MIXED_C4_2026_10_05.md and CURRENT_CHECKPOINT.md. Run --stage actualswitchmixed for this accepted increment. This section supersedes older pending switch mixed4 installation entries below. Root owns writes; useful bounded read-only reviews use GPT-5.6 Luna/max.
+
+- [x] F38-actual-switch-mixed4-installation: current actual finite-width R100 fields/own histories/P0 in unchanged first/second/postpower derivative methods; physical width factors, canonical pressure and actual source graph retained.
+- [x] F38-actual-R100-mixed4-source-join: exact current phase-zero traces, frozen comparison source assignments and shared physical operator; symbolic width conversion through order four. Keep this local claim distinct from all inner-interface certification.
+- [x] F38-actual-switch-dispatcher: new accepted current-history provider in the three switch charts, current hashes and receipt ownership; whole-chart derivative replay and uncached acceptance-load smoke call.
+- [ ] F39-reshape-source-interface: expose the current exact bridge source-definition object or a dedicated provider method. Long reshape formal_axial_source currently expects source_integral_definitions absent from ActualR100BridgeAdapter.actual. Bind current actual F/V/chi and exact Uz integral definitions; never substitute caps.
+- [ ] F39-reshape-current-provider: pass current actual switch histories into long reshape profiles and mixed4. Preserve original width/control/physical algorithms, whole real Z domain, six own histories and canonical P0. Existing legacy receipts cannot certify the new provider.
+- [ ] F39-reference-centered-E: carry centered E=V110-4Z as the shared correlated source expression; replace the legacy epsilon*Psi+j+6*cap defining formula. Preserve V=4Z+E*(1-sigma), exact final 4Z, E-squared tails and physical units.
+- [ ] F39-restoration-patch-current-provider: propagate the same source/family/datum through reference profiles/mixed4 and actual moment patch/mixed4. Preserve original T=400A, B and C2 constraints, reference length/offsets and x in [1,e]. Admit required downstream derivative orders and source joins.
+- [ ] F39-leading-input-recompute: recompute all five shared defects, actual finite-width leading inputs, the same implicit Jacobian and controlled nonlinear remainder. Refresh only affected dependents; retain raw Uz versus pressure primitive 4C.
+- [ ] F40-global-admissibility: independently admit the completed full tensor across every region/interface. Regional two-vector cone receipts alone are insufficient.
+- [ ] F40-global-flat-volume-energy: global temporal-flat remainder, physical-volume norms and kinetic energy over the required physical spacetime domain.
+- [ ] F40-production-points: consistent exact parameters and evaluable actual histories/fields; bounds, caps and midpoint choices are not defining values.
+- [ ] F40-recursion-n1: actual coupled n=1 recovery, common core interval, compatible datum and independent moment repair after its leading/global prerequisites.
+- [ ] F40-recursion-higher: correct n-dependent n>=2 equations, separate repairs, finite-order remainder and smooth divergence-preserving sum.
+- [ ] F40-oscillatory-correction: mean/two-family pulse corrections and measured averaged quadratic stress cancellation.
+- [ ] F40-corrected-residual-dynamics: independent corrected Cartesian residual, required-domain energy, measured vortex widths/aspect/scale fits and cumulative particle winding.
+
+Acceptance:311 hashes,1080 switch rows,405 postpower rows,10 mixed4 input/control bindings,7 current field bindings,7 R100 trace groups and3 dispatcher charts/405 rows. Production points, downstream actual installation, implicit/global/temporal-recursion flags remain false.
+
+---
+
 # Active handoff: actual finite-width R100-to-R110 companion complete — 2026-10-05
 
 Read ACTUAL_BRIDGE_SWITCH_2026_10_05.md and CURRENT_CHECKPOINT.md. Run --stage actualbridgeswitch. Root owns writes; bounded read-only reviews use GPT-5.6 Luna/max. This section supersedes older pending scale/companion-transfer entries below.
