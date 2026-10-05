@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `e1bde799f0de8acd9bb2f8db0965d803bd279918`.
+The inspected `main` head before this update is `f133aa1ddaab1604bf33f474ae452d6ac2a16070`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`1a79449b32245882210f10b88775f7899d6a88a2`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/1a79449b32245882210f10b88775f7899d6a88a2)
+[`ce423a228c82a3a4c4c72ecbbbd9a5050566d996`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/ce423a228c82a3a4c4c72ecbbbd9a5050566d996)
 on `codex/st073-transition-next`, observed October 5. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,49 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-05 review: current Rsh source join and local implicit feedback patch
+
+This checkpoint is fixed at5e0c17b6; subsequent ce423a22 dispatcher work is
+observed but not reviewed or accepted here. The [Rsh report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/5e0c17b6d728ac993d572d325dbb5a6eb88db37e/docs/ACTUAL_RSH_SOURCE_JOIN_2026_10_05.md)
+records same-parent long phase1/reference phase0 functional mixed4 equality.
+Log-amplitude boundary jets, six centered history equations, exact E=V110-4Z,
+pressure and physical normalization imply135 mixed rows. Those rows are
+source-identity consequences, not135 newly independent fixtures. Constant
+power continuation computes only the boundary jet, not a replacement
+neighborhood. A new companion owns join=true; native historical false
+producer flags are preserved.
+
+The [feedback patch report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/5e0c17b6d728ac993d572d325dbb5a6eb88db37e/docs/ACTUAL_FEEDBACK_PATCH_MIXED_C4_2026_10_05.md)
+records current finite-width/restored data into original nonlinear five-bump
+repair and mixed4 with local Rm/Rh source joins. Current E and E^2, signed
+restoration tails, canonical P0 and inverse amplitude remain. The inherited
+normalized C1 source-class proof applies to correlated actual functions;
+it does not certify arbitrary independent interval-box functions. C1
+existence/uniqueness/contraction precedes higher axial orders2..5, using the
+SAME enclosed Jacobian and full nonlinear/inverse-amplitude derivative terms.
+Thirty current defect and30 control coefficients plus20 higher Jacobian rows
+are recomputed. Terminal closure follows from the unique implicit-map source
+equation, not residual interval containment of zero.
+
+Original bump supports, beta normalization, radial/pressure prefactors and
+mixed total-order4 rows remain; saved local endpoint packet checks do not
+constitute an independent external neighboring-chart comparison. Unchanged
+generic fixtures are hash-consumed, not newly rerun. Local patch/mixed4 is
+accepted but full_implicit_leading_inputs_recomputed=false. Shared leading/
+remainder full admission, external current dispatcher composition (at this
+fixed commit), complete Cartesian interfaces/points, global tensor/flatness/
+volume/finite energy, n=1/time recursion and corrected NS remain open.
+No scientific code or complete proof audit was run.
+
+The [Rsh receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/5e0c17b6d728ac993d572d325dbb5a6eb88db37e/experiments/root_st073/lei_ren_part1_paper_compliant_actual_Rsh_source_join_check.json),
+[moment receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/5e0c17b6d728ac993d572d325dbb5a6eb88db37e/experiments/root_st073/lei_ren_part1_paper_compliant_actual_feedback_moment_patch_check.json)
+and [mixed4 receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/5e0c17b6d728ac993d572d325dbb5a6eb88db37e/experiments/root_st073/lei_ren_part1_paper_compliant_actual_feedback_patch_mixed_C4_check.json)
+have323/327/331 bindings (331 distinct paths):978 exact pinned Git-byte
+matches and three schedule_pressure.py matches after LF-to-CRLF conversion,
+with no unexplained mismatch. Report counts321/325/329 are stale. Replay
+actualrshjoin/actualfeedbackpatch with current prerequisites and receipt
+checkout-byte convention.
 
 ### 2026-10-05 review: correlated actual E and unpatched reference/restoration Rm
 
@@ -3176,6 +3219,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The exact-head [5e0c17b6 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37316966269)
+ended failure:13 failed/423 passed; all13 identifiers match 1a79449b.
+Four smoke/slice jobs pass; full historical tests are skipped. Local patch
+admission is not full shared-leading/global NS acceptance.
 
 The exact-head [1a79449b run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37312509853)
 ended failure:13 failed/423 passed; all13 identifiers match f19ee6e5.
