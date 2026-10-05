@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `b460b5bdf43539ed05ad1277b74db0ba6686f3d7`.
+The inspected `main` head before this update is `e62cb305da9d53bbe1daf17ae8f989c3ce28ef93`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`af7eb26d99a7c6008113b6318425f24a33be5f84`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/af7eb26d99a7c6008113b6318425f24a33be5f84)
+[`48f646c0dcb088f84b905083d1ab34e2505f7d92`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/48f646c0dcb088f84b905083d1ab34e2505f7d92)
 on `codex/st073-transition-next`, observed October 5. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,58 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-05 review: current power/angular and steep/waiting,27 owners
+
+The [22291f2c power/angular report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/48f646c0dcb088f84b905083d1ab34e2505f7d92/docs/CURRENT_POWER_ANGULAR_CHAIN_2026_10_05.md)
+and [48f646c0 steep/waiting report](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/48f646c0dcb088f84b905083d1ab34e2505f7d92/docs/CURRENT_STEEP_WAITING_CHAIN_2026_10_05.md)
+extend21->23->27 current source AND physical owners: outer_power,
+outer_angular, steep_entry/power/exit and waiting. Original mixed4 spatial
+and fixed-position time1 operators, radii and Ev0/Pstar^2 units remain.
+Retained earlier owner evidence is hash-consumed, not regenerated as new
+results. Explicit-chart outputs remain signed/log derivative enclosures,
+not production point-field admission or n=1 temporal recovery.
+
+The raw future is pulse.fifth.fourth.energy.base, not the distinct
+pulse.high.base.future previously proposed in an acquisition task. Pinned
+typed parameter/source constructors bind those instances; object identity
+or interval endpoint overlap alone is insufficient. Actual fifth angular
+coefficients retain the admitted C4 prefix/Gamma scale. Flatten exit supplies
+live signed angular/energy/pressure histories; actual Rv histories remain
+distinct from Rp reference data. Complete future retains steep/waiting,
+infinite heat tail,1/delta-2epsilon*W+epsilon^2*W_squared and full Gamma
+deficit factor. Positive future energy is not finite physical kinetic energy.
+
+Steep/waiting reuses the SAME checked outer future/current object, live
+angular terminal and Gamma jets, original Ts/wait, exact heat atoms and
+compliant epsilon=.001*delta (not legacy .01). Pressure P0+Mp and signed
+angular/pressure memory remain. 512-cell future and128-cell O7 numerical
+enclosures need not equal: exact original kernel integrands, logistic
+reflection and FTC bind the common source before bounds are consumed.
+Empty angular future supports remove local forcing, not retained histories.
+Current interfaces compose source ODEs and original radius laws; old stress/
+heat/cone certificates do not accept the new composition automatically.
+
+Saved120 power/angular and240 steep/waiting finite synthetic mixed-row
+fixtures check units/radius branches only. They do not select Md40 points
+or validate actual corrected NS.27-owner regular physical contributions
+total5,802 plus216 retained gap-overlap contributions. Source interfaces,
+physical mapping and required-domain energy remain separate gates.
+Waiting-to-CURRENT heat collar/exterior is NEXT, not completed. Uniform
+native pulse C4/quantitative flat interfaces, core/axis/bridge/heat owners,
+shared leading/remainder full admission, point fields, global tensor/
+temporal-flat/volume/finite-energy and actual n=1/time recursion remain open.
+Unlocalized whole-space energy remains infinite. No scientific computation
+or independent complete proof audit was run.
+
+The [power/angular source receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/48f646c0dcb088f84b905083d1ab34e2505f7d92/experiments/root_st073/lei_ren_part1_paper_compliant_current_power_angular_source_check.json),
+[physical receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/48f646c0dcb088f84b905083d1ab34e2505f7d92/experiments/root_st073/lei_ren_part1_paper_compliant_current_power_angular_physical_assembly_check.json),
+[steep/waiting source receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/48f646c0dcb088f84b905083d1ab34e2505f7d92/experiments/root_st073/lei_ren_part1_paper_compliant_current_steep_waiting_source_check.json)
+and [physical receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/48f646c0dcb088f84b905083d1ab34e2505f7d92/experiments/root_st073/lei_ren_part1_paper_compliant_current_steep_waiting_physical_assembly_check.json)
+have500/514/504/522 bindings (522 distinct paths):2,036 exact pinned Git-byte
+matches and four schedule_pressure.py matches after LF-to-CRLF conversion,
+with no unexplained mismatch. Replay currentpowerangular/physical and
+currentsteepwaiting/physical with current prerequisites and checkout bytes.
 
 ### 2026-10-05 review: current pulse and O5 flatten,21 source/physical owners
 
@@ -3363,6 +3415,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The exact-head [48f646c0 run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37355577296)
+ended failure:13 failed/423 passed; all13 identifiers match af7eb26d.
+Four smoke/slice jobs pass; full historical tests are skipped.27 owners do
+not establish global stress, required-domain energy or corrected NS.
 
 The exact-head [af7eb26d run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37346911794)
 ended failure:13 failed/423 passed; all13 identifiers match bd5e7abb.
