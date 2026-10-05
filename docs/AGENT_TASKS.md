@@ -1,3 +1,26 @@
+# Active handoff: current E/restoration complete; Rsh join and patch next — 2026-10-05
+
+Read docs/ACTUAL_REFERENCE_RESTORE_MIXED_C4_2026_10_05.md and CURRENT_CHECKPOINT.md. Use --stage actualrestoremixed. This supersedes older pending centered-E/current-reference provider entries below.
+
+- [x] F39-reference-centered-E: same fresh core radial recurrence as V0; exact affine4Z removed from row0 before finite summation, all n>=1 rows and source tail retained. Current actual bridge and first-switch increments; directed ordinary C2 budget admitted before source theorem intersection. No dual core-route identity, broad baseline subtraction or six-cap defining formula.
+- [x] F39-reference-current-provider: current Rsh parent/six histories/P0 in original reference/restoration/postrestore mixed4 through Rm; original source equations/kernels/offsets, E-squared terms,270 exact Rz/restore-exit rows and exact final4Z. Full current Rsh mixed4 interface stays open.
+- [x] F39-current-prepatch-defects: regenerate five current unpatched Rm defect functions through axial5; retain all30 coefficient enclosures. This does not certify nonlinear repair or the implicit Jacobian.
+- [ ] F39-current-Rsh-mixed4-join: independently trace the same actual Rsh primitive functions/P0; use centered-history coordinate identities, current E=V110-4Z source graph and original flat cutoff chain rule through order4. Certify source equality, not overlap. Update only the specific new interface flags/receipts after proof.
+- [ ] F39-patch-current-provider: inject current reference/restoration into original actual moment patch and mixed4; carry current five source defects, original bump functions/integrals and x in [1,e], E-squared tails, pressure and physical radius factors. Legacy patch receipts cannot certify the new provider.
+- [ ] F39-leading-input-recompute: common current five-defect inputs, same implicit Jacobian and controlled nonlinear remainder; refresh only affected dependents.
+- [ ] F39-current-dispatcher-composition: new acceptance ownership for downstream reshape/reference/restoration/patch charts, then exact current source interfaces. Keep the full Cartesian/point/global claims separate.
+- [ ] F40-global-admissibility: independently admit the completed full tensor across every region/interface.
+- [ ] F40-global-flat-volume-energy: global temporal-flat remainder, physical-volume norms and energy in the required physical spacetime domain.
+- [ ] F40-production-points: consistent exact source parameters and evaluable field histories; enclosures/caps are not values.
+- [ ] F40-recursion-n1: actual coupled n=1 recovery, common core interval/datum and independent moment repair.
+- [ ] F40-recursion-higher: n-dependent n>=2 equations/repairs, finite-order remainder and smooth divergence-preserving sum.
+- [ ] F40-oscillatory-correction: mean/two-family correction and measured averaged quadratic stress cancellation.
+- [ ] F40-corrected-residual-dynamics: corrected Cartesian residual/energy and measured widths/aspect/scale fits/cumulative winding.
+
+Acceptance:317 hashes,1620 mixed rows,270 exact Rz/restore-exit rows,30 current prepatch coefficients,current source/C2 budget and final4Z. Current Rsh full mixed4 join, patch/implicit/global/point/recursion flags remain false.
+
+---
+
 # Active handoff: actual long reshape complete; centered E and restoration next — 2026-10-05
 
 Read docs/ACTUAL_LONG_RESHAPE_MIXED_C4_2026_10_05.md and CURRENT_CHECKPOINT.md. Use --stage actualreshapemixed. This section supersedes older pending long-reshape source-interface/provider entries below.

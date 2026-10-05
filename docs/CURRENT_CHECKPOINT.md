@@ -1,3 +1,13 @@
+# Current checkpoint: correlated E and current restoration reach Rm — 2026-10-05
+
+Read docs/ACTUAL_REFERENCE_RESTORE_MIXED_C4_2026_10_05.md. Current long-reshape histories now drive original reference/restoration mixed4 through unpatched Rm. Operational E uses the SAME fresh core recurrence with exact4Z removed before interval summation, current signed bridge increment and current first-switch cover. The old six-cap E route is removed.
+
+Focused PASS:317 hashes;720 velocity/pressure and900 primitive rows;current Rsh parent/six centered histories/P0;270 exact Rz/restore-exit rows;terminal V=4Z;30 current prepatch defect coefficients. Actual increment C2 budget is verified before the E theorem intersection. Existing generic fixture receipts are reused through current hashes.
+
+NEXT: current Rsh functional mixed4 join, actual five-moment patch injection, shared leading five-defect input/Jacobian/remainder recomputation and current dispatcher composition. Production points, global full tensor/flatness/physical-volume/energy, true n-dependent recursion, oscillatory correction and corrected residual/measured dynamics remain open. This is a current source-enclosure pipeline, not a completed NS solution.
+
+---
+
 # Current checkpoint: actual R110-to-Rsh long reshape installed — 2026-10-05
 
 Read docs/ACTUAL_LONG_RESHAPE_MIXED_C4_2026_10_05.md. Current finite-width R110 velocity, six own moments and canonical P0 now feed the original long-reshape profiles and physical mixed4 methods. Original A/T, Cstar/Pstar, B normalization, reference length, source controls and exact signed axial graph are retained.
