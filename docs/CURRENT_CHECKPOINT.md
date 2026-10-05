@@ -1,3 +1,11 @@
+# Current checkpoint: common analytic core solution (2026-10-05)
+
+Read [CURRENT_CORE_COMMON_FIXED_POINT_2026_10_05.md](CURRENT_CORE_COMMON_FIXED_POINT_2026_10_05.md). F55 is complete within its source-bound analytic scope: the actual twenty-term Banach map, original finite radial recurrence, explicit model and nonlinear mixed tails now enclose one common solution. The new currentcorefixedpoint stage also returns mixed pressure tail packets. Fresh producer, checker and checked-runtime acquisition pass.
+
+This section supersedes the older open F55 common-core entries below; historical receipts retain their original scope. Next execute F56 common pressure/phase0 recovery and core/first mixed4 join, then global stress/flatness/required-domain energy and genuine n-dependent temporal recursion. Complete nonlinear point evaluation and temporal recursion remain false.
+
+---
+
 # Current checkpoint: actual core source operator (2026-10-05)
 
 Implementation and scoped receipts: commit [48b0fdfc](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/48b0fdfc).

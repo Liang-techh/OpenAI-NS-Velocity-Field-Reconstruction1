@@ -1,3 +1,30 @@
+# Active tasks after common core admission (2026-10-05)
+
+Read CURRENT_CORE_COMMON_FIXED_POINT_2026_10_05.md. This authoritative task list supersedes the older F55 common-solution checkboxes below. Receipt: experiments/root_st073/lei_ren_part1_paper_compliant_current_core_common_fixed_point_check.json.
+
+- [x] F55-actual-Banach-map-admission: replay all 20 original positive rows and combined bounds; admit the same closed model-centered Xh ball and contraction.
+- [x] F55-parameter-and-domain-unification: bind current exact parameters, selected source, pressure bounds, sigma definition, complex tube and source graph; retain the two distinct epsilons.
+- [x] F55-all-order-pressure-source: identify one original implicit integral, exact J1 reflection, actual flatten branches, fourteen true measures and all-order pressure jets.
+- [x] F55-common-coefficient-induction: AST-bind actual integral/extraction formulas; combine all-order gauge identities with directed source coefficients and unique analytic solution.
+- [x] F55-common-nonlinear-tail: bind the same correction norm, original factorial Bessel consumer and all-order mixed tail ratio; 42 tail rows through total derivative order 5 pass.
+- [x] F55-mixed-pressure-tail: add the complete axial convolutions and fixed multiplier to a same-primitive pressure_profile API; preserve original sharper zero-axial value tail.
+- [x] F55-common-receipt-and-runtime: three scoped common-core gates admitted, currentcorefixedpoint stage added, checked fresh Z=.341/rho=2 succeeds.
+- [ ] F56-core-first-owner-binding: create a new proof adapter consuming the common-core receipt and current bridge/atoms; assert actual object/source/datum identity and preserve old receipts.
+- [ ] F56-core-first-pressure-primitive: bind rho=4 integral Phi squared to original 4C=PD+PI, physical P0, core epsilon and F0 squared; include all requested axial derivatives.
+- [ ] F56-phase0-traces-and-controls: AST-consume first phase zero branches; identify the exact boundary atom functions and their radial/axial controls, without overlap or cap-as-value arguments.
+- [ ] F56-core-first-ODE-recovery: derive original stress-free radial recovery, affine U0, averaged M, radial Euler derivatives and swirl/pressure/hydro drive from the common solution.
+- [ ] F56-hb-pullback-mixed4: retain derivatives of the exact hb radius law and prove boundary equality of source functions through total mixed order 4.
+- [ ] F56-fourth-join-receipt: admit core/first and all-four bridge joins only after preceding identities pass; reuse earlier three-join evidence by hash and exercise a fresh Z.
+- [ ] F57-native-C4-and-heat-companions: complete remaining quantitative native pulse C4 and same-source heat pressure/stress companions; maintain separate gates.
+- [ ] F58-global-admissible-stress: compose source domains, construct the actual stress lift and certify the admissible cone on the required global domains.
+- [ ] F59-flat-remainder-and-energy: bound the flat remainder and required-domain physical energy with the original forcing and localization assumptions.
+- [ ] F60-true-temporal-recursion: implement n-dependent time-scale parameters and cross-scale matching from the admitted background; do not relabel radial coefficient iteration.
+- [ ] F61-oscillatory-cancellation-and-residual: construct two-family pulses, averaged quadratic cancellation, controlled remainder and complete forced NS residual/dynamics diagnostics.
+
+Reuse unchanged receipts. Mark each completed item with source receipt and commit, and push only owned artifacts. Preserve all later false gates until their separate obligations pass.
+
+---
+
 # Active tasks after actual core operator (2026-10-05)
 
 Implementation and scoped receipts: commit [48b0fdfc](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/48b0fdfc).
