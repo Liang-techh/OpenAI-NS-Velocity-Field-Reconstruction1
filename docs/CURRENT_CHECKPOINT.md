@@ -1,3 +1,13 @@
+# Current steep/waiting source and physical chain complete - 2026-10-05
+
+Read [CURRENT_STEEP_WAITING_CHAIN_2026_10_05.md](CURRENT_STEEP_WAITING_CHAIN_2026_10_05.md). CurrentSteepWaitingSourceAssembly adds entry, power, exit and waiting after the same checked current angular object. Twenty-seven downstream profile sources are accepted. The physical extension is accepted as well:27 downstream physical owners,2,592 newly checked spatial4/time1 source contributions and240 independent finite O7 radius/fixed-unit rows. Prior23 physical evidence is retained, giving5,802 regular contributions plus216 supplemental gap contributions. Default checked runtime passes all four new charts; run --stage currentsteepwaitingphysical.
+
+The actual C4/C5 prefix future supplies live waiting/logone/Ts/epsilon/preheat atoms and Gamma energy jets. A shared exact J/Ein/Eout/Iin/Pin/Iout/Pout source identifies the differing512/128-cell kernel enclosures. Sixteen current future-factor and18 exact-kernel identities bind angular s=0 to steep entry0 while retaining nonzero past angular/absolute-pressure histories. The retained canonical O7 theorem supplies433 unchanged functional identities. Twelve original whole-Z packets contain720 new mixed4 rows and preserve the steep-power1/4 energy floor; a fresh unsaved Z exercises acquisition. Run --stage currentsteepwaiting.
+
+NEXT: current waiting/heat-collar/exterior source and physical ownership. Complete nonlinear point fields, quantitative native mixed4/full pulse C4, current core/axis/bridge physical ownership, global tensor/cone/flatness/required-domain energy and true n-dependent temporal recursion remain open. Source-owner counts are not a completion percentage.
+
+---
+
 # Current power/angular source and physical chain complete - 2026-10-05
 
 Read [CURRENT_POWER_ANGULAR_CHAIN_2026_10_05.md](CURRENT_POWER_ANGULAR_CHAIN_2026_10_05.md). CurrentPowerAngularSourceAssembly and CurrentPowerAngularPhysicalAssembly add outer_power and outer_angular to the checked current flatten. Twenty-three downstream profile and physical source owners are now accepted.

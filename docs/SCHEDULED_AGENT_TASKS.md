@@ -1,3 +1,9 @@
+# Current scheduled-agent entry - 2026-10-05: O7 waiting reached
+
+Start with docs/AGENT_TASKS.md and docs/CURRENT_STEEP_WAITING_CHAIN_2026_10_05.md. Current27 profile and physical sources through waiting are accepted. New O7 physical maps/default runtime pass; prior23 physical evidence is retained. F49 current waiting/collar/exact heat source and physical ownership comes next. Mark completed work with scope, receipt and commit. Complete points, global stress/flatness/required-domain energy and true temporal recursion remain open.
+
+---
+
 # Current scheduled-agent entry - 2026-10-05
 
 Current progress is twenty-three accepted downstream profile and physical source owners through outer_power and outer_angular. Start with docs/AGENT_TASKS.md and docs/CURRENT_POWER_ANGULAR_CHAIN_2026_10_05.md; the older sections below are historical evidence. F48 current steep/waiting ownership is the next dependency, followed by F49 heat. Completed tasks must be checked off with scope, receipt and commit; retained old physical evidence should not be regenerated. True temporal recursion and complete production fields remain open.
