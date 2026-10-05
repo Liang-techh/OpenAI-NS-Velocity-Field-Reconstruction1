@@ -9,10 +9,10 @@ data, schedules or candidate defaults are changed by this documentation update.
 
 ## Published progress and ownership boundary
 
-The inspected `main` head before this update is `39f07857ecff91041af8d3f4c369fed7b8f3ec83`.
+The inspected `main` head before this update is `b460b5bdf43539ed05ad1277b74db0ba6686f3d7`.
 Its September 22 pause snapshot remains a historical stop-state. The newest
 observed research head is
-[`bd5e7abbd0b7af71e662583c7c2e92d6d544f323`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/bd5e7abbd0b7af71e662583c7c2e92d6d544f323)
+[`af7eb26d99a7c6008113b6318425f24a33be5f84`](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/commit/af7eb26d99a7c6008113b6318425f24a33be5f84)
 on `codex/st073-transition-next`, observed October 5. This branch contains the
 current Part I integration, continuous pressure/moment providers, coupled stress
 probes and complete ST073 local bundle. Branch activity alone does not prove that
@@ -20,6 +20,60 @@ NS work is running. This review uses an isolated clone; its clean initial status
 does not establish whether the task's original workspace has uncommitted changes.
 
 ## Latest validation index
+
+### 2026-10-05 review: current pulse and O5 flatten,21 source/physical owners
+
+Batch a7196c28/3941b337/72103280, pinned ataf7eb26d, records
+[pulse physical maps](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/af7eb26d99a7c6008113b6318425f24a33be5f84/docs/CURRENT_PULSE_PHYSICAL_MAPS_2026_10_05.md),
+[pulse-terminal flatten source](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/af7eb26d99a7c6008113b6318425f24a33be5f84/docs/CURRENT_PULSE_FLATTEN_SOURCE_2026_10_05.md)
+and [flatten physical maps](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/af7eb26d99a7c6008113b6318425f24a33be5f84/docs/CURRENT_FLATTEN_PHYSICAL_MAPS_2026_10_05.md).
+Current physical ownership expands14->20->21, matching21 source owners
+through original O5 flatten t[0,100]. Spatial total-order4 and fixed-position
+time1 maps remain signed/log source bounds, not selected point fields or
+actual n=1 coefficient recovery. Old accepted14/20 owner receipts retain
+their scope; unchanged evidence is hash-consumed rather than newly rerun.
+
+Pulse radius factors cancel analytically BEFORE enclosure:
+Pstar*exp(-(.5+mu)*t)*sqrt(R/2)=Pstar*sqrt(Rp/2)*exp(-mu*t).
+Twenty factor identities retain all radial derivative orders. Whole-source
+mu*t uses xi or13+mu*s in the appropriate chart; frozen units are not
+differentiated again. Saved finite180-row and tiny-mu log fixtures test
+normalization/cancellation, not actual-source corrected NS accuracy.
+
+New flatten inlet uses the SAME native pulse U/Hp/Pin/Xp, analytic datum,
+actual signed Xv formula and complete future_energy callable for every Z,
+with the original future integral divided by2. Actual Rv terminal histories
+are published separately from inherited Rp reference incoming data. At
+s0 empty future beta supports remove actual linear moments/Ur/Uz, while
+angular Xv and positive future energy remain; incoming Rp histories are
+not reset to force equality. Original logRv=logRp+13/mu and exact amplitude
+logs remain. Canonical source theorem is consumed after current object,
+assignment and future-return bindings; overlap is not the join proof.
+
+Flatten physical branch uses its SAME current provider/logEv2_parts, fixed
+Ev0 for already-differentiated velocity and Pstar^2 for absolute pressure.
+Rv history metadata does not replace derivative grids. Whole-Z inlet,
+whole flatten and exit packets add648 contribution views, but endpoint views
+do not create owners. Current regular21-owner contributions total4,506,
+with216 gap-overlap contributions separately retained. Saved60-row fixture
+checks units with synthetic nonzero velocities, not nonlinear point selection.
+
+af7eb26d adds post-flatten power acquisition/admission TASKS ONLY. Current
+power/angular/steep/waiting/heat owners remain unimplemented here; earlier
+outer-power stress/cone certificates cannot be transferred to this object.
+Uniform native pulse C4/two-sided quantitative flat bounds, core/axis/bridge/
+heat ownership, full shared leading/remainder admission, point fields,
+global tensor/flatness/volume/finite energy and n=1/time recursion remain open.
+Current unlocalized whole-space energy remains infinite. No scientific
+computation or independent complete proof audit was run.
+
+The [pulse physical receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/af7eb26d99a7c6008113b6318425f24a33be5f84/experiments/root_st073/lei_ren_part1_paper_compliant_current_pulse_physical_assembly_check.json),
+[flatten source receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/af7eb26d99a7c6008113b6318425f24a33be5f84/experiments/root_st073/lei_ren_part1_paper_compliant_current_pulse_flatten_source_check.json)
+and [flatten physical receipt](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/blob/af7eb26d99a7c6008113b6318425f24a33be5f84/experiments/root_st073/lei_ren_part1_paper_compliant_current_flatten_physical_assembly_check.json)
+have388/495/506 bindings (506 distinct paths):1,386 exact pinned Git-byte
+matches and three schedule_pressure.py matches after LF-to-CRLF conversion,
+with no unexplained mismatch. Replay currentpulsephysical/currentpulseflatten/
+currentflattenphysical with current prerequisites and receipt checkout bytes.
 
 ### 2026-10-05 review: Rp native source join,20 owners and14 physical maps
 
@@ -3309,6 +3363,11 @@ under an explicitly fixed forcing/domain/time contract. This documentation recor
 the frontier and failures without extending scientific implementation scope.
 
 ## CI diagnosis: research failures are pre-existing, not P1 acceptance
+
+The exact-head [af7eb26d run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37346911794)
+ended failure:13 failed/423 passed; all13 identifiers match bd5e7abb.
+Four smoke/slice jobs pass; full historical tests are skipped.21 mapped
+source owners do not certify all interfaces, energy or corrected NS.
 
 The exact-head [bd5e7abb run](https://github.com/Liang-techh/OpenAI-NS-Velocity-Field-Reconstruction1/actions/runs/37335232935)
 ended failure:13 failed/423 passed; all13 identifiers match 1a715aa4.
