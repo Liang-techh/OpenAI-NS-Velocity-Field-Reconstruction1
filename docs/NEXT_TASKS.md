@@ -1,3 +1,16 @@
+# Next: actual Rp pulse source bridge and current physical maps — 2026-10-05
+
+Fourteen current downstream owners reach Rp through one original pre-pulse history object. Read CURRENT_PRE_PULSE_SOURCE_CHAIN_2026_10_05.md and the latest AGENT_TASKS.md section.
+
+1. Bind actual outer/pulse canonical constant source functions, common pressure/parameters and Rp radius before certifying the external pulse join.
+2. Inject the accepted current dispatcher/core/parameters into physical Cartesian/time operators for its14chart coverage.
+3. Complete shared full leading-source/nonlinear remainder admission, production point reconstruction and full global tensor/flatness/energy gates.
+4. Implement true n-dependent recursion, oscillatory corrections and corrected residual/dynamics after the background gates.
+
+The new chart ownership and exact five-history continuations are accepted. Temporal scale recursion and complete core-to-heat point/Cartesian assembly remain uncompleted.
+
+---
+
 # Next: current pre-pulse ownership and physical composition — 2026-10-05
 
 Current external Rh reference admission is complete. Read ACTUAL_RH_SOURCE_JOIN_2026_10_05.md and the newest AGENT_TASKS.md section. Use --stage actualrhjoin on codex/st073-transition-next.

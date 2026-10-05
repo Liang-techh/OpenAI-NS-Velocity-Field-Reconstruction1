@@ -1,3 +1,22 @@
+# Active handoff: current Rh-to-Rp pre-pulse chain complete — 2026-10-05
+
+Read CURRENT_PRE_PULSE_SOURCE_CHAIN_2026_10_05.md and CURRENT_CHECKPOINT.md on codex/st073-transition-next. Run --stage currentprepulse. CurrentPrePulseSourceDispatcher now exposes14 downstream owners through one accepted Rh reference object. F40-current-prepulse-owner-expansion and F40-current-prepulse-history-transfer are completed in this local source scope.
+
+- [x] F41-current-prepulse-ownership: five additional original charts use the same current Rh provider, P0 and parameter objects; runtime loads the new acceptance before certification.
+- [x] F41-current-prepulse-histories: bound actual parent/kernel/five-history AST, source_histories exact interpretation,25 identities/five interfaces, preserved m/k tails after V=0 and exact positive mu.
+- [x] F41-current-prepulse-whole-coverage:675 whole mixed4 rows and fresh O3_power receipt-load/provider-identity call.
+
+Concrete next tasks:
+
+- [ ] F41-Rp-outer-inlet-function-bridge: bind pre_pulse.power(Z,1) and SharedOuterBuffer.power to common original O2/O3 kernel functions/parameters. Recover their q=1+Z² source forms u=U/q, m=M*Z, h=H/q, k=K*Z/q, e=E_Z*Z²+E_Q/q², p=P_in/q²; derive U/M/H/K/E_Z/E_Q/P_in from actual scalar source recipes, not chosen interval representatives.
+- [ ] F41-Rp-canonical-constant-transfer: inspect CompliantAxialHighJets._incoming_constants -> fifth-order source receipt -> CompliantPowerInletC4.incoming -> pulse.data. Bind every retained canonical coefficient to those same source functions and correct Pstar/u units; saved JSON values alone are enclosures.
+- [ ] F41-Rp-pressure-radius-pulse-flatness: require same .001 pressure function/Pstar/mu/delta/Tw, actual logRp=logRref+logP+1+Tw on both sides and zero pulse entrance corrections through needed derivative order. Then exact four velocity/pressure and five primitive source identities imply mixed4 at Rp.
+- [ ] F41-current-downstream-physical-adapter: inject the accepted14chart dispatcher and its nested current core/parameters into unchanged global_physical_assembly operators. Limit coverage to accepted downstream charts; never instantiate a legacy core owner to silently claim current whole-field coverage.
+- [ ] F41-current-physical-units-and-source-fixture: keep phase hb factors before bounds, patch Rm-to-current-radius units after physical differentiation, every Pstar/amplitude factor, moving cylindrical basis and fixed-x time derivative. Reuse hash-current independent operators or run a focused fixture if those algorithms change.
+- [ ] F41-full-leading-and-global-gates: keep F40 full leading/remainder, production point, global tensor/flatness/volume/required-energy, true n-dependent recursion and corrected dynamics tasks open. Regional/coordinate source results do not complete them.
+
+---
+
 # Active handoff: current external Rh source join complete — 2026-10-05
 
 Read ACTUAL_RH_SOURCE_JOIN_2026_10_05.md and CURRENT_CHECKPOINT.md on codex/st073-transition-next. Run --stage actualrhjoin. CurrentRhReferenceDispatcher consumes the new receipt before certifying the ninth Rh_reference owner. This completes the four F39-Rh tasks immediately below; original eight-chart/legacy files retain their scoped flags.
@@ -9,8 +28,8 @@ Read ACTUAL_RH_SOURCE_JOIN_2026_10_05.md and CURRENT_CHECKPOINT.md on codex/st07
 
 Next bounded tasks:
 
-- [ ] F40-current-prepulse-owner-expansion: admit slope, axial turnoff,11-unit buffer, slope_mu and power-to-Rp under the same current Rh closure/P0. Reuse the unchanged accepted original equations and independent physical fixtures; require source-family/datum/parameter ownership. Do not infer current admission from legacy owner names alone.
-- [ ] F40-current-prepulse-history-transfer: bind each parent's five primitive histories to the next exact integrating-factor formula. Preserve nonzero axial/mixed tails after Uz turns off. Distinguish y derivatives from phase selectors, especially log(y)/Md and Tw phase.
+- [x] F40-current-prepulse-owner-expansion: admit slope, axial turnoff,11-unit buffer, slope_mu and power-to-Rp under the same current Rh closure/P0. Reuse the unchanged accepted original equations and independent physical fixtures; require source-family/datum/parameter ownership. Do not infer current admission from legacy owner names alone.
+- [x] F40-current-prepulse-history-transfer: bind each parent's five primitive histories to the next exact integrating-factor formula. Preserve nonzero axial/mixed tails after Uz turns off. Distinguish y derivatives from phase selectors, especially log(y)/Md and Tw phase.
 - [ ] F40-current-Rp-pulse-join: bind the actual O3 power terminal and accepted pulse inlet to the same five histories, pressure and finite amplitude/positive mu. Establish a functional source/units identity, not overlap diagnostics.
 - [ ] F40-current-physical-provider-injection: use the current accepted downstream dispatcher in existing physical operators while retaining original source rows. Include formal hb^-k microswitch conversions, patch x/logR Stirling rows and each component/primitive unit before common physical factors.
 - [ ] F40-current-physical-operator-acceptance: replay an independent coordinate fixture for these owners; retain moving cylindrical basis, spatial4 and fixed-physical-x time1. Do not claim full core-to-heat assembly from downstream-only coverage.

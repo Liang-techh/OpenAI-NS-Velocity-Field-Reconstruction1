@@ -1,3 +1,13 @@
+# Current checkpoint: current source chain reaches Rp — 2026-10-05
+
+Read CURRENT_PRE_PULSE_SOURCE_CHAIN_2026_10_05.md. Five original pre-pulse charts now reuse the accepted current Rh reference object, its analytic pressure and retained five-history ODE solutions. CurrentPrePulseSourceDispatcher exposes fourteen current downstream chart owners.
+
+Focused PASS:345 dependencies/five new charts/25 exact source history identities/675 implied interface mixed rows/675 whole-domain mixed rows. A fresh checked O3_power call confirmed the same Rh/Rp provider and loaded the new acceptance.
+
+NEXT: bind the actual Rp-to-pulse canonical constants/source functions and radius, while mapping these current providers through existing physical/Cartesian/time operators. The external Rp pulse join remains false. Full leading-input/remainder admission, production points, global tensor/flatness/required-domain energy, true time coefficient recursion and corrected dynamics remain open.
+
+---
+
 # Current checkpoint: external Rh reference joined — 2026-10-05
 
 Read docs/ACTUAL_RH_SOURCE_JOIN_2026_10_05.md. The current unique five-moment patch at x=e now joins pre_pulse.reference(offset=-5) with a shared analytic compliant .001 pressure function, first-six pressure source projection and exact physical units. CurrentRhReferenceDispatcher exposes nine checked source chart owners.
