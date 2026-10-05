@@ -1,3 +1,28 @@
+# Active handoff: current nonlinear patch accepted; current field composition next — 2026-10-05
+
+Read docs/ACTUAL_FEEDBACK_PATCH_MIXED_C4_2026_10_05.md and CURRENT_CHECKPOINT.md on branch codex/st073-transition-next. Run --stage actualfeedbackpatch. This section supersedes earlier pending current-patch/local-Jacobian entries below; full leading-input admission is still separate. Root owns integration; bounded reviews use GPT-5.6 Luna/max.
+
+- [x] F39-current-Rsh-mixed4-join: dedicated current exact-source interface, same parent/P0/V/E/core, flat original cutoff and135 implied physical mixed rows. Native historical flags preserved.
+- [x] F39-patch-current-provider: current restored histories, five defects and original nonlinear repair; strict family/source/both-datum gates, original signed kernels/E² tails/C1 source class and physical inverse amplitude.
+- [x] F39-patch-current-implicit-axial5: recompute30 controls from30 current source defects; C1 unique solution and common Jacobian for orders2–5, all20 higher equations and controlled source tails. This is the local patch inverse, not the entire shared leading system.
+- [x] F39-patch-current-mixed4: current implicit family in original physical x/Z and logR/Z derivatives,2340 rows; original support/normalization/P0,390 endpoint rows and local Rm/Rh functional source joins.
+- [ ] F39-dispatcher-current-provider-ownership: inspect the current source dispatcher and list charts still loading legacy long/reference/patch classes. Add distinct lazy accepted-provider ownership for current actual_long_reshape_mixed_C4, actual_reference_restore_mixed_C4 and actual_feedback_patch_mixed_C4. Consume each new check receipt and current Rsh join; do not alter legacy owner semantics.
+- [ ] F39-dispatcher-current-chart-replay: route reshape/reference/restore/postrestore/patch charts through the common current source/family/datum, retaining exact chart domains and radial normalization. Test whole-chart domains and a fresh lazy acceptance load; reuse existing operator fixtures instead of rerunning the whole project.
+- [ ] F39-dispatcher-current-interface-composition: bind current R110/Rsh/Rz/restore-exit/Rm/Rh interfaces and pressure/source histories across actual neighboring dispatcher owners. Use accepted functional identities; endpoint enclosure overlap is only a diagnostic. Keep core/global/Cartesian interface flags false until separately admitted.
+- [ ] F39-leading-common-inputs: identify every shared leading five-defect/implicit/remainder consumer still tied to old source inputs. Recompute affected current inputs from one defining E/history family; keep raw Uz distinct from pressure primitive4C and preserve canonical P0.
+- [ ] F39-leading-full-remainder-admission: complete the required common Jacobian/nonlinear remainder and source-class gates for all shared leading consumers. Refresh affected dependents only. Do not set full_implicit_leading_inputs_recomputed=true solely because the local patch inverse passed.
+- [ ] F40-production-points: recover consistent defining source parameters and evaluable histories/field values. Bounds/caps/enclosure midpoints cannot define the production field. Use signed/logarithmic factors when scales cannot be represented by ordinary floats.
+- [ ] F40-global-admissibility: completed physical full tensor across every region/interface, with independently admitted cone signs and margins. Regional two-vector cone receipts alone are insufficient.
+- [ ] F40-global-flat-volume-energy: temporal-flat remainder, physical-volume maximum/L2 diagnostics and kinetic energy over the construction's required physical spacetime domain, including actual tail/support.
+- [ ] F40-recursion-n1: implement actual coupled n=1 recovery on the common analytic core interval/datum and independent moment repair after leading stress/flat prerequisites. Coordinate scaling and radial Taylor recurrence are not this task.
+- [ ] F40-recursion-higher: implement n-dependent n>=2 equations, separate moment repairs, finite-order remainder and smooth divergence-preserving summation.
+- [ ] F40-oscillatory-correction: mean/two-family pulse corrections and measurable averaged quadratic momentum-flux cancellation of the actual background stress.
+- [ ] F40-corrected-residual-dynamics: independent corrected Cartesian residual/energy and measured radial/axial widths, aspect ratio, growth exponents, trajectories and cumulative winding.
+
+Acceptance: current local patch325/329 input hashes,30 current defect/control coefficients,2340 mixed rows and current functional terminal closure. Production points, full leading-input/global/recursion flags remain false.
+
+---
+
 # Active handoff: current Rsh join accepted; current nonlinear patch next — 2026-10-05
 
 Read docs/ACTUAL_RSH_SOURCE_JOIN_2026_10_05.md and CURRENT_CHECKPOINT.md. Use --stage actualrshjoin. This supersedes earlier pending Rsh mixed4 join entries below. Source enclosures remain separate from selected production point histories.

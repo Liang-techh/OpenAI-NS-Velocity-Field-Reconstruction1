@@ -1,3 +1,13 @@
+# Current checkpoint: current nonlinear five-moment patch and mixed4 complete — 2026-10-05
+
+Read docs/ACTUAL_FEEDBACK_PATCH_MIXED_C4_2026_10_05.md. Current Rsh/restoration source histories now feed the original five-bump implicit repair and physical mixed4 algorithms. All five current defects/controls through axial5, E/E² tails, same common Jacobian, normalized correlated-C1 source class, original beta supports and canonical P0 are retained. Five terminal moments close through the same unique implicit function.
+
+Focused PASS: moment325 hashes/30 defects/30 controls/20 higher common-Jacobian rows/497 field-moment coefficients; mixed329 hashes/2340 physical mixed rows/390 endpoint rows/six support edges/30 Rh terminal-zero coefficients. Original independent generic fixtures are reused by current hashes. Read-only Luna/max review accepted source, units and local join scope.
+
+NEXT: compose current downstream chart ownership/dispatcher and complete shared leading-input/remainder admission. Local source enclosures remain distinct from production point histories. Complete Cartesian/global tensor/flatness/physical-volume/energy, actual n-dependent scale recursion, oscillatory correction and corrected dynamics remain open.
+
+---
+
 # Current checkpoint: current Rsh functional mixed4 join complete — 2026-10-05
 
 Read docs/ACTUAL_RSH_SOURCE_JOIN_2026_10_05.md. Current long phase-one/reference phase-zero share the same Rsh parent, six source histories, signed V/E graph, canonical P0 and physical normalization. Original flat cutoff and inverse-T derivatives give the same boundary jet through total order4; the long finite neighborhood remains unchanged.

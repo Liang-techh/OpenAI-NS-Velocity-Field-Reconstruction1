@@ -1,3 +1,17 @@
+# Next: compose current matched-background providers — 2026-10-05
+
+Current Rsh functional join, nonlinear five-moment repair/common local Jacobian and patch mixed4 are accepted. Read ACTUAL_FEEDBACK_PATCH_MIXED_C4_2026_10_05.md and the latest AGENT_TASKS.md section. Use branch codex/st073-transition-next.
+
+1. Add current lazy provider/receipt ownership to downstream source-dispatcher charts; retain original domains and units.
+2. Replay current whole charts and compose exact neighboring R110/Rsh/Rz/restoration/Rm/Rh source interfaces.
+3. Complete every shared leading five-defect/Jacobian/remainder consumer from this one current source family; local patch acceptance is not full leading-input admission.
+4. Build consistent production point evaluation and complete Cartesian/global tensor/flatness/physical-volume/required-domain energy gates.
+5. Implement true coupled n=1 then n>=2 coefficient recursion, independent repairs/summation, oscillatory correction and corrected residual/measured dynamics.
+
+The current fields are functional source enclosures. Five terminal moments close through a unique implicit function, but no production-point or true scale-recursion completion is claimed. Older pending bridge/switch/restoration/patch entries below are superseded only within these accepted local scopes.
+
+---
+
 # Next: complete finite-width microswitches — 2026-10-02
 
 Leading R_a-to-100 bridge coefficient and first micro-chart leading h_b^2 correction are implemented and independently checked; see docs/MACRO_SIGNED_INTEGRALS_2026_10_02.md and docs/FIRST_MICRO_SWITCH_LEADING_2026_10_02.md. Stage firstswitchleading; 122 ordered modules.
