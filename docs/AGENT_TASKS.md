@@ -14,7 +14,7 @@ Read docs/PULSE_ENTRANCE_CONE_2026_10_04.md and CURRENT_CHECKPOINT.md. Use --sta
 - [ ] F40-oscillatory-correction: Mean/two-family corrections and independently measured averaged quadratic stress cancellation.
 - [ ] F40-corrected-residual-dynamics: Independent corrected Cartesian residual and energy; measured vortex widths/aspect ratios/scale fits and cumulative particle winding.
 
-Acceptance:457 hashes,41 identities,7 power AST assignments,38 positive margins;27 independent original-entrance comparisons,tolerance1e-55,max normalized error2.450e-91. Keep all unimplemented upstream/global/recursion/correction flags false.
+Acceptance:457 hashes,78 identities,13 source and parameter AST assignments,38 positive margins;27 independent original-entrance comparisons,tolerance1e-55,max normalized error2.450e-91. Keep all unimplemented upstream/global/recursion/correction flags false.
 
 ---
 

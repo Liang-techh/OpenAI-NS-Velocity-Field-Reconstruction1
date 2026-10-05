@@ -471,12 +471,12 @@
     "lei_ren_part1_paper_compliant_pulse_entrance_physical_C2.json": "1a77a57ffece07abd45ac1eff6b54137dc6898bb2b126aceecc7d109aab3d13f",
     "lei_ren_part1_paper_compliant_pulse_entrance_physical_C2_check.py": "3f408f02b1674c5dc51e31ed38a82e4ae827ef4ab0ea59e2d4c366480f454f5a",
     "lei_ren_part1_paper_compliant_pulse_entrance_physical_C2_check.json": "652896dea77cf1ea85773ad7a45f4e5f8d1bdcd5a6e00c6ec1f25e25124e31b8",
-    "lei_ren_part1_paper_compliant_pulse_entrance_cone.py": "181a573241a3c2eec6f2965d78e6756f7fe24934006b9330752262389f0f816c",
-    "lei_ren_part1_paper_compliant_pulse_entrance_cone.json": "cedc614c951de3692ea48a3d4feefc05e66aa6601dcd1b537188e208c8eb178a",
+    "lei_ren_part1_paper_compliant_pulse_entrance_cone.py": "31408879794406eba1abbfec4af148e0cc7d5b6d7ab9182dd6589ff30c6e1a5a",
+    "lei_ren_part1_paper_compliant_pulse_entrance_cone.json": "36ec9a54fb7347b04c8f37fc7874b22e5d807752dbcfeac691e1032b4f782a47",
     "lei_ren_part1_paper_compliant_pulse_entrance_cone_check.py": "b63bbb638dc5ad07720c7441a81a90dbfe4442a3040bbe45ec858b183f2d709e"
   },
   "positive_continuous_margins": 38,
-  "source_cone_identities": 41,
+  "source_cone_identities": 78,
   "independent_original_entrance_fixture": {
     "checks": 27,
     "identities": {

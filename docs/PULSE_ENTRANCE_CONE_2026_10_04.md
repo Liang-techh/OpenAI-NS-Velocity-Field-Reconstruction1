@@ -28,7 +28,7 @@ so the exact source identity gives
     Xp-1/r=(h_w/u_w-1/r)*exp(-r*Tw).
 
 The entrance memory therefore retains exp(-r*(Tw+xi/mu)).
-Seven actual power assignments are AST-bound. The accepted O2/O3 source
+The actual power assignments and shared parameter origin are AST-bound. The accepted O2/O3 source
 chain proves whole-Z q^-1 shapes for h_w and u_w; the actual phase0 Z=.5
 packet only encloses their Z-independent ratio. It is not used to
 extrapolate an unproved sampled profile.
@@ -72,9 +72,22 @@ The generic directional factorization and unchanged positive-nu physical
 pullback therefore prove the regional two-vector condition. Tiny selected
 parameters remain enclosures of their exact source functions.
 
+## Direct source provenance
+
+The receipt explicitly consumes the original forward/future energy FTC,
+selected backward/forward equivalence, canonical incoming moments/energy,
+absolute-pressure source and all six analytic datum rows through axial5.
+All twelve source-log identities, the positive-viscosity physical transfer
+and actual entrance/inlet/main radius identities are directly linked.
+The fifth-jet Tw and stored power sample Tw originate from the same
+parameter object: pulse.initial=pulse.buffer.initial and
+buffer.params=buffer.initial.params. These original assignments and the
+Tw getter/call sites are AST-bound, so independent value overlap is not
+used as an identity proof. No forward energy sector is added twice.
+
 ## Focused acceptance and API
 
-PASS:457 current checker hashes,41 source/cone identities,7 power AST
+PASS:457 current checker hashes,78 source/cone identities,13 source and parameter AST
 assignments and38 strictly positive parameter/log/monotonicity/algebraic
 margins. Twenty-seven independent comparisons at xi=0,.01,.02 use original
 startup integrals, forward energy, exact pre-Tw history, full signed
@@ -85,6 +98,9 @@ Tolerance1e-55,maximum normalized error2.450e-91.
 The accepted entrance Cartesian physical receipt is consumed without
 rerunning its unchanged114 comparisons. Fixtures check formulas and units;
 they do not replace the continuous actual-source proof.
+
+A bounded read-only GPT-5.6 Luna/max review accepted the cone algebra,
+exact source correlations and completed direct provenance links.
 
 Use --stage pulseentrancecone. CertifiedPulseEntrancePhysical attaches
 the current regional admission to the unchanged complete physical evaluator

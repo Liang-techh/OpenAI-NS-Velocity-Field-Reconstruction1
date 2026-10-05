@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 from types import SimpleNamespace
 import math
+import ast
 
 import mpmath as mp
 import sympy as s
@@ -78,6 +79,18 @@ def entrance_cone_identities(records):
     actual_h=asts.evaluate(asts.expression('outer_buffer','power','h'),env)
     zero('actual_power_Xp_minus_equilibrium_exact_factored_history',
         actual_h/env['u']-1/r-(h1/u1-1/r)*s.exp(-r*Tw))
+    # The fifth-jet constants and the stored power packet use one parameter
+    # object, through pulse.initial = pulse.buffer.initial.
+    asts.expression('outer_pulse_map','__init__','self.initial',wanted='self.buffer.initial')
+    asts.expression('outer_buffer','__init__','self.params',wanted='self.initial.params')
+    asts.expression('axial_high_jets','_incoming_constants','initial',wanted='self.base.pulse.initial')
+    asts.expression('axial_high_jets','_incoming_constants','buffer',wanted='self.base.pulse.buffer')
+    definitions=asts.expression('axial_high_jets','_incoming_constants','self.constants')
+    length=next(v.value for v in definitions.keywords if v.arg=='Tw')
+    if ast.dump(length)!=ast.dump(ast.parse('box(initial.params.Tw)',mode='eval').body):
+        raise ValueError('Fifth-jet Tw parameter origin differs')
+    asts.expression('outer_buffer','power','t',wanted='self.params.Tw*phase')
+    checks['actual_fifth_jet_Tw_and_power_sample_Tw_share_same_parameter_object']=True
     checks['canonical_pre_power_h_and_u_share_whole_Z_q_inverse_shapes']=records['power_inlet_C4_check'][
         'exact_functional_production_and_join_identities']['actual_O2_O3_source_chain_has_exact_canonical_whole_Z_shapes']
     if not checks['canonical_pre_power_h_and_u_share_whole_Z_q_inverse_shapes']:raise ValueError('Canonical power shapes missing')
@@ -96,6 +109,11 @@ def entrance_cone_identities(records):
     # The accepted original exporter is identical on entrance, and generic
     # full-stress cancellation and directional algebra do not use xi>=.02.
     old=records['pulse_main_exit_cone']['exact_source_cone_proof']['identities']
+    for label,parts in CORRECTIONS.items():
+        for name in parts:
+            flag='actual_'+label+'_'+name+'_grouped_source_log'
+            if not old[flag]:raise ValueError('Original stress log source identity missing: '+flag)
+            checks['consumed_'+flag]=True
     keys=('actual_theta_equilibrium_C_over_L_times_q0_over_rate',
         'actual_local_axial_linear_stress_cancellation','actual_kernel_two_integrations_by_parts_integrand',
         'actual_initial_gp_flat_jet0','actual_initial_gp_flat_jet1',
@@ -106,6 +124,11 @@ def entrance_cone_identities(records):
     for key in keys:
         if not old[key]:raise ValueError('Generic admitted original-source algebra missing: '+key)
         checks['consumed_generic_'+key]=True
+    for flag in ('actual_common_stress_normalization_over_shear_factor',
+        'actual_negative_theta_shear_a','actual_full_nonzero_axial_shear_b',
+        'actual_positive_viscosity_physical_directional_transfer'):
+        if not old[flag]:raise ValueError('Physical cone transfer source missing: '+flag)
+        checks['consumed_'+flag]=True
     restored=records['pulse_entrance_similarity_C4']['unchanged_original_exporter_proof']
     if not restored['entire_original_exporter_AST_unchanged_except_coordinate_guard']:raise ValueError('Different entrance arithmetic')
     for flag in ('original_inlet_and_entrance_main_completed_physical_interfaces_verified',):
@@ -119,8 +142,26 @@ def entrance_cone_identities(records):
         'actual_sigma_log_odds_reflection_antisymmetry','actual_sigma_reflection_complements',
         'actual_xi_point02_gp_derivative0_from_flat_sigma_and_symmetry',
         'actual_xi_point02_gp_derivative1_from_flat_sigma_and_symmetry',
-        'actual_entrance_primitive_derivative_Taylor_order2'):
+        'actual_entrance_primitive_derivative_Taylor_order2',
+        'actual_forward_future_energy_partition_FTC_derivative',
+        'actual_forward_future_energy_partition_initial_anchor',
+        'actual_selected_forward_and_backward_energy_same_entire_entrance_source',
+        'consumed_canonical_incoming_m1','consumed_canonical_incoming_m2',
+        'consumed_canonical_incoming_energy','consumed_canonical_Mp_constant',
+        'consumed_actual_pulse_P0_getter_is_same_canonical_flatten_pressure_over_C0_squared',
+        'consumed_consumed_same_absolute_pressure_identified_by_original_FTC_and_power_datum',
+        'actual_raw_Mp_inlet_no_pressure_tail_added'):
         if not startup[flag]:raise ValueError('Original entrance primitive source missing: '+flag)
+        checks['consumed_'+flag]=True
+    for n in range(6):
+        flag='actual_absolute_pressure_inlet_same_original_datum_axial'+str(n)
+        if not startup[flag]:raise ValueError('Current canonical pressure datum row missing: '+flag)
+        checks['consumed_'+flag]=True
+    physical=records['pulse_entrance_physical_C2']['source_and_physical_join_binding']['identities']
+    for flag in ('actual_entrance_production_radius_uses_y_not_xi',
+        'actual_inlet_production_radius_equals_logRp','actual_entrance_main_production_radius_join',
+        'equivalent_forward_energy_not_added_to_backward_sectors'):
+        if not physical[flag]:raise ValueError('Entrance physical source transfer missing: '+flag)
         checks['consumed_'+flag]=True
     checks['same_actual_flat_sigma_primitive_and_derivatives_retained']=True
     checks['same_positive_nu_physical_pullback_retained']=True
