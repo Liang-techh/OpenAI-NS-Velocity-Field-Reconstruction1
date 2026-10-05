@@ -1,3 +1,15 @@
+# Current fourteen-chart physical maps complete — 2026-10-05
+
+The accepted Rh-to-Rp chain now feeds CurrentDownstreamPhysicalAssembly. All fourteen downstream charts have ux/uy/uz/pressure Cartesian spatial derivatives through total order four and first physical-time derivatives at fixed position. The nested current core, same pre-pulse history/pressure object and selected Cstar source are retained. The adapter is limited to these fourteen charts.
+
+The focused acceptance retains signed microscopic/amplitude factors and source-supported exact zeros. Existing independent coordinate fixtures cover 140 Cartesian derivatives, four time derivatives and 120 source-scale rows; a new independent patch fixture checks 30 mixed derivatives with frozen physical units. Results are source enclosures, not selected nonlinear point fields.
+
+Read [CURRENT_DOWNSTREAM_PHYSICAL_MAPS_2026_10_05.md](CURRENT_DOWNSTREAM_PHYSICAL_MAPS_2026_10_05.md). Run --stage currentphysicalmaps on codex/st073-transition-next.
+
+NEXT: bind the actual Rp-to-pulse canonical constant functions, five histories, shared pressure/parameters and radius. The external pulse join stays false. Full leading-source/remainder admission, production points, completed global stress/flatness/required-domain energy, true n-dependent recursion and corrected dynamics remain open.
+
+---
+
 # Current checkpoint: current source chain reaches Rp — 2026-10-05
 
 Read CURRENT_PRE_PULSE_SOURCE_CHAIN_2026_10_05.md. Five original pre-pulse charts now reuse the accepted current Rh reference object, its analytic pressure and retained five-history ODE solutions. CurrentPrePulseSourceDispatcher exposes fourteen current downstream chart owners.

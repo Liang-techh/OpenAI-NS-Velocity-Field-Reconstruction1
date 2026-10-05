@@ -1,3 +1,23 @@
+# Active handoff: current fourteen-chart physical maps complete — 2026-10-05
+
+Read CURRENT_DOWNSTREAM_PHYSICAL_MAPS_2026_10_05.md and CURRENT_CHECKPOINT.md on codex/st073-transition-next. Run --stage currentphysicalmaps. This completes current physical-provider injection and operator acceptance only within the fourteen accepted downstream charts; core/axis/bridge/pulse/heat ownership remains separate.
+
+- [x] F42-current-physical-owner-injection: nested current core, same Rh-to-Rp pre-pulse object, current fourteen chart receipts; unchanged original radius/normalization/evaluate operators.
+- [x] F42-current-physical-coordinate-coverage: all 35 spatial multiindices, four Cartesian velocity/pressure components and first fixed-position physical time derivatives for every current chart.
+- [x] F42-current-physical-units: original microscopic source width powers before bounds, Pstar/amplitudes, full radial prefactor derivatives, moving basis and frozen-basepoint normalization; independent finite patch fixture checks 30 mixed rows.
+- [x] F42-current-physical-source-provenance: same Cstar defining record, pressure definition/current parameter object, positive mu/Tw and actual mapper Rref/Rp assignments.
+
+Next bounded tasks:
+
+- [ ] F42-Rp-source-recipes: bind current pre.power(Z,1) to SharedOuterBuffer.power via actual slope/turnoff/transition/power AST and scalar kernel definitions. Derive exact q shapes and every U/M/H/K/E_Z/E_Q/P_in source constant. Different enclosures are allowed; chosen sample representatives are not source definitions.
+- [ ] F42-Rp-canonical-units: bind m1=m/(Pstar*u), m2=k/(Pstar*u²), X=h/u, E=e/u², Mp=p and P0 unchanged to the actual accepted pulse inlet data path, including high/fifth-order constants.
+- [ ] F42-Rp-neighbor-and-radius: same compliant .001 pressure callable/projection, source parameters and logRp=logRref+logP+1+Tw; original pulse entrance shape jets vanish through required order. Admit pulse chart ownership only after the functional external join.
+- [ ] F42-current-pulse-physical-extension: after that join, extend current physical ownership through the accepted pulse charts using the same original unit/source operators; regenerate only affected current reports/receipts.
+- [ ] F42-background-production-and-global: retain F40 shared leading/remainder, production point fields, completed tensor/cone/flatness/physical-volume/required-energy tasks as open.
+- [ ] F42-real-recursion-and-correction: retain separate n=1 and n>=2 equations, independent repairs/summation, oscillatory quadratic cancellation and corrected residual/measured dynamics as open. Cartesian coordinates and radial Taylor derivatives are not temporal recursion.
+
+---
+
 # Active handoff: current Rh-to-Rp pre-pulse chain complete — 2026-10-05
 
 Read CURRENT_PRE_PULSE_SOURCE_CHAIN_2026_10_05.md and CURRENT_CHECKPOINT.md on codex/st073-transition-next. Run --stage currentprepulse. CurrentPrePulseSourceDispatcher now exposes14 downstream owners through one accepted Rh reference object. F40-current-prepulse-owner-expansion and F40-current-prepulse-history-transfer are completed in this local source scope.
@@ -11,8 +31,8 @@ Concrete next tasks:
 - [ ] F41-Rp-outer-inlet-function-bridge: bind pre_pulse.power(Z,1) and SharedOuterBuffer.power to common original O2/O3 kernel functions/parameters. Recover their q=1+Z² source forms u=U/q, m=M*Z, h=H/q, k=K*Z/q, e=E_Z*Z²+E_Q/q², p=P_in/q²; derive U/M/H/K/E_Z/E_Q/P_in from actual scalar source recipes, not chosen interval representatives.
 - [ ] F41-Rp-canonical-constant-transfer: inspect CompliantAxialHighJets._incoming_constants -> fifth-order source receipt -> CompliantPowerInletC4.incoming -> pulse.data. Bind every retained canonical coefficient to those same source functions and correct Pstar/u units; saved JSON values alone are enclosures.
 - [ ] F41-Rp-pressure-radius-pulse-flatness: require same .001 pressure function/Pstar/mu/delta/Tw, actual logRp=logRref+logP+1+Tw on both sides and zero pulse entrance corrections through needed derivative order. Then exact four velocity/pressure and five primitive source identities imply mixed4 at Rp.
-- [ ] F41-current-downstream-physical-adapter: inject the accepted14chart dispatcher and its nested current core/parameters into unchanged global_physical_assembly operators. Limit coverage to accepted downstream charts; never instantiate a legacy core owner to silently claim current whole-field coverage.
-- [ ] F41-current-physical-units-and-source-fixture: keep phase hb factors before bounds, patch Rm-to-current-radius units after physical differentiation, every Pstar/amplitude factor, moving cylindrical basis and fixed-x time derivative. Reuse hash-current independent operators or run a focused fixture if those algorithms change.
+- [x] F41-current-downstream-physical-adapter: inject the accepted14chart dispatcher and its nested current core/parameters into unchanged global_physical_assembly operators. Limit coverage to accepted downstream charts; never instantiate a legacy core owner to silently claim current whole-field coverage.
+- [x] F41-current-physical-units-and-source-fixture: keep phase hb factors before bounds, patch Rm-to-current-radius units after physical differentiation, every Pstar/amplitude factor, moving cylindrical basis and fixed-x time derivative. Reuse hash-current independent operators or run a focused fixture if those algorithms change.
 - [ ] F41-full-leading-and-global-gates: keep F40 full leading/remainder, production point, global tensor/flatness/volume/required-energy, true n-dependent recursion and corrected dynamics tasks open. Regional/coordinate source results do not complete them.
 
 ---
@@ -31,8 +51,8 @@ Next bounded tasks:
 - [x] F40-current-prepulse-owner-expansion: admit slope, axial turnoff,11-unit buffer, slope_mu and power-to-Rp under the same current Rh closure/P0. Reuse the unchanged accepted original equations and independent physical fixtures; require source-family/datum/parameter ownership. Do not infer current admission from legacy owner names alone.
 - [x] F40-current-prepulse-history-transfer: bind each parent's five primitive histories to the next exact integrating-factor formula. Preserve nonzero axial/mixed tails after Uz turns off. Distinguish y derivatives from phase selectors, especially log(y)/Md and Tw phase.
 - [ ] F40-current-Rp-pulse-join: bind the actual O3 power terminal and accepted pulse inlet to the same five histories, pressure and finite amplitude/positive mu. Establish a functional source/units identity, not overlap diagnostics.
-- [ ] F40-current-physical-provider-injection: use the current accepted downstream dispatcher in existing physical operators while retaining original source rows. Include formal hb^-k microswitch conversions, patch x/logR Stirling rows and each component/primitive unit before common physical factors.
-- [ ] F40-current-physical-operator-acceptance: replay an independent coordinate fixture for these owners; retain moving cylindrical basis, spatial4 and fixed-physical-x time1. Do not claim full core-to-heat assembly from downstream-only coverage.
+- [x] F40-current-physical-provider-injection: use the current accepted downstream dispatcher in existing physical operators while retaining original source rows. Include formal hb^-k microswitch conversions, patch x/logR Stirling rows and each component/primitive unit before common physical factors.
+- [x] F40-current-physical-operator-acceptance: replay an independent coordinate fixture for these owners; retain moving cylindrical basis, spatial4 and fixed-physical-x time1. Do not claim full core-to-heat assembly from downstream-only coverage.
 - [ ] F40-full-leading-source-admission: explicitly enumerate every five-defect/Jacobian/remainder consumer still using older leading inputs. Replace only after the same coupled source histories and nonlinear remainder admission are established.
 - [ ] F40-production-point-field: recover consistent nonlinear point histories/coefficients from the defining functions and controlled errors. Do not choose enclosure midpoints or use tail caps as a physical solution.
 - [ ] F40-full-global-background-gates: completed stress tensor/divergence, admissible cone on all interfaces, flat remainder with physical volume norms, and required-domain finite-energy/terminal-time bounds. Historical regional receipts alone do not complete these gates.
@@ -52,7 +72,7 @@ Read docs/CURRENT_MATCHED_SOURCE_DISPATCHER_2026_10_05.md and CURRENT_CHECKPOINT
 - [x] F39-Rh-pressure-projection: prove the inherited normalized_jets callable, stage masses and flatten source are common. Bind P0,0=-(m2*q0+m0+flatten0), P0,n=-(m2*qn+flatten_n), qn=partial_Z^n(1+Z²)^-2/n!, all in P/Pstar² units. Order5 gives indices0..5; order6->truncate(5) gives the same first SIX defining coefficients. Numerical boxes need not be identical; hashes/overlap are not the function proof.
 - [x] F39-Rh-current-functional-join: replay current patch full-support x=e and pre_pulse.reference(Z,-5) symbolically for arbitrary Z/P0 and original scales. All original bump supports end at71/40<e; use the current unique implicit closure. Prove Utheta/Pstar=exp(-.5)/(1+Z²), V=4Z and canonical five primitive histories, then mixed4 with fixed basepoint normalization and correct D_y=x D_x/Stirling conversion.
 - [x] F39-Rh-current-neighbor-owner: consume the new Rh receipt before exposing the external reference neighbor under current dispatcher ownership. Keep full_inner_interfaces/whole Cartesian/global flags false until their own scope is complete.
-- [ ] F39-current-physical-composition: inject current accepted dispatch into the existing physical coordinate operators for these charts. Preserve uncapped microscopic source ledgers and all fixed normalization factors through Cartesian/time derivatives; do not re-differentiate basepoint units.
+- [x] F39-current-physical-composition: inject current accepted dispatch into the existing physical coordinate operators for these charts. Preserve uncapped microscopic source ledgers and all fixed normalization factors through Cartesian/time derivatives; do not re-differentiate basepoint units.
 - [ ] F39-leading-common-inputs: identify all shared leading five-defect/implicit/remainder consumers still tied to old inputs, recompute from this one current E/history family, distinguish raw Uz from pressure primitive4C and preserve P0.
 - [ ] F39-leading-full-remainder-admission: complete common Jacobian/nonlinear remainder/source-class gates for every shared leading consumer; refresh affected dependents only. Local patch inverse acceptance is not full leading-input completion.
 - [ ] F40-production-points: consistent defining parameters, evaluable histories/3D fields and signed/logarithmic factors where needed. Caps/bounds/midpoints cannot define fields.

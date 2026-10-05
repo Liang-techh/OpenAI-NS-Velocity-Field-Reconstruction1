@@ -1,3 +1,16 @@
+# Next: bind the current Rp-to-pulse source join — 2026-10-05
+
+Fourteen current downstream charts now reach Rp and feed accepted Cartesian spatial4/fixed-position time1 source maps. Read CURRENT_DOWNSTREAM_PHYSICAL_MAPS_2026_10_05.md and the latest AGENT_TASKS.md section.
+
+1. Bind the actual outer-buffer scalar source recipes and pulse canonical inlet constants to the current terminal five histories.
+2. Establish common pressure/parameters, actual Rp radius and flat pulse entrance function identities; then admit current pulse chart ownership and extend its physical map.
+3. Complete shared leading-source/remainder admission, production point histories/fields and completed global stress/flatness/required-domain energy.
+4. Solve true n-dependent coefficient recursion, smooth summation, oscillatory corrections and corrected residual/dynamics after the background gates.
+
+The physical operator fixtures and fourteen current source owners are accepted. Complete core-to-heat point fields and temporal scale recursion remain uncompleted.
+
+---
+
 # Next: actual Rp pulse source bridge and current physical maps — 2026-10-05
 
 Fourteen current downstream owners reach Rp through one original pre-pulse history object. Read CURRENT_PRE_PULSE_SOURCE_CHAIN_2026_10_05.md and the latest AGENT_TASKS.md section.
