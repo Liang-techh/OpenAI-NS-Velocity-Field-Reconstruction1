@@ -26,7 +26,7 @@ def sha(name):
 
 
 def contains(row,value):
-    return all(endpoints(a)[0]<=endpoints(b)[0] and endpoints(a)[1]>=endpoints(b)[1]
+    return len(row.coefficients)==len(value.coefficients) and all(endpoints(a)[0]<=endpoints(b)[0] and endpoints(a)[1]>=endpoints(b)[1]
                for a,b in zip(row.coefficients,value.coefficients))
 
 
@@ -90,6 +90,7 @@ def _run():
         assert endpoints(read_interval(c,packet["original_width_log"]))[1]<endpoints(c.ln(bridge.cap))[0]
         for key in ("actual_JD_signed_axial5_enclosure","actual_R110_phi_over_F0_axial5_enclosure",
                     "actual_R110_V_axial5_enclosure"):
+            assert len(packet[key])==6, label+" complete axial5 rows"
             for value in packet[key]:
                 lo,hi=endpoints(read_interval(c,value)); assert mp.isfinite(lo) and mp.isfinite(hi)
                 count+=1
@@ -99,8 +100,9 @@ def _run():
         assert not packet["newly_selected_point_values"]
         # Independent original direction at R100 checks the stored modal
         # reconstruction's zero-time value, retaining all six own moments.
-        phi=jet(packet["comparison_frozen_phi_axial5"]); v=jet(packet["comparison_frozen_V_axial5"])
-        raw=packet["comparison_R100_own_moments_axial5"]
+        phi=jet(packet["comparison_frozen_phi_axial6"]); v=jet(packet["comparison_frozen_V_axial6"])
+        assert phi.order==v.order==6
+        raw=packet["comparison_R100_own_moments_axial6"]
         moments={key:({part:jet(row) for part,row in val.items()} if isinstance(val,dict) else jet(val))
                  for key,val in raw.items()}
         direct=_direction_913(c,z,bridge.delta,phi,v,moments,inp["p0"],inp["F0_ratios"],inp["F0_squared_ratios"])
@@ -108,6 +110,16 @@ def _run():
             modes=[jet(values) for values in packet["comparison_direction_modes"][key]]
             summed=sum(modes,modes[0]*0)
             assert contains(summed,row),label+" same complete source modal direction "+key
+        for part,term in packet["actual_axial_switch_increment_terms"].items():
+            assert len(term["signed_axial_coefficients"])==6
+            assert term["positive_source_log_is_enclosure"]
+            scale=read_interval(c,term["additional_positive_scale_log_enclosure"])
+            expected=(c.mpf(0) if part=="hydro" else 2*bridge.core.logP if part=="pressure" else
+                      c.mpf([endpoints(-2*bridge.core.logC-2*bridge.core.Lambda*bridge.core.Gbar)[0],
+                             endpoints(-2*bridge.core.logC)[1]]))
+            assert endpoints(scale)[0]<=endpoints(expected)[0] and endpoints(scale)[1]>=endpoints(expected)[1]
+            if part=="swirl":
+                assert term["additional_positive_scale_source"]=="F0(Z)^2=Cstar^-2*exp(-2Lambda*G(Z))"
         checked.append(label)
     assert endpoints(read_interval(c,record["signed_source_integral_packets"]["whole_Z"]["Z"]))==(mp.mpf(-1),mp.mpf(1))
     for label,p in record["leading_width_packets"].items():
@@ -131,7 +143,8 @@ def _run():
                 original_unweighted_first_angular_control_verified=True,
                 complete_switch_width_coefficients_through2_checked=True,
                 actual_incoming_and_common_moment_modes_checked=checked,
-                finite_signed_output_rows=count,moderate_full_integral_fixtures=fixtures,
+                finite_signed_output_rows=count,complete_axial5_direction_rows_checked=True,
+                full_F0_squared_source_log_range_checked=True,moderate_full_integral_fixtures=fixtures,
                 source_caps_not_point_values=True,
                 actual_signed_bridge_completed=False,
                 selected_nonlinear_point_values_recovered=False,

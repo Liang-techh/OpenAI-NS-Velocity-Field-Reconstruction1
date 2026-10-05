@@ -19,6 +19,7 @@ from lei_ren_part1_paper_compliant_inner_bridge_profiles import (
 from lei_ren_part1_paper_compliant_macro_signed_integrals import (
     COMPARISON_NAME, COMPARISON_CHECK_NAME, _packet_for_coordinate,
     _packet_phi, _packet_v, _packet_moments_correct, _as_output, _verify_hashes,
+    F0_squared_log_enclosure,
 )
 from lei_ren_part1_paper_schedule_endpoint_enclosures import endpoints
 from lei_ren_part1_paper_uniform_fixed_beta_error import read_interval
@@ -35,7 +36,8 @@ def _hash(name):
 def _factored(value, log_scale):
     return dict(positive_scale_log=log_scale,
                 normalized_axial_coefficients=list(value.coefficients),
-                exact_representation="exp(positive_scale_log)*normalized_axial_coefficients")
+                positive_scale_log_is_enclosure=True,
+                exact_representation="exact positive source amplitude times normalized coefficient; its log is enclosed above")
 
 
 def _tree(value):
@@ -104,11 +106,12 @@ class FirstSwitchLeading:
             raise ValueError("First switch must inherit the exact current source family")
         self.pulse_weight = c.mpf("0.5")
         self.pressure_log = 2 * self.bridge.core.logP
-        self.swirl_log = -2 * self.bridge.core.logC - 2 * self.bridge.core.Lambda * self.bridge.core.Gbar
+        self.swirl_log = F0_squared_log_enclosure(c, self.bridge.core)
         self.hashes = dict(self.comparison.get("input_hashes", {}))
         self.hashes.update({
             COMPARISON_NAME: _hash(COMPARISON_NAME),
             COMPARISON_CHECK_NAME: _hash(COMPARISON_CHECK_NAME),
+            PREFIX + "macro_signed_integrals.py": _hash(PREFIX + "macro_signed_integrals.py"),
             PREFIX + "flat_pulse_derivatives.py": _hash(PREFIX + "flat_pulse_derivatives.py"),
             PREFIX + "microswitch_mixed_C4.py": _hash(PREFIX + "microswitch_mixed_C4.py"),
             Path(__file__).name: _hash(Path(__file__).name),

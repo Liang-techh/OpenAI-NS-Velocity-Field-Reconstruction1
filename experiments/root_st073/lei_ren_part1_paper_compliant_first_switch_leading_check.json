@@ -18,14 +18,16 @@
     "0",
     "exact_shared_root"
   ],
+  "full_F0_squared_source_log_range_checked": true,
   "full_first_switch_resolved": false,
   "actual_signed_bridge_completed": false,
   "input_hashes": {
-    "lei_ren_part1_paper_compliant_first_switch_leading.json": "6fb77b9e23651cdd71a3c5b2155334c040bca7639edcbf64415de5872c4a6147",
-    "lei_ren_part1_paper_compliant_first_switch_leading.py": "53f751870f8c90e7795606a65e9765c3ceacad4c361175a9e4f6097ccc25049a",
-    "lei_ren_part1_paper_compliant_first_switch_leading_check.py": "280d6386cf45c2b08432d5c8beb5b2dc95c7627baadc964b89a2b99a53f1d804",
+    "lei_ren_part1_paper_compliant_first_switch_leading.json": "767555fc19495ae065dd2845f7a0149963b0059e2596eceefd13a221a5b2cb24",
+    "lei_ren_part1_paper_compliant_first_switch_leading.py": "6a80b04596238ed681321acccdc2d6b4b187002a7ae8b7823ed7e277fdb8def4",
+    "lei_ren_part1_paper_compliant_first_switch_leading_check.py": "f445e3b9d3992c79d9639004abefd18621460b4296528bd849f0701ccb2c390b",
     "lei_ren_part1_paper_compliant_comparison_point_integrals.json": "42e5b54453ebb1769eea5f2cb21a622bdae5e6b2dc1988020abfa967252dcff1",
     "lei_ren_part1_paper_compliant_comparison_point_integrals_check.json": "3b2cd05bd8732acaf3b53b4f97422c55721a4ab9db9c760758b5cbdd0e31171b",
+    "lei_ren_part1_paper_compliant_macro_signed_integrals.py": "046b7982464eb00eb16c41c3a652c46a6ff82a1c7386fc3283dc5dd654377913",
     "lei_ren_part1_paper_compliant_flat_pulse_derivatives.py": "32f51123a47c2bafbb6c2f7056302bab996a019883615333875207d72a9bb7d7",
     "lei_ren_part1_paper_compliant_microswitch_mixed_C4.py": "0bc0dbda656ec51ffdf05e97f283f5bbc5fba1b590958956a7117d3652565353"
   }

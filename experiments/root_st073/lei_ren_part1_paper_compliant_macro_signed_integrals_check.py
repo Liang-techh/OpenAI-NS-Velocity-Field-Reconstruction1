@@ -260,7 +260,8 @@ class CompliantMacroSignedIntegralCheck:
             raise ValueError("Producer datum hash mismatch")
         self.Y = c.ln(100 / self.bridge.r)
         self.Pstar2_log = 2 * self.bridge.core.logP
-        self.F02_log = -2 * self.bridge.core.logC - 2 * self.bridge.core.Lambda * self.bridge.core.Gbar
+        self.F02_log = c.mpf([endpoints(-2*self.bridge.core.logC-2*self.bridge.core.Lambda*self.bridge.core.Gbar)[0],
+                              endpoints(-2*self.bridge.core.logC)[1]])
         self.failures = []
         self.hashes = {
             COMPARISON_NAME: _sha256(COMPARISON_NAME),
@@ -350,7 +351,9 @@ class CompliantMacroSignedIntegralCheck:
                          label + ": J_V " + component + " factored coefficient")
             actual_log = read_interval(c, item["positive_scale_log"])
             elo, ehi = endpoints(scale_log); alo, ahi = endpoints(actual_log)
-            self.require(alo <= elo and ahi >= ehi, label + ": J_V " + component + " scale log")
+            self.require(alo <= elo and ahi >= ehi, label + ": J_V " + component + " full source scale log")
+            self.require(item.get("positive_scale_log_is_enclosure") is True,
+                         label + ": source amplitude log is an enclosure")
             self.require(stored["J_V"]["terms"][component] == item,
                          label + ": J_V signed factored sum binding")
             _, micro_expected, macro_expected = data["components"][component]

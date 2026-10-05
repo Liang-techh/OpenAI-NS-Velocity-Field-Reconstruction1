@@ -1,3 +1,25 @@
+# Active handoff: actual finite-width R100-to-R110 companion complete — 2026-10-05
+
+Read ACTUAL_BRIDGE_SWITCH_2026_10_05.md and CURRENT_CHECKPOINT.md. Run --stage actualbridgeswitch. Root owns writes; bounded read-only reviews use GPT-5.6 Luna/max. This section supersedes older pending scale/companion-transfer entries below.
+
+- [x] F38-signed-scale-correction: full F0(Z)^2 log range in macro/first/switch source packets and independent checks; separate amplitude log before width-log addition. A bound is never a defining G value.
+- [x] F38-switch-direction-order: retain comparison axial6 until directional differentiation; require all six axial5 rows in complete signed-switch outputs.
+- [x] F38-actual-R100-transfer-companion: named source-functional macro endpoint, actual phi/raw V/H/M/K/A/B/C/P0 and ratios; unchanged original switch methods. Full real Z[-1,1] coverage.
+- [x] F38-actual-R110-transfer-companion: finite-width known-comparison continuation, original source controls/R2, exact postpower own-history propagation, R110 velocity/moments/pressure/log shape and same-source signed increments. Point history selection remains false.
+- [ ] F38-actual-switch-mixed4-installation: use the same actual adapter in existing mixed4 path; admit required rectangular orders and physical width factors; bind phase1/R2/R110 source identities. Do not claim installation from the axial companion alone.
+- [ ] F39-leading-input-recompute: carry actual R110 through reshape/restoration; recompute common five-defect inputs, same Jacobian and nonlinear remainder bounds. Preserve raw Uz versus V_pressure=4C and canonical P0. Refresh only affected dependents.
+- [ ] F40-global-admissibility: independently admit completed full tensor across every region/interface; regional two-vector cones alone are insufficient.
+- [ ] F40-global-flat-volume-energy: global temporal-flat remainder, physical-volume norms and kinetic energy in the required physical spacetime domain.
+- [ ] F40-production-points: evaluable consistent source parameters and histories. Enclosure endpoints/caps/midpoints cannot define fields.
+- [ ] F40-recursion-n1: actual coupled n=1 recovery with shared core interval, compatible datum and independent moment repair.
+- [ ] F40-recursion-higher: correct n>=2 equations/repairs, finite-order remainder and smooth divergence-preserving sum.
+- [ ] F40-oscillatory-correction: mean/two-family oscillations and averaged quadratic stress cancellation.
+- [ ] F40-corrected-residual-dynamics: independent corrected Cartesian residual and measured energy/core widths/aspect/scale fits/cumulative winding.
+
+Evidence:307 hashes,7 callable identities,7 continuation AST bindings,180 transferred coefficients,72 independent direction rows,720 finite endpoint coefficients and6 direct postpower integrals. Existing mixed4 installation, implicit recomputation, global and recursion flags remain false.
+
+---
+
 # Active handoff: finite-width actual bridge source and macro own feedback — 2026-10-04
 
 Read docs/ACTUAL_BRIDGE_INTEGRALS_2026_10_04.md and CURRENT_CHECKPOINT.md. Use --stage actualbridgeintegrals. Root owns writes; bounded read-only reviews use GPT-5.6 Luna/max. Keep the original comparison-driven known shear direction. Actual own moments recover I/Ur/pressure; they do not replace that known direction.

@@ -11,7 +11,9 @@
     ".5",
     "exact_shared_root"
   ],
-  "finite_signed_output_rows": 60,
+  "finite_signed_output_rows": 72,
+  "complete_axial5_direction_rows_checked": true,
+  "full_F0_squared_source_log_range_checked": true,
   "moderate_full_integral_fixtures": [
     {
       "h": {
@@ -633,13 +635,13 @@
     "lei_ren_part1_paper_compliant_comparison_point_integrals.py": "a7103469587709ff80b087b99fcf5490c8445afcd25c2794a4097b73963d98b7",
     "lei_ren_part1_paper_compliant_comparison_point_integrals.json": "42e5b54453ebb1769eea5f2cb21a622bdae5e6b2dc1988020abfa967252dcff1",
     "lei_ren_part1_paper_compliant_comparison_point_integrals_check.json": "3b2cd05bd8732acaf3b53b4f97422c55721a4ab9db9c760758b5cbdd0e31171b",
-    "lei_ren_part1_paper_compliant_first_switch_leading.py": "53f751870f8c90e7795606a65e9765c3ceacad4c361175a9e4f6097ccc25049a",
-    "lei_ren_part1_paper_compliant_first_switch_leading.json": "6fb77b9e23651cdd71a3c5b2155334c040bca7639edcbf64415de5872c4a6147",
-    "lei_ren_part1_paper_compliant_first_switch_leading_check.py": "280d6386cf45c2b08432d5c8beb5b2dc95c7627baadc964b89a2b99a53f1d804",
-    "lei_ren_part1_paper_compliant_first_switch_leading_check.json": "2ce8318ba0c768e3411f2a8ae37943d7bae332198a0b11c16b2b3a195482cf60",
-    "lei_ren_part1_paper_compliant_macro_signed_integrals.py": "8e3c67908eecb8661128f1126fcb91bd84f4e5beb85d49f25f724accb32e22a5",
-    "lei_ren_part1_paper_compliant_switch_signed_integrals.py": "505485403f8e42e458c8d88132940d17f6acda31f26ffe3dc8363e78ee5abf48",
-    "lei_ren_part1_paper_compliant_switch_signed_integrals.json": "a24bd8310ede2a928cb2ed0ab441cefa339f3b712115d2bd5b2642e96fbab2a1",
-    "lei_ren_part1_paper_compliant_switch_signed_integrals_check.py": "648102a316dfb5ce1800b00201702fd011f2f1d846d553da63c770ce78de0891"
+    "lei_ren_part1_paper_compliant_macro_signed_integrals.py": "046b7982464eb00eb16c41c3a652c46a6ff82a1c7386fc3283dc5dd654377913",
+    "lei_ren_part1_paper_compliant_first_switch_leading.py": "6a80b04596238ed681321acccdc2d6b4b187002a7ae8b7823ed7e277fdb8def4",
+    "lei_ren_part1_paper_compliant_first_switch_leading.json": "767555fc19495ae065dd2845f7a0149963b0059e2596eceefd13a221a5b2cb24",
+    "lei_ren_part1_paper_compliant_first_switch_leading_check.py": "f445e3b9d3992c79d9639004abefd18621460b4296528bd849f0701ccb2c390b",
+    "lei_ren_part1_paper_compliant_first_switch_leading_check.json": "4a5083ef63d7f71ecb99055a28ce0261b519c26f4d17e80343e4faefdb1b5d54",
+    "lei_ren_part1_paper_compliant_switch_signed_integrals.py": "713960de53db501905a9ad79c181755811d1f1a1d82da624ef615cd6db20a85a",
+    "lei_ren_part1_paper_compliant_switch_signed_integrals.json": "f75c424527b838dfdedae40f7142c05c49d1684ff20711865162881f1a2ee01c",
+    "lei_ren_part1_paper_compliant_switch_signed_integrals_check.py": "7fc7e27210b5246bb3de1e0aefda1523e85a4fce1a734b16184ac951fd33a1b3"
   }
 }

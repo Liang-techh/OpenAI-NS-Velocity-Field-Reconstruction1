@@ -109,25 +109,28 @@ def run():
         for component, source, radius_power, scale_log in (
             ("hydro","drive_hydro",100,c.mpf(0)),
             ("pressure","drive_pressure",100,2*bridge.core.logP),
-            ("swirl","drive_swirl",10000,-2*bridge.core.logC-2*bridge.core.Lambda*bridge.core.Gbar)):
+            ("swirl","drive_swirl",10000,c.mpf([endpoints(-2*bridge.core.logC-2*bridge.core.Lambda*bridge.core.Gbar)[0],
+                                                   endpoints(-2*bridge.core.logC)[1]]))):
             item=saved["J_V_"+component]
             coeff=_jet(c,item["normalized_axial_coefficients"])
             expected=current[source]*(-c.mpf("0.5")*radius_power)
             require(_contains(coeff,expected),label+" "+component+" coefficient")
             lo,hi=endpoints(read_interval(c,item["positive_scale_log"]))
             elo,ehi=endpoints(scale_log)
-            require(lo<=elo and hi>=ehi,label+" "+component+" source scale")
+            require(lo<=elo and hi>=ehi,label+" "+component+" full source scale")
+            require(item.get("positive_scale_log_is_enclosure") is True,label+" source log enclosure")
         checked.append(label)
 
     result=dict(all_passed=not failures,failures=failures,
         leading_hb2_first_switch_checked=True,original_angular_first_weight1_checked=True,independent_sigma_integral=pulse,
-        points_checked=checked,full_first_switch_resolved=False,
+        points_checked=checked,full_F0_squared_source_log_range_checked=True,full_first_switch_resolved=False,
         actual_signed_bridge_completed=False,
         input_hashes={NAME:_hash(NAME),SOURCE:_hash(SOURCE),
                       Path(__file__).name:_hash(Path(__file__).name),
                       COMPARISON_SOURCE:_hash(COMPARISON_SOURCE),
                       COMPARISON_NAME:_hash(COMPARISON_NAME),
                       COMPARISON_CHECK_NAME:_hash(COMPARISON_CHECK_NAME),
+                      PREFIX+"macro_signed_integrals.py":_hash(PREFIX+"macro_signed_integrals.py"),
                       PREFIX+"flat_pulse_derivatives.py":_hash(PREFIX+"flat_pulse_derivatives.py"),
                       PREFIX+"microswitch_mixed_C4.py":_hash(PREFIX+"microswitch_mixed_C4.py")})
     (HERE/(Path(__file__).stem+".json")).write_text(json.dumps(_encode(result),indent=2)+"\n",encoding="utf8")

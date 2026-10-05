@@ -1,3 +1,15 @@
+# Current checkpoint: actual finite-width R100-to-R110 histories composed — 2026-10-05
+
+Read docs/ACTUAL_BRIDGE_SWITCH_2026_10_05.md. The actual finite-width R100 phi/raw V/H/M/K/A/B/C/P0 now feed the unchanged original microscopic switch and exact postpower methods. The complete real Z[-1,1] companion supplies R110 axial5 velocity/moments/pressure/log shape and radial Q4, plus same-source signed switch integrals. Known comparison histories still prescribe Dbar/Ebar; actual own histories recover the actual field.
+
+Corrected older F0-squared logs retain [-2logC-2Lambda*Gbar,-2logC], not a lower-only purported value. Signed-switch comparison inputs now retain axial6 until differentiation, supplying every claimed axial5 direction row. Only affected receipts were refreshed.
+
+Focused composition PASS:307 hashes,7 unchanged callable identities,7 comparison-continuation AST bindings,180 actual R100 coefficients transferred,72 independent direction coefficients,720 finite endpoint coefficients;6 independent postpower Volterra integrals,tolerance1e-70. Original source radii,width and canonical pressure remain; no production point or cap is selected.
+
+NEXT: install these source histories into existing switch mixed4, propagate actual R110 through reshape/restoration, recompute shared five-defect leading inputs/Jacobian/remainders. Completed global tensor admissibility/flatness/volume/energy, exact production points, true n-dependent recursion, oscillatory correction and corrected residual/measured dynamics remain open. This milestone completes an axial source-enclosure companion, not the full background or corrected NS solution.
+
+---
+
 # Current checkpoint: finite-width actual bridge integrals and own feedback — 2026-10-04
 
 Read docs/ACTUAL_BRIDGE_INTEGRALS_2026_10_04.md. The new actualbridgeintegrals stage supplies signed original Ra-to-R100 micro/macro source integrals, actual core-atom anchored own six-moment enclosures and signed macro Volterra feedback, including both resonant double kernels and nonlinear/quadratic remainders. The known comparison direction is preserved; actual moments recover actual I/Ur/pressure and are never substituted by comparison histories.

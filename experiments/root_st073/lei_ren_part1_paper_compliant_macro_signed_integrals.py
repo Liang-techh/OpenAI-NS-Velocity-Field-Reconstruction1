@@ -230,10 +230,17 @@ def _weighted_modes(c, modes, kernels):
     return result
 
 
+def F0_squared_log_enclosure(c, core):
+    """Exact source F0(Z)^2 has 0<=G(Z)<=Gbar; Gbar is not G(Z)."""
+    return c.mpf([endpoints(-2*core.logC-2*core.Lambda*core.Gbar)[0],
+                  endpoints(-2*core.logC)[1]])
+
+
 def _factored_component(value, scale_log):
     return dict(positive_scale_log=scale_log,
                 normalized_axial_coefficients=_as_output(value),
-                exact_representation="exp(positive_scale_log)*normalized_axial_coefficients")
+                positive_scale_log_is_enclosure=True,
+                exact_representation="exact positive source amplitude times normalized coefficient; its log is enclosed above")
 
 
 def _as_output(value):
@@ -259,10 +266,9 @@ class CompliantMacroSignedIntegrals:
         if self.comparison["datum_enclosure_sha256"] != self.bridge.core.datum.datum_sha:
             raise ValueError("Comparison datum does not match current bridge")
         self.Y = c.ln(100 / self.bridge.r)
-        # Keep the extraordinary F0^2 scale logarithmic.  Materializing
-        # exp(-2 log Cstar - 2 Lambda Gbar) can require an exponent outside
-        # the numeric format; later factored algebra consumes this source.
-        self.F02_log = -2 * self.bridge.core.logC - 2 * self.bridge.core.Lambda * self.bridge.core.Gbar
+        # F0(Z)^2=Cstar^-2*exp(-2Lambda*G(Z)); retain its full log range.
+        # The global upper bound Gbar cannot define the source amplitude.
+        self.F02_log = F0_squared_log_enclosure(c, self.bridge.core)
         self.hashes = dict(self.comparison.get("input_hashes", {}))
         self.hashes[COMPARISON_NAME] = _sha256(COMPARISON_NAME)
         self.hashes[COMPARISON_CHECK_NAME] = _sha256(COMPARISON_CHECK_NAME)

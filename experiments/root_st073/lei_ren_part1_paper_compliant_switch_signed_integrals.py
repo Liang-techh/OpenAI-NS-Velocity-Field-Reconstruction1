@@ -17,7 +17,7 @@ import sympy as s
 from lei_ren_part1_paper_compliant_first_switch_leading import (
     FirstSwitchLeading, switch_control_source_bridge)
 from lei_ren_part1_paper_compliant_macro_signed_integrals import (
-    _mode_rows, _as_output, _verify_hashes)
+    _mode_rows, _as_output, _verify_hashes, F0_squared_log_enclosure)
 from lei_ren_part1_paper_compliant_inner_bridge_profiles import (
     IntervalTaylor, symmetric, logarithm)
 from lei_ren_part1_paper_compliant_long_reshape_mixed_C4 import scaled_positive_source
@@ -80,10 +80,13 @@ def weighted_range(rows,weights):
     return out
 
 
-def source_term(row,log_scale):
+def source_term(row,log_scale,additional_log=None,source="1"):
     return dict(positive_source_log=log_scale,
+                positive_source_log_is_enclosure=True,
+                additional_positive_scale_log_enclosure=additional_log,
+                additional_positive_scale_source=source,
                 signed_axial_coefficients=_as_output(row),
-                exact_source_representation="exp(source_log)*signed_coefficient(Z)")
+                exact_source_representation="exact source amplitude times signed coefficient; its log is enclosed above")
 
 
 def source_precision(fn):
@@ -131,16 +134,18 @@ class CompliantSwitchSignedIntegrals:
         c=self.ctx; z=c.mpf(Z); hcap=self.bridge.cap
         inputs=self.bridge.inputs(z)
         comparison=self.bridge.comparison(z,self.bridge.r/100)
-        phi=comparison["phi"].truncate(5); v=comparison["v"].truncate(5)
-        moments={key:({part:row.truncate(5) for part,row in value.items()}
-                      if isinstance(value,dict) else value.truncate(5))
+        # Original direction differentiates moments in Z. Keep axial6 until
+        # that differentiation so the claimed output has all six axial5 rows.
+        phi=comparison["phi"].truncate(6); v=comparison["v"].truncate(6)
+        moments={key:({part:row.truncate(6) for part,row in value.items()}
+                      if isinstance(value,dict) else value.truncate(6))
                  for key,value in comparison["moments"].items()}
         modes=_mode_rows(self.bridge,z,inputs,phi,v,moments)
         modes={key:[row.truncate(5) for row in values] for key,values in modes.items()}
         incoming=self.bridge.actual(z,self.bridge.r/100)
         actualphi=IntervalTaylor(c,incoming["F_actual_over_F0_axial5_coefficients"])
         actualv=IntervalTaylor(c,incoming["Uz_actual_axial5_coefficients"])
-        quotient=actualphi/phi
+        quotient=actualphi/phi.truncate(5)
         angular=weighted_range(modes["D_over_R"],angular_kernel_ranges(c,hcap))*100
         # Every prefix of chart1 has length<=1. Bound its axial jets before
         # the exponential; the admitted same-source theorem gives Dbar>0.
@@ -155,13 +160,14 @@ class CompliantSwitchSignedIntegrals:
         for part,power,scale in (
             ("hydro",1,c.mpf(0)),
             ("pressure",1,2*self.bridge.core.logP),
-            ("swirl",2,-2*self.bridge.core.logC-2*self.bridge.core.Lambda*self.bridge.core.Gbar)):
+            ("swirl",2,F0_squared_log_enclosure(c,self.bridge.core))):
             # Coefficientwise integration against the positive original
             # weight1-sigma, of total mass1/2, retains signed bounds.
             drive=weighted_range(modes["drive_"+part],
                                  [exponential_range(c,power-j,hcap) for j in range(3)])*(100**power)
             coeff=-(ratio*drive)/2
-            axial[part]=source_term(coeff,2*self.bridge.logh+scale)
+            axial[part]=source_term(coeff,2*self.bridge.logh+scale,scale,
+                {"hydro":"1","pressure":"Pstar^2","swirl":"F0(Z)^2=Cstar^-2*exp(-2Lambda*G(Z))"}[part])
         constant=lambda value:IntervalTaylor.constant(c,value,5)
         linear=scaled_positive_source(c,self.bridge.logh,constant(c.mpf("0.6")),self.proofs)
         quadratic=scaled_positive_source(c,2*self.bridge.logh,-angular/2,self.proofs)
@@ -174,9 +180,12 @@ class CompliantSwitchSignedIntegrals:
         return dict(Z=z,source_domain="R100 through both microscopic charts and postpower toR110",
                     original_width_source="hb=cstar*K^-100=epsilon_b; independent of Z",
                     original_width_log=self.bridge.logh,
-                    comparison_frozen_phi_axial5=_as_output(phi),
-                    comparison_frozen_V_axial5=_as_output(v),
-                    comparison_R100_own_moments_axial5={key:({part:_as_output(row) for part,row in value.items()} if isinstance(value,dict) else _as_output(value)) for key,value in moments.items()},
+                    comparison_frozen_phi_axial5=_as_output(phi.truncate(5)),
+                    comparison_frozen_V_axial5=_as_output(v.truncate(5)),
+                    comparison_frozen_phi_axial6=_as_output(phi),
+                    comparison_frozen_V_axial6=_as_output(v),
+                    comparison_R100_own_moments_axial6={key:({part:_as_output(row) for part,row in value.items()} if isinstance(value,dict) else _as_output(value)) for key,value in moments.items()},
+                    comparison_R100_own_moments_axial5={key:({part:_as_output(row.truncate(5)) for part,row in value.items()} if isinstance(value,dict) else _as_output(value.truncate(5))) for key,value in moments.items()},
                     actual_incoming_phi_axial5=_as_output(actualphi),
                     actual_incoming_V_axial5=_as_output(actualv),
                     comparison_direction_modes={key:[_as_output(row) for row in rows] for key,rows in modes.items()},
